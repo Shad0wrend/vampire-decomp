@@ -155654,6 +155654,199 @@ float CMinSet1028b420::sub_1028b420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028cd70 size=0x35f
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105ce470[2];
+extern char g_10599c80[];
+extern char g_109f0384[];
+extern char g_10924a5c[];
+void sub_1000f4e8();
+void sub_1000cb76();
+void sub_100025f9();
+void sub_100143c6();
+void sub_1000d5d5();
+void sub_1000dee5();
+void sub_10013390();
+void sub_100024dc();
+void sub_10002671();
+void sub_1000cdfb();
+void sub_10010136();
+void sub_1000f07e();
+void sub_100020db();
+void sub_100028dd();
+void sub_10007f86();
+void sub_10005a01();
+void sub_100030bc();
+void sub_1000bd2f();
+void sub_1000ad99();
+void sub_100092aa();
+void sub_10008a08();
+void sub_1001108b();
+void sub_1000aa6a();
+void sub_1001300c();
+void sub_10014231();
+void sub_100064ba();
+void sub_10008d91();
+void sub_10005902();
+void sub_10011d1a();
+void sub_1000329c();
+void sub_1000cd01();
+void sub_1000ae70();
+void sub_10010e47();
+void sub_10002239();
+void sub_10002e3c();
+
+#define F(t, o, n) { t, n, {o, 0}, 1, 2, 0, 0, 0, 0, 0, 0 }
+#define K(t, o, n, e) { t, n, {o, 0}, 1, 6, e, 0, 0, 0, 0, 0 }
+#define E(t, o, n, e) { t, n, {o, 0}, 1, 0xe, e, 0, 0, 0, 0, 0 }
+#define O1(t, o, n) { t, n, {o, 0}, 1, 2, 0, 0, 0, (datamap_t *)g_10599c80, 0, 0 }
+#define O2(t, o, n) { t, n, {o, 0}, 1, 2, 0, (ISaveRestoreOps *)g_109f0384, 0, 0, 0, 0 }
+#define O3(t, o, n) { t, n, {o, 0}, 1, 2, 0, (ISaveRestoreOps *)g_10924a5c, 0, 0, 0, 0 }
+#define I(t, n, e, f) { t, n, {0, 0}, 1, 8, e, 0, (void *)f, 0, 0, 0 }
+#define OUT(n, e, o) { 10, n, {o, 0}, 1, 0x16, e, g_1055dc70 }
+
+int *sub_1028cd70()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        F(4,0x6068,"m_knockbackType"), F(15,0x606c,"m_flLastMeleeStepbackTime"), F(15,0x6070,"m_flMeleeCanEnterTimer"),
+        F(15,0x6074,"m_flMeleeMustLeaveTimer"), F(5,0x6078,"m_bInMelee"), F(15,0x607c,"m_flCanSeekCoverTimer"),
+        F(5,0x6080,"m_bDisableAI"), F(15,0x6084,"m_flSeeUnknownCheatVisionTime"), F(12,0x6088,"m_hBestSeeUnknown"),
+        F(12,0x608c,"m_hLastSeeUnknown"), F(14,0x6090,"m_vecLastSeeUnknownPos"), F(15,0x609c,"m_flSeeUnknownRunTimer"),
+        F(15,0x60a0,"m_flSeeUnknownStartTimer"), F(4,0x60a4,"m_iSeeUnknownRepeatSightings"), F(4,0x60a8,"m_iEnemySightings"),
+        F(12,0x60ac,"m_hFriendPlayer"),
+        O1(9,0x60b0,"m_BestSound"), O1(9,0x60dc,"m_InvestigateSound"), O1(9,0x6108,"m_LastSoundDanger"),
+        O1(9,0x6134,"m_LastSoundPhysicsDanger"), O1(9,0x6160,"m_LastSoundCombat"), O1(9,0x618c,"m_LastSoundBulletImpact"),
+        O1(9,0x61b8,"m_LastSoundPlayer"), O1(9,0x61e4,"m_LastSoundWorld"), O1(9,0x6210,"m_LastSoundFlinch"),
+        F(15,0x623c,"m_flNextInvestigateSoundTime"), F(12,0x6240,"m_hMoveTargetEnt"),
+        F(15,0x6244,"m_flNextUpdateThink"), F(15,0x6248,"m_flNextNormalThink"), F(15,0x624c,"m_flNextMoveThink"),
+        F(15,0x6250,"m_flNextAIThink"), F(15,0x6254,"m_flLastUpdateThink"), F(15,0x6258,"m_flLastNormalThink"),
+        F(15,0x625c,"m_flLastMoveThink"), F(15,0x6260,"m_flLastAIThink"),
+        F(1,0x6264,"m_flPlayerDist"), F(1,0x6268,"m_flEnemyDist"), F(1,0x626c,"m_flEnemyHeightDiff"),
+        F(1,0x6270,"m_flEnemyLastKnownDist"), F(15,0x6274,"m_flMeleeHeightDiffTimer"), F(5,0x6278,"m_bInPlayerPVS"),
+        F(5,0x6279,"m_bInPlayerLOS"),
+        F(1,0x627c,"m_flLastInPlayerPVS"), F(1,0x6280,"m_flLastInPlayerLOS"), F(1,0x6284,"m_flNextPlayerLOS"),
+        F(1,0x6288,"m_flNextCheckEnterPVSTime"), F(12,0x628c,"m_hClosestPlayer"), F(3,0x6290,"m_vecForward"),
+        F(3,0x629c,"m_vecRight"), F(14,0x62a8,"m_vecInitialPosition"), F(3,0x62b4,"m_qaInitialAngles"),
+        F(1,0x62c0,"m_flOccludedDelayNormal"), F(1,0x62c4,"m_flOccludedDelayCover"), F(1,0x62c8,"m_flOccludedDelay"),
+        F(15,0x62cc,"m_flOccludedReportTimeE"), F(15,0x62d0,"m_flOccludedReportTimeT"), F(15,0x62d4,"m_flOccludedReportTimeW"),
+        K(2,0x62d8,"m_sInterestingPlaceGroups","interesting_place_groups"), F(4,0x62dc,"m_iInterestingPlaceGroups"),
+        K(2,0x62e0,"m_sHintGroups","hint_groups"), F(4,0x62e4,"m_iHintGroups"), F(5,0x62e8,"m_bInterestingPlaceArrived"),
+        F(14,0x62f0,"m_vecInterestingPlace"), F(4,0x6304,"m_eInterestingPlaceMode"), F(4,0x6308,"m_iInterestingDeathActivity"),
+        F(15,0x6318,"m_flNextCrosswalkUpdateTime"), F(15,0x631c,"m_flNextPedInteractTime"), F(1,0x6320,"m_flGoalTolerance"),
+        F(1,0x6324,"m_flInsideInterruptDistanceSqr"), F(1,0x6328,"m_flOutsideInterruptDistanceSqr"),
+        F(15,0x632c,"m_flInterruptTime"), F(1,0x6330,"m_flWaitFinishedDelta"), F(5,0x6334,"m_bWaitFinishedSet"),
+        K(4,0x6338,"m_eInvestigateMode","investigate_mode"), K(4,0x633c,"m_eInvestigateModeCombat","investigate_mode_combat"),
+        K(5,0x6340,"m_bFullInvestigate","full_investigate"), K(4,0x6344,"m_iBrightRoutePenalty","bright_route_penalty"),
+        E(4,0x6348,"m_iPLInvestigateLevel","pl_investigate"), E(4,0x634c,"m_iPLCriminalFleeLevel","pl_criminal_flee"),
+        E(4,0x6350,"m_iPLCriminalAttackLevel","pl_criminal_attack"), E(4,0x6354,"m_iPLSupernaturalFleeLevel","pl_supernatural_flee"),
+        E(4,0x6358,"m_iPLSupernaturalAttackLevel","pl_supernatural_attack"),
+        O2(10,0x635c,"m_iPLCriminalLevelWitnessed"), F(4,0x6368,"m_iPLSupernaturalLevelWitnessed"),
+        F(4,0x636c,"m_iPLCriminalActProcessed"), F(4,0x6370,"m_iPLSupernaturalActProcessed"),
+        F(14,0x6374,"m_vecPLSupernaturalLocation"), F(14,0x6380,"m_vecPLCriminalLocation"),
+        F(12,0x638c,"m_hCriminalOffender"), F(12,0x6390,"m_hSupernaturalOffender"), F(5,0x6394,"m_bPLSupernaturalActFleeOnly"),
+        F(15,0x6398,"m_flCriminalIgnoreTimer"), F(15,0x639c,"m_flSupernaturalIgnoreTimer"),
+        F(15,0x63a0,"m_flNosferatuIgnoreTimer"), F(15,0x63a4,"m_flCriminalWitnessedTimer"),
+        F(15,0x63a8,"m_flSupernaturalWitnessedTimer"), K(2,0x63ac,"m_sPlayerReaction","player_reaction"),
+        K(4,0x63b0,"m_iNPCPerception","npc_perception"), K(1,0x63b4,"m_flSeekDistBase","vision"),
+        F(1,0x63b8,"m_flSeekDistInspection"), K(1,0x63bc,"m_flHearingScalarBase","hearing"),
+        F(1,0x63c0,"m_flHearingScalarInspection"), F(1,0x63c4,"m_flStealthVisionScalar"), F(1,0x63c8,"m_flStealthVisionCone"),
+        F(1,0x63cc,"m_flStealthHearingDist"), F(15,0x63d0,"m_flNextListenTime"), F(15,0x63d4,"m_flNextInterestChangeTime"),
+        K(5,0x63d8,"m_bInvincible","invincible"), K(5,0x63d9,"m_bUseInteresting","use_interesting"),
+        F(5,0x63da,"m_bForceNPCCheck"), F(15,0x63dc,"m_flWeaponScareTime"), F(5,0x63e0,"m_fSavePositionWalk"),
+        F(4,0x63e4,"m_eFaceAnim"), F(1,0x63e8,"m_flFaceYawDiff"), F(1,0x63ec,"m_flDesiredMoveYaw"),
+        F(5,0x63f0,"m_bForceFrequentThink"), F(4,0x63f4,"m_eAlertLevel"), F(4,0x63f8,"m_iSubState"),
+        F(5,0x63fc,"m_bGoToIdleState"), F(5,0x63fd,"m_bLeaningLeft"), F(15,0x6400,"m_flNextCoverLOSCheck"),
+        F(4,0x6404,"m_iFailedCoverLOSChecks"), F(5,0x6408,"m_bForceCoverLOSCheck"), F(4,0x640c,"m_iPeekOutCount"),
+        F(5,0x6410,"m_bAggressiveAnims"), F(4,0x6414,"m_iCowerAnimOffset"), F(15,0x6418,"m_flNextSeeSoundSourceTime"),
+        F(15,0x641c,"m_flNextFleeSoundTime"),
+        K(4,0x6420,"m_iPercentOccludedWait","percent_occluded_wait"), K(4,0x6424,"m_iPercentOccludedCover","percent_occluded_cover"),
+        K(4,0x6428,"m_iPercentOccludedWalk","percent_occluded_walk"), K(4,0x642c,"m_iPercentOccludedFlank","percent_occluded_flank"),
+        K(4,0x6430,"m_iPercentOccludedChase","percent_occluded_chase"),
+        K(5,0x6434,"m_bAllowAlertLookaround","allow_alert_lookaround"), K(5,0x6435,"m_bStayEntrenched","stay_entrenched"),
+        K(5,0x6436,"m_bAllowKickHintUse","allow_kick_hint_use"),
+        F(15,0x6438,"m_flKickPhysicsPropSearchTimer"), F(12,0x643c,"m_hKickPhysicsProp"), F(12,0x6448,"m_hHintCoverObject"),
+        F(4,0x644c,"m_eAlternateAI"), F(15,0x6450,"m_flAlternateAIExpireTimer"), F(4,0x6454,"m_actPreOpenDoor"),
+        F(15,0x6458,"m_flIgnoreCollisionTimer"), F(3,0x645c,"m_vecHuntPatrolTarget"), F(3,0x6468,"m_vecHeldPosition"),
+        F(15,0x6474,"m_flHuntExpireTimer"),
+        K(2,0x6478,"m_sFollowerBoss","follower_boss"), K(2,0x6480,"m_sFollowerType","follower_type"),
+        F(4,0x6490,"m_iBurstFireCount"), F(5,0x6494,"m_bReturnToInitialPos"), F(5,0x6495,"m_bForceDialogStart"),
+        K(4,0x64bc,"m_nTimesTalked","times_talked"), K(2,0x64c4,"m_sDefaultCamera","default_camera"),
+        F(5,0x64c0,"m_bIsTalking"), F(4,0x64c8,"m_CurrStance"), F(15,0x64cc,"m_flTalkTime"), F(1,0x6550,"m_flSpeechVol"),
+        F(4,0x64d4,"m_nCurrDisposition"), F(1,0x64d8,"m_flMinBlink"), F(1,0x64dc,"m_flMaxBlink"),
+        F(5,0x64e0,"m_bInDispositionFidget"), F(5,0x64e1,"m_bInStanceChange"), F(15,0x64e4,"m_flStanceTime"),
+        { 7, "m_szDialogQue", {0x64ec, 0}, 0x60, 2, 0, 0, 0, 0, 0, 0 },
+        K(2,0x6558,"m_sDefaultDisposition","default_disposition"), F(1,0x6570,"m_blinkTimer"),
+        F(15,0x6574,"m_flLoudExpressionTime"), F(4,0x6578,"m_nEyeFidgetStep"), F(15,0x657c,"m_flEyeFidgetTime"),
+        F(15,0x6580,"m_flEyeFidgetStepTime"), F(1,0x6584,"m_flMinEyeFidget"), F(1,0x6588,"m_flMaxEyeFidget"),
+        O3(10,0x658c,"m_sppPatrolPath"), O3(10,0x6594,"m_sppPatrolPathHunt"),
+        F(5,0x65a0,"m_bPatrolPathUseHint"), F(15,0x65a4,"m_fNextDodgeTimer"), F(15,0x65bc,"m_flNextBurnTime"),
+        F(4,0x65c8,"m_iForcedSchedule"), F(4,0x65cc,"m_eForcedState"), F(3,0x65d0,"m_vecSavedAttackExtents"),
+        K(15,0x65dc,"m_flTeleportMoveTimer","teleport_move_timer"), K(2,0x65e0,"m_sCombatStartActivity","combat_start_activity"),
+        F(2,0x65ec,"m_sAttackCoordinatorName"), F(4,0x65f0,"m_iFakeReloadCount"), F(5,0x65f4,"m_bCameFromSpawner"),
+        K(5,0x65f5,"m_bIgnoreDetectedAttack","ignore_detected_attack"), K(5,0x65f6,"m_bNoAlertState","no_alert_state"),
+        K(5,0x65f7,"m_bNavIgnorePhysicsProps","nav_ignore_physics_props"),
+        F(5,0x65f8,"m_bAllowCriminalSuspicion"), F(5,0x65f9,"m_bAllowTurningAnims"), F(5,0x65fa,"m_bForceMaintainActivity"),
+        F(1,0x65fc,"m_flStandingOnHeadTimer"), F(15,0x6600,"m_flWeaponThroughWallTime"),
+        F(15,0x6604,"m_flStealthVisionOverrideTime"), F(15,0x6608,"m_flCorpseConditionTimer"),
+        K(5,0x6496,"m_bIsBossMonster","is_bossmonster"), F(5,0x6498,"m_bJumping"), F(3,0x649c,"m_vJumpOrigin"),
+        F(3,0x64a8,"m_vJumpTarget"), F(1,0x64b4,"m_fJumpHeight"), F(1,0x64b8,"m_fJumpGravity"),
+        F(3,0x6004,"m_KnockbackVelocity"), F(12,0x6010,"m_hKnockbackHitEntity"), F(15,0x6014,"m_fKnockbackWallHitFallTime"),
+        F(15,0x6018,"m_fFinishingMoveBoneTrackLastTime"), F(3,0x601c,"m_vFinishingMoveBoneTrackLastPos"),
+        F(4,0x6064,"m_iHitBuildupCount"),
+        I(2,"InputWalkToNode","WalkToNode",sub_100025f9), I(2,"InputTweakParam","TweakParam",sub_100143c6),
+        I(2,"InputSetupPatrolType","SetupPatrolType",sub_1000d5d5), I(2,"InputFollowPatrolPath","FollowPatrolPath",sub_1000dee5),
+        I(0,"InputClearPatrolPath","ClearPatrolPath",sub_10013390), I(1,"InputStartPlayerDialog","StartPlayerDialog",sub_100024dc),
+        I(0,"InputStartPlayerDialogRemote","StartPlayerDialogRemote",sub_10002671),
+        I(1,"InputStartPlayerDialogUnforced","StartPlayerDialogUnforced",sub_1000cdfb),
+        I(0,"InputFleeAndDie","FleeAndDie",sub_10010136), I(0,"InputFaint","Faint",sub_1000f07e),
+        I(5,"InputDisableThink","DisableThink",sub_100020db), I(12,"InputTeleportToEntity","TeleportToEntity",sub_100028dd),
+        I(4,"InputTakeDamage","TakeDamage",sub_10007f86), I(5,"InputMakeInvincible","MakeInvincible",sub_10005a01),
+        I(5,"InputUseInteresting","UseInteresting",sub_100030bc), I(4,"InputSetInvestigateMode","SetInvestigateMode",sub_1000bd2f),
+        I(4,"InputSetInvestigateModeCombat","SetInvestigateModeCombat",sub_1000ad99),
+        I(1,"InputSetSpeechVolume","SetSpeechVolume",sub_100092aa), I(2,"InputPlayDialogFile","PlayDialogFile",sub_10008a08),
+        I(5,"InputAllowAlertLookaround","AllowAlertLookaround",sub_1001108b),
+        I(5,"InputStayEntrenched","StayEntrenched",sub_1000aa6a), I(5,"InputAllowKickHintUse","AllowKickHintUse",sub_1001300c),
+        I(2,"InputSetScriptedDiscipline","SetScriptedDiscipline",sub_10014231),
+        I(5,"InputSetBloodShieldDiscipline","SetBloodShieldDiscipline",sub_100064ba),
+        I(2,"InputSetFollowerBoss","SetFollowerBoss",sub_10008d91), I(2,"InputSetFollowerType","SetFollowerType",sub_10005902),
+        I(5,"InputSetFallToGround","SetFallToGround",sub_10011d1a), I(2,"InputChangeSchedule","ChangeSchedule",sub_1000329c),
+        I(2,"InputSetDontFacePlayerInDialog","SetDontFacePlayerInDialog",sub_1000cd01),
+        I(5,"InputSetBossMonster","SetBossMonster",sub_1000ae70), I(5,"InputAllowOpenDoors","AllowOpenDoors",sub_10010e47),
+        I(1,"InputSetMovementMultiplier","SetMovementMultiplier",sub_10002239),
+        I(2,"InputSetDefaultDialogCamera","SetDefaultDialogCamera",sub_10002e3c),
+        OUT("m_OnDialogBegin", "OnDialogBegin", 0x5f44),
+        OUT("m_OnDialogEnd", "OnDialogEnd", 0x5f5c),
+        OUT("m_OnInterestingPlaceArrived", "OnInterestingPlaceArrived", 0x5f74),
+        OUT("m_OnInterestingPlaceLeft", "OnInterestingPlaceLeft", 0x5f8c),
+        OUT("m_OnUnknownVisionPlayer", "OnUnknownVisionPlayer", 0x5fa4),
+        OUT("m_OnStateFleeing", "OnStateFleeing", 0x5fbc),
+        OUT("m_OnIncapacitatedStart", "OnIncapacitatedStart", 0x5fd4),
+        OUT("m_OnIncapacitatedEnd", "OnIncapacitatedEnd", 0x5fec),
+        { 0, "CAI_BaseNPCTroikaNPCThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000f4e8 },
+        { 0, "CAI_BaseNPCTroikaKnockbackTouch", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000cb76 },
+    };
+    g_105ce470[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_105ce470[0] = (int)&dataDesc[1];
+    return g_105ce470;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028d610 size=0x9a
 #include "CAI_BaseNPCTroika.h"
 #include "UtlMem.h"
