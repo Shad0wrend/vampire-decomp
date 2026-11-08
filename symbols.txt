@@ -3368,6 +3368,7 @@
 0x10005d5d func   ?sub_10307990@@YAHXZ sub_10307990
 0x10005d62 func   ?sub_101dce30@CUnknown101dce30@@QAE_NPAUCUnknown101dc5a0Keys@@PBD@Z CUnknown101dce30::sub_101dce30
 0x10005d67 func   ?vfunc242@CSceneEntity@@UAEXXZ CSceneEntity::vfunc242
+0x10005d6c func   ?sub_10304a40@CAI_Pathfinder@@QAE_NPBM0H@Z CAI_Pathfinder::sub_10304a40
 0x10005d71 func   ?sub_1026e4f0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1026e4f0
 0x10005d80 func   ?sub_1016b0e0@CBasePlayer@@QAEXI@Z CBasePlayer::sub_1016b0e0
 0x10005d85 func   ?sub_10250910@@YIXPAUMem8@@HH@Z sub_10250910

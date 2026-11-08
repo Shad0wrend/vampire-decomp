@@ -175535,6 +175535,76 @@ bool CAI_Pathfinder::sub_103048d0(int navType, const float *vecStart, const floa
 }
 // END FUNCTION
 
+// FUNCTION: 0x10304a40 size=0x2fc
+#include "CAI_Pathfinder.h"
+#include "CVProfile.h"
+
+struct CCycleSampler {
+	unsigned __int64 m_Int64;
+	CCycleSampler() { m_Int64 = 0; }
+	void Sample() {
+		unsigned long *p = (unsigned long *)this;
+		__asm {
+			mov ecx, p
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+__forceinline void ExitInl()
+{
+	CVProfile *prof = g_109f3648;
+	if (!prof->m_bAtRoot || prof->m_enabled) {
+		CVProfNode *n = prof->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			CCycleSampler t;
+			t.Sample();
+			CUnknownCycle100335e0 *pc = &n->m_CurFrameTime;
+			pc->m_Int64 = t.m_Int64 - pc->m_Int64;
+			n->m_TotalTime += pc->m_Int64;
+			g_109f3648->PopGroup();
+		}
+		if (n->m_nRecursions == 0)
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+	}
+}
+
+// TARGET: CAI_Pathfinder::sub_10304a40
+bool CAI_Pathfinder::sub_10304a40(const float *vecStart, const float *vecEnd, int moveTypes)
+{
+	g_109f3648->EnterScope("CAI_Pathfinder_CheckStaleRoute", 0, "Unaccounted", false);
+	if ((moveTypes & 1) && sub_103048d0(0, vecStart, vecEnd)) {
+		g_109f3648->ExitScopeCall();
+		return true;
+	}
+	if ((moveTypes & 4) && sub_103048d0(2, vecStart, vecEnd)) {
+		g_109f3648->ExitScopeCall();
+		return true;
+	}
+	if (moveTypes & 2) {
+		AIMoveTrace_t trace;
+		((CAI_PathfinderOuter *)m_pOuter)->m_pMoveProbe->sub_102e6d70(1, vecStart, vecEnd, 0x202400b, 0, 100.0f, 0, &trace, 0, 0);
+		if (trace.fStatus >= 0) {
+			g_109f3648->ExitScope();
+			return true;
+		}
+	}
+	if (moveTypes & 8) {
+		AIMoveTrace_t trace;
+		((CAI_PathfinderOuter *)m_pOuter)->m_pMoveProbe->sub_102e6d70(3, vecStart, vecEnd, 0x202400b, 0, 100.0f, 0, &trace, 0, 0);
+		if (trace.fStatus >= 0) {
+			ExitInl();
+			return true;
+		}
+	}
+	ExitInl();
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103055b0 size=0x26b
 #include "CAI_Waypoint.h"
 #include "CAI_Pathfinder.h"
