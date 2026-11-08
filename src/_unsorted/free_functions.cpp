@@ -134223,6 +134223,54 @@ char *QuestJournal::sub_10221e50(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10221f20 size=0x1b3
+#include "QuestJournal.h"
+#include "FileSystemViews.h"
+#include <string.h>
+
+struct CBasePlayerUnit10182210 { int sub_10182210(int a); };
+
+extern IFileSystemView *g_1070b238;
+extern QuestJournal g_1074f8f8;
+extern const char *g_105b1058[];
+extern const char *g_105b106c[];
+char *sub_101d3730(const char *fmt, ...);
+CBasePlayerUnit10182210 *sub_101cda50();
+
+void QuestJournal::sub_10221f20(void *hFile)
+{
+	if (!hFile)
+		return;
+	CBasePlayerUnit10182210 *pPlayer = sub_101cda50();
+	if (!pPlayer)
+		return;
+	int iArea = 0;
+	int ppArea = (int)g_105b1058;
+	do {
+		char *s = sub_101d3730("AREA: %s\n", *(const char **)ppArea);
+		g_1070b238->vfunc3(s, strlen(s), (int)hFile);
+		for (int i = 0; i < g_1074f8f8.m_field[8]; i++) {
+			int *pQuest = (int *)g_1074f8f8.sub_10221b10(i);
+			if (pQuest[2] == iArea && pQuest[4] != -1) {
+				s = sub_101d3730("\t[%-3d] %-24s: %s\n", i, pQuest[0], pQuest[1]);
+				g_1070b238->vfunc3(s, strlen(s), (int)hFile);
+				int idx = pPlayer->sub_10182210(i);
+				if (idx != -1) {
+					int *pState = (int *)g_1074f8f8.sub_10221e50(pQuest[5 + idx]);
+					s = sub_101d3730("\t\t(%d): %-12s %-48s money:%-4d exp: %-40s event:%s\n", pState[0], g_105b106c[pState[2]], pState[1], pState[3], pState[4], pState[5]);
+					g_1070b238->vfunc3(s, strlen(s), (int)hFile);
+				} else {
+					s = sub_101d3730("\t\tERROR: invalid completion state!!\n", *(const char **)ppArea);
+					g_1070b238->vfunc3(s, strlen(s), (int)hFile);
+				}
+			}
+		}
+		iArea++;
+		ppArea += 4;
+	} while (ppArea < (int)&g_105b1058[4]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102221d0 size=0x2d
 namespace lifted {
 extern char g_105b1534;
