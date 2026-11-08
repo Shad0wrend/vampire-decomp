@@ -188094,6 +188094,138 @@ bool CBaseCombatCharacter::sub_10334c20(CBaseCombatWeapon *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10334e70 size=0x35c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CWeaponOwner.h"
+extern char g_10588eac[];
+extern char g_105869b8[];
+extern char g_1055f710[];
+void __cdecl sub_101cd940(void *p);
+void __fastcall sub_1033d970(void *p);
+char __fastcall sub_102585c0(CBaseCombatWeapon *p);
+CWeaponOwner * __fastcall sub_102517b0(void *p);
+
+#define IV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define IV100(p) IV10(p##0) IV10(p##1) IV10(p##2) IV10(p##3) IV10(p##4) IV10(p##5) IV10(p##6) IV10(p##7) IV10(p##8) IV10(p##9)
+struct CInvVT
+{
+	IV100(a) IV100(b) IV100(c)
+	IV10(d0) IV10(d1) IV10(d2) IV10(d3) IV10(d4) IV10(d5) IV10(d6) IV10(d7)
+	virtual void e0(); virtual void e1(); virtual void e2();
+	virtual void v383(void *pItem, int n);
+};
+
+struct CInvPlayer { char pad[0x245c]; void *m245c; };
+struct CInvNetworkable { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual const char *GetClassName(); };
+struct CInvUnknown { virtual void v0(); virtual void v1(); virtual void v2(); virtual CInvNetworkable *GetNetworkable(); };
+struct CInvEdict
+{
+	char pad[0x40]; CInvUnknown *m_pUnk;
+	const char *GetClassName() const
+	{
+		if (!m_pUnk)
+			return g_106b8540;
+		return m_pUnk->GetNetworkable()->GetClassName();
+	}
+};
+struct CInvWpn
+{
+	char pad[0x2e0]; CInvEdict *m2e0; char pad2[0x73c - 0x2e4]; int m73c; char pad3[0x8d0 - 0x740]; int m8d0;
+	CInvEdict *edict() { return m2e0; }
+};
+struct CInvRing { void sub_10407c40(const char *name, void *p); void sub_10408220(void *p); };
+struct CInvSS { void sub_10408480(void *p); };
+struct CInvPl { void sub_101836d0(void *p); };
+struct CInvInfo { int m0; int m4; int m8; char pad[0x114 - 0xc]; int m114; };
+struct CInvBlk { char pad[0x20]; int m20; };
+
+void CBaseCombatCharacter::sub_10334e70(CBaseCombatWeapon *pWeapon)
+{
+	ScopeTrace scope("CBaseCombatCharacter::Inventory_Insert", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!pWeapon)
+		return;
+	if (*(int *)((char *)this + 0x98) && sub_102585c0(pWeapon)) {
+		CWeaponOwner *o = sub_102517b0(pWeapon);
+		CInvInfo *info = (CInvInfo *)&o->m_n2668;
+		int n = info->m8;
+		if (n < 1)
+			n = 1;
+		if (info->m0 == -1)
+			vfunc374(n, info->m114, 0);
+		else
+			*(int *)((char *)pWeapon + 0x74c) = n;
+	}
+	sub_1033c6b0(0x80);
+	CInvWpn *pKey = (CInvWpn *)__RTDynamicCast(pWeapon, 0, g_1055f710, g_10588eac, 0);
+	if (pKey) {
+		CInvPlayer *pPlayer = *(CInvPlayer **)((char *)this + 0xa8);
+		CInvRing *pRing = (CInvRing *)__RTDynamicCast((void *)sub_10335950("item_g_keyring"), 0, g_1055f710, g_105869b8, 0);
+		if (!pRing) {
+			if (pPlayer && pPlayer->m245c) {
+				CBaseCombatWeapon *pNew = (CBaseCombatWeapon *)sub_1032e120("item_g_keyring");
+				if (pNew) {
+					pRing = (CInvRing *)__RTDynamicCast(pNew, (int)pRing, g_1055f710, g_105869b8, (int)pRing);
+					if (pRing) {
+						((CInvVT *)this)->v383(pRing, 1);
+						((CInvSS *)pPlayer->m245c)->sub_10408480(pRing);
+						goto keyring;
+					}
+					pNew->sub_1024f7b0();
+				}
+			}
+			goto normal;
+		}
+keyring:
+		pRing->sub_10407c40(pKey->edict()->GetClassName(), (char *)sub_102517b0(pKey) + 0x88);
+		sub_101cd940(pKey);
+		if (pPlayer && pPlayer->m245c) {
+			((CInvPl *)pPlayer)->sub_101836d0(pRing);
+			pRing->sub_10408220(pPlayer->m245c);
+		}
+		return;
+	}
+normal:
+	{
+		CWeaponOwner *o = sub_102517b0(pWeapon);
+		CInvBlk *blk = (CInvBlk *)((char *)o + 0x5eb20);
+		if (blk->m20)
+			sub_1033d970(this);
+		int sections = pWeapon->sub_10255cf0();
+		int idx = 0;
+		for (int i = 0; i < sections; i++)
+			idx += vfunc298(i);
+		for (int count = 0; count < vfunc298(pWeapon->sub_10255cf0()); count++, idx++) {
+			if (!sub_1032e8b0(idx)) {
+				sub_1032e9f0(idx, (CBaseEntity *)pWeapon);
+				CInvWpn *w = (CInvWpn *)pWeapon;
+				w->m73c = idx;
+				if (pWeapon->vfunc371()) {
+					CInvWpn *p = (CInvWpn *)sub_1032d890(w->edict()->GetClassName(), pWeapon->vfunc296());
+					if (!p || p == w) {
+						w->m8d0 = 1;
+						return;
+					}
+					p->m8d0++;
+					sub_101cd940(pWeapon);
+				}
+				return;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103352b0 size=0x15e
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

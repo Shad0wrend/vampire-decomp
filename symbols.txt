@@ -2009,6 +2009,7 @@
 0x10003da0 func   _item_g_keyring item_g_keyring
 0x10003da5 func   ?vfunc390@CNPC_VMingXiaoTentacle@@QAEXH@Z CNPC_VMingXiaoTentacle::vfunc390
 0x10003daa func   ?vfunc461@CNPC_VAnimal@@QAEHXZ CNPC_VAnimal::vfunc461
+0x10003daf func   ?sub_10334e70@CBaseCombatCharacter@@QAEXPAVCBaseCombatWeapon@@@Z CBaseCombatCharacter::sub_10334e70
 0x10003db4 func   ?sub_101fc540@C101fc540@@QAEDUT_101fc540@@0@Z C101fc540::sub_101fc540
 0x10003db9 func   ?RemoveAll@?$CUtlVector@V?$CUtlVector@Ugroundlink_t@@V?$CUtlMemory@Ugroundlink_t@@@@@@V?$CUtlMemory@V?$CUtlVector@Ugroundlink_t@@V?$CUtlMemory@Ugroundlink_t@@@@@@@@@@QAEXXZ CUtlVector<CUtlVector<groundlink_t,CUtlMemory<groundlink_t> >,CUtlMemory<CUtlVector<groundlink_t,CUtlMemory<groundlink_t> > > >::RemoveAll
 0x10003dbe func   ?vfunc5@CNPC_VPedestrian@@QAEPAV1@I@Z CNPC_VPedestrian::vfunc5
