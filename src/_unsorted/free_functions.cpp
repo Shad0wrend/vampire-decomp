@@ -183031,6 +183031,93 @@ void CBaseCombatCharacter::sub_10324ea0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10325620 size=0x278
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+#define V4(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3();
+#define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
+#define V64(x) V16(x##a) V16(x##b) V16(x##c) V16(x##d)
+
+struct EyeTarget {
+	V64(a) V64(b) V64(c) virtual Vector vfunc192(); virtual Vector vfunc193();
+	V16(d) V4(e) virtual void f0(); virtual void f1(); virtual void f2();
+	virtual Vector *vfunc217();
+};
+struct EyeSelf {
+	V64(a) V64(b) V64(c) V64(d) V16(e) V4(f) virtual void g0();
+	virtual void vfunc277(Vector *pDir);
+	char m_pad0004[0x26c - 4];
+	const char *m_name26c;
+	char m_pad0270[0xe3c - 0x270];
+	float m_flBlend;
+	char m_pad0e40[4];
+	Vector m_vecGoal;
+	Vector m_vecDir;
+	char m_pad0e5c[0xe64 - 0xe5c];
+	unsigned int m_hTarget;
+	int m_nMode;
+
+	void sub_10331da0(Vector *pA, Vector *pB);
+	char sub_10325da0(Vector *pGoal);
+};
+
+extern float g_104454c4;
+extern float g_104454c0;
+
+// TARGET: sub_10325620
+void __fastcall sub_10325620(EyeSelf *self, int edx, float flInterval)
+{
+	ScopeTrace trace("CBaseCombatCharacter::MaintainScriptedEyeDirection", self ? (self->m_name26c ? self->m_name26c : g_106b8540) : g_105387dc);
+	EyeTarget *pTarget = (EyeTarget *)g_10566458->sub_100290c0(&self->m_hTarget);
+	if (!pTarget) {
+		self->m_nMode = 0;
+		return;
+	}
+	Vector vecPos, vecDir;
+	self->sub_10331da0(&vecPos, &vecDir);
+	switch (self->m_nMode) {
+	case 1:
+		self->m_vecGoal = pTarget->vfunc193();
+		break;
+	case 2:
+		self->m_vecGoal = pTarget->vfunc192();
+		break;
+	case 3:
+		self->m_vecGoal = *pTarget->vfunc217();
+		break;
+	default:
+		self->m_vecGoal = vecPos + vecDir * 300.0f;
+		break;
+	}
+	if (!self->sub_10325da0(&self->m_vecGoal))
+		self->m_vecGoal = vecPos + vecDir * 300.0f;
+	float t = flInterval;
+	while (t > g_104454c4) {
+		self->m_vecDir = self->m_vecDir * (g_104454c0 - self->m_flBlend) + self->m_vecGoal * self->m_flBlend;
+		t -= 0.1;
+	}
+	self->vfunc277(&self->m_vecDir);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10325940 size=0xb8
 #include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
