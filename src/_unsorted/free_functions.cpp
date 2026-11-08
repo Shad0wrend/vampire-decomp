@@ -149103,6 +149103,33 @@ bool CUtlRBTreeBig::sub_1025d3a0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025d4b0 size=0x1c7
+#include "utlrbtree.h"
+#include "CUtlRBTreeBig.h"
+void CUtlRBTreeBig::sub_1025d4b0(unsigned short elem)
+{
+	unsigned short rightchild = sub_1025cb70(elem).m_Right;
+	unsigned short left = sub_1025cb70(rightchild).m_Left;
+	m_pElements[elem].m_Links.m_Right = left;
+	if (sub_1025cb70(rightchild).m_Left != InvalidIndex())
+		SetParent(sub_1025cb70(rightchild).m_Left, elem);
+
+	if (rightchild != InvalidIndex())
+		m_pElements[rightchild].m_Links.m_Parent = sub_1025cb70(elem).m_Parent;
+	if (elem != m_Root) {
+		if (Links(sub_1025cb70(elem).m_Parent).m_Left == elem)
+			m_pElements[Links(elem).m_Parent].m_Links.m_Left = rightchild;
+		else
+			m_pElements[Links(elem).m_Parent].m_Links.m_Right = rightchild;
+	} else
+		m_Root = rightchild;
+
+	m_pElements[rightchild].m_Links.m_Left = elem;
+	if (elem != InvalidIndex())
+		m_pElements[elem].m_Links.m_Parent = rightchild;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025d700 size=0x1c
 struct SymMap {
 	unsigned short sub_10249980(unsigned int key, int value);

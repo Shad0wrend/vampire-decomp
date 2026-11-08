@@ -5943,6 +5943,7 @@
 0x100097b9 func   _trigger_werewolf_zone trigger_werewolf_zone
 0x100097be func   ?vfunc38@CSave@@UAEHXZ CSave::vfunc38
 0x100097c3 func   _hud_image hud_image
+0x100097c8 func   ?sub_1025d4b0@CUtlRBTreeBig@@QAEXG@Z CUtlRBTreeBig::sub_1025d4b0
 0x100097cd func   ?sub_1018e790@@YAXPAVCBaseEntity@@PBD@Z sub_1018e790
 0x100097d2 func   ?sub_10272650@CAI_BaseNPCUnit10272650@block_10272650@@QAEXH@Z block_10272650::CAI_BaseNPCUnit10272650::sub_10272650
 0x100097d7 func   ?sub_1023ed10@@YAXHD@Z sub_1023ed10
