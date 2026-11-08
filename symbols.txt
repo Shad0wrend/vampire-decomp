@@ -2070,6 +2070,7 @@
 0x10003eea func   ?vfunc5@CTriggerInventory@@QAEPAXI@Z CTriggerInventory::vfunc5
 0x10003eef func   ?vfunc480@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc480
 0x10003ef4 func   ?vfunc319@CWeaponLockpick@@UAEXXZ CWeaponLockpick::vfunc319
+0x10003ef9 func   ?sub_103a0670@CNPC_VNewscaster@@QAEXXZ CNPC_VNewscaster::sub_103a0670
 0x10003efe func   ?sub_10259120@@YA_NPAUSKeyValues@@PADPBD@Z sub_10259120
 0x10003f03 func   ?vfunc80@CFuncAreaPortalWindow@@UAEHXZ CFuncAreaPortalWindow::vfunc80
 0x10003f08 func   ?sub_1013d7a0@@YAXPBM0PAM1@Z sub_1013d7a0

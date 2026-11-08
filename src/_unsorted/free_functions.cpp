@@ -206215,6 +206215,52 @@ int *__fastcall sub_1039ff60(int *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a0670 size=0x12e
+#include "CNPC_VNewscaster.h"
+#include "CAI_BaseNPCTroika.h"
+
+extern "C" __declspec(dllimport) int RandomInt(int iMinVal, int iMaxVal);
+void *sub_101cd9e0(int index);
+
+void CNPC_VNewscaster::sub_103a0670()
+{
+	if (!m_bFlag6690) {
+		if (!sub_101cd9e0(1))
+			return;
+		sub_103a0ab0();
+		int *pA = &m_nCursorA;
+		int *pB = &m_nCursorB;
+		int t1 = m_listA.m_size; *pA = RandomInt(0, t1 - 1);
+		int t2 = m_listB.m_size; *pB = RandomInt(0, t2 - 1);
+	}
+	if (((CAI_BaseNPCTroika *)this)->sub_102c1170())
+		return;
+	long nA = m_listA.m_size;
+	long t0 = m_listB.m_size;
+	int nTotal = nA + t0;
+	if (!nTotal)
+		return;
+	if (RandomInt(0, nTotal) < nA)
+		m_bPickA = 1;
+	else
+		m_bPickA = 0;
+	void *pLine;
+	if (m_bPickA && m_listA.m_size) {
+		if (++m_nCursorA >= m_listA.m_size)
+			m_nCursorA = 0;
+		pLine = m_listA.m_pMemory[m_nCursorA].m_pPair[m_listA.m_pMemory[m_nCursorA].m_unused24][1];
+	} else {
+		if (!m_listB.m_size)
+			return;
+		if (++m_nCursorB >= m_listB.m_size)
+			m_nCursorB = 0;
+		pLine = m_listB.m_pMemory[m_nCursorB].m_pPair[m_listB.m_pMemory[m_nCursorB].m_unused24][1];
+	}
+	if (pLine)
+		sub_102c0520(pLine, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a0d50 size=0x10e
 #include "CNPC_VNewscaster.h"
 
