@@ -639,6 +639,165 @@ int CAI_BaseNPC::vfunc142(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10265ed0 size=0x4a0
+#include "CAI_BaseNPC.h"
+#include "CTakeDamageInfo.h"
+#include "CVDmg_t.h"
+#include "COutputEvent.h"
+#include "CEntityVSlots.h"
+#include "CUnknown102e0150.h"
+#include "CAI_Motor.h"
+#include "CSoundEnt.h"
+#include "CBaseEntity.h"
+#include "globalvars.h"
+
+#define SV(n) virtual void s##n();
+#define SV10(p) SV(p##0) SV(p##1) SV(p##2) SV(p##3) SV(p##4) SV(p##5) SV(p##6) SV(p##7) SV(p##8) SV(p##9)
+struct NPCSlots {
+	SV10(0) SV10(1) SV10(2) SV10(3) SV10(4) SV10(5) SV10(6) SV10(7) SV10(8) SV10(9)
+	SV10(10) SV10(11) SV10(12) SV10(13) SV10(14) SV10(15) SV10(16) SV10(17) SV10(18) SV10(19)
+	SV10(20) SV10(21) SV10(22) SV10(23) SV10(24) SV10(25) SV10(26) SV10(27) SV10(28) SV10(29)
+	SV10(30) SV10(31) SV10(32) SV10(33) SV10(34) SV10(35) SV10(36) SV10(37) SV10(38) SV10(39)
+	SV10(40) SV10(41) SV10(42) SV10(43) SV10(44) SV10(45) SV10(46) SV10(47) SV10(48) SV10(49)
+	SV10(50) SV10(51) SV10(52) SV10(53) SV10(54) SV10(55) SV10(56)
+	SV(570) SV(571) SV(572) SV(573) SV(574) SV(575)
+	virtual char s576(float flDamage, unsigned int bits);
+	virtual char s577(float flDamage, unsigned int bits);
+};
+
+struct BCC390 { int sub_1000f7db(CTakeDamageInfo *pInfo); };
+
+struct DmgView {
+	CVDmg_t *pVDmg;
+	char pad04[0x28 - 4];
+	CAI_BaseNPC *pAttacker;
+	CBaseEntity *pInflictor;
+	float flDamage;
+	char pad34[4];
+	unsigned int nFlags;
+	CAI_BaseNPC *GetAttacker() const { return pAttacker; }
+	CBaseEntity *GetInflictor() const { return pInflictor; }
+};
+
+struct NPCData {
+	char pad0[0x208];
+	int m_nHealth208;
+	char pad1[0x210 - 0x20c];
+	int m_nHealth210;
+	char pad2[0x5b7c - 0x214];
+	int m_h5b7c;
+	char m_b5b80;
+	char pad3[0x5b9c - 0x5b81];
+	Vector m_vec5b9c;
+	char pad4[0x5d44 - 0x5ba8];
+	CAI_Motor *m_pMotor;
+	char pad5[0x5d8c - 0x5d48];
+	unsigned int m_nFlags5d8c;
+	char pad6[0x5d94 - 0x5d90];
+	float m_f5d94;
+	float m_f5d98;
+	char pad7[0x5e0c - 0x5d9c];
+	COutputEvent m_Out5e0c;
+	char pad8[0x5e3c - 0x5e24];
+	COutputEvent m_Out5e3c;
+};
+
+struct SlotsInfl { virtual void s0(); virtual unsigned int *s1(); };
+extern SlotsInfl *g_10924a6c;
+extern Vector g_1070ba40;
+extern int g_1070d1b0;
+extern int g_1072bc84;
+extern char g_1072bcc1;
+void __fastcall sub_10009980(CAI_Motor *self);
+
+int CAI_BaseNPC::vfunc390(CTakeDamageInfo *pInfo)
+{
+	NPCData *p = (NPCData *)this;
+	const DmgView &info = *(DmgView *)pInfo;
+	DmgView *d = (DmgView *)pInfo;
+	vfunc491();
+	p->m_nFlags5d8c &= ~2;
+	if (!((BCC390 *)this)->sub_1000f7db(pInfo))
+		return 0;
+	if (p->m_f5d98 != gpGlobals->curtime)
+		p->m_Out5e0c.sub_100cd660(this, this, 0);
+	if (p->m_nHealth210 <= p->m_nHealth208 / 2)
+		p->m_Out5e3c.sub_100cd660(this, this, 0);
+	if ((sub_100b3700() & 0x2000) && info.GetInflictor()) {
+		if (info.GetInflictor()->sub_100b3700() & 0x2080) {
+			if (vfunc363(info.GetInflictor()) && vfunc201(info.GetInflictor(), 0x2804091, 0, 0)) {
+				if (info.GetAttacker()) {
+					p->m_vec5b9c = *(Vector *)info.GetAttacker()->vfunc217();
+				} else {
+					Vector vecOff = g_1070ba40 * 64.0f;
+					p->m_vec5b9c = vecOff + *(Vector *)vfunc217();
+				}
+			} else {
+				Vector vecPos;
+				if (info.GetAttacker()) {
+					vecPos = *(Vector *)info.GetAttacker()->vfunc217();
+				} else {
+					Vector vecOff = g_1070ba40 * 64.0f;
+					vecPos = vecOff + *(Vector *)vfunc217();
+				}
+				p->m_vec5b9c = vecPos;
+				if (vfunc167()) {
+					if (!vfunc541()->sub_102dfa20(info.GetInflictor()) && !sub_10269aa0(0x46)) {
+						vfunc544((CBaseEntity *)vfunc167(), (int)&vecPos, (int)&g_1070d1b0);
+						goto done;
+					}
+				}
+				if (vfunc541()->sub_102dfa20(info.GetInflictor()))
+					vfunc544(info.GetInflictor(), (int)&vecPos, (int)&g_1070d1b0);
+				else
+					vfunc544(0, (int)&vecPos, (int)&g_1070d1b0);
+			}
+done:
+			if (vfunc167()) {
+				sub_10009980(p->m_pMotor);
+				Vector vecLast;
+				vfunc541()->sub_102dfed0(&vecLast, (CBaseEntity *)vfunc167());
+				p->m_pMotor->sub_102e2020((const float *)&vecLast, 0);
+			}
+			if (info.GetInflictor())
+				p->m_h5b7c = *((CEntityVSlots *)info.GetInflictor())->slot1();
+			else
+				p->m_h5b7c = -1;
+			p->m_b5b80 = 1;
+			{
+				unsigned int bits = d->pVDmg ? d->pVDmg->m_field10 | d->nFlags : d->nFlags;
+				float flDmg = d->pVDmg ? (float)d->pVDmg->sub_101faa70() : d->flDamage;
+				if (((NPCSlots *)this)->s576(flDmg, bits)) {
+					g_10924a6c->s1();
+					sub_10269a20(0x4c);
+				}
+			}
+			{
+				unsigned int bits = d->pVDmg ? d->pVDmg->m_field10 | d->nFlags : d->nFlags;
+				float flDmg = d->pVDmg ? (float)d->pVDmg->sub_101faa70() : d->flDamage;
+				if (((NPCSlots *)this)->s577(flDmg, bits)) {
+					g_10924a6c->s1();
+					sub_10269a20(0x4d);
+				}
+			}
+			if (gpGlobals->curtime - p->m_f5d98 < 1.0)
+				p->m_f5d94 = (d->pVDmg ? (float)d->pVDmg->sub_101faa70() : d->flDamage) + p->m_f5d94;
+			else
+				p->m_f5d94 = d->pVDmg ? (float)d->pVDmg->sub_101faa70() : d->flDamage;
+			p->m_f5d98 = gpGlobals->curtime;
+			if (p->m_f5d94 > p->m_nHealth208 * 0.3) {
+				g_10924a6c->s1();
+				sub_10269a20(0x4e);
+			}
+		}
+		char bFlag = g_1072bcc1;
+		int nVolume = g_1072bc84;
+		CSoundEnt::sub_101bac90(1, (Vector *)vfunc217(), nVolume, 0.2f, bFlag, (CBaseEntity *)this);
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102664c0 size=0x11a
 #include "CAI_BaseNPC.h"
 #include "CTakeDamageInfo.h"

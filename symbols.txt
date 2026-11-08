@@ -532,6 +532,7 @@
 0x10001bdb func   ?sub_1017f900@@YIXPAX@Z sub_1017f900
 0x10001be0 func   ?sub_10073a10@CUnknown10073a10@@QAEDXZ CUnknown10073a10::sub_10073a10
 0x10001bea func   ?sub_102d8bc0@CUnknown102d8bc0@@QAEMXZ CUnknown102d8bc0::sub_102d8bc0
+0x10001bef func   ?vfunc390@CAI_BaseNPC@@UAEHPAUCTakeDamageInfo@@@Z CAI_BaseNPC::vfunc390
 0x10001bf4 func   ?sub_10137390@@YAMH@Z sub_10137390
 0x10001bf9 func   ?vfunc2@CTEExplosiveGunshotDecal@@UAEPAVCTEGunshotDecal@@I@Z CTEExplosiveGunshotDecal::vfunc2
 0x10001c03 func   ?sub_1032be80@CBaseCombatCharacter@@QAEPAVCBaseEntity@@XZ CBaseCombatCharacter::sub_1032be80
