@@ -4951,6 +4951,7 @@
 0x10008157 func   ?NewNode@?$CUtlRBTree@UCRBEntry4_1024b9e0@@G@@QAEGXZ CUtlRBTree<CRBEntry4_1024b9e0,unsigned short>::NewNode
 0x10008166 func   ?sub_1003c1e0@UtlMem@@QAEXXZ UtlMem::sub_1003c1e0
 0x1000816b func   ?sub_102d4390@S102d4390@@QAEXH@Z S102d4390::sub_102d4390
+0x10008170 func   ?sub_10395750@CNPC_VMingXiao@@QAEXHPAUCTakeDamageInfo@@PAX@Z CNPC_VMingXiao::sub_10395750
 0x10008175 func   ?sub_10428eb0@@YAHPAD@Z sub_10428eb0
 0x1000817a func   ?sub_10401a20@@YAHXZ sub_10401a20
 0x1000817f func   ?sub_10248a70@@YAXXZ sub_10248a70

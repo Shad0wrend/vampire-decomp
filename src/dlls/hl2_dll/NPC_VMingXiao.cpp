@@ -51,6 +51,89 @@ int CNPC_VMingXiao::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395750 size=0x2c8
+#include "CNPC_VMingXiao.h"
+#include "CTakeDamageInfo.h"
+#include "CVDmg_t.h"
+#include "CUnknown10739d08.h"
+struct CTDIView101c2b10 { void sub_101c2b10(int a); };
+extern CUnknown10739d08 g_10739d08;
+void sub_1023e4b0(CNPC_VMingXiao *pNpc, int n);
+inline float Tune24() { return g_10739d08.sub_101e8da0()[9]; }
+inline float Tune28() { return g_10739d08.sub_101e8da0()[10]; }
+
+// TARGET: CNPC_VMingXiao::sub_10395750
+void CNPC_VMingXiao::sub_10395750(int index, CTakeDamageInfo *pInfo, void *pWeapon)
+{
+	if (pWeapon && ((int (__fastcall *)(void *))(*(void ***)pWeapon)[0x5a0 / 4])(pWeapon) & 0x18000) {
+		float dmg;
+		if (pInfo->m_pVDmg00)
+			dmg = (float)pInfo->m_pVDmg00->sub_101faa70();
+		else
+			dmg = pInfo->m_flDamage;
+		pInfo->m_flDamage = Tune28() * dmg;
+	}
+	if (index > -1) {
+		if (sub_10398000(index)) {
+			float dmg;
+			if (pInfo->m_pVDmg00)
+				dmg = (float)pInfo->m_pVDmg00->sub_101faa70();
+			else
+				dmg = pInfo->m_flDamage;
+			m_flSlotValue[index] = m_flSlotValue[index] - dmg;
+			if (m_flSlotValue[index] <= 0.0f)
+				sub_10397410(index);
+			float *pOrigin = vfunc219_slot();
+			Vector vecA = *(Vector *)pOrigin;
+			Vector vecB = *(Vector *)&pInfo->m_pos1c;
+			sub_102c41d0("Ming_xiao_tentacle_damage_emitter", &vecB, &vecA, 0);
+			if (!m_b63d8) {
+				float d;
+				if (pInfo->m_pVDmg00)
+					d = (float)pInfo->m_pVDmg00->sub_101faa70();
+				else
+					d = pInfo->m_flDamage;
+				sub_1023e4b0(this, (int)d);
+			}
+			pInfo->m_flDamage = 0;
+			((CTDIView101c2b10 *)pInfo)->sub_101c2b10(1);
+		} else {
+			float dmg;
+			if (pInfo->m_pVDmg00)
+				dmg = (float)pInfo->m_pVDmg00->sub_101faa70();
+			else
+				dmg = pInfo->m_flDamage;
+			float n = (float)(int)dmg;
+			pInfo->m_flDamage = (float)(int)(n / Tune24() > 1.0f ? n / Tune24() : 1.0f);
+		}
+		return;
+	}
+	if (index == -2 && m_n670c <= 2) {
+		m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+		m_nLine1b34 = 0x8a5;
+		sub_102ae750(0x16b, 0);
+		switch (m_nMode673c) {
+		case 1:
+		case 2:
+			sub_10398fd0();
+			return;
+		case 3:
+		case 4:
+			sub_103990a0();
+			return;
+		}
+		return;
+	}
+	float dmg;
+	if (pInfo->m_pVDmg00)
+		dmg = (float)pInfo->m_pVDmg00->sub_101faa70();
+	else
+		dmg = pInfo->m_flDamage;
+	float n = (float)(int)dmg;
+	pInfo->m_flDamage = (float)(int)(n / Tune24() > 1.0f ? n / Tune24() : 1.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10395c70 size=0x4f
 #include "CNPC_VMingXiao.h"
 #include "CAI_BaseNPCTroika.h"
