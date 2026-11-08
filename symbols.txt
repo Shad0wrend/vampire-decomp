@@ -9994,6 +9994,7 @@
 0x1000f376 func   ?vfunc316@CAI_BaseNPCTroika@@UAEXPAXDD@Z CAI_BaseNPCTroika::vfunc316
 0x1000f37b func   ??0CBaseButton@@QAE@XZ CBaseButton::CBaseButton
 0x1000f380 func   ?sub_102dcc20@CUnk102dcc20@@QAEHXZ CUnk102dcc20::sub_102dcc20
+0x1000f385 func   ?sub_100742b0@CUnknown10074070@@QAEMMH@Z CUnknown10074070::sub_100742b0
 0x1000f399 func   ?vfunc81@CWeaponMelee_BushHook@@QAEHXZ CWeaponMelee_BushHook::vfunc81
 0x1000f39e func   ?vfunc329@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc329
 0x1000f3a3 func   ?sub_100ce5c0@@YIDPAXH0@Z sub_100ce5c0

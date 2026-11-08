@@ -20528,6 +20528,88 @@ float CUnknown10074070::sub_100741f0(float flTime, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100742b0 size=0x25b
+// TARGET: CUnknown10074070::sub_100742b0
+#include "CUnknown10074070.h"
+#include "Vector.h"
+
+void sub_1013bd20(const Vector &v0, const Vector &v1, const Vector &v2, const Vector &v3, float t, Vector &vOut);
+
+namespace block_100742b0 {
+struct CKeyUnit : CUnknown10074070 {
+	int sub_10074070(int index);
+};
+int CKeyUnit::sub_10074070(int index)
+{
+	return *(int *)((char *)this + 0x20 + index * 0x14);
+}
+}
+using namespace block_100742b0;
+
+float CUnknown10074070::sub_100742b0(float flTime, int index)
+{
+	CKeyUnit *u = (CKeyUnit *)this;
+	float flResult = sub_10074110(index);
+	if (m_pRange && m_pRange->sub_10075f30() && u->sub_10074070(index) >= 1)
+	{
+		int i = -1;
+		if (-1 < u->sub_10074070(index))
+		{
+			do
+			{
+				float *p0 = sub_10074160(i, index);
+				float *p1 = sub_10074160(i + 1, index);
+				if (p0 && p1 && flTime >= p0[1] && flTime <= p1[1])
+					break;
+				i++;
+			} while (i < u->sub_10074070(index));
+		}
+
+		int i0 = i - 1;
+		int i2 = i + 1;
+		int i3 = i + 2;
+		if (i0 < -1)
+			i0 = -1;
+		if (i < -1)
+			i = -1;
+		if (i2 >= u->sub_10074070(index))
+			i2 = u->sub_10074070(index);
+		if (i3 >= u->sub_10074070(index))
+			i3 = u->sub_10074070(index);
+
+		float *k0 = sub_10074160(i0, index);
+		float *k1 = sub_10074160(i, index);
+		float *k2 = sub_10074160(i2, index);
+		float *k3 = sub_10074160(i3, index);
+
+		float dt = k2[1] - k1[1];
+		Vector v0(k0[1], k0[0], 0.0f);
+		Vector v1(k1[1], k1[0], 0.0f);
+		Vector v2(k2[1], k2[0], 0.0f);
+		Vector v3(k3[1], k3[0], 0.0f);
+
+		float t = 0.0f;
+		if (dt > 0.0f)
+		{
+			t = (flTime - k1[1]) / dt;
+			if (t > 1.0f)
+				t = 1.0f;
+			else if (t < 0.0f)
+				t = 0.0f;
+		}
+
+		Vector vOut;
+		sub_1013bd20(v0, v1, v2, v3, t, vOut);
+		if (vOut.y > 1.0f)
+			return 1.0f;
+		if (vOut.y < 0.0f)
+			return 0.0f;
+		return vOut.y;
+	}
+	return flResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100745b0 size=0xf
 namespace lifted {
 int __stdcall sub_10007635(int, int);
