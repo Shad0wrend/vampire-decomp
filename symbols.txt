@@ -7628,6 +7628,7 @@
 0x1000bd1b func   ?vfunc497@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc497
 0x1000bd20 func   ?sub_10134310@CLogicCase@@QAEXPAUinputdata_t@@@Z CLogicCase::sub_10134310
 0x1000bd25 func   ?sub_10427d90@@YAXPAUCUnit10427d90@@@Z sub_10427d90
+0x1000bd2a func   ?LinkToParent@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QAEXGG_N@Z CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::LinkToParent
 0x1000bd2f func   ?sub_102c2ab0@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2ab0
 0x1000bd34 func   ?vfunc5@CResearchBook_HG_MELEE@@QAEPAV1@I@Z CResearchBook_HG_MELEE::vfunc5
 0x1000bd39 func   ?vfunc1@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc1
