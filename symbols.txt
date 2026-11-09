@@ -8223,6 +8223,7 @@
 0x1000c80b func   ?sub_101d2a20@@YA?AVVector@@HHMM@Z sub_101d2a20
 0x1000c810 func   ?sub_10028aa0@CPhysMotor@@QAEXPAUinputdata_t@@@Z CPhysMotor::sub_10028aa0
 0x1000c815 func   ?vfunc0@CTESpriteSpray@@UAEHXZ CTESpriteSpray::vfunc0
+0x1000c81a func   ?vfunc124@CPropRadio@@UAEHXZ CPropRadio::vfunc124
 0x1000c81f func   _item_k_tatoo_parlor_key item_k_tatoo_parlor_key
 0x1000c824 func   ?sub_101a8cf0@@YIXPAVCBaseEntity@@HH@Z sub_101a8cf0
 0x1000c829 func   ?sub_1003cc80@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1003cc80

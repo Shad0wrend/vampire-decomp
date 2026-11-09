@@ -233,3 +233,37 @@ void CPropRadio::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int use
     --*g_109f3680;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1022cca0 size=0x17b
+#include "CPropRadio.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+extern char g_105387dc[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+void sub_101434b0(int index, int line, const char *text, float duration, int r, int g, int b, int a);
+
+int CPropRadio::vfunc124()
+{
+    ScopeTrace trace("CPropRadio::DrawDebugTextOverlays", this ? STRINGR(m_name26c) : g_105387dc);
+    int text_offset = sub_10096100();
+    if (*(unsigned char *)((char *)this + 0x224) & 1) {
+        int edict;
+        if (m_nCurrentShow != -1) {
+            char *data = m_pRadioData;
+            edict = m_pEdict2e0;
+            int idx = engine->vfunc35(edict);
+            sub_101434b0(idx, text_offset, data + m_nCurrentShow * 0x100, 0, 255, 255, 255, 255);
+            text_offset++;
+            data = m_pRadioData;
+            idx = engine->vfunc35(m_pEdict2e0);
+            sub_101434b0(idx, text_offset, data + m_nCurrentShow * 0x100 + 0x80, 0, 255, 255, 255, 255);
+            text_offset++;
+        } else {
+            edict = m_pEdict2e0;
+            sub_101434b0(engine->vfunc35(edict), text_offset, "COULD NOT FIND VALID STORY", 0, 255, 255, 255, 255);
+            text_offset++;
+        }
+    }
+    return text_offset;
+}
+// END FUNCTION
