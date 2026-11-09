@@ -135316,6 +135316,43 @@ void __stdcall sub_1020e3c0(S1020e3c0Arg *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020e4f0 size=0x152
+#include "CBaseEntity.h"
+#include "inputdata_t.h"
+#include "CUnknown1020e4f0.h"
+#include "CEventQueue.h"
+#include "CReliableSingleUserRecipientFilter.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CUnknown1020e4f0Activator
+{
+	char m_pad0000[0xa8];
+	void *m_pPlayer;
+};
+
+extern int g_10726070;
+extern CEventQueue g_106e7050;
+
+// TARGET: CUnknown1020e4f0::sub_1020e4f0
+void CUnknown1020e4f0::sub_1020e4f0(inputdata_t *pInput)
+{
+	CUnknown1020e4f0Activator *pActivator = *(CUnknown1020e4f0Activator **)pInput;
+	if (pActivator && pActivator->m_pPlayer)
+	{
+		CReliableSingleUserRecipientFilter filter(pActivator->m_pPlayer);
+		engine->vfunc65(&filter, g_10726070);
+		engine->vfunc67(1);
+		engine->vfunc78(STRINGR_F(m_pName450));
+		engine->vfunc66();
+		if (m_f470 > 0.0f)
+		{
+			g_106e7050.sub_100ce040(vfunc4(), "CloseWindow", m_f470, *(CBaseEntity **)pInput, vfunc4(), 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020e6b0 size=0x6c
 #include "CGameText.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
