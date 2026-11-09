@@ -43079,6 +43079,22 @@ void sub_100c12b0(const Quaternion &p, float s, const Quaternion &q, Quaternion 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c1330 size=0x4f
+#include "Quaternion.h"
+void sub_1013add0(const float *p, float t, float *qt);
+void sub_1013aeb0(const Quaternion &p, const Quaternion &q, Quaternion &qt);
+void sub_100c1330(const Quaternion &p, float s, const Quaternion &q, Quaternion &qt)
+{
+	Quaternion p1, q2;
+	sub_1013add0(&q.x, s, &p1.x);
+	sub_1013aeb0(p, q, q2);
+	qt[0] = q2[0];
+	qt[1] = q2[1];
+	qt[2] = q2[2];
+	qt[3] = q2[3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c17e0 size=0x61
 int sub_100c1870(int hdr, int seq, int *pOut, int nBones, int *pRemap);
 int sub_100c17e0(int hdr, int seq, int *pOut, int *pRemap)

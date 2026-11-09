@@ -12324,6 +12324,7 @@
 0x1001226a func   ?sub_10041c80@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_10041c80
 0x1001226f func   ?vfunc580@CNPC_VHumanCombatPatrol@@UAEHXZ CNPC_VHumanCombatPatrol::vfunc580
 0x10012274 func   ?sub_101b1d60@@YAPADPADH@Z sub_101b1d60
+0x10012279 func   ?sub_100c1330@@YAXABVQuaternion@@M0AAV1@@Z sub_100c1330
 0x1001227e func   ?vfunc82@CNPC_VSabbatGunman@@UAEPAUdatamap_t@@XZ CNPC_VSabbatGunman::vfunc82
 0x10012288 func   ?vfunc103@CFuncPlatRot@@QAEXXZ CFuncPlatRot::vfunc103
 0x1001228d func   ?sub_10310480@@YGHPAH@Z sub_10310480
