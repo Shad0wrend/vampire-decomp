@@ -80066,6 +80066,20 @@ void CWeaponGravityGun::sub_1014c2d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014c680 size=0x61
+float sub_1014c680(float val, float lo, float hi, float scale)
+{
+	if (val < lo)
+		val = lo;
+	if (val > hi)
+		val = hi;
+	float range = hi - lo;
+	if (range == 0.0f)
+		return 0.0f;
+	return scale / range * (val - lo);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ca10 size=0x86
 #include "CUnknown1014ca10.h"
 
