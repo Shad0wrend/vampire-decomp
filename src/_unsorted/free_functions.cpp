@@ -213463,6 +213463,59 @@ int sub_1038ace0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038bec0 size=0x218
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+// TARGET: CNPC_VManBat::sub_1038bec0
+#include "CNPC_VManBat.h"
+#include "CCollisionProperty.h"
+#include "CTraceFilterSimpleTwoEnt.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+
+extern Vector g_1070d1b0;
+
+CBaseEntity *__fastcall sub_1008bf00(void *pEntity);
+
+inline void UTIL_TraceHullScoped(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, unsigned int mask, void *pFilter, CGameTrace *pTrace)
+{
+	ScopeTrace scope("UTIL_TraceHull", g_106b8540);
+	UTIL_TraceHull_DebugCall(start, end, mins, maxs, mask, pFilter, pTrace, 1, 0);
+}
+
+bool CNPC_VManBat::sub_1038bec0(const Vector &vecDir, float flDist, Vector &vecNormal)
+{
+	int collisionGroup = *(int *)((char *)this + 0x368);
+	CTraceFilterSimpleTwoEnt filter(this, sub_1008bf00(this), collisionGroup);
+
+	CCollisionProperty *pProp = (CCollisionProperty *)((char *)this + 0x270);
+	const Vector &vecMins = *(const Vector *)pProp->vfunc1();
+	Vector vecEnd = vecDir * flDist * 0.1f + *((CEntityVSlots *)this)->slot217();
+	const Vector &vecMaxs = *(const Vector *)pProp->vfunc2();
+
+	CGameTrace trace;
+	UTIL_TraceHullScoped(*((CEntityVSlots *)this)->slot217(), vecEnd, vecMins, vecMaxs, 0x202400b, &filter, &trace);
+
+	if (trace.m_fraction < 1.0f)
+	{
+		vecNormal.Init(0.0f, 0.0f, 1.0f);
+		if (m_nState != 0x22)
+			m_f6678 = gpGlobals->curtime;
+		return true;
+	}
+	vecNormal = g_1070d1b0;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038c170 size=0xa5
 #include "CNPC_VManBat.h"
 #include "CBaseEntity.h"
