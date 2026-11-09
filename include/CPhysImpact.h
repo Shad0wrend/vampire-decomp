@@ -34,7 +34,7 @@ public:
 
 	char m_pad0004[0x204 - 4];	// 0x0004 .. 0x0203
 	unsigned int m_spawnflags204;	// 0x0204: 1 no falloff, 2 infinite length, 4 scale by the target's mass (slot 12), 8 push along the impact direction (the sete bl of the Impact input)
-	char m_pad0208[0x268 - 0x208];	// 0x0208 .. 0x026B
+	char m_pad0208[0x26c - 0x208];	// 0x0208 .. 0x026B
 	const char *m_name26c;	// 0x026c: the entity name
 	CCollisionProperty m_Collision;	// 0x0270
 
