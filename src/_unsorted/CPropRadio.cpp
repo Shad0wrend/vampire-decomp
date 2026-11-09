@@ -33,6 +33,48 @@ CPropRadio *CPropRadio::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022bd60 size=0x144
+#include "utlrbtree.h"
+#include "CPropRadio.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+__declspec(dllimport) void DevWarning(const char *fmt, ...);
+long sub_101d2850(const char *pszScript, int mode);
+
+struct CPropRadio_Record
+{
+	char m_szScript[0x80];
+	char m_szSound[0x80];
+};
+
+void CPropRadio::vfunc104()
+{
+	ScopeTrace trace("CPropRadio::Precache", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_1018e0d0();
+	vfunc71();
+	CUtlVector<CPropRadio_Record> &shows = *(CUtlVector<CPropRadio_Record> *)&m_pRadioData;
+	m_nCurrentShow = -1;
+	if (sub_1022c9e0()) {
+		for (int i = 0; i < shows.Count(); i++) {
+			if (sub_101d2850(shows[i].m_szScript, 0x102)) {
+				m_nCurrentShow = i;
+				break;
+			}
+		}
+	} else {
+		DevWarning("%s could not load radio data!!!\n", sub_100ab4f0());
+	}
+	if (m_nCurrentShow != -1) {
+		enginesound->vfunc0(shows[m_nCurrentShow].m_szSound, 1);
+	} else {
+		DevWarning("%s could not find radio show to play!!!\n", sub_100ab4f0());
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022bf10 size=0x161
 #include "CEntryX.h"
 #include "CUnknown101d7520.h"
