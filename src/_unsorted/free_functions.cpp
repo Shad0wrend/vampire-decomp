@@ -158074,6 +158074,17 @@ void VMatrix::sub_1024d500(VMatrix &ret) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024d5f0 size=0x28
+#include "VMatrix.h"
+
+VMatrix VMatrix::sub_1024d5f0() const
+{
+    VMatrix ret;
+    sub_1024d500(ret);
+    return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024d630 size=0x2b
 #include "VMatrix.h"
 struct CBlock64_t { char b[64]; CBlock64_t *sub_1024cef0(const CBlock64_t *); };
