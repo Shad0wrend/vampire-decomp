@@ -78846,6 +78846,32 @@ int *sub_10147c10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147d10 size=0x2d
+#include "CUnknown10147d10.h"
+#include "string_t.h"
+
+struct CVariantView10147d10
+{
+	char pad0[8];
+	string_t iszVal;	// 0x08
+	char pad1[0xc];
+	int fieldType;		// 0x18
+	string_t StringID() const { return (fieldType == 2) ? iszVal : string_t(0); }
+};
+
+struct CUnknownView10147d10
+{
+	char pad0[0x20c];
+	string_t m_isz;
+};
+
+void CUnknown10147d10::sub_10147d10(CInputData10147d10 *data)
+{
+	string_t s; s = ((CVariantView10147d10 *)data)->StringID();
+	((CUnknownView10147d10 *)this)->m_isz = s;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147d50 size=0x1b
 #include "CUnknown10147d10.h"
 void CUnknown10147d10::sub_10147d50(CPair10147d50 *p)
