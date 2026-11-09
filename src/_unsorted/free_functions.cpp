@@ -91054,6 +91054,72 @@ void CStatMaskUnit1017b6c0::sub_1017b6c0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017b6f0 size=0x136
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#define PV_V(n) virtual void v##n();
+#define PV_V10(p) PV_V(p##0) PV_V(p##1) PV_V(p##2) PV_V(p##3) PV_V(p##4) PV_V(p##5) PV_V(p##6) PV_V(p##7) PV_V(p##8) PV_V(p##9)
+#define PV_V100(p) PV_V10(p##0) PV_V10(p##1) PV_V10(p##2) PV_V10(p##3) PV_V10(p##4) PV_V10(p##5) PV_V10(p##6) PV_V10(p##7) PV_V10(p##8) PV_V10(p##9)
+struct CPlayerVtX {
+    PV_V100(0) PV_V100(1)
+    PV_V10(20) PV_V10(21)
+    virtual float *vfunc220();
+    virtual float *vfunc221();
+};
+struct CPhysPartX {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+    virtual void vfunc9(int a);
+};
+struct CPhysEnvX {
+    PV_V10(0) PV_V10(1) PV_V10(2)
+    PV_V(30) PV_V(31) PV_V(32) PV_V(33) PV_V(34) PV_V(35) PV_V(36)
+    virtual CBasePlayerPartOwner *vfunc37(CBasePlayerPart *pPart);
+};
+extern CPhysEnvX *g_10723940;
+struct objectparamsX {
+    void *massCenterOverride;
+    float mass;
+    float inertia;
+    float damping;
+    float rotdamping;
+    float rotInertiaLimit;
+    const char *pName;
+    void *pGameData;
+    float volume;
+    float dragCoefficient;
+    float angDragCoefficient;
+    bool enableCollisions;
+};
+extern objectparamsX g_1046ecb4;
+struct CSolidX {
+    char m_pad[0x610];
+    objectparamsX params;
+};
+CPhysPartX *sub_1002e7e0(CBaseEntity *pEnt, int a, float *pOrigin, float *pAngles, const char *pszName, int bStatic, CSolidX *pSolid);
+void sub_1002edd0(CBasePlayer *pPlayer);
+
+// TARGET: CBasePlayer::sub_1017b6f0
+void CBasePlayer::sub_1017b6f0(int a, const char *pszName, int b, const char *pszName2)
+{
+    CSolidX solid;
+    solid.params = g_1046ecb4;
+    solid.params.mass = 85.0f;
+    solid.params.inertia = 1e24f;
+    solid.params.enableCollisions = false;
+    solid.params.dragCoefficient = 0;
+    ((CPhysPartX *)(m_pPart2104 = (CBasePlayerPart *)sub_1002e7e0((CBaseEntity *)this, a, ((CPlayerVtX *)this)->vfunc220(), ((CPlayerVtX *)this)->vfunc221(), pszName, 0, &solid)))->vfunc9(0x10);
+    ((CPhysPartX *)(m_pPart2108 = (CBasePlayerPart *)sub_1002e7e0((CBaseEntity *)this, b, ((CPlayerVtX *)this)->vfunc220(), ((CPlayerVtX *)this)->vfunc221(), pszName2, 0, &solid)))->vfunc9(0x10);
+    ((CBaseEntity *)this)->sub_100a6490((int)m_pPart2104);
+    sub_1002edd0(this);
+    m_pPartOwner = g_10723940->vfunc37(m_pPart2104);
+    if (((CBaseEntity *)this)->sub_100b3700() & 2)
+        sub_1017bf10(1);
+    else
+        sub_1017bf10(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017bf10 size=0x10d
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
