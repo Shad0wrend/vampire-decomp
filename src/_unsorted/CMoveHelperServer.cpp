@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1013ed40 size=0x44
+#include "CMoveHelperServer.h"
+
+extern CMoveHelperServer *g_1071a278;
+
+CMoveHelperServer::CMoveHelperServer()
+{
+	m_pHost = 0;
+	g_1071a278 = this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013edb0 size=0x1e
 #include "CMoveHelperServer.h"
 
