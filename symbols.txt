@@ -2138,6 +2138,7 @@
 0x10003fd5 func   ?vfunc337@CNPC_VScurrying@@UAEHXZ CNPC_VScurrying::vfunc337
 0x10003fda func   ?sub_101aba00@@YAHXZ sub_101aba00
 0x10003fdf func   ?vfunc5@CPhysicsAnimlink@@QAEPAV1@I@Z CPhysicsAnimlink::vfunc5
+0x10003fe4 func   ?sub_10106580@CBaseCombatCharacter@@QAEXPBDHMMMM@Z CBaseCombatCharacter::sub_10106580
 0x10003fe9 func   ?sub_1012f030@@YAPAXPBD@Z sub_1012f030
 0x10003fee func   ?sub_1011ffe0@CGameMovement@@QAEXXZ CGameMovement::sub_1011ffe0
 0x10003ff3 func   ?sub_1025c670@@YA_NPAG0@Z sub_1025c670

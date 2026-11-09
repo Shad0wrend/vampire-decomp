@@ -62785,6 +62785,43 @@ void __fastcall sub_10106490(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106580 size=0x1d9
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+inline int ENTINDEX_E(int pEdict) { return engine->vfunc35(pEdict); }
+
+struct CExprDist1460
+{
+	int sub_101f1d80(int a, int b);
+};
+
+void CBaseCombatCharacter::sub_10106580(const char *pszName, int d, float a, float e, float b, float flStrength)
+{
+	ScopeTrace trace("CBaseCombatCharacter::SetExpression", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	sub_101063a0();
+	float flIntensity;
+	if (flStrength < 0.0 && m_hDialogPartnerFE8.Get()) {
+		int edict = m_hDialogPartnerFE8->m_pEdict2e0;
+		int i1 = ENTINDEX_E(m_pEdict2e0);
+		int i2 = ENTINDEX_E(edict);
+		float flDist = (float)((CExprDist1460 *)((char *)this + 0x1460))->sub_101f1d80(i1, i2);
+		flIntensity = (flDist < 0.0f ? 0.0f : (flDist > 100.0f ? 100.0f : flDist)) * 0.01f;
+	} else {
+		flIntensity = (flStrength > 1.0 || flStrength < 0.1) ? 0.5f : flStrength;
+	}
+	sub_101067e0(pszName, a, b, flIntensity, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106a40 size=0xbf
 #include "CBaseAnimating.h"
 #include "CExpressionTable.h"
