@@ -176235,6 +176235,52 @@ void CUnknown102e12c0::sub_102c6d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c7100 size=0x73
+#include "CAI_StandoffBehavior.h"
+
+struct SBaseA { void sub_1000a547(int a); };
+struct SBaseB { void sub_10004278(); };
+extern int vt_1049af6c[];
+extern int vt_1049aedc[];
+extern CStandoffParams g_10601858;
+
+struct CSimpleSimTimer102c7100 {
+	float m_next;
+	void Init() { m_next = -1.0f; }
+};
+struct CSimTimer102c7100 : CSimpleSimTimer102c7100 {
+	float m_interval;
+	void Init(float interval = 0.0f) { m_interval = interval; CSimpleSimTimer102c7100::Init(); }
+	void Set(float interval) { m_interval = interval; m_next = -1.0f; }
+};
+struct CRandSimTimer102c7100 : CSimpleSimTimer102c7100 {
+	float m_minInterval;
+	float m_maxInterval;
+	void Init() { m_minInterval = 0.0f; m_maxInterval = 0.0f; CSimpleSimTimer102c7100::Init(); }
+};
+
+CAI_StandoffBehavior *CAI_StandoffBehavior::sub_102c7100()
+{
+	((SBaseA *)this)->sub_1000a547(0);
+	*(int *)((char *)this + 0x14) = 0;
+	*(int **)this = vt_1049af6c;
+	((SBaseB *)((char *)this + 0x18))->sub_10004278();
+	((CRandSimTimer102c7100 *)&m_flTime3c)->Init();
+	((CRandSimTimer102c7100 *)&m_fl58)->Init();
+	((CSimTimer102c7100 *)&m_fl64)->Init();
+	*(int **)this = vt_1049aedc;
+	m_b19 = 0;
+	m_unk1a = 0;
+	m_unk48 = 0;
+	sub_102c73b0(&g_10601858);
+	m_nState1c = 0;
+	m_savedUnk50 = 3.402823466e+38f;
+	m_b54 = 0;
+	((CSimTimer102c7100 *)&m_fl64)->Set(3.0f);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c71a0 size=0x19
 namespace lifted {
 extern char g_1049a0f8;

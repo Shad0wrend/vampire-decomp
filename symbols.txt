@@ -9961,6 +9961,7 @@
 0x1000eb60 func   ?sub_100db320@@YAXXZ sub_100db320
 0x1000eb65 func   ?sub_102a9dc0@Obj@@QAEPAU1@HPAUVec3@@HHHHHH@Z Obj::sub_102a9dc0
 0x1000eb6a func   _env_fire env_fire
+0x1000eb6f func   ?sub_102c7100@CAI_StandoffBehavior@@QAEPAV1@XZ CAI_StandoffBehavior::sub_102c7100
 0x1000eb74 func   ?sub_101bc020@CUnknown101bc140@@QAEXXZ CUnknown101bc140::sub_101bc020
 0x1000eb79 func   ??0CTriggerPlayerActivityLevel@@QAE@XZ CTriggerPlayerActivityLevel::CTriggerPlayerActivityLevel
 0x1000eb7e func   _env_beam env_beam
