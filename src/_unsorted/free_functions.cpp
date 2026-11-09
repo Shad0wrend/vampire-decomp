@@ -140291,6 +140291,32 @@ const char *sub_10203780(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102037f0 size=0xb8
+#include "string_t.h"
+#include "CBCCSlotViews.h"
+
+string_t sub_10203ed0(const char *psz);
+
+char sub_102037f0(CFileParserSlotView *pParser, const char *pszName, int a3, const char *pszErr, string_t *pOut5, string_t **pOut6, int *pCount)
+{
+	void *pList = 0;
+	char *pKey;
+	if (pParser->vfunc15(pszName, a3, pszErr, (void **)&pKey, &pList, pCount) == 1) {
+		if (*pKey)
+			*pOut5 = sub_10203ed0(pKey);
+		else
+			*pOut5 = sub_10203ed0(pszName);
+		*pOut6 = new string_t[*pCount];
+		for (int i = 0; i < *pCount; i++) {
+			(*pOut6)[i] = sub_10203ed0(((char **)pList)[i]);
+		}
+		pParser->vfunc18(pList);
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102038e0 size=0x2c
 struct IObj102038e0 {
     virtual void vfunc0();
