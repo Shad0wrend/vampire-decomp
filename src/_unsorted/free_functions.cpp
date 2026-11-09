@@ -77601,6 +77601,53 @@ int CBaseMoveBehavior::sub_101402f0(int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140330 size=0xec
+#include "CPathKeyFrame.h"
+#include "Vector.h"
+extern char g_10538764[];
+extern char g_1057a890[];
+extern "C" void *__RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+extern "C" __declspec(dllimport) void Warning(const char *pMsg, ...);
+void *sub_10136580(const char *pszClassname);
+
+struct CKeyFrameName { const char *pszValue; };
+
+#define KV1(n) virtual void s##n();
+#define KV10(p) KV1(p##0) KV1(p##1) KV1(p##2) KV1(p##3) KV1(p##4) KV1(p##5) KV1(p##6) KV1(p##7) KV1(p##8) KV1(p##9)
+struct CKeyFrameView {
+	KV1(0) KV1(1) KV1(2) KV1(3) KV1(4) KV1(5) KV1(6) KV1(7) KV1(8) KV1(9)
+	KV10(1) KV10(2) KV10(3) KV10(4) KV10(5) KV10(6) KV10(7)
+	KV1(80) KV1(81) KV1(82)
+	virtual int GetName();
+	virtual void SetName(int name);
+
+	char m_pad0004[0x124 - 4];
+	CKeyFrameName m_iszParent;
+	void sub_100a04e0(CKeyFrameName pszParentName, void *pActivator);
+};
+
+// TARGET: CPathKeyFrame::sub_10140330
+CPathKeyFrame *CPathKeyFrame::sub_10140330(Vector vecOrigin, Vector vecAngles)
+{
+	CPathKeyFrame *pNew = (CPathKeyFrame *)__RTDynamicCast(sub_10136580("keyframe_track"), 0, g_10538764, g_1057a890, 0);
+	if (!pNew)
+		Warning("classname %s used to create wrong class type\n");
+	pNew->sub_10140270(vecAngles);
+	pNew->m_vOrigin = vecOrigin;
+	pNew->m_flSpeed = m_flSpeed;
+	((CKeyFrameView *)pNew)->SetName(((CKeyFrameView *)this)->GetName());
+	if (((CKeyFrameView *)this)->m_iszParent.pszValue != 0)
+		((CKeyFrameView *)pNew)->sub_100a04e0(((CKeyFrameView *)this)->m_iszParent, 0);
+	pNew->m_pNext = m_pNext;
+	m_pNext->m_pPrev = pNew;
+	m_pNext = pNew;
+	pNew->m_pPrev = this;
+	sub_10140070();
+	pNew->sub_10140070();
+	return pNew;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140460 size=0x4b
 #include "CBaseMoveBehavior.h"
 

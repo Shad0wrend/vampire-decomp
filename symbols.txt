@@ -10412,6 +10412,7 @@
 0x1000f72c func   ?sub_102d40e0@CUnknown102d40e0@@QAENXZ CUnknown102d40e0::sub_102d40e0
 0x1000f736 func   ?sub_10186f00@CPlayerMove@@QAEXPAVCBasePlayer@@@Z CPlayerMove::sub_10186f00
 0x1000f73b func   ?sub_10214200@CPropHaunted@@QAEXPBD@Z CPropHaunted::sub_10214200
+0x1000f740 func   ?sub_10140330@CPathKeyFrame@@QAEPAV1@VVector@@0@Z CPathKeyFrame::sub_10140330
 0x1000f745 func   ?sub_10205ca0@CVTraitDependencyValue_t@@QAEPAV1@H@Z CVTraitDependencyValue_t::sub_10205ca0
 0x1000f74a func   ?sub_101b52d0@CUnknown101b52d0@@QAEEH@Z CUnknown101b52d0::sub_101b52d0
 0x1000f754 func   ?vfunc42@CBaseVampireSkillEntity@@QAEXPAX@Z CBaseVampireSkillEntity::vfunc42
