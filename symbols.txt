@@ -819,6 +819,7 @@
 0x1000220c func   ?sub_103fe460@@YAHXZ sub_103fe460
 0x10002211 func   ?sub_10160dc0@CAnimRangeView@@QAEDXZ CAnimRangeView::sub_10160dc0
 0x10002216 func   ?sub_1035ddd0@CNPC_VAndreiBlood@@QAEPAVCBaseEntity@@XZ CNPC_VAndreiBlood::sub_1035ddd0
+0x1000221b func   ?vfunc104@CAI_InterestingPlaceConverstation@@UAEXXZ CAI_InterestingPlaceConverstation::vfunc104
 0x10002220 func   ?sub_102478b0@CUnknown102478b0@@QAEHXZ CUnknown102478b0::sub_102478b0
 0x10002225 func   ?sub_101a6ec0@@YAXXZ sub_101a6ec0
 0x1000222a func   _item_g_garys_tape item_g_garys_tape

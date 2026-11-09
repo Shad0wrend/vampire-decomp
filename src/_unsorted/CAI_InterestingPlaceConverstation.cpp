@@ -62,6 +62,32 @@ void CAI_InterestingPlaceConverstation::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dbcb0 size=0x7b
+#include "CAI_InterestingPlaceConverstation.h"
+
+extern const char g_106b8540[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+extern "C" unsigned int __cdecl strlen(const char *);
+__declspec(dllimport) void Warning(const char *fmt, ...);
+
+inline bool PrecacheSoundIfValid(const char *s)
+{
+	if (s && strlen(s))
+	{
+		enginesound->vfunc0(s, 0);
+		return true;
+	}
+	return false;
+}
+
+void CAI_InterestingPlaceConverstation::vfunc104()
+{
+	if (!PrecacheSoundIfValid(STRINGR(m_pszSound1)))
+		Warning("%s has an invalid sound file\n", sub_1000b5cd());
+	PrecacheSoundIfValid(STRINGR(m_pszSound2));
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dbd50 size=0x35
 #include "CAI_InterestingPlaceConverstation.h"
 
