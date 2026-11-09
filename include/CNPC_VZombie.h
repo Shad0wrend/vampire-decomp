@@ -54,6 +54,7 @@ public:
 	void sub_10272650(int a);
 	void sub_10009b06(int *pTask);	// CNPC_VAnimal::vfunc442 (stub 0x10009b06)
 	void sub_10273e80(char bForce);	// CAI_BaseNPC member (stub 0x1000ac68), called directly
+	void sub_103e0e30(struct CZombieInputData *pData);
 	void sub_103e0980(int a);	// hands the zombie the maker's value (CNPCMaker_Zombie::vfunc617), stub 0x1001128e
 	void sub_1029f300(int a);	// stub 0x10008931, called directly on the new zombie (also on the maker)
 	int vfunc142(struct CZombieDmgInfo *pInfo);	// slot 142 (OnTakeDamage-like): flags the byte at +0x66e0 when the damage exceeds the stats 0xf / 0x11 limit, the Troika version, then a schedule (0x164 for an enemy whose schedule is not 0x161, else 0x162 unless the byte at +0x6675), and a headshot emitter sound for the head-hit flag (+0x66e1)
