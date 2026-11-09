@@ -3942,6 +3942,41 @@ char CBaseEntity::sub_100ab020(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ab280 size=0x142
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+struct CTransmitInfoView { int m_n0; int m_n4; int m_n8; int m_nC; unsigned char *m_pTransmitEdict; };
+
+struct CBaseEntityTransmitView : CBaseEntity
+{
+    int edict() { return m_pEdict2e0; }
+    int entindex() { return engine->vfunc35(edict()); }
+    CBaseEntity *GetMoveParent() { return ((EHANDLE &)m_hMoveParent).Get(); }
+};
+
+void CBaseEntity::vfunc87(void *pCheckTransmitInfo)
+{
+    ScopeTrace scope("CBaseEntity::SetTransmit", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    CTransmitInfoView *pInfo = (CTransmitInfoView *)pCheckTransmitInfo;
+    CBaseEntityTransmitView *self = (CBaseEntityTransmitView *)this;
+    int index = self->entindex();
+    if (pInfo->m_pTransmitEdict[index >> 3] & (1 << (index & 7)))
+        return;
+    index = self->entindex();
+    pInfo->m_pTransmitEdict[index >> 3] |= (1 << (index & 7));
+    if (self->GetMoveParent())
+        self->GetMoveParent()->vfunc87(pCheckTransmitInfo);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ab430 size=0x3
 // TARGET: sub_100ab430
 void __stdcall sub_100ab430(int, int) {}
