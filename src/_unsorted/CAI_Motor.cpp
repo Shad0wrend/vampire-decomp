@@ -237,6 +237,20 @@ int CAI_Motor::vfunc10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e14a0 size=0x81
+#include "CAI_Motor.h"
+#include "Vector.h"
+
+int CAI_Motor::vfunc19(int a, int b, int c)
+{
+	vfunc18(a);
+	float flNewSpeed = sub_102e12c0();
+	float flInterval = m_30;
+	float flTotal = 0.5 * (FastSqrt(m_3c * m_3c + m_40 * m_40 + m_44 * m_44) + flNewSpeed) * flInterval;
+	return sub_102e1560(a, flNewSpeed, flTotal, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e19e0 size=0x1b4
 #include "CAI_Motor.h"
 #include "CAI_BaseNPC.h"
