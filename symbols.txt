@@ -6994,6 +6994,7 @@
 0x1000aa2e func   ?sub_102f8e30@CUnknown102f8e30@@QAEPAU1@PAVCAI_NetworkManager@@@Z CUnknown102f8e30::sub_102f8e30
 0x1000aa33 func   ?vfunc6@CEffectsServer@@UAEXPBMH@Z CEffectsServer::vfunc6
 0x1000aa38 func   ?vfunc451@CNPC_VVampireBoss@@QAEHXZ CNPC_VVampireBoss::vfunc451
+0x1000aa3d func   ?sub_1010f8b0@@YAPAVCGib@@PBM0@Z sub_1010f8b0
 0x1000aa42 func   ?sub_100b0ad0@@YAXXZ sub_100b0ad0
 0x1000aa47 func   ?vfunc3@CChoreoEventCallback@@UAEDMHPAUCSceneEvent@@@Z CChoreoEventCallback::vfunc3
 0x1000aa4c func   ?vfunc554@CNPC_VSheriffSwarm@@UAEHMM@Z CNPC_VSheriffSwarm::vfunc554

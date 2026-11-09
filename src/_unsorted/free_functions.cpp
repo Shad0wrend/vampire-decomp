@@ -66819,6 +66819,50 @@ void __fastcall sub_1010f710(void *pThis, int a, CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f8b0 size=0xfb
+#include "CGib.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+extern "C" int rand(void);
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+CBaseEntity *sub_10136580(const char *pszClassname);
+
+inline QAngle RandomAngle()
+{
+	Vector random;
+	random.x = (float)rand() * 0.003051851f - 50.0f;
+	random.y = (float)rand() * 0.003051851f - 50.0f;
+	random.z = (float)rand() * 0.003051851f - 50.0f;
+	return QAngle(random[0], random[1], random[2]);
+}
+
+inline void SetLocalAngularVelocity(CGib *p, const QAngle &ang)
+{
+	p->sub_100b2f50(&ang.x);
+}
+
+CGib *sub_1010f8b0(const float *pOrigin, const float *pAngles)
+{
+	CGib *pPane = (CGib *)sub_10136580("window_pane");
+	if (!pPane) {
+		Msg("NULL Ent in CreateWindowPane!\n");
+		return 0;
+	}
+	if (pPane->m_pEdict2e0) {
+		CEntityVSlots *pSlots = (CEntityVSlots *)pPane;
+		pSlots->slot62(pOrigin);
+		pSlots->slot64(pAngles);
+		pSlots->slot103();
+		pPane->m_pfnTouch = (void (CBaseEntity::*)(CBaseEntity *))&CGib::sub_10012337;
+		SetLocalAngularVelocity(pPane, RandomAngle());
+		pPane->m_nBody = enginerandom->vfunc2(0, 2);
+	}
+	return pPane;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f9f0 size=0x6b
 #include "CBreakableSurface.h"
 
