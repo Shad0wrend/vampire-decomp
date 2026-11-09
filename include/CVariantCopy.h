@@ -19,6 +19,7 @@ struct CVariantCopy
 	CVariantCopy(const CVariantCopy &other);
 	void sub_1000b320(int fieldType, void *pData);	// "variant_t::Set": stores the value of the given field type read from pData
 	void SetFloat(float val) { m_fieldType = 1; flVal = val; }
+	void SetInt(int val) { m_value = val; m_fieldType = 4; }
 	void SetBool(bool val) { m_fieldType = 5; rgba[0] = val; }
 	bool sub_100d05d0(int newType);	// "variant_t::Convert": converts the value to the field type (1 float, 2 string, 3 vector, 4 int, 5 bool, 8 color32, 12 entity); false when there is no such conversion
 	const char *sub_100d0a00() const;	// "variant_t::ToString": the value as text in a shared 0x50 byte buffer (void: "", float "%g", string, vector "[%g %g %g]", int, bool "true" / "false", color32 "%d %d %d %d", entity: its debug name or "(null entity)")

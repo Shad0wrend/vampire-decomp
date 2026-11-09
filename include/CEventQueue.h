@@ -6,6 +6,7 @@
 #include "CVariantCopy.h"
 
 class CBaseEntity;
+struct CEQExtra { int m_n; CEQExtra() { m_n = 0; } };
 
 struct CEQEvent	// a "PEvent" record as the queue restores it (0x50 bytes); the entity handles start invalid
 {
@@ -87,6 +88,7 @@ public:
 	void sub_100ce210(CEQEvent *pEvent);	// inserts a built event into the queue (stub 0x1000f074): postpones it past the previous insertion time when that is still ahead, links it in fire time order behind the queue's embedded record and remembers its fire time / the current time
 	void sub_100cddf0(const char *pszTarget, const char *pszTargetInput, CVariantCopy Value, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID, int nExtra);	// "CEventQueue::AddEvent": builds a 0x50 byte event (fire time = curtime + delay, the two names or null when empty, the entity handles of activator / caller or -1, the variant, the output id and one more dword) and inserts it (takes 12 stack dwords)
 	void sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVariantCopy Value, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID, int nExtra);	// "CEventQueue::AddEvent" for an entity target (stub 0x1000cad6; takes 12 stack dwords)
+	void sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVariantCopy Value, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID, CEQExtra nExtra);
 	void sub_100ce040(CBaseEntity *pTarget, const char *pszAction, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID);	// "CEventQueue::AddEvent" without a value: an empty variant
 	void sub_100cf420(CBaseEntity *pEntity);	// removes (and runs the removal for) the queued kind 2 events targeting the entity's handle; wraps the entity's owner character's stat 0xb value around the removals
 	void sub_100cf160(CBaseEntity *pEntity, int nStat);	// like sub_100cf420 for a stat number: removes (and runs) the queued kind 2 events whose block equals (3, nStat) and whose target handle is the entity's
