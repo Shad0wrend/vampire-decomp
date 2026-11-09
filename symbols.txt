@@ -13988,6 +13988,7 @@
 0x100141f5 func   ?vfunc372@CHL2_Player@@QAEHH@Z CHL2_Player::vfunc372
 0x100141fa func   ?vfunc9@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc9
 0x100141ff func   ?vfunc5@CAmbientGeneric@@UAEPAV1@I@Z CAmbientGeneric::vfunc5
+0x10014204 func   ?sub_103d4820@CNPC_VWerewolf@@QAEXVVector@@M@Z CNPC_VWerewolf::sub_103d4820
 0x10014209 func   ?vfunc580@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc580
 0x1001420e func   ?sub_1027ba80@@YAHXZ sub_1027ba80
 0x10014213 func   ?vfunc80@CItemGGuyMagazine@@QAEHXZ CItemGGuyMagazine::vfunc80

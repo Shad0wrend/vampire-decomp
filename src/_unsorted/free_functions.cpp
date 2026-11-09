@@ -230475,6 +230475,32 @@ void CNPC_VWerewolf::sub_103d4760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d4820 size=0x18e
+#include <math.h>
+#include "CNPC_VWerewolf.h"
+#include "Vector.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+const Vector *sub_102d6100(int hull);
+const Vector *sub_102d6120(int hull);
+void sub_10142aa0(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float flDuration);
+void sub_10144a30(const Vector &origin, const Vector &dir, float length, float flWidth, int r, int g, int b, int a, int c);
+
+void CNPC_VWerewolf::sub_103d4820(Vector vecPoint, float flDuration)
+{
+	ScopeTrace trace("CNPC_VWerewolf::DrawDebugHullAtPoint", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	Vector vOrigin = vecPoint;
+	Vector mins = *sub_102d6100(*(int *)((char *)this + 0x1568));
+	Vector maxs = *sub_102d6120(*(int *)((char *)this + 0x1568));
+	Vector vecExtent = maxs - (mins + maxs) * 0.5f;
+	sub_10142aa0(vOrigin, mins, maxs, 255, 100, 0, 100, flDuration);
+	Vector vDir(1.0f, 0.0f, 0.0f);
+	sub_10144a30(vOrigin, vDir, (float)sqrt(vecExtent.x * vecExtent.x + vecExtent.y * vecExtent.y), 5.0f, 255, 255, 0, 20, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d4a60 size=0x253
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
