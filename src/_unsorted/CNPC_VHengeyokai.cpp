@@ -332,6 +332,38 @@ int CNPC_VHengeyokai::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10380120 size=0x6f
+#include "CNPC_VHengeyokai.h"
+#include "ConVar.h"
+
+struct S_Heng : CNPC_VHengeyokai { void sub_103816e0(void *p); };
+extern ConVar g_1093b2e0;
+
+void CNPC_VHengeyokai::vfunc432(int a)
+{
+	int state;
+	void *p = sub_10380fc0(&state);
+	if (p) {
+		switch (state) {
+		case 0:
+			goto other;
+		case 1:
+			((S_Heng *)this)->sub_103816e0(p);
+			break;
+		default:
+		other:
+			sub_10381460(p);
+			break;
+		}
+	}
+	sub_10385a10(a);
+	if (g_1093b2e0.GetBool()) {
+		sub_103830e0();
+		g_1093b2e0.sub_10246160(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103801d0 size=0x9a
 #include "CNPC_VHengeyokai.h"
 extern "C" unsigned int __cdecl strlen(const char *);
