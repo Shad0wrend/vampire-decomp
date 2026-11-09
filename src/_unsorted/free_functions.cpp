@@ -168630,6 +168630,41 @@ bool CAI_BaseNPCTroikaUnit6120::sub_102b6120(Vector *pPos, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b6650 size=0x1a9
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+
+int sub_101ccc80(CBaseEntity **ppList, int nMax, const Vector &mins, const Vector &maxs, int a, int b);
+
+struct CCandidateView {
+	char m_pad0000[0x788];
+	char m_bFlag788;
+};
+
+CBaseEntity *CAI_BaseNPC::sub_102b6650()
+{
+	if (!vfunc167())
+		return 0;
+	static Vector s_vecBox(512.0f, 512.0f, 64.0f);
+	float flBest = 3.4028235e+38f;
+	CBaseEntity *pBest = 0;
+	Vector vecOrigin = *(Vector *)vfunc217();
+	CBaseEntity *apEntities[20];
+	int nCount = sub_101ccc80(apEntities, 20, vecOrigin - s_vecBox, vecOrigin + s_vecBox, 4, 0);
+	for (int i = 0; i < nCount; i++) {
+		CBaseEntity *pEnt = apEntities[i];
+		if (((CCandidateView *)pEnt)->m_bFlag788) {
+			float flDist = (vecOrigin - *(Vector *)((CAI_BaseNPC *)pEnt)->vfunc217()).Length2DSqr();
+			if (flDist < flBest && sub_102b62e0(pEnt)) {
+				flBest = flDist;
+				pBest = pEnt;
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b6890 size=0x230
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseEntity.h"
