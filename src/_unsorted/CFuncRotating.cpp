@@ -54,6 +54,90 @@ bool CFuncRotating::vfunc110(const char *szKeyName, const char *szValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bfaa0 size=0x30e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include "CFuncRotating.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "CFloatPair3f4.h"
+#include "globalvars.h"
+#include "ScopeTrace.h"
+
+void sub_100a47b0();
+
+// TARGET: CFuncRotating::vfunc103
+void CFuncRotating::vfunc103()
+{
+	Vector *pMove = (Vector *)m_vecMovedir;
+	if (m_flVolume == 0.0)
+		m_flVolume = 1.0f;
+	if (m_flags204 & 0x80)
+		m_flAttenuation = 2.0f;
+	else if (m_flags204 & 0x100)
+		m_flAttenuation = 1.25f;
+	else
+		m_flAttenuation = 0.8f;
+	if (m_flFanFriction == 0.0f)
+		m_flFanFriction = 1.0f;
+	if (m_flags204 & 4)
+		*pMove = Vector(0, 0, 1);
+	else if (m_flags204 & 8)
+		*pMove = Vector(1, 0, 0);
+	else
+		*pMove = Vector(0, 1, 0);
+	if (m_flags204 & 2)
+		*pMove = *pMove * -1.0f;
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(1);
+	}
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+	CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+	if (m_flags204 & 0x40) {
+		{
+			ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+			pCol->AddSolidFlags(4);
+		}
+		pSlots->slot93(8, 0);
+	} else {
+		{
+			ScopeTrace trace("CBaseEntity::RemoveSolidFlags", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+			pCol->RemoveSolidFlags(4);
+		}
+		pSlots->slot93(8, 0);
+	}
+	sub_100b3b00();
+	{
+		int buf;
+		const char *pszName = *pSlots->slot9(&buf);
+		if (!pszName)
+			pszName = g_106b8540;
+		pSlots->slot105(pszName);
+	}
+	m_f460 = fabs(m_f460);
+	m_pfnUse = (void (CBaseEntity::*)(CBaseEntity *, CBaseEntity *, int, float))&CFloatPair3f4::sub_100c0ad0;
+	if (m_f460 == 0.0f)
+		m_f460 = 100.0f;
+	if (m_flags204 & 1) {
+		sub_100ac4e0((int)sub_100a47b0, 0, 0);
+		m_flNextThink = gpGlobals->curtime + 1.5;
+	}
+	if (m_flags204 & 0x20)
+		m_pfnTouch = (void (CBaseEntity::*)(CBaseEntity *))&CFuncRotating::sub_100c0010;
+	m_flSpeed164 = 0;
+	vfunc104();
+	pSlots->slot223();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bfe80 size=0x92
 #include "CFuncRotating.h"
 
