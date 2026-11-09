@@ -140032,6 +140032,33 @@ void CPropSign::sub_10211af0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10211d70 size=0x2d
+#include "CUnknown10147d10.h"
+#include "CUnknown10211d70.h"
+#include "string_t.h"
+
+struct CVariantView10211d70
+{
+	char pad0[8];
+	string_t iszVal;	// 0x08
+	char pad1[0xc];
+	int fieldType;		// 0x18
+	string_t StringID() const { return (fieldType == 2) ? iszVal : string_t(0); }
+};
+
+struct CUnknownView10211d70
+{
+	char pad0[0x730];
+	string_t m_isz;
+};
+
+void CUnknown10211d70::sub_10211d70(CInputData10147d10 *data)
+{
+	string_t s; s = ((CVariantView10211d70 *)data)->StringID();
+	((CUnknownView10211d70 *)this)->m_isz = s;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102120c0 size=0xf7
 #include "CPropSign.h"
 #include "CSingleUserRecipientFilter.h"
