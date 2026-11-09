@@ -84804,6 +84804,141 @@ void CBasePlayer::sub_101728b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10173f90 size=0x37f
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBasePlayer.h"
+#include "CBaseCombatWeapon.h"
+#include "CBaseMoneyObject.h"
+#include "CGameRules.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CUnknown10203240.h"
+#include "ScopeTrace.h"
+
+#define PS(n) virtual void p##n();
+#define PS10(a) PS(a##0) PS(a##1) PS(a##2) PS(a##3) PS(a##4) PS(a##5) PS(a##6) PS(a##7) PS(a##8) PS(a##9)
+#define PS100(a) PS10(a##0) PS10(a##1) PS10(a##2) PS10(a##3) PS10(a##4) PS10(a##5) PS10(a##6) PS10(a##7) PS10(a##8) PS10(a##9)
+struct CPlayerSlots
+{
+	PS10(0) PS10(1) PS10(2) PS10(3) PS10(4) PS10(5) PS10(6) PS10(7) PS10(8) PS10(9)
+	PS100(1) PS100(2)
+	PS(300) PS(301)
+	virtual char s302(CBaseCombatWeapon *pWeapon, int b);
+	virtual char s303(CBaseCombatWeapon *pWeapon);
+};
+struct CPlayerSlots2
+{
+	PS10(0) PS10(1) PS10(2) PS10(3) PS10(4) PS10(5) PS10(6) PS10(7) PS10(8) PS10(9)
+	PS100(1) PS100(2)
+	PS10(30) PS10(31) PS10(32) PS10(33) PS10(34) PS10(35) PS10(36) PS10(37)
+	PS(380) PS(381)
+	virtual char s382(CBaseCombatWeapon *pWeapon);
+	PS(383)
+	virtual void s384(CBaseCombatWeapon *pWeapon);
+};
+struct CPickupCharView
+{
+	CBaseCombatWeapon *sub_1032d890(const char *pszName, int a);
+	void sub_1032d380(CBaseCombatWeapon *pWeapon, int b);
+};
+
+struct CNameObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual CNameObj *v3(); virtual void v4(); virtual const char *v5(); };
+struct CHolderView { char pad[0x40]; CNameObj *m_pName; };
+struct CFlagsUnit
+{
+	char pad[0x44];
+	unsigned short m_usSolidFlags;	// +0x2b4 of the weapon
+	void sub_100dc580(unsigned int flags);
+	void AddSolidFlags(int flags) { sub_100dc580(m_usSolidFlags | flags); }
+};
+struct CWeaponSolidView
+{
+	char pad[0x26c];
+	const char *m_pszName;
+	CFlagsUnit m_Collision;
+	void AddSolidFlags(int flags)
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_pszName ? m_pszName : g_106b8540);
+		m_Collision.AddSolidFlags(flags);
+	}
+};
+extern int g_107255e4;
+extern CGameRules *g_1070ba0c;
+extern CUnknown10203240 g_1074e968;
+extern char g_1055f710[];
+extern char g_1058789c[];
+void sub_1012c900(CBaseCombatWeapon *p);
+void sub_101cd940(CBaseCombatWeapon *p);
+void sub_101cecf0(CBasePlayer *p, int n, char *buf);
+__declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+
+// TARGET: CBasePlayer::sub_10173f90
+char CBasePlayer::sub_10173f90(CBaseCombatWeapon *pWeapon, int a, int b, int c)
+{
+	if (pWeapon->sub_102521f0() == 0 && ((CPlayerSlots2 *)this)->s382(pWeapon) && g_1070ba0c->vfunc47((CBaseEntity *)this, (CBaseEntity *)pWeapon)) {
+		CBaseMoneyObject *pMoney = (CBaseMoneyObject *)__RTDynamicCast(pWeapon, 0, g_1055f710, g_1058789c, 0);
+		if (pMoney) {
+			sub_10340e50(pMoney->sub_103f5800());
+			sub_101cd940((CBaseCombatWeapon *)pMoney);
+			return 0;
+		}
+		CHolderView *pHolder = (CHolderView *)pWeapon->m_pHolder;
+		const char *pszName;
+		if (!pHolder->m_pName)
+			pszName = g_106b8540;
+		else
+			pszName = pHolder->m_pName->v3()->v5();
+		CBaseCombatWeapon *pExisting = ((CPickupCharView *)this)->sub_1032d890(pszName, pWeapon->vfunc296());
+		if (pExisting && ((CPlayerSlots *)this)->s303(pWeapon)) {
+			if (pWeapon->vfunc371()) {
+				int n = *(int *)((char *)pExisting + 0x8d0);
+				if (n >= *(int *)((char *)pExisting->sub_102517b0() + 0x4fea8))
+					return 0;
+				*(int *)((char *)pExisting + 0x8d0) = n + 1;
+				sub_1012c900(pWeapon);
+				sub_101cd940(pWeapon);
+				return 0;
+			}
+			((CPlayerSlots2 *)this)->s384(pWeapon);
+			for (int i = 0; i < 2; i++) {
+				if (pWeapon->vfunc277(i) && pWeapon->vfunc280(i))
+					return 0;
+			}
+			sub_1012c900(pWeapon);
+			sub_101cd940(pWeapon);
+			return 0;
+		}
+		if (!sub_10334c20(pWeapon))
+			return 0;
+		if (!((CPlayerSlots *)this)->s302(pWeapon, b))
+			return 0;
+		pWeapon->sub_102500d0();
+		((CWeaponSolidView *)pWeapon)->AddSolidFlags(4);
+		pWeapon->vfunc66();
+		((CPickupCharView *)this)->sub_1032d380(pWeapon, a);
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		if (!(char)a || (char)c) {
+			pWeapon->vfunc333(0x16, 1, 0, 0, 0, 0);
+			char buf[0x3f];
+			Q_snprintf(buf, 0x3f, g_1074e968.sub_10203240("UIHudFeedbackStrs")->sub_10202a10(3), (char *)pWeapon->sub_102517b0() + 0x88);
+			sub_101cecf0(this, 0x1d, buf);
+		}
+		return 1;
+	}
+	if (g_107255e4)
+		sub_101cd940(pWeapon);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174550 size=0x12
 struct CFlagSet10174550 {
     char pad0[0x1f14];

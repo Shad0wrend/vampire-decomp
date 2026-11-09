@@ -4674,6 +4674,7 @@
 0x1000788d func   ?sub_1018a730@@YAHXZ sub_1018a730
 0x10007892 func   ?vfunc328@CWeaponIThrown@@QAEHXZ CWeaponIThrown::vfunc328
 0x10007897 func   ?sub_103c49d0@@YADXZ sub_103c49d0
+0x1000789c func   ?sub_10173f90@CBasePlayer@@QAEDPAVCBaseCombatWeapon@@HHH@Z CBasePlayer::sub_10173f90
 0x100078a1 func   ?sub_1027bc30@@YAHXZ sub_1027bc30
 0x100078a6 func   _vgui_screen vgui_screen
 0x100078ab func   ?sub_10100860@CEnvBeam@@QAEXPBM@Z CEnvBeam::sub_10100860
