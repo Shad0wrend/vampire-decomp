@@ -12541,6 +12541,7 @@
 0x100127ce func   ?vfunc26@CSingleplayRules@@UAE_NHHHH@Z CSingleplayRules::vfunc26
 0x100127d3 func   ?vfunc33@CPropHacking@@UAEHXZ CPropHacking::vfunc33
 0x100127d8 func   ?sub_102507b0@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_102507b0
+0x100127dd func   ?sub_102000e0@CVStatInfoList_t@@QAEHPBDH@Z CVStatInfoList_t::sub_102000e0
 0x100127e2 func   ?vfunc35@CPushable@@UAEHH@Z CPushable::vfunc35
 0x100127e7 func   ?vfunc434@CNPC_VMingXiaoTentacle@@UAEXXZ CNPC_VMingXiaoTentacle::vfunc434
 0x100127ec func   ?sub_100eef10@CUnknown100eef10@@QAE_NXZ CUnknown100eef10::sub_100eef10
