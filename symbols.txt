@@ -9296,6 +9296,7 @@
 0x1000dff3 func   ?sub_10184f70@@YIXPAH@Z sub_10184f70
 0x1000dff8 func   ?sub_10155880@CRagdollProp@@QAEXXZ CRagdollProp::sub_10155880
 0x1000dffd func   ?sub_10041c60@@YAHH@Z sub_10041c60
+0x1000e002 func   ?sub_100ab020@CBaseEntity@@QAEDHHHHH@Z CBaseEntity::sub_100ab020
 0x1000e007 func   ?sub_10178660@CBasePlayer@@QAEXPAVCBaseEntity@@D@Z CBasePlayer::sub_10178660
 0x1000e00c func   ?sub_103abce0@@YAEXZ sub_103abce0
 0x1000e011 func   ?vfunc243@CSceneEntity@@UAEXXZ CSceneEntity::vfunc243

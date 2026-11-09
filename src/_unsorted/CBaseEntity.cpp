@@ -3838,6 +3838,52 @@ void CBaseEntity::vfunc93(int moveType, int moveCollide)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ab020 size=0x1b9
+#include "CBaseEntity.h"
+#include "CUnknown101ab800.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+#include "TestBit.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern char g_105387dc[];
+CBaseEntity *sub_100ab250(int pEdict);
+
+struct CNetPropView : CUnknown101ab800
+{
+	virtual void vfunc4();
+	virtual void vfunc5();
+	virtual void vfunc6();
+	virtual int vfunc7();
+};
+
+char CBaseEntity::sub_100ab020(int a, int b, int c, int d, int e)
+{
+	ScopeTrace trace("CBaseEntity::ShouldTransmit", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	if (!(m_flForceTransmitTime > gpGlobals->curtime))
+	{
+		if (m_nEffectFlags & 0x40)
+			return false;
+		int unused;
+		if (!(m_flags268 & 0x80)) {
+			if (!vfunc8() || !*vfunc9(&unused))
+				return false;
+		}
+		if (vfunc8() == 1)
+			return true;
+		CBaseEntity *pViewer;
+		{
+			ScopeTrace traceInstance("CBaseEntity::Instance", g_106b8540);
+			pViewer = sub_100ab250(b);
+		}
+		if (!(*(int *)((char *)pViewer + 0xa8) && ((CNetPropView *)((char *)this + 0x2d4))->vfunc7() == *(int *)((char *)pViewer + 0x1f98)) && !TestBit(m_flags268, 17))
+			return ((CNetPropView *)((char *)this + 0x2d4))->sub_101ab8f0(b, (const unsigned char *)c, d, e);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ab430 size=0x3
 // TARGET: sub_100ab430
 void __stdcall sub_100ab430(int, int) {}
