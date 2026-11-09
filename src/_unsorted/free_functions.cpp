@@ -75451,6 +75451,35 @@ float __cdecl sub_101374f0(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137600 size=0x8b
+// TARGET: sub_10137600
+#include "Vector.h"
+
+void __fastcall sub_10137600(Vector &vec)
+{
+    float half = 0.5f;
+    float three = 3.0f;
+    float oolength;
+    float len2 = vec.x * vec.x + vec.y * vec.y + vec.z * vec.z + 1.1920929e-7f;
+    __asm
+    {
+        movss xmm3, len2
+        movss xmm1, half
+        movss xmm2, three
+        rsqrtss xmm0, xmm3
+        mulss xmm3, xmm0
+        mulss xmm1, xmm0
+        mulss xmm3, xmm0
+        subss xmm2, xmm3
+        mulss xmm1, xmm2
+        movss oolength, xmm1
+    }
+    vec.x *= oolength;
+    vec.y *= oolength;
+    vec.z *= oolength;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101376c0 size=0x42
 // TARGET: sub_101376c0
 float __cdecl sub_101376c0(float *p)

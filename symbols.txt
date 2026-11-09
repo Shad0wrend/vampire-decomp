@@ -12125,6 +12125,7 @@
 0x10011b3a func   _player_loadsaved player_loadsaved
 0x10011b3f func   ?vfunc0@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc0
 0x10011b44 func   ?vfunc252@CBaseAnimating@@QAEHHHH@Z CBaseAnimating::vfunc252
+0x10011b49 func   ?sub_10137600@@YIXAAVVector@@@Z sub_10137600
 0x10011b4e func   ?sub_102d6230@@YAHH@Z sub_102d6230
 0x10011b53 func   ?sub_1030cb00@@YGHPBD@Z sub_1030cb00
 0x10011b58 func   ?vfunc558@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc558
