@@ -114451,6 +114451,31 @@ float sub_101d08e0(const Vector &position, float minz, float maxz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0a00 size=0x113
+#include "CPASFilter.h"
+#include "CTempEntsSystem.h"
+
+float sub_101d08e0(const Vector &vecStart, float flZ, float flZEnd);
+extern short g_1088ae84;
+
+#define SV1(p) virtual void p();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+struct CTempEntsView
+{
+    SV10(a0) SV1(a10) SV1(a11) SV1(a12) SV1(a13) SV1(a14) SV1(a15) SV1(a16)
+    virtual void vfunc17(CRecipientFilter *pFilter, int a, const Vector *pStart, const Vector *pEnd, float flHeight, int nModelIndex, int nParam, float flScale);
+};
+extern CTempEntsView *g_10540528;
+
+void sub_101d0a00(const Vector *pStart, const Vector *pEnd, int nParam)
+{
+    Vector vecCenter = (*pStart + *pEnd) * 0.5f;
+    float flHeight = sub_101d08e0(vecCenter, vecCenter.z, vecCenter.z + 1024.0f) - pStart->z;
+    CPASFilter filter(vecCenter);
+    g_10540528->vfunc17(&filter, 0, pStart, pEnd, flHeight, g_1088ae84, nParam, 8.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0b70 size=0x11a
 #include "CBroadcastRecipientFilter.h"
 struct CEnt { char pad[8]; float z; };
