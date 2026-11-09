@@ -7882,6 +7882,7 @@
 0x1000c0fe func   ?vfunc252@CSceneEntity@@UAEXHPAVCBaseFlex@@PAUCSceneEvent@@@Z CSceneEntity::vfunc252
 0x1000c103 func   ?vfunc5@CNPC_VMingXiaoTentacle@@QAEPAV1@I@Z CNPC_VMingXiaoTentacle::vfunc5
 0x1000c108 func   ?vfunc365@CNPCMaker@@UAE_NH@Z CNPCMaker::vfunc365
+0x1000c10d func   ?sub_102a11d0@CAI_BaseNPCTroika@@QAE_NABVVector@@@Z CAI_BaseNPCTroika::sub_102a11d0
 0x1000c117 func   ?vfunc432@CNPC_VYukie@@QAEXM@Z CNPC_VYukie::vfunc432
 0x1000c121 func   ?sub_102d8b50@CAI_MotorTimerView@@QAE_NXZ CAI_MotorTimerView::sub_102d8b50
 0x1000c126 func   _info_node_cover_low info_node_cover_low

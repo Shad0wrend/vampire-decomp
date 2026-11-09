@@ -164673,6 +164673,31 @@ int CAI_BaseNPCTroika::sub_102a0ed0(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a11d0 size=0x182
+#include "CCollisionProperty.h"
+#include "CGameTrace.h"
+#include "UTIL_Trace.h"
+#include "CAI_BaseNPCTroika.h"
+
+bool CAI_BaseNPCTroika::sub_102a11d0(const Vector &vecEnd)
+{
+	CCollisionProperty *pColl = (CCollisionProperty *)((char *)this + 0x270);
+	Vector mins = *(Vector *)pColl->vfunc1();
+	Vector maxs = *(Vector *)pColl->vfunc2();
+	mins.x = mins.x * 2;
+	mins.y = mins.y * 2;
+	mins.z = -6.0f;
+	maxs.x = maxs.x * 2;
+	maxs.y = maxs.y * 2;
+	maxs.z = 6.0f;
+	CGameTrace tr;
+	UTIL_TraceHull(vfunc192(), vecEnd, mins, maxs, 0x2000000, this, 0, &tr, 1, 0);
+	if ((tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid) && tr.m_pEnt && *(int *)((char *)tr.m_pEnt + 0x94) && vfunc404(tr.m_pEnt) != 1)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a13d0 size=0x3f
 struct T { char pad[0x5dc]; int kind; };
 struct N { char pad[0x5ddc]; T *t; char pad2[0x63fd - 0x5de0]; char flag; };
