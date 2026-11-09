@@ -189176,6 +189176,74 @@ void sub_10307e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10307ef0 size=0x1d4
+#include "CAI_PlaneSolver.h"
+#include "CVProfile.h"
+#include "CAI_MoveProbe.h"
+#include "CAI_BaseNPCTroika.h"
+
+struct CAI_MoveProbeLimitView
+{
+	bool sub_102e6d70(int navType, const float *vecStart, const float *vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, float pctToCheckStandPositions, int flags, AIMoveTrace_t *pTrace, int a9, int a10);
+};
+
+// TARGET: CAI_PlaneSolver::sub_10307ef0
+char CAI_PlaneSolver::sub_10307ef0(void *pNavType, Vector *pEnd, bool bCheckStep, int mask, CAI_PlaneSolverTrace *pResult)
+{
+	CVProfile *prof = g_109f3648;
+	if (prof->m_enabled || !prof->m_bAtRoot) {
+		if (prof->m_pCurNode->m_pszName != "CAI_PlaneSolver_MoveLimit")
+			prof->m_pCurNode = prof->m_pCurNode->GetSubNode("CAI_PlaneSolver_MoveLimit", 0, "Unaccounted");
+		CVProfNode *node = prof->m_pCurNode;
+		node->m_nCurFrameCalls++;
+		if (node->m_nRecursions++ == 0) {
+			unsigned long *p = (unsigned long *)&node->m_CurFrameTime;
+			__asm {
+				mov ecx, p
+				rdtsc
+				mov [ecx], eax
+				mov [ecx + 4], edx
+			}
+			g_109f3648->PushGroup(node->m_nBudgetGroupID);
+		}
+		prof->m_bAtRoot = false;
+	}
+
+	int nNavType = (int)pNavType;
+	CAI_MoveProbeLimitView *pProbe = (CAI_MoveProbeLimitView *)((CAI_BaseNPCTroika *)m_owner)->m_pMoveProbe5d40;
+	const float *pOrigin = (const float *)((CAI_BaseNPCTroika *)m_owner)->vfunc220();
+	char bResult = pProbe->sub_102e6d70(nNavType, pOrigin, (const float *)pEnd, mask, (const CBaseEntity *)((CAI_BaseNPCTroika *)m_owner)->sub_102729d0(), bCheckStep ? 100 : 0, nNavType == 0, (AIMoveTrace_t *)pResult, 0, 0);
+
+	prof = g_109f3648;
+	if (!prof->m_bAtRoot || prof->m_enabled) {
+		CVProfNode *node = prof->m_pCurNode;
+		if (--node->m_nRecursions == 0 && node->m_nCurFrameCalls != 0) {
+			CUnknownCycle100335e0 now;
+			now.m_Int64 = 0;
+			unsigned long *p = (unsigned long *)&now;
+			__asm {
+				mov ecx, p
+				rdtsc
+				mov [ecx], eax
+				mov [ecx + 4], edx
+			}
+			CUnknownCycle100335e0 *pc = &node->m_CurFrameTime;
+			pc->m_Int64 = now.m_Int64 - pc->m_Int64;
+			node->m_TotalTime += pc->m_Int64;
+			CVProfile *g = g_109f3648;
+			--g->m_nGroupStackDepth;
+			int nOld = g->m_GroupIDStack[g->m_nGroupStackDepth + 1];
+			if (g->m_GroupIDStack[g->m_nGroupStackDepth] != nOld && g->m_bVTuneGroupsEnabled && nOld == g->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (node->m_nRecursions == 0)
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+	}
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10308150 size=0x21
 namespace lifted {
 struct C10003ddc { int sub_10003ddc(int, int, int, int, int); };
