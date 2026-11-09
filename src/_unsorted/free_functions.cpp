@@ -185443,6 +185443,24 @@ bool CUnknown1030a6e0::sub_10308190(const Vector *pGoal)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103084c0 size=0x60
+struct CUnknown103084c0
+{
+	float sub_103082b0(int a, float b);
+	float sub_103084c0(int *p, float x);
+};
+
+float CUnknown103084c0::sub_103084c0(int *p, float x)
+{
+	if (x > 0.9)
+		return 1.0f;
+	if (x < 0.1)
+		return 0.0f;
+	float t = (x - 0.1) * 1.25;
+	return sub_103082b0(p[7], t * t);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103090d0 size=0x36
 // TARGET: sub_103090d0
 float sub_103090d0(float x)
