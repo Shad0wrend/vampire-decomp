@@ -61299,6 +61299,79 @@ void CEnvBeam::sub_10100860(const float *pPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10100b60 size=0x21f
+#include "CEnvBeam.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern CGlobalEntityList g_106eb5d8;
+char sub_100ba1b0(CBaseEntity *pEnt);
+
+// TARGET: CEnvBeam::sub_10100b60
+void CEnvBeam::sub_10100b60()
+{
+	CBaseEntity *pStart = g_106eb5d8.sub_100f7770(0, STRINGR_F(m_iszStartEntity), 0, 0);
+	CBaseEntity *pEnd = g_106eb5d8.sub_100f7770(0, (const char *)m_iszEndEntity ? (const char *)m_iszEndEntity : g_106b8540, 0, 0);
+	if (!pStart || !pEnd)
+		return;
+
+	int pointStart = sub_100ba1b0(pStart) & 0xff;
+	int pointEnd = sub_100ba1b0(pEnd) & 0xff;
+	int beamType = 2;
+
+	m_nNumBeamEnts = 2;
+	((CEntityVSlots *)this)->slot212((int)m_iszSpriteName);
+	vfunc10(*(int *)((char *)this + 0x514));
+
+	if (pointStart || pointEnd) {
+		if (!pointStart) {
+			CBaseEntity *pTemp = pStart;
+			pStart = pEnd;
+			pEnd = pTemp;
+			int swap = pointStart;
+			pointStart = pointEnd;
+			pointEnd = swap;
+		}
+		if (!pointEnd)
+			beamType = 1;
+		else
+			beamType = 0;
+	}
+
+	m_nBeamType = (m_nBeamType & 0xff0) | (beamType & 0xf);
+
+	if (beamType == 0 || beamType == 1 || beamType == 3) {
+		const float *pOrigin = (const float *)((CEntityVSlots *)pStart)->slot217();
+		vfunc62(pOrigin);
+		if (beamType == 0 || beamType == 3) {
+			*(Vector *)m_vecEndPos = *((CEntityVSlots *)pEnd)->slot217();
+		} else {
+			sub_100bb030(pEnd);
+		}
+	} else {
+		sub_100bafc0(pStart);
+		sub_100bb030(pEnd);
+	}
+
+	sub_100bbbf0();
+
+	m_fWidth = (25.5f < (float)m_nBoltWidth) ? 25.5f : (float)m_nBoltWidth;
+
+	m_flNoiseAmplitude = (float)((m_noiseAmplitude > 0x40) ? 0x40 : m_noiseAmplitude);
+
+	m_fStartFrame = (float)m_frameStart;
+
+	m_flTextureScroll = (int)(((float)m_speed < 100.0f) ? (float)m_speed : 100.0f);
+
+	if (m_flags204 & 0x80)
+		m_nBeamType = (m_nBeamType & 0xf) | 0x40;
+	else if (m_flags204 & 0x100)
+		m_nBeamType = (m_nBeamType & 0xf) | 0x80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10100e10 size=0x5c
 #include "CEnvFade.h"
 

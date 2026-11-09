@@ -2816,6 +2816,7 @@
 0x10004e94 func   ?vfunc2@CTEExplosion@@UAEPAV1@I@Z CTEExplosion::vfunc2
 0x10004e99 func   ?sub_10428e60@@YAIPAD@Z sub_10428e60
 0x10004e9e func   ?sub_1022d260@CUnknown1022d260@@QAEXH@Z CUnknown1022d260::sub_1022d260
+0x10004ea3 func   ?sub_10100b60@CEnvBeam@@QAEXXZ CEnvBeam::sub_10100b60
 0x10004ea8 func   ?sub_100f3dd0@CRotDoor@@QAEXPBM@Z CRotDoor::sub_100f3dd0
 0x10004ead func   ?sub_1023bd20@@YAXXZ sub_1023bd20
 0x10004eb7 func   ?vfunc117@CFuncAreaPortalBase@@UAEHXZ CFuncAreaPortalBase::vfunc117
