@@ -4421,6 +4421,98 @@ CUnknown100353c0 *CUnknown100353c0::sub_100353c0(const CUnknown100353c0 *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10035490 size=0x246
+#include "CBaseEntity.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "ConVar.h"
+#include "globalvars.h"
+#include "TestBit.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern ConVar *g_109ef2d4;
+extern float g_104454c4;
+
+struct CycleCount
+{
+	unsigned __int64 m_Int64;
+	CycleCount() : m_Int64(0) {}
+	void Sample()
+	{
+		unsigned int *p = (unsigned int *)&m_Int64;
+		__asm {
+			mov ecx, p
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		CycleCount now;
+		now.Sample();
+		m_Int64 = now.m_Int64 - m_Int64;
+	}
+	void Add(const CycleCount &r)
+	{
+		m_Int64 += r.m_Int64;
+	}
+};
+
+struct CEntityGravView : CBaseEntity
+{
+	float GetGravity() const { return *(float *)((char *)this + 0x3ec); }
+	const Vector &GetAbsVelocity()
+	{
+		if (TestBit(m_flags268, 12))
+			sub_100b1d10();
+		return m_vecVelocity3bc;
+	}
+	const Vector &GetBaseVelocity() const { return m_vecBaseVelocity; }
+	void SetBaseVelocity(const Vector &v) { m_vecBaseVelocity = v; }
+};
+
+// TARGET: CBaseEntity::sub_10035490
+void CBaseEntity::sub_10035490(float timestep)
+{
+	CEntityGravView *self = (CEntityGravView *)this;
+	ScopeTrace trace("CBaseEntity::PhysicsAddHalfGravity", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+
+	g_109f3648->EnterScope("CBaseEntity::PhysicsAddHalfGravity", 0, "Unaccounted", false);
+
+	float ent_gravity;
+	if (self->GetGravity())
+		ent_gravity = self->GetGravity();
+	else
+		ent_gravity = 1.0f;
+
+	Vector vecAbsVelocity = self->GetAbsVelocity();
+	vecAbsVelocity[2] -= (0.5 * ent_gravity * (g_109ef2d4->vfunc1() ? g_104454c4 : g_109ef2d4->m_fValue) * timestep);
+	vecAbsVelocity[2] += self->GetBaseVelocity()[2] * gpGlobals->frametime;
+	sub_100b2770(vecAbsVelocity);
+
+	Vector vecNewBaseVelocity = self->GetBaseVelocity();
+	vecNewBaseVelocity[2] = 0;
+	self->SetBaseVelocity(vecNewBaseVelocity);
+
+	sub_1003eb50();
+
+	CVProfile *prof = g_109f3648;
+	if (!prof->m_bAtRoot || prof->m_enabled) {
+		CVProfNode *node = prof->m_pCurNode;
+		if (--node->m_nRecursions == 0 && node->m_nCurFrameCalls != 0) {
+			((CycleCount *)&node->m_CurFrameTime)->End();
+			((CycleCount *)&node->m_TotalTime)->Add(*(CycleCount *)&node->m_CurFrameTime);
+			g_109f3648->PopGroup();
+		}
+		if (node->m_nRecursions == 0)
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10035a70 size=0xfb
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"

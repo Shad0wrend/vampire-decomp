@@ -2411,6 +2411,7 @@
 0x1000454d func   ?vfunc103@CInspectionNode@@QAEXXZ CInspectionNode::vfunc103
 0x10004552 func   ?vfunc516@CAI_BaseHumanoid@@QAEMXZ CAI_BaseHumanoid::vfunc516
 0x10004557 func   ?sub_1020e6b0@CGameTextUnit@@QAEXPAUCGameTextActivator@@@Z CGameTextUnit::sub_1020e6b0
+0x1000455c func   ?sub_10035490@CBaseEntity@@QAEXM@Z CBaseEntity::sub_10035490
 0x10004561 func   ??0CVDmgBlock16_t@@QAE@HH@Z CVDmgBlock16_t::CVDmgBlock16_t
 0x1000456b func   ?sub_1010cb00@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_1010cb00
 0x10004570 func   ?sub_101e12f0@CNamedListX@@QAEHPBD@Z CNamedListX::sub_101e12f0
