@@ -5657,6 +5657,7 @@
 0x10008e63 func   ?vfunc35@CPropSwitch@@UAEHH@Z CPropSwitch::vfunc35
 0x10008e6d func   ?vfunc104@CBreakableSurface@@UAEXXZ CBreakableSurface::vfunc104
 0x10008e72 func   ?sub_10109840@@YAPAHXZ sub_10109840
+0x10008e77 func   ?sub_1016fa90@CBasePlayer@@QAEXXZ CBasePlayer::sub_1016fa90
 0x10008e7c func   ?sub_101e8da0@CUnknown101e8da0@@QAEPADXZ CUnknown101e8da0::sub_101e8da0
 0x10008e81 func   ?vfunc81@CItemGWirelessCamera3@@QAEHXZ CItemGWirelessCamera3::vfunc81
 0x10008e86 func   ?vfunc390@CNPC_VCamera@@UAEHH@Z CNPC_VCamera::vfunc390
