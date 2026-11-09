@@ -3022,6 +3022,7 @@
 0x100052ae func   ?sub_100c0830@CFloatPair3f4@@QAEXXZ CFloatPair3f4::sub_100c0830
 0x100052b3 func   ?vfunc82@CNPC_VHumanCombatPatrol@@UAEPAUdatamap_t@@XZ CNPC_VHumanCombatPatrol::vfunc82
 0x100052b8 func   ?sub_100f8030@CGlobalEntityList@@QAEPAVCBaseEntity@@PBVVector@@0MPBD@Z CGlobalEntityList::sub_100f8030
+0x100052bd func   ?sub_1019cba0@@YAXPAUSBoundsList@@ABVVector@@AAV2@2@Z sub_1019cba0
 0x100052c2 func   ?sub_103d0bf0@@YIPAXPAUHolder@@@Z sub_103d0bf0
 0x100052c7 func   ?sub_1027db80@CAI_BaseNPC@@QAEMPBVVector@@@Z CAI_BaseNPC::sub_1027db80
 0x100052cc func   ?vfunc456@CBasePlayer@@UAEXXZ CBasePlayer::vfunc456
