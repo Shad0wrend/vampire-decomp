@@ -625,6 +625,34 @@ bool CBaseEntity::vfunc166(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10026fb0 size=0x37
+#include "CBaseEntity.h"
+struct V10026fb0Comp {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual CBaseEntity *vfunc4();
+};
+struct V10026fb0Other {
+	char pad[0x40];
+	V10026fb0Comp *m_p40;
+};
+#define S8(n) virtual void s##n##a(); virtual void s##n##b(); virtual void s##n##c(); virtual void s##n##d(); virtual void s##n##e(); virtual void s##n##f(); virtual void s##n##g(); virtual void s##n##h();
+struct V10026fb0This {
+	S8(0) S8(1) S8(2) S8(3) S8(4) S8(5) S8(6) S8(7) S8(8) S8(9) S8(10) S8(11) S8(12) S8(13) S8(14) S8(15) S8(16) S8(17) S8(18) S8(19)
+	virtual void t160(); virtual void t161(); virtual void t162(); virtual void t163(); virtual void t164(); virtual void t165();
+	virtual void vfunc166(CBaseEntity *arg);
+};
+inline CBaseEntity *V10026fb0Instance(V10026fb0Other *pOther)
+{
+	if (pOther && pOther->m_p40)
+		return pOther->m_p40->vfunc4();
+	return 0;
+}
+void CBaseEntity::vfunc165(void *pOther)
+{
+	((V10026fb0This *)this)->vfunc166(V10026fb0Instance((V10026fb0Other *)pOther));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027000 size=0x3
 // TARGET: sub_10027000
 int sub_10027000()
