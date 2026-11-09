@@ -228,3 +228,74 @@ void CNPC_VChangBros::sub_1036d600()
 	*(float *)((char *)this + 0x66d0) = gpGlobals->curtime;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1036d800 size=0x372
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VChangBros.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown10924a1c.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+#include "engineiface.h"
+#include "CEntityVSlots.h"
+
+extern float g_104454c4;
+extern float g_104492b8;
+extern char g_10630ff8[];
+#define STAMP(line, val) { m_pszFile1b30 = g_10630ff8; m_nLine1b34 = line; return val; }
+
+// TARGET: CNPC_VChangBros::vfunc604
+int CNPC_VChangBros::vfunc604(int arg)
+{
+	ScopeTrace st("CNPC_VChangBros::SelectScheduleMeleeCombat", g_106b8540);
+	int pEnemy = vfunc167();
+	if (!m_b6078 && !vfunc599(pEnemy))
+	{
+		float flMax = (g_10924a1c->vfunc1() ? g_104454c4 : g_10924a1c->m_fl28) + g_104492b8;
+		m_pszFile1b30 = g_10630ff8;
+		if (flMax < m_f6268)
+		{
+			m_nLine1b34 = 0x444;
+			return 0xe7;
+		}
+		m_nLine1b34 = 0x448;
+		return 0xe4;
+	}
+	if (sub_10269aa0(0x48))
+		STAMP(0x44f, 0xcd);
+	if (sub_10269d30(0xc))
+		STAMP(0x454, 0xd5);
+	if (sub_10269aa0(0x51))
+		STAMP(0x469, 0xdd);
+	bool bl = false;
+	if (m_f626c > 64.0f)
+	{
+		if (m_fl6274 == -1.0f)
+			m_fl6274 = enginerandom->vfunc1(3.0f, 4.0f) + gpGlobals->curtime;
+		else if (gpGlobals->curtime >= m_fl6274)
+			bl = true;
+	}
+	else
+		m_fl6274 = -1.0f;
+	if (sub_10269aa0(0x59))
+		STAMP(0x484, 0x15d);
+	if (!sub_10269aa0(9) && !sub_10269aa0(0x60))
+		STAMP(0x49f, 0xc7);
+	if (vfunc167())
+	{
+		if (sub_102a11d0(((CEntityVSlots *)vfunc167())->slot192()))
+			STAMP(0x491, 0x15a);
+	}
+	float d = g_10924a1c->vfunc1() ? g_104454c4 : g_10924a1c->m_fl28;
+	if (!(d <= m_f6268) && !bl)
+		STAMP(0x49b, 0xd2);
+	STAMP(0x497, 0xcb);
+}
+// END FUNCTION

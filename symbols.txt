@@ -14244,6 +14244,7 @@
 0x10014cea func   ?vfunc3@CSoundEmitterSystem@@QAAXPBDZZ CSoundEmitterSystem::vfunc3
 0x10014cef func   ?sub_100564c0@@YAHXZ sub_100564c0
 0x10014cf4 func   ?sub_102382f0@@YAXXZ sub_102382f0
+0x10014cf9 func   ?vfunc604@CNPC_VChangBros@@UAEHH@Z CNPC_VChangBros::vfunc604
 0x10014cfe func   ?vfunc81@CBaseCineCam@@UAEHXZ CBaseCineCam::vfunc81
 0x10014d03 func   ?sub_100fef50@CEnvBeam@@QAEXXZ CEnvBeam::sub_100fef50
 0x10014d08 func   ?sub_100f9df0@CUnk100f9df0@@QAEHHHHH@Z CUnk100f9df0::sub_100f9df0
