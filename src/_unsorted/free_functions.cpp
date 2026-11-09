@@ -3309,6 +3309,30 @@ void CCollisionEvent::sub_10031520()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10031990 size=0x9c
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+
+struct S10032fb0;
+extern S10032fb0 g_106b88f0;
+void sub_1002d070(S10032fb0 *, int, int, int, int, unsigned int, unsigned short, float);
+
+void sub_10031990(CBaseEntity *ent, int a2, int a3, unsigned int a4, unsigned short a5, float a6)
+{
+    ScopeTrace scope("PhysicsImpactSound", g_106b8540);
+    int edict = ent->m_pEdict2e0;
+    sub_1002d070(&g_106b88f0, (int)ent, engine->vfunc35(edict), a3, a2, a4, a5, a6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10031bd0 size=0x72
 struct Sub { void *pEnt; unsigned int serial; };
 struct EntInfo { int pad; Sub s; };
