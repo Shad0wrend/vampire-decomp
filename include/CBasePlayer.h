@@ -202,7 +202,7 @@ public:
 	virtual void vfunc457(const char *pszName, int a);
 	virtual void vfunc458();	// slot 458: if the entity at +0x1538 is not set up, lets the vehicle at +0x20fc handle it, else picks the weapon call by the float at +0x1564
 	virtual CBaseEntity *vfunc459(const char *pszName, int iSubType);	// slot 459 "GiveNamedItem": unless the player owns it already, creates the entity, places it at the player, flags it, sets its sub type, spawns it and lets the player pick it up
-	CBP_V1(sl1)
+	virtual void vfunc460();
 	virtual void vfunc461(CUserCmd *pCmds, int numcmds, int totalcmds, int dropped_packets, char paused);	// slot 461 "RunCommand": processes the command batch
 	virtual void vfunc462(CUserCmd *pCmd, void *pHelper);	// slot 462 "PlayerRunCommand"-like (implementation sub_1016af80)
 	CBP_V1(sl4) virtual float vfunc464(); CBP_V1(sl6) virtual float vfunc466(); CBP_V1(sl8)
@@ -476,8 +476,7 @@ public:
 	int m_n2084;	// 0x2084: the command clock error in milliseconds, clamped to -1000..1000
 	unsigned int m_nFlags2088;	// 0x2088: the flag word (bit 0 tested by CWeaponUnarmed::vfunc319; see also vfunc436, sub_1016b090 'new buttons')
 	void sub_1016b090(unsigned int buttons);	// button-state update: prev buttons -> +0x2094, new buttons -> +0x2088	// 0x2078 .. 0x208B
-	unsigned char m_b208C;	// 0x208C
-	char m_pad208d[0x2090 - 0x208d];
+	union { unsigned int m_n208C; unsigned char m_b208C; };	// 0x208C
 	int m_afButtonReleased;	// 0x2090
 	int m_afButtonLast;	// 0x2094
 	char m_pad2098[0x20a8 - 0x2098];	// 0x208D .. 0x20A7
@@ -668,5 +667,6 @@ void sub_1016c9d0();
 	void sub_1017e6f0(int a);
 	void sub_10170090();
 	void sub_1033f6d0();
+	char sub_10167370();
 #include "CBasePlayer_ext.h"
 };
