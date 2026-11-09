@@ -53897,6 +53897,74 @@ char *CUnknown100e3400::sub_100e3400(int line, char col, const char *ext, bool i
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e34d0 size=0x260
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include "FileSystemViews.h"
+#include <string.h>
+
+extern IFileSystemView *g_1070b238;
+extern void (__cdecl *g_109f3890)(char *dst, const char *src, int n);
+extern void (__cdecl *g_109f3864)(char *dst, const char *src);
+extern int (__cdecl *g_109f388c)(char *dst, int n, const char *fmt, ...);
+void sub_100dfaf0(int level, const char *fmt, ...);
+void __cdecl sub_101d1070(char *pszOut, int nMax);
+
+namespace block_100e34d0 {
+bool __cdecl sub_100df010(DialogLine *pLine)
+{
+	return pLine->m_nResponse == -1;
+}
+} using namespace block_100e34d0;
+
+void CDialog::sub_100e34d0()
+{
+	ScopeTrace trace("CDialog::audit_asset_files", g_106b8540, g_106b8540);
+	char szFile[0x104];
+
+	sub_100e5770();
+	if (!sub_100e5410(sub_100e7310()))
+		return;
+	g_109f3890(szFile, sub_100e7310(), 0x104);
+	szFile[strlen(szFile) - 4] = 0;
+	g_109f3864(szFile, "_missing.txt");
+	int hFile = g_1070b238->vfunc0(szFile, "w+", 0);
+	if (!hFile)
+	{
+		sub_100dfaf0(3, "Could not open script output file %s\n", szFile);
+		return;
+	}
+	char szDate[0x80];
+	sub_101d1070(szDate, 0x80);
+	g_109f388c(szFile, 0x104, "This script file was generated on %s\n", szDate);
+	g_1070b238->vfunc3(szFile, strlen(szFile), hFile);
+	int nMissing = 0;
+	for (int i = 0; i < m_pTable->m_nEntries; i++)
+	{
+		if (sub_100df010((DialogLine *)&m_pTable->m_pEntries[i]))
+			nMissing += sub_100e3180(&m_pTable->m_pEntries[i], hFile);
+	}
+	g_109f388c(szFile, 0x104, "\n\nMissing %d files\n\n", nMissing);
+	g_1070b238->vfunc3(szFile, strlen(szFile), hFile);
+	g_1070b238->vfunc1(hFile);
+	if (nMissing == 0)
+	{
+		g_109f3890(szFile, sub_100e7310(), 0x104);
+		szFile[strlen(szFile) - 4] = 0;
+		g_109f3864(szFile, "_missing.txt");
+		g_1070b238->vfunc14(szFile, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e4240 size=0x423
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
