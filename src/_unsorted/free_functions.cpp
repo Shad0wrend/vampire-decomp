@@ -162353,6 +162353,72 @@ int CUnknown102702b0::sub_102702b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102703f0 size=0x2de
+#include "CUnknown1030f940.h"
+#include "CTraceFilterSoundOcclude.h"
+#include "CEHandleGet.h"
+#include "engineiface.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "UTIL_Trace.h"
+
+struct CConVar109202cc
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad[0x28];
+	int m_n2c;
+};
+extern CConVar109202cc *g_109202cc;
+
+struct CEntityWithCollision
+{
+	char m_pad[0x270];
+	CCollisionProperty m_Collision;
+};
+
+class CUnknown102703f0
+{
+public:
+	float sub_102703f0(CUnknown1030f940Rec *pRec, float *pVolume);
+};
+
+float CUnknown102703f0::sub_102703f0(CUnknown1030f940Rec *pRec, float *pVolume)
+{
+	if (!g_109202cc->vfunc1() && g_109202cc->m_n2c != 0 && pRec)
+	{
+		Vector vecStart = *(Vector *)pRec->m_vecOrigin;
+		CTraceFilterSoundOcclude filter;
+		CGameTrace trace;
+
+		if (EHandle_Get(*(unsigned int *)&pRec->m_unk0))
+		{
+			CEntityWithCollision *pEnt = (CEntityWithCollision *)EHandle_Get(*(unsigned int *)&pRec->m_unk0);
+			Vector vecMins = *(Vector *)pEnt->m_Collision.vfunc1();
+			Vector vecMaxs = *(Vector *)pEnt->m_Collision.vfunc2();
+			vecStart.x += enginerandom->vfunc1(vecMins.x, vecMaxs.x);
+			vecStart.y += enginerandom->vfunc1(vecMins.y, vecMaxs.y);
+			vecStart.z += enginerandom->vfunc1(vecMins.z, vecMaxs.z);
+		}
+		else
+		{
+			vecStart.x += enginerandom->vfunc1(-8.0f, 8.0f);
+			vecStart.y += enginerandom->vfunc1(-8.0f, 8.0f);
+			vecStart.z += enginerandom->vfunc1(0.0f, 8.0f);
+		}
+
+		{
+			Vector vecEar;
+			Vector *pEar = ((CEntityVSlots *)this)->slot193(&vecEar);
+			UTIL_TraceLine(*pEar, vecStart, 0xffffffff, &filter, &trace);
+		}
+		if (trace.m_fraction != 1.0f)
+			*pVolume = 0.0f;
+	}
+	return *pVolume;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102707d0 size=0x39
 typedef int (__fastcall *CUnknownSlotFn)(void *pThis);
 

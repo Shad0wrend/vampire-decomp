@@ -5023,6 +5023,7 @@
 0x10007fcc func   ?vfunc10@CServerNetworkProperty@@UAEHXZ CServerNetworkProperty::vfunc10
 0x10007fd6 func   ?vfunc104@CSceneEntity@@UAEXXZ CSceneEntity::vfunc104
 0x10007fdb func   ?sub_1025cb70@CUtlRBTreeBig@@QAEAAULinks_t@1@G@Z CUtlRBTreeBig::sub_1025cb70
+0x10007fe0 func   ?sub_102703f0@CUnknown102703f0@@QAEMPAUCUnknown1030f940Rec@@PAM@Z CUnknown102703f0::sub_102703f0
 0x10007fe5 func   ?sub_100ac4e0@CBaseEntity@@QAEHHHPBD@Z CBaseEntity::sub_100ac4e0
 0x10007fea func   ?vfunc5@CAI_BaseNPC@@UAEPAV1@I@Z CAI_BaseNPC::vfunc5
 0x10007ff4 func   ?vfunc80@CWeaponIArmor_Lt_Leather@@UAEPAXXZ CWeaponIArmor_Lt_Leather::vfunc80
