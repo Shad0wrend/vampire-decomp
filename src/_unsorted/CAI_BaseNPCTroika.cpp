@@ -1924,6 +1924,116 @@ void CAI_BaseNPCTroika::vfunc422()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029aa10 size=0x2df
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown1028fb70.h"
+#include "globalvars.h"
+
+extern "C" int _strcmpi(const char *s1, const char *s2);
+extern "C" int atoi(const char *s);
+extern "C" double atof(const char *s);
+extern void (*g_109f3650)(int level, const char *pMsg, ...);
+extern void (*g_109f366c)(const char *pMsg, ...);
+
+class CUnknown1028fc90
+{
+public:
+	int sub_1028fc90();
+};
+
+void CAI_BaseNPCTroika::vfunc585(const char *pszName, const char *pszValue)
+{
+	CUnknown1028fb70 *pView = (CUnknown1028fb70 *)this;
+	int nCmp = _strcmpi(pszName, "CAPABILITIES");
+	void (*pfnDevMsg)(int level, const char *pMsg, ...) = g_109f3650;
+	if (!nCmp)
+	{
+		pfnDevMsg(2, "Maybe this should be in a func/input SetCapability!\n");
+	}
+	else if (!_strcmpi(pszName, "GOALS"))
+	{
+		pfnDevMsg(2, "Hey foo!  You need to implement some goals!\n");
+	}
+	else
+	{
+		if (!_strcmpi(pszName, "NPCPERCEPTION"))
+		{
+			int n = atoi(pszValue);
+			void (*pfnError)(const char *pMsg, ...) = g_109f366c;
+			pView->m_nLevel = n;
+			if (n < 1)
+			{
+				pfnError("ProcessTweakParam:  %s - You specified an invalid NPCPERCEPTION parameter (%d).  Must be between 1 and %d\n", pView->sub_100ab4f0(), n, 10);
+				pView->m_nLevel = 1;
+			}
+			if (pView->m_nLevel > 10)
+			{
+				pfnError("ProcessTweakParam:  %s - You specified an invalid NPCPERCEPTION parameter (%d).  Must be between 1 and %d\n", pView->sub_100ab4f0(), pView->m_nLevel, 10);
+				pView->m_nLevel = 10;
+			}
+			pView->sub_1028fb70();
+			((CUnknown1028fc90 *)this)->sub_1028fc90();
+			return;
+		}
+		else if (!_strcmpi(pszName, "VISION"))
+		{
+			pView->m_flVisionOverride = atof(pszValue);
+			if (pView->m_flVisionOverride < 0.0f && pView->m_flVisionOverride != -1.0f)
+			{
+				g_109f366c("ProcessTweakParam:  %s - You specified a negative VISION parameter.  NPCs are not allowed to view their inner-selves.\n", pView->sub_100ab4f0());
+			}
+		}
+		else if (!_strcmpi(pszName, "HEARING"))
+		{
+			pView->m_flHearingOverride = atof(pszValue);
+			if (pView->m_flHearingOverride < 0.0f && pView->m_flHearingOverride != -1.0f)
+			{
+				g_109f366c("ProcessTweakParam:  %s - You specified a negative HEARING parameter.  Inside of your ears there are drums.\n", pView->sub_100ab4f0());
+			}
+		}
+		else
+		{
+			if (!_strcmpi(pszName, "SQUAD"))
+			{
+				sub_1029a930(pszValue);
+				return;
+			}
+			if (!_strcmpi(pszName, "IPGROUPS"))
+			{
+				sub_10298910(pszValue);
+				return;
+			}
+			if (!_strcmpi(pszName, "HINTGROUPS"))
+			{
+				sub_102989e0(pszValue);
+				return;
+			}
+			if (!_strcmpi(pszName, "TPMOVETIMER"))
+			{
+				*(float *)((char *)this + 0x65dc) = atof(pszValue) + gpGlobals->curtime;
+				return;
+			}
+			if (!_strcmpi(pszName, "IGNOREATTACK"))
+			{
+				*(bool *)((char *)this + 0x65f5) = atoi(pszValue) != 0;
+				return;
+			}
+			if (!_strcmpi(pszName, "NOALERTSTATE"))
+			{
+				*(bool *)((char *)this + 0x65f6) = atoi(pszValue) != 0;
+				return;
+			}
+			goto ignored;
+		}
+		pView->sub_1028fb70();
+		((CUnknown1028fc90 *)this)->sub_1028fc90();
+		return;
+	}
+ignored:
+	pfnDevMsg(2, "ProcessTweakParam(%s, %s) ignored by base class.\n", pszName, pszValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029adb0 size=0x19a
 #include "CSoundControllerImp.h"
 #include "CTriggerProximity.h"

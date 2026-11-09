@@ -8950,6 +8950,7 @@
 0x1000d78d func   ?vfunc103@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc103
 0x1000d797 func   ?sub_10209f60@@YIPAXPAX@Z sub_10209f60
 0x1000d79c func   ??0CSingleplayRules@@QAE@XZ CSingleplayRules::CSingleplayRules
+0x1000d7a1 func   ?vfunc585@CAI_BaseNPCTroika@@QAEXPBD0@Z CAI_BaseNPCTroika::vfunc585
 0x1000d7a6 func   ?vfunc472@CAI_BaseNPCTroika@@UAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc472
 0x1000d7ab func   _item_w_gargoyle_fist item_w_gargoyle_fist
 0x1000d7b5 func   ?vfunc505@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc505
