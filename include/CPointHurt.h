@@ -16,7 +16,7 @@ public:
 	float m_flRadius;	// 0x0458
 	float m_flDelay;	// 0x045c
 	const char *m_strTarget;	// 0x0460
-	unsigned int m_hActivator;	// 0x0464
+	EHANDLE m_hActivator;	// 0x0464
 
 	void sub_1018d5f0();	// "CPointHurt::HurtThink"
 public:
