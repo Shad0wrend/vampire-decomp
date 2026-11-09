@@ -33,7 +33,7 @@ public:
 	virtual void slot64(const float *pAngles);	// "SetAbsAngles"-like
 	virtual void slot65(int pitch, float yaw, int roll);	// "SetLocalAngles" (the angles by value; the callers copy pitch and roll as raw dwords)
 	EVS(66) EVS(67) virtual char slot68(CEntityVSlots *pOther);	// "ShouldIgnoreCollision"-like: a boolean answer in al about the other entity (CCollisionEvent::PostCollision asks both ways)
-	EVS(69)
+	virtual char slot69(void *pEnt);
 	EVS10(7)
 	EVS(80) EVS(81) EVS(82) EVS(83) EVS(84) virtual int slot85();	// the entity's edict / entity index the sound calls name it by (asked of the speaking NPC)
 	virtual char slot86(int a, int b, int c, int d, int e);	// takes five arguments, a boolean answer in al (CBaseEntity::vfunc86)
