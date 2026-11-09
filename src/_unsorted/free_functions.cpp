@@ -111181,6 +111181,43 @@ void sub_101cfa40(const Vector *pOrigin, const Vector *pDir, int bloodColor, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cfb30 size=0x1ce
+#include "UTIL_BloodStream.h"
+#include "engineiface.h"
+#include "CPVSFilter.h"
+char __cdecl sub_101cf9b0(int color);
+void __cdecl sub_101cf640(const Vector *origin, float a, float b);
+
+#define MAXI(a, b) (((a) >= (b)) ? (a) : (b))
+#define MINI(a, b) (((a) < (b)) ? (a) : (b))
+
+// TARGET: sub_101cfb30
+void __cdecl sub_101cfb30(const Vector &origin, const Vector &dir, int color, int amount)
+{
+	if (!sub_101cf9b0(color)) return;
+	if (color == -1) return;
+	if (amount == 0) return;
+	if (g_1070ba34 == 1 && color == 0xf7) color = 0;
+	if (g_1070ba0c->vfunc21()) amount *= 5;
+	if (amount > 255) amount = 255;
+	if (color == 20) {
+		g_10566258->Sparks(origin, 1, 1, 0);
+		float f = enginerandom->vfunc1(0, 2.0f);
+		if (f >= 1.0f)
+			sub_101cf640(&origin, (float)enginerandom->vfunc2(10, 15), 10.0f);
+		return;
+	}
+	int r, g, b;
+	if (color != 0xc3) {
+		if (g_1070ba0c->vfunc21()) { r = 0xff; b = g = 0x20; }
+		else { r = 0x40; g = 0; b = 0; }
+	} else { g = r = 0x80; b = 0; }
+	CPVSFilter filter(origin);
+	int n = MINI(MAXI(amount / 10, 3), 16);
+	g_10540528->BloodStream(filter, 0, &origin, &dir, r, g, b, 0xff, n);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cfd80 size=0x69
 struct TRandom {
 	virtual void v0();
