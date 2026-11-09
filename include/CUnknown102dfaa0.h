@@ -17,7 +17,7 @@ public:
 
 struct CUnknown102dfaa0_Record
 {
-	char m_pad0000[0xc];
+	Vector m_vecPos;	// 0x00: follows the entity
 	Vector m_vecA;	// 0x0c
 	Vector m_vecB;	// 0x18
 	unsigned int m_hEnt;	// 0x24: entity handle
