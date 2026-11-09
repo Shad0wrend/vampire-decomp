@@ -246398,6 +246398,25 @@ void sub_104304f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x104307b2 size=0x18
+// TARGET: sub_104307b2
+void sub_104307ca();
+int sub_10433963();
+void sub_10433913();
+extern int g_109f03a0;
+
+void sub_104307b2()
+{
+    sub_104307ca();
+    g_109f03a0 = sub_10433963();
+    sub_10433913();
+    __asm {
+        fnclex
+        ret
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10436900 size=0xd
 #pragma optimize("s", on)
 int sub_10436900(char **ap)

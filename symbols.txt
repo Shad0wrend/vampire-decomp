@@ -15324,6 +15324,7 @@
 0x1042c700 func   ?sub_1042c700@@YAXP6IXPAX@Z@Z sub_1042c700
 0x1042c740 func   ?sub_1042c740@@YAXP6IXPAX@Z@Z sub_1042c740
 0x1042d890 func   ?sub_1042d890@@YAKPBD0H@Z sub_1042d890
+0x104307b2 func   ?sub_104307b2@@YAXXZ sub_104307b2
 0x104307ca func   __cfltcvt_init _cfltcvt_init
 0x10430802 func   ___setfflag __setfflag
 0x10430812 func   __purecall _purecall
