@@ -54886,6 +54886,50 @@ long sub_100ea2d0(const char *psz, void *a2, void *a3, int start, char *pbError)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ea5e0 size=0xbc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <string.h>
+#include "CDialogDependency.h"
+#include "ScopeTrace.h"
+
+extern char g_106e86c8[];
+extern char g_10547ad4[];
+
+const char *CDialogDependency::sub_100ea5e0()
+{
+	ScopeTrace trace("CDialogDependency::ToStr", g_106b8540);
+	if (m_nType != -1) {
+		if (m_nType == 2) {
+			int i;
+			for (i = 0; i < m_nIndent; i++)
+				g_106e86c8[i] = 0x7f;
+			g_106e86c8[i] = 0;
+			strcpy(&g_106e86c8[i], g_10547ad4);
+			return g_106e86c8;
+		}
+		else if (m_nType == 4) {
+			if (m_nArg == 7) {
+				return g_106b8540;
+			}
+			else if (m_nArg == 8) {
+				return g_106b8540;
+			}
+			else {
+				return g_106b8540;
+			}
+		}
+	}
+	return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ea6d0 size=0x36
 struct CUnknown100ea6d0Item
 {
