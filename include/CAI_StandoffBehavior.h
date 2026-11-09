@@ -43,9 +43,17 @@ struct CStandoffParams
 	int m_unk18;
 };
 
+struct CStandoffTask
+{
+	int m_iTask;
+	float m_flData;
+};
+
 class CAI_StandoffBehavior
 {
 public:
+	void sub_102c7e10();	// stub 0x10005515
+	void sub_102c6e50(const CStandoffTask *pTask);	// the base behaviour's vfunc15, called directly (stub 0x1000a13c)
 	    
 	    
 	    
@@ -96,7 +104,7 @@ public:
 	virtual void vfunc12();
 	virtual void vfunc13();
 	virtual void vfunc14();
-	virtual void vfunc15();
+	virtual void vfunc15(const CStandoffTask *pTask);
 	virtual void vfunc16();
 	virtual void vfunc17();
 	virtual void vfunc18();
