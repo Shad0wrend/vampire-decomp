@@ -409,6 +409,44 @@ bool CHL2_Player::vfunc366(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10351090 size=0x196
+#include "CHL2_Player.h"
+#include "CBasePlayer.h"
+#include "CUserCmd.h"
+
+void CHL2_Player::vfunc462(void *pCmd, void *pExtra)
+{
+	CUserCmd *ucmd = (CUserCmd *)pCmd;
+	CBasePlayer *pPlayer = (CBasePlayer *)this;
+	pPlayer->sub_1016b0e0(ucmd->m_n34);
+	if (pPlayer->m_hControllerNPC1db0.Get()) {
+		if (!pPlayer->m_b1EDC) {
+			ucmd->Reset();
+		} else {
+			ucmd->forwardmove = 0;
+			ucmd->sidemove = 0;
+			ucmd->upmove = 0;
+		}
+	}
+	if (ucmd->forwardmove == 0 && ucmd->sidemove == 0 && ucmd->upmove == 0) {
+		m_flIdleTime += ucmd->frametime;
+		if (m_flIdleTime > 4.0f)
+			m_flIdleTime = 4.0f;
+		m_flMoveTime -= ucmd->frametime * 2;
+		if (m_flMoveTime < 0)
+			m_flMoveTime = 0;
+	} else {
+		m_flIdleTime -= ucmd->frametime * 2;
+		if (m_flIdleTime < 0)
+			m_flIdleTime = 0;
+		m_flMoveTime += ucmd->frametime;
+		if (m_flMoveTime > 4.0f)
+			m_flMoveTime = 4.0f;
+	}
+	pPlayer->sub_1016af80(pCmd, pExtra);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103512a0 size=0x51
 #include "CBaseEntity.h"
 #include "CHL2_Player.h"

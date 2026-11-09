@@ -12176,6 +12176,7 @@
 0x100119a0 func   ?vfunc123@CPhysicsSpring@@QAEXXZ CPhysicsSpring::vfunc123
 0x100119a5 func   ?sub_10026f20@CBaseEntityX@@QAEHXZ CBaseEntityX::sub_10026f20
 0x100119aa func   ?vfunc82@CLogicLineToEntity@@UAEPAUdatamap_t@@XZ CLogicLineToEntity::vfunc82
+0x100119af func   ?vfunc462@CHL2_Player@@UAEXPAX0@Z CHL2_Player::vfunc462
 0x100119b4 func   ?sub_101d07f0@@YAXPAVVector@@PBV1@1@Z sub_101d07f0
 0x100119be func   ?sub_103c7770@@YIPAXPAD@Z sub_103c7770
 0x100119c8 func   ?vfunc245@CFuncPlat@@UAEXXZ CFuncPlat::vfunc245
