@@ -1924,6 +1924,160 @@ void CAI_BaseNPCTroika::vfunc422()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029adb0 size=0x19a
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown1027d990.h"
+#include "CEHandleGet.h"
+
+struct CTroikaMotor448 {
+	char m_pad00[0x28];
+	char m_b28;
+	void sub_102e0a60(float f);
+};
+
+struct CTroikaTarget448 {
+	char m_pad0000[0x788];
+	char m_b788;
+};
+
+struct CTroikaSlot15 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void slot15(float *pOut);
+};
+
+struct CTroika448Vec {
+	float x, y, z;
+};
+
+struct CTroika448Bits {
+	unsigned int b0 : 1; unsigned int b1 : 1; unsigned int b2 : 1; unsigned int b3 : 1;
+	unsigned int b4 : 1; unsigned int b5 : 1; unsigned int b6 : 1; unsigned int b7 : 1;
+	unsigned int b8 : 1; unsigned int b9 : 1; unsigned int b10 : 1; unsigned int b11 : 1;
+	unsigned int b12 : 1; unsigned int b13 : 1; unsigned int b14 : 1; unsigned int b15 : 1;
+	unsigned int b16 : 1; unsigned int b17 : 1; unsigned int b18 : 1; unsigned int b19 : 1;
+	unsigned int b20 : 1; unsigned int b21 : 1; unsigned int b22 : 1; unsigned int b23 : 1;
+	unsigned int b24 : 1; unsigned int b25 : 1; unsigned int b26 : 1; unsigned int b27 : 1;
+	unsigned int b28 : 1; unsigned int b29 : 1; unsigned int b30 : 1; unsigned int b31 : 1;
+};
+
+struct CTroika448View {
+	char m_pad0000[0x14b8];
+	CTroika448Bits m_bits14b8;
+	CTroika448Bits m_bits14bc;
+	char m_pad14c0[0x5d44 - 0x14c0];
+	CTroikaMotor448 *m_pMotor;
+	char m_pad5d48[0x5d8c - 0x5d48];
+	CTroika448Bits m_bits5d8c;
+	char m_pad5d90[0x6240 - 0x5d90];
+	CBaseHandle m_h6240;
+	float m_f6244;
+	float m_f6248;
+	float m_f624c;
+	float m_f6250;
+	char m_pad6254[0x6300 - 0x6254];
+	int m_n6300;
+	char m_pad6304[0x631c - 0x6304];
+	int m_n631c;
+	int m_n6320;
+	int m_n6324;
+	int m_n6328;
+	int m_n632c;
+	char m_pad6330[0x63e0 - 0x6330];
+	char m_b63e0;
+	char m_pad63e1[0x63ec - 0x63e1];
+	int m_n63ec;
+	char m_pad63f0[0x643c - 0x63f0];
+	CBaseHandle m_h643c;
+	char m_pad6440[0x659c - 0x6440];
+	int m_n659c;
+	char m_b65a0;
+	char m_pad65a1[0x65d0 - 0x65a1];
+	CTroika448Vec m_vec65d0;
+};
+
+void CAI_BaseNPCTroika::vfunc448(int a)
+{
+	CTroika448View *p = (CTroika448View *)this;
+	sub_102b53d0(1, "Leaving interesting place (TaskFail)");
+	if (((CUnknown1027d990 *)this)->sub_1027d990() != 3 && ((CUnknown1027d990 *)this)->sub_1027d990() != 1)
+		p->m_bits14b8.b3 = 0;
+	p->m_pMotor->sub_102e0a60(180.0f);
+	p->m_n63ec = 0;
+	p->m_f6244 = gpGlobals->curtime;
+	p->m_f6248 = gpGlobals->curtime;
+	p->m_f6250 = gpGlobals->curtime;
+	p->m_f624c = gpGlobals->curtime;
+	p->m_n6320 = 0;
+	p->m_n6324 = 0;
+	p->m_n6328 = 0;
+	p->m_n632c = 0;
+	p->m_h6240 = (IHandleEntity *)0;
+	CGlobalEntityList *pList = g_10566458;
+	CBaseEntity *pEnt = pList->sub_100290c0((unsigned int *)&p->m_h643c);
+	if (pEnt) {
+		((CTroikaTarget448 *)pList->sub_100290c0((unsigned int *)&p->m_h643c))->m_b788 = 0;
+		p->m_h643c = (IHandleEntity *)0;
+	}
+	if (p->m_bits5d8c.b13)
+		p->m_bits5d8c.b13 = 0;
+	p->m_bits5d8c.b28 = 0;
+	p->m_bits5d8c.b29 = 0;
+	p->m_bits5d8c.b30 = 0;
+	p->m_bits5d8c.b31 = 0;
+	p->m_bits14b8.b0 = 0;
+	p->m_bits14b8.b1 = 0;
+	p->m_bits14b8.b2 = 0;
+	p->m_bits14b8.b7 = 0;
+	p->m_bits14b8.b9 = 0;
+	p->m_bits14b8.b10 = 0;
+	p->m_bits14b8.b11 = 0;
+	p->m_bits14b8.b12 = 0;
+	p->m_bits14b8.b13 = 0;
+	p->m_bits14b8.b14 = 0;
+	p->m_bits14b8.b15 = 0;
+	p->m_bits14b8.b16 = 0;
+	p->m_bits14b8.b17 = 0;
+	p->m_bits14b8.b19 = 0;
+	p->m_bits14b8.b26 = 0;
+	p->m_bits14b8.b27 = 0;
+	p->m_bits14b8.b28 = 0;
+	p->m_bits14b8.b30 = 0;
+	p->m_bits14bc.b4 = 0;
+	p->m_bits14bc.b5 = 0;
+	p->m_bits14bc.b7 = 0;
+	p->m_bits14bc.b8 = 0;
+	p->m_bits14bc.b10 = 0;
+	p->m_bits14bc.b11 = 0;
+	p->m_bits14bc.b12 = 0;
+	p->m_bits14bc.b31 = 0;
+	if (p->m_bits14bc.b0 == 1) {
+		CTroika448Vec *pVec = &p->m_vec65d0;
+		((CTroikaSlot15 *)this)->slot15(&pVec->x);
+		pVec->x = -1.0f;
+		pVec->y = -1.0f;
+		pVec->z = -1.0f;
+		p->m_bits14bc.b0 = 0;
+		p->m_bits14bc.b31 = 0;
+	}
+	p->m_b63e0 = 0;
+	sub_10295ab0(5.0f);
+	p->m_pMotor->m_b28 = 0;
+	p->m_n6300 = 0;
+	p->m_n659c = 0;
+	p->m_b65a0 = 0;
+	CAI_BaseNPC::vfunc448(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029afc0 size=0x15f
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseAnimating.h"
