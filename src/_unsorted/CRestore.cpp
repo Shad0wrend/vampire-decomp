@@ -451,6 +451,47 @@ void CRestore::vfunc21(char *pDest, int n, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2250 size=0x7b
+#include "CRestore.h"
+#include "CUnknown101a1f70.h"
+
+struct PooledString1042
+{
+	PooledString1042() {}
+	PooledString1042(const PooledString1042 &o) : m_v(o.m_v) {}
+	PooledString1042 &operator=(const PooledString1042 &o) { m_v = o.m_v; return *this; }
+	int m_v;
+};
+PooledString1042 sub_1042bff0(const char *psz);
+
+struct CRestoreUnit : CRestore
+{
+	void sub_101a2020(int nBytes);
+};
+
+// TARGET: CRestore::vfunc20
+int CRestore::vfunc20(int *pValues, int count, int nBytesAvailable)
+{
+	const char *pString = (const char *)((CUnknown101a1f70 *)this)->sub_101a1f70();
+	const char *pLimit = pString + nBytesAvailable;
+	int nRead = 0;
+	PooledString1042 *pDest = (PooledString1042 *)pValues;
+	while (nRead < count && pString < pLimit)
+	{
+		if (*pString == 0)
+			pDest[nRead].m_v = 0;
+		else
+			pDest[nRead] = sub_1042bff0(pString);
+		while (*pString)
+			pString++;
+		pString++;
+		nRead++;
+	}
+	((CRestoreUnit *)this)->sub_101a2020(nBytesAvailable);
+	return nRead;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a22f0 size=0x14
 #include "CRestore.h"
 namespace lifted {
