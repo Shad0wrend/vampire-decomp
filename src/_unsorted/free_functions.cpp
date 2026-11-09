@@ -162536,6 +162536,25 @@ check:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10269d30 size=0x85
+#include "CAI_BaseNPCTroika.h"
+
+inline bool AI_IdIsLocal(int id) { return (id < 1000000000 || id == -1); }
+inline int AI_RemapFromGlobal(int id) { return (id != -1) ? id - 1000000000 : -1; }
+
+bool CAI_BaseNPCTroika::sub_10269d30(int condition)
+{
+	if (*(int *)((char *)this + 0x5c38) == 0)
+		return false;
+	int id = AI_RemapFromGlobal(AI_IdIsLocal(condition) ? vfunc580()->ConditionLocalToGlobal(condition) : condition);
+	if (id == -1)
+		return false;
+	unsigned int mask = 1 << (id & 0x1f);
+	int *bits = (int *)this;
+	return (bits[(id >> 5) + 0x1717] & mask) && (bits[(id >> 5) + 0x171d] & mask);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10269eb0 size=0x59
 #include "CAI_BaseNPCTroika.h"
 struct CAI_BaseNPC580 : CAI_BaseNPC {

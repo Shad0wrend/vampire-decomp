@@ -14156,6 +14156,7 @@
 0x1001481c func   ?vfunc141@CEnvWind@@UAEXHHH@Z CEnvWind::vfunc141
 0x10014821 func   ?vfunc431@CNPC_VTzimisce@@QAEXXZ CNPC_VTzimisce::vfunc431
 0x10014826 func   ?vfunc433@CNPC_VTzimisceRunner@@UAEXXZ CNPC_VTzimisceRunner::vfunc433
+0x1001482b func   ?sub_10269d30@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_10269d30
 0x10014830 func   ?sub_10055170@CUtlRBTree24@@QAEXHH_N@Z CUtlRBTree24::sub_10055170
 0x10014835 func   ?sub_10076b30@CUnit@block_10076b30@@QAEMXZ block_10076b30::CUnit::sub_10076b30
 0x1001483a func   ?vfunc584@CCineNPC@@QAEDPAVCBaseAnimating@@PBDD@Z CCineNPC::vfunc584
