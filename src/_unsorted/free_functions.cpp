@@ -75370,6 +75370,42 @@ float sub_10137390(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101373c0 size=0x8a
+// TARGET: sub_101373c0
+#include "Vector.h"
+
+float __fastcall sub_101373c0(Vector &v)
+{
+    float flLen = 0.0f;
+    if (v.x != 0.0f || v.y != 0.0f || v.z != 0.0f)
+    {
+        __asm
+        {
+            mov eax, v
+            femms
+            movq mm0, qword ptr [eax]
+            movd mm1, dword ptr [eax+8]
+            movq mm2, mm0
+            movq mm3, mm1
+            pfmul mm0, mm0
+            pfmul mm1, mm1
+            pfacc mm0, mm0
+            pfadd mm1, mm0
+            pfrsqrt mm0, mm1
+            punpckldq mm1, mm1
+            pfmul mm1, mm0
+            pfmul mm2, mm0
+            pfmul mm3, mm0
+            movq qword ptr [eax], mm2
+            movd dword ptr [eax+8], mm3
+            movd flLen, mm1
+            femms
+        }
+    }
+    return flLen;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137480 size=0x8
 float __fastcall sub_101373c0(void *pThis);
 void __fastcall sub_10137480(void *pThis)

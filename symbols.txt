@@ -7440,6 +7440,7 @@
 0x1000b41f func   ?sub_10136ce0@@YAPBDPBDPAD0@Z sub_10136ce0
 0x1000b424 func   ?vfunc117@CPropRadio@@UAEHXZ CPropRadio::vfunc117
 0x1000b429 func   ?vfunc427@CBasePlayer@@UAEXXZ CBasePlayer::vfunc427
+0x1000b42e func   ?sub_101373c0@@YIMAAVVector@@@Z sub_101373c0
 0x1000b433 func   ??0CExpressionTable@@QAE@XZ CExpressionTable::CExpressionTable
 0x1000b438 func   ?vfunc82@CNPC_Crow@@QAEPAUdatamap_t@@XZ CNPC_Crow::vfunc82
 0x1000b43d func   ?sub_10248980@CUnknown10248980@@QAEDXZ CUnknown10248980::sub_10248980
