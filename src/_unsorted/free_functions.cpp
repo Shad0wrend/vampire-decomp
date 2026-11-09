@@ -33372,6 +33372,53 @@ void CBaseAnimating::sub_100978c0(int bone)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097980 size=0x10c
+#include "CBaseAnimating.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "string_t.h"
+inline const char *STRINGR_10097980(const char *const &s) { return s ? s : g_106b8540; }
+struct CModelNameView10097980 {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+    virtual string_t GetModelName();
+};
+extern void (__cdecl *g_109f364c)(const char *fmt, ...);
+
+int CBaseAnimating::sub_10097980(const char *name)
+{
+	ScopeTrace trace("CBaseAnimating::LookupPhysicsChain", this ? STRINGR_10097980(m_name26c) : g_105387dc);
+	if (name)
+	{
+		int bone = sub_10092550((int)name);
+		if (bone < 0)
+		{
+			g_109f364c("physics chain at bone '%s' not found for %s\n", name, STRINGR_10097980(((CModelNameView10097980 *)this)->GetModelName().pszValue));
+		}
+		else
+		{
+			char *pHdr = (char *)sub_100952d0(-1);
+			if (pHdr)
+			{
+				for (int i = 0; i < *(int *)(pHdr + 0x18c); i++)
+				{
+					if (*(int *)(pHdr + *(int *)(pHdr + 0x190) + i * 0x1c) == bone)
+						return i;
+				}
+			}
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097b00 size=0x36
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 
