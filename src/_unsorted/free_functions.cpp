@@ -35475,6 +35475,41 @@ void CBaseEntity::sub_1009fa60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fb80 size=0x226
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "DebugOverlay.h"
+#include "CEntityVSlots.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+class CBaseEntityVectorsUnit
+{
+public:
+	void sub_100ad320(float *pForward, float *pRight, float *pUp);
+};
+
+void __fastcall sub_1009fb80(CBaseEntity *pThis)
+{
+	ScopeTrace scope("CBaseEntity::SendDebugPivotOverlay", pThis ? (STRINGR_F(pThis->m_name26c)) : g_105387dc);
+
+	if ( !pThis->m_pEdict2e0 )
+		return;
+
+	Vector xvec, yvec, zvec;
+	((CBaseEntityVectorsUnit *)pThis)->sub_100ad320((float *)&xvec, (float *)&yvec, (float *)&zvec);
+
+	CEntityVSlots *p = (CEntityVSlots *)pThis;
+	xvec = *(const Vector *)p->slot217() + (20 * xvec);
+	yvec = *(const Vector *)p->slot217() - (20 * yvec);
+	zvec = *(const Vector *)p->slot217() + (20 * zvec);
+
+	sub_10142e90(p->slot217(), &xvec, 0xff, 0, 0, 1, 0);
+	sub_10142e90(p->slot217(), &yvec, 0, 0xff, 0, 1, 0);
+	sub_10142e90(p->slot217(), &zvec, 0, 0, 0xff, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a0420 size=0x8d
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
