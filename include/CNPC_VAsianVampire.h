@@ -75,8 +75,8 @@ public:
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void sub_10384670();	// CNPC_VHuman::vfunc104 (Precache), called directly
 	void sub_10360bc0();	// slot 104 "CNPC_VAsianVampire::Precache": scope trace around the base Precache and a precache of "item_w_avamp_blade"
-	void vfunc127(void *pRestore);	// slot 127 "CNPC_VAsianVampire::Restore": scope trace, the base Restore, then m_flRestoredTime is reset to a constant
-	void sub_1000b28f(void *pRestore);	// CNPC_VVampireBoss::vfunc127, called directly
+	int vfunc127(void *pRestore);	// slot 127 "CNPC_VAsianVampire::Restore": scope trace, the base Restore, then m_flRestoredTime is reset to a constant
+	int sub_1000b28f(void *pRestore);	// CNPC_VVampireBoss::vfunc127, called directly
 	void vfunc448(int code);	// "CNPC_VAsianVampire::TaskFail": scope trace, remembers a failure code in 12..15, then the base implementation
 	void sub_100054bb(int code);	// CAI_BaseNPCTroika::vfunc448, called directly
 	int vfunc440(int schedule);	// slot 440 "CNPC_VAsianVampire::TranslateSchedule": scope trace, schedules 0xe5 / 0xe6 become GetJumpSchedule(), everything else goes to CNPC_VHuman::vfunc440
