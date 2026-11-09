@@ -200705,6 +200705,54 @@ extern "C" GP *monster_generic()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034a310 size=0x2b7
+#include "CGenericNPC.h"
+#include "CBaseAnimating.h"
+#include "CBaseEntity.h"
+#include "CPVSFilter.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "engineiface.h"
+#include "engineserver.h"
+
+struct CTempUserTracerView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void UserTracer(CRecipientFilter &filter, int delay, const Vector *start, const Vector *end, int speed, int bTracer, int a);
+};
+extern CTempUserTracerView *g_10540528;
+extern const char *g_106244c0[];
+
+void CGenericNPC::sub_1034a310()
+{
+	Vector vecMuzzle, vecRef, vecDir;
+	Vector angles;
+	CBaseAnimating *pAnim = (CBaseAnimating *)this;
+	pAnim->sub_10092ef0(2, &vecMuzzle.x, &angles.x);
+	pAnim->sub_10092ef0(3, &vecRef.x, &angles.x);
+	vecDir = vecMuzzle - vecRef;
+	VectorNormalize(vecDir);
+	bool bTracer = false;
+	if (enginerandom->vfunc2(0, 3) == 0)
+		bTracer = true;
+	Vector vecNear = vecMuzzle + vecDir * 64.0f;
+	Vector vecFar = vecMuzzle + vecDir * 4096.0f;
+	CPVSFilter pvs(vecMuzzle);
+	g_10540528->UserTracer(pvs, 0, &vecNear, &vecFar, 0x157c, bTracer, 1);
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	int edict = ((CBaseEntity *)this)->m_pEdict2e0;
+	int ent = engine->vfunc35(edict);
+	enginesound->vfunc3(&filter, ent, 1, g_106244c0[enginerandom->vfunc2(0, 2)], 0.4f, 0.8f, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034aae0 size=0x43
 #include "CNPCMaker.h"
 void *sub_100aa720(int size);
