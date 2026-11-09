@@ -14,6 +14,7 @@ public:
 	void sub_103f42b0();	// the base constructor body (stub 0x1000d26f), called first by sub_103f5780
 	CBaseMoneyObject *sub_103f5780();	// the constructor body: the base constructor, the vtable, then the dword at +0x8d4 is 0
 
+	int sub_103f5800();
 	void vfunc305();
 	CBaseMoneyObject *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_10013a57();	// as in CPhysForce (transplant)
