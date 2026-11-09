@@ -9671,6 +9671,7 @@
 0x1000e7c3 func   ?Grow@?$CUtlMemory@PAUCRandomSpawnFactory@@@@QAEXH@Z CUtlMemory<CRandomSpawnFactory *>::Grow
 0x1000e7c3 func   ?sub_101c4490@CMem4e_t@@QAEXH@Z CMem4e_t::sub_101c4490
 0x1000e7c8 func   ?vfunc420@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::vfunc420
+0x1000e7d2 func   ?sub_10124300@@YAXXZ sub_10124300
 0x1000e7d7 func   ?vfunc82@CGravityPellet@@QAEPAUdatamap_t@@XZ CGravityPellet::vfunc82
 0x1000e7dc func   ?sub_103499d0@CDataObjectAccessSystem@@QAEPAV1@I@Z CDataObjectAccessSystem::sub_103499d0
 0x1000e7e1 func   ?sub_1033bf50@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_1033bf50

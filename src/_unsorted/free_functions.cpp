@@ -67896,6 +67896,93 @@ int CGameMovement::sub_10124120(Vector &in, Vector &normal, Vector &out, float o
 }
 // END FUNCTION
 
+// FUNCTION: 0x10124300 size=0x223
+#include "vampire_all.h"
+#include "Vector.h"
+
+extern int g_10572424;
+extern Vector g_1070b318[54];
+
+void sub_10124300()
+{
+	if (!g_10572424)
+		return;
+
+	memset(g_1070b318, 0, sizeof(g_1070b318));
+	g_10572424 = 0;
+
+	int n = 0;
+	float x, y, z;
+	for (z = -0.125f; z <= 0.125; z += 0.125)
+	{
+		g_1070b318[n][0] = 0;
+		g_1070b318[n][1] = 0;
+		g_1070b318[n][2] = z;
+		n++;
+	}
+	for (y = -0.125f; y <= 0.125; y += 0.125)
+	{
+		g_1070b318[n][0] = 0;
+		g_1070b318[n][1] = y;
+		g_1070b318[n][2] = 0;
+		n++;
+	}
+	for (x = -0.125f; x <= 0.125; x += 0.125)
+	{
+		g_1070b318[n][0] = x;
+		g_1070b318[n][1] = 0;
+		g_1070b318[n][2] = 0;
+		n++;
+	}
+	for (x = -0.125f; x <= 0.125; x += 0.25)
+		for (y = -0.125f; y <= 0.125; y += 0.25)
+			for (z = -0.125f; z <= 0.125; z += 0.25)
+			{
+				g_1070b318[n][0] = x;
+				g_1070b318[n][1] = y;
+				g_1070b318[n][2] = z;
+				n++;
+			}
+
+	float a[3] = {0.0f, 1.0f, 6.0f};
+	int k;
+	for (k = 0; k < 3; k++)
+	{
+		z = a[k];
+		g_1070b318[n][0] = 0;
+		g_1070b318[n][1] = 0;
+		g_1070b318[n][2] = z;
+		n++;
+	}
+	for (y = -2.0f; y <= 2.0f; y += 2.0)
+	{
+		g_1070b318[n][0] = 0;
+		g_1070b318[n][1] = y;
+		g_1070b318[n][2] = 0;
+		n++;
+	}
+	for (x = -2.0f; x <= 2.0f; x += 2.0f)
+	{
+		g_1070b318[n][0] = x;
+		g_1070b318[n][1] = 0;
+		g_1070b318[n][2] = 0;
+		n++;
+	}
+	for (k = 0; k < 3; k++)
+	{
+		z = a[k];
+		for (x = -2.0f; x <= 2.0f; x += 2.0f)
+			for (y = -2.0f; y <= 2.0f; y += 2.0)
+			{
+				g_1070b318[n][0] = x;
+				g_1070b318[n][1] = y;
+				g_1070b318[n][2] = z;
+				n++;
+			}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124ba0 size=0x14f
 #include "CTraceFilterNoCharacterCollide.h"
 #include "CGameMovement.h"
