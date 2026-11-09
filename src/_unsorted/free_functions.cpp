@@ -183186,6 +183186,97 @@ bool CAI_Pathfinder::sub_102fce80(int moveType, CAI_PathfinderLink *pLink)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fdcc0 size=0x393
+#include "CAI_Pathfinder.h"
+#include "CAI_Waypoint.h"
+#include "CVProfile.h"
+
+struct CCycleSample
+{
+	unsigned __int64 m_Int64;
+	void Sample()
+	{
+		unsigned __int64 *p = &m_Int64;
+		__asm {
+			mov ecx, p
+			rdtsc
+			mov [ecx], eax
+			mov [ecx+4], edx
+		}
+	}
+};
+
+#define EXIT_CALLED() \
+	{ \
+		CVProfile *p = g_109f3648; \
+		if (!p->m_bAtRoot || p->m_enabled) { \
+			CVProfNode *n = p->m_pCurNode; \
+			if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) { \
+				CUnknownCycle100335e0 *pc = &n->m_CurFrameTime; \
+				sub_100335e0(pc); \
+				n->m_TotalTime += pc->m_Int64; \
+				g_109f3648->PopGroup(); \
+			} \
+			if (n->m_nRecursions == 0) \
+				p->m_pCurNode = p->m_pCurNode->m_pParent; \
+			p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot); \
+		} \
+	}
+
+inline CAI_PathfinderNetwork *GetNetwork(CAI_PathfinderOuter *pOuter)
+{
+	return pOuter->m_pPathfinder->m_pNetwork;
+}
+
+bool CAI_Pathfinder::sub_102fdcc0(const float *pStart, const float *pEnd)
+{
+	g_109f3648->EnterScope("CAI_Pathfinder_HasPathOuter", 0, "Unaccounted", false);
+	CAI_PathfinderOuter *pOuter = (CAI_PathfinderOuter *)m_pOuter;
+	int nStart = GetNetwork(pOuter)->sub_102f3c10(pOuter, pStart);
+	if (nStart == -1) {
+		g_109f3648->ExitScope();
+		return false;
+	}
+	int nEnd = GetNetwork(pOuter)->sub_102f3c10(pOuter, pEnd);
+	if (nEnd == -1) {
+		EXIT_CALLED();
+		return false;
+	}
+	CAI_Waypoint *pWaypoint = sub_103005f0(pStart, 0x60, nStart, 0, 0);
+	if (pWaypoint == 0) {
+		EXIT_CALLED();
+		return false;
+	}
+	sub_1031a050(pWaypoint);
+	pWaypoint = sub_103007e0(pEnd, 0x160, nEnd, 0, 0);
+	if (pWaypoint == 0) {
+		EXIT_CALLED();
+		return false;
+	}
+	sub_1031a050(pWaypoint);
+	bool bResult = sub_102fe150(nStart, nEnd);
+	{
+		CVProfile *p = g_109f3648;
+		if (!p->m_bAtRoot || p->m_enabled) {
+			CVProfNode *n = p->m_pCurNode;
+			if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+				CCycleSample s;
+				s.m_Int64 = 0;
+				s.Sample();
+				CUnknownCycle100335e0 *pc = &n->m_CurFrameTime;
+				pc->m_Int64 = s.m_Int64 - pc->m_Int64;
+				n->m_TotalTime += pc->m_Int64;
+				g_109f3648->PopGroup();
+			}
+			if (n->m_nRecursions == 0)
+				p->m_pCurNode = p->m_pCurNode->m_pParent;
+			p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+		}
+	}
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fe9a0 size=0x32
 #include "CBitString.h"
 
