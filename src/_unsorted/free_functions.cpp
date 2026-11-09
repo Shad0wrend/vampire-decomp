@@ -120168,6 +120168,54 @@ void CDiscipline::sub_101de2f0(CBaseEntity *pAttacker, CBaseCombatCharacter *pTa
 }
 // END FUNCTION
 
+// FUNCTION: 0x101def10 size=0xb3
+#include "S101df260.h"
+
+struct CTgtNPCView
+{
+	char m_pad0000[0x14b8];
+	unsigned int m_flags14b8;
+	unsigned int m_flags14bc;
+
+	void sub_1026d0c0();
+	int *sub_1028a150();
+	void sub_10273e80(int a);
+};
+
+struct CTgtCharView
+{
+	char m_pad0000[0x98];
+	CTgtNPCView *m_pNPC98;
+
+	void sub_10323770();
+};
+
+void S101ddec0::sub_101def10(int unused, void *pChar, int id)
+{
+	CTgtNPCView *pNPC;
+	m_o5c.sub_101dd3a0(pChar, id);
+	m_o78.sub_101dd3a0(pChar, id);
+	if ((pNPC = ((CTgtCharView *)pChar)->m_pNPC98) != 0 && m_na8)
+	{
+		if (!(m_na8 & 0x80000000))
+			pNPC->m_flags14b8 &= ~m_na8;
+		else
+			pNPC->m_flags14bc &= ~m_na8;
+	}
+	if (m_b1e)
+		((CTgtCharView *)pChar)->sub_10323770();
+	const char *pszSchedule = m_pszSchedule34 ? m_pszSchedule34 : "";
+	if (*pszSchedule)
+	{
+		if ((pNPC = ((CTgtCharView *)pChar)->m_pNPC98) != 0 && (pNPC->m_flags14bc & 0x800000) == 0x800000)
+			pNPC->sub_1026d0c0();
+		int *pTask = pNPC->sub_1028a150();
+		if (pTask && (*pTask == 0xe1 || *pTask == 0xe3))
+			pNPC->sub_10273e80(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101df000 size=0x1de
 #include "CUnknown101dff00.h"
 #include "CUnknown101dddb0.h"
