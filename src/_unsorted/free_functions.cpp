@@ -116643,6 +116643,53 @@ bool sub_101d37a0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d3a10 size=0x18b
+#include "CUnknown101d3a10.h"
+#include "CVStatInfoList_t.h"
+
+extern CVStatInfoList_t g_1074e658;
+extern CVStatInfoList_t g_1074e4f0;
+extern CVStatInfoList_t g_1074e098;
+extern int g_10738d14;
+
+void CUnknown101d3a10::sub_101d3a10()
+{
+	int i;
+	int n = g_1074e658.m_nStats;
+	if (n > 0) {
+		if (m_pArray0d0)
+			delete m_pArray0d0;
+		m_pArray0d0 = new int[n];
+		for (i = 0; i < n; i++)
+			m_pArray0d0[i] = g_1074e658.sub_10200370(i)->DefaultValue();
+	}
+	n = g_1074e4f0.m_nStats;
+	if (n > 0) {
+		if (m_pArray0d4)
+			delete m_pArray0d4;
+		m_pArray0d4 = new int[n];
+		for (i = 0; i < n; i++)
+			m_pArray0d4[i] = g_1074e4f0.sub_10200370(i)->DefaultValue();
+	}
+	n = g_1074e098.m_nStats;
+	if (n > 0) {
+		if (m_pArray0d8)
+			delete m_pArray0d8;
+		m_pArray0d8 = new int[n];
+		for (i = 0; i < n; i++)
+			m_pArray0d8[i] = -1;
+		for (i = 0; i < n; i++)
+			m_pArray0d8[i] = g_1074e098.sub_10200370(i)->DefaultValue();
+	}
+	if (m_pArray0dc)
+		delete m_pArray0dc;
+	n = g_10738d14;
+	m_pArray0dc = new int[n];
+	for (i = 0; i < g_10738d14; i++)
+		m_pArray0dc[i] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d3c10 size=0x25c
 #include "StatDefault3.h"
 
