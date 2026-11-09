@@ -100508,6 +100508,86 @@ void CAmbientGenericInput::sub_101ac7d0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ad0f0 size=0x24e
+#include <stdlib.h>
+#pragma intrinsic(abs)
+#include "CAmbientGeneric.h"
+extern dynpitchvol_t g_10595f18[];
+
+void CAmbientGeneric::sub_101ad0f0()
+{
+	int pitchinc;
+
+	m_dpv.volrun = m_iHealth * 10;
+	if (m_dpv.volrun > 100) m_dpv.volrun = 100;
+	if (m_dpv.volrun < 0) m_dpv.volrun = 0;
+
+	if (m_dpv.preset != 0 && m_dpv.preset <= 27)
+	{
+		m_dpv = g_10595f18[m_dpv.preset - 1];
+
+		if (m_dpv.spindown > 0)
+			m_dpv.spindown = (101 - m_dpv.spindown) * 64;
+		if (m_dpv.spinup > 0)
+			m_dpv.spinup = (101 - m_dpv.spinup) * 64;
+
+		m_dpv.volstart *= 10;
+		m_dpv.volrun *= 10;
+
+		if (m_dpv.fadein > 0)
+			m_dpv.fadein = (101 - m_dpv.fadein) * 64;
+		if (m_dpv.fadeout > 0)
+			m_dpv.fadeout = (101 - m_dpv.fadeout) * 64;
+
+		m_dpv.lforate *= 256;
+
+		m_dpv.fadeinsav = m_dpv.fadein;
+		m_dpv.fadeoutsav = m_dpv.fadeout;
+		m_dpv.spinupsav = m_dpv.spinup;
+		m_dpv.spindownsav = m_dpv.spindown;
+	}
+
+	m_dpv.fadein = m_dpv.fadeinsav;
+	m_dpv.fadeout = 0;
+
+	if (m_dpv.fadein)
+		m_dpv.vol = m_dpv.volstart;
+	else
+		m_dpv.vol = m_dpv.volrun;
+
+	m_dpv.spinup = m_dpv.spinupsav;
+	m_dpv.spindown = 0;
+
+	if (m_dpv.spinup)
+		m_dpv.pitch = m_dpv.pitchstart;
+	else
+		m_dpv.pitch = m_dpv.pitchrun;
+
+	if (m_dpv.pitch == 0)
+		m_dpv.pitch = 100;
+
+	m_dpv.pitchfrac = m_dpv.pitch << 8;
+	m_dpv.volfrac = m_dpv.vol << 8;
+
+	m_dpv.lfofrac = 0;
+	m_dpv.lforate = abs(m_dpv.lforate);
+
+	m_dpv.cspincount = 1;
+
+	if (m_dpv.cspinup)
+	{
+		pitchinc = (255 - m_dpv.pitchstart) / m_dpv.cspinup;
+
+		m_dpv.pitchrun = m_dpv.pitchstart + pitchinc;
+		if (m_dpv.pitchrun > 255) m_dpv.pitchrun = 255;
+	}
+
+	if ((m_dpv.spinupsav || m_dpv.spindownsav || (m_dpv.lfotype && m_dpv.lfomodpitch))
+		&& (m_dpv.pitch == 100))
+		m_dpv.pitch = 101;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ad3e0 size=0x17
 namespace lifted {
 struct C100131e2 { int sub_100131e2(int, int, int, int); };
