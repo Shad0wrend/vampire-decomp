@@ -19,22 +19,18 @@ struct CAI_PlaneSolverTrace	// 0x38 byte result record of a probe trace (zeroed 
 	int m_n[14];
 };
 
+struct CAI_PlaneSolverTimer
+{
+	CAI_PlaneSolverTimer(float interval) { m_next = -1.0F; m_interval = interval; }
+	float m_next;
+	float m_interval;
+};
+
 class CAI_PlaneSolverBase
 {
 public:
-	CAI_PlaneSolverBase(int owner)
+	CAI_PlaneSolverBase(int owner) : m_owner(owner), m_f08(3.402823466e+38F), m_f0c(3.402823466e+38F), m_f10(3.402823466e+38F), m_b14(0), m_i18(0), m_f28(3.402823466e+38F), m_f2c(3.402823466e+38F), m_b30(0), m_timer(g_1049df80 - g_10445e08)
 	{
-		m_owner = owner;
-		m_f08 = 3.402823466e+38F;
-		m_f0c = 3.402823466e+38F;
-		m_f10 = 3.402823466e+38F;
-		m_b14 = 0;
-		m_i18 = 0;
-		m_f28 = 3.402823466e+38F;
-		m_f2c = 3.402823466e+38F;
-		m_b30 = 0;
-		m_f38 = g_1049df80 - g_10445e08;
-		m_f34 = -1.0F;
 		m_p3c = 0;
 		m_p40 = 0;
 		m_p44 = 0;
@@ -61,8 +57,7 @@ public:
 	float m_f2c;
 	char m_b30;
 	char m_pad31[3];
-	float m_f34;
-	float m_f38;
+	CAI_PlaneSolverTimer m_timer;
 	void *m_p3c;
 	void *m_p40;
 	void *m_p44;
