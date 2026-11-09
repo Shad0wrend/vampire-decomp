@@ -1413,6 +1413,108 @@ void CBaseAnimating::vfunc264()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096c40 size=0x2ff
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "CModelInfo.h"
+#include "StudioHdr.h"
+#include "StudioBones.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include <float.h>
+#include <string.h>
+
+// TARGET: CBaseAnimating::ComputeHitboxSurroundingBox
+bool CBaseAnimating::ComputeHitboxSurroundingBox(Vector *pVecWorldMins, Vector *pVecWorldMaxs)
+{
+	ScopeTrace trace("CBaseAnimating::ComputeHitboxSurroundingBox",
+	                 this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc,
+	                 g_106b8540);
+
+	StudioHdr *pHdr = EngineGlobals::g_1070b250->vfunc20((void *)sub_100b1a00());
+	if (pHdr)
+	{
+		const char *pName = (const char *)pHdr + 0xc;
+		if (strcmp(pName, "error/missing.mdl") != 0)
+		{
+			StudioHitboxSet *pSet = pHdr->HitboxSet(*(int *)((char *)this + 0x680));
+			if (pSet && pSet->m_nHitboxes != 0)
+			{
+				matrix3x4_t boneToWorld[350];
+				matrix3x4_t *boneMap[350];
+				CEntityVSlots *pV = (CEntityVSlots *)this;
+				int nSeq = *(int *)((char *)this + 0x6f0);
+
+				StudioCacheEntry *pData = sub_100c46c0((int)pHdr, nSeq, *(float *)((char *)this + 0x174), (float *)pV->slot219(), (float *)pV->slot217(), 12);
+				if (!pData)
+				{
+					pV->slot257((int)boneToWorld, 12);
+					nSeq = *(int *)((char *)this + 0x6f0);
+					pData = sub_100c4a20((int)pHdr, nSeq, *(float *)((char *)this + 0x174), (float *)pV->slot219(), (float *)pV->slot217(), 12, boneToWorld);
+				}
+				sub_100c4600((int *)boneMap, pData, pHdr, pSet);
+
+				pVecWorldMins->x = FLT_MAX;
+				pVecWorldMins->y = FLT_MAX;
+				pVecWorldMins->z = FLT_MAX;
+				pVecWorldMaxs->x = -FLT_MAX;
+				pVecWorldMaxs->y = -FLT_MAX;
+				pVecWorldMaxs->z = -FLT_MAX;
+
+				for (int i = 0; i < pSet->m_nHitboxes; i++)
+				{
+					StudioHitbox *pHitbox = pSet->Hitbox(i);
+					Vector vecMins, vecMaxs;
+					sub_1013c0e0(*boneMap[pHitbox->m_iBone], pHitbox->m_vecMins, pHitbox->m_vecMaxs, vecMins, vecMaxs);
+
+					pVecWorldMins->x = pVecWorldMins->x < vecMins.x ? pVecWorldMins->x : vecMins.x;
+					pVecWorldMins->y = pVecWorldMins->y < vecMins.y ? pVecWorldMins->y : vecMins.y;
+					pVecWorldMins->z = pVecWorldMins->z < vecMins.z ? pVecWorldMins->z : vecMins.z;
+					pVecWorldMaxs->x = pVecWorldMaxs->x > vecMaxs.x ? pVecWorldMaxs->x : vecMaxs.x;
+					pVecWorldMaxs->y = pVecWorldMaxs->y > vecMaxs.y ? pVecWorldMaxs->y : vecMaxs.y;
+					pVecWorldMaxs->z = pVecWorldMaxs->z > vecMaxs.z ? pVecWorldMaxs->z : vecMaxs.z;
+				}
+				return true;
+			}
+			if (pVecWorldMins)
+			{
+				pVecWorldMins->x = 0;
+				pVecWorldMins->y = 0;
+				pVecWorldMins->z = 0;
+			}
+			if (pVecWorldMaxs)
+			{
+				pVecWorldMaxs->x = 0;
+				pVecWorldMaxs->y = 0;
+				pVecWorldMaxs->z = 0;
+			}
+			return false;
+		}
+	}
+	if (pVecWorldMins)
+	{
+		pVecWorldMins->x = 0;
+		pVecWorldMins->y = 0;
+		pVecWorldMins->z = 0;
+	}
+	if (pVecWorldMaxs)
+	{
+		pVecWorldMaxs->x = 0;
+		pVecWorldMaxs->y = 0;
+		pVecWorldMaxs->z = 0;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097ae0 size=0x6
 #include "CBaseAnimating.h"
 namespace lifted {
