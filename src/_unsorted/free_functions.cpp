@@ -189469,6 +189469,28 @@ void CUnknown102e83e0::sub_102e8270(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e83e0 size=0x82
+#include "CUnknown102e83e0.h"
+
+struct CUnknown102e83e0Outer : CUnknown102e83e0
+{
+	CAI_BaseNPC *GetOuter() { return m_pOuter; }
+};
+
+bool CUnknown102e83e0::sub_102e83e0()
+{
+	CAI_BaseNPC *pOuter = m_pOuter;
+	bool result = false;
+	if (!*((char *)pOuter + 0x5ca4))
+		pOuter->vfunc481(((CUnknown102e83e0Outer *)this)->GetOuter()->vfunc167());
+	if (pOuter->sub_10269aa0(0x4f))
+		result = true;
+	else if (!pOuter->sub_10269aa0(0x58) && !pOuter->sub_10269aa0(0x60) && !pOuter->sub_10269aa0(0x55) && !pOuter->sub_10269aa0(0x48) && !pOuter->sub_10269aa0(0x40))
+		result = true;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e84a0 size=0x8d
 #include "CUnknown102e83e0.h"
 #include "CUnknown102ee120.h"
