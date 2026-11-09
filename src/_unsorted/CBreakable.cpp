@@ -153,6 +153,70 @@ void CBreakable::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010dea0 size=0x1d8
+#include "CTakeDamageInfo.h"
+#include "CBreakable.h"
+#include "CGameTrace.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "UTIL_BloodStream.h"
+
+// TARGET: CBreakable::vfunc141
+
+struct CEffectsServerView
+{
+	virtual void e0(); virtual void e1(); virtual void e2();
+	virtual void Sparks(const Vector &origin, int nMagnitude, int nTrailLength, const Vector *pvecDir);
+	virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7();
+	virtual void e8(const Vector &origin, const Vector &dir);
+};
+
+struct CBaseEntityTraceBase
+{
+	void sub_100a7de0(void *pInfo, const Vector *pDir, void *pTrace);
+};
+
+struct CBreakableEdictView
+{
+	char m_pad[0x2e0];
+	int m_pEdict;
+	int edict() const { return m_pEdict; }
+	int entindex() const { return engine->vfunc35(edict()); }
+};
+
+void CBreakable::vfunc141(CTakeDamageInfo *pInfo, const Vector *pDir, CGameTrace *pTrace)
+{
+	if (enginerandom->vfunc2(0, 1))
+	{
+		switch (m_nMaterial)
+		{
+		case 6:
+			((CEffectsServerView *)g_10566258)->Sparks(*(const Vector *)pTrace->m_endpos, 1, 1, 0);
+			{
+				float flVolume = enginerandom->vfunc1(0.7f, 1.0f);
+				CPASAttenuationFilter filter((CEntitySoundOriginView *)this, 0.8f);
+				switch (enginerandom->vfunc2(0, 1))
+				{
+				case 0:
+					enginesound->vfunc3(&filter, ((CBreakableEdictView *)this)->entindex(), 2, "buttons/spark5.wav", flVolume, 0.8f, 0, 100, 0, 0, 1, 0);
+					break;
+				case 1:
+					enginesound->vfunc3(&filter, ((CBreakableEdictView *)this)->entindex(), 2, "buttons/spark6.wav", flVolume, 0.8f, 0, 100, 0, 0, 1, 0);
+					break;
+				}
+			}
+			break;
+		case 7:
+			Vector vecDir = *pDir * -1.0f;
+			((CEffectsServerView *)g_10566258)->e8(*(const Vector *)pTrace->m_endpos, vecDir);
+			break;
+		}
+	}
+
+	((CBaseEntityTraceBase *)this)->sub_100a7de0(pInfo, pDir, pTrace);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e100 size=0x34a
 #include "CBreakable.h"
 #include "CBaseEntity.h"
