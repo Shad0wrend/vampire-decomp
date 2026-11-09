@@ -4304,6 +4304,102 @@ bool CBaseEntityThinkUnit::sub_10033de0(float *pNextThink, float *pLastThink, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033f60 size=0x2aa
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "CBaseEntity.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+
+struct CBaseEntityThinkUnit
+{
+	bool sub_10033de0(float *pNext, float *pLast, int pfn);
+};
+void sub_1003c450();
+
+#define THINKVEC (*(CUtlVector<CBaseEntityThinkContext> *)&m_pThinkContexts)
+
+struct CCycleSampleLocal
+{
+	unsigned __int64 m_Int64;
+	CCycleSampleLocal() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+// TARGET: CBaseEntity::sub_10033f60
+bool CBaseEntity::sub_10033f60(int nThinkMethod)
+{
+	ScopeTrace trace("CBaseEntity::PhysicsRunThink", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	g_109f3648->EnterScope("CBaseEntity_PhysicsRunThink", 0, "Unaccounted", false);
+	bool bAlive = true;
+	if (nThinkMethod != 2) {
+		bAlive = ((CBaseEntityThinkUnit *)this)->sub_10033de0((float *)((char *)this + 0x17c), (float *)((char *)this + 0x178), (int)sub_1003c450);
+		if (!bAlive) {
+			g_109f3648->ExitScopeCall();
+			return false;
+		}
+	}
+	if (nThinkMethod == 1) {
+		g_109f3648->ExitScopeCall();
+	} else {
+		for (int i = 0; i < THINKVEC.Count(); i++) {
+			m_iCurrentThinkContext = i;
+			bAlive = ((CBaseEntityThinkUnit *)this)->sub_10033de0((float *)&THINKVEC[i].m_b, (float *)&THINKVEC[i].m_c, THINKVEC[i].m_a);
+			m_iCurrentThinkContext = -1;
+			if (!bAlive) {
+				CVProfile *pProf = g_109f3648;
+				if (!pProf->m_bAtRoot || pProf->m_enabled) {
+					CVProfNode *pNode = pProf->m_pCurNode;
+					if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+						CUnknownCycle100335e0 *pc = &pNode->m_CurFrameTime;
+						sub_100335e0(pc);
+						pNode->m_TotalTime += pc->m_Int64;
+						g_109f3648->PopGroup();
+					}
+					if (pNode->m_nRecursions == 0)
+						pProf->m_pCurNode = pProf->m_pCurNode->m_pParent;
+					pProf->m_bAtRoot = (pProf->m_pCurNode == pProf->m_pRoot);
+				}
+				return false;
+			}
+		}
+		CVProfile *pProf = g_109f3648;
+		if (!pProf->m_bAtRoot || pProf->m_enabled) {
+			CVProfNode *pNode = pProf->m_pCurNode;
+			if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0) {
+				CUnknownCycle100335e0 *pc = &pNode->m_CurFrameTime;
+				CCycleSampleLocal cc;
+				cc.Sample();
+				pc->m_Int64 = cc.m_Int64 - pc->m_Int64;
+				pNode->m_TotalTime += pc->m_Int64;
+				g_109f3648->PopGroup();
+			}
+			if (pNode->m_nRecursions == 0)
+				pProf->m_pCurNode = pProf->m_pCurNode->m_pParent;
+			pProf->m_bAtRoot = (pProf->m_pCurNode == pProf->m_pRoot);
+		}
+	}
+	return bAlive;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100353c0 size=0x93
 #include "CUnknown100353c0.h"
 
