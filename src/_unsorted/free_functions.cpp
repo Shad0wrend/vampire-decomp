@@ -72715,6 +72715,30 @@ int sub_10137c70(Vector *a, Vector *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137e40 size=0x61
+struct RadianEuler10137e40
+{
+	float x, y, z;
+	inline void Init(float ix, float iy, float iz) { x = ix; y = iy; z = iz; }
+};
+#define DEG2RAD10137e40(x) ((float)(x) * (float)(3.14159265358979323846f / 180.f))
+void sub_10137ed0(float *pMatrix, float *pOut);
+void sub_1013b390(RadianEuler10137e40 *pAngles, float *pOut);
+void sub_10138720(float *pMatrix, int n, float *pOut);
+inline void MatrixAngles10137e40(float *matrix, RadianEuler10137e40 &angles)
+{
+	sub_10137ed0(matrix, (float *)&angles);
+	angles.Init(DEG2RAD10137e40(angles.z), DEG2RAD10137e40(angles.x), DEG2RAD10137e40(angles.y));
+}
+void sub_10137e40(float *pMatrix, float *pQuat, float *pAngles)
+{
+	RadianEuler10137e40 angles;
+	MatrixAngles10137e40(pMatrix, angles);
+	sub_1013b390(&angles, pQuat);
+	sub_10138720(pMatrix, 3, pAngles);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137ed0 size=0xc4
 #include <math.h>
 #include "matrix3x4_t.h"
