@@ -139452,6 +139452,73 @@ void sub_102066b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102066d0 size=0x21b
+#include "CVendorTable.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102064b0.h"
+#include "FileSystemViews.h"
+#include <stdio.h>
+struct CVendorNameId { int m_n; CVendorNameId(); };
+extern CUnknown102064b0Keys *sub_101f2e20(const char *path, IFileSystemView *fs);
+extern CVendorNameId sub_10203920(CUnknown102064b0Keys *p);
+extern CVendorNameId sub_102038e0(CUnknown102064b0Keys *p, const char *name);
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);
+struct CVendorKeyFileBase { virtual void v0(); virtual void Release(); };
+struct CVendorKeyFile : virtual CVendorKeyFileBase { virtual void f0(); };
+
+bool CVendorTable::sub_102066d0()
+{
+	if (m_ppVendors) {
+		for (int i = 0; i < m_nVendors; i++) {
+			if (m_ppVendors[i])
+				delete m_ppVendors[i];
+			m_ppVendors[i] = 0;
+		}
+		::operator delete(m_ppVendors);
+		m_ppVendors = 0;
+	}
+	m_nNextId = 0;
+	m_nVendors = 0;
+	m_nAllocCount = 0;
+	char szPath[0x80];
+	sprintf(szPath, "%s%s.txt", "vdata\\system\\", "vendors");
+	CUnknown102064b0Keys *pFile = sub_101f2e20(szPath, g_1070b238);
+	if (pFile) {
+		m_nTableId = sub_10203920(pFile).m_n;
+		m_nInternalName = sub_102038e0(pFile, "InternalName").m_n;
+		for (CUnknown102064b0Keys *pKey = pFile->vfunc2("Vendor"); pKey; pKey = pKey->vfunc3()) {
+			if (m_nAllocCount == m_nVendors) {
+				m_nAllocCount += m_nGrowSize;
+				if (m_ppVendors) {
+					CUnknown10206400 **pNew = (CUnknown10206400 **)operator new(m_nAllocCount * 4);
+					int i;
+					for (i = 0; i < m_nVendors; i++)
+						pNew[i] = m_ppVendors[i];
+					for (; i < m_nAllocCount; i++)
+						pNew[i] = 0;
+					::operator delete(m_ppVendors);
+					m_ppVendors = pNew;
+					m_nVendors++;
+				} else {
+					m_ppVendors = (CUnknown10206400 **)operator new(m_nAllocCount * 4);
+					for (int i = 0; i < m_nAllocCount; i++)
+						m_ppVendors[i] = 0;
+					m_nVendors++;
+				}
+			} else
+				m_nVendors++;
+			if (m_ppVendors[m_nVendors - 1] == 0)
+				m_ppVendors[m_nVendors - 1] = new CUnknown10206400(m_nNextId++);
+			((CUnknown102064b0 *)m_ppVendors[m_nVendors - 1])->sub_102064b0(pKey);
+		}
+		((CVendorKeyFile *)pFile)->Release();
+		return false;
+	}
+	g_109f3628("Unable to load data for: %s\n", szPath);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10206980 size=0x7a
 extern "C" int sprintf(char *, const char *, ...);
 extern "C" int _strcmpi(const char *, const char *);

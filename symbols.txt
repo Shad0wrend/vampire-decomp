@@ -13234,6 +13234,7 @@
 0x10013296 func   ?vfunc279@CBaseFlex@@UAEXHM@Z CBaseFlex::vfunc279
 0x1001329b func   ??0CFlexAnimationTrack@@QAE@PAVCUnknown10075aa0@@@Z CFlexAnimationTrack::CFlexAnimationTrack
 0x100132a0 func   ?vfunc238@CBaseEntity@@QAEXHHHH@Z CBaseEntity::vfunc238
+0x100132af func   ?sub_102066d0@CVendorTable@@QAE_NXZ CVendorTable::sub_102066d0
 0x100132be func   ?sub_1018f890@CBreakableProp@@QAEXPAUinputdata_t@@@Z CBreakableProp::sub_1018f890
 0x100132c3 func   ?sub_10216930@CUnk10216930@@QAEXPAH@Z CUnk10216930::sub_10216930
 0x100132c8 func   ?vfunc468@CBasePlayer@@UAEXXZ CBasePlayer::vfunc468
