@@ -7,6 +7,13 @@
 #pragma once
 
 #include "Vector.h"
+#include "CWeaponAnimBase.h"
+
+struct CBaseCombatWeaponMembers	// stands for the construction of CBaseCombatWeapon's members with constructors (CVDmg_t[3] at +0x77c, handles at +0x874 / +0x878 / +0x88c, COutputEvent at +0x8e0 / +0x8f8) until the class is modelled past 0x898; its constructor is defined inline in the CBaseCombatWeapon constructor's source
+{
+	CBaseCombatWeaponMembers();
+	char m_pad[4];
+};
 
 struct CWeaponHolder_t;
 struct CWeaponOwner;
@@ -30,7 +37,7 @@ struct CWeaponRollValue	// a roll result value; has a constructor, so functions 
 #define CBCW_V(n) virtual void vfunc##n();
 #define CBCW_V10(p) CBCW_V(p##0) CBCW_V(p##1) CBCW_V(p##2) CBCW_V(p##3) CBCW_V(p##4) CBCW_V(p##5) CBCW_V(p##6) CBCW_V(p##7) CBCW_V(p##8) CBCW_V(p##9)
 
-class CBaseCombatWeapon
+class CBaseCombatWeapon : public CWeaponAnimBase
 {
 public:
 	// slots 0..9
@@ -174,7 +181,8 @@ public:
 	int m_n06f8;	// 0x6f8
 	char m_pad6fc[0x730 - 0x6fc];
 	float m_flTimes730[2];	// 0x730: time stamps, both set to the current time when the weapon changes hands
-	char m_pad738[0x744 - 0x738];
+	char m_pad738[0x740 - 0x738];
+	CBaseCombatWeaponMembers m_members740;	// 0x740
 	int m_nAmmoType;	// 0x744
 	union { char m_pad748[0x88c - 0x748]; struct { char m_pad748b[0x754 - 0x748]; const char *m_pszModelName754; char m_pad758[0x77c - 0x758]; char m_Dmg77c[3][0x44]; }; };	// 0x754: the weapon's model name; 0x77c: three CVDmg_t records of 0x44 bytes (view with (CVDmg_t *)m_Dmg77c)
 	unsigned int m_hOwner; // 0x88c
