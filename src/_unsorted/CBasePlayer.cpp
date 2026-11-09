@@ -1351,6 +1351,167 @@ void CBasePlayer::vfunc438(float flArg, int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163020 size=0x4ca
+#include "CVDmg_t.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "CGameRules.h"
+#include "CTakeDamageInfo.h"
+#include "CVStatList_t.h"
+#include "UTIL_BloodStream.h"
+#include "Vector.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+// TARGET: CBasePlayer::vfunc142
+
+struct CPlayerUnit
+{
+	int sub_10174f80();
+};
+
+struct SList2
+{
+	void sub_10227a30(int a, int b);
+};
+
+extern SList2 g_10750cb4;
+
+struct CBCCDamageView
+{
+	int sub_1032ef60(void *pInfo);
+};
+
+struct Color32
+{
+	unsigned char r, g, b, a;
+};
+
+void sub_101ce290(int a, int b, int c, int d, int e);
+
+#define GETDMG(p) ((p).m_pVDmg00 ? (float)(p).m_pVDmg00->sub_101faa70() : (p).m_flDamage)
+
+int CBasePlayer::vfunc142(const CTakeDamageInfo *pInfo)
+{
+	if (vfunc406())
+		return 0;
+
+	if ((pInfo->m_pAttacker && ((CBaseEntity *)pInfo->m_pAttacker)->m_p9c) ||
+		(pInfo->m_pInflictor && ((CBaseEntity *)pInfo->m_pInflictor)->m_p9c))
+	{
+		vslot410();
+	}
+
+	CTakeDamageInfo info = *pInfo;
+
+	if (((CBaseEntity *)this)->sub_100b3700() & 0x4000)
+		return 0;
+
+	if ((EHandle_Get(m_h1538) && m_n153C != -1 && m_n1540 == 0) ||
+		(EHandle_Get(m_h1538) && m_n153C != -1 && m_n1540 == 2))
+	{
+		((CBaseCombatCharacter *)this)->c353();
+		sub_10329560();
+	}
+
+	sub_1017c6d0();
+	sub_10167fd0();
+
+	if (m_aLastplayerAnim == 0xc && m_n14A0 > 0)
+	{
+		do
+		{
+			m_n14A0--;
+			sub_10338df0(1);
+			m_aLastplayerAnim = 0;
+			m_bPlayerAnimCyclePlaying = false;
+		} while (m_n14A0 > 0);
+	}
+
+	if (m_fDebugOverlays224 & 0x2000000)
+	{
+		if ((float)m_iHealth - GETDMG(info) <= 0.0f)
+		{
+			m_iHealth = 1;
+			return 0;
+		}
+	}
+
+	if ((info.m_pVDmg00 ? (info.m_pVDmg00->m_field10 | info.m_nFlags38) : info.m_nFlags38) & 0x40)
+		g_1070ba0c->vfunc21();
+
+	if (!vfunc158())
+		return 0;
+
+	if (!((CGameRules *)g_1070ba0c)->vfunc31((int)this, (int)info.m_pInflictor))
+		return 0;
+
+	m_lastDamageAmount = (int)GETDMG(info);
+	info.m_flDamage = (float)(int)GETDMG(info);
+
+	int nDamage = ((CBCCDamageView *)this)->sub_1032ef60(&info);
+	if (nDamage != 0)
+	{
+		if (info.m_pAttacker && ((CBaseEntity *)info.m_pAttacker)->m_pEdict2e0)
+		{
+			Vector *pOrigin = ((CEntityVSlots *)info.m_pAttacker)->slot220();
+			m_DmgOrigin = *pOrigin;
+		}
+
+		m_DmgTake += (float)(int)GETDMG(info);
+
+		if (GETDMG(info) > 0.0f)
+		{
+			if (((CPlayerUnit *)this)->sub_10174f80() != 6)
+			{
+				if (CVStatListSet::Of(this)->Find(3)->sub_102012d0(0xd) > 0)
+				{
+					Color32 color;
+					color.r = 0xb4;
+					color.g = 0xf0;
+					color.b = 0xff;
+					color.a = 0x78;
+					sub_101ce290((int)this, (int)&color, 0x3d4ccccd, 0x3dcccccd, 5);
+				}
+				else if (CVStatListSet::Of(this)->Find(3)->sub_102012d0(7) > 0)
+				{
+					Color32 color;
+					color.r = 0xb4;
+					color.g = 0xb4;
+					color.b = 0xb4;
+					color.a = 0x3c;
+					sub_101ce290((int)this, (int)&color, 0x3e4ccccd, 0, 1);
+				}
+				else
+				{
+					Color32 color;
+					color.r = 0xff;
+					color.g = 0x78;
+					color.b = 0x78;
+					color.a = 0x78;
+					sub_101ce290((int)this, (int)&color, 0x3dcccccd, 0x3e99999a, 5);
+				}
+			}
+
+			if (info.m_pInflictor && (CBaseEntity *)info.m_pInflictor != (CBaseEntity *)this &&
+				((CBaseEntity *)info.m_pInflictor)->m_pA8)
+			{
+				CBaseEntity *pInflictor = (CBaseEntity *)info.m_pInflictor;
+				float flDamage = GETDMG(info);
+				((CGameRules *)g_1070ba0c)->vfunc6((int)pInflictor, (int)this, *(int *)&flDamage);
+			}
+		}
+
+		g_10750cb4.sub_10227a30((int)this, 4);
+	}
+
+	return nDamage;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163630 size=0xd9
 #include "CBasePlayer.h"
 #define GV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
