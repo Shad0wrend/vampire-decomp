@@ -28,6 +28,37 @@ void CPathCorner::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147d80 size=0xab
+#include "CPathCorner.h"
+#include "IVEngineServer.h"
+
+extern IVEngineServer *g_1070b22c;
+extern int (__cdecl *g_109f388c)(char *, int, const char *, ...);
+extern char *(__cdecl *g_109f3890)(char *, const char *, int);
+extern char g_106b8540[];
+void sub_101434b0(int edictIndex, int line, const char *text, int a, int r, int g, int b, int alpha);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: CPathCorner::vfunc124
+int CPathCorner::vfunc124()
+{
+	int nLine = sub_100018cf();
+	if (m_fTextOverlayFlags & 1)
+	{
+		char tempstr[256];
+		if (m_pszTarget)
+			g_109f388c(tempstr, 255, "Target: %s", STRINGR(m_pszTarget));
+		else
+			g_109f3890(tempstr, "Target:   -  ", 255);
+		int edict = m_pEdict;
+		sub_101434b0(g_1070b22c->vfunc35(edict), nLine, tempstr, 0, 255, 255, 255, 255);
+		nLine++;
+	}
+	return nLine;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147e60 size=0xc3
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"
