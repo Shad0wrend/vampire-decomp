@@ -14,6 +14,134 @@ CAI_LocalNavigator *CAI_LocalNavigator::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ddc80 size=0x394
+#include "CEntityVSlots.h"
+#include "CAI_LocalNavigator.h"
+#include "CVProfile.h"
+#include "CBaseEntity.h"
+
+struct CCycleCountL {
+	unsigned __int64 m_Int64;
+	CCycleCountL() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+struct CFastTimerL {
+	CCycleCountL m_Duration;
+	void End()
+	{
+		CCycleCountL cnt;
+		cnt.Sample();
+		m_Duration.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+	}
+};
+struct MotorV {
+	virtual void m0(); virtual void m1(); virtual void m2(); virtual void m3();
+	virtual void m4(); virtual void m5(); virtual void m6(); virtual void m7();
+	virtual void m8(); virtual void m9(); virtual void m10(); virtual void m11();
+	virtual void m12(); virtual void m13(); virtual void m14(); virtual void m15();
+	virtual void m16();
+	virtual float m17();
+};
+struct OuterV : CEntityVSlots {
+	char m_pad[0x5d44 - sizeof(CEntityVSlots)];
+	MotorV *m_pMotor;
+};
+struct MoveV {
+	char m_pad00[0xc];
+	Vector m_vDir;
+	char m_pad18[0x24 - 0x18];
+	float m_f24;
+	float m_f28;
+	char m_pad2c[4];
+	int m_n30;
+	int m_n34;
+	unsigned char m_flags;
+	char m_pad39[0x44 - 0x39];
+	int m_n44;
+	char m_pad48[0x68 - 0x48];
+	float m_f68;
+};
+struct NavV {
+	float sub_1030a650(float);
+};
+struct ProbeV {
+	char sub_102e6d70(int, const Vector *, Vector *, int, int, float, int, int *, int, int);
+	char MoveLimit(int navType, const Vector *pStart, Vector *pEnd, int mask, int pTarget, float pct, int flags, int *pTrace, int a4, int a5)
+	{
+		return sub_102e6d70(navType, pStart, pEnd, mask, pTarget, pct, flags, pTrace, a4, a5);
+	}
+};
+struct CAI_LocalNavigatorL : CAI_LocalNavigator {
+	ProbeV *GetMoveProbe() { return (ProbeV *)m_n1c; }
+};
+
+struct CVProfNodeL : CVProfNode {
+	bool ExitScopeL()
+	{
+		if (--m_nRecursions == 0 && m_nCurFrameCalls != 0) {
+			CFastTimerL *pc = (CFastTimerL *)&m_CurFrameTime;
+			pc->End();
+			m_TotalTime += pc->m_Duration.m_Int64;
+			g_109f3648->PopGroup();
+		}
+		return m_nRecursions == 0;
+	}
+};
+struct CVProfileL : CVProfile {
+	void ExitScopeL()
+	{
+		if (!m_bAtRoot || m_enabled) {
+			if (((CVProfNodeL *)m_pCurNode)->ExitScopeL())
+				m_pCurNode = m_pCurNode->m_pParent;
+			m_bAtRoot = (m_pCurNode == m_pRoot);
+		}
+	}
+};
+
+#define OUTER ((OuterV *)m_pOuter)
+
+bool CAI_LocalNavigator::sub_102ddc80(MoveV *pMove, float *pOutDist, int *pResult, int a4, int a5)
+{
+	g_109f3648->EnterScope("CAI_LocalNavigator_MoveCalcDirect", 0, "Unaccounted", false);
+	float flMotor = OUTER->m_pMotor->m17();
+	float flNav = ((NavV *)m_pData)->sub_1030a650(pMove->m_f24);
+	float flSpeed = (flMotor > flNav) ? flMotor : flNav;
+	Vector vecDest = pMove->m_vDir * flSpeed + *(Vector *)OUTER->slot220();
+	if (pMove->m_f24 != 0.0f) {
+		Vector *pOrigin = (Vector *)OUTER->slot220();
+		char bHit = ((CAI_LocalNavigatorL *)this)->GetMoveProbe()->MoveLimit(pMove->m_n30, pOrigin, &vecDest, 0x202400b, pMove->m_n34, 100.0f, 0, &pMove->m_n44, a4, a5);
+		float flDist = flSpeed - pMove->m_f68;
+		if (flDist < 0.001)
+			flDist = 0.0f;
+		if (bHit) {
+			*pResult = 0;
+			g_109f3648->ExitScope();
+			return true;
+		}
+		if ((pMove->m_flags & 5) && flDist > pMove->m_f28) {
+			*pResult = 0;
+			g_109f3648->ExitScope();
+			return true;
+		}
+		*pOutDist = flDist;
+		((CVProfileL *)g_109f3648)->ExitScopeL();
+		return false;
+	}
+	*pResult = -4;
+	((CVProfileL *)g_109f3648)->ExitScopeL();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102de110 size=0x2cc
 #include "CAI_LocalNavigator.h"
 #include "CAI_Navigator.h"
