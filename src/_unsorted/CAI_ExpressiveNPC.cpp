@@ -35,6 +35,41 @@ int CAI_ExpressiveNPC::vfunc584()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10312cd0 size=0x47
+#include "vampire_all.h"
+#include "CAI_ExpressiveNPC.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_Expresser.h"
+
+void __fastcall sub_10312b20(char *p);
+
+struct CExprSlotView : CAI_BaseNPC
+{
+	CAI_NPC_V(569) CAI_NPC_V(570) CAI_NPC_V(571) CAI_NPC_V(572) CAI_NPC_V(573) CAI_NPC_V(574) CAI_NPC_V(575) CAI_NPC_V(576) CAI_NPC_V(577) CAI_NPC_V(578) CAI_NPC_V(579) CAI_NPC_V(580) CAI_NPC_V(581) CAI_NPC_V(582)
+	virtual CAI_Expresser *vfunc583();
+};
+
+struct CExprHostPad { virtual void f(); char m_pad[0x5f40]; };
+struct CExprHostView : CExprHostPad, CAI_ExpresserSink
+{
+	CAI_ExpresserSink *AsSink() { return this; }
+};
+
+// TARGET: CAI_ExpressiveNPC::vfunc424
+bool CAI_ExpressiveNPC::vfunc424()
+{
+	if (!((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc424())
+		return false;
+	m_pExpresser = ((CExprSlotView *)this)->vfunc583();
+	if (!m_pExpresser)
+		return false;
+	m_pExpresser->SetHost(this);
+	m_pExpresser->SetSink(((CExprHostView *)this)->AsSink());
+	sub_10312b20((char *)m_pExpresser);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312d40 size=0x90
 #include "vampire_all.h"
 #include "CAI_ExpressiveNPC.h"

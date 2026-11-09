@@ -7255,6 +7255,7 @@
 0x1000b13b func   ?sub_101ec4b0@@YIPBDPAXHHH@Z sub_101ec4b0
 0x1000b140 func   _camera_animated camera_animated
 0x1000b145 func   ?sub_10309f60@CUnknown1030a6e0@@QAEXPBVVector@@MPAV2@@Z CUnknown1030a6e0::sub_10309f60
+0x1000b14a func   ?vfunc424@CAI_ExpressiveNPC@@QAE_NXZ CAI_ExpressiveNPC::vfunc424
 0x1000b14f func   ?vfunc103@CTriggerWind@@UAEXXZ CTriggerWind::vfunc103
 0x1000b154 func   ?sub_101a6960@@YAXXZ sub_101a6960
 0x1000b15e func   ?sub_1027c2c0@@YADXZ sub_1027c2c0
