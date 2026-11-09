@@ -6293,6 +6293,182 @@ void CBaseEntity::sub_1003a090()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003a610 size=0x531
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CPhysObjSlots.h"
+#include "CCollisionProperty.h"
+#include "CGameTrace.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "CEHandleGet.h"
+#include "PhysicsTrace.h"
+
+extern float g_1070d9d0[];
+extern float g_104454c4;
+
+struct CDevFlagView
+{
+	virtual void v0();
+	virtual char v1();
+	char m_pad[0x28];
+	int m_n2c;
+};
+extern CDevFlagView *g_106bbaa4;
+
+struct CCycleSample
+{
+	unsigned __int64 m_Int64;
+	CCycleSample() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned int *p = (unsigned int *)&m_Int64;
+		__asm
+		{
+			mov ecx, p
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+static inline void PopGroupV2(CVProfile *p)
+{
+	--p->m_nGroupStackDepth;
+	int nNew = p->m_GroupIDStack[p->m_nGroupStackDepth];
+	int nOld = p->m_GroupIDStack[p->m_nGroupStackDepth + 1];
+	if (nNew != nOld && p->m_bVTuneGroupsEnabled && nOld == p->m_nVTuneGroupID)
+		vtune(false);
+}
+
+#define ENT ((CEntityVSlots *)this)
+
+void CBaseEntity::sub_1003a610()
+{
+	ScopeTrace scope("CBaseEntity::PhysicsStepTroika", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	g_109f3648->EnterScope("CBaseEntity_PhysicsStepTroika", 0, "Unaccounted", false);
+
+	CAI_BaseNPCTroika *pNPC = m_pNPC98;
+	sub_10033f60(2);
+
+	float flNextThink = m_flNextThink;
+	float flTimeStep = flNextThink - gpGlobals->curtime;
+
+	if (!(flNextThink <= g_104454c4))
+	{
+		if (!(flTimeStep > 0.5))
+		{
+			if (!(flTimeStep > gpGlobals->frametime))
+			{
+				Vector vecOldOrigin = *ENT->slot217();
+				float flNPCNext = pNPC->m_f6248;
+				if (flNPCNext - gpGlobals->curtime > gpGlobals->frametime)
+				{
+					sub_10033f60(1);
+					if (m_obj36c)
+					{
+						if (vecOldOrigin != *ENT->slot217())
+						{
+							if (m_obj36c)
+							{
+								ScopeTrace scope2("VPhysicsGetObject()->UpdateShadow", g_106b8540, g_106b8540);
+								CPhysObjSlots *pPhysics = (CPhysObjSlots *)m_obj36c;
+								pPhysics->slot46((const float *)ENT->slot217(), g_1070d9d0, ((unsigned int)sub_100b3700() >> 10) & 1, flTimeStep);
+							}
+						}
+					}
+					g_109f3648->ExitScopeCall();
+					return;
+				}
+
+				if (!g_106bbaa4->v1() && g_106bbaa4->m_n2c && m_obj36c && !EHandle_Get(m_hTouch254))
+				{
+					Vector vecPhysics;
+					((CPhysObjSlots *)m_obj36c)->slot47(&vecPhysics, (Vector *)0);
+					Vector vecDelta = *ENT->slot217() - vecPhysics;
+					if (vecDelta.LengthSqr() < 1.0f)
+					{
+						CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+						float *pMaxs = pCollision->vfunc2();
+						float *pMins = pCollision->vfunc1();
+						CGameTrace trace;
+						sub_10035030(this, (const Vector *)ENT->slot217(), (const Vector *)ENT->slot217(), (const Vector *)pMins, (const Vector *)pMaxs, ENT->slot237(), &trace);
+						if (trace.m_startsolid)
+						{
+							ENT->slot216(&vecPhysics);
+							sub_100a53d0(0);
+						}
+					}
+					else
+					{
+						ENT->slot216(&vecPhysics);
+						sub_100a53d0(0);
+					}
+				}
+
+				if (flNPCNext < gpGlobals->curtime)
+					flNPCNext = gpGlobals->curtime;
+				sub_1003b190(flNPCNext - ((CEntityVSlots *)pNPC)->slot413());
+				sub_10033f60(1);
+				sub_1003f4d0();
+				if (m_obj36c && vecOldOrigin != *ENT->slot217())
+				{
+					CPhysObjSlots *pPhysics = (CPhysObjSlots *)m_obj36c;
+					pPhysics->slot46((const float *)ENT->slot217(), g_1070d9d0, ((unsigned int)sub_100b3700() >> 10) & 1, flTimeStep);
+				}
+
+				CVProfile *pProfile = g_109f3648;
+				if (!pProfile->m_bAtRoot || pProfile->m_enabled)
+				{
+					CVProfNode *pNode = pProfile->m_pCurNode;
+					if (--pNode->m_nRecursions == 0 && pNode->m_nCurFrameCalls != 0)
+					{
+						CCycleSample sample;
+						sample.Sample();
+						CUnknownCycle100335e0 *pc = &pNode->m_CurFrameTime;
+						pc->m_Int64 = sample.m_Int64 - pc->m_Int64;
+						pNode->m_TotalTime += pc->m_Int64;
+						PopGroupV2(g_109f3648);
+					}
+					if (pNode->m_nRecursions == 0)
+						pProfile->m_pCurNode = pProfile->m_pCurNode->m_pParent;
+					pProfile->m_bAtRoot = (pProfile->m_pCurNode == pProfile->m_pRoot);
+				}
+				return;
+			}
+			goto EXIT;
+		}
+		else
+		{
+			if (((CEntityVSlots *)pNPC)->slot158())
+				goto EXIT;
+			goto RESET;
+		}
+	}
+	else
+	{
+		goto RESET;
+	}
+RESET:
+	sub_1003b190(gpGlobals->frametime);
+	sub_1003f4d0();
+	*(int *)((char *)this + 0x178) = *(int *)&gpGlobals->curtime;
+EXIT:
+	g_109f3648->ExitScopeCall();
+	return;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003aca0 size=0x3ee
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
