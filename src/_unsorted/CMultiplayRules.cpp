@@ -605,6 +605,33 @@ int CMultiplayRules::vfunc64(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142330 size=0x74
+#include "CMultiplayRules.h"
+#include "CBaseEntity.h"
+#include "ConVar.h"
+
+struct CVirtSlots94;
+bool __fastcall sub_101664d0(CVirtSlots94 *pEntity);
+
+extern ConVar *g_1070aec4;
+
+static inline int IsCvarOn()
+{
+	if (g_1070aec4->vfunc1())
+		return 0;
+	return g_1070aec4->m_nValue;
+}
+
+bool CMultiplayRules::vfunc73(CBaseEntity *pPlayer)
+{
+	if (!IsCvarOn())
+		return false;
+	if (sub_101664d0((CVirtSlots94 *)pPlayer) || ((Vector *)pPlayer->m_vel3d4)->Length2D() > 220.0f)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101423d0 size=0x3
 #include "CMultiplayRules.h"
 bool CMultiplayRules::vfunc18()
