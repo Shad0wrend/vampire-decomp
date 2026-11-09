@@ -482,6 +482,68 @@ void CWeaponRanged::vfunc320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102397b0 size=0x141
+#include "CWeaponRanged.h"
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "engineiface.h"
+
+struct CKickRecord
+{
+	char m_pad0000[0x384];
+	float m_fl384, m_fl388, m_fl38c, m_fl390, m_fl394, m_fl398, m_fl39c, m_fl3a0;
+};
+
+#define CV(n) virtual void cv##n();
+#define CV10(p) CV(p##0) CV(p##1) CV(p##2) CV(p##3) CV(p##4) CV(p##5) CV(p##6) CV(p##7) CV(p##8) CV(p##9)
+struct CCombatCharSlots
+{
+	CV10(0) CV10(1) CV10(2) CV10(3) CV10(4) CV10(5) CV10(6) CV10(7) CV10(8) CV10(9)
+	CV10(10) CV10(11) CV10(12) CV10(13) CV10(14) CV10(15)
+	CV(160) CV(161) CV(162) CV(163) CV(164) CV(165) CV(166) CV(167) CV(168)
+	virtual void vfunc169(Vector *pVec);
+};
+
+extern float g_1048f07c;
+extern float g_104454c4;
+
+// TARGET: CWeaponRanged::vfunc339
+void CWeaponRanged::vfunc339()
+{
+	void *pOwner = sub_102521f0();
+	if (!pOwner)
+		return;
+	CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)((CBaseEntity *)pOwner)->m_pA8;
+	if (!pChar)
+		return;
+
+	CKickRecord *pRec = (CKickRecord *)sub_102517e0();
+
+	float flValue;
+	if (pChar->sub_10346070() > g_1048f07c)
+		flValue = g_1048f07c;
+	else if (pChar->sub_10346070() < g_104454c4)
+		flValue = g_104454c4;
+	else
+		flValue = pChar->sub_10346070();
+
+	float flFraction = flValue / g_1048f07c;
+	float flScale = flFraction * flFraction;
+
+	float flX = (pRec->m_fl38c - pRec->m_fl390) * flScale + pRec->m_fl390;
+	float flY = (pRec->m_fl39c - pRec->m_fl3a0) * flScale + pRec->m_fl3a0;
+	flX = enginerandom->vfunc1(-flX, flX);
+	flY = enginerandom->vfunc1(-flY, flY);
+
+	Vector vec;
+	vec.z = 0.0f;
+	vec.x = (pRec->m_fl384 - pRec->m_fl388) * flScale + pRec->m_fl388 + flX;
+	vec.y = (pRec->m_fl394 - pRec->m_fl398) * flScale + pRec->m_fl398 + flY;
+
+	((CCombatCharSlots *)pChar)->vfunc169(&vec);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10239d10 size=0x4e
 #include "CWeaponRanged.h"
 #include "CFlagSet10174550.h"
