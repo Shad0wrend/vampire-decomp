@@ -71,6 +71,24 @@ void CEnvBeam::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fedd0 size=0x66
+#include "CEnvBeam.h"
+extern char g_106b8540[];
+void __cdecl sub_10014e93(const char *src, char *dst, int len);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void CEnvBeam::vfunc104()
+{
+	*(int *)m_pad0514 = engine->vfunc13(STRINGR(m_iszSpriteName), 0);
+	if (m_iszFileName) {
+		sub_10014e93(STRINGR(m_iszFileName), m_szFileName, 0x80);
+		engine->vfunc17(m_szFileName, 1);
+	}
+	sub_10015749();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fee60 size=0x2e
 #include "CEnvBeam.h"
 // TARGET: vfunc113
