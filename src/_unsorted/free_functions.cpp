@@ -164211,6 +164211,30 @@ float CMinSet1028b420::sub_1028b420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028b460 size=0x2a
+struct CUnit1028b460Entry {
+    int key;
+    int a, b;
+};
+
+struct CUnit1028b460 {
+    CUnit1028b460Entry m_entries[5];
+    CUnit1028b460Entry *sub_1028b460(int key);
+};
+
+CUnit1028b460Entry *CUnit1028b460::sub_1028b460(int key)
+{
+    if (key) {
+        for (int i = 0; i < 5; i++) {
+            if (m_entries[i].key == key)
+                return &m_entries[i];
+        }
+        return 0;
+    }
+    return (CUnit1028b460Entry *)key;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028cd70 size=0x35f
 struct ISaveRestoreOps;
 struct datamap_t;
