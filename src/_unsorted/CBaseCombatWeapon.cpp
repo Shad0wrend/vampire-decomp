@@ -1561,6 +1561,57 @@ void CBaseCombatWeapon::vfunc323()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10255430 size=0x1e3
+#include "CBaseCombatWeapon.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CEntityVSlots.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CGameTrace.h"
+#include "engineserver.h"
+#include "globalvars.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "CBaseEntity.h"
+
+extern Vector g_1070d1b0;
+struct CWeaponOwnerView { char m_pad0[0xa8]; CEntityVSlots *m_pA8; };
+void sub_10139610(const float *pAngles, float *pForward, float *pRight, float *pUp);
+void sub_10146570(Vector *pStart, Vector *pEnd, int r, int g, int b, int a, float flDuration);
+
+// TARGET: CBaseCombatWeapon::vfunc285
+void *CBaseCombatWeapon::vfunc285()
+{
+	if (!(vfunc360() & 0x6000))
+		return 0;
+	CWeaponOwnerView *pView = (CWeaponOwnerView *)sub_102521f0();
+	CEntityVSlots *pOwner = pView ? pView->m_pA8 : 0;
+	if (!pOwner)
+		return 0;
+	if (engine->vfunc120() != m_n884) {
+		m_n87c = 0;
+		m_n884 = engine->vfunc120();
+		Vector fwd;
+		sub_10139610((const float *)((char *)pOwner + 0x206c), &fwd.x, 0, 0);
+		Vector vecStart;
+		vecStart = pOwner->slot389(*pOwner->slot220());
+		Vector vecEnd;
+		vecEnd = vecStart + fwd * 4000.0f;
+		CTraceFilterSimple filter((CBaseEntity *)this, 0);
+		Ray_t ray;
+		ray.sub_1006dec0(vecStart, &vecEnd.x, &g_1070d1b0.x, &g_1070d1b0.x, 0, 1);
+		CGameTrace tr;
+		g_1070b254->vfunc4(&ray, 0x46004003, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10146570((Vector *)&tr, (Vector *)tr.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+		if (tr.m_fraction >= 1.0f || !tr.m_pEnt)
+			return 0;
+		m_n87c = *(int *)((char *)tr.m_pEnt + 0x98);
+	}
+	return (void *)m_n87c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102556a0 size=0x14
 #include "CBaseCombatWeapon.h"
 
