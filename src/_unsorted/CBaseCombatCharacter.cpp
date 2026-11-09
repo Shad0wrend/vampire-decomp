@@ -2032,6 +2032,50 @@ void CBaseCombatCharacter::vfunc345(const char *pszName, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032fc50 size=0x19d
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include <math.h>
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct SPoseHdr;
+struct SPoseParamView { int pad0; int pad1; float start; float end; float loop; };
+SPoseHdr *sub_100c73b0(SPoseHdr *pHdr, int iParameter);
+
+float CBaseCombatCharacter::vfunc346(int iParameter, float flValue, char bClamp)
+{
+	ScopeTrace trace("CBaseCombatCharacter::SetPoseParameter", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	for (int i = 0; i < 2; i++)
+	{
+		if (iParameter == m_nPoseIndex[i])
+		{
+			m_flPoseValue[i] = flValue;
+			if (bClamp && sub_100952d0(-1))
+			{
+				SPoseParamView *pPose = (SPoseParamView *)sub_100c73b0((SPoseHdr *)sub_100952d0(-1), iParameter);
+				if (!pPose)
+					continue;
+				if (pPose->loop != 0.0f)
+				{
+					float wrap = (pPose->start + pPose->end) / 2.0 + pPose->loop / 2.0;
+					float shift = pPose->loop - wrap;
+					flValue = flValue - pPose->loop * floor((flValue + shift) / pPose->loop);
+				}
+				float flRemain = (flValue - pPose->start) / (pPose->end - pPose->start);
+				if (flRemain < 0.0f)
+					flRemain = 0.0f;
+				else if (flRemain > 1.0f)
+					flRemain = 1.0f;
+				flValue = (pPose->end - pPose->start) * flRemain + pPose->start;
+			}
+			return flValue;
+		}
+	}
+	return sub_10091fe0(iParameter, flValue);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032fe60 size=0x158
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

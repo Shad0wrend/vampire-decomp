@@ -11251,6 +11251,7 @@
 0x10010ba9 func   ?vfunc389@CBaseCombatCharacter@@QAE?AVVector@@ABV2@@Z CBaseCombatCharacter::vfunc389
 0x10010bae func   ?sub_1019ed90@CRopeKeyframe@@QAEXPAURopeArg@@@Z CRopeKeyframe::sub_1019ed90
 0x10010bb3 func   ?vfunc313@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc313
+0x10010bb8 func   ?vfunc346@CBaseCombatCharacter@@QAEMHMD@Z CBaseCombatCharacter::vfunc346
 0x10010bbd func   ?sub_101123b0@CBreakableSurface@@QAE_NHH@Z CBreakableSurface::sub_101123b0
 0x10010bc2 func   ?vfunc86@CNPCMaker@@UAE_NHPAXHHH@Z CNPCMaker::vfunc86
 0x10010bc7 func   ?vfunc69@CNPC_VGargoyle@@QAEDPAVCBaseEntity@@@Z CNPC_VGargoyle::vfunc69
