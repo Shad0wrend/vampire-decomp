@@ -12291,6 +12291,7 @@
 0x10011e4b func   ?sub_1042d9f0@@YIIPAI@Z sub_1042d9f0
 0x10011e50 func   ?sub_102a9f20@CUnknown102a9f20@@QAEHXZ CUnknown102a9f20::sub_102a9f20
 0x10011e55 func   ?sub_10257280@CWeaponRanged@@QAEHPAX0H@Z CWeaponRanged::sub_10257280
+0x10011e5a func   ?sub_10143710@@YAXABVVector@@PBDHM@Z sub_10143710
 0x10011e5f func   ?sub_1042d720@@YIIPAI@Z sub_1042d720
 0x10011e64 func   ?vfunc3@CPyObjStrSaveRestoreDataOps@@UAEHH@Z CPyObjStrSaveRestoreDataOps::vfunc3
 0x10011e69 func   ?sub_102296c0@CUnknown102296c0@@QAEHXZ CUnknown102296c0::sub_102296c0

@@ -79697,6 +79697,48 @@ void sub_10143630(const Vector *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143710 size=0x194
+#include "CBaseEntity.h"
+#include "CFlameCluster.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "DebugOverlay.h"
+#include "CUnknown101cf0a0.h"
+#include "CSingleUserRecipientFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "ScopeTrace.h"
+
+void sub_10143710(const Vector &vecPos, const char *pszText, int unused, float nValue)
+{
+	CUnknown1070b22c_Edict *pEdict = (CUnknown1070b22c_Edict *)engine->vfunc38(1);
+	CBaseEntity *pPlayer;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+		if (!pEdict)
+			pEdict = (CUnknown1070b22c_Edict *)engine->vfunc38(0);
+		pPlayer = (pEdict && pEdict->m_pUnknown) ? pEdict->m_pUnknown->GetBaseEntity() : 0;
+	}
+	if (pPlayer)
+	{
+		if (!((*(const Vector *)((CEntitySoundOriginView *)pPlayer)->GetOrigin() - vecPos).LengthSqr() > 4000000.0f))
+		{
+			CSingleUserRecipientFilter filter(pPlayer);
+			engine->vfunc65(&filter, 0x31);
+			engine->vfunc75((int)&vecPos);
+			engine->vfunc72(nValue);
+			engine->vfunc78(pszText);
+			engine->vfunc66();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10143920 size=0x1c8
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
