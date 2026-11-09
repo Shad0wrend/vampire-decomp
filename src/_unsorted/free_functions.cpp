@@ -230814,6 +230814,60 @@ void sub_103e1960(CLinkElem *pBase, CLinkElem *pNode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e19b0 size=0x183
+#include "CBaseEntity.h"
+#include "CUnknown103e1680.h"
+#include "Vector.h"
+#include <math.h>
+
+class CBaseEntity;
+
+struct CLinkElem {
+	int m_state;	// 0x00
+	float m_time;	// 0x04
+	Vector m_pos;	// 0x08
+	Vector m_vel;	// 0x14
+	int m_prev;	// 0x20
+	int m_next;	// 0x24
+	CBaseEntity *m_pEnt;	// 0x28
+	Vector m_normal;	// 0x2c
+	int m_n38;	// 0x38
+};
+
+extern CUnknown103e1680 *g_109405fc;
+extern CUnknown103e1680 *g_109405b4;
+extern CUnknown103e1680 *g_1094056c;
+void sub_103e1960(CLinkElem *pBase, CLinkElem *p);
+int sub_103e17b0(Vector vecStart, Vector vecEnd, Vector *pOut, CBaseEntity **ppEnt, Vector *pNormal, int *pnBox);
+
+// TARGET: sub_103e19b0
+void sub_103e19b0(CLinkElem *pBase, CLinkElem *p, float dt)
+{
+	p->m_time = dt + p->m_time;
+	if (p->m_state == 1) {
+		float flLife = g_109405fc->vfunc1() ? 0.0f : g_109405fc->m_f28;
+		if (flLife < p->m_time) {
+			p->m_state = 4;
+			sub_103e1960(pBase, p);
+			return;
+		}
+		float flBase = g_109405b4->vfunc1() ? 0 : g_109405b4->m_f28;
+		float flScale = (float)pow(flBase, dt);
+		p->m_vel.x = flScale * p->m_vel.x;
+		p->m_vel.y = flScale * p->m_vel.y;
+		p->m_vel.z = flScale * p->m_vel.z;
+		float flGravity = g_1094056c->vfunc1() ? 0.0f : g_1094056c->m_f28;
+		p->m_vel.z = p->m_vel.z - flGravity * dt;
+		Vector vecEnd;
+		VectorAdd(p->m_pos, dt * p->m_vel, vecEnd);
+		p->m_state = sub_103e17b0(p->m_pos, vecEnd, &vecEnd, &p->m_pEnt, &p->m_normal, &p->m_n38);
+		p->m_pos = vecEnd;
+		if (p->m_state != 1)
+			sub_103e1960(pBase, p);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1bb0 size=0x33
 void sub_1000fe66(int *base, int *entry, int arg);
 
