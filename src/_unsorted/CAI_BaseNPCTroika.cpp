@@ -4482,6 +4482,110 @@ int CAI_BaseNPCTroika::vfunc611()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c1680 size=0x321
+// TARGET: CAI_BaseNPCTroika::vfunc286
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseFlex.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CUnknown100ecee0.h"
+#include "CBaseAnimating.h"
+#include "globalvars.h"
+
+extern int (__cdecl *g_109f3868)(int, int);
+extern "C" double __cdecl atof(const char *);
+extern CUnknown100ecee0 g_10924980;
+void sub_100ea2d0(const char *p0, void *p1, void *p2, int p3, int p4);
+int sub_101cd9e0(int a);
+char *sub_101d3730(const char *pszFormat, ...);
+
+struct CUnknown10075b70 { int sub_10075b70(); };
+struct CUnknown10075c50 { const char *sub_10075c50(); };
+struct CUnknown10075ca0 { const char *sub_10075ca0(); };
+
+void CAI_BaseNPCTroika::vfunc286(int a, void *pEvent)
+{
+	CUnknown10075b70 *pEv = (CUnknown10075b70 *)pEvent;
+	CUnknown10075c50 *pEv2 = (CUnknown10075c50 *)pEvent;
+	CUnknown10075ca0 *pEv3 = (CUnknown10075ca0 *)pEvent;
+
+	if (pEv->sub_10075b70() == 2)
+	{
+		sub_102c1a80(a, pEvent);
+		return;
+	}
+
+	if (pEv->sub_10075b70() == 7)
+	{
+		int nSeq = ((CBaseAnimating *)this)->sub_1008f7b0(pEv2->sub_10075c50());
+		if (nSeq <= -1)
+			return;
+		int nAct = ((CBaseAnimating *)this)->sub_10090020(nSeq);
+		((CEntityVSlots *)this)->slot311(nAct, nAct, nSeq);
+		m_b64e0 = 0;
+		m_bInStanceChange = 0;
+		return;
+	}
+
+	if (pEv->sub_10075b70() == 0xd)
+	{
+		if (!EHandle_Get(m_hfe8))
+			return;
+		float flValue = atof(pEv2->sub_10075c50());
+		float flMin;
+		int nChance;
+		g_10924980.sub_100ec5d0(m_nCurrDisposition, (int *)&flMin, &nChance);
+		if (flValue > flMin)
+		{
+			if (nChance > g_109f3868(1, 100))
+			{
+				int nAct = sub_102c1230();
+				if (nAct > -1)
+				{
+					*(int *)((char *)this + 0x6f0) = nAct;
+					((CBaseAnimating *)this)->sub_10090950();
+					m_n06f8 = 0;
+					*(float *)((char *)this + 0x174) = gpGlobals->curtime;
+					m_nActivityff0 = 0xf1;
+					m_nState0fec = 0xf1;
+					m_b64e0 = 0;
+					m_bInStanceChange = 1;
+				}
+			}
+		}
+		return;
+	}
+
+	if (pEv->sub_10075b70() == 0xe)
+	{
+		if (gpGlobals->curtime > m_flLoudExpressionTime)
+		{
+			float flA, flB, flMin, flMax;
+			int n5;
+			const char *pszItem = (const char *)g_10924980.sub_100ec450(m_nCurrDisposition, (int *)&flA, (int *)&flB, (int *)&flMin, (int *)&flMax, &n5);
+			float flTime = atof(pEv2->sub_10075c50()) > flMax ? flMax
+				: (atof(pEv2->sub_10075c50()) < flMin ? flMin : atof(pEv2->sub_10075c50()));
+			((CBaseCombatCharacter *)this)->sub_101067e0(pszItem, flA, flB, 1.0f, 0.0f, flTime);
+			m_flLoudExpressionTime = flTime + gpGlobals->curtime + flA + flB + 0.1;
+		}
+		return;
+	}
+
+	if (pEv->sub_10075b70() == 0xf)
+	{
+		void *pTarget = EHandle_Get(m_hfe8);
+		if (!pTarget)
+			pTarget = (void *)sub_101cd9e0(1);
+		char *psz1 = sub_101d3730("\"%s\"", pEv2->sub_10075c50());
+		char *psz = sub_101d3730(pEv3->sub_10075ca0(), psz1);
+		sub_100ea2d0(psz, pTarget, this, 0x102, 0);
+		return;
+	}
+
+	((CBaseFlex *)this)->CBaseFlex::vfunc286(a, pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c1c10 size=0x96
 #include "CAI_BaseNPCTroika.h"
 extern char *(__cdecl *g_109f3890)(char *, const char *, int);
