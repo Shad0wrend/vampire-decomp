@@ -144609,6 +144609,92 @@ extern "C" CBaseEntity *prop_hacking()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10219d40 size=0x12c
+#include "CBaseEntity.h"
+#include "CPropHacking.h"
+#include "CBaseVampireSkillEntity.h"
+#include "COutputEvent.h"
+#include "utlvector.h"
+#include <string.h>
+
+extern char vt_1048ab34[];
+extern char vt_1048a5f4[];
+
+struct CPropHacking_Entry2b4 { char m_data[0x2b4]; };
+
+struct CPropHackingScreenMemory
+{
+	CPropHackingScreenRecord *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	CPropHackingScreenMemory *sub_1021e1e0(int nGrowSize, int nInitSize);
+};
+
+struct CPropHackingScreenVector
+{
+	CPropHackingScreenMemory m_Memory;
+	int m_Size;
+	CPropHackingScreenRecord *m_pElements;
+	void Init()
+	{
+		m_Memory.sub_1021e1e0(0, 0);
+		m_Size = 0;
+		m_pElements = m_Memory.m_pMemory;
+	}
+};
+
+struct CPropHackingCtorView
+{
+	char m_pad0[0x80d];
+	char m_b080d;
+	char m_pad080e[0x840 - 0x80e];
+	COutputEvent m_Outputs[8];	// 0x840
+	char m_pad0900[4];
+	char m_sz0904[0x40];
+	char m_sz0944[0x20];
+	char m_sz0964[0x20];
+	char m_b0984;
+	char m_b0985;
+	char m_ab0986[5];
+	char m_pad098b;
+	CUtlVector<int> m_v098c;
+	CUtlVector<CPropHackingRecord> m_v09a0;
+	CUtlVector<CPropHacking_Entry2b4> m_v09b4;
+	CUtlVector<void *> m_v09c8;
+	int m_n09dc[7];
+	CUtlVector<int> m_v09f8;
+	int m_n0a0c;
+	int m_n0a10;
+	CPropHackingScreenVector m_v0a14;
+	char m_pad0a28[0xc28 - 0xa28];
+	int m_n0c28;
+};
+
+CPropHacking *CPropHacking::sub_10219d40()
+{
+	CPropHackingCtorView *v = (CPropHackingCtorView *)this;
+	((CBaseVampireSkillEntity *)this)->sub_1020aa70();
+	*(void **)this = vt_1048ab34;
+	for (int i = 0; i < 8; i++)
+		v->m_Outputs[i].sub_100cd2a0();
+	v->m_v098c.CUtlVector<int>::CUtlVector();
+	v->m_v09a0.CUtlVector<CPropHackingRecord>::CUtlVector();
+	v->m_v09b4.CUtlVector<CPropHacking_Entry2b4>::CUtlVector();
+	v->m_v09c8.CUtlVector<void *>::CUtlVector();
+	v->m_v09f8.CUtlVector<int>::CUtlVector();
+	v->m_v0a14.Init();
+	*(void **)this = vt_1048a5f4;
+	v->m_n0c28 = 0;
+	v->m_b080d = 0;
+	memset(v->m_sz0944, 0, sizeof(v->m_sz0944));
+	memset(v->m_sz0964, 0, sizeof(v->m_sz0964));
+	memset(v->m_sz0904, 0, sizeof(v->m_sz0904));
+	memset(v->m_ab0986, 0, sizeof(v->m_ab0986));
+	sub_1021a1c0();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10219fa0 size=0x188
 #include "vampire_all.h"
 #include "CPropHacking.h"
