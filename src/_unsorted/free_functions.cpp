@@ -197905,6 +197905,91 @@ bool CBaseCombatCharacter::sub_1033ce10(unsigned int low, unsigned int high)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033cfb0 size=0x176
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "ScopeTrace.h"
+#include "CUtlMemory16.h"
+#include "CUtlVector16.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CDiscTable
+{
+	int sub_101e1720(unsigned int flag);
+	int sub_101e1770(unsigned int flag);
+};
+struct CGlobalVarsLite { char pad[0xc]; float curtime; };
+struct DiscRec
+{
+	unsigned int flag; int handle; unsigned int extra; int src;
+	DiscRec() {}
+	DiscRec(unsigned int f, int h, unsigned int e, int s) : flag(f), handle(h), extra(e), src(s) {}
+};
+extern CDiscTable g_10739a4c;
+extern CGlobalVarsLite *g_1070b228;
+void __fastcall sub_1034a1a0(CUtlMemory16 *p, int a, int b);
+void *memmove(void *, const void *, unsigned int);
+inline void *operator new(unsigned int, void *p) { return p; }
+
+struct CDiscVec : CUtlVector16
+{
+	DiscRec &Element(int i) { return ((DiscRec *)m_pMemory)[i]; }
+	void GrowVector()
+	{
+		if (m_size + 1 > m_allocationCount)
+			sub_1034a1a0((CUtlMemory16 *)this, m_size + 1 - m_allocationCount, m_size + 1 - m_allocationCount);
+		m_size++;
+		m_pElements = m_pMemory;
+	}
+	void ShiftElementsRight(int elem)
+	{
+		int numToMove = m_size - elem - 1;
+		if (numToMove > 0)
+			memmove(&Element(elem + 1), &Element(elem), numToMove * sizeof(DiscRec));
+	}
+	int AddToTail(unsigned int flag, int handle, unsigned int extra, int src)
+	{
+		int elem = m_size;
+		GrowVector();
+		ShiftElementsRight(elem);
+		new (&Element(elem)) DiscRec(flag, handle, extra, src);
+		return elem;
+	}
+};
+
+void CBaseCombatCharacter::sub_1033cfb0(unsigned int flag, float duration, CBaseEntity *pSource, unsigned int extra)
+{
+	ScopeTrace trace("CBaseCombatCharacter::AddDiscFlag", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	unsigned int *mask;
+	unsigned int bits;
+	if (!(flag & 0x80000000)) {
+		mask = (unsigned int *)((char *)this + 0xeb0);
+		bits = flag;
+	} else {
+		mask = (unsigned int *)((char *)this + 0xeb4);
+		bits = *(volatile unsigned int *)&flag & 0x7fffffff;
+	}
+	if (bits & *mask)
+		return;
+	*mask |= flag;
+	g_10739a4c.sub_101e1720(flag);
+	int index = g_10739a4c.sub_101e1770(flag);
+	*(float *)((char *)this + index * 4 + 0xec0) = duration + g_1070b228->curtime;
+	DiscRec rec;
+	rec.flag = flag;
+	if (pSource)
+		rec.handle = *(int *)pSource->vfunc1();
+	else
+		rec.handle = -1;
+	rec.extra = extra;
+	rec.src = *(int *)((char *)pSource + 0xfb0);
+	((CDiscVec *)((char *)this + 0xfb4))->AddToTail(rec.flag, rec.handle, rec.extra, rec.src);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d2f0 size=0x2a
 #include "CUnknown1033d2f0.h"
 
