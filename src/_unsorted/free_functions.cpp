@@ -151213,6 +151213,17 @@ float sub_10240bc0(const SVec3 *pOrigin, const SVec3 *pDir, const SVec3 *pNormal
 }
 // END FUNCTION
 
+// FUNCTION: 0x10240c40 size=0x44
+#include "Vector.h"
+float sub_10240c40(const Vector &a, const Vector &b, int i, float c, float d)
+{
+	float t = (b[i] - a[i]) * c;
+	if (t == 0.0f)
+		return 0.0f;
+	return (1.0f / t) * (d - a[i] * c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102414f0 size=0xe7
 #include "Vector.h"
 
