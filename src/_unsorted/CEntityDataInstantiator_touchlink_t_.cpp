@@ -32,6 +32,87 @@ int CEntityDataInstantiator<touchlink_t>::vfunc1(unsigned int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040970 size=0x14b
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "UtlHash8.h"
+#include "UtlVec8.h"
+#include "utlvector.h"
+#include "CEntityDataInstantiator.h"
+
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+struct DataBucketView : CUtlVector<EntityDataKey_t>
+{
+	int AddToTail(EntityDataKey_t const &src)
+	{
+		return ((UtlVec8 *)this)->sub_10042200(m_Size, (const UtlVec8Elem *)&src);
+	}
+};
+
+struct DataHashView
+{
+	CUtlVector<DataBucketView> m_Buckets;
+	bool (__cdecl *m_pCompare)(EntityDataKey_t const &, EntityDataKey_t const &);
+	unsigned int (__cdecl *m_pKey)(EntityDataKey_t const &);
+	bool m_bPowerOfTwo;
+	unsigned int m_ModMask;
+
+	unsigned int GetBucket(EntityDataKey_t const &src)
+	{
+		unsigned int ndxBucket = (*m_pKey)(src);
+		if (m_bPowerOfTwo)
+			return ndxBucket & m_ModMask;
+		return ndxBucket % m_Buckets.Count();
+	}
+	unsigned int Find(EntityDataKey_t const &src)
+	{
+		unsigned int ndxBucket = GetBucket(src);
+		int ndxKeyData;
+		int keyDataCount = m_Buckets[ndxBucket].Count();
+		for (ndxKeyData = 0; ndxKeyData < keyDataCount; ndxKeyData++)
+		{
+			if ((*m_pCompare)(m_Buckets[ndxBucket].Element(ndxKeyData), src))
+				break;
+		}
+		if (ndxKeyData == keyDataCount)
+			return 0xffffffff;
+		return (ndxBucket << 16) | ndxKeyData;
+	}
+	unsigned int Insert(EntityDataKey_t const &src)
+	{
+		unsigned int handle = ((UtlHash8 *)this)->sub_10041d20((void *)&src);
+		if (handle != 0xffffffff)
+			return handle;
+		unsigned int ndxBucket = GetBucket(src);
+		int ndxKeyData = m_Buckets[ndxBucket].AddToTail(src);
+		return (ndxBucket << 16) | ndxKeyData;
+	}
+	EntityDataKey_t &Element(unsigned int handle)
+	{
+		return m_Buckets[handle >> 16].Element(handle & 0xffff);
+	}
+};
+
+// TARGET: CEntityDataInstantiator<touchlink_t>::vfunc2
+void *CEntityDataInstantiator<touchlink_t>::vfunc2(unsigned int key)
+{
+	DataHashView *pHash = (DataHashView *)&m_pBuckets;
+	unsigned int handle;
+	EntityDataKey_t entry;
+	entry.pad = 0;
+	entry.key = key;
+	handle = pHash->Find(entry);
+	if (handle == 0xffffffff)
+	{
+		handle = pHash->Insert(entry);
+		pHash->Element(handle).pad = (int)new touchlink_t;
+		memset((void *)pHash->Element(handle).pad, 0, sizeof(touchlink_t));
+	}
+	return (void *)pHash->Element(handle).pad;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100417c0 size=0xa3
 #include "UtlHash8.h"
 #include "UtlMem.h"
