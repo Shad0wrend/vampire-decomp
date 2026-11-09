@@ -196475,6 +196475,26 @@ void CBaseCombatCharacter::sub_10346760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10346ac0 size=0xc0
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern int g_1049e04c;
+void sub_10003585();
+
+void CBaseCombatCharacter::sub_10346ac0()
+{
+	ScopeTrace trace("CBaseCombatCharacter::SendIncomingSwingNotice", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	sub_10341c30((void *)sub_10003585, g_1049e04c, 0.7f, 0, 0, 0x46004003);
+
+	CBaseEntity *p = (CBaseEntity *)((CEntityVSlots *)this)->slot167();
+	sub_10346910(!p ? p : *(CBaseEntity **)((char *)p + 0x9c));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10348100 size=0x15f
 struct ScopeTraceEntry {
     const char *m_pszName;

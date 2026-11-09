@@ -8394,6 +8394,7 @@
 0x1000cc5c func   ?vfunc0@CVoiceGameMgr@@QAEPAV1@I@Z CVoiceGameMgr::vfunc0
 0x1000cc61 func   ?vfunc1@CHLPlayerMove@@QAEXHHHH@Z CHLPlayerMove::vfunc1
 0x1000cc66 func   ?sub_101b4200@CSoundEmitterSystemBase@@QAEDH@Z CSoundEmitterSystemBase::sub_101b4200
+0x1000cc6b func   ?sub_10346ac0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10346ac0
 0x1000cc70 func   ??1CUnknown102cff90@@QAE@XZ CUnknown102cff90::~CUnknown102cff90
 0x1000cc75 func   ?sub_10428060@@YAHHPAH0@Z sub_10428060
 0x1000cc7a func   ?vfunc435@CNPC_VTzimisce@@UAEXH@Z CNPC_VTzimisce::vfunc435
