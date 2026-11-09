@@ -47,6 +47,93 @@ CBatSwarm *CBatSwarm::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b87a0 size=0x2b1
+#include "CBatSwarm.h"
+#include "engineserver.h"
+#include "ScopeTrace.h"
+#include "CUnknown100dd990.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: CBatSwarm::vfunc103
+extern char g_1055a770[];
+extern "C" int __cdecl rand(void);
+void sub_10006dbb();
+
+struct CBatModelName
+{
+	const char *pszValue;
+};
+inline CBatModelName MAKE_MODELNAME(const char *psz)
+{
+	CBatModelName s;
+	s.pszValue = (psz && *psz) ? psz : 0;
+	return s;
+}
+struct CBatModelSlots
+{
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS10(20) EVS(210) EVS(211)
+	virtual void slot212(CBatModelName s);
+};
+
+void CBatSwarm::vfunc103()
+{
+	((CBatModelSlots *)this)->slot212(MAKE_MODELNAME(g_1055a770));
+	vfunc104();
+	engine->vfunc17("Impact_Flesh_Emitter", 0);
+
+	const char *pszModel;
+	{
+		int local;
+		pszModel = *vfunc9(&local);
+	}
+	if (pszModel == 0)
+		pszModel = g_106b8540;
+	vfunc105(pszModel);
+
+	m_mask730 = 0xffffffff;
+	m_mask734 = 0xffffffff;
+
+	{ int i = 0; while (32 > i) { Vector vecOffset;
+		vecOffset.x = (float)rand() * 0.00024414808f - 4.0f;
+		vecOffset.y = (float)rand() * 0.00024414808f - 4.0f;
+		vecOffset.z = (float)rand() * 0.00024414808f - 4.0f;
+		*(m_vecPos + i) = vecOffset + *((CEntityVSlots *)this)->slot217();
+
+		m_vecBatVelocity[i].x = (float)rand() * 6.103702e-5f - 1.0f;
+		m_vecBatVelocity[i].y = (float)rand() * 6.103702e-5f - 1.0f;
+		m_vecBatVelocity[i].z = (float)rand() * 6.103702e-5f - 1.0f;
+
+		m_vecBatVelocity[i] *= m_flSpeed738 / VectorLength(m_vecBatVelocity[i]);
+		m_bBatHittingPlayer[i] = false; i++; } }
+
+	vfunc93(0, 0);
+	m_nTakeDamage = 0;
+	m_flNextThink = 0;
+	*(float *)((char *)this + 0x174) = gpGlobals->curtime;
+	*(float *)((char *)this + 0x6f4) = 1.0f;
+	*(float *)((char *)this + 0x6f8) = 0.0f;
+	*(int *)((char *)this + 0x6f0) = sub_1008dc40(1, -1);
+
+	CUnknown100dd990 *pCollision = (CUnknown100dd990 *)((char *)this + 0x270);
+	pCollision->sub_100dd990(4, 0, 0);
+
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", STRINGR_F(m_name26c));
+		((CCollisionProperty *)pCollision)->sub_100dc480(5);
+	}
+
+	sub_100b3580(0x20000000);
+	sub_100b3b00();
+	sub_100ac4e0((int)sub_10006dbb, 0, 0);
+	m_flNextThink = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b8b10 size=0x26
 #include "CBatSwarm.h"
 #include "CBaseEntity.h"
