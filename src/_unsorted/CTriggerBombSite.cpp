@@ -196,6 +196,29 @@ void CTriggerBombSite::vfunc42(CBasePlayer *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10211480 size=0x95
+#include "CTriggerBombSite.h"
+
+void CTriggerBombSite::vfunc41(CBombState state)
+{
+	float flProgress = (gpGlobals->curtime - m_flStartTime) * 0.16666667f;
+	flProgress = flProgress * 100.0f;
+	if (flProgress > 100.0f)
+		flProgress = 100.0f;
+	else if (flProgress < 0.0f)
+		flProgress = 0.0f;
+	m_nProgress = (unsigned char)flProgress;
+	CBombState c;
+	if (m_nProgress >= 100) {
+		c.m_c = 0x62;
+		sub_102116c0(state);
+	} else {
+		c.m_c = 0x21;
+	}
+	sub_10211550(state, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216f70 size=0x62
 #include "CTriggerBombSite.h"
 
