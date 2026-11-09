@@ -19494,6 +19494,170 @@ Vector CBaseCineCam::sub_1006f010(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006f080 size=0x4bf
+#include "CBaseCombatCharacter.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "QAngle.h"
+// TARGET: CBaseCineCam::sub_1006f080
+#include "CBaseCineCam.h"
+#include "CBaseAnimating.h"
+#include "CCollisionProperty.h"
+#include "CEHandleGet.h"
+#include "CUnknown100290c0.h"
+#include "matrix3x4_t.h"
+
+extern Vector g_1070d1b0;
+extern float g_1070d9d0[];
+void sub_10139b50(const QAngle &angles, const Vector &position, matrix3x4_t &matrix);
+void sub_10137fe0(const float *in1, const matrix3x4_t &in2, float *out);
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class CEntVtblView
+{
+public:
+	V10(v0) V10(v1) V10(v2) V10(v3) V10(v4) V10(v5) V10(v6) V10(v7) V10(v8) V10(v9) V10(v10) V10(v11) V10(v12)
+	virtual void v130(); virtual void v131(); virtual void v132(); virtual void v133(); virtual void v134();
+	virtual void v135(); virtual void v136();
+	virtual int vfunc137();
+	V10(v138) V10(v139) V10(v140) V10(v141) V10(v142)
+	virtual void v188(); virtual void v189(); virtual void v190(); virtual void v191();
+	virtual Vector vfunc192();
+	virtual Vector vfunc193();
+	V10(v194) V10(v195)
+	virtual void v214(); virtual void v215(); virtual void v216();
+	virtual float *vfunc217();
+	virtual void v218();
+	virtual float *vfunc219();
+};
+
+#define SHOTENT ((CBaseEntity *)((CUnknown100290c0 *)EHandleDetail::g_10566458)->sub_100290c0(ph))
+#define ENTGETV(p, n) (((CEntVtblView *)(p))->vfunc##n())
+
+Vector CBaseCineCam::sub_1006f080(int idx)
+{
+	unsigned int *ph = &m_hShot610[idx];
+
+	if (!SHOTENT)
+		return g_1070d1b0;
+
+	char *pRecord = (char *)sub_1006eeb0(idx);
+	Vector vecPos = g_1070d1b0;
+	QAngle vecAng = *(QAngle *)g_1070d9d0;
+	Vector vecMins;
+	Vector vecMaxs;
+
+	((CCollisionProperty *)((char *)SHOTENT + 0x270))->vfunc15(&vecMins, &vecMaxs);
+
+	int flags = sub_1006ee10(idx);
+
+	if (flags & 0x10)
+	{
+		CBaseEntity *pEnt = SHOTENT;
+		vecPos = *(Vector *)ENTGETV(pEnt, 217);
+		pEnt = SHOTENT;
+		vecAng = *(QAngle *)ENTGETV(pEnt, 219);
+	}
+	else if (flags & 0x20)
+	{
+		CBaseEntity *pEnt = SHOTENT;
+		vecPos = ((CEntVtblView *)pEnt)->vfunc192();
+		pEnt = SHOTENT;
+		vecAng = *(QAngle *)ENTGETV(pEnt, 219);
+	}
+	else if (flags & 0x40)
+	{
+		CUnknown100290c0 *pList = (CUnknown100290c0 *)EHandleDetail::g_10566458;
+		CBaseEntity *pEnt = (CBaseEntity *)pList->sub_100290c0(ph);
+		if (pEnt && pEnt->m_p9c)
+			((CBaseCombatCharacter *)pEnt->m_p9c)->sub_10331da0(&vecPos, 0);
+		else
+		{
+			pEnt = (CBaseEntity *)pList->sub_100290c0(ph);
+			vecPos = ((CEntVtblView *)pEnt)->vfunc193();
+		}
+		pEnt = SHOTENT;
+		vecAng = *(QAngle *)ENTGETV(pEnt, 219);
+	}
+	else if (flags & 0x80)
+	{
+		CBaseEntity *pEnt = SHOTENT;
+		vecPos = *(Vector *)ENTGETV(pEnt, 217);
+		vecPos.z = vecMins.z;
+		pEnt = SHOTENT;
+		vecAng = *(QAngle *)ENTGETV(pEnt, 219);
+	}
+	else if (flags & 0x100)
+	{
+		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(*ph);
+		vecPos = *(Vector *)ENTGETV(pEnt, 217);
+		vecPos.z = vecMaxs.z;
+		pEnt = (CBaseEntity *)EHandle_Get(*ph);
+		vecAng = *(QAngle *)ENTGETV(pEnt, 219);
+	}
+	else if (flags & 0x800)
+	{
+		vecPos = vecMins;
+		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(*ph);
+		vecAng = *(QAngle *)ENTGETV(pEnt, 219);
+	}
+	else if (flags & 0x1000)
+	{
+		vecPos = vecMaxs;
+		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(*ph);
+		vecAng = *(QAngle *)ENTGETV(pEnt, 219);
+	}
+	else if (flags & 0x200)
+	{
+		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(*ph);
+		CBaseAnimating *pAnim = (CBaseAnimating *)((CEntVtblView *)pEnt)->vfunc137();
+		if (!pAnim)
+			return g_1070d1b0;
+		pAnim->sub_100926e0(m_iIndex620[idx], (int)&vecPos, (int)&vecAng);
+	}
+	else if (flags & 0x400)
+	{
+		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(*ph);
+		CBaseAnimating *pAnim = (CBaseAnimating *)((CEntVtblView *)pEnt)->vfunc137();
+		if (!pAnim)
+			return g_1070d1b0;
+		pAnim->sub_10092ef0(m_iIndex620[idx], &vecPos.x, &vecAng.x);
+	}
+
+	if (flags & 0x20000)
+	{
+		if (!(flags & 0xa000))
+		{
+			if (flags & 0x4000)
+			{
+				matrix3x4_t mat;
+				sub_10139b50(vecAng, vecPos, mat);
+				sub_10137fe0((const float *)(pRecord + 0x14), mat, &vecPos.x);
+			}
+			else if (flags & 0x10000)
+			{
+				CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(*ph);
+				matrix3x4_t mat;
+				sub_10139b50(*(QAngle *)((CEntVtblView *)pEnt)->vfunc219(), vecPos, mat);
+				sub_10137fe0((const float *)(pRecord + 0x14), mat, &vecPos.x);
+			}
+		}
+		else
+		{
+			vecPos += *(Vector *)(pRecord + 0x14);
+		}
+	}
+
+	return vecPos;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006f670 size=0x10a
 #include "CBaseCineCam.h"
 
