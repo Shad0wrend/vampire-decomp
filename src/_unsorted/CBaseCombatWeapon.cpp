@@ -1059,6 +1059,68 @@ void CBaseCombatWeapon::vfunc299(const float *pVelocity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252c10 size=0x1a8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatWeapon.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+static inline const char *STRINGR_10252c10(const char *const &s) { return s ? s : g_106b8540; }
+
+struct COutputView10252c10
+{
+	char pad[0x18];
+	void sub_100cd660(CBaseEntity *pActivator, CBaseCombatWeapon *pCaller, int a);
+};
+
+struct CPlayerView10252c10
+{
+	char m_pad0000[0xa8];
+	void *m_pAI;
+};
+
+struct CWeaponEvents10252c10
+{
+	char m_pad[0x8e0];
+	COutputView10252c10 m_OnPlayerPickup;
+	COutputView10252c10 m_OnNPCPickup;
+};
+
+void sub_1012c900(char *pEnt);
+
+void CBaseCombatWeapon::vfunc341(CBaseEntity *pOwner)
+{
+	sub_1012c900((char *)this);
+	CWeaponEvents10252c10 *w = (CWeaponEvents10252c10 *)this;
+	if (((CPlayerView10252c10 *)pOwner)->m_pAI)
+		w->m_OnPlayerPickup.sub_100cd660(pOwner, this, 0);
+	else
+		w->m_OnNPCPickup.sub_100cd660(pOwner, this, 0);
+	((CEntityVSlots *)this)->slot225();
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", STRINGR_10252c10(*(const char **)((char *)this + 0x26c)));
+		CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+		pCollision->AddSolidFlags(4);
+	}
+	{
+		ScopeTrace trace("CBaseEntity::ClearSolidFlags", STRINGR_10252c10(*(const char **)((char *)this + 0x26c)));
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc580(0);
+	}
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", STRINGR_10252c10(*(const char **)((char *)this + 0x26c)));
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+	}
+	((CBaseEntity *)this)->sub_100b3b00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252e80 size=0xb
 #include "CBaseCombatWeapon.h"
 void sub_1000c6f8();
