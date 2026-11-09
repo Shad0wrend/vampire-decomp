@@ -92668,6 +92668,93 @@ void CBasePlayer::sub_101816c0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10181be0 size=0x457
+#include "CBasePlayer.h"
+#include "CUnknown101cccf0.h"
+#include "CWorld.h"
+#include "CStatDefault3List.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+
+extern CStatDefault3List g_10738d10;
+int sub_1023bd00();
+float sub_10182160(Vector *pVec);
+
+// TARGET: CBasePlayer::sub_10181be0
+void CBasePlayer::sub_10181be0()
+{
+	if (gpGlobals->curtime < m_f1D58)
+		return;
+	m_f1D58 = gpGlobals->curtime + 0.333f;
+	static int s_nosferatuClan = g_10738d10.sub_101d5bd0("Player_Nosferatu");
+	CWorld *pWorld = (CWorld *)sub_1023bd00();
+
+	if (m_b1D5C)
+	{
+		m_n1ED0 = 0;
+		m_b1D5C = false;
+		float flBest = 3.402823466e+38f;
+		Vector vecEye = vfunc193();
+		CUnknown101cccf0 q;
+		CBaseEntity *pEnt;
+		for (q.sub_101cccf0((int)&vecEye, 0x44000000, 0x2000, 0);
+		     (pEnt = q.sub_101ccd40()) != 0;
+		     ++q.m_nIndex)
+		{
+			if (pEnt->sub_100a52a0() || !pEnt)
+				continue;
+			CAI_BaseNPCTroika *pNPC = pEnt->m_pNPC98;
+			if (!pNPC)
+				continue;
+			Vector vecDelta;
+			VectorSubtract(vecEye, pNPC->vfunc193(), vecDelta);
+			float flDist = sub_10182160(&vecDelta);
+			if (flDist < flBest)
+			{
+				if (pNPC->vfunc587((int)this))
+				{
+					int edict = ((CBaseEntity *)pNPC)->m_pEdict2e0;
+					m_n1ED0 = engine->vfunc35(edict);
+					flBest = flDist;
+				}
+			}
+		}
+		return;
+	}
+
+	unsigned int *p = (unsigned int *)((char *)this + 0x1d3c);
+	for (int n = 5; n != 0; --n, ++p)
+	{
+		if (!EHandle_Get(*p))
+			continue;
+		if (!((CAI_BaseNPC *)EHandle_Get(*p))->vfunc158()
+		    || ((CBaseCombatCharacter *)EHandle_Get(*p))->sub_10341aa0()
+		    || (((CBaseCombatCharacter *)EHandle_Get(*p))->m_bfAINPCFlags & 0x20000)
+		    || (!((CAI_BaseNPC *)EHandle_Get(*p))->sub_10269aa0(0x5a)
+		        && !(((CAI_BaseNPC *)EHandle_Get(*p))->vfunc363((CBaseEntity *)this)
+		             && ((CAI_BaseNPC *)EHandle_Get(*p))->vfunc201((CBaseEntity *)this, 0x2804091, 0, 0))))
+			*p = 0xffffffff;
+	}
+
+	if (EHandle_Get(m_h1D50)
+	    && !((CAI_BaseNPC *)EHandle_Get(m_h1D50))->sub_10269aa0(0x5a)
+	    && !(((CAI_BaseNPC *)EHandle_Get(m_h1D50))->vfunc363((CBaseEntity *)this)
+	         && ((CAI_BaseNPC *)EHandle_Get(m_h1D50))->vfunc201((CBaseEntity *)this, 0x2804091, 0, 0)))
+		m_h1D50 = 0xffffffff;
+
+	if (((CBaseCombatCharacter *)this)->sub_10337860() == s_nosferatuClan
+	    && pWorld->m_n49c == 1 && !pWorld->m_bNosferatuTolerant)
+	{
+		m_b1D5C = true;
+		return;
+	}
+	m_n1ED0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182210 size=0x3b
 #include "CBasePlayer.h"
 
