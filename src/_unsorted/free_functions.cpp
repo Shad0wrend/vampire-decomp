@@ -31279,6 +31279,62 @@ int CBaseAnimating::sub_10090020(int sequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10090180 size=0x1d3
+#include "CBaseAnimating.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+
+void sub_101cf390(CBaseAnimating *pEnt, const Vector *a, const Vector *b);
+extern Vector g_1070d1b0;
+
+struct ModelInfoView {
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+	virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17();
+	virtual void *GetStudioModel(int modelIndex);
+};
+extern ModelInfoView *g_1070b250;
+
+struct CBaseAnimatingUnit : CBaseAnimating {
+	CCollisionProperty *CollisionProp() { return (CCollisionProperty *)((char *)this + 0x270); }
+	void AddSolidFlags(int flags)
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+		CollisionProp()->AddSolidFlags(flags);
+	}
+};
+
+bool CBaseAnimating::sub_10090180(const Vector *pForce, int nForceBone, bool bKeepSolid)
+{
+	ScopeTrace trace("CBaseAnimating::BecomeClientRagdoll", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	if (g_1070b250->GetStudioModel(vfunc8())) {
+		int nSequence = sub_1008dc40(0x21, -1);
+		if (nForceBone == -1 && nSequence != -1) {
+			*(int *)((char *)this + 0x6f0) = nSequence;
+			*(int *)((char *)this + 0x6f8) = 0;
+			sub_10090950();
+		}
+		((CEntityVSlots *)this)->slot225();
+		if (!bKeepSolid)
+			((CBaseAnimatingUnit *)this)->AddSolidFlags(4);
+		sub_1008b800(-1, -1.0f, -1.0f, pForce, nForceBone);
+		*(int *)((char *)this + 0x168) = 0x17;
+		if (!bKeepSolid) {
+			vfunc93(0, 0);
+			sub_101cf390(this, &g_1070d1b0, &g_1070d1b0);
+			sub_100ac4e0(0, 0, 0);
+		}
+		return true;
+	}
+	sub_101cf390(this, &g_1070d1b0, &g_1070d1b0);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100903e0 size=0x82
 #include "CBaseAnimating.h"
 
