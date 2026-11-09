@@ -218,6 +218,83 @@ void sub_10238350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10238580 size=0x1b6
+#include "CWeaponRanged.h"
+extern int g_1088aee4;
+const char *__fastcall sub_100ab4f0(void *p);
+char *sub_101d3730(const char *fmt, ...);
+
+#define H10(p) CWR_V10(p)
+#define H100(p) H10(p##0) H10(p##1) H10(p##2) H10(p##3) H10(p##4) H10(p##5) H10(p##6) H10(p##7) H10(p##8) H10(p##9)
+
+struct TV {
+	CWR_V(0) CWR_V(1) CWR_V(2) CWR_V(3) CWR_V(4) CWR_V(5) CWR_V(6) CWR_V(7) CWR_V(8) CWR_V(9)
+	H10(1) H10(2) H10(3) H10(4) H10(5) H10(6) H10(7) H10(8) H10(9)
+	H100(1) H100(2)
+	CWR_V(300) CWR_V(301) CWR_V(302) CWR_V(303) CWR_V(304) CWR_V(305) CWR_V(306)
+	virtual void vfunc307(int v);
+	CWR_V(308) CWR_V(309)
+	CWR_V(310) CWR_V(311) CWR_V(312) CWR_V(313) CWR_V(314) CWR_V(315) CWR_V(316) CWR_V(317) CWR_V(318) CWR_V(319)
+	CWR_V(320) CWR_V(321) CWR_V(322) CWR_V(323) CWR_V(324) CWR_V(325) CWR_V(326) CWR_V(327)
+	virtual int vfunc328();
+	virtual int vfunc329();
+	virtual void vfunc330();
+	virtual void vfunc331();
+	virtual float vfunc332();
+};
+struct OV {
+	CWR_V(0) CWR_V(1) CWR_V(2) CWR_V(3) CWR_V(4) CWR_V(5) CWR_V(6) CWR_V(7) CWR_V(8) CWR_V(9)
+	H10(1) H10(2) H10(3) H10(4) H10(5) H10(6) H10(7) H10(8) H10(9)
+	H100(1) H100(2) H100(3)
+	H10(40) H10(41)
+	CWR_V(420) CWR_V(421) CWR_V(422) CWR_V(423) CWR_V(424) CWR_V(425) CWR_V(426) CWR_V(427) CWR_V(428)
+	virtual void vfunc429();
+	CWR_V(430) CWR_V(431) CWR_V(432) CWR_V(433) CWR_V(434) CWR_V(435) CWR_V(436) CWR_V(437) CWR_V(438) CWR_V(439)
+	CWR_V10(44)
+	virtual void vfunc449(int a, int b);
+	void sub_1017e150(int a, float b, char *c);
+};
+
+void CWeaponRanged::vfunc372()
+{
+	int *pSlot = sub_102517e0();
+	char *t = (char *)this;
+	TV *tv = (TV *)this;
+	*(float *)(t + 0x910) = *(float *)((char *)pSlot + 0x260) + gpGlobals->curtime;
+	if (vfunc275(pSlot[0x10c / 4]) != -1 && *(int *)(t + pSlot[0x10c / 4] * 4 + 0x74c) == 0) {
+		vfunc325();
+		return;
+	}
+	if (sub_10252240()) {
+		OV *owner = (OV *)sub_10252290();
+		if (owner) {
+			owner->vfunc429();
+			if (pSlot[0x3c4 / 4] > 0) {
+				owner->sub_1017e150(pSlot[0x3c4 / 4], -1.0f, sub_101d3730("CWeaponRanged::Attack %s", sub_100ab4f0(this)));
+			}
+			if (g_1088aee4 == 0)
+				tv->vfunc307(tv->vfunc328());
+			else
+				tv->vfunc307(tv->vfunc329());
+			owner->vfunc449(5, 1);
+			*(int *)(t + 0x918) = 0;
+			float f = tv->vfunc332();
+			float tm = gpGlobals->curtime - gpGlobals->frametime;
+			float *arr = (float *)(t + 0x730);
+			if (tm >= arr[g_1088aee4])
+				arr[g_1088aee4] = tm;
+			while (arr[g_1088aee4] <= gpGlobals->curtime) {
+				if (*(int *)(t + 0x86c) == 0)
+					arr[g_1088aee4] = f / *(float *)((char *)owner + 0x1488) + arr[g_1088aee4];
+				else
+					arr[g_1088aee4] = tv->vfunc332() / *(float *)((char *)owner + 0x1488) + arr[g_1088aee4];
+				(*(int *)(t + 0x918))++;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10239210 size=0x2c
 #include "CWeaponRanged.h"
 
