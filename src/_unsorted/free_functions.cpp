@@ -213680,6 +213680,65 @@ bool CNPC_VManBat::sub_1038f290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038f2c0 size=0x11d
+#include "CNPC_VManBat.h"
+#include "CBaseAnimating.h"
+#include "CUnknown101c26d0.h"
+#include "CUnknown101578b0.h"
+#include "CUnknown101578d0.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+#include "Tier1.h"
+
+extern int g_1070d9d0;
+CBaseAnimating *sub_100a9ab0(const char *pszClass, Vector *pOrigin, void *pAngles, void *pOwner);
+CBaseAnimating *sub_10157da0(CBaseAnimating *pProp, int nBone, CUnknown101c26d0 *pInfo, int nFlags);
+void sub_101cd940(CBaseAnimating *pEnt);
+void sub_102695d0();
+
+struct ManBat_string_t
+{
+	const char *pszValue;
+};
+struct ManBat_castable_string_t : public ManBat_string_t
+{
+	ManBat_castable_string_t(const char *pszFrom) { pszValue = (pszFrom && *pszFrom) ? pszFrom : 0; }
+};
+struct CManBatNameView
+{
+	void SetName(ManBat_string_t s) { ((CUnknown101578b0 *)this)->sub_10157910((int)s.pszValue); }
+};
+
+// TARGET: CNPC_VManBat::sub_1038f2c0
+bool CNPC_VManBat::sub_1038f2c0(const char *pszModel, int nBone, int nArg, const char *pszName)
+{
+	CBaseAnimating *pProp = sub_100a9ab0("prop_physics", ((CEntityVSlots *)this)->slot217(), &g_1070d9d0, 0);
+	if (pProp) {
+		g_109f3630("ManBat is throwing model %s\n", pszModel);
+		pProp->vfunc105(pszModel);
+		pProp->vfunc103();
+		int bone = pProp->sub_10092550(nBone);
+		CUnknown101c26d0 info;
+		info.sub_101c26d0(pProp, pProp, 0, 0, 0, 0, -1);
+		CBaseAnimating *pNew = sub_10157da0(pProp, bone, &info, 2);
+		sub_101cd940(pProp);
+		if (pNew) {
+			((CEntityVSlots *)pNew)->slot191(nArg);
+			pNew->sub_100ac4e0((int)sub_102695d0, 0, 0);
+			pNew->m_flNextThink = gpGlobals->curtime + 20.0f;
+			if (pszName) {
+				((CUnknown101578d0 *)pNew)->sub_101578d0(1);
+				((CManBatNameView *)pNew)->SetName(ManBat_castable_string_t(pszName));
+			}
+			sub_1038f430(pNew, nBone);
+			m_h668c = *((CEntityVSlots *)pNew)->slot1();
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038f600 size=0x24
 class CUnknown1038f600
 {
