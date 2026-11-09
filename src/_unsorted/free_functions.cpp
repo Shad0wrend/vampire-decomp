@@ -37989,6 +37989,149 @@ void CBaseEntityVectorsUnit::sub_100ad320(float *pForward, float *pRight, float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100adbd0 size=0x28a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "ehandle.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+extern Vector g_1070d1b0;
+
+void sub_101cf5c0(CBaseEntity *pEnt, const Vector *pPos, int a);
+
+struct notify_teleport_params_t
+{
+    Vector prevOrigin;
+    QAngle prevAngles;
+    bool physicsRotate;
+};
+
+struct notify_system_event_params_t
+{
+    const notify_teleport_params_t *pTeleport;
+    notify_system_event_params_t(const notify_teleport_params_t *pInTeleport) { pTeleport = pInTeleport; }
+};
+
+struct INotify
+{
+    virtual void AddEntity(CBaseEntity *pNotify, CBaseEntity *pWatched) = 0;
+    virtual void RemoveEntity(CBaseEntity *pNotify, CBaseEntity *pWatched) = 0;
+    virtual void ReportNamedEvent(CBaseEntity *pEntity, const char *pEventName) = 0;
+    virtual void ReportSystemEvent(CBaseEntity *pEntity, int eventType, const notify_system_event_params_t &params) = 0;
+    inline void ReportTeleportEvent(CBaseEntity *pEntity, const Vector &prevOrigin, const QAngle &prevAngles, bool physicsRotate)
+    {
+        notify_teleport_params_t teleport;
+        teleport.prevOrigin = prevOrigin;
+        teleport.prevAngles = prevAngles;
+        teleport.physicsRotate = physicsRotate;
+        notify_system_event_params_t eventParams(&teleport);
+        ReportSystemEvent(pEntity, 0, eventParams);
+    }
+};
+
+extern INotify *g_1056645c;
+
+#define VD(n) virtual void d##n();
+#define VD10(p) VD(p##0) VD(p##1) VD(p##2) VD(p##3) VD(p##4) VD(p##5) VD(p##6) VD(p##7) VD(p##8) VD(p##9)
+
+struct IPhysicsSetPos
+{
+    VD10(0) VD10(1) VD10(2) VD(30) VD(31) VD(32) VD(33) VD(34)
+    virtual void vfunc35(const Vector *pPos, const QAngle *pAngles, int bTeleport);
+    VD(36) VD(37) VD(38)
+    virtual void vfunc39(float *pPosition, float *pAngles);
+};
+
+struct CEntTele
+{
+    VD10(0) VD10(1) VD10(2) VD10(3) VD10(4) VD10(5) VD(60) VD(61) VD(62) VD(63)
+    virtual void vfunc64(const float *pAngles);
+    VD(65) VD(66) VD(67) VD(68) VD(69)
+    VD10(7) VD10(8) VD(90) VD(91)
+    virtual int vfunc92();
+    VD(93) VD(94) VD(95) VD(96) VD(97)
+    virtual void vfunc98();
+    VD(99) VD10(10) VD10(11) VD10(12) VD10(13) VD10(14) VD10(15) VD10(16) VD10(17) VD10(18) VD10(19) VD10(20)
+    VD(210) VD(211) VD(212) VD(213) VD(214) VD(215) VD(216)
+    virtual float *vfunc217();
+    VD(218)
+    virtual float *vfunc219();
+};
+
+// TARGET: sub_100adbd0
+void sub_100adbd0(CBaseEntity *pEnt, CBaseEntity *pTeleportEnt, const Vector *pNewPos, const QAngle *pNewAngles, const Vector *pNewVel)
+{
+    ScopeTrace trace("TeleportEntity_r", g_106b8540);
+
+    CEntTele *pView = (CEntTele *)pEnt;
+
+    Vector prevOrigin = *(Vector *)pView->vfunc217();
+    QAngle prevAngles = *(QAngle *)pView->vfunc219();
+
+    if (pTeleportEnt == pEnt)
+    {
+        if (pNewAngles)
+        {
+            pView->vfunc64((const float *)pNewAngles);
+            if (pEnt->m_pA8)
+            {
+                *(Vector *)((char *)pEnt + 0x206c) = *(Vector *)pNewAngles;
+                *(int *)((char *)pEnt + 0x207c) = 1;
+            }
+        }
+        if (pNewVel)
+        {
+            pEnt->sub_100b2e30((const float *)pNewVel);
+            pEnt->m_vecBaseVelocity = g_1070d1b0;
+        }
+        if (pNewPos)
+        {
+            pEnt->m_nEffectFlags |= 0x10;
+            sub_101cf5c0(pEnt, pNewPos, 0);
+        }
+    }
+    else
+    {
+        pView->vfunc98();
+    }
+
+    IPhysicsSetPos *pPhys = (IPhysicsSetPos *)pEnt->m_obj36c;
+    bool rotatePhysics = false;
+    if (pPhys)
+    {
+        if (pNewVel)
+            pPhys->vfunc39((float *)pNewVel, 0);
+
+        const QAngle *pAngles = (const QAngle *)pView->vfunc219();
+        if (!pEnt->m_pA8 && pView->vfunc92() != 2)
+            rotatePhysics = true;
+        else
+            pAngles = (const QAngle *)g_1070d9d0;
+
+        pPhys->vfunc35((const Vector *)pView->vfunc217(), pAngles, 1);
+    }
+
+    g_1056645c->ReportTeleportEvent(pEnt, prevOrigin, prevAngles, rotatePhysics);
+
+    CBaseEntity *pChild = pEnt->m_hMoveChild260.Get();
+    while (pChild)
+    {
+        sub_100adbd0(pChild, pTeleportEnt, 0, 0, 0);
+        pChild = pChild->m_hMovePeer264.Get();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100adf10 size=0x8a
 #include "CBaseEntity.h"
 
