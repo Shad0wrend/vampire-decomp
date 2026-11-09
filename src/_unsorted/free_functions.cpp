@@ -12369,6 +12369,34 @@ extern "C" CBaseEntity *auspex_aura()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10052030 size=0x146
+#include "utlrbtree.h"
+#include "CBaseCombatCharacter.h"
+#include "CDisciplineParticle.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+extern char g_106b8540[];
+extern char g_105387dc[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+void sub_101cd940(char *p);
+
+void CBaseCombatCharacter::sub_10052030()
+{
+    ScopeTrace t("CBaseCombatCharacter::RemoveDisciplineVisuals", this ? STRINGR(m_name26c) : g_105387dc);
+    CUtlVector<CHandle<CDisciplineParticle> > &l = *(CUtlVector<CHandle<CDisciplineParticle> > *)&m_pDiscParticles14c0;
+    for (int i = 0; i < l.Count(); i++) {
+        CDisciplineParticle *p = l[i];
+        p->m_hUser = 0;
+        if (!p->m_b4c5)
+            sub_101cd940((char *)p);
+        else
+            p->sub_100fbbb0(10.0f);
+        l[i] = 0;
+    }
+    l.Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10053df0 size=0x13
 bool sub_10053df0(const unsigned int *a, const unsigned int *b)
 {
