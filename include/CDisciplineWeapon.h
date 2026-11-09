@@ -38,4 +38,5 @@ public:
 	virtual bool vfunc281();
 public:
 	virtual datamap_t * vfunc82();
+	virtual int vfunc285();	// slot 285: the entity the discipline targets: the one under the owner's crosshair (a trace 4096 units along the view), else the nearest entity with an edict within 10 degrees of the view and 4096 units whose bounds one of four traces reaches
 };
