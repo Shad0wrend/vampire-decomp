@@ -57641,6 +57641,32 @@ CUnknown100ec410Elem *CUnknown100ec410::sub_100ec410(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec450 size=0xb0
+#include "CUnknown100ecee0.h"
+#include "utlvector.h"
+
+extern int (__cdecl *g_109f3868)(int, int);
+
+CTableItem40_t *CUnknown100ecee0::sub_100ec450(int index, int *pOut1, int *pOut2, int *pOut3, int *pOut4, int *pOut5)
+{
+	CUtlVector<CTableEntry264_t> &v = *(CUtlVector<CTableEntry264_t> *)&m_pEntries;
+	if (index < 0 || index > m_nCount)
+		index = m_nDefault;
+	int r = g_109f3868(0, v[index].m_nItems - 1);
+	if (pOut1)
+		*pOut1 = v[index].m_n220;
+	if (pOut2)
+		*pOut2 = v[index].m_n224;
+	if (pOut3)
+		*pOut3 = v[index].m_n228;
+	if (pOut4)
+		*pOut4 = v[index].m_n22c;
+	if (pOut5)
+		*pOut5 = v[index].m_n230;
+	return &v[index].m_items[r];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ec5d0 size=0x42
 #include "utlrbtree.h"
 #include "utlvector.h"

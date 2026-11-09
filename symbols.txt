@@ -5927,6 +5927,7 @@
 0x10009142 func   ?sub_102ea240@CUnknown10359c50@@QAE_NH@Z CUnknown10359c50::sub_102ea240
 0x1000914c func   ?sub_101f9a40@@YGXPAVCBaseEntity@@H@Z sub_101f9a40
 0x10009151 func   ?sub_100579b0@CUnknown10057680@@QAEXPBD0@Z CUnknown10057680::sub_100579b0
+0x10009156 func   ?sub_100ec450@CUnknown100ecee0@@QAEPAUCTableItem40_t@@HPAH0000@Z CUnknown100ecee0::sub_100ec450
 0x1000915b func   ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z CBaseEntity::vfunc107
 0x10009160 func   ?sub_1032d9b0@CBaseCombatCharacter@@QAE_NPAX@Z CBaseCombatCharacter::sub_1032d9b0
 0x10009165 func   ?sub_101c4880@@YAXPAHH0@Z sub_101c4880
