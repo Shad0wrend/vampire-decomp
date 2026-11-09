@@ -30,6 +30,35 @@ bool CMathCounter::vfunc110(const char *pszKey, const char *pszValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133640 size=0xcc
+#include "CMathCounter.h"
+
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+
+struct CMathOutValueView : variant_t
+{
+	float Get() const { return flValue; }
+	void Init(float value) { sub_100d0390(1, &value); }
+};
+
+// TARGET: CMathCounter::vfunc103
+void CMathCounter::vfunc103()
+{
+	if (m_flMin > m_flMax)
+	{
+		float flTemp = m_flMax;
+		m_flMax = m_flMin;
+		m_flMin = flTemp;
+	}
+	if ((m_flMin != 0) || (m_flMax != 0))
+	{
+		CMathOutValueView &out = (CMathOutValueView &)m_OutValue;
+		float flStartValue = clamp(out.Get(), m_flMin, m_flMax);
+		out.Init(flStartValue);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135f60 size=0x41
 #include "CMathCounter.h"
 #include "COutputEvent.h"
