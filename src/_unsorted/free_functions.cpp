@@ -118298,6 +118298,36 @@ char StatDefault3::sub_101d4520(void *pNode, CStatDefault3List *pList)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d4b90 size=0xcf
+#include "CVStatInfoList_t.h"
+#include "CVDmg_t.h"
+#include <ctype.h>
+
+extern char g_106b8540[];
+int sub_10202760(int a);
+int sub_102025f0(CVDmgBlock16_t *pBlock, const char *pszText);
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: sub_101d4b90
+void __stdcall sub_101d4b90(CVStatKV *pKV, CVStatInfoList_t *pList, int *pOut)
+{
+	if (!pKV)
+		return;
+	CVDmgBlock16_t block;
+	int t0 = pList->m_field2c; int nType = sub_10202760(t0);
+	{ int i; i = 0; while (i < pList->m_nStats) { const char *pszName = STRINGR_F(pList->sub_10200370(i)->m_pszName);
+		const char *pszValue = pKV->vfunc13(pszName, g_106b8540);
+		if (!(*pszValue && !isdigit(*pszValue))) {
+			int n = pKV->vfunc10(pszName, -1);
+			if (n != -1)
+				pOut[i] = n;
+		} else {
+			block.sub_102042a0(nType, i);
+			pOut[i] = sub_102025f0(&block, pszValue);
+		} ++i; } }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4ca0 size=0x3d
 #include <string.h>
 
