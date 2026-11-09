@@ -8924,6 +8924,7 @@
 0x1000d6ac func   ?sub_101fbc40@CVStatSubCost_t@@QAEHH_N@Z CVStatSubCost_t::sub_101fbc40
 0x1000d6b6 func   ?sub_1011d2e0@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1011d2e0
 0x1000d6bb func   ?vfunc44@CSingleplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CSingleplayRules::vfunc44
+0x1000d6c0 func   ?sub_101a72b0@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_101a72b0
 0x1000d6c5 func   ?sub_1013a650@@YAHM@Z sub_1013a650
 0x1000d6ca func   ?vfunc197@CBasePlayer@@QAE?AVVector@@ABV2@DD@Z CBasePlayer::vfunc197
 0x1000d6cf func   _npc_VAnimal npc_VAnimal

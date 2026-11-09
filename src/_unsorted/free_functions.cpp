@@ -98613,6 +98613,31 @@ void CCineNPC::sub_101a7230(int slot)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a72b0 size=0xac
+#include "CAI_BaseNPCTroika.h"
+
+void sub_1000556f();
+
+void CAI_BaseNPCTroika::sub_101a72b0(int unused)
+{
+	CBaseEntity *pEnt = ((EHANDLE *)((char *)this + 0x5ce4))->Get();
+	CAI_BaseNPCTroika *pOther = pEnt ? *(CAI_BaseNPCTroika **)((char *)pEnt + 0x94) : 0;
+	if (pOther) {
+		int nState = *(int *)((char *)pOther + 0x5d70);
+		if (nState != 0 && nState != 2)
+			return;
+		if (!pOther->vfunc482(vfunc585(1)))
+			return;
+		vfunc583();
+		*(float *)((char *)this + 0x5f74) = gpGlobals->curtime + 1000000.0;
+	} else {
+		((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000556f, 0, 0);
+		*(float *)((char *)this + 0x17c) = gpGlobals->curtime;
+		*(float *)((char *)this + 0x5f74) = gpGlobals->curtime + 1000000.0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7390 size=0x11e
 #include "CCineNPC.h"
 #include "CEHandleGet.h"
