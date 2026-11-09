@@ -131474,6 +131474,52 @@ int CTraitIdListY::sub_101f9df0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f9e80 size=0x114
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CUnknown10205030.h"
+#include "CUnknown101f0e50.h"
+#include "CVTraitEffectGroup_t.h"
+#include "CVStatInfoList_t.h"
+#include "CVModInfo_t.h"
+#include "ScopeTrace.h"
+
+extern CUnknown101f0e50 g_1074df78;
+extern CVStatInfoList_t g_1074e658;
+extern CVStatInfoList_t g_1074e4f0;
+extern CVStatInfoList_t g_1074e098;
+
+// TARGET: CUnknown10205030Tables::sub_101f9e80
+CUnknown101ff0b0 *CUnknown10205030Tables::sub_101f9e80(int kind, int id)
+{
+	ScopeTrace trace("CVTraitEffectList_t::Effect_ModCostInfo", g_106b8540);
+	int nId = id;
+	int nKind = kind;
+	CVModInfo_t info(nKind, nId, 0);
+	{
+		int cost = 0;
+		if (nId != -1) {
+			switch (nKind) {
+			case 0: cost = (int)((char *)g_1074e658.sub_10200370(nId) + 0xb0); break;
+			case 1: cost = (int)((char *)g_1074e4f0.sub_10200370(nId) + 0xb0); break;
+			case 2: cost = (int)((char *)g_1074e098.sub_10200370(nId) + 0xb0); break;
+			case 3: return 0;
+			default: return 0;
+			}
+		}
+		for (int i = 0; i < m_count; i++)
+			g_1074df78.sub_101f8480(m_items[i])->sub_101f7640(&info, &cost);
+		return (CUnknown101ff0b0 *)cost;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9ff0 size=0xb5
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
