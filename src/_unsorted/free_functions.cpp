@@ -38020,6 +38020,24 @@ void CBaseEntity::sub_100acef0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ad030 size=0x9a
+#include "CUnknown100ad030.h"
+#include "ScopeTrace.h"
+#include "string_t.h"
+extern char g_106b8540[];
+
+inline string_t StringID_100ad030(const variant_t &v)
+{
+	return (v.fieldType == 2) ? *(const string_t *)&v.iszValue : string_t(0);
+}
+
+void CUnknown100ad030::sub_100ad030(inputdata_t *pInput)
+{
+	ScopeTrace trace("CBaseEntity::InputSetParent", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_100a04e0(StringID_100ad030(pInput->value).pszValue, pInput->pActivator);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ad100 size=0x7d
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

@@ -673,6 +673,7 @@
 0x10001ec9 func   ?sub_101fc410@CVStatCost_t@@QAEHH_N@Z CVStatCost_t::sub_101fc410
 0x10001ece func   ?sub_103de420@@YADXZ sub_103de420
 0x10001ed3 func   ?vfunc82@CTriggerWWZone@@UAEPAUdatamap_t@@XZ CTriggerWWZone::vfunc82
+0x10001ed8 func   ?sub_100ad030@CUnknown100ad030@@QAEXPAUinputdata_t@@@Z CUnknown100ad030::sub_100ad030
 0x10001edd func   ?sub_102b50b0@CAI_BaseNPCTroikaUnit54@@QAE_NH@Z CAI_BaseNPCTroikaUnit54::sub_102b50b0
 0x10001ee2 func   ?vfunc278@CPropHacking@@QAEXH@Z CPropHacking::vfunc278
 0x10001eec func   ?sub_103dbe70@CIntHolder103dbe70@@QAEPAU1@PAUCIntObj103dbe70@@@Z CIntHolder103dbe70::sub_103dbe70
