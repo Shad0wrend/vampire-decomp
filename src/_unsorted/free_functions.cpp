@@ -42170,6 +42170,42 @@ void CBitString::sub_100bf5b0(int numDwords)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf600 size=0x72
+#include "CBitString.h"
+
+extern "C" void *__cdecl malloc(unsigned int);
+extern "C" void *__cdecl realloc(void *, unsigned int);
+extern "C" void __cdecl free(void *);
+
+// TARGET: CBitString::sub_100bf600
+void CBitString::sub_100bf600(int numDwords)
+{
+	if (numDwords == 0)
+	{
+		sub_100bf6a0();
+		return;
+	}
+	if (m_pData == &m_nInline)
+	{
+		if (numDwords != 1)
+		{
+			m_pData = (int *)malloc(numDwords * sizeof(int));
+			*m_pData = m_nInline;
+		}
+	}
+	else if (numDwords == 1)
+	{
+		m_nInline = *m_pData;
+		m_pData = &m_nInline;
+		free(&m_nInline);
+	}
+	else
+	{
+		m_pData = (int *)realloc(m_pData, numDwords * sizeof(int));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf6a0 size=0x1f
 void sub_10431641(void *p);
 
