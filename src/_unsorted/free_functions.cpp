@@ -4646,6 +4646,37 @@ void sub_10036810(PhysEnt *ent, int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036900 size=0xd7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "ScopeTrace.h"
+#include "CPhysicsPushedEntities.h"
+
+bool CPhysicsPushedEntities::sub_10036900(const float *pRotation, const float *pOrigin)
+{
+	ScopeTrace trace("CPhysicsPushedEntities::SpeculativelyCheckRotPush", g_106b8540);
+	Vector vecAbsPush;
+	m_nBlockingIndex = -1;
+	for (int i = m_rgMoved.Count(); --i >= 0; ) {
+		sub_100360a0(m_rgMoved[i].m_pEntity, pRotation, &vecAbsPush.x, pOrigin);
+		if (!sub_10036270(m_rgMoved.Element(i), vecAbsPush, true)) {
+			m_nBlockingIndex = i;
+			return false;
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10036b10 size=0x8f
 #include "CPhysicsPushedEntities.h"
 #include "CBaseEntity.h"

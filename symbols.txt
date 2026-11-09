@@ -6110,6 +6110,7 @@
 0x10009895 func   ?vfunc104@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::vfunc104
 0x1000989a func   ?vfunc8@CEffectsServer@@UAEXPBMH@Z CEffectsServer::vfunc8
 0x1000989f func   ?vfunc81@CRopeKeyframe@@UAEHXZ CRopeKeyframe::vfunc81
+0x100098a4 func   ?sub_10036900@CPhysicsPushedEntities@@QAE_NPBM0@Z CPhysicsPushedEntities::sub_10036900
 0x100098a9 func   ?sub_103c24a0@CUnk103c24a0@@QAE_NXZ CUnk103c24a0::sub_103c24a0
 0x100098ae func   ?vfunc35@CWeaponThrown_Grenade_Frag@@UAEHPAVCBaseEntity@@@Z CWeaponThrown_Grenade_Frag::vfunc35
 0x100098b3 func   ?sub_10199100@@YAPAUPyObject@@PAU1@0@Z sub_10199100
