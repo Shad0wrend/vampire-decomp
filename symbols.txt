@@ -11377,6 +11377,7 @@
 0x10010be0 func   ?vfunc3@CTEBeamPoints@@UAEXABVVector@@ABVQAngle@@@Z CTEBeamPoints::vfunc3
 0x10010be5 func   ?sub_1025e7b0@CAI_BaseHumanoid@@QAEXXZ CAI_BaseHumanoid::sub_1025e7b0
 0x10010bea func   ?vfunc509@CAI_BaseNPCTroika@@UAE_NXZ CAI_BaseNPCTroika::vfunc509
+0x10010bef func   ?sub_10398030@CNPC_VMingXiao@@QAEDHD@Z CNPC_VMingXiao::sub_10398030
 0x10010bf9 func   ?vfunc54@CMultiplayRules@@UAEXHHH@Z CMultiplayRules::vfunc54
 0x10010bfe func   ?sub_102ca780@CUnknown102ca630@@QAEXPAVCAI_BaseNPCTroika@@PAH111PAM2PAPAVCBaseEntity@@3@Z CUnknown102ca630::sub_102ca780
 0x10010c03 func   ?sub_10249980@SymMap@@QAEGIH@Z SymMap::sub_10249980

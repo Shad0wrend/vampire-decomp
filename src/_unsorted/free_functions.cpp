@@ -215990,6 +215990,91 @@ char CNPC_VMingXiao::sub_10398000(int code)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10398030 size=0x2e0
+#include "CNPC_VMingXiao.h"
+#include "CUnknown1039ab10.h"
+#include "CEntityVSlots.h"
+#include "ehandle.h"
+#include "globalvars.h"
+
+char CNPC_VMingXiao::sub_10398030(int nIndex, char bFlag)
+{
+	if (!sub_10398000(nIndex))
+		return 0;
+	if (gpGlobals->curtime < m_flSlotTimeA[nIndex])
+		return 0;
+
+	int act = -1;
+	switch (nIndex)
+	{
+	case 0:
+		if (((CUnknown1039ab10 *)this)->sub_1039ab10())
+			return 0;
+		if (m_f6264 < 100.0f)
+			return 0;
+		if (m_f6264 >= 300.0f)
+			return 0;
+		act = 0x112a;
+		break;
+	case 1:
+		if (((CUnknown1039ab10 *)this)->sub_1039ab10())
+			return 0;
+		if (m_f6264 < 100.0f)
+			return 0;
+		if (m_f6264 >= 300.0f)
+			return 0;
+		act = 0x112b;
+		break;
+	case 2:
+		if (((CUnknown1039ab10 *)this)->sub_1039ab10())
+			return 0;
+		if (m_f6264 < 100.0f)
+			return 0;
+		if (m_f6264 >= 200.0f)
+			return 0;
+		act = 0x112c;
+		break;
+	case 3:
+		if (((CUnknown1039ab10 *)this)->sub_1039ab10())
+			return 0;
+		if (m_f6264 < 100.0f)
+			return 0;
+		if (m_f6264 >= 200.0f)
+			return 0;
+		act = 0x112d;
+		break;
+	case 4:
+	case 5:
+		if (((CUnknown1039ab10 *)this)->sub_1039ab10())
+			return 0;
+		if (m_f6264 < 150.0f)
+			return 0;
+		if (!m_h6718.Get())
+			return 0;
+		if (m_nSide671c != nIndex)
+			return 0;
+		break;
+	}
+
+	if (bFlag && act != -1)
+	{
+		CEntityVSlots *pTarget = (CEntityVSlots *)m_h667c.Get();
+		void *pObj = pTarget ? *(void **)((char *)pTarget + 0xa0) : 0;
+		if (!pObj)
+			return 0;
+		int seq = ((CEntityVSlots *)pObj)->slot361(act);
+		int u = vfunc376_slot(seq);
+		void *pEnemyObj = vfunc167();
+		if (pEnemyObj)
+			pEnemyObj = *(void **)((char *)pEnemyObj + 0x9c);
+		int out = -1;
+		if (!vfunc331(pObj, (int)pEnemyObj, u, &out) || out < 0)
+			return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103983d0 size=0x1e0
 #include "CNPC_VMingXiao.h"
 #include "CUnknown10739d08.h"
