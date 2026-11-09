@@ -46440,6 +46440,42 @@ void CBaseButton::sub_100c8a20(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9190 size=0x81
+#include "CBaseEntity.h"
+#include "engineiface.h"
+#include "globalvars.h"
+
+struct CollX {
+	virtual void v0();
+	virtual int vfunc1();
+};
+extern char g_1070d1b0[];
+void sub_1000fca9();
+void __cdecl sub_10002a22(CBaseEntity *p, int a, int b, int c, int d, char *e);
+
+struct CUnknown100c9190 : CBaseEntity {
+	void sub_100c9190();
+};
+
+void CUnknown100c9190::sub_100c9190()
+{
+	sub_100ac4e0((int)sub_1000fca9, 0, 0);
+	float lo, hi;
+	double add;
+	if (enginerandom->vfunc2(0, 5)) {
+		float t = enginerandom->vfunc1(10.0f, 15.0f);
+		t += 10.0;
+		*(float *)((char *)this + 0x17c) = t + gpGlobals->curtime;
+	} else {
+		float t = enginerandom->vfunc1(0.0f, 0.3f);
+		t += 0.1;
+		*(float *)((char *)this + 0x17c) = t + gpGlobals->curtime;
+	}
+	CollX *c = (CollX *)((char *)this + 0x270);
+	sub_10002a22(this, c->vfunc1(), 1, 1, 1, g_1070d1b0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9250 size=0x104
 #include "CBaseButton.h"
 #include "CBaseEntity.h"
