@@ -3317,6 +3317,73 @@ void CBaseCombatCharacter::vfunc306(CBaseCombatCharacter *pTarget, char bUseEyes
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033e4a0 size=0x28f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "CUnknown101e44c0.h"
+#include "CVStatList_t.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+void sub_101434b0(int entindex, int line, const char *text, float duration, int r, int g, int b, int a);
+CBaseEntity *sub_101cd9e0(int index);
+extern CUnknown101e44c0 g_10739a4c;
+
+struct CReactionRec
+{
+	const char *sub_101f1da0(int a, int b);
+};
+
+inline int ENTINDEX(int edict) { return engine->vfunc35(edict); }
+
+#define ENT_NAME (this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc)
+
+int CBaseCombatCharacter::vfunc124()
+{
+	ScopeTrace trace("CBaseCombatCharacter::DrawDebugTextOverlays", ENT_NAME);
+	char tmp[128];
+	int text_offset = 1;
+	text_offset = CBaseEntity::vfunc124();
+	if (*(unsigned int *)((char *)this + 0x224) & 0x400) {
+		CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)m_p9c;
+		int i = 0;
+		do {
+			const char *pText = CVStatListSet::Of(pChar)->Find(0)->sub_10201a40(i, 0);
+			int ent = ENTINDEX(m_pEdict2e0);
+			sub_101434b0(ent, text_offset, pText, 0.0f, 255, 255, 255, 255);
+			text_offset++;
+			i++;
+		} while (i < 0x23);
+		CBaseEntity *pPlayer = sub_101cd9e0(1);
+		if (pPlayer) {
+			const char *pReaction = ((CReactionRec *)((char *)pChar + 0x1460))->sub_101f1da0(ENTINDEX(pChar->m_pEdict2e0), ENTINDEX(pPlayer->m_pEdict2e0));
+			sprintf(tmp, "Reaction: %s", pReaction);
+			int ent = ENTINDEX(m_pEdict2e0);
+			sub_101434b0(ent, text_offset, tmp, 0.0f, 255, 255, 255, 255);
+			text_offset++;
+		}
+	}
+	g_10739a4c.sub_101e45b0(this, &text_offset);
+	if (*(int *)((char *)this + 0x94)) {
+		sprintf(tmp, "NPC: %s", sub_1000b5cd());
+		int ent = ENTINDEX(m_pEdict2e0);
+		sub_101434b0(ent, text_offset, tmp, 0.0f, 255, 255, 255, 255);
+		text_offset++;
+	}
+	return text_offset;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033e7e0 size=0x121
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
