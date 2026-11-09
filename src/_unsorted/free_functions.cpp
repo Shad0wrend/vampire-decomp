@@ -213177,6 +213177,71 @@ void CNPC_VChangBros::sub_1036c810(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036c8d0 size=0x177
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VChangBros.h"
+#include "CUnknown103160c0.h"
+#include "ScopeTrace.h"
+
+extern CGlobalEntityList *g_10566458;
+extern char g_1054abdc[];
+extern char g_10630064[];
+extern "C" void *__RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+
+struct CChangBrosView : CEntityVSlots {
+	char m_pad0004[0x5bb0 - 4];
+	int m_nCount5bb0;
+	char m_pad5bb4[0x5da4 - 0x5bb4];
+	CUnknown103160c0 *m_pSquad;
+	char m_pad5da8[0x628c - 0x5da8];
+	unsigned int m_hEnemy;
+	char m_pad6290[0x66b8 - 0x6290];
+	int m_nMode;
+	char m_pad66bc[0x66cc - 0x66bc];
+	float m_flTime66cc;
+	float GetJumpTime() const { return m_flTime66cc; }
+	CUnknown103160c0 *GetSquad() const { return m_nCount5bb0 > 0 ? 0 : m_pSquad; }
+};
+
+// TARGET: CNPC_VChangBros::sub_1036c8d0
+bool CNPC_VChangBros::sub_1036c8d0()
+{
+	ScopeTrace st("CNPC_VChangBros::CheckForJumpAttack", g_106b8540);
+	CChangBrosView *p = (CChangBrosView *)this;
+	if (p->m_nMode == 0) {
+		CEntityVSlots *pEnemy = (CEntityVSlots *)g_10566458->sub_100290c0(&p->m_hEnemy);
+		if (pEnemy) {
+			if (sub_1036e580((int)pEnemy->slot217()) != 4) {
+				if (sub_1036e580((int)p->slot217()) != 4) {
+					if (gpGlobals->curtime - p->GetJumpTime() >= 16.0f) {
+						CUnknown103160c0 *pSquad = p->GetSquad();
+						if (!pSquad)
+							return true;
+						for (int i = 0; i < pSquad->sub_103160a0(); i++) {
+							CBaseEntity *pMember = pSquad->sub_103160c0(i);
+							if (pMember) {
+								CChangBrosView *pOther = (CChangBrosView *)__RTDynamicCast(pMember, 0, g_1054abdc, g_10630064, 0);
+								if (pOther && pOther != p && gpGlobals->curtime - pOther->GetJumpTime() < 16.0f)
+									return false;
+							}
+						}
+						return true;
+					}
+				}
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036cab0 size=0xd9
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
