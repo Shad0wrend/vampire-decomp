@@ -36,7 +36,7 @@
 	char sub_1033d2f0(unsigned int discipline);	// CBaseCombatCharacter member (stub 0x1000d3d7): whether the character has the discipline, called directly
 	char vfunc425(CBaseEntity *pTarget);	// slot 425 "BeFedOnByZombie": false while the grapple target (handle +0x1538, +0x153c set) is live; with pTarget and a successful sub_10328df0(pTarget, 8): the active weapon gets slot 66, the target flags (+0x14a8 / +0x1475) are set and the fade times (+0x1478 / +0x147c) stamped, true; otherwise false, with feed trace messages when the dev flag object allows
 	char sub_10328df0(CBaseEntity *pTarget, int a);	// stub 0x1000df99: starts the grapple attack on pTarget
-	char vfunc424(char bFlag);	// slot 424 feeding attempt: a live grapple target (+0x1538/+0x153c) returns false; with a victim (LookForGrappleVictim) AttemptFeed decides, on success sets +0x14a8 = 1, stores bFlag at +0x1475 and 0 at +0x1478 and returns true; else the Replenish tail (sub_10341c30 / sub_1017e150)
+	// slot 424 feeding attempt: a live grapple target (+0x1538/+0x153c) returns false; with a victim (LookForGrappleVictim) AttemptFeed decides, on success sets +0x14a8 = 1, stores bFlag at +0x1475 and 0 at +0x1478 and returns true; else the Replenish tail (sub_10341c30 / sub_1017e150)
 	CBaseEntity *LookForGrappleVictim();	// 0x101690b0 "CBasePlayer::LookForGrappleVictim" (scope string 0x105868a0): traces for a feed victim and returns its entity, null when none
 	char AttemptFeed(CBaseEntity *pVictim);	// 0x10168910 "%s AttemptFeed on %s": stores the victim's handle at +0x1c58 / +0x1c60, rolls the feed; true on success
 	void *sub_10341c30(void *pfn, float flDist, float flCos, int bFlag, float flZ, int nMask);	// 0x10341c30 "CBaseCombatCharacter::FindEntityFOV" (stub 0x100080f8), called directly

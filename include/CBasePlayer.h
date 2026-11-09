@@ -178,7 +178,7 @@ public:
 	virtual char vfunc418(int unused);	// slot 418: runs sub_101644f0(-1, 0, 0), then steps the activity at +0xff0 (0xf49 -> 0xf52 when the entity of the handle at +0xfe8 is gone; with the byte at +0x65c set 0xf40 -> 0xf49), true while it is 0xf52
 	virtual char vslot419(int a); virtual char vslot420(int a);
 	virtual char vfunc421(int unused);	// slot 421: false unless the byte at +0x65c is set; with a live character behind the handle at +0x1538 (and +0x153c set) builds a damage record sourced at this player and hands the character a one point damage info (stat 0xf set to the value of stat 0x11 of its active stat list), slot 144 and slot 403; true
-	virtual char vslot422(int a); virtual char vslot423(int a); CBP_V1(si15) CBP_V1(si16) CBP_V1(si17)
+	virtual char vslot422(int a); virtual char vslot423(int a); virtual char vfunc424(char bFlag); CBP_V1(si16) CBP_V1(si17)
 	virtual void vfunc427();	// slot 427: hands the entity of the handle at +0x1538 (null while the dword at +0x153c is -1 or the handle is stale) to sub_10165790
 	CBP_V1(si19)
 	virtual void vfunc429();	// slot 429: stores curtime at +0x1dd4
@@ -190,7 +190,7 @@ public:
 	virtual void vfunc442(int a);
 	virtual void vfunc443(int a);
 	virtual void vfunc444();
-	CBP_V1(sj6) CBP_V1(sj7) CBP_V1(sj8)
+	virtual int vfunc445(); virtual void vfunc446(); virtual void vfunc447();
 	virtual void vfunc448();
 	// slots 449..467
 	virtual void vfunc449(int a, int b);	// slot 449: called with (2, 0) by slot 434
@@ -534,7 +534,9 @@ public:
 	char m_pad22b4[0x22bc - 0x22b4];
 	int m_iFrags;	// 0x22bc
 	int m_iDeaths;	// 0x22c0
-	char m_pad22c4[0x22e0 - 0x22c4];
+	float m_f22c4;
+	float m_f22c8;
+	char m_pad22cc[0x22e0 - 0x22cc];
 	EHANDLE m_hTargetEnt;	// 0x22e0
 	int m_ArmorValue;	// 0x22e4
 	Vector m_DmgOrigin;	// 0x22e8
