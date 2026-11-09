@@ -151,6 +151,63 @@ void CMomentaryRotButton::vfunc173(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb160 size=0x258
+#include "CMomentaryRotButton.h"
+#include "CBaseEntity.h"
+#include "QAngle.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+void sub_101434b0(int a, int b, const char *pszText, int d, int e, int f, int g, int h);
+
+inline const QAngle &GetLocalAngles_100cb160(CMomentaryRotButton *p)
+{
+	return *(const QAngle *)p->vfunc221();
+}
+
+inline const QAngle &GetLocalAngularVelocity_100cb160(CMomentaryRotButton *p)
+{
+	return *(const QAngle *)((char *)p + 0x3c8);
+}
+
+int CMomentaryRotButton::vfunc124()
+{
+	int line = ((CBaseEntity *)this)->CBaseEntity::vfunc124();
+	if (*(unsigned char *)((char *)this + 0x224) & 1)
+	{
+		char szBuf[0xff];
+		int edict;
+
+		Q_snprintf(szBuf, 0xff, "QAngle: %.2f %.2f %.2f", GetLocalAngles_100cb160(this)[0], GetLocalAngles_100cb160(this)[1], GetLocalAngles_100cb160(this)[2]);
+		edict = *(int *)((char *)this + 0x2e0);
+		sub_101434b0(EngineGlobals::g_1070b22c->vfunc35(edict), line, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
+		line++;
+
+		Q_snprintf(szBuf, 0xff, "AVelocity: %.2f %.2f %.2f",
+			GetLocalAngularVelocity_100cb160(this)[0], GetLocalAngularVelocity_100cb160(this)[1], GetLocalAngularVelocity_100cb160(this)[2]);
+		edict = *(int *)((char *)this + 0x2e0);
+		sub_101434b0(EngineGlobals::g_1070b22c->vfunc35(edict), line, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
+		line++;
+
+		Q_snprintf(szBuf, 0xff, "Target Pos:   %3.3f", this->m_flTarget5fc);
+		edict = *(int *)((char *)this + 0x2e0);
+		sub_101434b0(EngineGlobals::g_1070b22c->vfunc35(edict), line, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
+		line++;
+
+		float flCurPos = this->sub_100ca630(this->vfunc221());
+		Q_snprintf(szBuf, 0xff, "Current Pos:   %3.3f", flCurPos);
+		edict = *(int *)((char *)this + 0x2e0);
+		sub_101434b0(EngineGlobals::g_1070b22c->vfunc35(edict), line, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
+		line++;
+
+		Q_snprintf(szBuf, 0xff, "Direction: %s", this->m_nDirection5d8 == 1 ? "Forward" : "Backward");
+		edict = *(int *)((char *)this + 0x2e0);
+		sub_101434b0(EngineGlobals::g_1070b22c->vfunc35(edict), line, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
+		line++;
+	}
+	return line;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cb4f0 size=0x6d
 #include "CMomentaryRotButton.h"
 
