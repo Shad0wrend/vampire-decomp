@@ -230949,6 +230949,27 @@ int sub_103e0cd0(const char *pszType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e0e30 size=0x39
+#include "CNPC_VZombie.h"
+#include "CVariantCopy.h"
+struct CZombieInputData { int pActivator; int pCaller; CVariantCopy value; };
+int sub_103e0cd0(const char *p);
+extern char g_106b8540[];
+
+struct CVariantString : CVariantCopy
+{
+	const char *String() const
+	{
+		return (m_fieldType == 2) ? (iszVal ? iszVal : g_106b8540) : sub_100d0a00();
+	}
+};
+
+void CNPC_VZombie::sub_103e0e30(CZombieInputData *pData)
+{
+	sub_103e0980(sub_103e0cd0(((CVariantString *)&pData->value)->String()));
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1680 size=0x20
 #include "CUnknown103e1680.h"
 extern CUnknown103e1680 *g_10940644;

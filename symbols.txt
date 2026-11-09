@@ -5406,6 +5406,7 @@
 0x10008747 func   ?sub_10203540@@YAHPBD@Z sub_10203540
 0x1000874c func   ?vfunc103@CEnvSpark@@UAEXXZ CEnvSpark::vfunc103
 0x10008751 func   _item_container_one_item_filtered item_container_one_item_filtered
+0x10008756 func   ?sub_103e0e30@CNPC_VZombie@@QAEXPAUCZombieInputData@@@Z CNPC_VZombie::sub_103e0e30
 0x1000875b func   ?vfunc363@CWeaponRanged_Rifle_M37@@QAEHXZ CWeaponRanged_Rifle_M37::vfunc363
 0x10008760 func   ?sub_10171d10@@YIXPAUCHandlerView@@HPAUCInputData@@@Z sub_10171d10
 0x1000876a func   ?vfunc103@CNPC_VTest@@UAEXXZ CNPC_VTest::vfunc103
