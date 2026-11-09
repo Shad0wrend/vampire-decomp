@@ -106,7 +106,7 @@ public:
 	virtual int vfunc381(int act);	// resolves an activity to the sequence/activity the model really has
 	virtual char vfunc382(void *pWeapon);
 	virtual void vfunc383(void *pWeapon, int a);	// "Weapon_Equip"-like: equips the given weapon (the Spawn of the NPCs equips the weapon named by the field at +0x5dec)
-	CAI_NPC_V(384) virtual void vfunc385(void *a, int b, int c); CAI_NPC_V(386) CAI_NPC_V(387) CAI_NPC_V(388) CAI_NPC_V(389)
+	CAI_NPC_V(384) virtual void vfunc385(void *a, int b, int c); CAI_NPC_V(386) CAI_NPC_V(387) CAI_NPC_V(388) virtual void vfunc389(Vector *pOut, const Vector *pIn);
 	virtual int vfunc390(struct CTakeDamageInfo *pInfo);	// slot 390 (ret 4, answers in eax; 0x10265ed0 = CAI_BaseNPC, 0x103302e0 = CBaseCombatCharacter): the take-damage reaction, true when the character takes the hit; the Troika override (0x102beda0) first stores a copy of the record at +0x660c
 	CAI_NPC_V(391) virtual int vfunc392(struct CTakeDamageInfo *pInfo); CAI_NPC_V(393) virtual char vfunc394(); CAI_NPC_V(395) CAI_NPC_V(396) CAI_NPC_V(397) virtual char vfunc398(); CAI_NPC_V(399)
 	CAI_NPC_V(400) CAI_NPC_V(401) virtual char vfunc402();	// slot 402: asks slot 394; when it holds either removes the NPC (slot 398 false: sub_101cd940) or, with slot 398 true, hands the field at +0xfd0 to sub_100544f0, runs slot 77 and slot 395; without it only slot 395; returns the answer of slot 394
