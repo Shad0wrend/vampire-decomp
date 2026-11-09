@@ -70899,6 +70899,50 @@ extern "C" CBaseEntity *multisource()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101331e0 size=0x117
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CMultiSource.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+#define S1(n) virtual void s##n();
+#define S10(p) S1(p##0) S1(p##1) S1(p##2) S1(p##3) S1(p##4) S1(p##5) S1(p##6) S1(p##7) S1(p##8) S1(p##9)
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct MultiMgrView
+{
+	S100(a)
+	S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5)
+	virtual bool slot160(const char *szTarget);
+};
+static inline const char *GetEntityName1331e0(CBaseEntity *p) { return p->m_name26c; }
+
+extern CGlobalEntityList g_106eb5d8;
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+void sub_101c0b60();
+
+void CMultiSource::sub_101331e0()
+{
+	CBaseEntity *pTarget = 0;
+	m_nMembers = 0;
+	memset(m_rgEntities, 0, sizeof(m_rgEntities));
+	sub_100ac4e0((int)sub_101c0b60, 0, 0);
+	pTarget = g_106eb5d8.sub_100f7930(0, STRINGR_F(m_name26c));
+	while (pTarget && m_nMembers < 32) {
+		if (pTarget)
+			m_rgEntities[m_nMembers++] = pTarget;
+		pTarget = g_106eb5d8.sub_100f7930(pTarget, STRINGR_F(m_name26c));
+	}
+	pTarget = g_106eb5d8.sub_100f7380(0, "multi_manager");
+	while (pTarget && m_nMembers < 32) {
+		if (pTarget && ((MultiMgrView *)pTarget)->slot160(GetEntityName1331e0(this)))
+			m_rgEntities[m_nMembers++] = pTarget;
+		pTarget = g_106eb5d8.sub_100f7380(pTarget, "multi_manager");
+	}
+	m_flags204 &= ~1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133350 size=0x72
 void *sub_1000db89(int);
 extern int vt_104475c4;
