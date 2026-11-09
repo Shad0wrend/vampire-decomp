@@ -1993,6 +1993,7 @@
 0x10003bf2 func   ?sub_10030ae0@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030ae0
 0x10003bf7 func   ?vfunc103@CPropDoorknob@@UAEXXZ CPropDoorknob::vfunc103
 0x10003c01 func   ?vfunc1@CNodeNPCFilter@@UAEMPAUCNodeNPCFilterNode@@@Z CNodeNPCFilter::vfunc1
+0x10003c06 func   ?vfunc41@CItemContainerLock@@QAEXPAVCBasePlayer@@@Z CItemContainerLock::vfunc41
 0x10003c0b func   ?vfunc363@CWeaponRanged_Rifle_Crossbow_Flaming@@QAEHXZ CWeaponRanged_Rifle_Crossbow_Flaming::vfunc363
 0x10003c10 func   ?sub_10078b90@UtlMem@@QAEXXZ UtlMem::sub_10078b90
 0x10003c15 func   ?sub_101e8bf0@CUnknown101e8bf0@@QAEMXZ CUnknown101e8bf0::sub_101e8bf0

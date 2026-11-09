@@ -207,6 +207,90 @@ void CItemContainerLock::vfunc42(CBasePlayer *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102252f0 size=0x324
+#include "CItemContainerLock.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CBaseEntitySlots.h"
+#include "CVFeat_t.h"
+#include "CUnknown1020aea0.h"
+#include "CEHandleGet.h"
+#include "engineserver.h"
+#include "CReliableSingleUserRecipientFilter.h"
+#include "CBaseCombatWeapon.h"
+#include "CBasePlayer.h"
+#include "CBaseVampireSkillEntity.h"
+#include "CBaseCombatCharacter.h"
+
+extern int g_1072607c;
+extern unsigned char g_109f0a8c;
+extern CVFeat_t g_109f0ac0;
+void sub_1001509b();
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+
+#define CLAMP_X(x, lo, hi) (((x) > (hi)) ? (hi) : (((x) < (lo)) ? (lo) : (x)))
+
+// TARGET: CItemContainerLock::vfunc41
+void CItemContainerLock::vfunc41(CBasePlayer *pPlayer)
+{
+	CBaseCombatWeapon *pWeapon;
+	if (!pPlayer)
+		pWeapon = 0;
+	else
+		pWeapon = (CBaseCombatWeapon *)pPlayer->sub_1032e7b0();
+
+	char flags = 4;
+	int featVal = 0;
+	float eye[3];
+	Vector vecPos = *(Vector *)((CBaseEntitySlots *)this)->slot192(eye);
+	pPlayer->sub_10178590(vecPos);
+
+	if (pWeapon && pWeapon->sub_10252410(0))
+		pWeapon->vfunc292((CBaseEntity *)this);
+
+	if (pPlayer) {
+		CVFeat_t *pFeat;
+		for (int i = 0; i < g_10739d20; i++) {
+			if (*(int *)g_10739d24[i] == 0) {
+				pFeat = g_10739d24[i];
+				goto Found;
+			}
+		}
+		if (!(g_109f0a8c & 1)) {
+			g_109f0a8c |= 1;
+			new (&g_109f0ac0, (CUtlPlacement *)0) CVFeat_t(-1);
+			atexit(sub_1001509b);
+		}
+		pFeat = &g_109f0ac0;
+Found:
+		featVal = pFeat->sub_101e56e0(pPlayer);
+		if (((CUnknown1020aea0 *)this)->sub_1020b040(pPlayer) == 0.0)
+			sub_10224fa0((CBaseCombatCharacter *)pPlayer);
+		if (m_unk780 >= 3) {
+			pPlayer->sub_10167fd0();
+			flags = 0xc;
+			m_b816 = 0;
+		} else {
+			flags = 0x14;
+			m_b816 = (unsigned char)(int)CLAMP_X(100.0f - (((CUnknown1020aea0 *)this)->sub_1020b040(pPlayer) / ((CUnknown1020aea0 *)this)->sub_1020aea0(pPlayer)) * 100.0f, 0.0f, 100.0f);
+		}
+	}
+
+	if (EHandle_Get(m_hUser8c) != 0 && m_unk780 < 3)
+		flags = flags | 1;
+	else
+		flags = flags | 2;
+
+	CReliableSingleUserRecipientFilter filter(pPlayer);
+	engine->vfunc65(&filter, g_1072607c);
+	engine->vfunc67((unsigned char)flags);
+	engine->vfunc67(m_b816);
+	engine->vfunc67(((CBaseVampireSkillEntity *)this)->sub_1020b000((CBaseEntity *)pPlayer));
+	engine->vfunc67(featVal);
+	engine->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10225910 size=0x1
 #include "CItemContainerLock.h"
 void CItemContainerLock::vfunc274()
