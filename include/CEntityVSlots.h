@@ -103,7 +103,7 @@ public:
 	virtual Vector *slot219();	// "GetAbsAngles"
 	virtual Vector *slot220();	// absolute origin
 	virtual Vector *slot221();	// absolute angles
-	EVS(222) EVS(223) EVS(224) EVS(225) EVS(226) EVS(227)
+	EVS(222) EVS(223) EVS(224) EVS(225) EVS(226) virtual void slot227(const void *pInfo);
 	virtual void slot228(int index, const void *pEvent);	// VPhysicsShadowCollision
 	EVS(229)
 	virtual void slot230(int index, const void *pEvent);	// VPhysicsCollision
