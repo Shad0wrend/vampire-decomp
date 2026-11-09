@@ -9115,6 +9115,7 @@
 0x1000db39 func   ?vfunc5@CSoundControllerImp@@UAEXPAX@Z CSoundControllerImp::vfunc5
 0x1000db3e func   ?sub_10167030@CBasePlayer@@QAEXVVector@@0@Z CBasePlayer::sub_10167030
 0x1000db48 func   ?vfunc81@CItemGMercurioJournal@@QAEHXZ CItemGMercurioJournal::vfunc81
+0x1000db4d func   ?vfunc469@CHL2_Player@@UAEXPAVVector@@M@Z CHL2_Player::vfunc469
 0x1000db52 func   ?sub_10316560@CUnknown103164c0@@QAEPAV1@XZ CUnknown103164c0::sub_10316560
 0x1000db57 func   ?sub_10033740@CPhysicsMovedEntities@@QAE_NPAVCBaseEntity@@@Z CPhysicsMovedEntities::sub_10033740
 0x1000db5c func   ?sub_10247840@CUnknown10247840@@QAEPADXZ CUnknown10247840::sub_10247840

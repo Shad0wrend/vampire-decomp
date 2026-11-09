@@ -166,6 +166,61 @@ void CHL2_Player::vfunc144(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034fa80 size=0x216
+#include <math.h>
+#include "CHL2_Player.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+
+float sub_101d2c70(const Vector *pVec);
+
+static inline float Norm(float a)
+{
+	if (a > 180.0f)
+		a -= 360.0f;
+	if (a < -180.0f)
+		a += 360.0f;
+	return a;
+}
+
+static inline void Smooth(float &out, float target, float t)
+{
+	while (t > 0.0f)
+	{
+		out = out * 0.8f + target * (1.0f - 0.8f);
+		t -= 0.1;
+	}
+}
+
+void CHL2_Player::vfunc469(Vector *pTarget, float flTime)
+{
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+
+	Vector *pOrigin = pSlots->slot220();
+	Vector delta = *pTarget - *pOrigin;
+
+	float flYaw = sub_101d2c70(&delta);
+	Vector *pAngles = pSlots->slot221();
+
+	Smooth(m_fe5c, Norm(flYaw - pAngles->y), flTime);
+
+	if (m_fe5c > 360.0f)
+		m_fe5c = 0.0f;
+	m_fe5c = ((CBaseAnimating *)this)->sub_10095cb0(0, m_fe5c);
+
+	Vector vecEye;
+	pSlots->slot193(&vecEye);
+
+	float *pE60 = (float *)((char *)this + 0xe60);
+	Smooth(*pE60, -((float)atan((pTarget->z - vecEye.z) / (*pTarget - vecEye).Length()) * 57.29578f), flTime);
+
+	if (*pE60 > 360.0f)
+		*pE60 = 0.0f;
+	((CBaseAnimating *)this)->sub_10095cb0(1, *pE60);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034fd30 size=0x14
 #include "CHL2_Player.h"
 
