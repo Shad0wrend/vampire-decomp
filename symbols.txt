@@ -9016,6 +9016,7 @@
 0x1000d530 func   ?sub_1007eaa0@CChoreoScene1007eaa0@@QAEXPBDPAX@Z CChoreoScene1007eaa0::sub_1007eaa0
 0x1000d535 func   ?vfunc359@CAI_BaseNPCTroika@@UAEHPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc359
 0x1000d53a func   ?sub_10098830@CAnimationLayerAdvance@@QAEMMPAVCBaseAnimatingOverlay@@@Z CAnimationLayerAdvance::sub_10098830
+0x1000d53f func   ?sub_100f3f20@CRotDoorUnit@@QAEXXZ CRotDoorUnit::sub_100f3f20
 0x1000d544 func   ?vfunc359@CBasePlayer@@UAEHPAVCBaseEntity@@@Z CBasePlayer::vfunc359
 0x1000d549 func   ?sub_102403b0@@YA_NABVVector@@0000000H@Z sub_102403b0
 0x1000d553 func   ?vfunc13@CServerGameDLL@@UAEXPAXHHHHH@Z CServerGameDLL::vfunc13

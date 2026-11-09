@@ -59000,6 +59000,72 @@ float __stdcall sub_100f3ea0(float a, float b, float c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3f20 size=0x110
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include "CRotDoor.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+namespace block_100f3f20 {
+struct CRotDoorCalc : CRotDoor
+{
+	float sub_100f3ea0(float a, float b, float c);
+};
+float CRotDoorCalc::sub_100f3ea0(float a, float b, float c)
+{
+	float d = (float)fabs(a - c) - (float)fabs(a - b);
+	if (d > 4.0f)
+		return c;
+	if (d < -4.0f)
+		return b;
+	return a;
+}
+}
+using namespace block_100f3f20;
+
+struct CRotDoorUnit : CRotDoorCalc
+{
+	void sub_100f3f20();
+};
+
+// TARGET: CRotDoorUnit::sub_100f3f20
+void CRotDoorUnit::sub_100f3f20()
+{
+	ScopeTrace trace("CRotDoor::ComputeDoorAngles", g_106b8540);
+	CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+	Vector maxs = *(Vector *)pCollision->vfunc2();
+	Vector mins = *(Vector *)pCollision->vfunc1();
+	float a, b;
+	if (m_flags204 & 0x40)
+	{
+		a = sub_100f3ea0(0, mins.y, maxs.y);
+		b = sub_100f3ea0(0, mins.z, maxs.z);
+	}
+	else if (m_flags204 & 0x80)
+	{
+		a = sub_100f3ea0(0, mins.z, maxs.z);
+		b = sub_100f3ea0(0, mins.x, maxs.x);
+	}
+	else
+	{
+		a = sub_100f3ea0(0, mins.x, maxs.x);
+		b = sub_100f3ea0(0, mins.y, maxs.y);
+	}
+	float flAngle = (float)atan2(b, a) * 57.29578f;
+	*(float *)((char *)this + 0x6f8) = flAngle;
+	*(float *)((char *)this + 0x6fc) = flAngle + 90.0f;
+	*(float *)((char *)this + 0x700) = flAngle - 90.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4140 size=0x3e
 extern "C" __declspec(dllimport) int Q_snprintf(char *buf, int size, const char *fmt, ...);
 void __cdecl sub_100f4490(char *cmd, int a);
