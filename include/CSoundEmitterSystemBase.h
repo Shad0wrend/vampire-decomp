@@ -49,6 +49,14 @@ struct CSoundEmitterRecord
 	char m_pad0000[0xd8];
 };
 
+// The element of the tree at CSoundEmitterSystemBase +4 (CUtlRBTree<CSoundEmitterFileEntry, int>, 0x18 byte nodes,
+// sentinel 0x1072c428, out-of-line Links 0x101b7f00).
+struct CSoundEmitterFileEntry
+{
+	int m_i00;
+	int m_i04;
+};
+
 // A tree (0x20 bytes, int indices) followed by a 0x2c byte table object: 0x4c bytes.
 struct CSoundEmitterDict
 {
