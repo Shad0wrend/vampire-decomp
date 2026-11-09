@@ -186896,6 +186896,66 @@ void CUnknown102ee270::sub_102f28a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f28e0 size=0x34f
+#include "CAI_Navigator.h"
+#include "CEntityVSlots.h"
+#include "CUnknown102ee1a0.h"
+#include "CUnknown102f2fc0.h"
+
+void sub_102f2d10(float *pOut, int a, int b);
+void sub_102f2de0(float *pOut, int a);
+void sub_10142e90(const Vector *pStart, const Vector *pEnd, int r, int g, int b, int c, int d);
+void sub_10142aa0(const Vector *pPos, const Vector &mins, const Vector &maxs, int r, int g, int b, int c, int d);
+void sub_10143b70(const Vector *pPos, const Vector &mins, const Vector &maxs, int r, int g, int b, int c, int d);
+
+namespace block_102f28e0 {
+struct CUnknown102ee1a0Unit : CUnknown102ee1a0 { float sub_102ee1a0(); };
+float CUnknown102ee1a0Unit::sub_102ee1a0() { return *(float *)(m_unk30 + 0x28); }
+}
+using namespace block_102f28e0;
+
+// TARGET: CAI_Navigator::sub_102f28e0
+void CAI_Navigator::sub_102f28e0()
+{
+	CAI_NavPathNode *pNode = (CAI_NavPathNode *)m_p30->m_pWaypoint.m_p;
+	if (pNode) {
+		{
+			Vector vecColA;
+			sub_102f2d10(&vecColA.x, (int)pNode->m_p2c, (int)pNode->m_flags28);
+			Vector *pOrigin = ((CEntityVSlots *)m_pOuter)->slot220();
+			sub_10142e90(pOrigin, (Vector *)pNode, (int)vecColA.x, (int)vecColA.y, (int)vecColA.z, 1, 0);
+		}
+		do {
+			{
+				Vector vecColB;
+				sub_102f2de0(&vecColB.x, (int)pNode->m_p2c);
+				sub_10142aa0((Vector *)pNode, Vector(-3.0f, -3.0f, -3.0f), Vector(3.0f, 3.0f, 3.0f), (int)vecColB.x, (int)vecColB.y, (int)vecColB.z, 1, 0);
+			}
+			if (pNode->m_p30) {
+				Vector vecColC;
+				sub_102f2d10(&vecColC.x, (int)pNode->m_p30->m_p2c, (int)pNode->m_p30->m_flags28);
+				sub_10142e90((Vector *)pNode, (Vector *)pNode->m_p30, (int)vecColC.x, (int)vecColC.y, (int)vecColC.z, 1, 0);
+			}
+			pNode = pNode->m_p30;
+		} while (pNode);
+	}
+	CEntityVSlots *pOwner = (CEntityVSlots *)m_pOuter;
+	Vector *pGoal = sub_102ee140();
+	Vector vecDir = *pOwner->slot220() - *pGoal;
+	float flDist = vecDir.Length();
+	VectorNormalize(vecDir);
+	Vector vecDir2 = vecDir;
+	if (((CUnknown102ee1a0Unit *)this)->sub_102ee1a0() <= flDist) {
+		vecDir = vecDir * ((CUnknown102ee1a0Unit *)this)->sub_102ee1a0() + *sub_102ee140();
+		sub_10143b70(&vecDir, Vector(-3.0f, -3.0f, -3.0f), Vector(3.0f, 3.0f, 3.0f), 0x30, 0x90, 0x30, 1, 0);
+	}
+	if (((CUnknown102f2fc0 *)this)->sub_102f2fc0() <= flDist) {
+		vecDir2 = vecDir2 * ((CUnknown102f2fc0 *)this)->sub_102f2fc0() + *sub_102ee140();
+		sub_10143b70(&vecDir2, Vector(-3.0f, -3.0f, -3.0f), Vector(3.0f, 3.0f, 3.0f), 0x90, 0x30, 0x90, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f2d10 size=0x9a
 void sub_102f2d10(float *color, int mode, unsigned int flags)
 {
