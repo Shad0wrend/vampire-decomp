@@ -29878,6 +29878,93 @@ void __fastcall sub_1008b490(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b800 size=0x2c0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+#include "Vector.h"
+
+// TARGET: CBaseAnimating::sub_1008b800
+void CBaseAnimating::sub_1008b800(int index, float flDelay, float flDuration, const Vector *pForce, int nForceBone)
+{
+	CBaseAnimatingRagdoll *pR = (CBaseAnimatingRagdoll *)this;
+
+	ScopeTrace scope("CBaseAnimating::TriggerClientRagdoll",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	bool bNoTime = (flDelay < 0.0f && flDuration < 0.0f);
+	float flTime = gpGlobals->curtime;
+
+	if (pForce->LengthSqr() > 0.0f && nForceBone > 0)
+	{
+		pR->m_nForceBone660 = nForceBone;
+		pR->m_vecForce664 = *pForce;
+		pR->m_n56c = (pR->m_n56c == 0);
+	}
+
+	int i;
+	for (i = 0; i < 4; i++)
+	{
+		if (pR->m_nIndex574[i] != index)
+			continue;
+		if (pR->m_flStart584[i] < 0.0f)
+			return;
+		if (bNoTime)
+		{
+			pR->m_flStart584[i] = -1.0f;
+			pR->m_flLength594[i] = -1.0f;
+			return;
+		}
+		float flEnd = pR->m_flLength594[i] + pR->m_flStart584[i];
+		flDelay = flTime + flDelay;
+		flDuration = flDelay + flDuration;
+		if (!(flEnd > flDuration))
+			flEnd = flDuration;
+		if (flDelay > pR->m_flStart584[i])
+			pR->m_flStart584[i] = flDelay;
+		if (flEnd > pR->m_flStart584[i])
+			pR->m_flLength594[i] = flEnd - pR->m_flStart584[i];
+		else
+			pR->m_flLength594[i] = 0.0f;
+		return;
+	}
+
+	int iBest = -1;
+	float flBest = 0.0f;
+	for (i = 0; i < 4; i++)
+	{
+		if (pR->m_nIndex574[i] < -1)
+		{
+			iBest = i;
+			break;
+		}
+		if (!(pR->m_flStart584[i] < 0.0f))
+		{
+			float flEnd = pR->m_flLength594[i] + pR->m_flStart584[i];
+			if (iBest < 0 || flEnd < flBest)
+			{
+				iBest = i;
+				flBest = flEnd;
+			}
+		}
+	}
+
+	if (iBest < 0)
+		return;
+	pR->m_nIndex574[iBest] = index;
+	pR->m_flStart584[iBest] = bNoTime ? -1.0f : flTime + flDelay;
+	pR->m_flLength594[iBest] = bNoTime ? -1.0f : flDuration;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008bb70 size=0xa8
 #include "CBaseAnimating.h"
 
