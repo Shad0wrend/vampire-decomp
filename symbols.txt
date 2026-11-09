@@ -14446,6 +14446,7 @@
 0x100150c8 func   ?sub_102edbb0@CAI_Navigator@@QAE_NPBVVector@@MHPAV2@@Z CAI_Navigator::sub_102edbb0
 0x100150d7 func   ?sub_100b2aa0@CBaseEntity@@QAEXABVVector@@@Z CBaseEntity::sub_100b2aa0
 0x100150dc func   ?sub_103c4a20@@YAEXZ sub_103c4a20
+0x100150e1 func   ?sub_10269bd0@CAI_BaseNPC@@QAEXPAHH@Z CAI_BaseNPC::sub_10269bd0
 0x100150e6 func   ?sub_1013ce40@@YAMABUVector2D@@00PAM@Z sub_1013ce40
 0x100150eb func   ?sub_103a1c80@@YAHXZ sub_103a1c80
 0x100150f0 func   ?sub_10219270@CUnk10219270@@QAEXXZ CUnk10219270::sub_10219270
