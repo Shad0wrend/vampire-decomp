@@ -147439,6 +147439,58 @@ CExperienceAward *CExperienceTable::sub_10222670(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10222740 size=0x14b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CExperienceTable.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+#pragma intrinsic(strlen)
+
+#define FS_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct FileSystemObj_t
+{
+	FS_SLOTS10(a)	// slots 0..9
+	FS_SLOTS10(b)	// slots 10..19
+	virtual int ReadLine(char *pBuffer, int maxLen, int hFile);	// slot 20
+};
+
+extern FileSystemObj_t *g_1070b238;
+extern char g_1074f930[];
+
+void CExperienceTable::sub_10222740(int hFile)
+{
+	ScopeTrace trace("ExperienceTable::LoadFile", g_106b8540);
+	CExperienceAward award;
+	int nRead;
+	do {
+		memset(&award, 0, sizeof(award));
+		g_1074f930[0] = 0;
+		nRead = g_1070b238->ReadLine(g_1074f930, 0x1000, hFile);
+		if (g_1074f930[0] == -1 || nRead == 0)
+			return;
+		if (g_1074f930[0] == '>')
+			continue;
+		if ((int)strlen(g_1074f930) < 3)
+			continue;
+		if (!sub_102228f0(g_1074f930, &award))
+			return;
+		((CUtlVector<CExperienceAward> *)this)->AddToTail(award);
+	} while (1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102228f0 size=0x173
 #include "CExperienceTable.h"
 
