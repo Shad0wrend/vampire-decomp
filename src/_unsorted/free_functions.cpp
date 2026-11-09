@@ -189381,6 +189381,38 @@ void CUnknown102f7ca0::sub_102f7ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f8e30 size=0x65
+#include "CAI_NetworkManager.h"
+#include "engineserver.h"
+
+// CAI_NetworkEditTools-like object (0x18 bytes) the network manager allocates at +0x454
+struct CUnknown102f8e30
+{
+	int m_debugNetOverlays;
+	int *m_pNodeIndexTable;
+	int m_nNextWCIndex;
+	Vector *m_pWCPosition;
+	CAI_NetworkManager *m_pManager;
+	void *m_pNetwork;
+	CUnknown102f8e30 *sub_102f8e30(CAI_NetworkManager *pNetworkManager);
+};
+
+CUnknown102f8e30 *CUnknown102f8e30::sub_102f8e30(CAI_NetworkManager *pNetworkManager)
+{
+	if (engine->vfunc12())
+		m_pNodeIndexTable = new int[4500];
+	else
+		m_pNodeIndexTable = 0;
+	m_pWCPosition = 0;
+	m_nNextWCIndex = 0;
+	m_pWCPosition = new Vector[500];
+	m_pNetwork = pNetworkManager->m_Graph;
+	m_pManager = pNetworkManager;
+	m_debugNetOverlays = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f8ec0 size=0x18
 // TARGET: sub_102f8ec0
 void sub_100f4460(int a);
