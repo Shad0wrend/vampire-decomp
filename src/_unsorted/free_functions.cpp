@@ -160832,6 +160832,28 @@ void sub_1024eda0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024edc0 size=0x99
+#include "CBaseCombatWeapon.h"
+extern char g_10547e40[];
+const char *sub_10412550(int act);
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+// TARGET: CBaseCombatWeapon::sub_1024edc0
+void CBaseCombatWeapon::sub_1024edc0()
+{
+    CWeaponActivityRecord *pTable = vfunc362();
+    int actCount = vfunc363();
+    DevMsg(g_10547e40);
+    DevMsg("Dumping weapon activity list\n");
+    DevMsg(g_10547e40);
+    DevMsg("%-40s | %-40s | %s\n", "Base Act", "Weapon Act", "Required");
+    DevMsg("-----------------------------------------+------------------------------------------+----------\n");
+    for (int i = 0; i < actCount; i++, pTable++) {
+        DevMsg("%-40s | %-40s | %s\n", sub_10412550(pTable->m_baseAct), sub_10412550(pTable->m_weaponAct), pTable->m_required ? "true" : "false");
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024f7b0 size=0x22
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
