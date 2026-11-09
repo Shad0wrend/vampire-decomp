@@ -98,7 +98,7 @@ public:
 	virtual void vfunc460(); virtual void vfunc461();
 	virtual void vfunc462(void *pCmd, void *pExtra);	// slot 462 \"CHL2_Player::PlayerRunCommand\"-like: the button state of the command (+0x34) goes to the player base, a live entity in the handle at +0x1db0 clears the command (or only its three movement floats while the byte at +0x1edc is set), then the two sprint-like meters (+0x2534 / +0x2538, each 0..4) charge or drain by the command's time (+0x10) depending on whether it moves; the command goes on to the player base
 	virtual void vfunc463(); virtual void vfunc464();
-	virtual void vfunc465(); virtual void vfunc466(); virtual void vfunc467(); virtual void vfunc468(); virtual void vfunc469();
+	virtual void vfunc465(); virtual void vfunc466(); virtual void vfunc467(); virtual void vfunc468(); virtual void vfunc469(Vector *pTarget, float flTime);
 	virtual void vfunc470(); virtual void vfunc471();
 	virtual void vfunc472();
 	virtual bool vfunc473(float value);
