@@ -110332,6 +110332,48 @@ float CStealthKillRules::sub_101bea90(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bebf0 size=0x15a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CStealthKillRules.h"
+#include "CUnknown10248a50.h"
+#include "ScopeTrace.h"
+
+extern IFileSys *g_1070b238;
+extern void (*g_109f3628)(const char *, ...);
+
+// TARGET: CStealthKillRules::sub_101bebf0
+void CStealthKillRules::sub_101bebf0()
+{
+	ScopeTrace trace("CStealthKillRules::LoadFile", g_106b8540);
+	CUnknown10248a50 *pKV = new CUnknown10248a50("StealthKillRules");
+	IFileSys *pFileSys = g_1070b238;
+	if (pKV && pKV->sub_102480f0("vdata/System/StealthKillRules.txt", pFileSys, 0, 0)) {
+		sub_101bedb0((CSKRKeyValues *)pKV, "DeafZoneArc", m_aTable0);
+		CUnknown10248a50 *pStatInfo = pKV->sub_102489a0("StatInfo", false);
+		if (pStatInfo) {
+			m_n0a0 = pStatInfo->sub_10248bb0("StealthFeatMin", 1);
+			m_n0a4 = pStatInfo->sub_10248bb0("StealthFeatMax", 10);
+			*(float *)&m_n0a8 = pStatInfo->sub_10248c60("HearingScalarMin", 0);
+			m_f0ac = pStatInfo->sub_10248c60("HearingScalarMax", 3.0f);
+			m_flRange = pStatInfo->sub_10248c60("StealthKillDistMax", 70.0f);
+		}
+	} else {
+		g_109f3628("Unable to open Disposition Table file: %s \n", "vdata/System/StealthKillRules.txt");
+		if (!pKV)
+			return;
+	}
+	pKV->sub_100046f1();
+	operator delete(pKV);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bedb0 size=0xd7
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
