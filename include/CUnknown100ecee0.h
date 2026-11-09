@@ -85,4 +85,5 @@ public:
 	float sub_100ec3d0(int index);	// stub 0x10013cc3: a float of the entry
 	void sub_100ece60(int index, float *pOutMin, float *pOutMax);	// stub 0x1001109f: two floats of the entry (a random range)
 	int sub_100ecc60(int index, int n);	// stub 0x100103f7: an int of the entry (the same function as EntryTable::sub_100ecc60)
+	void sub_100eba00(class CKeyValuesX *pKey);	// the per-entry loader of the disposition table
 };
