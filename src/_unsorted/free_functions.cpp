@@ -96262,6 +96262,78 @@ bool sub_101918e0(char **pa, char **pb)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10191ac0 size=0x18b
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "Tier1.h"
+#include "CUtlRBTree12.h"
+
+struct CBreakModelRec { char m_pad[0xc]; char m_Name[0x110]; };
+extern char g_106b8540[];
+void sub_10194750(int *pMemory, const int *src);
+void sub_1042bff0(void *, void *);
+void sub_10191cc0(CUtlVector<CBreakModelRec> *, int);
+void sub_10001c35(const char *modelName);	// the jump stub of this function
+
+struct CBreakModelKey
+{
+	const char *m_psz;
+	CBreakModelKey(const char *psz) : m_psz(psz) {}
+};
+
+struct CBreakModelTree : CUtlRBTree12
+{
+	void sub_1000f835(unsigned short i, unsigned short parent, bool isLeft);
+	unsigned short Find(const CBreakModelKey &search) { return sub_10194330(&search); }
+	unsigned short InsertAt(unsigned short parent, bool leftchild)
+	{
+		unsigned short i = sub_10194780();
+		sub_1000f835(i, parent, leftchild);
+		++m_NumElements;
+		return i;
+	}
+	unsigned short Insert(const CBreakModelKey &insert)
+	{
+		unsigned short parent;
+		bool leftchild;
+		sub_101945f0(&insert, parent, leftchild);
+		unsigned short newNode = InsertAt(parent, leftchild);
+		sub_10194750((int *)m_pElements[newNode].m_Data, (const int *)&insert);
+		return newNode;
+	}
+};
+extern CBreakModelTree g_1072b020;
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: sub_10191ac0
+void sub_10191ac0(const char *modelName)
+{
+	if (!*STRINGR(modelName))
+	{
+		void (*pMsg)(const char *, ...) = g_109f3630;
+		pMsg("******************************************************\n");
+		pMsg("WARNING:  Empty model name in PropBreakablePrecacheAll()\n");
+		pMsg("******************************************************\n");
+		return;
+	}
+	if (g_1072b020.Find(modelName) != CUtlRBTree12::InvalidIndex())
+		return;
+	g_1072b020.Insert(modelName);
+
+	int iModel = engine->vfunc13(STRINGR(modelName), 1);
+	CUtlVector<CBreakModelRec> list;
+	sub_10191cc0(&list, iModel);
+	for (int i = 0; i < list.Count(); i++)
+	{
+		const char *pName;
+		sub_1042bff0(&pName, list[i].m_Name);
+		sub_10001c35(pName);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10191cc0 size=0x16c
 #include "utlrbtree.h"
 #include "utlvector.h"
