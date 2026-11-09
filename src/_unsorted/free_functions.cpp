@@ -187942,6 +187942,182 @@ void CUnk102f5190::sub_102f5190()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f51d0 size=0x771
+#include "CAI_NetworkManager.h"
+#include "CUtlBuffer.h"
+#include "globalvars.h"
+#include <string.h>
+
+__declspec(dllimport) void Q_strncpy(char *, const char *, int);
+extern int (*g_109f388c)(char *, int, const char *, ...);
+extern void (*g_109f3884)(char *, const char *, int, int);
+extern void (*g_109f3658)(int, const char *, ...);
+void sub_1006c5a0(CUtlBuffer *, const char *, ...);
+unsigned sub_102f9950();
+void sub_100bf3d0(int *, int, CUtlBuffer *);
+extern int g_106c994c;
+extern unsigned g_1055b298[];
+
+inline const char *NMSTRING(const char *const &s)
+{
+	return s ? s : "";
+}
+
+struct NMFileSystem
+{
+	virtual int Open(const char *, const char *, int);
+	virtual void Close(int);
+	virtual void v2();
+	virtual int Write(const void *, int, int);
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void CreateDirHierarchy(const char *, const char *);
+};
+extern NMFileSystem *g_1070b238;
+
+struct NMBits
+{
+	unsigned short a;
+	unsigned short b;
+	int pad;
+	int *p;
+};
+struct NMLink
+{
+	int pad0;
+	int m_iSrcID;
+	int m_iDestID;
+	int m_iAccepted[22];
+	int m_flags;
+};
+struct NMNode
+{
+	char pad0[8];
+	float x, y, z;
+	float m_flVOffset[22];
+	float yaw;
+	int type;
+	int info;
+	int numLinks;
+	NMLink **links;
+	char pad1[0x90 - 0x80];
+	NMBits *bits;
+	int zone;
+};
+struct NMGraph
+{
+	int m_iNumNodes;
+	NMNode **m_pNodes;
+	NMNode *GetNode(int i)
+	{
+		if (i < 0 || i >= m_iNumNodes)
+		{
+			g_106c994c++;
+			return 0;
+		}
+		return m_pNodes[i];
+	}
+};
+
+void CAI_NetworkManager::sub_102f51d0()
+{
+	char szNrpFilename[260];
+	Q_strncpy(szNrpFilename, "maps", 260);
+	g_109f3884(szNrpFilename, "/graphs", 260, -1);
+
+	char tempFilename[260];
+	g_109f388c(tempFilename, 260, "%s/%s", szNrpFilename, NMSTRING(gpGlobals->mapname));
+
+	int len = strlen(tempFilename);
+	for (int i = 0; i < len; i++)
+	{
+		if (tempFilename[len - i - 1] == '/' || tempFilename[len - i - 1] == '\\')
+		{
+			tempFilename[len - i - 1] = 0;
+			break;
+		}
+	}
+	g_1070b238->CreateDirHierarchy(tempFilename, "GAME");
+
+	strcat(szNrpFilename, "/");
+	strcat(szNrpFilename, NMSTRING(gpGlobals->mapname));
+	strcat(szNrpFilename, ".ain");
+
+	CUtlBuffer buf(0, 256, 1);
+	sub_1006c5a0(&buf, "Version\t%d\n", 30);
+	sub_1006c5a0(&buf, "NumHulls:         %d\n", 22);
+	sub_1006c5a0(&buf, "UsedHullBits:     %d\n", sub_102f9950());
+	int zoneCount = *(int *)((char *)this + 0x650);
+	sub_1006c5a0(&buf, "ZoneCount:        %d\n", zoneCount);
+	for (int z = 0; z < zoneCount; z++)
+		sub_1006c5a0(&buf, "%d ", (*(int **)((char *)this + 0x644))[z]);
+	sub_1006c5a0(&buf, "\n");
+
+	NMGraph *g = (NMGraph *)((char *)this + 0x458);
+	sub_1006c5a0(&buf, "NumNodes:         %d\n", g->m_iNumNodes);
+
+	int node;
+	int totalNumLinks = 0;
+	for (node = 0; node < g->m_iNumNodes; node++)
+	{
+		if ((node & 0x1f) == 0)
+		{
+			sub_1006c5a0(&buf, "\n");
+			sub_1006c5a0(&buf, "Nodes:            ");
+		}
+		sub_1006c5a0(&buf, "%.2f,%.2f,%.2f ", g->GetNode(node)->x, g->GetNode(node)->y, g->GetNode(node)->z);
+		sub_1006c5a0(&buf, "%4f ", g->GetNode(node)->yaw);
+		for (int hull = 0; hull < 22; hull++)
+			sub_1006c5a0(&buf, "%.2f ", g->GetNode(node)->m_flVOffset[hull]);
+		sub_1006c5a0(&buf, "%d ", g->GetNode(node)->type);
+		sub_1006c5a0(&buf, "%d ", g->GetNode(node)->info);
+		NMBits *bits = g->GetNode(node)->bits;
+		bits->p[bits->b - 1] &= ~g_1055b298[(int)bits->a % 32];
+		sub_100bf3d0(bits->p, bits->b, &buf);
+		sub_1006c5a0(&buf, "%d ", g->GetNode(node)->zone);
+		sub_1006c5a0(&buf, "%d ", g->GetNode(node)->numLinks);
+		for (int link = 0; link < g->GetNode(node)->numLinks; link++)
+		{
+			if (node == g->GetNode(node)->links[link]->m_iSrcID)
+				totalNumLinks++;
+		}
+	}
+
+	sub_1006c5a0(&buf, "\n");
+	sub_1006c5a0(&buf, "TotalNumLinks      %d\n", totalNumLinks);
+
+	for (node = 0; node < g->m_iNumNodes; node++)
+	{
+		for (int link = 0; link < g->GetNode(node)->numLinks; link++)
+		{
+			if (node == g->GetNode(node)->links[link]->m_iSrcID)
+			{
+				sub_1006c5a0(&buf, "%d ", g->GetNode(node)->links[link]->m_iSrcID);
+				sub_1006c5a0(&buf, "%d ", g->GetNode(node)->links[link]->m_iDestID);
+				sub_1006c5a0(&buf, "%d ", g->m_pNodes[node]->links[link]->m_flags & 0x20f0);
+				for (int hull = 0; hull < 22; hull++)
+					sub_1006c5a0(&buf, "%d ", g->GetNode(node)->links[link]->m_iAccepted[hull]);
+				sub_1006c5a0(&buf, "\n");
+			}
+		}
+	}
+
+	sub_1006c5a0(&buf, "WCLookup:          ");
+	for (node = 0; node < g->m_iNumNodes; node++)
+		sub_1006c5a0(&buf, "%d ", ((int **)m_pNetwork)[3][node]);
+
+	int fh = g_1070b238->Open(szNrpFilename, "w+", 0);
+	if (!fh)
+	{
+		g_109f3658(2, "Couldn't create %s!\n", szNrpFilename);
+		return;
+	}
+	g_1070b238->Write(buf.m_pBuffer, buf.m_nPut, fh);
+	g_1070b238->Close(fh);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f5b30 size=0x7b
 #include <string.h>
 
