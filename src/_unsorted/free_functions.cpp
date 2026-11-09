@@ -55760,6 +55760,24 @@ bool sub_100e7f70(char *str, int maxLen, const char *find, const char *replace)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e8060 size=0x73
+__declspec(dllimport) void Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+extern char *g_10561a88[6];
+extern char *g_10561aa0[6];
+char sub_100e7f70(char *, int, char *, char *);
+
+void __stdcall sub_100e8060(char *dst, int n)
+{
+    char buf[0x800];
+    Q_strncpy(buf, dst, 0x800);
+    for (int i = 0; i < 6; i++) {
+        while (sub_100e7f70(buf, 0x800, g_10561a88[i], g_10561aa0[i]))
+            ;
+    }
+    Q_strncpy(dst, buf, n);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e8100 size=0x165
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
