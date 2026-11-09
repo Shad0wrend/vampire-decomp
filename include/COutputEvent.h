@@ -6,6 +6,7 @@
 #include "Vector.h"
 
 class CRestore;
+class CEventAction;
 
 class COutputEvent
 {
@@ -30,5 +31,6 @@ public:
 		((CVariantCopy *)this)->m_fieldType = 3;
 	}
 
-	char m_data[0x18];
+	char m_data[0x14];
+	CEventAction *m_pActionList;	// 0x14
 };
