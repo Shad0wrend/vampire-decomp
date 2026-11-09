@@ -61498,6 +61498,24 @@ int CUnknown100fae70::sub_100fae70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fae90 size=0x9a
+#include "CEnvParticle.h"
+#include "inputdata_t.h"
+#include "CBaseEntity.h"
+
+void CEnvParticle::sub_100fae90(inputdata_t *pInput)
+{
+	int type = (pInput->value.fieldType == 4) ? pInput->value.iValue : 0;
+	if (type < 0 || type >= 0x13)
+		return;
+	EHANDLE &h = *(EHANDLE *)&m_hAttachEntity;
+	if (h) {
+		*(int *)((char *)this + 0x458) = type;
+		sub_100faf60(h.Get());
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100faf60 size=0x27
 #include "CEnvParticle.h"
 
