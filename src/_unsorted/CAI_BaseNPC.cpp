@@ -1893,6 +1893,50 @@ bool CAI_BaseNPC::vfunc564()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102709c0 size=0xaf
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+#include "CUnknown102e0150.h"
+
+struct AINavView_102709c0
+{
+	char pad0[0x2c];
+	int m_pNetwork;
+	int GetNetwork() const { return m_pNetwork; }
+};
+
+struct AIView_102709c0
+{
+	char pad0[0x5bb0];
+	int m_nCount5bb0;
+	char pad1[0x5d34 - 0x5bb4];
+	AINavView_102709c0 *m_pNavigator;
+	char pad2[0x5da4 - 0x5d38];
+	int m_nSquad5da4;
+	AINavView_102709c0 *GetNavigator() { return m_pNavigator; }
+};
+
+// TARGET: CAI_BaseNPC::vfunc544
+char CAI_BaseNPC::vfunc544(CBaseEntity *pEnt, int a, int b)
+{
+	AIView_102709c0 *self = (AIView_102709c0 *)this;
+	if (vfunc541()) {
+		if (pEnt) {
+			AIView_102709c0 *pAI = *(AIView_102709c0 **)((char *)pEnt + 0x94);
+			if (pAI && self->m_nCount5bb0 <= 0 && self->m_nSquad5da4) {
+				int other = pAI->m_nCount5bb0 <= 0 ? pAI->m_nSquad5da4 : 0;
+				if (other == self->m_nSquad5da4 && pAI->m_nCount5bb0 <= 0)
+					return 0;
+			}
+			if (vfunc541()->sub_102e0210((int)pEnt))
+				vfunc494();
+		}
+		return vfunc541()->sub_102df700(self->GetNavigator()->GetNetwork(), (int)pEnt, a, b);
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10271f50 size=0x7
 #include "CAI_BaseNPC.h"
 int CAI_BaseNPC::vfunc375(int a0)
