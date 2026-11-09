@@ -97,6 +97,32 @@ void CWeaponThrown_Grenade_Frag::vfunc319()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee480 size=0x4c
+#include "CWeaponThrown_Grenade_Frag.h"
+
+int CWeaponThrown_Grenade_Frag::vfunc289()
+{
+	int v = 0;
+	switch (m_nState920)
+	{
+	case 0:
+		v = 0;
+		break;
+	case 1:
+	case 2:
+	case 3:
+	case 4:
+		v = 0xef7;
+		break;
+	case 5:
+		v = -1;
+		break;
+	}
+	m_n92c = v;
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee4f0 size=0xf
 #include "CWeaponThrown_Grenade_Frag.h"
 namespace lifted {

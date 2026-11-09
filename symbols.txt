@@ -3314,6 +3314,7 @@
 0x10005a3d func   ?vfunc5@CLogicNPCCondition@@QAEPAVCLogicalEntity@@I@Z CLogicNPCCondition::vfunc5
 0x10005a47 func   ?vfunc180@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc180
 0x10005a4c func   ?vfunc11@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc11
+0x10005a56 func   ?vfunc289@CWeaponThrown_Grenade_Frag@@QAEHXZ CWeaponThrown_Grenade_Frag::vfunc289
 0x10005a60 func   ?sub_10307d30@@YAPAUSPatrolPathX@@XZ sub_10307d30
 0x10005a65 func   ?sub_10249390@CUnknown10249390@@QAEHXZ CUnknown10249390::sub_10249390
 0x10005a6a func   ?sub_10293d70@@YIXPAH@Z sub_10293d70
