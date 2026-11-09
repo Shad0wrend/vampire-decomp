@@ -131414,6 +131414,21 @@ void sub_101f2600(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2640 size=0x2a
+#include <string.h>
+extern int g_1073d2b0;
+extern char g_1073ca80[][64];
+extern char g_1073aa40[];
+
+void sub_101f2640()
+{
+    if (g_1073d2b0 > 0) {
+        g_1073d2b0--;
+        strcpy(g_1073aa40, g_1073ca80[g_1073d2b0]);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2680 size=0x4b
 #include <string.h>
 struct SNode101f2680 {
