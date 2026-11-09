@@ -190821,6 +190821,43 @@ bool CAI_Pathfinder::sub_102ff960(CPairFields102dda40 *pLink, int startID)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ffbd0 size=0x9c
+#include "CUnknown102ffbd0.h"
+
+extern CUnknown102ffbd0Pool g_10936c84;
+extern int g_106c994c;
+
+CUnknown102ffbd0Obj *CUnknown102ffbd0::sub_102ffbd0(int a, int index)
+{
+	CUnknown102ffbd0ItemList *pList = m_pOuter->m_pSteps->m_pItems;
+	CUnknown102ffbd0Item *pItem;
+	if (index >= 0 && index < pList->m_nCount) {
+		pItem = pList->m_ppItems[index];
+	} else {
+		g_106c994c++;
+		pItem = 0;
+	}
+	int nMode;
+	switch (pItem->m_nType) {
+	case 3:
+		nMode = 2;
+		break;
+	case 4:
+		nMode = 3;
+		break;
+	default:
+		nMode = 0;
+		break;
+	}
+	CUnknown102ffbd0Obj *pObj = (CUnknown102ffbd0Obj *)g_10936c84.sub_1013dc60(0x38);
+	if (pObj) {
+		Vector vecPos;
+		return pObj->sub_10319df0(pItem->sub_102fb0d0(&vecPos, a), pItem->GetYaw(), nMode, 12, -1);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10300010 size=0x6d
 #include "Vector.h"
 
