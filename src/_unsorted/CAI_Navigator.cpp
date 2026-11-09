@@ -494,3 +494,151 @@ int CAI_Navigator::vfunc12(int a)
 	return result;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102eff40 size=0x2a4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CAI_Navigator.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+#define V64(a) V16(a##a) V16(a##b) V16(a##c) V16(a##d)
+
+struct NavOwner {
+    V64(p) V64(q) V64(r) V64(s) V64(t) V64(u) V64(v) V64(w) V4(x) V4(y) V4(z)
+    virtual void f0();
+    virtual char vfunc525(float flInterval);
+};
+struct NavOwnerData {
+    int vptr;
+    char pad[0x156c - 4];
+    int m156c;
+    char pad2[0x1a40 - 0x1570];
+    char b1a40;
+    char pad3[0x5d44 - 0x1a41];
+    struct NavComp *p5d44;
+};
+struct NavComp {
+    int vptr;
+    NavOwnerData *pOuter;
+    int stamp8;
+    int stampC;
+};
+struct NavMotor {
+    virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+    virtual void vfunc5();
+    virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+    virtual void vfunc10();
+    char pad[0x30 - 4];
+    float f30;
+};
+struct NavSelfView {
+    virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+    virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+    virtual void OnNavFailed(int code, int force);
+};
+
+extern int g_1060fcc4[];
+extern float g_104454c4;
+extern int __fastcall sub_1030ba70(void *p);
+extern char __fastcall sub_10280a20(void *p);
+
+void CAI_Navigator::vfunc5(float flInterval, int a)
+{
+    ScopeTrace trace("CAI_Navigator::Move", g_106b8540, g_106b8540);
+    if (flInterval > 1.0)
+        flInterval = 1.0f;
+    if (sub_102ee2e0())
+        return;
+    NavOwner *pOwner = (NavOwner *)m_pOuter;
+    if (pOwner->vfunc525(flInterval))
+        return;
+    NavOwnerData *pData = (NavOwnerData *)m_pOuter;
+    if (pData->b1a40) {
+        m_i08 = pData->m156c;
+        m_i0c = gpGlobals->framecount;
+        NavComp *c = (NavComp *)sub_102ecc00();
+        c->stamp8 = c->pOuter->m156c;
+        c->stampC = gpGlobals->framecount;
+        c = (NavComp *)m_i28;
+        c->stamp8 = c->pOuter->m156c;
+        c->stampC = gpGlobals->framecount;
+        c = (NavComp *)m_i24;
+        c->stamp8 = c->pOuter->m156c;
+        c->stampC = gpGlobals->framecount;
+        c = ((NavOwnerData *)m_pOuter)->p5d44;
+        c->stamp8 = c->pOuter->m156c;
+        c->stampC = gpGlobals->framecount;
+        m_p30->sub_1030bc00();
+        ((NavMotor *)m_i20)->f30 = flInterval;
+        int result = 0;
+        if (!sub_1030ba70(m_p30)) {
+            Warning("AIError: Move requested with no route!\n");
+            result = 1;
+        } else if (!m_p30->m_pWaypoint) {
+            result = 2;
+        }
+        if (result == 0) {
+            if (sub_10280a20((void *)m_pOuter))
+                return;
+            int nLoopCount = 0;
+            int moveResult = 1;
+            m_b1c = 0;
+            while (moveResult >= 0 && !m_b1c) {
+                if (((NavMotor *)m_i20)->f30 <= g_104454c4) {
+                    moveResult = 0;
+                    break;
+                }
+                switch (m_p30->sub_1030bc00()) {
+                case 3:
+                    moveResult = vfunc13(a);
+                    break;
+                case 1:
+                    moveResult = vfunc14(a);
+                    break;
+                case 0:
+                case 2:
+                    moveResult = vfunc12(a);
+                    break;
+                default:
+                    DevMsg("Bogus route move type!");
+                    moveResult = -4;
+                    break;
+                }
+                ++nLoopCount;
+                if (nLoopCount > 16) {
+                    DevMsg("ERROR: AI navigation not terminating. Possibly bad cyclical solving?\n");
+                    goto fail;
+                }
+            }
+            if (moveResult < 0) {
+                if (moveResult != -3) {
+fail:
+                    sub_102f1fa0(4.0f, 0);
+                }
+                ((NavSelfView *)this)->OnNavFailed(0xc, 1);
+            }
+            return;
+        }
+        ((NavSelfView *)this)->OnNavFailed(g_1060fcc4[result], 1);
+        return;
+    } else if (m_i18 == 3) {
+        ((NavMotor *)m_i20)->vfunc5();
+        sub_10008832(0);
+        return;
+    } else if (m_i18 != -1) {
+        ((NavMotor *)m_i20)->vfunc10();
+    }
+}
+// END FUNCTION

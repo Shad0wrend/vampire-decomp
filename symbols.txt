@@ -7475,6 +7475,7 @@
 0x1000b62c func   ?sub_10078650@CUnk10078650@block_10078650@@QAEHH@Z block_10078650::CUnk10078650::sub_10078650
 0x1000b636 func   ?sub_1012c840@@YAXPAUCChildView@@@Z sub_1012c840
 0x1000b63b func   ?sub_102d3ea0@@YAXXZ sub_102d3ea0
+0x1000b640 func   ?vfunc5@CAI_Navigator@@UAEXMH@Z CAI_Navigator::vfunc5
 0x1000b645 func   ?vfunc187@CBaseCombatWeapon@@UAEPAVCBaseEntity@@XZ CBaseCombatWeapon::vfunc187
 0x1000b64f func   ?sub_10307b80@CStepWalker@@QAE_NXZ CStepWalker::sub_10307b80
 0x1000b654 func   ?sub_10290660@@YGHM@Z sub_10290660
