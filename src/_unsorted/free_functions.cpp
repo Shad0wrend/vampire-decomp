@@ -194593,6 +194593,53 @@ CUnknown102fc5d0 *CUnknown102fc5d0::sub_102fc5d0(int a, int b, const float *pVec
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fc6b0 size=0x1d5
+#include "CAI_NodeGraph.h"
+#include "CPairFields102dda40.h"
+#include "CBitString.h"
+#include "utlvector.h"
+
+inline CAI_Node *NodeAt(CAI_NodeGraph *pGraph, int i)
+{
+	if (i < 0 || i >= pGraph->m_nNodes) {
+		g_106c994c++;
+		return 0;
+	}
+	return pGraph->m_ppNodes[i];
+}
+
+struct CAI_NodeLinksView { CUtlVector<CPairFields102dda40 *> m_Links; };
+
+// TARGET: CAI_Node::sub_102fc6b0
+void CAI_Node::sub_102fc6b0()
+{
+	CUtlVector<CPairFields102dda40 *> &links = ((CAI_NodeLinksView *)&m_ppLinks)->m_Links;
+	for (int i = 0; i < m_n78; i++) {
+		if (links[i]) {
+			int dest = links[i]->sub_102dda40(m_nIndex);
+			if (dest > m_nIndex) {
+				for (int j = 0; j < NodeAt(m_pGraph98, dest)->m_n78; j++) {
+					if (NodeAt(m_pGraph98, dest)->m_ppLinks[j]) {
+						if (((CPairFields102dda40 *)NodeAt(m_pGraph98, dest)->m_ppLinks[j])->m_iDestID == m_nIndex
+							|| ((CPairFields102dda40 *)NodeAt(m_pGraph98, dest)->m_ppLinks[j])->m_iSrcID == m_nIndex)
+							NodeAt(m_pGraph98, dest)->m_ppLinks[j] = 0;
+					}
+				}
+				delete links[i];
+				links[i] = 0;
+			}
+		}
+	}
+	CBitString *pBits = m_pBits;
+	if (pBits) {
+		pBits->sub_100bf6a0();
+		delete pBits;
+		m_pBits = 0;
+	}
+	links.~CUtlVector<CPairFields102dda40 *>();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fc910 size=0x54
 #include "CBitString.h"
 
