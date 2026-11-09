@@ -152415,6 +152415,41 @@ bool sub_1023f870(const Ray_t &ray, const Vector &v1, const Vector &v2, const Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023fa90 size=0x189
+#include "Vector.h"
+int sub_1023fa90(const Vector &p0, const Vector &p1, const Vector &p2, const float *plane, float *out)
+{
+    float d0 = DotProduct(p0, *(const Vector *)plane);
+    float d1 = DotProduct(p1, *(const Vector *)plane);
+    float d2 = DotProduct(p2, *(const Vector *)plane);
+    int count = 0;
+    if (d2 != 0.0f) {
+        out[0] = 0;
+        float t = -((d0 - plane[3]) / d2);
+        out[1] = t;
+        if (t >= 0.0f && t <= 1.0f)
+            count = 1;
+    }
+    if (d1 != 0.0f) {
+        out[count * 2] = -((d0 - plane[3]) / d1);
+        out[count * 2 + 1] = 0;
+        if (out[count * 2] >= 0.0f && out[count * 2] <= 1.0f)
+            count++;
+    }
+    if (count == 2)
+        return count;
+    if (d2 != d1) {
+        float t = -(((d0 - plane[3]) + d2) / (d1 - d2));
+        out[count * 2] = t;
+        t = 1.0f - t;
+        out[count * 2 + 1] = t;
+        if (out[count * 2] >= 0.0f && out[count * 2] <= 1.0f && t >= 0.0f && t <= 1.0f)
+            count++;
+    }
+    return count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023fd00 size=0xc4
 #include "Vector.h"
 
