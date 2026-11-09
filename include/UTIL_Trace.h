@@ -31,6 +31,18 @@ inline void UTIL_TraceLine(const Vector &vecAbsStart, const Vector &vecAbsEnd, u
 		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
 }
 
+// UTIL_TraceLine_SumYXZ: UTIL_TraceLine whose inline Ray_t init sums the swept test's squares x, z, y (0x102d1af0).
+inline void UTIL_TraceLine_SumYXZ(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	ray.InitInlineSumYXZ(vecAbsStart, vecAbsEnd);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
 // UTIL_TraceLine(start, end, mask, pFilter, &trace): a ray with the caller's own filter object.
 inline void UTIL_TraceLine(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, void *pFilter,
 	CGameTrace *ptr)

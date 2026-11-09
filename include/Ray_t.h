@@ -53,6 +53,25 @@ struct Ray_t
 		m_b33 = 0;
 	}
 
+	// InitInlineSumYXZ: InitInline with the swept test's squares grouped y*y + (x*x + z*z); VC6 then sums x, z, y as
+	// some callers do (0x102d1af0). Same source meaning: only the grouping VC6 follows differs.
+	__forceinline void InitInlineSumYXZ(const Vector &start, const Vector &end)
+	{
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[1] * m_Delta[1] + (m_Delta[0] * m_Delta[0] + m_Delta[2] * m_Delta[2])) != g_104454c4;
+		m_StartOffset[0] = m_StartOffset[1] = m_StartOffset[2] = 0.0f;
+		m_IsRay = true;
+		m_Extents[0] = m_Extents[1] = m_Extents[2] = 0.0f;
+		m_Start[0] = start.x;
+		m_Start[1] = start.y;
+		m_Start[2] = start.z;
+		m_b32 = 0;
+		m_n34 = 0;
+		m_b33 = 0;
+	}
+
 	void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs)	// Ray_t::Init(start, end, mins, maxs) as CGameRules::vfunc76 inlines it
 	{
 		m_Delta[0] = end.x - start.x;
