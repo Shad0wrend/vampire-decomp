@@ -221,7 +221,7 @@ public:
 	virtual int slot513();	// NPC: "CapabilitiesGet", the capability bits
 	EVS(514) EVS(515) EVS(516) EVS(517) EVS(518) EVS(519)
 	EVS(520) virtual char slot521(const float *pStart, const float *pEnd, const float *pApex);	// NPC: "IsJumpLegal" (a boolean answer in al)
-	EVS(522) EVS(523) EVS(524) EVS(525) EVS(526) EVS(527) EVS(528) EVS(529)
+	virtual float slot522(); EVS(523) EVS(524) EVS(525) EVS(526) EVS(527) EVS(528) EVS(529)
 	virtual char slot530(CEntityVSlots *pEnemy);	// NPC: a boolean answer in al about an entity (the Hengeyokai's fish check)
 	virtual char slot531(void *pOut, CEntityVSlots *pEnt, float flDist, int *pResult);
 	virtual void slot532(int a);	// NPC: takes one argument (CAI_BaseNPCTroika::vfunc532, the door nudge passes 2)
