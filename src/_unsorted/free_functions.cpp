@@ -199005,6 +199005,54 @@ bool CBaseCombatCharacter::sub_10332930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10332aa0 size=0x181
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+
+struct CRelationRecord
+{
+	EHANDLE entity;
+	int classType;
+	int disposition;
+	int priority;
+	int m_field10;
+};
+
+void CBaseCombatCharacter::sub_10332aa0(int class_type, int disposition, int priority)
+{
+	ScopeTrace scope("CBaseCombatCharacter::AddClassRelationship", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	for (int i = 0; i < m_nRelationships15a0; i++)
+	{
+		if (m_ppRelationships1598[i]->classType == class_type)
+		{
+			m_ppRelationships1598[i]->disposition = disposition;
+			m_ppRelationships1598[i]->priority = priority;
+			return;
+		}
+	}
+	if (m_nRelationships15a0 == m_nMaxRelationships159c)
+	{
+		if (!sub_10332930())
+			return;
+	}
+	m_ppRelationships1598[m_nRelationships15a0] = new CRelationRecord;
+	m_ppRelationships1598[m_nRelationships15a0]->classType = class_type;
+	m_ppRelationships1598[m_nRelationships15a0]->entity = 0;
+	m_ppRelationships1598[m_nRelationships15a0]->disposition = disposition;
+	m_ppRelationships1598[m_nRelationships15a0]->m_field10 = 0;
+	m_ppRelationships1598[m_nRelationships15a0]->priority = priority;
+	m_nRelationships15a0++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10332ca0 size=0x1c3
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
