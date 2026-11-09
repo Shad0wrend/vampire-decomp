@@ -62787,6 +62787,31 @@ bool __cdecl sub_10108fd0(int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109010 size=0x174
+#include "UTIL_Trace.h"
+
+// TARGET: sub_10109010
+bool sub_10109010(const Vector *pStart, void *pIgnore)
+{
+	if (!pIgnore)
+		return false;
+	Ray_t ray;
+	CGameTrace trace;
+	Vector end;
+	end = *pStart + Vector(0.0f, 0.0f, 0.1f);
+	Vector mins(-20.0f, -20.0f, 0.0f);
+	Vector maxs(20.0f, 20.0f, 20.0f);
+	ray.Init(*pStart, end, mins, maxs);
+	CTraceFilterSimple filter(0, 0);
+	g_1070b254->vfunc4(&ray, 0x200400b, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&trace.m_startpos, (const Vector *)&trace.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+	if (trace.m_fraction != 1.0 || trace.m_startsolid)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101091f0 size=0x2a7
 #include "CBaseEntity.h"
 #include "CGameTrace.h"
