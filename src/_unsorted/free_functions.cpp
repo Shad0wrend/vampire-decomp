@@ -41142,6 +41142,21 @@ int CBaseFlex::sub_100b5d10(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6480 size=0x6b
+#include "utlrbtree.h"
+#include "CUnknown100b6480.h"
+
+void CUnknown100b6480::sub_100b6480()
+{
+	while (m_Items.Count() > 0) {
+		CUnknown100b6480_Item *it = m_Items[0];
+		m_Items.Remove(0);
+		delete it->m_pBlock;
+		delete it;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6510 size=0x7f
 extern "C" unsigned strlen(const char *);
 extern void (*g_109f3890)(char *dest, const char *src, int count);
