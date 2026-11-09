@@ -31297,6 +31297,93 @@ clear:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008e770 size=0x2fc
+#include "CBaseAnimating.h"
+#include "StudioHdr.h"
+#include "ScopeTrace.h"
+#include "Quaternion.h"
+#include "CUnknown100c81b0.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+void __cdecl sub_100c1ea0(StudioHdr *pHdr, Vector *pos, Quaternion *q);
+void __cdecl sub_100c25c0(StudioHdr *pHdr, Vector *pos, Quaternion *q, int iSequence, int nCycle, float *pPoseParams, CUnknown100c81b0 *pBoneMask);
+void __cdecl sub_10137fe0(Vector *pIn, float *pMat, Vector *pOut);
+
+struct CalcPoseRec
+{
+	int m_nDst;
+	int m_nSrc;
+	char m_bTransform;
+	char m_pad09[3];
+	float m_flMat[12];
+};
+
+struct CalcPoseSlot
+{
+	char m_pad0000[0x5c4];
+	CalcPoseRec *m_pRecs;
+	int m_n5c8;
+	int m_n5cc;
+	int m_nRecs;
+};
+
+struct CalcPoseMask : CUnknown100c81b0
+{
+	unsigned int m_more[10];
+};
+
+static inline int GetNumSeq(StudioHdr *hdr)
+{
+	if (hdr->m_nIncludeModels != 0)
+		return hdr->IncludeModel(hdr->m_nIncludeModels - 1)->m_nBase + hdr->IncludeModel(hdr->m_nIncludeModels - 1)->m_nCount;
+	return hdr->m_nLocalSeq;
+}
+
+// TARGET: CBaseAnimating::sub_1008e770
+void CBaseAnimating::sub_1008e770(Vector *pos, Quaternion *q, int iSequence, int nCycle, float *pPoseParams, CUnknown100c81b0 *pBoneMask)
+{
+	ScopeTrace trace("CBaseAnimating::CalcPose", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	StudioHdr *hdr = (StudioHdr *)sub_100952d0(-1);
+	if (iSequence < 0) {
+		if (hdr)
+			sub_100c1ea0(hdr, pos, q);
+		return;
+	}
+	int count = hdr ? GetNumSeq(hdr) : 0;
+	if (iSequence < count) {
+		sub_100c25c0(hdr, pos, q, iSequence, nCycle, pPoseParams, pBoneMask);
+		return;
+	}
+	if (hdr)
+		sub_100c1ea0(hdr, pos, q);
+	for (int i = 0; i < 2; i++) {
+		StudioHdr *h = (StudioHdr *)sub_100952d0(i);
+		if (!h)
+			continue;
+		iSequence -= count;
+		count = GetNumSeq(h);
+		if (iSequence < count) {
+			static Vector s_pos[128];
+			static Quaternion s_q[128];
+			CalcPoseSlot *pSlot = (CalcPoseSlot *)((char *)this + i * 0x14);
+			CalcPoseMask mask;
+			mask.sub_100c81b0((CBitVecWords *)pBoneMask, pSlot->m_nRecs, (CBoneRecord *)pSlot->m_pRecs, (CStudioBoneCount *)h);
+			sub_100c25c0(h, s_pos, s_q, iSequence, nCycle, pPoseParams, &mask);
+			for (int j = 0; j < pSlot->m_nRecs; j++) {
+				CalcPoseRec *r = &pSlot->m_pRecs[j];
+				if (r->m_bTransform)
+					sub_10137fe0(&s_pos[r->m_nDst], r->m_flMat, &pos[r->m_nSrc]);
+				else
+					pos[r->m_nSrc] = s_pos[r->m_nDst];
+				q[r->m_nSrc] = s_q[r->m_nDst];
+			}
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008ed50 size=0x117
 #include "CBaseAnimating.h"
 #include "StudioHdr.h"
