@@ -366,4 +366,5 @@ public:
 	float m_vel3d4[3];
 	void vfunc212(int set);	// as in CBaseAnimating (transplant)
 	int vfunc240();	// slot 240
+	bool vfunc160(const char *name);	// as in CBaseEntity (transplant)
 };
