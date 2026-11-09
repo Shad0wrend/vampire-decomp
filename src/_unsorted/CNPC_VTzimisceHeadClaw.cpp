@@ -380,6 +380,27 @@ void CNPC_VTzimisceHeadClaw::vfunc601(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c1b10 size=0x53
+#include "CBaseEntity.h"
+#include "CNPC_VTzimisceHeadClaw.h"
+#include "CUnknown1025ddd0.h"
+struct SDifficulty_103c1b10 {
+	virtual char slot0();
+	virtual char slot1();
+	char pad[0x24];
+	float m28;
+};
+extern SDifficulty_103c1b10 *g_10924a1c;
+// TARGET: CNPC_VTzimisceHeadClaw::vfunc602
+char CNPC_VTzimisceHeadClaw::vfunc602()
+{
+	double d = g_10924a1c->slot1() ? 0.0f : g_10924a1c->m28;
+	if ((float)(d * 2) <= m_f6268 && !m_pBehaviour65e8->sub_1025db50())
+		return 1;
+	return m_pBehaviour65e8->sub_1025de90((CBaseEntity *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c1b90 size=0xb4
 #include "CNPC_VTzimisceHeadClaw.h"
 
