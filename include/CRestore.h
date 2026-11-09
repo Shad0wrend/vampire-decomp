@@ -70,7 +70,7 @@ public:
 	virtual short vfunc13(); virtual int vfunc14();	// slot 14: reads a count (used by the memory list restore)
 	virtual int vfunc15(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadInt": reads up to count ints into pValues, returns the number read
 	virtual void s16();
-	virtual int vfunc17(char *pValues, int count, int nBytesAvailable);	// slot 17 ("CRestore::ReadBool"-like): reads up to count bytes into pValues; its first argument is used as an int (see sub_1000fe9d)
+	virtual int vfunc17(void *p, int count, int nBytesAvailable);	// slot 17 ("CRestore::ReadBool"-like): reads up to count bytes into pValues; its first argument is used as an int (see sub_1000fe9d)
 	virtual int vfunc18(float *pValues, int count, int nBytesAvailable);	// slot 18 ("CRestore::ReadFloat"-like): reads up to count floats into pValues, returns the number read
 	virtual int vfunc19(void *p, int count, int nBytesAvailable);	// slot 19: reads up to nBytesAvailable bytes into p (sub_101a1f90), skipping the rest (sub_1000910b); returns the number read
 	virtual int vfunc20(int *pValues, int count, int nBytesAvailable);	// "CRestore::ReadString" (string pool ids): reads up to count zero terminated strings from the buffer, stores the pooled id of each (0 for an empty one) in pValues, then skips the rest of the nBytesAvailable bytes; returns the number read
