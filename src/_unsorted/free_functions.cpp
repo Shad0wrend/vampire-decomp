@@ -171982,6 +171982,82 @@ bool CAI_BaseNPCTroika::sub_102d1540(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d1af0 size=0x3ea
+#include "CAI_Hint.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+
+extern CAI_Hint *g_10925450;
+extern CAI_Hint *g_10925454;
+CAI_Hint *sub_102d1760(CAI_BaseNPCTroika *pNPC, int hintType, unsigned int flags, float radius, int a);
+
+CAI_Hint *sub_102d1af0(CBaseEntity *pNPC, int hintType, unsigned int flags, float radius, Vector *origin, float *pDistOut)
+{
+	if (flags & 4)
+		return sub_102d1760((CAI_BaseNPCTroika *)pNPC, hintType, flags, radius, 0);
+	if (!g_10925450)
+		return 0;
+	if (!origin)
+		origin = ((CEntityVSlots *)pNPC)->slot217();
+	CAI_Hint *pHint = g_10925454 ? g_10925454->m_pNext : 0;
+	if (!pHint)
+		pHint = g_10925450;
+	float flRadSqr; flRadSqr = radius * radius;
+	CAI_Hint *pStart = pHint;
+	float flBest = 3.4028235e+38f;
+	CAI_Hint *pBest = 0;
+	do {
+		if (!pHint->sub_102d14c0() && (hintType == 0 || pHint->m_n5dc == hintType)) {
+			if ((*((CEntityVSlots *)pHint)->slot217() - *origin).LengthSqr() < flRadSqr && ((CAI_BaseNPCTroika *)pNPC)->vfunc566((CBaseEntity *)pHint)) {
+				float flDist = 3.4028235e+38f;
+				if (flags & 8) {
+					Vector *pA = ((CEntityVSlots *)pNPC)->slot217();
+					Vector *pB = ((CEntityVSlots *)pHint)->slot217();
+					flDist = (*pB - *pA).Length() * pHint->m_f464;
+					if (!(flDist > flBest))
+						goto los;
+					goto next;
+				} else if (flags & 2) {
+					Vector *pA = ((CEntityVSlots *)pNPC)->slot217();
+					Vector *pB = ((CEntityVSlots *)pHint)->slot217();
+					flDist = (*pB - *pA).LengthSqr();
+					if (flDist > flBest)
+						goto next;
+				}
+los:
+				if (flags & 1) {
+					CGameTrace trace;
+					Vector end;
+					VectorAdd(pNPC->m_vecViewOffset, *((CEntityVSlots *)pHint)->slot217(), end);
+					Vector buf;
+					UTIL_TraceLine_SumYXZ(*((CEntityVSlots *)pNPC)->slot193(&buf), end, 0x2400b, pNPC, 0, &trace);
+					if (1.0 != trace.m_fraction)
+						goto next;
+				}
+				flBest = flDist;
+				pBest = pHint;
+				if (!(flags & 10))
+					break;
+			}
+		}
+next:
+		pHint = pHint->m_pNext;
+		if (!pHint)
+			pHint = g_10925450;
+	} while (pHint != pStart);
+	if (pBest) {
+		if (pDistOut)
+			*pDistOut = flBest;
+		g_10925454 = pBest;
+		return pBest;
+	}
+	g_10925454 = 0;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d2840 size=0x82
 extern "C" int strcmp(const char *, const char *);
 extern char g_106b8540[];
