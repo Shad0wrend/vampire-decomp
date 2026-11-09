@@ -2727,6 +2727,7 @@
 0x10004bec func   ?sub_100ffce0@CEnvBeam@@QAEXXZ CEnvBeam::sub_100ffce0
 0x10004c00 func   ?sub_10249450@CUnknown10249450@@QAEXH@Z CUnknown10249450::sub_10249450
 0x10004c05 func   ?sub_10085260@@YAXXZ sub_10085260
+0x10004c0a func   ?sub_103ca0d0@CHintData_WW@@QAE_NH@Z CHintData_WW::sub_103ca0d0
 0x10004c0f func   ?sub_1022d9d0@@YAXPAVCBaseCombatCharacter@@H@Z sub_1022d9d0
 0x10004c14 func   ?sub_1022b520@CSoundScheme@@QAEXM@Z CSoundScheme::sub_1022b520
 0x10004c19 func   ?sub_1020c2a0@CSecCamera@@QAEXXZ CSecCamera::sub_1020c2a0

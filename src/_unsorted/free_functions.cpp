@@ -227840,6 +227840,33 @@ void CHintData_WW::sub_103c9fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ca0d0 size=0xa0
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CHintData_WW.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+
+bool CHintData_WW::sub_103ca0d0(int hint)
+{
+	g_109f3620[*g_109f3680].a = "CHintData_WW::IsHintPathable";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	if (Find(hint) == -1)
+	{
+		--*g_109f3680;
+		return false;
+	}
+	--*g_109f3680;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ca1a0 size=0xd3
 #include "utlvector.h"
 #include "CHintData_WW.h"
