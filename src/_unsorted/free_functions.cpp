@@ -62854,6 +62854,141 @@ void CEnvBeam::sub_100ff090()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff310 size=0x7c7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CEnvBeam.h"
+#include "UTIL_Trace.h"
+#include "CBroadcastRecipientFilter.h"
+
+struct CBeamTempEntsView
+{
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void s3();
+	virtual void s4();
+	virtual void s5();
+	virtual void BeamEntPoint(CRecipientFilter &filter, float delay, int nStartEntity, const Vector *start, int nEndEntity, const Vector *end,
+		int modelIndex, int haloIndex, int startFrame, int frameRate, float life, float width, float endWidth, int fadeLength,
+		float amplitude, int r, int g, int b, int a, int speed);
+	virtual void BeamEnts(CRecipientFilter &filter, float delay, int start, int end, int modelIndex, int haloIndex, int startFrame,
+		int frameRate, float life, float width, float endWidth, int fadeLength, float amplitude, int r, int g, int b, int a, int speed);
+	virtual void BeamPoints(CRecipientFilter &filter, float delay, const Vector *start, const Vector *end, int modelIndex, int haloIndex,
+		int startFrame, int frameRate, float life, float width, float endWidth, int fadeLength, float amplitude, int r, int g, int b, int a, int speed);
+	virtual void s9();
+	virtual void BeamRing(CRecipientFilter &filter, float delay, int start, int end, int modelIndex, int haloIndex, int startFrame,
+		int frameRate, float life, float width, int spread, float amplitude, int r, int g, int b, int a, int speed);
+};
+extern CBeamTempEntsView *g_10540528;
+#define te g_10540528
+
+#define V1(n) virtual void p##n();
+#define V10(a) V1(a##0) V1(a##1) V1(a##2) V1(a##3) V1(a##4) V1(a##5) V1(a##6) V1(a##7) V1(a##8) V1(a##9)
+#define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
+struct CBeamEntView
+{
+	V100(0) V100(1) V10(20)
+	V1(210) V1(211) V1(212) V1(213) V1(214) V1(215) V1(216)
+	virtual const Vector &GetAbsOrigin();
+};
+#define ORIGIN(p) (((CBeamEntView *)(p))->GetAbsOrigin())
+
+struct CBeamColor { unsigned char r, g, b, a; };
+#define CLR(p) (*(CBeamColor *)((char *)(p) + 0x1a0))
+#define m_iModel514 (*(int *)m_pad0514)
+
+char sub_100ba1b0(CBaseEntity *p);
+extern float g_104454c4;
+void __fastcall sub_100ff1b0(CEnvBeam *pBeam, Vector vecPos);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline int ENTINDEX(int pEdict) { return engine->vfunc35(pEdict); }
+
+inline void BeamDamageInstant(CEnvBeam *pBeam, CGameTrace *ptr, float damage)
+{
+	pBeam->m_flDamageRate = damage;
+	pBeam->m_flStartTime = gpGlobals->curtime - 1.0f;
+	pBeam->sub_100bbef0(ptr);
+}
+
+void CEnvBeam::sub_100ff310()
+{
+	CBroadcastRecipientFilter filter;
+
+	CBaseEntity *pStartEntity = sub_100bbdf0(STRINGR(m_iszStartEntity));
+	CBaseEntity *pEndEntity = sub_100bbdf0(STRINGR((const char *)m_iszEndEntity));
+
+	if (pStartEntity != 0 && pEndEntity != 0)
+	{
+		if (sub_100ba1b0(pStartEntity) || sub_100ba1b0(pEndEntity))
+		{
+			if (m_flags204 & 8)
+				return;
+			if (!sub_100ba1b0(pEndEntity))
+			{
+				CBaseEntity *pTemp = pStartEntity;
+				pStartEntity = pEndEntity;
+				pEndEntity = pTemp;
+			}
+			if (!sub_100ba1b0(pStartEntity))
+			{
+				te->BeamEntPoint(filter, 0.0f, ENTINDEX(pStartEntity->m_pEdict2e0), &ORIGIN(pStartEntity), ENTINDEX(pEndEntity->m_pEdict2e0), &ORIGIN(pEndEntity),
+					m_iModel514, 0, m_frameStart, (int)m_flFrameRate, m_flLife, m_nBoltWidth, m_nBoltWidth, 0, m_noiseAmplitude,
+					CLR(this).r, CLR(this).g, CLR(this).b, CLR(this).a, m_speed);
+			}
+			else
+			{
+				te->BeamPoints(filter, 0.0f, &ORIGIN(pStartEntity), &ORIGIN(pEndEntity),
+					m_iModel514, 0, m_frameStart, (int)m_flFrameRate, m_flLife, m_nBoltWidth, m_nBoltWidth, 0, m_noiseAmplitude,
+					CLR(this).r, CLR(this).g, CLR(this).b, CLR(this).a, m_speed);
+			}
+		}
+		else
+		{
+			if (m_flags204 & 8)
+			{
+				te->BeamRing(filter, 0.0f, ENTINDEX(pStartEntity->m_pEdict2e0), ENTINDEX(pEndEntity->m_pEdict2e0),
+					m_iModel514, 0, m_frameStart, (int)m_flFrameRate, m_flLife, m_nBoltWidth, 0, m_noiseAmplitude,
+					CLR(this).r, CLR(this).g, CLR(this).b, CLR(this).a, m_speed);
+			}
+			else
+			{
+				te->BeamEnts(filter, 0.0f, ENTINDEX(pStartEntity->m_pEdict2e0), ENTINDEX(pEndEntity->m_pEdict2e0),
+					m_iModel514, 0, m_frameStart, (int)m_flFrameRate, m_flLife, m_nBoltWidth, m_nBoltWidth, 0, m_noiseAmplitude,
+					CLR(this).r, CLR(this).g, CLR(this).b, CLR(this).a, m_speed);
+			}
+		}
+
+		sub_100bbe70((int)&ORIGIN(pStartEntity), (int)&ORIGIN(pEndEntity));
+
+		if (m_flDamageRate > g_104454c4)
+		{
+			CGameTrace tr;
+			UTIL_TraceLine_DebugCall(ORIGIN(pStartEntity), ORIGIN(pEndEntity), 0x200400b, (CBaseEntity *)0, 0, &tr);
+			BeamDamageInstant(this, &tr, m_flDamageRate);
+			if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid)
+				sub_100ff1b0(this, *(Vector *)tr.m_endpos);
+		}
+		else if (m_iszFileName)
+		{
+			CGameTrace tr;
+			UTIL_TraceLine(ORIGIN(pStartEntity), ORIGIN(pEndEntity), 0x200400b, (CBaseEntity *)0, 0, &tr);
+			if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid)
+				sub_100ff1b0(this, *(Vector *)tr.m_endpos);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ffce0 size=0x2d7
 #include "UTIL_Trace.h"
 #include "CEnvBeam.h"
