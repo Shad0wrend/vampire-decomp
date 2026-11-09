@@ -174516,6 +174516,127 @@ void sub_10291ea0(const float *pos, const char *s, int a, int b, int c, int d, f
 }
 // END FUNCTION
 
+// FUNCTION: 0x10292500 size=0x6f6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CCollisionProperty.h"
+#include "CGameTrace.h"
+#include "UTIL_Trace.h"
+#include "globalvars.h"
+#include "DebugOverlay.h"
+
+extern CUnknown10738964 *g_1092479c;
+extern CUnknown10738964 *g_109244c4;
+extern CUnknown10738964 *g_1092435c;
+extern "C" int sprintf(char *, const char *, ...);
+void sub_10143b70(const Vector *origin, const Vector *mins, const Vector *maxs, int r, int g, int b, int a, float t);
+void sub_10143710(const Vector *origin, const char *text, int a, float t);
+struct CUnknown1028e030 { void sub_1028e030(); };
+
+void CAI_BaseNPCTroika::sub_10292500()
+{
+	CBaseEntity *pThis = (CBaseEntity *)(void *)this;
+	ScopeTrace trace("CAI_BaseNPCTroika::NPCThinkDebugPre", this ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+
+	if (gpGlobals->curtime <= m_flCriminalWitnessedTimer)
+	{
+		Vector vecOrigin = *(Vector *)vfunc220();
+		float t = (m_flCriminalWitnessedTimer - gpGlobals->curtime) * 0.2f;
+		float v = 255.0f * t;
+		int r = (int)(255.0f < v ? 255.0f : v);
+		float w = 64.0f * t;
+		int g = (int)(64.0f < w ? 64.0f : w);
+		int b = (int)(64.0f < w ? 64.0f : w);
+		vecOrigin.z = vecOrigin.z + ((CCollisionProperty *)((char *)this + 0x270))->vfunc2()[2] + 16.0f;
+		sub_10143b70(&vecOrigin, &Vector(-3.0f, -3.0f, -3.0f), &Vector(3.0f, 3.0f, 3.0f), r, g, b, 1, 0.5f);
+	}
+
+	if (gpGlobals->curtime <= m_flSupernaturalWitnessedTimer)
+	{
+		Vector vecOrigin = *(Vector *)vfunc220();
+		float t = (m_flSupernaturalWitnessedTimer - gpGlobals->curtime) * 0.2f;
+		float v = 192.0f * t;
+		int r = (int)(192.0f < v ? 192.0f : v);
+		v = 255.0f * t;
+		int g = (int)(255.0f < v ? 255.0f : v);
+		float w = 64.0f * t;
+		int b = (int)(64.0f < w ? 64.0f : w);
+		vecOrigin.z = vecOrigin.z + ((CCollisionProperty *)((char *)this + 0x270))->vfunc2()[2] + 12.0f;
+		sub_10143b70(&vecOrigin, &Vector(-3.0f, -3.0f, -3.0f), &Vector(3.0f, 3.0f, 3.0f), r, g, b, 1, 0.5f);
+	}
+
+	if (!g_1092479c->vfunc1() && g_1092479c->m_n2c)
+	{
+		if (sub_10014df8(0x5a) && m_h628c.Get())
+		{
+			Vector vecStart = vfunc193();
+			Vector vecEnd = ((CAI_BaseNPC *)m_h628c.Get())->vfunc193();
+			CGameTrace tr;
+			UTIL_TraceLine_Calls(vecStart, vecEnd, -1, this, 0, &tr);
+			int r, g;
+			if (tr.m_fraction != 1.0 && tr.m_pEnt != m_h628c.Get())
+			{
+				if (tr.m_pEnt)
+					tr.m_pEnt->sub_1009f4e0();
+				r = 0xff;
+				g = 0;
+			}
+			else
+			{
+				r = 0;
+				g = 0xff;
+			}
+			sub_10142e90(&vecStart, &vecEnd, r, g, 0, 1, 0.5f);
+		}
+		if (sub_10014df8(0x48))
+		{
+			Vector vecPos;
+			vecPos = vfunc193();
+			vecPos.z += 20.0f;
+			Vector vecText = vecPos;
+			char szText[256];
+			sprintf(szText, "Blocked by %s", m_h5d90.Get() == 0 ? "**UNKNOWN**" : m_h5d90.Get()->sub_1000b5cd());
+			sub_10143710(&vecText, szText, 0, 0.5f);
+		}
+	}
+
+	if (!g_109244c4->vfunc1() && g_109244c4->m_n2c)
+	{
+		Vector vecOrigin = *(Vector *)vfunc217();
+		Vector vecA;
+		vfunc389(&vecA, &vecOrigin);
+		Vector vecB = sub_10278650(vecA, 0, 0);
+		sub_10143b70(&vecA, &Vector(-3.0f, -3.0f, -3.0f), &Vector(3.0f, 3.0f, 3.0f), 0xff, 0x40, 0x40, 1, 0.2f);
+		sub_10143b70(&vecB, &Vector(-2.0f, -2.0f, -2.0f), &Vector(2.0f, 2.0f, 2.0f), 0x40, 0xff, 0x40, 1, 0.2f);
+		sub_10142e90(&vecA, &vecB, 0x40, 0xff, 0x40, 1, 0.2f);
+	}
+
+	switch (g_1092435c->vfunc1() ? 0 : g_1092435c->m_n2c)
+	{
+	case 1:
+		((CUnknown1028e030 *)this)->sub_1028e030();
+		break;
+	case 2:
+		sub_1028e060();
+		break;
+	}
+
+	if (*((char *)this + 0x5b55))
+	{
+		*((char *)this + 0x5b55) = 0;
+		sub_1027efb0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293d70 size=0x10
 void __fastcall sub_10293d70(int *p)
 {

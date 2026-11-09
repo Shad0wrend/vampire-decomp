@@ -5651,6 +5651,7 @@
 0x10008b48 func   ?vfunc13@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc13
 0x10008b4d func   ?vfunc370@CCineNPC@@QAEHH@Z CCineNPC::vfunc370
 0x10008b52 func   ?vfunc464@CAI_BaseNPC@@UAEHXZ CAI_BaseNPC::vfunc464
+0x10008b57 func   ?sub_10292500@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_10292500
 0x10008b5c func   ?sub_101151a0@CUnknown101151a0@@QAEIXZ CUnknown101151a0::sub_101151a0
 0x10008b61 func   ?sub_100673c0@@YAHXZ sub_100673c0
 0x10008b66 func   ?sub_103ebe20@@YAHXZ sub_103ebe20
