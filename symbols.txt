@@ -1862,6 +1862,7 @@
 0x1000394a func   ?sub_101db630@CStatDefault60List@@QAEDPAVIKVNodeView@@PAX@Z CStatDefault60List::sub_101db630
 0x1000394f func   ?sub_10397380@CNPC_VMingXiao@@QAEXPAVCNPC_VMingXiaoTentacle@@@Z CNPC_VMingXiao::sub_10397380
 0x10003959 func   ?sub_102cdcf0@@YGXH@Z sub_102cdcf0
+0x1000395e func   ?vfunc103@CPointHurt@@UAEXXZ CPointHurt::vfunc103
 0x10003963 func   ?vfunc103@CSoundEnt@@UAEXXZ CSoundEnt::vfunc103
 0x10003968 func   ?sub_1010d050@@YIPAXPAX@Z sub_1010d050
 0x1000396d func   ?sub_10072810@CCameraShotTable@@QAEXPBD@Z CCameraShotTable::sub_10072810
