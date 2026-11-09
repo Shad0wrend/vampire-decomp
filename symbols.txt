@@ -14145,6 +14145,7 @@
 0x10014ab5 func   ?vfunc435@CBasePlayer@@QAEXXZ CBasePlayer::vfunc435
 0x10014aba func   ?sub_1042ba20@CUnknown1042ba20@@QAEHXZ CUnknown1042ba20::sub_1042ba20
 0x10014abf func   ?sub_103f01b0@@YG_NPAD@Z sub_103f01b0
+0x10014ac4 func   ?vfunc604@CAI_BaseNPCTroika@@UAEHH@Z CAI_BaseNPCTroika::vfunc604
 0x10014ac9 func   ?sub_102fac00@CAI_Node@@QAEXXZ CAI_Node::sub_102fac00
 0x10014ace func   ?sub_10230280@@YAXPAUR@@H@Z sub_10230280
 0x10014ad3 func   ?sub_1017d680@CUnknown1017d680@@QAEPAVCGlobalEntityList_Ent@@XZ CUnknown1017d680::sub_1017d680

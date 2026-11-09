@@ -982,6 +982,132 @@ void CAI_BaseNPCTroika::sub_102b52a0(char bClearTarget, char bDead)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b6c30 size=0x2ee
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown10924a1c.h"
+#include "CUnknown1070b244.h"
+#include "CEntityVSlots.h"
+
+extern CUnknown1070b244 *g_1070b244;
+
+class CDifficultyView
+{
+public:
+	virtual void v0();
+	virtual bool v1();
+	char m_pad[0x24];
+	float m_fl28;
+};
+
+#define FILE_NAME "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp"
+
+int CAI_BaseNPCTroika::vfunc604(int unused)
+{
+	int pEnemy; pEnemy = ((CEntityVSlots *)this)->slot167();
+
+	if (m_b6078)
+	{
+		if (vfunc602())
+		{
+			((CEntityVSlots *)this)->slot601(pEnemy);
+			if (((CEntityVSlots *)this)->slot308())
+			{
+				m_nLine1b34 = 0x5985;
+				m_pszFile1b30 = FILE_NAME;
+				return 0xe9;
+			}
+
+			double f = ((CDifficultyView *)g_10924a1c)->v1() ? 0.0f : ((CDifficultyView *)g_10924a1c)->m_fl28;
+			float f2 = (float)(f + f);
+			m_pszFile1b30 = FILE_NAME;
+			if (f2 <= m_f6268)
+			{
+				m_nLine1b34 = 0x598b;
+				return 0xe7;
+			}
+			m_nLine1b34 = 0x598f;
+			return 0xe4;
+		}
+	}
+	else
+	{
+		if (!((CEntityVSlots *)this)->slot599((CEntityVSlots *)pEnemy))
+		{
+			int r = sub_102b6fe0(pEnemy);
+			if (r)
+				return r;
+			m_nLine1b34 = 0x599f;
+			m_pszFile1b30 = FILE_NAME;
+			return 0xe4;
+		}
+	}
+
+	unsigned int r; r = sub_102b6fe0(pEnemy);
+	if (r)
+		return r;
+
+	if (sub_10014df8(0x51))
+	{
+		if (((CEntityVSlots *)this)->slot308())
+		{
+			m_nLine1b34 = 0x59dc;
+			m_pszFile1b30 = FILE_NAME;
+			return 0xdc;
+		} else { m_pszFile1b30 = FILE_NAME;
+		m_nLine1b34 = 0x59e0;
+		return 0xdd; }
+	} else { bool bl = false;
+	if (m_f626c > 64.0f)
+	{
+		if (-1.0f == m_fl6274)
+		{
+			m_fl6274 = g_1070b244->vfunc1(3.0f, 4.0f) + gpGlobals->curtime;
+		}
+		else if (gpGlobals->curtime >= m_fl6274)
+		{
+			bl = true;
+		}
+	}
+	else
+	{
+		m_fl6274 = -1.0f;
+	}
+
+	if (((CEntityVSlots *)this)->slot308()
+		&& (sub_10014df8(9) || sub_10014df8(0x1a) || sub_10014df8(0x59) || bl))
+	{
+		((CEntityVSlots *)this)->slot601(pEnemy);
+		m_pszFile1b30 = FILE_NAME;
+		m_nLine1b34 = 0x5a02;
+		return 0xe9;
+	}
+
+	if (sub_10014df8(0x59))
+	{
+		((CEntityVSlots *)this)->slot601(pEnemy);
+		m_nLine1b34 = 0x5a0a;
+		m_pszFile1b30 = FILE_NAME;
+		return 0x17;
+	}
+
+	if (!sub_10014df8(9) && !sub_10014df8(0x60))
+	{
+		m_nLine1b34 = 0x5a4c;
+		m_pszFile1b30 = FILE_NAME;
+		return 0xc7;
+	} else { if (((CEntityVSlots *)this)->slot308())
+	{
+		m_nLine1b34 = 0x5a12;
+		m_pszFile1b30 = FILE_NAME;
+		return 0xca;
+	}
+
+	m_nLine1b34 = 0x5a16;
+	m_pszFile1b30 = FILE_NAME;
+	return 0xcb; } }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b6fe0 size=0xe1
 #include "CBaseEntity.h"
 #include "CAI_BaseNPCTroika.h"
