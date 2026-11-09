@@ -209961,6 +209961,25 @@ bool __fastcall sub_10398870(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10398890 size=0xda
+#include "CNPC_VMingXiao.h"
+
+void CNPC_VMingXiao::sub_10398890(const float *pOrigin, int nMode, Vector *pOutPoint, Vector *pOutAxis)
+{
+	const Vector &vecOrigin = *(const Vector *)pOrigin;
+	if (nMode == 4) {
+		Vector vecExtent = m_vecExtent629c * -70.0f;
+		Vector vecBase = m_vecAxis6290 * 15.0f + vecOrigin;
+		*pOutPoint = vecBase + vecExtent;
+	} else {
+		Vector vecExtent = m_vecExtent629c * -70.0f;
+		Vector vecBase = m_vecAxis6290 * 15.0f + vecOrigin;
+		*pOutPoint = vecBase - vecExtent;
+	}
+	*pOutAxis = m_vecAxis6290;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103989b0 size=0x113
 #include "CEntityVSlots.h"
 #include <math.h>
