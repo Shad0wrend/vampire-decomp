@@ -23,8 +23,12 @@ struct CAnimationLayer	// 0x30 byte record
 
 struct CAnimationLayer28	// 0x1c byte overlay record (array at +0x7f4, used by vfunc265 / vfunc266)
 {
-	int m_n00;
-	char m_pad04[0x14];
+	int m_n00;	// the sequence (-1 = idle)
+	int m_n04;	// order counter, advanced mod 4
+	float m_fl08;	// weight
+	float m_fl0c;	// fade time
+	int m_n10;	// kind: 0x18, or the second sequence
+	int m_n14;	// data block filled by sub_100c43e0
 	float m_fl18;	// 0x18: the layer's time
 };
 
@@ -65,7 +69,15 @@ public:
 	char m_pad03e0[0x730 - 0x3e0];
 	bool m_bNoFlinch;	// 0x0730
 	char m_pad0731[0x738 - 0x731];
-	CAnimationLayer m_Layers[15];	// 0x738
+	union
+	{
+		CAnimationLayer m_Layers[15];	// 0x738
+		struct
+		{
+			char m_pad0738[0x7f4 - 0x738];
+			CAnimationLayer28 m_Flinch[3];	// 0x7f4: the three flinch layers (vfunc265 / vfunc266)
+		};
+	};
 public:
 	int vfunc79();
 	int vfunc80();
