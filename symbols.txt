@@ -3683,6 +3683,7 @@
 0x100062ee func   ?vfunc81@CItemGDrugsDrugBox@@QAEHXZ CItemGDrugsDrugBox::vfunc81
 0x100062f3 func   ?sub_101a6900@@YAXXZ sub_101a6900
 0x100062f8 func   ?sub_1017be30@@YADXZ sub_1017be30
+0x100062fd func   ?sub_102c8280@CAI_StandoffGoal@@QAEXPAUinputdata_t@@@Z CAI_StandoffGoal::sub_102c8280
 0x10006302 func   ?vfunc471@CAI_BaseNPC@@UAEMXZ CAI_BaseNPC::vfunc471
 0x10006307 func   ?vfunc47@CCameraTrack@@UAEXXZ CCameraTrack::vfunc47
 0x1000630c func   ?vfunc138@CHL2_Player@@QAEHXZ CHL2_Player::vfunc138

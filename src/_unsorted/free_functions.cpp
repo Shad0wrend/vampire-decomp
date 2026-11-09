@@ -169638,6 +169638,53 @@ fail:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c8280 size=0x17c
+#include "CAI_StandoffGoal.h"
+#include "inputdata_t.h"
+#include "Tier1.h"
+#include "CEHandleGet.h"
+#include "CAI_BaseNPC.h"
+
+extern "C" void *__RTDynamicCast(void *, long, void *, void *, int);
+extern char g_10601db0[];
+extern char g_10601e70[];
+extern CStandoffParams g_10601880[];
+
+void CAI_StandoffGoal::sub_102c8280(inputdata_t *pInput)
+{
+	m_Aggressiveness = (pInput->value.fieldType == 4) ? pInput->value.iValue : 0;
+	if ((m_Aggressiveness < 0 || m_Aggressiveness > 4) && m_Aggressiveness != 5) {
+		g_109f3630("Invalid aggressiveness value %d\n", m_Aggressiveness);
+		if (m_Aggressiveness < 0)
+			m_Aggressiveness = 0;
+		else if (m_Aggressiveness > 4)
+			m_Aggressiveness = 4;
+	}
+	if (!(m_flags480 & 2)) {
+		sub_102cd4a0();
+		m_flags480 |= 2;
+	} else
+		sub_102cd3b0();
+	for (int i = 0; i < m_nActors; i++) {
+		CAI_BaseNPC *pActor = (CAI_BaseNPC *)EHandle_Get(m_pActors[i]);
+		CAI_BehaviorBase **ppBehaviors = pActor->vfunc456();
+		for (int j = 0; j < pActor->vfunc457(); j++) {
+			CAI_StandoffBehavior *pBehavior = (CAI_StandoffBehavior *)__RTDynamicCast(ppBehaviors[j], 0, g_10601db0, g_10601e70, 0);
+			if (pBehavior) {
+				CStandoffParams params;
+				if (m_Aggressiveness != 5)
+					params = g_10601880[m_Aggressiveness];
+				else
+					params = m_CustomParams;
+				params.m_unk0 = m_unk4a4;
+				pBehavior->sub_102c73b0(&params);
+				break;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c89e0 size=0x1a
 namespace lifted {
 extern int g_1060190c;
