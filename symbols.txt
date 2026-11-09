@@ -12594,6 +12594,7 @@
 0x10012602 func   ?vfunc59@CMultiplayRules@@UAEMXZ CMultiplayRules::vfunc59
 0x10012607 func   ?vfunc103@CFlameCluster@@UAEXXZ CFlameCluster::vfunc103
 0x1001260c func   ?sub_101f6b90@CVTraitEffect_t@@QAEXPAUCVStatKV@@@Z CVTraitEffect_t::sub_101f6b90
+0x10012611 func   ?vfunc390@CAI_BaseNPCTroika@@UAEHPAUCTakeDamageInfo@@@Z CAI_BaseNPCTroika::vfunc390
 0x10012616 func   ?vfunc81@CWeaponMelee_ManBatClaw@@UAEHXZ CWeaponMelee_ManBatClaw::vfunc81
 0x10012625 func   ?sub_100932a0@CBaseAnimating@@QAEDHHH@Z CBaseAnimating::sub_100932a0
 0x1001262a func   ?vfunc3@CTEUserTracer@@UAEXHH@Z CTEUserTracer::vfunc3

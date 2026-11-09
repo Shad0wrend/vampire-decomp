@@ -1812,6 +1812,93 @@ int CAI_BaseNPCTroika::vfunc607()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102beda0 size=0x217
+#include "CAI_BaseNPCTroika.h"
+#include "CTakeDamageInfo.h"
+#include "CVDmg_t.h"
+#include "CBaseCombatCharacter.h"
+struct DmgCopy {
+    int a, b, c, d;
+    Vector v1;
+    Vector v2;
+    int e[8];
+    char f, g, h;
+};
+struct DmgView {
+    CVDmg_t *pVDmg;
+    char pad[0x2c - 4];
+    void *pInflictor;
+    float flDamage;
+};
+struct SlotsView { virtual void s0(); virtual int *s1(); };
+struct SlotsView2 { virtual void s0(); virtual void s1(); };
+extern SlotsView2 *g_10924a6c;
+extern void (*g_109f364c)(const char *, ...);
+const char *__fastcall sub_10010488(void *self);
+int __cdecl sub_1000ed72(const char *);
+void __cdecl sub_1000202c();
+
+inline void InterestDeath(CAI_BaseNPCTroika *p, CTakeDamageInfo *pInfo)
+{
+    int *pn = (int *)((char *)p + 0x6308);
+    if (*pn == -1) {
+        const char *name = sub_10010488(p->m_p62ec);
+        *pn = sub_1000ed72(name);
+        if (*pn == -1) {
+            sub_1000202c();
+            g_109f364c("Can not find interest death activity '%s' in the activity list.  Dying immediately.\n", name);
+            p->vfunc144((int)pInfo);
+            return;
+        }
+        *(const char **)((char *)p + 0x1b30) = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+        *(int *)((char *)p + 0x1b34) = 0x6121;
+        p->sub_102ae750(0x104, 0);
+    }
+}
+
+int CAI_BaseNPCTroika::vfunc390(CTakeDamageInfo *pInfo)
+{
+    DmgCopy *dst = (DmgCopy *)((char *)this + 0x660c);
+    DmgCopy *src = (DmgCopy *)pInfo;
+    DmgView *vi = (DmgView *)pInfo;
+    dst->a = src->a; dst->b = src->b; dst->c = src->c; dst->d = src->d;
+    dst->v1.sub_1003e4b0(src->v1);
+    dst->v2.sub_1003e4b0(src->v2);
+    dst->e[0] = src->e[0]; dst->e[1] = src->e[1]; dst->e[2] = src->e[2]; dst->e[3] = src->e[3];
+    dst->e[4] = src->e[4]; dst->e[5] = src->e[5]; dst->e[6] = src->e[6]; dst->e[7] = src->e[7];
+    dst->f = src->f; dst->g = src->g; dst->h = src->h;
+    int ret = sub_10265ed0(pInfo);
+    if (ret) {
+        float dmg;
+        if (vi->pVDmg) dmg = (float)vi->pVDmg->sub_101faa70();
+        else dmg = vi->flDamage;
+        if (dmg > 0.0f) {
+            ((CBaseCombatCharacter *)this)->sub_101072b0(0);
+            if (m_flags14b8 & 0x40000000) {
+                vfunc144((int)pInfo);
+                return ret;
+            }
+            if (m_p62ec && ((CAI_BaseNPCTroika *)m_p62ec)->sub_102daf50()) {
+                InterestDeath(this, pInfo);
+                return ret;
+            }
+        } else {
+            g_10924a6c->s1();
+            sub_10269a20(0x4c);
+            if (vi->pInflictor)
+                *(int *)((char *)this + 0x5b7c) = *((SlotsView *)vi->pInflictor)->s1();
+            else
+                *(int *)((char *)this + 0x5b7c) = -1;
+            *(char *)((char *)this + 0x5b80) = 1;
+        }
+        if (vi->pInflictor)
+            sub_1028e8b0((CBaseEntity *)vi->pInflictor, 0x40a00000);
+        vfunc600(vfunc167());
+    }
+    return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c51a0 size=0x119
 #include "CAI_BaseNPCTroika.h"
 
