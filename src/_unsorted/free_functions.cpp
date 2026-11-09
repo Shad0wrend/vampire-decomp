@@ -37825,6 +37825,63 @@ void sub_100aec70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aeda0 size=0x17f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+CBaseEntity *sub_10172710(int index);
+int sub_101193b0();
+void sub_101cd940(CBaseEntity *p);
+inline bool FStrEq(const char *sz1, const char *sz2)
+{
+    return _strcmpi(sz1, sz2) == 0;
+}
+inline const char *STRING(const char *const &offset)
+{
+    if (offset)
+        return offset;
+    return g_106b8540;
+}
+inline const char *STRINGV(const char *offset)
+{
+    return offset ? offset : g_106b8540;
+}
+// TARGET: sub_100aeda0
+void sub_100aeda0()
+{
+    ScopeTrace trace("CC_Ent_Remove", g_106b8540);
+    CBaseEntity *pEntity = 0;
+    if (FStrEq(engine->vfunc84(1), g_106b8540)) {
+        pEntity = sub_10172710(sub_101193b0());
+    } else {
+        CBaseEntity *ent = 0;
+        while ((ent = g_106eb5d8.sub_100f7060(ent)) != 0) {
+            if (((const char *)ent->m_name26c != 0 && FStrEq(engine->vfunc84(1), STRINGV((const char *)ent->m_name26c))) ||
+                ((const char *)ent->m_classname11c != 0 && FStrEq(engine->vfunc84(1), STRING((const char *)ent->m_classname11c))) ||
+                (ent->sub_1009f200() && FStrEq(engine->vfunc84(1), ent->sub_1009f200()))) {
+                pEntity = ent;
+                break;
+            }
+        }
+    }
+    if (pEntity) {
+        Msg("Removed %s\n", STRING((const char *)pEntity->m_classname11c));
+        sub_101cd940(pEntity);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100af010 size=0x20d
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
