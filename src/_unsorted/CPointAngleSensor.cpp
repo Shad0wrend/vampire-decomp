@@ -81,6 +81,44 @@ void CPointAngleSensor::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018d030 size=0x172
+#include "CPointAngleSensor.h"
+#include "CGlobalEntityList.h"
+#include "globalvars.h"
+
+extern CGlobalEntityList *g_10566458;
+
+inline CBaseEntity *LookupEnt(const unsigned int &h)
+{
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+		if (pSlot->m_Serial == (int)(h >> 13))
+			return (CBaseEntity *)pSlot->m_pEntity;
+	}
+	return 0;
+}
+
+void CPointAngleSensor::vfunc134()
+{
+	if (LookupEnt(m_hTargetEntity) && LookupEnt(m_hLookAtEntity)) {
+		if (sub_1018cf20(LookupEnt(m_hTargetEntity), LookupEnt(m_hLookAtEntity), m_flDotTolerance)) {
+			if (!m_bFired) {
+				if (m_flFacingTime == 0)
+					m_flFacingTime = gpGlobals->curtime;
+				if (m_flDuration + m_flFacingTime <= gpGlobals->curtime) {
+					m_OnFacingLookat.sub_100cd660(this, this, 0);
+					m_bFired = 1;
+				}
+			}
+		} else if (m_bFired) {
+			m_bFired = 0;
+			m_flFacingTime = 0;
+		}
+		m_flNextThink = gpGlobals->curtime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018d2f0 size=0x35
 #include "CPointAngleSensor.h"
 
