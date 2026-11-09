@@ -31371,6 +31371,62 @@ int CBaseAnimating::sub_1008f7b0(const char *pszLabel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008f8f0 size=0x159
+#include "CBaseAnimating.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "StudioHdr.h"
+#include "ScopeTrace.h"
+#include "Tier1.h"
+
+struct ModelNameT
+{
+	const char *m_psz;
+	ModelNameT() {}
+	const char *ToCStr() const { return m_psz ? m_psz : g_106b8540; }
+};
+struct CModelNameView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual ModelNameT GetModelName();
+};
+struct DebugNameView { const char *sub_100ab4f0(); };
+extern float g_104454c4;
+extern void sub_10428690(StudioHdr *, int, float *, float *);
+
+float CBaseAnimating::sub_1008f8f0(int sequence)
+{
+	ScopeTrace trace("CBaseAnimating::GetSequenceTurnYaw", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int origSequence = sequence;
+	for (int model = -1; model < 2; model++) {
+		StudioHdr *hdr = (StudioHdr *)sub_100952d0(model);
+		if (hdr) {
+			int count;
+			if (hdr->m_nIncludeModels != 0)
+				count = hdr->IncludeModel(hdr->m_nIncludeModels - 1)->m_nBase + hdr->IncludeModel(hdr->m_nIncludeModels - 1)->m_nCount;
+			else
+				count = hdr->m_nLocalSeq;
+			if (sequence >= 0 && sequence < count) {
+				float out[3];
+				sub_10428690(hdr, sequence, (float *)((char *)this + 0x690), out);
+				return out[1];
+			}
+			sequence -= count;
+		}
+	}
+	if (*((CModelNameView *)this)->GetModelName().ToCStr())
+		g_109f364c("CBaseAnimating::GetSequenceTurnYaw could not find sequence for %s (model - %s : sequence - %d)\n", ((DebugNameView *)this)->sub_100ab4f0(), ((CModelNameView *)this)->GetModelName().ToCStr(), origSequence);
+	return g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008fab0 size=0xe1
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
