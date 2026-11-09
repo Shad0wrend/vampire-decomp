@@ -169109,6 +169109,39 @@ int CUnknown10298800::sub_10298800(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10298840 size=0x93
+#include "CBaseDoor.h"
+#include "CVariantCopy.h"
+#include "CAI_BaseNPCTroika.h"
+
+// the door's slot 246 seen from the NPC: the flag goes as a byte (CBaseDoor.h declares it int for its matched body)
+#define DV(n) virtual void dv##n();
+#define DV10(p) DV(p##0) DV(p##1) DV(p##2) DV(p##3) DV(p##4) DV(p##5) DV(p##6) DV(p##7) DV(p##8) DV(p##9)
+#define DV100(p) DV10(p##0) DV10(p##1) DV10(p##2) DV10(p##3) DV10(p##4) DV10(p##5) DV10(p##6) DV10(p##7) DV10(p##8) DV10(p##9)
+struct CDoorUseView
+{
+	DV100(a) DV100(b) DV10(c0) DV10(c1) DV10(c2) DV10(c3)
+	DV(d0) DV(d1) DV(d2) DV(d3) DV(d4) DV(d5)
+	virtual void Slot246(void *pNpc, int *pOut, char bFlag);
+};
+
+bool CAI_BaseNPCTroika::sub_10298840(CBaseEntity *pDoorEnt)
+{
+	CBaseDoor *pDoor = (CBaseDoor *)pDoorEnt;
+	CVariantCopy value;
+	int rec[7];
+	((CDoorUseView *)pDoor)->Slot246(this, rec, m_b5d30);
+	sub_10289ee0(rec[6]);
+	if (pDoor->sub_100027d4(this))
+	{
+		sub_1027de00(pDoor);
+		return false;
+	}
+	pDoor->vfunc118("Open", (CBaseEntity *)this, (CBaseEntity *)this, value, 0);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10298910 size=0x9f
 #include "CAI_BaseNPCTroika.h"
 extern "C" int atoi(const char *);
