@@ -96991,6 +96991,50 @@ int sub_10190d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10190e50 size=0x91
+#include <string.h>
+#include "COrnamentProp.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "Tier1.h"
+
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+CEntityVSlots *sub_100a9ab0(const char *pszClassname, const float *pOrigin, const float *pAngles, CEntityVSlots *pOwner);
+int sub_101d1280(CBaseEntity *pEntity);
+void sub_101cd940(CBaseEntity *pEntity);
+
+struct ornament_string_t
+{
+	const char *pszValue;
+};
+inline ornament_string_t MAKE_STRING(const char *p)
+{
+	ornament_string_t s;
+	s.pszValue = *p ? p : 0;
+	return s;
+}
+
+// TARGET: sub_10190e50
+COrnamentProp *sub_10190e50(const char *pszModel, CBaseEntity *pParent)
+{
+	COrnamentProp *pProp = (COrnamentProp *)sub_100a9ab0("prop_dynamic_ornament", g_1070d1b0, g_1070d9d0, 0);
+	if (pProp) {
+		strcpy(pProp->m_szOrnamentModel, pszModel);
+		((CEntityVSlots *)pProp)->slot212((int)MAKE_STRING(pProp->m_szOrnamentModel).pszValue);
+		sub_101d1280(pProp);
+		if (((CBaseAnimating *)pProp)->sub_100952d0(-1)) {
+			pProp->sub_10191170(pParent);
+		} else {
+			g_109f3630("Could not create ornament prop model: %s\n", pszModel);
+			sub_101cd940(pProp);
+			return 0;
+		}
+	}
+	return pProp;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10190fa0 size=0xbb
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

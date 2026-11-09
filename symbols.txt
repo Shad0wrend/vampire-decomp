@@ -13300,6 +13300,7 @@
 0x100131bf func   ?vfunc459@CCineNPC@@QAEXXZ CCineNPC::vfunc459
 0x100131c4 func   ?sub_10220e10@QuestJournal@@QAEPAV1@XZ QuestJournal::sub_10220e10
 0x100131c9 func   ?vfunc110@CFunc_LOD@@UAE_NPBD0@Z CFunc_LOD::vfunc110
+0x100131d3 func   ?sub_10190e50@@YAPAVCOrnamentProp@@PBDPAVCBaseEntity@@@Z sub_10190e50
 0x100131d8 func   ?sub_101771f0@CUnknown101771f0@@QAEHXZ CUnknown101771f0::sub_101771f0
 0x100131dd func   ?vfunc35@CPropSign@@UAEHH@Z CPropSign::vfunc35
 0x100131e7 func   ?sub_102d2840@@YAPAUSNode@@HPBD@Z sub_102d2840
