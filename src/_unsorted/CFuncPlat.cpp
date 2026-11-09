@@ -153,6 +153,39 @@ void CFuncPlat::vfunc242()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159cf0 size=0x197
+#include "CFuncPlat.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "engineiface.h"
+#include "engineserver.h"
+extern char g_106b8540[];
+inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+inline int EntIndexOf(int edict) { return engine->vfunc35(edict); }
+void sub_10158d60();
+
+void CFuncPlat::vfunc244()
+{
+	if (m_pszStartSound)
+	{
+		enginesound->vfunc7(EntIndexOf((int)m_pEdict), 6, (char *)STRINGR_F(m_pszStartSound));
+	}
+	if (m_pszArriveSound)
+	{
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this, 0.8f);
+		const char *pszSound = STRINGR_F(m_pszArriveSound);
+		int entindex = engine->vfunc35((int)m_pEdict);
+		enginesound->vfunc3(&filter, entindex, 1, pszSound, m_flVolume, 0.8f, 0, 100, 0, 0, 1, 0);
+	}
+	m_nToggleState = 0;
+	if (!vfunc241())
+	{
+		m_pfnThink = (void *)sub_10158d60;
+		m_flMoveDoneTime = m_flLocalTime + 3.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a4d0 size=0x36
 #include "CFuncPlat.h"
 
