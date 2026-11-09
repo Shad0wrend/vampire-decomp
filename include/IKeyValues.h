@@ -8,6 +8,7 @@
 class IKeyValues : public virtual IKeyCacheable
 {
 public:
+	virtual ~IKeyValues() {}	// IKeyCacheable's slot 2: the scalar deleting destructor is 0x101f2040
 	virtual void kv0();
 	virtual void kv1();
 	virtual IKeyValues *kv2(const char *pszName);	// the sub key of that name, null when there is none
