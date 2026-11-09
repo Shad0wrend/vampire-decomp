@@ -2175,6 +2175,73 @@ int CBaseEntity::vfunc143(float flHealth, int bitsDamageType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0e40 size=0x33b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "CTakeDamageInfo.h"
+#include "CVDmg_t.h"
+
+extern Vector g_1070ba40;
+
+struct CTakeDamageInfoView : CTakeDamageInfo
+{
+	float GetDamage() const { return m_pVDmg00 ? (float)m_pVDmg00->sub_101faa70() : m_flDamage; }
+};
+
+struct CSolidFlagEntity : CBaseEntity
+{
+	bool IsSolidFlagSet8()
+	{
+		ScopeTrace trace("CBaseEntity::IsSolidFlagSet", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+		return (m_b2b4 >> 3) & 1;
+	}
+};
+
+int CBaseEntity::vfunc142(CTakeDamageInfo *pInfo)
+{
+	ScopeTrace trace("CBaseEntity::OnTakeDamage", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!m_pEdict2e0 || !m_nTakeDamage)
+		return 0;
+	CTakeDamageInfoView *info = (CTakeDamageInfoView *)pInfo;
+	CEntityVSlots *pAttacker = (CEntityVSlots *)info->m_pAttacker;
+	g_1070ba40 = *pAttacker->slot217() - ((CEntityVSlots *)this)->slot192();
+	VectorNormalize(g_1070ba40);
+	if (vfunc94() == 7 && !((info->m_pVDmg00 ? (*(unsigned int *)((char *)info->m_pVDmg00 + 0x10) | info->m_nFlags38) : info->m_nFlags38) & 8)) {
+		((CEntityVSlots *)this)->slot227(info);
+	} else if (info->m_pAttacker && (vfunc94() == 3 || vfunc94() == 4) && !((CSolidFlagEntity *)info->m_pInflictor)->IsSolidFlagSet8()) {
+		Vector vecDir;
+		vecDir = ((CEntityVSlots *)this)->slot192();
+		Vector vecOther;
+		vecOther = ((CEntityVSlots *)info->m_pAttacker)->slot192();
+		vecDir.x -= vecOther.x;
+		vecDir.y -= vecOther.y;
+		vecDir.z -= vecOther.z;
+		VectorNormalize(vecDir);
+		float flForce = 73728.0 / (((CEntityVSlots *)this)->slot214()->z * ((CEntityVSlots *)this)->slot214()->y * ((CEntityVSlots *)this)->slot214()->x) * info->GetDamage() * 5.0;
+		if (flForce > 1000.0)
+			flForce = 1000.0f;
+		*(Vector *)m_vel3d4 = *(Vector *)m_vel3d4 + vecDir * flForce;
+	}
+	if (m_nTakeDamage != 1) {
+		m_iHealth = (int)(m_iHealth - (info->m_pVDmg00 ? (float)info->m_pVDmg00->sub_101faa70() : info->m_flDamage));
+		if (m_iHealth <= 0) {
+			((CEntityVSlots *)this)->slot144(info);
+			return 0;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1360 size=0xcb
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
