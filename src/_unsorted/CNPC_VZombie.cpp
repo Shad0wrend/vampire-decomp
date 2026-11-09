@@ -95,6 +95,56 @@ void CNPC_VZombie::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103df170 size=0xb7
+#include "CNPC_VZombie.h"
+
+unsigned int sub_1042fde0(int a);
+
+struct ZRecord
+{
+	ZRecord() {}
+	ZRecord(unsigned int v) { m_hash = (((v & 0x68d8635) ^ 0xae8746f) + 0xffa91d8 & 0x197279ca) ^ v ^ 0xa641cacd; }
+	ZRecord &operator=(const ZRecord &o) { m_b1 = o.m_b1; m_hash = o.m_hash; m_b0 = o.m_b0; return *this; }
+	char m_b0;
+	char m_b1;
+	unsigned int m_hash;
+};
+
+struct CNPC_VZombieSpawnView
+{
+	char m_pad0000[0x1a98];
+	int m_n1a98;
+	char m_pad1a9c[0x5dec - 0x1a9c];
+	int m_n5dec;
+	char m_pad5df0[0x6348 - 0x5df0];
+	int m_nDistances[5];
+	char m_pad635c[0x6360 - 0x635c];
+	ZRecord m_rec6360;
+	int m_n6368;
+	char m_pad636c[0x641c - 0x636c];
+	int m_n641c;
+};
+
+void CNPC_VZombie::vfunc103()
+{
+	CNPC_VZombieSpawnView *p = (CNPC_VZombieSpawnView *)this;
+	sub_10012855(0x4000000);
+	sub_10012855(0x200000);
+	sub_10012855(0x8000);
+	p->m_n1a98 = 0;
+	p->m_n5dec = 0;
+	p->m_n641c = 0;
+	p->m_nDistances[0] = 999999;
+	p->m_nDistances[1] = 999999;
+	p->m_nDistances[2] = 999999;
+	p->m_nDistances[3] = 999999;
+	p->m_nDistances[4] = 999999;
+	p->m_rec6360 = ZRecord(sub_1042fde0(0));
+	p->m_n6368 = 0;
+	sub_100117ca();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103df260 size=0x6
 #include "CNPC_VZombie.h"
 int CNPC_VZombie::vfunc473()
