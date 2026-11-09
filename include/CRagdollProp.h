@@ -91,7 +91,7 @@ public:
     void sub_10155a30();	// called directly (stub 0x1000b681), the tail of the attached ragdoll's release
     void sub_10155880();	// releases the attached ragdoll: CBaseEntity::sub_100aaa40(1), then sub_10155a30 (a jump)
     void sub_101554a0(const float *pOrigin, int a, const float *pAngles, void *pBones, void *pName, float b, int bStatic, int c);
-    void sub_101554a0(const Vector &vecForce, int a, const Vector &vecPos, void *pBones, void *pName, float b, int bStatic, int c);	// ragdoll initialiser (stub 0x100062a8)
+    void sub_101554a0(const Vector &vecForce, int a, const Vector &vecPos, void *pBones, void *pName, float b, int bStatic, bool c);	// ragdoll initialiser (stub 0x100062a8)
 public:
     virtual datamap_t * vfunc82();
     virtual void vfunc39(CBaseEntity *);
