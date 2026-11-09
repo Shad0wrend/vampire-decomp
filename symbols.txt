@@ -12482,6 +12482,7 @@
 0x1001244f func   ?sub_1017e900@CBasePlayer@@QAEXHH@Z CBasePlayer::sub_1017e900
 0x10012454 func   ?vfunc82@CRagdollPropSpecial@@UAEPAUdatamap_t@@XZ CRagdollPropSpecial::vfunc82
 0x10012459 func   ?vfunc16@CAI_Motor@@UAEMXZ CAI_Motor::vfunc16
+0x1001245e func   ?sub_10236130@CKickWeapon@@QAEXXZ CKickWeapon::sub_10236130
 0x10012463 func   ?vfunc81@CWeaponRanged_Smg_Mac10@@UAEHXZ CWeaponRanged_Smg_Mac10::vfunc81
 0x10012468 func   ?vfunc103@CVGuiScreen@@UAEXXZ CVGuiScreen::vfunc103
 0x1001246d func   ??0CVFeat_t@@QAE@H@Z CVFeat_t::CVFeat_t

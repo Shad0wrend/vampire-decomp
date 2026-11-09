@@ -149786,6 +149786,85 @@ CWeaponRanged_Rifle_Remington *CWeaponRanged_Rifle_Remington::sub_10236070()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10236130 size=0x10b
+// TARGET: ?sub_10236130@CKickWeapon@@QAEXXZ
+#include <math.h>
+#pragma intrinsic(sin)
+#include "globalvars.h"
+
+extern float g_1048f074;
+extern float g_1048f078;
+
+class CKickWeapon;
+
+class CWeaponKick
+{
+public:
+	float m_flPhase;
+	char m_pad[0x10];
+	void sub_10235bf0(float flDelta, CKickWeapon *pWeapon);
+};
+
+class CPlayerOwner;
+
+struct CEntityWithOwner
+{
+	char pad0[0xa8];
+	CPlayerOwner *m_pOwner;
+};
+
+class CPlayerOwner
+{
+public:
+	char pad0[0x1e78];
+	int m_nState;
+	char pad1[0x1efc - 0x1e7c];
+	float m_flPunchX;
+	float m_flPunchY;
+	float sub_10346070();
+};
+
+class CKickWeapon
+{
+public:
+	char pad0[0x91c];
+	float m_flKickTime;
+	CWeaponKick m_rgKick[2];
+	void sub_10236130();
+	CEntityWithOwner *sub_102521f0();
+};
+
+void CKickWeapon::sub_10236130()
+{
+	float flDelta = gpGlobals->curtime - m_flKickTime;
+	m_flKickTime = gpGlobals->curtime;
+
+	for (int i = 0; i < 2; i++)
+		m_rgKick[i].sub_10235bf0(flDelta, this);
+
+	CEntityWithOwner *pEnt = sub_102521f0();
+	if (pEnt) {
+		CPlayerOwner *pOwner = pEnt->m_pOwner;
+		if (pOwner && pOwner->m_nState) {
+			float flScale = pOwner->sub_10346070() * 0.1f;
+			if (flScale > 1.0f)
+				flScale = 1.0f;
+			float flAmp = g_1048f074 + (g_1048f078 - g_1048f074) * flScale;
+
+			float flValue = sin(m_rgKick[0].m_flPhase);
+			flValue *= flAmp;
+			if ((float)fabs(pOwner->m_flPunchX) < (float)fabs(flValue))
+				pOwner->m_flPunchX = flValue;
+
+			flValue = sin(m_rgKick[1].m_flPhase);
+			flValue *= flAmp;
+			if ((float)fabs(pOwner->m_flPunchY) < (float)fabs(flValue))
+				pOwner->m_flPunchY = flValue;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10236400 size=0x72
 #include "SendProp.h"
 
