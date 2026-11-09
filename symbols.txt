@@ -6697,6 +6697,7 @@
 0x1000a3ee func   ?sub_102cc6c0@CAI_KeyedList@block_102cc6c0@@QAEXHM@Z block_102cc6c0::CAI_KeyedList::sub_102cc6c0
 0x1000a3f3 func   ??0CRestore@@QAE@PAX@Z CRestore::CRestore
 0x1000a3f8 func   ?sub_10319f70@CUnknown10319f70@@QAEXHHH@Z CUnknown10319f70::sub_10319f70
+0x1000a3fd func   ?sub_100c65f0@@YAXPAUCRecordHolder@@H@Z sub_100c65f0
 0x1000a402 func   ?sub_100aacd0@@YIHPAD@Z sub_100aacd0
 0x1000a407 func   ?sub_102159f0@CUnk102159f0@@QAEXPAH@Z CUnk102159f0::sub_102159f0
 0x1000a40c func   ?sub_101fb180@@YAXH@Z sub_101fb180
