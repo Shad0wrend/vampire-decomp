@@ -75282,6 +75282,31 @@ void sub_1013b0d0(const Q &q, float *m)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013b1f0 size=0x40
+#include "Vector.h"
+#include "QAngle.h"
+
+#define DEG2RAD(x) ((float)(x) * (float)(3.14159265358979323846f / 180.f))
+
+struct SRadianEuler
+{
+	SRadianEuler(const QAngle &angles)
+	{
+		Init(DEG2RAD(angles.z), DEG2RAD(angles.x), DEG2RAD(angles.y));
+	}
+	void Init(float ix, float iy, float iz) { x = ix; y = iy; z = iz; }
+	float x, y, z;
+};
+void sub_1013b390(const SRadianEuler &ang, float *pQuat);
+
+// TARGET: sub_1013b1f0
+void sub_1013b1f0(const QAngle &angles, float *pQuat)
+{
+	SRadianEuler radians(angles);
+	sub_1013b390(radians, pQuat);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013b240 size=0x25
 #include "QAngle.h"
 #include "matrix3x4_t.h"
