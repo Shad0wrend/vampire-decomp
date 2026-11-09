@@ -26,6 +26,8 @@ public:
 	void vfunc103();	// slot 103: clears the target at +0x6668, calls CNPC_VHumanCombatant::vfunc103, counts the global 0x1093acac and sets the flags at +0x6671 / +0x6672
 	CNPC_VCop *sub_103708e0();	// as in CKeepUpright (transplant)
 	void vfunc442(int *pEvent);	// slot 442, animation event handler: event 0x107 calls CAI_BaseNPC::sub_10273e80(0), event 0x14a calls slot 598 with the entity of the handle at +0x628c, everything else goes to CNPC_VHumanCombatant::vfunc442
+	void vfunc123();	// slot 123: debug text above the head
+	void sub_1029ca50();	// CAI_BaseNPCTroika::vfunc123 (stub 0x10008a3f)
 	void vfunc597(CBaseEntity *pTarget, int a);	// slot 597, declared as a plain member: when pTarget is the entity of the handle at +0x628c and the cop has no target handle (+0x6664) while its state (slot 464) is 2, remembers pTarget's controlling player (+0xa8) after telling it about the pursuit, then prints a debug text; then CAI_BaseNPCTroika::vfunc597(pTarget, a)
 	int vfunc438();	// slot 438 "SelectSchedule": +0x1b2c = 0xc; state 0xc (+0x5cc0) with condition 0x1e and a live pursuit target (handle +0x628c) hands that target the call sub_1017e6f0(0) and returns 0x6d, else state 1; state 1 with the byte at +0x65f4 and no usable pursuit target (or none of +0x6590) takes schedule 0x16e / 0x170 (counting the global 0x1093acb0), everything else the base CNPC_VHumanCombatant::vfunc438
 	int sub_103723f0();	// "wants to take over the pursuit": sets state 2 as the ideal state (file / line stamp 0x527) and returns 2 when the player is the target of a pursuit condition (0x6d / 0x70 / 0x4c..0x4e), else 0
@@ -163,7 +165,7 @@ public:
 	virtual void vfunc214_slot();
 	virtual void vfunc215();
 	virtual void vfunc216();
-	virtual void vfunc217_slot();
+	virtual Vector *vfunc217_slot();
 	virtual void vfunc218_slot();
 	virtual void vfunc219_slot();
 	virtual void vfunc220_slot();
