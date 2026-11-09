@@ -11767,6 +11767,7 @@
 0x10011810 func   ?vfunc0@CTraceFilterAgainstEntityList@@UAE_NPAXH@Z CTraceFilterAgainstEntityList::vfunc0
 0x10011815 func   ?vfunc494@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc494
 0x1001181a func   ?sub_10217650@@YAHXZ sub_10217650
+0x1001181f func   ?vfunc586@CCineAISchedule@@QAEXPAVCAI_BaseNPC@@@Z CCineAISchedule::vfunc586
 0x10011824 func   ?sub_101e8f20@CUnknown101e8f20@@QAEHPAVCBaseCombatCharacter@@@Z CUnknown101e8f20::sub_101e8f20
 0x10011829 func   _item_g_jumbles_flyer item_g_jumbles_flyer
 0x1001182e func   ?sub_1035eba0@@YIPAXPAD@Z sub_1035eba0

@@ -100,6 +100,78 @@ void CCineAISchedule::vfunc583()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a98c0 size=0x1f0
+#include "CBaseEntity.h"
+#include "CCineAISchedule.h"
+#include "CAI_BaseNPC.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+extern void (*g_109f3650)(int, const char *, ...);
+
+struct CCineDevFlagObj { virtual void v0(); virtual void v1(); };
+extern CCineDevFlagObj *g_10924a6c;
+
+struct CCineFollowPathView
+{
+	char sub_102801e0(int a, CBaseEntity *pGoal, int act);
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void CCineAISchedule::vfunc586(CAI_BaseNPC *pNPC)
+{
+	CBaseEntity *pGoal = g_106eb5d8.sub_100f7f20(0, STRINGR(m_pszGoalName608c), (CBaseEntity *)this, 0);
+	if (!pGoal)
+	{
+		g_109f3650(1, "Can't find goal entity %s\nCan't execute script %s\n", STRINGR(m_pszGoalName608c), sub_1000b5cd());
+		return;
+	}
+	switch (m_n6094)
+	{
+	case 1: pNPC->sub_1026e340(1); break;
+	case 2: pNPC->sub_1026e340(3); break;
+	case 3: pNPC->sub_1026e340(2); break;
+	}
+	switch (m_n6090)
+	{
+	case 1:
+	case 2:
+	{
+		int act = (m_n6090 != 1) ? 0x13 : 9;
+		if (pNPC->vfunc94() == 5 || pNPC->vfunc94() == 6)
+			act = 0x22;
+		if (!pNPC->sub_102800c0(2, pGoal, act) && !(*(unsigned int *)((char *)this + 0x204) & 0x800))
+		{
+			g_109f3650(1, "ScheduledMoveToGoalEntity to goal entity %s failed\nCan't execute script %s\n", STRINGR(m_pszGoalName608c), sub_1000b5cd());
+			return;
+		}
+		break;
+	}
+	case 4:
+	case 5:
+	{
+		int act = (m_n6090 != 4) ? 0x13 : 9;
+		if (pNPC->vfunc94() == 5 || pNPC->vfunc94() == 6)
+			act = 0x22;
+		if (!((CCineFollowPathView *)pNPC)->sub_102801e0(2, pGoal, act) && !(*(unsigned int *)((char *)this + 0x204) & 0x800))
+		{
+			g_109f3650(1, "ScheduledFollowPath to goal entity %s failed\nCan't execute script %s\n", STRINGR(m_pszGoalName608c), sub_1000b5cd());
+			return;
+		}
+		break;
+	}
+	case 3:
+		pNPC->sub_10279a50((int)pGoal);
+		pNPC->vfunc544(pGoal, (int)((CAI_BaseNPC *)pGoal)->vfunc217(), (int)((char *)pGoal + 0x3d4));
+		g_10924a6c->v1();
+		pNPC->sub_10269a20(0x54);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab0e0 size=0x52
 #include "CCineNPC.h"
 
