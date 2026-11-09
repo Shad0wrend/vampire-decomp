@@ -25,7 +25,8 @@ public:
 	void sub_1006bf40();	// skips the white space at the read cursor of a text buffer (stub 0x1000c35b)
 	void sub_1006bfb0(char *pString);	// reads one string: to the terminating null of a binary buffer, or to the next white space of a text buffer
 	int sub_1006c210(const char *pFmt, char *list);	// \"CUtlBuffer::VaScanf\": text buffers only; matches pFmt (space = skip white space, %c %d %i %x %u %f %s) against the data and stores through the va_list, returns the number of conversions
-	bool sub_10005583(int nSize);	// makes room for nSize more bytes at the write cursor (stub 0x10005583), false when the buffer cannot take them
+	bool sub_10005583(int nSize);
+	bool sub_1006c5d0(int nSize);	// CheckPut (stub 0x10005583)	// makes room for nSize more bytes at the write cursor (stub 0x10005583), false when the buffer cannot take them
 	void sub_1006c530(const char *pFmt, char *list);
 	void sub_1006c4a0(const void *pMem, int nSize);	// copies nSize bytes to the write cursor and moves the cursor past them, when sub_10005583(nSize) holds
 };
