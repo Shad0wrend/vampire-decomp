@@ -11839,6 +11839,7 @@
 0x10011536 func   ?vfunc66@CGameRules@@UAEHH@Z CGameRules::vfunc66
 0x1001153b func   ?sub_102ea0e0@CUnknownTimer102ea0e0@block_102ea0e0@@QAE_NPAUCUnknownArg102ea0e0@2@H@Z block_102ea0e0::CUnknownTimer102ea0e0::sub_102ea0e0
 0x10011545 func   ?sub_101f58e0@CVActivitySound@@QAEXPAVCVSoundEnt@@@Z CVActivitySound::sub_101f58e0
+0x1001154a func   ?sub_10197a60@@YAPAUPyObject@@PAU1@0@Z sub_10197a60
 0x1001154f func   ?sub_102daea0@@YIPAXPAUCOwnerView@@@Z sub_102daea0
 0x10011554 func   ?sub_102cac90@CAI_DebugRecordList@@QAEXXZ CAI_DebugRecordList::sub_102cac90
 0x10011559 func   ?sub_10384230@@YAXXZ sub_10384230

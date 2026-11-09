@@ -96557,6 +96557,36 @@ PyObject *sub_101978b0(PyObject *self, PyObject *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10197a60 size=0x77
+#include "Python.h"
+extern "C" __declspec(dllimport) PyObject *PyExc_StandardError;
+struct EntB10197a60 {
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+    V16(p) V16(q) V16(r) V16(s) V16(t) V16(u) V16(v)
+    V4(z) V4(za) V4(zb) V4(zc) V4(zd) V4(ze) V4(zf) V4(zg) V4(zh) V4(zi) V4(zj)
+    virtual void m0(); virtual void m1();
+    virtual bool f();
+};
+EntB10197a60 *sub_10196780(PyObject *);
+PyObject *sub_10197a60(PyObject *self, PyObject *args)
+{
+    PyObject *obj = 0;
+    if (!g_109f37a0(args, "O", &obj)) {
+        if (!g_109f377c())
+            g_109f37b4(PyExc_StandardError, "bad args to GetName()");
+        return 0;
+    }
+    EntB10197a60 *e = sub_10196780(obj);
+    if (!e) {
+        if (!g_109f377c())
+            g_109f37b4(PyExc_StandardError, "bad args to GetName()");
+        return 0;
+    }
+    return g_109f3798(e->f() ? 1 : 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197b00 size=0x178
 #define S1(p, n) virtual void p##n();
 #define S10(p) S1(p,0) S1(p,1) S1(p,2) S1(p,3) S1(p,4) S1(p,5) S1(p,6) S1(p,7) S1(p,8) S1(p,9)
