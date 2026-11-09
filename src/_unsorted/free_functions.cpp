@@ -231262,6 +231262,105 @@ Vector *CGrabController::sub_1040c500(Vector *pOut, const Vector *pIn, CEntityVS
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040c5d0 size=0x276
+#include "CEntityVSlots.h"
+#include "IPhysicsObject.h"
+#include "CUnknown1040cb60.h"
+#include "CBaseEntity.h"
+struct PhysV {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(float f); virtual float v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(const Vector *a, const float *b); virtual void v18(const Vector *a, float *b); virtual int v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(int a); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(Vector *a, Vector *b);
+};
+struct MotionCtl {
+	virtual void v0(); virtual void v1(); virtual void v2(PhysV *p);
+};
+struct PhysEnv {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual MotionCtl *v39(void *p);
+};
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct EntSlots {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j) V10(k)
+	V10(l) V10(m) V10(n) V10(o) V10(p) V10(q) V10(r) V10(s) V10(t) V10(u)
+	virtual void v210(); virtual void v211(); virtual void v212(); virtual void v213(); virtual void v214();
+	virtual int v215();
+	virtual void v216(); virtual void v217(); virtual void v218(); virtual void v219();
+	V10(w) virtual void v230(); virtual void v231(); virtual void v232();
+	virtual int v233(PhysV **pList, int nMax);
+};
+extern PhysEnv *g_10723940;
+void sub_10031990(CBaseEntity *a, void *b, int c, int d, int e, float f);
+void sub_10189780(CBaseEntity *a, CBaseEntity *b, void *c, Vector *d);
+void sub_10138130(int a, void *b, void *c);
+Vector *sub_1040c8f0(Vector *pOut, void *pIn, float f);
+
+static inline bool EFlag(unsigned int flags, int bit) { return ((flags >> bit) & 1) != 0; }
+static inline void *EntityToWorldTransform(CBaseEntity *p)
+{
+	if (EFlag(p->m_flags268, 11))
+		p->vfunc98();
+	return (char *)p + 0x130;
+}
+
+void CUnknown1040cb60::sub_1040c5d0(CBaseEntity *pPlayer, CBaseEntity *pEntity, int nPhysics)
+{
+	PhysV *pPhys = (PhysV *)nPhysics;
+	sub_10031990(pPlayer, pPhys, 6, pPhys->v19(), ((PhysV *)pPlayer->m_obj36c)->v19(), 1.0f);
+	Vector position;
+	Vector angles;
+	pPhys->v37(&position, &angles);
+	sub_10189780(pEntity, pPlayer, EntityToWorldTransform(pPlayer), &angles);
+	((CGrabController *)this)->sub_1040c230((CEntityVSlots *)pEntity, (IPhysicsObject *)pPhys);
+	MotionCtl *pCtl = g_10723940->v39(this);
+	m_hEngine = (int)pCtl;
+	pCtl->v2(pPhys);
+	pPhys->v2();
+	sub_1040bfc0(&position.x, &angles.x);
+	*(EHANDLE *)&m_hEntity = pEntity;
+	PhysV *pList[32];
+	int count = ((EntSlots *)pEntity)->v233(pList, 0x20);
+	m_f48 = 0;
+	float damping = 10.0f;
+	float flFactor = count * 0.13333334f;
+	if (flFactor < 1.0f)
+		flFactor = 1.0f;
+	for (int i = 0; i < count; i++) {
+		float mass = pList[i]->v12();
+		pList[i]->v18(0, &m_a4c[i]);
+		m_f48 += mass;
+		m_acc[i] = mass;
+		pList[i]->v11(0.25f / flFactor);
+		pList[i]->v17(0, &damping);
+	}
+	pPhys->v11(0.25f);
+	pPhys->v23(0);
+	m_f38 = -1.0f;
+	m_f3c = 0;
+	Vector vecT;
+	m_v160 = *sub_1040c430(&vecT, &angles, pPlayer);
+	if (m_f40 != 0) {
+		m_v160 = *sub_1040c8f0(&vecT, &m_v160, m_f40);
+	}
+	if (EFlag(pEntity->m_flags268, 11))
+		pEntity->vfunc98();
+	int r = ((EntSlots *)pEntity)->v215();
+	sub_10138130(r, (char *)pEntity + 0x130, m_v16c);
+	m_b15c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040c8f0 size=0xeb
 #include <math.h>
 extern float g_104454c4;
