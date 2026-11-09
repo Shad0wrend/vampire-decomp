@@ -602,6 +602,7 @@
 0x10001d7a func   ?sub_10249220@SList@@QAEXXZ SList::sub_10249220
 0x10001d7f func   ?sub_1007f540@UtlMem@@QAEXXZ UtlMem::sub_1007f540
 0x10001d84 func   ?sub_102d89f0@@YAHXZ sub_102d89f0
+0x10001d89 func   ?sub_10362430@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::sub_10362430
 0x10001d8e func   ?sub_10147a30@CUnknown10147a30@@QAEHH@Z CUnknown10147a30::sub_10147a30
 0x10001d93 func   ?vfunc80@CItemGHannahsApptBook@@QAEHXZ CItemGHannahsApptBook::vfunc80
 0x10001d98 func   ?sub_102ee270@CUnknown102ee270@@QAEDXZ CUnknown102ee270::sub_102ee270

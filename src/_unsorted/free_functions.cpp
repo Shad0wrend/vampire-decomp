@@ -200740,6 +200740,64 @@ void CNPC_VAsianVampire::sub_10361990(CBaseEntity *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10362430 size=0xd0
+#include "CNPC_VAsianVampire.h"
+#include "Vector.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_109f3680;
+extern ScopeEntry *g_109f3620;
+extern char g_106b8540[];
+extern float g_104a9314;
+
+struct HandleEntry { void *ent; unsigned int serial; int pad; };
+struct HandleList { int pad; HandleEntry e[1]; };
+extern HandleList *g_10566458;
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct OriginSlots
+{
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8) SL10(a9)
+	SL10(b0) SL10(b1) SL10(b2) SL10(b3) SL10(b4) SL10(b5) SL10(b6) SL10(b7) SL10(b8) SL10(b9)
+	SL10(c0)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6();
+	virtual const Vector &GetAbsOrigin();
+};
+struct TargetHandle
+{
+	unsigned int m_Index;
+	OriginSlots *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			HandleEntry *e = &g_10566458->e[m_Index & 0x1fff];
+			if (e->serial == (m_Index >> 13))
+				return (OriginSlots *)e->ent;
+		}
+		return 0;
+	}
+};
+
+int CNPC_VAsianVampire::sub_10362430()
+{
+	g_109f3620[*g_109f3680].a = "CNPC_VAsianVampire::GetJumpSchedule";
+	g_109f3620[*g_109f3680].b = g_106b8540;
+	g_109f3620[*g_109f3680].c = g_106b8540;
+	++*g_109f3680;
+	OriginSlots *pTarget = ((TargetHandle *)&m_hJumpTarget)->Get();
+	if (pTarget != 0) {
+		float flDelta = pTarget->GetAbsOrigin().z - ((OriginSlots *)this)->GetAbsOrigin().z;
+		float flLimit = -g_104a9314;
+		if (flDelta < flLimit) {
+			--*g_109f3680;
+			return 0x15b;
+		}
+	}
+	--*g_109f3680;
+	return 0x15a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10362540 size=0xe3
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
