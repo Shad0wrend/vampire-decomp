@@ -188117,6 +188117,59 @@ void sub_102fb470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fc3d0 size=0x11d
+#include "CAI_Node.h"
+#include "Vector.h"
+#include <math.h>
+
+struct Vector2D
+{
+	float x, y;
+	Vector2D() {}
+	Vector2D(float X, float Y) : x(X), y(Y) {}
+	Vector2D &operator=(const Vector2D &v) { x = v.x; y = v.y; return *this; }
+	Vector2D operator+(const Vector2D &v) const;
+};
+
+inline void Vector2DAdd(const Vector2D &a, const Vector2D &b, Vector2D &c)
+{
+	c.x = a.x + b.x;
+	c.y = a.y + b.y;
+}
+
+inline Vector2D Vector2D::operator+(const Vector2D &v) const
+{
+	Vector2D res;
+	Vector2DAdd(*this, v, res);
+	return res;
+}
+
+inline const Vector2D &AsVector2D(const Vector &v) { return *(const Vector2D *)&v; }
+
+float sub_1013ce40(const Vector2D &P, const Vector2D &vLineA, const Vector2D &vLineB, float *t);
+
+bool sub_102fc3d0(const Vector *a1, const Vector *a2, const Vector *a3, const Vector *a4)
+{
+	if (1.0f - DotProduct(*a4, *a2) > 0.01)
+		return false;
+	{
+		Vector2D vEnd;
+		vEnd = AsVector2D(*a1) + AsVector2D(*a2);
+		if (sub_1013ce40(AsVector2D(*a3), AsVector2D(*a1), vEnd, 0) > 0.01)
+			return false;
+	}
+	Vector vecDir = *a1 - *a3;
+	VectorNormalize(vecDir);
+	float flDot = (float)fabs(DotProduct(vecDir, *a2));
+	if (flDot > 0.05)
+	{
+		if (fabs(flDot - 0.4472f) > 0.05)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fc540 size=0x6b
 #include <stdarg.h>
 #include <stdio.h>
