@@ -29,6 +29,26 @@ void CPhysTorque::sub_10028260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100282e0 size=0x75
+#include "CPhysTorque.h"
+#include "CPhysObjSlots.h"
+
+void sub_10138460(const Vector *pIn, const float *pMatrix, Vector *pOut);
+
+void CPhysTorque::sub_100282e0(CPhysObjSlots *pPhys, Vector &linear, Vector &angular)
+{
+	linear.Init();
+
+	float matrix[12];
+	pPhys->slot38(matrix);
+
+	Vector axis_ws;
+	sub_10138460(&m_vecAxis, matrix, &axis_ws);
+
+	angular = axis_ws * m_flScale;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029b80 size=0x1e
 #include "CPhysTorque.h"
 
