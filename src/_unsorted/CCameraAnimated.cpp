@@ -53,6 +53,34 @@ CCameraAnimated *CCameraAnimated::vfunc5(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10071330 size=0x9a
+#include "CCameraAnimated.h"
+#include "CEntityVSlots.h"
+
+extern void (*g_109f362c)(const char *fmt, ...);
+extern char g_106b8540[];
+void sub_10014614(void *pEntity);	// stub 0x10014614 for 0x101cd940: UTIL_Remove
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: CCameraAnimated::vfunc103
+void CCameraAnimated::vfunc103()
+{
+	CEntityVSlots *pEnt = (CEntityVSlots *)this;
+	int nUnused;
+	const char *szModel = STRINGR(*pEnt->slot9(&nUnused));
+	if (!szModel || !*szModel)
+	{
+		Vector *pOrigin = pEnt->slot220();
+		g_109f362c("%s at %.0f %.0f %0.f missing modelname\n", sub_1000b5cd(), pOrigin->x, pEnt->slot220()->y, pEnt->slot220()->z);
+		sub_10014614(this);
+		return;
+	}
+	pEnt->slot104();
+	pEnt->slot105(szModel);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10071400 size=0x26
 #include "CCameraAnimated.h"
 #include "CBaseEntity.h"
