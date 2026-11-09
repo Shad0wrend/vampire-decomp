@@ -5426,6 +5426,7 @@
 0x10008990 func   ?vfunc5@CPropDoorknob@@QAEPAV1@I@Z CPropDoorknob::vfunc5
 0x10008995 func   ??0CSun@@QAE@XZ CSun::CSun
 0x1000899a func   ?sub_10146d50@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10146d50
+0x100089a4 func   ?sub_10258900@CUnk10258900@@QAEXXZ CUnk10258900::sub_10258900
 0x100089a9 func   ?sub_101f75a0@CVTraitEffectGroup_t@@QAEXPAUCTraitStatBlock@@@Z CVTraitEffectGroup_t::sub_101f75a0
 0x100089ae func   ?sub_103b0c70@CNPC_VSheriffMan@@QAE_NPBVVector@@M@Z CNPC_VSheriffMan::sub_103b0c70
 0x100089b3 func   ?sub_10383f70@@YAHXZ sub_10383f70

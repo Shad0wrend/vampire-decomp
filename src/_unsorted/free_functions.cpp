@@ -155031,6 +155031,54 @@ void sub_10258880(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258900 size=0x12f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "TestBit.h"
+
+struct CUnk10258900 : CBaseEntity {
+	char m_padA[0x3ec - 0x3e0];
+	float m_fl3ec;
+	float m_fl3f0;
+	void sub_1000c487(CBaseEntity *pOther);
+	void sub_10258900();
+};
+
+extern float g_1070d1b0[3];
+void sub_101cf390(CBaseEntity *pEnt, const float *mins, const float *maxs);
+void sub_10003d4b(const float *pVel, float *pOut);
+
+// TARGET: CUnk10258900::sub_10258900
+void CUnk10258900::sub_10258900()
+{
+	vfunc93(6, 1);
+	{
+		ScopeTrace t("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(2);
+	}
+	sub_101cf390(this, g_1070d1b0, g_1070d1b0);
+	m_fl3ec = 0.81f;
+	m_fl3f0 = 0.6f;
+	if (TestBit(m_flags268, 12))
+		sub_100b1d10();
+	float tmp[3];
+	sub_10003d4b((float *)((char *)this + 0x3bc), tmp);
+	vfunc64(tmp);
+	Vector vec = *(const Vector *)m_angVel3c8;
+	vec.x = enginerandom->vfunc1(-100.0f, -500.0f);
+	sub_100b2f50((const float *)&vec);
+	m_pfnTouch = (void (CBaseEntity::*)(CBaseEntity *))&CUnk10258900::sub_1000c487;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258a80 size=0x43
 #include "CBaseEntity.h"
 void sub_1000f57e();
