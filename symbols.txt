@@ -8402,6 +8402,7 @@
 0x1000c793 func   ?sub_10043540@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10043540
 0x1000c798 func   ?vfunc124@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc124
 0x1000c79d func   ?sub_10178590@CBasePlayer@@QAEXVVector@@@Z CBasePlayer::sub_10178590
+0x1000c7a2 func   ?sub_10220460@@YA_NPAUFlagFilter@@H@Z sub_10220460
 0x1000c7a7 func   ?sub_1019b800@@YAXPAX@Z sub_1019b800
 0x1000c7ac func   ?sub_102f4fb0@@YAHXZ sub_102f4fb0
 0x1000c7b1 func   ?vfunc144@CNPC_VMingXiaoTentacle@@QAEXH@Z CNPC_VMingXiaoTentacle::vfunc144

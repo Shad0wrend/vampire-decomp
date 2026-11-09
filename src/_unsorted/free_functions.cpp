@@ -147850,6 +147850,69 @@ void sub_102201c0(CUnknown101ec4f0Set *pSet, int nEntIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10220460 size=0xdd
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatWeapon.h"
+#include "ScopeTrace.h"
+#define EV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct UnkObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void *vfunc4(); };
+struct Edict { char pad[0x40]; UnkObj *m_pUnk; };
+struct EngineSlots
+{
+    EV(a0) EV(a1) EV(a2)
+    virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33(); virtual void a34(); virtual void a35(); virtual void a36(); virtual void a37();
+    virtual Edict *vfunc38(int index);
+};
+extern EngineSlots *g_1070b22c;
+extern char g_10543c6c[];
+struct EntWithWeapon { char pad[0xa0]; CBaseCombatWeapon *m_pWeapon; };
+struct FlagFilter { char pad[0xc]; unsigned int m_nForbidden; unsigned int m_nRequired; };
+static inline EntWithWeapon *Instance(int index)
+{
+    Edict *pEdict = g_1070b22c->vfunc38(index);
+    ScopeTrace t(g_10543c6c, g_106b8540);
+    EntWithWeapon *pResult;
+    if (!pEdict)
+        pEdict = g_1070b22c->vfunc38(0);
+    if (pEdict && pEdict->m_pUnk)
+        pResult = (EntWithWeapon *)pEdict->m_pUnk->vfunc4();
+    else
+        pResult = 0;
+    return pResult;
+}
+// TARGET: sub_10220460
+bool sub_10220460(FlagFilter *pFilter, int index)
+{
+    EntWithWeapon *pEnt = Instance(index);
+    if (!pEnt)
+        goto fail;
+    if (!pEnt->m_pWeapon)
+        goto fail;
+    goto cont;
+fail:
+    return false;
+cont:
+    {
+        unsigned int flags = *(unsigned int *)((char *)pEnt->m_pWeapon->sub_102517b0() + 0x5eb1c);
+        if (flags & 1)
+            return false;
+        if (pFilter->m_nForbidden & flags)
+            return false;
+        if (pFilter->m_nRequired && !(flags & pFilter->m_nRequired))
+            return false;
+        return true;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10220830 size=0x210
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
