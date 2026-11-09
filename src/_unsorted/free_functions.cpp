@@ -106946,6 +106946,108 @@ void CUnk101b4c90::sub_101b4c90(unsigned short *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4d30 size=0x2f9
+#include "CSoundEmitterSystemBase.h"
+#include "CUnknown101b6320.h"
+#include "CUnknown101b6250.h"
+#include "CUnknown101b30d0.h"
+#include <string.h>
+
+struct CSndVec8 { void sub_101b6550(int pElements, int nCount); };
+struct CSndSub34 { void sub_101b61a0(const void *pSrc); };
+struct CSndSymbol { unsigned short m_Id; CSndSymbol(); };
+struct CSndTreeView { CSndSymbol sub_1024b5e0(const char *pszName); };
+struct CSndKeyTail { void sub_101b4680(); };
+struct CSndDestroyA { void sub_101b65e0(); void sub_101b6b90(); };
+struct CSndDestroyB { void sub_101b6120(); };
+struct CSndRBTree
+{
+	char m_pad[4];
+	char *m_pElements;	// 0x04
+	char m_pad08[0x20 - 8];
+	CSndTreeView m_names;	// 0x20
+	int sub_101b66e0(void *pKey);
+};
+
+extern void (*g_109f364c)(const char *pMsg, ...);
+
+// TARGET: CSoundEmitterSystemBase::sub_101b4d30
+bool CSoundEmitterSystemBase::sub_101b4d30(const char *pszName, const char *pszWave, const void *pParams)
+{
+	int idx = sub_101b2f60(pszName);
+	int script = sub_101b4cc0(pszWave);
+	if (script == -1) {
+		g_109f364c("CSoundEmitterSystemBase::AddSound( '%s', '%s', ... ), script file not list in manifest '%s'\n", pszName, pszWave, "scripts/game_sounds_manifest.txt");
+		return false;
+	}
+	const CUnknown101b6320Params *pSrc = (const CUnknown101b6320Params *)pParams;
+	unsigned int i;
+	if (sub_101b31a0(idx)) {
+		CUnknown101b6320 *pRec = (CUnknown101b6320 *)((char *)m_i54 + 0x14 + idx * 0xe8);
+		pRec->m_bField00 = 0;
+		pRec->m_nField04 = script;
+		pRec->m_bField01 = ((char *)m_i9c)[script * 0x82 + 1];
+		CUnknown101b6320Params *pDst = &pRec->m_params;
+		pDst->m_nField00 = pSrc->m_nField00;
+		pDst->m_nField04 = pSrc->m_nField04;
+		pDst->m_nField08 = pSrc->m_nField08;
+		pDst->m_nField0c = pSrc->m_nField0c;
+		pDst->m_nField10 = pSrc->m_nField10;
+		pDst->m_nField14 = pSrc->m_nField14;
+		pDst->m_nField18 = pSrc->m_nField18;
+		pDst->m_bField1c = pSrc->m_bField1c;
+		pDst->m_bField1d = pSrc->m_bField1d;
+		((CSndVec8 *)&pDst->m_vecA)->sub_101b6550(*(int *)&pSrc->m_vecA, pSrc->m_vecA.m_Size);
+		((CSndSub34 *)&pDst->m_vecB)->sub_101b61a0(&pSrc->m_vecB);
+		pDst->m_bField48 = pSrc->m_bField48;
+		for (i = 0; i < 32; i++)
+			pDst->m_szVolume[i] = pSrc->m_szVolume[i];
+		for (i = 0; i < 32; i++)
+			pDst->m_szChannel[i] = pSrc->m_szChannel[i];
+		for (i = 0; i < 32; i++)
+			pDst->m_szSoundLevel[i] = pSrc->m_szSoundLevel[i];
+		for (i = 0; i < 32; i++)
+			pDst->m_szPitch[i] = pSrc->m_szPitch[i];
+		((char *)m_i9c)[script * 0x82] = 1;
+		return true;
+	}
+	CUnknown101b6320 tmp;
+	((CUnknown101b30d0 *)&tmp.m_params)->sub_101b30d0();
+	tmp.m_bField00 = 0;
+	tmp.m_nField04 = script;
+	tmp.m_bField01 = ((char *)m_i9c)[script * 0x82 + 1];
+	CUnknown101b6320Params *pT = &tmp.m_params;
+	pT->m_nField00 = pSrc->m_nField00;
+	pT->m_nField04 = pSrc->m_nField04;
+	pT->m_nField08 = pSrc->m_nField08;
+	pT->m_nField0c = pSrc->m_nField0c;
+	pT->m_nField10 = pSrc->m_nField10;
+	pT->m_nField14 = pSrc->m_nField14;
+	pT->m_nField18 = pSrc->m_nField18;
+	pT->m_bField1c = pSrc->m_bField1c;
+	pT->m_bField1d = pSrc->m_bField1d;
+	((CSndVec8 *)&pT->m_vecA)->sub_101b6550(*(int *)&pSrc->m_vecA, pSrc->m_vecA.m_Size);
+	((CSndSub34 *)&pT->m_vecB)->sub_101b61a0(&pSrc->m_vecB);
+	pT->m_bField48 = pSrc->m_bField48;
+	memcpy(pT->m_szVolume, pSrc->m_szVolume, 32);
+	memcpy(pT->m_szChannel, pSrc->m_szChannel, 32);
+	memcpy(pT->m_szSoundLevel, pSrc->m_szSoundLevel, 32);
+	memcpy(pT->m_szPitch, pSrc->m_szPitch, 32);
+	CSndRBTree *pTree = (CSndRBTree *)((char *)this + 0x50);
+	CUnknown101b6250 key;
+	key.sub_101b6250();
+	key.m_nField00 = pTree->m_names.sub_1024b5e0(pszName).m_Id;
+	int node = pTree->sub_101b66e0(&key);
+	((CUnknown101b6320 *)(pTree->m_pElements + 0x14 + node * 0xe8))->sub_101b6320(tmp);
+	((CSndKeyTail *)&key.m_nField0c)->sub_101b4680();
+	((char *)m_i9c)[script * 0x82] = 1;
+	((CSndDestroyA *)&tmp.m_params.m_vecB)->sub_101b65e0();
+	((CSndDestroyA *)&tmp.m_params.m_vecB)->sub_101b6b90();
+	((CSndDestroyB *)&tmp.m_params.m_vecA)->sub_101b6120();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b50f0 size=0x70
 #include "CSoundEmitterSystemBase.h"
 
