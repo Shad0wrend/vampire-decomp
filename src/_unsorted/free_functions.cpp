@@ -87547,6 +87547,26 @@ void CBasePlayer::sub_101713c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101714a0 size=0x197
+#include "CSprayCan.h"
+#include "CBasePlayer.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+
+void CSprayCan::sub_101714a0(CBasePlayer *pOwner)
+{
+	Vector vecOrigin = pOwner->vfunc192() + Vector(0, 0, 32);
+	vfunc62(&vecOrigin.x);
+	vfunc64(&pOwner->m_vec206c.x);
+	vfunc202((CBaseEntity *)pOwner);
+	m_flSprayCount450 = 0;
+	m_flNextThink = gpGlobals->curtime + 0.1;
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	int edict = m_pEdict2e0;
+	enginesound->vfunc3(&filter, engine->vfunc35(edict), 2, "player/sprayer.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101719d0 size=0x94
 #include "CBaseEntity.h"
 #include "CBloodSplat.h"

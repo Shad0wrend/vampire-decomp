@@ -11511,6 +11511,7 @@
 0x10010d70 func   ?sub_1013b240@@YAXABUQ@@AAVQAngle@@@Z sub_1013b240
 0x10010d7a func   ?vfunc432@CNPC_VPedestrian@@QAEXH@Z CNPC_VPedestrian::vfunc432
 0x10010d7f func   ?sub_101db7e0@S101db7e0@@QAEXXZ S101db7e0::sub_101db7e0
+0x10010d89 func   ?sub_101714a0@CSprayCan@@QAEXPAVCBasePlayer@@@Z CSprayCan::sub_101714a0
 0x10010d8e func   ?sub_103454c0@@YIHPAVCBaseAnimating@@@Z sub_103454c0
 0x10010d93 func   ?sub_101fd110@CVStatAction_t@@QAEXHHHH@Z CVStatAction_t::sub_101fd110
 0x10010d98 func   ?sub_101ad410@CUnknown101ad410@@QAEHH@Z CUnknown101ad410::sub_101ad410
