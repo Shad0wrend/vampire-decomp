@@ -632,6 +632,7 @@
 0x10001df7 func   ?sub_1021bd80@CUnknown1021bec0@@QAEXXZ CUnknown1021bec0::sub_1021bd80
 0x10001dfc func   ?sub_102d2f30@@YAPAVCEntityVSlots@@HHHH@Z sub_102d2f30
 0x10001e01 func   ?sub_101ac690@CAmbientGenericInput@@QAEXPAUinputdata_t@@@Z CAmbientGenericInput::sub_101ac690
+0x10001e06 func   ?sub_102b53d0@CAI_BaseNPCTroika@@QAEXHPBD@Z CAI_BaseNPCTroika::sub_102b53d0
 0x10001e0b func   ?sub_10031340@CCollisionEventUnit@@QAEHPAUCPhysObjX@@PAM1D@Z CCollisionEventUnit::sub_10031340
 0x10001e10 func   ?vfunc1@CTEImpact@@UAEHXZ CTEImpact::vfunc1
 0x10001e15 func   ?sub_10056e50@CTempEntTester@@QAEXXZ CTempEntTester::sub_10056e50

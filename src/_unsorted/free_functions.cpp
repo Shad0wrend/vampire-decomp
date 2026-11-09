@@ -170594,6 +170594,49 @@ void CAI_BaseNPCTroika::sub_102b4090()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b53d0 size=0x1f4
+#include "CAI_BaseNPCTroika.h"
+#include "COutputEvent.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+
+struct CHolderView {
+	void sub_102da600(CAI_BaseNPCTroika *pNPC, char a, char b);
+};
+
+inline int ENTINDEX(int pEdict)
+{
+	return engine->vfunc35(pEdict);
+}
+
+struct CEntIndexView {
+	int edict() { return *(int *)((char *)this + 0x2e0); }
+	int entindex() { return ENTINDEX(edict()); }
+};
+
+// TARGET: CAI_BaseNPCTroika::sub_102b53d0
+void CAI_BaseNPCTroika::sub_102b53d0(int a, const char *pszMessage)
+{
+	if (m_p62ec) {
+		sub_10299a80();
+		if (!m_p62ec)
+			return;
+		sub_1028a150();
+		CEntitySoundOriginView *pSnd = (CEntitySoundOriginView *)this;
+		CPASAttenuationFilter filter(pSnd);
+		enginesound->vfunc11(&filter, ((CEntIndexView *)this)->entindex(), 4, 0, 0, 0x24, 100, (const float *)&pSnd->GetSoundEmissionOrigin(), 0, 1, 0);
+		enginesound->vfunc11(&filter, ((CEntIndexView *)this)->entindex(), 2, 0, 0, 0x24, 100, (const float *)&pSnd->GetSoundEmissionOrigin(), 0, 1, 0);
+		((CHolderView *)m_p62ec)->sub_102da600(this, 1, (char)a && m_b62e8 && (((COutputEvent *)m_Output5f8c)->sub_100cd660(m_p62ec, this, 0), m_b62e8));
+		m_p62ec = 0;
+		m_n6304 = 0;
+		m_flags14b8 &= 0xdfffffff;
+		m_flags14bc &= 0x7ffffff7;
+		sub_102ae310();
+	}
+	m_b62e8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b5bb0 size=0x11
 namespace lifted {
 extern char g_1070d1b0;
