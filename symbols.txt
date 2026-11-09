@@ -2493,6 +2493,7 @@
 0x1000472d func   ?sub_1010c150@CEnvFireSensor@@QAEXXZ CEnvFireSensor::sub_1010c150
 0x10004732 func   ?sub_10074ae0@CUnknown10074ae0@@QAEMH@Z CUnknown10074ae0::sub_10074ae0
 0x10004737 func   ?sub_103a3af0@@YAHXZ sub_103a3af0
+0x1000473c func   ?sub_1023fc90@@YA_NABVVector@@M0M@Z sub_1023fc90
 0x10004746 func   ?sub_101bdb50@@YAHXZ sub_101bdb50
 0x1000474b func   ?sub_1042fbf0@@YAII@Z sub_1042fbf0
 0x10004750 func   ?sub_10430130@@YAII@Z sub_10430130

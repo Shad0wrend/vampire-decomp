@@ -154003,6 +154003,18 @@ int sub_1023fa90(const Vector &p0, const Vector &p1, const Vector &p2, const flo
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023fc90 size=0x50
+#include "Vector.h"
+bool sub_1023fc90(const Vector &center1, float radius1, const Vector &center2, float radius2)
+{
+    Vector delta;
+    VectorSubtract(center2, center1, delta);
+    float distSq = delta.LengthSqr();
+    float radiusSum = radius1 + radius2;
+    return (distSq <= (radiusSum * radiusSum));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023fd00 size=0xc4
 #include "Vector.h"
 
