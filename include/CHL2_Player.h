@@ -33,7 +33,7 @@ class CHL2_Player : public CHL2_PlayerBase
 public:
 	CHL2_Player();
 
-	CHL2_V10(pa0) CHL2_V10(pa1)	// slots 0..19
+	virtual void pa00(); virtual void pa01(); virtual void pa02(); virtual void pa03(); virtual void pa04(); virtual void pa05(); virtual void pa06(); virtual void pa07(); virtual int vfunc8(); virtual void pa09(); CHL2_V10(pa1)	// slots 0..19
 	virtual void pa20(); virtual void pa21(); virtual void pa22(); virtual void pa23(); virtual void pa24(); virtual void pa25(); virtual void pa26(); virtual void pa27();	// slots 20..27
 	virtual float vfunc28(); virtual float vfunc29();	// slots 28, 29
 	virtual float vfunc30(); virtual void vfunc31(int pDump);	// slot 31 "Dump": dumps the suit power fields, then the player base's Dump
@@ -62,7 +62,7 @@ public:
 	Vector sub_100b4c00();	// CBaseEntity::vfunc196, called directly (stub 0x1000a961)
 	virtual void pc00(); virtual void pc01(); virtual void pc02(); virtual void pc03(); virtual void pc04(); virtual void pc05(); virtual void pc06(); virtual void pc07(); virtual void pc08();	// slots 200..208
 	virtual CBaseEntity *vfunc209();	// slot 209: the ground / move parent entity
-	CHL2_V10(pc1) CHL2_V10(pc2) CHL2_V10(pc3) CHL2_V10(pc4) CHL2_V10(pc5) CHL2_V10(pc6)	// slots 200..269
+	CHL2_V10(pc1) CHL2_V10(pc2) CHL2_V10(pc3) CHL2_V10(pc4) virtual float vfunc250(int a); virtual void pc51(); virtual void pc52(); virtual void pc53(); virtual void pc54(); virtual void pc55(); virtual void pc56(); virtual void pc57(); virtual void pc58(); virtual void pc59(); CHL2_V10(pc6)	// slots 200..269
 	virtual void pc70(); virtual void pc71(); virtual void pc72(); virtual void pc73(); virtual void pc74(); virtual void pc75(); virtual void pc76();	// slots 270..276
 	virtual void vfunc277(const Vector *pVec);	// slot 277: takes the pointer of a vector (the camera offset record at +0xe50 for slot 333)
 	virtual void pc78(); virtual void pc79();	// slots 278..279
@@ -124,6 +124,8 @@ public:
 	int vfunc372(int a);	// slot 372: vtable slot 370 with the argument, then the argument
 	int vfunc373(int a);
 	void sub_101668b0();	// 0x101668b0: the death/ragdoll state machine called by vfunc436 (no stack args)
+	int sub_100b3700();
+	void sub_100b2e30(const Vector *pVel);
 	char sub_10170fe0();	// 0x10170fe0 (this in ecx, no args): the state test called by sub_101668b0
 	void sub_10166cc0();	// 0x10166cc0 (this in ecx, no args): the death follow-up called by sub_101668b0	// slot 373: vtable slot 371 with the argument, then the argument
 	char m_pad0004[0xe44 - 4];	// 0x0004 .. 0x0e43
