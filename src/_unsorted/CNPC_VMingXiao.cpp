@@ -139,6 +139,58 @@ void CNPC_VMingXiao::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103927a0 size=0x1b4
+#include "CNPC_VMingXiao.h"
+#include "CEntityVSlots.h"
+#include "CUnknown10739d08.h"
+#include "globalvars.h"
+extern CUnknown10739d08 g_10739d08;
+
+#define H(x) (*(EHANDLE *)&(x))
+
+void CNPC_VMingXiao::vfunc103()
+{
+	sub_1026dc00(0x4000000);
+	sub_1026dc00(0x200000);
+	sub_10298d30();
+	sub_1033c6b0(0x80000);
+	m_f1574 = -0.5f;
+	H(m_hOwner6670) = (CBaseEntity *)0;
+	m_n6674 = -1;
+	m_b6678 = 0;
+	m_n6710 = 0;
+	m_flTime66a4 = 0;
+	m_flTime66c0 = sub_10397f70() + gpGlobals->curtime;
+	for (int i = 0; i < 6; i++) {
+		H(m_hSlotOld[i]) = (CBaseEntity *)0;
+		m_bSlotFlag[i] = 0;
+		H(m_hSlotNew[i]) = (CBaseEntity *)0;
+		m_flSlotTimeA[i] = 0;
+		float flValue = *g_10739d08.sub_101e8da0();
+		m_flSlotValue[i] = flValue;
+		m_flSlotTimeB[i] = 3.402823466e+38f;
+	}
+	m_n670c = 6;
+	sub_10398800();
+	m_h667c = sub_10336f20();
+	m_h6680 = (CBaseEntity *)((CEntityVSlots *)this)->slot309();
+	CBaseEntity *pEnt = m_h6680.Get();
+	((CEntityVSlots *)this)->slot388(pEnt == 0 ? 0 : *(int *)((char *)pEnt + 0xa0), 0);
+	Vector vecSize;
+	vecSize.x = 120.0f;
+	vecSize.y = 120.0f;
+	vecSize.z = 92.0f;
+	sub_1009b060(&vecSize);
+	m_b1482 = 1;
+	m_nMode673c = 0;
+	m_n6740 = 0;
+	m_bActive6744 = 0;
+	m_f6748 = sub_103986b0();
+	m_f674c = 0;
+	m_b6750 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103929d0 size=0x6
 #include "CNPC_VMingXiao.h"
 int CNPC_VMingXiao::vfunc473()
