@@ -182,4 +182,10 @@ public:
 	virtual void vfunc115();
 	virtual void vfunc116();
 	virtual unsigned char vfunc117();
+	virtual void vfunc118();
+	virtual void vfunc119();
+	virtual void vfunc120();
+	virtual void vfunc121();
+	virtual void vfunc122();
+	virtual void vfunc123();
 };
