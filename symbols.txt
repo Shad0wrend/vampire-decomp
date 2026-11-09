@@ -105,6 +105,7 @@
 0x10001230 func   ?sub_10370650@@YAHH@Z sub_10370650
 0x10001235 func   ?vfunc342@CBaseCombatWeapon@@UAEHH@Z CBaseCombatWeapon::vfunc342
 0x1000123a func   ?sub_101e3c10@CNamedListXRem@@QAEXHPBD@Z CNamedListXRem::sub_101e3c10
+0x1000123f func   ?sub_102288b0@CSoundSchemeManager@@QAEXXZ CSoundSchemeManager::sub_102288b0
 0x10001244 func   ?sub_101363b0@CLogicRelay@@QAEPAV1@XZ CLogicRelay::sub_101363b0
 0x10001249 func   ?vfunc9@CServerGameClients@@UAEXPAUCServerGameClients_Edict@@H@Z CServerGameClients::vfunc9
 0x1000124e func   ?vfunc362@CWeaponRanged_FlameThrower@@UAEHXZ CWeaponRanged_FlameThrower::vfunc362

@@ -149982,6 +149982,34 @@ float sub_102283a0(float cur, float target, float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102288b0 size=0xeb
+#include "utlrbtree.h"
+#include "CSoundSchemeManager.h"
+#include "utlvector.h"
+
+struct CSoundSchemeTrack { int m_a[0x14]; int m_hSound; int m_b; };
+struct CSoundSchemeRandom { int m_a[4]; int m_x; int m_pad; int m_y; int m_pad2; };
+
+void CSoundSchemeManager::sub_102288b0()
+{
+	if (gpGlobals->mapname) {
+		CSoundSchemeTrack *pTracks = (CSoundSchemeTrack *)m_buf14;
+		for (int i = 0; i < 4; i++)
+			enginesound->vfunc6(0, pTracks[i].m_hSound);
+		CUtlVector<CSoundSchemeTrack> &loops = *(CUtlVector<CSoundSchemeTrack> *)&m_pLoopTracks;
+		while (m_nLoopCount) {
+			enginesound->vfunc6(0, loops[0].m_hSound);
+			loops.Remove(0);
+		}
+		CUtlVector<CSoundSchemeRandom> &rands = *(CUtlVector<CSoundSchemeRandom> *)&m_pMemory;
+		while (m_nRandomCount) {
+			enginesound->vfunc6(rands[0].m_x, rands[0].m_y);
+			rands.Remove(0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10228a80 size=0x1f6
 #include "CSoundSchemeManager.h"
 #include "CBasePlayer.h"
