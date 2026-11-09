@@ -776,6 +776,71 @@ CKeepUpright *sub_100298a0(void *pOrigin, void *pAngles, CBaseEntity *pOwner, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029940 size=0x19c
+#include "Vector.h"
+#include "matrix3x4_t.h"
+#include "IPhysicsObject.h"
+#include <math.h>
+
+void sub_101381b0(const float *in1, const matrix3x4_t &in2, float *out);	// VectorIRotate
+void sub_10138460(const float *in1, const matrix3x4_t &in2, float *out);	// VectorRotate
+
+inline void VectorIRotate(const Vector &in1, const matrix3x4_t &in2, Vector &out) { sub_101381b0(&in1.x, in2, &out.x); }
+inline void VectorRotate(const Vector &in1, const matrix3x4_t &in2, Vector &out) { sub_10138460(&in1.x, in2, &out.x); }
+
+// CKeepUpright's IMotionEvent sub-object (+0x450 of CKeepUpright)
+struct CKeepUprightMotionEvent
+{
+	void *m_vtable;
+	Vector m_localTestAxis;	// 0x04 (CKeepUpright +0x454)
+	Vector m_worldGoalAxis;	// 0x10 (+0x460)
+	void *m_pController;	// 0x1c
+	const char *m_nameAttach;	// 0x20
+	unsigned int m_attachedObject;	// 0x24
+	float m_angularLimit;	// 0x28
+	bool m_bActive;	// 0x2c
+
+	int sub_10029940(void *pController, IPhysicsObject *pObject, float deltaTime, Vector &linear, Vector &angular);
+};
+
+int CKeepUprightMotionEvent::sub_10029940(void *pController, IPhysicsObject *pObject, float deltaTime, Vector &linear, Vector &angular)
+{
+	if (!m_bActive)
+		return 0;
+
+	matrix3x4_t matrix;
+	pObject->vfunc38(&matrix.m_flMatVal[0][0]);
+
+	Vector currentAxis;
+	VectorIRotate(m_worldGoalAxis, matrix, currentAxis);
+
+	Vector rotationAxis;
+	CrossProduct(currentAxis, m_localTestAxis, rotationAxis);
+	float cosAngle = DotProduct(currentAxis, m_localTestAxis);
+	float sinAngle = VectorNormalize(rotationAxis);
+	float angle = atan2(sinAngle, cosAngle);
+	angle = angle * 57.29578f;
+	rotationAxis *= angle;
+	VectorRotate(rotationAxis, matrix, angular);
+
+	float invDeltaTime = (1 / deltaTime);
+	angular *= (((invDeltaTime * invDeltaTime)));
+
+	Vector angVel;
+	pObject->vfunc40(0, &angVel.x);
+	angular -= angVel;
+
+	float len = VectorNormalize(angular);
+	float invAngular = m_angularLimit * invDeltaTime;
+	if (len > invAngular)
+		len = invAngular;
+	angular *= len;
+
+	linear.Init();
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029ea0 size=0x4b
 #include "CConstraintAnchor.h"
 
