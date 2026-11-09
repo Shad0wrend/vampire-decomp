@@ -7440,6 +7440,7 @@
 0x1000b253 func   ?vfunc80@CWeaponLockpick@@UAEHXZ CWeaponLockpick::vfunc80
 0x1000b258 func   ?vfunc3@CSave@@UAEHHHHHH@Z CSave::vfunc3
 0x1000b258 func   ?vfunc3@CSave@@UAEXHHHHH@Z CSave::vfunc3
+0x1000b25d func   ?vfunc256@CBaseAnimating@@QAEXHPAM@Z CBaseAnimating::vfunc256
 0x1000b262 func   ?sub_100283c0@@YAHXZ sub_100283c0
 0x1000b267 func   ?sub_10026d90@@YAHXZ sub_10026d90
 0x1000b26c func   ?vfunc362@CWeaponMelee_SabbatLeaderAttack@@QAEHXZ CWeaponMelee_SabbatLeaderAttack::vfunc362
