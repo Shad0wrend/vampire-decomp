@@ -48236,6 +48236,32 @@ void sub_100d1d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1f70 size=0x54
+extern int (*g_109f3628)(const char *, ...);
+struct SPlayerCustomizeView { void sub_101771b0(int nFrames); };
+struct SCustomization { int m_unk0; char pad[0x80]; int m84; char pad88[0x2c]; int mb4; };
+// TARGET: sub_100d1f70
+void __cdecl sub_100d1f70(SPlayerCustomizeView *pPlayer, SCustomization *pCust)
+{
+    if (!pPlayer) {
+        g_109f3628("PlayerCustomization:  Couldn't get player!\n");
+        return;
+    }
+    if (!pCust) {
+        g_109f3628("PlayerCustomization:  NULL customization!\n");
+        return;
+    }
+    switch (pCust->m84) {
+    case 0:
+        pPlayer->sub_101771b0(pCust->mb4);
+        break;
+    default:
+        g_109f3628("PlayerCustomization:  Unknown customization type!\n");
+        break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1ff0 size=0x52
 #include "CBaseEntity.h"
 struct SOverlayView { char pad[0x224]; unsigned int flags; };
