@@ -19,7 +19,10 @@ class CDisciplineProjectileTraceFilter : public CTraceFilterSimple
 {
 public:
 	void *m_pIgnore;	// +0xc
+	void *m_pProjectile;	// +0x10: the pass entity dynamic_cast to CDisciplineProjectile
+	CDisciplineProjectileTraceFilter(void *pPassEnt, int collisionGroup, void *pIgnore);	// inline in the game (0x101da2f0): base ctor, m_pIgnore, __RTDynamicCast
 	virtual bool vfunc0(void *pHandleEntity, int contentsMask);	// ShouldHitEntity: the base's answer for the ignored entity, false for any other
+	virtual ~CDisciplineProjectileTraceFilter() {}	// slot 2 (its body is vfunc2 below)
 	void *vfunc2(char flags);	// slot 2: the scalar deleting destructor (vftable store, operator delete when bit 0, returns this)
 };
 
