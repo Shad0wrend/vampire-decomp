@@ -11567,6 +11567,7 @@
 0x10010c5d func   ?sub_10042140@UtlHash8@@QAEIPAX@Z UtlHash8::sub_10042140
 0x10010c62 func   ?sub_10031c70@@YA_NPAVCBaseEntity@@@Z sub_10031c70
 0x10010c67 func   ?vfunc29@CMultiplayRules@@UAEXPAX@Z CMultiplayRules::vfunc29
+0x10010c6c func   ?sub_101d4dc0@CClanInfoView@@QAEPADXZ CClanInfoView::sub_101d4dc0
 0x10010c71 func   ?vfunc104@CNPCMaker@@UAEXXZ CNPCMaker::vfunc104
 0x10010c76 func   ?vfunc461@CAI_BaseNPC@@UAEHXZ CAI_BaseNPC::vfunc461
 0x10010c7b func   ?vfunc5@CItemGGuyMagazine@@QAEPAV1@I@Z CItemGGuyMagazine::vfunc5

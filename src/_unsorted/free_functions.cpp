@@ -118231,6 +118231,39 @@ int CUnit101d4d80::sub_101d4d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d4dc0 size=0x42
+#include <stdio.h>
+#include <string.h>
+
+extern char g_10738f38[];
+extern char g_106b8540[];
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CClanInfoView
+{
+	int m_n0;
+	int m_n4;
+	const char *m_psz8;
+	int m_nC;
+	int m_n10;
+	int m_n14;
+	int m_n18;
+	const char *m_pszIcon;	// 0x1c
+	char *sub_101d4dc0();
+};
+
+char *CClanInfoView::sub_101d4dc0()
+{
+	if (m_pszIcon) {
+		sprintf(g_10738f38, "Interface/CharacterMaintenance/%s", STRINGR(m_pszIcon));
+		return g_10738f38;
+	}
+	strcpy(g_10738f38, "Interface/CharacterMaintenance/cm_clan_symbol_mercenary");
+	return g_10738f38;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4e30 size=0x2b
 #include "CBaseEntity.h"
 
