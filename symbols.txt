@@ -451,6 +451,7 @@
 0x100019e2 func   ?sub_100f7060@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@@Z CGlobalEntityList::sub_100f7060
 0x100019e7 func   ?sub_10101450@@YAHXZ sub_10101450
 0x100019ec func   ?sub_10190a00@CDynamicProp@@QAEXPAUinputdata_t@@@Z CDynamicProp::sub_10190a00
+0x100019f1 func   ?vfunc12@CAI_HumanoidNavigator@@QAEHH@Z CAI_HumanoidNavigator::vfunc12
 0x100019f6 func   ?vfunc5@CBaseAnimating@@QAEPAV1@I@Z CBaseAnimating::vfunc5
 0x100019fb func   ?sub_100be3d0@bf_read@@QAEMH@Z bf_read::sub_100be3d0
 0x10001a00 func   ?vfunc60@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc60
