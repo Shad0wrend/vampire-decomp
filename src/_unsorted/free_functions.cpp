@@ -172375,6 +172375,61 @@ void sub_102cc900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc9f0 size=0x107
+#include "CAI_DynamicLink.h"
+#include "CAI_Network.h"
+__declspec(dllimport) void DevMsg(const char *, ...);
+struct SAINode
+{
+	int m_pad0000;
+	int m_iID;	// 0x04
+	void sub_102f9470(int otherID);
+};
+struct SAINodeList
+{
+	int m_nNodes;
+	SAINode **m_pNodes;
+	SAINode *GetNode(int id);
+};
+extern CAI_NetworkOwner *g_10934088;
+extern CAI_DynamicLink *g_1092541c;
+extern SAINodeList *g_1093407c;
+extern int g_106c994c;
+inline SAINode *SAINodeList::GetNode(int id)
+{
+	if (id >= 0 && id < m_nNodes)
+		return m_pNodes[id];
+	g_106c994c++;
+	return 0;
+}
+inline CAI_Network *GetEditOps() { return g_10934088->m_pNetwork; }
+void sub_102cc9f0()
+{
+	if (!GetEditOps()->m_nNumNodes) {
+		DevMsg("ERROR: Trying initialize links with no WC ID table!\n");
+		return;
+	}
+	CAI_DynamicLink *pLink = g_1092541c;
+	while (pLink) {
+		int nSrcID = GetEditOps()->sub_102f6d10(pLink->m_nSrcID);
+		if (nSrcID == -1) {
+			DevMsg("ERROR: Dynamic link WC node %d not found\n", pLink->m_nSrcID);
+			nSrcID = 0;
+		}
+		int nDestID = GetEditOps()->sub_102f6d10(pLink->m_nDestID);
+		if (nDestID == -1) {
+			DevMsg("ERROR: Dynamic link WC node %d not found\n", pLink->m_nDestID);
+			nDestID = 0;
+		}
+		SAINode *pSrcNode = g_1093407c->GetNode(nSrcID);
+		SAINode *pDestNode = g_1093407c->GetNode(nDestID);
+		pSrcNode->sub_102f9470(pDestNode->m_iID);
+		pDestNode->sub_102f9470(pSrcNode->m_iID);
+		pLink = pLink->m_pNext;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ccb50 size=0x1e
 #include "CAI_DynamicLink.h"
 class CAI_DynamicLink;
