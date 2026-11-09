@@ -80037,6 +80037,49 @@ void CHolderPtr36c::sub_10150e50(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150e80 size=0xa0
+#include "CPhysicsCannister.h"
+extern char g_106b8540[];
+
+struct CCannisterJetObj {
+    virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2();
+    virtual void vfunc3(void *pObject);
+};
+struct CCannisterPhysEnv {
+    virtual void a00(); virtual void a01(); virtual void a02(); virtual void a03(); virtual void a04();
+    virtual void a05(); virtual void a06(); virtual void a07(); virtual void a08(); virtual void a09();
+    virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14();
+    virtual void a15(); virtual void a16(); virtual void a17(); virtual void a18(); virtual void a19();
+    virtual void a20(); virtual void a21(); virtual void a22(); virtual void a23(); virtual void a24();
+    virtual void a25(); virtual void a26(); virtual void a27(); virtual void a28(); virtual void a29();
+    virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33(); virtual void a34();
+    virtual void a35(); virtual void a36(); virtual void a37(); virtual void a38(); virtual void a39();
+    virtual void vfunc40(void *pObj);
+};
+extern CCannisterPhysEnv *g_10723940;
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void CPhysicsCannister::sub_10150e80()
+{
+    if (m_pJetSound) {
+        ((CCannisterJetObj *)m_pJetSound)->vfunc3(m_pPhysObj36c);
+        g_10723940->vfunc40(m_pJetSound);
+        m_pJetSound = 0;
+        *(int *)((char *)this + 0x17c) = 0;
+        m_thrustTime = 0;
+        m_bLeaking = 0;
+        if (m_pJet)
+            sub_101510c0();
+        if (m_pszSound19f8) {
+            const char *psz = STRINGR(m_pszSound19f8);
+            int edict = *(int *)((char *)this + 0x2e0);
+            enginesound->vfunc7(engine->vfunc35(edict), 3, psz);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150f50 size=0x117
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
