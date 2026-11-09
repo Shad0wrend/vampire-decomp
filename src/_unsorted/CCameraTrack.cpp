@@ -86,6 +86,22 @@ void CCameraTrack::vfunc46()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc250 size=0x6d
+#include "CCameraTrack.h"
+
+void sub_10014d58();
+
+void CCameraTrack::vfunc47()
+{
+	m_flStartTime = (float)engine->vfunc119(0);
+	m_hHandle = this;
+	m_bStarted = 1;
+	m_Output480.sub_100cd660(this, this, 0.0f);
+	sub_100ac610((float)engine->vfunc119(0), 0);
+	sub_100ac4e0((int)sub_10014d58, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc2e0 size=0x21
 #include "CCameraTrack.h"
 int CCameraTrack::vfunc50(int a0)
