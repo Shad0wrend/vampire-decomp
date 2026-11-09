@@ -44493,6 +44493,89 @@ bool sub_100c4a40(const Ray_t *pRay, StudioHdr *pStudioHdr, StudioHitboxSet *set
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4d50 size=0x240
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "StudioHdr.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "matrix3x4_t.h"
+#include "ScopeTrace.h"
+
+bool sub_100c4a40(const Ray_t *pRay, StudioHdr *pStudioHdr, StudioHitboxSet *pSet, matrix3x4_t **pBoneToWorld, unsigned int boneMask, CGameTrace *pTrace);
+int sub_100c5020(const Ray_t *pRay, const StudioHitbox *pBox, const matrix3x4_t *pBoneToWorld, CGameTrace *pTrace);
+void sub_10139500(const float *start, float scale, const float *direction, float *dest);
+
+inline float DotProductF(const float *a, const float *b)
+{
+	return a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+}
+
+// TARGET: sub_100c4d50
+bool sub_100c4d50(const Ray_t *pRay, StudioHdr *pStudioHdr, StudioHitboxSet *pSet, matrix3x4_t **pBoneToWorld, unsigned int boneMask, CGameTrace *pTrace)
+{
+	ScopeTrace trace("bone_setup.cpp TraceToStudio()", g_106b8540);
+
+	if (!pRay->m_IsRay)
+		return sub_100c4a40(pRay, pStudioHdr, pSet, pBoneToWorld, boneMask, pTrace);
+
+	pTrace->m_fraction = 1.0f;
+	pTrace->m_startsolid = false;
+
+	int hitbox = -1;
+	int hitside = -1;
+
+	for (int i = 0; i < pSet->m_nHitboxes; i++)
+	{
+		StudioHitbox *pBox = pSet->Hitbox(i);
+		StudioBone *pBone = pStudioHdr->Bone(pBox->m_iBone);
+		if ((pBone->m_nFlags9c & boneMask) == 0)
+			continue;
+		matrix3x4_t *pMatrix = pBoneToWorld[pBox->m_iBone];
+		int side = sub_100c5020(pRay, pBox, pMatrix, pTrace);
+		if (side >= 0)
+		{
+			hitbox = i;
+			hitside = side;
+		}
+	}
+
+	if (hitbox >= 0)
+	{
+		StudioHitbox *pBox = pSet->Hitbox(hitbox);
+		sub_10139500(pRay->m_Start, pTrace->m_fraction, pRay->m_Delta, pTrace->m_endpos);
+		pTrace->m_hitgroup = pSet->Hitbox(hitbox)->m_iGroup;
+		pTrace->m_hitbox = hitbox;
+		pTrace->m_contents = pStudioHdr->Bone(pBox->m_iBone)->m_nFlags9c | 0x40000000;
+		pTrace->m_physicsbone = pStudioHdr->Bone(pBox->m_iBone)->m_nPhysicsBone94;
+		const matrix3x4_t &matrix = *pBoneToWorld[pBox->m_iBone];
+		if (hitside >= 3)
+		{
+			hitside -= 3;
+			pTrace->m_planeNormal[0] = matrix.m_flMatVal[0][hitside];
+			pTrace->m_planeNormal[1] = matrix.m_flMatVal[1][hitside];
+			pTrace->m_planeNormal[2] = matrix.m_flMatVal[2][hitside];
+		}
+		else
+		{
+			pTrace->m_planeNormal[0] = -matrix.m_flMatVal[0][hitside];
+			pTrace->m_planeNormal[1] = -matrix.m_flMatVal[1][hitside];
+			pTrace->m_planeNormal[2] = -matrix.m_flMatVal[2][hitside];
+		}
+		pTrace->m_planeDist = DotProductF(pTrace->m_endpos, pTrace->m_planeNormal);
+		pTrace->m_planeType = 3;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c5400 size=0x186
 struct StudioHdr
 {
