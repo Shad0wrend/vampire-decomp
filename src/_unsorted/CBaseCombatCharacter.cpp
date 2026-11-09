@@ -1231,6 +1231,159 @@ void CBaseCombatCharacter::vfunc180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10327a90 size=0x2ce
+#include "TestBit.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "CStatDefault3List.h"
+#include "CUnknown101d4f20.h"
+#include "CEntityVSlots.h"
+
+#define V1(p) virtual void p();
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct CCorpseSlots
+{
+	V100(e0) V100(e1) V100(e2) V10(f0) V10(f1) V10(f2) V10(f3) V10(f4) V10(f5) V10(f6) V10(f7) V10(f8) V1(g0) V1(g1) V1(g2) V1(g3) V1(g4) V1(g5)
+	virtual char vfunc396();
+	virtual char vfunc397();
+};
+
+struct CCorpsePhys
+{
+	V10(a0) V10(a1) V10(a2) V1(b0) V1(b1) V1(b2) V1(b3) V1(b4) V1(b5) V1(b6) V1(b7) V1(b8)
+	virtual void vfunc39(float *pPos, float *pAng);
+	virtual void vfunc40(float *pPos, float *pAng);
+};
+
+struct CCorpseProp2
+{
+	char m_pad0[0x19c];
+	unsigned int m_flags19c;
+	char m_pad1[0x36c - 0x1a0];
+	CCorpsePhys *m_pPhys36c;
+	char m_pad2[0x3d4 - 0x370];
+	float m_pos[3];
+	char m_pad3[0x774 - 0x3e0];
+	float m_fl774;
+	void sub_1018f690(int a);
+	void sub_1018f700(int a);
+	void sub_100b2f50(float *p);
+};
+
+struct CCorpseNameView
+{
+	CUnknown101d4f20_Value *sub_101d4f20(CUnknown101d4f20_Value *out);
+};
+
+struct CCorpseGlobal
+{
+	virtual void v0();
+	virtual char v1();
+	char m_pad[0x28 - 4];
+	float m_fl28;
+};
+
+extern CCorpseGlobal *g_109371c4;
+extern CStatDefault3List g_10738d10;
+extern float g_104454c4;
+extern "C" __declspec(dllimport) int RandomInt(int lo, int hi);
+extern "C" __declspec(dllimport) float RandomFloat(float lo, float hi);
+void sub_10129dc0(CBaseCombatCharacter *p);
+void sub_1012a6e0(CBaseCombatCharacter *p, int a, int b);
+void *sub_100a9ab0(const char *pszClass, const float *pOrigin, const float *pAngles, int a);
+
+// TARGET: CBaseCombatCharacter::vfunc394
+char CBaseCombatCharacter::vfunc394()
+{
+	CBaseCombatCharacter *pChar = this;
+	ScopeTrace scope("CBaseCombatCharacter::CorpseGib", pChar ? (*(char **)((char *)pChar + 0x26c) ? *(char **)((char *)pChar + 0x26c) : g_106b8540) : g_105387dc);
+	char bRet = 0;
+	CCorpseSlots *pThis = (CCorpseSlots *)this;
+	CEntityVSlots *pVS = (CEntityVSlots *)this;
+	if (pThis->vfunc396())
+	{
+		sub_10129dc0(this);
+		CEntityVSlots *pProp = (CEntityVSlots *)sub_100a9ab0("prop_physics", (const float *)pVS->slot217(), (const float *)pVS->slot219(), 0);
+		CCorpseProp2 *pProp2 = (CCorpseProp2 *)pProp;
+		int nHull = sub_10337860();
+		CUnknown101d4f20_Value tmp;
+		const char *pszName = (const char *)((CCorpseNameView *)g_10738d10.sub_101d5e80(nHull))->sub_101d4f20(&tmp)->m_value;
+		if (!pszName)
+			pszName = g_106b8540;
+		pProp->slot105(pszName);
+		pProp2->m_flags19c |= 0xa0;
+		if (g_10738d10.sub_101d5e80(nHull)->m_8c[5])
+			pProp2->sub_1018f690(1);
+		else
+			pProp2->sub_1018f690(0);
+		pProp2->sub_1018f700(1);
+		float pos[3];
+		float ang[3];
+		CCorpsePhys *pPhys = *(CCorpsePhys **)((char *)this + 0x36c);
+		if (pPhys)
+			pPhys->vfunc40(pos, ang);
+		else
+		{
+			if (TestBit(m_flags268, 12))
+				sub_100b1d10();
+			pos[0] = *(float *)((char *)this + 0x3bc);
+			pos[1] = *(float *)((char *)this + 0x3c0);
+			pos[2] = *(float *)((char *)this + 0x3c4);
+			ang[0] = *(float *)((char *)this + 0x3d0);
+			ang[1] = *(float *)((char *)this + 0x3c8);
+			ang[2] = *(float *)((char *)this + 0x3cc);
+		}
+		if (pProp2->m_pPhys36c)
+			pPhys->vfunc39(pos, ang);
+		else
+		{
+			pProp2->m_pos[0] = pos[0];
+			pProp2->m_pos[1] = pos[1];
+			pProp2->m_pos[2] = pos[2];
+			float tmpAng[3];
+			tmpAng[0] = ang[1];
+			tmpAng[1] = ang[2];
+			tmpAng[2] = ang[0];
+			pProp2->sub_100b2f50(tmpAng);
+		}
+		pProp2->m_fl774 = g_109371c4->v1() ? g_104454c4 : g_109371c4->m_fl28;
+		pProp->slot266((int)this);
+		goto gibbed;
+	}
+	if (!pThis->vfunc397())
+		goto done;
+	sub_1012a6e0(this, 4, 1);
+gibbed:
+	bRet = 1;
+	if (sub_10337e40())
+	{
+		if (RandomInt(1, 20) > 19)
+		{
+			float yaw = RandomFloat(0, 359.0f);
+			float angles[3];
+			angles[0] = 0;
+			angles[1] = 0;
+			angles[2] = yaw;
+			CEntityVSlots *pArm = (CEntityVSlots *)sub_100a9ab0("item_w_severed_arm", (const float *)&pVS->slot192(), angles, 0);
+			if (pArm)
+				pArm->slot103();
+		}
+	}
+done:
+	return bRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10327e20 size=0x77
 #include "CBaseCombatCharacter.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
