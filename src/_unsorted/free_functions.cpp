@@ -56018,6 +56018,88 @@ bool __stdcall sub_100e84e0(int flags, char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e8520 size=0x373
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CDialog.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "Ent.h"
+#include "Tier1.h"
+
+extern "C" char *strcpy(char *, const char *);
+extern "C" unsigned int strlen(const char *);
+char sub_100df030(void *p);
+char sub_100df120(void *p);
+char sub_100df1b0(void *p);
+char sub_100df240(void *p);
+
+struct CUnknown100e1580View
+{
+	int sub_100e1580(CUnknown100e1580View *pLine);
+};
+
+// TARGET: CDialog::sub_100e8520
+int CDialog::sub_100e8520(int nKey, int nSlot, char *pPacket)
+{
+	int r = 1;
+	ScopeTrace st("CDialog::process_pc_line", g_106b8540);
+	CDialogEntry_t entry;
+	entry.m_data[0] = nKey;
+	if (!sub_100e5690(&entry))
+		return 1;
+	CBaseEntity *pNPC = (CBaseEntity *)EHandle_Get(m_hNPC);
+	m_aDeps2848[nSlot].sub_100e8fc0((int)this, (int)pNPC, (char *)entry.m_data[4], (char *)entry.m_data[5],
+		(unsigned int *)(pPacket + 0x2804) + nSlot, (int *)(pPacket + 0x2814) + nSlot);
+	if (sub_100df120(&entry) && !sub_100e84e0(0x30, pPacket)
+		&& m_aDeps2848[nSlot].sub_100e94e0((CBaseEntity *)EHandle_Get(m_hNPC), (CBaseEntity *)EHandle_Get(m_hSpeaker)))
+	{
+		if (sub_100e1880(m_nChoices))
+		{
+			((unsigned int *)(pPacket + 0x2804))[nSlot] |= 0x10;
+			r = -1;
+			g_109f3890((char *)this + 0x31ea, (const char *)m_aDeps2848[nSlot].m_a11c, 0x100);
+		}
+		else
+		{
+			m_nResponses = 1;
+			*(int *)(pPacket + 0x2804) = 0;
+			*(int *)(pPacket + 0x2814) = -1;
+			r = 1;
+		}
+	}
+	if (sub_100df1b0(&entry))
+	{
+		if (!sub_100e84e0(0x30, pPacket)
+			&& m_aDeps2848[nSlot].sub_100e94e0((CBaseEntity *)EHandle_Get(m_hNPC), (CBaseEntity *)EHandle_Get(m_hSpeaker)))
+		{
+			r = 1;
+			((unsigned int *)(pPacket + 0x2804))[nSlot] |= 0x20;
+		}
+	}
+	else if (sub_100df240(&entry))
+	{
+		r = 0;
+	}
+	strcpy(pPacket + nSlot * 0x800 + 0x804, (const char *)m_aDeps2848[nSlot].sub_100ea5e0());
+	char *pEnd = pPacket + nSlot * 0x800 + strlen(pPacket + nSlot * 0x800 + 0x804) + 0x804;
+	if (((CUnknown100e1580View *)this)->sub_100e1580((CUnknown100e1580View *)&entry))
+		sub_100e7d10(pEnd, (const char *)entry.m_data[6 + sub_100e65d0()]);
+	else if (!((Ent *)EHandle_Get(m_hNPC))->sub_10336920() && sub_100df030(&entry))
+		sub_100e7d10(pEnd, (const char *)entry.m_data[2]);
+	else
+		sub_100e7d10(pEnd, (const char *)entry.m_data[1]);
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e8980 size=0x19c
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
