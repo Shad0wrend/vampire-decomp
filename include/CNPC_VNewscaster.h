@@ -24,6 +24,8 @@ struct CNewscasterList	// a CUtlVector<CNewscasterEntry>
 	CNewscasterEntry *m_pElements;
 
 	CNewscasterEntry &Element(int i) { return m_pMemory[i]; }
+	CNewscasterEntry *Base() { return m_pMemory; }
+	CNewscasterEntry &operator[](int i) { return Base()[i]; }
 
 	void AddToTail(const CNewscasterEntry &src)	// CUtlVector::InsertBefore(size, src)
 	{
