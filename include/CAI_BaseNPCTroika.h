@@ -56,6 +56,7 @@ public:
 	virtual bool vfunc466();	// slot 466 override: false when the current task's int is 0xb9; true when the byte at +0x65fa; else CAI_BaseNPC::vfunc466	// slot 81: an int getter returning 0 (CAI_BaseNPC declares this slot as int since 0x102c5890 answers in eax)
 	virtual int vfunc126(CSave *pSave);
 	int sub_102b8980();
+	int sub_102b7690(char a1, char a2, char a3, char a4);
 	int sub_102b8d20(int a, int b);
 	virtual int vfunc127(CRestore *pRestore);	// "CAI_BaseNPCTroika::Restore": CAI_BaseNPC::vfunc127, a flag byte (slot 17 of the restore) that gates two ints (slot 15), then the float fix-ups of the fields at +0x607c .. +0x657c and the nine 0x2c byte timers at +0x60b0 .. +0x6210
 	virtual void vfunc113();	// slot 113 override: CBaseEntity::vfunc113, then when slot 138 answers non-zero applies the disposition (sub_102c0f70(+0x6558 or "", 1))
