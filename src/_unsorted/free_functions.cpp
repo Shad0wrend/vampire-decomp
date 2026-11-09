@@ -141382,6 +141382,46 @@ void CTriggerDisciplineContext::sub_10210b00(void *pInputData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10210b40 size=0x5e
+struct Arg
+{
+	int a, b, c, d, e, f;
+	int type;
+	int Int() const { return (type == 4) ? c : 0; }
+};
+
+struct Obj
+{
+	char pad[0x5a0];
+	int m_n5a0;
+};
+
+struct Res
+{
+	void sub_1017e6f0(int);
+};
+
+Res *sub_101cd9e0(int);
+
+// TARGET: sub_10210b40
+void __fastcall sub_10210b40(Obj *p, int, Arg *a)
+{
+	int v = a->Int();
+	if (v > 5)
+		return;
+	Res *r = sub_101cd9e0(1);
+	if (v == -1 && p->m_n5a0 != -1)
+	{
+		r->sub_1017e6f0(0);
+		p->m_n5a0 = v;
+		return;
+	}
+	if (p->m_n5a0 != v)
+		r->sub_1017e6f0(v);
+	p->m_n5a0 = v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210bc0 size=0x9
 void __cdecl sub_101cd9e0(int a);
 void sub_10210bc0()
