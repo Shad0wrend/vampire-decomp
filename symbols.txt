@@ -5435,6 +5435,7 @@
 0x1000876f func   ?vfunc580@CNPC_VVampireBoss@@QAEHXZ CNPC_VVampireBoss::vfunc580
 0x10008774 func   ?sub_102f3270@@YAHPAUCBitVecView@@PBMH@Z sub_102f3270
 0x1000877e func   ?sub_10396000@CUnknown10396000@@QAEHH@Z CUnknown10396000::sub_10396000
+0x10008783 func   ?sub_10307ac0@SReq@@QAE_NPAVCAI_NodeGraph@@@Z SReq::sub_10307ac0
 0x10008788 func   _item_g_drugs_perscription_bottle item_g_drugs_perscription_bottle
 0x1000878d func   ?sub_103d45c0@CNPC_VWerewolf@@QAEXPAUCNPC_VWerewolfHint66b0@@@Z CNPC_VWerewolf::sub_103d45c0
 0x10008792 func   ??_GCPASAttenuationFilter@@UAEPAXI@Z ??_GCPASAttenuationFilter@@UAEPAXI@Z

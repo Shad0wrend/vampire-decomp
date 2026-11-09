@@ -193540,6 +193540,29 @@ int CUnknown10307aa0::sub_10307aa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10307ac0 size=0x55
+#include "CAI_NodeGraph.h"
+struct SReq {
+    int m_pad[3];
+    int m_nCount;
+    int m_pad2;
+    int m_aIdx[1];
+    bool sub_10307ac0(CAI_NodeGraph *pGraph);
+};
+bool SReq::sub_10307ac0(CAI_NodeGraph *pGraph)
+{
+    if (!pGraph)
+        return false;
+    for (int i = 0; i < m_nCount; i++) {
+        if (m_aIdx[i] < 0)
+            return false;
+        if (!pGraph->NodeAt(m_aIdx[i]))
+            return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307b40 size=0x9
 struct CUnknown10307b40 { int a; void sub_10307b40(int v); };
 // TARGET: CUnknown10307b40::sub_10307b40
