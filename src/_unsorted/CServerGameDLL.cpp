@@ -597,6 +597,128 @@ void CServerGameDLL::vfunc21(void *pSaveData, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011b590 size=0x260
+#include "CServerGameDLL.h"
+#include "CVProfile.h"
+#include "CRestore.h"
+
+struct IBlockHandler
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void Restore(CRestore *pRestore, int a, int b);
+	virtual void PostRestore();
+};
+
+IBlockHandler *sub_100cffa0();
+IBlockHandler *sub_10045700();
+IBlockHandler *sub_1030c390();
+IBlockHandler *sub_1019b360();
+int sub_101a3c40(void *pSaveData, __int64 ab);
+
+struct CRestoreFrameVec
+{
+	int *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	int *m_pElements;
+};
+void __fastcall sub_100047aa(CRestoreFrameVec *p);	// CUtlVector<int>::RemoveAll
+void __fastcall sub_10007275(CRestoreFrameVec *p);	// CUtlMemory<int>::Purge
+
+// A CRestore on the stack whose vector teardown is the out-of-line RemoveAll / Purge form.
+struct CRestoreFrame
+{
+	void *m_vptr;
+	CRestoreFrameVec m_vec;
+	void *m_pData;
+	char *m_pData2;
+	int m_field20;
+	bool m_bField24;
+
+	~CRestoreFrame()
+	{
+		sub_100047aa(&m_vec);
+		sub_10007275(&m_vec);
+		m_vec.m_pElements = m_vec.m_pMemory;
+		if (m_vec.m_growSize != -1 && m_vec.m_pMemory)
+			g_109f3624(m_vec.m_pMemory);
+	}
+};
+
+struct CCycleCountX
+{
+	unsigned __int64 m_Int64;
+	CCycleCountX() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+inline void CycleEnd(CUnknownCycle100335e0 *p)
+{
+	CCycleCountX cnt;
+	cnt.Sample();
+	p->m_Int64 = cnt.m_Int64 - p->m_Int64;
+}
+
+inline bool NodeExitScope(CVProfNode *n)
+{
+	if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+		CUnknownCycle100335e0 *pc = &n->m_CurFrameTime;
+		CycleEnd(pc);
+		n->m_TotalTime += pc->m_Int64;
+		g_109f3648->PopGroup();
+	}
+	return n->m_nRecursions == 0;
+}
+
+// TARGET: CServerGameDLL::vfunc22
+int CServerGameDLL::vfunc22(void *pSaveData, __int64 ab)
+{
+	CVProfile *prof = g_109f3648;
+	if (prof->m_enabled || !prof->m_bAtRoot) {
+		if (prof->m_pCurNode->m_pszName != "CServerGameDLL::CreateEntityTransitionList")
+			prof->m_pCurNode = prof->m_pCurNode->GetSubNode("CServerGameDLL::CreateEntityTransitionList", 0, "Unaccounted");
+		CVProfNode *node = prof->m_pCurNode;
+		++node->m_nCurFrameCalls;
+		if (node->m_nRecursions++ == 0) {
+			((CCycleCountX *)&node->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroupInlined(node->m_nBudgetGroupID);
+		}
+		prof->m_bAtRoot = false;
+	}
+	int result = sub_101a3c40(pSaveData, ab);
+	if (result) {
+		CRestoreFrame frame;
+		CRestore *restore = (CRestore *)&frame;
+		restore->CRestore::CRestore(pSaveData);
+		sub_100cffa0()->Restore(restore, 0, 0);
+		sub_10045700()->Restore(restore, 0, 0);
+		sub_1030c390()->Restore(restore, 0, 0);
+		sub_1019b360()->Restore(restore, 0, 0);
+	}
+	sub_100cffa0()->PostRestore();
+	sub_10045700()->PostRestore();
+	sub_1030c390()->PostRestore();
+	sub_1019b360()->PostRestore();
+	prof = g_109f3648;
+	if (!prof->m_bAtRoot || prof->m_enabled) {
+		if (NodeExitScope(prof->m_pCurNode))
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011b890 size=0xb
 #include "CServerGameDLL.h"
 struct IUnk10592db0 {
