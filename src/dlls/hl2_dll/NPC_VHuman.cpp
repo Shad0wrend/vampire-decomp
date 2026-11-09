@@ -163,6 +163,98 @@ int CNPC_VHuman::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103851e0 size=0x26f
+#include "CNPC_VHuman.h"
+struct CVH461View { char m_pad[0x65f6]; char m_b65f6; };
+struct CVH461Obj { virtual bool vfunc0(); virtual bool vfunc1(); char m_pad[0x28]; int m_n2c; };
+struct CVH461Dev { virtual void vfunc0(); virtual void vfunc1(); };
+extern CVH461Obj *g_1092447c;
+extern CVH461Dev *g_10924a6c;
+extern void (__cdecl *g_109f3658)(int, const char *, ...);
+
+#define FILE_ "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VHuman.cpp"
+
+// TARGET: CNPC_VHuman::sub_103851e0
+int CNPC_VHuman::sub_103851e0()
+{
+	m_n1b38 = 0x14;
+	switch (m_n5cc0) {
+	case 0xb:
+		if (sub_10269d30(0x54)) {
+			m_n5cc4 = 2;
+			int r = *(volatile int *)&m_n5cc4;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x3ec;
+			return r;
+		}
+		if (sub_10269d30(0x46)) {
+			m_n5cc4 = 2;
+			int r = *(volatile int *)&m_n5cc4;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x3f1;
+			return r;
+		}
+		if ((char)((char (__fastcall *)(CNPC_VHuman *))(*(void ***)this)[462])(this)) {
+			m_n5cc4 = 1;
+			int r = *(volatile int *)&m_n5cc4;
+			m_pszFile1b3c = FILE_;
+			m_nLine1b40 = 0x3f6;
+			return r;
+		}
+		break;
+	case 2:
+		if (m_flags5d8c & 2) {
+			if (sub_10014df8(0x46) || sub_10014df8(0x54)) {
+				m_flags5d8c &= ~2;
+				g_10924a6c->vfunc1();
+				sub_100041b0(0x5d);
+			}
+		}
+		if (!vfunc167())
+			goto noenemy;
+		else if (sub_10269d30(0x47)) {
+noenemy:
+			if (sub_10014df8(0x46)) {
+				m_pszFile1b3c = FILE_;
+				if (((CVH461View *)this)->m_b65f6) {
+					m_nLine1b40 = 0x3a3;
+					m_n5cc4 = 1;
+				} else {
+					m_nLine1b40 = 0x3a7;
+					m_n5cc4 = 3;
+				}
+			} else if (m_h647c.Get()) {
+				m_pszFile1b3c = FILE_;
+				if (((CVH461View *)this)->m_b65f6) {
+					m_nLine1b40 = 0x3b0;
+					m_n5cc4 = 1;
+				} else {
+					m_nLine1b40 = 0x3b4;
+					m_n5cc4 = 3;
+				}
+			} else if (!g_1092447c->vfunc1() && g_1092447c->m_n2c) {
+				m_pszFile1b3c = FILE_;
+				m_nLine1b40 = 0x3bc;
+				m_n5cc4 = 0xb;
+			} else {
+				m_pszFile1b3c = FILE_;
+				if (((CVH461View *)this)->m_b65f6) {
+					m_nLine1b40 = 0x3c2;
+					m_n5cc4 = 1;
+				} else {
+					m_nLine1b40 = 0x3c6;
+					m_n5cc4 = 3;
+				}
+			}
+			g_109f3658(2, "***Combat state with no enemy!\n");
+			return m_n5cc4;
+		}
+		break;
+	}
+	return sub_102ad660();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10385e40 size=0x5a9
 #include "CNPC_VHuman.h"
 #include "CUnknown10924a1c.h"
