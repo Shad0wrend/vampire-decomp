@@ -66478,6 +66478,38 @@ void CFire::sub_1010b5c0(float flHeat, char bInstant)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b7d0 size=0x4a
+#include "ehandle.h"
+#include "CBaseEntity.h"
+#include "CFire.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##a) S10(p##b) S10(p##c) S10(p##d) S10(p##e) S10(p##f) S10(p##g) S10(p##h) S10(p##i) S10(p##j)
+
+struct CSmokeSlotView
+{
+	S100(qa) S100(qb)
+	S10(qc) S10(qd) S10(qe) S10(qf)
+	virtual void s240(); virtual void s241();
+	virtual void vfunc242(float flSize, float flTime);
+};
+
+struct CFireSmokeView
+{
+	char m_pad0000[0x450];
+	CHandle<CSmokeSlotView> m_hSmoke;
+};
+
+// TARGET: CFire::sub_1010b7d0
+void CFire::sub_1010b7d0(float flSize, float flTime)
+{
+	CSmokeSlotView *pSmoke = ((CFireSmokeView *)this)->m_hSmoke.Get();
+	if (pSmoke)
+		pSmoke->vfunc242(flSize, flTime);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b840 size=0x133
 #include "CBaseEntity.h"
 #include "CFire.h"
