@@ -73802,6 +73802,25 @@ int sub_10137c70(Vector *a, Vector *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137dd0 size=0x46
+#include "matrix3x4_t.h"
+struct RadianEulerV
+{
+	float x, y, z;
+	inline void Init(float ix, float iy, float iz) { x = ix; y = iy; z = iz; }
+};
+void sub_10138720(int *pMatrix, int nCol, int *pOut);
+void sub_10137ed0(const matrix3x4_t &matrix, float *angles);
+#define DEG2RAD(x) ((float)(x) * (float)(3.14159265358979323846f / 180.f))
+// TARGET: sub_10137dd0
+void sub_10137dd0(matrix3x4_t &matrix, RadianEulerV &angles, int *pOrigin)
+{
+	sub_10138720((int *)&matrix, 3, pOrigin);
+	sub_10137ed0(matrix, &angles.x);
+	angles.Init(DEG2RAD(angles.z), DEG2RAD(angles.x), DEG2RAD(angles.y));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137e40 size=0x61
 struct RadianEuler10137e40
 {

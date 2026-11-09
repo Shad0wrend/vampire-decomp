@@ -14657,6 +14657,7 @@
 0x1001561d func   ?vfunc67@CBaseEntity@@UAEXXZ CBaseEntity::vfunc67
 0x10015622 func   ?sub_10232010@@YAPAVCVGuiScreen@@PBDPAVCBaseEntity@@H@Z sub_10232010
 0x10015631 func   ?vfunc158@CBaseProp@@QAE_NXZ CBaseProp::vfunc158
+0x1001563b func   ?sub_10137dd0@@YAXAAUmatrix3x4_t@@AAURadianEulerV@@PAH@Z sub_10137dd0
 0x10015640 func   ?sub_10166500@CBasePlayer@@QAEXXZ CBasePlayer::sub_10166500
 0x10015645 func   ?sub_10031520@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10031520
 0x1001564a func   ?vfunc363@CWeaponLockpick@@UAEHXZ CWeaponLockpick::vfunc363
