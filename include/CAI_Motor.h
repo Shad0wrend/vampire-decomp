@@ -85,7 +85,7 @@ public:
 	void sub_102e1c10(float flIdealYaw, float flYawSpeed);	// "CAI_Motor::SetIdealYawAndUpdate" (stub 0x10014b8c): sets the ideal yaw (flipped when the byte at +0x28 is set, limited by the turn rate unless the largest change is 180), the yaw speed (+0x38, -1 keeps it; -2 asks the movement sink) and updates the yaw
 	float sub_102e12c0();	// CAI_Component helper (stub 0x10008bfc): a scale factor, returned in st(0)
 	float sub_102e12e0();	// CAI_Component helper (stub 0x10006721): the owner's value at slot 249 (+0x3e4), returned in st(0)
-	void sub_102e1560(int a, float flScale, float flValue, int b, int c);	// stub 0x10012116, called directly by slot 19 with five stack arguments
+	int sub_102e1560(int a, float flScale, float flValue, int b, int c);	// stub 0x10012116, called directly by slot 19 with five stack arguments
 	void sub_102e2690(Vector *pVec);	// stub 0x10011a09
 	void sub_102e26b0(Vector *pVec);	// stub 0x10003f7b, called directly by slot 7 (fills the facing direction)
 	float sub_102e27d0(const char *a, float b);	// forwards (a, b, 0) to slot 345 (+0x564) of the owning NPC (m_pOuter) and returns its float
