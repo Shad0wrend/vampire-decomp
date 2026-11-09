@@ -178,6 +178,68 @@ void CNPC_VWerewolf::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103caef0 size=0x1f2
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include <math.h>
+extern char g_106b8540[];
+extern char g_106618d8[];
+unsigned int sub_102c6330(int a);
+
+#define F(T, off) (*(T *)((char *)this + off))
+
+struct CObfVal
+{
+	bool m_a;
+	bool m_b;
+	unsigned int m_enc;
+	CObfVal &operator=(const CObfVal &o) { m_b = o.m_b; m_enc = o.m_enc; m_a = o.m_a; return *this; }
+};
+
+// TARGET: CNPC_VWerewolf::vfunc420
+void CNPC_VWerewolf::vfunc420()
+{
+	ScopeTrace trace("CNPC_VWerewolf::NPCInit", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	F(const char *, 0x10e4) = g_106618d8[0] ? g_106618d8 : 0;
+	sub_10366270();
+	F(const char *, 0x10e4) = g_106618d8[0] ? g_106618d8 : 0;
+	sub_10334b10();
+	vfunc304();
+	sub_10332aa0(1, 1, 10);
+	F(int, 0x1fc) = 1;
+	F(int, 0x641c) = 0;
+	F(int, 0x6348) = 999999;
+	F(int, 0x634c) = 999999;
+	F(int, 0x6350) = 999999;
+	F(int, 0x6354) = 999999;
+	F(int, 0x6358) = 999999;
+	CObfVal t;
+	unsigned int r = sub_102c6330(0);
+	t.m_enc = (((r & 0x68d8635) ^ 0xae8746f) + 0xffa91d8 & 0x197279ca) ^ r ^ 0xa641cacd;
+	F(CObfVal, 0x6360) = t;
+	F(int, 0x6368) = 0;
+	F(float, 0x63b4) = 4096.0f;
+	F(float, 0x63bc) = 3.0f;
+	F(int, 0x5de4) = 0x4e6e6b28;
+	F(float, 0x1574) = (float)cos(2.0943951023931953);
+	sub_1026a2a0(6000.0f);
+	sub_1028fb70();
+	F(int, 0x6338) = 3;
+	F(int, 0x633c) = 3;
+	sub_1026dc00(1);
+	sub_1026dc00(0x200000);
+	sub_1026dc00(0x8000);
+	sub_1026dc00(0x10000);
+	F(int, 0x5ddc) = 0;
+	F(int, 0x66b0) = 0;
+	F(int, 0x66b4) = 0;
+	F(int, 0x66bc) = 0;
+	F(int, 0x66c0) = 0;
+	F(int, 0x66c4) = 0;
+	sub_103cac20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cb170 size=0x6f
 #include "CNPC_VWerewolf.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
