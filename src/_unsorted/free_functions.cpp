@@ -214161,6 +214161,70 @@ bool CNPC_VAsianVampire::sub_10362670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10362730 size=0x17f
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include <math.h>
+
+struct StandOnView : CEntityVSlots
+{
+    char pad0004[0x270 - 4];
+};
+
+struct StandOnNpcView : CEntityVSlots
+{
+    char pad0004[0x270 - 4];
+    char m_collision270[1];
+    char pad0271[0x628c - 0x271];
+    unsigned int m_hTarget628c;
+};
+
+// TARGET: sub_10362730
+bool __fastcall sub_10362730(StandOnNpcView *pThis)
+{
+    ScopeTrace trace("CNPC_VAsianVampire::StandingOnPlayer", g_106b8540);
+    StandOnView *pPlayer = (StandOnView *)g_10566458->sub_100290c0(&pThis->m_hTarget628c);
+    if (pPlayer)
+    {
+        Vector vecDelta = *pPlayer->slot217() - *pThis->slot217();
+        ICollideable *pPlayerCol = (ICollideable *)((char *)pPlayer + 0x270);
+        float *pPlayerMins = pPlayerCol->vfunc1();
+        float *pPlayerMaxs = pPlayerCol->vfunc2();
+        float px = pPlayerMaxs[0] - pPlayerMins[0];
+        float py = pPlayerMaxs[1] - pPlayerMins[1];
+        ICollideable *pMyCol = (ICollideable *)((char *)pThis + 0x270);
+        float *pMyMins = pMyCol->vfunc1();
+        float *pMyMaxs = pMyCol->vfunc2();
+        float mx = pMyMaxs[0] - pMyMins[0];
+        float my = pMyMaxs[1] - pMyMins[1];
+        float flDist = vecDelta.Length2D();
+        mx = sqrt(my * my + mx * mx);
+        float flRadius = mx * 0.5f;
+        px = sqrt(py * py + px * px);
+        flRadius += px * 0.5f;
+        if (flDist < flRadius)
+            return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103629d0 size=0x13e
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
