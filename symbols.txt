@@ -1097,6 +1097,7 @@
 0x100027b6 func   ?vfunc71@CPropButton@@UAEXXZ CPropButton::vfunc71
 0x100027bb func   ?sub_100b3840@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3840
 0x100027c0 func   ?vfunc82@CGameSign@@UAEPAUdatamap_t@@XZ CGameSign::vfunc82
+0x100027c5 func   ?vfunc1@CBaseRopePhysics@@UAEXPAUCRopeNode@@H@Z CBaseRopePhysics::vfunc1
 0x100027ca func   ?sub_10072e40@CUnknown10072e40@@QAEPADXZ CUnknown10072e40::sub_10072e40
 0x100027cf func   ?sub_1021dbd0@CPropKeypad@@QAEXXZ CPropKeypad::sub_1021dbd0
 0x100027d4 func   ?sub_100eec70@CBaseDoor@@QAEDPAX@Z CBaseDoor::sub_100eec70
