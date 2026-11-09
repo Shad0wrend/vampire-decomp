@@ -7,7 +7,8 @@
 struct CUnknown102ffbd0Item	// an entry of the step list
 {
 	char m_pad0000[0x6c];
-	int m_n6c;	// 0x6c
+	float m_fl6c;	// 0x6c: the yaw
+	float GetYaw() { return m_fl6c; }
 	int m_nType;	// 0x70: 3 -> mode 2, 4 -> mode 3, else 0
 	Vector *sub_102fb0d0(Vector *pOut, int a);	// stub 0x1000d99a: writes a position into pOut and returns it
 };
@@ -33,7 +34,7 @@ struct CUnknown102ffbd0Outer
 struct CUnknown102ffbd0Obj	// the 0x38 byte step object
 {
 	char m_pad0000[0x38];
-	CUnknown102ffbd0Obj *sub_10319df0(Vector *pPos, int a, int nMode, int b, int c);	// constructor (stub 0x100021da): returns this
+	CUnknown102ffbd0Obj *sub_10319df0(Vector *pPos, float flYaw, int nMode, int b, int c);	// constructor (stub 0x100021da): returns this
 };
 
 struct CUnknown102ffbd0Pool	// the fixed size allocator at 0x10936c84
