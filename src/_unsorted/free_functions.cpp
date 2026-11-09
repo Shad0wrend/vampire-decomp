@@ -176822,6 +176822,39 @@ void CUnk102c54c0::sub_102c54c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c5570 size=0x152
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include <math.h>
+#include "CUnknown102e0150.h"
+#include "CEntitySoundOriginView.h"
+struct CAI_RangeRec { char m_pad0000[0x260]; float m_f260; char m_pad0264[8]; float m_f26c; };
+
+static inline float LengthOf(const Vector &v)
+{
+	return FastSqrt(v.x * v.x + (v.y * v.y + v.z * v.z));
+}
+
+float CAI_BaseNPCTroika::sub_102c5570(CAI_RangeRec *pRec, float flValue)
+{
+    float f = 1.0f;
+    if (pRec->m_f26c > 0.0f) {
+        if (m_h5ba8) {
+            CBaseEntity *pTarget = m_h5ba8.Get();
+            const Vector *pSelf = (const Vector *)vfunc217();
+            f = LengthOf(*(const Vector *)((CEntitySoundOriginView *)pTarget)->GetAbsOrigin() - *pSelf);
+        } else if (vfunc167()) {
+            const Vector *pSelf = (const Vector *)vfunc217();
+            Vector tmp;
+            f = LengthOf(*vfunc541()->sub_102dfed0(&tmp, (CBaseEntity *)vfunc167()) - *pSelf);
+        }
+        if (f > 0.0f)
+            f = sqrt(f / pRec->m_f26c);
+    }
+    return (flValue - pRec->m_f260) * f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c5730 size=0x3c
 #include "CBaseCombatWeapon.h"
 
