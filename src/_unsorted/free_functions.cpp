@@ -170119,6 +170119,70 @@ void CAI_StandoffGoal::sub_102c8280(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c8460 size=0xc5
+#include "CAI_StandoffGoal.h"
+#include "utlvector.h"
+
+void *sub_100aa720(int size);
+extern char vt_10449470[];
+extern char vt_1049b00c[];
+extern char vt_1049aff8[];
+extern CStandoffParams g_10601858;
+extern char g_10601ff0[];
+
+struct StandoffEntityPart
+{
+	char m_base[0x450];
+	StandoffEntityPart() { ((CAI_StandoffGoal *)this)->sub_1009d980(0); }
+};
+
+struct StandoffListenerPart
+{
+	void *m_vt;
+	StandoffListenerPart() { m_vt = vt_10449470; }
+};
+
+struct StandoffGoalEntityPart : StandoffEntityPart, StandoffListenerPart
+{
+	int m_iszActor;
+	int m_iszGoal;
+	bool m_fStartActive;
+	int m_iszConceptModifiers;
+	int m_464;
+	CUtlVector<CBaseHandle> m_actors;
+	EHANDLE m_hGoalEntity;
+	int m_flags;
+	StandoffGoalEntityPart() : m_iszActor(0), m_iszGoal(0), m_fStartActive(0), m_iszConceptModifiers(0),
+		m_464(0), m_flags(0)
+	{
+		m_hGoalEntity = (CBaseEntity *)0;
+	}
+};
+
+struct StandoffGoalPart : StandoffGoalEntityPart
+{
+	int m_Aggressiveness;
+	CStandoffParams m_CustomParams;
+	int m_unk4a4;
+	StandoffGoalPart()
+	{
+		*(void **)m_base = vt_1049b00c;
+		m_vt = vt_1049aff8;
+		m_Aggressiveness = 2;
+		m_CustomParams = g_10601858;
+	}
+	void *operator new(unsigned int n) { return sub_100aa720(n); }
+};
+
+// TARGET: ai_goal_standoff
+extern "C" CBaseEntity *ai_goal_standoff()
+{
+	CAI_StandoffGoal *p = (CAI_StandoffGoal *)new StandoffGoalPart;
+	p->vfunc106(g_10601ff0);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c89e0 size=0x1a
 namespace lifted {
 extern int g_1060190c;
