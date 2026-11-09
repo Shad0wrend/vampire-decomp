@@ -2695,6 +2695,7 @@
 0x10004c73 func   ?vfunc0@CTraceFilterSimpleList@@UAE_NPAXH@Z CTraceFilterSimpleList::vfunc0
 0x10004c78 func   ?sub_1012d5c0@CUnknown1012d5c0@@QAEHXZ CUnknown1012d5c0::sub_1012d5c0
 0x10004c7d func   ?vfunc246@CBaseDoor@@UAEXHPAHH@Z CBaseDoor::vfunc246
+0x10004c82 func   ?vfunc46@CCameraTrack@@UAEXXZ CCameraTrack::vfunc46
 0x10004c87 func   ?sub_1007b9e0@@YIXPAUCNameOwnerView@@@Z sub_1007b9e0
 0x10004c8c func   ?sub_10248a10@CUnknown10248a10@@QAEHXZ CUnknown10248a10::sub_10248a10
 0x10004c91 func   ?sub_101e8820@CUnknown10739d08@@QAEMPAVCBaseCombatCharacter@@@Z CUnknown10739d08::sub_101e8820

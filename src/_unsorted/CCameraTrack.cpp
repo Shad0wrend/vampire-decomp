@@ -70,6 +70,22 @@ CCameraTrack *CCameraTrack::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc1c0 size=0x6d
+#include "CCameraTrack.h"
+
+void sub_10014d58();
+
+void CCameraTrack::vfunc46()
+{
+	m_flStartTime4bc = engine->vfunc119(0);
+	m_hHandle4c0 = this;
+	m_bStarted4c4 = 1;
+	m_Output480.sub_100cd660(this, this, 0);
+	sub_100ac610(engine->vfunc119(0), 0);
+	sub_100ac4e0((int)sub_10014d58, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc2e0 size=0x21
 #include "CCameraTrack.h"
 int CCameraTrack::vfunc50(int a0)
