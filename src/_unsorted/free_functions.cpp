@@ -200542,6 +200542,46 @@ void CNPC_Crow::sub_10357be0(float flSpeed)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10357e50 size=0x1f9
+#include "CNPC_Crow.h"
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+
+extern Vector g_1070d1b0;
+char *sub_102d6100(int idx);
+char *sub_102d6120(int idx);
+
+inline void CrossProductF(const float *v1, const float *v2, float *cross)
+{
+	cross[0] = v1[1] * v2[2] - v1[2] * v2[1];
+	cross[1] = v1[2] * v2[0] - v1[0] * v2[2];
+	cross[2] = v1[0] * v2[1] - v1[1] * v2[0];
+}
+
+// TARGET: CNPC_Crow::sub_10357e50
+bool CNPC_Crow::sub_10357e50(const Vector &vecDir, float flLength, Vector *pOut)
+{
+	Vector vecHalf = vecDir * flLength * 0.5f;
+	Vector vecEnd = *((CEntityVSlots *)this)->slot217() + vecHalf;
+	Vector *pMaxs = (Vector *)sub_102d6120(m_n1568);
+	Vector *pMins = (Vector *)sub_102d6100(m_n1568);
+	CGameTrace trace;
+	UTIL_TraceHull_DebugCall(*((CEntityVSlots *)this)->slot217(), vecEnd, *pMins, *pMaxs, 0x202400b, this, 0x11, &trace, 1, 0);
+
+	if (trace.m_fraction < 1.0f)
+	{
+		float side[3];
+		CrossProductF(&vecDir.x, trace.m_planeNormal, side);
+		CrossProductF(trace.m_planeNormal, side, &pOut->x);
+		VectorNormalize(*pOut);
+		return true;
+	}
+	*pOut = g_1070d1b0;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103580d0 size=0xaf
 #include "CBaseEntity.h"
 #include "CNPC_Crow.h"
