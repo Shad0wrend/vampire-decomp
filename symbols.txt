@@ -1878,6 +1878,7 @@
 0x100038c3 func   ?sub_102deea0@@YIXPAH@Z sub_102deea0
 0x100038cd func   ?vfunc0@CTEBaseBeam@@UAEPAUServerClass@@XZ CTEBaseBeam::vfunc0
 0x100038d2 func   ?vfunc37@CMultiplayRules@@UAE_NH@Z CMultiplayRules::vfunc37
+0x100038d7 func   ?FindInsertionPosition@?$CUtlRBTree@UCRBEntry24@@H@@QAEXABUCRBEntry24@@AAHAA_N@Z CUtlRBTree<CRBEntry24,int>::FindInsertionPosition
 0x100038d7 func   ?sub_1007f250@CUtlRBTree24@@QAEXPBXPAHPA_N@Z CUtlRBTree24::sub_1007f250
 0x100038dc func   ?vfunc175@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::vfunc175
 0x100038e6 func   ?sub_1035b490@@YADXZ sub_1035b490
