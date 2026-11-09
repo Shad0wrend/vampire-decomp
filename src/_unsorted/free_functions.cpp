@@ -67700,6 +67700,79 @@ float __stdcall sub_10126380(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101263c0 size=0x19f
+#include "CBaseEntity.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CGlobalEntityList.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "Ray_t.h"
+
+extern CGlobalEntityList *g_10566458;
+extern CUnknown1070b254 *g_1070b254;
+void sub_1011e8f0(Ray_t *pRay, unsigned int mask, void *pPassEnt, int group, CGameTrace *pTrace);
+
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+
+namespace block_101263c0 {
+struct CGameMovementUnit : CGameMovement
+{
+	float *sub_1011e350();
+	float *sub_1011e310();
+};
+
+float *CGameMovementUnit::sub_1011e350()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMax.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMax.x : &m_vecHullMax.x;
+}
+
+float *CGameMovementUnit::sub_1011e310()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMin.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMin.x : &m_vecHullMin.x;
+}
+}
+using namespace block_101263c0;
+
+// TARGET: CGameMovement::sub_101263c0
+void CGameMovement::sub_101263c0(char bMoveUp)
+{
+	CGameTrace tr;
+	Ray_t ray;
+	int nDir = ((int)bMoveUp != 0);
+	CGameMovementUnit *pThis = (CGameMovementUnit *)this;
+	Vector *pOrg = &PLAYER->m_vecOrigin;
+	ray.sub_1006dec0(*pOrg, &pOrg->x, pThis->sub_1011e310(), pThis->sub_1011e350(), (char)((((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1), 0);
+	sub_1011e8f0(&ray, 0x201400b, g_10566458->sub_100290c0(&PLAYER->m_hRef), 6, &tr);
+	CBaseHandle hitent;
+	if ((tr.m_contents & 0x201400b) && tr.m_pEnt)
+		hitent = *(CBaseHandle *)tr.m_pEnt->vfunc1();
+	else
+		hitent = CBaseHandle();
+	if (hitent == CBaseHandle())
+		return;
+	{
+		pOrg = &PLAYER->m_vecOrigin;
+		Vector vecSave; vecSave = *pOrg;
+		{ int i; i = 0; while (0x24 > i) { PLAYER->m_vecOrigin.z += (float)nDir;
+			pOrg = &PLAYER->m_vecOrigin;
+			ray.sub_1006dec0(*pOrg, &pOrg->x, pThis->sub_1011e310(), pThis->sub_1011e350(), (char)((((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1), 0);
+			CTraceFilterSimple filter(g_10566458->sub_100290c0(&PLAYER->m_hRef), 6);
+			g_1070b254->vfunc4(&ray, 0x201400b, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+			if (!(tr.m_contents & 0x201400b) || !tr.m_pEnt || *tr.m_pEnt->vfunc1() == -1)
+				return; else { i += 1; } } }
+		PLAYER->m_vecOrigin = vecSave;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10126cb0 size=0x11c
 #include "CGameMovement.h"
 #include "CGameMovementViews.h"

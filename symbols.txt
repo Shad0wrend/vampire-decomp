@@ -13096,6 +13096,7 @@
 0x1001345d func   ?sub_100b1130@@YIHPAVCBaseEntity@@@Z sub_100b1130
 0x10013467 func   ?sub_102ca460@CUnknown102ca630@@QAEXPAUCUnknown102ca630Rec@@@Z CUnknown102ca630::sub_102ca460
 0x1001346c func   ?vfunc176@CBaseTrigger@@QAEXPAVCBaseEntity@@@Z CBaseTrigger::vfunc176
+0x10013471 func   ?sub_101263c0@CGameMovement@@QAEXD@Z CGameMovement::sub_101263c0
 0x1001347b func   ?sub_1021df90@CPropKeypad@@QAEXXZ CPropKeypad::sub_1021df90
 0x10013480 func   ?sub_101e3a30@CUnknown101e0f00@@QAEXPAUS1033d380@@H@Z CUnknown101e0f00::sub_101e3a30
 0x10013485 func   ?sub_101dc120@CUnknown101dbe30@@QAEXPAVCBaseEntity@@@Z CUnknown101dbe30::sub_101dc120
