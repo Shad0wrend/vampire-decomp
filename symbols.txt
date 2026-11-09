@@ -3940,6 +3940,7 @@
 0x100068fc func   ??0CGravControllerPoint@@QAE@XZ CGravControllerPoint::CGravControllerPoint
 0x10006901 func   ?vfunc5@CWeaponRanged_Smg_Uzi@@UAEPAVCWeaponRanged@@I@Z CWeaponRanged_Smg_Uzi::vfunc5
 0x10006906 func   ?sub_101f25a0@@YIHPAD@Z sub_101f25a0
+0x1000690b func   ?sub_103c8f00@@YAXXZ sub_103c8f00
 0x10006910 func   ?sub_100eb030@CUnknown100eb030@@QAEPAXH@Z CUnknown100eb030::sub_100eb030
 0x10006915 func   ?sub_1005fca0@CTEBubbleTrail@@QAEPAV1@PBD@Z CTEBubbleTrail::sub_1005fca0
 0x1000691a func   ?vfunc438@CNPC_VCop@@QAEHXZ CNPC_VCop::vfunc438
