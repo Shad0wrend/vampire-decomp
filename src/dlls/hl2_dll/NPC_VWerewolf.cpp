@@ -117,6 +117,62 @@ int CNPC_VWerewolf::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d0820 size=0x198
+#include "CNPC_VWerewolf.h"
+#include "CWerewolfIdealStateSlots.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CWerewolfStateView {
+	char m_pad0000[0x1b38];
+	int m_n1b38;
+	const char *m_psz1b3c;
+	int m_n1b40;
+	char m_pad1b44[0x5cc4 - 0x1b44];
+	int m_nIdealState;
+};
+extern char g_10662220[];
+
+int CNPC_VWerewolf::vfunc461()
+{
+	ScopeTrace trace("CNPC_VWerewolf::SelectIdealState", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	CWerewolfStateView *p = (CWerewolfStateView *)this;
+	CWerewolfIdealStateSlots *pSlots = (CWerewolfIdealStateSlots *)this;
+	p->m_n1b38 = 0x29;
+	pSlots->slot433();
+	bool bBase = false;
+	if (pSlots->slot158() && !sub_10269aa0(0x7a)) {
+		if (!sub_103cf5f0()) {
+			p->m_n1b40 = 0xaf3;
+			p->m_nIdealState = 9;
+		} else if (pSlots->slot167()) {
+			if (sub_10269aa0(0x51) || sub_10269aa0(0x52)) {
+				p->m_n1b40 = 0xafb;
+				p->m_nIdealState = 2;
+			} else if (sub_10269aa0(0x78) || sub_10269aa0(0x59)) {
+				p->m_n1b40 = 0xb00;
+				p->m_nIdealState = 0xb;
+			} else {
+				p->m_n1b40 = 0xb05;
+				p->m_nIdealState = 2;
+			}
+		} else {
+			bBase = true;
+		}
+	} else {
+		p->m_n1b40 = 0xaec;
+		p->m_nIdealState = 7;
+	}
+	if (!bBase) {
+		p->m_psz1b3c = g_10662220;
+		sub_1026e340(p->m_nIdealState);
+		return p->m_nIdealState;
+	}
+	return sub_102ad660();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d5e00 size=0x102
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
