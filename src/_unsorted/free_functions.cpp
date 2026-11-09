@@ -56513,6 +56513,47 @@ char CDialog::sub_100e8980(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e8b90 size=0x239
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CDialog.h"
+#include "CDialogDependency.h"
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+
+void CDialog::sub_100e8b90(CDialogDependency *pDep)
+{
+	ScopeTrace trace("CDialog::pc_charge_dependency", g_106b8540);
+	if (pDep && pDep->m_nIndent)
+	{
+		if (EHandle_Get(m_hNPC))
+		{
+			int v = CVStatListSet::Of(EHandle_Get(m_hNPC))->Find(0)->sub_10200ca0(12);
+			int nNew = v - pDep->m_nIndent;
+			CVStatListSet::Of(EHandle_Get(m_hNPC))->Find(0)->sub_102008e0(12, nNew);
+		}
+		if (pDep->m_nType == 2)
+		{
+			CBaseEntity *pNPC = (CBaseEntity *)EHandle_Get(m_hNPC);
+			int nArg = pDep->m_nArg;
+			CBaseCombatCharacter *pSpeaker = (CBaseCombatCharacter *)EHandle_Get(m_hSpeaker);
+			pSpeaker->sub_1033e0a0(nArg, pDep->m_nIndent, pNPC);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e8ef0 size=0x9b
 #include "CDialogDependency.h"
 #include "CVDmg_t.h"

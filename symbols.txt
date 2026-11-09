@@ -427,6 +427,7 @@
 0x100018fc func   ?sub_102f2ea0@CAI_Navigator@@QAE_NXZ CAI_Navigator::sub_102f2ea0
 0x10001906 func   ?sub_100ddc40@CUnknown100dda50@@QAEXXZ CUnknown100dda50::sub_100ddc40
 0x1000190b func   ?vfunc124@CFuncRotating@@UAEHXZ CFuncRotating::vfunc124
+0x10001915 func   ?sub_100e8b90@CDialog@@QAEXPAVCDialogDependency@@@Z CDialog::sub_100e8b90
 0x1000191a func   ?sub_100bc0f0@CUnknown100bc0f0@@QAEXPAUCInputData100bc0f0@@@Z CUnknown100bc0f0::sub_100bc0f0
 0x1000191f func   ?sub_103dbad0@@YAXPAUCDbgEnt@@@Z sub_103dbad0
 0x10001929 func   ?sub_10159700@CUnknown10159700@@QAEXHHHM@Z CUnknown10159700::sub_10159700
