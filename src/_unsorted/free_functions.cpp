@@ -37622,6 +37622,36 @@ int CBaseEntity::sub_100ac250(const char *context)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ac360 size=0x12e
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include "CThinkSaveViews.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+static inline void Q_memset(void *dest, int fill, unsigned int count)
+{
+	memset(dest, fill, count);
+}
+
+int CBaseEntity::sub_100ac360(const char *szContext)
+{
+	ScopeTrace trace("CBaseEntity::RegisterThinkContext", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	int iIndex = sub_100ac250(szContext);
+	if (iIndex != -1)
+		return iIndex;
+	thinkfunc_t sNewFunc;
+	Q_memset(&sNewFunc, 0, sizeof(sNewFunc));
+	sNewFunc.m_a = 0;
+	*(float *)&sNewFunc.m_b = 0.0f;
+	sNewFunc.m_pszContext = szContext;
+	return ((CUtlVector<thinkfunc_t> *)&m_pThinkContexts)->AddToTail(sNewFunc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac4e0 size=0xe2
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
