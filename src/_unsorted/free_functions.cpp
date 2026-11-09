@@ -43834,6 +43834,41 @@ float sub_100c4390(void *pOwner, int id, float t)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c43e0 size=0xd3
+#include <math.h>
+
+struct S100c43e0PoseParam
+{
+	char m_pad00[8];
+	float start;	// 0x08
+	float end;	// 0x0c
+	float loop;	// 0x10
+};
+
+extern float g_104454c4;
+S100c43e0PoseParam *sub_100c73b0(const void *pStudioHdr, int iParameter);
+
+float sub_100c43e0(const void *pStudioHdr, int iParameter, float flValue, float *pCtlValue)
+{
+	S100c43e0PoseParam *pPoseParam = sub_100c73b0(pStudioHdr, iParameter);
+	if (!pPoseParam)
+		return g_104454c4;
+	const S100c43e0PoseParam &PoseParam = *pPoseParam;
+	if (PoseParam.loop != g_104454c4)
+	{
+		float wrap = (PoseParam.start + PoseParam.end) / 2.0 + PoseParam.loop / 2.0;
+		float shift = PoseParam.loop - wrap;
+		flValue = flValue - PoseParam.loop * floor((flValue + shift) / PoseParam.loop);
+	}
+	*pCtlValue = (flValue - PoseParam.start) / (PoseParam.end - PoseParam.start);
+	if (*pCtlValue < g_104454c4)
+		*pCtlValue = 0.0f;
+	else if (*pCtlValue > 1.0f)
+		*pCtlValue = 1.0f;
+	return (PoseParam.end - PoseParam.start) * *pCtlValue + PoseParam.start;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4500 size=0x2b
 float *sub_100c73b0(int a, int b);
 

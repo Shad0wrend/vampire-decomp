@@ -4356,6 +4356,7 @@
 0x10007194 func   ?sub_1018e9d0@@YAXHH@Z sub_1018e9d0
 0x10007199 func   ?sub_101db9c0@@YAHH@Z sub_101db9c0
 0x1000719e func   ?vfunc82@CLogicVisible@@UAEPAUdatamap_t@@XZ CLogicVisible::vfunc82
+0x100071a3 func   ?sub_100c43e0@@YAMPBXHMPAM@Z sub_100c43e0
 0x100071a8 func   ?sub_10073920@CUnknown10073920@@QAEXH@Z CUnknown10073920::sub_10073920
 0x100071ad func   ?vfunc363@CWeaponIArmor_Lt_Cloth@@UAEHXZ CWeaponIArmor_Lt_Cloth::vfunc363
 0x100071b2 func   ?sub_1035ec30@@YAPADXZ sub_1035ec30
