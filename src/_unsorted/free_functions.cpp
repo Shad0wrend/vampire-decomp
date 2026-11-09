@@ -47347,6 +47347,98 @@ void __fastcall sub_100cd2d0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd300 size=0x282
+#include "COutputEvent.h"
+#include "CEventAction.h"
+#include "CEventQueue.h"
+#include "CBaseEntity.h"
+#include "CUnknown100cd640.h"
+#include "CUnknown10738964.h"
+#include "Tier1.h"
+
+extern char g_106b8540[];
+extern float g_104454c4;
+extern CEventQueue g_106e7050;
+extern CUnknown10738964 *g_106cfe54;
+int sub_100cd240(int);
+
+void COutputEvent::sub_100cd300(CVariantCopy Value, void *pActivator, void *pCaller, float flDelay)
+{
+	CEventAction *ev = m_pActionList;
+	CEventAction *prev = 0;
+	CBaseEntity *pCallerEnt = (CBaseEntity *)pCaller;
+
+	while (ev != 0)
+	{
+		CUnknown100cd640 *pInput = (CUnknown100cd640 *)&ev->m_iTargetInput;
+		if (ev->m_iParameter == 0)
+		{
+			g_106e7050.sub_100cddf0(((CUnknown100cd640 *)ev)->sub_100cd640(), pInput->sub_100cd640(), Value, ev->m_flDelay + flDelay, (CBaseEntity *)pActivator, pCallerEnt, ev->m_iIDStamp, *(CEQExtra *)&ev->m_iUnk0c);
+		}
+		else
+		{
+			CVariantCopy ValueOverride;
+			ValueOverride.m_value = ev->m_iParameter;
+			ValueOverride.m_hEntity = 0xffffffff;
+			ValueOverride.m_fieldType = 2;
+			g_106e7050.sub_100cddf0(((CUnknown100cd640 *)ev)->sub_100cd640(), pInput->sub_100cd640(), ValueOverride, ev->m_flDelay, (CBaseEntity *)pActivator, pCallerEnt, ev->m_iIDStamp, CEQExtra());
+		}
+
+		if (!g_106cfe54->vfunc1() && g_106cfe54->m_n2c)
+		{
+			if (ev->m_flDelay != g_104454c4)
+			{
+				const char *pszName = pCallerEnt ? (pCallerEnt->m_name26c ? pCallerEnt->m_name26c : g_106b8540) : "NULL";
+				const char *pszClass = pCallerEnt ? (pCallerEnt->m_classname11c ? pCallerEnt->m_classname11c : g_106b8540) : "NULL";
+				g_109f3630("output: (%s,%s) -> (%s,%s,%.1f)\n", pszClass, pszName, ((CUnknown100cd640 *)ev)->m_pString ? ((CUnknown100cd640 *)ev)->m_pString : g_106b8540, pInput->m_pString ? pInput->m_pString : g_106b8540, ev->m_flDelay);
+			}
+			else
+			{
+				const char *pszName = pCallerEnt ? (pCallerEnt->m_name26c ? pCallerEnt->m_name26c : g_106b8540) : "NULL";
+				const char *pszClass = pCallerEnt ? (pCallerEnt->m_classname11c ? pCallerEnt->m_classname11c : g_106b8540) : "NULL";
+				g_109f3630("output: (%s,%s) -> (%s,%s)\n", pszClass, pszName, ((CUnknown100cd640 *)ev)->m_pString ? ((CUnknown100cd640 *)ev)->m_pString : g_106b8540, pInput->m_pString ? pInput->m_pString : g_106b8540);
+			}
+		}
+
+		if (pCallerEnt && (*(unsigned char *)&pCallerEnt->m_fDebugOverlays224 & 0x10))
+			pCallerEnt->sub_100ab980(ev);
+
+		bool bRemove = false;
+		if (ev->m_nTimesToFire != -1)
+		{
+			ev->m_nTimesToFire--;
+			if (ev->m_nTimesToFire == 0)
+			{
+				if (!g_106cfe54->vfunc1() && g_106cfe54->m_n2c)
+				{
+					const char *pszName = pCallerEnt ? (pCallerEnt->m_name26c ? pCallerEnt->m_name26c : g_106b8540) : "NULL";
+					const char *pszClass = pCallerEnt ? (pCallerEnt->m_classname11c ? pCallerEnt->m_classname11c : g_106b8540) : "NULL";
+					g_109f3630("Removing from action list: (%s,%s) -> (%s,%s)\n", pszClass, pszName, ((CUnknown100cd640 *)ev)->m_pString ? ((CUnknown100cd640 *)ev)->m_pString : g_106b8540, pInput->m_pString ? pInput->m_pString : g_106b8540);
+				}
+				bRemove = true;
+			}
+		}
+
+		if (!bRemove)
+		{
+			prev = ev;
+			ev = ev->m_pNext;
+		}
+		else
+		{
+			if (prev != 0)
+				prev->m_pNext = ev->m_pNext;
+			else
+				m_pActionList = ev->m_pNext;
+
+			CEventAction *next = ev->m_pNext;
+			sub_100cd240((int)ev);
+			ev = next;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd640 size=0xc
 #include "CUnknown100cd640.h"
 extern char g_106b8540[];
