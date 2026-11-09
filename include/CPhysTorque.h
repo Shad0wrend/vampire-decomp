@@ -15,7 +15,7 @@ public:
 	// slot 241 "CPhysTorque::vfunc241": arg1 is the physics object whose slot 38 fills a 3x4 matrix, arg2 the Vector
 	// that is zeroed and gets the scaled answer, arg3 unused. Declared with the real argument order (arg2 is the
 	// Vector, not a float: the game zeroes/writes arg2 and reloads arg1 as the object).
-	void sub_100282e0(CPhysObjSlots *pObject, Vector *pAngular, float flTime);
+	void sub_100282e0(CPhysObjSlots *pPhys, Vector &linear, Vector &angular);	// SetupForces
 
 	void sub_10028260();
 
