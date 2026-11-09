@@ -13900,6 +13900,7 @@
 0x100145e2 func   ?vfunc328@CWeaponIArmor@@UAEHXZ CWeaponIArmor::vfunc328
 0x100145e7 func   ?vfunc574@CNPC_VMingXiao@@QAE?AVVector@@ABV2@HH@Z CNPC_VMingXiao::vfunc574
 0x100145ec func   ?sub_10098cd0@CAnimationLayerAdvance@@QAEXHPAX0@Z CAnimationLayerAdvance::sub_10098cd0
+0x100145f1 func   ?vfunc604@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc604
 0x100145f6 func   ?sub_101e8a90@CUnknown101e8a90@@QAEMXZ CUnknown101e8a90::sub_101e8a90
 0x100145fb func   ?sub_101a6a20@@YAXXZ sub_101a6a20
 0x10014600 func   ?vfunc268@CDisciplineProjectile@@UAEXXZ CDisciplineProjectile::vfunc268
