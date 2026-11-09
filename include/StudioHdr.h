@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Vector.h"
+#include "Quaternion.h"
 
 struct StudioHdr;
 
@@ -37,7 +38,10 @@ struct StudioBone	// 0xa0 bytes each (Studio_BuildMatrices 0x100c3600 reads thes
 {
 	char m_pad00[4];
 	int m_iParent;	// 0x04: parent bone index, -1 for a root
-	char m_pad08[0x88 - 8];
+	char m_pad08[0x20 - 8];
+	Vector m_pos;	// 0x20
+	Quaternion m_quat;	// 0x2c
+	char m_pad3c[0x88 - 0x3c];
 	unsigned char m_bFlags88;	// 0x88: bit 1 (value 2) = the bone's rotation is not inherited from the parent (only the translation is: rotation = the root matrix * bone rotation)
 	char m_pad89[0x94 - 0x89];
 	short m_nPhysicsBone94;	// 0x94
