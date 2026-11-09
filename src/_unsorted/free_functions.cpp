@@ -153129,6 +153129,41 @@ unsigned int CUnknown10231ed0::sub_10231ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231ef0 size=0x3b
+#include "CUnknown10231ed0.h"
+
+namespace block_10231ef0 {
+struct CUnknown10231ed0Unit : CUnknown10231ed0
+{
+	unsigned char sub_10231ed0();
+};
+unsigned char CUnknown10231ed0Unit::sub_10231ed0()
+{
+	return (m_flags464 >> 1) & 1;
+}
+struct Bits
+{
+	unsigned int b0 : 1;
+	unsigned int b1 : 1;
+};
+}
+using namespace block_10231ef0;
+
+void CUnknown10231ed0::sub_10231ef0(bool bOn)
+{
+	CUnknown10231ed0Unit *p = (CUnknown10231ed0Unit *)this;
+	if (bOn != p->sub_10231ed0())
+	{
+		Bits *b = (Bits *)&m_flags464;
+		if (!bOn)
+			b->b1 = 0;
+		else
+			b->b1 = 1;
+		m_b1b1 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231f40 size=0x2f
 #include "CVGuiScreen.h"
 
