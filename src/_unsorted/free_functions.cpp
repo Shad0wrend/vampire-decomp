@@ -55919,6 +55919,29 @@ int CIndexedTableView::sub_100ec2a0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec2e0 size=0x51
+#include "CBaseCombatCharacter.h"
+struct CStanceRec { char pad[0x84]; char m_szName[0x1e0]; };
+struct CStanceTable {
+	int m_unk0;
+	int m_nDefault;
+	CStanceRec *m_pRecs;
+	int m_unkc, m_unk10;
+	int m_nCount;
+	int sub_100ec2e0(int idx, CBaseCombatCharacter *pChar);
+};
+int CStanceTable::sub_100ec2e0(int idx, CBaseCombatCharacter *pChar)
+{
+	if (idx < 0 || idx > m_nCount)
+		idx = m_nDefault;
+	if (!pChar)
+		return 0;
+	CStanceRec *pRec = m_pRecs;
+	int expr = pChar->sub_10106a40(pRec[idx].m_szName);
+	return pChar->sub_10106f90(expr) ? expr : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ec3d0 size=0x27
 struct SIndexedTable_t {
     int unk0;
