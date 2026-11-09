@@ -57636,6 +57636,41 @@ void CUnknown100ed030::sub_100ed030(CBaseAnimating *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ed150 size=0x112
+#include "CUnknown100ecee0.h"
+
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+const char *sub_101d3730(const char *fmt, ...);
+
+struct StanceRecord_t { int m_n0; int m_n4; int m_nSeq[15]; };
+struct StanceDisp_t { int m_nModel; int m_nRec[64]; };
+
+// TARGET: CUnknown100ecee0::sub_100ed150
+int CUnknown100ecee0::sub_100ed150(CTableNpc_t *pNpc, int a, int b)
+{
+	char szName[128];
+	const char *pszA = sub_100ecc10(a);
+	const char *pszB = sub_100ecc10(b);
+	Q_snprintf(szName, 0x40, "stance_trans_%s_%d_%s_%d", pszA, pNpc->m_n64c8 + 1, pszB, pNpc->m_n64c8 + 1);
+	int nSequence = pNpc->sub_1008f7b0(szName);
+	if (nSequence == -1)
+	{
+		Q_snprintf(szName, 0x40, "stance_trans_%s_1_%s_1", pszA, pszB);
+		nSequence = pNpc->sub_1008f7b0(szName);
+	}
+	if (nSequence == -1)
+	{
+		nSequence = ((StanceRecord_t *)m_pRecords)[((StanceDisp_t *)m_pRecordIndex)[pNpc->m_n64e8].m_nRec[b]].m_nSeq[pNpc->m_n64c8];
+		sub_100ed2c0(1, sub_101d3730("%s Disposition Transition animation not found: %s\n", pNpc->sub_1000b5cd(), szName));
+	}
+	else
+	{
+		sub_100ed2c0(1, sub_101d3730("%s Disposition Transition animation found: %s\n", pNpc->sub_1000b5cd(), szName));
+	}
+	return nSequence;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ed2c0 size=0x3
 void __stdcall sub_100ed2c0(int a0, int a1)
 {
