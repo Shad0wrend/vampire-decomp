@@ -1530,6 +1530,7 @@
 0x1000313e func   ?sub_10075230@CUnknown10075aa0@@QAEPAV1@HHHH@Z CUnknown10075aa0::sub_10075230
 0x10003143 func   ?sub_101dc8a0@CUnknown101e0f00SrcA@@QAEXXZ CUnknown101e0f00SrcA::sub_101dc8a0
 0x10003148 func   ?sub_10032fb0@S10032fb0@@QAEXH@Z S10032fb0::sub_10032fb0
+0x1000314d func   ?sub_103c6680@CNPC_VVampireBoss@@QAEMPBVVector@@00@Z CNPC_VVampireBoss::sub_103c6680
 0x10003152 func   ?sub_101ff060@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101ff060
 0x10003157 func   ?vfunc605@CAI_BaseNPCTroika@@UAEHH@Z CAI_BaseNPCTroika::vfunc605
 0x1000315c func   ?sub_10396dc0@CNPC_VMingXiao@@QAEHXZ CNPC_VMingXiao::sub_10396dc0

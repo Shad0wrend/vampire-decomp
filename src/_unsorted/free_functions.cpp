@@ -229944,6 +229944,33 @@ float CNPC_VVampireBoss::sub_103c6570(CEntityVSlots *pHint, const Vector *pPoint
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c6680 size=0x114
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VVampireBoss.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+float CNPC_VVampireBoss::sub_103c6680(const Vector *pOrigin, const Vector *pDirection, const Vector *pPoint)
+{
+	ScopeTrace trace("CNPC_VVampireBoss::DistToHintCenterLine2D_3", g_106b8540);
+	Vector vecPoint = *pPoint;
+	Vector vecOrigin = *pOrigin;
+	vecPoint.z = 0;
+	vecOrigin.z = 0;
+	float flAlong = DotProduct(*pDirection, vecPoint - vecOrigin);
+	Vector vecProj = *pDirection * flAlong;
+	Vector vecClosest = vecOrigin + vecProj;
+	return (vecClosest - vecPoint).Length();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c67f0 size=0x25
 struct CUnknown103c67f0
 {
