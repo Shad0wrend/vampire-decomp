@@ -98226,6 +98226,40 @@ void CUnk1019f230::sub_1019f230()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019f260 size=0x32
+struct CFlagHolder_1019f260;
+struct CFlagVar_1019f260 {
+    unsigned int m_Value;
+    void NetworkStateChanged();
+    void Set(const unsigned int &v) { m_Value = v; NetworkStateChanged(); }
+};
+struct CFlagHolder_1019f260 {
+    char pad[0x1b1];
+    bool m_b1b1;
+    char pad2[0x454 - 0x1b2];
+    CFlagVar_1019f260 m_flags454;
+    void sub_1019f260(bool bClear);
+};
+inline void CFlagVar_1019f260::NetworkStateChanged()
+{
+    CFlagHolder_1019f260 *p = (CFlagHolder_1019f260 *)((char *)this - 0x454);
+    p->m_b1b1 = true;
+}
+// TARGET: CFlagHolder_1019f260::sub_1019f260
+void CFlagHolder_1019f260::sub_1019f260(bool bClear)
+{
+    unsigned int want = 0;
+    if (!bClear)
+        want = 0x20;
+    if ((m_flags454.m_Value & 0x20) != want)
+    {
+        m_flags454.m_Value |= want;
+        volatile bool *pb = &m_b1b1;
+        *pb = true;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f500 size=0x23
 #include "CUnknown100bc0f0.h"
 
