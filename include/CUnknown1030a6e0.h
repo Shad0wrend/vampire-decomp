@@ -62,10 +62,14 @@ struct CUnknown1030a6e0_Debug	// the object at +0x50 (its fields are not known y
 class CUnknown1030a6e0
 {
 public:
-	char pad0[4];
+	virtual int vfunc0(void *pGoal, void *pTrace, float distClear, float probeDist, float degreesPositiveArc, int nProbes);
+	bool sub_1030a0d0(void *pGoal, void *pTrace, float degreesPositiveArc, bool fDeterOscillation, Vector *pSolution);
+	float sub_1030a650(float speed);
+	void sub_10308150(int navType, Vector *pEnd, int n, int *pTrace);
 	CAI_BaseNPC *m_pOuter;	// 0x04
 	Vector m_vecGoal;	// 0x08: the goal the progress below was measured for
-	char pad14[0x28 - 0x14];
+	char m_bSteer14;	// 0x14: the last steer step was solved (at speed)
+	char pad15[0x28 - 0x15];
 	float m_flBestDist;	// 0x28: the closest the NPC has been to the goal
 	float m_flBestTime;	// 0x2c: when it got that close
 	char m_bStuck;	// 0x30
