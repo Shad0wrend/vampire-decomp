@@ -122393,6 +122393,39 @@ int __fastcall sub_101f0910(CUnknownStat101f0910 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0990 size=0x91
+#include "CUnknown101f0990.h"
+extern "C" char *strstr(const char *, const char *);
+extern "C" int atoi(const char *);
+extern const char *g_1073a9c0[5];
+extern int g_1073a9d4[];
+extern char g_106b8540[];
+
+void CUnknown101f0990::sub_101f0990(const char *text)
+{
+	if (text) {
+		int i = 1;
+		const char **pp = g_1073a9c0;
+		for (; (i + 7) * 4 < 0x34; i++, pp++) {
+			const char *prefix = *pp;
+			if (!prefix)
+				prefix = g_106b8540;
+			if (strstr(text, prefix)) {
+				m_nType = i;
+				i = g_1073a9d4[i];
+				m_nValue = atoi(text + i);
+				return;
+			}
+		}
+		m_nType = 0;
+		int skip = 0;
+		if (*text == '+')
+			skip = 1;
+		m_nValue = atoi(text + skip);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0a60 size=0x51
 #include "CUnknown101f0960.h"
 extern char g_106b8540[];
