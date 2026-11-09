@@ -163,3 +163,83 @@ void CDisciplineWeapon::vfunc326()
 #include "CDisciplineWeapon.h"
 void CDisciplineWeapon::vfunc327() { vfunc326(); }
 // END FUNCTION
+
+// FUNCTION: 0x103f2380 size=0x4c4
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CDisciplineWeapon.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "UTIL_Trace.h"
+#include <math.h>
+
+struct CUnknown1004f860 { void *sub_1004f860(); };
+extern CGlobalEntityList g_106eb5d8;
+void sub_10139610(void *pAngles, Vector *fwd, Vector *right, Vector *up);
+
+struct CDiscOwnerView { char m_pad0000[0xa8]; CEntityVSlots *m_pPlayer; };
+struct CDiscEntView { char m_pad0000[0x9c]; int m_n9c; };
+
+inline void TraceLineCtorRayCall(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((CUnknown1004f860 *)&ray)->sub_1004f860();
+	ray.sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+// TARGET: CDisciplineWeapon::vfunc285
+int CDisciplineWeapon::vfunc285()
+{
+	float flMinDot = (float)cos(0.17453292519943295);
+	CBaseEntity *pBest = 0;
+	CDiscOwnerView *pOwner = (CDiscOwnerView *)sub_102521f0();
+	CEntityVSlots *pPlayer = pOwner ? pOwner->m_pPlayer : 0;
+	if (!pPlayer)
+		return 0;
+	Vector fwd, right;
+	sub_10139610((char *)pPlayer + 0x206c, &fwd, &right, 0);
+	Vector eye;
+	eye = pPlayer->slot389(*pPlayer->slot220());
+	CGameTrace tr;
+	Vector end = eye + fwd * 4096.0f;
+	TraceLineCtorRayCall(eye, end, 0x46004003, pPlayer, 0, &tr);
+	if (tr.m_fraction < 1.0f && tr.m_pEnt && ((CDiscEntView *)tr.m_pEnt)->m_n9c)
+		return (int)tr.m_pEnt;
+	float flBest = flMinDot;
+	for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0); pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt))
+	{
+		if (!((CDiscEntView *)pEnt)->m_n9c)
+			continue;
+		Vector vmins, vmaxs;
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pEnt + 0x270);
+		pCol->sub_100dcd90((const float *)((char *)pCol + 4), (const float *)((char *)pCol + 0x10), &vmins.x, &vmaxs.x);
+		Vector dir = (vmins + vmaxs) * 0.5f - eye;
+		if (dir.LengthSqr() > 16777216.0f)
+			continue;
+		VectorNormalize(dir);
+		float dot = DotProduct(dir, fwd);
+		if (dot > flBest)
+		{
+			for (int i = 0; i < 4; i++)
+			{
+				end.x = (vmins.x + vmaxs.x) * 0.5f;
+				end.y = vmins.y + (vmaxs.y - vmins.y) * (i * (1.0 / 3.0));
+				end.z = (vmins.z + vmaxs.z) * 0.5f;
+				UTIL_TraceLine(eye, end, 0x46004003, pPlayer, 0, &tr);
+				if (tr.m_fraction < 1.0f && tr.m_pEnt && (CBaseEntity *)tr.m_pEnt == pEnt)
+				{
+					flBest = dot;
+					pBest = pEnt;
+					break;
+				}
+			}
+		}
+	}
+	return (int)pBest;
+}
+// END FUNCTION
