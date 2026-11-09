@@ -10529,6 +10529,7 @@
 0x1000f69b func   ?vfunc41@CPropKeypad@@QAEXPAX@Z CPropKeypad::vfunc41
 0x1000f6a0 func   ?vfunc1@CCollisionProperty@@UAEPAMXZ CCollisionProperty::vfunc1
 0x1000f6a5 func   ?vfunc266@CVampireProjectile@@UAEXPAVCBaseEntity@@@Z CVampireProjectile::vfunc266
+0x1000f6aa func   ?sub_103be8e0@CNPC_VTzimisce@@QAE_NPAVCBaseEntity@@@Z CNPC_VTzimisce::sub_103be8e0
 0x1000f6af func   ?vfunc61@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc61
 0x1000f6b4 func   ?sub_1023fd00@@YA_NABVVector@@00M@Z sub_1023fd00
 0x1000f6b9 func   ?sub_1030b580@CUnknown1030b580@@QAEHXZ CUnknown1030b580::sub_1030b580

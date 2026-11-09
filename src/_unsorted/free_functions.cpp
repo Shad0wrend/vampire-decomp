@@ -227197,6 +227197,51 @@ char CNPC_VTzimisce::sub_103be630(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103be8e0 size=0x144
+#include "Ray_t.h"
+#include "CBaseEntity.h"
+#include "CNPC_VTzimisce.h"
+#include "CEHandleGet.h"
+#include "ConVar.h"
+
+#define SV1(n) virtual void n();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct CSlot220View
+{
+	SV100(a0) SV100(a1) SV10(a20) SV10(a21)
+	virtual float *vfunc220();
+	virtual float *vfunc221();
+};
+
+extern ConVar g_1093ca88;
+float sub_101d2c70(Vector *pVec);
+float sub_1013d580(float a, float b);
+
+inline float ConVarFloat(ConVar &cv)
+{
+	return cv.m_pParent->vfunc1() ? (double)g_104454c4 : cv.m_pParent->m_fValue;
+}
+
+bool CNPC_VTzimisce::sub_103be8e0(CBaseEntity *pTarget)
+{
+	if (pTarget) {
+		CGlobalEntityList_Ent *pEnt = EHandle_Get(m_hTarget);
+		Vector vecTarget = *(Vector *)((CSlot220View *)pEnt)->vfunc220();
+		Vector vecResult;
+		sub_102c36d0(vecTarget, pTarget, ConVarFloat(g_1093ca88), 0, &vecResult);
+		Vector vecDelta = vecResult - *(Vector *)((CSlot220View *)this)->vfunc220();
+		float flYaw = sub_101d2c70(&vecDelta);
+		float flCur = ((CSlot220View *)this)->vfunc221()[1];
+		float flDiff = sub_1013d580(flYaw, flCur);
+		if (!(-20.0f <= flDiff) || !(flDiff <= 20.0f))
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bef20 size=0x1ce
 #include "CBaseAnimating.h"
 #include "CNPC_VTzimisce.h"
