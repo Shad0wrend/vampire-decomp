@@ -14,6 +14,32 @@ void CSoundControllerImp::sub_101bc590(void *pSound)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc620 size=0xe5
+#include "utlvector.h"
+#include "CSoundControllerImp.h"
+#include "CUnknown101bc140.h"
+
+namespace block_101bc620 {
+struct CSoundPatchUnit : CUnknown101bc140 { void sub_101bc000(); };
+void CSoundPatchUnit::sub_101bc000() { *(int *)&m_fl24 = 0; }
+}
+using namespace block_101bc620;
+
+// TARGET: CSoundControllerImp::vfunc2
+void CSoundControllerImp::vfunc2(CUnknown101bc140 *pSound, float flVolume, float flPitch)
+{
+	((CSoundPatchUnit *)pSound)->sub_101bc000();
+	pSound->sub_101bbc20(flVolume, 0);
+	pSound->sub_101bbbf0(flPitch, 0);
+	if (pSound->m_pEmitter) {
+		vfunc4(pSound);
+	} else {
+		((CUtlVector<CUnknown101bc140 *> *)&m_Sounds)->AddToTail(pSound);
+		pSound->sub_101bc020();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc7f0 size=0x5f
 #include "CLogicAuto.h"
 #include "CSoundControllerImp.h"
