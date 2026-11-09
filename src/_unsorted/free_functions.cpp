@@ -193913,6 +193913,112 @@ CAI_Waypoint *CAI_Pathfinder::sub_10304020(int a1, const float *pEndPosition, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x10304130 size=0x42c
+#include "CAI_Waypoint.h"
+#include "CBaseEntity.h"
+#include "CVProfile.h"
+#include "CAI_Pathfinder.h"
+#include "CAI_BaseNPC.h"
+
+extern int g_106c994c;
+
+struct CAI_PathfinderYawView
+{
+	CAI_Waypoint *sub_10303d10(const float *a1, const float *a2, int a3, int a4, int nodeID, unsigned int flags, float flYaw, int a8, bool a9);
+	CAI_Waypoint *sub_10303f80(const float *a1, const float *a2, int a3, int a4, int nodeID, unsigned int flags, float flYaw, int a8, bool a9);
+	CAI_Waypoint *sub_10303c90(const float *a1, const float *a2, int a3, int a4, int nodeID, unsigned int flags, float flYaw, bool a9);
+	CAI_Waypoint *sub_10303cd0(const float *a1, const float *a2, int a3, int a4, int nodeID, unsigned int flags, float flYaw, bool a9);
+};
+
+struct CAI_PathfinderNodeYaw
+{
+	char m_pad0000[0x6c];
+	float m_flYaw;
+};
+
+inline CAI_PathfinderNodeYaw *GetNode10304130(CAI_PathfinderNetwork *pNet, int id)
+{
+	if (id < 0 || id >= pNet->m_nNodes) {
+		g_106c994c++;
+		return 0;
+	}
+	return (CAI_PathfinderNodeYaw *)pNet->m_ppNodes[id];
+}
+
+struct CCycleSampleL
+{
+	unsigned __int64 m_Int64;
+	void Sample()
+	{
+		__asm {
+			mov ecx, this
+			rdtsc
+			mov dword ptr [ecx], eax
+			mov dword ptr [ecx + 4], edx
+		}
+	}
+};
+
+#define EXIT_INLINED() { \
+	CVProfile *pProf = g_109f3648; \
+	if (!pProf->m_bAtRoot || pProf->m_enabled) { \
+		CVProfNode *n = pProf->m_pCurNode; \
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) { \
+			CCycleSampleL end; \
+			end.m_Int64 = 0; \
+			end.Sample(); \
+			CUnknownCycle100335e0 *pc = &n->m_CurFrameTime; \
+			pc->m_Int64 = end.m_Int64 - pc->m_Int64; \
+			n->m_TotalTime += pc->m_Int64; \
+			g_109f3648->PopGroup(); \
+		} \
+		if (n->m_nRecursions == 0) \
+			pProf->m_pCurNode = pProf->m_pCurNode->m_pParent; \
+		pProf->m_bAtRoot = (pProf->m_pCurNode == pProf->m_pRoot); \
+	} \
+}
+
+// TARGET: CAI_Pathfinder::sub_10304130
+CAI_Waypoint *CAI_Pathfinder::sub_10304130(const float *pLocal, const float *pOrigin, int a, int b, int c, unsigned int flags, int d, bool e)
+{
+	g_109f3648->EnterScope("CAI_Pathfinder_BuildLocalRoute", 0, "Unaccounted", false);
+	float flYaw = (c != -1) ? GetNode10304130(((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder->m_pNetwork, c)->m_flYaw : 0;
+	CAI_PathfinderYawView *pThis = (CAI_PathfinderYawView *)this;
+	if (flags & 1) {
+		CAI_Waypoint *r = pThis->sub_10303d10(pLocal, pOrigin, a, b, c, flags, flYaw, d, e);
+		if (r) {
+			g_109f3648->ExitScope();
+			return r;
+		}
+	}
+	if (flags & 2) {
+		CAI_Waypoint *r = pThis->sub_10303f80(pLocal, pOrigin, a, b, c, flags, flYaw, d, e);
+		if (r) {
+			g_109f3648->ExitScope();
+			return r;
+		}
+	}
+	if (c != -1) {
+		if ((flags & 4) && (((CAI_BaseNPC *)m_pOuter)->vfunc513() & 2)) {
+			CAI_Waypoint *r = pThis->sub_10303c90(pLocal, pOrigin, a, b, c, flags, flYaw, e);
+			if (r) {
+				g_109f3648->ExitScope();
+				return r;
+			}
+		}
+		if ((flags & 8) && (((CAI_BaseNPC *)m_pOuter)->vfunc513() & 8)) {
+			CAI_Waypoint *r = pThis->sub_10303cd0(pLocal, pOrigin, a, b, c, flags, flYaw, e);
+			if (r) {
+				EXIT_INLINED()
+				return r;
+			}
+		}
+	}
+	EXIT_INLINED()
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103048d0 size=0x11d
 #include "CAI_Pathfinder.h"
 
