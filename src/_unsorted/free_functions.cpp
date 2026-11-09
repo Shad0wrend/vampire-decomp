@@ -179015,6 +179015,32 @@ void CUnk102c3540::sub_102c3540(const CVariantArg102c3540 *d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c3580 size=0xc5
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "inputdata_t.h"
+
+template <class T> inline T fmax_(const T &a, const T &b) { return (b > a) ? b : a; }
+
+// TARGET: CBaseCombatCharacter::sub_102c3580
+void CBaseCombatCharacter::sub_102c3580(inputdata_t &data)
+{
+    float flRate = (data.value.fieldType == 1) ? data.value.flValue : 0.0f;
+    if (flRate == 1.0f || flRate == -1.0f) {
+        m_nMotionTrail = 0;
+        sub_1008d230(-1.0f);
+        return;
+    }
+    if (flRate < 1.0f) {
+        m_nMotionTrail = 0;
+        sub_1008d230(fmax_(flRate, 0.001f));
+    } else {
+        m_nMotionTrail = 3;
+        sub_1008d230(flRate);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c3690 size=0xe
 #include "CAI_BaseNPCTroika.h"
 extern const char *g_105d1068[];
