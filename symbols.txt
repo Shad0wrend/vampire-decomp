@@ -9293,6 +9293,7 @@
 0x1000da62 func   ?sub_10139190@@YAHPBI@Z sub_10139190
 0x1000da67 func   ?sub_1036cbd0@CNPC_VChangBros@@QAE_NXZ CNPC_VChangBros::sub_1036cbd0
 0x1000da71 func   ?vfunc0@CPositionInterpolator_Linear@@UAEXXZ CPositionInterpolator_Linear::vfunc0
+0x1000da76 func   ??4Vector@@QAEAAV0@ABV0@@Z ??4Vector@@QAEAAV0@ABV0@@Z
 0x1000da76 func   ?sub_1003e4b0@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1003e4b0
 0x1000da7b func   ?sub_101e0650@CUnknown101e0f00Entry@@QAEHPAX@Z CUnknown101e0f00Entry::sub_101e0650
 0x1000da80 func   ?sub_101ad0f0@CAmbientGeneric@@QAEXXZ CAmbientGeneric::sub_101ad0f0
