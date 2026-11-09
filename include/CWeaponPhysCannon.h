@@ -28,6 +28,7 @@ public:
 	void sub_10410620();	// stub 0x10011c84, tail called by slot 318 while the grab byte is set: lets go of the grab unless the owner's player (+0xa8 of the owner) has a low flag count (+0x3e0 below 2) and the grab keeps holding (sub_1040f940 with 12, or 18 when sub_1040d930 holds)
 	struct CPhysCannonOwner *sub_102521f0();	// the owner (stub 0x10014fab)
 	bool sub_1040e880(CBaseEntity *pEnt);	// tries to pick pEnt up: false while already holding; the owner's pick-up strength (tuning block 0x10739d08) must reach the mass of pEnt's physics object (else sound 0x2f and slot 456 of the owner), then the melee check sub_10411160, then the grab starts (sub_1040dde0, sub_1040c5d0) and the next time (+0x734) is pushed out 0.5s
+	void sub_1040e2e0(CBaseEntity *pEnt, const float *pDir, void *pTrace);
 	void sub_1040dde0(CBaseEntity *pEnt, void *pPlayer, int a);	// stub 0x10007adb, called when picking an object up
 	CUnknown101bc140 *sub_104112d0();	// the hold sound, created on the first call and cached in +0x968
 
