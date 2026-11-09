@@ -82279,6 +82279,28 @@ void CBasePlayer::sub_1015f150(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f330 size=0x175
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "CBasePlayer.h"
+#include "inputdata_t.h"
+void sub_10015b68();
+extern char g_106b8540[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void CBasePlayer::sub_1015f330(inputdata_t *pInput)
+{
+	ScopeTrace trace("CBasePlayer::InputStopHUDParticle", this ? STRINGR(m_name26c) : g_105387dc);
+	if (m_hHud1E3C)
+	{
+		((CEntityVSlots *)m_hHud1E3C.Get())->slot242();
+		m_hHud1E3C->sub_100ac4e0((int)sub_10015b68, 0, 0);
+		m_hHud1E3C->sub_100ac610((pInput->value.fieldType == 1 ? pInput->value.flValue : 0.0f) + gpGlobals->curtime, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f510 size=0xd3
 #include "inputdata_t.h"
 #include "CBaseCombatCharacter.h"
