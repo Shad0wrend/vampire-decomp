@@ -232297,6 +232297,50 @@ CNPC_VWerewolfVec3 *CNPC_VWerewolf::sub_103d68d0(CNPC_VWerewolfVec3 *pOut, void 
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d6d00 size=0x2c4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VWerewolf.h"
+#include "UTIL_Trace.h"
+#include "ScopeTrace.h"
+
+const Vector *sub_102d6100(int hull);
+const Vector *sub_102d6120(int hull);
+
+inline void UTIL_TraceHullInl(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	ray.Init(vecAbsStart, vecAbsEnd, hullMin, hullMax);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+bool CNPC_VWerewolf::sub_103d6d00(Vector vecPos)
+{
+	ScopeTrace scope("CNPC_VWerewolf::HullInSolid",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	Vector vecMins = *sub_102d6100(*(int *)((char *)this + 0x1568));
+	Vector vecMaxs = *sub_102d6120(*(int *)((char *)this + 0x1568));
+
+	CGameTrace tr;
+	Vector vecEnd = vecPos;
+	vecEnd.z += 1.0;
+	UTIL_TraceHullInl(vecPos, vecEnd, vecMins, vecMaxs, 0x202400b, this, 7, &tr);
+
+	return *(char *)&tr.m_startsolid != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d7090 size=0x12f
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
