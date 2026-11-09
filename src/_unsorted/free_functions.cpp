@@ -150413,6 +150413,42 @@ int CKeyValuesX::sub_10248d90(const char *name, const char **names, int count, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248e80 size=0xf6
+#include <stdio.h>
+#include "CKeyValuesX.h"
+extern char g_106b8540[];
+
+bool CKeyValuesX::sub_10248e80(const char *pszKey, int nMax, const char *pszFormat, const char **ppszName, const char ***pppItems, int *pnCount)
+{
+	char key[32];
+	if (pnCount) {
+		*pnCount = 0;
+		CKeyValuesX *kv = sub_102489a0(pszKey, 0);
+		if (kv) {
+			*ppszName = kv->sub_10248cd0("Name", g_106b8540);
+			int n = 0;
+			int i;
+			for (i = 0; i < nMax; i++) {
+				sprintf(key, pszFormat, i);
+				if (!*kv->sub_10248cd0(key, g_106b8540))
+					break;
+				n++;
+			}
+			if (n > 0) {
+				*pnCount = n;
+				*pppItems = new const char *[n];
+				for (i = 0; i < n; i++) {
+					sprintf(key, pszFormat, i);
+					(*pppItems)[i] = kv->sub_10248cd0(key, g_106b8540);
+				}
+				return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248fc0 size=0xdc
 extern char g_106b8540[];
 
