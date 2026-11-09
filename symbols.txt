@@ -13783,6 +13783,7 @@
 0x10013bc4 func   ?sub_100ad8f0@@YGXPAX000@Z sub_100ad8f0
 0x10013bce func   ?sub_101d10e0@@YAXPBDZZ sub_101d10e0
 0x10013bd3 func   ?vfunc488@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc488
+0x10013bd8 func   ?sub_1033bb60@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033bb60
 0x10013bdd func   ?vfunc33@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc33
 0x10013be2 func   ?sub_102fc5d0@CUnknown102fc5d0@@QAEPAV1@HHPBMH@Z CUnknown102fc5d0::sub_102fc5d0
 0x10013be7 func   ?sub_1006d9d0@CBaseCineCam@@QAE_NXZ CBaseCineCam::sub_1006d9d0

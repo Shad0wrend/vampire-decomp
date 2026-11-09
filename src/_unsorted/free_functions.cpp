@@ -207358,6 +207358,107 @@ float CUnknown1033b980::sub_1033b980()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033bb60 size=0x21c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "CEventQueue.h"
+#include "CVStatList_t.h"
+#include "CDisciplineParticle.h"
+#include "CList_t.h"
+#include "Vector.h"
+
+struct CUnknown1033b980
+{
+	float sub_1033b980();
+};
+
+struct CBloodHealColor
+{
+	unsigned char r, g, b, a;
+};
+
+struct CBloodHealVec3
+{
+	float x, y, z;
+};
+
+struct CBloodHealVariant
+{
+	union
+	{
+		bool bVal;
+		const char *iszVal;
+		int iVal;
+		float flVal;
+		CBloodHealVec3 vecVal;
+		CBloodHealColor rgbaVal;
+	};
+	unsigned int m_hEntity;
+	int m_fieldType;
+
+	CBloodHealVariant() { iVal = 0; m_hEntity = 0xffffffff; m_fieldType = 0; }
+	CBloodHealVariant(const CBloodHealVariant &o)
+	{
+		bVal = o.bVal;
+		iszVal = o.iszVal;
+		iVal = o.iVal;
+		flVal = o.flVal;
+		vecVal = o.vecVal;
+		rgbaVal = o.rgbaVal;
+		m_hEntity = o.m_hEntity;
+		m_fieldType = o.m_fieldType;
+	}
+	int Int() const { return (m_fieldType == 4) ? iVal : 0; }
+	void SetInt(int val) { iVal = val; m_fieldType = 4; }
+};
+
+struct CEventQueueUnit : CEventQueue
+{
+	void sub_100ce5c0(CBloodHealVariant *pOut);
+	bool sub_100ce710(CBloodHealVariant v);
+};
+
+extern CEventQueue g_106e7050;
+
+// TARGET: CBaseCombatCharacter::sub_1033bb60
+void CBaseCombatCharacter::sub_1033bb60()
+{
+	ScopeTrace trace("CBaseCombatCharacter::BloodHealBegin", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (CVStatListSet::Of(this)->Find(2)->sub_102012d0(2) > 0)
+	{
+		CDisciplineParticle::sub_10050d90((int)this, 2, 0x3f800000, 0x3f800000, 0x3f800000, (int)"D_BloodHealing_Emitter", 2, (int)"Bip01 Spine2", 0, 0);
+		float f = ((CUnknown1033b980 *)this)->sub_1033b980();
+		if (f > 0.0f)
+		{
+			if (!((CList_t *)&g_106e7050)->sub_100ce3c0((int)this, (int)"BloodHeal"))
+			{
+				CVariantCopy v;
+				v.SetInt(1);
+				g_106e7050.sub_100cdf10(this, "BloodHeal", v, f, this, this, 0, CEQExtra());
+			}
+			else
+			{
+				CBloodHealVariant v;
+				((CEventQueueUnit *)&g_106e7050)->sub_100ce5c0(&v);
+				v.SetInt(v.Int() + 1);
+				((CEventQueueUnit *)&g_106e7050)->sub_100ce710(v);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033be10 size=0xf5
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
