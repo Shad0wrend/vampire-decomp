@@ -100058,6 +100058,65 @@ void CAmbientGenericInput::sub_101ac690(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac7d0 size=0x101
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+// TARGET: ?sub_101ac7d0@CAmbientGenericInput@@QAEXPAUinputdata_t@@@Z
+#include "CAmbientGeneric.h"
+#include "CEntityVSlots.h"
+#include "inputdata_t.h"
+
+extern float g_104454c4;
+void sub_101cdac0(int edict, int pOrigin, const char *pszName, int a, int b, unsigned int flags, int c);
+typedef void (*PFN_EmitAt)(int edict, int pOrigin, const char *pszName, float flVolume, int a, unsigned int flags, int c);
+
+namespace block_101ac7d0 {
+struct CAmbientGenericUnit : CAmbientGeneric
+{
+	int sub_101ac670(int flags);
+};
+int CAmbientGenericUnit::sub_101ac670(int flags)
+{
+	return m_n04e0 | flags;
+}
+}
+using namespace block_101ac7d0;
+
+inline float VariantFloat(const variant_t &v)
+{
+	return v.fieldType == 1 ? v.flValue : g_104454c4;
+}
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CAmbientGenericInput : CAmbientGeneric
+{
+	void sub_101ac7d0(inputdata_t *pInput);
+};
+
+void CAmbientGenericInput::sub_101ac7d0(inputdata_t *pInput)
+{
+	int nVol = (int)(((VariantFloat(pInput->value) > 10.0f) ? 10.0f : ((VariantFloat(pInput->value) < 0.0f) ? 0.0f : VariantFloat(pInput->value))) * 10.0f);
+	m_dpv.vol = nVol;
+	CBaseEntity *pSource = m_hSoundEnt.Get();
+	if (pSource) {
+		CEntityVSlots *pEnt = (CEntityVSlots *)pSource;
+		const char *pszName = STRINGR(*(const char *const *)&m_pszSoundFile);
+		int edict = *(int *)((char *)pEnt + 0x2e0);
+		float flVol = (float)(nVol * 0.01);
+		((PFN_EmitAt)sub_101cdac0)(edict, (int)pEnt->slot217(), pszName, flVol, m_n0454, ((CAmbientGenericUnit *)this)->sub_101ac670(1), m_dpv.pitch);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ad3e0 size=0x17
 namespace lifted {
 struct C100131e2 { int sub_100131e2(int, int, int, int); };
