@@ -24,6 +24,9 @@ struct CTempEntsBlood	// *g_10540528: the temp entity interface; slot 14 (+0x38)
 	virtual void vfunc19(CRecipientFilter &filter, int delay, const Vector *pOrigin, const CGameTrace *pTrace, int entIndex, int hitbox, int decalId, bool bFlag);	// slot 19 (+0x4c): a decal temp entity (broadcast filter path)
 	virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23(); virtual void vfunc24();
 	virtual void vfunc25(CRecipientFilter &filter, int a2, const Vector *pOrigin, const CGameTrace *pTrace, int entIndex, int hitbox, int a7, int a8, int a9, int a10, int a11, int a12, int a13);	// slot 25 (+0x64): a decal temp entity (PAS filter path)
+	virtual void vfunc26(); virtual void vfunc27(); virtual void vfunc28(); virtual void vfunc29();
+	virtual void vfunc30(); virtual void vfunc31(); virtual void vfunc32(); virtual void vfunc33();
+	virtual void vfunc34(CRecipientFilter &filter, int delay, const Vector *org, int nModelIndex, float flScale, int nParam);	// slot 34 (+0x88)
 };
 
 struct CGameRulesBlood	// *g_1070ba0c: the game rules; slot 21 (+0x54) answers whether the violence setting is the gory one (amount x5, red blood)
