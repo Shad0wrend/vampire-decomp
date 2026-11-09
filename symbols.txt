@@ -29,6 +29,7 @@
 0x100010a0 func   ?vfunc5@CBloodSplat@@QAEPAV1@I@Z CBloodSplat::vfunc5
 0x100010a5 func   ?sub_102b8a10@@YIHPAX@Z sub_102b8a10
 0x100010aa func   ?sub_101c68e0@CTriggerMultiple@@QAEXPAVCBaseEntity@@@Z CTriggerMultiple::sub_101c68e0
+0x100010af func   ?vfunc4@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc4
 0x100010b4 func   ?sub_1033d410@CLookupUnit1033d410@@QAEHH@Z CLookupUnit1033d410::sub_1033d410
 0x100010b9 func   ?sub_102c8cc0@@YAHH@Z sub_102c8cc0
 0x100010be func   ?sub_101eabd0@CEntryY@@QAE_NPAX@Z CEntryY::sub_101eabd0

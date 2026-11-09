@@ -43,6 +43,34 @@ void CAI_StandoffBehavior::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c7490 size=0x76
+#include "CAI_StandoffBehavior.h"
+struct CStandoffRandTimer
+{
+	float m_next;
+	float m_minInterval;
+	float m_maxInterval;
+	void Reset()
+	{
+		if (m_maxInterval == 0)
+			m_next = gpGlobals->curtime + m_minInterval;
+		else
+			m_next = enginerandom->vfunc1(m_minInterval, m_maxInterval) + gpGlobals->curtime;
+	}
+};
+
+void CAI_StandoffBehavior::vfunc4()
+{
+	m_unk4c = 1;
+	m_unk48 = 0;
+	((CStandoffRandTimer *)&m_flTime3c)->Reset();
+	m_savedUnk50 = m_pOuter->m_unk5de4;
+	*(int *)&m_pOuter->m_unk5de4 = 0x7f7fffff;
+	if (m_unk1a)
+		m_pOuter->m_unk1fc = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c7530 size=0x64
 #include "CAI_StandoffBehavior.h"
 
