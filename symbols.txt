@@ -13932,6 +13932,7 @@
 0x10014614 func   ?sub_101cd940@@YAXPAD@Z sub_101cd940
 0x10014619 func   ?sub_10215960@CPropButton@@QAEXPAUinputdata_t@@@Z CPropButton::sub_10215960
 0x1001461e func   ?sub_1012c9c0@@YAPAUTEnt@@PAU1@@Z sub_1012c9c0
+0x10014623 func   ?sub_1013cfe0@@YAMABUVector2D@@00PAM@Z sub_1013cfe0
 0x10014628 func   ?vfunc119@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc119
 0x1001462d func   ?vfunc82@CDynamicProp@@UAEPAUdatamap_t@@XZ CDynamicProp::vfunc82
 0x10014632 func   ?vfunc18@CMultiplayRules@@UAE_NXZ CMultiplayRules::vfunc18
