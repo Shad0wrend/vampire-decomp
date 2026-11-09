@@ -27,6 +27,62 @@ void CFire::sub_10109a20(CBaseEntity *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109a60 size=0x149
+#include "CBaseEntity.h"
+#include "CFire.h"
+#include "CCollisionProperty.h"
+
+#define FV(n) virtual void s##n();
+#define FV10(p) FV(p##0) FV(p##1) FV(p##2) FV(p##3) FV(p##4) FV(p##5) FV(p##6) FV(p##7) FV(p##8) FV(p##9)
+#define FV100(p) FV10(p##0) FV10(p##1) FV10(p##2) FV10(p##3) FV10(p##4) FV10(p##5) FV10(p##6) FV10(p##7) FV10(p##8) FV10(p##9)
+
+struct FireView_t {
+	FV100(a) FV100(b)
+	FV10(c0)
+	FV(c10) FV(c11) FV(c12) FV(c13) FV(c14) FV(c15) FV(c16)
+	virtual float *GetAbsOrigin();
+	char pad[0x224 - 4];
+	int flags224;
+	char pad2[0x270 - 0x228];
+	ICollideable coll;
+	char pad3[0x2e0 - 0x274];
+	int edict;
+	char pad4[0x464 - 0x2e4];
+	float f464;
+	char pad5[0x470 - 0x468];
+	float f470;
+	const float *WorldAlignMins() { return coll.vfunc1(); }
+	const float *WorldAlignMaxs() { return coll.vfunc2(); }
+};
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+void sub_10142aa0(const float *pOrigin, const float *pMins, const float *pMaxs, int r, int g, int b, int a, float duration);
+void sub_101434b0(int index, int line, const char *pszText, float duration, int r, int g, int b, int a);
+
+inline void EntityBounds(FireView_t *pEntity, int r, int g, int b, int a, float flDuration)
+{
+	const float *pMins = pEntity->WorldAlignMins();
+	sub_10142aa0(pEntity->GetAbsOrigin(), pMins, pEntity->WorldAlignMaxs(), r, g, b, a, flDuration);
+}
+
+void CFire::vfunc123()
+{
+	FireView_t *p = (FireView_t *)this;
+	if (p->flags224 & 4) {
+		if (p->f464 > gpGlobals->curtime && p->f470 > 0.0f) {
+			EntityBounds(p, 88, 255, 128, 0, 0);
+			char tempstr[512];
+			Q_snprintf(tempstr, sizeof(tempstr), "Heat: %.1f", p->f470);
+			int t0 = p->edict; sub_101434b0(engine->vfunc35(t0), 1, tempstr, 0, 255, 255, 255, 255);
+		} else if (!sub_1010a8d0()) {
+			EntityBounds(p, 88, 88, 128, 0, 0);
+			return;
+		}
+	}
+	sub_100a0130();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109c10 size=0x36
 #include "CFire.h"
 
