@@ -3,9 +3,13 @@
 // redeclares every slot.
 #pragma once
 
+class CBaseEntity;
+
 class IMoveHelperServer
 {
 public:
 	IMoveHelperServer() {}
 	virtual void vfunc0() {}
+
+	CBaseEntity *m_pHost; // 0x04 (CMoveHelperServer's host)
 };

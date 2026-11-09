@@ -8,7 +8,29 @@ class CBaseEntity;
 
 #include "IMoveHelperServer.h"
 
-class CMoveHelperServer : public IMoveHelperServer
+#include "utlmemory.h"
+
+// The touch list (+0x08..+0x18): the SDK's CUtlVector<touchlist_t> m_TouchList (0x60-byte entries) built with
+// m_TouchList(0, 128); kept as named fields in a base without vtable so that it is constructed between the
+// IMoveHelperServer and CMoveHelperServer vtable stores, as the game's constructor does.
+struct CMoveHelperServerTouchList
+{
+	CMoveHelperServerTouchList() : m_pTouchList(0), m_nTouchAlloc(128), m_n10(0)
+	{
+		if (m_nTouchAlloc)
+			m_pTouchList = _imp__Plat_Alloc(m_nTouchAlloc * 0x60);
+		m_nTouchCount = 0;
+		m_pTouchListDbg = m_pTouchList;
+	}
+
+	void *m_pTouchList; // 0x08
+	int m_nTouchAlloc; // 0x0c
+	int m_n10; // 0x10
+	int m_nTouchCount; // 0x14
+	void *m_pTouchListDbg; // 0x18
+};
+
+class CMoveHelperServer : public IMoveHelperServer, public CMoveHelperServerTouchList
 {
 public:
 	virtual void vfunc0();
@@ -29,12 +51,6 @@ public:
 	virtual void vfunc15();
 	virtual void vfunc16(const float *pOrigin, const char *pszSound); // "CMoveHelperServer::StartSound": emits the sound at the origin for the host alone (a single user filter, with the prediction rules unless the global flag at +0x14 is 1)
 
-	CBaseEntity *m_pHost; // 0x04
-	void *m_pTouchList; // 0x08
-	int m_nTouchAlloc; // 0x0c
-	int m_n10; // 0x10
-	int m_nTouchCount; // 0x14
-	void *m_pTouchListDbg; // 0x18
 	CMoveHelperServer();
 	void sub_1000185c(); // as in CDataObjectAccessSystem (transplant)
 	void sub_1013eec0(CBaseEntity *pHost); // stores the host and runs the virtual slot 1 (vfunc1)
