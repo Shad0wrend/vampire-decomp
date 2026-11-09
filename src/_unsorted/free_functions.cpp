@@ -137363,6 +137363,61 @@ int CVStatList_t::sub_10201980()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10201a40 size=0x1d7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "CUnknown10202060.h"
+#include "ScopeTrace.h"
+#include <stdio.h>
+#include <string.h>
+
+extern char g_1074e548[];
+
+struct StatNameHolder {
+	const char *m_psz;
+	const char *Get() { return m_psz ? m_psz : g_106b8540; }
+};
+
+static inline const char *StatName(CVStatInfo_t *pInfo)
+{
+	return ((StatNameHolder *)((char *)pInfo + 0x14))->Get();
+}
+
+const char *CVStatList_t::sub_10201a40(int stat, char bTimed)
+{
+	ScopeTrace trace("CVStatList_t::ToDetailedStr", g_106b8540);
+	int nValue = sub_102012d0(stat);
+	int nBase = sub_10200ca0(stat);
+	CVStatInfoList_t *pInfos = (CVStatInfoList_t *)m_field0c;
+	if (nValue != nBase) {
+		if (pInfos->sub_10200370(stat)->sub_101fdf40())
+			sprintf(g_1074e548, "%s: %s (%s)\n", StatName(((CVStatInfoList_t *)m_field0c)->sub_10200370(stat)), sub_10201470(stat), sub_102013a0(stat));
+		else
+			sprintf(g_1074e548, "%s: %d-%s (%d-%s)\n", StatName(((CVStatInfoList_t *)m_field0c)->sub_10200370(stat)), nValue, sub_10201470(stat), nBase, sub_102013a0(stat));
+	} else {
+		if (pInfos->sub_10200370(stat)->sub_101fdf40())
+			sprintf(g_1074e548, "%s: %s\n", StatName(((CVStatInfoList_t *)m_field0c)->sub_10200370(stat)), sub_10201470(stat));
+		else
+			sprintf(g_1074e548, "%s: %d-%s\n", StatName(((CVStatInfoList_t *)m_field0c)->sub_10200370(stat)), nValue, sub_10201470(stat));
+	}
+	if (bTimed) {
+		char *pOwner = (char *)((CUnknown10202060 *)m_pad0000)->sub_10202060();
+		char *pTimers = *(char **)(pOwner + 0xa8);
+		if (pTimers)
+			sprintf(g_1074e548 + strlen(g_1074e548) - 1, " -- %03f Seconds\n", (double)(*(float *)(pTimers + 0x1adc + stat * 4) - (gpGlobals->curtime - *(float *)(pTimers + 0x1b20 + stat * 4))));
+	}
+	return g_1074e548;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10201ca0 size=0x162
 #include "CUnknown10201ca0.h"
 #include "CVStatList_t.h"
