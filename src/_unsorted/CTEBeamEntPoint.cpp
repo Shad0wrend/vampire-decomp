@@ -14,6 +14,47 @@ CTEBeamEntPoint *CTEBeamEntPoint::vfunc2(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005acb0 size=0x12d
+#include "CTEBeamEntPoint.h"
+#include "CBroadcastRecipientFilter.h"
+
+extern short g_1088ae52;
+void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+void sub_10139500(const Vector &start, float scale, const Vector &direction, Vector &dest);
+
+// TARGET: CTEBeamEntPoint::vfunc3
+void CTEBeamEntPoint::vfunc3(const Vector &origin, const QAngle &angles)
+{
+	m_n44 = 1;
+	m_nModelIndex = g_1088ae52;
+	m_n14 = 0;
+	m_n18 = 10;
+	m_f1c = 2.0f;
+	m_f20 = 1.0f;
+	m_f2c = 1.0f;
+	m_n30 = 0;
+	m_n34 = 63;
+	m_n38 = 127;
+	m_n3c = 150;
+	m_n40 = 1;
+
+	m_vecEnd = origin;
+
+	Vector forward, right;
+
+	m_vecEnd += Vector(0, 0, 24);
+
+	sub_10139610(angles, &forward, &right, 0);
+	forward.z = 0.0f;
+	VectorNormalize(forward);
+
+	sub_10139500(m_vecEnd, 50.0f, forward, m_vecEnd);
+
+	CBroadcastRecipientFilter filter;
+	vfunc4((int)&filter, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005ae30 size=0x39
 #include "CTEBeamEntPoint.h"
 #include "IVEngineServerFull.h"
