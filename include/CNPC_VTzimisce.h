@@ -13,6 +13,18 @@ struct datamap_t;
 
 class CBaseEntity;
 class CAI_Motor;
+#include "CUnknown102e0150.h"
+class CNPC_VTzimisceHelper2
+{
+public:
+	VT_SLOTS100(a0)
+	VT_SLOTS100(a1)
+	VT_SLOTS100(a2)
+	VT_SLOTS10(a30) VT_SLOTS10(a31) VT_SLOTS10(a32) VT_SLOTS10(a33) VT_SLOTS10(a34) VT_SLOTS10(a35)
+	virtual int vfunc360();
+};
+class CNPC_VTzimisce;
+CNPC_VTzimisceHelper2 *__fastcall sub_1032e7b0(CNPC_VTzimisce *p);
 
 // The object returned by CNPC_VTzimisce slot 167; its slot 220 gives the position-like pointer.
 class CNPC_VTzimisceHelper
@@ -51,7 +63,8 @@ public:
 	virtual void s160(); virtual void s161(); virtual void s162(); virtual void s163();
 	virtual void s164(); virtual void s165(); virtual void s166();
 	virtual CNPC_VTzimisceHelper *vfunc167();
-	VT_SLOTS10(t00) VT_SLOTS10(t01)
+	virtual CBaseEntity *vfunc168(); virtual void t001(); virtual void t002(); virtual void t003(); virtual void t004(); virtual void t005(); virtual void t006(); virtual void t007(); virtual void t008(); virtual void t009();
+	VT_SLOTS10(t01)
 	virtual void t020(); virtual void t021(); virtual void t022(); virtual void t023(); virtual void t024();
 	virtual Vector vfunc193();	// slot 193 "EyePosition": returned by value
 	virtual void t026(); virtual void t027(); virtual void t028(); virtual void t029();
@@ -89,7 +102,7 @@ public:
 	virtual void t266(); virtual void vfunc435(int arg);	// slot 435: the Troika base's vfunc435(arg), then the flags at +0x14b8 bit 3 clear: 0 at +0x668c and the count at +0x66b8 drops by one while above 0
 	virtual void t268(); virtual void t269();
 	void sub_100048f9(int arg);	// CAI_BaseNPCTroika::vfunc435 (stub 0x100048f9), called directly
-	virtual void t270(); virtual void t271(); virtual int vfunc440(int a);	// slot 440: maps an NPC schedule type to this NPC's schedule id (source line recorded at +0x1b30 / +0x1b34), the base mapping otherwise
+	virtual int vfunc438(); virtual void t271(); virtual int vfunc440(int a);	// slot 440: maps an NPC schedule type to this NPC's schedule id (source line recorded at +0x1b30 / +0x1b34), the base mapping otherwise
 	virtual void t273(); virtual void t274(); virtual void t275(); virtual void t276(); virtual void t277(); virtual void t278(); virtual void t279();
 	int sub_102b12f0(int a);	// CAI_BaseNPCTroika::vfunc440 (stub 0x10001997), called directly
 	void *sub_103c0160(int *pKind);	// stub 0x10009b5b
@@ -109,7 +122,12 @@ public:
 	virtual void v487(); virtual void vfunc488(); virtual void v489();	// slot 488: logs "SPI_DIES" with the three convar values, then runs slot 487
 	void vfunc487();	// slot 487 (the same slot as v487, declared under its real name for the matched functions)
 	virtual void vfunc490();
-	VT_SLOTS100(w0)
+	VT_SLOTS10(w00) VT_SLOTS10(w01) VT_SLOTS10(w02)
+	virtual void w030(); virtual void w031(); virtual void w032(); virtual void w033(); virtual void w034(); virtual void w035(); virtual void w036(); virtual void w037(); virtual void w038();
+	virtual bool vfunc530(CBaseEntity *pEnt);
+	VT_SLOTS10(w04)
+	virtual CUnknown102e0150 *vfunc541(); virtual void w051(); virtual void w052(); virtual void w053(); virtual void w054(); virtual void w055(); virtual void w056(); virtual void w057(); virtual void w058(); virtual void w059();
+	VT_SLOTS10(w06) VT_SLOTS10(w07) VT_SLOTS10(w08) VT_SLOTS10(w09)
 	virtual void w100(); virtual void w101(); virtual void vfunc593(); virtual void w103(); virtual void w104();
 	virtual void w105(); virtual void w106(); virtual void w107(); virtual void w108(); virtual void w109();	// slot 593: CAI_BaseNPCTroika::vfunc593 (stub 0x10002720), then the five floats at +0x655c..+0x656c
 	VT_SLOTS10(w11)
@@ -136,7 +154,13 @@ public:
 	int m_n156c;	// 0x156c: 10 in the constructor
 	char m_pad1570[0x1574 - 0x1570];
 	float m_f1574;	// 0x1574: set to -0.5f in Spawn
-	char m_pad1578[0x5c38 - 0x1578];
+	char m_pad1578[0x1b2c - 0x1578];
+	int m_n1b2c;
+	const char * volatile m_pszFile1b30;
+	volatile int m_nLine1b34;
+	char m_pad1b38[0x5b80 - 0x1b38];
+	char m_b5b80;
+	char m_pad5b81[0x5c38 - 0x5b81];
 	struct CTzimisceTask *m_pTask5c38;	// 0x5c38: the current schedule; its dword at +0x1c is the node id looked up by slot 580's range list
 	char m_pad5c3c[0x5cc0 - 0x5c3c];
 	int m_nState5cc0;
@@ -149,7 +173,9 @@ public:
 	CBaseEntity *m_p5ddc;	// 0x5ddc: the "target type 0x36b0 / 0x36b1" entity (only its +0x5dc dword is read)
 	char m_pad5de0[0x6078 - 0x5de0];
 	char m_b6078;	// 0x6078: set in Spawn
-	char m_pad6079[0x6458 - 0x6079];
+	char m_pad6079[0x623c - 0x6079];
+	float m_f623c;
+	char m_pad6240[0x6458 - 0x6240];
 	float m_flIgnoreCollisionTimer;	// 0x6458
 	char m_pad645c[0x655c - 0x645c];
 	float m_f655c;	// 0x655c: 0.01f in vfunc593
@@ -169,7 +195,9 @@ public:
 	char m_posBuf[0xc];
 	int m_n6680;
 	EHANDLE m_hEnt6684;
-	char m_posBuf2[4];
+	char m_b6688;
+	char m_b6689;
+	short m_n668a;
 	int m_state;
 	int *m_pMem6690;	// 0x6690: second vector (memory, alloc count, grow size, size, element pointer); the constructor sets grow 8 and allocates 0x40 bytes
 	int m_nAlloc6694;	// 0x6694
@@ -182,9 +210,18 @@ public:
 	float m_fl66b0;	// 0x66b0: next-allowed timer (curtime + 10.0f)
 	char m_b66b4;	// 0x66b4
 	char m_pad66b5[0x66b8 - 0x66b5];
-	int m_n66b8;
+	volatile int m_n66b8;
 
+	int sub_102b8a60();
+	int sub_102b9060();
+	int sub_102af660();
+	void sub_102b4090();
+	bool sub_103be090();
+	bool sub_103be130();
+	bool sub_103be150();
+	int sub_103bcb60(int a);
 	bool sub_103be180();
+	int sub_102cc1f0(int a);
 	int vfunc124();
 	int sub_10006f64();
 	int sub_103bc4e0();
