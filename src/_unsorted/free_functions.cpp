@@ -64567,6 +64567,84 @@ void CFire::sub_1010a370(int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a450 size=0x2d5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CFire.h"
+#include "CCollisionProperty.h"
+#include "CUnknown101d1460.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "Ray_t.h"
+
+void sub_101cf5c0(CBaseEntity *pEnt, const Vector *pVec, char bUpdateTriggers);
+
+inline Vector Fire_WorldToLocal(const CUnknown101d1460 &mat, const Vector &vVec)
+{
+	Vector tmp = vVec;
+	tmp.x -= mat.m_m[3];
+	tmp.y -= mat.m_m[7];
+	tmp.z -= mat.m_m[11];
+	Vector res;
+	res.sub_100f2f90(
+		mat.m_m[0] * tmp.x + mat.m_m[4] * tmp.y + mat.m_m[8] * tmp.z,
+		mat.m_m[1] * tmp.x + mat.m_m[5] * tmp.y + mat.m_m[9] * tmp.z,
+		mat.m_m[2] * tmp.x + mat.m_m[6] * tmp.y + mat.m_m[10] * tmp.z);
+	return res;
+}
+
+// TARGET: CFire::sub_1010a450
+void CFire::sub_1010a450(const float *pOrigin, float flSize, int a, int b, unsigned int nFlags, int c)
+{
+	CFireEntityFields *f = (CFireEntityFields *)this;
+
+	f->m_flScale480 = *(float *)&a;
+	m_flags204 = nFlags;
+	f->m_nType458 = c;
+
+	if (nFlags & 1)
+		*(float *)&b = g_104454c4;
+	f->m_flHeat45c = *(float *)&b;
+	if (*(float *)&b != g_104454c4)
+		m_flags204 = nFlags | 0x80;
+
+	Vector localOrigin = *(const Vector *)pOrigin;
+	if (EHandle_Get(m_hMoveParent))
+	{
+		CUnknown101d1460 parentMatrix;
+		parentMatrix.sub_101d1460(((CBaseEntity *)EHandle_Get(m_hMoveParent))->m_pEdict2e0);
+		localOrigin = Fire_WorldToLocal(parentMatrix, *(const Vector *)pOrigin);
+	}
+
+	sub_101cf5c0(this, &localOrigin, 0);
+
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(2);
+	}
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(8);
+	}
+
+	sub_100b3b00();
+
+	float flHalf = flSize * 0.00390625f;
+	flHalf = flHalf * 64.0f;
+	f->m_flSize468 = flSize;
+	f->m_flFade478 = flHalf;
+	if (m_flags204 & 8)
+		f->m_flHeat46c = flHalf;
+	*(int *)&f->m_flLastFade47c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a7f0 size=0xa1
 #include "CBaseEntity.h"
 #include "CFire.h"
