@@ -23,6 +23,7 @@ public:
 	int m_nEntries;	// 0x14
 	CUnknown10206340 **m_ppEntries;	// 0x18
 	int m_nId;	// 0x1c
+	int m_field0020;
 
 	CUnknown10206400(int id);	// stub 0x1000aa9c
 	~CUnknown10206400();
