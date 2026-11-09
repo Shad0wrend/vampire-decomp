@@ -112763,6 +112763,38 @@ int sub_101cd340(CBaseEntity *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cd8c0 size=0x5a
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "string_t.h"
+struct SEntityObject;
+struct CNetworkableView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int GetFlags();
+	virtual void SetFlags(int flags);
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12();
+	virtual CBaseEntity *GetBaseEntity();
+};
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10735d39;
+void sub_101cd8c0(CNetworkableView *pNet)
+{
+	if (!pNet || (pNet->GetFlags() & 1))
+		return;
+	pNet->SetFlags(pNet->GetFlags() | 1);
+	CBaseEntity *pEnt = pNet->GetBaseEntity();
+	if (pEnt) {
+		g_10735d39 = 0;
+		(*(void (__fastcall ***)(CBaseEntity *))pEnt)[180](pEnt);
+		pEnt->SetName(string_t(0));
+	}
+	g_106eb5d8.sub_100f6bb0((SEntityObject *)pNet);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cd940 size=0x17
 void sub_101cd8c0(void *p);
 
