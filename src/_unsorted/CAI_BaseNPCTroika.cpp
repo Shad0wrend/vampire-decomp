@@ -3470,6 +3470,51 @@ void CAI_BaseNPCTroika::vfunc487()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4cc0 size=0x1f7
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+
+struct CEdictView2b4 { char pad[0x9c]; CBaseCombatCharacter *m_pUnk; };
+int sub_101ccc80(CEdictView2b4 **pList, int nMax, const Vector *mins, const Vector *maxs, int flags, int a);
+
+inline int EntitiesInBox2b4(CEdictView2b4 **pList, int nMax, const Vector &mins, const Vector &maxs, int flags)
+{
+	return sub_101ccc80(pList, nMax, &mins, &maxs, flags, 0);
+}
+
+void CAI_BaseNPCTroika::vfunc595()
+{
+	static Vector s_vecExtents(1024.0f, 1024.0f, 128.0f);
+	Vector vecOrigin = *(Vector *)vfunc217();
+	float flBestDist = 3.4028235e38f;
+	CBaseEntity *pBest = 0;
+	CEdictView2b4 *pList[32];
+	int n = EntitiesInBox2b4(pList, 32, vecOrigin - s_vecExtents, vecOrigin + s_vecExtents, 0x40);
+	for (int i = 0; i < n; i++)
+	{
+		if (pList[i])
+		{
+			CBaseCombatCharacter *pInner = pList[i]->m_pUnk;
+			if (pInner && !(pInner->sub_100b3700() & 0x8000) && pInner->m_b1480 && ((CEntityVSlots *)pInner)->slot158() && !pInner->sub_100b5190()
+				&& (CBaseEntity *)pInner != (CBaseEntity *)this && vfunc404(pInner) == 1)
+			{
+				float flDist = (vecOrigin - *((CEntityVSlots *)pInner)->slot217()).LengthSqr();
+				if (flDist < flBestDist)
+				{
+					flBestDist = flDist;
+					pBest = pInner;
+				}
+			}
+		}
+	}
+	if (pBest)
+		vfunc596((int)pBest);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4fb0 size=0x14
 #include "CAI_BaseNPCTroika.h"
 namespace lifted {
