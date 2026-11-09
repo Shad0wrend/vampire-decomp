@@ -2260,6 +2260,43 @@ void CBasePlayer::vfunc436()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016ba60 size=0xbf
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct CPlayerBaseView
+{
+    void sub_103409a0(const char *pszName);
+};
+
+void CBasePlayer::vfunc105(const char *pszName)
+{
+    char *p = (char *)this;
+    if ((*(int *)(p + 0x168) == 0x1e || *(char *)(p + 0x1edc) != 0)
+        && _strcmpi(pszName, "models/character/monster/Animalism_Beastform/Animalism_Beastform.mdl") != 0) {
+        const char *pSlash = pszName;
+        while (*pSlash) {
+            if (*pSlash == '/') {
+                pSlash++;
+                break;
+            }
+            pSlash++;
+        }
+        if (*pSlash == 0)
+            return;
+        sprintf(p + 0x23d4, "models/%s", pSlash);
+        return;
+    }
+    ((CPlayerBaseView *)this)->sub_103409a0(pszName);
+    float maxs[3] = { 16.0f, 16.0f, 72.0f };
+    float mins[3] = { -16.0f, -16.0f, 0.0f };
+    ((CBaseEntity *)this)->sub_1009edc0(mins, maxs);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016cee0 size=0x36
 #include "CBasePlayer.h"
 
