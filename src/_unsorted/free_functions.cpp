@@ -218380,6 +218380,45 @@ int CUnknown103a0eb0::sub_103a0eb0(int nLine, CUnknown103a0eb0Info *pInfo, char 
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a0ff0 size=0x1d8
+#include "CNPC_VNewscaster.h"
+#include "CUnknown103a0eb0.h"
+#include "engineserver.h"
+
+void sub_101434b0(int edict, int line, const char *text, int a, int r, int g, int b, int c);
+const char *sub_100067f3(const char *fmt, ...);
+
+// TARGET: CNPC_VNewscaster::sub_103a0ff0
+int CNPC_VNewscaster::sub_103a0ff0(int nLines)
+{
+	if (m_h6554.Get()) {
+		int e1 = m_pEdict2e0;
+		int n = m_listA.m_size;
+		int idx = engine->vfunc35(e1);
+		sub_101434b0(idx, nLines, sub_100067f3("Main Stories: %d:", n), 0, 255, 255, 255, 255);
+		nLines++;
+		for (int i = 0; i < m_listA.m_size; i++) {
+			bool bHighlight = m_bPickA && m_nCursorA == i;
+			nLines = ((CUnknown103a0eb0 *)this)->sub_103a0eb0(nLines, (CUnknown103a0eb0Info *)&m_listA[i], bHighlight);
+		}
+		int e2 = m_pEdict2e0;
+		int n2 = m_listB.m_size;
+		int idx2 = engine->vfunc35(e2);
+		sub_101434b0(idx2, nLines, sub_100067f3("Side Stories: %d:", n2), 0, 255, 255, 255, 255);
+		nLines++;
+		for (int j = 0; j < m_listB.m_size; j++) {
+			bool bHighlight = !m_bPickA && m_nCursorB == j;
+			nLines = ((CUnknown103a0eb0 *)this)->sub_103a0eb0(nLines, (CUnknown103a0eb0Info *)&m_listB[j], bHighlight);
+		}
+	} else {
+		int e3 = m_pEdict2e0;
+		sub_101434b0(engine->vfunc35(e3), nLines, "not playing VCD", 0, 255, 255, 255, 255);
+		nLines++;
+	}
+	return nLines;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a1320 size=0x6a
 #include "CUnknown103a1320.h"
 
