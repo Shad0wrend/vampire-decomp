@@ -7715,6 +7715,7 @@
 0x1000bd66 func   ?sub_102f6690@@YAXXZ sub_102f6690
 0x1000bd6b func   ?vfunc103@CEnvSoundscape@@QAEXXZ CEnvSoundscape::vfunc103
 0x1000bd70 func   ?sub_10032720@@YAXPAVCBaseEntity@@PAUCPhysDamageInfo@@@Z sub_10032720
+0x1000bd75 func   ?vfunc570@CAI_BaseNPCTroika@@UAEHPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc570
 0x1000bd7a func   ?sub_100766f0@CUnknown100766f0@@QAEXH@Z CUnknown100766f0::sub_100766f0
 0x1000bd7f func   ??0CTraceFilterSimple@@QAE@PAXH@Z CTraceFilterSimple::CTraceFilterSimple
 0x1000bd84 func   ?sub_102e4f20@CUnknown102e4f20@@QAEPAXH@Z CUnknown102e4f20::sub_102e4f20

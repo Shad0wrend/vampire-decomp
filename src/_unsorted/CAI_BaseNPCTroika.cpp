@@ -1350,6 +1350,32 @@ bool CAI_BaseNPCTroika::vfunc592()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102954b0 size=0x8d
+#include "CAI_BaseNPCTroika.h"
+
+int CAI_BaseNPCTroika::vfunc570(CBaseEntity *pHint)
+{
+	int act = 0x55;
+	if (pHint) {
+		switch (*(int *)((char *)pHint + 0x5dc)) {
+		case 100:
+			if (sub_1008dc40(0x57, -1) != -1)
+				act = 0x57;
+			else if (sub_10295460(0x1111, 0) != -1)
+				act = 0x1111;
+			break;
+		case 101:
+			if (sub_1008dc40(0x57, -1) != -1)
+				act = 0x57;
+			else if (sub_10295460(0x110d, 0) != -1)
+				act = 0x110d;
+			break;
+		}
+	}
+	return act;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10295590 size=0x127
 #include "CAI_BaseNPCTroika.h"
 
