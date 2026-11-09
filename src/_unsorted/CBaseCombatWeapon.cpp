@@ -522,6 +522,70 @@ void CBaseCombatWeapon::vfunc78()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10250ac0 size=0x106
+#include "CBaseCombatWeapon.h"
+#include "CVDmg_t.h"
+#include "COutputEvent.h"
+void sub_10250400(CBaseCombatWeapon *);
+short sub_10259e20();
+
+inline CBaseCombatWeaponMembers::CBaseCombatWeaponMembers()
+{
+    char *pWeapon = (char *)this - 0x740;
+    CVDmg_t *p = (CVDmg_t *)(pWeapon + 0x77c);
+    int n = 3;
+    do
+    {
+        p->CVDmg_t::CVDmg_t();
+        p++;
+    } while (--n);
+    *(int *)(pWeapon + 0x874) = -1;
+    *(int *)(pWeapon + 0x878) = -1;
+    *(int *)(pWeapon + 0x88c) = -1;
+    ((COutputEvent *)(pWeapon + 0x8e0))->COutputEvent::COutputEvent();
+    ((COutputEvent *)(pWeapon + 0x8f8))->COutputEvent::COutputEvent();
+}
+
+struct CBCWCtorView
+{
+    char pad0[0xa0]; CBaseCombatWeapon *m_pThisA0; char pad1[0x848 - 0xa4];
+    int m_n848; int m_n84c; int m_n850; int m_n854; int m_n858; char m_pad85c[0x870 - 0x85c]; char m_b870; char m_b871; char m_b872; char m_pad873;
+    char m_pad874[0x88c - 0x874]; unsigned int m_hOwner; int m_nViewModelIndex; float m_f894;
+    char m_b898; char m_b899; char m_b89a; char m_pad89b[0x8b8 - 0x89b];
+    float m_f8b8; float m_f8bc; float m_f8c0; float m_f8c4; char m_b8c8; char m_pad8c9[0x8cc - 0x8c9];
+    int m_n8cc; int m_n8d0; int m_n8d4; char m_b8d8; char m_pad8d9; short m_s8da; int m_n8dc;
+};
+
+CBaseCombatWeapon::CBaseCombatWeapon()
+{
+    CBCWCtorView *v = (CBCWCtorView *)this;
+    v->m_f8b8 = 65.0f;
+    v->m_f8bc = 65.0f;
+    v->m_f8c0 = 1024.0f;
+    v->m_f8c4 = 1024.0f;
+    v->m_b870 = 0;
+    v->m_n848 = 0;
+    v->m_n84c = 0;
+    v->m_n850 = 2;
+    v->m_b8c8 = 0;
+    v->m_b89a = 0;
+    v->m_b899 = 0;
+    v->m_b898 = 0;
+    v->m_nViewModelIndex = 0;
+    v->m_n8dc = 0;
+    v->m_pThisA0 = this;
+    sub_10250400(this);
+    v->m_hOwner = 0xffffffff;
+    v->m_n8cc = 0;
+    v->m_n858 = 0;
+    v->m_b872 = 0;
+    v->m_s8da = sub_10259e20();
+    v->m_n8d4 = -1;
+    v->m_n8d0 = 1;
+    v->m_b8d8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10250c20 size=0x1e
 #include "CBaseCombatWeapon.h"
 
