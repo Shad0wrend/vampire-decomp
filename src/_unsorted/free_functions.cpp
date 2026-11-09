@@ -53271,6 +53271,72 @@ void sub_100dfaf0(unsigned char flags, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dfb80 size=0x14c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+
+struct CRefView
+{
+	virtual void v0();
+	virtual unsigned int *vfunc1();
+};
+
+struct CEntNameView
+{
+	const char *sub_100ab4f0();
+};
+
+struct CDialogScriptView : CDialog
+{
+	void sub_100e37d0();
+};
+
+void sub_100dfaf0(int level, const char *fmt, ...);
+
+inline CRefView *ControllerOf(CBaseEntity *p)
+{
+	return p == 0 ? 0 : (CRefView *)p->m_pA8;
+}
+
+inline void SetHandleFrom(unsigned int &h, CRefView *p)
+{
+	if (p)
+		h = *p->vfunc1();
+	else
+		h = -1;
+}
+
+void CDialog::sub_100dfb80(CBaseEntity *pNPC, CBaseEntity *pSpeaker)
+{
+	ScopeTrace trace("CDialog::GenerateScriptFile", g_106b8540);
+	if (m_pTable == 0) {
+		if (pSpeaker && pSpeaker->m_pNPC98)
+			m_hSpeaker = *((CRefView *)pSpeaker->m_pNPC98)->vfunc1();
+		else
+			m_hSpeaker = -1;
+		SetHandleFrom(m_hNPC, ControllerOf(pNPC));
+		if (EHandle_Get(m_hNPC) && EHandle_Get(m_hSpeaker)) {
+			sub_100dfaf0(0xb, "\n\n\nDumping script file for npc: %s, dialog: %s\n", ((CEntNameView *)pSpeaker)->sub_100ab4f0(), sub_100e7310());
+			((CDialogScriptView *)this)->sub_100e37d0();
+			sub_100e34d0();
+			SetHandleFrom(m_hSpeaker, 0);
+			SetHandleFrom(m_hNPC, 0);
+			sub_100e5770();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfd30 size=0x1ed
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

@@ -6025,6 +6025,7 @@
 0x10009557 func   ?sub_101c6670@CTriggerHurt@@QAEXH@Z CTriggerHurt::sub_101c6670
 0x1000955c func   ??0CWeaponMelee@@QAE@XZ CWeaponMelee::CWeaponMelee
 0x10009561 func   ?vfunc5@CNPC_VLasombra@@QAEPAV1@I@Z CNPC_VLasombra::vfunc5
+0x10009566 func   ?sub_100dfb80@CDialog@@QAEXPAVCBaseEntity@@0@Z CDialog::sub_100dfb80
 0x1000956b func   ?vfunc1@CGameMovement@@UAEXPAX0@Z CGameMovement::vfunc1
 0x10009570 func   ?vfunc362@CItemContainer@@QAE_NH@Z CItemContainer::vfunc362
 0x10009575 func   ?sub_103bf440@CNPC_VTzimisce@@QAEXXZ CNPC_VTzimisce::sub_103bf440
