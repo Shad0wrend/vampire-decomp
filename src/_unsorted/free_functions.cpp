@@ -17987,6 +17987,42 @@ void __cdecl sub_1006c5a0(CUnit1006c5a0 *pObj, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006c5d0 size=0xa0
+#include "CUtlBuffer.h"
+#include "utlmemory.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+bool CUtlBuffer::sub_1006c5d0(int nSize)
+{
+	if (m_nError)
+		return false;
+	while (m_nSize < m_nPut + nSize) {
+		if (m_nGrow == -1) {
+			m_nError |= 1;
+			return false;
+		}
+		int nRequested = m_nSize + 1;
+		while (m_nSize < nRequested) {
+			if (m_nSize != 0) {
+				if (m_nGrow)
+					m_nSize += m_nGrow;
+				else
+					m_nSize += m_nSize;
+			} else {
+				m_nSize = 32;
+			}
+		}
+		if (m_pBuffer)
+			m_pBuffer = (char *)Plat_Realloc(m_pBuffer, m_nSize);
+		else
+			m_pBuffer = (char *)Plat_Alloc(m_nSize);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c6a0 size=0x37
 struct CUnknown1006c6a0
 {

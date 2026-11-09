@@ -3108,6 +3108,7 @@
 0x10005574 func   ?sub_1019a490@@YAXXZ sub_1019a490
 0x10005579 func   ?sub_1017b6c0@CStatMaskUnit1017b6c0@@QAEXHH@Z CStatMaskUnit1017b6c0::sub_1017b6c0
 0x1000557e func   ?sub_1023dff0@CUnit1023dff0@@QAEXPAUinputdata_t@@@Z CUnit1023dff0::sub_1023dff0
+0x10005583 func   ?sub_1006c5d0@CUtlBuffer@@QAE_NH@Z CUtlBuffer::sub_1006c5d0
 0x10005588 func   ?sub_103d68d0@CNPC_VWerewolf@@QAEPAUCNPC_VWerewolfVec3@@PAU2@PAX@Z CNPC_VWerewolf::sub_103d68d0
 0x1000558d func   ?sub_1012f970@@YAHXZ sub_1012f970
 0x10005597 func   ?sub_101b2c60@CSoundEmitterSystemBase@@QAE_NXZ CSoundEmitterSystemBase::sub_101b2c60
