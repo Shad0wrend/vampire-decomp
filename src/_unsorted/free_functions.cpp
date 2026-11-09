@@ -102003,6 +102003,48 @@ void CCineNPC::sub_101a8640(CBaseAnimating *pNpc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a8890 size=0x7b
+#include "CBaseEntity.h"
+
+struct CScriptedAiObject {
+	void sub_100050d3();
+	void sub_10007ea0();
+};
+struct CScriptedNpcTarget {
+	char m_pad[0x94];
+	CScriptedAiObject *m_pAi;
+};
+struct CScriptedNpcUnit {
+	char m_pad0[0x204];
+	int m_spawnflags;
+	char m_pad208[0x5ce4 - 0x208];
+	EHANDLE m_hTarget;
+	char m_pad5ce8[0x5f90 - 0x5ce8];
+	bool m_bActive;
+	void sub_101a8890(bool bFlag);
+};
+
+void CScriptedNpcUnit::sub_101a8890(bool bFlag)
+{
+	if (m_spawnflags & 0x20)
+		return;
+	CScriptedNpcTarget *pTarget = (CScriptedNpcTarget *)m_hTarget.Get();
+	if (pTarget && pTarget->m_pAi)
+	{
+		if (m_bActive)
+		{
+			if (!bFlag)
+				pTarget->m_pAi->sub_100050d3();
+		}
+		else if (bFlag)
+		{
+			pTarget->m_pAi->sub_10007ea0();
+		}
+	}
+	m_bActive = bFlag;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8930 size=0x4b
 #include "CCineNPC.h"
 #include "CEHandleGet.h"

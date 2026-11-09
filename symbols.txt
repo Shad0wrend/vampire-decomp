@@ -7215,6 +7215,7 @@
 0x1000aea2 func   ?vfunc144@CBasePlayer@@UAEXPBX@Z CBasePlayer::vfunc144
 0x1000aea7 func   ?vfunc5@CFuncPlat@@UAEPAV1@I@Z CFuncPlat::vfunc5
 0x1000aeac func   ?vfunc144@CNPC_VFrenzyShadow@@UAEXH@Z CNPC_VFrenzyShadow::vfunc144
+0x1000aeb1 func   ?sub_101a8890@CScriptedNpcUnit@@QAEX_N@Z CScriptedNpcUnit::sub_101a8890
 0x1000aeb6 func   ?sub_10042640@UtlMem@@QAEXXZ UtlMem::sub_10042640
 0x1000aebb func   ?sub_1020f700@CFuncElevator@@QAEXH@Z CFuncElevator::sub_1020f700
 0x1000aec0 func   ?sub_102dd940@@YAXPAUCEntry102dd940@@@Z sub_102dd940
