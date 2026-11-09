@@ -155176,6 +155176,61 @@ void CUnknown1024b370::sub_1024b370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024b400 size=0x139
+#include "CUnknown1024b370.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CUtlRBTree12.h"
+
+struct CStringPoolIndex
+{
+	CStringPoolIndex() {}
+	CStringPoolIndex(unsigned short iPool, unsigned short iOffset) : m_iPool(iPool), m_iOffset(iOffset) {}
+	unsigned short m_iPool;
+	unsigned short m_iOffset;
+};
+
+struct CUtlSymbolLessCtx
+{
+	const char *m_pUserString;
+	CUnknown1024b370 *m_pTable;
+};
+extern CUtlSymbolLessCtx g_1088ae34;
+
+typedef CUtlRBTree12At<0x1088ae44> SymTree_t;
+
+struct SymLookup_t : SymTree_t
+{
+	unsigned short Find(const CStringPoolIndex &search) const
+	{
+		unsigned short current = m_Root;
+		while (current != InvalidIndex()) {
+			if (m_LessFunc(&search, m_pElements[current].m_Data))
+				current = Links(current).m_Left;
+			else if (m_LessFunc(m_pElements[current].m_Data, &search))
+				current = Links(current).m_Right;
+			else
+				break;
+		}
+		return current;
+	}
+};
+
+CUnknown1024b370Symbol CUnknown1024b370::sub_1024b400(const char *pString)
+{
+	CUnknown1024b370Symbol sym;
+	if (!pString) {
+		sym.m_Id = 0xffff;
+		return sym;
+	}
+	g_1088ae34.m_pUserString = pString;
+	g_1088ae34.m_pTable = this;
+	sym.m_Id = ((const SymLookup_t *)this)->Find(CStringPoolIndex(0xffff, 0xffff));
+	return sym;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024b590 size=0x33
 // TARGET: sub_1024b590
 struct CFindItem_1024b590 {
