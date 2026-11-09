@@ -195152,6 +195152,69 @@ int CAI_Expresser::sub_10311b90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10311c10 size=0x234
+#include "vampire_all.h"
+#include "CAI_Expresser.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include <string.h>
+
+struct interval_t {
+	float start;
+	float range;
+};
+struct CExprRec {
+	int m_n0;
+	const char *m_pszName;
+	interval_t m_delay;
+	int m_nLevel;
+	int m_n14;
+	int m_nChance;
+};
+extern int g_10936c3c;
+void sub_100126cf(CPASAttenuationFilter *filter, int edict, int a, const char *name, float vol, int lvl, int c, int d, int e, int f, int g);
+
+// TARGET: CAI_Expresser::sub_10311c10
+bool CAI_Expresser::sub_10311c10(int key, const char *pszScene)
+{
+	CExprRec *rec = (CExprRec *)sub_10312340(key);
+	if (!rec || !rec->m_pszName || !*rec->m_pszName)
+		return false;
+	if (rec->m_nChance < 100 && enginerandom->vfunc2(1, 100) <= rec->m_nChance)
+		return false;
+	float start = rec->m_delay.start;
+	float range = rec->m_delay.range;
+	float delay = (range == 0.0f) ? start : enginerandom->vfunc1(start, range);
+	bool ok = false;
+	if (pszScene && !_strnicmp(pszScene, "scene:", g_10936c3c)) {
+		ok = sub_10311ee0((int)(pszScene + g_10936c3c), *(int *)&delay);
+	} else {
+		switch (*rec->m_pszName) {
+		case '=':
+			break;
+		case '?':
+			ok = sub_10311ee0((int)(rec->m_pszName + 1), *(int *)&delay);
+			break;
+		case '^': {
+			CEntitySoundOriginView *pEnt = (CEntitySoundOriginView *)m_pOuter;
+			CPASAttenuationFilter filter(pEnt);
+			int ent = *(int *)((char *)m_pOuter + 0x2e0);
+			int edict = engine->vfunc35(ent);
+			sub_100126cf(&filter, edict, 2, rec->m_pszName + 1, 1.0f, 0x50, 0, sub_10311b90(), 0, 0, 0);
+			ok = true;
+			break;
+		}
+		default:
+			ok = sub_10311f50(rec->m_pszName, delay, 1.0f, rec->m_nLevel, 0) != -1;
+			break;
+		}
+	}
+	if (ok)
+		sub_103126e0(key);
+	return ok;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10311ee0 size=0x43
 #include "vampire_all.h"
 #include "CAI_Expresser.h"
