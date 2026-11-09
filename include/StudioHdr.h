@@ -39,7 +39,10 @@ struct StudioBone	// 0xa0 bytes each (Studio_BuildMatrices 0x100c3600 reads thes
 	int m_iParent;	// 0x04: parent bone index, -1 for a root
 	char m_pad08[0x88 - 8];
 	unsigned char m_bFlags88;	// 0x88: bit 1 (value 2) = the bone's rotation is not inherited from the parent (only the translation is: rotation = the root matrix * bone rotation)
-	char m_pad89[0xa0 - 0x89];
+	char m_pad89[0x94 - 0x89];
+	short m_nPhysicsBone94;	// 0x94
+	char m_pad96[0x9c - 0x96];
+	unsigned int m_nFlags9c;	// 0x9c: contents
 };
 
 struct StudioBoneMask	// the bit list of bones to build (0x100c3600's last argument): bit i is tested at m_bits[i >> 5] & (1 << (i & 31))
