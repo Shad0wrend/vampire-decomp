@@ -100964,6 +100964,66 @@ int sub_101af3f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af650 size=0x1bc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CSpeaker.h"
+#include "CBCCSlotViews.h"
+
+extern float g_10936c40;	// g_talkWaitTime
+extern void (__cdecl *g_109f362c)(const char *pMsg, ...);
+void sub_101cdac0(int, int, const char *, int, int, unsigned int, int);
+int sub_101aeb60(int edict, const char *pszSentenceGroup, float flVolume, int iSoundLevel, int flags, int pitch);
+
+void CSpeaker::sub_101af650()
+{
+	const char *szSoundFile = g_106b8540;
+	float flVolume = m_iHealth210 * 0.1;
+
+	if (!(gpGlobals->curtime > g_10936c40)) {
+		float flWait = g_10936c40;
+		m_flTime017c = flWait + enginerandom->vfunc1(5.0f, 10.0f);
+		return;
+	}
+	if (m_nRule45c) {
+		switch (m_nRule45c) {
+		case 1: szSoundFile = "C1A0_"; break;
+		case 2: szSoundFile = "C1A1_"; break;
+		case 3: szSoundFile = "C1A2_"; break;
+		case 4: szSoundFile = "C1A3_"; break;
+		case 5: szSoundFile = "C1A4_"; break;
+		case 6: szSoundFile = "C2A1_"; break;
+		case 7: szSoundFile = "C2A2_"; break;
+		case 8: szSoundFile = "C2A3_"; break;
+		case 9: szSoundFile = "C2A4_"; break;
+		case 10: szSoundFile = "C2A5_"; break;
+		case 11: szSoundFile = "C3A1_"; break;
+		case 12: szSoundFile = "C3A2_"; break;
+		}
+	} else {
+		szSoundFile = m_pszName450;
+		if (!szSoundFile)
+			szSoundFile = g_106b8540;
+	}
+	if (szSoundFile[0] == '!') {
+		sub_101cdac0(edict(), (int)((CEntityOrigin220SlotView *)this)->vfunc220(), szSoundFile, *(int *)&flVolume, m_nSoundLevel458, 0, 100);
+		m_flTime017c = 0;
+	} else {
+		if (sub_101aeb60(edict(), szSoundFile, flVolume, m_nSoundLevel458, 0, 100) < 0)
+			g_109f362c("Level Design Error!\nSPEAKER has bad sentence group name: %s\n", szSoundFile);
+		m_flTime017c = enginerandom->vfunc1(m_flDelayMin460, m_flDelayMax464) + gpGlobals->curtime;
+		g_10936c40 = gpGlobals->curtime + 5.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101af880 size=0x86
 struct EntNextThink { char pad[0x17c]; float m_flNextThink; };
 
