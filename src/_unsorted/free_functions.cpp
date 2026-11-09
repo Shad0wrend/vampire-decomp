@@ -37279,6 +37279,38 @@ void CBaseEntity::sub_100a8d30(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8e00 size=0xbb
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "inputdata_t.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct castable_string_t
+{
+	castable_string_t() { pszValue = 0; }
+	const char *pszValue;
+};
+
+inline castable_string_t StringID_X(const variant_t &v)
+{
+	return (v.fieldType == 2) ? *(const castable_string_t *)&v.iszValue : castable_string_t();
+}
+
+extern CGlobalEntityList g_106eb5d8;
+
+// TARGET: CBaseEntity::sub_100a8e00
+void CBaseEntity::sub_100a8e00(inputdata_t *pInput)
+{
+	ScopeTrace trace("CBaseEntity::InputSetSoundOverrideEnt", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+
+	const char *pszName = StringID_X(pInput->value).pszValue;
+	*(const char **)((char *)this + 0x108) = pszName;
+	CBaseEntity *pActivator = (CBaseEntity *)pInput->pActivator;
+	sub_100a8d30(g_106eb5d8.sub_100f7770(0, pszName ? pszName : g_106b8540, pActivator, 0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8fc0 size=0x83
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
