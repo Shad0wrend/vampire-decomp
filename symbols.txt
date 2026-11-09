@@ -9968,6 +9968,7 @@
 0x1000ed04 func   ?vfunc496@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc496
 0x1000ed0e func   ?vfunc5@CPhysPulley@@UAEPAV1@I@Z CPhysPulley::vfunc5
 0x1000ed13 func   ?vfunc431@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::vfunc431
+0x1000ed18 func   ?sub_100c5ee0@@YA_NPBXHMPBMAAVVector@@@Z sub_100c5ee0
 0x1000ed1d func   ?sub_10073220@S10073220@@QAEHH@Z S10073220::sub_10073220
 0x1000ed27 func   ?vfunc5@CWeaponRanged_Rifle_Crossbow_Flaming@@UAEPAVCWeaponRanged@@I@Z CWeaponRanged_Rifle_Crossbow_Flaming::vfunc5
 0x1000ed2c func   ?sub_101e1930@@YGMH@Z sub_101e1930

@@ -44622,6 +44622,43 @@ bool sub_100c5d10(void *pStudioHdr, int iSequence, float flCycleFrom, float flCy
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5ee0 size=0xf2
+#include "Vector.h"
+struct AnimDescView
+{
+    char pad0000[4];
+    float fps;
+    char pad0008[4];
+    int numframes;
+};
+void sub_100c5400(const void *pHdr, int iSequence, const float *poseParameter, AnimDescView **panim, float *weight);
+bool sub_100c5a30(AnimDescView *panim, float flCycle, Vector &vecVelocity);
+
+// TARGET: sub_100c5ee0
+bool sub_100c5ee0(const void *pHdr, int iSequence, float flCycle, const float *poseParameter, Vector &vecVelocity)
+{
+    AnimDescView *panim[4];
+    float weight[4];
+    sub_100c5400(pHdr, iSequence, poseParameter, panim, weight);
+    vecVelocity.Init();
+    bool found = false;
+    for (int i = 0; i < 4; i++)
+    {
+        if (weight[i] != 0.0f)
+        {
+            Vector vecPos;
+            AnimDescView *a = panim[i];
+            if (sub_100c5a30(a, flCycle, vecPos))
+            {
+                vecVelocity = vecVelocity + vecPos * weight[i] * ((float)a->numframes / a->fps);
+                found = true;
+            }
+        }
+    }
+    return found;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6020 size=0x160
 #include "Vector.h"
 
