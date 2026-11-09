@@ -96430,6 +96430,68 @@ CPropDestructable *CPropDestructable::sub_10193940()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193cc0 size=0x174
+#include "CPropDestructable.h"
+#include "CEntityVSlots.h"
+#include "IPhysicsObject.h"
+#include "QAngle.h"
+#include "Tier1.h"
+
+struct CPropDestructableVel : CBaseEntity
+{
+	const Vector &GetAbsVelocity()
+	{
+		if (IsEFlagSet(12))
+			sub_100b1d10();
+		return m_vecVelocity3bc;
+	}
+	bool IsEFlagSet(int bit) const { return (m_flags268 >> bit) & 1; }
+	const QAngle &GetLocalAngularVelocity() { return *(const QAngle *)m_angVel3c8; }
+};
+
+inline void QAngleToAngularImpulse(const QAngle &angles, Vector &impulse)
+{
+	impulse.x = angles.z;
+	impulse.y = angles.x;
+	impulse.z = angles.y;
+}
+
+void CPropDestructable::sub_10193cc0(int stage, int a)
+{
+	if (m_nStage784 == stage)
+		return;
+	g_109f3630("%s set to damage level: %d\n", sub_1000b5cd(), stage);
+
+	Vector velocity;
+	Vector angVelocity;
+	IPhysicsObject *pPhysics = (IPhysicsObject *)m_obj36c;
+	if (pPhysics)
+	{
+		pPhysics->vfunc40(&velocity.x, &angVelocity.x);
+	}
+	else
+	{
+		velocity = ((CPropDestructableVel *)this)->GetAbsVelocity();
+		QAngleToAngularImpulse(((CPropDestructableVel *)this)->GetLocalAngularVelocity(), angVelocity);
+	}
+	CEntityVSlots *slots = (CEntityVSlots *)this;
+	sub_10192130(vfunc8(), pPhysics, slots->slot217(), slots->slot219(), &velocity, &angVelocity, m_nDC, *(int *)((char *)this + 0x76c), 0, 0);
+	m_Outputs7b4[m_nStage784].sub_100cd660((void *)a, this, 0);
+	const char *pszModel = (const char *)m_hModels794[stage];
+	if (!pszModel)
+		pszModel = "";
+	slots->slot105(pszModel);
+	m_nStage784 = stage;
+	if (m_nPhysicsMoveOnLevel > stage)
+		slots->slot93(7, 0);
+	slots->slot225();
+	if (slots->slot94() != 7)
+		sub_100a5ea0(6, 0, 0, 0);
+	else
+		sub_100a5bb0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10193ea0 size=0xc6
 #include "CPropDestructable.h"
 #include "inputdata_t.h"
