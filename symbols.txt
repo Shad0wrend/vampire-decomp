@@ -4738,6 +4738,7 @@
 0x100078ab func   ?sub_10100860@CEnvBeam@@QAEXPBM@Z CEnvBeam::sub_10100860
 0x100078b0 func   ?sub_102ee2a0@CUnknown102ee2a0@@QAEHXZ CUnknown102ee2a0::sub_102ee2a0
 0x100078b5 func   ?sub_103a0ab0@CNPC_VNewscaster@@QAEXXZ CNPC_VNewscaster::sub_103a0ab0
+0x100078ba func   ?vfunc460@CBasePlayer@@UAEXXZ CBasePlayer::vfunc460
 0x100078bf func   ?vfunc82@CHudTimer@@UAEPAUdatamap_t@@XZ CHudTimer::vfunc82
 0x100078c4 func   ?sub_103274d0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_103274d0
 0x100078c9 func   ?vfunc618@CNPC_VGargoyle@@QAEXXZ CNPC_VGargoyle::vfunc618
