@@ -33337,6 +33337,59 @@ bool CBaseAnimating::sub_10097200(const char *name, int *pSet, int *pHitbox)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097310 size=0x116
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+struct string_tv {
+    string_tv() {}
+    const char *pszValue;
+};
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+#define V64(a) V16(a##a) V16(a##b) V16(a##c) V16(a##d)
+struct E212 {
+    V4(a) V4(b) virtual int GetModelIndex(); virtual string_tv GetModelName(); virtual void SetModelIndex(int);
+    virtual void s11(); V4(c) V4(d) V4(e) V4(f) V4(g)
+    V64(p) V64(q) V16(r) V16(s) V16(u) V4(x)
+    virtual void SetModelName(const char *name);
+};
+struct AnimView {
+    char pad0[0x174]; int m_n174;
+    char pad178[0x19c - 0x178]; int m_n19c;
+    char pad1a0[0x670 - 0x1a0]; int m_n670;
+    char pad674[0x67c - 0x674]; int m_n67c;
+    char pad680[0x688 - 0x680]; int m_n688; int m_n68c;
+    char pad690[0x6f0 - 0x690]; int m_n6f0;
+    char pad6f4[0x6f8 - 0x6f4]; int m_n6f8;
+    char pad6fc[0x72c - 0x6fc]; int m_n72c;
+};
+void CBaseAnimating::sub_10097310(CBaseAnimating *pSource)
+{
+    ScopeTrace trace("CBaseAnimating::CopyAnimationDataFrom", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    ((E212 *)this)->SetModelName(((E212 *)pSource)->GetModelName().pszValue);
+    vfunc10(pSource->vfunc8());
+    AnimView *d = (AnimView *)this;
+    AnimView *s = (AnimView *)pSource;
+    d->m_n6f8 = s->m_n6f8;
+    d->m_n688 = s->m_n688;
+    d->m_n68c = s->m_n68c;
+    d->m_n19c = s->m_n19c | 0x10;
+    d->m_n6f0 = s->m_n6f0;
+    d->m_n174 = s->m_n174;
+    d->m_n67c = s->m_n67c;
+    d->m_n670 = s->m_n670;
+    d->m_n72c = s->m_n72c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10097480 size=0x1de
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
