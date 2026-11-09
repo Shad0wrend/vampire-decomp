@@ -88871,6 +88871,43 @@ extern "C" GP *point_hurt()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018d5f0 size=0x132
+#include "CEntityVSlots.h"
+#include "CPointHurt.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "CUnknown101c26d0.h"
+extern char g_106b8540[];
+extern CGlobalEntityList g_106eb5d8;
+
+static inline const char *StrRef(const char *const &r) { return r ? r : g_106b8540; }
+
+#define HV(n) virtual void h##n();
+#define HV10(p) HV(p##0) HV(p##1) HV(p##2) HV(p##3) HV(p##4) HV(p##5) HV(p##6) HV(p##7) HV(p##8) HV(p##9)
+
+struct CRulesView
+{
+	HV10(r0) HV10(r1) HV10(r2) HV(r30) HV(r31) HV(r32)
+	virtual void slot33(CUnknown101c26d0 *info, const Vector &vecSrc, float flRadius, int iClassIgnore, int unk);
+};
+extern CRulesView *g_1070ba0c;
+
+void CPointHurt::sub_1018d5f0()
+{
+	if (m_strTarget) {
+		CBaseEntity *pTarget = 0;
+		while ((pTarget = g_106eb5d8.sub_100f7770(pTarget, StrRef(m_strTarget), (CBaseEntity *)EHandle_Get(m_hActivator), 0)) != 0) {
+			CUnknown101c26d0 info;
+			pTarget->sub_100a1250(info.sub_101c26d0(this, EHandle_Get(m_hActivator), (float)m_nDamage, m_bitsDamageType, 0, 0, -1));
+		}
+	} else {
+		CUnknown101c26d0 info;
+		g_1070ba0c->slot33(info.sub_101c26d0(this, this, (float)m_nDamage, m_bitsDamageType, 0, 0, -1), *(Vector *)((CEntityVSlots *)this)->slot217(), m_flRadius, 0, 0);
+	}
+	m_flNextThink = m_flDelay + gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018d780 size=0x4e
 #include "CBaseEntity.h"
 #include "inputdata_t.h"
