@@ -406,6 +406,21 @@ int CRestore::vfunc18(float *pValues, int count, int nBytesAvailable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a21c0 size=0x3a
+#include "CRestore.h"
+
+// TARGET: CRestore::vfunc19
+int CRestore::vfunc19(void *p, int count, int nBytesAvailable)
+{
+	int desired = count * sizeof(char);
+	int actual = (nBytesAvailable == 0) ? desired : ((desired < nBytesAvailable) ? desired : nBytesAvailable);
+	sub_101a1f90(p, actual);
+	if (actual < nBytesAvailable)
+		sub_1000910b(nBytesAvailable - actual);
+	return actual / sizeof(char);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2210 size=0x2a
 #include "CRestore.h"
 

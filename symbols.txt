@@ -71,6 +71,7 @@
 0x10001177 func   ?sub_101852b0@UtlMem@@QAEXXZ UtlMem::sub_101852b0
 0x1000117c func   ?sub_10194490@Helper@@QAEPAXI@Z Helper::sub_10194490
 0x10001181 func   ?vfunc433@CNPC_VTzimisceHeadClaw@@QAEXXZ CNPC_VTzimisceHeadClaw::vfunc433
+0x10001186 func   ?vfunc19@CRestore@@UAEHPAXHH@Z CRestore::vfunc19
 0x10001190 func   ?sub_10028060@CUnknown101d1460@@QAEXPAMPBM@Z CUnknown101d1460::sub_10028060
 0x10001195 func   ?sub_104301a0@@YAXXZ sub_104301a0
 0x1000119a func   ?sub_103b2870@@YIPAXPAD@Z sub_103b2870
