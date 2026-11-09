@@ -240788,6 +240788,24 @@ void __fastcall sub_1042ef40(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042ef70 size=0x81
+#include "CBaseEntity.h"
+#include "CSprite.h"
+void sub_10011757();
+
+void CSprite::sub_1042ef70()
+{
+    m_nEffectFlags &= ~0x40;
+    if ((m_flSpriteFramerate != 0.0f && m_flMaxFrame > 1.0) || (*(unsigned char *)((char *)this + 0x204) & 2)) {
+        sub_100ac4e0((void *)sub_10011757, 0, 0);
+        *(float *)((char *)this + 0x17c) = gpGlobals->curtime;
+        m_flLastTime = gpGlobals->curtime;
+    }
+    m_flFrame = 0;
+    ((CBaseEntity *)this)->sub_1009d1e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042f080 size=0x8
 namespace lifted {
 int sub_10010dde();
