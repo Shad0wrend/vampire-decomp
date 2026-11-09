@@ -7251,6 +7251,7 @@
 0x1000ade9 func   ?sub_10045700@@YAHXZ sub_10045700
 0x1000adee func   ?vfunc602@CNPC_VHuman@@UAEDXZ CNPC_VHuman::vfunc602
 0x1000adf3 func   ?vfunc375@CNPC_VWolfMorph@@UAEHH@Z CNPC_VWolfMorph::vfunc375
+0x1000adf8 func   ?sub_100eba00@CUnknown100ecee0@@QAEXPAVCKeyValuesX@@@Z CUnknown100ecee0::sub_100eba00
 0x1000adfd func   ?vfunc5@CPhysFixed@@UAEPAV1@I@Z CPhysFixed::vfunc5
 0x1000ae02 func   ?sub_101eaa40@@YAXH@Z sub_101eaa40
 0x1000ae07 func   ?sub_101e3730@CUnknown101e0f00@@QAEXPAX0IH@Z CUnknown101e0f00::sub_101e3730

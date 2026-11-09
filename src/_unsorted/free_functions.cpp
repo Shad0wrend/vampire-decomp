@@ -57946,6 +57946,169 @@ void CUnknown100eb870::sub_100eb870(const char *pszFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eba00 size=0x6dd
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CUnknown100ecee0.h"
+#include "CKeyValuesX.h"
+#include "utlvector.h"
+#include "Tier1.h"
+#include <string.h>
+
+struct CDispositionEntry
+{
+	char  m_szName[0x40];
+	int   m_nLevel;
+	char  m_szDefaultExpression[0x40];
+	char  m_szTalkingExpression[0x40];
+	float m_flIntensity;
+	char  m_szAnimationName[0x40];
+	float m_flTalkingStanceThreshold;
+	int   m_nTalkingStanceChance;
+	float m_flStandingStanceThreshold;
+	int   m_nStandingStanceChance;
+	int   m_nStandingFidgetChance;
+	CTableItem40_t m_items[4];
+	int   m_nItems;
+	float m_flFadeInTime;
+	float m_flFadeOutTime;
+	float m_flMinHoldTime;
+	float m_flMaxHoldTime;
+	float m_flLoudIntensity;
+	float m_flMinBlinkInterval;
+	float m_flMaxBlinkInterval;
+	float m_flEyeTurnRate;
+	int   m_nDefaultDirection;
+	int   m_nFidgetX;
+	int   m_nFidgetY;
+	int   m_nFidgetZ;
+	float m_flMinInterval;
+	float m_flMaxInterval;
+	float m_flHoldMin;
+	float m_flHoldMax;
+	float m_flEyeTargetTurnRate;
+};
+
+extern CDispositionEntry g_106eae40;
+
+char *sub_101d3730(const char *pszFormat, ...);
+void sub_10071cd0(float *pOut, const char *pszValue);
+
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int nSize);
+__declspec(dllimport) int Q_snprintf(char *pDest, int nSize, const char *pFmt, ...);
+__declspec(dllimport) int Q_strnicmp(const char *pStr1, const char *pStr2, int nCount);
+
+inline int FindDispositionIndex(CUnknown100ecee0 *pThis, const char *pszName)
+{
+	for (int i = 0; i < pThis->m_nCount; i++) {
+		if (!strcmp(pszName, ((const CDispositionEntry *)pThis->m_pEntries)[i].m_szName))
+			return i;
+	}
+	return -1;
+}
+
+inline float ClampFidget(float f)
+{
+	if (f > 9.0f)
+		return 9.0f;
+	if (f < -1.0f)
+		return -1.0f;
+	return f;
+}
+
+// TARGET: CUnknown100ecee0::sub_100eba00
+void CUnknown100ecee0::sub_100eba00(CKeyValuesX *pKey)
+{
+	CDispositionEntry entry = g_106eae40;
+
+	const char *pszName = pKey->sub_102480b0();
+	strncpy(entry.m_szName, pszName, 0x40);
+
+	sub_100ed2c0(1, sub_101d3730("\n\nAdding Disposition: %s \n", entry.m_szName));
+
+	const char *pszCopyFrom = pKey->sub_10248cd0("CopyDataFrom", g_106b8540);
+	if (strlen(pszCopyFrom)) {
+		int i = FindDispositionIndex(this, pszCopyFrom);
+		if (i != -1) {
+			entry = ((const CDispositionEntry *)m_pEntries)[i];
+			strncpy(entry.m_szName, pszName, 0x40);
+		}
+	}
+
+	entry.m_nLevel = pKey->sub_10248bb0("DispositionLevel", 1);
+
+	CKeyValuesX *pDefault = pKey->sub_102489a0("DefaultExpression", 0);
+	if (pDefault) {
+		strncpy(entry.m_szDefaultExpression, pDefault->sub_10248cd0("Expression Name", g_106eae40.m_szDefaultExpression), 0x40);
+		strncpy(entry.m_szTalkingExpression, pDefault->sub_10248cd0("Talking Expression", entry.m_szDefaultExpression), 0x40);
+		entry.m_flIntensity = pDefault->sub_10248c60("Intensity", g_106eae40.m_flIntensity);
+	}
+
+	CKeyValuesX *pEye = pKey->sub_102489a0("EyeTarget", 0);
+	if (pEye) {
+		entry.m_nDefaultDirection = pEye->sub_10248bb0("Default Direction", entry.m_nDefaultDirection);
+		entry.m_flMinInterval = pEye->sub_10248c60("Min Interval", g_106eae40.m_flMinInterval);
+		entry.m_flMaxInterval = pEye->sub_10248c60("Max Interval", g_106eae40.m_flMinInterval);
+		entry.m_flEyeTargetTurnRate = pEye->sub_10248c60("Eye Turn Rate", g_106eae40.m_flEyeTargetTurnRate);
+		entry.m_flHoldMin = pEye->sub_10248c60("Hold Min", g_106eae40.m_flHoldMin);
+		entry.m_flHoldMax = pEye->sub_10248c60("Hold Max", g_106eae40.m_flHoldMax);
+		entry.m_nFidgetX = g_106eae40.m_nFidgetX;
+		entry.m_nFidgetY = g_106eae40.m_nFidgetY;
+		entry.m_nFidgetZ = g_106eae40.m_nFidgetZ;
+		float vFidget[3];
+		sub_10071cd0(vFidget, pEye->sub_10248cd0("Fidget Points", "[-1,-1,-1]"));
+		entry.m_nFidgetX = (int)ClampFidget(vFidget[0]);
+		entry.m_nFidgetY = (int)ClampFidget(vFidget[1]);
+		entry.m_nFidgetZ = (int)ClampFidget(vFidget[2]);
+	}
+
+	CKeyValuesX *pLoud = pKey->sub_102489a0("LoudExpressions", 0);
+	if (pLoud) {
+		char szKey[0x10];
+		for (int i = 0; i < 4; i++) {
+			Q_snprintf(szKey, 0x10, "Expression%d", i);
+			strncpy(entry.m_items[i].m_data, pLoud->sub_10248cd0(szKey, g_106eae40.m_items[i].m_data), 0x40);
+			if (strlen(entry.m_items[i].m_data))
+				++entry.m_nItems;
+		}
+		entry.m_flFadeInTime = pLoud->sub_10248c60("fade in time", g_106eae40.m_flFadeInTime);
+		entry.m_flFadeOutTime = pLoud->sub_10248c60("fade out time", g_106eae40.m_flFadeOutTime);
+		entry.m_flMinHoldTime = pLoud->sub_10248c60("min hold time", g_106eae40.m_flMinHoldTime);
+		entry.m_flMaxHoldTime = pLoud->sub_10248c60("max hold time", g_106eae40.m_flMaxHoldTime);
+		entry.m_flLoudIntensity = pLoud->sub_10248c60("intensity", g_106eae40.m_flLoudIntensity);
+	}
+
+	Q_strncpy(entry.m_szAnimationName, pKey->sub_10248cd0("Animation Name", entry.m_szAnimationName), 0x40);
+	g_109f3860(entry.m_szAnimationName, strlen(entry.m_szAnimationName));
+
+	entry.m_flTalkingStanceThreshold = pKey->sub_10248c60("Talking Stance Change Threshold", entry.m_flTalkingStanceThreshold);
+	entry.m_nTalkingStanceChance = pKey->sub_10248bb0("Talking Stance Change Chance", entry.m_nTalkingStanceChance);
+	entry.m_flStandingStanceThreshold = pKey->sub_10248c60("Standing Stance Change Threshold", entry.m_flStandingStanceThreshold);
+	entry.m_nStandingStanceChance = pKey->sub_10248bb0("Standing Stance Change Chance", (int)entry.m_flStandingStanceThreshold);
+	entry.m_nStandingFidgetChance = pKey->sub_10248bb0("Standing Fidget Chance", entry.m_nStandingFidgetChance);
+	entry.m_flMinBlinkInterval = pKey->sub_10248c60("Min Blink Interval", entry.m_flMinBlinkInterval);
+	entry.m_flMaxBlinkInterval = pKey->sub_10248c60("Max Blink Interval", entry.m_flMinBlinkInterval);
+	entry.m_flEyeTurnRate = pKey->sub_10248c60("Eye Turn Rate", entry.m_flEyeTurnRate);
+
+	sub_100ed2c0(1, sub_101d3730(" Expression %s\n Animation Name: %s\n Talking (%.3f, %d%)\n Standing (%.3f, %d%)\n Fidget (%d%)\n",
+		entry.m_szTalkingExpression, entry.m_szAnimationName,
+		entry.m_flTalkingStanceThreshold, entry.m_nTalkingStanceChance,
+		entry.m_flStandingStanceThreshold, entry.m_nStandingStanceChance, entry.m_nStandingFidgetChance));
+
+	if (Q_strnicmp("neutral", entry.m_szName, 0x40) == 0)
+		sub_100eb5a0((CTableEntry264_t *)&entry);
+
+	((CUtlVector<CTableEntry264_t> *)((char *)this + 8))->AddToTail(*(CTableEntry264_t *)&entry);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ec2a0 size=0x27
 struct SIndexedTable_t {
     int unk0;
