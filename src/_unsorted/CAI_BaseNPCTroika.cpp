@@ -3756,6 +3756,62 @@ CBaseEntity *CAI_BaseNPCTroika::vfunc168()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b5650 size=0x120
+#include "Ray_t.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown1025ddd0.h"
+#include "ConVar.h"
+
+extern ConVar *g_10924a1c;
+
+struct NotifyObj {
+	virtual void v0();
+	virtual void Notify();
+};
+extern NotifyObj *g_10924edc;
+
+struct TroikaV {
+	char m_pad[0x6070];
+	float m_f6070;
+	char m_pad6074[0x6078 - 0x6074];
+	char m_b6078;
+	char m_pad6079[0x626c - 0x6079];
+	float m_f626c;
+	char m_pad6270[0x65e8 - 0x6270];
+	CUnknown1025ddd0 *m_pList;
+};
+
+static inline float Twice(float f) { return f + f; }
+
+char CAI_BaseNPCTroika::vfunc599(int unused)
+{
+	TroikaV *v = (TroikaV *)this;
+	if ((m_flags5b84 & 2) == 2 || vfunc293() != 0) {
+		v->m_b6078 = 1;
+		return 1;
+	}
+	if (gpGlobals->curtime >= v->m_f6070) {
+		bool bOk = true;
+		float f;
+		if (g_10924a1c->vfunc1())
+			f = Twice(g_104454c4);
+		else
+			f = Twice(g_10924a1c->m_fValue);
+		if (f < m_f6268 && vfunc308())
+			bOk = false;
+		if ((!(v->m_f626c > 64.0f) || !sub_10014df8(0x59)) && bOk
+			&& ((m_flags5b84 & 0x1000) == 0x1000 || v->m_pList->sub_1025db70((CBaseEntity *)this))) {
+			v->m_b6078 = 1;
+			m_f6074 = enginerandom->vfunc1(7.5f, 15.0f) + gpGlobals->curtime;
+			g_10924edc->Notify();
+			return 1;
+		}
+	}
+	v->m_b6078 = 0;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b57c0 size=0x8d
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseCombatWeapon.h"
