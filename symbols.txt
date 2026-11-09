@@ -8796,6 +8796,7 @@
 0x1000cf7c func   ?vfunc82@CBaseCineCam@@UAEPAUdatamap_t@@XZ CBaseCineCam::vfunc82
 0x1000cf86 func   ?sub_100ed2e0@CUnknown100ed370@@QAEPADH@Z CUnknown100ed370::sub_100ed2e0
 0x1000cf8b func   ?sub_1002e7e0@@YAHPAVCBaseEntity@@HHPAXPBDDPAUPhysCreateParams@@@Z sub_1002e7e0
+0x1000cf90 func   ?CopyConstruct@@YAXPAUCRBEntry24@@ABU1@@Z CopyConstruct
 0x1000cf90 func   ?sub_1007f3d0@@YAXPAUE8@@PBU1@@Z sub_1007f3d0
 0x1000cf95 func   ?vfunc80@CItemGWirelessCamera2@@QAEHXZ CItemGWirelessCamera2::vfunc80
 0x1000cf9a func   ?sub_103f6630@@YAHXZ sub_103f6630
