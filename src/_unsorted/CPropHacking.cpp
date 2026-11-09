@@ -189,6 +189,40 @@ void CPropHacking::vfunc273(int a, char *pszCommand)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021c4d0 size=0x67
+#include "CPropHacking.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern const char g_106b8540[];
+
+struct CPropHackingNameRecord {
+    int m_nId;
+    const char *m_pszName;
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+extern int g_1074b344;
+extern CPropHackingNameRecord **g_1074b348;
+extern int g_1074f758;
+
+__forceinline int FindRecordId(const char *pszWanted)
+{
+    for (int i = 0; i < g_1074b344; i++) {
+        if (!_strcmpi(STRINGR(g_1074b348[i]->m_pszName), pszWanted))
+            return g_1074b348[i]->m_nId;
+    }
+    return -1;
+}
+
+// TARGET: CPropHacking::vfunc275
+void CPropHacking::vfunc275()
+{
+    sub_1021c890(m_n09e0);
+    g_1074f758 = FindRecordId("access");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021c560 size=0xf2
 #include "CPropHacking.h"
 #include "CEHandleGet.h"
