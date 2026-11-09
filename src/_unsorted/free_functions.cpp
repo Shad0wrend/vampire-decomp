@@ -153096,6 +153096,60 @@ SOut1023f3d0 *sub_1023f3d0(const SVec3 *pA, const SVec3 *pB, SOut1023f3d0 *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023f450 size=0x2a6
+#include "Vector.h"
+#include <math.h>
+
+struct Ray1023f450 {
+	Vector m_Start;
+	Vector m_Delta;
+};
+float sub_1023f7b0(const Ray1023f450 &ray);
+
+float sub_1023f450(const Ray1023f450 &ray, const Vector &v1, const Vector &v2, const Vector &v3, bool oneSided)
+{
+	Vector edge1, edge2, org;
+	VectorSubtract(v2, v1, edge1);
+	VectorSubtract(v3, v1, edge2);
+
+	if (oneSided) {
+		Vector normal;
+		CrossProduct(edge1, edge2, normal);
+		if (DotProduct(normal, ray.m_Delta) >= 0.0f)
+			return -1.0f;
+	}
+
+	Vector dirCrossEdge2, orgCrossEdge1;
+	CrossProduct(ray.m_Delta, edge2, dirCrossEdge2);
+
+	float denom = DotProduct(dirCrossEdge2, edge1);
+	if (fabs(denom) < 1e-6)
+		return -1.0f;
+	denom = 1.0f / denom;
+
+	VectorSubtract(ray.m_Start, v1, org);
+	float u = DotProduct(dirCrossEdge2, org) * denom;
+	if ((u < 0.0f) || (u > 1.0f))
+		return -1.0f;
+
+	CrossProduct(org, edge1, orgCrossEdge1);
+	float v = DotProduct(orgCrossEdge1, ray.m_Delta) * denom;
+	if ((v < 0.0f) || (v + u > 1.0f))
+		return -1.0f;
+
+	float boxt = sub_1023f7b0(ray);
+	float t = DotProduct(orgCrossEdge1, edge2) * denom;
+	if ((t < -boxt) || (t > 1.0f + boxt))
+		return -1.0f;
+
+	if (t > 1.0f)
+		return 1.0f;
+	if (t < 0.0f)
+		return 0.0f;
+	return t;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023f870 size=0x1a9
 #include <math.h>
 #include "Vector.h"
