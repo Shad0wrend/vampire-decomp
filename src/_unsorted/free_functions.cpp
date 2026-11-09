@@ -222053,6 +222053,68 @@ bool __stdcall sub_103d0e70(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d0ec0 size=0x284
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+
+#define WS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define WS100(p) WS10(p##0) WS10(p##1) WS10(p##2) WS10(p##3) WS10(p##4) WS10(p##5) WS10(p##6) WS10(p##7) WS10(p##8) WS10(p##9)
+
+struct CNPC_VWerewolfSlotsFB
+{
+	WS100(a) WS100(b) WS10(c)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6();
+	virtual CNPC_VWerewolfVec3 *vfunc217();
+};
+
+extern CNPC_VWerewolfHint66b0 *g_10925450;
+
+bool CNPC_VWerewolf::sub_103d0ec0()
+{
+	ScopeTrace trace("CNPC_VWerewolf::FindBreakHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (m_pHint66c4 != 0 && sub_103d8550(m_pHint66c4)) {
+		CNPC_VWerewolfVec3 tmp;
+		CNPC_VWerewolfVec3 *pGround = sub_103d6770(&tmp, m_pHint66c4);
+		CNPC_VWerewolfVec3 *pOrigin = ((CNPC_VWerewolfSlotsFB *)this)->vfunc217();
+		if ((char)sub_103d0db0(*pOrigin, *pGround))
+			return true;
+	}
+	m_nTick66d4 = engine->vfunc120();
+	m_fl66d8 = gpGlobals->curtime;
+	CNPC_VWerewolfHint66b0 *pHint = g_10925450;
+	if (!pHint)
+		return false;
+	if (!m_h628c.Get())
+		return false;
+	float flBest = 3.4028235e+38f;
+	CNPC_VWerewolfVec3 vOrigin = *((CNPC_VWerewolfSlotsFB *)this)->vfunc217();
+	CNPC_VWerewolfVec3 vTarget = sub_103d9c90();
+	CNPC_VWerewolfHint66b0 *pBest = 0;
+	for (; pHint && pHint != (CNPC_VWerewolfHint66b0 *)0; pHint = pHint->m_pNext) {
+		if (sub_103d8550(pHint)) {
+			CNPC_VWerewolfVec3 pt;
+			sub_103d6770(&pt, pHint);
+			float d = (*(Vector *)&vTarget - *(Vector *)&pt).Length();
+			if (flBest > d && (char)sub_103d0db0(vOrigin, pt)) {
+				flBest = d;
+				pBest = pHint;
+			}
+		}
+	}
+	m_pHint66c4 = pBest;
+	return m_pHint66c4 != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d1200 size=0x245
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
