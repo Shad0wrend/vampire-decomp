@@ -66209,6 +66209,60 @@ void CFire::sub_1010b840(float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b9d0 size=0x122
+#include "CBaseEntity.h"
+#include "CFire.h"
+#include "COutputEvent.h"
+#include "IVEngineServer.h"
+
+struct CFireView
+{
+	char m_pad0000[0x46c];
+	float m_flHeat46c;
+	char m_pad0470[0x47c - 0x470];
+	float m_flHeat47c;
+	char m_pad0480[0x4ac - 0x480];
+	COutputEvent m_OnExtinguished;
+};
+struct EngineSoundView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6();
+	virtual void StopSound(int nEntIndex, int nChannel, const char *pszSample);
+};
+extern IVEngineServer *g_1070b22c;
+extern EngineSoundView *g_1070b248;
+void sub_101cd940(CBaseEntity *pEntity);
+void sub_101cf390(CBaseEntity *pEntity, const Vector *pMins, const Vector *pMaxs);
+
+// TARGET: CFire::sub_1010b9d0
+bool CFire::sub_1010b9d0()
+{
+	CFireView *pView = (CFireView *)this;
+	int nZero = 0;
+	pView->m_OnExtinguished.sub_100cd660(this, this, nZero);
+	sub_1010b3c0();
+	pView->m_flHeat46c -= 20.0f;
+	if (pView->m_flHeat46c > 0)
+		*(int *)&pView->m_flHeat46c = nZero;
+	pView->m_flHeat47c = pView->m_flHeat46c;
+	sub_100ac4e0(nZero, nZero, (const char *)nZero);
+	*(int *)&m_flNextThink = nZero;
+	if (m_flags204 & 0x80) {
+		sub_101cd940(this);
+		return true;
+	}
+	Vector maxs(8.0f, 8.0f, 8.0f);
+	Vector mins(-8.0f, -8.0f, 0.0f);
+	sub_101cf390(this, &mins, &maxs);
+	int nEdict = m_pEdict2e0;
+	g_1070b248->StopSound(g_1070b22c->vfunc35(nEdict), 2, "environmental/fire/fire_crackeling.wav");
+	int nEdict2 = m_pEdict2e0;
+	g_1070b248->StopSound(g_1070b22c->vfunc35(nEdict2), 2, "environmental/fire/fire_roaring.wav");
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010bbb0 size=0x1a
 namespace lifted {
 extern int g_1056d0b4;
