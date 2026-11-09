@@ -354,6 +354,199 @@ void CVampireProjectile::vfunc269()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101eec30 size=0x5af
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "RTTI.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "CBaseAnimating.h"
+#include "CVDmg_t.h"
+#include "CUnknown1003ff80.h"
+#include "CEntityVSlots.h"
+#include "CVampireProjectile.h"
+
+CBaseEntity *sub_100ab250(void *pEdict);
+void sub_10138630(float *in, float *out);
+void sub_10138df0(float *a, float *b, float *out);
+void sub_10137ed0(float *mat, float *angles);
+void sub_10138720(float *mat, int n, float *out);
+extern "C" void *__RTDynamicCast(void *, long, void *, void *, int);
+extern char g_10538764[], g_105a1e08[];
+extern Vector g_1070d1b0;
+
+struct CVampireBulletInfo101eec30
+{
+	int n00, n04;
+	Vector org;
+	Vector v14;
+	Vector force;
+	Vector vel;
+	Vector v38;
+	int n44;
+	CVDmg_t dmg;
+	int nDamage;
+	int n90;
+	CBaseEntity *pEnt1;
+	CBaseEntity *pEnt2;
+	float fl9c;
+	int za0;
+	float fla4;
+	int za8, zac, zb0, zb4, zb8, zbc, zc0;
+	CUnknown1003ff80 u;
+	char pad[0x54 - sizeof(CUnknown1003ff80)];
+
+	CVampireBulletInfo101eec30()
+	{
+		u.sub_1003ff80();
+		n00 = 1;
+		n04 = 1;
+		n90 = 4;
+		nDamage = -1;
+		org = g_1070d1b0;
+		vel.sub_1003e4b0(g_1070d1b0);
+		v14.sub_1003e4b0(g_1070d1b0);
+		v38.sub_1003e4b0(g_1070d1b0);
+	}
+	~CVampireBulletInfo101eec30() { dmg.sub_101fa680(); }
+};
+
+// TARGET: CVampireProjectile::vfunc266
+void CVampireProjectile::vfunc266(CBaseEntity *pOther)
+{
+	int iHit = -1;
+	if (__RTDynamicCast(pOther, 0, g_10538764, g_105a1e08, 0))
+		return;
+	if (m_b758)
+		return;
+	if (m_b8a4)
+		return;
+
+	void *pEdict = engine->vfunc38(0);
+	CBaseEntity *pInst;
+	{
+		ScopeTrace t("CBaseEntity::Instance", g_106b8540);
+		if (!pEdict)
+			pEdict = engine->vfunc38(0);
+		pInst = sub_100ab250(pEdict);
+	}
+	CBaseAnimating *pOwner = (CBaseAnimating *)pOther->m_p9c;
+	if (pOther->sub_100b5110() || pInst == pOther)
+	{
+		char bSolid;
+		{
+			ScopeTrace t("CBaseEntity::IsSolidFlagSet", pOther->m_name26c ? pOther->m_name26c : g_106b8540);
+			bSolid = (pOther->m_b2b4 >> 3) & 1;
+		}
+		if (bSolid)
+			return;
+		m_b758 = 1;
+		m_fl738 = gpGlobals->curtime + 15.0f;
+	}
+	else if (pOwner)
+	{
+		if (m_iProjectileFlags & 2)
+		{
+			sub_100a0670((CBaseEntity *)pOwner, 0);
+			vfunc93(0, 0);
+			m_b8a4 = 1;
+			m_fl738 = gpGlobals->curtime + 75.0f;
+		}
+	}
+	else if (pOther->m_n00a0)
+		return;
+
+	if (m_bBulletParamSet)
+	{
+		CBaseEntity *pEnt1 = (CBaseEntity *)g_10566458->sub_100290c0((const unsigned int *)&m_h778);
+		CBaseEntity *pEnt2 = (CBaseEntity *)g_10566458->sub_100290c0((const unsigned int *)&m_h77c);
+		CVampireBulletInfo101eec30 bi;
+		bi.fla4 = 0.0f;
+		bi.org = m_vecOrigin75c;
+		bi.vel = m_vecVelocity768;
+		bi.za0 = 0; bi.za8 = 0; bi.zac = 0; bi.zb0 = 0; bi.zb4 = 0; bi.zb8 = 0; bi.zbc = 0; bi.zc0 = 0;
+		bi.nDamage = m_nDamage774;
+		bi.dmg = *(CVDmg_t *)m_dmg834;
+		bi.force = m_vecForce780;
+		bi.pEnt1 = pEnt1;
+		bi.pEnt2 = pEnt2;
+		bi.fl9c = m_fl78c;
+		bi.n44 = m_n790;
+		bi.n90 = m_n7a0;
+		if (pEnt1)
+		{
+			iHit = pEnt1->sub_10267b60(&bi);
+			pEnt1->sub_10268330(pOther, &bi, m_n830);
+		}
+		m_bBulletParamSet = 0;
+		m_n734 = iHit;
+		unsigned char b;
+		if (iHit >= 0)
+		{
+			if (pOwner)
+			{
+				if (iHit < pOwner->sub_10092c90())
+				{
+					float bufA[12], bufB[12], mat[12];
+					*(unsigned int *)&m_h730 = *pOther->vfunc1();
+					((CEntityVSlots *)pOwner)->slot256(m_n734, bufA);
+					sub_10138630(bufA, bufB);
+					if ((unsigned char)(m_flags268 >> 11) & 1)
+						vfunc98();
+					sub_10138df0(bufB, m_rgflCoordinateFrame, mat);
+					sub_10137ed0(mat, (float *)&m_angAttachAngle);
+					sub_10138720(mat, 3, (float *)&m_vecAttachOrigin);
+					goto solid;
+				}
+			}
+			else
+				goto noowner;
+		}
+		b = m_b8a4;
+		m_b8a4 = 0;
+		if (b)
+		{
+			vfunc267((int)pOther);
+			sub_101ee7d0();
+			return;
+		}
+		goto solid;
+noowner:
+		b = m_b8a4;
+		m_b8a4 = 0;
+		m_n734 = -1;
+		if (b)
+		{
+			vfunc267((int)pOther);
+			sub_101ee7d0();
+			return;
+		}
+solid:
+		char bSolid;
+		{
+			ScopeTrace t("CBaseEntity::IsSolidFlagSet", pOther->m_name26c ? pOther->m_name26c : g_106b8540);
+			bSolid = (pOther->m_b2b4 >> 3) & 1;
+		}
+		if (!bSolid)
+			vfunc267((int)pOther);
+	}
+	if (!(m_iProjectileFlags & 2))
+		sub_101ee7d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ef350 size=0x58
 #include "CVampireProjectile.h"
 
