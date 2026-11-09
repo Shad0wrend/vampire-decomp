@@ -238950,6 +238950,102 @@ void __stdcall sub_1040e1c0(CBaseEntity *pEnt, const Vector *pDir, float flScale
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040e2e0 size=0x231
+#include "CWeaponPhysCannon.h"
+#include "CBaseEntity.h"
+#include "engineiface.h"
+#include "CEntityVSlots.h"
+#include "QAngle.h"
+
+struct DmgInfoRaw
+{
+	int w[19];
+};
+
+struct CPhysCannonOwner
+{
+	char m_pad0000[0xa8];
+	CBaseEntity *m_pPlayer;
+};
+
+struct CPCEntSlots
+{
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS10(1) EVS10(2) EVS10(3)
+	EVS(40) virtual void slot41(const Vector *pVec, int a); EVS(42) EVS(43) EVS(44) EVS(45) EVS(46) EVS(47) EVS(48) EVS(49)
+	EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9) EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15)
+	EVS(160) EVS(161) EVS(162) EVS(163) EVS(164) EVS(165) EVS(166) EVS(167) EVS(168)
+	virtual void slot169(const QAngle &angPunch);
+};
+
+struct CRagEntry
+{
+	CPCEntSlots *m_pEnt;
+	char m_pad04[0x14];
+};
+
+struct CRagList
+{
+	int m_nEntries;
+	char m_pad04[0x10];
+	CRagEntry m_aEntries[1];
+};
+
+struct CRagView
+{
+	char m_pad0000[0x730];
+	CRagList m_list;
+};
+
+extern void __fastcall sub_101c2690(DmgInfoRaw *);
+extern void sub_101c2c60();
+extern void sub_101895d0(CBaseEntity *pEnt, void *pPlayer, int a);
+extern char sub_101896f0(CBaseEntity *pEnt, void *pPlayer, int a);
+extern void sub_101898f0(float *pOut, CBaseEntity *pEnt);
+extern "C" void *__cdecl __RTDynamicCast(void *pObj, long nVfDelta, void *pSrcType, void *pTargetType, int bReference);
+extern char g_10538764[];
+extern char g_1057c684[];
+
+void CWeaponPhysCannon::sub_1040e2e0(CBaseEntity *pEnt, const float *pDir, void *pTrace)
+{
+	CPhysCannonOwner *pOwner = (CPhysCannonOwner *)sub_102521f0();
+	CPCEntSlots *pPlayer;
+	if (!pOwner)
+		pPlayer = 0;
+	else
+		pPlayer = (CPCEntSlots *)pOwner->m_pPlayer;
+	sub_101895d0(pEnt, pPlayer, 3);
+	DmgInfoRaw info;
+	sub_101c2690(&info);
+	Vector vecDir = *(const Vector *)pDir;
+	info.w[11] = (int)sub_102521f0();
+	info.w[10] = (int)this;
+	info.w[12] = 0;
+	info.w[14] = 0x20000000;
+	pEnt->sub_100a7d00((int)&info, (int)&vecDir, (int)pTrace);
+	sub_101c2c60();
+	if (sub_101896f0(pEnt, pPlayer, 1)) {
+		sub_1040dde0(pEnt, pPlayer, 1);
+		if (vecDir.z < 0.0f)
+			vecDir.z = vecDir.z * -0.65f;
+		Vector vecImpulse = vecDir * 1500.0f;
+		float flScratch[3];
+		sub_101898f0(flScratch, pEnt);
+		CRagView *pRag = (CRagView *)__RTDynamicCast(pEnt, 0, g_10538764, g_1057c684, 0);
+		CRagList *pList = &pRag->m_list;
+		for (int i = 0; i < pList->m_nEntries; i++)
+			pList->m_aEntries[i].m_pEnt->slot41(&vecImpulse, 0);
+	}
+	QAngle angPunch(enginerandom->vfunc1(1.0f, 2.0f), enginerandom->vfunc1(-1.0f, 1.0f), 0);
+	pPlayer->slot169(angPunch);
+	vfunc307(0xc0);
+	m_flElementDebounce = gpGlobals->curtime + 0.5f;
+	*(float *)((char *)this + 0x918) = gpGlobals->curtime + 0.25f;
+	float t = gpGlobals->curtime + 0.5f;
+	*(float *)((char *)this + 0x734) = *(float *)((char *)this + 0x730) = t;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040e5b0 size=0x48
 struct CEntA { virtual bool vfunc0(); virtual bool vfunc1(); char m_pad[0x24]; float m_f28; };
 struct CEntB { virtual bool vfunc0(); virtual bool vfunc1(); char m_pad[0x24]; float m_f28; };
