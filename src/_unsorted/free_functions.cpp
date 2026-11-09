@@ -54297,6 +54297,33 @@ char *CDialog::sub_100e1880(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e19f0 size=0xa2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CDialog.h"
+#include "ScopeTrace.h"
+
+DialogLine *CDialog::sub_100e19f0(int index)
+{
+	ScopeTrace trace("CDialog::get_line", g_106b8540);
+	CDialogTable_t *pTable = m_pTable;
+	int i = 0;
+	if (pTable) {
+		for (; i < pTable->m_nEntries; i++) {
+			if (pTable->m_pEntries[i].m_data[0] == index)
+				return (DialogLine *)&pTable->m_pEntries[i];
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1ad0 size=0x119
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

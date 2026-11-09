@@ -237,6 +237,7 @@
 0x10001532 func   ?sub_101790b0@@YIXPAUSView179@@@Z sub_101790b0
 0x10001537 func   ??_GIRecipientFilter@@UAEPAXI@Z ??_GIRecipientFilter@@UAEPAXI@Z
 0x10001541 func   ?sub_10101e30@@YAPAHXZ sub_10101e30
+0x1000154b func   ?sub_100e19f0@CDialog@@QAEPAUDialogLine@@H@Z CDialog::sub_100e19f0
 0x10001550 func   ?sub_101db9a0@@YIXPAD@Z sub_101db9a0
 0x10001555 func   ?vfunc31@CBasePlayer@@UAEXH@Z CBasePlayer::vfunc31
 0x1000155a func   ?sub_104124b0@@YAHPBD@Z sub_104124b0
