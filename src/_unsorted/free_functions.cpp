@@ -143834,6 +143834,41 @@ void __cdecl sub_1021f3e0(CInfoB1021f3e0 *pInfo, int nEdict)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021f630 size=0xa8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+
+struct EdictUnknown_t
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void *GetEntity();
+};
+struct Edict_t
+{
+	char m_pad0000[0x40];
+	EdictUnknown_t *m_pUnk;
+};
+
+void sub_1021f630(int unused, volatile int iEnt)
+{
+	Edict_t *pEdict = (Edict_t *)engine->vfunc38(iEnt);
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	if (!pEdict)
+		pEdict = (Edict_t *)engine->vfunc38(0);
+	if (pEdict && pEdict->m_pUnk)
+		iEnt = (int)pEdict->m_pUnk->GetEntity();
+	else
+		iEnt = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021fb50 size=0xff
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
