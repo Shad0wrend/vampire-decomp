@@ -4001,6 +4001,7 @@
 0x10006861 func   ?sub_103684f0@@YAEXZ sub_103684f0
 0x1000686b func   ?vfunc373@CWeaponMelee_TzimisceMelee@@UAEHXZ CWeaponMelee_TzimisceMelee::vfunc373
 0x10006870 func   ?sub_1036fc00@@YADXZ sub_1036fc00
+0x10006875 func   ?vfunc3@CAI_StandoffBehavior@@UAE_NXZ CAI_StandoffBehavior::vfunc3
 0x1000687a func   ?sub_102139f0@@YIPAHPAH@Z sub_102139f0
 0x1000687f func   ?vfunc5@CNPCMaker_Zombie@@QAEPAV1@I@Z CNPCMaker_Zombie::vfunc5
 0x10006889 func   ?vfunc88@CBaseEntity@@UAEHXZ CBaseEntity::vfunc88

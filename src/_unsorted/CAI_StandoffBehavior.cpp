@@ -43,6 +43,31 @@ void CAI_StandoffBehavior::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c7410 size=0x54
+#include "CAI_StandoffBehavior.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct CStandoffOuterSlots
+{
+	V100(a0) V100(a1) V100(a2) V100(a3) V100(a4) V10(b0)
+	virtual void c0(); virtual void c1(); virtual void c2();
+	virtual unsigned int vfunc513();
+};
+
+bool CAI_StandoffBehavior::vfunc3()
+{
+	if (m_b19)
+	{
+		if (!(((CStandoffOuterSlots *)m_pOuter)->vfunc513() & 0x8000000)
+		    || m_pOuter->sub_1008dd30(8, -1) < 0)
+			m_b19 = 0;
+		else
+			return m_pOuter->m_n5cc0 == 2 && m_pOuter->sub_1032e7b0();
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c7490 size=0x76
 #include "CAI_StandoffBehavior.h"
 struct CStandoffRandTimer
