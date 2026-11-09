@@ -126,6 +126,54 @@ void CEntitySaveRestoreBlockHandler::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3a20 size=0x90
+#include "CEntitySaveRestoreBlockHandler.h"
+
+#define RV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+extern void *g_10592b18;
+extern int g_10592b1c;
+
+struct entitytable_view { char pad[0x30]; };
+
+struct SSaveInfoLike
+{
+	char pad0[0x1318];
+	int m_nEntities;
+	entitytable_view *m_pEntityData;
+	void InitEntityTable(entitytable_view *pNewTable, int size) { m_pEntityData = pNewTable; m_nEntities = size; }
+	int NumEntities() { return m_nEntities; }
+	entitytable_view *GetEntityInfo(int i) { return m_pEntityData + i; }
+};
+
+struct SRestoreSlots
+{
+	virtual void slot0(); virtual void slot1(); virtual void slot2();
+	virtual int ReadFields(const char *name, void *pBase, int pMap, void *pFields, int nFields);
+	virtual void slot4(); virtual void slot5(); virtual void slot6(); virtual void slot7(); virtual void slot8(); virtual void slot9();
+	virtual void slot10(); virtual void slot11(); virtual void slot12(); virtual void slot13(); virtual void slot14();
+	virtual int ReadInt(int *pValue, int count, int unused);
+	virtual void slot16(); virtual void slot17(); virtual void slot18(); virtual void slot19();
+	virtual void slot20(); virtual void slot21(); virtual void slot22(); virtual void slot23(); virtual void slot24();
+	virtual void slot25(); virtual void slot26(); virtual void slot27(); virtual void slot28(); virtual void slot29();
+	virtual void slot30(); virtual void slot31(); virtual void slot32();
+	virtual SSaveInfoLike *GetSaveInfo();
+};
+
+void CEntitySaveRestoreBlockHandler::vfunc6(void *pRestoreV)
+{
+	SRestoreSlots *pRestore = (SRestoreSlots *)pRestoreV;
+	SSaveInfoLike *pSaveData = pRestore->GetSaveInfo();
+	int nEntities;
+	pRestore->ReadInt(&nEntities, 1, 0);
+	entitytable_view *pEntityTable = (entitytable_view *)engine->vfunc47(sizeof(entitytable_view) * nEntities, 1);
+	pSaveData->InitEntityTable(pEntityTable, nEntities);
+	for (int i = 0; i < pSaveData->NumEntities(); i++)
+		pRestore->ReadFields("ETABLE", pSaveData->GetEntityInfo(i), 0, g_10592b18, g_10592b1c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3ae0 size=0x1
 #include "CEntitySaveRestoreBlockHandler.h"
 void CEntitySaveRestoreBlockHandler::vfunc8()
