@@ -14306,6 +14306,7 @@
 0x10014ede func   ?vfunc302@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc302
 0x10014ee3 func   ?sub_101da9e0@CUnknown101da9e0@@QAEPAXH@Z CUnknown101da9e0::sub_101da9e0
 0x10014eed func   _item_g_warr_clipboard item_g_warr_clipboard
+0x10014ef2 func   ?sub_1030b610@@YIXPAULookTargetView@@HPAVCBaseEntity@@@Z sub_1030b610
 0x10014ef7 func   ?sub_101b6bd0@CUtlRBTree232@@QAEHH_N@Z CUtlRBTree232::sub_101b6bd0
 0x10014efc func   ?vfunc82@CPhysicsSpring@@UAEPAUdatamap_t@@XZ CPhysicsSpring::vfunc82
 0x10014f01 func   ?vfunc80@CWeaponRanged_FlameThrower@@UAEHXZ CWeaponRanged_FlameThrower::vfunc80

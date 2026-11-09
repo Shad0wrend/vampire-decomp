@@ -187724,6 +187724,39 @@ void CUnk1030b5e0::sub_1030b5e0(const int *pSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030b610 size=0x7a
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+struct LookSubView
+{
+	char pad[0x40];
+	float *sub_1031a000();
+};
+struct LookTargetView
+{
+	char pad0000[0x24];
+	LookSubView m_sub24;
+	Vector m_vecDir64;
+	EHANDLE m_hTarget70;
+};
+
+// TARGET: sub_1030b610
+void __fastcall sub_1030b610(LookTargetView *pThis, int unused, CBaseEntity *pEnt)
+{
+	pThis->m_hTarget70 = pEnt;
+	if (pEnt)
+	{
+		const Vector *pPos = (const Vector *)pThis->m_sub24.sub_1031a000();
+		if (pPos)
+		{
+			pThis->m_vecDir64 = *((CEntityVSlots *)pEnt)->slot217() - *pPos;
+			VectorNormalize(pThis->m_vecDir64);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b6b0 size=0xc5
 #include "CUnknown1030b610.h"
 #include "CBaseEntity.h"
