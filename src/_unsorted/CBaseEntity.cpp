@@ -3866,6 +3866,36 @@ void CBaseEntity::vfunc93(int moveType, int moveCollide)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aae50 size=0xa4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+#define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct SSlot15Entity
+{
+	PV10(a0)
+	virtual void a10(); virtual void a11(); virtual void a12(); virtual void a13(); virtual void a14();
+	virtual void Slot15(const Vector &v);
+};
+
+void CBaseEntity::vfunc103()
+{
+	ScopeTrace scope("CBaseEntity::Spawn", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	m_flForceTransmitTime = 0;
+	((SSlot15Entity *)this)->Slot15(Vector(0, 0, 0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ab020 size=0x1b9
 #include "CBaseEntity.h"
 #include "CUnknown101ab800.h"
