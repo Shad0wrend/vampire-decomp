@@ -9576,6 +9576,7 @@
 0x1000e679 func   ?sub_10288670@CAI_Motor@@QAEXM@Z CAI_Motor::sub_10288670
 0x1000e67e func   ?vfunc103@CRagdollProp@@UAEXXZ CRagdollProp::vfunc103
 0x1000e683 func   ?vfunc362@CWeaponMelee_MingXiaoTentacle@@UAEHXZ CWeaponMelee_MingXiaoTentacle::vfunc362
+0x1000e688 func   ?sub_10268170@CUnknown10268170@@QAE?AVVector@@ABV2@00@Z CUnknown10268170::sub_10268170
 0x1000e68d func   ?sub_1019e090@CBaseFire@@QAEXD@Z CBaseFire::sub_1019e090
 0x1000e692 func   ?sub_101f4300@CUnk101f4300@@QAEHXZ CUnk101f4300::sub_101f4300
 0x1000e697 func   ?sub_10397b40@CNPC_VMingXiao@@QAE_NPAX@Z CNPC_VMingXiao::sub_10397b40

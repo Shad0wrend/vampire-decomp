@@ -156877,6 +156877,32 @@ Vector __stdcall sub_10267820(CBaseEntity *pEnt, const Vector *pPos, const Vecto
 }
 // END FUNCTION
 
+// FUNCTION: 0x10268170 size=0x153
+#include "CUnknown10268170.h"
+#include "CUnknown10160680.h"
+#include "engineiface.h"
+
+Vector CUnknown10268170::sub_10268170(const Vector &vecSpread, const Vector &vecRight, const Vector &vecUp)
+{
+	Vector pt;
+	do {
+		pt.x = enginerandom->vfunc1(-0.5f, 0.5f) + enginerandom->vfunc1(-0.5f, 0.5f);
+		pt.y = enginerandom->vfunc1(-0.5f, 0.5f) + enginerandom->vfunc1(-0.5f, 0.5f);
+		pt.z = pt.x * pt.x + pt.y * pt.y;
+	} while (pt.z > 1.0f);
+	Vector vecSp = vecSpread;
+	float flSpreadY;
+	if (m_pPlayer) {
+		vecSp.x = m_pPlayer->sub_10160680();
+		flSpreadY = vecSp.x;
+	} else {
+		flSpreadY = vecSp.y;
+	}
+	pt = vecRight * (vecSp.x * pt.x) + vecUp * (flSpreadY * pt.y);
+	return pt;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102692d0 size=0x252
 #include "CBaseEntity.h"
 #include "UTIL_Trace.h"
