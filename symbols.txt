@@ -10235,6 +10235,7 @@
 0x1000ef11 func   ?sub_10118cc0@@YIXPAUCHandleOwner@@HPAPAUCTargetEnt@@@Z sub_10118cc0
 0x1000ef16 func   ?vfunc103@CTriggerElectricBugaloo@@QAEXXZ CTriggerElectricBugaloo::vfunc103
 0x1000ef1b func   ?vfunc13@CServerGameClients@@UAEXPAXPAM@Z CServerGameClients::vfunc13
+0x1000ef20 func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc1
 0x1000ef25 func   ?vfunc309@CBaseCombatWeapon@@UAE_NXZ CBaseCombatWeapon::vfunc309
 0x1000ef2a func   ?vfunc298@CWeaponMelee_FireAxe@@QAEXHH@Z CWeaponMelee_FireAxe::vfunc298
 0x1000ef2f func   ?vfunc274@CPropPadlock@@QAEXXZ CPropPadlock::vfunc274
