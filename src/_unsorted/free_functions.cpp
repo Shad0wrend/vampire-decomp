@@ -57570,6 +57570,92 @@ CBaseEntity *CGlobalEntityList::sub_100f7380(CBaseEntity *pStart, const char *ps
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7460 size=0x266
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "ScopeTrace.h"
+
+struct FindUnkView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void *vfunc4(); };
+struct FindEdictView { char pad[0x40]; FindUnkView *m_pUnk; };
+extern "C" int __cdecl _strcmpi(const char *a, const char *b);
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+CBaseEntity *sub_101cd9e0(int n);
+int sub_101d1800(int edict);
+CBaseEntity *sub_100ab250(int edict);
+CBaseEntity *sub_10172710(CBaseEntity *pPlayer);
+
+// TARGET: sub_100f7460
+CBaseEntity *sub_100f7460(const char *szName, CBaseEntity *pSearchingEntity, CBaseEntity *pActivator)
+{
+	if (szName[0] == '!')
+	{
+		const char *pName = szName + 1;
+		if (!_strcmpi(pName, "player"))
+		{
+			return sub_101cd9e0(1);
+		}
+		else if (!_strcmpi(pName, "playercontroller"))
+		{
+			CBaseEntity *pPlayer = sub_101cd9e0(1);
+			if (pPlayer)
+				return ((CBasePlayer *)pPlayer)->sub_101618a0();
+		}
+		else if (!_strcmpi(pName, "pvsplayer"))
+		{
+			if (pSearchingEntity)
+			{
+				int edict = sub_101d1800(pSearchingEntity->m_pEdict2e0);
+				ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+				if (!edict)
+					edict = (int)engine->vfunc38(0);
+				return sub_100ab250(edict);
+			}
+			else if (pActivator)
+			{
+				FindEdictView *pEdict = (FindEdictView *)sub_101d1800(pActivator->m_pEdict2e0);
+				ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+				if (!pEdict)
+					pEdict = (FindEdictView *)engine->vfunc38(0);
+				return (pEdict && pEdict->m_pUnk) ? (CBaseEntity *)pEdict->m_pUnk->vfunc4() : 0;
+			}
+			else
+			{
+				return sub_101cd9e0(1);
+			}
+		}
+		else if (!_strcmpi(pName, "activator"))
+		{
+			if (pActivator)
+				return pActivator;
+			else if (pSearchingEntity)
+				return pSearchingEntity->m_hActivator10c.Get();
+		}
+		else if (!_strcmpi(pName, "picker"))
+		{
+			return sub_10172710(sub_101cd9e0(1));
+		}
+		else if (!_strcmpi(pName, "caller"))
+		{
+			if (pSearchingEntity)
+				return pSearchingEntity->m_hCaller110.Get();
+		}
+		else
+		{
+			Warning("Invalid entity search name %s\n", szName);
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f7770 size=0xdf
 #include "CGlobalEntityList.h"
 #include "CBaseEntity.h"
