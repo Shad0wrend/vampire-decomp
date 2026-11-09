@@ -146894,6 +146894,73 @@ extern "C" GP *item_w_mingxiao_spit()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10237a50 size=0xce
+#include "CWeaponRanged.h"
+#include "CBaseAnimating.h"
+#include "CEHandleGet.h"
+#include "matrix3x4_t.h"
+#include <string.h>
+
+#define PV(n) virtual void s##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct FingerChar_t {
+	PV100(a) PV100(b)
+	PV10(c0) PV10(c1) PV10(c2) PV10(c3) PV10(c4)
+	PV(c50) PV(c51) PV(c52) PV(c53) PV(c54) PV(c55)
+	virtual void vfunc256(int bone, matrix3x4_t &matrix);
+	char pad[0x174 - 4];
+};
+
+struct FingerAnim_t : public FingerChar_t {
+	int sub_10092550(const char *pszName);
+};
+
+struct FingerEnt_t {
+	char pad[0x9c];
+	FingerAnim_t *pChar;
+};
+
+struct FingerWeaponView_t {
+	char pad[0x37c];
+	unsigned int hAim;
+};
+
+void sub_10138df0(const matrix3x4_t &in1, const matrix3x4_t &in2, matrix3x4_t &out);
+void sub_10137ed0(const matrix3x4_t &m, float *pOrigin);
+void sub_10138720(const matrix3x4_t &m, int n, float *pAngles);
+
+inline bool GetFingerMatrix(FingerWeaponView_t *pView, matrix3x4_t &mat)
+{
+	FingerEnt_t *pEnt = (FingerEnt_t *)EHandle_Get(pView->hAim);
+	if (pEnt) {
+		FingerAnim_t *pChar = pEnt->pChar;
+		if (pChar) {
+			int nBone = pChar->sub_10092550("Bip01 L Finger01");
+			if (nBone >= 0) {
+				pChar->vfunc256(nBone, mat);
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+bool CWeaponRanged::sub_10237a50(int a, float *pAngles, float *pOrigin)
+{
+	matrix3x4_t matBone;
+	if (!GetFingerMatrix((FingerWeaponView_t *)this, matBone))
+		return false;
+	matrix3x4_t matZero, matOut;
+	memset(&matZero, 0, sizeof(matZero));
+	sub_10138df0(matBone, matZero, matOut);
+	sub_10137ed0(matOut, pOrigin);
+	sub_10138720(matOut, 3, pAngles);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10237c30 size=0xd
 extern int g_10751a54;
 extern int g_10752954;
