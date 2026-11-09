@@ -184,7 +184,7 @@ public:
 	char m_pad738[0x740 - 0x738];
 	CBaseCombatWeaponMembers m_members740;	// 0x740
 	int m_nAmmoType;	// 0x744
-	union { char m_pad748[0x88c - 0x748]; struct { char m_pad748b[0x754 - 0x748]; const char *m_pszModelName754; char m_pad758[0x77c - 0x758]; char m_Dmg77c[3][0x44]; }; };	// 0x754: the weapon's model name; 0x77c: three CVDmg_t records of 0x44 bytes (view with (CVDmg_t *)m_Dmg77c)
+	union { char m_pad748[0x88c - 0x748]; struct { char m_pad748b[0x754 - 0x748]; const char *m_pszModelName754; char m_pad758[0x77c - 0x758]; char m_Dmg77c[3][0x44]; char m_pad848[0x87c - 0x848]; int m_n87c; int m_n880; int m_n884; }; };	// 0x754: the weapon's model name; 0x77c: three CVDmg_t records of 0x44 bytes (view with (CVDmg_t *)m_Dmg77c)
 	unsigned int m_hOwner; // 0x88c
 	int m_nViewModelIndex;	// 0x0890
 	float m_f894;
