@@ -141707,6 +141707,24 @@ void CUnknown1021bec0::sub_1021bc90(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021bd80 size=0xf5
+#include "CUnknown1021bec0.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+struct CHackEntry1021bd80 { char pad[0x240]; char m_szExpr[0x80]; };
+struct CHackView1021bd80 { char pad[0x9f8]; CUtlVector<int> m_List; char pad2[0xa14 - 0x9f8 - 0x14]; CUtlVector<CHackEntry1021bd80> m_Entries; };
+void CUnknown1021bec0::sub_1021bd80()
+{
+	CHackView1021bd80 *v = (CHackView1021bd80 *)this;
+	v->m_List.Purge();
+	int count = v->m_Entries.Count();
+	for (int i = 0; i < count; i++) {
+		if (!sub_1021a4f0(i) && sub_1021bec0(v->m_Entries[i].m_szExpr))
+			v->m_List.AddToTail(i);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021bec0 size=0xca
 #include <string.h>
 #include "CUnknown1021bec0.h"
