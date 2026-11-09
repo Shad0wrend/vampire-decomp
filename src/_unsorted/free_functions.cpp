@@ -226635,6 +226635,53 @@ extern "C" CNPC_VTzimisce *npc_VTzimisce()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b6c60 size=0xeb
+#include "CNPC_VTzimisce.h"
+#include "UtlMem.h"
+#include "utlvector.h"
+
+extern int vt_104bd2cc;
+extern int vt_104bd2a0;
+extern int vt_104cb934;
+extern int vt_104cb904;
+
+struct CNPC_VTzimisce_Member66bd
+{
+	void sub_103b7020();
+};
+
+struct CNPC_VTzimisce_Entry8
+{
+	int m_n0;
+	int m_n4;
+};
+typedef CUtlVector<CNPC_VTzimisce_Entry8> CNPC_VTzimisce_List;
+
+// TARGET: CNPC_VTzimisce::sub_103b6c60
+CNPC_VTzimisce *CNPC_VTzimisce::sub_103b6c60()
+{
+	sub_1028d230();
+	CUtlVector<int> *pRecords = (CUtlVector<int> *)&m_pMem665c;
+	((UtlMem *)pRecords)->sub_1039ae10(0, 0);
+	pRecords->m_Size = 0;
+	pRecords->ResetDbgInfo();
+	*(int **)this = &vt_104bd2cc;
+	*(int **)((char *)this + 0x19b0) = &vt_104bd2a0;
+	m_hTarget = 0xffffffff;
+	m_hEnt6684.m_Index = 0xffffffff;
+	((CNPC_VTzimisce_List *)&m_pMem6690)->CNPC_VTzimisce_List::CUtlVector();
+	((CNPC_VTzimisce_Member66bd *)((char *)this + 0x66bd))->sub_103b7020();
+	*(int **)this = &vt_104cb934;
+	*(int **)((char *)this + 0x19b0) = &vt_104cb904;
+	((CNPC_VTzimisce_List *)&m_pMem6690)->SetGrowSize(8);
+	((CNPC_VTzimisce_List *)&m_pMem6690)->EnsureCapacity(8);
+	m_n1568 = 10;
+	m_n156c = 10;
+	m_b65f9 = 1;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b7020 size=0xc
 void __fastcall sub_103b7040(void *pThis);
 
