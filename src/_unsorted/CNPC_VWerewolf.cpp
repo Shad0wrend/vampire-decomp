@@ -374,6 +374,66 @@ int CNPC_VWerewolf::vfunc142(CUnknown101c2a50 *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ce750 size=0x1df
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include "CCineNPCSlots.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern const char g_105ccb38[];
+__declspec(dllimport) void DevWarning(const char *fmt, ...);
+int sub_10316fa0(int);
+
+struct CWerewolfSlots449
+{
+	CCS_V100(a) CCS_V100(b) CCS_V100(c) CCS_V100(d)
+	CCS_V10(e0) CCS_V10(e1) CCS_V10(e2) CCS_V10(e3)
+	CCS_V(g440) CCS_V(g441) CCS_V(g442) CCS_V(g443) CCS_V(g444) CCS_V(g445) CCS_V(g446) CCS_V(g447) CCS_V(g448)
+	virtual const char *slot449(int task);
+};
+
+static inline bool IsCurSched(CNPC_VWerewolf *p, int type)
+{
+	return p->m_pSchedule5c38 && p->m_pSchedule5c38 == p->sub_102cc1f0(type);
+}
+
+void CNPC_VWerewolf::vfunc448(int failcode)
+{
+	ScopeTrace trace("CNPC_VWerewolf::TaskFail", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	if (IsCurSched(this, 0x160) || IsCurSched(this, 0x161) || IsCurSched(this, 0x162)) {
+		int code = sub_10316fa0(failcode);
+		const char *name;
+		if (!sub_1028a150()) {
+			name = g_105ccb38;
+		} else {
+			name = ((CWerewolfSlots449 *)this)->slot449(*sub_1028a150());
+		}
+		DevWarning("Werewolf failed task: %-32s schedule: %-32s reason: %s\n", name, m_pSchedule5c38->m_id40, code);
+		if (m_pHint66bc) {
+			DevWarning("Current MOVE  Hint: %s\n", sub_103ceb60(m_pHint66bc));
+		}
+		if (m_pHint66b0) {
+			DevWarning("Current TELEPORT  Hint: %s\n", sub_103ceb60(m_pHint66b0));
+		}
+		if (m_pHint66c4) {
+			DevWarning("Current BREAK  Hint: %s\n", sub_103ceb60(m_pHint66b0));
+		}
+	}
+	sub_10273180(1);
+	sub_103d4690();
+	sub_103d4760();
+	m_pHint66c4 = 0;
+	m_n66a4 = 0;
+	m_b66a1 = 1;
+	sub_1029adb0(failcode);
+	sub_103cb920(0);
+	m_nFlags66e8 = 0;
+	m_n6708 = -1;
+	m_n670c = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ced10 size=0x10c
 #include "CNPC_VWerewolf.h"
 #include "CUnknown101d7520.h"
