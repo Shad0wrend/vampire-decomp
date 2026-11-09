@@ -69343,6 +69343,60 @@ int CGameMovement::sub_10125200(const Vector &point)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101256d0 size=0xad
+#include "CGameMovement.h"
+
+struct GroundEnt
+{
+	char m_pad0000[0x268];
+	int m_iEFlags;
+	char m_pad026c[0x3bc - 0x26c];
+	Vector m_vecAbsVelocity;
+
+	bool IsEFlagSet(int nEFlagMask) const { return (m_iEFlags & nEFlagMask) != 0; }
+	void sub_100b1d10();
+	const Vector &GetAbsVelocity()
+	{
+		if (IsEFlagSet(0x1000))
+			sub_100b1d10();
+		return m_vecAbsVelocity;
+	}
+};
+
+#define MV(n) virtual void mv##n();
+#define MV10(p) MV(p##0) MV(p##1) MV(p##2) MV(p##3) MV(p##4) MV(p##5) MV(p##6) MV(p##7) MV(p##8) MV(p##9)
+
+struct MoveObj
+{
+	MV10(0) MV10(1) MV10(2) MV10(3) MV10(4) MV10(5) MV10(6) MV10(7) MV10(8) MV10(9)
+	MV10(10) MV10(11) MV10(12) MV10(13) MV10(14) MV10(15) MV10(16) MV10(17) MV10(18) MV10(19)
+	MV(200) MV(201) MV(202) MV(203) MV(204) MV(205) MV(206) MV(207)
+	virtual void SetGroundEntity(GroundEnt *pEnt);
+	virtual GroundEnt *GetGroundEntity();
+};
+
+struct MoveData
+{
+	char m_pad[0x40];
+	Vector m_vecVelocity;
+};
+
+void CGameMovement::sub_101256d0(void *pNewGround)
+{
+	GroundEnt *newGround = (GroundEnt *)pNewGround;
+	GroundEnt *oldGround = ((MoveObj *)m_pMove)->GetGroundEntity();
+	if (!oldGround && newGround)
+	{
+		((MoveData *)m_pPlayer)->m_vecVelocity -= newGround->GetAbsVelocity();
+	}
+	else if (oldGround && !newGround)
+	{
+		((MoveData *)m_pPlayer)->m_vecVelocity += oldGround->GetAbsVelocity();
+	}
+	((MoveObj *)m_pMove)->SetGroundEntity(newGround);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10126380 size=0x21
 // TARGET: sub_10126380
 float __stdcall sub_10126380(float a, float b)
