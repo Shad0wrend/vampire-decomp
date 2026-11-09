@@ -65,6 +65,7 @@ public:
 	void sub_1025efc0();	// resets the three pose parameters (slot 346(index, 0, 0)), runs CBaseAnimating::sub_100955c0 and clears bits 0 and 1 of +0x5f4c
 
 	float vfunc250(float a);	// slot 250: clears the stale flags and advances the animation (CBaseAnimatingOverlay::vfunc250)
+	void vfunc585(char bFlag, float flMin, float flMax);
 	bool vfunc586();
 	float vfunc516();
 	void vfunc537(const Vector *pPos, float flValue);	// slot 537 (ret 8): updates the head / neck / body pose parameters (m_nPose5fe0[3] then m_nPose5fb8[10]) from the "eyes" attachment, the given position and the yaw derived from flValue; only when slot 513 (&0x1000) holds
