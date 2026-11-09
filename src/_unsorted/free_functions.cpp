@@ -140191,6 +140191,33 @@ void CGameSign::sub_10212650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10212680 size=0x2d
+#include "CUnknown10147d10.h"
+#include "CUnknown10212680.h"
+#include "string_t.h"
+
+struct CVariantView10212680
+{
+	char pad0[8];
+	string_t iszVal;	// 0x08
+	char pad1[0xc];
+	int fieldType;		// 0x18
+	string_t StringID() const { return (fieldType == 2) ? iszVal : string_t(0); }
+};
+
+struct CUnknownView10212680
+{
+	char pad0[0x454];
+	string_t m_isz;
+};
+
+void CUnknown10212680::sub_10212680(CInputData10147d10 *data)
+{
+	string_t s; s = ((CVariantView10212680 *)data)->StringID();
+	((CUnknownView10212680 *)this)->m_isz = s;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212790 size=0x5f
 #include "CBaseEntity.h"
 #include "CUnknown102126c0.h"
