@@ -305,6 +305,88 @@ void CBaseMoveBehavior::vfunc133()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140c00 size=0x259
+// TARGET: CBaseMoveBehavior::vfunc135
+
+#include "CBaseMoveBehavior.h"
+#include "CBaseEntitySlots.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include "Quaternion.h"
+
+class CInterpolatorView
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void slot2(int index, const Vector *pVec);
+	virtual void slot3(float flFrac, Vector *pOut);
+};
+
+class CPhysicsView
+{
+public:
+	void sub_100b2e30(const float *pVec);
+	void sub_100b2f50(const float *pVec);
+};
+
+void *sub_1013fdb0(int interpolator);
+void sub_1012f790(int index, const Vector *pVec);
+void sub_101301f0(float flFrac, int interpolator, Quaternion *pOut);
+void sub_1013b240(const Quaternion *pIn, Vector *pOut);
+
+float CBaseMoveBehavior::vfunc135(float flFrameTime)
+{
+	if (!m_p4a0 || !m_p4a4)
+		return flFrameTime;
+	if (!((CBaseEntitySlots *)this)->slot153())
+		return flFrameTime;
+
+	float flTime = flFrameTime + *(float *)((char *)this + 0x3f4) - m_fl494;
+	m_flTimeIntoFrame = flTime;
+	float flFrac = flTime / (m_flAnimEndTime - m_fl494);
+
+	Vector vecInterp;
+	CInterpolatorView *pInterp = (CInterpolatorView *)sub_1013fdb0(m_iPositionInterpolator);
+	if (pInterp)
+	{
+		pInterp->slot2(-1, (const Vector *)((char *)m_pPreKeyFrame + 0x450));
+		sub_1012f790(-1, (const Vector *)((char *)m_pPreKeyFrame + 0x468));
+		pInterp->slot2(0, (const Vector *)((char *)m_p4a0 + 0x450));
+		sub_1012f790(0, (const Vector *)((char *)m_p4a0 + 0x468));
+		pInterp->slot2(1, (const Vector *)((char *)m_p4a4 + 0x450));
+		sub_1012f790(1, (const Vector *)((char *)m_p4a4 + 0x468));
+		pInterp->slot2(2, (const Vector *)((char *)m_pPostKeyFrame + 0x450));
+		sub_1012f790(2, (const Vector *)((char *)m_pPostKeyFrame + 0x468));
+		pInterp->slot3(flFrac, &vecInterp);
+	}
+	else
+	{
+		vecInterp.x = 0.0f;
+		vecInterp.y = 0.0f;
+		vecInterp.z = 0.0f;
+	}
+
+	Quaternion qRot;
+	sub_101301f0(flFrac, m_iRotationInterpolator, &qRot);
+	Vector vecAng;
+	sub_1013b240(&qRot, &vecAng);
+
+	float inv = 1.0f / flFrameTime;
+
+	{
+		Vector vecVel = (vecInterp - *((CEntityVSlots *)this)->slot220()) * inv;
+		((CPhysicsView *)this)->sub_100b2e30((const float *)&vecVel);
+	}
+	{
+		Vector vecVel = (vecAng - *((CEntityVSlots *)this)->slot221()) * inv;
+		((CPhysicsView *)this)->sub_100b2f50((const float *)&vecVel);
+	}
+
+	return flFrameTime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140f30 size=0x1e
 #include "CBaseMoveBehavior.h"
 
