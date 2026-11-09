@@ -3251,6 +3251,106 @@ bool CBasePlayer::vfunc382(CBaseCombatWeapon *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101772b0 size=0x3b4
+#include "CBaseCombatCharacter.h"
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+// TARGET: CBasePlayer::vfunc388
+#include "CBasePlayer.h"
+#include "CBaseCombatWeapon.h"
+#include "CBaseAnimating.h"
+
+char __fastcall sub_10256280(CBaseCombatWeapon *pWeapon);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+char CBasePlayer::vfunc388(CBaseEntity *pWeapon, int a)
+{
+	if (m_bCanSwitchWeapons)
+	{
+		CBaseAnimating *viewWeapon = (CBaseAnimating *)m_pViewWeapon.Get();
+		if (((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc388(pWeapon, a))
+		{
+			CBaseCombatWeapon *w = (CBaseCombatWeapon *)pWeapon;
+			if (w && !sub_10256280(w))
+			{
+				if (EHandleDetail::g_10566458->LookupEntity(m_pViewWeapon))
+					((CBaseCombatWeapon *)EHandleDetail::g_10566458->LookupEntity(m_pViewWeapon))->vfunc359();
+
+				m_pViewWeapon = (CBaseEntity *)sub_1032e120(STRINGR(pWeapon->m_classname11c));
+
+				if (m_pViewWeapon)
+					((CBaseCombatWeapon *)m_pViewWeapon.Get())->vfunc298((CBaseEntity *)this, 0);
+
+				if (m_pViewWeapon)
+				{
+					if (w->sub_10256220())
+					{
+						if (viewWeapon && viewWeapon->sub_100952d0(-1))
+						{
+							int seq = viewWeapon->sub_1008dd30(0xb5, -1);
+							if (seq == -1)
+							{
+								seq = viewWeapon->sub_1008dd30(0xde, -1);
+								if (seq == -1)
+									seq = 0;
+							}
+							m_f1564 = viewWeapon->sub_10091080(seq) + gpGlobals->curtime;
+						}
+						else
+						{
+							m_f1564 = gpGlobals->curtime + 0.1f;
+						}
+						*(short *)((char *)m_pViewWeapon.Get() + 0x8da) = *(short *)((char *)w + 0x8da);
+						((CBaseCombatWeapon *)m_pViewWeapon.Get())->vfunc105(STRINGR(w->m_pszModelName754));
+					}
+					else
+					{
+						*(short *)((char *)m_pViewWeapon.Get() + 0x8da) = *(short *)((char *)w + 0x8da);
+						((CBaseCombatWeapon *)m_pViewWeapon.Get())->vfunc105("models/weapons/w_null.mdl");
+					}
+				}
+			}
+
+			if (m_pViewWeapon)
+				((CBaseEntity *)m_pViewWeapon.Get())->sub_1009d1e0();
+
+			for (int i = 0; i < 2; i++)
+			{
+				CBaseEntity *e = sub_1015d680(i);
+				if (e)
+					e->sub_1009d1e0();
+			}
+
+			if (w && !w->sub_10256220())
+				return 1;
+
+			CBaseEntity *e2 = sub_1015d680(a);
+			if (e2)
+				e2->vfunc67();
+
+			sub_10177120();
+			return 1;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177760 size=0x55
 #include "CBasePlayer.h"
 struct CEntView443 {
