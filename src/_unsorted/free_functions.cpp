@@ -235230,6 +235230,42 @@ bool sub_10410490(SEnt *pEnt, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10410620 size=0x59
+#include "CWeaponPhysCannon.h"
+
+struct CPhysCannonPlayer
+{
+	char m_pad0000[0x3e0];
+	int m_n3e0;
+};
+
+struct CPhysCannonOwner
+{
+	char m_pad0000[0xa8];
+	CPhysCannonPlayer *m_pPlayer;
+};
+
+namespace block_10410620
+{
+char sub_1040d930() { return 0; }
+}
+using namespace block_10410620;
+
+// TARGET: CWeaponPhysCannon::sub_10410620
+void CWeaponPhysCannon::sub_10410620()
+{
+	CPhysCannonOwner *pOwner = sub_102521f0();
+	CPhysCannonPlayer *pPlayer = !pOwner ? 0 : pOwner->m_pPlayer;
+	if (pPlayer->m_n3e0 >= 2)
+	{
+		sub_104106a0(1, 0);
+		return;
+	}
+	if (!m_grab.sub_1040f940(pPlayer, (float)((sub_1040d930() ? 6 : 0) + 12)))
+		sub_104106a0(1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x104106a0 size=0x95
 #include "CBaseEntity.h"
 #include "CWeaponPhysCannon.h"
