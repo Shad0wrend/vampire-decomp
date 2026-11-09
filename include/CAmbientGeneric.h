@@ -73,6 +73,9 @@ public:
 	bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 KeyValue
 	void vfunc103();	// slot 103 "CAmbientGeneric::Spawn": the sound index from the volume and a flag (sub_101ac570); with a sound file of at least one character: SetSolid(0) (inlined scope trace), move type (0, 0), think function sub_1000969c, no next think, use function 0x100131e2, the 0x4bc / 0x4bd flags, the spawn flag bits into +0x4e0 from the bytes 0x4dc..0x4df, no attached entity, then slot 104; else warns "EMPTY AMBIENT AT" and removes the entity
 	void vfunc104();	// slot 104: precaches the sound file (when it is set, longer than one character and not a '!' sentence), then sub_101ad0f0, then flags bit 0 of the 0x4bc byte when the 0x4bd byte is set and spawnflag 0x10 is clear
+	void sub_101ad470(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// "CAmbientGeneric::ToggleUse" (the use function: USE_OFF 0 / ON 1 / SET 2 / TOGGLE 3)
+	int sub_101ad9a0();	// stub 0x100057fe: true when the NPC sound event parameters are valid
+	const char *sub_100ab4f0();	// stub 0x1000b5cd: GetDebugName-like (used in the Warning texts)
 	void sub_101ad0f0();	// ambient sound parameter setup (called through the stub at 0x1000da80)
 	void vfunc180();	// slot 180: when the attached entity resolves, stops the sound on its edict (sub_101cdac0), then CBaseEntity::vfunc180
 	void vfunc113();	// slot 113: finds the attached entity (cached as a handle by name, else the ambient itself), and while playing re-emits the sound on its edict (sub_101cdac0), then schedules the next think
