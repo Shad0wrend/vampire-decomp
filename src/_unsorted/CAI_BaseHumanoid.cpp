@@ -210,6 +210,174 @@ bool CAI_BaseHumanoid::vfunc586()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025f1c0 size=0x472
+#include "CAI_BaseHumanoid.h"
+#include "CAI_Navigator.h"
+#include "CBaseEntity.h"
+#include "Vector.h"
+// TARGET: CAI_BaseHumanoid::vfunc585
+#include "CUnknown101cccf0.h"
+
+#define HVS(n) virtual void hs_##n();
+#define HVS10(p) HVS(p##a) HVS(p##b) HVS(p##c) HVS(p##d) HVS(p##e) HVS(p##f) HVS(p##g) HVS(p##h) HVS(p##i) HVS(p##j)
+
+struct CHumanoidUnitVtbl
+{
+	HVS10(0) HVS10(10) HVS10(20) HVS10(30) HVS10(40) HVS10(50) HVS10(60) HVS10(70) HVS10(80) HVS10(90)
+	HVS10(100) HVS10(110) HVS10(120) HVS10(130) HVS10(140)
+	HVS(150) HVS(151) HVS(152)
+	virtual int hs153();
+	HVS(154) HVS(155) HVS(156) HVS(157) HVS(158) HVS(159)
+	HVS(160) HVS(161) HVS(162)
+	virtual char hs163();
+	HVS(164) HVS(165) HVS(166)
+	virtual void *hs167();
+	HVS(168) HVS(169)
+	HVS10(170) HVS10(180)
+	HVS(190) HVS(191) HVS(192)
+	virtual Vector *hs193(Vector *pOut);
+	HVS(194) HVS(195) HVS(196) HVS(197) HVS(198) HVS(199)
+	HVS(200)
+	virtual char hs201(void *pEnt, int a, int *pOut, int d);
+	HVS(202) HVS(203) HVS(204) HVS(205) HVS(206) HVS(207) HVS(208) HVS(209)
+	HVS(210) HVS(211) HVS(212) HVS(213) HVS(214) HVS(215) HVS(216)
+	virtual Vector *hs217();
+	HVS(218) HVS(219)
+	virtual Vector *hs220();
+	HVS(221) HVS(222) HVS(223) HVS(224) HVS(225) HVS(226) HVS(227) HVS(228) HVS(229)
+	HVS10(230) HVS10(240) HVS10(250) HVS10(260) HVS10(270) HVS10(280)
+	HVS10(290)
+	HVS10(300) HVS10(310) HVS10(320) HVS10(330) HVS10(340) HVS10(350) HVS10(360) HVS10(370) HVS10(380) HVS10(390)
+	HVS10(400) HVS10(410) HVS10(420) HVS10(430) HVS10(440) HVS10(450)
+	HVS(460) HVS(461) HVS(462) HVS(463)
+	virtual int hs464();
+	HVS(465) HVS(466) HVS(467) HVS(468) HVS(469)
+	HVS10(470) HVS10(480) HVS10(490) HVS10(500) HVS10(510) HVS10(520)
+	HVS(530) HVS(531) HVS(532) HVS(533) HVS(534)
+	virtual void hs535(const Vector *pPos, float a, float b, float c);
+	virtual void hs536(void *pEnt, float a, float b, float c);
+	HVS(537) HVS(538) HVS(539)
+	HVS10(540) HVS10(550) HVS10(560) HVS10(570)
+	HVS(580) HVS(581) HVS(582) HVS(583) HVS(584) HVS(585) HVS(586) HVS(587)
+	virtual char hs588(const Vector *pVec);
+	HVS(589)
+};
+
+char __fastcall sub_102ee680(void *pNav);
+
+#define NAV ((CAI_Navigator *)*(void **)((char *)this + 0x5d34))
+
+void CAI_BaseHumanoid::vfunc585(char bFlag, float flMin, float flMax)
+{
+	CHumanoidUnitVtbl *pThis = (CHumanoidUnitVtbl *)this;
+	float flR1 = enginerandom->vfunc1(flMin, flMax);
+	float flR2 = enginerandom->vfunc1(0.3f, 0.5f);
+	float flR3 = enginerandom->vfunc1(0.2f, 0.4f);
+
+	CBaseEntity *pTarget = (CBaseEntity *)pThis->hs167();
+	if (pTarget != 0)
+	{
+		if (pThis->hs201(pTarget, 0x2804091, 0, 0) || enginerandom->vfunc2(0, 3) == 0)
+		{
+			Vector vec;
+			if (pThis->hs588(((CHumanoidUnitVtbl *)pTarget)->hs193(&vec)))
+			{
+				flR2 = enginerandom->vfunc1(0.7f, 1.0f);
+				pThis->hs536(pTarget, flR2, flR1, 0.0f);
+				return;
+			}
+		}
+		flR1 = enginerandom->vfunc1(0.5f, 0.8f);
+		flR3 = 0.2f;
+	}
+
+	if (NAV->sub_102ee6a0() && sub_102ee680(NAV) && enginerandom->vfunc2(1, 10) <= 3)
+	{
+		Vector vecGoal;
+		if (NAV->sub_102ee6d0(&vecGoal, 144.0f))
+		{
+			Vector *pOrigin = pThis->hs220();
+			Vector vecDelta;
+			vecDelta = vecGoal - *pOrigin;
+			if (FastSqrt(vecDelta.x * vecDelta.x + (vecDelta.y * vecDelta.y + vecDelta.z * vecDelta.z)) > 96.0)
+			{
+				int nRoll = enginerandom->vfunc2(1, 10);
+				if (nRoll <= 5)
+				{
+					pThis->hs535(&vecGoal, flR2, enginerandom->vfunc1(0.2f, 0.4f), 0.0f);
+					return;
+				}
+				pThis->hs536(this, flR2, enginerandom->vfunc1(1.0f, 2.0f), 0.0f);
+				return;
+			}
+		}
+	}
+
+	if (pThis->hs464() == 2 && enginerandom->vfunc2(1, 10) <= 8)
+	{
+		pThis->hs536(this, flR2, flR1, flR3);
+		return;
+	}
+
+	CBaseEntity *pBest = 0;
+	int nBest = 0;
+	CUnknown101cccf0 q;
+	q.sub_101cccf0((int)pThis->hs217(), 0x44800000, 0, 0);
+	for (CBaseEntity *pEnt; (pEnt = q.sub_101ccd40()) != 0; q.m_nIndex++)
+	{
+		if (pEnt == (CBaseEntity *)this)
+			continue;
+		if (bFlag && (pEnt->sub_100b3700() & 0x80))
+			continue;
+		if (pEnt->sub_100b3700() & 0x80)
+		{
+			if (((CHumanoidUnitVtbl *)pEnt)->hs153() != 0 || enginerandom->vfunc2(0, 2) == 0)
+			{
+				if (pThis->hs201(pEnt, 0x2804091, 0, 0))
+				{
+					Vector vec;
+					if (pThis->hs588(((CHumanoidUnitVtbl *)pEnt)->hs193(&vec)))
+					{
+						pBest = pEnt;
+						break;
+					}
+				}
+			}
+		}
+		if (((CHumanoidUnitVtbl *)pEnt)->hs163())
+		{
+			Vector vecThis, vecEnt;
+			Vector *pVecThis = pThis->hs193(&vecThis);
+			Vector *pVecEnt = ((CHumanoidUnitVtbl *)pEnt)->hs193(&vecEnt);
+			Vector vecDir = *pVecEnt - *pVecThis;
+			VectorNormalize(vecDir);
+			int nScore = enginerandom->vfunc2(1, 100);
+			if (*(void **)((char *)pEnt + 0x94) != 0)
+			{
+				nScore *= 10;
+				if (((CHumanoidUnitVtbl *)pEnt)->hs153() != 0)
+					nScore *= 10;
+			}
+			if (nScore > nBest)
+			{
+				if (pThis->hs201(pEnt, 0x2804091, 0, 0))
+				{
+					Vector vec;
+					if (pThis->hs588(((CHumanoidUnitVtbl *)pEnt)->hs193(&vec)))
+					{
+						nBest = nScore;
+						pBest = pEnt;
+					}
+				}
+			}
+		}
+	}
+
+	if (pBest != 0)
+		pThis->hs536(pBest, flR2, flR1, flR3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025f760 size=0x125
 #include "utlmemory.h"
 #include "utlrbtree.h"
