@@ -209826,6 +209826,51 @@ bool CUnk10380470::sub_10380470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10381460 size=0x1f5
+#include "CNPC_VHengeyokai.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CTraceFilterWorldOnly.h"
+#include "UTIL_Trace.h"
+#include "IPhysicsObject.h"
+
+struct IPhysTune2
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad[0x24];
+	float m_fl28;
+};
+extern IPhysTune2 *g_1093b29c;
+extern IPhysTune2 *g_1093b1f4;
+
+// TARGET: CNPC_VHengeyokai::sub_10381460
+void CNPC_VHengeyokai::sub_10381460(void *pTarget)
+{
+	CBaseEntity *pEnt = (CBaseEntity *)pTarget;
+	if (!pEnt)
+		return;
+	IPhysicsObject *pPhys = (IPhysicsObject *)pEnt->m_obj36c;
+	if (!pPhys)
+		return; else { Vector vecAng;
+	Vector vecVel;
+	vecAng.Init();
+	((CEntityVSlots *)this)->slot199(&vecVel, 0);
+	float t0 = vecVel.x; float flTemp = t0;
+	vecVel.x = vecVel.y;
+	vecVel.y = -flTemp;
+	Vector vecOrigin = *((CEntityVSlots *)pEnt)->slot220();
+	CGameTrace trace;
+	CTraceFilterWorldOnly filter;
+	UTIL_TraceLine_Calls(vecOrigin, vecOrigin + vecVel, 0x202400b, &filter, &trace);
+	if (trace.m_fraction != 1.0f)
+		vecVel = -vecVel;
+	vecVel = vecVel * (g_1093b29c->vfunc1() ? 0.0f : g_1093b29c->m_fl28);
+	vecVel.z += (g_1093b1f4->vfunc1() ? 0.0f : g_1093b1f4->m_fl28);
+	pPhys->vfunc41(&vecVel, &vecAng); }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103816e0 size=0x4a
 struct V3 { float x, y, z; };
 #define D(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
