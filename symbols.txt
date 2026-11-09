@@ -8283,6 +8283,7 @@
 0x1000c504 func   ?sub_10046570@CUtlRBTreeFind16@@QAEGPBX@Z CUtlRBTreeFind16::sub_10046570
 0x1000c509 func   ?vfunc281@CDisciplineWeapon@@UAE_NXZ CDisciplineWeapon::vfunc281
 0x1000c50e func   ?sub_101b2790@CUnknown101b2790@@QAEXXZ CUnknown101b2790::sub_101b2790
+0x1000c513 func   ?vfunc268@CSceneEntity@@UAEPAVCBaseEntity@@PBDH@Z CSceneEntity::vfunc268
 0x1000c518 func   ?sub_10205e60@CUnknown10205e60@@QAEDPAX@Z CUnknown10205e60::sub_10205e60
 0x1000c51d func   ?sub_102f5190@CUnk102f5190@@QAEXXZ CUnk102f5190::sub_102f5190
 0x1000c527 func   ?vfunc453@CNPC_VPedestrian@@UAEXXZ CNPC_VPedestrian::vfunc453

@@ -906,6 +906,65 @@ CSceneEventActorEnt *CSceneEntity::vfunc267(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10083cd0 size=0x3a9
+#include "CBaseCombatCharacter.h"
+#include "CSceneEntity.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+#include "CAI_BaseNPC.h"
+extern "C" int __cdecl _strcmpi(const char *a, const char *b);
+CBasePlayer *sub_101cd9e0(int index);
+extern CGlobalEntityList g_106eb5d8;
+extern char g_106b8540[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: CSceneEntity::vfunc268
+CBaseEntity *CSceneEntity::vfunc268(const char *name, int a)
+{
+    CBaseEntity *entity = 0;
+    if (!_strcmpi(name, "Player") || !_strcmpi(name, "!player")) {
+        entity = (CBaseEntity *)sub_101cd9e0(1);
+    } else if (!_strcmpi(name, "!playercontroller")) {
+        CBasePlayer *pPlayer = sub_101cd9e0(1);
+        if (pPlayer)
+            entity = pPlayer->sub_101618a0();
+    } else if (!_strcmpi(name, "!dialogpartner")) {
+        if (m_iszDialogPartner454.pszValue) {
+            entity = vfunc268(STRINGR(m_iszDialogPartner454.pszValue), a);
+        } else {
+            CBasePlayer *pPlayer = sub_101cd9e0(1);
+            if (pPlayer)
+                entity = ((CBaseCombatCharacter *)pPlayer)->m_hDialogPartnerFE8;
+        }
+    } else if (!_strcmpi(name, "!target1")) {
+        if (m_hTarget1_46c == 0)
+            m_hTarget1_46c = g_106eb5d8.sub_100f7770(0, STRINGR(m_iszTarget1.pszValue), 0, 0);
+        return m_hTarget1_46c;
+    } else if (!_strcmpi(name, "!target2")) {
+        if (m_hTarget2_470 == 0)
+            m_hTarget2_470 = g_106eb5d8.sub_100f7770(0, STRINGR(m_iszTarget2.pszValue), 0, 0);
+        return m_hTarget2_470;
+    } else if (!_strcmpi(name, "!target3")) {
+        if (m_hTarget3_474 == 0)
+            m_hTarget3_474 = g_106eb5d8.sub_100f7770(0, STRINGR(m_iszTarget3.pszValue), 0, 0);
+        return m_hTarget3_474;
+    } else if (!_strcmpi(name, "!target4")) {
+        if (m_hTarget4_478 == 0)
+            m_hTarget4_478 = g_106eb5d8.sub_100f7770(0, STRINGR(m_iszTarget4.pszValue), 0, 0);
+        return m_hTarget4_478;
+    } else if (a) {
+        if (((CSceneEventActorEnt *)a)->m_pNPC94)
+            entity = ((CAI_BaseNPC *)((CSceneEventActorEnt *)a)->m_pNPC94)->vfunc559(name);
+        else
+            entity = g_106eb5d8.sub_100f7770(0, name, (CBaseEntity *)a, 0);
+    } else {
+        entity = g_106eb5d8.sub_100f7770(0, name, 0, 0);
+    }
+    return entity;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100847e0 size=0x16d
 #include "CSceneEntity.h"
 #define NV(n) virtual void vfunc##n();
