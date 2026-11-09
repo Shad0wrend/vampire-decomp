@@ -64380,6 +64380,57 @@ void CBreakableSurface::sub_10112b90(int nCol, int nRow)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10112d50 size=0x25b
+#include "QAngle.h"
+#include "CBreakableSurface.h"
+#include <stdlib.h>
+void sub_10139970(const Vector &, QAngle &);
+void sub_10139610(const QAngle &, Vector *, Vector *, Vector *);
+CBaseEntity *sub_1010f8b0(const Vector *pPos, const QAngle *pAngles);
+extern Vector g_1070d1b0;
+
+namespace block_10112d50 {
+struct CBreakableSurfaceUnit : CBreakableSurface {
+    bool sub_101123b0(int nCol, int nRow);
+};
+bool CBreakableSurfaceUnit::sub_101123b0(int nCol, int nRow)
+{
+    if (nCol >= 0 && nCol < m_nCols49c && nRow >= 0 && nRow < m_nRows4a0)
+        return m_aflPanes[nCol][nRow] == -1.0f;
+    return true;
+}
+}
+using namespace block_10112d50;
+
+void CBreakableSurface::sub_10112d50(int nCol, int nRow)
+{
+    if (nCol < 0 || nCol >= m_nCols49c || nRow < 0 || nRow >= m_nRows4a0)
+        return;
+    if (((CBreakableSurfaceUnit *)this)->sub_101123b0(nCol, nRow))
+        return;
+    sub_10112b90(nCol, nRow);
+    QAngle ang;
+    {
+        Vector dir = m_vecAxis * -1.0f;
+        sub_10139970(dir, ang);
+    }
+    Vector right, up;
+    sub_10139610(ang, 0, &right, &up);
+    Vector pos = right * (float)nCol * m_flWidth + m_vecCorner + up * (float)nRow * m_flHeight;
+    sub_10113050(&pos, (const float *)&ang, &g_1070d1b0, &g_1070d1b0, 12.0f, 12.0f, 4);
+    CBaseEntity *pEnt = sub_1010f8b0(&pos, &ang);
+    if (pEnt)
+    {
+        Vector random;
+        random.x = rand() * 0.0073244423f - 120.0f;
+        random.y = rand() * 0.0073244423f - 120.0f;
+        random.z = rand() * 0.0073244423f - 120.0f;
+        QAngle vecForce(random.x, random.y, random.z);
+        pEnt->sub_100b2f50((const float *)&vecForce);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113780 size=0x244
 #include "SendTable.h"
 SendProp sub_10246af0(const char *, int, int, int, int, int, void *);
