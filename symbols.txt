@@ -9166,6 +9166,7 @@
 0x1000d85a func   ?sub_10227d20@SIdList@@QAEHH@Z SIdList::sub_10227d20
 0x1000d864 func   ?vfunc459@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc459
 0x1000d869 func   ?vfunc122@CBaseEntity@@UAEXPBD@Z CBaseEntity::vfunc122
+0x1000d86e func   ?sub_101979c0@@YAPAUPyObject@@PAU1@0@Z sub_101979c0
 0x1000d873 func   ?vfunc81@CWeaponIArmor_Hvy_Cloth@@UAEHXZ CWeaponIArmor_Hvy_Cloth::vfunc81
 0x1000d878 func   ?sub_1021e120@UtlMem@@QAEXXZ UtlMem::sub_1021e120
 0x1000d87d func   ?vfunc295@CAI_BaseNPCTroika@@UAE_NPAVCBaseCombatCharacter@@@Z CAI_BaseNPCTroika::vfunc295

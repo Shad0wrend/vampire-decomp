@@ -98490,6 +98490,32 @@ PyObject *sub_101978b0(PyObject *self, PyObject *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101979c0 size=0x76
+#include "Python.h"
+struct GetNameEntV { char pad[0x26c]; const char *name; };
+GetNameEntV *sub_10196780(PyObject *);
+extern PyObject *(*g_109f37c8)(const char *);	// PyString_FromString
+extern PyObject **g_109f36ec;	// PyExc_StandardError
+extern char g_106b8540[];
+
+PyObject *sub_101979c0(PyObject *self, PyObject *args)
+{
+	PyObject *obj = 0;
+	if (!g_109f37a0(args, "O", &obj)) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f36ec, "bad args to GetName()");
+		return 0;
+	}
+	GetNameEntV *e = sub_10196780(obj);
+	if (!e) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f36ec, "bad args to GetName()");
+		return 0;
+	}
+	return g_109f37c8(e->name ? e->name : g_106b8540);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197a60 size=0x77
 #include "Python.h"
 extern "C" __declspec(dllimport) PyObject *PyExc_StandardError;
