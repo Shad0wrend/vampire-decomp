@@ -161621,6 +161621,137 @@ char CAI_BaseNPCTroika::sub_10281430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102814d0 size=0x1de
+#include "CAI_BaseNPC.h"
+#include "CEntityVSlots.h"
+#include "CUnknown10359c50.h"
+#include "CVProfile.h"
+#include "globalvars.h"
+
+struct CAI_BaseNPCUnit
+{
+	void sub_1026a0f0();
+};
+
+struct CCycleView
+{
+	unsigned __int64 m_Int64;
+
+	CCycleView &operator+=(const CCycleView &rhs)
+	{
+		m_Int64 += rhs.m_Int64;
+		return *this;
+	}
+};
+
+struct CVNodeView
+{
+	const char *m_pszName;	// 0x00
+	char m_pad0004[4];
+	CCycleView m_CurFrameTime;	// 0x08
+	int m_nRecursions;	// 0x10
+	int m_nCurFrameCalls;	// 0x14
+	CCycleView m_TotalTime;	// 0x18
+	char m_pad0020[0x48 - 0x20];
+	CVNodeView *m_pParent;	// 0x48
+	char m_pad004c[0x54 - 0x4c];
+	int m_nBudgetGroupID;	// 0x54
+};
+
+struct CVProfView
+{
+	bool m_bVTuneGroupEnabled;	// 0x00
+	char m_pad0001[3];
+	int m_nVTuneGroupID;	// 0x04
+	int m_GroupIDStack[1024];	// 0x08
+	int m_nGroupIDStackPtr;	// 0x1008
+	int m_enabled;	// 0x100c
+	bool m_bAtRoot;	// 0x1010
+	char m_pad1011[3];
+	CVNodeView *m_pCurNode;	// 0x1014
+	CVNodeView *m_pRoot;	// 0x1018
+};
+
+struct CSelectScheduleView
+{
+	char m_pad0000[0x1b24];
+	float m_flInterruptTime;	// 0x1b24
+	char m_pad1b28[0x5c3c - 0x1b28];
+	int m_nSchedule;	// 0x5c3c
+	char m_pad5c40[0x5ca4 - 0x5c40];
+	char m_bGathered;	// 0x5ca4
+};
+
+inline bool AI_IdIsLocal(int id) { return id < 1000000000 || id == -1; }
+
+struct CScheduleIdView : CAI_BaseNPC
+{
+	int GetGlobalScheduleId(int localID)
+	{
+		if (AI_IdIsLocal(localID)) {
+			CUnknown10359c50 *pSpace = ((CEntityVSlots *)this)->slot580();
+			return pSpace->sub_102ea2d0(localID);
+		}
+		return localID;
+	}
+};
+
+int CAI_BaseNPC::sub_102814d0()
+{
+	CSelectScheduleView *pNpc = (CSelectScheduleView *)this;
+	if (pNpc->m_flInterruptTime < gpGlobals->curtime)
+		((CAI_BaseNPCUnit *)this)->sub_1026a0f0();
+	if (!pNpc->m_bGathered)
+		vfunc433();
+	CVProfView *pProf = (CVProfView *)g_109f3648;
+	if (pProf->m_enabled || !pProf->m_bAtRoot) {
+		if ("CAI_BaseNPC_SelectSchedule" != pProf->m_pCurNode->m_pszName)
+			pProf->m_pCurNode = (CVNodeView *)((CVProfNode *)pProf->m_pCurNode)->GetSubNode("CAI_BaseNPC_SelectSchedule", 0, "Unaccounted");
+		CVNodeView *pNode = pProf->m_pCurNode;
+		++pNode->m_nCurFrameCalls;
+		if (pNode->m_nRecursions++ == 0) {
+			unsigned long *pSamplev = (unsigned long *)&pNode->m_CurFrameTime;
+			__asm {
+				mov ecx, pSamplev
+				rdtsc
+				mov [ecx], eax
+				mov [ecx+4], edx
+			}
+			g_109f3648->PushGroup(pNode->m_nBudgetGroupID);
+		}
+		pProf->m_bAtRoot = false;
+	}
+	int nSchedule = sub_1028a260();
+	pNpc->m_nSchedule = ((CScheduleIdView *)this)->GetGlobalScheduleId(nSchedule);
+	CVProfView *pEnd = (CVProfView *)g_109f3648;
+	if (!pEnd->m_bAtRoot || pEnd->m_enabled) {
+		CVNodeView *pNode = pEnd->m_pCurNode;
+		if (0 == --pNode->m_nRecursions && pNode->m_nCurFrameCalls != 0) {
+			CCycleView cnt;
+			cnt.m_Int64 = 0;
+			unsigned long *pSamplev = (unsigned long *)&cnt;
+			__asm {
+				mov ecx, pSamplev
+				rdtsc
+				mov [ecx], eax
+				mov [ecx+4], edx
+			}
+			pNode->m_CurFrameTime.m_Int64 = cnt.m_Int64 - pNode->m_CurFrameTime.m_Int64;
+			pNode->m_TotalTime += pNode->m_CurFrameTime;
+			CVProfView *pCur = (CVProfView *)g_109f3648;
+			--pCur->m_nGroupIDStackPtr;
+			int nPopped = pCur->m_GroupIDStack[pCur->m_nGroupIDStackPtr + 1];
+			if (pCur->m_GroupIDStack[pCur->m_nGroupIDStackPtr] != nPopped && pCur->m_bVTuneGroupEnabled && nPopped == pCur->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (pNode->m_nRecursions == 0)
+			pEnd->m_pCurNode = pEnd->m_pCurNode->m_pParent;
+		pEnd->m_bAtRoot = (pEnd->m_pCurNode == pEnd->m_pRoot);
+	}
+	return sub_102cc1f0(nSchedule);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10288510 size=0x16
 // TARGET: sub_10288510
 bool __fastcall sub_10288510(int *pThis, int, int *pOther)
