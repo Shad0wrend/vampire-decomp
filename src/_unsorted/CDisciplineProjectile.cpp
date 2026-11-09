@@ -145,6 +145,95 @@ void CDisciplineProjectile::vfunc266(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101da2f0 size=0x35d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CDisciplineProjectile.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown1070b254.h"
+#include "CGlobalEntityList.h"
+#include "CGameMovementViews.h"
+#include "ScopeTrace.h"
+#include "Ray_t.h"
+#include "Tier1.h"
+
+extern CGlobalEntityList *g_10566458;
+extern CUnknown1070b254 *g_1070b254;
+extern float g_104454c4;
+extern char g_105386f8[];
+extern char g_105a1e30[];
+struct CFoo1005f190 { int sub_1005f190(); };
+extern CFoo1005f190 g_10738960;
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int bTest, float flDuration);
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+
+struct SBaseEntObj { virtual const char *vfunc0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual const char *vfunc5(); };
+struct SUnkView { virtual void v0(); virtual void v1(); virtual void v2(); virtual SBaseEntObj *vfunc3(); };
+struct SEdictView { char pad[0x40]; SUnkView *m_pUnk; };
+
+inline CDisciplineProjectileTraceFilter::CDisciplineProjectileTraceFilter(void *pPassEnt, int collisionGroup, void *pIgnore)
+	: CTraceFilterSimple(pPassEnt, collisionGroup), m_pIgnore(pIgnore)
+{
+	m_pProjectile = __RTDynamicCast(pPassEnt, 0, g_105386f8, g_105a1e30, 0);
+}
+
+// TARGET: CDisciplineProjectile::vfunc234
+CGameTrace CDisciplineProjectile::vfunc234(const Vector *pDelta)
+{
+	ScopeTrace trace1("CDisciplineProjectile::PhysicsPushEntity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+	if (g_10566458->sub_100290c0((const unsigned int *)&m_hMoveParent)) {
+		SEdictView *pEdict = (SEdictView *)m_pEdict2e0;
+		Warning("pushing entity (%s) that has m_pMoveParent!\n", !pEdict->m_pUnk ? g_106b8540 : ((SBaseEntObj *)pEdict->m_pUnk->vfunc3())->vfunc5());
+	}
+	unsigned int mask = pSlots->slot237();
+	Vector vecOrigin = *pSlots->slot220();
+	Vector vecTarget;
+	VectorAdd(*pSlots->slot220(), *pDelta, vecTarget);
+	bool bSolid;
+	{
+		ScopeTrace trace2("CBaseEntity::IsSolid", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+		CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+		bSolid = (pCollision->m_nSolidType != 0 && !(pCollision->m_usSolidFlags & 4));
+	}
+	if (!bSolid || (((CMoveDataView *)this)->vfunc211() & 0x28))
+		mask &= 0xfdffffff;
+	int group = m_field368;
+	void *pIgnore = g_10566458->sub_100290c0((const unsigned int *)&m_h8a8);
+	CDisciplineProjectileTraceFilter filter(this, group, pIgnore);
+	CGameTrace tr;
+	{
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+		const float *pMaxs = pCol->vfunc2();
+		const float *pMins = pCol->vfunc1();
+		char flag = (((CMoveDataView *)this)->vfunc211() >> 6) & 1;
+		const Vector *pStart = pSlots->slot220();
+		ScopeTrace trace3("UTIL_TraceHull", g_106b8540, g_106b8540);
+		Ray_t ray;
+		ray.sub_1006dec0(*pStart, &vecTarget.x, pMins, pMaxs, flag, 0);
+		g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+		if (g_10738960.sub_1005f190())
+			sub_10146570(tr.m_startpos, tr.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+	}
+	if (tr.m_fraction != g_104454c4)
+		pSlots->slot62(tr.m_endpos);
+	sub_100a53d0((int)&vecOrigin);
+	if (tr.m_pEnt)
+		sub_1003e6c0(tr.m_pEnt, &tr);
+	return tr;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101da7b0 size=0x9a
 #include "CBaseEntity.h"
 #include "CDisciplineProjectile.h"
