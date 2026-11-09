@@ -13184,6 +13184,7 @@
 0x100133db func   ?vfunc486@CAI_BaseNPCTroika@@UAE_NXZ CAI_BaseNPCTroika::vfunc486
 0x100133e0 func   ?sub_101e49b0@UtlVec8@@QAEXHH@Z UtlVec8::sub_101e49b0
 0x100133e5 func   ?sub_10375370@@YIPAXPAX@Z sub_10375370
+0x100133ea func   ?sub_100fdc00@CEnvPlayerSurfaceTrigger@@QAEXPAXD@Z CEnvPlayerSurfaceTrigger::sub_100fdc00
 0x100133ef func   ?vfunc81@CItemGBertramsCD@@QAEHXZ CItemGBertramsCD::vfunc81
 0x100133f4 func   ?vfunc225@CBaseEntity@@QAEXXZ CBaseEntity::vfunc225
 0x100133f9 func   ?sub_103591e0@@YADXZ sub_103591e0

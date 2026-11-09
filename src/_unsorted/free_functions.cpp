@@ -60767,6 +60767,28 @@ void sub_100fdb80(void *pActivator, char material)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fdc00 size=0x85
+#include "CEnvPlayerSurfaceTrigger.h"
+
+extern void (__cdecl *g_109f3650)(int level, const char *fmt, ...);
+
+void CEnvPlayerSurfaceTrigger::sub_100fdc00(void *pActivator, char material)
+{
+	if (m_bDisabled)
+		return;
+
+	if (material != (char)m_nMaterial)
+	{
+		g_109f3650(2, "Player changed material to %d (was %d)\n", material, m_nMaterial);
+		if (material == m_nTriggerMaterial)
+			m_OnSurfaceEnter.sub_100cd660(pActivator, this, 0);
+		else if (m_nMaterial == m_nTriggerMaterial)
+			m_OnSurfaceLeave.sub_100cd660(pActivator, this, 0);
+		m_nMaterial = (int)material;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fdcc0 size=0xa
 void __fastcall sub_100fdcc0(char *self, int, int)
 {
