@@ -12369,6 +12369,33 @@ yes:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10051650 size=0x152
+#include "CBaseEntity.h"
+#include "CDisciplineParticle.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+struct CDisciplineParticleUser {
+	char m_pad0000[0x14c0];
+	CUtlVector<EHANDLE> m_Particles;
+};
+
+void CDisciplineParticle::sub_10051650(CBaseEntity *pUser)
+{
+	ScopeTrace scope("CDisciplineParticle::AddToUser", g_106b8540);
+	m_hUser = pUser;
+	int idx = ((CDisciplineParticleUser *)m_hUser.Get())->m_Particles.AddToTail();
+	((CDisciplineParticleUser *)m_hUser.Get())->m_Particles[idx] = (CBaseEntity *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051810 size=0x1b5
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
