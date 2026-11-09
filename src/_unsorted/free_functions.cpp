@@ -162215,6 +162215,129 @@ int *sub_1028cd70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028d230 size=0x2e3
+#include "CAI_BaseNPCTroika.h"
+#include "COutputEvent.h"
+extern void *vt_1049a25c[];
+extern void *vt_1049a22c[];
+extern void *vt_1049adf4[];
+extern char g_10563cf8[];
+extern char g_10587f04[];
+int sub_102c6330(int);
+struct Tmp8 { int a; int b; int sub_102c62f0(int x); };
+struct V1028b160 { void sub_1028b160(); };
+struct V101b9880 { void sub_101b9880(); };
+struct V101c2690 { void sub_101c2690(); };
+struct V102b9780 { void sub_102b9780(); };
+struct CSecCoder
+{
+	int m_n0;
+	int m_n;
+	CSecCoder() { m_n = 0; }
+	void sub_102c62c0(Tmp8 *p);
+};
+struct CSecView
+{
+	void *vptr;
+	CSecCoder m_coder;
+	CSecView()
+	{
+		vptr = vt_1049adf4;
+		Tmp8 t;
+		t.b = t.sub_102c62f0(sub_102c6330(0));
+		m_coder.sub_102c62c0(&t);
+	}
+};
+
+#define D(off) (*(int *)((char *)this + (off)))
+#define B(off) (*(char *)((char *)this + (off)))
+#define EV(off) ((COutputEvent *)((char *)this + (off)))->COutputEvent::COutputEvent()
+#define H(off) ((CBaseHandle *)((char *)this + (off)))->CBaseHandle::CBaseHandle()
+
+CAI_BaseNPCTroika *CAI_BaseNPCTroika::sub_1028d230()
+{
+	sub_1027c300();
+	EV(0x5f44); EV(0x5f5c); EV(0x5f74); EV(0x5f8c); EV(0x5fa4); EV(0x5fbc); EV(0x5fd4); EV(0x5fec);
+	H(0x6010);
+	((V1028b160 *)((char *)this + 0x6028))->sub_1028b160();
+	H(0x6088);
+	H(0x608c);
+	H(0x60ac);
+	H(0x60b0);
+	H(0x60dc);
+	H(0x6108);
+	H(0x6134);
+	H(0x6160);
+	H(0x618c);
+	H(0x61b8);
+	H(0x61e4);
+	H(0x6210);
+	H(0x6240);
+	H(0x628c);
+	((CSecView *)((char *)this + 0x635c))->CSecView::CSecView();
+	H(0x638c);
+	H(0x6390);
+	H(0x643c);
+	H(0x6448);
+	H(0x647c);
+	H(0x6554);
+	D(0x65a8) = 0;
+	D(0x65ac) = 0;
+	D(0x65b0) = 0;
+	D(0x65b4) = 0;
+	D(0x65b8) = 0;
+	H(0x65c0);
+	((V101c2690 *)((char *)this + 0x660c))->sub_101c2690();
+	((V102b9780 *)((char *)this + 0x6659))->sub_102b9780();
+	D(0) = (int)vt_1049a25c;
+	D(0x19b0) = (int)vt_1049a22c;
+	B(0x6658) = 0;
+	B(0x1b4d) = 0;
+	D(0x4c) |= 0x40;
+	D(0x98) = (int)this;
+	D(0x1a98) = 0;
+	D(0x6570) = 0;
+	D(0x64d8) = 0x40200000;
+	D(0x64dc) = 0x40a00000;
+	D(0x6554) = -1;
+	D(0x6550) = 0x3f800000;
+	D(0x657c) = 0;
+	D(0x5b94) = 0;
+	D(0x6578) = 0;
+	B(0x62e9) = 0;
+	D(0x630c) = 0;
+	D(0x6310) = -1;
+	D(0x6314) = -1;
+	D(0x6558) = (int)(g_10563cf8[0] ? g_10563cf8 : 0);
+	D(0x64c4) = (int)(g_10587f04[0] ? g_10587f04 : 0);
+	B(0x64e0) = 0;
+	D(0x64c8) = 0;
+	D(0x64e4) = *(int *)&gpGlobals->curtime;
+	((V101b9880 *)((char *)this + 0x60b0))->sub_101b9880();
+	((V101b9880 *)((char *)this + 0x60dc))->sub_101b9880();
+	((V101b9880 *)((char *)this + 0x6108))->sub_101b9880();
+	((V101b9880 *)((char *)this + 0x6134))->sub_101b9880();
+	((V101b9880 *)((char *)this + 0x6160))->sub_101b9880();
+	((V101b9880 *)((char *)this + 0x618c))->sub_101b9880();
+	((V101b9880 *)((char *)this + 0x61b8))->sub_101b9880();
+	((V101b9880 *)((char *)this + 0x61e4))->sub_101b9880();
+	((V101b9880 *)((char *)this + 0x6210))->sub_101b9880();
+	B(0x63f0) = 0;
+	D(0x1568) = 0;
+	D(0x156c) = 0;
+	B(0x6497) = 0;
+	B(0x6496) = 0;
+	B(0x1590) = 0;
+	B(0x65f5) = 0;
+	B(0x65f6) = 0;
+	B(0x65f7) = 0;
+	B(0x65f8) = 0;
+	B(0x65f9) = 0;
+	B(0x65fa) = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028d610 size=0x9a
 #include "CAI_BaseNPCTroika.h"
 #include "UtlMem.h"
