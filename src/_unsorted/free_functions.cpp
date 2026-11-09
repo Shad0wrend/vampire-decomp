@@ -80809,6 +80809,66 @@ float sub_1014c680(float val, float lo, float hi, float scale)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014c710 size=0x114
+#include "CBaseEntity.h"
+#include "CUnknown101d1460.h"
+
+struct CHitHandle
+{
+	unsigned int m_h;
+
+	void Set(CBaseEntity *pEntity)
+	{
+		if (pEntity)
+			m_h = *pEntity->vfunc1();
+		else
+			m_h = 0xffffffff;
+	}
+};
+
+struct CHitRecord20
+{
+	Vector m_vecPos;
+	CHitHandle m_hEntityA;
+	CHitHandle m_hEntityB;
+};
+
+struct CHitRecorderView
+{
+	char m_pad0000[0x9d0];
+	CHitRecord20 m_Records[16];	// 0x9d0
+	int m_nRecords;	// 0xb10
+};
+
+struct VMatrixView
+{
+	float m[4][4];
+};
+
+inline Vector Vector3DMultiplyTranspose(const VMatrixView &src1, const Vector &src2)
+{
+	Vector dst;
+	dst.x = src1.m[0][0] * src2.x + src1.m[1][0] * src2.y + src1.m[2][0] * src2.z;
+	dst.y = src1.m[1][1] * src2.y + (src1.m[0][1] * src2.x + src1.m[2][1] * src2.z);
+	dst.z = src1.m[1][2] * src2.y + (src1.m[0][2] * src2.x + src1.m[2][2] * src2.z);
+	return dst;
+}
+
+void __fastcall sub_1014c710(CHitRecorderView *pThis, int, CBaseEntity *pEntityA, CBaseEntity *pEntityB, const Vector *pPosition)
+{
+	pThis->m_Records[pThis->m_nRecords].m_vecPos = *pPosition;
+	if (pEntityB)
+	{
+		CUnknown101d1460 matrix;
+		matrix.sub_101d1460(pEntityB->m_pEdict2e0);
+		pThis->m_Records[pThis->m_nRecords].m_vecPos = Vector3DMultiplyTranspose(*(const VMatrixView *)&matrix, *pPosition);
+	}
+	pThis->m_Records[pThis->m_nRecords].m_hEntityA.Set(pEntityA);
+	pThis->m_Records[pThis->m_nRecords].m_hEntityB.Set(pEntityB);
+	pThis->m_nRecords++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ca10 size=0x86
 #include "CUnknown1014ca10.h"
 

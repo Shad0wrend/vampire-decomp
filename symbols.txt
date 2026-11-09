@@ -1256,6 +1256,7 @@
 0x10002b9e func   _env_particle_hud env_particle_hud
 0x10002ba3 func   ?sub_1014f890@@YGXPAX@Z sub_1014f890
 0x10002bad func   ?vfunc110@CScriptedSentence@@UAE_NPBD0@Z CScriptedSentence::vfunc110
+0x10002bb2 func   ?sub_1014c710@@YIXPAUCHitRecorderView@@HPAVCBaseEntity@@1PBVVector@@@Z sub_1014c710
 0x10002bb7 func   ?sub_101dd910@CUnknown101dd910@@QAEXXZ CUnknown101dd910::sub_101dd910
 0x10002bbc func   ?vfunc81@CDisciplineProjectile@@UAEHXZ CDisciplineProjectile::vfunc81
 0x10002bc1 func   ?sub_103fe710@@YAHXZ sub_103fe710
