@@ -118,6 +118,27 @@ int CNPC_VHumanCombatant::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103871c0 size=0x93
+#include "CNPC_VHumanCombatant.h"
+
+void CNPC_VHumanCombatant::vfunc463(int a, int type)
+{
+	switch (type) {
+	case 1:
+		if (sub_1032e7b0())
+			sub_1032e7b0()->vfunc66();
+		break;
+	case 2:
+	case 3:
+	case 0xb:
+		if (sub_1032e7b0())
+			sub_1032e7b0()->vfunc67();
+		break;
+	}
+	sub_10011234(a, type);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103872d0 size=0x67
 #include "CBaseEntity.h"
 #include "CNPC_VHumanCombatant.h"
