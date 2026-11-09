@@ -82235,6 +82235,134 @@ void CBasePlayer::sub_10166500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101668b0 size=0x338
+#include "CHL2_Player.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+
+struct CPlayerGameRulesView
+{
+	virtual void r00(); virtual void r01(); virtual void r02(); virtual void r03(); virtual void r04();
+	virtual void r05(); virtual void r06(); virtual void r07(); virtual void r08(); virtual void r09();
+	virtual void r10(); virtual void r11(); virtual void r12(); virtual void r13(); virtual void r14();
+	virtual void r15(); virtual void r16(); virtual void r17(); virtual void r18(); virtual void r19();
+	virtual void r20();
+	virtual char vfunc21();
+	virtual void r22(); virtual void r23(); virtual void r24(); virtual void r25(); virtual void r26();
+	virtual void r27(); virtual void r28(); virtual void r29(); virtual void r30(); virtual void r31();
+	virtual void r32(); virtual void r33(); virtual void r34(); virtual void r35(); virtual void r36();
+	virtual char vfunc37(CHL2_Player *pPlayer);
+};
+struct CPlayerConVarView
+{
+	virtual void c0();
+	virtual char vfunc1();
+	char pad[0x2c - 4 - 0];
+	int m_n2c;
+};
+extern CPlayerGameRulesView *g_1070ba0c;
+extern CPlayerConVarView *g_1070a9fc;
+extern Vector g_1070d1b0;
+void __cdecl sub_10352ed0(CHL2_Player *pPlayer, int a);
+
+struct CHL2_PlayerView
+{
+	void **vtbl;
+	char pad04[0x17c - 4];
+	float m_flNextThink;	// 0x17c
+	char pad180[0x19c - 0x180];
+	unsigned int m_nFlags;	// 0x19c
+	char pad1a0[0x200 - 0x1a0];
+	int m_nState;	// 0x200
+	char pad204[0x2e0 - 0x204];
+	int m_nEdict;	// 0x2e0
+	char pad2e4[0x3d4 - 0x2e4];
+	Vector m_vecVelocity;	// 0x3d4
+	char pad3e0[0x65c - 0x3e0];
+	char m_b65c;	// 0x65c
+	char pad65d[0x6f4 - 0x65d];
+	int m_n6f4;	// 0x6f4
+	char pad6f8[0x2088 - 0x6f8];
+	unsigned int m_n2088;	// 0x2088
+	char pad208c[0x20ec - 0x208c];
+	float m_f20ec;	// 0x20ec
+	unsigned int m_n20f0;	// 0x20f0
+	char pad20f4[0x229c - 0x20f4];
+	float m_f229c;	// 0x229c
+
+	void AddFlags(unsigned int f) { m_nFlags |= f; }
+	float DeathTime() const { return m_f229c; }
+};
+
+void CHL2_Player::sub_101668b0()
+{
+	CHL2_PlayerView *p = (CHL2_PlayerView *)this;
+	p->m_flNextThink = gpGlobals->curtime + 0.1;
+	if (sub_100b3700() & 1) {
+		float speed = p->m_vecVelocity.Length() - 20.0f;
+		if (speed <= 0.0f) {
+			sub_100b2e30(&g_1070d1b0);
+		} else {
+			Vector vel;
+			vel = p->m_vecVelocity;
+			VectorNormalize(vel);
+			vel *= speed;
+			sub_100b2e30(&vel);
+		}
+	}
+	if (sub_10170fe0())
+		vfunc441();
+	if (vfunc8() != 0 && p->m_b65c == 0) {
+		if (p->m_nState != 1)
+			goto done;
+		vfunc250(0);
+		p->m_f20ec = p->m_f20ec + 1.0f;
+		if (p->m_f20ec < 60.0f)
+			return;
+	}
+	if (p->m_nState == 1) {
+		p->m_nState = 2;
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		int edict = p->m_nEdict;
+		enginesound->vfunc3(&filter, engine->vfunc35(edict), 2, "interface/final_death.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	}
+done:
+	p->AddFlags(0x10);
+	unsigned int n2088 = p->m_n2088 & 0xfffeffff;
+	p->m_n6f4 = 0;
+	if (p->m_nState == 2) {
+		if (n2088 != 0)
+			return;
+		if (g_1070ba0c->vfunc37(this) == 0)
+			return;
+		p->m_f229c = gpGlobals->curtime;
+		p->m_nState = 3;
+		return;
+	}
+	if (g_1070ba0c->vfunc21()) {
+		if (gpGlobals->curtime > p->DeathTime() + 6.0f && !((unsigned char)(p->m_n20f0 >> 5) & 1))
+			sub_10166cc0();
+	}
+	if (n2088 == 0) {
+		if (!g_1070ba0c->vfunc21())
+			return;
+		if (g_1070a9fc->vfunc1())
+			return;
+		if (g_1070a9fc->m_n2c <= 0)
+			return;
+		if (!(gpGlobals->curtime > p->DeathTime() + 5.0f))
+			return;
+	}
+	p->m_n2088 = 0;
+	p->m_f20ec = 0;
+	sub_10352ed0(this, 0);
+	p->m_flNextThink = -1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10166cc0 size=0x2bb
 #include "UTIL_Trace.h"
 #include "CHL2_Player.h"
