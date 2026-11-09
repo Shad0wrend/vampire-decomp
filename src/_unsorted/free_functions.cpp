@@ -3325,6 +3325,103 @@ bool sub_10031c70(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10031d50 size=0x1f6
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "CUnknown101d7520.h"
+#include "CSoundEnt.h"
+
+void *__fastcall sub_100a8240(void *);
+void *__fastcall sub_100a82c0(void *);
+char __cdecl sub_10031bd0(int);
+void __cdecl sub_10031c70(int);
+void __cdecl sub_10031990(CBaseEntity *, int, int, int, int, float);
+
+struct CPhysSoundParams
+{
+	int m_iVolume;	// 0x00
+	char m_pad04[0x2e - 4];
+	char m_bFlag;	// 0x2e
+};
+extern CPhysSoundParams g_1072bc98;
+extern float g_104454c4;
+
+struct CVarObj
+{
+	virtual void v0();
+	virtual char v1();
+	char m_pad[0x24];
+	float m_f28;
+};
+
+extern CVarObj *g_106b8864;
+extern CVarObj *g_106b881c;
+
+#define VT10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define VT100(p) VT10(p##0) VT10(p##1) VT10(p##2) VT10(p##3) VT10(p##4) VT10(p##5) VT10(p##6) VT10(p##7) VT10(p##8) VT10(p##9)
+
+struct CPhysTarget
+{
+	VT100(a) VT100(b) VT10(c) VT10(d)
+	virtual float *vfunc220();
+};
+
+void sub_10031d50(CBaseEntity *pEntity, int a2, int a3, int a4, int a5, float a6, float a7)
+{
+	ScopeTrace trace("PhysCollisionSound", g_106b8540);
+
+	if (!(a6 < 0.025f)) {
+		if (!(a7 < 3.2f)) {
+			if (pEntity) {
+				void *p1 = sub_100a8240(pEntity);
+				int obj1;
+				if (!p1) {
+					obj1 = 0;
+				} else {
+					obj1 = *(int *)((char *)p1 + 0x9c);
+					if (obj1 && !sub_10031bd0(obj1)) {
+						int vol = g_1072bc98.m_iVolume;
+						char flag = g_1072bc98.m_bFlag;
+						CSoundEnt::sub_101bac90(2, (const Vector *)((CPhysTarget *)pEntity)->vfunc220(), vol, 0.2f, flag, (CBaseEntity *)obj1);
+						sub_10031c70(obj1);
+					}
+				}
+				void *p2 = sub_100a82c0(pEntity);
+				if (p2) {
+					int obj2 = *(int *)((char *)p2 + 0x9c);
+					if (obj2 && obj1 != obj2 && !sub_10031bd0(obj2)) {
+						int vol = g_1072bc98.m_iVolume;
+						char flag = g_1072bc98.m_bFlag;
+						CSoundEnt::sub_101bac90(2, (const Vector *)((CPhysTarget *)pEntity)->vfunc220(), vol, 0.2f, flag, (CBaseEntity *)obj2);
+						sub_10031c70(obj2);
+					}
+				}
+			}
+
+			a7 = a7 * a7 * 9.765625e-6f;
+			float f = g_106b8864->v1() ? g_104454c4 : g_106b8864->m_f28;
+			if (!(a7 < f)) {
+				float f2 = g_106b881c->v1() ? g_104454c4 : g_106b881c->m_f28;
+				if (a7 > f2) {
+					if (g_106b881c->v1())
+						a7 = 0.0f;
+					else
+						a7 = g_106b881c->m_f28;
+				}
+				sub_10031990(pEntity, a2, a3, a4, a5, a7);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032180 size=0x18a
 #include "ConVar.h"
 #include "Vector.h"
