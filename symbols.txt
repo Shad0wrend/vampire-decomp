@@ -3462,6 +3462,7 @@
 0x10005dc1 func   ?sub_10264300@@YAXPAUCBlock4k@@PBU1@@Z sub_10264300
 0x10005dc6 func   ?vfunc3@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXH@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc3
 0x10005dcb func   ?vfunc80@CWeaponWallet@@QAEHXZ CWeaponWallet::vfunc80
+0x10005dd0 func   ?sub_102b7690@CAI_BaseNPCTroika@@QAEHDDDD@Z CAI_BaseNPCTroika::sub_102b7690
 0x10005dda func   ?sub_10149c20@@YIXPAX@Z sub_10149c20
 0x10005ddf func   ?sub_100f11b0@CBaseDoor@@QAEXXZ CBaseDoor::sub_100f11b0
 0x10005de4 func   ?sub_10389560@CNPC_VMalkavian@@QAEPAXXZ CNPC_VMalkavian::sub_10389560

@@ -1109,6 +1109,128 @@ none:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b7690 size=0x501
+#include "CAI_BaseNPCTroika.h"
+#include "ehandle.h"
+#include "CEHandleGet.h"
+#include "globalvars.h"
+#include "engineiface.h"
+
+#define S(n) virtual void f##n();
+#define T(p) S(p##0) S(p##1) S(p##2) S(p##3) S(p##4) S(p##5) S(p##6) S(p##7) S(p##8) S(p##9)
+#define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
+
+struct CWeaponSlots360
+{
+	S(0) S(1) S(2) S(3) S(4) S(5) S(6) S(7) S(8) S(9)
+	T(1) T(2) T(3) T(4) T(5) T(6) T(7) T(8) T(9)
+	H(1) H(2) T(30) T(31) T(32) T(33) T(34) T(35)
+	virtual int f360();
+};
+
+struct CNpcSlots609
+{
+	S(0) S(1) S(2) S(3) S(4) S(5) S(6) S(7) S(8) S(9)
+	T(1) T(2) T(3) T(4) T(5) T(6) T(7) T(8) T(9)
+	H(1) H(2) H(3) H(4) H(5)
+	S(600) S(601) S(602) S(603) S(604) S(605) S(606) S(607) S(608)
+	virtual int f609(char bForce);
+};
+
+struct CAI_BaseNPCTroikaChoose : CAI_BaseNPCTroika
+{
+	char sub_102b5de0();
+	void sub_102b7110(int mask);
+};
+
+#define NPC_M(T, off) (*(T *)((char *)this + (off)))
+#define TF(code, line) do { NPC_M(const char *, 0x1b30) = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp"; NPC_M(int, 0x1b34) = line; return code; } while (0)
+
+#define MAX_(a, b) (((a) > (b)) ? (a) : (b))
+
+// TARGET: CAI_BaseNPCTroika::sub_102b7690
+int CAI_BaseNPCTroika::sub_102b7690(char a1, char a2, char a3, char a4)
+{
+	EHANDLE &hTarget = NPC_M(EHANDLE, 0x643c);
+	float &flNext = NPC_M(float, 0x6438);
+	if (a4 == 1 && NPC_M(char, 0x6436) && !NPC_M(void *, 0x5ddc) && (~NPC_M(unsigned int, 0x14b8) & 0x800) && !hTarget.Get()
+		&& gpGlobals->curtime >= flNext) {
+		flNext = enginerandom->vfunc1(2.0f, 2.0f) + gpGlobals->curtime;
+		hTarget = (CBaseEntity *)sub_102b6650();
+	}
+	if (EHandle_Get(NPC_M(unsigned int, 0x643c)))
+		return 0xa9;
+	if (!NPC_M(void *, 0x5ddc) && (~NPC_M(unsigned int, 0x14b8) & 0x800) && !hTarget.Get()) {
+		NPC_M(EHANDLE, 0x6448) = (CBaseEntity *)vfunc167();
+		int mask = 0;
+		if (a1 == 1)
+			mask = 1;
+		if (a2 == 1)
+			mask |= 2;
+		if (a3 == 1 && NPC_M(char, 0x6436))
+			mask |= 4;
+		if (a4 == 1 && NPC_M(char, 0x6436))
+			mask |= 8;
+		((CAI_BaseNPCTroikaChoose *)this)->sub_102b7110(mask);
+	}
+	if (NPC_M(char *, 0x5ddc)) {
+		switch (*(int *)(NPC_M(char *, 0x5ddc) + 0x5dc)) {
+		case 0x283c:
+			TF(0xa7, 0x5d04);
+		case 0x283d:
+			TF(0xa8, 0x5d0a);
+		case 100:
+		case 101:
+		case 0x27d8:
+			if ((NPC_M(unsigned int, 0x14b8) & 0x2000) == 0x2000) {
+				bool bOk = true;
+				char *pEnemy = (char *)vfunc167();
+				if (vfunc167() && *(int *)((char *)vfunc167() + 0x9c) && *(int *)(pEnemy + 0x9c)) {
+					CAI_BaseNPCTroika *pOwner = *(CAI_BaseNPCTroika **)(pEnemy + 0x9c);
+					CWeaponSlots360 *pWeapon = (CWeaponSlots360 *)pOwner->sub_1032e7b0();
+					if (pWeapon && (pWeapon->f360() & 0x6000))
+						bOk = false;
+				}
+				if (!NPC_M(int, 0x6444)) {
+					NPC_M(int, 0x6444) = ((CNpcSlots609 *)this)->f609(0);
+				}
+				if (NPC_M(int, 0x6444))
+					TF(0xa2, 0x5cad);
+				if (((CAI_BaseNPCTroikaChoose *)this)->sub_102b5de0()) {
+					NPC_M(int, 0x640c) = MAX_(0, NPC_M(int, 0x640c) - 2);
+					if (bOk) {
+						if (!((NPC_M(void *, 0x5c38) && NPC_M(void *, 0x5c38) == (void *)sub_102cc1f0(0x9e)) || (NPC_M(unsigned int, 0x14bc) & 0x100) == 0x100))
+							TF(0xa4, 0x5cc3);
+						NPC_M(unsigned int, 0x14bc) |= 0x80000100;
+						TF(0xa5, 0x5cbf);
+					}
+					int roll = enginerandom->vfunc2(0, 99);
+					if (!((NPC_M(void *, 0x5c38) && NPC_M(void *, 0x5c38) == (void *)sub_102cc1f0(0x9e)) || (NPC_M(unsigned int, 0x14bc) & 0x100) == 0x100))
+						TF(0xa3, 0x5cd9);
+					NPC_M(unsigned int, 0x14bc) &= 0x7ffffeff;
+					if (roll < 30)
+						TF(0xa1, 0x5cd0);
+					TF(0xa0, 0x5cd4);
+				}
+				int cnt = ++NPC_M(int, 0x640c);
+				if (cnt <= 4 && !sub_10014df8(0x48))
+					TF(0x9d, 0x5cf5);
+				NPC_M(unsigned int, 0x14bc) &= 0x7ffffeff;
+				if (!NPC_M(char, 0x6435))
+					sub_10295ab0(60.0f);
+				else
+					TF(0x9e, 0x5cf0);
+			} else {
+				NPC_M(unsigned int, 0x14bc) &= 0x7ffffeff;
+				TF(0x9b, 0x5cfd);
+			}
+			break;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b7fc0 size=0x2a5
 #include "CAI_BaseNPCTroika.h"
 #include "CStatusFlagList.h"
