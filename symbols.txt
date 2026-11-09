@@ -719,6 +719,7 @@
 0x10001fc8 func   ?vfunc80@CItemGGiovanniInvitationVictor@@QAEHXZ CItemGGiovanniInvitationVictor::vfunc80
 0x10001fd2 func   ?vfunc394@CNPC_Crow@@QAE_NXZ CNPC_Crow::vfunc394
 0x10001fd7 func   ?vfunc62@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc62
+0x10001fdc func   ?vfunc371@CBaseCombatCharacter@@QAE?AVVector@@XZ CBaseCombatCharacter::vfunc371
 0x10001fe1 func   ?sub_100e8520@CDialog@@QAEHHHPAD@Z CDialog::sub_100e8520
 0x10001fe6 func   ??0CMeasureSection@@QAE@H@Z CMeasureSection::CMeasureSection
 0x10001feb func   ?sub_101934e0@@YAPAHXZ sub_101934e0

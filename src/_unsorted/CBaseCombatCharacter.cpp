@@ -2304,6 +2304,46 @@ Vector CBaseCombatCharacter::vfunc369()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10331b30 size=0x12e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CCineNPCSlots.h"
+#include "Vector.h"
+#include "ScopeTrace.h"
+
+void sub_101381b0(const float *in1, const float in2[3][4], float *out);
+
+struct CBccHeadSlots
+{
+	CCS_V100(a) CCS_V100(b) CCS_V100(c) CCS_V10(d0) CCS_V10(d1) CCS_V10(d2) CCS_V10(d3) CCS_V10(d4) CCS_V10(d5)
+	CCS_V(d360) CCS_V(d361) CCS_V(d362) CCS_V(d363) CCS_V(d364) CCS_V(d365) CCS_V(d366) CCS_V(d367) CCS_V(d368)
+	virtual Vector BodyDirection3D();
+};
+
+Vector CBaseCombatCharacter::vfunc371()
+{
+	ScopeTrace trace("CBaseCombatCharacter::HeadDirection3D", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (engine->vfunc120() == m_nHeadTime108c)
+		return m_vecHeadDir109c;
+	if (m_nHeadBone1080 >= 0)
+	{
+		float matrix[3][4];
+		vfunc256(m_nHeadBone1080, &matrix[0][0]);
+		Vector vecDir;
+		sub_101381b0(&m_vecHeadAxis1074.x, matrix, &vecDir.x);
+		return vecDir;
+	}
+	return ((CBccHeadSlots *)this)->BodyDirection3D();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10331cb0 size=0xb6
 #include "Vector.h"
 #include "CBaseCombatCharacter.h"
