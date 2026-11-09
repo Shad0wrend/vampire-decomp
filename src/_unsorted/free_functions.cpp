@@ -31809,6 +31809,49 @@ bool CBaseAnimating::sub_10090e30(int sequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10090ef0 size=0x13f
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+#include "StudioHdr.h"
+#include "string_t.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CModelNameView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual string_t GetModelName();
+};
+
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *fmt, ...);
+int sub_10428970(StudioHdr *pHdr, int sequence);
+
+int CBaseAnimating::sub_10090ef0(int sequence)
+{
+	ScopeTrace trace("CBaseAnimating::GetSequenceFlags", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	int orig = sequence;
+	int i = -1;
+	do {
+		StudioHdr *pHdr = (StudioHdr *)sub_100952d0(i);
+		if (pHdr) {
+			int count;
+			if (pHdr->m_nIncludeModels)
+				count = pHdr->IncludeModel(pHdr->m_nIncludeModels - 1)->m_nBase + pHdr->IncludeModel(pHdr->m_nIncludeModels - 1)->m_nCount;
+			else
+				count = pHdr->m_nLocalSeq;
+			if (sequence >= 0 && sequence < count)
+				return sub_10428970(pHdr, sequence);
+			sequence -= count;
+		}
+	} while (++i < 2);
+	if (*STRINGR_F(((CModelNameView *)this)->GetModelName().pszValue)) {
+		DevWarning(2, "CBaseAnimating::GetSequenceFlags sequence out of range for %s (model - %s : sequence - %d)\n", sub_100ab4f0(), STRINGR_F(((CModelNameView *)this)->GetModelName().pszValue), orig);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091080 size=0x149
 #include "CBaseAnimating.h"
 #include "StudioHdr.h"
