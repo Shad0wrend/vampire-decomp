@@ -7692,6 +7692,7 @@
 0x1000b7a8 func   ?vfunc168@CBaseEntity@@QAEXXZ CBaseEntity::vfunc168
 0x1000b7b2 func   ?sub_1021bfd0@CPropHacking@@QAEXXZ CPropHacking::sub_1021bfd0
 0x1000b7b7 func   ?sub_100b40f0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100b40f0
+0x1000b7bc func   ?sub_10192b50@CPhysicsPropContested@@QAEXPAVCBaseEntity@@@Z CPhysicsPropContested::sub_10192b50
 0x1000b7c1 func   ?vfunc110@CBreakable@@QAE_NPBD0@Z CBreakable::vfunc110
 0x1000b7c6 func   ?RemoveAll@?$CUtlVector@V?$CUtlVector@Utouchlink_t@@V?$CUtlMemory@Utouchlink_t@@@@@@V?$CUtlMemory@V?$CUtlVector@Utouchlink_t@@V?$CUtlMemory@Utouchlink_t@@@@@@@@@@QAEXXZ CUtlVector<CUtlVector<touchlink_t,CUtlMemory<touchlink_t> >,CUtlMemory<CUtlVector<touchlink_t,CUtlMemory<touchlink_t> > > >::RemoveAll
 0x1000b7cb func   ?sub_101c7d90@CChangeLevel@@QAEXPAVCBaseEntity@@@Z CChangeLevel::sub_101c7d90

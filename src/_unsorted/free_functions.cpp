@@ -97672,6 +97672,70 @@ int *sub_10192a30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192b50 size=0x267
+#include "CPhysicsPropContested.h"
+#include "CEntityVSlots.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "engineiface.h"
+#include "engineserver.h"
+
+extern char g_106b8540[];
+
+inline const char *STRINGR(char *const &s) { return s ? s : g_106b8540; }
+
+struct CContestedPhysView
+{
+	EVS(0) EVS(1) virtual void slot2();
+	EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS10(1) EVS(20) EVS(21) EVS(22) EVS(23)
+	virtual void slot24(int a);
+};
+
+struct CContestedTargetView
+{
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15)
+	EVS(160) EVS(161) EVS(162) EVS(163) EVS(164) EVS(165) EVS(166) EVS(167) EVS(168)
+	virtual void slot169(const Vector &angles);
+	virtual void slot170(const Vector &force);
+	EVS(171) EVS(172) EVS(173) EVS(174) EVS(175) EVS(176) EVS(177) EVS(178) EVS(179)
+	EVS10(18) EVS10(19) EVS10(20) EVS10(21) EVS10(22) EVS10(23) EVS10(24) EVS10(25) EVS10(26)
+	EVS10(27) EVS10(28) EVS10(29) EVS10(30) EVS10(31) EVS10(32) EVS10(33) EVS10(34) EVS10(35)
+	EVS(360) EVS(361) EVS(362) EVS(363) EVS(364) EVS(365) EVS(366) EVS(367) EVS(368)
+	virtual Vector slot369();
+};
+
+// TARGET: CPhysicsPropContested::sub_10192b50
+void CPhysicsPropContested::sub_10192b50(CBaseEntity *pOther)
+{
+	((CEntityVSlots *)this)->slot93(7, 0);
+	CContestedPhysView *pPhys = (CContestedPhysView *)m_obj36c;
+	if (pPhys) {
+		pPhys->slot24(1);
+		pPhys->slot2();
+	}
+	float flAmp = m_n78c * 6.0f;
+	Vector vecAngles;
+	vecAngles.x = enginerandom->vfunc1(-flAmp, flAmp);
+	vecAngles.y = enginerandom->vfunc1(-flAmp, flAmp);
+	vecAngles.z = enginerandom->vfunc1(-flAmp, flAmp);
+	CContestedTargetView *pTarget = (CContestedTargetView *)pOther;
+	pTarget->slot169(vecAngles);
+	Vector vecForce = pTarget->slot369() * -1.0f * (m_n78c * 60.0f);
+	pTarget->slot170(vecForce);
+	m_b7ac = 1;
+	m_Output790.sub_100cd660(pOther, this, 0);
+	const char *pszSound = STRINGR(m_p7a8);
+	if (pszSound && *pszSound) {
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		int edict = m_pEdict2e0;
+		enginesound->vfunc3(&filter, engine->vfunc35(edict), 0, pszSound, 1.0f, 0.8f, 0x80, 100, 0, 0, 1, 0);
+	}
+	sub_100b3900(2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101931c0 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
