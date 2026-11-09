@@ -65970,6 +65970,56 @@ float CUnknown10112420::sub_10112420(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10112470 size=0x17e
+struct SSmoothGrid
+{
+	char m_pad0000[0x49c];
+	int m_nWidth;	// 0x49c
+	int m_nHeight;	// 0x4a0
+
+	float sub_10112470(int x, int y);
+	float sub_10112420(int x, int y);	// stub 0x100017b7
+};
+
+float SSmoothGrid::sub_10112470(int x, int y)
+{
+	int maxY = m_nHeight - 1;
+	float flSum;
+	if (y == maxY)
+		flSum = 1.01f;
+	else
+		flSum = sub_10112420(x, y + 1) + 0.01f;
+	if (y == 0)
+		flSum += 1.25;
+	else
+		flSum += sub_10112420(x, y - 1) * 1.25;
+	if (x == 0)
+		flSum += 1.0;
+	else
+		flSum += sub_10112420(x - 1, y);
+	int width = m_nWidth;
+	if (x == width - 1)
+		flSum += 1.0;
+	else
+		flSum += sub_10112420(x + 1, y);
+	if (y == 0 || x == 0)
+		flSum += 1.0;
+	else
+		flSum += sub_10112420(x - 1, y - 1);
+	if (y == 0 || x == width - 1)
+		flSum += 1.0;
+	else
+		flSum += sub_10112420(x + 1, y - 1);
+	if (y == maxY || x == width - 1)
+		flSum += 0.25;
+	else
+		flSum += sub_10112420(x + 1, y + 1) * 0.25;
+	if (y == maxY || x == 0)
+		return flSum + 0.25;
+	return flSum + sub_10112420(x - 1, y + 1) * 0.25;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101128d0 size=0xf7
 #include "CBreakableSurface.h"
 void sub_10003d4b(Vector *, Vector *);
