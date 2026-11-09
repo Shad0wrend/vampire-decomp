@@ -49,3 +49,195 @@ int CNPC_VCamera::vfunc461()
 	return m_n5cc4 = 3;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103692c0 size=0x51a
+#include "CBaseEntity.h"
+#include "CNPC_VCamera.h"
+#include "globalvars.h"
+#define M(T, o) (*(T *)((char *)this + (o)))
+extern char g_10937cf1;
+extern char g_106b8540[];
+extern int g_1093407c;
+struct RulesView { char pad[1]; };
+extern RulesView *g_1070ba0c;
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" int strcmp(const char *, const char *);
+void sub_101cd940(CNPC_VCamera *);
+void __fastcall sub_102e0b40(void *);
+void __fastcall sub_102ee270(void *);
+void __fastcall sub_10273aa0(void *);
+void __fastcall sub_10274ca0(void *);
+void __fastcall sub_10280d30(void *);
+void __fastcall sub_1008f540(void *);
+struct CMotorView {
+	char pad00[0x1c];
+	int n1c;
+	char pad20[8];
+	char b28;
+	char pad29[0x34 - 0x29];
+	float f34;
+	float sub_102e0a80(float a);
+};
+struct CZero6 { int a[6]; CZero6() { for (int i = 0; i < 6; i++) a[i] = 0; } };
+inline void *operator new(unsigned, void *p) { return p; }
+struct CVCamUnit : CNPC_VCamera {
+	void sub_10279a50(int a);
+	void sub_10273790(const char *s, int a);
+	void sub_102b5dc0(int a);
+	void sub_102b53d0(int a, const char *s);
+	void *sub_1032e120(const char *s);
+	char sub_10334c20(void *p);
+};
+struct CWeaponView { void sub_1024f7b0(); };
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: CNPC_VCamera::vfunc420
+void CNPC_VCamera::vfunc420()
+{
+	g_10937cf1 = 1;
+	float *org = vfunc220();
+	M(float, 0x62a8) = org[0];
+	M(float, 0x62ac) = org[1];
+	M(float, 0x62b0) = org[2];
+	if (!(*(bool (__fastcall **)(void *))(**(int **)&g_1070ba0c + 0x128))(g_1070ba0c)) {
+		sub_101cd940(this);
+		return;
+	}
+	CMotorView *motor = (CMotorView *)M(void *, 0x5d44);
+	M(char, 0x1480) = 0;
+	M(char, 0x1481) = 1;
+	M(int, 0x1fc) = 0;
+	sub_102e0b40(motor);
+	motor = (CMotorView *)M(void *, 0x5d44);
+	float yaw = vfunc221()[1];
+	if (motor->b28) {
+		if (yaw >= 180.0f)
+			yaw = yaw - 180.0f;
+		else
+			yaw = yaw + 180.0f;
+	}
+	if (motor->n1c == 0x43340000)
+		motor->f34 = yaw;
+	else
+		motor->f34 = motor->sub_102e0a80(yaw);
+	M(int, 0x208) = 100;
+	M(int, 0x200) = 0;
+	M(const char *, 0x1b3c) = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VCamera.cpp";
+	M(int, 0x1b40) = 0x257;
+	M(int, 0x5cc4) = 1;
+	M(char, 0x1a40) = 0;
+	M(int *, 0x5d34)[0x2c / 4] = g_1093407c;
+	sub_10280d30(this);
+	sub_102ee270(M(void *, 0x5d34));
+	sub_1008f540(this);
+	M(int, 0x5ddc) = 0;
+	M(int, 0x5d8c) = 0;
+	((CVCamUnit *)this)->sub_10279a50(0);
+	M(char, 0x5cd8) = 0;
+	new (&M(char, 0x5c5c)) CZero6;
+	sub_10274ca0(this);
+	if (gpGlobals->curtime > 1.0) {
+		sub_10273aa0(this);
+	} else {
+		sub_100ac4e0((int)sub_10273aa0, 0, 0);
+		m_flNextThink = gpGlobals->curtime + 0.1;
+	}
+	M(char, 0x1b28) = 0;
+	M(int, 0x5b58) = 0;
+	M(float, 0x5b5c) = gpGlobals->curtime;
+	M(int, 0x5b84) = 0;
+	M(int, 0x5b88) = 0;
+	M(float, 0x5b8c) = 3.4028235e38f;
+	M(int, 0x5b98) = 10;
+	M(EHANDLE, 0x5ba8) = (CBaseEntity *)0;
+	M(int, 0x5b90) = 0;
+	M(char, 0x6278) = 1;
+	M(char, 0x6279) = 1;
+	M(int, 0x6284) = 0;
+	M(int, 0x14b8) = 0;
+	M(char, 0x63da) = 0;
+	M(float, 0x62c0) = 3.4f;
+	M(float, 0x62c4) = 10.0f;
+	M(float, 0x62c8) = 3.4f;
+	M(Vector, 0x62cc).Init(0, 0, 0);
+	m_flCur6244[0] = gpGlobals->curtime;
+	m_flCur6244[1] = gpGlobals->curtime;
+	m_flCur6244[3] = gpGlobals->curtime;
+	m_flCur6244[2] = gpGlobals->curtime;
+	m_flPrev6254[0] = m_flCur6244[0];
+	m_flPrev6254[1] = m_flCur6244[1];
+	m_flPrev6254[2] = m_flCur6244[2];
+	m_flPrev6254[3] = m_flCur6244[3];
+	((CVCamUnit *)this)->sub_102b53d0(0, "Leaving interesting place (NPCInit)");
+	M(int, 0x62fc) = 0;
+	M(int, 0x6300) = 0;
+	M(int, 0x6318) = 0;
+	M(int, 0x631c) = 0;
+	M(int, 0x659c) = 0;
+	M(int, 0x6320) = 0;
+	M(int, 0x6324) = 0;
+	M(int, 0x6328) = 0;
+	M(int, 0x632c) = 0;
+	M(int, 0x6330) = 0;
+	M(char, 0x6334) = 0;
+	M(EHANDLE, 0x6240) = (CBaseEntity *)0;
+	M(float, 0x63dc) = -1.0f;
+	if (vfunc513() & 0x200000) {
+		if (M(const char *, 0x1a98)) {
+			if (strcmp(STRINGR(M(const char *, 0x1a98)), "0") && strcmp(STRINGR(M(const char *, 0x1a98)), "item_w_unarmed")) {
+				void *w = ((CVCamUnit *)this)->sub_1032e120(STRINGR(M(const char *, 0x1a98)));
+				if (w) {
+					if (((CVCamUnit *)this)->sub_10334c20(w))
+						vfunc383(w, 0);
+					else
+						((CWeaponView *)w)->sub_1024f7b0();
+				}
+			}
+		}
+		if (M(const char *, 0x5dec)) {
+			if (strcmp(STRINGR(M(const char *, 0x5dec)), "0") && strcmp(STRINGR(M(const char *, 0x5dec)), "item_w_unarmed")) {
+				void *w = ((CVCamUnit *)this)->sub_1032e120(STRINGR(M(const char *, 0x5dec)));
+				if (w) {
+					if (((CVCamUnit *)this)->sub_10334c20(w))
+						vfunc383(w, 0);
+					else
+						((CWeaponView *)w)->sub_1024f7b0();
+				}
+			}
+		}
+	}
+	*M(void **, 0x5d88) = this;
+	M(float *, 0x5d88)[4] = 0.5f;
+	if (M(const char *, 0x63ac)) {
+		char buf[0x40];
+		sprintf(buf, "Player %s", STRINGR(M(const char *, 0x63ac)));
+		((CVCamUnit *)this)->sub_10273790(buf, 0);
+	}
+	g_10937cf1 = 0;
+	M(char, 0x63e0) = 0;
+	((CVCamUnit *)this)->sub_102b5dc0(0);
+	M(char, 0x63fc) = 0;
+	M(char, 0x63fd) = 0;
+	M(int, 0x6400) = 0;
+	M(int, 0x6404) = 0;
+	M(char, 0x6408) = 0;
+	M(int, 0x6414) = 0;
+	M(int, 0x6418) = 0;
+	M(int, 0x623c) = 0;
+	M(int, 0x60a4) = 0;
+	M(int, 0x60a8) = 0;
+	M(int, 0x6398) = 0;
+	M(int, 0x639c) = 0;
+	M(int, 0x63a4) = 0;
+	M(int, 0x63a8) = 0;
+	M(int, 0x6070) = 0;
+	M(int, 0x6074) = 0;
+	M(char, 0x6078) = 0;
+	M(int, 0x607c) = 0;
+	M(int, 0x6438) = 0;
+	M(EHANDLE, 0x643c) = (CBaseEntity *)0;
+	M(int, 0x6440) = 0;
+	M(int, 0x6444) = 0;
+	M(int, 0x644c) = 0;
+}
+// END FUNCTION
