@@ -2552,6 +2552,7 @@
 0x100048b3 func   ?vfunc489@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc489
 0x100048b8 func   ?vfunc491@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc491
 0x100048bd func   ?sub_1022dc30@@YAXPAVCBaseCombatCharacter@@H@Z sub_1022dc30
+0x100048c2 func   ?sub_102126c0@CUnknown102126c0@@QAEXPAUinputdata_t@@@Z CUnknown102126c0::sub_102126c0
 0x100048c7 func   ?vfunc0@CTEBloodSprite@@UAEPAUServerClass@@XZ CTEBloodSprite::vfunc0
 0x100048cc func   ?vfunc123@CNPCMaker@@UAEXXZ CNPCMaker::vfunc123
 0x100048d6 func   ?sub_101fc220@CVStatCost_t@@QAE_NPAUCVStatKV@@@Z CVStatCost_t::sub_101fc220

@@ -140312,6 +140312,42 @@ void CUnknown10212680::sub_10212680(CInputData10147d10 *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102126c0 size=0x95
+#include "CUnknown102126c0.h"
+#include "inputdata_t.h"
+
+struct CPlayerObjView
+{
+	char m_pad0000[0x1040];
+	EHANDLE m_hTarget;	// 0x1040
+	void sub_10167fd0();	// stub 0x10014a6a
+	void sub_10167d70(void *pOwner);	// stub 0x1000ef3e
+};
+
+struct CActivatorView
+{
+	char m_pad0000[0xa8];
+	CPlayerObjView *m_pPlayerObj;
+};
+
+CPlayerObjView *__cdecl sub_101cda50();
+
+void CUnknown102126c0::sub_102126c0(inputdata_t *pInput)
+{
+	CActivatorView *pActivator = (CActivatorView *)pInput->pActivator;
+	CPlayerObjView *pPlayer = pActivator ? pActivator->m_pPlayerObj : 0;
+	if (!pPlayer)
+		pPlayer = sub_101cda50();
+	if (pPlayer)
+	{
+		if (pPlayer->m_hTarget.Get())
+			pPlayer->sub_10167fd0();
+	}
+	if (pPlayer && !pPlayer->m_hTarget.Get())
+		pPlayer->sub_10167d70(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212790 size=0x5f
 #include "CBaseEntity.h"
 #include "CUnknown102126c0.h"
