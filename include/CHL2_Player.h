@@ -153,6 +153,7 @@ public:
 	int sub_10334180(int count, int ammoIndex, int unused);	// CBaseCombatCharacter::GiveAmmo by index (slot 374 of the base, stub 0x10009543), called directly
 	char sub_10334860(void *pCurrent);	// CBaseCombatCharacter::SwitchToNextBestWeapon (stub 0x100138d6), called directly
 	int sub_10163020(const CTakeDamageInfo *pInfo);	// CBasePlayer::vfunc142 (stub 0x10014425), called directly
+	void vfunc430(int a, int b);
 	float m_flTargetFindTime;	// 0x2540
 	bool m_bForceWalk;	// 0x2544
 	char m_pad2545[0x2548 - 0x2545];
