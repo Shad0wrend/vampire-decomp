@@ -93,6 +93,61 @@ void CPropModelState::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10216610 size=0x190
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CPropModelState.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+inline bool PropModelState_FlagBit(unsigned int flags, int bit)
+{
+	return (flags >> bit) & 1;
+}
+
+#define CLAMPX(val, minv, maxv) ((val) > (maxv) ? (maxv) : ((val) < (minv) ? (minv) : (val)))
+
+// TARGET: CPropModelState::vfunc103
+void CPropModelState::vfunc103()
+{
+	m_nStates = 0;
+	m_pStateModels[0] = *(const char **)((char *)this + 0x388);
+	sub_1018df70();
+	m_nStates = CLAMPX(m_nStates, 0, 7);
+	m_iState = CLAMPX(m_iState, 0, m_nStates);
+	const char *model = m_pStateModels[m_iState];
+	vfunc105(model ? model : g_106b8540);
+	if (!(m_flags204 & 1))
+		sub_100b3580(0x40000);
+	else
+		sub_100b3640(0x40000);
+	*(int *)((char *)this + 0x19c) = !PropModelState_FlagBit(m_flags204, 1) ? (*(int *)((char *)this + 0x19c) | 0xa0) : (*(int *)((char *)this + 0x19c) & ~0xa0);
+	sub_10260a50(0);
+	sub_100a9470(0);
+	char *hdr = sub_100952d0(-1);
+	if (hdr)
+	{
+		{
+			ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+			((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(3);
+		}
+		sub_100adf10((const float *)(hdr + 0xb4), (const float *)(hdr + 0xc0));
+		if (PropModelState_FlagBit(m_flags204, 2))
+			sub_100aaa40(0);
+		else
+			sub_100aaa40(1);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100ddd90();
+		sub_100b3b00();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10216810 size=0x8
 #include "CPropModelState.h"
 namespace lifted {

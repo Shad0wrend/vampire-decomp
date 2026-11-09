@@ -8202,6 +8202,7 @@
 0x1000c2c0 func   ??0CPhysicsPushedEntities@@QAE@XZ CPhysicsPushedEntities::CPhysicsPushedEntities
 0x1000c2c5 func   ?sub_103d4d60@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d4d60
 0x1000c2ca func   ?vfunc260@CSceneEntity@@UAEXHPAXPBDHH@Z CSceneEntity::vfunc260
+0x1000c2cf func   ?vfunc103@CPropModelState@@UAEXXZ CPropModelState::vfunc103
 0x1000c2d4 func   ?sub_1010f100@@YAHXZ sub_1010f100
 0x1000c2d9 func   ?sub_1007e320@List1007e320@@QAEXPAUElem1007e320@@@Z List1007e320::sub_1007e320
 0x1000c2de func   ?sub_103e0cd0@@YAHPBD@Z sub_103e0cd0
