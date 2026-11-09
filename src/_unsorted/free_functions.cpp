@@ -68414,6 +68414,47 @@ void CBreakableSurface::sub_10112d50(int nCol, int nRow)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10113050 size=0x1cb
+#include "CBreakableSurface.h"
+#include "CPASFilter.h"
+
+#define SV1(p) virtual void p();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+
+struct STempEntsShatterView	// slot 23 of the temp entity system: ShatterSurface
+{
+	SV10(sa) SV10(sb) SV1(sc0) SV1(sc1) SV1(sc2)
+	virtual void ShatterSurface(CRecipientFilter *pFilter, float flDelay, const Vector *pPos, const float *pAngles,
+	                            const Vector *pForce, const Vector *pForcePos, float flWidth, float flHeight,
+	                            float flShardSize, int nSurfaceType, int nFrontR, int nFrontG, int nFrontB,
+	                            int nBackR, int nBackG, int nBackB);
+};
+extern STempEntsShatterView *g_10540528;
+
+void CBreakableSurface::sub_10113050(const Vector *pPos, const float *pAngles, const Vector *pForce, const Vector *pForcePos, float flWidth, float flHeight, int unused)
+{
+	Vector vAdjustedBreakPos = *pPos;
+	Vector vAdjustedForce = *pForce;
+	int front_r, front_g, front_b, back_r, back_g, back_b;
+	if (m_nSurfaceType4c8 == 1) {
+		vAdjustedBreakPos -= m_vecAxis * 8.0f;
+		vAdjustedForce = *pForce * -0.75f;
+		front_r = 0x59;
+		front_g = 0x78;
+		front_b = 0x53;
+		back_r = 0x63;
+		back_g = 0x4c;
+		back_b = 0x15;
+	} else {
+		front_b = front_g = front_r = 0xff;
+		back_b = back_g = back_r = 0xff;
+	}
+	CPASFilter filter(vAdjustedBreakPos);
+	g_10540528->ShatterSurface(&filter, 0.0f, &vAdjustedBreakPos, pAngles, &vAdjustedForce, pForcePos, flWidth, flHeight, 4.0f,
+	                           m_nSurfaceType4c8, front_r, front_g, front_b, back_r, back_g, back_b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113780 size=0x244
 #include "SendTable.h"
 SendProp sub_10246af0(const char *, int, int, int, int, int, void *);
