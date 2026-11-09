@@ -131,6 +131,8 @@ public:
 	int sub_1000b28f(int a);	// CNPC_VVampireBoss::vfunc127 (stub 0x1000b28f), called directly
 	void sub_10013e85();	// CNPC_VVampireBoss::vfunc420 (stub 0x10013e85), called directly
 	void sub_10010fd7(int index, const char *pszEmitterName);	// CNPC_VVampireBoss::sub_103c6df0 (stub 0x10010fd7): sets the body emitter name of an index
+	void vfunc104();	// "CNPC_VSabbatLeader::Precache" (slot 104 override)
+	void sub_10384670();	// CNPC_VHuman::vfunc104, called directly
 	void vfunc103();	// "CNPC_VSabbatLeader::Spawn" (slot 103 override): scope trace, solid flags 0x209000, the name "VampireSabbatLeader" at +0x10e4, then CNPC_VVampire::vfunc103
 	void sub_10012855(int flags);	// sets the solid flags, called with 0x209000
 	void sub_10014876();	// CNPC_VVampire::vfunc103 (stub 0x10014876), called directly
