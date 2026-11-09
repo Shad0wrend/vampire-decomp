@@ -7627,6 +7627,7 @@
 0x1000b8c5 func   ?sub_103483c0@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::sub_103483c0
 0x1000b8ca func   ?sub_102d8cf0@CUnknown102d9040@@QAEXPAVCBaseEntity@@MMM@Z CUnknown102d9040::sub_102d8cf0
 0x1000b8cf func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@UASSIGNED_QUEST@@V?$CUtlMemory@UASSIGNED_QUEST@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<ASSIGNED_QUEST,CUtlMemory<ASSIGNED_QUEST> >,9>::vfunc2
+0x1000b8d4 func   ?vfunc103@CEnvLaser@@UAEXXZ CEnvLaser::vfunc103
 0x1000b8d9 func   ?vfunc80@COccultFrenzy@@QAEHXZ COccultFrenzy::vfunc80
 0x1000b8de func   ?vfunc602@CNPC_VYukie@@QAEDXZ CNPC_VYukie::vfunc602
 0x1000b8e3 func   ?sub_102989e0@CAI_BaseNPCTroika@@QAEXPBD@Z CAI_BaseNPCTroika::sub_102989e0
