@@ -26,7 +26,10 @@ public:
 	char sub_1006f7d0();
 	struct CCineFovView *sub_1006ede0();
 	int sub_1006edb0();	// stub 0x10002a6d: the shot flags (bit 2 = first position, bit 3 = second)
-	void sub_1006f080(Vector *pOut, int bSecond);	// 0x1006f080 (stub 0x10012553, this in ecx, ret 8): the trace start position of the shot's target entity handle +0x610 (bSecond 0) / +0x614 (bSecond 1), written to *pOut; used by sub_1006db10's two UTIL_TraceHull checks
+	int sub_1006eeb0(int which);	// address of the shot record `which` (0x2c bytes apart; non-null for 0..3)
+	int sub_1006ee10(int which);	// the flags of the shot record `which`
+	void sub_1006f080(Vector *pOut, int bSecond);
+	Vector sub_1006f080(int bSecond);	// the same function seen as the Vector-by-value form (hidden return pointer)	// 0x1006f080 (stub 0x10012553, this in ecx, ret 8): the trace start position of the shot's target entity handle +0x610 (bSecond 0) / +0x614 (bSecond 1), written to *pOut; used by sub_1006db10's two UTIL_TraceHull checks
 	int sub_100b3700();	// CBaseEntity::GetFlags (stub 0x10008b84), called directly first thing in sub_1006db10 after sub_1006f670 (result unused)
 	Vector sub_1006f010(int index);	// stub 0x10011ebe: the position of shot `index` (2 or 3), returned by value
 
@@ -52,7 +55,7 @@ public:
 	Vector m_vecLook5f8;	// 0x05f8: sub_1006f670 result
 	Vector m_vecShot604;	// 0x0604: the second shot position
 	unsigned int m_hShot610[4];	// 0x0610: entity handles, one per flag bit
-	char m_pad0620[0x630 - 0x620];
+	int m_iIndex620[4];	// 0x0620: the bone / attachment index of each shot target
 	unsigned int m_hShot630;	// 0x0630
 	float m_flFov634;
 	int m_nState638;	// 0x0638: the shot state
