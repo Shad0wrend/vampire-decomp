@@ -98889,6 +98889,37 @@ PyObj *sub_10198640(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101987b0 size=0xcd
+#include "Python.h"
+#include "CUnknown1017cb80.h"
+struct GetQuestEntV { char pad[0xa8]; CUnknown1017cb80 *m_pPC; };
+GetQuestEntV *sub_10196780(PyObject *);
+
+PyObject *sub_101987b0(PyObject *self, PyObject *args)
+{
+	const char *name = 0;
+	PyObject *obj = 0;
+	if (!g_109f37a0(args, "Os", &obj, &name)) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f3780, "bad args to GetQuest()");
+		return 0;
+	}
+	GetQuestEntV *ent = sub_10196780(obj);
+	CUnknown1017cb80 *pc = !ent ? 0 : ent->m_pPC;
+	if (!name) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f3780, "invalid quest name");
+		return 0;
+	}
+	if (!pc) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f3780, "invalid player character");
+		return 0;
+	}
+	return g_109f3798(pc->sub_1017cb80(name));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199100 size=0xfc
 struct PyObject;
 extern "C" __declspec(dllimport) int PyArg_ParseTuple(PyObject *, const char *, ...);
