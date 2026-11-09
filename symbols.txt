@@ -5836,6 +5836,7 @@
 0x10009115 func   ?sub_1002c360@@YAHXZ sub_1002c360
 0x1000911a func   ?sub_10256200@@YIEPAE@Z sub_10256200
 0x1000911f func   ?sub_1028b190@CUnknown1028b190@@QAEXPAX@Z CUnknown1028b190::sub_1028b190
+0x10009124 func   ?vfunc17@CRestore@@UAEHPAXHH@Z CRestore::vfunc17
 0x10009129 func   ?sub_10135420@CUnknown10135420@@QAEXPAH@Z CUnknown10135420::sub_10135420
 0x1000912e func   ?vfunc104@CBaseEntity@@UAEXXZ CBaseEntity::vfunc104
 0x10009133 func   ?sub_1040cfd0@CPlayerPickupController@@QAEXPAVCBaseCombatCharacter@@PAVCBaseEntity@@@Z CPlayerPickupController::sub_1040cfd0
