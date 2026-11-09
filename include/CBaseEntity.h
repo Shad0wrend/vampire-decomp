@@ -341,7 +341,9 @@ public:
 	int m_n2b0;	// 0x02b0: tested by IsSolid
 	unsigned char m_b2b4;	// 0x02b4: bit 2 clears IsSolid, bit 3 is IsSolidFlagSet
 	unsigned char m_bDebug2b5;	// 0x02b5: bit 0 enables the collision-box / capsule overlay (DrawBBoxOverlay)
-	char m_pad02b6[0x2e0 - 0x2b6];
+	char m_pad02b6[0x2b8 - 0x2b6];
+	float m_fl2b8;	// 0x02b8: the collision property's bounding radius (IsPointSized when 0)
+	char m_pad02bc[0x2e0 - 0x2bc];
 	int m_pEdict2e0;	// 0x02e0
 	char m_pad02e4[0x35c - 0x2e4];
 	int m_nMoveType35c;	// 0x035c
