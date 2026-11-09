@@ -96,6 +96,8 @@
 	void sub_10039ac0();	// "CBaseEntity::PhysicsParent"
 	void sub_1003ed80(Vector &move);	// "CBaseEntity::PhysicsAddGravityMove": scope trace (entity name), move = (velocity (+0x3d4) + base velocity (+0x3b0)) * frametime for x / y; with gravity (+0x3ec, 1.0f when zero) times the gravity convar (0x109ef2d4) the new z velocity is stored at +0x3dc and move.z uses the average of the old and new z, then CheckVelocity (sub_1003eb50)
 	void vfunc171();	// slot 171 "CBaseEntity::SetMovedir": scope trace (entity name), sets the direction vector at +0x190 from the angles (slot 221): (0, 0, 1) for (0, -1, 0), (0, 0, -1) for (0, -2, 0), else AngleVectors forward; then slot 64(vec3_origin)
+	int sub_10267b60(void *pInfo);
+	void sub_10268330(CBaseEntity *pOther, void *pInfo, int n);
 #ifndef CBASEENTITY_V62_VIRTUAL
 	void vfunc62(const float *pOrigin);	// slot 62 "CBaseEntity::SetLocalOrigin" (plain-member overload; the slot itself is declared above without arguments)
 #endif
