@@ -177092,6 +177092,37 @@ void CAI_BaseNPCTroika::sub_102c4c50(CAI_ArcRecord *pRec, float flTime, int a, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4cc0 size=0x119
+#include "CAI_BaseNPCTroika.h"
+#include "ConVar.h"
+#include "Vector.h"
+#include <math.h>
+
+struct CArcGravView { char m_pad0000[0x3ec]; float m_flGravity; float GetGravity() const { return m_flGravity; } };
+
+void CAI_BaseNPCTroika::sub_102c4cc0(CAI_ArcRecord *pRec, int a, int b)
+{
+	Vector *pVel = (Vector *)pRec;
+	const Vector &vecStart = *(const Vector *)a;
+	const Vector &vecEnd = *(const Vector *)b;
+	float flGravity = g_109ef2d4->vfunc1() ? 0.0f : g_109ef2d4->m_fValue;
+	Vector vecDir = vecEnd - vecStart;
+	float flA = ((CArcGravView *)this)->GetGravity() * flGravity * -0.5f;
+	float vz = pVel->z;
+	float flDisc = vz * vz - (-vecDir.z) * flA * 4.0f;
+	if (flDisc < 0.0f)
+		flDisc = 0.0f;
+	float flSqrt = sqrt(flDisc);
+	float t = (-vz - flSqrt) / (flA + flA);
+	vecDir.z = 0;
+	float flLen = VectorNormalize(vecDir);
+	float flScale = (t > 0.0001f) ? flLen / t : 0.0f;
+	Vector vecVel = vecDir * flScale;
+	pVel->x = vecVel.x;
+	pVel->y = vecVel.y;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c4e80 size=0x1d
 #include "CBaseEntity.h"
 // TARGET: sub_102c4e80
