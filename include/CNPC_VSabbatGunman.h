@@ -324,6 +324,8 @@ public:
 	virtual void vfunc440();
 	virtual void vfunc441();
 	virtual void vfunc442();
+	void vfunc442(int *pEvent);
+	void sub_1000a0c9(int *pEvent);
 	virtual void vfunc443();
 	virtual void vfunc444();
 	virtual void vfunc445();
