@@ -239,6 +239,66 @@ int CNPC_VCamera::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10368b70 size=0x24d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VCamera.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+extern void (*g_109f3650)(int level, const char *fmt, ...);
+void sub_101cf600(CNPC_VCamera *p);
+
+void CNPC_VCamera::vfunc103()
+{
+	sub_1026dc00(0x4000000);
+	vfunc104_slot();
+	int n;
+	const char *name = *vfunc9(&n);
+	const char *empty = g_106b8540;
+	if (!name)
+		name = empty;
+	vfunc105(name);
+	m_n1570 = 0xf7;
+	m_n19c = 0;
+	m_n210 = 1;
+	m_fl1574 = 0.2f;
+	m_n5cc0 = 0;
+	m_v1578.Init(0, 0, 0);
+	m_n63d0 = 0;
+	m_n62ec = 0;
+	{
+		ScopeTrace t("CBaseEntity::SetSolidFlags", m_iName26c ? m_iName26c : empty, empty);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc580(0);
+	}
+	{
+		ScopeTrace t("CBaseEntity::SetSolid", m_iName26c ? m_iName26c : empty, empty);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+	}
+	vfunc93(4, 0);
+	sub_10273070(0);
+	sub_101cf600(this);
+	vfunc420();
+	sub_1028fb70();
+	sub_1033df80();
+	void (*dm)(int, const char *, ...) = g_109f3650;
+	m_ne64 = (CBaseEntity *)0;
+	m_n5b94 = 0;
+	if (m_iPLInvestigateLevel < 1) { dm(1, "Warning: Invalid m_iPLInvestigateLevel ('pl_investigate' in world craft)\n"); m_iPLInvestigateLevel = 6; }
+	if (m_iPLCriminalFleeLevel < 1) { dm(1, "Warning: Invalid m_iPLCriminalFleeLevel ('pl_criminal_flee' in world craft)\n"); m_iPLCriminalFleeLevel = 6; }
+	if (m_iPLCriminalAttackLevel < 1) { dm(1, "Warning: Invalid m_iPLCriminalAttackLevel ('pl_criminal_attack' in world craft)\n"); m_iPLCriminalAttackLevel = 6; }
+	if (m_iPLSupernaturalFleeLevel < 1) { dm(1, "Warning: Invalid m_iPLSupernaturalFleeLevel ('pl_supernatural_flee' in world craft)\n"); m_iPLSupernaturalFleeLevel = 6; }
+	if (m_iPLSupernaturalAttackLevel < 1) { dm(1, "Warning: Invalid m_iPLSupernaturalAttackLevel ('pl_supernatural_attack' in world craft)\n"); m_iPLSupernaturalAttackLevel = 6; }
+	vfunc66();
+	sub_100b3840(0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10368e60 size=0x3
 #include "CNPC_VCamera.h"
 int CNPC_VCamera::vfunc138()
