@@ -155,6 +155,67 @@ int CNPC_VManBat::vfunc337()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038e000 size=0x281
+#include "CNPC_VManBat.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1070b244.h"
+#include "CUnknown1070b248.h"
+
+#define MB_V(n) virtual void v##n();
+#define MB_V10(p) MB_V(p##0) MB_V(p##1) MB_V(p##2) MB_V(p##3) MB_V(p##4) MB_V(p##5) MB_V(p##6) MB_V(p##7) MB_V(p##8) MB_V(p##9)
+
+struct CManBatView
+{
+	MB_V10(0) MB_V10(1) MB_V10(2) MB_V10(3) MB_V10(4) MB_V10(5) MB_V10(6) MB_V10(7) MB_V10(8) MB_V10(9)
+	MB_V10(10) MB_V10(11) MB_V10(12) MB_V10(13) MB_V10(14) MB_V10(15) MB_V10(16) MB_V10(17) MB_V10(18) MB_V10(19)
+	MB_V10(20)
+	MB_V(210) MB_V(211) MB_V(212) MB_V(213) MB_V(214) MB_V(215) MB_V(216) MB_V(217) MB_V(218) MB_V(219) MB_V(220) MB_V(221)
+	virtual Vector GetSoundEmissionOrigin();	// slot 222
+	char m_pad04[0x2e0 - 0x4];
+	int m_pEdict2e0;
+	int edict() { return m_pEdict2e0; }
+};
+
+extern CUnknown1070b244 *g_1070b244;
+extern CUnknown1070b248 *g_1070b248;
+extern const char *g_10640d10[];
+extern const char *g_10640d1c[];
+
+void CNPC_VManBat::vfunc259(int *pEvent)
+{
+	CManBatView *p = (CManBatView *)this;
+	switch (*pEvent)
+	{
+	case 1:
+	{
+		CPASAttenuationFilter filter(p);
+		filter.MakeReliable();
+		int index = engine->vfunc35(p->edict());
+		g_1070b248->vfunc3(&filter, index, 4, g_10640d10[g_1070b244->vfunc2(0, 2)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		break;
+	}
+	case 2:
+	{
+		CPASAttenuationFilter filter(p);
+		filter.MakeReliable();
+		g_1070b248->vfunc3(&filter, engine->vfunc35(p->edict()), 4, "character/male/sheriff_manbat/screech.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		break;
+	}
+	case 3:
+	{
+		CPASAttenuationFilter filter(p);
+		filter.MakeReliable();
+		int index = engine->vfunc35(p->edict());
+		g_1070b248->vfunc3(&filter, index, 4, g_10640d1c[g_1070b244->vfunc2(0, 2)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		return;
+	}
+	default:
+		sub_100076bc(pEvent);
+		return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038e880 size=0x2f
 #include "CNPC_VManBat.h"
 #include "CNPC_VHuman.h"
