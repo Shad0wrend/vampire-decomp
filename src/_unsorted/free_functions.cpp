@@ -117354,6 +117354,38 @@ void CUnknown101dddb0::sub_101dddb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ddec0 size=0x8a
+#include "S101df260.h"
+
+S101ddec0 *S101ddec0::sub_101ddec0()
+{
+	m_o04.sub_101dda30();
+	m_o0c.sub_101dda30();
+	m_o14.sub_101dda30();
+	m_o20.sub_101dda30();
+	m_o28.sub_101dda30();
+	m_o50.sub_101ddbe0();
+	m_o5c.sub_101dcb20();
+	m_o78.sub_101dcb20();
+	m_o94.sub_101dc1c0();
+	m_b00 = 0;
+	m_pszSchedule34 = 0;
+	m_n38 = -1;
+	m_n3c = -1;
+	m_n40 = 0;
+	m_b1d = 0;
+	m_b1c = 0;
+	m_b1e = 0;
+	m_n44 = 0;
+	m_n48 = 0;
+	m_n4c = 0;
+	m_na4 = 0;
+	m_na8 = 0;
+	m_n30 = 0x32;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ddf80 size=0x1f
 struct CUnk101ddf80Sub94
 {
