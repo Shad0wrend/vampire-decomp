@@ -15794,6 +15794,57 @@ int sub_10064560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064870 size=0x16e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CTEGunshotDecal.h"
+
+extern CTEGunshotDecal g_106c4338;
+
+struct S10064870Obj { char sub_1000511e(); };
+struct S10064870Ent { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual S10064870Ent *v4(); };
+struct S10064870Edict { char pad[0x40]; S10064870Ent *pUnk; };
+struct S10064870Base { char pad[0x9c]; S10064870Obj *p9c; };
+
+void sub_10064870(int a1, int a2, const Vector *a3, const Vector *a4, int a5, int a6, int a7, int a8, char a9, int a10, int a11, int a12, int a13)
+{
+	g_106c4338.m_vecOrigin = *a3;
+	g_106c4338.m_vecStart = *a4;
+	g_106c4338.m_f24 = a5;
+	g_106c4338.m_f28 = a6;
+	g_106c4338.m_f2c = a7;
+	g_106c4338.m_f30 = a8;
+	g_106c4338.m_f34 = a9;
+	g_106c4338.m_f38 = a10;
+	g_106c4338.m_f3c = a11;
+	g_106c4338.m_f44 = a13;
+	g_106c4338.m_f40 = a12;
+	g_106c4338.m_f48 = 0;
+	S10064870Edict *e = (S10064870Edict *)engine->vfunc38(a5);
+	S10064870Base *b;
+	{
+		ScopeTrace t("CBaseEntity::Instance", g_106b8540);
+		if ((int)e || (e = (S10064870Edict *)engine->vfunc38(0)) != 0) {
+			if (e->pUnk)
+				b = (S10064870Base *)e->pUnk->v4();
+			else
+				b = 0;
+		} else
+			b = 0;
+	}
+	if (b && b->p9c && b->p9c->sub_1000511e())
+		g_106c4338.m_f48 |= 1;
+	g_106c4338.vfunc4(a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064aa0 size=0xb
 namespace lifted {
 extern char g_1044df44;
