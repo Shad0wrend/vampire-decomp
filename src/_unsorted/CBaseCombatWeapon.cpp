@@ -1327,6 +1327,121 @@ void sub_10253e80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253ea0 size=0x2e1
+#include "CBaseEntity.h"
+#include "CBaseCombatWeapon.h"
+#include "UTIL_BloodStream.h"
+#include "CGameRules.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+#include "CUnknown1015ef20.h"
+
+struct CWeaponOwnerView { char m_pad0[0xa8]; void *m_pA8; };
+struct CFiringChar {
+	char m_pad0[0x3e0];
+	int m_n3e0;
+	char m_pad3e4[0x2088 - 0x3e4];
+	unsigned int m_f2088;
+	unsigned int m_f208c;
+	unsigned int m_f2090;
+};
+struct CWeaponFireView {
+	char m_pad0[0x730];
+	float m_flT730;
+	float m_flT734;
+	char m_pad738[0x74c - 0x738];
+	int m_nClip74c;
+	char m_pad750[0x898 - 0x750];
+	char m_b898;
+	char m_b899;
+	char m_b89a;
+	char m_b89b;
+	char m_pad89c[0x8ac - 0x89c];
+	float m_fl8ac;
+	char m_pad8b0[0x8b4 - 0x8b0];
+	char m_b8b4;
+};
+typedef char (__fastcall *FastCharFn)(void *);
+bool __fastcall sub_10257820(void *p);
+
+inline char WeaponSlot271(void *pThis)
+{
+	return ((FastCharFn)((*(void ***)pThis)[271]))(pThis);
+}
+inline char WeaponSlot346(void *pThis)
+{
+	return ((FastCharFn)((*(void ***)pThis)[346]))(pThis);
+}
+inline CFiringChar *ToFiringChar(CWeaponOwnerView *pOwner)
+{
+	if (!pOwner)
+		return 0;
+	return (CFiringChar *)pOwner->m_pA8;
+}
+#define pW ((CWeaponFireView *)this)
+
+// TARGET: CBaseCombatWeapon::vfunc319
+void CBaseCombatWeapon::vfunc319()
+{
+	CFiringChar *pChar = sub_102521f0() ? ToFiringChar((CWeaponOwnerView *)sub_102521f0()) : 0;
+	unsigned int nBit;
+	if (pChar) {
+		volatile unsigned int a = pChar->m_f2088;
+		unsigned int b = pChar->m_f208c;
+		if (!sub_10257820(this) && !(pChar->m_f208c & 1))
+			*(unsigned int *)&a &= ~1;
+		if (!sub_10257820(this) && !(pChar->m_f208c & 0x800))
+			*(unsigned int *)&a &= ~0x800;
+		if (!((CUnknown1015ef20 *)pChar)->sub_1015ef20()) {
+			*(unsigned int *)&a &= 0xfffff7fe;
+			b &= 0xfffff7fe;
+		}
+		vfunc294();
+		int fire = a & 1;
+		pW->m_fl8ac = fire ? pW->m_fl8ac + gpGlobals->frametime : 0.0f;
+		if (vfunc277(0))
+			vfunc322();
+		if ((b & 0x800) && pW->m_flT734 <= gpGlobals->curtime) {
+			vfunc327();
+		} else if (fire && pW->m_flT730 <= gpGlobals->curtime) {
+			if (vfunc277(0) && pW->m_nClip74c <= 0) {
+				vfunc291();
+				pW->m_b89b = 1;
+			} else if (pChar->m_n3e0 == 3 && !pW->m_b8b4) {
+				vfunc291();
+				return;
+			} else {
+				if (pChar->m_f208c & 1)
+					pW->m_flT730 = gpGlobals->curtime;
+				vfunc326();
+			}
+		} else {
+			unsigned int c = pChar->m_f2090;
+			if (c & 1)
+				vfunc265();
+			else if (c & 0x800)
+				vfunc266();
+		}
+		nBit = a & 0x2000;
+		if (nBit && vfunc277(0) && !pW->m_b898)
+			vfunc325();
+		if (!fire && !(a & 0x800) && !nBit && WeaponSlot271(this)) {
+			pW->m_b89b = nBit;
+			if (!vfunc312() && pW->m_flT730 < gpGlobals->curtime) {
+				if (!(WeaponSlot346(this) & 4) && ((CGameRules *)g_1070ba0c)->vfunc20((CBaseEntity *)pChar, (CBaseEntity *)this)) {
+					pW->m_flT730 = gpGlobals->curtime + 0.3;
+					return;
+				}
+			} else {
+				if (vfunc277(0) && pW->m_nClip74c == 0 && !(WeaponSlot346(this) & 2) && pW->m_flT730 < gpGlobals->curtime && vfunc325())
+					return;
+			}
+			vfunc321();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10254360 size=0x3
 #include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc330
