@@ -49,6 +49,7 @@ public:
 	void vfunc230(int index, void *pEvent);	// slot 230 "VPhysicsCollision" override (plain member): the base implementation, then for the other entity of the collision event (entities at +0x68 of the event, picked by the index) that is not this entity: when this entity's physics object moves faster than 150 units/s, sub_10157ca0(other)
 public:
     virtual datamap_t * vfunc82();
-	string_t m_iszExplosionParamEnt;	// 0x104c
-	char m_pad1050[0x1054 - 0x1050];
+	const char *m_pszExplosion104c;	// 0x104c: name of the explosion parameters entity
+	EHANDLE m_hAttacker1050;	// 0x1050
+	void sub_10157930(CBaseEntity *pAttacker);	// the explosion (stub 0x10010d2f): gated by spawn flag 0x10
 };
