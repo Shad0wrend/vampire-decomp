@@ -102656,6 +102656,109 @@ int sub_101af9d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101af9f0 size=0x143
+#include "CUnknown10248a50.h"
+
+extern IFileSys *g_1070b238;
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+class CUnknown101afba0
+{
+public:
+	char m_pad0000[0x100];
+	char m_bLoaded;	// 0x100
+
+	void sub_101afba0();
+	bool sub_101af9f0(const char *pszFile);
+	bool sub_101afbc0(CUnknown10248a50 *pKeys);
+	bool sub_101afc50(CUnknown10248a50 *pKeys);
+	bool sub_101afcf0(CUnknown10248a50 *pKeys);
+	bool sub_101afd90(CUnknown10248a50 *pKeys);
+};
+
+inline void DeleteKV101af9f0(CUnknown10248a50 *pKV)
+{
+	if (pKV)
+	{
+		pKV->sub_100046f1();
+		operator delete(pKV);
+	}
+}
+
+// TARGET: CUnknown101afba0::sub_101af9f0
+bool CUnknown101afba0::sub_101af9f0(const char *pszFile)
+{
+	if (m_bLoaded)
+		sub_101afba0();
+	CUnknown10248a50 *pKV = new CUnknown10248a50("SoundVolumeTable");
+	if (!pKV->sub_102480f0(pszFile, g_1070b238, 0, true))
+	{
+		Msg("Unable to open data file for: %s\n", pszFile);
+		DeleteKV101af9f0(pKV);
+		return false;
+	}
+	CUnknown10248a50 *pSection = pKV->sub_102489a0("VolumeLevels", false);
+	if (pSection)
+	{
+		if (!sub_101afbc0(pSection))
+		{
+			DeleteKV101af9f0(pKV);
+			return false;
+		}
+	}
+	else
+	{
+		Msg("Sound volume table '%s' is not in the correct format.  Missing 'VolumeLevels {'\n", pszFile);
+		DeleteKV101af9f0(pKV);
+		return false;
+	}
+	pSection = pKV->sub_102489a0("OccludedVolumeLevels", false);
+	if (pSection)
+	{
+		if (!sub_101afc50(pSection))
+		{
+			DeleteKV101af9f0(pKV);
+			return false;
+		}
+	}
+	else
+	{
+		Msg("Sound volume table '%s' is not in the correct format.  Missing 'OccludedVolumeLevels {'\n", pszFile);
+		DeleteKV101af9f0(pKV);
+		return false;
+	}
+	pSection = pKV->sub_102489a0("SoundTypes", false);
+	if (pSection)
+	{
+		if (!sub_101afcf0(pSection))
+		{
+			DeleteKV101af9f0(pKV);
+			return false;
+		}
+	}
+	else
+	{
+		Msg("Sound volume table '%s' is not in the correct format.  Missing 'SoundTypes {'\n", pszFile);
+		DeleteKV101af9f0(pKV);
+		return false;
+	}
+	pSection = pKV->sub_102489a0("MiscData", false);
+	if (pSection)
+	{
+		if (sub_101afd90(pSection))
+		{
+			DeleteKV101af9f0(pKV);
+			m_bLoaded = true;
+			return true;
+		}
+	}
+	else
+		Msg("Sound volume table '%s' is not in the correct format.  Missing 'MiscData {'\n", pszFile);
+	DeleteKV101af9f0(pKV);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afba0 size=0x8
 struct CUnknown101afba0 { char pad[0x100]; char m_Flag; void sub_101afba0(); };
 void CUnknown101afba0::sub_101afba0() { m_Flag = 0; }
