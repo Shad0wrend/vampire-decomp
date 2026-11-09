@@ -31792,6 +31792,62 @@ char CBaseAnimating::sub_100933b0(int iAttachment, float *pAttachmentToLocal)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100936e0 size=0x155
+#include "ScopeTrace.h"
+#include "CBaseAnimating.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct StudioBlockX {
+	char pad0[8];
+	int start;
+	int count;
+	char pad1[0x74 - 0x10];
+};
+
+struct StudioX {
+	char pad0[0x110];
+	int nNodes;
+	char pad1[0x194 - 0x114];
+	int nBlocks;
+	int ofsBlocks;
+	StudioBlockX *pBlock(int i) const { return (StudioBlockX *)((char *)this + ofsBlocks) + i; }
+	int GetNumSeq() const
+	{
+		if (nBlocks)
+			return pBlock(nBlocks - 1)->start + pBlock(nBlocks - 1)->count;
+		return nNodes;
+	}
+};
+
+int __cdecl sub_10428ad0(void *pStudio, int iFrom, int iTo, int *pDirection);
+
+int CBaseAnimating::sub_100936e0(int iFrom, int iTo, int *pDirection)
+{
+	ScopeTrace trace("CBaseAnimating::FindTransitionSequence", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	if (!pDirection) {
+		int direction = 1;
+		int result = sub_1000af01(iFrom, iTo, &direction);
+		if (direction == 1)
+			return result;
+	} else {
+		int offset = 0;
+		for (int model = -1; model < 2; model++) {
+			StudioX *pStudio = (StudioX *)sub_100952d0(model);
+			if (pStudio) {
+				int count = pStudio->GetNumSeq();
+				if (iFrom >= 0 && iFrom < count && iTo >= 0 && iTo < count)
+					return sub_10428ad0(pStudio, iFrom, iTo, pDirection) + offset;
+				offset += count;
+				iFrom -= count;
+				iTo -= count;
+			}
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100938a0 size=0x98
 #include "CBaseAnimating.h"
 
