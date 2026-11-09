@@ -5346,6 +5346,7 @@
 0x100087ba func   ?sub_10137fe0@@YAXPBM0PAM@Z sub_10137fe0
 0x100087bf func   ?vfunc37@CSingleplayRules@@UAE_NH@Z CSingleplayRules::vfunc37
 0x100087c4 func   ?sub_1002b1e0@@YAXPBDPAUNamedPosOut@@H@Z sub_1002b1e0
+0x100087c9 func   ?sub_100e8fc0@CDialogDependency@@QAEXHHPAD0PAIPAH@Z CDialogDependency::sub_100e8fc0
 0x100087ce func   ?sub_100579f0@@YIXPAH@Z sub_100579f0
 0x100087d3 func   ?sub_1027dc10@CSub@@QAE_NPAUCPEnt@@HH@Z CSub::sub_1027dc10
 0x100087d8 func   _trigger trigger

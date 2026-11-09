@@ -54161,6 +54161,72 @@ void CDialogDependency::sub_100e8ef0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e8fc0 size=0x235
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CDialogDependency.h"
+#include "ScopeTrace.h"
+#include "ConVar.h"
+#include "CVDmg_t.h"
+#include <string.h>
+
+__declspec(dllimport) void Q_trimspace(const char *in, char *out, int outlen);
+__declspec(dllimport) char *Q_stristr(const char *s, const char *search);
+extern ConVar g_106e9510;
+void sub_100dfaf0(unsigned char flags, const char *fmt, ...);
+
+// TARGET: CDialogDependency::sub_100e8fc0
+void CDialogDependency::sub_100e8fc0(int a, int b, char *pszDependency, char *pszScript, unsigned int *pFlags, int *pOut)
+{
+	ScopeTrace trace("CDialogDependency::Parse", g_106b8540);
+	sub_100e8ef0(a);
+	if (pFlags)
+		*pFlags = 0;
+	if (pOut)
+		*pOut = -1;
+	char buf[256];
+	memset(buf, 0, sizeof(buf));
+	if (pszDependency) {
+		Q_trimspace(pszDependency, buf, 256);
+		char *pSplit = Q_stristr(buf, "|");
+		if (pSplit) {
+			*pSplit = 0;
+			m_n21c = 3;
+		} else {
+			pSplit = Q_stristr(buf, "&");
+			if (pSplit) {
+				*pSplit = 0;
+				m_n21c = 2;
+			} else {
+				m_n21c = 1;
+			}
+		}
+		sub_100e9290(b, buf, pFlags, pOut);
+		if (pSplit)
+			sub_100e9290(b, pSplit + 1, pFlags, pOut);
+	}
+	if (pszScript && strlen(pszScript)) {
+		strncpy((char *)m_a11c, pszScript, 256);
+		if (pFlags)
+			*pFlags |= 8;
+	}
+	if (pszDependency && *pszDependency) {
+		int nLevel = g_106e9510.GetInt() > 1 ? 3 : 1;
+		sub_100dfaf0(nLevel, "\n< Parsing dependency: %s  >\n", pszDependency);
+		sub_100dfaf0(nLevel, "< Compound: %d  Precedence: %d  >\n", m_n21c, m_n220);
+		sub_100dfaf0(nLevel, "< Simple Dependency: %s  >\n", ((CVDmgBlock16_t *)&m_nType)->sub_102043a0());
+		sub_100dfaf0(nLevel, "< Python Dependency: %s  >\n", (char *)m_a1c);
+		sub_100dfaf0(nLevel, "< Event Script: %s  >\n", (char *)m_a11c);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e94e0 size=0x1f8
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
