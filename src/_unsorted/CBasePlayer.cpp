@@ -3014,6 +3014,77 @@ CBaseEntity *CBasePlayer::vfunc459(const char *pszName, int iSubType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101728f0 size=0x436
+#include "CSingleUserRecipientFilter.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CSprayCan.h"
+#include "UTIL_Trace.h"
+#include "CRecipientFilter.h"
+#include "globalvars.h"
+#include "engineserver.h"
+
+struct CConVarViewAe34 { virtual void v0(); virtual bool vfunc1(); char pad[0x24]; float m_f28; };
+extern CConVarViewAe34 *g_1070ae34;
+extern int g_10726028;
+struct CBasePlayer450View : CBasePlayer { char sub_101681a0(); };
+
+// TARGET: CBasePlayer::vfunc450
+void CBasePlayer::vfunc450()
+{
+	CGameTrace tr;
+	vfunc460();
+	if ((m_nFlags2088 & 0x400000) && !((CBasePlayer450View *)this)->sub_101681a0())
+		vfunc424(0);
+	int iImpulse = m_n2324;
+	switch (iImpulse) {
+	case 99: {
+		int iOn;
+		if (g_10726028 == 0) {
+			iOn = 1;
+			g_10726028 = engine->vfunc82("Logo", iOn);
+		} else
+			iOn = 0;
+		CSingleUserRecipientFilter user(this);
+		user.MakeReliable();
+		engine->vfunc65(&user, g_10726028);
+		engine->vfunc67(iOn);
+		engine->vfunc66();
+		if (!iOn)
+			g_10726028 = 0;
+		break;
+	}
+	case 100:
+		if (vfunc445())
+			vfunc447();
+		else
+			vfunc446();
+		break;
+	case 0xc9: {
+		if (gpGlobals->curtime < m_f22c8)
+			break;
+		Vector forward;
+		sub_10139610(*(QAngle *)&m_vec206c, &forward, 0, 0);
+		UTIL_TraceLine_DebugCall(vfunc193(), vfunc193() + forward * 128.0f, 0x400b, this, 0, &tr);
+		if (tr.m_fraction != 1.0) {
+			m_f22c8 = gpGlobals->curtime + (g_1070ae34->vfunc1() ? g_104454c4 : g_1070ae34->m_f28);
+			CSprayCan *pCan = new CSprayCan;
+			pCan->vfunc106("spraycan");
+			pCan->sub_101714a0(this);
+		}
+		break;
+	}
+	case 0xcc:
+		sub_101728b0();
+		break;
+	default:
+		vfunc451(iImpulse);
+		break;
+	}
+	m_n2324 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10173ed0 size=0x87
 #include "CBasePlayer.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);

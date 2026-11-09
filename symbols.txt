@@ -14250,6 +14250,7 @@
 0x100148f3 func   ?sub_102471f0@@YIPAXPAX@Z sub_102471f0
 0x100148fd func   ?vfunc5@CWeaponRanged_Pistol_Thirtyeight@@UAEPAVCWeaponRanged@@I@Z CWeaponRanged_Pistol_Thirtyeight::vfunc5
 0x10014902 func   ?vfunc126@CSoundEnt@@UAEHH@Z CSoundEnt::vfunc126
+0x10014907 func   ?vfunc450@CBasePlayer@@UAEXXZ CBasePlayer::vfunc450
 0x1001490c func   ?sub_10202460@@YAPBDPAUCVDmgBlock16_t@@H@Z sub_10202460
 0x10014911 func   _info_node_bach_run_1 info_node_bach_run_1
 0x10014916 func   ?vfunc174@CTriggerDisciplineContext@@QAEXPAVCBaseEntity@@@Z CTriggerDisciplineContext::vfunc174
