@@ -165050,6 +165050,35 @@ check:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10269aa0 size=0x62
+#include "CAI_BaseNPCTroika.h"
+
+struct CAI_BaseNPC580 : CAI_BaseNPC {
+	virtual void s569(); virtual void s570(); virtual void s571(); virtual void s572(); virtual void s573();
+	virtual void s574(); virtual void s575(); virtual void s576(); virtual void s577(); virtual void s578();
+	virtual void s579();
+	virtual CAI_CondOwner *GetClassScheduleIdSpace();
+};
+
+struct CAI_CondBits5c5c {
+	unsigned int m_Ints[1];
+	bool IsBitSet(int bitNum) const { return (m_Ints[bitNum >> 5] & (1 << (bitNum & 31))) != 0; }
+};
+
+inline bool AI_IdIsLocal(int id) { return id < 1000000000 || id == -1; }
+inline int AI_RemapFromGlobal(int id) { return (id != -1) ? id - 1000000000 : -1; }
+
+// TARGET: CAI_BaseNPC::sub_10269aa0
+bool CAI_BaseNPC::sub_10269aa0(int condition)
+{
+	int interrupt = AI_RemapFromGlobal(AI_IdIsLocal(condition) ? ((CAI_BaseNPC580 *)this)->GetClassScheduleIdSpace()->ConditionLocalToGlobal(condition) : condition);
+	if (interrupt == -1)
+		return false;
+	bool bReturn = ((CAI_CondBits5c5c *)((char *)this + 0x5c5c))->IsBitSet(interrupt);
+	return bReturn;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10269b30 size=0xd
 namespace lifted {
 int __stdcall sub_10014df8(int);
