@@ -42336,6 +42336,49 @@ CBaseEntity *sub_100bb720(const char *module, int line, int unused, const char *
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb790 size=0xaf
+#include "CBeam.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CBeamSlot212View
+{
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j)
+	V10(k) V10(l) V10(m) V10(n) V10(o) V10(p) V10(q) V10(r) V10(s) V10(t)
+	V10(u)
+	virtual void z0(); virtual void z1();
+	virtual void SetModelName(string_t name);	// slot 212
+};
+
+inline string_t MAKE_STRING_BEAM(const char *str) { return string_t(*str ? str : 0); }
+
+// "CBeam::BeamInit(pSpriteName, width)": declared on CBaseEntity because the matched callers (CBeam::BeamCreate
+// 0x100bb6b0, 0x100bb720) pass the width as its bits (int)
+void CBaseEntity::sub_100bb790(const char *pSpriteName, int width)
+{
+	CBeam *pBeam = (CBeam *)this;
+	((CBaseEntityColor32 *)m_pad01a0)->r = 255;	// m_clrRender (+0x1a0)
+	((CBaseEntityColor32 *)m_pad01a0)->g = 255;
+	((CBaseEntityColor32 *)m_pad01a0)->b = 255;
+	((CBaseEntityColor32 *)m_pad01a0)->a = 255;
+	pBeam->m_flNoiseAmplitude = 0;
+	pBeam->m_fStartFrame = 0;
+	pBeam->m_flTextureScroll = 0;
+	((CBeamSlot212View *)this)->SetModelName(MAKE_STRING_BEAM(pSpriteName));
+	m_n16c = 2;
+	int index = sub_100adfd0(pSpriteName);
+	vfunc10(index);
+	pBeam->m_fWidth = *(float *)&width;
+	pBeam->m_fEndWidth = *(float *)&width;
+	pBeam->m_fFadeLength = 0;
+	for (int i = 0; i < 10; i++) {
+		pBeam->m_hBeamEnts[i] = 0;
+		pBeam->m_nAttachIndex[i] = 0;
+	}
+	*(int *)pBeam->m_pad0460 = 0;	// halo index (+0x460)
+	pBeam->m_fHaloScale = 10.0f;
+	pBeam->m_nBeamType = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb870 size=0x6b
 #include "CBeam.h"
 
