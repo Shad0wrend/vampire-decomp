@@ -2539,6 +2539,7 @@
 0x100047aa func   ?RemoveAll@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXXZ CUtlVector<int,CUtlMemory<int> >::RemoveAll
 0x100047aa func   ?sub_10032b00@@YIXPAH@Z sub_10032b00
 0x100047af func   ?vfunc5@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc5
+0x100047b9 func   ?sub_101e5ca0@CUnknown101e5ca0@@QAEHPAX@Z CUnknown101e5ca0::sub_101e5ca0
 0x100047be func   ?vfunc103@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc103
 0x100047c3 func   _item_w_tzimisce2_head item_w_tzimisce2_head
 0x100047c8 func   ?sub_101ad440@CUnknown101ad440@@QAEHH@Z CUnknown101ad440::sub_101ad440
