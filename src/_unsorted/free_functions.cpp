@@ -84126,6 +84126,103 @@ void CBasePlayer::sub_1016f2a0(const char *pszFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016fa90 size=0x35b
+#include "vampire_all.h"
+#include "vampire.h"
+#include <string.h>
+
+class ICommandLine
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual int ParmValue(const char *psz, int nDefault);
+};
+extern ICommandLine *(*g_109f3874)();
+__declspec(dllimport) int Q_strnicmp(const char *s1, const char *s2, int n);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+
+struct IFileSystemTrackView
+{
+	virtual void *vfunc0(const char *pName, const char *pMode, int a);
+	virtual void vfunc1(void *h);
+	virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void vfunc14(const char *pName, int a);
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void vfunc20(char *pBuf, int nMax, void *h);
+	virtual void v21();
+	virtual const char *vfunc22(const char *pPattern, int *pHandle);
+	virtual const char *vfunc23(int hFind);
+	virtual void v24();
+	virtual void vfunc25(int hFind);
+};
+extern IFileSystemTrackView *g_1070b238;
+extern "C" int sscanf(const char *, const char *, ...);
+const char *sub_101d3730(const char *fmt, ...);
+int sub_101d1070(int a, int b);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+#define TS_MAX(a, b) (((a) > (b)) ? (a) : (b))
+
+// TARGET: CBasePlayer::sub_1016fa90
+void CBasePlayer::sub_1016fa90()
+{
+	static int s_nTrackStats = g_109f3874()->ParmValue("trackstats", 0);
+	if (!s_nTrackStats)
+		return;
+
+	int nMapLen = strlen(STRINGR(gpGlobals->mapname));
+	bool bNew = true;
+	for (int i = 0; i < m_MapVisits1e10.Count(); i++) {
+		if (!Q_strnicmp(STRINGR(gpGlobals->mapname), m_MapVisits1e10[i].m_szMap, nMapLen)) {
+			bNew = false;
+			break;
+		}
+	}
+
+	CBasePlayerMapVisit rec;
+	memset(&rec, 0, sizeof(rec));
+	rec.m_nTime44 = sub_101d1070(0, 0);
+	*(int *)(rec.m_szMap + 0x40) = (int)engine->vfunc119(0);
+	Q_strncpy(rec.m_szMap, STRINGR(gpGlobals->mapname), 0x40);
+
+	int hFind;
+	const char *pszFile = g_1070b238->vfunc22(sub_101d3730("logs/%s_*_trackstats.txt", STRINGR(m_pszName2078)), &hFind);
+	while (pszFile) {
+		bool bDelete = true;
+		const char *pszPath = sub_101d3730("logs/%s", pszFile);
+		void *hFile = g_1070b238->vfunc0(pszPath, "r", 0);
+		if (hFile) {
+			char szLine[0x40];
+			char szMap[0x40];
+			int nBirthday, n2, n3;
+			g_1070b238->vfunc20(szLine, 0x40, hFile);
+			sscanf(szLine, "%s %d %d %d\n\n", szMap, &nBirthday, &n2, &n3);
+			if (nBirthday == m_lBirthday) {
+				for (int j = 0; j < m_MapVisits1e10.Count(); j++) {
+					if (!Q_strnicmp(szMap, m_MapVisits1e10[j].m_szMap, TS_MAX((int)strlen(szMap), (int)strlen(m_MapVisits1e10[j].m_szMap)))) {
+						bDelete = false;
+						break;
+					}
+				}
+			}
+		}
+		g_1070b238->vfunc1(hFile);
+		if (bDelete)
+			g_1070b238->vfunc14(pszPath, 0);
+		pszFile = g_1070b238->vfunc23(hFind);
+	}
+	g_1070b238->vfunc25(hFind);
+
+	m_MapVisits1e10.AddToTail(rec);
+
+	if (bNew)
+		sub_1016f2a0(sub_101d3730("%s_%d_%s_trackstats", STRINGR(m_pszName2078), rec.m_nTime44, rec.m_szMap));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016fed0 size=0x15b
 #include "CBasePlayer.h"
 #include "ConVar.h"
