@@ -6151,6 +6151,7 @@
 0x100096ec func   ?vfunc103@CEnvFireSource@@QAEXXZ CEnvFireSource::vfunc103
 0x100096f1 func   ?vfunc249@CBaseDoor@@UAEXXZ CBaseDoor::vfunc249
 0x100096f6 func   _item_g_werewolf_bloodpack item_g_werewolf_bloodpack
+0x100096fb func   ?vfunc444@CNPC_VHengeyokai@@QAEXPAH@Z CNPC_VHengeyokai::vfunc444
 0x10009700 func   ?sub_10240b40@@YAMPBUSVec3@@0PBUSPlane1024@@@Z sub_10240b40
 0x10009705 func   ?sub_10193130@CContestedFields10193130@@QAEHH@Z CContestedFields10193130::sub_10193130
 0x1000970a func   ?sub_1013d3c0@@YADXZ sub_1013d3c0

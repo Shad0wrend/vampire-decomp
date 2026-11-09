@@ -510,6 +510,79 @@ void CNPC_VHengeyokai::vfunc448(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10380cb0 size=0x22a
+#include "CBaseEntity.h"
+#include "CNPC_VHengeyokai.h"
+#include "CAI_Motor.h"
+
+struct CHengeyokaiEnemiesView { void sub_102dfed0(Vector *pVec, CBaseEntity *pEnemy); };
+struct CHengeyokaiTaskView { char sub_10278c80(); void sub_10382d20(); };
+struct CHengeyokaiMotorView { void sub_102e0a60(float flYaw); };
+
+// TARGET: CNPC_VHengeyokai::vfunc444
+void CNPC_VHengeyokai::vfunc444(int *pTask)
+{
+	switch (*pTask) {
+	case 0xc9:
+	{
+		CBaseEntity *pEnemy = vfunc164();
+		Vector vec;
+		((CHengeyokaiEnemiesView *)vfunc541())->sub_102dfed0(&vec, pEnemy);
+		if (!(m_flags5d8c & 0x2000))
+			vfunc572();
+		m_pMotor5d44->sub_102e20b0(&vec.x, -1.0f);
+		if (sub_103822a0(pEnemy)) {
+			if (sub_10269aa0(0x1b) || gpGlobals->curtime >= m_fl6674)
+				sub_10273e80(0);
+		}
+		break;
+	}
+	case 0xca:
+	{
+		CBaseEntity *pEnemy = vfunc165();
+		Vector vec;
+		((CHengeyokaiEnemiesView *)vfunc541())->sub_102dfed0(&vec, pEnemy);
+		if (!(m_flags5d8c & 0x2000))
+			vfunc572();
+		m_pMotor5d44->sub_102e20b0(&vec.x, -1.0f);
+		if (sub_103822a0(pEnemy))
+			sub_10273e80(0);
+		break;
+	}
+	case 0x132:
+	case 0x133:
+		((CHengeyokaiTaskView *)this)->sub_10382d20();
+		if (vfunc248()) {
+			((CHengeyokaiMotorView *)m_pMotor5d44)->sub_102e0a60(180.0f);
+			sub_10273e80(0);
+		}
+		break;
+	case 0x134:
+		if (vfunc248())
+			sub_10273e80(0);
+		break;
+	case 0x14b:
+		sub_10383470();
+		break;
+	case 200:
+		if (!(m_flags5d8c & 0x2000))
+			vfunc572();
+		goto chase;
+	case 0x31:
+		if (!(m_flags5d8c & 0x2000))
+			vfunc572();
+	chase:
+		m_pMotor5d44->sub_102e1e20(-1);
+		if (((CHengeyokaiTaskView *)this)->sub_10278c80())
+			sub_10273e80(0);
+		break;
+	default:
+		sub_10011928(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10380f70 size=0x3
 #include "CNPC_VHengeyokai.h"
 bool CNPC_VHengeyokai::vfunc70()
