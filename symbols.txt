@@ -10890,6 +10890,7 @@
 0x10010177 func   ?sub_103048d0@CAI_Pathfinder@@QAE_NHPBM0@Z CAI_Pathfinder::sub_103048d0
 0x1001017c func   ?vfunc2@CServerGameEnts@@UAEXPAUCServerGameEntsEdict@@0@Z CServerGameEnts::vfunc2
 0x10010181 func   ?sub_100fb620@CEnvParticleUnit@@QAEXPBD@Z CEnvParticleUnit::sub_100fb620
+0x10010186 func   ?sub_100ce040@CEventQueue@@QAEXPAVCBaseEntity@@PBDM00H@Z CEventQueue::sub_100ce040
 0x1001018b func   ?sub_103324a0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_103324a0
 0x10010190 func   ?sub_101d0b70@@YAXPAUCEnt@@0H@Z sub_101d0b70
 0x10010195 func   ?vfunc338@CBaseCombatWeapon@@UAEXHH@Z CBaseCombatWeapon::vfunc338

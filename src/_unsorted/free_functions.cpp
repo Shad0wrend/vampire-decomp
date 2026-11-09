@@ -46710,6 +46710,18 @@ void CEventQueue::sub_100cdf10(CBaseEntity *pTarget, const char *pszAction, CVar
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce040 size=0x69
+#include "CBaseEntity.h"
+#include "CEventQueue.h"
+
+void CEventQueue::sub_100ce040(CBaseEntity *pTarget, const char *pszAction, float fireDelay, CBaseEntity *pActivator, CBaseEntity *pCaller, int nOutputID)
+{
+	CVariantCopy Value;
+	Value.sub_1000b320(0, 0);
+	sub_100cdf10(pTarget, pszAction, Value, fireDelay, pActivator, pCaller, nOutputID, CEQExtra());
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce0d0 size=0xb7
 #include "CEventQueue.h"
 #include "CVDmg_t.h"
