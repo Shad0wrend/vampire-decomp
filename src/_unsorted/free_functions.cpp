@@ -223755,6 +223755,31 @@ int CUnknown103e0960::sub_103e0960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e0980 size=0x54
+#include "CNPC_VZombie.h"
+#include "CAI_BaseNPCTroika.h"
+
+extern int (__cdecl *g_109f3868)(int, int);
+
+void CNPC_VZombie::sub_103e0980(int a)
+{
+	if (a == 4)
+		a = g_109f3868(1, 3);
+	m_nMode6678 = a;
+	switch (a)
+	{
+	case 2:
+	case 3:
+		((CAI_BaseNPCTroika *)this)->sub_102ae840(1, 0);
+		break;
+	case 5:
+	case 6:
+		((CAI_BaseNPCTroika *)this)->sub_102ae840(1, 0);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e0cd0 size=0x107
 extern "C" int _strcmpi(const char *, const char *);
 extern void (*g_109f366c)(const char *, ...);
