@@ -83,6 +83,7 @@
 0x100011d1 func   ?sub_101b6630@CUnknown101b6630@@QAEHXZ CUnknown101b6630::sub_101b6630
 0x100011db func   ?sub_1007f580@S1007f580@@QAEXH@Z S1007f580::sub_1007f580
 0x100011ea func   ?sub_1018f7f0@CUnknown1018f960@@QAEXAAUinputdata_t@@@Z CUnknown1018f960::sub_1018f7f0
+0x100011ef func   ?sub_103ad1b0@CAI_RatPlaneSolver@@QAEXXZ CAI_RatPlaneSolver::sub_103ad1b0
 0x100011f4 func   ?sub_10252240@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_10252240
 0x100011f9 func   ?sub_1034f9e0@CUnk1034f9e0@@QAEXXZ CUnk1034f9e0::sub_1034f9e0
 0x100011fe func   ?vfunc82@CCineAISchedule@@QAEPAUdatamap_t@@XZ CCineAISchedule::vfunc82

@@ -211892,6 +211892,19 @@ bool sub_103ad0f0(CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ad1b0 size=0x90
+#include "CAI_RatPlaneSolver.h"
+#include "utlvector.h"
+extern int vt_104c54dc;
+
+void CAI_RatPlaneSolver::sub_103ad1b0()
+{
+	*(int **)this = &vt_104c54dc;
+	((CUtlVector<int> *)&m_pBuf50)->~CUtlVector<int>();
+	((CUtlVector<int> *)&m_p3c)->~CUtlVector<int>();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad540 size=0x20
 extern int vt_104c552c;
 extern int vt_104c5500;
