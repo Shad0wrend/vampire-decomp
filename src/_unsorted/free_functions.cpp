@@ -43475,6 +43475,46 @@ void *sub_100c4a20(int a, int b, float c, int d, int e, int f, int g)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5400 size=0x186
+struct StudioHdr
+{
+	char m_pad0000[0x10c];
+	int m_nAnimBase;	// 0x10c
+};
+
+void *sub_100c7650(StudioHdr *pHdr, int iSeq, StudioHdr **ppHdr, float *pCache, const float *pPose);
+void sub_100c1c60(StudioHdr *pHdr, const float *pPose, void *pSeq, int iParam, float *pSetting, int *pIndex);
+
+struct SeqBlend
+{
+	char m_pad0000[0x38];
+	short m_blend[16][16];	// 0x38
+};
+
+void sub_100c5400(StudioHdr *pStudioHdr, int iSequence, const float *poseParameter, void **panim, float *weight)
+{
+	float pose[24];
+	SeqBlend *seqdesc = (SeqBlend *)sub_100c7650(pStudioHdr, iSequence, &pStudioHdr, pose, poseParameter);
+	if (pStudioHdr && seqdesc) {
+		int i0 = 0, i1 = 0;
+		float s0 = 0, s1 = 0;
+		sub_100c1c60(pStudioHdr, pose, seqdesc, 0, &s0, &i0);
+		sub_100c1c60(pStudioHdr, pose, seqdesc, 1, &s1, &i1);
+		panim[0] = (char *)pStudioHdr + pStudioHdr->m_nAnimBase + seqdesc->m_blend[i0][i1] * 0x48;
+		weight[0] = (1 - s0) * (1 - s1);
+		panim[1] = (char *)pStudioHdr + pStudioHdr->m_nAnimBase + seqdesc->m_blend[i0 + 1][i1] * 0x48;
+		weight[1] = (s0) * (1 - s1);
+		panim[2] = (char *)pStudioHdr + pStudioHdr->m_nAnimBase + seqdesc->m_blend[i0][i1 + 1] * 0x48;
+		weight[2] = (1 - s0) * (s1);
+		panim[3] = (char *)pStudioHdr + pStudioHdr->m_nAnimBase + seqdesc->m_blend[i0 + 1][i1 + 1] * 0x48;
+		weight[3] = (s0) * (s1);
+		return;
+	}
+	panim[3] = 0; panim[2] = 0; panim[1] = 0; panim[0] = 0;
+	weight[3] = 0; weight[2] = 0; weight[1] = 0; weight[0] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c5600 size=0x71
 struct S100c5600 { int pad[3]; int m_n; };
 
