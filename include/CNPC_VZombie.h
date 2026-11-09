@@ -49,6 +49,10 @@ public:
 	int vfunc440(int nSchedule);	// slot 440: maps the failed schedules 0x156 / 0x157 to 0x15e / 0x15f and 0x5b (DevMsg) to 0x165, else CNPC_VAnimal::vfunc440
 	int sub_10012283(int nSchedule);	// CNPC_VAnimal::vfunc440 (stub 0x10012283), tail called
 	void vfunc444(int *pTask);	// slot 444 "CNPC_VZombie::RunTask"-like (plain member): task handler of the zombie, unknown tasks go to CNPC_VAnimal::vfunc444
+	void sub_10289ee0(int a);
+	void sub_10280a50();
+	void sub_10272650(int a);
+	void sub_10009b06(int *pTask);	// CNPC_VAnimal::vfunc442 (stub 0x10009b06)
 	void sub_10273e80(char bForce);	// CAI_BaseNPC member (stub 0x1000ac68), called directly
 	void sub_103e0980(int a);	// hands the zombie the maker's value (CNPCMaker_Zombie::vfunc617), stub 0x1001128e
 	void sub_1029f300(int a);	// stub 0x10008931, called directly on the new zombie (also on the maker)
