@@ -71287,6 +71287,83 @@ void __fastcall sub_10129870(VelClampView *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129960 size=0x380
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CGib.h"
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "QAngle.h"
+
+extern int g_1070ba34;
+extern Vector g_1070ba40;
+extern Vector g_1070d1b0;
+extern char g_10566070[];
+void *sub_10136580(void *pName);
+void sub_101cf600(CBaseEntity *pEnt);
+
+void sub_10129960(CBaseEntity *pVictim, Vector vecOrigin, int cGibs)
+{
+	int i;
+
+	if (g_1070ba34 == 1)
+		return;
+
+	for (i = 0; i < cGibs; i++) {
+		CGib *pGib = (CGib *)sub_10136580(g_10566070);
+		pGib->sub_1012b080("models/stickygib.mdl");
+		pGib->m_nBody = enginerandom->vfunc2(0, 2);
+
+		if (pVictim) {
+			Vector vecPos(vecOrigin.x + enginerandom->vfunc1(-3.0f, 3.0f),
+				vecOrigin.y + enginerandom->vfunc1(-3.0f, 3.0f),
+				vecOrigin.z + enginerandom->vfunc1(-3.0f, 3.0f));
+			pGib->vfunc62(&vecPos.x);
+
+			Vector vecNewVelocity = g_1070ba40 * -1.0f;
+			vecNewVelocity.x += enginerandom->vfunc1(-0.15f, 0.15f);
+			vecNewVelocity.y += enginerandom->vfunc1(-0.15f, 0.15f);
+			vecNewVelocity.z += enginerandom->vfunc1(-0.15f, 0.15f);
+			vecNewVelocity = vecNewVelocity * 900.0f;
+
+			QAngle vecAngVelocity = *(const QAngle *)pGib->m_angVel3c8;
+			vecAngVelocity.x = enginerandom->vfunc1(250.0f, 400.0f);
+			vecAngVelocity.y = enginerandom->vfunc1(250.0f, 400.0f);
+
+			pGib->m_n730 = ((CAI_BaseNPC *)pVictim)->vfunc145();
+
+			if (pVictim->m_iHealth > -50)
+				vecNewVelocity = vecNewVelocity * 0.7f;
+			else if (pVictim->m_iHealth > -200)
+				vecNewVelocity = vecNewVelocity * 2.0f;
+			else
+				vecNewVelocity = vecNewVelocity * 4.0f;
+
+			pGib->sub_100b2f50(&vecAngVelocity.x);
+			pGib->sub_100b2e30(&vecNewVelocity.x);
+			pGib->vfunc93(6, 0);
+			{
+				ScopeTrace trace("CBaseEntity::RemoveSolidFlags", pGib->m_name26c ? pGib->m_name26c : g_106b8540);
+				((CCollisionProperty *)((char *)pGib + 0x270))->RemoveSolidFlags(4);
+			}
+			pGib->sub_1009edc0(&g_1070d1b0.x, &g_1070d1b0.x);
+			sub_101cf600(pGib);
+			pGib->m_pfnTouch = (void (CBaseEntity::*)(CBaseEntity *))&CGib::sub_10009a48;
+			pGib->sub_100ac4e0(0, 0, 0);
+		}
+		pGib->sub_10129870();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a610 size=0x99
 #include "CGib.h"
 
