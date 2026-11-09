@@ -9858,6 +9858,7 @@
 0x1000ec23 func   ?vfunc176@CTriggerBrush@@QAEXPAVCBaseEntity@@@Z CTriggerBrush::vfunc176
 0x1000ec28 func   ?sub_10122590@CGameMovement@@QAEXXZ CGameMovement::sub_10122590
 0x1000ec2d func   ?vfunc310@CNPC_VTzimisceRunner@@QAEHH@Z CNPC_VTzimisceRunner::vfunc310
+0x1000ec32 func   ?sub_1011e940@CGameMovement@@QAEXXZ CGameMovement::sub_1011e940
 0x1000ec37 func   ?vfunc82@CNPC_VTaxiDriver@@QAEPAUdatamap_t@@XZ CNPC_VTaxiDriver::vfunc82
 0x1000ec3c func   ?sub_100436c0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_100436c0
 0x1000ec41 func   ?vfunc198@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc198

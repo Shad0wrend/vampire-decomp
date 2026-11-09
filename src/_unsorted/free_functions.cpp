@@ -66752,6 +66752,149 @@ void sub_1011e8f0(Ray_t *pRay, unsigned int fMask, void *pPassEnt, int nGroup, C
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e940 size=0x473
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CBaseEntity.h"
+
+struct CStepVar1011e940 {
+	virtual void v0();
+	virtual char IsSet();
+	char m_pad[0x24];
+	float m_flValue;	// 0x28
+};
+struct CSurfaceProps1011e940 {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual int GetIndex(const char *name);
+	virtual void v4();
+	virtual void *GetData(int index);
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual CSurfaceProps1011e940 *GetProps();
+};
+struct CMoveStepView1011e940 {
+	char m_pad0000[0x3e0];
+	int m_n03E0;
+	char m_pad03e4[0x2328 - 0x3e4];
+	float m_fl2328;
+};
+extern CStepVar1011e940 *g_109ef094;
+extern CStepVar1011e940 *g_1070b2d4;
+extern CSurfaceProps1011e940 *g_1071a278;
+extern int g_1070b898;
+extern float g_104454c4;
+
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+#define STEP ((CMoveStepView1011e940 *)m_pMove)
+#define DATA ((CMoveDataView *)m_pMove)
+#define ENT ((CBaseEntity *)m_pMove)
+
+void CGameMovement::sub_1011e940()
+{
+	if (STEP->m_fl2328 > g_104454c4)
+		return;
+	if (ENT->sub_100b3700() & 0x60)
+		return;
+	if (DATA->g94() == 9)
+		return;
+	if (g_109ef094->IsSet())
+		return;
+	if (g_109ef094->m_flValue == g_104454c4)
+		return;
+
+	CSurfaceProps1011e940 *pProps = g_1071a278->GetProps();
+	void *pSurface = m_pSurface9c;
+	float flSpeed = PLAYER->m_vecVelocity.Length();
+	int bLadder = DATA->g94() == 10;
+	float flMin, flMax, flBonus;
+	float flVolume;
+
+	if (!(ENT->sub_100b3700() & 2) && !bLadder && !STEP->m_n03E0) {
+		flMin = 120.0f;
+		flMax = 220.0f;
+		flBonus = bLadder;
+	} else {
+		flMin = 60.0f;
+		flMax = 80.0f;
+		flBonus = 100.0f;
+	}
+	if (!bLadder) {
+		if (!DATA->vfunc209() && !STEP->m_n03E0)
+			return;
+	}
+	if (!(PLAYER->m_vecVelocity.Length2D() > 0.0))
+		return;
+	if (!(flSpeed >= flMin)) {
+		if (STEP->m_fl2328 != g_104454c4)
+			return;
+	}
+	int bShort = flSpeed < flMax;
+	if (bLadder) {
+		pSurface = pProps->GetData(pProps->GetIndex("ladder"));
+		flVolume = 0.35f;
+		STEP->m_fl2328 = 350;
+	} else if (STEP->m_n03E0 > 1) {
+		if (g_1070b898 == 0) {
+			g_1070b898++;
+			return;
+		}
+		if (g_1070b898++ == 3)
+			g_1070b898 = 0;
+		pSurface = pProps->GetData(pProps->GetIndex("wade"));
+		flVolume = 1.0f;
+		STEP->m_fl2328 = 600;
+	} else if (STEP->m_n03E0 == 1) {
+		pSurface = pProps->GetData(pProps->GetIndex("water"));
+		flVolume = 1.0f;
+		STEP->m_fl2328 = bShort ? 400 : 300;
+	} else {
+		STEP->m_fl2328 = bShort ? 400 : 300;
+		if (PLAYER->m_vecVelocity.Length2D() <= 100.0f)
+			STEP->m_fl2328 = 800;
+		switch ((char)m_bA4) {
+		default:
+			flVolume = bShort ? 0.2 : 0.5;
+			break;
+		case 'M':
+			flVolume = bShort ? 0.2 : 0.5;
+			break;
+		case 'D':
+			flVolume = bShort ? 0.25 : 0.55;
+			break;
+		case 'V':
+			flVolume = bShort ? 0.4 : 0.7;
+			break;
+		case 'G':
+			flVolume = bShort ? 0.2 : 0.5;
+			break;
+		case 'T':
+			flVolume = bShort ? 0.2 : 0.5;
+			break;
+		case 'S':
+			flVolume = bShort ? 0.2 : 0.5;
+			break;
+		}
+	}
+	STEP->m_fl2328 += flBonus;
+	if (ENT->sub_100b3700() & 2)
+		flVolume = flVolume * 0.35;
+	float flScale = g_1070b2d4->IsSet() ? g_104454c4 : g_1070b2d4->m_flValue;
+	flVolume = flScale * flVolume;
+	if (flVolume > 1.0)
+		flVolume = 1.0f;
+	if (!bLadder && !STEP->m_n03E0 && DATA->vfunc209()) {
+		if (!(PLAYER->m_fFlags24 & 0x79a) && PLAYER->m_vecVelocity.Length2D() <= flMin)
+			return;
+		slot16(pSurface, flVolume, 0);
+	} else {
+		slot16(pSurface, flVolume, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011eee0 size=0xf
 // TARGET: sub_1011eee0
 struct CUnknown1011eee0Inner
