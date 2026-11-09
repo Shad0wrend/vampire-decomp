@@ -6693,6 +6693,50 @@ void *CBaseEntity::sub_1003cd50(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003cf50 size=0x173
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+struct DataObjL {
+    virtual void a0();
+    virtual void a1();
+    virtual void *v2(CBaseEntity *pEntity);
+};
+extern DataObjL *g_106bd938[32];
+
+inline bool IsValidType(int type)
+{
+    ScopeTrace valid("CDataObjectAccessSystem::IsValidType", g_106b8540, g_106b8540);
+    if (type < 0 || type >= 32)
+        return false;
+    if (!g_106bd938[type])
+        return false;
+    return true;
+}
+
+inline void *CreateDataObject(CBaseEntity *pEntity, int type)
+{
+    ScopeTrace trace("CDataObjectAccessSystem::CreateDataObject", g_106b8540, g_106b8540);
+    if (!IsValidType(type))
+        return 0;
+    return g_106bd938[type]->v2(pEntity);
+}
+
+void *CBaseEntity::sub_1003cf50(int type)
+{
+    ScopeTrace trace("CBaseEntity::CreateDataObject", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+    sub_1003cbc0(type);
+    return CreateDataObject(this, type);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003d130 size=0x169
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
