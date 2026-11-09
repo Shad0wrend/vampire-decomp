@@ -946,6 +946,7 @@
 0x1000251d func   ?vfunc438@CNPC_VHunter@@QAEHXZ CNPC_VHunter::vfunc438
 0x10002522 func   ?sub_10056fd0@CBaseFire@@QAEXHHH@Z CBaseFire::sub_10056fd0
 0x10002527 func   ?sub_10107760@@YAPAHXZ sub_10107760
+0x1000252c func   ?sub_100d05d0@CVariantCopy@@QAE_NH@Z CVariantCopy::sub_100d05d0
 0x10002531 func   ?sub_10203420@@YAHH@Z sub_10203420
 0x10002536 func   ?sub_100aeda0@@YAXXZ sub_100aeda0
 0x10002540 func   ?vfunc48@CCameraTrack@@UAEMXZ CCameraTrack::vfunc48

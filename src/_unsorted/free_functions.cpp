@@ -46515,6 +46515,131 @@ void variant_t::sub_100d04b0(void *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d05d0 size=0x348
+#include "CBaseEntity.h"
+#include "CVariantCopy.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include "CGlobalEntityList.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern CGlobalEntityList g_106eb5d8;
+extern float g_104454c4;
+
+struct CVariantConvert : CVariantCopy
+{
+	void SetFloatS(float v) { flVal = v; m_fieldType = 1; }
+};
+
+bool CVariantCopy::sub_100d05d0(int newType)
+{
+	if (newType == m_fieldType)
+		return true;
+	if (newType == 0) {
+		sub_1000b320(0, 0);
+		return true;
+	}
+	if (newType == 0x12)
+		return true;
+	switch (m_fieldType) {
+	case 4:
+		switch (newType) {
+		case 1:
+			SetFloat((float)m_value);
+			return true;
+		case 5:
+			SetBool(m_value != 0);
+			return true;
+		}
+		break;
+	case 1:
+		switch (newType) {
+		case 4:
+			m_value = (int)flVal;
+			m_fieldType = 4;
+			return true;
+		case 5:
+			SetBool(flVal != g_104454c4);
+			return true;
+		}
+		break;
+	case 2:
+		switch (newType) {
+		case 4:
+			if (iszVal) {
+				m_value = atoi(iszVal);
+				m_fieldType = 4;
+				return true;
+			}
+			goto int0;
+		case 1:
+			if (iszVal) {
+				((CVariantConvert *)this)->SetFloatS(atof(iszVal));
+				return true;
+			}
+			goto float0;
+		case 5:
+			if (iszVal) {
+				int n = atoi(iszVal);
+				SetBool(n != 0);
+			} else {
+				rgba[0] = 0;
+				m_fieldType = 5;
+			}
+			return true;
+		case 3:
+			if (sscanf(STRINGR_F(iszVal), "[%f %f %f]", &vecVal[0], &vecVal[1], &vecVal[2]) == 0)
+				sscanf(STRINGR_F(iszVal), "%f %f %f", &vecVal[0], &vecVal[1], &vecVal[2]);
+			return true;
+		case 8: {
+			int r = 0, g = 0, b = 0, a = 255;
+			sscanf(STRINGR_F(iszVal), "%d %d %d %d", &r, &g, &b, &a);
+			rgba[0] = r;
+			rgba[1] = g;
+			rgba[2] = b;
+			rgba[3] = a;
+			return true;
+		}
+		case 12: {
+			CBaseEntity *ent = 0;
+			if (iszVal)
+				ent = (CBaseEntity *)g_106eb5d8.sub_100f7770(0, iszVal, 0, 0);
+			((EHANDLE *)&m_hEntity)->Set(ent);
+			m_fieldType = 12;
+			return true;
+		}
+		}
+		break;
+	case 12:
+		switch (newType) {
+		case 2:
+			return true;
+		}
+		break;
+	case 0:
+		switch (newType) {
+		case 4:
+int0:
+			m_value = 0;
+			m_fieldType = 4;
+			return true;
+		case 2:
+			m_value = 0;
+			m_fieldType = 2;
+			return true;
+		case 1:
+float0:
+			m_value = 0;
+			m_fieldType = 1;
+			return true;
+		}
+		break;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d0a00 size=0x1c4
 #include "CBaseEntity.h"
 #include "CVariantCopy.h"
