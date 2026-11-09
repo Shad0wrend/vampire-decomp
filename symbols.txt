@@ -1199,6 +1199,7 @@
 0x10002a13 func   ?sub_102e2790@CUnknown102e2790@@QAEHXZ CUnknown102e2790::sub_102e2790
 0x10002a18 func   ?sub_100deab0@CUnknown100deab0@@QAEMXZ CUnknown100deab0::sub_100deab0
 0x10002a1d func   ?sub_10399c70@@YIXPAD@Z sub_10399c70
+0x10002a22 func   ?sub_10103930@@YAXPAVCBaseEntity@@ABVVector@@HH_N1@Z sub_10103930
 0x10002a27 func   ?sub_102d08e0@CPhysBox@@QAEXH@Z CPhysBox::sub_102d08e0
 0x10002a2c func   ?sub_103facd0@@YAHXZ sub_103facd0
 0x10002a31 func   ?sub_102dd550@CUnknown102dd550@@QAEPBDXZ CUnknown102dd550::sub_102dd550

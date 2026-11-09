@@ -63888,6 +63888,47 @@ void block_101038b0::CUnk101038b0Unit::sub_101038b0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103930 size=0x244
+#include "CBaseEntity.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "UTIL_BloodStream.h"
+#include "engineiface.h"
+#include "engineserver.h"
+
+void sub_10103930(CBaseEntity *ent, const Vector &location, int nMagnitude, int nTrailLength, bool bPlaySound, const Vector &vecDir)
+{
+	Vector tmp = location + ((CEntitySoundOriginView *)ent)->a214() * 0.5f;
+	g_10566258->Sparks(tmp, nMagnitude, nTrailLength, &vecDir);
+
+	if (bPlaySound)
+	{
+		int edict = ent->m_pEdict2e0;
+		int entindex = engine->vfunc35(edict);
+		float flVolume = enginerandom->vfunc1(0.25f, 0.75f) * 0.4;
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)ent, 2.5f);
+		const char *pszSound;
+		switch (enginerandom->vfunc2(0, 6))
+		{
+		case 1:
+			enginesound->vfunc3(&filter, entindex, 2, "environmental/machines/sparks02.wav", flVolume, 2.5f, 0, 100, 0, 0, 1, 0);
+			break;
+		case 2:
+			enginesound->vfunc3(&filter, entindex, 2, "environmental/machines/sparks03.wav", flVolume, 2.5f, 0, 100, 0, 0, 1, 0);
+			break;
+		case 3:
+			enginesound->vfunc3(&filter, entindex, 2, "environmental/machines/sparks04.wav", flVolume, 2.5f, 0, 100, 0, 0, 1, 0);
+			break;
+		case 0:
+		case 4:
+		case 5:
+			enginesound->vfunc3(&filter, entindex, 2, "environmental/machines/sparks01.wav", flVolume, 2.5f, 0, 100, 0, 0, 1, 0);
+			break;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103c80 size=0x52
 struct ISaveRestoreOps;
 struct datamap_t;
