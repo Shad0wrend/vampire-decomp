@@ -70499,6 +70499,116 @@ void CGameMovement::sub_10127b00(Vector *pStart, Vector *pEnd)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127dd0 size=0x3a6
+#include "CBaseEntity.h"
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "ConVar.h"
+#include "globalvars.h"
+
+extern Vector g_1070d1b0;
+void sub_10139610(const QAngle *angles, Vector *forward, Vector *right, Vector *up);
+
+struct cplane_t_w
+{
+	Vector normal;
+	float dist;
+	unsigned char type;
+	unsigned char signbits;
+	unsigned char pad[2];
+};
+
+struct csurface_t_w
+{
+	const char *name;
+	short surfaceProps;
+	unsigned short flags;
+};
+
+struct CBaseTrace_w
+{
+	Vector startpos;
+	Vector endpos;
+	cplane_t_w plane;
+	float fraction;
+	int contents;
+	unsigned short dispFlags;
+	bool allsolid;
+	bool startsolid;
+};
+
+struct CGameTrace_w : CBaseTrace_w
+{
+	float fractionleftsolid;
+	csurface_t_w surface;
+	int hitgroup;
+	short physicsbone;
+	CBaseEntity *m_pEnt;
+	int hitbox;
+};
+
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+#define MOVE ((CMoveFlagsView *)m_pMove)
+
+void CGameMovement::sub_10127dd0()
+{
+	sub_101252e0();
+	if (PLAYER->m_flForwardMove != 0.0f || PLAYER->m_flSideMove != 0.0f || PLAYER->m_flUpMove != 0.0f)
+	{
+		Vector right, forward, up;
+		sub_10139610(&PLAYER->m_vecViewAngles0c, &forward, &right, &up);
+		float wishvel[3];
+		Vector wishdir;
+		{
+			float smove;
+			float fmove;
+			fmove = PLAYER->m_flForwardMove;
+			smove = PLAYER->m_flSideMove;
+			VectorNormalize(forward);
+			VectorNormalize(right);
+			for (int i = 0; i < 3; i++)
+				wishvel[i] = smove * right[i] + fmove * forward[i];
+		}
+		wishvel[2] += PLAYER->m_flUpMove;
+		VectorCopy(*(Vector *)wishvel, wishdir);
+		float wishspeed = VectorNormalize(wishdir);
+		if (wishspeed > PLAYER->m_flMaxSpeed)
+			wishspeed = PLAYER->m_flMaxSpeed;
+		float accel;
+		if (g_109ef28c->vfunc1())
+			accel = 0;
+		else
+			accel = g_109ef28c->m_fValue;
+		vfunc10(wishdir, wishspeed, accel);
+	}
+	if (PLAYER->m_vecVelocity.z > 0.0f)
+		sub_101256d0(0);
+	if (!(((CMoveDataView *)m_pMove)->vfunc209() && MOVE->m_vec3b0 == g_1070d1b0 && PLAYER->m_vecVelocity == g_1070d1b0))
+	{
+		sub_10004ebc();
+		if (((CMoveDataView *)m_pMove)->g94() == 6)
+			sub_10123e20();
+		VectorAdd(MOVE->m_vec3b0, PLAYER->m_vecVelocity, PLAYER->m_vecVelocity);
+		sub_10004ebc();
+		Vector dest;
+		VectorScale(PLAYER->m_vecVelocity, gpGlobals->frametime, dest);
+		VectorSubtract(PLAYER->m_vecVelocity, MOVE->m_vec3b0, PLAYER->m_vecVelocity);
+		CGameTrace_w trace;
+		trace = *(CGameTrace_w *)&sub_10123f40(dest);
+		sub_10004ebc();
+		if (trace.allsolid)
+		{
+			sub_101256d0(trace.m_pEnt);
+			PLAYER->m_vecVelocity.Init(0.0f, 0.0f, 0.0f);
+			return;
+		}
+		if (trace.fraction != 1.0f)
+			sub_10127b00(&trace.startpos, &dest);
+		sub_101252e0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128270 size=0x2f
 #include "CGameMovement.h"
 

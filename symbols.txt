@@ -9510,6 +9510,7 @@
 0x1000e156 func   ?vfunc5@CEntitySaveRestoreBlockHandler@@UAEXXZ CEntitySaveRestoreBlockHandler::vfunc5
 0x1000e160 func   ?sub_101945f0@CUtlRBTree12@@QAEXPBXAAGAA_N@Z CUtlRBTree12::sub_101945f0
 0x1000e165 func   ?vfunc5@CPropRadio@@QAEPAV1@I@Z CPropRadio::vfunc5
+0x1000e16a func   ?sub_10127dd0@CGameMovement@@QAEXXZ CGameMovement::sub_10127dd0
 0x1000e16f func   ?vfunc82@CParamsParticle@@UAEPAUdatamap_t@@XZ CParamsParticle::vfunc82
 0x1000e174 func   ?sub_1021c6d0@CPropHacking@@QAEDH@Z CPropHacking::sub_1021c6d0
 0x1000e179 func   ?vfunc242@CBaseTrigger@@QAEXH@Z CBaseTrigger::vfunc242
