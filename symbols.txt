@@ -13808,6 +13808,7 @@
 0x10014051 func   ?sub_10150e10@@YGHH@Z sub_10150e10
 0x1001405b func   ?sub_100773f0@CUnknown10077430@@QAEXXZ CUnknown10077430::sub_100773f0
 0x10014060 func   ?vfunc103@CNPC_VManBat@@QAEXXZ CNPC_VManBat::vfunc103
+0x10014065 func   ?sub_100ce2b0@CEventQueue@@QAEXPAVCBaseEntity@@UCVariantCopy@@MPBUCEQBlock16@@H@Z CEventQueue::sub_100ce2b0
 0x1001406a func   ?vfunc2@CPlayerEventsManager@@UAEXXZ CPlayerEventsManager::vfunc2
 0x1001406f func   ?vfunc81@CItemGJumblesFlyer@@QAEHXZ CItemGJumblesFlyer::vfunc81
 0x10014074 func   ?sub_10212200@CPropSign@@QAE_NXZ CPropSign::sub_10212200

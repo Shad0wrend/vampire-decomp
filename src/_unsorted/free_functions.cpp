@@ -46957,6 +46957,33 @@ void CEventQueue::sub_100ce210(CEQEvent *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ce2b0 size=0xc3
+#include "CBaseEntity.h"
+#include "CEventQueue.h"
+#include "CVariantCopy.h"
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+
+void CEventQueue::sub_100ce2b0(CBaseEntity *pTarget, CVariantCopy Value, float fireDelay, const CEQBlock16 *pBlock, int nOutputID)
+{
+	CEQNewEvent *e = new CEQNewEvent;
+	memset(e, 0, sizeof(CEQNewEvent));
+	e->m_nKind = 2;
+	e->m_flFireTime = fireDelay + gpGlobals->curtime;
+	e->m_iTarget = 0;
+	e->m_hTarget = pTarget;
+	e->m_iTargetInput = 0;
+	e->m_hActivator = 0;
+	e->m_hCaller = 0;
+	e->m_n3c = 0;
+	e->m_Variant = Value;
+	e->m_iOutputID = nOutputID;
+	e->m_Block = *pBlock;
+	sub_100ce210((CEQEvent *)e);
+	m_n54 = (int)e;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ce3c0 size=0x64
 struct Node_t { char pad[0x38]; Node_t *next; };
 struct CList_t {
