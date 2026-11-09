@@ -155875,6 +155875,72 @@ void sub_1023c450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023c760 size=0x23c
+#include "vampire_all.h"
+#include "CWorld.h"
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern char g_10538764[];
+extern char g_10559bf4[];
+extern char g_1055ef50[];
+extern "C" void *__cdecl __RTDynamicCast(void *pObj, long nVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+struct color32 { unsigned char r, g, b, a; };
+CBasePlayer *__cdecl sub_101cd9e0(int n);
+void __cdecl sub_101ce290(CBasePlayer *pPlayer, const color32 &color, float flFade, float flHold, int nFlags);
+void __cdecl sub_10265680(int n);
+__declspec(dllimport) void Warning(const char *fmt, ...);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+
+inline void FadeToBlack(CBasePlayer *pPlayer, float flTime, float flHold, int nFlags)
+{
+	color32 black;
+	black.r = black.g = black.b = 0;
+	black.a = 255;
+	sub_101ce290(pPlayer, black, flTime, flHold, nFlags);
+}
+
+// TARGET: CWorld::sub_1023c760
+void CWorld::sub_1023c760(float flFade, const char *pszLandmark, const char *pszLevel)
+{
+	CBasePlayer *pPlayer = sub_101cd9e0(1);
+	void *pLandmark = __RTDynamicCast(g_106eb5d8.sub_100f7770(0, pszLandmark, 0, 0), 0, g_10538764, g_10559bf4, 0);
+	void *pChangeLevel = __RTDynamicCast(g_106eb5d8.sub_100f7770(0, pszLevel, 0, 0), 0, g_10538764, g_1055ef50, 0);
+	if (!pszLandmark && !pszLevel) {
+		memset(m_szLandmark4d8, 0, sizeof(m_szLandmark4d8));
+		memset(m_szLevel4b8, 0, sizeof(m_szLevel4b8));
+		m_n4ac = 4;
+		m_f4b4 = gpGlobals->curtime;
+		float flTime = flFade > 10.0 ? 10.0 : (flFade < 0.1 ? 0.1 : flFade);
+		m_f4b0 = flTime;
+		FadeToBlack(pPlayer, flTime, 10.0f, 2);
+		return;
+	}
+	if (!pLandmark) {
+		Warning("FadoutLevelChange could not find teleport point: %s!\n", pszLandmark);
+		return;
+	}
+	if (!pChangeLevel) {
+		Warning("FadoutLevelChange could not find teleport point: %s!\n", pszLevel);
+		return;
+	}
+	if (!pPlayer) {
+		Warning("FadoutLevelChange could not find PLAYER!\n");
+		return;
+	}
+	Q_strncpy(m_szLandmark4d8, pszLandmark, 0x20);
+	Q_strncpy(m_szLevel4b8, pszLevel, 0x20);
+	flFade = flFade > 10.0 ? 10.0 : (flFade < 0.1 ? 0.1 : flFade);
+	m_f4b0 = flFade;
+	FadeToBlack(pPlayer, flFade, 1.0f, 10);
+	m_n4ac = 1;
+	m_f4b4 = gpGlobals->curtime;
+	pPlayer->sub_1015ef40();
+	sub_10265680(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ca30 size=0x2e8
 #include "CWorld.h"
 #include "CBaseLandmark.h"
