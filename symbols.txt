@@ -2425,6 +2425,7 @@
 0x10004651 func   ?vfunc259@CNPC_VWerewolf@@QAEXPAH@Z CNPC_VWerewolf::vfunc259
 0x1000465b func   ?sub_10139b00@@YAXPBVVector@@H@Z sub_10139b00
 0x10004660 func   ?vfunc113@CFuncParticle@@QAEXXZ CFuncParticle::vfunc113
+0x10004665 func   ?sub_1033f270@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033f270
 0x1000466a func   ?vfunc5@CNPC_VTzimisceHeadClaw@@QAEPAV1@I@Z CNPC_VTzimisceHeadClaw::vfunc5
 0x1000466f func   ?vfunc138@CNPC_VTaxiDriver@@QAEHXZ CNPC_VTaxiDriver::vfunc138
 0x10004674 func   ?sub_1036eb90@@YAHXZ sub_1036eb90
