@@ -313,6 +313,135 @@ bool CAI_LocalNavigator::vfunc7(CAI_LocalNavigatorStopState *pState, float flDis
 }
 // END FUNCTION
 
+// FUNCTION: 0x102de7b0 size=0x34b
+#include "CAI_LocalNavigator.h"
+#include "CVProfile.h"
+
+struct CCycleCountL
+{
+	unsigned __int64 m_Int64;
+	CCycleCountL() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm
+		{
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		CCycleCountL cnt;
+		cnt.Sample();
+		m_Int64 = cnt.m_Int64 - m_Int64;
+	}
+};
+
+inline void PopGroupL(CVProfile *p)
+{
+	--p->m_nGroupStackDepth;
+	int nOld = p->m_GroupIDStack[p->m_nGroupStackDepth + 1];
+	int nNew = p->m_GroupIDStack[p->m_nGroupStackDepth];
+	if (nNew != nOld && p->m_bVTuneGroupsEnabled && nOld == p->m_nVTuneGroupID)
+		vtune(false);
+}
+
+inline bool NodeExitScopeL(CVProfNode *n)
+{
+	if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0)
+	{
+		CCycleCountL *pc = (CCycleCountL *)&n->m_CurFrameTime;
+		pc->End();
+		n->m_TotalTime += pc->m_Int64;
+		PopGroupL(g_109f3648);
+	}
+	return n->m_nRecursions == 0;
+}
+
+struct NavSinkV {
+	virtual void s0();
+	virtual bool s1(CAI_LocalNavigatorStopState *p, float f, int *pRes);
+	virtual bool s2(CAI_LocalNavigatorStopState *p, float f, int *pRes);
+	virtual bool s3(CAI_LocalNavigatorStopState *p, float f, int *pRes);
+	virtual bool s4(CAI_LocalNavigatorStopState *p, float f, int *pRes);
+};
+struct MotorV {
+	virtual void m0(); virtual void m1(); virtual void m2(); virtual void m3();
+	virtual void m4(); virtual void m5(); virtual void m6(); virtual void m7();
+	virtual void m8(); virtual void m9(); virtual void m10(); virtual void m11();
+	virtual void m12(); virtual void m13(); virtual void m14(); virtual void m15();
+	virtual float m16();
+};
+struct OuterV {
+	char m_pad0000[0x5d44];
+	MotorV *m_pMotor;
+};
+struct NavV {
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void s3();
+	virtual void s4();
+	virtual bool s5(CAI_LocalNavigatorStopState *p, float *pF, int *pRes, float d, void *a);
+	virtual bool s6(CAI_LocalNavigatorStopState *p, float f, int *pRes, float d);
+	virtual bool s7(CAI_LocalNavigatorStopState *p, float f, int *pRes, float d);
+	OuterV *m_pOuter;
+	char m_pad0008[8];
+	NavSinkV m_sink;
+};
+
+#define EXIT_A { int r = result; g_109f3648->ExitScopeCall(); return r; }
+
+int CAI_LocalNavigator::vfunc4(CAI_LocalNavigatorStopState *pMove, float flDist, void *pArg)
+{
+	NavV *self = (NavV *)this;
+	g_109f3648->EnterScope("CAI_LocalNavigator_MoveCalcRaw", 0, "Unaccounted", false);
+	int result = 0;
+	float distClear = pMove->m_flStop28;
+	if (self->s5(pMove, &distClear, &result, flDist, pArg))
+		EXIT_A
+	if (self->m_sink.s1(pMove, distClear, &result))
+		EXIT_A
+	if (self->s6(pMove, distClear, &result, flDist))
+		EXIT_A
+	if (self->m_sink.s2(pMove, distClear, &result))
+		EXIT_A
+	if (self->m_sink.s3(pMove, distClear, &result))
+		EXIT_A
+	if (distClear < self->m_pOuter->m_pMotor->m16())
+	{
+		if (self->m_sink.s4(pMove, distClear, &result))
+		{
+			int r = result;
+			g_109f3648->ExitScope();
+			return r;
+		}
+		if (self->s7(pMove, distClear, &result, flDist))
+		{
+			int r = result;
+			g_109f3648->ExitScope();
+			return r;
+		}
+	}
+	if (distClear > pMove->m_flStop2c)
+	{
+		g_109f3648->ExitScope();
+		return 0;
+	}
+	CVProfile *prof = g_109f3648;
+	if (!prof->m_bAtRoot || prof->m_enabled)
+	{
+		if (NodeExitScopeL(prof->m_pCurNode))
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+	}
+	return -4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102debe0 size=0x1f7
 #include <math.h>
 #include "CAI_LocalNavigator.h"
