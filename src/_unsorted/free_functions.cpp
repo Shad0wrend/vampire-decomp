@@ -66869,6 +66869,57 @@ void __fastcall sub_1010f710(void *pThis, int a, CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f740 size=0x117
+#include "CPASFilter.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "TestBit.h"
+
+#define SL(n) virtual void s##n();
+#define SL10(p) SL(p##0) SL(p##1) SL(p##2) SL(p##3) SL(p##4) SL(p##5) SL(p##6) SL(p##7) SL(p##8) SL(p##9)
+
+struct S_TE
+{
+	SL(0) SL(1) SL(2) SL(3) SL(4) SL(5) SL(6) SL(7) SL(8) SL(9)
+	SL10(1) SL(20) SL(21) SL(22)
+	virtual void ShatterSurface(IRecipientFilter &filter, float delay, const Vector *pos, const QAngle *angle, const Vector *vForce, const Vector *vForcePos, float width, float height, float shardsize, int surfacetype, unsigned char frontr, unsigned char frontg, unsigned char frontb, unsigned char backr, unsigned char backg, unsigned char backb);
+};
+
+extern S_TE *g_10540528;
+
+struct S_Ent
+{
+	SL(0) SL(1) SL(2) SL(3) SL(4) SL(5) SL(6) SL(7) SL(8) SL(9)
+	SL10(1) SL10(2) SL10(3) SL10(4) SL10(5) SL10(6) SL10(7) SL10(8) SL10(9)
+	SL10(10) SL10(11) SL10(12) SL10(13) SL10(14) SL10(15) SL10(16) SL10(17) SL10(18) SL10(19)
+	SL10(20) SL10(21)
+	virtual const Vector &GetAbsOrigin();
+	virtual const QAngle &GetAbsAngles();
+	char pad[0x268 - 4];
+	unsigned int m_flags268;
+	char pad2[0x3bc - 0x26c];
+	Vector m_vecAbsVelocity;
+
+	const Vector &GetAbsVelocity()
+	{
+		if (TestBit(m_flags268, 12))
+			((CBaseEntity *)this)->sub_100b1d10();
+		return m_vecAbsVelocity;
+	}
+	void sub_1010f740();
+};
+
+void sub_101cd940(S_Ent *);
+
+void S_Ent::sub_1010f740()
+{
+	GetAbsVelocity();
+	CPASFilter filter(GetAbsOrigin());
+	g_10540528->ShatterSurface(filter, 0.0, &GetAbsOrigin(), &GetAbsAngles(), &GetAbsVelocity(), &GetAbsOrigin(), 12.0, 12.0, 4.0, 0, 255, 255, 255, 255, 255, 255);
+	sub_101cd940(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f8b0 size=0xfb
 #include "CGib.h"
 #include "CEntityVSlots.h"
