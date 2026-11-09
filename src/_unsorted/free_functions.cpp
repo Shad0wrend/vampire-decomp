@@ -82497,6 +82497,109 @@ void CUnk1014d110::sub_1014d110()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014dd50 size=0x33b
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CWeaponGravityGun.h"
+#include "globalvars.h"
+#include "CEHandleGet.h"
+
+#define TV(n) virtual void v##n();
+#define TV10(p) TV(p##0) TV(p##1) TV(p##2) TV(p##3) TV(p##4) TV(p##5) TV(p##6) TV(p##7) TV(p##8) TV(p##9)
+struct CThrowEnt
+{
+	TV(0) TV(1) TV(2) TV(3) TV(4) TV(5) TV(6) TV(7) TV(8) TV(9)
+	TV10(1) TV10(2) TV10(3) TV10(4) TV10(5) TV10(6) TV10(7) TV10(8) TV10(9)
+	TV10(10) TV10(11) TV10(12) TV10(13) TV10(14) TV10(15) TV10(16) TV10(17) TV10(18) TV10(19) TV10(20)
+	TV(210) TV(211) TV(212) TV(213) TV(214) TV(215) TV(216)
+	virtual Vector *vfunc217();
+	TV(218) TV(219)
+	virtual void vfunc220();
+	TV(221) TV(222) TV(223) TV(224) TV(225) TV(226) TV(227) TV(228) TV(229)
+	TV10(23) TV10(24) TV10(25) TV10(26) TV10(27) TV10(28) TV10(29) TV10(30) TV10(31) TV10(32) TV10(33) TV10(34) TV10(35)
+	TV(360) TV(361) TV(362) TV(363) TV(364) TV(365) TV(366) TV(367) TV(368)
+	virtual void vfunc369(Vector *pOut);
+	char m_pad4[0xa8 - 4];
+	void *m_pa8;
+	char m_padac[0x36c - 0xac];
+	IPhysicsObject *m_p36c;
+	char m_pad370[0x3d4 - 0x370];
+	Vector m_vel3d4;
+	const char *sub_100ab4f0();
+	IPhysicsObject *GetObj() { return m_p36c; }
+};
+
+struct CThrowPlayer { void sub_10167fd0(); void sub_1017e150(int a, float b, const char *c); };
+struct CThrowVis { virtual void v0(); virtual char vfunc1(); char m_pad[0x28 - 4]; float m_f28; int m_n2c; };
+struct CThrowStats { float sub_101e8480(void *pChar); float sub_101e8640(void *pChar); };
+extern CThrowStats g_10739d08;
+extern CThrowVis *g_1071a4a4;
+extern CThrowVis *g_1071a44c;
+extern const char *sub_101d3730(const char *, ...);
+extern float g_104454c4;
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+inline IPhysicsObject *ObjOf(CThrowEnt *p) { return p ? p->GetObj() : 0; }
+
+// TARGET: CWeaponGravityGun::sub_1014dd50
+void CWeaponGravityGun::sub_1014dd50()
+{
+	CThrowEnt *pHeld = (CThrowEnt *)g_10566458->sub_100290c0((const unsigned int *)&m_hHeld918);
+	IPhysicsObject *pPhys = ObjOf(pHeld);
+	if (!pPhys)
+		return;
+	CThrowEnt *pOwner = (CThrowEnt *)sub_10252240();
+	if (!(!pOwner)) { sub_1014d140();
+	m_flTimes730[0] = gpGlobals->curtime + 1.5;
+	pOwner->vfunc220();
+	Vector vecA;
+	pOwner->vfunc369(&vecA);
+	Vector vecDir;
+	pOwner->vfunc369(&vecDir);
+	vecDir *= 18.0f;
+	float flMass = pPhys->vfunc12();
+	g_10739d08.sub_101e8480(pOwner);
+	float flStat = g_10739d08.sub_101e8640(pOwner);
+	g_10739d08.sub_101e8480(pOwner);
+	float flPct = flStat * 0.01f;
+	float flScale = flPct / flMass;
+	if (flMass < 10.0f) {
+		if (flScale > 40.0f)
+			flScale = 40.0f;
+		else if (flScale < g_104454c4)
+			flScale = 0.0f;
+	} else {
+		if (flScale > 100.0f)
+			flScale = 100.0f;
+		else if (flScale < g_104454c4)
+			flScale = 0.0f;
+	}
+	Vector angImp;
+	angImp.y = 0;
+	angImp.z = 0;
+	Vector vecVel = vecDir * flScale + pOwner->m_vel3d4;
+	angImp.x = flScale * 6.0f;
+	pPhys->vfunc39((float *)&vecVel, (float *)&angImp);
+	CThrowPlayer *pPlayer = (CThrowPlayer *)pOwner->m_pa8;
+	if (!pPlayer)
+		return;
+	pPlayer->sub_10167fd0();
+	float flT = g_1071a4a4->vfunc1() ? g_104454c4 : g_1071a4a4->m_f28;
+	if (flT <= flScale && m_nB28 > 0) {
+		if (!g_1071a44c->vfunc1() && g_1071a44c->m_n2c) {
+			float flSpeedDamp = 0, flRotDamp = 0;
+			pPhys->vfunc18((const Vector *)&flSpeedDamp, (Vector *)&flRotDamp);
+			DevMsg("Physics object throw triggering criminal act (%d).  mass: %.2f lbs (%.2f kg) damping: %.2f %.2f (%.2f) pos: (%f, %f, %f)\n", m_nB28, flMass * 2.2f, flMass, flSpeedDamp, flRotDamp, m_controller93c.m_vec5c.x, pHeld->vfunc217()->x, pHeld->vfunc217()->y, pHeld->vfunc217()->z);
+		}
+		pPlayer->sub_1017e150(m_nB28, -1.0f, sub_101d3730("PhysicsThrow %s", pHeld ? pHeld->sub_100ab4f0() : "UNKNOWN"));
+	} }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e3f0 size=0x5b
 #include "CBaseEntity.h"
 struct matrix3x4_t;

@@ -14344,6 +14344,7 @@
 0x1001494d func   ?sub_10094790@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10094790
 0x10014952 func   ?vfunc363@CWeaponMelee_Knife@@UAEHXZ CWeaponMelee_Knife::vfunc363
 0x1001495c func   ?vfunc2@CTraitDependencyDataDescSaveDataOps@@UAE_NH@Z CTraitDependencyDataDescSaveDataOps::vfunc2
+0x10014961 func   ?sub_1014dd50@CWeaponGravityGun@@QAEXXZ CWeaponGravityGun::sub_1014dd50
 0x10014966 func   _item_a_lt_cloth item_a_lt_cloth
 0x1001496b func   ?sub_101e09c0@CUnk101e09c0@@QAEPADPAX@Z CUnk101e09c0::sub_101e09c0
 0x10014970 func   ?vfunc117@CPropButton@@UAEHXZ CPropButton::vfunc117
