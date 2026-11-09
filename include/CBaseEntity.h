@@ -307,7 +307,9 @@ public:
 	int m_nThinkContextsAlloc;	// 0x01bc
 	int m_pad01c0;
 	int m_nThinkContexts;	// 0x01c4
-	char m_pad01c8[0x1ec - 0x1c8];
+	char m_pad01c8[0x1cc - 0x1c8];
+	int m_iCurrentThinkContext;	// 0x01cc: index of the think context PhysicsRunThink is running, -1 outside
+	char m_pad01d0[0x1ec - 0x1d0];
 	void (CBaseEntity::*m_pfnTouch)(CBaseEntity *pOther);	// 0x01ec
 	void (CBaseEntity::*m_pfnUse)(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// 0x01f0
 	void (CBaseEntity::*m_pfnBlocked)(CBaseEntity *pOther);	// 0x01f4
