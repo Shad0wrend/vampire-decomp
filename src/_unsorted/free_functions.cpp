@@ -141358,6 +141358,31 @@ void CUnknown10217f50::sub_10217b30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10217f50 size=0x99
+#include "CUnknown10217f50.h"
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+extern "C" __declspec(dllimport) int __cdecl Q_strnicmp(const char *, const char *, int);
+
+void CUnknown10217f50::sub_10217f50(char value, const char *pszCommand)
+{
+	sub_10218820(2, 0);
+	m_b083c = value;
+	const char *pszScreen = slot274();
+	if (pszCommand && strlen(pszCommand) != 0 && Q_strnicmp(pszCommand, "quit", 4) != 0) {
+		if (Q_strnicmp(pszScreen, pszCommand, 16) == 0)
+			slot275();
+		else
+			slot276();
+	} else {
+		slot277();
+	}
+	memset(&m_quad, 0, sizeof(m_quad));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10218080 size=0xa
 void __fastcall sub_10218080(char *self, int, int)
 {

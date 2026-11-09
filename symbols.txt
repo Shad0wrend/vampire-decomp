@@ -551,6 +551,7 @@
 0x10001c1c func   ??0CWeaponRanged_FlameThrower@@QAE@XZ CWeaponRanged_FlameThrower::CWeaponRanged_FlameThrower
 0x10001c21 func   ?sub_10064870@@YAXHHPBVVector@@0HHHHDHHHH@Z sub_10064870
 0x10001c26 func   _npc_VSabbatLeader npc_VSabbatLeader
+0x10001c2b func   ?sub_10217f50@CUnknown10217f50@@QAEXDPBD@Z CUnknown10217f50::sub_10217f50
 0x10001c30 func   ?vfunc373@CHL2_Player@@QAEHH@Z CHL2_Player::vfunc373
 0x10001c3a func   ?vfunc4@CTEBeamPoints@@UAEXHH@Z CTEBeamPoints::vfunc4
 0x10001c3f func   ?sub_101f35e0@N101f35e0@@QAEXXZ N101f35e0::sub_101f35e0
