@@ -965,6 +965,90 @@ char CBasePlayer::vfunc327()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160f90 size=0x1cd
+#include "CBasePlayer.h"
+#include "CBaseAnimating.h"
+#include "CBaseCombatWeapon.h"
+#include "CUnknown10204e90.h"
+
+struct SeqInfo331
+{
+	char m_pad[0x2d4];
+	unsigned int m_nMask;
+};
+
+struct SeqIndex331
+{
+	int m_nSeq;
+	bool IsValid() const
+	{
+		if ( m_nSeq < 0 )
+			return false;
+		return true;
+	}
+};
+
+bool CBasePlayer::vfunc331(CBaseCombatWeapon *pWeapon, int a2, int nActivity, int *pOut)
+{
+	int seqs[0x800];
+	int seqs2[0x800];
+	int masks[0x800];
+
+	*pOut = -1;
+
+	if ( !((CBaseAnimating *)this)->sub_100952d0(-1) || pWeapon == 0 || !(pWeapon->vfunc360() & 0x18000) )
+		return false;
+
+	int nValue = ((CUnknown10204e90 *)((char *)pWeapon + (*pWeapon->sub_102517e0()) * 0x44 + 0x7a0))->sub_10204900(this);
+	int nCount = ((CBaseAnimating *)this)->sub_1008dac0(nActivity, (char *)seqs, (char *)seqs2, nValue);
+
+	unsigned int flags = m_nFlags2088 & 0x79a;
+	int i18, i14, i10;
+	i10 = i14 = i18 = -1;
+
+	for ( int i = 0; i < nCount; i++ )
+	{
+		SeqInfo331 *pInfo = (SeqInfo331 *)((CBaseAnimating *)this)->sub_1008d990(seqs[i]);
+		unsigned int masked = m_nFlags2088 & pInfo->m_nMask;
+		masks[i] = masked;
+
+		if ( pInfo->m_nMask == 0xffffffff )
+			continue;
+
+		if ( pInfo->m_nMask == 0 )
+		{
+			i10 = i;
+			if ( flags == 0 )
+			{
+				*pOut = seqs[i];
+				return true;
+			}
+		}
+		else if ( masked != 0 )
+		{
+			if ( masked == flags )
+			{
+				*pOut = seqs[i];
+				return true;
+			}
+			if ( masked & 0x18 )
+				i18 = i;
+			else if ( masked & 0x600 )
+				i14 = i;
+		}
+	}
+
+	if ( i18 >= 0 )
+		*pOut = seqs[i18];
+	else if ( i14 >= 0 )
+		*pOut = seqs[i14];
+	else if ( i10 >= 0 )
+		*pOut = seqs[i10];
+
+	return ((SeqIndex331 *)pOut)->IsValid();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161200 size=0x12b
 #include "CBasePlayer.h"
 struct CSequenceDescView {
