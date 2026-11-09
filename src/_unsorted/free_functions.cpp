@@ -177459,6 +177459,33 @@ int sub_102d3f50(const char *pszString)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d4060 size=0x2d
+#include "CUnknown10147d10.h"
+#include "CUnknown102d4060.h"
+#include "string_t.h"
+
+struct CVariantView102d4060
+{
+	char pad0[8];
+	string_t iszVal;	// 0x08
+	char pad1[0xc];
+	int fieldType;		// 0x18
+	string_t StringID() const { return (fieldType == 2) ? iszVal : string_t(0); }
+};
+
+struct CUnknownView102d4060
+{
+	char pad0[0x5d4];
+	string_t m_isz;
+};
+
+void CUnknown102d4060::sub_102d4060(CInputData10147d10 *data)
+{
+	string_t s; s = ((CVariantView102d4060 *)data)->StringID();
+	((CUnknownView102d4060 *)this)->m_isz = s;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d40a0 size=0x26
 extern char g_106b8540[];
 int sub_10431447(const char *);
