@@ -168008,6 +168008,64 @@ bool CAI_BaseNPCTroika::sub_102a0cb0(CAI_BaseNPCTroika *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a0d20 size=0x139
+#include "CBaseEntity.h"
+#include "CAI_BaseNPCTroika.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct S102a0d20Navigator
+{
+	int sub_102ee620();
+};
+
+struct S102a0d20Table
+{
+	char m_pad[0x64];
+	unsigned int m_nFlags;
+};
+
+struct S10924a6c
+{
+	virtual void v0();
+	virtual void v1();
+};
+
+extern S10924a6c *g_10924a6c;
+
+struct CTroikaUnit102a0d20 : CAI_BaseNPCTroika
+{
+	void sub_102a0d20();
+};
+
+// TARGET: sub_102a0d20
+void CTroikaUnit102a0d20::sub_102a0d20()
+{
+	CBaseEntity *pEntity = (CBaseEntity *)this;
+	ScopeTrace trace("CAI_BaseNPCTroika::UpdatePedestrianInfo", pEntity ? (STRINGR_F(pEntity->m_name26c)) : g_105387dc);
+	if (((S102a0d20Navigator *)m_p5d34)->sub_102ee620() == 8) {
+		sub_10015839(0x10);
+		sub_10015839(0x12);
+		sub_10015839(0x13);
+		float flTime = gpGlobals->curtime;
+		if (((unsigned char)(m_flags14b8 >> 2) & 1) && flTime > m_f6318) {
+			m_f6318 = flTime + 1.0f;
+			int mask = 0x10 << (((int)flTime >> 4) & 3);
+			if (((S102a0d20Table *)m_p630c)->m_nFlags & mask) {
+				g_10924a6c->v1();
+				sub_100041b0(0x13);
+				return;
+			}
+			g_10924a6c->v1();
+			sub_100041b0(0x12);
+			m_flags14b8 &= 0xfffffffb;
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0eb0 size=0xb
 void __fastcall sub_100037e2(void *);
 void __fastcall sub_102a0eb0(char *self)
