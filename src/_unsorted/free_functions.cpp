@@ -50436,6 +50436,60 @@ bool sub_100d94a0(CBaseCombatCharacter *pChar, int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9610 size=0xf4
+// TARGET: sub_100d9610
+#include "CBaseEntity.h"
+#include "CVariantCopy.h"
+#include "CUnk10230f00.h"
+
+struct CEventOwner
+{
+	void sub_100ce2b0(CBaseEntity *pSource, CVariantCopy blob, float flDelay, const CUnk10230f00 *pQuad, int n14);
+	bool sub_100ce600(int *pOut);
+};
+
+extern CEventOwner g_106e7050;
+extern void (__cdecl *g_109f3650)(int level, const char *pszText);
+
+#define OWNER_SCALE(p) (*(float *)((char *)(p) + 0x1488))
+
+bool sub_100d9610(CBaseEntity *pEnt, int nStat, int nValue, float flAmount)
+{
+	CUnk10230f00 block;
+	block.sub_10230f00(3, nStat);
+
+	void *pOwner = pEnt->m_pA8;
+
+	float flScale = 1.0f;
+	if (pOwner != 0 && OWNER_SCALE(pOwner) > 0.0f)
+		flScale = OWNER_SCALE(pOwner);
+
+	flAmount = flAmount / flScale;
+
+	if (flAmount >= 0.0f)
+	{
+		CVariantCopy value;
+		value.m_value = nValue;
+		value.m_fieldType = 4;
+
+		g_106e7050.sub_100ce2b0(pEnt, value, flAmount, &block, 0);
+
+		if (pOwner != 0)
+		{
+			int nId;
+			if (g_106e7050.sub_100ce600(&nId))
+			{
+				((float *)((char *)pOwner + 0x1adc))[nStat] += flAmount;
+				return true;
+			}
+			g_109f3650(1, "ERROR: Failed to find inserted discipline stat event!\n");
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9750 size=0x30
 struct CCharView
 {
