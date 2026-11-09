@@ -43395,6 +43395,119 @@ void sub_100c3440(CStudioView100c3440 *p, int idx, float f, int a4, int a5, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c3ce0 size=0x32f
+#include <math.h>
+
+struct matrix3x4_view { float m[12]; };
+struct QuatTriggerView
+{
+	float inv_tolerance;	// 0x00
+	float trigger[4];	// 0x04
+	float pos[3];		// 0x14
+	float quat[4];		// 0x20
+};
+struct QuatInterpView
+{
+	int control;		// 0x00
+	int numtriggers;	// 0x04
+	int triggerindex;	// 0x08
+	QuatTriggerView *pTrigger(int i) { return (QuatTriggerView *)((char *)this + triggerindex) + i; }
+};
+struct BoneView
+{
+	int m_pad0;
+	int parent;		// 0x04
+	char m_pad8[0x90 - 8];
+	int procindex;		// 0x90
+	char m_pad94[0xa0 - 0x94];
+	void *pProcedure() { if (procindex == 0) return 0; else return (char *)this + procindex; }
+};
+struct BoneAccView
+{
+	int m_pad0;
+	matrix3x4_view *m_pBones;	// 0x04
+	matrix3x4_view &GetBone(int i) { return m_pBones[i]; }
+};
+
+void sub_10138630(const matrix3x4_view *pIn, matrix3x4_view *pOut);
+void sub_10138df0(const matrix3x4_view *pIn1, const matrix3x4_view *pIn2, matrix3x4_view *pOut);
+void sub_10137e40(const matrix3x4_view *pMatrix, float *pQuat, float *pPos);
+float sub_1013af20(const float *p, const float *q);
+void sub_1013a9f0(const float *p, const float *q, float *qt);
+void sub_1013b090(const float *q, const float *pos, matrix3x4_view *pMatrix);
+void sub_1013b5a0(const float *q, float *angles);
+void sub_10139ac0(const float *angles, const float *pos, matrix3x4_view *pMatrix);
+
+#define QI_MAX(a, b) (((a) > (b)) ? (a) : (b))
+
+// TARGET: sub_100c3ce0
+void sub_100c3ce0(BoneView *pbones, int ibone, BoneAccView *bonetoworld)
+{
+	matrix3x4_view bonematrix;
+
+	QuatInterpView *pProc = (QuatInterpView *)pbones[ibone].pProcedure();
+	if (pProc && pbones[pProc->control].parent != -1)
+	{
+		float src[4];
+		float weight[32];
+		float scale = 0.0f;
+		float quat[4];
+		float pos[3];
+
+		matrix3x4_view worldToControlParent;
+		sub_10138630(&bonetoworld->GetBone(pbones[pProc->control].parent), &worldToControlParent);
+		matrix3x4_view controlBoneToControlParent;
+		sub_10138df0(&worldToControlParent, &bonetoworld->GetBone(pProc->control), &controlBoneToControlParent);
+		sub_10137e40(&controlBoneToControlParent, src, pos);
+
+		int i;
+		for (i = 0; i < pProc->numtriggers; i++)
+		{
+			float dot = (float)fabs(sub_1013af20(pProc->pTrigger(i)->trigger, src));
+			weight[i] = 1.0 - (acos(dot) * pProc->pTrigger(i)->inv_tolerance) * 2;
+			weight[i] = QI_MAX(0.0f, weight[i]);
+			scale += weight[i];
+		}
+
+		if (scale <= 0.001)
+		{
+			float angles[3];
+			sub_1013b5a0(pProc->pTrigger(0)->quat, angles);
+			sub_10139ac0(angles, pProc->pTrigger(0)->pos, &bonematrix);
+			sub_10138df0(&bonetoworld->GetBone(pbones[ibone].parent), &bonematrix, &bonetoworld->GetBone(ibone));
+			return;
+		}
+
+		scale = 1.0 / scale;
+
+		quat[0] = 0.0f; quat[1] = 0.0f; quat[2] = 0.0f; quat[3] = 0.0f;
+		pos[0] = 0.0f; pos[1] = 0.0f; pos[2] = 0.0f;
+
+		for (i = 0; i < pProc->numtriggers; i++)
+		{
+			if (weight[i] != 0.0f)
+			{
+				float s = scale * weight[i];
+				QuatTriggerView *pTrigger = pProc->pTrigger(i);
+
+				sub_1013a9f0(pTrigger->quat, quat, quat);
+
+				quat[0] = quat[0] + s * pTrigger->quat[0];
+				quat[1] = quat[1] + s * pTrigger->quat[1];
+				quat[2] = quat[2] + s * pTrigger->quat[2];
+				quat[3] = quat[3] + s * pTrigger->quat[3];
+				pos[0] = pos[0] + s * pTrigger->pos[0];
+				pos[1] = pos[1] + s * pTrigger->pos[1];
+				pos[2] = pos[2] + s * pTrigger->pos[2];
+			}
+		}
+		sub_1013b090(quat, pos, &bonematrix);
+	}
+
+	sub_10138df0(&bonetoworld->GetBone(pbones[ibone].parent), &bonematrix, &bonetoworld->GetBone(ibone));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c40e0 size=0x54
 struct Elem_100c40e0 { char pad[0x88]; unsigned char flags; char pad2[3]; int type; char pad3[0xa0-0x90]; };
 struct Base_100c40e0 { char pad[0xf4]; int offset; };
