@@ -13962,6 +13962,7 @@
 0x100143ad func   _func_button func_button
 0x100143b2 func   ?vfunc439@CBasePlayer@@UAEDXZ CBasePlayer::vfunc439
 0x100143bc func   ?sub_103d8060@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::sub_103d8060
+0x100143c1 func   ?sub_102df320@CUnknown102dfaa0@@QAEXXZ CUnknown102dfaa0::sub_102df320
 0x100143c6 func   ?sub_1029ea40@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029ea40
 0x100143cb func   ?sub_10309620@@YAXPAM00@Z sub_10309620
 0x100143d5 func   ?vfunc438@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc438

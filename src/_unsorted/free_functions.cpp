@@ -182052,6 +182052,114 @@ int sub_102df2f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102df320 size=0x30a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CUnknown102dfaa0.h"
+#include "CBaseEntity.h"
+#include "CCineNPCSlots.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "globalvars.h"
+
+struct CCyc { unsigned __int64 m; void Sample() { unsigned long *p = (unsigned long *)this; __asm { mov ecx, p
+ rdtsc
+ mov [ecx], eax
+ mov [ecx+4], edx } }
+ void End() { CCyc t; t.m = 0; t.Sample(); m = t.m - m; } };
+
+struct HandleList
+{
+	char sub_103167f0(void *pEnt);
+};
+struct CUnkMemEntView { char m_pad[0x94]; CCineNPCSlots *m_pAI; };
+struct CEntSlot217 {
+	CCS_V10(b0) CCS_V10(b1) CCS_V10(b2) CCS_V10(b3) CCS_V10(b4) CCS_V10(b5) CCS_V10(b6) CCS_V10(b7) CCS_V10(b8) CCS_V10(b9) CCS_V10(c0)
+	CCS_V10(c1) CCS_V10(c2) CCS_V10(c3) CCS_V10(c4) CCS_V10(c5) CCS_V10(c6) CCS_V10(c7) CCS_V10(c8) CCS_V10(c9) CCS_V10(d0)
+	CCS_V(d10) CCS_V(d11) CCS_V(d12) CCS_V(d13) CCS_V(d14) CCS_V(d15) CCS_V(d16)
+	virtual Vector *slot217();
+};
+int sub_102df1b0(int pRecord);
+
+inline char MemShouldForget(CUnknown102dfaa0 *pMem, CBaseEntity *pEnt)
+{
+	if (!pEnt)
+		return 1;
+	CCineNPCSlots *pAI = ((CUnkMemEntView *)pEnt)->m_pAI;
+	if (pAI && pAI->slot464() == 7) {
+		if (pMem->m_bUseHandles) {
+			if (pMem->m_pHandles)
+				return ((HandleList *)pMem->m_pHandles)->sub_103167f0(pEnt);
+		} else {
+			if (pMem->m_pTarget)
+				return pMem->m_pTarget->slot54(pEnt);
+		}
+	}
+	return 0;
+}
+
+void CUnknown102dfaa0::sub_102df320()
+{
+	ScopeTrace trace("CAI_Memory::RefreshMemories", g_106b8540, g_106b8540);
+	CVProfile *pv = g_109f3648;
+	if (pv->m_enabled || !pv->m_bAtRoot) {
+		if (pv->m_pCurNode->m_pszName != "CAI_Memory_RefreshMemories")
+			pv->m_pCurNode = pv->m_pCurNode->GetSubNode("CAI_Memory_RefreshMemories", 0, "Unaccounted");
+		pv->m_pCurNode->EnterScope();
+		pv->m_bAtRoot = false;
+	}
+
+	CUnknown102dfaa0_Record **ppPrev = &m_pHead;
+	CUnknown102dfaa0_Record *pRec = *ppPrev;
+	while (pRec) {
+		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(pRec->m_hEnt);
+		if (MemShouldForget(this, pEnt)) {
+			*ppPrev = pRec->m_pNext;
+			if (m_bUseHandles) {
+				if (m_pHandles)
+					m_pHandles->sub_103169a0((int)pEnt, pRec->m_vecA, pRec->m_vecB, (int)"CAI_Memory::RefreshMemories");
+			} else {
+				if (m_pTarget)
+					m_pTarget->slot56(pEnt, pRec->m_vecA, pRec->m_vecB, (int)"CAI_Memory::RefreshMemories");
+			}
+			sub_102df1b0((int)pRec);
+			if (!*ppPrev)
+				break;
+			pRec = (*ppPrev)->m_pNext;
+		} else {
+			if (pRec->m_flTime28 + m_flDecay10 > gpGlobals->curtime) {
+				Vector *pOrigin = ((CEntSlot217 *)pEnt)->slot217();
+				pRec->m_vecPos.x = pOrigin->x;
+				pRec->m_vecPos.y = pOrigin->y;
+				pRec->m_vecPos.z = pOrigin->z;
+			}
+			ppPrev = &pRec->m_pNext;
+			pRec = *ppPrev;
+		}
+	}
+
+	CVProfile *pe = g_109f3648;
+	if (!pe->m_bAtRoot || pe->m_enabled) {
+		CVProfNode *n = pe->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			((CCyc *)&n->m_CurFrameTime)->End();
+			n->m_TotalTime += n->m_CurFrameTime.m_Int64;
+			g_109f3648->PopGroup();
+		}
+		if (n->m_nRecursions == 0)
+			pe->m_pCurNode = pe->m_pCurNode->m_pParent;
+		pe->m_bAtRoot = (pe->m_pCurNode == pe->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102df700 size=0x273
 #include "CLogicAuto.h"
 #include "CAI_MemoryListSaveRestoreOps.h"
