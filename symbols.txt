@@ -8475,6 +8475,7 @@
 0x1000cc25 func   ?vfunc138@CNPC_VTremere@@UAEHXZ CNPC_VTremere::vfunc138
 0x1000cc2a func   ?sub_10249aa0@CUnknown10249aa0@@QAEHI@Z CUnknown10249aa0::sub_10249aa0
 0x1000cc2f func   ?sub_10073790@CUnknown10073790@@QAEHXZ CUnknown10073790::sub_10073790
+0x1000cc34 func   ?vfunc460@CAI_BaseNPCTroika@@UAEHXZ CAI_BaseNPCTroika::vfunc460
 0x1000cc39 func   ?sub_102d14c0@CAI_BaseNPCTroika@@QAE_NXZ CAI_BaseNPCTroika::sub_102d14c0
 0x1000cc3e func   ?sub_101a7580@@YGXH@Z sub_101a7580
 0x1000cc43 func   ?sub_1006c0a0@CUnknown1006bea0@@QAEXPAD@Z CUnknown1006bea0::sub_1006c0a0

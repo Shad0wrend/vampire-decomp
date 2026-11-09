@@ -713,6 +713,96 @@ int CAI_BaseNPCTroika::sub_102ad2d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ad340 size=0x275
+#include "CAI_BaseNPCTroika.h"
+#include "engineiface.h"
+#include "globalvars.h"
+
+int sub_1042fe90(unsigned int);
+
+#define HASH(x) (((((((x) & 0x68d8635) ^ 0xce9f66a) + 0xffa91d8) & 0x197279ca) ^ (x)) ^ 0xa641cacd)
+
+struct CTroikaView102ad340
+{
+	char pad[0x5cc0];
+	int m5cc0;
+	int m5cc4;
+	char pad1[0x607c - 0x5cc8];
+	float m607c;
+	char pad2[0x6364 - 0x6080];
+	int m6364;
+	char pad3[0x638c - 0x6368];
+	EHANDLE m638c;
+	char pad4[0x63f8 - 0x6390];
+	int m63f8;
+	char pad5[0x65cc - 0x63fc];
+	int m65cc;
+	char pad6[0x65f8 - 0x65d0];
+	char m65f8;
+};
+
+// TARGET: CAI_BaseNPCTroika::vfunc460
+int CAI_BaseNPCTroika::vfunc460()
+{
+	CTroikaView102ad340 *v = (CTroikaView102ad340 *)this;
+	int n = v->m65cc;
+	m_n1b38 = 2;
+	if (n) {
+		m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		m_nLine1b40 = 0x4495;
+		m_n5cc4 = n;
+		v->m65cc = 0;
+		return n;
+	}
+	if (sub_10269d30(0x46) && m_f607c == 0.0f) {
+		m_f607c = enginerandom->vfunc1(1.0f, 3.0f) + gpGlobals->curtime;
+	} else if (sub_10014df8(0x48)) {
+		m_f607c = 0;
+	}
+	if (sub_102ad260())
+		return m_n5cc4;
+	if (sub_102ad2d0())
+		return m_n5cc4;
+	if (sub_10269d30(0x44)) {
+		int state = 8;
+		if (m_n5cc0 != state)
+			m_flags14b8 |= 0x100;
+		m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		m_nLine1b40 = 0x44b8;
+		m_n5cc4 = state;
+		return state;
+	}
+	if (sub_10269d30(0x22)) {
+		m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		m_nLine1b40 = 0x44be;
+		m_n5cc4 = 2;
+		return 2;
+	}
+	if (sub_10269d30(0x20)) {
+		int h = HASH(v->m6364);
+		int a = sub_1042fe90(h);
+		int b = sub_1042fe90(0x3cf445af);
+		if (a <= b && m_n5cc0 != 2 && m_n5cc0 != 0xe) {
+			if (v->m638c.Get() && vfunc404(v->m638c.Get()) == 1)
+				goto fail;
+			if (v->m65f8) {
+				v->m63f8 = 0;
+				m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+				m_nLine1b40 = 0x44d3;
+				m_n5cc4 = 0xe;
+				return 0xe;
+			}
+		}
+fail:
+		m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+		m_nLine1b40 = 0x44cb;
+		m_n5cc4 = 2;
+		return 2;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ad660 size=0x78a
 #include "CAI_BaseNPC.h"
 #include "CAI_BaseNPCTroika.h"
