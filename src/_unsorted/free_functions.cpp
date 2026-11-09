@@ -79849,6 +79849,63 @@ void sub_10144a30(const Vector *pvA, const Vector *pvB, float f3, float f4, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144db0 size=0x219
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "DebugOverlay.h"
+// TARGET: sub_10144db0
+#include "CBaseEntity.h"
+#include "CEdictView.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "CSingleUserRecipientFilter.h"
+#include "Vector.h"
+
+void __cdecl sub_10144db0(const Vector *pPos, const Vector *pVec2, float f3, float f4,
+                          float f5, int i6, int i7, int i8, int i9, float f10)
+{
+    CBaseEntity *pEntity;
+    {
+        CEdictView *pEdict = (CEdictView *)engine->vfunc38(1);
+        ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+        if (!pEdict)
+            pEdict = (CEdictView *)engine->vfunc38(0);
+        if (pEdict && pEdict->m_pUnk)
+            pEntity = (CBaseEntity *)pEdict->m_pUnk->vfunc4();
+        else
+            pEntity = 0;
+    }
+
+    if (!pEntity)
+        return;
+
+    if (((CEntityVSlots *)pEntity)->slot220()->DistToSqr(*pPos) > 9e7f)
+        return;
+
+    {
+        CSingleUserRecipientFilter filter(pEntity);
+        engine->vfunc65(&filter, 0x3b);
+        engine->vfunc75((int)pPos);
+        engine->vfunc75((int)pVec2);
+        engine->vfunc72(f3);
+        engine->vfunc72(f4);
+        engine->vfunc72(f5);
+        engine->vfunc69(i6);
+        engine->vfunc69(i7);
+        engine->vfunc69(i8);
+        engine->vfunc69(i9);
+        engine->vfunc72(f10);
+        engine->vfunc66();
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145060 size=0x5e
 struct SPoolItem { char pad[0x24]; char b24; char b25; char pad2[2]; };
 extern int g_1057ae40;

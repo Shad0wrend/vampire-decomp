@@ -4688,6 +4688,7 @@
 0x100077bb func   ?sub_102dd580@CUnknown102dd580@@QAEPBDXZ CUnknown102dd580::sub_102dd580
 0x100077c0 func   ?sub_104047d0@@YAHXZ sub_104047d0
 0x100077c5 func   ?sub_103b1d60@@YAEXZ sub_103b1d60
+0x100077ca func   ?sub_10144db0@@YAXPBVVector@@0MMMHHHHM@Z sub_10144db0
 0x100077cf func   ?sub_10412550@@YAHH@Z sub_10412550
 0x100077d4 func   ?sub_103b31a0@@YAXXZ sub_103b31a0
 0x100077d9 func   ?sub_103be150@@YIHPAD@Z sub_103be150
