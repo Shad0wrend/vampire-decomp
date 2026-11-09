@@ -165253,6 +165253,69 @@ void CAI_BaseNPCTroika::sub_102989e0(const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10299a80 size=0x174
+// TARGET: ?sub_10299a80@CAI_BaseNPCTroika@@QAEXXZ
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "Tier1.h"
+
+struct CInterestingPlaceX
+{
+	char m_pad0000[0x540];
+	CInterestingPlaceX *m_pNext540;
+	char m_pad0544[0x584 - 0x544];
+	int m_nChildren584;
+	void *sub_102da9a0(int i);
+	const char *sub_1000b5cd();
+};
+
+extern CInterestingPlaceX *g_10927194;
+
+inline bool IsInterestingPlaceValid(CInterestingPlaceX *pPlace)
+{
+	for (CInterestingPlaceX *p = g_10927194; p; p = p->m_pNext540)
+		if (p == pPlace)
+			return true;
+	return false;
+}
+
+void CAI_BaseNPCTroika::sub_10299a80()
+{
+	if (!m_p62ec)
+		return;
+
+	if (!IsInterestingPlaceValid((CInterestingPlaceX *)m_p62ec)) {
+		g_109f3630("ERROR: %s loc( %6.2f, %6.2f, %6.2f) thinks they are at an interesting place that no longer seems to be a valid entity!\n",
+			sub_1000b5cd(),
+			(double)((CEntityVSlots *)this)->slot220()->x,
+			(double)((CEntityVSlots *)this)->slot220()->y,
+			(double)((CEntityVSlots *)this)->slot220()->z);
+		m_p62ec = 0;
+		return;
+	}
+
+	bool bFound = false;
+	for (int i = 0; i < ((CInterestingPlaceX *)m_p62ec)->m_nChildren584; i++) {
+		if (((CInterestingPlaceX *)m_p62ec)->sub_102da9a0(i) == (void *)this)
+			bFound = true;
+	}
+	if (bFound)
+		return;
+
+	g_109f3630("ERROR: %s loc( %6.2f, %6.2f, %6.2f) thinks they are at %s but that InterestingPlace, loc(%6.2f, %6.2f, %6.2f) does not know that.\n",
+		sub_1000b5cd(),
+		(double)((CEntityVSlots *)this)->slot220()->x,
+		(double)((CEntityVSlots *)this)->slot220()->y,
+		(double)((CEntityVSlots *)this)->slot220()->z,
+		((CInterestingPlaceX *)m_p62ec)->sub_1000b5cd(),
+		(double)((CEntityVSlots *)m_p62ec)->slot220()->x,
+		(double)((CEntityVSlots *)m_p62ec)->slot220()->y,
+		(double)((CEntityVSlots *)m_p62ec)->slot220()->z);
+
+	m_p62ec = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10299c60 size=0x51
 struct SObj {
 	virtual void v0();
