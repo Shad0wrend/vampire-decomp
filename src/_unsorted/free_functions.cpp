@@ -69926,6 +69926,29 @@ void sub_1012c6c0(CMoveEnt *pParent, CMoveEnt *pChild)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c7a0 size=0x37
+struct CLinkView
+{
+    virtual void v0();
+    virtual const CBaseHandle &GetRefEHandle() const;
+    int m_pad[0x25c / 4 - 1];
+    CBaseHandle m_hMoveParent;
+    CBaseHandle m_hMoveChild;
+    CBaseHandle m_hMovePeer;
+};
+
+static inline void SetHandle(CBaseHandle &h, const CBaseHandle &src) { h = src; }
+
+// TARGET: sub_1012c7a0
+void sub_1012c7a0(CLinkView *pParent, CLinkView *pChild)
+{
+    pChild->m_hMovePeer = pParent->m_hMoveChild;
+    CBaseHandle *pDst = &pParent->m_hMoveChild;
+    *pDst = pChild->GetRefEHandle();
+    pChild->m_hMoveParent = pParent->GetRefEHandle();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c840 size=0x82
 #include "CGlobalEntityList.h"
 
