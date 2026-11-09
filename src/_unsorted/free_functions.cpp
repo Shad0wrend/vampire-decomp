@@ -163356,6 +163356,43 @@ bool CUnknown1028ebc0::sub_1028ebc0(void *pRecord)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028fa50 size=0xe0
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown102cabd0.h"
+#include "CDevFlagObj.h"
+extern CUnknown102cabd0 *g_109253f8;
+extern CDevFlagObj *g_10924a6c;
+void CAI_BaseNPCTroika::sub_1028fa50()
+{
+	float *pTimer = (float *)((char *)this + 0x6608);
+	if (gpGlobals->curtime >= *pTimer) {
+		*pTimer = enginerandom->vfunc1(2.0f, 2.5f) + gpGlobals->curtime;
+		sub_10269b50(0x3d);
+		sub_10269b50(0x3e);
+		void *ents[4];
+		int n = g_109253f8->sub_102cabd0((CUnknown1028ebc0 *)this, ents, 4);
+		while (n > 0) {
+			char *pEnt = (char *)ents[--n];
+			CBaseEntity *pOther;
+			if (!pEnt)
+				goto both;
+			pOther = *(CBaseEntity **)(pEnt + 0x98);
+			if (!pOther)
+				goto both;
+			switch (vfunc404(pOther)) {
+			case 3:
+			case 4:
+both:
+				if (g_10924a6c->vfunc1()) sub_10269a20(0x3e); else sub_10269a20(0x3e);
+			case 1:
+			case 2:
+				if (g_10924a6c->vfunc1()) sub_10269a20(0x3d); else sub_10269a20(0x3d);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028fb70 size=0xd1
 #include "CUnknown1028fb70.h"
 
