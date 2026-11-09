@@ -206059,6 +206059,48 @@ void CBaseCombatCharacter::sub_10346760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10346910 size=0x14e
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "ConVar.h"
+#include "CUnknown103498b0.h"
+#include "utlvector.h"
+#include "Tier1.h"
+
+extern ConVar *g_1074f04c;
+
+void CBaseCombatCharacter::sub_10346910(CBaseEntity *pTarget)
+{
+	ScopeTrace trace("CBaseCombatCharacter::MeleeRollAndSendNotice", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pTarget) {
+		int iRoll = sub_10346380(pTarget);
+		if (iRoll >= 0) {
+			CUtlVector<CUnknown103498b0> &rolls = *(CUtlVector<CUnknown103498b0> *)((char *)this + 0xa88);
+			if (!g_1074f04c->vfunc1() && g_1074f04c->m_nValue) {
+				g_109f3630("Incoming Attack: Defender should: dodge=(%d) and block=(%d)\n",
+					rolls[iRoll].sub_10349970(),
+					rolls[iRoll].sub_103499a0());
+			}
+			((CEntityVSlots *)pTarget)->slot316((CEntityVSlots *)this,
+				rolls[iRoll].sub_10349970(),
+				rolls[iRoll].sub_103499a0());
+		} else {
+			((CEntityVSlots *)pTarget)->slot316((CEntityVSlots *)this, 0, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10346ac0 size=0xc0
 #include "CBaseCombatCharacter.h"
 #include "CEntityVSlots.h"
