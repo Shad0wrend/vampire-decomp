@@ -14,6 +14,181 @@ bool __stdcall sub_103ba780(char *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bb7c0 size=0xa7c
+#include "CBaseEntity.h"
+#include "CNPC_VTzimisce.h"
+#include "Vector.h"
+extern CNPC_VTzimisceConVar *g_1093cce4;
+
+#define SRET(v, line) { m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp"; m_nLine1b34 = line; return v; }
+
+inline bool IsSched(CNPC_VTzimisce *p, int id)
+{
+	return p->m_pTask5c38 && (int)p->m_pTask5c38 == p->sub_102cc1f0(id);
+}
+
+int CNPC_VTzimisce::vfunc438()
+{
+	m_n1b2c = 0x26;
+	if ((m_flags14b8 & 2) == 2) {
+		m_flags14b8 &= ~2;
+		SRET(0x187, 0x939)
+	}
+	int r = enginerandom->vfunc2(0, 99);
+	if (r < 50)
+		vfunc627();
+	switch (m_nState5cc0) {
+	case 11: {
+		if (sub_103be130())
+			SRET(0x198, 0xa60)
+		if (sub_10269aa0(1))
+			SRET(0x15d, 0xa66)
+		if (sub_10269aa0(0x6a) || sub_10269aa0(0x6d) || sub_10269aa0(0x6e) || sub_10269aa0(0x70) || sub_10269aa0(0x6f)) {
+			m_f623c = gpGlobals->curtime + 2.0f;
+			sub_102b4090();
+			SRET(0x15c, 0xa72)
+		}
+		int r2 = enginerandom->vfunc2(0, 99);
+		if (r2 < 20)
+			SRET(0x15f, 0xa81)
+		if (r2 < 40)
+			SRET(0x160, 0xa85)
+		if (r2 < 45)
+			SRET(0x161, 0xa89)
+		if (~m_flags14b8 & 0x1000) {
+			CBaseEntity *pEnemy = vfunc168();
+			if (!pEnemy)
+				SRET(0x15a, 0xa92)
+			switch (sub_103bfa50(pEnemy)) {
+			case 0x36b0:
+				SRET(0x17c, 0xa9a)
+			case 0x36b1:
+				SRET(0x17e, 0xa9b)
+			case 0x36ba:
+				SRET(0x17f, 0xa9c)
+			case 0x36bb:
+				SRET(0x180, 0xa9d)
+			default:
+				if (!vfunc167())
+					SRET(0x15a, 0xaa0)
+				SRET(0x159, 0xaa1)
+			}
+		}
+		SRET(0x15b, 0xaa7)
+	}
+	case 3: {
+		int n = sub_102b8a60();
+		if (n)
+			return n;
+		n = sub_102b9060();
+		if (n)
+			return n;
+	}
+	default:
+		return sub_102af660();
+	case 2: {
+		m_b5b80 = 0;
+		if (sub_10269aa0(0x58) && sub_103be130())
+			SRET(0x198, 0x962)
+		if (sub_10269aa0(0x77) && sub_103be130())
+			SRET(0x198, 0x96a)
+		if (sub_10269aa0(0x78) && sub_103be130())
+			SRET(0x195, 0x972)
+		if (!m_b6689 && sub_10269aa0(0x54))
+			SRET(5, 0x980)
+		int nSomething;
+		if (sub_1032e7b0(this))
+			nSomething = sub_1032e7b0(this)->vfunc360();
+		else
+			nSomething = 0;
+		if (sub_103be090()) {
+			sub_103be050(0);
+			if (sub_10269d30(0x51)) {
+				m_hTarget = -1;
+				sub_102c43b0(0);
+				return sub_103bc820();
+			}
+			if (sub_10269d30(0x5f) || sub_10269d30(8)) {
+				m_hTarget = -1;
+				sub_102c43b0(0);
+				return sub_103bc820();
+			}
+			int n = sub_103bc4e0();
+			if (n)
+				return n;
+			m_hTarget = -1;
+			sub_102c43b0(0);
+			SRET(0x170, 0x9af)
+		}
+		if (sub_103be130()) {
+			if (sub_103be150()) {
+				if (!vfunc530((CBaseEntity *)vfunc167()))
+					SRET(0x193, 0x9c3)
+			}
+			if ((sub_10269aa0(0x48) || !sub_10269aa0(0x46)) && !sub_10269aa0(0x1b))
+				SRET(0x169, 0x9cb)
+			if (sub_10269aa0(0x5f) || sub_10269aa0(8))
+				SRET(0x198, 0x9d0)
+			if (sub_10269aa0(0x1b)) {
+				if (!m_b66b4 && enginerandom->vfunc2(0, 99) < 5) {
+					m_b66b4 = 1;
+					if (!sub_103be8e0((CBaseEntity *)vfunc167()))
+						SRET(0x194, 0x9dc)
+					SRET(0x196, 0x9df)
+				}
+				if (!sub_103be8e0((CBaseEntity *)vfunc167()))
+					SRET(0x192, 0x9e5)
+				SRET(0x195, 0x9e8)
+			}
+			SRET(0x169, 0x9ec)
+		}
+		m_flags14b8 &= ~8;
+		int n = sub_103bc4e0();
+		if (n)
+			return n;
+		if (vfunc530((CBaseEntity *)vfunc167())) {
+			switch (sub_103bfa50((CBaseEntity *)vfunc167())) {
+			case 0x36b0:
+				SRET(0x17c, 0xa03)
+			case 0x36b1:
+				SRET(0x17e, 0xa04)
+			case 0x36ba:
+				SRET(0x17f, 0xa05)
+			case 0x36bb:
+				SRET(0x180, 0xa06)
+			default:
+				SRET(0x16a, 0xa07)
+			}
+		}
+		if (sub_10269aa0(0x48))
+			SRET(0x167, 0xa0e)
+		if (!vfunc530((CBaseEntity *)vfunc167())) {
+			Vector vecPos;
+			vfunc541()->sub_102dfed0(&vecPos, (CBaseEntity *)vfunc167());
+			if (!g_1093cce4->vfunc1() && g_1093cce4->m_n2c && sub_103bf660(vecPos)) {
+				m_n66b8 = 0;
+				SRET(0x186, 0xa1a)
+			}
+			if (sub_10269aa0(9)) {
+				if (sub_10269aa0(0x46))
+					SRET(0x168, 0xa22)
+				SRET(0x167, 0xa27)
+			}
+		}
+		if (IsSched(this, 0x170))
+			return sub_103bca20(nSomething);
+		if (IsSched(this, 0x171))
+			return sub_103bcaf0(nSomething);
+		if (IsSched(this, 0x172) || IsSched(this, 0x174) || IsSched(this, 0x173))
+			return sub_103bcb60(nSomething);
+		if (IsSched(this, 0x178) || IsSched(this, 0x179) || IsSched(this, 0x17a))
+			return sub_103bcc00(nSomething);
+		SRET(0x170, 0xa53)
+	}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bc4e0 size=0x290
 #include "CBaseEntity.h"
 #include "CNPC_VTzimisce.h"
