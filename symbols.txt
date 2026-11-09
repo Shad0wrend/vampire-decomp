@@ -11742,6 +11742,7 @@
 0x10011360 func   ?sub_1009def0@@YIPAXPAXHI@Z sub_1009def0
 0x10011365 func   ?vfunc113@CSun@@UAEXXZ CSun::vfunc113
 0x1001136a func   ?sub_10394970@@YIXPAXHM@Z sub_10394970
+0x1001136f func   ?sub_1034be50@CNPCMaker_Fleshpile@@QAEPAV1@XZ CNPCMaker_Fleshpile::sub_1034be50
 0x10011374 func   ?vfunc82@CVampireProjectile_MingXiaoSpit@@UAEPAUdatamap_t@@XZ CVampireProjectile_MingXiaoSpit::vfunc82
 0x10011379 func   ?vfunc195@CBaseEntity@@QAEXXZ CBaseEntity::vfunc195
 0x10011383 func   ?sub_1024b230@@YA_NPBUStrRef@@0@Z sub_1024b230

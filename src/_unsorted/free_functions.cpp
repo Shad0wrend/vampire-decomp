@@ -205328,6 +205328,25 @@ int sub_1034be20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034be50 size=0x2a
+#include "CNPCMaker_Fleshpile.h"
+
+extern void *vt_1049ffe4[];
+extern void *vt_1049ffb4[];
+void *__fastcall sub_1034ad80(char *p);
+
+// TARGET: CNPCMaker_Fleshpile::sub_1034be50
+CNPCMaker_Fleshpile *CNPCMaker_Fleshpile::sub_1034be50()
+{
+    sub_1034ad80((char *)this);
+    *(void ***)this = vt_1049ffe4;
+    m_n5dec = 0;
+    m_n1a98 = 0;
+    *(void ***)((char *)this + 0x19b0) = vt_1049ffb4;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034c8b0 size=0x15
 #include "vampire.h"
 
