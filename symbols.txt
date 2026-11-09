@@ -13952,6 +13952,7 @@
 0x10014466 func   ?vfunc82@CFogController@@UAEPAUdatamap_t@@XZ CFogController::vfunc82
 0x10014470 func   ?sub_100276c0@CPhysForce@@QAEXXZ CPhysForce::sub_100276c0
 0x10014475 func   ?sub_10124120@CGameMovement@@QAEHAAVVector@@00M@Z CGameMovement::sub_10124120
+0x1001447a func   ?sub_100a9120@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100a9120
 0x1001447f func   ?vfunc103@CVampireProjectile_MingXiaoSpit@@UAEXXZ CVampireProjectile_MingXiaoSpit::vfunc103
 0x10014489 func   ?sub_1022eab0@@YAXPAUCUnknown1022eab0@@@Z sub_1022eab0
 0x1001448e func   ?sub_1021b330@CUnknown10217f50@@QAEXPBDH@Z CUnknown10217f50::sub_1021b330

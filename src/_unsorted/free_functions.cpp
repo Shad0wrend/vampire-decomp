@@ -37041,6 +37041,29 @@ bool __fastcall sub_100a9080(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9120 size=0x9d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "inputdata_t.h"
+#include "ScopeTrace.h"
+
+void CBaseEntity::sub_100a9120(inputdata_t *pInput)
+{
+	ScopeTrace trace("CBaseEntity::InputSetFakeSilence", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY", g_106b8540);
+	if (!pInput->value.IntOrZero())
+		sub_100a8fc0(0);
+	else
+		sub_100a8fc0(1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a91f0 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
