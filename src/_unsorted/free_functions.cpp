@@ -227197,6 +227197,91 @@ char CNPC_VTzimisce::sub_103be630(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bef20 size=0x1ce
+#include "CBaseAnimating.h"
+#include "CNPC_VTzimisce.h"
+#include "CRagdollProp.h"
+#include "CPhysicsAnimlink.h"
+#include "StudioHdr.h"
+#include <string.h>
+
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+
+void *__cdecl sub_100a9ab0(const char *pszClass, void *pOrigin, void *pAngles, int a);
+
+namespace block_103bef20
+{
+	struct CTzimisceUnit : CNPC_VTzimisce
+	{
+		void sub_103be050(char bSet);
+	};
+	void CTzimisceUnit::sub_103be050(char bSet)
+	{
+		unsigned int &flags = *(unsigned int *)((char *)this + 0x14b8);
+		if (bSet)
+			flags |= 0x10;
+		else
+			flags &= ~0x10;
+	}
+}
+using namespace block_103bef20;
+
+// TARGET: CNPC_VTzimisce::sub_103bef20
+bool CNPC_VTzimisce::sub_103bef20(CBaseEntity *pEnt, const char *pszBone)
+{
+	if (!pEnt)
+		return false;
+
+	float *pA = ((CNPC_VTzimisce *)pEnt)->vfunc217();
+	float *pB = vfunc217();
+	float dx = pB[0] - pA[0];
+	float dy = pB[1] - pA[1];
+	float dz = pB[2] - pA[2];
+	if (dx * dx + dy * dy + dz * dz > 25600.0f)
+		return false;
+
+	CPhysicsAnimlink *pLink = (CPhysicsAnimlink *)sub_100a9ab0("phys_animlink", g_1070d1b0, g_1070d9d0, 0);
+	if (!pLink)
+		return false;
+
+	StudioHdr *pHdr = (StudioHdr *)((CBaseAnimating *)this)->sub_100952d0(-1);
+	int iBone;
+	for (int i = 0; i < pHdr->m_nBones; i++)
+	{
+		StudioBone *pBone = (StudioBone *)((char *)pHdr + pHdr->m_nBoneIndex + i * 0xa0);
+		if (_strcmpi("Bip01 R Finger1", (const char *)pBone + *(int *)pBone) == 0)
+		{
+			iBone = i;
+			break;
+		}
+	}
+	if (iBone < 0)
+		return false;
+
+	void *pPhysObj = *(void **)((char *)pEnt + 0x36c);
+	if (!pPhysObj)
+		return false;
+
+	if (CRagdollProp *pRagdoll = dynamic_cast<CRagdollProp *>(pEnt))
+	{
+		pPhysObj = (void *)pRagdoll->vfunc265(pszBone);
+		if (!pPhysObj)
+			return false;
+	}
+
+	Vector vecB(0, 0, 0);
+	Vector vecA(0, 0, 0);
+	pLink->sub_1014f210((CBaseAnimating *)this, iBone, pPhysObj, (int)&vecB, (int)&vecA);
+
+	m_hEnt6684.m_Index = *pLink->vfunc1();
+
+	((CTzimisceUnit *)this)->sub_103be050(0);
+	sub_103be0b0(1);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bf170 size=0x63
 #include "CBaseEntity.h"
 #include "CNPC_VTzimisce.h"
