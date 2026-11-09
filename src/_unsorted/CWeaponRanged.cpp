@@ -72,6 +72,49 @@ char sub_10234800() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x10238070 size=0x7f
+#include "CWeaponRanged.h"
+
+struct CWeaponRangedFields {
+    char pad0000[0x778];
+    int m_n778;
+    char pad077c[0x86c - 0x77c];
+    int m_n86c;
+    char m_b870;
+    char m_b871;
+    char pad0872[0x878 - 0x872];
+    int m_n878;
+    char pad087c[0x8b4 - 0x87c];
+    char m_b8b4;
+    char pad08b5[3];
+    float m_f8b8;
+    float m_f8bc;
+    float m_f8c0;
+    float m_f8c4;
+    char pad08c8[0x910 - 0x8c8];
+    float m_f910;
+    int m_n914;
+};
+
+CWeaponRanged::CWeaponRanged()
+{
+    CWeaponRangedFields *p = (CWeaponRangedFields *)this;
+    p->m_n86c = 0;
+    p->m_f910 = gpGlobals->curtime;
+    p->m_f8b8 = 150.0f;
+    p->m_f8c0 = 1024.0f;
+    p->m_f8bc = 65.0f;
+    p->m_f8c4 = 300.0f;
+    p->m_n914 = -1;
+    p->m_n778 = 3;
+    char *pb = &p->m_b870;
+    *pb = 1;
+    p->m_b871 = 1;
+    p->m_b8b4 = 1;
+    p->m_n878 = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10238110 size=0x1e
 #include "CWeaponRanged.h"
 
