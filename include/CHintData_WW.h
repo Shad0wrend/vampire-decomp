@@ -12,6 +12,16 @@ public:
 	int m_nHints;	// 0x2c
 	int m_tail[6];	// 0x30..0x44, zeroed by the constructors; [0] = element pointer of the first vector, [1..5] = a second CUtlVector<int> (memory, allocation count, grow size, size, element pointer)
 
+	int Find(int value)
+	{
+		for (int i = 0; i < m_nHints; i++)
+		{
+			if (m_pHints[i] == value)
+				return i;
+		}
+		return -1;
+	}
+
 	bool sub_103ca0d0(int hint);	// "CHintData_WW::IsHintPathable": scope trace, true when `hint` is found in the vector
 	void sub_103ca1a0(int hint);	// "CHintData_WW::AddPathableHint": scope trace, appends `hint` to the vector unless it is already in it
 	void sub_103ca390(int hint);	// "CHintData_WW::AddEndpointPathableHint": same as AddPathableHint for the second vector (at +0x34)
