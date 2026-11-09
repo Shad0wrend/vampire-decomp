@@ -70358,6 +70358,57 @@ void sub_1012a6e0(CBaseEntity *pOwner, int nCount, int nType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a800 size=0x14f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CGib.h"
+#include "ScopeTrace.h"
+#include "CCollisionProperty.h"
+#include "TestBit.h"
+
+extern Vector g_1070d1b0;
+extern Vector g_1070d9d0;
+void sub_101cd940(CBaseEntity *);
+void sub_100152b2();
+
+inline const Vector &GetAbsVelocity1012a800(CBaseEntity *p)
+{
+	if (TestBit(p->m_flags268, 12))
+		p->sub_100b1d10();
+	return p->m_vecVelocity3bc;
+}
+
+// TARGET: CGib::sub_1012a800
+void CGib::sub_1012a800()
+{
+	if (!IsInWorld()) {
+		sub_101cd940(this);
+		return;
+	}
+	if (GetAbsVelocity1012a800(this) == g_1070d1b0) {
+		m_bAlpha1a3 = 0xff;
+		m_n16c = 2;
+		{
+			ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+			CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+			pCol->sub_100dc580(pCol->m_usSolidFlags | 4);
+		}
+		sub_100b2f50(&g_1070d9d0.x);
+		sub_100b3b00();
+		m_flNextThink = gpGlobals->curtime + m_flLife73c;
+		sub_100ac4e0((int)sub_100152b2, 0, 0);
+	} else {
+		m_flNextThink = gpGlobals->curtime + 0.5;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a9b0 size=0x2b8
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
