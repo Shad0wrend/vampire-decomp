@@ -3017,6 +3017,36 @@ void CCollisionEvent::sub_10030d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030e40 size=0xbc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CBaseEntity.h"
+#include "CCollisionEvent.h"
+#include "ScopeTrace.h"
+
+// TARGET: CCollisionEvent::sub_10030e40
+void CCollisionEvent::sub_10030e40()
+{
+	ScopeTrace trace("CCollisionEvent::UpdateDamageEvents", g_106b8540, g_106b8540);
+	for (int i = 0; i < m_damageVec.Count(); i++)
+	{
+		CDamageEvent_t &event = m_pDamageEvents[i];
+		CDamageInfoBlob info = event.m_info;
+		event.m_pEntity->sub_100a1250(&info);
+	}
+	m_damageVec.RemoveAll();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030f30 size=0xfc
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

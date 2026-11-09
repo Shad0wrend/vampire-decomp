@@ -3372,6 +3372,7 @@
 0x10005a33 func   ?sub_103f30f0@@YAHXZ sub_103f30f0
 0x10005a38 func   ?vfunc82@CNPC_VHengeyokai@@UAEPAUdatamap_t@@XZ CNPC_VHengeyokai::vfunc82
 0x10005a3d func   ?vfunc5@CLogicNPCCondition@@QAEPAVCLogicalEntity@@I@Z CLogicNPCCondition::vfunc5
+0x10005a42 func   ?sub_10030e40@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030e40
 0x10005a47 func   ?vfunc180@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc180
 0x10005a4c func   ?vfunc11@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc11
 0x10005a56 func   ?vfunc289@CWeaponThrown_Grenade_Frag@@QAEHXZ CWeaponThrown_Grenade_Frag::vfunc289
