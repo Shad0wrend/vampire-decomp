@@ -9760,6 +9760,7 @@
 0x1000e746 func   ?sub_101e9c50@HOwner@@QAEXXZ HOwner::sub_101e9c50
 0x1000e74b func   ?sub_100dd450@CCollisionProperty@@QAEXPAVVector@@0@Z CCollisionProperty::sub_100dd450
 0x1000e750 func   ?vfunc81@CDynamicLight@@UAEHXZ CDynamicLight::vfunc81
+0x1000e755 func   ?sub_1004d6a0@CPhysicsSpring@@QAEXPBD0PAPAX1@Z CPhysicsSpring::sub_1004d6a0
 0x1000e75a func   ?vfunc403@CBasePlayer@@UAEXXZ CBasePlayer::vfunc403
 0x1000e75f func   _disc_particle disc_particle
 0x1000e764 func   ?vfunc318@CNPC_VRat@@QAE_NHHH@Z CNPC_VRat::vfunc318

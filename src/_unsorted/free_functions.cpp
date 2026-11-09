@@ -11602,6 +11602,41 @@ int sub_1004d650(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d6a0 size=0xa3
+#include "CPhysicsSpring.h"
+
+struct IPhysObjStub {
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3();
+	virtual void vfunc4(); virtual void vfunc5();
+	virtual int vfunc6();
+};
+struct IPhysRegisterStub {
+	virtual void vfunc0(void *pOwner, int value);
+};
+extern IPhysRegisterStub *g_1056645c;
+extern IPhysObjStub *g_10723938;
+IPhysObjStub *sub_100082c9(const char *pszName);
+
+void CPhysicsSpring::sub_1004d6a0(const char *pszName1, const char *pszName2, void **ppObj1, void **ppObj2)
+{
+	IPhysObjStub *pStartObject = sub_100082c9(pszName1 ? pszName1 : "");
+	IPhysObjStub *pEndObject = sub_100082c9(pszName2 ? pszName2 : "");
+	if (!pStartObject) {
+		pStartObject = g_10723938;
+	} else if (!pEndObject) {
+		pEndObject = pStartObject;
+		pStartObject = g_10723938;
+	} else {
+		int pEntity = pStartObject->vfunc6();
+		g_1056645c->vfunc0(this, pEntity);
+		pEntity = pEndObject->vfunc6();
+		g_1056645c->vfunc0(this, pEntity);
+	}
+	*ppObj1 = pStartObject;
+	*ppObj2 = pEndObject;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004dcf0 size=0x72
 #include "SendProp.h"
 
