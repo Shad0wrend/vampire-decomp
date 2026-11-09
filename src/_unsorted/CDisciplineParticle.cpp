@@ -13,6 +13,29 @@ datamap_t *CDisciplineParticle::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10051080 size=0x10e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CDisciplineParticle.h"
+#include "CEnvParticle.h"
+#include "CBaseEntity.h"
+
+char CDisciplineParticle::vfunc86(int a, int b, int c, int d, int e)
+{
+    ScopeTrace trace("CDisciplineParticle::ShouldTransmit", g_106b8540);
+    if (m_b4b4)
+        return m_hUser && (int)m_hUser->m_pEdict2e0 == b;
+    return ((CEnvParticle *)this)->vfunc86(a, b, c, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051630 size=0x8
 #include "CDisciplineParticle.h"
 namespace lifted {
