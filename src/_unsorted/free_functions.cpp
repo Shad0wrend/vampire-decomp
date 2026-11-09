@@ -55942,6 +55942,20 @@ int CStanceTable::sub_100ec2e0(int idx, CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec360 size=0x4e
+#include "CStanceTable.h"
+int CStanceTable::sub_100ec360(int idx, CBaseCombatCharacter *pChar)
+{
+	if (idx < 0 || idx > m_nCount)
+		idx = m_nDefault;
+	if (!pChar)
+		return 0;
+	CStanceRec *pRec = m_pRecs;
+	int expr = pChar->sub_10106a40(pRec[idx].m_szName44);
+	return pChar->sub_10106f90(expr) ? expr : 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ec3d0 size=0x27
 struct SIndexedTable_t {
     int unk0;
