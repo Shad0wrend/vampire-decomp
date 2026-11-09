@@ -32,6 +32,7 @@ struct CAI_CondOwner
 {
 	char m_pad0000[0x30];
 	CAI_CondTable m_table;	// 0x30
+	int ConditionLocalToGlobal(int localId) { return m_table.sub_102ea2d0(localId); }
 	int sub_102ea280(int schedule);	// translates a global schedule id to the local one, -1 when unknown (stub 0x100102b2)
 };
 
