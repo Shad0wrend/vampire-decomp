@@ -1699,6 +1699,7 @@
 0x1000358f func   ?vfunc103@CTriggerPlayerActivityLevel@@UAEXXZ CTriggerPlayerActivityLevel::vfunc103
 0x10003594 func   ?sub_101eb9f0@CEntryXTable@@QAEDXZ CEntryXTable::sub_101eb9f0
 0x10003599 func   ?sub_100f3390@CRotDoor@@QAEXPAVCBaseEntity@@@Z CRotDoor::sub_100f3390
+0x100035a3 func   ?sub_1021ebc0@CUnknown1021e8e0@@QAEXPBD@Z CUnknown1021e8e0::sub_1021ebc0
 0x100035a8 func   ?sub_1035fc70@@YGHH@Z sub_1035fc70
 0x100035ad func   ?vfunc270@CRagdollProp@@UAEXHH@Z CRagdollProp::vfunc270
 0x100035b2 func   ?vfunc420@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc420

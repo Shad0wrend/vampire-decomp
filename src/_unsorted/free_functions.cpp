@@ -143516,6 +143516,137 @@ void CUnknown1021eaf0::sub_1021eaf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021ebc0 size=0x679
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include <string.h>
+#include <stdio.h>
+#include "CKeyHolder.h"
+#include "CVDmg_t.h"
+#include "CUnknown101f0e50.h"
+#include "CUnknown1021e8e0.h"
+
+extern void *sub_1025b5d0(int index);
+extern void *sub_101193b0();
+extern void sub_101ce620(void *pClient, int type, const char *pszText, int a, int b, int c, int d);
+extern int g_1074f89c;
+extern CKeyHolderSet g_1073a2e4;
+extern CUnknown101f0e50 g_1074df78;
+
+struct CNamedListXB {
+	int sub_101f8330(const char *pszName);
+};
+struct CDebugListEntry {
+	void sub_101f76e0();
+};
+struct CUnknown1021e8e0Stub {
+	void sub_100035a3(const char *pszName);	// the incremental-link stub of sub_1021ebc0
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : ""; }
+
+struct CHolderName_t {
+	int m_nKey;
+	const char *m_pszName;
+};
+
+#define MSG(x) { sprintf x; sub_101ce620(pClient, 2, buf, 0, 0, 0, 0); }
+
+void CUnknown1021e8e0::sub_1021ebc0(const char *pszName)
+{
+	char buf[0x80];
+	void *pClient = sub_101193b0();
+	if (!pClient)
+		return;
+	int n = sub_1021eaa0();
+	int i;
+	char *pRec;
+	for (i = 0; i < n; i++) {
+		pRec = (char *)sub_1025b5d0(i);
+		if (pRec && !strcmpi(pRec + 8, pszName))
+			goto found;
+	}
+	if (!g_1074f89c) {
+		for (int j = 0; j < 256; j++) {
+			char *p = (char *)sub_1025b5d0(j);
+			if (p && strstr(p + 8, pszName)) {
+				g_1074f89c = 1;
+				((CUnknown1021e8e0Stub *)this)->sub_100035a3(p + 8);
+				g_1074f89c = 0;
+				return;
+			}
+		}
+	}
+	MSG((buf, "\t<NOT FOUND>\n"));
+	return;
+found:
+	MSG((buf, "\n(%d): %s\n", i, pRec + 8));
+	MSG((buf, "\tType: %s\n", pRec + 0x2450));
+	MSG((buf, "\tWorth: %d\n", *(int *)(pRec + 0x2558)));
+	MSG((buf, "\tAI_Weighting: %d\n", *(int *)(pRec + 0x2424)));
+	if (*(int *)(pRec + 0x4fe84) > 0) {
+		sprintf(buf, "\tZooming: ");
+		int k;
+		for (k = 0; k < *(int *)(pRec + 0x4fe84) - 1; k++)
+			sprintf(buf + strlen(buf), " %d,", ((int *)(pRec + 0x4fe70))[k]);
+		sprintf(buf + strlen(buf), " %d\n", ((int *)(pRec + 0x4fe70))[k]);
+		sub_101ce620(pClient, 2, buf, 0, 0, 0, 0);
+	}
+	{
+		int m;
+		char *pMag;
+		for (m = 0, pMag = pRec + 0x267c; m < 2; m++, pMag += 0x1093c) {
+			if (*pMag) {
+				MSG((buf, "\tMagazine ( %d ): %s [ %d/%d ] Reload_Time: %.2f\n", m, pMag, *(int *)(pMag - 0xc), *(int *)(pMag - 0x14), (double)*(float *)(pMag - 4)));
+			}
+		}
+	}
+	{
+		char *pAct = pRec + 0x238e4;
+		for (int a = 0; a < 3; a++, pAct += 0xec84) {
+			if (*pAct) {
+				MSG((buf, "\tActivation ( %d ): %s [ %s ]\n", a, pAct, pAct + 0x80));
+				for (int h = 0; h < g_1073a2e4.m_nHolders; h++) {
+					if (!strcmpi(STRINGR(((CHolderName_t *)g_1073a2e4.m_pHolders[h])->m_pszName), pAct + 0x1d8)) {
+						int key = g_1073a2e4.m_pHolders[h]->m_nKey;
+						if (key != -1) {
+							MSG((buf, "\t\tBotchTable: %s\n", STRINGR(g_1073a2e4.Find(key)->m_pszName)));
+						}
+						break;
+					}
+				}
+				CVDmg_t dmg;
+				dmg.sub_101fb000(pAct + 0x114);
+				if (dmg.m_pad0000 != -1) {
+					MSG((buf, "\t\tDamage: %s\n", dmg.sub_101fb470()));
+				}
+				MSG((buf, "\t\tAttack_Rate: %.2f\n", (double)*(float *)(pAct + 0x25c)));
+				MSG((buf, "\tCriminalLevel: %d\n", *(int *)(pAct + 0x3c0)));
+				if (*(int *)(pAct + 0x108) != -1) {
+					MSG((buf, "\t\tAmmo: %s (Cost: %d)\n", pRec + 0x267c + *(int *)(pAct + 0x108) * 0x1093c, *(int *)(pAct + 0x10c)));
+				}
+				dmg.sub_101fa680();
+			}
+		}
+	}
+	MSG((buf, "\tAnim_Prefix: %s\n", pRec + 0x2408));
+	MSG((buf, "\tViewModel: %s\n", pRec + 0x2188));
+	MSG((buf, "\tWorldModel: %s\n", pRec + 0x2208));
+	MSG((buf, "\tInfoModel: %s\n", pRec + 0x2388));
+	int t = ((CNamedListXB *)&g_1074df78)->sub_101f8330(pRec + 0x2560);
+	if (t != -1) {
+		MSG((buf, "\tWield_TraitEffect: "));
+		((CDebugListEntry *)g_1074df78.sub_101f8480(t))->sub_101f76e0();
+	}
+	t = ((CNamedListXB *)&g_1074df78)->sub_101f8330(pRec + 0x25e4);
+	if (t != -1) {
+		MSG((buf, "\tUse_TraitEffect: "));
+		((CDebugListEntry *)g_1074df78.sub_101f8480(t))->sub_101f76e0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021f3e0 size=0x1cc
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
