@@ -85,6 +85,46 @@ int CNPC_VSabbatLeader::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a6ab0 size=0x163
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CNPC_VSabbatLeader.h"
+
+extern const char *g_1064c480[7];
+extern const char *g_1064c49c[3];
+void sub_101d0ec0(const char *);
+
+void CNPC_VSabbatLeader::vfunc104()
+{
+	ScopeTrace scope("CNPC_VSabbatLeader::Precache", g_106b8540);
+	sub_10384670();
+	engine->vfunc13("models/character/monster/Andrei/andrei.mdl", 1);
+	engine->vfunc13("models/character/npc/unique/hollywood/andrei/andrei_no_mouth.mdl", 1);
+	unsigned int i;
+	for (i = 0; i < sizeof(g_1064c480) / sizeof(g_1064c480[0]); i++)
+		enginesound->vfunc0(g_1064c480[i], 0);
+	for (i = 0; i < sizeof(g_1064c49c) / sizeof(g_1064c49c[0]); i++)
+		enginesound->vfunc0(g_1064c49c[i], 0);
+	enginesound->vfunc0("Character/Monster/Andrei_Transformed/ambient_run.wav", 0);
+	enginesound->vfunc0("Character/Monster/Andrei_Transformed/Leap_Down_Attack_1.wav", 0);
+	enginesound->vfunc0("Character/Monster/Andrei_Transformed/dive_in_splash.wav", 0);
+	enginesound->vfunc0("Character/Monster/Andrei_Transformed/dive_out_splash.wav", 0);
+	enginesound->vfunc0("Character/Monster/Andrei_Transformed/splash_warning.wav", 0);
+	enginesound->vfunc0("Character/Monster/Andrei_Transformed/jump_retreat.wav", 0);
+	enginesound->vfunc0("Character/Monster/Andrei_Transformed/roar_1.wav", 0);
+	engine->vfunc17("Andrei_powerup_emitter", 1);
+	engine->vfunc17("Andrei_blast_emitter", 1);
+	sub_101d0ec0("item_w_sabbatleader_attack");
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a6c80 size=0x81
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

@@ -83,6 +83,7 @@
 0x100011b3 func   ?sub_10137c30@@YAXXZ sub_10137c30
 0x100011b8 func   ?vfunc522@CNPC_VTzimisce@@UAEMXZ CNPC_VTzimisce::vfunc522
 0x100011bd func   ?sub_102d4060@CUnknown102d4060@@QAEXPAUCInputData10147d10@@@Z CUnknown102d4060::sub_102d4060
+0x100011c2 func   ?vfunc104@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc104
 0x100011c7 func   ?vfunc103@CPhysicsSpring@@QAEXXZ CPhysicsSpring::vfunc103
 0x100011cc func   ?vfunc77@CBaseEntity@@UAEXXZ CBaseEntity::vfunc77
 0x100011d1 func   ?sub_101b6630@CUnknown101b6630@@QAEHXZ CUnknown101b6630::sub_101b6630
