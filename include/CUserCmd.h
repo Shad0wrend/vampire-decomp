@@ -12,6 +12,31 @@ public:
 	CUserCmd() { sub_1011cc10(); }
 	virtual ~CUserCmd() {}
 
+	void Reset()
+	{
+		command_number = 0;
+		m_fl08 = 0;
+		msec = 0;
+		frametime = 0;
+		viewangles.Init();
+		forwardmove = 0.0f;
+		sidemove = 0.0f;
+		upmove = 0.0f;
+		m_b2c = 0;
+		buttons = 0;
+		m_n34 = 0;
+		impulse = 0;
+		m_n3c = 0;
+		m_n40 = 0;
+		m_b44 = 1;
+		m_b45 = 1;
+		m_b46 = 0;
+		m_b47 = 0;
+		m_n48 = 0;
+		m_n4c = 0;
+		m_vec50.Init();
+		m_b5c = 0;
+	}
 	void sub_1011cc10();	// 0x1011cc10 (SInit::sub_1011cc10 in the matched source): zeroes the members, the two bytes at +0x44 / +0x45 = 1
 
 	int command_number;	// 0x04: copied +1 when the delta bit is clear, else read as 32 bits
