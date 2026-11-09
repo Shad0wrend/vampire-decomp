@@ -4328,6 +4328,7 @@
 0x10006ee2 func   ?sub_101d8690@CUnk101d8690@@QAEPAU1@XZ CUnk101d8690::sub_101d8690
 0x10006eec func   ?vfunc285@CWeaponGravityGun@@UAEPAXXZ CWeaponGravityGun::vfunc285
 0x10006ef1 func   ?vfunc103@CEnvGlobal@@UAEXXZ CEnvGlobal::vfunc103
+0x10006ef6 func   ?sub_10429d00@CBaseGrenade@@QAEXXZ CBaseGrenade::sub_10429d00
 0x10006efb func   ?vfunc373@CWeaponMelee_Claws_Protean4@@UAEHXZ CWeaponMelee_Claws_Protean4::vfunc373
 0x10006f00 func   ?vfunc564@CNPC_VCamera@@UAE_NXZ CNPC_VCamera::vfunc564
 0x10006f05 func   ?vfunc110@CFuncRotating@@UAE_NPBD0@Z CFuncRotating::vfunc110

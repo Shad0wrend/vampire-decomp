@@ -249175,6 +249175,42 @@ extern "C" CBaseEntity *grenade()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10429d00 size=0x1ad
+#include "CPVSFilter.h"
+#include "CUnknown1070b254.h"
+#include "CBaseGrenade.h"
+#include "CEntityVSlots.h"
+#include "UTIL_BloodStream.h"
+
+extern short g_1088ae52;
+void sub_101d0a00( const Vector &mins, const Vector &maxs, int count );
+void sub_101c0b10( CBaseEntity *pEnt );
+
+#define ORIGIN (((CEntityVSlots *)this)->slot220())
+
+inline int UTIL_PointContents_10429d00( const Vector &vec )
+{
+	return g_1070b254->vfunc0( (const float *)&vec, 0 );
+}
+
+void CBaseGrenade::sub_10429d00()
+{
+	if ( UTIL_PointContents_10429d00( *ORIGIN ) & 0x4030 )
+	{
+		sub_101d0a00( *ORIGIN + Vector( -64.0f, -64.0f, -64.0f ), *ORIGIN + Vector( 64.0f, 64.0f, 64.0f ), 100 );
+	}
+	else
+	{
+		CPVSFilter filter( *ORIGIN );
+		g_10540528->vfunc34( filter, 0, ORIGIN, g_1088ae52, m_f19b8 * 0.03, 0x18 );
+	}
+
+	m_field200 = 2;
+	sub_100ac4e0( (int)sub_101c0b10, 0, 0 );
+	m_flNextThink = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10429f40 size=0x23
 #include "globalvars.h"
 struct CThinkCall_10429f40
