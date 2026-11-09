@@ -63,6 +63,9 @@ public:
 	char m_bB25;	// 0xb25
 	char m_padB26[0xb28 - 0xb26];
 	int m_nB28;	// 0xb28: the criminal-act priority of a physics throw (the CSActs notice runs only when > 0)
+	int m_nB2c;	// 0xb2c: the lift level (stat "Physics_Lift_Supernatural_Value", set in sub_1014d7c0)
+	int m_nB30;	// 0xb30: the drag level (stat "Physics_Drag_Supernatural_Value", set in sub_1014d7c0)
+	float m_flB34;	// 0xb34: 50000.0f at pickup
 public:
 	void vfunc298(CBaseEntity *pOwner, float unused);	// slot 298's body (0x10149f10): forwards to CBaseCombatWeapon::vfunc298 (jump stub 0x100131ec) with the first argument as it is; the game copies the second one as a float (mov eax / mov back), so it stays float here
 	virtual void vfunc298(CBaseEntity *pOwner, int unused);	// slot 298 with the base slot's signature: the game's 0x10149f10, the float member above (link audit, CWeaponGravityGun)
