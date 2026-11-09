@@ -7596,6 +7596,7 @@
 0x1000b5be func   ?sub_10307d00@@YIPAXPAX@Z sub_10307d00
 0x1000b5c3 func   ?ShiftElementsRight@?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@QAEXHH@Z CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >::ShiftElementsRight
 0x1000b5c8 func   ?sub_100de800@CUnknown100de930@@QAEXPAUCUnknown100de930Owner@@@Z CUnknown100de930::sub_100de800
+0x1000b5cd func   ?GetDebugName@CBaseEntity@@QAEPBDXZ CBaseEntity::GetDebugName
 0x1000b5cd func   ?sub_100ab4f0@CBaseEntity@@QAEPBDXZ CBaseEntity::sub_100ab4f0
 0x1000b5d2 func   ?sub_100278e0@CPhysForce@@QAEXXZ CPhysForce::sub_100278e0
 0x1000b5d7 func   ?sub_101c2a70@CUnknown101c2a90@@QAEMXZ CUnknown101c2a90::sub_101c2a70
