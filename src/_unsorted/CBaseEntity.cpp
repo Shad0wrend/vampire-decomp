@@ -2983,6 +2983,36 @@ void CBaseEntity::vfunc231(void *pObject, float energy, int surfaceProps, int su
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a69e0 size=0xb9
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "IPhysicsObject.h"
+extern char g_106b8540[];
+extern char g_105387dc[];
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CShadowPosView {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+    V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) V10(b7) V10(b8) V10(b9)
+    V10(c0)
+    virtual void c10(); virtual void c11(); virtual void c12(); virtual void c13(); virtual void c14(); virtual void c15(); virtual void c16();
+    virtual const float *GetAbsOrigin();
+    virtual void c18();
+    virtual const float *GetAbsAngles();
+};
+
+void CBaseEntity::vfunc232(int deltaTime)
+{
+    ScopeTrace trace("CBaseEntity::UpdatePhysicsShadowToCurrentPosition", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    if (vfunc94() != 7) {
+        IPhysicsObject *pPhys = (IPhysicsObject *)m_obj36c;
+        if (pPhys) {
+            pPhys->vfunc46(((CShadowPosView *)this)->GetAbsOrigin(), ((CShadowPosView *)this)->GetAbsAngles(), 0, deltaTime);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6ad0 size=0xa3
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

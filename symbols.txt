@@ -5291,6 +5291,7 @@
 0x1000857b func   ?vfunc373@CWeaponMelee_ManBatClaw@@UAEHXZ CWeaponMelee_ManBatClaw::vfunc373
 0x10008580 func   ?sub_10148a20@CGravControllerPoint@@QAEXXZ CGravControllerPoint::sub_10148a20
 0x1000858a func   ?sub_10230260@@YAHH@Z sub_10230260
+0x1000858f func   ?vfunc232@CBaseEntity@@QAEXH@Z CBaseEntity::vfunc232
 0x10008594 func   ?vfunc81@CFunc_LOD@@UAEHXZ CFunc_LOD::vfunc81
 0x10008599 func   ?vfunc4@CEntityListSystem@@QAEHXZ CEntityListSystem::vfunc4
 0x1000859e func   ?sub_103e1280@CNPC_VZombieX@@QAEXH@Z CNPC_VZombieX::sub_103e1280
