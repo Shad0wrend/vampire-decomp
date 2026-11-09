@@ -7724,6 +7724,7 @@
 0x1000bc17 func   ?sub_101a6760@@YG_NH@Z sub_101a6760
 0x1000bc1c func   ?sub_100b8380@@YAHXZ sub_100b8380
 0x1000bc21 func   ?sub_1008be20@CBaseAnimating@@QAE_NPAVCBaseEntity@@@Z CBaseAnimating::sub_1008be20
+0x1000bc26 func   ?vfunc422@CBasePlayer@@QAEDH@Z CBasePlayer::vfunc422
 0x1000bc30 func   ?sub_101cccf0@CUnknown101cccf0@@QAEPAU1@HHHH@Z CUnknown101cccf0::sub_101cccf0
 0x1000bc3a func   ?sub_103e8c50@CWeaponMelee_TzimisceMelee@@QAEXXZ CWeaponMelee_TzimisceMelee::sub_103e8c50
 0x1000bc3f func   ?sub_1036fb30@@YAPADXZ sub_1036fb30

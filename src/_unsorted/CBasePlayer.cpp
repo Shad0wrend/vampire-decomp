@@ -1498,6 +1498,73 @@ int CBasePlayer::sub_101647a0(int act)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10165330 size=0x145
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+struct SPlayerStepView
+{
+	char pad0[0x65c];
+	bool b65c;
+	char pad1[0xff0 - 0x65d];
+	int nActivity;
+	char pad2[0x1475 - 0xff4];
+	bool b1475;
+	char pad3[2];
+	int n1478;
+	char pad4[0x149c - 0x147c];
+	unsigned int h149c;
+	char pad5[0x14a8 - 0x14a0];
+	bool b14a8;
+	char pad6[0x1b6c - 0x14a9];
+	bool b1b6c;
+};
+
+char CBasePlayer::vfunc422(int unused)
+{
+	SPlayerStepView *v = (SPlayerStepView *)this;
+	sub_101644f0(-1, 0, 0);
+	CEntityVSlots *pTarget;
+	if (m_n153C != -1)
+		pTarget = (CEntityVSlots *)EHandle_Get(m_h1538);
+	else
+		pTarget = 0;
+	int act = v->nActivity;
+	if (pTarget == 0 || !pTarget->slot158()) {
+		v->b14a8 = false;
+		v->b1475 = false;
+		v->n1478 = 0;
+	}
+	if (v->b65c) {
+		v->b1b6c = false;
+		int newAct;
+		switch (act) {
+		case 0x1027:
+			newAct = v->b14a8 ? 0x1030 : 0x1039;
+			break;
+		case 0x1030:
+			if (!EHandle_Get(v->h149c)) {
+				if (pTarget)
+					v->h149c = *((CGlobalEntityList_Ent *)pTarget)->v1();
+				else
+					v->h149c = 0xffffffff;
+			}
+			if (v->b14a8) {
+				if (sub_103395f0())
+					return 0;
+			}
+			newAct = 0x1039;
+			break;
+		default:
+			return 1;
+		}
+		sub_1032a100(newAct);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101654e0 size=0x93
 #include "CBasePlayer.h"
 #include "CGlobalEntityList.h"
