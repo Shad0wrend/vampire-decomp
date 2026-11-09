@@ -3,6 +3,8 @@
 #pragma once
 
 struct datamap_t;
+#include "Vector.h"
+#include "ehandle.h"
 
 class CNPC_VCamera
 {
@@ -10,15 +12,26 @@ public:
 
 	char pad0004[0x17c - 4];
 	float m_flNextThink;	// 0x17c
-	char pad0180[0x204 - 0x180];
+	char pad0180[0x19c - 0x180];
+	int m_n19c;	// 0x19c
+	char pad01a0[0x204 - 0x1a0];
 	unsigned int m_flags204;	// 0x204
 	char pad0208[4];
 	const char *m_target20c;	// 0x20c: the target name
-	char pad0210[0x14bc - 0x210];
+	int m_n210;	// 0x210
+	char pad0214[0x26c - 0x214];
+	const char *m_iName26c;	// 0x26c: the entity name
+	char pad0270[0xe64 - 0x270];
+	EHANDLE m_ne64;	// 0xe64
+	char pad0e68[0x14bc - 0xe68];
 	unsigned int m_flags14bc;
 	char pad14c0[0x1568 - 0x14c0];
 	int m_n1568;	// 0x1568
-	char pad156c[0x1b2c - 0x156c];
+	char pad156c[0x1570 - 0x156c];
+	int m_n1570;	// 0x1570
+	float m_fl1574;	// 0x1574
+	Vector m_v1578;	// 0x1578
+	char pad1584[0x1b2c - 0x1584];
 	int m_n1b2c;
 	char pad1b30[0x1b38 - 0x1b30];
 	int m_n1b38;
@@ -26,9 +39,12 @@ public:
 	int m_n1b40;
 	char pad1b44[0x5b55 - 0x1b44];
 	char m_b5b55;	// 0x5b55: one-shot flag (cleared by the think)
-	char pad5b56[0x5bb0 - 0x5b56];
+	char pad5b56[0x5b94 - 0x5b56];
+	int m_n5b94;	// 0x5b94
+	char pad5b98[0x5bb0 - 0x5b98];
 	int m_n5bb0;
-	char pad5bb4[0x5cc4 - 0x5bb4];
+	char pad5bb4[0x5cc0 - 0x5bb4];
+	int m_n5cc0;	// 0x5cc0
 	int m_n5cc4;
 	char pad5cc8[0x5d40 - 0x5cc8];
 	void *m_pMotor5d40;	// 0x5d40: the motor
@@ -653,5 +669,15 @@ public:
 	virtual void vfunc578();
 	virtual void vfunc579();
 	virtual int vfunc580();
-	char m_pad62e0[0x6660 - 0x62e0];
+	char m_pad62e0[0x62ec - 0x62e0];
+	int m_n62ec;	// 0x62ec
+	char pad62f0[0x6348 - 0x62f0];
+	int m_iPLInvestigateLevel;	// 0x6348
+	int m_iPLCriminalFleeLevel;
+	int m_iPLCriminalAttackLevel;
+	int m_iPLSupernaturalFleeLevel;
+	int m_iPLSupernaturalAttackLevel;
+	char pad635c[0x63d0 - 0x635c];
+	int m_n63d0;	// 0x63d0
+	char pad63d4[0x6660 - 0x63d4];
 };
