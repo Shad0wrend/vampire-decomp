@@ -44523,6 +44523,39 @@ void sub_100c1ea0(StudioHdr *pStudioHdr, Vector pos[], Quaternion q[])
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c2420 size=0xdf
+struct CBlendStudioHdr { char m_pad[0xf0]; int numbones; int boneindex; };
+struct CBlendBone { char m_pad[0xa0]; };
+struct CBlendAnim { char m_pad[0x20]; };
+struct CBlendSeqDesc { char m_pad0[0xc]; int numframes; char m_pad10[0x30 - 0x10]; int animindex; };
+struct CBlendBoneMask { int m_unused; unsigned int m_bits[1]; int IsBitSet(int i) const { return m_bits[i >> 5] & (1 << (i & 0x1f)); } };
+struct CBlendVec { float x, y, z; };
+struct CBlendQuat { float x, y, z, w; };
+
+void sub_100c0e50(CBlendStudioHdr *pHdr, int iFrame, float s, CBlendBone *pBone, CBlendAnim *pAnim, CBlendQuat &q);
+void sub_100c1070(CBlendStudioHdr *pHdr, int iFrame, float s, CBlendBone *pBone, CBlendAnim *pAnim, CBlendVec &pos);
+
+void sub_100c2420(CBlendStudioHdr *pStudioHdr, CBlendVec *pos, CBlendQuat *q, CBlendSeqDesc *pSeq, float cycle, CBlendBoneMask *pMask)
+{
+	int numbones = pStudioHdr->numbones;
+	if (numbones <= 0)
+		return;
+	int iFrame;
+	float s;
+	float fFrame = (pSeq->numframes - 1) * cycle;
+	iFrame = (int)fFrame;
+	s = fFrame - iFrame;
+	CBlendBone *pbone = (CBlendBone *)((char *)pStudioHdr + pStudioHdr->boneindex);
+	CBlendAnim *panim = (CBlendAnim *)((char *)pSeq + pSeq->animindex);
+	for (int i = 0; i < numbones; i++, pbone++, panim++) {
+		if (pMask->IsBitSet(i)) {
+			sub_100c0e50(pStudioHdr, iFrame, s, pbone, panim, q[i]);
+			sub_100c1070(pStudioHdr, iFrame, s, pbone, panim, pos[i]);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c2bd0 size=0xc7
 void sub_100c1f40(int a1, void *pB, void *pA, int a4, int a5, int a6, int a7);
 void sub_100c13a0(int a1, int a3, int a2, int a4, void *pA, void *pB, float flWeight, int a7, int a9, int a10);
