@@ -223476,6 +223476,47 @@ void CNPC_VWerewolf::sub_103d99a0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d9c90 size=0xae
+#include "CBaseEntity.h"
+#include "CNPC_VWerewolf.h"
+
+#define WV_V1(p) virtual void p();
+#define WV_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define WV_V100(p) WV_V10(p##0) WV_V10(p##1) WV_V10(p##2) WV_V10(p##3) WV_V10(p##4) WV_V10(p##5) WV_V10(p##6) WV_V10(p##7) WV_V10(p##8) WV_V10(p##9)
+
+struct SWolfTarget
+{
+	WV_V100(a0) WV_V100(a1) WV_V10(b0)
+	WV_V1(c0) WV_V1(c1) WV_V1(c2) WV_V1(c3) WV_V1(c4) WV_V1(c5) WV_V1(c6)
+	virtual const Vector &GetAbsOrigin();	// slot 217
+};
+
+struct SWolfSlots
+{
+	WV_V100(a0) WV_V10(b0) WV_V10(b1) WV_V10(b2) WV_V10(b3) WV_V10(b4) WV_V10(b5)
+	WV_V1(c0) WV_V1(c1) WV_V1(c2) WV_V1(c3) WV_V1(c4) WV_V1(c5) WV_V1(c6)
+	virtual SWolfTarget *GetTarget();	// slot 167
+	char pad[0x6320 - 4];
+	float m_flGoalTolerance;
+};
+
+CNPC_VWerewolfVec3 CNPC_VWerewolf::sub_103d9c90()
+{
+	if (m_nCacheTick == engine->vfunc120())
+		return m_vCache;
+	SWolfSlots *pSelf = (SWolfSlots *)this;
+	SWolfTarget *pTarget = pSelf->GetTarget();
+	if (pTarget) {
+		float tolerance = pSelf->m_flGoalTolerance;
+		*(Vector *)&m_vCache = pTarget->GetAbsOrigin();
+		sub_102c3b50((CBaseEntity *)pTarget, m_vCache, &m_vCache, (int *)&tolerance);
+	}
+	m_nCacheTick = engine->vfunc120();
+	return m_vCache;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d9f90 size=0xc5
 #include "CNPC_VWerewolf.h"
 #include "CUnknown101d7520.h"
