@@ -196250,6 +196250,34 @@ void CBaseCombatCharacter::sub_1033f4c0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033f590 size=0x100
+#include "CBaseCombatCharacter.h"
+#include "inputdata_t.h"
+#include "CEventQueue.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern CEventQueue g_106e7050;
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+void CBaseCombatCharacter::sub_1033f590(inputdata_t *data)
+{
+	ScopeTrace trace("CBaseCombatCharacter::InputFrenzyUpdate", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	if (m_field146c > 0) {
+		m_field146c--;
+		if (m_field146c > 0) {
+			CVariantCopy value;
+			value.SetInt(1);
+			g_106e7050.sub_100cdf10(this, "FrenzyUpdate", value, 1.0 / m_flFrenzyRate, this, this, 0, CEQExtra());
+			DevMsg("Frenzy like the wind!\n");
+			return;
+		}
+		sub_1033f6d0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033f6d0 size=0x5a
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntity.h"

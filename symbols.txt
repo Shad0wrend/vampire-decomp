@@ -4715,6 +4715,7 @@
 0x100079c8 func   ?vfunc48@CSingleplayRules@@UAEHH@Z CSingleplayRules::vfunc48
 0x100079cd func   ?sub_101e8b70@CUnknown101e8b70@@QAEMXZ CUnknown101e8b70::sub_101e8b70
 0x100079d7 func   ?sub_10223690@CBaseKeyframedMover@@QAEPAUCKeyframeX@@XZ CBaseKeyframedMover::sub_10223690
+0x100079dc func   ?sub_1033f590@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033f590
 0x100079e1 func   ?vfunc32@CTriggerBombSite@@QAE_NPAX@Z CTriggerBombSite::vfunc32
 0x100079e6 func   ?vfunc451@CNPC_VCop@@UAEHXZ CNPC_VCop::vfunc451
 0x100079eb func   ?sub_1006f8f0@CBaseCineCam@@QAEXXZ CBaseCineCam::sub_1006f8f0
