@@ -226217,6 +226217,43 @@ bool CNPC_VWerewolf::sub_103cf5f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d0ad0 size=0xd5
+#include "CNPC_VWerewolf.h"
+#include "CEntityVSlots.h"
+#include "Tier1.h"
+
+extern int g_106c994c;
+
+static inline void *GetNodeAt(CNPC_VWerewolfNodeNet *net, int idx)
+{
+	if (idx >= 0 && idx < net->m_nNodes)
+		return net->m_ppNodes[idx];
+	g_106c994c++;
+	return 0;
+}
+
+void *CNPC_VWerewolf::sub_103d0ad0()
+{
+	if (m_flNodeTime + 0.25f < gpGlobals->curtime)
+		m_pNode = 0;
+	void *pNode = m_pNode;
+	if (pNode)
+		return pNode;
+	m_pNode = pNode;
+	CNPC_VWerewolfHelper5d34 *h = m_pHelper5d34;
+	h->m_n08 = h->m_pOwner->m_n156c;
+	h->m_n0c = gpGlobals->framecount;
+	CNPC_VWerewolfNodeNet *pNet = m_pHelper5d34->m_pNet;
+	int idx = pNet->sub_102f3c10(this, (const float *)((CEntityVSlots *)this)->slot220());
+	if (idx != -1)
+		m_pNode = GetNodeAt(m_pHelper5d34->m_pNet, idx);
+	else
+		g_109f364c("GetNearestNode failed\n");
+	m_flNodeTime = gpGlobals->curtime;
+	return m_pNode;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d0bf0 size=0x152
 #include "CNPC_VWerewolf.h"
 #include "CGlobalEntityList.h"
