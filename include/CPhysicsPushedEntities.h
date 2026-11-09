@@ -11,9 +11,15 @@ struct MovedEntity_t
 {
 	CBaseEntity *m_pEntity;	// 0x00
 	float m_vecStartAbsOrigin[3];	// 0x04
-	char m_pad10[0x5c - 0x10];	// 0x10: the trace of the blocking hit
+	char m_pad10[0x1c - 0x10];	// 0x10: the trace of the blocking hit
+	Vector m_vecEndPos;	// 0x1c: the trace's end position
+	char m_pad28[0x3c - 0x28];
+	float m_flFraction;	// 0x3c: the trace's fraction
+	char m_pad40[0x5c - 0x40];
 	CBaseEntity *m_pBlocker;	// 0x5c
-	char m_pad60[0x68 - 0x60];
+	char m_pad60[0x64 - 0x60];
+	bool m_bBlocked;	// 0x64
+	char m_pad65[0x68 - 0x65];
 
 	void sub_1003c3a0();	// the element constructor (stub 0x1000da30)
 };
