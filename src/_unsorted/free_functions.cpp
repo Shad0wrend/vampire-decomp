@@ -207476,6 +207476,53 @@ int __fastcall sub_10381ca0(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10381cd0 size=0x155
+#include "CBaseEntity.h"
+#include "CNPC_VHengeyokai.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+extern CGlobalEntityList g_106eb5d8;
+
+bool CNPC_VHengeyokai::sub_10381cd0()
+{
+    CBaseEntity *pEnt = 0;
+    CBaseEntity *pClosest = 0;
+    float flClosest = 1050625.0f;
+    while (1) {
+        pEnt = g_106eb5d8.sub_100f7c30(pEnt, "fish", ((CEntityVSlots *)this)->slot220(), 1024.0f, (CBaseEntity *)this, 0);
+        if (pEnt == 0)
+            goto done;
+        if (sub_10382aa0((int)pEnt))
+            continue;
+        {
+            Vector vecA, vecB;
+            ((CEntityVSlots *)pEnt)->slot199(&vecA, &vecB);
+            if (vecA.x == 0.0f && vecA.y == 0.0f && vecA.z == 0.0f) {
+                Vector *pEntPos = ((CEntityVSlots *)pEnt)->slot220();
+                Vector *pThisPos = ((CEntityVSlots *)this)->slot220();
+                float dx = pThisPos->x - pEntPos->x;
+                float dy = pThisPos->y - pEntPos->y;
+                float dz = pThisPos->z - pEntPos->z;
+                float flDist = dz * dz + dx * dx + dy * dy;
+                if (flDist < flClosest) {
+                    pClosest = pEnt;
+                    flClosest = flDist;
+                }
+            }
+        }
+    }
+done:
+    EHANDLE &h = *(EHANDLE *)&m_h6664;
+    h = pClosest;
+    if (!pClosest)
+        return false;
+    sub_102c4380((CBaseEntity *)EHandle_Get(m_h6664));
+    return sub_10381e90(pClosest);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10382020 size=0x1f7
 #include "CNPC_VHengeyokai.h"
 #include "CEntityVSlots.h"
