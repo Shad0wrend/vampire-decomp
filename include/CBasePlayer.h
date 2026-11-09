@@ -396,7 +396,12 @@ public:
 	char m_pad1d24[0x1d40 - 0x1d24];
 	unsigned int m_h1D40;	// 0x1d40: entity handle that sets bit 0x40 of the flag dword in sub_10181780
 	unsigned int m_h1D44;	// 0x1d44: the second entity handle of that test
-	char m_pad1d48[0x1d60 - 0x1d48];
+	char m_pad1d48[0x1d50 - 0x1d48];
+	unsigned int m_h1D50;	// 0x1d50: entity handle
+	char m_pad1d54[0x1d58 - 0x1d54];
+	float m_f1D58;	// 0x1d58: the time of the next Nosferatu target scan
+	bool m_b1D5C;	// 0x1d5c: a Nosferatu target was found
+	char m_pad1d5d[0x1d60 - 0x1d5d];
 	int m_iVFlags;	// 0x1d60
 	char m_pad1d64[0x1d68 - 0x1d64];	// 0x1D48 .. 0x1D67
 	struct CBasePlayerQuestRecord *m_pQuestRecords1D68;	// 0x1D68: the saved quest records (0x40 bytes each)
@@ -452,7 +457,9 @@ public:
 	char m_bNotifyUse1EC0;
 	char m_pad1EC1[3];
 	int m_nUseEdict1EC4;	// 0x1EC4: engine index of the use entity, cleared when it is gone
-	char m_pad1EC8[0x1ed8 - 0x1ec8];
+	char m_pad1EC8[0x1ed0 - 0x1ec8];
+	int m_n1ED0;	// 0x1ed0: the engine index of the Nosferatu target
+	char m_pad1ED4[0x1ed8 - 0x1ed4];
 	unsigned int m_nFlags1ED8;	// 0x1ed8: the player's status flag dword updated by sub_10181780 (bit 1 = live grapple target, 0x20 / 0x100 = target mode 2 / 8, bit 0 = sub_10146a80, bit 2 = +0x14aa, bit 9 = use entity matches +0x1cb8 / +0x1cbc, bit 4 = sub_1033b7c0, bit 7 = slot 413, bit 3 = slot 412, bit 6 = +0x1d40 / +0x1d44)
 	union {
 		char m_pad1EDC[0x1ef0 - 0x1edc];	// 0x1EDC .. 0x1EEF
@@ -670,5 +677,6 @@ void sub_1016c9d0();
 	void sub_10170090();
 	void sub_1033f6d0();
 	char sub_10167370();
+	void sub_10181be0();
 #include "CBasePlayer_ext.h"
 };
