@@ -111,3 +111,77 @@ void CPython_SaveRestoreBlockHandler::vfunc6(IRestorePy *pRestore)
 	m_bEnabled = (version == g_1058f650);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1019b130 size=0x1b7
+#include "CPython_SaveRestoreBlockHandler.h"
+
+struct PyObj;
+struct PyType { int m_pad[6]; void (*tp_dealloc)(PyObj *); };
+struct PyObj { int ob_refcnt; PyType *ob_type; };
+struct CPyObjWrap : PyObj { int m_pad[2]; };
+struct CPyObjVirt;
+
+PyObj *sub_1019be80(const char *pszModule, const char *pszName);
+CPyObjWrap *sub_1019bb10(CPyObjVirt *pObj, int nOffset);
+extern "C" __declspec(dllimport) int PyCallable_Check(PyObj *op);
+extern "C" __declspec(dllimport) PyObj *PyObject_CallFunction(PyObj *callable, const char *format, ...);
+extern "C" __declspec(dllimport) void PyErr_Print();
+extern PyObj *g_1072b370;
+extern PyObj *g_1072b374;
+
+#define Py_INCREF(op) ((op)->ob_refcnt++)
+#define Py_DECREF(op) if (--(op)->ob_refcnt != 0) ; else (*(op)->ob_type->tp_dealloc)((PyObj *)(op))
+#define Py_XDECREF(op) if ((op) == 0) ; else Py_DECREF(op)
+
+void CPython_SaveRestoreBlockHandler::vfunc7(IRestorePy *pRestore, int a, int b)
+{
+	if (m_bEnabled) {
+		PyObj *pFunc = sub_1019be80("cPickle", "load");
+		if (pFunc) {
+			Py_INCREF(pFunc);
+			Py_XDECREF(g_1072b370);
+			PyObj *pResult = 0;
+			int n;
+			{
+				char bHas;
+				pRestore->ReadBool(&bHas, 1, 0);
+				if (bHas) {
+					pRestore->ReadInt(&n, 1, 0);
+					Py_INCREF(pFunc);
+					if (PyCallable_Check(pFunc)) {
+						CPyObjWrap *pWrap = sub_1019bb10((CPyObjVirt *)pRestore, n);
+						if (pWrap) {
+							pResult = PyObject_CallFunction(pFunc, "O", pWrap);
+							Py_DECREF(pWrap);
+						}
+					}
+					Py_DECREF(pFunc);
+				}
+			}
+			g_1072b370 = pResult;
+			Py_XDECREF(g_1072b374);
+			pResult = 0;
+			{
+				char bHas;
+				pRestore->ReadBool(&bHas, 1, 0);
+				if (bHas) {
+					pRestore->ReadInt(&n, 1, 0);
+					Py_INCREF(pFunc);
+					if (PyCallable_Check(pFunc)) {
+						CPyObjWrap *pWrap = sub_1019bb10((CPyObjVirt *)pRestore, n);
+						if (pWrap) {
+							pResult = PyObject_CallFunction(pFunc, "O", pWrap);
+							Py_DECREF(pWrap);
+						}
+					}
+					Py_DECREF(pFunc);
+				}
+			}
+			g_1072b374 = pResult;
+			if (g_1072b370 == 0 || g_1072b374 == 0)
+				PyErr_Print();
+			Py_DECREF(pFunc);
+		}
+	}
+}
+// END FUNCTION
