@@ -431,3 +431,108 @@ void CNPC_VCop::vfunc597(CBaseEntity *pTarget, int a)
 	((CCopSlots *)this)->sub_102b4fb0(pTarget, a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10372f00 size=0x410
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CNPC_VCop.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "Vector.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+
+extern unsigned int g_1093ac3c;
+extern float g_1093aca8;
+extern int g_1093acac;
+extern int g_1093acb0;
+void sub_10143710(const Vector &pos, const char *pszText, int a, int b);
+
+static inline CGlobalEntityList_Ent *LookupHandle(unsigned int h)
+{
+	if (h != -1) {
+		CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+		if (pSlot->m_Serial == (int)(h >> 13))
+			return pSlot->m_pEntity;
+	}
+	return 0;
+}
+
+struct CVCopCollision
+{
+	virtual void s0();
+	virtual const Vector &OBBMins();
+	virtual const Vector &OBBMaxs();
+};
+
+struct CVCopView
+{
+	char m_pad0000[0x224];
+	unsigned int m_flags224;
+	char m_pad0228[0x270 - 0x228];
+	CVCopCollision m_Collision;
+};
+
+enum Disposition_t { D_ER, D_HT, D_FR, D_LI, D_NU };
+
+// TARGET: CNPC_VCop::vfunc123
+void CNPC_VCop::vfunc123()
+{
+	CVCopView *v = (CVCopView *)this;
+	if ((v->m_flags224 & 1) && g_10566458->sub_100290c0(&m_h628c)) {
+		Vector vecMins = v->m_Collision.OBBMins();
+		Vector vecMaxs = v->m_Collision.OBBMaxs();
+		if (vecMaxs != vecMins) {
+			Vector vecPos = *vfunc217_slot() + Vector(0, 0, (vecMaxs.z - vecMins.z) + 8.0f);
+			char szText[128];
+			switch ((Disposition_t)vfunc404_slot((CNPC_VCopTarget *)EHandle_Get(m_h628c))) {
+			case D_FR:
+				sprintf(szText, "D_FR");
+				break;
+			case D_LI:
+				sprintf(szText, "D_LI");
+				break;
+			case D_NU:
+				sprintf(szText, "D_NU");
+				break;
+			case D_HT:
+				sub_10299da0((CNPC_VCopTarget *)EHandle_Get(m_h628c));
+				sprintf(szText, "D_HT");
+				if (LookupHandle(m_h628c) == LookupHandle(g_1093ac3c) && gpGlobals->curtime < g_1093aca8)
+					sprintf(szText + strlen(szText), " Suspect");
+				{
+					CNPC_VCopTarget *pEnt = (CNPC_VCopTarget *)EHandle_Get(m_h628c);
+					CNPC_VCopPlayer *pPlayer = !pEnt ? 0 : pEnt->m_pPlayer;
+					if (pPlayer->sub_1017f8d0())
+						sprintf(szText + strlen(szText), " Alert");
+					pEnt = (CNPC_VCopTarget *)EHandle_Get(m_h628c);
+					pPlayer = !pEnt ? 0 : pEnt->m_pPlayer;
+					if (pPlayer->sub_1017f770() > 0) {
+						pEnt = (CNPC_VCopTarget *)EHandle_Get(m_h628c);
+						pPlayer = !pEnt ? 0 : pEnt->m_pPlayer;
+						sprintf(szText + strlen(szText), " Count%d", pPlayer->sub_1017f770());
+					}
+				}
+				if (LookupHandle(m_h628c) == EHandle_Get((const unsigned int &)m_h6664))
+					sprintf(szText + strlen(szText), " Pursuit");
+				break;
+			case D_ER:
+				;
+			default:
+				sprintf(szText, "D_ER");
+				break;
+			}
+			int n = g_1093acb0;
+			sprintf(szText + strlen(szText), "  %d  %d", g_1093acac, n);
+			sub_10143710(vecPos, szText, 0, 0);
+		}
+	}
+	sub_1029ca50();
+}
+// END FUNCTION
