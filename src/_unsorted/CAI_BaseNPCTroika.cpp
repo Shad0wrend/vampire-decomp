@@ -1458,6 +1458,86 @@ void CAI_BaseNPCTroika::vfunc465(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10295c20 size=0x220
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "CUnknown100290c0.h"
+
+extern unsigned int g_10925444;
+extern "C" int sprintf(char *, const char *, ...);
+char *sub_101d3730(const char *, ...);
+struct CAI_FailView { void sub_102d0ab0(const char *); };
+struct HintV { char pad[0x470]; unsigned int m470; char pad2[0x5dc - 0x474]; int m5dc; };
+struct CTroikaHintCall { bool sub_102974f0(CAI_BaseNPCTroika *pOther); };
+
+// TARGET: CAI_BaseNPCTroika::vfunc566
+bool CAI_BaseNPCTroika::vfunc566(CBaseEntity *pEnt)
+{
+	HintV *pHint = (HintV *)pEnt;
+	ScopeTrace trace("CAI_BaseNPCTroika::FValidateHintType", this ? (((CBaseEntity *)this)->m_name26c ? ((CBaseEntity *)this)->m_name26c : g_106b8540) : g_105387dc);
+	if (pHint != 0) {
+		unsigned int mask = pHint->m470;
+		if ((mask & *(unsigned int *)((char *)this + 0x62e4)) == 0) {
+			if ((void *)((CUnknown100290c0 *)g_10566458)->sub_100290c0(&g_10925444) == (void *)this) {
+				char a[128];
+				char b[128];
+				char *p = a;
+				int i = 0;
+				do {
+					unsigned int bit = 1 << i;
+					if ((bit & mask) == bit)
+						p += sprintf(p, " %d", i + 1);
+					i++;
+				} while (i < 32);
+				*p = 0;
+				p = b;
+				i = 0;
+				do {
+					unsigned int bit = 1 << i;
+					if ((*(unsigned int *)((char *)this + 0x62e4) & bit) == bit)
+						p += sprintf(p, " %d", i + 1);
+					i++;
+				} while (i < 32);
+				*p = 0;
+				((CAI_FailView *)pHint)->sub_102d0ab0(sub_101d3730("Hint group id %s usable %s", a, b));
+			}
+		} else {
+			switch (pHint->m5dc) {
+			case 100:
+			case 101:
+				return ((CTroikaHintCall *)this)->sub_102974f0((CAI_BaseNPCTroika *)pHint);
+			case 0x27d8:
+				return sub_10297430((CAI_BaseNPCTroika *)pHint);
+			case 0x2774:
+				return true;
+			case 0x283c:
+			case 0x283d:
+				return sub_10295ed0(pEnt);
+			case 0x28a0:
+				return sub_102961a0(pEnt);
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10297560 size=0xa1
 #include "CAI_BaseNPCTroika.h"
 
