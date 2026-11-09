@@ -2961,6 +2961,7 @@
 0x100052b8 func   ?sub_100f8030@CGlobalEntityList@@QAEPAVCBaseEntity@@PBVVector@@0MPBD@Z CGlobalEntityList::sub_100f8030
 0x100052c2 func   ?sub_103d0bf0@@YIPAXPAUHolder@@@Z sub_103d0bf0
 0x100052c7 func   ?sub_1027db80@CAI_BaseNPC@@QAEMPBVVector@@@Z CAI_BaseNPC::sub_1027db80
+0x100052cc func   ?vfunc456@CBasePlayer@@UAEXXZ CBasePlayer::vfunc456
 0x100052d1 func   ?sub_102fca40@@YAHH@Z sub_102fca40
 0x100052d6 func   ?vfunc431@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::vfunc431
 0x100052db func   ?vfunc117@CCorpse@@UAEHXZ CCorpse::vfunc117

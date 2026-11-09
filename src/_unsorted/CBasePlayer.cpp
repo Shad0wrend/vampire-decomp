@@ -2403,6 +2403,25 @@ int CBasePlayer::vfunc127(CRestore *pRestore)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170b50 size=0xe5
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+#define m_hLastWeapon (*(CHandle<CBaseCombatWeapon> *)&m_hEnt0EA4)
+
+void CBasePlayer::vfunc456()
+{
+	if (!m_hLastWeapon.Get())
+		return;
+	if (sub_1032e7b0() && !((CBaseCombatWeapon *)sub_1032e7b0())->vfunc313())
+		return;
+	vfunc457(STRINGR_F(((CBaseEntity *)m_hLastWeapon.Get())->m_classname11c), m_hLastWeapon->vfunc296());
+}
+// END FUNCTION
+
 // FUNCTION: 0x101710b0 size=0x75
 #include "CBasePlayer.h"
 
