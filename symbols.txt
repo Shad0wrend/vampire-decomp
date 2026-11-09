@@ -7985,6 +7985,7 @@
 0x1000bec4 func   ?sub_10231e60@@YIIPAD@Z sub_10231e60
 0x1000bec9 func   ?sub_10228220@CUnknown10228020@@QAEDPAVCUnknown10248a50@@@Z CUnknown10228020::sub_10228220
 0x1000bece func   ?sub_10233ee0@@YAXXZ sub_10233ee0
+0x1000bed3 func   ?sub_10205f70@CUnknown10205f70@@QAE_NPAXPBD@Z CUnknown10205f70::sub_10205f70
 0x1000bed8 func   ?sub_1008b490@@YIXPAD@Z sub_1008b490
 0x1000bedd func   ?vfunc1@?$CEntityDataInstantiator@UModelWidthScale@@@@UAEHI@Z CEntityDataInstantiator<ModelWidthScale>::vfunc1
 0x1000bee2 func   ?vfunc580@CNPC_VCop@@UAEHXZ CNPC_VCop::vfunc580
