@@ -13,6 +13,31 @@ datamap_t * CPropDestructable::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101939b0 size=0x5d
+#include "CPropDestructable.h"
+
+void sub_100aa7b0(void *p);
+
+struct CPropDestructableOutputsView
+{
+	char m_pad[0x730];
+	COutputEvent m_Output730;
+	COutputEvent m_OnHealthChanged748;
+	char m_pad0760[0x7b4 - 0x760];
+	COutputEvent m_Outputs7b4[8];
+	COutputEvent m_Output874;
+};
+
+CBaseEntity *CPropDestructable::vfunc5(unsigned int flags)
+{
+	((CPropDestructableOutputsView *)this)->~CPropDestructableOutputsView();
+	sub_1008b3c0();
+	if (flags & 1)
+		sub_100aa7b0(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10193a30 size=0x1
 #include "CPropDestructable.h"
 void CPropDestructable::vfunc265()

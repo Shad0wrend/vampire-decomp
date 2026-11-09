@@ -14772,6 +14772,7 @@
 0x1001579e func   ?vfunc491@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc491
 0x100157a3 func   ?sub_1015ef80@CUnknown1015ef80@@QAEDXZ CUnknown1015ef80::sub_1015ef80
 0x100157a8 func   ?sub_10404a80@@YAHXZ sub_10404a80
+0x100157ad func   ?vfunc5@CPropDestructable@@QAEPAVCBaseEntity@@I@Z CPropDestructable::vfunc5
 0x100157b7 func   ?sub_100e7510@@YGHH@Z sub_100e7510
 0x100157bc func   ?sub_1014f3f0@CPhysicsAnimlink@@QAEXXZ CPhysicsAnimlink::sub_1014f3f0
 0x100157c1 func   ?sub_1009edc0@CBaseEntity@@QAEXPBM0@Z CBaseEntity::sub_1009edc0
