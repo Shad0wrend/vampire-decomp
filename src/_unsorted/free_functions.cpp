@@ -84376,6 +84376,84 @@ void CBasePlayer::sub_10170090()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170340 size=0x33b
+#include "CBasePlayer.h"
+#include "Tier1.h"
+#include "CEHandleGet.h"
+
+__declspec(dllimport) void DevWarning(const char *pMsg, ...);
+
+struct CSub270Bounds
+{
+	virtual void v0();
+	virtual const Vector &vfunc1();
+	virtual const Vector &vfunc2();
+};
+
+// TARGET: CBasePlayer::sub_10170340
+char CBasePlayer::sub_10170340()
+{
+	if (!vfunc158())
+		return 1;
+	bool ok = true;
+	if ((vfunc211() & 0x51) != 0x51) {
+		DevWarning("Invalid Player: bad solid flags: %d\n", vfunc211());
+		ok = false;
+	}
+	if (vfunc211() & 0x2a) {
+		DevWarning("Invalid player: bad solid flags\n");
+		ok = false;
+	}
+	if (vfunc92() != 2) {
+		DevWarning("Invalid Player: bad solid type: %d\n", vfunc92());
+		ok = false;
+	}
+	if (m_nCollisionGroup368 != 3) {
+		DevWarning("Invalid Player: bad collision group: %d\n", m_nCollisionGroup368);
+		ok = false;
+	}
+	if (vfunc94() != 3 && vfunc94() != 10 && (vfunc94() != 9 || !((unsigned char)(m_fFlags268 >> 2) & 1)) && (vfunc94() != 0 || m_n153C == -1 || !EHandle_Get(m_h1538))) {
+		DevWarning("Invalid Player: bad move type: %d\n", vfunc94());
+		ok = false;
+	}
+	CSub270Bounds *pCol = (CSub270Bounds *)&m_sub270;
+	Vector v = pCol->vfunc1();
+	if (v != Vector(-16, -16, 0) && v != Vector(-16, -16, 0)) {
+		DevWarning("Invalid Player: bad min bounds: %.1f %.1f %.1f\n", v.x, v.y, v.z);
+		ok = false;
+	}
+	v = pCol->vfunc2();
+	if (v != Vector(16, 16, 72) && v != Vector(16, 16, 36)) {
+		DevWarning("Invalid Player: bad max bounds: %.1f %.1f %.1f\n", v.x, v.y, v.z);
+		ok = false;
+	}
+	const char *items[] = { "item_w_unarmed", "item_g_wallet", "item_g_keyring", "item_a_lt_cloth", 0 };
+	const char **pp = items;
+	const char *name = items[0];
+	do {
+		if (!sub_10335950(name)) {
+			DevWarning("Invald Player: missing item: %s\n", name);
+			ok = false;
+		}
+		name = *++pp;
+	} while (name);
+	const char *fists[] = { "item_w_fists", "item_w_claws_protean4", "item_w_claws_protean5", 0 };
+	volatile bool bNone = true;
+	const char **pf = fists;
+	name = fists[0];
+	do {
+		if (!sub_10335950(name))
+			bNone = false;
+		name = *++pf;
+	} while (name);
+	if (bNone) {
+		DevWarning("Invald Player: missing ANY fist/etc. item:\n");
+		ok = false;
+	}
+	return ok;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170750 size=0x44
 #include "CBasePlayer.h"
 extern int sub_1023bd00();

@@ -12354,6 +12354,7 @@
 0x10012305 func   ?sub_100dafa0@@YAXXZ sub_100dafa0
 0x1001230a func   ?sub_1005bca0@@YAHXZ sub_1005bca0
 0x1001230f func   ?vfunc546@CNPC_VHunter@@QAEHH@Z CNPC_VHunter::vfunc546
+0x10012314 func   ?sub_10170340@CBasePlayer@@QAEDXZ CBasePlayer::sub_10170340
 0x10012319 func   ?sub_10382400@CNPC_VHengeyokai@@QAEXPAX@Z CNPC_VHengeyokai::sub_10382400
 0x1001231e func   ?vfunc5@CPointAngleSensor@@QAEPAV1@I@Z CPointAngleSensor::vfunc5
 0x10012323 func   ?sub_1034ca50@@YAHXZ sub_1034ca50
