@@ -115564,6 +115564,54 @@ extern int g_1073938c;
 void sub_101d8890(int v) { g_1073938c = v; }
 // END FUNCTION
 
+// FUNCTION: 0x101d88b0 size=0x154
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CUnknown101d88b0.h"
+#include "CVFeat_t.h"
+
+extern "C" __declspec(dllimport) void DevMsg(int, const char *, ...);
+extern void (*g_1073938c)(CUnknown101d88b0 *);
+
+inline int ENTINDEX(int pEdict)
+{
+	return engine->vfunc35(pEdict);
+}
+
+void CUnknown101d88b0::sub_101d88b0(CVDmgSource_t *pFirst, CVDmgSource_t *pSecond, const CVDmgBlock16_t *pBlock, int nDice, int nTotal, int field04)
+{
+	if (nDice > 250) {
+		DevMsg(1, "Warning: Dice roll count out of bounds: %d, capped at %d\n", nDice, 250);
+		nDice = 250;
+	}
+	m_nDice = nDice;
+	m_field34 = nDice;
+	m_field04 = field04;
+	m_field38 = 0;
+	m_field08 = 0;
+	m_field0c = 0;
+	if (pFirst)
+		m_iFirst = ENTINDEX(pFirst->m_pEdict);
+	else
+		m_iFirst = 0;
+	if (pSecond)
+		m_iSecond = ENTINDEX(pSecond->m_pEdict);
+	else
+		m_iSecond = 0;
+	if (pBlock)
+		m_block = *pBlock;
+	m_field2c = nTotal - 1;
+	if (g_1073938c)
+		g_1073938c(this);
+	if (pBlock && m_block.m_a == 4 && pFirst)
+		m_nFeatBonus = CVFeatSet::Find(m_block.m_b)->sub_101e5e10(pFirst);
+	else
+		m_nFeatBonus = 0;
+	m_field30 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d8a70 size=0x95
 #include "CUnknown101d8a70.h"
 #include "ConVar.h"
