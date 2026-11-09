@@ -9823,6 +9823,65 @@ void CUnknown10044a90::sub_10044a90(unsigned int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10044c20 size=0x13f
+#include "CUnknown10044c20.h"
+extern int g_109f0b74;
+struct ElemData {
+    Vector a; Vector b;
+};
+struct ElemX {
+    unsigned int key; ElemData data;
+};
+struct Raw28 { int d[7]; };
+
+struct CTree36Ctx : public CUtlRBTree36
+{
+    int m_nCtx;
+    void Publish() { if (m_nCtx) g_109f0b74 = m_nCtx; }
+    unsigned short FindCtx(const ElemX &e) { Publish(); return sub_10046930(&e); }
+    void InsertCtx(const ElemX &e)
+    {
+        Publish();
+        bool isLeft = false;
+        unsigned short parent = 0xffff;
+        unsigned short cur = m_Root;
+        while (cur != 0xffff) {
+            parent = cur;
+            if (m_LessFunc(&e, m_pElements[cur].m_Data)) {
+                isLeft = true;
+                cur = ((CUtlRBTreeNode36 *)this)->sub_10049d20(cur).m_Left;
+            } else {
+                isLeft = false;
+                cur = ((CUtlRBTreeNode36 *)this)->sub_10049d20(cur).m_Right;
+            }
+        }
+        unsigned short n = sub_10049780();
+        sub_100498c0(n, parent, isLeft);
+        m_NumElements++;
+        Raw28 *dst = (Raw28 *)m_pElements[n].m_Data;
+        if (dst)
+            *dst = *(Raw28 *)&e;
+    }
+};
+
+void CUnknown10044c20::sub_10044c20(const Vector *pA, const Vector *pB, unsigned int key)
+{
+    if (!key)
+        return;
+    CTree36Ctx *t = (CTree36Ctx *)&m_Tree;
+    ElemX e;
+    e.key = key;
+    if (t->FindCtx(e) != 0xffff)
+        return;
+    ElemData d;
+    d.a = *pA;
+    d.b = *pB;
+    e.key = key;
+    e.data = d;
+    t->InsertCtx(e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10044db0 size=0x14b
 #include "CUtlRBTree12.h"
 #include "CUtlRBTree232.h"
