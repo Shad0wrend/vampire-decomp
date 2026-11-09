@@ -49928,6 +49928,84 @@ void sub_100d46c0(CVStatList_t *pList, int nMinValue, int nArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d47f0 size=0x24d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CVStatInfoList_t.h"
+#include <string.h>
+#include <stdlib.h>
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern CVStatInfoList_t g_1074e658;
+extern CVStatInfoList_t g_1074e4f0;
+extern CVStatInfoList_t g_1074e098;
+int __cdecl sub_100d4ae0(const void *a, const void *b);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+int sub_100d47f0(const char *partial, char commands[][64])
+{
+	const char *cmdname;
+	if (strstr(partial, "vstats buy "))
+		cmdname = "vstats buy ";
+	else if (strstr(partial, "vstats sell "))
+		cmdname = "vstats sell ";
+	else if (strstr(partial, "vstats get "))
+		cmdname = "vstats get ";
+	else
+	{
+		strcpy(commands[0], "vstats");
+		strcpy(commands[1], "vstats buy ");
+		strcpy(commands[2], "vstats sell ");
+		strcpy(commands[3], "vstats get ");
+		return 4;
+	}
+	const char *substring = partial + strlen(cmdname);
+	int count = 0;
+	int i;
+	for (i = g_1074e658.sub_101ffc80(substring); i != -1; i = g_1074e658.sub_101fff60(substring, i))
+	{
+		Q_snprintf(commands[count], 64, "%s%s ", cmdname, STRINGR(g_1074e658.sub_10200370(i)->m_pszName));
+		count++;
+		if (count >= 0xc0)
+			break;
+	}
+	if (count <= 0xc0)
+	{
+		for (i = g_1074e4f0.sub_101ffc80(substring); i != -1; i = g_1074e4f0.sub_101fff60(substring, i))
+		{
+			Q_snprintf(commands[count], 64, "%s%s ", cmdname, STRINGR(g_1074e4f0.sub_10200370(i)->m_pszName));
+			count++;
+			if (count >= 0xc0)
+				break;
+		}
+	}
+	else
+		count = 0xc0;
+	if (count <= 0xc0)
+	{
+		for (i = g_1074e098.sub_101ffc80(substring); i != -1; i = g_1074e098.sub_101fff60(substring, i))
+		{
+			Q_snprintf(commands[count], 64, "%s%s ", cmdname, STRINGR(g_1074e098.sub_10200370(i)->m_pszName));
+			count++;
+			if (count >= 0xc0)
+				break;
+		}
+	}
+	else
+		count = 0xc0;
+	qsort(commands, count, 64, sub_100d4ae0);
+	return count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d4b40 size=0x1fc
 #include "CBaseEntity.h"
 #include "utlrbtree.h"
