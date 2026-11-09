@@ -430,6 +430,213 @@ void CAI_BaseNPC::sub_10273390()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10274e30 size=0x741
+#include "CAI_BaseNPC.h"
+#include "CAI_Motor.h"
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
+#include "Vector.h"
+#include <string.h>
+#include <stdlib.h>
+struct animevent_t { int event; const char *options; int a; int b; CBaseEntity *pSource; };
+struct EntV { void sub_101a8890(int a); void sub_101a7230(int a); };
+struct ObjA { void sub_102d09b0(CAI_BaseNPC *p, int a); };
+struct ObjB { void sub_102db3e0(CAI_BaseNPC *p, int a); };
+struct ObjM { void sub_102e0b40(); void sub_102e1c10(float a, float b); };
+struct WpnV { int sub_102521f0(); virtual void v0(); };
+struct NpcV : public CAI_BaseNPC {
+	void sub_101b0c10(const char *s);
+	int sub_100b3700();
+	void sub_1026d460(int a);
+	void sub_10260a50(int a);
+	void sub_1032a910(int a, int b);
+	void sub_1032e210(animevent_t *e);
+	void sub_1032e330(animevent_t *e);
+	void sub_10273e80(int a);
+	NpcV *sub_1032e7b0();
+	int sub_1008f7b0(const char *s);
+	int sub_1008f6c0(const char *s);
+	float sub_10095cb0(int a, int b);
+};
+#define NPC_V10(p) CAI_NPC_V(p##0) CAI_NPC_V(p##1) CAI_NPC_V(p##2) CAI_NPC_V(p##3) CAI_NPC_V(p##4) CAI_NPC_V(p##5) CAI_NPC_V(p##6) CAI_NPC_V(p##7) CAI_NPC_V(p##8) CAI_NPC_V(p##9)
+struct Slots192 {
+	CAI_NPC_V(0) CAI_NPC_V(1) CAI_NPC_V(2) CAI_NPC_V(3) CAI_NPC_V(4) CAI_NPC_V(5) CAI_NPC_V(6) CAI_NPC_V(7) CAI_NPC_V(8) CAI_NPC_V(9) NPC_V10(1) NPC_V10(2) NPC_V10(3) NPC_V10(4) NPC_V10(5) NPC_V10(6) NPC_V10(7) NPC_V10(8) NPC_V10(9)
+	NPC_V10(10) NPC_V10(11) NPC_V10(12) NPC_V10(13) NPC_V10(14) NPC_V10(15) NPC_V10(16) NPC_V10(17) NPC_V10(18)
+	CAI_NPC_V(190) CAI_NPC_V(191)
+	virtual Vector vfunc192();
+};
+void sub_10272650(int a);
+void sub_101aeb60(int edict, const char *s, float v, int a, int b, int c);
+struct FindObj { void *sub_100f7fe0(const char *s, const float *origin, float radius, void *pSearch, void *pActivator); void *sub_100f7f20(int a, const char *s, void *b, int c); };
+extern FindObj g_106eb5d8;
+struct RandV { virtual void v0(); virtual void v1(); virtual int vfunc2(int a, int b); };
+extern RandV *g_1070b244;
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+#define NPC_F(T, off) (*(T *)((char *)this + (off)))
+#define NPC_H(off) (*(EHANDLE *)((char *)this + (off)))
+
+void CAI_BaseNPC::vfunc259(animevent_t *pEvent)
+{
+	NpcV *self = (NpcV *)this;
+	switch (pEvent->event) {
+	case 1000:
+		if (NPC_F(int, 0x5cc0) == 4) { NPC_F(int, 0x200) = 1; NPC_F(int, 0x210) = 0; }
+		return;
+	case 0x3f2:
+		if (NPC_F(int, 0x5cc0) == 4) { NPC_F(int, 0x200) = 0; NPC_F(int, 0x210) = NPC_F(int, 0x208); }
+		return;
+	case 0x3ec:
+		self->sub_101b0c10(pEvent->options);
+		return;
+	case 0x3f0:
+		self->sub_101b0c10(pEvent->options);
+		return;
+	case 0x3f1:
+		if (!g_1070b244->vfunc2(0, 2)) return;
+	case 0x3ed:
+		sub_101aeb60(NPC_F(int, 0x2e0), pEvent->options, 1.0f, 0x50, 0, 100);
+		return;
+	case 0x3eb: {
+		char *p98 = NPC_F(char *, 0x98);
+		int pEdi = 0;
+		if (p98) pEdi = *(int *)(p98 + 0x62ec);
+		if (NPC_H(0x5d74)) {
+			((EntV *)NPC_H(0x5d74).Get())->sub_101a7230(atoi(pEvent->options));
+			return;
+		}
+		if (NPC_F(ObjA *, 0x5ddc)) {
+			NPC_F(ObjA *, 0x5ddc)->sub_102d09b0(this, atoi(pEvent->options));
+			return;
+		}
+		if (pEdi)
+			((ObjB *)pEdi)->sub_102db3e0(this, atoi(pEvent->options));
+		return;
+	}
+	case 0x3e9:
+		if (NPC_H(0x5d74))
+			((EntV *)NPC_H(0x5d74).Get())->sub_101a8890(0);
+		return;
+	case 0x3ea:
+		if (NPC_H(0x5d74))
+			((EntV *)NPC_H(0x5d74).Get())->sub_101a8890(1);
+		return;
+	case 0x3fc:
+	case 0x3fd:
+	case 0x3fe:
+		DevMsg("Bodygroup!\n");
+		return;
+	case 0x7d2:
+		if (self->sub_100b3700() & 1) self->sub_101b0c10("AI_BaseNPC.BodyDrop_Heavy");
+		return;
+	case 0x7d1:
+		if (self->sub_100b3700() & 1) self->sub_101b0c10("AI_BaseNPC.BodyDrop_Light");
+		return;
+	case 0x7da:
+		self->sub_101b0c10("AI_BaseNPC.SwishSound");
+		return;
+	case 0x7e4:
+		sub_10272650(1);
+		NPC_F(int, 0x5d8c) &= ~0x2000;
+		self->sub_10095cb0(0, *(int *)(vfunc221() + 1));
+		NPC_F(int, 0x19c) |= 0x10;
+		return;
+	case 0x7e6:
+		if (pEvent->options) {
+			int n = atoi(pEvent->options);
+			NPC_F(ObjM *, 0x5d44)->sub_102e0b40();
+			double flYaw = vfunc219()[1] + (double)n;
+			NPC_F(ObjM *, 0x5d44)->sub_102e1c10((float)flYaw, -1.0f);
+		}
+		return;
+	case 0x7f8: {
+		WpnV *w = 0;
+		if (pEvent->options && strlen(pEvent->options)) {
+			char *f = (char *)g_106eb5d8.sub_100f7fe0(pEvent->options, vfunc217(), 256.0f, this, 0);
+			if (f) w = *(WpnV **)(f + 0xa0);
+		} else {
+			char *pe = (char *)NPC_H(0x5ce4).Get();
+			if (pe) w = *(WpnV **)(pe + 0xa0);
+		}
+		if (w) {
+			if (w->sub_102521f0()) {
+				NPC_F(const char *, 0x1b44) = "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp";
+				NPC_F(int, 0x1b48) = 0x1f06;
+				vfunc448((int)"Weapon in use by someone else");
+				return;
+			}
+			if (!vfunc382(w)) {
+				NPC_F(const char *, 0x1b44) = "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp";
+				NPC_F(int, 0x1b48) = 0x1f0e;
+				vfunc448((int)"Can't use this weapon type");
+				return;
+			}
+			((CBaseCombatWeapon *)w)->vfunc341((CBaseEntity *)(void *)this);
+			vfunc383(w, 0);
+			self->sub_10273e80(0);
+			return;
+		}
+		NPC_F(const char *, 0x1b44) = "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp";
+		NPC_F(int, 0x1b48) = 0x1f19;
+		vfunc448((int)"Weapon stolen by someone else");
+		return;
+	}
+	case 0x7fb: {
+		NpcV *a = self->sub_1032e7b0();
+		if (!a) return;
+		const char *o = pEvent->options;
+		if (!o) return;
+		int i = atoi(o);
+		if (i == -1) return;
+		a->sub_10260a50(i);
+		return;
+	}
+	case 0x7fa: {
+		NpcV *a = self->sub_1032e7b0();
+		if (!a) return;
+		const char *o = pEvent->options;
+		if (!o) return;
+		int i = a->sub_1008f7b0(o);
+		if (i == -1) return;
+		a->sub_10260a50(i);
+		return;
+	}
+	case 0x7fc: {
+		NpcV *a = self->sub_1032e7b0();
+		if (!a) return;
+		const char *o = pEvent->options;
+		if (!o) return;
+		int i = a->sub_1008f6c0(o);
+		if (i == -1) return;
+		self->sub_1032a910(i, 0);
+		return;
+	}
+	case 0x7f9: {
+		const char *o = pEvent->options;
+		if (o) {
+			void *e = g_106eb5d8.sub_100f7f20(0, o, this, 0);
+			if (e) ((Slots192 *)e)->vfunc192();
+		}
+		vfunc385(self->sub_1032e7b0(), 0, 0);
+		return;
+	}
+	case 0x802:
+	case 0x803:
+		self->sub_1026d460(0);
+		return;
+	case 0x804:
+	case 0x805:
+		self->sub_1026d460(1);
+		return;
+	}
+	if ((CAI_BaseNPC *)pEvent->pSource == this && (pEvent->event < 3000 || pEvent->event > 4002)) {
+		self->sub_1032e330(pEvent);
+		return;
+	}
+	self->sub_1032e210(pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027be60 size=0xb5
 #include "CAI_BaseNPC.h"
 #include "CUnknown102ee270.h"
