@@ -5610,6 +5610,7 @@
 0x10008bde func   ?sub_100a8c90@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a8c90
 0x10008be3 func   ?vfunc81@CWeaponUnarmed@@UAEHXZ CWeaponUnarmed::vfunc81
 0x10008be8 func   ?sub_1034fee0@@YAXXZ sub_1034fee0
+0x10008bed func   ?sub_101d61e0@CUnknown101d61e0@@QAEPAU1@H@Z CUnknown101d61e0::sub_101d61e0
 0x10008bf2 func   ?sub_101b3a10@CUnknown101b3a10@@QAEXPAXPBDPADH@Z CUnknown101b3a10::sub_101b3a10
 0x10008bf7 func   ?sub_10060b60@CTEDynamicLight@@QAEPAV1@PBD@Z CTEDynamicLight::sub_10060b60
 0x10008bfc func   ?sub_102e12c0@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e12c0
