@@ -84,7 +84,7 @@ public:
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2();
-	virtual int vfunc3();	// whether the standoff may carry on: while active (+0x19) the NPC must have bit 27 of its slot 513 flags, know sequence 8, be in state 2 and hold a weapon; otherwise the active byte is cleared
+	virtual bool vfunc3();	// whether the standoff may carry on: while active (+0x19) the NPC must have bit 27 of its slot 513 flags, know sequence 8, be in state 2 and hold a weapon; otherwise the active byte is cleared
 	virtual void vfunc4();
 	virtual void vfunc5();
 	virtual int vfunc6();
