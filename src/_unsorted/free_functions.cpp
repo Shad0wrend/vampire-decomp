@@ -223342,6 +223342,109 @@ void CHintData_WW::sub_103ca390(int hint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ca7c0 size=0x1e4
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "ScopeTrace.h"
+#include "CNPC_VWerewolf.h"
+#include "COutputEvent.h"
+extern char g_106b8540[];
+extern unsigned char g_1093fac4;
+extern void *vt_104cf4d4[];
+extern void *vt_104cf4a4[];
+struct Dtor103ca7c0 {
+	void sub_10246160(int a);
+	void sub_100cd2d0();
+	void sub_103dc220();
+	void sub_103dc5b0(int a);
+	void sub_1028d610();
+};
+extern Dtor103ca7c0 g_1093f738;
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
+
+struct Vec103ca7c0 {
+	int *m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_nSize;
+	int *m_pElements;
+	void PurgeMem()
+	{
+		if (m_nGrow != -1) {
+			if (m_pMemory) {
+				Plat_Free(m_pMemory);
+				m_pMemory = 0;
+			}
+			m_nAlloc = 0;
+		}
+	}
+	void Purge()
+	{
+		m_nSize = 0;
+		PurgeMem();
+	}
+	~Vec103ca7c0()
+	{
+		Purge();
+		m_pElements = m_pMemory;
+		PurgeMem();
+	}
+};
+
+struct Hint103ca7c0 {
+	char m_data[0x48];
+};
+
+struct HintVec103ca7c0 {
+	Hint103ca7c0 *m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_nSize;
+	Hint103ca7c0 *m_pElements;
+	void RemoveAll()
+	{
+		for (int i = m_nSize; --i >= 0; )
+			((Dtor103ca7c0 *)&m_pMemory[i])->sub_103dc5b0(0);
+		m_nSize = 0;
+	}
+	~HintVec103ca7c0()
+	{
+		RemoveAll();
+		((Dtor103ca7c0 *)this)->sub_103dc220();
+		m_pElements = m_pMemory;
+		if (m_nGrow != -1) {
+			if (m_pMemory) {
+				Plat_Free(m_pMemory);
+				m_pMemory = 0;
+			}
+			m_nAlloc = 0;
+		}
+	}
+};
+
+void CNPC_VWerewolf::sub_103ca7c0()
+{
+	char *c = (char *)this;
+	*(void ***)this = vt_104cf4d4;
+	*(void ***)(c + 0x19b0) = vt_104cf4a4;
+	{
+		ScopeTrace scope("CNPC_VWerewolf::~CNPC_VWerewolf", m_name26c ? m_name26c : g_106b8540);
+		g_1093fac4 = 0;
+		g_1093f738.sub_10246160(0);
+	}
+	((Dtor103ca7c0 *)(c + 0x6788))->sub_100cd2d0();
+	((Dtor103ca7c0 *)(c + 0x6770))->sub_100cd2d0();
+	((Dtor103ca7c0 *)(c + 0x6758))->sub_100cd2d0();
+	((Dtor103ca7c0 *)(c + 0x6740))->sub_100cd2d0();
+	((Dtor103ca7c0 *)(c + 0x6728))->sub_100cd2d0();
+	((HintVec103ca7c0 *)(c + 0x6714))->~HintVec103ca7c0();
+	((Vec103ca7c0 *)(c + 0x668c))->~Vec103ca7c0();
+	((Vec103ca7c0 *)(c + 0x665c))->~Vec103ca7c0();
+	((Dtor103ca7c0 *)this)->sub_1028d610();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cac20 size=0x15f
 #include "CNPC_VWerewolf.h"
 #include <math.h>

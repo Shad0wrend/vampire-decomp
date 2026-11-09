@@ -1723,6 +1723,7 @@
 0x10003639 func   ?vfunc80@CItemGDrugsMorphineBottle@@QAEHXZ CItemGDrugsMorphineBottle::vfunc80
 0x1000363e func   ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ CUnknown100a1d20::sub_100a1d20
 0x10003643 func   ?sub_10071970@@YAXXZ sub_10071970
+0x10003648 func   ?sub_103ca7c0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103ca7c0
 0x1000364d func   ?sub_101f3690@CUnknown101f35c0@@QAEXHPAVCUnknown101f3d80@@HH@Z CUnknown101f35c0::sub_101f3690
 0x10003652 func   ?vfunc191@CRagdollPropSpecial@@UAEXH@Z CRagdollPropSpecial::vfunc191
 0x10003657 func   _trigger_wind trigger_wind
