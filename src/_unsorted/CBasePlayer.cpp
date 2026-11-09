@@ -1171,6 +1171,89 @@ Vector CBasePlayer::vfunc389(const Vector &vecPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10162c30 size=0x2bc
+#include "CBasePlayer.h"
+#include "CVDmg_t.h"
+#include "CTakeDamageInfo.h"
+#include "CAI_BaseNPC.h"
+#include "CGameTrace.h"
+#include "engineserver.h"
+#include "ConVar.h"
+#include "Vector.h"
+
+extern ConVar g_10725e28;
+extern ConVar g_10725c10;
+extern ConVar g_10725d30;
+extern ConVar g_10725b58;
+extern ConVar g_10725990;
+
+struct CTDIScale : CTakeDamageInfo
+{
+	void ScaleDamage(float f) { m_flDamage *= f; }
+};
+
+inline int ENTINDEX_141(int pEdict) { return engine->vfunc35(pEdict); }
+
+// TARGET: CBasePlayer::vfunc141
+void CBasePlayer::vfunc141(CVDmg_t *pInfoArg, const Vector *pDir, CGameTrace *pTrace)
+{
+	if (m_nTakeDamage1FC)
+	{
+		CTDIScale info = *(CTDIScale *)pInfoArg;
+
+		CAI_BaseNPC *pSub = *(CAI_BaseNPC **)((char *)info.m_pInflictor + 0x94);
+		if (pSub && (pSub->vfunc513() & 0x10000000))
+			return;
+
+		if (info.m_pVDmg00->sub_101fb340(ENTINDEX_141(m_n02E0)))
+			return;
+
+		int idx = ENTINDEX_141(m_n02E0);
+		float flDamage = (float)info.m_pVDmg00->sub_101fb200(idx, info.sub_101c29b0());
+
+		m_nHitBoxSet1594 = pTrace->m_hitgroup;
+		float flScale;
+		switch (pTrace->m_hitgroup)
+		{
+		case 1:
+			flDamage *= g_10725e28.GetFloat();
+			flScale = g_10725e28.GetFloat();
+			info.ScaleDamage(flScale);
+			break;
+		case 2:
+			flDamage *= g_10725c10.GetFloat();
+			flScale = g_10725c10.GetFloat();
+			info.ScaleDamage(flScale);
+			break;
+		case 3:
+			flDamage *= g_10725d30.GetFloat();
+			flScale = g_10725d30.GetFloat();
+			info.ScaleDamage(flScale);
+			break;
+		case 4:
+		case 5:
+			flDamage *= g_10725b58.GetFloat();
+			flScale = g_10725b58.GetFloat();
+			info.ScaleDamage(flScale);
+			break;
+		case 6:
+		case 7:
+			flDamage *= g_10725990.GetFloat();
+			flScale = g_10725990.GetFloat();
+			info.ScaleDamage(flScale);
+			break;
+		}
+
+		CAI_BaseNPC *pView = (CAI_BaseNPC *)this;
+		pView->vfunc292((CTakeDamageInfo *)&info, pDir, pTrace);
+		info.sub_101c29e0(pTrace);
+		sub_102699e0(*(Vector *)((char *)pTrace + 0xc), pView->vfunc145(), flDamage);
+		pView->vfunc146((CVDmg_t *)info.m_pVDmg00, pDir, pTrace);
+		sub_101c2d20(&info, this);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10162fa0 size=0x55
 #include "CBasePlayer.h"
 void sub_102699e0(Vector vecPos, int n, float f);

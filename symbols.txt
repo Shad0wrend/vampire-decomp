@@ -2914,6 +2914,7 @@
 0x10005141 func   ?sub_1028fa50@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_1028fa50
 0x10005146 func   ?vfunc144@CNPC_VGargoyle@@UAEXH@Z CNPC_VGargoyle::vfunc144
 0x1000514b func   ?vfunc580@CNPC_VChangBros@@UAEPAUCAI_CondOwner@@XZ CNPC_VChangBros::vfunc580
+0x10005155 func   ?vfunc141@CBasePlayer@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z CBasePlayer::vfunc141
 0x1000515a func   ?sub_100933b0@CBaseAnimating@@QAEDHPAM@Z CBaseAnimating::sub_100933b0
 0x1000515f func   ?vfunc5@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc5
 0x10005169 func   ?sub_10376d00@@YAHPAVCEntityVSlots@@@Z sub_10376d00
