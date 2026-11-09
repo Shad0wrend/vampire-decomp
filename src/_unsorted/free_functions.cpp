@@ -159774,6 +159774,21 @@ void sub_10248a70(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248ab0 size=0x2a
+#include <string.h>
+extern int g_10856fac;
+extern char g_10753fa8[][64];
+extern char g_10753f68[];
+
+void sub_10248ab0()
+{
+    if (g_10856fac > 0) {
+        g_10856fac--;
+        strcpy(g_10753f68, g_10753fa8[g_10856fac]);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10248af0 size=0x48
 #include "CUnknown10248a50.h"
 #include <string.h>

@@ -13412,6 +13412,7 @@
 0x100134d0 func   ?sub_1042ffb0@@YAXXZ sub_1042ffb0
 0x100134d5 func   ?sub_103ddaa0@@YG_NPAD@Z sub_103ddaa0
 0x100134da func   ?sub_103da0a0@@YIDPAVCNPC_VWerewolf@@@Z sub_103da0a0
+0x100134df func   ?sub_10248ab0@@YAXXZ sub_10248ab0
 0x100134e4 func   ?vfunc493@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc493
 0x100134ee func   ?vfunc79@CBaseAnimating@@UAEHXZ CBaseAnimating::vfunc79
 0x100134ee func   ?vfunc79@CPropDoorknob@@UAEHXZ CPropDoorknob::vfunc79
