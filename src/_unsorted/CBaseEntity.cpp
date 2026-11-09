@@ -4637,6 +4637,26 @@ void CBaseEntity::vfunc212(int set)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b1690 size=0x81
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+const char **CBaseEntity::vfunc9(int *pOut)
+{
+	ScopeTrace trace("CBaseEntity::GetModelName", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	*pOut = *(int *)&m_ModelName;
+	return (const char **)pOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b1750 size=0x7e
 #include "CBaseEntity.h"
 struct ScopeTrace { const char *name; const char *ent; const char *extra; };
