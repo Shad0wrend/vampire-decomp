@@ -152616,6 +152616,45 @@ unsigned int __fastcall sub_10231e60(char *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10231e80 size=0x3f
+namespace block_10231e80 {
+#pragma auto_inline(off)
+struct CUnk10231e80
+{
+	char m_pad0000[0x1b1];
+	char m_b01b1;
+	char m_pad01b2[0x464 - 0x1b2];
+	unsigned int m_flags0464;
+	unsigned int sub_10231e60();
+	void sub_10231e80(char bOn);
+};
+
+unsigned int CUnk10231e80::sub_10231e60()
+{
+	return m_flags0464 & 1;
+}
+#pragma auto_inline(on)
+inline void SetBit(unsigned int *pFlags, char *pChanged, char bOn)
+{
+	if (!bOn)
+		*pFlags &= ~1;
+	else
+		*pFlags |= 1;
+	*pChanged = 1;
+}
+}
+using namespace block_10231e80;
+
+// TARGET: block_10231e80::CUnk10231e80::sub_10231e80
+void CUnk10231e80::sub_10231e80(char bOn)
+{
+	if (bOn != (char)sub_10231e60())
+	{
+		SetBit(&m_flags0464, &m_b01b1, bOn);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10231ed0 size=0xc
 #include "CUnknown10231ed0.h"
 unsigned int CUnknown10231ed0::sub_10231ed0()
