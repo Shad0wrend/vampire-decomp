@@ -144228,6 +144228,38 @@ void CExperienceTable::sub_10222210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10222300 size=0xb8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CExperienceTable.h"
+#include "ScopeTrace.h"
+#include "FileSystemViews.h"
+
+extern void (__cdecl *g_109f364c)(const char *, ...);
+
+void CExperienceTable::sub_10222300()
+{
+	ScopeTrace trace("ExperienceTable::PreCache", g_106b8540);
+	if (m_flag14)
+		return;
+	int hFile = g_1070b238->vfunc0("vdata\\system\\Experience_Table.txt", "rt", 0);
+	if (hFile) {
+		sub_10222740(hFile);
+		g_1070b238->vfunc1(hFile);
+		m_flag14 = 1;
+	} else {
+		g_109f364c("Could not open experience table file: %s\n", "vdata\\system\\Experience_Table.txt");
+		m_flag14 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102223f0 size=0xc3
 #include "CExperienceTable.h"
 extern int *g_109f3680;

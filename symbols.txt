@@ -12026,6 +12026,7 @@
 0x10011a6d func   ?sub_10147c10@@YAPAHXZ sub_10147c10
 0x10011a72 func   ?vfunc24@CSingleplayRules@@UAE_NXZ CSingleplayRules::vfunc24
 0x10011a77 func   ?sub_1040bf70@CUnknown1040bf70@@QAEHXZ CUnknown1040bf70::sub_1040bf70
+0x10011a7c func   ?sub_10222300@CExperienceTable@@QAEXXZ CExperienceTable::sub_10222300
 0x10011a81 func   _item_k_tawni_apartment_key item_k_tawni_apartment_key
 0x10011a8b func   ?vfunc81@CBeam@@UAEHXZ CBeam::vfunc81
 0x10011a90 func   ?vfunc337@CNPC_VHengeyokai@@UAEHXZ CNPC_VHengeyokai::vfunc337
