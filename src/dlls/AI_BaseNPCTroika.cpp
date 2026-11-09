@@ -1671,6 +1671,93 @@ int CAI_BaseNPCTroika::sub_102b8c40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b8d20 size=0x287
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CEntityVSlots.h"
+#include "CUnknown102e0150.h"
+#include "CEHandleGet.h"
+#include "globalvars.h"
+
+void sub_10139610(const Vector &angles, Vector *fwd, Vector *right, Vector *up);
+extern int g_shiftTest;
+
+namespace block_102b8d20 {
+struct CUnknown100290c0 : EHandleEntityList
+{
+	unsigned int sub_100290c0(unsigned int *ph);
+};
+unsigned int CUnknown100290c0::sub_100290c0(unsigned int *ph)
+{
+	unsigned int h = *ph;
+	if (h == 0xffffffff)
+		return 0;
+	EHandleEntInfo *p = &m_EntPtrArray[h & 0x1fff];
+	if (p->m_SerialNumber == (int)(h >> g_shiftTest))
+		return (unsigned int)p->m_pEntity;
+	return 0;
+}
+}
+using namespace block_102b8d20;
+
+#define LIST ((CUnknown100290c0 *)EHandleDetail::g_10566458)
+#define H5B78 (*(CHandle<CEntityVSlots> *)((char *)this + 0x5b78))
+#define H6160 (*(CHandle<CEntityVSlots> *)((char *)this + 0x6160))
+#define H618C (*(CHandle<CEntityVSlots> *)((char *)this + 0x618c))
+#define TVEC (*(Vector *)((char *)this + 0x5dd0))
+
+int CAI_BaseNPCTroika::sub_102b8d20(int a, int b)
+{
+	unsigned int *ph = (unsigned int *)((char *)this + 0x5b78);
+	if (LIST->sub_100290c0(ph))
+	{
+		CBaseEntity *pEnemy = (CBaseEntity *)((CEntityVSlots *)LIST->sub_100290c0(ph))->slot167();
+		if (pEnemy)
+		{
+			if (vfunc404(pEnemy) == 1)
+			{
+				CEntityVSlots *pAI = *(CEntityVSlots **)(LIST->sub_100290c0(ph) + 0x94);
+				if (pAI)
+				{
+					if (pAI == H6160.Get() || pAI == H618C.Get())
+					{
+						if (pAI->slot541()->sub_102dfa20(pEnemy))
+						{
+							Vector vecPos;
+							TVEC = *pAI->slot541()->sub_102dfed0(&vecPos, pEnemy);
+							m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+							m_nLine1b34 = 0x5ff7;
+							return a;
+						}
+					}
+				}
+				Vector fwd;
+				sub_10139610(*H5B78.Get()->slot221(), &fwd, 0, 0);
+				Vector scaled = fwd * 128.0f;
+				TVEC = scaled + *H5B78.Get()->slot217();
+				m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+				m_nLine1b34 = 0x6003;
+				return a;
+			}
+			if (vfunc404(pEnemy) == 2)
+			{
+				m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+				m_nLine1b34 = 0x600c;
+				return b;
+			}
+		}
+		m_flNextInvestigateSoundTime = gpGlobals->curtime + 20.0f;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b9060 size=0x2a9
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102b5dc0.h"
