@@ -217660,6 +217660,76 @@ void CNPC_VMingXiao::sub_103937d0(int a, int nSlot, int act)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103952b0 size=0x1b4
+#include "CNPC_VMingXiao.h"
+#include "CUnknown10739d08.h"
+extern CUnknown10739d08 g_10739d08;
+
+int CNPC_VMingXiao::sub_103952b0(int a)
+{
+	int result;
+	switch (*(int *)((char *)this + 0x1594)) {
+	case 1:
+		result = -2;
+		break;
+	case 4:
+		if (sub_10398000(1))
+			result = 1;
+		else if (sub_10398000(3))
+			result = 3;
+		else
+			result = sub_10398000(5) ? 5 : -1;
+		break;
+	case 8:
+		if (sub_10398000(3))
+			result = 3;
+		else
+			result = sub_10398000(5) ? 5 : -1;
+		break;
+	case 5:
+		if (sub_10398000(0))
+			result = 0;
+		else if (sub_10398000(2))
+			result = 2;
+		else
+			result = sub_10398000(4) ? 4 : -1;
+		break;
+	case 9:
+		if (sub_10398000(2))
+			result = 2;
+		else
+			result = sub_10398000(4) ? 4 : -1;
+		break;
+	case 6:
+		result = sub_10398000(5) ? 5 : -1;
+		break;
+	case 7:
+		result = sub_10398000(4) ? 4 : -1;
+		break;
+	default:
+		result = -1;
+		int roll = enginerandom->vfunc2(0, 99);
+		if (((int *)g_10739d08.sub_101e8da0())[11] > roll) {
+			if (sub_10398000(1)) {
+				result = 1;
+			} else if (sub_10398000(0)) {
+				result = 0;
+			} else if (sub_10398000(3)) {
+				result = 3;
+			} else if (sub_10398000(2)) {
+				result = 2;
+			} else if (sub_10398000(5)) {
+				result = 5;
+			} else if (sub_10398000(4)) {
+				result = 4;
+			}
+		}
+		break;
+	}
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10395650 size=0xa8
 #include "CBaseEntity.h"
 #include "CNPC_VMingXiao.h"

@@ -13048,6 +13048,7 @@
 0x10012f6c func   ?vfunc448@CNPC_VHengeyokai@@QAEXH@Z CNPC_VHengeyokai::vfunc448
 0x10012f7b func   ?sub_1023e2d0@@YGXPAUinputdata_t@@@Z sub_1023e2d0
 0x10012f80 func   ?vfunc82@CNPC_VScurrying@@UAEPAUdatamap_t@@XZ CNPC_VScurrying::vfunc82
+0x10012f85 func   ?sub_103952b0@CNPC_VMingXiao@@QAEHH@Z CNPC_VMingXiao::sub_103952b0
 0x10012f8a func   ?sub_1016cf30@CBasePlayer@@QAEXXZ CBasePlayer::sub_1016cf30
 0x10012f8f func   ?vfunc291@CWeaponIWritten@@UAEXXZ CWeaponIWritten::vfunc291
 0x10012f99 func   ?sub_100aff90@@YAXXZ sub_100aff90
