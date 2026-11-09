@@ -81503,6 +81503,112 @@ void CUnit10155460::sub_10155460(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101554a0 size=0x305
+#include "CRagdollProp.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+struct RagPhysObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48();
+	virtual void *GetCollide(const void *origin, const void *angles); };
+struct RagPhysCollision { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void CollideGetAABB(Vector &mins, Vector &maxs, void *pCollide); };
+struct RagSaveRestore { virtual void v0(); virtual void v1(); virtual void AssociateModel(int pObject, int modelIndex); };
+struct RagModelInfo { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void *GetVCollide(int modelIndex); };
+
+struct RagBoneAccessor	// Source's CBoneAccessor
+{
+	const void *m_pAnimating;
+	void *m_pBones;
+	int m_ReadableBones;
+	int m_WritableBones;
+	RagBoneAccessor() { m_pAnimating = 0; m_pBones = 0; m_ReadableBones = m_WritableBones = 0; }
+	RagBoneAccessor(void *pBones) { m_pAnimating = 0; m_pBones = pBones; }
+};
+
+struct ragdollparams_t
+{
+	void *pGameData;
+	void *pCollide;
+	void *pStudioHdr;
+	Vector forceVector;
+	int forceBoneIndex;
+	RagBoneAccessor pPrevBones;
+	RagBoneAccessor pCurrentBones;
+	float boneDt;
+	float jointFrictionScale;
+	Vector forcePosition;
+};
+
+extern RagModelInfo *g_1070b250;
+extern RagPhysCollision *g_1072393c;
+extern int g_10723940, g_10723944;
+extern RagSaveRestore *g_1053c5e0;
+extern Vector g_1070d1b0;
+void sub_1019c0b0(void *ragdoll, ragdollparams_t *params, RagPhysCollision *a, int b, int c);
+void sub_1019bfd0(void *ragdoll);
+void sub_1000dff8();
+struct CRagdollPropUnit : CRagdollProp { void sub_10155010(); };
+
+struct CRagdollPropBounds { char pad[0xd68]; Vector m_ragdollMins[30]; Vector m_ragdollMaxs[30]; };
+
+void CRagdollProp::sub_101554a0(const Vector &forceVector, int forceBone, const Vector &forcePos, void *pPrevBones, void *pBoneToWorld, float dt, int collisionGroup, bool activateRagdoll)
+{
+	sub_100aaa40(collisionGroup);
+	if (collisionGroup == 2) {
+		sub_100ac4e0((int)sub_1000dff8, 0, 0);
+		sub_100ac610(gpGlobals->curtime + 5.0f, 0);
+	}
+	vfunc93(7, 0);
+	{
+		ScopeTrace t("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(6);
+	}
+	{
+		ScopeTrace t("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(3);
+	}
+	m_nTakeDamage = 1;
+
+	ragdollparams_t params;
+	params.pGameData = (CBaseEntity *)this;
+	params.pCollide = g_1070b250->GetVCollide(vfunc8());
+	params.pStudioHdr = sub_100952d0(-1);
+	params.forceVector = forceVector;
+	params.forceBoneIndex = forceBone;
+	params.forcePosition = forcePos;
+	params.pPrevBones = RagBoneAccessor(pPrevBones);
+	params.pCurrentBones = RagBoneAccessor(pBoneToWorld);
+	params.boneDt = dt;
+	params.jointFrictionScale = 1.0f;
+	sub_1019c0b0(&m_nBodies730, &params, g_1072393c, g_10723940, g_10723944);
+	if (activateRagdoll)
+		sub_1019bfd0(&m_nBodies730);
+	for (int i = 0; i < m_nBodies730; i++) {
+		sub_101563b0(m_Bodies[i].m_pObject, i);
+		g_1053c5e0->AssociateModel(m_Bodies[i].m_pObject, vfunc8());
+		g_1072393c->CollideGetAABB(((CRagdollPropBounds *)this)->m_ragdollMins[i], ((CRagdollPropBounds *)this)->m_ragdollMaxs[i], ((RagPhysObj *)m_Bodies[i].m_pObject)->GetCollide(&g_1070d1b0, g_1070d9d0));
+	}
+	sub_100a6490(m_Bodies[0].m_pObject);
+	((CRagdollPropUnit *)this)->sub_10155010();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155880 size=0x12
 #include "CRagdollProp.h"
 
