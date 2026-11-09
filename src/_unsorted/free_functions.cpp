@@ -141544,6 +141544,75 @@ void CUnknown1021eaf0::sub_1021eaf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021f3e0 size=0x1cc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatWeapon.h"
+#include "CBaseCombatCharacter.h"
+#include "CVDmg_t.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+extern CBaseEntity *__cdecl sub_100ab250(CBaseEntity *);
+struct CInfoB1021f3e0 { char pad[0xc]; char dmg[0x44]; int n50; unsigned int n54; };
+struct CRaw1021f3e0 { int d[17]; };
+struct CEntA0View1021f3e0 { char pad[0xa0]; CBaseCombatWeapon *m_pWeapon; };
+struct CWeapClipView1021f3e0 { char pad[0x744]; int m_iAmmoType[2]; int m_iClip[2]; };
+#define V10_1021f3e0(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100_1021f3e0(p) V10_1021f3e0(p##0) V10_1021f3e0(p##1) V10_1021f3e0(p##2) V10_1021f3e0(p##3) V10_1021f3e0(p##4) V10_1021f3e0(p##5) V10_1021f3e0(p##6) V10_1021f3e0(p##7) V10_1021f3e0(p##8) V10_1021f3e0(p##9)
+struct CCharSlot386View1021f3e0
+{
+	V100_1021f3e0(a0) V100_1021f3e0(a1) V100_1021f3e0(a2)
+	V10_1021f3e0(b0) V10_1021f3e0(b1) V10_1021f3e0(b2) V10_1021f3e0(b3) V10_1021f3e0(b4) V10_1021f3e0(b5) V10_1021f3e0(b6) V10_1021f3e0(b7)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5();
+	virtual void vfunc386();
+};
+
+// TARGET: sub_1021f3e0
+void __cdecl sub_1021f3e0(CInfoB1021f3e0 *pInfo, int nEdict)
+{
+	CBaseEntity *pEnt = (CBaseEntity *)engine->vfunc38(nEdict);
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+		if (!pEnt) pEnt = (CBaseEntity *)engine->vfunc38(0);
+		pEnt = sub_100ab250(pEnt);
+	}
+	if (!pEnt) return;
+	CBaseCombatWeapon *pWeapon = ((CEntA0View1021f3e0 *)pEnt)->m_pWeapon;
+	if (!pWeapon) return;
+	CBaseCombatCharacter *pOwner = (CBaseCombatCharacter *)pWeapon->sub_10252240();
+	if (pOwner) {
+		if (*(int *)((char *)pOwner + 0xa8)) {
+			pWeapon->vfunc307(0xdb);
+			pWeapon->vfunc333(0xd, 1, 0, 0, 0, 0);
+		}
+		CRaw1021f3e0 dmg = *(CRaw1021f3e0 *)pInfo->dmg;
+		int t0 = pOwner->m_pEdict2e0; ((CVDmg_t *)&dmg)->sub_101fb200(engine->vfunc35(t0), nEdict);
+		((CVDmg_t *)&dmg)->sub_101fa680();
+	}
+	int idx = *(int *)((char *)pWeapon->sub_102517e0() + 0x10c);
+	CWeapClipView1021f3e0 *pView = (CWeapClipView1021f3e0 *)pWeapon;
+	int nTake = pInfo->n50;
+	if (nTake) {
+		if (nTake == -1) nTake = pView->m_iClip[idx];
+		if (nTake > 0) pView->m_iClip[idx] -= nTake;
+	}
+	long fl = pInfo->n54;
+	if ((fl & 1) && pView->m_iClip[idx] > 0 && pWeapon->vfunc277(idx)) {
+		pOwner->vfunc374(pView->m_iClip[idx], pView->m_iAmmoType[idx], 0);
+		pView->m_iClip[idx] = 0;
+	}
+	if (fl & 6)
+		((CCharSlot386View1021f3e0 *)pOwner)->vfunc386();
+	pWeapon->vfunc307(0xb4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021fb50 size=0xff
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
