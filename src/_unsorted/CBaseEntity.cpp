@@ -2387,6 +2387,30 @@ void CBaseEntity::vfunc144(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1c30 size=0xb1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+int sub_1043e780(const char *, const char *);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+bool CBaseEntity::vfunc161(const char *name)
+{
+    ScopeTrace trace("CBaseEntity::HasLinkedDoor", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    if (name && m_target20c)
+        return sub_1043e780(name, STRINGR(m_target20c)) == 0;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1d20 size=0x9b
 #include "CUnknown100a1d20.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
