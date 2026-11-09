@@ -231,7 +231,7 @@ public:
 	void sub_103bdfc0();	// removes every entity (global list search from the start, filter 2, around the slot 217 position, radius 150.0f) the search finds; called by vfunc144
 	void sub_1029a070();	// CAI_BaseNPCTroika::vfunc593 (stub 0x10002720), called directly by vfunc593
 	void sub_1029b290(int *pEvent);	// CAI_BaseNPCTroika::vfunc259 (stub 0x100146e1), called directly
-	void sub_103bef20(CBaseEntity *pEnt, const char *pszBone);	// stub 0x10010082
+	bool sub_103bef20(CBaseEntity *pEnt, const char *pszBone);	// stub 0x10010082
 	void sub_103bea90(void *pObj);	// stub 0x10014687
 	void sub_10298d30();	// CAI_BaseNPCTroika::vfunc103 (stub 0x1000303a), called directly by Spawn
 	void sub_1009b060(Vector *pSize);	// stub 0x10001a50: sets the entity's size from the vector
