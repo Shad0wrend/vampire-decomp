@@ -6427,6 +6427,7 @@
 0x10009e17 func   ??0CTriggerHurt@@QAE@XZ CTriggerHurt::CTriggerHurt
 0x10009e1c func   ?sub_100bdc20@bf_write@@QAEXI@Z bf_write::sub_100bdc20
 0x10009e21 func   ?sub_1042c4a0@@YAXXZ sub_1042c4a0
+0x10009e26 func   ?sub_103c05e0@CNPC_VTzimisce@@QAEXH@Z CNPC_VTzimisce::sub_103c05e0
 0x10009e2b func   ?vfunc350@CItemContainer@@QAEXH@Z CItemContainer::vfunc350
 0x10009e30 func   ?sub_1003e250@@YAPAUtrace21@@PAU1@@Z sub_1003e250
 0x10009e35 func   ?sub_101f1c70@CUnknown101f1c70@@QAEXH@Z CUnknown101f1c70::sub_101f1c70
