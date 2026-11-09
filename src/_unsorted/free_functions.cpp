@@ -143940,6 +143940,50 @@ void __fastcall sub_1022d410(Mem256 *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022d690 size=0xbe
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown101f9b70.h"
+#include "ScopeTrace.h"
+
+struct CInstanceEdict
+{
+	char m_pad0000[0x40];
+	CGlobalEntityList_Ent *m_pUnk;	// 0x40: the entity's networkable
+};
+
+static __forceinline CBaseEntity *Instance(CInstanceEdict *pEdict)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	if (!pEdict)
+		pEdict = (CInstanceEdict *)engine->vfunc38(0);
+	CBaseEntity *pResult;
+	if (pEdict && pEdict->m_pUnk)
+		pResult = pEdict->m_pUnk->vfunc4();
+	else
+		pResult = 0;
+	return pResult;
+}
+
+// TARGET: sub_1022d690
+int sub_1022d690(int index, int arg)
+{
+	CBaseEntity *pEnt = Instance((CInstanceEdict *)engine->vfunc38(index));
+	char *pClient = pEnt ? *(char **)((char *)pEnt + 0x9c) : 0;
+	if (!pClient)
+		return -1;
+	return ((CUnknown101f9b70 *)(pClient + 0x13dc))->sub_101f9b70(arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022d780 size=0xe0
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
