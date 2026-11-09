@@ -30905,6 +30905,37 @@ clear:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008ed50 size=0x117
+#include "CBaseAnimating.h"
+#include "StudioHdr.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct DebugNameView { const char *sub_100ab4f0(); };
+__declspec(dllimport) void DevWarning(const char *, ...);
+
+int CBaseAnimating::sub_1008ed50(int sequence, int *pLocalSequence)
+{
+    ScopeTrace trace("CBaseAnimating::LookupExtraAnimationModelIndexForSequence", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+    int base = 0;
+    for (int model = -1; model < 2; model++) {
+        StudioHdr *hdr = (StudioHdr *)sub_100952d0(model);
+        if (hdr) {
+            int count = hdr->m_nIncludeModels ? hdr->IncludeModel(hdr->m_nIncludeModels)[-1].m_nCount + hdr->IncludeModel(hdr->m_nIncludeModels)[-1].m_nBase : hdr->m_nLocalSeq;
+            if (sequence >= base && sequence < base + count) {
+                *pLocalSequence = sequence - base;
+                return model;
+            }
+            base += count;
+        }
+    }
+    DevWarning("%s could not find proper model index for sequence: %d\n", ((DebugNameView *)this)->sub_100ab4f0(), sequence);
+    *pLocalSequence = 0;
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008eec0 size=0x1dd
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
