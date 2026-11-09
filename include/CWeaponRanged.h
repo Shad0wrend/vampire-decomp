@@ -54,6 +54,7 @@ public:
     CWR_V(329) CWR_V(330)
     virtual const Vector &vfunc331();    // slot 331: a vector inside the current roll slot record
     void sub_10013a57();    // as in CPhysForce (transplant)
+    void vfunc339();    // slot 339 (0x102397b0, plain member): recoil spread kick, a vector handed to the owner character's slot 169
 
     // Slot 370 (animation events), declared as a plain member for now: the slots between 32x and 370 are not modelled.
     void vfunc373();    // slot 373 (0x102387b0, plain member like 372 / 374; this in ecx, no stack args, plain ret): the NPC / player fire step: roll slot sub_102517e0 (ammo slot 2 forced while the owner's list +0x4fe84 and +0x914 are positive), owner sub_10252240, misc flag 0x200000, slot 333(1 or 6, 1, 0,0,0,0), aim via owner slot 389 / sub_10176520 (autoaim) or the NPC's slot 574, shot-count loop on +0x730[g_1088aee4] with slot 332 interval (count +0x918), UTIL_TraceLine_DebugCall (mask 0x46004003, CTraceFilterSimple(this, 0)), DevMsg "Presence bonus", a 0x44 byte CVDmg_t-like record copied from +0x77c + roll*0x44 (rep movsd) into a bullet-info struct (0x4a dwords, CVDmg_t ctor 0x101fa5b0, CGameTrace ctor 0x1003ff80) handed to the owner's slot 185 once per shot, CSoundEnt::sub_101bac90(1, origin, ...), slot 339
