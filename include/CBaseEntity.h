@@ -97,6 +97,7 @@ public:
 	int vfunc154(int a, int b);	// slot 154: -1 in state 4; 0x34 when the state is set and b == 0x47; else the engine random stream's RandomInt(0, 4)
 	void vfunc155(struct CGameTrace *pTrace, int decalIndex, char bFlag, int a4, class CBasePlayer *pPlayer, int nType, char bTrace);	// slot 155 "CBaseEntity::DecalTrace" (ret 0x1c): trace fields +0xc endpos, +0x40 surface props, +0x4c entity, +0x50 hitbox
 	bool vfunc158();
+	void vfunc165(void *pEdict);	// slot 165: slot 166(the entity of the edict, or null)
 	bool vfunc161(const char *name);	// "CBaseEntity::HasLinkedDoor": scope trace (entity name), true when the string at +0x20c is set and equals name (case-insensitive)
 	void vfunc168();
 	void vfunc174(CBaseEntity *pOther);	// "CBaseEntity::StartTouch": scope trace (entity name), when the handle at +0x254 resolves calls slot 174(pOther) on that entity
