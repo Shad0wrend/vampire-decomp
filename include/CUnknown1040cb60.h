@@ -23,9 +23,16 @@ public:
 	float m_f40;	// 0x40
 	char m_pad0044[1];
 	char m_bFlag45;	// 0x45: transform by the rotation of the entity's slot 194 angles only (not its absolute matrix)
-	char m_pad0046[0x14c - 0x46];
+	char m_pad0046[2];
+	float m_f48;
+	float m_a4c[32];
+	float m_acc[32];
 	unsigned int m_hEntity;	// 0x14c
-	char m_pad0150[0x178 - 0x150];
+	char m_pad0150[0xc];
+	char m_b15c;
+	char m_pad015d[3];
+	Vector m_v160;
+	float m_v16c[3];
 	int m_hEngine;	// 0x178
 
 	void sub_1040cb60();	// releases the physics objects of the entity behind m_hEntity (restores each object's state from the parameters at +0x4c), then clears the handle and frees the engine handle
