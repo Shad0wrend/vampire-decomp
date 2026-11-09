@@ -10742,6 +10742,7 @@
 0x1000fae7 func   ?sub_1008d0f0@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_1008d0f0
 0x1000faec func   ??_GIPredictionSystem@@UAEPAXI@Z ??_GIPredictionSystem@@UAEPAXI@Z
 0x1000faf6 func   ?sub_101f2680@@YIHPAUSHead101f2680@@HPBD@Z sub_101f2680
+0x1000fafb func   ?sub_101132a0@CBreakableSurface@@QAEXHHPBVVector@@0@Z CBreakableSurface::sub_101132a0
 0x1000fb00 func   ?sub_10202ec0@CUnknown10202ec0@@QAEHHHH@Z CUnknown10202ec0::sub_10202ec0
 0x1000fb0a func   ?sub_102e2660@CUnknown102e2660@@QAEHH@Z CUnknown102e2660::sub_102e2660
 0x1000fb0f func   ?vfunc81@CItemGWatchNormal@@QAEHXZ CItemGWatchNormal::vfunc81
