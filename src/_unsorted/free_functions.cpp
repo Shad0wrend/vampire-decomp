@@ -189934,6 +189934,72 @@ float CAI_Navigator::sub_1030a650(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030aea0 size=0x1d9
+#include "vampire_all.h"
+#include "CUnknown1030a6e0.h"
+struct AILocalMoveGoal1030aea0 {
+	Vector target;		// 0x00
+	Vector dir;		// 0x0c
+	float pad18[3];
+	float speed;		// 0x24
+	float maxDist;		// 0x28
+	float f2c;
+	int navType;		// 0x30
+	int pad34;
+	unsigned char flags;	// 0x38
+	char pad39[0x44 - 0x39];
+	char directTrace[4];	// 0x44
+	float MaxDist() const { return maxDist; }
+};
+struct AIMoveTrace1030aea0 {
+	int fStatus;
+	int rest[13];
+	AIMoveTrace1030aea0() { memset(this, 0, sizeof(*this)); }
+};
+struct MotorView1030aea0 { char pad[0x30]; float m_flF30; };
+#define MIN1030aea0(a, b) (((a) < (b)) ? (a) : (b))
+
+bool CUnknown1030a6e0::sub_1030aea0(void *pGoal, float distClear, Vector *pSolution)
+{
+	AILocalMoveGoal1030aea0 &goal = *(AILocalMoveGoal1030aea0 *)pGoal;
+	bool solved = false;
+
+	if (goal.speed == 0)
+		return false;
+
+	if (sub_10308190(&goal.target))
+		return false;
+
+	bool fVeryClose = (distClear < 1.0);
+	float degreesPositiveArc = (!fVeryClose) ? 270 : 340;
+
+	float probeDist = sub_1030a650(goal.speed);
+	if (goal.flags & 5)
+		probeDist = MIN1030aea0(goal.MaxDist(), probeDist);
+
+	if (vfunc0(&goal, goal.directTrace, distClear, probeDist, degreesPositiveArc, 5) != 2)
+	{
+		if (sub_1030a0d0(&goal, goal.directTrace, degreesPositiveArc, !fVeryClose, pSolution))
+		{
+			sub_10309e80(&goal.dir, pSolution);
+
+			AIMoveTrace1030aea0 moveTrace;
+			float flScale = (*(MotorView1030aea0 **)((char *)m_pOuter + 0x5d44))->m_flF30 * goal.speed;
+			Vector vecEnd = *(Vector *)m_pOuter->vfunc220() + (*pSolution * flScale);
+			sub_10308150(goal.navType, &vecEnd, 1, &moveTrace.fStatus);
+			if (moveTrace.fStatus >= 0)
+				solved = true;
+			else
+				solved = false;
+		}
+	}
+
+	m_bSteer14 = (solved && goal.speed != 0) ? 1 : 0;
+	m_vecGoal = goal.target;
+	return solved;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030b100 size=0x98
 #include "CUtlVector280.h"
 
