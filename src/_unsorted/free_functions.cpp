@@ -159854,6 +159854,58 @@ void block_10272650::CAI_BaseNPCUnit10272650::sub_10272650(int nValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102726a0 size=0xb7
+#include "CAI_BaseNPC.h"
+#include "CBaseAnimating.h"
+
+struct CNPCSlots310
+{
+	CAI_NPC_V(0) CAI_NPC_V(1) CAI_NPC_V(2) CAI_NPC_V(3) CAI_NPC_V(4) CAI_NPC_V(5) CAI_NPC_V(6) CAI_NPC_V(7) CAI_NPC_V(8) CAI_NPC_V(9)
+	CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V10(9)
+	CAI_NPC_V10(10) CAI_NPC_V10(11) CAI_NPC_V10(12) CAI_NPC_V10(13) CAI_NPC_V10(14) CAI_NPC_V10(15) CAI_NPC_V10(16) CAI_NPC_V10(17) CAI_NPC_V10(18) CAI_NPC_V10(19)
+	CAI_NPC_V10(20) CAI_NPC_V10(21) CAI_NPC_V10(22) CAI_NPC_V10(23) CAI_NPC_V10(24) CAI_NPC_V10(25) CAI_NPC_V10(26) CAI_NPC_V10(27) CAI_NPC_V10(28) CAI_NPC_V10(29)
+	CAI_NPC_V10(30)
+	virtual void vfunc310(int a);
+};
+
+struct CNpcAnimFields
+{
+	char m_pad0000[0x6f0];
+	int m_nSequence;
+	char m_pad06f4[0xff0 - 0x6f4];
+	int m_IdealActivity;
+	char m_pad0ff4[0x5ccc - 0xff4];
+	int m_nIdealSequence;
+	int m_IdealTranslatedActivity;
+	int m_IdealWeaponActivity;
+
+	int GetSequence() { return m_nSequence; }
+	int sub_100936e0(int sequence, int a, int b);
+};
+
+void CAI_BaseNPC::sub_102726a0()
+{
+	CNpcAnimFields *pFields = (CNpcAnimFields *)this;
+	int iNextSequence = pFields->sub_100936e0(pFields->GetSequence(), pFields->m_nIdealSequence, 0);
+	if (iNextSequence != -1) {
+		if (iNextSequence != pFields->m_nIdealSequence) {
+			int eWeaponActivity = 2;
+			int eTranslatedActivity = 2;
+			int eNextActivity = ((CBaseAnimating *)this)->sub_10090020(iNextSequence);
+			if (eNextActivity != -1) {
+				int iJunk;
+				sub_10272130(eNextActivity, &iJunk, &eTranslatedActivity, &eWeaponActivity);
+			}
+			sub_10272490(2, iNextSequence, eTranslatedActivity, eWeaponActivity);
+		} else {
+			sub_10272490(pFields->m_IdealActivity, pFields->m_nIdealSequence, pFields->m_IdealTranslatedActivity, pFields->m_IdealWeaponActivity);
+		}
+	} else {
+		((CNPCSlots310 *)this)->vfunc310(pFields->m_IdealActivity);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102727d0 size=0xe6
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

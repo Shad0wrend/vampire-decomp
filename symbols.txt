@@ -5678,6 +5678,7 @@
 0x10008ee5 func   ?sub_10315790@@YAPAUNode@@PBD@Z sub_10315790
 0x10008eef func   ?sub_100bac20@@YAHXZ sub_100bac20
 0x10008ef4 func   ?vfunc174@CBaseTrigger@@QAEXPAVCBaseEntity@@@Z CBaseTrigger::vfunc174
+0x10008efe func   ?sub_102726a0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_102726a0
 0x10008f03 func   ?sub_102223f0@CExperienceTable@@QAEXXZ CExperienceTable::sub_102223f0
 0x10008f08 func   ?sub_103e16e0@@YAMXZ sub_103e16e0
 0x10008f12 func   ?sub_101ffb90@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffb90
