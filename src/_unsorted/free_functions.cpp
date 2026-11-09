@@ -178252,6 +178252,50 @@ float CUnknown102d8bc0::sub_102d8bc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d8cf0 size=0x102
+#include "CBaseEntity.h"
+#include "CUnknown102d9040.h"
+#include "CEHandleGet.h"
+
+extern "C" void *memmove(void *, const void *, unsigned int);
+
+struct CMotorTimedEntry
+{
+	int m_i0;
+	unsigned int m_hEnt;
+	float m_vec[3];
+	float m_flStart;
+	float m_flEnd;
+	float m_flRate;
+	float m_flInterest;
+
+	float Interest() const { return m_flInterest; }
+};
+
+#define MAXOF(a, b) (((a) > (b)) ? (a) : (b))
+
+void CUnknown102d9040::sub_102d8cf0(CBaseEntity *pEnt, float flValue, float duration, float amount)
+{
+	int i;
+	for (i = 0; i < m_nSize; i++)
+	{
+		CMotorTimedEntry &target = ((CMotorTimedEntry *)m_pMemory)[i];
+		if ((CBaseEntity *)EHandle_Get(target.m_hEnt) == pEnt && target.m_flRate == 0)
+		{
+			if (target.m_flStart == gpGlobals->curtime)
+				flValue = MAXOF(flValue, target.Interest());
+			int n = m_nSize - i - 1;
+			if (n > 0)
+				memmove(&((CMotorTimedEntry *)m_pMemory)[i], &((CMotorTimedEntry *)m_pMemory)[i + 1], n * sizeof(CMotorTimedEntry));
+			m_nSize--;
+			break;
+		}
+	}
+	float vec[3] = { 0.0f, 0.0f, 0.0f };
+	sub_102d9040(0, pEnt, vec, *(int *)&flValue, duration, amount);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d8e50 size=0x93
 #include "CUnknown102d9040.h"
 #include "Vector.h"
