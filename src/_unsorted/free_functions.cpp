@@ -55686,6 +55686,51 @@ void __stdcall sub_100e7d10(char *dst, char *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7da0 size=0x16a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <string.h>
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include "CDialogDependency.h"
+
+void CDialog::sub_100e7da0(char *pPacket)
+{
+	ScopeTrace trace("CDialog::fill_packet", g_106b8540);
+	m_bNoReply = 0;
+	int i;
+	for (i = 0; i < 4; i++) {
+		pPacket[0x804 + i * 0x800] = 0;
+		m_aDeps2848[i].sub_100e8ef0((int)this);
+	}
+	if (!sub_100e8100(pPacket))
+		return;
+	m_nResponses = sub_100e82d0(m_aChoices);
+	int nSkipped = 0;
+	for (i = 0; i < m_nResponses; i++) {
+		int r = sub_100e8520(m_aChoices[i], i - nSkipped, pPacket);
+		if (r == -1)
+			m_bNoReply = 1;
+		if (r < 1)
+			nSkipped++;
+	}
+	m_nResponses -= nSkipped;
+	if (!m_bNoReply && m_nResponses == 0) {
+		strcpy(pPacket + 0x804, "I do not have a valid reply.");
+		m_nResponses = 1;
+		*(int *)(pPacket + 0x2804) = 0;
+		*(int *)(pPacket + 0x2814) = -1;
+		m_aChoices[0] = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e7f70 size=0xb4
 extern "C" {
 void *memset(void *, int, unsigned int);
