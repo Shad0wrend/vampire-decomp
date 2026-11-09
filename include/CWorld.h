@@ -19,6 +19,7 @@ public:
     virtual void vfunc113();    // "CWorld::Activate"-like: CBaseEntity::vfunc113, caches sv_cheats in the global 0x10752e9c, clamps the value at +0x49c to 0..2 and, when that changed it, refreshes every player (sub_10170750) and flags the entity (+0x1b1); resets the globals 0x109247e0 / 0x109247e4 to -1 and 0x10924fb8 to 0
     virtual void vfunc130(int a);
     void sub_1023bd20();    // stub 0x10004ead
+    void sub_1023c760(float flFade, const char *pszLandmark, const char *pszLevel);
     void sub_1023ca30();    // stub 0x10011e82    // slot 134: its own (0x1023c6f0)
     virtual void vfunc103();    // slot 103: its own (0x1023bba0)
     virtual void vfunc104();    // slot 104: its own (0x1023c020)
@@ -52,7 +53,13 @@ public:
     float m_flCopWaitGrace;	// 0x04a4
     bool m_bNosferatuTolerant;	// 0x04a8
     bool m_bNoFrenzyArea;	// 0x04a9
-    char m_pad04aa[0x518 - 0x4aa];
+    char m_pad04aa[0x4ac - 0x4aa];
+    int m_n4ac;
+    float m_f4b0;
+    float m_f4b4;
+    char m_szLevel4b8[0x20];
+    char m_szLandmark4d8[0x20];
+    char m_pad04f8[0x518 - 0x4f8];
     int m_n518;    // 0x0518
     float m_f51c;    // 0x051c
     float m_f520;    // 0x0520
