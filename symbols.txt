@@ -10068,6 +10068,7 @@
 0x1000ee8a func   ?sub_10382bb0@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::sub_10382bb0
 0x1000ee8f func   _item_k_oceanhouse_upstairs_key item_k_oceanhouse_upstairs_key
 0x1000ee94 func   ?vfunc0@CAutoGameSystem@@UAE_NXZ CAutoGameSystem::vfunc0
+0x1000ee99 func   ?sub_101d0160@@YAXPAUSDecalTrace@@HH_N@Z sub_101d0160
 0x1000ee9e func   ?sub_101a62d0@@YIPAHPAH@Z sub_101a62d0
 0x1000eea3 func   ?vfunc76@CNPC_VWerewolf@@UAEXXZ CNPC_VWerewolf::vfunc76
 0x1000eea8 func   ?sub_102cd4a0@CAI_GoalEntity@@QAEXXZ CAI_GoalEntity::sub_102cd4a0

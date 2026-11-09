@@ -112169,6 +112169,42 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d0160 size=0xf1
+#include "CSprayCan.h"
+#include "CBroadcastRecipientFilter.h"
+extern int g_105c230c[];
+struct SDecalEnt { char m_pad[0x2e0]; int m_pEdict; int edict() { return m_pEdict; } };
+inline int ENTINDEX_(int pEdict) { return engine->vfunc35(pEdict); }
+inline int ENTINDEX_(SDecalEnt *pEnt) { return ENTINDEX_(pEnt->edict()); }
+struct SDecalTrace { char m_pad0[0xc]; Vector endpos; char m_pad1[0x2c - 0x18]; float fraction; char m_pad2[0x4c - 0x30]; SDecalEnt *m_pEnt; };
+struct CTempEntsDecal
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31();
+	virtual void PlayerDecal(IRecipientFilter &filter, float delay, const Vector *pos, int player, int entity, int index);
+};
+extern CTempEntsDecal *g_10540528;
+void sub_101d0160(SDecalTrace *pTrace, int playernum, int decalNumber, bool bIsCustom)
+{
+	int index;
+	if (!bIsCustom) {
+		if (decalNumber < 0)
+			return;
+		index = g_105c230c[decalNumber * 2];
+		if (index < 0)
+			return;
+	} else {
+		index = decalNumber;
+	}
+	if (pTrace->fraction == 1.0)
+		return;
+	CBroadcastRecipientFilter filter;
+	g_10540528->PlayerDecal(filter, 0.0f, &pTrace->endpos, playernum, ENTINDEX_(pTrace->m_pEnt), index);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d02a0 size=0x1
 void sub_101d02a0()
 {
