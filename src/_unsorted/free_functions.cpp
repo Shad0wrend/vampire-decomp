@@ -43950,6 +43950,66 @@ void sub_100c3440(CStudioView100c3440 *p, int idx, float f, int a4, int a5, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c3600 size=0x2de
+#include "StudioHdr.h"
+#include "matrix3x4_t.h"
+void sub_10139b50(const float *angles, const float *origin, float *matrix);
+void sub_1013b090(const float *q, const float *pos, float *matrix);
+void sub_10138df0(const float *a, const float *b, float *out);
+
+// TARGET: sub_100c3600
+void sub_100c3600(StudioHdr *pStudioHdr, const float *angles, const float *origin, const float *pos, const float *q, int iBone, matrix3x4_t *pBoneToWorld, StudioBoneMask *pMask)
+{
+	int boneList[350];
+	int n = 0;
+	if (iBone < -1 || iBone >= pStudioHdr->m_nBones)
+		iBone = 0;
+	StudioBone *pbones = pStudioHdr->Bone(0);
+	if (iBone == -1) {
+		n = pStudioHdr->m_nBones;
+		for (int i = 0; i < n; i++)
+			boneList[n - i - 1] = i;
+	} else {
+		do {
+			boneList[n++] = iBone;
+			iBone = pbones[iBone].m_iParent;
+		} while (iBone != -1);
+	}
+	matrix3x4_t R;
+	matrix3x4_t B;
+	sub_10139b50(angles, origin, &R.m_flMatVal[0][0]);
+	for (int j = n - 1; j >= 0; j--) {
+		int i = boneList[j];
+		if (!(pMask->m_bits[i >> 5] & (1 << (i & 31))))
+			continue;
+		sub_1013b090(q + i * 4, pos + i * 3, &B.m_flMatVal[0][0]);
+		int parent = pbones[i].m_iParent;
+		if (parent == -1) {
+			sub_10138df0(&R.m_flMatVal[0][0], &B.m_flMatVal[0][0], &pBoneToWorld[i].m_flMatVal[0][0]);
+		} else if (!(pbones[i].m_bFlags88 & 2)) {
+			sub_10138df0(&pBoneToWorld[parent].m_flMatVal[0][0], &B.m_flMatVal[0][0], &pBoneToWorld[i].m_flMatVal[0][0]);
+		} else {
+			float (*O)[4] = pBoneToWorld[i].m_flMatVal;
+			float (*P)[4] = pBoneToWorld[parent].m_flMatVal;
+			float (*r)[4] = R.m_flMatVal;
+			float (*b)[4] = B.m_flMatVal;
+			O[0][0] = r[0][0] * b[0][0] + (r[0][1] * b[1][0] + r[0][2] * b[2][0]);
+			O[0][1] = r[0][0] * b[0][1] + (r[0][1] * b[1][1] + r[0][2] * b[2][1]);
+			O[0][2] = r[0][0] * b[0][2] + (r[0][1] * b[1][2] + r[0][2] * b[2][2]);
+			O[0][3] = P[0][0] * b[0][3] + (P[0][1] * b[1][3] + P[0][2] * b[2][3]) + P[0][3];
+			O[1][0] = r[1][0] * b[0][0] + (r[1][1] * b[1][0] + r[1][2] * b[2][0]);
+			O[1][1] = r[1][0] * b[0][1] + r[1][1] * b[1][1] + r[1][2] * b[2][1];
+			O[1][2] = r[1][0] * b[0][2] + r[1][1] * b[1][2] + r[1][2] * b[2][2];
+			O[1][3] = P[1][0] * b[0][3] + P[1][1] * b[1][3] + P[1][2] * b[2][3] + P[1][3];
+			O[2][0] = r[2][0] * b[0][0] + (r[2][1] * b[1][0] + r[2][2] * b[2][0]);
+			O[2][1] = r[2][0] * b[0][1] + r[2][1] * b[1][1] + r[2][2] * b[2][1];
+			O[2][2] = r[2][0] * b[0][2] + r[2][1] * b[1][2] + r[2][2] * b[2][2];
+			O[2][3] = P[2][0] * b[0][3] + P[2][1] * b[1][3] + P[2][2] * b[2][3] + P[2][3];
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c3ce0 size=0x32f
 #include <math.h>
 
