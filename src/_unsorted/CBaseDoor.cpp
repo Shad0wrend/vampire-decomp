@@ -575,6 +575,49 @@ void CBaseDoor::vfunc243(char bChain, int bLinked)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0a40 size=0x159
+#include "CBaseDoor.h"
+#include "CCollisionProperty.h"
+#include <math.h>
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CDoorSlots
+{
+	PV10(0) PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV100(1)
+	PV10(20)
+	PV(210) PV(211) PV(212) PV(213)
+	virtual Vector *v214();
+	PV(215) PV(216)
+	virtual Vector *v217();
+};
+
+struct CDoorMoveFields
+{
+	char m_pad0000[0x190];
+	Vector m_vecMoveDir;	// 0x190
+	char m_pad019c[0x504 - 0x19c];
+	float m_flLip;	// 0x504
+};
+
+// TARGET: CBaseDoor::vfunc245
+void CBaseDoor::vfunc245(Vector *pMins, Vector *pMaxs)
+{
+	CDoorMoveFields *f = (CDoorMoveFields *)this;
+	CDoorSlots *s = (CDoorSlots *)this;
+	Vector vecAbs = *s->v217();
+	Vector vecMoveDir = f->m_vecMoveDir * -1.0f;
+	float t0 = fabs((s->v214()->x - 2.0f) * f->m_vecMoveDir.x) + fabs(f->m_vecMoveDir.y * (s->v214()->y - 2.0f)) + fabs(f->m_vecMoveDir.z * (s->v214()->z - 2.0f)); float t1 = f->m_flLip; float flDist = t0 - t1;
+	CCollisionProperty *pColl = (CCollisionProperty *)(0x270 + (char *)this);
+	Vector vecPos = vecAbs + vecMoveDir * flDist;
+	*pMins = *(Vector *)pColl->vfunc1() + vecPos;
+	*pMaxs = *(Vector *)pColl->vfunc2() + vecPos;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f0ef0 size=0xe
 #include "CBaseDoor.h"
 void CBaseDoor::vfunc246(int a, int* b, int c)
