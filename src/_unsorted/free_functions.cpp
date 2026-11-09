@@ -186957,6 +186957,40 @@ void sub_102e96e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e9910 size=0xb8
+struct S102e9910Range { float lo, hi; };
+extern S102e9910Range g_1060f358[];
+
+struct S102e9910Rec
+{
+	int m_nType;
+	float m_flScale;
+	float m_flAngle;
+	char m_pad[0x118 - 12];
+};
+
+struct CView102e9910
+{
+	void sub_102e9910(S102e9910Rec *pBegin, S102e9910Rec *pEnd);
+};
+
+void CView102e9910::sub_102e9910(S102e9910Rec *pBegin, S102e9910Rec *pEnd)
+{
+	for (; pBegin != pEnd; ++pBegin) {
+		float flLow = g_1060f358[pBegin->m_nType].lo;
+		float flHigh = g_1060f358[pBegin->m_nType].hi;
+		if (pBegin->m_flScale < 0.01f)
+			pBegin->m_flScale = 0.0f;
+		else
+			pBegin->m_flScale = (flHigh - flLow) * pBegin->m_flScale + flLow;
+		while (pBegin->m_flAngle < 0.0f)
+			pBegin->m_flAngle += 360.0f;
+		while (pBegin->m_flAngle >= 360.0f)
+			pBegin->m_flAngle -= 360.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e9a00 size=0x6b
 #include "CUnknown102e9a00.h"
 #include "CBaseEntity.h"
