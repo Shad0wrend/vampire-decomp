@@ -131154,6 +131154,39 @@ int CVStatInfoList_t::sub_101ffdf0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fff60 size=0x12c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CVStatInfoList_t.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+int CVStatInfoList_t::sub_101fff60(const char *name, int index)
+{
+	ScopeTrace trace("CVStatInfoList_t::LookupNextPartial( char *name, int index )", g_106b8540);
+	char szName[128];
+	char szStat[128];
+	strcpy(szName, name);
+	_strlwr(szName);
+	for (int i = index + 1; i < m_nStats; i++) {
+		const char *pszStat = STRINGR(m_pStats[i].m_pszName);
+		strcpy(szStat, pszStat);
+		_strlwr(szStat);
+		if (strstr(szStat, szName) == szStat)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10200260 size=0xb5
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
