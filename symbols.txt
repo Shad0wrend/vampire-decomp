@@ -7844,6 +7844,7 @@
 0x1000be79 func   ?sub_101e1010@Loader@@QAE_NPBD@Z Loader::sub_101e1010
 0x1000be7e func   ?sub_100b99d0@CBatSwarm@@QAE_NXZ CBatSwarm::sub_100b99d0
 0x1000be83 func   ?sub_10387180@CNPC_VHumanCombatant@@QAEHXZ CNPC_VHumanCombatant::sub_10387180
+0x1000be88 func   ?sub_102432e0@@YAXABUVector2D@@0000AAU1@@Z sub_102432e0
 0x1000be8d func   ?sub_10208c90@CUnknown10208c90@@QAEXPAUinputdata_t@@@Z CUnknown10208c90::sub_10208c90
 0x1000be92 func   ?sub_1029a050@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_1029a050
 0x1000be97 func   ?sub_10050c70@CDisciplineParticle@@SAPAV1@PAUCDisciplineParticleParams@@HHHH@Z CDisciplineParticle::sub_10050c70

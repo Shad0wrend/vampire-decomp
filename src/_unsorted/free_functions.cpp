@@ -152097,6 +152097,30 @@ void sub_102431f0(const Vector &p1, const Vector &p2, const Vector &p3, const Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x102432e0 size=0x86
+struct Vector2D
+{
+	float x, y;
+	float &operator[](int i) { return ((float *)this)[i]; }
+	float operator[](int i) const { return ((float *)this)[i]; }
+};
+
+inline void Vector2DLerp(const Vector2D &src1, const Vector2D &src2, float t, Vector2D &dest)
+{
+	dest[0] = src1[0] + (src2[0] - src1[0]) * t;
+	dest[1] = src1[1] + (src2[1] - src1[1]) * t;
+}
+
+// TARGET: sub_102432e0
+void sub_102432e0(const Vector2D &p1, const Vector2D &p2, const Vector2D &p3, const Vector2D &p4, const Vector2D &t, Vector2D &out)
+{
+	Vector2D edge[2];
+	Vector2DLerp(p1, p4, t.y, edge[0]);
+	Vector2DLerp(p2, p3, t.y, edge[1]);
+	Vector2DLerp(edge[0], edge[1], t.x, out);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102433a0 size=0x76
 #include "Vector.h"
 
