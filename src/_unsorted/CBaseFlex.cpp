@@ -379,6 +379,62 @@ void CBaseFlex::vfunc283()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b65b0 size=0x208
+#include "CBaseFlex.h"
+extern void __cdecl sub_10003463(char *pIn, char *pOut);
+extern struct IGameRules { virtual void vfunc0(); virtual bool vfunc1(); char pad[0x28]; int m2c; } *g_106d056c;
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+__declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+
+// TARGET: CBaseFlex::vfunc284
+void CBaseFlex::vfunc284()
+{
+	for (int i = 0; i < m_nItems; i++) {
+		CBaseFlexItem *pItem = &m_pItems[i];
+		CBaseFlexItemObject *pObj = pItem->m_pObject;
+		CFlexPlayerSource *pSource = (CFlexPlayerSource *)pItem->m_n04;
+		switch (pObj->sub_100029c8()) {
+		case 10:
+			if (pObj->sub_1000695b())
+				vfunc289(pItem);
+			break;
+		case 2:
+			if (pObj->sub_1000695b()) {
+				const char *pszName = pObj->sub_10006fdc();
+				void *pTrack = pObj->sub_1000b93d();
+				if (pszName && pTrack) {
+					CBaseFlexFileData *pFile = sub_100b62a0(pszName);
+					if (pFile) {
+						CBaseFlexFileData *pFile2 = 0;
+						CFlexStudioHdr *pHdr = sub_100952d0(-1);
+						if (pHdr && !g_106d056c->vfunc1() && g_106d056c->m2c) {
+							char szModel[260];
+							char szShort[260];
+							char szPath[260];
+							Q_strncpy(szModel, pHdr->m_pad00 + 0xc, 260);
+							sub_10003463(szModel, szShort);
+							Q_snprintf(szPath, 260, "%s/%s", szShort, pszName);
+							pFile2 = sub_100b62a0(szPath);
+						}
+						float flTime = pSource->sub_1007dfa0();
+						float flWeight = pObj->sub_10002900(flTime);
+						vfunc288(pTrack, flWeight, pFile, pFile2, pItem->m_b08 == 0);
+					}
+				}
+			}
+			break;
+		case 7:
+			vfunc290((CFlexRequest *)pItem);
+			break;
+		case 6:
+			vfunc291((CFlexRequest *)pItem);
+			break;
+		}
+		pItem->m_b08 = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7040 size=0x75
 #include "CBaseFlex.h"
 

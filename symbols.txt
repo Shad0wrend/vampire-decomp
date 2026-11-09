@@ -8729,6 +8729,7 @@
 0x1000d27e func   ?sub_101550d0@CRagdollProp@@QAEPAV1@XZ CRagdollProp::sub_101550d0
 0x1000d283 func   ?sub_100b58d0@CBaseFlex@@QAEPAV1@XZ CBaseFlex::sub_100b58d0
 0x1000d288 func   _trigger_player_activity_level trigger_player_activity_level
+0x1000d28d func   ?vfunc284@CBaseFlex@@UAEXXZ CBaseFlex::vfunc284
 0x1000d292 func   _item_p_research_hg_dodge item_p_research_hg_dodge
 0x1000d297 func   _item_p_research_hg_melee item_p_research_hg_melee
 0x1000d29c func   ?vfunc81@CItemMMoneyClip@@QAEHXZ CItemMMoneyClip::vfunc81
