@@ -11690,6 +11690,7 @@
 0x100110c2 func   ?vfunc3@CCopyRecipientFilter@@UAEHH@Z CCopyRecipientFilter::vfunc3
 0x100110c7 func   ?vfunc362@CBaseCombatWeapon@@UAEPAUCWeaponActivityRecord@@XZ CBaseCombatWeapon::vfunc362
 0x100110cc func   ?vfunc5@CEnvDustPuff@@QAEPAV1@I@Z CEnvDustPuff::vfunc5
+0x100110d6 func   ?vfunc104@CSecCamera@@UAEXXZ CSecCamera::vfunc104
 0x100110db func   ?sub_1028ac80@CBaseHandle@@QAEAAV1@PAVIHandleEntity@@@Z CBaseHandle::sub_1028ac80
 0x100110e5 func   ?sub_10430370@@YAII@Z sub_10430370
 0x100110ea func   ?vfunc362@CWeaponMelee_Tzimisce2Claw@@QAEHXZ CWeaponMelee_Tzimisce2Claw::vfunc362

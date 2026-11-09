@@ -39,6 +39,23 @@ void *Helper::sub_1020bf90(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020c010 size=0x8b
+#include "CSecCamera.h"
+
+extern char g_106b8540[];
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void CSecCamera::vfunc104()
+{
+	if (m_sPanSnd) enginesound->vfunc0(STRINGR(m_sPanSnd), 0);
+	if (m_sZoomInSnd) enginesound->vfunc0(STRINGR(m_sZoomInSnd), 0);
+	if (m_sZoomOutSnd) enginesound->vfunc0(STRINGR(m_sZoomOutSnd), 0);
+	if (m_sAlarmSnd) enginesound->vfunc0(STRINGR(m_sAlarmSnd), 0);
+	sub_1000978c();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020c0d0 size=0x125
 #include "CSecCamera.h"
 #include "CEntityVSlots.h"
