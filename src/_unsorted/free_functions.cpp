@@ -171798,6 +171798,62 @@ void CUnknown102b5dc0::sub_102b5dc0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b5de0 size=0x28c
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "UTIL_Trace.h"
+#include "Vector.h"
+struct CUnknown1028e870 { float sub_1028e870(); };
+CBaseEntity *sub_1023bd00();
+extern Vector g_1070d1b0;
+
+inline void TraceToPos(CAI_BaseNPCTroika *self, Vector vecEnd, CGameTrace *ptr)
+{
+	UTIL_TraceLine_RayCall(((CEntityVSlots *)self)->slot192(), vecEnd, 0x2000000, self, 0, ptr);
+}
+
+bool CAI_BaseNPCTroika::sub_102b5de0()
+{
+	if (m_h5ba8.Get())
+	{
+		CGameTrace trace;
+		TraceToPos(this, *((CEntityVSlots *)m_h5ba8.Get())->slot217(), &trace);
+		if (trace.m_fraction < 1.0f || trace.m_allsolid || trace.m_startsolid)
+		{
+			CBaseEntity *pHit = trace.m_pEnt;
+			if (pHit == sub_1023bd00())
+				return false;
+		}
+		return true;
+	}
+	else
+	{
+		if (sub_10014df8(0x48))
+			return false;
+		if (((CUnknown1028e870 *)this)->sub_1028e870() > 3.0f)
+			return false;
+		CEntityVSlots *pEnemy = (CEntityVSlots *)vfunc168();
+		if (!pEnemy)
+			return true;
+		Vector vecOut;
+		CGameTrace trace;
+		UTIL_TraceLine_RayCall(((CEntityVSlots *)this)->slot192(), *(Vector *)pEnemy->slot197((int)&vecOut, (int)&g_1070d1b0, 0, 0), 0x2000000, this, 0, &trace);
+		if (trace.m_fraction < 1.0f || trace.m_allsolid || trace.m_startsolid)
+		{
+			if (trace.m_pEnt)
+			{
+				int r = ((CEntityVSlots *)this)->slot404(trace.m_pEnt);
+				if (r == 3 || r == 4)
+					return false;
+			}
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b6120 size=0x152
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"

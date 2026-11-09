@@ -4075,6 +4075,7 @@
 0x10006a96 func   ?vfunc82@CNPC_VHunter@@UAEPAUdatamap_t@@XZ CNPC_VHunter::vfunc82
 0x10006a9b func   ?sub_10247c10@CUnknown10247c10@@QAEPAV1@HHH@Z CUnknown10247c10::sub_10247c10
 0x10006aa0 func   ?sub_10203190@StatOwner2@@QAEPAVCUnknown102029c0@@H@Z StatOwner2::sub_10203190
+0x10006aa5 func   ?sub_102b5de0@CAI_BaseNPCTroika@@QAE_NXZ CAI_BaseNPCTroika::sub_102b5de0
 0x10006aaa func   ?sub_101584b0@@YAXPAUCObj@@@Z sub_101584b0
 0x10006aaf func   ?vfunc2@CTESprite@@UAEPAV1@I@Z CTESprite::vfunc2
 0x10006ab4 func   ?vfunc566@CNPC_VZombie@@UAE_NH@Z CNPC_VZombie::vfunc566
