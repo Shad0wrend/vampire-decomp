@@ -204124,6 +204124,121 @@ void sub_10355e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10355e70 size=0x167
+#include "CBaseAnimating.h"
+#include "IVEngineServer.h"
+#include "string_t.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CRagdollCopySlots
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7)
+	virtual int v8();
+	virtual string_t v9();
+	virtual void v10(int index);
+	PV(11) PV(12) PV(13) PV(14) PV(15) PV(16) PV(17) PV(18) PV(19)
+	PV10(2) PV10(3) PV10(4) PV10(5)
+	PV(60) PV(61) PV(62) PV(63)
+	virtual void v64(const float *angles);
+	PV(65) PV(66) PV(67) PV(68) PV(69)
+	PV10(7) PV10(8)
+	PV(90) PV(91) PV(92)
+	virtual void v93(int moveType, int moveCollide);
+	PV(94) PV(95) PV(96)
+	virtual CRagdollCopySlots *v97();
+	PV(98) PV(99)
+	PV100(1)
+	PV10(20)
+	PV(210) PV(211)
+	virtual void v212(const char *name);
+	PV(213) PV(214) PV(215) PV(216) PV(217) PV(218) PV(219)
+	virtual float *v220();
+	virtual float *v221();
+};
+
+struct CRagdollCopyFields
+{
+	char m_pad0000[0x168];
+	int m_n168;
+	char m_pad016c[0x174 - 0x16c];
+	int m_n174;
+	char m_pad0178[0x19c - 0x178];
+	unsigned int m_flags19c;
+	char m_pad01a0[0x2e0 - 0x1a0];
+	int m_pEdict;
+	char m_pad02e4[0x5a4 - 0x2e4];
+	int m_n5a4;
+	char m_pad05a8[0x688 - 0x5a8];
+	int m_n688;
+	int m_n68c;
+	char m_pad0690[0x6f0 - 0x690];
+	int m_n6f0;
+	char m_pad06f4[0x6f8 - 0x6f4];
+	int m_n6f8;
+	char m_pad06fc[0x730 - 0x6fc];
+	int m_n730;
+};
+
+struct CRagdollCopyColl
+{
+	virtual void v0();
+	virtual const float *vfunc1();
+	virtual const float *vfunc2();
+};
+
+struct CRagdollCopyUnit : CBaseAnimating
+{
+	void sub_10090180(int a, int b, int c);
+};
+
+void sub_100043cc(CRagdollCopyUnit *pEnt, float *pOrigin, int a);
+void sub_10011432(CRagdollCopyUnit *pEnt, const float *pMins, const float *pMaxs);
+extern CRagdollCopyUnit *g_10938738;
+extern IVEngineServer *g_1070b22c;
+
+// TARGET: sub_10355e70
+CRagdollCopyUnit *sub_10355e70(CRagdollCopyUnit *pSrc, int a, int b)
+{
+	CRagdollCopyFields *pSrcF = (CRagdollCopyFields *)pSrc;
+	if (pSrcF->m_flags19c & 0x40)
+		return 0;
+	CRagdollCopyUnit *pDst = g_10938738;
+	if (!pDst)
+		return 0;
+	CRagdollCopySlots *s = (CRagdollCopySlots *)pSrc;
+	CRagdollCopySlots *d = (CRagdollCopySlots *)pDst;
+	CRagdollCopyFields *pDstF = (CRagdollCopyFields *)pDst;
+	d->v64(s->v221());
+	d->v212(s->v9().pszValue);
+	d->v10(s->v8());
+	pDstF->m_n6f8 = pSrcF->m_n6f8;
+	pDstF->m_n688 = pSrcF->m_n688;
+	pDstF->m_n68c = pSrcF->m_n68c;
+	d->v93(6, 0);
+	pDst->sub_100b37a0();
+	int edict = pSrcF->m_pEdict;
+	pDstF->m_n730 = g_1070b22c->vfunc35(edict);
+	pDstF->m_flags19c = pSrcF->m_flags19c | 0x10;
+	pDstF->m_n6f0 = pSrcF->m_n6f0;
+	int n174 = pSrcF->m_n174;
+	pDstF->m_n174 = n174;
+	if (((CBaseAnimating *)pSrcF)->sub_1008f7b0("ragdoll") > -1)
+		pDst->sub_10090180(a, b, 0);
+	pDstF->m_n168 = pSrcF->m_n168;
+	pDstF->m_n5a4 = pSrcF->m_n5a4;
+	sub_100043cc(pDst, s->v220(), 0);
+	CRagdollCopyColl *pColl = (CRagdollCopyColl *)((char *)pSrcF + 0x270);
+	const float *pMins = pColl->vfunc1();
+	const float *pMaxs = pColl->vfunc2();
+	sub_10011432(pDst, pMins, pMaxs);
+	g_10938738 = (CRagdollCopyUnit *)d->v97();
+	return pDst;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356040 size=0x2b
 class CUnk10938738 {
 public:
