@@ -14287,6 +14287,7 @@
 0x10014a15 func   ?sub_100fd0d0@@YAHXZ sub_100fd0d0
 0x10014a1a func   ?sub_101073c0@CBaseCombatCharacter@@QAEPBDH@Z CBaseCombatCharacter::sub_101073c0
 0x10014a1f func   ?sub_100bf1c0@bf_read@@QAEXHH@Z bf_read::sub_100bf1c0
+0x10014a24 func   ?vfunc444@CNPC_Crow@@QAEXPAX@Z CNPC_Crow::vfunc444
 0x10014a29 func   ?sub_1003e2e0@CBaseEntity@@QAEXPAV1@PAX@Z CBaseEntity::sub_1003e2e0
 0x10014a2e func   ?vfunc617@CNPC_VWerewolf@@QAE_NUCNPC_VWerewolfVec3@@HH0@Z CNPC_VWerewolf::vfunc617
 0x10014a33 func   ?sub_1020ac00@CUnknown1020ac00@@QAEXH@Z CUnknown1020ac00::sub_1020ac00

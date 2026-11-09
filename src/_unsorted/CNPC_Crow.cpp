@@ -318,6 +318,103 @@ void CNPC_Crow::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103587b0 size=0x394
+#include "CNPC_Crow.h"
+#include "CEntityVSlots.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_Motor.h"
+#include "CBaseEntity.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "UTIL_Trace.h"
+
+static inline Vector BelowBy32(const Vector *p)
+{
+	Vector v;
+	v.z = p->z - 32.0f;
+	v.x = p->x;
+	v.y = p->y;
+	return v;
+}
+
+static inline bool Bit12(const unsigned int &f)
+{
+	return ((f >> 12) & 1) != 0;
+}
+
+static inline void MotorGoal(CAI_Motor *pMotor, const Vector &v, float f)
+{
+	pMotor->sub_102e20b0((float *)&v.x, f);
+}
+
+void CNPC_Crow::vfunc444(void *pTask)
+{
+	switch (*(int *)pTask)
+	{
+	case 0x14b:
+		if (m_pTarget5ddc)
+		{
+			Vector *pOrg = ((CEntityVSlots *)this)->slot217();
+			Vector *pTgtOrg = ((CEntityVSlots *)m_pTarget5ddc)->slot217();
+			MotorGoal(m_pMotor5d44, *pTgtOrg + *pOrg, -2.0f);
+		}
+		if (((CEntityVSlots *)this)->slot251())
+		{
+			((CAI_BaseNPC *)this)->sub_10273e80(0);
+			((CAI_BaseNPC *)this)->sub_10272650(0x22);
+			return;
+		}
+		break;
+	case 0x14d:
+		if (m_b5f54)
+		{
+			m_pTarget5ddc = 0;
+			((CAI_BaseNPC *)this)->sub_10273e80(0);
+			return;
+		}
+		break;
+	case 0x150:
+		if (((CEntityVSlots *)this)->slot251())
+		{
+			((CAI_BaseNPC *)this)->sub_10273e80(0);
+			((CAI_BaseNPC *)this)->sub_10272650(1);
+		}
+		if (((CEntityVSlots *)this)->slot217()->z < m_f5f58 && !(sub_100b3700() & 1))
+		{
+			Vector *pOrg1 = ((CEntityVSlots *)this)->slot217();
+			CGameTrace tr;
+			UTIL_TraceLine_DebugCall(*((CEntityVSlots *)this)->slot217(), BelowBy32(pOrg1), 0x200400b, this, 0x11, &tr);
+			if (tr.m_fraction == 1.0f)
+			{
+				((CAI_BaseNPC *)this)->sub_10273e80(0);
+				return;
+			}
+			m_f5f58 = ((CEntityVSlots *)this)->slot217()->z - tr.m_fraction * 32.0f;
+		}
+		break;
+	case 0x14c:
+		if (Bit12(m_flags268))
+			((CBaseEntity *)this)->sub_100b1d10();
+		MotorGoal(m_pMotor5d44, *((CEntityVSlots *)this)->slot217() + m_vec3bc, -2.0f);
+		return;
+	case 0x151:
+		if (sub_100b3700() & 1)
+		{
+			sub_103580d0(0);
+			((CAI_BaseNPC *)this)->sub_10273e80(0);
+			return;
+		}
+		break;
+	default:
+		sub_10288780(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10358c40 size=0xd
 #include "CNPC_Crow.h"
 namespace lifted {
