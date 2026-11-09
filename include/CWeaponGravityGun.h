@@ -49,7 +49,8 @@ public:
 	float m_fl924;	// 0x924: the owner's last view yaw (+0x2070 of the owner), the yaw delta is rotated into the held object's angles
 	int m_nSoundState;	// 0x928
 	int m_nOwnerEdict92c;	// 0x92c: engine index (slot 35) of the owner's edict (+0x2e0), or of the player behind sub_1015d680(0)
-	char m_pad930[0x938 - 0x930];
+	float m_fl930;	// 0x930: the held object's offset (slot 220's vector of the entity at pickup, x)
+	float m_fl934;	// 0x934: (y)
 	float m_fl938;	// 0x938: the vertical offset of the held object (subtracted from its origin z)
 	CGravControllerPoint m_controller93c;	// 0x93c (0x94 bytes, ends at 0x9d0)
 	struct CSlot9d0 { Vector m_vec; EHANDLE m_hA; EHANDLE m_hB; } m_slots9d0[16];	// 0x9d0: 16 * 0x14 records, ends at 0xb10
