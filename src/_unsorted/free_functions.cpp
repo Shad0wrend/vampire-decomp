@@ -93650,6 +93650,34 @@ void * CUnknown10188280::sub_10188280()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101882d0 size=0x8c
+#include "CLogicAuto.h"
+#include "CUnknown101882d0.h"
+
+bool CUnknown101882d0::sub_101882d0(float time, int *pFirst, int *pSecond)
+{
+	*pFirst = -1;
+	*pSecond = -1;
+	int count = m_nRecords;
+	if (count < 2)
+		return false;
+	int last = count - 1;
+	for (int i = 0; i < last; i++)
+	{
+		int next = i + 1;
+		if (time >= m_pRecords[next].m_flTime && time <= m_pRecords[i].m_flTime)
+		{
+			*pFirst = i;
+			*pSecond = next;
+			return true;
+		}
+	}
+	*pFirst = count - 2;
+	*pSecond = last;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10188d60 size=0x2e
 // TARGET: sub_10188d60
 void sub_10188d60(float t, const float *a, const float *b, float *out) {

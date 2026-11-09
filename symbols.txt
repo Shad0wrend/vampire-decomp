@@ -7040,6 +7040,7 @@
 0x1000aa1a func   ?vfunc81@CItemGGarysPhoto@@QAEHXZ CItemGGarysPhoto::vfunc81
 0x1000aa1f func   ?sub_10219120@CUnknown10219120@@QAEXXZ CUnknown10219120::sub_10219120
 0x1000aa24 func   ?vfunc321@CBasePlayer@@QAEDH@Z CBasePlayer::vfunc321
+0x1000aa29 func   ?sub_101882d0@CUnknown101882d0@@QAE_NMPAH0@Z CUnknown101882d0::sub_101882d0
 0x1000aa2e func   ?sub_102f8e30@CUnknown102f8e30@@QAEPAU1@PAVCAI_NetworkManager@@@Z CUnknown102f8e30::sub_102f8e30
 0x1000aa33 func   ?vfunc6@CEffectsServer@@UAEXPBMH@Z CEffectsServer::vfunc6
 0x1000aa38 func   ?vfunc451@CNPC_VVampireBoss@@QAEHXZ CNPC_VVampireBoss::vfunc451
