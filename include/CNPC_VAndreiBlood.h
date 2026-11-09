@@ -14,6 +14,9 @@ public:
 	virtual void vfunc113();	// slot 113 "CNPC_VAndreiBlood::Activate": scope trace (no entity name), the Troika version, then the state at +0x5cc0 / +0x5cc4 = 2, the source file / line markers at +0x1b30 / +0x1b34 and sub_102ae750(0x6b, 0)
 	int vfunc390(void *pInfo);	// slot 390 "CNPC_VAndreiBlood::OnTakeDamage_Alive": scope trace (no entity name), copies the damage info (0x4c bytes); the damage is the VDmg record's GetDmg or the float at +0x30; with the combat byte at +0x66cc counts the hit (+0x66d8) and, when stat 0xf + damage reaches stat 0x11 of the character's default list, sets the byte at +0x66cd; then (unless that test failed) zeroes the copy's damage and its VDmg record's fields +4 / +0xc; CNPC_VHuman::vfunc390 on the copy
 	void vfunc444(const void *pTask);	// slot 444 "CNPC_VAndreiBlood::RunTask": scope trace (no entity name), task 0x150 faces the player (sub_1035e5f0); 0x151 clears the take-damage mode once the float at +0x6f8 reaches 0.5f and completes with the schedule; 0x152 ends the combat start (slot 67, mode 2, counters cleared) before the same; 0x154 marks +0x66d4 when done; 0x156 completes once marked, out of hits (+0x66d8 >= +0x66dc) or 5 seconds after the stamp at +0x66d0; else CNPC_VVampireBoss::vfunc444
+	virtual void vfunc442(const int *pTask);
+	void sub_103c5ac0(const int *pTask);
+	void sub_10273070(int a);
 	void sub_103c5f40(const void *pTask);	// CNPC_VVampireBoss::vfunc444 (stub 0x10004edf), called directly
 	void vfunc431();	// slot 431 "CNPC_VAndreiBlood::NPCThink": scope trace, the CNPC_VVampireBoss version (0x100052d6), trace depth back
 	void vfunc619(int arg);	// slot 619, not modelled as virtual yet

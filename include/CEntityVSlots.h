@@ -74,7 +74,7 @@ public:
 	EVS(170) EVS(171) virtual CEntityVSlots *slot172();
 	virtual void slot173(CEntityVSlots *pActivator, CEntityVSlots *pCaller, int useType, int value);	// "Use"
 	EVS(174) EVS(175) EVS(176) EVS(177) virtual void slot178(CEntityVSlots *pOther); EVS(179)
-	EVS10(18)
+	EVS(180) virtual void slot181(Vector *pVec, int a, int b); EVS(182) EVS(183) EVS(184) EVS(185) EVS(186) EVS(187) EVS(188) EVS(189)
 	EVS(190) virtual void slot191(int a);	// CNPC_VManBat::sub_1038f2c0 hands the new prop_ragdoll_special its third argument (+0x2fc)
 
 	virtual Vector slot192();	// "WorldSpaceCenter": the center of the collision bounds, returned by value (hidden result pointer)
