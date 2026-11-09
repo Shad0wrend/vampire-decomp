@@ -205777,6 +205777,55 @@ int sub_10363780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103656a0 size=0xa5
+#include "CBaseCombatCharacter.h"
+#include "CNPC_VBach.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct S_Item {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+    V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6)
+    virtual void k0(); virtual void k1(); virtual void k2();
+    virtual void s173(void *a, void *b, int c, int d);
+    void sub_1024f7b0();
+};
+struct S_NPC {
+    V10(a0) V10(a1) V10(a2) V10(a3) V10(a4) V10(a5) V10(a6) V10(a7) V10(a8) V10(a9)
+    V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) V10(b7) V10(b8) V10(b9)
+    V10(c0) V10(c1) V10(c2) V10(c3) V10(c4) V10(c5) V10(c6) V10(c7) V10(c8) V10(c9)
+    V10(d0) V10(d1) V10(d2) V10(d3) V10(d4) V10(d5) V10(d6) V10(d7)
+    virtual void L0(); virtual void L1(); virtual void L2();
+    virtual void s383(void *pItem, int a);
+    virtual void L4(); virtual void L5(); virtual void L6(); virtual void L7();
+    virtual void s388(void *pItem, int a);
+    void sub_10272650(int n);
+};
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *pFormat, ...);
+
+void CNPC_VBach::sub_103656a0()
+{
+    S_Item *pItem = (S_Item *)((CBaseCombatCharacter *)this)->sub_1032d890("item_d_holy_light", 0);
+    if (!pItem) {
+        pItem = (S_Item *)sub_1032e120("item_d_holy_light");
+        if (!pItem)
+            goto done;
+        if (!sub_10334c20(pItem)) {
+            DevWarning(1, "Error: Couldn't find space in inventory for Discipline weapon!");
+            pItem->sub_1024f7b0();
+            sub_10272650(5);
+            return;
+        }
+        ((S_NPC *)this)->s383(pItem, 0);
+        ((S_NPC *)this)->s388(pItem, 0);
+    } else if (sub_10007e19() == (CBaseEntity *)pItem) {
+        pItem->s173(this, this, 2, 0);
+    }
+    ((S_NPC *)this)->s388(pItem, 0);
+done:
+    ((S_NPC *)this)->sub_10272650(5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10365840 size=0x1
 void sub_10365840()
 {
