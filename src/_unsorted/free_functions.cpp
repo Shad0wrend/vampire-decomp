@@ -248408,6 +248408,70 @@ void CWeaponPhysCannon::sub_104106a0(int unused, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10410830 size=0x21b
+#include "UTIL_Trace.h"
+#include "CBaseEntity.h"
+#include "CWeaponMelee.h"
+#include "CBaseCombatWeapon.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+
+char sub_10189870(CBaseEntity *pEnt, int a);
+void sub_10139500(Vector *pStart, float flScale, Vector *pDir, Vector *pOut);
+
+struct CTargMemberView
+{
+	void sub_100b7fa0(Vector *pOut, int a, int b);
+};
+
+inline bool IsFlagBitSet(unsigned int flags, int bit)
+{
+	return ((flags >> bit) & 1) != 0;
+}
+
+inline void UTIL_TraceHull_Inline(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	ray.Init(vecAbsStart, vecAbsEnd, hullMin, hullMax);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+void CWeaponMelee::sub_10410830()
+{
+	if (*(float *)((char *)this + 0x918) > gpGlobals->curtime)
+		return;
+	if (IsFlagBitSet(m_nEffectFlags19c, 6))
+		return;
+	CBaseEntity *pOwner = (CBaseEntity *)((CBaseCombatWeapon *)this)->sub_102521f0();
+	if (!pOwner)
+		return;
+	CBaseEntity *pTarg = *(CBaseEntity **)((char *)pOwner + 0xa8);
+	if (!pTarg)
+		return;
+	if (*(char *)((char *)this + 0x911))
+		return;
+
+	Vector vecForward;
+	((CTargMemberView *)pTarg)->sub_100b7fa0(&vecForward, 0, 0);
+
+	CEntityVSlots *pTargSlots = (CEntityVSlots *)pTarg;
+	Vector vecStart = pTargSlots->slot389(*(const Vector *)pTargSlots->slot220());
+
+	Vector vecEnd;
+	sub_10139500(&vecStart, sub_1040e5b0(), &vecForward, &vecEnd);
+
+	CGameTrace tr;
+	UTIL_TraceHull_Inline(vecStart, vecEnd, Vector(-4.0f, -4.0f, -4.0f), Vector(4.0f, 4.0f, 4.0f), 0x46004003, pTarg, 0, &tr);
+
+	if (tr.m_fraction != 1.0f && tr.m_pEnt != 0 && !sub_10411160(tr.m_pEnt, 0))
+		sub_10189870(tr.m_pEnt, (int)pTarg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x104110d0 size=0x6d
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 #define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
