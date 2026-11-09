@@ -8,10 +8,16 @@
 struct datamap_t;
 
 class CBaseEntity;
+class CAI_Motor;
 
 class CNPC_VMingXiaoTentacle
 {
 public:
+	void sub_10280a50();	// CAI_BaseNPC member (stub 0x1000cf6d), called directly
+	void sub_10273e80(int a);	// CAI_BaseNPC TaskComplete-like (stub 0x1000ac68), called directly
+	void sub_10289ee0(int activity);	// CAI_BaseNPC activity setter (stub 0x10014524), called directly
+	void *sub_100952d0(int a);	// CBaseAnimating member (stub 0x10013d8b): the model header
+	void sub_102aacf0(void *pTask);	// CAI_BaseNPCTroika::vfunc444 (stub 0x10015c2b), called directly
 	CNPC_VMingXiaoTentacle *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100123af();	// as in CPhysForce (transplant)
 	int sub_100025cc(int a);	// CAI_BaseNPCTroika::vfunc126 (stub 0x100025cc), called directly
@@ -53,7 +59,9 @@ public:
 	void *sub_1039ede0();
 	char sub_1039eee0();	// the player's CNPC_VMingXiao slot (sub_10397b40) for this tentacle, or 0 when there is no player	// CBasePlayer::sub_1039ede0 (stub 0x1001105e), called directly: the player entity
 
-	char m_pad0004[0x200 - 4];
+	char m_pad0004[0x19c - 4];
+	int m_nFlags19c;	// 0x19c
+	char m_pad01a0[0x200 - 0x1a0];
 	int m_nTakeDamage;	// 0x200
 	char m_pad0204[0x1b2c - 0x204];
 	int m_n1b2c;	// 0x1b2c: state index set to 0x1a by vfunc438
@@ -61,9 +69,15 @@ public:
 	int m_nLine1b34;	// 0x1b34: its line
 	char m_pad1b38[0x5b80 - 0x1b38];
 	char m_b5b80;	// 0x5b80
-	char m_pad5b81[0x5cc0 - 0x5b81];
+	char m_pad5b81[0x5c4c - 0x5b81];
+	float m_f5c4c;	// 0x5c4c
+	char m_pad5c50[0x5cc0 - 0x5c50];
 	int m_nState5cc0;	// 0x5cc0: the NPC state
-	char m_pad5cc4[0x6078 - 0x5cc4];
+	char m_pad5cc4[0x5d34 - 0x5cc4];
+	void *m_p5d34;	// 0x5d34: the navigator
+	char m_pad5d38[0x5d44 - 0x5d38];
+	CAI_Motor *m_pMotor5d44;	// 0x5d44: the motor
+	char m_pad5d48[0x6078 - 0x5d48];
 	char m_b6078;	// 0x6078: set to 1 by vfunc599
 	char m_pad6079[0x6268 - 0x6079];
 	float m_f6268;	// 0x6268: distance to the target
@@ -258,7 +272,7 @@ public:
 	virtual void vfunc164();
 	virtual void vfunc165();
 	virtual void vfunc166_slot();
-	virtual void vfunc167();
+	virtual CBaseEntity *vfunc167();
 	virtual void vfunc168();
 	virtual void vfunc169();
 	virtual void vfunc170();
@@ -342,7 +356,7 @@ public:
 	virtual void vfunc248();
 	virtual void vfunc249();
 	virtual void vfunc250();
-	virtual void vfunc251();
+	virtual bool vfunc251();
 	virtual void vfunc252();
 	virtual void vfunc253();
 	virtual void vfunc254();
@@ -371,7 +385,7 @@ public:
 	virtual void vfunc277();
 	virtual void vfunc278();
 	virtual void vfunc279();
-	virtual void vfunc280();
+	virtual void vfunc280(const char *pszName, float flValue);
 	virtual void vfunc281();
 	virtual void vfunc282();
 	virtual void vfunc283();
@@ -507,7 +521,7 @@ public:
 	virtual void vfunc413();
 	virtual void vfunc414();
 	virtual void vfunc415();
-	virtual void vfunc416();
+	virtual void vfunc416(int a);
 	virtual void vfunc417();
 	virtual void vfunc418();
 	virtual void vfunc419();
@@ -535,7 +549,7 @@ public:
 	virtual void vfunc441();
 	virtual void vfunc442();
 	virtual void vfunc443();
-	virtual void vfunc444();
+	virtual void vfunc444(void *pTask);
 	virtual void vfunc445();
 	virtual void vfunc446();
 	virtual void vfunc447();
@@ -632,7 +646,7 @@ public:
 	virtual void vfunc538();
 	virtual void vfunc539();
 	virtual void vfunc540();
-	virtual void vfunc541();
+	virtual void *vfunc541();
 	virtual void vfunc542();
 	virtual void vfunc543();
 	virtual void vfunc544();
