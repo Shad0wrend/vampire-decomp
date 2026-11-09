@@ -22,6 +22,7 @@ public:
 	void sub_1007ee60();	// 0x1007ee60: Purge-like (size = 0, frees the memory when growSize != -1)
 	void sub_1007eeb0();	// 0x1007eeb0: the same Purge as sub_1007ee60
 	void sub_101b65e0();	// 0x101b65e0: the same Purge as sub_1007ee60
+	void sub_1021e410();
 	void sub_102c8b10();	// 0x102c8b10: the same Purge as sub_1007ee60
 	void sub_102c8b60();	// 0x102c8b60: the same Purge as sub_1007ee60
 	void sub_102c8bb0();	// 0x102c8bb0: the same Purge as sub_1007ee60
