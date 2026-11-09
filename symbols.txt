@@ -11718,6 +11718,7 @@
 0x10011121 func   ?sub_101e9f10@CUnknown101e9f10@@QAEDH@Z CUnknown101e9f10::sub_101e9f10
 0x10011126 func   ?sub_103bdfc0@CNPC_VTzimisce@@QAEXXZ CNPC_VTzimisce::sub_103bdfc0
 0x1001112b func   ?sub_101dd510@CUnknown101dd910@@QAEDPAVIKVNodeView@@@Z CUnknown101dd910::sub_101dd510
+0x10011130 func   ?vfunc602@CNPC_VTzimisceRunner@@UAEDXZ CNPC_VTzimisceRunner::vfunc602
 0x10011135 func   ?sub_10223820@CBaseKeyframedMover@@QAEXPAUinputdata_t@@@Z CBaseKeyframedMover::sub_10223820
 0x1001113a func   ?sub_102bec30@CUnk102bec30@@QAEXXZ CUnk102bec30::sub_102bec30
 0x1001113f func   ?vfunc306@CBaseCombatWeapon@@UAEXH@Z CBaseCombatWeapon::vfunc306

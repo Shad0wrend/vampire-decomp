@@ -393,6 +393,21 @@ void CNPC_VTzimisceRunner::vfunc601(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c3ab0 size=0x53
+#include "CBaseEntity.h"
+#include "CNPC_VTzimisceRunner.h"
+#include "CUnknown1025ddd0.h"
+#include "CUnknown10924a1c.h"
+
+char CNPC_VTzimisceRunner::vfunc602()
+{
+	double d = g_10924a1c->vfunc1() ? 0.0f : g_10924a1c->m_fl28;
+	if ((float)(d + d) <= m_f6268 && !m_pBehaviour65e8->sub_1025db50())
+		return 1;
+	return m_pBehaviour65e8->sub_1025de90((CBaseEntity *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c3b30 size=0xc1
 #include "CBaseEntity.h"
 #include "CNPC_VTzimisceRunner.h"
