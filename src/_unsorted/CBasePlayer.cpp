@@ -2225,6 +2225,135 @@ void CBasePlayer::vfunc149(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016aaf0 size=0x357
+#include "vampire_all.h"
+// TARGET: CBasePlayer::vfunc461
+struct CSumElem_1016af30;
+class CUnk10181650
+{
+public:
+	bool sub_10181650(unsigned int flags);
+};
+class CMoveHelperServer;
+CMoveHelperServer *sub_1013ecd0();
+float sub_1016af30(int nCount, CSumElem_1016af30 *pElems);
+extern CGlobalEntityList g_106eb5d8;
+struct CPlayerListNode
+{
+	int m_n0;
+	CPlayerListNode *m_pNext;
+	int m_n8;
+	CBasePlayer *m_pPlayer;
+};
+extern CPlayerListNode *g_10939fdc;
+
+inline int Floor2Int(float a)
+{
+	int CtrlwdHolder;
+	int CtrlwdSetter;
+	int RetVal;
+	__asm {
+		fld a
+		fnstcw CtrlwdHolder
+		movzx eax, CtrlwdHolder
+		and eax, 0xFFFFF3FF
+		or eax, 0x0400
+		mov CtrlwdSetter, eax
+		fldcw CtrlwdSetter
+		fistp RetVal
+		fldcw CtrlwdHolder
+	}
+	return RetVal;
+}
+
+void CBasePlayer::vfunc461(CUserCmd *pCmds, int numcmds, int totalcmds, int dropped_packets, char paused)
+{
+	int nDelta = totalcmds - numcmds;
+	if (paused)
+	{
+		m_n22C = -1;
+		for (int i = 0; i < numcmds; i++)
+		{
+			pCmds[i].frametime = 0;
+			pCmds[i].forwardmove = 0;
+			pCmds[i].sidemove = 0;
+			pCmds[i].upmove = 0;
+			pCmds[i].buttons = 0;
+			pCmds[i].viewangles = m_vec206c;
+		}
+		dropped_packets = 0;
+	}
+	else
+	{
+		if (m_n207C == 0 && !((CUnk10181650 *)this)->sub_10181650(8))
+			m_vec206c = pCmds[0].viewangles;
+	}
+	float flCurtime = gpGlobals->curtime;
+	float flFrametime = gpGlobals->frametime;
+	int nRun = nDelta;
+	if (dropped_packets < nRun)
+		nRun = dropped_packets;
+	float flSum = sub_1016af30(numcmds + nRun, (CSumElem_1016af30 *)pCmds);
+	float flClock = Floor2Int((gpGlobals->frametime + gpGlobals->curtime) * 1000.0f + 0.5f) * 0.001f;
+	float flTotal = flSum + m_f2358;
+	if (flClock + 0.1f < flTotal)
+	{
+		m_n2084 = 0;
+		m_f2358 = flClock - flSum;
+	}
+	else if (flClock - 0.1f > flTotal)
+	{
+		m_n2084 = 0;
+		m_f2358 = flClock - flSum;
+	}
+	else
+	{
+		m_n2084 = (int)((flClock - flTotal) * 1000.0f);
+		m_n2084 = m_n2084 > 1000 ? 1000 : (m_n2084 < -1000 ? -1000 : m_n2084);
+	}
+	if (&m_Cmd235c != pCmds)
+		m_Cmd235c = pCmds[0];
+	float flSaved = m_f2358;
+	if (m_Cmd235c.m_b44 && g_10939fdc)
+	{
+		for (CPlayerListNode *pNode = g_10939fdc; pNode; pNode = pNode->m_pNext)
+			pNode->m_pPlayer = this;
+	}
+	if (dropped_packets < 0x18)
+	{
+		if (dropped_packets > nDelta)
+		{
+			int nCount = dropped_packets - nDelta;
+			dropped_packets -= nCount;
+			do
+			{
+				vfunc462(&m_Cmd235c, sub_1013ecd0());
+				m_f2358 = flSaved;
+			} while (--nCount);
+		}
+		if (dropped_packets > 0)
+		{
+			CUserCmd *pCmd = &pCmds[numcmds + dropped_packets - 1];
+			for (int i = dropped_packets; i > 0; --i)
+			{
+				vfunc462(pCmd, sub_1013ecd0());
+				--pCmd;
+			}
+		}
+	}
+	for (int i = numcmds - 1; i >= 0; i--)
+		vfunc462(&pCmds[i], sub_1013ecd0());
+	if (g_10939fdc)
+	{
+		for (CPlayerListNode *pNode = g_10939fdc; pNode; pNode = pNode->m_pNext)
+			pNode->m_pPlayer = 0;
+	}
+	g_106eb5d8.sub_100f6ce0();
+	gpGlobals->curtime = flCurtime;
+	gpGlobals->frametime = flFrametime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016af80 size=0xcb
 #include "CBasePlayer.h"
 
