@@ -151910,6 +151910,30 @@ float *CUnk1024d7e0::sub_1024d7e0(float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024dc40 size=0x145
+#include <math.h>
+#include "Vector.h"
+#include "matrix3x4_t.h"
+
+inline float FloatMakePositive(vec_t f)
+{
+	return (float)fabs(f);
+}
+
+int matrix3x4_t::sub_1024dc40()
+{
+	Vector &a = *(Vector *)m_flMatVal[0];
+	Vector &b = *(Vector *)m_flMatVal[1];
+	Vector &c = *(Vector *)m_flMatVal[2];
+	return FloatMakePositive(1.0f - a.Length()) < 0.01f &&
+		FloatMakePositive(1.0f - b.Length()) < 0.01f &&
+		FloatMakePositive(1.0f - c.Length()) < 0.01f &&
+		FloatMakePositive(DotProduct(a, b)) < 0.01f &&
+		FloatMakePositive(DotProduct(a, c)) < 0.01f &&
+		FloatMakePositive(DotProduct(b, c)) < 0.01f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024dfb0 size=0x3b
 void sub_1024dfb0(float *m)
 {

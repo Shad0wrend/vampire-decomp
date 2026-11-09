@@ -14471,6 +14471,7 @@
 0x1001547e func   ?sub_103aa480@CNPC_VSabbatLeader@@QAEHH@Z CNPC_VSabbatLeader::sub_103aa480
 0x10015483 func   ?sub_102dce80@UtlMem@@QAEXXZ UtlMem::sub_102dce80
 0x1001548d func   ?sub_10043870@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_10043870
+0x10015492 func   ?sub_1024dc40@matrix3x4_t@@QAEHXZ matrix3x4_t::sub_1024dc40
 0x10015497 func   ?sub_101d6a30@@YGDHH@Z sub_101d6a30
 0x1001549c func   ?vfunc5@CInfoIntermission@@QAEPAV1@I@Z CInfoIntermission::vfunc5
 0x100154a1 func   ?sub_10167370@CPlayerTargetView@@QAEDXZ CPlayerTargetView::sub_10167370
