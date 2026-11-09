@@ -36,7 +36,9 @@ public:
 	const char *m_apszHelpText[12];	// 0x001c
 	char m_pad004c[0x60 - 0x4c];
 	CVDmgBlock16_t m_max0060;	// 0x0060: the "Max" value record
-	char m_pad0070[0xd8 - 0x70];
+	char m_pad0070[0x9c - 0x70];
+	CVDmgBlock16_t m_default09c;	// 0x009c: the "Default" value record
+	char m_pad00ac[0xd8 - 0xac];
 	const char *m_apszGfxHud[2];	// 0x00d8
 	const char *m_pszInfoModel;	// 0x00e0
 	const char *m_apszSound[6];	// 0x00e4
@@ -54,6 +56,7 @@ public:
 	int m_field0134;	// 0x0134: number of entries of the action pointer array
 	int m_field0138;	// 0x0138: the action pointer array
 
+	int DefaultValue() { return m_default09c.sub_10205840(); }
 	CVStatInfo_t();	// 0x101fdaf0 (called through the stub at 0x1000dfb2): constructs the five records, the cost and the list, then scope trace and the plain fields
 	~CVStatInfo_t();	// 0x101fdc30 (called through the stub at 0x1000f0a6): scope trace around the free of the level table, frees the action pointer array (each action's part at +0x18 first), clears the fields, then the list at +0x10c (sub_101fd4c0) and the five records (+0x9c .. +0x4c, last first)
 	void *sub_101ff4b0(unsigned int flags);	// vector deleting destructor
