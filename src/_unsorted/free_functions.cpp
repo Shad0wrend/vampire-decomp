@@ -102423,6 +102423,42 @@ void CInitPair101ab590::sub_101ab590(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ab5c0 size=0x37
+struct CUnknown101ab5c0Target
+{
+	char m_pad0000[0x40];
+	void *m_pUnk40;
+	bool m_bFullEdict44;
+	void SetEdict(void *pUnk, bool bFullEdict)
+	{
+		m_pUnk40 = pUnk;
+		m_bFullEdict44 = (pUnk != 0) && bFullEdict;
+	}
+};
+
+struct CUnknown101ab5c0
+{
+	virtual int vf0(); virtual int vf1(); virtual int vf2(); virtual int vf3(); virtual int vf4();
+	virtual int vf5(); virtual int vf6(); virtual int vf7(); virtual int vf8(); virtual int vf9();
+	virtual int vf10(); virtual int vf11(); virtual int vf12(); virtual void *vf13();
+
+	int m_n04;
+	int m_n08;
+	CUnknown101ab5c0Target *m_pTarget;
+
+	void sub_101ab5c0(CUnknown101ab5c0Target *p);
+};
+
+// TARGET: CUnknown101ab5c0::sub_101ab5c0
+void CUnknown101ab5c0::sub_101ab5c0(CUnknown101ab5c0Target *p)
+{
+	if (!p)
+		p = (CUnknown101ab5c0Target *)engine->vfunc43();
+	m_pTarget = p;
+	m_pTarget->SetEdict(vf13(), true);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ab610 size=0x30
 #include "CServerNetworkProperty.h"
 void CServerNetworkProperty::sub_101ab610()

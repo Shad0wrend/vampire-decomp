@@ -269,6 +269,7 @@
 0x100015dc func   ?sub_10090180@CBaseAnimating@@QAE_NPBVVector@@H_N@Z CBaseAnimating::sub_10090180
 0x100015e1 func   ?sub_103fd9a0@@YAHXZ sub_103fd9a0
 0x100015e6 func   ?sub_1034e520@@YGXPAUInputLike@@@Z sub_1034e520
+0x100015eb func   ?sub_101ab5c0@CUnknown101ab5c0@@QAEXPAUCUnknown101ab5c0Target@@@Z CUnknown101ab5c0::sub_101ab5c0
 0x100015f0 func   ?vfunc0@ConVar@@UAEPAVConCommandBase@@I@Z ConVar::vfunc0
 0x100015f5 func   ?sub_10157610@@YAHXZ sub_10157610
 0x100015fa func   ?sub_102beb10@@YAHXZ sub_102beb10
