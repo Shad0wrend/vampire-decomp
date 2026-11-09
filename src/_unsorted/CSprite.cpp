@@ -56,6 +56,97 @@ int CSprite::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042e550 size=0x251
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlmemory.h"
+#include "CSprite.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include "Ray_t.h"
+#include "Vector.h"
+
+class CUnknown1042eee0
+{
+public:
+	void sub_1042eee0(int a, int b);
+};
+
+class CUnknown1042ef10
+{
+public:
+	void sub_1042ef10(float a, int b);
+};
+
+extern void (*g_109f3650)(int nLevel, const char *pMsg, ...);
+extern float g_10516cec;
+const char *sub_100ab4f0();
+
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+
+static __forceinline const char *EntityName(CBaseEntity *pEnt)
+{
+	return pEnt ? (*(const char **)((char *)pEnt + 0x26c) ? *(const char **)((char *)pEnt + 0x26c) : g_106b8540) : g_105387dc;
+}
+
+void CSprite::sub_1042e550()
+{
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", EntityName(this));
+		((CCollisionProperty *)((char *)this + 0x270))->sub_100dc480(0);
+	}
+
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+	pSlots->slot93(0, 0);
+	m_flFrame = 0.0f;
+	pSlots->slot104();
+
+	const char *pszModel;
+	{
+		int nDummy;
+		pszModel = *pSlots->slot9(&nDummy);
+	}
+	if (!pszModel)
+		pszModel = g_106b8540;
+	pSlots->slot105(pszModel);
+
+	m_flMaxFrame = (float)engine->vfunc26(pSlots->slot8()) - 1.0f;
+
+	if (*(const char **)((char *)this + 0x26c) && !(*(unsigned char *)((char *)this + 0x204) & 1))
+		sub_1042ef40();
+	else
+		sub_1042ef70();
+
+	if (pSlots->slot221()->y != g_104454c4 && pSlots->slot221()->z == g_104454c4)
+	{
+		Vector angles = *pSlots->slot221();
+		angles.z = angles.y;
+		angles.y = 0;
+		pSlots->slot64(angles.Base());
+	}
+
+	float scale = m_flSpriteScale;
+	if (scale < g_104454c4 || scale > g_10516cec)
+	{
+		g_109f3650(1, "LEVEL DESIGN ERROR: Sprite %s with bad scale %.f [0..%.f]\n",
+				   sub_100ab4f0(), m_flSpriteScale, g_10516cec);
+		scale = clamp(m_flSpriteScale, 0, g_10516cec);
+	}
+
+	((CUnknown1042eee0 *)this)->sub_1042eee0(*(unsigned char *)((char *)this + 0x1a3), 0);
+	((CUnknown1042ef10 *)this)->sub_1042ef10(scale, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042e850 size=0x43
 #include "CSprite.h"
 #include "engineserver.h"

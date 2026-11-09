@@ -9525,6 +9525,7 @@
 0x1000e5c5 func   _env_microphone env_microphone
 0x1000e5ca func   ?sub_10223940@CBaseKeyframedMover@@QAEXH@Z CBaseKeyframedMover::sub_10223940
 0x1000e5cf func   ?vfunc366@CNPC_VCamera@@UAE_NHHH@Z CNPC_VCamera::vfunc366
+0x1000e5d4 func   ?sub_1042e550@CSprite@@QAEXXZ CSprite::sub_1042e550
 0x1000e5d9 func   ?vfunc366@CNPC_VMingXiaoTentacle@@UAE_NHHH@Z CNPC_VMingXiaoTentacle::vfunc366
 0x1000e5de func   _item_w_mingxiao_spit item_w_mingxiao_spit
 0x1000e5e8 func   ?sub_10221660@QuestJournal@@QAEHPAVCKeyValuesX@@@Z QuestJournal::sub_10221660
