@@ -198809,6 +198809,38 @@ float CUnknown1033b980::sub_1033b980()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033be10 size=0xf5
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "inputdata_t.h"
+#include "CEventQueue.h"
+extern char g_106b8540[];
+struct CUnknown1033b980
+{
+	float sub_1033b980();
+};
+extern CEventQueue g_106e7050;
+
+void CBaseCombatCharacter::sub_1033be10(inputdata_t &data)
+{
+	ScopeTrace trace("CBaseCombatCharacter::BloodHealIn", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (data.value.fieldType == 4) {
+		int n = data.value.iValue;
+		if (n > 0) {
+			sub_1033bf50(1);
+			if (n > 1) {
+				float f = ((CUnknown1033b980 *)this)->sub_1033b980();
+				if (f > 0.0f) {
+					CVariantCopy v;
+					v.SetInt(n - 1);
+					g_106e7050.sub_100cdf10(this, "BloodHeal", v, f, this, this, 0, CEQExtra());
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033bf50 size=0x31c
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
