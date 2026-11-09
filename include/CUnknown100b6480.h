@@ -8,13 +8,13 @@ struct CUnknown100b6480_Item
 	void *m_pBlock;
 };
 
+#include "utlvector.h"
+
 class CUnknown100b6480
 {
 public:
 	char pad0[0xa6c];
-	CUnknown100b6480_Item **m_pItems;
-	char pada70[8];
-	int m_nItems;
+	CUtlVector<CUnknown100b6480_Item *> m_Items;
 
 	void sub_100b6480();
 };
