@@ -59,6 +59,9 @@ struct CCollisionEventVec5
 	int m_size;
 	void *m_pElements;
 
+	int Count() const { return m_size; }
+	void RemoveAll() { for (int i = m_size; --i >= 0; ) ; m_size = 0; }
+
 	CCollisionEventVec5()
 	{
 		m_pMemory = 0;
