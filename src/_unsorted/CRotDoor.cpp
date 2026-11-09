@@ -407,6 +407,99 @@ void CRotDoor::vfunc244(char bChain)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3900 size=0x387
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include "CRotDoor.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+float sub_1013d580(float a, float b);
+
+inline float AngDist(float a, float b)
+{
+	float d = (float)fabs(sub_1013d580(a, b));
+	return d;
+}
+
+inline float AngDiff(float a, float b)
+{
+	float d = sub_1013d580(a, b);
+	return (float)fabs(d);
+}
+
+void CRotDoor::vfunc178(CBaseEntity *pOther)
+{
+	ScopeTrace trace("CRotDoor::Blocked", g_106b8540, g_106b8540);
+	if (pOther) {
+		m_bBlocked654 = true;
+		if (pOther->m_pNPC98)
+			m_bReverse655 = true;
+		float flAngle = sub_100f3d80() + m_flAngle6f8;
+		Vector *pMine = ((CEntityVSlots *)this)->slot217();
+		Vector *pTheirs = ((CEntityVSlots *)pOther)->slot217();
+		Vector dir = *pTheirs - *pMine;
+		float flDirAngle = sub_10004ea8(&dir.x);
+		bool bFirstCloser = false;
+		float flDiff1 = AngDist(flAngle, m_flAngle6fc);
+		if (AngDist(flAngle, m_flAngle700) > flDiff1)
+			bFirstCloser = true;
+		if (m_nCount708 > 0) {
+			if (AngDist(flAngle, m_flAngle704) <= 1.0f) {
+				m_nCount708++;
+				if (m_nCount708 >= 15) {
+					vfunc249();
+					if (m_nState4f8 == 2)
+						m_nState70c = 3;
+					else
+						m_nState70c = 2;
+				}
+			} else {
+				vfunc249();
+			}
+		} else {
+			m_nCount708 = 1;
+		}
+		m_flAngle704 = flAngle;
+		if (m_nState4f8 == 2) {
+			m_bBlocked654 = false;
+			if (m_nState70c == 3) {
+				vfunc244(1);
+			} else if (m_nState70c != 2) {
+				float flPick = bFirstCloser ? m_flAngle6fc : m_flAngle700;
+				float d2 = AngDiff(flDirAngle, flPick);
+				if (AngDiff(flAngle, flPick) > d2)
+					vfunc244(1);
+			}
+		} else if (m_nState4f8 == 3) {
+			m_bBlocked654 = false;
+			if (m_nState70c == 2) {
+				vfunc243(1, 1);
+			} else if (m_nState70c != 3) {
+				float d1 = AngDist(flDirAngle, m_flAngle6f8);
+				if (AngDist(flAngle, m_flAngle6f8) > d1 && m_nState4f8 != 2) {
+					if (!bFirstCloser) {
+						Vector neg = m_angRotation52c * -1.0f;
+						sub_101c17e0(&neg, m_flSpeed164);
+					} else {
+						sub_101c17e0(&m_angRotation52c, m_flSpeed164);
+					}
+					vfunc243(1, 0);
+				}
+			}
+		}
+		sub_100f14a0(pOther);
+		m_bBlocked654 = true;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4080 size=0x8e
 #include "CRotDoor.h"
 
