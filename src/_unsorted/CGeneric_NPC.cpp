@@ -59,6 +59,53 @@ CGeneric_NPC *CGeneric_NPC::vfunc5(int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10359f70 size=0xdf
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CGeneric_NPC.h"
+
+struct CGenericNPCSlots
+{
+	virtual void x0(); virtual void x1(); virtual void x2(); virtual void x3(); virtual void x4(); virtual void x5(); virtual void x6(); virtual void x7(); virtual void x8();
+	virtual string_t GetModelName();
+#define S10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+	S10(a) S10(b) S10(c) S10(d) S10(e) S10(f) S10(g) S10(h) S10(i) S10(j) S10(k) S10(l) S10(m) S10(n) S10(o) S10(p) S10(q) S10(r) S10(s) S10(t)
+	virtual void u0(); virtual void u1();
+	virtual void SetModelName(string_t name);
+#undef S10
+};
+
+extern char g_10629c00[];
+extern const char *g_10629a18;
+extern const char *g_10629a1c;
+extern const char *g_10629a20;
+extern const char *g_10629a28[4];
+
+inline const char *STRING(const string_t &s) { return s.pszValue ? s.pszValue : g_106b8540; }
+#define MAKE_STRING(str) string_t(*(str) != 0 ? (str) : 0)
+
+void CGeneric_NPC::vfunc104()
+{
+	CGenericNPCSlots *self = (CGenericNPCSlots *)this;
+	if (!self->GetModelName().pszValue || !STRING(self->GetModelName()) || !*STRING(self->GetModelName()))
+		self->SetModelName(MAKE_STRING(g_10629c00));
+	engine->vfunc13(STRING(self->GetModelName()), 0);
+	enginesound->vfunc0(g_10629a18, 0);
+	enginesound->vfunc0(g_10629a1c, 0);
+	enginesound->vfunc0(g_10629a20, 0);
+	for (unsigned int i = 0; i < 4; i++)
+		enginesound->vfunc0(g_10629a28[i], 0);
+	sub_100097b4();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a090 size=0x13e
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
