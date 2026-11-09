@@ -8825,6 +8825,7 @@
 0x1000d071 func   ?sub_10205940@CUnknown10205940@@QAEHH@Z CUnknown10205940::sub_10205940
 0x1000d076 func   ?NewNode@?$CUtlRBTree@UCRBEntry24@@H@@QAEHXZ CUtlRBTree<CRBEntry24,int>::NewNode
 0x1000d07b func   ?vfunc444@CNPC_VChangBros@@UAEXPAX@Z CNPC_VChangBros::vfunc444
+0x1000d080 func   ?sub_100a8ef0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100a8ef0
 0x1000d085 func   ?vfunc502@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc502
 0x1000d08a func   ?sub_1009b2c0@CBaseEntity@@QAEXHH@Z CBaseEntity::sub_1009b2c0
 0x1000d08f func   ?sub_1005a7b0@CUnknown1005a7b0@@QAEHXZ CUnknown1005a7b0::sub_1005a7b0

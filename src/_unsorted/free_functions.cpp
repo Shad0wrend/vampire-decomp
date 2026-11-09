@@ -37673,6 +37673,34 @@ void CBaseEntity::sub_100a8e00(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8ef0 size=0x95
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+
+struct CSoundOverrideMgr {
+	CBaseEntity *sub_100f7770(int a, int b, CBaseEntity *pOwner, CBaseEntity *c);
+};
+extern CSoundOverrideMgr g_106eb5d8;
+
+void CBaseEntity::sub_100a8ef0()
+{
+	ScopeTrace trace("CBaseEntity::ResetScriptedSoundOverrideEnt", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int h = *(int *)((char *)this + 0x108);
+	if (h)
+		sub_100a8d30(g_106eb5d8.sub_100f7770(0, h, this, 0));
+	else
+		sub_100a8d30(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8fc0 size=0x83
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
