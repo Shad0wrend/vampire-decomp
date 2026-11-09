@@ -110,7 +110,7 @@ public:
 	CBP_V10(sb0) CBP_V10(sb1) CBP_V1(sb20) CBP_V1(sb21) CBP_V1(sb22) CBP_V1(sb23) CBP_V1(sb24) CBP_V1(sb25) CBP_V1(sb26) virtual int vfunc92(); virtual void vfunc93(int a, int b);
 	virtual int vfunc94();	// slot 94 (+0x178), CBaseEntity::vfunc94: the move type (10 = the value CWeaponUnarmed::vfunc319 sends the view message 0x4c for)
 	CBP_V10(sb3) virtual void vfunc105(const char *pszModel); CBP_V1(sb41) CBP_V1(sb42) CBP_V1(sb43) CBP_V1(sb44) CBP_V1(sb45) CBP_V1(sb46) CBP_V1(sb47) CBP_V1(sb48) CBP_V1(sb49) CBP_V1(sb50) CBP_V1(sb51) CBP_V1(sb52) CBP_V1(sb53) CBP_V1(sb54) CBP_V1(sb55) CBP_V1(sb56) CBP_V1(sb57) CBP_V1(sb58) virtual int vfunc124(); CBP_V10(sb6)
-	CBP_V1(sb70) CBP_V1(sb71) CBP_V1(sb72) CBP_V1(sb73) CBP_V1(sb74) CBP_V1(sb75) virtual void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace); CBP_V1(sb77)
+	CBP_V1(sb70) CBP_V1(sb71) CBP_V1(sb72) CBP_V1(sb73) CBP_V1(sb74) CBP_V1(sb75) virtual void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace); virtual int vfunc142(const struct CTakeDamageInfo *pInfo);
 	virtual int vfunc143(float flHealth, int bitsDamageType);	// slot 143 "TakeHealth": clears the discipline effect bits of +0xe98 (bitsDamageType & 0x3fff), then the character's TakeHealth
 	virtual void vfunc144(const void *pArg);	// slot 144: takes a damage info (CUnknown101c26d0, the force vector at +4); sub_10170d60 hands it a random force
 	virtual int vfunc145();	// slot 145: the int handed to sub_102699e0 as its second argument
@@ -171,7 +171,7 @@ public:
 	virtual void vfunc407();
 	virtual void vfunc408();
 	// slots 409..447
-	virtual int vfunc409(); CBP_V1(si0b) CBP_V1(si0c)
+	virtual int vfunc409(); virtual void vslot410(); CBP_V1(si0c)
 	virtual bool vfunc412();
 	virtual bool vfunc413();	// slot 413: true in activity 0x32, else slot 412
 	virtual void vfunc414(CBaseEntity *pEnt); virtual void vfunc415(); CBP_V1(si0h) virtual void vfunc417(int a, int b);
@@ -213,7 +213,11 @@ public:
 	Vector m_vecMovedir190;
 	char m_pad019c[0x1fc - 0x19c];	// 0x019c .. 0x01FB
 	int m_nTakeDamage1FC;	// 0x01FC: the take-damage mode (CBaseEntity::m_nTakeDamage)
-	char m_pad0200[0x22c - 0x200];	// 0x0200 .. 0x022B
+	char m_pad0200[0x210 - 0x200];	// 0x0200 .. 0x020F
+	int m_iHealth;	// 0x0210
+	char m_pad0214[0x224 - 0x214];	// 0x0214 .. 0x0223
+	unsigned int m_fDebugOverlays224;	// 0x0224
+	char m_pad0228[0x22c - 0x228];	// 0x0228 .. 0x022B
 	int m_n22C;	// 0x022C: set to -1 when the command run is paused
 	char m_pad0230[0x268 - 0x230];	// 0x0230 .. 0x0267
 	unsigned int m_fFlags268;	// 0x0268: the entity flag word (bit 12 = attached to a parent)
