@@ -2911,6 +2911,7 @@
 0x1000514b func   ?vfunc580@CNPC_VChangBros@@UAEPAUCAI_CondOwner@@XZ CNPC_VChangBros::vfunc580
 0x1000515a func   ?sub_100933b0@CBaseAnimating@@QAEDHPAM@Z CBaseAnimating::sub_100933b0
 0x1000515f func   ?vfunc5@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc5
+0x10005169 func   ?sub_10376d00@@YAHPAVCEntityVSlots@@@Z sub_10376d00
 0x1000516e func   ?vfunc1@CTETParticle@@UAEHXZ CTETParticle::vfunc1
 0x10005173 func   ?sub_10043c40@CSaveBlockFields10043c40@@QAEXH@Z CSaveBlockFields10043c40::sub_10043c40
 0x10005178 func   _trigger_checkvolume trigger_checkvolume

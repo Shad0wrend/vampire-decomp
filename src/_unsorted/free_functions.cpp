@@ -205848,6 +205848,45 @@ void CNPC_VFrenzyShadow::sub_10376c10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10376d00 size=0x190
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+struct CEdictView376 { char pad[0x9c]; CBaseEntity *m_pUnk; };
+extern CEdictView376 *g_1093ada8[32];
+extern int g_1093ae9c;
+int sub_101ccc80(CEdictView376 **pList, int nMax, const Vector *mins, const Vector *maxs, int flags, int a);
+char __fastcall sub_100b5190(CBaseEntity *p);
+
+inline int EntitiesInBox376(CEdictView376 **pList, int nMax, const Vector &mins, const Vector &maxs, int flags)
+{
+	return sub_101ccc80(pList, nMax, &mins, &maxs, flags, 0);
+}
+
+// TARGET: sub_10376d00
+int sub_10376d00(CEntityVSlots *pEnt)
+{
+	if (pEnt == 0)
+		return 0;
+	static Vector s_vecExtents(1024.0f, 1024.0f, 128.0f);
+	Vector vecOrigin = *pEnt->slot217();
+	g_1093ae9c = 0;
+	int n = EntitiesInBox376(g_1093ada8, 32, vecOrigin - s_vecExtents, s_vecExtents + vecOrigin, 0x40);
+	for (int i = 0; i < n; i++)
+	{
+		if (g_1093ada8[i])
+		{
+			CBaseEntity *p = g_1093ada8[i]->m_pUnk;
+			if (p && !(p->sub_100b3700() & 0x8000) && *((char *)p + 0x1480) && ((CEntityVSlots *)p)->slot158() && !sub_100b5190(p))
+			{
+				g_1093ada8[g_1093ae9c] = g_1093ada8[i];
+				g_1093ae9c++;
+			}
+		}
+	}
+	return g_1093ae9c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10376fc0 size=0x43
 #include "CNPC_VGangrel.h"
 void *sub_100aa720(int size);
