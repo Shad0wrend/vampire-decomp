@@ -77208,6 +77208,23 @@ void sub_1013aab0(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ab00 size=0x4a
+#include "Quaternion.h"
+float sub_1013ad40(Quaternion &q);
+void sub_1013ab00(const Quaternion &p, const Quaternion &q, float t, Quaternion &qt)
+{
+	float sclp, sclq;
+	int i;
+	sclp = 1.0f - t;
+	sclq = t;
+	for (i = 0; i < 4; i++)
+	{
+		qt[i] = sclp * p[i] + sclq * q[i];
+	}
+	sub_1013ad40(qt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ab70 size=0x35
 void sub_1013a9f0(int a, int b, void *pOut);
 void sub_1013abc0(int a, void *pIn, int c, int d);
