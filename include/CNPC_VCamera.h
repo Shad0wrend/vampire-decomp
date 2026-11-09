@@ -309,7 +309,7 @@ public:
 	virtual void vfunc218();
 	virtual void vfunc219();
 	virtual float *vfunc220();
-	virtual void vfunc221();
+	virtual float *vfunc221();
 	virtual void vfunc222();
 	virtual void vfunc223();
 	virtual void vfunc224();
@@ -471,7 +471,7 @@ public:
 	virtual void vfunc380();
 	virtual void vfunc381();
 	virtual void vfunc382();
-	virtual void vfunc383();
+	virtual void vfunc383(void *w, int a);
 	virtual void vfunc384();
 	virtual void vfunc385();
 	virtual void vfunc386();
