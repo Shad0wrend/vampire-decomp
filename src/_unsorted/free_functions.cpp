@@ -75451,6 +75451,42 @@ float __cdecl sub_101374f0(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137520 size=0xa3
+// TARGET: sub_10137520
+#include "Vector.h"
+
+float __fastcall sub_10137520(Vector &v)
+{
+    __declspec(align(16)) Vector out;
+    Vector *pout = &out;
+    float flLen = 0.0f;
+    if (v.x != 0.0f || v.y != 0.0f || v.z != 0.0f)
+    {
+        __asm
+        {
+            mov eax, v
+            mov edx, pout
+            movups xmm4, xmmword ptr [eax]
+            movaps xmm1, xmm4
+            mulps xmm1, xmm4
+            movhlps xmm3, xmm1
+            movaps xmm2, xmm1
+            shufps xmm2, xmm2, 1
+            addss xmm1, xmm2
+            addss xmm1, xmm3
+            sqrtss xmm1, xmm1
+            movss flLen, xmm1
+            rcpss xmm1, xmm1
+            shufps xmm1, xmm1, 0
+            mulps xmm4, xmm1
+            movaps xmmword ptr [edx], xmm4
+        }
+        v = out;
+    }
+    return flLen;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137600 size=0x8b
 // TARGET: sub_10137600
 #include "Vector.h"
