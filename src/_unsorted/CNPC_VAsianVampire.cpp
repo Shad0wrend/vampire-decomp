@@ -158,6 +158,28 @@ void CNPC_VAsianVampire::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10360e10 size=0x75
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VAsianVampire.h"
+#include "ScopeTrace.h"
+extern float g_104a9300;
+int CNPC_VAsianVampire::vfunc127(void *pRestore)
+{
+    ScopeTrace scope("CNPC_VAsianVampire::restore", g_106b8540);
+    int status = sub_1000b28f(pRestore);
+    float f = g_104a9300;
+    m_flRestoredTime = f * 1.0f;
+    return status;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10360eb0 size=0x146
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
