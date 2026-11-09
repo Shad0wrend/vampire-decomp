@@ -144587,6 +144587,21 @@ void CPropHacking::sub_10219fa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021a1c0 size=0x2d
+#include "CPropHacking.h"
+
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+// TARGET: CPropHacking::sub_1021a1c0
+void CPropHacking::sub_1021a1c0()
+{
+	m_flags081c = 8;
+	m_n09dc = -1;
+	m_n09e0 = -1;
+	memset(&m_b082c, 0, 16);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021a2f0 size=0xa3
 #include "CRestore.h"
 #include "CPropHacking.h"
