@@ -165187,6 +165187,18 @@ float CEntUnit::sub_10280630(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280790 size=0xb8
+#include "Vector.h"
+bool __stdcall sub_10280790(const Vector &a, const Vector &b, const Vector &c, float f1, float f2, float f3)
+{
+    if (c.z - a.z > f1 + 0.1) return false;
+    if (a.z - c.z > f2 + 0.1) return false;
+    if (b.z - a.z > f1 * 1.25) return false;
+    if ((a - c).Length() > f3 + 0.1) return false;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280a20 size=0x20
 #include "globalvars.h"
 
