@@ -311,6 +311,45 @@ void CBaseAnimatingOverlay::vfunc269(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10099690 size=0x110
+#include "CBaseAnimatingOverlay.h"
+#include "CEntityVSlots.h"
+
+float sub_100c43e0(void *pStudioHdr, int nSequence, int nExtra, int *pData);
+
+void CBaseAnimatingOverlay::vfunc265(int activity, float flWeight, float flFade, int pszEvent, int nExtra)
+{
+	if (((CEntityVSlots *)this)->slot158() && !m_bNoFlinch)
+	{
+		int iBest = 0;
+		for (int i = 1; i < 3; i++)
+		{
+			if (m_Flinch[i].m_fl18 < m_Flinch[iBest].m_fl18)
+				iBest = i;
+		}
+		int nSequence = sub_1008dc40(activity, -1);
+		if (nSequence >= 0)
+		{
+			m_Flinch[iBest].m_n00 = nSequence;
+			m_Flinch[iBest].m_fl08 = flWeight;
+			m_Flinch[iBest].m_fl0c = flFade;
+			m_Flinch[iBest].m_n10 = 0x18;
+			m_Flinch[iBest].m_n04 = (m_Flinch[iBest].m_n04 + 1) & 3;
+			m_Flinch[iBest].m_fl18 = flWeight + gpGlobals->curtime + flFade;
+			if (pszEvent)
+			{
+				int nEventSeq = sub_10092270(pszEvent);
+				if (nEventSeq >= 0)
+				{
+					m_Flinch[iBest].m_n10 = nEventSeq;
+					sub_100c43e0(sub_100952d0(-1), nEventSeq, nExtra, &m_Flinch[iBest].m_n14);
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100997f0 size=0x2b
 #include "CBaseAnimatingOverlay.h"
 
