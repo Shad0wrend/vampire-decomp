@@ -66527,6 +66527,50 @@ void sub_10115660(SMonHandle h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101157c0 size=0x15a
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseEntity.h"
+
+struct CFuncMonitorEntList
+{
+	CBaseEntity *sub_100290c0(const CBaseHandle &h);
+};
+
+extern CUtlVector<EHANDLE> g_1070a870;
+
+inline int FindMonitorOutOfLine(const EHANDLE &h)
+{
+	for (int i = 0; i < g_1070a870.Count(); i++)
+	{
+		const EHANDLE &e = g_1070a870[i];
+		CBaseEntity *pTarget = ((CFuncMonitorEntList *)EHandleDetail::g_10566458)->sub_100290c0(h);
+		if (e.Get() == pTarget)
+			return i;
+	}
+	return -1;
+}
+
+void sub_101157c0(CBaseEntity *pEnt)
+{
+	EHANDLE h(pEnt);
+	int i = FindMonitorOutOfLine(h);
+	while (i != -1)
+	{
+		g_1070a870.Remove(i);
+		i = g_1070a870.Find(h);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10115980 size=0x117
 // TARGET: ?sub_10115980@@YAXPAUSHandleOwner@@@Z
 #include "CUnknown101151a0.h"
