@@ -57339,6 +57339,29 @@ int CLookupTable::sub_100ecfc0(CLookupObjView *pObj, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ed030 size=0xdd
+#include "CBaseAnimating.h"
+#include "CUnknown100ed030.h"
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+void CUnknown100ed030::sub_100ed030(CBaseAnimating *pEnt)
+{
+	int *pTemplate = &m_pTemplates[*(int *)((char *)pEnt + 0x64e8) * 0x41];
+	int n = m_nNames;
+	for (int i = 0; i < n; i++)
+	{
+		CUnknown100ed030Stance *s = &m_pStances[pTemplate[i + 1]];
+		Msg("Sequences for: %s\n", m_pNames + i * 0x264);
+		for (int j = 0; j < 3; j++)
+		{
+			int idle = s->m_idle[j];
+			int fidget = s->m_fidget[j];
+			Msg("Stance %d: idle: (%d)%s fidget: (%d)%s\n", j, idle, pEnt->sub_1008fe80(idle), fidget, pEnt->sub_1008fe80(fidget));
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ed2c0 size=0x3
 void __stdcall sub_100ed2c0(int a0, int a1)
 {

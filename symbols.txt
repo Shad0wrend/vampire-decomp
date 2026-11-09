@@ -9339,6 +9339,7 @@
 0x1000dd55 func   ?vfunc4@CTEBeamEnts@@UAEXPAVCRecipientFilter@@M@Z CTEBeamEnts::vfunc4
 0x1000dd5a func   ?sub_10385ab0@CNPC_VHumanUnit@@QAEDH@Z CNPC_VHumanUnit::sub_10385ab0
 0x1000dd5f func   ?sub_1019c950@@YAXPAH@Z sub_1019c950
+0x1000dd64 func   ?sub_100ed030@CUnknown100ed030@@QAEXPAVCBaseAnimating@@@Z CUnknown100ed030::sub_100ed030
 0x1000dd69 func   ?sub_10359de0@@YADXZ sub_10359de0
 0x1000dd6e func   ?sub_101e8bb0@CUnknown101e8bb0@@QAEMXZ CUnknown101e8bb0::sub_101e8bb0
 0x1000dd73 func   ?sub_10298840@CAI_BaseNPCTroika@@QAE_NPAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_10298840
