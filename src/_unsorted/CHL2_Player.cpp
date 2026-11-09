@@ -151,6 +151,64 @@ void CHL2_Player::vfunc31(int pDump)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034f860 size=0xc4
+#include "vampire_all.h"
+#include "CHL2_Player.h"
+#include <string.h>
+
+struct CSpawnEngine
+{
+    virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+    virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+    virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14();
+    virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+    virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+    virtual bool IsMultiplayer();
+};
+
+extern CSpawnEngine *g_1070ba0c;
+extern CBaseEntity *g_107260ac;
+extern CGlobalEntityList g_106eb5d8;
+extern char g_1057c024[];
+extern void (__cdecl *g_109f362c)(const char *fmt, ...);
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+inline const char *STRING(const int &offset) { return offset ? (const char *)offset : g_106b8540; }
+
+CBaseEntity *CHL2_Player::vfunc453()
+{
+    CBaseEntity *pSpot;
+    if (g_1070ba0c->IsMultiplayer()) {
+        pSpot = g_106eb5d8.sub_100f7380(g_107260ac, "info_player_coop");
+        if (pSpot)
+            goto ReturnSpot;
+        pSpot = g_106eb5d8.sub_100f7380(g_107260ac, g_1057c024);
+        if (pSpot)
+            goto ReturnSpot;
+    }
+    DevMsg("   vampmp_player_start loop didn't complete\n");
+    if (!gpGlobals->m_n2c || !strlen(STRING(gpGlobals->m_n2c)))
+    {
+        pSpot = g_106eb5d8.sub_100f7380(0, g_1057c024);
+        if (pSpot)
+            goto ReturnSpot;
+    }
+    else
+    {
+        int t0; t0 = gpGlobals->m_n2c; pSpot = g_106eb5d8.sub_100f7770(0, STRING(t0), 0, 0);
+        if (pSpot)
+            goto ReturnSpot;
+    }
+ReturnSpot:
+    if (!pSpot) {
+        g_109f362c("PutClientInServer: no info_player_start on level\n");
+        return 0;
+    }
+    g_107260ac = pSpot;
+    return pSpot;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f970 size=0x4a
 #include "CBaseEntity.h"
 #include "CHL2_Player.h"
