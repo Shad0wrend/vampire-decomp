@@ -152955,6 +152955,37 @@ void __fastcall sub_1024a1e0(CUnknownObj1024a1e0 **pp)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024a230 size=0x54
+#include "CUnknown1024a230.h"
+#include "CUnknown1024b2d0.h"
+#include "utlrbtree.h"
+
+struct CUnknown1024a230_Entry
+{
+	unsigned short m_id;
+	int m_data;
+};
+
+bool sub_1024a2b0(const CUnknown1024a230_Entry &a, const CUnknown1024a230_Entry &b);
+
+struct CUnknown1024a230ObjX
+{
+	CUtlRBTree<CUnknown1024a230_Entry, unsigned short> m_Tree;
+	CUnknown1024b2d0 m_Strings;
+
+	CUnknown1024a230ObjX() : m_Tree(0, 0, sub_1024a2b0)
+	{
+		m_Strings.sub_1024b2d0(0, 0, 1);
+	}
+};
+
+CUnknown1024a230 *CUnknown1024a230::sub_1024a230()
+{
+	m_pObj = (CUnknown1024a230Obj *)new CUnknown1024a230ObjX;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024a2b0 size=0x13
 bool sub_1024a2b0(unsigned short *a, unsigned short *b)
 {
