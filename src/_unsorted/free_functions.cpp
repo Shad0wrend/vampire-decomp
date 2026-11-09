@@ -165888,6 +165888,61 @@ int __fastcall sub_10273f90(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10274080 size=0x106
+#include "CHumanoidRec.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CAI_BaseNPC.h"
+#include "CUtlVector20.h"
+#include "Vector.h"
+#include "CBaseEntity.h"
+#include "CBCCSlotViews.h"
+#include "UnreachableEnt_t.h"
+
+struct CUnreachableList : CUtlVector20
+{
+    UnreachableEnt_t *Base() { return (UnreachableEnt_t *)m_pMemory; }
+    UnreachableEnt_t &Element(int i) { return Base()[i]; }
+    UnreachableEnt_t &operator[](int i) { return Element(i); }
+    int Size() const { return m_size; }
+    int AddToTail()
+    {
+        int elem = m_size;
+        sub_1027f990(1);
+        sub_1027fa50(elem, 1);
+        Construct(&Element(elem));
+        return elem;
+    }
+};
+
+struct CAI_BaseNPCUnreachView
+{
+    char pad[0x5d48];
+    CUnreachableList m_UnreachableEnts;
+};
+
+#define m_UnreachableEnts (((CAI_BaseNPCUnreachView *)this)->m_UnreachableEnts)
+
+void CAI_BaseNPC::sub_10274080(CBaseEntity *pEntity)
+{
+    for (int i = m_UnreachableEnts.Size() - 1; i >= 0; i--)
+    {
+        if (pEntity == m_UnreachableEnts[i].hUnreachableEnt.Get())
+        {
+            m_UnreachableEnts[i].fExpireTime = gpGlobals->curtime + 3.0f;
+            m_UnreachableEnts[i].vLocationWhenUnreachable = *(Vector *)((CEntityOriginSlotView *)pEntity)->vfunc217();
+            return;
+        }
+    }
+
+    int nNewIndex = m_UnreachableEnts.AddToTail();
+    m_UnreachableEnts[nNewIndex].hUnreachableEnt = pEntity;
+    m_UnreachableEnts[nNewIndex].fExpireTime = gpGlobals->curtime + 3.0f;
+    m_UnreachableEnts[nNewIndex].vLocationWhenUnreachable = *(Vector *)((CEntityOriginSlotView *)pEntity)->vfunc217();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10274ca0 size=0xc7
 #include "CAI_BaseNPC.h"
 #include "Vector.h"
