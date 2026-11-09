@@ -43,6 +43,8 @@ struct CMovedVec
 
 	int Count() const { return m_Size; }
 	MovedEntity_t &operator[](int i) { return m_pMemory[i]; }
+	MovedEntity_t *Base() { return m_pMemory; }
+	MovedEntity_t &Element(int i) { return Base()[i]; }
 	void sub_1003c3c0(int num);	// CUtlMemory::Grow (stub 0x100155b4): makes room for num more records
 	void sub_1003c330(int index, int num);	// CUtlVector::ShiftElementsRight (stub 0x10003ada)
 };
@@ -60,7 +62,7 @@ public:
 	void sub_10035fd0(int *pHandles);	// "CPhysicsPushedEntities::RelinkPusherList": same walk as UnlinkPusherList, other slot (9) of the global at 0x1070b24c
 	void sub_10036b10();	// "CPhysicsPushedEntities::FinishPush": scope trace, then PhysicsTouchTriggers + slot 232(0) on every pusher, last to first
 	CBaseEntity *sub_10036e50();	// "CPhysicsPushedEntities::RegisterBlockage": scope trace, lets the blocked entity record the impact with its blocker (PhysicsImpact) and returns the blocked entity
-	bool sub_10036270(MovedEntity_t *pMoved, const float *pMove, int a);	// per-entity push check (called through the stub at 0x100046bf); true when the entity could be moved
+	bool sub_10036270(MovedEntity_t &moved, const Vector &vecMove, bool bFlag);	// per-entity push check (called through the stub at 0x100046bf); true when the entity could be moved
 	bool sub_10036a20(const float *pMove);	// "CPhysicsPushedEntities::SpeculativelyCheckPush": scope trace, clears the blocking index, then checks every moved entity last to first; false (and the blocking index set) at the first one that is blocked
 	void sub_10036d40(char bFlag, int a);	// scope trace "CPhysicsPushedEntities::FinishPush" (the string names the per-push variant): sub_10036b10(), then on every moved entity, last to first: PhysicsTouchTriggers(&start origin), slot 232(0), PhysicsImpact(blocker, trace) when it has a blocker and, when bFlag is set, sub_10036bd0(entity, a)
 	void sub_10036bd0(CBaseEntity *pEnt, int a);	// called through the stub at 0x10004be7
