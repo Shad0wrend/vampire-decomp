@@ -120,6 +120,56 @@ void CBaseVampireSkillEntity::vfunc42(void *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020b090 size=0xe2
+#include "CBaseEntity.h"
+#include "CBaseVampireSkillEntity.h"
+#include "CUnknown10739d08.h"
+#include "COutputEvent.h"
+
+#define SLA(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SLB(p) SLA(p##0) SLA(p##1) SLA(p##2) SLA(p##3) SLA(p##4) SLA(p##5) SLA(p##6) SLA(p##7) SLA(p##8) SLA(p##9)
+struct SkillVT1020b090 {
+	SLB(a) SLB(b)
+	SLA(c0) SLA(c1) SLA(c2) SLA(c3) SLA(c4) SLA(c5)
+	virtual void s260(); virtual void s261(); virtual void s262(); virtual void s263(); virtual void s264();
+	virtual void s265(); virtual void s266(); virtual void s267(); virtual void s268();
+	virtual void v269(CBaseEntity *pPlayer);
+	virtual void v270(CBaseEntity *pPlayer);
+	virtual void v271(CBaseEntity *pPlayer);
+};
+struct CMsgPlayerView;
+struct PlayerView1020b090 {
+	char pad[0xa8];
+	CMsgPlayerView *m_pView;
+};
+extern CUnknown10739d08 g_10739d08;
+void sub_101cebc0(CMsgPlayerView *pPlayer, int a, int b);
+
+int *CBaseVampireSkillEntity::vfunc267(int *pOut, CBaseEntity *pPlayer)
+{
+	m_unk788 = *(int *)&gpGlobals->curtime;
+	switch (m_n784) {
+	case 1:
+		m_n780 = g_10739d08.sub_101e7ea0(pPlayer, this, 0).m_nOutcome;
+		break;
+	case 2:
+		m_n780 = g_10739d08.sub_101e8100(pPlayer, this, 0).m_nOutcome;
+		break;
+	}
+	((COutputEvent *)&m_items794[4])->sub_100cd660(pPlayer, this, 0.0f);
+	if (m_n780 >= 3)
+		((SkillVT1020b090 *)this)->v270(pPlayer);
+	else if (m_n780 == 0) {
+		sub_101cebc0(((PlayerView1020b090 *)pPlayer)->m_pView, 2, 0);
+		((SkillVT1020b090 *)this)->v269(pPlayer);
+	} else
+		((SkillVT1020b090 *)this)->v271(pPlayer);
+	*pOut = m_n780;
+	return pOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020b1c0 size=0x1a
 #include "CBaseEntity.h"
 #include "CBaseVampireSkillEntity.h"
