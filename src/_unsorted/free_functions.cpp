@@ -55486,6 +55486,21 @@ CUnknown100ec410Elem *CUnknown100ec410::sub_100ec410(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec5d0 size=0x42
+#include "utlrbtree.h"
+#include "utlvector.h"
+struct SEntry { char pad[0x108]; int a; int b; char pad2[0x264 - 0x110]; };
+struct SBank { int f0; int m_def; CUtlVector<SEntry> m_v;
+    void sub_100ec5d0(int idx, int *pa, int *pb); };
+// TARGET: SBank::sub_100ec5d0
+void SBank::sub_100ec5d0(int idx, int *pa, int *pb)
+{
+    if (idx < 0 || idx > m_v.Count()) idx = m_def;
+    *pb = m_v[idx].b;
+    *pa = m_v[idx].a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ec640 size=0x3cd
 #include "vampire_all.h"
 #include "utlvector.h"
