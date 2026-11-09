@@ -11611,6 +11611,7 @@
 0x100113e7 func   ?vfunc362@CWeaponMelee_Claws@@UAEPAUCWeaponActivityRecord@@XZ CWeaponMelee_Claws::vfunc362
 0x100113ec func   ?sub_1012f190@@YAHH@Z sub_1012f190
 0x100113f1 func   ?sub_1017f790@CUnknown1017f790@@QAEMXZ CUnknown1017f790::sub_1017f790
+0x100113f6 func   ?sub_1022a930@CSoundScheme@@QAE_NPBD@Z CSoundScheme::sub_1022a930
 0x10011400 func   ?vfunc80@CItemGRingSerialKiller1@@QAEHXZ CItemGRingSerialKiller1::vfunc80
 0x10011405 func   ?sub_103d9e00@CNPC_VWerewolfUnit@@QAEXPAVCEntityVSlots@@PAVVector@@PAM2@Z CNPC_VWerewolfUnit::sub_103d9e00
 0x10011414 func   ?sub_1012d720@CHudTimer@@QAEXXZ CHudTimer::sub_1012d720

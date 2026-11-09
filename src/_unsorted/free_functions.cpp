@@ -143044,6 +143044,118 @@ bool sub_1022a380(char *name, bool bPrefix)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022a930 size=0x75f
+#include <string.h>
+#include "CSoundScheme.h"
+#include "CUnknown10248a50.h"
+#include "CKeyValuesX.h"
+#include "utlvector.h"
+#include "Tier1.h"
+
+extern "C" __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+int sub_10228350(float);
+extern char g_106b8540[];
+extern float g_104454c4;
+extern IFileSys *g_1070b238;
+
+bool CSoundScheme::sub_1022a930(const char *pszFile)
+{
+	CUnknown10248a50 *pRoot = new CUnknown10248a50("SoundScheme");
+	if (pRoot) {
+		IFileSys *pFileSys = g_1070b238;
+		if (!pRoot->sub_102480f0(pszFile, pFileSys, 0, 1)) {
+			pRoot->sub_100046f1();
+			::operator delete(pRoot);
+			return false;
+		}
+		CKeyValuesX *pKey = (CKeyValuesX *)pRoot->sub_10248a10();
+		if (!pKey) {
+			pRoot->sub_100046f1();
+			::operator delete(pRoot);
+			return false;
+		}
+		do {
+			const char *pszName = pKey->sub_102480b0();
+			if (strstr(pszName, "SchemeParams")) {
+				m_n458 = pKey->sub_10248bb0("RandomSoundCount", 2);
+				m_n458 = m_n458 > 6 ? 6 : (m_n458 < 0 ? 0 : m_n458);
+				m_n45c = pKey->sub_10248bb0("RoomDSP", 0);
+				m_n45c = m_n45c > 255 ? 255 : (m_n45c < 0 ? 0 : m_n45c);
+			} else if (strstr(pszName, "Ambient")) {
+				Q_strncpy(m_lists460[0].m_szName, pKey->sub_10248cd0("Filename", g_106b8540), 0x40);
+				float v = pKey->sub_10248c60("Volume", 50.0f);
+				m_lists460[0].m_flVolume = v;
+				v = v * 0.01f;
+				m_lists460[0].m_flVolume = v > 100.0f ? 100.0f : (v < g_104454c4 ? g_104454c4 : v);
+				if (pKey->sub_10248bb0("Dry", 1))
+					m_lists460[0].m_n44 |= 0x800;
+				if (pKey->sub_10248bb0("NoPause", 0))
+					m_lists460[0].m_n44 |= 0x2000;
+			} else if (strstr(pszName, "Music")) {
+				Q_strncpy(m_lists460[2].m_szName, pKey->sub_10248cd0("Filename", g_106b8540), 0x40);
+				float v = pKey->sub_10248c60("Volume", 50.0f);
+				m_lists460[2].m_flVolume = v;
+				v = v * 0.01f;
+				m_lists460[2].m_flVolume = v > 100.0f ? 100.0f : (v < g_104454c4 ? g_104454c4 : v);
+				if (pKey->sub_10248bb0("Dry", 1))
+					m_lists460[2].m_n44 |= 0x800;
+				if (pKey->sub_10248bb0("NoPause", 1))
+					m_lists460[2].m_n44 |= 0x2000;
+			} else if (strstr(pszName, "Combat")) {
+				Q_strncpy(m_lists460[1].m_szName, pKey->sub_10248cd0("Filename", m_lists460[2].m_szName), 0x40);
+				float v = pKey->sub_10248c60("Volume", 50.0f);
+				m_lists460[1].m_flVolume = v;
+				v = v * 0.01f;
+				m_lists460[1].m_flVolume = v > 100.0f ? 100.0f : (v < g_104454c4 ? g_104454c4 : v);
+				if (pKey->sub_10248bb0("Dry", 1))
+					m_lists460[1].m_n44 |= 0x800;
+				if (pKey->sub_10248bb0("NoPause", 1))
+					m_lists460[1].m_n44 |= 0x2000;
+			} else if (strstr(pszName, "Alert")) {
+				Q_strncpy(m_lists460[3].m_szName, pKey->sub_10248cd0("Filename", m_lists460[2].m_szName), 0x40);
+				float v = pKey->sub_10248c60("Volume", 50.0f);
+				m_lists460[3].m_flVolume = v;
+				v = v * 0.01f;
+				m_lists460[3].m_flVolume = v > 100.0f ? 100.0f : (v < g_104454c4 ? g_104454c4 : v);
+				if (pKey->sub_10248bb0("Dry", 1))
+					m_lists460[3].m_n44 |= 0x800;
+				if (pKey->sub_10248bb0("NoPause", 1))
+					m_lists460[3].m_n44 |= 0x2000;
+			} else if (strstr(pszName, "RandomSound")) {
+				CSoundSchemeSound snd;
+				memset(&snd, 0, sizeof(snd));
+				Q_strncpy(snd.m_szName, pKey->sub_10248cd0("Filename", g_106b8540), 0x40);
+				float flVol = pKey->sub_10248c60("Volume", 20.0f) * 0.01f;
+				snd.m_flVolume = flVol > 1.0f ? 1.0f : (flVol < g_104454c4 ? 0.0f : flVol);
+				snd.m_n70 = pKey->sub_10248bb0("Frequency", 10);
+				snd.m_iPitchMin = pKey->sub_10248bb0("PitchMin", 100);
+				snd.m_iPitchMax = pKey->sub_10248bb0("PitchMax", 100);
+				snd.m_flAudibleRadius = pKey->sub_10248c60("AudibleRadius", 1600.0f);
+				snd.m_iSoundLevel = sub_10228350(snd.m_flAudibleRadius);
+				snd.m_flDistanceMax = pKey->sub_10248c60("DistMax", 1400.0f);
+				snd.m_flDistanceMin = pKey->sub_10248c60("DistMin", 800.0f);
+				snd.m_flHeightAbove = pKey->sub_10248c60("HeightMax", 20.0f);
+				snd.m_flHeightBelow = pKey->sub_10248c60("HeightMin", 20.0f);
+				snd.m_flAngleMax = pKey->sub_10248c60("AngleMax", 360.0f);
+				snd.m_flAngleMin = pKey->sub_10248c60("AngleMin", 0.0f);
+				if (pKey->sub_10248bb0("Dry", 0))
+					snd.m_iFlags |= 0x800;
+				if (pKey->sub_10248bb0("NoPause", 0))
+					m_lists460[1].m_n44 |= 0x2000;
+				((CUtlVector<CSoundSchemeSound> *)&m_pSoundMemory)->AddToTail(snd);
+			} else {
+				g_109f364c("Unrecognized section %s in sound scheme file: %s\n", pszName, pszFile);
+			}
+			pKey = pKey->sub_1000fa65();
+		} while (pKey);
+		pRoot->sub_100046f1();
+		::operator delete(pRoot);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022b300 size=0x130
 #include "CSoundScheme.h"
 
