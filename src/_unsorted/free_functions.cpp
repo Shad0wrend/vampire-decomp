@@ -51468,6 +51468,46 @@ void sub_100db6c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100db920 size=0xb2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern CGlobalEntityList g_106eb5d8;
+CBaseEntity *__cdecl sub_10172710(int a);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: sub_100db920
+CBaseEntity *sub_100db920(int a, const char *pszName)
+{
+	if (!_strcmpi(pszName, g_106b8540)) {
+		CBaseEntity *pPlayer = sub_10172710(a);
+		if (pPlayer)
+			return pPlayer;
+	} else {
+		for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(0); pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt)) {
+			if (pEnt->m_name26c && !_strcmpi(pszName, pEnt->m_name26c))
+				return pEnt;
+			if (pEnt->m_classname11c && !_strcmpi(pszName, STRINGR(pEnt->m_classname11c)))
+				return pEnt;
+			if (pEnt->sub_1009f200() && !_strcmpi(pszName, pEnt->sub_1009f200()))
+				return pEnt;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dbc60 size=0xb3
 #include "CUnknown100dbc60.h"
 
