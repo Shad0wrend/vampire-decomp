@@ -70,6 +70,35 @@ int CNPC_VSabbatGunman::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a5650 size=0x76
+#include "CNPC_VSabbatGunman.h"
+
+struct CTimer {
+	virtual void v0();
+	virtual bool v1();
+	char pad[0x28 - 4];
+	float m_fl28;
+};
+extern CTimer *g_1093c1f4;
+extern const float g_104454c0;
+
+// TARGET: CNPC_VSabbatGunman::vfunc442
+void CNPC_VSabbatGunman::vfunc442(int *pEvent)
+{
+	switch (*pEvent)
+	{
+	case 0x11b:
+	case 0x11c:
+	case 0x122:
+	case 0x123:
+	case 0x124:
+		*(float *)((char *)this + 0x6330) *= (float)(g_104454c0 / (double)(g_1093c1f4->v1() ? 0.0f : g_1093c1f4->m_fl28));
+		break;
+	}
+	sub_1000a0c9(pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a56f0 size=0xa0
 #include "CLogicAuto.h"
 #include "CNPC_VSabbatGunman.h"
