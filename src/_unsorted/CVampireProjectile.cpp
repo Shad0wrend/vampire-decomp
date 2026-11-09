@@ -263,6 +263,90 @@ void CVampireProjectile::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee850 size=0x2f9
+#include "CVampireProjectile.h"
+#include "CEntityVSlots.h"
+
+void sub_10139500(const float *start, float scale, const float *direction, float *dest);
+
+// TARGET: CVampireProjectile::vfunc238
+void CVampireProjectile::vfunc238(Vector *pVelocity, Vector *pOut, int a, int b)
+{
+	float flTime = gpGlobals->curtime + gpGlobals->frametime;
+
+	if (m_fl738 != 0.0f)
+	{
+		if (flTime > m_fl738 - 5.0f && m_n168 != 5)
+			m_n168 = 5;
+		if (flTime > m_fl738)
+		{
+			sub_101ee7d0();
+			return;
+		}
+	}
+
+	if (flTime - m_fl884 < 0.0f)
+		return;
+
+	if (m_b758 || m_b8a4)
+	{
+		pOut->x = 0;
+		pOut->y = 0;
+		pOut->z = 0;
+		m_flSpeed8a0 = 0.0f;
+		if (m_b8a4)
+		{
+			CBaseEntity *pEnt = m_h730.Get();
+			if (!pEnt || !pEnt->m_p9c)
+			{
+				m_b8a4 = 0;
+				m_n734 = -1;
+			}
+		}
+		return;
+	}
+
+	CEntityVSlots *pTarget = (CEntityVSlots *)m_h8a8.Get();
+	if (pTarget)
+	{
+		if (!pTarget->slot158())
+		{
+			sub_101ee7d0();
+			return;
+		}
+		Vector vecEye;
+		pTarget->slot193(&vecEye);
+		Vector vecOrigin = *vfunc217();
+		Vector vecCenter = pTarget->slot192();
+
+		Vector vecDelta;
+		vecDelta = (vecEye - vecOrigin) - (vecEye - vecCenter) * 0.5f;
+
+		if (VectorLength(vecDelta) > 100.0f)
+		{
+			m_vecDir894 = vecDelta;
+			VectorNormalize(m_vecDir894);
+		}
+
+		if (m_b8ac)
+		{
+			CBaseEntity *pOwner = (CBaseEntity *)((CBaseEntity *)pTarget)->m_p9c;
+			if (pOwner && *(int *)((char *)pOwner + 0xfb0) != m_n8b0)
+			{
+				vfunc269();
+				sub_101ee7d0();
+			}
+		}
+	}
+
+	float flSpeed = m_flSpeed8a0;
+	pOut->x = m_vecDir894.x * flSpeed;
+	pOut->y = m_vecDir894.y * flSpeed;
+	pOut->z = m_vecDir894.z * flSpeed;
+	sub_10139500(&vfunc220()->x, gpGlobals->frametime, &pOut->x, &pVelocity->x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101eec10 size=0x1
 #include "CVampireProjectile.h"
 void CVampireProjectile::vfunc269()
