@@ -6730,6 +6730,7 @@
 0x1000a54c func   ?sub_1021d890@CPropKeypad@@QAEPAV1@XZ CPropKeypad::sub_1021d890
 0x1000a551 func   ?sub_102017b0@CVStatList_t@@QAE_NHH@Z CVStatList_t::sub_102017b0
 0x1000a55b func   ?sub_1030be20@CUnknown1030be20@@QAEXPBH@Z CUnknown1030be20::sub_1030be20
+0x1000a560 func   ?vfunc123@CBaseCineCam@@UAEXXZ CBaseCineCam::vfunc123
 0x1000a565 func   ?vfunc420@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::vfunc420
 0x1000a56f func   ?sub_10147d50@CUnknown10147d10@@QAEXPAUCPair10147d50@@@Z CUnknown10147d10::sub_10147d50
 0x1000a574 func   ?vfunc81@CItemGWarrens4Passkey@@QAEHXZ CItemGWarrens4Passkey::vfunc81
