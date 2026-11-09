@@ -6702,6 +6702,7 @@
 0x1000a2ae func   ??0CPropDoorknobElectronic@@QAE@XZ CPropDoorknobElectronic::CPropDoorknobElectronic
 0x1000a2bd func   ?vfunc79@CBaseViewModel@@UAEHXZ CBaseViewModel::vfunc79
 0x1000a2c2 func   ?sub_101f3070@@YIXPAD@Z sub_101f3070
+0x1000a2c7 func   ?sub_1012c7f0@@YAXPAVCBaseEntity@@@Z sub_1012c7f0
 0x1000a2cc func   ?vfunc82@CSprite@@UAEPAUdatamap_t@@XZ CSprite::vfunc82
 0x1000a2d1 func   ?RemoveRebalance@?$CUtlRBTree@UCUtlMap16Pair@@G@@QAEXG@Z CUtlRBTree<CUtlMap16Pair,unsigned short>::RemoveRebalance
 0x1000a2d6 func   ?sub_103322e0@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_103322e0

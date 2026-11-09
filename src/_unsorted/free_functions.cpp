@@ -72026,6 +72026,20 @@ void sub_1012c7a0(CLinkView *pParent, CLinkView *pChild)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c7f0 size=0x3e
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+void sub_1012c7f0(CBaseEntity *pChild)
+{
+	pChild->m_hMoveParent = 0xffffffff;
+	pChild->m_hMovePeer264 = (CBaseEntity *)0;
+	CEntityVSlots *p = (CEntityVSlots *)pChild;
+	p->slot64((const float *)p->slot219());
+	p->slot62((const float *)p->slot217());
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c840 size=0x82
 #include "CGlobalEntityList.h"
 
