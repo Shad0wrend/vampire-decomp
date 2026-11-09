@@ -1357,6 +1357,99 @@ void CBasePlayer::vfunc442(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163af0 size=0x305
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CSingleUserRecipientFilter.h"
+#include "UTIL_BloodStream.h"
+#include "CUnknown1016b460.h"
+extern int g_10726088;
+extern int g_10726020;
+struct SList2View144 { void sub_10227a30(CBasePlayer *p, int n); };
+extern SList2View144 g_10750cb4;
+int sub_101bb220(int);
+struct CSoundEntView { void sub_101b98d0(); };
+CSoundEntView *sub_101bb150(int);
+struct CRulesView144 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void vfunc5(CBaseEntity *pAttacker, CBasePlayer *pVictim);
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43();
+	virtual void vfunc44(CBasePlayer *pVictim, const void *pInfo);
+};
+struct CWeaponView144 {
+	CBP_V10(a) CBP_V10(b) CBP_V10(c) CBP_V10(d) CBP_V10(e) CBP_V10(f) CBP_V10(g) CBP_V10(h) CBP_V10(i) CBP_V10(j)
+	CBP_V10(k) CBP_V10(l) CBP_V10(m) CBP_V10(n) CBP_V10(o) CBP_V10(p) CBP_V10(q) CBP_V10(r) CBP_V10(s) CBP_V10(t)
+	CBP_V10(u) CBP_V10(w) CBP_V10(x) CBP_V10(y) CBP_V10(z) CBP_V10(za) CBP_V10(zb) CBP_V10(zc) CBP_V10(zd) CBP_V10(ze)
+	CBP_V10(zg)
+	CBP_V1(zf0) CBP_V1(zf1) CBP_V1(zf2) CBP_V1(zf3) CBP_V1(zf4) CBP_V1(zf5)
+	virtual void vfunc316(int a);
+};
+struct CBP144View : CBasePlayer
+{
+	void sub_10003684(const void *pArg);
+	int GetEdict() { return m_n02E0; }
+};
+void CBasePlayer::vfunc144(const void *pArg)
+{
+	CSingleUserRecipientFilter filter(this);
+	filter.MakeReliable();
+	engine->vfunc65(&filter, g_10726088);
+	engine->vfunc67(1);
+	engine->vfunc72(0.5f);
+	engine->vfunc71(engine->vfunc35(((CBP144View *)this)->GetEdict()));
+	engine->vfunc67(0);
+	engine->vfunc78("vdata/Signs/death.txt");
+	engine->vfunc66();
+	((CRulesView144 *)g_1070ba0c)->vfunc44(this, pArg);
+	CBaseEntity *pAttacker = *(CBaseEntity **)((char *)pArg + 0x2c);
+	if (pAttacker && pAttacker != (CBaseEntity *)this && *(int *)((char *)pAttacker + 0xa8))
+		((CRulesView144 *)g_1070ba0c)->vfunc5(pAttacker, this);
+	if (m_hControllerNPC1db0.Get())
+		sub_101618e0(1, 1);
+	if (m_hPlaceholder1da4.Get())
+		sub_10161f10();
+	g_10750cb4.sub_10227a30(this, 5);
+	CSoundEntView *pSnd = sub_101bb150(sub_101bb220(m_n02E0));
+	if (pSnd)
+		pSnd->sub_101b98d0();
+	if (*(int *)((char *)this + 0x210) < -99)
+		*(int *)((char *)this + 0x210) = 0;
+	if (sub_1032e7b0())
+		((CWeaponView144 *)sub_1032e7b0())->vfunc316(0);
+	vfunc449(4, 0);
+	*(int *)((char *)this + 0x200) = 1;
+	m_n2068 = 1;
+	((CUnknown1016b460 *)this)->sub_1016b460(0, 0, 0);
+	m_n20E8 = 0;
+	if (g_10726020) {
+		CSingleUserRecipientFilter filter2(this);
+		filter2.MakeReliable();
+		engine->vfunc65(&filter2, g_10726020);
+		engine->vfunc67(m_n20E8);
+		engine->vfunc66();
+	}
+	*(EHANDLE *)&m_hUseEnt1040 = (CBaseEntity *)0;
+	*(EHANDLE *)&m_n14AC = (CBaseEntity *)0;
+	*(EHANDLE *)&m_h149C = (CBaseEntity *)0;
+	m_b1475 = 0;
+	m_b1476 = 0;
+	m_f1478 = 0;
+	m_b14A8 = 0;
+	m_b14AA = 0;
+	m_b14DC = 0;
+	m_n1044 = -1;
+	m_n1048 = 0;
+	m_n1050 = 0;
+	m_n104C = 0;
+	m_n1E78 = 0;
+	((CBP144View *)this)->sub_10003684(pArg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163ed0 size=0x7c
 #include "CBasePlayer.h"
 struct CPlayerVec { float x, y, z; };
