@@ -177977,6 +177977,73 @@ next:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d24b0 size=0x2cc
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Hint.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "UTIL_Trace.h"
+#include "Vector.h"
+extern CAI_Hint *g_10925450;
+extern CAI_Hint *g_10925454;
+CAI_Hint *sub_102d1760(CAI_BaseNPCTroika *pNPC, int hintType, unsigned int flags, float radius, int a);
+
+namespace block_102d24b0 {
+struct CAI_HintUnit : CAI_Hint {
+	char sub_102d14c0();
+};
+char CAI_HintUnit::sub_102d14c0()
+{
+	if (m_n5e8)
+		return 1;
+	if (gpGlobals->curtime < *(float *)&m_n5ec)
+		return 1;
+	if (((EHANDLE *)&m_n5e0)->Get())
+		return 1;
+	return 0;
+}
+}
+using namespace block_102d24b0;
+
+// TARGET: ?sub_102d24b0@@YAPAVCAI_Hint@@PAVCAI_BaseNPCTroika@@PAVCBaseEntity@@HIM@Z
+CAI_Hint *sub_102d24b0(CAI_BaseNPCTroika *pNPC, CBaseEntity *pEntity, int hintType, unsigned int flags, float radius)
+{
+	if (flags & 4)
+		return sub_102d1760(pNPC, hintType, flags, radius, 0);
+	if (!g_10925450)
+		return 0;
+	CAI_Hint *pHint = g_10925454 ? g_10925454->m_pNext : 0;
+	if (!pHint)
+		pHint = g_10925450;
+	float flRadSqr = radius * radius;
+	do {
+		if (!((CAI_HintUnit *)pHint)->sub_102d14c0() && (hintType == 0 || pHint->m_n5dc == hintType)) {
+			Vector *pA = ((CEntityVSlots *)pEntity)->slot217();
+			Vector *pB = ((CEntityVSlots *)pHint)->slot217();
+			if ((*pB - *pA).LengthSqr() < flRadSqr && pNPC->vfunc566((CBaseEntity *)pHint)) {
+				if (!(flags & 1)) {
+					g_10925454 = pHint;
+					return pHint;
+				}
+				Vector buf;
+				CGameTrace trace;
+				UTIL_TraceLine(*((CEntityVSlots *)pEntity)->slot193(&buf), pEntity->m_vecViewOffset + *((CEntityVSlots *)pHint)->slot217(), 0x2400b, pEntity, 0, &trace);
+				if (trace.m_fraction == 1.0) {
+					g_10925454 = pHint;
+					return pHint;
+				}
+			}
+		}
+		pHint = pHint->m_pNext;
+		if (!pHint && g_10925454)
+			pHint = g_10925450;
+	} while (pHint != g_10925454);
+	g_10925454 = 0;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d2840 size=0x82
 extern "C" int strcmp(const char *, const char *);
 extern char g_106b8540[];
