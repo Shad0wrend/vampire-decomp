@@ -41280,6 +41280,36 @@ S100b6f10Node *CUnknown100b6f10::sub_100b6f10(int node)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6f80 size=0x81
+#include "CUnknown100b6f80.h"
+
+struct CUnknown100b6f80HdrEx : CUnknown100b6f80Hdr
+{
+	CUnknown100b6f80 *pSetting(int i) const { return (CUnknown100b6f80 *)((char *)this + m_tableOffset90) + i; }
+};
+
+struct CUnknown100b6f80Weight { int key; float weight; };
+
+int CUnknown100b6f80::sub_100b6f80(CUnknown100b6f80Hdr *hdr, int index, int *pOut)
+{
+	*pOut = 0;
+	if (m_mode == 1) {
+		int i = m_index;
+		if (m_mode != 1 || i < 0 || i >= m_count)
+			return -1;
+		CUnknown100b6f80Weight *p = (CUnknown100b6f80Weight *)((char *)this + m_tableOffset) + i;
+		if (!p || p->key == -1)
+			return -1;
+		CUnknown100b6f80 *s = ((CUnknown100b6f80HdrEx *)hdr)->pSetting(p->key);
+		if (!s)
+			return -1;
+		return s->sub_100b6f80(hdr, index, pOut);
+	}
+	*pOut = (int)((char *)this + m_tableOffset + index * 12);
+	return m_count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7130 size=0x67
 struct Mem4 { void *m_pMemory; int m_nAllocationCount; int m_nGrowSize; };
 extern void *(*g_109f3638)(void *, int);

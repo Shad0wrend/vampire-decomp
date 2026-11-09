@@ -2838,6 +2838,7 @@
 0x10004e03 func   ?sub_10196d10@@YAPAXPAX0@Z sub_10196d10
 0x10004e08 func   ?sub_101d13a0@@YAIPAUTEnt@@@Z sub_101d13a0
 0x10004e0d func   ?vfunc0@CTraceFilterPlayerMovement@@UAE_NPAXH@Z CTraceFilterPlayerMovement::vfunc0
+0x10004e12 func   ?sub_100b6f80@CUnknown100b6f80@@QAEHPAUCUnknown100b6f80Hdr@@HPAH@Z CUnknown100b6f80::sub_100b6f80
 0x10004e1c func   ?sub_101486e0@CGravityPellet@@QAEXXZ CGravityPellet::sub_101486e0
 0x10004e21 func   ?vfunc362@CWeaponMelee_FireAxe@@QAEHXZ CWeaponMelee_FireAxe::vfunc362
 0x10004e26 func   ?RotateRight@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QAEXG@Z CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::RotateRight
