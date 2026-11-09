@@ -17630,6 +17630,45 @@ void CUnknown1006bea0::sub_1006bf40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006bfb0 size=0xb1
+#include "CUtlBuffer.h"
+#include <ctype.h>
+
+void CUtlBuffer::sub_1006bfb0(char *pString)
+{
+	if (m_nError) {
+		*pString = 0;
+		return;
+	}
+	if (!(m_nFlags & 1)) {
+		int nLeft = m_nSize - m_nGet;
+		int i = 0;
+		while (i < nLeft) {
+			int c = m_pBuffer[m_nGet + i];
+			pString[i] = c;
+			i++;
+			if (c == 0)
+				goto done;
+		}
+		pString[i] = 0;
+		m_nError |= 2;
+done:
+		m_nGet += i;
+		return;
+	}
+	sub_1006bf40();
+	int nSize = m_nSize;
+	while (m_nGet < nSize) {
+		char c = m_pBuffer[m_nGet];
+		if (isspace(c) || c == 0)
+			break;
+		*pString++ = c;
+		m_nGet++;
+	}
+	*pString = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c0a0 size=0xa1
 #include "CUnknown1006bea0.h"
 
