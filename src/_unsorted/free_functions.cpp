@@ -82512,6 +82512,72 @@ void sub_101622d0(S101622d0_Arg *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163f70 size=0x9e
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+#include "ehandle.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CHudEmitterView
+{
+	virtual void v0();
+	virtual unsigned int *vfunc1();
+	virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+	S100(b) S10(d0) S10(d1) S10(d2) S10(d3)
+	virtual void e0(); virtual void e1(); virtual void e2();
+	virtual void vfunc243(CBaseEntity *pOwner, int a, const char *psz);
+};
+
+extern CGlobalEntityList *g_10566458;
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+CEntityVSlots *sub_100fbc90(const char *pszName, const float *pOrigin, const float *pAngles, float flLifetime);
+
+inline CHudEmitterView *CreateHudFire(CBasePlayer *pPlayer)
+{
+	CHudEmitterView *p = (CHudEmitterView *)sub_100fbc90("DMGFX_hud_fire_emitter", g_1070d1b0, g_1070d9d0, -1.0f);
+	CBaseEntity *pOwner = pPlayer->sub_1015d680(0);
+	if (p && pOwner)
+		p->vfunc243(pOwner, 7, g_106b8540);
+	return p;
+}
+
+CBaseEntity *CBasePlayer::sub_10163f70()
+{
+	unsigned int *pHandle = (unsigned int *)((char *)this + 0x1d64);
+	CGlobalEntityList_Ent *pFound;
+	CGlobalEntityList_Slot *pSlot;
+	unsigned int nHandle = *pHandle;
+	if (nHandle != -1 && (pSlot = &g_10566458->m_Slots[nHandle & 0x1fff], pSlot->m_Serial == (int)(nHandle >> 13)))
+		pFound = pSlot->m_pEntity;
+	else
+		pFound = 0;
+	CHudEmitterView *pEmitter = (CHudEmitterView *)pFound;
+	if (pEmitter == 0)
+		pEmitter = CreateHudFire(this);
+	if (pEmitter)
+		*pHandle = *pEmitter->vfunc1();
+	else
+		*pHandle = 0xffffffff;
+	return (CBaseEntity *)pEmitter;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10164040 size=0x135
 #include "CBasePlayer.h"
 
