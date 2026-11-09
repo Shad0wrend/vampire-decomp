@@ -44932,6 +44932,26 @@ bool sub_100c6020(void *pStudioHdr, int iSequence, float flCycle, const float *p
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c61e0 size=0x71
+#include "StudioHdr.h"
+struct StudioHdr;
+void sub_100c5400(StudioHdr *pHdr, int seq, const float *poseParam, void **panim, float *weight);
+float sub_100c5bf0(void *panim, int frame);
+
+float sub_100c61e0(StudioHdr *pHdr, int seq, const float *poseParam, int frame)
+{
+    void *panim[4];
+    float weight[4];
+    sub_100c5400(pHdr, seq, poseParam, panim, weight);
+    float flResult = 0.0f;
+    for (int i = 0; i < 4; i++) {
+        if (weight[i] != 0.0f)
+            flResult += sub_100c5bf0(panim[i], frame) * weight[i];
+    }
+    return flResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6280 size=0xa0
 #include <string.h>
 struct SModelLoader {

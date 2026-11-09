@@ -7067,6 +7067,7 @@
 0x1000ac31 func   ?vfunc82@CNPC_VChangBrosBlade@@QAEPAUdatamap_t@@XZ CNPC_VChangBrosBlade::vfunc82
 0x1000ac36 func   ?vfunc3@CTEBeamRingPoint@@UAEXPBMH@Z CTEBeamRingPoint::vfunc3
 0x1000ac3b func   ?sub_103adb00@@YAPAHXZ sub_103adb00
+0x1000ac40 func   ?sub_100c61e0@@YAMPAUStudioHdr@@HPBMH@Z sub_100c61e0
 0x1000ac45 func   ?sub_103f59f0@@YAHXZ sub_103f59f0
 0x1000ac4a func   ?sub_102034a0@@YAPBDH@Z sub_102034a0
 0x1000ac4f func   ?sub_100f0170@CTargetHolder@@QAEXPAPAUCTargetObj@@@Z CTargetHolder::sub_100f0170
