@@ -774,6 +774,7 @@
 0x1000214e func   ?sub_10105950@@YAXXZ sub_10105950
 0x10002153 func   _item_g_car_stereo item_g_car_stereo
 0x10002158 func   ?vfunc40@CMultiplayRules@@UAE_NXZ CMultiplayRules::vfunc40
+0x1000215d func   ?sub_10359270@@YAXXZ sub_10359270
 0x10002162 func   ?sub_10381460@CNPC_VHengeyokai@@QAEXPAX@Z CNPC_VHengeyokai::sub_10381460
 0x10002167 func   ?sub_1021c260@CPropHacking@@QAEXXZ CPropHacking::sub_1021c260
 0x1000216c func   ?vfunc529@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc529
