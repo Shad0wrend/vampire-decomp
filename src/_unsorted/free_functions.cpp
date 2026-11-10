@@ -55332,6 +55332,112 @@ int CDialog::sub_100dffa0(CBaseEntity *pNPC, CBaseEntity *pSpeaker, int nArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0290 size=0x2a8
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CDialog.h"
+#include "CDialogDependency.h"
+#include "CUnknown100ea1e0.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "FileSystemViews.h"
+#include <string.h>
+
+bool sub_100df010(void *p);
+char *sub_101d3730(const char *fmt, ...);
+
+struct CDialogEntView
+{
+    int m_nLine;
+    char m_pad04[0x0c];
+    char *m_pszDependency;
+    char *m_pszScript;
+    char m_pad18[0x1c];
+};
+
+struct CBaseEntH
+{
+    virtual void v0();
+    virtual unsigned int *vfunc1();
+};
+
+int CDialog::sub_100e0290(CBaseEntity *pNPC, CBaseEntity *pSpeaker, int hFile)
+{
+    ScopeTrace trace("CDialog::LogScriptProblems", g_106b8540);
+
+    CDialog *pThis = this;
+
+    if (pSpeaker)
+        pThis->m_hSpeaker = *((CBaseEntH *)pSpeaker)->vfunc1();
+    else
+        pThis->m_hSpeaker = 0xffffffff;
+
+    unsigned int *phNPC = &pThis->m_hNPC;
+    if (pNPC)
+        *phNPC = *((CBaseEntH *)pNPC)->vfunc1();
+    else
+        *phNPC = 0xffffffff;
+
+    if (g_10566458->sub_100290c0(phNPC) &&
+        pThis->m_hSpeaker != 0xffffffff &&
+        EHandle_Get(pThis->m_hSpeaker))
+    {
+        int nProblems = 0;
+        char *pszFilename = pThis->sub_100e7310();
+        if (pThis->sub_100e5410(pszFilename))
+        {
+            CDialogDependency dep;
+            for (int i = 0; i < pThis->m_pTable->m_nEntries; i++)
+            {
+                CDialogEntView *pEntry = (CDialogEntView *)&pThis->m_pTable->m_pEntries[i];
+                dep.sub_100e8ef0((int)pThis);
+                CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(pThis->m_hNPC);
+                dep.sub_100e8fc0((int)pThis, (int)pEnt, pEntry->m_pszDependency, pEntry->m_pszScript, 0, 0);
+
+                char bDependency, bEventScript;
+                ((CUnknown100ea1e0 *)&dep)->sub_100ea1e0(!sub_100df010(pEntry), &bDependency, &bEventScript);
+
+                if (bDependency)
+                {
+                    const char *pszMsg = sub_101d3730("%s\tline:%d\tdependency script:\t%s\n",
+                                                      pszFilename, pEntry->m_nLine, pEntry->m_pszDependency);
+                    g_1070b238->vfunc3(pszMsg, strlen(pszMsg), hFile);
+                    nProblems++;
+                }
+                if (bEventScript)
+                {
+                    const char *pszMsg = sub_101d3730("%s\tline:%d\teventscript script:\t%s\n",
+                                                      pszFilename, pEntry->m_nLine, pEntry->m_pszScript);
+                    g_1070b238->vfunc3(pszMsg, strlen(pszMsg), hFile);
+                    nProblems++;
+                }
+            }
+
+            ((EHANDLE *)&pThis->m_hSpeaker)->Set(NULL);
+            ((EHANDLE *)&pThis->m_hNPC)->Set(NULL);
+            pThis->sub_100e5770();
+
+            return nProblems;
+        }
+    }
+
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e09a0 size=0x77
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
