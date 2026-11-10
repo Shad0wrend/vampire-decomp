@@ -41739,6 +41739,52 @@ void CBaseEntity::sub_100b3c50(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b3db0 size=0xe7
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CUnknown1042da80.h"
+#include "CUnknown1042d770.h"
+#include "ScopeTrace.h"
+
+struct CPredIdView : CUnknown1042d770
+{
+    void sub_1042d650();
+    int sub_1042da60();
+};
+
+char *sub_1001001e();
+CBaseEntity *sub_10136580(const char *classname);
+
+CBaseEntity *sub_100b3db0(const char *classname, const char *module, int line)
+{
+    ScopeTrace trace("CBaseEntity::CreatePredictedEntityByName", g_106b8540);
+    char *pPlayer = sub_1001001e();
+    int nCommand = *(int *)(*(char **)(pPlayer + 0x20cc) + 4);
+    int nPlayerIndex = engine->vfunc35(pcd_stage(*(int *)(pPlayer + 0x2e0))) - 1;
+    CPredIdView testId;
+    testId.sub_1042d650();
+    {
+        int l = line;
+        const char *m = module;
+        testId.sub_1042d770(nPlayerIndex, nCommand, classname, m, l);
+    }
+    CBaseEntity *ent = sub_10136580(classname);
+    if (!ent)
+        return 0;
+    ent->sub_100b40f0(1);
+    ((CUnknown1042da80 *)((char *)ent + 0x1a8))->sub_1042da80(testId.sub_1042da60());
+    return ent;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3ee0 size=0xe4
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
