@@ -192645,6 +192645,96 @@ float CAI_Navigator::sub_102f02a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f0400 size=0x146
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CAI_Navigator.h"
+#include "CHolderInner24.h"
+#include "CVariantCopy.h"
+#include "CUnknown100290c0.h"
+#include "CAI_BaseNPCTroika.h"
+
+extern CUnknown100290c0 *g_10566458;
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+#define VV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CNavA0 { VV(a) };
+struct CNavA1 : CNavA0 { VV(b) };
+struct CNavA2 : CNavA1 { VV(c) };
+struct CNavA3 : CNavA2 { VV(d) };
+struct CNavA4 : CNavA3 { VV(e) };
+struct CNavA5 : CNavA4 { VV(f) };
+struct CNavA6 : CNavA5 { VV(g) };
+struct CNavA7 : CNavA6 { VV(h) };
+struct CNavA8 : CNavA7 { VV(i) };
+struct CNavA9 : CNavA8 { VV(j) };
+struct CNavA10 : CNavA9 { VV(k) };
+struct CNavInPassEnt : CNavA10
+{
+	virtual void l0(); virtual void l1(); virtual void l2(); virtual void l3(); virtual void l4(); virtual void l5(); virtual void l6(); virtual void l7();
+	virtual void vfunc118(const char *pszName, CBaseEntity *pActivator, CVariantCopy value, int outputID);
+};
+struct CNavNextTarget : CNavA10
+{
+	VV(m) VV(n) VV(o) VV(p) VV(q) VV(r)
+	virtual void s0(); virtual void s1();
+	virtual CNavNextTarget *vfunc172();
+};
+struct CNavDoorObj { char m_pad[0x4f8]; int m_i4f8; };
+struct CNavDoorEnt { char m_pad[0xa4]; CNavDoorObj *m_pObj; };
+struct CNavNpc
+{
+	void sub_102a0bc0(CHolderInner24_Node *p);
+	char sub_1027f550(CNavDoorObj *p);
+	void sub_10298800(CNavDoorObj *p);
+};
+struct CNavOwner
+{
+	char m_pad[0x98];
+	CNavNpc *m_p98;
+	char m_pad2[0x5de8 - 0x9c];
+	CNavNextTarget *m_p5de8;
+	const char *sub_1000b5cd();
+};
+
+#define OWNER ((CNavOwner *)m_pOuter)
+
+void CAI_Navigator::sub_102f0400()
+{
+	CHolderInner24_Node *node = ((CHolderInner24 *)m_p30)->m_pNode;
+	if (node->m_flags28 & 2) {
+		CNavInPassEnt *pEnt = (CNavInPassEnt *)g_10566458->sub_100290c0(&node->m_h20);
+		if (pEnt) {
+			CVariantCopy v;
+			pEnt->vfunc118("InPass", sub_102f05b0(pEnt), v, 0);
+		}
+	}
+	if (((CHolderInner24 *)m_p30)->sub_1030bd50())
+		return;
+	CNavNpc *npc = OWNER->m_p98;
+	if (npc) {
+		npc->sub_102a0bc0(node);
+		if (node->m_flags28 & 0x10) {
+			CNavDoorEnt *pDoor = (CNavDoorEnt *)node->m_h24.Get();
+			if (pDoor) {
+				CNavDoorObj *pObj = pDoor->m_pObj;
+				if (pObj) {
+					if (npc->sub_1027f550(pObj) && pObj->m_i4f8 == 1)
+						npc->sub_10298800(pObj);
+				}
+			} else {
+				DevMsg("%s trying to open a door that has been deleted!\n", OWNER->sub_1000b5cd());
+			}
+		}
+	}
+	if (node->m_pNext && (node->m_flags28 & 2)) {
+		OWNER->m_p5de8 = pcd_stage(OWNER->m_p5de8->vfunc172());
+		sub_102f2330(0);
+		return;
+	}
+	((CHolderInner24 *)m_p30)->sub_1030ba90();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f05b0 size=0x4
 struct CUnknown102f05b0 { int sub_102f05b0(); };
 int CUnknown102f05b0::sub_102f05b0()
