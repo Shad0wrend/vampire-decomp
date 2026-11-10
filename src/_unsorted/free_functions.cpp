@@ -75749,6 +75749,44 @@ extern "C" void *logic_multicompare()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130f50 size=0x268
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+void sub_1000b84d();
+void sub_10014515();
+extern int g_10575cd8[2];
+int *sub_10130f50()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 0xa, "m_OnEqual", {0x450, 0}, 1, 0x16, "OnEqual", g_1055dc70 },
+        { 0xa, "m_OnNotEqual", {0x468, 0}, 1, 0x16, "OnNotEqual", g_1055dc70 },
+        { 4, "m_iIntegerValue", {0x480, 0}, 1, 6, "IntegerValue", 0, 0 },
+        { 4, "m_iShouldCompareToValue", {0x484, 0}, 1, 6, "ShouldComparetoValue", 0, 0 },
+        { 0x12, "m_AllIntCompares", {0x488, 0}, 1, 2, 0, 0, 0 },
+        { 0x12, "InputValue", {0, 0}, 1, 8, "InputValue", 0, (void *)sub_10014515 },
+        { 0x12, "InputCompareValues", {0, 0}, 1, 8, "CompareValues", 0, (void *)sub_1000b84d },
+    };
+    g_10575cd8[1] = 7;
+    g_10575cd8[0] = (int)&dataDesc[1];
+    return g_10575cd8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131260 size=0x67
 #include "CUnknown10131260.h"
 #include "CEventQueue.h"
