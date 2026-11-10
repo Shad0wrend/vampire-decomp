@@ -8,8 +8,8 @@ struct datamap_t;
 struct PhysObjView	// a physics object attached to the constraint (only the slots used): the game flags word is slots 7 / 8
 {
 	virtual void v0(); virtual bool IsStatic(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
-	virtual void SetGameFlags(unsigned int flags);	// slot 7
-	virtual unsigned int GetGameFlags();	// slot 8
+	virtual void SetGameFlags(unsigned short flags);	// slot 7
+	virtual unsigned short GetGameFlags() const;	// slot 8
 	virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
 	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22();
 	virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();

@@ -96,7 +96,7 @@ public:
 	void GrowVector(int num = 1);
 	void ShiftElementsRight(int elem, int num = 1);
 	void ShiftElementsLeft(int elem, int num = 1);
-	void ResetDbgInfo() { m_pElements = m_Memory.Base(); }
+	void ResetDbgInfo() { m_pElements = Base(); }
 
 	A m_Memory;
 	int m_Size;
@@ -145,7 +145,7 @@ inline T const &CUtlVector<T, A>::operator[](int i) const
 template <class T, class A>
 inline T &CUtlVector<T, A>::Element(int i)
 {
-	return m_Memory[i];
+	return Base()[i];
 }
 
 template <class T, class A>
