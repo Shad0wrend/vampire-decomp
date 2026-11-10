@@ -693,6 +693,225 @@ void CBaseCombatWeapon::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10250ed0 size=0x6f3
+#include "CBaseEntity.h"
+#include "CBaseCombatWeapon.h"
+#include "FileSystemViews.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include "UTIL_BloodStream.h"
+char sub_10259f80(void *fs, const char *name, void *p);
+void sub_101cd940(void *p);
+void sub_1023ee30(char *p);
+struct WeaponStrHandle { int m_h; WeaponStrHandle(); };
+WeaponStrHandle sub_1042bff0(const char *v);
+extern void (*g_109f3628)(const char *fmt, ...);
+int __cdecl _strcmpi(const char *, const char *);
+extern char g_106b8540[];
+
+struct WeaponSoundSet
+{
+	char m_Sounds[25][16][0x94];
+	int m_nCounts[25];
+};
+struct WeaponAmmoRec
+{
+	char m_pad0[0x14];
+	char m_szAmmo[0x100];
+	int m_iAmmoType;
+	char m_pad118[0x2198 - 0x118];
+	WeaponSoundSet m_Sounds;
+};
+struct WeaponModelRec
+{
+	int m_nType;
+	char m_szName[0x80];
+	int m_nIndex;
+};
+struct WeaponAttackRec
+{
+	int m_n0;
+	char m_szName[0x80];
+	char m_szTag[0x80];
+	int m_nTag104;
+	int m_nKey108;
+	int m_n10c[3];
+	char m_Dmg118[0x1dc - 0x118];
+	char m_szBotch[0x80];
+	int m_nBotch25c;
+	char m_pad260[0x274 - 0x260];
+	WeaponModelRec m_Models[2];
+	char m_pad384[0x490 - 0x384];
+	WeaponSoundSet m_Sounds;
+	char m_padec34[0xec84 - 0xec34];
+};
+struct WeaponInfoView
+{
+	char m_pad0[0x242c];
+	int m_nFlags242c;
+	char m_pad2430[0x2450 - 0x2430];
+	char m_Keys2450[0x2560 - 0x2450];
+	char m_sz2560[0x80];
+	int m_n25e0;
+	char m_pad25e4[0x2668 - 0x25e4];
+	WeaponAmmoRec m_Ammo[2];
+	WeaponAttackRec m_Attacks[3];
+	char m_pad4fe6c[0x4fef0 - 0x4fe6c];
+	char m_szModel[0x80];
+	char m_szRes[8][0x80];
+	int m_n50370[2];
+	WeaponSoundSet m_Sounds;
+};
+struct WeaponNamedRec { int m_nId; const char *m_pszName; };
+extern int g_1073a384; extern WeaponNamedRec **g_1073a388;
+extern int g_1073a2f8; extern WeaponNamedRec **g_1073a2fc;
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+inline int LookupKeyA(const char *name)
+{
+	for (int i = 0; i < g_1073a384; i++)
+		if (!_strcmpi(STRINGR(g_1073a388[i]->m_pszName), name))
+			return g_1073a388[i]->m_nId;
+	return -1;
+}
+inline int LookupKeyB(const char *name)
+{
+	for (int i = 0; i < g_1073a2f8; i++)
+		if (!_strcmpi(STRINGR(g_1073a2fc[i]->m_pszName), name))
+			return g_1073a2fc[i]->m_nId;
+	return -1;
+}
+
+struct EngView { virtual void v0(); virtual int v1(const char *); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual int v13(const char *, int); virtual void v14(); virtual void v15(); virtual void v16(); virtual int v17(const char *, int); };
+struct AmmoV { int sub_104274b0(const char *); };
+struct AmmoGet { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49(); virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual AmmoV *v55(); };
+#define g_pAmmoGet ((AmmoGet *)g_1070ba0c)
+struct TList1 { int sub_10202a50(const char *); };
+struct TList2 { TList1 *sub_10203190(int); int sub_10203020(const char *); };
+extern TList2 g_1074e968;
+struct NLV { int sub_101f8330(void *); };
+extern NLV g_1074df78;
+struct DmgV { void sub_101fb000(void *); };
+struct WV { int sub_10250ea0(int); };
+struct NameObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual NameObj *v3(); virtual void v4(); virtual const char *v5(); };
+struct NameHold { char pad[0x40]; NameObj *p40; };
+inline const char *HolderName(NameHold *h)
+{
+	if (!h->p40)
+		return g_106b8540;
+	return h->p40->v3()->v5();
+}
+struct WeapFields
+{
+	char m_pad0[0x740];
+	int m_n740;
+	int m_iAmmoType[2];
+	char m_pad74c[0x754 - 0x74c];
+	int m_n754[4];
+	char m_pad764[0x76c - 0x764];
+	int m_n76c;
+	int m_n770;
+};
+
+#define INFO() ((WeaponInfoView *)sub_102517b0())
+#define F ((WeapFields *)this)
+
+void CBaseCombatWeapon::vfunc104()
+{
+	if (sub_10259f80(g_1070b238, ((CBaseEntity *)this)->sub_1009f200(), (char *)this + 0x8da)) {
+		int i, j, k;
+		F->m_n740 = ((EngView *)engine)->v1(vfunc348());
+		{
+			WeaponSoundSet &set = INFO()->m_Sounds;
+			for (k = 0; k < 25; k++)
+				for (j = 0; j < set.m_nCounts[k]; j++)
+					enginesound->vfunc0(set.m_Sounds[k][j], 0);
+		}
+		for (i = 0; i < 2; i++) {
+			WeaponAmmoRec *r = &INFO()->m_Ammo[i];
+			if (r->m_szAmmo[0]) {
+				r->m_iAmmoType = F->m_iAmmoType[i] = g_pAmmoGet->v55()->sub_104274b0(r->m_szAmmo);
+				F->m_iAmmoType[i] = g_pAmmoGet->v55()->sub_104274b0(r->m_szAmmo);
+				if (F->m_iAmmoType[i] == -1)
+					g_109f3628("ERROR: Weapon (%s) using undefined ammo type (%s)\n", HolderName(*(NameHold **)((char *)this + 0x2e0)), INFO()->m_Ammo[i].m_szAmmo);
+			} else
+				F->m_iAmmoType[i] = -1;
+			*(int *)((char *)&F->m_iAmmoType[i] + 0x118) = r->m_iAmmoType;
+			{
+				WeaponSoundSet &set = r->m_Sounds;
+				for (k = 0; k < 25; k++)
+					for (j = 0; j < set.m_nCounts[k]; j++)
+						enginesound->vfunc0(set.m_Sounds[k][j], 0);
+			}
+		}
+		sub_10255c30(INFO()->m_Keys2450);
+		INFO()->m_n25e0 = g_1074df78.sub_101f8330(INFO()->m_sz2560);
+		F->m_n754[0] = sub_1042bff0((const char *)vfunc342(0)).m_h;
+		F->m_n754[1] = sub_1042bff0((const char *)vfunc343()).m_h;
+		F->m_n754[2] = sub_1042bff0(vfunc272()).m_h;
+		F->m_n754[3] = sub_1042bff0(vfunc273()).m_h;
+		*(int *)((char *)this + 0x89c) = ((WV *)this)->sub_10250ea0(vfunc342(0));
+		*(int *)((char *)this + 0x8a0) = ((WV *)this)->sub_10250ea0(vfunc343());
+		F->m_n76c = ((WV *)this)->sub_10250ea0((int)vfunc272());
+		F->m_n770 = ((WV *)this)->sub_10250ea0((int)vfunc273());
+		if (INFO()->m_szModel[0])
+			((EngView *)engine)->v13(INFO()->m_szModel, 0);
+		if (INFO()->m_szRes[0][0])
+			((EngView *)engine)->v17(INFO()->m_szRes[0], 0);
+		if (INFO()->m_szRes[2][0])
+			sub_1023ee30(INFO()->m_szRes[2]);
+		if (INFO()->m_szRes[3][0])
+			sub_1023ee30(INFO()->m_szRes[3]);
+		if (INFO()->m_szRes[4][0])
+			((EngView *)engine)->v17(INFO()->m_szRes[4], 0);
+		if (INFO()->m_szRes[5][0])
+			((EngView *)engine)->v17(INFO()->m_szRes[5], 0);
+		if (INFO()->m_szRes[6][0])
+			((EngView *)engine)->v17(INFO()->m_szRes[6], 0);
+		if (INFO()->m_szRes[7][0])
+			((EngView *)engine)->v17(INFO()->m_szRes[7], 0);
+		int tmp = g_1074e968.sub_10203020("TagStrings");
+		if (tmp == -1)
+			g_109f3628("Unable to find String List!\n");
+		for (i = 0; i < 3; i++) {
+			WeaponAttackRec *r = &INFO()->m_Attacks[i];
+			if (r->m_szName[0]) {
+				r->m_nTag104 = 0;
+				if (tmp != -1)
+					r->m_nTag104 = g_1074e968.sub_10203190(tmp)->sub_10202a50(r->m_szName);
+				r->m_nKey108 = LookupKeyA(r->m_szTag);
+				((DmgV *)((char *)this + 0x77c + i * 0x44))->sub_101fb000(r->m_Dmg118);
+				r->m_nBotch25c = LookupKeyB(r->m_szBotch);
+				for (j = 0; j < 2; j++) {
+					WeaponModelRec &m = r->m_Models[j];
+					switch (m.m_nType) {
+					case 1:
+						m.m_nIndex = ((EngView *)engine)->v13(m.m_szName, 0);
+						break;
+					}
+				}
+				{
+					WeaponSoundSet &set = r->m_Sounds;
+					for (k = 0; k < 25; k++)
+						for (j = 0; j < set.m_nCounts[k]; j++)
+							((CBaseEntity *)this)->sub_100ae090(set.m_Sounds[k][j]);
+				}
+			}
+		}
+		{
+			const char *s = (const char *)vfunc342(0);
+			if (s && *s)
+				vfunc105(s);
+		}
+	} else {
+		g_109f3628("Error reading weapon data file for: %s\n", HolderName(*(NameHold **)((char *)this + 0x2e0)));
+		sub_101cd940(this);
+	}
+	*((char *)this + 0x8c8) = (INFO()->m_nFlags242c & 8) == 8;
+	vfunc71();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10251d80 size=0xd
 #include "CBaseCombatWeapon.h"
 namespace lifted {
