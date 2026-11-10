@@ -86709,6 +86709,68 @@ void sub_10159270(CPlatEdictView *pPlatEdict)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159310 size=0x299
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CPlatTrigger.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+void sub_101cf390(CBaseEntity *pEnt, const float *pMins, const float *pMaxs);
+
+struct CPlatCollideView
+{
+	virtual void slot0();
+	virtual const Vector &OBBMins();
+	virtual const Vector &OBBMaxs();
+};
+struct CPlatEntityView
+{
+	char m_pad0000[0x270];
+	CPlatCollideView m_Collision;
+};
+
+void CPlatTrigger::sub_10159310(CFuncPlat *pPlatform)
+{
+	m_pPlatform = pPlatform;
+	CCollisionProperty *pThisCol;
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+		pThisCol = (CCollisionProperty *)((char *)this + 0x270);
+		pThisCol->sub_100dc480(1);
+	}
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		pThisCol->AddSolidFlags(8);
+	}
+	vfunc93(0, 0);
+	((CEntityVSlots *)this)->slot62(&((CEntityVSlots *)pPlatform)->slot220()->x);
+	Vector vecTMin = ((CPlatEntityView *)m_pPlatform)->m_Collision.OBBMins() + Vector(25.0f, 25.0f, 0.0f);
+	Vector vecTMax = ((CPlatEntityView *)m_pPlatform)->m_Collision.OBBMaxs() + Vector(25.0f, 25.0f, 8.0f);
+	vecTMin.z = vecTMax.z - (m_pPlatform->m_vecPosition508.z - m_pPlatform->m_vecPosition514.z + 8.0f);
+	if (((CEntityVSlots *)m_pPlatform)->slot214()->x <= 50.0f) {
+		CPlatEntityView *pPlat = (CPlatEntityView *)m_pPlatform;
+		vecTMin.x = (pPlat->m_Collision.OBBMaxs().x + pPlat->m_Collision.OBBMins().x) / 2;
+		vecTMax.x = vecTMin.x + 1;
+	}
+	if (((CEntityVSlots *)m_pPlatform)->slot214()->y <= 50.0f) {
+		CPlatEntityView *pPlat = (CPlatEntityView *)m_pPlatform;
+		const Vector &vecMaxs = pPlat->m_Collision.OBBMaxs();
+		const Vector &vecMins = pPlat->m_Collision.OBBMins();
+		vecTMin.y = (vecMins.y + vecMaxs.y) / 2;
+		vecTMax.y = vecTMin.y + 1;
+	}
+	sub_101cf390(this, &vecTMin.x, &vecTMax.x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159700 size=0x7c
 #include "CUnknown10159700.h"
 #include "CBaseEntity.h"
