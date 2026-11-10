@@ -96,6 +96,24 @@ differs from the game's at <table address>" (the bytes it shows are the table's 
 compare your entries with read_data entry by entry). A wrong entry count gives "the game's code refers to different
 addresses where yours uses it".
 
+### Big DATADESC getters: the number of initializers per entry decides the stores (2026-11-10)
+
+In a table that VC6 fills at run time (any entry after the first with a non-constant: `g_1055dc70`, an ops call, a
+local static ops object), each entry is stored field by field, and VC6 writes the fields the source names in table
+order but hoists the zero fill of the fields it leaves out. So write every entry with exactly the initializers
+Source's macro has, no more and no fewer:
+
+- DEFINE_FIELD / DEFINE_KEYFIELD: through inputFunc: `{ 1, "m_flInMin", {0x450, 0}, 1, 6, "inmin", 0, 0 }`
+- DEFINE_CUSTOM_FIELD (ops, flags without 0x10): through inputFunc: `..., 0, sub_10045d90(8), 0 }`
+- DEFINE_OUTPUT (flags 0x16): through the ops only: `..., "OutColor", g_1055dc70 }`
+- DEFINE_INPUTFUNC / DEFINE_FUNCTION: through inputFunc; DEFINE_EMBEDDED: through td
+- DEFINE_UTLVECTOR: ops is `Ops()` where `inline ISaveRestoreOps *Ops() { static CUtlVectorDataOps<CUtlVector<T,
+  CUtlMemory<T> >, FIELDTYPE> ops; return (ISaveRestoreOps *)&ops; }` (CUtlVectorDataOps.h): the guard, the vtable
+  store and the atexit at the top of the getter
+
+All 17 open getters (431 B to 23 KB, 59 KB) matched this way with a table read from the game's data and stores;
+every trailing zero written (`0, 0, 0, 0, 0`) or none at all gives scores of 65-270 that no reordering fixes.
+
 ## The matches together: what the link audit checks (rulings of 2026-10-20)
 
 `pcdecomp link-audit` checks the matched functions as one program would see them; judging one function at a time
