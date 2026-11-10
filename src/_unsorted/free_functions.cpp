@@ -167689,6 +167689,34 @@ void CAI_BaseHumanoid::sub_1025efc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10260670 size=0xa9
+#include "CBaseEntity.h"
+#include "CAI_BaseHumanoid.h"
+#include <string.h>
+
+extern char g_106b8540[];
+class CBaseEntity;
+float sub_10084b40(CBaseEntity *pActor, const char *pszScene, EHANDLE *phScene);
+string_t sub_1042bff0(const char *psz);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void CAI_BaseHumanoid::sub_10260670(const char *pszName)
+{
+	if (!pszName || !*pszName)
+	{
+		sub_10260750();
+		return;
+	}
+	if (m_pSceneName && !_strcmpi(STRINGR(m_pSceneName), pszName))
+		return;
+	m_pSceneName = 0;
+	sub_10084b40((CBaseEntity *)this, pszName, &m_hScene);
+	if (m_hScene.Get())
+		m_pSceneName = sub_1042bff0(pszName).pszValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260750 size=0xb
 void __fastcall sub_10260750(char *self)
 {
