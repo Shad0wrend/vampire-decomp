@@ -90,7 +90,7 @@ public:
 	virtual int vfunc111(const float *pOrigin);	// the area (cluster) of a position
 	virtual void vfunc112();
 	virtual char vfunc113(const float *pViewOrigin, int portalKey, float *pPlane);	// GetAreaPortalPlane
-	virtual void vfunc114(); virtual char vfunc115(const char *pszMapName, int a); virtual void vfunc116(const char *pszOldLevel, const char *pszLandmark); virtual void vfunc117(); virtual void vfunc118();
+	virtual void vfunc114(); virtual char vfunc115(const char *pszMapName, int a); virtual void vfunc116(const char *pszOldLevel, const char *pszLandmark); virtual void vfunc117(); virtual float vfunc118(const Vector &v);
 	virtual double vfunc119(int flag);	// a time value (returned in ST0)
 	virtual int vfunc120();
 	virtual void vfunc121(int a, int *b);
