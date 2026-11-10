@@ -252006,6 +252006,69 @@ bool CWeaponPhysCannon::sub_1040e880(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040f080 size=0x3cd
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CWeaponMelee.h"
+#include "UTIL_Trace.h"
+#include "Vector.h"
+#include <string.h>
+int sub_101cca80(CBaseEntity **pList, int nMax, const Vector *pMins, const Vector *pMaxs, int a, int b);
+extern char g_106b8540[];
+
+CBaseEntity *CWeaponMelee::sub_1040f080(const Vector *pCenter, const Vector *pForward, float flMin, float flMax, char bFlag)
+{
+	float flRadius = sub_1040e5b0() + 1.0;
+	bool bPrev = bFlag != 0;
+	float flBest = flRadius;
+	CBaseEntity *pBest = 0;
+	CBaseEntity *pList[256];
+	Vector mins = *pCenter - Vector(flRadius, flRadius, flRadius);
+	Vector maxs = Vector(flRadius, flRadius, flRadius) + *pCenter;
+	int nCount = sub_101cca80(pList, 0x100, &mins, &maxs, 0, 1);
+	for (int i = 0; i < nCount; i++) {
+		if (pList[i]->m_obj36c) {
+			const char *pName = pList[i]->m_classname11c;
+			bool bBall = _strcmpi(pName ? pName : g_106b8540, "prop_combine_ball") == 0;
+			if (bBall || !bPrev) {
+				Vector vecDelta;
+				VectorSubtract(*((CEntityVSlots *)pList[i])->slot215(), *pCenter, vecDelta);
+				float flLen = VectorNormalize(vecDelta);
+				if (bBall && !bPrev) {
+					if (!(flLen >= flRadius)) {
+						float flDot = DotProduct(vecDelta, *pForward);
+						if (!(flDot <= flMin)) {
+							if (!(flLen > flBest))
+								goto hit;
+							if (!(flDot <= flMax))
+								goto hit;
+						}
+					}
+				} else {
+					if (!(flLen >= flBest) && !(DotProduct(vecDelta, *pForward) <= flMin))
+						goto hit;
+				}
+				continue;
+hit:
+				{
+					CBaseEntity *pOwner = (CBaseEntity *)sub_102521f0();
+					CGameTrace trace;
+					UTIL_TraceLine(*pCenter, *((CEntityVSlots *)pList[i])->slot215(), 0x46004003, pOwner, 0, &trace);
+					if (trace.m_pEnt == pList[i]) {
+						pBest = pList[i];
+						flBest = flLen;
+						bPrev = bBall;
+					}
+				}
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040f550 size=0x31e
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
