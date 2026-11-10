@@ -8890,6 +8890,7 @@
 0x1000d107 func   ?vfunc554@CNPC_VBatSwarm@@UAEHMM@Z CNPC_VBatSwarm::vfunc554
 0x1000d10c func   ?IsLeftChild@?$CUtlRBTree@UCRBTree12Entry_102cfaf0@@G@@QBE_NG@Z CUtlRBTree<CRBTree12Entry_102cfaf0,unsigned short>::IsLeftChild
 0x1000d10c func   ?sub_102cefc0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_102cefc0
+0x1000d111 func   ?sub_102c4e30@CTroikaEntView@@QAEXXZ CTroikaEntView::sub_102c4e30
 0x1000d116 func   ?sub_10280e50@CAI_BaseNPC@@QAEXPAX@Z CAI_BaseNPC::sub_10280e50
 0x1000d11b func   ?vfunc81@CResearchBook_MG_FIN@@QAEHXZ CResearchBook_MG_FIN::vfunc81
 0x1000d125 func   ?ShiftElementsRight@?$CUtlVector@UCElem1021e2a0@@V?$CUtlMemory@UCElem1021e2a0@@@@@@QAEXHH@Z CUtlVector<CElem1021e2a0,CUtlMemory<CElem1021e2a0> >::ShiftElementsRight

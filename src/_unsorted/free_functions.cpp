@@ -181178,6 +181178,32 @@ void CAI_BaseNPCTroika::sub_102c4cc0(CAI_ArcRecord *pRec, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4e30 size=0x33
+#include "CBaseEntity.h"
+#include "Vector.h"
+
+extern Vector g_1070d9d0;
+extern Vector g_1070d1b0;
+
+struct CTroikaEntView {
+	char pad0[0x3ec];
+	float m_flGravity;
+	void sub_100b2f50(const Vector *p);
+	void sub_100b2770(const Vector *p);
+	void SetGravity(float g) { m_flGravity = g; }
+	void sub_102c4e30();
+};
+
+// TARGET: sub_102c4e30
+void CTroikaEntView::sub_102c4e30()
+{
+	((CBaseEntity *)this)->vfunc93(5, 0);
+	SetGravity(0);
+	sub_100b2f50(&g_1070d9d0);
+	sub_100b2770(&g_1070d1b0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c4e80 size=0x1d
 #include "CBaseEntity.h"
 // TARGET: sub_102c4e80
