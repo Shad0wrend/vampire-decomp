@@ -3566,6 +3566,7 @@
 0x10005d99 func   ?sub_103f5030@@YA_NHPAVCBaseEntity@@@Z sub_103f5030
 0x10005d9e func   ?sub_10083960@CUnknown10083960@@QAEXH@Z CUnknown10083960::sub_10083960
 0x10005da3 func   ?sub_1013dae0@CUnk1013dae0@@QAEXXZ CUnk1013dae0::sub_1013dae0
+0x10005da8 func   ?sub_10232ef0@@YAXPAVCBaseEntity@@@Z sub_10232ef0
 0x10005dad func   ?vfunc112@CBaseEntity@@UAEXHH@Z CBaseEntity::vfunc112
 0x10005db2 func   ?vfunc80@CFuncMonitor@@QAEHXZ CFuncMonitor::vfunc80
 0x10005db7 func   ?sub_10428470@@YAHHH@Z sub_10428470
