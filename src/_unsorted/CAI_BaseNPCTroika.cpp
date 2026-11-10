@@ -407,6 +407,143 @@ void CAI_BaseNPCTroika::vfunc532(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10290b60 size=0x371
+#include "CAI_BaseNPCTroika.h"
+#include "CVProfile.h"
+#include "engineiface.h"
+#include "globalvars.h"
+
+struct CCycleSample
+{
+	unsigned int m_lo;
+	unsigned int m_hi;
+	void Sample()
+	{
+		__asm
+		{
+			mov ecx, this
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+#define EXIT_SCOPE() \
+	{ \
+		CVProfile *pp = g_109f3648; \
+		if (!pp->m_bAtRoot || pp->m_enabled) \
+		{ \
+			CVProfNode *n = pp->m_pCurNode; \
+			if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) \
+			{ \
+				CCycleSample t; \
+				t.m_lo = 0; \
+				t.m_hi = 0; \
+				t.Sample(); \
+				CUnknownCycle100335e0 *pc = &n->m_CurFrameTime; \
+				pc->m_Int64 = *(unsigned __int64 *)&t - pc->m_Int64; \
+				n->m_TotalTime += pc->m_Int64; \
+				g_109f3648->PopGroup(); \
+			} \
+			if (n->m_nRecursions == 0) \
+				pp->m_pCurNode = pp->m_pCurNode->m_pParent; \
+			pp->m_bAtRoot = (pp->m_pCurNode == pp->m_pRoot); \
+		} \
+	}
+
+namespace block_10290b60 {
+int __stdcall sub_10290660(float t)
+{
+	if (t - gpGlobals->curtime <= gpGlobals->frametime)
+		return 1;
+	return 0;
+}
+struct CTroikaUnit : CAI_BaseNPCTroika
+{
+	char sub_102906c0();
+};
+char CTroikaUnit::sub_102906c0()
+{
+	return (char)sub_10290660(m_f6248);
+}
+}
+using namespace block_10290b60;
+
+// TARGET: CAI_BaseNPCTroika::CalcNextNormalThink
+bool CAI_BaseNPCTroika::CalcNextNormalThink(float *pOut)
+{
+	CVProfile *p = g_109f3648;
+	if (p->m_enabled || !p->m_bAtRoot)
+	{
+		if (p->m_pCurNode->m_pszName != "CAI_BaseNPCTroika_CalcNextNormalThink")
+			p->m_pCurNode = p->m_pCurNode->GetSubNode("CAI_BaseNPCTroika_CalcNextNormalThink", 0, "Unaccounted");
+		CVProfNode *n = p->m_pCurNode;
+		n->m_nCurFrameCalls++;
+		if (n->m_nRecursions++ == 0)
+		{
+			((CCycleSample *)&n->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroup(n->m_nBudgetGroupID);
+		}
+		p->m_bAtRoot = false;
+	}
+	if (((CTroikaUnit *)this)->sub_102906c0())
+	{
+		float d;
+		if (sub_102c2430())
+			d = 0.01f;
+		else if ((m_flags5b84 & 8) == 8 || (m_flags14bc & 4) || m_b6279)
+			d = 0.1f;
+		else
+		{
+			if (m_h628c.Get())
+			{
+				float t3;
+				d = (m_f6264 - 2048.0f) * 0.0007324219f;
+				if (d > 3.0f)
+				{
+					t3 = 3.0f;
+					goto rnd;
+				}
+				else if (d < 0.1f)
+					d = 0.1f;
+				else
+				{
+					t3 = d;
+					if (d == 3.0f)
+					{
+rnd:
+						d = enginerandom->vfunc1(0.0f, 0.3f) + t3;
+					}
+				}
+			}
+			else
+				d = 0.1f;
+			if (m_b6278)
+			{
+				if (!m_b6279)
+					d = (d * 3.0f < 6.0f) ? d * 3.0f : 6.0f;
+			}
+			else
+			{
+				d = (d * 10.0f < 16.0f) ? d * 10.0f : 16.0f;
+			}
+		}
+		*pOut = m_f6248 - m_f6258;
+		float cur = m_f6248;
+		m_f6258 = cur;
+		float now = gpGlobals->curtime;
+		if (!(cur > now))
+			cur = gpGlobals->curtime;
+		m_f6248 = cur + d;
+		EXIT_SCOPE();
+		return true;
+	}
+	EXIT_SCOPE();
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293e50 size=0x1d
 #include "CAI_BaseNPCTroika.h"
 
