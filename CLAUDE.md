@@ -111,7 +111,7 @@ Source's macro has, no more and no fewer:
   CUtlMemory<T> >, FIELDTYPE> ops; return (ISaveRestoreOps *)&ops; }` (CUtlVectorDataOps.h): the guard, the vtable
   store and the atexit at the top of the getter
 
-All 17 open getters (431 B to 23 KB, 59 KB) matched this way with a table read from the game's data and stores;
+All 16 open getters (177 B to 23 KB, 59 KB) matched this way with a table read from the game's data and stores;
 every trailing zero written (`0, 0, 0, 0, 0`) or none at all gives scores of 65-270 that no reordering fixes.
 
 ## The matches together: what the link audit checks (rulings of 2026-10-20)
