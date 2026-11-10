@@ -193898,6 +193898,91 @@ bool CAI_Navigator::sub_102f0e80(char *pbDone)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f0fe0 size=0x2f8
+// TARGET: CAI_Navigator::sub_102f0fe0
+#include "CAI_Navigator.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+struct CNavFinderView
+{
+	int sub_10304130(const Vector *pOrigin, const Vector *pPoint, CEntityVSlots *pEnt, int a, int b, int flags, float c, int d);
+};
+struct CNavNodeList
+{
+	void sub_1013dce0(CAI_NavPathNode *p);
+};
+struct CNavRouteView : CAI_NavRoute
+{
+	void sub_1030b4d0(int a, int b);
+	const EHANDLE &Target() const { return *(const EHANDLE *)&m_i30; }
+	CEntityVSlots *GetTarget() const { return (CEntityVSlots *)Target().Get(); }
+	float GetTolerance() const { return *(const float *)&m_i28; }
+};
+extern CNavNodeList g_10936c84;
+void sub_1031a050(void *p);
+void sub_1031a0e0(int a, int b);
+float sub_10146150(Vector *p);
+inline void CopyVec(Vector &d, const Vector &s) { *(CAI_NavVec3 *)&d = *(const CAI_NavVec3 *)&s; }
+
+bool CAI_Navigator::sub_102f0fe0(char *pbDone)
+{
+	CAI_NavPathNode *pNode = (CAI_NavPathNode *)m_p30->m_pWaypoint.m_p;
+	CAI_NavPathNode *pOther = pNode->m_p30;
+	if (!pOther || !(pOther->m_flags28 & 4) || pOther->m_p2c || pNode->m_p2c || !(4 & pNode->m_flags28))
+		return false; else { float flTolerance;
+	Vector vecOther;
+	float t;
+	{
+		Vector vecOwner = *((CEntityVSlots *)m_pOuter)->slot220() - *(Vector *)&pNode->m_v3Pos;
+		CopyVec(vecOther, *(Vector *)pOther - *(Vector *)&pNode->m_v3Pos);
+		VectorNormalize(vecOther);
+		vecOwner.z = 0;
+		vecOther.z = 0;
+		float flLen = sub_10146150(&vecOwner);
+		t = vecOwner.x * vecOther.x + vecOwner.y * vecOther.y + 0.0f * vecOther.z;
+		flTolerance = ((CNavRouteView *)m_p30)->GetTolerance();
+		if (!(t > flLen * 0.5))
+			return false;
+	}
+	{
+	Vector vecPoint = vecOther * t + *(Vector *)&pNode->m_v3Pos;
+	int flags = 0;
+	if (((CEntityVSlots *)m_pOuter)->slot513() & 1)
+		flags = 1;
+	if (((CEntityVSlots *)m_pOuter)->slot513() & 2)
+		flags |= 4;
+	int e1 = ((CNavFinderView *)sub_102ecc00())->sub_10304130(((CEntityVSlots *)m_pOuter)->slot220(), &vecPoint, ((CNavRouteView *)m_p30)->GetTarget(), 1, -1, flags, flTolerance, 0);
+	if (!e1)
+		return false;
+	int e2 = ((CNavFinderView *)sub_102ecc00())->sub_10304130(&vecPoint, (const Vector *)pOther, ((CNavRouteView *)m_p30)->GetTarget(), 1, -1, flags, flTolerance, 0);
+	if (!e2)
+	{
+		sub_1031a050((void *)e1);
+		return false;
+	}
+	sub_1031a0e0(e1, e2);
+	sub_1031a0e0(e1, (int)pOther->m_p30);
+	CAI_NavPathNode *pPrev = pNode->m_p30;
+	if (pPrev)
+		pPrev->m_p34 = pNode->m_p34;
+	if (pNode->m_p34)
+		pNode->m_p34->m_p30 = pNode->m_p30;
+	g_10936c84.sub_1013dce0(pNode);
+	if (pPrev)
+	{
+		if (pPrev->m_p30)
+			pPrev->m_p30->m_p34 = pPrev->m_p34;
+		if (pPrev->m_p34)
+			pPrev->m_p34->m_p30 = pPrev->m_p30;
+		g_10936c84.sub_1013dce0(pPrev);
+	}
+	((CNavRouteView *)m_p30)->sub_1030b4d0(e1, 0);
+	}
+	return true; }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f13a0 size=0x17
 extern int g_1060fce8;
 
