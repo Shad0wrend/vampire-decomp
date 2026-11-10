@@ -80269,6 +80269,35 @@ double sub_1013a940(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a970 size=0x5f
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include <math.h>
+float sub_1013a870(float, float);
+
+namespace block_1013a970 {
+float sub_1013a8c0(float x, float biasAmt)
+{
+	if (x < 0.5)
+		return 0.5f * sub_1013a870(2 * x, 1 - biasAmt);
+	else
+		return 1 - 0.5f * sub_1013a870(2.0f - 2 * x, 1 - biasAmt);
+}
+float sub_1013a940(float x)
+{
+	return (1 - cos(x * 3.141592653589793)) * 0.5;
+}
+}
+using namespace block_1013a970;
+
+// TARGET: ?sub_1013a970@@YAMMMM@Z
+float sub_1013a970(float x, float flPeakPos, float flPeakSharpness)
+{
+	float flMappedX;
+	if (!(!(x < flPeakPos))) flMappedX = (0.5f / flPeakPos) * x; else flMappedX = 0.5 + ((0.5 * (x - flPeakPos)) / (1.0f - flPeakPos));
+	return sub_1013a940(pcd_stage(sub_1013a8c0(flMappedX, flPeakSharpness)));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013a9f0 size=0x82
 #include "Quaternion.h"
 

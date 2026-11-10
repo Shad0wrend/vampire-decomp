@@ -6460,6 +6460,7 @@
 0x10009be2 func   ?sub_101f2740@VKeyValuesInterface@@QAEHPBDH@Z VKeyValuesInterface::sub_101f2740
 0x10009be7 func   ?sub_1039aaf0@CUnknown1039aaf0@@QAEXD@Z CUnknown1039aaf0::sub_1039aaf0
 0x10009bec func   ?sub_101d2d80@@YAMPBUmatrix3x4_t@@PBVVector@@@Z sub_101d2d80
+0x10009bf1 func   ?sub_1013a970@@YAMMMM@Z sub_1013a970
 0x10009bf6 func   ??0CSave@@QAE@PAX@Z CSave::CSave
 0x10009bfb func   ?vfunc363@CNPCMaker@@UAE_NH@Z CNPCMaker::vfunc363
 0x10009c00 func   ?sub_101e0d60@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101e0d60
