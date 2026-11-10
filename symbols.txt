@@ -14976,6 +14976,7 @@
 0x10015398 func   ?sub_10025f00@CConstantForceController@@QAEXPBVVector@@0@Z CConstantForceController::sub_10025f00
 0x10015398 func   ?sub_10025f00@CPhysForceMotion@@QAEXPBVVector@@0@Z CPhysForceMotion::sub_10025f00
 0x1001539d func   ?vfunc82@CVGuiScreen@@UAEPAUdatamap_t@@XZ CVGuiScreen::vfunc82
+0x100153a2 func   ?sub_101b1a00@@YAXPAVCBaseEntity@@PBMPBDMHHHMPAM@Z sub_101b1a00
 0x100153a7 func   ?sub_1033c6b0@CBaseCombatCharacter@@QAEXI@Z CBaseCombatCharacter::sub_1033c6b0
 0x100153b6 func   ?vfunc1@CTraitDependencyDataDescSaveDataOps@@UAEXPAUCTraitDependencyField@@PAX@Z CTraitDependencyDataDescSaveDataOps::vfunc1
 0x100153bb func   ?sub_103e1740@@YAHXZ sub_103e1740

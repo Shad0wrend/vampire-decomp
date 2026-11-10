@@ -108657,6 +108657,83 @@ int sub_101b19e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1a00 size=0x2a8
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBaseEntity.h"
+#include "CSoundEmitterSystem.h"
+#include "CSoundParameters.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include "Tier1.h"
+
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+
+struct EngineView49 {
+	V16(p) V16(q) V16(r) virtual void s0();
+	virtual void vfunc49(int edict, const float *pos, const char *pszSample, float volume, int soundlevel, int flags, int pitch);
+};
+
+__declspec(dllimport) char *Q_strstr(const char *s, const char *search);
+int sub_101af070(const char *pszName);
+
+struct CSoundEmitterAmbientView
+{
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void TraceEmitSound(const char *pszFormat, ...);
+};
+
+static inline CSoundEmitterAmbientView *SoundSys() { return (CSoundEmitterAmbientView *)&g_1072be18; }
+
+inline int SENTENCEG_Lookup(const char *sample, char *sentencenum)
+{
+	int sentenceIndex = sub_101af070(sample);
+	if (sentenceIndex >= 0)
+		g_109f388c(sentencenum, 32, "!%d", sentenceIndex);
+	return sentenceIndex;
+}
+
+inline int ENTINDEX(int edict)
+{
+	return engine->vfunc35(edict);
+}
+
+void sub_101b1a00(CBaseEntity *pEnt, const float *pos, const char *samp, float vol, int soundlevel, int flags, int pitch, float soundtime, float *duration)
+{
+	if (samp && *samp == '!') {
+		char name[32];
+		if (SENTENCEG_Lookup(samp, name) >= 0) {
+			((EngineView49 *)engine)->vfunc49(pEnt->m_pEdict2e0, pos, name, vol, soundlevel, flags, pitch);
+			if (duration)
+				*duration = enginesound->vfunc1(name);
+			((CSoundEmitterSystem *)&g_1072be18)->vfunc3("UTIL_EmitAmbientSound:  Sentence emitted '%s' (ent %i)\n", name, ENTINDEX(pEnt->m_pEdict2e0));
+		}
+		return;
+	}
+	if (samp && (Q_strstr(samp, ".wav") || Q_strstr(samp, ".mp3"))) {
+		((EngineView49 *)engine)->vfunc49(pEnt->m_pEdict2e0, pos, samp, vol, soundlevel, flags, pitch);
+		if (duration)
+			*duration = enginesound->vfunc1(samp);
+		SoundSys()->TraceEmitSound("EmitAmbientSound:  Raw wave emitted '%s' (ent %i)\n", samp, ENTINDEX(pEnt->m_pEdict2e0));
+		return;
+	}
+	CSoundParameters params;
+	if (!g_1072be18.sub_101b33f0(samp, params))
+		return;
+	if (flags & 2)
+		params.pitch = pitch;
+	if (flags & 1)
+		params.volume = vol;
+	CBaseEntity *pOwner = pEnt;
+	((EngineView49 *)engine)->vfunc49(pOwner->m_pEdict2e0, pos, params.soundname, params.volume, params.soundlevel, flags, params.pitch);
+	if (duration)
+		*duration = enginesound->vfunc1(params.soundname);
+	SoundSys()->TraceEmitSound("EmitAmbientSound:  '%s' emitted as '%s' (ent %i)\n", samp, params.soundname, pcd_stage(ENTINDEX(pOwner->m_pEdict2e0)));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1d60 size=0x42
 struct SSoundCache { char *sub_101b40a0(char *name, int a); };
 extern SSoundCache g_1072be18;
