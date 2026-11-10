@@ -146435,6 +146435,40 @@ char __fastcall sub_1020cd00(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020cd30 size=0x27d
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBaseCombatCharacter.h"
+#include "CSecCamera.h"
+#include "UTIL_Trace.h"
+CBaseCombatCharacter *__cdecl sub_101cd9e0(int nSlot);
+int __cdecl sub_101d1800(int edict);
+
+char CSecCamera::sub_1020cd30()
+{
+	if ( m_flags204 & 1 )
+		return false;
+	CBaseCombatCharacter *pPlayer = sub_101cd9e0( 1 );
+	if ( !pPlayer || pPlayer->sub_10146a80() )
+		return false;
+	CSecCamera *pPlayerCam = (CSecCamera *)pPlayer;
+
+	float fDist = FastSqrt(
+		( pPlayerCam->vfunc217()[0] - vfunc217()[0] ) * ( pPlayerCam->vfunc217()[0] - vfunc217()[0] ) +
+		( pPlayerCam->vfunc217()[1] - vfunc217()[1] ) * ( pPlayerCam->vfunc217()[1] - vfunc217()[1] ) );
+
+	if ( !( fDist > m_fVisRange ) && !( fDist < m_fBlindDist ) )
+	{
+		if ( sub_1020cc60( pPlayer ) && sub_101d1800( pcd_stage(m_pEdict2e0) ) )
+		{
+			CGameTrace trace;
+			UTIL_TraceLine( *(Vector *)vfunc217(), pPlayerCam->vfunc192(), 0x4091, this, 0, &trace );
+			return trace.m_fraction == 1.0;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020d050 size=0x14
 struct CUnit1020d080
 {

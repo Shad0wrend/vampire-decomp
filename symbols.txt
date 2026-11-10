@@ -9649,6 +9649,7 @@
 0x1000e07a func   _trigger_stealth_mod trigger_stealth_mod
 0x1000e07f func   _env_physimpact env_physimpact
 0x1000e084 func   ?vfunc103@CPropDoorknobElectronic@@UAEXXZ CPropDoorknobElectronic::vfunc103
+0x1000e089 func   ?sub_1020cd30@CSecCamera@@QAEDXZ CSecCamera::sub_1020cd30
 0x1000e08e func   ?vfunc532@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc532
 0x1000e093 func   ?vfunc30@CMultiplayRules@@UAEMH@Z CMultiplayRules::vfunc30
 0x1000e098 func   ?vfunc81@CItemGLillyPhoto@@QAEHXZ CItemGLillyPhoto::vfunc81
