@@ -398,3 +398,32 @@ float CAI_Motor::vfunc15(Vector &vecDir)
 	return flTotalInterest;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102e2580 size=0x6c
+#include "CAI_Motor.h"
+
+float sub_102d61b0(int a);
+
+#define MAX(a, b) (((a) > (b)) ? (a) : (b))
+
+namespace block_102e2580 {
+struct CAI_MotorUnit : CAI_Motor {
+	float sub_102e12c0();
+};
+float CAI_MotorUnit::sub_102e12c0()
+{
+	return ((CAI_Motor *)m_pOuter)->vfunc16();
+}
+}
+using namespace block_102e2580;
+
+// TARGET: CAI_Motor::vfunc17
+float CAI_Motor::vfunc17()
+{
+	float flMoveDist = GetMoveInterval() * ((CAI_MotorUnit *)this)->sub_102e12c0();
+	float flMinDist = MAX(vfunc16(), flMoveDist);
+	if (flMinDist < sub_102d61b0(GetHullType()))
+		flMinDist = sub_102d61b0(GetHullType());
+	return flMinDist;
+}
+// END FUNCTION

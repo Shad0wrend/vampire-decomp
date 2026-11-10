@@ -6815,6 +6815,7 @@
 0x1000a38f func   ?sub_101f7380@CVTraitFields101f7380@@QAEXXZ CVTraitFields101f7380::sub_101f7380
 0x1000a394 func   _simple_physics_prop simple_physics_prop
 0x1000a399 func   ?sub_10246490@@YAXHPAH0@Z sub_10246490
+0x1000a39e func   ?vfunc17@CAI_Motor@@UAEMXZ CAI_Motor::vfunc17
 0x1000a3a3 func   ?vfunc82@CPropRadio@@UAEPAUdatamap_t@@XZ CPropRadio::vfunc82
 0x1000a3a8 func   ?sub_1010dc30@CUnknown1010dc30@@QAEXPAH@Z CUnknown1010dc30::sub_1010dc30
 0x1000a3ad func   ?sub_10252800@@YAXPAVCBaseAnimating@@M@Z sub_10252800
