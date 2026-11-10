@@ -14,6 +14,102 @@ PyServerSystem *PyServerSystem::vfunc8(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10199f70 size=0x373
+#include "PyServerSystem.h"
+#include <string.h>
+struct PyTypeObject { int pad[6]; void (__cdecl *tp_dealloc)(struct PyObject *); };
+struct PyObject { int ob_refcnt; PyTypeObject *ob_type; };
+struct PyMethodDef { const char *name; void *meth; int flags; const char *doc; };
+#define DECREF(o) do { if (--(o)->ob_refcnt == 0) (o)->ob_type->tp_dealloc(o); } while (0)
+
+extern void (*g_109f3630)(const char *pMsg, ...);
+extern PyObject *g_1072b31c;
+extern const char *g_1058f654;
+extern PyObject *g_1072b370, *g_1072b374, *g_1072b364, *g_1072b36c, *g_1072b360;
+extern PyMethodDef g_1058f778[], g_1058f698[], g_1058f868[], g_1058f7a8[];
+extern "C" {
+__declspec(dllimport) PyObject *PyString_FromString(const char *);
+__declspec(dllimport) PyObject *PyDict_New();
+__declspec(dllimport) PyObject *Py_InitModule4(const char *, PyMethodDef *, const char *, PyObject *, int);
+__declspec(dllimport) PyObject *PyImport_AddModule(const char *);
+__declspec(dllimport) PyObject *PyCFunction_New(PyMethodDef *, PyObject *);
+__declspec(dllimport) int PyDict_SetItemString(PyObject *, const char *, PyObject *);
+__declspec(dllimport) PyObject *PyClass_New(PyObject *, PyObject *, PyObject *);
+__declspec(dllimport) int PyModule_AddObject(PyObject *, const char *, PyObject *);
+__declspec(dllimport) PyObject *PyTuple_New(int);
+__declspec(dllimport) PyObject *PyMethod_New(PyObject *, PyObject *, PyObject *);
+__declspec(dllimport) int PyRun_SimpleString(const char *);
+}
+
+bool PyServerSystem::vfunc0()
+{
+	if (!g_1072b31c)
+		g_1072b31c = PyString_FromString(g_1058f654);
+	g_1072b370 = PyDict_New();
+	g_1072b374 = PyDict_New();
+	Py_InitModule4("vampire", g_1058f7a8, 0, 0, 0x3f2);
+	g_1072b364 = PyImport_AddModule("vampire");
+
+	PyObject *dict = PyDict_New();
+	PyMethodDef *m;
+	for (m = g_1058f778; m->name; m++) {
+		PyObject *f = PyCFunction_New(m, 0);
+		PyDict_SetItemString(dict, m->name, f);
+		DECREF(f);
+	}
+	PyObject *name = PyString_FromString("Entity");
+	PyObject *entity = PyClass_New(0, dict, name);
+	DECREF(dict);
+	DECREF(name);
+	PyModule_AddObject(g_1072b364, "Entity", entity);
+	g_1072b36c = entity;
+	for (m = g_1058f698; m->name; m++) {
+		PyObject *f = PyCFunction_New(m, 0);
+		PyObject *meth = PyMethod_New(f, 0, entity);
+		PyDict_SetItemString(dict, m->name, meth);
+		DECREF(f);
+		DECREF(meth);
+	}
+
+	dict = PyDict_New();
+	name = PyString_FromString("Character");
+	PyObject *tup = PyTuple_New(1);
+	entity->ob_refcnt++;
+	((PyObject **)tup)[3] = g_1072b36c;
+	PyObject *cls = PyClass_New(tup, dict, name);
+	DECREF(dict);
+	DECREF(name);
+	PyModule_AddObject(g_1072b364, "Character", cls);
+	g_1072b360 = cls;
+	for (m = g_1058f868; m->name; m++) {
+		PyObject *f = PyCFunction_New(m, 0);
+		PyObject *meth = PyMethod_New(f, 0, entity);
+		PyDict_SetItemString(dict, m->name, meth);
+		DECREF(f);
+		DECREF(meth);
+	}
+
+	char gamedir[128];
+	engine->vfunc89(gamedir);
+	char *p;
+	while (1) {
+		p = strstr(gamedir, "\\");
+		if (!p)
+			break;
+		*p = '/';
+	}
+	char path[256];
+	memset(path, 0, sizeof(path));
+	strcat(path, "sys.path.append(\"");
+	strcat(path, gamedir);
+	strcat(path, "/python/lib/");
+	strcat(path, "\")");
+	if (PyRun_SimpleString(path) == -1)
+		g_109f3630("Error while adding level script path.");
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019a3d0 size=0x82
 #include "PyServerSystem.h"
 
