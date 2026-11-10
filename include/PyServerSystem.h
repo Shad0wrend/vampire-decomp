@@ -5,7 +5,7 @@
 class PyServerSystem
 {
 public:
-	virtual void vfunc0();
+	virtual bool vfunc0();
 	virtual void vfunc1();	// shutdown: removes the "vampire" module and drops the cached Python objects
 	virtual void vfunc2();
 	virtual void vfunc3();
