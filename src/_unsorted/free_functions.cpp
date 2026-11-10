@@ -176232,6 +176232,88 @@ void CAI_BaseNPCTroika::sub_10292500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10293a80 size=0x24c
+#include "CAI_BaseNPCTroika.h"
+#include "CVProfile.h"
+#include "globalvars.h"
+#include "ehandle.h"
+#include "CEntityVSlots.h"
+
+CEntityVSlots *sub_101cd9e0(int index);
+
+struct CCycleSample
+{
+	unsigned __int64 m_Int64;
+	void Sample() { unsigned int *p = (unsigned int *)&m_Int64; __asm { mov ecx, p
+		rdtsc
+		mov [ecx], eax
+		mov [ecx + 4], edx } }
+};
+
+inline float LengthYZX(const Vector &v)
+{
+	return FastSqrt((v.y * v.y + v.z * v.z) + v.x * v.x);
+}
+
+// TARGET: sub_10293a80
+float __fastcall sub_10293a80(CAI_BaseNPCTroika *pThis)
+{
+	CVProfile *g = g_109f3648;
+	if (g->m_enabled || !g->m_bAtRoot) {
+		if (g->m_pCurNode->m_pszName != "CAI_BaseNPCTroika_SetClosestPlayer")
+			g->m_pCurNode = g->m_pCurNode->GetSubNode("CAI_BaseNPCTroika_SetClosestPlayer", 0, "Unaccounted");
+		CVProfNode *n = g->m_pCurNode;
+		int r = n->m_nRecursions;
+		n->m_nCurFrameCalls++;
+		n->m_nRecursions = r + 1;
+		if (r == 0) {
+			((CCycleSample *)&n->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroup(n->m_nBudgetGroupID);
+		}
+		g->m_bAtRoot = false;
+	}
+	float flBest = 20000.0f;
+	CEntityVSlots *pClosest = 0;
+	for (int i = 1; i <= gpGlobals->maxClients; i++) {
+		CEntityVSlots *pPlayer = sub_101cd9e0(i);
+		if (pPlayer) {
+			Vector *pPos = pPlayer->slot217();
+			Vector *pMine = ((CEntityVSlots *)pThis)->slot217();
+			float d = LengthYZX(*pMine - *pPos);
+			if (d < flBest) {
+				flBest = d;
+				pClosest = pPlayer;
+			}
+		}
+	}
+	pThis->m_h628c = (CBaseEntity *)pClosest;
+	if (pClosest)
+		((CAI_BaseNPC *)pClosest)->sub_101828b0((CBaseEntity *)pThis, flBest);
+	g = g_109f3648;
+	if (!g->m_bAtRoot || g->m_enabled) {
+		CVProfNode *p = g->m_pCurNode;
+		if (--p->m_nRecursions == 0 && p->m_nCurFrameCalls != 0) {
+			CCycleSample end;
+			end.m_Int64 = 0;
+			end.Sample();
+			CUnknownCycle100335e0 *pc = &p->m_CurFrameTime;
+			pc->m_Int64 = end.m_Int64 - pc->m_Int64;
+			p->m_TotalTime += pc->m_Int64;
+			CVProfile *q = g_109f3648;
+			--q->m_nGroupStackDepth;
+			int nNew = q->m_GroupIDStack[q->m_nGroupStackDepth];
+			int nOld = q->m_GroupIDStack[q->m_nGroupStackDepth + 1];
+			if (nNew != nOld && q->m_bVTuneGroupsEnabled && nOld == q->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (p->m_nRecursions == 0)
+			g->m_pCurNode = g->m_pCurNode->m_pParent;
+		g->m_bAtRoot = (g->m_pCurNode == g->m_pRoot);
+	}
+	return flBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293d70 size=0x10
 void __fastcall sub_10293d70(int *p)
 {
