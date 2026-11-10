@@ -20,6 +20,43 @@ int CWeaponMelee::vfunc373()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e9ac0 size=0x55
+#include "CWeaponMelee.h"
+
+struct CWeaponMeleeCtorView
+{
+	char m_pad0000[0x778];
+	int m_n778;
+	char m_pad077c[0x870 - 0x77c];
+	bool m_b870;
+	bool m_b871;
+	bool m_b872;
+	char m_pad0873[0x8b4 - 0x873];
+	bool m_b8b4;
+	char m_pad08b5[3];
+	float m_fMinRange1;
+	float m_fMinRange2;
+	float m_fMaxRange1;
+	float m_fMaxRange2;
+};
+
+CWeaponMelee::CWeaponMelee()
+{
+	CWeaponMeleeCtorView *v = (CWeaponMeleeCtorView *)this;
+	float flMax = 50.0f;
+	float flMin = 0.0f;
+	v->m_fMaxRange1 = flMax;
+	v->m_fMaxRange2 = flMax;
+	v->m_b871 = true;
+	v->m_b870 = true;
+	v->m_b8b4 = true;
+	v->m_fMinRange1 = flMin;
+	v->m_b872 = true;
+	v->m_fMinRange2 = flMin;
+	v->m_n778 = 3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e9b40 size=0x1e
 #include "CWeaponMelee_TzimisceMelee.h"
 
