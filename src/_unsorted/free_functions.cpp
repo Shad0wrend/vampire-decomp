@@ -858,6 +858,23 @@ extern "C" CConstraintAnchor *info_constraint_anchor()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a0f0 size=0x54
+#include "datamap.h"
+extern int g_10538b18[2];
+ISaveRestoreOps *sub_10045d90(int);
+
+int *sub_1002a0f0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 10, "m_pMachine", {0x450, 0}, 1, 2, 0, sub_10045d90(4), 0 },
+    };
+    g_10538b18[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_10538b18[0] = (int)&dataDesc[1];
+    return g_10538b18;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002a1a0 size=0x4b
 #include "CPhysConstraintSystem.h"
 #include "CConstraintAnchor.h"

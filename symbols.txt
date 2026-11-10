@@ -3501,6 +3501,7 @@
 0x10005c22 func   ?vfunc442@CNPC_VMingXiao@@UAEXPAX@Z CNPC_VMingXiao::vfunc442
 0x10005c2c func   ?vfunc489@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc489
 0x10005c31 func   ?vfunc600@CNPC_VGargoyle@@UAE_NH@Z CNPC_VGargoyle::vfunc600
+0x10005c36 func   ?sub_1002a0f0@@YAPAHXZ sub_1002a0f0
 0x10005c3b func   ?sub_102deec0@UtlMem@@QAEXXZ UtlMem::sub_102deec0
 0x10005c40 func   ?Links@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QBEABULinks_t@1@H@Z CUtlRBTree<CSoundEmitterRecord,int>::Links
 0x10005c40 func   ?sub_101b78f0@CUtlRBTree232@@QAEAAULinks_t@1@H@Z CUtlRBTree232::sub_101b78f0
