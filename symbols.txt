@@ -9122,6 +9122,7 @@
 0x1000d53f func   ?sub_100f3f20@CRotDoorUnit@@QAEXXZ CRotDoorUnit::sub_100f3f20
 0x1000d544 func   ?vfunc359@CBasePlayer@@UAEHPAVCBaseEntity@@@Z CBasePlayer::vfunc359
 0x1000d549 func   ?sub_102403b0@@YA_NABVVector@@0000000H@Z sub_102403b0
+0x1000d54e func   ?sub_101fa280@@YAPAHXZ sub_101fa280
 0x1000d553 func   ?vfunc13@CServerGameDLL@@UAEXPAXHHHHH@Z CServerGameDLL::vfunc13
 0x1000d558 func   ?sub_10075c70@S10075c70@@QAEXPBD@Z S10075c70::sub_10075c70
 0x1000d55d func   ?sub_101af650@CSpeaker@@QAEXXZ CSpeaker::sub_101af650

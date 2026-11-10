@@ -138236,6 +138236,30 @@ void CUnknown101fa0e0::sub_101fa180(void *pFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fa280 size=0xb1
+#include "datamap.h"
+extern ISaveRestoreOps *g_105a8d8c;
+extern int g_105a6df8[2];
+int *sub_101fa280()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 4, "m_vdmgGeneralType", {0, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_iDiceAmt", {4, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_iDmgAmt", {8, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_iToHitSuccesses", {0xc, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_bdmgTypes", {0x10, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_iSrcEntIdx", {0x34, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_iProcessFlags", {0x40, 0}, 1, 2, 0, 0, 0 },
+        { 0xa, "m_vtModifierDependency", {0x14, 0}, 1, 2, 0, g_105a8d8c, 0 },
+        { 0xa, "m_vtSuccessDependency", {0x24, 0}, 1, 2, 0, g_105a8d8c, 0 },
+    };
+    g_105a6df8[1] = 9;
+    g_105a6df8[0] = (int)&dataDesc[1];
+    return g_105a6df8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fa680 size=0x56
 struct ScopeTraceEntry_t
 {
