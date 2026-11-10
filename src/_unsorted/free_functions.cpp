@@ -132190,6 +132190,34 @@ void CUnknown101f0960::sub_101f0a60(void *pKeyValues)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f0ae0 size=0x48
+#include <stdio.h>
+
+struct CUnk101d84e0
+{
+	char *sub_101d84e0();
+};
+struct CUnknown101f0ae0
+{
+	int m_nType;
+	int m_nValue;
+	CUnk101d84e0 m_Sub;
+	void sub_101f0ae0();
+};
+extern const char *g_1073a9bc[];
+void sub_10203dd0(const char *psz);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : ""; }
+
+// TARGET: CUnknown101f0ae0::sub_101f0ae0
+void CUnknown101f0ae0::sub_101f0ae0()
+{
+	char szBuf[128];
+	sprintf(szBuf, "\t\t\t( (%s) %s  %d )", m_Sub.sub_101d84e0(), STRINGR(g_1073a9bc[m_nType]), m_nValue);
+	sub_10203dd0(szBuf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f0b50 size=0x1a
 struct CUnknown101f0b50 { void * sub_101f0b50(int); };
 void * CUnknown101f0b50::sub_101f0b50(int a0)

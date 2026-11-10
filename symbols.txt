@@ -209,6 +209,7 @@
 0x10001451 func   ?vfunc2@CGameMovement@@UAEPAMDH@Z CGameMovement::vfunc2
 0x10001456 func   _logic_pythoncheck logic_pythoncheck
 0x10001460 func   ?vfunc330@CItemContainer@@QAEXHH@Z CItemContainer::vfunc330
+0x10001465 func   ?sub_101f0ae0@CUnknown101f0ae0@@QAEXXZ CUnknown101f0ae0::sub_101f0ae0
 0x1000146a func   ?sub_1040d8b0@@YAPAHXZ sub_1040d8b0
 0x1000146f func   ?vfunc371@CNPCMaker_Zombie@@UAEHH@Z CNPCMaker_Zombie::vfunc371
 0x10001474 func   ?sub_101e50b0@CVFeat_t@@QAEXPAUCVFeatKV@@H@Z CVFeat_t::sub_101e50b0
