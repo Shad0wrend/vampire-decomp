@@ -17,12 +17,13 @@ public:
 
 	char m_pad0004[0x0c - 4];
 	int m_n0c;
-	char m_pad10[0x14 - 0x10];
+	int m_n10;
 	int m_n14;
 	int m_n18;
 	float m_f1c;
 	float m_f20;
-	char m_pad24[0x2c - 0x24];
+	float m_f24;
+	int m_n28;
 	float m_f2c;
 	int m_n30;
 	int m_n34;
