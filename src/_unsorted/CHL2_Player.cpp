@@ -550,6 +550,180 @@ char CHL2_Player::vfunc86(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10352120 size=0x61c
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "CLogicAuto.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "utlrbtree.h"
+#include "CHL2_Player.h"
+#include "CBasePlayer.h"
+#include "CUnknown1006e890.h"
+#include "CBCCSlotViews.h"
+#include "Vector.h"
+#include "ehandle.h"
+
+extern float g_104454c4;
+
+void sub_1018c600();
+void sub_10115980(void *pOwner, int a);
+
+struct CPlayerFadeOut
+{
+	char m_pad0000[0x1f2c];
+	Vector m_vec1F2C;
+	Vector m_vec1F38;
+	float m_fl1F44;
+	float m_fl1F48;
+	float m_fl1F4C;
+	float m_fl1F50;
+	float m_fl1F54;
+};
+
+struct CUseEntityView
+{
+	char m_pad0000[0x5ec];
+	Vector m_vec5ec;
+};
+
+struct CEHandleListView
+{
+	IHandleEntity *sub_100290c0(const CBaseHandle *h);
+};
+
+inline CBaseEntity *LookupFade(const CBaseHandle *h)
+{
+	return (CBaseEntity *)((CEHandleListView *)EHandleDetail::g_10566458)->sub_100290c0(h);
+}
+
+class CEngine430View
+{
+public:
+	VIEW_SLOT100(0)
+	virtual void vfunc100(int a);
+	virtual void vfunc101(const Vector *p);
+};
+
+// TARGET: CHL2_Player::vfunc430
+void CHL2_Player::vfunc430(int a1, int a2)
+{
+	CBasePlayer *p = (CBasePlayer *)this;
+	CPlayerFadeOut *o = (CPlayerFadeOut *)pcd_stage(this);
+
+	o->m_fl1F50 = p->m_flFadeStart19B8;
+	o->m_fl1F54 = p->m_flFadeDuration19BC;
+
+	if (p->sub_1017d900() > g_104454c4)
+	{
+		o->m_fl1F4C = engine->vfunc119(0);
+		float flBlend[2] = { 0.0f, 0.0f };
+		float flTime = engine->vfunc119(0);
+
+		if (LookupFade(&p->m_hFadeEnt19C0))
+		{
+			LookupFade(&p->m_hFadeEnt19C0)->vfunc50(&o->m_vec1F2C);
+			o->m_fl1F44 = p->m_hFadeEnt19C0.Get()->vfunc49();
+			o->m_fl1F48 = p->m_hFadeEnt19C0.Get()->vfunc48();
+
+			*(flBlend + 0) = 1.0f;
+			if (p->m_flFadeValue19C8 > g_104454c4)
+			{
+				flBlend[0] = (flTime - p->m_flFadeTime19C4) / p->m_flFadeValue19C8;
+				if (flBlend[0] > 1.0f)
+					flBlend[0] = 1.0f;
+				else if (flBlend[0] < g_104454c4)
+					flBlend[0] = 0.0f;
+			}
+		}
+
+		if (p->m_hFadeEnt19CC.Get())
+		{
+			Vector *pOrigin = p->m_hFadeEnt19C0.Get() ? &o->m_vec1F2C : &p->vfunc193();
+
+			p->m_hFadeEnt19CC.Get()->vfunc51(pcd_stage((int)pOrigin), &o->m_vec1F38);
+
+			flBlend[1] = 1.0f;
+			if (p->m_flFadeValue19D4 > g_104454c4)
+			{
+				flBlend[1] = (flTime - p->m_flFadeTime19D0) / p->m_flFadeValue19D4;
+				if (flBlend[1] > 1.0f)
+					flBlend[1] = 1.0f;
+				else if (flBlend[1] < g_104454c4)
+					flBlend[1] = 0.0f;
+			}
+		}
+
+		int i = 0;
+		while (i < p->FadeStack().Count())
+		{
+			CBasePlayerFadeRec *pRec = &p->FadeStack()[i];
+
+			if (flBlend[(unsigned char)pcd_stage(pRec->m_bType)] >= 1.0f || !pRec->m_hEnt.Get())
+			{
+				p->FadeStack().Remove(i);
+				continue;
+			}
+
+			float flRec = 1.0f;
+			if (pRec->m_flValue > g_104454c4)
+			{
+				flRec = ((((flTime - pRec->m_flTime)))) / pRec->m_flValue;
+				if (flRec > 1.0f)
+					flRec = 1.0f;
+				else if (flRec < g_104454c4)
+					flRec = 0.0f;
+			}
+
+			if (pRec->m_bType == 0)
+			{
+				Vector v;
+				pRec->m_hEnt.Get()->vfunc50(&v);
+				VectorLerp(v, o->m_vec1F2C, flBlend[0], o->m_vec1F2C);
+
+				float f48 = pRec->m_hEnt.Get()->vfunc48();
+				o->m_fl1F48 = f48 + (o->m_fl1F48 - f48) * pcd_stage(flBlend[0]);
+
+				float f49; f49 = pRec->m_hEnt.Get()->vfunc49();
+				o->m_fl1F44 = ((o->m_fl1F44 - f49) * flBlend[0]) + f49;
+			}
+			else
+			{
+				Vector v;
+				pRec->m_hEnt.Get()->vfunc51((int)&o->m_vec1F2C, &v);
+				VectorLerp(v, o->m_vec1F38, flBlend[1], o->m_vec1F38);
+			}
+
+			flBlend[(unsigned char)pRec->m_bType] = 1.0f - (1.0f - flRec) * (1.0f - flBlend[(unsigned char)pRec->m_bType]);
+			i++;
+		}
+
+		((CEngine430View *)engine)->vfunc101(&o->m_vec1F2C);
+	}
+
+	CBaseEntity *pUse = p->sub_1000306c();
+	if (pUse)
+	{
+		if (((CUnknown1006e890 *)pUse)->sub_1006e890())
+		{
+			((CEngine430View *)engine)->vfunc100(a1);
+			Vector v = ((CUseEntityView *)pUse)->m_vec5ec;
+			((CEngine430View *)engine)->vfunc101(&v);
+			return;
+		}
+	}
+
+	p->vfunc430(a1, a2);
+	sub_1018c600();
+	sub_10115980((void *)p->m_n02E0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103528d0 size=0x70
 #include "CHL2_Player.h"
 
