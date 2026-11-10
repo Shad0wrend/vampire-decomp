@@ -60,6 +60,45 @@ void CWeaponThrown_Grenade_Frag::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee340 size=0x98
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CBaseCombatCharacter.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+
+struct CGrenadeOwnerSlots	// the owner's slot 449
+{
+	S100(a) S100(b) S100(c) S100(d)
+	S10(e0) S10(e1) S10(e2) S10(e3)
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4();
+	virtual void f5(); virtual void f6(); virtual void f7(); virtual void f8();
+	virtual void vfunc449(int a, int b);
+};
+
+struct CGrenadeOwnerView { char pad[0xa8]; CBaseCombatCharacter *m_pChar; };
+struct CGrenadeRollView { char pad[0x10c]; int m_nAmmoIndex; };
+
+// TARGET: CWeaponThrown_Grenade_Frag::vfunc325
+bool CWeaponThrown_Grenade_Frag::vfunc325()
+{
+	CGrenadeOwnerView *pOwner = (CGrenadeOwnerView *)sub_102521f0();
+	CBaseCombatCharacter *pChar = pOwner ? pOwner->m_pChar : 0;
+	if (!pChar)
+		return false;
+	CGrenadeRollView *pRoll = (CGrenadeRollView *)sub_102517e0();
+	if (pChar->sub_103346c0(m_nAmmoType744[pRoll->m_nAmmoIndex]) <= 0)
+		return false;
+	m_nState920 = 0;
+	((CGrenadeOwnerSlots *)pChar)->vfunc449(0xe, 0);
+	vfunc307(0xc2);
+	m_flTime730 = gpGlobals->curtime + 1.0f;
+	vfunc333(10, 1, 0, 0, 0, 0);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee410 size=0x47
 #include "CWeaponThrown_Grenade_Frag.h"
 

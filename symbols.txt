@@ -14073,6 +14073,7 @@
 0x100140ce func   ?sub_10197360@@YAPAUPyObj@@PAU1@0@Z sub_10197360
 0x100140d3 func   ?sub_100feed0@@YIXPAXHH@Z sub_100feed0
 0x100140d8 func   ?sub_10401770@@YAHXZ sub_10401770
+0x100140dd func   ?vfunc325@CWeaponThrown_Grenade_Frag@@QAE_NXZ CWeaponThrown_Grenade_Frag::vfunc325
 0x100140e2 func   ?sub_101af0d0@@YAXPAUSndSrcView@@PBD@Z sub_101af0d0
 0x100140e7 func   ?sub_100cae20@CMomentaryRotButton@@QAEXMPAX@Z CMomentaryRotButton::sub_100cae20
 0x100140ec func   ?sub_100c0010@CFuncRotating@@QAEXPAVCBaseEntity@@@Z CFuncRotating::sub_100c0010
