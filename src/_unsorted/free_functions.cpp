@@ -69530,6 +69530,57 @@ int sub_1010fc80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010ff40 size=0x3eb
+#include "CBreakableSurface.h"
+#include "CEntityMessageFilter.h"
+#include "QAngle.h"
+void sub_10139610(const QAngle &a, Vector *f, Vector *r, Vector *u);
+void sub_10139970(const Vector &v, QAngle &a);
+void sub_1000bb4a();
+extern Vector g_1070d1b0;
+
+inline CEntityMessageFilter::CEntityMessageFilter(CBaseEntity *pEntity) { AddAllPlayers(); int edict = pEntity->m_pEdict2e0; sub_1019d2f0(engine->vfunc35(edict)); }
+
+inline void MessageBegin(CRecipientFilter &filter, int type) { engine->vfunc65(&filter, type); }
+inline void WRITE_BYTE(int v) { engine->vfunc67(v); }
+inline void MessageEnd() { engine->vfunc66(); }
+
+// TARGET: CBreakableSurface::sub_1010ff40
+void CBreakableSurface::sub_1010ff40()
+{
+    if (!m_b4c4)
+        return;
+    for (int i = 0; i < m_nCols49c; i++) {
+        for (int j = 0; j < m_nRows4a0; j++) {
+            if (m_aflPanes[i][j] == -1.0f) {
+                m_aflPanes[i][j] = -1.0f;
+                CEntityMessageFilter filter(this);
+                filter.MakeReliable();
+                MessageBegin(filter, 0);
+                WRITE_BYTE(0);
+                WRITE_BYTE(i);
+                WRITE_BYTE(j);
+                MessageEnd();
+                Vector vecIn = m_vecAxis * -1.0f;
+                QAngle ang;
+                sub_10139970(vecIn, ang);
+                Vector right, up;
+                sub_10139610(ang, 0, &right, &up);
+                Vector pos = m_vecCorner + (right * (float)i) * m_flWidth + (up * (float)j) * m_flHeight;
+                sub_10113050(&pos, (const float *)&ang, &g_1070d1b0, &g_1070d1b0, m_flWidth, m_flHeight, 4);
+            }
+        }
+    }
+    CEntityMessageFilter filter(this);
+    filter.MakeReliable();
+    engine->vfunc65(&filter, 0);
+    engine->vfunc67(3);
+    engine->vfunc66();
+    sub_100ac4e0((int)sub_1000bb4a, 0, 0);
+    m_flNextThink = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101104c0 size=0x50b
 #include "CBreakableSurface.h"
 #include "CCollisionProperty.h"

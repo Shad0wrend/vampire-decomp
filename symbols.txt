@@ -15000,6 +15000,7 @@
 0x100154dd func   ?vfunc175@CPlatTrigger@@QAEXPAVCBaseEntity@@@Z CPlatTrigger::vfunc175
 0x100154e2 func   ?sub_100b03b0@@YAXXZ sub_100b03b0
 0x100154e7 func   ?sub_10075e70@CUnknown10075e70@@QAEMXZ CUnknown10075e70::sub_10075e70
+0x100154ec func   ?sub_1010ff40@CBreakableSurface@@QAEXXZ CBreakableSurface::sub_1010ff40
 0x100154f1 func   ?vfunc360@CWeaponIGeneric@@UAEHXZ CWeaponIGeneric::vfunc360
 0x100154f6 func   ?vfunc82@CNPC_VChangBrosClaw@@QAEPAUdatamap_t@@XZ CNPC_VChangBrosClaw::vfunc82
 0x100154fb func   ?sub_1023b3a0@@YAXPAUCStateHolder@@@Z sub_1023b3a0
