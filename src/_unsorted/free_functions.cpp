@@ -702,6 +702,46 @@ extern "C" CBaseEntity *phys_keepupright()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100292d0 size=0x260
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+ISaveRestoreOps *sub_10045d90(int);
+void sub_1000826a();
+void sub_100127c4();
+extern int g_10537530[2];
+int *sub_100292d0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 3, "m_worldGoalAxis", {0x454, 0}, 1, 2, 0, 0, 0 },
+        { 3, "m_localTestAxis", {0x460, 0}, 1, 2, 0, 0, 0 },
+        { 0xa, "m_pController", {0x46c, 0}, 1, 2, 0, sub_10045d90(8), 0 },
+        { 2, "m_nameAttach", {0x470, 0}, 1, 6, "attach1", 0, 0 },
+        { 0xc, "m_attachedObject", {0x474, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_angularLimit", {0x478, 0}, 1, 6, "angularlimit", 0, 0 },
+        { 5, "m_bActive", {0x47c, 0}, 1, 2, 0, 0, 0 },
+        { 0, "InputTurnOn", {0, 0}, 1, 8, "TurnOn", 0, (void *)sub_1000826a },
+        { 0, "InputTurnOff", {0, 0}, 1, 8, "TurnOff", 0, (void *)sub_100127c4 },
+    };
+    g_10537530[1] = 9;
+    g_10537530[0] = (int)&dataDesc[1];
+    return g_10537530;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100295d0 size=0xa
 #include "CUnknown100295d0.h"
 void CUnknown100295d0::sub_100295d0(int unused)

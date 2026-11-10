@@ -4401,6 +4401,7 @@
 0x10006fc3 func   ?vfunc82@CBaseTrigger@@UAEPAUdatamap_t@@XZ CBaseTrigger::vfunc82
 0x10006fc8 func   ?sub_100f7f70@@YGXPAVCBaseEntity@@PBDPBVVector@@M00@Z sub_100f7f70
 0x10006fcd func   ?sub_10072e60@CUnknown10072e60@@QAEXHHHHHH@Z CUnknown10072e60::sub_10072e60
+0x10006fd2 func   ?sub_100292d0@@YAPAHXZ sub_100292d0
 0x10006fd7 func   ?sub_102ee250@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102ee250
 0x10006fdc func   ?sub_10075c50@CUnknown10075c50@@QAEPADXZ CUnknown10075c50::sub_10075c50
 0x10006fe1 func   ?sub_101977a0@@YAPAUPyObject@@PAU1@UCTmp12@@@Z sub_101977a0
