@@ -89430,6 +89430,86 @@ void CBasePlayer::sub_1016b0e0(unsigned int buttons)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016b270 size=0x170
+#include "CBasePlayer.h"
+extern "C" int abs(int);
+#pragma intrinsic(abs)
+#define TBD_MIN(a, b) (((a) < (b)) ? (a) : (b))
+
+void CBasePlayer::sub_1016b270()
+{
+	int i;
+	unsigned char bDuration = 0;
+
+	if (!(m_flags0E98 & 0xffffc000))
+		return;
+
+	if (abs((int)(gpGlobals->curtime - m_tbdPrev)) < 2.0)
+		return;
+
+	m_tbdPrev = gpGlobals->curtime;
+
+	for (i = 0; i < 8; i++)
+	{
+		if (m_flags0E98 & (0x8000 << i))
+		{
+			switch (i)
+			{
+			case 0:
+				bDuration = 2;
+				break;
+			case 1:
+				bDuration = 2;
+				break;
+			case 4:
+				if (m_n2284 > m_n2288)
+				{
+					int idif = TBD_MIN(m_n2284 - m_n2288, 10);
+					vfunc143((float)idif, 0);
+					m_n2288 += idif;
+				}
+				bDuration = 4;
+				break;
+			case 2:
+				if (m_nPoisonDmg > m_nPoisonRestored)
+				{
+					int nDif = TBD_MIN(m_nPoisonDmg - m_nPoisonRestored, 10);
+					vfunc143((float)nDif, 0);
+					m_nPoisonRestored += nDif;
+				}
+				bDuration = 9;
+				break;
+			case 3:
+				bDuration = 2;
+				break;
+			case 5:
+				bDuration = 2;
+				break;
+			case 6:
+				bDuration = 2;
+				break;
+			case 7:
+				bDuration = 2;
+				break;
+			default:
+				bDuration = 0;
+			}
+
+			if (m_pad0E9C[i])
+			{
+				if (!m_pad0E9C[i] || --m_pad0E9C[i] == 0)
+				{
+					m_pad0E9C[i] = 0;
+					m_flags0E98 &= ~(0x8000 << i);
+				}
+			}
+			else
+				m_pad0E9C[i] = bDuration;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016b440 size=0xb
 struct IUnk1070ba0c {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
