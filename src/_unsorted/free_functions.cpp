@@ -26521,6 +26521,151 @@ bool __stdcall sub_1007c5b0(CUnknownStrObj *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007c600 size=0x4ac
+#include <string.h>
+
+// TARGET: sub_1007c600
+extern float g_104454c4;
+char __stdcall sub_1007c5b0(void *);
+void sub_1007bf70(void *, int, const char *, ...);
+const char *sub_10076990(int);
+const char *sub_100779d0(int);
+void sub_1007c1c0(void *, int, void *);
+void sub_1007c4f0(void *, int, void *);
+
+struct EvView
+{
+	int sub_10075b70();
+	const char *sub_10075c00();
+	float sub_10075e70();
+	float sub_10075f10();
+	char sub_10075f30();
+	const char *sub_10075c50();
+	const char *sub_10075ca0();
+	int sub_10078630();
+	int sub_10078520();
+	int sub_10078560();
+	char sub_10076b10();
+	char sub_10076ab0();
+	int sub_10076be0();
+	void *sub_10076c00(int);
+	float sub_100738c0();
+	const char *sub_100738a0();
+	int sub_10077060();
+	void *sub_10077080(int);
+	char sub_10073a10();
+	const char *sub_10073ae0();
+	int sub_10077ac0(int);
+	void *sub_10077af0(int, int);
+	float sub_10073b00();
+	char sub_100784d0(float *);
+	char sub_10076ef0();
+	const char *sub_10076fc0();
+	const char *sub_10076fa0();
+	int sub_10077430();
+	int sub_10078610();
+	int sub_10075cc0();
+};
+
+void __stdcall sub_1007c600(void *pBuf, int level, void *pEvent, float flStartOffset)
+{
+	EvView *e = (EvView *)pEvent;
+
+	if (!sub_1007c5b0(e))
+		return;
+
+	sub_1007bf70(pBuf, level, "event %s \"%s\"\n",
+		sub_10076990(e->sub_10075b70()), e->sub_10075c00());
+	sub_1007bf70(pBuf, level, "{\n");
+
+	float st = e->sub_10075e70();
+	float et = e->sub_10075f10();
+	if (flStartOffset != g_104454c4)
+	{
+		if (e->sub_10075f30())
+			et -= flStartOffset;
+		st -= flStartOffset;
+	}
+	sub_1007bf70(pBuf, level + 1, "time %f %f\n", st, et);
+	sub_1007bf70(pBuf, level + 1, "param \"%s\"\n", e->sub_10075c50());
+	if (strlen(e->sub_10075ca0()) > 0)
+		sub_1007bf70(pBuf, level + 1, "param2 \"%s\"\n", e->sub_10075ca0());
+
+	if (e->sub_10078630() > 0)
+		sub_1007c1c0(pBuf, level + 1, e);
+
+	if (e->sub_10078520() != 0)
+		sub_1007bf70(pBuf, level + 1, "pitch \"%i\"\n", e->sub_10078520());
+	if (e->sub_10078560() != 0)
+		sub_1007bf70(pBuf, level + 1, "yaw \"%i\"\n", e->sub_10078560());
+
+	if (e->sub_10076b10())
+		sub_1007bf70(pBuf, level + 1, "resumecondition\n");
+	if (e->sub_10076ab0())
+		sub_1007bf70(pBuf, level + 1, "fixedlength\n");
+
+	if (e->sub_10076be0() > 0)
+	{
+		sub_1007bf70(pBuf, level + 1, "tags\n");
+		sub_1007bf70(pBuf, level + 1, "{\n");
+		for (int t = 0; t < e->sub_10076be0(); t++)
+		{
+			EvView *rt = (EvView *)e->sub_10076c00(t);
+			sub_1007bf70(pBuf, level + 2, "\"%s\" %f\n", rt->sub_100738a0(), rt->sub_100738c0());
+		}
+		sub_1007bf70(pBuf, level + 1, "}\n");
+	}
+
+	if (e->sub_10077060() > 0)
+	{
+		sub_1007bf70(pBuf, level + 1, "flextimingtags\n");
+		sub_1007bf70(pBuf, level + 1, "{\n");
+		for (int t = 0; t < e->sub_10077060(); t++)
+		{
+			EvView *tt = (EvView *)e->sub_10077080(t);
+			sub_1007bf70(pBuf, level + 2, "\"%s\" %f %i\n", tt->sub_100738a0(), tt->sub_100738c0(),
+				tt->sub_10073a10() ? 1 : 0);
+		}
+		sub_1007bf70(pBuf, level + 1, "}\n");
+	}
+
+	for (int tagtype = 0; tagtype < 2; tagtype++)
+	{
+		if (e->sub_10077ac0(tagtype) > 0)
+		{
+			sub_1007bf70(pBuf, level + 1, "absolutetags %s\n", sub_100779d0(tagtype));
+			sub_1007bf70(pBuf, level + 1, "{\n");
+			for (int t = 0; t < e->sub_10077ac0(tagtype); t++)
+			{
+				EvView *at = (EvView *)e->sub_10077af0(tagtype, t);
+				sub_1007bf70(pBuf, level + 2, "\"%s\" %f\n", at->sub_10073ae0(), at->sub_10073b00());
+			}
+			sub_1007bf70(pBuf, level + 1, "}\n");
+		}
+	}
+
+	if (e->sub_10075b70() == 6)
+	{
+		float dur;
+		if (e->sub_100784d0(&dur))
+			sub_1007bf70(pBuf, level + 1, "sequenceduration %f\n", dur);
+	}
+
+	if (e->sub_10076ef0())
+		sub_1007bf70(pBuf, level + 1, "relativetag \"%s\" \"%s\"\n", e->sub_10076fa0(), e->sub_10076fc0());
+
+	if (e->sub_10077430() > 0)
+		sub_1007c4f0(pBuf, level, e);
+
+	if (e->sub_10075b70() == 0xc)
+		sub_1007bf70(pBuf, level + 1, "loopcount \"%i\"\n", e->sub_10078610());
+	if (e->sub_10075b70() == 0x10)
+		sub_1007bf70(pBuf, level + 1, "targethead \"%d\"\n", e->sub_10075cc0() & 0xff);
+
+	sub_1007bf70(pBuf, level, "}\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007cbe0 size=0xa2
 struct CChoreoChannelView
 {

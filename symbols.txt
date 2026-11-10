@@ -5547,6 +5547,7 @@
 0x100088eb func   ?sub_103fc190@CBloodPack@@QAEXXZ CBloodPack::sub_103fc190
 0x100088f0 func   ?sub_100bc3a0@@YAXH@Z sub_100bc3a0
 0x100088fa func   ?vfunc13@CBaseEntity@@UAEXPBD@Z CBaseEntity::vfunc13
+0x100088ff func   ?sub_1007c600@@YGXPAXH0M@Z sub_1007c600
 0x10008904 func   ?vfunc81@CItemGEDaneReport@@QAEHXZ CItemGEDaneReport::vfunc81
 0x10008909 func   ?vfunc363@CWeaponMelee_Tzimisce2Claw@@QAEHXZ CWeaponMelee_Tzimisce2Claw::vfunc363
 0x1000890e func   ?vfunc2@CCopyRecipientFilter@@UAEHXZ CCopyRecipientFilter::vfunc2
