@@ -718,3 +718,24 @@ void CAI_BaseNPC::sub_1027be60()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1027d0a0 size=0x99
+#include "CAI_BaseNPC.h"
+#include "CCineNPC.h"
+struct CAI_BaseNPC_Cine { char pad[0x5d74]; CHandle<CCineNPC> m_hCine; };
+
+bool CAI_BaseNPC::sub_1027d0a0()
+{
+    char *p = (char *)this;
+    if (*(int *)(p + 0x200) == 1) {
+        *(const char **)(p + 0x1b3c) = "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp";
+        *(int *)(p + 0x1b40) = 0x2a70;
+        *(int *)(p + 0x5cc4) = 7;
+        return false;
+    }
+    CAI_BaseNPC_Cine *c = (CAI_BaseNPC_Cine *)this;
+    if (c->m_hCine)
+        c->m_hCine->sub_101a8c30();
+    return true;
+}
+// END FUNCTION
