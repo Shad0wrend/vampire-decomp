@@ -42,3 +42,19 @@ void CPositionInterpolator_Linear::vfunc2(int nIndex, const Vector *pPosition)
 	*pDest = *pPosition;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012fa30 size=0x3c
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CPositionInterpolator_Linear.h"
+
+extern char *g_1057519c;
+
+void CPositionInterpolator_Linear::vfunc3(float flT, Vector *pOut)
+{
+	const Vector &b = *(const Vector *)(0x1c + (int)g_1057519c);
+	const Vector &a = *(const Vector *)g_1057519c;
+	pOut->x = ((pcd_stage(b.x) - a.x) * flT) + a.x;
+	pOut->y = a.y + (flT * (b.y - a.y));
+	pOut->z = ((pcd_stage(b.z) - a.z) * flT) + a.z;
+}
+// END FUNCTION
