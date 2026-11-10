@@ -165920,6 +165920,193 @@ bool sub_10259120(SKeyValues *kv, char *out, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10259230 size=0x775
+#include <string.h>
+#include "CUnknown10258b00.h"
+#include "CWeaponAmmoInfo.h"
+#include "StatOwner2.h"
+#include "CUnknown102029c0.h"
+#include "CUnknown1006ccc0.h"
+#include "CStatDefaultList.h"
+#include "StatDefault.h"
+#include "CVDmg_t.h"
+#include "Vector.h"
+
+extern void (*g_109f3630)(const char *pMsg, ...);
+extern char g_106b8540[];
+
+inline const char *NameOf(const char *const &p)
+{
+	return p ? p : g_106b8540;
+}
+
+struct SNameEntry { int m_id; const char *m_pName; };
+
+extern int g_1073a384;
+extern SNameEntry **g_1073a388;
+extern int g_1073a2f8;
+extern SNameEntry **g_1073a2fc;
+
+struct CNamedList1006cf30 { int m_pad0; int m_count; void **m_pData; int sub_1006cf30(const char *pszName); };
+struct StatOwner { int m_pad0; int m_count; void **m_pData; StatDefault *sub_1006cff0(int id); };
+
+struct CTablesList
+{
+	int m0, m4, m8;
+	CTablesList() { ((CUnknown1006ccc0 *)this)->sub_1006ccc0(); }
+	~CTablesList() { sub_1006cce0(); }
+	void sub_1006cce0();
+};
+
+struct SKeyValues;
+struct IKVSub;
+struct WeaponSoundInfo;
+bool sub_10259120(SKeyValues *pKV, char *pDest, const char *pszName);
+void sub_10258c30(IKVSub *pKV, WeaponSoundInfo *pSoundInfo, const char *pszName);
+
+extern StatOwner2 g_1074e968;
+
+inline int FindAttackType(const char *pszName)
+{
+	for (int k = 0; k < g_1073a384; k++)
+	{
+		if (!_strcmpi(NameOf(g_1073a388[k]->m_pName), pszName))
+			return g_1073a388[k]->m_id;
+	}
+	return -1;
+}
+
+inline int FindBotchTable(const char *pszName)
+{
+	for (int k = 0; k < g_1073a2f8; k++)
+	{
+		if (!_strcmpi(NameOf(g_1073a2fc[k]->m_pName), pszName))
+			return g_1073a2fc[k]->m_id;
+	}
+	return -1;
+}
+
+#define VECTOR_CONE_10DEGREES Vector(0.08716f, 0.08716f, 0.08716f)
+
+char sub_10259230(IKVNode *pKV, CUnknown10258b00 *info, const char *name)
+{
+	int tagIdx = g_1074e968.sub_10203020("TagStrings");
+	int i = 0;
+	IKVNode *act = pKV->vfunc6("Activation");
+	if (!act)
+		return 1;
+	do {
+		if (i > 3)
+			return 0;
+		CUnknown10258b00_B *rec = &info->m_B[i];
+		strcpy(rec->m_szName, act->vfunc13("Tag", g_106b8540));
+		strcpy(rec->m_szType, act->vfunc13("Type", g_106b8540));
+		rec->m_n104 = 0;
+		if (tagIdx != -1)
+			rec->m_n104 = g_1074e968.sub_10203190(tagIdx)->sub_10202a50(rec->m_szName);
+		const char *ammoType = act->vfunc13("Ammo_Type", g_106b8540);
+		if (ammoType[0] && _strcmpi(ammoType, "None") != 0) {
+			int a;
+			for (a = 0; a < 2; a++) {
+				if (!_strcmpi(info->m_A[a].m_szType, ammoType)) {
+					rec->m_n10c = a;
+					break;
+				}
+			}
+			if (a >= 2)
+				return 0;
+		}
+		rec->m_nAmmoCost = act->vfunc10("Ammo_Cost", 0);
+		rec->m_nAmmoFired = act->vfunc10("Ammo_Fired", rec->m_nAmmoCost > 1 ? rec->m_nAmmoCost : 1);
+		strcpy(rec->m_sz118, act->vfunc13("Dmg", g_106b8540));
+		strcpy(rec->m_szBotchTable, act->vfunc13("Botch_Table", g_106b8540));
+		rec->m_flAttackRate = act->vfunc11("Attack_Rate", 1.0f);
+		rec->m_flNpcRateMin = act->vfunc11("NPC_Attack_Rate_Min", rec->m_flAttackRate * 2.0f);
+		rec->m_flNpcRateMax = act->vfunc11("NPC_Attack_Rate_Max", rec->m_flAttackRate * 3.0f);
+		rec->m_flNpcRateBaseRange = act->vfunc11("NPC_Attack_Rate_Base_Range", 120.0f);
+		rec->m_nRange = act->vfunc10("Range", 0);
+		rec->m_flKickPitchMin = act->vfunc11("KickPitchMin", -0.75f);
+		rec->m_flKickPitchMax = act->vfunc11("KickPitchMax", -10.0f);
+		rec->m_flKickPitchDevMin = act->vfunc11("KickPitchDeviationMin", 0.2f);
+		rec->m_flKickPitchDevMax = act->vfunc11("KickPitchDeviationMax", 3.0f);
+		rec->m_flKickYawMin = act->vfunc11("KickYawMin", -0.2f);
+		rec->m_flKickYawMax = act->vfunc11("KickYawMax", -1.5f);
+		rec->m_flKickYawDevMin = act->vfunc11("KickYawDeviationMin", 0.1f);
+		rec->m_flKickYawDevMax = act->vfunc11("KickYawDeviationMax", 1.0f);
+		rec->m_nAccuracy = act->vfunc10("Accuracy", 1);
+		rec->m_nCrosshairMinSize = act->vfunc10("CrosshairMinSize", 0);
+		rec->m_nCrosshairFireSize = act->vfunc10("CrosshairFireSize", 0x55);
+		rec->m_nCrosshairFireSizeMin = act->vfunc10("CrosshairFireSizeMin", 0);
+		rec->m_nCrosshairWalkSizeMin = act->vfunc10("CrosshairWalkSizeMin", 0x32);
+		rec->m_nCrosshairWalkSizeMax = act->vfunc10("CrosshairWalkSizeMax", 0x46);
+		rec->m_nCrosshairRunSizeMin = act->vfunc10("CrosshairRunSizeMin", 0x46);
+		rec->m_nCrosshairRunSizeMax = act->vfunc10("CrosshairRunSizeMax", 0x5a);
+		rec->m_nCrosshairIncSpeedMin = act->vfunc10("CrosshairIncSpeedMin", 0x32);
+		rec->m_nCrosshairIncSpeedMax = act->vfunc10("CrosshairIncSpeedMax", 0x50);
+		rec->m_nCrosshairDecSpeedMin = act->vfunc10("CrosshairDecSpeedMin", 3);
+		rec->m_nCrosshairDecSpeedMax = act->vfunc10("CrosshairDecSpeedMax", 0x63);
+		rec->m_nBaseLethality = act->vfunc10("BaseLethality", 5);
+		rec->m_nSkillRequirement = act->vfunc10("SkillRequirement", 1);
+		rec->m_flCrosshairFirePercent = act->vfunc11("CrosshairFirePercent", 1.0f);
+		rec->m_flMajorKnockbackDist = act->vfunc11("MajorKnockbackDist", 0);
+		rec->m_flMinorKnockbackDist = act->vfunc11("MinorKnockbackDist", 0);
+		rec->m_nBurstMin = act->vfunc10("BurstMin", 1);
+		rec->m_nBurstMax = act->vfunc10("BurstMax", 1);
+		rec->m_nExplodesOnHit = act->vfunc10("ExplodesOnHit", 0);
+		strcpy(rec->m_szExplodeParticle, act->vfunc13("ExplodeParticle", g_106b8540));
+		if (rec->m_nBurstMin > rec->m_nBurstMax) {
+			(*g_109f3630)("%s has a BurstMin (%d) larger than BurstMax (%d).  Setting BurstMin to %d.\n",
+				info->m_szName, rec->m_nBurstMin, rec->m_nBurstMax, rec->m_nBurstMax);
+			rec->m_nBurstMin = rec->m_nBurstMax;
+		}
+		if (act->vfunc10("allow_autofire", 0))
+			rec->m_n3c0 |= 1;
+		rec->m_vSpread = VECTOR_CONE_10DEGREES * (act->vfunc11("SpreadAngle", 3.0f) * 0.1f);
+		rec->m_flImpactForceMin = act->vfunc11("ImpactForceMin", 0);
+		rec->m_flImpactForceMax = act->vfunc11("ImpactForceMax", 0);
+		rec->m_nCriminalLevel = (int)act->vfunc11("CriminalLevel", 0);
+		if (!sub_10259120((SKeyValues *)act, (char *)&rec->m_C[0], "DestFX"))
+			return 0;
+		sub_10258c30((IKVSub *)act, (WeaponSoundInfo *)&rec->m_SoundInfo[0], name);
+		rec->m_n108 = FindAttackType(rec->m_szType);
+		((CVDmg_t *)rec->m_Dmg198)->sub_101fb000(rec->m_sz118);
+		rec->m_n25c = FindBotchTable(rec->m_szBotchTable);
+
+		IKVNode *tables = act->vfunc2("Tables");
+		CTablesList list;
+		((CStatDefaultList *)&list)->sub_1006cec0((CVTraitKV *)tables, 0);
+		int widx = ((CNamedList1006cf30 *)&list)->sub_1006cf30("WeaponRanges");
+		if (widx > -1) {
+			StatDefault *pStat = ((StatOwner *)&list)->sub_1006cff0(widx);
+			for (int k3 = 0; k3 < 9; k3++) {
+				int v = pStat->sub_1006cb60(k3);
+				rec->m_aRangeA[k3] = v * v;
+			}
+			rec->m_nEc58 = 0x35a4e900;
+		} else {
+			int *p = rec->m_aRangeA;
+			int j;
+			for (j = 0; j < 5; j++)
+				*p++ = 0;
+			for (j = 0; j < 5; j++)
+				*p++ = 30000;
+		}
+		int gidx = ((CNamedList1006cf30 *)&list)->sub_1006cf30("GrossPointBlank");
+		if (gidx > -1) {
+			StatDefault *pStat = ((StatOwner *)&list)->sub_1006cff0(gidx);
+			for (int k4 = 0; k4 < 10; k4++)
+				rec->m_aRangeB[k4] = pStat->sub_1006cb60(k4);
+		} else {
+			for (int k5 = 0; k5 < 10; k5++)
+				rec->m_aRangeB[k5] = 50;
+		}
+		act = act->vfunc7();
+		i++;
+	} while (act);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10259de0 size=0x26
 extern char g_1089d810[];
 extern char *g_1089d7cc;
