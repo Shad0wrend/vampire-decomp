@@ -7,5 +7,6 @@ struct CUtlMemory60
 	int m_allocationCount;
 	int m_growSize;
 
+	CUtlMemory60 *sub_10184f20(int growSize, int allocationCount);
 	CUtlMemory60 *sub_10097b00(int growSize, int allocationCount);	// constructor: allocates allocationCount * 60 bytes
 };
