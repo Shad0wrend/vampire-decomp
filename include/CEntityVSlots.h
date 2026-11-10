@@ -204,7 +204,7 @@ public:
 	EVS10(43)
 	EVS(440) EVS(441) EVS(442) EVS(443) EVS(444) EVS(445) EVS(446) EVS(447)
 	virtual void slot448(int a);	// NPC: sets the ideal state (the boss's "FailSchedule"-like slot, called with 4)
-	EVS(449)
+	virtual void slot449(int a, int b);
 	EVS(450) EVS(451)
 	virtual char slot452();	// NPC: a boolean answer in al (false rejects the spawn: the schedules had an error)
 	virtual CEntityVSlots *slot453();	// player: the spawn spot entity it selects, 0 when there is none
