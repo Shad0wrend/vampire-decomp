@@ -163549,6 +163549,29 @@ float *CUnk1024d7e0::sub_1024d7e0(float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024d920 size=0x104
+#include "VMatrix.h"
+
+VMatrix VMatrix::sub_1024d920() const
+{
+	Vector tmp, vecs[3];
+	tmp.sub_100f2f90(m[0][0], m[1][0], m[2][0]);
+	vecs[0] = tmp;
+	vecs[1].sub_1003e4b0(sub_1024d7b0(tmp));
+	vecs[2].sub_1003e4b0(sub_1024d7e0(tmp));
+	VectorNormalize(vecs[0]);
+	VectorNormalize(vecs[1]);
+	VectorNormalize(vecs[2]);
+	VMatrix mRet;
+	mRet.SetForward(vecs[0]);
+	mRet.SetLeft(vecs[1]);
+	mRet.SetUp(vecs[2]);
+	mRet.m[3][0] = mRet.m[3][1] = mRet.m[3][2] = 0.0f;
+	mRet.m[3][3] = 1.0f;
+	return mRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024dc40 size=0x145
 #include <math.h>
 #include "Vector.h"
