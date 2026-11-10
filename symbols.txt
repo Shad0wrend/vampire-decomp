@@ -7416,6 +7416,7 @@
 0x1000b064 func   ?sub_101af2d0@@YADPAD@Z sub_101af2d0
 0x1000b069 func   ?sub_101852f0@@YIXPAH@Z sub_101852f0
 0x1000b06e func   ?vfunc103@CFuncIllusionary@@UAEXXZ CFuncIllusionary::vfunc103
+0x1000b073 func   ?sub_102a0870@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102a0870
 0x1000b078 func   ?sub_103747c0@@YGDH@Z sub_103747c0
 0x1000b082 func   ?vfunc393@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc393
 0x1000b087 func   ?sub_101fcf50@CVStatAction_t@@QAE_NXZ CVStatAction_t::sub_101fcf50

@@ -179666,6 +179666,50 @@ void CAI_BaseNPCTroika::sub_1029ff40(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a0870 size=0x80
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CAI_BaseNPCTroika.h"
+#include "CEHandleGet.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CTroikaPartnerBuf { CTroikaPartnerBuf() {} char data[0x54]; };
+
+struct CTroikaPartnerView {
+	S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9)
+	S10(b0) S10(b1) S10(b2) S10(b3) S10(b4) S10(b5) S10(b6) S10(b7) S10(b8) S10(b9)
+	S10(c0) S10(c1) S10(c2) S10(c3) S10(c4) S10(c5) S10(c6) S10(c7) S10(c8) S10(c9)
+	S10(d0) S10(d1)
+	virtual void vfunc320(void *pNPC, int index);
+	char m_pad[0xfec - 4];
+	int m_nState;
+	bool sub_10344da0(int state);
+	int sub_103449b0(const CTroikaPartnerBuf &buf, void *pNPC, void *p);
+};
+
+struct CTroikaOwnerView {
+	char m_pad[0x98];
+	CTroikaPartnerView *m_pPartner;
+};
+
+// TARGET: CAI_BaseNPCTroika::sub_102a0870
+void CAI_BaseNPCTroika::sub_102a0870()
+{
+	if (sub_10014df8(0x37)) {
+		CTroikaOwnerView *e = (CTroikaOwnerView *)EHandle_Get(m_h6010);
+		if (e) {
+			CTroikaPartnerView *p = e->m_pPartner;
+			if (p && !p->sub_10344da0(pcd_stage(p->m_nState))) {
+				int index = p->sub_103449b0(CTroikaPartnerBuf(), this, 0);
+				if (index >= 0)
+					p->vfunc320(this, index);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0b90 size=0x1b
 struct CUnknown102a0b90 { int sub_102a0b90(int); };
 int CUnknown102a0b90::sub_102a0b90(int a0)
