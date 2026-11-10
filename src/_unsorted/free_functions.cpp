@@ -185961,6 +185961,261 @@ CUnk102d7cd0 *CUnk102d7cd0::sub_102d7cd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d7d30 size=0x9f9
+#include "CAI_Hint.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CNodeEnt.h"
+#include "Vector.h"
+#include <stdio.h>
+#include <string.h>
+
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *pMsg, ...);
+extern char g_106b8540[];
+extern CAI_Hint *g_10925450;
+char *sub_101d3730(const char *, ...);
+
+#define HINT_ERROR "***************** ERROR!!! ********************\n"
+#define CLS(s) ((s) ? (s) : g_106b8540)
+#define HINTGROUP (((const char *)m_n458) ? (const char *)m_n458 : g_106b8540)
+#define OTHERGROUP(h) (((const char *)(h)->m_strGroup.pszValue) ? (const char *)(h)->m_strGroup.pszValue : g_106b8540)
+
+inline bool NodeClassIs(CNodeEnt *p, const char *name)
+{
+	return _strcmpi(CLS(p->m_classname11c), name) == 0;
+}
+
+void CNodeEnt::sub_102d7d30()
+{
+	Vector vecOrigin = *((CEntityVSlots *)this)->slot217();
+
+	if (NodeClassIs(this, "info_node"))
+	{
+		if (m_w450 != 0)
+		{
+			DevWarning(1, sub_101d3730("Found an info_node (%s@%f,%f,%f) with a hint type.  This is usally caused by copying nodes and changing their class in worldcraft.\n",
+				sub_1000b5cd(), vecOrigin.x, vecOrigin.y, vecOrigin.z));
+			m_w450 = 0;
+		}
+		return;
+	}
+
+	if (NodeClassIs(this, "info_node_cover_med"))
+	{
+		if (m_w450 != 100)
+		{
+			DevWarning(1, "Hint node at (%f,%f,%f) is class info_node_cover_med with the wrong hint type.  Changing type to HINT_TACTICAL_COVER_MED.\n",
+				vecOrigin.x, vecOrigin.y, vecOrigin.z);
+			m_w450 = 100;
+		}
+	}
+	else if (NodeClassIs(this, "info_node_cover_low"))
+	{
+		if (m_w450 != 101)
+		{
+			DevWarning(1, "Hint node at (%f,%f,%f) is class info_node_cover_low with the wrong hint type.  Changing type to HINT_TACTICAL_COVER_LOW.\n",
+				vecOrigin.x, vecOrigin.y, vecOrigin.z);
+			m_w450 = 101;
+		}
+	}
+	else if (NodeClassIs(this, "info_node_cover_corner"))
+	{
+		if (m_w450 != 10200)
+		{
+			DevWarning(1, "Hint node at (%f,%f,%f) is class info_node_cover_corner with the wrong hint type.  Changing type to HINT_TACTICAL_COVER_CORNER.\n",
+				vecOrigin.x, vecOrigin.y, vecOrigin.z);
+			m_w450 = 10200;
+		}
+	}
+	else if (NodeClassIs(this, "info_node_crosswalk"))
+	{
+		if (m_w450 != 11000)
+		{
+			DevWarning(1, "Hint node at (%f,%f,%f) is class info_node_crosswalk with the wrong hint type.  Changing type to HINT_CROSSWALK_NODE.\n",
+				vecOrigin.x, vecOrigin.y, vecOrigin.z);
+			m_w450 = 11000;
+		}
+	}
+	else if (NodeClassIs(this, "info_node_tzimisce_claw_left"))
+	{
+		if (m_w450 != 14000)
+		{
+			DevWarning(1, "Hint node at (%f,%f,%f) is class info_node_tzimisce_claw_left with the wrong hint type.  Changing type to HINT_TZIMISCE_CLAW_LEFT_NODE.\n",
+				vecOrigin.x, vecOrigin.y, vecOrigin.z);
+			m_w450 = 14000;
+		}
+	}
+	else if (NodeClassIs(this, "info_node_tzimisce_claw_right"))
+	{
+		if (m_w450 != 14001)
+		{
+			DevWarning(1, "Hint node at (%f,%f,%f) is class info_node_tzimisce_claw_right with the wrong hint type.  Changing type to HINT_TZIMISCE_CLAW_RIGHT_NODE.\n",
+				vecOrigin.x, vecOrigin.y, vecOrigin.z);
+			m_w450 = 14001;
+		}
+	}
+	else if (NodeClassIs(this, "info_node_kick_over"))
+	{
+		if (m_w450 != 10300)
+		{
+			DevWarning(1, "Hint node at (%f,%f,%f) is class info_node_kick_over with the wrong hint type.  Changing type to HINT_NPC_KICK_OVER.\n",
+				vecOrigin.x, vecOrigin.y, vecOrigin.z);
+			m_w450 = 10300;
+		}
+	}
+	else if (NodeClassIs(this, "info_node_kick_at"))
+	{
+		if (m_w450 != 10301)
+		{
+			DevWarning(1, "Hint node at (%f,%f,%f) is class info_node_kick_at with the wrong hint type.  Changing type to HINT_NPC_KICK_AT.\n",
+				vecOrigin.x, vecOrigin.y, vecOrigin.z);
+			m_w450 = 10301;
+		}
+	}
+	else if (NodeClassIs(this, "info_node_shoot_at"))
+	{
+		if (m_w450 != 10400)
+		{
+			DevWarning(1, "Hint node at (%f,%f,%f) is class info_node_shoot_at with the wrong hint type.  Changing type to HINT_NPC_SHOOT_AT.\n",
+				vecOrigin.x, vecOrigin.y, vecOrigin.z);
+			m_w450 = 10400;
+		}
+	}
+	else if (NodeClassIs(this, "info_node_werewolf"))
+	{
+		m_w450 = 0;
+	}
+	else if (NodeClassIs(this, "info_node_werewolf_hint"))
+	{
+		if (m_w450 < 15000 || m_w450 > 15018)
+			m_w450 = 0;
+	}
+	else if (NodeClassIs(this, "info_node_sabbat_bottom"))
+	{
+		if (m_w450 != 16000) m_w450 = 16000;
+	}
+	else if (NodeClassIs(this, "info_node_sabbat_top"))
+	{
+		if (m_w450 != 16001) m_w450 = 16001;
+	}
+	else if (NodeClassIs(this, "info_node_sabbat_arch"))
+	{
+		if (m_w450 != 16002) m_w450 = 16002;
+	}
+	else if (NodeClassIs(this, "info_node_sabbat_hide"))
+	{
+		if (m_w450 != 16003) m_w450 = 16003;
+	}
+	else if (NodeClassIs(this, "info_node_sabbat_nojump"))
+	{
+		if (m_w450 != 16004) m_w450 = 16004;
+	}
+	else if (NodeClassIs(this, "info_node_sabbat_dive"))
+	{
+		if (m_w450 != 16005) m_w450 = 16005;
+	}
+	else if (NodeClassIs(this, "info_node_bach_teleport_1"))
+	{
+		if (m_w450 != 17000) m_w450 = 17000;
+	}
+	else if (NodeClassIs(this, "info_node_bach_teleport_2"))
+	{
+		if (m_w450 != 17001) m_w450 = 17001;
+	}
+	else if (NodeClassIs(this, "info_node_bach_teleport_3"))
+	{
+		if (m_w450 != 17002) m_w450 = 17002;
+	}
+	else if (NodeClassIs(this, "info_node_bach_teleport_4"))
+	{
+		if (m_w450 != 17003) m_w450 = 17003;
+	}
+	else if (NodeClassIs(this, "info_node_bach_run_1"))
+	{
+		if (m_w450 != 17004) m_w450 = 17004;
+	}
+	else if (NodeClassIs(this, "info_node_bach_run_2"))
+	{
+		if (m_w450 != 17005) m_w450 = 17005;
+	}
+	else if (NodeClassIs(this, "info_node_chang_jumpbase"))
+	{
+		if (m_w450 != 18000) m_w450 = 18000;
+	}
+	else if (NodeClassIs(this, "info_node_chang_column"))
+	{
+		if (m_w450 != 18001) m_w450 = 18001;
+	}
+	else if (NodeClassIs(this, "info_node_chang_teleport"))
+	{
+		if (m_w450 != 18002) m_w450 = 18002;
+	}
+	else if (NodeClassIs(this, "info_node_chang_ledge"))
+	{
+		if (m_w450 != 18003) m_w450 = 18003;
+	}
+	else if (NodeClassIs(this, "info_node_manbat_fly_to_point"))
+	{
+		if (m_w450 != 20000) m_w450 = 20000;
+	}
+
+	char szBuffer[256];
+
+	if (m_w450 == 10000)
+	{
+		if (*HINTGROUP == '\0')
+		{
+			sprintf(szBuffer, "Patrol Hint node (%s@%f,%f,%f) has no Hint Group.  You need to set its Hint Group field in worldcraft.\n",
+				sub_1000b5cd(), vecOrigin.x, vecOrigin.y, vecOrigin.z);
+			DevWarning(1, HINT_ERROR);
+			DevWarning(1, HINT_ERROR);
+			DevWarning(1, HINT_ERROR);
+			DevWarning(1, HINT_ERROR);
+			DevWarning(1, HINT_ERROR);
+			DevWarning(1, HINT_ERROR);
+			DevWarning(1, szBuffer);
+			DevWarning(1, HINT_ERROR);
+			DevWarning(1, HINT_ERROR);
+			DevWarning(1, HINT_ERROR);
+			DevWarning(1, HINT_ERROR);
+			DevWarning(1, HINT_ERROR);
+			DevWarning(1, HINT_ERROR);
+			return;
+		}
+
+		for (CAI_Hint *pHint = g_10925450; pHint != NULL; pHint = pHint->m_pNext)
+		{
+			if (pHint->m_n5dc == 10000)
+			{
+				if (strcmp(OTHERGROUP(pHint), HINTGROUP) == 0)
+				{
+					Vector *pPos1 = ((CEntityVSlots *)pHint)->slot220();
+					Vector *pPos2 = ((CEntityVSlots *)pHint)->slot220();
+					sprintf(szBuffer, "More than one Patrol Hint node has Hint Group '%s' (%s@%f,%f,%f)-(%s@%f,%f,%f)\n",
+						HINTGROUP,
+						sub_1000b5cd(), vecOrigin.x, vecOrigin.y, vecOrigin.z,
+						((CBaseEntity *)pHint)->sub_1000b5cd(),
+						pPos2->x, pPos1->y, ((CEntityVSlots *)pHint)->slot220()->z);
+					DevWarning(1, HINT_ERROR);
+					DevWarning(1, HINT_ERROR);
+					DevWarning(1, HINT_ERROR);
+					DevWarning(1, HINT_ERROR);
+					DevWarning(1, HINT_ERROR);
+					DevWarning(1, HINT_ERROR);
+					DevWarning(1, szBuffer);
+					DevWarning(1, HINT_ERROR);
+					DevWarning(1, HINT_ERROR);
+					DevWarning(1, HINT_ERROR);
+					DevWarning(1, HINT_ERROR);
+					DevWarning(1, HINT_ERROR);
+					DevWarning(1, HINT_ERROR);
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d89f0 size=0x1a
 namespace lifted {
 extern int g_1060ba18;
