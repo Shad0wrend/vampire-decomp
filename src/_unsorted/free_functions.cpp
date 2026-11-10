@@ -144367,6 +144367,63 @@ extern "C" CBaseEntity *item_container()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10207f80 size=0x6a3
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+void sub_1000be8d();
+void sub_1000d9f4();
+void sub_1000ec00();
+void sub_1000f137();
+extern int g_105a93d0[2];
+int *sub_10207f80()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 5, "InputUse", {0, 0}, 1, 8, "Use", 0, (void *)sub_1000be8d },
+        { 2, "InputAddEntityToContainer", {0, 0}, 1, 8, "AddEntityToContainer", 0, (void *)sub_1000f137 },
+        { 2, "InputSpawnItemInContainer", {0, 0}, 1, 8, "SpawnItemInContainer", 0, (void *)sub_1000ec00 },
+        { 0, "InputDeleteItems", {0, 0}, 1, 8, "DeleteItems", 0, (void *)sub_1000d9f4 },
+        { 0xa, "m_OnItemRemove", {0x19b0, 0}, 1, 0x16, "OnItemRemove", g_1055dc70 },
+        { 0xa, "m_OnItemInsert", {0x19c8, 0}, 1, 0x16, "OnItemInsert", g_1055dc70 },
+        { 0xa, "m_OnBreak", {0x19e0, 0}, 1, 0x16, "OnBreak", g_1055dc70 },
+        { 2, "m_sDmgModel", {0x1a30, 0}, 1, 6, "dmgmodel", 0, 0 },
+        { 4, "m_iHealth", {0x210, 0}, 1, 6, "health", 0, 0 },
+        { 4, "m_UseIcon", {0x1a34, 0}, 1, 6, "use_icon", 0, 0 },
+        { 2, "m_sEquip0", {0x19f8, 0}, 1, 6, "equip0", 0, 0 },
+        { 2, "m_sEquip1", {0x19fc, 0}, 1, 6, "equip1", 0, 0 },
+        { 2, "m_sEquip2", {0x1a00, 0}, 1, 6, "equip2", 0, 0 },
+        { 2, "m_sEquip3", {0x1a04, 0}, 1, 6, "equip3", 0, 0 },
+        { 2, "m_sEquip4", {0x1a08, 0}, 1, 6, "equip4", 0, 0 },
+        { 2, "m_sEquip5", {0x1a0c, 0}, 1, 6, "equip5", 0, 0 },
+        { 2, "m_sEquip6", {0x1a10, 0}, 1, 6, "equip6", 0, 0 },
+        { 2, "m_sEquip7", {0x1a14, 0}, 1, 6, "equip7", 0, 0 },
+        { 2, "m_sEquip8", {0x1a18, 0}, 1, 6, "equip8", 0, 0 },
+        { 2, "m_sEquip9", {0x1a1c, 0}, 1, 6, "equip9", 0, 0 },
+        { 2, "m_sEquip10", {0x1a20, 0}, 1, 6, "equip10", 0, 0 },
+        { 2, "m_sEquip11", {0x1a24, 0}, 1, 6, "equip11", 0, 0 },
+        { 0xc, "m_BCCUser", {0x1a28, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hLockEnt", {0x1a2c, 0}, 1, 2, 0, 0, 0 },
+    };
+    g_105a93d0[1] = 24;
+    g_105a93d0[0] = (int)&dataDesc[1];
+    return g_105a93d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102087e0 size=0x64
 #include "CItemContainer.h"
 #include "CBaseHandle.h"

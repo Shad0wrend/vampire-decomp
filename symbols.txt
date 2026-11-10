@@ -961,6 +961,7 @@
 0x100024a0 func   ?vfunc39@CRagdollProp@@UAEXPAVCBaseEntity@@@Z CRagdollProp::vfunc39
 0x100024a5 func   ?sub_100cfd00@Queue@@QAEHPAUSaveX@@@Z Queue::sub_100cfd00
 0x100024aa func   ?sub_1027a780@@YIHPAX@Z sub_1027a780
+0x100024b4 func   ?sub_10207f80@@YAPAHXZ sub_10207f80
 0x100024b9 func   ?sub_100963d0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_100963d0
 0x100024be func   ?sub_101641d0@CBasePlayer@@QAEXH@Z CBasePlayer::sub_101641d0
 0x100024c3 func   ?sub_10205d00@CUnknown10205dc0@@QAEXPBD@Z CUnknown10205dc0::sub_10205d00
