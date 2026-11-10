@@ -251270,6 +251270,34 @@ V3 sub_1040c8f0(int p, float tol)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040ca20 size=0xfc
+#include "matrix3x4_t.h"
+
+void sub_10011342(const matrix3x4_t *pMatrix, int iColumn, Vector *pOut);
+void sub_10011996(const Vector *pIn, int iColumn, matrix3x4_t *pMatrix);
+
+inline Vector CrossV(const Vector &a, const Vector &b)
+{
+	return Vector(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
+}
+
+// TARGET: sub_1040ca20
+void sub_1040ca20(matrix3x4_t *pMatrix, int axis)
+{
+	Vector v[3];
+	for (int i = 0; i < 3; i++)
+		sub_10011342(pMatrix, i, &v[i]);
+	int t0 = (int)axis + 1; int j = (t0) % 3;
+	int k = (axis + 2) % 3;
+	v[k] = CrossV(v[axis], v[j]);
+	v[j] = CrossV(v[k], v[axis]);
+	VectorNormalize(v[k]);
+	VectorNormalize(v[j]);
+	sub_10011996(&v[j], j, pMatrix);
+	sub_10011996(&v[k], k, pMatrix);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040cb60 size=0xc8
 #include "CBaseEntity.h"
 #include "CUnknown1040cb60.h"

@@ -15580,6 +15580,7 @@
 0x103ea4d0 func   ?sub_103ea4d0@@YADPAVCBaseEntity@@0@Z sub_103ea4d0
 0x1040c3b0 func   ?sub_1040c3b0@@YAMPAVCEntityVSlots@@@Z sub_1040c3b0
 0x1040c8f0 func   ?sub_1040c8f0@@YA?AUV3@@HM@Z sub_1040c8f0
+0x1040ca20 func   ?sub_1040ca20@@YAXPAUmatrix3x4_t@@H@Z sub_1040ca20
 0x10410490 func   ?sub_10410490@@YA_NPAUSEnt@@H@Z sub_10410490
 0x10410500 func   ?sub_10410500@@YAXPAVCBaseEntity@@PAH@Z sub_10410500
 0x10411b20 func   ?sub_10411b20@@YA_NPAUCUnk10411b20@@@Z sub_10411b20
