@@ -1009,6 +1009,68 @@ int *sub_1002a430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a960 size=0x1a6
+#include "CPhysConstraint.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "engineserver.h"
+
+void sub_101b1120(CRecipientFilter *f, int ent, int chan, const char *name, float vol, float attn, int flags, int pitch, int a, int b, int c);
+void sub_10158af0(PhysObjView *a, PhysObjView *b);
+void sub_101cd940(void *p);
+extern char g_106b8540[];
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline void PhysClearGameFlags(PhysObjView *pObject, unsigned short clearFlags)
+{
+	unsigned short flags = pObject->GetGameFlags();
+	flags &= ~clearFlags;
+	pObject->SetGameFlags(flags);
+}
+
+struct CPhysConstraintUnit : CPhysConstraint
+{
+	void sub_1002ad20(PhysObjView *p);
+	void ClearStaticFlag(PhysObjView *pObj)
+	{
+		if (!pObj)
+			return;
+		PhysClearGameFlags(pObj, 2);
+	}
+	void Deactivate()
+	{
+		m_pConstraint450->vfunc2();
+		ClearStaticFlag(m_pConstraint450->vfunc5());
+		sub_1002ad20(m_pConstraint450->vfunc6());
+		if (m_spawnflags204 & 1) {
+			PhysObjView *a = m_pConstraint450->vfunc5();
+			PhysObjView *b = m_pConstraint450->vfunc6();
+			if (a && b)
+				sub_10158af0(a, b);
+		}
+	}
+	void *edict() { return m_pEdict2e0; }
+	int entindex() { return engine->vfunc35((int)edict()); }
+	void OnBreak()
+	{
+		Deactivate();
+		if (m_psz45c) {
+			CPASAttenuationFilter filter((CEntitySoundOriginView *)this, 1.25f);
+			sub_101b1120(&filter, entindex(), 6, STRINGR(m_psz45c), 1.0f, 1.25f, 0, 100, 0, 0, 0);
+		}
+		m_OnBreak470.sub_100cd660(this, this, 0);
+		sub_101cd940(this);
+	}
+};
+
+void CPhysConstraint::sub_1002a960(int unused)
+{
+	m_pConstraint450->vfunc2();
+	((CPhysConstraintUnit *)this)->OnBreak();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002ad20 size=0x21
 struct CUnkVT1002ad20
 {
