@@ -91618,6 +91618,69 @@ void CBasePlayer::sub_10178590(Vector vecPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101787a0 size=0x1e9
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "Vector.h"
+#include "globalvars.h"
+
+extern Vector g_1070d1b0;
+void sub_10139970(const Vector *pDir, Vector *pAngles);
+float sub_1013d580(float a, float b);
+
+struct S101787a0Char {
+	void sub_10331da0(Vector *pOut, int a);
+};
+struct S101787a0Ent {
+	char m_pad0000[0x98];
+	S101787a0Char *m_p98;
+};
+
+char CBasePlayer::sub_101787a0(CBaseEntity *pEnt, float flRate)
+{
+	CBasePlayer *pAim = (CBasePlayer *)pEnt;
+	Vector vecTarget;
+	if (((S101787a0Ent *)pEnt)->m_p98)
+		((S101787a0Ent *)pEnt)->m_p98->sub_10331da0(&vecTarget, 0);
+	else
+		vecTarget = pAim->vfunc193();
+	if (vecTarget == g_1070d1b0)
+		vecTarget = pAim->vfunc192();
+	Vector vecEye = vfunc193();
+	Vector vecDir = vecTarget - vecEye;
+	VectorNormalize(vecDir);
+	Vector vecAng;
+	sub_10139970(&vecDir, &vecAng);
+	float flStep = flRate * gpGlobals->frametime;
+	char bDone = 1;
+	{
+		float cur[3];
+		float *ang = &vecAng.x;
+		for (int i = 0; i < 3; i++) {
+			float d = sub_1013d580(ang[i], m_vec206c[i]);
+			float *c = &cur[i];
+			if (d < -flStep) {
+				*c -= flStep;
+				if (cur[i] < ang[i])
+					*c = ang[i];
+				else
+					bDone = 0;
+			} else if (d > flStep) {
+				*c += flStep;
+				if (cur[i] > ang[i])
+					*c = ang[i];
+				else
+					bDone = 0;
+			} else {
+				*c = ang[i];
+			}
+		}
+		sub_10178550(*(Vector *)cur);
+	}
+	return bDone;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10178da0 size=0x4b
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"

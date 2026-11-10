@@ -6167,6 +6167,7 @@
 0x100095de func   ?sub_10032880@@YAXXZ sub_10032880
 0x100095e3 func   ?vfunc138@CNPC_VCop@@UAEHXZ CNPC_VCop::vfunc138
 0x100095e8 func   ?vfunc38@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc38
+0x100095ed func   ?sub_101787a0@CBasePlayer@@QAEDPAVCBaseEntity@@M@Z CBasePlayer::sub_101787a0
 0x100095f2 func   ?sub_1002b360@@YIXPAUS1002b360@@HPAUSInfo1002b360@@@Z sub_1002b360
 0x100095f7 func   ?sub_10300e60@CUnknown10300e60@@QAE_NVVector@@000@Z CUnknown10300e60::sub_10300e60
 0x100095fc func   ?vfunc82@CAISound@@UAEPAUdatamap_t@@XZ CAISound::vfunc82
