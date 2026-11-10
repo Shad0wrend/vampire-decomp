@@ -13,6 +13,7 @@ struct datamap_t;
 
 class CBaseEntity;
 class CAI_Motor;
+class CUnknown102ee120;
 #include "CUnknown102e0150.h"
 class CNPC_VTzimisceHelper2
 {
@@ -48,6 +49,12 @@ public:
 	int m_n2c;
 };
 
+struct CTzimisceTaskArg
+{
+	int m_nId;
+	float m_flArg;
+};
+
 class CNPC_VTzimisce
 {
 public:
@@ -81,13 +88,15 @@ public:
 	virtual void t070(); virtual void t071(); virtual void t072();
 	virtual void vfunc241(char *pszOut, int *pEvent);	// slot 241 "CNPC_VTzimisce::GetAnimEventName": the sound / event name for the anim event ids 2..8 (START_IDLE, START_FIDGET, START_RUN, START_LANDHARD, START_ATTACK, START_ATTACKBIG, START_POUNCE) copied to pszOut, the base implementation for the other ids
 	virtual void t074(); virtual void t075(); virtual void t076(); virtual void t077(); virtual void t078(); virtual void t079();
-	VT_SLOTS10(t08) VT_SLOTS10(t09)
+	virtual void t080(); virtual void t081(); virtual void t082(); virtual char vfunc251(); virtual void t084(); virtual void t085(); virtual void t086(); virtual void t087(); virtual void t088(); virtual void t089();
+	VT_SLOTS10(t09)
 	VT_SLOTS10(t10) VT_SLOTS10(t11) VT_SLOTS10(t12) VT_SLOTS10(t13)
 	virtual void t140(); virtual void t141(); virtual void t142(); virtual void t143();
 	virtual void vfunc144(int a);	// slot 144: when the 0x14b8 bit 5 flag is set runs sub_103bf170, then sub_103bdfc0 (removes the entities around the NPC), then CAI_BaseNPCTroika::vfunc144(a)
 	virtual void t145(); virtual void t146(); virtual void t147(); virtual void t148(); virtual void t149();
 	VT_SLOTS10(t15) VT_SLOTS10(t16) VT_SLOTS10(t17) VT_SLOTS10(t18) VT_SLOTS10(t19)
-	VT_SLOTS10(t20) VT_SLOTS10(t21)
+	virtual void t200(); virtual void t201(); virtual void t202(); virtual void t203(); virtual void t204(); virtual void t205(); virtual void t206(); virtual int vfunc375(int a); virtual int vfunc376(int a); virtual void t209();
+	virtual void t210(); virtual void t211(); virtual void t212(); virtual int vfunc381(int a); virtual void t214(); virtual void t215(); virtual void t216(); virtual void t217(); virtual void t218(); virtual void t219();
 	virtual void t220();	// slot 388
 	virtual Vector vfunc389(const Vector &vecSrc);	// slot 389 "CNPC_VTzimisce::Weapon_ShootPosition": the shoot position, offset from vecSrc by the forward / right / up vectors times the three convar values; activity 0x106 returns it directly, 0x107 rotates the offset by 90 degrees
 	virtual void t222(); virtual void t223(); virtual void t224(); virtual void t225(); virtual void t226(); virtual void t227(); virtual void t228(); virtual void t229();
@@ -103,7 +112,7 @@ public:
 	virtual void t268(); virtual void t269();
 	void sub_100048f9(int arg);	// CAI_BaseNPCTroika::vfunc435 (stub 0x100048f9), called directly
 	virtual int vfunc438(); virtual void t271(); virtual int vfunc440(int a);	// slot 440: maps an NPC schedule type to this NPC's schedule id (source line recorded at +0x1b30 / +0x1b34), the base mapping otherwise
-	virtual void t273(); virtual void t274(); virtual void t275(); virtual void t276(); virtual void t277(); virtual void t278(); virtual void t279();
+	virtual void t273(); virtual void vfunc442(CTzimisceTaskArg *pTask); virtual void t275(); virtual void t276(); virtual void t277(); virtual void t278(); virtual void t279();
 	int sub_102b12f0(int a);	// CAI_BaseNPCTroika::vfunc440 (stub 0x10001997), called directly
 	void *sub_103c0160(int *pKind);	// stub 0x10009b5b
 	void sub_103c0860(void *pObj);	// stub 0x1000f4de
@@ -145,7 +154,9 @@ public:
 
 	char m_pad0004[0x2dc];
 	int m_n02e0;
-	char m_pad02e4[0x1074 - 0x2e4];
+	char m_pad02e4[0xfec - 0x2e4];
+	int m_nActivityfec;
+	char m_padff0[0x1074 - 0xff0];
 	Vector m_vec1074;	// 0x1074: a 2D direction, turned by 90 degrees in Spawn
 	char m_pad1080[0x14b8 - 0x1080];
 	unsigned int m_flags14b8;	// 0x14b8: bit 5 set while hiding
@@ -158,24 +169,35 @@ public:
 	int m_n1b2c;
 	const char * volatile m_pszFile1b30;
 	volatile int m_nLine1b34;
-	char m_pad1b38[0x5b80 - 0x1b38];
+	char m_pad1b38[0x1b44 - 0x1b38];
+	const char *m_psz1b44;
+	int m_n1b48;
+	char m_pad1b4c[0x5b80 - 0x1b4c];
 	char m_b5b80;
 	char m_pad5b81[0x5c38 - 0x5b81];
 	struct CTzimisceTask *m_pTask5c38;	// 0x5c38: the current schedule; its dword at +0x1c is the node id looked up by slot 580's range list
 	char m_pad5c3c[0x5cc0 - 0x5c3c];
 	int m_nState5cc0;
-	char m_pad5cc4[0x5d40 - 0x5cc4];
+	char m_pad5cc4[0x5d34 - 0x5cc4];
+	CUnknown102ee120 *m_p5d34;
+	char m_pad5d38[0x5d40 - 0x5d38];
 	class CAI_MoveProbe *m_pMoveProbe5d40;	// 0x5d40: the movement probe (its +4 is the owner entity, +8 / +0xc ints)
 	CAI_Motor *m_pMotor5d44;	// 0x5d44
 	char m_pad5d48[0x5d8c - 0x5d48];
 	unsigned int m_flags5d8c;
-	char m_pad5d90[0x5ddc - 0x5d90];
+	char m_pad5d90[0x5d9c - 0x5d90];
+	float m_f5d9c;
+	char m_pad5da0[0x5dd0 - 0x5da0];
+	Vector m_vec5dd0;
 	CBaseEntity *m_p5ddc;	// 0x5ddc: the "target type 0x36b0 / 0x36b1" entity (only its +0x5dc dword is read)
 	char m_pad5de0[0x6078 - 0x5de0];
 	char m_b6078;	// 0x6078: set in Spawn
 	char m_pad6079[0x623c - 0x6079];
 	float m_f623c;
-	char m_pad6240[0x6458 - 0x6240];
+	char m_pad6240[0x6320 - 0x6240];
+	int m_n6320;
+	float m_f6324;
+	char m_pad6328[0x6458 - 0x6328];
 	float m_flIgnoreCollisionTimer;	// 0x6458
 	char m_pad645c[0x655c - 0x645c];
 	float m_f655c;	// 0x655c: 0.01f in vfunc593
@@ -220,6 +242,12 @@ public:
 	bool sub_103be130();
 	bool sub_103be150();
 	int sub_103bcb60(int a);
+	void sub_10280a50();
+	void sub_10273e80(int a);
+	char sub_10278c80();
+	void sub_10272650(int a);
+	void sub_10289ee0(int a);
+	void sub_102a1910(CTzimisceTaskArg *pTask);
 	bool sub_103be180();
 	int sub_102cc1f0(int a);
 	int vfunc124();
