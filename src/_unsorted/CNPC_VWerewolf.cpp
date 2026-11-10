@@ -291,6 +291,35 @@ bool CNPC_VWerewolf::vfunc600(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cb810 size=0xb9
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern unsigned char g_10924fba;
+extern unsigned char g_10924fb9;
+
+// TARGET: CNPC_VWerewolf::vfunc201
+bool CNPC_VWerewolf::vfunc201(void *pEnt, int traceMask, int *ppBlocker, int d)
+{
+	ScopeTrace trace("CNPC_VWerewolf::FVisible", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+
+	if (pEnt)
+	{
+		switch (g_10924fba || (g_10924fb9 && *(int *)((char *)pEnt + 0xa8)))
+		{
+		case 0:
+			return true;
+		default:
+			if (ppBlocker)
+				*ppBlocker = 0;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cb900 size=0x5
 #include "CNPC_VWerewolf.h"
 int CNPC_VWerewolf::vfunc619(int a0)

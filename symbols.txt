@@ -11804,6 +11804,7 @@
 0x10010fd7 func   ?sub_103c6df0@CNPC_VVampireBoss@@QAEXHPBD@Z CNPC_VVampireBoss::sub_103c6df0
 0x10010fdc func   ?sub_10185750@UtlMem@@QAEXXZ UtlMem::sub_10185750
 0x10010fe1 func   ?sub_102a9940@CUnknown102a9750@@QAEXH@Z CUnknown102a9750::sub_102a9940
+0x10010fe6 func   ?vfunc201@CNPC_VWerewolf@@QAE_NPAXHPAHH@Z CNPC_VWerewolf::vfunc201
 0x10010feb func   ?sub_101e7db0@CUnknown101e7db0@@QAEMXZ CUnknown101e7db0::sub_101e7db0
 0x10010ff0 func   ?vfunc500@CNPC_VWerewolf@@UAEXXZ CNPC_VWerewolf::vfunc500
 0x10010ff5 func   ?vfunc5@CAI_StandoffGoal@@QAEPAV1@I@Z CAI_StandoffGoal::vfunc5
