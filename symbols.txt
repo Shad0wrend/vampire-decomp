@@ -13370,6 +13370,7 @@
 0x10013106 func   ?vfunc319@CWeaponIArmor@@UAEXXZ CWeaponIArmor::vfunc319
 0x1001310b func   ?vfunc319@CNPC_VPlaceholder@@UAE_NHHH@Z CNPC_VPlaceholder::vfunc319
 0x10013110 func   ?sub_102c43b0@CUnknown102c43b0@@QAEXM@Z CUnknown102c43b0::sub_102c43b0
+0x1001311a func   ?sub_100a22f0@@YAPAHXZ sub_100a22f0
 0x1001311f func   ?vfunc383@CBasePlayer@@UAEXPAVCBaseEntity@@D@Z CBasePlayer::vfunc383
 0x10013129 func   ?sub_1042bcc0@@YAHXZ sub_1042bcc0
 0x1001312e func   _logic_lineto logic_lineto

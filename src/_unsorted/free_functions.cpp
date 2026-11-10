@@ -37693,6 +37693,151 @@ int sub_100a2260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a22f0 size=0x1d5e
+#include "datamap.h"
+ISaveRestoreOps *sub_10045d90(int);
+extern ISaveRestoreOps *g_10552d4c;
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_10560c20;
+void sub_10001ed8();
+void sub_10003e54();
+void sub_1000572c();
+void sub_10008bde();
+void sub_10009c9b();
+void sub_10009d0e();
+void sub_1000ad8a();
+void sub_1000dbd4();
+void sub_1000e27d();
+void sub_1000f0ba();
+void sub_10011667();
+void sub_10011a13();
+void sub_100131b5();
+void sub_1001447a();
+void sub_1001488f();
+void sub_100152b2();
+void sub_10015b68();
+extern int g_10552e18[2];
+int *sub_100a22f0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 2, "m_iClassname", {0x11c, 0}, 1, 6, "classname", 0, 0 },
+        { 2, "m_iGlobalname", {0x120, 0}, 1, 7, "globalname", 0, 0 },
+        { 2, "m_iParent", {0x124, 0}, 1, 6, "parentname", 0, 0 },
+        { 2, "m_iDialog", {0x128, 0}, 1, 6, "dialogname", 0, 0 },
+        { 5, "m_bBlocked", {0x12c, 0}, 1, 6, "blocked", 0, 0 },
+        { 9, "m_Collision", {0x270, 0}, 1, 2, 0, 0, 0, (datamap_t *)&g_10560c20 },
+        { 1, "m_rgflCoordinateFrame", {0x130, 0}, 12, 2, 0, 0, 0 },
+        { 1, "m_flStartFrameLocalTime", {0x160, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_flSpeed", {0x164, 0}, 1, 6, "speed", 0, 0 },
+        { 4, "m_nRenderFX", {0x168, 0}, 1, 6, "renderfx", 0, 0 },
+        { 4, "m_nRenderMode", {0x16c, 0}, 1, 6, "rendermode", 0, 0 },
+        { 0xf, "m_flPrevAnimTime", {0x170, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flAnimTime", {0x174, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flLastThink", {0x178, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flNextThink", {0x17c, 0}, 1, 6, "nextthink", 0, 0 },
+        { 1, "m_flNextThinkSR", {0x180, 0}, 1, 2, 0, 0, 0 },
+        { 3, "m_vecViewOffset", {0x184, 0}, 1, 6, "view_ofs", 0, 0 },
+        { 3, "m_vecMoveDir", {0x190, 0}, 1, 6, "movedir", 0, 0 },
+        { 4, "m_fEffects", {0x19c, 0}, 1, 6, "effects", 0, 0 },
+        { 8, "m_clrRender", {0x1a0, 0}, 1, 6, "rendercolor", 0, 0 },
+        { 4, "m_nModelIndex", {0x1a4, 0}, 1, 6, "modelindex", 0, 0 },
+        { 0xa, "m_aThinkFunctions", {0x1b8, 0}, 1, 2, 0, g_10552d4c, 0 },
+        { 4, "m_takedamage", {0x1fc, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_lifeState", {0x200, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_spawnflags", {0x204, 0}, 1, 6, "spawnflags", 0, 0 },
+        { 4, "m_iMaxHealth", {0x208, 0}, 1, 6, "max_health", 0, 0 },
+        { 2, "m_target", {0x20c, 0}, 1, 6, "target", 0, 0 },
+        { 4, "m_iHealth", {0x210, 0}, 1, 6, "health", 0, 0 },
+        { 2, "m_iszDamageFilterName", {0x21c, 0}, 1, 6, "dmg_filter_name", 0, 0 },
+        { 0xc, "m_hDamageFilter", {0x220, 0}, 1, 2, 0, 0, 0 },
+        { 2, "m_iszUseFilterName", {0x214, 0}, 1, 6, "use_filter_name", 0, 0 },
+        { 0xc, "m_hUseFilter", {0x218, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_pParent", {0x254, 0}, 1, 2, 0, 0, 0 },
+        { 7, "m_iParentAttachment", {0x258, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_pMoveParent", {0x25c, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_pMoveChild", {0x260, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_pMovePeer", {0x264, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_iEFlags", {0x268, 0}, 1, 2, 0, 0, 0 },
+        { 2, "m_iName", {0x26c, 0}, 1, 6, "targetname", 0, 0 },
+        { 4, "m_MoveType", {0x35c, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_MoveCollide", {0x360, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hOwnerEntity", {0x364, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_ScriptSavedSolid", {0xe8, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_ScriptSavedMoveType", {0xec, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_ScriptSavedMoveCollide", {0xf0, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bScriptHidden", {0xf4, 0}, 1, 2, 0, 0, 0 },
+        { 6, "m_ScriptSavedSolidFlags", {0xf6, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_fScriptSavedEffects", {0xf8, 0}, 1, 2, 0, 0, 0 },
+        { 0x13, "m_pfnScriptSavedThink", {0xe4, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_CollisionGroup", {0x368, 0}, 1, 2, 0, 0, 0 },
+        { 0xa, "m_pPhysicsObject", {0x36c, 0}, 1, 2, 0, sub_10045d90(1), 0 },
+        { 1, "m_flElasticity", {0x370, 0}, 1, 2, 0, 0, 0 },
+        { 2, "m_iszUseScript", {0x374, 0}, 1, 6, "usescript", 0, 0 },
+        { 0xc, "m_hAimEnt", {0x37c, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hGroundEntity", {0x384, 0}, 1, 2, 0, 0, 0 },
+        { 0x10, "m_ModelName", {0x388, 0}, 1, 7, "model", 0, 0 },
+        { 3, "m_vecSize", {0x38c, 0}, 1, 7, "size", 0, 0 },
+        { 3, "m_vecBaseVelocity", {0x3b0, 0}, 1, 6, "basevelocity", 0, 0 },
+        { 3, "m_vecAngVelocity", {0x3c8, 0}, 1, 6, "avelocity", 0, 0 },
+        { 4, "m_nWaterLevel", {0x3e0, 0}, 1, 6, "waterlevel", 0, 0 },
+        { 4, "m_nWaterType", {0x3e4, 0}, 1, 6, "watertype", 0, 0 },
+        { 1, "m_flGravity", {0x3ec, 0}, 1, 6, "gravity", 0, 0 },
+        { 1, "m_flFriction", {0x3f0, 0}, 1, 6, "friction", 0, 0 },
+        { 1, "m_flLocalTime", {0x3f4, 0}, 1, 6, "ltime", 0, 0 },
+        { 1, "m_flVPhysicsUpdateLocalTime", {0x3f8, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_flMoveDoneTime", {0x3fc, 0}, 1, 2, 0, 0, 0 },
+        { 0xe, "m_vecAbsOrigin", {0x404, 0}, 1, 2, 0, 0, 0 },
+        { 3, "m_vecVelocity", {0x3d4, 0}, 1, 6, "velocity", 0, 0 },
+        { 3, "m_angAbsRotation", {0x410, 0}, 1, 2, 0, 0, 0 },
+        { 3, "m_vecOrigin", {0x41c, 0}, 1, 2, 0, 0, 0 },
+        { 3, "m_angRotation", {0x428, 0}, 1, 6, "angles", 0, 0 },
+        { 4, "m_fFlags", {0x434, 0}, 1, 6, "flags", 0, 0 },
+        { 4, "m_fFlags2", {0x438, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_edtDerivedType", {0x4c, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_nSimulationTick", {0x22c, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_debugOverlays", {0x224, 0}, 1, 2, 0, 0, 0 },
+        { 0x13, "m_pfnThink", {0x118, 0}, 1, 2, 0, 0, 0 },
+        { 0x13, "m_pfnTouch", {0x1ec, 0}, 1, 2, 0, 0, 0 },
+        { 0x13, "m_pfnUse", {0x1f0, 0}, 1, 2, 0, 0, 0 },
+        { 0x13, "m_pfnBlocked", {0x1f4, 0}, 1, 2, 0, 0, 0 },
+        { 0, "InputKill", {0, 0}, 1, 8, "Kill", 0, (void *)sub_1000e27d },
+        { 0, "InputUse", {0, 0}, 1, 8, "Use", 0, (void *)sub_10009d0e },
+        { 4, "InputAlpha", {0, 0}, 1, 8, "Alpha", 0, (void *)sub_1000dbd4 },
+        { 8, "InputColor", {0, 0}, 1, 8, "Color", 0, (void *)sub_10011a13 },
+        { 2, "InputSetParent", {0, 0}, 1, 8, "SetParent", 0, (void *)sub_10001ed8 },
+        { 0, "InputClearParent", {0, 0}, 1, 8, "ClearParent", 0, (void *)sub_1000ad8a },
+        { 0, "InputScriptHide", {0, 0}, 1, 8, "ScriptHide", 0, (void *)sub_1001488f },
+        { 0, "InputScriptUnhide", {0, 0}, 1, 8, "ScriptUnhide", 0, (void *)sub_10008bde },
+        { 2, "InputSetSoundOverrideEnt", {0, 0}, 1, 8, "SetSoundOverrideEnt", 0, (void *)sub_100131b5 },
+        { 4, "InputSetFakeSilence", {0, 0}, 1, 8, "SetFakeSilence", 0, (void *)sub_1001447a },
+        { 0, "CBaseEntitySUB_Remove", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10015b68 },
+        { 0, "CBaseEntitySUB_DoNothing", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000572c },
+        { 0, "CBaseEntitySUB_StartFadeOut", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10011667 },
+        { 0, "CBaseEntitySUB_FadeOut", {0, 0}, 1, 0x20, 0, 0, (void *)sub_100152b2 },
+        { 0, "CBaseEntitySUB_Vanish", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000f0ba },
+        { 0, "CBaseEntitySUB_CallUseToggle", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10003e54 },
+        { 0, "CBaseEntitySUB_PVSRemove", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10009c9b },
+        { 5, "m_bStartHidden", {0xe0, 0}, 1, 6, "StartHidden", 0, 0 },
+        { 2, "m_iszVSoundGroup", {0xc0, 0}, 1, 6, "soundgroup", 0, 0 },
+        { 5, "m_bNPCTransparent", {0xfc, 0}, 1, 6, "npc_transparent", 0, 0 },
+        { 5, "m_bBlocksTraces", {0xfd, 0}, 1, 6, "blocks_traces", 0, 0 },
+        { 5, "m_bOccludesSound", {0xfe, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hSoundOverrideEnt", {0x100, 0}, 1, 2, 0, 0, 0 },
+        { 2, "m_iszScriptedSoundOverrideEnt", {0x108, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bFakeSilence", {0x104, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hLastInputActivator", {0x10c, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hLastInputCaller", {0x110, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bHasCalledMakerDeathNotice", {0x44c, 0}, 1, 2, 0, 0, 0 },
+        { 0xa, "m_OnUseBegin", {0x5c, 0}, 1, 0x16, "OnUseBegin", g_1055dc70 },
+        { 0xa, "m_OnUseEnd", {0x74, 0}, 1, 0x16, "OnUseEnd", g_1055dc70 },
+    };
+    g_10552e18[1] = 110;
+    g_10552e18[0] = (int)&dataDesc[1];
+    return g_10552e18;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a47b0 size=0xf
 #define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
 
