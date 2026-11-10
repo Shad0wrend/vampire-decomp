@@ -5,6 +5,8 @@
 // CWeaponAmmoInfo.h: slot 6 find sub key, 7 next, 10 GetInt, 11 GetFloat, 13 GetString).
 #pragma once
 
+#include "Vector.h"
+
 struct CUnknown10258b00_A    // 0x1093c bytes: a magazine / ammo record (CWeaponMagazineRec in CWeaponAmmoInfo.h)
 {
     int m_n00;    // 0x00: -1 ("Size")
@@ -70,7 +72,7 @@ struct CUnknown10258b00_B    // 0xec84 bytes: an attack record (3 of them), fill
     float m_flKickYawDevMax;    // 0x3a0: 1
     int m_nBurstMin;    // 0x3a4
     int m_nBurstMax;    // 0x3a8
-    float m_vSpread[3];    // 0x3ac: "SpreadAngle" * 0.1 * 0.08716 (x, y, z-spill)
+    Vector m_vSpread;    // 0x3ac: VECTOR_CONE_10DEGREES * ("SpreadAngle" * 0.1)
     float m_flImpactForceMin;    // 0x3b8
     float m_flImpactForceMax;    // 0x3bc
     int m_n3c0;    // 0x3c0: bit 0 = allow_autofire
