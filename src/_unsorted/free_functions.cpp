@@ -173255,6 +173255,146 @@ int __fastcall sub_1027a780(void *pSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027a820 size=0xe7d
+#include "UnreachableEnt_t.h"
+#include "utlmemory.h"
+#include "utlvector.h"
+#include "datamap.h"
+extern ISaveRestoreOps *g_1055dc70;
+extern int g_105c982c;
+extern int g_10608a8c;
+extern int g_1060e508;
+extern int g_1060ee50;
+extern int g_1060fac8;
+extern int g_106111b8;
+extern int g_106145f8;
+struct UnreachableEnt_t;
+template <class T> class CHandle;
+void sub_10004da9();
+void sub_100073d8();
+void sub_1000b1d6();
+void sub_1000f4e8();
+void sub_10013f48();
+#include "CUtlVectorDataOps.h"
+inline ISaveRestoreOps *Ops_109f07a4()
+{
+	static CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9> ops;
+	return (ISaveRestoreOps *)&ops;
+}
+extern int g_105c9814[2];
+int *sub_1027a820()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 5, "m_bShouldMove", {0x1a40, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_iCollisionMask", {0x1a44, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hLastEnemy", {0x1a94, 0}, 1, 2, 0, 0, 0 },
+        { 2, "m_altEquipment", {0x1a98, 0}, 1, 6, "alternateequipment", 0, 0 },
+        { 9, "m_DelayedConditionList", {0x1a9c, 0}, 1, 2, 0, 0, 0, (datamap_t *)&g_10608a8c },
+        { 9, "m_DelayedSoundConditionList", {0x1ae0, 0}, 1, 2, 0, 0, 0, (datamap_t *)&g_10608a8c },
+        { 0xf, "m_flCacheInterruptTime", {0x1b24, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bForceStateChange", {0x1b28, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flNextDoorUseTime", {0x5b60, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_bfNPCStateFlags", {0x5b64, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hLastSeenHateEnt", {0x5b68, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hLastSeenFearEnt", {0x5b6c, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hLastSeenDislikeEnt", {0x5b70, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hLastSeenNemesisEnt", {0x5b74, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hLastHeardEnt", {0x5b78, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hLastDamageEnt", {0x5b7c, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bCondTookDamage", {0x5b80, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_bfNPCFrenziedFlags", {0x5b84, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flWeaponBlockedByFriendTimer", {0x5b88, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flExtendedBlockedByFriendTimer", {0x5b8c, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_RelativeEyeTarget", {0x5b94, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_eEnemyOccludedCheck", {0x5b98, 0}, 1, 2, 0, 0, 0 },
+        { 3, "m_vecLastDamageAttackPos", {0x5b9c, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hShootTargetOverride", {0x5ba8, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_flSpecialDistanceAccum", {0x5bac, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_iSquadDisconnected", {0x5bb0, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_iIsOblivious", {0x5bb4, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bDidMaintainSchedule", {0x5bb8, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_flBurstShootPauseMin", {0x5bbc, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_flBurstShootPauseMax", {0x5bc0, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bInChoreoScene", {0x5bc4, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bEnemyWentOccluded", {0x5bc5, 0}, 1, 2, 0, 0, 0 },
+        { 3, "m_vecEnemyWentOccluded", {0x5bc8, 0}, 1, 2, 0, 0, 0 },
+        { 9, "m_ScheduleState", {0x5c40, 0}, 1, 2, 0, 0, 0, (datamap_t *)&g_105c982c },
+        { 4, "m_IdealSchedule", {0x5c3c, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_failSchedule", {0x5c54, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bConditionsGathered", {0x5ca4, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_NPCState", {0x5cc0, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_IdealNPCState", {0x5cc4, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flLastStateChangeTime", {0x5cc8, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_nIdealSequence", {0x5ccc, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_IdealTranslatedActivity", {0x5cd0, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_IdealWeaponActivity", {0x5cd4, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bKeepSound", {0x5cd8, 0}, 1, 2, 0, 0, 0 },
+        { 9, "m_pSenses", {0x5cdc, 0}, 1, 0x42, 0, 0, 0, (datamap_t *)&g_106145f8 },
+        { 0xc, "m_hEnemy", {0x5ce0, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hTargetEnt", {0x5ce4, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flSoundWaitTime", {0x5ce8, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_afCapability", {0x5cec, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flMoveWaitFinished", {0x5cf0, 0}, 1, 2, 0, 0, 0 },
+        { 9, "m_MoveAndShootOverlay", {0x5cf4, 0}, 1, 2, 0, 0, 0, (datamap_t *)&g_1060ee50 },
+        { 0xc, "m_hOpeningDoor", {0x5d24, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hBlockedDoor", {0x5d28, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hCondHitByDoor", {0x5d2c, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bOpeningDoorWait", {0x5d30, 0}, 1, 2, 0, 0, 0 },
+        { 9, "m_pNavigator", {0x5d34, 0}, 1, 0x42, 0, 0, 0, (datamap_t *)&g_1060fac8 },
+        { 9, "m_pPathfinder", {0x5d3c, 0}, 1, 0x42, 0, 0, 0, (datamap_t *)&g_106111b8 },
+        { 9, "m_pMotor", {0x5d44, 0}, 1, 0x42, 0, 0, 0, (datamap_t *)&g_1060e508 },
+        { 0xa, "m_UnreachableEnts", {0x5d48, 0}, 1, 2, 0, Ops_109f07a4(), 0 },
+        { 3, "m_vDefaultEyeOffset", {0x5d60, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_scriptState", {0x5d70, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hCine", {0x5d74, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bCineScriptHidden", {0x5d78, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_afMemory", {0x5d8c, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_flSumDamage", {0x5d94, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flLastDamageTime", {0x5d98, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flLastAttackTime", {0x5d9c, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flNextWeaponSearchTime", {0x5da0, 0}, 1, 2, 0, 0, 0 },
+        { 2, "m_SquadName", {0x5da8, 0}, 1, 6, "squadname", 0, 0 },
+        { 4, "m_iMySquadSlot", {0x5dac, 0}, 1, 2, 0, 0, 0 },
+        { 2, "m_strHintGroup", {0x5db0, 0}, 1, 6, "hintgroup", 0, 0 },
+        { 0xf, "m_flWaitFinished", {0x5db4, 0}, 1, 2, 0, 0, 0 },
+        { 0xe, "m_vecLastPosition", {0x5db8, 0}, 1, 2, 0, 0, 0 },
+        { 3, "m_qaLastFacing", {0x5dc4, 0}, 1, 2, 0, 0, 0 },
+        { 0xe, "m_vSavePosition", {0x5dd0, 0}, 1, 2, 0, 0, 0 },
+        { 0xb, "m_pHintNode", {0x5ddc, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_cAmmoLoaded", {0x5de0, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_flDistTooFar", {0x5de4, 0}, 1, 2, 0, 0, 0 },
+        { 0xb, "m_pGoalEnt", {0x5de8, 0}, 1, 2, 0, 0, 0 },
+        { 2, "m_spawnEquipment", {0x5dec, 0}, 1, 6, "additionalequipment", 0, 0 },
+        { 5, "m_bWantsLargeHull", {0x5f2c, 0}, 1, 2, 0, 0, 0 },
+        { 0xa, "m_OnDamaged", {0x5e0c, 0}, 1, 0x16, "OnDamaged", g_1055dc70 },
+        { 0xa, "m_OnDeath", {0x5e24, 0}, 1, 0x16, "OnDeath", g_1055dc70 },
+        { 0xa, "m_OnHalfHealth", {0x5e3c, 0}, 1, 0x16, "OnHalfHealth", g_1055dc70 },
+        { 0xa, "m_OnFoundEnemy", {0x5e54, 0}, 1, 0x16, "OnFoundEnemy", g_1055dc70 },
+        { 0xa, "m_OnLostEnemyLOS", {0x5e6c, 0}, 1, 0x16, "OnLostEnemyLOS", g_1055dc70 },
+        { 0xa, "m_OnLostEnemy", {0x5e84, 0}, 1, 0x16, "OnLostEnemy", g_1055dc70 },
+        { 0xa, "m_OnFoundPlayer", {0x5e9c, 0}, 1, 0x16, "OnFoundPlayer", g_1055dc70 },
+        { 0xa, "m_OnLostPlayerLOS", {0x5eb4, 0}, 1, 0x16, "OnLostPlayerLOS", g_1055dc70 },
+        { 0xa, "m_OnLostPlayer", {0x5ecc, 0}, 1, 0x16, "OnLostPlayer", g_1055dc70 },
+        { 0xa, "m_OnHearWorld", {0x5ee4, 0}, 1, 0x16, "OnHearWorld", g_1055dc70 },
+        { 0xa, "m_OnHearPlayer", {0x5efc, 0}, 1, 0x16, "OnHearPlayer", g_1055dc70 },
+        { 0xa, "m_OnHearCombat", {0x5f14, 0}, 1, 0x16, "OnHearCombat", g_1055dc70 },
+        { 0xa, "m_OnGrappleBegin", {0x5bd8, 0}, 1, 0x16, "OnGrappleBegin", g_1055dc70 },
+        { 0xa, "m_OnGrappleEnd", {0x5bf0, 0}, 1, 0x16, "OnGrappleEnd", g_1055dc70 },
+        { 0xa, "m_OnFedUponBegin", {0x5c08, 0}, 1, 0x16, "OnFedUponBegin", g_1055dc70 },
+        { 0xa, "m_OnFedUponEnd", {0x5c20, 0}, 1, 0x16, "OnFedUponEnd", g_1055dc70 },
+        { 2, "InputSetRelationship", {0, 0}, 1, 8, "SetRelationship", 0, (void *)sub_100073d8 },
+        { 0, "CAI_BaseNPCNPCUse", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10004da9 },
+        { 0, "CAI_BaseNPCNPCThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000f4e8 },
+        { 0, "CAI_BaseNPCCorpseFallThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_1000b1d6 },
+        { 0, "CAI_BaseNPCNPCInitThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10013f48 },
+    };
+    g_105c9814[1] = 102;
+    g_105c9814[0] = (int)&dataDesc[1];
+    return g_105c9814;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027ba80 size=0x1a
 namespace lifted {
 extern int g_105c982c;
