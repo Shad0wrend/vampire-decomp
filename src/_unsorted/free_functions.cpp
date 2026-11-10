@@ -102978,6 +102978,35 @@ void CUnknown1019f500::sub_1019f500(CInputData100bc0f0 *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019f640 size=0x40
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CRopeKeyframe.h"
+#include "string_t.h"
+struct CRopeKeyframeView1019f640
+{
+    char m_pad0[0x488];
+    string_t m_iszMaterial;
+};
+string_t sub_1042bff0(const char *pszName);
+inline const char *STRINGR(const string_t &s) { return s.pszValue ? s.pszValue : g_106b8540; }
+
+// TARGET: CRopeKeyframe::sub_1019f640
+void CRopeKeyframe::sub_1019f640(const char *pszMaterial)
+{
+    CRopeKeyframeView1019f640 *p = (CRopeKeyframeView1019f640 *)this;
+    p->m_iszMaterial = sub_1042bff0(pszMaterial);
+    m_nMaterialIndex = engine->vfunc13(STRINGR(p->m_iszMaterial), 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019f760 size=0x4d
 struct SFuncField {
     int fieldType;
