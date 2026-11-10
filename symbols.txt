@@ -12678,6 +12678,7 @@
 0x10012210 func   ?vfunc362@CWeaponMelee_Fists@@QAEHXZ CWeaponMelee_Fists::vfunc362
 0x10012215 func   ?sub_101308d0@CLight@@QAEXXZ CLight::sub_101308d0
 0x1001221a func   ?sub_1015ef20@CUnknown1015ef20@@QAE_NXZ CUnknown1015ef20::sub_1015ef20
+0x1001221f func   ?vfunc1@CSafeDiscSaveRestoreOps_5@@QAEXPAPAHPAUCSafeDiscReader@@@Z CSafeDiscSaveRestoreOps_5::vfunc1
 0x10012224 func   ?vfunc71@CPropModelState@@UAEXXZ CPropModelState::vfunc71
 0x10012229 func   ?vfunc14@CServerGameDLL@@UAEXPAXHHHHH@Z CServerGameDLL::vfunc14
 0x1001222e func   ?vfunc72@CMultiplayRules@@UAE_NXZ CMultiplayRules::vfunc72
