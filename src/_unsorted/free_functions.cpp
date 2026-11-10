@@ -153079,6 +153079,29 @@ void CItemContainerLock::sub_102241f0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10224910 size=0x2b
+#include "CBaseEntity.h"
+#include "CItemContainerLock.h"
+#include "CBasePlayer.h"
+
+extern char g_106b8540[];
+
+inline const char *STRINGR(const char *const &s)
+{
+	return s ? s : g_106b8540;
+}
+
+bool CItemContainerLock::sub_10224910(int a)
+{
+	if (m_pKeyring)
+	{
+		if (((CBasePlayer *)a)->sub_10178470((CBaseEntity *)STRINGR(*(const char *const *)&m_pKeyring)) >= 0)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224950 size=0x13a
 #include "CItemContainerLock.h"
 #include "CItemGKeyring.h"
