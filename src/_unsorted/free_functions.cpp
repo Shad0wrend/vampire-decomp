@@ -60957,6 +60957,25 @@ int sub_100f6ae0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f6b00 size=0x23
+#include "CBaseEntity.h"
+#include "Vector.h"
+#include "utlrbtree.h"
+#include <string.h>
+#include "utlvector.h"
+
+class CBaseEntity;
+typedef CUtlVector<CBaseEntity *> EntPtrVec_t;
+extern EntPtrVec_t g_10703654;
+
+int sub_100f6b00(CBaseEntity **pList, int listMax)
+{
+	int count = listMax < g_10703654.Count() ? listMax : g_10703654.Count();
+	memcpy(pList, g_10703654.Base(), count * sizeof(CBaseEntity *));
+	return count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f6b40 size=0x44
 #include "CGlobalEntityList.h"
 extern char vt_10455e90[];
