@@ -6579,6 +6579,7 @@
 0x10009efd func   ?vfunc5@CBaseTempEntity@@UAEXXZ CBaseTempEntity::vfunc5
 0x10009f02 func   ?vfunc370@CBaseCombatWeapon@@UAEXPAHPAV1@@Z CBaseCombatWeapon::vfunc370
 0x10009f07 func   ?sub_100f9820@UtlMem@@QAEXXZ UtlMem::sub_100f9820
+0x10009f0c func   ?sub_10214cc0@CPropHaunted@@QAEPAVCEnvParticle@@H@Z CPropHaunted::sub_10214cc0
 0x10009f11 func   ?vfunc8@CMoveHelperServer@@UAEXH@Z CMoveHelperServer::vfunc8
 0x10009f16 func   ?sub_10077820@CUnknown10077820@@QAEDPAUCUnknownSlot3Obj@@HH@Z CUnknown10077820::sub_10077820
 0x10009f1b func   ?sub_101780e0@CUnknown101780e0@@QAEXXZ CUnknown101780e0::sub_101780e0

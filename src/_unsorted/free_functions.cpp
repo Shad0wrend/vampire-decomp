@@ -146786,6 +146786,30 @@ void CUnknown102148f0::sub_10214a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10214cc0 size=0x71
+#include "CEntityVSlots.h"
+#include "CEnvParticle.h"
+#include "CPropHaunted.h"
+#include "Vector.h"
+
+extern char g_106b8540[];
+void sub_101cf7c0(const char *src, char *dst, int size);
+CEntityVSlots *sub_100fbc90(const char *pszName, const Vector &vecOrigin, const float *pAngles, float flLife);
+
+CEnvParticle *CPropHaunted::sub_10214cc0(int a)
+{
+	const char *psz = (const char *)a;
+	if (!psz)
+		psz = g_106b8540;
+	if (*psz) {
+		char buf[260];
+		sub_101cf7c0(psz, buf, sizeof(buf));
+		return (CEnvParticle *)sub_100fbc90(buf, vfunc192(), vfunc219(), -1.0f);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10214d60 size=0x43
 #include "CPropButton.h"
 void *sub_100aa720(int size);
