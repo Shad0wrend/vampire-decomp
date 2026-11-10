@@ -39886,6 +39886,99 @@ void sub_100af010()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100af340 size=0x3d8
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CVariantCopy.h"
+#include "datamap.h"
+#include "ehandle.h"
+#include "Tier1.h"
+#include "inputdata_t.h"
+
+char *sub_101cf720(const char *fmt, ...);
+void sub_101ce620(void *pCtx, int level, const char *s, const char *a = 0, const char *b = 0, const char *c = 0, const char *d = 0);
+extern "C" int _strcmpi(const char *, const char *);
+extern float g_104454c4;
+
+inline int VarInt(const CVariantCopy &v) { return v.m_fieldType == 4 ? v.m_value : 0; }
+inline float VarFloat(const CVariantCopy &v) { return v.m_fieldType == 1 ? v.flVal : g_104454c4; }
+inline const char *VarString(const CVariantCopy &v) { return v.m_fieldType == 2 ? (v.iszVal ? v.iszVal : g_106b8540) : v.sub_100d0a00(); }
+
+// TARGET: sub_100af340
+void sub_100af340(void *pPlayer, CBaseEntity *pEntity)
+{
+	ScopeTrace trace("CC_Ent_Dump_Sub", g_106b8540, g_106b8540);
+	sub_101ce620(pPlayer, 2, sub_101cf720("\n*****************************************************************\n"));
+	sub_101ce620(pPlayer, 2, sub_101cf720("**                         BEGIN ENTITY DUMP                   **\n"));
+	sub_101ce620(pPlayer, 2, sub_101cf720("**                                                             **\n"));
+	for (datamap_t *dmap = pEntity->vfunc82(); (int)dmap != 0; dmap = dmap->baseMap)
+	{
+		sub_101ce620(pPlayer, 2, sub_101cf720("**      Datafields\n"));
+		for (int i = 0; i < dmap->dataNumFields; ++i)
+		{
+			CVariantCopy var;
+			const typedescription_t &field = dmap->dataDesc[i];
+			if (pEntity->vfunc121(dmap->dataDesc[i].externalName, &var))
+			{
+				char buf[256];
+				buf[0] = 0;
+				switch (var.m_fieldType)
+				{
+				case 2:
+					g_109f3890(buf, VarString(var), sizeof(buf));
+					break;
+				case 4:
+					g_109f388c(buf, sizeof(buf), "%d", VarInt(var));
+					break;
+				case 1:
+					g_109f388c(buf, sizeof(buf), "%.2f", VarFloat(var));
+					break;
+				case 12:
+					if (var.m_fieldType != 12)
+					{
+						if (!(g_109f0afc & 1))
+						{
+							g_109f0afc |= 1;
+							g_109f0b08 = 0xffffffff;
+							atexit(sub_100031f7);
+						}
+						g_109f0b08 = 0xffffffff;
+					}
+					else
+					{
+						EHANDLE h; h = pcd_stage(*(EHANDLE *)&var.m_hEntity);
+						if (h)
+						{
+							const char *pszName = pcd_stage(h)->m_name26c;
+							g_109f388c(buf, sizeof(buf), "%s", pszName ? pszName : g_106b8540);
+						}
+					}
+					break;
+				}
+				if (!_strcmpi("parentname", dmap->dataDesc[i].externalName) || !_strcmpi("targetname", dmap->dataDesc[i].externalName))
+					continue;
+				if (buf[0])
+					sub_101ce620(pPlayer, 2, sub_101cf720("  %-40s: %10s\n", dmap->dataDesc[i].externalName, buf));
+			}
+		}
+	}
+	sub_101ce620(pPlayer, 2, sub_101cf720("**      Object-specific dump\n"));
+	pEntity->vfunc31((int)pPlayer);
+	sub_101ce620(pPlayer, 2, sub_101cf720("**                                                             **\n"));
+	sub_101ce620(pPlayer, 2, sub_101cf720("**                         END ENTITY DUMP                     **\n"));
+	sub_101ce620(pPlayer, 2, sub_101cf720("*****************************************************************\n\n"));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100afa60 size=0x75
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

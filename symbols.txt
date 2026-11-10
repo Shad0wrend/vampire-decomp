@@ -13514,6 +13514,7 @@
 0x100135de func   ?sub_101d6910@CLoaderView@@QAE_NPAUCKVNodeView@@H@Z CLoaderView::sub_101d6910
 0x100135e3 func   ?sub_10088b30@@YAXXZ sub_10088b30
 0x100135e8 func   ?sub_10028b20@CPhysMotor@@QAEXXZ CPhysMotor::sub_10028b20
+0x100135ed func   ?sub_100af340@@YAXPAXPAVCBaseEntity@@@Z sub_100af340
 0x100135f2 func   ?sub_103a1ef0@@YADXZ sub_103a1ef0
 0x100135f7 func   ?sub_10289cc0@CUnknown10289cc0@@QAEXXZ CUnknown10289cc0::sub_10289cc0
 0x100135fc func   ?sub_101fdfd0@CVStatInfo_t@@QAEXPAUCVStatKV@@@Z CVStatInfo_t::sub_101fdfd0
