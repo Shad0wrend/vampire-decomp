@@ -294,6 +294,28 @@ void CNPC_VZombie::vfunc141(CUnknown101c2a50 *pInfo, int b, char *pTrace)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e0bc0 size=0xca
+#include "CNPC_VZombie.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+struct CZombieEnemy167 { char pad[0x9c]; CBaseCombatCharacter *m_pChar9c; };
+
+bool CNPC_VZombie::vfunc201(CBaseCombatCharacter *pEnt, int b, int c, int d)
+{
+	ScopeTrace trace("CNPC_VZombie::FVisible", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CZombieEnemy167 *pEnemy = vfunc167();
+	CBaseCombatCharacter *pChar;
+	if (!(pEnemy)) pChar = (CBaseCombatCharacter *)pEnemy; else pChar = pEnemy->m_pChar9c;
+	if (pChar == pEnt) {
+		if (pChar->sub_10146a80())
+			return false;
+		return true;
+	}
+	return sub_1000dbcf(pEnt, b, c, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e0e80 size=0xe0
 #include "CBaseEntity.h"
 #include "CNPC_VZombie.h"
