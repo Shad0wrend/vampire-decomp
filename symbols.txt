@@ -12566,6 +12566,7 @@
 0x10012021 func   ?sub_10149ce0@@YA_NXZ sub_10149ce0
 0x10012026 func   ?sub_10075350@CUnknown10075aa0@@QAEXXZ CUnknown10075aa0::sub_10075350
 0x1001202b func   ?sub_100a6490@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a6490
+0x10012030 func   ?vfunc0@CPhysicsWind@@UAEHPAXHMAAVVector@@1@Z CPhysicsWind::vfunc0
 0x10012035 func   ?vfunc0@CTEBeamLaser@@UAEPAUServerClass@@XZ CTEBeamLaser::vfunc0
 0x1001203a func   ?vfunc372@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::vfunc372
 0x1001203f func   ?sub_102276f0@@YAXXZ sub_102276f0
