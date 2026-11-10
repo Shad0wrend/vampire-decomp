@@ -7191,6 +7191,7 @@
 0x1000abf5 func   ?sub_100d5e30@@YAXXZ sub_100d5e30
 0x1000abfa func   ?vfunc339@CWeaponIArmor@@UAEXXZ CWeaponIArmor::vfunc339
 0x1000abff func   ?sub_10245540@ConCommandBase@@QAEPAV1@PBD0H@Z ConCommandBase::sub_10245540
+0x1000ac09 func   ?vfunc315@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc315
 0x1000ac0e func   ?vfunc373@CWeaponMelee_Tzimisce2Claw@@QAEHXZ CWeaponMelee_Tzimisce2Claw::vfunc373
 0x1000ac13 func   ?sub_10263fb0@CUtlMemory36@@QAEPAU1@HH@Z CUtlMemory36::sub_10263fb0
 0x1000ac18 func   ?vfunc444@CNPC_VMingXiaoTentacle@@UAEXPAX@Z CNPC_VMingXiaoTentacle::vfunc444

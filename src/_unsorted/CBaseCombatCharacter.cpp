@@ -4094,6 +4094,119 @@ bool CBaseCombatCharacter::vfunc327()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10346cd0 size=0x3b8
+#include "CAI_BaseNPCTroika.h"
+#include "CNPC_VTzimisce.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include <math.h>
+
+void sub_10345890(const float *pFrom, const float *pTo, float t, float *pOut);
+extern float g_104454c4;
+
+struct CMeleeGlobal { virtual void vfunc0(); virtual char vfunc1(); char pad[0x24]; float m_fl28; };
+extern CMeleeGlobal *g_10936ccc;
+extern CMeleeGlobal *g_109370d4;
+
+struct CMeleeSwingView : CBaseCombatCharacter {
+	void sub_10343020(const Vector *pOrigin, const Vector *pAngles, float flFrom, float flTo);
+	char sub_103451d0(float flValue);
+};
+
+void CBaseCombatCharacter::vfunc315()
+{
+	ScopeTrace trace("CBaseCombatCharacter::MeleeSwingUpdate", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	int seq = ((CBaseAnimating *)this)->sub_1008d990(m_nSequence6f0);
+	if (seq && *(int *)(seq + 0x2c4) > 0)
+	{
+		Vector *pOrigin = ((CEntityVSlots *)this)->slot217();
+		Vector *pAngles = ((CEntityVSlots *)this)->slot219();
+
+		if (!m_bMeleeSwingIsLive)
+		{
+			((CMeleeSwingView *)this)->sub_10343020(pOrigin, pAngles, 0, 0);
+			sub_10346760();
+		}
+		else
+		{
+			float dt = gpGlobals->curtime - m_flLastMeleeSwingUpdate;
+			if (!(dt > g_104454c4))
+				return;
+			float duration = ((CBaseAnimating *)this)->sub_10091230(m_nSequence6f0) * m_flPlaybackRate6f4;
+			float a = (gpGlobals->curtime - (*(float *)((char *)this + 0x174) - 0.1f)) * duration + m_fl6f8;
+			float b = a - duration * dt;
+
+			CAI_BaseNPCTroika *pNPC = m_pNPC98;
+			if (pNPC)
+			{
+				float f = g_10936ccc->vfunc1() ? g_104454c4 : g_10936ccc->m_fl28;
+				if (f <= m_fl6f8)
+					pNPC->m_n6064 = 0;
+			}
+
+			if (!m_bDidSendIncomingSwingNotice)
+			{
+				sub_10346ac0();
+				m_bDidSendIncomingSwingNotice = 1;
+			}
+
+			if (!m_bAA3)
+			{
+				float v = g_109370d4->vfunc1() ? 0.0f : g_109370d4->m_fl28;
+				if (((CMeleeSwingView *)this)->sub_103451d0(v))
+				{
+					void *pWeapon = sub_1032e7b0();
+					if (pWeapon)
+						((CBaseCombatWeapon *)pWeapon)->vfunc333(0x15, 1, 0, 0, 0, 0);
+					m_bAA3 = 1;
+				}
+			}
+
+			int steps = (int)ceil(dt * 100.0f);
+			float prev;
+			if (b > g_104454c4) prev = b; else prev = 0;
+			for (int i = 1; i <= steps; i++)
+			{
+				if (prev >= 1.0f)
+					break;
+				float t = (float)i / (float)steps;
+				float cur = (a - b) * t + b;
+				if (cur <= g_104454c4)
+					continue;
+				if (cur > 1.0f)
+					cur = 1.0f;
+				Vector pos;
+				pos.x = (pOrigin->x - m_vecLastMeleeSwingPosition.x) * t + m_vecLastMeleeSwingPosition.x;
+				pos.y = (pOrigin->y - m_vecLastMeleeSwingPosition.y) * t + m_vecLastMeleeSwingPosition.y;
+				pos.z = (pOrigin->z - m_vecLastMeleeSwingPosition.z) * t + m_vecLastMeleeSwingPosition.z;
+				Vector outAng;
+				sub_10345890(&m_angLastMeleeSwingAngles.x, &pAngles->x, t, &outAng.x);
+				((CMeleeSwingView *)this)->sub_10343020(&pos, &outAng, prev, cur);
+				prev = cur;
+			}
+		}
+
+		m_flLastMeleeSwingUpdate = gpGlobals->curtime;
+		m_vecLastMeleeSwingPosition = *pOrigin;
+		m_angLastMeleeSwingAngles = *pAngles;
+	}
+	else
+		m_bMeleeSwingIsLive = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103482e0 size=0xaa
 #include "utlrbtree.h"
 #include "utlsortvector.h"
