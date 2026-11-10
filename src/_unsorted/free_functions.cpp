@@ -134234,6 +134234,43 @@ bool CUnknown101f3d80::sub_101f3810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f3b00 size=0x71
+struct CTreeSub {
+	int sub_101f4530(int a, int b);
+};
+struct CTreeNode {
+	int m_type;	// 0x00
+	CTreeSub *m_pSub;	// 0x04
+	CTreeNode *m_pParent;	// 0x08
+	int m_unk0c;
+	int m_unk10;
+	char *m_pFlags;	// 0x14
+	int m_unk18;
+	int m_nChildren;	// 0x1c
+	CTreeNode **m_ppChildren;	// 0x20
+
+	CTreeNode *sub_101f3b00(int type, int a, int b);
+	CTreeNode *sub_1000764e(int type, int a, int b);
+};
+
+CTreeNode *CTreeNode::sub_101f3b00(int type, int a, int b)
+{
+	if (m_type == type) {
+		if (m_pFlags[m_pSub->sub_101f4530(a, b)])
+			return this;
+		if (!m_pParent)
+			return 0;
+		return m_pParent->sub_101f3b00(m_pParent->m_type, a, b);
+	}
+	for (int i = 0; i < m_nChildren; i++) {
+		CTreeNode *pFound = m_ppChildren[i]->sub_1000764e(type, a, b);
+		if (pFound)
+			return pFound;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f3ba0 size=0x102
 #include "CVSoundFileFolder_t.h"
 #include <string.h>
