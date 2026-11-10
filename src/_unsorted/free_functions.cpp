@@ -177679,6 +177679,161 @@ void CAI_BaseNPCTroika::sub_102a9f40(CAI_InterestingPlace *pPlace, CAI_Hint *pHi
 }
 // END FUNCTION
 
+// FUNCTION: 0x102aa210 size=0x34b
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown10290040.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Motor.h"
+#include "CEntityVSlots.h"
+#include <string.h>
+
+struct CUnk102dcc20;
+struct CUnknown102db760 {
+	CUnk102dcc20 *sub_102db760();
+	const char *sub_1000b5cd();
+};
+struct CUnknown102daef0 {
+	const char *sub_102daef0();
+};
+struct CUnk102dcc20 {
+	CEntityVSlots *sub_102dcc20();
+	char m_pad[0x514];
+	char m_b514;
+	bool ShouldFace() const { return m_b514 != 0; }
+};
+struct CBCCUnit : CBaseCombatCharacter {
+	void sub_103281b0(const char *pszBone, int a, int b);
+};
+const char *__fastcall sub_102daea0(void *p);
+const char *sub_1025d730(int act);
+int sub_10412520(const char *name);
+void sub_10411f90();
+extern int g_1094afe8[];
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+__declspec(dllimport) void DevWarning(const char *pMsg, ...);
+__declspec(dllimport) int Q_strnicmp(const char *s1, const char *s2, int n);
+
+struct CTroikaView {
+	char m_pad0[0x65c];
+	char m_b65c;
+	char m_b65d;
+	char m_pad1[0x14bc - 0x65e];
+	unsigned int m_flags14bc;
+	char m_pad2[0x5d44 - 0x14c0];
+	CAI_Motor *m_pMotor;
+	char m_pad3[0x63d4 - 0x5d48];
+	float m_f63d4;
+	CAI_Motor *GetMotor() { return m_pMotor; }
+};
+
+// TARGET: CAI_BaseNPCTroika::sub_102aa210
+char CAI_BaseNPCTroika::sub_102aa210(void *pInterest)
+{
+	CTroikaView *v = (CTroikaView *)this;
+	bool bOut = false;
+	bool bFlag = vfunc251();
+	if (*(int *)&v->m_f63d4 != 0xbf800000 && v->m_b65d) {
+		if (gpGlobals->curtime >= v->m_f63d4 && v->m_b65c)
+			bFlag = true;
+	} else if (vfunc251()) {
+		switch (m_n6304) {
+		case 1:
+			m_n6304 = 2;
+			bFlag = true;
+			break;
+		case 2:
+			bFlag = true;
+			break;
+		case 3:
+			m_flags14b8 &= 0xdfffffff;
+			((CBCCUnit *)this)->sub_103281b0("Bip01", 0, 1);
+			m_f5db4 = gpGlobals->curtime;
+			if ((v->m_flags14bc & 8) == 8) {
+				bOut = true;
+				v->m_flags14bc &= 0x7ffffff7;
+			}
+			break;
+		default:
+			bFlag = true;
+			break;
+		}
+	}
+	CUnk102dcc20 *tgt = ((CUnknown102db760 *)pInterest)->sub_102db760();
+	if (tgt) {
+		const char *name = sub_1025d730(pcd_stage(m_nState0fec));
+		if (name) {
+			if (Q_strnicmp(sub_102daea0(pInterest), name, strlen(name)))
+				bFlag = true;
+			CEntityVSlots *ent = tgt->sub_102dcc20();
+			if (ent && ent != (CEntityVSlots *)this) {
+				sub_10279cc0((CBaseEntity *)ent);
+				if (tgt->ShouldFace()) {
+					v->GetMotor()->sub_102e2020((const float *)ent->slot217(), 0);
+					if (!((CUnknown10290040 *)this)->sub_10278c80()) {
+						float f = *(float *)&v->GetMotor()->m_38 * 0.75;
+						v->GetMotor()->sub_102e1e20((int)(f < 1.0f ? 1.0f : f));
+					}
+				}
+			}
+		} else {
+			for (int i = 10; i; i--) {
+				int act = m_nState0fec;
+				DevMsg("****  ERROR!!! FIX THIS!!! Failed to match name to activity %d for interesting place '%s'.\n", act, ((CUnknown102db760 *)pInterest)->sub_1000b5cd());
+				DevMsg("****                       It needs to be added to game_shared/all_activities.inc\n");
+				DevMsg("****                       Best guess at activity name...'%s'.\n", &g_1094afe8[m_nState0fec * 0x11]);
+			}
+		}
+	}
+	if (bFlag) {
+		const char *s = sub_102daea0(pInterest);
+		int act = sub_10412520(s);
+		if (act == -1) {
+			sub_10411f90();
+			DevWarning("Can not find interest activity '%s' in the activity list.  Defaulting to ACT_IDLE.\n", s);
+			act = 1;
+		}
+		if (act != m_nState0fec || !v->m_b65d)
+			sub_10289ee0(act);
+		v->m_f63d4 = enginerandom->vfunc1(2.0f, 10.0f) + gpGlobals->curtime;
+	}
+	if (gpGlobals->curtime >= m_f5db4 || (v->m_flags14bc & 8) == 8) {
+		if ((m_flags14b8 & 0x20000000) == 0x20000000) {
+			bool bStart = false;
+			switch (m_n6304) {
+			case 1:
+				break;
+			case 2:
+				bStart = true;
+				break;
+			case 3:
+				break;
+			default:
+				bStart = true;
+				break;
+			}
+			if (bStart)
+			{
+				const char *s = ((CUnknown102daef0 *)pInterest)->sub_102daef0();
+				int act = sub_10412520(s);
+				if (act == -1) {
+					sub_10411f90();
+					DevWarning("Can not find interest outof activity '%s' in the activity list.  Defaulting to ACT_IDLE.\n", s);
+					act = 1;
+				}
+				m_n6304 = 3;
+				sub_10289ee0(act);
+				v->m_f63d4 = -1.0f;
+				m_f5db4 = gpGlobals->curtime + 0.5f;
+			}
+		} else {
+			bOut = true;
+		}
+	}
+	v->GetMotor()->sub_102e1e20(-1);
+	return bOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102aaa60 size=0xcc
 #include "CAI_BaseNPCTroika.h"
 
