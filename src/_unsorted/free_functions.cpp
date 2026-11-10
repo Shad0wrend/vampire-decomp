@@ -147450,6 +147450,54 @@ void CUnknown10217f50::sub_10217b30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10217d60 size=0x153
+#include "CBaseEntity.h"
+#include <string.h>
+#include "CBaseTerminal.h"
+#include "CUnknown10217f50.h"
+#include "CUnknown1020aea0.h"
+#include "CVSoundActivityTable_t.h"
+
+extern CVActivitySound g_1074b330;
+extern int g_1074f760;
+char sub_10217200(bool bFlag);
+void sub_10217ac0(CUnknown10217f50 *p, const char *fmt, ...);
+
+void CBaseTerminal::sub_10217d60()
+{
+	int len;
+	int n;
+	CUnknown10217f50 *t = (CUnknown10217f50 *)this;
+	CBaseEntity *pUser = t->m_hUser.Get();
+	if (!pUser) {
+		m_b082c = 0;
+		return;
+	}
+	char *pText = (char *)&t->m_quad;
+	len = strlen(pText);
+	CUnknown1020aea0 *pItem = (CUnknown1020aea0 *)this;
+	if (pItem->sub_1020b040(pUser) == 0.0) {
+		g_1074b330.sub_101f5b60((int)this, g_1074f760, 2);
+		for (n = len; n > 0; n--)
+			t->sub_102192a0(0x7f);
+		sub_10217ac0(t, pText);
+		t->sub_10217f50(1, pText);
+	} else {
+		float f1 = pItem->sub_1020b040(pUser);
+		float f2 = pItem->sub_1020aea0(pUser);
+		n = (int)((1.0 - f1 / f2) * len);
+		char buf[16];
+		memset(buf, 0, sizeof(buf));
+		if (n > 0)
+			memcpy(buf, pText, n);
+		bool bFlag = (t->m_flags081c & 2) == 2;
+		for (int i = n; i < len; i++)
+			buf[i] = sub_10217200(bFlag);
+		t->slot278(buf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10217f50 size=0x99
 #include "CUnknown10217f50.h"
 extern "C" unsigned int __cdecl strlen(const char *);

@@ -11916,6 +11916,7 @@
 0x1001130b func   ?sub_1008fcd0@CBaseAnimating@@QAEXHPAM@Z CBaseAnimating::sub_1008fcd0
 0x10011310 func   ?vfunc602@CNPC_VMingXiaoTentacle@@UAE_NXZ CNPC_VMingXiaoTentacle::vfunc602
 0x10011315 func   ?vfunc5@CTempEntTester@@UAEPAV1@I@Z CTempEntTester::vfunc5
+0x1001131a func   ?sub_10217d60@CBaseTerminal@@QAEXXZ CBaseTerminal::sub_10217d60
 0x1001131f func   _item_g_bach_journal item_g_bach_journal
 0x10011324 func   ?vfunc104@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc104
 0x10011329 func   ?sub_100d2b30@@YAXXZ sub_100d2b30
