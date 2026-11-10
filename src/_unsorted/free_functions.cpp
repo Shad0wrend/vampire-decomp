@@ -15300,6 +15300,35 @@ int sub_1005cf30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005d110 size=0xca
+#include "Vector.h"
+#include "CTEBeamRingPoint.h"
+extern CTEBeamRingPoint g_106c0120;
+
+void sub_1005d110(int filter, int delay, const Vector &center, float start_radius, float end_radius, int modelindex, int haloindex, int startframe, int framerate,
+	float life, int width, int spread, int amplitude, int r, int g, int b, int a, int speed)
+{
+	*(Vector *)g_106c0120.m_vecCenter = center;
+	g_106c0120.m_flStartRadius = start_radius;
+	g_106c0120.m_flEndRadius = end_radius;
+	g_106c0120.m_n0c = modelindex;
+	g_106c0120.m_n10 = haloindex;
+	g_106c0120.m_n14 = startframe;
+	g_106c0120.m_n18 = framerate;
+	g_106c0120.m_f1c = life;
+	g_106c0120.m_f20 = width;
+	g_106c0120.m_f24 = width;
+	g_106c0120.m_f2c = amplitude;
+	g_106c0120.m_n40 = speed;
+	g_106c0120.m_n30 = r;
+	g_106c0120.m_n34 = g;
+	g_106c0120.m_n38 = b;
+	g_106c0120.m_n28 = 0;
+	g_106c0120.m_n3c = a;
+	g_106c0120.vfunc4(filter, delay);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005d220 size=0x37
 #include "CTEBeamSpline.h"
 
