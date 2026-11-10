@@ -148299,6 +148299,36 @@ void CPropHaunted::sub_10214300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102143e0 size=0x7a
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown102148f0.h"
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+struct VT250 {
+	SL100(a) SL100(b)
+	SL10(c0) SL10(c1) SL10(c2) SL10(c3) SL10(c4) 
+	virtual float a250(int);
+};
+
+void CUnknown102148f0::sub_102143e0()
+{
+	if (gpGlobals->curtime > m_flTime77c) {
+		sub_102148f0();
+		sub_10214a20();
+		return;
+	}
+	((VT250 *)this)->a250(0);
+	float flNow;
+	if (!(sub_10090ef0(pcd_stage(m_iValue6f0)) & 1) && m_flValue6f8 >= 0.99) {
+		m_flValue6f8 = 0;
+	}
+	flNow = gpGlobals->curtime;
+	m_flNextTime17c = flNow + 0.041666666666666664;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102146d0 size=0x13
 #include "CUnknown102148f0.h"
 

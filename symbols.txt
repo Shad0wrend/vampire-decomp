@@ -8418,6 +8418,7 @@
 0x1000c612 func   ?vfunc81@CItemGWatchFancy@@QAEHXZ CItemGWatchFancy::vfunc81
 0x1000c617 func   ?sub_10150e30@@YGHH@Z sub_10150e30
 0x1000c61c func   ?sub_103615c0@CNPC_VAsianVampire@@QAEPAXXZ CNPC_VAsianVampire::sub_103615c0
+0x1000c621 func   ?sub_102143e0@CUnknown102148f0@@QAEXXZ CUnknown102148f0::sub_102143e0
 0x1000c626 func   ?sub_10182dd0@CUnknown10182dd0@@QAEHHH@Z CUnknown10182dd0::sub_10182dd0
 0x1000c630 func   _item_g_drugs_morphine_bottle item_g_drugs_morphine_bottle
 0x1000c63a func   ?sub_101e0f00@CUnknown101e0f00@@QAEXXZ CUnknown101e0f00::sub_101e0f00
