@@ -32,6 +32,7 @@ struct CAI_PathfinderOverlay	// 0x10 .. 0x17: two dwords cleared by the CAI_Path
 {
 	int m_n00;	// 0x10
 	int m_n04;	// 0x14
+	void sub_10306550();	// stub 0x100034f4
 	void sub_10306280(const float *vecStart, const float *vecApex, const float *vecEnd, AIMoveTrace_t *pStartTrace, AIMoveTrace_t *pEndTrace, char bResult);	// stub 0x1000d3ff: draws the two legs of a triangulation route
 };
 
@@ -103,6 +104,7 @@ public:
 	bool sub_103048d0(int navType, const float *vecStart, const float *vecEnd);	// the ground route check of CheckStaleRoute: a straight probe move (100% stand checks), else a triangulation (shortened by the distance already free) with the obstruction's own mask
 	bool sub_103059d0(int a1, int a2, int a3, int a4, int a5, float *pOutApex, int a7, int a8);	// "CAI_Pathfinder::Triangulate" (stub 0x10010546): looks for a triangulation apex and stores it in pOutApex; false when there is none
 	bool sub_103059d0(int a1, const float *vecStart, const float *vecEnd, float flDist, int a5, float *pOutApex, int a7, int a8);	// the same function as the sub_103059d0 above with the argument types its caller 0x103048d0 passes
+	bool sub_103059d0(int navType, const float *vecStart, const float *vecEnd, float flDist, const CBaseEntity *pTarget, float *pOutApex, unsigned int collisionMask, char bSkip);
 	CAI_Waypoint *sub_10304020(int a1, const float *pEndPosition, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10);	// "CAI_Pathfinder::BuildTriangulationRoute": triangulates (sub_103059d0) and, when there is an apex, builds the two waypoints (the end position and the apex, the end waypoint chained after it) and returns the apex waypoint; 0 when the triangulation fails (ret 0x28: ten stack arguments)
 	CAI_Waypoint *sub_10303740(int navType, const float *vecStart, const float *vecEnd, const CBaseEntity *pTarget, int endFlags, int nodeID, int nodeTargetType, int flYaw, int a9);	// "CAI_Pathfinder::BuildSimpleRoute": for the node nodeID (any when -1) of the target type, when the probe can move from the start to the end a one waypoint route to the end position; 0 otherwise (ret 0x24: nine stack arguments)
 	CAI_Waypoint *sub_10303d10(int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9);	// "CAI_Pathfinder::BuildGroundRoute" (ret 0x24: nine stack arguments): only the profiler scope "CAI_Pathfinder_BuildGroundRoute" (fully inlined enter: GetSubNode with "Unaccounted", rdtsc sample, CVProfile::PushGroupInlined; exit: ExitScopeInlined) around sub_10303850(0, a1 .. a9); returns its result (kept in ebp across the exit)
