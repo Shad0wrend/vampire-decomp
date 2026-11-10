@@ -41,7 +41,7 @@ public:
 	int m_unk5f94;
 	int m_pad5f98;
 	const char *m_pSceneName;	// 0x5f9c
-	unsigned int m_hScene;	// 0x5fa0
+	EHANDLE m_hScene;	// 0x5fa0
 	string_t m_iszExpressionOverride;	// 0x5fa4
 	char m_pad5fa8[0x5fb8 - 0x5fa8];
 	int m_nPose5fb8[10];	// 0x5fb8: pose parameter indices (body_trans_Y .. neck_trans)
@@ -82,6 +82,7 @@ public:
 	CAI_BaseHumanoid *vfunc5(unsigned int flags);	// scalar deleting destructor: purges the three vectors at +0x6038, +0x6024 and +0x5f88 (grow size at +8, size at +0xc, element pointer at +0x10 of each), runs the base destructor body (stub 0x1000aa51) and, with bit 0 of flags, deletes this
 	void sub_1000aa51();	// base destructor body, called directly
 	void vfunc277(const float *v);	// slot 277: clears bit 0 of the int at +0x5f4c, then tail-calls CBaseFlex::sub_100b5b00(v)
+	void sub_10260750();
 	void sub_10260670(const char *pszName);	// sets the scene name at +0x5f9c: clears it for an empty name, else (unless it is already the current name) starts the scene through sub_10084b40 (handle into +0x5fa0) and stores the name when the handle resolves
 	CAI_HumanoidMotor *vfunc427();	// "CAI_BaseHumanoid::vfunc427": new CAI_HumanoidMotor(this), the motor's base constructor sub_102e0900 on the new object, null when the allocation fails
 	CAI_Navigator *vfunc429();	// "CAI_BaseHumanoid::vfunc429": new CAI_HumanoidNavigator(this) (0x6c bytes), its base constructor on the new object, null when the allocation fails
