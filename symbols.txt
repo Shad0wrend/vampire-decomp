@@ -10440,6 +10440,7 @@
 0x1000f1b4 func   ?sub_102e83e0@CUnknown102e83e0@@QAE_NXZ CUnknown102e83e0::sub_102e83e0
 0x1000f1b9 func   ?Grow@?$CUtlMemory@UCBasePlayerMapVisit@@@@QAEXH@Z CUtlMemory<CBasePlayerMapVisit>::Grow
 0x1000f1b9 func   ?sub_101859a0@S101859a0@@QAEXH@Z S101859a0::sub_101859a0
+0x1000f1be func   ?sub_102fcfe0@@YAXPAPAVCAI_Node@@PAHPAUCNodeInfoBits@@HHHHHH@Z sub_102fcfe0
 0x1000f1c3 func   ?vfunc24@CRestore@@UAEHPAMHH@Z CRestore::vfunc24
 0x1000f1c8 func   ?sub_100d1d50@@YAXXZ sub_100d1d50
 0x1000f1cd func   ?sub_1023eff0@@YAXPADPBD@Z sub_1023eff0

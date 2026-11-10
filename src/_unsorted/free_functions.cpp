@@ -200163,6 +200163,49 @@ bool CAI_Pathfinder::sub_102fce80(int moveType, CAI_PathfinderLink *pLink)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fcfe0 size=0x1d1
+#include "Vector.h"
+#include "CAI_Node.h"
+void sub_10142e90(const Vector *a, const Vector *b, int x, int y, int z, unsigned char c, float f);
+void sub_10142aa0(const Vector *p, int a, int b, int c, int d, int e, int f, float g);
+int sub_102d6100(int hull);
+int sub_102d6120(int hull);
+struct CNodeInfoBits
+{
+	unsigned int m_nLevel : 6;
+	unsigned int m_nRest : 26;
+};
+
+void sub_102fcfe0(CAI_Node **pNodesA, int *pNodesB, CNodeInfoBits *pNodesC, int i4, int i5, int hull, int nA, int nB, int nC)
+{
+	CAI_Node *pNode2 = pNodesA[i5];
+	CNodeInfoBits info = pNodesC[i4];
+	Vector vec2, vec1;
+	pNodesA[i4]->sub_102fb0d0(&vec1.x, hull);
+	pNode2->sub_102fb0d0(&vec2.x, hull);
+	int k = pNodesB[i4];
+	int n = info.m_nLevel;
+	int r = nA - n * 4;
+	r = r < 0 ? 0 : r;
+	nB = nB - n * 4;
+	nB = nB < 0 ? 0 : nB;
+	nC = nC - n * 4;
+	nC = nC < 0 ? 0 : nC;
+	if (k != -1) {
+		Vector vec3;
+		pNodesA[k]->sub_102fb0d0(&vec3.x, hull);
+		sub_10142e90(&vec3, &vec1, r >> 1, nB >> 1, nC >> 1, 1, 10.0f);
+	}
+	sub_10142aa0(&vec1, sub_102d6100(hull), sub_102d6120(hull), r, nB, nC, 0, 10.0f);
+	Vector delta = vec2 - vec1;
+	delta.NormalizeInPlace();
+	{
+		Vector vecTmp = vec1 + delta * 10.0f;
+		sub_10142e90(&vec1, &vecTmp, r, nB, nC, 1, 10.0f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fdcc0 size=0x393
 #include "CAI_Pathfinder.h"
 #include "CAI_Waypoint.h"
