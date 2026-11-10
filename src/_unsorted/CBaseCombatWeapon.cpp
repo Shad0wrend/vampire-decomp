@@ -175,6 +175,42 @@ float CBaseCombatWeapon::vfunc278()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024ee90 size=0xc7
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBaseCombatWeapon.h"
+
+struct CWpnPlayer { char pad[0x1eb8]; int m_nUseEdictIndex; };
+struct CWpnEnt { char pad[0xa8]; CWpnEnt *m_pControl; char pad2[0x2e0 - 0xac]; void *m_pEdict; };
+struct CWpnEdict { char pad[0x40]; CWpnEnt *m_pUnk; char m_bValid; };
+
+bool CBaseCombatWeapon::vfunc86(int a, void *pEdict, int c, int d, int e)
+{
+	if (*(float *)((char *)this + 0x90) > gpGlobals->curtime)
+		return true;
+	CWpnEnt *pOwner = (CWpnEnt *)sub_102521f0();
+	if (pOwner) {
+		CWpnEnt *pControl = pOwner->m_pControl;
+		CWpnEdict *pOther = (CWpnEdict *)pEdict;
+		CWpnEnt *pUnk = pOther->m_bValid ? pOther->m_pUnk : 0;
+		CWpnPlayer *pPlayer;
+		if (!pUnk)
+			pPlayer = 0;
+		else
+			pPlayer = (CWpnPlayer *)pUnk->m_pControl;
+		if (pPlayer->m_nUseEdictIndex == engine->vfunc35(pcd_stage((int)pOwner->m_pEdict)))
+			return true;
+		if (pControl) {
+			if (pControl->m_pEdict == pEdict)
+				return true;
+			int nState = *(int *)((char *)this + 0x8b0);
+			if (nState == 1 || nState == 0)
+				return false;
+		}
+	}
+	return sub_100ab020(a, pEdict, c, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024efa0 size=0x61
 #include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc369
