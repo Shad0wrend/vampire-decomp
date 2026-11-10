@@ -180258,6 +180258,194 @@ void CAI_BaseNPCTroika::sub_102b1a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b1cd0 size=0x6dd
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CDevFlagObj.h"
+
+extern CDevFlagObj *g_10924a6c;
+
+namespace block_102b8cd0 {
+struct CAI_BaseNPCTroikaUnit : CAI_BaseNPCTroika { bool sub_102b8cd0(void *pEnt); };
+}
+using namespace block_102b8cd0;
+
+struct S101b9920
+{
+	EHANDLE m_hEnt;
+	int m_nKind;
+	const Vector *sub_101b99d0();
+};
+
+struct CTroikaSenseView
+{
+	char m_pad0000[0x5b68];
+	EHANDLE m_h5b68;
+	EHANDLE m_h5b6c;
+	EHANDLE m_h5b70;
+	EHANDLE m_h5b74;
+	EHANDLE m_h5b78;
+	char m_pad5b7c[0x6108 - 0x5b7c];
+	S101b9920 m_rec6108; char m_pad610c[0x2c - 8];
+	S101b9920 m_rec6134; char m_pad6138[0x2c - 8];
+	S101b9920 m_rec6160; char m_pad6164[0x2c - 8];
+	S101b9920 m_rec618c; char m_pad6190[0x2c - 8];
+	S101b9920 m_rec61b8; char m_pad61bc[0x2c - 8];
+	S101b9920 m_rec61e4;
+};
+
+void CAI_BaseNPCTroika::sub_102b1cd0()
+{
+	CTroikaSenseView *p = (CTroikaSenseView *)this;
+	CEntityVSlots *pSlots = (CEntityVSlots *)this;
+
+	sub_10015839(0x25);
+	sub_10015839(0x33);
+
+	if (gpGlobals->curtime >= m_flNextInvestigateSoundTime)
+	{
+		S101b9920 *pTarget = 0;
+
+		if (sub_10014df8(0x6e) && (sub_10269c70(0x6e) || sub_102b3270(p->m_rec61e4.m_hEnt.Get(), 0)))
+		{
+			g_10924a6c->vfunc1();
+			sub_100041b0(0x25);
+			pTarget = &p->m_rec61e4;
+		}
+		if (sub_10014df8(0x71) && (sub_10269c70(0x71) || sub_102b3270(p->m_rec6134.m_hEnt.Get(), 0)))
+		{
+			g_10924a6c->vfunc1();
+			sub_100041b0(0x25);
+			pTarget = &p->m_rec6134;
+		}
+		if (sub_10014df8(0x6a))
+		{
+			g_10924a6c->vfunc1();
+			sub_100041b0(0x25);
+			pTarget = &p->m_rec6108;
+		}
+		if (sub_10014df8(0x6f) && (sub_10269c70(0x6f) || sub_102b3270(p->m_rec61b8.m_hEnt.Get(), 0)))
+		{
+			g_10924a6c->vfunc1();
+			sub_100041b0(0x25);
+			pTarget = &p->m_rec61b8;
+		}
+		if (sub_10014df8(0x70) && (sub_10269c70(0x70) || sub_102b3270(p->m_rec618c.m_hEnt.Get(), 1)))
+		{
+			g_10924a6c->vfunc1();
+			sub_100041b0(0x25);
+			pTarget = &p->m_rec618c;
+		}
+		if (sub_10014df8(0x6d) && (sub_10269c70(0x6d) || sub_102b3270(p->m_rec6160.m_hEnt.Get(), 1)))
+		{
+			g_10924a6c->vfunc1();
+			sub_100041b0(0x25);
+			pTarget = &p->m_rec6160;
+		}
+
+		if (sub_10269c70(0x33) && pTarget)
+		{
+			CBaseEntity *pEnemy = (CBaseEntity *)pSlots->slot167();
+			if (pEnemy && pEnemy == pTarget->m_hEnt.Get())
+			{
+				const Vector &vecOrigin = *pSlots->slot217();
+				Vector vecDelta = *pTarget->sub_101b99d0() - vecOrigin;
+				if (DotProduct(vecDelta, m_vec6290) < 0.0f)
+				{
+					g_10924a6c->vfunc1();
+					sub_100041b0(0x33);
+				}
+			}
+		}
+	}
+
+	if (sub_10269c70(0x2d))
+	{
+		if (!((CAI_BaseNPCTroikaUnit *)this)->sub_102b8cd0(p->m_h5b78.Get()))
+			return;
+
+		if (p->m_h5b78.Get() == m_h628c.Get())
+		{
+			if (sub_10014df8(0x5a))
+			{
+				g_10924a6c->vfunc1();
+				sub_100041b0(0x2d);
+			}
+			else
+				sub_10015839(0x2d);
+		}
+		else if (p->m_h5b78.Get() == (CBaseEntity *)pSlots->slot167())
+		{
+			if (sub_10014df8(0x46))
+			{
+				g_10924a6c->vfunc1();
+				sub_100041b0(0x2d);
+			}
+			else
+				sub_10015839(0x2d);
+		}
+		else if (p->m_h5b78.Get() == p->m_h5b68.Get())
+		{
+			if (sub_10014df8(0x43))
+			{
+				g_10924a6c->vfunc1();
+				sub_100041b0(0x2d);
+			}
+			else
+				sub_10015839(0x2d);
+		}
+		else if (p->m_h5b78.Get() == p->m_h5b6c.Get())
+		{
+			if (sub_10014df8(0x44))
+			{
+				g_10924a6c->vfunc1();
+				sub_100041b0(0x2d);
+			}
+			else
+				sub_10015839(0x2d);
+		}
+		else if (p->m_h5b78.Get() == p->m_h5b70.Get())
+		{
+			if (sub_10014df8(0x45))
+			{
+				g_10924a6c->vfunc1();
+				sub_100041b0(0x2d);
+			}
+			else
+				sub_10015839(0x2d);
+		}
+		else if (p->m_h5b78.Get() == p->m_h5b74.Get())
+		{
+			if (sub_10014df8(0x5b))
+			{
+				g_10924a6c->vfunc1();
+				sub_100041b0(0x2d);
+			}
+			else
+				sub_10015839(0x2d);
+		}
+		else if (gpGlobals->curtime >= m_flNextSeeSoundSourceTime)
+		{
+			if (pSlots->slot363(p->m_h5b78.Get()))
+			{
+				if (pSlots->slot201(p->m_h5b78.Get(), 0x2804091, 0, 0))
+				{
+					g_10924a6c->vfunc1();
+					sub_100041b0(0x2d);
+				}
+				else
+					sub_10015839(0x2d);
+			}
+			else
+				sub_10015839(0x2d);
+			m_flNextSeeSoundSourceTime = gpGlobals->curtime + 0.5f;
+		}
+	}
+	else
+		sub_10015839(0x2d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b2570 size=0x15e
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"
