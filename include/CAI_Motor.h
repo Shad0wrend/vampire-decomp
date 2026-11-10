@@ -83,6 +83,8 @@ public:
 	void sub_102e1e20(int yawSpeed);	// "CAI_Motor::UpdateYaw": the owner's yaw approaches the ideal yaw (+0x34) by yawSpeed (the float at +0x38 for -1) * 10 per second since the last update (+0x2c)
 	void sub_102e1cf0();	// stub 0x10011af9: the yaw speed (+0x38) from slot 0 of the movement sink at +0x10
 	void sub_102e1c10(float flIdealYaw, float flYawSpeed);	// "CAI_Motor::SetIdealYawAndUpdate" (stub 0x10014b8c): sets the ideal yaw (flipped when the byte at +0x28 is set, limited by the turn rate unless the largest change is 180), the yaw speed (+0x38, -1 keeps it; -2 asks the movement sink) and updates the yaw
+	int GetHullType() const { return m_08; }
+	float GetMoveInterval() { return m_30; }
 	float sub_102e12c0();	// CAI_Component helper (stub 0x10008bfc): a scale factor, returned in st(0)
 	float sub_102e12e0();	// CAI_Component helper (stub 0x10006721): the owner's value at slot 249 (+0x3e4), returned in st(0)
 	int sub_102e1560(int a, float flScale, float flValue, int b, int c);	// stub 0x10012116, called directly by slot 19 with five stack arguments
