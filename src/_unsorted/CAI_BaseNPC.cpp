@@ -1099,6 +1099,249 @@ void CAI_BaseNPC::vfunc538()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026b810 size=0x737
+// TARGET: CAI_BaseNPC::vfunc333
+#include "CAI_BaseNPC.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+
+struct Holder;
+extern CGlobalEntityList g_106eb5d8;
+extern CGlobalEntityList *g_10566458;
+extern float g_104454c4;
+
+void *__fastcall sub_1017cf90(Holder *pHolder);
+
+class CUnknown1006edb0
+{
+public:
+	int sub_1006edb0();
+};
+
+#define VS(n) virtual void s##n();
+#define VS10(p) VS(p##0) VS(p##1) VS(p##2) VS(p##3) VS(p##4) VS(p##5) VS(p##6) VS(p##7) VS(p##8) VS(p##9)
+#define VS100(p) VS10(p##0) VS10(p##1) VS10(p##2) VS10(p##3) VS10(p##4) VS10(p##5) VS10(p##6) VS10(p##7) VS10(p##8) VS10(p##9)
+
+class CSlotView333
+{
+public:
+	VS100(0) VS10(10) VS10(11) VS10(12) VS10(13) VS10(14) VS10(15) VS10(16) VS10(17) VS10(18)
+	VS(190) VS(191) VS(192)
+	virtual Vector vfunc193();
+	VS(194) VS(195) VS(196) VS(197) VS(198) VS(199)
+	VS10(20) VS10(21)
+	virtual const Vector &vfunc220();
+	VS(221) VS(222) VS(223) VS(224) VS(225) VS(226) VS(227) VS(228) VS(229)
+	VS10(23) VS10(24) VS10(25) VS10(26)
+	VS(270) VS(271) VS(272) VS(273) VS(274) VS(275) VS(276)
+	virtual void vfunc277(const Vector *pTarget);
+	VS(278) VS(279)
+	VS10(28) VS10(29) VS10(30) VS10(31) VS10(32) VS10(33) VS10(34) VS10(35)
+	VS(360) VS(361) VS(362) VS(363) VS(364) VS(365) VS(366) VS(367)
+	virtual Vector vfunc368();
+	VS(369) VS(370) VS(371) VS(372) VS(373) VS(374) VS(375) VS(376) VS(377) VS(378) VS(379)
+	VS10(38) VS10(39) VS10(40) VS10(41) VS10(42) VS10(43) VS10(44) VS10(45) VS10(46)
+	VS(470) VS(471) VS(472) VS(473)
+	virtual void *vfunc474();
+	VS(475) VS(476) VS(477) VS(478) VS(479)
+	VS10(48) VS10(49) VS10(50) VS10(51) VS10(52)
+	VS(530) VS(531) VS(532) VS(533) VS(534) VS(535) VS(536)
+	virtual void vfunc537(const Vector *pTarget, float flInterval);
+};
+
+class CNavView333
+{
+public:
+	char m_pad00[0x18];
+	int m_i18;
+	void *sub_102ee5e0();
+	bool sub_102ee6a0();
+};
+
+class CAI_BaseNPCV333 : public CBaseCombatCharacter
+{
+public:
+	char m_pad19a8[0x5b94 - 0x19a8];
+	int m_nEyeTarget;		// 0x5b94
+	char m_pad5b98[0x5ce4 - 0x5b98];
+	EHANDLE m_hTarget5ce4;		// 0x5ce4
+	char m_pad5ce8[0x5d34 - 0x5ce8];
+	CNavView333 *m_pNavigator;	// 0x5d34
+	char m_pad5d38[0x5d6c - 0x5d38];
+	float m_flNextEyeLook;		// 0x5d6c
+
+	bool sub_10325da0(const Vector &vecTarget);
+	void sub_10331da0(Vector *pA, Vector *pB);
+	void sub_1026b580(int nEye, Vector *pOut);
+};
+
+void CAI_BaseNPC::vfunc333(float flInterval)
+{
+	CAI_BaseNPCV333 *p = (CAI_BaseNPCV333 *)this;
+	CSlotView333 *slots = (CSlotView333 *)this;
+
+	if (p->m_nEyeTarget > 0)
+		goto END;
+
+	{
+		CBaseHandle *ph = (CBaseHandle *)&p->m_hDialogPartnerFE8;
+		CGlobalEntityList *pList = g_10566458;
+		CBaseEntity *pPartner;
+		CBaseEntity *pOwner;
+		if (pList->sub_100290c0((const unsigned int *)ph) != 0 &&
+		    (pPartner = pList->sub_100290c0((const unsigned int *)ph)) != 0 &&
+		    (pOwner = (CBaseEntity *)pPartner->m_pA8) != 0)
+		{
+			CBaseEntity *pLook = (CBaseEntity *)sub_1017cf90((Holder *)pOwner);
+			if (pLook != 0 && (((CUnknown1006edb0 *)pLook)->sub_1006edb0() & 0x10))
+			{
+				if (p->sub_10325da0(((CSlotView333 *)pLook)->vfunc193()))
+				{
+					p->m_hEyeLookTarget = pLook;
+					goto END;
+				}
+			}
+			else
+			{
+				if (p->sub_10325da0(((CSlotView333 *)pOwner)->vfunc193()))
+				{
+					p->m_hEyeLookTarget = pOwner;
+					goto END;
+				}
+			}
+			pList = g_10566458;
+		}
+
+		ph = (CBaseHandle *)&p->m_hTarget5ce4;
+		CBaseEntity *pTarget = (CBaseEntity *)pList->sub_100290c0((const unsigned int *)ph);
+		if (pTarget != 0)
+		{
+			if (p->sub_10325da0(((CSlotView333 *)pList->sub_100290c0((const unsigned int *)ph))->vfunc193()))
+			{
+				p->m_hEyeLookTarget = p->m_hTarget5ce4;
+				goto END;
+			}
+		}
+	}
+
+	if (vfunc167() != 0)
+	{
+		if (p->sub_10325da0(((CSlotView333 *)(CBaseEntity *)vfunc167())->vfunc193()))
+		{
+			p->m_hEyeLookTarget = (CBaseEntity *)vfunc167();
+			goto END;
+		}
+	}
+
+	if (p->m_pNavigator->sub_102ee6a0())
+	{
+		Vector vec = *(Vector *)p->m_pNavigator->sub_102ee5e0();
+		if (p->m_pNavigator->m_i18 == 0)
+			vec.z = vfunc193().z;
+		if (p->sub_10325da0(vec))
+		{
+			slots->vfunc537(&vec, flInterval);
+			slots->vfunc277(&vec);
+			return;
+		}
+	}
+
+	if ((sub_10269aa0(0x6d) && sub_10269c70(0x6d)) ||
+	    (sub_10269aa0(0x6a) && sub_10269c70(0x6a)))
+	{
+		char *pObj = (char *)vfunc474();
+		if (pObj != 0 && (*(int *)(pObj + 4) == 1 || *(int *)(pObj + 4) == 8))
+		{
+			Vector *pPosition = (Vector *)(pObj + 0x20);
+			if (p->sub_10325da0(*pPosition))
+			{
+				slots->vfunc537(pPosition, flInterval);
+				slots->vfunc277(pPosition);
+				return;
+			}
+		}
+	}
+
+	if (p->m_flNextEyeLook > gpGlobals->curtime)
+	{
+		if (!p->sub_10325da0(p->m_vEyeLookTarget))
+			p->m_flNextEyeLook = 0.0f;
+	}
+
+	if (p->m_flNextEyeLook < gpGlobals->curtime)
+	{
+		Vector vecLook = slots->vfunc368();
+		CBaseEntity *pBest = 0;
+		{
+			float flClosest = 16384.0f;
+			Vector vecSearch = vecLook * 300.0f + slots->vfunc193();
+
+			for (CBaseEntity *pIter = g_106eb5d8.sub_100f79b0(0, (const float *)&vecSearch, 300.0f);
+			     pIter != 0;
+			     pIter = g_106eb5d8.sub_100f79b0(pIter, (const float *)&vecSearch, 300.0f))
+			{
+				if (pIter != (CBaseEntity *)this &&
+				    (*(void **)((char *)pIter + 0x94) != 0 || (pIter->sub_100b3700() & 0x80)))
+				{
+					float flDist = (slots->vfunc220() - ((CSlotView333 *)pIter)->vfunc193()).Length();
+					if (flDist < flClosest)
+					{
+						if (p->sub_10325da0(((CSlotView333 *)pIter)->vfunc193()))
+						{
+							pBest = pIter;
+							flClosest = flDist;
+						}
+					}
+				}
+			}
+		}
+
+		p->m_hEyeLookTarget = pBest;
+
+		if (p->m_hEyeLookTarget != 0)
+		{
+			p->m_flNextEyeLook = gpGlobals->curtime + enginerandom->vfunc2(1, 5);
+		}
+		else
+		{
+			p->m_vEyeLookTarget = vecLook * 500.0f + slots->vfunc193();
+			p->m_flNextEyeLook = gpGlobals->curtime + 0.5;
+		}
+	}
+
+END:
+	if (p->m_hEyeLookTarget == (CBaseEntity *)this)
+		p->m_hEyeLookTarget = 0;
+
+	if (p->m_nEyeTarget > 0)
+	{
+		p->sub_1026b580(p->m_nEyeTarget, &p->m_vEyeLookTarget);
+	}
+	else if (p->m_hEyeLookTarget != 0)
+	{
+		p->m_vEyeLookTarget = ((CSlotView333 *)(CBaseEntity *)p->m_hEyeLookTarget)->vfunc193();
+	}
+	else
+	{
+		Vector v1, v2;
+		p->sub_10331da0(&v1, &v2);
+		p->m_vEyeLookTarget = v2 * 25.0f + v1;
+	}
+
+	slots->vfunc537(&p->m_vEyeLookTarget, flInterval);
+
+	float flTime = flInterval;
+	while (flTime > g_104454c4)
+	{
+		p->m_vCurEyeTarget = p->m_vCurEyeTarget * (1.0f - p->m_flEyeIntegRate) +
+		                      p->m_vEyeLookTarget * p->m_flEyeIntegRate;
+		flTime -= 0.1;
+	}
+
+	slots->vfunc277(&p->m_vCurEyeTarget);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026ca80 size=0x283
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
