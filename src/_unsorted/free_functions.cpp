@@ -185642,6 +185642,47 @@ int sub_102ccf50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ccfb0 size=0x27b
+#include "CAI_BaseNPC.h"
+#include "utlmemory.h"
+#include "utlvector.h"
+#include "datamap.h"
+class CAI_BaseNPC;
+template <class T> class CHandle;
+void sub_1000432c();
+void sub_10004386();
+void sub_1000439a();
+void sub_10006672();
+#include "CUtlVectorDataOps.h"
+inline ISaveRestoreOps *Ops_109f0794()
+{
+	static CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12> ops;
+	return (ISaveRestoreOps *)&ops;
+}
+extern int g_106093e8[2];
+int *sub_102ccfb0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 2, "m_iszActor", {0x454, 0}, 1, 6, "Actor", 0, 0 },
+        { 2, "m_iszGoal", {0x458, 0}, 1, 6, "Goal", 0, 0 },
+        { 5, "m_fStartActive", {0x45c, 0}, 1, 6, "StartActive", 0, 0 },
+        { 2, "m_iszConceptModifiers", {0x464, 0}, 1, 6, "BaseConceptModifiers", 0, 0 },
+        { 4, "m_SearchType", {0x460, 0}, 1, 6, "SearchType", 0, 0 },
+        { 0xa, "m_actors", {0x468, 0}, 1, 2, 0, Ops_109f0794(), 0 },
+        { 0xc, "m_hGoalEntity", {0x47c, 0}, 1, 2, 0, 0, 0 },
+        { 4, "m_flags", {0x480, 0}, 1, 2, 0, 0, 0 },
+        { 0, "CAI_GoalEntityDelayedRefresh", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10006672 },
+        { 0, "InputActivate", {0, 0}, 1, 8, "Activate", 0, (void *)sub_1000432c },
+        { 0, "InputUpdateActors", {0, 0}, 1, 8, "UpdateActors", 0, (void *)sub_1000439a },
+        { 0, "InputDeactivate", {0, 0}, 1, 8, "Deactivate", 0, (void *)sub_10004386 },
+    };
+    g_106093e8[1] = 12;
+    g_106093e8[0] = (int)&dataDesc[1];
+    return g_106093e8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cd310 size=0x71
 #include "inputdata_t.h"
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
