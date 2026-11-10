@@ -18742,6 +18742,61 @@ void CUnknown1006c7d0::sub_1006c7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006c810 size=0x151
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CUnknown1006c810.h"
+#include <stdio.h>
+
+CVTraitTextId sub_102038e0(CVTraitKV *pKV, const char *pszKey);
+CVTraitTextId sub_10203920(CVTraitKV *pKV);
+
+bool CUnknown1006c810::sub_1006c810(CVTraitKV *pKV, const CVTraitDependency *pDefaultDependency)
+{
+	if (!pKV)
+		return true;
+	m_nInternalName = sub_102038e0(pKV, "InternalName").m_id;
+	m_nText = sub_10203920(pKV).m_id;
+	const char *pszDep = pKV->GetString("TraitDependency", g_106b8540);
+	if (*pszDep == 0) {
+		if (pDefaultDependency)
+			m_Dependency = *pDefaultDependency;
+		else
+			m_Dependency.sub_10204270();
+	} else {
+		m_Dependency.sub_10204570(pszDep);
+	}
+	if (pKV->GetInt("Clamping", 0))
+		m_flags |= 1;
+	char szKey[32];
+	const char *s;
+	do {
+		sprintf(szKey, "%d", m_nValues);
+		s = pKV->GetString(szKey, g_106b8540);
+		if (*s == 0)
+			break;
+		m_nValues++;
+	} while (*s);
+	if (m_nValues > 0) {
+		m_pValues = new float[m_nValues];
+		int nFound = 0;
+		for (int i = 0; nFound < m_nValues; i++) {
+			sprintf(szKey, "%d", i);
+			if (*pKV->GetString(szKey, g_106b8540) != 0)
+				m_pValues[nFound++] = pKV->GetFloat(szKey, 3.402823466e+38f);
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c9d0 size=0x53
 struct CFloatTable1006c9d0 {
 	char m_pad[0xc];
