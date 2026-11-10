@@ -11753,6 +11753,7 @@
 0x10010faf func   ?sub_1006be50@CUtlMemUnit1006be50@@QAEXH@Z CUtlMemUnit1006be50::sub_1006be50
 0x10010fb4 func   ?sub_10248c20@CKeyValuesX@@QAEHPBDH@Z CKeyValuesX::sub_10248c20
 0x10010fb9 func   ?sub_101bb760@@YIXPAXHM@Z sub_101bb760
+0x10010fbe func   ?sub_1017fd60@CUnknown1017fd60@@QAEXHPAVCBaseEntity@@@Z CUnknown1017fd60::sub_1017fd60
 0x10010fc3 func   ?vfunc2@CBaseTempEntity@@UAEPAV1@I@Z CBaseTempEntity::vfunc2
 0x10010fcd func   ?vfunc438@CNPC_VTaxiDriver@@QAEHXZ CNPC_VTaxiDriver::vfunc438
 0x10010fd2 func   ?vfunc5@CPhysForce@@QAEPAV1@I@Z CPhysForce::vfunc5

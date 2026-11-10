@@ -93030,6 +93030,42 @@ void __fastcall sub_1017faa0(CMsgPlayerView *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017fd60 size=0x17e
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CUnknown1017fd60.h"
+#include "CBaseEntity.h"
+
+extern void (*g_109f3628)(const char *, ...);	// Msg
+
+template <class E>
+inline int ENTINDEX_1017fd60(E pEdict)
+{
+	return engine->vfunc35(pEdict);
+}
+
+void CUnknown1017fd60::sub_1017fd60(int value, CBaseEntity *pNpc)
+{
+	for (int i = 0; i < m_list.Count(); i++)
+	{
+		if (m_list[i].m_index == ENTINDEX_1017fd60(pNpc->m_pEdict2e0))
+		{
+			if (m_list[i].m_value < value)
+				m_list[i].m_value = value;
+			m_list[i].m_time = gpGlobals->curtime;
+			return;
+		}
+	}
+	CUnknown1017fd60Rec rec;
+	rec.m_handle = pNpc ? *pNpc->vfunc1() : 0xffffffff;
+	rec.m_time = gpGlobals->curtime;
+	rec.m_index = ENTINDEX_1017fd60(pNpc->m_pEdict2e0);
+	rec.m_value = value;
+	m_list.AddToTail(rec);
+	g_109f3628("Scared NPC: %d (dist:%.2f)\n", ENTINDEX_1017fd60(pNpc->m_pEdict2e0), (double)*(float *)((char *)pNpc + 0x6264));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017ff40 size=0x106
 #include "CBaseEntity.h"
 #include "CUnknown1017fd60.h"
