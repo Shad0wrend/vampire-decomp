@@ -144447,6 +144447,91 @@ void CSecCamera::sub_1020c3d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020c4f0 size=0x25c
+#include "CSecCamera.h"
+#include "CBaseToggle.h"
+#include "globalvars.h"
+#include "Tier1.h"
+#include <stdlib.h>
+
+class CUnk1020c820
+{
+public:
+	void sub_1020c820();
+};
+
+CBaseEntity *sub_101cd9e0(int nIndex);
+
+// TARGET: CSecCamera::sub_1020c4f0
+void CSecCamera::sub_1020c4f0(int nState)
+{
+	void (*pfnDevMsg)(const char *, ...) = g_109f3630;
+	for (;;)
+	{
+		m_nState79c = nState;
+		switch (nState)
+		{
+		case 2:
+			((CBaseToggle *)this)->sub_101c17e0(&m_vecEnd7b4, *(int *)&m_flF78c);
+			m_flNextStateTime7a0 = m_flF780 + gpGlobals->curtime;
+			sub_1020c9a0(m_sPanSnd);
+			return;
+		case 3:
+			((CBaseToggle *)this)->sub_101c17e0(&m_vecStart7a8, *(int *)&m_flF78c);
+			m_flNextStateTime7a0 = m_flF780 + gpGlobals->curtime;
+			sub_1020c9a0(m_sPanSnd);
+			return;
+		case 1:
+			m_flNextStateTime7a0 = m_fPauseTime + gpGlobals->curtime;
+			return;
+		case 0:
+			m_flNextStateTime7a0 = m_fPauseTime + gpGlobals->curtime;
+			return;
+		case 4:
+			m_flNextStateTime7a0 = m_fZoomTime + gpGlobals->curtime;
+			((CUnk1020c820 *)this)->sub_1020c820();
+			sub_1020cbf0("zoom_in");
+			sub_1020c9a0(m_sZoomInSnd);
+			m_n670 = 2;
+			return;
+		case 5:
+			m_flNextStateTime7a0 = m_fZoomTime + gpGlobals->curtime;
+			sub_1020cbf0("zoom_out");
+			sub_1020c9a0(m_sZoomOutSnd);
+			return;
+		case 6:
+			m_flNextStateTime7a0 = 0.0f;
+			((CUnk1020c820 *)this)->sub_1020c820();
+			m_Output7dc.sub_100cd660(sub_101cd9e0(1), this, 0.0f);
+			sub_1020c9a0(m_sAlarmSnd);
+			m_n670 = 1;
+			m_b77c = 0;
+			m_bPlayerSpotted = true;
+			return;
+		case 7:
+			m_nState79c = 7;
+			m_flNextStateTime7a0 = 0.0f;
+			((CUnk1020c820 *)this)->sub_1020c820();
+			m_b77c = 0;
+			sub_1020c890();
+			m_n670 = 0;
+			m_bPlayerSpotted = false;
+			return;
+		case 8:
+			m_n670 = 0;
+			((CBaseToggle *)this)->sub_101c17e0(&m_vecEnd7b4, *(int *)&m_flF78c);
+			m_flNextStateTime7a0 = (float)abs((int)(m_vecEnd7b4.y - s219()[1])) / m_flF78c + gpGlobals->curtime;
+			sub_1020c9a0(m_sPanSnd);
+			return;
+		default:
+			pfnDevMsg("Security Camera wants unrecognized state!");
+			nState = 7;
+			continue;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020c820 size=0x19
 extern char g_1070d9d0[];
 
