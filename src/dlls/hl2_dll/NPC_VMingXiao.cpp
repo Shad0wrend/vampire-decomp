@@ -1,6 +1,221 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10392d80 size=0x833
+#include "CNPC_VTzimisce.h"
+#include "CNPC_VMingXiao.h"
+#include "CAI_Motor.h"
+#include "CUnknown102e0150.h"
+#include "CUnknown102e0a60.h"
+#include "CUnknown102ee120.h"
+#include "CUnknown10398d90.h"
+#include "VectorHelpers.h"
+struct CUnknown102e0a40 { void sub_102e0a40(float f); };
+extern Vector g_10934060;
+extern float g_1093b960;
+extern const float g_104bc6cc;
+struct CMingXiaoNavGoal
+{
+	CMingXiaoNavGoal(int t, const Vector &d, int act, float tol, unsigned fl = 0, CBaseEntity *pTgt = 0)
+		: type(t), dest(d), n10(-1), activity(act), n18(-1), n1c(-1), fl20(tol), n24(fl),
+		  tolerance(g_1093b960), vec2c(g_10934060), pTarget(pTgt), n3c(0)
+	{
+	}
+	int type;
+	Vector dest;
+	int n10;
+	int activity;
+	int n18;
+	int n1c;
+	float fl20;
+	unsigned n24;
+	float tolerance;
+	Vector vec2c;
+	CBaseEntity *pTarget;
+	int n3c;
+};
+inline float AngleY(const float *p) { return p[1]; }
+float sub_102d61b0(int);
+void sub_101cf600(CBaseEntity *);
+void sub_101c0b10();
+void CNPC_VMingXiao::vfunc442(void *pTask)
+{
+    switch (*(int *)pTask) {
+    case 0x9f:
+        if (sub_1032e7b0()) {
+            CUnknown102ee120 *pNav = m_p5d34;
+            pNav->sub_102ee1c0(sub_102d61b0(m_n1568) * 2.0f + *(float *)((char *)sub_1032e7b0() + 0x8c0) * ((float *)pTask)[1]);
+            sub_10273e80(0);
+            return;
+        }
+        m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
+        m_nLine1b48 = 0x296;
+        vfunc448_slot(3);
+        return;
+    case 0x89:
+        sub_102e0b40((float *)m_pMotor5d44);
+        m_f5d9c = gpGlobals->curtime;
+        sub_10289ee0(0x4b);
+        return;
+    case 0x8a:
+        sub_102e0b40((float *)m_pMotor5d44);
+        m_f5d9c = gpGlobals->curtime;
+        sub_10289ee0(0x4b);
+        return;
+    case 0x8b:
+        {
+            CBaseEntity *pEnemy = vfunc167();
+            if (pEnemy && *(int *)((char *)pEnemy + 0x9c)) {
+                sub_102e0b40((float *)m_pMotor5d44);
+                Vector vec;
+                ((CUnknown102e0150 *)vfunc541())->sub_102dfed0(&vec, vfunc167());
+                m_pMotor5d44->sub_102e2020(&vec.x, 0);
+            }
+            sub_10289ee0(0x51);
+            return;
+        }
+    case 0x8e:
+        sub_10289ee0(0x52);
+        return;
+    case 0x14a:
+        sub_1039a750();
+        sub_10273e80(0);
+        return;
+    case 0x14b:
+        return;
+    case 0x14c:
+        vfunc105("models/character/monster/MingXiao/MingXiao.mdl");
+        m_nEffectFlags |= 0x10;
+        m_n168 = 0;
+        m_n16c = 0;
+        m_n1568 = 0xf;
+        sub_10273070(1);
+        sub_101cf600(this);
+        m_b6678 = 1;
+        sub_10273e80(0);
+        return;
+    case 0x14d:
+        sub_100ac4e0((int)sub_101c0b10, 0, 0);
+        m_flNextThink = gpGlobals->curtime + 0.01f;
+        sub_10273e80(0);
+        return;
+    case 0x14e:
+        sub_10395ce0();
+        sub_10273e80(0);
+        return;
+    case 0x14f:
+        sub_103937d0((int)pTask, 0, 0x112a);
+        return;
+    case 0x150:
+        sub_103937d0((int)pTask, 1, 0x112b);
+        return;
+    case 0x151:
+        sub_103937d0((int)pTask, 2, 0x112c);
+        return;
+    case 0x152:
+        sub_103937d0((int)pTask, 3, 0x112d);
+        return;
+    case 0x153:
+        sub_102e0b40((float *)m_pMotor5d44);
+        ((CUnknown102e0a40 *)m_pMotor5d44)->sub_102e0a40(AngleY(vfunc221_slot()));
+        ((CUnknown102e0a60 *)m_pMotor5d44)->sub_102e0a60(0x41a00000);
+        sub_10289ee0(0x1131);
+        return;
+    case 0x154:
+        sub_102e0b40((float *)m_pMotor5d44);
+        ((CUnknown102e0a40 *)m_pMotor5d44)->sub_102e0a40(AngleY(vfunc221_slot()));
+        ((CUnknown102e0a60 *)m_pMotor5d44)->sub_102e0a60(0x41a00000);
+        sub_10289ee0(0x1130);
+        return;
+    case 0x155:
+        {
+            sub_102e0b40((float *)m_pMotor5d44);
+            CBaseEntity *pOwner = m_h6680.Get();
+            vfunc388(!pOwner ? 0 : *(int *)((char *)pOwner + 0xa0), 0);
+            sub_10289ee0(0x19);
+            m_flTime66c0 = sub_10397f70() + gpGlobals->curtime;
+            return;
+        }
+    case 0x156:
+        {
+            int n = (int)((float *)pTask)[1];
+            if (n >= 0 && n <= 4) {
+                ((CUnknown10398d90 *)this)->sub_10398d90(n);
+                sub_10273e80(0);
+                return;
+            }
+            sub_10398d90(0);
+            sub_10273e80(0);
+            return;
+        }
+    case 0x157:
+        {
+            CMingXiaoNavGoal goal(4, *(Vector *)&m_n6720, 0x13, g_104bc6cc);
+            m_p5d34->sub_102ecd20(&goal, 0);
+            return;
+        }
+    case 0x158:
+        if (m_nSide671c == 4) {
+            sub_10289ee0(0x112f);
+            return;
+        }
+        sub_10289ee0(0x112e);
+        return;
+    case 0x159:
+        if (m_nMode673c == 3 || m_nMode673c == 4) {
+            sub_103990a0();
+            sub_10273e80(0);
+            return;
+        }
+        break;
+    case 0x15a:
+        sub_102e0b40((float *)m_pMotor5d44);
+        ((CUnknown102e0a40 *)m_pMotor5d44)->sub_102e0a40(AngleY(vfunc221_slot()));
+        ((CUnknown102e0a60 *)m_pMotor5d44)->sub_102e0a60(0x41a00000);
+        if (m_nSide671c == 4) {
+            sub_10289ee0(0x1131);
+            return;
+        }
+        sub_10289ee0(0x1130);
+        return;
+    case 0x15b:
+        {
+            float y = enginerandom->vfunc1(-90.0f, 90.0f);
+            vfunc345("hit_yaw", y, 0);
+            sub_10289ee0(0x73);
+            return;
+        }
+    case 0x15c:
+        {
+            Vector vec;
+            sub_10398630(m_eLastLostTentacle, &vec);
+            Vector d = *(Vector *)vfunc217_slot() - vec;
+            float y = -sub_101d2c70(&d);
+            y += enginerandom->vfunc1(-15.0f, 15.0f);
+            vfunc345("hit_yaw", y, 0);
+            sub_10289ee0(0x74);
+            return;
+        }
+    case 0x15d:
+        sub_102c4310("Ming_xiao_tentacle_damage_emitter", this, 1, -1, 0);
+        sub_10273e80(0);
+        return;
+    case 0x15e:
+        sub_102c4310("Ming_xiao_death_emitter", this, 1, -1, 0);
+        sub_102c42a0("Ming_xiao_death_emitter2", this, "Bip01 Spine6", 0);
+        break;
+    case 0x15f:
+        sub_102c4310("Ming_xiao_death_proxy_emitter", this, 1, -1, 0);
+        sub_102c42a0("Ming_xiao_death_proxy_emitter2", this, "Bip01 Spine6", 0);
+        break;
+    default:
+        sub_102a1910(pTask);
+        return;
+    }
+    sub_10273e80(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10394120 size=0x84
 #include "CNPC_VMingXiao.h"
 
