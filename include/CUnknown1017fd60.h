@@ -1,6 +1,7 @@
 // CUnknown1017fd60: object (called from CAI_BaseNPCTroika::vfunc438) keeping a list of 16 byte "scared NPC"
 // records {time, entity handle, edict index, value} at +0x1d90; real name not yet known.
 #pragma once
+#include "utlvector.h"
 
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 
@@ -65,7 +66,7 @@ public:
 	unsigned int m_hNearest;	// 0x1d50: handle of the nearest noticed entity
 	float m_flNearestDist;	// 0x1d54: its distance
 	char pad1d58[0x1d90 - 0x1d58];
-	CUnknown1017fd60Vec m_list;	// 0x1d90
+	CUtlVector<CUnknown1017fd60Rec> m_list;	// 0x1d90
 
 	void sub_1017fd60(int value, CBaseEntity *pNpc);	// adds the NPC to the list, or refreshes its record (max value, current time)
 	void sub_1017ff40(CBaseEntity *pEnt, int nKind);	// notes that pEnt of the kind was seen now (time and handle of that kind) and, for an entity without the field at +0x128 or the kinds 3 / 4, keeps it as the nearest one when the old nearest is gone or farther away
