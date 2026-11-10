@@ -198983,6 +198983,185 @@ bool CAI_Pathfinder::sub_103058c0(int navType, const float *vecStart, const floa
 }
 // END FUNCTION
 
+// FUNCTION: 0x103059d0 size=0x668
+#include "CBaseEntity.h"
+#include "CAI_Pathfinder.h"
+#include "CVProfile.h"
+#include "Vector.h"
+
+extern "C" double __cdecl fabs(double);
+#pragma intrinsic(fabs)
+extern float g_104454c4;
+float __cdecl sub_102d6180(int nHull);
+float __cdecl sub_102d61e0(int nHull);
+void __cdecl sub_10139500(const Vector &start, float scale, const Vector &direction, Vector &dest);
+
+struct CCycleCountTri {
+	unsigned __int64 m_Int64;
+	CCycleCountTri() { m_Int64 = 0; }
+	void Sample() { __asm { mov ecx, this
+		rdtsc
+		mov [ecx], eax
+		mov [ecx+4], edx } }
+	CCycleCountTri &operator+=(const CCycleCountTri &o) { m_Int64 += o.m_Int64; return *this; }
+};
+
+struct CFastTimerTri {
+	CCycleCountTri m_Duration;
+	void End()
+	{
+		CCycleCountTri cnt;
+		cnt.Sample();
+		m_Duration.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+	}
+	const CCycleCountTri &GetDuration() const { return m_Duration; }
+};
+
+struct CVProfileTri : CVProfile
+{
+	void PopGroupTri()
+	{
+		m_nGroupStackDepth--;
+		int nPopGroupID = m_GroupIDStack[m_nGroupStackDepth + 1];
+		int nCurGroupID = m_GroupIDStack[m_nGroupStackDepth];
+		if (nCurGroupID != nPopGroupID && m_bVTuneGroupsEnabled && nPopGroupID == m_nVTuneGroupID)
+			vtune(false);
+	}
+};
+
+struct CVProfNodeTri
+{
+	const char *m_pszName;
+	int m_n04;
+	CFastTimerTri m_Timer;
+	int m_nRecursions;
+	int m_nCurFrameCalls;
+	CCycleCountTri m_CurFrameTime;
+
+	bool ExitScope()
+	{
+		if (--m_nRecursions == 0 && m_nCurFrameCalls != 0) {
+			m_Timer.End();
+			m_CurFrameTime += m_Timer.GetDuration();
+			((CVProfileTri *)g_109f3648)->PopGroupTri();
+		}
+		return m_nRecursions == 0;
+	}
+};
+
+struct CAI_PathfinderTri : CAI_Pathfinder
+{
+	CAI_PathfinderOuter *GetOuter() { return (CAI_PathfinderOuter *)m_pOuter; }
+	int GetHullType() const { return m_unk08; }
+};
+
+inline CAI_MoveProbe *GetMoveProbeTri(CAI_PathfinderOuter *p) { return p->m_pMoveProbe; }
+
+// TARGET: CAI_Pathfinder::sub_103059d0
+bool CAI_Pathfinder::sub_103059d0(int navType, const float *vecStartIn, const float *vecEndInF, float flDistToBlocker, const CBaseEntity *pTargetEnt, float *pApex, unsigned int collisionMask, char bSkip)
+{
+	if (bSkip)
+		return false;
+	const Vector &vecStart = *(const Vector *)vecStartIn;
+	const Vector &vecEndIn = *(const Vector *)vecEndInF;
+	CAI_PathfinderTri *self = (CAI_PathfinderTri *)this;
+	g_109f3648->EnterScope("CAI_Pathfinder_Triangulate", 0, "Unaccounted", false);
+
+	Vector vecForward, vecUp, vecPerpendicular;
+	VectorSubtract(vecEndIn, vecStart, vecForward);
+	float flTotalDist = VectorNormalize(vecForward);
+
+	Vector vecEnd;
+	if (navType != 2 && flTotalDist > 384.0f) {
+		vecEnd = vecForward * 384.0f;
+		flTotalDist = 384.0f;
+		if (!GetMoveProbeTri(self->GetOuter())->sub_102e6d70(navType, &vecEnd.x, &vecEndIn.x, 0x202400b, pTargetEnt, 100.0f, 0, 0, 0, 0)) {
+			g_109f3648->ExitScopeCall();
+			return false;
+		}
+	} else {
+		vecEnd = vecEndIn;
+	}
+
+	if (1.0f - fabs(vecForward.z) > 1e-3) {
+		vecUp.Init(0, 0, 1);
+		CrossProduct(vecForward, vecUp, vecPerpendicular);
+	} else {
+		vecUp.Init(0, 1, 0);
+		vecPerpendicular.Init(1, 0, 0);
+	}
+
+	float sizeX = 0.5f * sub_102d6180(self->GetHullType());
+	float sizeZ = 0.5f * sub_102d61e0(self->GetHullType());
+
+	if (self->GetOuter()->m_nDebugBits & 0x8000)
+		m_Overlay.sub_10306550();
+
+	float flApexDist = flDistToBlocker + sizeX;
+	if (flApexDist > flTotalDist)
+		flApexDist = flTotalDist;
+
+	Vector vecDelta[2];
+	Vector vecApex[4];
+	float pApexDist[4];
+
+	Vector vecCenter;
+	int nNumToTest = 2;
+	VectorMultiply(vecPerpendicular, sizeX, vecDelta[0]);
+
+	sub_10139500(vecStart, flApexDist, vecForward, vecCenter);
+	VectorSubtract(vecCenter, vecDelta[0], vecApex[0]);
+	VectorAdd(vecCenter, vecDelta[0], vecApex[1]);
+	vecDelta[0] *= 2.0f;
+	pApexDist[0] = pApexDist[1] = flApexDist;
+
+	if (navType == 2) {
+		VectorMultiply(vecUp, 3.0f * sizeZ, vecDelta[1]);
+		VectorSubtract(vecCenter, vecDelta[1], vecApex[2]);
+		VectorAdd(vecCenter, vecDelta[1], vecApex[3]);
+		pApexDist[2] = pApexDist[3] = flApexDist;
+		nNumToTest = 4;
+	}
+
+	AIMoveTrace_t moveTrace;
+	for (int i = 0; i < 2; ++i) {
+		for (int j = nNumToTest; --j >= 0; ) {
+			if (sub_103058c0(navType, &vecStart.x, &vecApex[j].x, &vecEnd.x, pTargetEnt, &moveTrace, collisionMask)) {
+				*(Vector *)pApex = vecApex[j];
+				g_109f3648->ExitScope();
+				return true;
+			}
+
+			if (moveTrace.fStatus < 0) {
+				Vector vecStartToObstruction;
+				VectorSubtract(*(Vector *)&moveTrace.m_fields.e0, vecStart, vecStartToObstruction);
+				float flDistToObstruction = DotProduct(vecStartToObstruction, vecForward);
+
+				float flNewApexDist = pApexDist[j];
+				if (pApexDist[j] > flDistToObstruction)
+					flNewApexDist = flDistToObstruction;
+
+				sub_10139500(vecApex[j], flNewApexDist - pApexDist[j], vecForward, vecApex[j]);
+				pApexDist[j] = flNewApexDist;
+			}
+
+			if (j & 0x1)
+				VectorAdd(vecDelta[j >> 1], vecApex[j], vecApex[j]);
+			else
+				VectorSubtract(vecApex[j], vecDelta[j >> 1], vecApex[j]);
+		}
+	}
+
+	CVProfile *pr = g_109f3648;
+	if (!pr->m_bAtRoot || pr->m_enabled) {
+		if (((CVProfNodeTri *)pr->m_pCurNode)->ExitScope())
+			pr->m_pCurNode = pr->m_pCurNode->m_pParent;
+		pr->m_bAtRoot = (pr->m_pCurNode == pr->m_pRoot);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103061e0 size=0x8
 namespace lifted {
 struct C10003b52 { int sub_10003b52(); };
