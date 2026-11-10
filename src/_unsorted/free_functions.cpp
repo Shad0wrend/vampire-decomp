@@ -48081,6 +48081,57 @@ extern "C" CBaseEntity *camera_track()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb9e0 size=0x390
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+void sub_10002437();
+void sub_1000543e();
+void sub_10005eb6();
+void sub_10014d58();
+extern int g_1055d0bc[2];
+int *sub_100cb9e0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 5, "m_bHoldAtEnd", {0x4b0, 0}, 1, 6, "HoldAtEnd", 0, 0 },
+        { 1, "m_flFromPlayerTime", {0x4b4, 0}, 1, 6, "FromPlayerTime", 0, 0 },
+        { 1, "m_flToPlayerTime", {0x4b8, 0}, 1, 6, "ToPlayerTime", 0, 0 },
+        { 0, "PlayAsCameraTarget", {0, 0}, 1, 8, "PlayAsCameraTarget", 0, (void *)sub_10005eb6 },
+        { 0, "PlayAsCameraPosition", {0, 0}, 1, 8, "PlayAsCameraPosition", 0, (void *)sub_1000543e },
+        { 1, "RestoreCameraToPlayerControl", {0, 0}, 1, 8, "RestoreCameraToPlayerControl", 0, (void *)sub_10002437 },
+        { 0, "CCameraTrackTrackThink", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10014d58 },
+        { 0xa, "m_OnCompleted", {0x4f4, 0}, 1, 0x16, "OnAnimationCompleted", g_1055dc70 },
+        { 0xf, "m_flTargetStartTime", {0x4bc, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hTargetKey", {0x4c0, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bTargetPaused", {0x4c4, 0}, 1, 2, 0, 0, 0 },
+        { 3, "m_vecTargetPos", {0x4c8, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flViewStartTime", {0x4d4, 0}, 1, 2, 0, 0, 0 },
+        { 0xc, "m_hViewKey", {0x4d8, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bViewPaused", {0x4dc, 0}, 1, 2, 0, 0, 0 },
+        { 3, "m_vecViewPos", {0x4e0, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_flViewFOV", {0x4ec, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_flViewRoll", {0x4f0, 0}, 1, 2, 0, 0, 0 },
+    };
+    g_1055d0bc[1] = 18;
+    g_1055d0bc[0] = (int)&dataDesc[1];
+    return g_1055d0bc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc020 size=0xc
 #include "COutputEvent.h"
 
