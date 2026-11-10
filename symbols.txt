@@ -560,6 +560,7 @@
 0x10001bef func   ?vfunc390@CAI_BaseNPC@@UAEHPAUCTakeDamageInfo@@@Z CAI_BaseNPC::vfunc390
 0x10001bf4 func   ?sub_10137390@@YAMH@Z sub_10137390
 0x10001bf9 func   ?vfunc2@CTEExplosiveGunshotDecal@@UAEPAVCTEGunshotDecal@@I@Z CTEExplosiveGunshotDecal::vfunc2
+0x10001bfe func   ?sub_10219770@@YAPAHXZ sub_10219770
 0x10001c03 func   ?sub_1032be80@CBaseCombatCharacter@@QAEPAVCBaseEntity@@XZ CBaseCombatCharacter::sub_1032be80
 0x10001c12 func   ?sub_10171f10@CUnknown10171f10@@QAEXH@Z CUnknown10171f10::sub_10171f10
 0x10001c17 func   ?sub_101b6a50@UtlVec8@@QAEXH@Z UtlVec8::sub_101b6a50

@@ -149072,6 +149072,49 @@ extern "C" CBaseEntity *prop_hacking()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10219770 size=0x493
+#include "utlmemory.h"
+#include "utlvector.h"
+#include "datamap.h"
+extern ISaveRestoreOps *g_1055dc70;
+template <class T> class CHandle;
+void sub_10014b82();
+#include "CUtlVectorDataOps.h"
+inline ISaveRestoreOps *Ops_109f09f4()
+{
+	static CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4> ops;
+	return (ISaveRestoreOps *)&ops;
+}
+extern int g_105af464[2];
+int *sub_10219770()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 2, "m_sHackFile", {0x900, 0}, 1, 6, "hack_file", 0, 0 },
+        { 5, "m_bHasGlobalEmail", {0xa10, 0}, 1, 6, "global_email", 0, 0 },
+        { 5, "m_bSubdirUnlocked", {0x986, 0}, 5, 2, 0, 0, 0 },
+        { 4, "m_EmailFlags", {0xa28, 0}, 128, 2, 0, 0, 0 },
+        { 5, "m_bEmailUnlocked", {0xc2c, 0}, 1, 2, 0, 0, 0 },
+        { 0xa, "m_SubDirAttempts", {0x98c, 0}, 1, 2, 0, Ops_109f09f4(), 0 },
+        { 4, "m_nEmailAttempts", {0xc28, 0}, 1, 2, 0, 0, 0 },
+        { 1, "m_flSS_Delay", {0x9e4, 0}, 1, 6, "ss_delay", 0, 0 },
+        { 1, "m_flSS_Start", {0x9e8, 0}, 1, 6, "ss_start", 0, 0 },
+        { 0, "CPropHackingSS_Think", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10014b82 },
+        { 0xa, "m_OnTrigger[0]", {0x840, 0}, 1, 0x16, "OnTrigger0", g_1055dc70 },
+        { 0xa, "m_OnTrigger[1]", {0x858, 0}, 1, 0x16, "OnTrigger1", g_1055dc70 },
+        { 0xa, "m_OnTrigger[2]", {0x870, 0}, 1, 0x16, "OnTrigger2", g_1055dc70 },
+        { 0xa, "m_OnTrigger[3]", {0x888, 0}, 1, 0x16, "OnTrigger3", g_1055dc70 },
+        { 0xa, "m_OnTrigger[4]", {0x8a0, 0}, 1, 0x16, "OnTrigger4", g_1055dc70 },
+        { 0xa, "m_OnTrigger[5]", {0x8b8, 0}, 1, 0x16, "OnTrigger5", g_1055dc70 },
+        { 0xa, "m_OnTrigger[6]", {0x8d0, 0}, 1, 0x16, "OnTrigger6", g_1055dc70 },
+        { 0xa, "m_OnTrigger[7]", {0x8e8, 0}, 1, 0x16, "OnTrigger7", g_1055dc70 },
+    };
+    g_105af464[1] = 18;
+    g_105af464[0] = (int)&dataDesc[1];
+    return g_105af464;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10219d40 size=0x12c
 #include "CBaseEntity.h"
 #include "CPropHacking.h"
