@@ -14,6 +14,202 @@ bool __stdcall sub_103ba780(char *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ba7c0 size=0x808
+#include "CNPC_VTzimisce.h"
+#include "CBaseEntity.h"
+#include "CAI_Motor.h"
+#include "CUnknown102e0a60.h"
+#include "CUnknown102e0150.h"
+#include "CUnknown102ee120.h"
+#include "CEHandleGet.h"
+#include "globalvars.h"
+
+// TARGET: CNPC_VTzimisce::vfunc442
+void CNPC_VTzimisce::vfunc442(CTzimisceTaskArg *pTask)
+{
+	Vector vec;
+	switch (pTask->m_nId) {
+	case 0xa7:
+		vfunc541()->sub_102dfed0(&vec, (CBaseEntity *)vfunc167());
+		sub_102e0b40((float *)m_pMotor5d44);
+		m_pMotor5d44->sub_102e2020(&vec.x, 0);
+		w081();
+		break;
+	case 0xf:
+		m_state = 1;
+		sub_102a1910(pTask);
+		break;
+	case 0x89:
+		m_f5d9c = gpGlobals->curtime;
+		sub_10289ee0(0x4b);
+		break;
+	case 0x8a:
+		m_f5d9c = gpGlobals->curtime;
+		sub_10289ee0(0x4b);
+		break;
+	case 0x8b:
+		sub_10289ee0(0x50);
+		break;
+	case 0x8e:
+		sub_10289ee0(0x52);
+		break;
+	case 0xbf:
+		sub_102e0b40((float *)m_pMotor5d44);
+		sub_103bf440();
+		sub_10289ee0(0xf2);
+		break;
+	case 0xc0:
+		sub_102e0b40((float *)m_pMotor5d44);
+		sub_103bf440();
+		sub_10289ee0(0xf4);
+		break;
+	case 0xc1:
+		if (m_b6688)
+			sub_10289ee0(0xf6);
+		else
+			sub_10289ee0(0xf8);
+		break;
+	case 0xc2:
+		sub_103bf170();
+		sub_10273e80(0);
+		break;
+	case 0xc3:
+		m_state = 2;
+		if (EHandle_Get(m_hTarget) != 0) {
+			m_vec5dd0 = *(Vector *)m_posBuf;
+			sub_102c3b50(EHandle_Get(m_hTarget), *(Vector *)m_posBuf, &m_vec5dd0, &m_n6320);
+			m_p5d34->sub_102ee1c0(m_n6320);
+			m_p5d34->sub_102f2fe0(m_n6320);
+			sub_10273e80(0);
+		} else {
+			m_psz1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+			m_n1b48 = 0x722;
+			vfunc448(1);
+		}
+		break;
+	case 200:
+		if (EHandle_Get(m_hTarget) != 0) {
+			sub_102e0b40((float *)m_pMotor5d44);
+			CNPC_VTzimisceHelper *pTarget = (CNPC_VTzimisceHelper *)EHandle_Get(m_hTarget);
+			CAI_Motor *pMotor = m_pMotor5d44;
+			pMotor->sub_102e2020((const float *)pTarget->vfunc220(), 0);
+			w081();
+		}
+		if (sub_10278c80())
+			sub_10273e80(0);
+		break;
+	case 0xc9:
+	{
+		CBaseEntity *pEnemy = (CBaseEntity *)vfunc167();
+		vfunc541()->sub_102dfed0(&vec, pEnemy);
+		if (sub_10269aa0(0x1b) && sub_103be8e0(pEnemy)) {
+			sub_10273e80(0);
+		} else {
+			sub_102e0b40((float *)m_pMotor5d44);
+			m_pMotor5d44->sub_102e2020(&vec.x, 0);
+			w081();
+			m_flTaskFailTimer = gpGlobals->curtime + 1.0f;
+		}
+		break;
+	}
+	case 0xca:
+	{
+		CBaseEntity *pEnemy = vfunc168();
+		vfunc541()->sub_102dfed0(&vec, pEnemy);
+		if (!sub_103be8e0(pEnemy)) {
+			sub_102e0b40((float *)m_pMotor5d44);
+			m_pMotor5d44->sub_102e2020(&vec.x, 0);
+			w081();
+		} else {
+			sub_10273e80(0);
+		}
+		break;
+	}
+	case 0xcb:
+		sub_10280a50();
+		sub_102e0b40((float *)m_pMotor5d44);
+		vfunc541()->sub_102dfed0(&vec, (CBaseEntity *)vfunc167());
+		m_pMotor5d44->sub_102e20b0(&vec.x, -2.0f);
+		m_f5d9c = gpGlobals->curtime;
+		sub_10289ee0(0x102);
+		if (vfunc251())
+			sub_10273e80(0);
+		break;
+	case 0xcc:
+		if (vfunc167() == 0) {
+			m_psz1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+			m_n1b48 = 0x78c;
+			vfunc448(6);
+			break;
+		}
+		sub_10280a50();
+		vfunc541()->sub_102dfed0(&vec, (CBaseEntity *)vfunc167());
+		if (sub_103bf660(vec)) {
+			sub_102e0b40((float *)m_pMotor5d44);
+			m_pMotor5d44->sub_102e20b0(&vec.x, -2.0f);
+			m_f5d9c = gpGlobals->curtime;
+			sub_10289ee0(0x103);
+			if (vfunc251()) {
+				int act = vfunc375(0x103);
+				act = vfunc381(act);
+				if (m_nActivityfec == vfunc376(act))
+					sub_10273e80(0);
+			}
+		} else {
+			m_psz1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+			m_n1b48 = 0x7ab;
+			vfunc448(0x1a);
+		}
+		break;
+	case 0xcd:
+		if (vfunc167() == 0) {
+			m_psz1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+			m_n1b48 = 0x7b5;
+			vfunc448(6);
+			break;
+		}
+		sub_10280a50();
+		vfunc541()->sub_102dfed0(&vec, (CBaseEntity *)vfunc167());
+		sub_102e0b40((float *)m_pMotor5d44);
+		m_pMotor5d44->sub_102e20b0(&vec.x, -2.0f);
+		sub_10289ee0(0x104);
+		if (vfunc251()) {
+			int act = vfunc375(0x104);
+			act = vfunc381(act);
+			if (m_nActivityfec == vfunc376(act))
+				sub_10273e80(0);
+		}
+		break;
+	case 0xce:
+		sub_10280a50();
+		sub_10289ee0(0x105);
+		if (vfunc251()) {
+			int act = vfunc375(0x105);
+			act = vfunc381(act);
+			if (m_nActivityfec == vfunc376(act))
+				sub_10273e80(0);
+		}
+		break;
+	case 0xd1:
+	{
+		float f = vfunc418(pTask->m_flArg) + 150.0f;
+		m_f6324 = f * f;
+		sub_10273e80(0);
+		break;
+	}
+	case 0xd2:
+		sub_10272650((int)pTask->m_flArg);
+		break;
+	case 3:
+		sub_10273e80(0);
+		break;
+	default:
+		sub_102a1910(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bb7c0 size=0xa7c
 #include "CBaseEntity.h"
 #include "CNPC_VTzimisce.h"

@@ -1989,6 +1989,7 @@
 0x10003b25 func   ?sub_100c4640@@YADXZ sub_100c4640
 0x10003b2a func   ?sub_103b30a0@@YIPAXPAX@Z sub_103b30a0
 0x10003b2f func   ?sub_102ea5a0@@YIXH@Z sub_102ea5a0
+0x10003b34 func   ?vfunc442@CNPC_VTzimisce@@UAEXPAUCTzimisceTaskArg@@@Z CNPC_VTzimisce::vfunc442
 0x10003b39 func   ?sub_102eccc0@CUnknown102eccc0@@QAEHXZ CUnknown102eccc0::sub_102eccc0
 0x10003b3e func   ?vfunc2@?$CEntityDataInstantiator@Utouchlink_t@@@@UAEPAXI@Z CEntityDataInstantiator<touchlink_t>::vfunc2
 0x10003b43 func   ?sub_1023f450@@YAMABURay1023f450@@ABVVector@@11_N@Z sub_1023f450
