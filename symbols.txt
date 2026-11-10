@@ -13093,6 +13093,7 @@
 0x10012bac func   ?sub_102cd3b0@CAI_GoalEntity@@QAEXXZ CAI_GoalEntity::sub_102cd3b0
 0x10012bb1 func   ?vfunc1@CTEBloodSprite@@UAEHXZ CTEBloodSprite::vfunc1
 0x10012bb6 func   ?vfunc103@CFunc_LOD@@UAEXXZ CFunc_LOD::vfunc103
+0x10012bbb func   ?Base@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEPAHXZ CUtlVector<int,CUtlMemory<int> >::Base
 0x10012bbb func   ?sub_1002cc80@CUnknown1002cc80@@QAEHXZ CUnknown1002cc80::sub_1002cc80
 0x10012bc0 func   ?vfunc362@CWeaponThrown_Chang_Ghost@@QAEHXZ CWeaponThrown_Chang_Ghost::vfunc362
 0x10012bc5 func   ?vfunc318@CBasePlayer@@UAE_NHPAUmelee_dice_roll_result@@H@Z CBasePlayer::vfunc318
