@@ -3705,6 +3705,42 @@ void CAI_BaseNPCTroika::vfunc595()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b4f60 size=0x40
+#include "CAI_BaseNPCTroika.h"
+
+#define P10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CNPCSlotView
+{
+	P10(a) P10(b) P10(c) P10(d) P10(e) P10(f) P10(g) P10(h) P10(i) P10(j) P10(k) P10(l) P10(m)
+	P10(n) P10(o) P10(p) P10(q) P10(r) P10(s) P10(t) P10(u)
+	virtual void s210(); virtual void s211(); virtual void s212(); virtual void s213(); virtual void s214(); virtual void s215(); virtual void s216();
+	virtual const Vector &vfunc217();
+	P10(v) P10(w) P10(x) P10(y) P10(z)
+	P10(A) P10(B) P10(C) P10(D) P10(E) P10(F) P10(G) P10(H) P10(I) P10(J) P10(K) P10(L) P10(M)
+	P10(N) P10(O) P10(P) P10(Q) P10(R) P10(S) P10(T) P10(U) P10(W) P10(X) P10(Y) P10(Z) P10(Vv)
+	P10(aa)
+	virtual void s538(); virtual void s539(); virtual void s540(); virtual void s541(); virtual void s542(); virtual void s543();
+	virtual void vfunc544(CNPCSlotView *pEnt, const Vector &pos, const Vector *pVel);
+	char m_pad0004[0x3d4 - 4];
+	Vector m_vecVelocity;
+};
+
+int __stdcall sub_102707d0(void *p);
+
+// TARGET: CAI_BaseNPCTroika::vfunc596
+void CAI_BaseNPCTroika::vfunc596(int a)
+{
+	if (a != 0)
+	{
+		CNPCSlotView *pNPC = (CNPCSlotView *)sub_102707d0((void *)a);
+		sub_10279a50((int)pNPC);
+		((CNPCSlotView *)this)->vfunc544(pNPC, pNPC->vfunc217(), &pNPC->m_vecVelocity);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4fb0 size=0x14
 #include "CAI_BaseNPCTroika.h"
 namespace lifted {
