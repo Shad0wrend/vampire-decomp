@@ -29605,6 +29605,26 @@ extern "C" GP *instanced_scripted_scene()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10084ab0 size=0x63
+#include "CSceneEntity.h"
+struct CRefOwnerView { virtual void v0(); virtual const CBaseHandle &GetRefEHandle() const; char pad[0x26c - 4]; string_t m_iName; string_t GetEntityName() { return m_iName; } };
+extern float g_1070d1b0[3];
+extern float g_1070d9d0[3];
+CSceneEntity *sub_100a9ab0(const char *pszClass, const float *pOrigin, const float *pAngles, void *pOwner);
+// TARGET: sub_10084ab0
+CSceneEntity *sub_10084ab0(CRefOwnerView *pActor, const char *pszScene)
+{
+	CSceneEntity *pScene = sub_100a9ab0("instanced_scripted_scene", g_1070d1b0, g_1070d9d0, 0);
+	pScene->m_pszSceneFile450 = *pszScene ? pszScene : 0;
+	pScene->m_iszTarget1 = pActor->GetEntityName();
+	EHANDLE &hOwner = *(EHANDLE *)&pScene->m_h580;
+	hOwner = pActor->GetRefEHandle();
+	pScene->vfunc103();
+	pScene->vfunc242();
+	return pScene;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10084b40 size=0xb1
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
