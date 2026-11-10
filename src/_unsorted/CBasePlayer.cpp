@@ -3013,6 +3013,39 @@ void CBasePlayer::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016ea00 size=0xd5
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBasePlayer.h"
+struct CPlayerView_1016ea00 { char m_pad0[0x1dc4]; float f1dc4; };
+void sub_10006ee7(void *pArray, int nCount);
+void sub_10015311(void *pArray, int nCount);
+int sub_101d1070(int a, int b);
+void sub_10299c60(int a);
+int CBasePlayer::vfunc126(int a)
+{
+	sub_10006ee7(&m_f1CE0, 2);
+	sub_10006ee7(&m_flSupernaturalActTimer, 2);
+	sub_10006ee7(&m_flSpawnResponseCopsTimer, 4);
+	if (gpGlobals->curtime >= ((CPlayerView_1016ea00 *)this)->f1dc4)
+		m_bCopWaitDelayed = false;
+	else
+		m_bCopWaitDelayed = true;
+	m_bDebugSaved = true;
+	m_f1564 = pcd_stage(m_f1564) - gpGlobals->curtime;
+	if (m_lBirthday == 0)
+	{
+		m_lBirthday = sub_101d1070(0, 0);
+		sub_1016fa90();
+	}
+	unsigned int nResult = sub_10348980(a);
+	sub_10015311(&m_f1CE0, 2);
+	sub_10015311(&m_flSupernaturalActTimer, 2);
+	sub_10015311(&m_flSpawnResponseCopsTimer, 4);
+	sub_10299c60(a);
+	return nResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016eb20 size=0x6f
 #include "CBasePlayer.h"
 #include "CBaseCombatCharacter.h"
