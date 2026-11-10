@@ -85,7 +85,7 @@ public:
 	virtual int slot197(int a, int b, int c, int d);	// "BodyTarget" (ret 16): fills a with slot 192(a)
 	virtual Vector *slot198();	// a vector getter (the NPC's velocity / ground vector), the pointer to three floats
 	virtual void slot199(Vector *pA, Vector *pB);	// fills two vectors (a zero first one marks a free entity for the Hengeyokai's fish search)
-	EVS(200) EVS(201)
+	EVS(200) virtual char slot201(void *pEnt, int mask, int a, int b);
 	virtual void slot202(CEntityVSlots *pOwner);	// "SetOwnerEntity"
 	virtual double slot203();	// "GetAttackDamageScale" (the value stays on the FPU stack, the caller multiplies it with a float)
 	virtual double slot204();	// "GetReceivedDamageScale"
