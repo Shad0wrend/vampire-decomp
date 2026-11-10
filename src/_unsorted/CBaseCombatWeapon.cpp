@@ -1230,6 +1230,161 @@ void CBaseCombatWeapon::vfunc308(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10253390 size=0x57e
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CBaseCombatWeapon.h"
+#include "CEHandleGet.h"
+#include "ehandle.h"
+#include "CUnknown100290c0.h"
+#include "CUnknown10738964.h"
+
+__declspec(dllimport) void __cdecl DevMsg(int, const char *, ...);
+const char *__cdecl sub_10412550(int);
+
+struct CWeaponViewModelView
+{
+	int sub_1008de20(int a, int b);
+};
+
+struct CWeapon307View	// CBaseCombatWeapon members this function needs that the header does not declare
+{
+	char m_pad0000[0x8a8];
+	int m_n8a8;
+	int sub_100952d0(int a);
+	int sub_100936e0(int a, int b, int c);
+	int sub_102507b0(int a);
+};
+
+struct CWeaponPlayerView
+{
+	char m_pad0000[0x1b6d];
+	char m_b1b6d;
+	char m_pad1b6e[0x1c64 - 0x1b6e];
+	CHandle<CBaseCombatWeapon> m_h1c64;
+	CWeaponViewModelView *sub_1015d680(int a);
+};
+
+struct CWeaponOwnerView
+{
+	char m_pad0000[0xa8];
+	CWeaponPlayerView *m_pA8;
+};
+
+struct CVDebugConVarView
+{
+	void *m_vtbl;
+	CUnknown10738964 *m_pParent;
+};
+
+struct CVDebugConVarSys
+{
+	virtual void v0();
+	virtual void v1();
+	virtual CVDebugConVarView *vfunc2(const char *pszName);
+};
+
+extern CVDebugConVarSys *g_1070b234;
+
+inline CWeaponPlayerView *ToPlayerObj(CWeaponOwnerView *p)
+{
+	if (!p)
+		return 0;
+	return p->m_pA8;
+}
+
+#define V307(p) ((CWeapon307View *)(p))
+
+// TARGET: CBaseCombatWeapon::vfunc307
+void CBaseCombatWeapon::vfunc307(int value)
+{
+	CWeaponPlayerView *pPlayer = sub_102521f0() ? ToPlayerObj((CWeaponOwnerView *)sub_102521f0()) : 0;
+
+	if (pPlayer) {
+		if (value == 0xde || value == 0xdd)
+			pPlayer->m_b1b6d = 0;
+		else
+			pPlayer->m_b1b6d = 1;
+	}
+
+	if (!sub_10256220()) {
+		if (!pPlayer)
+			return;
+		if (!((CUnknown100290c0 *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)&pPlayer->m_h1c64))
+			return;
+		if (!V307(this)->sub_100952d0(-1))
+			return;
+		vfunc308(0, 0);
+		V307(((CUnknown100290c0 *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)&pPlayer->m_h1c64))->m_n8a8 = 0xb6;
+		int nSequence = sub_1008dc40(0xb6, -1);
+		m_nSequence = V307(this)->sub_100936e0(m_nSequence, nSequence, 0);
+		vfunc310(gpGlobals->curtime + 0.3);
+		return;
+	}
+
+	int nSequence = sub_1008dc40(value, -1);
+	if (nSequence < 0) {
+		vfunc310(gpGlobals->curtime);
+		if (!pPlayer)
+			return;
+		if (sub_10256220()) {
+			if (pPlayer->m_h1c64.Get() == this) {
+				vfunc308(m_nSequence, 0);
+				return;
+			}
+			if (!pPlayer->m_h1c64.Get())
+				return;
+			pPlayer->m_h1c64->vfunc307(value);
+			V307(pPlayer->m_h1c64.Get())->m_n8a8 = value;
+			return;
+		}
+		if (!pPlayer->m_h1c64.Get())
+			return;
+		pPlayer->m_h1c64->vfunc307(0xb6);
+		V307(pPlayer->m_h1c64.Get())->m_n8a8 = 0xb6;
+		return;
+	}
+
+	int nAnim = V307(this)->sub_102507b0(value);
+	int nHands = nAnim;
+	if (pPlayer) {
+		CWeaponViewModelView *pVM = pPlayer->sub_1015d680(1);
+		int nResult = pVM ? pVM->sub_1008de20(nHands, -1) : 0;
+		nHands = nResult;
+	} else
+		nHands = 0;
+	m_nSequence = V307(this)->sub_100936e0(m_nSequence, nSequence, 0);
+
+	if (pPlayer && sub_10256220()) {
+		if (pPlayer->m_h1c64.Get() == this) {
+			vfunc308(m_nSequence, nHands);
+		} else if (pPlayer->m_h1c64.Get()) {
+			pPlayer->m_h1c64->vfunc307(value);
+			V307(pPlayer->m_h1c64.Get())->m_n8a8 = value;
+		}
+	}
+	float flDuration;
+	if (pPlayer && sub_10256220() && pPlayer->m_h1c64.Get()) {
+		int nHandleSequence = pPlayer->m_h1c64->m_nSequence;
+		flDuration = pPlayer->m_h1c64->sub_10091080(nHandleSequence);
+	} else
+		flDuration = sub_10091080(pcd_stage(m_nSequence));
+	vfunc310(gpGlobals->curtime + flDuration);
+
+	static CVDebugConVarView *s_pVDebugWeaponAnims = g_1070b234->vfunc2("vdebug_weapon_anims");
+	if (s_pVDebugWeaponAnims) {
+		CUnknown10738964 *const &rParent = s_pVDebugWeaponAnims->m_pParent;
+		if (!rParent->vfunc1() && rParent->m_n2c)
+			DevMsg(2, "WeaponAnim: %s, Hands: %s\n", sub_10412550(value), sub_10412550(nAnim));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10253a70 size=0x23
 #include "CBaseCombatWeapon.h"
 char CBaseCombatWeapon::vfunc312()
