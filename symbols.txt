@@ -2482,6 +2482,7 @@
 0x100045d4 func   ??4CBaseHandle@@QAEAAV0@PAVIHandleEntity@@@Z ??4CBaseHandle@@QAEAAV0@PAVIHandleEntity@@@Z
 0x100045d9 func   ?vfunc163@CAI_Hint@@UAEDXZ CAI_Hint::vfunc163
 0x100045de func   ?sub_100cffa0@@YAHXZ sub_100cffa0
+0x100045e3 func   ?sub_10204570@CVDmgBlock16_t@@QAEXPBD@Z CVDmgBlock16_t::sub_10204570
 0x100045e8 func   ?sub_102a13d0@@YIHPAUN@@@Z sub_102a13d0
 0x100045ed func   ?sub_10203df0@@YAXHPBD@Z sub_10203df0
 0x100045f2 func   ?sub_101f37a0@CUnknown101f35c0@@QAE_NXZ CUnknown101f35c0::sub_101f37a0

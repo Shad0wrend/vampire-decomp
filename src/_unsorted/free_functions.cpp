@@ -142142,6 +142142,101 @@ void sub_10204550(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204570 size=0x1d4
+#include <string.h>
+#include <stdlib.h>
+#include "CVDmg_t.h"
+#include "CVStatInfoList_t.h"
+#include "CVFeat_t.h"
+#include "StatOwner2.h"
+#include "CUnknown101f0e50.h"
+
+extern CVStatInfoList_t g_1074e658;
+extern CVStatInfoList_t g_1074e4f0;
+extern CVStatInfoList_t g_1074e098;
+extern CVStatInfoList_t g_1074e5f8;
+extern StatOwner2 g_1074e968;
+extern CUnknown101f0e50 g_1073a9a0;
+extern int g_105a8d88;
+extern void (*g_1074eec4)(CVDmgBlock16_t *pBlock, const char *pszText);
+void sub_1000ca5e();
+
+static inline const char *STRING(const int &iszString)
+{
+	if (!iszString)
+		return "";
+	return (const char *)iszString;
+}
+
+void CVDmgBlock16_t::sub_10204570(const char *pszText)
+{
+	int i;
+	int nFeat;
+	int nIndex;
+	char *pSlash = strchr(pszText, '/');
+	if (pSlash)
+		pSlash--;
+	else
+		strchr(pszText, '*');
+	if (pSlash)
+		*pSlash = 0;
+	if (g_105a8d88 == -1)
+		g_105a8d88 = g_1074e968.sub_10203020("TraitFxStrs");
+	nIndex = g_1074e658.sub_101ffb90(pszText);
+	if (nIndex != -1) {
+		sub_102042a0(0, nIndex);
+		goto done;
+	}
+	nIndex = g_1074e4f0.sub_101ffb90(pszText);
+	if (nIndex != -1) {
+		sub_102042a0(1, nIndex);
+		goto done;
+	}
+	nIndex = g_1074e098.sub_101ffb90(pszText);
+	if (nIndex != -1) {
+		sub_102042a0(2, nIndex);
+		goto done;
+	}
+	nIndex = g_1074e5f8.sub_101ffb90(pszText);
+	if (nIndex != -1) {
+		sub_102042a0(3, nIndex);
+		goto done;
+	}
+	for (i = 0; i < g_10739d20; i++) {
+		if (!_strcmpi(STRING(g_10739d24[i]->m_iInternalName), pszText)) {
+			nFeat = *(int *)g_10739d24[i];
+			if (nFeat != -1) {
+				sub_102042a0(4, nFeat);
+				goto done;
+			}
+			break;
+		}
+	}
+	nIndex = g_1073a9a0.sub_101f19c0(pszText);
+	if (nIndex != -1) {
+		sub_102042a0(5, nIndex);
+		goto done;
+	}
+	nIndex = g_1074e968.sub_10203190(g_105a8d88)->sub_10202a50(pszText);
+	if (nIndex != -1) {
+		sub_102042a0(8, nIndex);
+	} else if (!_strcmpi(pszText, "ObfuscateCanInc")) {
+		sub_10204300(9, sub_1000ca5e);
+	} else if (g_1074eec4) {
+		g_1074eec4(this, pszText);
+	} else {
+		sub_10204270();
+	}
+done:
+	m_d = 1;
+	if (pSlash) {
+		*pSlash = ' ';
+		if (pSlash[1] && pSlash[1] == '/')
+			m_d = -atoi(pSlash + 2);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102047d0 size=0xed
 #include "CUnknown102047d0.h"
 
