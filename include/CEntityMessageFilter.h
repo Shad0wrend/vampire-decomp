@@ -9,4 +9,5 @@ class CEntityMessageFilter : public CRecipientFilter
 {
 public:
 	CEntityMessageFilter() { AddAllPlayers(); }
+	CEntityMessageFilter(class CBaseEntity *pEntity);
 };
