@@ -220,6 +220,47 @@ void CMultiplayRules::vfunc29(void *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141670 size=0x14f
+#include "CMultiplayRules.h"
+#include "CSingleUserRecipientFilter.h"
+
+extern char g_1070ba2c;
+extern char g_106b8540[];
+char *sub_101cf720(const char *fmt, ...);
+void sub_101ce440(int a, char *pszMsg, int b, int c, int d, int e);
+void sub_101d10e0(const char *fmt, ...);
+
+struct CMPPlayerView
+{
+	char m_pad0000[0x2e0];
+	int m_nEdict;
+	char m_pad02e4[0x2078 - 0x2e4];
+	const char *m_iPlayerName;
+	int edict() const { return m_nEdict; }
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+inline const char *STRINGV(const char *s) { return s ? s : g_106b8540; }
+
+// TARGET: CMultiplayRules::vfunc27
+void CMultiplayRules::vfunc27(void *pPlayer)
+{
+	CMPPlayerView *pView = (CMPPlayerView *)pPlayer;
+	sub_101ce440(1, sub_101cf720("%s has joined the game\n",
+		(pView->m_iPlayerName != 0 && STRINGR(pView->m_iPlayerName)[0] != 0) ? STRINGR(pView->m_iPlayerName) : "unconnected"), 0, 0, 0, 0);
+	sub_101d10e0("\"%s<%i>\" has entered the game\n", STRINGV(pView->m_iPlayerName), engine->vfunc34(pView->edict()));
+	vfunc29(pPlayer);
+	sub_101427f0(pView->edict());
+	if (g_1070ba2c)
+	{
+		CSingleUserRecipientFilter filter(pPlayer);
+		filter.MakeReliable();
+		engine->vfunc65(&filter, 0x1a);
+		engine->vfunc66();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141820 size=0xd6
 #include "CBasePlayer.h"
 #include "CMultiplayRules.h"
