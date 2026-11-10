@@ -35,7 +35,9 @@ public:
 	float m_flNextThink17c;
 	char pad_180[0x1fc - 0x180];
 	int m_nTakeDamage1fc;	// +0x1fc: cleared by sub_103f0a00
-	char pad_200[0x744 - 0x200];
+	char pad_200[0x730 - 0x200];
+	float m_flTime730;
+	char pad_734[0x744 - 0x734];
 	int m_nAmmoType744[2];
 	char pad_74c[0x86c - 0x74c];
 	int m_n86c;
@@ -384,7 +386,7 @@ public:
 	virtual void vfunc304();
 	virtual void vfunc305();
 	virtual void vfunc306();
-	virtual void vfunc307();
+	virtual void vfunc307(int a);
 	virtual void vfunc308();
 	virtual void vfunc309();
 	virtual void vfunc310();
