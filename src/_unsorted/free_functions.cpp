@@ -200826,6 +200826,36 @@ unsigned char CHolderInner24::sub_1030bd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030bd80 size=0x74
+#include "Vector.h"
+
+struct CChainNodeX {
+	Vector m_vPos;	// 0x00
+	char m_pad000c[0x14 - 0x0c];
+	float m_flLength;	// 0x14
+	char m_pad0018[0x2c - 0x18];
+	int m_b3D;	// 0x2c
+	char m_pad0030[4];
+	CChainNodeX *m_pNext;	// 0x34
+};
+
+void __stdcall sub_1030bd80(CChainNodeX *p)
+{
+	p->m_flLength = 0;
+	while (p->m_pNext) {
+		CChainNodeX *n = p->m_pNext;
+		if (p->m_b3D == 0) {
+			Vector d = p->m_vPos - n->m_vPos;
+			n->m_flLength = d.Length2D() + p->m_flLength;
+		} else {
+			Vector d = p->m_vPos - n->m_vPos;
+			n->m_flLength = FastSqrt((d.x * d.x + d.z * d.z) + d.y * d.y) + p->m_flLength;
+		}
+		p = n;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030be20 size=0x1c
 struct CUnknown1030be20 {
 	char m_pad0000[0x11];
