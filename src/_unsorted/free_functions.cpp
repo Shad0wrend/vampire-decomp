@@ -242548,6 +242548,27 @@ void __stdcall sub_103f10c0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f1270 size=0x5d
+#include "CWeaponThrown_Chang_Ghost.h"
+#include "IPhysicsObject.h"
+#include "globalvars.h"
+
+extern Vector g_1070d1b0;
+
+void CWeaponThrown_Chang_Ghost::sub_103f1270(void *pTarget)
+{
+	if (gpGlobals->curtime < m_flExpireTime)
+		return;
+	IPhysicsObject *pPhys = (IPhysicsObject *)m_pPhysObj36c;
+	if (pPhys)
+	{
+		Vector vecZero(0, 0, 0);
+		pPhys->vfunc39(&g_1070d1b0.x, &vecZero.x);
+	}
+	m_b0918 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f15b0 size=0x72
 #include "SendProp.h"
 
