@@ -6568,6 +6568,7 @@
 0x10009e3f func   ?sub_10252470@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10252470
 0x10009e44 func   ?vfunc1@CTEWorldDecal@@UAEHXZ CTEWorldDecal::vfunc1
 0x10009e49 func   ?vfunc80@CBaseTerminal@@QAEHXZ CBaseTerminal::vfunc80
+0x10009e4e func   ?sub_1016cd20@@YAPAVCBaseEntity@@XZ sub_1016cd20
 0x10009e58 func   ?sub_103908c0@@YGII@Z sub_103908c0
 0x10009e5d func   ?sub_1013d9a0@@YAPADPBDHPAHPADH@Z sub_1013d9a0
 0x10009e62 func   ?vfunc5@CServerGameDLL@@UAEXH@Z CServerGameDLL::vfunc5

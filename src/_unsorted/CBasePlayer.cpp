@@ -2764,6 +2764,92 @@ void CBasePlayer::vfunc105(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016cd20 size=0x151
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+
+__declspec(dllimport) void Warning(const char *fmt, ...);
+
+struct RulesView
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9();
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3();
+	virtual bool vfunc24();
+};
+
+struct UnknownView
+{
+	virtual void u0(); virtual void u1(); virtual void u2(); virtual void u3();
+	virtual CBaseEntity *vfunc4();
+};
+struct EdictView { char pad[0x40]; UnknownView *m_pUnk; UnknownView *GetUnknown() { return m_pUnk; } };
+
+extern RulesView *g_1070ba0c;
+extern CBaseEntity *g_107260ac;
+extern CGlobalEntityList g_106eb5d8;
+
+inline const char *STRINGR(const int &s) { return s ? (const char *)s : g_106b8540; }
+
+inline CBaseEntity *GetContainingEntity(EdictView *pent)
+{
+	if (pent && pent->GetUnknown())
+		return pent->GetUnknown()->vfunc4();
+	return 0;
+}
+
+inline CBaseEntity *Instance(EdictView *pent)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	if (!pent)
+		pent = (EdictView *)engine->vfunc38(0);
+	return GetContainingEntity(pent);
+}
+
+// TARGET: sub_1016cd20
+CBaseEntity *sub_1016cd20()
+{
+	CBaseEntity *pSpot;
+	if (g_1070ba0c->vfunc24()) {
+		pSpot = g_106eb5d8.sub_100f7380(g_107260ac, "info_player_coop");
+		if (pSpot)
+			goto ReturnSpot;
+		pSpot = g_106eb5d8.sub_100f7380(g_107260ac, "info_player_start");
+		if (pSpot)
+			goto ReturnSpot;
+	}
+	if (!gpGlobals->m_n2c || !strlen(STRINGR(gpGlobals->m_n2c))) {
+		pSpot = g_106eb5d8.sub_100f7380(0, "info_player_start");
+		if (pSpot)
+			goto ReturnSpot;
+	} else {
+		pSpot = g_106eb5d8.sub_100f7770(0, STRINGR(pcd_stage(gpGlobals->m_n2c)), 0, 0);
+		if (pSpot)
+			goto ReturnSpot;
+	}
+ReturnSpot:
+	if (!pSpot) {
+		Warning("PutClientInServer: no info_player_start on level\n");
+		return Instance((EdictView *)engine->vfunc38(0));
+	}
+	g_107260ac = pSpot;
+	return pSpot;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016cee0 size=0x36
 #include "CBasePlayer.h"
 
