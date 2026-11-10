@@ -180549,6 +180549,38 @@ void CAI_BaseNPCTroika::sub_102c24a0(inputdata_t *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c2680 size=0x191
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CAI_BaseNPCTroika.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "inputdata_t.h"
+#include "engineiface.h"
+#include "engineserver.h"
+
+struct CAI_EdictView {
+	char m_pad0000[0x2e0];
+	int m_pEdict2e0;
+};
+
+struct CVariantView : variant_t {
+	float FloatV() const { return (fieldType == 1) ? flValue : 0.0f; }
+};
+
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+
+void CAI_BaseNPCTroika::sub_102c2680(const struct CAI_FloatParam *pParam)
+{
+	const inputdata_t &inputdata = *(const inputdata_t *)pParam;
+	m_f6550 = clamp(((const CVariantView &)inputdata.value).FloatV(), 0.0f, 1.0f);
+	if (m_b64c0) {
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		int edict; edict = engine->vfunc35(pcd_stage(((CAI_EdictView *)this)->m_pEdict2e0));
+		enginesound->vfunc11(&filter, edict, 5, m_f6550, 0, 4, 100, (const float *)&((CEntitySoundOriginView *)this)->GetSoundEmissionOrigin(), 0, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c2890 size=0x52
 #include "CAI_BaseNPCTroika.h"
 #include "inputdata_t.h"
