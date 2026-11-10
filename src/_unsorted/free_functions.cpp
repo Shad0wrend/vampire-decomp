@@ -76201,6 +76201,42 @@ extern "C" CBaseEntity *math_colorblend()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101323e0 size=0x1af
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+void sub_1000ac86();
+extern int g_105762ec[2];
+int *sub_101323e0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 1, "InputValue", {0, 0}, 1, 8, "InValue", 0, (void *)sub_1000ac86 },
+        { 0xa, "m_OutValue", {0x460, 0}, 1, 0x16, "OutColor", g_1055dc70 },
+        { 1, "m_flInMin", {0x450, 0}, 1, 6, "inmin", 0, 0 },
+        { 1, "m_flInMax", {0x454, 0}, 1, 6, "inmax", 0, 0 },
+        { 8, "m_OutColor1", {0x458, 0}, 1, 6, "colormin", 0, 0 },
+        { 8, "m_OutColor2", {0x45c, 0}, 1, 6, "colormax", 0, 0 },
+    };
+    g_105762ec[1] = 6;
+    g_105762ec[0] = (int)&dataDesc[1];
+    return g_105762ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132680 size=0x190
 #include "CMathColorBlend.h"
 #include "inputdata_t.h"
