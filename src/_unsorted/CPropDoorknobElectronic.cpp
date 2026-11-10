@@ -54,6 +54,26 @@ CPropDoorknobElectronic *CPropDoorknobElectronic::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102262f0 size=0x32
+#include "CPropDoorknob.h"
+#include "CPropDoorknobElectronic.h"
+char CPropDoorknobElectronic::sub_10224100()
+{
+	return *(int *)((char *)this + 0x780) < 3;
+}
+
+// TARGET: CPropDoorknobElectronic::vfunc103
+void CPropDoorknobElectronic::vfunc103()
+{
+	CPropDoorknob::vfunc103();
+	m_b815 = 1;
+	if (sub_10224100())
+		m_unk670 = 0;
+	else
+		m_unk670 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10226340 size=0xb
 #include "CPropDoorknobElectronic.h"
 
