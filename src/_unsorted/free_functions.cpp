@@ -235558,6 +235558,50 @@ extern "C" CNPC_VWerewolf *npc_VWerewolf()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c8830 size=0x444
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+void sub_100010e1();
+extern int g_1065f4e0[2];
+int *sub_103c8830()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 4, "InputToggleDoorState", {0, 0}, 1, 8, "ToggleDoorState", 0, (void *)sub_100010e1 },
+        { 0xa, "m_OnConditionDeathTriggered", {0x6728, 0}, 1, 0x16, "OnConditionDeathTriggered", g_1055dc70 },
+        { 0xa, "m_OnBeginCrushAnimation", {0x6740, 0}, 1, 0x16, "OnBeginCrushAnimation", g_1055dc70 },
+        { 0xa, "m_OnFinishCrushAnimation", {0x6758, 0}, 1, 0x16, "OnFinishCrushAnimation", g_1055dc70 },
+        { 0xa, "m_OnTeleportOut", {0x6770, 0}, 1, 0x16, "OnTeleportOut", g_1055dc70 },
+        { 0xa, "m_OnTeleportIn", {0x6788, 0}, 1, 0x16, "OnTeleportIn", g_1055dc70 },
+        { 4, "m_DoorState", {0x6680, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bRandomHint", {0x66c8, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flTimeTeleportedOut", {0x66f0, 0}, 1, 2, 0, 0, 0 },
+        { 0xb, "m_pTeleportHint", {0x66b0, 0}, 1, 2, 0, 0, 0 },
+        { 0xb, "m_pLastUsedTeleportHint", {0x66b4, 0}, 1, 2, 0, 0, 0 },
+        { 0xb, "m_pMoveHint", {0x66bc, 0}, 1, 2, 0, 0, 0 },
+        { 0xb, "m_pLastUsedMoveHint", {0x66c0, 0}, 1, 2, 0, 0, 0 },
+        { 0xb, "m_pBreakHint", {0x66c4, 0}, 1, 2, 0, 0, 0 },
+    };
+    g_1065f4e0[1] = 14;
+    g_1065f4e0[0] = (int)&dataDesc[1];
+    return g_1065f4e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c8e00 size=0xc
 void __fastcall sub_103c8e20(void *pThis);
 

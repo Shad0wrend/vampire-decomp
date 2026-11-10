@@ -10514,6 +10514,7 @@
 0x1000f3a8 func   ?sub_10069ca0@@YAHXZ sub_10069ca0
 0x1000f3b2 func   ?sub_1013e450@@YIXPAVCEntityVSlots@@@Z sub_1013e450
 0x1000f3b7 func   ?sub_102d0a80@CUnk102d0a80@@QAEXH@Z CUnk102d0a80::sub_102d0a80
+0x1000f3bc func   ?sub_103c8830@@YAPAHXZ sub_103c8830
 0x1000f3c1 func   ?vfunc2@CTEBeamEntPoint@@UAEPAV1@I@Z CTEBeamEntPoint::vfunc2
 0x1000f3c6 func   ?vfunc175@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc175
 0x1000f3cb func   ?sub_1007e580@@YIXPAH@Z sub_1007e580
