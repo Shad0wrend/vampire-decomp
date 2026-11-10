@@ -128,6 +128,165 @@ L:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128850 size=0x55d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CGameRules.h"
+#include "CUnknown101cccf0.h"
+#include "CVDmg_t.h"
+#include "CGameTrace.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "CTraceFilterWorldOnly.h"
+#include "UTIL_Trace.h"
+#include "Vector.h"
+
+struct DmgInfoView
+{
+	CVDmg_t *m_pDmg;
+	int m_pad04[11];
+	float m_flDamage;
+	int m_pad34;
+	int m_nFlags38;
+	int m_pad3c[4];
+
+	float GetDamage() const
+	{
+		if (m_pDmg)
+			return (float)m_pDmg->sub_101faa70();
+		return m_flDamage;
+	}
+};
+
+struct CDebugConVarView
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad[0x28];
+	int m_n2c;
+};
+
+struct CEntityWaterView
+{
+	char m_pad[0x3e0];
+	int m_nWaterLevel;
+};
+
+extern CDebugConVarView *g_1070b9cc;
+extern void (*g_109f3650)(int level, const char *pMsg, ...);
+void sub_10142e90(const Vector *pStart, const Vector *pEnd, int r, int g, int b, int c, float flDuration);
+void sub_10143b70(const Vector *pOrigin, const Vector *pA, const Vector *pB, int r, int g, int b, int c, float flDuration);
+void sub_101cf210(CGameTrace *pTrace);
+void sub_101c2c30();
+void sub_101c2c60();
+
+inline bool IsSolidInline(CBaseEntity *p)
+{
+	ScopeTrace scope("CBaseEntity::IsSolid", p->m_name26c ? p->m_name26c : g_106b8540);
+	return p->m_n2b0 && !(p->m_b2b4 & 4);
+}
+
+// TARGET: CGameRules::vfunc33
+void CGameRules::vfunc33(void *pInfo, void *pVecSrc, float flRadius, int iClassIgnore, int bIgnoreWorld)
+{
+	const DmgInfoView &info = *(const DmgInfoView *)pInfo;
+	const Vector &vecSrc = *(const Vector *)pVecSrc;
+	CBaseEntity *pEntity = 0;
+	CTraceFilterWorldOnly filter;
+	CGameTrace tr;
+	float flAdjustedDamage, falloff;
+	Vector vecSpot;
+
+	if (flRadius)
+		falloff = info.GetDamage() / flRadius;
+	else
+		falloff = 1.0f;
+
+	int bInWater = (bool)(g_1070b254->vfunc0(&vecSrc.x, 0) & 0x4030);
+
+	int nTraceLines = 0;
+	CUnknown101cccf0 sphere;
+	for (sphere.sub_101cccf0((int)&vecSrc.x, *(int *)&flRadius, 0, 0); (pEntity = sphere.sub_101ccd40()) != 0; sphere.m_nIndex++)
+	{
+		if (pEntity->m_nTakeDamage == 0)
+			continue;
+		if (!IsSolidInline(pEntity))
+			continue;
+		if (pEntity->sub_100b3700() & iClassIgnore)
+			continue;
+
+		if (bInWater && ((CEntityWaterView *)pEntity)->m_nWaterLevel == 0)
+			continue;
+		if (!bInWater && ((CEntityWaterView *)pEntity)->m_nWaterLevel == 3)
+			continue;
+
+		Vector tmp;
+		vecSpot = *(Vector *)((CEntityVSlots *)pEntity)->slot197((int)&tmp, (int)&vecSrc, 1, 0);
+
+		if (!*(unsigned char *)&bIgnoreWorld)
+		{
+			nTraceLines++;
+			UTIL_TraceLine_Calls(vecSrc, vecSpot, 1, &filter, &tr);
+		}
+		else
+		{
+			sub_101cf210(&tr);
+			tr.m_fraction = 1.0f;
+			tr.m_pEnt = pEntity;
+			*(Vector *)&tr.m_endpos[0] = vecSpot;
+		}
+
+		if (tr.m_fraction != 1.0 && tr.m_pEnt != pEntity)
+		{
+			if (!g_1070b9cc->vfunc1() && g_1070b9cc->m_n2c)
+				sub_10142e90(&vecSrc, &vecSpot, 0xff, 0, 0, 1, 5.0f);
+			continue;
+		}
+
+		if (tr.m_startsolid)
+		{
+			*(Vector *)&tr.m_endpos[0] = vecSrc;
+			tr.m_fraction = 0.0f;
+		}
+
+		flAdjustedDamage = (vecSrc - *(Vector *)&tr.m_endpos[0]).Length() * falloff;
+		flAdjustedDamage = info.GetDamage() - flAdjustedDamage;
+		if (flAdjustedDamage < 1.0f)
+			flAdjustedDamage = 1.0f;
+
+		DmgInfoView adjustedInfo = info;
+		adjustedInfo.m_flDamage = flAdjustedDamage;
+		sub_101c2c30();
+
+		Vector dir = *(Vector *)&tr.m_endpos[0] - vecSrc;
+		VectorNormalize(dir);
+
+		CVDmg_t dmg;
+		dmg.sub_101fa8d0(1, info.m_pDmg ? (info.m_pDmg->m_field10 | info.m_nFlags38) : info.m_nFlags38, (int)flAdjustedDamage);
+		adjustedInfo.m_pDmg = &dmg;
+		pEntity->sub_100a7d00((int)&adjustedInfo, (int)&dir, (int)&tr);
+		sub_101c2c60();
+		dmg.sub_101fa680();
+
+		if (!g_1070b9cc->vfunc1() && g_1070b9cc->m_n2c)
+		{
+			g_109f3650(1, "RadiusDamage() applied %.1f damage to %s\n", (double)flAdjustedDamage, pEntity->sub_100ab4f0());
+			sub_10142e90(&vecSrc, &vecSpot, 0, 0xff, 0, 1, 5.0f);
+			sub_10143b70((const Vector *)&tr.m_endpos[0], &Vector(5.0f, 5.0f, 5.0f), &Vector(-5.0f, -5.0f, -5.0f), 0xff, 0, 0, 1, 5.0f);
+		}
+	}
+
+	g_109f3650(1, "RadiusDamage() ran %d trace lines\n", nTraceLines);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128f10 size=0x2e
 #include "CGameRules.h"
 #include "CBaseEntity.h"
