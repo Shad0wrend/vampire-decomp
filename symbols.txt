@@ -8825,6 +8825,7 @@
 0x1000cf4f func   ?sub_101d88b0@CUnknown101d88b0@@QAEXPAUCVDmgSource_t@@0PBUCVDmgBlock16_t@@HHH@Z CUnknown101d88b0::sub_101d88b0
 0x1000cf54 func   ?vfunc82@CNPC_VSheriffSwarm@@UAEPAUdatamap_t@@XZ CNPC_VSheriffSwarm::vfunc82
 0x1000cf59 func   ?sub_10135d00@CUnknown10135d00@@QAEXPAH@Z CUnknown10135d00::sub_10135d00
+0x1000cf5e func   ?sub_101d7cd0@CUnknown101d7ec0@@QAEXXZ CUnknown101d7ec0::sub_101d7cd0
 0x1000cf63 func   ?sub_102dd720@@YAXXZ sub_102dd720
 0x1000cf68 func   ?vfunc3@CTESmoke@@UAEXPBVVector@@0@Z CTESmoke::vfunc3
 0x1000cf6d func   ?sub_10280a50@CAI_BaseNPC@@QAE_NXZ CAI_BaseNPC::sub_10280a50
