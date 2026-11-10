@@ -165162,6 +165162,55 @@ void CDropEntityUnit::sub_1024fc20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024fe00 size=0x1f5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatWeapon.h"
+#include "CCollisionProperty.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "ScopeTrace.h"
+#include "engineiface.h"
+#include "engineserver.h"
+
+struct CWeaponSolidView : CBaseCombatWeapon
+{
+	CCollisionProperty *CollisionProp() { return (CCollisionProperty *)((char *)this + 0x270); }
+	void SetSolid(int val)
+	{
+		ScopeTrace trace("CBaseEntity::SetSolid", m_pszName26c ? m_pszName26c : g_106b8540);
+		CollisionProp()->sub_100dc480(val);
+	}
+	void AddSolidFlags(int flags)
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_pszName26c ? m_pszName26c : g_106b8540);
+		CollisionProp()->AddSolidFlags(flags);
+	}
+};
+
+// TARGET: CBaseCombatWeapon::sub_1024fe00
+void CBaseCombatWeapon::sub_1024fe00()
+{
+	if (m_nEffectFlags19c & 0x40) {
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		int edict = (int)m_pHolder;
+		enginesound->vfunc3(&filter, engine->vfunc35(edict), 1, "items/suitchargeok1.wav", 1.0f, 0.8f, 0, 0x96, 0, 0, 1, 0);
+		m_nEffectFlags19c = (m_nEffectFlags19c & ~0x40) | 2;
+	}
+	((CWeaponSolidView *)this)->SetSolid(2);
+	((CWeaponSolidView *)this)->AddSolidFlags(8);
+	sub_100b3b00();
+	vfunc305();
+	sub_100ac4e0(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10250080 size=0x3a
 struct CUnknown1070ba0c {
     virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
