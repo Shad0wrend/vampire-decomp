@@ -64,6 +64,40 @@ void CUtlVectorDataOps<HandleVec, 12>::vfunc0(void *fieldInfo, void *pSave)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cc610 size=0xe1
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
+#include "CUtlVectorDataOps.h"
+#include "RestoreSlots.h"
+#include "SaveRestoreFieldInfo_t.h"
+#include "utlvector.h"
+
+typedef CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > > CUtlVectorEntHandles;
+
+inline LocalDataMap *DeduceArrayTypeDatamap_EntHandles() { return 0; }
+
+// TARGET: CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >,12>::vfunc1
+void CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >,12>::vfunc1(void *fieldInfo, void *pRestoreV)
+{
+	LocalDataMap *pArrayTypeDatamap = DeduceArrayTypeDatamap_EntHandles();
+	LocalFieldDesc dataDesc = { 12, "elems", {0, 0}, 1, 2, 0, 0, 0, pArrayTypeDatamap };
+	LocalDataMap dataMap = { &dataDesc, 1, "uv", 0, false, false, 0 };
+	CUtlVectorEntHandles *pUtlVector = (CUtlVectorEntHandles *)((SaveRestoreFieldInfo_t *)fieldInfo)->pField;
+	RestoreSlots *pRestore = (RestoreSlots *)pRestoreV;
+	int nElems = pRestore->ReadCount();
+	pUtlVector->SetCount(nElems);
+	if (pArrayTypeDatamap == 0) {
+		if (nElems) {
+			dataDesc.fieldSize = nElems;
+			pRestore->ReadFields("elems", &((*pUtlVector)[0]), &dataMap, &dataDesc, 1);
+		}
+	} else {
+		for (int i = 0; i < pUtlVector->Count(); i++)
+			pRestore->ReadElement(&pUtlVector->Element(i), pArrayTypeDatamap);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cc740 size=0x10
 #include "CBaseEntity.h"
 #include "utlmemory.h"
