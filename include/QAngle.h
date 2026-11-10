@@ -11,6 +11,11 @@ public:
 	QAngle() {}
 	QAngle(float X, float Y, float Z) { x = X; y = Y; z = Z; }
 
+	void Init(float ix = 0.0f, float iy = 0.0f, float iz = 0.0f) { x = ix; y = iy; z = iz; }
+	// The SDK's inline operator=; its out-of-line copy is 0x1011d2e0 (called from ReadUsercmd 0x1011ccc0 for
+	// CUserCmd::viewangles, where Vector::operator= 0x1003e4b0 is called for the Vector at +0x50).
+	QAngle &operator=(const QAngle &vOther) { x = vOther.x; y = vOther.y; z = vOther.z; return *this; }
+
 	float &operator[](int i) { return ((float *)this)[i]; }
 	float operator[](int i) const { return ((float *)this)[i]; }
 
