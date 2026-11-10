@@ -239599,6 +239599,45 @@ extern "C" CBaseEntity *npc_VZombie()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dde40 size=0x301
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern ISaveRestoreOps *g_1055dc70;
+void sub_10008756();
+extern int g_10664090[2];
+int *sub_103dde40()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 0xa, "m_OnAttackedVictim", {0x66e8, 0}, 1, 0x16, "OnAttackedVictim", g_1055dc70 },
+        { 5, "m_bShouldRagdoll", {0x6675, 0}, 1, 6, "should_ragdoll", 0, 0 },
+        { 1, "m_flRemoveDist", {0x66dc, 0}, 1, 6, "remove_distance", 0, 0 },
+        { 4, "m_iZombieAIType", {0x6678, 0}, 1, 6, "ZombieAIType", 0, 0 },
+        { 5, "m_iNeedsCrawlOutOfGround", {0x667c, 0}, 1, 2, 0, 0, 0 },
+        { 5, "m_bShouldGib", {0x66e0, 0}, 1, 2, 0, 0, 0 },
+        { 3, "m_vecDeathForceVector", {0x6680, 0}, 1, 2, 0, 0, 0 },
+        { 0xf, "m_flGrappleReadyTimer", {0x66d8, 0}, 1, 2, 0, 0, 0 },
+        { 2, "InputSetZombieAIType", {0, 0}, 1, 8, "SetZombieAIType", 0, (void *)sub_10008756 },
+    };
+    g_10664090[1] = 9;
+    g_10664090[0] = (int)&dataDesc[1];
+    return g_10664090;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103de220 size=0x6e
 #include "CNPC_VZombie.h"
 extern void *vt_104d1d3c[];

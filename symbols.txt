@@ -9047,6 +9047,7 @@
 0x1000d3b9 func   ?vfunc126@CNPC_VMingXiao@@UAEHH@Z CNPC_VMingXiao::vfunc126
 0x1000d3be func   ?sub_102c7360@CUnk102c7360@@QAEXD@Z CUnk102c7360::sub_102c7360
 0x1000d3c3 func   ?vfunc2@CTEDynamicLight@@UAEPAVCBaseTempEntity@@I@Z CTEDynamicLight::vfunc2
+0x1000d3c8 func   ?sub_103dde40@@YAPAHXZ sub_103dde40
 0x1000d3cd func   ?sub_10379e80@@YIXPAUE@@HH@Z sub_10379e80
 0x1000d3d2 func   ?sub_102353a0@@YAHXZ sub_102353a0
 0x1000d3d7 func   ?sub_1033d2f0@CUnknown1033d2f0@@QAE_NH@Z CUnknown1033d2f0::sub_1033d2f0
