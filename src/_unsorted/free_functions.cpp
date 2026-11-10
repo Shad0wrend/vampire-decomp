@@ -57,6 +57,50 @@ void CPhysForceMotion::sub_10025f80(float flScale)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100260a0 size=0x35e
+struct ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+ISaveRestoreOps *sub_10045d90(int);
+extern int g_10536d08;
+void sub_10001a9b();
+void sub_10002824();
+void sub_100050e7();
+void sub_100152f3();
+extern int g_10536e28[2];
+int *sub_100260a0()
+{
+    static typedescription_t dataDesc[] = {
+        { 0 },
+        { 0xa, "m_pController", {0x450, 0}, 1, 2, 0, sub_10045d90(8), 0 },
+        { 2, "m_nameAttach", {0x454, 0}, 1, 6, "attach1", 0, 0 },
+        { 1, "m_force", {0x458, 0}, 1, 6, "force", 0, 0 },
+        { 1, "m_forceTime", {0x45c, 0}, 1, 6, "forcetime", 0, 0 },
+        { 0xc, "m_attachedObject", {0x460, 0}, 1, 2, 0, 0, 0 },
+        { 9, "m_integrator", {0x464, 0}, 1, 2, 0, 0, 0, (datamap_t *)&g_10536d08 },
+        { 0, "InputActivate", {0, 0}, 1, 8, "Activate", 0, (void *)sub_100050e7 },
+        { 0, "InputDeactivate", {0, 0}, 1, 8, "Deactivate", 0, (void *)sub_10002824 },
+        { 1, "InputForceScale", {0, 0}, 1, 8, "scale", 0, (void *)sub_100152f3 },
+        { 0, "CPhysForceForceOff", {0, 0}, 1, 0x20, 0, 0, (void *)sub_10001a9b },
+    };
+    g_10536e28[1] = 10;
+    g_10536e28[0] = (int)&dataDesc[1];
+    return g_10536e28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100276c0 size=0x2a
 #include "CPhysForce.h"
 
