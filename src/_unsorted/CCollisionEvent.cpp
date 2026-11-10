@@ -19,6 +19,81 @@ CCollisionEvent::CCollisionEvent()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002fd10 size=0x281
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CCollisionEvent.h"
+#include "CBaseEntity.h"
+#include "IPhysicsObject.h"
+#include "IPhysicsEnvironment.h"
+#include "Vector.h"
+
+struct IPhysicsFluidControllerView
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2();
+	virtual void GetSurfacePlane(Vector *pNormal, float *pDist);
+	virtual float GetDensity();
+};
+
+extern IPhysicsEnvironment *g_10723940;
+void sub_10151150(void *pFluid, void *pObject, CBaseEntity *pEntity);
+
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+
+void CCollisionEvent::vfunc5(void *pObjectV, void *pFluidV)
+{
+	IPhysicsObject *pObject = (IPhysicsObject *)pObjectV;
+	IPhysicsFluidControllerView *pFluid = (IPhysicsFluidControllerView *)pFluidV;
+	ScopeTrace scope("CCollisionEvent::FluidStartTouch", g_106b8540);
+	if ((pObject == 0) || (pFluid == 0))
+		return;
+
+	float dist;
+	CBaseEntity *pEntity = (CBaseEntity *)pObject->vfunc6();
+	if (pEntity)
+	{
+		pEntity->m_flags268 |= 0x80000;
+		float timeSinceLastCollision = sub_100309a0((int)pEntity);
+		if (timeSinceLastCollision < 0.5f)
+			return;
+
+		Vector normal;
+		pFluid->GetSurfacePlane(&normal, &dist);
+
+		Vector vel;
+		Vector angVel;
+		pObject->vfunc40(&vel.x, &angVel.x);
+
+		Vector unitVel = vel;
+		VectorNormalize(unitVel);
+
+		float dragScale = pFluid->GetDensity() * g_10723940->vfunc28();
+		normal = -normal;
+		float drag = pObject->vfunc58(normal);
+		float linearScale = (unitVel.x * normal.x + unitVel.y * normal.y + unitVel.z * normal.z) * drag * dragScale * 0.5;
+		linearScale = clamp(linearScale, 0.0f, 1.0f);
+		vel *= -linearScale;
+
+		Vector rotAxis = angVel;
+		VectorNormalize(rotAxis);
+		float angScale = pObject->vfunc59(angVel) * dragScale * 0.25;
+		angScale = clamp(angScale, 0.0f, 1.0f);
+		angVel *= -angScale;
+
+		sub_10151150(pFluid, pObject, pEntity);
+
+		pObject->vfunc41(&vel, &angVel);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030050 size=0xb4
 #include "CCollisionEvent.h"
 #include "CBaseEntity.h"

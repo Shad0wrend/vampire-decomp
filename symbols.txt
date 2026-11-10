@@ -9177,6 +9177,7 @@
 0x1000d6d4 func   ?sub_101ccbb0@CUnknown101ccbb0@@QAE_NH@Z CUnknown101ccbb0::sub_101ccbb0
 0x1000d6d9 func   ?vfunc1@CTEMuzzleFlash@@UAEHXZ CTEMuzzleFlash::vfunc1
 0x1000d6de func   ?sub_1030fff0@CUnknown1030fe50@@QAEHH@Z CUnknown1030fe50::sub_1030fff0
+0x1000d6e3 func   ?vfunc5@CCollisionEvent@@UAEXPAX0@Z CCollisionEvent::vfunc5
 0x1000d6e8 func   ?sub_10324ad0@CUnknown10324ad0@@QAE_NXZ CUnknown10324ad0::sub_10324ad0
 0x1000d6ed func   ?sub_100f3d80@CUnk100f3d80@@QAEMXZ CUnk100f3d80::sub_100f3d80
 0x1000d6f2 func   ?sub_102325e0@CVoiceGameMgr@@QAE_NPAVCBaseEntity@@PBD@Z CVoiceGameMgr::sub_102325e0
