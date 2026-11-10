@@ -22,6 +22,200 @@ bool __stdcall sub_1036b6b0(int sector)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036b750 size=0x6b7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+// TARGET: CNPC_VChangBros::vfunc442
+#include "ScopeTrace.h"
+#include "CFlagsUnit.h"
+#include "CAI_Motor.h"
+#include "CStatDefault3List.h"
+#include "CNPC_VChangBros.h"
+#include "CNPC_VVampireBoss.h"
+#include "CBaseCombatCharacter.h"
+#include "globalvars.h"
+
+extern CStatDefault3List g_10738d10;
+extern float g_104ada40;
+extern float g_104ada54;
+extern float g_104ada58;
+extern float g_104ada5c;
+
+struct CCollisionIntView
+{
+	char m_pad0000[0x44];
+	unsigned short m_usSolidFlags;	// 0x44
+	void sub_100dc580(int flags);
+	void SetSolidFlags(int flags) { sub_100dc580(flags); }
+	void AddSolidFlags(int flags) { SetSolidFlags(m_usSolidFlags | flags); }
+	void RemoveSolidFlags(int flags) { SetSolidFlags(m_usSolidFlags & ~flags); }
+};
+
+inline void AddSolidFlagsTo(CBaseEntity *pEntity, int flags)
+{
+	ScopeTrace scope("CBaseEntity::AddSolidFlags", pEntity ? (((CNPC_VVampireBoss *)pEntity)->m_pszName26c ? ((CNPC_VVampireBoss *)pEntity)->m_pszName26c : g_106b8540) : g_105387dc);
+	((CCollisionIntView *)((char *)pEntity + 0x270))->AddSolidFlags(flags);
+}
+
+void CNPC_VChangBros::vfunc442(int *pTask)
+{
+	ScopeTrace scope("CNPC_VChangBros::StartTask", g_106b8540);
+
+	switch (*pTask)
+	{
+	case 0x152:
+		*(int *)((char *)this + 0x5ddc) = (int)sub_1036cce0();
+		sub_10273e80(0);
+		break;
+
+	case 0x150:
+		sub_102e0b40((float *)m_pMotor5d44);
+		{
+			ScopeTrace addSolid("CBaseEntity::AddSolidFlags", ((CNPC_VVampireBoss *)this)->m_pszName26c ? ((CNPC_VVampireBoss *)this)->m_pszName26c : g_106b8540);
+			((CCollisionIntView *)((char *)this + 0x270))->AddSolidFlags(4);
+		}
+		((CBaseEntity *)this)->sub_100b3b00();
+		sub_10289ee0(0x1148);
+	case 0x151:
+		sub_102e0b40((float *)m_pMotor5d44);
+		sub_102c41b0((int)"chang_teleport_in_emitter", 0, 0, 0.0f);
+		sub_103c6a00();
+		m_fFacingTime = gpGlobals->curtime;
+		break;
+
+	case 0x153:
+		sub_102e0b40((float *)m_pMotor5d44);
+		sub_1027d9b0(0);
+		m_flags14bc &= 0x7ffffffd;
+		m_bJumping = false;
+		sub_102c4e80();
+		sub_102c41b0((int)"chang_teleport_out_emitter", 0, 0, 0.0f);
+		sub_10289ee0(0x1149);
+		break;
+
+	case 0x154:
+		if ((*(int *)((char *)this + 0x5ddc) = (int)sub_1036cfa0()) == 0)
+		{
+			m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VChangBros.cpp";
+			m_nLine1b48 = 0x1aa;
+			vfunc448(1);
+		}
+		sub_10273e80(0);
+		break;
+
+	case 0x155:
+		sub_1036e160(*(int *)((char *)this + 0x5ddc));
+		sub_10273e80(0);
+		break;
+
+	case 0x156:
+		{
+			CBaseEntity *pEnemy = m_h628c.Get();
+			if (pEnemy)
+			{
+				sub_102e0b40((float *)m_pMotor5d44);
+				CAI_Motor *pMotor = m_pMotor5d44;
+				pMotor->sub_102e2020(((CAI_BaseNPC *)pEnemy)->vfunc217(), 0);
+			}
+		}
+		sub_10289ee0(0x114c);
+		m_fEnergyChargeTime = g_104ada54 + gpGlobals->curtime;
+		sub_103c6eb0();
+		sub_103c6df0(0, "chang_ball_charge_emitter");
+		sub_103c6df0(1, "chang_ball_charge_emitter");
+		sub_103c6f40();
+		break;
+
+	case 0x157:
+		m_bEnergyBallSpawned = false;
+		sub_10289ee0(0x114a);
+		*(float *)((char *)this + 0x5d9c) = gpGlobals->curtime;
+		break;
+
+	case 0x158:
+		if (sub_1036df50(*(void **)((char *)this + 0x5ddc)))
+		{
+			sub_10273e80(0);
+		}
+		else
+		{
+			m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VChangBros.cpp";
+			m_nLine1b48 = 0x1ce;
+			vfunc448(1);
+		}
+		break;
+
+	case 0x159:
+		*(int *)((char *)this + 0x5ddc) = (int)sub_1036d100();
+		sub_10273e80(0);
+		break;
+
+	case 0x15a:
+		break;
+
+	case 0x15b:
+		AddSolidFlagsTo((CBaseEntity *)this, 4);
+		sub_10289ee0(0x114b);
+		if (m_bCenterStored)
+		{
+			sub_102e0b40((float *)m_pMotor5d44);
+			m_pMotor5d44->sub_102e2020((const float *)&m_vArenaCenter, 0);
+		}
+		m_fUnitedTime = g_104ada40 + gpGlobals->curtime;
+		break;
+
+	case 0x15c:
+		sub_10289ee0(0x114c);
+		break;
+
+	case 0x15d:
+		sub_102e0b40((float *)m_pMotor5d44);
+		m_fLastUnitedAttackTime = gpGlobals->curtime;
+		sub_10289ee0(0x114d);
+		{
+			ScopeTrace removeSolid("CBaseEntity::RemoveSolidFlags", ((CNPC_VVampireBoss *)this)->m_pszName26c ? ((CNPC_VVampireBoss *)this)->m_pszName26c : g_106b8540);
+			((CCollisionIntView *)((char *)this + 0x270))->RemoveSolidFlags(4);
+		}
+		if (m_ChangType == 0)
+		{
+			Vector vec = m_vArenaCenter;
+			vec.z = g_104ada5c + vec.z;
+			sub_102c41b0((int)"chang_blast_emitter", &vec, 0, 0.0f);
+			CBaseEntity *pEnemy = m_h628c.Get();
+			if (pEnemy)
+			{
+				if (sub_1036e580((int)((CAI_BaseNPC *)pEnemy)->vfunc217()) != 4)
+				{
+					int stat = ((CBaseCombatCharacter *)this)->sub_10337860();
+					if (stat >= 0)
+					{
+						float flDamage = g_10738d10.sub_101d5e80(stat)->m_cc;
+						sub_103c7230(&vec, g_104ada58, flDamage);
+					}
+				}
+			}
+		}
+		break;
+
+	case 0x13b:
+		if (sub_1036e580((int)vfunc217()) == 3)
+			m_fLastJumpTime = gpGlobals->curtime;
+		sub_103c5ac0(pTask);
+		break;
+
+	default:
+		sub_103c5ac0(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036bfc0 size=0x57f
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

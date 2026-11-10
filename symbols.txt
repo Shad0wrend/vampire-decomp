@@ -11071,6 +11071,7 @@
 0x100100ff func   ?sub_1024a1e0@@YIXPAPAUCUnknownObj1024a1e0@@@Z sub_1024a1e0
 0x10010104 func   ?sub_100cd7e0@TOutput@@QAEHPAUTSave@@@Z TOutput::sub_100cd7e0
 0x10010109 func   ?sub_10427a30@@YAPAXPAH@Z sub_10427a30
+0x1001010e func   ?vfunc442@CNPC_VChangBros@@QAEXPAH@Z CNPC_VChangBros::vfunc442
 0x10010113 func   _npc_VSheriffMan npc_VSheriffMan
 0x10010118 func   ?sub_103f9dd0@@YAHXZ sub_103f9dd0
 0x1001011d func   ?vfunc5@CPhysConstraintSystem@@UAEPAV1@I@Z CPhysConstraintSystem::vfunc5
