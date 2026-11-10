@@ -185,6 +185,46 @@ int CNPC_VBach::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10363a30 size=0xca
+#include "CNPC_VBach.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_10587668[];
+
+int CNPC_VBach::vfunc440(int schedule)
+{
+	switch (schedule) {
+	case 0xdc:
+		return 0x15e;
+	case 0x17:
+		if (!m_b66a7)
+			return 0x15f;
+		goto weapon;
+	case 0xed:
+	case 0x15f:
+		if (!m_b66a7)
+			goto standard;
+	weapon:
+		{
+			CBaseEntity *pWeapon = sub_10007e19();
+			if (pWeapon) {
+				const char *pszClass = pWeapon->sub_1009f200();
+				if (!_strcmpi(pszClass, g_10587668) && sub_1008dc40(0x10, -1) && !sub_10269aa0(0x2c))
+					return 0x160;
+			}
+		}
+	default:
+		return sub_103851c0(schedule);
+	case 0xef:
+		if (!m_b66a7)
+			goto standard;
+		return 0x15f;
+	case 0xb1:
+	standard:
+		return 0x15f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10363b40 size=0xf
 #include "CNPC_VBach.h"
 namespace lifted {
