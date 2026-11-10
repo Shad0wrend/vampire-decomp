@@ -146074,6 +146074,47 @@ void CUnknown102126c0::sub_10212790(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10212a30 size=0x169
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBasePlayer.h"
+#include "CGameSign.h"
+#include "CSingleUserRecipientFilter.h"
+#include "engineserver.h"
+#include "TestBit.h"
+
+extern int g_10726088;
+void sub_101cd940(CBaseEntity *pEntity);
+
+struct CGameSignView
+{
+	char m_pad0000[0x45c];
+	float m_flValue45c;
+};
+
+// TARGET: CGameSign::sub_10212a30
+void CGameSign::sub_10212a30(CBasePlayer *pPlayer)
+{
+	if (!pPlayer)
+		return;
+	if (((EHANDLE *)((char *)pPlayer + 0x1040))->Get() != (CBaseEntity *)this)
+		return;
+	if (!TestBit(m_flags204, 1)) {
+		pPlayer->sub_1015ef60();
+		pPlayer->sub_101815b0(1);
+		pPlayer->sub_101815b0(8);
+	}
+	CSingleUserRecipientFilter filter(pPlayer);
+	filter.MakeReliable();
+	engine->vfunc65(&filter, g_10726088);
+	engine->vfunc67(0);
+	engine->vfunc72(((CGameSignView *)this)->m_flValue45c);
+	engine->vfunc71(engine->vfunc35(pcd_stage(m_pEdict2e0)));
+	engine->vfunc66();
+	if (!TestBit(m_flags204, 2))
+		sub_101cd940((CBaseEntity *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212da0 size=0x1b7
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
