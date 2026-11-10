@@ -92995,6 +92995,27 @@ float CBasePlayer::sub_1017d900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017ddd0 size=0x64
+#include "CBasePlayer.h"
+struct CConVarLike {
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad04[0x28];
+	int m_n2c;
+};
+extern CConVarLike *g_1072594c;
+unsigned int sub_1042fd40(unsigned int);
+
+int CBasePlayer::sub_1017ddd0()
+{
+	if ((g_1072594c->vfunc1() ? 0 : g_1072594c->m_n2c) >= 0)
+		return g_1072594c->vfunc1() ? 0 : g_1072594c->m_n2c;
+	unsigned int t = (((m_nCriminalLevelEnc & 0x8a66e35) ^ 0x793f90) + 0x8b10412) & 0x175991ca;
+	t ^= m_nCriminalLevelEnc;
+	return sub_1042fd40(t ^ 0x783682a9);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017deb0 size=0x73
 struct CGameTimeScale {
 	virtual void vfunc0();
