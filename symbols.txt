@@ -3832,6 +3832,7 @@
 0x100063a2 func   ?sub_1023c450@@YAXXZ sub_1023c450
 0x100063a7 func   ?vfunc5@CPathKeyFrame@@QAEPAV1@I@Z CPathKeyFrame::vfunc5
 0x100063ac func   ?sub_10085d00@@YAXXZ sub_10085d00
+0x100063b1 func   ?sub_10296c40@CAI_BaseNPCTroika@@QAEDPAV1@PAVCBaseEntity@@HM@Z CAI_BaseNPCTroika::sub_10296c40
 0x100063b6 func   ?vfunc463@CAI_BaseNPCTroika@@UAEXHH@Z CAI_BaseNPCTroika::vfunc463
 0x100063bb func   ?sub_1017e560@CBasePlayer@@QAEXPAUinputdata_t@@@Z CBasePlayer::sub_1017e560
 0x100063c5 func   ?sub_1042b9c0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_1042b9c0

@@ -175624,6 +175624,180 @@ havecolor:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10296c40 size=0x64e
+#include "CNPC_VTzimisce.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Hint.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include <math.h>
+
+const char *sub_101d3730(const char *pszFmt, ...);
+float __fastcall sub_102d12e0(void *pThis);
+extern EHANDLE g_10925444;
+
+class Vector2D
+{
+public:
+    float x, y;
+};
+
+inline void Vector2DSubtract(const Vector2D &a, const Vector2D &b, Vector2D &c)
+{
+    c.x = a.x - b.x;
+    c.y = a.y - b.y;
+}
+
+inline void Vector2DMultiply(const Vector2D &a, float b, Vector2D &c)
+{
+    c.x = a.x * b;
+    c.y = a.y * b;
+}
+
+void sub_101d2f40(Vector *pOut, float flYaw);
+
+class CAI_FailView
+{
+public:
+    void sub_102d0ab0(const char *pszMsg);
+};
+
+class CUnknown102d0b20
+{
+public:
+    void sub_102d0b20();
+};
+
+struct CWeaponRangeView
+{
+    char m_pad0000[0x8c0];
+    float m_f8c0;
+};
+
+struct CTroikaHintView
+{
+    char m_pad0000[0x5ddc];
+    CAI_Hint *m_pHint5ddc;
+};
+
+#define pHint ((CAI_Hint *)pOther)
+#define pTarget pEnt
+
+// TARGET: sub_10296c40
+char CAI_BaseNPCTroika::sub_10296c40(CAI_BaseNPCTroika *pOther, CBaseEntity *pEnt, int a, float f)
+{
+    if (0 == pHint || pHint->m_n5e8 != 0)
+        goto disabled;
+
+    if (pHint == ((CTroikaHintView *)this)->m_pHint5ddc && m_b6435)
+    {
+        if (g_10925444.Get() == (CBaseEntity *)this)
+            ((CUnknown102d0b20 *)pHint)->sub_102d0b20();
+        return 1;
+    }
+
+    if (pTarget == 0)
+    {
+        if (g_10925444.Get() == (CBaseEntity *)this)
+            ((CUnknown102d0b20 *)pHint)->sub_102d0b20();
+        return 1;
+    }
+
+    {
+        if (sub_1032e7b0() == 0)
+        {
+            if (g_10925444.Get() == (CBaseEntity *)this)
+                ((CAI_FailView *)pHint)->sub_102d0ab0("No active weapon");
+            return 0;
+        }
+
+        if (fabs(((CEntityVSlots *)pHint)->slot217()->z - ((CEntityVSlots *)this)->slot217()->z) > 64.0)
+        {
+            if (g_10925444.Get() == (CBaseEntity *)this)
+                ((CAI_FailView *)pHint)->sub_102d0ab0(sub_101d3730("Height diff (%d) > %d",
+                    (int)fabs(((CEntityVSlots *)pHint)->slot217()->z - ((CEntityVSlots *)this)->slot217()->z), 64));
+            return 0;
+        }
+
+        const Vector &vecHintPos = *((CEntityVSlots *)pHint)->slot217();
+        const Vector &vecTargetPos = *((CEntityVSlots *)pTarget)->slot217();
+        Vector vecDelta;
+        Vector2DSubtract(*(const Vector2D *)&vecTargetPos, *(const Vector2D *)&vecHintPos, *(Vector2D *)&vecDelta);
+        float flDist = vecDelta.Length2D();
+
+        if (flDist < pHint->m_f45c)
+        {
+            if (g_10925444.Get() == (CBaseEntity *)this)
+                ((CAI_FailView *)pHint)->sub_102d0ab0(sub_101d3730("Distance (%d) < %d", (int)flDist, (int)pHint->m_f45c));
+            return 0;
+        }
+
+        if (!m_b6435)
+        {
+            float flWeaponRange = ((CWeaponRangeView *)sub_1032e7b0())->m_f8c0;
+            if (flDist > flWeaponRange || flDist > pHint->m_f460)
+            {
+                if (g_10925444.Get() == (CBaseEntity *)this)
+                    ((CAI_FailView *)pHint)->sub_102d0ab0(sub_101d3730("Distance (%d) > %d or %d", (int)flDist, (int)flWeaponRange, (int)pHint->m_f460));
+                return 0;
+            }
+        }
+
+        if (((CTroikaHintView *)this)->m_pHint5ddc != pHint)
+        {
+            Vector vecSelf = *((CEntityVSlots *)this)->slot217() - *((CEntityVSlots *)pTarget)->slot217();
+            Vector vecHint = *((CEntityVSlots *)pHint)->slot217() - *((CEntityVSlots *)pTarget)->slot217();
+            VectorNormalize(vecSelf);
+            VectorNormalize(vecHint);
+            float flProj = vecSelf.x * vecHint.x + vecSelf.y * vecHint.y;
+            if (flProj < 0.2f)
+            {
+                if (g_10925444.Get() == (CBaseEntity *)this)
+                    ((CAI_FailView *)pHint)->sub_102d0ab0(sub_101d3730("Projection (%.2f) < 0.2", (double)flProj));
+                return 0;
+            }
+        }
+
+        Vector vecDir;
+        Vector2DMultiply(*(Vector2D *)&vecDelta, 1.0f / (flDist + 1.1920929e-7f), *(Vector2D *)&vecDir);
+        Vector vecForward;
+        sub_101d2f40(&vecForward, sub_102d12e0(pHint));
+        float flFacing = vecForward.x * vecDir.x + vecDir.y * vecForward.y;
+
+        if (flFacing <= *(float *)&a)
+        {
+            if (g_10925444.Get() == (CBaseEntity *)this)
+                ((CAI_FailView *)pHint)->sub_102d0ab0(sub_101d3730("Enemy outside of good range (%.2f) <= %.2f", (double)flFacing, (double)*(float *)&a));
+            return 0;
+        }
+
+        if (flFacing >= f)
+        {
+            if (g_10925444.Get() == (CBaseEntity *)this)
+                ((CAI_FailView *)pHint)->sub_102d0ab0(sub_101d3730("Enemy inside of bad range (%.2f) >= %.2f", (double)flFacing, (double)f));
+            return 0;
+        }
+
+        if (m_bForceCoverLOSCheck && !sub_102968f0(pHint, pTarget))
+        {
+            if (g_10925444.Get() == (CBaseEntity *)this)
+                ((CAI_FailView *)pHint)->sub_102d0ab0("Failed hint LOS");
+            return 0;
+        }
+    }
+
+    if (g_10925444.Get() == (CBaseEntity *)this)
+        ((CUnknown102d0b20 *)pHint)->sub_102d0b20();
+    return 1;
+
+disabled:
+    if (g_10925444.Get() == (CBaseEntity *)this)
+        ((CAI_FailView *)pHint)->sub_102d0ab0("Disabled");
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10297430 size=0x82
 #include "CAI_BaseNPCTroika.h"
 
