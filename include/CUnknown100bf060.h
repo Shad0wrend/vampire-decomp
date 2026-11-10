@@ -8,5 +8,6 @@ public:
 	char m_error;
 
 	char sub_10009494();
-	int sub_100bf060(char *buf, int size, char stopAtNewline, int *pLen);
+	bool sub_100bf060(char *buf, int size, char stopAtNewline, int *pLen);
+	char *sub_100bf0f0(bool *pFailed);
 };
