@@ -112831,6 +112831,68 @@ float CStealthKillRules::sub_101be1d0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be1f0 size=0x263
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "UTIL_Trace.h"
+#include "CStealthKillRules.h"
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+struct SKUnitView { char pad[0x5bb4]; int m_n5bb4; };
+struct SKEdictView { void *vt; char pad[0x2e0 - 4]; int m_edict2e0; int edict() { return m_edict2e0; } };
+struct SKVirt
+{
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18)
+	EVS(190) EVS(191) EVS(192) virtual Vector *slot193(Vector *pOut); EVS(194) EVS(195) EVS(196) EVS(197) EVS(198) EVS(199)
+	EVS10(20) EVS10(21) EVS10(22) EVS10(23) EVS10(24) EVS10(25) EVS10(26) EVS10(27) EVS10(28)
+	EVS(290) EVS(291) EVS(292) EVS(293) virtual char slot294(SKVirt *pTarget); EVS(295) EVS(296) EVS(297) EVS(298) EVS(299)
+	EVS10(30) EVS10(31) EVS10(32) EVS10(33) EVS10(34) EVS10(35)
+	EVS(360) EVS(361) EVS(362) EVS(363) EVS(364) EVS(365) EVS(366) EVS(367) virtual Vector slot368();
+};
+struct SKHitView : SKVirt { char pad[0x98 - 4]; SKUnitView *m_p98; SKHitView *m_p9c; };
+struct SKChar : CBaseCombatCharacter { bool sub_103285a0(void *pOther, int a, int b); };
+struct CStealthKillRulesUnit : CStealthKillRules { bool sub_101be500(void *a, void *b); int sub_101be1f0(SKChar *pTarget); };
+
+inline int SK_ENTINDEX(void *p) { return engine->vfunc35(((SKEdictView *)p)->edict()); }
+
+int CStealthKillRulesUnit::sub_101be1f0(SKChar *pTarget)
+{
+	ScopeTrace trace("CStealthKillRules::FindVictim", g_106b8540);
+	int idx = SK_ENTINDEX(pTarget) - 1;
+	if (engine->vfunc120() == m_aTable3[idx])
+		return m_aTable2[idx];
+	m_aTable2[idx] = 0;
+	if (pTarget->sub_10167320()) {
+		float f = sub_101be1d0(pTarget);
+		if (f > 0.0f) {
+			Vector origin;
+			((SKVirt *)pTarget)->slot193(&origin);
+			Vector end = origin + ((SKVirt *)pTarget)->slot368() * f;
+			CGameTrace tr;
+			UTIL_TraceLine_RayCall(origin, end, 0x201400b, pTarget, 0, &tr);
+			if (tr.m_pEnt) {
+				SKHitView *v = ((SKHitView *)tr.m_pEnt)->m_p9c;
+				if (v && v->slot294((SKVirt *)pTarget)) {
+					SKUnitView *unit = v->m_p98;
+					if ((sub_101be500(pTarget, v) || (unit && unit->m_n5bb4 > 0)) && pTarget->sub_103285a0(v, 3, 1))
+						m_aTable2[idx] = (int)v;
+				}
+			}
+		}
+	}
+	m_aTable3[idx] = engine->vfunc120();
+	return m_aTable2[idx];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be500 size=0x121
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
