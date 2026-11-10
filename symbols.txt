@@ -7041,6 +7041,7 @@
 0x1000a8ee func   ?sub_102c9d50@@YAXXZ sub_102c9d50
 0x1000a8f3 func   ?sub_104278d0@CUnknown10427700@@QAEXPBDHHHHH@Z CUnknown10427700::sub_104278d0
 0x1000a8f8 func   ?vfunc103@CLogicCaseToggle@@QAEXXZ CLogicCaseToggle::vfunc103
+0x1000a8fd func   ?sub_103082b0@CNavView@@QAEMPAUCNPCView@@M@Z CNavView::sub_103082b0
 0x1000a902 func   ?sub_10403a60@@YAHXZ sub_10403a60
 0x1000a907 func   ?sub_100b0720@@YAXXZ sub_100b0720
 0x1000a911 func   ?vfunc110@CPointAngleSensor@@UAE_NPBD0@Z CPointAngleSensor::vfunc110

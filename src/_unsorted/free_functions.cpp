@@ -198847,6 +198847,58 @@ bool CUnknown1030a6e0::sub_10308190(const Vector *pGoal)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103082b0 size=0x198
+#include "Vector.h"
+
+struct Vec2 {
+	float x, y;
+	Vec2() {}
+	Vec2(const Vec2 &o) { x = o.x; y = o.y; }
+};
+struct CMotorVel { char m_pad[0x3c]; Vec2 m_vel; };
+struct CNPCView { char m_pad[0x94]; void *m_p94; char m_pad2[0x5d44 - 0x98]; CMotorVel *m_pMotor; };
+struct CNavView {
+	int m_0;
+	CNPCView *m_pOwner;
+	float sub_103082b0(CNPCView *pOther, float flValue);
+};
+
+inline float Vec2Normalize(const Vec2 &in, Vec2 &out)
+{
+	float len = FastSqrt(in.y * in.y + in.x * in.x);
+	if (len != 0) {
+		float inv = 1.0f / len;
+		out.x = in.x * inv;
+		out.y = inv * in.y;
+	} else {
+		out.y = 0;
+		out.x = 0;
+	}
+	return len;
+}
+
+// TARGET: ?sub_103082b0@CNavView@@QAEMPAUCNPCView@@M@Z
+float CNavView::sub_103082b0(CNPCView *pOther, float flValue)
+{
+	if (pOther->m_p94) {
+		Vec2 a = m_pOwner->m_pMotor->m_vel;
+		Vec2 b = pOther->m_pMotor->m_vel;
+		Vec2 na, nb;
+		float lenA = Vec2Normalize(a, na);
+		float lenB = Vec2Normalize(b, nb);
+		float dot = na.x * nb.x + na.y * nb.y;
+		if (lenB > 0 && dot > 0 && lenB >= lenA * 0.9) {
+			if (dot > 0.86)
+				return 0;
+			if (dot > 0.7)
+				return flValue * flValue * flValue;
+			return flValue * flValue;
+		}
+	}
+	return flValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103084c0 size=0x60
 struct CUnknown103084c0
 {
