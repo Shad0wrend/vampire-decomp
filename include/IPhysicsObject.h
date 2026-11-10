@@ -40,4 +40,7 @@ public:
 	virtual int vfunc47(Vector *pPosition, Vector *pAngles); virtual IPhysicsShadowController *vfunc48(); virtual int vfunc49(const Vector *pOrigin, const Vector *pAngles);	// slot 49 (+0xc4): handed (&vec3_origin, &vec3_angle) by CRagdollProp 0x101554a0, result goes to collision slot 18
 	virtual void vfunc50(); virtual void vfunc51(); virtual void vfunc52();
 	virtual float vfunc53(void *pShadowParams, float flSecondsToArrive, float flDeltaTime);	// slot 53 ComputeShadowControl
+	virtual void vfunc54(); virtual void vfunc55(); virtual void vfunc56(); virtual void vfunc57();
+	virtual float vfunc58(const Vector &unitDirection) const;	// slot 58 CalculateLinearDrag
+	virtual float vfunc59(const Vector &objectSpaceRotationAxis) const;	// slot 59 CalculateAngularDrag
 };

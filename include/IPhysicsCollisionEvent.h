@@ -9,7 +9,7 @@ public:
 	virtual void vfunc2(void *pObject, float energy, int surfaceProps, int surfacePropsHit, void *pData) {}	// Friction (implemented by CCollisionEvent)
 	virtual void vfunc3(void *pObject1, void *pObject2, void *pData) = 0;
 	virtual void vfunc4(void *pObject1, void *pObject2, void *pData) = 0;
-	virtual void vfunc5() = 0;
+	virtual void vfunc5(void *pObject, void *pFluid) = 0;
 	virtual void vfunc6(void *pObject, void *pFluid) = 0;
 	virtual void vfunc7() = 0;
 	virtual void vfunc8(void *pObject1, void *pObject2);
