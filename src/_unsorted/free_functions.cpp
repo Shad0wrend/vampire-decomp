@@ -209364,6 +209364,174 @@ void CBaseCombatCharacter::sub_1033ea90(inputdata_t *inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033eb60 size=0x4f6
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CEHandleGet.h"
+// TARGET: CBaseCombatCharacter::sub_1033eb60
+#include "CBaseCombatCharacter.h"
+#include "CStatDefault3List.h"
+#include "CEventQueue.h"
+#include "CUnknown101d88b0.h"
+#include "CUnknown101d8a70.h"
+#include "CVDmg_t.h"
+#include "CVariantCopy.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+#include "Tier1.h"
+
+struct CDevMsgLevel
+{
+	virtual void v0();
+	virtual char v1();
+	char m_pad[0x28];
+	int m_n2c;
+};
+extern CDevMsgLevel *g_109249d4;
+extern void (*g_109f3650)(int level, const char *pMsg, ...);
+
+struct CEnemyView { char sub_1023b570(); };
+int sub_1023bd00();
+
+struct CPlayerView
+{
+	char m_pad0000[0x168];
+	int m_n168;
+	char m_pad016c[0x1edc - 0x16c];
+	char m_b1edc;
+};
+
+struct CTuningView
+{
+	float sub_101e8e00();
+	float sub_101e8e20();
+	float sub_101e8e40();
+};
+extern CTuningView g_10739d08;
+
+struct CWeaponInventoryView
+{
+	void sub_101f9a00(CBaseEntity *pOwner, int nValue);
+};
+extern CWeaponInventoryView g_1074df78;
+extern CStatDefault3List g_10738d10;
+extern CEventQueue g_106e7050;
+
+void sub_101cebc0(void *p, int a, int b);
+
+extern unsigned char g_109f0b2a;
+extern CVStatList_t g_109f0b40;
+inline void *operator new(unsigned int, void *p) { return p; }
+extern "C" int atexit(void (__cdecl *pfn)(void));
+void __cdecl sub_10012a8a();
+
+inline CVStatList_t *FindStatList(CVStatListSet *pSet, int type)
+{
+	for (int i = 0; i < pSet->m_nLists; i++)
+	{
+		if (pSet->m_pLists[i]->m_field10 == type)
+			return pSet->m_pLists[i];
+	}
+	if (!(g_109f0b2a & 1))
+	{
+		g_109f0b2a = g_109f0b2a | 1;
+		new (&g_109f0b40) CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+
+void CBaseCombatCharacter::sub_1033eb60(int difficulty)
+{
+	ScopeTrace scope("CBaseCombatCharacter::FrenzyCheck", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	if (m_field146c > 0)
+		return;
+
+	CEnemyView *pEnemy = (CEnemyView *)sub_1023bd00();
+	if (pEnemy && pEnemy->sub_1023b570())
+	{
+		if (!g_109249d4->v1() && g_109249d4->m_n2c)
+			g_109f3650(2, "FrenzyCheck - No Frenzy Area\n");
+		return;
+	}
+
+	if (g_10566458->sub_100290c0((const unsigned int *)&m_hTarget1538.m_Index) && m_nTarget153c != -1 && m_nTargetMode1540 == 8)
+	{
+		if (!g_109249d4->v1() && g_109249d4->m_n2c)
+			g_109f3650(2, "FrenzyCheck - Being grappled by zombie\n");
+		return;
+	}
+
+	if (m_flNextFrenzyTimeThreshhold > engine->vfunc119(0) && difficulty < 1000)
+		return;
+
+	if (m_hDialogPartnerFE8.Get())
+	{
+		if (!g_109249d4->v1() && g_109249d4->m_n2c)
+			g_109f3650(2, "FrenzyCheck - In dialog\n");
+		return;
+	}
+
+	if (!sub_10337f30())
+		return;
+
+	CPlayerView *pPlayer = (CPlayerView *)m_pA8;
+	if (pPlayer && (pPlayer->m_n168 == 0x1e || pPlayer->m_b1edc))
+	{
+		m_flNextFrenzyTimeThreshhold = g_10739d08.sub_101e8e00() + engine->vfunc119(0);
+		return;
+	}
+
+	g_109f3630("Computing frenzy check for %s of %d difficulty.", (const char *)sub_100ab4f0(), difficulty);
+
+	difficulty -= FindStatList(CVStatListSet::Of(this), 0)->sub_102012d0(0x15);
+	CVDmgBlock16_t block(0, 0x1b);
+	int nDice = FindStatList(CVStatListSet::Of(this), 0)->sub_102012d0(0x1b);
+	int statC = FindStatList(CVStatListSet::Of(this), 0)->sub_102012d0(0xc);
+	int threshold = (int)g_10739d08.sub_101e8e40();
+	if (statC < threshold)
+		nDice += statC - threshold;
+
+	CUnknown101d88b0 roll((CVDmgSource_t *)this, &block, nDice, difficulty);
+
+	{
+		int rollResult;
+		if ((*(int *)((CUnknown101d8a70 *)&roll)->sub_101d8a70(&rollResult) <= 1 || difficulty > 1000) && vfunc360())
+		{
+			StatDefault3 *pItem = g_10738d10.sub_101d5e80(sub_10337860());
+			g_1074df78.sub_101f9a00((CBaseEntity *)this, pItem->m_88);
+
+			m_field146c = 10;
+			CVariantCopy value;
+			value.SetInt(1);
+			g_106e7050.sub_100cdf10(this, "FrenzyUpdate", value, 1.0 / m_flFrenzyRate, this, this, 0, CEQExtra());
+
+			m_flNextFrenzyTimeThreshhold = g_10739d08.sub_101e8e20() + engine->vfunc119(0);
+		}
+		else
+		{
+			if (statC < 4)
+				sub_101cebc0(m_pA8, 1, 0);
+
+			m_flNextFrenzyTimeThreshhold = g_10739d08.sub_101e8e00() + engine->vfunc119(0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033f1a0 size=0x98
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
