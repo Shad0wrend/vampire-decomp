@@ -250691,6 +250691,36 @@ bool sub_10410490(SEnt *pEnt, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10410500 size=0xd9
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "Vector.h"
+void sub_10139b50(int *a, int *b, int *c);
+
+typedef Vector *(CBaseEntity::*P194)();
+typedef void (CBaseEntity::*P193)(Vector *pOut);
+typedef float *(CBaseEntity::*P217)();
+
+void sub_10410500(CBaseEntity *pEnt, int *pOut)
+{
+    if (!pEnt)
+        return;
+
+    Vector ang = *(pEnt->*(*(P194 *)((char *)*(void ***)pEnt + 0x308)))();
+    Vector eye;
+    (pEnt->*(*(P193 *)((char *)*(void ***)pEnt + 0x304)))(&eye);
+    ang.x = 0.0f;
+
+    const Vector &mins = *(Vector *)((CCollisionProperty *)((char *)pEnt + 0x270))->vfunc1();
+    float flFeet = (pEnt->*(*(P217 *)((char *)*(void ***)pEnt + 0x364)))()[2] + mins.z;
+    eye.z += (ang.x < 0.0f) ? -8.0f - ang.x * 1.0666667f
+                            : ((flFeet - eye.z + 2.0f) - -8.0f) * ang.x * 0.033333335f - 8.0f;
+
+    ang.x = 0.0f;
+    sub_10139b50((int *)&ang, (int *)&eye, pOut);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10410620 size=0x59
 #include "CWeaponPhysCannon.h"
 
