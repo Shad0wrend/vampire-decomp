@@ -3226,6 +3226,7 @@
 0x100055f6 func   ?vfunc373@CWeaponThrown_Grenade_Frag@@QAEXH@Z CWeaponThrown_Grenade_Frag::vfunc373
 0x100055fb func   ?sub_1036ed20@@YAXXZ sub_1036ed20
 0x10005600 func   ?vfunc333@CHL2_Player@@UAEXH@Z CHL2_Player::vfunc333
+0x10005605 func   ?vfunc531@CAI_BaseNPCTroika@@QAE_NPAX0MPAH@Z CAI_BaseNPCTroika::vfunc531
 0x1000560a func   _inspection_node inspection_node
 0x1000560f func   ?sub_10179190@@YAHXZ sub_10179190
 0x10005614 func   ?sub_100db6c0@@YAXXZ sub_100db6c0

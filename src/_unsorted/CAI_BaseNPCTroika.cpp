@@ -1652,6 +1652,113 @@ void CAI_BaseNPCTroika::vfunc572()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102984a0 size=0x2a2
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Pathfinder.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "globalvars.h"
+
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+extern CGlobalEntityList *g_10566458;
+
+struct CDoorTarget { char m_pad0000[0x28]; float m_f28; };
+struct CDoorView
+{
+	EVS(0) virtual unsigned int *slot1(); EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS10(20) EVS10(21) EVS10(22) EVS10(23)
+	EVS(240) EVS(241) EVS(242) EVS(243) EVS(244) EVS(245)
+	virtual void slot246(void *pNpc, int *pOut, bool bFlag);
+	char m_pad0004[0x4f8 - 4];
+	int m_n4f8;
+};
+struct CTroikaDoorNpc : CAI_BaseNPCTroika { void sub_100f0e70(); };
+struct CDoorLinkTest { bool sub_10319f30(void *pLink); };
+struct CNavTarget { char m_pad0000[0x24]; CDoorLinkTest m_Test; };
+struct CNavProvView { char m_pad0000[0x30]; CNavTarget *m_p30; };
+void *__fastcall sub_103166b0(void *pSquad);
+
+// TARGET: CAI_BaseNPCTroika::vfunc531
+bool CAI_BaseNPCTroika::vfunc531(void *pTarget, void *pDoor, float flDist, int *pOut)
+{
+	if (!pDoor) {
+		DevMsg("\n\n**WARNING**\nNo door given to OnUpcomingDoor()\n**WARNING**\n\n");
+		return false;
+	}
+	CDoorTarget *pRec = (CDoorTarget *)pTarget;
+	CDoorView *pView = (CDoorView *)pDoor;
+	CTroikaDoorNpc *pNpc = (CTroikaDoorNpc *)pDoor;
+	if (pRec->m_f28 < flDist)
+		return false;
+	if (pDoor == ((CGlobalEntityList *)g_10566458)->sub_100290c0(&m_h5d24)) {
+		*pOut = 0;
+		pNpc->sub_100f0e70();
+		return true;
+	}
+	if (m_n5bb0 <= 0 && m_p5da4 && sub_103166b0(m_p5da4) == pDoor) {
+		*pOut = -2;
+		pNpc->sub_100f0e90(1);
+		return true;
+	}
+	if (vfunc464() == 4 && (vfunc513() & 0xd00) != 0xd00) {
+		if (flDist < 64.0f) {
+			sub_102bf770();
+			m_n644c = 4;
+			m_f6450 = gpGlobals->curtime + 3.0f;
+			m_h5d24 = *pView->slot1();
+		}
+		*pOut = 0;
+		pNpc->sub_100f0e70();
+		return true;
+	}
+	if (!sub_1027f550((CAI_BaseNPCTroika *)pDoor)) {
+		*pOut = -2;
+		pNpc->sub_100f0e90(4);
+		return true;
+	}
+	if (vfunc513() & 0xd00) {
+		int buf[7];
+		pView->slot246(this, buf, pView->m_n4f8 == 2);
+		if (buf[6] == -1) {
+			*pOut = 0;
+			pNpc->sub_100f0e70();
+			return true;
+		}
+		CAI_Pathfinder *pPath = m_p5d3c;
+		char *pFound = (char *)pPath->sub_10304130((const float *)vfunc217(), (const float *)buf, 0, 0x30, -1, 1, 0, 0);
+		if (!pFound) {
+			if (pView->m_n4f8 == 0 || pView->m_n4f8 == 2) {
+				pNpc->sub_100f0e70();
+				return false;
+			}
+			m_h5d24 = *pView->slot1();
+			if (sub_10298840((CBaseEntity *)pDoor)) {
+				m_h5d24 = 0xffffffff;
+				pNpc->sub_100f0e70();
+			} else {
+				*pOut = -2;
+				pNpc->sub_100f0e90(0x40);
+				return true;
+			}
+		} else {
+			*(unsigned int *)(pFound + 0x24) = *pView->slot1();
+			CNavTarget *pNav = ((CNavProvView *)m_p5d34)->m_p30;
+			if (pNav->m_Test.sub_10319f30(pFound)) {
+				m_h5d24 = *pView->slot1();
+				m_b5d30 = pView->m_n4f8 == 2;
+				pRec->m_f28 = flDist;
+				*pOut = 0;
+				pNpc->sub_100f0e70();
+				return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10298ce0 size=0x32
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown100ecee0.h"
