@@ -1296,6 +1296,7 @@
 0x10002be4 func   ?vfunc277@CBaseTerminal@@QAEXXZ CBaseTerminal::vfunc277
 0x10002be9 func   ?vfunc333@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::vfunc333
 0x10002bee func   ?sub_100f6d80@CUnknown100f6d80@@QAEXH@Z CUnknown100f6d80::sub_100f6d80
+0x10002bf3 func   ?sub_102b8620@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102b8620
 0x10002bf8 func   ?vfunc317@CItemContainer@@QAE_NH@Z CItemContainer::vfunc317
 0x10002bfd func   ?sub_102edd50@CAI_Navigator@@QAE_NPBVVector@@MHHHPAV2@H@Z CAI_Navigator::sub_102edd50
 0x10002c02 func   ?sub_1018e2a0@CUnknown1018e2a0@@QAEXPAVCBaseEntity@@@Z CUnknown1018e2a0::sub_1018e2a0
