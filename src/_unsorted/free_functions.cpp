@@ -150287,6 +150287,53 @@ cont:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10220580 size=0x217
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CVStatList_t.h"
+#include "CUnknown109f08c0.h"
+#include "CEdictView.h"
+#include "engineserver.h"
+
+// TARGET: sub_10220580
+char sub_10220580(CUnknown109f08c0Set *pSet, int entindex, int nParam)
+{
+	CEdictView *edict = (CEdictView *)engine->vfunc38(entindex);
+	CBaseEntity *pEnt;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+		if (!edict)
+			edict = (CEdictView *)engine->vfunc38(0);
+		pEnt = (edict && edict->m_pUnk) ? (CBaseEntity *)edict->m_pUnk->vfunc4() : 0;
+	}
+	void *pChar = pEnt ? pEnt->m_p9c : 0;
+	if (!pChar)
+		return 0;
+	int nStat = CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(0x1f);
+	if (nStat != -1)
+	{
+		for (int i = 0; i < pSet->m_nCount; i++)
+		{
+			if (pSet->Find(i)->m_id == nStat)
+				return pSet->Find(i)->sub_101ecca0(nParam);
+		}
+		return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10220830 size=0x210
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
