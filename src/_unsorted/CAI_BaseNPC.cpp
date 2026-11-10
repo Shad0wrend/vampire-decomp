@@ -4149,6 +4149,413 @@ int __stdcall sub_1028b0f0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029a0b0 size=0x660
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "CVStatList_t.h"
+#include "CStatDefault3List.h"
+#include "globalvars.h"
+#include <string.h>
+#include <stdio.h>
+
+extern unsigned char g_10937cf1;
+extern int g_10924984;
+extern float g_104454c4;
+extern CStatDefault3List g_10738d10;
+extern CVStatList_t g_109f0b40;
+void __cdecl sub_10012a8a();
+
+struct CNpcInitConVar
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad04[0x24];
+	float m_f28;
+};
+extern CNpcInitConVar *g_10923f14;
+
+struct CCurveMgr { float sub_101e8c50(); float sub_101e8c70(); float sub_101e8c30(); };
+extern CCurveMgr g_10739d08;
+
+struct CNpcInitRec
+{
+	void *m_pOuter;
+	int m_n04;
+	int m_n08;
+	int m_n0c;
+	float m_f10;
+};
+
+struct CWeaponView { void sub_1024f7b0(); };
+
+struct CNPCInitView
+{
+	virtual void v0();
+	char m_pad0004[0x19c - 0x4];
+	int m_n19c;
+	char m_pad01a0[0x1ec - 0x1a0];
+	int m_pfn1ec;
+	char m_pad01f0[0x210 - 0x1f0];
+	int m_n210;
+	char m_pad0214[0xe64 - 0x214];
+	EHANDLE m_he64;
+	char m_pad0e68[0xeb0 - 0xe68];
+	int m_neb0;
+	int m_neb4;
+	int m_neb8;
+	int m_nebc;
+	char m_pad0ec0[0x10e4 - 0xec0];
+	const char *m_psz10e4;
+	char m_pad10e8[0x1480 - 0x10e8];
+	char m_b1480;
+	char m_b1481;
+	char m_pad1482[0x14b8 - 0x1482];
+	int m_n14b8;
+	char m_pad14bc[0x1a98 - 0x14bc];
+	const char *m_psz1a98;
+	char m_pad1a9c[0x5b94 - 0x1a9c];
+	int m_n5b94;
+	char m_pad5b98[0x5cc0 - 0x5b98];
+	int m_n5cc0;
+	char m_pad5cc4[0x5d88 - 0x5cc4];
+	CNpcInitRec *m_p5d88;
+	char m_pad5d8c[0x5dec - 0x5d8c];
+	const char *m_psz5dec;
+	char m_pad5df0[0x6064 - 0x5df0];
+	int m_n6064;
+	char m_pad6068[0x606c - 0x6068];
+	int m_n606c;
+	int m_n6070;
+	int m_n6074;
+	char m_b6078;
+	char m_pad6079[3];
+	int m_n607c;
+	char m_pad6080[4];
+	float m_f6084;
+	char m_pad6088[0x609c - 0x6088];
+	int m_n609c;
+	int m_n60a0;
+	int m_n60a4;
+	int m_n60a8;
+	char m_pad60ac[0x623c - 0x60ac];
+	int m_n623c;
+	EHANDLE m_h6240;
+	float m_f6244;
+	float m_f6248;
+	float m_f624c;
+	float m_f6250;
+	float m_f6254;
+	float m_f6258;
+	float m_f625c;
+	float m_f6260;
+	char m_pad6264[0x6274 - 0x6264];
+	float m_f6274;
+	char m_b6278;
+	char m_b6279;
+	char m_pad627a[2];
+	float m_f627c;
+	float m_f6280;
+	int m_n6284;
+	int m_n6288;
+	char m_pad628c[0x62c0 - 0x628c];
+	float m_f62c0;
+	float m_f62c4;
+	float m_f62c8;
+	float m_f62cc;
+	float m_f62d0;
+	float m_f62d4;
+	char m_pad62d8[0x62fc - 0x62d8];
+	int m_n62fc;
+	int m_n6300;
+	char m_pad6304[0x6318 - 0x6304];
+	int m_n6318;
+	int m_n631c;
+	int m_n6320;
+	int m_n6324;
+	int m_n6328;
+	int m_n632c;
+	int m_n6330;
+	char m_b6334;
+	char m_pad6335[0x636c - 0x6335];
+	EHANDLE m_h636c;
+	EHANDLE m_h6370;
+	char m_pad6374[0x6398 - 0x6374];
+	int m_n6398;
+	int m_n639c;
+	int m_n63a0;
+	int m_n63a4;
+	int m_n63a8;
+	const char *m_psz63ac;
+	char m_pad63b0[0x63d0 - 0x63b0];
+	int m_n63d0;
+	char m_pad63d4[0x63da - 0x63d4];
+	char m_b63da;
+	char m_pad63db;
+	float m_f63dc;
+	char m_b63e0;
+	char m_pad63e1[0x63fc - 0x63e1];
+	char m_b63fc;
+	char m_b63fd;
+	char m_pad63fe[2];
+	int m_n6400;
+	int m_n6404;
+	char m_b6408;
+	char m_pad6409[0x6414 - 0x6409];
+	int m_n6414;
+	int m_n6418;
+	char m_pad641c[0x6438 - 0x641c];
+	int m_n6438;
+	EHANDLE m_h643c;
+	int m_n6440;
+	int m_n6444;
+	char m_pad6448[4];
+	int m_n644c;
+	char m_pad6450[0x6458 - 0x6450];
+	float m_f6458;
+	char m_pad645c[0x6494 - 0x645c];
+	char m_b6494;
+	char m_pad6495[3];
+	char m_b6498;
+	char m_pad6499[0x64b8 - 0x6499];
+	float m_f64b8;
+	char m_pad64bc[0x64d4 - 0x64bc];
+	int m_n64d4;
+	char m_pad64d8[0x658c - 0x64d8];
+	char m_b658c;
+	char m_pad658d[3];
+	int m_n6590;
+	char m_b6594;
+	char m_pad6595[3];
+	int m_n6598;
+	int m_n659c;
+	char m_b65a0;
+	char m_pad65a1[0x65c0 - 0x65a1];
+	EHANDLE m_h65c0;
+	int m_n65c4;
+	int m_n65c8;
+	char m_pad65cc[4];
+	float m_f65d0;
+	float m_f65d4;
+	float m_f65d8;
+	float m_f65dc;
+	char m_pad65e0[0x65f4 - 0x65e0];
+	char m_b65f4;
+	char m_pad65f5[0x65fc - 0x65f5];
+	int m_n65fc;
+	int m_n6600;
+	int m_n6604;
+	int m_n6608;
+
+	void sub_10273390();
+	void sub_10273790(const char *p, int a);
+	void sub_102b5dc0(int a);
+	void sub_102b53d0(int a, const char *p);
+	void sub_1028fb70();
+	void sub_102ae7f0(int a);
+	void sub_102c54c0();
+	void *sub_1032e120(const char *p);
+	char sub_10334c20(void *p);
+};
+
+inline CVStatList_t *FindStatList(CVStatListSet *pSet, int type)
+{
+	for (int i = 0; i < pSet->m_nLists; i++) {
+		if (pSet->m_pLists[i]->m_field10 == type)
+			return pSet->m_pLists[i];
+	}
+	unsigned char bInit = g_109f0b2a;
+	if (!(bInit & 1)) {
+		g_109f0b2a = bInit | 1;
+		g_109f0b40.CVStatList_t::CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+
+void sub_1000cb76();
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: CAI_BaseNPC::vfunc420
+void CAI_BaseNPC::vfunc420()
+{
+	CNPCInitView *v = (CNPCInitView *)this;
+	CEntityVSlots *e = (CEntityVSlots *)this;
+
+	g_10937cf1 = 1;
+	v->m_n19c = 0;
+	v->m_n210 = (int)(g_10923f14->vfunc1() ? g_104454c4 : g_10923f14->m_f28);
+	v->m_n5cc0 = 0;
+	v->m_n63d0 = 0;
+	v->m_pfn1ec = (int)sub_1000cb76;
+	v->sub_10273390();
+	v->m_b6278 = 1;
+	v->m_b6279 = 1;
+	v->m_f627c = gpGlobals->curtime;
+	v->m_f6280 = gpGlobals->curtime;
+	v->m_n6284 = 0;
+	v->m_n6288 = 0;
+	v->m_n14b8 = 0;
+	v->m_b63da = 0;
+	v->m_f62c0 = g_10739d08.sub_101e8c50();
+	v->m_f62c4 = g_10739d08.sub_101e8c70();
+	v->m_f62c8 = v->m_f62c0;
+	v->m_f62cc = gpGlobals->curtime;
+	v->m_f62d0 = gpGlobals->curtime;
+	v->m_f62d4 = gpGlobals->curtime;
+	v->m_f6244 = gpGlobals->curtime;
+	v->m_f6248 = gpGlobals->curtime;
+	v->m_f6250 = gpGlobals->curtime;
+	v->m_f624c = gpGlobals->curtime;
+	v->m_f6254 = v->m_f6244;
+	v->m_f6258 = v->m_f6248;
+	v->m_f625c = v->m_f624c;
+	v->m_f6260 = v->m_f6250;
+	v->sub_102b53d0(0, "Leaving interesting place (NPCInit)");
+	v->m_n62fc = 0;
+	v->m_n6300 = 0;
+	v->m_n6318 = 0;
+	v->m_n631c = 0;
+	v->m_b658c = 0;
+	v->m_n6590 = 0;
+	v->m_b6594 = 0;
+	v->m_n6598 = 0;
+	v->m_n659c = 0;
+	v->m_b65a0 = 0;
+	v->m_n6320 = 0;
+	v->m_n6324 = 0;
+	v->m_n6328 = 0;
+	v->m_n632c = 0;
+	v->m_n6330 = 0;
+	v->m_b6334 = 0;
+	v->m_h6240 = NULL;
+	v->m_n6064 = 0;
+	v->m_f63dc = -1.0f;
+
+	if (e->slot513() & 0x200000)
+	{
+		if (v->m_psz1a98 && strcmp(STRINGR(v->m_psz1a98), "0") && strcmp(STRINGR(v->m_psz1a98), "item_w_unarmed"))
+		{
+			void *w = v->sub_1032e120(STRINGR(v->m_psz1a98));
+			if (w)
+			{
+				if (v->sub_10334c20(w))
+					e->slot383((int)w, 0);
+				else
+					((CWeaponView *)w)->sub_1024f7b0();
+			}
+		}
+		if (v->m_psz5dec && strcmp(STRINGR(v->m_psz5dec), "0") && strcmp(STRINGR(v->m_psz5dec), "item_w_unarmed"))
+		{
+			void *w = v->sub_1032e120(STRINGR(v->m_psz5dec));
+			if (w)
+			{
+				if (v->sub_10334c20(w))
+					e->slot383((int)w, 0);
+				else
+					((CWeaponView *)w)->sub_1024f7b0();
+			}
+		}
+	}
+
+	v->m_p5d88->m_pOuter = this;
+	v->m_p5d88->m_f10 = g_10739d08.sub_101e8c30();
+
+	if (v->m_psz63ac)
+	{
+		char buf[64];
+		sprintf(buf, "Player %s", STRINGR(v->m_psz63ac));
+		v->sub_10273790(buf, 0);
+	}
+
+	g_10937cf1 = 0;
+	v->m_b63e0 = 0;
+	v->sub_102b5dc0(0);
+	v->m_b63fc = 0;
+	v->m_b63fd = 0;
+	v->m_n6400 = 0;
+	v->m_n6404 = 0;
+	v->m_b6408 = 0;
+	v->m_n6414 = 0;
+	v->m_n6418 = 0;
+	v->m_n623c = 0;
+	v->m_n60a4 = 0;
+	v->m_n60a8 = 0;
+	if (strcmp(STRINGR(v->m_psz10e4), g_106b8540))
+		v->m_b1480 = 1;
+	v->m_b1481 = 1;
+	v->m_n6398 = 0;
+	v->m_n639c = 0;
+	v->m_n63a0 = 0;
+	v->m_n63a4 = 0;
+	v->m_n63a8 = 0;
+	v->m_h636c = NULL;
+	v->m_h6370 = NULL;
+	v->m_n606c = 0;
+	v->m_n6070 = 0;
+	v->m_n6074 = 0;
+	v->m_b6078 = 0;
+	v->m_n607c = 0;
+	v->m_n6438 = 0;
+	v->m_h643c = NULL;
+	v->m_n6440 = 0;
+	v->m_n6444 = 0;
+	v->m_n644c = 0;
+	v->m_f6458 = 3.402823466e+38f;
+	v->m_h65c0 = NULL;
+	v->m_n65c4 = 0;
+	v->m_n65c8 = 0;
+	e->slot593();
+	v->m_f65d0 = -1.0f;
+	v->m_f65d4 = -1.0f;
+	v->m_f65d8 = -1.0f;
+	v->sub_102c54c0();
+	v->m_b65f4 = 0;
+	v->m_n65fc = 0;
+	v->m_n6600 = 0;
+	v->m_n6604 = 0;
+	v->m_n6608 = 0;
+	v->m_b6498 = 0;
+	v->m_f64b8 = 1.0f;
+	v->m_neb0 = 0;
+	v->m_neb4 = 0;
+	v->m_neb8 = 0;
+	v->m_nebc = 0;
+
+	FindStatList(CVStatListSet::Of(this), 0)->sub_10200be0(0xf, 0);
+	CVStatList_t *pList = FindStatList(CVStatListSet::Of(this), 0);
+	pList->sub_102008e0(0xc, *(int *)(*(int *)((char *)g_10738d10.sub_101d5f10((CBaseCombatCharacter *)this) + 0xd0) + 0x30));
+
+	v->m_b6494 = 0;
+	v->m_f6084 = -1.0f;
+	v->m_n609c = 0;
+	v->m_n60a0 = 0;
+	v->m_f6274 = -1.0f;
+	v->sub_1028fb70();
+	v->m_n64d4 = g_10924984;
+	v->m_he64 = NULL;
+	v->m_n5b94 = 0;
+
+	if (v->m_f65dc > g_104454c4)
+	{
+		v->m_f65dc = gpGlobals->curtime + v->m_f65dc + 4.0f;
+		v->sub_102ae7f0(0xfe);
+	}
+	else
+		v->m_f65dc = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc080 size=0x11c
 #include "CBaseEntity.h"
 #include "CAI_BaseNPCTroika.h"
