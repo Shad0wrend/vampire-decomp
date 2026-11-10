@@ -24,6 +24,7 @@ public:
 	CBaseEntity *sub_102ee160();	// the entity of the target handle at +0x30 of the structure behind +0x30 (0 when stale)
 	void sub_102ee120(int a, int b, int c);
 	void sub_102ee1c0(int value);
+	void sub_102ee1c0(float value);
 	void sub_102ee250(int value);
 	void sub_102f2fe0(int value);
 	int sub_102ee3f0();	// current value (called through the stub at 0x10011f77)

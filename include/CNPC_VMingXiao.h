@@ -120,19 +120,28 @@ public:
 	char m_b1482;	// +0x1482
 	char m_pad1483[0x14bc - 0x1483];
 	unsigned int m_flags14bc;	// +0x14bc: AI NPC flag word (0x400 cleared / 0x80000400 set by the think)
-	char m_pad14c0[0x1574 - 0x14c0];
+	char m_pad14c0[0x1568 - 0x14c0];
+	int m_n1568;	// +0x1568
+	char m_pad156c[0x1574 - 0x156c];
 	float m_f1574;	// +0x1574
 	char m_pad1578[0x1b2c - 0x1578];
 	int m_n1b2c;	// +0x1b2c
 	const char *m_pszFile1b30;	// +0x1b30: the source file marker
 	int m_nLine1b34;	// +0x1b34: the source line marker
-	char m_pad1b38[0x5b80 - 0x1b38];
+	char m_pad1b38[0x1b44 - 0x1b38];
+	const char *m_pszFile1b44;	// +0x1b44: source file marker (TaskFail)
+	int m_nLine1b48;	// +0x1b48: source line marker
+	char m_pad1b4c[0x5b80 - 0x1b4c];
 	char m_b5b80;	// +0x5b80
 	char m_pad5b81[0x5cc0 - 0x5b81];
 	int m_nState5cc0;	// +0x5cc0
-	char m_pad5cc4[0x5d44 - 0x5cc4];
+	char m_pad5cc4[0x5d34 - 0x5cc4];
+	class CUnknown102ee120 *m_p5d34;	// +0x5d34
+	char m_pad5d38[0x5d44 - 0x5d38];
 	class CAI_Motor *m_pMotor5d44;	// +0x5d44: the motor (CAI_Motor); sub_102e0b40 resets its look state
-	char m_pad5d48[0x6078 - 0x5d48];
+	char m_pad5d48[0x5d9c - 0x5d48];
+	float m_f5d9c;	// +0x5d9c
+	char m_pad5da0[0x6078 - 0x5da0];
 	char m_b6078; // +0x6078: set by slot 599
 	char m_pad6079[0x6264 - 0x6079];
 	float m_f6264;	// +0x6264
@@ -403,7 +412,7 @@ public:
 	virtual void vfunc342();
 	virtual void vfunc343();
 	virtual void vfunc344();
-	virtual void vfunc345();
+	virtual float vfunc345(const char *pszName, float flValue, int a);
 	virtual void vfunc346();
 	virtual void vfunc347();
 	virtual void vfunc348();
@@ -502,7 +511,10 @@ public:
 	virtual int vfunc440(int a);	// slot 440: 0x147 answers 0x16f, else the Troika base
 	int sub_102b12f0(int a);	// CAI_BaseNPCTroika::vfunc440 (stub 0x10001997), called directly
 	virtual void vfunc441();
-	virtual void vfunc442();
+	virtual void vfunc442(void *pTask);
+	void sub_102a1910(void *pTask);	// CAI_BaseNPCTroika::vfunc442 (StartTask), called directly
+	void sub_10398d90(int a);
+	void sub_10395ce0();
 	virtual void vfunc443();
 	virtual void vfunc444(void *pTask);
 	void sub_102aacf0(void *pTask);
