@@ -14966,6 +14966,7 @@
 0x1001553c func   ?vfunc103@CBeam@@UAEXXZ CBeam::vfunc103
 0x10015541 func   ?sub_101dcb80@CRecListUnit@@QAEPAU1@PBU1@@Z CRecListUnit::sub_101dcb80
 0x10015546 func   ?sub_10032660@@YAXPAX0PAHH@Z sub_10032660
+0x1001554b func   ?sub_101de660@CDiscipline@@QAEXPAVCBaseCombatCharacter@@0HM@Z CDiscipline::sub_101de660
 0x10015550 func   ?sub_10085a80@@YAXXZ sub_10085a80
 0x10015555 func   ?vfunc49@CSingleplayRules@@UAEMPAVCBaseEntity@@@Z CSingleplayRules::vfunc49
 0x1001555a func   ?sub_1042f130@@YGHH@Z sub_1042f130
