@@ -30873,6 +30873,94 @@ void sub_10089e50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10089fc0 size=0x3c8
+#include <string.h>
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "FileSystemViews.h"
+#include "engineserver.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern void (*g_109f3630)(const char *, ...);
+extern CGlobalEntityList g_106eb5d8;
+extern char g_1054ca54[], g_1054c9e4[], g_10547df0[], g_1054ca4c[], g_1054ca50[], g_1054ca44[], g_1053e080[];
+extern char g_1054ca3c[], g_1054ca38[], g_1054ca2c[], g_1054c9dc[], g_1054c9d4[], g_1054c9cc[], g_1054c9c4[], g_1054c9bc[], g_10547e40[];
+
+// TARGET: sub_10089fc0
+void sub_10089fc0()
+{
+	if (g_1070b238 == 0)
+		return;
+
+	const char *pszFile = engine->vfunc84(1);
+	if (pszFile == 0 || *pszFile == 0)
+		pszFile = g_1054ca54;
+
+	CBaseEntity *ents[256];
+	char buf[512];
+	int maxlen = 0;
+	int n = 0;
+	int i, j, k;
+
+	CBaseEntity *pCur = g_106eb5d8.sub_100f8370(0, 0x820);
+	CBaseEntity *pEnt;
+	if (pCur && (pEnt = *(CBaseEntity **)((char *)pCur + 0x9c)) != 0) {
+		do {
+			if (n >= 0x100) {
+				g_109f3630(g_1054c9e4);
+				break;
+			}
+			ents[n++] = pEnt;
+			int len = strlen(pEnt->sub_100ab4f0());
+			if (len > maxlen)
+				maxlen = len;
+			pCur = g_106eb5d8.sub_100f8370(pEnt, 0x820);
+		} while (pCur && (pEnt = *(CBaseEntity **)((char *)pCur + 0x9c)) != 0);
+	}
+	int hFile = g_1070b238->vfunc0(pszFile, g_10547df0, 0);
+	for (j = 0; j < n; j++) {
+		sprintf(buf, g_1054ca4c, maxlen + 6, g_1054ca50);
+		g_1070b238->vfunc21(hFile, buf);
+		for (k = 0; k < j * 4; k += 4)
+			g_1070b238->vfunc21(hFile, g_1054ca44);
+		g_1070b238->vfunc21(hFile, g_1053e080, ents[j]->sub_100ab4f0());
+	}
+	sprintf(buf, g_1054ca4c, maxlen + 5, g_1054ca50);
+	g_1070b238->vfunc21(hFile, buf);
+	for (k = 0; k < j * 4; k += 4)
+		g_1070b238->vfunc21(hFile, g_1054ca3c);
+	g_1070b238->vfunc21(hFile, g_1054ca38);
+	for (i = 0; i < n; i++) {
+		CAI_BaseNPC *pRow = (CAI_BaseNPC *)ents[i];
+		sprintf(buf, g_1054ca2c, maxlen, ents[i]->sub_100ab4f0());
+		g_1070b238->vfunc21(hFile, buf);
+		for (j = 0; j < n; j++) {
+			if (i == j) {
+				sprintf(buf, g_1054c9bc);
+			} else {
+				int prio = pRow->vfunc405(ents[j]);
+				switch (pRow->vfunc404(ents[j])) {
+				case 1: sprintf(buf, g_1054c9dc, prio); break;
+				case 2: sprintf(buf, g_1054c9d4, prio); break;
+				case 3: sprintf(buf, g_1054c9cc, prio); break;
+				case 4: sprintf(buf, g_1054c9c4, prio); break;
+				default: sprintf(buf, g_1054c9bc); break;
+				}
+			}
+			g_1070b238->vfunc21(hFile, buf);
+		}
+		g_1070b238->vfunc21(hFile, g_10547e40);
+	}
+	sprintf(buf, g_1054ca4c, maxlen + 5, g_1054ca50);
+	g_1070b238->vfunc21(hFile, buf);
+	for (k = 0; k < j * 4; k += 4)
+		g_1070b238->vfunc21(hFile, g_1054ca3c);
+	g_1070b238->vfunc21(hFile, g_1054ca38);
+	g_1070b238->vfunc1(hFile);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008a520 size=0xdf
 #include <stdlib.h>
 
