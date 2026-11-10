@@ -81,6 +81,80 @@ void CVampireProjectile::vfunc105(const char *pModelName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100956e0 size=0x284
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CVampireProjectile.h"
+#include "ScopeTrace.h"
+#define MB_V(n) virtual void v##n();
+#define MB_V10(p) MB_V(p##0) MB_V(p##1) MB_V(p##2) MB_V(p##3) MB_V(p##4) MB_V(p##5) MB_V(p##6) MB_V(p##7) MB_V(p##8) MB_V(p##9)
+
+struct CAnimTestView
+{
+	MB_V10(0) MB_V10(1) MB_V10(2) MB_V10(3) MB_V10(4) MB_V10(5) MB_V10(6) MB_V10(7) MB_V10(8) MB_V10(9)
+	virtual bool v100(int pRay, int mask, int pTrace);
+};
+
+struct TestRay { char pad[0x30]; bool m_IsRay; };
+struct TestTrace
+{
+	char pad[0x2c]; float fraction; char pad30[6]; bool allsolid; bool startsolid;
+	bool DidHit() const { return fraction < 1.0f || allsolid || startsolid; }
+};
+
+__declspec(dllimport) void Warning(const char *fmt, ...);
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+
+#define ENT_NAME (this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc)
+
+struct CSolidFlagView : CVampireProjectile
+{
+	bool IsSolidFlagSet(int flagMask)
+	{
+		ScopeTrace t("CBaseEntity::IsSolidFlagSet", ENT_NAME, g_106b8540);
+		return (m_b2b4 & flagMask) != 0;
+	}
+};
+
+bool CVampireProjectile::vfunc99(int pRay, int mask, int pTrace)
+{
+	ScopeTrace trace("CBaseAnimating::TestCollision", ENT_NAME, g_106b8540);
+	const TestRay &ray = *(TestRay *)pRay;
+	if (ray.m_IsRay && ((CSolidFlagView *)this)->IsSolidFlagSet(1))
+	{
+		TestTrace &tr = *(TestTrace *)pTrace;
+		if (!((CAnimTestView *)this)->v100(pRay, mask, pTrace))
+			return true;
+		return tr.DidHit();
+	}
+	if (!ray.m_IsRay && ((CSolidFlagView *)this)->IsSolidFlagSet(2))
+	{
+		TestTrace &tr = *(TestTrace *)pTrace;
+		if (!((CAnimTestView *)this)->v100(pRay, mask, pTrace))
+			return true;
+		return tr.DidHit();
+	}
+	if (vfunc92() == 6) {
+		const char *pName = *vfunc9((int *)&pTrace);
+		if (!pName)
+			pName = g_106b8540;
+		Warning("CBaseAnimating::TestCollision() error on %s with model %s. Make sure it has a .phy file!!!\n", sub_1000b5cd(), pName);
+		return false;
+	}
+	const char *pName = *vfunc9((int *)&pTrace);
+	if (!pName)
+		pName = g_106b8540;
+	DevMsg(1, "CBaseAnimating::TestCollision() error on %s with model %s.\n", sub_1000b5cd(), pName);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d9e50 size=0x3
 #include "CVampireProjectile.h"
 bool CVampireProjectile::vfunc270()
