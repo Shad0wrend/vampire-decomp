@@ -9143,6 +9143,7 @@
 0x1000d6a2 func   ?sub_1024e8b0@@YAXPAHHHH@Z sub_1024e8b0
 0x1000d6a7 func   _prop_clockhand prop_clockhand
 0x1000d6ac func   ?sub_101fbc40@CVStatSubCost_t@@QAEHH_N@Z CVStatSubCost_t::sub_101fbc40
+0x1000d6b6 func   ??4QAngle@@QAEAAV0@ABV0@@Z ??4QAngle@@QAEAAV0@ABV0@@Z
 0x1000d6b6 func   ?sub_1011d2e0@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1011d2e0
 0x1000d6bb func   ?vfunc44@CSingleplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CSingleplayRules::vfunc44
 0x1000d6c0 func   ?sub_101a72b0@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_101a72b0
