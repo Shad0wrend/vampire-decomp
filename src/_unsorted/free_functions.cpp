@@ -109560,6 +109560,26 @@ int CUnknown101ad440::sub_101ad440(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ad9a0 size=0xae
+#include "CBaseEntity.h"
+#include "CUnknown101ad9a0.h"
+#include "CGlobalEntityList.h"
+
+extern char g_106b8540[];
+extern CGlobalEntityList g_106eb5d8;
+
+CGlobalEntityList_Ent *CUnknown101ad9a0::sub_101ad9a0()
+{
+	if (m_hTarget.Get())
+		return (CGlobalEntityList_Ent *)m_hTarget.Get();
+	const char *name = m_pszTargetName;
+	if (!name)
+		name = g_106b8540;
+	m_hTarget = (CBaseEntity *)g_106eb5d8.sub_100f7770(0, name, (CBaseEntity *)this, 0);
+	return (CGlobalEntityList_Ent *)m_hTarget.Get();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ae1b0 size=0x55
 #include "CConstraintAnchor.h"
 
