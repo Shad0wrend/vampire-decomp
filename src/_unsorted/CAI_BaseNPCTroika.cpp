@@ -1622,6 +1622,88 @@ int CAI_BaseNPCTroika::vfunc376(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10295750 size=0x264
+#include "CAI_BaseNPCTroika.h"
+#include "engineiface.h"
+#include "Vector.h"
+typedef int (__fastcall *TroikaFn0)(void *);
+typedef void *(__fastcall *TroikaFnP)(void *);
+#define TROIKA_SLOT_I(p, n) ((*(TroikaFn0 **)(p))[n](p))
+#define TROIKA_SLOT_P(p, n) ((*(TroikaFnP **)(p))[n](p))
+struct TroikaEnemies {
+	char sub_102dfa20(void *pEnemy);
+	void sub_102dfed0(Vector *pOut, void *pEnemy);
+};
+#define TF(type, off) (*(type *)((char *)this + (off)))
+inline float Dot2D(const Vector &a, const Vector &b) { return a.x * b.x + a.y * b.y; }
+void CAI_BaseNPCTroika::vfunc310(int act)
+{
+	if (act == 0x1093) {
+		if (TF(int, 0xfec) >= 0x1093 && TF(int, 0xfec) <= 0x1096) {
+			if ((char)TROIKA_SLOT_I(this, 251)) {
+				TF(char, 0x5cd8) = 1;
+				int r = enginerandom->vfunc2(0, 99);
+				if (r < 15)
+					CAI_BaseNPC::vfunc310(0x1095);
+				else if (r < 30)
+					CAI_BaseNPC::vfunc310(0x1096);
+				else if (r < 40)
+					CAI_BaseNPC::vfunc310(0x1094);
+				else
+					CAI_BaseNPC::vfunc310(0x1093);
+				TF(char, 0x5cd8) = 0;
+			}
+		} else {
+			CAI_BaseNPC::vfunc310(0x1093);
+		}
+	} else if (act == 0x1115) {
+		if ((TF(int, 0x5b84) & 0x40) == 0x40) {
+			if (TF(int, 0xfec) != 0xf17)
+				CAI_BaseNPC::vfunc310(0xf17);
+		} else if ((TF(int, 0x5b84) & 0x20) == 0x20) {
+			if (TF(int, 0xfec) != 0x13)
+				CAI_BaseNPC::vfunc310(0x13);
+		} else if (TF(int, 0xfec) >= 0x1115 && TF(int, 0xfec) <= 0x1117) {
+			if ((char)TROIKA_SLOT_I(this, 251)) {
+				int nLow = 0xf;
+				int nMid = nLow;
+				void *pEnemy = (void *)TROIKA_SLOT_I(this, 168);
+				if (pEnemy) {
+					if (((TroikaEnemies *)TROIKA_SLOT_P(this, 541))->sub_102dfa20(pEnemy)) {
+						Vector vecPos;
+						((TroikaEnemies *)TROIKA_SLOT_P(this, 541))->sub_102dfed0(&vecPos, pEnemy);
+						Vector *pOrigin = (Vector *)TROIKA_SLOT_P(this, 217);
+						Vector vecDelta;
+						vecDelta.x = vecPos.x - pOrigin->x;
+						vecDelta.y = vecPos.y - pOrigin->y;
+						if (Dot2D(vecDelta, TF(Vector, 0x629c)) > 0.0f) {
+							nLow = 8;
+							nMid = 0x18;
+						} else {
+							nLow = 8;
+							nMid = 0x18;
+						}
+					}
+				}
+				TF(char, 0x5cd8) = 1;
+				int r = enginerandom->vfunc2(0, 99);
+				if (nLow > r)
+					CAI_BaseNPC::vfunc310(0x1116);
+				else if (nMid + nLow > r)
+					CAI_BaseNPC::vfunc310(0x1117);
+				else
+					CAI_BaseNPC::vfunc310(0x1115);
+				TF(char, 0x5cd8) = 0;
+			}
+		} else {
+			CAI_BaseNPC::vfunc310(0x1115);
+		}
+	} else {
+		CAI_BaseNPC::vfunc310(act);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10295a60 size=0x3
 #include "CAI_BaseNPCTroika.h"
 void CAI_BaseNPCTroika::vfunc465(int a0)
