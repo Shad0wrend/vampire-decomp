@@ -8483,6 +8483,136 @@ int __fastcall sub_1003ef00(CBaseEntity *self, int unused, const Vector &in, con
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003f070 size=0x37c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CBaseEntity_ext.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "ScopeTrace.h"
+#include "ConVar.h"
+#include "globalvars.h"
+
+extern Vector g_1070d1b0;	// vec3_origin
+extern float g_1070d9d0[];	// vec3_angle
+
+void sub_10139500(const Vector &start, float scale, const Vector &direction, Vector &dest);	// VectorMA (out of line)
+
+#define FV10(a) virtual void v##a##0(); virtual void v##a##1(); virtual void v##a##2(); virtual void v##a##3(); virtual void v##a##4(); \
+	virtual void v##a##5(); virtual void v##a##6(); virtual void v##a##7(); virtual void v##a##8(); virtual void v##a##9();
+struct FlyGroundView1003f070 {
+	FV10(0) FV10(1) FV10(2) FV10(3) FV10(4) FV10(5) FV10(6) FV10(7) FV10(8) FV10(9)
+	FV10(10) FV10(11) FV10(12) FV10(13) FV10(14) FV10(15) FV10(16) FV10(17) FV10(18) FV10(19)
+	virtual void w0(); virtual void w1(); virtual void w2(); virtual void w3();
+	virtual void w4(); virtual void w5(); virtual void w6(); virtual void w7();
+	virtual void SetGroundEntity(void *pGround);	// slot 208
+};
+
+struct TraceNormal1003f070 : Vector
+{
+	TraceNormal1003f070 &operator=(const TraceNormal1003f070 &o) { sub_1003e4b0(o); return *this; }
+};
+struct TracePlane1003f070
+{
+	TraceNormal1003f070 normal;
+	float dist;
+	unsigned char type;
+	unsigned char signbits;
+	unsigned char pad[2];
+};
+struct TraceSurface1003f070
+{
+	const char *name;
+	short surfaceProps;
+	unsigned short flags;
+};
+struct Trace1003f070
+{
+	Vector startpos;
+	Vector endpos;
+	TracePlane1003f070 plane;
+	float fraction;
+	int contents;
+	unsigned short dispFlags;
+	bool allsolid;
+	bool startsolid;
+	float fractionleftsolid;
+	TraceSurface1003f070 surface;
+	int hitgroup;
+	short physicsbone;
+	CBaseEntity *m_pEnt;
+	int hitbox;
+};
+
+static inline float GetCurrentGravity1003f070()
+{
+	return g_109ef2d4->vfunc1() ? 0.0f : g_109ef2d4->m_fValue;
+}
+
+void CBaseEntity::sub_1003f070(CGameTrace *pTrace, Vector *pMove)
+{
+	ScopeTrace scope("CBaseEntity::PerformFlyCollisionResolution", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	Trace1003f070 &trace = *(Trace1003f070 *)pTrace;
+	Vector &move = *pMove;
+
+	int mc = vfunc95();
+	if (mc >= 0 && mc <= 1)
+	{
+		float backoff;
+		if (vfunc95() == 1)
+			backoff = 2.0 - *(float *)((char *)this + 0x3f0);
+		else
+			backoff = 1;
+		sub_1003ef00((Vector *)m_vel3d4, &trace.plane.normal, (Vector *)m_vel3d4, backoff);
+	}
+
+	if (trace.plane.normal[2] > 0.7)
+	{
+		VectorAdd(*(Vector *)m_vel3d4, m_vecBaseVelocity, move);
+		float t0 = move.x * move.x + move.y * move.y; float flSpeedSqr = (t0) + move.z * move.z;
+		CBaseEntity *pEntity = trace.m_pEnt;
+
+		if (move.z < GetCurrentGravity1003f070() * gpGlobals->frametime)
+		{
+			if (!(pEntity->sub_100b3700() & 0x8002080))
+			{
+				sub_100b3580(1);
+				((FlyGroundView1003f070 *)this)->SetGroundEntity(pEntity);
+			}
+			m_vel3d4[2] = 0.0f;
+		}
+
+		if (flSpeedSqr < (30 * 30) || vfunc95() != 1)
+		{
+			if (!(pEntity->sub_100b3700() & 0x8002080))
+			{
+				sub_100b3580(1);
+				((FlyGroundView1003f070 *)this)->SetGroundEntity(pEntity);
+			}
+			if (vfunc95() != 2)
+			{
+				*(Vector *)m_vel3d4 = g_1070d1b0;
+				*(Vector *)m_angVel3c8 = *(Vector *)g_1070d9d0;
+			}
+		}
+		else
+		{
+			VectorScale(*(Vector *)m_vel3d4, (1.0 - trace.fraction) * gpGlobals->frametime * 0.9, move);
+			sub_10139500(move, gpGlobals->frametime * (1.0 - trace.fraction) * 0.9, m_vecBaseVelocity, move);
+			Trace1003f070 tmp;
+			trace = *(Trace1003f070 *)((CEntityVSlots *)this)->slot234(&tmp, &move);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003f810 size=0xc6
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
