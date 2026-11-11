@@ -11,5 +11,6 @@ public:
 	char m_pad0000[0x6c];
 	int m_n6c;	// 0x6c: a target / facing id, reset to -1 by slot 10
 
+	int vfunc19(int a, int b, int c);	// slot 19: the humanoid MoveGroundExecute (move request, trace result, flags)
 	void vfunc10();	// slot 10: CAI_Motor::vfunc10, then resets m_n6c to -1
 };
