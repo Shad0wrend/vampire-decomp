@@ -221,6 +221,34 @@ bool CMoveHelperServer::vfunc2(const void *pTrace, const float *pVelocity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f610 size=0xce
+#include "CBaseEntity.h"
+#include "CMoveHelperServer.h"
+#include "CRecipientFilter.h"
+
+void sub_101b14d0(const CRecipientFilter *pFilter, int entindex, int channel, const char *pszSample, float flVolume, int soundlevel, int fFlags, int pitch, const float *pOrigin, float soundtime = 0.0f, float *pDuration = 0);
+
+inline int ENTINDEX(int pEdict)
+{
+	return engine->vfunc35(pEdict);
+}
+
+void CMoveHelperServer::vfunc5(const float *pOrigin, int channel, const char *pszSample, float flVolume, int soundlevel, int fFlags, int pitch)
+{
+	CRecipientFilter filter;
+	filter.AddRecipientsByPAS(*(const Vector *)pOrigin);
+	if (gpGlobals->maxClients == 1)
+	{
+		sub_101b14d0(&filter, ENTINDEX(m_pHost->m_pEdict2e0), channel, pszSample, flVolume, soundlevel, fFlags, pitch, pOrigin);
+	}
+	else
+	{
+		filter.UsePredictionRules();
+		sub_101b14d0(&filter, ENTINDEX(m_pHost->m_pEdict2e0), channel, pszSample, flVolume, soundlevel, fFlags, pitch, pOrigin);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f720 size=0x3
 #include "CMoveHelperServer.h"
 void CMoveHelperServer::vfunc6(int a0, int a1, int a2, int a3, int a4, int a5, int a6, int a7, int a8, int a9, int a10, int a11)
