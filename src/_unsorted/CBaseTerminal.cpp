@@ -182,6 +182,30 @@ void CBaseTerminal::vfunc277()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102181a0 size=0x5a
+#include <string.h>
+#include "CBaseTerminal.h"
+#include "CBaseVampireSkillEntity.h"
+#include "CBaseEntity.h"
+#include "CUnknown1073dc00.h"
+#include "CAI_BaseNPCTroika.h"
+
+extern CBaseEntity *g_1074f758;
+extern CUnknown1073dc00 g_1074b330;
+void __fastcall sub_1015ef40(void *p);
+
+// TARGET: CBaseTerminal::vfunc39
+void CBaseTerminal::vfunc39(void *pPlayer)
+{
+	((CBaseVampireSkillEntity *)this)->vfunc39(pPlayer);
+	g_1074b330.sub_101f5950((CBaseEntity *)this, (int)g_1074f758, 2, 1.0f, 1.25f);
+	sub_1015ef40(pPlayer);
+	((CAI_BaseNPCTroika *)pPlayer)->sub_10181580(1);
+	m_b080d = 1;
+	memset(m_n082c, 0, sizeof(m_n082c));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10218220 size=0x69
 #include "CBaseTerminal.h"
 #include "CAI_BaseNPCTroika.h"
