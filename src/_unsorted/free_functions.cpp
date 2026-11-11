@@ -121958,6 +121958,27 @@ bool CUnit101d4e30::sub_101d4e30(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d4eb0 size=0x2e
+class CUnknown101d4eb0
+{
+public:
+	char m_pad0000[0x58];
+	EHANDLE m_hValues[6];
+
+	EHANDLE sub_101d4eb0(int nIndex);
+};
+
+// TARGET: CUnknown101d4eb0::sub_101d4eb0
+EHANDLE CUnknown101d4eb0::sub_101d4eb0(int nIndex)
+{
+	if (nIndex < 0)
+		nIndex = 0;
+	else if (nIndex >= 6)
+		nIndex = 5;
+	return m_hValues[nIndex];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d4ef0 size=0x11
 struct CUnknown101d4ef0 { int *sub_101d4ef0(int *pOut, int nIndex); };
 int *CUnknown101d4ef0::sub_101d4ef0(int *pOut, int nIndex)

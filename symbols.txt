@@ -3151,6 +3151,7 @@
 0x10005402 func   ?vfunc440@CNPC_VMingXiao@@UAEHH@Z CNPC_VMingXiao::vfunc440
 0x10005407 func   ?sub_101cba00@CStealthUnit101cba00@@QAEXPAX@Z CStealthUnit101cba00::sub_101cba00
 0x10005411 func   ?sub_100f5620@CUnknown100f5600@@QAEXXZ CUnknown100f5600::sub_100f5620
+0x1000541b func   ?sub_101d4eb0@CUnknown101d4eb0@@QAE?AV?$CHandle@VCBaseEntity@@@@H@Z CUnknown101d4eb0::sub_101d4eb0
 0x10005420 func   ?sub_1004c060@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004c060
 0x10005425 func   ?sub_103e3900@@YAMXZ sub_103e3900
 0x1000542a func   ?vfunc546@CNPC_VMingXiao@@QAEHH@Z CNPC_VMingXiao::vfunc546
