@@ -386,7 +386,8 @@ public:
 	float m_flSupernaturalActTimer;	// 0x1ce4
 	int m_iCriminalActCount;	// 0x1ce8
 	int m_iSupernaturalActCount;	// 0x1cec
-	char m_pad1cf0[0x1cf8 - 0x1cf0];
+	float m_flCopTimer1cf0;	// 0x1cf0: until when the cops of the current level keep coming (sub_1017ee80)
+	int m_iCopLevel1cf4;	// 0x1cf4: the criminal level the cops were last sent for
 	float m_flSpawnResponseCopsTimer;	// 0x1cf8
 	int m_iSpawnResponseCopsLevel;	// 0x1cfc
 	EHANDLE m_hSpawnResponseCopsNPC;	// 0x1d00
@@ -423,7 +424,8 @@ public:
 	char m_pad1db8[0x1dbc - 0x1db8];
 	float m_flMasqueradeTimerNext;	// 0x1dbc
 	bool m_bDebugSaved;	// 0x1dc0
-	char m_pad1dc1[0x1dc8 - 0x1dc1];
+	char m_pad1dc1[0x1dc4 - 0x1dc1];
+	float m_flCopWaitTimer1dc4;	// 0x1dc4: when the waiting cops come (0 = not waiting)
 	bool m_bCopWaitDelayed;	// 0x1dc8
 	char m_pad1dc9[0x1dcc - 0x1dc9];
 	int m_iCopWaitCount;	// 0x1dcc	// 0x1DB4 .. 0x1DCF
