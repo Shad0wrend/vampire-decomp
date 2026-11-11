@@ -171423,6 +171423,107 @@ void CAI_BaseNPC::sub_10260a50(int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10260b30 size=0x154
+#include "CAI_BaseHumanoid.h"
+#include "CUtlMemory36.h"
+
+extern char g_10499358[];
+extern char g_1049885c[];
+extern char g_10498830[];
+extern char g_10498818[];
+extern char g_10497d04[];
+extern char g_10497cd8[];
+extern char g_10497cc0[];
+extern Vector g_1070d1b0;
+void __fastcall sub_1027c300(void *pThis);
+
+struct CVec36
+{
+	volatile char *m_pMemory;
+	volatile int m_allocationCount;
+	volatile int m_growSize;
+	volatile int m_size;
+	volatile char *m_pElements;
+};
+
+struct CHumanoidHandle5f84
+{
+	volatile int m_Index;
+	CHumanoidHandle5f84() { m_Index = -1; }
+};
+
+struct CAIHumanoidCtorView
+{
+	void * volatile vptr0;
+	char pad1[0x19b0 - 4];
+	void * volatile vptr19b0;
+	char pad2[0x5f44 - 0x19b4];
+	void * volatile vptr5f44;
+	volatile int i5f48;
+	volatile int i5f4c;
+	Vector v5f50;
+	Vector v5f5c;
+	Vector v5f68;
+	char pad3[0x5f80 - 0x5f74];
+	volatile int i5f80;
+	CHumanoidHandle5f84 h5f84;
+	CVec36 vec;
+	volatile int i5f9c;
+	volatile int i5fa0;
+	volatile int i5fa4;
+	volatile int i5fa8;
+	volatile int i5fac;
+	volatile int i5fb0;
+	volatile int i5fb4;
+	char pad4[0x6024 - 0x5fb8];
+	volatile int z[10];
+};
+
+// TARGET: CAI_BaseHumanoid::sub_10260b30
+CAI_BaseHumanoid *CAI_BaseHumanoid::sub_10260b30()
+{
+	CAIHumanoidCtorView *p = (CAIHumanoidCtorView *)this;
+	sub_1027c300(this);
+	p->vptr5f44 = (void *)g_10499358;
+	p->i5f48 = 0;
+	p->vptr0 = (void *)g_1049885c;
+	p->vptr19b0 = (void *)g_10498830;
+	p->vptr5f44 = (void *)g_10498818;
+	p->i5f4c = 0;
+	p->v5f50.Vector::Vector(g_1070d1b0);
+	p->v5f5c.Vector::Vector(g_1070d1b0);
+	p->v5f68.Vector::Vector(g_1070d1b0);
+	p->i5f80 = 0;
+	p->h5f84.CHumanoidHandle5f84::CHumanoidHandle5f84();
+	CVec36 *pVec = &p->vec;
+	((CUtlMemory36 *)(void *)pVec)->sub_10263fb0(0, 0);
+	pVec->m_size = 0;
+	pVec->m_pElements = pVec->m_pMemory;
+	p->i5f9c = 0;
+	p->i5fa0 = -1;
+	p->i5fa4 = 0;
+	p->i5fa8 = 0;
+	p->i5fac = 0;
+	p->i5fb0 = 0;
+	p->i5fb4 = 0;
+	p->h5f84.m_Index = -1;
+	p->z[0] = 0;
+	p->z[1] = 0;
+	p->z[2] = 0;
+	p->z[3] = 0;
+	p->z[4] = 0;
+	p->z[5] = 0;
+	p->z[6] = 0;
+	p->z[7] = 0;
+	p->z[8] = 0;
+	p->z[9] = 0;
+	p->vptr0 = (void *)g_10497d04;
+	p->vptr19b0 = (void *)g_10497cd8;
+	p->vptr5f44 = (void *)g_10497cc0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10262c20 size=0x1fc
 #include "CAI_BaseHumanoid.h"
 #include <math.h>
