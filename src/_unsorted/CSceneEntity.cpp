@@ -774,6 +774,220 @@ void CSceneEntity::vfunc264(CUnknown1007ed10 *pEvent1, int unused, CSceneEvent *
 }
 // END FUNCTION
 
+// FUNCTION: 0x10082ee0 size=0x67c
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CBaseFlex.h"
+#include "CBasePlayer.h"
+#include "CSceneEntity.h"
+#include "CUnknown10075aa0.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+
+struct CActorView
+{
+	const char *sub_10072d90();
+};
+
+// the scene entity's dispatch slots with the float arguments the game pushes
+struct CSceneEntityDispatchView
+{
+	SCENE_V10(0) SCENE_V10(1) SCENE_V10(2) SCENE_V10(3) SCENE_V10(4) SCENE_V10(5) SCENE_V10(6) SCENE_V10(7) SCENE_V10(8) SCENE_V10(9)
+	SCENE_V10(10) SCENE_V10(11) SCENE_V10(12) SCENE_V10(13) SCENE_V10(14) SCENE_V10(15) SCENE_V10(16) SCENE_V10(17) SCENE_V10(18) SCENE_V10(19)
+	SCENE_V10(20) SCENE_V10(21) SCENE_V10(22) SCENE_V10(23) SCENE_V10(24)
+	SCENE_V(250) SCENE_V(251) SCENE_V(252) SCENE_V(253) SCENE_V(254) SCENE_V(255) SCENE_V(256) SCENE_V(257)
+	virtual void DispatchProcessLookAt(int scene, int pActor, CBaseEntity *pActor2, float flIntensity, const char *pszParams2);
+	SCENE_V(259) SCENE_V(260)
+	virtual void DispatchStartFace(int scene, int pActor, CBaseEntity *pActor2, float flIntensity, const char *pszParams2);
+};
+
+typedef void (CBaseCombatCharacter::*SetAsCameraTargetFn)(int bEnable, float flTime);
+
+void sub_10081190(const char *fmt, ...);
+CBasePlayer *sub_101cd9e0(int i);
+__declspec(dllimport) void Warning(const char *fmt, ...);
+__declspec(dllimport) void Msg(const char *fmt, ...);
+extern "C" int __cdecl atoi(const char *psz);
+
+// TARGET: CSceneEntity::vfunc248
+void CSceneEntity::vfunc248(float currenttime, int scene, int c)
+{
+	CUnknown10075aa0 *event = (CUnknown10075aa0 *)c;
+	CBaseFlex *pActor = 0;
+
+	CActorView *actor = (CActorView *)event->sub_10076690();
+	if (actor)
+	{
+		pActor = (CBaseFlex *)vfunc267(actor->sub_10072d90());
+		if (!pActor)
+		{
+			Warning("CSceneEntity unable find actor \"%s\"\n", actor->sub_10072d90());
+			return;
+		}
+	}
+
+	event->sub_10074f70(pActor);
+	sub_10081190("%8.4f:  start %s\n", currenttime, event->sub_10075d00());
+
+	switch (event->sub_10075b70())
+	{
+	case 0xb:
+		if (pActor)
+			vfunc264((CUnknown1007ed10 *)scene, (int)pActor, (CSceneEvent *)event);
+		break;
+	case 2:
+	case 10:
+		if (pActor)
+			vfunc254(scene, (CSceneActorSlots *)pActor, (CSceneEvent *)event);
+		break;
+	case 3:
+		if (pActor)
+		{
+			CBaseEntity *pActor2 = vfunc268(event->sub_10075c50(), (int)pActor);
+			if (pActor2)
+				((CSceneEntityDispatchView *)this)->DispatchProcessLookAt(scene, (int)pActor, pActor2, event->sub_10076280(currenttime), event->sub_10075ca0());
+		}
+		break;
+	case 5:
+		{
+			int iSoundlevel = 0x50;
+			if (event->sub_10075ca0())
+			{
+				iSoundlevel = atoi(event->sub_10075ca0());
+				if (iSoundlevel == 0)
+					iSoundlevel = 0x50;
+				else if (iSoundlevel < 0x4b)
+					iSoundlevel = 0x4b;
+			}
+			float duration = event->sub_10075f10() - event->sub_10075e70();
+			vfunc260(scene, (void *)pActor, event->sub_10075c50(), iSoundlevel, *(int *)&duration);
+		}
+		break;
+	case 4:
+		vfunc259(scene, (void *)pActor, event->sub_10075c50());
+		break;
+	case 8:
+		if (pActor)
+		{
+			CBaseEntity *pActor2 = vfunc268(event->sub_10075c50(), (int)pActor);
+			if (pActor2)
+				((CSceneEntityDispatchView *)this)->DispatchStartFace(scene, (int)pActor, pActor2, event->sub_10076280(currenttime), event->sub_10075ca0());
+		}
+		break;
+	case 6:
+		vfunc256(scene, (CSceneEventActorEnt *)pActor, (CSceneEvent *)event);
+		break;
+	case 9:
+		switch (atoi(event->sub_10075c50()))
+		{
+		case 1:
+			((CSceneOutputList *)((char *)this + 0x514))->sub_100cd660(pActor, this, 0);
+			break;
+		case 2:
+			((CSceneOutputList *)((char *)this + 0x52c))->sub_100cd660(pActor, this, 0);
+			break;
+		case 3:
+			((CSceneOutputList *)((char *)this + 0x544))->sub_100cd660(pActor, this, 0);
+			break;
+		case 4:
+			((CSceneOutputList *)((char *)this + 0x55c))->sub_100cd660(pActor, this, 0);
+			break;
+		}
+		break;
+	case 7:
+		vfunc262(scene, pActor, (void *)event);
+		break;
+	case 1:
+		vfunc266(scene, event->sub_10075c50());
+		break;
+	case 0xc:
+		vfunc265((void *)scene, (void *)event);
+		break;
+	case 0xd:
+	case 0xe:
+	case 0xf:
+		if ((unsigned char)(*(unsigned int *)((char *)pActor + 0x4c) >> 6) & 1)
+		{
+			CSceneActorSlots *pObj = *(CSceneActorSlots **)((char *)pActor + 0x98);
+			pObj->vfunc286(m_pScene4bc, event);
+		}
+		break;
+	case 0x10:
+		{
+			CBaseEntity *pA;
+			if (*event->sub_10075c50())
+				pA = vfunc268(event->sub_10075c50(), (int)pActor);
+			else
+				pA = 0;
+			CBaseEntity *pB;
+			if (*event->sub_10075ca0())
+			{
+				pB = vfunc268(event->sub_10075ca0(), (int)pActor);
+				if (pB)
+				{
+					CBaseCombatCharacter *pNPC = *(CBaseCombatCharacter **)((char *)pB + 0x9c);
+					if (pNPC)
+					{
+						(pNPC->*(SetAsCameraTargetFn)&CBaseCombatCharacter::sub_103322e0)(event->sub_10075cc0(), event->sub_10076b30());
+						pB = 0;
+					}
+				}
+			}
+			else
+				pB = 0;
+			for (int i = 1; i <= gpGlobals->maxClients; i++)
+			{
+				CBasePlayer *pl = sub_101cd9e0(i);
+				if (pl)
+				{
+					if (pA)
+						pl->sub_1017d280(pA, event->sub_10076b30());
+					if (pB)
+						pl->sub_1017d460(pB, event->sub_10076b30());
+				}
+			}
+		}
+		break;
+	case 0x12:
+		{
+			for (int i = 1; i <= gpGlobals->maxClients; i++)
+			{
+				CBasePlayer *pl = sub_101cd9e0(i);
+				if (pl)
+					pl->sub_1017d6d0(event->sub_10076b30());
+			}
+		}
+		break;
+	case 0x13:
+		{
+			const char *pszSample = event->sub_10075c50();
+			int iSoundlevel = 0x50;
+			if (event->sub_10075ca0())
+			{
+				iSoundlevel = atoi(event->sub_10075ca0());
+				if (iSoundlevel == 0)
+					iSoundlevel = 0x50;
+				else if (iSoundlevel < 0x4b)
+					iSoundlevel = 0x4b;
+			}
+			event->sub_10075f10();
+			event->sub_10075e70();
+			if (pActor && pszSample && *pszSample)
+			{
+				CPASAttenuationFilter filter((CEntitySoundOriginView *)pActor, 0.8f);
+				int edict = *(int *)((char *)pActor + 0x2e0);
+				enginesound->vfunc2(&filter, engine->vfunc35(edict), 4, pszSample,
+					1.0f, iSoundlevel, 0, 100, 0, 0, 1, 0);
+			}
+		}
+		break;
+	default:
+		Msg("Unhandled event type: %d", event->sub_10075b70());
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10083700 size=0x120
 #include "CSceneEntity.h"
 #include "CUnknown1007ce20.h"
