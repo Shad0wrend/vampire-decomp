@@ -47,7 +47,7 @@ public:
 	EVS(106)
 	virtual void slot107(const float *pData);	// takes a pointer to a small block (a "ParseMapData"-like slot)
 	EVS(108) EVS(109)
-	EVS(110) EVS(111) EVS(112) EVS(113) EVS(114) EVS(115)
+	virtual void slot110(const char *pszKey, const char *pszValue); EVS(111) EVS(112) EVS(113) EVS(114) EVS(115)
 	virtual char slot116();	// "IsMarkedForDeletion"-like: a boolean answer in al (CBaseEntity::vfunc116 is declared int there)
 	EVS(117)
 	virtual void slot118(const char *pszInput, CEntityVSlots *pActivator, CEntityVSlots *pCaller, CVariantCopy value, int outputID);	// "AcceptInput"
