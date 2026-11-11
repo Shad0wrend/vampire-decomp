@@ -74379,6 +74379,120 @@ void sub_10129960(CBaseEntity *pVictim, Vector vecOrigin, int cGibs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129dc0 size=0x33c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CGib.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "engineiface.h"
+
+__declspec(dllimport) void Warning(const char *pszFormat, ...);
+extern "C" void *__cdecl __RTDynamicCast(void *pObj, long nVfDelta, void *pSrcType, void *pTargetType, int bReference);
+extern char g_10566070[];
+extern char g_10538764[];	// ??_R0?AVCBaseEntity@@@8, the CBaseEntity type descriptor
+extern char g_10566074[];	// the CGib type descriptor
+extern int g_1070ba34;
+CBaseEntity *sub_10136580(const char *pszClass);
+CBaseEntity *sub_100ab250(int index);
+int sub_101d1800(int edict);
+int sub_101cf600(int);
+
+struct CGibEyeView
+{
+	EVS10(a) EVS10(b) EVS10(c) EVS10(d) EVS10(e) EVS10(f) EVS10(g) EVS10(h) EVS10(i) EVS10(j)
+	EVS10(k) EVS10(l) EVS10(m) EVS10(n) EVS10(o) EVS10(p) EVS10(q) EVS10(r) EVS10(s)
+	EVS(z0) EVS(z1) EVS(z2)
+	virtual Vector slot193();	// EyePosition, returned by value
+};
+
+struct CGibOriginView
+{
+	EVS10(a) EVS10(b) EVS10(c) EVS10(d) EVS10(e) EVS10(f)
+	EVS(z0) EVS(z1)
+	virtual void slot62(const Vector &vecOrigin);	// SetLocalOrigin
+};
+
+struct CGibFlags
+{
+	unsigned int m_flags;
+	bool Test() { return ((m_flags >> 12) & 1) != 0; }
+};
+
+inline void AdjustVelocityBasedOnHealth(int nHealth, Vector &vecVelocity)
+{
+	if (nHealth > -50)
+		vecVelocity = vecVelocity * 0.7f;
+	else if (nHealth > -200)
+		vecVelocity = vecVelocity * 2.0f;
+	else
+		vecVelocity = vecVelocity * 4.0f;
+}
+
+inline CBaseEntity *Instance(int nEdict)
+{
+	ScopeTrace st("CBaseEntity::Instance", g_106b8540, g_106b8540);
+	return sub_100ab250(nEdict);
+}
+
+inline int UTIL_FindClientInPVS(int pEdict) { return sub_101d1800(pEdict); }
+
+// TARGET: sub_10129dc0
+// CGib::SpawnHeadGib(pVictim) of the SDK's gib.cpp, as Troika changed it.
+void sub_10129dc0(CBaseEntity *pEntity)
+{
+	CGib *pGib = (CGib *)__RTDynamicCast(sub_10136580(g_10566070), 0, g_10538764, g_10566074, 0);
+	if (!pGib)
+		Warning("classname %s used to create wrong class type\n");
+	if (((CGibFlags *)&pEntity->m_flags268)->Test())
+		pEntity->sub_100b1d10();
+	Vector vecVel = pEntity->m_vecVelocity3bc;
+	Vector vecAng = *(Vector *)pEntity->m_angVel3c8;
+	if (g_1070ba34 == 1)
+	{
+		pGib->sub_1012b080("models/germangibs.mdl");
+		pGib->m_nBody = 0;
+	}
+	else
+	{
+		pGib->sub_1012b080("models/gibs/hgibs.mdl");
+		pGib->m_nBody = 0;
+	}
+	((CGibOriginView *)pGib)->slot62(((CGibEyeView *)pEntity)->slot193());
+	int nEdict = UTIL_FindClientInPVS(pGib->m_pEdict2e0);
+	if (enginerandom->vfunc2(0, 100) <= 5 && nEdict)
+	{
+		CBaseEntity *pOther = Instance(nEdict);
+		if (pOther)
+		{
+			vecVel = ((CGibEyeView *)pOther)->slot193() - *((CEntityVSlots *)pGib)->slot220();
+			VectorNormalize(vecVel);
+			vecVel *= 300.0f;
+			vecVel.z += 100.0f;
+		}
+	}
+	else
+	{
+		vecVel = Vector(enginerandom->vfunc1(-100.0f, 100.0f), enginerandom->vfunc1(-100.0f, 100.0f), enginerandom->vfunc1(200.0f, 300.0f));
+	}
+	vecAng.x = enginerandom->vfunc1(100.0f, 200.0f);
+	vecAng.y = enginerandom->vfunc1(100.0f, 300.0f);
+	pGib->m_n730 = ((CEntityVSlots *)pEntity)->slot145();
+	AdjustVelocityBasedOnHealth(pEntity->m_iHealth, vecVel);
+	pGib->sub_100b2e30(&vecVel.x);
+	pGib->sub_100b2f50(&vecAng.x);
+	pGib->sub_10129870();
+	sub_101cf600((int)pGib);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a610 size=0x99
 #include "CGib.h"
 
