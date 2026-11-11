@@ -217414,6 +217414,133 @@ void CBaseCombatCharacter::sub_10341b60(char unconscious)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10341c30 size=0x68b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+#include "CUnknown101cccf0.h"
+#include "CUnknown100b5190.h"
+#include "CUnknown1003ff80.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "Tier1.h"
+#include "engineserver.h"
+
+struct FEFStr { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual const char *v5(); };
+struct FEFObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual FEFStr *v3(); };
+struct FEFEdict
+{
+	char pad[0x40];
+	FEFObj *m_p40;
+	__forceinline const char *GetClassName()
+	{
+		if (!m_p40)
+			return g_106b8540;
+		return m_p40->v3()->v5();
+	}
+};
+struct FEFSlots {
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18)
+	EVS(190) EVS(191)
+	virtual Vector WorldSpaceCenter();
+	virtual Vector EyePosition();
+	EVS(194) EVS(195) EVS(196) EVS(197) EVS(198) EVS(199)
+	EVS10(20) EVS10(21) EVS10(22) EVS10(23) EVS10(24) EVS10(25) EVS10(26) EVS10(27) EVS10(28) EVS10(29)
+	EVS10(30) EVS10(31) EVS10(32) EVS10(33) EVS10(34) EVS10(35)
+	EVS(360) EVS(361) EVS(362) EVS(363) EVS(364) EVS(365) EVS(366) EVS(367) EVS(368)
+	virtual Vector BodyDirection3D();
+};
+
+CBaseEntity *CBaseCombatCharacter::sub_10341c30(bool (*pfnFilter)(CBaseEntity *, CBaseEntity *), float flRange, float flMinDot, bool bFlat, float flPullback, int nTraceMask)
+{
+	ScopeTrace trace("CBaseCombatCharacter::FindEntityFOV", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CBaseEntity *pBest = 0;
+	CGameTrace tr;
+	((CUnknown1003ff80 *)&tr)->sub_1003ff80();
+	float flBest = flMinDot;
+	Vector vecForward;
+	Vector vecStart;
+	if (bFlat) {
+		vecStart = ((FEFSlots *)this)->WorldSpaceCenter();
+		vecForward = ((FEFSlots *)this)->BodyDirection3D();
+		vecForward.z = 0;
+		VectorNormalize(vecForward);
+	} else {
+		vecStart = ((FEFSlots *)this)->EyePosition();
+		vecForward = ((FEFSlots *)this)->BodyDirection3D();
+	}
+	UTIL_TraceLine_Calls(vecStart, vecForward * flRange + vecStart, nTraceMask, this, 0, &tr);
+	CBaseEntity *pHit = tr.m_pEnt;
+	if (pHit && !pHit->sub_100a52a0()) {
+		CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pHit->m_p9c;
+		if (pChar) {
+			if (!pChar->m_b1480)
+				g_109f3630("FindEntityFOV found non targetable BCC %s(%s).\n", pChar->sub_1000b5cd(), ((FEFEdict *)pChar->m_pEdict2e0)->GetClassName());
+			if (((CUnknown100b5190 *)pChar)->sub_100b5190())
+				g_109f3630("FindEntityFOV found ScriptHidden BCC %s(%s).\n", pChar->sub_1000b5cd(), ((FEFEdict *)pChar->m_pEdict2e0)->GetClassName());
+		}
+		if (pfnFilter) {
+			if (pfnFilter(this, pHit))
+				return pHit;
+		} else {
+			int edict = pHit->m_pEdict2e0;
+			if (engine->vfunc35(edict) > 0)
+				return pHit;
+		}
+	}
+	CUnknown101cccf0 sphere;
+	CBaseEntity *pEnt;
+	Vector vecTarget;
+	float flDot;
+	Vector vecDir;
+	for (sphere.sub_101cccf0((int)&vecStart, *(int *)&flRange, 0, 0); (pEnt = sphere.sub_101ccd40()) != 0; ++sphere.m_nIndex) {
+		if (pEnt->sub_100a52a0() || pEnt == this)
+			continue;
+		if (!bFlat && (pEnt->sub_100b3700() & 0x2080)) {
+			if (pEnt->m_p9c)
+				((CBaseCombatCharacter *)pEnt->m_p9c)->sub_10331da0(&vecTarget, 0);
+			else
+				vecTarget = ((FEFSlots *)pEnt)->EyePosition();
+		} else
+			vecTarget = ((FEFSlots *)pEnt)->WorldSpaceCenter();
+		vecDir = vecTarget - (vecStart - vecForward * flPullback);
+		VectorNormalize(vecDir);
+		flDot = vecDir.Dot(vecForward);
+		if (!(flDot > flBest)) {
+			((CCollisionProperty *)((char *)pEnt + 0x270))->sub_100dd000(vecStart, vecTarget);
+			vecDir = vecTarget - (vecStart - vecForward * flPullback);
+			VectorNormalize(vecDir);
+			flDot = vecDir.Dot(vecForward);
+			if (!(flDot > flBest))
+				continue;
+		}
+		if (flPullback != 0.0f) {
+			vecDir = vecTarget - vecStart;
+			VectorNormalize(vecDir);
+			flDot = vecDir.Dot(vecForward);
+			if (!(flDot > 0.0f))
+				continue;
+		}
+		if (pfnFilter && !pfnFilter(this, pEnt))
+			continue;
+		if (pEnt->vfunc45(this, vecStart, vecTarget, nTraceMask)) {
+			pBest = pEnt;
+			flBest = flDot;
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10342470 size=0xdd
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
