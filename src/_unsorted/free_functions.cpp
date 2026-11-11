@@ -161245,6 +161245,71 @@ void sub_1023e6b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023e720 size=0x252
+#include "engineserver.h"
+#include "CBaseEntity.h"
+#include "CEntityMessageFilter.h"
+
+struct CUnk10752ddc
+{
+	virtual void v0();
+	virtual bool v1();
+	int m_pad[10];
+	int m_2c;
+};
+extern CUnk10752ddc *g_10752ddc;
+
+void sub_1023e720(CBaseEntity *pEnt, int nValue)
+{
+	const char *szDigits[10] = {
+		"sprites/floaters/number0.vmt",
+		"sprites/floaters/number1.vmt",
+		"sprites/floaters/number2.vmt",
+		"sprites/floaters/number3.vmt",
+		"sprites/floaters/number4.vmt",
+		"sprites/floaters/number5.vmt",
+		"sprites/floaters/number6.vmt",
+		"sprites/floaters/number7.vmt",
+		"sprites/floaters/number8.vmt",
+		"sprites/floaters/number9.vmt"
+	};
+	if (!g_10752ddc->v1() && g_10752ddc->m_2c) {
+		if (nValue > 999)
+			nValue = 999;
+		else if (nValue < 0)
+			nValue = 0;
+		int nId = (*(int (__fastcall ***)(void *))pEnt)[348](pEnt);
+		int nOnes = nValue % 10;
+		int nTens = (nValue / 10) % 10;
+		int nHundreds = (nValue / 100) % 10;
+		int c = 0;
+		int b = 0;
+		int a;
+		if (nHundreds != 0) {
+			a = engine->vfunc13(szDigits[nOnes], 0);
+			b = engine->vfunc13(szDigits[nTens], 0);
+			c = engine->vfunc13(szDigits[nHundreds], 0);
+		} else if (nTens != 0) {
+			a = engine->vfunc13(szDigits[nOnes], 0);
+			b = engine->vfunc13(szDigits[nTens], 0);
+		} else {
+			a = engine->vfunc13(szDigits[nOnes], 0);
+		}
+		CEntityMessageFilter filter;
+		int iEdict = pEnt->m_pEdict2e0;
+		filter.sub_1019d2f0(engine->vfunc35(iEdict));
+		filter.MakeReliable();
+		engine->vfunc65(&filter, 0);
+		engine->vfunc67(0x16);
+		engine->vfunc71(a);
+		engine->vfunc71(b);
+		engine->vfunc71(c);
+		engine->vfunc71(nId);
+		engine->vfunc66();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ea20 size=0xc3
 struct CQueuedNode
 {
