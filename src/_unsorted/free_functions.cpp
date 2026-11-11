@@ -185032,6 +185032,41 @@ void CUnknown102e12c0::sub_102c6d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6ff0 size=0x9f
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown102c6ff0.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CCineNPC.h"
+
+#define D(n) virtual void n();
+#define D10(p) D(p##0) D(p##1) D(p##2) D(p##3) D(p##4) D(p##5) D(p##6) D(p##7) D(p##8) D(p##9)
+#define D100(p) D10(p##0) D10(p##1) D10(p##2) D10(p##3) D10(p##4) D10(p##5) D10(p##6) D10(p##7) D10(p##8) D10(p##9)
+
+struct CNpcSlots455
+{
+	D100(a0) D100(a1) D100(a2) D100(a3)
+	D10(a40) D10(a41) D10(a42) D10(a43) D10(a44)
+	D(b450) D(b451) D(b452) D(b453) D(b454)
+	virtual bool vfunc455(void *pAsker, int a);
+};
+
+#define H_SCRIPT(p) (*(EHANDLE *)&(p)->m_h5d74)
+
+// TARGET: CUnknown102c6ff0::sub_102c6ff0
+char CUnknown102c6ff0::sub_102c6ff0(int a)
+{
+	bool b = ((CNpcSlots455 *)m_pOuter)->vfunc455(this, a);
+	if (!(pcd_stage((CAI_BaseNPCTroika *)m_pOuter))->sub_1028a190())
+		return false;
+	if (b) {
+		if (H_SCRIPT((CAI_BaseNPCTroika *)m_pOuter))
+			((CCineNPC *)H_SCRIPT((CAI_BaseNPCTroika *)m_pOuter).Get())->sub_101a8c30();
+		((CAI_BaseNPCTroika *)m_pOuter)->sub_10280d30();
+	}
+	return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c7100 size=0x73
 #include "CAI_StandoffBehavior.h"
 
