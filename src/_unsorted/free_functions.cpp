@@ -199141,6 +199141,21 @@ int CAI_Network::sub_102f6d10(int wcId)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f7130 size=0x13f
+#include "Vector.h"
+
+Vector sub_102f7130(const Vector &vecA, const Vector &vecB, const Vector &vecP)
+{
+	Vector vecDir = vecB - vecA;
+	Vector vecToP = vecP - vecA;
+	float flDot = DotProduct(vecDir, vecToP);
+	float flDen = vecDir.Length() * vecToP.Length();
+	float flDist = (flDot / flDen) * vecToP.Length();
+	VectorNormalize(vecDir);
+	return vecDir * flDist + vecA;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f7940 size=0x15
 extern char g_109340dd;
 
