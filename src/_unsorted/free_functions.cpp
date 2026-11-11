@@ -213620,6 +213620,90 @@ void CBaseCombatCharacter::sub_1032ec90(int nType, int bFlag, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032f550 size=0x1ac
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "CEnvParticle.h"
+#include "ScopeTrace.h"
+
+extern char g_1070d9d0[];
+extern char g_1070d1b0[];
+CEnvParticle *sub_100fbc90(const char *name, const char *a, const char *b, float f);
+
+#ifndef min
+#define min(a, b) (((a) < (b)) ? (a) : (b))
+#endif
+
+struct mstudiobbox_t
+{
+	int bone;
+	int group;
+	float bbmin[3];
+	float bbmax[3];
+};
+
+struct mstudiohitboxset_t
+{
+	int sznameindex;
+	int numhitboxes;
+	int hitboxindex;
+	mstudiobbox_t *pHitbox(int i) const { return (mstudiobbox_t *)(((char *)this) + hitboxindex) + i; }
+};
+
+struct CFireStudioHdr
+{
+	char m_pad0000[0x104];
+	int hitboxsetindex;	// 0x104
+	mstudiohitboxset_t *pHitboxSet(int i) const { return (mstudiohitboxset_t *)(((char *)this) + hitboxsetindex) + i; }
+	mstudiobbox_t *pHitbox(int i, int set) const
+	{
+		mstudiohitboxset_t const *s = pHitboxSet(set);
+		if (!s)
+			return 0;
+		return s->pHitbox(i);
+	}
+};
+
+void *CBaseCombatCharacter::sub_1032f550(int nHitBox)
+{
+	ScopeTrace trace("CBaseCombatCharacter::GetFireParticleForHBox", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!m_b1480)
+		return 0;
+	CFireStudioHdr *pStudioHdr = (CFireStudioHdr *)((CBaseAnimating *)this)->sub_100952d0(-1);
+	if (!pStudioHdr)
+		return 0;
+	mstudiohitboxset_t *set = pStudioHdr->pHitboxSet(0);
+	CEnvParticle *pParticle = 0;
+	int nFree = -1;
+	int nBone = pStudioHdr->pHitbox(nHitBox, 0)->bone;
+	int nCount = min(set->numhitboxes, 18);
+	for (int i = 0; i < nCount; i++) {
+		CBaseEntity *pEnt = m_hFireEmitters[i].Get();
+		if (!pEnt) {
+			if (nFree == -1)
+				nFree = i;
+		} else if (*(int *)((char *)pEnt + 0x460) == nBone)
+			break;
+	}
+	if (nFree != -1) {
+		pParticle = sub_100fbc90("DMGFX_body_fire_emitter", g_1070d1b0, g_1070d9d0, -1.0f);
+		if (pParticle) {
+			pParticle->sub_100fb1f0((CBaseEntity *)this, 4, nBone);
+			m_hFireEmitters[nFree] = (CBaseEntity *)pParticle;
+		}
+	}
+	return pParticle;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032f770 size=0x15d
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
