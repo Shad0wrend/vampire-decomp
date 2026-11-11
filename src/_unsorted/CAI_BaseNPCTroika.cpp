@@ -1016,6 +1016,40 @@ void CAI_BaseNPCTroika::vfunc496()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102947e0 size=0x6e
+#include "CAI_BaseNPCTroika.h"
+
+struct CNPCTroikaNameRecord
+{
+	int m_nId;
+	const char *m_pszName;
+};
+
+extern int g_1073dc3c;
+extern CNPCTroikaNameRecord **g_1073dc40;
+extern char g_105d8ccc[];
+extern char g_106b8540[];
+extern "C" int _strcmpi(const char *, const char *);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline int FindNameRecord(const char *pszName)
+{
+	for (int i = 0; i < g_1073dc3c; i++)
+	{
+		if (_strcmpi(STRINGR(g_1073dc40[i]->m_pszName), pszName) == 0)
+			return g_1073dc40[i]->m_nId;
+	}
+	return -1;
+}
+
+// TARGET: CAI_BaseNPCTroika::vfunc497
+void CAI_BaseNPCTroika::vfunc497()
+{
+	static int s_nId = FindNameRecord(g_105d8ccc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10294870 size=0x8a
 #include "CAI_BaseNPCTroika.h"
 

@@ -4965,6 +4965,7 @@
 0x10007b4e func   ?sub_102ee200@@YAHXZ sub_102ee200
 0x10007b53 func   ?sub_102f44d0@CNodePosFilter_102f44d0@@QAEMPBUCPosArg_102f44d0@@@Z CNodePosFilter_102f44d0::sub_102f44d0
 0x10007b58 func   ?sub_102297a0@CSoundscapeSystem@@QAEHXZ CSoundscapeSystem::sub_102297a0
+0x10007b5d func   ?vfunc497@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc497
 0x10007b62 func   ?vfunc61@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc61
 0x10007b67 func   ?vfunc81@CWeaponMelee_Tzimisce2Claw@@QAEHXZ CWeaponMelee_Tzimisce2Claw::vfunc81
 0x10007b6c func   ?IsRightChild@?$CUtlRBTree@UCAI_ExpresserUse@@G@@QBE_NG@Z CUtlRBTree<CAI_ExpresserUse,unsigned short>::IsRightChild
