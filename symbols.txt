@@ -5001,6 +5001,7 @@
 0x10007bcb func   ?vfunc3@CAI_ProxyMovementSink@@QAE_NHHH@Z CAI_ProxyMovementSink::vfunc3
 0x10007bd0 func   ?vfunc13@CGameMovement@@UAEXH@Z CGameMovement::vfunc13
 0x10007bd5 func   ?sub_101e8e00@CUnknown101e8e00@@QAEMXZ CUnknown101e8e00::sub_101e8e00
+0x10007bdf func   ?vfunc469@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc469
 0x10007be4 func   ?vfunc612@CPayphone@@UAEHXZ CPayphone::vfunc612
 0x10007be9 func   _func_areaportalwindow func_areaportalwindow
 0x10007bee func   ?sub_1042b110@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_1042b110

@@ -860,6 +860,136 @@ bool __stdcall sub_10266660(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026a2c0 size=0x280
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CGlobalEntityList.h"
+#include "CDevFlagObj.h"
+#include "S1030fc90.h"
+#include "CUnknown1017fd60.h"
+
+extern void (*g_109f3658)(int level, const char *pMsg, ...);
+extern CGlobalEntityList *g_10566458;
+extern CDevFlagObj *g_10924a6c;
+
+struct CAI_LookView : CAI_BaseNPC
+{
+	char m_pad0004[0x98 - 4];
+	CAI_BaseNPCTroika *m_p98;
+	char m_pad009c[0x1480 - 0x9c];
+	char m_b1480;
+	char m_pad1481[0x14bc - 0x1481];
+	unsigned int m_f14bc;
+	char m_pad14c0[0x5b68 - 0x14c0];
+	unsigned int m_h5b68;
+	unsigned int m_h5b6c;
+	unsigned int m_h5b70;
+	unsigned int m_h5b74;
+	char m_pad5b78[0x5cdc - 0x5b78];
+	S1030fc90 *m_pSenses;
+
+	S1030fc90 *GetSenses() { return m_pSenses; }
+	int sub_102707d0(void *pEnt);
+};
+
+struct CAI_LookEnt : CAI_BaseNPC
+{
+	char m_pad0004[0x9c - 4];
+	int m_n9c;
+	char m_pad00a0[0xa8 - 0xa0];
+	int m_na8;
+	char m_pad00ac[0x3d4 - 0xac];
+	float m_vel3d4[3];
+};
+
+inline unsigned int EntHandle(CAI_LookEnt *p) { return *((CGlobalEntityList_Ent *)p)->v1(); }
+inline CBaseEntity *LookupOwnerHandle(CGlobalEntityList *&pList, CAI_BaseNPCTroika *p)
+{
+	int tmp;
+	const unsigned int *h = (const unsigned int *)p->vfunc586((int)&tmp);
+	pList = g_10566458;
+	return pList->sub_100290c0(h);
+}
+inline CBaseEntity *LookupOwnerHandle(CAI_BaseNPCTroika *p)
+{
+	int tmp;
+	return g_10566458->sub_100290c0((const unsigned int *)p->vfunc586((int)&tmp));
+}
+
+void CAI_BaseNPC::vfunc469(int unused)
+{
+	static int conditionsToClear[] = { 0x43, 0x45, 0x46, 0x44, 0x5b, 0x5a };
+	CAI_LookView *v = (CAI_LookView *)this;
+	sub_10269bd0(conditionsToClear, 6);
+	CAI_BaseNPCTroika *pObj = v->m_p98;
+	CBaseEntity *pLeader = 0;
+	if (pObj) {
+		CGlobalEntityList *pList;
+		if (LookupOwnerHandle(pList, pObj)) {
+			pLeader = LookupOwnerHandle(pObj);
+		} else if (*(unsigned int *)((char *)pObj + 0x14b8) & 0x400000) {
+			pLeader = pList->sub_100290c0((const unsigned int *)((char *)pObj + 0x608c));
+		}
+	}
+	int iter;
+	CAI_LookEnt *pEnt = (CAI_LookEnt *)v->sub_102707d0((void *)v->GetSenses()->sub_1030fc90(&iter));
+	while (pEnt) {
+		if ((CBaseEntity *)pEnt != pLeader) {
+			int relation = vfunc404((CBaseEntity *)pEnt);
+			if (pEnt->m_na8) {
+				g_10924a6c->vfunc1();
+				sub_10269a20(0x5a);
+				if (pEnt->m_n9c && v->m_b1480)
+					((CUnknown1017fd60 *)pEnt->m_na8)->sub_1017ff40((CBaseEntity *)pObj, relation);
+			}
+			if (relation != 4) {
+				if ((CBaseEntity *)pEnt == (CBaseEntity *)vfunc167()) {
+					g_10924a6c->vfunc1();
+					sub_10269a20(0x46);
+				}
+				switch (relation) {
+				case 1:
+					if ((v->m_f14bc & 0x10000) != 0x10000) {
+						int priority = vfunc405((CBaseEntity *)pEnt);
+						if (priority < 0) {
+							v->m_h5b70 = EntHandle(pEnt);
+							g_10924a6c->vfunc1();
+							sub_10269a20(0x45);
+						} else if (priority > 10) {
+							v->m_h5b74 = EntHandle(pEnt);
+							g_10924a6c->vfunc1();
+							sub_10269a20(0x5b);
+						} else {
+							v->m_h5b68 = EntHandle(pEnt);
+							g_10924a6c->vfunc1();
+							sub_10269a20(0x43);
+						}
+						vfunc544((CBaseEntity *)pEnt, (int)pEnt->vfunc217(), (int)pEnt->m_vel3d4);
+						break;
+					}
+				case 2:
+					if ((v->m_f14bc & 0x10000) != 0x10000) {
+						unsigned int *pHandle = &v->m_h5b6c;
+						*pHandle = EntHandle(pEnt);
+						vfunc544((CBaseEntity *)pEnt, (int)pEnt->vfunc217(), (int)pEnt->m_vel3d4);
+						g_10924a6c->vfunc1();
+						sub_10269a20(0x44);
+					}
+					break;
+				case 3:
+				case 4:
+					break;
+				default:
+					g_109f3658(2, "%s can't assess %s\n", sub_1009f200(), ((CAI_BaseNPC *)pEnt)->sub_1009f200());
+					break;
+				}
+			}
+		}
+		pEnt = (CAI_LookEnt *)v->GetSenses()->sub_1030fd20(&iter);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a5e0 size=0x224
 #include "CAI_BaseNPC.h"
 #include "CAI_Senses.h"
