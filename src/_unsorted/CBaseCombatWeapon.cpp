@@ -1386,6 +1386,70 @@ void CBaseCombatWeapon::vfunc305()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252ea0 size=0x1eb
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatWeapon.h"
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+struct CWeaponInventoryView
+{
+	void sub_101f9a00(CBaseEntity *pOwner, int nValue);	// stub 0x100066cc
+};
+
+extern CWeaponInventoryView g_1074df78;
+extern float g_1070d1b0[3];
+
+// TARGET: CBaseCombatWeapon::vfunc298
+void CBaseCombatWeapon::vfunc298(CBaseEntity *pOwner, int unused)
+{
+	((CEntityVSlots *)this)->slot93(0xb, 0);
+	{
+		ScopeTrace trace("CBaseEntity::RemoveSolidFlags", m_pszName26c ? m_pszName26c : g_106b8540);
+		CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+		pCollision->sub_100dc580(pCollision->m_usSolidFlags & ~8);
+	}
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_pszName26c ? m_pszName26c : g_106b8540);
+		CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
+		pCollision->AddSolidFlags(4);
+	}
+	((CEntityVSlots *)this)->slot62(g_1070d1b0);
+	((CBaseEntity *)this)->sub_1009ee80(pOwner);
+	if (pOwner)
+		m_hOwner = *((CEntityVSlots *)pOwner)->slot1();
+	else
+		m_hOwner = -1;
+	((CEntityVSlots *)this)->slot202((CEntityVSlots *)pOwner);
+	for (int i = 0; i < 2; i++)
+		m_flTimes730[i] = gpGlobals->curtime;
+	*(int *)((char *)this + 0x1ec) = 0;
+	sub_100ac4e0(0, 0, 0);
+	((CBaseEntity *)this)->sub_100b3b00();
+	((CEntityVSlots *)this)->slot225();
+	if (sub_10256220())
+	{
+		if (!((CBaseCombatCharacter *)pOwner)->sub_10336920())
+			vfunc105(vfunc272());
+		else
+			vfunc105(vfunc273());
+	}
+	else
+		vfunc105((const char *)vfunc343());
+	if (pOwner)
+		g_1074df78.sub_101f9a00(pOwner, *(int *)((char *)sub_102517b0() + 0x2664));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10253140 size=0x9f
 #include "CBaseCombatWeapon.h"
 
