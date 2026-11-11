@@ -13,6 +13,54 @@ datamap_t *CPhysHinge::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002b800 size=0xd8
+#include "CPhysHinge.h"
+
+#define PH_V1(p) virtual void p();
+#define PH_V10(p) PH_V1(p##0) PH_V1(p##1) PH_V1(p##2) PH_V1(p##3) PH_V1(p##4) PH_V1(p##5) PH_V1(p##6) PH_V1(p##7) PH_V1(p##8) PH_V1(p##9)
+
+struct S10723940	// the physics environment: slot 13 creates a hinge constraint
+{
+	PH_V10(a) PH_V1(b0) PH_V1(b1) PH_V1(b2)
+	virtual void *CreateHingeConstraint(void *pReference, void *pAttached, void *pGroup, const CPhysHingeParams &hinge);
+};
+
+extern S10723940 *g_10723940;
+extern Vector g_1070d1b0;
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+struct CPhysHingeUnit : CPhysHinge
+{
+	void GetBreakParams(CPhysBreakableParams &params)
+	{
+		params.Defaults();
+		params.forceLimit = m_flForceLimit * (1.0f / 2.2f);
+		params.torqueLimit = m_flTorqueLimit * (1.0f / 2.2f);
+		params.isActive = (m_spawnflags204 & 4) ? false : true;
+	}
+	const CPhysHingeParams &BuildHinge()
+	{
+		GetBreakParams(m_hinge.constraint);
+		m_hinge.constraint.strength = 1.0f;
+		float flTorque = m_flHingeFriction * 1000.0f;
+		m_hinge.minRotation = 0;
+		m_hinge.maxRotation = 0;
+		m_hinge.angularVelocity = 0;
+		m_hinge.torque = flTorque;
+		return m_hinge;
+	}
+};
+
+void *CPhysHinge::vfunc241(void *pGroup, CPhysConstraintObjects *pObjects)
+{
+	if (m_hinge.worldAxisDirection == g_1070d1b0) {
+		DevMsg("ERROR: Hinge with bad data!!!\n");
+		return 0;
+	}
+	return g_10723940->CreateHingeConstraint(pObjects->m_pReference, pObjects->m_pAttached, pGroup, ((CPhysHingeUnit *)this)->BuildHinge());
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002b920 size=0x96
 #include "CPhysHinge.h"
 
