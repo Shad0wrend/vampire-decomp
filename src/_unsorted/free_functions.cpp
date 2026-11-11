@@ -93822,6 +93822,95 @@ int CUnknown1017cb80::sub_1017cb80(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017cc20 size=0x1cf
+#include "CBasePlayer.h"
+#include "QuestJournal.h"
+#include "CUnknown10738964.h"
+#include "globalvars.h"
+
+extern QuestJournal g_1074f8f8;
+extern CUnknown10738964 *g_107318bc;
+extern "C" __declspec(dllimport) void *PyImport_AddModule(const char *);
+extern "C" __declspec(dllimport) void *PyModule_GetDict(void *);
+extern "C" __declspec(dllimport) void *PyRun_ConsoleString(const char *, int, void *, void *);
+extern "C" __declspec(dllimport) void PyErr_Print();
+extern "C" __declspec(dllimport) int Py_FlushLine();
+extern "C" __declspec(dllimport) void PyErr_Clear();
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+void sub_101cebc0(void *pPlayer, int a, int b);
+
+struct SPyType
+{
+	char m_pad0000[0x18];
+	void (__cdecl *m_pfnDealloc)(void *);
+};
+
+struct SPyObject
+{
+	int m_nRefCount;
+	SPyType *m_pType;
+};
+
+struct SQuestState
+{
+	int m_n0;
+	int m_n4;
+	int m_nType;
+	int m_nMoney;
+	const char *m_pszText;
+	const char *m_pszScript;
+};
+
+void CBasePlayer::sub_1017cc20(const char *pszQuest, int nStep)
+{
+	int iQuest = g_1074f8f8.sub_10221a00(pszQuest);
+	if (iQuest == -1)
+		return;
+	char *pQuest = g_1074f8f8.sub_10221b10(iQuest);
+	if (*(int *)(pQuest + 0x10 + nStep * 4) == -1)
+		return;
+	if (*(int *)(pQuest + 0x10) < 0) {
+		int nOrder = 0;
+		for (int i = 0; i < g_1074f8f8.m_field[8]; i++) {
+			char *pOther = g_1074f8f8.sub_10221b10(i);
+			if (*(int *)(pOther + 0xc) >= nOrder)
+				nOrder = *(int *)(pOther + 0xc) + 1;
+		}
+		*(int *)(pQuest + 0xc) = nOrder;
+	}
+	*(int *)(pQuest + 0x10) = nStep - 1;
+	if (!sub_10182420(iQuest, nStep - 1))
+		return;
+	SQuestState *pState = (SQuestState *)g_1074f8f8.sub_10221e50(*(int *)(pQuest + 0x14 + *(int *)(pQuest + 0x10) * 4));
+	if (pState->m_nMoney)
+		sub_10340e50(pState->m_nMoney);
+	if (pState->m_pszText && *pState->m_pszText)
+		sub_1015f630(pState->m_pszText);
+	if (pState->m_pszScript && *pState->m_pszScript) {
+		const char *pszScript = pState->m_pszScript;
+		void *pMain = PyImport_AddModule("__main__");
+		if (!pMain)
+			return;
+		void *pDict = PyModule_GetDict(pMain);
+		if (pszScript && !g_107318bc->vfunc1() && g_107318bc->m_n2c)
+			Msg("RUNNING PYTHON AT TIME %f:\n%s\n\n", (double)gpGlobals->curtime, pszScript);
+		SPyObject *pResult = (SPyObject *)PyRun_ConsoleString(pszScript, 0x100, pDict, pDict);
+		if (!pResult) {
+			PyErr_Print();
+		} else {
+			if (--pResult->m_nRefCount == 0)
+				pResult->m_pType->m_pfnDealloc(pResult);
+			if (Py_FlushLine())
+				PyErr_Clear();
+		}
+	}
+	sub_1017c900(1);
+	sub_10182260(pszQuest, iQuest, *(int *)(pQuest + 0x10), *(int *)(pQuest + 0xc));
+	if (pState->m_nType == 2)
+		sub_101cebc0(this, 7, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017ce70 size=0x58
 #include "CUnknown1017ce70.h"
 #include "QuestJournal.h"
