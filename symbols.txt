@@ -7093,6 +7093,7 @@
 0x1000a91b func   ?vfunc103@CEnvWind@@UAEXXZ CEnvWind::vfunc103
 0x1000a920 func   ?vfunc464@CNPC_VManBat@@QAEHXZ CNPC_VManBat::vfunc464
 0x1000a92a func   ?sub_10297430@CAI_BaseNPCTroika@@QAE_NPAV1@@Z CAI_BaseNPCTroika::sub_10297430
+0x1000a92f func   ?sub_101c89c0@CView101c89c0@@QAEXAAUinputdata_t@@@Z CView101c89c0::sub_101c89c0
 0x1000a934 func   ?vfunc103@CScriptedTarget@@UAEXXZ CScriptedTarget::vfunc103
 0x1000a943 func   ?vfunc5@CItemGGarysCD@@QAEPAV1@I@Z CItemGGarysCD::vfunc5
 0x1000a948 func   ?sub_102ea130@CUnknown10359c50@@QAE_NPBDH00@Z CUnknown10359c50::sub_102ea130

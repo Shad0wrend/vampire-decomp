@@ -116718,6 +116718,29 @@ void CUnknown101c8980::sub_101c8980(CInputData100bc0f0 *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c89c0 size=0x76
+#include "CBaseEntity.h"
+#include "inputdata_t.h"
+
+void sub_1000fdda();
+
+struct CView101c89c0 : CBaseEntity {
+	void sub_101c89c0(inputdata_t &inputdata);
+};
+
+inline float VariantFloat(const variant_t &v) { return (v.fieldType == 1) ? v.flValue : 0.0f; }
+
+void CView101c89c0::sub_101c89c0(inputdata_t &inputdata)
+{
+	if (VariantFloat(inputdata.value) != *(float *)((char *)this + 0x164)) {
+		*(float *)((char *)this + 0x59c) = VariantFloat(inputdata.value);
+		sub_100ac4e0((int)sub_1000fdda, 0, 0);
+		*(float *)((char *)this + 0x5a0) = gpGlobals->curtime;
+		*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.01;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c8a60 size=0x23
 #include "CUnknown100bc0f0.h"
 
