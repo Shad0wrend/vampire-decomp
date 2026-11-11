@@ -41230,6 +41230,70 @@ void sub_100afa60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100afb90 size=0x1c6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CEventQueue.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include <stdlib.h>
+
+struct CCmdClient
+{
+	char m_pad0000[0xa8];
+	CBaseEntity *m_pPlayer;	// 0xa8
+};
+
+CCmdClient *sub_101193b0();
+const char **sub_1042bff0(const char **pOut, const char *psz);
+void sub_101ce620(void *pPlayer, int dest, const char *pszMsg, const char *p1, const char *p2, const char *p3, const char *p4);
+extern CEventQueue g_106e7050;
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct castable_string_t
+{
+	const char *pszValue;
+	castable_string_t(const char *pszFrom) { pszValue = (*pszFrom) ? pszFrom : 0; }
+};
+
+inline void SetString(CVariantCopy &v, castable_string_t str) { v.iszVal = str.pszValue; v.m_fieldType = 2; }
+
+void sub_100afb90()
+{
+	ScopeTrace trace("CC_Ent_Fire", g_106b8540, g_106b8540);
+	CCmdClient *pClient = sub_101193b0();
+	if (!pClient)
+		return;
+	CBaseEntity *pPlayer = pClient->m_pPlayer;
+	if (!pPlayer)
+		return;
+	if (engine->vfunc85() < 2) {
+		sub_101ce620(pPlayer, 2, "Usage:\n   ent_fire <target> [action] [value] [delay]\n", 0, 0, 0, 0);
+	} else {
+		const char *target = "", *action = "Use";
+		CVariantCopy value;
+		int delay = 0;
+		const char *tmp;
+		target = STRINGR(*sub_1042bff0(&tmp, engine->vfunc84(1)));
+		if (engine->vfunc85() >= 3)
+			action = STRINGR(*sub_1042bff0(&tmp, engine->vfunc84(2)));
+		if (engine->vfunc85() >= 4)
+			SetString(value, castable_string_t(engine->vfunc84(3)));
+		if (engine->vfunc85() >= 5)
+			delay = atoi(engine->vfunc84(4));
+		g_106e7050.sub_100cddf0(target, action, value, (float)delay, pPlayer, pPlayer, 0, CEQExtra());
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100afe70 size=0x6f
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
