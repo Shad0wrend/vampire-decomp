@@ -34239,6 +34239,56 @@ char CBaseAnimating::sub_100933b0(int iAttachment, float *pAttachmentToLocal)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100934e0 size=0x189
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct EyeEyeball { int name; int bone; Vector org; char pad[0x8c - 0x14]; };
+struct EyeModel { char pad[0xc0]; int numeyeballs; int eyeballindex;
+	EyeEyeball *pEyeball(int i) { return (EyeEyeball *)((char *)this + eyeballindex) + i; } char pad2[0xe0 - 0xc8]; };
+struct EyeBodypart { int name; int nummodels; int base; int modelindex;
+	EyeModel *pModel(int i) { return (EyeModel *)((char *)this + modelindex) + i; } };
+struct EyeHdr { char pad[0x140]; int numbodyparts; int bodypartindex;
+	EyeBodypart *pBodypart(int i) { return (EyeBodypart *)((char *)this + bodypartindex) + i; } };
+
+void sub_10137fe0(const Vector *in, const float *m, int out);
+void sub_10137ed0(const float *m, int angles);
+
+// TARGET: CBaseAnimating::sub_100934e0
+void CBaseAnimating::sub_100934e0(int origin, int angles)
+{
+	ScopeTrace trace("CBaseAnimating::GetEyeballs", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	EyeHdr *pStudioHdr = (EyeHdr *)sub_100952d0(-1);
+	if (!pStudioHdr)
+		return;
+	for (int iBodypart = 0; iBodypart < pStudioHdr->numbodyparts; iBodypart++)
+	{
+		EyeBodypart *pBodypart = pStudioHdr->pBodypart(iBodypart);
+		for (int iModel = 0; iModel < pBodypart->nummodels; iModel++)
+		{
+			EyeModel *pModel = pBodypart->pModel(iModel);
+			for (int iEyeball = 0; iEyeball < pModel->numeyeballs; iEyeball++)
+			{
+				EyeEyeball *pEyeball = pModel->pEyeball(iEyeball);
+				float pmatrix[12];
+				((CEntityVSlots *)this)->slot256(pEyeball->bone, pmatrix);
+				sub_10137fe0(&pEyeball->org, pmatrix, origin);
+				sub_10137ed0(pmatrix, angles);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100936e0 size=0x155
 #include "ScopeTrace.h"
 #include "CBaseAnimating.h"
