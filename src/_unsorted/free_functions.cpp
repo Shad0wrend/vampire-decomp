@@ -211931,6 +211931,56 @@ void CBaseCombatCharacter::sub_1032c960(CBaseEntity *pObject)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032cbe0 size=0x1d8
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CAI_BaseNPC.h"
+#include "ScopeTrace.h"
+
+// TARGET: CBaseCombatCharacter::sub_1032cbe0
+bool CBaseCombatCharacter::sub_1032cbe0(CBaseCombatWeapon *pWeapon)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Weapon_Detach", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	for (int i = 0; i < 0xe0; i++) {
+		if (pWeapon == sub_1032e8b0(i)) {
+			pWeapon->vfunc300();
+			sub_1032e9f0(i, 0);
+			((CAI_BaseNPC *)pWeapon)->sub_10252470(0);
+			if ((CBaseEntity *)pWeapon == m_hActiveWeapon19a4.Get())
+				m_hActiveWeapon19a4 = (CBaseEntity *)0;
+
+			int slot = i;
+			for (int k = 0; k < pWeapon->sub_10255cf0() - 1; k++)
+				i -= vfunc298(k);
+			i %= vfunc298(pWeapon->sub_10255cf0());
+			int n = vfunc298(pWeapon->sub_10255cf0()) - i - 1;
+			while (n > 0) {
+				int next = slot + 1;
+				sub_1032e9f0(slot, pcd_stage((CBaseEntity *)sub_1032e8b0(next)));
+				if (!sub_1032e8b0(slot))
+					break;
+				CBaseEntity *pMoved = (CBaseEntity *)sub_1032e8b0(slot);
+				*(int *)((char *)pMoved + 0x73c) = slot;
+				sub_1032e9f0(next, 0);
+				n--;
+				slot++;
+			}
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032d890 size=0xd5
 #include "CBaseCombatCharacter.h"
 extern "C" int _strcmpi(const char *, const char *);
