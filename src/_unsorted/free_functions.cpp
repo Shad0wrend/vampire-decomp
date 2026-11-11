@@ -21439,6 +21439,34 @@ void __fastcall sub_100729e0(SVecHolder *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10072a50 size=0x82
+#include "utlrbtree.h"
+#include "CCameraShotTable.h"
+#include "utlvector.h"
+#include <string.h>
+
+__declspec(dllimport) void Msg(const char *pMsg, ...);
+
+int CCameraShotTable::sub_10072a50(const char *pszName, CCameraShot_t *pOut)
+{
+	CUtlVector<CCameraShot_t> &shots = *(CUtlVector<CCameraShot_t> *)this;
+	int index = -1;
+	int count = shots.Count();
+	int i;
+	for (i = 0; i < count; i++) {
+		if (!_strcmpi(pszName, shots[i].m_data)) {
+			index = i;
+			break;
+		}
+	}
+	if (i == -1)
+		Msg("Camera shot %s not found!\n", pszName);
+	if (pOut)
+		*pOut = *sub_10072b10(index);
+	return index;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10072b10 size=0x35
 #include "CCameraShotTable.h"
 extern void (*g_109f3628)(const char *pszFormat, ...);

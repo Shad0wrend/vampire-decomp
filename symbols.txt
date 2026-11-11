@@ -5156,6 +5156,7 @@
 0x10007f8b func   ?sub_10280db0@@YIDPAD@Z sub_10280db0
 0x10007f90 func   ?sub_100bdf10@bf_write@@QAEPAV1@PAXHH@Z bf_write::sub_100bdf10
 0x10007f95 func   ?vfunc103@CMathRemap@@UAEXXZ CMathRemap::vfunc103
+0x10007f9a func   ?sub_10072a50@CCameraShotTable@@QAEHPBDPAUCCameraShot_t@@@Z CCameraShotTable::sub_10072a50
 0x10007f9f func   ?sub_103b4f30@CNPC_VTestUnit@@QAEHXZ CNPC_VTestUnit::sub_103b4f30
 0x10007fa4 func   ?vfunc5@CSoundEnt@@QAEPAVCPointEntity@@I@Z CSoundEnt::vfunc5
 0x10007fae func   ?sub_10032180@@YAXPAUImpactEvent_t@@H@Z sub_10032180
