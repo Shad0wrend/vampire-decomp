@@ -713,6 +713,75 @@ void CBaseDoor::vfunc177(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f14a0 size=0x2c2
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "TestBit.h"
+#include "ScopeTrace.h"
+#include "CBaseDoor.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CUnknown101c26d0.h"
+#include "Vector.h"
+
+extern float g_104454c4;
+extern float g_1070d1b0[];
+extern float g_1070d9d0[];
+
+static inline const Vector &DoorAbsVelocity(CBaseEntity *p)
+{
+	if (TestBit(p->m_flags268, 12))
+		p->sub_100b1d10();
+	return p->m_vecVelocity3bc;
+}
+
+void CBaseDoor::sub_100f14a0(CBaseEntity *pOther)
+{
+	ScopeTrace trace("CBaseDoor::Blocked", g_106b8540);
+
+	if (!pOther)
+		return;
+	if (m_flDamage560 != g_104454c4) {
+		CUnknown101c26d0 info;
+		pOther->sub_100a1250(info.sub_101c26d0(this, this, m_flDamage560, 1, 0, 0, -1));
+	}
+
+	if (m_fl500 >= g_104454c4 && ((char *)this)[0x654] && m_nState4f8 != 2)
+		vfunc243(1, 1);
+
+	if (m_name26c) {
+		CBaseDoor *pDoors[0x40];
+		int nDoors; nDoors = sub_100f12a0(pDoors, 0x40);
+		{ long i; i = 0; while (i < nDoors) { CBaseDoor *pDoor = pDoors[i];
+			if (pDoor->m_fl500 >= g_104454c4) {
+				if (*(Vector *)pDoor->m_vecMovedir == *(Vector *)m_vecMovedir
+				    && DoorAbsVelocity(pDoor) == DoorAbsVelocity(this)
+				    && *(Vector *)pDoor->m_angVel3c8 == *(Vector *)m_angVel3c8) {
+					pDoor->m_nSimulationTick = m_nSimulationTick;
+					if (!((CEntityVSlots *)pDoor)->slot241()) {
+						pDoor->vfunc62((const float *)pcd_stage(((CEntityVSlots *)this)->slot220()));
+						pDoor->sub_100b2770(*(const Vector *)g_1070d1b0);
+					} else {
+						pDoor->vfunc64((const float *)pcd_stage(((CEntityVSlots *)this)->slot221()));
+						pDoor->sub_100b2f50(g_1070d9d0);
+					}
+				}
+				if (m_nState4f8 == 2 && pDoor->m_nState4f8 != 2)
+					pDoor->vfunc243(1, 1);
+				else if (m_nState4f8 == 3 && 3 != pDoor->m_nState4f8)
+					pDoor->vfunc244(1);
+			} ++i; } }
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f1830 size=0x27
 // TARGET: CBaseDoor::vfunc179
 #include "CBaseDoor.h"
