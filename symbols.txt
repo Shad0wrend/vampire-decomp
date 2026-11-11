@@ -5884,6 +5884,7 @@
 0x10008f4e func   ?vfunc355@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc355
 0x10008f53 func   ?vfunc80@CWeaponMelee_WerewolfAttacks@@QAEHXZ CWeaponMelee_WerewolfAttacks::vfunc80
 0x10008f58 func   ?vfunc420@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc420
+0x10008f5d func   ?sub_1025df40@CHandleList@@QAEHPAVCBaseEntity@@0@Z CHandleList::sub_1025df40
 0x10008f62 func   ?sub_101f9830@CUnknown101f9c70@@QAEXPAVCTraitOwnerX@@H@Z CUnknown101f9c70::sub_101f9830
 0x10008f67 func   _info_node_climb info_node_climb
 0x10008f6c func   ?sub_1004fae0@@YAEXZ sub_1004fae0

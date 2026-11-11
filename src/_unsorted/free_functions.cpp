@@ -169868,6 +169868,60 @@ int CUnknown1025df20::sub_1025df20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025df40 size=0x171
+#include "utlrbtree.h"
+#include "CBaseEntity.h"
+#include <math.h>
+#include "ehandle.h"
+#include "utlvector.h"
+#include "CAI_BaseNPC.h"
+
+float __cdecl sub_1013d580(float a, float b);
+
+class CHandleList
+{
+public:
+	int m_unk0;
+	CUtlVector<EHANDLE> m_List;	// 0x04
+
+	int sub_1025df40(CBaseEntity *pOther, CBaseEntity *pOther2);
+};
+
+#define ORIGIN(p) (*(const Vector *)((CAI_BaseNPC *)(p))->vfunc220())
+
+int CHandleList::sub_1025df40(CBaseEntity *pOther, CBaseEntity *pOther2)
+{
+	if (!pOther || !pOther2)
+		return 0;
+
+	int count = m_List.Count();
+	if (count <= 1)
+		return 0;
+
+	EHANDLE *pList = m_List.Base();
+	float flBest = 360.0f;
+	const Vector &vA = ORIGIN(pOther);
+	Vector vecDir = vA - ORIGIN(pOther2);
+	float flYaw = atan2(vecDir.y, vecDir.x) * 57.29577951308232;
+
+	for (int i = 0; i != count; i++, pList++)
+	{
+		if (*pList != pOther)
+		{
+			const Vector &v1 = ORIGIN(pList->Get());
+			Vector vecDir2 = v1 - ORIGIN(pOther2);
+			float flDiff = sub_1013d580(flYaw, atan2(vecDir2.y, vecDir2.x) * 57.29577951308232);
+			if (fabs(flDiff) < fabs(flBest))
+				flBest = flDiff;
+		}
+	}
+
+	if (flBest > 0.0f)
+		return 1;
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025e120 size=0x4
 struct CUnknown1025e120 { char * sub_1025e120(); };
 char * CUnknown1025e120::sub_1025e120()
