@@ -197710,6 +197710,59 @@ bool CUnknown102ef350Iface::sub_102ef6d0(int a, CUnknown102ef3e0Arg *b, int type
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ef760 size=0xcf
+#include "CAI_BaseNPC.h"
+#include "CAI_Navigator.h"
+
+struct CAI_NavMotorView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual char v5(int *pOut);
+};
+
+extern Vector *__fastcall sub_1030ba30(void *pThis);
+
+namespace block_102ef760 {
+struct CAI_NavigatorUnit : CAI_Navigator {
+	float sub_102ee1a0();
+};
+float CAI_NavigatorUnit::sub_102ee1a0()
+{
+	return *(float *)((char *)m_p30 + 0x28);
+}
+}
+using namespace block_102ef760;
+
+#define OWNER (*(CAI_BaseNPC **)((char *)pSink - 0xc))
+#define NAVP ((CAI_NavigatorUnit *)((char *)pSink - 0x10))
+
+inline float NavGoalDist(CAI_DefMovementSink *pSink)
+{
+	CAI_NavRoute *pRoute = NAVP->m_p30;
+	const Vector &origin = *(Vector *)OWNER->vfunc220();
+	int bFlag = NAVP->m_i18;
+	const Vector &goal = *sub_1030ba30(pRoute);
+	if (bFlag == 0)
+		return (goal - origin).Length2D();
+	return (goal - origin).Length();
+}
+
+// TARGET: sub_102ef760
+char __fastcall sub_102ef760(CAI_DefMovementSink *pSink, int, int *pOut)
+{
+	if (((CAI_NavMotorView *)((char *)OWNER + 0x19b0))->v5(pOut))
+		return 1;
+	OWNER->sub_10272650(OWNER->sub_1027a6c0());
+	if (NavGoalDist(pSink) < NAVP->sub_102ee1a0() + 0.1f)
+	{
+		NAVP->vfunc8();
+		*pOut = 0;
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102efd50 size=0x68
 #include "CAI_Navigator.h"
 

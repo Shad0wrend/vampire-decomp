@@ -9922,6 +9922,7 @@
 0x1000e5ac func   ?sub_102cc730@CUnk102cc730@@QAEXPAUCUnknown102cc5d0@@@Z CUnk102cc730::sub_102cc730
 0x1000e5b1 func   ?sub_10278090@CAI_BaseNPC@@QAEHDH@Z CAI_BaseNPC::sub_10278090
 0x1000e5b6 func   ?sub_10377c00@@YIPAXPAX@Z sub_10377c00
+0x1000e5bb func   ?sub_102ef760@@YIDPAVCAI_DefMovementSink@@HPAH@Z sub_102ef760
 0x1000e5c0 func   _item_w_supershotgun item_w_supershotgun
 0x1000e5c5 func   _env_microphone env_microphone
 0x1000e5ca func   ?sub_10223940@CBaseKeyframedMover@@QAEXH@Z CBaseKeyframedMover::sub_10223940
