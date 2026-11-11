@@ -197,6 +197,40 @@ void CNPC_VNewscaster::vfunc104() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a0420 size=0xac
+#include "CNPC_VNewscaster.h"
+
+unsigned int __cdecl sub_10009408(int a);
+
+struct CSecure2_103a0420
+{
+	char m_b0;
+	char m_b1;
+	unsigned int m_Value;
+	CSecure2_103a0420(unsigned int a) { m_Value = (((a & 0x68d8635) ^ 0xae8746f) + 0xffa91d8 & 0x197279ca) ^ a ^ 0xa641cacd; }
+	CSecure2_103a0420 &operator=(const CSecure2_103a0420 &o) { m_Value = o.m_Value; m_b1 = o.m_b1; m_b0 = o.m_b0; return *this; }
+};
+
+// TARGET: CNPC_VNewscaster::sub_103a0420
+void CNPC_VNewscaster::sub_103a0420()
+{
+	sub_1000c531();
+	m_n641c = 0;
+	m_nLimit[0] = 999999;
+	m_nLimit[1] = 999999;
+	m_nLimit[2] = 999999;
+	m_nLimit[3] = 999999;
+	m_nLimit[4] = 999999;
+	*(CSecure2_103a0420 *)&m_b6360 = CSecure2_103a0420(sub_10009408(0));
+	m_n6368 = 0;
+	m_n6338 = 0;
+	m_n633c = 0;
+	m_n5b84 = 0;
+	m_p5cdc->m_bFlag80 = 0;
+	m_bFlag1480 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a0500 size=0x6
 #include "CNPC_VNewscaster.h"
 int CNPC_VNewscaster::vfunc138()

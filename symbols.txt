@@ -11672,6 +11672,7 @@
 0x10010ae1 func   ?sub_102c9cf0@@YAHXZ sub_102c9cf0
 0x10010ae6 func   ?vfunc38@CMultiplayRules@@UAEMH@Z CMultiplayRules::vfunc38
 0x10010aeb func   ?sub_100eb0e0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100eb0e0
+0x10010af0 func   ?sub_103a0420@CNPC_VNewscaster@@QAEXXZ CNPC_VNewscaster::sub_103a0420
 0x10010af5 func   ?vfunc11@ConVar@@UAEXPBD@Z ConVar::vfunc11
 0x10010afa func   ?sub_102402f0@@YA_NABVVector@@000@Z sub_102402f0
 0x10010aff func   ?sub_1040b4f0@CWeaponIWritten@@QAEXXZ CWeaponIWritten::sub_1040b4f0
