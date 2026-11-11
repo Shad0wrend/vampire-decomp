@@ -8156,6 +8156,7 @@
 0x1000c022 func   ?vfunc113@CSoundScheme@@UAEXXZ CSoundScheme::vfunc113
 0x1000c027 func   ?vfunc464@CBasePlayer@@UAEMXZ CBasePlayer::vfunc464
 0x1000c031 func   _item_p_research_lg_stealth item_p_research_lg_stealth
+0x1000c036 func   ?sub_101e5b30@CVFeat_t@@QAEHPAX@Z CVFeat_t::sub_101e5b30
 0x1000c03b func   ?sub_100a8390@CBaseEntity@@QAEXPAV1@M@Z CBaseEntity::sub_100a8390
 0x1000c040 func   _npc_maker_zombie npc_maker_zombie
 0x1000c045 func   _events_world events_world

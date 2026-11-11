@@ -129648,6 +129648,36 @@ int CUnknown101e56e0::sub_101e54c0(CBaseCombatCharacter *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e5b30 size=0x11a
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CVFeat_t.h"
+#include "CVStatList_t.h"
+int CVFeat_t::sub_101e5b30(void *pCharacter)
+{
+	int nTotal = 0;
+	if (pCharacter) {
+		CVDmgBlock16_t *pEffects = m_pEffects;
+		for (int i = 0; i < m_nEffects; i++) {
+			switch (pEffects[i].m_a) {
+			case 0: {
+				int nStat = pEffects[i].m_b;
+				nTotal += pEffects[i].sub_10204c20(CVStatListSet::Of(pCharacter)->Find(0)->sub_10010609(nStat));
+				break;
+			}
+			case 1: {
+				int nStat = pEffects[i].m_b;
+				nTotal += pEffects[i].sub_10204c20(CVStatListSet::Of(pCharacter)->Find(1)->sub_10010609(nStat));
+				break;
+			}
+			}
+		}
+	}
+	return nTotal;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e5ca0 size=0x11a
 #include "utlrbtree.h"
 #include "utlsortvector.h"
