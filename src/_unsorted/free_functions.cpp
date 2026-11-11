@@ -153006,6 +153006,108 @@ void sub_1021fb50(CEquipList *pList, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021fc90 size=0x15d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "ScopeTrace.h"
+
+#define CV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define CV100(p) CV10(p##0) CV10(p##1) CV10(p##2) CV10(p##3) CV10(p##4) CV10(p##5) CV10(p##6) CV10(p##7) CV10(p##8) CV10(p##9)
+struct CCharSlotView1021fc90
+{
+	CV100(a) CV100(b) CV100(c)
+	CV10(d0) CV10(d1) CV10(d2) CV10(d3) CV10(d4) CV10(d5) CV10(d6) CV10(d7)
+	virtual void e0(); virtual void e1(); virtual void e2();
+	virtual void GiveWeapon(CBaseCombatWeapon *pWeapon, char bNoSwitch);
+	virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7();
+	virtual void SwitchTo(CBaseCombatWeapon *pWeapon, int a);
+};
+
+struct IServerUnknown1021fc90
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual CBaseEntity *GetBaseEntity();
+};
+
+struct CEdict1021fc90
+{
+	char m_pad0000[0x40];
+	IServerUnknown1021fc90 *m_pUnk;
+	IServerUnknown1021fc90 *GetUnknown() { return m_pUnk; }
+};
+
+struct CEntity1021fc90
+{
+	char m_pad0000[0x9c];
+	CBaseCombatCharacter *m_pChar;
+};
+
+struct CWeaponList1021fc90
+{
+	int m_n0;
+	int m_n4;
+	int m_n8;
+	int m_nHolster;
+	int m_nNames;
+	const char **m_ppNames;
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline CBaseEntity *GetContainingEntity1021fc90(CEdict1021fc90 *pent)
+{
+	if (pent && pent->GetUnknown())
+		return pent->GetUnknown()->GetBaseEntity();
+	return 0;
+}
+
+inline CBaseEntity *Instance1021fc90(CEdict1021fc90 *pEdict)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	if (!pEdict)
+		pEdict = (CEdict1021fc90 *)engine->vfunc38(0);
+	return GetContainingEntity1021fc90(pEdict);
+}
+
+void sub_1021fc90(CWeaponList1021fc90 *pList, int entIndex)
+{
+	CBaseEntity *pEnt = Instance1021fc90((CEdict1021fc90 *)engine->vfunc38(entIndex));
+	if (!pEnt)
+		return;
+	CBaseCombatCharacter *pChar = ((CEntity1021fc90 *)pEnt)->m_pChar;
+	if (!pChar)
+		return;
+	pChar->sub_10340e50(pList->m_nHolster);
+	CBaseCombatWeapon *pFirst = 0;
+	for (int i = 0; i < pList->m_nNames; i++)
+	{
+		CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)pChar->sub_1032e120(STRINGR(pList->m_ppNames[i]));
+		if (pWeapon)
+		{
+			if (!pFirst)
+				pFirst = pWeapon;
+			if (pChar->sub_10334c20(pWeapon))
+			{
+				((CCharSlotView1021fc90 *)pChar)->GiveWeapon(pWeapon, 0);
+				((CCharSlotView1021fc90 *)pChar)->SwitchTo(pWeapon, 0);
+			}
+			else
+				pWeapon->sub_1024f7b0();
+		}
+	}
+	if (pList->m_nNames <= 2 && pFirst)
+		((CCharSlotView1021fc90 *)pChar)->SwitchTo(pFirst, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021fe50 size=0x61
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
