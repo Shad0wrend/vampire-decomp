@@ -113301,6 +113301,60 @@ int CSoundEnt::sub_101bab50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101babc0 size=0x9c
+#include "CAI_BaseNPC_vfunc144.h"
+#include "CLogicAuto.h"
+#include "CSoundEnt.h"
+
+struct CSoundRec
+{
+	int m_iNext;
+	int m_iType;
+	int m_iVolume;
+	float m_flTime;
+	float m_flExpire;
+	char m_bFlag;
+	char m_pad15[0x20 - 0x15];
+	Vector m_vOrigin;
+
+	void sub_101b9a50(int a);
+};
+
+struct CSoundEntView
+{
+	char m_pad0000[0x460];
+	unsigned char m_flDebug;
+	char m_pad0461[3];
+	CSoundRec m_Sounds[1];
+
+	int sub_101bab50();
+};
+
+extern CSoundEntView *g_1072c464;
+extern void (__cdecl *g_109f3630)(const char *pszFormat, ...);
+
+void CSoundEnt::sub_101babc0(int iType, const Vector *pOrigin, int iVolume, float flDuration, char bFlag)
+{
+	if (g_1072c464) {
+		int iSound = g_1072c464->sub_101bab50();
+		if (iSound == -1) {
+			g_109f3630("Could not AllocSound() for InsertSound() (DLL)\n");
+			return;
+		}
+		CSoundRec *pSound = &g_1072c464->m_Sounds[iSound];
+		pSound->m_vOrigin = *pOrigin;
+		pSound->m_iType = iType;
+		pSound->m_iVolume = iVolume;
+		pSound->m_flTime = gpGlobals->curtime;
+		pSound->m_flExpire = flDuration + gpGlobals->curtime;
+		pSound->m_bFlag = bFlag;
+		pSound->m_iNext = -1;
+		if (g_1072c464->m_flDebug & 3)
+			pSound->sub_101b9a50(100);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bac90 size=0x245
 // TARGET: CSoundEnt::sub_101bac90
 
