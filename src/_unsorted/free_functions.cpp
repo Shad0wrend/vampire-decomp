@@ -47249,6 +47249,85 @@ bool sub_100c4d50(const Ray_t *pRay, StudioHdr *pStudioHdr, StudioHitboxSet *pSe
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5020 size=0x308
+#include "vampire.h"
+#include "StudioBones.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "Vector.h"
+#include <math.h>
+
+extern float g_104454c4;
+
+// TARGET: sub_100c5020
+int sub_100c5020(const Ray_t *pRay, const StudioHitbox *pBox, const matrix3x4_t *pBoneToWorld, CGameTrace *pTrace)
+{
+	const float (*mat)[4] = (const float (*)[4])pBoneToWorld;
+	const Vector &vecStart = *(const Vector *)pRay->m_Start;
+	const Vector &vecRayDelta = *(const Vector *)pRay->m_Delta;
+	Vector vecDelta;
+	VectorScale(vecRayDelta, pTrace->m_fraction * 0.5f, vecDelta);
+
+	Vector vecBoxExtents, vecBoxCenter;
+	vecBoxExtents.x = (pBox->m_vecMins.x + pBox->m_vecMaxs.x) * 0.5;
+	vecBoxExtents.y = (pBox->m_vecMins.y + pBox->m_vecMaxs.y) * 0.5;
+	vecBoxExtents.z = (pBox->m_vecMins.z + pBox->m_vecMaxs.z) * 0.5;
+	sub_10137fe0(&vecBoxExtents.x, (const float *)pBoneToWorld, &vecBoxCenter.x);
+
+	vecBoxExtents.x = pBox->m_vecMaxs.x - vecBoxExtents.x;
+	vecBoxExtents.y = pBox->m_vecMaxs.y - vecBoxExtents.y;
+	vecBoxExtents.z = pBox->m_vecMaxs.z - vecBoxExtents.z;
+
+	Vector extent, uextent;
+	Vector segmentCenter;
+	segmentCenter.x = vecDelta.x + vecStart.x - vecBoxCenter.x;
+	segmentCenter.y = vecDelta.y + vecStart.y - vecBoxCenter.y;
+	segmentCenter.z = vecDelta.z + vecStart.z - vecBoxCenter.z;
+	extent.Init();
+	for (int j = 0; j < 3; j++) {
+		extent[j] = vecDelta.x * mat[0][j] + vecDelta.y * mat[1][j] + vecDelta.z * mat[2][j];
+		uextent[j] = (float)fabs(extent[j]);
+		float coord = segmentCenter.x * mat[0][j] + segmentCenter.y * mat[1][j] + segmentCenter.z * mat[2][j];
+		coord = (float)fabs(coord);
+		if (coord > vecBoxExtents[j] + uextent[j])
+			return -1;
+	}
+
+	float tmp, cextent;
+	Vector cross;
+	CrossProduct(vecDelta, segmentCenter, cross);
+	cextent = cross.x * mat[0][0] + cross.y * mat[1][0] + cross.z * mat[2][0];
+	cextent = (float)fabs(cextent);
+	tmp = vecBoxExtents[1] * uextent[2] + vecBoxExtents[2] * uextent[1];
+	if (cextent > tmp)
+		return -1;
+	cextent = cross.x * mat[0][1] + cross.y * mat[1][1] + cross.z * mat[2][1];
+	cextent = (float)fabs(cextent);
+	tmp = vecBoxExtents.x * uextent[2] + vecBoxExtents[2] * uextent.x;
+	if (cextent > tmp)
+		return -1;
+	cextent = cross.x * mat[0][2] + cross.y * mat[1][2] + cross.z * mat[2][2];
+	cextent = (float)fabs(cextent);
+	tmp = vecBoxExtents[0] * uextent[1] + vecBoxExtents[1] * uextent[0];
+	if (cextent > tmp)
+		return -1;
+
+	Vector local;
+	CGameTrace tr;
+	sub_10138130(pRay->m_Start, (const float *)pBoneToWorld, &local.x);
+	extent *= 2.0f;
+	if (!sub_10240cb0(&local.x, &extent.x, &pBox->m_vecMins.x, &pBox->m_vecMaxs.x, 0.0f, &tr))
+		return -1;
+
+	unsigned int idx = *(unsigned int *)&tr.m_planeType & 0xff;
+	pTrace->m_startsolid = tr.m_startsolid;
+	pTrace->m_fraction = tr.m_fraction * pTrace->m_fraction;
+	if (tr.m_planeNormal[idx] >= g_104454c4)
+		idx += 3;
+	return idx;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c5400 size=0x186
 struct StudioHdr
 {
