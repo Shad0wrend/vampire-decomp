@@ -8670,6 +8670,7 @@
 0x1000ca59 func   ?vfunc138@CNPC_VWolfMorph@@UAEHXZ CNPC_VWolfMorph::vfunc138
 0x1000ca5e func   ?sub_101467b0@@YAHPAVCBaseCombatCharacter@@@Z sub_101467b0
 0x1000ca63 func   ?vfunc609@CNPC_VSheriffSwarm@@QAEHD@Z CNPC_VSheriffSwarm::vfunc609
+0x1000ca68 func   ?sub_101f6ff0@CVTraitEffect_t@@QAEXPAX@Z CVTraitEffect_t::sub_101f6ff0
 0x1000ca6d func   ?vfunc363@CNPC_VNewscaster@@UAE_NH@Z CNPC_VNewscaster::vfunc363
 0x1000ca72 func   ?vfunc4@CAI_LocalNavigator@@QAEHPAUCAI_LocalNavigatorStopState@@MPAX@Z CAI_LocalNavigator::vfunc4
 0x1000ca77 func   ?sub_1022ce80@@YAXXZ sub_1022ce80
