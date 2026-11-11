@@ -155986,6 +155986,60 @@ int CSoundscapeSystem::sub_102297a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102298e0 size=0x2bd
+#include "CLogicAuto.h"
+#include "CListZ.h"
+#include "CSoundScheme.h"
+#include "CReliableSingleUserRecipientFilter.h"
+#include "CEntityVSlots.h"
+#include "QAngle.h"
+#include "utlvector.h"
+#include "globalvars.h"
+#include "engineiface.h"
+
+CBaseEntity *sub_101cd9e0(int index);
+void sub_10139550(const QAngle &angles, Vector *forward);
+
+void CListZ::sub_102298e0(Vector vecOrigin, int nIndex, int iEdict, void *pEntry)
+{
+	CSoundSchemeSound *pSound = (CSoundSchemeSound *)pEntry;
+	CBaseEntity *pPlayer = sub_101cd9e0(1);
+	int iChannel = sub_10229730(iEdict);
+	if (iChannel == -1)
+		return;
+
+	CReliableSingleUserRecipientFilter filter(pPlayer);
+	float flAngle = enginerandom->vfunc1(pSound->m_flAngleMin, pSound->m_flAngleMax);
+	float flDistance = enginerandom->vfunc1(pSound->m_flDistanceMin, pSound->m_flDistanceMax);
+
+	Vector dir;
+	QAngle ang(0.0f, flAngle, 0.0f);
+	sub_10139550(ang, &dir);
+	VectorNormalize(dir);
+	dir *= flDistance;
+
+	Vector ear;
+	Vector origin = dir + *((CEntityVSlots *)pPlayer)->slot196(&ear);
+	origin.z = enginerandom->vfunc1(vecOrigin.z - pSound->m_flHeightBelow, vecOrigin.z + pSound->m_flHeightAbove);
+
+	int iPitch = enginerandom->vfunc2(pSound->m_iPitchMin, pSound->m_iPitchMax);
+	enginesound->vfunc2(&filter, iEdict, iChannel, pSound->m_szName, pSound->m_flVolume,
+	                    pSound->m_iSoundLevel, pSound->m_iFlags | 0x280, iPitch,
+	                    (const float *)&origin, 0, 0, 0);
+
+	CListZItem item;
+	item.m_vecOrigin = origin;
+	float flDelay = gpGlobals->frametime + 0.2f;
+	item.m_pEntry = pEntry;
+	item.m_iEdict = iEdict;
+	item.m_iChannel = iChannel;
+	item.m_iIndex = nIndex;
+	item.m_flTime = enginesound->vfunc1(pSound->m_szName) + gpGlobals->curtime + flDelay;
+
+	((CUtlVector<CListZItem> *)&m_pMemory)->AddToTail(item);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10229ff0 size=0x43
 #include "CSoundScheme.h"
 void *sub_100aa720(int size);
