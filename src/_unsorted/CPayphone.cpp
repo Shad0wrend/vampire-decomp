@@ -168,6 +168,40 @@ void CPayphone::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aab90 size=0x2c
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CPayphone.h"
+
+struct PhoneSub { char pad[0x80]; bool m_b80; };
+struct PhoneView2 {
+    char pad0[0x1480];
+    bool m_b1480;
+    bool m_b1481;
+    char pad1[0x5cdc - 0x1482];
+    PhoneSub *m_p5cdc;
+    char pad2[0x63d8 - 0x5ce0];
+    bool m_b63d8;
+};
+
+struct CPayphoneBase420 {
+    void sub_1000c531();
+};
+
+// TARGET: CPayphone::vfunc420
+void CPayphone::vfunc420()
+{
+    ((CPayphoneBase420 *)this)->sub_1000c531();
+    char one = 1;
+    PhoneView2 *v = pcd_stage((PhoneView2 *)this);
+    char zero = 0;
+    v->m_b1480 = one;
+    v->m_b1481 = zero;
+    v->m_b63d8 = one;
+    PhoneSub *p = v->m_p5cdc;
+    p->m_b80 = zero;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101aabd0 size=0x3
 #include "CPayphone.h"
 int CPayphone::vfunc138()
