@@ -74371,6 +74371,73 @@ bool sub_1012b750(CBasePlayer *pPlayer, CBasePlayer *pOther, Vector *pResult, fl
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012bae0 size=0x51b
+#include "CEntityVSlots.h"
+#include <math.h>
+#include "UTIL_Trace.h"
+#include "CUnknown1003ff80.h"
+#include "CBaseEntity.h"
+#include "ConVar.h"
+
+extern Vector g_1070d1b0;
+void sub_10139610(const void *angles, Vector *fwd, Vector *right, Vector *up);
+void sub_101006e0(const Vector &a, const Vector &b, unsigned int mask, CBaseEntity *ignore, int grp, CGameTrace *tr);
+
+Vector sub_1012bae0(CBaseEntity *pEdict, Vector vecSpot1, Vector vecSpot2, float flGravityAdj)
+{
+	CGameTrace tr;
+	Vector vecMidPoint;
+	Vector vecApex;
+	Vector vecScale;
+	Vector vecTossVel;
+	Vector vecTemp;
+	((CUnknown1003ff80 *)&tr)->sub_1003ff80();
+	float flGravity = (g_109ef2d4->vfunc1() ? 0.0f : g_109ef2d4->m_fValue) * flGravityAdj;
+
+	if (vecSpot2.z - vecSpot1.z > 500.0f)
+		return g_1070d1b0;
+
+	Vector forward, right;
+	sub_10139610(((CEntityVSlots *)pEdict)->slot221(), &forward, &right, 0);
+
+	vecSpot2 += right * (enginerandom->vfunc1(-8.0f, 8.0f) + enginerandom->vfunc1(-16.0f, 16.0f));
+	vecSpot2 += forward * (enginerandom->vfunc1(-8.0f, 8.0f) + enginerandom->vfunc1(-16.0f, 16.0f));
+
+	vecMidPoint = vecSpot1 + (vecSpot2 - vecSpot1) * 0.5;
+	UTIL_TraceLine_Calls(vecMidPoint, vecMidPoint + Vector(0, 0, 500.0f), 0x400b, pEdict, 0, &tr);
+	vecMidPoint = *(Vector *)&tr.m_endpos;
+	vecMidPoint.z -= 15.0f;
+
+	if (vecMidPoint.z < vecSpot1.z || vecMidPoint.z < vecSpot2.z)
+		return g_1070d1b0;
+
+	float distance1 = (vecMidPoint.z - vecSpot1.z);
+	float distance2 = (vecMidPoint.z - vecSpot2.z);
+
+	float time1 = sqrt(distance1 / (0.5 * flGravity));
+	float time2 = sqrt(distance2 / (0.5 * flGravity));
+
+	if (time1 < 0.1)
+		return g_1070d1b0;
+
+	vecTossVel = (vecSpot2 - vecSpot1) * (1.0f / (time1 + time2));
+	vecTossVel.z = flGravity * time1;
+
+	vecApex = vecSpot1 + vecTossVel * time1;
+	vecApex.z = vecMidPoint.z;
+
+	UTIL_TraceLine_Calls(vecSpot1, vecApex, 0x2004003, pEdict, 0, &tr);
+	if (tr.m_fraction != 1.0)
+		return g_1070d1b0;
+
+	sub_101006e0(vecSpot2, vecApex, 0x4003, pEdict, 0, &tr);
+	if (tr.m_fraction != 1.0)
+		return g_1070d1b0;
+
+	return vecTossVel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c5b0 size=0x36
 extern int g_1070ba58;
 void sub_1013d0e0(float a, float b, int c, int d, int e, int f, int g, int h);
