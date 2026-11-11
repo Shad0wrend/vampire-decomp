@@ -5165,6 +5165,51 @@ bool CAI_BaseNPCTroika::vfunc295(CBaseCombatCharacter *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c2300 size=0xc0
+#include "CAI_BaseNPCTroika.h"
+
+struct CTroikaGameState
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x2c - 4];
+	int m_n2c;
+};
+extern CTroikaGameState *g_10924afc;
+
+inline bool TroikaStateActive()
+{
+	if (g_10924afc->vfunc1())
+		return false;
+	if (!g_10924afc->m_n2c)
+		return false;
+	return true;
+}
+
+bool CAI_BaseNPCTroika::vfunc294(int unused)
+{
+	if (sub_100b5190())
+		return false;
+	if (*(int *)((char *)this + 0x128))
+		return false;
+	if (m_b63d8)
+		return false;
+	if (!TroikaStateActive())
+	{
+		if (vfunc464() != 1 && vfunc464() != 13)
+			return false;
+	}
+	else if (vfunc464() == 7)
+		return false;
+	if (sub_10014df8(0x6f))
+		return false;
+	if (sub_10014df8(0x5a))
+		return false;
+	bool r = ((char (__fastcall *)(CAI_BaseNPCTroika *))(*(void ***)this)[158])(this) != 0;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c23f0 size=0x27
 #include "CAI_BaseNPCTroika.h"
 #include "globalvars.h"
