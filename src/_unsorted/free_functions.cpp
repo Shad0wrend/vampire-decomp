@@ -42834,6 +42834,18 @@ void __fastcall sub_100b7b40(int this_)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7b70 size=0x33
+#include "CBaseNetworkable.h"
+#include "CGlobalEntityList.h"
+extern CGlobalEntityList g_106eb5d8;
+
+void CBaseNetworkable::sub_100b7b70(CBaseNetworkableEdict_t *pEdict)
+{
+    sub_100b7b40();
+    g_106eb5d8.sub_100f9df0(n0(), sub_100b7de0(), -1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7c00 size=0x3
 int sub_100b7c00()
 {
