@@ -118443,6 +118443,33 @@ void sub_101cd110(CEntityCollideableView *pEntity, const float *vecAbsStart, con
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cd190 size=0x6b
+#include "CGameTrace.h"
+#include "CTraceFilterEntityIgnoreOther.h"
+#include "CUnknown1070b254.h"
+
+struct CTraceEntityCollideable101cd190
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual const float *GetCollisionAngles(int n);	// slot 9
+};
+
+struct CTraceEntity101cd190
+{
+	virtual void v0(); virtual void v1();
+	virtual CTraceEntityCollideable101cd190 *GetCollideable();	// slot 2
+};
+
+// TARGET: sub_101cd190
+void sub_101cd190(CTraceEntity101cd190 *pEntity, const float *vecAbsStart, const float *vecAbsEnd, unsigned int mask, void *pIgnore, int nCollisionGroup, CGameTrace *ptr)
+{
+	CTraceEntityCollideable101cd190 *pCollision = pEntity->GetCollideable();
+	CTraceFilterEntityIgnoreOther traceFilter(pEntity, pIgnore, nCollisionGroup);
+	g_1070b254->vfunc5(pCollision, vecAbsStart, vecAbsEnd, pCollision->GetCollisionAngles(0), mask, &traceFilter, ptr);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cd250 size=0xbf
 #include "CBaseEntity.h"
 #include "CGameTrace.h"
