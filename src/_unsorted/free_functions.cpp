@@ -50122,6 +50122,46 @@ int sub_100cffa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0390 size=0xe0
+#include "CBaseEntity.h"
+#include "inputdata_t.h"
+
+struct color32_v { unsigned char r, g, b, a; };
+
+// TARGET: variant_t::sub_100d0390
+void variant_t::sub_100d0390(int type, void *pData)
+{
+    fieldType = type;
+    switch (type) {
+    case 5: iValue = *(bool *)pData; break;
+    case 4: iValue = *(int *)pData; break;
+    case 2: iszValue = *(const char **)pData; break;
+    case 1: flValue = *(float *)pData; break;
+    case 8: *(color32_v *)&iValue = *(color32_v *)pData; break;
+    case 3:
+    case 14:
+        ((float *)&flValue)[0] = ((float *)pData)[0];
+        ((float *)&flValue)[1] = ((float *)pData)[1];
+        ((float *)&flValue)[2] = ((float *)pData)[2];
+        break;
+    case 12: eVal = *(unsigned int *)pData; break;
+    case 11: {
+        CBaseEntity *pEnt = *(CBaseEntity **)pData;
+        if (pEnt)
+            eVal = *pEnt->vfunc1();
+        else
+            eVal = 0xffffffff;
+        break;
+    }
+    case 0:
+    default:
+        iValue = 0;
+        fieldType = 0;
+        break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d04b0 size=0xdc
 #include "CBaseEntity.h"
 #include "inputdata_t.h"
