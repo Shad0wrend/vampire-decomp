@@ -1032,6 +1032,7 @@
 0x10002617 func   ?vfunc275@CPropHacking@@QAEXXZ CPropHacking::vfunc275
 0x1000261c func   ?sub_10204f60@CUnknown10204f60@@QAEHH@Z CUnknown10204f60::sub_10204f60
 0x10002621 func   _item_p_occult_strength item_p_occult_strength
+0x10002626 func   ?sub_1032a100@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_1032a100
 0x1000262b func   ?vfunc328@CWeaponIWritten@@UAEHXZ CWeaponIWritten::vfunc328
 0x10002635 func   ?sub_101ea040@CNamedListY@@QAEHPBD@Z CNamedListY::sub_101ea040
 0x1000263a func   ?sub_101d84e0@CUnk101d84e0@@QAEPADXZ CUnk101d84e0::sub_101d84e0

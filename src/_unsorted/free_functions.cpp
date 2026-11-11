@@ -211378,6 +211378,89 @@ void CBaseCombatCharacter::sub_10329560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032a100 size=0x2c5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "CAI_BaseNPC.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "CDevFlagObj.h"
+extern CDevFlagObj *g_10937034;
+extern "C" int sprintf(char *, const char *, ...);
+__declspec(dllimport) void Warning(const char *, ...);
+const char *sub_1025d730(int act);
+
+struct string_tv
+{
+	const char *pszValue;
+	string_tv() {}
+	const char *ToCStr() const { return pszValue ? pszValue : g_106b8540; }
+};
+
+struct CModelNameView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual string_tv GetModelName();
+};
+
+void CBaseCombatCharacter::sub_1032a100(int nAct)
+{
+	ScopeTrace scope("CBaseCombatCharacter::SetGrappleActivity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+
+	CBaseCombatCharacter *att;
+	CBaseCombatCharacter *vic;
+	if (m_hTarget1538.Get() && m_nTarget153c == 0) {
+		att = this;
+		vic = (CBaseCombatCharacter *)m_hTarget1538.Get();
+	} else {
+		vic = this;
+		if (m_nTarget153c == -1)
+			return;
+		att = (CBaseCombatCharacter *)m_hTarget1538.Get();
+	}
+	if (!att || !vic)
+		return;
+	if (!g_10937034->vfunc1() && g_10937034->m_n2c) {
+		char buf[256];
+		sprintf(buf, "%s SetGrappleActivity - att=%s vict=%s (act=%d)", sub_100ab4f0(), att->sub_100ab4f0(), vic->sub_100ab4f0(), nAct);
+		sub_103221b0(buf);
+	}
+	int n1 = att->sub_10328380(nAct, -1, 0, -1);
+	int n2 = vic->sub_10328380(nAct, -1, 0, -1);
+	n1 = ((CEntityVSlots *)att)->slot381(n1);
+	n2 = ((CEntityVSlots *)att)->slot381(n2);
+	int s1 = ((CBaseAnimating *)att)->sub_1008dc40(n1, -1);
+	int s2 = ((CBaseAnimating *)vic)->sub_1008dc40(n2, -1);
+	if (s1 >= 0) {
+		att->m_IdealActivity = nAct;
+		att->m_Activity = n1;
+		((CAI_BaseNPC *)att)->sub_10260a50(s1);
+		*(int *)((char *)att + 0x6f8) = 0;
+	} else {
+		Warning("Attacker could not find sequence for activity: %s (%s)\n", sub_1025d730(n1), ((CModelNameView *)this)->GetModelName().ToCStr());
+		att->sub_10329560();
+	}
+	if (s2 >= 0) {
+		vic->m_Activity = n2;
+		vic->m_IdealActivity = nAct;
+		((CAI_BaseNPC *)vic)->sub_10260a50(s2);
+		*(int *)((char *)vic + 0x6f8) = 0;
+	} else {
+		Warning("Victim could not find sequence for activity: %s (%s)\n", sub_1025d730(n2), ((CModelNameView *)this)->GetModelName().ToCStr());
+		att->sub_10329560();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032a910 size=0xe3
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
