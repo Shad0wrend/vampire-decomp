@@ -2662,6 +2662,63 @@ void CAI_BaseNPC::vfunc448(int code)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102741e0 size=0x177
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "CLogicAuto.h"
+#include "Vector.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+struct CNpcMemoryRec
+{
+	EHANDLE m_hEnt;
+	float m_flTime;
+	Vector m_vecPos;
+};
+
+struct CNpcMemoryList : public CUtlVector<CNpcMemoryRec>
+{
+	void FastRemoveMove(int elem)
+	{
+		if (m_Size > 0) {
+			memmove(&Element(elem), &Element(m_Size - 1), sizeof(CNpcMemoryRec));
+			--m_Size;
+		}
+	}
+};
+
+struct CAI_BaseNPC_MemView
+{
+	char m_pad[0x5d48];
+	CNpcMemoryList m_Recs;
+};
+
+// TARGET: CAI_BaseNPC::vfunc530
+bool CAI_BaseNPC::vfunc530(CBaseEntity *pEnt)
+{
+	CAI_BaseNPC_MemView *pView = (CAI_BaseNPC_MemView *)this;
+	for (int i = pView->m_Recs.Count() - 1; i >= 0; i--) {
+		if (pView->m_Recs.Element(i).m_hEnt.Get() == 0) {
+			pView->m_Recs.FastRemoveMove(i);
+			continue;
+		}
+		if (pEnt == pView->m_Recs.Element(i).m_hEnt.Get()) {
+			if (!(pcd_stage(gpGlobals->curtime) > pView->m_Recs.Element(i).m_flTime)) {
+				Vector delta;
+				VectorSubtract(*(Vector *)((CAI_BaseNPC *)pEnt)->vfunc217(), pView->m_Recs.Element(i).m_vecPos, delta);
+				if (!(delta.LengthSqr() > 14400.0f))
+					return true;
+			}
+			pView->m_Recs.FastRemoveMove(i);
+			return false;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102743c0 size=0x374
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
