@@ -24693,6 +24693,18 @@ const char *__cdecl sub_100779d0(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10077a00 size=0x33
+extern "C" __declspec(dllimport) int Q_strcasecmp(const char *s1, const char *s2);
+
+// TARGET: sub_10077a00
+int __cdecl sub_10077a00(const char *s)
+{
+	if (Q_strcasecmp(s, "playback_time") == 0)
+		return 0;
+	return Q_strcasecmp(s, "shifted_time") == 0 ? 1 : -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077a50 size=0x4e
 #include "utlrbtree.h"
 #include "CUnknown10077430.h"

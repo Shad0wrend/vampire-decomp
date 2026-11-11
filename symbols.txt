@@ -9091,6 +9091,7 @@
 0x1000d35a func   ?vfunc580@CNPC_VTzimisceRunner@@UAEHXZ CNPC_VTzimisceRunner::vfunc580
 0x1000d35f func   ?sub_10193cc0@CPropDestructable@@QAEXHH@Z CPropDestructable::sub_10193cc0
 0x1000d364 func   ?sub_102db630@@YAXD@Z sub_102db630
+0x1000d36e func   ?sub_10077a00@@YAHPBD@Z sub_10077a00
 0x1000d373 func   ?sub_10160520@CBasePlayer@@QAEXXZ CBasePlayer::sub_10160520
 0x1000d378 func   ?sub_10074980@CUnknown10074980@@QAEHXZ CUnknown10074980::sub_10074980
 0x1000d37d func   ??0CRopeEndVec@@QAE@XZ CRopeEndVec::CRopeEndVec
