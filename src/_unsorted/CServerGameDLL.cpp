@@ -490,6 +490,92 @@ void __stdcall sub_1011b060(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011b080 size=0x1cb
+#include "CServerGameDLL.h"
+#include "CVProfile.h"
+#include "CSave.h"
+
+struct IBlockSetX { virtual void v0(); virtual void v1(); virtual void Save(CSave *pSave); };
+extern IBlockSetX *g_10592db0;
+
+struct CCycleCountX
+{
+	__int64 m_Int64;
+	void Sample()
+	{
+		__int64 *pSample = &m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		CCycleCountX t;
+		t.m_Int64 = 0;
+		t.Sample();
+		m_Int64 = t.m_Int64 - m_Int64;
+	}
+	void Add(const CCycleCountX &r) { m_Int64 += r.m_Int64; }
+};
+
+static inline bool NodeExit(CVProfNode *n)
+{
+	if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+		((CCycleCountX *)&n->m_CurFrameTime)->End();
+		((CCycleCountX *)&n->m_TotalTime)->Add(*(CCycleCountX *)&n->m_CurFrameTime);
+		g_109f3648->PopGroup();
+	}
+	return n->m_nRecursions == 0;
+}
+
+struct CVProfScopeX
+{
+	CVProfScopeX(const char *pszName, int detail, const char *pszGroup)
+	{
+		CVProfile *prof = g_109f3648;
+		if (prof->m_enabled || !prof->m_bAtRoot) {
+			if (prof->m_pCurNode->m_pszName != pszName)
+				prof->m_pCurNode = prof->m_pCurNode->GetSubNode(pszName, detail, pszGroup);
+			CVProfNode *node = prof->m_pCurNode;
+			++node->m_nCurFrameCalls;
+			if (node->m_nRecursions++ == 0) {
+				((CCycleCountX *)&node->m_CurFrameTime)->Sample();
+				g_109f3648->PushGroupInlined(node->m_nBudgetGroupID);
+			}
+			prof->m_bAtRoot = false;
+		}
+	}
+	~CVProfScopeX()
+	{
+		CVProfile *prof = g_109f3648;
+		if (!prof->m_bAtRoot || prof->m_enabled) {
+			if (NodeExit(prof->m_pCurNode))
+				prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+			prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+		}
+	}
+};
+
+struct CSaveVecX
+{
+	CUtlVector<int> m_Sections;
+	void Destroy() { m_Sections.~CUtlVector<int>(); }
+};
+
+// TARGET: CServerGameDLL::vfunc18
+int CServerGameDLL::vfunc18(void *pSaveData)
+{
+	CVProfScopeX scope("CServerGameDLL::Save", 0, "Unaccounted");
+	CSave save(pSaveData);
+	g_10592db0->Save(&save);
+	((CSaveVecX *)(CSaveSections *)&save)->Destroy();
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011b300 size=0x1db
 #include "CServerGameDLL.h"
 #include "CSaveRestoreBlockSet.h"
