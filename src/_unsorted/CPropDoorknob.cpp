@@ -36,6 +36,35 @@ void CPropDoorknob::vfunc130(int bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10224cc0 size=0x59
+#include "CPropDoorknob.h"
+#include "CItemContainerLock.h"
+#include "CEHandleGet.h"
+
+namespace block_10224cc0 {
+struct CItemContainerLockUnit : CItemContainerLock {
+	bool sub_10224100();
+};
+// Stand-in for 0x10224100 (`return !(m_unk780 >= 3)`, game: setge al / xor ecx,ecx / sete cl): VC6 folds that
+// form to one setl; this equivalent form also clobbers ecx and keeps edx, which is what the caller relies on.
+bool CItemContainerLockUnit::sub_10224100()
+{
+	int n = m_unk780;
+	return (bool)(((unsigned)n >> 31) | ((unsigned)(n - 3) >> 31));
+}
+}
+using namespace block_10224cc0;
+
+// TARGET: CPropDoorknob::vfunc33
+int CPropDoorknob::vfunc33()
+{
+	CItemContainerLockUnit *l = (CItemContainerLockUnit *)this;
+	if (!l->sub_10224100())
+		return 1;
+	return l->sub_10224910((int)EHandle_Get(l->m_hUser8c)) ? 1 : 300;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10225930 size=0x8
 #include "CPropDoorknob.h"
 // TARGET: CPropDoorknob::sub_10225930
