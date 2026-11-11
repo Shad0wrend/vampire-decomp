@@ -103,5 +103,8 @@ public:
 	const char *sub_10075ca0();
 	int sub_10075b70();	// returns the type at +0x00 (stub 0x100029c8)
 	void sub_10077860();	// stub 0x10001596, run on every event by CUnknown1007ce20::sub_1007cfc0 first
-	char sub_10076b10();	// stub 0x1000cc52: whether the event is one of the timed (non type 1) events the scene keeps (the list at +0x3c)
+	char sub_10076b10();
+	void sub_10074f70(void *pActor);
+	const char *sub_10075d00();
+	int sub_10075cc0();	// stub 0x1000cc52: whether the event is one of the timed (non type 1) events the scene keeps (the list at +0x3c)
 };
