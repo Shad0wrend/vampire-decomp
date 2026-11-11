@@ -3711,6 +3711,7 @@
 0x10006041 func   ?vfunc451@CNPC_VTzimisceRunner@@UAEHXZ CNPC_VTzimisceRunner::vfunc451
 0x10006046 func   ?vfunc580@CNPC_VTremere@@UAEPAXXZ CNPC_VTremere::vfunc580
 0x1000604b func   _prop_physics_contested prop_physics_contested
+0x10006055 func   ?sub_1017ee80@CBasePlayer@@QAEXHHPAX@Z CBasePlayer::sub_1017ee80
 0x1000605a func   ?vfunc605@CNPC_VAsianVampire@@QAEHH@Z CNPC_VAsianVampire::vfunc605
 0x1000605f func   ?vfunc113@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc113
 0x10006064 func   ?sub_1015ae10@@YAHXZ sub_1015ae10

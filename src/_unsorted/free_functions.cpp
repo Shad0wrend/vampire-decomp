@@ -95212,6 +95212,105 @@ void CBasePlayer::sub_1017ec40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017ee80 size=0x246
+#include "CBasePlayer.h"
+#include "CWorldEvents.h"
+#include "COutputEvent.h"
+#include "ConVar.h"
+#include "CUnknown10310c10.h"
+#include "globalvars.h"
+#include "Tier1.h"
+
+struct CCopSpawnState	// the object sub_1023bd00 returns
+{
+	char m_pad000[0x49c];
+	int m_n49c;
+	char m_b4a0;
+	char m_pad4a1[3];
+	float m_fl4a4;
+	float GetWaitDelay() const { return m_fl4a4; }
+};
+
+extern CCopSpawnState *sub_1023bd00();
+extern CWorldEvents *sub_1023dcd0();
+extern void sub_10370560(void *p);
+extern CUnknown10310c10 g_10936c00;
+extern ConVar g_10725c58;
+extern ConVar g_107258d8;
+
+namespace block_1017ee80 {
+struct CBasePlayerUnit : CBasePlayer
+{
+	int sub_1017ec10(int level);
+};
+int CBasePlayerUnit::sub_1017ec10(int level)
+{
+	int n = level - 1;
+	if (n < 1)
+		n = 1;
+	return n;
+}
+}
+using namespace block_1017ee80;
+
+void CBasePlayer::sub_1017ee80(int a, int b, void *pData)
+{
+	CCopSpawnState *pState = sub_1023bd00();
+	if (!pState || !pState->m_n49c)
+		return;
+
+	int nSpawn = 0;
+	int nTotal = 0;
+	if (gpGlobals->curtime > m_flCopTimer1cf0)
+	{
+		nTotal = ((CBasePlayerUnit *)this)->sub_1017ec10(a);
+		nSpawn = nTotal;
+		m_flCopTimer1cf0 = gpGlobals->curtime + g_10725c58.GetFloat();
+		m_iCopLevel1cf4 = a;
+	}
+	else if (a > m_iCopLevel1cf4)
+	{
+		nTotal = ((CBasePlayerUnit *)this)->sub_1017ec10(a);
+		nSpawn = nTotal - ((CBasePlayerUnit *)this)->sub_1017ec10(m_iCopLevel1cf4);
+		m_flCopTimer1cf0 = gpGlobals->curtime + g_10725c58.GetFloat();
+		m_iCopLevel1cf4 = a;
+	}
+
+	if (pState->m_b4a0)
+	{
+		if (m_flCopWaitTimer1dc4 == 0.0f)
+		{
+			m_flCopWaitTimer1dc4 = pState->GetWaitDelay() + gpGlobals->curtime;
+			m_bCopWaitDelayed = true;
+			CWorldEvents *pWorld = sub_1023dcd0();
+			if (pWorld)
+			{
+				if (pState->GetWaitDelay() != 0.0f)
+					pWorld->m_Output468.sub_100cd660(pState, pState, 0.0f);
+				pWorld->m_Output450.sub_100cd660(pState, pState, pState->GetWaitDelay());
+			}
+		}
+		if (nTotal <= m_iCopWaitCount)
+			nTotal = m_iCopWaitCount;
+		m_iCopWaitCount = nTotal;
+		if (g_107258d8.GetBool())
+			g_109f3630("CSActs:    %6.1f - Cops - Wait Area - %d cops waiting in %f sec\n",
+				gpGlobals->curtime, m_iCopWaitCount, m_flCopWaitTimer1dc4 - gpGlobals->curtime);
+	}
+	else
+	{
+		if (g_107258d8.GetBool())
+			g_109f3630("CSActs:    %6.1f - Cops - No Wait   - %d cops spawning to reach %d total (%f sec grace)\n",
+				gpGlobals->curtime, nSpawn, nTotal, m_flCopTimer1cf0 - gpGlobals->curtime);
+		for (int i = nSpawn; i > 0; i--)
+		{
+			sub_10370560(this);
+			g_10936c00.sub_10310c10(this, (int)pData);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017f170 size=0xec
 #include "CBasePlayer.h"
 #include "COutputEvent.h"
