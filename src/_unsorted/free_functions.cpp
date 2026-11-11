@@ -97280,6 +97280,53 @@ int CUnknown10182dd0::sub_10182dd0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182e00 size=0x90
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBasePlayer.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "StatDefault3.h"
+#include "CUnknown10206c70.h"
+
+#define U1(n) virtual void u##n();
+#define U10(n) U1(n##0) U1(n##1) U1(n##2) U1(n##3) U1(n##4) U1(n##5) U1(n##6) U1(n##7) U1(n##8) U1(n##9)
+
+struct CViewModelSlots : CBaseEntity	// slots 134..265 are placeholders, then the model setter
+{
+	U1(134) U1(135) U1(136) U1(137) U1(138) U1(139)
+	U10(14) U10(15) U10(16) U10(17) U10(18) U10(19) U10(20) U10(21) U10(22) U10(23) U10(24) U10(25)
+	U1(260) U1(261) U1(262) U1(263) U1(264) U1(265)
+	virtual void vfunc266(const char *pszModel);	// slot 266 (+0x428)
+};
+
+extern CUnknown10206c70 g_1074f028;
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void CBasePlayer::sub_10182e00(CBaseCombatWeapon *pWeapon)
+{
+	CViewModelSlots *pViewModel = (CViewModelSlots *)sub_1015d680(1);
+	if (pViewModel) {
+		if (pWeapon && (!pWeapon->sub_10256220() || pWeapon->sub_10256250())) {
+			pViewModel->vfunc266(0);
+			return;
+		}
+		const char *pszHands;
+		const char *pszModel = STRINGR(*g_1074f028.sub_10207c40((CBaseCombatCharacter *)this)->sub_101d4ef0(&pszHands, ((CBaseCombatCharacter *)this)->sub_10336920()));
+		engine->vfunc13(pszModel, 0);
+		pViewModel->vfunc266(pszModel);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10183100 size=0xd
 #include "CUnknown10183100.h"
 
