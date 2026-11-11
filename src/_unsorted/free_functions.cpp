@@ -25727,6 +25727,176 @@ Obj *Obj::sub_10079450(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100794e0 size=0x34c
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CUnknown10077990.h"
+#include "CChoreoScene.h"
+#include "CChoreoScene1007e970.h"
+#include "CUnknown10072f10.h"
+#include "CUnknown1007a060.h"
+#include "CUtlVector16.h"
+#include "UtlMem.h"
+
+struct SceneEventVec;
+CUnknown10075aa0 * __fastcall sub_10079e60(SceneEventVec *pVec);
+void __fastcall sub_1007ee00(int *pVec);
+
+struct SceneActorRec : CUnknown10072f10
+{
+};
+
+struct SceneChannelRec
+{
+	char m_pad[0x84];
+	CChoreoSceneVec5 m_Vec;
+};
+
+struct SceneChanVecA : CChoreoSceneVec5
+{
+	void sub_100732f0(int num);
+	void GrowVector(int num)
+	{
+		if (m_size + num > m_allocationCount)
+			sub_100732f0(m_size + num - m_allocationCount);
+		m_size += num;
+		m_pElements = m_pMemory;
+	}
+	void ShiftElementsRight(int elem)
+	{
+		int numToMove = m_size - elem - 1;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem + 1], &m_pMemory[elem], numToMove * sizeof(void *));
+	}
+	int InsertBefore(int elem, void *const &src)
+	{
+		GrowVector(1);
+		ShiftElementsRight(elem);
+		void **p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+		return elem;
+	}
+	int AddToTail(void *const &src) { return InsertBefore(m_size, src); }
+	void RemoveAll() { m_size = 0; }
+};
+
+struct SceneChanVecB : CChoreoSceneVec5
+{
+	void sub_1007fce0(int num);
+	void GrowVector(int num)
+	{
+		if (m_size + num > m_allocationCount)
+			sub_1007fce0(m_size + num - m_allocationCount);
+		m_size += num;
+		m_pElements = m_pMemory;
+	}
+	void ShiftElementsRight(int elem)
+	{
+		int numToMove = m_size - elem - 1;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem + 1], &m_pMemory[elem], numToMove * sizeof(void *));
+	}
+	int InsertBefore(int elem, void *const &src)
+	{
+		GrowVector(1);
+		ShiftElementsRight(elem);
+		void **p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+		return elem;
+	}
+	int AddToTail(void *const &src) { return InsertBefore(m_size, src); }
+	void RemoveAll() { m_size = 0; }
+};
+
+// TARGET: CChoreoScene::sub_100794e0
+CChoreoScene *CChoreoScene::sub_100794e0(const CChoreoScene *pOther)
+{
+	sub_10079910(pOther->m_nA4);
+
+	int i;
+	for (i = 0; i < m_Actors.m_size; i++) {
+		SceneActorRec *p = (SceneActorRec *)m_Actors.m_pMemory[i];
+		if (p) {
+			((CUtlVector16 *)&p->m_pMemory)->sub_1007eeb0();
+			((UtlMem *)&p->m_pMemory)->sub_1007f650();
+			delete p;
+		}
+	}
+	SceneChanVecA &actors = *(SceneChanVecA *)&m_Actors;
+	actors.RemoveAll();
+
+	for (i = 0; i < m_Events.m_size; i++) {
+		CUnknown10075aa0 *p = (CUnknown10075aa0 *)m_Events.m_pMemory[i];
+		if (p) {
+			p->sub_10075350();
+			delete p;
+		}
+	}
+	m_Events.m_size = 0;
+
+	for (i = 0; i < m_Channels.m_size; i++) {
+		SceneChannelRec *p = (SceneChannelRec *)m_Channels.m_pMemory[i];
+		if (p) {
+			CChoreoSceneVec5 *pv = &p->m_Vec;
+			sub_1007ee00((int *)pv);
+			((UtlMem *)pv)->sub_1007f540();
+			pv->m_pElements = pv->m_pMemory;
+			((UtlMem *)pv)->sub_1007f540();
+			delete p;
+		}
+	}
+	SceneChanVecA &channels = *(SceneChanVecA *)&m_Channels;
+	channels.RemoveAll();
+
+	m_nA8 = pOther->m_nA8;
+	m_n7c = pOther->m_n7c;
+	m_n84 = pOther->m_n84;
+	m_n88 = pOther->m_n88;
+	m_n98 = pOther->m_n98;
+	m_nA0 = pOther->m_nA0;
+	m_n9c = pOther->m_n9c;
+	m_nA8 = pOther->m_nA8;
+	m_b12c = pOther->m_b12c;
+	m_n130 = pOther->m_n130;
+	m_b12d = pOther->m_b12d;
+
+	for (i = 0; i < pOther->m_Events.m_size; i++) {
+		CUnknown10075aa0 *pEvent = (CUnknown10075aa0 *)pOther->m_Events.m_pMemory[i];
+		if (pEvent->sub_10076690() == 0) {
+			CUnknown10075aa0 *pNew = sub_10079e60((SceneEventVec *)&m_Events);
+			pNew->sub_100754e0((CUnknown10077990 *)pEvent);
+		}
+	}
+
+	for (i = 0; i < pOther->m_Actors.m_size; i++) {
+		CUnknown10072f10 *pOld = (CUnknown10072f10 *)pOther->m_Actors.m_pMemory[i];
+		CUnknown10072f10 *pNew = (CUnknown10072f10 *)((CUnknown1007a060 *)this)->sub_1007a060();
+		pNew->sub_10072bf0(pOld);
+		CChoreoSceneActor1007e970 *pActor = (CChoreoSceneActor1007e970 *)pNew;
+		for (int j = 0; j < pActor->sub_10072eb0(); j++) {
+			CChoreoSceneChannel1007e970 *ch = pActor->sub_10072ed0(j);
+			channels.AddToTail((void *)ch);
+			for (int k = 0; k < ch->sub_10073540(); k++) {
+				CChoreoSceneEvent1007e970 *ev = ch->sub_10073560(k);
+				((SceneChanVecB *)&m_Events)->AddToTail((void *)ev);
+			}
+		}
+	}
+
+	const char *pSrc = pOther->m_szName;
+	int off = (int)this - (int)pSrc + 0xac;
+	char c;
+	do {
+		c = *pSrc;
+		*(char *)(pSrc + off) = c;
+		pSrc++;
+	} while (c);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079910 size=0x71
 struct Obj {
     char pad0[0x78];
