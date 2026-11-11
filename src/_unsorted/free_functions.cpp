@@ -177537,6 +177537,41 @@ int __stdcall sub_1028ad00(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028ad20 size=0xf2
+#include "CAI_BaseNPC.h"
+#include "CUnknown10315fe0.h"
+
+struct SSquad { char pad[0x6c]; unsigned int *m_pMask; };
+
+struct CAI_BaseNPC_1028ad20 : CAI_BaseNPC {
+    SSquad *GetSquad() { return (*(int *)((char *)this + 0x5bb0) <= 0) ? *(SSquad **)((char *)this + 0x5da4) : 0; }
+};
+
+bool CAI_BaseNPC::sub_1028ad20(int slotIDStart, int slotIDEnd)
+{
+    CAI_BaseNPC_1028ad20 *self = (CAI_BaseNPC_1028ad20 *)this;
+    int &nMySlot = *(int *)((char *)this + 0x5dac);
+    if (!self->GetSquad())
+        return true;
+    if (vfunc167() != ((CAI_BaseNPC *)((CUnknown10315fe0 *)self->GetSquad())->sub_10315fe0())->vfunc167())
+        return true;
+    int i;
+    for (i = slotIDStart; i <= slotIDEnd; i++) {
+        if (nMySlot == i)
+            return true;
+    }
+    for (i = slotIDStart; i <= slotIDEnd; i++) {
+        if (!(self->GetSquad()->m_pMask[i >> 5] & (1 << (i & 0x1f)))) {
+            sub_1028ae60();
+            self->GetSquad()->m_pMask[i >> 5] |= 1 << (i & 0x1f);
+            nMySlot = i;
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028ae60 size=0x8c
 #include "CAI_BaseNPC.h"
 
