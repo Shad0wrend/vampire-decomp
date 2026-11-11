@@ -203697,6 +203697,94 @@ int __stdcall sub_1030a0a0(int unused, int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030a0d0 size=0x42f
+#include "CEntityVSlots.h"
+#include "CUnknown1030a6e0.h"
+#include "Vector.h"
+
+struct CUnknown1030a610 {
+	int m_nType; float m_flWeight; float m_flAngle; float m_flDist; unsigned int m_hEnt; int m_nFlag; char m_szName[0x100];
+	void *sub_1030a610();
+	CUnknown1030a610() { sub_1030a610(); }
+};
+struct Goal1030a0d0 { Vector target; Vector dir; int m_n18; int m_n1c; int m_n20; int m_n24; int m_n28; int m_n2c; int navType; };
+float sub_101d2c70(const Vector *);
+float sub_103090d0(float);
+Vector *sub_101d2f40(Vector *, float);
+extern Vector g_1070d1b0;
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+
+struct CUnknown1030a6e0_1030a0d0 : CUnknown1030a6e0 {
+	int sub_1030a0a0(const Goal1030a0d0 *pGoal, void *pTrace);
+};
+
+bool CUnknown1030a6e0::sub_1030a0d0(void *pGoalV, void *pTrace, float degreesPositiveArc, bool fDeterOscillation, Vector *pSolution)
+{
+	const Goal1030a0d0 &goal = *(const Goal1030a0d0 *)pGoalV;
+	float flAngle = 0;
+	if (m_Debug50.m_nCount > 0) {
+		bool fNewGoal;
+		if (!m_bSteer14 || goal.target.x != m_vecGoal.x || goal.target.y != m_vecGoal.y || goal.target.z != m_vecGoal.z)
+			fNewGoal = true;
+		else
+			fNewGoal = false;
+		sub_10309e40();
+		CUnknown1030a610 rec[2];
+		int n = 1;
+		float fa = sub_101d2c70(&goal.dir);
+		rec[0].m_nType = 0;
+		rec[0].m_flWeight = 1.0f;
+		*(CBaseHandle *)&rec[0].m_hEnt = (IHandleEntity *)0;
+		rec[0].m_flAngle = sub_103090d0(fa);
+		rec[0].m_flDist = sub_103090d0(degreesPositiveArc);
+		rec[0].m_nFlag = ((CUnknown1030a6e0_1030a0d0 *)this)->sub_1030a0a0(&goal, pTrace);
+		Q_snprintf(rec[0].m_szName, 0x100, "GO_MOVE");
+		if (fDeterOscillation && !fNewGoal) {
+			fa = m_flPrev18 - 180.0f;
+			n = 2;
+			rec[1].m_nType = 6;
+			rec[1].m_flWeight = 1.0f;
+			*(CBaseHandle *)&rec[1].m_hEnt = (IHandleEntity *)0;
+			rec[1].m_nFlag = 0;
+			rec[1].m_flAngle = sub_103090d0(fa);
+			rec[1].m_flDist = sub_103090d0(180.0f);
+		}
+		if (m_Debug50.sub_102e91b0(rec, n, &flAngle)) {
+			Vector tmp;
+			*pSolution = *sub_101d2f40(&tmp, flAngle);
+			if (goal.navType == 2)
+				sub_10309f60(&goal.target, flAngle, pSolution);
+			if (!fNewGoal) {
+				float d = flAngle - m_flPrev18;
+				if (d < 0)
+					d += 360.0f;
+				if (d > 165.0f && d < 195.0f)
+					return false;
+			}
+			m_flPrev18 = flAngle;
+			m_vecPrev1c = *pSolution;
+			Vector curVelocity = *(Vector *)((CEntityVSlots *)m_pOuter)->slot198();
+			if (curVelocity != g_1070d1b0) {
+				VectorNormalize(curVelocity);
+				if (!fNewGoal)
+					*pSolution = curVelocity * 0.1f + m_vecPrev1c * 0.1f + *pSolution * 0.8f;
+				else
+					*pSolution = curVelocity * 0.2f + *pSolution * 0.8f;
+			}
+		} else
+			return false;
+	} else {
+		if (goal.navType != 2) {
+			*pSolution = goal.dir;
+			return true;
+		}
+		VectorSubtract(goal.target, *(Vector *)((CEntityVSlots *)m_pOuter)->slot220(), *pSolution);
+		VectorNormalize(*pSolution);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030a610 size=0x21
 struct CUnknown1030a610 { void * sub_1030a610(); };
 void * CUnknown1030a610::sub_1030a610()
