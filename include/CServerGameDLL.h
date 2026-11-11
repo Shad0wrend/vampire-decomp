@@ -16,7 +16,7 @@ public:
 	virtual void vfunc10(); virtual void vfunc11(); virtual int vfunc12(int);
 	virtual void vfunc13(void *pData, int a, int b, int c, int d, int e);	// builds a CSave on pData and runs its slot 3 (a..e)
 	virtual void vfunc14(void *pData, int a, int b, int c, int d, int e);	// builds a CRestore on pData and runs its slot 3 (a..e)
-	virtual int vfunc15(int); virtual int vfunc16(int); virtual void vfunc17(); virtual bool vfunc18(void *pSaveData); virtual void vfunc19(void *pArg);
+	virtual int vfunc15(int); virtual int vfunc16(int); virtual void vfunc17(); virtual int vfunc18(void *pSaveData); virtual void vfunc19(void *pArg);
 	virtual void vfunc20(void *pData);
 	virtual void vfunc21(void *pSaveData, int a, int b);	// slot 21 "CServerGameDLL::Restore" (0x1011b300, ret 0xc): inside the inlined VPROF scope of that name, a CRestore on the stack built from pSaveData (CRestore::CRestore, destroyed at the end of the call: RemoveAll / Purge of its vector), then the block set at *0x10592db0: slot 7 (&restore, a, b) and slot 8 (); same scope shape as vfunc18 / vfunc22
 	virtual int vfunc22(void *pSaveData, __int64 ab);	// "CServerGameDLL::CreateEntityTransitionList": inside a profiler scope, runs sub_101a3c40(pSaveData, a, b) and when it is non-zero restores four block handlers from a CRestore on pSaveData; then calls slot 8 of all four; returns the result
