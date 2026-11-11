@@ -365,7 +365,10 @@ public:
 	float m_flLightOnCenter;	// 0x1c84
 	float m_flLightOnHead;	// 0x1c88	// 0x1C64 .. 0x1C8B
 	float m_f1C8C;	// 0x1C8C: a light value (CHL2_Player::vfunc471 writes 1.0f)
-	char m_pad1c90[0x1cb0 - 0x1c90];
+	char m_pad1c90[0x1c94 - 0x1c90];
+	int m_n1C94;	// 0x1c94: the stealth feat level (0..10) CHL2_Player::vfunc471 picked
+	int m_n1C98;	// 0x1c98: the light level index (0..10) CHL2_Player::vfunc471 picked
+	char m_pad1c9c[0x1cb0 - 0x1c9c];
 	bool m_bPlayerAnimCyclePlaying;	// 0x1cb0
 	bool m_bPlayerAnimIdleFinished;	// 0x1cb1
 	char m_pad1cb2[0x1cb4 - 0x1cb2];
