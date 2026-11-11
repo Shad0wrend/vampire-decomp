@@ -119893,6 +119893,37 @@ void sub_101d20a0(EntV *a, EntV *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2230 size=0x9d
+#include "CBaseEntity.h"
+#include "Vector.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CEntFutureView {
+	V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j) V10(k) V10(l) V10(m) V10(n) V10(o) V10(p) V10(q) V10(r) V10(s)
+	virtual void t0(); virtual void t1(); virtual void t2(); virtual void t3(); virtual void t4(); virtual void t5(); virtual void t6(); virtual void t7();
+	virtual const Vector &slot198();
+	virtual void t9();
+	V10(u)
+	virtual void w0(); virtual void w1(); virtual void w2(); virtual void w3(); virtual void w4(); virtual void w5(); virtual void w6();
+	virtual const Vector &slot217();
+	V10(x) V10(y) V10(z) V10(A) virtual void B0(); virtual void B1(); virtual void B2(); virtual void B3(); virtual void B4();
+	virtual Vector slot263();
+};
+
+// TARGET: sub_101d2230
+void sub_101d2230(CBaseEntity *pTarget, float flTimeDelta, Vector *vecPredictedPosition)
+{
+	if (pTarget == 0 || vecPredictedPosition == 0)
+		return;
+	Vector vecPredictedVel;
+	if (pTarget->sub_100b3700() & 0x80)
+		vecPredictedVel = ((CEntFutureView *)pTarget)->slot198();
+	else
+		vecPredictedVel = ((CEntFutureView *)pTarget)->slot263();
+	(*vecPredictedPosition) = ((CEntFutureView *)pTarget)->slot217() + (vecPredictedVel * flTimeDelta);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2300 size=0xb5
 #include "Vector.h"
 #include "CEntityVSlots.h"

@@ -3103,6 +3103,7 @@
 0x10005317 func   _prop_radio prop_radio
 0x1000531c func   ?vfunc103@CNPC_VGhoulCroucher@@UAEXXZ CNPC_VGhoulCroucher::vfunc103
 0x10005321 func   ?sub_10093970@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_10093970
+0x10005326 func   ?sub_101d2230@@YAXPAVCBaseEntity@@MPAVVector@@@Z sub_101d2230
 0x1000532b func   _prop_mover prop_mover
 0x10005330 func   ?vfunc158@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc158
 0x10005335 func   ?sub_101e8c90@CUnknown101e8080@@QAE_NPBDPAH11@Z CUnknown101e8080::sub_101e8c90
