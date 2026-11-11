@@ -212049,6 +212049,177 @@ CBaseEntity *CBaseCombatCharacter::sub_1032ad30(const Vector &start, const float
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032b290 size=0x564
+#include "CNPC_VTzimisce.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CTakeDamageInfo.h"
+#include "CEntityVSlots.h"
+#include "CVDmg_t.h"
+#include "CVariantCopy.h"
+#include "ScopeTrace.h"
+#include "Tier1.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+extern "C" __declspec(dllimport) int RandomInt(int iMinVal, int iMaxVal);
+
+struct CConVarF
+{
+	virtual void v0();
+	virtual char v1();
+	char m_pad[0x24];
+	float m_f28;
+};
+extern CConVarF *g_10936f2c;
+extern CConVarF *g_10936fbc;
+extern float g_1070d1b0[3];
+extern float g_104454c4;
+
+float __fastcall sub_10251790(void *pThis);
+Vector *sub_1032b960();
+void __cdecl sub_10012a8a();
+
+struct CPhysicsObj
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual float s12();
+	virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16();
+	virtual void s17(); virtual void s18(); virtual void s19(); virtual void s20();
+	virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24();
+	virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28();
+	virtual void s29(); virtual void s30(); virtual void s31(); virtual void s32();
+	virtual void s33(); virtual void s34(); virtual void s35(); virtual void s36();
+	virtual void s37(); virtual void s38(); virtual void s39();
+	virtual void s40(Vector *pVelocity, int a);
+};
+
+extern unsigned char g_109f0b2a;
+extern CVStatList_t g_109f0b40;
+inline void *operator new(unsigned int, void *p) { return p; }
+extern "C" int atexit(void (__cdecl *pfn)(void));
+
+inline CVStatList_t *FindStatList(CVStatListSet *pSet, int type)
+{
+	for (int i = 0; i < pSet->m_nLists; i++)
+	{
+		if (pSet->m_pLists[i]->m_field10 == type)
+			return pSet->m_pLists[i];
+	}
+	if (!(g_109f0b2a & 1))
+	{
+		g_109f0b2a = g_109f0b2a | 1;
+		new (&g_109f0b40) CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+
+void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+
+Vector CBaseCombatCharacter::sub_1032b290(void *pInfoRaw)
+{
+	CTakeDamageInfo *pInfo = (CTakeDamageInfo *)pInfoRaw;
+
+	ScopeTrace scope("CBaseCombatCharacter::CalcDamageForceVector", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	CVDmgSource_t *pAttacker = (CVDmgSource_t *)pInfo->m_pAttacker;
+	if (!pAttacker)
+		pAttacker = (CVDmgSource_t *)pInfo->m_pInflictor;
+
+	if (pAttacker)
+	{
+		float flMagnitude;
+		CBaseCombatCharacter *pCharacter;
+		if (((CTakeDamageAttacker *)pAttacker)->m_pWeapon)
+		{
+			flMagnitude = sub_10251790(((CTakeDamageAttacker *)pAttacker)->m_pWeapon);
+		}
+		else if ((pCharacter = (CBaseCombatCharacter *)pAttacker->m_pCharacter) != 0)
+		{
+			CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)pCharacter->sub_1032e7b0();
+			if (pWeapon && sub_10251790(pWeapon) > g_104454c4)
+			{
+				flMagnitude = sub_10251790(pWeapon);
+			}
+			else
+			{
+				if (pInfo->m_pVDmg00)
+					flMagnitude = (float)pInfo->m_pVDmg00->sub_101faa70() * 150.0f;
+				else
+					flMagnitude = pInfo->m_flDamage * 150.0f;
+			}
+			if (pWeapon && (((CEntityVSlots *)pWeapon)->slot360() & 0x18000))
+			{
+				int n9 = FindStatList(CVStatListSet::Of(pCharacter), 3)->sub_102012d0(9);
+				if (n9 > 5)
+					n9 = 5;
+				else
+					n9 = n9 < 0 ? 0 : n9;
+				int n1 = FindStatList(CVStatListSet::Of(pCharacter), 0)->sub_102012d0(1);
+				if (n1 > 5)
+					n1 = 5;
+				else
+					n1 = n1 < 0 ? 0 : n1;
+				flMagnitude += (float)(((RandomInt(0, n9) + n9) * 2 + (RandomInt(0, n1) + n1)) * 50);
+			}
+		}
+		else
+		{
+			if (pInfo->m_pVDmg00)
+				flMagnitude = (float)pInfo->m_pVDmg00->sub_101faa70() * 150.0f;
+			else
+				flMagnitude = pInfo->m_flDamage * 150.0f;
+		}
+
+		int flags = pInfo->m_pVDmg00 ? (pInfo->m_pVDmg00->m_field10 | pInfo->m_nFlags38) : pInfo->m_nFlags38;
+
+		Vector forceVector;
+		if (flags & 0x40)
+		{
+			forceVector = *((CEntityVSlots *)this)->slot220() + Vector(0, 0, ((CEntityVSlots *)this)->slot214()->z) - *((CEntityVSlots *)pAttacker)->slot220();
+			VectorNormalize(forceVector);
+			forceVector *= 1.5f;
+		}
+		else if (*(int *)((char *)this + 0x2e0) == pAttacker->m_pEdict)
+		{
+			::sub_10139610((const QAngle *)((CEntityVSlots *)this)->slot219(), &forceVector, 0, 0);
+			forceVector *= -1.0f;
+		}
+		else if (((CEntityVSlots *)pAttacker)->slot94() == 7)
+		{
+			CPhysicsObj *pPhys = *(CPhysicsObj **)((char *)this + 0x36c);
+			if (!pPhys)
+				pPhys = *(CPhysicsObj **)((char *)pAttacker + 0x36c);
+			pPhys->s40(&forceVector, 0);
+			flMagnitude = pPhys->s12();
+		}
+		else
+		{
+			Vector *pSize = sub_1032b960();
+			pSize->x = *(float *)((char *)this + 0x280) - *(float *)((char *)this + 0x274);
+			pSize->y = *(float *)((char *)this + 0x284) - *(float *)((char *)this + 0x278);
+			pSize->z = *(float *)((char *)this + 0x288) - *(float *)((char *)this + 0x27c);
+			forceVector = *((CEntityVSlots *)this)->slot220() + Vector(0, 0, (g_10936f2c->v1() ? g_104454c4 : g_10936f2c->m_f28) * pSize->z) - *((CEntityVSlots *)pAttacker)->slot220();
+			VectorNormalize(forceVector);
+		}
+
+		float flScale = (g_10936fbc->v1() ? g_104454c4 : g_10936fbc->m_f28) * flMagnitude;
+		return forceVector * *(Vector *)&pInfo->m_fl04 * flScale;
+	}
+	return *(Vector *)g_1070d1b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032b960 size=0x3c
 #include "TempVector.h"
 
