@@ -9558,6 +9558,7 @@
 0x1000de4a func   ?sub_10057440@@YAHXZ sub_10057440
 0x1000de4f func   ?vfunc2@ConCommandBase@@QAEXPBD0H@Z ConCommandBase::vfunc2
 0x1000de59 func   ?sub_10338190@CBaseCombatCharacter@@QAE_NPAVCUnknown10204e90@@@Z CBaseCombatCharacter::sub_10338190
+0x1000de5e func   ?vfunc7@CSoundControllerImp@@UAEPAVCUnknown101bc140@@PAXIHPBDM@Z CSoundControllerImp::vfunc7
 0x1000de63 func   ?sub_103bf580@CNPC_VTzimisce@@QAEPAXPAX@Z CNPC_VTzimisce::sub_103bf580
 0x1000de68 func   ?vfunc141@CNPC_Bullseye@@QAEXPAXHH@Z CNPC_Bullseye::vfunc141
 0x1000de6d func   ?vfunc175@CTriggerHurt@@QAEXPAVCBaseEntity@@@Z CTriggerHurt::vfunc175

@@ -95,6 +95,73 @@ void CSoundControllerImp::vfunc5(void *pSound)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd2d0 size=0xee
+#include "CEHandleGet.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CSoundControllerImp.h"
+#include "CUnknown101bc140.h"
+#include "ehandle.h"
+
+struct CSoundPool { void *sub_1013dc60(int nSize); };
+extern CSoundPool g_1072c4e0;
+
+inline CBaseHandle GetNetworkableHandle(int iEntity)
+{
+	if (EHandleDetail::g_10566458->m_EntPtrArray[iEntity].m_pEntity)
+		return CBaseHandle(iEntity, EHandleDetail::g_10566458->m_EntPtrArray[iEntity].m_SerialNumber);
+	else
+		return CBaseHandle();
+}
+
+struct CSoundEnvelopeNew
+{
+	float m_current;
+	float m_target;
+	float m_rate;
+	bool m_forceupdate;
+	CSoundEnvelopeNew() { m_current = 0; m_target = 0; m_rate = 0; m_forceupdate = false; }
+};
+
+struct CSoundPatchNew
+{
+	CSoundEnvelopeNew m_pitch;
+	CSoundEnvelopeNew m_volume;
+	int m_n20;
+	int m_n24;
+	int m_n28;
+	const char *m_pszSample;
+	EHANDLE m_hEnt;
+	int m_n34;
+	int m_n38;
+	int m_n3c;
+	int m_n40;
+	CCopyRecipientFilter_101bc140 m_Filter;
+	int m_n48;
+	int m_n4c[8];
+
+	CSoundPatchNew()
+	{
+		m_Filter.sub_101bcef0();
+		m_pszSample = 0;
+	}
+	void *operator new(unsigned int nSize) { return g_1072c4e0.sub_1013dc60(nSize); }
+};
+
+// TARGET: CSoundControllerImp::vfunc7
+CUnknown101bc140 *CSoundControllerImp::vfunc7(void *pFilter, unsigned int nEntIndex, int nChannel, const char *pszSample, float flAttenuation)
+{
+	CUnknown101bc140 *pSound = (CUnknown101bc140 *)new CSoundPatchNew;
+	EHANDLE hEnt = (nEntIndex != -1) ? GetNetworkableHandle(nEntIndex) : CBaseHandle(0, 0);
+	pSound->sub_101bb990(pFilter, hEnt.Get(), nChannel, pszSample,
+		(int)(flAttenuation != 0 ? 20.0f / flAttenuation + 50.0f : 0.0f));
+	return pSound;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd510 size=0x75
 #include "utlrbtree.h"
 #include "CPASAttenuationFilter.h"
