@@ -5599,6 +5599,57 @@ bool CPushBlockerEnum::sub_10037750(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10037840 size=0xc3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CPushBlockerEnum.h"
+#include "CGameTrace.h"
+#include "ScopeTrace.h"
+#include "CUnknown1070b254.h"
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+
+struct PushCollideView
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7) PV(8)
+	virtual const float *slot9(int a);
+};
+
+struct PushEntView
+{
+	PV(0) PV(1)
+	virtual PushCollideView *slot2();
+	PV(3) PV(4) PV(5) PV(6) PV(7) PV(8) PV(9)
+	PV10(1) PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV10(10) PV10(11) PV10(12) PV10(13) PV10(14) PV10(15) PV10(16) PV10(17) PV10(18) PV10(19)
+	PV10(20)
+	PV(210) PV(211) PV(212) PV(213) PV(214) PV(215) PV(216)
+	virtual const float *slot217();
+	PV(218) PV(219)
+	PV10(22)
+	PV(230) PV(231) PV(232) PV(233) PV(234) PV(235) PV(236)
+	virtual unsigned int slot237();
+};
+
+char CPushBlockerEnum::sub_10037840(CBaseEntity *pEnt)
+{
+	ScopeTrace trace("CPushBlockerEnum::IntersectsPushers", g_106b8540);
+	PushEntView *e = (PushEntView *)pEnt;
+	PushCollideView *pCollision = e->slot2();
+	CGameTrace tr;
+	g_1070b254->vfunc5(pCollision, e->slot217(), e->slot217(), pCollision->slot9(0), e->slot237(), &m_push, &tr);
+	return tr.m_startsolid;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037950 size=0x1a
 namespace lifted {
 extern char g_10449308;
