@@ -1706,6 +1706,7 @@
 0x10003490 func   ?sub_10079e60@@YIPAVCUnknown10075aa0@@PAUSceneEventVec@@@Z sub_10079e60
 0x10003495 func   ?sub_102c8c80@@YAHXZ sub_102c8c80
 0x1000349f func   ?sub_10119900@@YAXPAUCUnkVT10119900@@@Z sub_10119900
+0x100034a4 func   ?sub_103d7710@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d7710
 0x100034a9 func   ?vfunc451@CGeneric_NPC@@UAEPBDXZ CGeneric_NPC::vfunc451
 0x100034ae func   ?vfunc499@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc499
 0x100034b3 func   ?sub_103dae50@CUnknown103dae50@@QAEXXZ CUnknown103dae50::sub_103dae50

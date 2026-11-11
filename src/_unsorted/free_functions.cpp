@@ -244128,6 +244128,139 @@ void *CNPC_VWerewolf::sub_103d7620(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d7710 size=0x49a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlvector.h"
+#include "CBaseEntity.h"
+#include "CNPC_VWerewolf.h"
+#include "CHintData_WW.h"
+#include "CUtlVectorHintData.h"
+#include "UtlVec8.h"
+#include "UtlMem.h"
+#include "ScopeTrace.h"
+#include "CAI_Hint.h"
+#include "Tier1.h"
+
+struct WWVec8 : UtlVec8
+{
+	WWVec8 *sub_103dbf00(int growSize, int allocationCount);
+};
+struct WWHintData
+{
+	int m_hEnd;
+	CAI_Hint *m_pHint;
+	Vector m_vGround;
+	Vector m_vTarget;
+	WWVec8 m_v1;
+	WWVec8 m_v2;
+
+	void SetGround(Vector v) { m_vGround = v; }
+	void SetTarget(Vector v) { m_vTarget = v; }
+	Vector GetGround() { return m_vGround; }
+	Vector GetTarget() { return m_vTarget; }
+};
+struct WWHintVec : CUtlVectorHintData
+{
+	int AddToTail(const WWHintData &src) { return sub_103dc090(m_Size, (const CHintData_WW *)&src); }
+	WWHintData &operator[](int i) { return ((WWHintData *)m_pMemory)[i]; }
+};
+struct WWEntList
+{
+	CAI_Hint *sub_100f7770(CAI_Hint *pStart, const char *pszName, int a, int b);
+};
+struct WWSelf : CNPC_VWerewolf
+{
+	Vector sub_103d6a40(Vector vOrigin);
+	Vector sub_103d6650(void *pHint);
+};
+extern WWEntList g_106eb5d8;
+extern CAI_Hint *g_10925450;
+void __fastcall sub_102d41f0(UtlVec8 *p);
+
+inline bool IsFinite(float f)
+{
+	return (*(unsigned int *)&f & 0x7f800000) != 0x7f800000;
+}
+inline bool VecIsValid(const Vector &v)
+{
+	return IsFinite(v.x) && IsFinite(v.y) && IsFinite(v.z);
+}
+
+void CNPC_VWerewolf::sub_103d7710()
+{
+	ScopeTrace trace("CNPC_VWerewolf::InitializeHintData", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (m_n6720 == 0) {
+		CAI_Hint *pHint = g_10925450;
+		WWHintData def;
+		def.m_hEnd = -1;
+		def.m_v1.sub_103dbf00(0, 0);
+		def.m_v2.sub_103dbf00(0, 0);
+		((CHintData_WW *)&def)->sub_103c9fc0();
+		g_109f3630("Werewolf initialize hint data...\n");
+		int nHints = 0;
+		for (; pHint; pHint = pHint->m_pNext) {
+			((WWHintVec *)&m_pHintMem6714)->AddToTail(def);
+			WWHintData &data = (*(WWHintVec *)&m_pHintMem6714)[nHints];
+			((CHintData_WW *)&data)->sub_103c9fc0();
+			data.m_pHint = pHint;
+			CAI_Hint *pEnd = (CAI_Hint *)sub_103d6520(pHint);
+			if (pEnd) {
+				data.m_hEnd = *pEnd->vfunc1();
+			} else {
+				data.m_hEnd = -1;
+			}
+			float yaw = sub_103d7210((CBaseEntity *)pHint);
+			pHint->vfunc65(pHint->m_n428, yaw, pHint->m_n430);
+			Vector v;
+			v = *pHint->vfunc217();
+			v.z += 60.0f;
+			data.SetGround(((WWSelf *)this)->sub_103d6a40(v));
+			v = ((WWSelf *)this)->sub_103d6650(pHint);
+			v.z += 60.0f;
+			data.SetTarget(((WWSelf *)this)->sub_103d6a40(v));
+			bool bBadGround = !VecIsValid(data.GetGround());
+			bool bBadTarget = !VecIsValid(data.GetTarget());
+			if (bBadGround) {
+				g_109f3630("%s has invalid ground point.\n", pHint->sub_100ab4f0());
+				data.SetGround(*pHint->vfunc217());
+			}
+			if (bBadTarget) {
+				g_109f3630("%s has invalid target ground point.\n", pHint->sub_100ab4f0());
+				data.SetTarget(((WWSelf *)this)->sub_103d6650(pHint));
+			}
+			const char *pszName = pHint->m_pszTarget468;
+			int nTargets = 0;
+			if (!pszName)
+				pszName = g_106b8540;
+			CAI_Hint *pTarget = g_106eb5d8.sub_100f7770(0, pszName, 0, 0);
+			while (pTarget) {
+				nTargets++;
+				pTarget = g_106eb5d8.sub_100f7770(pTarget, pszName, 0, 0);
+			}
+			if (nTargets != 1)
+				g_109f364c("%s has %d targets named: %s\n", pHint->sub_100ab4f0(), nTargets, pszName);
+			nHints++;
+		}
+		g_109f3630("There are %d WW hints on this map\n", nHints);
+		sub_102d41f0(&def.m_v2);
+		((UtlMem *)&def.m_v2)->sub_102d4350();
+		def.m_v2.m_pElements = (UtlVec8Elem *)def.m_v2.m_pMemory;
+		((UtlMem *)&def.m_v2)->sub_102d4350();
+		sub_102d41f0(&def.m_v1);
+		((UtlMem *)&def.m_v1)->sub_102d4350();
+		def.m_v1.m_pElements = (UtlVec8Elem *)def.m_v1.m_pMemory;
+		((UtlMem *)&def.m_v1)->sub_102d4350();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d7dc0 size=0x20a
 #include "CAI_Hint.h"
 #include "CNPC_VWerewolf.h"
