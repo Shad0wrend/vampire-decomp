@@ -90,6 +90,72 @@ int CNPC_VGuard1::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037cdf0 size=0x1bc
+#include "CBaseEntity.h"
+#include "CNPC_VGuard1.h"
+#include "CEHandleGet.h"
+
+struct CGuardPlayerView1037cdf0
+{
+	int sub_1017de60();	// stub 0x100038f5
+	int sub_1017ddd0();	// stub 0x100065f5
+	int sub_1017dd80();	// stub 0x10003364
+};
+
+struct CNPC_VGuard1_1037cdf0 : CNPC_VGuard1
+{
+	bool IsPlayerWeak(CGuardPlayerView1037cdf0 *pPlayer, bool bResult)
+	{
+		if (!pPlayer)
+			return true;
+		int n;
+		n = m_n6348; if (pPlayer->sub_1017de60() >= n) return false;
+		n = m_n634c; if (pPlayer->sub_1017ddd0() >= n) return false;
+		n = m_n6350; if (pPlayer->sub_1017ddd0() >= n) return false;
+		n = m_n6354; if (pPlayer->sub_1017dd80() >= n) return false;
+		n = m_n6358; if (pPlayer->sub_1017dd80() >= n) return false;
+		return bResult;
+	}
+};
+
+void CNPC_VGuard1::vfunc453()
+{
+	CNPC_VGuard1_1037cdf0 *self = (CNPC_VGuard1_1037cdf0 *)this;
+	sub_10280fb0();
+	switch (m_nState5cc0) {
+	case 11: {
+		bool bNoFlag = false;
+		CGuardPlayerView1037cdf0 *pPlayer = (CGuardPlayerView1037cdf0 *)EHandle_Get(m_h628c);
+		if (!m_b6660)
+			bNoFlag = true;
+		if (self->IsPlayerWeak(pPlayer, bNoFlag)) {
+			sub_10269f30(0x5a);
+			sub_10269f30(0x6f);
+		} else {
+			sub_10269eb0(0x5a);
+			sub_10269eb0(0x6f);
+		}
+		break;
+	}
+	case 1:
+		sub_10269eb0(0x27);
+	case 3: {
+		CGuardPlayerView1037cdf0 *pPlayer = (CGuardPlayerView1037cdf0 *)EHandle_Get(m_h628c);
+		if (self->IsPlayerWeak(pPlayer, true)) {
+			sub_10269f30(0x6f);
+		} else {
+			sub_10269eb0(0x1e);
+			sub_10269eb0(0x1f);
+			sub_10269eb0(0x20);
+			sub_10269eb0(0x21);
+			sub_10269eb0(0x22);
+		}
+		break;
+	}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037d020 size=0xbb
 #include "CBaseEntity.h"
 #include "CNPC_VGuard1.h"
