@@ -1227,6 +1227,7 @@
 0x10002a4a func   ?sub_1006cc20@Dump@@QAEXXZ Dump::sub_1006cc20
 0x10002a4f func   ?sub_103bc820@CNPC_VTzimisce@@QAEHXZ CNPC_VTzimisce::sub_103bc820
 0x10002a54 func   ?vfunc82@CAI_ChangeHintGroup@@UAEPAUdatamap_t@@XZ CAI_ChangeHintGroup::vfunc82
+0x10002a59 func   ?sub_100c0420@CFuncRotating@@QAEXM@Z CFuncRotating::sub_100c0420
 0x10002a5e func   ?sub_10045de0@CUtlRBTree36@@QAEGPBH@Z CUtlRBTree36::sub_10045de0
 0x10002a63 func   ?vfunc620@CNPCMaker@@UAEXH@Z CNPCMaker::vfunc620
 0x10002a68 func   ?sub_1007bbc0@CUnknown1007b7b0@@QAEPAVCUnknown100735a0@@PAVCUnknown1007a060Elem@@@Z CUnknown1007b7b0::sub_1007bbc0

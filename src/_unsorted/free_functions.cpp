@@ -45281,6 +45281,52 @@ void CFuncRotating::sub_100c01d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0420 size=0x1f0
+#include "CFuncRotating.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "engineserver.h"
+#include "engineiface.h"
+
+extern float g_104454c4;
+extern char g_106b8540[];
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+inline const char *STRINGV(const char *s) { return s ? s : g_106b8540; }
+
+#define clamp_100c0420(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+
+inline int edict_100c0420(CFuncRotating *p) { return p->m_pEdict2e0; }
+inline int entindex_100c0420(CFuncRotating *p) { return engine->vfunc35(edict_100c0420(p)); }
+
+void CFuncRotating::sub_100c0420(float flSpeed)
+{
+	float flOld = m_flSpeed164;
+
+	m_flSpeed164 = clamp_100c0420(flSpeed, -m_f460, m_f460);
+
+	if (flOld == g_104454c4 && m_flSpeed164 != g_104454c4) {
+		if (STRINGR(m_pszNoiseRunning)[0]) {
+			CPASAttenuationFilter filter(*(const Vector *)((CEntitySoundOriginView *)this)->GetAbsOrigin(), m_flAttenuation);
+			filter.MakeReliable();
+			const char *pszNoise = STRINGR(m_pszNoiseRunning);
+			int index = engine->vfunc35(m_pEdict2e0);
+			enginesound->vfunc3(&filter, index, 6, pszNoise, 0.01f, m_flAttenuation, 0, 0x1e, 0, 0, 1, 0);
+			sub_100c01d0();
+		}
+	} else if (flOld != g_104454c4 && m_flSpeed164 == g_104454c4) {
+		if (STRINGR(m_pszNoiseRunning)[0]) {
+			enginesound->vfunc7(entindex_100c0420(this), 6, STRINGV(m_pszNoiseRunning));
+		}
+	} else {
+		sub_100c01d0();
+	}
+
+	Vector vecVel = m_flSpeed164 * *(Vector *)m_vecMovedir;
+	sub_100b2f50(&vecVel.x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0690 size=0x9a
 #include "CFloatPair3f4.h"
 #include <math.h>
