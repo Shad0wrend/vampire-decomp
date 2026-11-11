@@ -218861,6 +218861,59 @@ bool __stdcall sub_10344da0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10345330 size=0xed
+#include "CNPC_VTzimisce.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+extern char g_10623af4[];
+
+struct CBCC_SeqEvent
+{
+	int m_n0;
+	float cycle;
+	int m_n8[45];
+};
+
+struct CBCC_SeqDesc
+{
+	char m_pad0[0x2c4];
+	int numevents;
+	int eventindex;
+	CBCC_SeqEvent *pEvent(int i) const { return (CBCC_SeqEvent *)(((unsigned char *)this) + eventindex) + i; }
+};
+
+// TARGET: CBaseCombatCharacter::sub_10345330
+bool CBaseCombatCharacter::sub_10345330()
+{
+	ScopeTrace trace(g_10623af4, this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	((CBaseAnimating *)this)->sub_100952d0(-1);
+	CBCC_SeqDesc *pSeq = (CBCC_SeqDesc *)((CBaseAnimating *)this)->sub_1008d990(m_nSequence6f0);
+	if (sub_1032e7b0())
+	{
+		int n = pSeq->numevents < 20 ? pSeq->numevents : 20;
+		if (n > 0)
+		{
+			for (int i = 0; i < n; i++)
+			{
+				if (m_fl6f8 < pSeq->pEvent(i)->cycle)
+					return false;
+			}
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10345480 size=0x2e
 #include "CBaseAnimating.h"
 struct SeqDesc { char pad[0x2e8]; int off; };
