@@ -4508,6 +4508,7 @@
 0x10007171 func   ?sub_101fa0e0@CUnknown101fa0e0@@QAEXXZ CUnknown101fa0e0::sub_101fa0e0
 0x10007176 func   ?vfunc5@CPointHurt@@QAEPAV1@I@Z CPointHurt::vfunc5
 0x1000717b func   ?vfunc21@CServerGameDLL@@UAEXPAXHH@Z CServerGameDLL::vfunc21
+0x10007180 func   ?sub_101169a0@CFuncMoveLinear@@QAEXXZ CFuncMoveLinear::sub_101169a0
 0x10007185 func   ?sub_103b9f50@CNPC_VTzimisce@@QAEXH@Z CNPC_VTzimisce::sub_103b9f50
 0x10007194 func   ?sub_1018e9d0@@YAXHH@Z sub_1018e9d0
 0x10007199 func   ?sub_101db9c0@@YAHH@Z sub_101db9c0

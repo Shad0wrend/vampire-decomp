@@ -71885,6 +71885,38 @@ CPASFilter *CPASFilter::sub_10116970(const float *pOrigin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101169a0 size=0x1cc
+#include "CFuncMoveLinear.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "engineiface.h"
+#include "engineserver.h"
+
+extern char g_106b8540[];
+inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+inline int EntIndexOf(int edict) { return engine->vfunc35(edict); }
+
+// TARGET: CFuncMoveLinear::sub_101169a0
+void CFuncMoveLinear::sub_101169a0()
+{
+	if (m_str55c && m_field564 == (int)m_str55c)
+	{
+		enginesound->vfunc7(EntIndexOf(m_pEdict2e0), 4, (char *)STRINGR_F(m_str55c));
+	}
+	if (m_str568)
+	{
+		enginesound->vfunc7(EntIndexOf(m_pEdict2e0), 3, (char *)STRINGR_F(m_str568));
+	}
+	if (m_str560 && m_field564 != (int)m_str560)
+	{
+		m_field564 = (int)m_str560;
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		enginesound->vfunc3(&filter, EntIndexOf(m_pEdict2e0), 4, (char *)STRINGR_F(m_str560), 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	}
+	sub_100ac4e0(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116e80 size=0xe4
 #include "Vector.h"
 #include "CEntityVSlots.h"
