@@ -89,7 +89,7 @@ public:
 	virtual void slot202(CEntityVSlots *pOwner);	// "SetOwnerEntity"
 	virtual double slot203();	// "GetAttackDamageScale" (the value stays on the FPU stack, the caller multiplies it with a float)
 	virtual double slot204();	// "GetReceivedDamageScale"
-	EVS(205) EVS(206) EVS(207) EVS(208)
+	EVS(205) EVS(206) EVS(207) virtual void slot208(CEntityVSlots *pEnt);
 	virtual CEntityVSlots *slot209();	// "GetGroundEntity"
 	virtual void slot210(Vector *pOut);	// "GetGroundVelocityToApply": fills pOut
 	virtual int slot211();	// answers a short in ax (CBaseEntity::vfunc77 saves it)
