@@ -30707,6 +30707,86 @@ void sub_10086220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10086380 size=0x3ff
+#include "engineserver.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "CUnknown10738960.h"
+#include "CTraceFilterSimple.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "ConVar.h"
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+#include "Tier1.h"
+#include "UTIL_Trace.h"
+
+extern char g_106b8540[];
+extern CGlobalEntityList g_106eb5d8;
+CBaseEntity *sub_10136580(const char *pszName);
+CBaseEntity *sub_101193b0();
+void sub_10139610(const QAngle *angles, Vector *fwd, Vector *right, Vector *up);
+void sub_101cd250(CBaseEntity *pEnt, int mask, int a);
+void sub_10142aa0(const Vector *pOrigin, const float *pMins, const float *pMaxs, int r, int g, int b, int a, int d);
+const float *sub_102d6100(int hull);
+const float *sub_102d6120(int hull);
+void __fastcall sub_101c0b10(CBaseEntity *pEnt);
+
+inline const char *ConVarString(ConVar &cv)
+{
+	if (cv.m_pParent->vfunc1())
+		return g_106b8540;
+	if (cv.m_nFlags & 0x1000)
+		return "FCVAR_NEVER_AS_STRING";
+	const char *p = cv.m_pParent->m_pszString;
+	return p ? p : g_106b8540;
+}
+
+void sub_10086380()
+{
+	if (!g_106eb5d8.sub_100f7380(0, engine->vfunc84(1))) {
+		g_109f3630("Can't create %s.  Not precached!\n", engine->vfunc84(1));
+		return;
+	}
+	CBaseEntity *pBase = sub_10136580(engine->vfunc84(1));
+	if (pBase) {
+		CEntityVSlots *pEnt = (CEntityVSlots *)pBase;
+		pEnt->slot110("additionalequipment", ConVarString(g_106c8d38));
+		pEnt->slot103();
+		pBase->sub_100aaf30();
+		CEntityVSlots *pPlayer = (CEntityVSlots *)sub_101193b0();
+		CGameTrace tr;
+		Vector forward;
+		sub_10139610((QAngle *)((char *)pPlayer + 0x206c), &forward, 0, 0);
+		Vector eye1, eye2;
+		UTIL_TraceLine_Calls(*pPlayer->slot193(&eye1), *pPlayer->slot193(&eye2) + forward * 56755.84f, 0x202400b, pPlayer, 0, &tr);
+		if (tr.m_fraction != 1.0) {
+			if (pEnt->slot513() & 4) {
+				Vector pos = *(Vector *)tr.m_endpos - forward * 36.0f;
+				pEnt->slot181(&pos, 0, 0);
+			} else {
+				((Vector *)tr.m_endpos)->z += 12.0f;
+				pEnt->slot181((Vector *)tr.m_endpos, 0, 0);
+				sub_101cd250(pBase, 0x202400b, 0);
+			}
+			Vector up = *pEnt->slot217();
+			up.z += 1.0f;
+			int hull = *(int *)((char *)pBase + 0x1568);
+			UTIL_TraceHull(*pEnt->slot217(), up, *(Vector *)sub_102d6100(hull), *(Vector *)sub_102d6120(hull), 0x202400b, pBase, 0, &tr, 1, 0);
+			if (!tr.m_startsolid && !(tr.m_fraction < 1.0)) {
+				pBase->sub_100b3b00();
+				return;
+			}
+			sub_101c0b10(pBase);
+			g_109f3630("Can't create %s.  Bad Position!\n", engine->vfunc84(1));
+			int hull2 = *(int *)((char *)pBase + 0x1568);
+			sub_10142aa0(pEnt->slot217(), sub_102d6100(hull2), sub_102d6120(hull2), 0xff, 0, 0, 0, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086e50 size=0x9b
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
