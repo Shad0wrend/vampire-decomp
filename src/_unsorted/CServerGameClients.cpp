@@ -185,6 +185,84 @@ void __stdcall sub_1011c4d0(CServerClientsView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011c520 size=0x19c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CServerGameClients.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+#include "string_t.h"
+#include <string.h>
+
+struct CPlayerView1011c520
+{
+	char m_pad0000[0x2078];
+	string_t m_netname;	// 0x2078
+};
+
+#define ES(n) virtual void s##n();
+#define ES10(p) ES(p##0) ES(p##1) ES(p##2) ES(p##3) ES(p##4) ES(p##5) ES(p##6) ES(p##7) ES(p##8) ES(p##9)
+
+struct CEngineView1011c520
+{
+	ES10(0) ES10(1) ES10(2)
+	ES(30) ES(31) ES(32) ES(33)
+	virtual int slot34(void *edict);
+	ES(35) ES(36) ES(37) ES(38) ES(39)
+	ES10(4) ES10(5) ES10(6) ES10(7) ES10(8)
+	ES(90) ES(91) ES(92) ES(93) ES(94)
+	virtual const char *slot95(int clientIndex, const char *pszName);
+};
+
+struct CGameEntsView1011c520
+{
+	ES10(0) ES10(1) ES10(2) ES10(3)
+	ES(40) ES(41)
+	virtual void slot42(CPlayerView1011c520 *pPlayer, int clientIndex);
+};
+
+extern CEngineView1011c520 *g_1070b22c;
+extern CGameEntsView1011c520 *g_1070ba0c;
+void sub_101d10e0(const char *fmt, ...);
+string_t sub_1042bff0(const char *pszString);
+
+static inline const char *STRING(const string_t &s)
+{
+	if (s.pszValue)
+		return s.pszValue;
+	return g_106b8540;
+}
+
+inline CPlayerView1011c520 *Instance1011c520(CServerGameClients_Edict *pent)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	return pent->m_pUnk ? (CPlayerView1011c520 *)pent->m_pUnk->vfunc4() : 0;
+}
+
+// TARGET: CServerGameClients::vfunc6
+void CServerGameClients::vfunc6(CServerGameClients_Edict *pEdict, int clientIndex)
+{
+	if (!pEdict->m_bFlag || !pEdict->m_pUnk)
+		return;
+	CPlayerView1011c520 *pPlayer = Instance1011c520(pEdict);
+	if (!pPlayer)
+		return;
+	if (pPlayer->m_netname.pszValue && STRING(pPlayer->m_netname)[0] != 0
+		&& strcmp(STRING(pPlayer->m_netname), g_1070b22c->slot95(clientIndex, "name")))
+	{
+		sub_101d10e0("\"%s<%i>\" changed name to \"%s<%i>\"\n", STRING(pPlayer->m_netname), g_1070b22c->slot34(pEdict), g_1070b22c->slot95(clientIndex, "name"), g_1070b22c->slot34(pEdict));
+		pPlayer->m_netname = sub_1042bff0(g_1070b22c->slot95(clientIndex, "name"));
+	}
+	g_1070ba0c->slot42(pPlayer, clientIndex);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011c8c0 size=0x29a
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
