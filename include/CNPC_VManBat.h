@@ -50,6 +50,7 @@ public:
 	void sub_1029a0b0();	// CAI_BaseNPC::vfunc420 (stub 0x1000c531), called directly
 
 	bool sub_1038bec0(const Vector &vecDir, float flDist, Vector &vecNormal);
+	void sub_1038e9c0(CBaseEntity *pTarget);	// 0x1038e9c0: sets up the screech particle cones on the bat and on the target
 	bool sub_1038f290();
 	bool sub_1038f2c0(const char *pszModel, int nBone, int nArg, const char *pszName);	// creates a prop_physics with the model, bites it into the bat's foot (sub_1038f430) and keeps its handle at +0x668c
 	CNPC_VManBat *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
