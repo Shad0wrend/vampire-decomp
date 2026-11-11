@@ -185174,6 +185174,126 @@ int CAI_BaseNPCTroika::sub_102b11c0(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b15c0 size=0x375
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CEntitySoundOriginView.h"
+#include "CDevFlagObj.h"
+
+extern CDevFlagObj *g_10924a6c;
+extern CGlobalEntityList *g_10566458;
+
+#ifndef max
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+#endif
+
+struct CTroikaCharView : CEntitySoundOriginView
+{
+	char m_pad0004[0x3d4 - 4];
+	Vector m_vec3d4;
+};
+
+struct CTroikaNPCFlagBits
+{
+	unsigned int b0_21 : 22;
+	unsigned int bFlee : 1;		// 0x400000
+	unsigned int bHide : 1;		// 0x800000
+	unsigned int bDecided : 1;	// 0x1000000
+	unsigned int b25 : 1;		// 0x2000000
+	unsigned int b26_31 : 6;
+};
+
+// TARGET: CAI_BaseNPCTroika::sub_102b15c0
+void CAI_BaseNPCTroika::sub_102b15c0()
+{
+	CTroikaNPCFlagBits &bits = *(CTroikaNPCFlagBits *)&m_flags14b8;
+	if (sub_10014df8(1)) {
+		m_f6084 = -1.0f;
+		CBaseEntity *pEnt;
+		{
+			unsigned int hTemp;
+			pEnt = g_10566458->sub_100290c0((const unsigned int *)vfunc586((int)&hTemp));
+		}
+		if (!pEnt)
+			return;
+		CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pEnt->m_pA8;
+		if (!pChar)
+			return;
+		if (pChar->sub_101671a0()) {
+			if ((unsigned char)~*((unsigned char *)this + 0x14bb) & 1) {
+				m_flags14b8 |= 0x1000000;
+				int nThreshold = max(0, 50 - m_n60a4 * 20);
+				if (!*((unsigned char *)this + 0x6340) && nThreshold > enginerandom->vfunc2(0, 99)) {
+					bits.bFlee = 1;
+					bits.b25 = 0;
+				} else
+					bits.bFlee = 0;
+			}
+			CTroikaCharView *pView = (CTroikaCharView *)pChar;
+			Vector vel = pView->m_vec3d4;
+			const Vector &charOrigin = *(const Vector *)pView->GetAbsOrigin();
+			const Vector &myOrigin = *(const Vector *)((CEntitySoundOriginView *)this)->GetAbsOrigin();
+			Vector dir = myOrigin - charOrigin;
+			dir.z = 0.0f;
+			VectorNormalize(dir);
+			float dot = dir.x * vel.x + vel.y * dir.y;
+			if ((m_flags14b8 & 0x400000) == 0x400000) {
+				if (dot > 20.0f && gpGlobals->curtime >= m_f60a0) {
+					g_10924a6c->vfunc1();
+					sub_10269a20(5);
+					g_10924a6c->vfunc1();
+					sub_10269a20(0x26);
+					return;
+				}
+				sub_10269b50(1);
+				if (m_flags14b8 & 0x2200000)
+					return;
+				g_10924a6c->vfunc1();
+				sub_10269a20(3);
+				return;
+			}
+			g_10924a6c->vfunc1();
+			sub_10269a20(0x26);
+			if (dot < 20.0f) {
+				g_10924a6c->vfunc1();
+				sub_10269a20(7);
+			} else if (dot > 20.0f) {
+				g_10924a6c->vfunc1();
+				sub_10269a20(5);
+			} else {
+				g_10924a6c->vfunc1();
+				sub_10269a20(6);
+			}
+			return;
+		}
+		if ((unsigned char)~*((unsigned char *)this + 0x14bb) & 1) {
+			bits.bDecided = 1;
+			int nThreshold = (m_n60a4 + 5) * 20;
+			int nMax = nThreshold > 100 ? 100 : nThreshold;
+			if (nMax > enginerandom->vfunc2(0, 99))
+				bits.bHide = 1;
+			else
+				bits.bHide = 0;
+		}
+		if (m_flags14b8 & 0x800000) {
+			g_10924a6c->vfunc1();
+			sub_10269a20(4);
+		}
+		if (sub_102b3270(pEnt, 0)) {
+			g_10924a6c->vfunc1();
+			sub_10269a20(0x26);
+		}
+	} else {
+		if (sub_1028e360() && sub_10269c70(2)) {
+			g_10924a6c->vfunc1();
+			sub_10269a20(2);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b1a20 size=0x21e
 #include "CEHandleGet.h"
 #include "CSoundControllerImp.h"
