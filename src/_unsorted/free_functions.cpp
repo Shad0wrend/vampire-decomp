@@ -178070,6 +178070,62 @@ bool CAI_BaseNPCTroika::sub_102902e0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10290350 size=0x1a5
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_MoveProbe.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "globalvars.h"
+
+struct CAI_TroikaTargetView
+{
+	char m_pad0000[0x4f8];
+	int m_n4f8;
+};
+
+struct CAI_MoveProbeLimitView : CAI_MoveProbe
+{
+	bool MoveLimit(int navType, const Vector &vecStart, const Vector &vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, AIMoveTrace_t *pMove)
+	{
+		return sub_102e6d70(navType, &vecStart.x, &vecEnd.x, collisionMask, pTarget, 100.0f, 0, pMove, 0, 0);
+	}
+};
+
+bool CAI_BaseNPCTroika::sub_10290350(int unused)
+{
+	CEntityVSlots *pThis = (CEntityVSlots *)this;
+	*((char *)this + 0x65fa) = 1;
+	sub_102727d0();
+	*((char *)this + 0x65fa) = 0;
+	if (EHandle_Get(m_h5d24))
+	{
+		if (((CAI_TroikaTargetView *)EHandle_Get(m_h5d24))->m_n4f8 == 0)
+		{
+			sub_102bf7e0();
+			m_n644c = 0;
+		}
+	}
+	Vector vecStart = *pThis->slot217();
+	Vector vecEnd = vecStart + m_vec6290 * 64.0f;
+	AIMoveTrace_t trace;
+	if (((CAI_MoveProbeLimitView *)m_pMoveProbe5d40)->MoveLimit(0, vecStart, vecEnd, 0x202400b, 0, &trace))
+	{
+		sub_102bf7e0();
+		m_h5d24 = 0xffffffff;
+		m_b5d30 = 0;
+		m_n644c = 0;
+	}
+	if (gpGlobals->curtime >= m_f6450)
+	{
+		pThis->slot448(0xe);
+		m_h5d24 = 0xffffffff;
+		m_b5d30 = 0;
+		m_n644c = 0;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10290660 size=0x23
 // TARGET: sub_10290660
 int __stdcall sub_10290660(float a)
