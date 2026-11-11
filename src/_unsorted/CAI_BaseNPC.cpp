@@ -942,6 +942,54 @@ void *__fastcall sub_1026af30(CUnknown1026af30View *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026af70 size=0x205
+#include "vampire.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
+#include "Vector.h"
+#include <math.h>
+
+float sub_1013d580(float a, float b);
+
+void CAI_BaseNPC::sub_1026af70(const float *pTargetPos, float flInterval)
+{
+	CBaseCombatCharacter *pThis = (CBaseCombatCharacter *)this;
+	const Vector &vTargetPos = *(const Vector *)pTargetPos;
+
+	if (!(vfunc513() & 0x1000))
+		return;
+
+	Vector vTargetDir = vTargetPos - *(const Vector *)vfunc220();
+	float flTargetYaw = sub_1013d580(sub_1027db80(&vTargetDir), vfunc221()[1]);
+
+	float iRate = 0.8f;
+	float timeToUse = flInterval;
+	while (timeToUse > 0.0f)
+	{
+		pThis->m_flHeadYaw = (iRate * pThis->m_flHeadYaw) + (1 - iRate) * flTargetYaw;
+		timeToUse -= 0.1;
+	}
+	if (pThis->m_flHeadYaw > 360.0f)
+		pThis->m_flHeadYaw = 0.0f;
+	pThis->m_flHeadYaw = ((CBaseAnimating *)this)->sub_10095cb0(0, pThis->m_flHeadYaw);
+
+	Vector vEyePosition = vfunc193();
+	float dist = (vTargetPos - vEyePosition).Length();
+	float flTargetPitch = -((float)atan((vTargetPos.z - vEyePosition.z) / dist) * 57.29578f);
+
+	timeToUse = flInterval;
+	while (timeToUse > 0.0f)
+	{
+		pThis->m_flHeadPitch = (iRate * pThis->m_flHeadPitch) + (1 - iRate) * flTargetPitch;
+		timeToUse -= 0.1;
+	}
+	if (pThis->m_flHeadPitch > 360.0f)
+		pThis->m_flHeadPitch = 0.0f;
+	((CBaseAnimating *)this)->sub_10095cb0(1, pThis->m_flHeadPitch);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026b210 size=0x14
 #include "CAI_BaseNPC.h"
 
