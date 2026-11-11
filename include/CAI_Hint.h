@@ -22,7 +22,7 @@ class CAI_Hint
 {
 public:
 	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual int *vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();
 	virtual void vfunc4();
@@ -86,7 +86,7 @@ public:
 	virtual void vfunc62();
 	virtual void vfunc63();
 	virtual void vfunc64();
-	virtual void vfunc65();
+	virtual void vfunc65(int a, float b, int c);
 	virtual void vfunc66();
 	virtual void vfunc67();
 	virtual void vfunc68();
@@ -203,17 +203,59 @@ public:
 	virtual void vfunc179();
 	virtual void vfunc180();
 	virtual void vfunc181(Vector *pPos, int a, int b);
+	virtual void vfunc182();
+	virtual void vfunc183();
+	virtual void vfunc184();
+	virtual void vfunc185();
+	virtual void vfunc186();
+	virtual void vfunc187();
+	virtual void vfunc188();
+	virtual void vfunc189();
+	virtual void vfunc190();
+	virtual void vfunc191();
+	virtual void vfunc192();
+	virtual void vfunc193();
+	virtual void vfunc194();
+	virtual void vfunc195();
+	virtual void vfunc196();
+	virtual void vfunc197();
+	virtual void vfunc198();
+	virtual void vfunc199();
+	virtual void vfunc200();
+	virtual void vfunc201();
+	virtual void vfunc202();
+	virtual void vfunc203();
+	virtual void vfunc204();
+	virtual void vfunc205();
+	virtual void vfunc206();
+	virtual void vfunc207();
+	virtual void vfunc208();
+	virtual void vfunc209();
+	virtual void vfunc210();
+	virtual void vfunc211();
+	virtual void vfunc212();
+	virtual void vfunc213();
+	virtual void vfunc214();
+	virtual void vfunc215();
+	virtual void vfunc216();
+	virtual Vector *vfunc217();
 	void sub_10005e98();
+	const char *sub_100ab4f0();
 	void sub_100a8990();	// CBaseEntity::vfunc78 (stub 0x1000468d), called directly by vfunc78	// as in CPhysForce (transplant)
 	void sub_100a8710();	// CBaseEntity::vfunc77 (stub 0x100011cc), called directly
 
-	char m_pad0004[0x450];
+	char m_pad0004[0x428 - 4];
+	int m_n428;
+	int m_n42c;
+	int m_n430;
+	char m_pad434[0x454 - 0x434];
 	float m_f454;	// +0x454: cover angle (degrees; halved for some hint types)
 	float m_f458;	// +0x458: cosine of the cover angle
 	float m_f45c;	// +0x45c: cover distance / radius
 	float m_f460;	// +0x460: another cover distance bound (FLT_MAX when unset)
 	float m_f464;	// +0x464: distance scalar (the hint search multiplies the distance by it; 3.0f when unset)
-	char m_pad468[0x470 - 0x468];
+	const char *m_pszTarget468;
+	int m_n46c;
 	int m_n470;	// +0x470: cover slot count (1..32 -> 1 << (n-1), else -1)
 	int m_n474;	// +0x474: cover move-type mask (1 / 4 / 8 / 0x10)
 	char m_pad478[0x4fc - 0x478];
