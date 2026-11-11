@@ -93,6 +93,55 @@ int CNPC_VMingXiaoTentacle::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039c220 size=0x106
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CBCCSlotViews.h"
+#include "string_t.h"
+
+struct TentEnt {
+    VIEW_SLOT(0) VIEW_SLOT(1) VIEW_SLOT(2) VIEW_SLOT(3) VIEW_SLOT(4) VIEW_SLOT(5) VIEW_SLOT(6) VIEW_SLOT(7) VIEW_SLOT(8)
+    virtual string_t GetModelName();
+    VIEW_SLOT10(1) VIEW_SLOT10(2) VIEW_SLOT10(3) VIEW_SLOT10(4) VIEW_SLOT10(5) VIEW_SLOT10(6) VIEW_SLOT10(7) VIEW_SLOT10(8) VIEW_SLOT10(9)
+    VIEW_SLOT100(1)
+    VIEW_SLOT10(20)
+    VIEW_SLOT(210) VIEW_SLOT(211)
+    virtual void SetModelName(string_t name);
+};
+struct TentBase { void sub_10298ad0(); };
+extern char g_1064a340[];
+extern char *g_106477c8;
+extern char *g_106477cc;
+
+inline const char *TentSTRING(const string_t &s) { return s.pszValue ? s.pszValue : g_106b8540; }
+inline string_t TentMAKE(const char *p) { string_t s; s.pszValue = *p ? p : 0; return s; }
+
+// TARGET: CNPC_VMingXiaoTentacle::vfunc104
+void CNPC_VMingXiaoTentacle::vfunc104()
+{
+    TentEnt *e = (TentEnt *)this;
+    if (e->GetModelName().pszValue == 0 || !TentSTRING(e->GetModelName()) || !*TentSTRING(e->GetModelName()))
+        e->SetModelName(TentMAKE(g_1064a340));
+    ((TentBase *)this)->sub_10298ad0();
+    m_nModelIndex6664 = engine->vfunc13("models/character/monster/MingXiao/MingXiao_baby/MingXiao_baby.mdl", 0);
+    m_nModelIndex6668 = engine->vfunc13("models/character/monster/MingXiao/MingXiao_baby/MingXiao_baby.mdl", 0);
+    m_nModelIndex666c = engine->vfunc13("models/character/monster/MingXiao/MingXiao_transformation.mdl", 0);
+    engine->vfunc17("Ming_xiao_tentacle_transform_emitter", 0);
+    engine->vfunc17("Ming_xiao_baby_transform_emitter", 0);
+    engine->vfunc17("Ming_xiao_baby_death_emitter", 0);
+    enginesound->vfunc0(g_106477c8, 0);
+    enginesound->vfunc0(g_106477cc, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039c380 size=0x86
 #include "CNPC_VMingXiaoTentacle.h"
 extern float g_10454110;
