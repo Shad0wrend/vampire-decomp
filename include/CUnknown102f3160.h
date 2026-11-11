@@ -1,6 +1,8 @@
 // CUnknown102f3160: class (not identified yet) whose destructor 0x102f3160 releases a CUtlVector-style vector at +0x1ec.
 #pragma once
 
+#include "utlvector.h"
+
 extern void (*g_109f3624)(void *);	// Plat_Free
 
 struct CPurgeMemory
@@ -44,5 +46,5 @@ public:
 	void sub_10003666();
 
 	char m_pad0000[0x1ec];
-	CPurgeVec m_vec;	// 0x01ec
+	CUtlVector<int> m_vec;	// 0x01ec
 };
