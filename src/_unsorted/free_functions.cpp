@@ -116996,6 +116996,60 @@ void CChangeLevel::sub_101c7d90(CBaseEntity *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7e00 size=0x123
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBCCSlotViews.h"
+#include "ScopeTrace.h"
+
+extern "C" __declspec(dllimport) char *__cdecl Q_strncpy(char *, const char *, int);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct SEdictView {
+    char pad[0x40];
+    CServerUnknownSlotView *m_pUnknown;
+};
+
+struct SEntry101c7e00 {
+    char name[0x20];
+    char label[0x20];
+    SEdictView *edict;
+    float pos[3];
+};
+
+int sub_101c7e00(SEntry101c7e00 *table, int count, const char *name, const char *label, SEdictView *pEdict)
+{
+    if (!table || !name || !label || !pEdict)
+        return 0;
+    for (int i = 0; i < count; i++) {
+        if (table[i].edict == pEdict && _strcmpi(table[i].name, name) == 0)
+            return 0;
+    }
+    Q_strncpy(table[count].name, name, 0x20);
+    Q_strncpy(table[count].label, label, 0x20);
+    table[count].edict = pEdict;
+    void *pEnt;
+    {
+        ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+        if (pEdict->m_pUnknown)
+            pEnt = pEdict->m_pUnknown->vfunc4();
+        else
+            pEnt = 0;
+    }
+    float *pos = ((CEntityOrigin220SlotView *)pEnt)->vfunc220();
+    table[count].pos[0] = pos[0];
+    table[count].pos[1] = pos[1];
+    table[count].pos[2] = pos[2];
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c7fa0 size=0x3c
 typedef unsigned int (__fastcall *FlagSlotFn)(void *);
 typedef int (__fastcall *IntSlotFn)(void *);
