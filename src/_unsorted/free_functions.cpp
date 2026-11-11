@@ -215827,6 +215827,156 @@ int CBaseCombatCharacter::sub_10342c80(void (*pCallback)(CBaseCombatCharacter *,
 }
 // END FUNCTION
 
+// FUNCTION: 0x103449b0 size=0x23c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown10344c80.h"
+#include "CUnknown1073dc28.h"
+// TARGET: CBaseCombatCharacter::sub_103449b0
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "Vector.h"
+#include "QAngle.h"
+#include <stdlib.h>
+#include "CBCCSlotViews.h"
+#include "ScopeTrace.h"
+
+extern void (*g_109f362c)(const char *pszFormat, ...);	// Warning
+extern int (*g_109f3868)(int nMin, int nMax);	// RandomInt
+float sub_101d2c70(const Vector *pVec);
+
+class CUnknown10344da0
+{
+public:
+	bool sub_10344da0(int a);
+};
+
+class CSlot192View
+{
+public:
+	VIEW_SLOT100(0)
+	VIEW_SLOT10(10) VIEW_SLOT10(11) VIEW_SLOT10(12) VIEW_SLOT10(13) VIEW_SLOT10(14)
+	VIEW_SLOT10(15) VIEW_SLOT10(16) VIEW_SLOT10(17) VIEW_SLOT10(18)
+	VIEW_SLOT(190) VIEW_SLOT(191)
+	virtual float *vfunc192(float *pOut);
+};
+
+class CSlot218View
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1)
+	VIEW_SLOT10(20)
+	VIEW_SLOT(210) VIEW_SLOT(211) VIEW_SLOT(212) VIEW_SLOT(213) VIEW_SLOT(214)
+	VIEW_SLOT(215) VIEW_SLOT(216) VIEW_SLOT(217)
+	virtual void vfunc218(const QAngle &angles);
+	virtual const QAngle &vfunc219();
+};
+
+class CSlot323View
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2)
+	VIEW_SLOT10(30) VIEW_SLOT10(31)
+	VIEW_SLOT(320) VIEW_SLOT(321) VIEW_SLOT(322)
+	virtual int vfunc323(const Vector *pDir);
+};
+
+class CSlot401View
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2) VIEW_SLOT100(3)
+	VIEW_SLOT(400)
+	virtual int vfunc401(int a);
+};
+
+struct CKnockbackInfo
+{
+	char m_pad00[0x28];
+	int m_nCount[4];	// 0x28
+	int m_nActivity[4][4];	// 0x38
+	int m_nNameOfs[4][4];	// 0x78
+
+	void PickActivity(CSlot401View *pChar, int &side, int &activity)
+	{
+		if (m_nCount[side] <= 0)
+			side = 0;
+		int nRand;
+		if (m_nCount[side] > 0)
+		{
+			nRand = g_109f3868(0, abs(m_nCount[side]) - 1);
+			activity = m_nActivity[side][nRand];
+		}
+		else
+		{
+			nRand = -1;
+			activity = pChar->vfunc401(side);
+		}
+		if (activity == -1 && nRand >= 0)
+			g_109f362c("melee attack sequence has knockback activity '%s' which is undefined in code\n",
+				(char *)this + m_nNameOfs[side][nRand]);
+	}
+};
+
+inline float anglemod(float a)
+{
+	a = (360.f / 65536) * ((int)(a * (65536.f / 360.0f)) & 65535);
+	return a;
+}
+
+int CBaseCombatCharacter::sub_103449b0(CBaseEntity *pAttacker, CBaseEntity *pOther, void *pInfo)
+{
+	ScopeTrace trace("CBaseCombatCharacter::GetKnockbackActivity",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	float vecOther[3];
+	float vecThis[3];
+	float *pOtherPos = ((CSlot192View *)pOther)->vfunc192(vecOther);
+	float *pThisPos = ((CSlot192View *)this)->vfunc192(vecThis);
+	Vector vecDelta = *(Vector *)pThisPos - *(Vector *)pOtherPos;
+
+	int side = ((CSlot323View *)this)->vfunc323(&vecDelta);
+	int activity;
+	if (pInfo)
+		((CKnockbackInfo *)pInfo)->PickActivity((CSlot401View *)this, side, activity);
+	else
+		activity = 0x8b;
+
+	if (this->m_pA8)
+		activity = ((CUnknown10344c80 *)this)->sub_10344c80(activity);
+
+	if (((CUnknown10344da0 *)this)->sub_10344da0(activity))
+		side = 0;
+
+	if (this->m_pA8 == 0)
+	{
+		float flAngle = sub_101d2c70(&vecDelta);
+		switch (side)
+		{
+		case 0:
+			flAngle += 180.0f;
+			break;
+		case 1:
+			flAngle += 270.0f;
+			break;
+		case 3:
+			flAngle += 90.0f;
+			break;
+		}
+
+		QAngle ang = ((CSlot218View *)this)->vfunc219();
+		ang.y = anglemod(flAngle);
+		((CSlot218View *)this)->vfunc218(ang);
+	}
+
+	return activity;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10344c80 size=0xe0
 #include "CUnknown10344c80.h"
 

@@ -2021,6 +2021,7 @@
 0x10003b8e func   ?sub_101bdeb0@CMem4d_t@@QAEXH@Z CMem4d_t::sub_101bdeb0
 0x10003b93 func   ?vfunc465@CNPC_VSabbatGunman@@UAEXH@Z CNPC_VSabbatGunman::vfunc465
 0x10003b98 func   ?sub_10309650@CAI_PlaneSolver@@QAEHPAUCAI_PlaneSolverObj@@MMMH@Z CAI_PlaneSolver::sub_10309650
+0x10003b9d func   ?sub_103449b0@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@0PAX@Z CBaseCombatCharacter::sub_103449b0
 0x10003ba2 func   ?sub_103661d0@@YIXPADHH@Z sub_103661d0
 0x10003ba7 func   ?sub_101836d0@CBasePlayer@@QAEXPAX@Z CBasePlayer::sub_101836d0
 0x10003bb1 func   ?vfunc269@CBaseVampireSkillEntity@@QAEXH@Z CBaseVampireSkillEntity::vfunc269
