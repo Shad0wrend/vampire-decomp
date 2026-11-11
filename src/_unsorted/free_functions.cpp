@@ -186499,6 +186499,82 @@ void __fastcall sub_102c4e80(CBaseEntity *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c4eb0 size=0x241
+#include "CCollisionProperty.h"
+#include <math.h>
+#include "CAI_BaseNPCTroika.h"
+#include "UTIL_Trace.h"
+#include "CEntityVSlots.h"
+
+struct CBoxRay
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_n34;
+
+	void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, char a, char b)
+	{
+		VectorSubtract(end, start, m_Delta);
+		m_IsSwept = (m_Delta.LengthSqr() != 0);
+		VectorSubtract(maxs, mins, m_Extents);
+		m_Extents *= 0.5f;
+		m_IsRay = (m_Extents.x * m_Extents.x + (m_Extents.y * m_Extents.y + m_Extents.z * m_Extents.z) < 1e-6);
+		VectorAdd(mins, maxs, m_StartOffset);
+		m_StartOffset *= 0.5f;
+		VectorAdd(start, m_StartOffset, m_Start);
+		m_StartOffset *= -1.0f;
+		m_b32 = b;
+		m_b33 = 0;
+		m_n34 = 0;
+		if (a && !m_IsRay)
+		{
+			float flLen2DSqr = m_Extents.y * m_Extents.y + m_Extents.x * m_Extents.x;
+			float flLen2D = sqrt(flLen2DSqr);
+			m_n34 = flLen2D;
+			if (m_n34 > 1e-6)
+				m_b33 = 1;
+		}
+	}
+};
+
+inline void TraceBoxDown(const Vector &start, const Vector &mins, const Vector &maxs, unsigned int mask, void *ignore, CGameTrace *ptr)
+{
+	CBoxRay ray;
+	ray.Init(start, start, mins, maxs, 1, 0);
+	CTraceFilterSimple traceFilter(ignore, 0);
+	g_1070b254->vfunc4((Ray_t *)&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+// TARGET: CAI_BaseNPCTroika::sub_102c4eb0
+char CAI_BaseNPCTroika::sub_102c4eb0()
+{
+	if (sub_100b3700() & 1)
+		return 1;
+	CGameTrace tr;
+	Vector vecStart = *(Vector *)vfunc217();
+	unsigned int mask = ((CEntityVSlots *)this)->slot237();
+	vecStart.z -= 1.0f;
+	ICollideable *pCol = (ICollideable *)((char *)this + 0x270);
+	const Vector &mins = *(const Vector *)pCol->vfunc1();
+	const Vector &maxs = *(const Vector *)pCol->vfunc2();
+	TraceBoxDown(vecStart, mins, maxs, mask, this, &tr);
+	if (tr.m_startsolid)
+	{
+		((CEntityVSlots *)this)->slot208((CEntityVSlots *)tr.m_pEnt);
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c54c0 size=0x2b
 #include "CUnknown1070b244.h"
 
