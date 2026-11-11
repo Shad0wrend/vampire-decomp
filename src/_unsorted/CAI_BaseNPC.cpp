@@ -4805,6 +4805,26 @@ int CAI_BaseNPC::vfunc440(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cc260 size=0x72
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown10936b68.h"
+extern CUnknown10936b68 g_10936b68;
+extern "C" __declspec(dllimport) void Warning(const char *fmt, ...);
+inline bool AI_IdIsLocal(int id) { return id < 1000000000 || id == -1; }
+int CAI_BaseNPC::vfunc446(int schedule)
+{
+	if (((CAI_NPCScheduleRef *)((CAI_BaseNPCTroika *)this)->vfunc580())->m_id == -1) {
+		Warning("ERROR: %s missing schedule!\n", vfunc451());
+		return g_10936b68.sub_1030f300(1);
+	}
+	if (AI_IdIsLocal(schedule)) {
+		CAI_NPCScheduleRef *pSpace = (CAI_NPCScheduleRef *)((CAI_BaseNPCTroika *)this)->vfunc580();
+		schedule = pSpace->sub_102ea2d0(schedule);
+	}
+	return g_10936b68.sub_1030f300(schedule);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cc300 size=0x34
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"
