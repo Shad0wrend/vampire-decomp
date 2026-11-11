@@ -103653,6 +103653,53 @@ PyObj *sub_10197b00(void *self, void *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10197ce0 size=0x11f
+struct PyObj { int m_refcnt; };
+
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObj *args, const char *format, ...);
+__declspec(dllimport) PyObj *PyErr_Occurred(void);
+__declspec(dllimport) void PyErr_SetString(PyObj *exc, const char *msg);
+__declspec(dllimport) extern PyObj *PyExc_AttributeError;
+}
+void *sub_10196780(PyObj *pObj);
+extern PyObj *g_109f3748;
+
+struct ExpressionTarget { void sub_10106580(const char *name, float a, float b, float c, float d, float e); };
+struct ExpressionEntity { char m_pad[0x98]; ExpressionTarget *m_pTarget; };
+
+// TARGET: sub_10197ce0
+PyObj *sub_10197ce0(PyObj *self, PyObj *args)
+{
+	PyObj *pEntObj;
+	float f1, f2, f3, f4, f5;
+	const char *pszName;
+	pEntObj = 0;
+	f1 = 0.0f;
+	f3 = 9999.0f;
+	f2 = 0.25f;
+	f4 = 0.25f;
+	f5 = 1.0f;
+	pszName = 0;
+	if (!PyArg_ParseTuple(args, "Osfffff", &pEntObj, &pszName, &f1, &f2, &f3, &f4, &f5)
+		&& !PyArg_ParseTuple(args, "Os", &pEntObj, &pszName)
+		&& !PyErr_Occurred()) {
+		PyErr_SetString(PyExc_AttributeError, "bad args to SetExpression()");
+		return 0;
+	}
+	ExpressionEntity *pEnt = (ExpressionEntity *)sub_10196780(pEntObj);
+	ExpressionTarget *pChar = pEnt ? pEnt->m_pTarget : 0;
+	if (!pChar) {
+		if (!PyErr_Occurred())
+			PyErr_SetString(PyExc_AttributeError, "SetExpression needs to be called by a combat character.");
+		return 0;
+	}
+	pChar->sub_10106580(pszName, f1, f2, f3, f4, f5);
+	g_109f3748->m_refcnt++;
+	return g_109f3748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197e50 size=0xcc
 struct PyObj { int ob_refcnt; };
 extern "C" {

@@ -2696,6 +2696,7 @@
 0x10004a11 func   ?sub_10046a90@SPhysRecordX@@QAEPAU1@PBU1@@Z SPhysRecordX::sub_10046a90
 0x10004a16 func   ?sub_101082a0@@YAHXZ sub_101082a0
 0x10004a1b func   ?sub_100bd840@bf_write@@QAEXM@Z bf_write::sub_100bd840
+0x10004a20 func   ?sub_10197ce0@@YAPAUPyObj@@PAU1@0@Z sub_10197ce0
 0x10004a25 func   ?vfunc5@CRagdollPropAttached@@QAEPAVCRagdollProp@@I@Z CRagdollPropAttached::vfunc5
 0x10004a2a func   ?sub_10398b20@CNPC_VMingXiao@@QAEPAVCBaseEntity@@PAHPAVVector@@1@Z CNPC_VMingXiao::sub_10398b20
 0x10004a2f func   ?sub_1030bc60@CAI_Path@@QAE_NM@Z CAI_Path::sub_1030bc60
