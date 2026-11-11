@@ -10,8 +10,7 @@ public:
 	void *m_pIgnore;	// +0x10
 	virtual bool vfunc0(void *pHandleEntity, int contentsMask);	// ShouldHitEntity: false for the ignored entity, else CTraceFilterSimple::vfunc0
 
-	CTraceFilterEntityIgnoreOther(void *pPassEnt, void *pIgnore, int collisionGroup) : CTraceFilterEntity(pPassEnt, collisionGroup)
+	CTraceFilterEntityIgnoreOther(void *pPassEnt, void *pIgnore, int collisionGroup) : CTraceFilterEntity(pPassEnt, collisionGroup), m_pIgnore(pIgnore)
 	{
-		m_pIgnore = pIgnore;
 	}
 };
