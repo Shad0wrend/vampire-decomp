@@ -1875,6 +1875,7 @@
 0x1000385a func   ?sub_10258c30@@YAXPAUIKVSub@@PAUWeaponSoundInfo@@PBD@Z sub_10258c30
 0x1000385f func   ?sub_103b27d0@@YAHXZ sub_103b27d0
 0x10003864 func   ?sub_103eeee0@@YAHXZ sub_103eeee0
+0x10003869 func   ?sub_100ea7b0@@YGPAUCUnknown100eb000@@PAU1@PAH00@Z sub_100ea7b0
 0x1000386e func   ?sub_10360540@@YIPAXPAX@Z sub_10360540
 0x10003873 func   ?sub_1036f390@@YAHXZ sub_1036f390
 0x10003878 func   ?vfunc458@CBasePlayer@@UAEXXZ CBasePlayer::vfunc458
