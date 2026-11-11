@@ -6307,6 +6307,7 @@
 0x10009854 func   ?vfunc461@CNPC_VTzimisce@@QAEHXZ CNPC_VTzimisce::vfunc461
 0x10009859 func   ?sub_101a4760@@YAHXZ sub_101a4760
 0x1000985e func   ?vfunc585@CCineAISchedule@@UAE_NXZ CCineAISchedule::vfunc585
+0x10009868 func   ?sub_1006e8e0@CBaseCineCam@@QAEXXZ CBaseCineCam::sub_1006e8e0
 0x1000986d func   ?sub_1002b4c0@CPhysConstraint@@QAE_NXZ CPhysConstraint::sub_1002b4c0
 0x10009877 func   ?sub_100ff310@CEnvBeam@@QAEXXZ CEnvBeam::sub_100ff310
 0x1000987c func   ?vfunc80@CWeaponMelee_HengeyokaiFist@@UAEPAXXZ CWeaponMelee_HengeyokaiFist::vfunc80

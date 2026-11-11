@@ -19866,6 +19866,114 @@ void CUnknown1006e8b0::sub_1006e8b0(float flDelay)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006e8e0 size=0x355
+#include "CBaseCineCam.h"
+#include "CBaseEntity.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include "Vector.h"
+#include "ehandle.h"
+
+extern Vector g_1070d1b0;
+void sub_10139970(const Vector &forward, Vector &angles);
+struct CCineEntV;
+CCineEntV *sub_101cd9e0(int);
+struct CEntListView { int sub_100290c0(unsigned int *ph); };
+extern CEntListView *g_10566458;
+
+#define CV10(n) virtual void v##n##0(); virtual void v##n##1(); virtual void v##n##2(); virtual void v##n##3(); virtual void v##n##4(); virtual void v##n##5(); virtual void v##n##6(); virtual void v##n##7(); virtual void v##n##8(); virtual void v##n##9();
+
+struct CCineEntV
+{
+	CV10(0) CV10(1) CV10(2) CV10(3) CV10(4) CV10(5)
+	virtual void v60(); virtual void v61();
+	virtual void SetLocalOrigin(const Vector *v);	// 62
+	virtual void v63();
+	virtual void SetLocalAngles(const Vector *v);	// 64
+	virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	CV10(7) CV10(8) CV10(9) CV10(10) CV10(11) CV10(12) CV10(13) CV10(14) CV10(15) CV10(16) CV10(17) CV10(18)
+	virtual void v190(); virtual void v191(); virtual void v192();
+	virtual Vector EyePosition();	// 193
+	virtual void v194(); virtual void v195(); virtual void v196(); virtual void v197(); virtual void v198(); virtual void v199();
+	CV10(20)
+	virtual void v210(); virtual void v211(); virtual void v212(); virtual void v213(); virtual void v214(); virtual void v215();
+	virtual void SetAbsOrigin(const Vector *v);	// 216
+	virtual void v217();
+	virtual void SetAbsAngles(const Vector *v);	// 218
+	virtual const Vector &EyeAngles();	// 219
+	virtual const Vector &GetLocalOrigin();	// 220
+	virtual const Vector &GetLocalAngles();	// 221
+};
+
+struct CCineCamV : CCineEntV
+{
+	char m_pad4[0x564 - 4];
+	Vector m_vecOrigin564;
+	Vector m_vecSavedOrigin570;
+	Vector m_vecAngles57c;
+	Vector m_vecSavedAngles588;
+	int m_n594;
+	Vector m_vecTarget598[4];
+	char m_b5c8;
+	char m_pad5c9[3];
+	float m_flTime5cc;
+};
+
+// TARGET: CBaseCineCam::sub_1006e8e0
+void CBaseCineCam::sub_1006e8e0()
+{
+	CCineCamV *self = (CCineCamV *)this;
+	sub_1006e770();
+	if (self->m_vecOrigin564 != g_1070d1b0)
+	{
+		self->m_vecSavedOrigin570 = self->GetLocalOrigin();
+		self->m_vecSavedAngles588 = self->GetLocalAngles();
+	}
+	CCineEntV *pPlayer = sub_101cd9e0(1);
+	int flags = sub_1006edb0();
+	if (flags & 1)
+	{
+		self->m_vecOrigin564 = sub_1006f010(0);
+		sub_10139970(sub_1006f670() - self->m_vecOrigin564, self->m_vecAngles57c);
+	}
+	else if (flags & 2)
+	{
+		if (self->m_vecSavedOrigin570 == g_1070d1b0)
+		{
+			self->m_vecOrigin564 = pPlayer->EyePosition();
+			self->m_vecAngles57c = pPlayer->EyeAngles();
+		}
+		else
+		{
+			self->m_vecOrigin564 = self->m_vecSavedOrigin570;
+			self->m_vecAngles57c = self->m_vecSavedAngles588;
+		}
+	}
+	self->SetAbsOrigin(&self->m_vecOrigin564);
+	self->SetLocalOrigin(&self->m_vecOrigin564);
+	self->SetLocalAngles(&self->m_vecAngles57c);
+	self->SetAbsAngles(&self->m_vecAngles57c);
+	((CBaseEntity *)this)->sub_100b3b00();
+	if (g_10566458->sub_100290c0(&m_hShot610[1]))
+	{
+		self->m_n594 = 0;
+		self->m_b5c8 = 0;
+	}
+	for (int i = 0; i < 4; i++)
+	{
+		if (((EHANDLE *)&m_hShot610[i])->Get())
+			self->m_vecTarget598[i] = sub_1006f080(i);
+		else
+			self->m_vecTarget598[i] = g_1070d1b0;
+	}
+	m_n63c = engine->vfunc120();
+	self->m_flTime5cc = gpGlobals->curtime;
+	m_vecShot5ec = self->m_vecOrigin564;
+	m_vecShot604 = self->m_vecAngles57c;
+	m_vecLook5f8 = sub_1006f670();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006ed20 size=0xd
 #include "CUnknown1006ed20.h"
 void CUnknown1006ed20::sub_1006ed20(int value)
