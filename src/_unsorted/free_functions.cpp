@@ -25030,6 +25030,34 @@ int CUnk10078650::sub_10078650(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078690 size=0x106
+#include "utlvector.h"
+
+struct CExpressionSample78690
+{
+    CExpressionSample78690() : value(0.0f), time(0.0f) { selected = 0; }
+    float value;
+    float time;
+    bool selected;
+};
+
+struct CChoreoEvent78690
+{
+    char pad[0x19c];
+    CUtlVector<CExpressionSample78690> m_Ramp;
+    void sub_10078690(float time, float value, bool selected);
+};
+
+void CChoreoEvent78690::sub_10078690(float time, float value, bool selected)
+{
+    CExpressionSample78690 sample;
+    sample.time = time;
+    sample.value = value;
+    sample.selected = selected;
+    m_Ramp.AddToTail(sample);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100787f0 size=0x4f
 #include "CUnknown10078540.h"
 #include <string.h>

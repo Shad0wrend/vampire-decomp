@@ -3449,6 +3449,7 @@
 0x10005a83 func   ?vfunc5@CBaseProp@@QAEPAV1@I@Z CBaseProp::vfunc5
 0x10005a88 func   ?vfunc104@CPropDestructable@@UAEXXZ CPropDestructable::vfunc104
 0x10005a8d func   ?vfunc332@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc332
+0x10005a92 func   ?sub_10078690@CChoreoEvent78690@@QAEXMM_N@Z CChoreoEvent78690::sub_10078690
 0x10005a97 func   ?sub_100b4910@UtlMem@@QAEXXZ UtlMem::sub_100b4910
 0x10005a9c func   ?sub_1032ead0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1032ead0
 0x10005aa1 func   ?vfunc603@CAI_BaseNPCTroika@@UAEMPAM0@Z CAI_BaseNPCTroika::vfunc603
