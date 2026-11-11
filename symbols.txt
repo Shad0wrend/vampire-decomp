@@ -12797,6 +12797,7 @@
 0x10012355 func   ?vfunc468@CAI_BaseNPCTroika@@UAE_NPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc468
 0x1001235a func   ?sub_10252450@CUnknown10252450@@QAEMH@Z CUnknown10252450::sub_10252450
 0x1001235f func   ?sub_101c5f40@CTriggerHurt@@QAE_NPAVCBaseEntity@@M@Z CTriggerHurt::sub_101c5f40
+0x10012364 func   ?sub_10157da0@@YAPAVCRagdollProp@@PAVCBaseAnimating@@HPAUCRagdollDamageViewB@@H@Z sub_10157da0
 0x10012369 func   ?vfunc490@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc490
 0x1001236e func   ?sub_100dcea0@CCollisionPropertyUnit@@QAEHPBM@Z CCollisionPropertyUnit::sub_100dcea0
 0x10012378 func   ?vfunc42@CItemContainerLock@@QAEXPAVCBasePlayer@@@Z CItemContainerLock::vfunc42

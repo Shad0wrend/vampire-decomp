@@ -87631,6 +87631,103 @@ void CUnitEnt::sub_10157d30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157da0 size=0x22e
+#include "CBaseEntity.h"
+#include "CBaseAnimating.h"
+#include "CRagdollProp.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+
+void sub_10156ce0(CBaseAnimating *pAnimating);
+void sub_10138720(float *pMatrix, int nColumn, float *pOut);
+void sub_10138760(float *pIn, int nColumn, float *pMatrix);
+CBaseEntity *sub_100a9ab0(const char *pszClass, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
+extern Vector g_1070d9d0;
+
+struct CUnit10155460
+{
+	void sub_10155460(int a);
+};
+
+struct CRagdollBones350b
+{
+	float m_Mats[350][12];
+};
+
+struct CRagdollDamageViewB
+{
+	char m_pad0000[0x10];
+	Vector m_vecForce10;
+	Vector m_vecPosition1c;
+	Vector GetDamageForce() const { return m_vecForce10; }
+	Vector GetDamagePosition() const { return m_vecPosition1c; }
+};
+
+struct CRagdollEFlagsViewB
+{
+	char m_pad0000[0x268];
+	unsigned int m_nFlags268;
+	bool IsEFlagSet(unsigned int nMask) const { return (m_nFlags268 & nMask) != 0; }
+};
+
+struct CRagdollSpecialView
+{
+	char m_pad0000[0xdc];
+	float m_flDC;
+	char m_pad00e0[0x270 - 0xe0];
+	char m_Collision270[0xd60 - 0x270];
+	int m_nD60;
+};
+
+// TARGET: sub_10157da0
+CRagdollProp *sub_10157da0(CBaseAnimating *pAnimating, int forceBone, CRagdollDamageViewB *pInfo, int collisionGroup)
+{
+	sub_10156ce0(pAnimating);
+	CRagdollProp *pRagdoll = (CRagdollProp *)sub_100a9ab0("prop_ragdoll_special", (const float *)((CRagdollProp *)pAnimating)->vfunc217(), &g_1070d9d0.x, 0);
+	((CBaseAnimating *)pRagdoll)->sub_10097310(pAnimating);
+	pRagdoll->sub_10155380();
+	CRagdollBones350b bones;
+	CRagdollBones350b next;
+	((CRagdollProp *)pAnimating)->vfunc257(&bones, 0xfffc);
+	next = bones;
+	if (((CRagdollEFlagsViewB *)pAnimating)->IsEFlagSet(1 << 12))
+		pAnimating->sub_100b1d10();
+	{
+		Vector vel = *(Vector *)((char *)pAnimating + 0x3bc);
+		if (vel.LengthSqr() > 0.0f)
+		{
+			int nBones = *(int *)((char *)pAnimating->sub_100952d0(-1) + 0xf0);
+			if (nBones > 0)
+			{
+				Vector vecDelta = vel * 0.1f;
+				float *pMat = next.m_Mats[0];
+				int i = nBones;
+				do
+				{
+					sub_10138720(pMat, 3, &vel.x);
+					vel += vecDelta;
+					sub_10138760(&vel.x, 3, pMat);
+					pMat += 12;
+				} while (--i);
+			}
+		}
+	}
+	pRagdoll->sub_101554a0(pInfo->GetDamageForce(), forceBone, pInfo->GetDamagePosition(), &bones, &next, 0.1f, collisionGroup, 1);
+	((CEntityVSlots *)pRagdoll)->slot113();
+	CRagdollSpecialView *pView = (CRagdollSpecialView *)pRagdoll;
+	pView->m_nD60 = 0;
+	((CUnit10155460 *)pRagdoll)->sub_10155460(-1);
+	if (pView->m_flDC == 0.0f)
+		pView->m_flDC = 0.1f;
+	CCollisionProperty *pCollision = (CCollisionProperty *)pView->m_Collision270;
+	if (pCollision)
+		pCollision->sub_100ddd90();
+	((CBaseEntity *)pRagdoll)->sub_100b3900(2);
+	return pRagdoll;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101584b0 size=0x46
 #include <string.h>
 struct CBlock { int d[12]; };
