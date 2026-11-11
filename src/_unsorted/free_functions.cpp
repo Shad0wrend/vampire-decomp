@@ -210102,6 +210102,65 @@ void CBaseCombatCharacter::sub_1032ec90(int nType, int bFlag, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032f770 size=0x15d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+#include "CEnvParticle.h"
+#include "ScopeTrace.h"
+#include "StudioHdr.h"
+#include <math.h>
+
+extern float g_1049e034;
+
+inline StudioHitbox *StudioHdr_pHitbox(StudioHdr *pHdr, int i, int set)
+{
+	StudioHitboxSet *s = pHdr->HitboxSet(set);
+	if (!s)
+		return 0;
+	return s->Hitbox(i);
+}
+
+struct CEnvParticleUnit1032f770 : CEnvParticle
+{
+	void sub_100fbac0(float flSize, float flScale);
+	void sub_100fbb40(int a, int b);
+};
+
+struct CBCCUnit1032f770 : CBaseCombatCharacter
+{
+	CEnvParticle *sub_1032f550(int nHitbox);
+	void sub_1032f770(int nHitbox, int a, int b);
+	StudioHdr *sub_100952d0(int nModel);
+};
+
+void CBCCUnit1032f770::sub_1032f770(int nHitbox, int a, int b)
+{
+	ScopeTrace trace("CBaseCombatCharacter::BurnHitbox", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CEnvParticle *pEmitter = sub_1032f550(nHitbox);
+	if (pEmitter)
+	{
+		if (!pEmitter->m_unk484)
+		{
+			StudioHdr *pHdr = sub_100952d0(-1);
+			Vector vecMax = StudioHdr_pHitbox(pHdr, nHitbox, 0)->m_vecMaxs;
+			Vector vecMin = StudioHdr_pHitbox(pHdr, nHitbox, 0)->m_vecMins;
+			float flSize = (fabs(vecMax.x - vecMin.x) * fabs(vecMax.y - vecMin.y) * fabs(vecMax.z - vecMin.z)) / g_1049e034;
+			((CEntityVSlots *)pEmitter)->slot241();
+			((CEnvParticleUnit1032f770 *)pEmitter)->sub_100fbac0(flSize, 0.5f);
+		}
+		((CEnvParticleUnit1032f770 *)pEmitter)->sub_100fbb40(a, b);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032f930 size=0x86
 #include "CBaseCombatCharacter.h"
 

@@ -3387,6 +3387,7 @@
 0x1000595c func   ?vfunc99@CPhysicsCannister@@QAE_NPBMHH@Z CPhysicsCannister::vfunc99
 0x10005961 func   ?vfunc317@CNPC_VRat@@QAE_NH@Z CNPC_VRat::vfunc317
 0x10005966 func   ?vfunc272@CBaseCombatWeapon@@UAEPADXZ CBaseCombatWeapon::vfunc272
+0x1000596b func   ?sub_1032f770@CBCCUnit1032f770@@QAEXHHH@Z CBCCUnit1032f770::sub_1032f770
 0x10005975 func   ?vfunc320@CNPC_VGargoyle@@QAE_NHH@Z CNPC_VGargoyle::vfunc320
 0x1000597a func   ?sub_101c4b70@@YGXHHHHH@Z sub_101c4b70
 0x1000597f func   ?sub_100d1290@CUnknown100d1290@@QAEXPAVCBaseEntity@@@Z CUnknown100d1290::sub_100d1290
