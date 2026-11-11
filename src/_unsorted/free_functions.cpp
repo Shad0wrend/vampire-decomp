@@ -156253,6 +156253,35 @@ void __stdcall sub_10229090(CSoundFadeItem *p, float flDelta)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10229270 size=0x130
+#include "CUnknown10229550.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+struct CUnk1022b660 { void sub_1022b660(); };
+
+// TARGET: CUnknown10229550::sub_10229270
+void CUnknown10229550::sub_10229270(float flTime, CSoundSchemeList *pA, CSoundSchemeList *pB, CSoundSchemeList *pC, CSoundSchemeList *pD)
+{
+	for (int i = 0; i < m_Schemes.Count(); )
+	{
+		if (m_Schemes[i] != 0)
+		{
+			m_Schemes[i]->sub_1022b660();
+			i++;
+		}
+		else
+		{
+			m_Schemes.Remove(i);
+		}
+	}
+	sub_10229430(pA->m_szName, pA->m_flVolume, pA->m_n44, flTime, &m_items14[0]);
+	sub_10229430(pC->m_szName, pC->m_flVolume, pC->m_n44, flTime, &m_items14[2]);
+	sub_10229430(pB->m_szName, pB->m_flVolume, pB->m_n44, flTime, &m_items14[1]);
+	sub_10229430(pD->m_szName, pD->m_flVolume, pD->m_n44, flTime, &m_items14[3]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102293f0 size=0x28
 #include "CUnknown10229550.h"
 
