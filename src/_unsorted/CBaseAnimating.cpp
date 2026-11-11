@@ -1194,6 +1194,46 @@ void CBaseAnimating::SetSequenceBox()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10094870 size=0x113
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "QAngle.h"
+
+void sub_10139610(const float *angles, float *forward, float *right, float *up);
+
+struct CBaseAnimatingGSView
+{
+	char m_pad0000[0x654];
+	float m_flGroundSpeed;	// 0x654
+	char m_pad0658[0x6f0 - 0x658];
+	int m_nSequence;	// 0x6f0
+};
+
+Vector CBaseAnimating::vfunc263()
+{
+	ScopeTrace trace("CBaseAnimating::GetGroundSpeedVelocity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CBaseAnimatingGSView *v = (CBaseAnimatingGSView *)this;
+	QAngle vecAngles;
+	Vector vecForward;
+	vecAngles.y = sub_1008fab0(v->m_nSequence);
+	vecAngles.x = 0;
+	vecAngles.z = 0;
+	vecAngles.y += ((CEntityVSlots *)this)->slot221()->y;
+	sub_10139610(&vecAngles.x, &vecForward.x, 0, 0);
+	vecForward = vecForward * v->m_flGroundSpeed;
+	return vecForward;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10095a20 size=0x159
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
