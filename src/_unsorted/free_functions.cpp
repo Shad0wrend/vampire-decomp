@@ -191280,6 +191280,63 @@ CEntityVSlots *sub_102d2f30(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d3040 size=0x127
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Hint.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+extern CAI_Hint *g_10925450;
+extern CAI_Hint *g_10925454;
+extern CAI_Hint *g_1092545c;
+extern int g_10925458;
+extern void *vt_1049b9a4;
+struct CDevView102d3040 { virtual void v0(); virtual void v1(); };
+extern CDevView102d3040 *g_10924a6c;
+struct CBaseDtorView102d3040 { void sub_1009df20(); };
+inline void DestroyItems102d3040(CAI_HintItem *a, int n)
+{
+	a += n;
+	while (--n >= 0) {
+		--a;
+		a->sub_100cd2d0();
+	}
+}
+// TARGET: CAI_Hint::sub_102d3040
+void CAI_Hint::sub_102d3040()
+{
+	*(void **)this = &vt_1049b9a4;
+	if (EHandle_Get((unsigned int &)m_n5e0)) {
+		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get((unsigned int &)m_n5e0);
+		CAI_BaseNPC *pNPC = *(CAI_BaseNPC **)((char *)pEnt + 0x98);
+		if (pNPC) {
+			g_10924a6c->v1();
+			pNPC->sub_10269a20(0x29);
+			((CAI_BaseNPCTroika *)pNPC)->sub_10295ab0(0);
+		}
+	}
+	CAI_Hint *pHead = g_10925450;
+	if (pHead == this) {
+		g_10925450 = pHead->m_pNext;
+	} else {
+		while (pHead) {
+			if (pHead->m_pNext == this) {
+				pHead->m_pNext = pHead->m_pNext->m_pNext;
+				break;
+			}
+			pHead = pHead->m_pNext;
+		}
+	}
+	if (g_10925454 == this) g_10925454 = 0;
+	if (g_1092545c == this) g_1092545c = 0;
+	g_10925458--;
+	m_item5f4.sub_100cd2d0();
+	m_item5bc.sub_100cd2d0();
+	DestroyItems102d3040(m_items4fc, 8);
+	((CBaseDtorView102d3040 *)this)->sub_1009df20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d3e60 size=0x29
 extern int g_106c994c;
 
