@@ -82,6 +82,67 @@ void CGameRules::vfunc56()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128470 size=0x1dd
+#include "CGameRules.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+
+struct CWorldBoundsView
+{
+	char m_pad0000[0x460];
+	Vector m_vecMins;	// 0x460
+	Vector m_vecMaxs;	// 0x46c
+};
+
+struct CSpawnPlayerView
+{
+	char m_pad0000[0x1efc];
+	Vector m_vec1efc;
+	Vector m_vec1f08;
+	char m_pad1f14[0x206c - 0x1f14];
+	Vector m_vec206c;
+	int m_pad2078;
+	int m_n207c;
+};
+
+extern Vector g_1070d9d0;
+extern Vector g_1070d1b0;
+int sub_1023bd00();
+void sub_101cf600(CBaseEntity *pPlayer);
+
+inline void SetAbsOrigin62(CEntityVSlots *p, const Vector &v)
+{
+	p->slot62((float *)&v.x);
+}
+
+CBaseEntity *CGameRules::vfunc39(CBaseEntity *pPlayerEnt)
+{
+	CEntityVSlots *pPlayer = (CEntityVSlots *)pPlayerEnt;
+	CSpawnPlayerView *pView = (CSpawnPlayerView *)pPlayerEnt;
+	CEntityVSlots *pSpot = pPlayer->slot453();
+	if (pSpot) {
+		Vector vecOrigin = *pSpot->slot220() + Vector(0, 0, 1);
+		pPlayer->slot62(&vecOrigin.x);
+		pView->m_vec206c = *pSpot->slot221();
+		pPlayer->slot64(&pSpot->slot221()->x);
+	} else {
+		CWorldBoundsView *pWorld = (CWorldBoundsView *)sub_1023bd00();
+		Vector vecMins, vecMaxs;
+		vecMins = pWorld->m_vecMins;
+		vecMaxs = pWorld->m_vecMaxs;
+		SetAbsOrigin62(pPlayer, (vecMaxs + vecMins) * 0.5f);
+		pView->m_vec206c = g_1070d9d0;
+		pPlayer->slot64(&g_1070d9d0.x);
+	}
+	pPlayerEnt->sub_100b2e30(&g_1070d1b0.x);
+	pView->m_vec1efc = g_1070d9d0;
+	pView->m_vec1f08 = g_1070d9d0;
+	pView->m_n207c = 1;
+	sub_101cf600(pPlayerEnt);
+	return (CBaseEntity *)pSpot;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101286d0 size=0x5
 #include "CBaseEntity.h"
 #include "CGameRules.h"
