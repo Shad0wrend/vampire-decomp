@@ -89,5 +89,6 @@ public:
 	void sub_100f6bb0(struct SEntityObject *pObject);	// "UTIL_Remove" queue step (stub 0x1000f8bc): adds a live networkable to the pending-delete vector (0x10703668); called on the global with this unused
 	CGlobalEntityList *sub_100f6b40();	// the constructor: CBaseEntityList::CBaseEntityList (0x100f9a60), the vptr and the zeroed counters
 	void sub_100f6ce0();	// stub 0x10007478
+	CBaseHandle sub_100f9df0(CGlobalEntityList_Ent *pEnt, int index, int forcedSerial);	// "CBaseEntityList::AddNetworkableEntity" (stub 0x10014d08): sub_100f9fc0(pEnt, index, forcedSerial)
 	int sub_100f6d60();	// takes the global pending-delete value (0x10703674) and clears it (stub 0x10003d1e); does not use this
 };

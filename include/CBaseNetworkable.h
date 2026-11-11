@@ -32,7 +32,8 @@ public:
 class IServerNetworkable	// RTTI .?AVIServerNetworkable@@, 15 slots (slot 14 is the only one with a body)
 {
 public:
-	virtual void n0() = 0; virtual void n1() = 0; virtual void n2() = 0; virtual void n3() = 0; virtual void n4() = 0;
+	virtual class CGlobalEntityList_Ent *n0() = 0;	// GetEntityHandle
+	virtual void n1() = 0; virtual void n2() = 0; virtual void n3() = 0; virtual void n4() = 0;
 	virtual void n5() = 0; virtual void n6() = 0; virtual void n7() = 0; virtual void n8() = 0; virtual void n9() = 0;
 	virtual void n10() = 0; virtual void n11() = 0; virtual void n12() = 0; virtual void n13() = 0; virtual void n14() = 0;
 	void *vfunc14(char flags);	// the scalar deleting destructor (vftable store, operator delete when bit 0, returns this)
@@ -56,4 +57,6 @@ public:
 
 	int sub_100b7de0();	// the engine's index of the edict
 	void sub_100b7da0();	// releases the edict
+	void sub_100b7b40();
+	void sub_100b7b70(CBaseNetworkableEdict_t *pEdict);	// Init-like: sub_100b7b40, then gEntList.AddNetworkableEntity(this, entindex())
 };
