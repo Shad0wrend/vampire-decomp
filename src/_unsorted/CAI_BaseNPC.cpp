@@ -860,6 +860,85 @@ bool __stdcall sub_10266660(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026a5e0 size=0x224
+#include "CAI_BaseNPC.h"
+#include "CAI_Senses.h"
+#include "CAIPendingCondList.h"
+#include "COutputEvent.h"
+#include "CDevFlagObj.h"
+#include "Tier1.h"
+
+extern CDevFlagObj *g_10924a6c;
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+struct CAI_NPCListenView : CAI_BaseNPC
+{
+	char m_pad0004[0x1ae0 - 4];
+	CAIPendingCondList m_pending;
+	char m_pad1b24[0x5ca8 - 0x1ae0 - sizeof(CAIPendingCondList)];
+	int m_afSoundBits[6];
+	char m_pad5cc0[0x5cdc - 0x5cc0];
+	CAI_Senses *m_pSenses;
+	char m_pad5ce0[0x5ee4 - 0x5ce0];
+	COutputEvent m_OnHearWorld;
+	COutputEvent m_OnHearPlayer;
+	COutputEvent m_OnHearCombat;
+};
+
+void CAI_BaseNPC::vfunc470()
+{
+	static int s_Conditions[10] = { 106, 107, 108, 109, 110, 111, 112, 113, 114, 94 };
+	CAI_NPCListenView *v = (CAI_NPCListenView *)this;
+	sub_10269bd0(s_Conditions, 10);
+	int *pBits = v->m_afSoundBits;
+	if (pBits) {
+		for (int i = 6; i != 0; i--)
+			*pBits++ = 0;
+	}
+	int iter;
+	CAI_SenseRecord *pRec = (CAI_SenseRecord *)v->m_pSenses->sub_10310440(&iter);
+	while (pRec) {
+		int cond = -1;
+		if (pRec->sub_101b9920()) {
+			switch (pRec->m_nType) {
+			case 8: cond = 106; break;
+			case 1: cond = 109; break;
+			case 2: cond = 110; break;
+			case 4: cond = 111; break;
+			case 16: cond = 112; break;
+			case 256: cond = 107; break;
+			case 512: cond = 108; break;
+			case 1024: cond = 113; break;
+			case 2048: cond = 114; break;
+			default:
+				DevMsg("**ERROR: Monster %s hearing sound of unknown type %d!\n", sub_1009f200(), pRec->m_nType);
+				break;
+			}
+		} else {
+			cond = 94;
+		}
+		if (cond != -1) {
+			float f;
+			if (cond == 114)
+				f = enginerandom->vfunc1(0, 0.5f);
+			else
+				f = vfunc471();
+			g_10924a6c->vfunc1();
+			v->m_pending.sub_102cc6c0(cond, f);
+			v->m_afSoundBits[cond >> 5] |= 1 << (cond & 0x1f);
+		}
+		pRec = (CAI_SenseRecord *)v->m_pSenses->sub_10310480(&iter);
+	}
+	v->m_pending.sub_102cc760((CAI_BaseNPCCondTarget *)this);
+	if (sub_10269aa0(110))
+		v->m_OnHearWorld.sub_100cd660(this, this, 0);
+	if (sub_10269aa0(111))
+		v->m_OnHearPlayer.sub_100cd660(this, this, 0);
+	if (sub_10269aa0(109) || sub_10269aa0(112) || sub_10269aa0(106))
+		v->m_OnHearCombat.sub_100cd660(this, this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a8a0 size=0x16
 #include "CAI_BaseNPC.h"
 float CAI_BaseNPC::vfunc471()
