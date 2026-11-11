@@ -4,6 +4,9 @@
 #pragma once
 
 #include "CListZ.h"
+#include "utlvector.h"
+#include "CSoundScheme.h"
+class CUnk1022b660;
 
 struct CUnknown10229550Item
 {
@@ -20,7 +23,12 @@ struct CUnknown10229550Item
 class CUnknown10229550
 {
 public:
-	char m_pad0000[0x174];
+	int m_unk0;
+	int m_unk4;
+	int m_unk8;
+	int m_unkc;
+	int m_unk10;
+	CUnknown10229550Item m_items14[4];	// 0x14, 0x6c, 0xc4, 0x11c
 	CUnknown10229550Item *m_pMemory;	// 0x174
 	int m_nAllocationCount;	// 0x178
 	int m_nGrowSize;	// 0x17c
@@ -33,6 +41,9 @@ public:
 	int m_nSoundGrowSize;	// 0x190
 	int m_nSoundCount;	// 0x194 (sub_102296c0 returns it)
 	CListZItem *m_pSoundElements;	// 0x198
+	CUtlVector<CHandle<CUnk1022b660> > m_Schemes;	// 0x19c: the sound schemes registered (count at +0x1a8)
+
+	void sub_10229270(float flTime, CSoundSchemeList *pA, CSoundSchemeList *pB, CSoundSchemeList *pC, CSoundSchemeList *pD);
 
 	void sub_10229550(CUnknown10229550Item *pItem, float flScale);	// when the item is active: stores m_f48 / flScale in m_f4c, appends a copy of the item to the vector and clears the original
 	void sub_102293f0(float flScale);	// the four items at +0x14 (0x58 bytes each) are each given to sub_10229550 with the scale
