@@ -115,3 +115,132 @@ void CPhysSaveRestoreBlockHandler::vfunc6(void *pSource)
 	pView->s2(&m_data98, g_1053c344);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100440c0 size=0x27b
+#include "vampire_all.h"
+#include "CPhysSaveRestoreBlockHandler.h"
+#include "CRestore.h"
+#include "CUtlRBTreeFind16.h"
+#include "CBaseEntity.h"
+
+struct PhysTracer
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48();
+	virtual void v49(void *p); virtual void v50(void *p);
+};
+struct PhysTrace49 { int type; int count; int ver; };
+struct PhysTrace50 { CRestore *pRestore; void *item; int key; CBaseEntity *pEnt; const char *psz; int zero; PhysTracer *pTracer; int g; };
+struct PhysItemVec { CPhysObjectDesc *m_pData; int a; int b; int m_nCount;
+	CPhysObjectDesc *FindItem(int key)
+	{
+		for (int i = 0; i < m_nCount; i++)
+			if (m_pData[i].m_nKey == key)
+				return &m_pData[i];
+		return 0;
+	}
+};
+struct PhysHeader
+{
+	int m_nId;
+	EHANDLE hEntity;
+	int m_nKey;
+	int m_nItems;
+	const char *m_pszName;
+	int m_rest[8];
+	PhysHeader() { memset(this, 0, sizeof(*this)); }
+};
+struct PhysEntList : EHandleEntityList
+{
+	CBaseEntity *sub_100290c0(const CBaseHandle &h);
+};
+extern PhysTracer *g_10723940;
+extern int g_10723938;
+extern int g_10580180;
+extern int g_109f0b7c;
+extern int g_1053c410;	// the datamap of the physics object header
+struct PhysQueueNode { CBaseEntity *key; PhysItemVec *elem; };
+struct PhysQueueMap
+{
+	int m_t0, m_t4, m_t8, m_tc, m_t10, m_t14;
+	int m_n18;
+	unsigned short Find(CBaseEntity *const &key)
+	{
+		PhysQueueNode dummyNode;
+		dummyNode.key = key;
+		if (m_n18)
+			g_109f0b7c = m_n18;
+		return ((CUtlRBTreeFind16 *)this)->sub_10046390(&dummyNode.key);
+	}
+	PhysItemVec *Element(unsigned short i) { return *(PhysItemVec **)((char *)((CUtlRBTreeFind16 *)this)->m_pElements + i * 16 + 0xc); }
+};
+
+void CPhysSaveRestoreBlockHandler::vfunc7(CRestore *pRestore, int unused, const char *pszName)
+{
+	if (m_bMatch40)
+	{
+		if (g_10723940)
+		{
+			PhysTrace49 req;
+			req.type = 1;
+			req.ver = g_10723938;
+			req.count = *(int *)(m_data98 + 4);
+			g_10723940->v49(&req);
+		}
+		PhysHeader header;
+		while ((*(int *)m_data98)--)
+		{
+			pRestore->vfunc2((CBaseEntity *)&header, (int)&g_1053c410);
+			pRestore->vfunc5();
+			if (header.hEntity != 0)
+			{
+				CBaseEntity *pOwner = ((PhysEntList *)EHandleDetail::g_10566458)->sub_100290c0(header.hEntity);
+				unsigned short iQueued = ((PhysQueueMap *)&m_Tree24)->Find(pOwner);
+				if (iQueued != 0xffff)
+				{
+					if (pOwner->vfunc128() && header.m_nItems > 0)
+					{
+						CPhysObjectDesc *pItem = ((PhysQueueMap *)&m_Tree24)->Element(iQueued)->FindItem(header.m_nKey);
+						if (pItem)
+						{
+							int nObjects = header.m_nItems < pItem->m_nItems ? header.m_nItems : pItem->m_nItems;
+							if (pItem->m_nType == 1 && nObjects == 1)
+							{
+								sub_100443e0(pRestore, (CPhysRestoreRecord *)&header, pItem, nObjects);
+							}
+							else
+							{
+								void **ppPhysObj = pItem->m_pItems;
+								for (int i = 0; i < nObjects; i++)
+								{
+									pRestore->vfunc5();
+									if (g_10723940)
+									{
+										PhysTrace50 r;
+										r.pRestore = pRestore;
+										r.item = ppPhysObj + i;
+										r.key = header.m_nId;
+										r.pEnt = header.hEntity.Get();
+										r.psz = header.m_pszName ? header.m_pszName : g_106b8540;
+										r.zero = 0;
+										r.pTracer = g_10723940;
+										r.g = g_10580180;
+										g_10723940->v50(&r);
+									}
+									pRestore->vfunc8();
+								}
+							}
+						}
+					}
+					else
+						(*(void (__fastcall ***)(CBaseEntity *))pOwner)[223](pOwner);
+				}
+			}
+			pRestore->vfunc8();
+		}
+	}
+}
+// END FUNCTION
