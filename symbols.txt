@@ -4470,6 +4470,7 @@
 0x1000707c func   ?vfunc5@CBaseButton@@UAEPAV1@I@Z CBaseButton::vfunc5
 0x10007081 func   ?vfunc1@CTEExplosion@@UAEHXZ CTEExplosion::vfunc1
 0x10007086 func   ?sub_101ebff0@CKeyHolder@@QAEXXZ CKeyHolder::sub_101ebff0
+0x1000708b func   ?sub_1024e570@@YAXABUS1024e570Matrix@@ABUS1024e570Vec4@@AAU2@@Z sub_1024e570
 0x10007090 func   ?sub_1013cd40@@YAMPAM000@Z sub_1013cd40
 0x10007095 func   ?vfunc5@CItemGVampyrApocrypha@@QAEPAV1@I@Z CItemGVampyrApocrypha::vfunc5
 0x1000709a func   ?sub_1007e050@S1007e050@@QAEHH@Z S1007e050::sub_1007e050
