@@ -15500,6 +15500,7 @@
 0x10015dc5 func   ?Grow@?$CUtlMemory@UCExperienceAward@@@@QAEXH@Z CUtlMemory<CExperienceAward>::Grow
 0x10015dc5 func   ?sub_10222ec0@S10222ec0@@QAEXH@Z S10222ec0::sub_10222ec0
 0x10015dca func   ?sub_101d6af0@CUnknown101d7520Entry@@QAEXXZ CUnknown101d7520Entry::sub_101d6af0
+0x10015dd4 func   ?vfunc8@CSoundControllerImp@@UAEPAVCUnknown101bc140@@PAXIPBD@Z CSoundControllerImp::vfunc8
 0x10015dd9 func   ?sub_10323c20@@YIHPADHH@Z sub_10323c20
 0x10015dde func   ?sub_1037e990@@YIPAXPAX@Z sub_1037e990
 0x10015de3 func   ?sub_101bd650@@YGXPAUS@@H@Z sub_101bd650
