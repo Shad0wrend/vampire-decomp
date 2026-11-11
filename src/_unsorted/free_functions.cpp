@@ -107884,6 +107884,168 @@ void CAmbientGenericInput::sub_101ac7d0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101acb70 size=0x460
+#include <stdlib.h>
+#include "CAmbientGeneric.h"
+#include "CBaseEntity.h"
+#include "CEntitySoundOriginView.h"
+#include "engineiface.h"
+#include "globalvars.h"
+
+extern char g_106b8540[];
+void sub_101cdac0(int edict, const float *origin, const char *file, float vol, int atten, int flags, int pitch);
+
+namespace block_101acb70 {
+struct CAmbientGenericUnit : CAmbientGeneric {
+	int sub_101ac670(int flags);
+};
+int CAmbientGenericUnit::sub_101ac670(int flags)
+{
+	return m_n04e0 | flags;
+}
+}
+using namespace block_101acb70;
+
+// TARGET: ?sub_101acb70@CAmbientGeneric@@QAEXXZ
+void CAmbientGeneric::sub_101acb70()
+{
+	const char *szSoundFile = m_pszSoundFile;
+	if (!szSoundFile)
+		szSoundFile = g_106b8540;
+	int pitch = m_dpv.pitch;
+	int vol = m_dpv.vol;
+	int flags = ((CAmbientGenericUnit *)this)->sub_101ac670(0);
+	int fChanged = 0;
+	int prev;
+
+	if (!m_dpv.spinup && !m_dpv.spindown && !m_dpv.fadein && !m_dpv.fadeout && !m_dpv.lfotype)
+		return;
+
+	if (m_dpv.spinup || m_dpv.spindown) {
+		prev = m_dpv.pitchfrac >> 8;
+		if (m_dpv.spinup > 0)
+			m_dpv.pitchfrac += m_dpv.spinup;
+		else if (m_dpv.spindown > 0)
+			m_dpv.pitchfrac -= m_dpv.spindown;
+		pitch = m_dpv.pitchfrac >> 8;
+		if (pitch > m_dpv.pitchrun) {
+			pitch = m_dpv.pitchrun;
+			m_dpv.spinup = 0;
+		}
+		if (pitch < m_dpv.pitchstart) {
+			pitch = m_dpv.pitchstart;
+			m_dpv.spindown = 0;
+			CBaseEntity *pSoundEnt = m_hSoundEnt.Get();
+			if (pSoundEnt) {
+				int edict = pSoundEnt->m_pEdict2e0;
+				sub_101cdac0(edict, ((CEntitySoundOriginView *)pSoundEnt)->GetAbsOrigin(), szSoundFile, 0, 0, 4, 0);
+			}
+			return;
+		}
+		if (pitch > 255)
+			pitch = 255;
+		if (pitch < 1)
+			pitch = 1;
+		m_dpv.pitch = pitch;
+		fChanged |= prev != pitch;
+		flags |= 2;
+	}
+
+	if (m_dpv.fadein || m_dpv.fadeout) {
+		prev = m_dpv.volfrac >> 8;
+		if (m_dpv.fadein > 0)
+			m_dpv.volfrac += m_dpv.fadein;
+		else if (m_dpv.fadeout > 0)
+			m_dpv.volfrac -= m_dpv.fadeout;
+		vol = m_dpv.volfrac >> 8;
+		if (vol > m_dpv.volrun) {
+			vol = m_dpv.volrun;
+			m_dpv.fadein = 0;
+		}
+		if (vol < m_dpv.volstart) {
+			vol = m_dpv.volstart;
+			m_dpv.fadeout = 0;
+			CBaseEntity *pSoundEnt = m_hSoundEnt.Get();
+			if (pSoundEnt) {
+				int edict = pSoundEnt->m_pEdict2e0;
+				sub_101cdac0(edict, ((CEntitySoundOriginView *)pSoundEnt)->GetAbsOrigin(), szSoundFile, 0, 0, 4, 0);
+			}
+			return;
+		}
+		if (vol > 100)
+			vol = 100;
+		if (vol < 1)
+			vol = 1;
+		m_dpv.vol = vol;
+		fChanged |= prev != vol;
+		flags |= 1;
+	}
+
+	if (m_dpv.lfotype) {
+		int pos;
+		if (m_dpv.lfofrac > 0x6fffffff)
+			m_dpv.lfofrac = 0;
+		m_dpv.lfofrac += m_dpv.lforate;
+		pos = m_dpv.lfofrac >> 8;
+		if (m_dpv.lfofrac < 0) {
+			m_dpv.lfofrac = 0;
+			m_dpv.lforate = abs(m_dpv.lforate);
+			pos = 0;
+		} else if (pos > 255) {
+			pos = 255;
+			m_dpv.lfofrac = 255 << 8;
+			m_dpv.lforate = -abs(m_dpv.lforate);
+		}
+		switch (m_dpv.lfotype) {
+		case 1:
+			if (pos < 128)
+				m_dpv.lfomult = 255;
+			else
+				m_dpv.lfomult = 0;
+			break;
+		case 3:
+			if (pos == 255)
+				m_dpv.lfomult = enginerandom->vfunc2(0, 255);
+			break;
+		default:
+			m_dpv.lfomult = pos;
+			break;
+		}
+		if (m_dpv.lfomodpitch) {
+			prev = pitch;
+			pitch += ((m_dpv.lfomult - 128) * m_dpv.lfomodpitch) / 100;
+			if (pitch > 255)
+				pitch = 255;
+			if (pitch < 1)
+				pitch = 1;
+			fChanged |= prev != pitch;
+			flags |= 2;
+		}
+		if (m_dpv.lfomodvol) {
+			prev = vol;
+			vol += ((m_dpv.lfomult - 128) * m_dpv.lfomodvol) / 100;
+			if (vol > 100)
+				vol = 100;
+			if (vol < 0)
+				vol = 0;
+			fChanged |= prev != vol;
+			flags |= 1;
+		}
+	}
+
+	if (flags && fChanged) {
+		if (pitch == 100)
+			pitch = 101;
+		CBaseEntity *pSoundEnt = m_hSoundEnt.Get();
+		if (pSoundEnt) {
+			int edict = pSoundEnt->m_pEdict2e0;
+			sub_101cdac0(edict, ((CEntitySoundOriginView *)pSoundEnt)->GetAbsOrigin(), szSoundFile, (float)(vol * 0.01), m_n0454, ((CAmbientGenericUnit *)this)->sub_101ac670(flags), pitch);
+		}
+	}
+	m_flNextThink = gpGlobals->curtime + 0.2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ad0f0 size=0x24e
 #include <stdlib.h>
 #pragma intrinsic(abs)
