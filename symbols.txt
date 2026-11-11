@@ -10002,6 +10002,7 @@
 0x1000e6a1 func   ?vfunc105@CSprite@@UAEXPBD@Z CSprite::vfunc105
 0x1000e6a6 func   ?sub_101a8ac0@CCineNPC@@QAEDXZ CCineNPC::sub_101a8ac0
 0x1000e6b0 func   ?sub_10280630@CEntUnit@@QAEMPAVCBaseEntity@@@Z CEntUnit::sub_10280630
+0x1000e6b5 func   ?sub_10269c70@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_10269c70
 0x1000e6ba func   ?sub_101e8de0@CUnknown101e8de0@@QAEHXZ CUnknown101e8de0::sub_101e8de0
 0x1000e6bf func   ?sub_1012ee10@@YAXPBH@Z sub_1012ee10
 0x1000e6c9 func   ?sub_100dbf50@@YAHXZ sub_100dbf50

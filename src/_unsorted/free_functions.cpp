@@ -174604,6 +174604,58 @@ check:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10269c70 size=0x86
+#include "CAI_BaseNPCTroika.h"
+
+struct CondBitVec
+{
+	unsigned int m_Ints[6];
+	bool IsBitSet(int bitNum) const
+	{
+		bool r = (m_Ints[bitNum >> 5] & (1 << (bitNum & 31))) != 0;
+		return r;
+	}
+};
+
+inline int AI_RemapToGlobalX(int globalID)
+{
+	return (globalID != -1) ? globalID - 1000000000 : -1;
+}
+
+inline bool AI_IdIsLocalX(int id)
+{
+	return (id < 1000000000 || id == -1);
+}
+
+struct CAI_BaseNPCTroikaCond : CAI_BaseNPCTroika
+{
+	int GlobalCondition(int condition)
+	{
+		int global;
+		if (AI_IdIsLocalX(condition))
+		{
+			CAI_CondOwner *pOwner = vfunc580();
+			global = pOwner->m_table.sub_102ea2d0(condition);
+		}
+		else
+			global = condition;
+		return global;
+	}
+};
+
+bool CAI_BaseNPCTroika::sub_10269c70(int condition)
+{
+	int interrupt = AI_RemapToGlobalX(((CAI_BaseNPCTroikaCond *)this)->GlobalCondition(condition));
+	if (interrupt == -1)
+		return false;
+	if (*(int *)((char *)this + 0x5c38) == 0)
+		return false;
+	if (((CondBitVec *)((char *)this + 0x5c74))->IsBitSet(interrupt))
+		return true;
+	return ((CondBitVec *)((char *)this + 0x5c8c))->IsBitSet(interrupt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10269d30 size=0x85
 #include "CAI_BaseNPCTroika.h"
 
