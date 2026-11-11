@@ -159519,6 +159519,110 @@ void sub_1022ec20(CVStatActionList_t *pList, int iEntIndex, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022ee50 size=0x250
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CUnknown10205e60.h"
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+#include "Tier1.h"
+struct SAVec4 {
+	int a, b, c, d;
+};
+struct SAWeapon { char m_pad[0x80]; int m_f80; int m_f84; char m_pad2[0x104 - 0x88]; char m_b104; };
+struct SAction {
+	unsigned int m_flags;
+	int m_kind;
+	int m_unk08;
+	int m_unk0c;
+	CUnknown10205e60 m_dep;
+	char m_pad2[0x3c - 0x10 - sizeof(CUnknown10205e60)];
+	union {
+		int m_v3c;
+		SAWeapon *m_pWeapon;
+	};
+	SAVec4 m_v40;
+	int m_unk50;
+	int m_unk54;
+};
+struct SAPlayerPtr { void *sub_1015d680(int a); };
+struct SAOwner { char m_pad[0xa8]; SAPlayerPtr *m_p; };
+struct SAGlobal101f9a00 { void sub_101f9a00(int a, int b); };
+struct SATrace { void sub_10037300(const char *a, const char *b, const char *c); ~SATrace() { (*g_109f3680)--; } };
+extern SAGlobal101f9a00 g_1074df78;
+int sub_10202780(int a);
+void sub_10050d90(void *, int, float, float, float, void *, int, void *, void *, int);
+void *sub_100ab250(void *);
+
+inline char *SA_Instance(int ent)
+{
+	void *pEdict = engine->vfunc38(ent);
+	SATrace trace;
+	trace.sub_10037300("CBaseEntity::Instance", g_106b8540, g_106b8540);
+	if (!pEdict)
+		pEdict = engine->vfunc38(0);
+	return (char *)sub_100ab250(pEdict);
+}
+inline int SA_TypeOf(SAVec4 r) { return sub_10202780(r.a); }
+inline CVStatList_t *SA_List(void *pOwner, SAVec4 r)
+{
+	return CVStatListSet::Of(pOwner)->Find(SA_TypeOf(r));
+}
+inline void SA_AddBase(CVStatList_t *l, const SAVec4 &r, int amount)
+{
+	l->sub_10200fc0(r.b, amount);
+}
+
+void sub_1022ee50(SAction *rec, int ent, int b, int c, int d)
+{
+	char *pActor = SA_Instance(ent);
+	SAOwner *pOwner = !pActor ? 0 : *(SAOwner **)(pActor + 0x9c);
+	if (((rec->m_flags & 1) && b < c) || ((rec->m_flags & 2) && b > c) || ((rec->m_flags & 4) && c == 0) || (rec->m_flags & 8))
+		return;
+	if (!rec->m_dep.sub_10205e60(pOwner))
+		return;
+	switch (rec->m_kind) {
+	case 1:
+		if (d && pOwner)
+			g_1074df78.sub_101f9a00((int)pOwner, rec->m_v3c);
+		break;
+	case 2:
+		if (pOwner) {
+			int amount = rec->m_v3c;
+			SAVec4 ref = rec->m_v40;
+			SA_AddBase(SA_List(pOwner, ref), ref, amount);
+		}
+		break;
+	case 3:
+		((void (__cdecl *)(void *))rec->m_v3c)(pOwner);
+		break;
+	case 4:
+		if (pOwner) {
+			if (rec->m_pWeapon->m_b104) {
+				if (!pOwner->m_p)
+					return;
+				pActor = (char *)pOwner->m_p->sub_1015d680(0);
+				if (!pActor)
+					return;
+			}
+			sub_10050d90(pOwner, rec->m_unk54, 1.0f, 1.0f, 1.0f, rec->m_pWeapon, rec->m_pWeapon->m_f80, &rec->m_pWeapon->m_f84, pActor, 0);
+		}
+		break;
+	default:
+		g_109f3628("Unable to match StatAction type!\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022f140 size=0x2f0
 #include "CEntityVSlots.h"
 #include "CSoundControllerImp.h"
