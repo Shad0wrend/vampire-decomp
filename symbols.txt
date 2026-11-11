@@ -11553,6 +11553,7 @@
 0x10010875 func   ?sub_101f2c60@CKV@@QAEXXZ CKV::sub_101f2c60
 0x1001087a func   ?vfunc75@CGameRules@@UAEXXZ CGameRules::vfunc75
 0x1001087f func   ?sub_1009bef0@CBaseEntity@@QAEXHHUCBaseEntityColor32@@@Z CBaseEntity::sub_1009bef0
+0x10010884 func   ?sub_10280f40@CAI_BaseNPCUnit_10280f40@block_10280f40@@QAEXXZ block_10280f40::CAI_BaseNPCUnit_10280f40::sub_10280f40
 0x10010889 func   ?vfunc319@CWeaponGravityGun@@UAEXXZ CWeaponGravityGun::vfunc319
 0x1001088e func   ?vfunc546@CNPC_VSheriffMan@@QAEHH@Z CNPC_VSheriffMan::vfunc546
 0x10010893 func   ?sub_10407790@@YAPAHXZ sub_10407790

@@ -178676,6 +178676,53 @@ void CAI_BaseNPC::sub_10280e50(void *pSchedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280f40 size=0x43
+#include "CAI_BaseNPC.h"
+
+struct CDevFlagObj_10280f40
+{
+	virtual void v0();
+	virtual void v1();
+};
+
+extern CDevFlagObj_10280f40 *g_10924a6c;
+
+namespace block_10280f40
+{
+	struct Sched_10280f40 { int m_n0[9]; int m_nTasks24; };
+	struct CAI_BaseNPCUnit_10280f40 : public CAI_BaseNPC
+	{
+		char m_pad0004[0x5c38 - 4];
+		Sched_10280f40 *m_p5c38;
+		int m_n5c3c;
+		int m_n5c40;
+		int m_n5c44;
+		char m_pad5c48[0x5f38 - 0x5c48];
+		void *m_p5f38;
+		void *m_p5f3c;
+		void sub_10280f40();
+	};
+	char __fastcall sub_10280db0(CAI_BaseNPCUnit_10280f40 *p)
+	{
+		return p->m_n5c40 == p->m_p5c38->m_nTasks24;
+	}
+}
+
+// TARGET: block_10280f40::CAI_BaseNPCUnit_10280f40::sub_10280f40
+void block_10280f40::CAI_BaseNPCUnit_10280f40::sub_10280f40()
+{
+	m_n5c44 = 0;
+	m_n5c40++;
+	if (sub_10280db0(this))
+	{
+		m_p5f38 = 0;
+		m_p5f3c = 0;
+		g_10924a6c->v1();
+		sub_10269a20(0x5d);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10281430 size=0x7c
 #include "CAI_BaseNPCTroika.h"
 struct S10281430Bits {
