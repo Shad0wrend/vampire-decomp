@@ -15150,6 +15150,7 @@
 0x100156c2 func   ?vfunc80@CElderVitaePack@@QAEHXZ CElderVitaePack::vfunc80
 0x100156c7 func   ?sub_10218ca0@CUnknown10217f50@@QAEXXZ CUnknown10217f50::sub_10218ca0
 0x100156cc func   ?sub_102b5dc0@CUnknown102b5dc0@@QAEXH@Z CUnknown102b5dc0::sub_102b5dc0
+0x100156d6 func   ?sub_1038e9c0@CNPC_VManBat@@QAEXPAVCBaseEntity@@@Z CNPC_VManBat::sub_1038e9c0
 0x100156db func   ?vfunc96@CBaseEntity@@UAEHXZ CBaseEntity::vfunc96
 0x100156e0 func   ?vfunc80@CWeaponRanged@@UAEHXZ CWeaponRanged::vfunc80
 0x100156e5 func   ?Purge@?$CUtlMemory@UCNPC_VWerewolfVec3@@@@QAEXXZ CUtlMemory<CNPC_VWerewolfVec3>::Purge

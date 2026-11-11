@@ -228813,6 +228813,141 @@ void CNPC_VManBat::sub_1038e720(Vector vecDir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038e9c0 size=0x503
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown100290c0.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+// TARGET: CNPC_VManBat::sub_1038e9c0
+#include "CNPC_VManBat.h"
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+#include "CEnvParticle.h"
+#include "engineiface.h"
+#include "globalvars.h"
+
+extern Vector g_1070d1b0;
+extern Vector g_1070d9d0;
+extern char g_106b8540[];
+CBaseEntity *sub_100fbc90(const char *pszName, const Vector *pOrigin, const Vector *pAngles, float flDuration);
+void sub_101cd940(CBaseEntity *pEnt);
+void sub_101cdba0(const Vector *pOrigin, float a, float b, float c, float d, int e, bool f);
+
+#define EVS(n) virtual void s##n();
+#define EVS10(p) EVS(p##0) EVS(p##1) EVS(p##2) EVS(p##3) EVS(p##4) EVS(p##5) EVS(p##6) EVS(p##7) EVS(p##8) EVS(p##9)
+class CManbatEnt
+{
+public:
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS10(20) EVS(210) EVS(211) EVS(212) EVS(213) EVS(214) EVS(215) EVS(216)
+	virtual Vector *GetAbsOrigin217();
+	EVS(218) EVS(219)
+	virtual Vector *slot220();
+	EVS(221) EVS(222) EVS(223) EVS(224) EVS(225) EVS(226) EVS(227) EVS(228) EVS(229)
+	EVS10(23) EVS(240)
+	virtual void slot241();
+	EVS(242)
+	virtual void slot243(CBaseEntity *pEnt, int nType, const char *pszName);
+};
+#define ME(p) ((CManbatEnt *)(p))
+
+namespace block_1038e9c0
+{
+	struct CUnknown100290c0Unit : CUnknown100290c0
+	{
+		unsigned int sub_100290c0(unsigned int *pHandle);
+	};
+	unsigned int CUnknown100290c0Unit::sub_100290c0(unsigned int *pHandle)
+	{
+		unsigned int h = *pHandle;
+		if (h != 0xffffffff)
+		{
+			int s = (int)pHandle[1];
+			CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
+			if (pSlot->m_Serial == (int)(h >> s))
+				return pSlot->m_Value;
+		}
+		return 0;
+	}
+}
+using namespace block_1038e9c0;
+
+#define LOOKUP(h) ((CBaseEntity *)((CUnknown100290c0Unit *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)&(h)))
+
+void CNPC_VManBat::sub_1038e9c0(CBaseEntity *pTarget)
+{
+	CBaseHandle &hCone = *(CBaseHandle *)&m_h66a4;
+	if (LOOKUP(m_h66a4))
+	{
+		sub_101cd940(LOOKUP(m_h66a4));
+		hCone = (IHandleEntity *)0;
+	}
+	hCone = (IHandleEntity *)sub_100fbc90("Manbat_screechcone_emitter", ME(this)->GetAbsOrigin217(), &g_1070d9d0, -1.0f);
+	if (LOOKUP(m_h66a4))
+	{
+		ME(LOOKUP(m_h66a4))->slot243((CBaseEntity *)this, 1, "Bip01 Jaw");
+		ME(LOOKUP(m_h66a4))->slot241();
+	}
+
+	if (pTarget && pTarget->m_pA8)
+	{
+		sub_101cdba0(ME(this)->slot220(), 2.5f, 0.2f, 3.0f, 0.0f, 0, false);
+		CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pTarget->m_p9c;
+		if (pChar)
+		{
+			Vector vecDelta;
+			vecDelta = *ME(pTarget)->GetAbsOrigin217() - *ME(this)->GetAbsOrigin217();
+			pChar->sub_10344f80(&vecDelta, 2, 0);
+			if (m_f6684 == 0.0)
+				pChar->sub_103326b0(500.0f);
+			m_f6684 = enginerandom->vfunc1(15.0f, 25.0f) + gpGlobals->curtime;
+			m_h6680 = (CBaseEntity *)pChar;
+
+			if (!LOOKUP(m_h669c))
+			{
+				m_h669c = sub_100fbc90("Manbat_player_emitter", ME(pTarget)->GetAbsOrigin217(), &g_1070d9d0, -1.0f);
+				if (LOOKUP(m_h669c))
+				{
+					ME(m_h669c.Get())->slot243(pTarget, 1, "Bip01 Spine");
+					ME(m_h669c.Get())->slot241();
+				}
+			}
+			if (!m_h66a8)
+			{
+				m_h66a8 = sub_100fbc90("Manbat_blast_player", ME(pTarget)->GetAbsOrigin217(), &g_1070d9d0, -1.0f);
+				if (m_h66a8)
+				{
+					ME(m_h66a8.Get())->slot243(pTarget, 1, "Bip01 Spine");
+					ME(m_h66a8.Get())->slot241();
+				}
+			}
+			CBasePlayer *pPlayer = (CBasePlayer *)pTarget->m_pA8;
+			if (pPlayer)
+			{
+				CBaseEntity *pView = pPlayer->sub_1015d680(0);
+				if (pView && !m_h66a0)
+				{
+					m_h66a0 = sub_100fbc90("HUD_Manbat_emitter", &g_1070d1b0, &g_1070d9d0, -1.0f);
+					if (m_h66a0)
+					{
+						ME(m_h66a0.Get())->slot243(pView, 0xe, g_106b8540);
+						ME(m_h66a0.Get())->slot241();
+						((CEnvParticle *)m_h66a0.Get())->m_b4a1 = 1;
+					}
+				}
+				*(int *)((char *)pPlayer + 0x2454) |= 1;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038f290 size=0x1e
 #include "CNPC_VManBat.h"
 bool CNPC_VManBat::sub_1038f290()
