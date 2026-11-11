@@ -266725,6 +266725,63 @@ int sub_1042e310()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042e9f0 size=0x37
+#include "CSprite.h"
+#include "string_t.h"
+
+#define CSV_ROW(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct castable_string_t : public string_t
+{
+	castable_string_t(const char *pszFrom) { pszValue = *pszFrom ? pszFrom : 0; }
+};
+
+struct CSpriteSlotView
+{
+	CSV_ROW(r0)
+	CSV_ROW(r1)
+	CSV_ROW(r2)
+	CSV_ROW(r3)
+	CSV_ROW(r4)
+	CSV_ROW(r5)
+	virtual void r60();
+	virtual void r61();
+	virtual void vfunc62(const float *b);
+	virtual void r63();
+	virtual void r64();
+	virtual void r65();
+	virtual void r66();
+	virtual void r67();
+	virtual void r68();
+	virtual void r69();
+	CSV_ROW(r7)
+	CSV_ROW(r8)
+	CSV_ROW(r9)
+	CSV_ROW(r10)
+	CSV_ROW(r11)
+	CSV_ROW(r12)
+	CSV_ROW(r13)
+	CSV_ROW(r14)
+	CSV_ROW(r15)
+	CSV_ROW(r16)
+	CSV_ROW(r17)
+	CSV_ROW(r18)
+	CSV_ROW(r19)
+	CSV_ROW(r20)
+	virtual void r210();
+	virtual void r211();
+	virtual void vfunc212(string_t name);
+};
+
+void CSprite::sub_1042e9f0(int a, int b)
+{
+	CSpriteSlotView *v = (CSpriteSlotView *)this;
+	v->vfunc212(castable_string_t((const char *)a));
+	v->vfunc62((const float *)b);
+	vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042ea40 size=0xf9
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
