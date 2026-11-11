@@ -10737,6 +10737,7 @@
 0x1000f6eb func   ?sub_10210830@V10210830@@QAEPAXI@Z V10210830::sub_10210830
 0x1000f6f5 func   ?sub_1015d660@@YAPAXXZ sub_1015d660
 0x1000f6fa func   ?sub_100cdba0@CUnknown100cdba0@@QAEXUCUnknown100cdba0Data@@H@Z CUnknown100cdba0::sub_100cdba0
+0x1000f6ff func   ?vfunc471@CHL2_Player@@UAEXXZ CHL2_Player::vfunc471
 0x1000f704 func   ?vfunc4@CTraitDependencyDataDescSaveDataOps@@UAE_NHH@Z CTraitDependencyDataDescSaveDataOps::vfunc4
 0x1000f709 func   ?sub_100ab430@@YGXHH@Z sub_100ab430
 0x1000f70e func   ?vfunc444@CNPC_VGargoyle@@QAEXPAH@Z CNPC_VGargoyle::vfunc444

@@ -550,6 +550,153 @@ char CHL2_Player::vfunc86(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103517e0 size=0x4ea
+#include "CNPC_VTzimisce.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CHL2_Player.h"
+#include "CBasePlayer.h"
+#include "CVFeat_t.h"
+#include "ConVar.h"
+#include "CCollisionProperty.h"
+#include "Tier1.h"
+
+struct CPartition471
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void SuppressLists(int nListMask, bool bSuppress);
+};
+
+struct CWeaponView471
+{
+	char m_pad0000[0x11c];
+	const char *m_iClassname;
+	char m_pad0120[0x871 - 0x120];
+	char m_b871;
+	char sub_102585f0();
+};
+
+struct CUnkView471
+{
+	char sub_101672d0();
+};
+
+extern CPartition471 *g_1070b24c;
+extern ConVar g_10938358;
+extern ConVar g_10938310;
+extern ConVar g_109384d8;
+extern ConVar g_109383a0;
+extern float g_1093851c;
+extern float g_106262c0[][11];
+extern float g_106264a8[][11];
+extern float g_1062668c[];
+extern float g_106266b8[];
+extern "C" int _strcmpi(const char *, const char *);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : (const char *)g_106b8540; }
+
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+
+// TARGET: CHL2_Player::vfunc471
+void CHL2_Player::vfunc471()
+{
+	CBasePlayer *pPlayer = (CBasePlayer *)this;
+	bool bValid = true;
+
+	if (!engine->vfunc3())
+		return;
+
+	int nStealth = ((CVFeatSet *)&g_10739d20)->Lookup(1)->sub_101e56e0(this);
+	if (nStealth > 10)
+		nStealth = 10;
+
+	if (!(sub_100b3700() & 2) || ((CUnkView471 *)this)->sub_101672d0())
+		bValid = false;
+
+	CWeaponView471 *pWeapon = (CWeaponView471 *)sub_1032e7b0();
+	if (pWeapon && pWeapon->sub_102585f0() && pWeapon->m_b871 && !_strcmpi(STRINGR(pWeapon->m_iClassname), "item_w_torch"))
+	{
+		pPlayer->m_f1C8C = 1.0f;
+	}
+	else
+	{
+		Vector vecMins, vecMaxs, vecFeet, vecHead;
+		CCollisionProperty *pColl = (CCollisionProperty *)&pPlayer->m_sub270;
+		pColl->sub_100dcd90(&pColl->m_vecMins.x, &pColl->m_vecMaxs.x, &vecMins.x, &vecMaxs.x);
+		Vector vecCenter = pPlayer->vfunc192();
+
+		g_1070b24c->SuppressLists(4, false);
+		switch (pPlayer->m_nNextLightPositionTest)
+		{
+		case 1:
+			pPlayer->m_nNextLightPositionTest = 2;
+			pPlayer->m_flLightOnCenter = engine->vfunc118(vecCenter);
+			break;
+		case 2:
+			vecHead.Init(vecCenter.x, vecCenter.y, vecMins.z * 0.125f + vecMaxs.z * 0.875f);
+			pPlayer->m_nNextLightPositionTest = 0;
+			pPlayer->m_flLightOnHead = engine->vfunc118(vecHead);
+			break;
+		default:
+			vecFeet.Init(vecCenter.x, vecCenter.y, vecMins.z * 0.875f + vecMaxs.z * 0.125f);
+			pPlayer->m_nNextLightPositionTest = 1;
+			pPlayer->m_flLightOnFeet = engine->vfunc118(vecFeet);
+			break;
+		}
+		g_1070b24c->SuppressLists(4, true);
+
+		pPlayer->m_f1C8C = (pPlayer->m_flLightOnHead + pPlayer->m_flLightOnCenter + pPlayer->m_flLightOnFeet) * 0.083325f;
+		pPlayer->m_f1C8C = clamp(pPlayer->m_f1C8C, g_10938310.GetFloat(), g_10938358.GetFloat());
+		pPlayer->m_f1C8C -= g_10938310.GetFloat();
+		pPlayer->m_f1C8C /= g_10938358.GetFloat() - g_10938310.GetFloat();
+	}
+
+	if (g_109384d8.GetInt() >= 0)
+		pPlayer->m_f1C8C = g_109384d8.GetFloat() * 0.1f;
+
+	int nLight = 0;
+	if (!(pPlayer->m_f1C8C >= 1.0f))
+	{
+		for (nLight = 0; nLight < 10; nLight++)
+		{
+			if (!(pPlayer->m_f1C8C <= g_106266b8[nLight]))
+				break;
+		}
+	}
+
+	if (g_109383a0.GetFloat() != 0.0f && gpGlobals->curtime >= g_1093851c)
+	{
+		g_1093851c = g_109383a0.GetFloat() + gpGlobals->curtime;
+		g_109f3630("%6.3f feet %6.3f cent %6.3f head -> %6.3f -> %d\n",
+			pPlayer->m_flLightOnFeet, pPlayer->m_flLightOnCenter, pPlayer->m_flLightOnHead, pPlayer->m_f1C8C, nLight);
+	}
+
+	pPlayer->m_flStealthVisionScalar = g_106262c0[nLight][nStealth];
+	pPlayer->m_flStealthHearingDist = g_1062668c[nStealth];
+	pPlayer->m_flStealthVisionCone = g_106264a8[nLight][nStealth];
+	pPlayer->m_n1C98 = nLight;
+	pPlayer->m_n1C94 = nStealth;
+
+	if (!bValid)
+	{
+		pPlayer->m_f1C8C = -1.0f;
+		pPlayer->m_flStealthVisionScalar = 1.0f;
+		pPlayer->m_flStealthHearingDist = g_1062668c[0];
+		pPlayer->m_flStealthVisionCone = g_106264a8[0][0];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352120 size=0x61c
 template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CBaseEntity.h"
