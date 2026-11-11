@@ -57,6 +57,11 @@ struct RecVec1030a6e0
 struct CUnknown1030a6e0_Debug	// the object at +0x50 (its fields are not known yet)
 {
 	void sub_102e8b80(const Vector &vecOrigin);	// stub 0x1001398a: debug draw for the given origin
+	bool sub_102e91b0(void *pSuggestions, int nSuggestions, float *pResult);
+	int m_n0;
+	int m_n4;
+	int m_n8;
+	int m_nCount;	// 0xc
 };
 
 class CUnknown1030a6e0
@@ -69,7 +74,11 @@ public:
 	CAI_BaseNPC *m_pOuter;	// 0x04
 	Vector m_vecGoal;	// 0x08: the goal the progress below was measured for
 	char m_bSteer14;	// 0x14: the last steer step was solved (at speed)
-	char pad15[0x28 - 0x15];
+	char m_b15;
+	char m_b16;
+	char m_b17;
+	float m_flPrev18;	// 0x18
+	Vector m_vecPrev1c;	// 0x1c
 	float m_flBestDist;	// 0x28: the closest the NPC has been to the goal
 	float m_flBestTime;	// 0x2c: when it got that close
 	char m_bStuck;	// 0x30
