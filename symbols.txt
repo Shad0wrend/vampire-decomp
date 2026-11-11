@@ -12358,6 +12358,7 @@
 0x10011969 func   ?vfunc144@CNPC_VTzimisce@@UAEXH@Z CNPC_VTzimisce::vfunc144
 0x1001196e func   _npc_VFrenzyShadow npc_VFrenzyShadow
 0x10011973 func   ?sub_102ecc20@@YIHPAD@Z sub_102ecc20
+0x10011978 func   ?sub_100e9760@CDialogDependency@@QAEDPAVCBaseEntity@@0@Z CDialogDependency::sub_100e9760
 0x1001197d func   ?sub_10202a50@CUnknown10202a50@@QAEHPBD@Z CUnknown10202a50::sub_10202a50
 0x10011982 func   ?sub_103be3d0@CTargetNPC@@QAE_NPAVCBaseEntity@@@Z CTargetNPC::sub_103be3d0
 0x1001198c func   ?vfunc0@ConCommand@@UAEPAV1@I@Z ConCommand::vfunc0

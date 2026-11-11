@@ -59112,6 +59112,124 @@ char CDialogDependency::sub_100e94e0(CBaseEntity *pNPC, CBaseEntity *pSpeaker)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e9760 size=0x6d0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CVStatList_t.h"
+#include "CVFeat_t.h"
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CDialogDependency.h"
+#include "ScopeTrace.h"
+#include "Tier1.h"
+struct CDlgId { int sub_100e65d0(); };
+
+// TARGET: CDialogDependency::sub_100e9760
+char CDialogDependency::sub_100e9760(CBaseEntity *pNPC, CBaseEntity *pSpeaker)
+{
+	ScopeTrace trace("CDialogDependency::TestSimple", g_106b8540, g_106b8540);
+	CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pNPC;
+	if ((m_n224 == 0 && pChar->sub_10336920()) || (m_n224 == 1 && !pChar->sub_10336920()))
+		return 0;
+	if (m_bNoFlags0c) {
+		switch (m_nType) {
+		case 0: {
+			int a = m_nArg;
+			if (CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(a) < m_n14) {
+				int b = m_nArg;
+				if (CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(b) >= 0)
+					return 1;
+			}
+			break;
+		}
+		case 1: {
+			int a = m_nArg;
+			if (CVStatListSet::Of(pChar)->Find(1)->sub_102012d0(a) < m_n14) {
+				int b = m_nArg;
+				if (CVStatListSet::Of(pChar)->Find(1)->sub_102012d0(b) >= 0)
+					return 1;
+			}
+			break;
+		}
+		case 2:
+			if (m_nArg != 6 || ((CDlgId *)m_pad0000)->sub_100e65d0() == 5) {
+				int a = m_nArg;
+				if (CVStatListSet::Of(pChar)->Find(2)->sub_102012d0(a) < m_n14) {
+					int b = m_nArg;
+					if (CVStatListSet::Of(pChar)->Find(2)->sub_102012d0(b) >= 0)
+						return 1;
+				}
+			}
+			break;
+		case 4: {
+			int a = m_nArg;
+			if (a == 0x16) {
+				if (!pChar->sub_1033f1a0(m_n14))
+					return 1;
+				return 0;
+			}
+			if (((CVFeatSet *)&g_10739d20)->Lookup(a)->sub_101e56e0(pChar) < m_n14) {
+				int b = m_nArg;
+				if (((CVFeatSet *)&g_10739d20)->Lookup(b)->sub_101e56e0(pChar) >= 0)
+					return 1;
+			}
+			break;
+		}
+		}
+		return 0;
+	}
+	switch (m_nType) {
+	case 0: {
+		int a = m_nArg;
+		if (CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(a) < m_n14)
+			return 0;
+		return 1;
+	}
+	case 1: {
+		int a = m_nArg;
+		if (CVStatListSet::Of(pChar)->Find(1)->sub_102012d0(a) < m_n14)
+			return 0;
+		return 1;
+	}
+	case 2: {
+		if (m_nArg == 6 && ((CDlgId *)m_pad0000)->sub_100e65d0() != 5)
+			return 0;
+		int a = m_nArg;
+		if (CVStatListSet::Of(pChar)->Find(2)->sub_102012d0(a) < m_n14)
+			return 0;
+		if (CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(0xc) < m_n14)
+			return 0;
+		return 1;
+	}
+	case 4: {
+		int a = m_nArg;
+		if (a != 0x16) {
+			if (((CVFeatSet *)&g_10739d20)->Lookup(a)->sub_101e56e0(pChar) < m_n14)
+				return 0;
+			return 1;
+		}
+		if (!pChar->sub_1033f1a0(m_n14))
+			return 0;
+		return 1;
+	}
+	case 6:
+		return 0;
+	default:
+		g_109f3630("Unhandled dialog dependency (%s)\n", ((CVDmgBlock16_t *)&m_nType)->sub_102043a0());
+		return 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e9ff0 size=0xac
 #include "CDialogDependency.h"
 #include <string.h>
