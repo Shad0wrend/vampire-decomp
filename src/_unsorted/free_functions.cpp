@@ -83976,6 +83976,135 @@ char CBaseCombatCharacter::sub_10146d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146e20 size=0x4c6
+#include "CNPC_VTzimisce.h"
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+#include "CUnknown101800e0.h"
+struct ConVarView07c { virtual void v0(); virtual char vfunc1(); char m_pad[0x28]; int m_n2c; };
+extern ConVarView07c *g_1070b07c;
+void sub_10119750(const char *fmt, ...);
+int sub_1025d730(int act);
+typedef char (__fastcall *PFN_Slot)(void *p);
+
+inline bool IsGrappling_10146e20(CBaseCombatCharacter *p)
+{
+	return EHandle_Get(*(unsigned int *)&p->m_hTarget1538) && p->m_nTarget153c != -1 && p->m_nTargetMode1540 == 3;
+}
+
+// TARGET: sub_10146e20
+void __fastcall sub_10146e20(CBaseCombatCharacter *self, int, int act, int anim)
+{
+	CBasePlayer *pPlayer = (CBasePlayer *)self->m_pA8;
+	if (!pPlayer)
+		return;
+	self->m_nObfuscateMask14d8 = 0;
+	if (pPlayer->sub_100b3700() & 2)
+		self->m_nObfuscateMask14d8 |= 1;
+	else
+		self->m_nObfuscateMask14d8 |= 4;
+	if (pPlayer->m_nFlags2088 & 0x20)
+		self->m_nObfuscateMask14d8 |= 0x40;
+	if (pPlayer->m_nFlags2088 & 0x400000)
+		self->m_nObfuscateMask14d8 |= 0x80;
+	switch (act)
+	{
+	case 0x12:
+		self->m_nObfuscateMask14d8 |= 2;
+		break;
+	case 9: case 10: case 11: case 12: case 13: case 14: case 15: case 0x16:
+		self->m_nObfuscateMask14d8 |= 8;
+		break;
+	case 0x13: case 0x14: case 0x15: case 0x17:
+		self->m_nObfuscateMask14d8 |= 0x10;
+		break;
+	case 0x27: case 0x28: case 0x2c: case 0x2d:
+		self->m_nObfuscateMask14d8 |= 0x20;
+		break;
+	case 0x19: case 0x1a:
+	case 0x4b: case 0x4d: case 0x4e: case 0x4f: case 0x59:
+	case 0xb0: case 0xb1:
+	case 0x110f: case 0x1114: case 0x111f: case 0x1120:
+		self->m_nObfuscateMask14d8 |= 0x80;
+		break;
+	}
+	switch (anim)
+	{
+	case 5: case 8:
+		self->m_nObfuscateMask14d8 |= 0x80;
+		break;
+	case 10:
+		self->m_nObfuscateMask14d8 |= 0x40;
+		break;
+	}
+	bool bGrappling = false;
+	if (self->m_nObfuscateMask14d8 & 0x80)
+	{
+		if (IsGrappling_10146e20(self))
+		{
+			self->m_nObfuscateMask14d8 &= ~0x100;
+			bGrappling = true;
+		}
+		else
+			self->m_nObfuscateMask14d8 |= 0x100;
+	}
+	else if (IsGrappling_10146e20(self))
+		bGrappling = true;
+	if (self->m_nTarget153c != -1 && EHandle_Get(*(unsigned int *)&self->m_hTarget1538) && !IsGrappling_10146e20(self))
+		self->m_nObfuscateMask14d8 |= 0x400;
+	if (self->sub_1033c900(0x100))
+	{
+		if (!bGrappling && !(self->m_nObfuscateMask14d8 & 0x180))
+			self->m_nObfuscateMask14d8 |= 0x800;
+		self->sub_1033c770(0x100);
+	}
+	if (self->sub_1033c900(0x200000))
+	{
+		self->m_nObfuscateMask14d8 |= 0x180;
+		self->sub_1033c770(0x200000);
+	}
+	if (!(self->m_nObfuscateMask14d8 & 0x40))
+	{
+		if (self->sub_1033c900(0x80))
+		{
+			self->m_nObfuscateMask14d8 |= 0x40;
+			self->sub_1033c770(0x80);
+		}
+		else
+		{
+			CBasePlayer *pThis = (CBasePlayer *)self;
+			void *pWeapon;
+			if (EHandle_Get(pThis->m_hDialogPartnerFE8) || EHandle_Get(pThis->m_hUseEnt1040)
+				|| ((pWeapon = self->sub_1032e7b0()) != 0
+					&& (*(PFN_Slot *)(*(int *)pWeapon + 0x430))(pWeapon)
+					&& (*(PFN_Slot *)(*(int *)pWeapon + 0x42c))(pWeapon)))
+				self->m_nObfuscateMask14d8 |= 0x40;
+		}
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		if (i != 3 && pPlayer->sub_10180100(i)
+			&& gpGlobals->curtime < ((CUnknown101800e0 *)pPlayer)->sub_101800e0(i) + 5.0f)
+		{
+			self->m_nObfuscateMask14d8 |= 0x200;
+			break;
+		}
+	}
+	if (!(self->m_nObfuscateMask14d8 & 0x180))
+		((CBaseCombatCharacter *)pPlayer)->sub_1033c770(0x100000);
+	if (self->m_nObfuscateMask14d8 & 0x5fa)
+		pPlayer->sub_10147430(1);
+	else
+		pPlayer->sub_10147430(0);
+	if (!g_1070b07c->vfunc1() && g_1070b07c->m_n2c)
+	{
+		sub_10119750("actBody: (%d) %s\n", act, sub_1025d730(act));
+		sub_10119750("playerAnim: (%d)\n", anim);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147430 size=0x1e0
 #include "CBasePlayer.h"
 #include "CEventQueue.h"

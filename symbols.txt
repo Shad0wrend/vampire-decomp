@@ -12868,6 +12868,7 @@
 0x10012553 func   ?sub_1006f080@CBaseCineCam@@QAE?AVVector@@H@Z CBaseCineCam::sub_1006f080
 0x10012558 func   ?sub_1030ff10@CUnknown1030fe50Unit@@QAEXH@Z CUnknown1030fe50Unit::sub_1030ff10
 0x1001255d func   ?vfunc19@CAI_StandoffBehavior@@UAEHXZ CAI_StandoffBehavior::vfunc19
+0x10012562 func   ?sub_10146e20@@YIXPAVCBaseCombatCharacter@@HHH@Z sub_10146e20
 0x10012567 func   ?vfunc144@CGenericSabbat_NPC@@UAEXH@Z CGenericSabbat_NPC::vfunc144
 0x1001256c func   ?sub_1022d8a0@@YAXHPBD@Z sub_1022d8a0
 0x10012571 func   ?sub_103ba780@@YG_NPAD@Z sub_103ba780
