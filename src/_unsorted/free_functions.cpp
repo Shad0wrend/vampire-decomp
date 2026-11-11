@@ -198130,6 +198130,21 @@ CAI_NodeGraph *CAI_NodeGraph::sub_102f30f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f3160 size=0x70
+#include "CUnknown102f3160.h"
+
+struct SPtrList
+{
+	void sub_102f31f0();
+};
+
+void CUnknown102f3160::sub_102f3160()
+{
+	((SPtrList *)this)->sub_102f31f0();
+	m_vec.~CUtlVector<int>();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f31f0 size=0x52
 struct SItem { void sub_102fc6b0(); };
 struct SPtrList

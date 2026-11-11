@@ -6821,6 +6821,7 @@
 0x1000a362 func   ?sub_100fa0f0@CBaseEntityList@@QAEXI@Z CBaseEntityList::sub_100fa0f0
 0x1000a367 func   ?vfunc442@CNPC_VFrenzyShadow@@UAEXPAH@Z CNPC_VFrenzyShadow::vfunc442
 0x1000a371 func   ?vfunc373@CWeaponMelee_Tzimisce3Claw@@QAEHXZ CWeaponMelee_Tzimisce3Claw::vfunc373
+0x1000a376 func   ?sub_102f3160@CUnknown102f3160@@QAEXXZ CUnknown102f3160::sub_102f3160
 0x1000a37b func   ?sub_10427620@CGameRulesSlotTable@@QAEHH@Z CGameRulesSlotTable::sub_10427620
 0x1000a380 func   ?sub_100fa6b0@CUnknown10081e70@@QAEXH@Z CUnknown10081e70::sub_100fa6b0
 0x1000a385 func   ?sub_102201c0@@YAXPAUCUnknown101ec4f0Set@@H@Z sub_102201c0
