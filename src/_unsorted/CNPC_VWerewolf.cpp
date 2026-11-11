@@ -465,6 +465,235 @@ int CNPC_VWerewolf::vfunc142(CUnknown101c2a50 *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cdfb0 size=0x610
+#include "CLogicAuto.h"
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include "CAI_Motor.h"
+#include "CEntityVSlots.h"
+#include <math.h>
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern float g_104454c4;
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CWWDevView
+{
+	virtual void v0();
+	virtual bool v1();
+	char pad[0x28];
+	int m_2c;
+};
+extern CWWDevView *g_1093f9a4;
+
+struct CWWOutputView
+{
+	void sub_100cd660(void *pEnt, void *pCaller, int c);
+};
+
+// the navigator-like helper at +0x5d34
+struct CWWHelperView
+{
+	int sub_102ee620();
+	bool sub_102ee6a0();
+	bool sub_102f2ea0();
+	void sub_102ee270();
+};
+
+// the callees of RunTask that the class header does not declare yet
+struct CWWRunTaskView : CNPC_VWerewolf
+{
+	bool sub_103d2a10();
+	void sub_102aacf0(CNPC_VWerewolfTask *pTask);
+	bool sub_103d3c20();
+	int sub_1027a6c0();
+	void sub_10272650(int a);
+	void sub_10273e80(int a);
+	void sub_10280a50();
+	void sub_102ae750(int a, int b);
+	char Slot251() { return ((CEntityVSlots *)(void *)this)->slot251(); }
+};
+
+void CNPC_VWerewolf::vfunc444(CNPC_VWerewolfTask *pTask)
+{
+	CWWRunTaskView *self = (CWWRunTaskView *)this;
+	CWWHelperView *helper = (CWWHelperView *)m_pHelper5d34;
+	ScopeTrace trace("CNPC_VWerewolf::RunTask", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	vfunc449(pTask->m_id);
+	switch (pTask->m_id) {
+	case 0x14b:
+		if (self->Slot251()) {
+			if (sub_103cfc50())
+				self->sub_10273e80(0);
+			else
+				vfunc448_slot(4);
+		} else {
+			m_pMotor5d44->sub_102e1e20(-1);
+		}
+		break;
+	case 0x14c:
+		if (sub_103cf5f0() && self->sub_103d2a10()) {
+			self->sub_10273e80(0);
+			break;
+		}
+		if (!sub_103cf5f0() && sub_103d14f0()) {
+			self->sub_10273e80(0);
+			break;
+		}
+		if (sub_10269aa0(0x77)) {
+			self->sub_10273e80(0);
+			break;
+		}
+		if (sub_10269aa0(0x78)) {
+			self->sub_10273e80(0);
+			break;
+		}
+		if ((pTask->m_flTime == g_104454c4 || !(pTask->m_flTime < gpGlobals->curtime - GetTaskStart5c4c())) && ((CWWHelperView *)m_pHelper5d34)->sub_102ee620()) {
+			if (!((CWWHelperView *)m_pHelper5d34)->sub_102ee6a0()) {
+				m_b1a40 = 0;
+				self->sub_10272650(self->sub_1027a6c0());
+			} else if (((CWWHelperView *)m_pHelper5d34)->sub_102f2ea0()) {
+				m_b1a40 = 0;
+				if (!g_1093f9a4->v1() && g_1093f9a4->m_2c) {
+					self->sub_10273e80(0);
+					break;
+				}
+				if (sub_103d1200()) {
+					self->sub_10273e80(0);
+					break;
+				}
+				vfunc448_slot((int)"Did not path out of player's sight");
+			} else {
+				vfunc528();
+			}
+		} else {
+			m_b1a40 = 0;
+			if (!g_1093f9a4->v1() && g_1093f9a4->m_2c) {
+				self->sub_10273e80(0);
+				break;
+			}
+			if (sub_103d1200()) {
+				self->sub_10273e80(0);
+				break;
+			}
+			vfunc448_slot((int)"Did not path out of player's sight");
+			((CWWHelperView *)m_pHelper5d34)->sub_102ee270();
+		}
+		break;
+	case 0x14d:
+		if (self->sub_103d3c20())
+			self->sub_10273e80(0);
+		break;
+	case 0x150:
+		if (self->Slot251()) {
+			sub_103d9f90();
+			self->sub_10273e80(0);
+		} else {
+			sub_103d93b0();
+			self->sub_10280a50();
+		}
+		break;
+	case 0x151:
+		if (self->Slot251()) {
+			sub_103d9f90();
+			self->sub_10273e80(0);
+		} else {
+			sub_103d93b0();
+			self->sub_10280a50();
+		}
+		break;
+	case 0x154:
+		m_pMotor5d44->sub_102e1e20(-1);
+		if ((float)fabs(m_pMotor5d44->sub_102e1f90()) < 5.0f)
+			self->sub_10273e80(0);
+		break;
+	case 0x155:
+		if (self->Slot251()) {
+			sub_103d9f90();
+			self->sub_10273e80(0);
+			if (m_nState0fec == 0x10b) {
+				sub_103d4a60();
+				self->sub_102ae750(0x158, 0);
+			}
+		} else {
+			sub_103d93b0();
+			self->sub_10280a50();
+		}
+		break;
+	case 0x156:
+		if (self->Slot251()) {
+			sub_103d9f90();
+			self->sub_10273e80(0);
+		} else {
+			sub_103d93b0();
+			self->sub_10280a50();
+		}
+		break;
+	case 0x159:
+		if (self->Slot251()) {
+			self->sub_10273e80(0);
+			m_pHint66c4 = 0;
+			m_nFlags66e8 &= ~2;
+		}
+		break;
+	case 0x15c:
+		if (self->Slot251())
+			self->sub_10273e80(0);
+		else
+			sub_103d93b0();
+		break;
+	case 0x15d:
+		if (self->Slot251()) {
+			self->sub_10273e80(0);
+		} else {
+			sub_103d93b0();
+			vfunc315();
+		}
+		break;
+	case 0x15e:
+		if (self->Slot251()) {
+			sub_103d9f90();
+			sub_103d4690();
+			self->sub_10273e80(0);
+		} else {
+			sub_103d93b0();
+			vfunc315();
+		}
+		break;
+	case 0x15f:
+		if (self->Slot251()) {
+			m_n200 = 2;
+			self->sub_10273e80(0);
+			((CWWOutputView *)m_Out6758)->sub_100cd660(vfunc167(), this, 0);
+		} else {
+			sub_103d93b0();
+		}
+		break;
+	case 0x160:
+		if (self->Slot251())
+			sub_10289ee0(0x120);
+		break;
+	case 0x161:
+		if (self->Slot251()) {
+			sub_103d9f90();
+			sub_103d4690();
+			self->sub_10273e80(0);
+		} else {
+			sub_103d93b0();
+			vfunc315();
+		}
+		break;
+	case 0x14a:
+	case 0x157:
+		self->sub_10273e80(0);
+		break;
+	default:
+		self->sub_102aacf0(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ce750 size=0x1df
 #include "CNPC_VWerewolf.h"
 #include "ScopeTrace.h"
