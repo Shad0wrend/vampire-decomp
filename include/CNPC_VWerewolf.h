@@ -15,6 +15,8 @@ struct CUnknown101c2a50;
 class CBaseEntity;
 class CNPC_VWerewolf;
 class CHintData_WW;
+struct CNPC_VWerewolfTask { int m_id; float m_flTime; };
+class CAI_Motor;
 
 struct CNPC_VWerewolfTimer
 {
@@ -114,23 +116,33 @@ public:
 
 	char pad04[0x198];
 	unsigned int m_nEffectFlags;	// 0x19c: bit 6 is tested by UpdateConditionCanSpecialMove
-	char pad1a0[0xcc];
+	char pad1a0[0x200 - 0x1a0];
+	int m_n200;
+	char pad204[0x26c - 0x204];
 	const char *m_name26c;
 	char pad270[0x2e0 - 0x270];
 	int m_pEdict2e0;	// 0x2e0: the entity's edict
-	char pad2e4[0x1b2c - 0x2e4];
+	char pad2e4[0xfec - 0x2e4];
+	int m_nState0fec;
+	char pad0ff0[0x1a40 - 0xff0];
+	char m_b1a40;
+	char pad1a41[0x1b2c - 0x1a41];
 	int m_n1b2c;	// 0x1b2c: the schedule-selection debug id (SelectSchedule stores 0x29)
 	const char *m_pszFile1b30;	// 0x1b30: source file of the last schedule choice (SelectSchedule / TranslateSchedule record it)
 	int m_nLine1b34;	// 0x1b34: its line
 	char pad1b38[0x5c38 - 0x1b38];
 	CNPC_VWerewolfSchedule *m_pSchedule5c38;	// 0x5c38
-	char pad5c3c[0x5cc0 - 0x5c3c];
+	char pad5c3c[0x5c4c - 0x5c3c];
+	float m_f5c4c;
+	float GetTaskStart5c4c() const { return m_f5c4c; }
+	char pad5c50[0x5cc0 - 0x5c50];
 	int m_nState5cc0;	// 0x5cc0: the NPC state SelectSchedule switches on (0..0xe)
 	char pad5cc4[0x5d34 - 0x5cc4];
 	CNPC_VWerewolfHelper5d34 *m_pHelper5d34;	// 0x5d34
 	char pad5d38[0x5d40 - 0x5d38];
 	class CAI_MoveProbe *m_pMoveProbe5d40;	// 0x5d40: the move probe (CAI_BaseNPCTroika.h m_pMoveProbe5d40); CheckStuck calls its sub_102a99e0 (CAI_MoveProbe.h) for the alt-unstuck hull trace
-	char pad5d44[0x5f2d - 0x5d44];
+	CAI_Motor *m_pMotor5d44;
+	char pad5d48[0x5f2d - 0x5d48];
 	char m_b5f2d;	// 0x5f2d
 	char pad5f2e[0x6264 - 0x5f2e];
 	float m_f6264;	// 0x6264
@@ -773,12 +785,12 @@ public:
 	virtual void vfunc441();
 	virtual void vfunc442();
 	virtual void vfunc443();
-	virtual void vfunc444();
+	virtual void vfunc444(CNPC_VWerewolfTask *pTask);
 	virtual void vfunc445();
 	virtual void vfunc446();
 	virtual void vfunc447();
-	virtual void vfunc448_slot();
-	virtual void vfunc449();
+	virtual void vfunc448_slot(int);
+	virtual void vfunc449(int);
 	virtual void vfunc450();
 	virtual int vfunc451();
 	virtual bool vfunc452();
