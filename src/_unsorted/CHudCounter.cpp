@@ -45,6 +45,41 @@ int CHudCounter::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e300 size=0x151
+#include "CHudCounter.h"
+
+__declspec(dllimport) int Q_snprintf(char *buf, int n, const char *fmt, ...);
+void sub_101434b0(int entityID, int text_offset, const char *text, float duration, int r, int g, int b, int a);
+
+struct ColorView1a0
+{
+	char m_pad[0x1a0];
+	unsigned char r, g, b;
+};
+
+inline int ENTINDEX(int pEdict) { return engine->vfunc35(pEdict); }
+
+// TARGET: CHudCounter::vfunc124
+int CHudCounter::vfunc124()
+{
+	int text_offset = CBaseEntity::vfunc124();
+	if (*(unsigned char *)&m_fDebugOverlays224 & 1)
+	{
+		char tempstr[255];
+		Q_snprintf(tempstr, sizeof(tempstr), "Value: %i", m_nValue);
+		sub_101434b0(ENTINDEX(m_pEdict2e0), text_offset, tempstr, 0, 255, 255, 255, 255);
+		text_offset++;
+		Q_snprintf(tempstr, sizeof(tempstr), "Pos: %5.2f %5.2f", m_flXPos, m_flYPos);
+		sub_101434b0(ENTINDEX(m_pEdict2e0), text_offset, tempstr, 0, 255, 255, 255, 255);
+		text_offset++;
+		Q_snprintf(tempstr, sizeof(tempstr), "Color: %i %i %i", ((ColorView1a0 *)this)->r, ((ColorView1a0 *)this)->g, ((ColorView1a0 *)this)->b);
+		sub_101434b0(ENTINDEX(m_pEdict2e0), text_offset, tempstr, 0, 255, 255, 255, 255);
+		text_offset++;
+	}
+	return text_offset;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e4c0 size=0x1e
 #include "CHudCounter.h"
 
