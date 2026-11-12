@@ -62987,6 +62987,37 @@ void __fastcall sub_100f4770(char *self, int dummy, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f49e0 size=0x141
+#include "CGibShooter.h"
+#include "CGib.h"
+#include "CEntityVSlots.h"
+
+void sub_101cf600(CGib *pGib);
+
+// TARGET: CGibShooter::sub_100f49e0
+void CGibShooter::sub_100f49e0(CGib *pGib, const Vector &vecShootDir)
+{
+    if (pGib)
+    {
+        ((CEntityVSlots *)pGib)->slot62((const float *)((CEntityVSlots *)this)->slot217());
+        Vector vecVelocity = m_flGibVelocity * vecShootDir;
+        pGib->sub_100b2e30(&vecVelocity.x);
+        QAngle angVel = *(QAngle *)pGib->m_angVel3c8;
+        angVel.x = enginerandom->vfunc1(100.0f, 200.0f);
+        angVel.y = enginerandom->vfunc1(100.0f, 300.0f);
+        pGib->sub_100b2f50(&angVel.x);
+        float thinkTime = ( pGib->m_flNextThink - gpGlobals->curtime );
+        pGib->m_flLife73c = (m_flGibLife * enginerandom->vfunc1(0.95, 1.05));
+        if (pGib->m_flLife73c < thinkTime)
+        {
+            pGib->m_flNextThink = gpGlobals->curtime + pGib->m_flLife73c;
+            pGib->m_flLife73c = 0;
+        }
+        sub_101cf600(pGib);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5140 size=0x1a
 namespace lifted {
 extern int g_10565b94;
