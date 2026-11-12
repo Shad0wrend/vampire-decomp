@@ -3606,6 +3606,7 @@
 0x10005c3b func   ?sub_102deec0@UtlMem@@QAEXXZ UtlMem::sub_102deec0
 0x10005c40 func   ?Links@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QBEABULinks_t@1@H@Z CUtlRBTree<CSoundEmitterRecord,int>::Links
 0x10005c40 func   ?sub_101b78f0@CUtlRBTree232@@QAEAAULinks_t@1@H@Z CUtlRBTree232::sub_101b78f0
+0x10005c45 func   ?sub_100bb440@CBeam@@QAEPAMXZ CBeam::sub_100bb440
 0x10005c4a func   ?sub_1018d840@@YIXPAUSThinkView@@HPAUSInputActivator@@@Z sub_1018d840
 0x10005c4f func   _prop_base prop_base
 0x10005c54 func   ?vfunc44@CMultiplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CMultiplayRules::vfunc44

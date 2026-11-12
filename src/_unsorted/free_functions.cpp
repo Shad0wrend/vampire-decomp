@@ -45621,6 +45621,88 @@ float *CBeam::sub_100bb270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bb440 size=0x1c3
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CBeam.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "TestBit.h"
+
+void sub_10137fe0(const float *pIn, const float *pMatrix, float *pOut);
+
+struct CBeamServerUnknownView
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual CBaseEntity *vfunc4();
+};
+
+struct CBeamEdictView
+{
+	char m_pad0000[0x40];
+	CBeamServerUnknownView *m_pUnknown;
+};
+
+static inline CBaseEntity *CBeam_Instance(CBeamEdictView *pEdict)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+	if (!pEdict)
+		pEdict = (CBeamEdictView *)engine->vfunc38(0);
+	return (pEdict && pEdict->m_pUnknown) ? pEdict->m_pUnknown->vfunc4() : 0;
+}
+
+struct BeamHandleV
+{
+	unsigned int m_Index;
+	CBaseEntity *Get() const { return (CBaseEntity *)g_10566458->sub_100290c0((unsigned int *)this); }
+};
+
+static inline int BEAM_ENTINDEX(int pEdict) { return engine->vfunc35(pEdict); }
+
+struct CBeamStartView : CBeam
+{
+	int GetType() const { return m_nBeamType & 0x0F; }
+	int GetEndEntity() const
+	{
+		CBaseEntity *pEntity = ((const BeamHandleV *)&m_hBeamEnts[m_nNumBeamEnts - 1])->Get();
+		return pEntity ? BEAM_ENTINDEX(pEntity->m_pEdict2e0) : 0;
+	}
+};
+
+float *CBeam::sub_100bb440()
+{
+	const CBeamStartView *self = (const CBeamStartView *)this;
+	if (self->GetType() != 0 && self->GetType() != 3 && self->GetEndEntity()) {
+		CBaseEntity *pStart = CBeam_Instance((CBeamEdictView *)engine->vfunc38(self->GetEndEntity()));
+		if (pStart)
+			return (float *)((CEntityVSlots *)pStart)->slot217();
+	}
+	if (!EHandle_Get(m_hMoveParent))
+		return m_vecEndPos;
+	static Vector s_vecResult;
+	if (TestBit(m_flags268, 11))
+		vfunc98();
+	sub_10137fe0(m_vecEndPos, (float *)((char *)this + 0x130), (float *)&s_vecResult);
+	return (float *)&s_vecResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bb6b0 size=0x4e
 #include "CBeam.h"
 
