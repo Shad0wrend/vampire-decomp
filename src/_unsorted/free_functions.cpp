@@ -193461,6 +193461,48 @@ bool CAI_BaseNPCTroika::sub_102b7f40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b8980 size=0x6c
+namespace block_102b8980 {
+struct CUnit {
+	char pad[0x5d8c];
+	int m_unk5d8c;
+	char pad5d90[0x6340 - 0x5d90];
+	bool m_unk6340;
+	char pad6341[0x63f4 - 0x6341];
+	int m_unk63f4;
+	void sub_102b5dc0(int value);
+	int sub_102b8980();
+};
+#pragma auto_inline(off)
+void CUnit::sub_102b5dc0(int value)
+{
+	m_unk63f4 = value;
+}
+
+int CUnit::sub_102b8980()
+{
+	if (m_unk6340)
+		sub_102b5dc0(3);
+	switch (m_unk63f4) {
+	case 1:
+		sub_102b5dc0(2);
+		return 0x4d;
+	case 2:
+	case 3:
+		sub_102b5dc0(3);
+		return (m_unk5d8c & 0x8000000) != 0 ? 0x52 : 0x51;
+	case 0:
+		sub_102b5dc0(1);
+		return 0x4c;
+	default:
+		sub_102b5dc0(1);
+		return 0x4c;
+	}
+}
+}
+// TARGET: block_102b8980::CUnit::sub_102b8980
+// END FUNCTION
+
 // FUNCTION: 0x102b8cd0 size=0x38
 #include "CAI_BaseNPCTroika.h"
 

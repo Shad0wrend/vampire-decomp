@@ -15575,6 +15575,7 @@
 0x10015898 func   ?vfunc193@CPayphone@@UAE?AVVector@@XZ CPayphone::vfunc193
 0x1001589d func   ?sub_102e84a0@CUnknown102e83e0@@QAEXD@Z CUnknown102e83e0::sub_102e84a0
 0x100158a2 func   ?sub_101cf9b0@@YA_NH@Z sub_101cf9b0
+0x100158a7 func   ?sub_102b8980@CUnit@block_102b8980@@QAEHXZ block_102b8980::CUnit::sub_102b8980
 0x100158ac func   ?sub_1028d7e0@@YAXXZ sub_1028d7e0
 0x100158b1 func   ?vfunc39@CPhysicsProp@@UAEXPAVCBaseEntity@@@Z CPhysicsProp::vfunc39
 0x100158b6 func   ?vfunc311@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc311
