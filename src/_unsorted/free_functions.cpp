@@ -266955,6 +266955,35 @@ void __cdecl sub_10427dc0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10427fc0 size=0x7b
+extern int g_106ac398;
+
+int sub_10427fc0(int n, int *items, int *weights)
+{
+	if (n < 1)
+		return -1;
+	if (n == 1)
+		return items[0];
+	int total = 0;
+	int i;
+	for (i = 0; i < n; i++)
+		total += weights[i];
+	if (total < 1)
+	{
+		g_106ac398 = enginerandom->vfunc2(0, n - 1);
+		return items[g_106ac398];
+	}
+	int r = g_106ac398 = enginerandom->vfunc2(0, total - 1);
+	for (i = 0; i < n; i++)
+	{
+		if (r < weights[i])
+			return items[i];
+		r -= weights[i];
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10428060 size=0x6d
 extern int g_106ac398;
 int sub_10428060(int n, int *items, int *w)

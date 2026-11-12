@@ -10034,6 +10034,7 @@
 0x1000e65b func   ?sub_10078520@CUnknown10078520@@QAEHXZ CUnknown10078520::sub_10078520
 0x1000e665 func   ?sub_100f7930@CLinkedList100f7930@@QAEPAUCLinkedEnt100f7930@@PAU2@PBD@Z CLinkedList100f7930::sub_100f7930
 0x1000e66a func   ?sub_10200fc0@CVStatList_t@@QAEDHH@Z CVStatList_t::sub_10200fc0
+0x1000e66f func   ?sub_10427fc0@@YAHHPAH0@Z sub_10427fc0
 0x1000e674 func   ?vfunc81@CWeaponMelee_Knife@@UAEHXZ CWeaponMelee_Knife::vfunc81
 0x1000e679 func   ?sub_10288670@CAI_Motor@@QAEXM@Z CAI_Motor::sub_10288670
 0x1000e67e func   ?vfunc103@CRagdollProp@@UAEXXZ CRagdollProp::vfunc103
