@@ -266542,6 +266542,77 @@ void CBaseGrenade::sub_1042a540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042a750 size=0x342
+#include "CAI_BaseNPC_vfunc144.h"
+#include "CBaseGrenade.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown101c26d0.h"
+#include "CSoundEnt.h"
+#include "CGameTrace.h"
+#include "ehandle.h"
+#include "globalvars.h"
+
+extern CGlobalEntityList *g_10566458;
+CGameTrace *sub_1003e250(CGameTrace *pTrace);
+void sub_101c2c30();
+void sub_101c2c60();
+void sub_10139610(const float *angles, Vector *forward, Vector *right, Vector *up);
+
+inline bool GrenadeDirtyAbsVelocity(CBaseGrenade *p)
+{
+	return (p->m_flags268 >> 12) & 1;
+}
+
+inline const Vector &GrenadeAbsVelocity(CBaseGrenade *p)
+{
+	if (GrenadeDirtyAbsVelocity(p))
+		p->sub_100b1d10();
+	return p->m_vecVelocity3bc;
+}
+
+void CBaseGrenade::sub_1042a750(CBaseEntity *pOther)
+{
+	if (pOther == g_10566458->sub_100290c0(&m_hHeld19b0))
+		return;
+
+	if (m_flNextAttack1564 < gpGlobals->curtime && VectorLength(GrenadeAbsVelocity(this)) > 100) {
+		if (g_10566458->sub_100290c0(&m_hHeld19b0)) {
+			CGameTrace tr;
+			sub_1003e250(&tr);
+			sub_101c2c30();
+			Vector forward;
+			sub_10139610(vfunc221(), &forward, 0, 0);
+			CUnknown101c26d0 info;
+			pOther->sub_100a7d00((int)info.sub_101c26d0(((EHANDLE *)&m_hHeld19b0)->Get(), ((EHANDLE *)&m_hHeld19b0)->Get(), 1.0f, 1, 0, 0, -1), (int)&forward, (int)&tr);
+			sub_101c2c60();
+		}
+		m_flNextAttack1564 = gpGlobals->curtime + 1.0;
+	}
+
+	Vector vecTestVelocity;
+	vecTestVelocity = GrenadeAbsVelocity(this);
+	vecTestVelocity.z *= 0.45;
+
+	if (!m_pad19b4 && vecTestVelocity.Length() <= 60) {
+		CSoundEnt::sub_101babc0(8, (const Vector *)vfunc220(), (int)(m_flDamage * 2.5), 0.3f, 0);
+		m_pad19b4 = 1;
+	}
+
+	if (sub_100b3700() & 1) {
+		Vector vel = GrenadeAbsVelocity(this) * 0.8f;
+		sub_100b2e30(&vel.x);
+	} else {
+		vfunc408();
+	}
+
+	m_flPlaybackRate6f4 = GrenadeAbsVelocity(this).Length() * 0.005;
+	if (m_flPlaybackRate6f4 > 1.0)
+		m_flPlaybackRate6f4 = 1;
+	else if (m_flPlaybackRate6f4 < 0.5)
+		m_flPlaybackRate6f4 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042ab80 size=0x108
 #include "CBaseGrenade.h"
 #include "CEHandleGet.h"
