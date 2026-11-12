@@ -6121,6 +6121,7 @@
 0x10008ff8 func   ?sub_102daf80@CAI_InterestingPlace@@QAEXH@Z CAI_InterestingPlace::sub_102daf80
 0x10008ffd func   ?sub_100bcd70@bf_write@@QAE_NPAVbf_read@@H@Z bf_write::sub_100bcd70
 0x10009002 func   ?vfunc5@CNPC_VSheriffMan@@QAEPAV1@I@Z CNPC_VSheriffMan::vfunc5
+0x10009007 func   ?sub_1042db40@@YAXABVVector@@0HMPAM1@Z sub_1042db40
 0x1000900c func   ?sub_100f8700@CGlobalEntityList@@QAEXI@Z CGlobalEntityList::sub_100f8700
 0x10009011 func   ?sub_10149c80@@YA_NXZ sub_10149c80
 0x10009016 func   ?sub_10312b20@@YIXPAD@Z sub_10312b20

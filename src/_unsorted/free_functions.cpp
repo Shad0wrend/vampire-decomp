@@ -283548,6 +283548,82 @@ char CUnknown1042d9a0::sub_1042daa0(CUnknown1042d9a0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042db40 size=0x1dd
+#include "CPositionInterpolator_Rope.h"
+#include "CRopeNodeInit.h"
+#include "CRopeEndVec.h"
+
+#define ROPESLACK_FUDGEFACTOR	-100
+#define min(a,b) (((a) < (b)) ? (a) : (b))
+
+struct CUnkElem { int pad; };
+struct CUnknown1002c900 { void *sub_1002c900(); };
+void __stdcall sub_10025e50(char *base, unsigned stride, int count, void (CUnkElem::*fn)());
+struct CRopeEnds
+{
+	float v[2][3];
+	__forceinline CRopeEnds() { sub_10025e50((char *)v, 12, 2, (void (CUnkElem::*)())&CUnknown1002c900::sub_1002c900); }
+	Vector &operator[](int i) { return *(Vector *)v[i]; }
+};
+
+extern char g_10516cd4[];	// CRopePhysics<512>'s vtable
+extern char g_10516cc4[];	// CHangRope's vtable
+
+struct CRopePhysics512View
+{
+	CRopeSimBase m_base;
+	CRopeNodeInit m_Nodes[512];
+	CRopeLink m_Springs[511];
+	__forceinline CRopePhysics512View() : m_base(m_Nodes, 512, m_Springs) { *(void **)this = g_10516cd4; }
+	CRopeNode *GetNode(int iNode) { return &m_base.m_pNodes[iNode]; }
+	int NumNodes() { return m_base.m_nNodes; }
+};
+
+struct CHangRopeView : public CRopePhysics512View
+{
+	CRopeEnds m_vEndPoints;
+	bool m_bAdjustSlack;
+	float m_flRopeLength;
+	float m_flCurSlack;
+	float m_flWantedHangDist;
+	float m_flStartZ;
+	__forceinline CHangRopeView() { *(void **)this = g_10516cc4; }
+};
+
+void sub_1042db40(const Vector &vStartPos, const Vector &vEndPos, int const nNodes, float const desiredHang, float *pOutputLength, float *pOutputSlack)
+{
+	CHangRopeView rope;
+
+	rope.m_flCurSlack = -ROPESLACK_FUDGEFACTOR;
+
+	rope.m_vEndPoints[0] = vStartPos;
+	rope.m_vEndPoints[1] = vEndPos;
+
+	Vector d = vEndPos - vStartPos;
+	rope.m_flRopeLength = (float)FastSqrt(d.x * d.x + d.y * d.y + d.z * d.z);
+	rope.m_flWantedHangDist = desiredHang;
+
+	rope.m_flStartZ = min(vStartPos.z, vEndPos.z);
+
+	rope.m_base.sub_10249340(nNodes);
+
+	for (int i = 0; i < rope.NumNodes(); i++)
+	{
+		CRopeNode *pNode = rope.GetNode(i);
+
+		float t = (float)i / (rope.NumNodes() - 1);
+		VectorLerp(vStartPos, vEndPos, t, rope.GetNode(i)->m_vPos);
+		pNode->m_vPrevPos = pNode->m_vPos;
+	}
+
+	rope.m_base.sub_10249390();
+	rope.m_base.sub_10249470(3);
+
+	*pOutputLength = rope.m_flRopeLength;
+	*pOutputSlack = rope.m_flCurSlack;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042def0 size=0x3
 struct CUnknown1042def0 { void * sub_1042def0(); };
 void * CUnknown1042def0::sub_1042def0()
