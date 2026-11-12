@@ -72,7 +72,7 @@ public:
 	virtual void vfunc78(const char *pszValue);	// message write: a string
 	virtual void vfunc79(); virtual void vfunc80(); virtual void vfunc81(int idx, const char *pszFormat, ...);	/* Con_NPrintf (variadic: cdecl, the caller pushes this and pops all) */
 	virtual int vfunc82(const char *pszName, int size);	// registers a user message by name and size, returns its id
-	virtual void vfunc83();
+	virtual const char *vfunc83();	// Cmd_Args
 	virtual const char *vfunc84(int index);	// Cmd_Argv
 	virtual int vfunc85();	// Cmd_Argc
 	virtual void vfunc86(); virtual float vfunc87();	/* Time: the engine time in seconds (returned in ST0) */ virtual void vfunc88(); virtual void vfunc89(char *pszBuffer);	/* GetGameDir */ virtual void *vfunc90(const char *pszName, int *pLength);	/* LoadFileForMe: the file's contents (0 when missing), its length in *pLength */
