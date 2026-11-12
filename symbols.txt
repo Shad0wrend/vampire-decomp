@@ -1265,6 +1265,7 @@
 0x10002af9 func   ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z CBaseEntity::vfunc216
 0x10002afe func   ?vfunc81@CGargoyleTalisman@@QAEHXZ CGargoyleTalisman::vfunc81
 0x10002b03 func   ?sub_100b3db0@@YAPAVCBaseEntity@@PBD0H@Z sub_100b3db0
+0x10002b08 func   ?sub_100a0a10@matrix3x4_t@@QAEXPAVVector@@PBV2@@Z matrix3x4_t::sub_100a0a10
 0x10002b12 func   ?vfunc599@CAI_BaseNPCTroika@@UAEDH@Z CAI_BaseNPCTroika::vfunc599
 0x10002b17 func   ?vfunc81@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc81
 0x10002b1c func   ?vfunc440@CNPC_VHumanCombatant@@QAEHH@Z CNPC_VHumanCombatant::vfunc440

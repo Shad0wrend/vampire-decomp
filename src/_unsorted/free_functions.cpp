@@ -38510,6 +38510,21 @@ matrix3x4_t *matrix3x4_t::sub_100a0990(float m00, float m01, float m02, float m0
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0a10 size=0x94
+#include "matrix3x4_t.h"
+
+void matrix3x4_t::sub_100a0a10(Vector *pOut, const Vector *pIn)
+{
+	Vector in1t = *pIn;
+	in1t.x -= m_flMatVal[0][3];
+	in1t.y -= m_flMatVal[1][3];
+	in1t.z -= m_flMatVal[2][3];
+	pOut->Init(in1t.x * m_flMatVal[0][0] + in1t.y * m_flMatVal[1][0] + in1t.z * m_flMatVal[2][0],
+		in1t.x * m_flMatVal[0][1] + in1t.y * m_flMatVal[1][1] + in1t.z * m_flMatVal[2][1],
+		in1t.x * m_flMatVal[0][2] + in1t.y * m_flMatVal[1][2] + in1t.z * m_flMatVal[2][2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a0ae0 size=0x26
 #include "CBaseHandle.h"
 
