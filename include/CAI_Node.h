@@ -10,7 +10,13 @@ public:
 	float m_aHullHeight[22];	// 0x14: the node's height above the floor per hull
 	int m_n6c;	// 0x6c
 	int m_nType;	// 0x70: 1 ground, 2 air, 3 climb, 4 water
-	int m_n74;	// 0x74
+	union {
+		int m_n74;	// 0x74
+		struct {
+			unsigned int m_nFlags74Low : 28;
+			unsigned int m_bFlag74_28 : 1;
+		};
+	};
 	int m_n78;	// 0x78: cleared for every node by CAI_NodeGraph::sub_102f4e00
 	struct CAI_NodeLink **m_ppLinks;	// 0x7c: array of m_n78 link pointers
 	int m_n80;	// 0x80: allocation count of the CUtlVector-shaped link memory at +0x7c (memory +0x7c, alloc +0x80, grow +0x84, size +0x88, elements +0x8c)
