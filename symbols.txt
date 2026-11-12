@@ -1354,6 +1354,7 @@
 0x10002c7a func   _info_player_start info_player_start
 0x10002c7f func   ?sub_101ab360@@YAPAXPAXHHH@Z sub_101ab360
 0x10002c84 func   ?sub_1042fc90@@YAII@Z sub_1042fc90
+0x10002c89 func   ?sub_10244910@@YA_NABVVector@@0000ABUcplane_t@@M@Z sub_10244910
 0x10002c8e func   ?vfunc5@CAI_RatLocalNavigator@@QAE_NHHHHH@Z CAI_RatLocalNavigator::vfunc5
 0x10002c93 func   ?vfunc5@CFunc_DustMotes@@QAEPAV1@I@Z CFunc_DustMotes::vfunc5
 0x10002c98 func   ?sub_10036b10@CPhysicsPushedEntities@@QAEXXZ CPhysicsPushedEntities::sub_10036b10

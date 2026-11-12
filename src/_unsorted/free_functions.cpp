@@ -173555,6 +173555,232 @@ bool sub_102437d0(const mat34 &worldToBox1, const mat34 &box2ToWorld,
 }
 // END FUNCTION
 
+// FUNCTION: 0x10244910 size=0x882
+#include <math.h>
+#include "Vector.h"
+
+struct cplane_t
+{
+	Vector normal;
+	float dist;
+	unsigned char type;
+	unsigned char signbits;
+	unsigned char pad[2];
+};
+
+int sub_10139200(const Vector &emins, const Vector &emaxs, const cplane_t *plane);	// BoxOnPlaneSide
+bool sub_102453d0(float flEdgeY, float flEdgeX, float flAbsEdgeY, float flAbsEdgeX,
+	const Vector &p2, const Vector &p3, const Vector &vecExtents, float flTolerance);	// AxisTestEdgeCrossZ1
+
+__forceinline void VectorSubtractF(const Vector &a, const Vector &b, Vector &c) { c.x = a.x - b.x; c.y = a.y - b.y; c.z = a.z - b.z; }
+#define FloatMakePositive(f) ((float)fabs(f))
+
+inline void FindMinMax(float v1, float v2, float v3, float &min, float &max)
+{
+	min = max = v1;
+	if (v2 < min) { min = v2; }
+	if (v2 > max) { max = v2; }
+	if (v3 < min) { min = v3; }
+	if (v3 > max) { max = v3; }
+}
+
+inline bool AxisTestEdgeCrossX2(float flEdgeZ, float flEdgeY, float flAbsEdgeZ, float flAbsEdgeY,
+	const Vector &p1, const Vector &p3, const Vector &vecExtents, float flTolerance)
+{
+	float flDist1 = flEdgeZ * p1.y - flEdgeY * p1.z;
+	float flDist3 = flEdgeZ * p3.y - flEdgeY * p3.z;
+	float flDistBox = flAbsEdgeZ * vecExtents.y + flAbsEdgeY * vecExtents.z;
+	if (flDist1 < flDist3)
+	{
+		if ((flDist1 > (flDistBox + flTolerance)) || (flDist3 < -(flDistBox + flTolerance)))
+			return false;
+	}
+	else
+	{
+		if ((flDist3 > (flDistBox + flTolerance)) || (flDist1 < -(flDistBox + flTolerance)))
+			return false;
+	}
+	return true;
+}
+
+inline bool AxisTestEdgeCrossX3(float flEdgeZ, float flEdgeY, float flAbsEdgeZ, float flAbsEdgeY,
+	const Vector &p1, const Vector &p2, const Vector &vecExtents, float flTolerance)
+{
+	float flDist1 = flEdgeZ * p1.y - flEdgeY * p1.z;
+	float flDist2 = flEdgeZ * p2.y - flEdgeY * p2.z;
+	float flDistBox = flAbsEdgeZ * vecExtents.y + flAbsEdgeY * vecExtents.z;
+	if (flDist1 < flDist2)
+	{
+		if ((flDist1 > (flDistBox + flTolerance)) || (flDist2 < -(flDistBox + flTolerance)))
+			return false;
+	}
+	else
+	{
+		if ((flDist2 > (flDistBox + flTolerance)) || (flDist1 < -(flDistBox + flTolerance)))
+			return false;
+	}
+	return true;
+}
+
+inline bool AxisTestEdgeCrossY2(float flEdgeZ, float flEdgeX, float flAbsEdgeZ, float flAbsEdgeX,
+	const Vector &p1, const Vector &p3, const Vector &vecExtents, float flTolerance)
+{
+	float flDist1 = -flEdgeZ * p1.x + flEdgeX * p1.z;
+	float flDist3 = -flEdgeZ * p3.x + flEdgeX * p3.z;
+	float flDistBox = flAbsEdgeZ * vecExtents.x + flAbsEdgeX * vecExtents.z;
+	if (flDist1 < flDist3)
+	{
+		if ((flDist1 > (flDistBox + flTolerance)) || (flDist3 < -(flDistBox + flTolerance)))
+			return false;
+	}
+	else
+	{
+		if ((flDist3 > (flDistBox + flTolerance)) || (flDist1 < -(flDistBox + flTolerance)))
+			return false;
+	}
+	return true;
+}
+
+inline bool AxisTestEdgeCrossY3(float flEdgeZ, float flEdgeX, float flAbsEdgeZ, float flAbsEdgeX,
+	const Vector &p1, const Vector &p2, const Vector &vecExtents, float flTolerance)
+{
+	float flDist1 = -flEdgeZ * p1.x + flEdgeX * p1.z;
+	float flDist2 = -flEdgeZ * p2.x + flEdgeX * p2.z;
+	float flDistBox = flAbsEdgeZ * vecExtents.x + flAbsEdgeX * vecExtents.z;
+	if (flDist1 < flDist2)
+	{
+		if ((flDist1 > (flDistBox + flTolerance)) || (flDist2 < -(flDistBox + flTolerance)))
+			return false;
+	}
+	else
+	{
+		if ((flDist2 > (flDistBox + flTolerance)) || (flDist1 < -(flDistBox + flTolerance)))
+			return false;
+	}
+	return true;
+}
+
+inline bool AxisTestEdgeCrossZ1(float flEdgeY, float flEdgeX, float flAbsEdgeY, float flAbsEdgeX,
+	const Vector &p2, const Vector &p3, const Vector &vecExtents, float flTolerance)
+{
+	float flDist2 = flEdgeY * p2.x - flEdgeX * p2.y;
+	float flDist3 = flEdgeY * p3.x - flEdgeX * p3.y;
+	float flDistBox = flAbsEdgeY * vecExtents.x + flAbsEdgeX * vecExtents.y;
+	if (flDist3 < flDist2)
+	{
+		if ((flDist3 > (flDistBox + flTolerance)) || (flDist2 < -(flDistBox + flTolerance)))
+			return false;
+	}
+	else
+	{
+		if ((flDist2 > (flDistBox + flTolerance)) || (flDist3 < -(flDistBox + flTolerance)))
+			return false;
+	}
+	return true;
+}
+
+inline bool AxisTestEdgeCrossZ2(float flEdgeY, float flEdgeX, float flAbsEdgeY, float flAbsEdgeX,
+	const Vector &p1, const Vector &p3, const Vector &vecExtents, float flTolerance)
+{
+	float flDist1 = flEdgeY * p1.x - flEdgeX * p1.y;
+	float flDist3 = flEdgeY * p3.x - flEdgeX * p3.y;
+	float flDistBox = flAbsEdgeY * vecExtents.x + flAbsEdgeX * vecExtents.y;
+	if (flDist1 < flDist3)
+	{
+		if ((flDist1 > (flDistBox + flTolerance)) || (flDist3 < -(flDistBox + flTolerance)))
+			return false;
+	}
+	else
+	{
+		if ((flDist3 > (flDistBox + flTolerance)) || (flDist1 < -(flDistBox + flTolerance)))
+			return false;
+	}
+	return true;
+}
+
+bool sub_10244910(const Vector &vecBoxCenter, const Vector &vecBoxExtents,
+	const Vector &v1, const Vector &v2, const Vector &v3,
+	const cplane_t &plane, float flTolerance)
+{
+	float flMin, flMax;
+	Vector p1, p2, p3;
+
+	p1.x = v1.x - vecBoxCenter.x;
+	p2.x = v2.x - vecBoxCenter.x;
+	p3.x = v3.x - vecBoxCenter.x;
+	FindMinMax(p1.x, p2.x, p3.x, flMin, flMax);
+	if ((flMin > (vecBoxExtents.x + flTolerance)) || (flMax < -(vecBoxExtents.x + flTolerance)))
+		return false;
+
+	p1.y = v1.y - vecBoxCenter.y;
+	p2.y = v2.y - vecBoxCenter.y;
+	p3.y = v3.y - vecBoxCenter.y;
+	FindMinMax(p1.y, p2.y, p3.y, flMin, flMax);
+	if ((flMin > (vecBoxExtents.y + flTolerance)) || (flMax < -(vecBoxExtents.y + flTolerance)))
+		return false;
+
+	p1.z = v1.z - vecBoxCenter.z;
+	p2.z = v2.z - vecBoxCenter.z;
+	p3.z = v3.z - vecBoxCenter.z;
+	FindMinMax(p1.z, p2.z, p3.z, flMin, flMax);
+	if ((flMin > (vecBoxExtents.z + flTolerance)) || (flMax < -(vecBoxExtents.z + flTolerance)))
+		return false;
+
+	{
+	Vector vecEdge, vecAbsEdge;
+
+	vecEdge = p2 - p1;
+	vecAbsEdge.y = FloatMakePositive(vecEdge.y);
+	vecAbsEdge.z = FloatMakePositive(vecEdge.z);
+	if (!AxisTestEdgeCrossX2(vecEdge.z, vecEdge.y, vecAbsEdge.z, vecAbsEdge.y, p1, p3, vecBoxExtents, flTolerance))
+		return false;
+
+	vecAbsEdge.x = FloatMakePositive(vecEdge.x);
+	if (!AxisTestEdgeCrossY2(vecEdge.z, vecEdge.x, vecAbsEdge.z, vecAbsEdge.x, p1, p3, vecBoxExtents, flTolerance))
+		return false;
+
+	if (!AxisTestEdgeCrossZ1(vecEdge.y, vecEdge.x, vecAbsEdge.y, vecAbsEdge.x, p2, p3, vecBoxExtents, flTolerance))
+		return false;
+
+	vecEdge = p3 - p2;
+	vecAbsEdge.y = FloatMakePositive(vecEdge.y);
+	vecAbsEdge.z = FloatMakePositive(vecEdge.z);
+	if (!AxisTestEdgeCrossX2(vecEdge.z, vecEdge.y, vecAbsEdge.z, vecAbsEdge.y, p1, p2, vecBoxExtents, flTolerance))
+		return false;
+
+	vecAbsEdge.x = FloatMakePositive(vecEdge.x);
+	if (!AxisTestEdgeCrossY2(vecEdge.z, vecEdge.x, vecAbsEdge.z, vecAbsEdge.x, p1, p2, vecBoxExtents, flTolerance))
+		return false;
+
+	if (!AxisTestEdgeCrossZ2(vecEdge.y, vecEdge.x, vecAbsEdge.y, vecAbsEdge.x, p1, p3, vecBoxExtents, flTolerance))
+		return false;
+
+	VectorSubtractF(p1, p3, vecEdge);
+	vecAbsEdge.y = FloatMakePositive(vecEdge.y);
+	vecAbsEdge.z = FloatMakePositive(vecEdge.z);
+	if (!AxisTestEdgeCrossX3(vecEdge.z, vecEdge.y, vecAbsEdge.z, vecAbsEdge.y, p1, p2, vecBoxExtents, flTolerance))
+		return false;
+
+	vecAbsEdge.x = FloatMakePositive(vecEdge.x);
+	if (!AxisTestEdgeCrossY3(vecEdge.z, vecEdge.x, vecAbsEdge.z, vecAbsEdge.x, p1, p2, vecBoxExtents, flTolerance))
+		return false;
+
+	if (!sub_102453d0(vecEdge.y, vecEdge.x, vecAbsEdge.y, vecAbsEdge.x, p2, p3, vecBoxExtents, flTolerance))
+		return false;
+	}
+
+	{
+	Vector vecMin, vecMax;
+	VectorSubtractF(vecBoxCenter, vecBoxExtents, vecMin);
+	VectorAdd(vecBoxCenter, vecBoxExtents, vecMax);
+	if (sub_10139200(vecMin, vecMax, &plane) != 3)
+		return false;
+	}
+
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102453d0 size=0x9b
 #include "Vector.h"
 
