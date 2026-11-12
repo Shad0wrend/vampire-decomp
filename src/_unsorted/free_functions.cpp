@@ -162775,6 +162775,70 @@ int SIdList::sub_10227d20(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227da0 size=0xf9
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CUnknown102304e0.h"
+#include "CUnknown101f0d40.h"
+#include "CUnknown10332fc0.h"
+
+extern CUnknown102304e0 g_107510b8;
+extern int g_1073a9f4;
+
+struct CharView
+{
+	char m_pad0000[0x2e0];
+	int m_pEdict2e0;
+	char m_pad02e4[0x1460 - 0x2e4];
+	int m_nList1460;
+	int *m_pList1464;
+	int m_nCached1468;
+};
+
+struct StatBlock
+{
+	char m_data[0x38];
+	void sub_101f08a0(int a, int b, int c);
+	int sub_101f0910();
+};
+struct StatOwnerRec { char m_pad[0xdc]; int *m_pValues; };
+struct StatOwner
+{
+	StatOwnerRec *sub_10207c20(int id);
+};
+struct StatTable
+{
+	CUnknown101f0d40 *sub_101f1aa0(int id);
+};
+extern StatOwner g_1074f028;
+extern StatTable g_1073a9a0;
+
+struct CLevelNames { int sub_10227da0(CBaseCombatCharacter *pA, CBaseCombatCharacter *pB); };
+
+// TARGET: CLevelNames::sub_10227da0
+int CLevelNames::sub_10227da0(CBaseCombatCharacter *pA, CBaseCombatCharacter *pB)
+{
+	CharView *pViewA = (CharView *)pA;
+	CharView *pViewB = (CharView *)pB;
+	int nBase = pViewA->m_nCached1468;
+	if (nBase == -9999) {
+		nBase = g_107510b8.sub_102304e0(g_1073a9f4, pB) + 0x32;
+		int a = pA->sub_10337860();
+		int b = pB->sub_10337860();
+		nBase += g_1074f028.sub_10207c20(a)->m_pValues[b];
+		pViewA->m_nCached1468 = nBase;
+	}
+	StatBlock block;
+	int nA = pViewA->m_pEdict2e0;
+	int nEdictB = pViewB->m_pEdict2e0;
+	nA = engine->vfunc35(nA);
+	block.sub_101f08a0(nA, engine->vfunc35(nEdictB), nBase);
+	for (int i = 0; i < pViewB->m_nList1460; i++)
+		g_1073a9a0.sub_101f1aa0(pViewB->m_pList1464[i])->sub_101f0d40((int *)&block);
+	return ((CUnknown10332fc0 *)pA)->sub_10332fc0(pB) + block.sub_101f0910();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227ee0 size=0x52
 struct SA { int sub_102306d0(int, int); };
 struct SB { const char *sub_102030a0(int, int); };
