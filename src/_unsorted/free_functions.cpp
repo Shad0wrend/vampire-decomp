@@ -65130,6 +65130,26 @@ void __stdcall sub_100f8a20(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8a40 size=0x30
+struct COuter100f8a40
+{
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual void v3(const char *fmt, int nArgs, int pArgs);
+	virtual void v4(const char *fmt);
+};
+struct CInner100f8a40 { void sub_100f8a40(const char *fmt); };
+
+// TARGET: CInner100f8a40::sub_100f8a40
+void CInner100f8a40::sub_100f8a40(const char *fmt)
+{
+	char *ap = (char *)&fmt;
+	COuter100f8a40 *pOuter = (COuter100f8a40 *)((char *)this - 4);
+	const char *f = *(const char *volatile *)&fmt;
+	pOuter->v3(f, 1, (int)&ap);
+	pOuter->v4(f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8e20 size=0x80
 void *sub_10430fa0(void *, const void *, unsigned);
 
