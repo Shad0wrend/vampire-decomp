@@ -16,6 +16,7 @@ public:
 
 	CTriggerWWZone *sub_103dad80();
 	void vfunc175(CBaseEntity *pOther);
+	void vfunc176(CBaseEntity *pOther);
 	void sub_103daf10();	// calls slot 77 on every valid entity of the handle list
 	virtual void vfunc119();	// "CTriggerWWZone::Kill": scope trace (entity name), disables the trigger (CBaseTrigger::sub_101c4dd0), sets the think function to the stub at 0x10015b68 and the next think to curtime + 1.0f
 	virtual void vfunc113();	// "CTriggerWWZone::Activate": scope trace (entity name), the base activation, then sub_1000dfd0
