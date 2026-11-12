@@ -24847,6 +24847,35 @@ char CUnknown10076ef0::sub_10076ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10076f10 size=0x6a
+extern char g_106b8540[];
+struct S10076f10 {
+    char pad[0x1b1];
+    char m1b1;
+    char m1b2[0x80];
+    char m232[0x80];
+    void sub_10076f10(char c, const char *a, const char *b);
+};
+inline void CopyStr(char *d, const char *s)
+{
+    while ((*d++ = *s++) != 0)
+        ;
+}
+// TARGET: S10076f10::sub_10076f10
+void S10076f10::sub_10076f10(char c, const char *a, const char *b)
+{
+    m1b1 = c;
+    if (a)
+        CopyStr(m1b2, a);
+    else
+        CopyStr(m1b2, g_106b8540);
+    if (b)
+        CopyStr(m232, b);
+    else
+        CopyStr(m232, g_106b8540);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10076fa0 size=0x7
 struct CUnknown10076fa0 { char * sub_10076fa0(); };
 char * CUnknown10076fa0::sub_10076fa0()
