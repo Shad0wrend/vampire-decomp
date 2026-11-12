@@ -18,6 +18,8 @@ struct AI_Arc280_t	// AI_Arc_t: center, span (degrees)
 
 struct Elem280_t	// AI_MoveSuggestion_t: type, weight, arc (center, span), obstacle handle, +0x14, debug name
 {
+	Elem280_t() : type(7), weight(0), m_14(0) { name[0] = 0; }
+	Elem280_t(const Elem280_t &other);	// 0x1030b2a0 (compiler-generated, out of line)
 	Elem280_t(int newType, float newWeight, float newDir, float newSpan, IHandleEntity *pEntity = 0)
 	{
 		type = newType;
