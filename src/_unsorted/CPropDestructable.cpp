@@ -131,6 +131,38 @@ void CPropDestructable::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193fb0 size=0x9f
+#include "CPropDestructable.h"
+#include "CVDmg_t.h"
+
+struct DmgView {
+	CVDmg_t *m_pDmg;
+	char m_pad04[0x30 - 4];
+	float m_flDamage;
+	char m_pad34[0x4c - 0x34];
+};
+
+struct PropView {
+	char m_pad[0x78c];
+	int m_iStageHealth;
+	char m_pad790;
+	char m_bDone;
+};
+
+int CPropDestructable::vfunc142(const void *pInfo)
+{
+	PropView *p = (PropView *)this;
+	if (p->m_bDone)
+		return 0;
+	DmgView info = *(const DmgView *)pInfo;
+	CVDmg_t *pDmg = *(CVDmg_t *volatile *)&info.m_pDmg;
+	if ((pDmg ? (float)pDmg->sub_101faa70() : info.m_flDamage) <= (float)p->m_iStageHealth)
+		return 0;
+	info.m_flDamage = (pDmg ? (float)pDmg->sub_101faa70() : info.m_flDamage) - (float)p->m_iStageHealth;
+	return sub_10008a1c(&info);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10194080 size=0xa8
 #include "CPropDestructable.h"
 #include "COutputEvent.h"
