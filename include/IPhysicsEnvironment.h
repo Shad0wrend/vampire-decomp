@@ -10,7 +10,9 @@ class IPhysicsEnvironment
 public:
 	PENV1(0) PENV1(1) PENV1(2) PENV1(3) PENV1(4) PENV1(5) PENV1(6) PENV1(7) PENV1(8) PENV1(9)
 	virtual void *vfunc10(void *pObject, void *pParams);	// slot 10 CreateFluidController(object, fluidparams_t *)
-	PENV1(11) PENV1(12) PENV1(13) PENV1(14) PENV1(15) PENV1(16) PENV1(17) PENV1(18) PENV1(19)
+	PENV1(11) PENV1(12) PENV1(13)
+	virtual void *vfunc14(void *pReference, void *pAttached, void *pGroup, void *pFixedParams);	// slot 14 (+0x38) CreateFixedConstraint(reference, attached, group, constraint_fixedparams_t *)
+	PENV1(15) PENV1(16) PENV1(17) PENV1(18) PENV1(19)
 	PENV1(20) PENV1(21) PENV1(22)
 	virtual void vfunc23(void *pConstraint);	// slot 23 DestroyConstraint (CPhysConstraint's destructor body 0x1002b130 passes the constraint object at +0x450)
 	PENV1(24) PENV1(25) virtual void vfunc26(float flFrameTime);	// slot 26: the frame step, handed the frame time by PhysFrame (0x1002ea40)
