@@ -15673,6 +15673,7 @@
 0x1001587a func   ?sub_1042c680@@YAXXZ sub_1042c680
 0x1001587f func   ?vfunc1@CAI_MemoryListSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCRestore@@@Z CAI_MemoryListSaveRestoreOps::vfunc1
 0x10015884 func   ?sub_1011be00@@YIXPAXHH@Z sub_1011be00
+0x10015889 func   ?sub_102daac0@CAI_InterestingPlace@@QAEXH@Z CAI_InterestingPlace::sub_102daac0
 0x1001588e func   ?vfunc461@CNPC_VBatSwarm@@UAEHXZ CNPC_VBatSwarm::vfunc461
 0x10015893 func   ?sub_100785a0@CUnknown100785a0@@QAEXH@Z CUnknown100785a0::sub_100785a0
 0x10015898 func   ?vfunc193@CPayphone@@UAE?AVVector@@XZ CPayphone::vfunc193
