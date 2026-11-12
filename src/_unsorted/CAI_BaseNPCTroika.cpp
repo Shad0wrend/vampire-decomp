@@ -1905,6 +1905,91 @@ void CAI_BaseNPCTroika::vfunc572()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10298070 size=0x23e
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CHL2_Player.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "ScopeTrace.h"
+#include "CAI_BaseNPCTroika.h"
+#include <string.h>
+
+// TARGET: ?vfunc312@CAI_BaseNPCTroika@@QAEXH@Z
+extern char g_10924fb8;
+extern CBaseHandle g_109247e0[2];
+
+namespace block_10298070
+{
+	struct EHandleEntityListUnit : EHandleEntityList
+	{
+		IHandleEntity *sub_100290c0(const CBaseHandle &handle) const;
+	};
+	IHandleEntity *EHandleEntityListUnit::sub_100290c0(const CBaseHandle &handle) const
+	{
+		IHandleEntity *pResult = 0;
+		unsigned int h = handle.m_Index;
+		const EHandleEntInfo *pInfo = &m_EntPtrArray[h & 0x1fff];
+		unsigned int serial = h >> 13;
+		if (h != 0xffffffff && (unsigned int)pInfo->m_SerialNumber == serial)
+			pResult = pInfo->m_pEntity;
+		return pResult;
+	}
+}
+using namespace block_10298070;
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+inline const char *EntName(CBaseEntity *p) { return p ? STRINGR(p->m_name26c) : g_105387dc; }
+
+struct CUpdateCharacterKeep
+{
+	CUtlVector<CBaseHandle> m_List;
+};
+
+void CAI_BaseNPCTroika::vfunc312(int nArg)
+{
+	ScopeTrace scope("CAI_BaseNPCTroika::UpdateCharacter", EntName((CBaseEntity *)this));
+	if (m_b6496) {
+		if (!m_b6497 && g_10924fb8 < 2 && vfunc464() == 2) {
+			CBaseHandle &slot = g_109247e0[g_10924fb8++];
+			slot = *(CBaseHandle *)((IHandleEntity *)this)->vfunc1();
+			m_b6497 = 1;
+		}
+	}
+	if (!m_b6496 && m_b6497) {
+		CUpdateCharacterKeep keep;
+		int i;
+		for (i = 0; i < 2; i++) {
+			if (((EHandleEntityListUnit *)EHandleDetail::g_10566458)->sub_100290c0(g_109247e0[i]) && (void *)g_109247e0[i].Get() != (void *)this) {
+				CBaseHandle h;
+				h.Set(g_109247e0[i].Get());
+				keep.m_List.AddToTail(h);
+			}
+		}
+		g_10924fb8 = keep.m_List.Count();
+		memset(g_109247e0, 0, sizeof(g_109247e0));
+		if (g_10924fb8)
+			for (i = 0; i < 2; i++)
+				g_109247e0[i] = keep.m_List[i];
+		m_b6497 = 0;
+	}
+	sub_103246d0(nArg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102984a0 size=0x2a2
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_Pathfinder.h"

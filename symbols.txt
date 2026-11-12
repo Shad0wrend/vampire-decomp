@@ -2448,6 +2448,7 @@
 0x100044ad func   ?sub_101f3060@@YIXPAD@Z sub_101f3060
 0x100044b2 func   _trigger_changelevel trigger_changelevel
 0x100044b7 func   ?vfunc80@CWeaponMelee_ChangClaw@@QAEHXZ CWeaponMelee_ChangClaw::vfunc80
+0x100044bc func   ?vfunc312@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::vfunc312
 0x100044c1 func   ?sub_1007ec20@CUnknown1007ec20@@QAEXPAVCUnknown1007ec20_Reader@@HHH@Z CUnknown1007ec20::sub_1007ec20
 0x100044c6 func   ?vfunc2@CTEFizz@@UAEPAV1@I@Z CTEFizz::vfunc2
 0x100044cb func   ?sub_10332610@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10332610
