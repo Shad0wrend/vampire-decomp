@@ -2142,6 +2142,7 @@
 0x10003d2d func   ?vfunc437@CNPC_VMingXiao@@UAEHXZ CNPC_VMingXiao::vfunc437
 0x10003d37 func   ?vfunc363@CNPC_VCameraSecurity@@QAE_NPAVCBaseEntity@@@Z CNPC_VCameraSecurity::vfunc363
 0x10003d3c func   ?sub_100e4840@CDialog@@QAEHH@Z CDialog::sub_100e4840
+0x10003d41 func   ?sub_102808c0@@YA?AVVector@@ABV1@0MM@Z sub_102808c0
 0x10003d46 func   ?sub_102524f0@CBaseCombatWeapon@@QAEDPAVCBaseCombatCharacter@@@Z CBaseCombatWeapon::sub_102524f0
 0x10003d4b func   ?sub_10139970@@YAXABVVector@@AAVQAngle@@@Z sub_10139970
 0x10003d50 func   ?sub_1025b3e0@@YAGPBD@Z sub_1025b3e0

@@ -187192,6 +187192,38 @@ bool __stdcall sub_10280790(const Vector &a, const Vector &b, const Vector &c, f
 }
 // END FUNCTION
 
+// FUNCTION: 0x102808c0 size=0x109
+#include "Vector.h"
+#include <math.h>
+
+Vector sub_102808c0(const Vector &vecStart, const Vector &vecEnd, float flGravity, float flApexHeight)
+{
+	float dz = vecEnd.z - vecStart.z;
+	Vector vecDir = vecEnd - vecStart;
+	vecDir.z = 0.0f;
+	float flLen = VectorNormalize(vecDir);
+
+	float flApex;
+	if (dz > 0.0f)
+		flApex = dz + flApexHeight;
+	else
+		flApex = flApexHeight;
+	if (flApex < flApexHeight)
+		flApex = flApexHeight;
+
+	float flVzTerm = flGravity * flApex;
+	float flVz = sqrt(flVzTerm + flVzTerm);
+	float flNum = flLen * flGravity;
+	float flNegGravity = -flGravity;
+	float flDnTerm = (dz - flApex) * flNegGravity;
+	float flVzDown = sqrt(flDnTerm + flDnTerm);
+	float flFactor = flNum / ((double)flVz + flVzDown);
+	Vector vecVelocity = vecDir * flFactor;
+	vecVelocity.z = flVz;
+	return vecVelocity;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10280a20 size=0x20
 #include "globalvars.h"
 
