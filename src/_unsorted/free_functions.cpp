@@ -34442,6 +34442,72 @@ float CBaseAnimating::sub_10091310(int sequence, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10091490 size=0x194
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+
+extern float g_104454c4;
+
+struct CAnimConVar {
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x24];
+	float m_f28;
+};
+
+struct CAnimFields {
+	char m_pad0000[0x170];
+	float m_f170;
+	float m_f174;
+	char m_pad0178[0x564 - 0x178];
+	float m_f564;
+	char m_pad0568[0x5ac - 0x568];
+	char m_b5ac;
+};
+
+extern CAnimConVar *g_106caf64;
+
+float CBaseAnimating::sub_10091490(int sequence, float flRate)
+{
+	ScopeTrace trace("CBaseAnimating::GetSequenceGroundSpeed", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	CAnimFields *v = (CAnimFields *)this;
+	float t;
+	if (!v->m_b5ac)
+	{
+		t = sub_10091080(sequence);
+		if (t > 0.0f)
+			return (float)(sub_1008fbe0(sequence) * v->m_f564) / t;
+		return g_104454c4;
+	}
+	if (flRate > g_104454c4)
+	{
+		float flScale = g_106caf64->vfunc1() ? 0.0f : g_106caf64->m_f28;
+		if (flScale == 0.0f)
+		{
+			t = sub_10091080(sequence);
+			if (t > g_104454c4)
+				return (float)(sub_1008fbe0(sequence) * v->m_f564) / t;
+			return g_104454c4;
+		}
+		if (flScale == -1.0f)
+			flScale = 1.0f / flRate;
+		char bLooped;
+		float vecDelta[3];
+		float vecAngles[3];
+		return sub_10094b70(v->m_f174 - v->m_f170, &bLooped, vecDelta, vecAngles) * v->m_f564 * flScale;
+	}
+	return g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10091c80 size=0x6f
 #include "CBaseAnimating.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };

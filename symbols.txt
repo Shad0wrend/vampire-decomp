@@ -5433,6 +5433,7 @@
 0x100083dc func   ?sub_100eb400@@YIXPAH@Z sub_100eb400
 0x100083e1 func   ??0CUnknown101d88b0@@QAE@PAUCVDmgSource_t@@0HH@Z CUnknown101d88b0::CUnknown101d88b0
 0x100083e6 func   ?sub_101b98d0@@YIXPAH@Z sub_101b98d0
+0x100083eb func   ?sub_10091490@CBaseAnimating@@QAEMHM@Z CBaseAnimating::sub_10091490
 0x100083f0 func   ?sub_10349830@SRange@@QAEHXZ SRange::sub_10349830
 0x100083f5 func   ?vfunc0@CTriggerTraceEnum@@UAE_NPAVCBaseEntity@@@Z CTriggerTraceEnum::vfunc0
 0x100083fa func   ?vfunc134@CInfoIntermission@@UAEXXZ CInfoIntermission::vfunc134
