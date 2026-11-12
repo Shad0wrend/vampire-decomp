@@ -106060,6 +106060,93 @@ PyObject *sub_101987b0(PyObject *self, PyObject *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198b30 size=0x138
+#include "exception.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+
+struct PyObj
+{
+    int ob_refcnt;
+};
+
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObj *args, const char *format, ...);
+__declspec(dllimport) PyObj *PyErr_Occurred();
+__declspec(dllimport) void PyErr_SetString(PyObj *exception, const char *string);
+__declspec(dllimport) PyObj *PyExc_AttributeError;
+__declspec(dllimport) PyObj _Py_NoneStruct;
+}
+
+extern char g_10591254[];
+extern char g_105915c8[];
+extern char g_105914d4[];
+extern char g_105914b4[];
+extern char g_105915a8[];
+extern void (*g_109f3630)(const char *pFormat, ...);
+
+void *sub_10196780(PyObj *pObj);
+
+struct PyEntity
+{
+    char m_pad0000[0x9c];
+    CBaseCombatCharacter *m_pOwner;	// 0x9c
+};
+
+struct NameView
+{
+    const char *sub_1000b5cd();
+};
+
+struct ItemView
+{
+    CBCW_V10(0) CBCW_V10(1) CBCW_V10(2) CBCW_V10(3) CBCW_V10(4) CBCW_V10(5) CBCW_V10(6) CBCW_V10(7) CBCW_V10(8) CBCW_V10(9)
+    CBCW_V10(10) CBCW_V10(11) CBCW_V10(12) CBCW_V10(13) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16) CBCW_V10(17) CBCW_V10(18) CBCW_V10(19)
+    CBCW_V10(20) CBCW_V10(21) CBCW_V10(22) CBCW_V10(23) CBCW_V10(24) CBCW_V10(25) CBCW_V10(26) CBCW_V10(27) CBCW_V10(28) CBCW_V10(29)
+    CBCW_V10(30) CBCW_V10(31) CBCW_V10(32) CBCW_V10(33) CBCW_V10(34) CBCW_V10(35) CBCW_V10(36)
+    CBCW_V(370)
+    virtual bool vfunc371();
+    char m_pad0004[0x744 - 4];
+    int m_nAmmoIndex;	// 0x744
+    char m_pad0748[0x8d0 - 0x748];
+    int m_nCount;	// 0x8d0
+};
+
+PyObj *sub_10198b30(PyObj *self, PyObj *args)
+{
+    const char *pszItem = 0;
+    int nAmount = 0;
+    PyObj *pyEnt = 0;
+    if (!PyArg_ParseTuple(args, g_10591254, &pyEnt, &pszItem, &nAmount)) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, g_105915c8);
+        return 0;
+    }
+    if (!pszItem) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, g_105914d4);
+        return 0;
+    }
+    PyEntity *pEntity = (PyEntity *)sub_10196780(pyEnt);
+    CBaseCombatCharacter *pChar = pEntity ? pEntity->m_pOwner : 0;
+    if (!pChar) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, g_105914b4);
+        return 0;
+    }
+    ItemView *pItem = (ItemView *)pChar->sub_10335950(pszItem);
+    if (pItem) {
+        if (pItem->vfunc371())
+            pItem->m_nCount += nAmount;
+        else
+            pChar->vfunc374(nAmount, pItem->m_nAmmoIndex, 0);
+    } else
+        g_109f3630(g_105915a8, ((NameView *)pChar)->sub_1000b5cd(), pszItem);
+    _Py_NoneStruct.ob_refcnt++;
+    return &_Py_NoneStruct;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199100 size=0xfc
 struct PyObject;
 extern "C" __declspec(dllimport) int PyArg_ParseTuple(PyObject *, const char *, ...);
