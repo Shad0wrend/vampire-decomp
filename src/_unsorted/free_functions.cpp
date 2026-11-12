@@ -96000,6 +96000,32 @@ int CBasePlayer::sub_1017ddd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017de60 size=0x3e
+#include "CUnknown107250d4.h"
+
+extern CUnknown107250d4 *g_107250d4;
+
+inline int Val107250d4()
+{
+	return g_107250d4->vfunc1() ? 0 : g_107250d4->m_n2c;
+}
+
+struct CUnknownOwner1017de60
+{
+	int sub_1017de60();
+	char m_pad0000[0x1cdc];
+	int m_n1cdc;
+};
+
+// TARGET: CUnknownOwner1017de60::sub_1017de60
+int CUnknownOwner1017de60::sub_1017de60()
+{
+	if (Val107250d4() >= 0)
+		return Val107250d4();
+	return m_n1cdc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017deb0 size=0x73
 struct CGameTimeScale {
 	virtual void vfunc0();
