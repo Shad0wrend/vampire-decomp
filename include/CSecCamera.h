@@ -39,6 +39,7 @@ public:
 	virtual float *vfunc217();
 	virtual void s218(); virtual float *s219(); virtual void s220();
 	virtual float *vfunc221();
+	virtual Vector GetSoundEmissionOrigin();
 
 	char m_pad03e0[0x670 - 0x3e0];
 	int m_n670;	// 0x670
@@ -64,7 +65,7 @@ public:
 	const char *m_sZoomInSnd;	// 0x07c8
 	const char *m_sZoomOutSnd;	// 0x07cc
 	const char *m_sAlarmSnd;	// 0x07d0
-	char m_pad07d4[0x7d8 - 0x7d4];
+	const char *m_pszSound7d4;	// 0x7d4: the sound playing now
 	bool m_bPlayerSpotted;	// 0x07d8
 	char m_pad07d9[0x7dc - 0x7d9];
 	COutputEvent m_Output7dc;	// 0x7dc
