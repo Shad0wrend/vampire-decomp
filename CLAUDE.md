@@ -261,7 +261,7 @@ have written it rather than adding temporaries that spell out the assembly:
 
 ## VC6 walls closed by hand (2026-11-12): score 1-2 near misses Opus had given up
 
-17 near misses matched in one afternoon (7.7 KB) after their header patches were saved. The levers, each one measured:
+17 near misses matched in one afternoon (7.7 KB) after their header patches were saved; 67 by the evening. The levers, each one measured:
 
 - **Write the SDK's spelling of a constant, not the folded value.** `#define DEG2RAD(x) ((float)(x) * (float)(M_PI_F /
   180.f))` with `M_PI_F ((float)(M_PI))` (0x101d2f40), `#define lbs2kg(x) ((x)*(1.0f/(2.2f)))` (0x1002bdc0): the
@@ -312,6 +312,25 @@ have written it rather than adding temporaries that spell out the assembly:
   keep the separate epilogues (0x102b62e0). The same tail in each branch: write it once after an if/else (0x1021deb0).
 - **POD handle by value** to an inline helper (no user copy constructor) puts the copy store before lea/push
   (0x1013f280); CBaseHandle with its copy constructor does not.
+- **Round 4 (score 3-13, 23 of 48 matched):** look for Valve's function first, even for slot-only diffs: both slot
+  walls 0x102f99d0 (GetFloorZ) and 0x102f05d0 (ShouldAttemptSimplifyTo) fell on the first compile of the SDK form,
+  found by searching the 2004 SDK for a constant (0.766) or a line (`return tr.endpos.z`). Write the reference body
+  verbatim, macros included.
+- **`push esi` after the early exits** (shrink-wrapped): the rest of the body is an inline function with its own locals
+  (0x100af840), or the function returns the value (0x102457f0). **eax holds the same value at every `ret`**: the
+  function returns it; declaring the return type changes register use throughout.
+- **`lea [esp+N]` of a dead temp passed to a virtual** is the hidden pointer of a by-value return (`virtual Vector
+  BodyDirection2D()`), not a `const Vector &` argument (0x102f05d0).
+- **Offsets during pushed arguments:** `fst [esp+N]` between the pushes and `add esp` is [esp+N-4] in the normal frame;
+  a store that looks dead there can be a real variable read later (0x10122190: the SDK's `spd`).
+- **A constructor without a header ctor:** the source can define its own `class X : public Base { X(); ... }` with the
+  SDK members and target `X::X`; it links to the game's vtable, no header patch needed (0x1019dc80).
+- **Smaller levers measured in round 4:** a thiscall member that ignores `this` -> call it through a view of `this`; a
+  ternary that pushes per arm -> if/else with the same call in each; a bool member read as `m_b ? b : false`;
+  `lea [esp+param]` of a dead parameter slot -> a separate local; `return false` at each exit instead of a shared
+  label; `dz += X; r = dz;`; a hash decoded into an int local; const `operator[]` per Vector component; a base ctor
+  written as a call in a hand ctor; `(float)(x * 1.0)` for float arguments (0x1017ed00, workaround). Changing an
+  operand's width (short -> int counter) moves later registers (0x10122cd0).
 
 ## VC6 stack slots: what moves them and what does not (measured 2026-11-08, partial)
 
