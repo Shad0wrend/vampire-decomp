@@ -11,6 +11,7 @@ extern unsigned int g_109f0b08;	// that static (an invalid entity handle)
 struct variant_t
 {
 	union {
+		bool bVal;
 		float flValue;
 		int iValue;
 		const char *iszValue;
@@ -20,6 +21,7 @@ struct variant_t
 	int fieldType;	// 1 == FIELD_FLOAT, 2 == FIELD_STRING, 4 == FIELD_INTEGER, 12 == FIELD_EHANDLE
 
 	float Float() const;	// the float value, or the file-scope zero when the variant is not a float
+	bool Bool() const { return (fieldType == 5) ? bVal : false; }	// Source's variant_t::Bool(): the value of a boolean variant (FIELD_BOOLEAN 5), else false
 	int Int() const { return iValue; }	// the raw integer value
 	int IntOrZero() const { return fieldType == 4 ? iValue : 0; }	// Source's variant_t::Int(): the value of an integer variant, else 0
 	const char *sub_10008805();	// the value converted to a string (used when it is not a string)

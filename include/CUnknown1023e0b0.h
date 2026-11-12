@@ -6,14 +6,14 @@ struct inputdata_t;
 struct CUnknown1023e0b0Target	// the object sub_1023bd00 returns
 {
 	char m_pad0000[0x1b1];
-	char m_bDirty;	// 0x1b1
+	bool m_bDirty;	// 0x1b1
 	char m_pad01b2[0x4a8 - 0x1b2];
-	char m_bNosferatuTolerant;	// 0x4a8
+	bool m_bNosferatuTolerant;	// 0x4a8
 
 	void SetNosferatuTolerant(bool bTolerant)
 	{
 		m_bNosferatuTolerant = bTolerant;
-		m_bDirty = 1;
+		m_bDirty = true;
 	}
 };
 
