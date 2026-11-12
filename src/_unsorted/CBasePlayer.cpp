@@ -1691,6 +1691,83 @@ void CBasePlayer::vfunc442(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163820 size=0x231
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBasePlayer.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CTakeDamageInfo.h"
+#include "CVDmg_t.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+extern Vector g_1070d1b0;
+
+inline unsigned int GetDamageType(const CTakeDamageInfo &info)
+{
+	if (info.m_pVDmg00)
+		return *(unsigned int *)((char *)info.m_pVDmg00 + 0x10) | info.m_nFlags38;
+	return info.m_nFlags38;
+}
+
+inline float GetBaseDamage(const CTakeDamageInfo &info)
+{
+	if (info.m_pVDmg00)
+		return (float)info.m_pVDmg00->sub_101faa70();
+	return info.m_flDamage;
+}
+
+inline bool IsSolidFlagSet(CBaseEntity *pEnt)
+{
+	ScopeTrace trace("CBaseEntity::IsSolidFlagSet", pEnt->m_name26c ? pEnt->m_name26c : g_106b8540);
+	return (pEnt->m_b2b4 >> 3) & 1;
+}
+
+struct CPlayerImpulse : CBasePlayer
+{
+	bool IsDirtyAbsVelocity() { return (m_fFlags268 >> 12) & 1; }
+	const Vector &GetAbsVelocity()
+	{
+		if (IsDirtyAbsVelocity())
+			((CBaseEntity *)(void *)this)->sub_100b1d10();
+		return m_vec03BC;
+	}
+	void ApplyAbsVelocityImpulse(const Vector &inVecImpulse)
+	{
+		Vector vecResult = GetAbsVelocity() + inVecImpulse;
+		((CBaseEntity *)(void *)this)->sub_100b2e30((const float *)&vecResult);
+	}
+};
+
+int CBasePlayer::vfunc390(CTakeDamageInfo *pInfo)
+{
+	m_flags0E98 |= GetDamageType(*pInfo);
+
+	if (!((CBaseCombatCharacter *)(void *)this)->sub_103302e0(pInfo))
+		return 0;
+
+	Vector vecDir = g_1070d1b0;
+	if (pInfo->m_pAttacker) {
+		vecDir = ((CEntityVSlots *)pInfo->m_pAttacker)->slot192() - Vector(0, 0, 10) - ((CEntityVSlots *)(void *)this)->slot192();
+		VectorNormalize(vecDir);
+	}
+
+	if (pInfo->m_pAttacker && ((CEntityVSlots *)(void *)this)->slot94() == 3 &&
+		(!pInfo->m_pInflictor || !IsSolidFlagSet((CBaseEntity *)pInfo->m_pInflictor))) {
+		Vector force = vecDir * -((CBaseCombatCharacter *)(void *)this)->sub_10331770(GetBaseDamage(*pInfo));
+		((CPlayerImpulse *)this)->ApplyAbsVelocityImpulse(force);
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163af0 size=0x305
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
