@@ -52328,6 +52328,71 @@ void CEventQueue::sub_100cf730()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cf7b0 size=0x268
+#include "CEventQueue.h"
+#include "CBaseEntity.h"
+#include "CVDmg_t.h"
+
+struct EQNetView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual int vfunc5(); };
+struct EQUnkView { virtual void v0(); virtual void v1(); virtual void v2(); virtual EQNetView *vfunc3(); };
+struct EQEdictView { int m_pad[0x10]; EQUnkView *m_pUnk; };
+struct EQEventView
+{
+	float m_flFireTime;
+	const char *m_pszTarget;
+	int m_n08;
+	int m_n0c;
+	EHANDLE m_hCaller;
+	int m_n14;
+	EHANDLE m_hTarget;
+	void *m_pPyObj;
+	int m_n20[5];
+	int m_nType;
+	int m_n38;
+	const char *m_pszScript;
+	CVDmgBlock16_t m_block;
+};
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+extern char *(__cdecl *g_109f36cc)(void *);
+extern char g_106b8540[];
+
+static IHandleEntity *(EHandleEntityList::*s_pfnLookup)(const CBaseHandle &) const = &EHandleEntityList::LookupEntity;
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline EQEdictView *EQEdict(CBaseEntity *p) { return (EQEdictView *)p->m_pEdict2e0; }
+inline const char *EQClassname(CBaseEntity *p) { return (const char *)p->sub_1009f200(); }
+
+// TARGET: CEventQueue::sub_100cf7b0
+void CEventQueue::sub_100cf7b0(CEQEvent *pEvent)
+{
+	EQEventView *pe = (EQEventView *)pEvent;
+	const char *typeNames[3] = { "Entity", "Python", "Stat" };
+	DevMsg("(FireTime: %f)  (Type: %s)", pe->m_flFireTime, typeNames[pe->m_nType]);
+	if (pe->m_pszTarget)
+		DevMsg("  (Tgt: %s)", STRINGR(pe->m_pszTarget));
+	if (pe->m_pszScript)
+		DevMsg("  (Scr: %s)", STRINGR(pe->m_pszScript));
+	if (pe->m_hTarget && EQEdict(pe->m_hTarget))
+	{
+		EQEdictView *pEdict = EQEdict(pe->m_hTarget);
+		if (!pEdict->m_pUnk || pEdict->m_pUnk->vfunc3()->vfunc5())
+			DevMsg("  (EntTgt: %s)", EQClassname(pe->m_hTarget));
+	}
+	if (pe->m_hCaller && EQEdict(pe->m_hCaller))
+	{
+		EQEdictView *pEdict = EQEdict(pe->m_hCaller);
+		if (!pEdict->m_pUnk || pEdict->m_pUnk->vfunc3()->vfunc5())
+			DevMsg("  (Caller: %s)", EQClassname(pe->m_hCaller));
+	}
+	if (pe->m_pPyObj)
+		DevMsg("  (PyObj: %s)", g_109f36cc(pe->m_pPyObj));
+	if (!pe->m_block.sub_10204250())
+		DevMsg("  (VTDep: %s)", pe->m_block.sub_102043a0());
+	DevMsg("\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cfac0 size=0xa
 namespace lifted {
 extern char g_106e7050;
