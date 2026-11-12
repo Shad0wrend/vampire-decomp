@@ -5817,6 +5817,181 @@ void CPhysicsPushedEntities::sub_10036ef0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036fb0 size=0x295
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "CBaseEntity.h"
+#include "CPhysicsPushedEntities.h"
+#include "CUtlVector4.h"
+
+struct PBScope
+{
+	void sub_10037300(const char *pszFunc, const char *pszName, const char *pszLine);
+	~PBScope() { (*g_109f3680)--; }
+};
+
+inline bool PB_IsSolid(int solidType, int nSolidFlags)
+{
+	return solidType != 0 && (nSolidFlags & 4) == 0;
+}
+
+struct PBColl
+{
+	void *m_vptr;
+	Vector m_vecMins;	// 0x04
+	Vector m_vecMaxs;	// 0x10
+	char m_pad1c[0x40 - 0x1c];
+	int m_nSolidType;	// 0x40
+	unsigned short m_usSolidFlags;	// 0x44
+
+	int GetSolid() const { return m_nSolidType; }
+	int GetSolidFlags() const { return m_usSolidFlags; }
+	bool IsSolid() const { return PB_IsSolid(GetSolid(), GetSolidFlags()); }
+	bool IsSolidFlagSet(int flagMask) const { return (m_usSolidFlags & flagMask) != 0; }
+	void sub_100dcd90(const Vector &entityMins, const Vector &entityMaxs, Vector *pWorldMins, Vector *pWorldMaxs);
+	void WorldSpaceAABB(Vector *pWorldMins, Vector *pWorldMaxs) { sub_100dcd90(m_vecMins, m_vecMaxs, pWorldMins, pWorldMaxs); }
+};
+
+struct PBEnt;
+PBEnt *sub_1012c9c0(PBEnt *p);
+
+struct PBEnt
+{
+	char m_pad0[0x26c];
+	const char *m_pszName;	// 0x26c
+	PBColl m_Collision;	// 0x270
+
+	PBColl *CollisionProp() { return &m_Collision; }
+	PBEnt *GetRootMoveParent() { return sub_1012c9c0(this); }
+	bool IsSolid()
+	{
+		PBScope scope;
+		scope.sub_10037300("CBaseEntity::IsSolid", this ? (m_pszName ? m_pszName : g_106b8540) : g_105387dc, g_106b8540);
+		return CollisionProp()->IsSolid();
+	}
+	bool IsSolidFlagSet(int flags)
+	{
+		PBScope scope;
+		scope.sub_10037300("CBaseEntity::IsSolidFlagSet", this ? (m_pszName ? m_pszName : g_106b8540) : g_105387dc, g_106b8540);
+		return CollisionProp()->IsSolidFlagSet(flags);
+	}
+};
+
+struct PBPusherInfo
+{
+	PBEnt *m_pEntity;
+	Vector m_vecStartAbsOrigin;
+};
+
+struct PBPusherVec
+{
+	PBPusherInfo *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	PBPusherInfo *m_pElements;
+	int Count() const { return m_Size; }
+	PBPusherInfo &operator[](int i) { return m_pMemory[i]; }
+};
+
+struct PBPushed
+{
+	CUtlVector<PBPusherInfo> m_rgPusher;
+};
+
+struct PBList
+{
+	int *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	int *m_pElements;
+	int sub_1003c0e0(int elem, const int &src);
+	int AddToTail(const int &src) { return sub_1003c0e0(m_size, src); }
+};
+
+struct PBFilter
+{
+	void *m_vptr;
+	PBList m_ignoreList;
+	void sub_10037950();
+	void AddEntityToIgnore(PBEnt *pEntity) { m_ignoreList.AddToTail((int)pEntity); }
+};
+
+struct PBPartition
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void vfunc12(int listMask, const Vector &mins, const Vector &maxs, bool coarseTest, void *pIterator, int unk);
+};
+extern PBPartition *g_1070b24c;
+extern int g_106bcb5c;
+extern char g_104492fc[], g_104492f0[];
+struct PBVecOps
+{
+	void sub_1003c1c0();
+	void sub_1003c1e0();
+};
+
+struct PBEnum
+{
+	void *m_vptr;
+	PBPushed *m_pPushedEntities;
+	PBEnt *m_pRootHighestParent;
+	PBFilter m_pushFilter;
+
+	void CtorBody()
+	{
+		PBScope s;
+		s.sub_10037300("CPushBlockerEnum::CPushBlockerEnum", g_106b8540, g_106b8540);
+		m_pRootHighestParent = sub_1012c9c0(m_pPushedEntities->m_rgPusher[0].m_pEntity);
+		++g_106bcb5c;
+		for (int i = m_pPushedEntities->m_rgPusher.Count(); --i >= 0; )
+			m_pushFilter.AddEntityToIgnore(m_pPushedEntities->m_rgPusher[i].m_pEntity);
+	}
+};
+
+void CPhysicsPushedEntities::sub_10036fb0()
+{
+	ScopeTrace scope("CPhysicsPushedEntities::GenerateBlockingEntityList", g_106b8540);
+	g_109f3648->EnterScope("CPhysicsPushedEntities::GenerateBlockingEntityList", 0, "Unaccounted", false);
+
+	m_rgMoved.m_Size = 0;
+	PBEnum blockerEnum;
+	blockerEnum.m_vptr = g_104492fc;
+	blockerEnum.m_pPushedEntities = (PBPushed *)this;
+	blockerEnum.m_pushFilter.sub_10037950();
+	blockerEnum.m_vptr = g_104492f0;
+	blockerEnum.CtorBody();
+
+	for (int i = m_rgPusher.m_Size; --i >= 0; ) {
+		PBEnt *pPusher = (PBEnt *)m_rgPusher.m_pMemory[i].m_pEntity;
+		if (!pPusher->IsSolid() || pPusher->IsSolidFlagSet(0x20))
+			continue;
+		Vector vecAbsMins, vecAbsMaxs;
+		pPusher->CollisionProp()->WorldSpaceAABB(&vecAbsMins, &vecAbsMaxs);
+		g_1070b24c->vfunc12(0x10, vecAbsMins, vecAbsMaxs, false, &blockerEnum, 0);
+	}
+
+	((PBVecOps *)&blockerEnum.m_pushFilter.m_ignoreList)->sub_1003c1c0();
+	((PBVecOps *)&blockerEnum.m_pushFilter.m_ignoreList)->sub_1003c1e0();
+	blockerEnum.m_pushFilter.m_ignoreList.m_pElements = blockerEnum.m_pushFilter.m_ignoreList.m_pMemory;
+	((PBVecOps *)&blockerEnum.m_pushFilter.m_ignoreList)->sub_1003c1e0();
+	g_109f3648->ExitScope();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037680 size=0x93
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
