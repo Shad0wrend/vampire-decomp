@@ -166294,6 +166294,33 @@ bool sub_10240cb0(const Vector &vecRayStart, const Vector &vecRayDelta, const Ve
 }
 // END FUNCTION
 
+// FUNCTION: 0x10240fd0 size=0xe4
+#include "Ray_t.h"
+#include "CGameTrace.h"
+
+bool sub_10240cb0(const Vector &rayStart, const Vector &rayDelta, const Vector &boxMins, const Vector &boxMaxs, float flTolerance, CGameTrace *pTrace);
+
+bool sub_10240fd0(const Ray_t &ray, const Vector &boxMins, const Vector &boxMaxs, float flTolerance, CGameTrace *pTrace)
+{
+	Vector vecExpandedMins = boxMins;
+	Vector vecExpandedMaxs = boxMaxs;
+	if (!ray.m_IsRay)
+	{
+		vecExpandedMins -= *(const Vector *)ray.m_StartOffset;
+		vecExpandedMaxs += *(const Vector *)ray.m_StartOffset;
+	}
+
+	bool bIntersects = sub_10240cb0(*(const Vector *)ray.m_Start, *(const Vector *)ray.m_Delta, vecExpandedMins, vecExpandedMaxs, flTolerance, pTrace);
+
+	if (!ray.m_IsRay)
+	{
+		*(Vector *)pTrace->m_startpos += *(const Vector *)ray.m_Extents;
+		*(Vector *)pTrace->m_endpos += *(const Vector *)ray.m_Extents;
+	}
+	return bIntersects;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102414f0 size=0xe7
 #include "Vector.h"
 

@@ -5205,6 +5205,7 @@
 0x10007fc2 func   ?sub_10175400@CBasePlayer@@QAEXD@Z CBasePlayer::sub_10175400
 0x10007fc7 func   ?sub_1039fe30@@YAXM@Z sub_1039fe30
 0x10007fcc func   ?vfunc10@CServerNetworkProperty@@UAEHXZ CServerNetworkProperty::vfunc10
+0x10007fd1 func   ?sub_10240fd0@@YA_NABURay_t@@ABVVector@@1MPAUCGameTrace@@@Z sub_10240fd0
 0x10007fd6 func   ?vfunc104@CSceneEntity@@UAEXXZ CSceneEntity::vfunc104
 0x10007fdb func   ?sub_1025cb70@CUtlRBTreeBig@@QAEAAULinks_t@1@G@Z CUtlRBTreeBig::sub_1025cb70
 0x10007fe0 func   ?sub_102703f0@CUnknown102703f0@@QAEMPAUCUnknown1030f940Rec@@PAM@Z CUnknown102703f0::sub_102703f0
