@@ -104,3 +104,31 @@ void CPhysicsSpring::vfunc103()
 		m_flLength = (m_vecEnd - m_vecStart).Length();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1004db00 size=0x54
+#include "QAngle.h"
+#include "CPhysicsSpring.h"
+extern int g_1070ba38;
+
+struct EntView;
+struct PhysObjView;
+class QAngle;
+
+void sub_1002a210(EntView *pEnt, PhysObjView *pObj1, PhysObjView *pObj2, const QAngle *pAngles, const Vector *pPos, int bFlag);
+
+struct CSpringSlotView
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+	virtual PhysObjView *vfunc5();
+	virtual PhysObjView *vfunc6();
+};
+
+// TARGET: CPhysicsSpring::vfunc182
+void CPhysicsSpring::vfunc182(int a, int b, int c, int d)
+{
+	if (g_1070ba38 != m_nLastFrame488) {
+		m_nLastFrame488 = g_1070ba38;
+		sub_1002a210((EntView *)a, ((CSpringSlotView *)m_pSpring)->vfunc5(), ((CSpringSlotView *)m_pSpring)->vfunc6(), (const QAngle *)b, (const Vector *)c, d);
+	}
+}
+// END FUNCTION
