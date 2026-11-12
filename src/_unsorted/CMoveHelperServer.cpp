@@ -307,6 +307,32 @@ void CMoveHelperServer::vfunc3()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f520 size=0xc0
+#include "CBaseEntity.h"
+#include "CMoveHelperServer.h"
+#include "CSingleUserRecipientFilter.h"
+#include "engineserver.h"
+#include "globalvars.h"
+
+void sub_101b0dc0(CRecipientFilter *pFilter, int entindex, const char *pszSound, const float *pOrigin, float soundtime, float *duration);
+
+inline int ENTINDEX(int pEdict) { return engine->vfunc35(pEdict); }
+
+void CMoveHelperServer::vfunc16(const float *pOrigin, const char *pszSound)
+{
+	CSingleUserRecipientFilter filter(m_pHost);
+	if (gpGlobals->maxClients == 1)
+	{
+		sub_101b0dc0(&filter, ENTINDEX(m_pHost->m_pEdict2e0), pszSound, pOrigin, 0.0f, 0);
+	}
+	else
+	{
+		filter.UsePredictionRules();
+		sub_101b0dc0(&filter, ENTINDEX(m_pHost->m_pEdict2e0), pszSound, pOrigin, 0.0f, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f610 size=0xce
 #include "CBaseEntity.h"
 #include "CMoveHelperServer.h"
