@@ -56,4 +56,23 @@ typedef CSecureTypeBase<CPfnTraits4, int, CSecureCoderPfn<CPfnTraits4, int>, CSe
 
 typedef CSecureTypeBase<CPfnTraits3, int, CSecureCoderPfn<CPfnTraits3, int>, CSecureCoderBasic<CPfnTraits3, int> > CSecureInt3;
 
+struct CPfnTraits1 {};
+
+struct CSecureResult
+{
+	char m_b0;
+	char m_b1;
+	int m_Value;
+};
+
+template <>
+struct CSecureTypeBase<CPfnTraits1, int, CSecureCoderPfn<CPfnTraits1, int>, CSecureCoderBasic<CPfnTraits1, int> >
+{
+	virtual CSecureResult *vfunc0(CSecureResult *pOut, int *pOp, CSecureTypeBase *pA, CSecureTypeBase *pB);
+
+	int m_Value;
+};
+
+typedef CSecureTypeBase<CPfnTraits1, int, CSecureCoderPfn<CPfnTraits1, int>, CSecureCoderBasic<CPfnTraits1, int> > CSecureInt1;
+
 }
