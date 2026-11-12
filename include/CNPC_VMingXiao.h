@@ -416,7 +416,7 @@ public:
 	virtual float vfunc345(const char *pszName, float flValue, int a);
 	virtual void vfunc346();
 	virtual void vfunc347();
-	virtual void vfunc348();
+	virtual int vfunc348();
 	virtual void vfunc349();
 	virtual void vfunc350();
 	virtual void vfunc351();
