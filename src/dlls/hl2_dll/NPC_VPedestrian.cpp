@@ -62,6 +62,92 @@ int CNPC_VPedestrian::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a2e30 size=0x68f
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CNPC_VPedestrian.h"
+#include "CBasePlayer.h"
+#include "CBaseCombatWeapon.h"
+#include "CEHandleGet.h"
+
+CBaseEntity * __fastcall sub_1032e7b0(CBaseEntity *p);
+int __cdecl sub_102c6350(unsigned int x);
+
+#define PICK_STATE(line) { m_nLine1b40 = line; m_pszFile1b3c = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VPedestrian.cpp"; return m_n5cc4 = 8; }
+
+int CNPC_VPedestrian::vfunc461()
+{
+	m_n1b38 = 0x1d;
+	switch (m_n5cc0) {
+	case 1:
+	case 3:
+		if (sub_1001482b(0x4c) || sub_1001482b(0x4d) || sub_1001482b(0x4e)) {
+			m_b5b80 = 0;
+			vfunc596(g_10566458->sub_100290c0((const unsigned int *)&m_h5b7c));
+			PICK_STATE(0x308);
+		}
+		if (sub_10014df8(0x6d)) {
+			CBaseEntity *pEnemy;
+			if (g_10566458->sub_100290c0((const unsigned int *)&m_h628c) && (pEnemy = g_10566458->sub_100290c0((const unsigned int *)&m_h628c), g_10566458->sub_100290c0((const unsigned int *)&m_h6160) == pEnemy)) {
+				if (sub_1001482b(0x6d) && enginerandom->vfunc2(0, 99) < 0x32) {
+					CBaseEntity *pChar = sub_1032e7b0(m_h628c.Get());
+					if (pChar) {
+						int *pRec = ((CBaseCombatWeapon *)pChar)->sub_102517e0();
+						Vector vecPos;
+						vecPos = *(Vector *)((CNPC_VPedestrian *)m_h628c.Get())->vfunc220_slot();
+						sub_1028ea60(*(int *)((char *)pRec + 0x3c4), &vecPos, m_h628c.Get());
+						unsigned int seed = m_n6364;
+						CBasePlayer *pPlayer = (CBasePlayer *)m_h628c.Get();
+						pPlayer->sub_1017f2a0(sub_102c6350((((seed & 0x68d8635) ^ 0xce9f66a) + 0xffa91d8 & 0x197279ca) ^ seed ^ 0xa641cacd), this, &m_vecRec6380);
+					}
+					vfunc596(m_h628c.Get());
+					PICK_STATE(0x321);
+				}
+				if (m_f6264 <= 512.0f && enginerandom->vfunc2(0, 99) < 0x4b) {
+					CBaseEntity *pChar = sub_1032e7b0(m_h628c.Get());
+					if (pChar) {
+						int *pRec = ((CBaseCombatWeapon *)pChar)->sub_102517e0();
+						Vector vecPos = *(Vector *)((CNPC_VPedestrian *)m_h628c.Get())->vfunc220_slot();
+						sub_1028ea60(*(int *)((char *)pRec + 0x3c4), &vecPos, m_h628c.Get());
+						unsigned int seed = m_n6364;
+						CBasePlayer *pPlayer = (CBasePlayer *)m_h628c.Get();
+						pPlayer->sub_1017f2a0(sub_102c6350((((seed & 0x68d8635) ^ 0xce9f66a) + 0xffa91d8 & 0x197279ca) ^ seed ^ 0xa641cacd), this, &m_vecRec6380);
+					}
+					vfunc596(m_h628c.Get());
+					PICK_STATE(0x338);
+				}
+			} else if (m_h5b78.Get() && (pEnemy = m_h5b78.Get(), m_h6160.Get() == pEnemy)) {
+				if (sub_1001482b(0x6d) && enginerandom->vfunc2(0, 99) < 0x32) {
+					PICK_STATE(0x344);
+				}
+				CBaseEntity *pOther = m_h5b78.Get();
+				const Vector &vecMine = *(const Vector *)vfunc220_slot();
+				if ((vecMine - *(const Vector *)((CNPC_VPedestrian *)pOther)->vfunc220_slot()).LengthSqr() <= 262144.0f && enginerandom->vfunc2(0, 99) < 0x4b) {
+					PICK_STATE(0x352);
+				}
+			}
+		}
+		if (sub_10014df8(0x70)) {
+			CBaseEntity *pEnemy = m_h628c.Get();
+			if (m_h618c.Get() == pEnemy && m_f6264 <= 512.0f && enginerandom->vfunc2(0, 99) < 0x4b) {
+				vfunc596(m_h628c.Get());
+				PICK_STATE(0x366);
+			}
+		}
+		break;
+	case 8:
+		PICK_STATE(0x375);
+	default:
+		break;
+	}
+	return sub_103851e0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a3850 size=0x48
 #include "CNPC_VPedestrian.h"
 #include "CAI_BaseNPCTroika.h"
