@@ -176684,6 +176684,29 @@ void sub_1024e700(const VMatrix &src1, const Vector4D &src2, Vector4D &dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024e810 size=0x80
+#include "Vector.h"
+#include "VMatrix.h"
+
+void sub_1024e810(const VMatrix &src1, const Vector &src2, Vector &dst)
+{
+	// Make sure it works if src2 == dst
+	bool srcEqualsDst = (&src2 == &dst);
+
+	Vector tmp;
+	const Vector &v = srcEqualsDst ? tmp : src2;
+
+	if (srcEqualsDst)
+	{
+		VectorCopy(src2, tmp);
+	}
+
+	dst[0] = src1[0][0] * v[0] + src1[1][0] * v[1] + src1[2][0] * v[2];
+	dst[1] = src1[0][1] * v[0] + src1[1][1] * v[1] + src1[2][1] * v[2];
+	dst[2] = src1[0][2] * v[0] + src1[1][2] * v[1] + src1[2][2] * v[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024e8b0 size=0x25
 void sub_1024dfb0(void *p);
 
