@@ -199017,6 +199017,109 @@ void CUnknown102c0470::sub_102c0470(const char *pszName, unsigned char bValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c0520 size=0x454
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEHandleGet.h"
+#include "CGlobalEntityList.h"
+#include "ehandle.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include "globalvars.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CDialog.h"
+#define A(n) virtual void a##n();
+#define A10(p) A(p##0) A(p##1) A(p##2) A(p##3) A(p##4) A(p##5) A(p##6) A(p##7) A(p##8) A(p##9)
+#define A100(p) A10(p##0) A10(p##1) A10(p##2) A10(p##3) A10(p##4) A10(p##5) A10(p##6) A10(p##7) A10(p##8) A10(p##9)
+struct CSlotsAll { A100(0) A100(1) A10(20) A(210) A(211) A(212) A(213) A(214) A(215) A(216) virtual const float *s217(); virtual void a218(); virtual const float *s219();
+	A(220) A(221) virtual Vector s222(); A(223) A(224) A(225) A(226) A(227) A(228) A(229) A10(23) A(240) A(241) virtual void s242();
+	A(243) A(244) A(245) A(246) A(247) A(248) A(249) A10(25) A10(26) A(270) A(271) A(272) A(273) A(274) virtual void s275(); A(276) A(277) A(278) A(279)
+	A10(28) A10(29) A100(3) A100(4) A100(5) A10(60) A(610) A(611) virtual int s612(); A(613) virtual void s614(); };
+struct CNpcView { char m_pad0[0x26c]; const char *m_name26c; char m_pad270[0x2e0 - 0x270]; int m_pEdict2e0;
+	int edict() { return m_pEdict2e0; }
+	int entindex() { return engine->vfunc35(edict()); } };
+struct CDbgStatsOverlay { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(int n); };
+struct CDbgStats { virtual void v0(); virtual bool v1(); char m_pad[0x28]; int m_n2c; };
+struct CSceneView { char m_pad0[0x450]; int m_n450; const char *m_n454; const char *m_n458; char m_pad45c[0x57e - 0x45c]; char m_b57e; };
+struct CUnknown10178120 { CDialog *sub_10178120(); };
+struct CPartnerView { char m_pad0[0xa8]; CUnknown10178120 *m_pa8; };
+extern CDbgStats *g_109241fc;
+CDbgStatsOverlay *sub_10245660(const char *name);
+void sub_10119900(void *p);
+void sub_101cd940(void *p);
+CBaseEntity *sub_100a9ab0(const char *name, const float *origin, const float *angles, void *owner);
+int *sub_1042bff0(int *buf, const char *psz);
+void sub_101d1280(void *p);
+extern "C" char *__cdecl strstr(const char *, const char *);
+__declspec(dllimport) int Q_strnicmp(const char *a, const char *b, int n);
+__declspec(dllimport) int Q_snprintf(char *buf, int n, const char *fmt, ...);
+__declspec(dllimport) char *Q_strncpy(char *dst, const char *src, int n);
+inline CBaseEntity *LookupScene(const EHANDLE &h) { return (CBaseEntity *)g_10566458->sub_100290c0((const unsigned int *)&h); }
+// TARGET: CAI_BaseNPCTroika::sub_102c0520
+// the header still declares (const char *, int, int) and `unsigned int m_h6554`: the game's are (psz, float flDelay,
+// bool bFlag) and an EHANDLE, read through these macros
+#define flDelay (*(float *)&a)
+#define bFlag (*(bool *)&b)
+#define hScene (*(EHANDLE *)&m_h6554)
+void CAI_BaseNPCTroika::sub_102c0520(const char *psz, int a, int b)
+{
+	CNpcView *pThis = (CNpcView *)this;
+	CSlotsAll *pSlots = (CSlotsAll *)this;
+	if (!g_109241fc->v1() && g_109241fc->m_n2c) {
+		CDbgStatsOverlay *pOverlay = sub_10245660("entity_debug_stats");
+		if (pOverlay)
+			pOverlay->v4(1);
+		sub_10119900(this);
+	}
+	if (strstr(psz, ".vcd")) {
+		pSlots->s275();
+		((CBaseCombatCharacter *)this)->sub_101063a0();
+		sub_101cd940(LookupScene(hScene));
+		hScene = sub_100a9ab0("scripted_scene", pSlots->s217(), pSlots->s219(), this);
+		const char *pName = pThis->m_name26c;
+		((CSceneView *)LookupScene(hScene))->m_n458 = pName;
+		int tmp;
+		((CSceneView *)hScene.Get())->m_n450 = *sub_1042bff0(&tmp, psz);
+		const char *pName2 = pThis->m_name26c;
+		((CSceneView *)hScene.Get())->m_n454 = pName2;
+		if (((EHANDLE *)&m_hfe8)->Get())
+			((CSceneView *)hScene.Get())->m_b57e = 0;
+		sub_101d1280(hScene.Get());
+		((CSlotsAll *)hScene.Get())->s242();
+	} else {
+		enginesound->vfunc6(pThis->entindex(), 5);
+		char buf[0x60];
+		buf[0] = 0;
+		if (!Q_strnicmp("sound/", psz, 6))
+			Q_strncpy(buf, psz + 6, 0x60);
+		else if (!Q_strnicmp("*sound/", psz, 7))
+			Q_snprintf(buf, 0x60, "*%s", psz + 7);
+		else
+			Q_strncpy(buf, psz, 0x60);
+		int nFlags = pSlots->s612();
+		soundlevel_t level = bFlag ? SNDLVL_NONE : (soundlevel_t)80;
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this, level);
+		int entindex = pThis->entindex();
+		enginesound->vfunc2(&filter, entindex, 5, buf, m_f6550, level, nFlags, 100, (const float *)&pSlots->s222(), 0, 1, 0);
+		CPartnerView *pPartner = (CPartnerView *)((EHANDLE *)&m_hfe8)->Get();
+		if (pPartner && pPartner->m_pa8)
+			pPartner->m_pa8->sub_10178120()->sub_100e0a40(buf);
+		m_f64cc = flDelay + gpGlobals->curtime;
+		m_b64c0 = 1;
+	}
+	pSlots->s614();
+}
+#undef flDelay
+#undef bFlag
+#undef hScene
+// END FUNCTION
+
 // FUNCTION: 0x102c0aa0 size=0x89
 #include "CEHandleGet.h"
 #include "CAI_BaseNPCTroika.h"
