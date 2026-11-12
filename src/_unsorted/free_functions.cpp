@@ -179868,6 +179868,31 @@ bool CAI_BaseNPCTroika::sub_10269d30(int condition)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10269df0 size=0x85
+#include "CAI_BaseNPCTroika.h"
+
+namespace block_10269df0 {
+struct CondBits
+{
+	int m_ints[6];
+	bool IsBitSet(int bit) const { return (m_ints[bit >> 5] & (1 << (bit & 31))) != 0; }
+};
+inline bool IsLocalId(int id) { return id < 1000000000 || id == -1; }
+}
+using namespace block_10269df0;
+
+bool CAI_BaseNPCTroika::sub_10269df0(int condition)
+{
+	if (*(int *)((char *)this + 0x5c38) == 0)
+		return false;
+	int global = IsLocalId(condition) ? vfunc580()->ConditionLocalToGlobal(condition) : condition;
+	int interrupt = (global == -1) ? -1 : global - 1000000000;
+	if (interrupt == -1)
+		return false;
+	return !((CondBits *)((char *)this + 0x5c5c))->IsBitSet(interrupt) && ((CondBits *)((char *)this + 0x5c8c))->IsBitSet(interrupt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10269eb0 size=0x59
 #include "CAI_BaseNPCTroika.h"
 struct CAI_BaseNPC580 : CAI_BaseNPC {

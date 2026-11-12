@@ -4208,6 +4208,7 @@
 0x1000699c func   ?sub_1003f070@CBaseEntity@@QAEXPAUCGameTrace@@PAVVector@@@Z CBaseEntity::sub_1003f070
 0x100069a6 func   ?sub_10146790@CUnknown10146790@@QAEXXZ CUnknown10146790::sub_10146790
 0x100069ab func   ?vfunc362@CWeaponLockpick@@UAEHXZ CWeaponLockpick::vfunc362
+0x100069b0 func   ?sub_10269df0@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_10269df0
 0x100069ba func   ?vfunc254@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc254
 0x100069bf func   ?vfunc80@CWeaponIArmor_Body_Armor@@UAEPAXXZ CWeaponIArmor_Body_Armor::vfunc80
 0x100069c9 func   ?sub_1023f080@@YAXPAII@Z sub_1023f080
