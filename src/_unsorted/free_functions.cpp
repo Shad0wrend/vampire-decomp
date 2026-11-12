@@ -80296,6 +80296,47 @@ void CLightStyleX::sub_10130780(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130800 size=0x93
+#include "CLight.h"
+#include "inputdata_t.h"
+#include "globalvars.h"
+extern char g_106b8540[];
+void sub_10012215();
+
+struct string_tL
+{
+	const char *pszValue;
+	string_tL() { pszValue = 0; }
+	const char *ToCStr() const { return pszValue ? pszValue : g_106b8540; }
+};
+#define NULL_STRING_L string_tL()
+struct variantL
+{
+	string_tL iszVal;
+	char m_pad04[0xc];
+	int fieldType;
+	const char *sub_10008805();
+	const char *String() { return (fieldType == 2) ? iszVal.ToCStr() : sub_10008805(); }
+	string_tL StringID() const { return (fieldType == 2) ? iszVal : NULL_STRING_L; }
+};
+struct inputL { char pad[8]; variantL value; };
+struct LightL : CLight
+{
+	void SetNextThink(float t) { m_flNextThink = t; }
+};
+
+void CLight::sub_10130800(inputdata_t *pIn)
+{
+	inputL &inputdata = *(inputL *)pIn;
+	m_cCurrent = (m_pattern ? m_pattern : g_106b8540)[0];
+	m_cTarget = inputdata.value.String()[0];
+	m_pattern = inputdata.value.StringID().pszValue;
+	sub_100ac4e0((int)sub_10012215, 0, 0);
+	m_flNextThink = gpGlobals->curtime;
+	m_flags204 &= ~1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101308d0 size=0x99
 #include "CLight.h"
 

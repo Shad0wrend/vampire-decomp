@@ -13094,6 +13094,7 @@
 0x100123c3 func   ?sub_100dc770@CCollisionProperty@@QAEXPBM0@Z CCollisionProperty::sub_100dc770
 0x100123c8 func   ?vfunc123@CFlameCluster@@UAEXXZ CFlameCluster::vfunc123
 0x100123cd func   ?vfunc319@CAI_BaseNPCTroika@@UAE_NHPAVCBaseEntity@@H@Z CAI_BaseNPCTroika::vfunc319
+0x100123d2 func   ?sub_10130800@CLight@@QAEXPAUinputdata_t@@@Z CLight::sub_10130800
 0x100123d7 func   ?sub_101e11c0@CUnknown101e0f00@@QAEPAUCUnknown101e0f00Entry@@H@Z CUnknown101e0f00::sub_101e11c0
 0x100123dc func   ?sub_102007f0@CVStatList_t@@QAEXHPAHH@Z CVStatList_t::sub_102007f0
 0x100123e1 func   ?sub_1012b750@@YA_NPAVCBasePlayer@@0PAVVector@@M@Z sub_1012b750
