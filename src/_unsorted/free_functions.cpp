@@ -52802,6 +52802,35 @@ void sub_100d23a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d2540 size=0x178
+#include <stdlib.h>
+#include "Vector.h"
+
+void sub_101450e0(const Vector &start, const Vector &end, bool a, bool b);
+
+void sub_100d2540()
+{
+	Vector vecOrigin;
+	vecOrigin.x = atof(engine->vfunc84(1));
+	vecOrigin.y = atof(engine->vfunc84(2));
+	vecOrigin.z = atof(engine->vfunc84(3));
+	Vector mins = Vector(-5, -5, -5);
+	Vector maxs = Vector(5, 5, 5);
+	Vector start = mins + vecOrigin;
+	Vector end = maxs + vecOrigin;
+	sub_101450e0(start, end, true, true);
+	start.x += 10.0f;
+	end.x -= 10.0f;
+	sub_101450e0(start, end, true, true);
+	start.y += 10.0f;
+	end.y -= 10.0f;
+	sub_101450e0(start, end, true, true);
+	start.x -= 10.0f;
+	end.x += 10.0f;
+	sub_101450e0(start, end, true, true);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d27b0 size=0x21
 char *sub_10008d8c();
 void sub_1001080c(int value);
