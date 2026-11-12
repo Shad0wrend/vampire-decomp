@@ -20436,6 +20436,30 @@ int CUnknown1006eeb0::sub_1006eeb0(int which)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006ef50 size=0x87
+#include "CUnknown1006eeb0.h"
+#include "CBaseEntitySlots.h"
+#include "CBaseAnimating.h"
+
+// TARGET: CUnknown1006eeb0::sub_1006ef50
+void CUnknown1006eeb0::sub_1006ef50(CBaseEntity *pEnt, int which)
+{
+	unsigned int *pRecord = (unsigned int *)sub_1006eeb0(which);
+	m_hEntity[which] = pEnt;
+	if (pEnt)
+	{
+		CBaseAnimating *pAnim = (CBaseAnimating *)((CBaseEntitySlots *)pEnt)->slot137();
+		if (pAnim)
+		{
+			if (*pRecord & 0x200)
+				m_iIndex[which] = pAnim->sub_10092550((int)(pRecord + 1));
+			else if (*pRecord & 0x400)
+				m_iIndex[which] = pAnim->sub_10092d50((int)(pRecord + 1));
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006f010 size=0x50
 #include "CBaseCineCam.h"
 
