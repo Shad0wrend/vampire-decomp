@@ -126,6 +126,7 @@ struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 
 	void sub_1030bf50();	// the route's destructor body (stub 0x1000a3cb, free __fastcall in the matched sub_1030bf50): hands the waypoint pointer at +0x24 to 0x1031a050; the owner then frees the route with operator delete
 	void sub_1030bb30();	// resets the route: deletes the waypoint, vectors to vec3_origin (0x1070d1b0), flags and counters to 0 (+0x2c = 1, +0x30 = -1)
+	int sub_1030ba70();
 	int sub_1030bc00();	// the route's move status (stub 0x1000f240): 0 when it has none, 2 for a finished one
 	void sub_1030ba50(int value);	// sets the flag at +0x58 and the value at +0x5c
 	void sub_1030b4d0(int value, char b);
@@ -209,6 +210,7 @@ public:
 	float sub_1030a650(float flValue);	// twice the argument clamped to [range of the owner's hull (object at owner +0x5d40, hull index at +8), 0x1049df84]
 	bool sub_102f1dc0(int a, int b);	// per-frame path request step (ret 8): refreshes the stamps of this and of the pathfinder, drops the route's waypoint; while the owner's flag 0x20 (+0x5d8c) is set waits for the deadline at +0x48 (failure: slot 10(0xc, 1)) and retries sub_102f2330(b) after +0x4c, else tries it at once; success clears the flag and, unless the owner's slot 529 holds (or the current task is 0x6e), fails the task with slot 2(0); true on success
 	bool sub_102f2330(int b);	// stub 0x10001e51: "DoFindPath", called directly
+	void sub_102ecd00(int a);
 	bool sub_102ed430(const Vector *pPosition, int a, int b, int c);	// path to the node nearest pPosition (sub_102f3c10 asks the owner's graph): stamps the owner's value at +0x156c and the frame count into +8 / +0xc, asks the pathfinder (sub_102ff3e0 with a, b), sets up the route (flag value 4, the node, its arrival data) and stores the squared distance from pPosition to the route's goal position in the float at +0x14; false when any step fails (ret 0x10: four stack arguments, the last one unused)
 	Vector *sub_102ee140();	// stub 0x100071fd: the position the route is heading for
 	float sub_102f2fc0();	// stub 0x100049b7: the route's float at +0x20 (goal tolerance)
