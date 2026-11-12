@@ -211,6 +211,7 @@
 0x1000144c func   ?sub_1000144c@CPhysicsAnimlink@@QAEXXZ CPhysicsAnimlink::sub_1000144c
 0x10001451 func   ?vfunc2@CGameMovement@@UAEPAMDH@Z CGameMovement::vfunc2
 0x10001456 func   _logic_pythoncheck logic_pythoncheck
+0x1000145b func   ?sub_1024e260@@YAXABVVM@@0AAV1@@Z sub_1024e260
 0x10001460 func   ?vfunc330@CItemContainer@@QAEXHH@Z CItemContainer::vfunc330
 0x10001465 func   ?sub_101f0ae0@CUnknown101f0ae0@@QAEXXZ CUnknown101f0ae0::sub_101f0ae0
 0x1000146a func   ?sub_1040d8b0@@YAPAHXZ sub_1040d8b0
