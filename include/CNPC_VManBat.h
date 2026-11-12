@@ -95,7 +95,8 @@ public:
 	void sub_1038e6e0();	// stub 0x10011db0
 	void sub_1038e670();	// stub 0x100036e8
 	void sub_1038c250(CBaseEntity *pTarget);	// "launch at the target": with a target, sub_1038c170(1), the angles (slot 221) with the pitch cleared set back (slot 64), then the direction to the target (slot 220 of both) normalised and scaled by 200.0f becomes the velocity (CBaseEntity::sub_100b2770)
-	void sub_10332aa0(int a, int b, int c);	// stub 0x10013cf5, called by vfunc103 with (1, 1, 10)
+	void sub_10332aa0(int a, int b, int c);
+	CNPC_VManBat *sub_10389cc0();	// the constructor (flat class: base ctor, secure member, handles, vptrs by hand)	// stub 0x10013cf5, called by vfunc103 with (1, 1, 10)
 public:
 	datamap_t * vfunc82();
 	int vfunc138();
