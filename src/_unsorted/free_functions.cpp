@@ -205433,6 +205433,84 @@ float sub_102f9ca0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f9cd0 size=0x3af
+#include "vampire_all.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CAI_Node.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown102f47f0.h"
+#include "UTIL_Trace.h"
+#include "Tier1.h"
+#include "Vector.h"
+#include <math.h>
+#include <stdlib.h>
+
+extern char g_1093408c;
+char *sub_102d6120(int);
+char *sub_102d6100(int);
+float sub_102f9c70(const float *p);
+
+// TARGET: CAI_Node::sub_102f9cd0
+void CAI_Node::sub_102f9cd0()
+{
+	if (m_n74 & 0x1c)
+		return;
+	CGameTrace trace;
+	Vector posOnLadder;
+	sub_102fb0d0((float *)&posOnLadder, 0);
+	UTIL_TraceHull(posOnLadder, posOnLadder + Vector(0, 0, -37.0f), *(Vector *)sub_102d6100(0), *(Vector *)sub_102d6120(0), 0x2400b, 0, 0, &trace, 1, 0);
+	if (!trace.m_startsolid && trace.m_fraction != 1.0f)
+	{
+		m_n74 = 1;
+		sub_102fa170();
+		return;
+	}
+	if (g_1093408c)
+		return;
+	int checkNodeTypes[3] = { 4, 8, 0x10 };
+	int numExits = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		m_n74 = checkNodeTypes[i];
+		Vector origin;
+		sub_102fb0d0((float *)&origin, 0);
+		UTIL_TraceLine(posOnLadder, origin, 0x2400b, 0, 0, &trace);
+		if (!trace.m_startsolid && trace.m_fraction == 1.0)
+		{
+			float floorZ = sub_102f9c70((float *)&origin);
+			if (abs((int)(m_z - floorZ)) < 36)
+			{
+				CAI_Node *pNew = (CAI_Node *)((CUnknown102f47f0 *)m_pGraph98)->sub_102f47f0(&m_x, m_n6c);
+				pNew->m_nA0 = 0;
+				pNew->m_nType = 4;
+				pNew->m_n74 = m_n74;
+				pNew->sub_102fa170();
+				if (numExits == 0)
+				{
+					for (int h = 0; h < 22; h++)
+						m_aHullHeight[h] = pNew->m_aHullHeight[h];
+				}
+				else
+				{
+					for (int h = 0; h < 22; h++)
+					{
+						if (fabs(m_aHullHeight[h] - pNew->m_aHullHeight[h]) > 0.1)
+							g_109f3630("ERROR: Climb Node %i has different exit heights\n", m_nIndex);
+					}
+				}
+				numExits++;
+			}
+		}
+	}
+	if (numExits == 0)
+		g_109f3630("ERROR: Climb Node %i has no way off\n", m_nIndex);
+	m_n74 = 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fa510 size=0xd1
 #include "CAI_Node.h"
 #include "CAI_Network.h"
