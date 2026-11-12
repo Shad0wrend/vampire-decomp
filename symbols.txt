@@ -15648,6 +15648,7 @@
 0x10015b27 func   ?vfunc103@CFunc_Dust@@QAEXXZ CFunc_Dust::vfunc103
 0x10015b2c func   ?vfunc138@CNPC_VToreador@@UAEHXZ CNPC_VToreador::vfunc138
 0x10015b31 func   ?sub_101bb7e0@@YAPAHXZ sub_101bb7e0
+0x10015b36 func   ?sub_10336a50@BCCView@@QAE_NXZ BCCView::sub_10336a50
 0x10015b3b func   ?sub_101a9680@@YAHXZ sub_101a9680
 0x10015b40 func   ?sub_1012b080@CGib@@QAEXPBD@Z CGib::sub_1012b080
 0x10015b45 func   ?sub_100cf160@CEventQueue@@QAEXPAVCBaseEntity@@H@Z CEventQueue::sub_100cf160
