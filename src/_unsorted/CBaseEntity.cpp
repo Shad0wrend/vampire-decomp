@@ -5470,6 +5470,128 @@ void CEntView184::sub_10267260(const float *pOrigin, const void *pOther, int mod
 }
 // END FUNCTION
 
+// FUNCTION: 0x10268900 size=0x4bc
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CBaseEntity.h"
+#include "CFireBulletsInfo.h"
+#include "CVampireProjectile.h"
+#include "CVStatList_t.h"
+#include "CBasePlayer.h"
+#include "CUnknown10268170.h"
+
+#define V185(n) virtual void v##n();
+#define V185_10(p) V185(p##0) V185(p##1) V185(p##2) V185(p##3) V185(p##4) V185(p##5) V185(p##6) V185(p##7) V185(p##8) V185(p##9)
+
+class CUnknown104276a0 { public: int sub_104276a0(int nAmmoType); };
+
+struct CAmmoRulesView185
+{
+	V185_10(0) V185_10(1) V185_10(2) V185_10(3) V185_10(4)
+	V185(50) V185(51) V185(52) V185(53) V185(54)
+	virtual CUnknown104276a0 *vfunc55();
+};
+
+struct CEntityView186
+{
+	V185_10(0) V185_10(1) V185_10(2) V185_10(3) V185_10(4) V185_10(5) V185_10(6) V185_10(7) V185_10(8) V185_10(9)
+	V185_10(10) V185_10(11) V185_10(12) V185_10(13) V185_10(14) V185_10(15) V185_10(16) V185_10(17)
+	V185(180) V185(181) V185(182) V185(183) V185(184) V185(185)
+	virtual char vfunc186();
+};
+
+extern void *g_1070ba0c;
+extern int g_1072cb48;
+extern float g_104994c8[6];
+void sub_101c2c60();
+void sub_101c2c30();
+void *sub_101cda50();
+void sub_10138a90(const Vector &forward, Vector &right, Vector &up);
+CVampireProjectile *sub_101ef900(const Vector *pOrigin, const Vector *pDir, CBaseEntity *pAttacker, int nFlags, float flScale, const char *a, int b, int c, int d);
+
+void CBaseEntity::vfunc185(CFireBulletsInfo *pInfo)
+{
+	if (m_pNPC98)
+		--*(int *)((char *)m_pNPC98 + 0x65f0);
+	CUnknown104276a0 *pAmmoDef = ((CAmmoRulesView185 *)g_1070ba0c)->vfunc55();
+	int nDamageType = pAmmoDef->sub_104276a0(pInfo->m_iAmmoType);
+	pInfo->m_Dmg.m_field10 = nDamageType;
+	if (!pInfo->m_pAttacker)
+		pInfo->m_pAttacker = this;
+	sub_101c2c60();
+	sub_101c2c30();
+	g_1072cb48 = nDamageType | 0x1000;
+	Vector vecRight, vecUp;
+	sub_10138a90(pInfo->m_vecDirShooting, vecRight, vecUp);
+	CUtlVector<CFireBulletsHit> hits;
+	for (int iShot = 0; iShot < pInfo->m_iShots; iShot++)
+	{
+		for (int iPellet = 0; iPellet < pInfo->m_iPellets; iPellet++)
+		{
+			pInfo->m_vecDir = pInfo->m_vecDirShooting;
+			if (!(nDamageType & 0x2000000) || (m_pA8 && !*(int *)((char *)m_pA8 + 0x1e78)))
+				VectorAdd(((CUnknown10268170 *)this)->sub_10268170(pInfo->m_vecSpread, vecRight, vecUp), pInfo->m_vecDir, pInfo->m_vecDir);
+			pInfo->m_vecEnd = pInfo->m_vecSrc + pInfo->m_vecDir * pInfo->m_flDistance;
+			bool bProjectile = pInfo->m_bFlagsA0 & 1;
+			void *pPlayer = sub_101cda50();
+			int nLevel = pPlayer ? CVStatListSet::Of(pPlayer)->Find(3)->sub_102012d0(3) : 0;
+			if (bProjectile || (nLevel >= 3 && !m_pA8))
+			{
+				bProjectile = true;
+				pInfo->m_flA4 /= g_104994c8[nLevel > 5 ? 5 : (nLevel < 0 ? 0 : nLevel)];
+			}
+			if (((CEntityView186 *)this)->vfunc186())
+				continue;
+			if (bProjectile && pInfo->m_pA8 && *(char *)pInfo->m_pA8)
+			{
+				float flFrac = 1.0f / pInfo->m_iPellets;
+				CVampireProjectile *pProj = sub_101ef900(&pInfo->m_vecSrc, &pInfo->m_vecDir, pInfo->m_pAttacker, *(int *)&pInfo->m_bFlagsA0, pInfo->m_flA4, (const char *)pInfo->m_pA8, pInfo->m_nAC, pInfo->m_nB0, pInfo->m_nB4);
+				pProj->sub_101ef540(&pInfo->m_vecSrc, &pInfo->m_vecEnd, pInfo->m_iAmmoType, (int)&pInfo->m_Dmg, pInfo->m_pAttacker, &pInfo->m_vecDir, *(float *)&pInfo->m_n9c, *(int *)&pInfo->m_flDistance, 1, iShot, 0, 0, (CBaseEntity *)pInfo->m_pWeapon98, (const char *)pInfo->m_nB8, *(int *)&flFrac);
+				continue;
+			}
+			sub_10267b60(pInfo);
+			if (pInfo->m_pHitEntity)
+			{
+				int k;
+				for (k = 0; k < hits.Count(); k++)
+				{
+					if (hits[k].m_hEnt.Get() == pInfo->m_pHitEntity)
+						break;
+				}
+				CFireBulletsHit *pEntry;
+				if (k >= hits.Count())
+				{
+					CFireBulletsHit hit;
+					hit.m_hEnt = pInfo->m_pHitEntity;
+					hit.m_nHits = 0;
+					pEntry = &hits[hits.AddToTail(hit)];
+				}
+				else
+				{
+					pEntry = &hits[k];
+				}
+				pEntry->m_nHits++;
+			}
+		}
+		if (pInfo->m_iPellets)
+		{
+			for (int m = 0; m < hits.Count(); m++)
+			{
+				CBaseEntity *pEnt = hits[m].m_hEnt.Get();
+				if (pEnt)
+				{
+					float flFraction = hits[m].m_nHits;
+					flFraction /= pInfo->m_iPellets;
+					sub_10268330(pEnt, pInfo, flFraction);
+				}
+			}
+		}
+	}
+	if (m_pA8)
+		((CBasePlayer *)m_pA8)->sub_10160560();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10268ef0 size=0x30b
 #include "CTraceFilterNoCharacterCollide.h"
 #include "CBaseEntity.h"
