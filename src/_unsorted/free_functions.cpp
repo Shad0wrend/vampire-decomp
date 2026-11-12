@@ -186418,6 +186418,83 @@ int CAI_BaseNPCUnit::sub_1027e140(const Vector *pMove, int mask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027e250 size=0x287
+#include "CAI_BaseNPC.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "ConVar.h"
+
+extern ConVar g_109eee08;
+void sub_101cd110(CAI_BaseNPC *pEnt, const Vector *pStart, const Vector *pEnd, int mask, CGameTrace *pTrace);
+char sub_101cd390(CAI_BaseNPC *pEnt, int a, float flStep);
+
+struct CAI_BaseNPCUnit : CAI_BaseNPC
+{
+	int sub_1027e250(const Vector *pMove, int mask);
+	int sub_1027e140(const Vector *pMove, int mask);
+	void sub_100a53d0(int a);
+};
+
+// TARGET: CAI_BaseNPCUnit::sub_1027e250
+int CAI_BaseNPCUnit::sub_1027e250(const Vector *pMove, int mask)
+{
+	if (sub_100b3700() & 0xc00)
+		return sub_1027e140(pMove, mask);
+	if ((sub_100b3700() & 1) == 0)
+		return 0;
+
+	CGameTrace trace;
+	Vector oldorg, neworg, end;
+	Vector move((*pMove)[0], (*pMove)[1], 0.0f);
+	VectorCopy(*(const Vector *)vfunc217(), oldorg);
+	VectorAdd(oldorg, move, neworg);
+
+	float flStepSize = g_109eee08.GetFloat();
+	neworg[2] += flStepSize;
+	VectorCopy(neworg, end);
+	end[2] -= flStepSize * 2;
+
+	sub_101cd110(this, &neworg, &end, mask, &trace);
+	if (trace.m_allsolid)
+		return false;
+
+	if (trace.m_startsolid) {
+		neworg[2] -= flStepSize;
+		sub_101cd110(this, &neworg, &end, mask, &trace);
+		if (trace.m_allsolid || trace.m_startsolid)
+			return false;
+	}
+
+	if (trace.m_fraction == 1) {
+		if (sub_100b3700() & 0x20000) {
+			((CEntityVSlots *)this)->slot216(&(oldorg + move));
+			sub_100a53d0(0);
+			sub_100b3640(1);
+			return true;
+		}
+		return false;
+	}
+
+	((CEntityVSlots *)this)->slot216((Vector *)trace.m_endpos);
+
+	if (sub_101cd390(this, 0, flStepSize) == 0) {
+		if (sub_100b3700() & 0x20000) {
+			sub_100a53d0(0);
+			return true;
+		}
+		((CEntityVSlots *)this)->slot216(&oldorg);
+		return false;
+	}
+
+	if (sub_100b3700() & 0x20000)
+		sub_100b3640(0x20000);
+
+	vfunc208((int)trace.m_pEnt);
+	sub_100a53d0(0);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027e590 size=0x93
 #include "CBaseEntity.h"
 extern "C" int _vsnprintf(char *, unsigned int, const char *, char *);
