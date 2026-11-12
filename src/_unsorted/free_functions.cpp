@@ -201353,6 +201353,209 @@ void CUnknown102ecd00::sub_102ecd00(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ecd20 size=0x4bd
+#include "CAI_Waypoint.h"
+#include "CHL2_Player.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CEHandleGet.h"
+#include "CAI_Navigator.h"
+#include "CAI_Network.h"
+#include "CAI_Pathfinder.h"
+#include "CUnknown102ee270.h"
+#include "CUnknown102ee120.h"
+#include "CAI_Motor.h"
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+
+struct AI_NavGoal
+{
+	int type;		// 0x00
+	Vector dest;		// 0x04
+	int destNode;		// 0x10
+	int activity;		// 0x14
+	int arrivalActivity;	// 0x18
+	int arrivalSequence;	// 0x1c
+	float tolerance;	// 0x20
+	unsigned int flags;	// 0x24
+	CBaseEntity *pTarget;	// 0x28
+	Vector direction;	// 0x2c
+	int m38;		// 0x38
+	int m3c;		// 0x3c
+};
+
+#define NV(a) virtual void v##a();
+#define NV10(a) NV(a##0) NV(a##1) NV(a##2) NV(a##3) NV(a##4) NV(a##5) NV(a##6) NV(a##7) NV(a##8) NV(a##9)
+#define NV100(a) NV10(a##0) NV10(a##1) NV10(a##2) NV10(a##3) NV10(a##4) NV10(a##5) NV10(a##6) NV10(a##7) NV10(a##8) NV10(a##9)
+
+struct NavNPCView
+{
+	NV100(0) NV100(1) NV100(2) NV100(3) NV100(4)
+	NV10(50) NV10(51) NV10(52) NV10(53) NV10(54) NV10(55) NV10(56) NV10(57)
+	NV(580) NV(581) NV(582) NV(583) NV(584) NV(585)
+	virtual CBaseHandle v586();
+};
+
+struct NavOuterView
+{
+	char pad[0x98];
+	NavNPCView *m_pNPC98;
+};
+
+float sub_102d61b0(int hull);
+
+struct NavSelfView : CAI_Navigator
+{
+	bool sub_102f1dc0(int a, bool b);
+	Vector sub_102ee9c0(int node);
+};
+
+struct NavRouteView : CAI_NavRoute
+{
+	void sub_1030b950(const Vector &vecGoal);
+};
+
+struct NavNetworkView : CAI_NavProviderList
+{
+	int NearestNodeToNPC(int pOuter) { return sub_102f3c10(pOuter, ((CEntityVSlots *)pOuter)->slot217()); }
+};
+
+static inline float HullWidth(int hull) { return sub_102d61b0(hull); }
+static inline CBaseEntity *LookupHandle(const unsigned int *pHandle) { return g_10566458->sub_100290c0(pHandle); }
+
+extern Vector g_1070d1b0;
+extern Vector g_1093404c;
+extern Vector g_10934060;
+extern CBaseEntity *g_10934058;
+extern const float g_1049d980;
+extern const float g_1049d97c;
+extern const float g_104454c4;
+
+bool CAI_Navigator::sub_102ecd20(void *pGoal, int nFlags)
+{
+	const AI_NavGoal &goal = *(const AI_NavGoal *)pGoal;
+
+	m_i08 = *(int *)(m_pOuter + 0x156c);
+	m_i0c = gpGlobals->framecount;
+	CAI_NavComponentData *pPathfinder = (CAI_NavComponentData *)sub_102ecc00();
+	pPathfinder->m_i08 = *(int *)(pPathfinder->m_pOuter + 0x156c);
+	pPathfinder->m_i0c = gpGlobals->framecount;
+
+	CAI_NavRoute *pPath = m_p30;
+	vfunc7();
+
+	if (nFlags & 1)
+		((CUnknown102ee270 *)this)->sub_102f28a0();
+	else if (nFlags & 2)
+	{
+		*(CBaseHandle *)&pPath->m_i30 = (IHandleEntity *)0;
+		*(Vector *)&pPath->m_v34 = g_1070d1b0;
+	}
+
+	if (goal.activity != -1)
+		((CUnknown102ee120 *)this)->sub_102ee250(goal.activity);
+
+	if (goal.tolerance == g_1049d980)
+		pPath->SetGoalTolerance(HullWidth(m_i08));
+	else if (goal.tolerance != g_1049d97c)
+		pPath->SetGoalTolerance(goal.tolerance);
+	else if (pPath->m_fl28 == g_104454c4)
+	{
+		pPath->SetGoalTolerance(HullWidth(m_i08));
+		CBaseEntity *pTarget = 0;
+		if (goal.type == 1 || goal.type == 2 || goal.type == 7)
+		{
+			if (goal.type == 1)
+				pTarget = LookupHandle((const unsigned int *)(m_pOuter + 0x5ce4));
+			else if (goal.type == 2)
+				pTarget = (CBaseEntity *)((CEntityVSlots *)m_pOuter)->slot167();
+			else
+				pTarget = (CBaseEntity *)((NavOuterView *)m_pOuter)->m_pNPC98->v586().Get();
+		}
+		if (pTarget && pTarget->m_p9c)
+			pPath->SetGoalTolerance((HullWidth(m_i08) + HullWidth(*(int *)((char *)pTarget->m_p9c + 0x1568))) * 0.5);
+	}
+
+	pPath->m_fl40 = HullWidth(m_i08) * 0.5;
+
+	if (goal.direction != g_10934060)
+		pPath->sub_1030be20((const int *)&goal.direction);
+	pPath->m_i08 = goal.m38;
+	pPath->m_i04 = goal.m3c;
+
+	if (goal.flags & 2)
+	{
+		int startNode = ((NavNetworkView *)m_pProviders)->NearestNodeToNPC(m_pOuter);
+		if (startNode == -1)
+			return false;
+		int endNode = ((CAI_Network *)m_pProviders)->sub_102f41b0(&goal.dest);
+		if (endNode == -1)
+			return false;
+		CAI_Waypoint *pWaypoints = ((CAI_Pathfinder *)sub_102ecc00())->sub_102fd240(startNode, endNode);
+		if (!pWaypoints)
+			return false;
+		pPath->sub_1030ba50(4);
+		pPath->sub_1030b4d0((int)pWaypoints, 0);
+		pPath->sub_1030b8e0();
+		return true;
+	}
+
+	pPath->sub_1030ba50(goal.type);
+	pPath->m_i60 = goal.flags;
+	CBaseEntity *pTarget = goal.pTarget;
+	if (goal.type == 1 || goal.type == 2 || goal.type == 7)
+	{
+		if (goal.type == 1)
+			pTarget = ((EHANDLE *)(m_pOuter + 0x5ce4))->Get();
+		else if (goal.type == 2)
+			pTarget = (CBaseEntity *)((CEntityVSlots *)m_pOuter)->slot167();
+		else
+			pTarget = (CBaseEntity *)((NavOuterView *)m_pOuter)->m_pNPC98->v586().Get();
+		if (goal.dest != g_1093404c)
+			*(Vector *)&pPath->m_v34 = goal.dest;
+	}
+	else
+	{
+		if (goal.dest != g_1093404c)
+			((NavRouteView *)pPath)->sub_1030b950(goal.dest);
+		else if (goal.destNode != -1)
+			((NavRouteView *)pPath)->sub_1030b950(((NavSelfView *)this)->sub_102ee9c0(goal.destNode));
+	}
+
+	if (pTarget > g_10934058)
+		((EHANDLE *)&pPath->m_i30)->Set(pTarget);
+
+	bool bResult = (goal.flags >> 3) & 1;
+	bResult = ((NavSelfView *)this)->sub_102f1dc0(1, bResult);
+	if (!bResult)
+	{
+		if (nFlags & 4)
+			((CUnknown102ee270 *)this)->sub_102f28a0();
+	}
+	else
+	{
+		if (goal.flags & 1)
+		{
+			sub_102e0b40((float *)m_i20);
+			CAI_Motor *pMotor = (CAI_Motor *)m_i20;
+			pMotor->sub_102e2020((const float *)pPath->sub_1030ba30(), 0);
+		}
+		sub_102f13d0(1);
+		if (goal.arrivalActivity != -1)
+			pPath->sub_1030b550(goal.arrivalActivity);
+		else if (goal.arrivalSequence != -1)
+			pPath->sub_1030b5b0(goal.arrivalSequence);
+		else
+			pPath->sub_1030b550(1);
+	}
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ed310 size=0x5a
 #include "CAI_Navigator.h"
 #include "CBaseEntity.h"

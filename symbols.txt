@@ -8918,6 +8918,7 @@
 0x1000ce55 func   ?vfunc80@CDynamicProp@@UAEHXZ CDynamicProp::vfunc80
 0x1000ce5a func   ?sub_100d3d20@@YAXXZ sub_100d3d20
 0x1000ce5f func   ?sub_10084ab0@@YAPAVCSceneEntity@@PAUCRefOwnerView@@PBD@Z sub_10084ab0
+0x1000ce64 func   ?sub_102ecd20@CAI_Navigator@@QAE_NPAXH@Z CAI_Navigator::sub_102ecd20
 0x1000ce69 func   ?sub_1025da20@CList1025da20@@QAEXXZ CList1025da20::sub_1025da20
 0x1000ce6e func   ?sub_101f4ce0@CUnknown101f4c80@@QAE_NPAXPAVCUnknown101f5d60@@H@Z CUnknown101f4c80::sub_101f4ce0
 0x1000ce73 func   ?sub_10207c20@@YAHXZ sub_10207c20
