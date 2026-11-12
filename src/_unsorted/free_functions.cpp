@@ -60507,6 +60507,30 @@ CTableItem40_t *CUnknown100ecee0::sub_100ec450(int index, int *pOut1, int *pOut2
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec530 size=0x77
+#include "utlrbtree.h"
+#include <string.h>
+#include "utlvector.h"
+#include "CUnknown100ecee0.h"
+
+__declspec(dllimport) int Q_strnicmp(const char *s1, const char *s2, int n);
+
+int CUnknown100ecee0::sub_100ec530(const char *pszName, int level)
+{
+	CUtlVector<CTableEntry264_t> &entries = *(CUtlVector<CTableEntry264_t> *)&m_pEntries;
+	while (level)
+	{
+		for (int i = 0; i < entries.Count(); i++)
+		{
+			if (entries[i].m_n40 == level && !Q_strnicmp(pszName, entries[i].m_szName, strlen(pszName)))
+				return i;
+		}
+		level--;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ec5d0 size=0x42
 #include "utlrbtree.h"
 #include "utlvector.h"

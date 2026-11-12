@@ -5196,6 +5196,7 @@
 0x10007f9a func   ?sub_10072a50@CCameraShotTable@@QAEHPBDPAUCCameraShot_t@@@Z CCameraShotTable::sub_10072a50
 0x10007f9f func   ?sub_103b4f30@CNPC_VTestUnit@@QAEHXZ CNPC_VTestUnit::sub_103b4f30
 0x10007fa4 func   ?vfunc5@CSoundEnt@@QAEPAVCPointEntity@@I@Z CSoundEnt::vfunc5
+0x10007fa9 func   ?sub_100ec530@CUnknown100ecee0@@QAEHPBDH@Z CUnknown100ecee0::sub_100ec530
 0x10007fae func   ?sub_10032180@@YAXPAUImpactEvent_t@@H@Z sub_10032180
 0x10007fb3 func   ?sub_1017e5f0@CBasePlayer@@QAEXPAUinputdata_t@@@Z CBasePlayer::sub_1017e5f0
 0x10007fb8 func   ?sub_102210f0@QuestJournal@@QAEXXZ QuestJournal::sub_102210f0
