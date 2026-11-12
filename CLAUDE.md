@@ -514,6 +514,22 @@ have written it rather than adding temporaries that spell out the assembly:
   Saved under view names (watch the link audit): 0x10365a90 CNPC_VBachCamp::sub_10365a90, 0x1027d170
   CAI_CineCleanupNPC::sub_1027d170. Near misses: 0x10333ad0 (4), 0x101226b0 (7), 0x103d2a10 (11), 0x10254450 (12),
   0x100cc430 (12), 0x102da0d0 (12), 0x10040390 (13).
+- **Near-miss pass (13 of 63 functions scored 1-15, 8.4 KB, 2026-11-13):** the round-10..12 idioms closed most:
+  - x87 kept-alive reciprocal (`fmul st(1)` ... `fstp st(0)` at the end): `const Vector &cd = d;
+    Vector n(cd[0] * r, cd[1] * r, 0);` (by-value const operator[] on the reference; 0x10295ed0). Untested yet on
+    the x87 near misses 0x101200c0, 0x101c2d20, 0x101cb340, 0x103264d0, 0x103efa30 (3);
+  - a one-level `__forceinline Vector VMulG(const Vector &v, float fl)` instead of the SDK two-level operator chain
+    frees inline budget (0x101b06a0); `#define inline __forceinline` around `#include "Vector.h"` replaces a
+    Vector.h patch (0x102bf820 5 -> 2);
+  - `if (0) Purge();` spends inline budget with no code (inlining runs before dead-code removal): WORKAROUND,
+    0x1023a7d0; five dummy struct declarations revived 0x102f9cd0 (declaration-count hash, unstable: WORKAROUND);
+  - a scope-trace string ("CDialog::~CDialog") is evidence for rename_symbol: the stub got `??1CDialog@@QAE@XZ`
+    and the rejudge matched 0x100df590 without a new source;
+  - lead: a byte-copy loop pair may be the compiler-generated implicit `operator=` (target
+    `??4S@@QAEAAU0@ABU0@@Z`; 0x1025b930 needs the record's real member list).
+  Saved under view names (watch the link audit): 0x103f03e0 CFrag914::sub_103f03e0, 0x10295ed0
+  CAI_BaseNPCTroikaV::sub_10295ed0. Unsolved patterns: the game hoists pointer loads above stack stores
+  (0x102e7e80, 0x101001e0, 0x10176930); include-loop address reassociation (0x10429080, 0x10427df0, 0x101810f0).
 - **Same-name plain member + later virtual = shifted vtable (found 2026-11-12):** MSVC puts all functions of one
   name together in the vtable, at the first declaration's position. A plain `void vfunc442(int *)` near the top of
   a class plus the `virtual void vfunc442();` placeholder further down moved slot 442 before slot 134, so every
