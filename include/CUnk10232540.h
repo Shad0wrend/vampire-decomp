@@ -21,6 +21,7 @@ public:
 class CUnk10232540
 {
 public:
+	int m_pad00;
 	int m_vtable_or_pad04;	// 0x04
 	int m_nMessageId08;	// 0x08: user message id sent with the new masks (engine slot 65 UserMessageBegin(filter, id))
 	int m_nMessageId0c;	// 0x0c: user message id sent for the reset (cleared bit of g_107516c8)
