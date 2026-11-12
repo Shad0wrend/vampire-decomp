@@ -12403,6 +12403,7 @@
 0x100115e5 func   ?vfunc103@CFuncRotating@@UAEXXZ CFuncRotating::vfunc103
 0x100115ea func   ?vfunc427@CAI_BaseHumanoid@@QAEPAVCAI_HumanoidMotor@@XZ CAI_BaseHumanoid::vfunc427
 0x100115ef func   ?vfunc82@CPointExplosion@@UAEPAUdatamap_t@@XZ CPointExplosion::vfunc82
+0x100115f4 func   ?sub_10427a70@@YAXPAUHdrView@@@Z sub_10427a70
 0x100115f9 func   ?sub_102289e0@CSoundSchemeSystem@@QAEXPAVCSoundScheme@@@Z CSoundSchemeSystem::sub_102289e0
 0x100115fe func   ?sub_101306f0@CEnvFireSource@@QAEXXZ CEnvFireSource::sub_101306f0
 0x10011603 func   ?sub_1019de30@CRopeKeyframe@@QAEXPAVCBaseEntity@@H@Z CRopeKeyframe::sub_1019de30
