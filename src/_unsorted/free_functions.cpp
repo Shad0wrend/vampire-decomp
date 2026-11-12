@@ -44183,6 +44183,47 @@ int sub_100ba620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100baac0 size=0x9a
+bool __fastcall sub_1042d6b0(int *p);
+unsigned int __fastcall sub_1042d700(unsigned int *p);
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct SProxyEnt {
+	SL10(a0) SL10(a1) SL10(a2) SL10(a3) SL10(a4) SL10(a5) SL10(a6) SL10(a7) SL10(a8)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void b5(); virtual void b6();
+	virtual SProxyEnt *GetOwnerEntity();
+	int m_unk4[(0xa8 - 4) / 4];
+	int m_unka8;
+	int m_unkac[(0x1a8 - 0xac) / 4];
+	unsigned int m_PredictableID;
+	int m_unk1ac[(0x2e0 - 0x1ac) / 4];
+	int m_pEdict;
+	int edict() { return m_pEdict; }
+	int entindex() { return engine->vfunc35(edict()); }
+};
+
+void *sub_100baac0(const void *pStruct, const void *pVarData, unsigned int *pRecipients)
+{
+	SProxyEnt *pEntity = (SProxyEnt *)pStruct;
+	if (!pEntity || !sub_1042d6b0((int *)&pEntity->m_PredictableID))
+		return 0;
+	if (!pEntity->GetOwnerEntity())
+		return 0;
+	SProxyEnt *pOwner = pEntity->GetOwnerEntity();
+	if (!pOwner || !pOwner->m_unka8)
+		return 0;
+	unsigned int id_player_index = sub_1042d700(&pEntity->m_PredictableID);
+	unsigned int owner_player_index = pOwner->entindex() - 1;
+	if (id_player_index != owner_player_index)
+		return 0;
+	pRecipients[0] = 0;
+	pRecipients[owner_player_index >> 5] |= 1 << (owner_player_index & 31);
+	return (void *)pVarData;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bac20 size=0x1a
 namespace lifted {
 extern int g_1055a97c;
