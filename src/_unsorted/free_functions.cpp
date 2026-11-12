@@ -86881,6 +86881,92 @@ void *sub_1014a140(CUnk1014a140 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a1b0 size=0x244
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "QAngle.h"
+#include "Ray_t.h"
+#include "CWeaponGravityGun.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CTraceFilterSimple.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown10738964.h"
+#include "engineserver.h"
+// TARGET: CWeaponGravityGun::sub_1014a1b0
+
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_10146570(const Vector *pStart, const Vector *pEnd, int r, int g, int b, int noDepth, float duration);
+bool sub_1014a4a0(CBaseEntity *pEntity);
+void *sub_1014a4f0(void *pWeapon, void *pPlayer);
+
+extern CUnknown10738964 *g_1071a32c;
+extern CGameTrace g_1071a3f0;
+extern int g_1057b7b4;
+
+namespace block_1014a1b0 {
+inline void TraceHullInline(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	ray.Init(vecAbsStart, vecAbsEnd, hullMin, hullMax);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+}
+using namespace block_1014a1b0;
+
+struct CWeaponGravityGunView : CWeaponGravityGun
+{
+	CBasePlayer *GetPlayerOwner()
+	{
+		CBaseEntity *pOwner = (CBaseEntity *)sub_102521f0();
+		if (!pOwner)
+			return 0;
+		return (CBasePlayer *)pOwner->m_pA8;
+	}
+};
+
+void *CWeaponGravityGun::sub_1014a1b0()
+{
+	CBasePlayer *pPlayer = ((CWeaponGravityGunView *)this)->GetPlayerOwner();
+	if (pPlayer == 0)
+		return 0;
+
+	if (engine->vfunc120() != *(unsigned int *)((char *)this + 0x884))
+	{
+		*(int *)((char *)this + 0x87c) = 0;
+		*(unsigned int *)((char *)this + 0x884) = engine->vfunc120();
+
+		if (!g_1071a32c->vfunc1() && g_1071a32c->m_n2c >= 1)
+		{
+			void *pResult = sub_1014a4f0(this, pPlayer);
+			*(void **)((char *)this + 0x87c) = pResult;
+			return pResult;
+		}
+
+		Vector vecForward;
+		sub_10139610((const QAngle &)pPlayer->m_vec206c, &vecForward, 0, 0);
+
+		CEntityVSlots *pSlots = (CEntityVSlots *)pPlayer;
+		Vector vecStart;
+		vecStart = pSlots->slot389(*pSlots->slot220());
+		TraceHullInline(vecStart, vecStart + vecForward * (float)g_1057b7b4, Vector(-4, -4, -4), Vector(4, 4, 4),
+			0x46004003, pPlayer, 0, &g_1071a3f0);
+
+		if (g_1071a3f0.m_fraction >= 1.0f || g_1071a3f0.m_pEnt == 0)
+			return 0;
+		CBaseEntity *pEnt = g_1071a3f0.m_pEnt;
+		if (sub_1014a4a0(g_1071a3f0.m_pEnt))
+			*(void **)((char *)this + 0x87c) = pEnt;
+	}
+	return *(void **)((char *)this + 0x87c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a4a0 size=0x3a
 extern int g_1057b7b0;
 extern int g_1057b7b4;
