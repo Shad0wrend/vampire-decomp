@@ -10625,6 +10625,7 @@
 0x1000ee5d func   ?vfunc425@CAI_BaseNPC@@UAEPAVCAI_Senses@@XZ CAI_BaseNPC::vfunc425
 0x1000ee62 func   ?sub_100d8120@@YAXXZ sub_100d8120
 0x1000ee67 func   ?sub_101f83a0@CNamedList83a0@@QAEHPBD@Z CNamedList83a0::sub_101f83a0
+0x1000ee6c func   ?FreeNode@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QAEXH@Z CUtlRBTree<CSoundEmitterRecord,int>::FreeNode
 0x1000ee6c func   ?sub_101b7370@CUnknown101b7370@@QAEXH@Z CUnknown101b7370::sub_101b7370
 0x1000ee71 func   ?sub_10082d20@CSceneEntity@@QAEXXZ CSceneEntity::sub_10082d20
 0x1000ee76 func   ?vfunc3@CRelationshipSaveDataOps@@QAEXPAX@Z CRelationshipSaveDataOps::vfunc3
