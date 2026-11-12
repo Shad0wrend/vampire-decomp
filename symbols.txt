@@ -3718,6 +3718,7 @@
 0x10005f1f func   ?sub_1006ac90@@YAHXZ sub_1006ac90
 0x10005f24 func   ?sub_103122e0@CUnknown103122e0@@QAEHHH@Z CUnknown103122e0::sub_103122e0
 0x10005f29 func   ?sub_101b0d80@CUnknown101b0d80@@QAEXH@Z CUnknown101b0d80::sub_101b0d80
+0x10005f2e func   ?sub_103c7980@@YAXXZ sub_103c7980
 0x10005f33 func   ?sub_103e7640@@YIDPAXHH@Z sub_103e7640
 0x10005f38 func   ?vfunc104@CEnvShooter@@QAEXXZ CEnvShooter::vfunc104
 0x10005f3d func   ?vfunc377@CNPC_VNewscaster@@UAE_NHH@Z CNPC_VNewscaster::vfunc377
