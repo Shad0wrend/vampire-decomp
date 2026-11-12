@@ -234797,6 +234797,57 @@ bool CNPC_VManBat::sub_1038f2c0(const char *pszModel, int nBone, int nArg, const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038f430 size=0x169
+#include "CNPC_VManBat.h"
+#include "CPhysicsAnimlink.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "CUnknown101578b0.h"
+#include "CUnknown101578d0.h"
+#include "StudioHdr.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+CBaseEntity *sub_100a9ab0(const char *pszClass, void *pOrigin, void *pAngles, void *pOwner);
+extern int g_1070d1b0, g_1070d9d0;
+
+inline const char *ManBat_BoneName(StudioBone *pBone) { return (char *)pBone + *(int *)pBone; }
+
+bool CNPC_VManBat::sub_1038f430(CBaseAnimating *pProp, int nArg)
+{
+	if (!pProp)
+		return false;
+	CPhysicsAnimlink *pLink = (CPhysicsAnimlink *)sub_100a9ab0("phys_animlink", &g_1070d1b0, &g_1070d9d0, 0);
+	if (!pLink)
+		return false;
+	StudioHdr *pHdr = (StudioHdr *)((CBaseAnimating *)this)->sub_100952d0(-1);
+	int iBone;
+	for (int i = 0; i < pHdr->m_nBones; i++)
+	{
+		const char *pszName = ManBat_BoneName(pHdr->Bone(i));
+		if (!_strcmpi("Bip01 R Foot", pszName))
+		{
+			iBone = i;
+			break;
+		}
+	}
+	if (iBone < 0)
+		return false;
+	if (!((CBaseEntity *)pProp)->m_obj36c)
+		return false;
+	void *pPhys = ((CEntityVSlots *)pProp)->slot265(nArg);
+	if (!pPhys)
+		return false;
+	Vector vecOffset(0, 0, 0);
+	QAngle angles(0, 0, 0);
+	pLink->sub_1014f210((CBaseAnimating *)this, iBone, pPhys, (int)&vecOffset, (int)&angles);
+	m_h6690 = *(unsigned int *)pLink->vfunc1();
+	sub_1038f600(1);
+	m_b6694 = ((CUnknown101578b0 *)pProp)->sub_101578b0();
+	((CUnknown101578d0 *)pProp)->sub_101578d0(0);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038f600 size=0x24
 class CUnknown1038f600
 {
