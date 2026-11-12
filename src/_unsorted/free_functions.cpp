@@ -202072,6 +202072,101 @@ char __fastcall sub_102daf50(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102daf80 size=0x344
+#include "CAI_InterestingPlace.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+#include "Vector.h"
+#include "engineserver.h"
+#include <string.h>
+extern "C" int sprintf(char *, const char *, ...);
+void sub_10143710(Vector *pOrigin, const char *pszText, int nStyle, int nArg);
+void sub_10142aa0(Vector *, Vector *, Vector *, int, int, int, int, int);
+extern char g_106b8540[];
+extern Vector g_1070d1b0;
+
+struct CAI_IPSlotView
+{
+	CBaseEntity *m_pEnt;
+	Vector m_vMins;
+	Vector m_vMaxs;
+};
+struct CAI_IPRecView
+{
+	float m_flExpire;
+	Vector m_vMins;
+	Vector m_vMaxs;
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline int ENTINDEX(int pEdict) { return engine->vfunc35(pEdict); }
+
+// TARGET: CAI_InterestingPlace::sub_102daf80
+void CAI_InterestingPlace::sub_102daf80(int nArg)
+{
+	char buf[128];
+	if (m_b57d)
+	{
+		if ((int)(gpGlobals->curtime * 2) & 1)
+		{
+			Vector org = *((CEntityVSlots *)this)->slot220();
+			sub_10142aa0(&org, &m_vec54c, &m_vec558, 200, 30, 30, 40, nArg);
+		}
+	}
+	else if (m_b57c)
+	{
+		Vector org = *((CEntityVSlots *)this)->slot220();
+		sub_10142aa0(&org, &m_vec54c, &m_vec558, 30, 96, 30, 40, nArg);
+	}
+	else
+	{
+		Vector org = *((CEntityVSlots *)this)->slot220();
+		sub_10142aa0(&org, &m_vec54c, &m_vec558, 15, 60, 15, 40, nArg);
+	}
+	int nSlots = m_nSlots;
+	sprintf(buf, "%s - %d/%d", STRINGR(m_pszTypeName), nSlots - m_n58c - m_n588, nSlots);
+	{
+		Vector org1 = *((CEntityVSlots *)this)->slot220();
+		sub_10143710(&org1, buf, 0, nArg);
+	}
+	const char *pszMode;
+	if (m_n590 == 0)
+		sprintf(buf, "(%d) set mode NORMAL.\n", ENTINDEX(m_pEdict2e0));
+	else if (m_n590 == 1)
+		sprintf(buf, "(%d) set mode TALKER.\n", ENTINDEX(m_pEdict2e0));
+	else if (m_n590 == 2)
+		sprintf(buf, "(%d) set mode LISTENER.\n", ENTINDEX(m_pEdict2e0));
+	Vector org2 = *((CEntityVSlots *)this)->slot220();
+	org2.z = m_vec558.z;
+	sub_10143710(&org2, buf, 0, nArg);
+	if (m_pSlots)
+	{
+		for (int i = 0; i < m_nSlots; i++)
+		{
+			if (((CAI_IPSlotView *)m_pSlots)[i].m_pEnt)
+			{
+				CAI_IPSlotView *pSlot = &((CAI_IPSlotView *)m_pSlots)[i];
+				CBaseEntity *pEnt = pSlot->m_pEnt;
+				Vector center;
+				center = (pSlot->m_vMaxs + pSlot->m_vMins) * 0.5f;
+				Vector relMins, relMaxs;
+				relMins = pSlot->m_vMins - center;
+				relMaxs = pSlot->m_vMaxs - center;
+				strcpy(buf, pEnt->sub_100ab4f0());
+				sub_10142aa0(&center, &relMins, &relMaxs, 64, 64, 200, 40, nArg);
+				sub_10143710(&center, buf, 1, nArg);
+			}
+		}
+	}
+	for (int k = 0; k < 4; k++)
+	{
+		if (((CAI_IPRecView *)m_Slots594)[k].m_flExpire > gpGlobals->curtime)
+			sub_10142aa0(&g_1070d1b0, &((CAI_IPRecView *)m_Slots594)[k].m_vMins, &((CAI_IPRecView *)m_Slots594)[k].m_vMaxs, 128, 32, 32, 40, nArg);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102db3b0 size=0x1b
 // TARGET: sub_102db3b0
 struct CUnk102db3b0 {
