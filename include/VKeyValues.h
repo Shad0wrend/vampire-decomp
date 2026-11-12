@@ -3,6 +3,8 @@
 // offset of the IKeyCacheable part and entry [2] the offset of the IKeyValues part.
 #pragma once
 
+#include "IKeyValues.h"	// the virtual base (IKeyValues : virtual IKeyCacheable)
+
 struct VKeyValuesCacheable	// the IKeyCacheable part: slot 2 is the scalar deleting destructor
 {
 	virtual void a0();
@@ -31,10 +33,18 @@ struct VKeyValuesInterface	// the IKeyValues part: slot 0 is the key's name
 	int sub_101f2740(const char *pszName, int nDefault);	// "GetInt" of the IKeyValues part (this - 0x30 is the VKeyValues): the named sub key's value as an int (atoi of the string, ftol of the float), nDefault when there is none
 };
 
-struct VKeyValues
+// The real class: the vbptr is at 0x00 (no vftable of its own), a vtordisp before each virtual base (VC6 adds them
+// because the class has a user-declared constructor and overrides virtuals of its bases).
+struct VKeyValues : public virtual IKeyValues
 {
-	int *m_pVbTable;	// 0x00
-	char m_pad0004[8 - 4];
+	VKeyValues(const char *pszName);
+	virtual ~VKeyValues();	// 0x101f20d0: sub_101f2c60()
+	virtual void vfunc0();	// IKeyCacheable slot 0
+	virtual void vfunc1();	// IKeyCacheable slot 1
+	virtual void kv0();	// IKeyValues slot 1
+	void sub_101f2c60();	// clears the sub keys, the string and the name
+
+	int m_n04;	// 0x04
 	int m_nValue08;	// 0x08: the int value (a float for type 3)
 	const char *m_pszValue0c;	// 0x0c: the string value (type 1)
 	int m_nType10;	// 0x10: 1 string, 3 float, else int
@@ -45,14 +55,15 @@ struct VKeyValues
 
 	VKeyValues *sub_101f2d70(const char *pszName);	// finds the sub key of that name (case-insensitive, by the IKeyValues name), then asks +0x20; 0 when none (stub 0x100122c4)
 	VKeyValues *sub_100122c4(const char *pszName);	// the stub of sub_101f2d70 (the recursion goes through it)
-	VKeyValuesInterface *NameOf() { return (VKeyValuesInterface *)((char *)this + m_pVbTable[2]); }
+	int *VbTable() const { return *(int **)this; }	// the vbptr: [1] = the IKeyCacheable part, [2] = the IKeyValues part
+	VKeyValuesInterface *NameOf() { return (VKeyValuesInterface *)((char *)this + VbTable()[2]); }
 
 	void sub_101f2090(const char *pszName);	// the constructor body (stub 0x10013a8e): the name copy at +0x14, the fields +0xc / +0x10 / +0x18 / +0x1c / +0x20 cleared, the global byte 0x1073aa40 cleared
 	VKeyValues *sub_101f1f50(const char *pszName, int bMostDerived);	// the constructor (stub 0x100056a0)
 	char sub_101f2180(const char *pszName, int pathID);	// opens and parses the file (stub 0x10001cdf)
 
-	VKeyValuesCacheable *Cacheable() { return (VKeyValuesCacheable *)((char *)this + m_pVbTable[1]); }
-	void *KeyValues() { return (char *)this + m_pVbTable[2]; }
+	VKeyValuesCacheable *Cacheable() { return (VKeyValuesCacheable *)((char *)this + VbTable()[1]); }
+	void *KeyValues() { return (char *)this + VbTable()[2]; }
 };
 
 struct VKeyValuesPool	// the allocator object at 0x1073d280
