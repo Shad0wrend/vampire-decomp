@@ -742,6 +742,43 @@ void CAI_BaseHumanoid::vfunc333(float flInterval)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10260540 size=0xb8
+#include "CAI_BaseHumanoid.h"
+
+extern char g_106b8540[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct HumNames { const char *m_pOverride; const char *m_p1; const char *m_p3; const char *m_p2; const char *m_p5; };
+
+const char *CAI_BaseHumanoid::vfunc589(int type)
+{
+	HumNames *n = (HumNames *)((char *)this + 0x5fa4);
+	if (n->m_pOverride != 0 && type != 7)
+		return STRINGR(((HumNames *)((char *)this + 0x5fa4))->m_pOverride);
+
+	switch (type) {
+	case 1:
+		if (n->m_p1)
+			return STRINGR(n->m_p1);
+		break;
+	case 2:
+		if (n->m_p2)
+			return STRINGR(n->m_p2);
+		break;
+	case 3:
+		if (n->m_p3)
+			return STRINGR(n->m_p3);
+		break;
+	case 5:
+	case 7:
+		if (n->m_p5)
+			return STRINGR(n->m_p5);
+		break;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260630 size=0x2b
 #include "CAI_BaseHumanoid.h"
 #include "CAI_BaseNPC.h"
