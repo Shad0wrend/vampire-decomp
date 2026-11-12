@@ -78893,6 +78893,44 @@ Vector sub_1012bae0(CBaseEntity *pEdict, Vector vecSpot1, Vector vecSpot2, float
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c150 size=0x380
+#include "CBaseEntity.h"
+#include "UTIL_Trace.h"
+#include "ConVar.h"
+
+class CBaseEntity;
+extern Vector g_1070d1b0;	// vec3_origin
+
+// TARGET: sub_1012c150
+Vector sub_1012c150(CBaseEntity *pEdict, const Vector &vecSpot1, Vector vecSpot2, float flSpeed, float flGravityAdj)
+{
+	float flGravity = (g_109ef2d4->vfunc1() ? 0.0f : g_109ef2d4->m_fValue) * flGravityAdj;
+
+	Vector vecGrenadeVel = (vecSpot2 - vecSpot1);
+
+	float time = vecGrenadeVel.Length() / flSpeed;
+	vecGrenadeVel = vecGrenadeVel * (1.0 / time);
+
+	vecGrenadeVel.z += flGravity * time * 0.5;
+
+	{
+	Vector vecApex = vecSpot1 + (vecSpot2 - vecSpot1) * 0.5f;
+	vecApex.z += 0.5 * flGravity * (time * 0.5) * (time * 0.5);
+
+	CGameTrace tr;
+	UTIL_TraceLine_DebugCall(vecSpot1, vecApex, 0x200400b, pEdict, 0, &tr);
+	if (tr.m_fraction != 1.0)
+		return g_1070d1b0;
+
+	UTIL_TraceLine_Calls(vecSpot2, vecApex, 0x400b, pEdict, 0, &tr);
+	if (tr.m_fraction != 1.0)
+		return g_1070d1b0;
+
+	}
+	return vecGrenadeVel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c5b0 size=0x36
 extern int g_1070ba58;
 void sub_1013d0e0(float a, float b, int c, int d, int e, int f, int g, int h);
