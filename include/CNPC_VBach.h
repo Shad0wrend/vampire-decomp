@@ -51,7 +51,9 @@ public:
 	char m_pad1b38[0x1b44 - 0x1b38];
 	const char *m_pszFile1b44;	// 0x1b44: source file stamp (third pair)
 	int m_nLine1b48;	// 0x1b48: its line
-	char m_pad1b4c[0x5ba8 - 0x1b4c];
+	char m_pad1b4c[0x5b80 - 0x1b4c];
+	char m_b5b80;
+	char m_pad5b81[0x5ba8 - 0x5b81];
 	EHANDLE m_h5ba8;	// 0x5ba8: a handle to an entity (the current distance target)
 	char m_pad5bac[0x5cc0 - 0x5bac];
 	int m_n5cc0;
@@ -70,10 +72,10 @@ public:
 	int m_n6678;
 	int m_n667c;
 	int m_n6680;
-	int m_n6684;	// the time of the byte at +0x66a5
-	int m_n6688;
-	int m_n668c;
-	int m_n6690;
+	union { int m_n6684; float m_fl6684; };	// the time of the byte at +0x66a5
+	union { int m_n6688; float m_fl6688; };
+	union { int m_n668c; float m_fl668c; };
+	union { int m_n6690; float m_fl6690; };
 	union { int m_n6694; float m_fl6694; };	// 0x6694: a time
 	int m_n6698;
 	int m_n669c;
@@ -516,7 +518,9 @@ public:
 	virtual void vfunc558();
 	virtual void vfunc559();
 	virtual void vfunc560();
-	virtual void vfunc561();
+	virtual void vfunc561(int a, float flDist);
+	void sub_1026dd10(int a, float flDist);	// CAI_BaseNPC::vfunc561, called directly
+	void sub_10269a20(int cond);
 	virtual void vfunc562();
 	virtual void vfunc563();
 	virtual void vfunc564();
