@@ -242535,6 +242535,90 @@ extern "C" CNPC_VHengeyokai *npc_VHengeyokai()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037e680 size=0x11c
+#include "utlvector.h"
+#include "CNPC_VHengeyokai.h"
+#include "utlmemory.h"
+extern int vt_104b683c;
+extern int vt_104b6810;
+extern int vt_104b73dc;
+void __fastcall sub_1037e990(void *);
+unsigned int sub_10383e90(unsigned int x);
+struct CHengeyokaiBaseCtor { void sub_103c48e0(); };
+
+typedef CUtlMemory<CNPC_VHengeyokaiTimer> CHengeyokaiTimerMem;
+
+struct SecBase1037e680
+{
+	char a, b;
+	int v;
+	SecBase1037e680() : v(0) {}
+};
+struct SecType1037e680
+{
+	void *vt;
+	SecBase1037e680 base;
+	SecType1037e680(int x)
+	{
+		vt = &vt_104b73dc;
+		MvsnSec::CSecureResult t;
+		t.m_Value = MvsnSec::CSecureInt4::Scramble(sub_10383e90(x));
+		base.b = ((volatile MvsnSec::CSecureResult &)t).m_b1;
+		((volatile int &)base.v) = t.m_Value;
+		base.a = ((volatile MvsnSec::CSecureResult &)t).m_b0;
+	}
+};
+struct H1037e680 { unsigned int m_Index; H1037e680() : m_Index(0xffffffff) {} };
+struct Vec1037e680
+{
+	CNPC_VHengeyokaiTimer *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	CNPC_VHengeyokaiTimer *m_pElements;
+	Vec1037e680() : m_pMemory(0), m_allocationCount(0), m_growSize(0), m_size(0) { m_pElements = m_pMemory; }
+};
+struct Obj1037e680 { char c; Obj1037e680() { sub_1037e990(this); } };
+#pragma pack(push, 1)
+struct Members1037e680
+{
+	H1037e680 h6664;
+	char p6668[0x6690 - 0x6668];
+	H1037e680 h6690;
+	char p6694[4];
+	SecType1037e680 sec;
+	Vec1037e680 timers;
+	Obj1037e680 obj;
+	Members1037e680() : sec(0x1e) {}
+};
+#pragma pack(pop)
+
+inline void HengeyokaiTimerVecEnsure(CNPC_VHengeyokaiTimerVec &v, int n)
+{
+	CHengeyokaiTimerMem &m = (CHengeyokaiTimerMem &)v;
+	m.EnsureCapacity(n);
+	v.m_pElements = m.Base();
+}
+
+struct CNPC_VHengeyokaiX : CNPC_VHengeyokai
+{
+	CNPC_VHengeyokai *sub_1037e680();
+};
+
+CNPC_VHengeyokai *CNPC_VHengeyokaiX::sub_1037e680()
+{
+	((CHengeyokaiBaseCtor *)this)->sub_103c48e0();
+	((Members1037e680 *)&m_h6664)->Members1037e680::Members1037e680();
+	*(void **)this = &vt_104b683c;
+	m_vptr19b0 = &vt_104b6810;
+	m_Timers.m_growSize = 8;
+	HengeyokaiTimerVecEnsure(m_Timers, 8);
+	m_n1568 = 0;
+	m_n156c = 0x12;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037e990 size=0xc
 void __fastcall sub_1037e9b0(void *p);
 

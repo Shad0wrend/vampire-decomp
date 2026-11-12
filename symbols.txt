@@ -10244,6 +10244,7 @@
 0x1000e764 func   ?vfunc318@CNPC_VRat@@QAE_NHHH@Z CNPC_VRat::vfunc318
 0x1000e769 func   ?sub_101ab610@CServerNetworkProperty@@QAEXXZ CServerNetworkProperty::sub_101ab610
 0x1000e76e func   ?sub_103801d0@CNPC_VHengeyokai@@QAEHPAUCNPC_VHengeyokaiInfo@@@Z CNPC_VHengeyokai::sub_103801d0
+0x1000e773 func   ?sub_1037e680@CNPC_VHengeyokaiX@@QAEPAVCNPC_VHengeyokai@@XZ CNPC_VHengeyokaiX::sub_1037e680
 0x1000e778 func   ?sub_101a66a0@@YG_NHH@Z sub_101a66a0
 0x1000e77d func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@UKEYRING_ENTRY@@V?$CUtlMemory@UKEYRING_ENTRY@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<KEYRING_ENTRY,CUtlMemory<KEYRING_ENTRY> >,9>::vfunc2
 0x1000e782 func   ?sub_103ee230@@YAHXZ sub_103ee230
