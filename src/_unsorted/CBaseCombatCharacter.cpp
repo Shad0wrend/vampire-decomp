@@ -2150,6 +2150,165 @@ int CBaseCombatCharacter::vfunc143(float flHealth, int bitsDamageType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032ef60 size=0x4bd
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+#include "CBCCSlotViews.h"
+#include "CVDmg_t.h"
+#include "CTakeDamageInfo.h"
+#include "CBaseCombatCharacter.h"
+
+class CUnknown101e3cf0
+{
+public:
+	void sub_101e3cf0(void *p);
+};
+extern CUnknown101e3cf0 g_10739a4c;
+struct CBCCView { char sub_10323930(void *p); };
+CBaseEntity *__fastcall sub_1032e7b0(CBaseEntity *p);
+
+class CBCCV142
+{
+public:
+	VIEW_SLOT100(0)
+	VIEW_SLOT10(10) VIEW_SLOT10(11) VIEW_SLOT10(12) VIEW_SLOT10(13)
+	VIEW_SLOT(140) VIEW_SLOT(141) VIEW_SLOT(142) VIEW_SLOT(143)
+	virtual void vfunc144(void *pInfo);
+	VIEW_SLOT(145) VIEW_SLOT(146) VIEW_SLOT(147) VIEW_SLOT(148) VIEW_SLOT(149)
+	VIEW_SLOT10(15) VIEW_SLOT10(16) VIEW_SLOT10(17) VIEW_SLOT10(18) VIEW_SLOT10(19)
+	VIEW_SLOT100(2)
+	VIEW_SLOT10(30) VIEW_SLOT10(31) VIEW_SLOT10(32) VIEW_SLOT10(33) VIEW_SLOT10(34)
+	VIEW_SLOT10(35) VIEW_SLOT10(36) VIEW_SLOT10(37) VIEW_SLOT10(38)
+	virtual int vfunc390(void *pInfo);
+	virtual int vfunc391(void *pInfo);
+	virtual int vfunc392(void *pInfo);
+	VIEW_SLOT(393) VIEW_SLOT(394) VIEW_SLOT(395) VIEW_SLOT(396) VIEW_SLOT(397) VIEW_SLOT(398)
+	virtual bool vfunc399();
+	VIEW_SLOT(400) VIEW_SLOT(401)
+	virtual bool vfunc402();
+	virtual void vfunc403();
+};
+
+struct CTDIAttacker
+{
+	char m_pad0000[0x9c];
+	void *m_pOwner9c;
+	char m_pad00a0[0xa8 - 0xa0];
+	void *m_pa8;
+};
+
+inline int DamageTypeOf(const CTakeDamageInfo *p)
+{
+	return p->m_pVDmg00 ? (p->m_pVDmg00->m_field10 | p->m_n38) : p->m_n38;
+}
+
+inline float DamageOf(const CTakeDamageInfo *p)
+{
+	return p->m_pVDmg00 ? (float)p->m_pVDmg00->sub_101faa70() : p->m_flDamage;
+}
+
+extern float g_104454c4;
+
+int CBaseCombatCharacter::vfunc142(void *pInfo)
+{
+	ScopeTrace scope("CBaseCombatCharacter::OnTakeDamage", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CTakeDamageInfo *info = (CTakeDamageInfo *)pInfo;
+	int retVal;
+
+	if (!m_nTakeDamage)
+		return 0;
+
+	void *pOwner = info->m_pInflictor;
+	if (pOwner)
+		pOwner = ((CTDIAttacker *)pOwner)->m_pOwner9c;
+	if (((CBCCView *)this)->sub_10323930(pOwner) && info->m_pInflictor != this)
+		return 0;
+
+	g_10739a4c.sub_101e3cf0(this);
+
+	switch (m_field200)
+	{
+	case 0:
+	{
+		retVal = ((CBCCV142 *)this)->vfunc390(pInfo);
+		int a = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xf);
+		int b = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x11);
+		sub_10324ba0();
+		if (a >= b)
+		{
+			((CBCCV142 *)this)->vfunc144(pInfo);
+			bool bGibbed = false;
+			if (((CBCCV142 *)this)->vfunc399() || ((DamageTypeOf(info) & 0x2000) && !(DamageTypeOf(info) & 0x1000)))
+			{
+				bGibbed = ((CBCCV142 *)this)->vfunc402();
+				retVal = bGibbed;
+			}
+			if (!bGibbed)
+				((CBCCV142 *)this)->vfunc403();
+
+			CBaseEntity *pAttacker = (CBaseEntity *)info->m_pInflictor;
+			if (pAttacker && pAttacker != this && ((CTDIAttacker *)pAttacker)->m_pa8)
+			{
+				CBaseEntity *pWeapon = ::sub_1032e7b0(pAttacker);
+				if (pWeapon && (((CWeaponSlotView *)pWeapon)->vfunc360() & 0x18000)
+					&& CVStatListSet::Of(pAttacker)->Find(3)->sub_102012d0(9) > 0)
+					sub_1032ec90(4, (int)((CTDIAttacker *)pAttacker)->m_pa8, (int)pInfo);
+			}
+		}
+		else
+		{
+			CBaseEntity *pAttacker = (CBaseEntity *)info->m_pInflictor;
+			if (pAttacker && pAttacker != this && ((CTDIAttacker *)pAttacker)->m_pa8)
+			{
+				CBaseEntity *pWeapon = ::sub_1032e7b0(pAttacker);
+				if (pWeapon && (((CWeaponSlotView *)pWeapon)->vfunc360() & 0x18000)
+					&& CVStatListSet::Of(pAttacker)->Find(3)->sub_102012d0(9) > 0)
+				{
+					int level = 0;
+					float flDamage = DamageOf(info);
+					if (flDamage > 5.0f)
+						level = 2;
+					else if (flDamage > 1.0f)
+						level = 1;
+					else if (flDamage > g_104454c4)
+						level = 0;
+					switch (level)
+					{
+					case 0: sub_1032ec90(1, (int)((CTDIAttacker *)pAttacker)->m_pa8, (int)pInfo); break;
+					case 1: sub_1032ec90(2, (int)((CTDIAttacker *)pAttacker)->m_pa8, (int)pInfo); break;
+					case 2: sub_1032ec90(3, (int)((CTDIAttacker *)pAttacker)->m_pa8, (int)pInfo); break;
+					default: sub_1032ec90(1, (int)((CTDIAttacker *)pAttacker)->m_pa8, (int)pInfo); break;
+					}
+				}
+			}
+		}
+		return retVal;
+	}
+	case 1:
+		return ((CBCCV142 *)this)->vfunc391(pInfo);
+	default:
+		retVal = ((CBCCV142 *)this)->vfunc392(pInfo);
+		if (m_iHealth <= 0 && (DamageTypeOf(info) & 0xe1))
+		{
+			((CBCCV142 *)this)->vfunc402();
+			retVal = 0;
+		}
+		return retVal;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032fb80 size=0x98
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
