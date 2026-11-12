@@ -219885,6 +219885,24 @@ char CBaseCombatCharacter::sub_103300c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10330220 size=0x8b
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+
+struct CBCCMiscFlagView { char sub_1033c900(int flags); };
+inline bool HasStat(CBaseCombatCharacter *p) { return p->sub_10337f30() && CVStatListSet::Of(p)->Find(0)->sub_102012d0(0x19) > 0; }
+inline bool HasFlag(CBaseCombatCharacter *p, int f) { return (bool)((CBCCMiscFlagView *)p)->sub_1033c900(f); }
+
+bool CBaseCombatCharacter::sub_10330220()
+{
+	if (!HasStat(this)) return HasFlag(this, 0x20000);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10330ce0 size=0xd
 #include "CUnknown10330ce0.h"
 // TARGET: CUnknown10330ce0::sub_10330ce0

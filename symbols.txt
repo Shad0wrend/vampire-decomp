@@ -3059,6 +3059,7 @@
 0x1000510a func   ?sub_101145d0@@YIXPAVCBaseCombatCharacter@@HH@Z sub_101145d0
 0x1000510f func   ?vfunc5@CWeaponHolyLight@@QAEPAV1@I@Z CWeaponHolyLight::vfunc5
 0x10005114 func   ?sub_1020a5c0@@YAXPAUArgX@@@Z sub_1020a5c0
+0x1000511e func   ?sub_10330220@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10330220
 0x10005123 func   ?vfunc619@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::vfunc619
 0x1000512d func   ?vfunc509@CNPC_VTzimisce@@UAE_NXZ CNPC_VTzimisce::vfunc509
 0x10005137 func   ?vfunc31@CHL2_Player@@UAEXH@Z CHL2_Player::vfunc31
