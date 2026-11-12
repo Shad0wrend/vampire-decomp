@@ -25788,6 +25788,73 @@ void __fastcall sub_10078880(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100789b0 size=0x53
+extern int g_106c83fc[2];
+extern int g_106c8408[2];
+
+namespace block_100789b0 {
+struct CUnit {
+	char pad[0x184];
+	float m_f184;
+	float m_f188;
+	char pad18c[0x19c - 0x18c];
+	int m_19c;
+	int m_pad1a0[(0x1a8 - 0x1a0) / 4];
+	int m_1a8;
+	char sub_10075f30();
+	float sub_10075f10();
+	float sub_10075e70();
+	float sub_10076b30();
+	int sub_10078630();
+	int sub_10078650(int i);
+	int *sub_100789b0(int index);
+};
+#pragma auto_inline(off)
+char CUnit::sub_10075f30()
+{
+	if (m_f188 != -1.0f)
+		return 1;
+	return 0;
+}
+float CUnit::sub_10075f10() { return m_f188; }
+float CUnit::sub_10075e70() { return m_f184; }
+float CUnit::sub_10076b30()
+{
+	if (sub_10075f30())
+		return sub_10075f10() - sub_10075e70();
+	return 0.0f;
+}
+int CUnit::sub_10078630()
+{
+	return m_1a8;
+}
+int CUnit::sub_10078650(int i)
+{
+	if (i >= 0) {
+		if (i < sub_10078630()) {
+			return m_19c + i * 12;
+		}
+	}
+	return 0;
+}
+
+int *CUnit::sub_100789b0(int index)
+{
+	g_106c83fc[1] = 0;
+	g_106c83fc[0] = 0;
+	float flTime = sub_10076b30();
+	g_106c8408[0] = 0;
+	*(float *)&g_106c8408[1] = flTime;
+	if (index < 0)
+		return g_106c83fc;
+	if (index >= sub_10078630())
+		return g_106c8408;
+	return (int *)sub_10078650(index);
+}
+}
+// TARGET: block_100789b0::CUnit::sub_100789b0
+// END FUNCTION
+
 // FUNCTION: 0x10078a30 size=0xa8
 #include "utlrbtree.h"
 // TARGET: block_10078a30::CUnit::sub_10078a30

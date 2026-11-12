@@ -10770,6 +10770,7 @@
 0x1000f466 func   ?sub_1030ca70@S1030ca70@@QAEHPBD@Z S1030ca70::sub_1030ca70
 0x1000f470 func   ?sub_10243440@@YAXPBUV2@@00MMPAU1@@Z sub_10243440
 0x1000f475 func   ?vfunc80@CItemGMilligansBuisnesscard@@QAEHXZ CItemGMilligansBuisnesscard::vfunc80
+0x1000f47a func   ?sub_100789b0@CUnit@block_100789b0@@QAEPAHH@Z block_100789b0::CUnit::sub_100789b0
 0x1000f47f func   ?sub_100dc300@Rec64@@QAEXH@Z Rec64::sub_100dc300
 0x1000f484 func   ?vfunc4@CTEMuzzleFlash@@QAEXHH@Z CTEMuzzleFlash::vfunc4
 0x1000f489 func   ?vfunc326@CAI_BaseNPCTroika@@QAE_NPAVCBaseEntity@@H@Z CAI_BaseNPCTroika::vfunc326
