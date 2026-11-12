@@ -4145,6 +4145,125 @@ void CBaseEntity::sub_100ab450(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100abc90 size=0x489
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include <string.h>
+#include "CVariantCopy.h"
+#include "datamap.h"
+#include "inputdata_t.h"
+#include "CUnknown10738964.h"
+#include "Vector.h"
+#include "ConVar.h"
+extern ConVar g_106cfe50;
+
+extern CUnknown10738964 *g_106cfe54;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+__declspec(dllimport) int __cdecl Q_strnicmp(const char *, const char *, int);
+__declspec(dllimport) void __cdecl DevMsg(const char *, ...);
+__declspec(dllimport) void __cdecl DevWarning(const char *, ...);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct VMW
+{
+	union
+	{
+		bool b;
+		const char *isz;
+		int i;
+		float f;
+		float v[3];
+		unsigned int c;
+	};
+	unsigned int h;
+	int t;
+	VMW() {}
+	VMW(const VMW &o) { b = o.b; isz = o.isz; i = o.i; f = o.f; memcpy(v, o.v, sizeof(v)); c = o.c; h = o.h; t = o.t; }
+};
+
+struct CBaseEntityU : CBaseEntity
+{
+	void sub_100ab5c0(const char *, CBaseEntity *, VMW);
+};
+
+// TARGET: CBaseEntity::vfunc118
+bool CBaseEntity::vfunc118(const char *pszInputName, CBaseEntity *pActivator, CBaseEntity *pCaller, CVariantCopy Value, int outputID)
+{
+	ScopeTrace trace("CBaseEntity::AcceptInput", this ? STRINGR(m_name26c) : g_105387dc);
+
+	if (sub_100b5190() && Q_strnicmp(pszInputName, "ScriptUnhide", strlen(pszInputName)) != 0) {
+		if (g_106cfe50.GetBool()) {
+			if (pCaller) {
+				DevMsg("input %s: %s.%s(%s) IGNORED by ScriptHidden() entity\n", STRINGR(pCaller->m_name26c), sub_1000b5cd(), pszInputName, Value.m_fieldType == 2 ? STRINGR(Value.iszVal) : Value.sub_100d0a00());
+				return true;
+			}
+			DevMsg("input <NULL>: %s.%s(%s) IGNORED by ScriptHidden() entity\n", sub_1000b5cd(), pszInputName, Value.m_fieldType == 2 ? STRINGR(Value.iszVal) : Value.sub_100d0a00());
+		}
+		return true;
+	}
+
+	for (datamap_t *dmap = vfunc82(); dmap != 0; dmap = dmap->baseMap) {
+		for (int i = 0; i < dmap->dataNumFields; i++) {
+			if (dmap->dataDesc[i].flags & 8) {
+				if (!_strcmpi(dmap->dataDesc[i].externalName, pszInputName)) {
+					m_hActivator10c = pActivator;
+					m_hCaller110 = pCaller;
+
+					if (g_106cfe50.GetBool()) {
+						if (pCaller) {
+							DevMsg("input %s: %s.%s(%s)\n", STRINGR(pCaller->m_name26c), sub_1000b5cd(), pszInputName, Value.m_fieldType == 2 ? STRINGR(Value.iszVal) : Value.sub_100d0a00());
+						} else {
+							DevMsg("input <NULL>: %s.%s(%s)\n", sub_1000b5cd(), pszInputName, Value.m_fieldType == 2 ? STRINGR(Value.iszVal) : Value.sub_100d0a00());
+						}
+					}
+
+					if (m_fDebugOverlays224 & 0x10)
+						((CBaseEntityU *)this)->sub_100ab5c0(pszInputName, pCaller, *(VMW *)&Value);
+
+					int fieldType = dmap->dataDesc[i].fieldType;
+					if (Value.m_fieldType != fieldType) {
+						if (!Value.sub_100d05d0(fieldType)) {
+							DevWarning("!! ERROR: bad input/output link:\n!! %s(%s,%s) doesn't match type from %s(%s)\n", STRINGR(m_classname11c), sub_1000b5cd(), pszInputName,
+								pCaller != 0 ? STRINGR(pCaller->m_classname11c) : "<null>",
+								pCaller != 0 ? STRINGR(pCaller->m_name26c) : "<null>");
+							return false;
+						}
+					}
+
+					void (CBaseEntity::*pfnInput)(inputdata_t &) = *(void (CBaseEntity::**)(inputdata_t &))&dmap->dataDesc[i].inputFunc;
+					if (pfnInput) {
+						inputdata_t data;
+						data.pActivator = pActivator;
+						data.pCaller = pCaller;
+						data.value = *(variant_t *)&Value;
+						data.nOutputID = outputID;
+						(this->*pfnInput)(data);
+					} else if (dmap->dataDesc[i].flags & 4) {
+						((variant_t *)&Value)->sub_100d04b0((char *)this + dmap->dataDesc[i].fieldOffset[0]);
+					}
+
+					m_bChanged1b1 = 1;
+					return true;
+				}
+			}
+		}
+	}
+
+	if (g_106cfe50.GetBool())
+		DevMsg("unhandled input: (%s) -> (%s,%s)\n", pszInputName, STRINGR(m_classname11c), sub_1000b5cd());
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100acab0 size=0x111
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
