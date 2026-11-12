@@ -32,6 +32,79 @@ int CEntityDataInstantiator<groundlink_t>::vfunc1(unsigned int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040d50 size=0x145
+#include "vampire_all.h"
+#include "CEntityDataInstantiator.h"
+#include "UtlVec8.h"
+#include "UtlHash8.h"
+
+struct GLHashEntry
+{
+	unsigned int key;
+	groundlink_t *data;
+	GLHashEntry() { data = 0; }
+};
+
+struct GLHash : UtlHash8
+{
+	unsigned int Find(GLHashEntry const &src)
+	{
+		unsigned int key = m_pKey((void *)&src);
+		unsigned int b;
+		if (m_bPowerOfTwo)
+			b = m_ModMask & key;
+		else
+			b = key % m_bucketCount;
+		int i = 0;
+		int count = m_pBuckets[b].Count();
+		if (count > 0) {
+			do {
+				char *pBase = m_pBuckets[b].m_pElements;
+				if (m_pCompare(pBase + i * 8, (void *)&src))
+					break;
+				i++;
+			} while (i < count);
+		}
+		if (i == count)
+			return 0xffffffff;
+		return (b << 16) | i;
+	}
+	unsigned int Insert(GLHashEntry const &src)
+	{
+		unsigned int handle = sub_10041e80((void *)&src);
+		if (handle != 0xffffffff)
+			return handle;
+		unsigned int key = m_pKey((void *)&src);
+		unsigned int ndxBucket;
+		if (m_bPowerOfTwo)
+			ndxBucket = m_ModMask & key;
+		else
+			ndxBucket = key % m_bucketCount;
+		int ndxKeyData = ((UtlVec8 *)&m_pBuckets[ndxBucket])->sub_100422e0(m_pBuckets[ndxBucket].m_Size, (const UtlVec8Elem *)&src);
+		return (ndxBucket << 16) | ndxKeyData;
+	}
+	GLHashEntry &Element(unsigned int h)
+	{
+		return *(GLHashEntry *)m_pBuckets[h >> 16].Element(h & 0xffff);
+	}
+};
+
+// TARGET: CEntityDataInstantiator<groundlink_t>::vfunc2
+void *CEntityDataInstantiator<groundlink_t>::vfunc2(unsigned int key)
+{
+	GLHash *h = (GLHash *)&m_pBuckets;
+	GLHashEntry entry;
+	entry.key = key;
+	unsigned int handle = h->Find(entry);
+	if (handle == 0xffffffff) {
+		handle = h->Insert(entry);
+		h->Element(handle).data = new groundlink_t;
+		memset(h->Element(handle).data, 0, sizeof(groundlink_t));
+	}
+	return h->Element(handle).data;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040f00 size=0xf5
 #include "utlrbtree.h"
 #include "utlsortvector.h"
