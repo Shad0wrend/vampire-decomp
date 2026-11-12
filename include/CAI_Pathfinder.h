@@ -92,6 +92,7 @@ public:
 	bool sub_102fe150(int startNode, int endNode);	// "CAI_Pathfinder_HasPathInner" (0x102fe150)
 	CAI_Waypoint *sub_103007e0(const float *pOrigin, unsigned int flags, int nodeIndex, int a4, int a5);
 	CAI_Waypoint *sub_102ffbd0(int a, int index);
+	CAI_Waypoint *sub_10304670(const Vector &vStartPos, const Vector &vCenterPos, float flRadius, float flArc, float flStepDist, bool bClockwise, int goalTolerance, bool bAirRoute, bool e);
 	CAI_Waypoint *sub_10304130(const float *pLocal, const float *pOrigin, int a, int b, int c, unsigned int flags, int d, int e);
 	CAI_Waypoint *sub_10304130(const float *pLocal, const float *pOrigin, int a, int b, int c, unsigned int flags, int d, bool e);
 	CAI_Waypoint *sub_10304e00(int a1, void *pRoute, int a3, int a4, int a5, const float *pOrigin, int a7, int a8);	// stub 0x10004507 (ret 0x20): builds the node route from the route record the check filled in
