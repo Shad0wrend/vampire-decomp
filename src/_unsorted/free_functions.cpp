@@ -73302,6 +73302,62 @@ int *sub_10115d20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116570 size=0x324
+#include "CFuncMoveLinear.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "engineiface.h"
+#include "engineserver.h"
+#include "CBaseToggle.h"
+
+extern char g_106b8540[];
+extern float g_104454c4;
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CMoveLinearUnit : CFuncMoveLinear
+{
+	int edict() { return m_pEdict2e0; }
+	int entindex() { return engine->vfunc35(edict()); }
+};
+
+// TARGET: CFuncMoveLinear::sub_10116570
+void CFuncMoveLinear::sub_10116570(Vector vecPosition, float flSpeed)
+{
+	CMoveLinearUnit *self = (CMoveLinearUnit *)this;
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	if (flSpeed != g_104454c4)
+	{
+		if (m_str568)
+		{
+			enginesound->vfunc3(&filter, self->entindex(), 3, STRINGR(m_str568), 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		}
+		if (m_str55c)
+		{
+			if (m_field564 == (int)m_str55c)
+			{
+				enginesound->vfunc7(self->entindex(), 4, STRINGR(m_str560));
+			}
+			else
+			{
+				m_field564 = (int)m_str55c;
+				enginesound->vfunc3(&filter, self->entindex(), 4, STRINGR(m_str55c), 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+			}
+		}
+		((CBaseToggle *)this)->sub_101c1520(&vecPosition, flSpeed);
+		if (*(Vector *)vfunc220() != vecPosition && vecPosition == m_vecPosition1)
+		{
+			m_Output5d8.sub_100cd660(m_hActivator10c.Get(), (CBaseEntity *)this, 0);
+		}
+		else if (*(Vector *)vfunc220() != vecPosition && vecPosition == m_vecPosition2)
+		{
+			m_Output5f0.sub_100cd660(m_hActivator10c.Get(), (CBaseEntity *)this, 0);
+		}
+		sub_100ac4e0(0, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116970 size=0x20
 #include "CPASFilter.h"
 
