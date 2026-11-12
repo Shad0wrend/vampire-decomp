@@ -46368,6 +46368,113 @@ void sub_100c1330(const Quaternion &p, float s, const Quaternion &q, Quaternion 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c13a0 size=0x35b
+#include "Quaternion.h"
+#include "Vector.h"
+struct BlendBoneWeight { float weight; int m_unk[7]; };
+struct BlendSeqData {
+    int m_unk[0x30 / 4];
+    int weightOffset;
+    BlendBoneWeight *pWeight(int i) const { return (BlendBoneWeight *)((char *)this + weightOffset) + i; }
+};
+struct BlendSeqDataHolder { char m_data[0x48]; };
+struct BlendAnimHdr {
+    int m_unk[0x10c / 4];
+    int seqOffset;
+    BlendSeqData *pSeqData(int i) const { return (BlendSeqData *)((BlendSeqDataHolder *)((char *)this + seqOffset) + i); }
+};
+struct BlendStudioHdr {
+    int m_unk[0xf0 / 4];
+    int numbones;
+};
+struct BlendSeqDesc { int m_unk0; int m_unk4; unsigned char flags; char m_unk9[0x2f]; short idx; };
+struct BlendBoneMask {
+    int m_unk0;
+    unsigned int bits[1];
+    bool IsBitSet(int i) const { return (bits[i >> 5] & (1 << (i & 0x1f))) != 0; }
+};
+struct BlendRemap { int dst; int src; int m_unk[13]; };
+void sub_100c1230(float s, const Quaternion &p, const Quaternion &q, Quaternion &qt);
+void sub_100c12b0(const Quaternion &p, float s, const Quaternion &q, Quaternion &qt);
+BlendSeqDesc *sub_100c17e0(BlendStudioHdr *a, int b, BlendAnimHdr **c, int *d);
+void sub_1013ab70(const Quaternion &p, const Quaternion &q, float t, Quaternion &qt);
+
+void sub_100c13a0(BlendStudioHdr *pStudioHdr, Quaternion *q1, Vector *pos1, int sequence, const Quaternion *q2, const Vector *pos2, float s, const BlendBoneMask *boneMask, int nRemap, const BlendRemap *remap)
+{
+    Quaternion q3;
+    int boneMap[350];
+    int seqMap[350];
+    BlendAnimHdr *pAnim;
+    int i, j;
+    float s1, s2;
+
+    if (!(s > 0.0f))
+        return;
+    if (s > 1.0f)
+        s = 1.0f;
+
+    BlendSeqDesc *pSeq = sub_100c17e0(pStudioHdr, sequence, &pAnim, seqMap);
+    if (!pSeq)
+        return;
+    BlendSeqData *pData = pAnim->pSeqData(pSeq->idx);
+
+    if (nRemap > 0 && remap) {
+        for (i = 0; i < pStudioHdr->numbones; i++)
+            boneMap[i] = -1;
+        for (i = 0; i < nRemap; i++)
+            boneMap[remap[i].dst] = remap[i].src;
+    } else {
+        for (i = 0; i < pStudioHdr->numbones; i++)
+            boneMap[i] = i;
+    }
+
+    if (pSeq->flags & 4) {
+        for (i = 0; i < pStudioHdr->numbones; i++) {
+            if (!boneMask->IsBitSet(i) || seqMap[i] < 0)
+                continue;
+            j = boneMap[i];
+            if (j < 0)
+                continue;
+            s2 = s * pData->pWeight(seqMap[i])->weight;
+            if (s2 > 0.0) {
+                if (pSeq->flags & 0x10) {
+                    sub_100c12b0(q1[j], s2, q2[j], q1[j]);
+                    pos1[j][0] = pos1[j][0] + pos2[j][0] * s2;
+                    pos1[j][1] = pos1[j][1] + pos2[j][1] * s2;
+                    pos1[j][2] = pos1[j][2] + pos2[j][2] * s2;
+                } else {
+                    sub_100c1230(s2, q2[j], q1[j], q1[j]);
+                    pos1[j][0] = pos1[j][0] + pos2[j][0] * s2;
+                    pos1[j][1] = pos1[j][1] + pos2[j][1] * s2;
+                    pos1[j][2] = pos1[j][2] + pos2[j][2] * s2;
+                }
+            }
+        }
+        return;
+    }
+
+    for (i = 0; i < pStudioHdr->numbones; i++) {
+        if (!boneMask->IsBitSet(i) || seqMap[i] < 0)
+            continue;
+        j = boneMap[i];
+        if (j < 0)
+            continue;
+        s2 = s * pData->pWeight(seqMap[i])->weight;
+        if (s2 > 0.0) {
+            s1 = 1.0 - s2;
+            sub_1013ab70(q2[j], q1[j], s1, q3);
+            q1[j][0] = q3[0];
+            q1[j][1] = q3[1];
+            q1[j][2] = q3[2];
+            q1[j][3] = q3[3];
+            pos1[j][0] = pos1[j][0] * s1 + pos2[j][0] * s2;
+            pos1[j][1] = pos1[j][1] * s1 + pos2[j][1] * s2;
+            pos1[j][2] = pos1[j][2] * s1 + pos2[j][2] * s2;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c17e0 size=0x61
 int sub_100c1870(int hdr, int seq, int *pOut, int nBones, int *pRemap);
 int sub_100c17e0(int hdr, int seq, int *pOut, int *pRemap)
