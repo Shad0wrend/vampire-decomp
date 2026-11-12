@@ -1902,6 +1902,7 @@
 0x100037d8 func   ?sub_100d99e0@@YAXXZ sub_100d99e0
 0x100037dd func   ?RotateRight@?$CUtlRBTree@UCRBTree16Entry8@@G@@QAEXG@Z CUtlRBTree<CRBTree16Entry8,unsigned short>::RotateRight
 0x100037e2 func   ?sub_102ee620@CUnknown102ee620@@QAEHXZ CUnknown102ee620::sub_102ee620
+0x100037ec func   ?sub_102fa170@CAI_Node@@QAEXXZ CAI_Node::sub_102fa170
 0x100037f1 func   ?sub_101d6de0@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_101d6de0
 0x100037f6 func   ?sub_10386aa0@@YIPAXPAD@Z sub_10386aa0
 0x100037fb func   ?vfunc33@CPropSign@@UAEHXZ CPropSign::vfunc33

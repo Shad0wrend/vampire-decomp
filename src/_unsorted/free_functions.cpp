@@ -216904,6 +216904,96 @@ float sub_102f9ca0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fa170 size=0x2d3
+#include <math.h>
+#include "CAI_Node.h"
+#include "CUnknown102f46d0.h"
+#include "UTIL_Trace.h"
+
+int sub_102d6210(int hull);
+const Vector &sub_102d6100(int hull);
+const Vector &sub_102d6120(int hull);
+
+// m_Extents (+0x18) here is the game's start offset and m_StartOffset (+0x24) its extents
+struct HullRay : Ray_t
+{
+	void InitHull(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs)
+	{
+		Vector &offset = *(Vector *)m_Extents;
+		Vector &extents = *(Vector *)m_StartOffset;
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != 0;
+		VectorSubtract(maxs, mins, extents);
+		extents *= 0.5f;
+		m_IsRay = (extents.z * extents.z + extents.y * extents.y + extents.x * extents.x) < 1e-6;
+		VectorAdd(mins, maxs, offset);
+		offset *= 0.5f;
+		m_Start[0] = offset.x + start.x;
+		m_Start[1] = offset.y + start.y;
+		m_Start[2] = offset.z + start.z;
+		offset *= -1.0f;
+		m_b32 = 0;
+		m_b33 = 0;
+		m_n34 = 0;
+	}
+};
+
+inline void UTIL_TraceHullB(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr, char bTraceOffset)
+{
+	HullRay ray;
+	ray.InitHull(vecAbsStart, vecAbsEnd, hullMin, hullMax);
+	if (bTraceOffset && !ray.m_IsRay) {
+		float f = sqrt(ray.m_StartOffset[1] * ray.m_StartOffset[1] + ray.m_StartOffset[0] * ray.m_StartOffset[0]);
+		*(float *)&ray.m_n34 = f;
+		if (f > 1e-6)
+			ray.m_b33 = 1;
+	}
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+struct CAI_NodeV : CAI_Node
+{
+	int sub_102f9950();
+};
+
+void CAI_Node::sub_102fa170()
+{
+	int hullbits = ((CAI_NodeV *)this)->sub_102f9950();
+	for (int hull = 0; hull < 22; hull++)
+	{
+		if (hullbits & sub_102d6210(hull))
+		{
+			CGameTrace tr;
+			Vector origin = ((CUnknown102f46d0Elem *)this)->sub_102fb0d0(hull);
+			Vector mins, maxs;
+
+			mins = sub_102d6100(hull);
+			maxs = sub_102d6120(hull);
+
+			origin.z -= mins.z;
+			Vector end = origin + Vector(0, 0, -384);
+			origin.z += maxs.z - mins.z;
+			maxs.z = mins.z;
+
+			UTIL_TraceHullB(origin, end, mins, maxs, 0x2400b, 0, 0, &tr, 1);
+
+			if (!tr.m_startsolid)
+				m_aHullHeight[hull] = tr.m_endpos[2] - m_z + 0.1;
+			else
+				m_aHullHeight[hull] = 0.1f;
+		}
+		else
+			m_aHullHeight[hull] = 0.1f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fa510 size=0xd1
 #include "CAI_Node.h"
 #include "CAI_Network.h"
