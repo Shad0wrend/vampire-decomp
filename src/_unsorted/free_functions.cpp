@@ -109166,6 +109166,57 @@ bool __stdcall sub_1019e740(EntVt *pEnt, int attachment, float *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019e7d0 size=0xa6
+#include "QAngle.h"
+#include "CBaseEntity.h"
+#include "CRopeKeyframe.h"
+
+struct RopeAnimView {
+	bool sub_10092ef0(int iAttachment, Vector &origin, QAngle &angles);
+};
+
+#define V1(n) virtual void v##n();
+#define V10(n) V1(n##0) V1(n##1) V1(n##2) V1(n##3) V1(n##4) V1(n##5) V1(n##6) V1(n##7) V1(n##8) V1(n##9)
+
+namespace block_1019e7d0 {
+struct EntVt {
+	V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10(9)
+	V10(10) V10(11) V10(12)
+	V1(130) V1(131) V1(132) V1(133) V1(134) V1(135) V1(136)
+	virtual RopeAnimView *GetBaseAnimating();
+	V1(138) V1(139)
+	V10(14) V10(15) V10(16) V10(17) V10(18) V10(19) V10(20)
+	V1(210) V1(211) V1(212) V1(213) V1(214) V1(215) V1(216)
+	virtual const Vector &GetAbsOrigin();
+};
+bool __stdcall sub_1019e740(EntVt *pEnt, int iAttachment, float *pOut)
+{
+	if (!pEnt)
+		return false;
+	if (iAttachment > 0) {
+		RopeAnimView *pAnim = pEnt->GetBaseAnimating();
+		QAngle angles;
+		if (pAnim && pAnim->sub_10092ef0(iAttachment, *(Vector *)pOut, angles))
+			return true;
+		return false;
+	}
+	*(Vector *)pOut = pEnt->GetAbsOrigin();
+	return true;
+}
+}
+using namespace block_1019e7d0;
+struct CRopeEndView { bool sub_1019e740(EntVt *pEnt, int iAttachment, float *pOut); };
+
+// TARGET: CRopeKeyframe::sub_1019e7d0
+bool CRopeKeyframe::sub_1019e7d0(int bEndPoint, float *pOut)
+{
+	if (bEndPoint == 0)
+		return ((CRopeEndView *)this)->sub_1019e740((EntVt *)((EHANDLE *)&m_hStartPoint)->Get(), m_iStartAttachment, pOut);
+	else
+		return ((CRopeEndView *)this)->sub_1019e740((EntVt *)((EHANDLE *)&m_hEndPoint)->Get(), m_iEndAttachment, pOut);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019e8b0 size=0x269
 #include "utlmemory.h"
 #include "CRopeKeyframe.h"
