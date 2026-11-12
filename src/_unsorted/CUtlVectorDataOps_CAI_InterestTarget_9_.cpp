@@ -65,6 +65,66 @@ void CUtlVectorDataOps<CAI_InterestTarget, 9>::vfunc0(void *fieldInfo, void *pSa
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e2990 size=0xe9
+#include "datamap.h"
+#include "utlrbtree.h"
+#include "CHumanoidRec.h"
+#include "utlvector.h"
+#include "CUtlVectorDataOps.h"
+#include "CAI_InterestTarget.h"
+#include "CUtlVector36.h"
+
+struct datamapFull_t {
+	typedescription_t *dataDesc;
+	int dataNumFields;
+	const char *dataClassName;
+	datamap_t *baseMap;
+	bool chains_validated;
+	bool packed_offsets_computed;
+	int packed_size;
+};
+struct IRestoreStub {
+	virtual void v0(); virtual void v1();
+	virtual void ReadAll(void *pLeafObject, datamapFull_t *pDataMap);
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual int ReadInt();
+};
+struct FieldInfoStub {
+	void *pField;
+};
+extern datamap_t g_1060ba18;
+
+struct CInterestTargetVec : CUtlVector36 {
+	CAI_InterestTarget &Element(int i) { return ((CAI_InterestTarget *)m_pMemory)[i]; }
+	int InsertMultipleBefore(int elem, int num)
+	{
+		if (num == 0)
+			return elem;
+		sub_102e2b60(num);
+		sub_102e2c20(elem, num);
+		for (int i = 0; i < num; ++i)
+			Construct(&Element(elem + i));
+		return elem;
+	}
+	int AddMultipleToTail(int num) { return InsertMultipleBefore(m_size, num); }
+	void RemoveAll() { m_size = 0; }
+	void SetCount(int count) { RemoveAll(); AddMultipleToTail(count); }
+};
+
+// TARGET: CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc1
+void CUtlVectorDataOps<CAI_InterestTarget, 9>::vfunc1(void *fieldInfo, void *pRestore)
+{
+	typedescription_t dataDesc = { 9, "elems", {0, 0}, 1, 2, 0, 0, 0, &g_1060ba18 };
+	datamapFull_t dataMap = { &dataDesc, 1, "uv", 0, false, false, 0 };
+	CInterestTargetVec *pVec = (CInterestTargetVec *)((FieldInfoStub *)fieldInfo)->pField;
+	int nElems = ((IRestoreStub *)pRestore)->ReadInt();
+	pVec->SetCount(nElems);
+	for (int i = 0; i < nElems; i++)
+		((IRestoreStub *)pRestore)->ReadAll(&pVec->Element(i), &dataMap);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e2ac0 size=0x10
 #include "CAI_InterestTarget.h"
 #include "CUtlVectorDataOps.h"
