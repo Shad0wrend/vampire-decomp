@@ -162775,6 +162775,30 @@ int SIdList::sub_10227d20(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227ee0 size=0x52
+struct SA { int sub_102306d0(int, int); };
+struct SB { const char *sub_102030a0(int, int); };
+extern SA g_107510b8;
+extern SB g_1074e968;
+extern int g_1073a9f0;
+extern int g_1073a9ec;
+extern char g_10750cd8[];
+extern "C" int sprintf(char *, const char *, ...);
+
+struct CLevelNames
+{
+	int sub_10227da0(int a, int b);
+	char *sub_10227ee0(int a, int b);
+};
+
+char *CLevelNames::sub_10227ee0(int a, int b)
+{
+	int n = sub_10227da0(a, b);
+	sprintf(g_10750cd8, "%d-%s", n, g_1074e968.sub_102030a0(g_1073a9ec, g_107510b8.sub_102306d0(g_1073a9f0, n)));
+	return g_10750cd8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227f60 size=0x8a
 int sub_10431c2f(char *, const char *, ...);
 

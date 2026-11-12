@@ -4910,6 +4910,7 @@
 0x10007806 func   ?vfunc80@CItemGVVPhoto@@QAEHXZ CItemGVVPhoto::vfunc80
 0x1000780b func   ?sub_101e1870@@YGII@Z sub_101e1870
 0x10007810 func   ??0CPhysForce@@QAE@XZ CPhysForce::CPhysForce
+0x10007815 func   ?sub_10227ee0@CLevelNames@@QAEPADHH@Z CLevelNames::sub_10227ee0
 0x1000781a func   ?sub_101aa130@CUnknown101aa210@@QAE_NPAX@Z CUnknown101aa210::sub_101aa130
 0x1000781f func   ?IsLeftChild@?$CUtlRBTree@UCAI_ExpresserUse@@G@@QBE_NG@Z CUtlRBTree<CAI_ExpresserUse,unsigned short>::IsLeftChild
 0x1000781f func   ?sub_10314000@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_10314000
