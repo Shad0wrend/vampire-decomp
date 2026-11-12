@@ -72959,6 +72959,37 @@ int sub_101145a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101145d0 size=0x57
+#include "CBaseCombatCharacter.h"
+
+struct CSlotView {
+	CBCC_SLOTS10(q0) CBCC_SLOTS10(q1) CBCC_SLOTS10(q2) CBCC_SLOTS10(q3) CBCC_SLOTS10(q4) CBCC_SLOTS10(q5) CBCC_SLOTS10(q6)
+	CBCC_SLOTS10(q7) CBCC_SLOTS10(q8) CBCC_SLOTS10(q9) CBCC_SLOTS10(r0) CBCC_SLOTS10(r1) CBCC_SLOTS10(r2) CBCC_SLOTS10(r3)
+	CBCC_SLOTS10(r4) CBCC_SLOTS10(r5) CBCC_SLOTS10(r6) CBCC_SLOTS10(r7) CBCC_SLOTS10(r8) CBCC_SLOTS10(r9) CBCC_SLOTS10(s0)
+	virtual void t0(); virtual void t1(); virtual void t2(); virtual void t3(); virtual void t4(); virtual void t5(); virtual void t6();
+	virtual const Vector &GetAbsOrigin();
+	virtual void t8();
+	virtual const float *GetAbsAngles();
+	char m_pad[0x164 - 4];
+	float m_flSpeed;
+	char m_pad2[0x450 - 0x168];
+	float m_flScale;
+};
+
+void __cdecl sub_10139610(const float *pAngles, float *pForward, float *pRight, float *pUp);
+struct IEffectsView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void Dust(const Vector &pos, const Vector &dir, float size, float speed); };
+extern IEffectsView *g_10566258;
+
+// TARGET: sub_101145d0
+void __fastcall sub_101145d0(CBaseCombatCharacter *pThis, int unused, int a)
+{
+	CSlotView *p = (CSlotView *)pThis;
+	Vector dir;
+	sub_10139610(p->GetAbsAngles(), &dir.x, 0, 0);
+	g_10566258->Dust(p->GetAbsOrigin(), dir, p->m_flScale, p->m_flSpeed);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114820 size=0x9b
 #include "SendProp.h"
 
