@@ -22,11 +22,15 @@ public:
 	int m_n16c;	// +0x16c
 	char pad170[0x19c - 0x170];
 	unsigned int m_nEffectFlags;	// +0x19c: bit 4 is set by TransformationStart
-	char pad1a0[0x2e0 - 0x1a0];
+	char pad1a0[0x26c - 0x1a0];
+	const char *m_pszName26c;
+	char pad270[0x2e0 - 0x270];
 	int m_nEdict2e0;	// +0x2e0: the engine edict index
 	char pad2e4[0x3ec - 0x2e4];
 	float m_fl3ec;	// +0x3ec: set to 0.1f by StartTask (task 0x157 family)
-	char pad3f0[0xe80 - 0x3f0];
+	char pad3f0[0x6f8 - 0x3f0];
+	float m_fl6f8;
+	char pad6fc[0xe80 - 0x6fc];
 	int m_nPresence0;	// +0xe80: cleared by UpdatePresenceEffect
 	int m_nPresence1;	// +0xe84
 	int m_nPresence2;	// +0xe88
@@ -75,7 +79,9 @@ public:
 	const char *m_pMonsterModelName;	// +0x6680
 	char pad6684[0x6694 - 0x6684];
 	const char *m_pDefaultNPCName;	// +0x6694
-	char pad6698[0x66b8 - 0x6698];
+	char pad6698[4];
+	float m_fl669c;
+	char pad66a0[0x66b8 - 0x66a0];
 	char m_b66b8;	// +0x66b8
 	char pad66b9[0x66bc - 0x66b9];
 	int m_nFailureCount;	// +0x66bc: counts the task failures of types 0xc..0xf
@@ -179,6 +185,14 @@ public:
 	void sub_1027d9b0(int a);	// stub 0x10011e14
 	void sub_102c4ad0(void *pEnt, int a, int b);	// CAI_BaseNPCTroika member (stub 0x10011784), 3 stack arguments
 public:
+	void vfunc444(const int *pTask);
+	unsigned int sub_100b3700();
+	void sub_10280a50();
+	void sub_103c6a00();
+	char sub_102c1170();
+	void sub_103c5f40(const int *pTask);
+	char sub_10266c80(Vector *p, float f);
+	void sub_100b3640(int a);
 	bool vfunc70();
 	datamap_t * vfunc82();
 	int vfunc451();
