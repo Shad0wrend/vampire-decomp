@@ -226277,6 +226277,48 @@ void CBaseCombatCharacter::sub_10346760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10346830 size=0xad
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+
+#define MA_V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct SMeleeTarget
+{
+	char m_pad0000[0x9c];
+	int m_n009c;
+};
+
+struct SMeleeActor
+{
+	MA_V10(a0) MA_V10(a1) MA_V10(a2) MA_V10(a3) MA_V10(a4) MA_V10(a5) MA_V10(a6) MA_V10(a7) MA_V10(a8) MA_V10(a9)
+	MA_V10(b0) MA_V10(b1) MA_V10(b2) MA_V10(b3) MA_V10(b4) MA_V10(b5)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6();
+	virtual SMeleeTarget *vfunc167();
+	void sub_10346910(int n);
+};
+
+bool sub_10346830(SMeleeActor *pActor, SMeleeTarget *pTarget)
+{
+	ScopeTrace scope("MeleeRollAndSendNoticeCallback", g_106b8540);
+	int n = pTarget ? pTarget->m_n009c : 0;
+	if (!n)
+		return false;
+	if (pTarget == pActor->vfunc167())
+		return false;
+	pActor->sub_10346910(n);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10346910 size=0x14e
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntity.h"
