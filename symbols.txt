@@ -3963,6 +3963,7 @@
 0x10006447 func   ?sub_10078c90@CUtlVector136@@QAEXH@Z CUtlVector136::sub_10078c90
 0x1000644c func   ?vfunc438@CNPC_VSheriffMan@@QAEHXZ CNPC_VSheriffMan::vfunc438
 0x10006451 func   ?sub_101eb030@@YAXXZ sub_101eb030
+0x10006456 func   ?sub_100342c0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100342c0
 0x1000645b func   ?vfunc370@CNPC_VRat@@QAEHH@Z CNPC_VRat::vfunc370
 0x10006460 func   ?sub_10081e00@@YIXPADPAXH@Z sub_10081e00
 0x10006465 func   ?vfunc81@CItemGWirelessCamera1@@QAEHXZ CItemGWirelessCamera1::vfunc81

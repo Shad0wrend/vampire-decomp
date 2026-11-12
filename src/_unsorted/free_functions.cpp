@@ -4943,6 +4943,59 @@ bool CBaseEntity::sub_10033f60(int nThinkMethod)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100342c0 size=0x235
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+void __fastcall sub_10006456(CBaseEntity *p);
+
+inline bool IsSolid(int solidType, int nSolidFlags)
+{
+	return (solidType != 0) && ((nSolidFlags & 4) == 0);
+}
+
+struct CCollisionPropertyV
+{
+	char m_pad[0x40];
+	int m_Solid;	// 0x2b0
+	unsigned short m_usSolidFlags;	// 0x2b4
+	bool IsSolidFlagSet(int flagMask) const { return (m_usSolidFlags & flagMask) != 0; }
+	bool IsSolid() const { return ::IsSolid(m_Solid, m_usSolidFlags); }
+};
+
+struct CBaseEntityRelink : CBaseEntity
+{
+	const CCollisionPropertyV *CollisionPropV() const { return (const CCollisionPropertyV *)((char *)this + 0x270); }
+	bool IsSolid() const
+	{
+		ScopeTrace trace("CBaseEntity::IsSolid", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+		return CollisionPropV()->IsSolid();
+	}
+	bool IsSolidFlagSet(int flagMask) const
+	{
+		ScopeTrace trace("CBaseEntity::IsSolidFlagSet", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+		return CollisionPropV()->IsSolidFlagSet(flagMask);
+	}
+};
+
+// TARGET: CBaseEntity::sub_100342c0
+void CBaseEntity::sub_100342c0()
+{
+	ScopeTrace trace("CBaseEntity::PhysicsRelinkChildren", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	for (CBaseEntityRelink *pChild = (CBaseEntityRelink *)m_hMoveChild260.Get(); pChild; pChild = (CBaseEntityRelink *)pChild->m_hMovePeer264.Get()) {
+		if (pChild->IsSolid() || pChild->IsSolidFlagSet(8))
+			pChild->sub_100a53d0(0);
+		if (pChild->vfunc94() != 7)
+			((CEntityVSlots *)pChild)->slot232(*(int *)&gpGlobals->frametime);
+		if (pChild->m_hMoveChild260.Get())
+			sub_10006456(pChild);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100353c0 size=0x93
 #include "CUnknown100353c0.h"
 
