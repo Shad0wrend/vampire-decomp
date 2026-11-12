@@ -91,7 +91,7 @@ public:
 	CAI_NPC_V(340) CAI_NPC_V(341) CAI_NPC_V(342) CAI_NPC_V(343) CAI_NPC_V(344)
 	virtual float vfunc345(const char *pszName, float flValue, int a);	// slot 345 (+0x564, ret 0xc): sets a pose parameter by name, returns a float
 	CAI_NPC_V(346) CAI_NPC_V(347) CAI_NPC_V(348) CAI_NPC_V(349)
-	CAI_NPC_V(350) CAI_NPC_V(351) CAI_NPC_V(352) CAI_NPC_V(353) CAI_NPC_V(354) CAI_NPC_V(355) CAI_NPC_V(356) CAI_NPC_V(357) CAI_NPC_V(358)
+	CAI_NPC_V(350) CAI_NPC_V(351) CAI_NPC_V(352) CAI_NPC_V(353) CAI_NPC_V(354) virtual bool vfunc355(); CAI_NPC_V(356) CAI_NPC_V(357) CAI_NPC_V(358)
 	virtual int vfunc359(CBaseEntity *pEnt);	// "GetCombatState"-like (see the Troika override)
 	CAI_NPC_V(360) CAI_NPC_V(361) CAI_NPC_V(362)
 	virtual char vfunc363(CBaseEntity *pEnt);	// slot 363: asked about an entity (a boolean answer in al; the alarmed check of sub_102bf5d0 passes the entity)
