@@ -3593,6 +3593,33 @@ Vector CAI_BaseNPC::vfunc574(const Vector &vecPos, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102789c0 size=0x206
+#include "CAI_BaseNPC.h"
+#include "Vector.h"
+
+// bNoisy / bUseEye are bools in the game (byte tests); the header keeps int for the matched callers that forward them.
+Vector CAI_BaseNPC::vfunc197(const Vector &posSrc, int bNoisy, int bUseEye)
+{
+	Vector low, delta;
+	VectorSubtract(vfunc192(), (VectorMultiply(vfunc192() - *(Vector *)vfunc217(), 0.25f, delta), delta), low);
+	Vector high = vfunc193();
+	VectorSubtract(high, low, delta);
+	Vector result;
+	if ((bool)(char)bNoisy)
+	{
+		float rand1 = enginerandom->vfunc1(0.0, 0.5);
+		float rand2 = enginerandom->vfunc1(0.0, 0.5);
+		result = low + delta * rand1 + delta * rand2;
+	}
+	else if ((bool)(char)bUseEye)
+		result = high;
+	else
+		result = low + delta * 0.5f;
+
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10278c60 size=0xf
 #include "CAI_BaseNPC.h"
 
