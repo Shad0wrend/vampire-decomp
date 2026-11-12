@@ -28846,6 +28846,147 @@ int __stdcall sub_1007d2b0(float a, float b, float c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d300 size=0x206
+#include "CUnknown10075aa0.h"
+#include "CUnknown1007ce20.h"
+struct CUnknown1007d300Event : CUnknown10075aa0 { char sub_10077750(); bool sub_10075f30(); };
+namespace block_1007d300 {
+struct CUnknown1007d300Scene : CUnknown1007ce20
+{
+	char sub_1007ed10();
+	int sub_1007d2b0(float t, float starttime, float endtime);
+	int sub_1007d300(void *pv, float frame_start_time, float frame_end_time, bool playing_forward, int &disposition);
+};
+#pragma auto_inline(off)
+int CUnknown1007d300Scene::sub_1007d2b0(float a, float b, float c)
+{
+    if (a > c) {
+        return 2;
+    }
+    if (a < b) {
+        return 1;
+    }
+    return 0;
+}
+
+
+int CUnknown1007d300Scene::sub_1007d300(void *pv, float frame_start_time, float frame_end_time, bool playing_forward, int &disposition)
+{
+	CUnknown1007d300Event *e = (CUnknown1007d300Event *)pv;
+	disposition = 0;
+	int iret = 0;
+
+	bool hasend = e->sub_10075f30();
+	float starttime, endtime;
+
+	starttime = e->sub_10075e70();
+	endtime = hasend ? e->sub_10075f10() : e->sub_10075e70();
+
+	if ((e->sub_10075b70() == 0xe || e->sub_10075b70() == 0xd) && (starttime >= m_f80 || endtime >= m_f80))
+		return iret;
+
+	if ( !playing_forward )
+	{
+		// Swap intervals
+		float temp = frame_start_time;
+		frame_start_time = frame_end_time;
+		frame_end_time = temp;
+	}
+
+	bool suppressed = false;
+
+	// Special processing
+	switch ( e->sub_10075b70() )
+	{
+	default:
+		break;
+	case 5:
+		{
+			if ( playing_forward )
+			{
+				starttime -= m_f98;
+				if ( sub_1007d230( starttime, starttime + m_f98 ) )
+				{
+					suppressed = true;
+				}
+			}
+			else
+			{
+				endtime += m_f98;
+				if ( sub_1007d230( endtime - m_f98, endtime ) )
+				{
+					suppressed = true;
+				}
+			}
+		}
+		break;
+	case 0xb:
+		{
+			if ( sub_1007ed10() )
+			{
+				suppressed = true;
+			}
+		}
+		break;
+	}
+
+	if ( suppressed )
+	{
+		if ( e->sub_10077750() )
+		{
+			disposition = 4;
+		}
+		return iret;
+	}
+
+	int where_is_event;
+
+	if ( e->sub_10077750() )
+	{
+		where_is_event = sub_1007d2b0( frame_start_time, starttime, endtime );
+		if ( 0 == where_is_event )
+		{
+			disposition = 3;
+			iret = 1;
+		}
+		else
+		{
+			disposition = 4;
+		}
+	}
+	else
+	{
+		where_is_event = sub_1007d2b0( frame_start_time, starttime, endtime );
+
+		if ( 0 == where_is_event )
+		{
+			if ( e->sub_10076b10() )
+			{
+				disposition = 2;
+			}
+			else
+			{
+				disposition = 1;
+			}
+			iret = 1;
+		}
+		else if ( !hasend )
+		{
+			where_is_event = sub_1007d2b0( starttime, frame_start_time, frame_end_time );
+			if ( 0 == where_is_event )
+			{
+				disposition = 1;
+				iret = 1;
+			}
+		}
+	}
+
+	return iret;
+}
+}
+// TARGET: block_1007d300::CUnknown1007d300Scene::sub_1007d300
+// END FUNCTION
+
 // FUNCTION: 0x1007d5a0 size=0x1cc
 #include "CUnknown10075aa0.h"
 #include <string.h>
