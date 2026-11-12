@@ -201882,6 +201882,77 @@ void __fastcall sub_102e8ac0(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e91b0 size=0x3ad
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "Vector.h"
+#include "utlrbtree.h"
+#include "CUtlVectorElem118.h"
+#include "utlvector.h"
+#include <stdlib.h>
+
+struct CBucket118 { float m_flSum; float m_flBest; Elem118 *m_pBest; };
+
+bool CUtlVectorElem118::sub_102e91b0(Elem118 *pElems, int nCount, float *pOut)
+{
+	CUtlVector<Elem118> &self = *(CUtlVector<Elem118> *)this;
+	if (nCount == 0)
+		return false;
+	if (nCount == 1 && self.Count() == 0 && pElems[0].m_type == 0) {
+		*(int *)pOut = pElems[0].m_c;
+		return true;
+	}
+	CUtlVector<Elem118> temp;
+	temp.EnsureCapacity(self.Count() + nCount);
+	temp.CopyArray(pElems, nCount);
+	temp.AddVectorToTail(self);
+	CBucket118 buckets[120] = { 0 };
+	sub_102e9910(temp.Base(), temp.Base() + temp.Count());
+	for (int n = 0; n < temp.Count(); n++) {
+		Elem118 *e = &temp[n];
+		float h = *(float *)&e->m_d * 0.5;
+		int t0 = (float)(120.0f * h) * 0.0027777778f + 0.5; int nHalf = (int)(float)(int)(t0);
+		int nFull = (int)((float)(*(float *)&e->m_d * 120.0f) * 0.0027777778f);
+		float start = pcd_stage(*(float *)&e->m_c) - h;
+		if (start < 0.0)
+			start += 360.0f;
+		int nStart = (int)((float)(start * 120.0f) * 0.0027777778f);
+		for (int i = 0; i < nFull + 1; i++) {
+			float w;
+			if (*(float *)&e->m_b > 0.0f) {
+				float t = (float)abs(nHalf - i) * 0.00083333335f;
+				if (((e->m_f & 1) && i > nHalf) || ((e->m_f & 2) && i < nHalf))
+					t = t * 0.9;
+				w = *(float *)&e->m_b - t * *(float *)&e->m_b;
+			} else {
+				w = *(float *)&e->m_b;
+			}
+			int idx; idx = (i + nStart) % 120;
+			buckets[idx].m_flSum += w;
+			if (w > buckets[idx].m_flBest) {
+				buckets[idx].m_flBest = w;
+				buckets[idx].m_pBest = e;
+			}
+		}
+	}
+	float flMax = 0.0f;
+	int iBest = -1;
+	for (int k = 0; k < 120; k++) {
+		if (flMax < buckets[k].m_flSum) {
+			flMax = buckets[k].m_flSum;
+			iBest = k;
+		}
+	}
+	if (iBest == -1)
+		return false; else { Elem118 *pBest = buckets[iBest].m_pBest;
+	float fIdx = (float)(iBest * 3);
+	float v = *(float *)&pBest->m_c;
+	if (v > fIdx && v <= fIdx + 3.0f)
+		fIdx = v;
+	*pOut = fIdx;
+	return true; }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e96e0 size=0x1c0
 extern float g_1060f358[14];
 extern char g_1060f398[7][20];

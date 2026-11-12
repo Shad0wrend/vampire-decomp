@@ -14563,6 +14563,7 @@
 0x100145b5 func   ?vfunc223@CFuncPlat@@UAEDXZ CFuncPlat::vfunc223
 0x100145ba func   ?sub_1013da70@@YAXH@Z sub_1013da70
 0x100145bf func   ?sub_102f1620@CUnknown102ee120_x@@QAEXHHMMH@Z CUnknown102ee120_x::sub_102f1620
+0x100145c4 func   ?sub_102e91b0@CUtlVectorElem118@@QAE_NPAUElem118@@HPAM@Z CUtlVectorElem118::sub_102e91b0
 0x100145c9 func   ?vfunc80@CItemGEDaneReport@@QAEHXZ CItemGEDaneReport::vfunc80
 0x100145ce func   _info_node_tzimisce_claw_right info_node_tzimisce_claw_right
 0x100145d3 func   ??0CWeaponMelee_MingXiaoMelee@@QAE@XZ CWeaponMelee_MingXiaoMelee::CWeaponMelee_MingXiaoMelee
