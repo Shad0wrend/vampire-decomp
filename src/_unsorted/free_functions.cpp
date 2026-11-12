@@ -134658,6 +134658,33 @@ int CUnknown101e0f00::sub_101e1250(int key, int offset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e12a0 size=0x33
+struct CFindElemView {
+    int m_unk0;
+    int m_unk4;
+    int m_unk8;
+    unsigned int m_id;
+};
+
+struct CFindListView {
+    int m_unk0;
+    int m_count;
+    CFindElemView **m_pElems;
+    unsigned int sub_101e1850(unsigned int id);
+    int sub_101e12a0(unsigned int id);
+};
+
+// TARGET: CFindListView::sub_101e12a0
+int CFindListView::sub_101e12a0(unsigned int id)
+{
+    unsigned int key = sub_101e1850(id);
+    for (int i = 0; i < m_count; i++)
+        if (m_pElems[i]->m_id == key)
+            return i;
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e12f0 size=0x4d
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 struct CNamePtr {
