@@ -200829,6 +200829,44 @@ bool CAI_MoveProbe::sub_102e6d70(int navType, const float *vecStart, const float
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e7060 size=0x193
+#include <math.h>
+#include "Vector.h"
+
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+
+Vector __stdcall sub_102e7060(const Vector &startPos, const Vector &endPos, float flGravity, float *pminHeight, float maxHorzVelocity, Vector *pvecApex)
+{
+	float stepHeight = endPos.z - startPos.z;
+
+	Vector targetDir2D = endPos - startPos;
+	targetDir2D.z = 0;
+	float distance = VectorNormalize(targetDir2D);
+
+	float minHorzTime = distance / maxHorzVelocity;
+	float minHorzHeight = 0.5 * flGravity * (minHorzTime * 0.5) * (minHorzTime * 0.5);
+
+	*pminHeight = max(*pminHeight, minHorzHeight);
+	*pminHeight = max(*pminHeight, stepHeight);
+
+	float t0 = sqrt((2.0 * *pminHeight) / flGravity);
+	float t1 = sqrt((2.0 * fabs(*pminHeight - stepHeight)) / flGravity);
+
+	float velHorz = distance / (t0 + t1);
+
+	Vector jumpVel = targetDir2D * velHorz;
+
+	jumpVel.z = (float)sqrt(2.0f * flGravity * (*pminHeight));
+
+	if (pvecApex)
+	{
+		*pvecApex = startPos + targetDir2D * velHorz * t0 + Vector(0, 0, *pminHeight);
+	}
+
+	return jumpVel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e7ba0 size=0x1dd
 #include "CAI_MoveProbe.h"
 #include "CVProfile.h"
