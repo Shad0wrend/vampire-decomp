@@ -2107,6 +2107,7 @@
 0x10003cf1 func   ?sub_10402790@@YAHXZ sub_10402790
 0x10003cfb func   ?vfunc110@CLight@@QAE_NPBD0@Z CLight::vfunc110
 0x10003d00 func   ?sub_102189b0@CUnk102189b0@@QAEXXZ CUnk102189b0::sub_102189b0
+0x10003d05 func   ?sub_101e1890@@YGHH@Z sub_101e1890
 0x10003d0a func   ?sub_102c8a60@Helper@@QAEPAXE@Z Helper::sub_102c8a60
 0x10003d0f func   ?sub_100db3f0@@YAXXZ sub_100db3f0
 0x10003d14 func   ?Grow@?$CUtlMemory@UCFlameBurnRec@@@@QAEXH@Z CUtlMemory<CFlameBurnRec>::Grow

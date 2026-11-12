@@ -131996,6 +131996,15 @@ unsigned int __stdcall sub_101e1870(unsigned int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1890 size=0x13
+inline bool IsClear(int x, int m) { return (x & m) == 0; }
+// TARGET: sub_101e1890
+int __stdcall sub_101e1890(int x)
+{
+    return IsClear(x, 0x80000000);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e18c0 size=0x13
 inline bool IsSet(int x, int m) { return (x & m) != 0; }
 // TARGET: sub_101e18c0
