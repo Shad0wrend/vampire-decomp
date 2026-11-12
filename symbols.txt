@@ -11138,6 +11138,7 @@
 0x1000fc09 func   ?sub_100d1210@@YAHH@Z sub_100d1210
 0x1000fc0e func   ?vfunc82@CVampireProjectile@@UAEPAUdatamap_t@@XZ CVampireProjectile::vfunc82
 0x1000fc13 func   ?sub_101c91b0@@YAHXZ sub_101c91b0
+0x1000fc18 func   ?sub_10204dd0@CUnknown10204dd0@@QAEHPAVCVStatCost_t@@HH@Z CUnknown10204dd0::sub_10204dd0
 0x1000fc1d func   ?vfunc2@CTEBreakModel@@UAEPAV1@I@Z CTEBreakModel::vfunc2
 0x1000fc22 func   ?vfunc104@CParamsParticle@@UAEXXZ CParamsParticle::vfunc104
 0x1000fc27 func   ?sub_100737b0@CUnknown100737b0@@QAEXH@Z CUnknown100737b0::sub_100737b0

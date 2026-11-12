@@ -151220,6 +151220,28 @@ int CUnknown10204c60::sub_10204c60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204dd0 size=0x88
+#include "CUnknown10204dd0.h"
+
+int CUnknown10204dd0::sub_10204dd0(CVStatCost_t *cost, int a, int b)
+{
+if (m_id != -1) {
+switch (m_type) {
+case 0: if (b <= 1 && a <= 0) return cost->sub_101fc410(b, true); return cost->sub_101fc410(b, false);
+case 1: if (b > 1) return cost->sub_101fc410(b, false); return cost->sub_101fc410(b, true); case 2: if (b > 1) return cost->sub_101fc410(b, false); return cost->sub_101fc410(b, true);
+case 3: return 0;
+case 4: return 0;
+case 5: return 0;
+case 6: return 0;
+case 7: return 0;
+case 8: return 0;
+case 9: return 0;
+}
+}
+return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204e90 size=0x94
 #include "CUnknown10204e90.h"
 
