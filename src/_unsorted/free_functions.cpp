@@ -208810,6 +208810,30 @@ bool CUnknown102ef350Iface::sub_102ef350(CUnknown102ef350Item *pItem, int a, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ef3e0 size=0xee
+#include "CUnknown102ef3e0.h"
+#include "CEHandleGet.h"
+
+struct H102ef3e0 { char m_pad[0x94]; CGlobalEntityList_Ent *m_pOwner; CGlobalEntityList_Ent *MyNPCPointer() { return m_pOwner; } };
+struct A102ef3e0 { char m_pad[0x1c]; H102ef3e0 *m_pHolder; };
+
+bool CUnknown102ef3e0::sub_102ef3e0(CUnknown102ef3e0Arg *pArg)
+{
+	CGlobalEntityList_Ent *pTarget = ((A102ef3e0 *)pArg)->m_pHolder ? ((A102ef3e0 *)pArg)->m_pHolder->MyNPCPointer() : 0;
+	if (pTarget) {
+		if (EHandle_Get(m_hTarget) != pTarget || gpGlobals->curtime - m_flTimeB > -0.001) {
+			m_bNoticed = true;
+			m_hTarget = *pTarget->v1();
+			m_flTimeA = gpGlobals->curtime + m_flDelayA;
+			m_flTimeB = gpGlobals->curtime + m_flDelayB;
+		} else if (EHandle_Get(m_hTarget) == pTarget && !(gpGlobals->curtime - m_flTimeA > -0.001)) {
+			m_bNoticed = true;
+		}
+	}
+	return m_bNoticed;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ef6a0 size=0x1a
 // TARGET: sub_102ef6a0
 struct CUnk102ef6a0Obj {
