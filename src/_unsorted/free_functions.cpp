@@ -170290,6 +170290,22 @@ void CUnknown102457d0::sub_102457d0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102457f0 size=0x49
+#include <string.h>
+char *__stdcall sub_102457f0(char *s)
+{
+	int n = strlen(s);
+	if (n <= 0) {
+		char *q = new char[1];
+		*q = 0;
+		return q;
+	}
+	char *p = new char[n + 1];
+	strcpy(p, s);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245860 size=0x7
 struct CUnknown10245860 { int sub_10245860(); };
 int CUnknown10245860::sub_10245860()
