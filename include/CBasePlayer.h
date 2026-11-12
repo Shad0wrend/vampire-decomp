@@ -686,6 +686,7 @@ void sub_1016c9d0();
 	void sub_10170090();
 	void sub_1033f6d0();
 	char sub_10167370();
+	void sub_1017ed00(int level, CBaseEntity *pNPC, const Vector &vecLocation);	// the cops response request: unless hunters pursue, remembers level / NPC / location (a higher level replaces a pending one) and arms the timer +0x1cf8 with a random delay
 	void sub_10181be0();
 #include "CBasePlayer_ext.h"
 };
