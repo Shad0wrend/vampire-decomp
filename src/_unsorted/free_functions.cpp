@@ -87454,6 +87454,111 @@ float sub_10151b70(const float *pTable, int nEntries, float flValue, char bPrint
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151c00 size=0x37d
+#include "gamevcollisionevent_t.h"
+#include <math.h>
+
+struct impactdamagetable_t
+{
+	const void *linearTable;
+	const void *angularTable;
+	int linearCount;
+	int angularCount;
+	float minSpeedSqr;
+	float minRotSpeedSqr;
+	float minMass;
+	float smallMassMax;
+	float smallMassCap;
+	float smallMassMinSpeedSqr;
+	float largeMassMin;
+	float largeMassScale;
+};
+
+float sub_10151b70(const void *pTable, int nCount, float flEnergy, char bDebug);
+
+inline float FloatMakePositive(float f)
+{
+	return (float)fabs(f);
+}
+
+inline float DotProductAbs(const Vector &v0, const Vector &v1)
+{
+	return FloatMakePositive(v0.x * v1.x) + FloatMakePositive(v0.y * v1.y) + FloatMakePositive(v0.z * v1.z);
+}
+
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+
+// TARGET: sub_10151c00
+float sub_10151c00(int index, gamevcollisionevent_t *pEvent, const impactdamagetable_t &table, float energyScale, bool allowStaticDamage, int &damageType)
+{
+	damageType = 1;
+	int otherIndex = !index;
+
+	float otherSpeedSqr = pEvent->preVelocity[otherIndex].LengthSqr();
+	float otherAngSqr = 0;
+
+	if (pEvent->pObjects[otherIndex]->vfunc8() & 1)
+	{
+		otherAngSqr = pEvent->postAngularVelocity[otherIndex].LengthSqr();
+	}
+
+	float otherMass = pEvent->pObjects[otherIndex]->vfunc12();
+
+	if (!allowStaticDamage)
+	{
+		if (otherMass < table.minMass)
+			return 0;
+		if (otherMass < table.smallMassMax && otherSpeedSqr < table.smallMassMinSpeedSqr)
+			return 0;
+		if (otherSpeedSqr < table.minSpeedSqr && otherAngSqr < table.minRotSpeedSqr)
+			return 0;
+	}
+
+	if (energyScale <= 0.0f)
+		energyScale = 1.0f;
+
+	float damage = 0;
+	if (otherAngSqr > table.minRotSpeedSqr)
+	{
+		Vector inertia;
+		pEvent->pObjects[otherIndex]->vfunc14(&inertia.x);
+		float angularMom = DotProductAbs(inertia, pEvent->postAngularVelocity[otherIndex]);
+		damage = sub_10151b70(table.angularTable, table.angularCount, angularMom * energyScale, 0);
+		if (damage > 0)
+		{
+			damageType |= 4;
+		}
+	}
+
+	float deltaV = pEvent->preVelocity[index].Length() - pEvent->postVelocity[index].Length();
+	float mass = pEvent->pObjects[index]->vfunc12();
+	float eliminatedEnergy = deltaV * deltaV * mass;
+
+	deltaV = pEvent->preVelocity[otherIndex].Length() - pEvent->postVelocity[otherIndex].Length();
+	float otherEliminatedEnergy = deltaV * deltaV * otherMass;
+
+	if (otherMass >= table.largeMassMin)
+	{
+		otherEliminatedEnergy *= table.largeMassScale;
+	}
+
+	eliminatedEnergy += otherEliminatedEnergy;
+
+	float invMass = pEvent->pObjects[index]->vfunc13();
+	if (!pEvent->pObjects[index]->vfunc52())
+		invMass = 1.0f / pEvent->pObjects[index]->vfunc12();
+
+	damage += sub_10151b70(table.linearTable, table.linearCount, invMass * eliminatedEnergy * energyScale, 0);
+
+	if (!pEvent->pObjects[otherIndex]->vfunc1() && otherMass < table.smallMassMax && table.smallMassCap > 0)
+	{
+		damage = clamp(damage, 0, table.smallMassCap);
+	}
+
+	return damage;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152060 size=0x27
 extern int g_1057d360;
 void sub_100126e8(int a, int b, int *c, int d, int e, int f);
