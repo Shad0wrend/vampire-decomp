@@ -3504,6 +3504,7 @@
 0x10005a42 func   ?sub_10030e40@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030e40
 0x10005a47 func   ?vfunc180@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc180
 0x10005a4c func   ?vfunc11@CMoveHelperServer@@UAEXXZ CMoveHelperServer::vfunc11
+0x10005a51 func   ?sub_1024ddf0@VMatrix@@QAEXABVVector@@ABVQAngle@@@Z VMatrix::sub_1024ddf0
 0x10005a56 func   ?vfunc289@CWeaponThrown_Grenade_Frag@@QAEHXZ CWeaponThrown_Grenade_Frag::vfunc289
 0x10005a60 func   ?sub_10307d30@@YAPAUSPatrolPathX@@XZ sub_10307d30
 0x10005a65 func   ?sub_10249390@CUnknown10249390@@QAEHXZ CUnknown10249390::sub_10249390
