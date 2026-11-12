@@ -394,6 +394,30 @@ have written it rather than adding temporaries that spell out the assembly:
   Python bindings: `p = !ent ? 0 : ent->m; if (!p) {...}` and None as `++*g_109f3748; return g_109f3748;`
   (0x10198070); a container element pointer declared inside `if (arr[i].m_p)` (0x102daf80); an inline called from a
   `__forceinline` view member stays an unlinkable call: use `__forceinline` free helpers (0x101265d0).
+- **Round 8 (34 matched; SDK identification was most of it):** unnamed math/utility functions are often Valve's
+  code under an SDK name: name it first, then write it verbatim (vmatrix.cpp Transpose/Transpose3x3/Scale/
+  MatrixMultiply/Vector3DMultiply, mathlib BoxOnPlaneSide, Catmull_Rom_Spline_Tangent, _SSE2_SinCos/_SSE2_cos,
+  VectorTransformSSE, dispcoll_common AxisTestEdgeCrossZ1, wcedit UndoDestroyAINode, ai_basenpc WalkMove,
+  ai_pathfinder RouteToNode). Hand rebuilds of the same math had stalled at 100-300.
+- **"Loads all 16 floats before any store" = an inline 16-argument call:** a VMatrix returned by value through the
+  16-float constructor or `Init(16 args)` (ret-4 thiscall with a hidden return pointer). An empty user-declared
+  `VMatrix() {}` changes x87 operand order of `tmp1, tmp2` users (MatrixMultiply 0x1024e260; include/VMatrix.h has
+  no constructors yet, a local view class with them is used).
+- **SDK `__asm` (SSE/SSE2/3DNow) pasted into a plain function** matches; `_ps_*` constants are `extern int g_X`
+  operands; a game ebp frame on a no-locals asm function = `#pragma optimize("y", off)` (0x10137b20). Hand-scheduled
+  plain-x87 asm (TransformAndRotate 0x101382f0, naked VectorMA) is refused by policy: left open with a note.
+- **Struct members as Vector, not float[3]** (`cplane_t::normal`): `operator[]` decides the load order (0x10139200).
+- **x87 in double:** `fld [m]; faddp st(N)` where ours is `fxch; fadd [m]` = the add done in double, `(double)a + b`
+  (0x102808c0); `fild a; fidiv b` kept together = `(a + 0.0f) / b` (0x101d8b40); `fxch st(1); fxch st(1)` after
+  fpatan = `(double)a - (float)atan2(y, x) * g` (0x103229d0).
+- **Smaller round 8 levers:** a Vector temporary copied with integer moves = implicit POD struct copy (`*(V3 *)&dst =
+  *(V3 *)&tmp`, workaround, 0x103cb920); VC6's per-function inline budget: drop trivial wrapper inlines so every copy
+  of a heavier inline expands (0x10198cc0); a hoisted `mov edi,[DevMsg]; call edi` = C++ `__declspec(dllimport) void
+  DevMsg(const char *, ...)`; a search loop returning from inside = an inline helper returning id or -1; two
+  identical `call; epilogue` copies = ONE return after if/else (0x101989b0); a wrong order at a function's END can
+  come from its START (write the SDK front, 0x10130800); `p->f(a, b, p->g())` shares one vtable load: stage `p->g()`
+  when the game reloads (0x1022d5a0); `return T(*(T *)p);` for a hidden-pointer return copied from a callee's
+  pointer (0x101e8330).
 
 ## VC6 stack slots: what moves them and what does not (measured 2026-11-08, partial)
 
