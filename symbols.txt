@@ -7592,6 +7592,7 @@
 0x1000b104 func   ?vfunc14@CMoveHelperServer@@UAEPAV1@I@Z CMoveHelperServer::vfunc14
 0x1000b109 func   ?sub_100e58b0@CUnk100e58b0@@QAE_NXZ CUnk100e58b0::sub_100e58b0
 0x1000b10e func   ?vfunc438@CNPC_VHumanCombatant@@QAEHXZ CNPC_VHumanCombatant::vfunc438
+0x1000b113 func   ?sub_101b4cc0@CSoundEmitterSystemBase@@QAEHPBD@Z CSoundEmitterSystemBase::sub_101b4cc0
 0x1000b118 func   ?sub_10139f00@@YAXPAM00@Z sub_10139f00
 0x1000b11d func   ?sub_1034f6f0@@YAHXZ sub_1034f6f0
 0x1000b122 func   ?vfunc316@CItemContainer@@QAEXHHH@Z CItemContainer::vfunc316

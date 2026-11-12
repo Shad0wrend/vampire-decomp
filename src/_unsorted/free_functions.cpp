@@ -115620,6 +115620,37 @@ void CUnk101b4c90::sub_101b4c90(unsigned short *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4cc0 size=0x4e
+#include "utlvector.h"
+#include "CSoundEmitterSystemBase.h"
+#include <string.h>
+
+// The script file table at +0x9c: 0x82 byte entries (dirty flag word, file name).
+struct CSoundScriptFile_101b4cc0
+{
+	short m_bDirty;
+	char m_szFileName[0x80];
+};
+
+struct CSoundEmitterScriptsView
+{
+	char m_pad000[0x9c];
+	CUtlVector<CSoundScriptFile_101b4cc0> m_SoundKeyValues;	// 0x9c
+};
+
+int CSoundEmitterSystemBase::sub_101b4cc0(const char *pszScript)
+{
+	CUtlVector<CSoundScriptFile_101b4cc0> &files = ((CSoundEmitterScriptsView *)this)->m_SoundKeyValues;
+	int c = files.Count();
+	for (int i = 0; i < c; i++)
+	{
+		if (!_strcmpi(files[i].m_szFileName, pszScript))
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b4d30 size=0x2f9
 #include "CSoundEmitterSystemBase.h"
 #include "CUnknown101b6320.h"
