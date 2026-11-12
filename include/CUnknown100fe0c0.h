@@ -45,7 +45,7 @@ public:
 	CUnknown100fe0c0_SubA m_58;
 	CUnknown100fe0c0_SubB m_e4;
 
-	void sub_100fe0c0(int a0, int a1, int a2, int a3, int a4);
+	void sub_100fe0c0(int a0, int a1, float a2, int a3, float a4);
 	void sub_100fe150(float flTime);
 	float sub_100fe300(float flTime);
 };
