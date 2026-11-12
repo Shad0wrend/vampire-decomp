@@ -199491,6 +199491,21 @@ void CUnknown102ecd00::sub_102ecd00(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ed310 size=0x5a
+#include "CAI_Navigator.h"
+#include "CBaseEntity.h"
+void CAI_Navigator::sub_102ed310(CBaseEntity *pEnt, const Vector *pPosition)
+{
+	vfunc7();
+	CAI_NavRoute *pRoute = m_p30;
+	pRoute->m_v34.x = pPosition->x;
+	pRoute->m_v34.y = pPosition->y;
+	pRoute->m_v34.z = pPosition->z;
+	*(EHANDLE *)&pRoute->m_i30 = pEnt;
+	sub_102f1dc0(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ed430 size=0xc7
 #include "CAI_Navigator.h"
 
