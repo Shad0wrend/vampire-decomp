@@ -74696,6 +74696,103 @@ void CGameMovement::sub_10126e20(float flDuckFraction)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10126fd0 size=0x33b
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CBaseEntity.h"
+#include "CUnknown1015ef20.h"
+#include "CUnknown1011eee0.h"
+
+extern float g_104454c4;
+
+static inline float SimpleSpline(float value)
+{
+	float valueSquared = value * value;
+	return (3 * valueSquared - 2 * valueSquared * value);
+}
+
+#define GM_MAX(a, b) (((a) > (b)) ? (a) : (b))
+
+#define MV ((CMovePlayerView *)m_pPlayer)
+#define PL ((CMoveFlagsView *)m_pMove)
+#define PLV ((CMoveDataView *)m_pMove)
+#define PLE ((CBaseEntity *)m_pMove)
+
+// TARGET: CGameMovement::sub_10126fd0
+void CGameMovement::sub_10126fd0()
+{
+	int buttonsPressed = (MV->m_n0028 ^ MV->m_fFlags24) & MV->m_fFlags24;
+	bool bDuck;
+	bool bUnduck;
+
+	int type = PL->m_n03E0;
+	if ((type == 3 || (type > 0 && !PLV->vfunc209() && !MV->m_n00c0)) && sub_101265d0())
+		goto dead;
+
+	if (MV->m_fFlags24 & 4)
+		MV->m_n0028 = MV->m_n0028 | 4;
+	else
+		MV->m_n0028 = MV->m_n0028 & ~4;
+	if (MV->m_fFlags24 & 4)
+		MV->m_n0028 |= 4;
+	else
+		MV->m_n0028 &= ~4;
+
+	bDuck = false;
+	bUnduck = false;
+	if (((CUnknown1015ef20 *)m_pMove)->sub_1015ef20() && (buttonsPressed & 4) && !PL->m_b1ede) {
+		if (!(PLE->sub_100b3700() & 2))
+			bDuck = true;
+		else if (sub_101265d0())
+			bUnduck = true;
+	}
+
+	if (((CUnknown1011eee0 *)this)->sub_1011eee0()) {
+dead:
+		if (PLE->sub_100b3700() & 2)
+			sub_101269e0();
+		return;
+	}
+
+	if (bDuck || bUnduck || PL->m_b1ede || (PLE->sub_100b3700() & 2)) {
+		if (!bUnduck && (bDuck || ((PLE->sub_100b3700() & 2) && !PL->m_b1ede) || (!(PLE->sub_100b3700() & 2) && PL->m_b1ede))) {
+			bool bInDuck = (PLE->sub_100b3700() & 2) ? true : false;
+			if (bDuck && !(PLE->sub_100b3700() & 2)) {
+				PL->m_fl1EE0 = 1000.0f;
+				PL->m_b1ede = 1;
+			}
+			float duckseconds = GM_MAX(g_104454c4, 1000.0f - PL->m_fl1EE0) * 0.001f;
+			if (PL->m_b1ede) {
+				if (duckseconds > 0.4f || !PLV->vfunc209() || bInDuck) {
+					sub_10126cb0();
+				} else {
+					sub_10126e20(SimpleSpline(duckseconds * 2.5f));
+				}
+			}
+		} else {
+			if (PL->m_b1F28 || !PLV->vfunc209()) {
+				if (bUnduck) {
+					PL->m_fl1EE0 = 1000.0f;
+					PL->m_b1ede = 1;
+				}
+				float duckseconds = GM_MAX(g_104454c4, 1000.0f - PL->m_fl1EE0) * 0.001f;
+				if (sub_101265d0()) {
+					if (PL->m_b1ede || PL->m_bDucked) {
+						if (duckseconds > 0.2 || !PLV->vfunc209()) {
+							sub_101269e0();
+						} else {
+							sub_10126e20(SimpleSpline(1.0 - duckseconds * 5.0));
+						}
+					}
+				} else {
+					PL->m_fl1EE0 = 1000.0f;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101273e0 size=0x8c
 const char *sub_101273e0(int state)
 {
