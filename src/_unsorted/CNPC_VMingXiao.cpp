@@ -556,6 +556,71 @@ int CNPC_VMingXiao::vfunc376(int act)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103947b0 size=0x12f
+#include "CNPC_VMingXiao.h"
+#include "CUnknown10739d08.h"
+extern CUnknown10739d08 g_10739d08;
+
+struct CRateBlockView
+{
+	float m_f[32];
+	float F5() const { return m_f[5]; }
+	float F6() const { return m_f[6]; }
+	float F7() const { return m_f[7]; }
+	float F19() const { return m_f[19]; }
+	float F20() const { return m_f[20]; }
+	float F21() const { return m_f[21]; }
+	float F22() const { return m_f[22]; }
+	float F23() const { return m_f[23]; }
+	float F24() const { return m_f[24]; }
+};
+static inline CRateBlockView *G() { return (CRateBlockView *)g_10739d08.sub_101e8da0(); }
+
+// TARGET: CNPC_VMingXiao::vfunc465
+void CNPC_VMingXiao::vfunc465(int act)
+{
+	bool bTentacle = false;
+	CRateBlockView *p;
+	if (sub_10398870()) {
+		if (act == 9 || act == 0x13) {
+			bTentacle = true;
+			sub_1008d230(G()->F7());
+		} else {
+			p = G();
+			if (act != 0x4b)
+				sub_1008d230(p->F5());
+			else
+				sub_1008d230(p->F6());
+		}
+	} else {
+		float base;
+		float step;
+		if (act == 9 || act == 0x13) {
+			bTentacle = true;
+			base = (float)(G()->F23() * 1.0);
+			step = (float)(G()->F24() * 1.0);
+		} else {
+			p = G();
+			if (act != 0x4b) {
+				base = (float)(p->F19() * 1.0);
+				step = (float)(G()->F20() * 1.0);
+			} else {
+				base = (float)(p->F21() * 1.0);
+				step = (float)(G()->F22() * 1.0);
+			}
+		}
+		float rate = step * (6 - m_n670c) + base;
+		sub_1008d230(rate > 0.1 ? rate : 0.1);
+	}
+	bool bCover = act == 0x1132 || bTentacle;
+	if (bCover)
+		sub_1039ab30();
+	else
+		sub_1039aca0();
+	sub_10295a60(act);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10394930 size=0x30
 #include "CNPC_VMingXiao.h"
 #include "CUnknown10739d08.h"
