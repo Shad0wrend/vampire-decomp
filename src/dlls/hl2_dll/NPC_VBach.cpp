@@ -197,3 +197,152 @@ bool CNPC_VBatSwarm::sub_10365780(int a, int b)
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10365a90 size=0x53c
+#include <math.h>
+#include "CNPC_VBach.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include "CPASAttenuationFilter.h"
+
+#define BVS(n) virtual void vs##n();
+#define BVS10(p) BVS(p##0) BVS(p##1) BVS(p##2) BVS(p##3) BVS(p##4) BVS(p##5) BVS(p##6) BVS(p##7) BVS(p##8) BVS(p##9)
+struct CBachCampVS
+{
+	BVS10() BVS10(1) BVS10(2) BVS10(3) BVS10(4) BVS10(5) BVS10(6) BVS10(7) BVS10(8) BVS10(9)
+	BVS10(10) BVS10(11) BVS10(12) BVS10(13) BVS10(14) BVS10(15) BVS10(16) BVS10(17) BVS10(18) BVS10(19)
+	BVS(200)
+	virtual bool vfunc201(CBaseEntity *pEnt, int mask, int *pResult, int i);
+};
+
+struct CNPC_VBachCamp
+{
+	char m_pad0000[0x2e0];
+	int m_pEdict2e0;	// 0x2e0
+	char m_pad02e4[0x1b30 - 0x2e4];
+	const char *m_pszSchedFile;	// 0x1b30
+	int m_nSchedLine;	// 0x1b34
+	char m_pad1b38[0x6664 - 0x1b38];
+	float m_fl6664;
+	float m_fl6668;
+	float m_fl666c;
+	float m_fl6670;
+	int m_n6674;
+	int m_n6678;
+	int m_n667c;
+	char m_pad6680[0x669c - 0x6680];
+	int m_n669c;
+	char m_b66a0;
+	char m_b66a1;
+
+	void sub_10365a90();
+};
+
+CBaseEntity *sub_101cda50();
+struct CUnk102ae750Link { void sub_102ae750(int a, int b); };
+
+inline int BachDead(int x) { return x + 1; }
+inline int BachDead2(int x) { return BachDead(x) + 1; }
+inline const Vector &EnemyPos(CNPC_VBach *p) { return *p->vfunc217_slot(); }
+
+// TARGET: CNPC_VBachCamp::sub_10365a90
+void CNPC_VBachCamp::sub_10365a90()
+{
+	CNPC_VBach *pEnemy = (CNPC_VBach *)((CNPC_VBach *)this)->vfunc167();
+	int nMask = 0;
+	bool bSound = true;
+	bool bTrigger = false;
+	if (!pEnemy) {
+		pEnemy = (CNPC_VBach *)sub_101cda50();
+		if (!pEnemy)
+			return;
+	}
+	bool bHit = false;
+	for (int i = 0; i < 10; i++) {
+		if (((CBachCampVS *)this)->vfunc201(pEnemy, 0x2804091, &nMask, i)) {
+			bHit = true;
+			break;
+		}
+	}
+	if (!bHit) {
+		if (m_n6674 == 0) {
+			m_n6674 = 1;
+			m_fl6670 = gpGlobals->curtime;
+			const Vector &p1 = EnemyPos(pEnemy);
+			if ((float)fabs(p1.x - m_fl6664) * (float)fabs(EnemyPos(pEnemy).y - m_fl6668) < 20000.0f) {
+				if (++m_n6678 >= 2) {
+					if (!m_b66a0)
+						bTrigger = true;
+					m_b66a0 = 1;
+				}
+			} else {
+				m_n6678 = 0;
+			}
+			const Vector &p = EnemyPos(pEnemy);
+			m_fl6664 = p.x;
+			m_fl6668 = p.y;
+			m_fl666c = p.z;
+		} else if (gpGlobals->curtime - m_fl6670 > 4.0f) {
+			float dx = fabs(EnemyPos(pEnemy).x - m_fl6664);
+			float dy = fabs(EnemyPos(pEnemy).y - m_fl6668);
+			if (dy > dx)
+				dx = dy;
+			if (dx < 200.0f) {
+				if (!m_b66a0)
+					bTrigger = true;
+				m_b66a0 = 1;
+			}
+			const Vector &p = EnemyPos(pEnemy);
+			m_fl6664 = p.x;
+			m_fl6668 = p.y;
+			m_fl666c = p.z;
+			m_fl6670 = gpGlobals->curtime;
+		}
+		if (m_n667c == 10 || m_n667c == 7) {
+			m_b66a0 = 1;
+			bTrigger = true;
+			const Vector &p = EnemyPos(pEnemy);
+			m_fl6664 = p.x;
+			m_fl6668 = p.y;
+			m_fl666c = p.z;
+			m_fl6670 = gpGlobals->curtime;
+		}
+		if (m_b66a0 && m_n667c != 0 && m_b66a1) {
+			switch (m_n667c) {
+			case 5: ((CNPC_VBach *)this)->sub_10365860("grenade_spawn_5", 300.0f); break;
+			case 6: ((CNPC_VBach *)this)->sub_10365860("grenade_spawn_6", 80.0f); break;
+			case 7: ((CNPC_VBach *)this)->sub_10365860("grenade_spawn_7", -26.0f); break;
+			case 10: ((CNPC_VBach *)this)->sub_10365860("grenade_spawn_10", -26.0f); break;
+			case 9: ((CNPC_VBach *)this)->sub_10365860("grenade_spawn_9", 85.0f); break;
+			}
+		} else if (m_b66a0 && m_n667c != 0 && !m_b66a1 && m_n669c == 0) {
+			if (m_n667c == 8)
+				((CNPC_VBach *)this)->sub_10365860("grenade_spawn_8", 15.0f);
+		} else {
+			bSound = false;
+		}
+		if (bTrigger) {
+			if (bSound) {
+				CPASAttenuationFilter filter((CNPC_VBach *)this);
+				int edict = m_pEdict2e0;
+				enginesound->vfunc3(&filter, engine->vfunc35(edict), 2, "Character/Boss/Bach/bach_grenade.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+			} else {
+				CPASAttenuationFilter filter((CNPC_VBach *)this);
+				int edict = m_pEdict2e0;
+				enginesound->vfunc3(&filter, engine->vfunc35(edict), 2, "Character/Boss/Bach/bach_camp_warn.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+				(void)BachDead2(0); (void)BachDead2(1);
+			}
+		}
+	} else {
+		if (m_n6674) {
+			m_n6674 = 0;
+			if (m_b66a0) {
+				m_pszSchedFile = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VBach.cpp";
+				m_nSchedLine = 0x57b;
+				((CUnk102ae750Link *)this)->sub_102ae750(0x15f, 0);
+			}
+		}
+	}
+}
+// END FUNCTION

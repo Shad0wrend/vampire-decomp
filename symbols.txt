@@ -9090,6 +9090,7 @@
 0x1000ce1e func   ?sub_10258580@CUnknown10258580@@QAE_NXZ CUnknown10258580::sub_10258580
 0x1000ce23 func   ?sub_100fbd50@@YAPAVCBaseEntity@@PAV1@@Z sub_100fbd50
 0x1000ce28 func   ?sub_10131770@CUnknown10131770@@QAEXXZ CUnknown10131770::sub_10131770
+0x1000ce2d func   ?sub_10365a90@CNPC_VBachCamp@@QAEXXZ CNPC_VBachCamp::sub_10365a90
 0x1000ce32 func   ?vfunc80@CItemGGarysPhoto@@QAEHXZ CItemGGarysPhoto::vfunc80
 0x1000ce37 func   ?sub_1013cc40@@YAMABVVector@@00PAM@Z sub_1013cc40
 0x1000ce3c func   ?sub_101e8c30@CUnknown101e8c30@@QAEMXZ CUnknown101e8c30::sub_101e8c30
