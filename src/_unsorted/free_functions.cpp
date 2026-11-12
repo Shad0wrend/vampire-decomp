@@ -219633,6 +219633,68 @@ void CSlotList::sub_10306200(int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10306280 size=0x20d
+#include "CUnknown103065d0.h"
+#include "Vector.h"
+
+struct AIMoveTraceV
+{
+	int fStatus;
+	Vector vEndPosition;
+};
+
+inline bool IsMoveBlocked(const AIMoveTraceV &moveTrace)
+{
+	return (moveTrace.fStatus < 0);
+}
+
+extern unsigned char g_10611248[2][3];
+
+struct CTriDebugOverlayV : public CUnknown103065d0
+{
+	void sub_103065d0(const Vector &origin, const Vector &dest, int r, int g, int b, bool noDepthTest);
+	void sub_10306280(const Vector &vecStart, const Vector &vecApex, const Vector &vecEnd, const AIMoveTraceV &startTrace, const AIMoveTraceV &endTrace, bool bPathClear);
+};
+
+// TARGET: CTriDebugOverlayV::sub_10306280
+void CTriDebugOverlayV::sub_10306280(const Vector &vecStart, const Vector &vecApex, const Vector &vecEnd, const AIMoveTraceV &startTrace, const AIMoveTraceV &endTrace, bool bPathClear)
+{
+	unsigned char *c = g_10611248[bPathClear];
+
+	sub_103065d0(vecStart, vecApex, c[0], c[1], c[2], false);
+	sub_103065d0(vecApex, vecEnd, c[0], c[1], c[2], false);
+
+	// If we've blocked, draw an X where we were blocked...
+	if (IsMoveBlocked(startTrace))
+	{
+		Vector pt1, pt2;
+		pt1 = pt2 = startTrace.vEndPosition;
+
+		pt1.x -= 10; pt1.y -= 10;
+		pt2.x += 10; pt2.y += 10;
+		sub_103065d0(pt1, pt2, c[0], c[1], c[2], false);
+
+		pt1.x += 20;
+		pt2.x -= 20;
+		sub_103065d0(pt1, pt2, c[0], c[1], c[2], false);
+	}
+
+	if (IsMoveBlocked(endTrace))
+	{
+		Vector pt1, pt2;
+		pt1 = pt2 = endTrace.vEndPosition;
+
+		pt1.x -= 10; pt1.y -= 10;
+		pt2.x += 10; pt2.y += 10;
+		sub_103065d0(pt1, pt2, c[0], c[1], c[2], false);
+
+		pt1.x += 20;
+		pt2.x -= 20;
+		sub_103065d0(pt1, pt2, c[0], c[1], c[2], false);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10306520 size=0x20
 struct CSlotEntry
 {
