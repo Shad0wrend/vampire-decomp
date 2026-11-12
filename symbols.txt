@@ -1669,6 +1669,7 @@
 0x10003337 func   ?sub_101d7520@CUnknown101d7520@@QAEXPBD@Z CUnknown101d7520::sub_101d7520
 0x1000333c func   ?sub_10279b70@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10279b70
 0x10003341 func   ?sub_10079f50@@YIPAUCSceneElem9c@@PAUCSceneElemVecOwner@@@Z sub_10079f50
+0x10003346 func   ?sub_100c7be0@@YAXPAV?$CUtlVector@USeqMatch_100c7be0@@V?$CUtlMemory@USeqMatch_100c7be0@@@@@@PAUSeqHdr_100c7be0@@PBD12@Z sub_100c7be0
 0x1000334b func   ?sub_101647a0@CBasePlayer@@QAEHH@Z CBasePlayer::sub_101647a0
 0x10003350 func   ?sub_101dbdc0@CUnknown101dbdc0@@QAEPAXH@Z CUnknown101dbdc0::sub_101dbdc0
 0x1000335a func   ?sub_1036a190@@YAHXZ sub_1036a190
