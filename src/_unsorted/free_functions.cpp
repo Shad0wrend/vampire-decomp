@@ -255205,6 +255205,144 @@ void CNPC_VWerewolf::sub_103cb4b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cb920 size=0x616
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VWerewolf.h"
+#include "CEntityVSlots.h"
+#include "CAI_MoveProbe.h"
+#include "CTraceFilterNav.h"
+#include "CBaseEntity.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+
+__declspec(dllimport) void DevWarning(const char *pMsg, ...);
+struct CUnknown1004f860 { void *sub_1004f860(); };
+const Vector *sub_102d6100(int hull);
+const Vector *sub_102d6120(int hull);
+const Vector *sub_102d6140(int hull);
+const Vector *sub_102d6160(int hull);
+void sub_1026e940(const Vector *pStart, const Vector *pEnd, const Vector *pMins, const Vector *pMaxs, unsigned int mask, void *pFilter, CGameTrace *pTrace, int a);
+
+inline void ProbeTraceHull(CAI_MoveProbe *pProbe, const Vector &vecStart, const Vector &vecEnd, const Vector &mins,
+	const Vector &maxs, unsigned int mask, CGameTrace *pTrace)
+{
+	g_109f3648->EnterScope("CAI_MoveProbe_TraceHull", 0, "Unaccounted", false);
+	CTraceFilterNav filter;
+	CBaseEntity *pOuter = (CBaseEntity *)pProbe->m_pOuter;
+	filter.sub_102e30d0((int)pOuter, pOuter->m_field368);
+	sub_1026e940(&vecStart, &vecEnd, &mins, &maxs, mask, &filter, pTrace, 1);
+	g_109f3648->ExitScopeCall();
+}
+
+inline void TraceHullCtor(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((CUnknown1004f860 *)&ray)->sub_1004f860();
+	ray.sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, 1, 0);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+struct V3_103cb920 { float x, y, z; };
+void CNPC_VWerewolf::sub_103cb920(int a)
+{
+	ScopeTrace trace("CNPC_VWerewolf::CheckStuck",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CEntityVSlots *pV = (CEntityVSlots *)this;
+	if (!pV->slot163())
+		return;
+
+	Vector vecStart = *pV->slot217();
+	Vector vecEnd;
+	{
+		const Vector *p = pV->slot217();
+		Vector up;
+		up.x = p->x;
+		up.y = p->y;
+		up.z = p->z + 2.0f;
+		*(V3_103cb920 *)&vecEnd = *(V3_103cb920 *)&up;
+	}
+	Vector mins = *sub_102d6100(*(int *)((char *)this + 0x1568));
+	Vector maxs = *sub_102d6120(*(int *)((char *)this + 0x1568));
+	CGameTrace tr;
+	ProbeTraceHull(m_pMoveProbe5d40, vecStart, vecEnd, mins, maxs, 0x202400b, &tr);
+
+	if (tr.m_startsolid)
+	{
+		mins = *sub_102d6140(*(int *)((char *)this + 0x1568));
+		maxs = *sub_102d6160(*(int *)((char *)this + 0x1568));
+		TraceHullCtor(vecStart, vecEnd, mins, maxs, 0x202400b, this, 7, &tr);
+		if (tr.m_startsolid)
+		{
+			DevWarning("Werewolf stuck?\n");
+			maxs.z = 10.0f;
+			vecStart = pV->slot192();
+			vecEnd = *pV->slot220();
+			TraceHullCtor(vecStart, vecEnd, mins, maxs, 0x202400b, this, 7, &tr);
+			if (tr.m_startsolid)
+			{
+				{
+					Vector tmp;
+					vecStart = *pV->slot193(&tmp);
+				}
+				vecEnd = *pV->slot220();
+				TraceHullCtor(vecStart, vecEnd, mins, maxs, 0x202400b, this, 7, &tr);
+			}
+			if (!tr.m_startsolid)
+			{
+				DevWarning("Werewolf unstuck...\n");
+				pV->slot216((Vector *)&tr.m_endpos);
+				sub_10273180(1);
+			}
+			else if ((char)a && sub_10269aa0(0x77))
+			{
+				DevWarning("Werewolf teleported out from stuck.\n");
+				sub_103d4a60();
+				pV->slot448((int)"Werewolf stuck\n");
+			}
+			else
+				DevWarning("Werewolf STUCK!!!\n");
+		}
+		else
+			sub_10273180(1);
+	}
+	else
+	{
+		vecStart = pV->slot192();
+		vecEnd = *pV->slot217();
+		if (m_b5f2d)
+		{
+			mins = *sub_102d6140(*(int *)((char *)this + 0x1568));
+			maxs = *sub_102d6160(*(int *)((char *)this + 0x1568));
+		}
+		else
+		{
+			mins = *sub_102d6100(*(int *)((char *)this + 0x1568));
+			maxs = *sub_102d6120(*(int *)((char *)this + 0x1568));
+		}
+		maxs.z *= 0.45f;
+		m_pMoveProbe5d40->sub_102a99e0(vecStart, &vecEnd.x, &mins.x, &maxs.x, 0x202400b, &tr, 1, 0);
+		if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid)
+		{
+			DevWarning("attempting alt unstuck...\n");
+			pV->slot216((Vector *)&tr.m_endpos);
+			sub_10273180(1);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cc0d0 size=0x1c1
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
