@@ -802,6 +802,32 @@ void CUnknown100295d0::sub_100295f0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029610 size=0x41
+#include "CKeepUpright.h"
+
+extern int g_104462c4;	// CKeepUpright vftable
+
+inline void SetHandle_10029610(CKeepUpright_Handle &h, const int *pEnt)
+{
+	if (pEnt)
+		h = *pEnt;
+	else
+		h = 0xffffffff;
+}
+
+CKeepUpright *CKeepUpright::sub_10029610()
+{
+	this->CBaseEntity::CBaseEntity(0);
+	m_motionEvent.CKeepUpright_MotionEvent::CKeepUpright_MotionEvent();
+	m_attachedObject.CKeepUpright_Handle::CKeepUpright_Handle();
+	*(void **)this = &g_104462c4;
+	m_motionEvent = &g_104462b4;
+	m_flAngularLimit = 15.0f;
+	SetHandle_10029610(m_attachedObject, 0);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100296b0 size=0x3e
 #include "CKeepUpright.h"
 #include "IPhysicsEnvironment.h"
