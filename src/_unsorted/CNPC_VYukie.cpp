@@ -309,3 +309,39 @@ bool __stdcall sub_103ddaa0(char *pEntity)
     return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103ddaf0 size=0x6d
+#include "CNPC_VYukie.h"
+
+#define TEN(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define HUN(p) TEN(p##0) TEN(p##1) TEN(p##2) TEN(p##3) TEN(p##4) TEN(p##5) TEN(p##6) TEN(p##7) TEN(p##8) TEN(p##9)
+struct Y0 { HUN(a) };
+struct Y1 : Y0 { HUN(b) };
+struct Y2 : Y1 { HUN(c) };
+struct Y3 : Y2 { HUN(d) };
+struct Y4 : Y3 { HUN(e) };
+struct Y594 : Y4 { TEN(f0) TEN(f1) TEN(f2) TEN(f3) TEN(f4) TEN(f5) TEN(f6) TEN(f7) TEN(f8) virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual char h0(void *, int, int, int); };
+
+extern unsigned char g_10924fba;
+extern unsigned char g_10924fb9;
+
+// TARGET: CNPC_VYukie::vfunc201
+bool CNPC_VYukie::vfunc201(void *pEnt, int traceMask, int *ppBlocker, int d)
+{
+	if (!pEnt)
+		return false;
+	if (g_10924fba) {
+		if (ppBlocker)
+			*ppBlocker = 0;
+		return false;
+	}
+	if (g_10924fb9 && *(int *)((char *)pEnt + 0xa8)) {
+		if (ppBlocker)
+			*ppBlocker = 0;
+		return false;
+	}
+	if (!((Y594 *)this)->h0(pEnt, traceMask, 0, 0))
+		return false;
+	return true;
+}
+// END FUNCTION
