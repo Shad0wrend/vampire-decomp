@@ -35,6 +35,29 @@ void CTraitEffectsListSaveDataOps::vfunc0(CTraitEffectsListField *pField, CSave 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022d5a0 size=0x63
+#include "CRestore.h"
+#include "CTraitEffectsListSaveDataOps.h"
+
+struct STraitLookup { int sub_101f83a0(const char *); };
+extern STraitLookup g_1074df78;
+extern char g_106b8540[];
+
+// TARGET: CTraitEffectsListSaveDataOps::vfunc1
+void CTraitEffectsListSaveDataOps::vfunc1(CTraitEffectsListField *pField, CRestore *pRestore)
+{
+	int *pList = pField->m_pList;
+	pList[0] = pRestore->vfunc14();
+	for (int i = 0; i < pList[0]; i++)
+	{
+		const char *name;
+		int nBytes = pRestore->vfunc14();
+		pRestore->vfunc20((int *)&name, 1, nBytes);
+		pList[i + 1] = g_1074df78.sub_101f83a0(name ? name : g_106b8540);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022d630 size=0x5
 #include "CTraitEffectsListSaveDataOps.h"
 bool CTraitEffectsListSaveDataOps::vfunc2(int a0)

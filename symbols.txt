@@ -10235,6 +10235,7 @@
 0x1000e7a5 func   ?sub_10076fa0@CUnknown10076fa0@@QAEPADXZ CUnknown10076fa0::sub_10076fa0
 0x1000e7aa func   ?vfunc266@CBaseAnimatingOverlay@@QAEXXZ CBaseAnimatingOverlay::vfunc266
 0x1000e7af func   ?sub_100734f0@S100734f0@@QAEXPBD@Z S100734f0::sub_100734f0
+0x1000e7b4 func   ?vfunc1@CTraitEffectsListSaveDataOps@@UAEXPAUCTraitEffectsListField@@PAVCRestore@@@Z CTraitEffectsListSaveDataOps::vfunc1
 0x1000e7b9 func   ?vfunc5@CSpeaker@@QAEPAV1@I@Z CSpeaker::vfunc5
 0x1000e7be func   ?sub_100f3860@@YGMPBUS100f3860@@0@Z sub_100f3860
 0x1000e7c3 func   ?Grow@?$CUtlMemory@PAUCRandomSpawnFactory@@@@QAEXH@Z CUtlMemory<CRandomSpawnFactory *>::Grow
