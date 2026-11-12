@@ -86,6 +86,52 @@ void CNotifyList::vfunc2(CBaseEntity *pEntity, const char *pszEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8a80 size=0x4e
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CBaseEntity.h"
+#include "CNotifyList.h"
+#include <string.h>
+
+struct NotifyPair
+{
+	CBaseEntity *pNotify;
+	CBaseEntity *pWatched;
+};
+
+struct NotifyPairVec
+{
+	NotifyPair *m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_Size;
+
+	int Count() const { return m_Size; }
+	NotifyPair &Element(int i) { return m_pMemory[i]; }
+	const NotifyPair &operator[](int i) const { return ((const NotifyPair *)m_pMemory)[i]; }
+	void FastRemove(int elem)
+	{
+		if (m_Size > 0)
+		{
+			memmove(&Element(elem), &Element(m_Size - 1), sizeof(NotifyPair));
+			--m_Size;
+		}
+	}
+};
+
+// TARGET: CNotifyList::vfunc4
+void CNotifyList::vfunc4(CBaseEntity *pEntity)
+{
+	NotifyPairVec &list = *(NotifyPairVec *)&m_pairs;
+	for (int i = list.Count() - 1; i >= 0; --i)
+	{
+		if (m_pairs.m_pMemory[i].m_a == (int)pEntity || m_pairs.m_pMemory[i].m_b == (int)pEntity)
+			list.FastRemove(i);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f8af0 size=0x52
 #include "CNotifyList.h"
 #include "CBaseEntity.h"
