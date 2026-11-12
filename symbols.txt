@@ -12599,6 +12599,7 @@
 0x10011c20 func   ?sub_10115180@CUnknown10115180@@QAEHXZ CUnknown10115180::sub_10115180
 0x10011c25 func   ?sub_1010c5d0@CUnknown1010c5d0@@QAE_NXZ CUnknown1010c5d0::sub_1010c5d0
 0x10011c2a func   ?vfunc5@CGameText@@QAEPAV1@I@Z CGameText::vfunc5
+0x10011c2f func   ?sub_101a08f0@CSave@@QAEHPAX@Z CSave::sub_101a08f0
 0x10011c34 func   ?sub_102c0270@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_102c0270
 0x10011c39 func   ?sub_10095d80@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10095d80
 0x10011c3e func   ?vfunc491@CGeneric_NPC@@UAEXXZ CGeneric_NPC::vfunc491

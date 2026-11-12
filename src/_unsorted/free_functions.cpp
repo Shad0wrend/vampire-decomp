@@ -109008,6 +109008,54 @@ int CSave::sub_101a0830(CSaveEdict *pEdict)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a08f0 size=0x70
+#include "CSave.h"
+
+struct entitytable_101a08f0
+{
+	int id;
+	int edictindex;
+	int saveentityindex;
+	int restoreentityindex;
+	EHANDLE hEnt;
+	int m_unk14;
+	int m_unk18;
+	int m_unk1c;
+	int m_unk20;
+	int m_unk24;
+	int m_unk28;
+	int m_unk2c;
+};
+
+struct CSaveRestoreData_101a08f0
+{
+	int m_unk0;
+	int m_pad[0x1318 / 4 - 1];
+	int tableCount;
+	entitytable_101a08f0 *pTable;
+	int NumEntities() { return tableCount; }
+	entitytable_101a08f0 *GetEntityInfo(int i) { return (pTable + i); }
+};
+
+int CSave::sub_101a08f0(void *pEntity)
+{
+	CSaveRestoreData_101a08f0 *m_pGameInfo = (CSaveRestoreData_101a08f0 *)m_pEntityBlock;
+	if (!m_pGameInfo || pEntity == 0)
+		return -1;
+
+	int i;
+	entitytable_101a08f0 *pTable;
+
+	for (i = 0; i < m_pGameInfo->NumEntities(); i++)
+	{
+		pTable = m_pGameInfo->GetEntityInfo(i);
+		if (pTable->hEnt.Get() == pEntity)
+			return pTable->id;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0980 size=0x5f
 #include "CSave.h"
 struct CSaveEntry { char pad[0x20]; unsigned __int64 m_nFlags; char pad2[8]; };
