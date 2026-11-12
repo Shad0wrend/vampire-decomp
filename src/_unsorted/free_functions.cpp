@@ -88130,6 +88130,60 @@ void sub_101450e0(const Vector *pStart, const Vector *pEnd, char a3, char a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145300 size=0x30b
+#include "CFlameCluster.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "Vector.h"
+#include "DebugOverlay.h"
+#include "Tier1.h"
+
+// TARGET: sub_10145300
+void sub_10145300(const Vector *pStart, const Vector *pEnd, float tickDist, int tickTextDist, int r, int g, int b, unsigned char noDepthTest, float duration)
+{
+	CBaseEntity *player = sub_101cd9e0(g_10552810);
+	if (!player)
+		return;
+
+	Vector lineDir = *pEnd - *pStart;
+	float lineDist = VectorNormalize(lineDir);
+	int numTicks = lineDist / tickDist;
+	Vector vBodyDir = ((CBasePlayer *)player)->vfunc368();
+	Vector upVec = vBodyDir * 4.0f;
+	Vector sideDir;
+	Vector tickPos = *pStart;
+	int tickTextCnt = 0;
+
+	CrossProduct(lineDir, upVec, sideDir);
+
+	sub_10142e90(pStart, pEnd, r, g, b, noDepthTest, duration);
+
+	for (int i = 0; i < numTicks + 1; i++)
+	{
+		Vector tickLeft = tickPos - sideDir;
+		Vector tickRight = tickPos + sideDir;
+
+		if (tickTextCnt == tickTextDist)
+		{
+			char text[25];
+			g_109f388c(text, sizeof(text), "%i", i);
+			Vector textPos = tickLeft + Vector(0, 0, 8);
+			sub_10142e90(&tickLeft, &tickRight, 255, 255, 255, noDepthTest, duration);
+			sub_10143710(&textPos.x, text, 1, 0);
+			tickTextCnt = 0;
+		}
+		else
+		{
+			sub_10142e90(&tickLeft, &tickRight, r, g, b, noDepthTest, duration);
+		}
+
+		tickTextCnt++;
+
+		tickPos = tickPos + lineDir * tickDist;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101456e0 size=0x208
 #include "UTIL_Trace.h"
 #include "CBaseEntity.h"
