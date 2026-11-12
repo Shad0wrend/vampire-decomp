@@ -2215,6 +2215,99 @@ char CBasePlayer::vfunc421(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10168320 size=0x30d
+#include "CNPC_VTzimisce.h"
+#include "CBasePlayer.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "CDevFlagObj.h"
+#include "CEHandleGet.h"
+
+extern CDevFlagObj *g_10937034;
+const char *sub_101d3730(const char *fmt, const char *s);
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
+void sub_101cebc0(CBasePlayer *p, int a, int b);
+void sub_10342740();
+
+struct CFoundView10341c30
+{
+	char m_pad0000[0x9c];
+	CBaseEntity *m_p9c;
+};
+
+#define CC ((CBaseCombatCharacter *)this)
+#define VS ((CEntityVSlots *)this)
+
+char CBasePlayer::vfunc424(char bFlag)
+{
+	char buf[256];
+	if (EHandle_Get(m_h1538) && m_n153C != -1)
+		return 0;
+
+	CBaseEntity *pVictim = LookForGrappleVictim();
+	if (pVictim)
+	{
+		if (!g_10937034->vfunc1() && g_10937034->m_n2c)
+		{
+			sprintf(buf, "%s Replenish found victim %s", sub_100ab4f0(), pVictim->sub_100ab4f0());
+			CC->sub_103221b0(buf);
+			Msg("Attempting Feed...\n");
+		}
+		CEntityVSlots *pController = (CEntityVSlots *)EHandle_Get(m_hControllerNPC1db0);
+		if ((pController && pController->slot138() == 3 && (char)((CEntityVSlots *)pVictim)->slot342((int)this)) || AttemptFeed(pVictim))
+		{
+			int nType = 0;
+			if (((CEntityVSlots *)pVictim)->slot138() == 0xd)
+				nType = 6;
+			if (sub_10328df0(pVictim, nType))
+			{
+				if (sub_1032e7b0())
+					((CBaseEntity *)sub_1032e7b0())->vfunc66();
+				m_b14A8 = 1;
+				m_b1475 = bFlag;
+				m_f1478 = 0;
+				return 1;
+			}
+			if (!g_10937034->vfunc1() && g_10937034->m_n2c)
+				CC->sub_103221b0(sub_101d3730("%s StartGrappleAttack failed", sub_100ab4f0()));
+		}
+		else if (!g_10937034->vfunc1() && g_10937034->m_n2c)
+			CC->sub_103221b0(sub_101d3730("%s AttemptFeed failed", sub_100ab4f0()));
+	}
+
+	if (!g_10937034->vfunc1() && g_10937034->m_n2c)
+		CC->sub_103221b0(sub_101d3730("%s Replenish failed", sub_100ab4f0()));
+
+	CEntityVSlots *pController = (CEntityVSlots *)EHandle_Get(m_hControllerNPC1db0);
+	if (!pController || pController->slot138() != 3)
+	{
+		int nActivity = VS->slot376(VS->slot381(VS->slot375(0xfa4)));
+		int nSequence = ((CBaseAnimating *)this)->sub_1008dc40(nActivity, -1);
+		if (nSequence >= 0)
+		{
+			VS->slot311(0xfa4, nActivity, nSequence);
+			if (pVictim)
+			{
+				pVictim->vfunc22((int)this);
+				((CBaseEntity *)this)->vfunc25((int)pVictim);
+			}
+		}
+	}
+	if (!pVictim)
+	{
+		CFoundView10341c30 *pFound = (CFoundView10341c30 *)sub_10341c30((void *)sub_10342740, 110.0f, 0.7f, 1, 0.0f, 0x46004003);
+		if (!pFound || !(pVictim = pFound->m_p9c))
+			goto done;
+	}
+	sub_1017e150(2, 2.0f, sub_101d3730("Replenish %s", pVictim->sub_100ab4f0()));
+done:
+	sub_101cebc0(this, 0x49, 0);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10168700 size=0x19e
 #include "CBasePlayer.h"
 #include "CBaseCombatCharacter.h"
