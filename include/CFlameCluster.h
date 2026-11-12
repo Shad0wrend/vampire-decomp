@@ -7,7 +7,10 @@
 
 struct CFlameRecord	// 0x1c byte element of the burn list
 {
-	char m_pad00[0x18];
+	Vector m_vecOrigin;	// 0x00
+	int m_n0c;	// 0x0c
+	int m_n10;	// 0x10
+	int m_n14;	// 0x14
 	float m_flStrength;	// 0x18
 };
 
