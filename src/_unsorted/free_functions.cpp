@@ -218007,6 +218007,60 @@ void __stdcall sub_10316700(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10316760 size=0x61
+#include "CBaseEntity.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CUnknown103158f0.h"
+#include "ehandle.h"
+
+template <class T, int SIZE>
+class CUtlMemoryFixedView
+{
+public:
+	T &operator[](int i) { return ((T *)m_Memory)[i]; }
+	const T &operator[](int i) const { return ((T *)m_Memory)[i]; }
+	char m_Memory[SIZE * sizeof(T)];
+};
+
+template <class T, int SIZE>
+class CUtlVectorFixedView
+{
+public:
+	T &operator[](int i) { return m_Memory[i]; }
+	const T &operator[](int i) const { return m_Memory[i]; }
+	int Count() const { return m_Size; }
+	CUtlMemoryFixedView<T, SIZE> m_Memory;
+	int m_Size;
+};
+
+struct CAI_SquadView
+{
+	char m_pad0000[0x1c];
+	CUtlVectorFixedView<CHandle<CBaseEntity>, 16> m_SquadMembers;
+
+	int GetSquadIndex(CBaseEntity *pAI)
+	{
+		int idx = -1;
+		for (int i = 0; i < m_SquadMembers.Count(); i++)
+		{
+			if (m_SquadMembers[i] == pAI)
+			{
+				idx = i;
+				break;
+			}
+		}
+		return idx;
+	}
+};
+
+int CUnknown103158f0::sub_10316760(CBaseEntity *pMember)
+{
+	return ((CAI_SquadView *)this)->GetSquadIndex(pMember);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103167f0 size=0x72
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 struct Ent {
