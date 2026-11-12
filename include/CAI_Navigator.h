@@ -8,6 +8,8 @@
 #include "CAI_DefMovementSink.h"
 #include "Vector.h"
 
+class CAI_Waypoint;
+
 struct CAI_NavFloatPair
 {
 	float m_flA;
@@ -151,6 +153,7 @@ struct CAI_NavGoal	// the record CAI_Navigator::vfunc17 fills for the motor
 class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
 {
 public:
+	CAI_Waypoint *sub_102ff3e0(int startNode, float flMinDist, Vector *pDir);
 	CAI_Navigator(int pOuter);	// 0x102eca50: allocates the 0x84 byte object at +0x30
 	float sub_102f02a0();	// slot 0 of the CAI_DefMovementSink secondary vtable: the speed scale
 
