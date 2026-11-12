@@ -7470,6 +7470,7 @@
 0x1000b023 func   ?sub_103dc390@@YAXPAUVec3Copy@@0@Z sub_103dc390
 0x1000b028 func   ?vfunc82@CFuncElevator@@UAEPAUdatamap_t@@XZ CFuncElevator::vfunc82
 0x1000b02d func   ?vfunc274@CRagdollProp@@UAE_NH@Z CRagdollProp::vfunc274
+0x1000b032 func   ?vfunc124@CBasePlayer@@UAEHXZ CBasePlayer::vfunc124
 0x1000b037 func   _npc_VHunter npc_VHunter
 0x1000b03c func   ?vfunc4@CTEDecal@@QAEXHH@Z CTEDecal::vfunc4
 0x1000b041 func   ?sub_101f9570@@YAXH@Z sub_101f9570

@@ -1119,6 +1119,95 @@ bool CBasePlayer::vfunc413()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161460 size=0x358
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBasePlayer.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "engineserver.h"
+#include "Tier1.h"
+#include <stdio.h>
+
+void sub_101434b0(int entIndex, int line, const char *text, int duration, int r, int g, int b, int a);
+char *sub_1025d730(int activity);
+
+#define PLR_INT(off) (*(int *)((char *)this + (off)))
+
+inline int PlayerEdict(CBasePlayer *p)
+{
+	return *(int *)((char *)p + 0x2e0);
+}
+
+inline int PlayerEntIndex(int edict)
+{
+	return engine->vfunc35(edict);
+}
+
+inline int PlayerInt(CBasePlayer *p, int off)
+{
+	return *(int *)((char *)p + off);
+}
+
+inline float PlayerFloat(CBasePlayer *p, int off)
+{
+	return *(float *)((char *)p + off);
+}
+
+// TARGET: CBasePlayer::vfunc124
+int CBasePlayer::vfunc124()
+{
+	int text_offset = sub_1033e4a0();
+	char tempstr[256];
+
+	if (PLR_INT(0xfec) != -1 && -1 != PLR_INT(0xff0) && PLR_INT(0xfec) != 0)
+	{
+		unsigned int iActivity = vfunc375(PLR_INT(0xfec));
+		iActivity = vfunc381(iActivity);
+		iActivity = vfunc376(iActivity);
+		int iIdealActivity = vfunc375(PlayerInt(this, 0xff0));
+		iIdealActivity = vfunc381(iIdealActivity);
+		iIdealActivity = vfunc376(iIdealActivity);
+		const char *pszA = sub_1025d730(PlayerInt(this, 0xfec));
+		const char *pszB = sub_1025d730(PlayerInt(this, 0xff0));
+		const char *pszC = sub_1025d730(PlayerInt(this, 0xff4));
+		g_109f388c(tempstr, sizeof(tempstr), "Actv: %s (%s) (%s)\n", pszA, pszB, pszC);
+	}
+	else if (PLR_INT(0xfec) == 0)
+		g_109f3890(tempstr, "Actv: RESET", sizeof(tempstr));
+	else
+		g_109f3890(tempstr, "Actv: INVALID", sizeof(tempstr));
+	sub_101434b0(PlayerEntIndex(PlayerEdict(this)), text_offset, tempstr, 0, 255, 255, 255, 255);
+	text_offset += 1;
+
+	if (PLR_INT(0x14b0) != -1)
+		sprintf(tempstr, "WpnActv: %s", sub_1025d730(PLR_INT(0x14b0)));
+	else
+		g_109f3890(tempstr, "WpnActv: INVALID", sizeof(tempstr));
+	sub_101434b0(PlayerEntIndex(PlayerEdict(this)), text_offset, tempstr, 0, 255, 255, 255, 255);
+	text_offset += 1;
+
+	const char *pszSeq = ((CBaseAnimating *)this)->sub_1008fe80(pcd_stage(PLR_INT(0x6f0)));
+	if (pszSeq)
+		g_109f388c(tempstr, sizeof(tempstr), "Seq: %s (%1.3f)\n", pszSeq, PlayerFloat(this, 0x6f8));
+	else
+		g_109f3890(tempstr, "Seq: INVALID", sizeof(tempstr));
+	sub_101434b0(PlayerEntIndex(PlayerEdict(this)), text_offset, tempstr, 0, 255, 255, 255, 255);
+	text_offset = 1 + (int)text_offset;
+
+	g_109f388c(tempstr, sizeof(tempstr), "Light: %f\n", m_f1C8C);
+	sub_101434b0(PlayerEntIndex(PlayerEdict(this)), text_offset, tempstr, 0, 255, 255, 255, 255);
+	text_offset = text_offset + 1;
+
+	Vector vecOrigin = *((CEntityVSlots *)this)->slot217();
+	Vector vecAngles = *(Vector *)vfunc221();
+	sprintf(tempstr, "Origin %f, %f, %f   Angles %f %f %f", vecOrigin.x, vecOrigin.y, vecOrigin.z, vecAngles.x, vecAngles.y, vecAngles.z);
+	sub_101434b0(PlayerEntIndex(PlayerEdict(this)), text_offset, tempstr, 0, 255, 255, 255, 255);
+	text_offset = text_offset + 1;
+
+	return text_offset;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161fc0 size=0x10b
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
