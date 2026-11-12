@@ -211,6 +211,106 @@ void CSoundControllerImp::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bcae0 size=0x10c
+#include "utlmemory.h"
+#include "utlvector.h"
+#include "CSoundControllerImp.h"
+extern "C" void *memmove(void *, const void *, unsigned int);
+struct CSoundFreeList { void sub_1000330f(void *p); };
+extern CSoundFreeList g_1072c4b0;
+
+struct SoundCommand_t
+{
+	void *m_pPatch;
+	void operator delete(void *p) { g_1072c4b0.sub_1000330f(p); }
+};
+
+template <class T>
+struct PQVec
+{
+	T *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	T *m_pElements;
+	T &Element(int i) { return m_pMemory[i]; }
+	T &operator[](int i) { return m_pMemory[i]; }
+	int Count() const { return m_Size; }
+	void FastRemove(int elem)
+	{
+		if (m_Size > 0) {
+			memmove(&Element(elem), &Element(m_Size - 1), sizeof(T));
+			--m_Size;
+		}
+	}
+};
+
+template <class T>
+struct PQ
+{
+	typedef bool (*LessFunc_t)(T const &, T const &);
+	PQVec<T> m_heap;
+	LessFunc_t m_LessFunc;
+
+	int Count() const { return m_heap.Count(); }
+	void Swap(int index1, int index2)
+	{
+		T tmp = m_heap[index1];
+		m_heap[index1] = m_heap[index2];
+		m_heap[index2] = tmp;
+	}
+	void RemoveAt(int index)
+	{
+		m_heap.FastRemove(index);
+
+		int count = Count();
+		if (!count)
+			return;
+
+		int half = count / 2;
+		int larger = index;
+		while (index < half) {
+			int child = ((index + 1) * 2) - 1;
+			if (child < count) {
+				if (m_LessFunc(m_heap[index], m_heap[child]))
+					larger = child;
+			}
+			child++;
+			if (child < count) {
+				if (m_LessFunc(m_heap[larger], m_heap[child]))
+					larger = child;
+			}
+			if (larger == index)
+				break;
+			Swap(index, larger);
+			index = larger;
+		}
+	}
+};
+
+struct CSCView
+{
+	char pad0[0x20];
+	PQ<SoundCommand_t *> m_commandList;
+
+	void CommandClear(void *pSound)
+	{
+		for (int i = m_commandList.Count() - 1; i >= 0; i--) {
+			SoundCommand_t *pCmd = m_commandList.m_heap.Element(i);
+			if (pCmd->m_pPatch == pSound) {
+				m_commandList.RemoveAt(i);
+				delete pCmd;
+			}
+		}
+	}
+};
+
+void CSoundControllerImp::vfunc4(void *pSound)
+{
+	((CSCView *)this)->CommandClear(pSound);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd180 size=0x28
 #include "CSoundControllerImp.h"
 #include "CUnknown101bbd10.h"
