@@ -117063,6 +117063,111 @@ void CUnknown101bbd10::sub_101bbd10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bbde0 size=0x1af
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown101bc140.h"
+#include "CUnknown101bbd10.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+extern char g_106b8540[];
+extern float g_104454c4;
+void sub_101b14d0(void *pFilter, int nEntIndex, int nChannel, const char *pszSample, float flVolume, int nSoundLevel, int nFlags, int nPitch, int a, int b, int c);
+
+namespace block_101bbde0
+{
+	struct CUnk101bb730
+	{
+		float m_flCurrent;
+		float m_flTarget;
+		float m_flRate;
+		bool m_bForceUpdate;
+
+		unsigned char sub_101bb730();
+		void sub_101bb760(float flDelta);
+	};
+
+	unsigned char CUnk101bb730::sub_101bb730()
+	{
+		if (m_bForceUpdate)
+		{
+			m_bForceUpdate = false;
+			return 1;
+		}
+		if (m_flCurrent != m_flTarget)
+			return 1;
+		return 0;
+	}
+}
+using namespace block_101bbde0;
+
+struct CSoundEntView
+{
+	char m_pad0000[0x2e0];
+	int m_pEdict;
+};
+
+// TARGET: ?sub_101bbde0@CUnknown101bc140@@QAE_NMM@Z
+bool CUnknown101bc140::sub_101bbde0(float flTime, float flDelta)
+{
+	if (m_fl24 != g_104454c4 && flTime > m_fl24)
+	{
+		((CUnknown101bbd10 *)this)->sub_101bbd10();
+		return false;
+	}
+	int idx;
+	if (g_10566458->sub_100290c0(&m_hEntity))
+	{
+		int edict = ((CSoundEntView *)g_10566458->sub_100290c0(&m_hEntity))->m_pEdict;
+		idx = engine->vfunc35(edict);
+	}
+	else
+		idx = -1;
+	if (idx < 0)
+	{
+		Warning("CSoundPatch::Update:  Removing CSoundPatch (%s) with NULL EHandle\n", m_pszSample ? m_pszSample : g_106b8540);
+		return false;
+	}
+	if (((CUnk101bb730 *)this)->sub_101bb730())
+	{
+		((CUnk101bb730 *)this)->sub_101bb760(flDelta);
+		m_n38 |= 2;
+	}
+	else
+		m_n38 &= ~2;
+	if (((CUnk101bb730 *)&m_flPitchScale)->sub_101bb730())
+	{
+		((CUnk101bb730 *)&m_flPitchScale)->sub_101bb760(flDelta);
+		m_n38 |= 1;
+	}
+	else
+		m_n38 &= ~1;
+	if (m_n38 && (m_nFlags & 1))
+	{
+		m_n38 |= 1;
+		float flVolume = m_flVolume;
+		const char *name = m_pszSample ? m_pszSample : g_106b8540;
+		int nEntIndex;
+		if (EHandle_Get(m_hEntity))
+		{
+			int edict = ((CSoundEntView *)EHandle_Get(m_hEntity))->m_pEdict;
+			nEntIndex = engine->vfunc35(edict);
+		}
+		else
+			nEntIndex = -1;
+		sub_101b14d0(m_Filter, nEntIndex, m_nChannel, name, sub_101bbcf0(), m_nSoundLevel, m_n38, (int)flVolume, 0, 0, 0);
+		m_n38 = 0;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc000 size=0x8
 void __fastcall sub_101bc000(int *p)
 {
