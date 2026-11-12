@@ -52,6 +52,75 @@ void CFlameCluster::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e20c0 size=0x2e8
+#include "utlrbtree.h"
+#include "CFlameCluster.h"
+#include "CEntityVSlots.h"
+#include "CSprayCan.h"
+
+// TARGET: CFlameCluster::vfunc134
+void CFlameCluster::vfunc134()
+{
+	float flDelta = gpGlobals->curtime - *(float *)&m_n480;
+	*(float *)&m_n480 = gpGlobals->curtime;
+
+	int nLive = 0;
+	Vector vMins(4096.0f, 4096.0f, 4096.0f);
+	Vector vMaxs(-4096.0f, -4096.0f, -4096.0f);
+
+	for (int i = 0; i < m_BurnList.Count(); ) {
+		m_BurnList[i].m_flStrength -= flDelta;
+		if (m_BurnList[i].m_flStrength < 0.0f) {
+			m_BurnList.Remove(i);
+		} else {
+			i++;
+			nLive++;
+		}
+	}
+
+	if (nLive > 0) {
+		int j, k;
+		for (j = 0; j < nLive; j++) {
+			for (k = 0; k < 3; k++) {
+				if (m_BurnList[j].m_vecOrigin[k] > vMaxs[k])
+					vMaxs[k] = m_BurnList[j].m_vecOrigin[k];
+				if (m_BurnList[j].m_vecOrigin[k] < vMins[k])
+					vMins[k] = m_BurnList[j].m_vecOrigin[k];
+			}
+		}
+		for (k = 0; k < 3; k++) {
+			vMaxs[k] += 24.0f;
+			vMins[k] -= 24.0f;
+		}
+
+		Vector vCenter = (vMaxs + vMins) * 0.5f;
+		((CEntityVSlots *)this)->slot62((const float *)&vCenter);
+		sub_1009edc0(&vMins.x, &vMaxs.x);
+		sub_100adf10(&vMins.x, &vMaxs.x);
+		sub_100b3b00();
+
+		CBaseEntity *pList[32];
+		int nCount = sub_101cca80(pList, 32, &vMins, &vMaxs, 0, 0);
+		for (int e = 0; e < nCount; e++) {
+			for (j = 0; j < nLive; j++) {
+				if (pList[e]->m_nTakeDamage) {
+					if ((m_BurnList[j].m_vecOrigin - *(Vector *)((CEntityVSlots *)pList[e])->slot220()).Length() < 24.0f)
+						sub_103e2000(pList[e], j);
+				}
+			}
+		}
+	} else {
+		if (m_b488)
+			sub_101cd940((char *)this);
+	}
+
+	m_flNextThink = gpGlobals->curtime + 0.5;
+
+	if (sub_103e1740() > 0)
+		vfunc123();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e25a0 size=0xea
 #include "DebugOverlay.h"
 #include "utlrbtree.h"
