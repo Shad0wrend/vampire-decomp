@@ -374,6 +374,26 @@ have written it rather than adding temporaries that spell out the assembly:
   if (!p) { X; return; }` keeps X its own copy (0x10384ab0); CRestore Read* = Valve's ReadSimple verbatim
   (0x101a2320); Valve's SSE
   helpers match with their `__asm` pasted into a plain function (0x1013d2e0, `_SSE_RSqrtAccurate`).
+- **Round 7 (second pass on score 1-2 + untried 20-35, 22 matched):** the thiscall lever has two more forms: a
+  stdcall callee whose caller never loads ecx (`mov esi,ecx; call X`: ecx still holds the caller's `this`) is a member
+  of the caller's view (0x101e12a0, 0x10219400, 0x102dd470); and a function that calls a member of class C without
+  loading ecx is itself a member of C (view `struct V : C { void sub_self(...); }`, 0x102e3a60, 0x10193c30).
+- **Parameter width moves dead-slot reuse:** a bool/char/short parameter instead of int changes which dead argument
+  slot gets a float spill; the target's own signature can be changed in a view method (0x102ed540).
+- **Jump tables:** an entry 0 that goes to the default block = `case 0:` with its own copy of the default body
+  (`case 0: default:` gives a compare chain, 0x102b8980); a later block jumping back into an earlier case's tail =
+  identical bodies spread so one copy sits before and one after (0x103e01d0).
+- **Header inlines as out-of-line copies:** `#pragma inline_depth(0)` plus a wrapper that calls the inline, TARGET the
+  mangled member name: the compiler's own copy is judged (bf_read::ReadUBitLong 0x1011d340). bf_read one-liners
+  (ReadByte, ReadWord) are `return ReadUBitLong(N);` in a `struct bf_readX : bf_read` view.
+- **Virtual-inheritance constructors** judge as `X::X(...) : m(1) { body(); }` once the vbtables are named
+  (`??_8X@@7B0@@`, `??_8X@@7BBase@@@`, read the offsets with read_data) (VKeyValues 0x101f1f50).
+- **Smaller round 7 levers:** `if (!x) return false; return true;` instead of `return x ? true : false;` changes
+  which `xor al,al; ret` earlier returns cross-jump to (0x103ddaf0); an else-if chain with one shared `return true`
+  (0x1021b9c0); nested SDK inlines (`entindex()` calling a static ENTINDEX) move registers far away (0x100a0130);
+  Python bindings: `p = !ent ? 0 : ent->m; if (!p) {...}` and None as `++*g_109f3748; return g_109f3748;`
+  (0x10198070); a container element pointer declared inside `if (arr[i].m_p)` (0x102daf80); an inline called from a
+  `__forceinline` view member stays an unlinkable call: use `__forceinline` free helpers (0x101265d0).
 
 ## VC6 stack slots: what moves them and what does not (measured 2026-11-08, partial)
 
