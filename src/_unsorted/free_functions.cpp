@@ -81025,6 +81025,27 @@ int sub_10137c70(Vector *a, Vector *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137cc0 size=0xc8
+#include "Vector.h"
+#include <math.h>
+
+// TARGET: sub_10137cc0
+int sub_10137cc0(const Vector &vecSphereCenter, float flRadius, const Vector &vecRayOrigin, const Vector &vecRayDelta, float *pT1, float *pT2)
+{
+    const Vector vecSphereToRay = vecRayOrigin - vecSphereCenter;
+    float a = vecRayDelta.LengthSqr();
+    float b = 2 * (vecSphereToRay.y * vecRayDelta.y + vecSphereToRay.z * vecRayDelta.z + vecSphereToRay[0] * vecRayDelta.x);
+    float c = vecSphereToRay.LengthSqr() - flRadius * flRadius;
+    float flDiscrim = b * b - 4 * a * c;
+    if (flDiscrim <= 1e-6f)
+        return 0;
+    flDiscrim = sqrt(flDiscrim);
+    *pT1 = (flDiscrim - b) / (a + a);
+    *pT2 = (-b - flDiscrim) / (a + a);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137dd0 size=0x46
 #include "matrix3x4_t.h"
 struct RadianEulerV

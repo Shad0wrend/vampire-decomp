@@ -1343,6 +1343,7 @@
 0x10002ca2 func   ?sub_10377140@@YIPAXPAX@Z sub_10377140
 0x10002ca7 func   ?sub_101c7b80@@YAXPBD0@Z sub_101c7b80
 0x10002cac func   ?vfunc601@CAI_BaseNPCTroika@@UAEXH@Z CAI_BaseNPCTroika::vfunc601
+0x10002cb1 func   ?sub_10137cc0@@YAHABVVector@@M00PAM1@Z sub_10137cc0
 0x10002cb6 func   ?sub_10032db0@CUtlVector20@@QAEXH@Z CUtlVector20::sub_10032db0
 0x10002cc0 func   ?vfunc5@CNPC_VTzimisceRunner@@QAEPAV1@I@Z CNPC_VTzimisceRunner::vfunc5
 0x10002cc5 func   _phys_convert phys_convert
