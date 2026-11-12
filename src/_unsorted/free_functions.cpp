@@ -64092,6 +64092,25 @@ int CUnk100f9df0::sub_100f9df0(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f9e20 size=0x112
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CGlobalEntityList.h"
+
+extern void (__cdecl *g_109f366c)(const char *, ...);
+
+// TARGET: CGlobalEntityList::sub_100f9e20
+CBaseHandle CGlobalEntityList::sub_100f9e20(CGlobalEntityList_Ent *pEnt)
+{
+	if (m_FreeNonNetworkableSlots.Count() == 0)
+		g_109f366c("CBaseEntityList::AddNonNetworkableEntity: no free slots!");
+	unsigned short iSlot = m_FreeNonNetworkableSlots.Element(m_FreeNonNetworkableSlots.Head());
+	m_FreeNonNetworkableSlots.Remove(m_FreeNonNetworkableSlots.Head());
+	return sub_100f9fc0(pEnt, iSlot, -1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f9f90 size=0x12
 #include "CBaseEntityList.h"
 
