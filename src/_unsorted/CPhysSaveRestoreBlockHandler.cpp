@@ -26,6 +26,194 @@ void CSaveBlockFields10043c40::sub_10043c40(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043c70 size=0x25f
+#include "CPhysSaveRestoreBlockHandler.h"
+#include "CSave.h"
+#include "CBaseEntity.h"
+
+struct VectorOp : Vector
+{
+	VectorOp &sub_1003e4b0(const Vector &v);
+};
+
+struct PhysObjectHeader_t
+{
+	int type;
+	unsigned int hEntity;
+	int fieldName;
+	int nObjects;
+	int modelName;
+	float bbminsx, bbminsy, bbminsz;
+	Vector bbmaxs;
+	float sphereRadius;
+	int m30;
+
+	PhysObjectHeader_t &sub_10047190(const PhysObjectHeader_t &src);
+	PhysObjectHeader_t *sub_10046a90(const PhysObjectHeader_t *src);
+};
+
+struct QueuedItem_t
+{
+	PhysObjectHeader_t header;
+	void **ppPhysObj;
+
+	QueuedItem_t(const QueuedItem_t &src)
+	{
+		header.sub_10047190(src.header);
+		ppPhysObj = src.ppPhysObj;
+	}
+	void Copy(const QueuedItem_t &src)
+	{
+		header.sub_10046a90(&src.header);
+		ppPhysObj = src.ppPhysObj;
+	}
+	__forceinline void Assign(const QueuedItem_t &o)
+	{
+		header.type = o.header.type;
+		header.hEntity = o.header.hEntity;
+		header.fieldName = o.header.fieldName;
+		header.nObjects = o.header.nObjects;
+		header.modelName = o.header.modelName;
+		header.bbminsx = o.header.bbminsx;
+		header.bbminsy = o.header.bbminsy;
+		header.bbminsz = o.header.bbminsz;
+		((VectorOp &)header.bbmaxs).sub_1003e4b0(o.header.bbmaxs);
+		header.sphereRadius = o.header.sphereRadius;
+		header.m30 = o.header.m30;
+		ppPhysObj = o.ppPhysObj;
+	}
+};
+
+struct physsaveparams_t
+{
+	CSave *pSave;
+	void *pObject;
+	int type;
+};
+
+struct PhysSaveEnv
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23();
+	virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void Save(const physsaveparams_t &params);
+};
+
+struct PhysBlockHeader_t
+{
+	int nSaved;
+	int nTick;
+};
+
+extern PhysSaveEnv *g_10723940;
+extern int g_10723938;
+extern char g_1053c410[];
+extern "C" void *memmove(void *, const void *, unsigned int);
+
+struct CPhysSavePQ
+{
+	typedef bool (*LessFunc)(QueuedItem_t const &, QueuedItem_t const &);
+
+	CUtlVector<QueuedItem_t> m_heap;
+	LessFunc m_LessFunc;
+
+	int Count() const { return m_heap.Count(); }
+	QueuedItem_t const &ElementAtHead() const { return m_heap.Element(0); }
+
+	void Swap(int index1, int index2)
+	{
+		QueuedItem_t tmp = m_heap[index1];
+		m_heap[index1].Copy(m_heap[index2]);
+		m_heap[index2].Assign(tmp);
+	}
+
+	void RemoveAtHead()
+	{
+		if (m_heap.m_Size > 0)
+		{
+			memmove(&m_heap.Element(0), &m_heap.Element(m_heap.m_Size - 1), sizeof(QueuedItem_t));
+			--m_heap.m_Size;
+		}
+		int index = 0;
+		int count = Count();
+		if (!count)
+			return;
+		int half = count / 2;
+		int larger = index;
+		while (index < half)
+		{
+			int child = ((index + 1) * 2) - 1;
+			if (child < count)
+			{
+				if (m_LessFunc(m_heap[index], m_heap[child]))
+					larger = child;
+			}
+			child++;
+			if (child < count)
+			{
+				if (m_LessFunc(m_heap[larger], m_heap[child]))
+					larger = child;
+			}
+			if (larger == index)
+				break;
+			Swap(index, larger);
+			index = larger;
+		}
+	}
+};
+
+struct CPhysSaveHandlerView
+{
+	int m_pad0[3];
+	CPhysSavePQ m_QueuedSaves;	// 0x0c
+	int m_pad24[(0x98 - 0x24) / 4];
+	PhysBlockHeader_t m_blockHeader;	// 0x98
+
+	void Save(CSave *pSave)
+	{
+		m_blockHeader.nTick = g_10723938;
+		m_blockHeader.nSaved = m_QueuedSaves.Count();
+		while (m_QueuedSaves.Count())
+		{
+			const QueuedItem_t &item = m_QueuedSaves.ElementAtHead();
+			CBaseEntity *pOwner = ((const EHANDLE &)item.header.hEntity).Get();
+			if (pOwner)
+			{
+				pSave->vfunc2((void *)&item, g_1053c410);
+				pSave->vfunc4();
+				if (item.header.nObjects)
+				{
+					for (int i = 0; i < item.header.nObjects; i++)
+					{
+						pSave->vfunc4();
+						void *pObj = item.ppPhysObj[i];
+						if (g_10723940 && pObj)
+						{
+							physsaveparams_t params;
+							params.pSave = pSave;
+							params.pObject = pObj;
+							params.type = item.header.type;
+							g_10723940->Save(params);
+						}
+						pSave->vfunc6();
+					}
+				}
+				pSave->vfunc6();
+			}
+			m_QueuedSaves.RemoveAtHead();
+		}
+	}
+};
+
+void CPhysSaveRestoreBlockHandler::vfunc2(CSave *pSave)
+{
+	((CPhysSaveHandlerView *)this)->Save(pSave);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043f70 size=0x2e
 // TARGET: CPhysSaveRestoreBlockHandler::vfunc3
 #include "CPhysSaveRestoreBlockHandler.h"
