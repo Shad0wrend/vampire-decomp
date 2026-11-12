@@ -543,6 +543,108 @@ void CMultiplayRules::vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141c80 size=0x2c6
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CNPC_VTzimisce.h"
+#include "CMultiplayRules.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CReliableBroadcastFilter.h"
+#include "engineserver.h"
+#include <string.h>
+
+struct CMPDeathInfo : public CMPDamageInfo
+{
+	char m_pad002c[0x3c - 0x30];
+	int m_nDamageCustom;	// 0x3c
+};
+
+struct CMPPlayerView
+{
+	char m_pad0000[0x11c];
+	const char *m_pszClassname;	// 0x11c
+	char m_pad0120[0x2e0 - 0x120];
+	int m_pEdict;	// 0x2e0
+	char m_pad02e4[0x2078 - 0x2e4];
+	const char *m_pszNetname;	// 0x2078
+};
+
+struct CMPWeaponView
+{
+	CBCW_V10(0) CBCW_V10(1) CBCW_V10(2) CBCW_V10(3) CBCW_V10(4) CBCW_V10(5) CBCW_V10(6) CBCW_V10(7) CBCW_V10(8) CBCW_V10(9)
+	CBCW_V10(10) CBCW_V10(11) CBCW_V10(12) CBCW_V10(13) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16) CBCW_V10(17) CBCW_V10(18) CBCW_V10(19)
+	CBCW_V10(20) CBCW_V10(21) CBCW_V10(22) CBCW_V10(23) CBCW_V10(24) CBCW_V10(25) CBCW_V10(26) CBCW_V10(27) CBCW_V10(28) CBCW_V10(29)
+	CBCW_V10(30) CBCW_V10(31) CBCW_V10(32) CBCW_V10(33)
+	virtual const char *GetDeathNoticeName();	// slot 340
+};
+
+extern int g_10726034;
+extern char g_106b8540[];
+void sub_101d10e0(const char *, ...);
+
+inline const char *STRINGV(const char *s) { return s ? s : g_106b8540; }
+inline void MP_WriteString(const char *s) { engine->vfunc78(s); }
+inline void MP_MessageEnd() { engine->vfunc66(); }
+
+inline int ENTINDEX(int pEdict) { return engine->vfunc35(pEdict); }
+struct EdV { char pad[0x2e0]; int m_pEdict; int edict() { return m_pEdict; } };
+// TARGET: CMultiplayRules::vfunc45
+void CMultiplayRules::vfunc45(CBaseEntity *pVictim, CMPDamageInfo *pInfo)
+{
+	const char *killer_weapon_name = "world";
+	int killer_index; killer_index = 0;
+	CBaseEntity *pInflictor = pInfo->m_pInflictor;
+	CBaseEntity *pKiller = pInfo->m_pAttacker;
+	CBaseEntity *pScorer = sub_10141b10(pKiller, pInflictor);
+	if (((CMPDeathInfo *)pInfo)->m_nDamageCustom) {
+		killer_weapon_name = (const char *)vfunc46((int)pInfo);
+		if (pScorer)
+			killer_index = ENTINDEX(((CMPPlayerView *)pScorer)->m_pEdict);
+	} else {
+		if (pcd_stage(pScorer)) {
+			killer_index = ENTINDEX(((CMPPlayerView *)pScorer)->m_pEdict);
+			if (pInflictor) {
+				if (pInflictor == pScorer) {
+					if ((pcd_stage((CBaseCombatCharacter *)pScorer))->sub_1032e7b0())
+						killer_weapon_name = ((CMPWeaponView *)((CBaseCombatCharacter *)pScorer)->sub_1032e7b0())->GetDeathNoticeName();
+				} else {
+					killer_weapon_name = STRINGV(((CMPPlayerView *)pInflictor)->m_pszClassname);
+				}
+			}
+		} else {
+			killer_weapon_name = STRINGV(((CMPPlayerView *)pInflictor)->m_pszClassname);
+		}
+		if (strncmp(killer_weapon_name, "weapon_", 7) == 0)
+			killer_weapon_name = killer_weapon_name + 7;
+		else if (strncmp(killer_weapon_name, "NPC_", 8) == 0)
+			killer_weapon_name += 8;
+		else if (strncmp(killer_weapon_name, "func_", 5) == 0)
+			killer_weapon_name += 5;
+	}
+
+	CReliableBroadcastFilter filter;
+	engine->vfunc65(&filter, g_10726034);
+	engine->vfunc67(killer_index);
+	engine->vfunc67(ENTINDEX(((CMPPlayerView *)pVictim)->m_pEdict));
+	engine->vfunc78(killer_weapon_name);
+	engine->vfunc66();
+
+	int nVictimEdict; nVictimEdict = ((CMPPlayerView *)pVictim)->m_pEdict;
+	if (pVictim == pcd_stage(pScorer)) {
+		pVictim = (CBaseEntity *)STRINGV(((CMPPlayerView *)pVictim)->m_pszNetname);
+		sub_101d10e0("\"%s<%i>\" killed self with %s\n", (const char *)pVictim, engine->vfunc34(nVictimEdict), killer_weapon_name);
+	} else if (pcd_stage(pScorer)) {
+		const char *pszVictimName = STRINGV(((CMPPlayerView *)pVictim)->m_pszNetname);
+		int nScorerEdict; nScorerEdict = ((CMPPlayerView *)pScorer)->m_pEdict;
+		const char *pszName = STRINGV(((CMPPlayerView *)pScorer)->m_pszNetname);
+		sub_101d10e0("\"%s<%i>\" killed \"%s<%i>\" with %s\n", pszName, engine->vfunc34(nScorerEdict), pszVictimName, engine->vfunc34(nVictimEdict), killer_weapon_name);
+	} else {
+		pVictim = (CBaseEntity *)STRINGV(((CMPPlayerView *)pVictim)->m_pszNetname);
+		sub_101d10e0("\"%s<%i>\" killed by world with %s\n", (const char *)pVictim, engine->vfunc34(nVictimEdict), pcd_stage(killer_weapon_name));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142010 size=0x49
 #include "CBaseEntity.h"
 #include "CMultiplayRules.h"

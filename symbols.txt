@@ -13789,6 +13789,7 @@
 0x10013557 func   ?vfunc7@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc7
 0x1001355c func   ?sub_101c77d0@CChangeLevel@@QAEXPAUinputdata_t@@@Z CChangeLevel::sub_101c77d0
 0x10013561 func   ?vfunc79@CBaseParticleEntity@@QAEHXZ CBaseParticleEntity::vfunc79
+0x10013566 func   ?vfunc45@CMultiplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CMultiplayRules::vfunc45
 0x1001356b func   ?sub_1028a190@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_1028a190
 0x10013575 func   _light_spot light_spot
 0x1001357a func   ?vfunc81@CWeaponPhysCannon@@UAEHXZ CWeaponPhysCannon::vfunc81
