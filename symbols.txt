@@ -15362,6 +15362,7 @@
 0x10015447 func   ?sub_1021f630@@YAXHH@Z sub_1021f630
 0x1001544c func   ?sub_100de930@CUnknown100de930@@QAEXXZ CUnknown100de930::sub_100de930
 0x10015451 func   ?vfunc81@CWeaponMelee_GargoyleFist@@UAEHXZ CWeaponMelee_GargoyleFist::vfunc81
+0x10015456 func   ?vfunc124@CRagdollProp@@UAEHXZ CRagdollProp::vfunc124
 0x1001545b func   ?sub_102a18a0@CAI_BaseNPCTroika@@QAEXPBUCAI_FloatParam@@@Z CAI_BaseNPCTroika::sub_102a18a0
 0x10015460 func   ?vfunc522@CNPC_VMingXiao@@UAEMXZ CNPC_VMingXiao::vfunc522
 0x10015465 func   ?vfunc546@CNPC_VTzimisceRunner@@QAEHH@Z CNPC_VTzimisceRunner::vfunc546

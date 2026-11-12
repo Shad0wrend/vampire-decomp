@@ -542,6 +542,40 @@ int CRagdollProp::vfunc233(int *pOut, int nMax)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156470 size=0xc1
+#include "CRagdollProp.h"
+#include "IPhysicsObject.h"
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+const char *sub_101927c0(float flMass);
+
+#define POUNDS_PER_KG	(2.2f)
+#define kg2lbs(x)		((x)*POUNDS_PER_KG)
+
+#include "DebugOverlay.h"
+
+struct CRagdollPropDbg : CRagdollProp
+{
+	IPhysicsObject *VPhysicsGetObject() const { return (IPhysicsObject *)m_obj36c; }
+	int entindex() { int e = m_pEdict2e0; return engine->vfunc35(e); }
+};
+
+int CRagdollProp::vfunc124()
+{
+	int text_offset = sub_10096100();
+	if (*(unsigned char *)((char *)this + 0x224) & 1) {
+		CRagdollPropDbg *self = (CRagdollPropDbg *)this;
+		if (self->VPhysicsGetObject()) {
+			char tempstr[512];
+			Q_snprintf(tempstr, sizeof(tempstr), "Mass: %.2f kg / %.2f lb (%s)", self->VPhysicsGetObject()->vfunc12(), kg2lbs(self->VPhysicsGetObject()->vfunc12()), sub_101927c0(self->VPhysicsGetObject()->vfunc12()));
+			sub_101434b0(self->entindex(), text_offset, tempstr, 0, 255, 255, 255, 255);
+			text_offset++;
+		}
+	}
+	return text_offset;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101574b0 size=0x5d
 #include "CRagdollProp.h"
 
