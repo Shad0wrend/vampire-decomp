@@ -146239,6 +146239,81 @@ int __fastcall sub_101f69a0(CUnknownStat101f69a0 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f6a30 size=0x109
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "ScopeTrace.h"
+#include "CVTraitEffect_t.h"
+
+extern "C" char *strstr(const char *, const char *);
+extern "C" int atoi(const char *);
+extern "C" int isdigit(int);
+
+struct CTraitTables
+{
+	char pad0[0x1c];
+	const char *m_names[11];	// 0x1c
+	int m_lens[11];	// 0x48
+	const char *GetName(int i) { return m_names[i] ? m_names[i] : g_106b8540; }
+	bool Find(const char *psz, int &idx)
+	{
+		for (int i = 1; i < 11; i++) {
+			const char *pszPrefix = m_names[i];
+			if (!pszPrefix)
+				pszPrefix = g_106b8540;
+			if (strstr(psz, pszPrefix) == psz) {
+				idx = i;
+				return true;
+			}
+		}
+		return false;
+	}
+};
+extern CTraitTables g_1074df78;
+int sub_102025f0(CVTraitEffect_t *pEffect, const char *pszRest);
+int *sub_10203ed0(const char **ppszSource, const char *pszRest);
+
+void CVTraitEffect_t::sub_101f6a30(const char *pszModifier)
+{
+	const char *psz = pszModifier;
+	if (psz) {
+		int i;
+		if (g_1074df78.Find(psz, i)) {
+			m_nKind = i;
+			const char *p = psz + g_1074df78.m_lens[i];
+			while (*p == ' ')
+				p++;
+			if (isdigit(*p) || *p == '-') {
+				m_n14 = atoi(p);
+				return;
+			}
+			if (m_nKind != 6)
+				{ bool b = *sub_10203ed0(&pszModifier, p) != 0; m_n14 = b; }
+			else
+				m_n14 = sub_102025f0(this, p);
+			return;
+		}
+		m_nKind = 0;
+		const char *p = psz;
+		while (*p == ' ')
+			p++;
+		int nSkip = 0;
+		if (*p == '+')
+			nSkip = 1;
+		m_n14 = atoi(p + nSkip);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f6b90 size=0x7b
 #include "CVTraitEffect_t.h"
 #include "CVTSDependencySaveRestoreDataOps.h"
