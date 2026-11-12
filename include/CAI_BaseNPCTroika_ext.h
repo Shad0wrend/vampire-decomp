@@ -1,3 +1,5 @@
+	void vfunc259(animevent_t *pEvent);	// slot 259: CAI_BaseNPCTroika::HandleAnimEvent
+	void sub_10293d70();
 	bool sub_102968f0(CAI_Hint *pHint, CBaseEntity *pTarget);
 	int vfunc461();	// slot 461 (plain member): state transition pick
 	virtual int vfunc437();	// slot 437 (0x102ae920, SelectSchedule-like): returns the schedule id; stamps the source file / line at +0x1b30 / +0x1b34
