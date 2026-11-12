@@ -172515,6 +172515,45 @@ bool CBaseCombatWeapon::sub_10254b00(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10254cd0 size=0x15c
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBaseCombatWeapon.h"
+#include "CBasePlayer.h"
+#include "CBaseAnimating.h"
+
+struct ReloadChar_t {
+	char pad[0xa8];
+	int m_pAI;
+	char pad2[0x1488 - 0xac];
+	float m_flRate;
+	char pad3[0x1564 - 0x148c];
+	float m_flTimer;
+};
+
+void CBaseCombatWeapon::sub_10254cd0(int a)
+{
+	ReloadChar_t *pChar = (ReloadChar_t *)sub_102521f0();
+	if (pChar) {
+		vfunc307(a);
+		CBasePlayer *pOwner = (CBasePlayer *)sub_10252290();
+		if (pOwner)
+			pOwner->vfunc449(0xe, 0);
+		float flTime;
+		if (pChar->m_pAI == 0) {
+			flTime = gpGlobals->curtime + sub_10091080(pcd_stage(m_nSequence)) / pChar->m_flRate;
+		} else if (pOwner->m_pViewWeapon != 0 && sub_10256220()) {
+			int nSeq = ((CBaseCombatWeapon *)pOwner->m_pViewWeapon.Get())->m_nSequence;
+			flTime = ((CBaseCombatWeapon *)pOwner->m_pViewWeapon.Get())->sub_10091080(nSeq) / pChar->m_flRate + gpGlobals->curtime;
+		} else {
+			flTime = 1.0 / pChar->m_flRate + gpGlobals->curtime;
+		}
+		pChar->m_flTimer = flTime;
+		for (int i = 0; i < 2; i++)
+			m_flTimes730[i] = flTime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10255c30 size=0x8b
 #include "CBaseCombatWeapon.h"
 #include "CUnknown1073dc28.h"

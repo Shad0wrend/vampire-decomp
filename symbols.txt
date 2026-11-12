@@ -4708,6 +4708,7 @@
 0x100074e6 func   ?sub_101bd850@CSoundControllerImpView@@QAEXXZ CSoundControllerImpView::sub_101bd850
 0x100074eb func   ?sub_102a0d20@CTroikaUnit102a0d20@@QAEXXZ CTroikaUnit102a0d20::sub_102a0d20
 0x100074f0 func   ?vfunc6@ConCommand@@UAEXXZ ConCommand::vfunc6
+0x100074f5 func   ?sub_10254cd0@CBaseCombatWeapon@@QAEXH@Z CBaseCombatWeapon::sub_10254cd0
 0x100074fa func   ?vfunc3@CGameRules@@UAEXH@Z CGameRules::vfunc3
 0x100074ff func   ?sub_10026db0@@YG_NH@Z sub_10026db0
 0x10007504 func   ?sub_10227c90@CUnknown10227c90@@QAEXH@Z CUnknown10227c90::sub_10227c90
