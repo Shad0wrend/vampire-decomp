@@ -194278,6 +194278,77 @@ void CAI_BaseNPCTroika::sub_10295ab0(float flDelay)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10295ed0 size=0x232
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Hint.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include "CEHandleGet.h"
+
+void sub_101d2f40(Vector *pOut, float flYaw);
+struct CAI_HintYawView { float sub_102d12e0(); };
+struct CAI_BaseNPCTroikaV : CAI_BaseNPCTroika { bool sub_10295ed0(CAI_Hint *pHint); };
+
+bool CAI_BaseNPCTroikaV::sub_10295ed0(CAI_Hint *pHint)
+{
+	if (pHint && !pHint->m_n5e8)
+	{
+		CBaseEntity *pOther = (CBaseEntity *)EHandle_Get(m_h6448);
+		float fCos = pHint->m_f458;
+		if (pOther)
+		{
+			Vector vFwd;
+			{
+				Vector *pHintPos = ((CEntityVSlots *)pHint)->slot217();
+				Vector *pOtherPos = ((CEntityVSlots *)pOther)->slot217();
+				Vector d;
+				d.x = pOtherPos->x - pHintPos->x;
+				d.y = pOtherPos->y - pHintPos->y;
+				float fDist = d.Length2D();
+
+				if (pHint == (CAI_Hint *)*(void **)((char *)this + 0x5ddc))
+				{
+					if (pHint->m_f45c - 64.0f > fDist)
+						return false;
+					if (pHint->m_f460 + 64.0f < fDist)
+						return false;
+				}
+				else
+				{
+					if (fDist < pHint->m_f45c)
+						return false;
+					if (fDist > pHint->m_f460)
+						return false;
+				}
+
+				fDist = 1.0f / (fDist + 1.1920929e-7f);
+				const Vector &cd = d;
+				Vector n(cd[0] * fDist, cd[1] * fDist, 0.0f);
+
+				sub_101d2f40(&vFwd, ((CAI_HintYawView *)pHint)->sub_102d12e0());
+				if (vFwd.x * n.x + n.y * vFwd.y <= fCos)
+					return false;
+			}
+			if (pHint != (CAI_Hint *)*(void **)((char *)this + 0x5ddc))
+			{
+				Vector *pThisPos = ((CEntityVSlots *)this)->slot217();
+				Vector *pHintPos2 = ((CEntityVSlots *)pHint)->slot217();
+				Vector vDir = *pHintPos2 - *pThisPos;
+				if (VectorNormalize(vDir) > 512.0f)
+					return false;
+				if (pHint->m_n5dc == 0x283d && vFwd.x * vDir.x + vFwd.y * vDir.y <= 0.5f)
+					return false;
+				if (!sub_102968f0(pHint, pOther))
+					return false;
+			}
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10296820 size=0x12
 namespace lifted {
 extern char g_1049ae1c;
