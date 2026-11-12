@@ -251,4 +251,5 @@ public:
 	virtual CEntityVSlots *slot609(char bForce);	// NPC: the target at +0x6444 (CAI_BaseNPCTroika::vfunc609), a pointer or 0
 	EVS(610) EVS(611) EVS(612) EVS(613) EVS(614) EVS(615) EVS(616)
 	virtual void slot617();	// the gargoyle's roar sound
+	virtual void slot618();
 };
