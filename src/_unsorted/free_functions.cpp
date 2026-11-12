@@ -202405,6 +202405,38 @@ bool CUnknown102dd450::sub_102dd450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd470 size=0x61
+#include "engineiface.h"
+
+extern char g_106b8540[];
+
+struct CWeightedString
+{
+	const char *m_psz;
+	float m_flWeight;
+};
+
+struct CUnknown102dd470View
+{
+	const char *sub_102dd470(int nCount, CWeightedString *pTable);
+};
+
+const char *CUnknown102dd470View::sub_102dd470(int nCount, CWeightedString *pTable)
+{
+	if (pTable) {
+		float flRoll = enginerandom->vfunc1(0.0f, 99.999f);
+		for (int i = 0; i < nCount; i++) {
+			flRoll -= pTable[i].m_flWeight;
+			if (flRoll < 0.0f) {
+				const char *psz = pTable[i].m_psz;
+				return psz ? psz : g_106b8540;
+			}
+		}
+	}
+	return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd500 size=0x18
 #include "CUnknown102dd500.h"
 extern char g_106b8540[];
