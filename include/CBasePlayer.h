@@ -205,7 +205,7 @@ public:
 	virtual void vfunc460();
 	virtual void vfunc461(CUserCmd *pCmds, int numcmds, int totalcmds, int dropped_packets, char paused);	// slot 461 "RunCommand": processes the command batch
 	virtual void vfunc462(CUserCmd *pCmd, void *pHelper);	// slot 462 "PlayerRunCommand"-like (implementation sub_1016af80)
-	CBP_V1(sl4) virtual float vfunc464(); CBP_V1(sl6) virtual float vfunc466(); CBP_V1(sl8)
+	CBP_V1(sl4) virtual float vfunc464(); virtual float vfunc465(); virtual float vfunc466(); CBP_V1(sl8)
 	virtual void vfunc468();	// registers the "player_stand" / "player_crouch" collision hulls (16x16x36 and -16,-16,0) for the sub-object at +0x270
 
 	char m_pad0004[0x184 - 0x4];	// 0x0004 .. 0x0183
