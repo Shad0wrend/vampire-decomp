@@ -40,8 +40,6 @@ public:
 
 	// Slot 223, declared as a plain member.
 	bool vfunc223();	// "CBaseEntity::IsSolidFlagSet" (slot 223): scope trace, reports when bit 2 of the byte at +0x2b4 is clear, returns true
-	void vfunc178(CBaseEntity *pOther);	// slot 178 "CFuncMoveLinear::Blocked" (plain member): with a damage value at +0x56c a damage info (this as attacker and inflictor, the value, bits 1, 0, 0, -1) is handed to pOther (CBaseEntity::sub_100a1250)
-	void vfunc173(void *pActivator, void *pCaller, int useType, float flValue);	// slot 173 "CFuncMoveLinear::Use" (plain member): only for USE_SET (2): the value (capped at 1.0) is the fraction of the way from position 1 to position 2; MoveTo it at ten times its distance from the local origin (slot 220)
 	void sub_100a6150(int a, int b, int c);	// reports a message
 	void sub_100b3b00();	// CBaseEntity (stub 0x1001514a)
 	void sub_10116570(Vector vecPosition, float flSpeed);	// "CFuncMoveLinear::MoveTo" (stub 0x1000c7c5): starts the movement towards vecPosition at flSpeed
@@ -273,12 +271,12 @@ public:
 	virtual void vfunc170();
 	virtual void vfunc171();
 	virtual void vfunc172();
-	virtual void vfunc173();
+	virtual void vfunc173(void *pActivator, void *pCaller, int useType, float flValue);	// slot 173 "CFuncMoveLinear::Use" (plain member): only for USE_SET (2): the value (capped at 1.0) is the fraction of the way from position 1 to position 2; MoveTo it at ten times its distance from the local origin (slot 220) (declared only here: a plain member of the same name earlier in the class pulled the slot up, MSVC groups same-name functions)
 	virtual void vfunc174();
 	virtual void vfunc175();
 	virtual void vfunc176();
 	virtual void vfunc177();
-	virtual void vfunc178();
+	virtual void vfunc178(CBaseEntity *pOther);	// slot 178 "CFuncMoveLinear::Blocked" (plain member): with a damage value at +0x56c a damage info (this as attacker and inflictor, the value, bits 1, 0, 0, -1) is handed to pOther (CBaseEntity::sub_100a1250) (declared only here: a plain member of the same name earlier in the class pulled the slot up, MSVC groups same-name functions)
 	virtual void vfunc179();
 	virtual void vfunc180();
 	virtual void vfunc181();
