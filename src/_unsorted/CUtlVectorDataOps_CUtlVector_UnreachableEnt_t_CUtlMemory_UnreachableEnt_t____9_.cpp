@@ -57,6 +57,69 @@ void CUtlVectorDataOps<UnreachableVec, 9>::vfunc0(void *fieldInfo, void *pSave)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027f770 size=0xe9
+#include "utlrbtree.h"
+#include "datamap.h"
+#include "utlvector.h"
+#include "CUtlVectorDataOps.h"
+#include "UnreachableEnt_t.h"
+#include "CUtlVector20.h"
+#include "CUnknown1027fbf0.h"
+
+struct datamapFull_t {
+	typedescription_t *dataDesc;
+	int dataNumFields;
+	const char *dataClassName;
+	datamap_t *baseMap;
+	bool chains_validated;
+	bool packed_offsets_computed;
+	int packed_size;
+};
+struct IRestoreStub {
+	virtual void v0(); virtual void v1();
+	virtual void ReadAll(void *pLeafObject, datamapFull_t *pDataMap);
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual int ReadInt();
+};
+struct FieldInfoStub {
+	void *pField;
+};
+extern datamap_t g_105cab08;
+
+struct CUnreachableVec : CUtlVector20 {
+	CUnknown1027fbf0 &Element(int i) { return ((CUnknown1027fbf0 *)m_pMemory)[i]; }
+	int InsertMultipleBefore(int elem, int num)
+	{
+		if (num == 0)
+			return elem;
+		sub_1027f990(num);
+		sub_1027fa50(elem, num);
+		for (int i = 0; i < num; ++i) {
+			CUnknown1027fbf0 *p = &Element(elem + i);
+			if (p)
+				p->sub_1027fbf0();
+		}
+		return elem;
+	}
+	int AddMultipleToTail(int num) { return InsertMultipleBefore(m_size, num); }
+	void RemoveAll() { m_size = 0; }
+	void SetCount(int count) { RemoveAll(); AddMultipleToTail(count); }
+};
+
+// TARGET: CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc1
+void CUtlVectorDataOps<CUtlVector<UnreachableEnt_t, CUtlMemory<UnreachableEnt_t> >, 9>::vfunc1(void *fieldInfo, void *pRestore)
+{
+	typedescription_t dataDesc = { 9, "elems", {0, 0}, 1, 2, 0, 0, 0, &g_105cab08 };
+	datamapFull_t dataMap = { &dataDesc, 1, "uv", 0, false, false, 0 };
+	CUnreachableVec *pVec = (CUnreachableVec *)((FieldInfoStub *)fieldInfo)->pField;
+	int nElems = ((IRestoreStub *)pRestore)->ReadInt();
+	pVec->SetCount(nElems);
+	for (int i = 0; i < nElems; i++)
+		((IRestoreStub *)pRestore)->ReadAll(&pVec->Element(i), &dataMap);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027f8a0 size=0x10
 #include "UnreachableEnt_t.h"
 #include "utlmemory.h"
