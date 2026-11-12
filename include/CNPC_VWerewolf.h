@@ -124,7 +124,9 @@ public:
 	int m_pEdict2e0;	// 0x2e0: the entity's edict
 	char pad2e4[0xfec - 0x2e4];
 	int m_nState0fec;
-	char pad0ff0[0x1a40 - 0xff0];
+	char pad0ff0[0x1568 - 0xff0];
+	int m_n1568;	// 0x1568: the hull (CBaseCombatCharacter.h m_field1568)
+	char pad156c[0x1a40 - 0x156c];
 	char m_b1a40;
 	char pad1a41[0x1b2c - 0x1a41];
 	int m_n1b2c;	// 0x1b2c: the schedule-selection debug id (SelectSchedule stores 0x29)
@@ -309,7 +311,7 @@ public:
 	bool sub_103d8060(void *pHint);	// stub 0x100143bc: the hint test of the mode 4
 	bool sub_103d7dc0(void *pHint);	// stub 0x10010424: the hint test of the mode 5
 	bool sub_103d8300(void *pHint);	// stub 0x10013796: the hint test of the mode 6
-	int sub_103d5590(void *pHint);	// stub 0x10015d7a: adds the hint as pathable
+	void sub_103d5590(void *pHint);	// stub 0x10015d7a: "CNPC_VWerewolf::DrawDebugHintInfo"
 	void sub_103d7710();	// stub 0x100034a4, called directly by NPCThink
 	void sub_103d93b0();	// stub 0x1000e93a, called directly by NPCThink
 	void sub_10292de0();	// CAI_BaseNPCTroika::vfunc431 (stub 0x10002a7c), called directly
