@@ -12860,6 +12860,130 @@ int sub_1004ef10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004f030 size=0x5e8
+#include "inputdata_t.h"
+#include "CPhysImpact.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "UTIL_Trace.h"
+#include "CGameTrace.h"
+
+extern CGlobalEntityList g_106eb5d8;
+
+struct CUnknown1004f860 { void *sub_1004f860(); };
+struct PhysImpactConVar
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad[0x24];
+	float m_fValue;
+};
+extern PhysImpactConVar *g_106b8654;
+extern PhysImpactConVar *g_1070b9cc;
+extern float g_104454c4;
+extern char g_106b8540[];
+struct PhysObj
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual float vfunc12();
+	virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30();
+	virtual void vfunc31(const Vector &f, const Vector &p);
+};
+void sub_10142e90(const Vector &vecStart, const Vector &vecEnd, int r, int g, int b, int c, float flDuration);
+void sub_10143b70(const Vector &vecCenter, const Vector &vecMaxs, const Vector &vecMins, int r, int g, int b, int c, float flDuration);
+const char *__fastcall sub_100ab4f0(void *p);
+__declspec(dllimport) void Warning(const char *fmt, ...);
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline void PhysImpact_TraceLine(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((CUnknown1004f860 *)&ray)->sub_1004f860();
+	ray.sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+void CPhysImpact::sub_1004f030(inputdata_t *pData)
+{
+	bool bDirect = (m_spawnflags204 & 8) == 8;
+	CEntityVSlots *pTarget = 0;
+	Vector dir;
+	CGameTrace tr;
+	double flLength;
+	if (!m_directionEntityName.pszValue)
+	{
+		dir = m_vecTarget - *((CEntityVSlots *)this)->slot217();
+		VectorNormalize(dir);
+		flLength = (m_vecTarget - *((CEntityVSlots *)this)->slot217()).Length();
+		bDirect = false;
+	}
+	else
+	{
+		pTarget = (CEntityVSlots *)g_106eb5d8.sub_100f7770(0, m_directionEntityName.pszValue, 0, 0);
+		if (pTarget)
+		{
+			dir = pTarget->slot192() - *((CEntityVSlots *)this)->slot217();
+			VectorNormalize(dir);
+			flLength = (*pTarget->slot217() - *((CEntityVSlots *)this)->slot217()).Length();
+		}
+		else
+		{
+			Warning("%s could not find: %s !!\n", sub_100ab4f0(this), STRINGR(m_directionEntityName.pszValue));
+			return;
+		}
+	}
+	if (m_spawnflags204 & 2)
+		flLength = 56755.84086242099;
+	float fl = (float)flLength;
+	Vector vecStart = *((CEntityVSlots *)this)->slot217();
+	Vector vecEnd = vecStart + dir * fl;
+	if (!bDirect)
+	{
+		PhysImpact_TraceLine(vecStart, vecEnd, 0xffffffff, this, 0, &tr);
+		if (tr.m_fraction == 1.0)
+		{
+			if (!g_1070b9cc->vfunc1() && *(int *)((char *)g_1070b9cc + 0x2c))
+				sub_10142e90(vecStart, vecEnd, 0xff, 0, 0, 1, 5.0f);
+			return;
+		}
+		pTarget = (CEntityVSlots *)tr.m_pEnt;
+	}
+	if (pTarget && *(PhysObj **)((char *)pTarget + 0x36c))
+	{
+		PhysObj *phys = *(PhysObj **)((char *)pTarget + 0x36c);
+		float flForce;
+		if ((m_spawnflags204 & 1) || bDirect || (m_spawnflags204 & 2))
+			flForce = m_damage;
+		else
+			flForce = (1.0f - tr.m_fraction) * m_damage;
+		if (m_spawnflags204 & 4)
+			flForce = phys->vfunc12() * flForce;
+		if (bDirect)
+		{
+			Vector force = dir * -flForce * (g_106b8654->vfunc1() ? g_104454c4 : g_106b8654->m_fValue);
+			phys->vfunc31(force, pTarget->slot192());
+		}
+		else
+		{
+			Vector force = *(Vector *)tr.m_planeNormal * -flForce * (g_106b8654->vfunc1() ? g_104454c4 : g_106b8654->m_fValue);
+			phys->vfunc31(force, *(Vector *)tr.m_endpos);
+		}
+	}
+	if (!g_1070b9cc->vfunc1() && *(int *)((char *)g_1070b9cc + 0x2c))
+	{
+		sub_10142e90(vecStart, vecEnd, 0, 0xff, 0, 1, 5.0f);
+		sub_10143b70(vecStart + dir * fl * tr.m_fraction, Vector(5, 5, 5), Vector(-5, -5, -5), 0xff, 0, 0, 1, 5.0f);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004f7a0 size=0x8f
 #include "Ray_t.h"
 
