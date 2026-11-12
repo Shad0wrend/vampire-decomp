@@ -7,13 +7,30 @@
 extern int g_10446750;	// IMotionEvent vftable
 extern int g_104462b4;	// CKeepUpright's IMotionEvent vftable
 
+struct CKeepUpright_MotionEvent	// IMotionEvent sub-object
+{
+	CKeepUpright_MotionEvent() { m_vtable = &g_10446750; }
+	void operator=(void *p) { m_vtable = p; }
+	operator void *() const { return m_vtable; }
+	void *m_vtable;
+};
+
+struct CKeepUpright_Handle	// EHANDLE
+{
+	CKeepUpright_Handle() { m_Index = 0xffffffff; }
+	void operator=(unsigned int i) { m_Index = i; }
+	operator unsigned int() const { return m_Index; }
+	unsigned int m_Index;
+};
+
 class CKeepUpright : public CBaseEntity
 {
 public:
-	CKeepUpright() : CBaseEntity(0), m_attachedObject(-1), m_flAngularLimit((*(void *volatile *)&m_motionEvent = &g_10446750, 0.0f))
+	CKeepUpright() : CBaseEntity(0)
 	{
 		m_motionEvent = &g_104462b4;
-		m_flAngularLimit = 15.0f;
+		*(volatile float *)&m_flAngularLimit = 15.0f;
+		m_attachedObject = 0xffffffff;
 	}
 
 	void vfunc113();
@@ -24,12 +41,12 @@ public:
 	CKeepUpright *sub_10029610();	// constructor
 
 	char m_padKU[0x450 - sizeof(CBaseEntity)];
-	void *m_motionEvent;        // 0x450 IMotionEvent sub-object (vtable)
+	CKeepUpright_MotionEvent m_motionEvent;        // 0x450 IMotionEvent sub-object (vtable)
 	float m_vecUp454[3];        // 0x454 filled by GetVectors
 	float m_vecAxis460[3];      // 0x460
 	void *m_pController;        // 0x46c IPhysicsMotionController*
 	const char *m_nameAttach;   // 0x470
-	unsigned int m_attachedObject; // 0x474 EHANDLE
+	CKeepUpright_Handle m_attachedObject; // 0x474 EHANDLE
 	float m_flAngularLimit;     // 0x478
 public:
     virtual datamap_t * vfunc82();
