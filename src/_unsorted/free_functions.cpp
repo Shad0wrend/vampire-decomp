@@ -223334,6 +223334,131 @@ float CUnknown10312580::sub_10312580(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103126e0 size=0x1c6
+#include "vampire_all.h"
+#include "CAI_Expresser.h"
+#include "CUtlRBTree16.h"
+#include "globalvars.h"
+
+extern void *g_109f075c;
+
+struct ExprTime
+{
+	float m_f;
+	ExprTime() {}
+	ExprTime(float f) : m_f(f) {}
+};
+
+struct ExprPair
+{
+	unsigned int m_nKey;
+	ExprTime m_time;
+	ExprPair() : m_time(-1.0f) {}
+};
+
+typedef CUtlRBTree<CAI_ExpresserUse, unsigned short> ExprTree;
+
+struct ExprMap : CUtlRBTree16At<0x10936c54>
+{
+	void *m_pLessContext;
+
+	ExprPair &Element(unsigned short i) { return *(ExprPair *)m_pElements[i].m_Data; }
+
+	unsigned short Find(const ExprPair &search)
+	{
+		if (m_pLessContext)
+			g_109f075c = m_pLessContext;
+		unsigned short current = m_Root;
+		while (current != InvalidIndex())
+		{
+			if (m_LessFunc(&search, &Element(current)))
+				current = sub_10313aa0(current)[0];
+			else if (m_LessFunc(&Element(current), &search))
+				current = sub_10313aa0(current)[1];
+			else
+				break;
+		}
+		return current;
+	}
+
+	void FindInsertionPosition(const ExprPair &insert, unsigned short &parent, bool &leftchild)
+	{
+		parent = InvalidIndex();
+		leftchild = false;
+		unsigned short current = m_Root;
+		while (current != InvalidIndex())
+		{
+			parent = current;
+			if (m_LessFunc(&insert, &Element(current)))
+			{
+				leftchild = true;
+				current = sub_10313aa0(current)[0];
+			}
+			else
+			{
+				leftchild = false;
+				current = Links(current).m_Right;
+			}
+		}
+	}
+
+	unsigned short InsertAt(unsigned short parent, bool leftchild)
+	{
+		unsigned short i = sub_103134b0();
+		void (ExprTree::*pfnLink)(unsigned short, unsigned short, bool) = &ExprTree::LinkToParent;
+		(((ExprTree *)this)->*pfnLink)(i, parent, leftchild);
+		++m_NumElements;
+		return i;
+	}
+
+	unsigned short Insert(const ExprPair &insert)
+	{
+		if (m_pLessContext)
+			g_109f075c = m_pLessContext;
+		unsigned short parent;
+		bool leftchild;
+		FindInsertionPosition(insert, parent, leftchild);
+		unsigned short newNode = InsertAt(parent, leftchild);
+		ExprPair *p = &Element(newNode);
+		if (p)
+			*p = insert;
+		return newNode;
+	}
+
+	unsigned short FindKey(const unsigned int &key)
+	{
+		ExprPair dummy;
+		dummy.m_nKey = key;
+		return Find(dummy);
+	}
+
+	unsigned short InsertKey(const unsigned int &key, const ExprTime &insert)
+	{
+		ExprPair node;
+		node.m_nKey = key;
+		node.m_time = insert;
+		return Insert(node);
+	}
+
+	unsigned short InsertOrReplace(const unsigned int &key, const ExprTime &insert)
+	{
+		unsigned short i = FindKey(key);
+		if (i != InvalidIndex())
+		{
+			Element(i).m_time = insert;
+			return i;
+		}
+		return InsertKey(key, insert);
+	}
+};
+
+// TARGET: CAI_Expresser::sub_103126e0
+void CAI_Expresser::sub_103126e0(int key)
+{
+	((ExprMap *)&m_Tree)->InsertOrReplace(key, gpGlobals->curtime);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10312930 size=0x113
 #include "utlrbtree.h"
 #include "CUnknown10312580.h"
