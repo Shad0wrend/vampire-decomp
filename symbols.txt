@@ -2358,6 +2358,7 @@
 0x10004282 func   ?vfunc103@CTriggerTeleport@@UAEXXZ CTriggerTeleport::vfunc103
 0x10004287 func   ?vfunc39@ISave@@QAEPAXE@Z ISave::vfunc39
 0x1000428c func   ?sub_100dc480@CCollisionProperty@@QAEXH@Z CCollisionProperty::sub_100dc480
+0x10004291 func   ?sub_10363c70@CNPC_VBach@@QAEHPAX@Z CNPC_VBach::sub_10363c70
 0x10004296 func   ?vfunc130@CNPCMaker_Fleshpile@@UAEXH@Z CNPCMaker_Fleshpile::vfunc130
 0x1000429b func   ?sub_101cc800@CUnknown101cc800@@QAEXXZ CUnknown101cc800::sub_101cc800
 0x100042a0 func   ?sub_101cc7b0@@YIXPAPAX@Z sub_101cc7b0

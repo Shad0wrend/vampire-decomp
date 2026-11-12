@@ -259,6 +259,38 @@ void CNPC_VBach::vfunc432(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10363c70 size=0xa5
+#include "CNPC_VBach.h"
+#include "CNPC_VHuman.h"
+#include "CTakeDamageInfo.h"
+struct CVDmgFlags { char pad[0x10]; int m_nFlags; };
+
+int CNPC_VBach::sub_10363c70(void *pInfo)
+{
+	CTakeDamageInfo *info = (CTakeDamageInfo *)pInfo;
+	if (m_b66a8 == 0)
+		return 0;
+	int flags;
+	if (info->m_pVDmg00)
+		flags = ((CVDmgFlags *)info->m_pVDmg00)->m_nFlags | info->m_n38;
+	else
+		flags = info->m_n38;
+	m_b66a6 = 1;
+	if (flags & 0x4000002) {
+		if (m_b66a5 != 0) {
+			CTakeDamageInfo copy = *info;
+			copy.m_flDamage = 0.0f;
+			copy.m_flDamage34 = 0.0f;
+			return ((CNPC_VHuman *)this)->sub_10001b45(&copy);
+		}
+		m_n6688 = 0;
+	} else {
+		m_n6690 = 0;
+	}
+	return ((CNPC_VHuman *)this)->sub_10001b45(pInfo);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10363db0 size=0x23d
 #include "CNPC_VBach.h"
 #include "CPASAttenuationFilter.h"
