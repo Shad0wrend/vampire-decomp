@@ -7382,6 +7382,7 @@
 0x1000ab37 func   ?vfunc41@CPhysBox@@QAEXH@Z CPhysBox::vfunc41
 0x1000ab3c func   ?vfunc50@CMultiplayRules@@UAEMPAVCBaseEntity@@@Z CMultiplayRules::vfunc50
 0x1000ab41 func   _ai_hint ai_hint
+0x1000ab46 func   ?sub_10280ff0@CAI_BaseNPCTroika@@QAEDD@Z CAI_BaseNPCTroika::sub_10280ff0
 0x1000ab4b func   ?sub_100ad320@CBaseEntityVectorsUnit@@QAEXPAM00@Z CBaseEntityVectorsUnit::sub_100ad320
 0x1000ab50 func   ?vfunc121@CBaseEntity@@UAE_NPBDPAUCVariantCopy@@@Z CBaseEntity::vfunc121
 0x1000ab55 func   ?sub_101eddd0@@YAXH@Z sub_101eddd0

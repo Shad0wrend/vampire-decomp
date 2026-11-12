@@ -188880,6 +188880,153 @@ void block_10280f40::CAI_BaseNPCUnit_10280f40::sub_10280f40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10280ff0 size=0x35c
+#include "CAI_BaseNPCTroika.h"
+#include "CUnknown1027d990.h"
+#include "CDevFlagObj.h"
+#include "CEntityVSlots.h"
+
+struct CBreakBits
+{
+	int m_Ints[6];
+	int *GetInts() { return m_Ints; }
+	const int *GetInts() const { return m_Ints; }
+	int GetNumInts() const { return 6; }
+	void And(const CBreakBits &addStr, CBreakBits *out) const
+	{
+		int *pDest = out->GetInts();
+		const int *pOperand1 = GetInts();
+		const int *pOperand2 = addStr.GetInts();
+		pDest[0] = pOperand1[0] & pOperand2[0];
+		pDest[1] = pOperand1[1] & pOperand2[1];
+		pDest[2] = pOperand1[2] & pOperand2[2];
+		pDest[3] = pOperand1[3] & pOperand2[3];
+		pDest[4] = pOperand1[4] & pOperand2[4];
+		pDest[5] = pOperand1[5] & pOperand2[5];
+	}
+	void Not(CBreakBits *out) const
+	{
+		int *pDest = out->GetInts();
+		const int *pOperand = GetInts();
+		for (int i = GetNumInts() - 1; i >= 0; --i)
+			pDest[i] = ~(pOperand[i]);
+	}
+	bool IsAllClear() const
+	{
+		const int *pInts = GetInts();
+		return (pInts[0] == 0 && pInts[1] == 0 && pInts[2] == 0 && pInts[3] == 0 && pInts[4] == 0 && pInts[5] == 0);
+	}
+	bool GetBit(int bitNum) const
+	{
+		const int *pInt = GetInts() + (bitNum >> 5);
+		return ((*pInt & (1 << (bitNum & 31))) != 0);
+	}
+};
+
+void __fastcall sub_1027f610(CBreakBits *pBits);
+
+struct CDevGlobal
+{
+	int m0;
+	CDevFlagObj *m_pObj;
+};
+
+struct CRangeNode_102ea280
+{
+	int m_n[6];
+	int sub_102ea280(int id);
+};
+
+struct CBreakIdSpaceView
+{
+	CRangeNode_102ea280 m_Schedules;
+	CRangeNode_102ea280 m_Tasks;
+	CRangeNode_102ea280 m_Conditions;
+};
+
+struct CBreakNameView
+{
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS10(20) EVS10(21) EVS10(22) EVS10(23) EVS10(24) EVS10(25) EVS10(26) EVS10(27) EVS10(28) EVS10(29)
+	EVS10(30) EVS10(31) EVS10(32) EVS10(33) EVS10(34) EVS10(35) EVS10(36) EVS10(37) EVS10(38) EVS10(39)
+	EVS10(40) EVS10(41) EVS10(42) EVS10(43) EVS10(44)
+	EVS(450) EVS(451) EVS(452) EVS(453) EVS(454) EVS(455) EVS(456) EVS(457)
+	virtual const char *slot458(int id);
+	EVS(459) EVS10(46) EVS10(47) EVS10(48) EVS10(49) EVS10(50) EVS10(51) EVS10(52) EVS10(53) EVS10(54) EVS10(55) EVS10(56) EVS10(57)
+	virtual CBreakIdSpaceView *slot580();
+};
+
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+extern CDevGlobal *g_1070af4c;
+extern char g_1053e080[];
+extern const char *g_105cdd60;
+
+inline int AI_RemapToGlobal(int iLocalID) { return (iLocalID != -1) ? 1000000000 + iLocalID : -1; }
+inline bool EQIdealDeadOrScript(CUnknown1027d990 *p) { return p->sub_1027d990() == 3 || p->sub_1027d990() == 1; }
+
+char CAI_BaseNPCTroika::sub_10280ff0(char bAllowBreak)
+{
+	if (!m_pSchedule5c38)
+		return 0;
+	CAI_BaseNPCTroika *pObj = m_pObj98;
+	if (EQIdealDeadOrScript((CUnknown1027d990 *)this)) {
+		if (pObj) {
+			if (!sub_10014df8(0x5c) && !sub_10014df8(0x5d))
+				goto valid;
+			pObj->m_flags14b8 |= 8;
+			pObj->m_flags14bc |= 0x80000002;
+			return 0;
+		}
+	} else if (pObj && (pObj->m_flags14bc & 0x2000000)) {
+		pObj->m_flags14bc &= 0x7dffffff;
+		return 0;
+	}
+	if (!bAllowBreak || !(((char *)m_pSchedule5c38)[0x18] & 1)) {
+		CBreakBits a, b, c;
+		sub_1027f610(&a);
+		sub_1027f610(&b);
+		sub_1027f610(&c);
+		((CBreakBits *)m_ConditionsIgnore5c74)->And(*(CBreakBits *)m_Conditions5c5c, &a);
+		((CBreakBits *)m_Conditions5c5c)->Not(&c);
+		c.And(*(CBreakBits *)m_ConditionsBreak5c8c, &b);
+		if (!a.IsAllClear() || !b.IsAllClear()) {
+			CDevGlobal *pGlobal = g_1070af4c;
+			if (!pGlobal->m_pObj->vfunc1() && pGlobal->m_pObj->m_n2c) {
+				m_n5f38 = 0;
+				m_pSchedule5f3c = m_pSchedule5c38;
+				for (int j = 0; j < 0xc0; j++) {
+					if (a.GetBit(j) || b.GetBit(j)) {
+						int id = AI_RemapToGlobal(j);
+						CBreakIdSpaceView *pSpace = ((CBreakNameView *)this)->slot580();
+						int nGlobal = pSpace->m_Conditions.sub_102ea280(id);
+						m_pszBreakName5f34 = ((CBreakNameView *)this)->slot458(nGlobal);
+						if (!m_pszBreakName5f34) {
+							DevMsg(g_1053e080, g_105cdd60);
+							m_pszBreakName5f34 = g_105cdd60;
+						}
+						if (b.GetBit(j)) {
+							if (m_fDebugOverlays224 & 0x8000000)
+								DevMsg("   Break condition -> !%s\n", m_pszBreakName5f34);
+						} else {
+							if (m_fDebugOverlays224 & 0x8000000)
+								DevMsg("   Break condition -> %s\n", m_pszBreakName5f34);
+						}
+						break;
+					}
+				}
+			}
+			m_b1a40 = 0;
+			return 0;
+		}
+	}
+	if (sub_10014df8(0x5d) || sub_10014df8(0x5c))
+		return 0;
+valid:
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10281430 size=0x7c
 #include "CAI_BaseNPCTroika.h"
 struct S10281430Bits {
