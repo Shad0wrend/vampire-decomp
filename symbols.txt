@@ -3118,6 +3118,7 @@
 0x100051d2 func   ?sub_1017d460@CBasePlayer@@QAEXPAVCBaseEntity@@M@Z CBasePlayer::sub_1017d460
 0x100051d7 func   ?sub_10152400@@YAHXZ sub_10152400
 0x100051e1 func   ?vfunc81@CWeaponRanged_Tzimisce2Head@@UAEHXZ CWeaponRanged_Tzimisce2Head::vfunc81
+0x100051e6 func   ?sub_1024e660@@YAXABVVMatrix@@ABVVector@@AAV2@@Z sub_1024e660
 0x100051eb func   ?sub_1018e910@@YAXPAVCBaseEntity@@@Z sub_1018e910
 0x100051f0 func   ?sub_10204250@@YI_NPAH@Z sub_10204250
 0x100051f5 func   ?vfunc56@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@HHHHHHH@Z CAI_BaseNPCTroika::vfunc56
