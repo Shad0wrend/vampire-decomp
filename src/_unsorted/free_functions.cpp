@@ -127868,6 +127868,29 @@ void sub_101d2ab0(Vector *pOut, int a, int b, float flMin, float flMax)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2b40 size=0x7f
+#include "matrix3x4_t.h"
+
+inline void VectorIRotateL(const float *in1, const matrix3x4_t &in2, float *out)
+{
+	out[0] = in1[0] * in2.m_flMatVal[0][0] + in1[1] * in2.m_flMatVal[1][0] + in1[2] * in2.m_flMatVal[2][0];
+	out[1] = in1[0] * in2.m_flMatVal[0][1] + in1[1] * in2.m_flMatVal[1][1] + in1[2] * in2.m_flMatVal[2][1];
+	out[2] = in1[0] * in2.m_flMatVal[0][2] + in1[1] * in2.m_flMatVal[1][2] + in1[2] * in2.m_flMatVal[2][2];
+}
+
+inline void VectorIRotateL(const Vector &in1, const matrix3x4_t &in2, Vector &out)
+{
+	VectorIRotateL(&in1.x, in2, &out.x);
+}
+
+Vector sub_101d2b40(const matrix3x4_t &matrix, const Vector &vec, float scale)
+{
+	Vector out;
+	VectorIRotateL(vec * scale, matrix, out);
+	return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2c70 size=0x4b
 #include "Vector.h"
 #include <math.h>
