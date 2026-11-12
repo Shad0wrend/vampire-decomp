@@ -126,6 +126,7 @@ public:
 	CAI_Waypoint *sub_102fe9f0(int a, int b, int c, int d);
 	int sub_102ffca0(CAI_PathfinderOuter *pNPC, const Vector *pPos, const Vector *pDir, float flDist);	// walks from the node nearest pPos along pDir for a distance of |pDir| * flDist (the best-aligned unvisited neighbour each step); returns the last node
 	CAI_Waypoint *sub_102fef30(int startNode, int endNode, int *pOut);	// A* over the node providers: returns the waypoint chain from endNode back to startNode (0 without nodes or path)
+	bool sub_10306700(class CBaseEntity *pEnt, const Vector *pVecStart, const Vector *pTargetPos, float flMaxDist);
 };
 
 class CBitString;
