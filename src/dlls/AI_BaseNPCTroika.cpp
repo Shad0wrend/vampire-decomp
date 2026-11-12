@@ -1017,6 +1017,211 @@ int CAI_BaseNPCTroika::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ae920 size=0xa90
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+struct V6Timer { void sub_101b9880(); };
+struct VA101e3df0 { void sub_101e3df0(CAI_BaseNPCTroika *); };
+struct VA101e3ee0 { void sub_101e3ee0(CAI_BaseNPCTroika *); };
+extern VA101e3df0 g_10739a4c;
+struct VE1017e740 { int sub_1017e740(); };
+struct VE1017e720 { int sub_1017e720(); };
+struct V103161a0 { void sub_103161a0(int); };
+struct V1092450c { virtual void v0(); virtual bool vfunc1(); char pad[0x2c - 4]; int n2c; };
+extern V1092450c *g_1092450c;
+extern int sub_102c6350(unsigned);
+extern int sub_1042fe90(unsigned);
+struct V437 : CAI_BaseNPCTroika {
+	bool sub_10269d30(int);
+	bool sub_10269aa0(int);
+	int sub_102b7690(int, int, int, int);
+	int sub_1027d990();
+	int sub_102b8a10();
+};
+struct VData {
+	char pad[0x65c8];
+	int n65c8;
+	char pad2[0x65e4 - 0x65cc];
+	int n65e4;
+	char pad3[0x65f6 - 0x65e8];
+	char b65f6;
+};
+struct CRec6360
+{
+	char m_b0;
+	char m_b1;
+	unsigned int m_hash;
+	operator unsigned int() const { return (((m_hash & 0x68d8635) ^ 0xce9f66a) + 0xffa91d8 & 0x197279ca) ^ m_hash ^ 0xa641cacd; }
+};
+#define REC (*(CRec6360 *)((char *)this + 0x6360))
+#define RET(line, val) { m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp"; m_nLine1b34 = line; return val; }
+
+int CAI_BaseNPCTroika::vfunc437()
+{
+	V437 *me = (V437 *)this;
+	VData *d = (VData *)this;
+	V103161a0 *pTimer;
+	m_n1b2c = 2;
+	((V6Timer *)((char *)this + 0x60dc))->sub_101b9880();
+	if (d->n65c8) {
+		int r = d->n65c8;
+		d->n65c8 = 0;
+		return r;
+	}
+	if (m_n5bb0 <= 0 && (pTimer = (V103161a0 *)m_p5da4) != 0 && (m_flags14bc & 0x2000) == 0x2000) {
+		m_flags14bc &= 0x7fffdfff;
+		if (d->n65e4 != -1 && (m_flags5b84 & 0x80) != 0x80)
+			RET(0x481b, 0xeb);
+		if (vfunc167())
+			pTimer->sub_103161a0((int)vfunc167());
+	}
+	if (me->sub_10269d30(0x38))
+		g_10739a4c.sub_101e3df0(this);
+	if (m_pSchedule5c38 && (int)m_pSchedule5c38 == sub_102cc1f0(0x14a))
+		((VA101e3ee0 &)g_10739a4c).sub_101e3ee0(this);
+	if (m_n5cc0 == 2) {
+		if (me->sub_10269d30(0x22)) {
+			if (m_h628c.Get() == m_hSupernaturalOffender.Get()) {
+				((CBasePlayer *)m_h628c.Get())->sub_1017f4a0(m_iPLSupernaturalLevelWitnessed, (CBaseEntity *)this, &m_vecPLSupernaturalLocation);
+				m_iPLSupernaturalActProcessed = ((VE1017e740 *)m_h628c.Get())->sub_1017e740();
+			}
+			vfunc596((int)m_hSupernaturalOffender.Get());
+			vfunc597((int)m_hSupernaturalOffender.Get(), 5);
+		}
+		if (me->sub_10269d30(0x20)) {
+			if (m_h628c.Get() == m_hCriminalOffender.Get()) {
+				unsigned seed = m_n6364;
+				((CBasePlayer *)m_h628c.Get())->sub_1017f2a0(sub_102c6350((seed & 0x68d8635 ^ 0xce9f66a) + 0xffa91d8 & 0x197279ca ^ seed ^ 0xa641cacd), (CBaseEntity *)this, &m_vecPLCriminalLocation);
+				m_iPLCriminalActProcessed = ((VE1017e720 *)m_h628c.Get())->sub_1017e720();
+			}
+			vfunc596((int)m_hCriminalOffender.Get());
+			vfunc597((int)m_hCriminalOffender.Get(), 5);
+		}
+		if (me->sub_10269aa0(0x30))
+			RET(0x4850, 0x151);
+		if (!vfunc167()) {
+			if (d->b65f6)
+				sub_1026e340(1);
+			else
+				sub_1026e340(3);
+			m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+			m_nLine1b34 = 0x4862;
+			return CAI_BaseNPC::sub_1028a260();
+		}
+		if ((m_flags14b8 & 0x800000) == 0x800000) {
+			m_flags14b8 &= 0xff7fffff;
+			if ((~m_flags14bc & 0x80) && (m_flags5b84 & 0x80) != 0x80)
+				RET(0x4884, 0x5b);
+			m_flags14bc &= 0x7fffff7f;
+		}
+		if (me->sub_10269aa0(0x54) && (m_flags5b84 & 0x80) != 0x80)
+			RET(0x488c, 0xea);
+	}
+	if (me->sub_10269aa0(0x3b) && !sub_1033e2b0()) {
+		sub_10269b50(0x3b);
+		if (!EHandle_Get(m_hfe8)) {
+			int mode;
+			bool ok = true;
+			if (g_1092450c->vfunc1())
+				mode = 0;
+			else {
+				mode = g_1092450c->n2c;
+				if ((unsigned)mode > 3)
+					ok = false;
+			}
+			if (ok) {
+				switch (mode) {
+				case 0:
+					RET(0x4899, 0x7b);
+				case 1:
+					RET(0x489d, 0x79);
+				case 2:
+					RET(0x48a1, 0x7a);
+				case 3:
+					if (enginerandom->vfunc2(0, 99) < 0x50)
+						RET(0x48a7, 0x79);
+					RET(0x48ab, 0x7a);
+				}
+			}
+		}
+	}
+	if (m_n5cc0 == 0xe) {
+		if (me->sub_10269d30(0x20)) {
+			if (m_h628c.Get() == m_hCriminalOffender.Get()) {
+				unsigned int r = REC; int h = sub_1042fe90(r);
+				((CBasePlayer *)m_h628c.Get())->sub_1017f2a0(h, (CBaseEntity *)this, &m_vecPLCriminalLocation);
+				m_iPLCriminalActProcessed = ((VE1017e720 *)m_h628c.Get())->sub_1017e720();
+			}
+			vfunc596((int)m_hCriminalOffender.Get());
+		}
+		if (me->sub_10269aa0(0x30))
+			RET(0x48c4, 0x151);
+		if (!vfunc167()) {
+			if (d->b65f6)
+				sub_1026e340(1);
+			else
+				sub_1026e340(3);
+			m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+			m_nLine1b34 = 0x48d6;
+			return CAI_BaseNPC::sub_1028a260();
+		}
+	}
+	int r = CAI_BaseNPC::vfunc437();
+	if (r)
+		return r;
+	if ((m_flags14bc & 2) == 2) {
+		m_flags14b8 &= 0xfffffff7;
+		m_flags14bc &= 0x7ffffffd;
+		if (me->sub_1027d990() == 3)
+			RET(0x48e8, 0xfc);
+		if (me->sub_1027d990() == 1)
+			RET(0x48ec, 0xfd);
+	}
+	if (m_n5cc0 == 2 && m_b6435 && vfunc592()) {
+		r = me->sub_102b7690(1, 0, 0, 0);
+		if (r)
+			return r;
+	}
+	if ((m_flags14b8 & 2) == 2) {
+		m_flags14b8 &= 0xfffffffd;
+		RET(0x490b, 0xf1);
+	}
+	switch (m_n5cc0) {
+	case 1:
+		if (me->sub_10269aa0(0x28))
+			RET(0x4915, 0x14c);
+		if (me->sub_10269aa0(0x27))
+			RET(0x4919, 0x12f);
+		if ((m_flags14bc & 0x10000) == 0x10000)
+			RET(0x491d, 0x130);
+		if ((m_flags14bc & 0x100000) == 0x100000)
+			RET(0x4921, 0x131);
+		if ((m_flags14bc & 0x40000) == 0x40000)
+			RET(0x4925, 0x131);
+		if (EHandle_Get(m_hfe8))
+			RET(0x4929, 0x6a);
+		break;
+	case 2:
+		if (me->sub_10269aa0(0x28))
+			RET(0x493c, 0x14c);
+		break;
+	case 3:
+		r = me->sub_102b8a10();
+		if (r)
+			return r;
+		break;
+	}
+	if (m_fSavePositionWalk) {
+		m_fSavePositionWalk = 0;
+		RET(0x4955, 0x89);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4fe0 size=0x91
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102dfaa0.h"
