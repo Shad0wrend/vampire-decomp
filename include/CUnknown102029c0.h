@@ -13,6 +13,7 @@ public:
 	char m_b14;	// 0x14: 1
 	char m_pad15[3];
 
+	bool HasIndex(int i) const { return i < m_nEntries; }
 	CUnknown102029c0(int a);
 	~CUnknown102029c0();
 	const char *sub_10202a10(int nStat);	// the text of the stat nStat for this record (stub 0x10010c8f)
