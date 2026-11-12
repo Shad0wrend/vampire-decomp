@@ -13031,6 +13031,7 @@
 0x100122e2 func   _trigger_inventory_check trigger_inventory_check
 0x100122e7 func   ?vfunc2@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc2
 0x100122f6 func   ?sub_10214780@CPropHaunted@@QAEXXZ CPropHaunted::sub_10214780
+0x100122fb func   ?ShiftElementsLeft@?$CUtlVector@UCFlameRecord@@V?$CUtlMemory@UCFlameRecord@@@@@@QAEXHH@Z CUtlVector<CFlameRecord,CUtlMemory<CFlameRecord> >::ShiftElementsLeft
 0x100122fb func   ?sub_103e3e40@SElemVec1c@@QAEXHH@Z SElemVec1c::sub_103e3e40
 0x10012300 func   ?sub_102ea2d0@CUnknown10359c50@@QAEHH@Z CUnknown10359c50::sub_102ea2d0
 0x10012305 func   ?sub_100dafa0@@YAXXZ sub_100dafa0
