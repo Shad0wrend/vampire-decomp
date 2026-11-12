@@ -11771,6 +11771,7 @@
 0x10010a50 func   ?sub_1028d820@@YAXH@Z sub_1028d820
 0x10010a55 func   ?vfunc451@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc451
 0x10010a5a func   ??0CAI_PlaneSolver@@QAE@H@Z CAI_PlaneSolver::CAI_PlaneSolver
+0x10010a5f func   ?sub_10226420@CItemContainerLock@@QAEPAV1@XZ CItemContainerLock::sub_10226420
 0x10010a69 func   ?sub_10334940@@YAMPBMHM@Z sub_10334940
 0x10010a6e func   ?sub_10337bd0@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::sub_10337bd0
 0x10010a73 func   ?sub_10170750@CBasePlayer@@QAEXXZ CBasePlayer::sub_10170750

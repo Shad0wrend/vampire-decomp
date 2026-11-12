@@ -160482,6 +160482,24 @@ extern "C" CBaseEntity *item_container_lock()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10226420 size=0x30
+#include "CItemContainerLock.h"
+#include "CBaseVampireSkillEntity.h"
+
+extern int vt_1048d30c[];
+
+// TARGET: CItemContainerLock::sub_10226420
+CItemContainerLock *CItemContainerLock::sub_10226420()
+{
+	((CBaseVampireSkillEntity *)this)->sub_1020aa70();
+	m_hContainer = 0xffffffff;
+	*(int **)this = vt_1048d30c;
+	m_n81c = 3;
+	m_n818 = 10;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102265c0 size=0x43
 #include "CPlayerEvents.h"
 void *sub_100aa720(int size);
