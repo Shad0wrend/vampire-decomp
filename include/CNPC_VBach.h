@@ -399,7 +399,7 @@ public:
 	virtual void vfunc439();
 	virtual void vfunc440_slot();
 	virtual void vfunc441();
-	virtual void vfunc442();
+	virtual void vfunc442(int *pTask);
 	virtual void vfunc443();
 	virtual void vfunc444(void *pTask);	// slot 444 "StartTask"
 	virtual void vfunc445();
