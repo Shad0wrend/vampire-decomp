@@ -5334,6 +5334,79 @@ void CPhysicsPushedEntities::sub_100360a0(CBaseEntity *pEntity, const float *pRo
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036270 size=0x276
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CPhysicsPushedEntities.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "utlvector.h"
+#include <malloc.h>
+extern void (__cdecl *g_109f362c)(const char *pMsg, ...);
+extern float g_104454c4;
+void sub_10036590(CBaseEntity *pEntity, const Vector *pOrigin, const Vector *pMove, void *pTrace);
+
+struct CPushBlockerView : public CBaseEntity
+{
+	bool IsSolidInl()
+	{
+		ScopeTrace t("CBaseEntity::IsSolid", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		return m_n2b0 && !(m_b2b4 & 4);
+	}
+	bool IsSolidFlagSetInl(int flags)
+	{
+		ScopeTrace t("CBaseEntity::IsSolidFlagSet", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		return (m_b2b4 & flags) != 0;
+	}
+	bool IsPointSizedInl() { return m_fl2b8 == g_104454c4; }
+};
+
+bool CPhysicsPushedEntities::sub_10036270(MovedEntity_t &info, const Vector &vecAbsPush, bool bRotationalPush)
+{
+	ScopeTrace trace("CPhysicsPushedEntities::SpeculativelyCheckPush", g_106b8540);
+	CPushBlockerView *pBlocker = (CPushBlockerView *)info.m_pEntity;
+	int *pPusherHandles = (int *)alloca(m_rgPusher.m_Size * sizeof(int));
+	sub_10035f00(pPusherHandles);
+	sub_10036590(pBlocker, ((CEntityVSlots *)pBlocker)->slot217(), &vecAbsPush, info.m_pad10);
+	sub_10035fd0(pPusherHandles);
+
+	if (info.m_flFraction != g_104454c4)
+	{
+		((CEntityVSlots *)pBlocker)->slot216(&info.m_vecEndPos);
+		if (pBlocker->m_p9c)
+		{
+			pBlocker->vfunc62(&info.m_vecEndPos.x);
+			((CCollisionProperty *)(0x270 + (char *)pBlocker))->sub_100ddd90();
+			pBlocker->sub_100b3b00();
+		}
+	}
+
+	if (!bRotationalPush && info.m_flFraction == 1.0)
+	{
+		if (pBlocker->sub_10035a70(0))
+			g_109f362c("Interpenetrating entities! (%s and %s)\n", pBlocker->sub_1009f200(), (*(CUtlVector<PusherInfo_t> *)&m_rgPusher)[0].m_pEntity->sub_1009f200());
+		return true;
+	}
+	info.m_bBlocked = pBlocker->sub_10035a70(0);
+	if (!info.m_bBlocked)
+		return true;
+	if (pBlocker->IsPointSizedInl())
+		return true;
+	if (!pBlocker->IsSolidInl() || pBlocker->IsSolidFlagSetInl(0x20))
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10036590 size=0x1f8
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
