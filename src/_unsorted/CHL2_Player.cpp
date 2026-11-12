@@ -886,6 +886,80 @@ void CHL2_Player::vfunc471()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10351e10 size=0x263
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+#include "CHL2_Player.h"
+#include "CVFeat_t.h"
+#include "engineserver.h"
+#include "ConVar.h"
+
+struct ConVarView7c
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad[0x28 - 4];
+	float m_f28;
+	int m_n2c;
+};
+
+#define LV1(p) virtual void p();
+#define LV10(p) LV1(p##0) LV1(p##1) LV1(p##2) LV1(p##3) LV1(p##4) LV1(p##5) LV1(p##6) LV1(p##7) LV1(p##8) LV1(p##9)
+#define LV100(p) LV10(p##0) LV10(p##1) LV10(p##2) LV10(p##3) LV10(p##4) LV10(p##5) LV10(p##6) LV10(p##7) LV10(p##8) LV10(p##9)
+
+struct CharView351e10
+{
+	LV100(a) LV10(b) LV1(c0) LV1(c1) LV1(c2) LV1(c3) LV1(c4) LV1(c5)
+	virtual char vfunc116();
+	LV10(d) LV10(e) LV10(f) LV10(g) LV1(h0)
+	virtual char vfunc158();
+	LV100(i) LV100(j) LV10(k) LV10(l) LV10(m) LV10(n) LV1(o0) LV1(o1) LV1(o2) LV1(o3) LV1(o4)
+	virtual int vfunc404(CBasePlayer *pPlayer);
+	char m_pad0004[0x2e0 - 4];
+	int m_nEdict2e0;
+	char sub_10269aa0(int a);
+	const char *sub_100ab4f0();
+};
+
+struct EntView351e10
+{
+	char m_pad0000[0x98];
+	CharView351e10 *m_pChar98;
+};
+
+extern ConVar g_1070b078;
+extern ConVar g_10938358;
+extern ConVar g_10938310;
+void __cdecl sub_10119750(const char *fmt, ...);
+EntView351e10 *__cdecl sub_101d1d10(CBasePlayer *pPlayer, EntView351e10 *pPrev);
+
+
+// TARGET: CHL2_Player::vfunc470
+void CHL2_Player::vfunc470()
+{
+	if (!g_1070b078.GetBool())
+		return;
+	CBasePlayer *pPlayer = (CBasePlayer *)this;
+	sub_10119750("World light on Player: %f", engine->vfunc118(pPlayer->vfunc192()));
+	sub_10119750("World Min: %.2f   Max: %.2f   Scale: %.2f", g_10938310.GetFloat(), g_10938358.GetFloat(), g_10938358.GetFloat() - g_10938310.GetFloat());
+	sub_10119750("Player Light Level: %f", pPlayer->m_f1C8C);
+	CVFeat_t *pFeat = CVFeatSet::Find(1);
+	sub_10119750("Stealth modifier: %d Stealth total:%d", ((CBaseCombatCharacter *)pPlayer)->sub_1032fab0(), pFeat->sub_101e56e0(pPlayer));
+	sub_10119750("Hostile / Frightened NPCs that can see the player:");
+	for (EntView351e10 *pEnt = sub_101d1d10(pPlayer, 0); pEnt; pEnt = sub_101d1d10(pPlayer, pEnt)) {
+		CharView351e10 *pNPC = pEnt->m_pChar98;
+		if (pNPC && pNPC->sub_10269aa0(0x5a) && pNPC->vfunc158() && !pNPC->vfunc116()
+			&& (pNPC->vfunc404(pPlayer) == 1 || pNPC->vfunc404(pPlayer) == 2)) {
+			int nIndex = engine->vfunc35(pNPC->m_nEdict2e0);
+			const char *pszName = pNPC->sub_100ab4f0();
+			sub_10119750("(%d) - %s", nIndex, pszName);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10352120 size=0x61c
 template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CBaseEntity.h"
