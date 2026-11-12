@@ -26,7 +26,7 @@ public:
 	virtual void vfunc205(); virtual void vfunc206(); virtual void vfunc207(); virtual void vfunc208(); virtual void vfunc209();
 	virtual void vfunc210(); virtual void vfunc211(); virtual void vfunc212(int set); virtual void vfunc213(); virtual void vfunc214();
 	virtual void vfunc215(); virtual void vfunc216(); virtual void vfunc217(); virtual void vfunc218(); virtual void vfunc219();
-	virtual float *vfunc220(); virtual void vfunc221(); virtual void vfunc222(); virtual void vfunc223(); virtual void vfunc224();
+	virtual float *vfunc220(); virtual float *vfunc221(); virtual void vfunc222(); virtual void vfunc223(); virtual void vfunc224();
 	virtual void vfunc225(); virtual void vfunc226(); virtual void vfunc227(); virtual void vfunc228(); virtual void vfunc229();
 	virtual void vfunc230(); virtual void vfunc231(); virtual void vfunc232(); virtual void vfunc233(); virtual void vfunc234();
 	virtual void vfunc235(); virtual void vfunc236(); virtual void vfunc237(); virtual void vfunc238(); virtual void vfunc239();
@@ -71,12 +71,17 @@ public:
 	void sub_1042ab80(CBaseEntity *pEnt);	// not in this class's vtable (the class is not known): unless pEnt is the entity behind the handle at +0x19b0, a grenade with flag bit 0 gets its velocity (+0x3bc) scaled by 0.95f (sub_100b2e30) with the bit-12 position refresh around it, any other calls slot 408
 
 	void sub_1042a540();
+	void sub_1042a750(CBaseEntity *pOther);	// "CBaseGrenade::BounceTouch"-like: damage the touched entity once a second while fast, warn the AI (InsertSound) when slow, friction on the ground else slot 408 (BounceSound), playback rate from the speed
 	void sub_1042ae60();	// the grenade's think: removes it when sub_100a9510 refuses; else shows the effect (sub_101babc0) at the origin plus half a second of travel for the speed, thinks again 0.2 seconds later and, with the object at +0x3e0 set, hands it half the velocity (sub_100b2e30)
 	bool sub_100a9510();	// stub 0x10013fde, asked by the think
 	void sub_10429d00();
 
 	int m_n03e0;	// 0x3e0: an object (pointer)
-	char m_pad03e4[0x19b0 - 0x3e4];
+	char m_pad03e4[0x6f4 - 0x3e4];
+	float m_flPlaybackRate6f4;	// 0x6f4: the animation rate BounceTouch sets from the speed
+	char m_pad06f8[0x1564 - 0x6f8];
+	float m_flNextAttack1564;	// 0x1564: BounceTouch's damage debounce time
+	char m_pad1568[0x19b0 - 0x1568];
 	unsigned int m_hHeld19b0;	// 0x19b0: handle of the entity the grenade is checked against (slot 407)
 	char m_pad19b4;	// 0x19b4
 	char m_b19b5;	// 0x19b5: cleared by the constructor
