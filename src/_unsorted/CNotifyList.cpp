@@ -25,6 +25,43 @@ void *CNotifyList::vfunc0(CBaseEntity *pNotify, CBaseEntity *pWatched)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f8820 size=0x54
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
+// TARGET: CNotifyList::vfunc1
+#include "CNotifyList.h"
+#include "utlvector.h"
+
+struct notifylistentry_t
+{
+	CBaseEntity *pNotify;
+	CBaseEntity *pWatched;
+};
+
+// CUtlVector::FastRemove as this build has it (memmove of the last element over elem)
+template <class T>
+inline void FastRemoveMove(CUtlVector<T> *v, int elem)
+{
+	Destruct(&v->Element(elem));
+	if (v->m_Size > 0)
+	{
+		memmove(&v->Element(elem), &v->Element(v->m_Size - 1), sizeof(T));
+		--v->m_Size;
+	}
+}
+
+void CNotifyList::vfunc1(CBaseEntity *pNotify, CBaseEntity *pWatched)
+{
+	for (int i = m_nPairs - 1; i >= 0; --i)
+	{
+		if (m_pairs.m_pMemory[i].m_a == (int)pNotify && m_pairs.m_pMemory[i].m_b == (int)pWatched)
+		{
+			FastRemoveMove((CUtlVector<notifylistentry_t> *)&m_pairs, i);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f88a0 size=0x81
 #include "CBaseEntity.h"
 #include "CNotifyList.h"
