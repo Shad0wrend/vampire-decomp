@@ -331,6 +331,26 @@ have written it rather than adding temporaries that spell out the assembly:
   label; `dz += X; r = dz;`; a hash decoded into an int local; const `operator[]` per Vector component; a base ctor
   written as a call in a hand ctor; `(float)(x * 1.0)` for float arguments (0x1017ed00, workaround). Changing an
   operand's width (short -> int counter) moves later registers (0x10122cd0).
+- **Round 5 (score 2-19):** SDK inlines in a local view struct close walls nothing else does:
+  `CGameTrace::DidHit()` then `if (tr.DidHit()) return false; return true;` (0x102a0fb0); SDK inlines on a global
+  object via a view struct declared `extern` at the object's base address (field address minus offset, 0x1019d040);
+  `HasSpawnFlags(p, 32)` with the mask as a parameter gives `mov dl,0x20; test [mem],dl` (0x100c93b0); a free inline
+  that takes values as parameters (`::IsSolid(solid, flags)` under CCollisionProperty::IsSolid) keeps a second null
+  test (0x100342c0); an SDK inline called with a constant false keeps its dead arm (`fTranslate && ...`) or the
+  vtable temps change registers (IsCurSchedule: 0x1027a420 and twin 0x103e0fa0).
+- **Unnamed Troika-looking functions can be plain SDK ones** (0x100c93b0 ButtonResponseToTouch).
+- **Pushes that do not add up:** count each callee's arguments from its `ret N` (and its stub target); pushes before a
+  virtual can belong to an enclosing call, a lone `push 1` can be a trailing `true` (0x102ed390).
+- **A callee whose registers the caller relies on** (ecx kept across calls, a loop counter in edx across a call): copy
+  the matched callee bodies (and their callees) into one `block_` namespace before the caller under `#pragma
+  auto_inline(off)`, as real thiscall members, not fastcall copies (0x100789b0, 0x101dc750).
+- **A bool return whose tails read `mov al,1` / `xor al,al` before a ScopeTrace `dec [ecx]`** is `return a && b == c;`
+  (operand order of `==` matters, 0x10051c10). A container scan that reloads the element pointer each pass is the
+  real `CUtlVector<T>` with its inline `operator[]` (0x101b4cc0).
+- **Two names for one global break CSE:** `::g_10566458` and `EHandleDetail::g_10566458` are separate symbols to VC6;
+  mixing them forces a reload. Use one spelling (ehandle.h) at every use in a function.
+- **Valve's naked asm:** mathlib's VectorMA (0x101387e0) is `__declspec(naked)` x87 asm in the game; pasted verbatim
+  it judges 0 but submit refuses naked (tool policy). No C++ form reaches it.
 
 ## VC6 stack slots: what moves them and what does not (measured 2026-11-08, partial)
 
@@ -447,9 +467,10 @@ Which calls VC6 expands is its own choice, and it follows the whole function: an
 the container call in the function (a later inline call, an inline call in another branch, a local whose inline
 destructor runs at the end of the scope, such as the ScopeTrace) makes VC6 keep the deep, big members (Grow,
 Links) as calls; without one it expands them. So write the whole function the Source way and the calls come out as
-in the game; a `call` you do not get usually means a missing inline object or call later in the function. One known
-exception: CRecipientFilter::AddRecipient-like code (0x1019d040, 0x101bd010) calls Grow where the obvious source
-expands it.
+in the game; a `call` you do not get usually means a missing inline object or call later in the function. The
+former exception CRecipientFilter::AddRecipient (0x1019d040) was exactly that: its missing inline was the prediction
+system's `GetSuppressHost()` (a view struct of the global at 0x1072b3fc with the SDK inlines); with it a plain
+`m_Recipients.AddToTail(index)` keeps Grow as a call (matched 2026-11-12).
 
 Byte-identical this way on the bench copy (2026-10-23; a new name still needs its rename_symbol): 0x100ecb40 (three `v.Purge()`), 0x100eb490 (a class with three
 CUtlVector<int> members and an empty destructor), 0x10323370 AddToPresenceList (`g_List.AddToTail(CEntHandle(this))`
