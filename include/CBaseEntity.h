@@ -325,7 +325,7 @@ public:
 	unsigned int m_hUseFilter;	// 0x0218: entity handle of the use filter
 	string_t m_iszDamageFilterName;	// 0x021c
 	unsigned int m_hDamageFilter;	// 0x0220: entity handle of the damage filter
-	union { char m_pad0224[0x228 - 0x224]; unsigned int m_fDebugOverlays224; };	// 0x0224: the debug overlay flags (bit 24 asked by CNodeEnt::vfunc103)
+	union { char m_pad0224[0x228 - 0x224]; unsigned int m_fDebugOverlays224; signed char m_bDebugOverlays224; };	// 0x0224: the debug overlay flags (bit 24 asked by CNodeEnt::vfunc103)
 	void *m_pTimedOverlays;	// 0x0228
 	int m_nSimulationTick;	// 0x022c
 	char m_pad0230[0x254 - 0x230];
