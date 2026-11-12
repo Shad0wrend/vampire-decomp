@@ -44831,6 +44831,47 @@ void CBeam::sub_100bbe70(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbef0 size=0x13d
+#include "CBeam.h"
+#include "CGameTrace.h"
+#include "CVDmg_t.h"
+#include "CUnknown101c26d0.h"
+
+void sub_101c2c30();
+void sub_101c2c60();
+
+inline float CurTime() { return gpGlobals->curtime; }
+
+// TARGET: CBeam::sub_100bbef0
+void CBeam::sub_100bbef0(CGameTrace *pTrace)
+{
+	sub_100bbbf0();
+	if ((pTrace->m_fraction < 1.0f || pTrace->m_allsolid || pTrace->m_startsolid) && pTrace->m_pEnt != 0)
+	{
+		CBaseEntity *pEnt = pTrace->m_pEnt;
+		if (pEnt && pEnt->m_nTakeDamage)
+		{
+			sub_101c2c30();
+			Vector vecDir = *(Vector *)pTrace->m_endpos - *(Vector *)pTrace->m_startpos;
+			VectorNormalize(vecDir);
+			float flDamage = (gpGlobals->curtime - m_flStartTime) * m_flDamageRate;
+			CVDmg_t vdmg;
+			vdmg.sub_101fa960((CVDmgSource_t *)this);
+			int nDamage = (int)flDamage;
+			if (nDamage < 1)
+				nDamage = 1;
+			vdmg.sub_101fa8d0(0, 0, nDamage);
+			CUnknown101c26d0 info;
+			info.sub_101c26d0(this, this, 1.0f, 0, 0, (int)&vdmg, -1);
+			pEnt->sub_100a7d00((int)&info, (int)&vecDir, (int)pTrace);
+			sub_101c2c60();
+			vdmg.sub_101fa680();
+		}
+	}
+	m_flStartTime = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc080 size=0x41
 #include "CBeam.h"
 #include "inputdata_t.h"
