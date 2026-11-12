@@ -306,6 +306,78 @@ void CRotDoorUnit::sub_100f2a00(Vector *pMins, Vector *pMaxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2bd0 size=0x2f4
+#include "CAI_Node.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "VectorHelpers.h"
+#include "CRotDoor.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+
+struct RotDoorEntV
+{
+	EVS10(a) EVS10(b) EVS10(c) EVS10(d) EVS10(e) EVS10(f) EVS10(g) EVS10(h) EVS10(i) EVS10(j)
+	EVS10(k) EVS10(l) EVS10(m) EVS10(n) EVS10(o) EVS10(p) EVS10(q) EVS10(r) EVS10(s) EVS10(t)
+	EVS10(u)
+	EVS(v0) EVS(v1) EVS(v2) EVS(v3) EVS(v4) EVS(v5) EVS(v6)
+	virtual const Vector &GetAbsOrigin();
+};
+
+extern float g_104454c4;
+
+void CRotDoor::vfunc246(CBaseEntity *pNPC, CNPCOpenData *pOut, char bFlag)
+{
+	ScopeTrace trace("CRotDoor::GetNPCOpenData", g_106b8540, g_106b8540);
+	if (pNPC == 0 || (m_flags204 & 0xc0)) {
+		pOut->m_nResult = -1;
+		return;
+	}
+	Vector vecRight = sub_101d2f40(m_flAngle6f8);
+	Vector vecDirA = sub_101d2f40(m_flAngle6fc);
+	Vector vecDirB = sub_101d2f40(m_flAngle700);
+	Vector vecDir;
+	{
+		Vector vecOrigin = ((RotDoorEntV *)this)->GetAbsOrigin();
+		const Vector &vecDoor = ((RotDoorEntV *)this)->GetAbsOrigin();
+		const Vector &vecNPC = ((RotDoorEntV *)pNPC)->GetAbsOrigin();
+		float dx = vecNPC.x - vecDoor.x;
+		float dy = vecNPC.y - vecDoor.y;
+		if (vecDirA.x * dx + vecDirA.y * dy >= g_104454c4)
+			vecDir = vecDirA;
+		else if (vecDirB.x * dx + vecDirB.y * dy >= g_104454c4)
+			vecDir = vecDirB;
+		else {
+			pOut->m_nResult = -1;
+			return;
+		}
+		if (bFlag) {
+			pOut->m_vecOrigin = vecOrigin + vecRight * 24.0f;
+			pOut->m_vecOrigin.z -= 54.0f;
+			pOut->m_vecOrigin += vecDir * 100.0f;
+			pOut->m_vecAngles = -vecDir;
+			pOut->m_nResult = 1;
+			return;
+		}
+		pOut->m_vecOrigin = vecOrigin + vecRight * 24.0f;
+		pOut->m_vecOrigin.z -= 54.0f;
+		pOut->m_vecOrigin += vecDir * 50.0f;
+	}
+	{
+		Vector vecFace;
+		vecFace.sub_100f2f90(-vecDir.x, -vecDir.y, -vecDir.z);
+		pOut->m_vecAngles = vecFace;
+	}
+	pOut->m_nResult = 0xc84;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2fc0 size=0x50
 #include "CRotDoor.h"
 #include "CEntityVSlots.h"

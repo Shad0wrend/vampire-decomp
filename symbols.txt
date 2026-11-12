@@ -15069,6 +15069,7 @@
 0x100152ad func   ?sub_100b5970@CBaseFlex@@QAEXXZ CBaseFlex::sub_100b5970
 0x100152b2 func   ?sub_10269960@CBaseEntity@@QAEXXZ CBaseEntity::sub_10269960
 0x100152b7 func   ?sub_10251790@@YAMXZ sub_10251790
+0x100152bc func   ?vfunc246@CRotDoor@@UAEXPAVCBaseEntity@@PAUCNPCOpenData@@D@Z CRotDoor::vfunc246
 0x100152c1 func   _prop_physics prop_physics
 0x100152c6 func   ?vfunc264@CSceneEntity@@UAEXPAVCUnknown1007ed10@@HPAUCSceneEvent@@@Z CSceneEntity::vfunc264
 0x100152cb func   ?vfunc81@CItemGDriversLicenseGimble@@QAEHXZ CItemGDriversLicenseGimble::vfunc81
