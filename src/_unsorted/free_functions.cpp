@@ -235453,6 +235453,99 @@ void CNPC_VMingXiao::sub_10398fd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103990c0 size=0x432
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CNPC_VMingXiao.h"
+#include "CRagdollProp.h"
+#include "CUnknown100290c0.h"
+#include "CUnknown10398d90.h"
+#include "ConVar.h"
+#include "IPhysicsObject.h"
+
+extern ConVar g_1093bbc8;
+extern ConVar g_1093bc10;
+extern ConVar g_1093b9f8;
+extern float g_104454c4;
+extern char g_1057c684[];
+extern char g_10538764[];
+extern "C" void *__cdecl __RTDynamicCast(void *p, long off, void *src, void *dst, int bThrow);
+void sub_101cd970(CBaseEntity *p);
+float sub_101d2c70(const Vector *v);
+float sub_1013d580(float a, float b);
+Vector sub_101d2f40(float flYaw);
+Vector *sub_1032b960();
+
+struct CBoundsView { char pad[0x274]; Vector mins; Vector maxs; };
+
+#define LOOK(h) ((CBaseEntity *)((CUnknown100290c0 *)g_10566458)->sub_100290c0((unsigned int *)&(h)))
+
+inline float CVarF2(ConVar &cv) { return cv.m_pParent->vfunc1() ? (double)g_104454c4 : cv.m_pParent->m_fValue; }
+inline double CVarD(ConVar &cv) { return cv.m_pParent->vfunc1() ? (double)g_104454c4 : cv.m_pParent->m_fValue; }
+
+void CNPC_VMingXiao::sub_103990c0()
+{
+	if (LOOK(m_h6738)) {
+		sub_101cd970(LOOK(m_h6738));
+		*(CBaseHandle *)&m_h6738 = (IHandleEntity *)0;
+	}
+	CBaseEntity *pEnt = vfunc167();
+	if (pEnt) {
+		Vector vecOrigin = *(Vector *)((CNPC_VMingXiao *)LOOK(m_h6718))->vfunc220_slot();
+		Vector vecTarget;
+		sub_102c36d0(vecOrigin, pEnt, CVarF2(g_1093bbc8), 0, &vecTarget);
+		CBoundsView *pb = (CBoundsView *)pEnt;
+		Vector *pSize = sub_1032b960();
+		VectorSubtract(pb->maxs, pb->mins, *pSize);
+		vecTarget.z += pSize->z * 0.5f;
+		Vector dir = vecTarget - vecOrigin;
+		float flLenSqr = dir.LengthSqr();
+		float flVecYaw = sub_101d2c70(&dir);
+		float flYaw = vfunc221_slot()[1];
+		float flDiff = sub_1013d580(flVecYaw, flYaw);
+		if (flDiff <= -20.0f) {
+			float z = dir.z;
+			dir = sub_101d2f40(flYaw - 20.0f);
+			dir.z = z;
+		} else if (flDiff >= 20.0f) {
+			float z = dir.z;
+			dir = sub_101d2f40(flYaw + 20.0f);
+			dir.z = z;
+		}
+		VectorNormalize(dir);
+		float flSpeed;
+		if ((float)(g_1093bc10.GetFloat() + CVarD(g_1093bbc8) * flLenSqr) > 1000.0f)
+			flSpeed = g_1093bc10.GetFloat() + g_1093bbc8.GetFloat() * flLenSqr;
+		else
+			flSpeed = 1000.0f;
+		float flGrav = g_1093b9f8.GetFloat();
+		dir = dir * flSpeed;
+		dir.z += flGrav * flLenSqr;
+		CRagdollProp *pRag = (CRagdollProp *)__RTDynamicCast(LOOK(m_h6718), 0, g_10538764, g_1057c684, 0);
+		if (pRag) {
+			Vector zero(0, 0, 0);
+			pRag->vfunc266((int)&dir, (int)&zero);
+		} else {
+			IPhysicsObject *pPhys = (IPhysicsObject *)m_h6718.Get()->m_obj36c;
+			if (pPhys) {
+				Vector zero(0, 0, 0);
+				Vector vel, angVel;
+				pPhys->vfunc40(&vel.x, &angVel.x);
+				pPhys->vfunc39(&dir.x, &zero.x);
+			}
+		}
+	}
+	m_h6718 = (CBaseEntity *)0;
+	sub_10013110(0.75f);
+	((CUnknown10398d90 *)this)->sub_10398d90(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10399610 size=0x22b
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CUnknown101d7520.h"
