@@ -95,6 +95,104 @@ bool CNPC_VSabbatLeader::sub_103a9e70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103aa060 size=0x29e
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VSabbatLeader.h"
+#include "CEntityVSlots.h"
+#include "CUnknown10924a1c.h"
+#include "ScopeTrace.h"
+
+extern const char g_1064ed7c[];
+
+inline float GetDifficultyRange()
+{
+	if (g_10924a1c->vfunc1())
+		return 0.0f;
+	return g_10924a1c->m_fl28;
+}
+
+int CNPC_VSabbatLeader::vfunc604(int unused)
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::SelectScheduleMeleeCombat", g_106b8540);
+
+	CEntityVSlots *slots = (CEntityVSlots *)this;
+
+	if (!m_b6078)
+	{
+		if (!slots->slot599((CEntityVSlots *)slots->slot167()))
+		{
+			double f = g_10924a1c->vfunc1() ? 0.0f : g_10924a1c->m_fl28;
+			if (m_f6268 > (float)(f + f))
+			{
+				m_pszFile1b30 = g_1064ed7c;
+				m_nLine1b34 = 0x4f0;
+				return 0xe7;
+			}
+			m_pszFile1b30 = g_1064ed7c;
+			m_nLine1b34 = 0x4f4;
+			return 0x15f;
+		}
+	}
+
+	if (sub_10269aa0(0x48))
+	{
+		m_pszFile1b30 = g_1064ed7c;
+		m_nLine1b34 = 0x500;
+		return 0xcd;
+	}
+
+	if (sub_10269aa0(0x51))
+	{
+		m_pszFile1b30 = g_1064ed7c;
+		m_nLine1b34 = 0x50c;
+		return 0xdd;
+	}
+
+	if (m_f626c > 64.0f)
+	{
+		if (m_fl6274 == -1.0f)
+			m_fl6274 = enginerandom->vfunc1(3.0f, 4.0f) + gpGlobals->curtime;
+	}
+	else
+	{
+		m_fl6274 = -1.0f;
+	}
+
+	if (sub_10269aa0(0x59))
+	{
+		slots->slot601(slots->slot167());
+		m_pszFile1b30 = g_1064ed7c;
+		m_nLine1b34 = 0x528;
+		return 0x15b;
+	}
+
+	if (sub_10269aa0(0x60) && m_f6268 < 120.0f)
+	{
+		m_pszFile1b30 = g_1064ed7c;
+		m_nLine1b34 = 0x535;
+		return 0xdd;
+	}
+
+	if (!sub_10269aa0(9) && !sub_10269aa0(0x60))
+	{
+		m_pszFile1b30 = g_1064ed7c;
+		m_nLine1b34 = 0x53d;
+		return 0xc7;
+	}
+
+	m_pszFile1b30 = g_1064ed7c;
+	m_nLine1b34 = 0x53b;
+	return 0xcb;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103aa3b0 size=0x92
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

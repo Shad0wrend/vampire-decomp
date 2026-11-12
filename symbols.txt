@@ -6271,6 +6271,7 @@
 0x10009511 func   ?sub_10346070@CBaseCombatCharacter@@QAEMXZ CBaseCombatCharacter::sub_10346070
 0x10009516 func   ?sub_102c8a90@CUnknown102c8a90@@QAEXXZ CUnknown102c8a90::sub_102c8a90
 0x1000951b func   ?sub_101e90f0@CUnknown10739d08@@QAEMPAVCBaseCombatCharacter@@@Z CUnknown10739d08::sub_101e90f0
+0x10009525 func   ?vfunc604@CNPC_VSabbatLeader@@QAEHH@Z CNPC_VSabbatLeader::vfunc604
 0x1000952f func   ?vfunc363@CWeaponRanged_Pistol_Anaconda@@QAEHXZ CWeaponRanged_Pistol_Anaconda::vfunc363
 0x10009539 func   ?sub_102464d0@@YAHHH@Z sub_102464d0
 0x1000953e func   ?sub_1024b090@CVNameId@@QAE_NPBD@Z CVNameId::sub_1024b090
