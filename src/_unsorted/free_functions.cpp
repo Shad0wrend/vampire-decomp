@@ -95259,6 +95259,47 @@ void CBasePlayer::sub_1016eec0(const char *pszName, int *pOut, int nDwords)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016f0f0 size=0x145
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "CBasePlayer.h"
+#include "ScopeTrace.h"
+
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen, memcpy)
+
+extern int (__cdecl *g_109f3854)(const char *, const char *, int);
+extern void (__cdecl *g_109f364c)(const char *, ...);
+
+#define EMAIL_MAX(a, b) ((a) > (b) ? (a) : (b))
+#define PLAYER_NAME(p) (*(const char **)((char *)(p) + 0x26c))
+
+static inline void CopyDwords(int *pDest, const int *pSrc, int nDwords)
+{
+	memcpy(pDest, pSrc, nDwords * 4);
+}
+
+void CBasePlayer::sub_1016f0f0(const char *name, const void *data, int unused)
+{
+	ScopeTrace trace("CBasePlayer::StoreGlobalEmailFlags", this ? (PLAYER_NAME(this) ? PLAYER_NAME(this) : g_106b8540) : g_105387dc);
+	int len = strlen(name);
+	for (int i = 0; i < m_GlobalEmail.Count(); i++) {
+		if (g_109f3854(name, m_GlobalEmail[i].m_szName, EMAIL_MAX(len, (int)strlen(m_GlobalEmail[i].m_szName))) == 0) {
+			CopyDwords(m_GlobalEmail[i].m_Data, (const int *)data, 0x80);
+			return;
+		}
+	}
+	g_109f364c("Could not save email for terminal: %s\n", name);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016f2a0 size=0x64b
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
