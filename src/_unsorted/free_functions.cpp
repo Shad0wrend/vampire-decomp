@@ -156928,6 +156928,44 @@ void CSecCamera::sub_1020c890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020c9a0 size=0x1c7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CSecCamera.h"
+#include "CPASAttenuationFilter.h"
+#include "engineserver.h"
+#include "engineiface.h"
+
+int sub_10228350(float flAttenuation);
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline int ENTINDEX(void *pEdict) { return engine->vfunc35((int)pEdict); }
+// TARGET: CSecCamera::sub_1020c9a0
+void CSecCamera::sub_1020c9a0(const char *pszSound)
+{
+	if (m_pszSound7d4)
+		enginesound->vfunc7(ENTINDEX((void *)m_pEdict2e0), 3, (char *)STRINGR(m_pszSound7d4));
+
+	m_pszSound7d4 = pszSound;
+	if (pszSound) {
+		float flVolume = (pszSound == m_sAlarmSnd) ? 1.0 : 0.6;
+		int nSoundLevel = sub_10228350((pszSound == m_sAlarmSnd ? 2.0 : 1.25) * m_fVisRange);
+
+		CPASAttenuationFilter filter(this, (soundlevel_t)nSoundLevel);
+		filter.MakeReliable();
+		enginesound->vfunc2(&filter, ENTINDEX((void *)m_pEdict2e0), 3, pszSound, flVolume,
+			nSoundLevel, 0, 100, 0, 0, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020cbf0 size=0x4a
 #include "CSecCamera.h"
 

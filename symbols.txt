@@ -13430,6 +13430,7 @@
 0x100128a0 func   ?sub_102aa640@CAI_BaseNPCTroika@@QAEXPAUCTroikaPickHolder@@@Z CAI_BaseNPCTroika::sub_102aa640
 0x100128a5 func   ?sub_100b2010@CBaseEntity@@QAEXPBMPAM@Z CBaseEntity::sub_100b2010
 0x100128aa func   ?sub_1033d700@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033d700
+0x100128af func   ?sub_1020c9a0@CSecCamera@@QAEXPBD@Z CSecCamera::sub_1020c9a0
 0x100128b4 func   ?vfunc471@CNPC_VScurrying@@UAEMXZ CNPC_VScurrying::vfunc471
 0x100128b9 func   ?vfunc142@CItemContainer@@QAEHPAUCItemDamageInfo@@@Z CItemContainer::vfunc142
 0x100128be func   ?vfunc173@CGameText@@QAEHHHHH@Z CGameText::vfunc173
