@@ -227,7 +227,7 @@ public:
 	virtual void slot532(int a);	// NPC: takes one argument (CAI_BaseNPCTroika::vfunc532, the door nudge passes 2)
 	EVS(533) EVS(534) EVS(535) EVS(536) EVS(537) EVS(538) EVS(539)
 	EVS(540) virtual CUnknown102e0150 *slot541();	// NPC: the object that remembers where its enemies were last seen
-	EVS(542) EVS(543) EVS(544) EVS(545) EVS(546) EVS(547) EVS(548) EVS(549)
+	EVS(542) EVS(543) EVS(544) EVS(545) virtual const char *slot546(int slot); EVS(547) EVS(548) EVS(549)
 	EVS10(55) EVS(560) EVS(561) EVS(562) EVS(563) EVS(564) EVS(565)
 	virtual char slot566(void *pHint);	// NPC: whether it accepts the hint (CNPC_VWerewolf::IsValidTeleportHint asks it)
 	EVS(567) EVS(568) EVS(569)

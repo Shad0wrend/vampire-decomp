@@ -384,4 +384,12 @@ public:
 	int vfunc546(int a);	// slot 546 (plain overload of the placeholder): the global at 0x10936c74's sub_1000aed4(a), tail called
 	char vfunc532(int unused);	// slot 532 (plain overload of the placeholder): clears the handle at +0x5d24 and the byte at +0x5d30, returns 1
 	int vfunc373(int a);	// slot 373 (plain overload of the placeholder): tells slot 371 and returns a
+	int sub_102767d0();	// slot 124 body "CAI_BaseNPC::DrawDebugTextOverlays" (0x102767d0)
+	int sub_1033e4a0();	// CBaseCombatCharacter::vfunc124 (DrawDebugTextOverlays, stub 0x1000eeda), called directly
+	int sub_103346c0(int ammoType);	// CBaseCombatCharacter member (stub 0x1000ff97): the ammo count of a type
+	void sub_100b1d10();	// CBaseEntity::CalcAbsoluteVelocity (stub 0x1000d486), called directly
+	static bool TestBitDbg(unsigned int bits, int bit) { return ((bits >> bit) & 1) != 0; }
+	const Vector &GetAbsVelocityDbg() { if (TestBitDbg(*(unsigned int *)((char *)this + 0x268), 12)) sub_100b1d10(); return *(Vector *)((char *)this + 0x3bc); }
+	static int ENTINDEXDbg(int pEdict) { return engine->vfunc35(pEdict); }
+	int entindexDbg() { return ENTINDEXDbg(*(int *)((char *)this + 0x2e0)); }
 };
