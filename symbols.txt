@@ -7506,6 +7506,7 @@
 0x1000ad62 func   ??0CUnknown109f08c0@@QAE@H@Z CUnknown109f08c0::CUnknown109f08c0
 0x1000ad67 func   ?vfunc2@CCollisionEvent@@UAEXPAXMHH0@Z CCollisionEvent::vfunc2
 0x1000ad6c func   _npc_VTaxiDriver npc_VTaxiDriver
+0x1000ad71 func   ?sub_102407f0@@YA_NABURayRR_t@@0AAM1@Z sub_102407f0
 0x1000ad76 func   ?sub_10199800@@YAPAXPAX0@Z sub_10199800
 0x1000ad7b func   ?vfunc16@CMoveHelperServer@@UAEXPBMPBD@Z CMoveHelperServer::vfunc16
 0x1000ad80 func   ?sub_1035ec10@@YAPAXXZ sub_1035ec10

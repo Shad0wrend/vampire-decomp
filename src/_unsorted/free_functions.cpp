@@ -173497,6 +173497,66 @@ bool sub_10240670(const Vector &a, const Vector &b, BoxObj *obj, float margin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102407f0 size=0x23e
+#include "Vector.h"
+
+struct RayRR_t { Vector m_Start; Vector m_Delta; };
+float sub_10146150(const Vector *v);
+
+// VectorSubtract as this unit's VC6 inlined it (the shared Vector.h copy is a plain inline that VC6 calls here)
+static __forceinline void RRVectorSubtract(const Vector &a, const Vector &b, Vector &c)
+{
+	c.x = a.x - b.x;
+	c.y = a.y - b.y;
+	c.z = a.z - b.z;
+}
+
+static __forceinline Vector RRSub(const Vector &a, const Vector &b)
+{
+	Vector res;
+	RRVectorSubtract(a, b, res);
+	return res;
+}
+
+// TARGET: sub_102407f0
+bool sub_102407f0(const RayRR_t &ray0, const RayRR_t &ray1, float &t, float &s)
+{
+	Vector v0(ray0.m_Delta);
+	Vector v1(ray1.m_Delta);
+	VectorNormalize(v0);
+	VectorNormalize(v1);
+
+	Vector v0xv1 = v0.Cross(v1);
+	float length = sub_10146150(&v0xv1);
+	if (length == 0.0f)
+		return false;
+
+	Vector p1p0 = RRSub(ray1.m_Start, ray0.m_Start);
+
+	Vector AxC = p1p0.Cross(v0xv1);
+	AxC.Negate();
+	float detT = AxC.Dot(v1);
+
+	AxC = p1p0.Cross(v0xv1);
+	AxC.Negate();
+	float detS = AxC.Dot(v0);
+
+	float invDenom = 1.0f / (length * length);
+	t = detT * invDenom;
+	s = detS * invDenom;
+
+	Vector i0, i1;
+	i0 = v0 * t;
+	i1 = v1 * s;
+	i0 += ray0.m_Start;
+	i1 += ray1.m_Start;
+	if (i0.x == i1.x && i0.y == i1.y && i0.z == i1.z)
+		return true;
+
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10240ac0 size=0x57
 #include "Vector.h"
 struct RayView10240ac0 { Vector m_vecStart; Vector m_vecDelta; };
