@@ -210499,6 +210499,87 @@ void CMPV::sub_102e3a60(Vector from, Vector to, int mask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e3b00 size=0x50a
+#include "Vector.h"
+#include "ConVar.h"
+
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+
+extern ConVar g_10933e08;
+
+struct CBoxGridCollide
+{
+	virtual void vfunc0();
+	virtual const Vector &OBBMins();
+	virtual const Vector &OBBMaxs();
+};
+
+struct CBoxGridOwner
+{
+	char m_pad0[0x270];
+	CBoxGridCollide m_Collision;
+};
+
+struct CBoxGridDrawer
+{
+	int m_unk0;
+	CBoxGridOwner *m_pOwner;
+	void sub_102e3a60(Vector start, Vector end, int mask);
+	void sub_102e3b00(Vector a, Vector b, int mask);
+};
+
+// TARGET: CBoxGridDrawer::sub_102e3b00
+void CBoxGridDrawer::sub_102e3b00(Vector a, Vector b, int mask)
+{
+	float y;
+	float flSteps = clamp(g_10933e08.GetInt(), 2, 10) - 1;
+
+	float x0 = m_pOwner->m_Collision.OBBMins().x;
+	float y0 = m_pOwner->m_Collision.OBBMins().y;
+	float z0 = m_pOwner->m_Collision.OBBMins().z;
+	float x1 = m_pOwner->m_Collision.OBBMaxs().x;
+	float y1 = m_pOwner->m_Collision.OBBMaxs().y;
+	float z1 = m_pOwner->m_Collision.OBBMaxs().z;
+
+	float t6 = x1 - x0; float dx = (((((t6)))) - 0.1) / flSteps;
+	float t8 = y1 - y0; float dy = ((((((t8)))) - 0.1)) / flSteps; float t5 = ((((z1 - z0)))) - 0.1; float dz = ((t5)) / flSteps;
+
+	Vector start, end;
+	float x, z;
+
+	float t2 = a.y; start.y = t2 + y0;
+	end.y = y0 + b.y;
+	z = z0; while (z <= z1) { start.z = z + a.z;
+		end.z = z + b.z;
+		x = x0; while (x <= x1) { start.x = a.x + x;
+			end.x = x + b.x;
+			sub_102e3a60(start, end, mask); x = dx + x; } z = z + dz; }
+
+	float t9 = a.y; float t7 = t9; start.y = t7 + y1;
+	end.y = y1 + b.y;
+	z = z0; while (z <= z1) { start.z = a.z + z;
+		end.z = z + b.z;
+		x = x0; while (x <= x1) { start.x = a.x + x;
+			end.x = b.x + x;
+			sub_102e3a60(start, end, mask); x = dx + x; } z += dz; }
+
+	start.x = a.x + x0;
+	end.x = x0 + b.x;
+	y = y0 + dy; while (y <= y1 - dy) { float t10 = a.y; start.y = t10 + y;
+			float t3 = b.y; end.y = t3 + y;
+			z = z0; while (z <= z1) { start.z = a.z + z;
+				end.z = b.z + z;
+				sub_102e3a60(start, end, mask); z += dz; } y += dy; }
+	start.x = a.x + x1;
+	float t1 = b.x; end.x = t1 + x1;
+	y = dy + y0; while (y <= y1 - dy) { float t0 = a.y; start.y = y + t0;
+			float t4 = b.y; end.y = y + t4;
+			z = z0; while (z <= z1) { start.z = a.z + z;
+				end.z = z + b.z;
+				sub_102e3a60(start, end, mask); z += dz; } y = dy + y; }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e4f20 size=0x13
 struct CUnknown102e4f20 { void * sub_102e4f20(int); };
 void * CUnknown102e4f20::sub_102e4f20(int a0)
