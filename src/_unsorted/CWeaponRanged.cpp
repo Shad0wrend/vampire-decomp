@@ -494,6 +494,64 @@ void CWeaponRanged::vfunc325()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102395c0 size=0x86
+#include "CWeaponRanged.h"
+#include "CBaseCombatCharacter.h"
+
+#define OV(n) virtual void v##n();
+#define OV10(p) OV(p##0) OV(p##1) OV(p##2) OV(p##3) OV(p##4) OV(p##5) OV(p##6) OV(p##7) OV(p##8) OV(p##9)
+struct CWeaponRangedShotSlots {
+	OV(0) OV(1) OV(2) OV(3) OV(4) OV(5) OV(6) OV(7) OV(8) OV(9)
+	OV10(1) OV10(2) OV10(3) OV10(4) OV10(5) OV10(6) OV10(7) OV10(8) OV10(9)
+	OV(100) OV(101) OV(102) OV(103) OV(104)
+	virtual void v105(const char *psz);
+	OV(106) OV(107) OV(108) OV(109)
+	OV10(11) OV10(12) OV10(13) OV10(14) OV10(15) OV10(16) OV10(17) OV10(18) OV10(19)
+	OV10(20) OV10(21) OV10(22) OV10(23) OV10(24) OV10(25) OV10(26)
+	OV(270) OV(271)
+	virtual const char *v272();
+	virtual const char *v273();
+	OV(274) OV(275) OV(276) OV(277) OV(278) OV(279)
+	OV10(28) OV10(29)
+	OV10(30) OV10(31) OV10(32) OV10(33)
+	OV(340) OV(341)
+	virtual int v342(int a);
+	virtual int v343();
+	virtual int v344();
+};
+
+struct CWeaponFireView {
+	char sub_10253b70(int a, int b, int c, int d);
+};
+struct CWeaponRangedVT {
+	char pad0[0x1a4];
+	void (CWeaponRangedShotSlots::*v105)(const char *);
+	char pad1[0x440 - 0x1a8];
+	const char *(CWeaponRangedShotSlots::*v272)();
+	const char *(CWeaponRangedShotSlots::*v273)();
+};
+
+bool CWeaponRanged::vfunc315()
+{
+	CWeaponRangedShotSlots *pSlots = (CWeaponRangedShotSlots *)this;
+	CBaseCombatCharacter *pOwner = (CBaseCombatCharacter *)sub_10252240();
+	if (pOwner) {
+		bool bMale = pOwner->sub_10336920();
+		CWeaponRangedVT *vt = *(CWeaponRangedVT **)pSlots;
+		if (!bMale)
+			(pSlots->*vt->v105)((pSlots->*vt->v272)());
+		else
+			(pSlots->*vt->v105)((pSlots->*vt->v273)());
+	}
+	int a = (*(int *)((char *)this + 0x86c) ? 0x2d : 0) + 0xb4;
+	if (((CWeaponFireView *)this)->sub_10253b70(pSlots->v342(0), pSlots->v343(), a, pSlots->v344())) {
+		sub_10239d80();
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10239680 size=0x69
 #include "CWeaponRanged.h"
 
