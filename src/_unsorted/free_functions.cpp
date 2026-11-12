@@ -171832,6 +171832,54 @@ float sub_1023f450(const Ray1023f450 &ray, const Vector &v1, const Vector &v2, c
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023f7b0 size=0x89
+#include "Vector.h"
+#include <math.h>
+
+extern float (*g_10579674)(const float *v);	// pfInvRSquared
+
+inline vec_t InvRSquared(float const *v)
+{
+	return (*g_10579674)(v);
+}
+
+inline vec_t InvRSquared(const Vector &v)
+{
+	return InvRSquared(&v.x);
+}
+
+inline float FloatMakePositive(vec_t f)
+{
+	return fabs(f);
+}
+
+struct RayView1023f7b0
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+};
+
+float sub_1023f7b0(const RayView1023f7b0 &ray)
+{
+	if (ray.m_IsRay)
+		return 1e-3f;
+
+	// Find the projection of the box diagonal along the ray...
+	float offset = FloatMakePositive(ray.m_Extents[0] * ray.m_Delta[0]) +
+					FloatMakePositive(ray.m_Extents[1] * ray.m_Delta[1]) +
+					FloatMakePositive(ray.m_Extents[2] * ray.m_Delta[2]);
+
+	offset *= InvRSquared(ray.m_Delta);
+
+	// 1e-3 is an epsilon
+	return offset + 1e-3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023f870 size=0x1a9
 #include <math.h>
 #include "Vector.h"
