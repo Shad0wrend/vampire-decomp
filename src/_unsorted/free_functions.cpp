@@ -47274,6 +47274,51 @@ char *sub_100c1870(SStudioHdr *hdr, int seq, SStudioHdr **ppOut, int count, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c1990 size=0x237
+#include "Vector.h"
+struct BlendQuat { float x, y, z, w; float operator[](int i) const { return (&x)[i]; } float &operator[](int i) { return (&x)[i]; } };
+struct BlendOwner { char pad[0xf0]; int m_nCount; };
+struct BlendSeq
+{
+	char pad[0x30];
+	int m_nOffset;
+	float weight(int i) { return *(float *)((char *)this + m_nOffset + i * 0x20); }
+};
+struct BlendMask { int m_n0; unsigned int m_bits[1]; };
+void sub_1013aab0(const BlendQuat *p, const BlendQuat *q, float t, BlendQuat *qt);
+
+// TARGET: sub_100c1990
+void sub_100c1990(BlendOwner *pOwner, BlendQuat *q1, Vector *pos1, BlendSeq *pSeq, const BlendQuat *q2, const Vector *pos2, float s, BlendMask *pMask)
+{
+	int i;
+	if (s <= 0.0f)
+		return;
+	if (s >= 1.0) {
+		for (i = 0; i < pOwner->m_nCount; i++) {
+			if ((pMask->m_bits[i >> 5] & (1 << (i & 0x1f))) && pSeq->weight(i) > 0.0) {
+				q1[i] = q2[i];
+				pos1[i] = pos2[i];
+			}
+		}
+	} else {
+		float s1 = 1.0 - s;
+		for (i = 0; i < pOwner->m_nCount; i++) {
+			if ((pMask->m_bits[i >> 5] & (1 << (i & 0x1f))) && pSeq->weight(i) > 0.0) {
+				BlendQuat q3;
+				sub_1013aab0(&q2[i], &q1[i], s1, &q3);
+				q1[i][0] = q3[0];
+				q1[i][1] = q3[1];
+				q1[i][2] = q3[2];
+				q1[i][3] = q3[3];
+				pos1[i][0] = pos1[i][0] * s1 + pos2[i][0] * s;
+				pos1[i][1] = pos1[i][1] * s1 + pos2[i][1] * s;
+				pos1[i][2] = pos1[i][2] * s1 + pos2[i][2] * s;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c1c60 size=0x152
 #include <math.h>
 

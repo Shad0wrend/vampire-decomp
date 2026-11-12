@@ -4290,6 +4290,7 @@
 0x10006ba4 func   ?sub_100ddbd0@CUnk100ddbd0@@QAEXXZ CUnk100ddbd0::sub_100ddbd0
 0x10006ba9 func   ?sub_1020aea0@CUnknown1020aea0@@QAEMPAX@Z CUnknown1020aea0::sub_1020aea0
 0x10006bae func   ?sub_102b1cd0@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102b1cd0
+0x10006bb3 func   ?sub_100c1990@@YAXPAUBlendOwner@@PAUBlendQuat@@PAVVector@@PAUBlendSeq@@PBU2@PBV3@MPAUBlendMask@@@Z sub_100c1990
 0x10006bb8 func   ?sub_103b5a90@@YIPAXPAD@Z sub_103b5a90
 0x10006bbd func   ?vfunc176@CSmallHullTrigger@@QAEXPAVCBaseEntity@@@Z CSmallHullTrigger::vfunc176
 0x10006bc2 func   ?sub_1017e720@CUnknown1017e720@@QAEHXZ CUnknown1017e720::sub_1017e720
