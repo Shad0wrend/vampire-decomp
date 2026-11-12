@@ -3847,6 +3847,7 @@
 0x100062a3 func   ?vfunc372@CWeaponThrown_Chang_Energy_Ball@@QAEXPAVCBaseEntity@@MV?$CHandle@VCBaseEntity@@@@@Z CWeaponThrown_Chang_Energy_Ball::vfunc372
 0x100062a8 func   ?sub_101554a0@CRagdollProp@@QAEXABVVector@@H0PAX1MH_N@Z CRagdollProp::sub_101554a0
 0x100062ad func   ?vfunc81@CItemGRingSerialKiller1@@QAEHXZ CItemGRingSerialKiller1::vfunc81
+0x100062b2 func   ??0CFlexAnimationTrack@@QAE@PBV0@@Z CFlexAnimationTrack::CFlexAnimationTrack
 0x100062b7 func   ?vfunc45@CSingleplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CSingleplayRules::vfunc45
 0x100062bc func   ?sub_10367940@@YIPAXPAX@Z sub_10367940
 0x100062c1 func   ?vfunc440@CNPC_VTzimisce@@UAEHH@Z CNPC_VTzimisce::vfunc440
