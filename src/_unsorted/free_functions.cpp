@@ -214527,6 +214527,51 @@ void __stdcall sub_103000a0(const Vector &a, const Vector &b, float num, float d
 }
 // END FUNCTION
 
+// FUNCTION: 0x103005f0 size=0xc1
+#include "CAI_BaseNPC.h"
+#include "CAI_Waypoint.h"
+#include "CAI_Pathfinder.h"
+
+class CAI_BaseNPC;
+unsigned int sub_10300700(CAI_BaseNPC *pNPC, const float *pPos);
+
+extern int g_106c994c;
+
+struct CAI_NodeView103005f0 {
+	Vector sub_102fb0d0(int nHull);
+	Vector GetPosition(int nHull) { return sub_102fb0d0(nHull); }
+};
+struct CAI_NetView103005f0 {
+	int m_iNumNodes;
+	CAI_NodeView103005f0 **m_pAInode;
+	CAI_NodeView103005f0 *GetNode(int id)
+	{
+		if (id >= 0 && id < m_iNumNodes)
+			return m_pAInode[id];
+		g_106c994c++;
+		return 0;
+	}
+};
+struct CAI_NavView103005f0 { char pad[0x2c]; CAI_NetView103005f0 *m_pNetwork; CAI_NetView103005f0 *GetNetwork() { return m_pNetwork; } };
+struct CAI_OuterView103005f0 { char pad[0x5d34]; CAI_NavView103005f0 *m_pNavigator; CAI_NavView103005f0 *GetNavigator() { return m_pNavigator; } };
+struct CAI_PFView103005f0 : CAI_Pathfinder {
+	CAI_OuterView103005f0 *GetOuterV() { return (CAI_OuterView103005f0 *)m_pOuter; }
+	CAI_NetView103005f0 *GetNetwork() { return GetOuterV()->GetNavigator()->GetNetwork(); }
+	int GetHullType() { return m_unk08; }
+};
+
+// TARGET: CAI_Pathfinder::sub_103005f0
+CAI_Waypoint *CAI_Pathfinder::sub_103005f0(const float *pOrigin, unsigned int buildFlags, int nodeID, int a4, int a5)
+{
+	CAI_PFView103005f0 *pThis = (CAI_PFView103005f0 *)this;
+	buildFlags |= sub_10300700((CAI_BaseNPC *)pThis->GetOuterV(), pOrigin);
+	const Vector &vecNodePosition = pThis->GetNetwork()->GetNode(nodeID)->GetPosition(pThis->GetHullType());
+	if (*(const Vector *)pOrigin == vecNodePosition)
+		return sub_102ffbd0(pThis->GetHullType(), nodeID);
+	return sub_10304130(pOrigin, &vecNodePosition.x, 0, 0xc, nodeID, buildFlags, a4, a5);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10300700 size=0xa3
 #include "CAI_BaseNPC.h"
 struct CUnknown1027d990 { int sub_1027d990(); };

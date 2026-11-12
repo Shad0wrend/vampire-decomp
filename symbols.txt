@@ -8186,6 +8186,7 @@
 0x1000bc8a func   ?vfunc113@CBaseKeyframedMover@@UAEXXZ CBaseKeyframedMover::vfunc113
 0x1000bc8f func   ?sub_103c1cb0@CNPC_VTzimisceHeadClaw@@QAEGXZ CNPC_VTzimisceHeadClaw::sub_103c1cb0
 0x1000bc94 func   ?sub_1037aea0@CNPC_VGhoulCroucher@@QAEPAV1@XZ CNPC_VGhoulCroucher::sub_1037aea0
+0x1000bc99 func   ?sub_103005f0@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@PBMIHHH@Z CAI_Pathfinder::sub_103005f0
 0x1000bc9e func   ?sub_1030fd20@S1030fc90@@QAEPAXPAI@Z S1030fc90::sub_1030fd20
 0x1000bca3 func   ?vfunc1@CNotifyList@@UAEXPAVCBaseEntity@@0@Z CNotifyList::vfunc1
 0x1000bca8 func   ?sub_101bac90@CSoundEnt@@SAXHPBVVector@@HMDPAVCBaseEntity@@@Z CSoundEnt::sub_101bac90
