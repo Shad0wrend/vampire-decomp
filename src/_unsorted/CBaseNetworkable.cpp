@@ -9,6 +9,18 @@ int CBaseNetworkable::vfunc5()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b7920 size=0x38
+#include "CVTraitEffect_t.h"
+#include "CBaseNetworkable.h"
+
+CBaseNetworkable::CBaseNetworkable()
+	: m_n0c(0xffffffff)
+{
+	m_pEdict = 0;
+	m_n10 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b79a0 size=0x3
 #include "CBaseNetworkable.h"
 int CBaseNetworkable::vfunc2()
