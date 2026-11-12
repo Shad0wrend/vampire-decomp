@@ -27,7 +27,7 @@ public:
 	HAUNTED_SLOTS10(hsj)	// slots 224..233
 	HAUNTED_SLOTS10(hsk)	// slots 234..253
 	virtual void hsl0(); virtual void hsl1(); virtual void hsl2(); virtual void hsl3(); virtual void hsl4();
-	virtual void hsl5(); virtual void hsl6(int a); virtual void hsl7(); virtual void hsl8(); virtual void hsl9();
+	virtual void hsl5(); virtual float hsl6(int a); virtual void hsl7(); virtual void hsl8(); virtual void hsl9();
 	virtual void hsm0(); virtual void hsm1(); virtual void hsm2(); virtual void hsm3(); virtual void hsm4();	// slots 254..265
 	virtual void hsm5(); virtual void hsm6(); virtual void hsm7(); virtual void hsm8(); virtual void hsm9();
 	virtual void hsn0(); virtual void hsn1();
