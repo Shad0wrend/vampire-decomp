@@ -13510,6 +13510,7 @@
 0x10012c47 func   ?vfunc5@CFuncMoveLinear@@UAEPAV1@I@Z CFuncMoveLinear::vfunc5
 0x10012c4c func   ?sub_10398890@CNPC_VMingXiao@@QAEXPBMHPAVVector@@1@Z CNPC_VMingXiao::sub_10398890
 0x10012c51 func   ?sub_102c0360@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102c0360
+0x10012c56 func   ?vfunc242@CBaseDoor@@UAEHXZ CBaseDoor::vfunc242
 0x10012c5b func   ?vfunc5@CItemGLillyPurse@@QAEPAV1@I@Z CItemGLillyPurse::vfunc5
 0x10012c60 func   ?sub_1036f490@@YADXZ sub_1036f490
 0x10012c65 func   ?sub_1003c1c0@@YIXPAH@Z sub_1003c1c0

@@ -544,6 +544,84 @@ void CBaseDoor::vfunc248()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0340 size=0x20b
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CBaseDoor.h"
+#include "CBaseCombatCharacter.h"
+#include "CEHandleGet.h"
+#include "inputdata_t.h"
+#include "CEntityVSlots.h"
+
+struct CKnobView
+{
+	void sub_10224170(inputdata_t *pInput);
+};
+
+struct SDoorActivator
+{
+	char m_pad0000[0xa8];
+	CBaseCombatCharacter *m_pPlayer;	// 0xa8
+};
+
+namespace block_100f0340 {
+struct EntListUnit : EHandleEntityList
+{
+	IHandleEntity *sub_100290c0(const CBaseHandle &handle) const;
+};
+#pragma auto_inline(off)
+IHandleEntity *EntListUnit::sub_100290c0(const CBaseHandle &handle) const
+{
+	unsigned int i = handle.m_Index;
+	if (i == 0xffffffff)
+		return 0;
+	const EHandleEntInfo *pInfo = &m_EntPtrArray[i & 0x1fff];
+	if ((unsigned int)pInfo->m_SerialNumber == (i >> m_EntPtrArray[0].m_pad))
+		return pInfo->m_pEntity;
+	else
+		return 0;
+}
+#pragma auto_inline(on)
+}
+using namespace block_100f0340;
+
+// TARGET: ?vfunc242@CBaseDoor@@UAEHXZ
+int CBaseDoor::vfunc242()
+{
+	SDoorActivator *pActivator = (SDoorActivator *)((EntListUnit *)EHandleDetail::g_10566458)->sub_100290c0(m_hActivator53c);
+	CBaseCombatCharacter *pPlayer;
+	if (!pActivator)
+		pPlayer = (CBaseCombatCharacter *)pActivator;
+	else
+		pPlayer = pActivator->m_pPlayer;
+	if (m_nState4f8 == 0 || m_nState4f8 == 2)
+		vfunc244(1);
+	else if (m_nState4f8 == 1 || m_nState4f8 == 3)
+		vfunc243(1, 1);
+	inputdata_t input;
+	input.value.iValue = 0;
+	input.value.eVal = 0xffffffff;
+	input.value.fieldType = 0;
+	input.pCaller = this;
+	input.pActivator = m_hActivator53c.Get();
+	if (((CBaseHandle *)&m_hDoorknob0)->Get()) {
+		((CKnobView *)((CBaseHandle *)&m_hDoorknob0)->Get())->sub_10224170(&input);
+		((CEntityVSlots *)((CBaseHandle *)&m_hDoorknob0)->Get())->slot273();
+	}
+	if (((CBaseHandle *)&m_hDoorknob1)->Get()) {
+		((CKnobView *)((CBaseHandle *)&m_hDoorknob1)->Get())->sub_10224170(&input);
+		((CEntityVSlots *)((CBaseHandle *)&m_hDoorknob1)->Get())->slot273();
+	}
+	if (pPlayer)
+		sub_100ee560(pPlayer->sub_101671a0());
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f05e0 size=0x1f9
 #include "CBaseDoor.h"
 #include "CBaseToggle.h"
