@@ -118640,6 +118640,77 @@ CUnknown101b6320Params *CUnknown101b6320Params::sub_101b5b70(const CUnknown101b6
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b5dd0 size=0x261
+#include "vampire_all.h"
+#include "CSoundEmitterSystemBase.h"
+#include "Tier1.h"
+typedef int pcd_t0;
+typedef int pcd_t1;
+typedef int pcd_t2;
+typedef int pcd_t3;
+typedef int pcd_t4;
+typedef int pcd_t5;
+typedef int pcd_t6;
+typedef int pcd_t7;
+typedef int pcd_t8;
+typedef int pcd_t9;
+typedef int pcd_t10;
+typedef int pcd_t11;
+typedef int pcd_t12;
+typedef int pcd_t13;
+typedef int pcd_t14;
+typedef int pcd_t15;
+typedef int pcd_t16;
+typedef int pcd_t17;
+typedef int pcd_t18;
+
+namespace block_101b5dd0 {
+struct CSoundEmitterSystemBaseUnit : CSoundEmitterSystemBase
+{
+	char sub_101b31a0(int index);
+};
+
+char CSoundEmitterSystemBaseUnit::sub_101b31a0(int index)
+{
+	if (index >= 0 && index < m_i64)
+		return 1;
+	return 0;
+}
+}
+using namespace block_101b5dd0;
+
+void CSoundEmitterSystemBase::sub_101b5dd0(const char *pszName, const CSoundParamsFull &params)
+{
+	int idx = sub_101b2f60(pszName);
+	if (!((CSoundEmitterSystemBaseUnit *)this)->sub_101b31a0(idx)) {
+		g_109f3630("Can't UpdateSoundParameters %s, no such sound\n", pszName);
+		return;
+	}
+	CSoundRecordFull *rec = (CSoundRecordFull *)((char *)m_i54 + 0x14 + idx * 0xe8);
+	if (rec->m_params == params)
+		return;
+	CSoundParamsFull *e = &rec->m_params;
+	e->m_channel = params.m_channel;
+	e->m_f04 = params.m_f04;
+	e->m_f08 = params.m_f08;
+	e->m_f0c = params.m_f0c;
+	e->m_f10 = params.m_f10;
+	e->m_f14 = params.m_f14;
+	e->m_f18 = params.m_f18;
+	e->m_b1c = params.m_b1c;
+	e->m_b1d = params.m_b1d;
+	e->m_waves.sub_101b6550((const SElem8 *)params.m_waves.m_pMemory, params.m_waves.m_Size);
+	e->m_sub.sub_101b61a0(params.m_sub);
+	e->m_b48 = params.m_b48;
+	unsigned int i;
+	for (i = 0; i < 0x20; i++) e->m_s49[i] = params.m_s49[i];
+	for (i = 0; i < 0x20; i++) e->m_s69[i] = params.m_s69[i];
+	for (i = 0; i < 0x20; i++) e->m_s89[i] = params.m_s89[i];
+	for (i = 0; i < 0x20; i++) e->m_sa9[i] = params.m_sa9[i];
+	*((char *)m_i9c + rec->m_nScript * 0x82) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6120 size=0x59
 struct CUnknown101b6120 {
     void *m_pMemory;
