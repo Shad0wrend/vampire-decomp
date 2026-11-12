@@ -90,6 +90,138 @@ void CNPC_VHuman::vfunc442(const int *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10384ab0 size=0x34c
+#include "CAI_Motor.h"
+#include "CLogicAuto.h"
+#include "vampire.h"
+#include "CNPC_VHuman.h"
+#include "CAI_BaseNPC_vfunc461.h"
+#include "CUnknown103498b0.h"
+
+struct CVHumanTask444
+{
+	int m_nType;
+	float m_flTime;
+};
+
+// TARGET: CNPC_VHuman::vfunc444
+void CNPC_VHuman::vfunc444(void *pTaskRaw)
+{
+	CVHumanTask444 *pTask = (CVHumanTask444 *)pTaskRaw;
+	switch (pTask->m_nType)
+	{
+	case 0x89:
+	case 0x8a:
+	{
+		sub_10280a50();
+		Vector vecEnemy = ((CEnemiesView *)vfunc541())->sub_102dfed0((CBaseEntity *)vfunc167());
+		m_pMotor5d44->sub_102e20b0((const float *)&vecEnemy, -2.0f);
+		if (vfunc251() || pTask->m_flTime < gpGlobals->curtime - m_flTime5d9c)
+			goto complete;
+		break;
+	}
+	case 0x8b:
+	{
+		bool bFlag = false;
+		sub_10280a50();
+		CBaseEntity *pEnemy = (CBaseEntity *)vfunc167();
+		if (!pEnemy)
+			return;
+		CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pEnemy->m_p9c;
+		if (!pChar)
+			return;
+		Vector vecEnemy = ((CEnemiesView *)vfunc541())->sub_102dfed0((CBaseEntity *)vfunc167());
+		m_pMotor5d44->sub_102e20b0((const float *)&vecEnemy, -2.0f);
+		CUnknown103498b0 *pObj = (CUnknown103498b0 *)pChar->sub_10345980((CBaseEntity *)this);
+		char bGo;
+		if (m_nActivityff0 != 0x1157)
+		{
+			float flLimit;
+			if (pObj)
+			{
+				if (!pObj->sub_103498b0())
+					bFlag = true;
+				flLimit = 0.5f;
+			}
+			else
+				flLimit = 1.0f;
+			if (flLimit <= m_fl06f8)
+				bGo = 1;
+			else
+				bGo = vfunc251();
+		}
+		else
+		{
+			bGo = pChar->sub_10345330();
+		}
+		if (!bGo)
+			return;
+		if (sub_10295460(0x1155, 0) != -1 && bFlag)
+		{
+			sub_10273e80(0);
+			return;
+		}
+		m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VHuman.cpp";
+		m_nLine1b48 = 0x1da;
+		vfunc448(0x21);
+		break;
+	}
+	case 0x8e:
+	case 0x8f:
+	case 0x90:
+	case 0x91:
+	{
+		{
+			CBaseEntity *pEnemy = (CBaseEntity *)vfunc167();
+			if (pEnemy && pEnemy->m_p9c)
+			{
+				Vector vecEnemy = ((CEnemiesView *)vfunc541())->sub_102dfed0((CBaseEntity *)vfunc167());
+				m_pMotor5d44->sub_102e20b0((const float *)&vecEnemy, -2.0f);
+			}
+		}
+		if (vfunc251() || gpGlobals->curtime >= m_flNextAttack1564)
+		{
+complete:
+			sub_10273e80(0);
+		}
+		break;
+	}
+	case 0x8d:
+	{
+		sub_10280a50();
+		CBaseEntity *pEnemy = (CBaseEntity *)vfunc167();
+		CBaseAnimating *pChar = pEnemy ? (CBaseAnimating *)pEnemy->m_p9c : 0;
+		if (!pChar)
+		{
+			sub_10273e80(0);
+			return;
+		}
+		{
+			Vector vecEnemy = ((CEnemiesView *)vfunc541())->sub_102dfed0((CBaseEntity *)vfunc167());
+			m_pMotor5d44->sub_102e20b0((const float *)&vecEnemy, -2.0f);
+			int nSeq = *(int *)((char *)pChar + 0x6f0);
+			char *pDesc = (char *)pChar->sub_1008d990(nSeq);
+			if (!pDesc)
+				return;
+			float t = (pChar->sub_10091230(nSeq) * (gpGlobals->curtime - (*(float *)((char *)pChar + 0x174) - 0.1f))) * *(float *)((char *)pChar + 0x6f4) + *(float *)((char *)pChar + 0x6f8);
+			int nCount = *(int *)(pDesc + 0x2c4);
+			for (int i = 0; i < nCount; i++)
+			{
+				float *p = (float *)(pDesc + *(int *)(pDesc + 0x2c8) + 4 + i * 0xbc);
+				if (t < *p)
+					return;
+			}
+		}
+		sub_10273e80(0);
+		break;
+	}
+	default:
+		CAI_BaseNPCTroika::vfunc444(pTaskRaw);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384ee0 size=0x154
 #include "CNPC_VHuman.h"
 #include "CUnknown102e0150.h"
