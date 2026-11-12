@@ -174051,6 +174051,51 @@ bool sub_1024cc90(const SPlane &vp1, const SPlane &vp2, const SPlane &vp3, Vecto
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024cdb0 size=0xfa
+// TARGET: VMatrix::sub_1024cdb0
+#include "VMatrix.h"
+
+struct VPlane
+{
+	Vector m_Normal;
+	float m_Dist;
+};
+
+inline Vector VMatrixApplyRotation(const VMatrix &mat, const Vector &vVec)
+{
+	return Vector(
+		mat.m[0][0] * vVec.x + mat.m[0][1] * vVec.y + mat.m[0][2] * vVec.z,
+		mat.m[1][0] * vVec.x + mat.m[1][1] * vVec.y + mat.m[1][2] * vVec.z,
+		mat.m[2][0] * vVec.x + mat.m[2][1] * vVec.y + mat.m[2][2] * vVec.z);
+}
+
+inline Vector VMatrixMulVector(const VMatrix &mat, const Vector &vVec)
+{
+	return Vector(
+		mat.m[0][0] * vVec.x + mat.m[0][1] * vVec.y + mat.m[0][2] * vVec.z + mat.m[0][3],
+		mat.m[1][0] * vVec.x + mat.m[1][1] * vVec.y + mat.m[1][2] * vVec.z + mat.m[1][3],
+		mat.m[2][0] * vVec.x + mat.m[2][1] * vVec.y + mat.m[2][2] * vVec.z + mat.m[2][3]);
+}
+
+inline float PlaneDot(const Vector &a, const Vector &b)
+{
+	return a.y * b.y + (a.x * b.x + a.z * b.z);
+}
+
+inline void TransformPlane(const VMatrix &mat, const VPlane &inPlane, VPlane &outPlane)
+{
+	outPlane.m_Normal = VMatrixApplyRotation(mat, inPlane.m_Normal);
+	outPlane.m_Dist = PlaneDot(outPlane.m_Normal, VMatrixMulVector(mat, inPlane.m_Normal * inPlane.m_Dist));
+}
+
+VPlane VMatrix::sub_1024cdb0(const VPlane &thePlane) const
+{
+	VPlane ret;
+	TransformPlane(*this, thePlane, ret);
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024cef0 size=0x67
 struct CBlock64_t {
 	int d[16];
