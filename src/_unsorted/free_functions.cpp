@@ -161234,6 +161234,65 @@ void CPropRadio::sub_1022c920(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022c9e0 size=0x228
+#include "utlrbtree.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CPropRadio.h"
+#include "CKeyValuesX.h"
+#include "CUnknown10248a50.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include <string.h>
+
+struct CRadioRecord_t { char m_script[0x80]; char m_sound[0x80]; };
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+const char *sub_101d3730(const char *pFmt, const char *pPath);
+extern IFileSys *g_1070b238;
+
+bool CPropRadio::sub_1022c9e0()
+{
+	ScopeTrace trace("CPropRadio::LoadRadioData", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CUnknown10248a50 *pKV = new CUnknown10248a50("RadioData");
+	const char *pszFile = sub_101d3730("%sRadio_Data.txt", "vdata\\system\\");
+	if (pKV) {
+		IFileSys *pFileSys = g_1070b238;
+		if (!pKV->sub_102480f0(pszFile, pFileSys, 0, 1)) {
+			pKV->sub_100046f1();
+			::operator delete(pKV);
+			return false;
+		}
+		CKeyValuesX *pSub = (CKeyValuesX *)pKV->sub_10248a10();
+		if (!pSub) {
+			pKV->sub_100046f1();
+			::operator delete(pKV);
+			return false;
+		}
+		do {
+			CRadioRecord_t rec;
+			memset(&rec, 0, sizeof(rec));
+			Q_strncpy(rec.m_script, pSub->sub_10248cd0("dependency", ""), 0x80);
+			Q_snprintf(rec.m_sound, 0x80, "*%s", pSub->sub_10248cd0("filename", ""), 0x80);
+			if ((int)strlen(rec.m_sound) > 2 && strlen(rec.m_script) != 0)
+				((CUtlVector<CRadioRecord_t> *)&m_pRadioData)->AddToTail(rec);
+			pSub = pSub->sub_1000fa65();
+		} while (pSub);
+		pKV->sub_100046f1();
+		::operator delete(pKV);
+		return ((CUtlVector<CRadioRecord_t> *)&m_pRadioData)->Count() > 0;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022ce80 size=0x52
 struct SEnt {
 	char m_pad[0x224];
