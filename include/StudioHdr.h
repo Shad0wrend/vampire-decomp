@@ -19,7 +19,8 @@ struct StudioIncludeModel	// 0x74 bytes: a model whose sequences are included
 	StudioVirtualModel *m_pVirtual;	// 0x04
 	int m_nBase;	// 0x08: first sequence index
 	int m_nCount;	// 0x0c: sequence count
-	char m_pad10[0x44 - 0x10];
+	int m_nBoneInfoIndex;	// 0x10: offset of the per-owner-bone records (0x38 bytes each)
+	short m_aBoneRemap14[24];	// 0x14: for an index of the accumulated attachment list, the included model's attachment index
 	short m_aPoseParamRemap[24];	// 0x44: the pose parameter of the owner each of the included model's parameters follows (-1: none)
 };
 
@@ -49,6 +50,8 @@ struct StudioBone	// 0xa0 bytes each (Studio_BuildMatrices 0x100c3600 reads thes
 	short m_nPhysicsBone94;	// 0x94
 	char m_pad96[0x9c - 0x96];
 	unsigned int m_nFlags9c;	// 0x9c: contents
+
+	char *Name() { return (char *)this + *(int *)this; }
 };
 
 struct StudioBoneMask	// the bit list of bones to build (0x100c3600's last argument): bit i is tested at m_bits[i >> 5] & (1 << (i & 31))
@@ -87,7 +90,10 @@ struct StudioHdr
 	int m_nLocalSeq;	// 0x110: number of local sequences
 	int m_nLocalSeqIndex;	// 0x114: offset of the local sequence descriptors (StudioSeqDesc, 0x2fc bytes each)
 	void *m_pSeqCache118;	// 0x118: zero until sub_10427a70 (0x1000.. stub 0x100115f4) has built the sequence data (sub_10427dc0 calls it)
-	char m_pad011c[0x194 - 0x11c];
+	char m_pad011c[0x180 - 0x11c];
+	int m_nAttachments;	// 0x180: number of attachment records (0x14 bytes each, name offset first)
+	int m_nAttachmentIndex;	// 0x184: offset of the attachment records
+	char m_pad0188[0x194 - 0x188];
 	int m_nIncludeModels;	// 0x194
 	int m_nIncludeIndex;	// 0x198: offset of the include model records
 
