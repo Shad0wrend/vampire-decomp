@@ -46758,6 +46758,21 @@ int sub_100bef30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bef50 size=0x65
+#include "bf_read.h"
+
+struct bf_readX : bf_read
+{
+	int sub_100bef50();
+};
+
+// TARGET: bf_readX::sub_100bef50
+int bf_readX::sub_100bef50()
+{
+	return ReadUBitLong(16);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100befe0 size=0x8
 namespace lifted {
 int __stdcall sub_10003e4f(int);
