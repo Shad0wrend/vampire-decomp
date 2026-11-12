@@ -160060,6 +160060,92 @@ void CItemContainerLock::sub_102241f0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10224440 size=0x3c6
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CBaseAnimating.h"
+#include "CPropDoorknob.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "UTIL_Trace.h"
+#include "CNPC_VPedestrian.h"
+
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+__declspec(dllimport) void DevWarning(const char *pMsg, ...);
+
+struct CUnknown1004f860
+{
+	void *sub_1004f860();
+};
+
+struct CDoorknobAnimView
+{
+	bool sub_10092e20(const char *pszName, Vector *pOrigin, Vector *pAngles);
+};
+
+// TARGET: CPropDoorknob::sub_10224440
+void CPropDoorknob::sub_10224440(CBaseEntity *pEntity)
+{
+	if (!pEntity)
+		return;
+	CEntityVSlots *pThis = (CEntityVSlots *)this;
+	CEntityVSlots *pEnt = (CEntityVSlots *)pEntity;
+	Vector camPos, camTgt;
+	Vector attBuf;
+	if (!((CDoorknobAnimView *)this)->sub_10092e20("camera_position", &camPos, &attBuf) || !((CDoorknobAnimView *)this)->sub_10092e20("camera_target", &camTgt, &attBuf))
+	{
+		int tmp;
+		const char *pName = *pThis->slot9(&tmp);
+		if (!pName)
+			pName = g_106b8540;
+		DevMsg("%s (%s) not set up correctly to be a doorknob!\n", this->sub_100ab4f0(), pName);
+		camPos = pThis->slot192();
+		camTgt = pEnt->slot192();
+	}
+	Vector dir = camPos - camTgt;
+	dir.z = 0;
+	VectorNormalize(dir);
+	Vector vecStart = dir * 31.0f + *pThis->slot217();
+	Vector vecEnd = vecStart - Vector(0, 0, 1024.0f);
+	CGameTrace tr;
+	{
+		Ray_t ray;
+		((CUnknown1004f860 *)&ray)->sub_1004f860();
+		ray.sub_1004f7a0(&vecStart.x, &vecEnd.x);
+		CTraceFilterSimple traceFilter(pEntity, 0);
+		g_1070b254->vfunc4(&ray, 0x201400b, (CTraceFilterNoCharacterCollide *)&traceFilter, &tr);
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10146570((const Vector *)&tr.m_startpos, (const Vector *)&tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+	}
+	if (tr.m_startsolid)
+	{
+		int edict = m_pEdict2e0;
+		int idx = engine->vfunc35(edict);
+		DevWarning("(%d)%s too close to solid geometry to pick!\n", idx, this->sub_100ab4f0());
+		return;
+	}
+	if (tr.m_fraction == 1.0)
+	{
+		int edict = m_pEdict2e0;
+		int idx = engine->vfunc35(edict);
+		DevWarning("(%d)%s no solid ground over lockpick position!\n", idx, this->sub_100ab4f0());
+		return;
+	}
+	vecEnd = *(Vector *)&tr.m_endpos;
+	CCollisionProperty *pCol = (CCollisionProperty *)((char *)pEntity + 0x270);
+	UTIL_TraceHull(*pEnt->slot217(), vecEnd, *(Vector *)pCol->vfunc1(), *(Vector *)pCol->vfunc2(), 0x201400b, pEntity, 3, &tr);
+	sub_101cf5c0(pEntity, (int)&tr.m_endpos, 0);
+	pEnt->slot306((int)this, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224910 size=0x2b
 #include "CBaseEntity.h"
 #include "CItemContainerLock.h"
