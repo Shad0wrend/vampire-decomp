@@ -221,6 +221,92 @@ bool CMoveHelperServer::vfunc2(const void *pTrace, const float *pVelocity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f280 size=0x20f
+#include "CMoveHelperServer.h"
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern CGlobalEntityList g_106eb5d8;
+
+struct CNetPropView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual CBaseEntity *vfunc4();
+};
+struct CEdictUnkView
+{
+	char m_pad[0x40];
+	CNetPropView *m_pNet;
+};
+struct CTouchEntry
+{
+	Vector m_vecDelta;
+	char m_trace[0x4c];
+	CBaseEntity *m_pEnt;
+	char m_pad[4];
+};
+
+inline CBaseEntity *Instance(CEdictUnkView *u)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+	return u->m_pNet ? u->m_pNet->vfunc4() : 0;
+}
+
+inline unsigned char IsSolidFlagSet(CBaseEntity *p)
+{
+	ScopeTrace trace("CBaseEntity::IsSolidFlagSet", p ? (STRINGR_F(p->m_name26c)) : "NULL ENTITY", g_106b8540);
+	return (*((unsigned char *)p + 0x2b4) >> 2) & 1;
+}
+
+inline unsigned char IsDirty(CBaseEntity *p)
+{
+	return (p->m_flags268 >> 12) & 1;
+}
+
+
+struct HandleV { unsigned long m_Index; };
+inline CEdictUnkView *GetEdict(HandleV hEnt)
+{
+	CGlobalEntityList_Ent *pNet = (CGlobalEntityList_Ent *)g_106eb5d8.sub_100290c0((const unsigned int *)&hEnt);
+	if (pNet)
+		return (CEdictUnkView *)pNet->v3()->vfunc4();
+	else
+		return 0;
+}
+
+// TARGET: CMoveHelperServer::vfunc3
+void CMoveHelperServer::vfunc3()
+{
+	m_pHost->sub_100a53d0(0);
+	if (IsSolidFlagSet(m_pHost))
+		return;
+	CBaseEntity *pHost = m_pHost;
+	if (IsDirty(pHost))
+		pHost->sub_100b1d10();
+	CTouchEntry *&list = *(CTouchEntry **)&m_pTouchList;
+	Vector vel = pHost->m_vecVelocity3bc;
+	for (int i = 0; i < m_nTouchCount; i++) {
+		HandleV entindex = *(HandleV *)list[i].m_pEnt->vfunc1();
+		CEdictUnkView *u = GetEdict(entindex);
+		if (!u || !u->m_pNet)
+			continue;
+		CBaseEntity *pOther = u->m_pNet->vfunc4();
+		if (!pOther || pOther == m_pHost)
+			continue;
+		list[i].m_pEnt = Instance(u);
+		m_pHost->sub_100b2770(list[i].m_vecDelta);
+		pOther->sub_1003e6c0(m_pHost, (float *)list[i].m_trace);
+		((CBaseCombatCharacter *)m_pHost)->sub_10147690(pOther);
+	}
+	m_pHost->sub_100b2770(vel);
+	vfunc1();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f610 size=0xce
 #include "CBaseEntity.h"
 #include "CMoveHelperServer.h"
