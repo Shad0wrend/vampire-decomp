@@ -3230,6 +3230,7 @@
 0x1000554c func   ?vfunc2@CAI_SaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CAI_SaveRestoreBlockHandler::vfunc2
 0x10005551 func   ?vfunc5@CMathColorBlend@@QAEPAV1@I@Z CMathColorBlend::vfunc5
 0x10005556 func   ?vfunc110@CWorld@@UAE_NPBD0@Z CWorld::vfunc110
+0x1000555b func   ?sub_101bf860@CStringPool@@QAEPADPBD@Z CStringPool::sub_101bf860
 0x10005560 func   _item_g_ring_serial_killer_1 item_g_ring_serial_killer_1
 0x10005565 func   ?vfunc1@CGameRules@@UAEHXZ CGameRules::vfunc1
 0x1000556a func   ?sub_103261f0@CBaseCombatCharacter@@QAE_NVVector@@MM@Z CBaseCombatCharacter::sub_103261f0

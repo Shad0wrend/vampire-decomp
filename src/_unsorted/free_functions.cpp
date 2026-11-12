@@ -116184,6 +116184,57 @@ int CUtlRBTree12::sub_101bf6a0(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bf860 size=0x20a
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CGameStringPool.h"
+#include "utlrbtree.h"
+#include "CRBTree12Entry_101c03c0.h"
+
+extern "C" char *__cdecl _mbsdup(const char *psz);
+
+typedef CUtlRBTree<CRBTree12Entry_101c03c0, unsigned short> CStringTree_t;
+
+template <>
+inline CStringTree_t::Node_t const &CUtlMemory<CStringTree_t::Node_t>::operator[](int i) const
+{
+	return m_pMemory[i];
+}
+
+template <>
+inline CStringTree_t::Node_t &CUtlMemory<CStringTree_t::Node_t>::operator[](int i)
+{
+	return m_pMemory[i];
+}
+
+char *CStringPool::sub_101bf860(const char *pszValue)
+{
+	CStringTree_t &m_Strings = *(CStringTree_t *)this;
+	char *pszNew;
+
+	unsigned short i = m_Strings.Find(*(const CRBTree12Entry_101c03c0 *)&pszValue);
+	bool bNew = (i == m_Strings.InvalidIndex());
+
+	if (!bNew)
+		return m_Strings[i].m_psz;
+
+	pszNew = _mbsdup(pszValue);
+
+	if (bNew)
+		m_Strings.Insert(*(const CRBTree12Entry_101c03c0 *)&pszNew);
+
+	return pszNew;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0240 size=0x6a
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);
