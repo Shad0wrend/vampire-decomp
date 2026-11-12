@@ -205250,6 +205250,37 @@ void CAI_Navigator::sub_102ed310(CBaseEntity *pEnt, const Vector *pPosition)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ed390 size=0x77
+#include "CAI_Navigator.h"
+
+#define OV(n) virtual void v##n();
+#define OV10(p) OV(p##0) OV(p##1) OV(p##2) OV(p##3) OV(p##4) OV(p##5) OV(p##6) OV(p##7) OV(p##8) OV(p##9)
+struct CNavOwner {
+	OV(0) OV(1) OV(2) OV(3) OV(4) OV(5) OV(6) OV(7) OV(8) OV(9)
+	OV10(1) OV10(2) OV10(3) OV10(4) OV10(5) OV10(6) OV10(7) OV10(8) OV10(9)
+	OV10(10) OV10(11) OV10(12) OV10(13) OV10(14) OV10(15) OV10(16) OV10(17) OV10(18) OV10(19)
+	OV10(20) OV10(21)
+	virtual const int *v220();	// GetLocalOrigin
+};
+
+struct CNavOwnerData {	// the pathfinder
+	int sub_10304670(const int *origin, int center, int radius, int arc, int stepDist, int bClockwise, float goalTolerance, int a6, int a7);	// BuildRadialRoute, stub 0x1000dcc9
+};
+
+struct CNavRouteTol : CAI_NavRoute {
+	float GetGoalTolerance() const { return m_fl28; }
+};
+// TARGET: CAI_Navigator::sub_102ed390
+void CAI_Navigator::sub_102ed390(int a1, int a2, int a3, int a4, int a5, int a6, int a7)
+{
+	vfunc7();
+	m_p30->sub_1030ba50(4);
+	CAI_NavRoute *pPath = m_p30;
+	pPath->sub_1030b4d0(((CNavOwnerData *)sub_102ecc00())->sub_10304670(((CNavOwner *)m_pOuter)->v220(), a1, a2, a3, a4, a5, ((CNavRouteTol *)pPath)->GetGoalTolerance(), a6, a7), true);
+	sub_102ee6a0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ed430 size=0xc7
 #include "CAI_Navigator.h"
 
