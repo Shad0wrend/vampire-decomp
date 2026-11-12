@@ -81335,6 +81335,31 @@ int *sub_10134f10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134ff0 size=0x33
+struct CParamView {
+	int m_n0;
+	int m_n4;
+	bool m_b8;
+	char pad0[0x18 - 9];
+	int m_n18;
+	bool Bool() const { return (m_n18 == 5) ? m_b8 : false; }
+};
+
+struct CLogicBranchView {
+	char m_pad0000[0x450];
+	bool m_b450;
+	void sub_10135070(int a, bool b);
+	void sub_10134ff0(CParamView *p);
+};
+
+// TARGET: CLogicBranchView::sub_10134ff0
+void CLogicBranchView::sub_10134ff0(CParamView *p)
+{
+	m_b450 = p->Bool();
+	sub_10135070(p->m_n0, m_b450);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135040 size=0x16
 namespace lifted { struct C10135070 { int sub_10005a2e(int, bool); }; }
 struct CUnknown10135040 { int sub_10135040(int *p); };
