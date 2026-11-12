@@ -25437,6 +25437,81 @@ void __fastcall sub_10078880(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078a30 size=0xa8
+#include "utlrbtree.h"
+// TARGET: block_10078a30::CUnit::sub_10078a30
+#include "utlvector.h"
+
+namespace block_10078a30 {
+
+struct CRampSample	// the 12-byte ramp sample (CExpressionSample-like)
+{
+	float value;
+	float time;
+	int selected;
+};
+
+struct CUnit	// CChoreoEvent-like
+{
+	char m_pad0000[0x184];
+	float m_flStartTime;	// 0x184
+	float m_flEndTime;	// 0x188
+	char m_pad018c[0x19c - 0x18c];
+	CUtlVector<CRampSample> m_Ramp;	// 0x19c
+
+	bool sub_10075f30();	// HasEndTime
+	float sub_10075f10();	// GetEndTime
+	float sub_10075e70();	// GetStartTime
+	float sub_10076b30();	// GetDuration
+	int sub_10078630();	// GetRampCount
+	void sub_10078a30();	// RemoveOutOfRangeRampSamples
+};
+
+float CUnit::sub_10075e70()
+{
+	return m_flStartTime;
+}
+
+float CUnit::sub_10075f10()
+{
+	return m_flEndTime;
+}
+
+bool CUnit::sub_10075f30()
+{
+	return m_flEndTime != -1.0f;
+}
+
+float CUnit::sub_10076b30()
+{
+	if (sub_10075f30())
+		return sub_10075f10() - sub_10075e70();
+	return 0.0f;
+}
+
+int CUnit::sub_10078630()
+{
+	return m_Ramp.Count();
+}
+
+void CUnit::sub_10078a30()
+{
+	float duration = sub_10076b30();
+	int c = sub_10078630();
+	for (int i = c - 1; i >= 0; i--)
+	{
+		CRampSample sample = m_Ramp[i];
+		if (sample.time < 0.0f || sample.time > duration + 0.01)
+		{
+			m_Ramp.Remove(i);
+		}
+	}
+}
+
+}
+using namespace block_10078a30;
+// END FUNCTION
+
 // FUNCTION: 0x10078b10 size=0x8
 void __fastcall sub_10078b10(int *p) { p[3] = 0; }
 // END FUNCTION

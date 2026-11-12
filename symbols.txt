@@ -1250,6 +1250,7 @@
 0x10002aae func   ?vfunc112@CBasePlayer@@QAEXHH@Z CBasePlayer::vfunc112
 0x10002ab3 func   ?vfunc0@CTEBreakModel@@UAEPAUServerClass@@XZ CTEBreakModel::vfunc0
 0x10002ab8 func   ?vfunc16@CGameMovement@@QAEXPAXMD@Z CGameMovement::vfunc16
+0x10002abd func   ?sub_10078a30@CUnit@block_10078a30@@QAEXXZ block_10078a30::CUnit::sub_10078a30
 0x10002ac2 func   ?sub_1017a2b0@StatMaskView@@QAEXH@Z StatMaskView::sub_1017a2b0
 0x10002ac7 func   ?vfunc5@CInspectionBrush@@QAEPAV1@I@Z CInspectionBrush::vfunc5
 0x10002acc func   ?vfunc404@CNPC_VNewscaster@@UAEHH@Z CNPC_VNewscaster::vfunc404
