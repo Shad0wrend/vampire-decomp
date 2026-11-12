@@ -152671,6 +152671,61 @@ void CUnknown10206c70::sub_10206c70(int nTemplate, CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10207680 size=0x474
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CVStatList_t.h"
+#include "CStatDefault3List.h"
+#include "CBaseCombatCharacter.h"
+#include "Ent.h"
+
+struct CTraitTableUnit { void sub_101f9a40(CBaseCombatCharacter *pChar, int n); };
+struct StatOwner { CVStatList_t *sub_10183880(int type); };
+extern CStatDefault3List g_10738d10;
+extern CTraitTableUnit g_1074df78;
+extern char g_105a9230;
+extern int g_1074e65c;
+extern int g_1074e4f4;
+extern int g_1074e09c;
+
+#define pDef ((StatDefault3 *)nTemplate)
+
+struct CThisView10207680 { void sub_10207680(int nTemplate, CBaseCombatCharacter *pChar); };
+
+// TARGET: CThisView10207680::sub_10207680
+void CThisView10207680::sub_10207680(int nTemplate, CBaseCombatCharacter *pChar)
+{
+	nTemplate = (int)g_10738d10.sub_101d5e80(nTemplate);
+	int bMale = ((Ent *)pChar)->sub_10336920();
+	g_1074df78.sub_101f9a40(pChar, pDef->m_84);
+	int i;
+	for (i = 0; i < g_1074e65c; i++) {
+		if (g_105a9230)
+			CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(i, pDef->m_d0[0][i]);
+		else
+			CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(i, CVStatListSet::Of(pChar)->Find(0)->sub_10200ca0(i) - pDef->m_d0[0][i]);
+	}
+	CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(0xb, bMale);
+	pChar->m_nHasLegs13cc = bMale;
+	for (i = 0; i < g_1074e4f4; i++) {
+		if (g_105a9230)
+			CVStatListSet::Of(pChar)->Find(1)->sub_102008e0(i, pDef->m_d0[1][i]);
+		else
+			CVStatListSet::Of(pChar)->Find(1)->sub_102008e0(i, CVStatListSet::Of(pChar)->Find(1)->sub_10200ca0(i) - pDef->m_d0[1][i]);
+	}
+	for (i = 0; i < g_1074e09c; i++) {
+		if (g_105a9230)
+			CVStatListSet::Of(pChar)->Find(2)->sub_102008e0(i, pDef->m_pd8[i]);
+		else {
+			StatOwner *pSet = (StatOwner *)CVStatListSet::Of(pChar);
+			pSet->sub_10183880(2)->sub_102008e0(i, pSet->sub_10183880(2)->sub_10200ca0(i) - pDef->m_pd8[i]);
+		}
+	}
+	pChar->vfunc111();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10207c20 size=0xa
 namespace lifted {
 extern char g_10738d10;
