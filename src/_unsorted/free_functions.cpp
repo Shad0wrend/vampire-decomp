@@ -137942,6 +137942,27 @@ int *COwner101e82f0::sub_101e82f0(int *pResult, int a, int limit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e8330 size=0x71
+#include "CNPC_VTzimisce.h"
+#include "CUnknown10739d08.h"
+#include "CUnknown101d8a70.h"
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CVDmg_t.h"
+
+struct IObj1074f04c { virtual void v0(); virtual char vfunc1(); char m_pad[0x2c - 4]; int m_n2c; };
+extern IObj1074f04c *g_1074f04c;
+
+CSkillOutcome CUnknown10739d08::sub_101e8330(void *pPlayer, void *pSkill, int nNeed)
+{
+	CVDmgBlock16_t block(4, 9);
+	CUnknown101d8a70 rec;
+	rec.sub_101d8820((int)pPlayer, (CBaseCombatWeapon *)((CBaseCombatCharacter *)pPlayer)->sub_1032e7b0(), &block, nNeed);
+	int n = g_1074f04c->vfunc1() ? 0 : g_1074f04c->m_n2c;
+	return CSkillOutcome(*(CSkillOutcome *)rec.sub_101d8b40(&nNeed, n != 0));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e83d0 size=0xd
 #include "CUnknown101e83d0.h"
 // TARGET: CUnknown101e83d0::sub_101e83d0

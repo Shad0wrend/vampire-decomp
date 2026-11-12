@@ -1504,6 +1504,7 @@
 0x10002fae func   ?sub_1021aca0@CPropHacking@@QAEXXZ CPropHacking::sub_1021aca0
 0x10002fb3 func   ?sub_1020d1b0@@YAPAHXZ sub_1020d1b0
 0x10002fb8 func   ?vfunc104@CEnvBeam@@UAEXXZ CEnvBeam::vfunc104
+0x10002fbd func   ?sub_101e8330@CUnknown10739d08@@QAE?AUCSkillOutcome@@PAX0H@Z CUnknown10739d08::sub_101e8330
 0x10002fc2 func   ?vfunc0@CBaseRopePhysics@@UAEXPAUCRopeNode@@HPAVVector@@@Z CBaseRopePhysics::vfunc0
 0x10002fc7 func   ?vfunc226@CPhysBox@@QAEXH@Z CPhysBox::vfunc226
 0x10002fcc func   ?sub_101e8e80@CUnknown101e8e80@@QAEHXZ CUnknown101e8e80::sub_101e8e80
