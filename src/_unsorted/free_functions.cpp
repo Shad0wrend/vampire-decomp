@@ -183180,6 +183180,28 @@ int __stdcall sub_102707d0(void *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10270890 size=0xe9
+#include "CAI_BaseNPC_vfunc481.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+
+float CAI_BaseNPCUnit481::sub_10270890(CBaseEntity *pEnemy)
+{
+	Vector enemyDelta = *((CEntityVSlots *)pEnemy)->slot217() - *((CEntityVSlots *)this)->slot217();
+	Vector enemyMins, enemyMaxs, myMins, myMaxs;
+	((CCollisionProperty *)((char *)pEnemy + 0x270))->vfunc15(&enemyMins, &enemyMaxs);
+	((CCollisionProperty *)((char *)this + 0x270))->vfunc15(&myMins, &myMaxs);
+	if (enemyMins.z >= myMaxs.z)
+		enemyDelta.z = enemyMins.z - myMaxs.z;
+	else if (enemyMaxs.z <= myMins.z)
+		enemyDelta.z = enemyMaxs.z - myMins.z;
+	else
+		enemyDelta.z = 0;
+	return enemyDelta.Length();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10270aa0 size=0x2a
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
