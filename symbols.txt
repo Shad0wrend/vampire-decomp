@@ -10733,6 +10733,7 @@
 0x1000f3da func   ?vfunc113@CEnvWind@@UAEXXZ CEnvWind::vfunc113
 0x1000f3df func   ?sub_1030f940@CUnknown1030f940@@QAEXXZ CUnknown1030f940::sub_1030f940
 0x1000f3e4 func   ?vfunc363@CWeaponWallet@@QAEHXZ CWeaponWallet::vfunc363
+0x1000f3e9 func   ?vfunc319@CWeaponUnarmed@@QAEXXZ CWeaponUnarmed::vfunc319
 0x1000f3ee func   ?vfunc372@CWeaponThrown_Chang_Ghost@@QAEXHPBVVector@@@Z CWeaponThrown_Chang_Ghost::vfunc372
 0x1000f3f3 func   ?sub_100d2d80@@YAXXZ sub_100d2d80
 0x1000f3fd func   ?sub_10246290@@YAXHPAM0@Z sub_10246290

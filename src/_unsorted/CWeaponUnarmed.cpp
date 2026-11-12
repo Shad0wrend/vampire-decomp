@@ -69,6 +69,56 @@ void sub_103f5480()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f54a0 size=0x1b3
+#include "CWeaponUnarmed.h"
+#include "CBaseCombatWeapon.h"
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+#include "globalvars.h"
+#include <string.h>
+
+void __cdecl sub_101cebc0(CBasePlayer *pPlayer, int a, int b);
+
+// TARGET: CWeaponUnarmed::vfunc319
+void CWeaponUnarmed::vfunc319()
+{
+	const char *apszItems[4] = { "item_w_fists", "item_w_claws", "item_w_claws_protean4", "item_w_claws_protean5" };
+	CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)this;
+	void *pOwner = pWeapon->sub_102521f0();
+	if (!pOwner)
+		return;
+	CBasePlayer *pPlayer = *(CBasePlayer **)((char *)pOwner + 0xa8);
+	if (!pPlayer)
+		return;
+	if (pPlayer->m_nFlags2088 & 1) {
+		if (pWeapon->m_flTimes730[0] <= gpGlobals->curtime) {
+			if (pPlayer->vfunc94() == 10) {
+				sub_101cebc0(pPlayer, 0x4c, 0);
+				return;
+			}
+			CBaseEntity *pItem;
+			if (EHandle_Get(pPlayer->m_hEnt0EA4) && (pItem = (CBaseEntity *)EHandle_LookupEntity(pPlayer->m_hEnt0EA4)) != 0 && pItem != (CBaseEntity *)this
+				&& strcmpi(pItem->sub_1009f200(), ((CBaseEntity *)this)->sub_1009f200()) != 0
+				|| EHandle_Get(*(unsigned int *)&pPlayer->m_hEnt0EA8) && (pItem = (CBaseEntity *)EHandle_LookupEntity(*(unsigned int *)&pPlayer->m_hEnt0EA8)) != 0)
+			{
+				if (pPlayer->vfunc388(pItem, 0))
+					((CBaseCombatWeapon *)pItem)->vfunc319();
+				return;
+			}
+			for (unsigned int i = 0; i < 4; i++) {
+				pItem = (CBaseEntity *)pPlayer->sub_10335950(apszItems[i]);
+				if (pItem) {
+					if (pPlayer->vfunc388(pItem, 0))
+						((CBaseCombatWeapon *)pItem)->vfunc319();
+					return;
+				}
+			}
+		}
+	} else
+		pWeapon->vfunc321();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f56d0 size=0x3
 #include "CWeaponUnarmed.h"
 
