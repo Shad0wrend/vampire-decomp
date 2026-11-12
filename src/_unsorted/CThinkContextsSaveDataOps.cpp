@@ -1,6 +1,58 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100a1e30 size=0x10d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CThinkContextsSaveDataOps.h"
+#include "CUtlVectorDataOps.h"
+#include "CThinkSaveViews.h"
+#include "ScopeTrace.h"
+
+#define TV1(n) virtual void v##n();
+#define TV10(n) TV1(n##0) TV1(n##1) TV1(n##2) TV1(n##3) TV1(n##4) TV1(n##5) TV1(n##6) TV1(n##7) TV1(n##8) TV1(n##9)
+struct ISaveView12 { TV10(0) TV10(1) TV10(2) TV1(30) virtual void WriteFunction(void *pMap, const char *pname, int *data, int count); };
+struct COwnerView12 { TV10(0) TV10(1) TV10(2) TV10(3) TV10(4) TV10(5) TV10(6) TV10(7) TV1(80) TV1(81) virtual void *GetDataDescMap(); };
+
+template <class UTLVECTOR, int FIELD_TYPE>
+class CUtlVectorDataopsInstantiator
+{
+public:
+	static CUtlVectorDataOps<UTLVECTOR, FIELD_TYPE> *GetDataOps(UTLVECTOR *)
+	{
+		static CUtlVectorDataOps<UTLVECTOR, FIELD_TYPE> ops;
+		return &ops;
+	}
+};
+
+void CThinkContextsSaveDataOps::vfunc0(void *pFieldInfo, void *pSave)
+{
+	ScopeTrace trace("CThinkContextsSaveDataOps::Save", g_106b8540);
+	SaveRestoreFieldInfoView &fieldInfo = *(SaveRestoreFieldInfoView *)pFieldInfo;
+	CUtlVector<thinkfunc_t> *pUtlVector = (CUtlVector<thinkfunc_t> *)fieldInfo.m_pField;
+	{
+		CThinkVecOps *pOps = CUtlVectorDataopsInstantiator<CUtlVector<thinkfunc_t, CUtlMemory<thinkfunc_t> >, 9>::GetDataOps(pUtlVector);
+		SaveRestoreFieldInfoView info = { (CThinkVec *)pUtlVector, 0, 0 };
+		pOps->vfunc0(&info, pSave);
+	}
+	COwnerView12 *pOwner = (COwnerView12 *)fieldInfo.m_pOwner;
+	for (int i = 0; i < pUtlVector->Size(); i++)
+	{
+		void *pV = &((*pUtlVector)[i].m_a);
+		((ISaveView12 *)pSave)->WriteFunction(pOwner->GetDataDescMap(), "m_pfnThink", (int *)(char *)pV, 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1f90 size=0x125
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
