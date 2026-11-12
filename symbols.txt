@@ -4910,6 +4910,7 @@
 0x10007798 func   ?sub_101dc0b0@CUnknown101dbe30@@QAEXPAVCBaseEntity@@@Z CUnknown101dbe30::sub_101dc0b0
 0x100077a2 func   ?vfunc495@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc495
 0x100077a7 func   ?sub_101d4ef0@CUnknown101d4ef0@@QAEPAHPAHH@Z CUnknown101d4ef0::sub_101d4ef0
+0x100077ac func   ?vfunc389@CNPC_VTzimisce@@UAE?AVVector@@ABV2@@Z CNPC_VTzimisce::vfunc389
 0x100077b1 func   ?sub_102dd5b0@COwnerView@@QAEPAXXZ COwnerView::sub_102dd5b0
 0x100077b6 func   ?sub_10097d40@@YAHXZ sub_10097d40
 0x100077bb func   ?sub_102dd580@CUnknown102dd580@@QAEPBDXZ CUnknown102dd580::sub_102dd580

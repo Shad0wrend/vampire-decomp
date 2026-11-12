@@ -1098,6 +1098,43 @@ void CNPC_VTzimisce::vfunc228(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bfd80 size=0x30e
+#include "CBaseCombatCharacter.h"
+#include "CNPC_VTzimisce.h"
+#include "QAngle.h"
+#include "Vector.h"
+#include "ConVar.h"
+extern ConVar g_1093cba8;
+extern ConVar g_1093cbf0;
+extern ConVar g_1093cc38;
+void sub_10139610(const QAngle &angles, Vector *fwd, Vector *right, Vector *up);
+
+// TARGET: CNPC_VTzimisce::vfunc389
+Vector CNPC_VTzimisce::vfunc389(const Vector &vecSrc)
+{
+	Vector fwd, right, up;
+	Vector r;
+	switch (*(int *)((char *)this + 0xfec))
+	{
+	case 0x107:
+	{
+		sub_10139610(*(QAngle *)vfunc221(), &fwd, &right, &up);
+		Vector a = up * g_1093cba8.GetFloat();
+		Vector d = fwd * g_1093cc38.GetFloat() + vecSrc + right * g_1093cbf0.GetFloat();
+		r.sub_1003e4b0(d.sub_1011e060(a));
+		return r;
+	}
+	case 0x106:
+	{
+		sub_10139610(*(QAngle *)vfunc221(), &fwd, &right, &up);
+		r = fwd * g_1093cc38.GetFloat() + vecSrc - right * g_1093cbf0.GetFloat() + up * g_1093cba8.GetFloat();
+		return r;
+	}
+	}
+	return ((CBaseCombatCharacter *)this)->vfunc389(vecSrc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c08d0 size=0x183
 #include "CNPC_VTzimisce.h"
 #include "CBaseEntity.h"
