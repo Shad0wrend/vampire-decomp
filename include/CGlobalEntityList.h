@@ -69,6 +69,7 @@ public:
 	CBaseEntity *sub_100f7c30(CBaseEntity *pStart, const char *szName, const Vector *pCenter, float flRadius, CBaseEntity *pSearching, CBaseEntity *pActivator);	// "FindEntityByNameWithin" (stub 0x10012193): sub_100f7770, then the first one with an edict within flRadius of pCenter; matched as a free function, called as a member here
 	void sub_100f7e30(CBaseEntity *pStart, const char *szName, const Vector *pCenter, float flRadius);	// stub 0x10013da4: the fallback of sub_100f7f70 when sub_100f7c30 finds nothing
 	CBaseEntity *sub_100f7380(CBaseEntity *pStart, const char *pszClassname);	// "CGlobalEntityList::FindEntityByClassname": the first entity after pStart (the first one when null) whose classname matches
+	CBaseEntity *sub_100f7f70(CBaseEntity *pStart, const char *szName, const Vector &vecSrc, float flRadius, CBaseEntity *pSearchingEntity, CBaseEntity *pActivator);
 	CBaseEntity *sub_100f7930(CBaseEntity *pStart, const char *szName);	// the first entity after pStart whose target name matches szName (stub 0x1000e665)
 	CGlobalEntityList_Ent *sub_100f7b20(const char *pszClass, const char *pszName, int pStart, void *pSearching, int pActivator);	// a name search variant (stub 0x10009b8d); the entity found, or 0
 	CBaseEntity *sub_100f7890(CBaseEntity *pStart, const char *szName);	// the first entity after pStart that has an edict and whose name (slot 9) equals szName, case-insensitive

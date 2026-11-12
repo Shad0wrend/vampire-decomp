@@ -1,6 +1,7 @@
 // CCineNPCSlots: the virtual table of an AI NPC / scripted sequence viewed as a plain list of slots up to slot 585, used to
 // call a slot of an object whose class does not model its vtable (CCineNPC and the NPC at +0x94 of an entity).
 #pragma once
+class Vector;
 
 #define CCS_V(n) virtual void f##n();
 #define CCS_V10(p) CCS_V(p##0) CCS_V(p##1) CCS_V(p##2) CCS_V(p##3) CCS_V(p##4) CCS_V(p##5) CCS_V(p##6) CCS_V(p##7) CCS_V(p##8) CCS_V(p##9)
@@ -11,7 +12,7 @@ class CCineNPCSlots
 public:
 	CCS_V100(a) CCS_V100(b)
 	CCS_V10(c0) CCS_V10(c1)
-	virtual int slot220(int a, void *pSearcher, int b);	// the activator / search context handed to the entity list's name search
+	virtual const Vector &slot220();	// GetAbsOrigin
 	CCS_V(c221) CCS_V(c222) CCS_V(c223) CCS_V(c224) CCS_V(c225) CCS_V(c226) CCS_V(c227) CCS_V(c228) CCS_V(c229)
 	CCS_V10(c3) CCS_V10(c4) CCS_V10(c5) CCS_V10(c6) CCS_V10(c7) CCS_V10(c8) CCS_V10(c9)
 	CCS_V100(d)
