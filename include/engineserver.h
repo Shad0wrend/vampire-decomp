@@ -50,7 +50,7 @@ public:
 	virtual int vfunc52(int nGroup, char *pszBuffer, int nBufferSize, int nSentence, int bReset);	// SentenceGroupPickSequential: the name of the group's sentence, negative when none
 	virtual int vfunc53(int a); virtual void vfunc54();
 	virtual int vfunc55(const char *pszGroupName);	// SentenceGroupIndexFromName: negative for an unknown group
-	virtual void vfunc56(); virtual void vfunc57();
+	virtual void vfunc56(); virtual float vfunc57(int idx);
 	virtual void *vfunc58(int modelIndex);	// GetVCollide: a model's collision data (0 when none)
 	virtual void vfunc59(const char *pszCommand);	// ServerCommand
 	virtual void vfunc60();	// ServerExecute

@@ -11,7 +11,8 @@ class CEntitySoundOriginView
 {
 public:
 	ESO_SLOTS10(a00) ESO_SLOTS10(a01) ESO_SLOTS10(a02) ESO_SLOTS10(a03) ESO_SLOTS10(a04)
-	ESO_SLOTS10(a05) ESO_SLOTS10(a06) ESO_SLOTS10(a07) ESO_SLOTS10(a08) ESO_SLOTS10(a09)
+	ESO_SLOTS10(a05) ESO_SLOTS10(a06) ESO_SLOTS10(a07) virtual void a080(); virtual void a081(); virtual void a082(); virtual void a083(); virtual void a084(); virtual int a085(); virtual void a086(); virtual void a087(); virtual void a088(); virtual void a089();
+	ESO_SLOTS10(a09)
 	ESO_SLOTS10(a10) ESO_SLOTS10(a11) ESO_SLOTS10(a12) ESO_SLOTS10(a13) ESO_SLOTS10(a14)
 	ESO_SLOTS10(a15) ESO_SLOTS10(a16) ESO_SLOTS10(a17) ESO_SLOTS10(a18)
 	virtual void a190(); virtual void a191();
