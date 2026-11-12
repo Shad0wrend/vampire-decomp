@@ -2642,6 +2642,243 @@ void CBaseCombatWeapon::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x102579f0 size=0x688
+#include "CBasePlayer.h"
+// TARGET: CBaseCombatWeapon::vfunc270
+#include "CBaseCombatWeapon.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CGameTrace.h"
+#include "CVDmg_t.h"
+#include "CUnknown101c2770.h"
+#include "CUnknown101c29e0.h"
+#include "CUnknown101c2a90.h"
+#include "CUnknown101e8f20.h"
+#include "CUnknown10349590.h"
+#include "CUnknown103498b0.h"
+#include "CDevFlagObj.h"
+#include "CSoundEnt.h"
+#include "CBCCSlotViews.h"
+#include "Tier1.h"
+#include "Vector.h"
+#include <stdlib.h>
+
+inline void *__cdecl operator new(unsigned int, void *p) { return p; }
+
+class CUnknown101c2a10 { public: void sub_101c2a10(int value); };
+struct SRange { char m_pad[0x10]; int sub_10349830(); };
+struct InfoV;
+void sub_101cfef0(struct InfoV *p, int a, int b, int c, int d);
+char *sub_101d3730(const char *pszFormat, ...);
+int sub_101c2c30();
+void sub_101c2c60();
+void sub_10012a8a();
+extern void (*g_109f362c)(const char *pszFormat, ...);
+extern CDevFlagObj *g_1070b13c;
+extern CDevFlagObj *g_1074f04c;
+extern CVDmg_t *g_1072cb10;
+extern float g_1072cb40;
+extern Vector g_1072cb20;
+extern unsigned int g_1072cb5c;
+extern int g_1072bc5c;
+extern unsigned char g_1072bcb7;
+extern CUnknown101e8f20 g_10739d08;
+extern CVStatList_t g_109f0b40;
+extern unsigned char g_109f0b2a;
+
+struct DiceRec { char pad[4]; int m_n4; int m_n8; int m_nc; };
+struct DmgInfoView {
+    CVDmg_t *m_pDmg;
+    char pad04[0x18];
+    float m_vec1c[3];
+    int m_n28;
+    char pad2c[0x10];
+    int m_n3c;
+    char pad40[8];
+    float m_fl44;
+};
+struct MeleeInfo_t { char pad00[0x28]; int m_aCounts[1]; };
+
+class CCharSlotView
+{
+public:
+    VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2)
+    VIEW_SLOT10(30)
+    VIEW_SLOT(310) VIEW_SLOT(311) VIEW_SLOT(312) VIEW_SLOT(313) VIEW_SLOT(314) VIEW_SLOT(315) VIEW_SLOT(316) VIEW_SLOT(317)
+    virtual char vfunc318(int a, int b, int c);
+    virtual char vfunc319(int a, int b, int c);
+    virtual char vfunc320(int a, int b);
+    virtual char vfunc321(int a);
+    VIEW_SLOT(322) VIEW_SLOT(323) VIEW_SLOT(324) VIEW_SLOT(325)
+    virtual char vfunc326(int a, int b);
+    VIEW_SLOT(327) VIEW_SLOT(328) VIEW_SLOT(329)
+    VIEW_SLOT10(33) VIEW_SLOT10(34) VIEW_SLOT10(35) VIEW_SLOT10(36) VIEW_SLOT10(37) VIEW_SLOT10(38) VIEW_SLOT10(39)
+    virtual char vfunc400();
+};
+
+void CBaseCombatWeapon::vfunc270(CGameTrace *pHit, void *pInfo)
+{
+    CBaseCombatCharacter *pOwner = (CBaseCombatCharacter *)sub_10252240();
+    if (!pOwner)
+        return;
+    CBaseEntity *pVictim = pHit->m_pEnt;
+    CBaseCombatCharacter *pVictimChar = pVictim ? (CBaseCombatCharacter *)pVictim->m_p9c : 0;
+    vfunc339();
+    CSoundEnt::sub_101bac90(0x10, (const Vector *)pHit->m_endpos, g_1072bc5c, 0.2f, g_1072bcb7, pOwner);
+    if (!pVictim)
+        return;
+    int *pRec = sub_102517e0();
+    Vector dir = *(Vector *)pHit->m_endpos - *(Vector *)pHit->m_startpos;
+    VectorNormalize(dir);
+    void *pAI = pOwner->m_pA8;
+    if (pAI && pVictimChar && pRec[0xf1] > 0)
+    {
+        ((CBasePlayer *)pAI)->sub_1017e150(pRec[0xf1], -1.0f, sub_101d3730("MeleeHit %s with %s", pVictimChar->sub_100ab4f0(), ((CBaseEntity *)this)->sub_100ab4f0()));
+    }
+    sub_101c2c30();
+    CVDmg_t dmg = *(CVDmg_t *)((char *)this + 0x77c + *pRec * 0x44);
+    dmg.sub_101fa960((CVDmgSource_t *)pOwner);
+    DmgInfoView info;
+    ((CUnknown101c2770 *)&info)->sub_101c2770(&dmg);
+    info.m_n28 = (int)this;
+    info.m_n3c = 0;
+    ((CUnknown101c29e0 *)&info)->sub_101c29e0((const int *)pHit);
+    int nMode = 1;
+    int nDice = 1;
+    bool bBlocked = pOwner->sub_10345ab0(pVictimChar);
+    char *pDiceRec = pOwner->sub_10345980(pVictimChar);
+    bool bWentThrough = false;
+    if (pDiceRec)
+    {
+        DiceRec *pDice = (DiceRec *)pDiceRec;
+        bWentThrough = ((CUnknown10349590 *)pDiceRec)->sub_10349650();
+        nDice = (int)(float)((pDice->m_n4 - pDice->m_n8) - pDice->m_nc);
+        dmg.m_field38 = pDice->m_nc;
+    }
+    else
+    {
+        bBlocked = false;
+    }
+    if (bBlocked)
+    {
+        if (!g_1070b13c->vfunc1() && g_1070b13c->m_n2c)
+        {
+            switch (((SRange *)pDiceRec)->sub_10349830())
+            {
+            case 0: pOwner->sub_100abbf0((int)"BLOCKED ON HIT", 0); break;
+            case 1: pOwner->sub_100abbf0((int)"BLOCKED NORMAL", 0); break;
+            case 2: pOwner->sub_100abbf0((int)"BLOCKED MAJOR", 0); break;
+            default: pOwner->sub_100abbf0((int)"BLOCKED UNKNOWN", 0); break;
+            }
+            switch (((CUnknown103498b0 *)pDiceRec)->sub_103498b0())
+            {
+            case 0: pVictimChar->sub_100abbf0((int)"BLOCKING DODGE_ATTACK", 0); break;
+            case 1: pVictimChar->sub_100abbf0((int)"BLOCKING DODGE", 0); break;
+            case 2: pVictimChar->sub_100abbf0((int)"BLOCKING", 0); break;
+            case 3: pVictimChar->sub_100abbf0((int)"BLOCKING STAGGER", 0); break;
+            case 4: pVictimChar->sub_100abbf0((int)"BLOCKING HIT", 0); break;
+            default: pVictimChar->sub_100abbf0((int)"BLOCKING UNKNOWN", 0); break;
+            }
+        }
+        ((CCharSlotView *)pVictimChar)->vfunc318((int)pOwner, (int)pDiceRec, (int)&dmg);
+        ((CCharSlotView *)pOwner)->vfunc319((int)pVictimChar, (int)pDiceRec, (int)&dmg);
+    }
+    if (!bWentThrough && bBlocked)
+        goto Tail;
+    if (nDice <= 0)
+        nDice = 1;
+    dmg.m_field0c = nDice;
+    dmg.sub_101fb3e0(8);
+    pVictim->sub_100a7d00((int)&info, (int)&dir, (int)pHit);
+    {
+        float fBase = (float)dmg.m_field04;
+        float fMod = (float)dmg.m_block14.sub_10204900(pOwner);
+        float fLethality;
+        if (g_1072cb10)
+            fLethality = (float)g_1072cb10->sub_101faa70();
+        else
+            fLethality = g_1072cb40;
+        CVStatListSet *pSet = CVStatListSet::Of(pOwner);
+        CVStatList_t *pList;
+        int i;
+        for (i = 0; i < pSet->m_nLists; i++)
+        {
+            if (pSet->m_pLists[i]->m_field10 == 3)
+            {
+                pList = pSet->m_pLists[i];
+                goto doFind;
+            }
+        }
+        if (!(g_109f0b2a & 1))
+        {
+            g_109f0b2a |= 1;
+            new (&g_109f0b40) CVStatList_t(-1);
+            atexit((void (*)())sub_10012a8a);
+        }
+        pList = &g_109f0b40;
+doFind:
+        int nPotence = pList->sub_102012d0(9);
+        if (nPotence > 0)
+        {
+            if ((float)nPotence > fLethality)
+            {
+                fLethality = (float)nPotence;
+                if (!g_1074f04c->vfunc1() && g_1074f04c->m_n2c)
+                    g_109f3630("Potence level %d active!  Remaining Lethality is auto-bumped to %f!\n", nPotence, fLethality);
+            }
+            else
+            {
+                if (!g_1074f04c->vfunc1() && g_1074f04c->m_n2c)
+                    g_109f3630("Potence level %d active!  Lethality is already higher, so it remains at %f!\n", nPotence, fLethality);
+            }
+        }
+        float flMult = ((CUnknown101c2a90 *)&info)->sub_101c2a70();
+        if (!g_1074f04c->vfunc1() && g_1074f04c->m_n2c)
+            g_109f3630("Final damage:  DamageInflicted (%f) * (BaseDamage (%f) + DamageModifier(%f)) * Multiplier (%f) = Total (%f)\n",
+                fLethality, fBase, fMod, flMult,
+                (fMod + fBase) * flMult * fLethality);
+        fLethality = (fMod + fBase) * flMult * fLethality;
+        if (pOwner->sub_1033c900(0x100000))
+        {
+            int n = g_10739d08.sub_101e8f20(pOwner);
+            fLethality = (float)n * fLethality * 0.01f;
+            pOwner->sub_1033c770(0x100000);
+        }
+        Vector vecVel;
+        pOwner->sub_103455a0(pVictimChar, pInfo, &vecVel);
+        g_1072cb20 = vecVel;
+        g_1072cb40 = fLethality;
+        g_1072cb5c = *pVictim->vfunc1();
+        ((CUnknown101c2a10 *)&g_1072cb10)->sub_101c2a10(-1);
+        if (fLethality > 0.0f)
+            nMode = bBlocked ? 0 : 2;
+        sub_101c2c60();
+        this->vfunc269((CBaseCombatWeapon *)pVictim, dir);
+    }
+    if (!bBlocked && pVictimChar)
+    {
+        if ((pInfo && &((MeleeInfo_t *)pInfo)->m_aCounts[0] && ((CCharSlotView *)pVictimChar)->vfunc326((int)pInfo, (int)pOwner))
+            || ((CCharSlotView *)pVictimChar)->vfunc400())
+        {
+            int act = pVictimChar->sub_103449b0((CBaseEntity *)pHit, (CBaseEntity *)pOwner, pInfo);
+            if (act == -1)
+                g_109f362c("%s could not find a valid knockback activity\n", pVictimChar->sub_100ab4f0());
+            else
+                ((CCharSlotView *)pVictimChar)->vfunc320((int)pOwner, act);
+        }
+        else
+        {
+            ((CCharSlotView *)pVictimChar)->vfunc321((int)pOwner);
+        }
+    }
+Tail:
+    sub_101cfef0((InfoV *)pHit, 0x80, 1, (int)this, nMode);
+    pVictim->vfunc21((int)pOwner);
+    pOwner->vfunc24((int)pVictim);
+    dmg.sub_101fa680();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258320 size=0x82
 #include "CBaseCombatWeapon.h"
 #include "Vector.h"
