@@ -9,7 +9,9 @@ struct CTableItem40_t
 
 struct CTableEntry264_t
 {
-	char m_pad0000[0x108];
+	char m_szName[0x40];
+	int m_n40;	// the level of the entry
+	char m_pad0044[0x108 - 0x44];
 	int m_n108;
 	int m_n10c;
 	int m_n110;
