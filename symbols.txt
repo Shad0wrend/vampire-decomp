@@ -12522,6 +12522,7 @@
 0x10011b53 func   ?sub_1030cb00@@YGHPBD@Z sub_1030cb00
 0x10011b58 func   ?vfunc558@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc558
 0x10011b5d func   ?sub_100dc1e0@@YIIPAX@Z sub_100dc1e0
+0x10011b62 func   ?sub_100c57e0@@YA_NPAUStudioAnimDesc@@MAAVVector@@AAVQAngle@@@Z sub_100c57e0
 0x10011b67 func   ?sub_10046050@PQ@@QAEXABUElem@@@Z PQ::sub_10046050
 0x10011b6c func   ?sub_1019dd70@CRopeKeyframe@@QAEEXZ CRopeKeyframe::sub_1019dd70
 0x10011b71 func   ?vfunc103@CWeaponMelee_TireIron@@QAEXXZ CWeaponMelee_TireIron::vfunc103
