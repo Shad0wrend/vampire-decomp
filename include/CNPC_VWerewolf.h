@@ -204,6 +204,7 @@ public:
 	void sub_103d4d60();	// "CNPC_VWerewolf::TeleportIn": scope trace (entity name), PositionAtHint of the teleport hint, slot 67, clears effect bit 5, RemoveSolidFlags(4) with its own scope trace, stamps curtime at +0x66ec, fires the output at +0x6788 with the target (slot 167); unless the dev object at 0x1093f73c says otherwise plays "dev/ww_tele_in.wav" and a debug message to the target's player
 	void sub_103cc5c0();	// "CNPC_VWerewolf::UpdateConditionCanSpecialMove": scope trace (entity name); nothing while the current schedule is one of the types 0x15f / 0x15b / 0x15a / 0x160 or bit 6 of +0x19c is set; else keeps the move hint (+0x66bc) valid (clearing it when it fails the tests, condition 0x78 and a signal to the object behind 0x10924a6c when it passes) and with condition 0x59 and no hint calls sub_103d2a10 or sub_103d14f0 depending on sub_103cf5f0
 	void sub_103d4a60();	// "CNPC_VWerewolf::TeleportOut": scope trace (entity name), stamps curtime at +0x66f0, slot 66, effect bit 5, AddSolidFlags(4) with its own scope trace, clears +0x66ac / +0x66e8, fires the output at +0x6770 with the target (slot 167); unless the dev object at 0x1093f73c says otherwise plays "dev/ww_tele_out.wav" and a debug message to the target's player
+	CNPC_VWerewolf *sub_103ca4b0();	// the constructor (CNPC_VBaseBoss / CNPC_VWerewolf parts inlined)
 	void sub_103d2a10();	// stub 0x10012a99
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly
 	bool sub_103d14f0();	// stub 0x1000296e, returns a byte in al
