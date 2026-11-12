@@ -197,6 +197,36 @@ void CPropKeypad::vfunc41(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021deb0 size=0xa8
+#include "CBasePlayer.h"
+#include "CPropKeypad.h"
+#include "CUnknown10217f50.h"
+
+extern "C" unsigned int __cdecl strlen(const char *);
+__declspec(dllimport) int __cdecl Q_strnicmp(const char *, const char *, int);
+
+struct CPlayerLeave { void sub_10167fd0(); };
+
+// TARGET: CPropKeypad::vfunc273
+void CPropKeypad::vfunc273(CBasePlayer *pPlayer, const char *pszCommand)
+{
+	if (m_b082c)
+		return;
+	if (pszCommand && strlen(pszCommand))
+	{
+		if (!Q_strnicmp("quit", pszCommand, 16))
+			((CPlayerLeave *)pPlayer)->sub_10167fd0();
+		else if (!Q_strnicmp("exit", pszCommand, 16))
+			((CPlayerLeave *)pPlayer)->sub_10167fd0();
+		else
+			((CUnknown10217f50 *)this)->sub_10217f50(0, pszCommand);
+	}
+	else
+		sub_1021df90();
+	sub_1021df90();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021e0b0 size=0x33
 #include "CPropKeypad.h"
 #include "CPropHacking.h"
