@@ -94147,6 +94147,111 @@ void CBasePlayer::sub_101641d0(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101644f0 size=0x21d
+#include "CBasePlayer.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+#include "Vector.h"
+
+struct PCharView1015fbb0
+{
+	void sub_1015fbb0(int nActivity, int nArg);
+};
+
+struct PPlayerSlots
+{
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS10(20) EVS10(21) EVS10(22) EVS10(23) EVS10(24) EVS10(25)
+	EVS(260) EVS(261) EVS(262) EVS(263) EVS(264) EVS(265) EVS(266) EVS(267) EVS(268)
+	virtual void slot269(bool b);
+	EVS10(27) EVS10(28) EVS10(29) EVS10(30)
+	virtual void slot310(int act);
+	EVS(311) EVS(312) EVS(313) EVS(314) EVS(315) EVS(316) EVS(317) EVS(318) EVS(319)
+	EVS10(32) EVS10(33) EVS10(34) EVS10(35) EVS10(36)
+	EVS(370) EVS(371) EVS(372) EVS(373) EVS(374) EVS(375)
+	virtual int slot376(int act);
+	EVS(377) EVS(378) EVS(379) EVS(380)
+	virtual int slot381(int act);
+	EVS(382) EVS(383) EVS(384) EVS(385) EVS(386) EVS(387) EVS(388) EVS(389)
+	EVS10(39) EVS10(40) EVS(410) EVS(411) EVS(412)
+	virtual char slot413();
+};
+
+void CBasePlayer::sub_101644f0(int activity, int arg2, int arg3)
+{
+	PPlayerSlots *pPlayer = (PPlayerSlots *)this;
+	bool bFirst = activity == 0x13 || activity == 9 || activity == 0x12 || activity == 0x17 || activity == 0x16;
+	bool bSecond = activity == 0x28 || activity == 0x29 || activity == 0x2a || activity == 0x2c ||
+		activity == 0x2d || activity == 0x2e || activity == 0x2f;
+	bool bFrenzy = !bFirst && !pPlayer->slot413();
+
+	if (activity != -1)
+	{
+		((CBaseCombatCharacter *)this)->sub_10324500(activity);
+		int translated = pPlayer->slot381(activity);
+		activity = pPlayer->slot376(translated);
+
+		bool bChanged = activity != ((CBaseCombatCharacter *)this)->m_Activity || m_b65c;
+		if (bSecond)
+			bChanged = activity != ((CBaseCombatCharacter *)this)->m_Activity;
+
+		if (bChanged)
+		{
+			pPlayer->slot310(activity);
+			int seq;
+			if (!(((CBaseCombatCharacter *)this)->sub_100b3700() & 0x40000000))
+			{
+				seq = ((CBaseAnimating *)this)->sub_1008dc40(activity, -1);
+			}
+			else
+			{
+				seq = ((CBaseAnimating *)this)->sub_1008dd30(activity, -1);
+				((CBaseCombatCharacter *)this)->sub_100b3640(0x40000000);
+			}
+
+			if (((CBaseCombatCharacter *)this)->m_nSequence6f0 != seq || m_b65c)
+			{
+				((CBaseCombatCharacter *)this)->m_nSequence6f0 = seq;
+				if (!bFirst)
+					((CBaseCombatCharacter *)this)->m_fl6f8 = 0;
+				((CBaseAnimating *)this)->sub_10090950();
+				((CBaseCombatCharacter *)this)->m_flPlaybackRate6f4 = ((CBaseCombatCharacter *)this)->m_flFrenzyRate;
+			}
+		}
+
+		if (bFirst)
+		{
+			float flSpeed = ((CBaseAnimating *)this)->sub_10091490(((CBaseCombatCharacter *)this)->m_nSequence6f0, 0);
+			if (flSpeed > 0.0f)
+				((CBaseCombatCharacter *)this)->m_flPlaybackRate6f4 = ((Vector *)((CBaseCombatCharacter *)this)->m_vel3d4)->Length2D() / flSpeed;
+			else
+				((CBaseCombatCharacter *)this)->m_flPlaybackRate6f4 = 1.0f;
+		}
+		else
+		{
+			((CBaseCombatCharacter *)this)->m_flPlaybackRate6f4 = bFrenzy ? ((CBaseCombatCharacter *)this)->m_flFrenzyRate : 1.0f;
+		}
+	}
+
+	if (arg2 == 0)
+	{
+		pPlayer->slot269(false);
+	}
+	else if (arg2 != -1)
+	{
+		int translated2 = pPlayer->slot381(arg2);
+		int act2 = pPlayer->slot376(translated2);
+		((PCharView1015fbb0 *)this)->sub_1015fbb0(act2, arg3);
+	}
+
+	if (activity != 1 && activity != 4)
+		*(float *)((char *)this + 0x1c68) = gpGlobals->curtime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10165790 size=0x1e2
 #include "CBaseEntity.h"
 #include "CTraceFilterNoCharacterCollide.h"
