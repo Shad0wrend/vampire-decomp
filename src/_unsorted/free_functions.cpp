@@ -114854,6 +114854,55 @@ void CUnknown101bc140::sub_101bc140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc260 size=0x132
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CUnknown101bc140.h"
+#include "CSingleUserRecipientFilter.h"
+#include "CEHandleGet.h"
+#include "CBaseEntity.h"
+#include "engineserver.h"
+
+struct SoundFilterView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual bool vfunc8(void *pPlayer);
+};
+
+void sub_101b14d0(CRecipientFilter *pFilter, int nEntIndex, int nChannel, const char *pszSample, float flVolume, int nSoundLevel, int a, int b, int c, int d, int e);
+
+inline int ENTINDEX(int pEdict) { return engine->vfunc35(pEdict); }
+
+inline void SoundEmitTo(CUnknown101bc140 *p, CRecipientFilter &filter)
+{
+	float flVolume = p->m_flVolume;
+	const char *pszSample = p->m_pszSample ? p->m_pszSample : g_106b8540;
+	int nEntIndex;
+	if (EHandle_Get(p->m_hEntity))
+		nEntIndex = ENTINDEX(((CBaseEntity *)EHandle_Get(p->m_hEntity))->m_pEdict2e0);
+	else
+		nEntIndex = -1;
+	sub_101b14d0(&filter, nEntIndex, p->m_nChannel, pszSample, p->sub_101bbcf0(), p->m_nSoundLevel, 1, (int)flVolume, 0, 0, 0);
+}
+
+void CUnknown101bc140::sub_101bc260(void *pPlayer)
+{
+	if ((m_nFlags & 1) && ((SoundFilterView *)m_Filter)->vfunc8(pPlayer))
+	{
+		CSingleUserRecipientFilter filter(pPlayer);
+		SoundEmitTo(this, filter);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc4d0 size=0x1a
 namespace lifted {
 extern int g_1059aa0c;
