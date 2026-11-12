@@ -1366,6 +1366,7 @@
 0x10002d33 func   ?sub_10129870@@YIXPAUVelClampView@@@Z sub_10129870
 0x10002d38 func   ?sub_1017deb0@@YGMHM@Z sub_1017deb0
 0x10002d3d func   ?sub_102dc350@CUnknown102dc350@@QAEXXZ CUnknown102dc350::sub_102dc350
+0x10002d42 func   ??0AI_NavGoal_t@@QAE@ABVVector@@W4Activity@@MIPAVCBaseEntity@@@Z AI_NavGoal_t::AI_NavGoal_t
 0x10002d47 func   ?sub_102daf50@@YIDPAX@Z sub_102daf50
 0x10002d4c func   ?sub_10230d00@CVDmgBlock16_t@@QAEHPAX@Z CVDmgBlock16_t::sub_10230d00
 0x10002d51 func   ?sub_101bf680@@YIIPAD@Z sub_101bf680
