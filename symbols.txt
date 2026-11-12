@@ -3833,6 +3833,7 @@
 0x1000615e func   ?sub_10139d20@@YAXPAM0@Z sub_10139d20
 0x10006163 func   ?sub_1024d7b0@CUnk1024d7b0@@QAEPAMPAM@Z CUnk1024d7b0::sub_1024d7b0
 0x10006168 func   ?vfunc117@CMultiSource@@UAEHXZ CMultiSource::vfunc117
+0x1000616d func   ?vfunc3@?$CEntityDataInstantiator@Ugroundlink_t@@@@UAEXI@Z CEntityDataInstantiator<groundlink_t>::vfunc3
 0x10006172 func   ?sub_101e8780@S@@QAEXPAUP@@@Z S::sub_101e8780
 0x1000617c func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> >,9>::vfunc3
 0x10006181 func   ?sub_101a7500@CCineNPC@@QAEXH@Z CCineNPC::sub_101a7500
