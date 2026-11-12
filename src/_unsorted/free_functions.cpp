@@ -88125,6 +88125,49 @@ Vector Vector::sub_10146190(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146200 size=0x259
+#include "CBaseEntity.h"
+#include "QAngle.h"
+#include "CBasePlayer.h"
+#include "UTIL_Trace.h"
+
+extern int g_10552810;
+CBaseEntity *sub_101cd9e0(int index);
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_10142e90(const Vector *pStart, const Vector *pEnd, int r, int g, int b, unsigned char noDepthTest, float flDuration);
+
+#define TR_ENDPOS (*(Vector *)tr.m_endpos)
+#define TR_NORMAL (*(Vector *)tr.m_planeNormal)
+
+// TARGET: sub_10146200
+void sub_10146200()
+{
+	CBasePlayer *pPlayer = (CBasePlayer *)sub_101cd9e0(g_10552810);
+	if (!pPlayer)
+		return;
+
+	CGameTrace tr;
+	Vector vForward;
+	Vector vSource = pPlayer->vfunc193();
+	sub_10139610(*(const QAngle *)&pPlayer->m_vec206c, &vForward, 0, 0);
+
+	UTIL_TraceLine_Calls(vSource, vSource + vForward * 2048, 0x200400b, pPlayer, 0, &tr);
+	float dotPr = DotProduct(Vector(0, 0, 1), TR_NORMAL);
+	if (tr.m_fraction != 1.0 && dotPr > 0.5)
+	{
+		TR_ENDPOS.z += 1;
+		float scale = 6;
+		Vector startPos = TR_ENDPOS + Vector(-scale, 0, 0);
+		Vector endPos = TR_ENDPOS + Vector(scale, 0, 0);
+		sub_10142e90(&startPos, &endPos, 255, 0, 0, false, 0);
+
+		startPos = TR_ENDPOS + Vector(0, -scale, 0);
+		endPos = TR_ENDPOS + Vector(0, scale, 0);
+		sub_10142e90(&startPos, &endPos, 255, 0, 0, false, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146500 size=0x44
 struct S146500 {
 	char pad[0xc];
