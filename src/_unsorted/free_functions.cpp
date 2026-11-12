@@ -162423,6 +162423,34 @@ void CSoundSchemeManager::sub_102288b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102289e0 size=0x78
+#include "utlvector.h"
+#include "ehandle.h"
+#include "CSoundScheme.h"
+
+// The global sound scheme system at 0x10750d78 (CSoundScheme::vfunc113 registers itself with it).
+struct CSoundSchemeSystem
+{
+    int m_n0[0x19c / 4];
+    CUtlVector<CHandle<CSoundScheme> > m_Schemes;	// 0x19c: the registered schemes
+    void sub_102289e0(CSoundScheme *pScheme);
+};
+
+// An object with an inline destructor in scope: VC6 then keeps CUtlMemory::Grow out of line, as the game does
+// (the game's source probably had a compiled-out scope/profile object here).
+struct CEmptyScope
+{
+    CEmptyScope() {}
+    ~CEmptyScope() {}
+};
+
+void CSoundSchemeSystem::sub_102289e0(CSoundScheme *pScheme)
+{
+    CEmptyScope scope;
+    m_Schemes.AddToTail(pScheme);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10228a80 size=0x1f6
 #include "CSoundSchemeManager.h"
 #include "CBasePlayer.h"
