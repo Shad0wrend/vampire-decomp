@@ -215269,6 +215269,71 @@ bool sub_103114d0(int *pA, int *pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10311500 size=0x19f
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlvector.h"
+#include "CExpresserTreeEntry.h"
+
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+
+struct CExpresserEntryTreeRA : CUtlRBTree<CExpresserTreeEntry, unsigned short>
+{
+	void RemoveAllNodes()
+	{
+		unsigned short prev = InvalidIndex();
+		for (int i = (int)m_TotalElements; --i >= 0; ) {
+			unsigned short idx = (unsigned short)i;
+			if (IsValidIndex(idx))
+				Destruct(&Element(idx));
+			SetRightChild(idx, prev);
+			SetLeftChild(idx, idx);
+			prev = idx;
+		}
+		m_FirstFree = m_TotalElements ? (unsigned short)0 : InvalidIndex();
+		m_Root = InvalidIndex();
+		m_NumElements = 0;
+	}
+	unsigned short Next(unsigned short i) const
+	{
+		if (RightChild(i) != InvalidIndex()) {
+			i = RightChild(i);
+			while (LeftChild(i) != InvalidIndex())
+				i = LeftChild(i);
+			return i;
+		}
+
+		unsigned short parent = Parent(i);
+		while (IsRightChild(i)) {
+			i = parent;
+			if (i == InvalidIndex())
+				break;
+			Links_t const &(CUtlRBTree<CExpresserTreeEntry, unsigned short>::*pfn)(unsigned short) const = &CUtlRBTree<CExpresserTreeEntry, unsigned short>::Links;
+			parent = (this->*pfn)(i).m_Parent;
+		}
+		return parent;
+	}
+};
+
+void CExpresserEntryTree::sub_10311500()
+{
+	CExpresserEntryTreeRA *t = (CExpresserEntryTreeRA *)this;
+	unsigned short i = FirstInorder();
+	while (i != InvalidIndex()) {
+		delete Element(i).m_p;
+		i = pcd_stage(t->Next(i));
+	}
+	t->RemoveAllNodes();
+	m_Elements.Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10311710 size=0x16e
 #include "utlmemory.h"
 #include "utlrbtree.h"
