@@ -271,3 +271,29 @@ int CNPC_VManBat::vfunc464()
     return 2;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1038fb20 size=0x68
+#include "CBaseEntity.h"
+#include "CGameTrace.h"
+#include "CNPC_VManBat.h"
+#include "CTraceFilterManBatNoIBeamEntity.h"
+#include "CUnknown1070b254.h"
+struct CManBatCollideable
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8();
+	virtual const float *vfunc9(int a);
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual int vfunc14();
+};
+
+struct CManBatTraceEnt { virtual void v0(); virtual void v1(); virtual CManBatCollideable *vfunc2(); };
+
+// TARGET: CNPC_VManBat::vfunc102
+void CNPC_VManBat::vfunc102(CBaseEntity *pEnt, int a2, int a3, int a4, int a5)
+{
+	CManBatCollideable *pCollision = ((CManBatTraceEnt *)pEnt)->vfunc2();
+	CTraceFilterManBatNoIBeamEntity filter(pEnt, pCollision->vfunc14());
+	g_1070b254->vfunc5(pCollision, (const float *)a2, (const float *)a3, pCollision->vfunc9(0), a4, &filter, (CGameTrace *)a5);
+}
+// END FUNCTION
