@@ -2437,6 +2437,235 @@ char CAI_BaseNPC::vfunc544(CBaseEntity *pEnt, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10270b20 size=0xaf7
+#include "MvsnSec0.h"
+#include "CHL2_Player.h"
+#include "CNPC_VTzimisce.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CAI_BaseNPC_vfunc481.h"
+#include "CVProfile.h"
+#include "Vector.h"
+#include "ehandle.h"
+#include "CVariantCopy.h"
+#include "CUnknown102718e0.h"
+#include "CUnknown102e0150.h"
+#include "CUnknown102dfd90.h"
+#include "UTIL_Trace.h"
+
+struct CDevFlag481 { virtual void vfunc0(); virtual bool vfunc1(); };
+extern CDevFlag481 *g_10924a6c;
+extern Vector g_1070d1b0;
+
+struct CCycleCount481 {
+	unsigned __int64 m_Int64;
+	CCycleCount481() { m_Int64 = 0; }
+	void Sample() {
+		unsigned long *p = (unsigned long *)this;
+		__asm {
+			mov ecx, p
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+struct CWeapon481 { char m_pad[0x8c0]; float m_flRange8c0; };
+struct CEnemy481 { char m_pad[0x9c]; CAI_BaseNPC *m_pNPC9c; };
+struct CNPCFlags481 { char m_pad[0x14b8]; unsigned int m_flags14b8; };
+struct CEnt481 { char m_pad[0xa8]; int m_na8; };
+struct CNav481 { char m_pad[0x34]; char m_b34; };
+
+struct COutputEHANDLE481 : COutputEvent {
+	void Set(CUnknown102718e0 value, void *pActivator, void *pCaller)
+	{
+		((CVariantCopy *)this)->sub_1000b320(0xc, &value);
+		sub_100cd300(*(CVariantCopy *)this, pActivator, pCaller, 0);
+	}
+};
+
+struct CAI_BaseNPCView481 : CAI_BaseNPCUnit481 {
+	CWeapon481 *sub_1032e7b0();
+	void SetCondition(int c) { g_10924a6c->vfunc1(); sub_10269a20(c); }
+	CBaseEntity *GetEnemy() { return (CBaseEntity *)vfunc167(); }
+};
+
+inline void PopGroup481(CVProfile *p)
+{
+	--p->m_nGroupStackDepth;
+	int nNew = p->m_GroupIDStack[p->m_nGroupStackDepth];
+	int nOld = p->m_GroupIDStack[p->m_nGroupStackDepth + 1];
+	if (nNew != nOld && p->m_bVTuneGroupsEnabled && nOld == p->m_nVTuneGroupID)
+		vtune(false);
+}
+
+inline void CVProfile::EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted)
+{
+	if (m_enabled != 0 || !m_bAtRoot) {
+		if (pszName != m_pCurNode->m_pszName)
+			m_pCurNode = m_pCurNode->GetSubNode(pszName, detailLevel, pBudgetGroupName);
+		m_pCurNode->EnterScope();
+		m_bAtRoot = false;
+	}
+}
+
+struct CVProfScope481 {
+	CVProfScope481(const char *pszName, int detail, const char *pszGroup, bool bAssert)
+	{
+		g_109f3648->EnterScope(pszName, detail, pszGroup, bAssert);
+	}
+};
+
+#define MAX481(a, b) ((a) > (b) ? (a) : (b))
+
+inline int Zero481() { return 0; }
+inline void ExitFinal481()
+{
+	CVProfile *p = g_109f3648;
+	if (!p->m_bAtRoot || p->m_enabled) {
+		CVProfNode *n = p->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			CCycleCount481 now;
+			now.Sample();
+			CCycleCount481 *pc = (CCycleCount481 *)&n->m_CurFrameTime;
+			pc->m_Int64 = now.m_Int64 - pc->m_Int64;
+			n->m_TotalTime += pc->m_Int64;
+			PopGroup481(g_109f3648);
+		}
+		if (n->m_nRecursions == 0)
+			p->m_pCurNode = p->m_pCurNode->m_pParent;
+		p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+	}
+}
+
+// TARGET: CAI_BaseNPC::vfunc481
+void CAI_BaseNPC::vfunc481(CBaseEntity *pEnemy)
+{
+	CAI_BaseNPCView481 *v = (CAI_BaseNPCView481 *)this;
+	CEntityVSlots *pEnt = (CEntityVSlots *)pEnemy;
+	CVProfScope481 scope("CAI_BaseNPC_GatherEnemyConditions", 0, "Unaccounted", false);
+	v->sub_10269b50(0x56);
+	v->sub_10269b50(0x57);
+	v->sub_10269b50(0x4a);
+	v->sub_10269b50(0x48);
+	CBaseEntity *pBlocker = 0;
+	v->sub_10270aa0(0);
+	if (!v->vfunc201(pEnemy, 0x2804091, (int *)&pBlocker, v->m_nSeeFailCount)) {
+		if (v->m_nSeeFailCount < 10)
+			v->m_nSeeFailCount++;
+	} else
+		v->m_nSeeFailCount = 0;
+
+	if (v->m_nSeeFailCount >= 10) {
+		CVProfScope481 scope2("CAI_BaseNPC_GatherEnemyConditions_Outputs", 0, "Unaccounted", false);
+		v->sub_10270aa0(pBlocker);
+		v->SetCondition(0x48);
+		v->sub_10270180(v->GetEnemy(), 1);
+		if (v->m_flags5d8c & 0x20000) {
+			if (((CEnt481 *)v->GetEnemy())->m_na8) {
+				v->m_OnE5eb4.sub_100cd660(v, v, 0);
+				v->m_OnE5e6c.sub_100cd660(v, v, 0);
+			} else
+				v->m_OnE5e6c.sub_100cd660(v, v, 0);
+		}
+		v->m_flags5d8c &= ~0x20000;
+		g_109f3648->ExitScope();
+	} else {
+		v->SetCondition(0x4a);
+		if (v->vfunc363(pEnemy) && v->vfunc468(pEnemy)) {
+			v->SetCondition(0x46);
+			v->sub_10270180(v->GetEnemy(), 0);
+		}
+		if (!(v->m_flags5d8c & 0x20000)) {
+			CVProfScope481 scope3("CAI_BaseNPC_GatherEnemyConditions_Outputs", 0, "Unaccounted", false);
+			EHANDLE hEnemy;
+			hEnemy = v->GetEnemy();
+			if (((CEnt481 *)v->GetEnemy())->m_na8) {
+				((COutputEHANDLE481 *)&v->m_OnE5e9c)->Set(*(CUnknown102718e0 *)&hEnemy, v, v);
+				((COutputEHANDLE481 *)&v->m_OnE5e54)->Set(*(CUnknown102718e0 *)&hEnemy, v, v);
+			} else
+				((COutputEHANDLE481 *)&v->m_OnE5e54)->Set(*(CUnknown102718e0 *)&hEnemy, v, v);
+			g_109f3648->ExitScope();
+		}
+		v->m_flags5d8c |= 0x20000;
+	}
+
+	if (!pEnt->slot158()) {
+		v->SetCondition(0x58);
+		v->sub_10269b50(0x46);
+		v->sub_10269b50(0x48);
+		g_109f3648->ExitScope();
+		return;
+	}
+
+	float flDist = v->sub_10270890(pEnemy);
+	g_109f3648->EnterScope("CAI_BaseNPC_GatherEnemyConditions_SeeEnemy", 0, "Unaccounted", false);
+	if (v->sub_10269aa0(0x46)) {
+		if (v->m_nSeeFailCount == 0) {
+			if (*pEnt->slot198() != g_1070d1b0) {
+				float flRand = enginerandom->vfunc1(-0.05f, 0.0f);
+				Vector vecPos = *pEnt->slot217() - *pEnt->slot198() * flRand;
+				v->vfunc544(pEnemy, (int)&vecPos, (int)((char *)pEnemy + 0x3d4));
+			} else
+				v->vfunc544(pEnemy, (int)pEnt->slot217(), (int)((char *)pEnemy + 0x3d4));
+		}
+		CAI_BaseNPC *pNPC = ((CEnemy481 *)pEnemy)->m_pNPC9c;
+		if (pNPC && pNPC->vfunc363((CBaseEntity *)v)) {
+			v->SetCondition(0x56);
+			v->sub_10269b50(0x57);
+		} else {
+			v->sub_10269b50(0x56);
+			v->SetCondition(0x57);
+		}
+	}
+	g_109f3648->ExitScopeInlined();
+
+	float flMaxDist = v->m_flt5de4;
+	if (v->sub_1032e7b0() && v->sub_10269aa0(0x46))
+		flMaxDist = MAX481(v->m_flt5de4, v->sub_1032e7b0()->m_flRange8c0);
+	if (flDist >= flMaxDist)
+		v->SetCondition(0x55);
+	else
+		v->sub_10269b50(0x55);
+
+	if (v->vfunc564())
+		v->vfunc561((CAI_BaseNPC *)v->vfunc167(), flDist);
+	else
+		v->vfunc560();
+	v->sub_10271900();
+	if (!((CNav481 *)v->m_pNavigator5d34)->m_b34 && v->vfunc530(v->GetEnemy()))
+		v->SetCondition(0x59);
+
+	if (gpGlobals->curtime - v->vfunc541()->sub_102e0150((void *)v->vfunc167()) > 8.0f
+		&& !v->vfunc541()->sub_102e0210((int)v->m_hFocus5ce0.Get())
+		&& !v->sub_10269aa0(0x46)) {
+		Vector vecLKP;
+		v->vfunc541()->sub_102dfed0(&vecLKP, v->GetEnemy());
+		CNPCFlags481 *pNPC = (CNPCFlags481 *)v->m_pAI0098;
+		if (pNPC) {
+			if ((pNPC->m_flags14b8 & 0x8000) == 0x8000) {
+				pNPC->m_flags14b8 &= ~0x8000;
+				((CUnknown102dfd90 *)v->vfunc541())->sub_102dfd90(v->GetEnemy());
+			}
+		} else {
+			Vector vecDelta = vecLKP - *(const Vector *)v->vfunc217();
+			if (FastSqrt(vecDelta.y * vecDelta.y + vecDelta.x * vecDelta.x) < 48.0f && !v->sub_10269aa0(0x46))
+				((CUnknown102dfd90 *)v->vfunc541())->sub_102dfd90(v->GetEnemy());
+		}
+		if (!v->sub_10269aa0(0x46) && v->sub_10269aa0(0x59)) {
+			CGameTrace tr;
+			UTIL_TraceLine(v->vfunc193(), vecLKP, 0x2804091, v, 0, &tr);
+			if (tr.m_fraction != 1.0)
+				((CUnknown102dfd90 *)v->vfunc541())->sub_102dfd90(v->GetEnemy());
+		}
+	}
+
+	(void)Zero481();
+	ExitFinal481();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10271f50 size=0x7
 #include "CAI_BaseNPC.h"
 int CAI_BaseNPC::vfunc375(int a0)
