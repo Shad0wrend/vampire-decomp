@@ -433,6 +433,40 @@ have written it rather than adding temporaries that spell out the assembly:
   0x100e05f0 (`mov ecx,obj` before `push reg`: the source defined that register there), 0x101bef50, 0x1036dd20,
   0x102f6d80 (FindAINodeNearestFacing), 0x10410bf0 (LaunchObject), 0x101cf7c0, 0x102478f0, 0x102b7cf0, 0x102a0490,
   0x102961a0, 0x102ef1a0 (OnFailedSteer), 0x1011fb50 (CheckWaterJump), 0x1024b880, 0x1026cec0.
+- **Round 10 (15 of 48, never-tried functions):** more unnamed SDK code: bitbuf.h WriteUBitLong (0x100bc860,
+  0x100bd450, overflow path sets m_bOverflow before m_iCurBit), choreoscene.cpp EventThink (0x1007d300),
+  soundenvelope.cpp CommandClear with utlpriorityqueue.h RemoveAt (0x101bcae0), ai_networkmanager.cpp
+  CAI_NetworkBuilder::Rebuild's first loop (0x102f4be0: node accessors as view inlines, called through
+  `m_ppNodes[i]` each time), GenerateBlockingEntityList with the real CUtlVector (0x10036fb0). Known names still
+  open: 0x1014cbf0 physgun CreatePelletAttraction, 0x102fe150 ai_pathfinder FindBestPath (inlined in HasPathInner,
+  18: two CBitString slots swapped), 0x102eaaf0 ai_nav_property NavPropertyAdd (55, registers). Idioms:
+  - a dead conditional stack store of an entity-slot pointer = a `T *volatile p` local assigned in an `if`
+    (0x10169660; it also moves the hoisted entity-list load);
+  - a mid-function Vector local sharing the slot of earlier statement temporaries (our frame one Vector larger) =
+    put that local and the rest of the function in a `{}` block (0x1012c150);
+  - an offset counter compared with a small constant beside a separate pointer IV = a loop inside an inline member
+    of a global table object; a search loop returning its index = inline `bool Find(..., int &idx)` (0x101f6a30);
+  - a pointer parameter both kept in a register and passed by address had a local copy (`const char *p = param;`);
+  - a full Vector op with a dead component changes which component VC6 keeps on the x87 stack later
+    (`d = a - b` vs x/y stores, 0x103acba0); the SDK accessor (`GetNavigator()`) changes entry register choice;
+  - `fld [const]; fadd [var]` with the constant first = the constant is a global float `extern float g_X;`; a
+    float argument `fld; fstp [esp]` from an angle = `((const QAngle &)ang)[1]`; two dwords copied from a Vector =
+    a Vector local of which only x/y are used (0x10329a70);
+  - CBitString bit ops with `shl eax,2; [eax+base]` = `int *p = m_pData + (bit >> 5); *p |= mask;`;
+  - VC6 spends the inline budget from the END of a function backward: the earliest sites stay calls; a trailing
+    dead `(void)inlineFn(x);` takes budget (workaround, 0x102daac0);
+  - if/else bodies that differ in one init call are tail-merged into the game's single copy (0x102a99e0);
+  - two calls through one global in a loop: keep both in one comparison, or VC6 hoists the global (0x1017c300);
+  - Python bindings: `if (!p) {...} else return X;` plus one final `return 0;` gives the cross-jumped error tails.
+  Unsolved, seen twice: x87 `fmul/fadd st(1)` ... `fstp st(0)` (value kept on the stack, 0x101200c0, 0x101c2d20).
+- **Same-name plain member + later virtual = shifted vtable (found 2026-11-12):** MSVC puts all functions of one
+  name together in the vtable, at the first declaration's position. A plain `void vfunc442(int *)` near the top of
+  a class plus the `virtual void vfunc442();` placeholder further down moved slot 442 before slot 134, so every
+  new slot of CNPC_VScurrying was one too high (vfunc217_slot called +0x368). Fixed in CNPC_VScurrying.h and
+  CFuncMoveLinear.h (one `virtual` declaration with the real signature). Still shifted: CNPC_VHengeyokai.h
+  (vfunc292/375; its matched vfunc444 0x10380cb0 depends on the shifted numbering, fix both together);
+  CNPC_VCop.h is one slot LOW from vfunc473 (other cause). Never declare a slot name as a plain member when the
+  class also has its virtual placeholder; scan with scratchpad samename.py (session 30d205cb).
 
 ## VC6 stack slots: what moves them and what does not (measured 2026-11-08, partial)
 
