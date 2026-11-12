@@ -2935,6 +2935,59 @@ bool sub_1002f820(WheelObj_t *pObj, WheelEnt_t *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002f900 size=0x18c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "CCollisionEvent.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+
+struct penetrateevent_t
+{
+	EHANDLE hEntity0;
+	EHANDLE hEntity1;
+	float startTime;
+	float timeStamp;
+	int collisionState;
+};
+
+#define m_penetrateEventsV (*(CUtlVector<penetrateevent_t> *)&m_penetrateEvents)
+
+CPenetrateEvent_t *CCollisionEvent::sub_1002f900(CBaseEntity *pEntity0, CBaseEntity *pEntity1)
+{
+	ScopeTrace trace("CCollisionEvent::FindOrAddPenetrateEvent", g_106b8540);
+	int index = -1;
+	for (int i = m_penetrateEventsV.Count() - 1; i >= 0; --i)
+	{
+		if (m_penetrateEventsV[i].hEntity0.Get() == pEntity0 && m_penetrateEventsV[i].hEntity1.Get() == pEntity1)
+		{
+			index = i;
+			break;
+		}
+	}
+	if (index < 0)
+	{
+		index = m_penetrateEventsV.AddToTail();
+		penetrateevent_t &event = m_penetrateEventsV[index];
+		event.hEntity0 = pEntity0;
+		event.hEntity1 = pEntity1;
+		event.startTime = gpGlobals->curtime;
+		event.collisionState = 0;
+	}
+	penetrateevent_t &event = m_penetrateEventsV[index];
+	event.timeStamp = gpGlobals->curtime;
+	return (CPenetrateEvent_t *)&event;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002fb00 size=0xf0
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
