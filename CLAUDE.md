@@ -296,7 +296,22 @@ have written it rather than adding temporaries that spell out the assembly:
   what the original said).
 - **Unit-dependent matches:** some functions match or not with the number of struct declarations in the unit
   (0x10073c20: 0,0,2,2,0,... for 0..11 extra `struct S{int x;};`; 0x1016fa90 matched with 12 extra typedefs). A header
-  edit can release them ("unstable match"): re-submit the old score-0 source, then sweep the count.
+  edit can release them ("unstable match"): re-submit the old score-0 source, then sweep the count (0x102f9cd0: 6
+  extra structs). The sweep costs ~1 s per count: try it first on any eax/edx-swap or slot-only near miss.
+- **Find what a function is from its stub:** the 0x1000xxxx jump stub's references (a DATADESC input or think entry
+  next to it) give the Source name ("InputSpawnDust" -> 0x101145d0), and the SDK body then matches; a call in the
+  middle of an argument list is a getter returning a reference. A function calling itself calls its own stub by name.
+- **Use the SDK's inline helper at every call site** (ENTINDEX / EdictIndex on every index lookup, NumEntities /
+  GetEntityInfo inside the loop condition): one place written out moves registers elsewhere (0x10141c80, 0x1009fe40,
+  0x101a08f0). Declaration order of locals CAN move registers (unlike stack slots).
+- **Source's string_t:** a dead `mov eax,[eax]` before a repeated call is `!G || !STRING(G) || !*STRING(G)`;
+  MAKE_STRING as a by-value struct with a constructor (0x103689c0).
+- **A stored value before a constant flag store:** write the value through a reference (`bool &r = p->m_b; r = v;`,
+  0x1023e0b0). A float copy the game does with fld/fstp: `(float)(x * 1.0)` (0x103ea7e0, workaround).
+- **A `||` chain returning bool:** move it into an inline helper and write `if (H(x)) return false; return true;` to
+  keep the separate epilogues (0x102b62e0). The same tail in each branch: write it once after an if/else (0x1021deb0).
+- **POD handle by value** to an inline helper (no user copy constructor) puts the copy store before lea/push
+  (0x1013f280); CBaseHandle with its copy constructor does not.
 
 ## VC6 stack slots: what moves them and what does not (measured 2026-11-08, partial)
 
