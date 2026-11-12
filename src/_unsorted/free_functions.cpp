@@ -160588,6 +160588,269 @@ int sub_1022f580(CBaseCombatCharacter *pChar, int a, unsigned char b, int nDice)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022f640 size=0x972
+#include "CBaseCombatCharacter.h"
+#include "CNPC_VTzimisce.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "CVDmg_t.h"
+#include "CUnknown101d88b0.h"
+#include "CUnknown101d8a70.h"
+#include "CStatDefault3List.h"
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include "ConVar.h"
+#include "Tier1.h"
+
+// TARGET: sub_1022f640
+extern CStatDefault3List g_10738d10;
+extern ConVar g_1074f048;
+void *sub_100ab250(void *pEdict);
+int sub_1022f4f0(void *pChar, int nType, int nFlags);
+int sub_101cd9e0(int a);
+void sub_101cebc0(void *p, int a, int b);
+
+#define DMG_MAX(a, b) (((a) > (b)) ? (a) : (b))
+
+struct CDmgEntV
+{
+	char m_pad0000[0x9c];
+	void *m_pChar;	// 0x9c
+	char m_pad00a0[0xa8 - 0xa0];
+	CVDmgSource_t *m_pa8;	// 0xa8
+};
+
+struct CDmgOwnerV
+{
+	char m_pad0000[0x24d0];
+	int m_n24d0;
+};
+
+struct CDmgWeaponV
+{
+	CDmgOwnerV *sub_102517b0();
+};
+
+struct CDmgCharV
+{
+	char m_pad0000[0xa8];
+	void *m_pa8;	// 0xa8
+	char m_pad00ac[0x2e0 - 0xac];
+	int m_pEdict2e0;	// 0x2e0
+	bool sub_10337ff0();
+	int sub_10337860();
+	CDmgWeaponV *sub_1032e7b0();
+	void sub_1033c770(int a);
+	int sub_1033d9d0(void *p);
+	void sub_1033db30(void *p);
+	void sub_100544f0(int a);
+};
+
+inline CDmgEntV *DmgInstance(int iEnt)
+{
+	void *pent = engine->vfunc38(iEnt);
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	if (!pent)
+		pent = engine->vfunc38(0);
+	return (CDmgEntV *)sub_100ab250(pent);
+}
+
+int sub_1022f640(CVDmg_t *pDmg, int iVictim, int iAttacker)
+{
+	if (pDmg)
+	{
+		CDmgEntV *pA = DmgInstance(iAttacker);
+		CDmgEntV *pB = DmgInstance(iVictim);
+
+		int nType = pDmg->m_pad0000;
+		if (nType != -1)
+		{
+			CDmgCharV *pAChar = !pA ? 0 : (CDmgCharV *)pA->m_pChar;
+			CDmgCharV *pBChar = !pB ? 0 : (CDmgCharV *)pB->m_pChar;
+
+			if (nType == 1 && pBChar && pBChar->sub_10337ff0())
+			{
+				int idx = pBChar->sub_10337860();
+				if (idx >= 0 && !*((char *)g_10738d10.sub_101d5e80(idx) + 0x9f) && pAChar && pAChar->sub_1032e7b0()
+					&& pAChar->sub_1032e7b0()->sub_102517b0()->m_n24d0 == 1)
+				{
+					if (g_1074f048.GetInt())
+						g_109f3630("Changing lethal firearm damage to bashing because target is supernatural.");
+					nType = 0;
+				}
+			}
+
+			int nAmount = pDmg->m_field04;
+			if (nAmount > 0)
+			{
+				if (pAChar)
+					engine->vfunc35(pAChar->m_pEdict2e0);
+
+				int nKind;
+				if (!(pDmg->m_field40 & 8))
+				{
+					CVDmgBlock16_t block(4, 0x15);
+					CUnknown101d88b0 roll(pA->m_pa8, &block, pDmg->m_field04 + DMG_MAX(pDmg->m_field0c - 1, 0), 6);
+					int out;
+					nKind = *(int *)((CUnknown101d8a70 *)&roll)->sub_101d8a70(&out);
+					nAmount = DMG_MAX(roll.m_field04 - roll.m_field0c, 0);
+				}
+				else
+				{
+					nAmount = pDmg->m_field0c;
+					nKind = 3;
+				}
+				int nResult = nAmount;
+
+				if (pAChar && pDmg->m_block14.m_a == 0 && pDmg->m_block14.m_b == 1)
+					nResult = nAmount += CVStatListSet::Of(pAChar)->Find(0)->sub_102012d0(0x18);
+
+				int nSoak = 0;
+				if (pBChar)
+					nSoak = CVStatListSet::Of(pBChar)->Find(0)->sub_102012d0(0x17);
+
+				if (nAmount == 0 && nKind != 0)
+					nAmount = 1;
+
+				if (pBChar)
+				{
+					char buf[256];
+					if (!(pDmg->m_field10 & 0xc8000008))
+					{
+						if (pDmg->m_field38 >= 0)
+						{
+							nSoak += pDmg->m_field38;
+							if (g_1074f048.GetInt())
+							{
+								sprintf(buf, "Forced Soak Value To: (%d)\n", nSoak);
+								g_109f3630(buf);
+							}
+						}
+						else
+						{
+							nSoak += sub_1022f4f0(pBChar, nType, pDmg->m_field10);
+						}
+						if (nSoak > nAmount)
+							nSoak = nAmount;
+						if (nSoak > 0 && pBChar->m_pa8)
+							sub_101cebc0(pBChar->m_pa8, 0x2b, nSoak);
+					}
+					nResult = DMG_MAX(nAmount - nSoak, 0);
+
+					int idx = pBChar->sub_10337860();
+					if (idx >= 0)
+					{
+						if (pDmg->m_field10 & 8)
+						{
+							pDmg->m_field3c *= *(float *)((char *)g_10738d10.sub_101d5e80(idx) + 0xc8);
+							if (g_1074f048.GetInt())
+								sprintf(buf, "Applying BURNINATOR damage filter of %f\n", *(float *)((char *)g_10738d10.sub_101d5e80(idx) + 0xc8));
+						}
+						else
+						{
+							switch (nType)
+							{
+							case 0:
+								pDmg->m_field3c *= *(float *)((char *)g_10738d10.sub_101d5e80(idx) + 0xbc);
+								if (g_1074f048.GetInt())
+									sprintf(buf, "Applying bashing damage filter of %f\n", *(float *)((char *)g_10738d10.sub_101d5e80(idx) + 0xbc));
+								break;
+							case 1:
+								pDmg->m_field3c *= *(float *)((char *)g_10738d10.sub_101d5e80(idx) + 0xc0);
+								if (g_1074f048.GetInt())
+									sprintf(buf, "Applying lethal damage filter of %f\n", *(float *)((char *)g_10738d10.sub_101d5e80(idx) + 0xc0));
+								break;
+							case 2:
+								pDmg->m_field3c *= *(float *)((char *)g_10738d10.sub_101d5e80(idx) + 0xc4);
+								if (g_1074f048.GetInt())
+									sprintf(buf, "Applying aggravated damage filter of %f\n", *(float *)((char *)g_10738d10.sub_101d5e80(idx) + 0xc4));
+								break;
+							default:
+								if (g_1074f048.GetInt())
+									sprintf(buf, "Cannot use damage filter... damage type unrecognized\n");
+								break;
+							}
+						}
+						if (g_1074f048.GetInt())
+							g_109f3630(buf);
+					}
+
+					if (pDmg->m_field10 & 0x4000002)
+					{
+						if (*((char *)g_10738d10.sub_101d5f10((CBaseCombatCharacter *)pBChar) + 0xa8))
+							nResult = 0;
+					}
+					else if (pDmg->m_field10 & 0x80)
+					{
+						if (*((char *)g_10738d10.sub_101d5f10((CBaseCombatCharacter *)pBChar) + 0xa9))
+							nResult = (int)(nResult * 4.0f);
+					}
+
+					int nScale = pBChar->sub_1033d9d0(pAChar);
+					if (nScale)
+					{
+						nResult = nScale * nResult / 100;
+						pBChar->sub_1033db30(pAChar);
+						pDmg->sub_101fb3e0(4);
+					}
+					else
+					{
+						pBChar->sub_1033c770(0x400);
+					}
+
+					if (nResult)
+					{
+						pDmg->m_field08 = nResult;
+						if (CVStatListSet::Of(pBChar)->Find(3)->sub_102012d0(7) > 0)
+							pDmg->sub_101fb3e0(4);
+						else if (CVStatListSet::Of(pBChar)->Find(0)->sub_102012d0(0x19) > 0)
+							pDmg->sub_101fb3e0(4);
+					}
+					else
+					{
+						pDmg->m_field08 = -1;
+						if (nAmount > 0)
+						{
+							pDmg->sub_101fb3e0(4);
+							if (CVStatListSet::Of(pBChar)->Find(3)->sub_102012d0(7) > 0)
+								pBChar->sub_100544f0(0);
+							else if (CVStatListSet::Of(pBChar)->Find(0)->sub_102012d0(0x19) > 0)
+								pBChar->sub_100544f0(1);
+						}
+					}
+
+					if (g_1074f048.GetInt() && sub_101cd9e0(1))
+					{
+						sprintf(buf, "Remaining Lethality: (%d)\n", nResult);
+						g_109f3628(buf);
+					}
+					return nResult;
+				}
+			}
+
+			if (nAmount)
+				pDmg->m_field08 = nAmount;
+			else
+				pDmg->m_field08 = -1;
+			return nAmount;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230220 size=0x3
 char sub_10230220()
 {
