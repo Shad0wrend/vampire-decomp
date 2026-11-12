@@ -8,6 +8,7 @@ struct CSkillOutcome	// a one dword result the skill tests return through a hidd
 {
 	int m_nOutcome;
 	CSkillOutcome() : m_nOutcome(0) {}
+	template <class T> CSkillOutcome(const T &o) : m_nOutcome(o.m_nOutcome) {}
 };
 
 class CUnknown10739d08
@@ -32,7 +33,8 @@ public:
 	float sub_101e9020();	// a tuning value as a float (stub 0x10004615)
 	float *sub_101e8da0();	// the address of the block at +0x2bc (stub 0x10008e7c): floats at +0x64 / +0x68 are the base and the per-step delay
 	CSkillOutcome sub_101e7ea0(void *pPlayer, void *pSkill, char bFlag);	// the outcome of a vampire skill test of kind 1 for the player (stub 0x10010b9f, ret 0x10)
-	CSkillOutcome sub_101e8100(void *pPlayer, void *pSkill, char bFlag);	// like sub_101e7ea0, for the skill kind 2 (stub 0x10005ac4)
+	CSkillOutcome sub_101e8100(void *pPlayer, void *pSkill, char bFlag);
+	CSkillOutcome sub_101e8330(void *pPlayer, void *pSkill, int nNeed);	// a skill test of kind 9 (ret 0x10)	// like sub_101e7ea0, for the skill kind 2 (stub 0x10005ac4)
 	int sub_101e8430(CBaseCombatCharacter *pChar, int a, unsigned char b);	// the number of dice for a roll of the character (stub 0x1000db7a)
 	int sub_101e8ec0(CBaseCombatCharacter *pChar);	// the difficulty of a roll of the character (stub 0x1000b2e4)
 	float sub_101e8a90();	// a zombie tuning distance (stub 0x100145f6): the lower bound of the range in which the zombie attacks
