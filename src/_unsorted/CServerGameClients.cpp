@@ -263,6 +263,89 @@ void CServerGameClients::vfunc6(CServerGameClients_Edict *pEdict, int clientInde
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011c730 size=0x13e
+#include "utlrbtree.h"
+#include "CServerGameClients.h"
+#include "CBasePlayer.h"
+#include "CUnknown1006e890.h"
+
+#define VIS_V1(p) virtual void p();
+#define VIS_V10(p) VIS_V1(p##0) VIS_V1(p##1) VIS_V1(p##2) VIS_V1(p##3) VIS_V1(p##4) VIS_V1(p##5) VIS_V1(p##6) VIS_V1(p##7) VIS_V1(p##8) VIS_V1(p##9)
+#define VIS_V100(p) VIS_V10(p##0) VIS_V10(p##1) VIS_V10(p##2) VIS_V10(p##3) VIS_V10(p##4) VIS_V10(p##5) VIS_V10(p##6) VIS_V10(p##7) VIS_V10(p##8) VIS_V10(p##9)
+
+struct VisAreaPortal
+{
+	VIS_V100(a) VIS_V100(b) VIS_V10(c0) VIS_V10(c1) VIS_V10(c2) VIS_V10(c3) VIS_V1(d0)
+	virtual void vfunc241(const Vector &org);
+};
+struct VisAreaPortalElem
+{
+	VisAreaPortal *m_Element;
+	unsigned short m_Previous;
+	unsigned short m_Next;
+};
+struct VisAreaPortalList
+{
+	VisAreaPortalElem *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	unsigned short m_Head;
+	unsigned short m_Tail;
+	unsigned short Head() const { return m_Head; }
+	static unsigned short InvalidIndex() { return 0xffff; }
+	unsigned short Next(unsigned short i) const { return m_pMemory[i].m_Next; }
+	VisAreaPortal *&operator[](unsigned short i) { return m_pMemory[i].m_Element; }
+};
+extern VisAreaPortalList g_10709680;
+
+struct VisUnknown
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
+	virtual CBasePlayer *GetBaseEntity();
+};
+struct VisEdict
+{
+	char m_pad[0x40];
+	VisUnknown *m_pUnk;
+};
+struct Holder;
+void *__fastcall sub_1017cf90(Holder *);
+
+inline CBasePlayer *VisGetContainingEntity(VisEdict *pent)
+{
+	if (pent && pent->m_pUnk)
+		return pent->m_pUnk->GetBaseEntity();
+	return 0;
+}
+inline Vector VisFogColor(CUnknown1006e890 *p) { return *(Vector *)((char *)p + 0x5ec); }
+
+void CServerGameClients::vfunc7(int edictA, int edictB, int c)
+{
+	Vector org;
+	engine->vfunc100((unsigned char *)c);
+	CUnknown1006e890 *pFog = 0;
+	CBasePlayer *pVE = VisGetContainingEntity((VisEdict *)edictA);
+	if (pVE) {
+		org = pVE->vfunc193();
+		engine->vfunc101((int)&org);
+	} else {
+		CBasePlayer *pPlayer = VisGetContainingEntity((VisEdict *)edictB);
+		if (pPlayer) {
+			org = pPlayer->vfunc193();
+			pPlayer->vfunc430((unsigned char *)c, 0);
+			pFog = (CUnknown1006e890 *)sub_1017cf90((Holder *)pPlayer);
+		}
+	}
+	unsigned short i = g_10709680.Head();
+	while (i != g_10709680.InvalidIndex()) {
+		if (pFog && pFog->sub_1006e890())
+			org = VisFogColor(pFog);
+		g_10709680[i]->vfunc241(org);
+		i = g_10709680.Next(i);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011c8c0 size=0x29a
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

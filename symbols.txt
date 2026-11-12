@@ -11145,6 +11145,7 @@
 0x1000fe25 func   ?sub_1004e110@CPhysBox@@QAEEXZ CPhysBox::sub_1004e110
 0x1000fe2f func   ?vfunc7@ConVar@@UAEXPBD@Z ConVar::vfunc7
 0x1000fe34 func   ?sub_101815e0@CUnknown101815e0@@QAEHXZ CUnknown101815e0::sub_101815e0
+0x1000fe39 func   ?vfunc7@CServerGameClients@@UAEXHHH@Z CServerGameClients::vfunc7
 0x1000fe3e func   ?sub_10362730@@YI_NPAUStandOnNpcView@@@Z sub_10362730
 0x1000fe43 func   ?sub_10295180@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_10295180
 0x1000fe48 func   ?sub_10135040@CUnknown10135040@@QAEHPAH@Z CUnknown10135040::sub_10135040
