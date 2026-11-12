@@ -5056,6 +5056,7 @@
 0x10007ac2 func   ?vfunc17@CMultiplayRules@@UAE_NH@Z CMultiplayRules::vfunc17
 0x10007ac7 func   ?vfunc623@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc623
 0x10007acc func   ?sub_102e27b0@@YIMPAD@Z sub_102e27b0
+0x10007ad1 func   ?sub_100ff1b0@CEnvBeamV@@QAEXVVector@@@Z CEnvBeamV::sub_100ff1b0
 0x10007ad6 func   ?vfunc119@CBaseEntity@@UAEXXZ CBaseEntity::vfunc119
 0x10007adb func   ?sub_1040dde0@@YGXPAVCBaseEntity@@HH@Z sub_1040dde0
 0x10007ae0 func   ?sub_1023c760@CWorld@@QAEXMPBD0@Z CWorld::sub_1023c760

@@ -68310,6 +68310,36 @@ void CEnvBeam::sub_100ff090()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ff1b0 size=0x102
+#include "CEnvBeam.h"
+#include "CPASFilter.h"
+#include "QAngle.h"
+
+extern Vector g_1070d1b0;
+extern "C" __declspec(dllimport) float __cdecl RandomFloat(float, float);
+
+struct TempEnts100ff1b0 {
+	virtual void v0();
+	virtual void v1();
+	virtual void vfunc2(IRecipientFilter &filter, float delay, const Vector *pos, const QAngle *angles, const char *name);
+};
+extern TempEnts100ff1b0 *g_10540528;
+
+struct CEnvBeamV : CEnvBeam
+{
+	void sub_100ff1b0(Vector pos);
+};
+
+void CEnvBeamV::sub_100ff1b0(Vector pos)
+{
+	if (pos != g_1070d1b0 && m_iszFileName) {
+		QAngle angles(0, RandomFloat(0, 359), 0);
+		CPASFilter filter(pos);
+		g_10540528->vfunc2(filter, 0.0f, &pos, &angles, m_szFileName);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ff310 size=0x7c7
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
