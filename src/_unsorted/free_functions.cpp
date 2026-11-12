@@ -271929,6 +271929,42 @@ void CKeyringUnit::sub_104081e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10408220 size=0x10b
+#include "utlrbtree.h"
+#include "CUnknown10408220.h"
+#include "utlvector.h"
+
+extern "C" __declspec(dllimport) char *__cdecl Q_strncpy(char *, const char *, int);
+
+// the destination vector's memory: its Grow is the out-of-line copy at 0x1040b120
+struct CUtlMemory192Grow : CUtlMemory<CUtlMemory192Elem>
+{
+	void sub_1040b120(int num);
+	void Grow(int num) { sub_1040b120(num); }
+};
+
+struct CUnknown10408220View
+{
+	char pad0000[0x914];
+	CUtlVector<CUtlMemory192Elem> m_List;	// 0x914
+};
+
+void CUnknown10408220::sub_10408220(CUtlMemory192 *pOut)
+{
+	CUtlVector<CUtlMemory192Elem, CUtlMemory192Grow> *pList = (CUtlVector<CUtlMemory192Elem, CUtlMemory192Grow> *)pOut;
+	if (!pList)
+		return;
+	pList->RemoveAll();
+	CUnknown10408220View *self = (CUnknown10408220View *)this;
+	for (int i = 0; i < self->m_List.Count(); i++) {
+		CUtlMemory192Elem e;
+		Q_strncpy(e.a, self->m_List[i].a, 0x60);
+		Q_strncpy(e.b, self->m_List[i].b, 0x60);
+		pList->AddToTail(e);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x104083e0 size=0x7f
 #include "KEYRING_ENTRY.h"
 #include "utlmemory.h"
