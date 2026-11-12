@@ -19910,6 +19910,68 @@ void __fastcall sub_1006e0e0(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006e130 size=0x2ca
+#include "CBaseCineCam.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+#include "CUnknown1006eeb0.h"
+#include "CCameraShotTable.h"
+#include "CGlobalEntityList.h"
+#include <string.h>
+
+extern CGlobalEntityList g_106eb5d8;
+extern CCameraShotTable g_106c8298;
+void sub_101cf7c0(const char *src, char *dst, int len);
+CBasePlayer *sub_101cd9e0(int);
+
+bool CBaseCineCam::sub_1006e130(const char *pszName, int a, int b)
+{
+	sub_1006e0e0();
+	if (strstr(pszName, ".txt")) {
+		char buf[32];
+		sub_101cf7c0(pszName, buf, 32);
+		m_hShot630 = g_106c8298.sub_10072a50(buf, 0);
+	} else {
+		m_hShot630 = g_106c8298.sub_10072a50(pszName, 0);
+	}
+	if (m_hShot630 == -1)
+		return false;
+	CBasePlayer *pPlayer = sub_101cd9e0(1);
+	CBasePlayer *pEnt = pPlayer;
+	if (b)
+		pEnt = (CBasePlayer *)b;
+	if (!pEnt)
+		return false;
+	m_hTarget5d0 = *((CBaseEntity *)pEnt)->vfunc1();
+	for (int i = 0; i < 4; i++) {
+		unsigned int flags = *(unsigned int *)((CUnknown1006eeb0 *)this)->sub_1006eeb0(i);
+		void *res;
+		if (flags & 1) {
+			res = pPlayer;
+		} else if ((flags & 2) && pPlayer) {
+			res = EHandle_Get(pEnt->m_hDialogPartnerFE8);
+		} else if ((flags & 0x80000) && EHandle_Get(pEnt->m_h1538) && pEnt->m_n153C == 0) {
+			res = EHandle_Get(pEnt->m_h1538);
+		} else if ((flags & 0x100000) && EHandle_Get(pEnt->m_h1538) && pEnt->m_n153C == 1) {
+			res = EHandle_Get(pEnt->m_h1538);
+		} else if ((flags & 0x80000) && EHandle_Get(pEnt->m_h1538) && pEnt->m_n153C == 1) {
+			res = pEnt;
+		} else if ((flags & 0x100000) && EHandle_Get(pEnt->m_h1538) && pEnt->m_n153C == 0) {
+			res = pEnt;
+		} else if (flags & 4) {
+			res = g_106eb5d8.sub_100f7380(0, "worldspawn");
+		} else {
+			res = 0;
+		}
+		sub_1006ef50(res, i);
+	}
+	m_n63c = engine->vfunc120();
+	m_nState638 = a;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006e4c0 size=0x17a
 #include "CBaseCineCam.h"
 #include "CUtlVector4.h"
