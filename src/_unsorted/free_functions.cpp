@@ -224521,6 +224521,78 @@ void __stdcall sub_1034e7e0(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034e8c0 size=0xa8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "inputdata_t.h"
+#include "ScopeTrace.h"
+
+#define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct SEdictUnknown
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3();
+	virtual CBaseEntity *GetBaseEntity();	// slot 4
+};
+
+struct SEdict
+{
+	char pad[0x40];
+	SEdictUnknown *m_pUnknown;	// 0x40
+};
+
+struct SEngine
+{
+	PV10(a0) PV10(a1) PV10(a2)
+	virtual void a30(); virtual void a31(); virtual void a32(); virtual void a33();
+	virtual void a34(); virtual void a35(); virtual void a36(); virtual void a37();
+	virtual SEdict *PEntityOfEntIndex(int index);	// slot 38
+};
+
+extern SEngine *g_1070b22c;
+
+static inline CBaseEntity *Instance(SEdict *pEdict)
+{
+	ScopeTrace scope("CBaseEntity::Instance", g_106b8540);
+	if (!pEdict)
+		pEdict = g_1070b22c->PEntityOfEntIndex(0);
+	return (pEdict && pEdict->m_pUnknown) ? pEdict->m_pUnknown->GetBaseEntity() : 0;
+}
+
+struct color32_1034e8c0 { unsigned char r, g, b, a; };
+struct Variant1034e8c0
+{
+	color32_1034e8c0 rgbaVal;
+	char pad[0x10 - 4];
+	int fieldType;
+	color32_1034e8c0 Color32() const { return rgbaVal; }
+};
+struct InputData1034e8c0
+{
+	void *pActivator;
+	void *pCaller;
+	Variant1034e8c0 value;
+};
+struct CWorldView1034e8c0
+{
+	char pad[0x48c];
+	color32_1034e8c0 m_color;
+};
+void __stdcall sub_1034e8c0(InputData1034e8c0 &inputdata)
+{
+	CWorldView1034e8c0 *pWorld = (CWorldView1034e8c0 *)Instance(g_1070b22c->PEntityOfEntIndex(0));
+	pWorld->m_color = inputdata.value.Color32();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f1e0 size=0x43
 #include "CBaseEntity.h"
 #include "CHL2_Player.h"
