@@ -80107,6 +80107,22 @@ void CUnknownSelf10133870::sub_10133870(CArg10133870 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101338c0 size=0x35
+#include "CMathCounter.h"
+#include "inputdata_t.h"
+inline float VariantFloat(const variant_t &v)
+{
+	if (v.fieldType == 1)
+		return v.flValue;
+	return 0;
+}
+
+void CMathCounter::sub_101338c0(inputdata_t &inputdata)
+{
+	sub_10133950(inputdata.pActivator, VariantFloat(inputdata.value));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133910 size=0x30
 #include "CMathCounter.h"
 extern float g_104454c4;

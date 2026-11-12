@@ -12070,6 +12070,7 @@
 0x100110e5 func   ?sub_10430370@@YAII@Z sub_10430370
 0x100110ea func   ?vfunc362@CWeaponMelee_Tzimisce2Claw@@QAEHXZ CWeaponMelee_Tzimisce2Claw::vfunc362
 0x100110ef func   ?sub_10182780@CBasePlayer@@QAEHXZ CBasePlayer::sub_10182780
+0x100110f4 func   ?sub_101338c0@CMathCounter@@QAEXAAUinputdata_t@@@Z CMathCounter::sub_101338c0
 0x100110f9 func   ?sub_10075bd0@S10075bd0@@QAEXPBD@Z S10075bd0::sub_10075bd0
 0x100110fe func   ?sub_101ac2f0@CAmbientGeneric@@QAEIXZ CAmbientGeneric::sub_101ac2f0
 0x10011103 func   ?vfunc0@CSave@@UAEHXZ CSave::vfunc0
