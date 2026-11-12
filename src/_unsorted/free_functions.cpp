@@ -193720,6 +193720,75 @@ void __fastcall sub_1029bd40(CView *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029c4a0 size=0x3c4
+#include "CAI_BaseNPCTroika.h"
+#include "DebugOverlay.h"
+#include "ConVar.h"
+#include "CEntityVSlots.h"
+#include <math.h>
+
+extern ConVar g_10923ec8;
+extern ConVar g_10937a88;
+
+void sub_10144790(const Vector *a, const Vector *b, float rad, float len, int r, int g, int bl, int alpha, int zero);
+void sub_10142af0(const Vector *a, const Vector *b, const Vector *c, const Vector *d, int e, int f, int g, int h, int i);
+
+#define V100(q) EVS10(q##0) EVS10(q##1) EVS10(q##2) EVS10(q##3) EVS10(q##4) EVS10(q##5) EVS10(q##6) EVS10(q##7) EVS10(q##8) EVS10(q##9)
+struct CTroikaNPCSlots
+{
+	V100(0)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18)
+	EVS(190) EVS(191) EVS(192)
+	virtual Vector slot193();
+	EVS(194) EVS(195) EVS(196) EVS(197) EVS(198) EVS(199)
+	V100(2) V100(3) V100(4)
+	EVS10(50) EVS10(51) EVS10(52) EVS10(53) EVS10(54) EVS10(55) EVS10(56) EVS10(57)
+	EVS(580) EVS(581) EVS(582) EVS(583) EVS(584) EVS(585)
+	virtual EHANDLE slot586();
+};
+
+// TARGET: CAI_BaseNPCTroika::sub_1029c4a0
+void CAI_BaseNPCTroika::sub_1029c4a0(float a, float b, float c, int d, int e, int f, int g, char h)
+{
+	Vector vecDir;
+	Vector vecUp;
+	((CEntityVSlots *)this)->slot372(&vecDir);
+	((CEntityVSlots *)this)->slot373(&vecUp);
+	if (h) {
+		switch (g_10923ec8.GetInt()) {
+		case 1: {
+			float flAngle = acos(b);
+			Vector vecPos = vfunc193() - vecUp * g_10937a88.GetFloat();
+			float flLen = g_10937a88.GetFloat() + a;
+			double t = tan(flAngle);
+			float flRad = flLen * t;
+			int nAlpha = g * 2;
+			if (nAlpha > 0xff)
+				nAlpha = 0xff;
+			sub_10144790(&vecPos, &vecUp, flRad, flLen, d, e, f, nAlpha, 0);
+			float flHalf = g_10937a88.GetFloat() * t;
+			Vector vecMaxs(1.0f, flHalf, flHalf);
+			Vector vecMins(-1.0f, -flHalf, -flHalf);
+			sub_10142af0(&vfunc193(), &vecMins, &vecMaxs, &vecUp, e, f, d, 0x80, 0);
+			break;
+		}
+		default: {
+			int nAlpha = g * 2;
+			if (nAlpha > 0xff)
+				nAlpha = 0xff;
+			sub_10144790(&vfunc193(), &vecUp, 8.0f, a, d, e, f, nAlpha, 0);
+			if (((CTroikaNPCSlots *)this)->slot586().Get()) {
+				sub_10142e90(&vfunc193(), &((CTroikaNPCSlots *)((CTroikaNPCSlots *)this)->slot586().Get())->slot193(), 0xc0, 0xff, 0xc0, 1, 0);
+			}
+			break;
+		}
+		}
+	}
+	Vector vecOrigin = *(Vector *)vfunc217() + Vector(0, 0, c + 16.0f);
+	sub_10144db0(&vecOrigin, &vecDir, a, 32.0f - (c + c), 2.0f * ((float)acos(b) * 57.29578f), d, e, f, g, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029c970 size=0x53
 #include "CAI_BaseNPCTroika.h"
 #include "globalvars.h"

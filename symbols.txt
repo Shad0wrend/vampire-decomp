@@ -15132,6 +15132,7 @@
 0x10014d12 func   ?sub_10370a70@@YAEXZ sub_10370a70
 0x10014d17 func   ?sub_102a97d0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a97d0
 0x10014d1c func   ?vfunc5@CBaseDMStart@@QAEPAV1@I@Z CBaseDMStart::vfunc5
+0x10014d21 func   ?sub_1029c4a0@CAI_BaseNPCTroika@@QAEXMMMHHHHD@Z CAI_BaseNPCTroika::sub_1029c4a0
 0x10014d26 func   _item_p_gargoyle_talisman item_p_gargoyle_talisman
 0x10014d2b func   ?sub_1035a870@S@@QAEXH@Z S::sub_1035a870
 0x10014d30 func   ?sub_10325e70@@YAHXZ sub_10325e70
