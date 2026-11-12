@@ -168733,6 +168733,79 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102337d0 size=0xa2
+#include "CAI_NetworkManager.h"
+#include "CUnknown102f7970.h"
+#include "Vector.h"
+
+struct CAI_NodeV102337d0
+{
+	int m_pad0;
+	int m_iID;
+	Vector m_vOrigin;
+	char m_pad14[0x70 - 0x14];
+	int m_eNodeType;
+	int GetId() const { return m_iID; }
+	const Vector &GetOrigin() const { return m_vOrigin; }
+	void SetType(int type) { m_eNodeType = type; }
+};
+struct CAI_EditOpsV102337d0
+{
+	char m_pad0[0xc];
+	int *m_pNodeIndexTable;
+};
+struct CAI_MgrV102337d0 : CAI_NetworkManager
+{
+	CAI_EditOpsV102337d0 *GetEditOps() { return (CAI_EditOpsV102337d0 *)m_pNetwork; }
+};
+
+extern CAI_NodeV102337d0 *g_109340d4;	// CAI_NetworkEditTools::m_pLastDeletedNode
+extern CAI_NetworkManager *g_10934088;	// g_pAINetworkManager
+extern bool g_109340dc;	// CAI_NetworkEditTools::m_bAirEditMode
+
+bool sub_10232cb0();
+int sub_100f4260(const char *name, int type, float x, float y, float z, int a);
+__declspec(dllimport) void Msg(const char *fmt, ...);
+
+#define g_pAINetworkManager ((CAI_MgrV102337d0 *)g_10934088)
+
+// TARGET: sub_102337d0
+void sub_102337d0()
+{
+	if (!sub_10232cb0())
+	{
+		return;
+	}
+
+	if (g_109340d4)
+	{
+		Vector nodePos = g_109340d4->GetOrigin();
+
+		int status;
+		int	nOldWCID	= g_pAINetworkManager->GetEditOps()->m_pNodeIndexTable[g_109340d4->GetId()];
+
+		if (g_109340dc)
+		{
+			status = sub_100f4260("info_node_air", nOldWCID, nodePos.x, nodePos.y, nodePos.z, false);
+		}
+		else
+		{
+			status = sub_100f4260("info_node", nOldWCID, nodePos.x, nodePos.y, nodePos.z, false);
+		}
+		if (status == 2)
+		{
+			Msg( "Worldcraft failed on creation...\n" );
+		}
+		else if (status == 0)
+		{
+			g_109340d4->SetType( 2 );
+			g_10934088->sub_102f6610();
+			g_109340d4 = 0;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102338b0 size=0x10e
 struct SLink { int pad; int m_iSrcID; int m_iDestID; };
 struct SHolder { char pad[0xc]; int *m_pNodeIndexTable; void sub_102f7940(); };

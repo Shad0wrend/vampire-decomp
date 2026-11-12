@@ -422,6 +422,7 @@
 0x100018b1 func   ??_GCRelieableBroadcastRecipientFilter@@UAEPAXI@Z ??_GCRelieableBroadcastRecipientFilter@@UAEPAXI@Z
 0x100018b6 func   ?sub_102130a0@@YAPAHXZ sub_102130a0
 0x100018bb func   ?vfunc110@CRopeKeyframe@@UAE_NPBD0@Z CRopeKeyframe::vfunc110
+0x100018c0 func   ?sub_102337d0@@YAXXZ sub_102337d0
 0x100018c5 func   ?sub_100846c0@CSceneEntity@@QAEXPAX@Z CSceneEntity::sub_100846c0
 0x100018ca func   ??1VKeyValues@@UAE@XZ VKeyValues::~VKeyValues
 0x100018cf func   ?vfunc124@CBaseEntity@@UAEHXZ CBaseEntity::vfunc124
