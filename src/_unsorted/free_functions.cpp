@@ -74954,6 +74954,20 @@ void sub_10124300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101245c0 size=0x4c
+#include "Vector.h"
+extern int g_1070b608[][2];
+extern Vector g_1070b318[];
+
+int sub_101245c0(int nIndex, int server, Vector &offset)
+{
+	int idx;
+	idx = g_1070b608[nIndex][server]++;
+	VectorCopy(g_1070b318[idx % 54], offset);
+	return (idx % 54);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124ba0 size=0x14f
 #include "CTraceFilterNoCharacterCollide.h"
 #include "CGameMovement.h"
