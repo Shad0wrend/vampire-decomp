@@ -8,6 +8,17 @@
 
 class CBaseEntity;
 
+// FireBullets' per-shot tally (CBaseEntity::vfunc185): an entity hit and how many pellets hit it; the element of
+// its local CUtlVector (8 bytes). Its copy constructor is out of line at 0x1027fc10.
+struct CFireBulletsHit
+{
+	EHANDLE m_hEnt;
+	int m_nHits;
+
+	CFireBulletsHit() {}
+	CFireBulletsHit(const CFireBulletsHit &other);
+};
+
 struct CFireBulletsInfo
 {
 	int m_iShots;	// 0x00: the number of shots (outer loop of FireBullets)
