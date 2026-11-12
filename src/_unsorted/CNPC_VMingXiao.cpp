@@ -1143,6 +1143,46 @@ char CNPC_VMingXiao::vfunc166(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103970d0 size=0x214
+#include "CNPC_VMingXiao.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown10739d08.h"
+#include "CUnknown1073dc28.h"
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+extern CUnknown10739d08 g_10739d08;
+
+// TARGET: CNPC_VMingXiao::vfunc348
+int CNPC_VMingXiao::vfunc348()
+{
+	ScopeTrace trace("CBaseCombatCharacter::HealthToPercent", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	int iMax = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x11);
+	float flTent = g_10739d08.sub_101e8da0()[0] * 6.0f;
+	int iTentacle = (int)(flTent * 0.25f);
+	int iHealth = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xf);
+
+	int iNew = iTentacle;
+	for (int i = 0; i < 6; i++) {
+		if (sub_10398000(i))
+			iNew += (int)(m_flSlotValue[i] * -0.25f);
+	}
+
+	int iSum = iTentacle + iMax;
+	float flPercent = (float)(iMax - iHealth) / iMax;
+	return (int)((m_iMaxHealth * (iMax - iHealth) / iMax) * (1.0f - flPercent) + ((iSum - iNew - iHealth) * m_iMaxHealth / iSum) * flPercent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10399d40 size=0x148
 #include "CNPC_VMingXiao.h"
 #include "CEntityVSlots.h"

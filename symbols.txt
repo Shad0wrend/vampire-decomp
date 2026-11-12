@@ -3154,6 +3154,7 @@
 0x100053b7 func   ?sub_102f13d0@CAI_Navigator@@QAE_NE@Z CAI_Navigator::sub_102f13d0
 0x100053bc func   ?sub_101f9630@@YAXH@Z sub_101f9630
 0x100053c1 func   ?vfunc278@CWeaponGravityGun@@UAEMXZ CWeaponGravityGun::vfunc278
+0x100053c6 func   ?vfunc348@CNPC_VMingXiao@@UAEHXZ CNPC_VMingXiao::vfunc348
 0x100053cb func   ?sub_10384150@@YADXZ sub_10384150
 0x100053d5 func   ?sub_10043230@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_10043230
 0x100053da func   ?sub_102c1a80@CAI_BaseNPCTroika@@QAEXPAX0@Z CAI_BaseNPCTroika::sub_102c1a80
