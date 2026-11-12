@@ -6827,6 +6827,7 @@
 0x10009ef8 func   _prop_hacking prop_hacking
 0x10009efd func   ?vfunc5@CBaseTempEntity@@UAEXXZ CBaseTempEntity::vfunc5
 0x10009f02 func   ?vfunc370@CBaseCombatWeapon@@UAEXPAHPAV1@@Z CBaseCombatWeapon::vfunc370
+0x10009f07 func   ?Purge@?$CUtlMemory@PAVCBaseEntity@@@@QAEXXZ CUtlMemory<CBaseEntity *>::Purge
 0x10009f07 func   ?sub_100f9820@UtlMem@@QAEXXZ UtlMem::sub_100f9820
 0x10009f0c func   ?sub_10214cc0@CPropHaunted@@QAEPAVCEnvParticle@@H@Z CPropHaunted::sub_10214cc0
 0x10009f11 func   ?vfunc8@CMoveHelperServer@@UAEXH@Z CMoveHelperServer::vfunc8
