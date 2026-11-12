@@ -148159,6 +148159,40 @@ int CUnknown10202ec0::sub_10202ec0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202ef0 size=0x84
+#include "CUnknown10202d10.h"
+
+struct CUnknown10202d10Remove : CUnknown10202d10
+{
+	bool RemoveIndex(int i)
+	{
+		CUnknown102029c0 *pRecord = m_ppRecords[i];
+		if (pRecord)
+			delete pRecord;
+		if (m_nCount > 1)
+		{
+			m_ppRecords[i] = m_ppRecords[m_nCount - 1];
+			m_ppRecords[m_nCount - 1] = 0;
+			m_nCount--;
+			return true;
+		}
+		delete m_ppRecords;
+		m_ppRecords = 0;
+		m_nAllocated = 0;
+		m_nCount = 0;
+		return true;
+	}
+};
+
+bool CUnknown10202d10::sub_10202ef0(int id)
+{
+	int i = sub_10203110(id);
+	if (i > -1)
+		return ((CUnknown10202d10Remove *)this)->RemoveIndex(i);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202fd0 size=0x3f
 struct CSlotIter
 {
