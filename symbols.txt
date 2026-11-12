@@ -6237,6 +6237,7 @@
 0x100094df func   ?sub_103dc8a0@@YADXZ sub_103dc8a0
 0x100094e4 func   _item_p_occult_thaum_damage item_p_occult_thaum_damage
 0x100094e9 func   ?vfunc0@CVFeatList_t@@UAEMH@Z CVFeatList_t::vfunc0
+0x100094ee func   ?ShiftElementsRight@?$CUtlVector@PAVCAI_Hint@@V?$CUtlMemory@PAVCAI_Hint@@@@@@QAEXHH@Z CUtlVector<CAI_Hint *,CUtlMemory<CAI_Hint *> >::ShiftElementsRight
 0x100094ee func   ?sub_102d42d0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102d42d0
 0x100094f3 func   ?vfunc81@CItemGSewerBook1@@QAEHXZ CItemGSewerBook1::vfunc81
 0x100094f8 func   ?vfunc373@CWeaponMelee_GargoyleFist@@UAEHXZ CWeaponMelee_GargoyleFist::vfunc373
