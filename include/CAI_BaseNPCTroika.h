@@ -586,6 +586,7 @@ struct { char m_pad1a41[0x1b2c - 0x1a41]; int m_n1b2c; };
 	char m_pad65b8[0x65bc - 0x65b8];
 	float m_f65bc;
 	void sub_102bf560(CBaseEntity *pEnt);	// stores the handle of the entity the lookup sub_102707d0 gives at +0x65c0 and curtime + 5.0f at +0x65c4 unless the byte at +0x65f5 is set
+	void sub_1028e940(float flDelay);
 	float sub_1029c970();	// the float at +0x63b8, or the senses component's float (+0x10) when curtime is before the float at +0x6604 or the state (+0x5cc0) is 2 with the byte +0x5bc5 clear; never below 0
 	void sub_100f0e90(unsigned int flags);	// provisional, like sub_102a97a0 (transplant)
 	void sub_10181580(unsigned int flags);	// provisional, like sub_102a97a0 (transplant)
