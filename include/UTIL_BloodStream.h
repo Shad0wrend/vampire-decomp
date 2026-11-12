@@ -20,7 +20,7 @@ struct CTempEntsBlood	// *g_10540528: the temp entity interface; slot 14 (+0x38)
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
 	virtual void vfunc10(); virtual void vfunc11(); virtual void vfunc12(); virtual void vfunc13();
 	virtual void BloodStream(CRecipientFilter &filter, float delay, const Vector *org, const Vector *dir, int r, int g, int b, int a, int amount);	// slot 14 (+0x38)
-	virtual void vfunc15(); virtual void vfunc16(); virtual void vfunc17(); virtual void vfunc18();
+	virtual void vfunc15(); virtual void vfunc16(CRecipientFilter &filter, float delay, const Vector *pOrigin, int entIndex, int nValue); virtual void vfunc17(); virtual void vfunc18();
 	virtual void vfunc19(CRecipientFilter &filter, int delay, const Vector *pOrigin, const CGameTrace *pTrace, int entIndex, int hitbox, int decalId, bool bFlag);	// slot 19 (+0x4c): a decal temp entity (broadcast filter path)
 	virtual void vfunc20(); virtual void vfunc21(); virtual void vfunc22(); virtual void vfunc23(); virtual void vfunc24();
 	virtual void vfunc25(CRecipientFilter &filter, int a2, const Vector *pOrigin, const CGameTrace *pTrace, int entIndex, int hitbox, int a7, int a8, int a9, int a10, int a11, int a12, int a13);	// slot 25 (+0x64): a decal temp entity (PAS filter path)

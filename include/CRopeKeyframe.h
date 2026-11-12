@@ -9,6 +9,7 @@ class CRopeKeyframe : public CBaseEntity
 public:
 	CRopeKeyframe *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
+	void sub_1023a7d0(int a, int b, int c, int d);
 	char vfunc86(int a, int b, int c, int d, int e);	// slot 86: sets +0x450 when clear, else CBaseEntity::vfunc86
 	char sub_100ab020(int a, int b, int c, int d, int e);	// CBaseEntity::vfunc86 (stub 0x1000e002), called directly
 	CRopeKeyframe *sub_1019dc80();	// as in CKeepUpright (transplant)
