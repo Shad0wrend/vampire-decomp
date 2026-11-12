@@ -30,5 +30,6 @@ class CUnknown103065d0
 public:
 	CUnknown103065d0Line **m_pLines;	// 0x00: array of 50 record pointers
 
-	void sub_103065d0(const CUnknown103065d0Vec *pStart, const CUnknown103065d0Vec *pEnd, int a, int b, int c, char flag);	// stores a new line record at the current ring index (allocating the buffer on first use), marks it active and advances the index
+	void sub_103065d0(const CUnknown103065d0Vec *pStart, const CUnknown103065d0Vec *pEnd, int a, int b, int c, char flag);
+	void sub_10306280(const CUnknown103065d0Vec *pA, const CUnknown103065d0Vec *pB, const CUnknown103065d0Vec *pC, const int *t1, const int *t2, unsigned int color);	// stores a new line record at the current ring index (allocating the buffer on first use), marks it active and advances the index
 };
