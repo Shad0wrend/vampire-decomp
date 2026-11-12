@@ -614,6 +614,7 @@ public:
 	void sub_10177120();
 	void sub_101835e0();	// "CBasePlayer::Inventory_CreateKey": scope trace (entity name), then allocates the 5-dword inventory object at +0x245c when it is not there yet
 	int sub_1017ddd0();	// the decoded value at +0x1cd8, or a convar override
+	float sub_1017deb0(int level, float time);	// the lapse time for a criminal level (ret 8, this in ecx), called by sub_1017e150
 	int sub_10175290();	// slot 444: refreshes the counter at +0x1e08, else the field at +0x45c of the entity at +0x1e04
 	CBaseEntity *sub_1015dc60();	// slot 167 override: resolves the entity handle at +0x1c60 (null when stale)
 	bool sub_10168e10();	// slot 361 override: true when the entity handle at +0xfe8 does not resolve
