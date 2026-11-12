@@ -98922,6 +98922,112 @@ void CPlayerMove::sub_10187280(CBasePlayer *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101874a0 size=0x345
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBasePlayer.h"
+#include "RTTI.h"
+#include "CPlayerMove.h"
+#include "ScopeTrace.h"
+#include "CUserCmd.h"
+#include "CBaseCombatWeapon.h"
+#include "engineserver.h"
+#include "globalvars.h"
+#define A(n) virtual void a##n();
+#define A10(p) A(p##0) A(p##1) A(p##2) A(p##3) A(p##4) A(p##5) A(p##6) A(p##7) A(p##8) A(p##9)
+#define A100(p) A10(p##0) A10(p##1) A10(p##2) A10(p##3) A10(p##4) A10(p##5) A10(p##6) A10(p##7) A10(p##8) A10(p##9)
+struct CPMWeapon { A100(0) A100(1) A100(2) A10(30) A10(31) A10(32) A10(33) A(340) A(341) A(342) A(343) A(344) A(345) A(346) A(347) virtual const char *GetName(); };
+struct CPMPlayer { A100(0) A100(1) A100(2) A100(3) A10(40) A10(41) A10(42) A10(43) A10(44) A(450) A(451) A(452) A(453) A(454) A(455) A(456) virtual void SelectItem(const char *pstr, int iSubType); };
+struct CUnk10181650 { char sub_10181650(int n); };
+struct CPMVeh { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(void *p); };
+struct CPMHelper { virtual void v0(); virtual void v1(CBasePlayer *p, void *mv); };
+struct CPMHelper2 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); };
+struct CPMData { char m_pad0[0x64]; Vector m_vec64; };
+struct CPlayerMoveX : CPlayerMove {
+	void sub_10185f90(CBasePlayer *pPlayer, double d);
+	void sub_101871f0(CBasePlayer *pPlayer, double d);
+	void sub_10185d70(CBasePlayer *pPlayer);
+};
+extern CPMData *g_10628368;
+extern CPMHelper *g_10627580;
+extern double g_1044fab0;
+extern char g_10538764[], g_1055f710[];
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+void *sub_101878d0(void *edict);
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+inline void *Instance(int iEnt)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	return sub_101878d0(engine->vfunc38(iEnt));
+}
+inline void SetWaterLevel(CBasePlayer *p, int nLevel)
+{
+	ScopeTrace trace("CBaseEntity::SetWaterLevel", STRINGR(p->m_name26c));
+	p->m_n03E0 = nLevel;
+}
+inline int RoundDown(float f)
+{
+	int i, cw, cw2;
+	__asm {
+		fld f
+		fnstcw word ptr cw
+		movzx eax, byte ptr cw
+		and eax, 0xfffff3ff
+		or eax, 0x400
+		mov cw2, eax
+		fldcw word ptr cw2
+		fistp i
+		fldcw word ptr cw
+	}
+	return i;
+}
+// TARGET: CPlayerMove::sub_101874a0
+void CPlayerMove::sub_101874a0(CBasePlayer *pPlayer, CUserCmd *pCmd, void *pHelper)
+{
+	sub_10185b10(pPlayer, pCmd);
+	double dt = pCmd->frametime;
+	gpGlobals->frametime = dt;
+	gpGlobals->curtime = pPlayer->m_f2358;
+	if (pCmd->m_n3c) {
+		CPMWeapon *pWeapon = (CPMWeapon *)__RTDynamicCast(Instance(pCmd->m_n3c), 0, g_10538764, g_1055f710, 0);
+		if (pWeapon)
+			((CPMPlayer *)pPlayer)->SelectItem(pWeapon->GetName(), pCmd->m_n40);
+	}
+	CPMVeh *pVehicle = (CPMVeh *)pPlayer->m_pVehicle;
+	if (pCmd->impulse && !pVehicle)
+		pPlayer->m_n2324 = pCmd->impulse;
+	pPlayer->m_vec1EF0.Init(0, 0, 0);
+	pPlayer->sub_1016b090(pCmd->buttons);
+	((CPlayerMoveX *)this)->sub_10185f90(pPlayer, 0.015);
+	g_10628368->m_vec64 = pPlayer->m_vec206c;
+	if (!pPlayer->m_n207C && !((CUnk10181650 *)pPlayer)->sub_10181650(8))
+		pPlayer->m_vec206c = pCmd->viewangles;
+	sub_10186f00(pPlayer);
+	((CPlayerMoveX *)this)->sub_101871f0(pPlayer, 0.015);
+	if (VectorLength(pPlayer->m_vec03B0) > g_1044fab0)
+		pPlayer->m_vec1EF0 = pPlayer->m_vec03B0;
+	vfunc1(pPlayer, pCmd, pHelper, g_10628368);
+	if (!pVehicle) {
+		g_10627580->v1(pPlayer, g_10628368);
+	} else {
+		SetWaterLevel(pPlayer, 0);
+		pVehicle->v8(g_10628368);
+	}
+	vfunc2(pPlayer, pCmd, g_10628368);
+	((CPMHelper2 *)pHelper)->v3();
+	sub_10187280(pPlayer);
+	((CPlayerMoveX *)this)->sub_10185d70(pPlayer);
+	pPlayer->m_f2358 += dt;
+	pPlayer->m_f2358 = RoundDown(pPlayer->m_f2358 * 1000.0f + 0.5f) * 0.001f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101878d0 size=0x8c
 struct SServerUnknown
 {
