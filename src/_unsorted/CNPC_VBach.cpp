@@ -259,6 +259,61 @@ void CNPC_VBach::vfunc432(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10363db0 size=0x23d
+#include "CNPC_VBach.h"
+#include "CPASAttenuationFilter.h"
+#include "CVStatList_t.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CUnknown1070b248.h"
+#include "CDevFlagObj.h"
+extern CDevFlagObj *g_10924a6c;
+extern CUnknown1070b248 *g_1070b248;
+extern float g_1062d200[];
+
+struct CBachCond : CNPC_VBach
+{
+	void SetCond(int c)
+	{
+		g_10924a6c->vfunc1();
+		sub_10269a20(c);
+	}
+	bool TimePassed(float t)
+	{
+		return gpGlobals->curtime > t;
+	}
+};
+
+// TARGET: CNPC_VBach::vfunc561
+void CNPC_VBach::vfunc561(int a, float flDist)
+{
+	if (sub_10269aa0(0x4c) || sub_10269aa0(0x4d)) {
+		m_b5b80 = 0;
+		if (flDist < g_1062d200[m_n669c] && gpGlobals->curtime > m_fl6690) {
+			((CBachCond *)this)->SetCond(0x7b);
+		} else if (gpGlobals->curtime > m_fl6688) {
+			CVStatListSet::Of(this)->Find(3)->sub_102008e0(0xd, 5);
+			m_fl6688 = gpGlobals->curtime + 20.0f;
+			m_fl6684 = gpGlobals->curtime + 6.0f;
+			m_b66a5 = 1;
+			CPASAttenuationFilter filter(this);
+			int edict = m_pEdict2e0;
+			g_1070b248->vfunc3(&filter, engine->vfunc35(edict), 2, "Character/Boss/Bach/bach_shield.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		}
+		m_b66a6 = 0;
+	}
+	if (((CBachCond *)this)->TimePassed(m_fl668c)) {
+		if (flDist < 72.0f) {
+			((CBachCond *)this)->SetCond(0x7a);
+		} else {
+			((CBachCond *)this)->SetCond(0x79);
+		}
+	}
+	sub_1026dd10(a, flDist);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10364280 size=0x42
 #include "CNPC_VBach.h"
 
