@@ -90444,6 +90444,46 @@ void __fastcall sub_1014c710(CHitRecorderView *pThis, int, CBaseEntity *pEntityA
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014c880 size=0x136
+#include "CBaseEntity.h"
+#include "CUnknown1014ca10.h"
+
+struct CPhysgunGlowRec
+{
+	Vector m_vec;
+	EHANDLE m_hOther;
+	EHANDLE m_hKey;
+};
+
+struct CPhysgunGlowView
+{
+	char pad0[0x9d0];
+	CPhysgunGlowRec m_recs[16];
+	int m_nCount;
+	int m_nFront;
+};
+
+void CUnknown1014ca10::sub_1014c880(void *pEnt)
+{
+	CPhysgunGlowView *p = (CPhysgunGlowView *)this;
+	p->m_nFront = 0;
+	for (int i = 0; i < p->m_nCount; i++)
+	{
+		if (p->m_recs[i].m_hKey.Get() == pEnt && !*((char *)p->m_recs[i].m_hOther.Get() + 0x734))
+		{
+			if (i)
+			{
+				CPhysgunGlowRec temp = p->m_recs[p->m_nFront];
+				p->m_recs[p->m_nFront] = p->m_recs[i];
+				p->m_recs[i] = temp;
+			}
+			p->m_nFront++;
+		}
+	}
+	sub_1014ca10(0xc0, 0xff, 0xc0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ca10 size=0x86
 #include "CUnknown1014ca10.h"
 
