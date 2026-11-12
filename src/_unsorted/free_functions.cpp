@@ -183193,6 +183193,29 @@ void CAI_BaseNPCTroika::sub_1028e8b0(CBaseEntity *pEnt, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028e940 size=0x2e
+#include "CAI_BaseNPCTroika.h"
+
+struct CAI_BaseNPCTroika_View6604
+{
+	char m_pad[0x6604];
+	float m_flNextTime;	// 0x6604
+
+	float NextTime() const { return m_flNextTime; }
+};
+
+// TARGET: CAI_BaseNPCTroika::sub_1028e940
+void CAI_BaseNPCTroika::sub_1028e940(float flDelay)
+{
+	CAI_BaseNPCTroika_View6604 *v = (CAI_BaseNPCTroika_View6604 *)this;
+	float t = flDelay + gpGlobals->curtime;
+	if (v->NextTime() > t)
+		v->m_flNextTime = v->NextTime() + 0.0f;
+	else
+		v->m_flNextTime = t;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028e980 size=0xb0
 #include "CAI_BaseNPC.h"
 #include "CAI_Navigator.h"
