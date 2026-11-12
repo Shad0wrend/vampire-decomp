@@ -34,7 +34,7 @@ public:
 	virtual void slot65(int pitch, float yaw, int roll);	// "SetLocalAngles" (the angles by value; the callers copy pitch and roll as raw dwords)
 	EVS(66) EVS(67) virtual char slot68(CEntityVSlots *pOther);	// "ShouldIgnoreCollision"-like: a boolean answer in al about the other entity (CCollisionEvent::PostCollision asks both ways)
 	virtual char slot69(void *pEnt);
-	EVS10(7)
+	EVS(70) EVS(71) virtual char slot72(int a); EVS(73) EVS(74) EVS(75) EVS(76) EVS(77) EVS(78) EVS(79)
 	EVS(80) EVS(81) EVS(82) EVS(83) EVS(84) virtual int slot85();	// the entity's edict / entity index the sound calls name it by (asked of the speaking NPC)
 	virtual char slot86(int a, int b, int c, int d, int e);	// takes five arguments, a boolean answer in al (CBaseEntity::vfunc86)
 	EVS(87) EVS(88) EVS(89)
@@ -140,7 +140,7 @@ public:
 	EVS(280) EVS(281) EVS(282) EVS(283) EVS(284)
 	virtual int slot285();	// weapon: its owner (a character pointer)
 	EVS(286) EVS(287) EVS(288) EVS(289)
-	EVS(290) EVS(291) EVS(292) EVS(293) EVS(294) EVS(295)
+	EVS(290) EVS(291) EVS(292) virtual CEntityVSlots *slot293(); EVS(294) EVS(295)
 	virtual char slot296(int a);	// character: a boolean answer in al, takes one stat id (the discipline removal asks it before it removes one)
 	EVS(297) EVS(298) EVS(299)
 	EVS(300) EVS(301) EVS(302) EVS(303) EVS(304) EVS(305)

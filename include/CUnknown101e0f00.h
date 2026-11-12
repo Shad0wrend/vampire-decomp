@@ -142,7 +142,7 @@ public:
 	void *sub_101e2910(int a, int b, int c);	// the target of the source for the discipline reference (pSource, c): sub_101e28e0 of the source when the entry applies to the pair (sub_101e1a60 with 1), else 0
 	void *sub_101e28e0(void *pSource);	// the target object of the source (stub 0x10004d6d)
 	int sub_101e1250(int a, int b);	// the index of the entry for a discipline reference (stub 0x100142a4), -1 when none
-	char sub_101e1a60(CUnknown101e0f00Entry *pEntry, void *pSource, void *pSource2, void *pTarget, int flag);	// whether the entry applies to the source / target pair (stub 0x1000b956)
+	char sub_101e1a60(CUnknown101e0f00Entry *pEntry, void *pSource, void *pSource2, void *pTarget, char flag);	// whether the entry applies to the source / target pair (stub 0x1000b956)
 	void sub_101e3730(void *pSource, void *pTarget, unsigned int mask, int flag);	// applies the entry's effect (stub 0x1000ae07)
 	void sub_101e33c0(void *pSource, void *pTarget, unsigned int mask, int a);	// applies the effect of a mask to the pair with one more value (stub 0x1000fb4b)
 	void sub_101e3400(void *pSource, void *pTarget, int a, int b);	// "ActivateEffect" by reference: finds the entry, applies it to the target when sub_101e1a60 accepts the pair or the target is a CNPC_VPlayerController (dynamic cast of a CBaseCombatCharacter)
