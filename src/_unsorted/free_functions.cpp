@@ -75435,6 +75435,132 @@ int CGameMovement::sub_10125200(const Vector &point)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101252e0 size=0x314
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CGameMovement.h"
+#include "CUnknown1070b254.h"
+#include "ScopeTrace.h"
+#pragma inline_depth(1)
+
+namespace block_101252e0 {
+struct CGameMovementUnit : CGameMovement
+{
+	float *sub_1011e310();
+	float *sub_1011e350();
+	const Vector &GetPlayerMins() { return *(const Vector *)sub_1011e310(); }
+	const Vector &GetPlayerMaxs() { return *(const Vector *)sub_1011e350(); }
+};
+float *CGameMovementUnit::sub_1011e350()
+{
+	unsigned int nFlags = *(unsigned int *)((char *)m_pMove + 0x20f0);
+	unsigned char bStance = (unsigned char)(nFlags >> 5);
+	if (bStance & 1)
+		return (float *)&m_vecObsHullMax;
+	return *(char *)((char *)m_pMove + 0x1edd) ? (float *)&m_vecDuckHullMax : (float *)&m_vecHullMax;
+}
+float *CGameMovementUnit::sub_1011e310()
+{
+	unsigned int nFlags = *(unsigned int *)((char *)m_pMove + 0x20f0);
+	unsigned char bStance = (unsigned char)(nFlags >> 5);
+	if (bStance & 1)
+		return (float *)&m_vecObsHullMin;
+	return *(char *)((char *)m_pMove + 0x1edd) ? (float *)&m_vecDuckHullMin : (float *)&m_vecHullMin;
+}
+}
+using namespace block_101252e0;
+
+struct CMovePlayerOrigin { char pad[0x70]; Vector m_vecOrigin; };
+struct CMoveWaterView
+{
+	char pad[0x184];
+	Vector m_vecViewOffset;
+	char pad2[0x26c - 0x190];
+	const char *m_name26c;
+	char pad3[0x3b0 - 0x270];
+	Vector m_vecVel3b0;
+	char pad4[0x3e0 - 0x3bc];
+	int m_nWaterLevel;
+	int m_nWaterType;
+	const Vector &GetViewOffset() const { return m_vecViewOffset; }
+};
+struct WaterScope
+{
+	WaterScope(CMoveWaterView *p)
+	{
+		((ScopeTrace *)this)->ScopeTrace::ScopeTrace("CBaseEntity::SetWaterLevel", p ? (p->m_name26c ? p->m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	}
+	~WaterScope() { (*g_109f3680)--; }
+};
+void sub_10139500(const float *pStart, float flScale, const float *pDir, float *pDest);
+
+// TARGET: CGameMovement::sub_101252e0
+bool CGameMovement::sub_101252e0()
+{
+	CGameMovementUnit *self = (CGameMovementUnit *)this;
+	Vector point;
+	point[0] = ((CMovePlayerOrigin *)m_pPlayer)->m_vecOrigin[0] + (self->GetPlayerMins()[0] + self->GetPlayerMaxs()[0]) * 0.5;
+	point[1] = ((CMovePlayerOrigin *)m_pPlayer)->m_vecOrigin[1] + (self->GetPlayerMins()[1] + self->GetPlayerMaxs()[1]) * 0.5;
+	point[2] = ((CMovePlayerOrigin *)m_pPlayer)->m_vecOrigin[2] + self->GetPlayerMins()[2] + 1;
+	{
+		CMoveWaterView *p = (CMoveWaterView *)m_pMove;
+		WaterScope t(p);
+		p->m_nWaterLevel = 0;
+	}
+	((CMoveWaterView *)m_pMove)->m_nWaterType = 0;
+	int contents = sub_10125200(point);
+	if (contents & 0x4030) {
+		((CMoveWaterView *)m_pMove)->m_nWaterType = contents;
+		{
+			CMoveWaterView *p = (CMoveWaterView *)m_pMove;
+			WaterScope t(p);
+			p->m_nWaterLevel = 1;
+		}
+		point[2] = ((CMovePlayerOrigin *)m_pPlayer)->m_vecOrigin[2] + (self->GetPlayerMins()[2] + self->GetPlayerMaxs()[2]) * 0.5;
+		contents = g_1070b254->vfunc0(&point.x, 0);
+		if (contents & 0x4030) {
+			{
+				CMoveWaterView *p = (CMoveWaterView *)m_pMove;
+				WaterScope t(p);
+				p->m_nWaterLevel = 2;
+			}
+			point[2] = ((CMovePlayerOrigin *)m_pPlayer)->m_vecOrigin[2] + ((CMoveWaterView *)m_pMove)->GetViewOffset()[2];
+			contents = g_1070b254->vfunc0(&point.x, 0);
+			if (contents & 0x4030) {
+				CMoveWaterView *p = (CMoveWaterView *)m_pMove;
+				ScopeTrace t("CBaseEntity::SetWaterLevel", p ? (p->m_name26c ? p->m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+				p->m_nWaterLevel = 3;
+			}
+		}
+		if (contents & 0x7c0000) {
+			Vector dir;
+			dir.x = dir.y = dir.z = 0.0f;
+			if (contents & 0x40000)
+				dir.x = 1.0f;
+			if (contents & 0x80000)
+				dir.y = 1.0f;
+			if (contents & 0x100000)
+				dir.x -= 1.0f;
+			if (contents & 0x200000)
+				dir.y -= 1.0f;
+			if (contents & 0x400000)
+				dir.z = 1.0f;
+			Vector out;
+			CMoveWaterView *pM = (CMoveWaterView *)m_pMove;
+			sub_10139500(&pM->m_vecVel3b0.x, pM->m_nWaterLevel * 50.0, &dir.x, &out.x);
+			((CMoveWaterView *)m_pMove)->m_vecVel3b0 = out;
+		}
+	}
+	return ((CMoveWaterView *)m_pMove)->m_nWaterLevel > 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101256d0 size=0xad
 #include "CGameMovement.h"
 

@@ -10445,6 +10445,7 @@
 0x1000ee76 func   ?vfunc3@CRelationshipSaveDataOps@@QAEXPAX@Z CRelationshipSaveDataOps::vfunc3
 0x1000ee7b func   ?vfunc5@CItemGIdolElephant@@QAEPAV1@I@Z CItemGIdolElephant::vfunc5
 0x1000ee80 func   ?sub_10140070@CPathKeyFrame@@QAEXXZ CPathKeyFrame::sub_10140070
+0x1000ee85 func   ?sub_101252e0@CGameMovement@@QAE_NXZ CGameMovement::sub_101252e0
 0x1000ee8a func   ?sub_10382bb0@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::sub_10382bb0
 0x1000ee8f func   _item_k_oceanhouse_upstairs_key item_k_oceanhouse_upstairs_key
 0x1000ee94 func   ?vfunc0@CAutoGameSystem@@UAE_NXZ CAutoGameSystem::vfunc0
