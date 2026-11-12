@@ -306,6 +306,52 @@ void CRagdollProp::vfunc268(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155920 size=0xc2
+#include "CRagdollProp.h"
+#include "CBCCSlotViews.h"
+#include "ehandle.h"
+
+class CInfoSlotView
+{
+public:
+	VIEW_SLOT100(0)
+	VIEW_SLOT10(10) VIEW_SLOT10(11) VIEW_SLOT10(12) VIEW_SLOT10(13)
+	VIEW_SLOT(140) VIEW_SLOT(141)
+	virtual void vfunc142(const CRagdollPropDamageInfo *pInfo);
+};
+
+struct CTakeDamageInfoView : CRagdollPropDamageInfo
+{
+	void AddDamageType(int bitsDamageType) { m_bitsDamageType |= bitsDamageType; }
+};
+
+struct CRagdollPropView
+{
+	char m_pad[0xd5c];
+	CHandle<CInfoSlotView> m_hDamageEntity;	// 0xd5c
+};
+
+struct CBaseEntityInfoView
+{
+	void sub_100a0e40(const CRagdollPropDamageInfo *pInfo);
+};
+
+// TARGET: CRagdollProp::vfunc142
+void CRagdollProp::vfunc142(const CRagdollPropDamageInfo *pInfo)
+{
+	const CRagdollPropDamageInfo &info = *pInfo;
+	if ( ((CRagdollPropView *)this)->m_hDamageEntity.Get() )
+	{
+		CTakeDamageInfoView subInfo = *(const CTakeDamageInfoView *)&info;
+		subInfo.AddDamageType( 0x800000 );
+		((CRagdollPropView *)this)->m_hDamageEntity->vfunc142( &subInfo );
+		return;
+	}
+
+	((CBaseEntityInfoView *)this)->sub_100a0e40( &info );
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155a70 size=0x47
 #include "CRagdollProp.h"
 

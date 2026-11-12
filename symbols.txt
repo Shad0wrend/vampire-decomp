@@ -2262,6 +2262,7 @@
 0x10003f7b func   ?sub_102e26b0@CUnknown102e26b0@@QAE?AVVector@@XZ CUnknown102e26b0::sub_102e26b0
 0x10003f85 func   ?sub_1002e0a0@@YAGPAUIPhysObj@@G@Z sub_1002e0a0
 0x10003f8a func   ?sub_10197050@@YAPAUPyObject@@PAU1@PAD@Z sub_10197050
+0x10003f8f func   ?vfunc142@CRagdollProp@@UAEXPBUCRagdollPropDamageInfo@@@Z CRagdollProp::vfunc142
 0x10003f94 func   _logic_case_toggle logic_case_toggle
 0x10003f99 func   ?vfunc259@CBaseAnimating@@QAEXPAX@Z CBaseAnimating::vfunc259
 0x10003f9e func   ?vfunc5@CResearchBook_HG_DODGE@@QAEPAV1@I@Z CResearchBook_HG_DODGE::vfunc5
