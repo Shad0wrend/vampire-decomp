@@ -205454,6 +205454,36 @@ void CUnknown102e37b0::sub_102e37b0(const float *pStart, const float *pEnd, unsi
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e3a60 size=0x7f
+#include "Vector.h"
+#include "CAI_MoveProbe.h"
+struct CDebugTrace
+{
+	char m_pad0000[0xc];
+	char m_data[0x20];	// 0x0c
+	float m_flFraction;	// 0x2c
+	char m_pad0030[0x54 - 0x30];
+};
+extern float g_104454c0;
+void sub_10142e90(const Vector &from, const void *pData, int r, int g, int b, bool bTest, float flDuration);
+struct CMPV : CAI_MoveProbe
+{
+	void sub_102e2dc0(const Vector *from, const Vector *to, int mask, int collisionGroup, CDebugTrace *pTrace);
+	void sub_102e3a60(Vector from, Vector to, int mask);
+};
+
+// TARGET: sub_102e3a60
+void CMPV::sub_102e3a60(Vector from, Vector to, int mask)
+{
+	CDebugTrace tr;
+	sub_102e2dc0(&from, &to, mask, 1, &tr);
+	if (tr.m_flFraction < 1.0f)
+		sub_10142e90(from, tr.m_data, 0xff, 0x80, 0x80, true, 3.0);
+	else
+		sub_10142e90(from, tr.m_data, 0x80, 0xff, 0x80, true, 3.0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e4f20 size=0x13
 struct CUnknown102e4f20 { void * sub_102e4f20(int); };
 void * CUnknown102e4f20::sub_102e4f20(int a0)
