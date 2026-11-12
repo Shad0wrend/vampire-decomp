@@ -3912,6 +3912,7 @@
 0x10006271 func   ?sub_101babc0@CSoundEnt@@SAXHPBVVector@@HMD@Z CSoundEnt::sub_101babc0
 0x10006276 func   ?sub_1018d780@CUnit1018d780@@QAEXPAUinputdata_t@@@Z CUnit1018d780::sub_1018d780
 0x1000627b func   ?vfunc36@CHalfLife2@@UAEXH@Z CHalfLife2::vfunc36
+0x10006280 func   ?sub_100bc860@bf_write@@QAEXIH_N@Z bf_write::sub_100bc860
 0x10006285 func   ?sub_100b5810@@YAHXZ sub_100b5810
 0x1000628a func   ?sub_102e2840@@YIXPAUCOwner@@@Z sub_102e2840
 0x1000628f func   ?sub_10430320@@YAII@Z sub_10430320

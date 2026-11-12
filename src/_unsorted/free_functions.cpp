@@ -46258,6 +46258,52 @@ void __fastcall sub_100bc5e0(int *self, int, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc860 size=0xd6
+#include "bf_write.h"
+
+// TARGET: bf_write::sub_100bc860
+void bf_write::sub_100bc860(unsigned int curData, int numbits, bool bCheckRange)
+{
+	if (bCheckRange) {
+		sub_100bc600(curData, numbits);
+		return;
+	}
+
+	// Bounds checking..
+	if ((m_iCurBit + numbits) > m_nDataBits)
+	{
+		m_bOverflow = true;
+		m_iCurBit = m_nDataBits;
+		return;
+	}
+
+	int nBitsLeft = numbits;
+	int iCurBit = m_iCurBit;
+
+	// Mask in a dword.
+	unsigned int iDWord = iCurBit >> 5;
+
+	unsigned long iCurBitMasked = iCurBit & 31;
+	((unsigned long*)m_pData)[iDWord] &= g_106d1990[iCurBitMasked][nBitsLeft];
+	((unsigned long*)m_pData)[iDWord] |= curData << iCurBitMasked;
+
+	// Did it span a dword?
+	int nBitsWritten = 32 - iCurBitMasked;
+	if (nBitsWritten < nBitsLeft)
+	{
+		nBitsLeft -= nBitsWritten;
+		iCurBit += nBitsWritten;
+		curData >>= nBitsWritten;
+
+		unsigned long iCurBitMasked = iCurBit & 31;
+		((unsigned long*)m_pData)[iDWord+1] &= g_106d1990[iCurBitMasked][nBitsLeft];
+		((unsigned long*)m_pData)[iDWord+1] |= curData << iCurBitMasked;
+	}
+
+	m_iCurBit += numbits;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bc980 size=0x316
 #include "bf_write.h"
 
