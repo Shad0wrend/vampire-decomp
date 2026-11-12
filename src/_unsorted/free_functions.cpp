@@ -126662,6 +126662,33 @@ void *CUnkDelete101d8290::sub_101d8290(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d82d0 size=0x96
+#include "CUnknown101d82d0.h"
+
+#pragma auto_inline(off)
+CUnknown101d82d0_Elem::CUnknown101d82d0_Elem()
+{
+	m_a = -1;
+	m_b = -1;
+	m_c = 0;
+}
+#pragma auto_inline(on)
+
+// TARGET: CUnknown101d82d0::sub_101d82d0
+CUnknown101d82d0_Elem *CUnknown101d82d0::sub_101d82d0()
+{
+	CUnknown101d82d0_Elem *pNew = new CUnknown101d82d0_Elem[m_count + 1];
+	if (pNew) {
+		for (int i = 0; i < m_count; i++)
+			pNew[i] = m_pData[i];
+		delete[] m_pData;
+		m_pData = pNew;
+		m_count++;
+	}
+	return &m_pData[m_count - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d83a0 size=0x9b
 #include "CUnknown101d82d0.h"
 #include "CUnknown101d7ec0.h"

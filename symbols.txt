@@ -11257,6 +11257,7 @@
 0x100100cd func   ?RotateRight@?$CUtlRBTree@UCRBTree12Entry_102cfaf0@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_102cfaf0,unsigned short>::RotateRight
 0x100100cd func   ?sub_102cfd20@CUtlRBTree12Unit@@QAEXG@Z CUtlRBTree12Unit::sub_102cfd20
 0x100100d2 func   ?vfunc0@CPhysicsAnimlinkEntityDeleteProxy@@QAEXH@Z CPhysicsAnimlinkEntityDeleteProxy::vfunc0
+0x100100d7 func   ?sub_101d82d0@CUnknown101d82d0@@QAEPAUCUnknown101d82d0_Elem@@XZ CUnknown101d82d0::sub_101d82d0
 0x100100dc func   ?vfunc444@CNPC_VTzimisceRunner@@QAEXPAH@Z CNPC_VTzimisceRunner::vfunc444
 0x100100e1 func   ?sub_1038f640@@YIEPAD@Z sub_1038f640
 0x100100e6 func   ?vfunc363@CWeaponMelee_ChangClaw@@QAEHXZ CWeaponMelee_ChangClaw::vfunc363
