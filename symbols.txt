@@ -8377,6 +8377,7 @@
 0x1000c04f func   ?sub_100aac30@@YIHPAD@Z sub_100aac30
 0x1000c054 func   ?vfunc362@CWeaponMelee_Torch@@QAEHXZ CWeaponMelee_Torch::vfunc362
 0x1000c059 func   ?sub_101fa180@CUnknown101fa0e0@@QAEXPAX@Z CUnknown101fa0e0::sub_101fa180
+0x1000c05e func   ?vfunc3@?$CEntityDataInstantiator@Utouchlink_t@@@@UAEXI@Z CEntityDataInstantiator<touchlink_t>::vfunc3
 0x1000c063 func   ?vfunc435@CNPC_VHengeyokai@@UAEXH@Z CNPC_VHengeyokai::vfunc435
 0x1000c068 func   ?sub_10116e80@CFuncMoveLinear@@QAEXM@Z CFuncMoveLinear::sub_10116e80
 0x1000c06d func   ?vfunc0@CEventsSaveDataOps@@QAEXPAXPAVCSave@@@Z CEventsSaveDataOps::vfunc0
