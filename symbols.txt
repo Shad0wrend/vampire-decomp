@@ -8193,6 +8193,7 @@
 0x1000bf0a func   ?sub_10075fd0@CUnknown10075aa0@@QAEMM@Z CUnknown10075aa0::sub_10075fd0
 0x1000bf0f func   ?sub_1042ee50@CUnknown1042e8c0@@QAEXM@Z CUnknown1042e8c0::sub_1042ee50
 0x1000bf14 func   ?vfunc546@CNPC_VBatSwarm@@QAEHH@Z CNPC_VBatSwarm::vfunc546
+0x1000bf23 func   ?vfunc333@CAI_BaseHumanoid@@QAEXM@Z CAI_BaseHumanoid::vfunc333
 0x1000bf28 func   ?vfunc124@CBeam@@UAEHXZ CBeam::vfunc124
 0x1000bf2d func   ?sub_10246dc0@@YA?AVSendProp@@PBDHHPAX@Z sub_10246dc0
 0x1000bf32 func   _phys_ballsocket phys_ballsocket

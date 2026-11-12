@@ -507,6 +507,241 @@ void CAI_BaseHumanoidUnit::sub_1025f8e0(const Vector *pPos, float flValue, float
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025fa50 size=0x8b2
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "utlrbtree.h"
+// TARGET: CAI_BaseHumanoid::vfunc333
+#include "CAI_BaseHumanoid.h"
+#include "CHumanoidRec.h"
+#include "ConVar.h"
+#include "utlvector.h"
+
+extern "C" int __cdecl _strcmpi(const char *s1, const char *s2);
+float sub_10084b40(void *pActor, const char *pszScene, EHANDLE *phScene);
+void sub_10138a90(const Vector &forward, Vector &right, Vector &up);
+CBaseEntity *sub_101cd9e0(int index);
+extern ConVar g_1090fc98;	// flex_maxplayertime
+extern ConVar g_1090fc08;	// flex_minplayertime
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// Vector::operator- with its VectorSubtract expanded: in this big function VC6 refuses to inline Vector.h's
+// plain-inline VectorSubtract (it calls it), while the game expanded it here; making VectorSubtract __forceinline
+// in Vector.h breaks 8 matched functions.
+__forceinline Vector VecSub333(const Vector &a, const Vector &b)
+{
+	Vector res;
+	res.x = a.x - b.x;
+	res.y = a.y - b.y;
+	res.z = a.z - b.z;
+	return res;
+}
+
+#define HV(n) virtual void hv##n();
+#define HV10(p) HV(p##0) HV(p##1) HV(p##2) HV(p##3) HV(p##4) HV(p##5) HV(p##6) HV(p##7) HV(p##8) HV(p##9)
+
+struct Humanoid333
+{
+	HV10(0) HV10(1) HV10(2) HV10(3) HV10(4) HV10(5) HV10(6) HV10(7) HV10(8) HV10(9)
+	HV10(10) HV10(11) HV10(12) HV10(13) HV10(14) HV10(15) HV10(16) HV10(17) HV10(18)
+	HV(190) HV(191) HV(192)
+	virtual Vector EyePosition();	// 193
+	HV(194) HV(195) HV(196) HV(197) HV(198) HV(199)
+	HV10(20) HV10(21) HV10(22) HV10(23) HV10(24) HV10(25) HV10(26)
+	HV(270) HV(271) HV(272) HV(273) HV(274) HV(275) HV(276)
+	virtual void SetViewtarget(const Vector &v);	// 277
+	virtual const Vector &GetViewtarget();	// 278
+	HV(279) HV(280) HV(281) HV(282)
+	virtual void ProcessExpressions();	// 283
+	HV(284) HV(285) HV(286) HV(287) HV(288) HV(289)
+	HV10(29) HV10(30) HV10(31) HV10(32) HV10(33) HV10(34) HV10(35) HV10(36)
+	HV(370)
+	virtual Vector HeadDirection3D();	// 371
+	HV(372) HV(373) HV(374) HV(375) HV(376) HV(377) HV(378) HV(379)
+	HV10(38) HV10(39) HV10(40) HV10(41) HV10(42) HV10(43) HV10(44) HV10(45)
+	HV(460) HV(461) HV(462) HV(463)
+	virtual int GetState();	// 464
+	HV(465) HV(466) HV(467) HV(468) HV(469)
+	HV10(47) HV10(48) HV10(49) HV10(50) HV10(51) HV10(52)
+	HV(530) HV(531) HV(532) HV(533) HV(534) HV(535)
+	virtual void AddLookTarget(CBaseEntity *pTarget, float flImportance, float flDuration, float flRamp);	// 536
+	virtual void SetHeadDirection(const Vector &vTarget, float flInterval);	// 537
+	HV(538) HV(539)
+	HV10(54) HV10(55) HV10(56) HV10(57)
+	HV(580) HV(581) HV(582) HV(583) HV(584)
+	virtual void PickRandomLookTarget(bool bExcludePlayers, float minTime, float maxTime);	// 585
+	virtual bool HasActiveLookTargets();	// 586
+	virtual bool ValidEyeTarget(const Vector &lookTargetPos);	// 587
+
+	char m_pad0004[0x11c - 4];
+	const char *m_iClassname;	// 0x11c
+	char m_pad0120[0x854 - 0x120];
+	int m_blinktoggle;	// 0x854
+	char m_pad0858[0x5f74 - 0x858];
+	Vector m_goalHeadDirection;	// 0x5f74
+	float m_flBlinktime;	// 0x5f80
+	int m_n5f84;	// 0x5f84
+	CUtlVector<CHumanoidRec> m_lookQueue;	// 0x5f88
+	const char *m_iszExpressionScene;	// 0x5f9c
+	EHANDLE m_hExpressionSceneEnt;	// 0x5fa0
+};
+
+struct LookTarget333 : CHumanoidRec
+{
+	bool IsThis(void *pThis) { return (pThis == ((EHANDLE *)&m_n4)->Get()); }
+	const Vector &GetPosition()
+	{
+		if (m_n0 == 0 && ((EHANDLE *)&m_n4)->Get() != 0)
+		{
+			m_vecPos = ((Humanoid333 *)((EHANDLE *)&m_n4)->Get())->EyePosition();
+		}
+		return m_vecPos;
+	}
+	bool IsActive()
+	{
+		if (m_flEnd < gpGlobals->curtime)
+			return false;
+		if (m_n0 == 0 && ((EHANDLE *)&m_n4)->Get() == 0)
+			return false;
+		return true;
+	}
+	float Interest()
+	{
+		float t = (gpGlobals->curtime - m_flStart) / (m_flEnd - m_flStart);
+		if (t < 0.0f || t > 1.0f)
+			return 0.0f;
+		if (t < m_flRate)
+			t = t / m_flRate;
+		else if (t > 1 - m_flRate)
+			t = (1.0 - t) / m_flRate;
+		else
+			t = 1.0f;
+		return (3 * t * t - 2 * t * t * t) * m_flValue;
+	}
+};
+
+#define LOOK(i) ((LookTarget333 &)self->m_lookQueue[i])
+
+void CAI_BaseHumanoid::vfunc333(float flInterval)
+{
+	Humanoid333 *self = (Humanoid333 *)this;
+	int i;
+
+	if (self->m_iszExpressionScene != 0 && self->m_hExpressionSceneEnt == 0)
+	{
+		sub_10084b40(this, STRINGR(self->m_iszExpressionScene), &self->m_hExpressionSceneEnt);
+	}
+
+	self->ProcessExpressions();
+
+	Vector vEyePosition = self->EyePosition();
+
+	sub_1025efc0();
+
+	Vector vHead = self->HeadDirection3D();
+
+	for (i = 0; i < self->m_lookQueue.Count();)
+	{
+		if (!LOOK(i).IsActive())
+		{
+			self->m_lookQueue.Remove(i);
+		}
+		else
+		{
+			i++;
+		}
+	}
+
+	bool fIsCycler = _strcmpi(STRINGR(self->m_iClassname), "cycler_actor") == 0;
+	if (!self->HasActiveLookTargets() && (self->GetState() != 4 || fIsCycler))
+	{
+		if (fIsCycler)
+		{
+			self->AddLookTarget(sub_101cd9e0(1), 0.5f, enginerandom->vfunc1(g_1090fc08.GetFloat(), g_1090fc98.GetFloat()), 0);
+		}
+		else
+		{
+			self->PickRandomLookTarget(false, 1.5f, 2.5f);
+		}
+	}
+
+	bool bValidHeadTarget = false;
+	for (i = 0; i < self->m_lookQueue.Count();)
+	{
+		if (LOOK(i).IsThis(this))
+		{
+			i++;
+		}
+		else
+		{
+			float flInterest = LOOK(i).Interest();
+			Vector tmp = VecSub333(LOOK(i).GetPosition(), vEyePosition);
+			VectorNormalize(tmp);
+			if (DotProduct(tmp, self->HeadDirection3D()) >= -0.5)
+			{
+				vHead = vHead * (1 - flInterest) + tmp * flInterest;
+				bValidHeadTarget = true;
+			}
+			i++;
+		}
+	}
+
+	if (bValidHeadTarget)
+	{
+		self->SetHeadDirection(vEyePosition + vHead * 100, flInterval);
+		self->m_goalHeadDirection = vHead;
+	}
+	else
+	{
+		self->m_goalHeadDirection = self->m_goalHeadDirection * 0.8f + vHead * 0.2f;
+		VectorNormalize(self->m_goalHeadDirection);
+		self->SetHeadDirection(vEyePosition + self->m_goalHeadDirection * 100, flInterval);
+	}
+
+	bool bFoundTarget = false;
+	for (i = self->m_lookQueue.Count() - 1; i >= 0; i--)
+	{
+		if (LOOK(i).IsThis(this))
+		{
+			bFoundTarget = true;
+			self->SetViewtarget(vEyePosition + vHead * 100);
+			break;
+		}
+		else
+		{
+			if (self->ValidEyeTarget(LOOK(i).GetPosition()))
+			{
+				bFoundTarget = true;
+				self->SetViewtarget(LOOK(i).GetPosition());
+				break;
+			}
+		}
+	}
+
+	if (!bFoundTarget && !self->ValidEyeTarget(self->GetViewtarget()))
+	{
+		Vector right, up;
+		sub_10138a90(self->HeadDirection3D(), right, up);
+		self->SetViewtarget(self->EyePosition() + self->HeadDirection3D() * 128 + right * enginerandom->vfunc1(-32, 32) + up * enginerandom->vfunc1(-16, 16));
+	}
+
+	if (self->m_flBlinktime < gpGlobals->curtime)
+	{
+		self->m_blinktoggle = !self->m_blinktoggle;
+		self->m_flBlinktime = gpGlobals->curtime + enginerandom->vfunc1(1.5, 4.5);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260630 size=0x2b
 #include "CAI_BaseHumanoid.h"
 #include "CAI_BaseNPC.h"
