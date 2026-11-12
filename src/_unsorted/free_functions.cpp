@@ -173324,6 +173324,237 @@ void sub_10243700(const Vector &origin, const Vector &angles, const Vector &mins
 }
 // END FUNCTION
 
+// FUNCTION: 0x102437d0 size=0x7d9
+#include <math.h>
+#include "Vector.h"
+
+struct mat34
+{
+	float m_flMatVal[3][4];
+	float *operator[](int i) { return m_flMatVal[i]; }
+	const float *operator[](int i) const { return m_flMatVal[i]; }
+};
+
+struct cplane_t
+{
+	Vector normal;
+	float dist;
+	unsigned char type;
+	unsigned char signbits;
+	unsigned char pad[2];
+};
+
+void sub_10138df0(const mat34 &in1, const mat34 &in2, mat34 &out);	// ConcatTransforms
+void sub_10138720(const mat34 &in, int column, Vector &out);	// MatrixGetColumn
+void sub_10138870(const float *v1, const float *v2, float *cross);	// CrossProduct
+
+inline unsigned long &FloatBits(float &f) { return *reinterpret_cast<unsigned long *>(&f); }
+inline unsigned long const &FloatBits(float const &f) { return *reinterpret_cast<unsigned long const *>(&f); }
+inline unsigned long FloatAbsBits(float f) { return FloatBits(f) & 0x7FFFFFFF; }
+#define FloatMakePositive(f) ((float)fabs(f))
+__forceinline float DotProductF(const float *v1, const float *v2) { return v1[0]*v2[0] + v1[1]*v2[1] + v1[2]*v2[2]; }
+__forceinline void VectorCopyF(const float *a, float *b) { b[0]=a[0]; b[1]=a[1]; b[2]=a[2]; }
+inline float MatrixRowDotProduct(const mat34 &in1, int row, const Vector &in2) { return DotProductF(in1[row], &in2.x); }
+inline float MatrixColumnDotProduct(const mat34 &in1, int col, const Vector &in2) { return in1[0][col] * in2[0] + in1[1][col] * in2[1] + in1[2][col] * in2[2]; }
+
+static inline void ComputeAbsMatrix(const mat34 &in, mat34 &out)
+{
+	FloatBits(out[0][0]) = FloatAbsBits(in[0][0]);
+	FloatBits(out[0][1]) = FloatAbsBits(in[0][1]);
+	FloatBits(out[0][2]) = FloatAbsBits(in[0][2]);
+	FloatBits(out[1][0]) = FloatAbsBits(in[1][0]);
+	FloatBits(out[1][1]) = FloatAbsBits(in[1][1]);
+	FloatBits(out[1][2]) = FloatAbsBits(in[1][2]);
+	FloatBits(out[2][0]) = FloatAbsBits(in[2][0]);
+	FloatBits(out[2][1]) = FloatAbsBits(in[2][1]);
+	FloatBits(out[2][2]) = FloatAbsBits(in[2][2]);
+}
+
+#define CSP_TEST(sum, proj, body) \
+	boxProjectionSum = sum; \
+	originProjection = FloatMakePositive(proj) + tolerance; \
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum)) \
+	{ \
+		body; \
+		return true; \
+	}
+
+bool sub_102437d0(const mat34 &worldToBox1, const mat34 &box2ToWorld,
+	const Vector &box1Size, const Vector &box2Size, float tolerance, cplane_t *pPlane)
+{
+	mat34 box2ToBox1;
+	sub_10138df0(worldToBox1, box2ToWorld, box2ToBox1);
+
+	Vector box2Origin;
+	sub_10138720(box2ToBox1, 3, box2Origin);
+
+	mat34 absBox2ToBox1;
+	ComputeAbsMatrix(box2ToBox1, absBox2ToBox1);
+
+	Vector tmp;
+	float boxProjectionSum;
+	float originProjection;
+
+	boxProjectionSum = box1Size.x + MatrixRowDotProduct(absBox2ToBox1, 0, box2Size);
+	originProjection = FloatMakePositive(box2Origin.x) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		VectorCopyF(worldToBox1[0], &pPlane->normal.x);
+		return true;
+	}
+
+	boxProjectionSum = box1Size.y + MatrixRowDotProduct(absBox2ToBox1, 1, box2Size);
+	originProjection = FloatMakePositive(box2Origin.y) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		VectorCopyF(worldToBox1[1], &pPlane->normal.x);
+		return true;
+	}
+
+	boxProjectionSum = box1Size.z + MatrixRowDotProduct(absBox2ToBox1, 2, box2Size);
+	originProjection = FloatMakePositive(box2Origin.z) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		VectorCopyF(worldToBox1[2], &pPlane->normal.x);
+		return true;
+	}
+
+	boxProjectionSum = box2Size.x + MatrixColumnDotProduct(absBox2ToBox1, 0, box1Size);
+	originProjection = FloatMakePositive(MatrixColumnDotProduct(box2ToBox1, 0, box2Origin)) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		sub_10138720(box2ToWorld, 0, pPlane->normal);
+		return true;
+	}
+
+	boxProjectionSum = box2Size.y + MatrixColumnDotProduct(absBox2ToBox1, 1, box1Size);
+	originProjection = FloatMakePositive(MatrixColumnDotProduct(box2ToBox1, 1, box2Origin)) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		sub_10138720(box2ToWorld, 1, pPlane->normal);
+		return true;
+	}
+
+	boxProjectionSum = box2Size.z + MatrixColumnDotProduct(absBox2ToBox1, 2, box1Size);
+	originProjection = FloatMakePositive(MatrixColumnDotProduct(box2ToBox1, 2, box2Origin)) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		sub_10138720(box2ToWorld, 2, pPlane->normal);
+		return true;
+	}
+
+	// b1e1 x b2e1
+	boxProjectionSum =
+		box1Size.y * absBox2ToBox1[2][0] + box1Size.z * absBox2ToBox1[1][0] +
+		box2Size.y * absBox2ToBox1[0][2] + box2Size.z * absBox2ToBox1[0][1];
+	originProjection = FloatMakePositive(-box2Origin.y * box2ToBox1[2][0] + box2Origin.z * box2ToBox1[1][0]) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		sub_10138720(box2ToWorld, 0, tmp);
+		sub_10138870(worldToBox1[0], &tmp.x, &pPlane->normal.x);
+		return true;
+	}
+
+	// b1e1 x b2e2
+	boxProjectionSum =
+		box1Size.y * absBox2ToBox1[2][1] + box1Size.z * absBox2ToBox1[1][1] +
+		box2Size.x * absBox2ToBox1[0][2] + box2Size.z * absBox2ToBox1[0][0];
+	originProjection = FloatMakePositive(-box2Origin.y * box2ToBox1[2][1] + box2Origin.z * box2ToBox1[1][1]) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		sub_10138720(box2ToWorld, 1, tmp);
+		sub_10138870(worldToBox1[0], &tmp.x, &pPlane->normal.x);
+		return true;
+	}
+
+	// b1e1 x b2e3
+	boxProjectionSum =
+		box1Size.y * absBox2ToBox1[2][2] + box1Size.z * absBox2ToBox1[1][2] +
+		box2Size.x * absBox2ToBox1[0][1] + box2Size.y * absBox2ToBox1[0][0];
+	originProjection = FloatMakePositive(-box2Origin.y * box2ToBox1[2][2] + box2Origin.z * box2ToBox1[1][2]) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		sub_10138720(box2ToWorld, 2, tmp);
+		sub_10138870(worldToBox1[0], &tmp.x, &pPlane->normal.x);
+		return true;
+	}
+
+	// b1e2 x b2e1
+	boxProjectionSum =
+		box1Size.x * absBox2ToBox1[2][0] + box1Size.z * absBox2ToBox1[0][0] +
+		box2Size.y * absBox2ToBox1[1][2] + box2Size.z * absBox2ToBox1[1][1];
+	originProjection = FloatMakePositive(box2Origin.x * box2ToBox1[2][0] - box2Origin.z * box2ToBox1[0][0]) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		sub_10138720(box2ToWorld, 0, tmp);
+		sub_10138870(worldToBox1[1], &tmp.x, &pPlane->normal.x);
+		return true;
+	}
+
+	// b1e2 x b2e2
+	boxProjectionSum =
+		box1Size.x * absBox2ToBox1[2][1] + box1Size.z * absBox2ToBox1[0][1] +
+		box2Size.x * absBox2ToBox1[1][2] + box2Size.z * absBox2ToBox1[1][0];
+	originProjection = FloatMakePositive(box2Origin.x * box2ToBox1[2][1] - box2Origin.z * box2ToBox1[0][1]) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		sub_10138720(box2ToWorld, 1, tmp);
+		sub_10138870(worldToBox1[1], &tmp.x, &pPlane->normal.x);
+		return true;
+	}
+
+	// b1e2 x b2e3
+	boxProjectionSum =
+		box1Size.x * absBox2ToBox1[2][2] + box1Size.z * absBox2ToBox1[0][2] +
+		box2Size.x * absBox2ToBox1[1][1] + box2Size.y * absBox2ToBox1[1][0];
+	originProjection = FloatMakePositive(box2Origin.x * box2ToBox1[2][2] - box2Origin.z * box2ToBox1[0][2]) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		sub_10138720(box2ToWorld, 2, tmp);
+		sub_10138870(worldToBox1[1], &tmp.x, &pPlane->normal.x);
+		return true;
+	}
+
+	// b1e3 x b2e1
+	boxProjectionSum =
+		box1Size.x * absBox2ToBox1[1][0] + box1Size.y * absBox2ToBox1[0][0] +
+		box2Size.y * absBox2ToBox1[2][2] + box2Size.z * absBox2ToBox1[2][1];
+	originProjection = FloatMakePositive(-box2Origin.x * box2ToBox1[1][0] + box2Origin.y * box2ToBox1[0][0]) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		sub_10138720(box2ToWorld, 0, tmp);
+		sub_10138870(worldToBox1[2], &tmp.x, &pPlane->normal.x);
+		return true;
+	}
+
+	// b1e3 x b2e2
+	boxProjectionSum =
+		box1Size.x * absBox2ToBox1[1][1] + box1Size.y * absBox2ToBox1[0][1] +
+		box2Size.x * absBox2ToBox1[2][2] + box2Size.z * absBox2ToBox1[2][0];
+	originProjection = FloatMakePositive(-box2Origin.x * box2ToBox1[1][1] + box2Origin.y * box2ToBox1[0][1]) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		sub_10138720(box2ToWorld, 1, tmp);
+		sub_10138870(worldToBox1[2], &tmp.x, &pPlane->normal.x);
+		return true;
+	}
+
+	// b1e3 x b2e3
+	boxProjectionSum =
+		box1Size.x * absBox2ToBox1[1][2] + box1Size.y * absBox2ToBox1[0][2] +
+		box2Size.x * absBox2ToBox1[2][1] + box2Size.y * absBox2ToBox1[2][0];
+	originProjection = FloatMakePositive(-box2Origin.x * box2ToBox1[1][2] + box2Origin.y * box2ToBox1[0][2]) + tolerance;
+	if (FloatBits(originProjection) > FloatBits(boxProjectionSum))
+	{
+		sub_10138720(box2ToWorld, 2, tmp);
+		sub_10138870(worldToBox1[2], &tmp.x, &pPlane->normal.x);
+		return true;
+	}
+
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102453d0 size=0x9b
 #include "Vector.h"
 

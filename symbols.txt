@@ -16027,6 +16027,7 @@
 0x1023f7b0 func   ?sub_1023f7b0@@YAMABURayView1023f7b0@@@Z sub_1023f7b0
 0x10243630 func   ?sub_10243630@@YAXABVVector@@000AAUmatrix3x4_t@@@Z sub_10243630
 0x10243700 func   ?sub_10243700@@YAXABVVector@@000AAUmatrix3x4_t@@@Z sub_10243700
+0x102437d0 func   ?sub_102437d0@@YA_NABUmat34@@0ABVVector@@1MPAUcplane_t@@@Z sub_102437d0
 0x10247010 func   ?sub_10247010@@YAXXZ sub_10247010
 0x102473e0 func   ?sub_102473e0@@YAXXZ sub_102473e0
 0x102479b0 func   ?sub_102479b0@@YAHPAPAUCUnknown10247800@block_102479b0@@0@Z sub_102479b0
