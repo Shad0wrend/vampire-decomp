@@ -19,6 +19,77 @@ struct CFireBulletsHit
 	CFireBulletsHit(const CFireBulletsHit &other);
 };
 
+// This unit (dlls/AI_BaseNPC.cpp) compiled the tally vector with the older tier1 utlvector.h, whose CUtlMemory
+// constructor, GrowVector and ShiftElementsRight are not inline: the game calls them out of line (0x1027f940,
+// 0x1027fae0, 0x1027fba0) while it inlines the rest. The instance is specialised here with those three members
+// declared only.
+#include "utlvector.h"
+
+template <>
+class CUtlMemory<CFireBulletsHit>
+{
+public:
+	CUtlMemory(int nGrowSize = 0, int nInitSize = 0);
+	~CUtlMemory() { Purge(); }
+	CFireBulletsHit &operator[](int i) { return Base()[i]; }
+	CFireBulletsHit *Base() { return m_pMemory; }
+	int NumAllocated() const { return m_nAllocationCount; }
+	bool IsExternallyAllocated() const { return m_nGrowSize == -1; }
+	void Purge()
+	{
+		if (!IsExternallyAllocated()) {
+			if (m_pMemory) {
+				Plat_Free((void *)m_pMemory);
+				m_pMemory = 0;
+			}
+			m_nAllocationCount = 0;
+		}
+	}
+
+	CFireBulletsHit *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+};
+
+template <>
+class CUtlVector<CFireBulletsHit, CUtlMemory<CFireBulletsHit> >
+{
+public:
+	CUtlVector(int growSize = 0, int initSize = 0) : m_Memory(growSize, initSize), m_Size(0) { ResetDbgInfo(); }
+	~CUtlVector() { Purge(); }
+	CFireBulletsHit &operator[](int i) { return m_Memory[i]; }
+	CFireBulletsHit &Element(int i) { return Base()[i]; }
+	CFireBulletsHit *Base() { return m_Memory.Base(); }
+	int Count() const { return m_Size; }
+	int AddToTail(CFireBulletsHit const &src) { return InsertBefore(m_Size, src); }
+	int InsertBefore(int elem, CFireBulletsHit const &src)
+	{
+		GrowVector();
+		ShiftElementsRight(elem);
+		CopyConstruct(&Element(elem), src);
+		return elem;
+	}
+	void RemoveAll()
+	{
+		for (int i = m_Size; --i >= 0; )
+			Destruct(&Element(i));
+		m_Size = 0;
+	}
+	void Purge()
+	{
+		RemoveAll();
+		m_Memory.Purge();
+		ResetDbgInfo();
+	}
+	void GrowVector(int num = 1);
+	void ShiftElementsRight(int elem, int num = 1);
+	void ResetDbgInfo() { m_pElements = Base(); }
+
+	CUtlMemory<CFireBulletsHit> m_Memory;
+	int m_Size;
+	CFireBulletsHit *m_pElements;
+};
+
 struct CFireBulletsInfo
 {
 	int m_iShots;	// 0x00: the number of shots (outer loop of FireBullets)

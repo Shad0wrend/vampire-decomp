@@ -368,5 +368,6 @@ public:
 	float m_vel3d4[3];
 	void vfunc212(int set);	// as in CBaseAnimating (transplant)
 	int vfunc240();	// slot 240
+	void vfunc185(struct CFireBulletsInfo *pInfo);	// slot 185 "FireBullets" (plain member)
 	bool vfunc160(const char *name);	// as in CBaseEntity (transplant)
 };
