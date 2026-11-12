@@ -206820,6 +206820,42 @@ bool CAI_Navigator::sub_102ed430(const Vector *pPosition, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ed540 size=0x9b
+#include "CAI_Navigator.h"
+
+struct IRandomStream
+{
+	virtual void v0();
+	virtual float RandomFloat(float flMin, float flMax);
+};
+
+extern IRandomStream *g_1070b244;
+extern Vector g_1070d1b0;
+Vector sub_101d2f40(float yaw);
+
+struct CNavV : CAI_Navigator
+{
+	bool sub_102ed540(float minRadius, float maxRadius, bool c);
+	bool sub_102ed610(const Vector *pDir, float flDist, float flMax, bool c);
+	bool sub_102ed940(float f, const Vector *pVec, bool c);
+};
+
+// TARGET: sub_102ed540
+bool CNavV::sub_102ed540(float minRadius, float maxRadius, bool c)
+{
+	for ( int i = 0; i < 5; i++ )
+	{
+		float dist = g_1070b244->RandomFloat( minRadius, maxRadius );
+		Vector dir = sub_101d2f40( g_1070b244->RandomFloat( 0, 359.99 ) );
+
+		if ( sub_102ed610( &dir, dist, minRadius, c ) )
+			return true;
+	}
+
+	return sub_102ed940( 1, &g_1070d1b0, c );
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ed610 size=0x191
 #include "utlmemory.h"
 #include "CAI_MoveProbe.h"
