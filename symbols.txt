@@ -5684,6 +5684,7 @@
 0x100086f7 func   ?sub_101fec30@CVStatInfo_t@@QAE_NXZ CVStatInfo_t::sub_101fec30
 0x100086fc func   ?vfunc367@CBasePlayer@@QAEPAMPAM@Z CBasePlayer::vfunc367
 0x10008701 func   ?sub_102d9eb0@@YAXXZ sub_102d9eb0
+0x10008706 func   ?sub_102f1a20@CAI_Pathfinder@@QAEDPBMI@Z CAI_Pathfinder::sub_102f1a20
 0x1000870b func   ?sub_101d70d0@CUnknown101d7380@@QAE_NPBDPAH@Z CUnknown101d7380::sub_101d70d0
 0x10008710 func   ?sub_100e8ef0@CDialogDependency@@QAEXH@Z CDialogDependency::sub_100e8ef0
 0x10008715 func   ?vfunc451@CGeneric_NPC_bathack@@UAEHXZ CGeneric_NPC_bathack::vfunc451

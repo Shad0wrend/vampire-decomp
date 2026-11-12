@@ -213880,6 +213880,78 @@ char CAI_Pathfinder::sub_102f1900(int nodeNum, unsigned int collisionMask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f1a20 size=0x23d
+#include <math.h>
+#include "UTIL_Trace.h"
+#include "CAI_Pathfinder.h"
+
+extern Vector *sub_102d6120(int hull);
+extern Vector *sub_102d6100(int hull);
+
+inline float HullSqrt(float f)
+{
+	return (float)sqrt(f);
+}
+
+struct CHullRay
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_f34;
+
+	__forceinline void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, bool a = true, char b = 0)
+	{
+		VectorSubtract(end, start, m_Delta);
+		m_IsSwept = (m_Delta.LengthSqr() != 0.0f);
+		VectorSubtract(maxs, mins, m_Extents);
+		m_Extents *= 0.5f;
+		m_IsRay = ((m_Extents.x * m_Extents.x + (m_Extents.y * m_Extents.y + m_Extents.z * m_Extents.z)) < 1e-6);
+		VectorAdd(mins, maxs, m_StartOffset);
+		m_StartOffset *= 0.5f;
+		VectorAdd(start, m_StartOffset, m_Start);
+		m_StartOffset *= -1.0f;
+		m_b32 = b;
+		m_b33 = 0;
+		m_f34 = 0.0f;
+		if (a && !m_IsRay) {
+			float fl = HullSqrt(m_Extents.x * m_Extents.x + m_Extents.y * m_Extents.y);
+			m_f34 = fl;
+			if (m_f34 > 1e-6)
+				m_b33 = 1;
+		}
+	}
+};
+
+inline void UTIL_TraceHullR(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr)
+{
+	CHullRay ray;
+	ray.Init(vecAbsStart, vecAbsEnd, hullMin, hullMax);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4((Ray_t *)&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+char CAI_Pathfinder::sub_102f1a20(const float *vecPosition, unsigned int collisionMask)
+{
+	const Vector &vecPos = *(const Vector *)vecPosition;
+	CGameTrace tr;
+	Vector vecEnd = vecPos;
+	int hull = m_unk08;
+	const void *pOuter = m_pOuter;
+	vecEnd.z += 0.01;
+	UTIL_TraceHullR(vecPos, vecEnd, *sub_102d6100(hull), *sub_102d6120(hull), collisionMask, pOuter, 0, &tr);
+	return !tr.m_startsolid;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f1cf0 size=0x78
 #include "CAI_Navigator.h"
 #include "CAI_BaseNPC.h"
