@@ -44,9 +44,22 @@ struct CSoundParametersInternal
 
 // The element of the sound record tree (CUtlRBTree<CSoundEmitterRecord, int>, 0xe8 byte nodes: 16 bytes of links and
 // this 0xd8 byte element). Its sentinel static is at 0x1072c414.
+struct CSoundEmitterRecordTail
+{
+	char m_pad[0xcc];
+	CSoundEmitterRecordTail(const CSoundEmitterRecordTail &o);
+};
 struct CSoundEmitterRecord
 {
-	char m_pad0000[0xd8];
+	unsigned short m_w0;
+	char m_pad02[2];
+	char m_b4;
+	char m_b5;
+	char m_pad06[2];
+	int m_i8;
+	CSoundEmitterRecordTail m_tail;
+	CSoundEmitterRecord();
+	CSoundEmitterRecord(const CSoundEmitterRecord &o) : m_tail(o.m_tail), m_w0(o.m_w0), m_b4(o.m_b4), m_b5(o.m_b5), m_i8(o.m_i8) {}
 };
 
 // The element of the tree at CSoundEmitterSystemBase +4 (CUtlRBTree<CSoundEmitterFileEntry, int>, 0x18 byte nodes,
