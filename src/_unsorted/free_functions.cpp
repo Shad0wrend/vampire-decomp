@@ -150648,6 +150648,74 @@ CLogicVisible *CLogicVisible::sub_1020f990()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020fad0 size=0x2de
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnit10210250.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "CBaseEntity.h"
+#include "CUtlVector4.h"
+extern CGlobalEntityList g_106eb5d8;
+CBaseEntity *sub_101cd9e0(int);
+void sub_101cd940(CUnit10210250 *);
+extern "C" char *strstr(const char *, const char *);
+extern const char g_106b8540[];
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+#define LOOKUP(h) ((CBaseEntity *)g_10566458->sub_100290c0((const unsigned int *)&(h)))
+
+struct CBaseHandleVec10217080 : CUtlVector4
+{
+	int AddToTail(const CBaseHandle &src) { return sub_10217080(m_size, (const int *)&src); }
+};
+
+void CUnit10210250::sub_1020fad0()
+{
+	if (m_bResolved4b5)
+		return;
+	m_bResolved4b5 = true;
+	m_bAllValid4b4 = true;
+	CBaseHandle h;
+	if (strstr(STRINGR(m_pszNameA454), "!player")) {
+		h = (IHandleEntity *)sub_101cd9e0(1);
+		((CBaseHandleVec10217080 *)&m_ListA)->AddToTail(h);
+	} else {
+		h = (IHandleEntity *)g_106eb5d8.sub_100f7770(0, STRINGR(m_pszNameA454), 0, 0);
+		while (LOOKUP(h)) {
+			if (!LOOKUP(h)->m_p9c)
+				m_bAllValid4b4 = false;
+			((CBaseHandleVec10217080 *)&m_ListA)->AddToTail(h);
+			CBaseEntity *pStart = LOOKUP(h);
+			h = (IHandleEntity *)g_106eb5d8.sub_100f7770(pStart, STRINGR(m_pszNameA454), 0, 0);
+		}
+	}
+	EHANDLE &hB = (EHANDLE &)h;
+	if (strstr(STRINGR(m_pszNameB450), "!player")) {
+		hB = sub_101cd9e0(1);
+		m_ListB.AddToTail(hB);
+	} else {
+		hB = g_106eb5d8.sub_100f7770(0, STRINGR(m_pszNameB450), 0, 0);
+		while (LOOKUP(hB)) {
+			if (!LOOKUP(hB)->m_p9c)
+				m_bAllValid4b4 = false;
+			m_ListB.AddToTail(hB);
+			CBaseEntity *pStart = hB.Get();
+			hB = g_106eb5d8.sub_100f7770(pStart, STRINGR(m_pszNameB450), 0, 0);
+		}
+	}
+	if (!m_ListA.Count() || !m_ListB.Count())
+		sub_101cd940(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210180 size=0x32
 #include "CEntityVSlots.h"
 

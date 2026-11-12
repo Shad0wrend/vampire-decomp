@@ -1542,6 +1542,7 @@
 0x100030fd func   ?vfunc2@CEntitySaveRestoreBlockHandler@@UAEXPAVCSave@@@Z CEntitySaveRestoreBlockHandler::vfunc2
 0x10003102 func   ?vfunc3@CTEBubbles@@UAEXABVVector@@ABVQAngle@@@Z CTEBubbles::vfunc3
 0x10003107 func   ?sub_10323370@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10323370
+0x1000310c func   ?sub_1020fad0@CUnit10210250@@QAEXXZ CUnit10210250::sub_1020fad0
 0x10003111 func   _env_sun env_sun
 0x10003116 func   ?sub_1017e740@CUnknown1017e740@@QAEHXZ CUnknown1017e740::sub_1017e740
 0x1000311b func   ?sub_10158d60@@YIXPAPAX@Z sub_10158d60
