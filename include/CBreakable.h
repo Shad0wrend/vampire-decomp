@@ -10,6 +10,7 @@ struct inputdata_t;
 class CBreakable
 {
 public:
+	void sub_1010e750();
 	CBreakable *vfunc5(unsigned int flags);
 	void vfunc230(int a, int b);	// slot 230: CBaseEntity::vfunc230 (stub 0x10006d61) with the same arguments, then slot 75 (0x12c) with them
 	int vfunc154(int a, int b);	// slot 154: 0x34 for material 7, 0x2c + RandomInt(0, 2) for material 0 (the random stream, slot 2), else CBaseEntity::vfunc154 (sub_1000b9e2) with the same arguments
