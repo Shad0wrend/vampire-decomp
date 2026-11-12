@@ -50186,6 +50186,33 @@ void CBaseButton::sub_100c9250(CBaseEntity *pActivator, CBaseEntity *pCaller, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c93b0 size=0x51
+#include "CBaseButton.h"
+
+static inline bool HasSpawnFlags(CBaseButton *p, int flags) { return (p->m_flags204 & flags) != 0; }
+
+int CBaseButton::sub_100c93b0()
+{
+	// Ignore touches if button is moving, or pushed-in and waiting to auto-come-out.
+	if (m_nState4f8 == 2 ||
+		m_nState4f8 == 3 ||
+		(m_nState4f8 == 0 && !m_b55c && !HasSpawnFlags(this, 32)))
+		return 0;
+
+	if (m_nState4f8 == 0)
+	{
+		if (HasSpawnFlags(this, 32) && !m_b55c)
+		{
+			return 2;
+		}
+	}
+	else
+		return 1;
+
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9430 size=0xec
 #include "CBaseButton.h"
 #include "CBaseEntity.h"
