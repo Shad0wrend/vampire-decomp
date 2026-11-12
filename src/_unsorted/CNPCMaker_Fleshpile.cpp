@@ -202,6 +202,115 @@ void CNPCMaker_Fleshpile::vfunc130(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034c2d0 size=0x4a2
+#include "CNPCMaker_Fleshpile.h"
+#include "CNPC_VAndreiBlood.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+#include "CGlobalEntityList.h"
+#include "COutputEvent.h"
+extern CGlobalEntityList g_106eb5d8;
+extern CBaseEntity *g_10938040;
+extern char g_106b8540[];
+CBaseEntity *sub_10136580(const char *);
+int sub_101cca80(void *, int, Vector *, Vector *, int, int);
+void sub_101d1280(CBaseEntity *);
+__declspec(dllimport) void Warning(const char *, ...);
+#define F(p, o) (*(int *)((char *)(p) + (o)))
+#define FF(p, o) (*(float *)((char *)(p) + (o)))
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CSpawnView : CEntityVSlots
+{
+	void sub_102781e0(string_t); void SetHintGroup(string_t s) { sub_102781e0(s); } void sub_100a0420(string_t);
+	void Set1584(string_t v) { *(string_t *)((char *)this + 0x1584) = v; }
+	void Set5da8(string_t v) { *(string_t *)((char *)this + 0x5da8) = v; }
+	void Set6558(string_t v) { *(string_t *)((char *)this + 0x6558) = v; }
+};
+// TARGET: CNPCMaker_Fleshpile::vfunc617
+CBaseEntity *CNPCMaker_Fleshpile::vfunc617(char bSkipCheck)
+{
+	CEntityVSlots *me = (CEntityVSlots *)this;
+	if (!g_10938040) {
+		CBaseEntity *e = g_106eb5d8.sub_100f7380(0, "npc_VAndreiBlood");
+		if (e)
+			g_10938040 = (CBaseEntity *)dynamic_cast<CNPC_VAndreiBlood *>(e);
+	}
+	if (!bSkipCheck) {
+		if (!g_10938040 || FF(g_10938040, 0x66b8) >= 2.0f)
+			return 0;
+		if (m_flGroundZ66b8 == 0.0f) {
+			CGameTrace tr;
+			UTIL_TraceLine_Calls(*me->slot217(), *me->slot217() - Vector(0, 0, 2048.0f), 0x2400b, this, 0, &tr);
+			m_flGroundZ66b8 = tr.m_endpos[2];
+		}
+		Vector vecMins = *me->slot217() - Vector(34.0f, 34.0f, 0);
+		Vector vecMaxs = *me->slot217() + Vector(34.0f, 34.0f, 0);
+		vecMaxs.z = me->slot217()->z;
+		if (!m_bNoDrop)
+			vecMins.z = m_flGroundZ66b8;
+		char buf[8];
+		if (sub_101cca80(buf, 2, &vecMins, &vecMaxs, 0x2080, 0))
+			return 0;
+	}
+	CBaseEntity *ent = sub_10136580(STRINGR(m_pszNPCClassname665c));
+	if (!ent) {
+		Warning("NULL Ent in NPCMaker!\n");
+		return 0;
+	}
+	CSpawnView *npc = (CSpawnView *)F(ent, 0x98);
+	if (!npc) {
+		Warning("Non Troika Ent in NPCMaker!\n");
+		return 0;
+	}
+	npc->Set1584(*(string_t *)((char *)this + 0x1584));
+	((COutputEvent *)m_Output6668)->sub_100cd660(this, this, 0);
+	npc->slot62((const float *)me->slot217());
+	npc->slot64((const float *)me->slot221());
+	F(npc, 0x204) |= 4;
+	if (m_b66c2)
+		F(npc, 0x204) |= 0x200;
+	F(npc, 0x5dec) = m_n5dec;
+	npc->Set5da8(*(string_t *)((char *)this + 0x5da8));
+	npc->SetHintGroup(*(string_t *)&m_n5db0);
+	F(npc, 0x1a98) = m_n1a98;
+	F(npc, 0x63b0) = m_n63b0;
+	F(npc, 0x63b4) = m_n63b4;
+	F(npc, 0x63bc) = m_n63bc;
+	{
+		int tmp;
+		npc->slot105(STRINGR(*me->slot9(&tmp)));
+	}
+	F(npc, 0x64bc) = m_n64bc;
+	npc->Set6558(*(string_t *)((char *)this + 0x6558));
+	F(npc, 0x64c4) = m_n64c4;
+	F(npc, 0x62d8) = m_n62d8;
+	F(npc, 0x6338) = m_n6338;
+	F(npc, 0x633c) = m_n633c;
+	F(npc, 0x6344) = m_n6344;
+	F(npc, 0x6348) = m_n6348;
+	F(npc, 0x634c) = m_n634c;
+	F(npc, 0x6350) = m_n6350;
+	F(npc, 0x6354) = m_n6354;
+	F(npc, 0x6358) = m_n6358;
+	F(npc, 0x63b0) = m_n63b0;
+	F(npc, 0x63b4) = m_n63b4;
+	F(npc, 0x63bc) = m_n63bc;
+	F(npc, 0x63ac) = m_n63ac;
+	*((char *)npc + 0x63d9) = m_b63d9;
+	F(npc, 0x670) = m_n670;
+	F(npc, 0x10e4) = m_n10e4;
+	vfunc619((int)npc);
+	sub_101d1280((CBaseEntity *)npc);
+	npc->slot202((CEntityVSlots *)this);
+	if (m_pszTargetName66bc)
+		npc->sub_100a0420(*(string_t *)&m_pszTargetName66bc);
+	vfunc620((int)npc);
+	FF(g_10938040, 0x66b8) += 1.0f;
+	return (CBaseEntity *)npc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034c8e0 size=0x7a
 #include "CNPCMaker_Fleshpile.h"
 
