@@ -15469,6 +15469,7 @@
 0x10015672 func   ?vfunc81@CBaseEntity@@UAEHXZ CBaseEntity::vfunc81
 0x10015677 func   ?sub_102dd610@CUnknown102dd610@@QAEDXZ CUnknown102dd610::sub_102dd610
 0x1001567c func   ?vfunc503@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc503
+0x10015681 func   ?vfunc444@CNPC_VZombie@@QAEXPAH@Z CNPC_VZombie::vfunc444
 0x10015686 func   ?sub_100439b0@@YAHXZ sub_100439b0
 0x1001568b func   ?vfunc82@CAI_StandoffGoal@@UAEPAUdatamap_t@@XZ CAI_StandoffGoal::vfunc82
 0x10015695 func   ?sub_10054400@@YAXXZ sub_10054400

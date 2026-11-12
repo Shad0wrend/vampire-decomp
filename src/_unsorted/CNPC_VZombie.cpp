@@ -252,6 +252,67 @@ void CNPC_VZombie::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e01d0 size=0x17c
+#include "CBaseCombatCharacter.h"
+#include "CNPC_VZombie.h"
+#include "CNPC_VAnimal.h"
+#include "CAI_Motor.h"
+#include "CUnknown102ee270.h"
+
+struct S_Comb { void sub_10293a60(void *a, void *b); };
+struct S_Nav : CUnknown102ee270 { int sub_102ee620(); };
+struct S_Mot : CAI_Motor { void sub_102e2020(void *p); };
+
+void CNPC_VZombie::vfunc444(int *pTask)
+{
+    switch (*pTask) {
+    case 0x14e:
+        if (vfunc251()) {
+            sub_10273e80(0);
+            ((CBaseCombatCharacter *)this)->sub_1033c6b0(0x80000);
+            ((S_Comb *)this)->sub_10293a60(m_a6680, m_a668c);
+        }
+        break;
+    case 0x14f:
+        if (vfunc251())
+            sub_10273e80(0);
+        break;
+    case 0x150:
+        if (vfunc251())
+            sub_10273e80(0);
+        break;
+    case 0x151:
+        if (gpGlobals->curtime > m_flNextTime5db4 || ((S_Nav *)m_pNavigator5d34)->sub_102ee620() == 0) {
+            m_b1a40 = 0;
+            sub_10273e80(0);
+            ((S_Nav *)m_pNavigator5d34)->sub_102ee270();
+        }
+        break;
+    case 0x14c:
+        if (vfunc251())
+            sub_10273e80(0);
+        break;
+    case 0x153:
+        if (vfunc251()) {
+            sub_10273e80(0);
+            break;
+        }
+        if (m_nMode6678 == 7) {
+            CBaseEntity *e = ((EHANDLE *)&m_hEnemy628c)->Get();
+            if (e) {
+                CAI_Motor *m = m_pMotor5d44;
+                ((S_Mot *)m)->sub_102e2020((void *)((CNPC_VZombie *)e)->vfunc217(0));
+                m_pMotor5d44->sub_102e1e20(-1);
+            }
+        }
+        break;
+    default:
+        ((CNPC_VAnimal *)this)->sub_1035f940(pTask);
+        break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e03b0 size=0x5
 #include "CNPC_VZombie.h"
 bool CNPC_VZombie::vfunc566(int a0)
