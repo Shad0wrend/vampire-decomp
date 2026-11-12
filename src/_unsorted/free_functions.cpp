@@ -107472,6 +107472,39 @@ PyObj *sub_10197e50(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10197f60 size=0xc6
+#include "CBaseAnimating.h"
+#include "CBaseAnimatingOverlay.h"
+#include "Python.h"
+
+struct PyGestEntV { char m_pad0000[0x98]; CBaseAnimating *m_pAnim; };
+extern int *g_109f3748;
+PyGestEntV *sub_10196780(PyObject *pObject);
+
+PyObject *sub_10197f60(PyObject *self, PyObject *args)
+{
+	PyObject *pEntObj = 0;
+	const char *pszName = 0;
+	if (!g_109f37a0(args, "Os", &pEntObj, &pszName)) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f3780, "bad args to SetGesture()");
+		return 0;
+	}
+	PyGestEntV *pEnt = sub_10196780(pEntObj);
+	CBaseAnimating *pAnim = !pEnt ? 0 : pEnt->m_pAnim;
+	if (!pAnim) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f3780, "SetGesture needs to be called by a combat character.");
+		return 0;
+	}
+	int nSequence = pAnim->sub_1008f7b0((char *)pszName);
+	if (nSequence >= 0)
+		((CBaseAnimatingOverlay *)pAnim)->sub_10099140(nSequence, pAnim->sub_10091080(nSequence), 0);
+	++*g_109f3748;
+	return (PyObject *)g_109f3748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10198070 size=0xa3
 #include "Python.h"
 struct PyShotStub { void sub_10013683(const char *pszName); };
