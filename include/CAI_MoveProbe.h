@@ -52,6 +52,7 @@ public:
 	float *sub_102e7060(float *pOut, const float *vecStart, const float *vecEnd, float flGravity, float *pTimeRange, float flArg6, float *pExtra);	// 0x102e7060 (stub 0x100020a4, ret 28, this in ecx, called three times by sub_102e6290): the ballistic arc between vecStart and vecEnd under flGravity (the gravity convar 0x109ef2d4 times the owner's gravity scale +0x3ec); pTimeRange is {0.0f at +0, 1024.0f at +4}-style in/out floats, flArg6 the owner's slot 524 float (jump height / speed), pExtra a vector scratch; returns pOut (a launch velocity vector, the caller reads x, y, z through eax)
 	char sub_102e7880(const float *vecStart, unsigned int collisionMask, float flUp, float flDown, float *pOut, void *pExtra);	// the ground probe (stub 0x10005d44): true when it found ground below vecStart (the found position in pOut)
 
+	char sub_102e4160(float *pArgs, float *pResult);
 	char sub_102e7e40(void *pEnt);	// stub 0x100114aa, thiscall with one stack argument: tail-jumps to the outer entity's slot 166
 	int m_pad08;
 	int m_nUnk0c;	// 0x0c: starts at -1
