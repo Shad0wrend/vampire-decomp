@@ -138035,6 +138035,147 @@ int __stdcall sub_101e1a40(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1a60 size=0x6a0
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CVTraitEffect_t.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CStatDefault3List.h"
+#include "CUnknown101e0f00.h"
+#include "CEntityVSlots.h"
+#include "CBaseCombatCharacter.h"
+#include "CAI_BaseNPCTroika.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+struct CUnknown102781a0 { char sub_102781a0(void *p); };
+extern CStatDefault3List g_10738d10;
+extern CUnknown101e0f00 g_10739a4c;
+void sub_10146570(const float *a, const float *b, int c, int d, int e, int f, float g);
+
+#define EVV(n) virtual void e##n();
+#define EVV10(p) EVV(p##0) EVV(p##1) EVV(p##2) EVV(p##3) EVV(p##4) EVV(p##5) EVV(p##6) EVV(p##7) EVV(p##8) EVV(p##9)
+struct COwner406
+{
+	EVV10(0) EVV10(1) EVV10(2) EVV10(3) EVV10(4) EVV10(5) EVV10(6) EVV10(7) EVV10(8) EVV10(9)
+	EVV10(10) EVV10(11) EVV10(12) EVV10(13) EVV10(14) EVV10(15) EVV10(16) EVV10(17) EVV10(18) EVV10(19)
+	EVV10(20) EVV10(21) EVV10(22) EVV10(23) EVV10(24) EVV10(25) EVV10(26) EVV10(27) EVV10(28) EVV10(29)
+	EVV10(30) EVV10(31) EVV10(32) EVV10(33) EVV10(34) EVV10(35) EVV10(36) EVV10(37) EVV10(38) EVV10(39)
+	EVV(400) EVV(401) EVV(402) EVV(403) EVV(404) EVV(405)
+	virtual char vfunc406();
+};
+inline float LenA(const Vector &v) { return (float)FastSqrt(v.x * v.x + (v.y * v.y + v.z * v.z)); }
+struct CCenterView
+{
+	EVV10(0) EVV10(1) EVV10(2) EVV10(3) EVV10(4) EVV10(5) EVV10(6) EVV10(7) EVV10(8) EVV10(9)
+	EVV10(10) EVV10(11) EVV10(12) EVV10(13) EVV10(14) EVV10(15) EVV10(16) EVV10(17) EVV10(18)
+	EVV(190) EVV(191)
+	virtual Vector *slot192(Vector *pOut);
+	virtual Vector *slot193(Vector *pOut);
+};
+
+// TARGET: CUnknown101e0f00::sub_101e1a60
+char CUnknown101e0f00::sub_101e1a60(CUnknown101e0f00Entry *pEntry, void *pSource, void *pSource2, void *pTarget, char flag)
+{
+	*(int *)((char *)this + 0x14) = 0;
+	CBaseCombatCharacter *pTgt = (CBaseCombatCharacter *)pTarget;
+	CEntityVSlots *pSrc = (CEntityVSlots *)pSource;
+	CEntityVSlots *vTgt = (CEntityVSlots *)pTgt;
+	CEntityVSlots *pCaster = (CEntityVSlots *)pSource2;
+	if (*((unsigned char *)pTgt + 0x19c) & 0x40)
+		return 0;
+	if (!pTgt->sub_100952d0(-1))
+		return 0; else { if (!vTgt->slot158())
+		return 0;
+	COwner406 *pOwn = *(COwner406 **)((char *)pTgt + 0xa8);
+	if (pOwn && pcd_stage(pOwn->vfunc406()))
+		return 0;
+	if (!pTgt->m_b1480)
+		return 0;
+	if (!vTgt->slot72(pEntry->m_n10))
+		return 0;
+	if (*(pcd_stage(g_10738d10.sub_101d5f10(pTgt))->m_98 + 9))
+		return 0;
+	void *p98 = *(void **)((char *)pTgt + 0x98);
+	if (p98 && ((CAI_BaseNPCTroika *)p98)->sub_102c1170())
+		return 0;
+	if (pTgt == (CBaseCombatCharacter *)pSrc && pEntry->m_range.Filter()->sub_101da980(7))
+		return 0;
+	if (pEntry->m_range.Filter()->sub_101da980(8)) {
+		CEntityVSlots *a = pSrc->slot293();
+		CEntityVSlots *b = vTgt->slot293();
+		if (a == b) {
+			if (a)
+				return 0;
+		} else {
+			if (a == vTgt)
+				return 0; else { if (b == pSrc)
+				return 0; }
+		}
+		void *s94 = *(void **)((char *)pSrc + 0x94);
+		if (s94 && ((CUnknown102781a0 *)s94)->sub_102781a0(pcd_stage(*(void **)((char *)pTgt + 0x94))))
+			return 0;
+	}
+	if (flag) {
+		const Vector &vSrc = *pSrc->slot217();
+		if ((*vTgt->slot217() - vSrc).Length() > pEntry->m_range.m_nRange) {
+			*(int *)((char *)this + 0x14) = 1;
+			return 0;
+		}
+	}
+	if (pEntry->m_range.m_iAffects == 0) {
+		if ((*vTgt->slot217() - *pCaster->slot217()).Length() > pEntry->m_range.m_nRange) {
+			*(int *)((char *)this + 0x14) = 1;
+			return 0;
+		}
+	} else if (pEntry->m_range.m_iAffects == 2) {
+		if ((*vTgt->slot217() - *pCaster->slot217()).Length() > pEntry->m_range.m_nMaxRadius) {
+			*(int *)((char *)this + 0x14) = 1;
+			return 0;
+		}
+		if (0 < pEntry->m_range.m_nMinRadius) {
+			if (LenA(*vTgt->slot217() - *pCaster->slot217()) < pEntry->m_range.m_nMinRadius) {
+				*(int *)((char *)this + 0x14) = 1;
+				return 0;
+			}
+		}
+	}
+	unsigned int mask = sub_101e1870(pEntry->m_nMask);
+	if (pTgt->sub_1033d2f0(mask)) {
+		static unsigned int s_mask = g_10739a4c.sub_101e1590("Thaumaturgy_BloodShot") | g_10739a4c.sub_101e1590("Thaumaturgy_Blood_Salvo");
+		if (!(s_mask & mask))
+			return 0;
+	}
+	if (pCaster) {
+		CCenterView *c = (CCenterView *)pCaster;
+		CCenterView *t = (CCenterView *)vTgt;
+		Vector half, start, end, center, t3, t4;
+		{
+			Vector t0;
+			half = (*c->slot193(pcd_stage(&t0)) - *c->slot192(&center)) * 0.5f;
+		}
+		start = *c->slot193(&t3) - half;
+		half = (*pcd_stage(t)->slot193(&t3) - *t->slot192(&center)) * 0.5f;
+		end = *t->slot193(&t4) - half;
+		{
+			Ray_t ray;
+			ray.Init(start, end);
+			CTraceFilterSimple filter(pCaster, 0);
+			CGameTrace tr;
+			g_1070b254->vfunc4(&ray, 0x46004003, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+			if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+				sub_10146570(tr.m_startpos, tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+			if (tr.m_fraction < 1.0f && tr.m_pEnt && tr.m_pEnt != (CBaseEntity *)pTgt) {
+				*(int *)((char *)this + 0x14) = 2;
+				return 0;
+			}
+		}
+	}
+	return 1; }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e22b0 size=0x8
 struct CUnknown101e22b0 { int pad[5]; int m_State; bool sub_101e22b0(); };
 bool CUnknown101e22b0::sub_101e22b0() { if (m_State == 1) return true; return false; }
