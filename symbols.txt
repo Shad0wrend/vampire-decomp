@@ -3200,6 +3200,7 @@
 0x10005344 func   ?sub_103a51e0@@YAEXZ sub_103a51e0
 0x10005349 func   ?sub_10401cd0@@YAHXZ sub_10401cd0
 0x1000534e func   ?vfunc270@CBaseVampireSkillEntity@@QAEXH@Z CBaseVampireSkillEntity::vfunc270
+0x10005353 func   ?sub_102a1650@CAI_BaseNPCTroikaV@@QAE_NHMM@Z CAI_BaseNPCTroikaV::sub_102a1650
 0x10005358 func   ??1CUnknown101b4680@@QAE@XZ CUnknown101b4680::~CUnknown101b4680
 0x1000535d func   ?sub_10146200@@YAXXZ sub_10146200
 0x10005362 func   ?vfunc33@CGameRules@@UAEXPAX0MHH@Z CGameRules::vfunc33

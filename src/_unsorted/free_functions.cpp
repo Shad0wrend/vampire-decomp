@@ -195657,6 +195657,54 @@ bool __fastcall sub_102a1620(N *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a1650 size=0x1c7
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CAI_MoveProbe.h"
+#include "Vector.h"
+
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+#define M_PI_F ((float)(M_PI))
+#define DEG2RAD( x  )  ( (float)(x) * (float)(M_PI_F / 180.f) )
+struct CAI_MoveProbeV : CAI_MoveProbe
+{
+	bool MoveLimit(int navType, const Vector &vecStart, const Vector &vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, AIMoveTrace_t *pMove = 0) { return sub_102e6d70(navType, &vecStart.x, &vecEnd.x, collisionMask, pTarget, 100.0f, 0, pMove, 0, 0); }
+};
+
+struct CAI_BaseNPCTroikaV : CAI_BaseNPCTroika
+{
+	bool sub_102a1650(int navType, float flAngle, float flScale);
+};
+
+inline void GargSinCos(float radians, float *sine, float *cosine)
+{
+	__asm
+	{
+		fld dword ptr [radians]
+		fsincos
+		mov edx, dword ptr [cosine]
+		mov eax, dword ptr [sine]
+		fstp dword ptr [edx]
+		fstp dword ptr [eax]
+	}
+}
+
+bool CAI_BaseNPCTroikaV::sub_102a1650(int navType, float flAngle, float flScale)
+{
+	float s, c;
+	GargSinCos(DEG2RAD(flAngle), &s, &c);
+	Vector dir(c, s, 0.0f);
+
+	Vector vecOrigin = *((CEntityVSlots *)this)->slot217();
+	Vector vecEnd = vecOrigin + m_vec6290 * dir.x * 40.0f * flScale + m_vecRight * dir.y * 64.0f * flScale;
+
+	AIMoveTrace_t trace;
+	return ((CAI_MoveProbeV *)m_pMoveProbe5d40)->MoveLimit(0, vecOrigin, vecEnd, 0x202400b, 0, &trace);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a18a0 size=0x42
 #include "CAI_BaseNPCTroika.h"
 struct CAI_FloatParam { int m_n0; float m_flValue; };
