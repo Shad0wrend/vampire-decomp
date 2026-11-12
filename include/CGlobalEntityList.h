@@ -5,6 +5,7 @@
 #pragma once
 
 #include "CBaseHandle.h"
+#include "CUtlLinkedList6.h"
 
 class CBaseEntity;
 class Vector;
@@ -51,7 +52,8 @@ public:
 	int m_nNodeAlloc;	// 0x18008
 	int m_nNodeGrow;	// 0x1800c
 	unsigned short m_Head;	// 0x18010
-	char m_pad18012[0x1803c - 0x18012];
+	char m_pad18012[0x18020 - 0x18012];
+	CUtlLinkedList6 m_FreeNonNetworkableSlots;	// 0x18020
 	int m_n1803c;
 	int m_iNumEnts;	// 0x18040
 	char m_b18044;
