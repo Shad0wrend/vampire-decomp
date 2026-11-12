@@ -179,6 +179,7 @@ public:
 	bool sub_10170fe0();	// 0x10170fe0: true when any of the 0xe0 weapon slots holds a weapon
 	bool sub_10167320();	// 0x10167320 (called by 0x101be1f0): not on the player's busy list, sub_101671a0 holds and the active weapon has its byte at +0x872 set
 	void sub_10323370();
+	bool sub_1032a490();
 	void sub_103274d0();	// ~CBaseCombatCharacter body (called by vfunc5)
 	void sub_100b5970();	// CBaseFlex destructor body (tail jump)
 	CBaseCombatWeapon *sub_10333ad0(const Vector &range);	// "CBaseCombatCharacter::Weapon_FindUsable": scope trace, boxes the entities within range of the origin, picks the nearest reachable weapon (hull trace, mask 0x200400b)	// "CBaseCombatCharacter::AddToPresenceList": scope trace (entity name), appends this entity's handle (-1 when this is null) to the global vector of handles at 0x109370bc
