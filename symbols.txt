@@ -8764,6 +8764,7 @@
 0x1000c9b9 func   ?sub_1036a340@@YADXZ sub_1036a340
 0x1000c9be func   ?vfunc1@CEffectsServer@@UAEXHHHHEEHEEEEEEEEE@Z CEffectsServer::vfunc1
 0x1000c9c3 func   ?vfunc29@CHL2_Player@@UAEMXZ CHL2_Player::vfunc29
+0x1000c9c8 func   ?vfunc22@CRestore@@UAEHPAVVector@@HH@Z CRestore::vfunc22
 0x1000c9cd func   ?sub_1027c820@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1027c820
 0x1000c9d2 func   ?sub_1011d310@CUnk1011d310@@QAEDH@Z CUnk1011d310::sub_1011d310
 0x1000c9d7 func   ?sub_10237a50@CWeaponRanged@@QAE_NHPAM0@Z CWeaponRanged::sub_10237a50

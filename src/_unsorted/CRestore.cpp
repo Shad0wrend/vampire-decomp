@@ -504,6 +504,30 @@ int CRestore::vfunc23(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2320 size=0x4c
+#include "CRestore.h"
+
+int CRestore::vfunc22(Vector *pValues, int count, int nBytesAvailable)
+{
+	int desired = count * 12;
+	int actual;
+
+	if (nBytesAvailable == 0)
+		actual = desired;
+	else
+	{
+		actual = ((desired < nBytesAvailable) ? desired : nBytesAvailable);
+	}
+
+	sub_101a1f90(pValues, actual);
+
+	if (actual < nBytesAvailable)
+		sub_1000910b(nBytesAvailable - actual);
+
+	return (actual / 12u);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2460 size=0x96
 #include "CBaseEntity.h"
 #include "CRestore.h"
