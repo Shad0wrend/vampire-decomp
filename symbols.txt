@@ -3420,6 +3420,7 @@
 0x10005948 func   ?sub_100938a0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_100938a0
 0x1000594d func   ?sub_103aad40@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::sub_103aad40
 0x10005952 func   ?sub_103752e0@@YAHXZ sub_103752e0
+0x10005957 func   ?sub_102beb50@UtlVec8@@QAEXHH@Z UtlVec8::sub_102beb50
 0x1000595c func   ?vfunc99@CPhysicsCannister@@QAE_NPBMHH@Z CPhysicsCannister::vfunc99
 0x10005961 func   ?vfunc317@CNPC_VRat@@QAE_NH@Z CNPC_VRat::vfunc317
 0x10005966 func   ?vfunc272@CBaseCombatWeapon@@UAEPADXZ CBaseCombatWeapon::vfunc272

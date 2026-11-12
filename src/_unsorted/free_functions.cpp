@@ -187864,6 +187864,19 @@ int sub_102beb30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102beb50 size=0xac
+#include "UtlVec8.h"
+#include "utlvector.h"
+
+void UtlVec8::sub_102beb50(int a, int b)
+{
+	UtlVec8Elem e;
+	e.a = a;
+	e.b = b;
+	((CUtlVector<UtlVec8Elem> *)this)->AddToTail(e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bec30 size=0x1b
 // TARGET: sub_102bec30
 int __cdecl sub_102bec60(const void *a, const void *b);
