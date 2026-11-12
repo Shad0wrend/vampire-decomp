@@ -154842,6 +154842,37 @@ void CUnknown10211d70::sub_10211d70(CInputData10147d10 *data)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10211f10 size=0x14c
+#include "CPropSign.h"
+#include "CSingleUserRecipientFilter.h"
+#include "engineserver.h"
+
+extern int g_10726088;
+inline int ENTINDEX(int pEdict) { return engine->vfunc35(pEdict); }
+extern char g_106b8540[];
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: CPropSign::sub_10211f10
+void CPropSign::sub_10211f10(CBaseEntity *pPlayer)
+{
+	if (!pPlayer) return;
+	sub_10212200();
+	CSingleUserRecipientFilter filter(pPlayer);
+	filter.MakeReliable();
+	engine->vfunc65(&filter, g_10726088);
+	engine->vfunc67(1);
+	engine->vfunc72(0.5);
+	engine->vfunc71(ENTINDEX(m_edict2e0));
+	engine->vfunc67(m_bPause);
+	if (!m_Users74c.m_pText764)
+		engine->vfunc78(STRINGR(m_psz730));
+	else
+		engine->vfunc78(m_Users74c.m_pText764);
+	engine->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102120c0 size=0xf7
 #include "CPropSign.h"
 #include "CSingleUserRecipientFilter.h"
