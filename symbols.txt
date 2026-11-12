@@ -2188,6 +2188,7 @@
 0x10003e86 func   ?sub_10099320@CBaseAnimatingOverlay@@QAEXHMH@Z CBaseAnimatingOverlay::sub_10099320
 0x10003e8b func   ?vfunc255@CSceneEntity@@UAEXHPAUCSceneEventActorEnt@@PAUCSceneEvent@@@Z CSceneEntity::vfunc255
 0x10003e90 func   ?sub_101d0ce0@@YAXHHHHEEHEEEEEEEEE@Z sub_101d0ce0
+0x10003e95 func   ?GrowVector@?$CUtlVector@PAVCAI_Hint@@V?$CUtlMemory@PAVCAI_Hint@@@@@@QAEXH@Z CUtlVector<CAI_Hint *,CUtlMemory<CAI_Hint *> >::GrowVector
 0x10003e95 func   ?sub_102d4210@CUtlVector4@@QAEXH@Z CUtlVector4::sub_102d4210
 0x10003e9f func   ?sub_1010bd40@CUnk1010bd40@@QAEXXZ CUnk1010bd40::sub_1010bd40
 0x10003ea4 func   ?vfunc2@CGameRules@@UAEXXZ CGameRules::vfunc2
