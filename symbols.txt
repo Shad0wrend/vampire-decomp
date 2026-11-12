@@ -15080,6 +15080,7 @@
 0x10014d62 func   ?sub_1015d790@@YAHHH@Z sub_1015d790
 0x10014d67 func   ?sub_100b7880@@YAHXZ sub_100b7880
 0x10014d6c func   ?sub_10257560@CBaseEntity@@QAEXPAV1@HH@Z CBaseEntity::sub_10257560
+0x10014d71 func   ?sub_1024db60@VMatrixV@@QBE?AV1@XZ VMatrixV::sub_1024db60
 0x10014d76 func   ?vfunc138@CNPC_VManBat@@QAEHXZ CNPC_VManBat::vfunc138
 0x10014d7b func   ?sub_102b97a0@@YADXZ sub_102b97a0
 0x10014d80 func   ?sub_1012faf0@@YAHXZ sub_1012faf0
