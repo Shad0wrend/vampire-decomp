@@ -245455,6 +245455,90 @@ bool CNPC_VTzimisce::sub_103be8e0(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bea90 size=0x395
+#include "CAI_Node.h"
+#include "CRotDoor.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CNPC_VTzimisce.h"
+#include "CRagdollProp.h"
+#include "CUnknown100290c0.h"
+#include "ConVar.h"
+#include "IPhysicsObject.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "CEntRemoveView.h"
+#include "VectorHelpers.h"
+
+extern ConVar g_1093ca88;
+extern ConVar g_1093ca40;
+extern float g_104454c4;
+extern char g_1057c684[];
+extern char g_10538764[];
+extern "C" void *__cdecl __RTDynamicCast(void *p, long off, void *src, void *dst, int bThrow);
+
+#define LOOK(h) ((CUnknown100290c0 *)g_10566458)->sub_100290c0((unsigned int *)&(h))
+
+inline float CVarF2(ConVar &cv) { return cv.m_pParent->vfunc1() ? (double)g_104454c4 : cv.m_pParent->m_fValue; }
+
+void CNPC_VTzimisce::sub_103bea90(void *pObj)
+{
+	sub_101cd970((CEntRemoveView *)LOOK(m_hEnt6684));
+	m_hEnt6684.CBaseHandle::operator=((IHandleEntity *)0);
+	if (pObj)
+	{
+		Vector vecOrigin;
+		vecOrigin = *((CEntityVSlots *)LOOK(m_hTarget))->slot220();
+		Vector vecTarget;
+		sub_102c36d0(vecOrigin, pObj, CVarF2(g_1093ca88), (Vector *)0, &vecTarget);
+		vecTarget.z += 48.0f;
+		Vector dir = vecTarget - vecOrigin;
+		float flLenSqr = dir.LengthSqr();
+		float flVecYaw = sub_101d2c70(&dir);
+		float flYaw = vfunc221()[1];
+		float flDiff = sub_1013d580(flVecYaw, flYaw);
+		if (flDiff <= -20.0f) {
+			float z = dir.z;
+			dir = sub_101d2f40(flYaw - 20.0f);
+			dir.z = z;
+		} else if (flDiff >= 20.0f) {
+			float z = dir.z;
+			dir = sub_101d2f40(flYaw + 20.0f);
+			dir.z = z;
+		}
+		VectorNormalize(dir);
+		float flSpeed;
+		if (flLenSqr * g_1093ca88.GetFloat() > 1000.0f)
+			flSpeed = g_1093ca88.GetFloat() * flLenSqr;
+		else
+			flSpeed = 1000.0f;
+		float flGrav = g_1093ca40.GetFloat();
+		dir = dir * flSpeed;
+		dir.z += flGrav * flLenSqr;
+		CRagdollProp *pRag = (CRagdollProp *)__RTDynamicCast((void *)LOOK(m_hTarget), 0, g_10538764, g_1057c684, 0);
+		if (pRag) {
+			Vector zero(0, 0, 0);
+			pRag->vfunc266((int)&dir, (int)&zero);
+		} else {
+			IPhysicsObject *pPhys = (IPhysicsObject *)((CBaseEntity *)EHandle_Get(m_hTarget))->m_obj36c;
+			if (pPhys) {
+				Vector zero(0, 0, 0);
+				Vector vel, angVel;
+				pPhys->vfunc40((float *)&vel, (float *)&angVel);
+				pPhys->vfunc39((float *)&dir, (float *)&zero);
+			}
+		}
+	}
+	m_hTarget = 0xffffffff;
+	sub_102c43b0(0.75f);
+	sub_103be0b0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bef20 size=0x1ce
 #include "CBaseAnimating.h"
 #include "CNPC_VTzimisce.h"

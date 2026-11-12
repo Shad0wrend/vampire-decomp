@@ -14613,6 +14613,7 @@
 0x10014678 func   ?vfunc5@COccultRegen@@QAEPAV1@I@Z COccultRegen::vfunc5
 0x1001467d func   ?vfunc16@CSoundControllerImp@@UAEMPAXHPAUenvelopePoint_t@@H@Z CSoundControllerImp::vfunc16
 0x10014682 func   ?vfunc5@CEnvWind@@QAEPAV1@I@Z CEnvWind::vfunc5
+0x10014687 func   ?sub_103bea90@CNPC_VTzimisce@@QAEXPAX@Z CNPC_VTzimisce::sub_103bea90
 0x1001468c func   ?vfunc438@CNPC_VDog@@QAEHXZ CNPC_VDog::vfunc438
 0x10014691 func   ?sub_100c0760@CFuncRotating@@QAE_NM@Z CFuncRotating::sub_100c0760
 0x10014696 func   ?sub_10041be0@@YA_NPAH0@Z sub_10041be0
