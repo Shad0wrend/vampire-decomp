@@ -231002,6 +231002,145 @@ void CBaseCombatCharacter::sub_103330f0(CBaseEntity *pEntity, int nModifier)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10333ad0 size=0x542
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include <math.h>
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+#include "CCollisionProperty.h"
+int sub_101cca80(CBaseEntity **pList, int nMax, const Vector *pMins, const Vector *pMaxs, int a, int b);
+
+#define S10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+#define S100(n) S10(n##0) S10(n##1) S10(n##2) S10(n##3) S10(n##4) S10(n##5) S10(n##6) S10(n##7) S10(n##8) S10(n##9)
+struct CSlot382View
+{
+	S100(a) S100(b) S100(c) S10(d0) S10(d1) S10(d2) S10(d3) S10(d4) S10(d5) S10(d6) S10(d7)
+	virtual void e0(); virtual void e1();
+	virtual char vfunc382(CBaseCombatWeapon *pWeapon);
+};
+
+__forceinline void VSub(const Vector &a, const Vector &b, Vector &c)
+{
+	c.x = a.x - b.x;
+	c.y = a.y - b.y;
+	c.z = a.z - b.z;
+}
+__forceinline void VScale(Vector &v, float fl)
+{
+	v.x *= fl;
+	v.y *= fl;
+	v.z *= fl;
+}
+
+struct BoxRay_t
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_n34;
+
+	__forceinline void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, char a, char b)
+	{
+		VSub(end, start, m_Delta);
+		m_IsSwept = (m_Delta.LengthSqr() != g_104454c4);
+		VSub(maxs, mins, m_Extents);
+		VScale(m_Extents, 0.5f);
+		m_IsRay = (m_Extents.LengthSqr() < 1e-6);
+		m_StartOffset.x = mins[0] + maxs.x;
+		m_StartOffset.y = mins.y + maxs.y;
+		m_StartOffset.z = mins.z + maxs[2];
+		VScale(m_StartOffset, 0.5f);
+		VectorAdd(start, m_StartOffset, m_Start);
+		VScale(m_StartOffset, -1.0f);
+		m_b32 = b;
+		m_b33 = 0;
+		m_n34 = 0;
+		if (a && !m_IsRay)
+		{
+			float fl = (float)sqrt(m_Extents.x * m_Extents.x + m_Extents.y * m_Extents.y);
+			m_n34 = fl;
+			if (m_n34 > 1e-6)
+				m_b33 = 1;
+		}
+	}
+};
+
+__forceinline void UTIL_TraceHull_Box(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr)
+{
+	BoxRay_t ray;
+	ray.Init(vecAbsStart, vecAbsEnd, hullMin, hullMax, 1, 0);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4((Ray_t *)&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+CBaseCombatWeapon *CBaseCombatCharacter::sub_10333ad0(const Vector &range)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Weapon_FindUsable", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+	Vector mins = *(Vector *)a86() - range;
+	Vector maxs = *(Vector *)a86() + range;
+	CBaseCombatWeapon *pBest = 0;
+	float flBest = 0;
+	CBaseEntity *list[64];
+	int nCount = sub_101cca80(list, 64, &mins, &maxs, 0, 0);
+	for (int i = 0; i < nCount; i++)
+	{
+		if (list[i]->sub_100b3700() & 0x2080)
+			continue;
+		if ((*(Vector *)list[i]->m_vel3d4).LengthSqr() > 1.0f)
+			continue;
+		CBaseCombatWeapon *pWeapon = dynamic_cast<CBaseCombatWeapon *>(list[i]);
+		if (!pWeapon)
+			continue;
+		if (pWeapon->sub_102521f0())
+			continue;
+		if (!((CSlot382View *)this)->vfunc382(pWeapon))
+			continue;
+		CBaseCombatCharacter *pWepChar = (CBaseCombatCharacter *)pWeapon;
+		float flDist = (*(Vector *)pWepChar->a86() - *(Vector *)a86()).Length();
+		if (pBest)
+		{
+			if (!(pWeapon->vfunc360() & 0x6000) || flDist > flBest)
+				continue;
+		}
+		Vector vecStart = *(Vector *)pWepChar->a86();
+		Vector vecEnd = *(Vector *)pWepChar->a86();
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+		const Vector *pMins = (const Vector *)pCol->vfunc1();
+		const Vector *pMaxs = (const Vector *)pCol->vfunc2();
+		float h = (pMaxs->z - pMins->z) * 0.5;
+		vecStart.z += h;
+		vecEnd.z += h + 1.0;
+		CGameTrace tr;
+		pMins = (const Vector *)pCol->vfunc1();
+		pMaxs = (const Vector *)pCol->vfunc2();
+		UTIL_TraceHull_Box(vecStart, vecEnd, *pMins, *pMaxs, 0x200400b, pWeapon, 0, &tr);
+		if ((!tr.m_startsolid && !(tr.m_fraction < 1.0)) || tr.m_pEnt == this)
+		{
+			pBest = pWeapon;
+			flBest = flDist;
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103343f0 size=0xc9
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
