@@ -18,6 +18,7 @@
 	// The active stat list: the first stat list with a zero field at +0x10, else the shared default list. It is the
 	// game's one stat list lookup (CVStatListSet::Find, CVStatList_t.h), never a static of its own (link audit E).
 	CVStatList_t *GetActiveStatList() { return CVStatListSet::Of(this)->Find(0); }
+	int sub_1032ef60(void *pInfo);
 
 	// Slot 86 "ShouldTransmit"-like (declared as a plain member; CBaseEntity::vfunc86 is the same slot).
 	char vfunc86(int a, int b, int c, int d, int e);	// scope trace (entity name), true while the force-transmit time at +0x90 is still ahead of curtime or the flag byte at +0x14e3 + (engine slot 35 index of b) is set, else CBaseEntity::sub_100ab020(a, b, c, d, e)
