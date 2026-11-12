@@ -221,6 +221,7 @@ public:
 	virtual float vfunc568(int a);
 	int vfunc570(CBaseEntity *pHint);	// slot 570: the activity for a hint entity (plain member so the slot numbers do not shift)
 	void sub_1028e480(CBaseEntity *pEnt);	// 0x1028e480 (ret 4): the navigator move check run by GatherConditions
+	void sub_1026b580(int nDir, Vector *pOut);
 	int vfunc571(float f);	// slot 571 (plain member so the derived slots keep their numbers): 9 when f < 190.0f, else 0x13
 	bool vfunc575();	// slot 575: bit 6 of the class flags (plain member so the declared base slots do not shift)
 	int vfunc576(float a, int unused);	// slot 576: true when the float is above 0.0f
