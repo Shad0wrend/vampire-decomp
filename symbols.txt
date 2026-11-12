@@ -1823,6 +1823,7 @@
 0x10003706 func   ?vfunc4@CTEUserTracer@@QAEXHH@Z CTEUserTracer::vfunc4
 0x1000370b func   ?vfunc5@CItemGRingSerialKiller1@@QAEPAV1@I@Z CItemGRingSerialKiller1::vfunc5
 0x10003710 func   ?sub_1013fdf0@@YAXPAM@Z sub_1013fdf0
+0x1000371a func   ?Grow@?$CUtlMemory@UCircleObstacles_t@@@@QAEXH@Z CUtlMemory<CircleObstacles_t>::Grow
 0x1000371a func   ?sub_1030b2f0@CUnknown1030b2f0@@QAEXH@Z CUnknown1030b2f0::sub_1030b2f0
 0x1000371f func   ?vfunc77@CAI_Hint@@UAEXXZ CAI_Hint::vfunc77
 0x10003724 func   ?vfunc5@CItemGRingSilver@@QAEPAV1@I@Z CItemGRingSilver::vfunc5
