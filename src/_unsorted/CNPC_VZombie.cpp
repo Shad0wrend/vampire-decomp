@@ -372,6 +372,42 @@ int CNPC_VZombie::vfunc124()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e0fa0 size=0xa6
+#include "CNPC_VZombie.h"
+#include "CEHandleGet.h"
+
+struct IEngine1070b244 { virtual void v0(); virtual void v1(); virtual int v2(int a, int b); };
+extern IEngine1070b244 *g_1070b244;
+
+struct CNpcScheduleV { char m_pad[0x1c]; int m_iScheduleId; int GetId() const { return m_iScheduleId; } };
+inline bool IsCurSchedule(CNPC_VZombie *p, int schedId, bool fTranslate = true)
+{
+	CNpcScheduleV *pSchedule = *(CNpcScheduleV **)((char *)p + 0x5c38);
+	return (pSchedule &&
+	        ((fTranslate && (void *)pSchedule == (void *)p->vfunc447(schedId)) ||
+	         (!fTranslate && p->vfunc447(pSchedule->GetId()) == schedId)));
+}
+
+// TARGET: CNPC_VZombie::vfunc509
+bool CNPC_VZombie::vfunc509()
+{
+	if (m_b1480 && !EHandle_Get(m_hFe8) && !sub_1000caae())
+	{
+		int v = 999;
+		if (IsCurSchedule(this, 0x12f, false))
+			v = 20;
+		else if (vfunc510_slot())
+		{
+			vfunc507();
+			return false;
+		}
+		if (g_1070b244->v2(0, v) == 0)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e1080 size=0x183
 #include "CNPC_VZombie.h"
 #include "CGlobalEntityList.h"

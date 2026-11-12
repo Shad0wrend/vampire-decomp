@@ -7786,6 +7786,7 @@
 0x1000b50a func   ?sub_101f0490@QuoteLoader@@QAE_NXZ QuoteLoader::sub_101f0490
 0x1000b50f func   ?sub_101daea0@@YAXXZ sub_101daea0
 0x1000b514 func   ?vfunc80@CGargoyleTalisman@@QAEHXZ CGargoyleTalisman::vfunc80
+0x1000b519 func   ?vfunc509@CNPC_VZombie@@QAE_NXZ CNPC_VZombie::vfunc509
 0x1000b51e func   ?sub_102cce60@CAI_DynamicLink@@QAEPAV1@XZ CAI_DynamicLink::sub_102cce60
 0x1000b523 func   ?sub_100b4710@CUnknown100b4710@@QAEHXZ CUnknown100b4710::sub_100b4710
 0x1000b52d func   ?vfunc4@CTESprite@@UAEXHH@Z CTESprite::vfunc4
