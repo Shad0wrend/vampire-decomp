@@ -739,3 +739,289 @@ bool CAI_BaseNPC::sub_1027d0a0()
     return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1027d170 size=0x5d4
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CAI_BaseNPC.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+struct CDevFlagObj { virtual void vfunc0(); virtual void vfunc1(); };
+extern CDevFlagObj *g_10924a6c;
+
+void __cdecl sub_101cf390(CAI_BaseNPC *pEnt, const Vector &mins, const Vector &maxs);
+float __cdecl sub_102d61e0(int hull);
+int __cdecl sub_101cd250(CAI_BaseNPC *pEnt, int mask, CBaseEntity *pIgnore);
+
+#pragma auto_inline(off)
+struct CEntListLookup1027d170
+{
+	void *m_vtable;
+	EHandleEntInfo m_EntPtrArray[0x2000];
+	IHandleEntity *sub_100290c0(const CBaseHandle &handle);
+};
+IHandleEntity *CEntListLookup1027d170::sub_100290c0(const CBaseHandle &handle)
+{
+	unsigned int i = handle.m_Index;
+	if (i == 0xffffffff)
+		return 0;
+	const EHandleEntInfo *pInfo = &m_EntPtrArray[i & 0x1fff];
+	if (pInfo->m_SerialNumber == (int)(i >> (i & 31)))
+		return pInfo->m_pEntity;
+	return 0;
+}
+#pragma auto_inline(on)
+
+struct CCineCleanupScript
+{
+	char m_pad0000[0x204];
+	unsigned int m_spawnflags;	// 0x204
+	char m_pad0208[0x5f48 - 0x208];
+	int m_iszPlay;	// 0x5f48
+	char m_pad5f4c[0x5f78 - 0x5f4c];
+	int m_saved_movetype;	// 0x5f78
+	int m_saved_movecollide;	// 0x5f7c
+	int m_n5f80;
+	int m_saved_solidflags;	// 0x5f84
+	int m_saved_effects;	// 0x5f88
+	int m_n5f8c;
+	char m_b5f90;
+	char m_b5f91;
+
+	void sub_10279cc0(CBaseEntity *pEnt);
+	bool HasSpawnFlags(unsigned int bit) { return (m_spawnflags >> bit) & 1; }
+};
+
+struct CCineHandle : CBaseHandle
+{
+	CCineCleanupScript *Get() const
+	{
+		CEntListLookup1027d170 *pList = (CEntListLookup1027d170 *)EHandleDetail::g_10566458;
+		return (CCineCleanupScript *)pList->sub_100290c0(*this);
+	}
+	CCineCleanupScript *operator->() const { return Get(); }
+};
+
+struct CCineCleanupOwner98
+{
+	char m_pad0000[0x14b8];
+	int m_n14b8;
+};
+
+struct ScopeTraceInl
+{
+	__forceinline ScopeTraceInl(const char *func, const char *name)
+	{
+		g_109f3620[*g_109f3680].name = func;
+		g_109f3620[*g_109f3680].file = name;
+		g_109f3620[*g_109f3680].line = g_106b8540;
+		(*g_109f3680)++;
+	}
+	__forceinline ~ScopeTraceInl() { (*g_109f3680)--; }
+};
+
+struct CAI_CineCleanupNPC : public CAI_BaseNPC
+{
+	char m_pad0004[0x98 - 4];
+	CCineCleanupOwner98 *m_p98;	// 0x98
+	char m_pad009c[0x19c - 0x9c];
+	int m_fEffects;	// 0x19c
+	char m_pad01a0[0x1ec - 0x1a0];
+	int m_pfnTouch;	// 0x1ec
+	int m_pfnUse;	// 0x1f0
+	char m_pad01f4[0x200 - 0x1f4];
+	int m_lifeState;	// 0x200
+	unsigned int m_spawnflags;	// 0x204
+	char m_pad0208[0x210 - 0x208];
+	int m_iHealth;	// 0x210
+	char m_pad0214[0x26c - 0x214];
+	const char *m_iName;	// 0x26c
+	CCollisionProperty m_Collision;	// 0x270
+	char m_pad02d4[0x6f4 - 0x2d4];
+	int m_n6f4;	// 0x6f4
+	char m_pad06f8[0xfec - 0x6f8];
+	int m_nfec;	// 0xfec
+	char m_pad0ff0[0x1568 - 0xff0];
+	int m_nHull;	// 0x1568
+	char m_pad156c[0x1b3c - 0x156c];
+	const char *m_pszFile;	// 0x1b3c
+	int m_nLine;	// 0x1b40
+	char m_pad1b44[0x5cc4 - 0x1b44];
+	int m_IdealState;	// 0x5cc4
+	char m_pad5cc8[0x5d70 - 0x5cc8];
+	int m_n5d70;	// 0x5d70
+	CCineHandle m_hCine;	// 0x5d74
+	char m_pad5d78[0x5de8 - 0x5d78];
+	int m_n5de8;	// 0x5de8
+
+	void sub_1026d160();
+	void sub_103281b0(const char *pszBone, int a, int b);
+	void sub_100926e0(int bone, Vector &origin, Vector &angles);
+	bool sub_100903e0();
+	void sub_100b3580(int a);
+
+	void SetSolid(int solid)
+	{
+		ScopeTraceInl scope("CBaseEntity::SetSolid", m_iName ? m_iName : g_106b8540);
+		m_Collision.sub_100dc480(solid);
+	}
+	void SetSolidFlags(int flags)
+	{
+		ScopeTrace scope("CBaseEntity::SetSolidFlags", m_iName ? m_iName : g_106b8540, g_106b8540);
+		m_Collision.sub_100dc580(flags);
+	}
+	void AddSolidFlags(int flags)
+	{
+		ScopeTrace scope("CBaseEntity::AddSolidFlags", m_iName ? m_iName : g_106b8540, g_106b8540);
+		m_Collision.AddSolidFlags(flags);
+	}
+	bool sub_1027d170();
+	CCollisionProperty *CollisionProp() { return &m_Collision; }
+	const Vector &WorldAlignMins() { return *(Vector *)CollisionProp()->vfunc1(); }
+	const Vector &WorldAlignMaxs() { return *(Vector *)CollisionProp()->vfunc2(); }
+	const Vector &GetLocalOrigin() { return *(Vector *)vfunc220(); }
+	void SetLocalOrigin(const Vector &v) { ((CEntityVSlots *)this)->slot62((float *)&v.x); }
+	void SetMoveType(int a, int b) { ((CEntityVSlots *)this)->slot93(a, b); }
+};
+
+// TARGET: CAI_CineCleanupNPC::sub_1027d170
+bool CAI_CineCleanupNPC::sub_1027d170()
+{
+	CAI_CineCleanupNPC *p = this;
+
+	sub_1027f270(0);
+	p->m_n5d70 = 0;
+	CCineCleanupScript *pOldCine = p->m_hCine.Get();
+
+	if (p->m_hCine.Get())
+	{
+		if (!p->m_hCine->m_b5f90)
+			p->sub_1026d160();
+		p->m_hCine->sub_10279cc0(0);
+		((CEntityVSlots *)this)->slot93(p->m_hCine->m_saved_movetype, p->m_hCine->m_saved_movecollide);
+		p->SetSolidFlags(p->m_hCine->m_saved_solidflags);
+		p->m_fEffects = p->m_hCine->m_saved_effects;
+		if (p->m_p98)
+			p->m_p98->m_n14b8 = p->m_hCine->m_n5f8c;
+	}
+	else
+	{
+		p->SetMoveType(4, 0);
+		p->SetSolid(2);
+		p->SetSolidFlags(0x10);
+	}
+	p->m_hCine.m_Index = 0xffffffff;
+	sub_10279cc0(0);
+	p->m_n5de8 = 0;
+
+	if (p->m_lifeState == 1)
+	{
+		p->m_iHealth = 0;
+		p->AddSolidFlags(4);
+		sub_1026e340(7);
+		p->m_lifeState = 2;
+		sub_101cf390(this, p->WorldAlignMins(), Vector(p->WorldAlignMaxs().x, p->WorldAlignMaxs().y, p->WorldAlignMins().z + 2));
+		if (pOldCine && pOldCine->HasSpawnFlags(3))
+		{
+			p->m_pfnUse = 0;
+			sub_100ac4e0(0, 0, 0);
+			p->m_pfnTouch = 0;
+		}
+		else
+			sub_102695d0();
+		if (!p->sub_100903e0())
+		{
+			p->m_n6f4 = 0;
+			p->m_fEffects |= 0x10;
+		}
+		p->SetMoveType(0, 0);
+		return false;
+	}
+
+	if (pOldCine && pOldCine->m_iszPlay && pOldCine->m_b5f91)
+	{
+		if (pOldCine->HasSpawnFlags(13))
+		{
+			p->sub_103281b0("Bip01", 1, 1);
+			Vector origin = p->GetLocalOrigin();
+			origin.z -= sub_102d61e0(p->m_nHull) * 0.5f;
+			p->SetLocalOrigin(origin);
+		}
+		else if (!pOldCine->HasSpawnFlags(7))
+		{
+			Vector new_origin;
+			Vector new_angle;
+			p->sub_100926e0(0, new_origin, new_angle);
+
+			Vector oldOrigin = p->GetLocalOrigin();
+			if ((oldOrigin - new_origin).Length2D() < 8.0)
+				new_origin = oldOrigin;
+
+			Vector origin = p->GetLocalOrigin();
+			origin.x = new_origin.x;
+			origin.y = new_origin.y;
+			origin.z += 1;
+
+			if (sub_100b3700() & 0x400)
+			{
+				origin.z = new_origin.z;
+				p->SetLocalOrigin(origin);
+			}
+			else
+			{
+				p->SetLocalOrigin(origin);
+				p->sub_100b3580(1);
+				int drop = sub_101cd250(this, 0x202400b, 0);
+				if (drop < 0)
+				{
+					p->SetLocalOrigin(oldOrigin);
+				}
+				else if (drop == 0)
+				{
+					Vector origin = p->GetLocalOrigin();
+					origin.z = new_origin.z;
+					p->SetLocalOrigin(origin);
+					sub_100b3640(1);
+				}
+			}
+
+			origin = p->GetLocalOrigin();
+			((CEntityVSlots *)this)->slot181(&origin, 0, 0);
+			p->SetLocalOrigin(origin);
+			p->m_fEffects |= 0x10;
+		}
+		p->m_nfec = 0;
+	}
+
+	p->m_pszFile = "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp";
+	if (p->m_iHealth > 0)
+	{
+		p->m_nLine = 0x2b1d;
+		p->m_IdealState = 1;
+	}
+	else
+	{
+		p->m_nLine = 0x2b22;
+		p->m_IdealState = 7;
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x4c);
+	}
+	p->m_spawnflags &= ~0x80;
+	return true;
+}
+// END FUNCTION
