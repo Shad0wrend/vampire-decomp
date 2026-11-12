@@ -163627,6 +163627,41 @@ void CExperienceTable::sub_102223f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10222500 size=0x115
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "CExperienceTable.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+
+extern "C" __declspec(dllimport) int __cdecl Q_strnicmp(const char *, const char *, int);
+__declspec(dllimport) void DevWarning(const char *, ...);
+extern "C" unsigned int __cdecl strlen(const char *);
+#ifndef max
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+#endif
+
+int CExperienceTable::sub_10222500(const char *pszName)
+{
+    ScopeTrace scope("ExperienceTable::FindIndex", g_106b8540);
+    CUtlVector<CExperienceAward> &v = *(CUtlVector<CExperienceAward> *)this;
+    for (int i = 0; i < v.Count(); i++)
+    {
+        if (!Q_strnicmp(pszName, (const char *)v[i].m_a, max((int)strlen(pszName), (int)strlen((const char *)v[i].m_a))))
+            return i;
+    }
+    DevWarning("Could not find %s in the experience table\n", pszName);
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10222670 size=0x95
 #include "CExperienceTable.h"
 

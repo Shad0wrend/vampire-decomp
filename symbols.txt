@@ -6226,6 +6226,7 @@
 0x10009246 func   ?sub_100c3090@@YAXXZ sub_100c3090
 0x10009250 func   ?vfunc294@CPayphone@@UAE_NH@Z CPayphone::vfunc294
 0x10009255 func   ?vfunc15@CAI_Navigator@@UAEHPAXH@Z CAI_Navigator::vfunc15
+0x1000925a func   ?sub_10222500@CExperienceTable@@QAEHPBD@Z CExperienceTable::sub_10222500
 0x1000925f func   ?sub_103d1200@CNPC_VWerewolf@@QAE_NXZ CNPC_VWerewolf::sub_103d1200
 0x10009264 func   ?vfunc305@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc305
 0x10009269 func   ?sub_100c4a20@@YAPAXHHMHHHH@Z sub_100c4a20
