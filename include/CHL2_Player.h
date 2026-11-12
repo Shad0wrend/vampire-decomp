@@ -120,8 +120,9 @@ public:
 	virtual Vector vfunc371();	// slot 371: the forward direction of the angle (+0xe60, slot 367's y + +0xe5c, 0)
 	virtual void pd72(); virtual void pd73();	// slots 372..373
 	virtual int vfunc374(int count, int ammoIndex, int unused);	// slot 374 "CHL2_Player::GiveAmmo": remembers whether the active weapon (which answers sub_10253b40(0)) has no ammo of the type, gives the ammo through the base, and when it had none and the game rules (slot 20) agree switches to the next best weapon
-	virtual void pd75(); virtual void pd76(); virtual void pd77(); virtual void pd78(); virtual void pd79();	// slots 375..379
-	CHL2_V10(pd8) CHL2_V10(pd9)	// slots 380..399
+	virtual int vfunc375(int a); virtual int vfunc376(int a); virtual void pd77(); virtual void pd78(); virtual void pd79();	// slots 375..379
+	virtual void pd80(); virtual int vfunc381(int a); virtual void pd82(); virtual void pd83(); virtual void pd84(); virtual void pd85(); virtual void pd86(); virtual void pd87(); virtual void pd88(); virtual void pd89();	// slots 380..389
+	 CHL2_V10(pd9)	// slots 380..399
 	virtual void pe00(); virtual void pe01(); virtual void pe02(); virtual void pe03(); virtual void pe04(); virtual void pe05();	// slots 400..405
 	virtual bool vfunc406();	// slot 406: answers whether the base spawn continues (see vfunc103)
 	virtual void vfunc407(); virtual void vfunc408();	// slots 407 / 408
