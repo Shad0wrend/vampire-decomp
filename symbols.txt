@@ -6783,6 +6783,7 @@
 0x10009ff7 func   ?sub_10181be0@CBasePlayer@@QAEXXZ CBasePlayer::sub_10181be0
 0x10009ffc func   ?sub_10144510@@YAXPBVVector@@HHHHHHM@Z sub_10144510
 0x1000a00b func   ?sub_1005c310@@YAHXZ sub_1005c310
+0x1000a010 func   ?vfunc86@CAuspexAura@@UAE_NHHHHH@Z CAuspexAura::vfunc86
 0x1000a015 func   _item_k_key_generic item_k_key_generic
 0x1000a01a func   ?sub_10138df0@@YAXABUmatrix3x4_t@@0AAU1@@Z sub_10138df0
 0x1000a01f func   ?sub_1025d880@@YAXXZ sub_1025d880
