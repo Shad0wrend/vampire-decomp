@@ -3693,6 +3693,35 @@ float CAI_BaseNPC::vfunc520(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10278e30 size=0x161
+#include "CAI_BaseNPC.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CUnknown1070b248.h"
+
+extern CUnknown1070b248 *g_1070b248;
+int sub_101af070(const char *pszSentence);
+int sub_101aeb60(int edict, const char *pszSentence, float flVolume, int soundlevel, int flags, int pitch);
+
+template <class T> __forceinline T EdictOf(T e) { return e; }
+
+// TARGET: CAI_BaseNPC::vfunc484
+int CAI_BaseNPC::vfunc484(const char *pszSentence, int unused, float volume, int soundlevel, int unused2)
+{
+	int sentenceIndex = -1;
+	if (pszSentence && vfunc158()) {
+		if (pszSentence[0] == '!') {
+			sentenceIndex = sub_101af070(pszSentence);
+			CPASAttenuationFilter filter((CEntitySoundOriginView *)this, (soundlevel_t)soundlevel);
+			g_1070b248->vfunc4(&filter, engine->vfunc35(EdictOf(*(int *)((char *)this + 0x2e0))), 2, sentenceIndex, volume, soundlevel, 0, 100, 0, 0, 1, 0);
+		} else {
+			sentenceIndex = sub_101aeb60(EdictOf(*(int *)((char *)this + 0x2e0)), pszSentence, volume, soundlevel, 0, 100);
+		}
+	}
+	return sentenceIndex;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279000 size=0x21
 #include "CAI_BaseNPC.h"
 void CAI_BaseNPC::vfunc485(const char *pszSample, int a, float flVolume, int b, int c, int d)
