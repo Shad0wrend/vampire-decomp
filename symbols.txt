@@ -2683,6 +2683,7 @@
 0x100048c2 func   ?sub_102126c0@CUnknown102126c0@@QAEXPAUinputdata_t@@@Z CUnknown102126c0::sub_102126c0
 0x100048c7 func   ?vfunc0@CTEBloodSprite@@UAEPAUServerClass@@XZ CTEBloodSprite::vfunc0
 0x100048cc func   ?vfunc123@CNPCMaker@@UAEXXZ CNPCMaker::vfunc123
+0x100048d1 func   ?sub_102ed820@CNavView@@QAE_NABVVector@@M_N@Z CNavView::sub_102ed820
 0x100048d6 func   ?sub_101fc220@CVStatCost_t@@QAE_NPAUCVStatKV@@@Z CVStatCost_t::sub_101fc220
 0x100048db func   ?sub_1009bb40@CBaseEntity@@QAEXHHI@Z CBaseEntity::sub_1009bb40
 0x100048e0 func   ?sub_10183100@CUnknown10183100@@QAEXH@Z CUnknown10183100::sub_10183100

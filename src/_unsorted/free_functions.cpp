@@ -208080,6 +208080,83 @@ bool CAI_Navigator::sub_102ed610(const Vector *pDir, float flDist, float flMax, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ed820 size=0xe0
+#include "CEntitySoundOriginView.h"
+
+class Vector2D
+{
+public:
+	float x, y;
+	float Length() const;
+	Vector2D &operator/=(float fl);
+};
+
+inline float Vector2DLength(Vector2D const &v)
+{
+	return (float)FastSqrt(v.x * v.x + v.y * v.y);
+}
+
+inline float Vector2D::Length() const
+{
+	return Vector2DLength(*this);
+}
+
+inline Vector2D &Vector2D::operator/=(float fl)
+{
+	float oofl = 1.0f / fl;
+	x *= oofl;
+	y *= oofl;
+	return *this;
+}
+
+inline float Vector2DNormalize(Vector2D &v)
+{
+	float l = v.Length();
+	if (l != 0.0f)
+	{
+		v /= l;
+	}
+	else
+	{
+		v.x = v.y = 0.0f;
+	}
+	return l;
+}
+
+inline float ComputePathDirection(int navType, const Vector &start, const Vector &end, Vector *pDirection)
+{
+	if (navType == 0)
+	{
+		VectorSubtract(end, start, *pDirection);
+		pDirection->z = 0.0f;
+		return Vector2DNormalize(*(Vector2D *)pDirection);
+	}
+	else
+	{
+		VectorSubtract(end, start, *pDirection);
+		return VectorNormalize(*pDirection);
+	}
+}
+
+struct CNavView {
+	int m_0;
+	CEntitySoundOriginView *m_pOwner;
+	char m_pad[0x10];
+	int m_nFlag;
+	int GetNavType() { return m_nFlag; }
+	const Vector &GetLocalOrigin() { return *(const Vector *)m_pOwner->GetOrigin(); }
+	bool sub_102ed610(const Vector &v, float len, float a, bool b);
+	bool sub_102ed820(const Vector &goalPos, float minDist, bool fShouldDeflect);
+};
+
+bool CNavView::sub_102ed820(const Vector &goalPos, float minDist, bool fShouldDeflect)
+{
+	Vector vDir = goalPos;
+	float dist = ComputePathDirection(GetNavType(), GetLocalOrigin(), goalPos, &vDir);
+	return sub_102ed610(vDir, dist, minDist, fShouldDeflect);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ed940 size=0x60
 #include "CAI_Navigator.h"
 #include "CAI_BaseNPC.h"
