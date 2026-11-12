@@ -51987,6 +51987,158 @@ void __cdecl sub_100d1610(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1650 size=0x51a
+#include "vampire_all.h"
+#include "engineserver.h"
+#include "ScopeTrace.h"
+#include "Tier1.h"
+#include "RTTI.h"
+#include "CBCCSlotViews.h"
+#include "CSingleUserRecipientFilter.h"
+#include <string.h>
+#include <ctype.h>
+
+class CChatIsNetClientView
+{
+public:
+	VIEW_SLOT100(0)
+	VIEW_SLOT10(10) VIEW_SLOT10(11) VIEW_SLOT10(12) VIEW_SLOT10(13) VIEW_SLOT10(14) VIEW_SLOT10(15)
+	VIEW_SLOT(160) VIEW_SLOT(161)
+	virtual char vfunc162();
+};
+
+class CChatCanSpeakView
+{
+public:
+	VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2) VIEW_SLOT100(3)
+	VIEW_SLOT10(40) VIEW_SLOT10(41) VIEW_SLOT10(42) VIEW_SLOT10(43) VIEW_SLOT10(44) VIEW_SLOT10(45)
+	VIEW_SLOT(460) VIEW_SLOT(461) VIEW_SLOT(462)
+	virtual char vfunc463();
+};
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern CGlobalEntityList g_106eb5d8;
+extern CGameRules *g_1070ba0c;
+extern int g_10726048;
+extern char g_1055e9bc[];
+extern void (*g_109f3628)(const char *fmt, ...);
+extern CBaseEntity *sub_100ab250(void *pEdict);
+extern void sub_101d10e0(const char *fmt, ...);
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+
+inline void *ChatEdict(CBasePlayer *p) { return *(void **)((char *)p + 0x2e0); }
+inline const char *ChatName(CBasePlayer *p) { const char *s = *(const char **)((char *)p + 0x2078); return s ? s : g_106b8540; }
+
+inline CBasePlayer *NextEntByClass(CBasePlayer *pStart)
+{
+	for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7060((CBaseEntity *)pStart); pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt)) {
+		CBasePlayer *pPlayer = (CBasePlayer *)__RTDynamicCast(pEnt, 0, g_10538764, g_1055e9bc, 0);
+		if (pPlayer)
+			return pPlayer;
+	}
+	return 0;
+}
+
+inline CBaseEntity *EntityInstance(void *pent)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	if (!pent)
+		pent = engine->vfunc38(0);
+	return sub_100ab250(pent);
+}
+
+void sub_100d1650(void *pEdict, int teamonly)
+{
+	CBasePlayer *client;
+	int j;
+	char *p;
+	char text[128];
+	char szTemp[256];
+	const char *pcmd = engine->vfunc84(0);
+
+	if (engine->vfunc85() == 0)
+		return;
+
+	if (!_strcmpi(pcmd, "say") || !_strcmpi(pcmd, "say_team")) {
+		if (engine->vfunc85() >= 2)
+			p = (char *)engine->vfunc83();
+		else
+			return;
+	} else {
+		if (engine->vfunc85() >= 2)
+			Q_snprintf(szTemp, sizeof(szTemp), "%s %s", (char *)pcmd, (char *)engine->vfunc83());
+		else
+			Q_snprintf(szTemp, sizeof(szTemp), "%s", (char *)pcmd);
+		p = szTemp;
+	}
+
+	if (*p == '"') {
+		p++;
+		p[strlen(p) - 1] = 0;
+	}
+
+	char *pc;
+	for (pc = p; pc != 0 && *pc != 0; pc++) {
+		if (isprint(*pc) && !isspace(*pc)) {
+			pc = 0;
+			break;
+		}
+	}
+	if (pc != 0)
+		return;
+
+	CBasePlayer *pPlayer = (CBasePlayer *)EntityInstance(pEdict);
+
+	if (!((CChatCanSpeakView *)pPlayer)->vfunc463())
+		return;
+
+	if (teamonly)
+		Q_snprintf(text, sizeof(text), "%c(TEAM) %s: ", 2, ChatName(pPlayer));
+	else
+		Q_snprintf(text, sizeof(text), "%c%s: ", 2, ChatName(pPlayer));
+
+	j = sizeof(text) - 2 - strlen(text);
+	if ((int)strlen(p) > j)
+		p[j] = 0;
+
+	strcat(text, p);
+	strcat(text, "\n");
+
+	client = 0;
+	while (((client = NextEntByClass(client)) != 0) && ChatEdict(client) && engine->vfunc35((int)ChatEdict(client))) {
+		if (!ChatEdict(client))
+			continue;
+		if (ChatEdict(client) == pEdict)
+			continue;
+		if (!((CChatIsNetClientView *)client)->vfunc162())
+			continue;
+		if (teamonly && g_1070ba0c->vfunc65((int)client, (int)pPlayer) != 1)
+			continue;
+
+		CSingleUserRecipientFilter user(client);
+		user.MakeReliable();
+		engine->vfunc65(&user, g_10726048);
+		engine->vfunc67(engine->vfunc35((int)ChatEdict(client)));
+		engine->vfunc78(text);
+		engine->vfunc66();
+	}
+
+	CSingleUserRecipientFilter user(pPlayer);
+	user.MakeReliable();
+	engine->vfunc65(&user, g_10726048);
+	engine->vfunc67(engine->vfunc35((int)pEdict));
+	engine->vfunc78(text);
+	engine->vfunc66();
+
+	g_109f3628(text);
+
+	if (teamonly)
+		sub_101d10e0("\"%s\" say_team \"%s\"\n", ChatName(pPlayer), p);
+	else
+		sub_101d10e0("\"%s\" say \"%s\"\n", ChatName(pPlayer), p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1d50 size=0x1af
 #include "CStatDefault3List.h"
 #include "CUnknown1070b22c.h"
