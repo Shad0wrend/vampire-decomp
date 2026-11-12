@@ -58,7 +58,7 @@ public:
 	int vfunc390(void *info);	// slot 390: 1 while the bat's field at +0x210 is below 25 and the attacker of info (its +0x2c object) has no value at +0xa8; else CNPC_VHuman::sub_10001b45(info)
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	bool vfunc566(CBaseEntity *pEnt);	// "does pEnt (a point entity with type 20000 at +0x5dc) carry the name this bat looks for": builds the name from the state at +0x6670 / +0x6674 ("ManBat Landpoint", "ManBat Divepoint %d" ...) and compares it with the entity name, supporting a trailing '*'
-	char vfunc525(int a);	// slot 525: in state 2 hands a to sub_1038b1a0 and answers true; else whether the checksum of the scrambled value at +0x6670 matches 0xfa0b0699
+	char vfunc525(float a);	// slot 525: in state 2 hands a to sub_1038b1a0 and answers true; else whether the checksum of the scrambled value at +0x6670 matches 0xfa0b0699
 	void sub_1038b1a0(float flScale);	// stub 0x100049cb
 	Vector sub_1038b370(float flScale);	// the dive/land point builder (0x1038b370), returns the direction
 	int vfunc438();	// slot 438 "CNPC_VManBat::SelectSchedule": 0x158 (and +0x6674 = 1) unless sub_1027d990() is 2; 0x159 (and +0x6674 = 1) when the checksum of the scrambled value at +0x6670 does not match; then 0x15f / 0x15d / a random schedule 0x15c, 0x15d, 0x161, 0x163 or 0x159
