@@ -407,6 +407,122 @@ void CAI_BaseNPCTroika::vfunc532(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10290720 size=0x35d
+#include "CAI_BaseNPCTroika.h"
+#include "CVProfile.h"
+#include "engineiface.h"
+#include "globalvars.h"
+
+struct CCycleSample
+{
+	unsigned int m_lo;
+	unsigned int m_hi;
+	void Sample()
+	{
+		__asm
+		{
+			mov ecx, this
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+#define EXIT_SCOPE() \
+	{ \
+		CVProfile *pp = g_109f3648; \
+		if (!pp->m_bAtRoot || pp->m_enabled) \
+		{ \
+			CVProfNode *n = pp->m_pCurNode; \
+			if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) \
+			{ \
+				CCycleSample t; \
+				t.m_lo = 0; \
+				t.m_hi = 0; \
+				t.Sample(); \
+				CUnknownCycle100335e0 *pc = &n->m_CurFrameTime; \
+				pc->m_Int64 = *(unsigned __int64 *)&t - pc->m_Int64; \
+				n->m_TotalTime += pc->m_Int64; \
+				g_109f3648->PopGroup(); \
+			} \
+			if (n->m_nRecursions == 0) \
+				pp->m_pCurNode = pp->m_pCurNode->m_pParent; \
+			pp->m_bAtRoot = (pp->m_pCurNode == pp->m_pRoot); \
+		} \
+	}
+
+namespace block_10290720 {
+int __stdcall sub_10290660(float t)
+{
+	if (t - gpGlobals->curtime <= gpGlobals->frametime)
+		return 1;
+	return 0;
+}
+struct CTroikaUnit : CAI_BaseNPCTroika
+{
+	char sub_102906a0();
+};
+char CTroikaUnit::sub_102906a0()
+{
+	return (char)sub_10290660(m_f6244);
+}
+}
+using namespace block_10290720;
+
+#define MAXF(a, b) ((a) > (b) ? (a) : (b))
+#define MINF(a, b) ((a) < (b) ? (a) : (b))
+
+// TARGET: CAI_BaseNPCTroika::CalcNextUpdateThink
+bool CAI_BaseNPCTroika::CalcNextUpdateThink(float *pOut)
+{
+	CVProfile *p = g_109f3648;
+	if (p->m_enabled || !p->m_bAtRoot)
+	{
+		if (p->m_pCurNode->m_pszName != "CAI_BaseNPCTroika_CalcNextUpdateThink")
+			p->m_pCurNode = p->m_pCurNode->GetSubNode("CAI_BaseNPCTroika_CalcNextUpdateThink", 0, "Unaccounted");
+		CVProfNode *n = p->m_pCurNode;
+		n->m_nCurFrameCalls++;
+		if (n->m_nRecursions++ == 0)
+		{
+			((CCycleSample *)&n->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroup(n->m_nBudgetGroupID);
+		}
+		p->m_bAtRoot = false;
+	}
+	if (((CTroikaUnit *)this)->sub_102906a0())
+	{
+		float delay;
+		if (m_h628c.Get())
+		{
+			float d = (m_f6264 - 512.0f) * 0.0014204546f;
+			delay = d > 8.0f ? 8.0f : (d < 0.03f ? 0.03f : d);
+			if (delay == 8.0f)
+				delay += enginerandom->vfunc1(0.0f, 0.8f);
+		}
+		else
+			delay = 0.03f;
+		if (m_b6278)
+		{
+			if (!m_b6279)
+				delay = MINF(delay * 5.0f, 12.0f);
+		}
+		else
+			delay = MINF(delay * 10.0f, 16.0f);
+		if (sub_102c2430())
+			delay = 0.03f;
+		*pOut = m_f6244 - m_f6254;
+		float cur; cur = m_f6244;
+		m_f6254 = cur;
+		m_f6244 = MAXF(cur, gpGlobals->curtime) + delay;
+		EXIT_SCOPE();
+		return true;
+	}
+	EXIT_SCOPE();
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10290b60 size=0x371
 #include "CAI_BaseNPCTroika.h"
 #include "CVProfile.h"
