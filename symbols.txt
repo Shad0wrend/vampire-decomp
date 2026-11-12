@@ -14040,6 +14040,7 @@
 0x10013561 func   ?vfunc79@CBaseParticleEntity@@QAEHXZ CBaseParticleEntity::vfunc79
 0x10013566 func   ?vfunc45@CMultiplayRules@@UAEXPAVCBaseEntity@@PAUCMPDamageInfo@@@Z CMultiplayRules::vfunc45
 0x1001356b func   ?sub_1028a190@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_1028a190
+0x10013570 func   ?sub_101b2e30@CSoundEmitterSystemBaseV@@QAEXXZ CSoundEmitterSystemBaseV::sub_101b2e30
 0x10013575 func   _light_spot light_spot
 0x1001357a func   ?vfunc81@CWeaponPhysCannon@@UAEHXZ CWeaponPhysCannon::vfunc81
 0x10013589 func   ?sub_1018f720@CFoo1018f720@@QAEXH@Z CFoo1018f720::sub_1018f720

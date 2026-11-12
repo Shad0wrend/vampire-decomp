@@ -103,3 +103,86 @@ bool CSoundEmitterSystemBase::sub_101b2c60()
 	return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101b2e30 size=0xe8
+#include "CSoundEmitterSystemBase.h"
+#include "utlvector.h"
+#include "CUnknown101b4680.h"
+
+struct CSoundScriptFile
+{
+	bool dirty;
+	bool precachealways;
+	char filename[128];
+};
+
+struct CSoundEntry
+{
+	bool m_bRemoved;
+	bool m_bPrecacheAlways;
+	int m_nScriptFileIndex;
+	CUnknown101b4680 m_SoundParams;
+};
+
+struct DictElement_t
+{
+	unsigned short m_Name;
+	CSoundEntry m_Data;
+};
+
+struct CSoundsTree : public CUtlRBTree<CSoundEmitterRecord, int>
+{
+	void RemoveAll()
+	{
+		int prev = InvalidIndex();
+		for (int i = (int)m_TotalElements; --i >= 0; )
+		{
+			int idx = i;
+			if (IsValidIndex(idx))
+				Destruct(&((DictElement_t *)&Element(idx))->m_Data.m_SoundParams);
+			SetRightChild(idx, prev);
+			SetLeftChild(idx, idx);
+			prev = idx;
+		}
+		m_FirstFree = m_TotalElements ? 0 : InvalidIndex();
+		m_Root = InvalidIndex();
+		m_NumElements = 0;
+	}
+};
+
+struct FileEntryV { int m_i00; int m_i04; ~FileEntryV() {} };
+
+struct CFilesTree : public CUtlRBTree<CSoundEmitterFileEntry, int>
+{
+	void RemoveAll()
+	{
+		int prev = InvalidIndex();
+		for (int i = (int)m_TotalElements; --i >= 0; )
+		{
+			int idx = i;
+			if (IsValidIndex(idx))
+				Destruct((FileEntryV *)&Element(idx));
+			SetRightChild(idx, prev);
+			SetLeftChild(idx, idx);
+			prev = idx;
+		}
+		m_FirstFree = m_TotalElements ? 0 : InvalidIndex();
+		m_Root = InvalidIndex();
+		m_NumElements = 0;
+	}
+};
+
+struct CSoundEmitterSystemBaseV : public CSoundEmitterSystemBase
+{
+	void sub_101b2e30();
+};
+
+// TARGET: CSoundEmitterSystemBaseV::sub_101b2e30
+void CSoundEmitterSystemBaseV::sub_101b2e30()
+{
+	((CUtlVector<CSoundScriptFile> *)&m_i9c)->RemoveAll();
+	((CSoundsTree *)&m_pfn50)->RemoveAll();
+	m_listb0.sub_1024b880();
+	((CFilesTree *)&m_pfn04)->RemoveAll();
+}
+// END FUNCTION
