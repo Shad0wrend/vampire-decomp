@@ -99589,6 +99589,32 @@ void *sub_101878d0(SEdict *pent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10187e60 size=0x6c
+#include "CLagCompensationManager.h"
+#include "ConVar.h"
+struct CPlayerView10187e60 { char pad[0x2e0]; int m_pEdict; int edict() const { return m_pEdict; } };
+struct EngBase10187e60 {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+    virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual int v35(int);
+    virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39(); virtual void v40(); virtual void v41();
+};
+struct EngDer10187e60 : EngBase10187e60 { virtual void v42(int, int); };
+extern ConVar g_10726948;
+inline int Idx10187e60(EngBase10187e60 *e, int ed) { return e->v35(ed); }
+void CLagCompensationManager::sub_10187e60(CPlayerView10187e60 *pPlayer)
+{
+    int n = g_10726948.GetInt();
+    if (n < 1)
+        n = 1;
+    int mx = gpGlobals->maxClients <= 1 ? 4 : 16;
+    if (n >= mx)
+        n = mx;
+    ((EngDer10187e60 *)engine)->v42(Idx10187e60((EngBase10187e60 *)engine, pPlayer->edict()), n);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10187ef0 size=0x86
 #include "utlmemory.h"
 #include "utlrbtree.h"
