@@ -107825,6 +107825,72 @@ PyObject *sub_101988c0(PyObject *self, PyObject *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101989b0 size=0x12c
+#include "Python.h"
+#include "CBaseCombatCharacter.h"
+
+#define SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SLOTS100(p) SLOTS10(p##0) SLOTS10(p##1) SLOTS10(p##2) SLOTS10(p##3) SLOTS10(p##4) \
+	SLOTS10(p##5) SLOTS10(p##6) SLOTS10(p##7) SLOTS10(p##8) SLOTS10(p##9)
+
+struct CAmmoWeaponV
+{
+	SLOTS100(a) SLOTS100(b) SLOTS100(c)
+	SLOTS10(d0) SLOTS10(d1) SLOTS10(d2) SLOTS10(d3) SLOTS10(d4) SLOTS10(d5) SLOTS10(d6)
+	virtual void e0();
+	virtual char vfunc371();
+	char pad[0x744 - 4];
+	int m_iPrimaryAmmoType;
+	int pad748;
+	int m_n74c;
+	char pad750[0x8d0 - 0x750];
+	int m_n8d0;
+};
+struct AmmoCountCbcV : CBaseCombatCharacter { CAmmoWeaponV *sub_10335950(const char *pszName); };
+struct AmmoCountEntV { char pad[0x9c]; AmmoCountCbcV *m_pCBC; };
+AmmoCountEntV *sub_10196780(PyObject *);
+
+inline PyObject *AmmoCountOf(AmmoCountCbcV *cbc, const char *name)
+{
+	int count = 0;
+	CAmmoWeaponV *weapon = cbc->sub_10335950(name);
+	if (weapon) {
+		if (weapon->vfunc371()) {
+			count = weapon->m_n8d0;
+		} else {
+			cbc->sub_103346c0(weapon->m_iPrimaryAmmoType);
+			count = weapon->m_n74c;
+		}
+	}
+	return g_109f3798(count);
+}
+
+PyObject *sub_101989b0(PyObject *self, PyObject *args)
+{
+	const char *name = 0;
+	PyObject *obj = 0;
+	if (!g_109f37a0(args, "Os", &obj, &name)) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f3780, "bad args to AmmoCount()");
+		return 0;
+	}
+	if (!name) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f3780, "invalid item name");
+		return 0;
+	}
+	AmmoCountEntV *ent = sub_10196780(obj);
+	AmmoCountCbcV *cbc = !ent ? 0 : ent->m_pCBC;
+	if (!cbc) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f3780, "invalid combat character");
+		return 0;
+	}
+	return AmmoCountOf(cbc, name);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10198b30 size=0x138
 #include "exception.h"
 #include "CBaseCombatCharacter.h"

@@ -731,6 +731,7 @@
 0x10001f6e func   ?sub_1007e810@SScene1007e810@@QAEPAUSEvent1007e810@@PBD0@Z SScene1007e810::sub_1007e810
 0x10001f73 func   ?sub_101db6b0@CStatDefault60List@@QAEPAUStatDefault60@@XZ CStatDefault60List::sub_101db6b0
 0x10001f78 func   ?vfunc5@CNullEntity@@QAEPAV1@I@Z CNullEntity::vfunc5
+0x10001f7d func   ?sub_101989b0@@YAPAUPyObject@@PAU1@0@Z sub_101989b0
 0x10001f82 func   ?vfunc350@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::vfunc350
 0x10001f8c func   ?RotateLeft@?$CUtlRBTree@UCRBTree12Entry_1024c1d0@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_1024c1d0,unsigned short>::RotateLeft
 0x10001f96 func   ?vfunc82@CEnvDustPuff@@UAEPAUdatamap_t@@XZ CEnvDustPuff::vfunc82
