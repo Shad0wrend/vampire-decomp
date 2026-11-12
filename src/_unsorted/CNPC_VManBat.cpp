@@ -155,6 +155,37 @@ int CNPC_VManBat::vfunc337()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038b120 size=0x60
+#include "CNPC_VManBat.h"
+
+int sub_1042fbf0(unsigned int v);
+
+inline unsigned int SecUnscramble(unsigned int n)
+{
+	unsigned int r = n;
+	r &= 0x710935;
+	r ^= 0x148739;
+	r += 0x4094ab;
+	r &= 0x18ef6ca;
+	r ^= n;
+	r ^= 0x412a96ec;
+	return r;
+}
+
+#define HASH(x) (((((((x) & 0x710935) ^ 0x148739) + 0x4094ab) & 0x18ef6ca) ^ (x)) ^ 0x412a96ec)
+// TARGET: CNPC_VManBat::vfunc525
+char CNPC_VManBat::vfunc525(float a)
+{
+	if (sub_1027d990() == 2)
+	{
+		sub_1038b1a0(a);
+		return 1;
+	}
+	int v = HASH(m_n6670);
+	return sub_1042fbf0(v) == sub_1042fbf0(0xfa0b0699);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038e000 size=0x281
 #include "CNPC_VManBat.h"
 #include "CPASAttenuationFilter.h"

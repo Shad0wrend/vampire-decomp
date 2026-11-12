@@ -2965,6 +2965,7 @@
 0x10004f02 func   ?vfunc104@CPhysConstraint@@UAEXXZ CPhysConstraint::vfunc104
 0x10004f07 func   ?sub_102ee970@CAI_Pathfinder@@QAEXXZ CAI_Pathfinder::sub_102ee970
 0x10004f0c func   ?sub_10356040@@YAXXZ sub_10356040
+0x10004f11 func   ?vfunc525@CNPC_VManBat@@QAEDM@Z CNPC_VManBat::vfunc525
 0x10004f1b func   ?sub_1035b2b0@@YAXXZ sub_1035b2b0
 0x10004f20 func   ?sub_10247bd0@CUnk10247bd0@@QAEPAU1@HHH@Z CUnk10247bd0::sub_10247bd0
 0x10004f25 func   ?vfunc80@CItemGLillyDiary@@QAEHXZ CItemGLillyDiary::vfunc80
