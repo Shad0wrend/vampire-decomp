@@ -201624,6 +201624,40 @@ int CUnknown102ee120_y::sub_102f1500(HelperParams102f1500 *pParams)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f1620 size=0x50
+struct HelperParams102f1690
+{
+	int m_n0;
+	float m_fl4;
+	float m_fl8;
+	float m_flC;
+	float m_fl10;
+	int m_n14;
+	int m_n18;
+	bool m_b1c;
+};
+
+struct CUnknown102ee120_x
+{
+	bool sub_102f1690(HelperParams102f1690 *pParams);
+	void sub_102f1620(int a, int b, float c, float d, int e);
+};
+
+void CUnknown102ee120_x::sub_102f1620(int a, int b, float c, float d, int e)
+{
+	HelperParams102f1690 params;
+	params.m_n0 = a;
+	params.m_fl4 = c;
+	params.m_fl8 = d;
+	params.m_flC = 0;
+	params.m_fl10 = 0;
+	params.m_n14 = e;
+	params.m_n18 = b;
+	params.m_b1c = true;
+	sub_102f1690(&params);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f1690 size=0x168
 #include "CUnknown102ee120.h"
 extern "C" void *memset(void *, int, unsigned int);
