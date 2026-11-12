@@ -129,7 +129,7 @@ public:
 	virtual void slot266(int a);	// takes one argument (the player's activity-table call passes 0)
 	virtual char slot267();	// weapon: a boolean answer in al
 	virtual int slot268(void *pPlayer);	// vampire skill entity: the value the keyring hud message sends for the player
-	EVS(269)
+	virtual void slot269(int a);
 	virtual void slot270(void *pTrace, int a);	// weapon: takes a trace result and a flag (the dog's bite shot)
 	virtual int slot271(int a);	// animating overlay: the index of the layer playing that activity / sequence, -1 for none
 	virtual const char *slot272();	// weapon: a model name (female variant)
