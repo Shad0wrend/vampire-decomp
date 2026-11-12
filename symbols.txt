@@ -707,6 +707,7 @@
 0x10001edd func   ?sub_102b50b0@CAI_BaseNPCTroikaUnit54@@QAE_NH@Z CAI_BaseNPCTroikaUnit54::sub_102b50b0
 0x10001ee2 func   ?vfunc278@CPropHacking@@QAEXH@Z CPropHacking::vfunc278
 0x10001eec func   ?sub_103dbe70@CIntHolder103dbe70@@QAEPAU1@PAUCIntObj103dbe70@@@Z CIntHolder103dbe70::sub_103dbe70
+0x10001ef1 func   ?sub_100bc600@bf_write03@@QAEXHH@Z bf_write03::sub_100bc600
 0x10001ef6 func   ?sub_10250400@@YAXPAX@Z sub_10250400
 0x10001efb func   ?vfunc2@CTEDecal@@UAEPAVCBaseTempEntity@@I@Z CTEDecal::vfunc2
 0x10001f00 func   ?vfunc328@CBasePlayer@@UAEDXZ CBasePlayer::vfunc328
