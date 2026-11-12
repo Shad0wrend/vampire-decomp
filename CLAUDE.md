@@ -459,6 +459,33 @@ have written it rather than adding temporaries that spell out the assembly:
   - two calls through one global in a loop: keep both in one comparison, or VC6 hoists the global (0x1017c300);
   - Python bindings: `if (!p) {...} else return X;` plus one final `return 0;` gives the cross-jumped error tails.
   Unsolved, seen twice: x87 `fmul/fadd st(1)` ... `fstp st(0)` (value kept on the stack, 0x101200c0, 0x101c2d20).
+- **Round 11 (17 of 59, 2026-11-13, functions Opus had tried but no hand agent):** SDK verbatim again: bitbuf
+  WriteBitCoord (0x100bd1d0) and WriteSBitLong (0x100bc600) through a `struct bf_write03 : bf_write` view with
+  that file's inlines; physconstraint CreateConstraint (0x1002bb90, keep the DEAD `params.torqueLimit = ...` line:
+  dead SDK statements still move x87 scheduling); AddTriOverlayLines; rope CalcRopeStartingConditions;
+  player_lagcompensation FrameUpdatePostEntityThink; InitGroundNodePosition. Idioms:
+  - CUtlRBTree members the game keeps partly out of line: an explicit `template<>` specialisation of the member
+    whose view calls the out-of-line callees by their jump-stub names (0x102ce150);
+  - a member vector read through a reference local lets VC6 cache its pointers across a loop; a cast at every
+    use gives the game's per-pass reloads (0x102dc8f0);
+  - look for a matched function with the same byte sequence and copy its helper spelling first (ENTINDEX(void *)
+    for StopSound, 0x1020c9a0); SDK `edict()` / `entindex()` accessor pair fixes eax/edx swaps around vfunc35;
+  - two matched Ray hull inits to copy as header-free local views: 0x10218320 (CHullRay + float HullSqrt) and
+    0x1026e940 (UTIL_TraceHull with bTraceOffset); pick by the radius x87 shape;
+  - header-patch near misses move into the source: a local field view (`#define F ((View *)this)`), view methods
+    named sub_<addr>, local base+derived classes declaring the right `virtual int vfuncN(...)`; an extra dtor via
+    `struct L : T { ~L() { sub_X(); } };`;
+  - the save refuses local classes named after game classes; a non-game view with its vptr set by hand in a
+    `__forceinline` ctor (`*(void **)this = g_<vtable>`) saves (0x1042db40, WORKAROUND);
+  - `~CBaseEntity` (0x1009df20) matched with a unit-only macro on a neighbouring declaration (WORKAROUND); the
+    slim prelude adds includes BEFORE the source, so declare the triggering name `extern` yourself;
+  - unfolded SDK DEG2RAD `(float)(x) * (float)(M_PI_F / 180.f)` for a score-2 store wall (0x102a1650);
+  - switch: `sub eax,N` = inside one switch's compare tree, `add eax,-N` = a separate switch (0x10297ce0, 1);
+  - `(x >> bit) & 1` through an inline `IsBitSet(unsigned, int)` gives shr (signed: sar);
+  - 0x10430520 was a size error (658 B swallowed padding + import thunks): size set to 46 by hand, matched with
+    `#pragma optimize("", off)`. A far miss on a tiny SafeDisc-area helper: check the span first.
+  0x101b2e30 was saved under the view name CSoundEmitterSystemBaseV::sub_101b2e30 (was provisional vfunc2): watch
+  the link audit for its vtable slot.
 - **Same-name plain member + later virtual = shifted vtable (found 2026-11-12):** MSVC puts all functions of one
   name together in the vtable, at the first declaration's position. A plain `void vfunc442(int *)` near the top of
   a class plus the `virtual void vfunc442();` placeholder further down moved slot 442 before slot 134, so every
