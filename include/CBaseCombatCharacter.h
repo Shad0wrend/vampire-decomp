@@ -59,7 +59,9 @@ public:
 	virtual void c290(); virtual void c291();
 	virtual void vfunc292(int unused1, const Vector *pDirection, int unused2);	// slot 292 "CBaseCombatCharacter::DamageFlinch": scope trace (entity name); picks one of two flinch gestures at random (0x73 / 0x74) and plays it through slot 265 with 0.1 / 0.3 and a "hit_yaw" of the angle toward the damage direction (when it points anywhere) plus a random -30..30 degrees
 	virtual void c293(); virtual void c294(); virtual void c295x(); virtual char vfunc296(int a); virtual void c297();
-	virtual int vfunc298(int nSection);	// slot 298: the number of weapon slots of inventory section nSection
+	virtual int vfunc298(int nSection);
+	void vfunc299(void *pInfo, char *pbOut);	// slot 299 "CBaseCombatCharacter::CreateDamageEffects" (0x10330d00, ret 8)
+	void sub_10027060(const Vector *pVec);	// slot 170 body (0x10027060)	// slot 298: the number of weapon slots of inventory section nSection
 	virtual void c299();
 	CBCC_SLOTS10(c30)
 	virtual void c310(); virtual void c311(); virtual void vfunc312(int a); virtual void c313();
