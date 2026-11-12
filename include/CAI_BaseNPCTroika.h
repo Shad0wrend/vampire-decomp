@@ -346,7 +346,7 @@ struct { char m_pad1a41[0x1b2c - 0x1a41]; int m_n1b2c; };
 	void *m_p5da4;	// 0x5da4: the squad object (0 when none)
 	char m_pad5da8[0x5db4 - 0x5da8];
 	float m_f5db4;	// 0x5db4: a time (curtime + the parameter's value, or + 1000.0f for a non-positive one)
-	union { char m_pad5db8[0x5f8c - 0x5db8]; struct { char m_pad5db8b[0x5f34 - 0x5db8]; const char *m_pszBreakName5f34; int m_n5f38; struct CAI_ScheduleView *m_pSchedule5f3c; }; };	// 0x5f34: the name of the condition that broke the schedule (g_105cdd60 when unknown), 0x5f38 / 0x5f3c: the break record (0, the schedule)
+	union { char m_pad5db8[0x5f8c - 0x5db8]; struct { char m_pad5db8b[0x5ddc - 0x5db8]; CAI_Hint *m_pHintNode; char m_pad5de0[0x5f34 - 0x5de0]; const char *m_pszBreakName5f34; int m_n5f38; struct CAI_ScheduleView *m_pSchedule5f3c; }; };	// 0x5f34: the name of the condition that broke the schedule (g_105cdd60 when unknown), 0x5f38 / 0x5f3c: the break record (0, the schedule)
 	char m_Output5f8c[0x18];	// 0x5f8c: a COutputEvent (0x18 bytes, view with (COutputEvent *)m_Output5f8c; fired with (m_p62ec, this, 0) by sub_102b53d0)
 	char m_pad5fa4[0x6004 - 0x5fa4];
 	Vector m_KnockbackVelocity;	// 0x6004
