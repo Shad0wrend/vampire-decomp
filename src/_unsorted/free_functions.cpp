@@ -212875,6 +212875,74 @@ CUnknown102ffbd0Obj *CUnknown102ffbd0::sub_102ffbd0(int a, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ffca0 size=0x2b7
+#include "CAI_Pathfinder.h"
+#include "CAI_BaseNPC.h"
+#include "CBitString.h"
+#include "CPairFields102dda40.h"
+
+// TARGET: CAI_Pathfinder::sub_102ffca0
+int CAI_Pathfinder::sub_102ffca0(CAI_PathfinderOuter *pNPC, const Vector *pPos, const Vector *pDir, float flDist)
+{
+	CAI_PathfinderNetwork *pNet = pNPC->m_pPathfinder->m_pNetwork;
+	int nNodes = pNet->m_nNodes;
+	if (nNodes) {
+		int cur = pNet->sub_102f3c10(pNPC, &pPos->x);
+		if (cur != -1) {
+			float flRemaining = pDir->Length();
+			if (flRemaining < 0.01f)
+				return cur;
+			flRemaining *= flDist;
+
+			CBitString visited;
+			visited.sub_102fe9a0(nNodes);
+			sub_10307890(&visited);
+
+			CAI_PathfinderNode **ppNodes = ((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder->m_pNetwork->m_ppNodes;
+			int hull = *(int *)((char *)pNPC + 0x1568);
+			for (;;) {
+				visited.m_pData[cur >> 5] |= 1 << (cur & 0x1f);
+				int best = -1;
+				float flBest = 0;
+				unsigned int mask = 0;
+				CAI_PathfinderNode *pNode = ppNodes[cur];
+				int nLinks = *(int *)((char *)pNode + 0x78);
+				CPairFields102dda40 **ppLinks = *(CPairFields102dda40 ***)((char *)pNode + 0x7c);
+				for (int i = 0; i < nLinks; i++) {
+					CPairFields102dda40 *pLink = ppLinks[i];
+					if (!sub_102ff960(pLink, cur))
+						continue;
+					int other = pLink->sub_102dda40(cur);
+					if (visited.m_pData[other >> 5] & (1 << (other & 0x1f)))
+						continue;
+					Vector vecPos;
+					Vector vecDir = *(Vector *)ppNodes[other]->sub_102fb0d0(&vecPos.x, hull) - *pPos;
+					VectorNormalize(vecDir);
+					float flDot = DotProduct(vecDir, *pDir);
+					if (flDot > flBest) {
+						best = other;
+						flBest = flDot;
+						mask = ((CAI_BaseNPC *)pNPC)->vfunc513() & pLink->m_iAcceptedMoveTypes[hull];
+					}
+				}
+				if (best == -1)
+					break;
+				CAI_Pathfinder *pNav = pNPC->m_pPathfinder;
+				Vector vecA, vecB;
+				flRemaining -= pNav->sub_102f1860(mask, pNode->sub_102fb0d0(&vecB.x, hull), ppNodes[best]->sub_102fb0d0(&vecA.x, hull));
+				if (flRemaining <= 0)
+					break;
+				cur = best;
+			}
+			visited.sub_100bf6a0();
+			return cur;
+		}
+		return -1;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10300010 size=0x6d
 #include "Vector.h"
 
