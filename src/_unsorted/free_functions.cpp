@@ -176627,6 +176627,53 @@ void sub_1024c6f0(VMatrix &dst, const Vector &scale)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024c760 size=0x1ad
+#include "VMatrix.h"
+
+struct VPlaneR
+{
+	Vector m_Normal;
+	float m_Dist;
+	Vector GetPointOnPlane() const { return m_Normal * m_Dist; }
+};
+
+struct VMatrixR : VMatrix
+{
+	VMatrixR() {}
+	VMatrixR sub_1024d280(const VMatrixR &vm) const;
+	void sub_1024cef0(const VMatrixR &src);
+	void SetTranslation(const Vector &v) { m[0][3] = v.x; m[1][3] = v.y; m[2][3] = v.z; }
+};
+VMatrixR sub_1024c630();
+
+VMatrixR sub_1024c760(const VPlaneR &thePlane)
+{
+	VMatrixR mReflect, mBack, mForward;
+	Vector vOrigin;
+	{
+		Vector N;
+		N = thePlane.m_Normal;
+
+		mReflect.Init(
+			1.0f - 2.0f * N.x * N.x, -2.0f * N.x * N.y, -2.0f * N.x * N.z, 0.0f,
+			-2.0f * N.x * N.y, 1.0f - 2.0f * N.y * N.y, -2.0f * N.y * N.z, 0.0f,
+			-2.0f * N.x * N.z, -2.0f * N.y * N.z, 1.0f - 2.0f * N.z * N.z, 0.0f,
+			0.0f, 0.0f, 0.0f, 1.0f
+			);
+	}
+
+	vOrigin = thePlane.GetPointOnPlane();
+
+	mBack.sub_1024cef0(sub_1024c630());
+	mBack.SetTranslation(-vOrigin);
+
+	mForward.sub_1024cef0(sub_1024c630());
+	mForward.SetTranslation(vOrigin);
+
+	return mForward.sub_1024d280(mReflect).sub_1024d280(mBack);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024c980 size=0xe7
 #include "VMatrix.h"
 
