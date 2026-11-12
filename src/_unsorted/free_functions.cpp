@@ -38502,6 +38502,85 @@ void __fastcall sub_1009fb80(CBaseEntity *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009fe40 size=0x246
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include <string.h>
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+void sub_101434b0(int entindex, int offset, const char *text, float duration, int r, int g, int b, int a);
+extern bool g_106cff51;
+
+struct CTimedOverlay
+{
+	char *msg;
+	int msgEndTime;
+	int msgStartTime;
+	CTimedOverlay *msgNext;
+};
+
+static inline int EdictIndex(int nEdict)
+{
+	return engine->vfunc35(nEdict);
+}
+
+void CBaseEntity::sub_1009fe40()
+{
+	ScopeTrace trace("CBaseEntity::DrawTimedOverlays", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	if (*(unsigned char *)((char *)this + 0x224) & 0x10)
+	{
+		char tempstr[512];
+		Q_strncpy(tempstr, "[", sizeof(tempstr));
+		strcat(tempstr, sub_1000b5cd());
+		strcat(tempstr, "]");
+		sub_101434b0(EdictIndex(m_pEdict2e0), 0, tempstr, 0, 255, 255, 255, 255);
+	}
+	CTimedOverlay *pOverlay = (CTimedOverlay *)m_pTimedOverlays;
+	CTimedOverlay *pNextOverlay = 0;
+	CTimedOverlay *pLastOverlay = 0;
+	int nCount; nCount = 1;
+	while (pOverlay)
+	{
+		pNextOverlay = pOverlay->msgNext;
+		if ((!g_106cff51 && gpGlobals->curtime > pOverlay->msgEndTime) || (int)nCount > 10)
+		{
+			if (pLastOverlay)
+				pLastOverlay->msgNext = pNextOverlay;
+			else
+				m_pTimedOverlays = pNextOverlay;
+			delete[] pOverlay->msg;
+			delete pOverlay;
+		}
+		else
+		{
+			int nAlpha; nAlpha = 0;
+			if (!g_106cff51)
+			{
+				int t0 = pOverlay->msgEndTime - pOverlay->msgStartTime; nAlpha = (int)(255 * ((gpGlobals->curtime - pOverlay->msgStartTime) / (t0)));
+			}
+			int r = 185;
+			int g = 145;
+			int b = 145;
+			if (50 > nAlpha)
+			{
+				r = 255;
+				g = 205;
+				b = 205;
+			}
+			if (0 > nAlpha)
+				nAlpha = 0;
+			int nIndex = EdictIndex(m_pEdict2e0);
+			sub_101434b0(nIndex, nCount, pOverlay->msg, 0.01, r, g, b, 255 - nAlpha);
+			++nCount;
+			pLastOverlay = pOverlay;
+		}
+		pOverlay = pNextOverlay;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a0420 size=0x8d
 #include "CBaseEntity.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
