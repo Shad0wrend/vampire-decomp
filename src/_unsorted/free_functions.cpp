@@ -44120,6 +44120,117 @@ void CBatSwarm::sub_100b8b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b8d50 size=0x7d3
+#include "CBatSwarm.h"
+#include "ConVar.h"
+#include <stdlib.h>
+
+void CBatSwarm::sub_100b8d50(int iBat, float flStep)
+{
+	Vector *pVel = &m_vecBatVelocity[iBat];
+	for (int i = 0; i < 32; i++) {
+		if (i != iBat && (m_mask734 & (1 << i))) {
+			Vector vecDir = m_vecPos[i] - m_vecPos[iBat];
+			float flLen = VectorNormalize(vecDir);
+			if (flLen > 0.0f) {
+				float flDist;
+				if (flLen > 1.0f)
+					flDist = flLen;
+				else
+					flDist = 1.0f;
+				static ConVar bat_attract("bat_attract", "0", 0);
+				static ConVar bat_idealdist("bat_idealdist", "16", 0);
+				float flAttract = bat_attract.GetFloat();
+				VectorLerp(*pVel, vecDir * (flDist - bat_idealdist.GetFloat()), flStep / flDist * flAttract, *pVel);
+			}
+		}
+	}
+	while (m_nBat[iBat] < m_nLimit740) {
+		CBatSwarmPathNode *pNode = &m_Path[m_nBat[iBat]];
+		const Vector vecDelta = m_vecPos[iBat] - pNode->m_vecPos;
+		if (vecDelta[0] * vecDelta.x + vecDelta.y * vecDelta.y + vecDelta.z * vecDelta.z > pNode->m_flRadius * pNode->m_flRadius)
+			break;
+		m_nBat[iBat]++;
+	}
+	if (m_nBat[iBat] < m_nLimit740) {
+		CBatSwarmPathNode *pNode = &m_Path[m_nBat[iBat]];
+		Vector vecDir = pNode->m_vecPos - m_vecPos[iBat];
+		VectorNormalize(vecDir);
+		*pVel += vecDir * pNode->m_flStrength;
+	} else if (m_bLoop8d4) {
+		m_mask734 &= ~(1 << iBat);
+		m_mask730 &= ~(1 << iBat);
+		return;
+	}
+	static ConVar bat_clip_approach("bat_clip_approach", "40", 0);
+	static ConVar bat_clip_strength("bat_clip_strength", "0.1", 0);
+	float flApproach = bat_clip_approach.GetFloat();
+	float flStrength = bat_clip_strength.GetFloat() * m_flSpeed738;
+	float flDHi = 496.0f;
+	float flZLo = 9.0f;
+	float flDLo = -flApproach;
+	float flZHi = 320.0f;
+	Vector *pPos = &m_vecPos[iBat];
+	Vector vecRel;
+	vecRel.x = pPos->x;
+	vecRel.y = pPos->y - 64.0f;
+	vecRel.z = pPos->z;
+	const Vector &rel = vecRel;
+	float flLen = FastSqrt(rel[0] * rel.x + rel.y * rel.y);
+	Vector vecDir2D;
+	vecDir2D.z = 0.0f;
+	if (flLen > 0.0f) {
+		float flInv = 1.0f / flLen;
+		vecDir2D.x = rel[0] * flInv;
+		vecDir2D.y = rel[1] * flInv;
+	} else {
+		vecDir2D.x = 0.0f;
+		vecDir2D.y = 0.0f;
+	}
+	if (m_nBat[iBat] < m_nLimit740 && !m_Path[m_nBat[iBat]].m_bFlag14) {
+		flZLo = m_Path[m_nBat[iBat]].m_f18;
+		flZHi = m_Path[m_nBat[iBat]].m_f1c;
+		flDHi = m_Path[m_nBat[iBat]].m_f24;
+		flDLo = m_Path[m_nBat[iBat]].m_f20;
+	} else if (flLen > 391.0f) {
+		if (vecRel.z < 199.0f)
+			flZHi = 199.0f;
+		else if (vecRel.z > 240.0f)
+			flZLo = 240.0f;
+	} else {
+		if (vecRel.z > 199.0f && vecRel.z < 240.0f)
+			flDHi = 391.0f;
+	}
+	if (flZLo + flApproach > vecRel.z) {
+		float t = 1.0f - (vecRel.z - flZLo) / flApproach;
+		t = t > 1.0f ? 1.0f : (t < 0.0f ? 0.0f : t);
+		pVel->z += t * flStrength;
+	}
+	if (flZHi - flApproach < vecRel.z) {
+		float t = 1.0f - (flZHi - vecRel.z) / flApproach;
+		t = t > 1.0f ? 1.0f : (t < 0.0f ? 0.0f : t);
+		pVel->z -= t * flStrength;
+	}
+	if (flDLo + flApproach > flLen) {
+		*pVel += vecDir2D * flStrength;
+	}
+	if (flLen > flDHi - flApproach) {
+		*pVel -= vecDir2D * flStrength;
+	}
+	float flLo = -flStep;
+	float flRange = (flStep - flLo) * (1.0f / 32767.0f);
+	Vector vecJitter;
+	vecJitter.x = rand() * flRange + flLo;
+	vecJitter.y = rand() * flRange + flLo;
+	vecJitter.z = rand() * flRange + flLo;
+	*pVel += vecJitter;
+	float flSpeed = VectorNormalize(*pVel);
+	flSpeed = flSpeed + (m_flSpeed738 - flSpeed) * flStep;
+	*pVel *= flSpeed;
+	*pPos += *pVel * flStep;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b97b0 size=0x1c
 void __fastcall sub_100b97b0(char *p)
 {
