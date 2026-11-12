@@ -48021,6 +48021,49 @@ float sub_100c5720(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c5a30 size=0x96
+#include "Vector.h"
+struct mstudiomovement_t
+{
+	int endframe;
+	int motionflags;
+	float v0;
+	float v1;
+	float angle;
+	Vector vector;
+	Vector position;
+};
+
+struct mstudioanimdesc_t
+{
+	char m_pad0[0xc];
+	int numframes;
+	int nummovements;
+	int movementindex;
+	mstudiomovement_t *pMovement(int i) const { return (mstudiomovement_t *)(((char *)this) + movementindex) + i; }
+};
+
+// TARGET: sub_100c5a30
+bool sub_100c5a30(mstudioanimdesc_t *panim, float flCycle, Vector &vecVelocity)
+{
+	float prevframe = 0;
+	float flFrame = flCycle * (panim->numframes - 1);
+	for (int i = 0; i < panim->nummovements; i++)
+	{
+		mstudiomovement_t *pmove = panim->pMovement(i);
+		if (pmove->endframe >= flFrame)
+		{
+			float f = (flFrame - prevframe) / (pmove->endframe - prevframe);
+			float vel = pmove->v0 * (1 - f) + pmove->v1 * f;
+			vel = vel * (pmove->endframe - prevframe) / (panim->numframes - 1);
+			vecVelocity = pmove->vector * vel;
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c5b00 size=0xb1
 #include "Vector.h"
 struct CBoneOwner { int pad[4]; int m_p; };

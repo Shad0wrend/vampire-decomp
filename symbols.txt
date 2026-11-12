@@ -7414,6 +7414,7 @@
 0x1000ae75 func   ?sub_10032c60@CUtlVector32@@QAEXH@Z CUtlVector32::sub_10032c60
 0x1000ae7f func   ?sub_101434b0@@YAXHHPBDHHHHH@Z sub_101434b0
 0x1000ae84 func   ?vfunc362@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc362
+0x1000ae89 func   ?sub_100c5a30@@YA_NPAUmstudioanimdesc_t@@MAAVVector@@@Z sub_100c5a30
 0x1000ae8e func   ?sub_10310b90@CVDmgBlock16_t@@QAEXPBD@Z CVDmgBlock16_t::sub_10310b90
 0x1000ae93 func   ?vfunc362@CCineNPC@@QAE_NH@Z CCineNPC::vfunc362
 0x1000ae98 func   ?vfunc124@CMomentaryRotButton@@UAEHXZ CMomentaryRotButton::vfunc124
