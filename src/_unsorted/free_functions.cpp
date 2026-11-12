@@ -55522,6 +55522,18 @@ void CCollisionProperty::sub_100dc8d0(char bEnable, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc9a0 size=0x36
+#include "CCollisionProperty.h"
+
+Vector &CCollisionProperty::sub_100dc9a0(const Vector &in, Vector &out)
+{
+	out.x = (m_vecMaxs.x - m_vecMins.x) * in.x + m_vecMins.x;
+	out.y = (m_vecMaxs.y - m_vecMins.y) * in.y + m_vecMins.y;
+	out.z = (m_vecMaxs.z - m_vecMins.z) * in.z + m_vecMins.z;
+	return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc9f0 size=0xfa
 #include "CUnknown100dc9f0.h"
 #include "TempVector.h"
