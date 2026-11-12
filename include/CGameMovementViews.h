@@ -27,7 +27,7 @@ struct CMovePlayerView	// CGameMovement::m_pPlayer: the "mv" (CMoveData-like) re
 	Vector m_vec58;		// 0x58: saved around the slot 6 (view-punch) call
 	Vector m_vec64;		// 0x64: copied into +0x58 for a dead / observer player
 	Vector m_vecOrigin;	// 0x70
-	char m_pad007c[0x80 - 0x7c];
+	float m_fl007C;		// 0x7c: the step height accumulated when the player steps up
 	Vector m_vec80;		// 0x80: a velocity-like vector sub_10120ba0 subtracts a scaled amount from
 	Vector m_vecCenter;	// 0x8c: the constraint sphere's center
 	float m_flRadius;	// 0x98
@@ -38,6 +38,8 @@ struct CMovePlayerView	// CGameMovement::m_pPlayer: the "mv" (CMoveData-like) re
 
 	float m_fl00BC;		// 0xbc: frame time stamped by sub_10125db0
 	int m_n00c0;		// 0xc0: tested for zero before the duck trace (sub_10126fd0)
+	char m_pad00c4[0xd0 - 0xc4];
+	char m_bD0;		// 0xd0: when set, the move copies the wish velocity instead of accelerating
 };
 
 struct CMoveFlagsView	// the same object as CMoveDataView, data side

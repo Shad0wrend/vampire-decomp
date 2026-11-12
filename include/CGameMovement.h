@@ -21,7 +21,7 @@ public:
 	virtual void vfunc8();	// slot 8 "AirMove": wish direction from the player's view angles (forward / right flattened, normalised) and the forward / side move, clamped to the max speed, sub_10121000 (AirAccelerate) with the convar at 0x109ef360, then the move data's vector (+0x3b0) is added to the velocity (+0x40) and slot 19(0, 0) runs
 	virtual char vfunc9();	// slot 9 "CanAccelerate"
 	virtual void vfunc10(Vector &wishdir, float wishspeed, float accel);	// slot 10 "Accelerate": when slot 9 allows, adds up to min(frametime * surface friction (+0xa0) * wishspeed * accel, wishspeed - velocity . wishdir) along wishdir to the velocity (the vector at +0x40 of the object at +0x4); nothing when the velocity already reaches wishspeed
-	virtual void slot11();
+	virtual void vfunc11();
 	virtual void vfunc12();	// 0x10121ce0 (vtable slot 12): the per-frame move worker
 	virtual void vfunc13(int);
 	virtual int vfunc14(int type);	// slot 14: maps type 0 to 0x14, 1 to 0x1a, 2 to 0xd and any other to 1
