@@ -66777,6 +66777,105 @@ char sub_100f9460(CBaseEntity **a, CBaseEntity **b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f9530 size=0x1dc
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+#include "ehandle.h"
+#include "Tier1.h"
+#include <string.h>
+
+extern CGlobalEntityList g_106eb5d8;
+bool sub_100f9460(CBaseEntity * const &a, CBaseEntity * const &b, void *pCtx);
+
+// The game's touchlink_t (20 bytes) as Source's touch list reads it.
+struct STouchLink
+{
+	EHANDLE entityTouched;
+	int touchStamp;
+	STouchLink *nextLink;
+	STouchLink *prevLink;
+	int flags;
+};
+
+struct SEntListView
+{
+	STouchLink *sub_1003cd50(int a);	// GetDataObject(TOUCHLINK)
+};
+
+// Source's CSortedEntityList (dlls/entitylist.cpp), the 2003 form: less function + context, no edict count.
+class CSortedEntityList
+{
+public:
+	CSortedEntityList() : m_sortedList(0, 0, sub_100f9460, 0), m_emptyCount(0) {}
+
+	void AddEntityToList(CBaseEntity *pEntity)
+	{
+		if (!pEntity)
+			m_emptyCount++;
+		else
+			m_sortedList.Insert(pEntity);
+	}
+
+	void ReportEntityList()
+	{
+		const char *pLastClass = 0;
+		int count = 0;
+		for (int i = 0; i < m_sortedList.Count(); i++)
+		{
+			CBaseEntity *pEntity = m_sortedList[i];
+			if (!pEntity)
+				continue;
+
+			const char *pClassname = pEntity->sub_1009f200();
+			if (pLastClass)
+			{
+				if (!_strcmpi(pClassname, pLastClass))
+				{
+					count++;
+					continue;
+				}
+				if (count)
+					g_109f3628("Class: %s (%d)\n", pLastClass, count);
+			}
+			pLastClass = pClassname;
+			count = 1;
+		}
+		if (pLastClass && count)
+			g_109f3628("Class: %s (%d)\n", pLastClass, count);
+		if (m_sortedList.Count())
+			g_109f3628("Total %d entities (%d empty)\n", m_sortedList.Count(), m_emptyCount);
+	}
+
+	CUtlSortVector<CBaseEntity *> m_sortedList;
+	int m_emptyCount;
+};
+
+// report_touchlinks
+// TARGET: sub_100f9530
+void sub_100f9530()
+{
+	CSortedEntityList list;
+	CBaseEntity *pEntity = g_106eb5d8.sub_100f7060(0);
+	while (pEntity)
+	{
+		STouchLink *root = ((SEntListView *)pEntity)->sub_1003cd50(1);
+		if (root)
+		{
+			STouchLink *link = root->nextLink;
+			while (link != root)
+			{
+				list.AddEntityToList(link->entityTouched);
+				link = link->nextLink;
+			}
+		}
+		pEntity = g_106eb5d8.sub_100f7060(pEntity);
+	}
+	list.ReportEntityList();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f9790 size=0x8
 struct CUtlVectorBase { int a, b, c, m_Size; void sub_100f9790(); };
 void CUtlVectorBase::sub_100f9790() { m_Size = 0; }
