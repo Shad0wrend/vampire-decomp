@@ -13579,6 +13579,7 @@
 0x10012c56 func   ?vfunc242@CBaseDoor@@UAEHXZ CBaseDoor::vfunc242
 0x10012c5b func   ?vfunc5@CItemGLillyPurse@@QAEPAV1@I@Z CItemGLillyPurse::vfunc5
 0x10012c60 func   ?sub_1036f490@@YADXZ sub_1036f490
+0x10012c65 func   ?RemoveAll@?$CUtlVector@PAVIHandleEntity@@V?$CUtlMemory@PAVIHandleEntity@@@@@@QAEXXZ CUtlVector<IHandleEntity *,CUtlMemory<IHandleEntity *> >::RemoveAll
 0x10012c65 func   ?sub_1003c1c0@@YIXPAH@Z sub_1003c1c0
 0x10012c6a func   ?vfunc111@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc111
 0x10012c6f func   ?vfunc431@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc431
