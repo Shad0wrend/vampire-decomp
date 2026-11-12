@@ -48,6 +48,8 @@ struct CAI_NamedThing	// one of the three global objects an NPC can be bound to 
 class CAI_BaseNPCTroika : public CAI_BaseNPC
 {
 public:
+	virtual void vfunc123();
+public:
 	CAI_BaseNPCTroika *sub_1028d230();
 	void sub_1027c300();
 	bool CalcNextAIThink(float *pOut);	// "CAI_BaseNPCTroika_CalcNextAIThink" (0x10291230, vprof scope string 0x105d8a08 / "Unaccounted" fallback): profiled; returns false when sub_10290700() is false; else sets *pOut to the delay (0.1f by default, up to 4.0f from the sight time at +0x6264 minus 512.0f times 0.0011160715f, clamped to 0.1..4.0, plus a random 0..0.4 unless the time was 4.0), advances +0x6250 by (curtime - +0x6260 if past, else curtime) + delay, stores +0x6260 = +0x6250, and returns true
