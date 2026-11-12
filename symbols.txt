@@ -8321,6 +8321,7 @@
 0x1000c1d5 func   ?sub_10182f10@@YG_NH@Z sub_10182f10
 0x1000c1da func   ?sub_1007dfe0@CUnknown1007dfe0@@QAEXH@Z CUnknown1007dfe0::sub_1007dfe0
 0x1000c1df func   ?vfunc266@CRagdollProp@@UAEXHH@Z CRagdollProp::vfunc266
+0x1000c1e4 func   ?sub_100dc430@CCollisionProperty@@QAEXXZ CCollisionProperty::sub_100dc430
 0x1000c1e9 func   ?sub_101f0d40@CUnknown101f0d40@@QAEXPAH@Z CUnknown101f0d40::sub_101f0d40
 0x1000c1ee func   ?sub_10430470@@YAII@Z sub_10430470
 0x1000c1f3 func   ?sub_104301d0@@YAII@Z sub_104301d0

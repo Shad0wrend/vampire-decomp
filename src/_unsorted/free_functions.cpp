@@ -55513,6 +55513,28 @@ void Rec64::sub_100dc300(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc430 size=0x35
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+
+struct CUntouchView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void SetCheckUntouch(bool b);
+};
+
+void CCollisionProperty::sub_100dc430()
+{
+	if (!IsSolid()) {
+		bool bTrigger = (m_usSolidFlags >> 3) & 1;
+		if (!bTrigger) {
+			if (((CEntityVSlots *)m_pOuter)->slot207())
+				((CUntouchView *)m_pOuter)->SetCheckUntouch(true);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dc480 size=0xa9
 #include "CCollisionProperty.h"
 #include "CGlobalEntityList.h"
