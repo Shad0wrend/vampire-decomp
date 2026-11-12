@@ -1,6 +1,70 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100a1f90 size=0x125
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "datamap.h"
+#include "utlmemory.h"
+#include "utlvector.h"
+#include "CThinkContextsSaveDataOps.h"
+#include "CUtlVectorDataOps.h"
+#include "CThinkSaveViews.h"
+#include "ScopeTrace.h"
+
+struct datamap_t;
+struct CThinkTypeDescView { int pad[4]; short fieldSize; };
+struct CThinkRestoreOwnerView
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9();
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7(); virtual void c8(); virtual void c9();
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6(); virtual void d7(); virtual void d8(); virtual void d9();
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5(); virtual void e6(); virtual void e7(); virtual void e8(); virtual void e9();
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5(); virtual void f6(); virtual void f7(); virtual void f8(); virtual void f9();
+	virtual void g0(); virtual void g1(); virtual void g2(); virtual void g3(); virtual void g4(); virtual void g5(); virtual void g6(); virtual void g7(); virtual void g8(); virtual void g9();
+	virtual void h0(); virtual void h1(); virtual void h2(); virtual void h3(); virtual void h4(); virtual void h5(); virtual void h6(); virtual void h7(); virtual void h8(); virtual void h9();
+	virtual void i0(); virtual void i1();
+	virtual datamap_t *GetDataDescMap();
+};
+struct CThinkRestoreFieldInfo
+{
+	CThinkVec *pField;
+	CThinkRestoreOwnerView *pOwner;
+	CThinkTypeDescView *pTypeDesc;
+};
+struct CThinkRestoreView
+{
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9();
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6();
+	virtual int ReadFunction(datamap_t *pMap, void **ppValue, int count, int nBytesAvailable);
+};
+
+void CThinkContextsSaveDataOps::vfunc1(void *pFieldInfo, void *pRestoreIn)
+{
+	ScopeTrace trace("CThinkContextsSaveDataOps::Restore", g_106b8540);
+	CThinkRestoreFieldInfo *pInfo = (CThinkRestoreFieldInfo *)pFieldInfo;
+	CThinkVec *pUtlVector = pInfo->pField;
+	static CThinkVecOps s_ops;
+	CThinkVecOps *pOps = (CThinkVecOps *)&s_ops;
+	SaveRestoreFieldInfoView vectorFieldInfo = { pUtlVector, 0, 0 };
+	pOps->vfunc1(&vectorFieldInfo, pRestoreIn);
+	CThinkRestoreOwnerView *pOwner = pInfo->pOwner;
+	for (int i = 0; i < pUtlVector->m_nSize; i++)
+	{
+		void *ppV = &pUtlVector->m_pMem[i].m_a;
+		((CThinkRestoreView *)pRestoreIn)->ReadFunction(pOwner->GetDataDescMap(), &ppV, 1, pInfo->pTypeDesc->fieldSize);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2110 size=0x6a
 struct SScope { const char *a; const char *b; const char *c; };
 struct SVec { char pad[0xc]; int count; };
