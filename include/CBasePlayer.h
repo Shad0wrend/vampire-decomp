@@ -182,7 +182,8 @@ public:
 	virtual void vfunc427();	// slot 427: hands the entity of the handle at +0x1538 (null while the dword at +0x153c is -1 or the handle is stale) to sub_10165790
 	CBP_V1(si19)
 	virtual void vfunc429();	// slot 429: stores curtime at +0x1dd4
-	CBP_V1(si21) virtual void vfunc431(); CBP_V1(si23) CBP_V1(si24) CBP_V1(si25) CBP_V1(si26) CBP_V1(si27) CBP_V1(si28)
+	virtual void vfunc430(unsigned char *pvs, int a);	// slot 430 "SetupVisibility" (CServerGameClients::vfunc7)
+	virtual void vfunc431(); CBP_V1(si23) CBP_V1(si24) CBP_V1(si25) CBP_V1(si26) CBP_V1(si27) CBP_V1(si28)
 	virtual void vfunc438(float flArg, int flags);	// slot 438: with flag bit 2 hands the eye position, vfunc145() and flArg to sub_102699e0
 	virtual char vfunc439();
 	virtual void vfunc440(int nUnused, float flThreshold, Vector *pOut);	// slot 440 (+0x6e0): the view-cone aim-point search (fills pOut with the aim point); nUnused is not read, flThreshold is the cosine compared against the normalised direction
