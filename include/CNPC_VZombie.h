@@ -206,7 +206,7 @@ public:
 	virtual void vfunc214_slot();
 	virtual void vfunc215();
 	virtual void vfunc216();
-	virtual void vfunc217_slot();
+	virtual void *vfunc217(int a);
 	virtual void vfunc218_slot();
 	virtual void vfunc219_slot();
 	virtual void vfunc220_slot();
@@ -240,7 +240,7 @@ public:
 	virtual void vfunc248();
 	virtual void vfunc249();
 	virtual void vfunc250();
-	virtual void vfunc251();
+	virtual bool vfunc251();
 	virtual void vfunc252();
 	virtual void vfunc253();
 	virtual void vfunc254();
