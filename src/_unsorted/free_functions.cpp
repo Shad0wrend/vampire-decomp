@@ -202760,6 +202760,72 @@ bool CAI_Navigator::sub_102efd50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102efde0 size=0x104
+#include "CAI_Motor.h"
+#define S1(n) virtual void s##n();
+#define S10(p) S1(p##0) S1(p##1) S1(p##2) S1(p##3) S1(p##4) S1(p##5) S1(p##6) S1(p##7) S1(p##8) S1(p##9)
+#define S100(p) S10(p##0) S10(p##1) S10(p##2) S10(p##3) S10(p##4) S10(p##5) S10(p##6) S10(p##7) S10(p##8) S10(p##9)
+struct V2_102efde0
+{
+	float x, y;
+	V2_102efde0() {}
+	V2_102efde0(const V2_102efde0 &o) { x = o.x; y = o.y; }
+	float Length() const { return FastSqrt(x * x + y * y); }
+	V2_102efde0 &operator/=(float fl) { float oofl = 1.0f / fl; x *= oofl; y *= oofl; return *this; }
+};
+inline float Vector2DNormalize_102efde0(V2_102efde0 &v)
+{
+	float l = v.Length();
+	if (l != 0.0f)
+		v /= l;
+	else
+		v.x = v.y = 0.0f;
+	return l;
+}
+struct MotorView102efde0 { char m_pad[0x3c]; V2_102efde0 m_v; };
+struct CMotorOwner102efde0
+{
+	S100(0) S10(10) S10(11) S10(12) S10(13) S10(14)
+	S1(150) S1(151) S1(152)
+	virtual int slot153();
+	char m_pad[0x5d44 - 4];
+	MotorView102efde0 *m_pMotor;
+};
+struct CMotorHolder102efde0
+{
+	char m_pad[0x94];
+	CMotorOwner102efde0 *m_pOwner;
+	CMotorOwner102efde0 *MyNPCPointer() { return m_pOwner; }
+};
+struct CMotorArg102efde0
+{
+	char m_pad0[0xc];
+	V2_102efde0 m_dir;
+	char m_pad14[0x2c - 0x14];
+	float m_f2c;
+	char m_pad30[0x60 - 0x30];
+	CMotorHolder102efde0 *m_pHolder;
+};
+
+bool __stdcall sub_102efde0(CMotorArg102efde0 *pArg, float flDist)
+{
+	CMotorOwner102efde0 *pBlocker = pArg->m_pHolder ? pArg->m_pHolder->MyNPCPointer() : 0;
+	if (!pBlocker)
+		return false;
+	if (pBlocker->slot153()) {
+		if (flDist > pArg->m_f2c * 0.75)
+			return true;
+		V2_102efde0 vel(pBlocker->m_pMotor->m_v);
+		V2_102efde0 norm(vel);
+		if (Vector2DNormalize_102efde0(norm) == 0.0f)
+			return false;
+		if (norm.x * pArg->m_dir.x + norm.y * pArg->m_dir.y > -0.25)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f02a0 size=0x107
 #include "CAI_BaseNPC.h"
 #include "CAI_DefMovementSink.h"
