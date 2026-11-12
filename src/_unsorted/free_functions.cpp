@@ -167623,6 +167623,27 @@ void CUnit1023dff0::sub_1023dff0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023e0b0 size=0x95
+#include "CUnknown1023e0b0.h"
+#include "inputdata_t.h"
+#include "ConVar.h"
+
+extern ConVar *g_107258dc;
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);
+
+void CUnknown1023e0b0::sub_1023e0b0(inputdata_t *pInput)
+{
+	CUnknown1023e0b0Target *pTarget = sub_1023bd00();
+	if (pTarget) {
+		if (!g_107258dc->vfunc1() && g_107258dc->m_nValue)
+			g_109f3630("CSActs:    %6.1f - Nosferatu tolerant = %s\n", (double)gpGlobals->curtime, pInput->value.Bool() ? "true" : "false");
+		bool &r = pTarget->m_bNosferatuTolerant;
+		r = pInput->value.Bool();
+		pTarget->m_bDirty = true;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023e180 size=0x2a
 char *sub_1000aa0b();
 
