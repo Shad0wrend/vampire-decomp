@@ -9,8 +9,11 @@ class CVModInfo_t;
 class CVTraitEffect_t
 {
 public:
-	char m_pad0000[0x10];	// 0x00: the dependency record
+	int m_nType;	// 0x00
+	const char *m_psz04;	// 0x04
+	char m_pad0008[8];	// 0x08: the rest of the dependency record
 	int m_nKind;	// 0x10: 7 once the cost was loaded
+#define m_n10 m_nKind
 	int m_n14;	// 0x14: the modifier value
 	CVStatCost_t m_cost;	// 0x18, 0x28 bytes
 	int m_nDisplayOverride;	// 0x40
