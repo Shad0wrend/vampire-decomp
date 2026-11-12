@@ -124237,6 +124237,35 @@ float sub_101d2e60(const matrix3x4_t *pMatrix, const Vector *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d2f40 size=0x59
+#include "CAI_Node.h"
+#include "CRotDoor.h"
+#include "VectorHelpers.h"
+#include "Vector.h"
+#define M_PI		3.14159265358979323846
+#define M_PI_F		((float)(M_PI))
+#define DEG2RAD( x  )  ( (float)(x) * (float)(M_PI_F / 180.f) )
+inline void SinCos(float radians, float *sine, float *cosine)
+{
+	__asm {
+		fld dword ptr [radians]
+		fsincos
+		mov edx, dword ptr [cosine]
+		mov eax, dword ptr [sine]
+		fstp dword ptr [edx]
+		fstp dword ptr [eax]
+	}
+}
+Vector sub_101d2f40(float yaw)
+{
+	Vector ret;
+	ret.z = 0;
+	float angle = DEG2RAD( yaw );
+	SinCos( angle, &ret.y, &ret.x );
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d2fc0 size=0x88
 #define Q10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
