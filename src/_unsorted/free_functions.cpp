@@ -249171,6 +249171,140 @@ void CNPC_VWerewolf::sub_103d4d60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d5590 size=0x6b7
+#include "CFlameCluster.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VWerewolf.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "CGlobalEntityList.h"
+#include "Vector.h"
+#include "QAngle.h"
+#include "DebugOverlay.h"
+#include "CAI_Hint.h"
+#include <math.h>
+
+extern CGlobalEntityList g_106eb5d8;
+extern Vector g_1070d1b0;
+extern QAngle g_1070d9d0;
+extern float g_104454c4;
+extern char g_10538764[];
+extern char g_1060a514[];
+extern "C" void *__cdecl __RTDynamicCast(void *inptr, long vfDelta, void *pSrcType, void *pDstType, int isReference);
+Vector *sub_102d6100(int hull);
+Vector *sub_102d6120(int hull);
+void sub_10142aa0(const Vector *pOrigin, const Vector *pMins, const Vector *pMaxs, int r, int g, int b, int a, float flDuration);
+void sub_101cee20(float flRadius, Vector vecPos, QAngle angles, int a);
+void sub_10143d80(const Vector *pPos, float flRadius, int r, int g, int b, int a, float flDuration);
+
+struct CNPC_VWerewolfHintView : CNPC_VWerewolf
+{
+	Vector sub_103d6770(void *pHint);
+};
+
+void CNPC_VWerewolf::sub_103d5590(void *pHint)
+{
+	ScopeTrace scope("CNPC_VWerewolf::DrawDebugHintInfo", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!pHint)
+		return;
+
+	const char *pszTarget = 0;
+	const char *pszTarget2 = 0;
+	QAngle angHint = g_1070d9d0;
+	Vector vecHint = g_1070d1b0;
+	Vector vecTarget = g_1070d1b0;
+	Vector vecTarget2 = g_1070d1b0;
+	Vector vecGround;
+	Vector vecPos;
+
+	vecHint = *((CEntityVSlots *)pHint)->slot217();
+	angHint = *(QAngle *)((CEntityVSlots *)pHint)->slot219();
+	const char *pszHint = ((CBaseEntity *)pHint)->sub_100ab4f0();
+	vecGround = ((CNPC_VWerewolfHintView *)this)->sub_103d6770(pHint);
+
+	bool bIsHint = false;
+	CBaseEntity *pTarget = g_106eb5d8.sub_100f7770(0, ((CAI_Hint *)pHint)->m_pszTarget468 ? ((CAI_Hint *)pHint)->m_pszTarget468 : g_106b8540, 0, 0);
+	if (pTarget)
+	{
+		vecTarget = *((CEntityVSlots *)pTarget)->slot217();
+		((CEntityVSlots *)pTarget)->slot219();
+		pszTarget = pTarget->sub_100ab4f0();
+		CAI_Hint *pTargetHint = (CAI_Hint *)__RTDynamicCast(pTarget, 0, g_10538764, g_1060a514, 0);
+		if (pTargetHint)
+		{
+			bIsHint = true;
+			((CNPC_VWerewolfHintView *)this)->sub_103d6770(pHint);
+			CBaseEntity *pTarget2 = g_106eb5d8.sub_100f7770(0, pTargetHint->m_pszTarget468 ? pTargetHint->m_pszTarget468 : g_106b8540, 0, 0);
+			if (pTarget2)
+			{
+				vecTarget2 = *((CEntityVSlots *)pTarget2)->slot217();
+				((CEntityVSlots *)pTarget2)->slot219();
+				pszTarget2 = pTarget2->sub_100ab4f0();
+				sub_103d6650(pHint);
+			}
+		}
+		else
+		{
+			sub_103d6650(pHint);
+		}
+	}
+
+	Vector vecMins = *sub_102d6100(m_n1568);
+	Vector vecMaxs = *sub_102d6120(m_n1568);
+	vecMaxs.z = vecMins.z + 16.0f;
+	int nRadius = vecMaxs.x * 0.5f;
+
+	float flFrac = gpGlobals->curtime - (int)gpGlobals->curtime;
+	double flPulse = (sin(gpGlobals->curtime) + 1.0) * 125.0;
+	int r = flPulse;
+	int g = (cos(gpGlobals->curtime) + 1.0) * 125.0;
+	int b = 250.0 - flPulse;
+
+	Vector vecBoxMins(-8, -8, -8);
+	Vector vecBoxMaxs(8, 8, 8);
+
+	if (vecHint.Length() != g_104454c4)
+	{
+		sub_10142aa0(&vecHint, &vecMins, &vecMaxs, 0, 200, 200, 100, 0);
+		sub_10143710(&vecHint.x, pszHint, 0, 0);
+		sub_101cee20(nRadius, vecGround, angHint, 0);
+	}
+	if (vecTarget.Length() != g_104454c4)
+	{
+		if (bIsHint)
+			sub_10142aa0(&vecTarget, &vecMins, &vecMaxs, 0, 200, 200, 100, 0);
+		else
+			sub_10142aa0(&vecTarget, &vecBoxMins, &vecBoxMaxs, 0, 255, 0, 0, 0);
+		sub_10143710(&vecTarget.x, pszTarget, 0, 0);
+	}
+	if (vecTarget2.Length() != g_104454c4)
+	{
+		sub_10142aa0(&vecTarget2, &vecBoxMins, &vecBoxMaxs, 0, 255, 0, 0, 0);
+		sub_10143710(&vecTarget2.x, pszTarget2, 0, 0);
+	}
+	if ((vecHint * vecTarget).Length() != g_104454c4)
+	{
+		VectorLerp(vecHint, vecTarget, flFrac, vecPos);
+		sub_10143d80(&vecPos, 16.0f, r, g, b, 1, 0);
+		sub_10142e90(&vecHint, &vecTarget, 200, 200, 0, 1, 0);
+	}
+	if ((vecTarget * vecTarget2).Length() != g_104454c4)
+	{
+		VectorLerp(vecTarget, vecTarget2, flFrac, vecPos);
+		sub_10143d80(&vecPos, 16.0f, r, g, b, 1, 0);
+		sub_10142e90(&vecTarget, &vecTarget2, 200, 200, 0, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d6280 size=0xce
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
