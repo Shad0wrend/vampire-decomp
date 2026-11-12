@@ -8380,6 +8380,7 @@
 0x1000bf9b func   ?vfunc495@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc495
 0x1000bfa0 func   ?sub_1033b7c0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_1033b7c0
 0x1000bfa5 func   ?vfunc80@CCameraAnimated@@QAEHXZ CCameraAnimated::vfunc80
+0x1000bfaa func   ?sub_102b7110@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_102b7110
 0x1000bfaf func   ?vfunc1@CTESmoke@@UAEHXZ CTESmoke::vfunc1
 0x1000bfb4 func   ?sub_101a67a0@@YGXH@Z sub_101a67a0
 0x1000bfb9 func   ?vfunc619@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::vfunc619

@@ -197542,6 +197542,66 @@ void CAI_BaseNPCTroika::sub_102b6890(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b7110 size=0x1df
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Hint.h"
+#include "CEHandleGet.h"
+#include "CBaseEntity.h"
+
+struct CHintView : CAI_Hint
+{
+	char sub_102d1350(CAI_BaseNPCTroika *p);
+	float sub_102d12e0();
+};
+struct CBoxView : CBaseEntity
+{
+	void sub_1009b060(const Vector &ext);
+};
+struct CSlot16View
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15();
+	virtual Vector vfunc16();
+};
+CAI_Hint *sub_102d2980(CAI_BaseNPCTroika *, int, int, float, int, int);
+Vector sub_101d2f40(float);
+
+bool CAI_BaseNPCTroika::sub_102b7110(int a)
+{
+	m_bForceCoverLOSCheck = 1;
+	m_pHintNode = sub_102d2980(this, 8, a, vfunc550(), 0, 0);
+	m_bForceCoverLOSCheck = 0;
+	if (m_b6435 && !m_pHintNode)
+		m_pHintNode = sub_102d2980(this, 8, a, vfunc550(), 0, 0);
+	if (m_pHintNode) {
+		m_iPeekOutCount = 0;
+		m_iFailedCoverLOSChecks = 0;
+		if (!((CHintView *)m_pHintNode)->sub_102d1350(this)) {
+			m_pHintNode = 0;
+		} else if (m_pHintNode->m_n5dc == 0x27d8) {
+			CAI_Hint *pOther = (CAI_Hint *)EHandle_Get(m_h6448);
+			Vector dir;
+			dir = *pOther->vfunc217() - *m_pHintNode->vfunc217();
+			VectorNormalize(dir);
+			Vector right;
+			right = sub_101d2f40(((CHintView *)m_pHintNode)->sub_102d12e0());
+			if (dir.x * right.y - dir.y * right.x > 0.0f)
+				m_bLeaningLeft = 0;
+			else
+				m_bLeaningLeft = 1;
+		}
+	}
+	if (m_pHintNode) {
+		*(Vector *)((char *)this + 0x65d0) = ((CSlot16View *)this)->vfunc16();
+		((CBoxView *)this)->sub_1009b060(Vector(40.0f, 40.0f, 80.0f));
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b7f40 size=0x5d
 #include "CAI_BaseNPCTroika.h"
 #include "CStatusFlagList.h"
