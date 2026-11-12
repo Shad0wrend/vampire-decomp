@@ -2069,6 +2069,44 @@ void CBaseEntity::vfunc125()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a0130 size=0x123
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+void sub_101434b0(int a, int b, const char *pszText, int c, int r, int g, int bl, int al);
+struct CBaseEntityUnit : CBaseEntity
+{
+	void sub_1009fe40();
+	void sub_1009f4e0();
+	void sub_1009f850();
+	void sub_1009fb80();
+};
+static inline int ENTINDEX_X(int pEdict) { return engine->vfunc35(pEdict); }
+struct EntV : CBaseEntity { int entindex() { return ENTINDEX_X(m_pEdict2e0); } };
+// TARGET: CBaseEntity::vfunc123
+void CBaseEntity::vfunc123()
+{
+	ScopeTrace trace("CBaseEntity::DrawDebugGeometryOverlays", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	((CBaseEntityUnit *)this)->sub_1009fe40();
+	vfunc124();
+	if (m_bDebugOverlays224 & 2) {
+		sub_101434b0(((EntV *)this)->entindex(), 0, sub_1000b5cd(), 0, 0xff, 0xff, 0xff, 0xff);
+	}
+	if (m_bDebugOverlays224 & 4)
+		((CBaseEntityUnit *)this)->sub_1009f4e0();
+	if (m_bDebugOverlays224 & 0x20)
+		((CBaseEntityUnit *)this)->sub_1009f850();
+	if (m_bDebugOverlays224 & 8)
+		((CBaseEntityUnit *)this)->sub_1009fb80();
+	if (m_bDebugOverlays224 & 0x40)
+		sub_1009fa60();
+	if (m_bDebugOverlays224 & 0x80)
+		vfunc125();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a02b0 size=0x115
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
