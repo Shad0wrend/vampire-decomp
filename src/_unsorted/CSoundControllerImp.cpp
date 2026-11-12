@@ -80,6 +80,137 @@ void CSoundControllerImp::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc8e0 size=0x18a
+#include "CVTraitEffect_t.h"
+#include "utlrbtree.h"
+#include "CSoundControllerImp.h"
+#include "CUnknown101bc140.h"
+
+struct CSoundTimeView101bc8e0
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual float vfunc9();
+};
+extern CSoundTimeView101bc8e0 *g_10566258;
+
+struct SoundCommand_t
+{
+	CUnknown101bc140 *m_pPatch;
+	float m_time;
+	int m_n8;
+	int m_command;
+	int m_n10;
+	int m_n14;
+};
+struct CUnk1013dce0 { void sub_1013dce0(SoundCommand_t *p); };
+extern CUnk1013dce0 g_1072c4b0;
+void __fastcall sub_101bc000(int *p);
+
+typedef bool (__cdecl *SoundCmdLess_t)(SoundCommand_t *const &, SoundCommand_t *const &);
+
+struct CSoundCmdQueue101bc8e0
+{
+	SoundCommand_t **m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_Size;
+	SoundCommand_t **m_pElements;
+	SoundCmdLess_t m_LessFunc;
+
+	int Count() const { return m_Size; }
+	SoundCommand_t *ElementAtHead() const { return m_pMemory[0]; }
+	void Swap(int a, int b) { ((CUtlVector4 *)this)->sub_101bdde0(a, b); }
+	void FastRemove(int elem)
+	{
+		if (m_Size > 0)
+		{
+			memmove(&m_pMemory[elem], &m_pMemory[m_Size - 1], sizeof(SoundCommand_t *));
+			--m_Size;
+		}
+	}
+	void RemoveAtHead()
+	{
+		FastRemove(0);
+		int index = 0;
+		int count = Count();
+		if (!count)
+			return;
+		int half = count / 2;
+		int larger = index;
+		while (index < half)
+		{
+			int child = ((index + 1) * 2) - 1;
+			if (child < count)
+			{
+				if (m_LessFunc(m_pMemory[index], m_pMemory[child]))
+					larger = child;
+			}
+			child++;
+			if (child < count)
+			{
+				if (m_LessFunc(m_pMemory[larger], m_pMemory[child]))
+					larger = child;
+			}
+			if (larger == index)
+				break;
+			Swap(index, larger);
+			index = larger;
+		}
+	}
+};
+
+struct CSoundCtlView101bc8e0 : CSoundControllerImp
+{
+	void sub_101bc540(SoundCommand_t *p);
+	CSoundCmdQueue101bc8e0 &CommandList() { return *(CSoundCmdQueue101bc8e0 *)&m_Second20; }
+	void ProcessCommands(float time)
+	{
+		while (CommandList().Count())
+		{
+			SoundCommand_t *pCmd = CommandList().ElementAtHead();
+			if (time >= pCmd->m_time)
+			{
+				CommandList().RemoveAtHead();
+				sub_101bc540(pCmd);
+				g_1072c4b0.sub_1013dce0(pCmd);
+			}
+			else
+			{
+				break;
+			}
+		}
+	}
+};
+
+void CSoundControllerImp::vfunc1()
+{
+	float time = g_10566258->vfunc9();
+	float deltaTime = time - m_flLastTime;
+	if (deltaTime < 0)
+		deltaTime = 0;
+	m_flLastTime = time;
+
+	((CSoundCtlView101bc8e0 *)this)->ProcessCommands(time);
+
+	int i = m_Sounds.m_size - 1;
+	while (i >= 0)
+	{
+		CUnknown101bc140 *pNode = ((CUnknown101bc140 **)m_Sounds.m_pMemory)[i];
+		if (!pNode->sub_101bbde0(time, deltaTime))
+		{
+			sub_101bc000((int *)pNode);
+			if (m_Sounds.m_size > 0)
+			{
+				memmove(&m_Sounds.m_pMemory[i], &m_Sounds.m_pMemory[m_Sounds.m_size - 1], 4);
+				--m_Sounds.m_size;
+			}
+		}
+		i--;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bd180 size=0x28
 #include "CSoundControllerImp.h"
 #include "CUnknown101bbd10.h"
