@@ -189160,6 +189160,64 @@ bool CAI_BaseNPCTroikaUnit6120::sub_102b6120(Vector *pPos, char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b62e0 size=0x2bb
+#include "CBaseEntity.h"
+#include "CAI_BaseNPC.h"
+#include "Vector.h"
+#include "UTIL_Trace.h"
+#include "CGameTrace.h"
+
+#define NV10(n) virtual void v##n##0(); virtual void v##n##1(); virtual void v##n##2(); virtual void v##n##3(); virtual void v##n##4(); virtual void v##n##5(); virtual void v##n##6(); virtual void v##n##7(); virtual void v##n##8(); virtual void v##n##9();
+
+struct CNpcLosView
+{
+	NV10(0) NV10(1) NV10(2) NV10(3) NV10(4) NV10(5) NV10(6) NV10(7) NV10(8) NV10(9)
+	NV10(10) NV10(11) NV10(12) NV10(13) NV10(14) NV10(15)
+	virtual void v160(); virtual void v161(); virtual void v162(); virtual void v163(); virtual void v164(); virtual void v165(); virtual void v166();
+	virtual CNpcLosView *GetEnemy();	// 167
+	virtual void v168(); virtual void v169();
+	NV10(17) NV10(18)
+	virtual void v190(); virtual void v191();
+	virtual Vector WorldSpaceCenter();	// 192
+	virtual void v193(); virtual void v194(); virtual void v195(); virtual void v196(); virtual void v197(); virtual void v198(); virtual void v199();
+	NV10(20)
+	virtual void v210(); virtual void v211(); virtual void v212(); virtual void v213(); virtual void v214(); virtual void v215(); virtual void v216();
+	virtual const Vector &GetAbsOrigin();	// 217
+};
+
+inline bool DidHitX(const CGameTrace &t) { return t.m_fraction < 1.0f || t.m_allsolid || t.m_startsolid; }
+// TARGET: CAI_BaseNPC::sub_102b62e0
+bool CAI_BaseNPC::sub_102b62e0(CBaseEntity *pOtherEnt)
+{
+	CNpcLosView *pOther = (CNpcLosView *)pOtherEnt;
+	if (!pOther)
+		return false;
+	CNpcLosView *self = (CNpcLosView *)this;
+	CNpcLosView *pEnemy = self->GetEnemy();
+	if (!pEnemy)
+		return false;
+
+	Vector vecToOther = pOther->GetAbsOrigin() - self->GetAbsOrigin();
+	Vector vecToEnemy = pEnemy->GetAbsOrigin() - pOther->GetAbsOrigin();
+	VectorNormalize(vecToOther);
+	VectorNormalize(vecToEnemy);
+	if (vecToEnemy.x * vecToOther.x + vecToEnemy.y * vecToOther.y <= 0.9848077f)
+		return false;
+
+	const Vector &vecOrigin = pOther->GetAbsOrigin();
+	Vector vecStart;
+	vecStart.x = vecOrigin.x;
+	vecStart.y = vecOrigin.y;
+	vecStart.z = vecOrigin.z + 8.0f;
+	Vector vecEnd = pEnemy->WorldSpaceCenter();
+	CGameTrace tr;
+	UTIL_TraceLine(vecStart, vecEnd, 0x200400b, (CBaseEntity *)this, 0, &tr);
+	if (DidHitX(tr))
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b6650 size=0x1a9
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"

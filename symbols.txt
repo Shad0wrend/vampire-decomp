@@ -3016,6 +3016,7 @@
 0x10005051 func   ?sub_10088ef0@@YAXXZ sub_10088ef0
 0x10005056 func   ?sub_101ca510@CTriggerUnit101ca510@@QAEXPAVCBaseEntity@@@Z CTriggerUnit101ca510::sub_101ca510
 0x10005060 func   ?vfunc490@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc490
+0x10005065 func   ?sub_102b62e0@CAI_BaseNPC@@QAE_NPAVCBaseEntity@@@Z CAI_BaseNPC::sub_102b62e0
 0x1000506a func   ?vfunc484@CAI_ExpressiveNPC@@QAEHPBDMMHH@Z CAI_ExpressiveNPC::vfunc484
 0x1000506f func   ?vfunc546@CNPC_VSabbatLeader@@QAEHH@Z CNPC_VSabbatLeader::vfunc546
 0x10005074 func   ?vfunc5@CSun@@QAEPAV1@I@Z CSun::vfunc5
