@@ -183210,6 +183210,44 @@ void CAI_BaseNPC::sub_1028e980(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028ea60 size=0x9a
+#include "CAI_BaseNPCTroika.h"
+
+unsigned int sub_10009408(int);
+
+struct CRec6360
+{
+	CRec6360() {}
+	CRec6360(unsigned int v) { m_hash = (((v & 0x68d8635) ^ 0xae8746f) + 0xffa91d8 & 0x197279ca) ^ v ^ 0xa641cacd; }
+	CRec6360 &operator=(const CRec6360 &o) { m_hash = o.m_hash; m_b1 = o.m_b1; m_b0 = o.m_b0; return *this; }
+	char m_b0;
+	char m_b1;
+	unsigned int m_hash;
+};
+
+struct CTroikaRec6360View
+{
+	char m_pad0000[0x6360];
+	CRec6360 m_rec;
+	char m_pad6368[0x6380 - 0x6368];
+	Vector m_vecPos;
+	EHANDLE m_hEnt;
+};
+
+void CAI_BaseNPCTroika::sub_1028ea60(int seed, const float *pos, void *pEnt)
+{
+	CTroikaRec6360View *p = (CTroikaRec6360View *)this;
+	p->m_rec = CRec6360(sub_10009408(seed));
+	p->m_vecPos.x = pos[0];
+	p->m_vecPos.y = pos[1];
+	p->m_vecPos.z = pos[2];
+	if (pEnt)
+		p->m_hEnt = (CBaseEntity *)pEnt;
+	else
+		p->m_hEnt = (CBaseEntity *)0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028eb30 size=0x66
 struct Vec3 { int x, y, z; };
 struct HandleObj {
