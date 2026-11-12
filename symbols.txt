@@ -13635,6 +13635,7 @@
 0x100131ec func   ?vfunc298@CBaseCombatWeapon@@UAEXPAVCBaseEntity@@H@Z CBaseCombatWeapon::vfunc298
 0x100131f1 func   ?vfunc473@CNPC_VTest@@UAEHXZ CNPC_VTest::vfunc473
 0x100131f6 func   ?sub_101dff00@CUnknown101dff00@@QAEXXZ CUnknown101dff00::sub_101dff00
+0x100131fb func   ?sub_103ea7e0@CWeaponMelee@@QAEHHHHH@Z CWeaponMelee::sub_103ea7e0
 0x10013200 func   ?sub_10315f60@@YIDPAUCSquadView@@HPAUCSquadNpcView@@@Z sub_10315f60
 0x10013205 func   ?vfunc250@CBaseDoor@@QAEXXZ CBaseDoor::vfunc250
 0x1001320a func   ?sub_1009d760@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d760

@@ -255157,6 +255157,117 @@ char sub_103ea4d0(CBaseEntity *pSelf, CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ea7e0 size=0x368
+#include "CVTraitEffect_t.h"
+#include "vampire.h"
+#include "CWeaponMelee.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
+#include "CUnknown10204e90.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+
+#pragma pack(push, 1)
+struct MeleeSeqEventView
+{
+	float m_flStart;
+	float m_f04;
+	float m_f08;
+	float m_flEnd;
+	float m_f10;
+	float m_f14;
+};
+
+struct MeleeSeqDescView
+{
+	char m_pad0000[0x10];
+	int m_n10;
+	char m_pad0014[0x2bc - 0x14];
+	int m_nEvents2bc;
+	int m_nEventOffset2c0;
+	int m_n2c4;
+	char m_pad02c8[4];
+	float m_flMin2cc;
+	float m_flMax2d0;
+
+	MeleeSeqEventView *GetEvent(int i) { return (MeleeSeqEventView *)((char *)this + m_nEventOffset2c0) + i; }
+};
+#pragma pack(pop)
+
+// TARGET: CWeaponMelee::sub_103ea7e0
+int CWeaponMelee::sub_103ea7e0(int kind, int a, int b, int c)
+{
+	char weights[0x2000];
+	int seqs[2048];
+	CAI_BaseNPCTroika *pOwner = (CAI_BaseNPCTroika *)sub_10252240();
+	if (!pOwner)
+		return 0;
+	CBaseAnimating *pAnim = (CBaseAnimating *)pOwner;
+	if (!pAnim->sub_100952d0(-1))
+		return 0;
+	int translated = ((CEntityVSlots *)this)->slot361(kind);
+	int act = ((CEntityVSlots *)pOwner)->slot376(translated);
+	CBaseEntity *pTarget;
+	if (a == 0)
+		pTarget = 0;
+	else
+		pTarget = (CBaseEntity *)((CBaseEntity *)a)->m_p9c;
+	char flag = m_flTimes730[0] < gpGlobals->curtime && m_flTimes730[1] < gpGlobals->curtime && ((CBaseCombatCharacter *)pOwner)->m_flNextAttack1564 < gpGlobals->curtime;
+	if (flag && pTarget)
+		flag = ((CEntityVSlots *)pTarget)->slot327();
+	if (*(float *)&b > 0.7 && pTarget && flag) {
+		int out = -1;
+		if (((CEntityVSlots *)pOwner)->slot331((CEntityVSlots *)this, (CEntityVSlots *)pTarget, act, &out) && out >= 0)
+			return 0x51;
+	}
+	float flMin = 100000.0f;
+	float flMax = -100000.0f;
+	float flSum = 0.0f;
+	int nCount = 0;
+	int idx = *sub_102517e0();
+	int nSeq = ((CUnknown10204e90 *)((char *)this + idx * 0x44 + 0x7a0))->sub_10204900(pOwner);
+	int n = pAnim->sub_1008dac0(act, (char *)seqs, weights, nSeq);
+	if (n >= 1) {
+		for (int i = 0; i < n; i++) {
+			MeleeSeqDescView *d = (MeleeSeqDescView *)pAnim->sub_1008d990(seqs[i]);
+			if ((pTarget || d->m_n10 >= 1) && d->m_n2c4 >= 1) {
+				if (d->m_flMin2cc < flMin)
+					flMin = (float)(d->m_flMin2cc * 1.0);
+				if (d->m_flMax2d0 > flMax)
+					flMax = (float)(d->m_flMax2d0 * 1.0);
+				for (int j = 0; j < d->m_nEvents2bc; j++) {
+					flSum += (d->GetEvent(j)->m_flEnd + d->GetEvent(j)->m_flStart) * 0.5f;
+					nCount++;
+				}
+			}
+		}
+		if (nCount == 0)
+			return 0;
+		flSum = flSum / nCount;
+		if (flSum > flMax)
+			flSum = flMax;
+		else if (flSum < flMin)
+			flSum = flMin;
+		float flLimit = flMax * 1.2f;
+		if (256.0f > flLimit)
+			flLimit = 256.0f;
+		float flC = *(float *)&c;
+		if (flC > flLimit)
+			return 9;
+		if (flC > flMax)
+			return 0x60;
+		if (*(float *)&b < 0.7)
+			return 0x61;
+		if (flC < flMin)
+			return 0x5f;
+		if (pTarget && flag)
+			return (flC < flSum * 0.25) ? 0x5f : 0x60;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eb0b0 size=0x72
 #include "SendProp.h"
 
