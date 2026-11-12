@@ -215871,6 +215871,136 @@ CBitString *CBitString::sub_102fe9a0(int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fef30 size=0x3ba
+#include "CHL2_Player.h"
+#include "CAI_Pathfinder.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_Navigator.h"
+#include "CAI_Waypoint.h"
+#include "CBitString.h"
+#include "CPairFields102dda40.h"
+#include "Vector.h"
+#include <malloc.h>
+
+struct CVarBitVecA : public CBitString
+{
+	CVarBitVecA(int nBits) { sub_102fc910(nBits); }
+	~CVarBitVecA() { sub_100bf6a0(); }
+
+	unsigned int GetEndMask() const { return ~g_1055b298[m_nBits % 32]; }
+	bool IsAllClear()
+	{
+		m_pData[m_nDwords - 1] &= GetEndMask();
+		for (int i = m_nDwords - 1; i >= 0; i--)
+		{
+			if (m_pData[i] != 0)
+				return false;
+		}
+		return true;
+	}
+	bool IsBitSet(int bitNum) const
+	{
+		int mask = 1 << (bitNum & 31);
+		int iInt = bitNum >> 5;
+		return (m_pData[iInt] & mask) != 0;
+	}
+	void Set(int bitNum) { m_pData[bitNum >> 5] |= 1 << (bitNum & 31); }
+	void Clear(int bitNum) { m_pData[bitNum >> 5] &= ~(1 << (bitNum & 31)); }
+};
+
+struct CAI_NodeA
+{
+	Vector sub_102fb0d0(int hull);	// GetPosition
+};
+
+struct CAI_NavigatorA
+{
+	float sub_102f1860(int moveType, const Vector &r1, const Vector &r2);	// MovementCost
+};
+
+// TARGET: CAI_Pathfinder::sub_102fef30
+CAI_Waypoint *CAI_Pathfinder::sub_102fef30(int startID, int endID, int *pOut)
+{
+	CAI_NavProviderList *pNetwork = ((CAI_Navigator *)((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder)->m_pProviders;
+	if (!pNetwork->m_nCount)
+		return 0;
+
+	int nNodes = pNetwork->m_nCount;
+	CAI_NodeA **pAInode = (CAI_NodeA **)pNetwork->m_ppItems;
+
+	CVarBitVecA openBS(nNodes);
+	CVarBitVecA closeBS(nNodes);
+
+	float *nodeG = (float *)_alloca(nNodes * sizeof(float));
+	float *nodeH = (float *)_alloca(nNodes * sizeof(float));
+	float *nodeF = (float *)_alloca(nNodes * sizeof(float));
+	int *nodeP = (int *)_alloca(nNodes * sizeof(int));
+
+	for (int node = 0; node < nNodes; node++)
+	{
+		nodeG[node] = 3.4028235e38f;
+		nodeP[node] = -1;
+	}
+
+	nodeG[startID] = 0;
+
+	int hull = m_unk08;
+	nodeH[startID] = 0.1 * (pAInode[startID]->sub_102fb0d0(hull) - pAInode[endID]->sub_102fb0d0(hull)).Length();
+	nodeF[startID] = nodeG[startID] + nodeH[startID];
+
+	openBS.Set(startID);
+	closeBS.Set(startID);
+
+	while (!openBS.IsAllClear())
+	{
+		int smallestID = sub_102f3270(&openBS, nodeF, nNodes);
+
+		openBS.Clear(smallestID);
+
+		CAI_NavProvider *pSmallestNode = (CAI_NavProvider *)pAInode[smallestID];
+
+		if (smallestID == endID)
+		{
+			if (pOut)
+				*pOut = endID;
+			return sub_102fcbd0(&nodeP[0], endID);
+		}
+
+		for (int link = 0; link < pSmallestNode->m_nEntries; link++)
+		{
+			CPairFields102dda40 *nodeLink = (CPairFields102dda40 *)pSmallestNode->m_ppEntries[link];
+
+			if (!sub_102ff960(nodeLink, smallestID))
+				continue;
+
+			hull = m_unk08;
+			int moveType = nodeLink->m_iAcceptedMoveTypes[hull] & ((CAI_BaseNPC *)m_pOuter)->vfunc513();
+			int testID = nodeLink->sub_102dda40(smallestID);
+
+			hull = m_unk08;
+			CAI_NavigatorA *pNav = (CAI_NavigatorA *)((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder;
+			float dist = pNav->sub_102f1860(moveType, ((CAI_NodeA *)pSmallestNode)->sub_102fb0d0(hull), pAInode[testID]->sub_102fb0d0(hull));
+
+			float new_g = nodeG[smallestID] + dist;
+
+			if (!closeBS.IsBitSet(testID) || (new_g < nodeG[testID]))
+			{
+				nodeP[testID] = smallestID;
+				nodeG[testID] = new_g;
+				hull = m_unk08;
+				nodeH[testID] = (pAInode[testID]->sub_102fb0d0(hull) - pAInode[endID]->sub_102fb0d0(hull)).Length();
+				nodeF[testID] = nodeG[testID] + nodeH[testID];
+
+				closeBS.Set(testID);
+				openBS.Set(testID);
+			}
+		}
+	}
+
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ff3e0 size=0x460
 #include "CAI_Waypoint.h"
 #include "CAI_Pathfinder.h"
