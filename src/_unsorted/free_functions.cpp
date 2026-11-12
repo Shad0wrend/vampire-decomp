@@ -174197,6 +174197,164 @@ int CFindList_1024b590::sub_1024b590(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024b5e0 size=0x1c3
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include <string.h>
+#include "CUnknown1024b370.h"
+#include "CUtlRBTree12.h"
+#include "UtlVec8.h"
+
+extern "C" void *__cdecl malloc(unsigned int);
+
+struct StringPool_t
+{
+	int m_TotalLen;
+	int m_SpaceUsed;
+	char m_Data[1];
+};
+
+struct CStringPoolIndex
+{
+	unsigned short m_iPool;
+	unsigned short m_iOffset;
+};
+
+struct CStringPoolVec : UtlVec8
+{
+	void sub_1024c050(int num);	// CUtlMemory::Grow
+
+	StringPool_t *&Element(int i) { return ((StringPool_t **)m_pMemory)[i]; }
+	void GrowVector(int num = 1)
+	{
+		if (m_Size + num > m_allocationCount)
+			sub_1024c050(m_Size + num - m_allocationCount);
+		m_Size += num;
+		m_pElements = (UtlVec8Elem *)m_pMemory;
+	}
+	int InsertBefore(int elem, StringPool_t *const &src)
+	{
+		GrowVector();
+		sub_1024c000(elem, 1);
+		StringPool_t **p = &Element(elem);
+		if (p)
+			*p = src;
+		return elem;
+	}
+	int AddToTail(StringPool_t *const &src) { return InsertBefore(m_Size, src); }
+};
+
+struct CUtlSymbolTableView : CUtlRBTree12
+{
+	CStringPoolVec m_StringPools;
+
+	int sub_1024b590(int len);	// FindPoolWithSpace
+	void sub_1024bb20(unsigned short i, unsigned short parent, bool leftchild);	// LinkToParent
+	const Links_t &sub_1024bf80(unsigned short i) const;	// Links
+
+	CStringPoolIndex &Element(unsigned short i) { return *(CStringPoolIndex *)m_pElements[i].m_Data; }
+	void FindInsertionPosition(const CStringPoolIndex &insert, unsigned short &parent, bool &leftchild)
+	{
+		unsigned short current = m_Root;
+		parent = InvalidIndex();
+		leftchild = false;
+		while (current != InvalidIndex())
+		{
+			parent = current;
+			if (m_LessFunc(&insert, &Element(current)))
+			{
+				leftchild = true;
+				current = sub_1024bf80(current).m_Left;
+			}
+			else
+			{
+				leftchild = false;
+				current = sub_1024bf80(current).m_Right;
+			}
+		}
+	}
+	unsigned short InsertAt(unsigned short parent, bool leftchild)
+	{
+		unsigned short i = sub_1024b9e0();
+		sub_1024bb20(i, parent, leftchild);
+		++m_NumElements;
+		return i;
+	}
+	unsigned short Insert(const CStringPoolIndex &insert)
+	{
+		unsigned short parent;
+		bool leftchild;
+		FindInsertionPosition(insert, parent, leftchild);
+		unsigned short newNode = InsertAt(parent, leftchild);
+		CStringPoolIndex *p = &Element(newNode);
+		if (p)
+			*p = insert;
+		return newNode;
+	}
+};
+
+struct SymPOD
+{
+	unsigned short m_Id;
+	SymPOD() : m_Id(0xffff) {}
+	SymPOD(unsigned short id) : m_Id(id) {}
+	bool IsValid() const { return m_Id != 0xffff; }
+};
+struct SymTableFind
+{
+	SymPOD sub_1024b400(const char *pString);
+};
+
+struct SymB : CUnknown1024b370Symbol
+{
+	SymB(unsigned short id) { m_Id = id; }
+};
+
+CUnknown1024b370Symbol CUnknown1024b370::sub_1024b5e0(const char *pString)
+{
+	CUtlSymbolTableView *pTable = (CUtlSymbolTableView *)this;
+	if (!pString)
+		return SymB(0xffff);
+
+	SymPOD id = ((SymTableFind *)this)->sub_1024b400(pString);
+	if (id.IsValid())
+		return SymB(id.m_Id);
+
+	int len = strlen(pString) + 1;
+
+	int iPool = pTable->sub_1024b590(len);
+	if (iPool == -1)
+	{
+		int newPoolSize = len > 0x800 ? len : 0x800;
+		StringPool_t *pPool = (StringPool_t *)malloc(sizeof(StringPool_t) + newPoolSize - 1);
+		pPool->m_TotalLen = newPoolSize;
+		pPool->m_SpaceUsed = 0;
+		iPool = pTable->m_StringPools.AddToTail(pPool);
+	}
+
+	StringPool_t *pPool = pTable->m_StringPools.Element(iPool);
+	unsigned short iStringOffset = pPool->m_SpaceUsed;
+	memcpy(&pPool->m_Data[pPool->m_SpaceUsed], pString, len);
+	pPool->m_SpaceUsed += len;
+
+	CStringPoolIndex index;
+	index.m_iPool = iPool;
+	index.m_iOffset = iStringOffset;
+
+	unsigned short idx = pTable->Insert(index);
+	return SymB(idx);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024b830 size=0x3c
 #include "CUnknown1024b2d0.h"
 extern char g_106b8540[];
