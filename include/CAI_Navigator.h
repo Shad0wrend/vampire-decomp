@@ -128,7 +128,12 @@ struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 	void sub_1030bb30();	// resets the route: deletes the waypoint, vectors to vec3_origin (0x1070d1b0), flags and counters to 0 (+0x2c = 1, +0x30 = -1)
 	int sub_1030bc00();	// the route's move status (stub 0x1000f240): 0 when it has none, 2 for a finished one
 	void sub_1030ba50(int value);	// sets the flag at +0x58 and the value at +0x5c
-	void sub_1030b4d0(int value);	// stub 0x1000b6ef
+	void sub_1030b4d0(int value, char b);
+	void sub_1030b950(const float *pVec);
+	void sub_1030be20(const int *pVec);
+	int sub_1030b8e0();
+	char *sub_1030ba30();
+	void sub_1030b550(int sequence);	// stub 0x1000b6ef
 	int sub_1030b580();	// the arrival sequence of the route, -1 when unset (stub 0x1000f6b9)
 	int sub_1030b520();	// the arrival activity of the route (stub 0x10001b77)
 	void sub_1030b5b0(int sequence);	// stores the arrival sequence (stub 0x100016b3)
