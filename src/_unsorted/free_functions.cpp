@@ -97796,6 +97796,34 @@ int CBasePlayerUnit10182210::sub_10182210(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182420 size=0x78
+#include "utlrbtree.h"
+#include "CUnknown10182420.h"
+#include "QuestJournal.h"
+extern QuestJournal g_1074f8f8;
+extern void (*g_109f366c)(const char *, ...);
+
+char CUnknown10182420::sub_10182420(int quest, int value)
+{
+	for (int i = 0; i < m_Entries.Count(); i++)
+	{
+		if (m_Entries[i].m_key == quest)
+		{
+			if (m_Entries[i].m_value != value)
+			{
+				int *pState = (int *)g_1074f8f8.sub_10221d60(quest, m_Entries[i].m_value);
+				if (pState[2] != 4)
+					return 1;
+				char **ppName = (char **)g_1074f8f8.sub_10221b10(quest);
+				g_109f366c("Attempting to set botched quest %s to state: %d", *ppName, value);
+			}
+			return 0;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182780 size=0x63
 #include "CBasePlayer.h"
 #include "engineserver.h"
