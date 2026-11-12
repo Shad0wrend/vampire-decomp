@@ -75865,6 +75865,95 @@ void sub_10122170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10122190 size=0x325
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "globalvars.h"
+
+struct CMoveConVar
+{
+	virtual void v0();
+	virtual char vIsClamped();
+	char pad[0x28 - 4];
+	float m_flValue;
+};
+extern CMoveConVar *g_109eee9c;
+extern CMoveConVar *g_109ef3ac;
+extern CMoveConVar *g_109eefbc;
+extern float g_104454c4;
+inline float CVF(CMoveConVar *const &g) { return g->vIsClamped() ? g_104454c4 : g->m_flValue; }
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_10139500(const Vector *pStart, float flScale, const Vector *pDir, Vector *pDest);
+
+// TARGET: CGameMovement::sub_10122190
+void CGameMovement::sub_10122190()
+{
+	int i;
+	Vector wishvel;
+	Vector forward, right, up;
+	Vector wishdir;
+	float wishspeed;
+	float spd;
+
+	sub_10139610(&PLAYER->m_vecViewAngles0c, &forward, &right, &up);
+
+	float fmove = PLAYER->m_flForwardMove;
+	float smove = PLAYER->m_flSideMove;
+
+	VectorNormalize(forward);
+	VectorNormalize(right);
+
+	i = 0;
+	while (3 > i) {
+		wishvel[i] = smove * right[i] + fmove * forward[i];
+		++i;
+	}
+	wishvel[2] += PLAYER->m_flUpMove;
+
+	VectorCopy(wishvel, wishdir);
+	wishspeed = VectorNormalize(wishdir);
+
+	if (wishspeed > CVF(g_109eee9c)) {
+		VectorScale(wishvel, CVF(g_109eee9c) / wishspeed, wishvel);
+		if (g_109eee9c->vIsClamped())
+			wishspeed = 0;
+		else
+			wishspeed = g_109eee9c->m_flValue;
+	}
+
+	if (CVF(g_109ef3ac) > 0.0) {
+		float accel;
+		if (g_109ef3ac->vIsClamped())
+			accel = 0;
+		else
+			accel = g_109ef3ac->m_flValue;
+		vfunc10(wishdir, wishspeed, accel);
+
+		spd = VectorLength(PLAYER->m_vecVelocity);
+		if (spd < 1.0f) {
+			PLAYER->m_vecVelocity.Init();
+			return;
+		}
+		float friction = CVF(g_109eefbc) * m_fieldA0;
+		float control = (spd < CVF(g_109eee9c) * 0.25) ? 0.25 * CVF(g_109eee9c) : spd;
+		float drop = control * gpGlobals->frametime * friction;
+		float newspeed = spd - drop;
+		if (newspeed < g_104454c4)
+			newspeed = g_104454c4;
+		newspeed /= spd;
+		VectorScale(PLAYER->m_vecVelocity, newspeed, PLAYER->m_vecVelocity);
+	} else {
+		VectorCopy(wishvel, PLAYER->m_vecVelocity);
+	}
+
+	sub_10139500(&PLAYER->m_vecOrigin, gpGlobals->frametime, &PLAYER->m_vecVelocity, &PLAYER->m_vecOrigin);
+
+	if (CVF(g_109ef3ac) < 0.0)
+		PLAYER->m_vecVelocity.Init();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10122590 size=0xd8
 #include "CGameMovement.h"
 struct SVarA { virtual void v0(); virtual bool v1(); char pad[0x24]; float f28; };
