@@ -203,6 +203,124 @@ void CTriggerWWZone::vfunc175(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103db590 size=0x430
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CBaseTrigger.h"
+#include "CTriggerWWZone.h"
+#include "ScopeTrace.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+
+struct CWWPlayerView
+{
+	char m_pad[0x66e8];
+	unsigned int m_nFlags;
+};
+
+static inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+static inline bool NamesMatch(const char *pszQuery, const char *const &nameToMatch)
+{
+	int namelen = strlen(pszQuery);
+	int cmp;
+	if (namelen == 0)
+		cmp = (int)nameToMatch;
+	else if (pszQuery[namelen - 1] != '*')
+		cmp = _strcmpi(STRINGR(nameToMatch), pszQuery);
+	else
+		cmp = _strnicmp(STRINGR(nameToMatch), pszQuery, namelen - 1);
+	return cmp == 0;
+}
+
+struct CWWNameView : CBaseEntity
+{
+	bool NameMatches(const char *pszNameOrWildcard)
+	{
+		if (m_name26c && m_name26c == pszNameOrWildcard)
+			return true;
+		return NamesMatch(pszNameOrWildcard, m_name26c);
+	}
+};
+
+// TARGET: CTriggerWWZone::vfunc176
+void CTriggerWWZone::vfunc176(CBaseEntity *pOther)
+{
+	ScopeTrace scope("CTriggerWWZone::EndTouch", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CBaseTrigger::vfunc176(pOther);
+	CWWPlayerView *pPlayer = (CWWPlayerView *)sub_103dad80();
+	switch (m_n5ac) {
+	case 0:
+		if (pOther->m_pA8) {
+			sub_103daf10();
+			if (pPlayer) {
+				if (((CWWNameView *)this)->NameMatches("player_outside_trigger"))
+					pPlayer->m_nFlags &= ~0x80;
+				else if (((CWWNameView *)this)->NameMatches("player_inside_trigger"))
+					pPlayer->m_nFlags &= ~0x40;
+			}
+		} else if (pOther == (CBaseEntity *)pPlayer) {
+			if (((CWWNameView *)this)->NameMatches("player_outside_trigger")) {
+				if (pPlayer)
+					pPlayer->m_nFlags &= ~0x1000;
+			} else if (((CWWNameView *)this)->NameMatches("player_inside_trigger")) {
+				if (pPlayer)
+					pPlayer->m_nFlags &= ~0x800;
+			}
+		}
+		break;
+	case 1:
+		if (pOther == sub_103dad80() && pPlayer)
+			pPlayer->m_nFlags &= ~1;
+		break;
+	case 4:
+	case 5:
+		if (pOther == sub_103dad80() && pPlayer) {
+			if (m_n5ac == 4)
+				pPlayer->m_nFlags &= ~8;
+			else
+				pPlayer->m_nFlags &= ~0x10;
+		}
+		break;
+	case 2:
+		if (pOther->m_pA8 && pPlayer) {
+			pPlayer->m_nFlags &= ~2;
+			((CTriggerWWZone *)pPlayer)->sub_103cecd0(0);
+		}
+		break;
+	case 3:
+		if (pOther->m_pA8) {
+			if (pPlayer)
+				pPlayer->m_nFlags &= ~4;
+		} else if (pOther == sub_103dad80() && pPlayer) {
+			pPlayer->m_nFlags |= 0x100;
+		}
+		break;
+	case 7:
+		if (pOther->m_pA8 && pPlayer)
+			pPlayer->m_nFlags &= ~0x200;
+		break;
+	case 8:
+		if (pOther->m_pA8 && pPlayer)
+			pPlayer->m_nFlags &= ~0x400;
+		break;
+	case 6:
+		if (pOther == sub_103dad80() && pPlayer)
+			pPlayer->m_nFlags |= 0x20;
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dbf50 size=0xb2
 #include "utlmemory.h"
 #include "utlrbtree.h"
