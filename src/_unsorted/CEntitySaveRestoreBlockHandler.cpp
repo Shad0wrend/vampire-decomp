@@ -1,6 +1,200 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a2e40 size=0x430
+#define vfunc7() vfunc7(void *pRestore, char createPlayers, int unused)
+#include "CEntitySaveRestoreBlockHandler.h"
+#undef vfunc7
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CEntitySaveRestoreBlockHandler.h"
+#include "CUnknown10057680.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+
+struct CBaseEntityGN { char pad[0x120]; const char *m_iGlobalname120; };
+struct SRestoreInfoV;
+struct SRestoreV {
+	virtual void v0();
+	virtual void SetReadPos(int pos);
+	virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13();
+	virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25();
+	virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31();
+	virtual void v32();
+	virtual SRestoreInfoV *GetGameSaveRestoreInfo();
+};
+struct SEntInfoV {
+	int id;
+	int edictindex;
+	int saveentityindex;
+	int restoreentityindex;
+	EHANDLE hEnt;
+	int location;
+	int size;
+	int m1c;
+	__int64 flags;
+	const char *classname;
+	int m2c;
+};
+struct SRestoreInfoV {
+	char pad[0x1318];
+	int m_nEntities;
+	SEntInfoV *m_pEntityTable;
+	int NumEntities() { return m_nEntities; }
+	SEntInfoV *GetEntityInfo(int i) { return &m_pEntityTable[i]; }
+};
+struct SGlobalEntityV {
+	char pad[0x40];
+	char levelName[0x20];
+	int state;
+};
+CBaseEntity *sub_10136580(const char *);
+CBaseEntity *sub_1015d790(const char *, int);
+void sub_1011a580(CBaseEntity *);
+void sub_101cd970(CBaseEntity *);
+__declspec(dllimport) void Warning(const char *, ...);
+extern "C" int _strcmpi(const char *, const char *);
+struct CGlobalStateV : CUnknown10057680 { char *sub_10057800(const char *pszName); };
+extern CUnknown10057680 g_106be530;
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct gstr_t
+{
+	const char *pszValue;
+	bool operator!() const { return (pszValue == 0); }
+	bool operator!=(const gstr_t &rhs) const { return (pszValue != rhs.pszValue); }
+	const char *ToCStr() const { return (pszValue) ? pszValue : g_106b8540; }
+};
+struct cgstr_t : gstr_t { cgstr_t() { pszValue = 0; } };
+#define NULL_STRING cgstr_t()
+#define STRING(s) (s).ToCStr()
+struct CBaseEntityGS { char pad[0x11c]; gstr_t m_iClassname; gstr_t m_iGlobalname; };
+struct CGlobalVarsGS { char pad[0x24]; gstr_t mapname; };
+#define GPG ((CGlobalVarsGS *)gpGlobals)
+struct CGlobalStateGS : CUnknown10057680 { SGlobalEntityV *sub_10057800(gstr_t name); void sub_10057740(gstr_t name, gstr_t map, int state); };
+namespace block_101a2e40 {
+inline bool FStrEq(const char *a, const char *b) { return _strcmpi(a, b) == 0; }
+inline void *INDEXENT(int i) { return engine->vfunc38(i); }
+
+struct CESRBHUnit : CEntitySaveRestoreBlockHandler {
+	char sub_101a3380(CBaseEntity *pEntity, void *pRestore);
+	int RestoreEntity(CBaseEntity *pEntity, SRestoreV *pRestore, SEntInfoV *pEntInfo)
+	{
+		if (!sub_101a3380(pEntity, pRestore))
+			return 0;
+		CBaseEntityGS *pE = (CBaseEntityGS *)pEntity;
+		if (pE->m_iGlobalname != NULL_STRING) {
+			SGlobalEntityV *pGlobal = ((CGlobalStateGS *)&g_106be530)->sub_10057800(pE->m_iGlobalname);
+			if (pGlobal) {
+				if (pGlobal->state == 2)
+					return -1;
+				else if (!FStrEq(STRING(GPG->mapname), pGlobal->levelName))
+					pEntity->sub_100a8060();
+			} else {
+				Warning("Global Entity %s (%s) not in table!!!\n", STRING(pE->m_iGlobalname), STRING(pE->m_iClassname));
+				((CGlobalStateGS *)&g_106be530)->sub_10057740(pE->m_iGlobalname, GPG->mapname, 1);
+			}
+		}
+		return 0;
+	}
+};
+}
+using namespace block_101a2e40;
+
+// TARGET: CEntitySaveRestoreBlockHandler::vfunc7
+void CEntitySaveRestoreBlockHandler::vfunc7(void *pRestoreArg, char createPlayers, int unused)
+{
+	SRestoreV *pRestore = (SRestoreV *)pRestoreArg;
+	SEntInfoV *pEntInfo;
+	CBaseEntity *pent;
+	SRestoreInfoV *pSaveData = pRestore->GetGameSaveRestoreInfo();
+	int i;
+	for (i = 0; i < pSaveData->NumEntities(); i++) {
+		pEntInfo = pSaveData->GetEntityInfo(i);
+		if (pEntInfo->classname && pEntInfo->size && !(pEntInfo->flags & 0x4000000000000000i64)) {
+			if (pEntInfo->edictindex == 0) {
+				pent = sub_10136580(STRINGR(pEntInfo->classname));
+				pRestore->SetReadPos(pEntInfo->location);
+				if (((CESRBHUnit *)this)->RestoreEntity(pent, pRestore, pEntInfo) < 0) {
+					pEntInfo->hEnt = 0;
+					pEntInfo->restoreentityindex = -1;
+					sub_101cd970(pent);
+				} else {
+					sub_1011a580(pent);
+				}
+			} else if (pEntInfo->edictindex > 0 && pEntInfo->edictindex < gpGlobals->maxClients + 1) {
+				if (!(pEntInfo->flags & 0x8000000000000000i64))
+					Warning("ENTITY IS NOT A PLAYER: %d\n", i);
+				int ed = (int)INDEXENT(pEntInfo->edictindex);
+				if (ed && createPlayers)
+					pent = sub_1015d790(STRINGR(pEntInfo->classname), ed);
+				else
+					pent = 0;
+			} else {
+				pent = sub_10136580(STRINGR(pEntInfo->classname));
+			}
+			pEntInfo->hEnt = pent;
+			pEntInfo->restoreentityindex = pent ? engine->vfunc35(pent->m_pEdict2e0) : -1;
+			if (pent && pEntInfo->restoreentityindex == 0) {
+				if (_strcmpi(STRINGR(pent->m_classname11c), "worldspawn") != 0)
+					pEntInfo->restoreentityindex = -1;
+			}
+		} else {
+			pEntInfo->hEnt = 0;
+			pEntInfo->restoreentityindex = -1;
+		}
+	}
+	for (i = 0; i < pSaveData->NumEntities(); i++) {
+		pEntInfo = pSaveData->GetEntityInfo(i);
+		if (pEntInfo->edictindex != 0) {
+			pent = pEntInfo->hEnt;
+			pRestore->SetReadPos(pEntInfo->location);
+			if (pent) {
+				CBaseHandle h;
+				h = (IHandleEntity *)pent;
+				pent->vfunc127((int)pRestore);
+				if (pent->vfunc117() & 4)
+					pent->vfunc103();
+				else
+					pent->vfunc104();
+				if (g_10566458->sub_100290c0((const unsigned int *)&h))
+					g_10566458->sub_100290c0((const unsigned int *)&h)->sub_1009d1e0();
+				if (g_10566458->sub_100290c0((const unsigned int *)&h) && ((CBaseEntityGN *)pent)->m_iGlobalname120) {
+					char *pGlobal = ((CGlobalStateV *)&g_106be530)->sub_10057800(((CBaseEntityGN *)pent)->m_iGlobalname120);
+					if (pGlobal && *(int *)(pGlobal + 0x60) != 2) {
+						if (_strcmpi(STRINGR(gpGlobals->mapname), pGlobal + 0x40) != 0)
+							pent->sub_100a8060();
+					} else if (!pGlobal) {
+						Warning("Global Entity %s (%s) not in table!!!\n", STRINGR(((CBaseEntityGN *)pent)->m_iGlobalname120), STRINGR(pent->m_classname11c));
+						g_106be530.sub_10057740(((CBaseEntityGN *)pent)->m_iGlobalname120, gpGlobals->mapname, 1);
+					} else {
+						pEntInfo->hEnt = 0;
+						sub_101cd970(pent);
+						continue;
+					}
+				}
+				sub_1011a580(pent);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3780 size=0x6
 #include "CEntitySaveRestoreBlockHandler.h"
 namespace lifted {
