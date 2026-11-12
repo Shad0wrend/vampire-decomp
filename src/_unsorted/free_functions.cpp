@@ -19053,6 +19053,97 @@ void CUnknown1006c1c0::sub_1006c1c0(int op, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006c210 size=0x1d2
+#include "CUtlBuffer.h"
+#include <stdlib.h>
+#include <stdarg.h>
+
+int CUtlBuffer::sub_1006c210(const char *pFmt, char *list)
+{
+	if (m_nError || !(m_nFlags & 1))
+		return 0;
+
+	int numScanned = 0;
+	char c;
+	char *pEnd;
+	while ((c = *pFmt++) != 0) {
+		if (m_nGet >= m_nSize) {
+			m_nError |= 2;
+			break;
+		}
+
+		switch (c) {
+		case ' ':
+			sub_1006bf40();
+			break;
+
+		case '%': {
+			char type = *pFmt++;
+			if (type == 0)
+				return numScanned;
+
+			switch (type) {
+			case 'c': {
+				char *ch = va_arg(list, char *);
+				*ch = m_pBuffer[m_nGet];
+				++m_nGet;
+			} break;
+
+			case 'i':
+			case 'd': {
+				int *i = va_arg(list, int *);
+				*i = strtol(m_pBuffer + m_nGet, &pEnd, 10);
+				if (pEnd == m_pBuffer + m_nGet)
+					return numScanned;
+				m_nGet = (int)pEnd - (int)m_pBuffer;
+			} break;
+
+			case 'x': {
+				int *i = va_arg(list, int *);
+				*i = strtol(m_pBuffer + m_nGet, &pEnd, 16);
+				if (pEnd == m_pBuffer + m_nGet)
+					return numScanned;
+				m_nGet = (int)pEnd - (int)m_pBuffer;
+			} break;
+
+			case 'u': {
+				unsigned int *u = va_arg(list, unsigned int *);
+				*u = strtoul(m_pBuffer + m_nGet, &pEnd, 10);
+				if (pEnd == m_pBuffer + m_nGet)
+					return numScanned;
+				m_nGet = (int)pEnd - (int)m_pBuffer;
+			} break;
+
+			case 'f': {
+				float *f = va_arg(list, float *);
+				*f = (float)strtod(m_pBuffer + m_nGet, &pEnd);
+				if (pEnd == m_pBuffer + m_nGet)
+					return numScanned;
+				m_nGet = (int)pEnd - (int)m_pBuffer;
+			} break;
+
+			case 's': {
+				char *s = va_arg(list, char *);
+				sub_1006bfb0(s);
+			} break;
+
+			default:
+				return numScanned;
+			}
+
+			++numScanned;
+		} break;
+
+		default:
+			if (c != (unsigned char)m_pBuffer[m_nGet])
+				return numScanned;
+			++m_nGet;
+		}
+	}
+	return numScanned;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006c470 size=0x14
 struct CUnit1006c470
 {
