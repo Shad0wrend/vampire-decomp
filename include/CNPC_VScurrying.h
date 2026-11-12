@@ -30,7 +30,6 @@ public:
 	CScurryPick *sub_103aca80();	// stub 0x1000b573
 	char sub_103ad0a0(CBaseEntity *pEnt);	// stub 0x10007595, called directly
 	char sub_103acba0(Vector *pVec, float flDist, Vector *pOut);	// stub 0x1000b573
-	void vfunc442(int *pTask);	// slot 442: task start handler (this in ecx, one stack arg)
 	bool sub_103acba0(const Vector *pTarget, float flDist, Vector *pOut);	// stub 0x1000402a, called by vfunc442: a point near pTarget (back-away node, else a trace along the direction away from it) that is clear for the hull; writes it to pOut
 	bool sub_102a0fb0(const Vector *pPos, int mask, const float *pMins, const float *pMaxs);	// CAI_BaseNPCTroika "IsAreaClear" (stub 0x10001f50)
 	void vfunc103();	// slot 103: the animal base implementation (CNPC_VAnimal::vfunc103), then the flag 0x10000 at +0x5b84, and the game's time at +0x668c
@@ -366,7 +365,7 @@ public:
 	virtual void vfunc439();
 	virtual void vfunc440_slot();
 	virtual void vfunc441();
-	virtual void vfunc442();
+	virtual void vfunc442(int *pTask);	// slot 442: task start handler (this in ecx, one stack arg); declared only here: a plain member of the same name earlier in the class pulls the slot up (MSVC groups same-name functions) and shifts every later slot by one
 	virtual void vfunc443();
 	virtual void vfunc444();
 	virtual void vfunc445();
