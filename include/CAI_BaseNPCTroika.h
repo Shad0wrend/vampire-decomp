@@ -261,7 +261,7 @@ public:
 	union { char m_pad0208[0x65c - 0x208]; struct { char m_pad0208b[0x224 - 0x208]; unsigned int m_fDebugOverlays224; }; };	// 0x224: the debug overlay flags (bit 27 = print the schedule debug text)
 	char m_b065c;
 	char m_pad065d[0x6f8 - 0x65d];
-	int m_n06f8;
+	union { int m_n06f8; float m_fl06f8; };
 	char m_pad06fc[0xfe8 - 0x6fc];
 	unsigned int m_hfe8;
 	int m_nState0fec;
@@ -274,7 +274,9 @@ public:
 	char m_pad14c0[0x1538 - 0x14c0];
 	EHANDLE m_h1538;
 	int m_n153c;
-	char m_pad1540[0x1590 - 0x1540];
+	char m_pad1540[0x1564 - 0x1540];
+	float m_flNextAttack1564;
+	char m_pad1568[0x1590 - 0x1568];
 	char m_b1590;
 	union { char m_pad1591[0x1b30 - 0x1591]; struct { char m_pad1591b[0x1a40 - 0x1591]; char m_b1a40;
 #pragma pack(push, 1)
@@ -337,7 +339,8 @@ struct { char m_pad1a41[0x1b2c - 0x1a41]; int m_n1b2c; };
 	EHANDLE m_h5d90;	// 0x5d90: the entity that blocks the NPC (NPCThinkDebugPre prints "Blocked by %s")
 	char m_pad5d94[0x5d98 - 0x5d94];
 	float m_f5d98;	// 0x5d98: the time of the last output fired by vfunc142
-	char m_pad5d9c[0x5da4 - 0x5d9c];
+	float m_flTime5d9c;
+	char m_pad5da0[0x5da4 - 0x5d9c - 4];
 	void *m_p5da4;	// 0x5da4: the squad object (0 when none)
 	char m_pad5da8[0x5db4 - 0x5da8];
 	float m_f5db4;	// 0x5db4: a time (curtime + the parameter's value, or + 1000.0f for a non-positive one)
