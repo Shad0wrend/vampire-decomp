@@ -123,6 +123,57 @@ void CRecipientFilter::AddAllPlayers()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019d040 size=0xbc
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CRecipientFilter.h"
+#include "CBasePlayer.h"
+#include "engineserver.h"
+
+struct CPredictionSystemView
+{
+	void *m_vptr;
+	void *m_pNextSystem;
+	bool m_bSuppressEvent;
+	CBaseEntity *m_pSuppressHost;
+	int m_nStatusPushed;
+
+	bool DisableFiltering() const
+	{
+		return (m_nStatusPushed > 0) ? true : false;
+	}
+	CBaseEntity const *GetSuppressHost(void)
+	{
+		if (DisableFiltering())
+		{
+			return 0;
+		}
+		return m_pSuppressHost;
+	}
+};
+extern CPredictionSystemView g_1072b3fc;
+
+void CRecipientFilter::AddRecipient(CBasePlayer *player)
+{
+	int edict = *(int *)((char *)player + 0x2e0);
+	int index = engine->vfunc35(edict);
+
+	if (m_bUsingPredictionRules)
+	{
+		if (g_1072b3fc.GetSuppressHost() == (CBaseEntity *)player)
+		{
+			return;
+		}
+	}
+
+	if (m_Recipients.Find(index) != m_Recipients.InvalidIndex())
+		return;
+
+	m_Recipients.AddToTail(index);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019d210 size=0x4e
 #include "CRecipientFilter.h"
 void CRecipientFilter::AddRecipientsByPVS(const Vector &origin)
