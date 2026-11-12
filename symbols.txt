@@ -15057,6 +15057,7 @@
 0x10014a42 func   ?vfunc433@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc433
 0x10014a47 func   ?sub_10182ec0@@YGDPAXD@Z sub_10182ec0
 0x10014a4c func   ?sub_10314c20@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_10314c20
+0x10014a51 func   ?sub_10120ba0@CGameMovement@@QAEXXZ CGameMovement::sub_10120ba0
 0x10014a56 func   ?vfunc179@CBaseDoor@@UAEXXZ CBaseDoor::vfunc179
 0x10014a5b func   ?sub_101f1a30@CUnknown101f1a30@@QAEHPBD@Z CUnknown101f1a30::sub_101f1a30
 0x10014a60 func   ?sub_10099b00@CUnknown10099b00@@QAEXPAVCBaseEntity@@@Z CUnknown10099b00::sub_10099b00

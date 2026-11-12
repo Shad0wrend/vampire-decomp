@@ -77819,6 +77819,107 @@ void CGameMovement::sub_1011ffe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120ba0 size=0x2c1
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CVProfile.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown1003ff80.h"
+#include "CTraceFilterSimple.h"
+#include "Ray_t.h"
+#include "ConVar.h"
+#include "globalvars.h"
+
+extern CGlobalEntityList *g_10566458;
+void sub_1011e8f0(Ray_t *pRay, unsigned int mask, void *pPassEnt, int group, CGameTrace *pTrace);
+extern char g_10572420;
+extern ConVar g_109eefb8;	// sv_friction
+extern ConVar g_109ef168;	// sv_stopspeed
+
+struct CUnknown1004f860
+{
+	void *sub_1004f860();
+};
+
+struct CRayLocal : Ray_t
+{
+	CRayLocal() { ((CUnknown1004f860 *)this)->sub_1004f860(); }
+};
+struct CTraceLocal : CGameTrace
+{
+	CTraceLocal() { ((CUnknown1003ff80 *)this)->sub_1003ff80(); }
+};
+
+struct ConVarL : ConVar { float GetF() { if (m_pParent->vfunc1()) return 0.0f; return m_pParent->m_fValue; } };
+#define SS (*(ConVarL *)&g_109ef168)
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+
+namespace block_10120ba0 {
+struct CGameMovementUnit : CGameMovement
+{
+	float *sub_1011e350();
+	float *sub_1011e310();
+};
+
+float *CGameMovementUnit::sub_1011e350()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMax.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMax.x : &m_vecHullMax.x;
+}
+
+float *CGameMovementUnit::sub_1011e310()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMin.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMin.x : &m_vecHullMin.x;
+}
+}
+using namespace block_10120ba0;
+
+// TARGET: CGameMovement::sub_10120ba0
+void CGameMovement::sub_10120ba0()
+{
+	CGameMovementUnit *pThis = (CGameMovementUnit *)this;
+	if (((CMoveFlagsView *)m_pMove)->m_flWaterJump != 0.0f)
+		return;
+	float speed = PLAYER->m_vecVelocity.Length();
+	if (speed < 0.1f)
+		return;
+	float drop = 0.0f;
+	if (((CMoveDataView *)m_pMove)->vfunc209()) {
+		CTraceLocal tr;
+		float inv = 1.0f / speed;
+		Vector start, end;
+		start.x = end.x = inv * PLAYER->m_vecVelocity.x * 16.0f + PLAYER->m_vecOrigin.x;
+		start.y = end.y = inv * PLAYER->m_vecVelocity.y * 16.0f + PLAYER->m_vecOrigin.y;
+		start.z = PLAYER->m_vecOrigin.z + (pThis->sub_1011e310()[2] + 1.0f);
+		end.z = start.z - 49.0f;
+		if (!g_10572420) {
+			g_109f3648->EnterScope("CGameMovement::TracePlayerBBox", 0, "Unaccounted", false);
+			CRayLocal ray;
+			ray.sub_1006dec0(start, &end.x, pThis->sub_1011e310(), pThis->sub_1011e350(), (char)((((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1), 0);
+			sub_1011e8f0(&ray, 0x201400b, g_10566458->sub_100290c0(&PLAYER->m_hRef), 6, &tr);
+			g_109f3648->ExitScopeCall();
+		}
+		float friction = (*(ConVarL *)&g_109eefb8).GetF();
+		friction *= m_fieldA0;
+		float control = (speed < SS.GetF()) ? SS.GetF() : speed;
+		drop += friction * (control * gpGlobals->frametime);
+	}
+	float newspeed = speed - drop;
+	if (newspeed < 0.0f)
+		newspeed = 0.0f;
+	newspeed = newspeed / speed;
+	PLAYER->m_vecVelocity = PLAYER->m_vecVelocity * newspeed;
+	PLAYER->m_vec80 -= PLAYER->m_vecVelocity * (1.0f - newspeed);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120f30 size=0x91
 #include "CGameMovement.h"
 struct SIface { virtual void v0(); virtual char vfunc1(); };
