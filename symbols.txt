@@ -8314,6 +8314,7 @@
 0x1000bff0 func   ?sub_104302c0@@YAII@Z sub_104302c0
 0x1000bff5 func   ?sub_102b4090@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102b4090
 0x1000bffa func   ?sub_10262c20@CAI_BaseHumanoid@@QAEHHH@Z CAI_BaseHumanoid::sub_10262c20
+0x1000bfff func   ?sub_101b3240@CThisView101b3240@@QAEHPAVUtlVec8@@H@Z CThisView101b3240::sub_101b3240
 0x1000c004 func   ?sub_103fafd0@@YAHXZ sub_103fafd0
 0x1000c009 func   ?sub_102027a0@@YAHPBD@Z sub_102027a0
 0x1000c00e func   ?sub_1010dd80@CUnk1010dd80@@QAEXPBUCVariantArg1010dd80@@@Z CUnk1010dd80::sub_1010dd80

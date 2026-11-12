@@ -115567,6 +115567,50 @@ int CUnknown101b3220::sub_101b3220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3240 size=0x144
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "UtlVec8.h"
+
+struct IRandomStream
+{
+	virtual void a0();
+	virtual void a1();
+	virtual int RandomInt(int lo, int hi);
+};
+extern IRandomStream *g_1070b244;
+
+struct SSoundFile101b3240
+{
+	int symbol;
+	int gender;
+};
+
+struct CThisView101b3240 { int sub_101b3240(UtlVec8 *v, int gender); };
+
+// TARGET: CThisView101b3240::sub_101b3240
+int CThisView101b3240::sub_101b3240(UtlVec8 *v, int gender)
+{
+	CUtlVector<SSoundFile101b3240> &names = *(CUtlVector<SSoundFile101b3240> *)v;
+	int c = names.Count();
+	if (c <= 0)
+		return -1;
+	CUtlVector<int> candidates;
+	int i;
+	for (i = 0; i < c; i++)
+	{
+		if (names[i].gender == gender)
+			candidates.AddToTail(i);
+	}
+	if (candidates.Count() >= 1)
+	{
+		i = g_1070b244->RandomInt(0, candidates.Count() - 1);
+		return candidates[i];
+	}
+	return g_1070b244->RandomInt(0, c - 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b33f0 size=0x25f
 #include "CSoundEmitterSystemBase.h"
 #include "CUnknown1024b370.h"
