@@ -436,7 +436,7 @@ public:
 	virtual void vfunc444_slot();
 	virtual void vfunc445();
 	virtual void vfunc446();
-	virtual void vfunc447();
+	virtual int vfunc447(int a);
 	virtual void vfunc448();
 	virtual void vfunc449();
 	virtual void vfunc450();
@@ -499,7 +499,7 @@ public:
 	virtual void vfunc507();
 	virtual void vfunc508();
 	virtual void vfunc509_slot();
-	virtual void vfunc510_slot();
+	virtual bool vfunc510_slot();
 	virtual void vfunc511();
 	virtual void vfunc512();
 	virtual void vfunc513();
