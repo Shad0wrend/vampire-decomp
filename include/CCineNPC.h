@@ -43,6 +43,7 @@ public:
 	void sub_101a8460(CBaseAnimating *pNpc);	// stub 0x10012a80: the sequence is done: developer Msg "Sequence %s targeting %s is done" and sub_101a6ec0 (stub 0x10002225), then either sub_101a8640 or (with a named follow-up sequence at +0x5f4c that is not live at +0x5f94) the NPC's state 2 and slot 584 on that sequence, then hands (the entity behind +0x10c, this, 0) to the container at +0x5fb4
 	void sub_101a8640(CBaseAnimating *pNpc);	// stub 0x10013a7a
 	void sub_101a6ec0();	// called directly
+	void vfunc583();	// slot 583 "CAI_ScriptedSequence::StartScript" (declared as a plain member): with the target's NPC (object at +0x94) either queues this script behind the NPC's current one (+0x5d74 -> its +0x5f94) or possesses the NPC (saved move type / solid / effects, the move-to switch on +0x5f60, ideal state 4 stamped with scripted.cpp line 712)
 	void vfunc103();	// slot 103 (declared as a plain member): SetSolid(0), AddSolidFlags(4), SetMoveType(0, 0), clears the bytes at +0x1480 / +0x1481, arms StartScript (sub_101a8070) when it has no name or flag bit 4 is set, sets the byte at +0x5f90 from flag bit 5, SetAbsolute-like sub_100b3b00, resets the NPC handle and search start, AddFlag2(0x10)
 	bool vfunc362(int unused);	// slot 362
 	bool vfunc364(int unused);	// slot 364
