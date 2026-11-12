@@ -154706,6 +154706,88 @@ void CUnknown102126c0::sub_10212790(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10212810 size=0x1ab
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CGameSign.h"
+#include "CSingleUserRecipientFilter.h"
+#include "CEHandleGet.h"
+#include "engineserver.h"
+#include "TestBit.h"
+#include "globalvars.h"
+extern char g_106b8540[];
+
+extern int g_10726088;
+
+struct StrArg { const char *p; };
+struct CGameSignView
+{
+	char m_pad0000[0x2e0];
+	int m_pEdict;
+	char m_pad2e4[0x450 - 0x2e4];
+	StrArg m_s450;
+	StrArg m_s454;
+	float m_fl458;
+	char m_pad45c[4];
+	float m_flTime460;
+	char m_pad464[0x470 - 0x464];
+	unsigned char m_b470;
+
+	int GetEdict() { return m_pEdict; }
+	unsigned char GetFlag() { return m_b470; }
+};
+static StrArg s_empty;
+#define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+struct EngView
+{
+	V10(s0) V10(s1) V10(s2) V10(s3) V10(s4) V10(s5) V10(s6)
+	virtual void s70(); virtual void s71(); virtual void s72(); virtual void s73(); virtual void s74(); virtual void s75(); virtual void s76(); virtual void s77();
+	virtual void WriteString(StrArg s);
+};
+static inline StrArg MakeStr(const char *p) { StrArg s; s.p = p; return s; }
+
+inline void WRITE_STRING(const char *sz) { engine->vfunc78(sz); }
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+inline const char *StrL(const char *s) { const char *r; if (s) r = s; else r = g_106b8540; return r; }
+inline const char *StrR(const char *const &s) { if (s) return s; return g_106b8540; }
+struct StrC { const char *p; StrC(const char *q) { p = q; } };
+struct EngView2
+{
+	V10(s0) V10(s1) V10(s2) V10(s3) V10(s4) V10(s5) V10(s6)
+	virtual void s70(); virtual void s71(); virtual void s72(); virtual void s73(); virtual void s74(); virtual void s75(); virtual void s76(); virtual void s77();
+	virtual void WriteString(StrC s);
+};
+
+void CGameSign::sub_10212810(CBaseEntity *pOther)
+{
+	CGameSignView *pView = (CGameSignView *)this;
+	if (!pOther)
+		return;
+	if (EHandle_Get(*(unsigned int *)((char *)pOther + 0x1040)) != (CGlobalEntityList_Ent *)this)
+		return;
+	pView->m_flTime460 = gpGlobals->curtime;
+	if (!TestBit(m_flags204, 1))
+	{
+		((CBasePlayer *)pOther)->sub_1015ef40();
+		((CBasePlayer *)pOther)->sub_10181580(1);
+		((CBasePlayer *)pOther)->sub_10181580(8);
+	}
+	sub_10212da0();
+	CSingleUserRecipientFilter filter(pOther);
+	filter.MakeReliable();
+	engine->vfunc65(&filter, g_10726088);
+	engine->vfunc67(1);
+	engine->vfunc72(pView->m_fl458);
+	engine->vfunc71(engine->vfunc35(pView->GetEdict()));
+	engine->vfunc67(pView->GetFlag());
+	if (!pView->m_s450.p)
+		WRITE_STRING(pView->m_s454.p ? pView->m_s454.p : g_106b8540);
+	else
+		WRITE_STRING(pView->m_s450.p);
+	engine->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10212a30 size=0x169
 template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CBasePlayer.h"

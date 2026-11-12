@@ -9216,6 +9216,7 @@
 0x1000d38c func   ?vfunc402@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::vfunc402
 0x1000d391 func   ?sub_10074000@CUnk10074000@@QAEXPBD@Z CUnk10074000::sub_10074000
 0x1000d396 func   ??0CHL2_Player@@QAE@XZ CHL2_Player::CHL2_Player
+0x1000d39b func   ?sub_10212810@CGameSign@@QAEXPAVCBaseEntity@@@Z CGameSign::sub_10212810
 0x1000d3a0 func   ?vfunc587@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc587
 0x1000d3a5 func   ?vfunc492@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc492
 0x1000d3af func   ?sub_1017ce70@CUnknown1017ce70@@QAEXH@Z CUnknown1017ce70::sub_1017ce70
