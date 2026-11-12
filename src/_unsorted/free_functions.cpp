@@ -221243,6 +221243,38 @@ int CBaseCombatCharacter::sub_10345f10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10346070 size=0x145
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CNPC_VTzimisce.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "ConVar.h"
+struct CAttackSource { int a, b, c, d; int sub_10204900(CBaseCombatCharacter *pChar); };
+struct CAttackSourceSlot { CAttackSource src; char pad[0x34]; };
+extern ConVar g_10937208;
+
+// TARGET: CBaseCombatCharacter::sub_10346070
+float CBaseCombatCharacter::sub_10346070()
+{
+    ScopeTrace trace("CBaseCombatCharacter::GetRawAttackValue", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+    CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e7b0();
+    if (!pWeapon)
+        return 0.0f;
+    if (g_10937208.GetFloat() >= 0.0f)
+        return g_10937208.GetFloat();
+    CAttackSource src = ((CAttackSourceSlot *)((char *)pWeapon + 0x7a0))[*pWeapon->sub_102517e0()].src;
+    return (float)src.sub_10204900(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10346220 size=0x98
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
