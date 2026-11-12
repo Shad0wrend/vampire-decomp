@@ -275695,6 +275695,182 @@ bool CWeaponPhysCannon::sub_1040e880(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040e9c0 size=0x53c
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CWeaponPhysCannon.h"
+#include "CWeaponMelee.h"
+#include "CBasePlayer.h"
+#include "CUnknown101e8480.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+#include "ConVar.h"
+
+struct PhysCannonObj
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5();
+	virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual float vfunc12();	// GetMass
+	virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void vfunc30(const Vector *pForce);	// ApplyForceCenter
+};
+#define V1(n) virtual void p##n();
+#define V10(a) V1(a##0) V1(a##1) V1(a##2) V1(a##3) V1(a##4) V1(a##5) V1(a##6) V1(a##7) V1(a##8) V1(a##9)
+#define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)
+struct CPhysCannonTarget
+{
+	V100(0) V100(1) V10(20)
+	V1(210) V1(211) V1(212) V1(213) V1(214)
+	virtual const Vector &vfunc215();	// WorldSpaceCenter
+};
+
+struct CUnknown1004f860 { void *sub_1004f860(); };
+struct PhysCannonRay : Ray_t
+{
+	PhysCannonRay() { ((CUnknown1004f860 *)this)->sub_1004f860(); }
+};
+
+extern CUnknown101e8480 g_10739d08;
+struct CMeleeStatView { float sub_101e8480(CBaseCombatCharacter *pChar); };
+struct CEyeVecView : CBasePlayer { void sub_100b7fa0(Vector *pOut, int a, int b); };
+extern ConVar g_1094a988;	// physcannon_cone (m_pParent at 0x1094a98c)
+extern ConVar g_1094abf0;	// pull force (m_pParent at 0x1094abf4)
+extern ConVar g_1094ad60;	// pull force (m_pParent at 0x1094ad64)
+float __fastcall sub_1040e5b0(CWeaponPhysCannon *pThis);	// TraceLength
+char sub_1040d930();
+float sub_1040c3b0(CBaseEntity *pEnt);	// PhysGetEntityMass
+char sub_101896f0(CBaseEntity *pEnt, CBasePlayer *pPlayer, int a);
+void sub_101cebc0(CBasePlayer *pPlayer, int a, int b);
+
+inline float PhysCannonCvarFloat(ConVar &cv) { return cv.m_pParent->vfunc1() ? g_104454c4 : cv.m_pParent->m_fValue; }
+struct EntW : CBaseEntity { int edict() { return m_pEdict2e0; } int entindex() { return engine->vfunc35(edict()); } bool IsWorld() { return entindex() == 0; } };
+inline bool PhysCannonIsWorld(CBaseEntity *pEnt) { return ((EntW *)pEnt)->IsWorld(); }
+inline CBasePlayer *PhysCannonOwnerPlayer(CPhysCannonOwner *pOwner)
+{
+	if (!pOwner)
+		return 0;
+	return *(CBasePlayer **)((char *)pOwner + 0xa8);
+}
+
+inline void PhysCannon_TraceLine(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, void *pFilter, CGameTrace *ptr)
+{
+	PhysCannonRay ray;
+	ray.sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+inline void PhysCannon_TraceHull(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, void *pFilter, CGameTrace *ptr)
+{
+	ScopeTrace scope("UTIL_TraceHull", g_106b8540, g_106b8540);
+	PhysCannonRay ray;
+	ray.sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, 0, 0);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+int CWeaponPhysCannon::sub_1040e9c0()
+{
+	CPhysCannonOwner *pOwner = sub_102521f0();
+	if (!pOwner)
+		return 1;
+	CBasePlayer *pPlayer = *(CBasePlayer **)((char *)pOwner + 0xa8);
+	if (!pPlayer)
+		return 1;
+
+	Vector forward;
+	((CEyeVecView *)pPlayer)->sub_100b7fa0(&forward, 0, 0);
+
+	Vector start;
+	pPlayer->vfunc389(&start, (Vector *)pPlayer->vfunc220());
+	float testLength = sub_1040e5b0(this);
+	Vector end = start + forward * testLength;
+
+	CGameTrace tr;
+	CTraceFilterNoOwnerTest filter(pPlayer);
+	PhysCannon_TraceLine(start, end, 0x46004003, &filter, &tr);
+
+	if (tr.m_fraction == 1.0 || tr.m_pEnt == 0 || PhysCannonIsWorld(tr.m_pEnt))
+	{
+		PhysCannon_TraceHull(start, end, -Vector(4, 4, 4), Vector(4, 4, 4), 0x46004003, &filter, &tr);
+	}
+
+	CBaseEntity *pEntity = tr.m_pEnt;
+	bool bAttach = false;
+	bool bPull = false;
+
+	if (tr.m_fraction != 1.0f && tr.m_pEnt && !PhysCannonIsWorld(tr.m_pEnt))
+	{
+		bAttach = true;
+	}
+
+	CBaseEntity *pConeEntity = 0;
+	if (!bAttach && !bPull)
+	{
+		pConeEntity = sub_1040f550(&start, &forward, g_1094a988.GetFloat());
+	}
+
+	if (pConeEntity)
+	{
+		pEntity = pConeEntity;
+		if ((((CPhysCannonTarget *)pEntity)->vfunc215() - start).LengthSqr() <= testLength * testLength)
+			bAttach = true;
+		else
+			bPull = true;
+	}
+
+	if (!((CWeaponMelee *)this)->sub_10411160(pEntity, 0))
+	{
+		if (!pEntity)
+			return 1;
+		PhysCannonObj *pObj = *(PhysCannonObj **)((char *)pEntity + 0x36c);
+		float flMass = pObj ? pObj->vfunc12() : 0.0f;
+		if (((CMeleeStatView *)&g_10739d08)->sub_101e8480((CBaseCombatCharacter *)pPlayer) < flMass)
+		{
+			sub_101cebc0(pPlayer, 0x2f, 0);
+			pPlayer->vfunc456();
+			pPlayer->sub_10167fd0();
+		}
+		return 1;
+	}
+
+	if (!sub_101896f0(pEntity, PhysCannonOwnerPlayer(sub_102521f0()), 0))
+		return 2;
+
+	if (bAttach)
+		return sub_1040e880(pEntity) ? 0 : 1;
+
+	if (!bPull)
+		return 1;
+
+	PhysCannonObj *pObj = *(PhysCannonObj **)((char *)pEntity + 0x36c);
+	if (!pObj)
+		return 1;
+
+	Vector pullDir = start - ((CPhysCannonTarget *)pEntity)->vfunc215();
+	VectorNormalize(pullDir);
+	pullDir *= sub_1040d930() ? PhysCannonCvarFloat(g_1094abf0) : PhysCannonCvarFloat(g_1094ad60);
+	float mass = sub_1040c3b0(pEntity);
+	if (mass < 50.0f)
+		pullDir *= (mass + 0.5) * 0.02;
+	pObj->vfunc30(&pullDir);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040f080 size=0x3cd
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"

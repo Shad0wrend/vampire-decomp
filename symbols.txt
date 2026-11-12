@@ -1687,6 +1687,7 @@
 0x10003346 func   ?sub_100c7be0@@YAXPAV?$CUtlVector@USeqMatch_100c7be0@@V?$CUtlMemory@USeqMatch_100c7be0@@@@@@PAUSeqHdr_100c7be0@@PBD12@Z sub_100c7be0
 0x1000334b func   ?sub_101647a0@CBasePlayer@@QAEHH@Z CBasePlayer::sub_101647a0
 0x10003350 func   ?sub_101dbdc0@CUnknown101dbdc0@@QAEPAXH@Z CUnknown101dbdc0::sub_101dbdc0
+0x10003355 func   ?sub_1040e9c0@CWeaponPhysCannon@@QAEHXZ CWeaponPhysCannon::sub_1040e9c0
 0x1000335a func   ?sub_1036a190@@YAHXZ sub_1036a190
 0x10003364 func   ?sub_1017dd80@CUnk1017dd80@@QAEHXZ CUnk1017dd80::sub_1017dd80
 0x10003369 func   ?sub_103d8df0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d8df0
