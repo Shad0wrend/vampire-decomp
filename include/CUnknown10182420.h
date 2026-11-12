@@ -1,6 +1,7 @@
 // CUnknown10182420: entity-like object (same family as CUnknown10182810) holding an array of 0x40-byte quest
 // entries at +0x1d68 with its count at +0x1d74; real name not yet known.
 #pragma once
+#include "utlvector.h"
 
 struct QuestEntry10182420
 {
@@ -14,9 +15,7 @@ class CUnknown10182420
 {
 public:
 	char pad0[0x1d68];
-	QuestEntry10182420 *m_pEntries;
-	char pad1d6c[8];
-	int m_nEntries;
+	CUtlVector<QuestEntry10182420> m_Entries;
 
 	char sub_10182420(int quest, int value);
 };
