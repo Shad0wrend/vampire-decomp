@@ -235549,6 +235549,81 @@ extern "C" CNPC_VManBat *npc_VManBat()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10389cc0 size=0xb3
+#include "CNPC_VManBat.h"
+#include "CNPC_VVampire.h"
+
+extern int vt_104bbaec;
+extern int vt_104bbac0;
+extern int vt_104bc684;
+int sub_10015be0(unsigned int x);
+void *__fastcall sub_10389e80(void *p);
+
+struct CSecureCoderBasic0
+{
+	char a, b;
+	int v;
+	int sub_103908c0(int x);
+};
+
+struct SecBase10389cc0
+{
+	char a, b;
+	int v;
+	SecBase10389cc0() : v(0) {}
+};
+struct SecType10389cc0
+{
+	void *vt;
+	SecBase10389cc0 base;
+	SecType10389cc0()
+	{
+		vt = &vt_104bc684;
+		CSecureCoderBasic0 t;
+		int x = sub_10015be0(0);
+		int v = t.sub_103908c0(x);
+		char a = ((volatile CSecureCoderBasic0 &)t).a;
+		base.v = v;
+		char b = ((volatile CSecureCoderBasic0 &)t).b;
+		base.a = a;
+		base.b = b;
+	}
+};
+
+struct H10389cc0 { unsigned int m_Index; H10389cc0() : m_Index(0xffffffff) {} };
+struct Obj10389cc0 { char c; Obj10389cc0() { sub_10389e80(this); } };
+#pragma pack(push, 1)
+struct Members10389cc0
+{
+	H10389cc0 h6680;
+	char p6684[8];
+	H10389cc0 h668c;
+	H10389cc0 h6690;
+	char p6694[8];
+	H10389cc0 h669c;
+	H10389cc0 h66a0;
+	H10389cc0 h66a4;
+	H10389cc0 h66a8;
+	H10389cc0 h66ac;
+	char p66b0[9];
+	Obj10389cc0 obj;
+	Members10389cc0() {}
+};
+#pragma pack(pop)
+
+CNPC_VManBat *CNPC_VManBat::sub_10389cc0()
+{
+	((CNPC_VVampire *)this)->sub_103c48e0();
+	((SecType10389cc0 *)&m_pSecure6668)->SecType10389cc0::SecType10389cc0();
+	((Members10389cc0 *)((char *)this + 0x6680))->Members10389cc0::Members10389cc0();
+	*(void **)this = &vt_104bbaec;
+	m_n1568 = 0x14;
+	m_n156c = 0x14;
+	*(void **)((char *)this + 0x19b0) = &vt_104bbac0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10389e80 size=0xc
 void __fastcall sub_10389ea0(void *pThis);
 
