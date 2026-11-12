@@ -215733,6 +215733,248 @@ CBitString *CBitString::sub_102fe9a0(int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ff3e0 size=0x460
+#include "CAI_Waypoint.h"
+#include "CAI_Pathfinder.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_Navigator.h"
+#include "CBitString.h"
+#include "CPairFields102dda40.h"
+#include "Vector.h"
+#include "engineiface.h"
+#include "globalvars.h"
+#include <malloc.h>
+
+extern Vector g_1070d1b0;
+#define vec3_origin g_1070d1b0
+#define NO_NODE -1
+#define NODE_CLIMB 4
+#define AI_MAX_NODE_LINKS 30
+#define stackalloc _alloca
+#define random enginerandom
+
+struct CAI_LinkV : CPairFields102dda40
+{
+	int DestNodeID(int srcID) { return sub_102dda40(srcID); }
+};
+
+struct CAI_NodeV
+{
+	char m_pad00[8];
+	Vector m_vOrigin;		// 0x08
+	char m_pad14[0x70 - 0x14];
+	int m_eNodeType;		// 0x70
+	char m_pad74[0x78 - 0x74];
+	int m_iNumLinks;		// 0x78
+	int *m_ppLinks;			// 0x7c
+	char m_pad80[0x9c - 0x80];
+	float m_flNextUseTime;	// 0x9c
+
+	int NumLinks() const { return m_iNumLinks; }
+	bool IsLocked() const { return (m_flNextUseTime > gpGlobals->curtime); }
+	const Vector &GetOrigin() const { return m_vOrigin; }
+	int GetType() const { return m_eNodeType; }
+	void sub_102f9750();
+	CAI_LinkV *sub_102f9780(int nNum);
+	void ShuffleLinks() { sub_102f9750(); }
+	CAI_LinkV *GetShuffeledLink(int nNum) { return sub_102f9780(nNum); }
+};
+
+struct CAI_NetworkV
+{
+	int m_iNumNodes;
+	CAI_NodeV **m_pAInode;
+	int NumNodes() const { return m_iNumNodes; }
+	CAI_NodeV **AccessNodes() const { return m_pAInode; }
+};
+
+class CBitStringV : public CBitString
+{
+public:
+	CBitStringV(int numBits) { sub_102fe9a0(numBits); ClearAllBits(); }
+	~CBitStringV() { sub_100bf6a0(); }
+	void ClearAllBits() { sub_10307890(this); }
+	bool GetBit(int bitNum) const
+	{
+		const int *pInt = m_pData + (bitNum >> 5);
+		return ((*pInt & (1 << (bitNum & 31))) != 0);
+	}
+	void SetBit(int bitNum)
+	{
+		int *pInt = m_pData + (bitNum >> 5);
+		*pInt |= (1 << (bitNum & 31));
+	}
+};
+
+struct CAI_PathfinderV : CAI_Navigator
+{
+	CAI_NetworkV *GetNetwork() { return (CAI_NetworkV *)((CAI_Navigator *)((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder)->m_pProviders; }
+	const Vector &GetLocalOrigin() { return *(Vector *)((CAI_BaseNPC *)m_pOuter)->vfunc220(); }
+	CAI_Waypoint *MakeRouteFromParents(int *parents, int id) { return ((CAI_Pathfinder *)this)->sub_102fcbd0(parents, id); }
+	bool IsLinkUsable(CAI_LinkV *pLink, int startID) { return ((CAI_Pathfinder *)this)->sub_102ff960(pLink, startID); }
+};
+
+// TARGET: CAI_Navigator::sub_102ff3e0
+CAI_Waypoint *CAI_Navigator::sub_102ff3e0(int startID, float minPathLength, Vector *pDirectionIn)
+{
+	CAI_PathfinderV *pThis = (CAI_PathfinderV *)this;
+	int				pNeighbor[AI_MAX_NODE_LINKS];
+	int				pStaleNeighbor[AI_MAX_NODE_LINKS];
+	int				numNeighbors		= 1;	// The start node
+	int				numStaleNeighbors	= 0;
+	int				neighborID			= NO_NODE;
+
+	if (minPathLength <= 0)
+		return NULL;
+
+	int nNodes = pThis->GetNetwork()->NumNodes();
+	CAI_NodeV **pAInode = pThis->GetNetwork()->AccessNodes();
+
+	if ( !nNodes )
+		return NULL;
+
+	int *nodeParent	= (int *)stackalloc( sizeof(int) * nNodes );
+	CBitStringV closeBS(nNodes);
+	Vector vDirection = *pDirectionIn;
+
+	if (pAInode[startID]->NumLinks() == 0)
+	{
+		return NULL;
+	}
+
+	nodeParent[startID] = NO_NODE;
+	pNeighbor[0]		= startID;
+
+	float	pathLength	 = 0;
+	int		nSearchCount = 0;
+	while ( (pathLength < minPathLength) ||
+			(neighborID != NO_NODE && pAInode[neighborID]->GetType() == NODE_CLIMB))
+	{
+		nSearchCount++;
+
+		if (neighborID			!= NO_NODE	&&
+			numNeighbors		== 0		&&
+			numStaleNeighbors	== 0		)
+		{
+			if (pAInode[neighborID]->GetType() == NODE_CLIMB)
+			{
+				return NULL;
+			}
+			else
+			{
+				CAI_Waypoint* route = pThis->MakeRouteFromParents(&nodeParent[0], neighborID);
+				return route;
+			}
+		}
+
+		int lastID = neighborID;
+
+		if (vDirection != vec3_origin)
+		{
+			float	bestDot		= -1;
+			Vector	vLastPos;
+
+			if (lastID == NO_NODE)
+			{
+				vLastPos = pThis->GetLocalOrigin();
+			}
+			else
+			{
+				vLastPos = pAInode[lastID]->GetOrigin();
+			}
+
+			if (numNeighbors == 0)
+			{
+				neighborID = pStaleNeighbor[random->vfunc2(0,numStaleNeighbors-1)];
+			}
+			else
+			{
+				for (int i=0;i<numNeighbors;i++)
+				{
+					Vector nodeDir = vLastPos - pAInode[pNeighbor[i]]->GetOrigin();
+					VectorNormalize(nodeDir);
+					float fDotPr = DotProduct(vDirection,nodeDir);
+					if (fDotPr > bestDot)
+					{
+						bestDot = fDotPr;
+						neighborID = pNeighbor[i];
+					}
+				}
+			}
+
+			if (neighborID != NO_NODE)
+			{
+				vDirection = vLastPos - pAInode[neighborID]->GetOrigin();
+				VectorNormalize(vDirection);
+			}
+
+		}
+		else if (numNeighbors != 0)
+		{
+			neighborID = pNeighbor[random->vfunc2(0,numNeighbors-1)];
+		}
+		else
+		{
+			neighborID = pStaleNeighbor[random->vfunc2(0,numStaleNeighbors-1)];
+		}
+
+		if ( neighborID < 0 )
+			return NULL;
+
+		nodeParent[neighborID] = lastID;
+		closeBS.SetBit(neighborID);
+
+		if (lastID != NO_NODE)
+		{
+			pathLength += (pAInode[lastID]->GetOrigin() - pAInode[neighborID]->GetOrigin()).Length();
+		}
+
+		if ((pathLength >= minPathLength || nSearchCount > 20) &&
+			pAInode[neighborID]->GetType() != NODE_CLIMB)
+		{
+			return pThis->MakeRouteFromParents(&nodeParent[0], neighborID);
+		}
+
+		numNeighbors		= 0;
+		numStaleNeighbors	= 0;
+
+		pAInode[neighborID]->ShuffleLinks();
+		for (int link=0; link < pAInode[neighborID]->NumLinks();link++)
+		{
+			CAI_LinkV*	nodeLink = pAInode[neighborID]->GetShuffeledLink(link);
+			int			testID	 = nodeLink->DestNodeID(neighborID);
+
+			if (closeBS.GetBit(testID))
+			{
+				continue;
+			}
+
+			if (testID == lastID)
+			{
+				continue;
+			}
+
+			if (!pThis->IsLinkUsable(nodeLink,neighborID))
+			{
+				continue;
+			}
+
+			if (pAInode[testID]->IsLocked())
+			{
+				pStaleNeighbor[numStaleNeighbors]=testID;
+				numStaleNeighbors++;
+			}
+			else
+			{
+				pNeighbor[numNeighbors]=testID;
+				numNeighbors++;
+			}
+		}
+	}
+	return pThis->MakeRouteFromParents(&nodeParent[0], neighborID);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ff960 size=0x1e1
 #include "CAI_Pathfinder.h"
 #include "CAI_BaseNPCTroika.h"
