@@ -5049,6 +5049,307 @@ void CBaseEntity::sub_100342c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10034590 size=0x87d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+// TARGET: CBaseEntity::sub_10034590
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "CUnknown100353c0.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "ConVar.h"
+#include "PhysicsTrace.h"
+
+extern Vector g_1070d1b0;	// vec3_origin
+extern float g_104454c4;	// 0.0f
+void sub_10139500(const Vector &start, float scale, const Vector &direction, Vector &dest);	// VectorMA (asm, cdecl)
+__declspec(dllimport) void Warning(const char *pszFormat, ...);
+
+struct CTryMoveCollision
+{
+	virtual void vfunc0();
+	virtual const Vector *OBBMins();
+	virtual const Vector *OBBMaxs();
+};
+
+struct CTryMoveSurface
+{
+	const char *name;
+	short surfaceProps;
+	unsigned short flags;
+};
+
+struct CTryMoveTraceTail
+{
+	char m_base[0x38];
+	float fractionleftsolid;
+	CTryMoveSurface surface;
+	int hitgroup;
+	short physicsbone;
+	CBaseEntity *m_pEnt;
+	int hitbox;
+};
+
+struct CTryMoveEdict
+{
+	char m_pad00[0x4c];
+	char m_bFree;
+};
+
+struct CTryMoveCycle
+{
+	unsigned __int64 m_Int64;
+	CTryMoveCycle() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm
+		{
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+struct CTryMoveVS
+{
+	EVS10() EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9) EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15)
+	EVS(160) EVS(161) EVS(162) EVS(163) EVS(164) EVS(165)
+	virtual char slot166(CEntityVSlots *pEnt);
+};
+
+struct CTryMoveEntity : CBaseEntity
+{
+	const Vector &GetAbsVelocity()
+	{
+		if ((unsigned char)(m_flags268 >> 12) & 1)
+			sub_100b1d10();
+		return m_vecVelocity3bc;
+	}
+	float GetFriction() const { return *(const float *)((const char *)this + 0x3f0); }
+	CTryMoveCollision *CollisionProp() { return (CTryMoveCollision *)((char *)this + 0x270); }
+	CEntityVSlots *V() { return (CEntityVSlots *)this; }
+};
+
+inline void TryMovePopGroup(CVProfile *p)
+{
+	--p->m_nGroupStackDepth;
+	int nNew = p->m_GroupIDStack[p->m_nGroupStackDepth];
+	int nOld = p->m_GroupIDStack[p->m_nGroupStackDepth + 1];
+	if (nNew != nOld && p->m_bVTuneGroupsEnabled && nOld == p->m_nVTuneGroupID)
+		vtune(false);
+}
+
+inline bool TryMoveNodeExit(CVProfNode *n, bool bPopInline)
+{
+	if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0)
+	{
+		CTryMoveCycle cnt;
+		cnt.Sample();
+		CUnknownCycle100335e0 *pc = &n->m_CurFrameTime;
+		pc->m_Int64 = cnt.m_Int64 - pc->m_Int64;
+		n->m_TotalTime += pc->m_Int64;
+		if (bPopInline)
+			TryMovePopGroup(g_109f3648);
+		else
+			g_109f3648->PopGroup();
+	}
+	return n->m_nRecursions == 0;
+}
+
+inline void TryMoveExitScope(CVProfile *p, bool bPopInline)
+{
+	if (!p->m_bAtRoot || p->m_enabled)
+	{
+		if (TryMoveNodeExit(p->m_pCurNode, bPopInline))
+			p->m_pCurNode = p->m_pCurNode->m_pParent;
+		p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+	}
+}
+
+int CBaseEntity::sub_10034590(float flTime, CGameTrace *steptrace)
+{
+	CTryMoveEntity *self = (CTryMoveEntity *)this;
+	ScopeTrace scopeTrace("CBaseEntity::PhysicsTryMove", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	g_109f3648->EnterScope("CBaseEntity::PhysicsTryMove", 0, "Unaccounted", false);
+
+	int bumpcount, numbumps;
+	Vector dir;
+	float d;
+	int numplanes;
+	Vector planes[5];
+	Vector primal_velocity, original_velocity, new_velocity;
+	int i, j;
+	CGameTrace trace;
+	Vector end;
+	float time_left;
+	int blocked;
+
+	unsigned int mask = self->V()->slot237();
+
+	new_velocity.Init();
+
+	numbumps = 4;
+
+	Vector vecAbsVelocity = self->GetAbsVelocity();
+
+	blocked = 0;
+	VectorCopy(vecAbsVelocity, original_velocity);
+	VectorCopy(vecAbsVelocity, primal_velocity);
+	numplanes = 0;
+
+	time_left = flTime;
+
+	for (bumpcount = 0; bumpcount < numbumps; bumpcount++)
+	{
+		if (vecAbsVelocity == g_1070d1b0)
+			break;
+
+		sub_10139500(*self->V()->slot217(), time_left, vecAbsVelocity, end);
+
+		const Vector *pMins = self->CollisionProp()->OBBMins();
+		sub_10035030(this, self->V()->slot217(), &end, pMins, self->CollisionProp()->OBBMaxs(), mask, &trace);
+
+		if (trace.m_startsolid)
+		{
+			sub_100b2770(g_1070d1b0);
+			g_109f3648->ExitScopeCall();
+			return 4;
+		}
+
+		if (trace.m_fraction > g_104454c4)
+		{
+			self->V()->slot216((Vector *)trace.m_endpos);
+			VectorCopy(vecAbsVelocity, original_velocity);
+			numplanes = 0;
+		}
+
+		if (trace.m_fraction == 1)
+			break;
+
+		if (!trace.m_pEnt)
+		{
+			sub_100b2770(vecAbsVelocity);
+			Warning("PhysicsTryMove: !trace.m_pEnt");
+			g_109f3648->ExitScopeCall();
+			return 4;
+		}
+
+		if (trace.m_planeNormal[2] > 0.7)
+		{
+			blocked |= 1;
+			if (((CTryMoveVS *)this)->slot166((CEntityVSlots *)trace.m_pEnt))
+				self->V()->slot208((CEntityVSlots *)trace.m_pEnt);
+		}
+		if (trace.m_planeNormal[2] == g_104454c4)
+		{
+			blocked |= 2;
+			if (steptrace)
+			{
+				((CUnknown100353c0 *)steptrace)->sub_100353c0((const CUnknown100353c0 *)&trace);
+				CTryMoveTraceTail *pDst = (CTryMoveTraceTail *)steptrace;
+				CTryMoveTraceTail *pSrc = (CTryMoveTraceTail *)&trace;
+				pDst->fractionleftsolid = pSrc->fractionleftsolid;
+				pDst->surface = pSrc->surface;
+				pDst->hitgroup = pSrc->hitgroup;
+				pDst->physicsbone = pSrc->physicsbone;
+				pDst->m_pEnt = pSrc->m_pEnt;
+				pDst->hitbox = pSrc->hitbox;
+			}
+		}
+
+		sub_1003e6c0(trace.m_pEnt, &trace);
+		if (self->V()->slot116() || ((CTryMoveEdict *)m_pEdict2e0)->m_bFree)
+			break;
+
+		time_left -= time_left * trace.m_fraction;
+
+		if (numplanes >= 5)
+		{
+			sub_100b2770(g_1070d1b0);
+			g_109f3648->ExitScopeCall();
+			return blocked;
+		}
+
+		VectorCopy(*(Vector *)trace.m_planeNormal, planes[numplanes]);
+		numplanes++;
+
+		if (self->V()->slot94() == 3 && (!(sub_100b3700() & 1) || self->GetFriction() != 1))
+		{
+			for (i = 0; i < numplanes; i++)
+			{
+				if (planes[i][2] > 0.7)
+				{
+					sub_1003ef00(&original_velocity, &planes[i], &new_velocity, 1);
+					VectorCopy(new_velocity, original_velocity);
+				}
+				else
+				{
+					sub_1003ef00(&original_velocity, &planes[i], &new_velocity, 1.0 + (g_109eef74->vfunc1() ? g_104454c4 : g_109eef74->m_fValue) * (1 - self->GetFriction()));
+				}
+			}
+
+			VectorCopy(new_velocity, vecAbsVelocity);
+			VectorCopy(new_velocity, original_velocity);
+		}
+		else
+		{
+			for (i = 0; i < numplanes; i++)
+			{
+				sub_1003ef00(&original_velocity, &planes[i], &new_velocity, 1);
+				for (j = 0; j < numplanes; j++)
+					if (j != i)
+					{
+						if (DotProduct(new_velocity, planes[j]) < g_104454c4)
+							break;
+					}
+				if (j == numplanes)
+					break;
+			}
+
+			if (i != numplanes)
+			{
+				VectorCopy(new_velocity, vecAbsVelocity);
+			}
+			else
+			{
+				if (numplanes != 2)
+				{
+					sub_100b2770(vecAbsVelocity);
+					g_109f3648->ExitScope();
+					return blocked;
+				}
+				CrossProduct(planes[0], planes[1], dir);
+				const Vector &v = vecAbsVelocity;
+				d = vecAbsVelocity.z * dir.z + vecAbsVelocity.x * dir.x + dir.y * v.y;
+				VectorScale(dir, d, vecAbsVelocity);
+			}
+
+			if (vecAbsVelocity.x * primal_velocity.x + vecAbsVelocity.y * primal_velocity.y + vecAbsVelocity[2] * primal_velocity[2] <= g_104454c4)
+			{
+				sub_100b2770(g_1070d1b0);
+				TryMoveExitScope(g_109f3648, false);
+				return blocked;
+			}
+		}
+	}
+
+	sub_100b2770(vecAbsVelocity);
+	TryMoveExitScope(g_109f3648, true);
+	return blocked;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100353c0 size=0x93
 #include "CUnknown100353c0.h"
 

@@ -8633,6 +8633,7 @@
 0x1000c496 func   ?sub_1024b150@@YA_NPBUSym@@0@Z sub_1024b150
 0x1000c49b func   ?vfunc176@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::vfunc176
 0x1000c4a0 func   ?vfunc82@CNPC_VVampire@@UAEPAUdatamap_t@@XZ CNPC_VVampire::vfunc82
+0x1000c4a5 func   ?sub_10034590@CBaseEntity@@QAEHMPAUCGameTrace@@@Z CBaseEntity::sub_10034590
 0x1000c4aa func   ?vfunc588@CNPC_VTzimisceRunner@@UAEHXZ CNPC_VTzimisceRunner::vfunc588
 0x1000c4af func   ?vfunc294@CNPC_VRat@@QAE_NH@Z CNPC_VRat::vfunc294
 0x1000c4b4 func   ?vfunc11@CAI_Navigator@@UAEXH@Z CAI_Navigator::vfunc11
