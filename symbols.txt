@@ -5415,6 +5415,7 @@
 0x1000824c func   ?vfunc5@CItemGWarrens4Passkey@@QAEPAV1@I@Z CItemGWarrens4Passkey::vfunc5
 0x10008251 func   ?vfunc491@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc491
 0x10008256 func   ?vfunc113@CPhysMotor@@UAEXXZ CPhysMotor::vfunc113
+0x10008260 func   ?vfunc134@CSprayCan@@UAEXXZ CSprayCan::vfunc134
 0x10008265 func   ?sub_1030f780@@YAHXZ sub_1030f780
 0x1000826a func   ?sub_100295d0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295d0
 0x1000826f func   ?sub_100622d0@@YAHXZ sub_100622d0
