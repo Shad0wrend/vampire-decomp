@@ -456,7 +456,21 @@ public:
 	CPlayerLocalPredictedData m_Local1E40;	// 0x1E40 .. 0x1E73: vptr 0x10470490, then +0x04 (the model index), +0x08, +0x0c (default spread models), +0x10 (m_n2068), +0x14 (20 bytes the engine slot 112 fills)
 	unsigned int m_flags1E74;
 	int m_n1E78;	// 0x1E78: 0 on death (vfunc144)
-	char m_pad1E7C[0x30];	// 0x1E7C .. 0x1EAB
+	int m_n1E7C;
+	int m_n1E80;
+	int m_n1E84;
+	int m_n1E88;
+	char m_b1E8C;
+	char m_b1E8D;
+	char m_b1E8E;
+	char m_b1E8F;
+	int m_n1E90;
+	int m_n1E94;
+	int m_n1E98;
+	int m_n1E9C;
+	int m_n1EA0;
+	int m_n1EA4;
+	int m_n1EA8;
 	int m_nEdict1EAC;	// 0x1EAC: engine index of the entity at +0x1c58 (its +0x2e0), 0 when none
 	int m_nEdict1EB0;	// 0x1EB0: engine index of the grapple target / use entity (its +0x2e0)
 	char m_b1EB4;	// 0x1EB4: copy of the byte at +0x1474
@@ -466,9 +480,10 @@ public:
 	char m_bNotifyUse1EC0;
 	char m_pad1EC1[3];
 	int m_nUseEdict1EC4;	// 0x1EC4: engine index of the use entity, cleared when it is gone
-	char m_pad1EC8[0x1ed0 - 0x1ec8];
+	int m_n1EC8;
+	int m_n1ECC;
 	int m_n1ED0;	// 0x1ed0: the engine index of the Nosferatu target
-	char m_pad1ED4[0x1ed8 - 0x1ed4];
+	int m_n1ED4;
 	unsigned int m_nFlags1ED8;	// 0x1ed8: the player's status flag dword updated by sub_10181780 (bit 1 = live grapple target, 0x20 / 0x100 = target mode 2 / 8, bit 0 = sub_10146a80, bit 2 = +0x14aa, bit 9 = use entity matches +0x1cb8 / +0x1cbc, bit 4 = sub_1033b7c0, bit 7 = slot 413, bit 3 = slot 412, bit 6 = +0x1d40 / +0x1d44)
 	union {
 		char m_pad1EDC[0x1ef0 - 0x1edc];	// 0x1EDC .. 0x1EEF
@@ -688,5 +703,8 @@ void sub_1016c9d0();
 	char sub_10167370();
 	void sub_1017ed00(int level, CBaseEntity *pNPC, const Vector &vecLocation);	// the cops response request: unless hunters pursue, remembers level / NPC / location (a higher level replaces a pending one) and arms the timer +0x1cf8 with a random delay
 	void sub_10181be0();
+	void sub_10174580();
+	int sub_1017d630();
+	int sub_10182810();
 #include "CBasePlayer_ext.h"
 };
