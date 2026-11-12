@@ -28,7 +28,8 @@ public:
     void sub_1010ff40();
     void sub_10112a10();    // resets the pane grid (every cell of the m_nCells x m_nRows panes to -1.0f), sends the entity message 0 with the byte 1 to everybody but the player of this entity (a reliable entity message filter) and stores the pane count at +0x4cc
     void sub_10112b90(int nCol, int nRow);    // breaks one pane: for a cell inside the grid counts it (+0x4cc), sets its entry in the pane grid to -1.0f, sends the entity message 0 with the cell (0, col, row) to everybody but the player of this entity (reliable), arms the think function (stub 0x1000bb4a, 0x10112650) and makes it think now
-    void sub_10112650();    // the think function (stub 0x1000bb4a)
+    void sub_10112650();
+    void sub_10111ba0(int a, const Vector *pVec);    // the think function (stub 0x1000bb4a)
     void sub_10113050(const Vector *pPos, const float *pAngles, const Vector *pForce, const Vector *pForcePos, float flWidth, float flHeight, int unused);    // the shatter effect: copies the position and the force, for the glass type (+0x4c8 == 1) moves the position back by 8 * the axis (+0x4ac), turns the force around (-0.75) and tints the front (0x59, 0x78, 0x53) and back (0x63, 0x4c, 0x15), else white; sends the temp entity ShatterSurface (slot 23, shard size 4.0f) to the players that can hear the position
 
     char m_pad03e0[0x454 - 0x3e0];
