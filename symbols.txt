@@ -2871,6 +2871,7 @@
 0x10004c50 func   ?sub_10209d40@CItemContainerAnimated@@QAEPAV1@XZ CItemContainerAnimated::sub_10209d40
 0x10004c55 func   ?sub_101da9b0@CBitfieldSet@@QAEXI@Z CBitfieldSet::sub_101da9b0
 0x10004c5a func   ?vfunc86@CDisciplineParticle@@QAEDHHHHH@Z CDisciplineParticle::vfunc86
+0x10004c5f func   ?Grow@?$CUtlMemory@PBD@@QAEXH@Z CUtlMemory<char const *>::Grow
 0x10004c5f func   ?sub_100c83a0@CMem4c_t@@QAEXH@Z CMem4c_t::sub_100c83a0
 0x10004c64 func   ?sub_103c0b30@@YAHXZ sub_103c0b30
 0x10004c6e func   ?sub_101f0990@CUnknown101f0990@@QAEXPBD@Z CUnknown101f0990::sub_101f0990
