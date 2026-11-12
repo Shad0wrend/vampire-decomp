@@ -1,6 +1,68 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10140f60 size=0xe7
+#include "CMultiplayRules.h"
+#include "ConVar.h"
+#define EV(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct EngineCmdSlots
+{
+    EV(a0)
+    virtual void a10();
+    virtual int vfunc11();
+    EV(b1) EV(b2) EV(b3) EV(b4)
+    virtual void c52(); virtual void c53(); virtual void c54(); virtual void c55(); virtual void c56(); virtual void c57(); virtual void c58();
+    virtual void vfunc59(const char *pszCmd);
+};
+extern EngineCmdSlots *g_1070b22c;
+extern ConVar g_1070aa40;
+extern ConVar g_1070abf0;
+extern char g_1054a88c[];
+extern char g_1057aaf0[];
+extern char g_1057aac4[];
+extern char g_1057aab8[];
+extern char g_106b8540[];
+extern void (*g_109f3628)(const char *fmt, ...);
+extern int (*g_109f388c)(char *buf, int n, const char *fmt, ...);
+__forceinline const char *GetString(const ConVar &cv)
+{
+    if (cv.m_pParent->vfunc1())
+        return g_106b8540;
+    if (cv.m_nFlags & 0x1000)
+        return g_1054a88c;
+    ConVar *var = (ConVar *)cv.m_pParent;
+    return (var->m_pszString) ? var->m_pszString : g_106b8540;
+}
+CMultiplayRules::CMultiplayRules()
+{
+    sub_1000fcbd();
+    m_n08 = 0;
+    if (g_1070b22c->vfunc11())
+    {
+        const char *cfgfile = GetString(g_1070aa40);
+        if (cfgfile && cfgfile[0])
+        {
+            char szCommand[256];
+            g_109f3628(g_1057aaf0);
+            g_109f388c(szCommand, sizeof(szCommand), g_1057aab8, cfgfile);
+            g_1070b22c->vfunc59(szCommand);
+        }
+    }
+    else
+    {
+        const char *cfgfile = GetString(g_1070abf0);
+        if (cfgfile && cfgfile[0])
+        {
+            char szCommand[256];
+            g_109f3628(g_1057aac4);
+            g_109f388c(szCommand, sizeof(szCommand), g_1057aab8, cfgfile);
+            g_1070b22c->vfunc59(szCommand);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141090 size=0x8
 #include "CMultiplayRules.h"
 
