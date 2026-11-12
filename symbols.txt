@@ -5109,6 +5109,7 @@
 0x10007d6f func   ?Links@?$CUtlRBTree@UCRBTree16Entry8@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CRBTree16Entry8,unsigned short>::Links
 0x10007d74 func   ?sub_101b21e0@CUnknown101b21e0@@QAEHXZ CUnknown101b21e0::sub_101b21e0
 0x10007d79 func   ?sub_1037a740@@YAPAHXZ sub_1037a740
+0x10007d7e func   ?Links@?$CUtlRBTree@UCUnknown10249fc0_Entry@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CUnknown10249fc0_Entry,unsigned short>::Links
 0x10007d7e func   ?sub_1024a900@CUtlRBTree16Unit@@QBEPBULinks_t@CUtlRBTree16@@G@Z CUtlRBTree16Unit::sub_1024a900
 0x10007d83 func   ?sub_103daf10@CTriggerWWZone@@QAEXXZ CTriggerWWZone::sub_103daf10
 0x10007d88 func   ?vfunc103@CPushable@@QAEXXZ CPushable::vfunc103
