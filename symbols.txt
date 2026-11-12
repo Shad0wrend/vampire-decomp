@@ -409,6 +409,7 @@
 0x1000186b func   ?sub_10312f50@@YAXXZ sub_10312f50
 0x10001870 func   ?sub_100b3ee0@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3ee0
 0x10001875 func   ?vfunc80@CItemGDrugsPillBottle@@QAEHXZ CItemGDrugsPillBottle::vfunc80
+0x1000187a func   ?vfunc113@CAI_InterestingPlaceConverstation@@UAEXXZ CAI_InterestingPlaceConverstation::vfunc113
 0x1000187f func   ?vfunc0@CTETParticle@@UAEPAUServerClass@@XZ CTETParticle::vfunc0
 0x10001884 func   ?vfunc299@CWeaponPhysCannon@@UAEXPBM@Z CWeaponPhysCannon::vfunc299
 0x10001889 func   ?sub_1036f520@@YAXXZ sub_1036f520

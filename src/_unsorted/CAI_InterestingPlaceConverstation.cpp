@@ -118,3 +118,65 @@ int CAI_InterestingPlaceConverstation::vfunc127(int a)
 	return r;
 }
 // END FUNCTION
+
+// FUNCTION: 0x102dbde0 size=0x161
+#include "vampire_all.h"
+#include "CAI_InterestingPlace.h"
+#include "utlvector.h"
+#include "Tier1.h"
+
+extern CGlobalEntityList g_106eb5d8;
+struct EdictObjView { virtual void v0(); virtual void v1(); virtual void v2(); virtual EdictObjView *v3(); virtual void v4(); virtual const char *v5(); };
+struct EdictView { char pad[0x40]; EdictObjView *m_p; };
+
+struct CIPHandleMem : CUtlMemory<CHandle<CAI_InterestingPlace> >
+{
+	void sub_102dcec0(int num);	// Grow, out of line
+};
+struct CIPHandleVec : CUtlVector<CHandle<CAI_InterestingPlace> >
+{
+	void sub_102dce30(int elem, int num);	// ShiftElementsRight, out of line
+	int AddToTailX(const CHandle<CAI_InterestingPlace> &src)
+	{
+		int elem = m_Size;
+		if (m_Size + 1 > m_Memory.NumAllocated())
+			((CIPHandleMem *)&m_Memory)->sub_102dcec0(m_Size + 1 - m_Memory.NumAllocated());
+		m_Size += 1;
+		ResetDbgInfo();
+		sub_102dce30(elem, 1);
+		CopyConstruct(&Element(elem), src);
+		return elem;
+	}
+};
+
+namespace block_102dbde0 {
+struct CIPUnit : CAI_InterestingPlace { void sub_102db740(CBaseEntity *p); };
+void CIPUnit::sub_102db740(CBaseEntity *p) { m_n608 = (int)p; }
+}
+using namespace block_102dbde0;
+
+// TARGET: ?vfunc113@CAI_InterestingPlaceConverstation@@UAEXXZ
+void CAI_InterestingPlaceConverstation::vfunc113()
+{
+	m_n4fc = 0;
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f7770(0, m_pszTarget450 ? m_pszTarget450 : "", 0, 0);
+	while (pEnt) {
+		CAI_InterestingPlace *pPlace = dynamic_cast<CAI_InterestingPlace *>(pEnt);
+		if (pPlace && pPlace->m_nSlots == 1) {
+			CHandle<CAI_InterestingPlace> h;
+			*(unsigned int *)&h = *(unsigned int *)pPlace->vfunc1();
+			((CIPHandleVec *)&m_vec518)->AddToTailX(h);
+			((CIPUnit *)pPlace)->sub_102db740(this);
+		} else {
+			EdictView *e = (EdictView *)pEnt->m_pEdict2e0;
+			const char *s = !e->m_p ? "" : e->m_p->v3()->v5();
+			g_109f364c("%s(%s) is not a valid target for %s. Must be an intersting_place entity with 1 slot!!\n", s, ((CAI_InterestingPlaceConverstation *)pEnt)->sub_1000b5cd(), sub_1000b5cd());
+		}
+		pEnt = g_106eb5d8.sub_100f7770(pEnt, m_pszTarget450 ? m_pszTarget450 : "", 0, 0);
+	}
+	if (m_items46c.m_c)
+		sub_102dc3e0();
+	else
+		sub_100ac4e0(0, 0, 0);
+}
+// END FUNCTION
