@@ -429,6 +429,45 @@ int CWeaponMelee::vfunc368(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eaca0 size=0x105
+#include "CWeaponMelee.h"
+#include "CBasePlayerUnit326.h"
+#include "CEHandleGet.h"
+
+void CWeaponMelee::vfunc326()
+{
+	CBasePlayer *pOwner = (CBasePlayer *)sub_102521f0();
+	CBasePlayerUnit326 *pPlayer = (CBasePlayerUnit326 *)sub_10252290();
+	int nAct = 0x4b;
+	bool bFlag = false;
+	if (!pOwner)
+		return;
+	if (EHandle_Get(pOwner->m_h1538) && pOwner->m_n153C != -1)
+		return;
+	if (pPlayer)
+	{
+		if (pPlayer->sub_10167370())
+			bFlag = true;
+		if (pPlayer->sub_101613b0())
+			nAct = 0x4c;
+	}
+	if (!bFlag)
+	{
+		char bOk = 0;
+		if (pPlayer)
+		{
+			bOk = vfunc372(nAct, 0, 1);
+			if (!bOk && (char)((vfunc360() >> 30) & 1))
+				bOk = vfunc372(0x53, 0, 0);
+		}
+		if (!bOk && !vfunc372(nAct, 1, 1))
+			return;
+	}
+	if (pPlayer)
+		pPlayer->vfunc429();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eae00 size=0x78
 #include "CWeaponMelee.h"
 #include "CGlobalEntityList.h"
