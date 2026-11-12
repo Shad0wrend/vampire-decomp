@@ -172899,6 +172899,38 @@ extern "C" CBaseEntity *infodecal()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023a7d0 size=0x1de
+#include "utlrbtree.h"
+#include "UTIL_Trace.h"
+#include "CBroadcastRecipientFilter.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include "UTIL_BloodStream.h"
+#include "CEntityVSlots.h"
+#include "CRopeKeyframe.h"
+
+void __cdecl sub_101c0b10();
+
+inline int ENTINDEX_1023a7d0(int pEdict) { return engine->vfunc35(pEdict); }
+inline int entindex_1023a7d0(CBaseEntity *pEnt) { return ENTINDEX_1023a7d0(pEnt->m_pEdict2e0); }
+
+inline int pcdZ0(int x) { return x; }
+inline int pcdZ1(int x) { return pcdZ0(x); }
+inline int pcdZ2(int x) { return pcdZ1(x); }
+// TARGET: CRopeKeyframe::sub_1023a7d0
+void CRopeKeyframe::sub_1023a7d0(int a, int b, int c, int d)
+{
+	CGameTrace tr;
+	UTIL_TraceLine_RayCall(*(Vector *)((CEntityVSlots *)this)->slot220() - Vector(5.0f, 5.0f, 5.0f), *(Vector *)((CEntityVSlots *)this)->slot220() + Vector(5.0f, 5.0f, 5.0f), 0x400b, this, 0, &tr);
+	int edict = entindex_1023a7d0(tr.m_pEnt);
+	CBroadcastRecipientFilter recip;
+	g_10540528->vfunc16(recip, 0.0f, (Vector *)((CEntityVSlots *)this)->slot220(), edict, *(int *)&m_b450);
+	sub_100ac4e0((int)sub_101c0b10, 0, 0);
+	m_flNextThink = gpGlobals->curtime + 0.1;
+	if (0) recip.m_Recipients.Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ae40 size=0x43
 #include "CWorld.h"
 void *sub_100aa720(int size);
