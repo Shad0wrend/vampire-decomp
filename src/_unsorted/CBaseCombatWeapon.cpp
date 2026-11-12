@@ -1246,6 +1246,56 @@ float CBaseCombatWeapon::vfunc311()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10252910 size=0x12f
+#include "CBaseCombatWeapon.h"
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+#include "CUnknown1070b244.h"
+
+struct DropOwnerView : CEntityVSlots
+{
+    char pad[0xa8 - 4];
+    void *m_pObj;
+};
+struct DropEntView
+{
+    char pad[0x9c];
+    DropOwnerView *m_pOwner9c;
+};
+extern Vector g_1070d1b0;
+extern CUnknown1070b244 *g_1070b244;
+
+inline DropOwnerView *ToBaseCombatCharacter(DropEntView *pEntity)
+{
+    if (!pEntity)
+        return 0;
+    return pEntity->m_pOwner9c;
+}
+
+void CBaseCombatWeapon::vfunc300()
+{
+    Vector vecVelocity = g_1070d1b0;
+    DropOwnerView *pOwner = sub_102521f0() ? (DropOwnerView *)sub_102521f0() : ToBaseCombatCharacter((DropEntView *)((EHANDLE *)((char *)this + 0x37c))->Get());
+    if (pOwner)
+    {
+        float flScale = 0.0f;
+        if (pOwner->m_pObj)
+            flScale = g_1070b244->vfunc1(64.0f, 128.0f);
+        else
+        {
+            Vector vecOrigin = *pOwner->slot217();
+            vecOrigin.z = vecOrigin.z + 35.0f;
+            ((CEntityVSlots *)this)->slot216(&vecOrigin);
+        }
+        {
+            Vector vecDir;
+            vecVelocity = flScale * *pOwner->slot369(&vecDir);
+        }
+    }
+    vfunc299(&vecVelocity.x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10252a90 size=0x121
 #include "CBaseCombatWeapon.h"
 #include "CWeaponOwner.h"
