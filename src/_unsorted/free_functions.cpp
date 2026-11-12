@@ -153005,6 +153005,65 @@ void CUnit10210250::sub_1020fad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020fe70 size=0x26b
+#include "utlrbtree.h"
+#include "CBaseEntity.h"
+#include "CUnit10210250.h"
+#include "globalvars.h"
+#include "Tier1.h"
+
+inline bool HV1(const EHANDLE &h) { return h.Get() != 0; }
+inline bool HV2(const EHANDLE &h) { return HV1(h); }
+inline bool HV3(const EHANDLE &h) { return HV2(h); }
+inline bool HV4(const EHANDLE &h) { return HV3(h); }
+inline bool HV5(const EHANDLE &h) { return HV4(h); }
+inline bool HV6(const EHANDLE &h) { return HV5(h); }
+
+inline CBaseEntity *Owner9c(CBaseEntity *pEnt) { return (CBaseEntity *)pEnt->m_p9c; }
+
+namespace block_1020fe70
+{
+	bool sub_1020fe6f(const EHANDLE &h) { return HV6(h); }
+}
+
+// TARGET: CUnit10210250::sub_1020fe70
+void CUnit10210250::sub_1020fe70(void *pInputData)
+{
+	float flStart = gpGlobals->curtime;
+	sub_1020fad0();
+	int nB = m_ListB.Count();
+	int nA = m_ListA.Count();
+	for (int i = 0; i < nB; i++)
+	{
+		for (int j = 0; j < nA; j++)
+		{
+			if (HV6(m_ListA[j]) && m_ListB[i])
+			{
+				if (m_bAllValid4b4)
+				{
+					if (sub_102101d0(Owner9c(m_ListA[j]), Owner9c(m_ListB[i])))
+					{
+						m_Output45c.sub_100cd660(*(void **)pInputData, this, 0);
+						return;
+					}
+				}
+				if (!m_bAllValid4b4)
+				{
+					if (sub_10210180(m_ListA[j], m_ListB[i]))
+					{
+						m_Output45c.sub_100cd660(*(void **)pInputData, this, 0);
+						return;
+					}
+				}
+			}
+		}
+	}
+	m_Output474.sub_100cd660(*(void **)pInputData, this, 0);
+	if (flStart + 0.1 < gpGlobals->curtime)
+		g_109f3628("%s searching too long!!\n", sub_100ab4f0());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10210180 size=0x32
 #include "CEntityVSlots.h"
 
