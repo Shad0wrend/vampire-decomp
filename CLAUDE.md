@@ -259,6 +259,25 @@ have written it rather than adding temporaries that spell out the assembly:
   mangled `TARGET` (`?LinkToParent@?$CUtlRBTree@U...@@G@@QAEXGG_N@Z`), not a hand-written class with the same steps
   (0x100498c0, 0x10054c00; see the containers section).
 
+## VC6 walls closed by hand (2026-11-12): score 1-2 near misses Opus had given up
+
+17 near misses matched in one afternoon (7.7 KB) after their header patches were saved. The levers, each one measured:
+
+- **Write the SDK's spelling of a constant, not the folded value.** `#define DEG2RAD(x) ((float)(x) * (float)(M_PI_F /
+  180.f))` with `M_PI_F ((float)(M_PI))` (0x101d2f40), `#define lbs2kg(x) ((x)*(1.0f/(2.2f)))` (0x1002bdc0): the
+  unfolded expression moves an `fstp`/`fmul` to the game's place. Double literals passed to float parameters
+  (`vfunc1(0.95, 1.05)`) and a plain `0` instead of `0.0f` did the same in 0x100f49e0 (both needed).
+- **Initialise a local that only one path sets.** `bool bWentThrough = false;` let VC6 thread the jump of the other
+  path straight past two tests, as the game does (0x102579f0, 1,672 B).
+- **float, not double, for a local that holds a float expression.** `float flZ = ... ? g_x : cv.m_fValue;` moved one
+  load after an `fcos` (0x103e9e00).
+- **A constant local the SDK keeps:** Studio_AnimVelocity's `float prevframe = 0;` used in both expressions
+  (0x100c5a30).
+- **A by-value return of a small struct:** `color32 Color32() const { return rgbaVal; }` then
+  `pWorld->m_FogColor2 = in.value.Color32();` (0x1034e9a0, 0x1034e8c0).
+- **x87 sum order:** a term holding a const `operator[]` (returns by value) is computed first and its operand loaded
+  first; use it on the one term the game computes first (0x102961a0, not matched yet: it also reorders a Length).
+
 ## VC6 stack slots: what moves them and what does not (measured 2026-11-08, partial)
 
 Measured by compiling small bodies (cache/hand102c3b50/exp2.py prints each tagged local's frame offset):
