@@ -15302,6 +15302,7 @@
 0x10015659 func   ?sub_101d4d10@CIndexTables@@QAEHHH@Z CIndexTables::sub_101d4d10
 0x1001565e func   ?sub_100b4ad0@CFoo@@QAEXPAH@Z CFoo::sub_100b4ad0
 0x10015663 func   ?vfunc81@CVampireProjectile@@UAEHXZ CVampireProjectile::vfunc81
+0x10015668 func   ?sub_101f1da0@CReactionNames@@QAEPADHH@Z CReactionNames::sub_101f1da0
 0x1001566d func   ?sub_1019c6f0@@YAXPAUCRagdollBones@@PAUCBoneSetBase@@1H@Z sub_1019c6f0
 0x10015672 func   ?vfunc81@CBaseEntity@@UAEHXZ CBaseEntity::vfunc81
 0x10015677 func   ?sub_102dd610@CUnknown102dd610@@QAEDXZ CUnknown102dd610::sub_102dd610
