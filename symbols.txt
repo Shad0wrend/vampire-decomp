@@ -12147,6 +12147,7 @@
 0x10011162 func   ?sub_103b1ad0@@YIPAHPAD@Z sub_103b1ad0
 0x10011167 func   ?vfunc0@CAI_HumanoidNavigator@@QAEPAV1@I@Z CAI_HumanoidNavigator::vfunc0
 0x1001116c func   ?sub_1024d5f0@VMatrix@@QBE?AV1@XZ VMatrix::sub_1024d5f0
+0x10011171 func   ?vfunc43@CBaseTerminal@@QAEXPAX@Z CBaseTerminal::vfunc43
 0x10011176 func   ?sub_1027d9f0@@YI_NPADHHH@Z sub_1027d9f0
 0x1001117b func   ?sub_101563b0@CRagdollProp@@QAEXHH@Z CRagdollProp::sub_101563b0
 0x10011180 func   ?sub_1006d560@@YAHXZ sub_1006d560

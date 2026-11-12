@@ -256,6 +256,88 @@ void CBaseTerminal::vfunc41(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10218320 size=0x284
+#include "CBaseTerminal.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "UTIL_Trace.h"
+
+extern "C" double __cdecl sqrt(double);
+#pragma intrinsic(sqrt)
+
+inline float HullSqrt(float f)
+{
+	return (float)sqrt(f);
+}
+
+struct CHullRay
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_flExtent2D;
+
+	__forceinline void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs)
+	{
+		VectorSubtract(end, start, m_Delta);
+		m_IsSwept = (m_Delta.LengthSqr() != 0);
+		VectorSubtract(maxs, mins, m_Extents);
+		m_Extents *= 0.5f;
+		m_IsRay = ((m_Extents.x * m_Extents.x + (m_Extents.y * m_Extents.y + m_Extents.z * m_Extents.z)) < 1e-6);
+		VectorAdd(mins, maxs, m_StartOffset);
+		m_StartOffset *= 0.5f;
+		VectorAdd(start, m_StartOffset, m_Start);
+		m_StartOffset *= -1.0f;
+		m_b32 = 0;
+		m_b33 = 0;
+		m_flExtent2D = 0;
+		if (!m_IsRay)
+		{
+			float fl = HullSqrt(m_Extents.x * m_Extents.x + m_Extents.y * m_Extents.y);
+			m_flExtent2D = fl;
+			if (m_flExtent2D > 1e-6)
+				m_b33 = 1;
+		}
+	}
+};
+
+inline void TraceHull(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, void *pIgnore, CGameTrace *ptr)
+{
+	CHullRay ray;
+	ray.Init(start, end, mins, maxs);
+	CTraceFilterSimple filter(pIgnore, 3);
+	g_1070b254->vfunc4((Ray_t *)&ray, 0x201400b, (CTraceFilterNoCharacterCollide *)&filter, ptr);
+}
+
+void CBaseTerminal::vfunc43(void *pOther)
+{
+	if (pOther)
+	{
+		Vector vecOther;
+		vecOther = *((CEntityVSlots *)pOther)->slot217();
+		Vector end = *((CEntityVSlots *)this)->slot217();
+		CCollisionProperty *pColl = (CCollisionProperty *)((char *)pOther + 0x270);
+		const Vector &mins = *(Vector *)pColl->vfunc1();
+		const Vector &maxs = *(Vector *)pColl->vfunc2();
+		end.z = vecOther.z;
+		CGameTrace tr;
+		TraceHull(vecOther, end, mins, maxs, pOther, &tr);
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10146570((const Vector *)&tr.m_startpos, (const Vector *)&tr.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+		((CEntityVSlots *)pOther)->slot216((Vector *)&tr.m_endpos);
+		((CBaseEntity *)pOther)->sub_100b3b00();
+	}
+	if (m_b082c)
+		sub_10217d60();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10218660 size=0x14
 #include "CBaseTerminal.h"
 
