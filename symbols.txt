@@ -4293,6 +4293,7 @@
 0x10006bc2 func   ?sub_1017e720@CUnknown1017e720@@QAEHXZ CUnknown1017e720::sub_1017e720
 0x10006bc7 func   ?vfunc363@CWeaponMelee_Sledgehammer@@QAEHXZ CWeaponMelee_Sledgehammer::vfunc363
 0x10006bd1 func   ?sub_10056f10@@YIPAVCBaseFire@@PAV1@@Z sub_10056f10
+0x10006bd6 func   ?Purge@?$CUtlMemory@PAVCAI_Hint@@@@QAEXXZ CUtlMemory<CAI_Hint *>::Purge
 0x10006bd6 func   ?sub_102d4350@UtlMem@@QAEXXZ UtlMem::sub_102d4350
 0x10006bdb func   ?sub_10202060@CUnknown10202060@@QAEHXZ CUnknown10202060::sub_10202060
 0x10006be0 func   ?sub_103fe9c0@@YAHXZ sub_103fe9c0
