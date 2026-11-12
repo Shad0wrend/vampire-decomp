@@ -418,6 +418,21 @@ have written it rather than adding temporaries that spell out the assembly:
   come from its START (write the SDK front, 0x10130800); `p->f(a, b, p->g())` shares one vtable load: stage `p->g()`
   when the game reloads (0x1022d5a0); `return T(*(T *)p);` for a hidden-pointer return copied from a callee's
   pointer (0x101e8330).
+- **Round 9 (16 of 46; third passes on score-2 walls gave 0):** collisionutils.cpp (2004) holds the big unnamed
+  collision functions: ComputeSeparatingPlane (0x102437d0, needs `#define FloatMakePositive(f) ((float)fabs(f))` as
+  a macro, not an inline), IsBoxIntersectingTriangle (0x10244910: the SDK's function-scope locals in sibling `{}`
+  blocks give the game's frame), IsRayIntersectingOBB (0x102441b0, 45, slots). Troika's AI condition sets are
+  `CFixedBitString<192>` with the SDK bodies through pointer locals (`a.And(b, &out)` loads b first, 0x10280ff0);
+  `CBitString` locals with inline ctor/dtor (0x102ff3e0 FindShortRandomPath); bitbuf.h ReadOneBitNoCheck
+  (0x100be060); `string_t` by value to inline setters and SetName/SetHintGroup (0x1034c2d0); CUtlVector FastRemove
+  from utlvector.h with `Destruct` and memmove (0x103e32b0); an unmerged second null test = re-read through a
+  separate cast of `this` (0x10260540); a small buffer at a dead parameter's home = `char sz[4]`; check format
+  strings against the DLL bytes; score 1 "absolute-address slots differ" = declare the literal-address object
+  `extern T g_X;`; scrambled records read through an `operator unsigned()` on the record view (0x102ae920).
+- **Still open after three passes (scheduling walls, do not reassign without a new idea):** 0x103e0540 / 0x1037b1f0 /
+  0x100e05f0 (`mov ecx,obj` before `push reg`: the source defined that register there), 0x101bef50, 0x1036dd20,
+  0x102f6d80 (FindAINodeNearestFacing), 0x10410bf0 (LaunchObject), 0x101cf7c0, 0x102478f0, 0x102b7cf0, 0x102a0490,
+  0x102961a0, 0x102ef1a0 (OnFailedSteer), 0x1011fb50 (CheckWaterJump), 0x1024b880, 0x1026cec0.
 
 ## VC6 stack slots: what moves them and what does not (measured 2026-11-08, partial)
 
