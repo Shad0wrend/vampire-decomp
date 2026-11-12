@@ -51,3 +51,24 @@ void CFlameCluster::vfunc104()
 	engine->vfunc17("flamethrower_hit_glow-emitter", 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103e25a0 size=0xea
+#include "DebugOverlay.h"
+#include "utlrbtree.h"
+#include "CFlameCluster.h"
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, unsigned int maxLen, const char *pFormat, ...);
+// TARGET: CFlameCluster::vfunc123
+void CFlameCluster::vfunc123()
+{
+	int nCount = m_BurnList.Count();
+	for (int i = 0; i < nCount; i++) {
+		Vector vecSize(24.0f, 24.0f, 24.0f);
+		float flFade = m_BurnList[i].m_flStrength * 0.3333333333333333;
+		Vector vecColor(1.0f, 0.0f, 0.0f);
+		sub_10144290(&m_BurnList[i], vecColor, vecSize, 255, 0, 0, (int)(flFade * 255.0), 0.5f);
+		char szText[16];
+		Q_snprintf(szText, 32, "%d: %2.2", i, m_BurnList[i].m_flStrength);
+		sub_10143710(&m_BurnList[i], szText, 0, 0.5f);
+	}
+}
+// END FUNCTION

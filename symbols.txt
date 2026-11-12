@@ -12877,6 +12877,7 @@
 0x100123b9 func   ?sub_101dc410@CItemVec@@QAEXPBU1@@Z CItemVec::sub_101dc410
 0x100123be func   ?vfunc82@CMoverKeyFrame@@UAEPAUdatamap_t@@XZ CMoverKeyFrame::vfunc82
 0x100123c3 func   ?sub_100dc770@CCollisionProperty@@QAEXPBM0@Z CCollisionProperty::sub_100dc770
+0x100123c8 func   ?vfunc123@CFlameCluster@@UAEXXZ CFlameCluster::vfunc123
 0x100123cd func   ?vfunc319@CAI_BaseNPCTroika@@UAE_NHPAVCBaseEntity@@H@Z CAI_BaseNPCTroika::vfunc319
 0x100123d7 func   ?sub_101e11c0@CUnknown101e0f00@@QAEPAUCUnknown101e0f00Entry@@H@Z CUnknown101e0f00::sub_101e11c0
 0x100123dc func   ?sub_102007f0@CVStatList_t@@QAEXHPAHH@Z CVStatList_t::sub_102007f0
