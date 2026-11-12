@@ -11091,6 +11091,7 @@
 0x1000f8da func   ?vfunc176@CStealthModifier@@QAEXPAVCBaseEntity@@@Z CStealthModifier::vfunc176
 0x1000f8df func   ?vfunc412@CBasePlayer@@UAE_NXZ CBasePlayer::vfunc412
 0x1000f8e4 func   ?sub_1025e4b0@@YAHXZ sub_1025e4b0
+0x1000f8e9 func   ?vfunc583@CCineNPC@@QAEXXZ CCineNPC::vfunc583
 0x1000f8ee func   ?sub_10115d20@@YAPAHXZ sub_10115d20
 0x1000f8f3 func   ?sub_102c4eb0@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_102c4eb0
 0x1000f8fd func   ?sub_100a2260@@YAHXZ sub_100a2260

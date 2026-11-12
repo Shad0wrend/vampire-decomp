@@ -1,6 +1,228 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101a7880 size=0x644
+#include "CAI_Motor.h"
+#include "CCineNPC.h"
+#include "CEntityVSlots.h"
+#include "ConVar.h"
+
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+__declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+__declspec(dllimport) void Msg(const char *fmt, ...);
+extern Vector g_1070d1b0;
+extern Vector g_1070d9d0;
+extern ConVar g_1072bb80;
+
+struct CStartScriptSeq;
+
+struct CStartScriptMotor
+{
+	char pad[0x1c];
+	int m_n1c;
+	char pad2[0x28 - 0x20];
+	char m_b28;
+	char pad3[0x34 - 0x29];
+	float m_f34;
+	void sub_102e0b40();
+	float sub_102e0a80(float yaw);
+};
+
+struct CStartScriptObj : CEntityVSlots
+{
+	char pad[0x14b8 - 4];
+	int m_n14b8;
+};
+
+struct CStartScriptNpc : CEntityVSlots
+{
+	char pad[0x98 - 4];
+	CStartScriptObj *m_pObj98;
+	char pad2[0x19c - 0x9c];
+	unsigned int m_flags19c;
+	char pad3[0x1b3c - 0x1a0];
+	const char *m_pszFile;
+	int m_nLine;
+	char pad4[0x1b4c - 0x1b44];
+	char m_b1b4c;
+	char pad5[0x5cc4 - 0x1b4d];
+	int m_nNewState;
+	char pad6[0x5d44 - 0x5cc8];
+	CStartScriptMotor *m_pMotor;
+	char pad7[0x5d70 - 0x5d48];
+	int m_scriptState;
+	CHandle<CStartScriptSeq> m_hCine;
+	char pad8[0x5de8 - 0x5d78];
+	void *m_pGoalEnt;
+	const char *sub_1000b5cd();
+	char sub_100b5190();
+	void sub_1026d130();
+	void sub_10279cc0(void *pScript);
+	void sub_1027f270(int a);
+	void sub_100b2f50(const Vector *p);
+};
+
+struct CStartScriptTarget : CEntityVSlots
+{
+	char pad[0x94 - 4];
+	CStartScriptNpc *m_pNpc;
+	const char *sub_1000b5cd();
+};
+
+struct CStartScriptSeq : CEntityVSlots
+{
+	char pad[0x19c - 4];
+	unsigned int m_flags19c;
+	char pad2[0x5ce4 - 0x1a0];
+	CHandle<CStartScriptTarget> m_hTarget;
+	char pad3[0x5f94 - 0x5ce8];
+	CHandle<CStartScriptSeq> m_hNextCine;
+	const char *sub_1000b5cd();
+	void sub_10279cc0(void *pScript);
+	void sub_101a8cf0(int a);
+};
+
+void CCineNPC::vfunc583()
+{
+	CStartScriptSeq *pThis = (CStartScriptSeq *)this;
+	CStartScriptTarget *pEntity = pThis->m_hTarget.Get();
+	CStartScriptNpc *pTarget = 0;
+	if (pEntity)
+		pTarget = pEntity->m_pNpc;
+
+	if (pTarget)
+	{
+		if (!pTarget->m_b1b4c)
+		{
+			DevMsg("************************************************\n");
+			DevMsg("***  WARNING  **********************************\n");
+			DevMsg("   scripted sequence(%s)\n", sub_1000b5cd());
+			DevMsg("   is targeting an entity(%s)\n", pTarget->sub_1000b5cd());
+			DevMsg("   that has not run it's AI yet.....\n");
+			DevMsg("   This can happen if it starts hidden and is\n");
+			DevMsg("   immediately put into a script without a delay.\n");
+			DevMsg("   If this is the case.  Put at least a .1 second\n");
+			DevMsg("   delay between ScriptUnhide and starting the\n");
+			DevMsg("   scripted sequence.\n");
+			DevMsg("   Otherwise, talk to a programmer.\n");
+			DevMsg("***  WARNING  **********************************\n");
+			DevMsg("************************************************\n");
+		}
+
+		if (pTarget->m_hCine != 0)
+		{
+			if (g_1072bb80.GetInt())
+			{
+				if (pThis->m_hTarget != 0)
+					Msg("Sequence %s targeting %s posession delayed\n", sub_1000b5cd(), pThis->m_hTarget->sub_1000b5cd());
+				else
+					Msg("Sequence %s targeting %s posession delayed\n", sub_1000b5cd(), "**UNKNOWN**");
+				sub_101a6ec0();
+			}
+			if (pTarget->m_hCine->m_hNextCine != 0)
+			{
+				CStartScriptSeq *pCine = pTarget->m_hCine->m_hNextCine.Get();
+				pCine->sub_10279cc0(0);
+				DevMsg(2, "script \"%s\" kicking script \"%s\" out of the queue\n", sub_1000b5cd(), pCine->sub_1000b5cd());
+			}
+			pTarget->m_hCine->m_hNextCine = pThis;
+			return;
+		}
+
+		if (g_1072bb80.GetInt())
+		{
+			if (pThis->m_hTarget != 0)
+				Msg("Sequence %s targeting %s is posessing entity\n", sub_1000b5cd(), pThis->m_hTarget->sub_1000b5cd());
+			else
+				Msg("Sequence %s targeting %s is posessing entity\n", sub_1000b5cd(), "**UNKNOWN**");
+			sub_101a6ec0();
+		}
+
+		if (pTarget->sub_100b5190())
+			sub_101a77a0(pTarget);
+		if (!m_b5f90)
+			pTarget->sub_1026d130();
+		if (!m_n5f58)
+			pThis->m_hNextCine = 0;
+
+		pTarget->m_pGoalEnt = this;
+		pTarget->m_hCine = pThis;
+		pTarget->sub_10279cc0(this);
+
+		m_saved_movetype = pTarget->slot94();
+		m_saved_movecollide = pTarget->slot95();
+		m_saved_solid = pTarget->slot92();
+		m_saved_solidflags = pTarget->slot211();
+		m_saved_effects = pTarget->m_flags19c;
+
+		CStartScriptObj *pObj = pTarget->m_pObj98;
+		if (pObj)
+		{
+			pObj->slot614();
+			m_saved_troika_flags = pObj->m_n14b8;
+			if (m_flags204 & 0x1000)
+				pObj->m_n14b8 |= 0x40;
+		}
+
+		pTarget->m_flags19c |= pThis->m_flags19c;
+
+		switch (m_fMoveTo)
+		{
+		case 0:
+		case 5:
+			pTarget->sub_1027f270(1);
+			pTarget->m_scriptState = 1;
+			break;
+		case 1:
+			pTarget->sub_1027f270(4);
+			pTarget->m_scriptState = 4;
+			pThis->sub_101a8cf0(1);
+			break;
+		case 2:
+			pTarget->sub_1027f270(5);
+			pTarget->m_scriptState = 5;
+			pThis->sub_101a8cf0(1);
+			break;
+		case 3:
+			pTarget->sub_1027f270(6);
+			pTarget->m_scriptState = 6;
+			pThis->sub_101a8cf0(1);
+			break;
+		case 4:
+		{
+			pTarget->slot181(pThis->slot220(), 0, (int)&g_1070d1b0);
+			pTarget->m_pMotor->sub_102e0b40();
+			CStartScriptMotor *pMotor = pTarget->m_pMotor;
+			float flYaw = pThis->slot221()->y;
+			if (pMotor->m_b28)
+			{
+				if (flYaw >= 180.0f)
+					flYaw -= 180.0f;
+				else
+					flYaw += 180.0f;
+			}
+			if (pMotor->m_n1c == 0x43340000)
+				pMotor->m_f34 = flYaw;
+			else
+				pMotor->m_f34 = pMotor->sub_102e0a80(flYaw);
+			pTarget->sub_100b2f50(&g_1070d9d0);
+			pTarget->m_flags19c |= 0x10;
+			Vector angles = *pTarget->slot221();
+			angles.y = pThis->slot221()->y;
+			pTarget->slot64(&angles.x);
+			pTarget->sub_1027f270(1);
+			pTarget->m_scriptState = 1;
+			break;
+		}
+		}
+
+		pTarget->m_pszFile = "E:\\Vampire\\main\\dlls\\scripted.cpp";
+		pTarget->m_nLine = 712;
+		pTarget->m_nNewState = 4;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a8840 size=0x33
 extern char g_10594b48[];
 
