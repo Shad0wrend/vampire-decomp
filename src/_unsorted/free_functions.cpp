@@ -41771,6 +41771,64 @@ void sub_100af340(void *pPlayer, CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100af840 size=0x131
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CGlobalEntityList.h"
+
+class CBasePlayer;
+struct CCmdClientX { char pad[0xa8]; CBasePlayer *m_pPlayer; };
+CCmdClientX *sub_101193b0();
+CBaseEntity *sub_10172710(CBasePlayer *pPlayer);
+void sub_100af340(CBasePlayer *pPlayer, CBaseEntity *pEnt);
+void sub_101ce620(void *pPlayer, int a, const char *msg, const char *b, const char *c, const char *d, const char *e);
+extern CGlobalEntityList g_106eb5d8;
+
+inline void DumpEnts(CBasePlayer *pPlayer)
+{
+    CBaseEntity *ent;
+    if (engine->vfunc85() < 2) {
+        ent = sub_10172710(pPlayer);
+        if (ent) {
+            sub_100af340(pPlayer, ent);
+            return;
+        }
+        sub_101ce620(pPlayer, 2, "Usage:\n   ent_dump <entity name>\n", 0, 0, 0, 0);
+    } else {
+        ent = g_106eb5d8.sub_100f7770(0, engine->vfunc84(1), 0, 0);
+        if (ent) {
+            do {
+                sub_100af340(pPlayer, ent);
+                ent = g_106eb5d8.sub_100f7770(ent, engine->vfunc84(1), 0, 0);
+            } while (ent);
+            return;
+        }
+        sub_101ce620(pPlayer, 2, "ent_dump: no such entity", 0, 0, 0, 0);
+    }
+}
+
+void sub_100af840()
+{
+    ScopeTrace trace("CC_Ent_Dump", g_106b8540);
+    CCmdClientX *pClient = sub_101193b0();
+    if (!pClient)
+        return;
+    CBasePlayer *pPlayer = pClient->m_pPlayer;
+    if (!pPlayer)
+        return;
+    DumpEnts(pPlayer);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100afa60 size=0x75
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
