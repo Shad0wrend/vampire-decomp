@@ -486,6 +486,34 @@ have written it rather than adding temporaries that spell out the assembly:
     `#pragma optimize("", off)`. A far miss on a tiny SafeDisc-area helper: check the span first.
   0x101b2e30 was saved under the view name CSoundEmitterSystemBaseV::sub_101b2e30 (was provisional vfunc2): watch
   the link audit for its vtable slot.
+- **Round 12 (12 of 40 BIG 1-3 KB functions, 20.5 KB, 2026-11-13):** the inline budget is the main wall of big
+  functions. Idioms:
+  - VPROF: `CVProfile::EnterScope` is an inline member of a dllimport class;
+    VC6 decides per site whether to expand it. Defining its inline body in the source (allowed over the header's
+    dllimport declaration), or the whole tier0 profiler as local `class __declspec(dllimport)` classes
+    (scratchpad work/vprof_local.h, session 30d205cb; offsets m_enabled 0x100c, m_pCurNode 0x1014, CVProfNode
+    m_pParent 0x48), gives uncached `call [imp]` and frees the register (0x10270b20 116 -> 0, 0x10040390 102 -> 13);
+  - spend or free budget on purpose: SDK accessor inlines (GetAbsVelocity, IsWorld -> entindex -> edict, nested)
+    use it; a dead `(void)Inl(x);` near the end uses it (WORKAROUND: 0x10270b20, 0x103645a0, 0x10365a90); writing
+    an inline out by hand frees it. It decides how deep ~CUtlVector -> Purge -> RemoveAll expands at each filter
+    teardown and which vector gets which stack slot. Search it by judging sets of code-neutral wrappers in
+    parallel (scratchpad h49/pm.py: 0x102c0520 31 -> 4 in ~30 s);
+  - nested SDK accessor inlines fix registers far away (IsWorld chain fixed a lea rotation 150 B earlier);
+  - x87 knobs: mixed indexing `d[0]*d.x` / `v[2]*p[2]` (by-value const operator[] on some terms) sets the sum
+    order (0x10306700, 0x10034590); `double t = v.Length() * 0.2; if (a < t)` keeps the fcomp before the cdecl pop;
+    staging `float t = a.y; s.y = t + y;` flips the operand order in loops; `*(const float *)&m_nX` for a union
+    float; the count of dead int locals flips one fadd with period 8 (a VC6 hash: sweep it);
+  - a same-unit callee defined earlier (auto_inline off) tells VC6 its clobbers: a read-only body that clobbers
+    ecx gives "global cached in edi, ecx reloaded per call" (WORKAROUND, 0x1027d170);
+  - header patches move into the source: `#define name() name(); bool newdecl(args)` before the include and
+    `#undef` after (macro injection of a declaration); existing `virtual slotN` as the target name
+    (`// TARGET: CGameMovement::slot17`); member-function-pointer views for vcalls instead of a __fastcall dummy
+    (that emits `xor edx,edx`): 0x1016d260 104 -> 67;
+  - 20-byte zero block with its own zero register in ascending stores = `memset(p, 0, 20)` (32+ B is rep stosd);
+  - strong string_t in saverestore: POD `{ const char *pszValue; }` passed BY VALUE (0x101a2e40).
+  Saved under view names (watch the link audit): 0x10365a90 CNPC_VBachCamp::sub_10365a90, 0x1027d170
+  CAI_CineCleanupNPC::sub_1027d170. Near misses: 0x10333ad0 (4), 0x101226b0 (7), 0x103d2a10 (11), 0x10254450 (12),
+  0x100cc430 (12), 0x102da0d0 (12), 0x10040390 (13).
 - **Same-name plain member + later virtual = shifted vtable (found 2026-11-12):** MSVC puts all functions of one
   name together in the vtable, at the first declaration's position. A plain `void vfunc442(int *)` near the top of
   a class plus the `virtual void vfunc442();` placeholder further down moved slot 442 before slot 134, so every
