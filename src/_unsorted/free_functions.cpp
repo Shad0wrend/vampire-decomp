@@ -152896,6 +152896,73 @@ int CUnknown10204c60::sub_10204c60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10204d30 size=0x80
+#include "CUnknown10204e90.h"
+#include "CVStatCost_t.h"
+
+int CUnknown10204e90::sub_10204d30(CVStatCost_t *pCost, int nValue, int nBase)
+{
+	int nCost;
+	if (m_nIndex != -1) {
+		switch (m_nKind) {
+		case 0:
+			if (nBase < nValue)
+				nCost = pCost->sub_101fc350(nBase, false);
+			else
+				nCost = 30000;
+			break;
+		case 1:
+			if (nBase < nValue) {
+				if (nBase > 0)
+					nCost = pCost->sub_101fc350(nBase, false);
+				else
+					nCost = pCost->sub_101fc350(nBase, true);
+			} else {
+				nCost = 30000;
+			}
+			break;
+		case 2:
+			if (nBase < nValue) {
+				if (nBase > 0)
+					nCost = pCost->sub_101fc350(nBase, false);
+				else
+					nCost = pCost->sub_101fc350(nBase, true);
+			} else {
+				nCost = 30000;
+			}
+			break;
+		case 3:
+			nCost = 30000;
+			break;
+		case 4:
+			nCost = 30000;
+			break;
+		case 5:
+			nCost = 30000;
+			break;
+		case 6:
+			nCost = 30000;
+			break;
+		case 7:
+			nCost = 30000;
+			break;
+		case 8:
+			nCost = 30000;
+			break;
+		case 9:
+			nCost = 30000;
+			break;
+		default:
+			nCost = 30000;
+			break;
+		}
+	} else {
+		nCost = 30000;
+	}
+	return nCost;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10204dd0 size=0x88
 #include "CUnknown10204dd0.h"
 
