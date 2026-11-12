@@ -2298,6 +2298,7 @@
 0x10004151 func   ?vfunc248@CBaseTrigger@@QAEXH@Z CBaseTrigger::vfunc248
 0x10004156 func   ?sub_103234a0@@YIXPAVCBaseCombatCharacter@@@Z sub_103234a0
 0x1000415b func   ?sub_101482c0@@YAHXZ sub_101482c0
+0x10004160 func   ?sub_10398800@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_10398800
 0x10004165 func   ?sub_1030b950@CUnknown1030b950@@QAEXPBM@Z CUnknown1030b950::sub_1030b950
 0x1000416a func   ?vfunc82@CTriggerEnvAudio@@UAEPAUdatamap_t@@XZ CTriggerEnvAudio::vfunc82
 0x10004174 func   ?sub_103cc9b0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc9b0

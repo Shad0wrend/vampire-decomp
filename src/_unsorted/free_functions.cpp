@@ -235371,6 +235371,29 @@ const char *__stdcall sub_10398680(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10398800 size=0x4f
+#include "CNPC_VMingXiao.h"
+struct CTuning1093bb14
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	int m_n04, m_n08, m_n0c, m_n10, m_n14, m_n18, m_n1c, m_n20, m_n24, m_n28;
+	int m_n2c;
+};
+extern CTuning1093bb14 *g_1093bb14;
+
+inline bool Tuning_IsValid() { return g_1093bb14->vfunc1() || g_1093bb14->m_n2c > -1; }
+inline int Tuning_GetValue() { if (g_1093bb14->vfunc1()) return 0; return g_1093bb14->m_n2c; }
+
+void CNPC_VMingXiao::sub_10398800()
+{
+	if (Tuning_IsValid())
+		*(int *)((char *)this + 0x67c) = Tuning_GetValue();
+	else
+		*(int *)((char *)this + 0x67c) = m_n6710;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398870 size=0xf
 // TARGET: sub_10398870
 bool __fastcall sub_10398870(char *pThis)
