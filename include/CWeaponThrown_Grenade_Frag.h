@@ -451,8 +451,8 @@ public:
 	virtual void vfunc369_slot();
 	virtual void vfunc370_slot();
 	virtual void vfunc371_slot();
-	virtual void vfunc372_slot();
-	virtual void vfunc373_slot();
+	virtual CBaseEntity *vfunc372_slot(Vector vecOrigin, Vector vecAngles, Vector vecVelocity, Vector angVelocity);
+	virtual void vfunc373_slot(void *pChar);
 	virtual void vfunc374_slot();
 	virtual void vfunc375();	// slot 375 (+0x5dc): the frag grenade explosion effect (target 0x103ef260)
 };
