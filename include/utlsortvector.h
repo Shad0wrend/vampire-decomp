@@ -33,7 +33,10 @@ template <class T, class A>
 inline int CUtlSortVector<T, A>::Insert(T const &src)
 {
 	int pos = FindLessOrEqual(src) + 1;
-	return InsertBefore(pos, src);
+	GrowVector();
+	ShiftElementsRight(pos);
+	CopyConstruct<T>(&Element(pos), src);
+	return pos;
 }
 
 template <class T, class A>
