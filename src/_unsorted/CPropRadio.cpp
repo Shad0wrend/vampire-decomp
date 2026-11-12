@@ -239,6 +239,52 @@ void CPropRadio::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1022c4a0 size=0x158
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CPropRadio.h"
+#include "ScopeTrace.h"
+#include "CPASFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "utlvector.h"
+struct CRadioRec12 { char m_szScript[0x80]; char m_szSound[0x80]; };
+
+int sub_10228350(int a);
+
+#define ENG10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct IEngineAmbient {
+	ENG10(e0) ENG10(e1) ENG10(e2) ENG10(e3)
+	virtual void e40(); virtual void e41(); virtual void e42(); virtual void e43(); virtual void e44();
+	virtual void e45(); virtual void e46(); virtual void e47(); virtual void e48();
+	virtual void EmitAmbientSound(int entindex, const Vector &pos, const char *pszSample, int volume, int soundlevel, int flags, int pitch);
+};
+
+struct CPropRadioEmit : CPropRadio
+{
+	inline void EmitShow(int entindex, int vol, int soundlevel)
+	{
+		((IEngineAmbient *)engine)->EmitAmbientSound(entindex, ((CEntitySoundOriginView *)this)->GetSoundEmissionOrigin(), (*(CUtlVector<CRadioRec12> *)&m_pRadioData)[m_nCurrentShow].m_szSound, m_nVolume750, soundlevel, 0x188, 100);
+	}
+};
+
+void CPropRadio::vfunc113()
+{
+	ScopeTrace trace("CPropRadio::Activate", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CBaseEntity::vfunc113();
+	if (m_nCurrentShow != -1) {
+		int level = sub_10228350(m_nSoundLevelArg754);
+		CPASFilter filter(((CEntitySoundOriginView *)this)->WorldSpaceCenter());
+		((CPropRadioEmit *)this)->EmitShow(m_pEdict2e0, m_nVolume750, level);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1022c660 size=0x6
 #include "CPropRadio.h"
 int CPropRadio::vfunc117()
