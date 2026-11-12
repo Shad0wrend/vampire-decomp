@@ -95951,6 +95951,34 @@ float CBasePlayer::sub_1017d900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017dd80 size=0x3e
+struct CGlobal1017dd80
+{
+	virtual void v0();
+	virtual bool v1();
+	char m_pad0004[0x2c - 4];
+	int m_n2c;
+};
+
+extern CGlobal1017dd80 *g_10724ffc;
+
+inline int Get10724ffc() { return g_10724ffc->v1() ? 0 : g_10724ffc->m_n2c; }
+
+struct CUnk1017dd80
+{
+	char m_pad0000[0x1ccc];
+	int m_n1ccc;
+	int sub_1017dd80();
+};
+
+int CUnk1017dd80::sub_1017dd80()
+{
+	if (Get10724ffc() >= 0)
+		return Get10724ffc();
+	return m_n1ccc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017ddd0 size=0x64
 #include "CBasePlayer.h"
 struct CConVarLike {
