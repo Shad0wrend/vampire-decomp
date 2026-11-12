@@ -44,6 +44,7 @@ public:
 	int m_n08;	// 0x08
 	char m_b0c;	// 0x0c
 
+	CMultiplayRules();
 	CMultiplayRules *sub_10140f60();	// "CMultiplayRules::CMultiplayRules" body: base constructor, vtable, sub_1000fcbd(), then runs the dedicated / listen server config file (exec <cvar string>) when its cvar is non-empty; returns this
 	void sub_101291f0();	// CGameRules constructor body (stub 0x10011d79)
 	void sub_1000fcbd();	// CMultiplayRules::vfunc15, called directly
