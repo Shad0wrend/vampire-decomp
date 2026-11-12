@@ -13377,6 +13377,7 @@
 0x10012bca func   ?vfunc81@CBaseFlex@@UAEHXZ CBaseFlex::vfunc81
 0x10012bd4 func   _info_node_chang_jumpbase info_node_chang_jumpbase
 0x10012bd9 func   ?sub_101d8670@CUnknown101d8670@@QAEHXZ CUnknown101d8670::sub_101d8670
+0x10012bde func   ?sub_103d1e50@CNPC_VWerewolf@@QAE_NXZ CNPC_VWerewolf::sub_103d1e50
 0x10012be3 func   ?sub_1034d5b0@CScriptedTarget@@QAEXXZ CScriptedTarget::sub_1034d5b0
 0x10012be8 func   ?sub_1016bb50@CBasePlayerUnit@@QAEHXZ CBasePlayerUnit::sub_1016bb50
 0x10012bed func   ?vfunc9@CServerGameDLL@@UAEHXZ CServerGameDLL::vfunc9

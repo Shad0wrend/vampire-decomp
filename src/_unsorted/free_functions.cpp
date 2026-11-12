@@ -250215,6 +250215,42 @@ bool CNPC_VWerewolf::sub_103d1d60(const char *pszName, bool bValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d1e50 size=0x1a1
+#include "CNPC_VWerewolf.h"
+#include "CEHandleGet.h"
+#include "CBaseEntity.h"
+#include "CEntitySoundOriginView.h"
+#include <math.h>
+
+bool CNPC_VWerewolf::sub_103d1e50()
+{
+	if (m_nDoorState == 2)
+		return true;
+	if (m_nDoorState != 0 && EHandle_Get(m_hRotDoor1) && EHandle_Get(m_hRotDoor2)) {
+		Vector d = ((CEntitySoundOriginView *)EHandle_Get(m_hRotDoor1))->WorldSpaceCenter() - ((CEntitySoundOriginView *)EHandle_Get(m_hRotDoor2))->WorldSpaceCenter();
+		float dx = fabs(d.x);
+		float dy = fabs(d.y);
+		float dz = fabs(d.z);
+		float r;
+		if (dx > dy) {
+			if (dx > dz)
+				r = (dz + dy) * 0.25f + dx;
+			else
+				goto zmax;
+		} else if (dy > dz) {
+			r = (dz + dx) * 0.25f + dy;
+		} else {
+zmax:
+			dz += (dx + dy) * 0.25f;
+			r = dz;
+		}
+		if (r > 135.0f)
+			return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d2810 size=0x184
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
