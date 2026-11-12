@@ -4803,6 +4803,7 @@
 0x100076b7 func   ?vfunc78@CEnvParticle@@QAEXXZ CEnvParticle::vfunc78
 0x100076c1 func   ?sub_1042d6d0@CUnknown1042d6d0@@QAEXH@Z CUnknown1042d6d0::sub_1042d6d0
 0x100076c6 func   ?vfunc70@CNPC_VTzimisceHeadClaw@@UAE_NXZ CNPC_VTzimisceHeadClaw::vfunc70
+0x100076cb func   ?sub_102f72c0@@YAHPBVVector@@0M@Z sub_102f72c0
 0x100076d0 func   ?sub_102a95c0@CUnknown102a95c0@@QAEPAXXZ CUnknown102a95c0::sub_102a95c0
 0x100076d5 func   ?sub_10075ce0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10075ce0
 0x100076da func   ?vfunc117@CAI_ChangeTarget@@QAEDXZ CAI_ChangeTarget::vfunc117

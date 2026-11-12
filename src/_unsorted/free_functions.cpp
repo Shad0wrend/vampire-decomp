@@ -206356,6 +206356,75 @@ Vector sub_102f7130(const Vector &vecA, const Vector &vecB, const Vector &vecP)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f72c0 size=0x526
+// TARGET: sub_102f72c0
+#pragma inline_depth(255)
+#include <math.h>
+#include "CAI_NodeGraph.h"
+#include "CPairFields102dda40.h"
+#include "UTIL_Trace.h"
+
+extern CAI_NodeGraph *g_1093407c;
+extern char g_109340dc;
+extern int g_109340d8;
+
+float sub_10146150(const Vector *v);
+void sub_102f7130(Vector *pOut, const Vector *pA, const Vector *pB, const Vector *pP);
+
+int sub_102f72c0(const Vector *pOrigin, const Vector *pDir, float flMinDot)
+{
+    float flBestDot = flMinDot;
+    CPairFields102dda40 *pBest = 0;
+    CAI_NodeGraph *pGraph = g_1093407c;
+    for (int i = 0; i < pGraph->m_nNodes; i++)
+    {
+        if (pGraph->NodeAt(i)->m_nType != 1 &&
+            ((g_109340dc && pGraph->NodeAt(i)->m_nType == 3) || (!g_109340dc && pGraph->NodeAt(i)->m_nType == 2)))
+        {
+            for (int j = 0; j < pGraph->NodeAt(i)->m_n78; j++)
+            {
+                CPairFields102dda40 *pLink = (CPairFields102dda40 *)pGraph->NodeAt(i)->m_ppLinks[j];
+                int iOther = pLink->sub_102dda40(i);
+                Vector vecNode1;
+                Vector vecNode2;
+                pGraph->NodeAt(i)->sub_102fb0d0(&vecNode1.x, g_109340d8);
+                pGraph->NodeAt(iOther)->sub_102fb0d0(&vecNode2.x, g_109340d8);
+                Vector vecClosest;
+                sub_102f7130(&vecClosest, &vecNode1, &vecNode2, pOrigin);
+                Vector vecDelta = vecClosest - *pOrigin;
+                float flAngle = acos(DotProduct(vecDelta, *pDir) / sub_10146150(&vecDelta));
+                if (flAngle > 1.57)
+                    continue;
+                float flLateral = tan(flAngle) * sub_10146150(&vecDelta);
+                Vector vecLinkDir = vecNode2 - vecNode1;
+                float flLinkLen = VectorNormalize(vecLinkDir);
+                Vector vecOffset = vecLinkDir.sub_100a19c0(flLateral);
+                Vector vecPoint = vecClosest + vecOffset;
+                Vector vecA = vecPoint - vecNode1;
+                if (sub_10146150(&vecA) > flLinkLen)
+                    continue;
+                Vector vecB = vecPoint - vecNode2;
+                if (sub_10146150(&vecB) > flLinkLen)
+                    continue;
+                Vector vecC = vecPoint - *pOrigin;
+                VectorNormalize(vecC);
+                float flNewDot = DotProduct(vecC, *pDir);
+                if (!(flNewDot > flBestDot))
+                    continue;
+                CGameTrace tr;
+                UTIL_TraceLine_Calls(*pOrigin, vecPoint, 0x2804091, (const void *)0, 0, &tr);
+                if (tr.m_fraction == 1.0)
+                {
+                    flBestDot = flNewDot;
+                    pBest = pLink;
+                }
+            }
+        }
+    }
+    return (int)pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f7940 size=0x15
 extern char g_109340dd;
 
