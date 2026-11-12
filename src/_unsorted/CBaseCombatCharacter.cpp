@@ -1617,6 +1617,118 @@ char CBaseCombatCharacter::vfunc379(CBaseEntity *pTarget, int nRole, int nType, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10329a70 size=0x538
+#include "CNPC_VTzimisce.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include <stdio.h>
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+#include "ehandle.h"
+#include "CEHandleGet.h"
+#include "CBasePlayer.h"
+#include "QAngle.h"
+
+#define V1(a) virtual void a();
+#define V10(p) V1(p##0) V1(p##1) V1(p##2) V1(p##3) V1(p##4) V1(p##5) V1(p##6) V1(p##7) V1(p##8) V1(p##9)
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct EntV220 { V100(a) V100(b) V10(c0) V10(c1) virtual Vector *vfunc220(); };
+struct EntV65 { V10(a) V10(b) V10(c) V10(d) V10(e) V10(f) V1(g0) V1(g1) V1(g2) V1(g3) V1(g4) virtual void vfunc65(int, float, int); };
+
+struct CDevFlag10937034 { virtual void v0(); virtual char vfunc1(); char pad[0x28]; int m_n2c; };
+extern CDevFlag10937034 *g_10937034;
+struct CColView270 { virtual void v0(); virtual const Vector *vfunc1(); virtual const Vector *vfunc2(); };
+void sub_101cf5c0(CBaseEntity *, Vector *, int);
+
+extern float g_1049e02c;
+void CBaseCombatCharacter::vfunc380()
+{
+	char buf[0x100];
+	ScopeTrace scope("CBaseCombatCharacter::LeaveGrappleState", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!g_10937034->vfunc1() && g_10937034->m_n2c) {
+		sprintf(buf, "%s LeaveGrappleState", sub_1000b5cd());
+		sub_103221b0(buf);
+	}
+	m_flTimeA9c = -1.0f;
+	bool bWasGrapple = false;
+	Vector vecOld;
+	if (m_nTarget153c == 0 && (m_nTargetMode1540 == 1 || m_nTargetMode1540 == 4)) {
+		bWasGrapple = true;
+		CBaseCombatCharacter *pTarget = (CBaseCombatCharacter *)g_10566458->sub_100290c0((const unsigned int *)&m_hTarget1538);
+		vecOld = pTarget->m_vecGrapple1548;
+	}
+	m_hGrapple1558.m_Index = -1;
+	m_hTarget1538.m_Index = -1;
+	m_nTarget153c = -1;
+	m_nTargetMode1540 = -1;
+	m_nGrapple1544 = -1;
+	if (m_bGrapple1554 && sub_1032e7b0())
+		((CBaseEntity *)sub_1032e7b0())->vfunc67();
+	CBasePlayer *pPlayer = (CBasePlayer *)m_pA8;
+	if (pPlayer) {
+		EntV220 *pOther = (EntV220 *)pPlayer->sub_10161ed0();
+		if (pOther) {
+			Vector vecOrigin = *pOther->vfunc220();
+			CColView270 *pCol = (CColView270 *)((char *)this + 0x270);
+			const Vector *pMins = pCol->vfunc1();
+			const Vector *pMaxs = pCol->vfunc2();
+			CGameTrace tr;
+			UTIL_TraceHull_DebugCall(vecOrigin, *((EntV220 *)this)->vfunc220(), *pMins, *pMaxs, 0x201400b, this, 0, &tr, 1, 0);
+			vecOrigin += (*(Vector *)tr.m_endpos - *(Vector *)tr.m_startpos) * tr.m_fraction;
+			if ((float)fabs(vecOrigin.z - pOther->vfunc220()->z) >= 0.0001f) {
+				Vector vecPos = *pOther->vfunc220();
+				if (vecPos.z < ((EntV220 *)this)->vfunc220()->z)
+					vecPos.z = ((EntV220 *)this)->vfunc220()->z;
+				vfunc62(&vecPos.x);
+			} else {
+				Vector vecTop = vecOrigin;
+				vecTop.z = vecOrigin.z + g_1049e02c;
+				UTIL_TraceLine_Calls(vecTop, vecOrigin, 0x201400b, this, 0, &tr);
+				vecOrigin = vecTop + (*(Vector *)tr.m_endpos - *(Vector *)tr.m_startpos) * tr.m_fraction;
+				vfunc62(&vecOrigin.x);
+			}
+			sub_10348d00();
+			pPlayer->sub_10161f10();
+		} else if (vfunc158() && !((CBaseAnimating *)this)->sub_100903e0()) {
+			sub_100976e0();
+			int bone = sub_10092550((int)"Bip01");
+			if (bone >= 0) {
+				Vector pos;
+				QAngle ang;
+				sub_100926e0(bone, &pos.x, &ang.x);
+				pos.z = m_vecGrapple1548.z;
+				((EntV65 *)this)->vfunc65(*(int *)((char *)this + 0x428), ((const QAngle &)ang)[1], *(int *)((char *)this + 0x430));
+				if (bWasGrapple) {
+					if (vecOld.x < pos.x) pos.x += 13.0f; else pos.x -= 13.0f;
+					if (vecOld.y < pos.y) pos.y += 13.0f; else pos.y -= 13.0f;
+				}
+				vfunc62(&pos.x);
+			} else {
+				sub_101cf5c0(this, &m_vecGrapple1548, 0);
+			}
+		}
+	}
+	if (vfunc94() == 0)
+		vfunc93(m_nGrapple1534, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032af40 size=0x1b7
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

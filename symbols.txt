@@ -3682,6 +3682,7 @@
 0x10005d85 func   ?sub_10250910@@YIXPAUMem8@@HH@Z sub_10250910
 0x10005d8f func   ?sub_100576a0@CNamedHeadC_100576a0@@QAEPADPBD@Z CNamedHeadC_100576a0::sub_100576a0
 0x10005d8f func   ?sub_100576a0@CUnknown10057680@@QAEPADPBD@Z CUnknown10057680::sub_100576a0
+0x10005d94 func   ?vfunc380@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc380
 0x10005d99 func   ?sub_103f5030@@YA_NHPAVCBaseEntity@@@Z sub_103f5030
 0x10005d9e func   ?sub_10083960@CUnknown10083960@@QAEXH@Z CUnknown10083960::sub_10083960
 0x10005da3 func   ?sub_1013dae0@CUnk1013dae0@@QAEXXZ CUnk1013dae0::sub_1013dae0
