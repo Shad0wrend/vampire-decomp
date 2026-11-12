@@ -13916,6 +13916,7 @@
 0x1001381d func   ?vfunc81@CItemKSarcophagusKey@@QAEHXZ CItemKSarcophagusKey::vfunc81
 0x10013822 func   ?sub_10342740@@YA_NPAXPAUHasFilter@@@Z sub_10342740
 0x10013827 func   ?sub_1013cb00@@YAMABVVector@@00PAM@Z sub_1013cb00
+0x1001382c func   ?InsertMultipleBefore@?$CUtlVector@UElem118@@V?$CUtlMemory@UElem118@@@@@@QAEHHHPBUElem118@@@Z CUtlVector<Elem118,CUtlMemory<Elem118> >::InsertMultipleBefore
 0x1001382c func   ?sub_102e9cd0@CUtlVectorElem118@@QAEHHHPBUElem118@@@Z CUtlVectorElem118::sub_102e9cd0
 0x10013831 func   ?vfunc39@CFuncMonitor@@QAEXPAX@Z CFuncMonitor::vfunc39
 0x10013836 func   ?RotateLeft@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QAEXG@Z CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::RotateLeft
