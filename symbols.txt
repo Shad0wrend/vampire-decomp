@@ -615,6 +615,7 @@
 0x10001d20 func   ?sub_103e3200@@YIXPAX@Z sub_103e3200
 0x10001d25 func   ?sub_1015de90@@YADXZ sub_1015de90
 0x10001d2a func   ?sub_101916f0@CHolderPtr36c@@QAEXH@Z CHolderPtr36c::sub_101916f0
+0x10001d2f func   ?sub_10224100@CFoo10224100@@QAE_NXZ CFoo10224100::sub_10224100
 0x10001d34 func   ?sub_101f7db0@CUnknown101f7bb0@@QAE_NPBD@Z CUnknown101f7bb0::sub_101f7db0
 0x10001d39 func   ?sub_103e2d10@CWeaponRanged_FlameThrower@@QAEXPBDH@Z CWeaponRanged_FlameThrower::sub_103e2d10
 0x10001d3e func   ?vfunc516@CAI_BaseNPC@@UAEMXZ CAI_BaseNPC::vfunc516

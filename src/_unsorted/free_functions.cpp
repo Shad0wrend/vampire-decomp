@@ -159034,6 +159034,19 @@ int sub_102240d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10224100 size=0x14
+struct CFoo10224100 {
+    char pad[0x780];
+    int m_field;
+    bool IsLocked() const { if (m_field >= 3) return true; return false; }
+    bool sub_10224100();
+};
+bool CFoo10224100::sub_10224100()
+{
+    return !IsLocked();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224150 size=0xb
 #define T(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define H(p) T(p##0) T(p##1) T(p##2) T(p##3) T(p##4) T(p##5) T(p##6) T(p##7) T(p##8) T(p##9)
