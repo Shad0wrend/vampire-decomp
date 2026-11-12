@@ -42,7 +42,9 @@ public:
 	char m_pad0090[0x26c - 0x90];
 	const char *m_name26c;	// 0x26c
 	CCollisionProperty m_Collision;	// 0x270
-	char m_pad02b8[0x730 - 0x270 - sizeof(CCollisionProperty)];
+	char m_pad02b8[0x2e0 - 0x270 - sizeof(CCollisionProperty)];
+	int m_edict2e0;	// 0x2e0: the edict
+	char m_pad02e4[0x730 - 0x2e4];
 	const char *m_psz730;	// 0x730: the sign data file to load
 	COutputEvent m_Output734;	// 0x734 (fired by vfunc39, destroyed by sub_100cd2d0 in the destructor 0x10211af0)
 	CPropSignUserList m_Users74c;	// 0x74c; really an output event (0x18 bytes, destroyed by sub_100cd2d0) followed by the sign text pointer m_pText764 (+0x764, freed with operator delete in the destructor)
