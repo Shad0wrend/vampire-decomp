@@ -1789,6 +1789,7 @@
 0x100035ee func   ?vfunc315@CBloodPack@@UAE_NXZ CBloodPack::vfunc315
 0x100035f3 func   ?sub_10300010@@YGMABVVector@@00@Z sub_10300010
 0x100035f8 func   _trigger_once trigger_once
+0x100035fd func   ??0?$CUtlMemory@UCFireBulletsHit@@@@QAE@HH@Z CUtlMemory<CFireBulletsHit>::CUtlMemory
 0x100035fd func   ?sub_1027f940@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_1027f940
 0x10003602 func   ?vfunc1@?$CBitStringSaveRestoreOps@VCBitString@@@@UAEXPAPAVCBitString@@PAVCRestore@@@Z CBitStringSaveRestoreOps<CBitString>::vfunc1
 0x10003607 func   ?vfunc103@CPropPadlock@@UAEXXZ CPropPadlock::vfunc103
