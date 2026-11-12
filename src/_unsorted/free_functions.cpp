@@ -164455,6 +164455,34 @@ void CUnknown10750cb4::sub_102277a0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227910 size=0xde
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
+#include "CUnknown10227910.h"
+
+// CUtlVector::FastRemove as this game's copy has it: the last element moved over elem with memmove
+inline void FastRemoveMove(CUtlVector<EHANDLE> &list, int elem)
+{
+	if (list.m_Size > 0) {
+		memmove(&list[elem], &list[list.m_Size - 1], sizeof(EHANDLE));
+		--list.m_Size;
+	}
+}
+
+void CUnknown10227910::sub_10227910(CBaseEntity *pEnt)
+{
+	EHANDLE hEnt(pEnt);
+	const CUtlVector<EHANDLE> &list = m_List;
+	for (int i = 0; i < list.Count(); i++) {
+		if (list[i] == hEnt) {
+			if (m_List.IsValidIndex(i))
+				FastRemoveMove(m_List, i);
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227a30 size=0xb6
 #include "utlrbtree.h"
 #include "utlvector.h"
