@@ -3,9 +3,10 @@
 #pragma once
 
 class CBaseAnimating;
+#include "CUnknown100b6f10.h"
 
 class CUnknown100b62a0
 {
 public:
-	int sub_100b62a0(CBaseAnimating *pChar);	// 0x100b62a0 (ret 4, eax): returns the model's animation record used by PrecacheCharacter (0 when there is none)
+	CUnknown100b6f10 *sub_100b62a0(CBaseAnimating *pChar);	// 0x100b62a0 (ret 4, eax): returns the model's animation record used by PrecacheCharacter (0 when there is none)
 };

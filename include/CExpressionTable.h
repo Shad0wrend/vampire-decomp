@@ -6,6 +6,29 @@
 class CBaseCombatCharacter;
 class CBaseAnimating;
 
+struct CExpressionWeight	// one 12 byte entry of a flex weight list
+{
+	int m_nIndex;
+	float m_flWeight;
+	int m_nPad;
+};
+
+struct CExpressionFlex
+{
+	float m_flWeight;
+	int m_nIndex;
+};
+
+struct CExpressionRecord	// 0x190 bytes
+{
+	char m_szName[0x40];
+	int m_nCharacter;	// 0x40: low word of the character's slot 8
+	CExpressionFlex m_flex[40];	// 0x44
+	int m_nFlexes;	// 0x184
+	int m_nKey;	// 0x188: (name id << 16) | character
+	int m_nFlags;	// 0x18c: bit 0 = the flag argument
+};
+
 class CExpressionTable
 {
 public:

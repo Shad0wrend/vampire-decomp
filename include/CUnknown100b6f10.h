@@ -10,6 +10,10 @@ struct S100b6f10Node
 	int m_pad0c;
 	int m_nCurrent;	// 0x10
 	int m_nListOffset;	// 0x14: offset of the list (8 byte entries, the first dword is a node index) from the node
+
+	char *pszName() { return (char *)this + m_nName; }
+	int *sub_10105830(int index);	// the list entry (8 bytes) of a type 1 node, 0 when out of range
+	int LinkIndex() { int *pEntry = sub_10105830(m_nCurrent); return pEntry ? *pEntry : -1; }
 };
 
 class CUnknown100b6f10
@@ -20,4 +24,12 @@ public:
 	char m_pad0000[0x8c];
 	int m_nNodes;	// 0x8c
 	int m_nNodeTable;	// 0x90: offset of the node table from this
+	int m_unk94;
+	int m_unk98;
+	int m_unk9c;
+	int m_unka0;
+	int m_unka4;
+	int m_nFlexTable;	// 0xa8: offset of the flex index table from this
+
+	S100b6f10Node *pNode(int i) { return (S100b6f10Node *)((char *)this + m_nNodeTable) + i; }
 };
