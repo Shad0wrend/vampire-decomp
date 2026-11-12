@@ -98,6 +98,79 @@ void CBaseToggle::vfunc31(int pDump)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c10d0 size=0x2e9
+#include "CBaseToggle.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+struct CBaseToggleMoveView
+{
+	char m_pad0[0x4d4];
+	float m_flMoveTime4d4;	// 0x4d4
+	int m_unk4d8;
+	float m_flStart4dc;	// 0x4dc
+	Vector m_vecLinear4e0;	// 0x4e0
+	Vector m_vecAngular4ec;	// 0x4ec
+	int m_unk4f8;
+	int m_unk4fc;
+	int m_unk500;
+	int m_unk504;
+	int m_unk508;
+	int m_unk50c;
+	int m_unk510;
+	int m_unk514;
+	int m_unk518;
+	int m_unk51c;
+	int m_unk520;
+	int m_unk524;
+	int m_unk528;
+	int m_unk52c;
+	int m_unk530;
+	int m_unk534;
+	int m_unk538;
+	int m_unk53c;
+	Vector m_vecOrigin540;	// 0x540
+	Vector m_vecAngles54c;	// 0x54c
+};
+
+float CBaseToggle::vfunc135(float flTime)
+{
+	CBaseToggleMoveView *v = (CBaseToggleMoveView *)this;
+	if (flTime > 0.0f
+		&& m_flNextThink3fc > 0.0f
+		&& v->m_flStart4dc > 0.0f
+		&& v->m_flStart4dc < m_flNextThink3fc
+		&& v->m_flMoveTime4d4 > 0.0f)
+	{
+		float flMove = flTime + m_flLocalTime3f4 - v->m_flStart4dc;
+		if (!(flMove > 0.0f))
+			return flTime;
+		if (flMove > v->m_flMoveTime4d4)
+			flMove = v->m_flMoveTime4d4;
+
+		float flEase = (flMove * flMove + 1.0f) * flMove
+			- (flMove / v->m_flMoveTime4d4) * (v->m_flMoveTime4d4 * v->m_flMoveTime4d4 + 1.0f) * flMove;
+
+		Vector vecNew;
+		if (v->m_vecLinear4e0.x != 0.0f || v->m_vecLinear4e0.y != 0.0f || v->m_vecLinear4e0.z != 0.0f)
+		{
+			vecNew = v->m_vecLinear4e0 * flEase + v->m_vecOrigin540;
+			Vector vecVel = (vecNew - *(Vector *)((CEntityVSlots *)this)->slot220()) / flTime;
+			sub_100b2e30((const float *)&vecVel);
+		}
+		if (v->m_vecAngular4ec.x != 0.0f || v->m_vecAngular4ec.y != 0.0f || v->m_vecAngular4ec.z != 0.0f)
+		{
+			vecNew = v->m_vecAngular4ec * flEase + v->m_vecAngles54c;
+			QAngle angDelta = *(QAngle *)&vecNew - *(QAngle *)((CEntityVSlots *)this)->slot221();
+			Vector vecAVel = *(Vector *)&angDelta / flTime;
+			sub_100b2f50((const float *)&vecAVel);
+		}
+	}
+	return flTime;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c1480 size=0x72
 #include "CBaseToggle.h"
 
