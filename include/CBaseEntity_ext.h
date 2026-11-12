@@ -123,6 +123,7 @@
 	float vfunc152();	// slot 152: the constant 0.0f
 	float vfunc190();	// slot 190: the constant 0.0f
 	float *vfunc198();	// slot 198: returns &field at +0x3d4 (the velocity)
+	float sub_10270890(CBaseEntity *pOther);
 	void sub_1009f4e0();
 	void sub_1009f850();
 	struct CGameTrace *vfunc234(struct CGameTrace *pResult, const Vector *pDelta);
