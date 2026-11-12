@@ -43,6 +43,7 @@ public:
 		m[2][2] = vUp.z;
 	}
 
+	void sub_1024cdb0(struct VPlane &out, const struct VPlane &in) const;	// VMatrix * VPlane
 	Vector &sub_1024d7b0(Vector &out) const;	// column 1 (GetLeft), out of line; returns out
 	Vector &sub_1024d7e0(Vector &out) const;	// column 2 (GetUp), out of line; returns out
 	void sub_1024cf80(const VMatrix &vm, VMatrix &out) const;	// out = this * vm (16 dot products computed descending into locals, stored at the end)
