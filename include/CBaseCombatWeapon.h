@@ -72,7 +72,7 @@ public:
 	virtual float vfunc250(int a); CBCW_V(251) CBCW_V(252) CBCW_V(253) CBCW_V(254) CBCW_V(255) CBCW_V(256) CBCW_V(257) virtual void vfunc258(float a, int b); CBCW_V(259)
 	CBCW_V(260) CBCW_V(261) CBCW_V(262) CBCW_V(263) CBCW_V(264) CBCW_V(265) CBCW_V(266) virtual char vfunc267(); virtual char vfunc268();
 	virtual void vfunc269(CBaseCombatWeapon *pOther, Vector vecDir);	// scales vecDir by the value slot 1 of the global at 0x1070b244 reports for the current roll slot (sub_102517e0) and, when that is not zero, hands it to slot 170 of pOther
-	CBCW_V(270) CBCW_V(271)
+	virtual void vfunc270(struct CGameTrace *pHit, void *pInfo); CBCW_V(271)
 	virtual char *vfunc272();
 	virtual char *vfunc273();
 	CBCW_V(274) virtual int vfunc275(int a); virtual int vfunc276(unsigned int index);	// slot 276: the int in the 0x1093c byte record `index` of the table at +0x2670 of the object 0x10010ea6 returns
