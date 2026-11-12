@@ -111354,6 +111354,91 @@ int sub_101b1dd0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1e00 size=0x14d
+#include "CSoundEmitterSystemBase.h"
+#include "UtlMem.h"
+#include "UtlMem2.h"
+
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+struct S_VecA
+{
+	UtlMem m_Memory;
+	int m_Size;
+	int *m_pElements;
+
+	S_VecA()
+	{
+		m_Memory.sub_100eb0e0(0, 0);
+		m_Size = 0;
+		m_pElements = m_Memory.m_pMemory;
+	}
+	~S_VecA()
+	{
+		m_Size = 0;
+		m_Memory.sub_1002cbd0();
+		m_pElements = m_Memory.m_pMemory;
+		if (m_Memory.m_growSize != -1) {
+			if (m_Memory.m_pMemory) {
+				Plat_Free(m_Memory.m_pMemory);
+				m_Memory.m_pMemory = 0;
+			}
+			m_Memory.m_allocationCount = 0;
+		}
+	}
+};
+
+struct S_VecB
+{
+	UtlMem m_Memory;
+	int m_Size;
+	int *m_pElements;
+
+	S_VecB()
+	{
+		m_Memory.m_pMemory = 0;
+		m_Memory.m_allocationCount = 0;
+		m_Memory.m_growSize = 0;
+		m_Size = 0;
+		m_pElements = 0;
+	}
+	~S_VecB()
+	{
+		m_Size = 0;
+		m_Memory.sub_101b20b0();
+		m_pElements = m_Memory.m_pMemory;
+		if (m_Memory.m_growSize != -1 && m_Memory.m_pMemory)
+			Plat_Free(m_Memory.m_pMemory);
+	}
+};
+
+void sub_101b1e00(const char *pszScript)
+{
+	S_VecB unused;
+	S_VecA list;
+	g_1072be18.sub_101b2b30(pszScript, (UtlMem2 *)&list);
+	int c = list.m_Size;
+	for (int i = 0; i < c; i++)
+	{
+		int idx = list.m_Memory.m_pMemory[i];
+		CSoundParametersInternal *pSound = g_1072be18.sub_101b3730(idx);
+		if (!pSound || !pSound->m_bPrecache1d)
+			continue;
+		int nWaves = pSound->m_nWaves;
+		if (nWaves == 0)
+		{
+			DevMsg("CSoundEmitterSystem:  sounds.txt entry '%s' has no waves listed under 'wave' or 'rndwave' key!!!\n", g_1072be18.sub_101b31d0(idx));
+			continue;
+		}
+		for (int w = 0; w < nWaves; w++)
+		{
+			CSoundWaveEntry *pWaves = pSound->m_pWaves;
+			enginesound->vfunc0(g_1072be18.sub_101b4c90(&pWaves[w]), 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1fb0 size=0x8e
 #include "CSoundEmitterSystemBase.h"
 
