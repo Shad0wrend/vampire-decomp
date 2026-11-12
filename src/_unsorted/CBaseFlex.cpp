@@ -435,6 +435,85 @@ void CBaseFlex::vfunc284()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6960 size=0x2cc
+#include "CBaseFlex.h"
+#include "CBaseFlexCalves.h"
+#include "CUnknown10077430.h"
+#include "CUnknown10077730.h"
+#include "CUnknown10074a30.h"
+#include "CUnknown10074050.h"
+#include "Tier1.h"
+#include <string.h>
+
+// TARGET: CBaseFlex::vfunc289
+void CBaseFlex::vfunc289(CBaseFlexItem *info)
+{
+	if (!info)
+		return;
+
+	CBaseFlexItemObject *event = info->m_pObject;
+	if (!event)
+		return;
+
+	void *scene = (void *)info->m_n04;
+	if (!scene)
+		return;
+
+	if (!((CUnknown10077710 *)event)->sub_10077710()) {
+		for (int i = 0; i < ((CUnknown10077430 *)event)->sub_10077430(); i++) {
+			void *track = ((CUnknown10077430 *)event)->sub_10077450(i);
+			if (!track)
+				continue;
+
+			if (((CUnknown10074a30 *)track)->sub_10074a50()) {
+				char name[512];
+				g_109f3890(name, "right_", sizeof(name));
+				strcat(name, ((CUnknown10074050 *)track)->sub_10074050());
+				((CUnknown10074a00 *)track)->sub_10074a00(0, sub_100b5d10(name), 0);
+
+				g_109f3890(name, "left_", sizeof(name));
+				strcat(name, ((CUnknown10074050 *)track)->sub_10074050());
+				((CUnknown10074a00 *)track)->sub_10074a00(0, sub_100b5d10(name), 0);
+			} else {
+				((CUnknown10074a00 *)track)->sub_10074a00(0, sub_100b5d10(((CUnknown10074050 *)track)->sub_10074050()), 0);
+			}
+		}
+		((CUnknown10077730 *)event)->sub_10077730(1);
+	}
+
+	float scenetime = ((CUnknown1007dfa0 *)scene)->sub_1007dfa0();
+	float weight = ((CUnk10076280 *)event)->sub_10076280(scenetime);
+
+	for (int i = 0; i < ((CUnknown10077430 *)event)->sub_10077430(); i++) {
+		void *track = ((CUnknown10077430 *)event)->sub_10077450(i);
+		if (!track)
+			continue;
+		if (!((CUnknown100740d0 *)track)->sub_100740d0())
+			continue;
+
+		if (((CUnknown10074a30 *)track)->sub_10074a50()) {
+			for (int side = 0; side < 2; side++) {
+				int controller = ((CUnk100749a0 *)track)->sub_100749a0(side);
+				float flIntensity = ((CUnknown10074a30 *)track)->sub_10074610(scenetime, side);
+				if (controller >= 0) {
+					float orig = vfunc281(controller);
+					vfunc279(controller, orig * (1 - weight) + flIntensity * weight);
+				}
+			}
+		} else {
+			int controller = ((CUnk100749a0 *)track)->sub_100749a0(0);
+			float flIntensity = ((CUnknown10074a30 *)track)->sub_10074610(scenetime, 0);
+			if (controller >= 0) {
+				float orig = vfunc281(controller);
+				vfunc279(controller, orig * (1 - weight) + flIntensity * weight);
+			}
+		}
+	}
+
+	info->m_b08 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7040 size=0x75
 #include "CBaseFlex.h"
 
