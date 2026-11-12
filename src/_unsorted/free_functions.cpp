@@ -72563,6 +72563,147 @@ void CBreakableSurface::sub_101104c0(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10111ba0 size=0x645
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBreakableSurface.h"
+#include "CBreakable.h"
+#include "CEntityVSlots.h"
+#include "CEntityMessageFilter.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "QAngle.h"
+#include <math.h>
+
+void sub_10139610(const QAngle &a, Vector *f, Vector *r, Vector *u);
+void sub_10139970(const Vector &v, QAngle &a);
+
+inline CEntityMessageFilter::CEntityMessageFilter(CBaseEntity *pEntity) { AddAllPlayers(); int edict = pEntity->m_pEdict2e0; sub_1019d2f0(engine->vfunc35(edict)); }
+
+inline void MessageBegin(CRecipientFilter &filter, int type) { engine->vfunc65(&filter, type); }
+inline void WRITE_BYTE(int v) { engine->vfunc67(v); }
+inline void MessageEnd() { engine->vfunc66(); }
+
+// this big function inlines what VC6 would otherwise keep out of line: forced copies of VectorSubtract (for
+// operator-) and VectorLength (for Length())
+__forceinline void SurfVectorSubtract(const Vector &a, const Vector &b, Vector &c)
+{
+	c.x = a.x - b.x;
+	c.y = a.y - b.y;
+	c.z = a.z - b.z;
+}
+
+__forceinline Vector SurfSub(const Vector &a, const Vector &b)
+{
+	Vector res;
+	SurfVectorSubtract(a, b, res);
+	return res;
+}
+
+__forceinline vec_t SurfLength(const Vector &v)
+{
+	return (vec_t)FastSqrt(v.x * v.x + v.y * v.y + v.z * v.z);
+}
+
+// TARGET: ?sub_10111ba0@CBreakableSurface@@QAEXHPBVVector@@@Z
+void CBreakableSurface::sub_10111ba0(int a, const Vector *pVec)
+{
+	if (m_b4c4)
+		return;
+	m_b4c4 = 1;
+	m_Out46c.sub_100cd660((void *)a, this, 0);
+
+	Vector vWidth = SurfSub(m_vLLVertex, m_vLRVertex);
+	Vector vHeight = SurfSub(m_vLLVertex, m_vULVertex);
+	CrossProduct(vWidth, vHeight, m_vecAxis);
+	VectorNormalize(m_vecAxis);
+
+	float flDir = -1;
+	float flDot = DotProduct(m_vecAxis, *pVec);
+	if (flDot < 0)
+	{
+		VectorAdd(m_vecAxis, m_vLLVertex, m_vLLVertex);
+		VectorAdd(m_vecAxis, m_vLRVertex, m_vLRVertex);
+		m_vULVertex += m_vecAxis;
+		m_vURVertex += m_vecAxis;
+		m_vecAxis *= -1;
+		flDir = 1;
+	}
+
+	QAngle vAngles;
+	sub_10139970(m_vecAxis * -1, vAngles);
+	Vector vWidthDir, vHeightDir;
+	sub_10139610(vAngles, 0, &vWidthDir, &vHeightDir);
+
+	float flWDist = DotProduct(vWidthDir, vWidth);
+	if (fabs(flWDist) < 0.5)
+	{
+		Vector vSaveHeight = vHeight;
+		vHeight = vWidth * flDir;
+		vWidth = vSaveHeight * flDir;
+	}
+
+	bool bLeft = (DotProduct(vWidthDir, vWidth) < 0.0f);
+	bool bLower = (DotProduct(vHeightDir, vHeight) < 0.0f);
+	if (bLeft)
+	{
+		m_vecCorner = bLower ? m_vLLVertex : m_vULVertex;
+	}
+	else
+	{
+		m_vecCorner = bLower ? m_vLRVertex : m_vURVertex;
+	}
+
+	float flWidth = SurfLength(vWidth);
+	float flHeight = SurfLength(vHeight);
+	m_nCols49c = flWidth / 12;
+	m_nRows4a0 = flHeight / 12;
+
+	if (m_nCols49c > 16) m_nCols49c = 16;
+	if (m_nRows4a0 > 16) m_nRows4a0 = 16;
+
+	m_flWidth = flWidth / m_nCols49c;
+	m_flHeight = flHeight / m_nRows4a0;
+
+	for (int w = 0; w < 16; w++)
+	{
+		for (int h = 0; h < 16; h++)
+		{
+			m_aflPanes[w][h] = 1.0f;
+		}
+	}
+
+	CEntityMessageFilter filter(this);
+	filter.MakeReliable();
+	MessageBegin(filter, 0);
+	WRITE_BYTE(2);
+	WRITE_BYTE(m_nCols49c);
+	WRITE_BYTE(m_nRows4a0);
+	MessageEnd();
+
+	((CBreakable *)this)->sub_1010e620();
+	((CEntityVSlots *)this)->slot225();
+
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(8);
+	}
+	{
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(4);
+	}
+	sub_100b3b00();
+
+	m_pfnTouch = (void (CBaseEntity::*)(CBaseEntity *))sub_101104c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10112390 size=0x3
 void __stdcall sub_10112390(int a0, int a1, int a2, int a3)
 {
