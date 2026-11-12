@@ -51179,6 +51179,35 @@ int *sub_100cb9e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbe60 size=0x61
+#include "CCameraTrack.h"
+
+extern int g_104475c4;	// CLogicalEntity vftable
+extern int g_104536ec;	// CCameraKeyFrame vftable
+extern int g_10453b9c;	// CCameraTrack vftable
+
+struct COutput498
+{
+	COutput498 *sub_100cc020();	// the output's out-of-line constructor
+};
+
+CCameraTrack *CCameraTrack::sub_100cbe60()
+{
+	this->CBaseEntity::CBaseEntity(0);
+	*(void **)this = &g_104475c4;
+	m_Output480.COutputEvent::COutputEvent();
+	((COutput498 *)&m_Output498)->sub_100cc020();
+	*(void **)this = &g_104536ec;
+	m_hHandle4c0.CBaseHandle::CBaseHandle();
+	m_hHandle.CBaseHandle::CBaseHandle();
+	m_Output4f4.COutputEvent::COutputEvent();
+	*(void **)this = &g_10453b9c;
+	m_flStartTime4bc = -1.0f;
+	m_flStartTime = -1.0f;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc020 size=0xc
 #include "COutputEvent.h"
 
