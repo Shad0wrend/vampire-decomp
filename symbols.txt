@@ -945,6 +945,7 @@
 0x10002400 func   ?vfunc81@CResearchBook_MG_MELEE@@QAEHXZ CResearchBook_MG_MELEE::vfunc81
 0x10002405 func   ?vfunc325@CWeaponIGeneric@@UAE_NXZ CWeaponIGeneric::vfunc325
 0x1000240a func   _item_k_carson_apartment_key item_k_carson_apartment_key
+0x1000240f func   ?sub_10198070@@YAPAUPyObject@@PAU1@0@Z sub_10198070
 0x10002414 func   ?sub_101aeb60@@YAHPAUSPlayEdict@@PBDMHHH@Z sub_101aeb60
 0x10002419 func   ?sub_101f7500@CVTraitEffectGroup_t@@QAEPAVCVTraitEffect_t@@H@Z CVTraitEffectGroup_t::sub_101f7500
 0x1000241e func   ??0CTEKillPlayerAttachments@@QAE@PBD@Z CTEKillPlayerAttachments::CTEKillPlayerAttachments

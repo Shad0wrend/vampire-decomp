@@ -107431,6 +107431,36 @@ PyObj *sub_10197e50(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198070 size=0xa3
+#include "Python.h"
+struct PyShotStub { void sub_10013683(const char *pszName); };
+struct PyEntStub { char m_pad0000[0xa8]; PyShotStub *m_pShot; };
+
+extern int *g_109f3748;
+PyEntStub *sub_10196780(PyObject *pObject);
+
+PyObject *sub_10198070(PyObject *self, PyObject *args)
+{
+	PyObject *pEntObj = 0;
+	const char *pszName = 0;
+	if (!g_109f37a0(args, "Os", &pEntObj, &pszName)) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f3780, "bad args to SetCamera()");
+		return 0;
+	}
+	PyEntStub *pEnt = sub_10196780(pEntObj);
+	PyShotStub *pShot = !pEnt ? 0 : pEnt->m_pShot;
+	if (!pShot) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f3780, "SetShot needs to be called on a valid player object");
+		return 0;
+	}
+	pShot->sub_10013683(pszName);
+	++*g_109f3748;
+	return (PyObject *)g_109f3748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10198150 size=0x160
 struct Ent;
 struct PyWrap { char pad[0x9c]; Ent *ent; };
