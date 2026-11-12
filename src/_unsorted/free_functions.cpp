@@ -122108,6 +122108,28 @@ void sub_101cf390(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf3c0 size=0xa7
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+extern void (__cdecl *g_109f366c)(const char *fmt);
+
+void sub_101cf3c0(CBaseEntity *pEnt, const Vector &mins, const Vector &maxs)
+{
+	for (int i = 0; i < 3; i++)
+	{
+		if (mins[i] > maxs[i])
+			g_109f366c("backwards mins/maxs");
+	}
+	pEnt->sub_1009edc0(&mins.x, &maxs.x);
+	Vector vecMins, vecMaxs;
+	VectorCopy(mins, vecMins);
+	VectorCopy(maxs, vecMaxs);
+	Vector vecSize;
+	VectorSubtract(vecMaxs, vecMins, vecSize);
+	((CEntityVSlots *)pEnt)->slot213(&vecSize.x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf4a0 size=0xd8
 #include "Vector.h"
 #define SV(n) virtual void s##n();

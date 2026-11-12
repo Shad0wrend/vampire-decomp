@@ -15772,6 +15772,7 @@
 0x101b23b0 func   ?sub_101b23b0@@YAPBDM@Z sub_101b23b0
 0x101b24d0 func   ?sub_101b24d0@@YAHPBD@Z sub_101b24d0
 0x101ce020 func   ?sub_101ce020@@YAHMM@Z sub_101ce020
+0x101cf3c0 func   ?sub_101cf3c0@@YAXPAVCBaseEntity@@ABVVector@@1@Z sub_101cf3c0
 0x101d1960 func   ?sub_101d1960@@YAHH@Z sub_101d1960
 0x101d2960 func   ?sub_101d2960@@YAIHPBDH@Z sub_101d2960
 0x101f2ec0 func   ?sub_101f2ec0@@YAPAXPAX@Z sub_101f2ec0
