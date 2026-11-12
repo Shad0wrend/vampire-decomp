@@ -211697,6 +211697,48 @@ void CAI_Node::sub_102fac00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fb0d0 size=0x26b
+#include <math.h>
+#include "CUnknown102f46d0.h"
+float sub_102d6180(int);
+Vector CUnknown102f46d0Elem::sub_102fb0d0(int a)
+{
+    if (m_nType == 4) {
+        float s = sub_102d6180(a) * 0.5 + 8.0;
+        float ang = m_fAngle * 0.017453292f;
+        Vector fwd(cos(ang), sin(ang), 0);
+        Vector r;
+        if (m_nFlags & 4) {
+            Vector d = fwd.sub_100a19c0(s);
+            r = d + m_vOrigin;
+        } else if (m_nFlags & 8) {
+            Vector side;
+            side.x = fwd.y;
+            side.y = -fwd.x;
+            side.z = fwd.x * 0.0f - fwd.y * 0.0f;
+            Vector d1 = fwd.sub_100a19c0(s);
+            Vector d2 = side.sub_100a19c0(s + s);
+            r = m_vOrigin - d2 - d1;
+        } else if (m_nFlags & 0x10) {
+            Vector side;
+            side.x = fwd.y;
+            side.y = -fwd.x;
+            side.z = fwd.x * 0.0f - fwd.y * 0.0f;
+            Vector d1 = fwd.sub_100a19c0(s);
+            Vector d2 = side.sub_100a19c0(s + s);
+            r = d2 + m_vOrigin - d1;
+        } else {
+            Vector d = fwd.sub_100a19c0(s);
+            r = m_vOrigin - d;
+        }
+        return Vector(r.x, r.y, r.z);
+    }
+    if (m_nType == 2)
+        return Vector(m_vOrigin.x, m_vOrigin.y, m_fHeight[a] + m_vOrigin.z);
+    return m_vOrigin;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fb470 size=0x4f
 extern int g_10610bec;
 extern int g_10610bf0;
