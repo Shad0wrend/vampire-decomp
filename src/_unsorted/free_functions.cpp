@@ -219411,6 +219411,56 @@ void CBaseCombatCharacter::sub_1033cfb0(unsigned int flag, float duration, CBase
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033d190 size=0x109
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+
+struct CBaseCombatCharacter_DiscRecord	// 16 bytes: the records of the discipline effect vector at +0xfb4 (AddDiscFlag)
+{
+	unsigned int m_nFlag;
+	int m_hSource;
+	unsigned int m_nExtra;
+	int m_nSource;
+};
+
+struct CDiscListView
+{
+	unsigned int *m_pRecords;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_nCount;
+};
+
+void CBaseCombatCharacter::sub_1033d190(int flagArg)
+{
+	unsigned int flag = (unsigned int)flagArg;
+	ScopeTrace trace("CBaseCombatCharacter::RemoveDiscFlag", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!(flag & 0x80000000))
+		*(unsigned int *)((char *)this + 0xeb0) &= ~flag;
+	else
+		*(unsigned int *)((char *)this + 0xeb4) &= ~(flag & 0x7fffffff);
+	CDiscListView *pList = (CDiscListView *)((char *)this + 0xfb4);
+	for (int i = 0; i < pList->m_nCount; i++)
+	{
+		if (pList->m_pRecords[i * 4] == flag)
+		{
+			((CUtlVector<CBaseCombatCharacter_DiscRecord> *)((char *)this + 0xfb4))->Remove(i);
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033d2f0 size=0x2a
 #include "CUnknown1033d2f0.h"
 
