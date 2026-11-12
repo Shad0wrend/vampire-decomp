@@ -80,6 +80,29 @@ void *CEntityDataInstantiator<StepSimulationData>::vfunc2(unsigned int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100412c0 size=0xf5
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CEntityDataInstantiator.h"
+#include "utlhash.h"
+
+void CEntityDataInstantiator<StepSimulationData>::vfunc3(unsigned int instance)
+{
+	typedef CEntityDataHashEntry<StepSimulationData> HashEntry;
+	CUtlHash<HashEntry> &table = *(CUtlHash<HashEntry> *)&m_pBuckets;
+	UtlHashHandle_t handle;
+	HashEntry entry;
+	entry.key = instance;
+	handle = table.Find(entry);
+	if (handle != table.InvalidHandle())
+	{
+		HashEntry *e = &table[handle];
+		delete e->data;
+		table.Remove(handle);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041980 size=0xa3
 #include "UtlHash8.h"
 #include "UtlMem.h"
