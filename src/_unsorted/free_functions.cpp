@@ -224664,6 +224664,41 @@ void __stdcall sub_1034e8c0(InputData1034e8c0 &inputdata)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034e9a0 size=0xa8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "inputdata_t.h"
+#include "ScopeTrace.h"
+
+struct IServerUnknownSlots { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void *GetBaseEntity(); };
+struct EdictT { char pad[0x40]; IServerUnknownSlots *m_pUnk; };
+struct Ent { char pad[0x490]; int m_val; };
+
+inline Ent *Instance(EdictT *pent)
+{
+	ScopeTrace scope("CBaseEntity::Instance", g_106b8540);
+	if (!pent)
+		pent = (EdictT *)engine->vfunc38(0);
+	return (pent && pent->m_pUnk) ? (Ent *)pent->m_pUnk->GetBaseEntity() : 0;
+}
+struct color32 { unsigned char r, g, b, a; };
+struct VariantView { union { int iVal; color32 rgbaVal; }; color32 Color32() const { return rgbaVal; } };
+struct InputView { char pad[8]; VariantView value; };
+struct WorldView { char pad[0x490]; color32 m_FogColor2; };
+
+void __stdcall sub_1034e9a0(inputdata_t &in)
+{
+	WorldView *pWorld = (WorldView *)Instance((EdictT *)engine->vfunc38(0));
+	pWorld->m_FogColor2 = ((InputView &)in).value.Color32();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034f1e0 size=0x43
 #include "CBaseEntity.h"
 #include "CHL2_Player.h"
