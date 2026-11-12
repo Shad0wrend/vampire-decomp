@@ -129679,6 +129679,100 @@ char CAffectsUnit::sub_101daa10(IKVNodeView *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101daad0 size=0x25e
+#include "utlrbtree.h"
+#include "CUnknown101da960.h"
+#include "CBaseCombatCharacter.h"
+#include "CStatDefault3List.h"
+#include "CEntityVSlots.h"
+#include "utlvector.h"
+
+struct SFilterOwner : CEntityVSlots
+{
+	char m_pad[0x63d8 - 4];
+	char m_b63d8;
+};
+struct SFilterChar
+{
+	char m_pad[0x98];
+	SFilterOwner *m_pOwner;	// 0x98
+	char m_pad2[0xa8 - 0x9c];
+	CBaseEntity *m_pA8;	// 0xa8
+};
+
+extern CStatDefault3List g_10738d10;
+extern CUtlVector<EHANDLE> g_107399f4;
+extern int g_10739a7c;
+
+bool CUnknown101da960::sub_101daad0(CBaseEntity *pTarget, CBaseCombatCharacter *pNpc)
+{
+	SFilterOwner *pOwn;
+	if (-1 != m_nClan && pNpc->sub_10337860() != (int)m_nClan)
+		return false;
+	if (m_nStrata != -1 && g_10738d10.sub_101d5f10(pNpc)->m_a4 != m_nStrata)
+		return false;
+	if (sub_101da980(1) && !pNpc)
+		return false;
+	if (sub_101da980(2)) {
+		if (pNpc->sub_10337ff0())
+			return false;
+		if (pNpc->sub_103380d0())
+			return false;
+	}
+	if (sub_101da980(3)) {
+		char r = pNpc->sub_10337ff0();
+		if (!r)
+			return r;
+	} else if (sub_101da980(4)) {
+		if (pNpc->sub_10337ff0())
+			return false;
+	}
+	if (sub_101da980(5)) {
+		if (!pNpc->sub_103380d0())
+			return false;
+	} else if (sub_101da980(6)) {
+		if (pNpc->sub_103380d0())
+			return false;
+	}
+	pOwn = ((SFilterChar *)pNpc)->m_pOwner;
+	if (sub_101da980(9)) {
+		if (pOwn) {
+			if (!pOwn->m_b63d8)
+				return false;
+		} else if (((SFilterChar *)pNpc)->m_pA8) {
+			if (((SFilterChar *)pNpc)->m_pA8->sub_100b3700() & 0x4000)
+				return false;
+		}
+	} else if (sub_101da980(10)) {
+		if (pOwn) {
+			if (pOwn->m_b63d8)
+				return false;
+		} else if (((SFilterChar *)pNpc)->m_pA8) {
+			if (((SFilterChar *)pNpc)->m_pA8->sub_100b3700() & 0x4000)
+				return false;
+		}
+	}
+	if (sub_101da980(0xb) && !((SFilterChar *)pNpc)->m_pA8)
+		return false;
+	if (sub_101da980(0xc) && g_107399f4.Count() > 0) {
+		if ((CBaseEntity *)pNpc != g_107399f4[0])
+			return false;
+	}
+	if (sub_101da980(0xd)) {
+		if (pOwn && pOwn->slot464() == 2 && pOwn->slot167() == (int)pTarget)
+			return false;
+	} else if (sub_101da980(0xe)) {
+		if (pOwn && pOwn->slot464() != 2 && pOwn->slot167() == (int)pTarget)
+			return false;
+	}
+	if ((int)m_nChance != 100 && g_10739a7c > m_nChance) {
+		g_10739a7c -= m_nChance;
+		return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dadd0 size=0x80
 #include "CUnknown101da960.h"
 
