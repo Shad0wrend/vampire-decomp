@@ -38,6 +38,32 @@ struct CEQEvent	// a "PEvent" record as the queue restores it (0x50 bytes); the 
 	}
 };
 
+struct CEQVariant	// the variant_t of a queued event with its copy constructor inline (the same body as CVariantCopy's 0x1002ca10)
+{
+	struct Vec3 { float x, y, z; };
+	union
+	{
+		int m_value;
+		float flVal;
+		const char *iszVal;
+		unsigned char rgba[4];
+		float vecVal[3];
+	};
+	unsigned int m_hEntity;
+	int m_fieldType;
+	CEQVariant(const CEQVariant &o)
+	{
+		rgba[0] = o.rgba[0];
+		iszVal = o.iszVal;
+		m_value = o.m_value;
+		flVal = o.flVal;
+		*(Vec3 *)vecVal = *(const Vec3 *)o.vecVal;
+		m_value = o.m_value;
+		m_hEntity = o.m_hEntity;
+		m_fieldType = o.m_fieldType;
+	}
+};
+
 struct CEQBlock16	// the 16 byte block at +0x40 of a queued event, copied as four dwords
 {
 	int m_a, m_b, m_c, m_d;
@@ -56,7 +82,7 @@ struct CEQEventFull
 	int m_iOutputID;	// 0x14
 	int m_hTarget;	// 0x18
 	int m_n1c;	// 0x1c
-	CVariantCopy m_Variant;	// 0x20 .. 0x34
+	CEQVariant m_Variant;	// 0x20 .. 0x34
 	int m_n34;	// 0x34
 	int m_n38;	// 0x38: 0 in a copy (the queue link)
 	int m_n3c;	// 0x3c
