@@ -130,6 +130,206 @@ void CWeaponMelee::vfunc339()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e9e00 size=0x566
+#include "CAI_BaseNPCTroika.h"
+#include "CWeaponOwner.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CWeaponMelee.h"
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "CUnknown10204e90.h"
+#include "CVStatList_t.h"
+#include "CUnknown102522e0.h"
+#include "CUnknown100b5190.h"
+#include "CEdictView.h"
+#include "ConVar.h"
+#include "Tier1.h"
+#include "globalvars.h"
+#include <math.h>
+
+#define max(a, b) (((a) > (b)) ? (a) : (b))
+
+struct CMeleeEdictNet;
+struct CMeleeEdictUnk
+{
+	virtual void u0();
+	virtual void u1();
+	virtual void u2();
+	virtual CMeleeEdictNet *u3();
+	virtual void *u4();
+};
+struct CMeleeEdictNet
+{
+	virtual void n0();
+	virtual void n1();
+	virtual void n2();
+	virtual void n3();
+	virtual void n4();
+	virtual const char *n5();
+};
+
+struct CMeleeSeqDesc
+{
+	char m_pad0000[0x2bc];
+	int m_nEvents;
+	int m_nEventOffset;
+	int m_n2c4;
+	float m_fl2c8;
+	float m_flMinReach;
+	float m_flMaxReach;
+};
+
+struct CMeleeRollRecord
+{
+	CUnknown10204e90 m_Attack;
+	CUnknown10204e90 m_Damage;
+};
+
+struct CMeleeSwingView
+{
+	void sub_103e9d80(void *pPlayer, void *pTarget, void *pIdx);
+};
+
+struct CMeleeFOVView
+{
+	CBaseEntity *sub_10341c30(void *pfn, float flRange, float flCos, int b, float flZ, int mask);
+};
+
+extern float g_104d347c[];
+extern float g_104454c4;
+extern ConVar g_10937a88;
+extern ConVar g_10940d68;
+extern ConVar g_1074f048;
+extern const char g_106b8540[];
+
+static inline float MeleeCvFloat(ConVar &cv)
+{
+	return cv.m_pParent->vfunc1() ? g_104454c4 : cv.m_pParent->m_fValue;
+}
+
+char sub_103ea4d0(CBaseEntity *pSelf, CBaseEntity *pOther);
+
+static inline const char *MeleeEdictClassName(CBaseEntity *pEntity)
+{
+	CEdictView *pEdict = (CEdictView *)pEntity->m_pEdict2e0;
+	if (!pEdict->m_pUnk)
+		return g_106b8540;
+	return ((CMeleeEdictUnk *)pEdict->m_pUnk)->u3()->n5();
+}
+
+char CWeaponMelee::vfunc372(int a, int b, int c)
+{
+	char weights[0x2000];
+	int seqs[0x800];
+
+	CBaseCombatCharacter *pOwner = (CBaseCombatCharacter *)sub_10252240();
+	if (!pOwner)
+		return 0;
+	if (CWeaponOwner *pTemp = sub_10252290())
+		((CBasePlayer *)pTemp)->vfunc429();
+
+	if (a == 0x4b)
+	{
+		int nStat = vfunc373();
+		if (nStat != -1)
+		{
+			CVStatList_t *pList = CVStatListSet::Of(pOwner)->Find(1);
+			int nValue = pList->sub_10200ca0(nStat);
+			int nRoll = g_109f3868(0, 99);
+			if ((float)nRoll < g_104d347c[nValue])
+			{
+				if (vfunc372(0x4d, 0, c))
+					return 1;
+			}
+		}
+	}
+
+	int nTranslated = ((CEntityVSlots *)this)->slot361(a);
+	int act = ((CEntityVSlots *)pOwner)->slot376(nTranslated);
+	if (!((CBaseAnimating *)pOwner)->sub_100952d0(-1))
+		return 0;
+
+	int nMax = ((CUnknown10204e90 *)((char *)this + *sub_102517e0() * 0x44 + 0x7a0))->sub_10204900(pOwner);
+	int nCount = ((CBaseAnimating *)pOwner)->sub_1008dac0(act, (char *)seqs, weights, nMax);
+
+	float flReach = 0.0f;
+	for (int i = 0; i < nCount; i++)
+	{
+		CMeleeSeqDesc *pDesc = (CMeleeSeqDesc *)((CBaseAnimating *)pOwner)->sub_1008d990(seqs[i]);
+		flReach = max(flReach, pDesc->m_flMaxReach);
+	}
+
+	CBasePlayer *pPlayer = (CBasePlayer *)((CUnknown102522e0 *)this)->sub_102522e0();
+	CBaseEntity *pFound;
+	if (pOwner->m_pNPC98)
+		pFound = (CBaseEntity *)((CEntityVSlots *)pOwner->m_pNPC98)->slot167();
+	else
+	{
+		float flZ = g_10937a88.m_pParent->vfunc1() ? (double)g_104454c4 : g_10937a88.m_pParent->m_fValue;
+		double flCos = cos(0.5235987755982988);
+		pFound = ((CMeleeFOVView *)pOwner)->sub_10341c30((void *)sub_103ea4d0, flReach, flCos, 1, flZ, 0x46004003);
+	}
+	CBaseEntity *pTarget = 0;
+	if (pFound && (pTarget = (CBaseEntity *)((CBaseEntity *)pFound)->m_p9c) != 0)
+	{
+		if (!((CBaseCombatCharacter *)pTarget)->m_b1480)
+			g_109f3630("Swing found target that is non targetable BCC %s(%s).\n", pTarget->sub_100ab4f0(), MeleeEdictClassName(pTarget));
+		if (((CUnknown100b5190 *)pTarget)->sub_100b5190())
+			g_109f3630("Swing found target that is ScriptHidden BCC %s(%s).\n", pTarget->sub_100ab4f0(), MeleeEdictClassName(pTarget));
+	}
+	else
+	{
+		if (pPlayer)
+			pPlayer->m_hMeleeOpponent.m_Index = 0xffffffff;
+		if (act != 0x4d || (char)b)
+			goto attack;
+		return 0;
+	}
+attack:
+	if (pPlayer)
+		((CEntityVSlots *)pPlayer)->slot410();
+
+	int *pIdx = sub_102517e0();
+	CMeleeRollRecord rec = *(CMeleeRollRecord *)((char *)this + *pIdx * 0x44 + 0x7a0);
+	int nRank = rec.m_Attack.sub_10204900(pOwner);
+	float flScale = (float)nRank * 0.1f;
+	flScale = flScale * 0.3f + 0.7f;
+	if (g_1074f048.GetBool())
+		g_109f3630("Attack speed adjust %+d%% (rank %d)\n", (int)((flScale - 1.0f) * 100.0f), nRank);
+
+	int nOut = -1;
+	if (!((CEntityVSlots *)pOwner)->slot331((CEntityVSlots *)this, (CEntityVSlots *)pTarget, act, &nOut) || nOut < 0)
+	{
+		if (!(char)b)
+			return 0;
+	}
+
+	((CEntityVSlots *)pOwner)->slot311(a, act, nOut);
+
+	pOwner->m_flPlaybackRate6f4 = ((pOwner->m_pNPC98 && (pOwner->m_pNPC98->m_flags5b84 & 0x4000) == 0x4000) ? max(MeleeCvFloat(g_10940d68), pOwner->m_flFrenzyRate) : pOwner->m_flFrenzyRate) * flScale;
+
+	float f = ((CBaseAnimating *)pOwner)->sub_10091080(nOut);
+	if (!pPlayer && !(((CEntityVSlots *)this)->slot332() < f))
+		f = ((CEntityVSlots *)this)->slot332();
+
+	float flTime = f / pOwner->m_flPlaybackRate6f4 + gpGlobals->curtime;
+	pOwner->m_flNextAttack1564 = max(pOwner->m_flNextAttack1564, flTime);
+	for (int j = 0; j < 2; j++)
+		m_flTimes730[j] = max(m_flTimes730[j], flTime);
+
+	if (!pPlayer)
+		return 1;
+	((CEntityVSlots *)pPlayer)->slot269(0);
+	if (!pTarget)
+		return 1;
+	((CMeleeSwingView *)this)->sub_103e9d80(pPlayer, pTarget, pIdx);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ea510 size=0x75
 #include "CWeaponMelee.h"
 struct Ent { bool sub_10336920(); };
