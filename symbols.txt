@@ -2278,6 +2278,7 @@
 0x1000407a func   ?vfunc86@CAreaPortal@@UAE_NHHHHH@Z CAreaPortal::vfunc86
 0x1000407f func   ?vfunc22@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc22
 0x10004084 func   ?sub_1035ac30@@YADXZ sub_1035ac30
+0x10004089 func   ?sub_102328c0@CUnk10232540@@QAEXXZ CUnk10232540::sub_102328c0
 0x1000408e func   ?sub_10196230@@YAPAUPyObj@@MMM@Z sub_10196230
 0x10004093 func   ?sub_10142b80@@YAXPBVVector@@00HHHHHM@Z sub_10142b80
 0x10004098 func   ?sub_1006c210@CUtlBuffer@@QAEHPBDPAD@Z CUtlBuffer::sub_1006c210

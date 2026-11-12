@@ -163999,6 +163999,122 @@ void sub_10232840(const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102328c0 size=0x2e4
+#include "CBasePlayer.h"
+#include "CUnk10232540.h"
+#include "CBaseEntity.h"
+#include "CSingleUserRecipientFilter.h"
+#include "ConVar.h"
+#include "DebugOverlay.h"
+
+struct CPair10232c70
+{
+	unsigned long m_DWords[1];
+	bool sub_10232c70(int *pOther);	// CBitVec<32>::operator==
+};
+
+class CPlayerBitVecAccessor
+{
+public:
+	CPlayerBitVecAccessor(unsigned long *pDWords, int iBit) { m_pDWords = pDWords; m_iBit = iBit; }
+	void operator=(int val)
+	{
+		if (val)
+			m_pDWords[m_iBit >> 5] |= (1 << (m_iBit & 31));
+		else
+			m_pDWords[m_iBit >> 5] &= ~(unsigned long)(1 << (m_iBit & 31));
+	}
+	operator unsigned long() { return m_pDWords[m_iBit >> 5] & (1 << (m_iBit & 31)); }
+	unsigned long *m_pDWords;
+	int m_iBit;
+};
+
+struct CPlayerBitVec : CPair10232c70
+{
+	CPlayerBitVec() { for (int i = 0; i < 1; i++) m_DWords[i] = 0; }
+	CPlayerBitVecAccessor operator[](int i) { return CPlayerBitVecAccessor(m_DWords, i); }
+	bool operator!=(CPlayerBitVec &other) { return !sub_10232c70((int *)other.m_DWords); }
+	void operator=(CPlayerBitVec const &other) { for (int i = 0; i < 1; i++) m_DWords[i] = other.m_DWords[i]; }
+	unsigned long GetDWord(int i) { return m_DWords[i]; }
+};
+
+struct CVoiceServer1070b230
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2(int iReceiver, int iSender, bool bListen);	// SetClientListening
+};
+
+extern ConVar g_107515b8;	// sv_alltalk
+extern CVoiceServer1070b230 *g_1070b230;
+extern CPlayerBitVec g_107516c8;	// g_bWantModEnable
+extern CPlayerBitVec g_10751530;	// g_PlayerModEnable
+extern CPlayerBitVec g_10751538[];	// g_BanMasks
+extern CPlayerBitVec g_10751648[];	// g_SentGameRulesMasks
+extern CPlayerBitVec g_107516d0[];	// g_SentBanMasks
+
+void CUnk10232540::sub_102328c0()
+{
+	m_nMask18 = 0;
+	m_nMask1c = 0;
+
+	bool bAllTalk = !!g_107515b8.GetInt();
+
+	for (int iClient = 0; iClient < m_nPlayers; iClient++)
+	{
+		CBaseEntity *pEnt = sub_101cd9e0(iClient + 1);
+		if (!pEnt || !pEnt->m_pA8)
+			continue;
+
+		CSingleUserRecipientFilter user((CBasePlayer *)pEnt);
+
+		if (g_107516c8[iClient])
+		{
+			engine->vfunc65(&user, m_nMessageId0c);
+			engine->vfunc66();
+			g_107516c8[iClient] = false;
+		}
+
+		CBaseEntity *pPlayer = pEnt;
+
+		CPlayerBitVec gameRulesMask;
+		if (g_10751530[iClient])
+		{
+			for (int iOtherClient = 0; iOtherClient < m_nPlayers; iOtherClient++)
+			{
+				CBaseEntity *pEnt = sub_101cd9e0(iOtherClient + 1);
+				if (pEnt && pEnt->m_pA8 && (bAllTalk || m_pRules->vfunc1(pPlayer, pEnt)))
+				{
+					gameRulesMask[iOtherClient] = true;
+				}
+			}
+		}
+
+		if (gameRulesMask != g_10751648[iClient] || g_10751538[iClient] != g_107516d0[iClient])
+		{
+			g_10751648[iClient] = gameRulesMask;
+			g_107516d0[iClient] = g_10751538[iClient];
+
+			engine->vfunc65(&user, m_nMessageId08);
+			int dw;
+			for (dw = 0; dw < 1; dw++)
+			{
+				engine->vfunc71(gameRulesMask.GetDWord(dw));
+				engine->vfunc71(g_10751538[iClient].GetDWord(dw));
+			}
+			engine->vfunc67(!!g_10751530[iClient]);
+			engine->vfunc66();
+		}
+
+		for (int iOtherClient = 0; iOtherClient < m_nPlayers; iOtherClient++)
+		{
+			bool bCanHear = gameRulesMask[iOtherClient] && !g_10751538[iClient][iOtherClient];
+			g_1070b230->vfunc2(iClient + 1, iOtherClient + 1, bCanHear);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10232c70 size=0x2c
 struct CPair10232c70 {
     int m_v[2];
