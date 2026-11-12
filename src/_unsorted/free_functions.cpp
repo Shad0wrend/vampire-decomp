@@ -213926,6 +213926,87 @@ void CAI_NodeGraph::sub_102f49c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f4be0 size=0x1a4
+#include "CAI_NodeGraph.h"
+#include "CBitString.h"
+#include "Vector.h"
+
+void sub_102cc9f0();
+
+inline float DistSqr3(const Vector &v)
+{
+	return v.x * v.x + (v.y * v.y + v.z * v.z);
+}
+inline const Vector &NodeOrigin(const CAI_Node *p) { return *(const Vector *)&p->m_x; }
+inline bool IsFlag28(const CAI_Node *p) { return p->m_bFlag74_28; }
+
+struct NodeV : CAI_Node
+{
+	const Vector &GetOrigin() const { return *(const Vector *)&m_x; }
+	void SetNeedsRebuild() { m_n74 |= 0x10000000; }
+	void SetZone(int zone) { m_n94 = zone; }
+	int GetType() const { return m_nType; }
+};
+#define PN(k) ((NodeV *)m_ppNodes[k])
+
+void CAI_NodeGraph::sub_102f4be0()
+{
+	int i;
+	for (i = 0; i < m_nNodes; i++)
+	{
+		if (m_ppNodes[i]->m_n74 & 0x20000000)
+		{
+			Vector vRebuildPos = PN(i)->GetOrigin();
+			PN(i)->SetNeedsRebuild();
+			PN(i)->SetZone(3);
+			for (int node = 0; node < m_nNodes; node++)
+			{
+				if (PN(node)->GetType() == 3)
+				{
+					if (DistSqr3(PN(node)->GetOrigin() - vRebuildPos) < 4194304.0f)
+					{
+						PN(node)->SetNeedsRebuild();
+						PN(node)->SetZone(3);
+					}
+				}
+				else
+				{
+					if (DistSqr3(PN(node)->GetOrigin() - vRebuildPos) < 640000.0f)
+					{
+						PN(node)->SetNeedsRebuild();
+						PN(node)->SetZone(3);
+					}
+				}
+			}
+		}
+	}
+	for (i = 0; i < m_nNodes; i++) {
+		if (IsFlag28(m_ppNodes[i]))
+			m_ppNodes[i]->sub_102fa510();
+	}
+	for (i = 0; i < m_nNodes; i++) {
+		if (!IsFlag28(m_ppNodes[i]))
+			m_ppNodes[i]->m_pBits->sub_100bf480(m_nNodes);
+	}
+	for (i = 0; i < m_nNodes; i++) {
+		if (IsFlag28(m_ppNodes[i]))
+			m_ppNodes[i]->sub_102fac00();
+	}
+	sub_102cc9f0();
+	for (i = 0; i < m_nNodes; i++) {
+		CAI_Node *pNode = m_ppNodes[i];
+		if (IsFlag28(pNode)) {
+			pNode->m_n88 = 0;
+			pNode->m_n78 = 0;
+		}
+	}
+	for (i = 0; i < m_nNodes; i++) {
+		if (IsFlag28(m_ppNodes[i]))
+			m_ppNodes[i]->sub_102fb4e0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f4e00 size=0x7c
 #include "CAI_NodeGraph.h"
 
