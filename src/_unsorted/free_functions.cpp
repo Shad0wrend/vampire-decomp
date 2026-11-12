@@ -238094,6 +238094,53 @@ const char *__stdcall sub_10398680(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103986b0 size=0x90
+#include "CNPC_VMingXiao.h"
+namespace block_103986b0 {
+struct CNPC_VMingXiaoUnit : CNPC_VMingXiao
+{
+	char sub_10398000(int i);
+};
+char CNPC_VMingXiaoUnit::sub_10398000(int i)
+{
+	return (m_n6710 & (1 << i)) == 0;
+}
+}
+using namespace block_103986b0;
+
+// TARGET: ?sub_103986b0@CNPC_VMingXiao@@QAEMXZ
+float CNPC_VMingXiao::sub_103986b0()
+{
+	CNPC_VMingXiaoUnit *self = (CNPC_VMingXiaoUnit *)this;
+	float sum = 0.0f;
+	int n = 0;
+	int denom = 0;
+	if (self->sub_10398000(0)) {
+		sum += 400.0f;
+		n += 2;
+		denom = n;
+	}
+	if (self->sub_10398000(1)) {
+		sum += 400.0f;
+		n += 2;
+		denom = n;
+	}
+	if (self->sub_10398000(2)) {
+		sum += 300.0f;
+		n += 2;
+		denom = n;
+	}
+	if (self->sub_10398000(3)) {
+		sum += 300.0f;
+		n += 2;
+		denom = n;
+	}
+	if (n > 0)
+		return sum / denom;
+	return 300.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10398800 size=0x4f
 #include "CNPC_VMingXiao.h"
 struct CTuning1093bb14

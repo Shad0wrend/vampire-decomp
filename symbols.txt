@@ -5614,6 +5614,7 @@
 0x100087e7 func   ?sub_103f52f0@CWeaponUnarmed@@QAEPAXXZ CWeaponUnarmed::sub_103f52f0
 0x100087ec func   ?sub_1002e580@@YAPAXPAVCBaseEntity@@HPBVVector@@1@Z sub_1002e580
 0x100087f1 func   ?sub_1022ea80@@YAXPAX@Z sub_1022ea80
+0x100087f6 func   ?sub_103986b0@CNPC_VMingXiao@@QAEMXZ CNPC_VMingXiao::sub_103986b0
 0x100087fb func   ?vfunc21@CGameMovement@@UAEDPAX@Z CGameMovement::vfunc21
 0x10008800 func   ?vfunc134@CVampireProjectile@@UAEXXZ CVampireProjectile::vfunc134
 0x10008805 func   ?sub_100d0a00@CVariantCopy@@QBEPBDXZ CVariantCopy::sub_100d0a00
