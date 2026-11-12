@@ -389,6 +389,195 @@ void CHL2_Player::vfunc333(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10350830 size=0x623
+#include "CEntityVSlots.h"
+#include "CNPC_VTzimisce.h"
+#include "CHL2_Player.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "ConVar.h"
+#include "ehandle.h"
+#include "globalvars.h"
+#include "UTIL_Trace.h"
+#include "TestBit.h"
+
+extern ConVar *g_109ef1b4;
+extern char g_1070ba2c;
+extern Vector g_1070d1b0;
+
+#define S436_V1(n) virtual void v##n();
+#define S436_V10(p) S436_V1(p##0) S436_V1(p##1) S436_V1(p##2) S436_V1(p##3) S436_V1(p##4) S436_V1(p##5) S436_V1(p##6) S436_V1(p##7) S436_V1(p##8) S436_V1(p##9)
+
+struct S436Net
+{
+	S436_V1(0) S436_V1(1) S436_V1(2) S436_V1(3)
+	virtual int slot4();
+};
+
+struct S436Edict
+{
+	char pad0[0x40];
+	S436Net *m_pNet40;
+};
+
+struct S436Ent
+{
+	S436_V10(a0) S436_V10(a1) S436_V10(a2) S436_V10(a3) S436_V10(a4) S436_V10(a5) S436_V10(a6) S436_V10(a7) S436_V10(a8) S436_V10(a9)	// 0..99
+	S436_V10(b0) S436_V1(b10) S436_V1(b11) S436_V1(b12) S436_V1(b13) S436_V1(b14) S436_V1(b15) S436_V1(b16)	// 100..116
+	virtual int slot117();
+	S436_V1(b18) S436_V1(b19) S436_V10(b2) S436_V10(b3) S436_V10(b4) S436_V1(b50) S436_V1(b51) S436_V1(b52) S436_V1(b53) S436_V1(b54) S436_V1(b55) S436_V1(b56)	// 118..156
+	virtual bool slot157(int a);
+	S436_V1(b58) S436_V1(b59) S436_V10(b6) S436_V1(b70) S436_V1(b71) S436_V1(b72)	// 158..172
+	virtual void slot173(void *pActivator, void *pCaller, int useType, float value);
+};
+
+struct S436
+{
+	char pad0[0x200];
+	int m_lifeState200;
+	char pad1[0x268 - 0x204];
+	unsigned int m_fFlags268;
+	char pad2[0x2e0 - 0x26c];
+	S436Edict *m_pEdict2e0;
+	char pad3[0x3c4 - 0x2e4];
+	float m_f3c4;
+	char pad4[0x3e0 - 0x3c8];
+	int m_MoveType3e0;
+	char pad5[0x1488 - 0x3e4];
+	float m_flSpeedScale1488;
+	char pad6[0x1b84 - 0x148c];
+	float m_flRunForwardSpeeds[8];
+	float m_flRunSideSpeeds[8];
+	float m_flWalkForwardSpeeds[8];
+	float m_flWalkSideSpeeds[8];
+	float m_flSneakForwardSpeeds[8];
+	float m_flSneakSideSpeeds[8];
+	char pad7[0x1c58 - 0x1c44];
+	EHANDLE m_hMeleeOpponent;
+	char pad8[0x1c6c - 0x1c5c];
+	float m_flNextThink1c6c;
+	char pad9[0x1db4 - 0x1c70];
+	int m_nSpeedScaleState1DB4;
+	char pad10[0x1ee8 - 0x1db8];
+	float m_f1ee8;
+	char pad11[0x2088 - 0x1eec];
+	int m_nButtons2088;
+	int m_afButtonPressed208c;
+	char pad12[0x20f0 - 0x2090];
+	int m_nFlags20f0;
+	bool m_b20f4;
+	char pad13[0x2304 - 0x20f5];
+	int m_n2304;
+	char pad14[0x2310 - 0x2308];
+	float m_flMaxspeed;
+	char pad15[0x2544 - 0x2314];
+	bool m_bForceWalk;
+};
+
+void CHL2_Player::vfunc436()
+{
+	S436 *d = (S436 *)this;
+	CBasePlayer *pl = (CBasePlayer *)this;
+	CBaseEntity *pe = (CBaseEntity *)this;
+	if (d->m_b20f4) {
+		vfunc444();
+		pl->sub_1016b270();
+		pl->sub_1016b440();
+		return;
+	}
+	if (d->m_hMeleeOpponent.Get() && !pl->vfunc412())
+		d->m_hMeleeOpponent = 0;
+	static ConVar sv_walkscale("sv_walkscale", "1.0", 0);
+	static ConVar sv_runscale("sv_runscale", "1.0", 0);
+	static ConVar sv_sneakscale("sv_sneakscale", "2.3", 0);
+	if (d->m_nSpeedScaleState1DB4 > 0 && d->m_nSpeedScaleState1DB4 < 8) {
+		d->m_flMaxspeed = g_109ef1b4->vfunc1() ? 0.0f : g_109ef1b4->m_fValue;
+	} else {
+		float flMax = 0.0f;
+		sub_10350620(9, d->m_flWalkForwardSpeeds, d->m_flWalkSideSpeeds, &flMax, sv_walkscale.GetFloat());
+		sub_10350620(0x13, d->m_flRunForwardSpeeds, d->m_flRunSideSpeeds, &flMax, sv_runscale.GetFloat() * d->m_flSpeedScale1488);
+		sub_10350620(0x12, d->m_flSneakForwardSpeeds, d->m_flSneakSideSpeeds, &flMax, sv_sneakscale.GetFloat() * d->m_flSpeedScale1488);
+		if (d->m_bForceWalk) {
+			for (int i = 0; i < 8; i++) {
+				d->m_flRunForwardSpeeds[i] = d->m_flWalkForwardSpeeds[i];
+				d->m_flRunSideSpeeds[i] = d->m_flWalkSideSpeeds[i];
+			}
+		}
+		if (flMax > 0.0f)
+			d->m_flMaxspeed = flMax;
+	}
+	if (g_1070ba2c || d->m_n2304)
+		return;
+	((CEntityVSlots *)this)->slot416();
+	pl->sub_10174c10();
+	pl->sub_10166120();
+	vfunc472();
+	vfunc444();
+	pl->sub_1016b270();
+	pl->sub_1016b440();
+	if (d->m_MoveType3e0 > 1)
+		pe->sub_100b3580(0x800);
+	else
+		pe->sub_100b3640(0x800);
+	if (d->m_MoveType3e0 == 2)
+		pl->sub_10166500();
+	else if (d->m_MoveType3e0 == 0)
+		pe->sub_100b3640(4);
+	if (d->m_lifeState200 >= 1) {
+		sub_101668b0();
+		return;
+	}
+	if (d->m_nFlags20f0 & 2)
+		pe->sub_100b3580(8);
+	else
+		pe->sub_100b3640(8);
+	if (d->m_nFlags20f0 & 2) {
+		S436Ent *pGround = (S436Ent *)vfunc209();
+		if (pGround && !(pGround->slot117() & 0x40))
+			pGround = 0;
+		if (!pGround) {
+			if (sub_1032e7b0() && (((S436Ent *)sub_1032e7b0())->slot117() & 0x40))
+				return;
+			Vector *o = ((CEntityVSlots *)this)->slot220();
+			Vector vecEnd;
+			vecEnd.x = o->x;
+			vecEnd.y = o->y;
+			vecEnd.z = o->z - 38.0f;
+			CGameTrace tr;
+			UTIL_TraceLine(*((CEntityVSlots *)this)->slot220(), vecEnd, 0x1400b, this, 0, &tr);
+			if (tr.m_fraction != 1.0 && tr.m_pEnt)
+				pGround = (S436Ent *)tr.m_pEnt;
+			if (!pGround || !(pGround->slot117() & 0x40) ||
+				!pGround->slot157(d->m_pEdict2e0 && d->m_pEdict2e0->m_pNet40 ? d->m_pEdict2e0->m_pNet40->slot4() : 0)) {
+				d->m_nFlags20f0 &= ~2;
+				return;
+			}
+		} else {
+			if (!(pe->sub_100b3700() & 1) || (d->m_nButtons2088 & 0x600)) {
+				d->m_nFlags20f0 &= ~2;
+				return;
+			}
+		}
+		pe->sub_100b2e30((const float *)&g_1070d1b0);
+		if (d->m_afButtonPressed208c & 8)
+			pGround->slot173(this, this, 2, 1.0f);
+		else if (d->m_afButtonPressed208c & 0x10)
+			pGround->slot173(this, this, 2, -1.0f);
+	}
+	if (!(pe->sub_100b3700() & 1)) {
+		if (TestBit(d->m_fFlags268, 12))
+			pe->sub_100b1d10();
+		d->m_f1ee8 = -d->m_f3c4;
+	}
+	if (gpGlobals->curtime >= d->m_flNextThink1c6c) {
+		vfunc471();
+		d->m_flNextThink1c6c = gpGlobals->curtime + 0.1f;
+	}
+	vfunc470();
+	vfunc484();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10351050 size=0x10
 #include "CHL2_Player.h"
 
