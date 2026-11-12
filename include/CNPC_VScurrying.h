@@ -29,6 +29,8 @@ public:
 	char sub_103acac0(CBaseEntity *pEnt);	// stub 0x1000f9f7: whether pEnt is within the distance at +0x6690 (3D, slot 217 origins) and passes the checks the two flag bytes at +0x6694 / +0x6695 ask for (sub_103ad0f0 must refuse it, sub_103ad0a0 must accept it)
 	CScurryPick *sub_103aca80();	// stub 0x1000b573
 	char sub_103ad0a0(CBaseEntity *pEnt);	// stub 0x10007595, called directly
+	char sub_103acba0(Vector *pVec, float flDist, Vector *pOut);	// stub 0x1000b573
+	void vfunc442(int *pTask);	// slot 442: task start handler (this in ecx, one stack arg)
 	bool sub_103acba0(const Vector *pTarget, float flDist, Vector *pOut);	// stub 0x1000402a, called by vfunc442: a point near pTarget (back-away node, else a trace along the direction away from it) that is clear for the hull; writes it to pOut
 	bool sub_102a0fb0(const Vector *pPos, int mask, const float *pMins, const float *pMaxs);	// CAI_BaseNPCTroika "IsAreaClear" (stub 0x10001f50)
 	void vfunc103();	// slot 103: the animal base implementation (CNPC_VAnimal::vfunc103), then the flag 0x10000 at +0x5b84, and the game's time at +0x668c
