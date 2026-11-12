@@ -1216,6 +1216,7 @@
 0x100029d7 func   ?vfunc103@CEnvPlayerSurfaceTrigger@@UAEXXZ CEnvPlayerSurfaceTrigger::vfunc103
 0x100029dc func   ?sub_100ae1f0@@YAXPAVCBaseEntity@@PBD@Z sub_100ae1f0
 0x100029e1 func   ?vfunc5@CNPC_VAndreiBlood@@UAEPAVCAI_BaseNPC@@I@Z CNPC_VAndreiBlood::vfunc5
+0x100029e6 func   ?CopyConstruct@@YAXPAUElem280_t@@ABU1@@Z CopyConstruct
 0x100029e6 func   ?sub_1030b250@@YAXPAH0@Z sub_1030b250
 0x100029eb func   ?sub_101ede10@@YA_NXZ sub_101ede10
 0x100029f0 func   ?vfunc477@CHL2_Player@@UAEXPAI@Z CHL2_Player::vfunc477
