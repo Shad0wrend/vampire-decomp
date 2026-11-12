@@ -221726,6 +221726,61 @@ bool CAI_Expresser::sub_10311ee0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10311f50 size=0x1c3
+#include "vampire_all.h"
+#include "CAI_Expresser.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1070b248.h"
+#include "engineserver.h"
+
+extern CUnknown1070b248 *g_1070b248;
+int sub_101aeb60(int edict, const char *pszSentence, float flVolume, int soundlevel, int flags, int pitch);	// SENTENCEG_PlayRndSz
+int sub_101af070(const char *pszSentence);	// SENTENCEG_Lookup
+
+template <class T> __forceinline T EdictOf(T e) { return e; }
+inline CEntitySoundOriginView *GetOuter280(CAI_Expresser *p) { return (CEntitySoundOriginView *)p->m_pOuter; }
+
+// TARGET: CAI_Expresser::sub_10311f50
+int CAI_Expresser::sub_10311f50(const char *pszSentence, float delay, float volume, int soundlevel, int pListener)
+{
+	int sentenceIndex = -1;
+
+	if (!pszSentence)
+		return sentenceIndex;
+
+	if (pszSentence[0] == '~')
+	{
+		sub_10312aa0(pszSentence, (CGlobalEntityList_Ent *)pListener);
+		return -1;
+	}
+
+	if (pszSentence[0] != '@')
+		sub_10312c20(0);
+
+	if (pszSentence[0] == '!' || pszSentence[0] == '@')
+	{
+		sentenceIndex = sub_101af070(pszSentence);
+
+		if (sentenceIndex == -1)
+			return -1;
+
+		CPASAttenuationFilter filter(GetOuter280(this), (soundlevel_t)soundlevel);
+		int iEntIndex = engine->vfunc35(EdictOf(*(int *)((char *)GetOuter280(this) + 0x2e0)));
+		g_1070b248->vfunc4(&filter, iEntIndex, 2, sentenceIndex, volume, soundlevel, 0, sub_10311b90(), 0, 0, 1, 0);
+	}
+	else
+	{
+		int edict = GetOuter280(this)->a085();
+		sentenceIndex = sub_101aeb60(edict, pszSentence, volume, soundlevel, 0, sub_10311b90());
+	}
+
+	sub_103121a0(engine->vfunc57(sentenceIndex), delay);
+
+	return sentenceIndex;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103121a0 size=0x67
 #include "vampire_all.h"
 #include "CAI_Expresser.h"
