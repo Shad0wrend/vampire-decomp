@@ -5712,6 +5712,7 @@
 0x100087a1 func   ?sub_101a5680@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_101a5680
 0x100087a6 func   ?sub_101e1800@CDiscTable_101e1800@@QAEHH@Z CDiscTable_101e1800::sub_101e1800
 0x100087ab func   ?sub_1013d600@@YAMMM@Z sub_1013d600
+0x100087b0 func   ??HVector@@QBE?AV0@ABV0@@Z ??HVector@@QBE?AV0@ABV0@@Z
 0x100087b0 func   ?sub_1011e060@Vector@@QBE?AV1@ABV1@@Z Vector::sub_1011e060
 0x100087b5 func   ?vfunc1@CTEDust@@UAEHXZ CTEDust::vfunc1
 0x100087ba func   ?sub_10137fe0@@YAXPBM0PAM@Z sub_10137fe0
