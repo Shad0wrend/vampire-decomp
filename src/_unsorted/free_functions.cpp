@@ -139173,6 +139173,57 @@ bool StatDefault2::sub_101ed210(CVFeatKV *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ed510 size=0x141
+extern "C" int sprintf(char *, const char *, ...);
+void sub_10203dd0(const char *);
+extern char g_106b8540[];
+extern char g_10547e40[];
+extern char g_105a4a70[];
+
+struct S101ed510
+{
+	int id;
+	int f4;
+	const char *name;
+	int n1;
+	const char **names1;
+	int *xp1;
+	int *flags;
+	int n2;
+	const char **names2;
+	int *xp2;
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: sub_101ed510
+void __fastcall sub_101ed510(S101ed510 *p)
+{
+	char buf[128];
+	int i;
+	sprintf(buf, "[%d]: [ %s ]\n", p->id, STRINGR(p->name));
+	sub_10203dd0(buf);
+	for (i = 0; i < p->n1; i++)
+	{
+		if (!(p->flags[i] & 1))
+			sprintf(buf, "\t\t(%d): %s [%d xp]\n", i, STRINGR(p->names1[i]), p->xp1[i]);
+		else
+			sprintf(buf, "\t\t(%d): %s [%d xp]  ON\n", i, STRINGR(p->names1[i]), p->xp1[i]);
+		sub_10203dd0(buf);
+	}
+	sub_10203dd0(g_10547e40);
+	for (i = 0; i < p->n2; i++)
+	{
+		if (!(p->flags[i] & 1))
+			sprintf(buf, "\t\t(%d): %s [%d xp]\n", i, STRINGR(p->names2[i]), p->xp2[i]);
+		else
+			sprintf(buf, "\t\t(%d): %s [%d xp]  ON\n", i, STRINGR(p->names2[i]), p->xp2[i]);
+		sub_10203dd0(buf);
+	}
+	sub_10203dd0(g_105a4a70);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ed6c0 size=0xf9
 #include "CUnknown101ed6c0.h"
 #include "CUnknown101ed170.h"
