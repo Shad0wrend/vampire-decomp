@@ -81,6 +81,70 @@ bool CFuncBrush::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e090 size=0x26d
+#include "CBaseEntity.h"
+#include "CFuncBrush.h"
+#include "engineserver.h"
+#include "Vector.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+void sub_101434b0(int nIndex, int nLine, const char *pszText, float flDuration, int r, int g, int b, int a);
+
+#define RV1(n) virtual void v##n();
+#define RV10(p) RV1(p##0) RV1(p##1) RV1(p##2) RV1(p##3) RV1(p##4) RV1(p##5) RV1(p##6) RV1(p##7) RV1(p##8) RV1(p##9)
+#define RV100(p) RV10(p##0) RV10(p##1) RV10(p##2) RV10(p##3) RV10(p##4) RV10(p##5) RV10(p##6) RV10(p##7) RV10(p##8) RV10(p##9)
+
+struct CFuncBrushVecSlots
+{
+	RV100(a) RV100(b) RV10(c) RV1(d0) RV1(d1) RV1(d2) RV1(d3) RV1(d4) RV1(d5) RV1(d6)
+	virtual const Vector &GetAbsOrigin();	// 217
+	virtual void v218();
+	virtual const Vector &GetAbsAngles();	// 219
+	virtual const Vector &GetLocalOrigin();	// 220
+	virtual const Vector &GetLocalAngles();	// 221
+};
+
+#define SLOTS ((CFuncBrushVecSlots *)this)
+
+// TARGET: CFuncBrush::vfunc124
+int CFuncBrush::vfunc124()
+{
+	int nOffset = ((CBaseEntity *)this)->CBaseEntity::vfunc124();
+
+	if (*(unsigned char *)((char *)this + 0x224) & 1)
+	{
+		char tempstr[512];
+		int ed;
+
+		Q_snprintf(tempstr, sizeof(tempstr), "angles: %g %g %g",
+			(double)SLOTS->GetLocalAngles()[0], (double)SLOTS->GetLocalAngles()[1], (double)SLOTS->GetLocalAngles()[2]);
+		ed = *(int *)((char *)this + 0x2e0);
+		sub_101434b0(engine->vfunc35(ed), nOffset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		nOffset++;
+
+		Q_snprintf(tempstr, sizeof(tempstr), "origin: %g %g %g",
+			(double)SLOTS->GetLocalOrigin().x, (double)SLOTS->GetLocalOrigin().y, (double)SLOTS->GetLocalOrigin().z);
+		ed = *(int *)((char *)this + 0x2e0);
+		sub_101434b0(engine->vfunc35(ed), nOffset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		nOffset++;
+
+		Q_snprintf(tempstr, sizeof(tempstr), "absangles: %g %g %g",
+			(double)SLOTS->GetAbsAngles()[0], (double)SLOTS->GetAbsAngles()[1], (double)SLOTS->GetAbsAngles()[2]);
+		ed = *(int *)((char *)this + 0x2e0);
+		sub_101434b0(engine->vfunc35(ed), nOffset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		nOffset++;
+
+		Q_snprintf(tempstr, sizeof(tempstr), "absorigin: %g %g %g",
+			(double)SLOTS->GetAbsOrigin().x, (double)SLOTS->GetAbsOrigin().y, (double)SLOTS->GetAbsOrigin().z);
+		ed = *(int *)((char *)this + 0x2e0);
+		sub_101434b0(engine->vfunc35(ed), nOffset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		nOffset++;
+	}
+
+	return nOffset;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013e480 size=0xf
 #include "CFuncBrush.h"
 int CFuncBrush::vfunc241()
