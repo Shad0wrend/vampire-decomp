@@ -107793,6 +107793,38 @@ PyObject *sub_101987b0(PyObject *self, PyObject *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101988c0 size=0xb7
+#include "Python.h"
+struct CharView { virtual void f(); };
+struct CharObj { char pad[0x9c]; CharView *m_p; };
+CharObj *sub_10196780(PyObject *);
+
+PyObject *sub_101988c0(PyObject *self, PyObject *args)
+{
+    int ret = 0;
+    PyObject *char2 = 0;
+    PyObject *char1 = 0;
+    if (!g_109f37a0(args, "OO", &char1, &char2)) {
+        if (!g_109f377c())
+            g_109f37b4(*g_109f3780, "bad args to char1.IsFollowerOf(char2)");
+        return 0;
+    }
+    CharObj *o2 = sub_10196780(char2);
+    CharView *c2 = !o2 ? 0 : o2->m_p;
+    CharObj *o1 = sub_10196780(char1);
+    CharView *c1 = !o1 ? 0 : o1->m_p;
+    if (!c2 || !c1) {
+        if (!g_109f377c())
+            g_109f37b4(*g_109f3780, "bad args to char1.IsFollowerOf(char2)");
+        return 0;
+    }
+    CharView *leader = ((CharView *(__fastcall *)(CharView *))(*(void ***)c1)[0x494 / 4])(c1);
+    if (leader == c2)
+        ret = 1;
+    return g_109f3798(ret);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10198b30 size=0x138
 #include "exception.h"
 #include "CBaseCombatCharacter.h"
