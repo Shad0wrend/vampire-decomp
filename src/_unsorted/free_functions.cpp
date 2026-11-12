@@ -87552,6 +87552,31 @@ void sub_101450e0(const Vector *pStart, const Vector *pEnd, char a3, char a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101456e0 size=0x208
+#include "UTIL_Trace.h"
+#include "CBaseEntity.h"
+#include "DebugOverlay.h"
+
+float sub_101456e0(const Vector *pOrigin)
+{
+	const Vector &origin = *pOrigin;
+	CGameTrace tr;
+	UTIL_TraceLine_Calls(origin, origin - Vector(0, 0, 2048.0f), 0x2400b, 0, 0, &tr);
+	CGameTrace trEnt;
+	UTIL_TraceLine_DebugCall(origin, origin - Vector(0, 0, 2048.0f), 0x202400b, 0, 0, &trEnt);
+	if (trEnt.m_fraction < tr.m_fraction)
+	{
+		if (trEnt.m_pEnt)
+		{
+			CBaseEntity *e = trEnt.m_pEnt;
+			if (e && (e->sub_100b3700() & 0x1000000))
+				*(Vector *)tr.m_endpos = *(Vector *)trEnt.m_endpos;
+		}
+	}
+	return tr.m_endpos[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146150 size=0x2e
 // TARGET: sub_10146150
 #include "Vector.h"
