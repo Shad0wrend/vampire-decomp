@@ -209522,6 +209522,31 @@ extern char g_1093412c;
 void sub_102f99b0() { g_1093412c = 1; }
 // END FUNCTION
 
+// FUNCTION: 0x102f99d0 size=0x20a
+#include "UTIL_Trace.h"
+#include "CBaseEntity.h"
+#include "DebugOverlay.h"
+
+float sub_102f99d0(const Vector *pOrigin, float flDist)
+{
+	const Vector &origin = *pOrigin;
+	CGameTrace tr;
+	UTIL_TraceLine_Calls(origin, origin - Vector(0, 0, flDist), 0x2400b, 0, 0, &tr);
+	CGameTrace trEnt;
+	UTIL_TraceLine_DebugCall(origin, origin - Vector(0, 0, flDist), 0x202400b, 0, 0, &trEnt);
+	if (trEnt.m_fraction < tr.m_fraction)
+	{
+		if (trEnt.m_pEnt)
+		{
+			CBaseEntity *e = trEnt.m_pEnt;
+			if (e && (e->sub_100b3700() & 0x1000000))
+				*(Vector *)tr.m_endpos = *(Vector *)trEnt.m_endpos;
+		}
+	}
+	return tr.m_endpos[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f9c70 size=0x13
 namespace lifted {
 int sub_1000d7e7(int, int);

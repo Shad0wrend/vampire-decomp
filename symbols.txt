@@ -9421,6 +9421,7 @@
 0x1000d7d8 func   ?vfunc383@CItemContainer@@QAEHHH@Z CItemContainer::vfunc383
 0x1000d7dd func   ?vfunc361@CBaseCombatWeapon@@QAEHH@Z CBaseCombatWeapon::vfunc361
 0x1000d7e2 func   ?vfunc473@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc473
+0x1000d7e7 func   ?sub_102f99d0@@YAMPBVVector@@M@Z sub_102f99d0
 0x1000d7ec func   ?sub_10220830@@YADHH@Z sub_10220830
 0x1000d7f1 func   ?vfunc69@CGameRules@@UAEXHHHH@Z CGameRules::vfunc69
 0x1000d7f6 func   ?vfunc495@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc495
