@@ -19238,6 +19238,27 @@ void CUtlMemUnit1006be50::sub_1006be50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006bea0 size=0x7c
+#include "CUnknown1006bea0.h"
+
+extern "C" void *memcpy(void *, const void *, unsigned);
+extern "C" void *memset(void *, int, unsigned);
+
+void CUnknown1006bea0::sub_1006bea0(void *dest, int count)
+{
+    int avail = m_size - m_pos;
+    if (avail < count) {
+        memcpy(dest, m_pData + m_pos, avail);
+        memset(dest, 0, count - avail);
+        m_pos += avail;
+        m_flags |= 2;
+    } else {
+        memcpy(dest, m_pData + m_pos, count);
+        m_pos += count;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006bf40 size=0x41
 #include "CUnknown1006bea0.h"
 #include <ctype.h>
