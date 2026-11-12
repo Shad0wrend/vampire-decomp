@@ -23519,6 +23519,137 @@ void CUnknown10075aa0::sub_10075350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100754e0 size=0x490
+#include "utlrbtree.h"
+#include "CUnknown10075aa0.h"
+#include "CUnknown10077990.h"
+#include "utlvector.h"
+#include <string.h>
+
+struct EntA { char d[0x88]; EntA *sub_10073850(EntA *src); void sub_10073920(CUnknown10075aa0 *o); };
+struct EntB { char d[0x8c]; EntB *sub_100739d0(EntB *src); void sub_10073920(CUnknown10075aa0 *o); };
+struct EntC { char d[0x88]; void sub_10073a90(EntC *src); void sub_10073b60(CUnknown10075aa0 *o); };
+struct Obj50 { char d[0x50]; Obj50 *sub_10073c20(Obj50 *src); void sub_10073f40(CUnknown10075aa0 *o); };
+struct VecA { char *m; int alloc; int grow; int size; char *el; void sub_10078c90(int n); void sub_10078d60(int i, int n); void sub_10078f20(int i, int n); void sub_10079100(int n); };
+struct VecB { char *m; int alloc; int grow; int size; char *el; void sub_10078dd0(int n); void sub_10078ea0(int i, int n); };
+class Mem30c : public CUtlMemory<Obj50 *>
+{
+public:
+	void sub_100791a0(int n);
+	void Grow(int num = 1) { sub_100791a0(num); }
+};
+typedef CUtlVector<Obj50 *, Mem30c> Vec30c;
+struct CUnknown10077430 { void sub_10077a50(int); void sub_10077650(); };
+struct Ramp { float value; float time; bool selected; };
+typedef CUtlVector<Ramp> RampVec;
+struct R10078690 { void sub_10078690(float time, float value, bool selected); };
+struct CEventCopy : public CUnknown10075aa0
+{
+	CUnknown10075aa0 *sub_100754e0(CUnknown10077990 *pSource);
+};
+
+CUnknown10075aa0 *CEventCopy::sub_100754e0(CUnknown10077990 *pSource)
+{
+	CUnknown10075aa0 *s = (CUnknown10075aa0 *)pSource;
+	m_i2b4 = 0;
+	m_i2b8 = 0;
+	m_i00 = s->m_i00;
+	strcpy(&m_b04, &s->m_b04);
+	strcpy(&m_b84, &s->m_b84);
+	strcpy(&m_b104, &s->m_b104);
+	m_i184 = s->m_i184;
+	m_f188 = s->m_f188;
+	m_b198 = s->m_b198;
+	m_i18c = s->m_i18c;
+	m_b1b0 = s->m_b1b0;
+	m_pad1b1[0] = s->m_pad1b1[0];
+	strcpy(&m_pad1b1[1], &s->m_pad1b1[1]);
+	strcpy(&m_pad1b1[0x81], &s->m_pad1b1[0x81]);
+	sub_10076b60();
+	sub_10076fe0();
+	for (int k = 0; k < 2; k++)
+		((CUnknown10077430 *)this)->sub_10077a50(k);
+	int i;
+	for (i = 0; i < s->m_vec2bc.m_size; i++) {
+		EntA tmp;
+		tmp.sub_10073850((EntA *)(s->m_vec2bc.m_pMemory + i * 0x88));
+		tmp.sub_10073920(this);
+		VecA *v = (VecA *)&m_vec2bc;
+		int n = v->size;
+		v->sub_10078c90(1);
+		v->sub_10078d60(n, 1);
+		EntA *p = (EntA *)(v->m + n * 0x88);
+		if (p)
+			p->sub_10073850(&tmp);
+	}
+	for (i = 0; i < s->m_vec2d0.m_size; i++) {
+		EntB tmp;
+		tmp.sub_100739d0((EntB *)(s->m_vec2d0.m_pMemory + i * 0x8c));
+		tmp.sub_10073920(this);
+		VecB *v = (VecB *)&m_vec2d0;
+		int n = v->size;
+		v->sub_10078dd0(1);
+		v->sub_10078ea0(n, 1);
+		EntB *p = (EntB *)(v->m + n * 0x8c);
+		if (p)
+			p->sub_100739d0(&tmp);
+	}
+	for (int j = 0; j < 2; j++) {
+		for (i = 0; i < s->m_vec2e4[j].m_size; i++) {
+			EntC tmp;
+			tmp.sub_10073a90((EntC *)(s->m_vec2e4[j].m_pMemory + i * 0x88));
+			tmp.sub_10073b60(this);
+			VecA *v = (VecA *)&m_vec2e4[j];
+			int n = v->size;
+			if (n + 1 > v->alloc)
+				v->sub_10079100(n - v->alloc + 1);
+			v->size++;
+			v->el = v->m;
+			v->sub_10078f20(n, 1);
+			EntC *p = (EntC *)(v->m + n * 0x88);
+			if (p)
+				p->sub_10073a90(&tmp);
+		}
+	}
+	((CUnknown10077430 *)this)->sub_10077650();
+	for (i = 0; i < ((Vec30c *)&s->m_vec30c)->Count(); i++) {
+		Obj50 *o = (Obj50 *)operator new(0x50);
+		Obj50 *q;
+		if (o)
+			q = o->sub_10073c20(((Vec30c *)&s->m_vec30c)->Element(i));
+		else
+			q = 0;
+		q->sub_10073f40(this);
+		((Vec30c *)&m_vec30c)->AddToTail(q);
+	}
+	m_b320 = s->m_b320;
+	m_b328 = s->m_b328;
+	m_i32c = s->m_i32c;
+	m_i330 = s->m_i330;
+	m_i334 = s->m_i334;
+	m_i338 = s->m_i338;
+	m_b33c = s->m_b33c;
+	m_i190 = s->m_i190;
+	m_i194 = s->m_i194;
+	for (int pk0 = m_i00; --pk0 >= 0; ) ;
+	for (int pk1 = m_i00; --pk1 >= 0; ) ;
+	for (int pk2 = m_i00; --pk2 >= 0; ) ;
+	for (int pk3 = m_i00; --pk3 >= 0; ) ;
+	for (int pk4 = m_i00; --pk4 >= 0; ) ;
+	for (int pk5 = m_i00; --pk5 >= 0; ) ;
+	for (int pk6 = m_i00; --pk6 >= 0; ) ;
+	for (int pk7 = m_i00; --pk7 >= 0; ) ;
+	for (int pk8 = m_i00; --pk8 >= 0; ) ;
+	for (int pk9 = m_i00; --pk9 >= 0; ) ;
+	((RampVec *)&m_vec19c)->RemoveAll();
+	for (i = 0; i < ((RampVec *)&s->m_vec19c)->Count(); i++) {
+		Ramp r = ((RampVec *)&s->m_vec19c)->Element(i);
+		((R10078690 *)this)->sub_10078690(r.time, r.value, r.selected);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10075aa0 size=0x97
 #include "CUnknown10075aa0.h"
 
