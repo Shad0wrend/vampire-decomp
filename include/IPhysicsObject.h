@@ -14,7 +14,7 @@ public:
 class IPhysicsObject
 {
 public:
-	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual bool vfunc4();
+	virtual void vfunc0(); virtual bool vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual bool vfunc4();
 	virtual void vfunc5(); virtual void *vfunc6(); virtual void vfunc7(unsigned int flags); virtual unsigned int vfunc8(); virtual void vfunc9();	/* slot 7/8 Set/GetCallbackFlags-like (ragdoll code: vfunc7(vfunc8() | 8)) */	/* slot 6 GetGameData */
 	virtual unsigned short vfunc10();	/* slot 10 GetGameFlags */ virtual void vfunc11(float flMass);	/* slot 11 SetMass */
 	virtual float vfunc12();	// slot 12 GetMass
@@ -38,7 +38,7 @@ public:
 	virtual void vfunc45(float flMaxSpeed, float flMaxAngularSpeed, int a, int b);	// slot 45 SetShadow
 	virtual void vfunc46(const float *pPosition, const float *pAngles, int a, int b);	// slot 46 UpdateShadow
 	virtual int vfunc47(Vector *pPosition, Vector *pAngles); virtual IPhysicsShadowController *vfunc48(); virtual int vfunc49(const Vector *pOrigin, const Vector *pAngles);	// slot 49 (+0xc4): handed (&vec3_origin, &vec3_angle) by CRagdollProp 0x101554a0, result goes to collision slot 18
-	virtual void vfunc50(); virtual void vfunc51(); virtual void vfunc52();
+	virtual void vfunc50(); virtual void vfunc51(); virtual bool vfunc52();
 	virtual float vfunc53(void *pShadowParams, float flSecondsToArrive, float flDeltaTime);	// slot 53 ComputeShadowControl
 	virtual void vfunc54(); virtual void vfunc55(); virtual void vfunc56(); virtual void vfunc57();
 	virtual float vfunc58(const Vector &unitDirection) const;	// slot 58 CalculateLinearDrag
