@@ -8700,6 +8700,7 @@
 0x1000c67b func   ?vfunc5@CItemGStake@@QAEPAV1@I@Z CItemGStake::vfunc5
 0x1000c680 func   ?sub_103e7920@CWeaponMelee_TorchX@@QAEXH@Z CWeaponMelee_TorchX::sub_103e7920
 0x1000c685 func   ?vfunc82@CNPC_VManBat@@QAEPAUdatamap_t@@XZ CNPC_VManBat::vfunc82
+0x1000c68a func   ?sub_102a99e0@CAI_MoveProbe@@QAEXABVVector@@PBM11IPAUCGameTrace@@HD@Z CAI_MoveProbe::sub_102a99e0
 0x1000c68f func   ?sub_101ef900@@YAPAUCProjSlots@@PBM0PAVCBaseEntity@@HMPBD222@Z sub_101ef900
 0x1000c694 func   ?sub_10143630@@YAXPBVVector@@@Z sub_10143630
 0x1000c699 func   ?sub_1009c2d0@CBaseEntity@@QAEXHPADH@Z CBaseEntity::sub_1009c2d0

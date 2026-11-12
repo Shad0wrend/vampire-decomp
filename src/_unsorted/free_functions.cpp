@@ -195148,6 +195148,70 @@ void CUnknown102a99c0::sub_102a99c0(char value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a99e0 size=0x1d9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CAI_MoveProbe.h"
+#include "CGameTrace.h"
+#include "CTraceFilterNav.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CVProfile.h"
+#include "Ray_t.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+
+struct CTraceFilterNavGround102e3290
+{
+	int m_pad[5];
+	CTraceFilterNavGround102e3290 *sub_102e3290(int a, int b);
+};
+
+struct CMoveProbeOuter
+{
+	char pad0000[0x368];
+	int m_n368;
+};
+
+void CAI_MoveProbe::sub_102a99e0(const Vector &vecStart, const float *vecEnd, const float *vecMins, const float *vecMaxs, unsigned int collisionMask, CGameTrace *pTrace, int a6, char bGround)
+{
+	CVProfile *pProfile = g_109f3648;
+	if (pProfile->m_enabled || !pProfile->m_bAtRoot) {
+		if (pProfile->m_pCurNode->m_pszName != "CAI_MoveProbe_TraceHull")
+			pProfile->m_pCurNode = pProfile->m_pCurNode->GetSubNode("CAI_MoveProbe_TraceHull", 0, "Unaccounted");
+		pProfile->m_pCurNode->EnterScope();
+		pProfile->m_bAtRoot = false;
+	}
+	if (bGround) {
+		CTraceFilterNav filter;
+		((CTraceFilterNavGround102e3290 *)&filter)->sub_102e3290((int)m_pOuter, ((CMoveProbeOuter *)m_pOuter)->m_n368);
+		ScopeTrace scope("UTIL_TraceHull", g_106b8540);
+		Ray_t ray;
+		ray.sub_1006dec0(vecStart, vecEnd, vecMins, vecMaxs, a6, 0);
+		g_1070b254->vfunc4(&ray, collisionMask, (CTraceFilterNoCharacterCollide *)&filter, pTrace);
+		if (g_10738960.sub_1005f190())
+			sub_10146570((const Vector *)&pTrace->m_startpos, (const Vector *)&pTrace->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+	} else {
+		CTraceFilterNav filter;
+		filter.sub_102e30d0((int)m_pOuter, ((CMoveProbeOuter *)m_pOuter)->m_n368);
+		ScopeTrace scope("UTIL_TraceHull", g_106b8540);
+		Ray_t ray;
+		ray.sub_1006dec0(vecStart, vecEnd, vecMins, vecMaxs, a6, 0);
+		g_1070b254->vfunc4(&ray, collisionMask, (CTraceFilterNoCharacterCollide *)&filter, pTrace);
+		if (g_10738960.sub_1005f190())
+			sub_10146570((const Vector *)&pTrace->m_startpos, (const Vector *)&pTrace->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+	}
+	g_109f3648->ExitScopeInlined();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a9c40 size=0x10
 extern char g_106b8540[];
 
