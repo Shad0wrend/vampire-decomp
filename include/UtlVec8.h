@@ -27,7 +27,7 @@ public:
 	int sub_100423c0(int elem, const UtlVec8Elem *src);	// same as sub_10042200 (another instance)
 	int sub_100424a0(int elem, const UtlVec8Elem *src);	// same as sub_10042200 (another instance)
 	int sub_102f90e0(int elem);	// "CUtlVector::InsertBefore" without the element copy: grows by one, shifts the tail up, returns elem
-	void sub_102beb50(UtlVec8Elem elem);	// "CUtlVector::AddToTail" (InsertBefore at the size, inlined): appends a copy of elem
+	void sub_102beb50(int a, int b);	// "CUtlVector::AddToTail" (InsertBefore at the size, inlined): appends a copy of elem
 	int sub_102c6780(const UtlVec8Elem *src);	// "CUtlVector::AddToTail" taking a pointer (InsertBefore at the size, inlined): appends *src, returns its index
 	UtlVec8 *sub_102f8fc0(void *pMem, int n);
 	void sub_102f8ef0();
