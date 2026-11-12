@@ -178749,6 +178749,68 @@ void CAI_BaseNPCTroika::sub_1027de00(CBaseEntity *pDoor)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027dfb0 size=0xf8
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+struct CTroikaGlobalView
+{
+	virtual void v0();
+	virtual void vfunc1();
+};
+
+struct CTroikaConVarView
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+
+struct CTroikaDoorView
+{
+	void sub_100f0e30(float flTime);
+};
+
+struct CTroikaSquadView
+{
+	void sub_10316660(CBaseEntity *pDoor);
+};
+
+extern CTroikaGlobalView *g_10924a6c;
+extern CTroikaConVarView *g_1092038c;
+
+inline bool DoorDebugAllowed()
+{
+	return g_1092038c->vfunc1() || !g_1092038c->m_n2c;
+}
+
+void CAI_BaseNPCTroika::sub_1027dfb0(CBaseEntity *pDoor)
+{
+	if (((CEntityVSlots *)this)->slot158() && pDoor)
+	{
+		g_10924a6c->vfunc1();
+		sub_100041b0(0x34);
+		*(unsigned int *)((char *)this + 0x5d2c) = *pDoor->vfunc1();
+		if (DoorDebugAllowed())
+		{
+			if (pDoor == (CBaseEntity *)EHandle_Get(m_h5d24))
+			{
+				sub_1027de00(pDoor);
+				return;
+			}
+			((CTroikaDoorView *)pDoor)->sub_100f0e30(gpGlobals->curtime + 5.0f);
+			if (*(int *)((char *)this + 0x5bb0) <= 0 && *(CTroikaSquadView **)((char *)this + 0x5da4))
+				(*(CTroikaSquadView **)((char *)this + 0x5da4))->sub_10316660(pDoor);
+			*(unsigned int *)((char *)this + 0x5d28) = *pDoor->vfunc1();
+			return;
+		}
+		((CEntityVSlots *)this)->slot532(4);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027e140 size=0xc2
 #include "CAI_BaseNPC.h"
 #include "CEntityVSlots.h"
