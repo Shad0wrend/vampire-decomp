@@ -3908,6 +3908,108 @@ void CAI_BaseNPCTroika::vfunc433()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b35b0 size=0x25d
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CBCCSlotViews.h"
+#include "CBaseCombatCharacter.h"
+#include "ehandle.h"
+#include "CStealthKillRules.h"
+#include "Vector.h"
+
+extern char g_10924fba;
+extern char g_10924fb9;
+extern CStealthKillRules g_1072c540;
+
+struct CSoundView
+{
+	EHANDLE m_hOwner;	// +0
+	int m_iType;		// +4
+	int m_iVolume;		// +8
+	int m_unkC;
+	int m_unk10;
+	int m_unk14;
+	int m_unk18;
+	int m_unk1C;
+	Vector m_vecOrigin;	// +0x20
+};
+
+// The game's out-of-line copy of the entity list's LookupEntity (0x100290c0) was compiled before this function in
+// its unit: VC6 then knows the call writes no memory and keeps g_pEntityList in esi across it. The body here only
+// has to make VC6 see ecx as clobbered (as the game's caller does); the judge links the call to 0x100290c0.
+namespace block_102b35b0 {
+struct CEntListUnit
+{
+	void *m_vtable;
+	EHandleEntInfo m_EntPtrArray[0x2000];
+	unsigned int sub_100290c0(unsigned int *pHandle);
+};
+unsigned int CEntListUnit::sub_100290c0(unsigned int *pHandle)
+{
+	unsigned int h = *pHandle;
+	if (h != 0xffffffff) {
+		EHandleEntInfo *pInfo = &m_EntPtrArray[h & 0x1fff];
+		if (pInfo->m_SerialNumber == (int)(h >> (pHandle[1] & 31)))
+			return (unsigned int)pInfo->m_pEntity;
+	}
+	return 0;
+}
+}
+using namespace block_102b35b0;
+
+inline CBaseEntity *LookupOwner(const CBaseHandle *h)
+{
+	return (CBaseEntity *)((CEntListUnit *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)h);
+}
+
+// TARGET: ?vfunc467@CAI_BaseNPCTroika@@QAE_NPAH@Z
+bool CAI_BaseNPCTroika::vfunc467(int *pOther)
+{
+	CSoundView *pSound = (CSoundView *)pOther;
+
+	if (!pSound)
+		return false;
+	if (g_10924fba)
+		return false;
+	if (g_10924fb9 && LookupOwner(&pSound->m_hOwner) && LookupOwner(&pSound->m_hOwner)->m_pA8)
+		return false;
+	if ((*(unsigned int *)((char *)this + 0x5b84) & 0x800) == 0x800) {
+		CBaseEntity *pFriend = LookupOwner((CBaseHandle *)((char *)this + 0x60ac));
+		if (LookupOwner(&pSound->m_hOwner) == pFriend)
+			return false;
+	}
+	if (pSound->m_hOwner.Get() == (CBaseEntity *)this)
+		return false;
+	if (pSound->m_hOwner.Get() != 0) {
+		CBaseCombatCharacter *pBCC = (CBaseCombatCharacter *)pSound->m_hOwner->m_p9c;
+		if (!pBCC || !pBCC->sub_10146b20((CBaseCombatCharacter *)this))
+			return false;
+	}
+	if (pSound->m_iType == 4) {
+		CBaseEntity *pEnt = pSound->m_hOwner.Get();
+		if (pEnt && pEnt->m_pA8 && g_1072c540.sub_101be710((CBaseEntity *)pEnt->m_pA8, (CBaseEntity *)this))
+			return false;
+	}
+	if ((*(unsigned int *)((char *)this + 0x14b8) & 0x20400) != 0) {
+		Vector v;
+		float flDist = (pSound->m_vecOrigin - *((CEntityVSlots *)this)->slot196(&v)).Length();
+		float f = ((CNpcVFunc476SlotView *)this)->vfunc476() * pSound->m_iVolume * 0.25f;
+		if (pSound->m_hOwner.Get() != 0)
+			pSound->m_hOwner->sub_1009d850(pOther, &f);
+		if (flDist > f)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b38b0 size=0xb4
 #include "CAI_BaseNPCTroika.h"
 

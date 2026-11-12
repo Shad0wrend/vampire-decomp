@@ -9440,6 +9440,7 @@
 0x1000d5d5 func   ?sub_1029eb30@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029eb30
 0x1000d5da func   ?vfunc82@CSun@@UAEPAUdatamap_t@@XZ CSun::vfunc82
 0x1000d5df func   ?sub_103d9c90@CNPC_VWerewolf@@QAE?AUCNPC_VWerewolfVec3@@XZ CNPC_VWerewolf::sub_103d9c90
+0x1000d5e4 func   ?vfunc467@CAI_BaseNPCTroika@@QAE_NPAH@Z CAI_BaseNPCTroika::vfunc467
 0x1000d5e9 func   ?sub_10113b00@@YAHXZ sub_10113b00
 0x1000d5ee func   ??0CBaseButtonBase@@QAE@XZ CBaseButtonBase::CBaseButtonBase
 0x1000d5ee func   ??0CBaseEntity@@QAE@XZ CBaseEntity::CBaseEntity
