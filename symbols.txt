@@ -11083,6 +11083,7 @@
 0x1000f989 func   ?vfunc362@CWeaponMelee_Claws_Protean5@@UAEPAUCWeaponActivityRecord@@XZ CWeaponMelee_Claws_Protean5::vfunc362
 0x1000f98e func   ?vfunc320@CNPC_VHengeyokai@@QAEDHH@Z CNPC_VHengeyokai::vfunc320
 0x1000f993 func   _phys_animlink phys_animlink
+0x1000f9a2 func   ?sub_102453d0@@YA_NMMMMABVVector@@00M@Z sub_102453d0
 0x1000f9a7 func   ?sub_104303d0@@YAII@Z sub_104303d0
 0x1000f9ac func   ?vfunc103@CAI_StandoffGoal@@UAEXXZ CAI_StandoffGoal::vfunc103
 0x1000f9b1 func   ??1CUnknown101d7520Entry@@QAE@XZ CUnknown101d7520Entry::~CUnknown101d7520Entry
