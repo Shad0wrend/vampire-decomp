@@ -20,6 +20,7 @@ public:
 	void sub_100cb110();	// slot 221 (the absolute angles) through the fraction of sub_100ca630, then sub_100cae20(fraction, 0) and the next think time at +0x17c from the global at 0x1070b228 (+0xc)
 	void sub_100caa40();	// the think of a button that is being driven to the target fraction at +0x5fc: while it has not reached it (fraction >= target going forward, <= target going back) reports the fraction (sub_100cae20) and re-arms the think after +0x604; once reached: stops the angular velocity, sets the angles to start + direction * range * target (slot 64), clears the next think (+0x17c / +0x3fc), reports the target and runs sub_100ca9d0()
 	void sub_100ca9d0();	// stub 0x100117de, run when the target has been reached
+	void sub_100ca710(struct inputdata_t &inputdata);	// "InputSetPosition": drives the movement to the target fraction
 	void sub_100b2f50(const float *pVec);	// CBaseEntity::sub_100b2f50 (stub 0x10006a5f), called directly: the angular velocity setter
 
 	char m_pad0004[0x114 - 4];
