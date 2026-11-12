@@ -186259,6 +186259,48 @@ int sub_1027bc30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027c1f0 size=0x9a
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "Vector.h"
+struct CDevFlagView
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+};
+
+extern CDevFlagView *g_10924a6c;
+extern float g_1070d9d0[3];
+extern Vector g_1070d1b0;
+
+struct CAI_BaseNPCSchedView : CAI_BaseNPC
+{
+	bool IsCurSchedule(int schedId)
+	{
+		return *(int *)((char *)this + 0x5c38) && *(int *)((char *)this + 0x5c38) == sub_102cc1f0(schedId);
+	}
+};
+
+// TARGET: CAI_BaseNPC::sub_1027c1f0
+void CAI_BaseNPC::sub_1027c1f0()
+{
+	if (!((CAI_BaseNPCSchedView *)this)->IsCurSchedule(0x3a)) {
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x75);
+		((CBaseEntity *)this)->vfunc93(0, 0);
+		*(int *)((char *)this + 0x3ec) = 0;
+		((CBaseEntity *)this)->sub_100b2f50(g_1070d9d0);
+		((CBaseEntity *)this)->sub_100b2770(g_1070d1b0);
+	} else {
+		g_10924a6c->vfunc1();
+		sub_10269a20(0x76);
+		*(int *)((char *)this + 0xfec) = 0;
+		((CBaseEntity *)this)->vfunc93(4, 0);
+		*(float *)((char *)this + 0x3ec) = 1.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027c2c0 size=0x3
 char sub_1027c2c0()
 {

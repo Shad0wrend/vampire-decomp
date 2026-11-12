@@ -10328,6 +10328,7 @@
 0x1000e953 func   ?sub_10073940@@YIMPAX@Z sub_10073940
 0x1000e95d func   ?vfunc325@CNPC_VTzimisce@@UAE_NXZ CNPC_VTzimisce::vfunc325
 0x1000e962 func   ?vfunc546@CNPC_VVampire@@QAEHH@Z CNPC_VVampire::vfunc546
+0x1000e967 func   ?sub_1027c1f0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1027c1f0
 0x1000e96c func   ?sub_1042e8c0@CUnknown1042e8c0@@QAEXXZ CUnknown1042e8c0::sub_1042e8c0
 0x1000e971 func   ?sub_10146a80@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10146a80
 0x1000e976 func   ?sub_10123e20@CGameMovement@@QAEXXZ CGameMovement::sub_10123e20
