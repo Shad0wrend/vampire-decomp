@@ -237,6 +237,8 @@ public:
 	void sub_102575d0(CBaseEntity *pOther, int a, int b);	// hands the engine indices of pOther's and this entity's edicts (+0x2e0) to the game's callback sub_101ede10; the two extra arguments are unused
 	bool sub_103d3a40(const char *pszNameOrWildcard);	// "NameMatches" (inlined copy in NPC_VWerewolf): the entity name equals the argument, case-insensitively; a trailing '*' makes it a prefix match
 
+	int sub_10034590(float flTime, struct CGameTrace *pTrace);	// "CBaseEntity::PhysicsTryMove": the SDK's stepped move (VPROF scope); returns the blocked bits
+
 #include "CBaseEntity_ext.h"
 
 	char m_pad0004[0x8c];
