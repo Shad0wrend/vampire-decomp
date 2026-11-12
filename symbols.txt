@@ -6229,6 +6229,7 @@
 0x100093f9 func   ?vfunc0@CBreakParser@@UAEXPAXPBD1@Z CBreakParser::vfunc0
 0x100093fe func   ?sub_100324b0@@YAXPAVCBaseEntity@@PAXMH@Z sub_100324b0
 0x10009403 func   _func_illusionary func_illusionary
+0x1000940d func   ?sub_10267b60@CBaseEntity@@QAEHPAUCFireBulletsInfo@@@Z CBaseEntity::sub_10267b60
 0x10009412 func   ?vfunc103@CTriggerPush@@UAEXXZ CTriggerPush::vfunc103
 0x10009417 func   ?vfunc180@CSceneEntity@@UAEXXZ CSceneEntity::vfunc180
 0x1000941c func   ?sub_100ae580@@YAXXZ sub_100ae580

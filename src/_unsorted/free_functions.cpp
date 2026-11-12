@@ -179807,6 +179807,144 @@ Vector __stdcall sub_10267820(CBaseEntity *pEnt, const Vector *pPos, const Vecto
 }
 // END FUNCTION
 
+// FUNCTION: 0x10267b60 size=0x4c7
+#include "CBaseEntity.h"
+#include "UTIL_Trace.h"
+#include "CFireBulletsInfo.h"
+#include "CEntityVSlots.h"
+#include "CTakeDamageInfo.h"
+#include "CNPC_VBach.h"
+#include "Tier1.h"
+
+#define V440(n) virtual void v##n();
+#define V440_10(p) V440(p##0) V440(p##1) V440(p##2) V440(p##3) V440(p##4) V440(p##5) V440(p##6) V440(p##7) V440(p##8) V440(p##9)
+
+class CUnknown104276a0 { public: int sub_104276a0(int nAmmoType); };
+class CUnknown104276d0 { public: int sub_104276d0(int nAmmoType); };
+
+struct CAmmoRulesView
+{
+	V440_10(0) V440_10(1) V440_10(2) V440_10(3) V440_10(4)
+	V440(50) V440(51) V440(52) V440(53) V440(54)
+	virtual CUnknown104276a0 *vfunc55();
+};
+
+struct CTracerEntView
+{
+	V440_10(0) V440_10(1) V440_10(2) V440_10(3) V440_10(4) V440_10(5) V440_10(6) V440_10(7) V440_10(8) V440_10(9)
+	V440_10(10) V440_10(11) V440_10(12) V440_10(13) V440_10(14) V440_10(15) V440_10(16) V440_10(17)
+	V440(180) V440(181) V440(182) V440(183)
+	virtual void vfunc184(const Vector *pSrc, CGameTrace *pTrace, int iTracerType);
+};
+
+struct CShotEntity : CBaseEntity
+{
+	void sub_10266ef0(CTakeDamageInfo *pInfo, const Vector *pSrc, const float *pEnd, const Vector *pDir);
+};
+
+struct CLethalUnitView { int sub_10258290(void *pChar); };
+struct CAnimatingView { int sub_10096b50(int hitbox); bool sub_10092e20(const char *pszName, Vector *pOrigin, void *pAngles); };
+
+// the SDK's trace_t layout with its Vector members: its assignment copies member by member
+struct cplane440_t { Vector normal; float dist; unsigned char type; unsigned char signbits; unsigned char pad[2]; };
+struct csurface440_t { const char *name; short surfaceProps; unsigned short flags; };
+struct trace440_t
+{
+	Vector startpos;
+	Vector endpos;
+	cplane440_t plane;
+	float fraction;
+	int contents;
+	unsigned short dispFlags;
+	bool allsolid;
+	bool startsolid;
+	float fractionleftsolid;
+	csurface440_t surface;
+	int hitgroup;
+	short physicsbone;
+	CBaseEntity *m_pEnt;
+	int hitbox;
+};
+
+extern void *g_1070ba0c;
+extern struct DevObj1074f04c { virtual void v0(); virtual bool vfunc1(); int m_n4[10]; int m_n2c; } *g_1074f04c;
+extern int g_1092054c;
+extern float g_1072cb40;
+extern int g_1072bc58;
+extern char g_1072bcb6;
+extern Vector g_1070d1b0;
+void sub_101bac90(int type, const float *pOrigin, int volume, float flDuration, char a, CBaseEntity *pOwner);
+void sub_101d0b70(const Vector *pStart, const float *pEnd, int n);
+
+int CBaseEntity::sub_10267b60(CFireBulletsInfo *pInfo)
+{
+	if (pInfo->m_iAmmoType == -1)
+		return -1;
+	CBaseEntity *pHit = 0;
+	CUnknown104276a0 *pAmmoDef = ((CAmmoRulesView *)g_1070ba0c)->vfunc55();
+	int nDamageType = pAmmoDef->sub_104276a0(pInfo->m_iAmmoType);
+	int result = -1;
+	CGameTrace tr;
+	CTraceFilterSimple filter(this, 0);
+	{
+		Ray_t ray;
+		ray.sub_1006dec0(pInfo->m_vecSrc, &pInfo->m_vecEnd.x, &g_1070d1b0.x, &g_1070d1b0.x, 0, 1);
+		g_1070b254->vfunc4(&ray, 0x46004003, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+		if (g_10738960.sub_1005f190())
+			sub_10146570((const Vector *)&tr.m_startpos, (const Vector *)&tr.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+	}
+	if (tr.m_fraction != 1.0 && tr.m_pEnt)
+	{
+		pHit = tr.m_pEnt;
+		sub_101bac90(0x10, tr.m_endpos, g_1072bc58, 0.2f, g_1072bcb6, this);
+		float flDamage = (float)pInfo->m_Dmg.m_field04;
+		CVDmg_t dmg = pInfo->m_Dmg;
+		if (!g_1074f04c->vfunc1() && g_1074f04c->m_n2c)
+			g_109f3630("Starting Ranged Attack Damage Calculation with Base Damage (%f)\n", flDamage);
+		void *pChar = m_p9c;
+		if (pInfo->m_pWeapon98)
+			dmg.m_field04 = ((CLethalUnitView *)pInfo->m_pWeapon98)->sub_10258290(pChar);
+		dmg.sub_101fa960((CVDmgSource_t *)pInfo->m_pAttacker);
+		dmg.m_field40 = 0;
+		dmg.sub_101fb3e0(8);
+		if (pHit->m_p9c)
+		{
+			result = ((CAnimatingView *)pHit->m_p9c)->sub_10096b50(tr.m_hitbox);
+			pHit->vfunc21((int)pInfo->m_pAttacker->m_p9c);
+			pInfo->m_pAttacker->vfunc24((int)pHit);
+		}
+		else
+		{
+			CTakeDamageInfo info;
+			info.sub_101c26d0(pInfo->m_pWeapon98, pInfo->m_pAttacker, (float)dmg.sub_101faa70(), dmg.m_field10, 0, (int)&dmg, -1);
+			info.sub_101c29e0(&tr);
+			((CEntityVSlots *)pHit)->slot141((const CTakeDamageInfo *)&info, pInfo->m_vecDir, &tr);
+		}
+		dmg.sub_101fa680();
+	}
+	{
+		CTakeDamageInfo info;
+		((CShotEntity *)this)->sub_10266ef0(info.sub_101c26d0(pInfo->m_pAttacker, pInfo->m_pAttacker, (float)pInfo->m_Dmg.sub_101faa70(), nDamageType, 0, (int)&pInfo->m_Dmg, -1), &pInfo->m_vecSrc, tr.m_endpos, &pInfo->m_vecDir);
+	}
+	if (pInfo->m_iTracerFreq && (g_1092054c++ % pInfo->m_iTracerFreq) == 0)
+		((CTracerEntView *)this)->vfunc184(&pInfo->m_vecSrc, &tr, ((CUnknown104276d0 *)pAmmoDef)->sub_104276d0(pInfo->m_iAmmoType));
+	if (pInfo->m_pWeapon98)
+	{
+		Vector vecMuzzle;
+		Vector angMuzzle;
+		if (!((CAnimatingView *)pInfo->m_pWeapon98)->sub_10092e20("muzzleflash", &vecMuzzle, &angMuzzle))
+			vecMuzzle = pInfo->m_vecSrc;
+		sub_101d0b70(&vecMuzzle, tr.m_endpos, (int)(tr.m_fraction * pInfo->m_flDistance * 0.015625));
+	}
+	if ((pAmmoDef->sub_104276a0(pInfo->m_iAmmoType) & 0x2000000) && dynamic_cast<CNPC_VBach *>(this))
+		g_1072cb40 = 3.0f;
+	*(trace440_t *)pInfo->m_Result = *(trace440_t *)&tr;
+	pInfo->m_pHitEntity = pHit;
+	pInfo->m_nC0 = 0;
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10268170 size=0x153
 #include "CUnknown10268170.h"
 #include "CUnknown10160680.h"
