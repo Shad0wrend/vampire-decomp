@@ -110,11 +110,12 @@ struct CAI_NavRoute	// the object at CAI_Navigator +0x30
 	CAI_NavVec3 m_v14;	// 0x14
 	int m_i20;
 	CAI_NavWaypointPtr m_pWaypoint;	// 0x24
-	int m_i28;
+	union { int m_i28; float m_fl28; };	// 0x28: the goal tolerance
 	int m_i2c;
 	int m_i30;
 	CAI_NavVec3 m_v34;	// 0x34
-	char m_pad40[0x44 - 0x40];
+	float m_fl40;	// 0x40: the waypoint tolerance
+	void SetGoalTolerance(float flTolerance) { m_fl28 = flTolerance; }
 	int m_nProvider;	// 0x44
 	char m_b48;
 	char m_pad49[3];
