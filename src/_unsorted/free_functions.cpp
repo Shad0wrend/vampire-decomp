@@ -207799,6 +207799,61 @@ int sub_102fca40(int flag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fcbd0 size=0xef
+#include "CAI_Pathfinder.h"
+#include "CAI_Waypoint.h"
+
+struct CAI_PathfinderNodeView : CAI_PathfinderNode
+{
+	float GetYaw() { return *(float *)&m_n6c; }
+};
+
+struct CAI_PathfinderHullView : CAI_Pathfinder
+{
+	int GetHullType() { return m_unk08; }
+};
+
+struct CAI_WaypointCtorView
+{
+	CAI_Waypoint *sub_10319df0(const float *pPos, float flYaw, int nType, int nFlags, int nNodeID);
+};
+
+// TARGET: CAI_Pathfinder::sub_102fcbd0
+CAI_Waypoint *CAI_Pathfinder::sub_102fcbd0(int *pNext, int nNode)
+{
+	CAI_Waypoint *pOldWaypoint = 0;
+	CAI_Waypoint *pNewWaypoint = 0;
+	int currentID = nNode;
+	CAI_PathfinderNodeView **pAInode = (CAI_PathfinderNodeView **)((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder->m_pNetwork->m_ppNodes;
+	while (currentID != -1)
+	{
+		int prevID = pNext[currentID];
+		int destID;
+		if (prevID != -1)
+			destID = prevID;
+		else
+		{
+			if (!pOldWaypoint)
+				return 0;
+			destID = pOldWaypoint->m_iNodeID;
+		}
+		int waypointType = sub_102fcab0((CAI_PathfinderNode **)pAInode, currentID, destID);
+		CAI_WaypointCtorView *pMem = (CAI_WaypointCtorView *)g_10936c84.sub_1013dc60(0x38);
+		if (pMem)
+		{
+			float vec[3];
+			pNewWaypoint = pMem->sub_10319df0(pAInode[currentID]->sub_102fb0d0(vec, ((CAI_PathfinderHullView *)this)->GetHullType()), pAInode[currentID]->GetYaw(), waypointType, 4, currentID);
+		}
+		else
+			pNewWaypoint = 0;
+		pNewWaypoint->SetNext(pOldWaypoint);
+		pOldWaypoint = pNewWaypoint;
+		currentID = prevID;
+	}
+	return pOldWaypoint;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fcd00 size=0x12f
 #include "CAI_Pathfinder.h"
 #include "CAI_Waypoint.h"
