@@ -121585,6 +121585,52 @@ char *CStringPool::sub_101bf860(const char *pszValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bfb00 size=0x1da
+#include "utlvector.h"
+#include "utlrbtree.h"
+#include "CRBTree12Entry_101c03c0.h"
+#include "CGameStringPool.h"
+
+// TARGET: CStringPool::sub_101bfb00
+
+typedef CUtlRBTree<CRBTree12Entry_101c03c0, unsigned short> CStringPoolTreeBase;
+
+// The string tree with the 2003 SDK's RemoveAll (the elements are plain string pointers there:
+// Destruct does nothing, IsValidIndex stays as a test without effect).
+struct CStringPoolTree : CStringPoolTreeBase
+{
+	void RemoveAll()
+	{
+		unsigned short prev = InvalidIndex();
+		for (int i = (int)m_TotalElements; --i >= 0; )
+		{
+			unsigned short idx = (unsigned short)i;
+			if (IsValidIndex(idx))
+				Destruct(&Element(idx).m_psz);
+			SetRightChild(idx, prev);
+			SetLeftChild(idx, idx);
+			prev = idx;
+		}
+		m_FirstFree = m_TotalElements ? 0 : InvalidIndex();
+		m_Root = InvalidIndex();
+		m_NumElements = 0;
+	}
+};
+
+void CStringPool::sub_101bfb00()
+{
+	CStringPoolTree &t = *(CStringPoolTree *)this;
+
+	unsigned short i = t.FirstInorder();
+	while (i != t.InvalidIndex())
+	{
+		free(t[i].m_psz);
+		i = t.NextInorder(i);
+	}
+	t.RemoveAll();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0240 size=0x6a
 extern void *(*g_109f3638)(void *, int);
 extern void *(*g_109f3634)(int);

@@ -8569,6 +8569,7 @@
 0x1000c3f6 func   ?sub_101c0b80@@YAXPBDPAVCBaseEntity@@1HM@Z sub_101c0b80
 0x1000c3fb func   ?sub_100ecfc0@CLookupTable@@QAEHPAUCLookupObjView@@HH@Z CLookupTable::sub_100ecfc0
 0x1000c400 func   ?vfunc5@CWeaponRanged_Smg_Mac10@@UAEPAVCWeaponRanged@@I@Z CWeaponRanged_Smg_Mac10::vfunc5
+0x1000c405 func   ?sub_101bfb00@CStringPool@@QAEXXZ CStringPool::sub_101bfb00
 0x1000c40a func   ?sub_100859c0@@YAHXZ sub_100859c0
 0x1000c40f func   ?vfunc5@ConVar@@UAEXM@Z ConVar::vfunc5
 0x1000c414 func   ?sub_10074f70@CUnknown10074f70@@QAEXPAVCUnknown10074f70_Actor@@@Z CUnknown10074f70::sub_10074f70
