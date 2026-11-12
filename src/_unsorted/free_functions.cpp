@@ -104936,6 +104936,75 @@ int *sub_101993c0(void *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10199520 size=0x11d
+struct PyObj { int m_refcnt; };
+
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObj *args, const char *format, ...);
+__declspec(dllimport) PyObj *PyErr_Occurred(void);
+__declspec(dllimport) void PyErr_SetString(PyObj *exc, const char *msg);
+__declspec(dllimport) void PyErr_Clear(void);
+__declspec(dllimport) PyObj *PyDict_GetItemString(PyObj *dict, const char *key);
+__declspec(dllimport) long PyInt_AsLong(PyObj *obj);
+__declspec(dllimport) extern PyObj *PyExc_AttributeError;
+int __cdecl sprintf(char *, const char *, ...);
+}
+void *sub_10196780(PyObj *pObj);
+extern PyObj *g_109f3748;
+extern PyObj *g_1072b370;
+extern char *g_1058f668[];
+
+struct BarterEntity { char m_pad[0x2e0]; int m_pEdict; };
+struct BarterCharacterView { char m_pad[0x9c]; void *m_p; };
+struct BarterEngineVtbl {
+    void *m_pad[61];
+    void (__cdecl *ClientCommand)(void *self, int pEdict, const char *cmd);
+};
+struct BarterEngine { BarterEngineVtbl *m_vtbl; };
+extern BarterEngine *g_1070b22c;
+BarterEntity *sub_101cd9e0(int index);
+
+inline BarterCharacterView *GetCombatCharacter(PyObj *pObj)
+{
+    BarterCharacterView *pEnt = (BarterCharacterView *)sub_10196780(pObj);
+    if (!pEnt || !pEnt->m_p) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "invalid combat character");
+        return 0;
+    }
+    return pEnt;
+}
+
+PyObj *sub_10199520(PyObj *self, PyObj *args)
+{
+    char buf[32];
+    BarterEntity *pPlayer = sub_101cd9e0(1);
+    PyObj *pEntObj = 0;
+    int flags;
+    if (!PyArg_ParseTuple(args, "Oi", &pEntObj, &flags)) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "bad args to StartBarter()");
+        return 0;
+    }
+    if (!GetCombatCharacter(pEntObj))
+        return 0;
+    flags = 0;
+    for (int i = 0; i < 12; i++) {
+        PyObj *pItem = PyDict_GetItemString(g_1072b370, g_1058f668[i]);
+        if (pItem) {
+            int v = PyInt_AsLong(pItem);
+            if (v)
+                flags |= v << i;
+        }
+        PyErr_Clear();
+    }
+    sprintf(buf, "showmapscreen %d\n", flags);
+    g_1070b22c->m_vtbl->ClientCommand(g_1070b22c, pPlayer->m_pEdict, buf);
+    g_109f3748->m_refcnt++;
+    return g_109f3748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199800 size=0x88
 #include "exception.h"
 struct CQuestPlayer { void sub_1017cc20(const char *pszQuest, int nState); };
