@@ -13460,6 +13460,7 @@
 0x10012cb5 func   ?sub_100bc560@CUnknown100bc560@@QAEXXZ CUnknown100bc560::sub_100bc560
 0x10012cba func   ?sub_1010bbb0@@YAHXZ sub_1010bbb0
 0x10012cbf func   ?sub_100f0300@@YIXPAD@Z sub_100f0300
+0x10012cc4 func   ?GrowVector@?$CUtlVector@UCFireBulletsHit@@V?$CUtlMemory@UCFireBulletsHit@@@@@@QAEXH@Z CUtlVector<CFireBulletsHit,CUtlMemory<CFireBulletsHit> >::GrowVector
 0x10012cc4 func   ?sub_1027fae0@UtlVec8@@QAEXH@Z UtlVec8::sub_1027fae0
 0x10012cc9 func   ?sub_103f4fe0@CItemContainerLock@@QAEXH@Z CItemContainerLock::sub_103f4fe0
 0x10012cce func   ?vfunc247@CBaseDoor@@UAEMXZ CBaseDoor::vfunc247
