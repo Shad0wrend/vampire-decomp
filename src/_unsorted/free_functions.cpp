@@ -173950,6 +173950,50 @@ const char *sub_1025b820(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025b860 size=0x94
+#include <string.h>
+
+struct NameEntry { int id; const char *name; };
+struct CacheEntry { int a; int b; const char *name; int index; };
+
+extern CacheEntry g_105c7498[];
+extern int g_1073dbe8;
+extern NameEntry **g_1073dbec;
+extern char g_106b8540[];
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline int LookupName(const char *name)
+{
+	for (int i = 0; i < g_1073dbe8; i++) {
+		if (_strcmpi(STRINGR(g_1073dbec[i]->name), name) == 0)
+			return g_1073dbec[i]->id;
+	}
+	return -1;
+}
+
+inline void Resolve(CacheEntry *e)
+{
+	const char *name = e->name;
+	if (name && *name) {
+		e->index = LookupName(name);
+		if (e->index != -1)
+			return;
+	}
+	e->index = -2;
+}
+
+int sub_1025b860(int which)
+{
+	CacheEntry *e = &g_105c7498[which];
+	if (e->index == -1)
+		Resolve(e);
+	else if (e->index == -2)
+		return -1;
+	return e->index;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025c670 size=0x13
 bool sub_1025c670(unsigned short *a, unsigned short *b)
 {
