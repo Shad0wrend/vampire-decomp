@@ -30,6 +30,14 @@ public:
 	// (global 0x10723938) the attached object's slot 7 gets (its slot 8 | 2); then the physics environment (global 0x10723940, slot 14)
 	// CreateFixedConstraint(reference, attached, pGroup, &params).
 	void *vfunc241(void *pGroup, CPhysConstraintObjects *pObjects);
+	bool HasSpawnFlags(int flags) const { return (m_spawnflags204 & flags) != 0; }
+	void GetBreakParams(CPhysBreakableParams &params)
+	{
+		params.Defaults();
+		params.forceLimit = m_flForceLimit * 0.45454544f;
+		params.torqueLimit = m_flTorqueLimit * 0.45454544f;
+		params.isActive = HasSpawnFlags(4) ? false : true;
+	}
 
 	char m_pad0004[0x204 - 4];
 	unsigned int m_spawnflags204;	// 0x204
