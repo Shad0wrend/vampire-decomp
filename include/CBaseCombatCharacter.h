@@ -21,6 +21,7 @@ void __fastcall sub_103234a0(CBaseCombatCharacter *pThis);	// 0x103234a0 "CBaseC
 class CBaseCombatCharacter : public CBaseEntity
 {
 public:
+	bool StartGrappleAttack(CBaseCombatCharacter *pTarget, int nType);
 	// Placeholder slots 134..251 (the base declares slots up to 133).
 	virtual void a00(); virtual void a01(); virtual void a02(); virtual void a03(); virtual void a04();
 	virtual void a05(); virtual void a06(); virtual void a07(); virtual void a08();
