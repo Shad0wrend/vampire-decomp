@@ -131435,6 +131435,45 @@ bool CUnknown101dc5a0::sub_101dc5a0(CUnknown101dc5a0Keys *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101dc750 size=0x2f
+#include "CUnknown101e0f00.h"
+#include "CUnknown101dbe30.h"
+
+namespace block_101dc750 {
+struct CUnit : CUnknown101dbe30 {
+	bool sub_101dbe10();
+};
+#pragma auto_inline(off)
+bool CUnit::sub_101dbe10()
+{
+	return m_field0000 ? true : false;
+}
+#pragma auto_inline(on)
+}
+using namespace block_101dc750;
+
+struct CSrcSubView_101dc750
+{
+	char m_pad0000[8];
+	int m_nCount;
+	CUnit **m_ppItems;
+};
+
+// TARGET: CUnknown101e0f00SrcSub::sub_101dc750
+char CUnknown101e0f00SrcSub::sub_101dc750()
+{
+	CSrcSubView_101dc750 *v = (CSrcSubView_101dc750 *)this;
+	if (v->m_nCount > 0) {
+		for (int i = 0; i < v->m_nCount; i++) {
+			if (!v->m_ppItems[i]->sub_101dbe10())
+				return 0;
+		}
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101dc790 size=0x2c
 struct CUnknown101dc790Item {
     void sub_1000766c(int a);
