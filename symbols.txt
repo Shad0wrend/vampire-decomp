@@ -11597,6 +11597,7 @@
 0x100107df func   ?sub_100bd540@bf_write@@QAEXI@Z bf_write::sub_100bd540
 0x100107e4 func   ?sub_10097310@CBaseAnimating@@QAEXPAV1@@Z CBaseAnimating::sub_10097310
 0x100107e9 func   ?sub_1042ed40@CUnit1042ed40@@QAEXHM@Z CUnit1042ed40::sub_1042ed40
+0x100107ee func   ?vfunc407@CBaseGrenade@@UAEXXZ CBaseGrenade::vfunc407
 0x100107f3 func   ?vfunc80@COccultThaumDamage@@QAEHXZ COccultThaumDamage::vfunc80
 0x100107f8 func   ?vfunc238@CVampireProjectile@@UAEXPAVVector@@0HH@Z CVampireProjectile::vfunc238
 0x100107fd func   ?sub_10251f10@CBaseCombatWeapon@@QAEHXZ CBaseCombatWeapon::sub_10251f10
