@@ -1850,6 +1850,64 @@ void *__fastcall sub_1009def0(void *pThis, int edx_unused, unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009df20 size=0x175
+#include "utlrbtree.h"
+// CBaseEntity.h declares no destructor; declare it in this unit only (next to vfunc226)
+#define vfunc226(a) vfunc226(a); ~CBaseEntity()
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include "CBaseEntity.h"
+#include "utlmemory.h"
+
+struct SDtorV230 { void sub_100b46a0(); };
+struct SDtorV1d0 { void sub_100b4950(); void sub_100b4970(); CUtlMemory<int> m_mem; int m_size; int m_pEl; };
+struct SDtorV1b8 { void sub_100b47e0(); void sub_100b4910(); CUtlMemory<int> m_mem; int m_size; int m_pEl; };
+struct SDtorN { void sub_100cd2d0(); };
+struct SDtorCol { void sub_100dc200(); };
+struct SDtorNet { void sub_101ab550(); };
+struct SDtorRef { const unsigned int *sub_10006393(); };
+struct SDtorHArg { unsigned int m_v; SDtorHArg(SDtorRef *p) { m_v = *p->sub_10006393(); } };
+struct SDtorList { void sub_100f9f90(SDtorHArg h); };
+extern char g_10735d38;
+extern char g_106b8540[];
+extern SDtorList g_106eb5d8;
+extern void *vt_10450a10[];
+void sub_1003d8f0(CBaseEntity *p);
+void sub_10196850(void *p);
+
+CBaseEntity::~CBaseEntity()
+{
+	{
+		ScopeTrace scope("CBaseEntity::~CBaseEntity", m_name26c ? m_name26c : g_106b8540);
+		vfunc225();
+		g_10735d38 = 0;
+		sub_1003d8f0(this);
+		g_10735d38 = 1;
+		g_106eb5d8.sub_100f9f90((SDtorRef *)this);
+		if (m_p378)
+			sub_10196850(m_p378);
+	}
+	((SDtorNet *)((char *)this + 0x2d4))->sub_101ab550();
+	((SDtorCol *)((char *)this + 0x270))->sub_100dc200();
+	SDtorV230 *v230 = (SDtorV230 *)((char *)this + 0x230);
+	v230->sub_100b46a0();
+	((CUtlMemory<int> *)v230)->Purge();
+	SDtorV1d0 *v1d0 = (SDtorV1d0 *)((char *)this + 0x1d0);
+	v1d0->sub_100b4950();
+	v1d0->sub_100b4970();
+	v1d0->m_pEl = (int)v1d0->m_mem.m_pMemory;
+	v1d0->m_mem.Purge();
+	SDtorV1b8 *v1b8 = (SDtorV1b8 *)((char *)this + 0x1b8);
+	v1b8->sub_100b47e0();
+	v1b8->sub_100b4910();
+	v1b8->m_pEl = (int)v1b8->m_mem.m_pMemory;
+	v1b8->m_mem.Purge();
+	((SDtorN *)((char *)this + 0x74))->sub_100cd2d0();
+	((SDtorN *)((char *)this + 0x5c))->sub_100cd2d0();
+	*(void ***)this = vt_10450a10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009e100 size=0x6
 #include "CBaseEntity.h"
 namespace lifted {
