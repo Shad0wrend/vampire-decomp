@@ -239,6 +239,85 @@ int CNPC_VCamera::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103689c0 size=0x14a
+#include "CNPC_VCamera.h"
+extern char g_106b8540[];
+inline const char *STRINGV(const char *s) { return s ? s : g_106b8540; }
+struct CS { const char *p; CS(const char *s) { p = *s ? s : 0; } };
+struct SV { const char *pszValue; bool operator!() const { return pszValue == 0; } const char *ToCStr() const { return pszValue ? pszValue : g_106b8540; } };
+
+#define PV1(n) virtual void v##n();
+#define PV10(p) PV1(p##0) PV1(p##1) PV1(p##2) PV1(p##3) PV1(p##4) PV1(p##5) PV1(p##6) PV1(p##7) PV1(p##8) PV1(p##9)
+
+struct CCamSlots
+{
+	PV1(0) PV1(1) PV1(2) PV1(3) PV1(4) PV1(5) PV1(6) PV1(7) PV1(8)
+	virtual SV *GetModelName(int *pOut);
+	virtual void SetModelIndex(int nModelIndex);
+	PV1(11) PV1(12) PV1(13) PV1(14) PV1(15) PV1(16) PV1(17) PV1(18) PV1(19)
+	PV10(2) PV10(3) PV10(4) PV10(5) PV10(6) PV10(7) PV10(8) PV10(9)
+	PV10(10) PV10(11) PV10(12) PV10(13) PV10(14) PV10(15) PV10(16) PV10(17) PV10(18) PV10(19)
+	PV10(20)
+	PV1(210) PV1(211)
+	virtual void SetModel(CS s);
+	PV1(213) PV1(214) PV1(215) PV1(216) PV1(217) PV1(218) PV1(219)
+	PV10(22) PV10(23) PV10(24) PV10(25) PV10(26) PV10(27) PV10(28) PV10(29)
+	PV10(30) PV10(31) PV10(32)
+	PV1(330) PV1(331) PV1(332) PV1(333) PV1(334) PV1(335) PV1(336)
+	virtual int GetHullBits();
+	PV1(338) PV1(339)
+	PV10(34) PV10(35) PV10(36) PV10(37) PV10(38) PV10(39) PV10(40) PV10(41) PV10(42) PV10(43) PV10(44)
+	PV1(450) PV1(451)
+	virtual char LoadedSchedules();
+};
+
+extern "C" __declspec(dllimport) void Msg(const char *pszFormat, ...);
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+void sub_101cd940(CNPC_VCamera *pEnt);
+char sub_102f9970();
+int sub_102f9950();
+void sub_102f9920(int nHullBits);
+const char *sub_102d6230(int nHull);
+
+static inline const char *MakeString(const char *psz)
+{
+	return psz[0] ? psz : 0;
+}
+
+void CNPC_VCamera::vfunc104()
+{
+	CCamSlots *pSlots = (CCamSlots *)this;
+	int n;
+	if (!*pSlots->GetModelName(&n) || !pSlots->GetModelName(&n)->ToCStr() || !pSlots->GetModelName(&n)->ToCStr()[0])
+		pSlots->SetModel(CS("models/null.mdl"));
+	pSlots->SetModelIndex(engine->vfunc13(pSlots->GetModelName(&n)->ToCStr(), 0));
+	if (!pSlots->LoadedSchedules())
+	{
+		Msg("ERROR: Rejecting spawn of %s as error in NPC's schedules.\n", sub_1000b5cd());
+		sub_101cd940(this);
+		return;
+	}
+	m_n62dc = 0;
+	if (sub_102f9970())
+	{
+		int nBits = pSlots->GetHullBits();
+		nBits &= sub_102f9950();
+		if (nBits != pSlots->GetHullBits())
+		{
+			DevMsg("\n****ERROR***\n");
+			DevMsg("%s is being spawned after links have been initialized, but its hull %s\n", sub_1000b5cd(), sub_102d6230(m_n1568));
+			DevMsg("Has not been initialized.  Be sure that this class's GetUsedHullBits function includes that hull type.\n");
+			DevMsg("If it already is, this entity is probably spawned after the node graph is created.\n");
+			DevMsg("Have the class responsible for spawning it include it.\n");
+			DevMsg("****ERROR***\n\n");
+			return;
+		}
+	}
+	else
+		sub_102f9920(pSlots->GetHullBits());
+}
+// END FUNCTION
+
 // FUNCTION: 0x10368b70 size=0x24d
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
