@@ -143857,6 +143857,35 @@ CVStatInfo_t *CVStatInfo_t::sub_101fdaf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fdda0 size=0x90
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CVStatInfo_t.h"
+#include "ScopeTrace.h"
+
+struct CStatNameTable {
+	const char *sub_100049fd(int id, int arg);
+};
+extern CStatNameTable g_1074e968;
+
+const char *CVStatInfo_t::sub_101fdda0(int arg)
+{
+	ScopeTrace trace("CVStatInfo_t::GetValueName", g_106b8540);
+	const char *pszName = g_106b8540;
+	if (m_field0008 != -1)
+		return g_1074e968.sub_100049fd(m_field0008, arg);
+	if (m_field0000)
+		return ((const char *(__cdecl *)(int))m_field0000)(arg);
+	return pszName;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fde60 size=0xae
 #include "CVStatInfo_t.h"
 extern "C" int __cdecl atoi(const char *);
