@@ -130841,6 +130841,137 @@ void *CUnknown101d8a70::sub_101d8a70(void *pValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d8b40 size=0x452
+#include "CVDmg_t.h"
+#include "CUnknown101d8a70.h"
+#include "CUnknown101d9840.h"
+extern "C" int sprintf(char *, const char *, ...);
+void sub_10203dd0(const char *);
+extern int g_1073935c;
+extern int g_10739360;
+extern int g_10739364[];
+extern const char *g_10739198;
+extern const char *g_1073919c;
+extern char g_106b8540[];
+extern char g_10547e40[];
+extern CUnknown101d9840 g_10739194;
+struct CUnk101d9190 { int sub_101d9190(int r); };
+struct CUnk101ec450 { void sub_101ec450(int a, int b); };
+struct CUnk101ec480 { const char *sub_101ec480(int a); };
+struct CUnknown101d9640 { const char *sub_101d9640(int a); };
+struct CUnknown101d96a0 { const char *sub_101d96a0(int a); };
+struct CUnknown101d8670 { const char *sub_101d8670(); };
+struct CUnk101d9610Tbl { const char *sub_101d9610(); };
+struct CUnk101ec4b0Tbl { const char *sub_101ec4b0(int a, int b); };
+struct CPadA { int x; };
+struct CPadB { int x; };
+extern CUnk101ec450 g_1073a2e4;
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+int *CUnknown101d8a70::sub_101d8b40(void *pOut, bool bDebug)
+{
+	int *p = (int *)this;
+	char buf[252];
+	int rolls[250];
+	int i = 0;
+	int nRolls = i;
+	if (p[0] < 1) {
+		if (bDebug) {
+			sprintf(buf, "DiceRoll Failed because DicePool is %d\n", p[0]);
+			sub_10203dd0(buf);
+		}
+		p[0xc] = 1;
+		*(int *)pOut = 1;
+		return (int *)pOut;
+	}
+	if (p[0xd] > 0) {
+		do {
+			int r = enginerandom->vfunc2(0, 99);
+			int v = ((CUnk101d9190 *)g_10739194.sub_101d9870(p[4]))->sub_101d9190(r);
+			g_1073935c++;
+			g_10739360 += v;
+			g_10739364[v]++;
+			if (v == 0) {
+				p[3]++;
+			} else if (v == 9) {
+				p[2]++;
+				p[1]++;
+				p[0xd]++;
+			} else if (v >= p[0xb]) {
+				p[1]++;
+			}
+			p[0xd]--;
+			rolls[i] = v;
+			i++;
+		} while (i < 250 && p[0xd] > 0);
+		nRolls = i;
+	}
+	int nSucc = p[1];
+	int nBotch = p[3];
+	int diff = nSucc - nBotch;
+	int *pRes;
+	if (diff >= 5) {
+		pRes = &p[0xc];
+		*pRes = 4;
+	} else if (diff >= 3) {
+		pRes = &p[0xc];
+		*pRes = 3;
+	} else if (diff >= 1) {
+		pRes = &p[0xc];
+		*pRes = 2;
+	} else if (diff != 0 && nSucc == 0) {
+		pRes = &p[0xc];
+		*pRes = 0;
+		if (nBotch > 1 && p[6] != 0)
+			g_1073a2e4.sub_101ec450(p[6], nBotch);
+	} else {
+		pRes = &p[0xc];
+		*pRes = 1;
+	}
+	if (bDebug) {
+		sub_10203dd0(g_10547e40);
+		const char *n1 = STRINGR(g_10739198);
+		sprintf(buf, "%s: (%s)\t\t[ %d(%d-%d health mod) Vs. ( %s ):", n1, g_106b8540, p[0] - p[0xe], p[0], p[0xe], ((CVDmgBlock16_t *)&p[7])->sub_102043a0());
+		sub_10203dd0(buf);
+		int res = *pRes;
+		const char *n2 = STRINGR(*(const char **)(g_10739194.sub_101d9870(p[4]) + 8));
+		const char *n3 = STRINGR(g_1073919c);
+		sprintf(buf, "%s ( %d-%s ), %s ( %s ) ]  =  [ %d(%d) ]%d-%s (%s)\n",
+			((CUnk101d9610Tbl *)&g_10739194)->sub_101d9610(), p[0xb] + 1,
+			((CUnknown101d9640 *)&g_10739194)->sub_101d9640(p[0xb] + 1), n3, n2, diff, p[2], res,
+			((CUnknown101d8670 *)pRes)->sub_101d8670(), ((CUnknown101d96a0 *)&g_10739194)->sub_101d96a0(diff));
+		sub_10203dd0(buf);
+		char *q = buf + sprintf(buf, "Dice Results:");
+		for (i = 0; i < nRolls; i++) {
+			if (i > 0 && rolls[i - 1] == 9)
+				q += sprintf(q, "_%d", rolls[i] + 1);
+			else
+				q += sprintf(q, " %d", rolls[i] + 1);
+		}
+		sprintf(q, g_10547e40);
+		sub_10203dd0(buf);
+		q = buf + sprintf(buf, "Breakdown: ave-%5.2f", (g_10739360 + 0.0f) / g_1073935c + 1.0f);
+		for (int j = 0; j < 5; j++)
+			q += sprintf(q, " %2d-%-3d(%5.1f%%)", j + 1, g_10739364[j], g_10739364[j] * 100.0f / g_1073935c);
+		sprintf(q, g_10547e40);
+		sub_10203dd0(buf);
+		q = buf + sprintf(buf, "                    ");
+		for (int k = 5; k < 10; k++)
+			q += sprintf(q, " %2d-%-3d(%5.1f%%)", k + 1, g_10739364[k], g_10739364[k] * 100.0f / g_1073935c);
+		sprintf(q, g_10547e40);
+		sub_10203dd0(buf);
+		sub_10203dd0(g_10547e40);
+		if (*pRes == 0 && p[3] > 1 && p[6] != 0) {
+			sprintf(buf, "Botched: %s ( %s )!\n", ((CUnk101ec480 *)&g_1073a2e4)->sub_101ec480(p[6]), ((CUnk101ec4b0Tbl *)&g_1073a2e4)->sub_101ec4b0(p[6], p[3]));
+			sub_10203dd0(buf);
+		}
+	}
+	*(int *)pOut = *pRes;
+	return (int *)pOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d90c0 size=0x92
 #include "CUnknown101d90c0.h"
 extern char g_106b8540[];
