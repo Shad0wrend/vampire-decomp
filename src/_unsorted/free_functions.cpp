@@ -247292,6 +247292,98 @@ void CNPC_VManBat::sub_1038e9c0(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038f020 size=0x1ed
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CNPC_VManBat.h"
+#include "CBaseCombatCharacter.h"
+
+extern int g_1038f020_shift;
+
+#pragma auto_inline(off)
+struct CEntList1038f020
+{
+	void *m_vtable;
+	EHandleEntInfo m_EntPtrArray[0x2000];
+	IHandleEntity *sub_100290c0(const CBaseHandle &handle) const;
+};
+IHandleEntity *CEntList1038f020::sub_100290c0(const CBaseHandle &handle) const
+{
+	unsigned int idx = handle.m_Index;
+	if (idx == 0xffffffff)
+		return 0;
+	const EHandleEntInfo *pInfo = &m_EntPtrArray[idx & 0x1fff];
+	if (pInfo->m_SerialNumber == (int)(idx >> g_1038f020_shift))
+		return pInfo->m_pEntity;
+	return 0;
+}
+#pragma auto_inline(on)
+
+inline CBaseEntity *LookupCall(const CBaseHandle &h)
+{
+	return (CBaseEntity *)((CEntList1038f020 *)EHandleDetail::g_10566458)->sub_100290c0(h);
+}
+
+struct CManBatHeldOwner
+{
+	char m_pad[0x2454];
+	unsigned int m_nFlags2454;
+};
+
+struct CManBatEnt
+{
+	char m_pad0000[0x9c];
+	CBaseCombatCharacter *m_p9c;	// 0x9c
+	char m_pad00a0[0xa8 - 0xa0];
+	CManBatHeldOwner *m_pA8;	// 0xa8
+};
+
+void sub_101cd940(CBaseEntity *pEnt);
+
+void CNPC_VManBat::sub_1038f020(char bForce)
+{
+	if (sub_1038f290())
+	{
+		if (bForce || gpGlobals->curtime >= m_f6684)
+		{
+			m_f6684 = 0;
+
+			CManBatEnt *pEnt = (CManBatEnt *)LookupCall(m_h6680);
+			if (pEnt && pEnt->m_p9c)
+				pEnt->m_p9c->sub_103327f0(500.0f);
+
+			if (LookupCall(m_h669c))
+			{
+				sub_101cd940(m_h669c);
+				m_h669c = (CBaseEntity *)0;
+			}
+
+			if (m_h66a8)
+			{
+				sub_101cd940(m_h66a8);
+				m_h66a8 = (CBaseEntity *)0;
+			}
+
+			if (m_h66a0)
+			{
+				sub_101cd940(m_h66a0);
+				m_h66a0 = (CBaseEntity *)0;
+			}
+
+			pEnt = (CManBatEnt *)(CBaseEntity *)m_h6680;
+			if (pEnt && pEnt->m_pA8)
+				pEnt->m_pA8->m_nFlags2454 &= ~1;
+			m_h6680 = (CBaseEntity *)0;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038f290 size=0x1e
 #include "CNPC_VManBat.h"
 bool CNPC_VManBat::sub_1038f290()

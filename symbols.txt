@@ -15545,6 +15545,7 @@
 0x1001557d func   ?sub_102a9c60@CUnknown102a9c60@@QAEHXZ CUnknown102a9c60::sub_102a9c60
 0x10015587 func   ?vfunc113@CPropPadlock@@UAEXXZ CPropPadlock::vfunc113
 0x1001558c func   ?vfunc103@CLight@@QAEXXZ CLight::vfunc103
+0x10015591 func   ?sub_1038f020@CNPC_VManBat@@QAEXD@Z CNPC_VManBat::sub_1038f020
 0x1001559b func   ??0CCameraShotAttach@@QAE@XZ CCameraShotAttach::CCameraShotAttach
 0x1001559b func   ?sub_100727a0@CUnknown100727a0@@QAEPAXXZ CUnknown100727a0::sub_100727a0
 0x100155a0 func   ?vfunc18@CServerGameDLL@@UAEHPAX@Z CServerGameDLL::vfunc18
