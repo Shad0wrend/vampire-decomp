@@ -15,4 +15,5 @@ public:
 	void sub_102e9e50(int num);	// "CUtlMemory::Grow": grows the allocation by at least num elements (realloc, or alloc when empty)
 	void sub_1030b1d0(int elem, int num);	// "CUtlVector::ShiftElementsRight": memmove of the elements from elem up by num places
 	int sub_102e9a90(int num, const void *pToCopy);	// "CUtlVector::AddMultipleToTail" (InsertMultipleBefore at the size, inlined): appends num default-constructed elements, copies pToCopy over them when set, returns the old size
+	void sub_102e8b80(Vector *pPos);	// debug draw of the elements (0x118-byte records): copies, sorts and draws lines / text
 };
