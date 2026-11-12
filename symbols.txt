@@ -10674,6 +10674,7 @@
 0x1000f024 func   ?sub_1024a080@NodeHolder@@QAEHG@Z NodeHolder::sub_1024a080
 0x1000f029 func   ?sub_102a9960@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_102a9960
 0x1000f02e func   ?sub_10202ef0@CUnknown10202d10@@QAE_NH@Z CUnknown10202d10::sub_10202ef0
+0x1000f033 func   ?sub_101afcf0@CUnknown101afba0@@QAE_NPAVCKeyValuesX@@@Z CUnknown101afba0::sub_101afcf0
 0x1000f038 func   ?sub_1010c200@@YGHH@Z sub_1010c200
 0x1000f042 func   ?sub_1028e940@CAI_BaseNPCTroika@@QAEXM@Z CAI_BaseNPCTroika::sub_1028e940
 0x1000f047 func   ?vfunc420@CNPC_VWerewolf@@UAEXXZ CNPC_VWerewolf::vfunc420

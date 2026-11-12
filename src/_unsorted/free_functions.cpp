@@ -115399,6 +115399,52 @@ bool CUnk101afc50::sub_101afc50(CUnk101afc50Table *pTable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101afcf0 size=0x7a
+#include "CKeyValuesX.h"
+
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+struct SoundTypeEntry
+{
+	const char *pszName;
+	int nValue;
+};
+
+extern SoundTypeEntry g_10597c4c[34];
+
+class CUnknown101afba0
+{
+public:
+	bool sub_101afcf0(CKeyValuesX *pSection);
+
+	int m_nVolume[34];		// 0x00
+	unsigned char m_nLevel[34];	// 0x88
+	char m_pad00aa[2];
+	int m_nVolumeOfLevel[16];	// 0xac
+	unsigned char m_nLevelOfLevel[16];	// 0xec
+	char m_pad00fc[4];
+	char m_bLoaded0100;		// 0x100
+};
+
+bool CUnknown101afba0::sub_101afcf0(CKeyValuesX *pSection)
+{
+	if (!pSection)
+		return false;
+	for (int i = 0; i < 34; i++)
+	{
+		int level = pSection->sub_10248bb0(g_10597c4c[i].pszName, 2);
+		if (level < 0 || level >= 16)
+		{
+			Msg("\n\nWarning:  Sound type '%s' has an invalid volume level '%d' in sound volume table.  Setting to default.\n\n\n", g_10597c4c[i].pszName, level);
+			level = 2;
+		}
+		m_nVolume[i] = m_nVolumeOfLevel[level];
+		m_nLevel[i] = m_nLevelOfLevel[level];
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afd90 size=0x1b
 // TARGET: sub_101afd90
 char __stdcall sub_101afdc0(int p);
