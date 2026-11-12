@@ -61163,6 +61163,72 @@ void CDialog::sub_100e49b0(int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e4bd0 size=0x274
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CDialog.h"
+#include "CDialogDependency.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "CUnknown100290c0.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CReliableSingleUserRecipientFilter.h"
+extern const char *g_10561a78[];
+extern int g_1072608c;
+void sub_100dfaf0(int flags, const char *fmt, ...);
+
+void CDialog::sub_100e4bd0(int nChoice)
+{
+	ScopeTrace trace("CDialog::Pick", g_106b8540);
+	if (!m_pTable)
+		return;
+	if (nChoice == -2) {
+		CUnknown100290c0 *pList = (CUnknown100290c0 *)g_10566458;
+		if (pList->sub_100290c0(&m_hSpeaker))
+			((CAI_BaseNPCTroika *)pList->sub_100290c0(&m_hSpeaker))->sub_102c0bb0();
+		return;
+	}
+	if (nChoice == -1) {
+		sub_100e5240();
+		return;
+	}
+	CHandle<CAI_BaseNPCTroika> &hSpeaker = *(CHandle<CAI_BaseNPCTroika> *)&m_hSpeaker;
+	if (hSpeaker && hSpeaker->sub_102c0aa0())
+		return;
+	if (nChoice + 1 > m_nResponses)
+		return;
+				sub_100e49b0(nChoice);
+				m_nChoices = sub_100e4840(nChoice);
+				sub_100dfaf0(1, "\t\tPlayer picked choice %s, going to line: %d\n", g_10561a78[nChoice], m_nChoices);
+				CReliableSingleUserRecipientFilter filter(EHandle_Get(m_hNPC));
+				engine->vfunc65(&filter, g_1072608c);
+				engine->vfunc67(5);
+				engine->vfunc67(nChoice);
+				engine->vfunc66();
+				char *pBase = (char *)this + nChoice * 0x228;
+				sub_100e8b90((CDialogDependency *)(pBase + 0x2848));
+				sub_100e4f30(pBase + 0x2964);
+				if (m_nChoices) {
+					sub_100e7da0((char *)this + 0xc);
+					sub_100e58e0((char *)this + 0xc);
+				}
+				if (!m_nChoices || m_bNoReply)
+					sub_100e5240();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e4ef0 size=0x22
 #include <string.h>
 
