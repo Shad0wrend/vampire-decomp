@@ -5699,6 +5699,7 @@
 0x10008a53 func   ?sub_1005c950@@YAHXZ sub_1005c950
 0x10008a58 func   ?vfunc5@COccultDodge@@QAEPAV1@I@Z COccultDodge::vfunc5
 0x10008a5d func   ?sub_102d4140@CUnknown102d4140@@QAEHH@Z CUnknown102d4140::sub_102d4140
+0x10008a62 func   ?sub_10260790@CAI_BaseHumanoid@@QAEXAAUinputdata_t@@@Z CAI_BaseHumanoid::sub_10260790
 0x10008a67 func   ?sub_101ce7f0@@YAXHPAVCBaseEntity@@@Z sub_101ce7f0
 0x10008a6c func   ?sub_101cb920@@YAHXZ sub_101cb920
 0x10008a71 func   ?vfunc31@CSave@@UAEXPAXPBD0H@Z CSave::vfunc31

@@ -173549,6 +173549,52 @@ char *__fastcall sub_10260770(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10260790 size=0x70
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CAI_BaseHumanoid.h"
+#include "inputdata_t.h"
+#define V1(p) virtual void p();
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct CAI_BaseHumanoidVSlots {
+	V100(a) V100(b) V100(c) V100(d)
+	V10(e0) V10(e1) V10(e2) V10(e3) V10(e4) V10(e5)
+	V1(g0) V1(g1) V1(g2) V1(g3)
+	virtual int vfunc464();
+	V100(h) V10(i0) V10(i1) V1(j0) V1(j1) V1(j2) V1(j3)
+	virtual const char *vfunc589(int a);
+};
+
+inline string_t StringID(const variant_t &v)
+{
+	return v.fieldType == 2 ? *(const string_t *)&v.iszValue : string_t(0);
+}
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: CAI_BaseHumanoid::sub_10260790
+void CAI_BaseHumanoid::sub_10260790(inputdata_t &inputdata)
+{
+	bool bHad = m_iszExpressionOverride.pszValue != 0;
+	m_iszExpressionOverride = StringID(inputdata.value);
+	if (m_iszExpressionOverride.pszValue) {
+		sub_10260670(STRINGR(m_iszExpressionOverride.pszValue));
+	} else if (bHad) {
+		CAI_BaseHumanoidVSlots *v = (CAI_BaseHumanoidVSlots *)this;
+		sub_10260670(v->vfunc589(v->vfunc464()));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10260820 size=0x3e
 #include <string.h>
 
