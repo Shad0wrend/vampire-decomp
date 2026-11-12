@@ -25,6 +25,7 @@ public:
 	// Slot 438, declared as a plain member.
 	int vfunc438();	// "SelectSchedule": +0x1b2c = 0x2a; in state 2 (+0x5cc0) clears the byte at +0x5b80 and asks slot 604 (weapon flags 0x18000) or slot 605 with the active weapon's flags, returning a non-zero answer; otherwise CNPC_VHumanCombatant::vfunc438
 	int sub_103872d0();	// CNPC_VHumanCombatant::vfunc438 (stub 0x1000b10e), called directly
+	bool vfunc201(void *pEnt, int traceMask, int *ppBlocker, int d);	// slot 201: FVisible: false for a null entity or while the two global flags hold (clears *ppBlocker then), else slot 594
 public:
 	virtual void vfunc134();
 	virtual void vfunc135();
