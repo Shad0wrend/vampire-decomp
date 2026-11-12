@@ -261439,6 +261439,92 @@ CBaseEntity *CWeaponRanged_FlameThrower::sub_103e3130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e32b0 size=0x17a
+#include "utlrbtree.h"
+#include "CBaseEntity.h"
+#include "CWeaponRanged_FlameThrower.h"
+#include "CUnknown103e2470.h"
+#include <string.h>
+#include "utlvector.h"
+#include "utlmemory.h"
+
+int sub_103e1bb0(CFlameEvent_t *pEvents, float flDelta);
+unsigned int sub_103e1740();
+
+struct CFlameView : CWeaponRanged_FlameThrower
+{
+	void TryIgnite(CFlameEvent_t *pEvent)
+	{
+		if (sub_103e3490(*(CBaseEntity **)((char *)pEvent + 0x28)))
+			sub_103e3570(*(CBaseEntity **)((char *)pEvent + 0x28), *(Vector *)&pEvent->m_origin);
+	}
+	void FastRemove(int elem)
+	{
+		CUtlMemory<CFlameBurnRec> &mem = *(CUtlMemory<CFlameBurnRec> *)&m_n1554;
+		Destruct(&mem.Element(elem));
+		if (m_n1560 > 0)
+		{
+			memmove(&mem.Element(elem), &mem.Element(m_n1560 - 1), sizeof(CFlameBurnRec));
+			--m_n1560;
+		}
+	}
+};
+
+// TARGET: CWeaponRanged_FlameThrower::sub_103e32b0
+void CWeaponRanged_FlameThrower::sub_103e32b0()
+{
+	float flNow = gpGlobals->curtime;
+	float flDelta = flNow - m_f1524;
+	m_f1524 = flNow;
+	CBaseEntity *pOwner = sub_103e3130();
+	CFlameEvent_t *pEvents = (CFlameEvent_t *)m_aBuf;
+	if (sub_103e1bb0(pEvents, flDelta))
+	{
+		CUtlVector<CFlameBurnRec> &burns = *(CUtlVector<CFlameBurnRec> *)&m_n1554;
+		for (int i = 0; i < burns.Count(); )
+		{
+			if (burns[i].m_t + 0.5 < flNow)
+				((CFlameView *)this)->FastRemove(i);
+			else
+				i++;
+		}
+		for (int n = 0; n < 50; n++)
+		{
+			CFlameEvent_t *pEvent = &pEvents[n];
+			if (pEvent->m_type == 2)
+			{
+				if (pOwner)
+					((CUnknown103e2470 *)pOwner)->sub_103e2470(pEvent);
+				pEvent->m_type = 0;
+			}
+			else if (pEvent->m_type == 3)
+			{
+				if (sub_103e3490(*(CBaseEntity **)((char *)pEvent + 0x28)))
+					sub_103e3570(*(CBaseEntity **)((char *)pEvent + 0x28), *(Vector *)&pEvent->m_origin);
+				pEvent->m_type = 0;
+			}
+			else if (pEvent->m_type == 4)
+			{
+				pEvent->m_type = 0;
+			}
+		}
+	}
+	else
+	{
+		if (pOwner)
+			*((char *)pOwner + 0x488) = 1;
+		m_n1530 = -1;
+	}
+	if (sub_103e1740() & 2)
+		sub_103e3c40();
+	if (gpGlobals->curtime > m_f1528)
+	{
+		sub_103e3930();
+		m_f1528 = gpGlobals->curtime + 0.05;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3490 size=0xa6
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
