@@ -963,4 +963,7 @@ public:
 	virtual bool vfunc618(int, int, int, int);
 	virtual int vfunc619(int);
 	char m_pad67a0[0x67a4 - 0x67a0];
+
+	bool sub_103d3c20();	// "FindTeleportHint"
+	bool sub_103d0e70(void *pHint);
 };
