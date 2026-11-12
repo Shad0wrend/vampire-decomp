@@ -7985,6 +7985,7 @@
 0x1000bb3b func   ?vfunc103@CRotDoor@@UAEXXZ CRotDoor::vfunc103
 0x1000bb40 func   ?sub_100778b0@CUnknown100778b0@@QAEHXZ CUnknown100778b0::sub_100778b0
 0x1000bb4f func   ?sub_100584a0@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::sub_100584a0
+0x1000bb54 func   ?sub_101d1120@@YAMPBM00@Z sub_101d1120
 0x1000bb59 func   ?vfunc78@CGameRules@@UAEMHHHHH@Z CGameRules::vfunc78
 0x1000bb5e func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@UKEYRING_ENTRY@@V?$CUtlMemory@UKEYRING_ENTRY@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<KEYRING_ENTRY,CUtlMemory<KEYRING_ENTRY> >,9>::vfunc1
 0x1000bb63 func   ?sub_10349f80@CUtlVector16@@QAEXHH@Z CUtlVector16::sub_10349f80

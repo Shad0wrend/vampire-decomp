@@ -122116,6 +122116,32 @@ void sub_101d10e0(const char *pszFormat, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101d1120 size=0x93
+#include "Vector.h"
+
+float sub_101d1120(const float *a, const float *b, const float *c)
+{
+	float delta[3];
+	delta[0] = b[0] - a[0];
+	delta[1] = b[1] - a[1];
+	float r = delta[0] * delta[0];
+	r += delta[1] * delta[1];
+	float l = FastSqrt(r);
+	float dir[2];
+	if (l != 0.0f)
+	{
+		float inv = 1.0f / l;
+		dir[0] = delta[0] * inv;
+		dir[1] = delta[1] * inv;
+	}
+	else
+	{
+		dir[0] = dir[1] = 0.0f;
+	}
+	return dir[0] * c[0] + dir[1] * c[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d11f0 size=0x38
 // TARGET: sub_101d11f0
 void sub_101d11f0(const char *pSrc, char *pDst)
