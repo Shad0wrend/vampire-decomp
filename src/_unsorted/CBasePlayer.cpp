@@ -2616,6 +2616,56 @@ char CBasePlayer::vfunc379(int a, int b, int c, int d, int e, int f, int g)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10169660 size=0x177
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "CStatDefault3List.h"
+#include "ehandle.h"
+void sub_101cebc0(CBasePlayer *p, int a, int b);
+extern CStatDefault3List g_10738d10;
+struct CBP380View : CBasePlayer { int sub_1033c9c0(); };
+
+void CBasePlayer::vfunc380()
+{
+	CBaseCombatCharacter *target = (m_n153C != -1) ? (CBaseCombatCharacter *)((EHANDLE &)m_h1538).Get() : 0;
+	const EHandleEntInfo *volatile pInfo;
+	if (m_h1538 != 0xffffffff)
+		pInfo = &EHandleDetail::g_10566458->m_EntPtrArray[m_h1538 & 0x1fff];
+	sub_10329a70();
+	sub_101815b0(1);
+	m_b1B6C = 0;
+	sub_1017cef0(0);
+	if (target) {
+		((CEntityVSlots *)this)->slot306((int)target, 0);
+		if (m_n14A0 > 0) {
+			if (sub_10339cd0() && !target->sub_10339b50()) {
+				if (g_10738d10.sub_101d5f10(target)->m_8c[6] && enginerandom->vfunc2(0, 100) < 0x32) {
+					sub_101cebc0(this, 0x4a, 0);
+					if (m_n14A0 > 0)
+						vfunc449(0xc, 1);
+				}
+			} else if (target->sub_10339c10()) {
+				sub_101cebc0(this, 0x11, 0);
+				if (m_n14A0 > 0)
+					vfunc449(0xc, 1);
+			} else if (((CBP380View *)this)->sub_1033c9c0() & 0x10000) {
+				if (((CEntityVSlots *)target)->slot138() == 0xd)
+					sub_101cebc0(this, 0x35, 0);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a640 size=0x1
 // TARGET: sub_1016a640
 void __fastcall sub_1016a640(void *pThis)
