@@ -1344,6 +1344,117 @@ Vector CBasePlayer::vfunc389(const Vector &vecPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10162340 size=0x71d
+#include "CFlameCluster.h"
+// TARGET: CBasePlayer::vfunc123
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "ConVar.h"
+#include "DebugOverlay.h"
+#include "globalvars.h"
+
+void sub_10142af0(const Vector *pOrigin, const Vector *pMins, const Vector *pMaxs, const Vector *pDir, int r, int g, int b, int a, float flDuration);
+void sub_10139610(const float *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+__declspec(dllimport) int Q_snprintf(char *pBuf, int nSize, const char *pszFormat, ...);
+
+extern ConVar g_10725f00;
+
+#define min(a, b) (((a) < (b)) ? (a) : (b))
+#define max(a, b) (((a) > (b)) ? (a) : (b))
+
+// Vector::operator- with its VectorSubtract forced inline (VC6's inline budget runs out in this function)
+__forceinline Vector VecSub(const Vector &a, const Vector &b)
+{
+	Vector res;
+	res.x = a.x - b.x;
+	res.y = a.y - b.y;
+	res.z = a.z - b.z;
+	return res;
+}
+
+struct CCopCountView
+{
+	int sub_1017f770();
+	int sub_1017f8b0();
+};
+
+#define CVT10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class CPlayerVtbl
+{
+public:
+	CVT10(a0) CVT10(a1) CVT10(a2) CVT10(a3) CVT10(a4) CVT10(a5) CVT10(a6) CVT10(a7) CVT10(a8) CVT10(a9)
+	CVT10(a10) CVT10(a11) CVT10(a12) CVT10(a13) CVT10(a14) CVT10(a15) CVT10(a16) CVT10(a17) CVT10(a18)
+	virtual void a190(); virtual void a191(); virtual void a192();
+	virtual Vector EyePosition();
+	CVT10(b0) CVT10(b1)
+	virtual void b214(); virtual void b215(); virtual void b216();
+	virtual const Vector &GetAbsOrigin();
+	virtual void b218();
+	virtual const float *GetAbsAngles();
+	CVT10(c0) CVT10(c1) CVT10(c2) CVT10(c3) CVT10(c4) CVT10(c5) CVT10(c6) CVT10(c7) CVT10(c8) CVT10(c9)
+	CVT10(c10) CVT10(c11) CVT10(c12) CVT10(c13)
+	virtual void c360(); virtual void c361(); virtual void c362(); virtual void c363();
+	virtual void c364(); virtual void c365(); virtual void c366(); virtual void c367();
+	virtual Vector BodyDirection2D();
+};
+
+void CBasePlayer::vfunc123()
+{
+	CPlayerVtbl *pV = (CPlayerVtbl *)this;
+
+	if ((m_fDebugOverlays224 & 0x2000000) && m_iHealth == 1)
+	{
+		Vector vBodyDir = pV->BodyDirection2D();
+		Vector eyePos = pV->EyePosition() + vBodyDir * 10.0f;
+		Vector vUp = Vector(0, 0, 8);
+		Vector vSide;
+		CrossProduct(vBodyDir, vUp, vSide);
+		sub_10142e90(&(eyePos + vSide + vUp), &VecSub(VecSub(eyePos, vSide), vUp), 255, 0, 0, 0, 0);
+		sub_10142e90(&VecSub(eyePos + vSide, vUp), &(VecSub(eyePos, vSide) + vUp), 255, 0, 0, 0, 0);
+	}
+
+	if (g_10725f00.GetInt())
+	{
+		Vector forward, right, up;
+		Vector mins(-5, -5, -5);
+		Vector maxs(5, 5, 5);
+		sub_10139610(pV->GetAbsAngles(), &forward, &right, &up);
+		Vector anchor = pV->GetAbsOrigin();
+		anchor += forward * 40.0f;
+		anchor.z += 20.0f;
+		char buf[32];
+
+		{
+			Vector textPos = anchor;
+			int c = min(255, ((CCopCountView *)this)->sub_1017f770() * 100);
+			sub_10142af0(&textPos, &mins, &maxs, &forward, c, 255 - c, 0, 0, 0.05f);
+			Q_snprintf(buf, sizeof(buf), "%d cops", ((CCopCountView *)this)->sub_1017f770());
+			sub_10143710((const float *)&(textPos - right * 2), buf, 0, 0x3d4ccccd);
+		}
+		{
+			Vector textPos = anchor - right * 10.0f;
+			int c = min(255, ((CCopCountView *)this)->sub_1017f8b0() * 140);
+			sub_10142af0(&textPos, &mins, &maxs, &forward, c, 255 - c, 0, 0, 0.05f);
+			Q_snprintf(buf, sizeof(buf), "%d hntr", ((CCopCountView *)this)->sub_1017f8b0());
+			sub_10143710((const float *)&(textPos - right * 2), buf, 0, 0x3d4ccccd);
+		}
+		{
+			Vector textPos = anchor + right * 10.0f;
+			float t = max(0.0f, m_flHeightenedAlertExpireTimer - gpGlobals->curtime);
+			int c = min(255, (int)(t * 0.75f));
+			sub_10142af0(&textPos, &mins, &maxs, &forward, c, 255 - c, 0, 0, 0.05f);
+			int minutes = (int)(t * (1.0f / 60.0f));
+			Q_snprintf(buf, sizeof(buf), "%02d:%02d", minutes, (int)(t - minutes * 60.0f));
+			sub_10143710((const float *)&(textPos - right * 2), buf, 0, 0x3d4ccccd);
+		}
+	}
+
+	((CBaseEntity *)this)->CBaseEntity::vfunc123();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10162c30 size=0x2bc
 #include "CBasePlayer.h"
 #include "CVDmg_t.h"

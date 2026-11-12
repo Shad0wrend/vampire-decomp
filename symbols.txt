@@ -4303,6 +4303,7 @@
 0x10006a78 func   ?sub_102729d0@CAI_BaseNPC@@QAEPAVCBaseEntity@@XZ CAI_BaseNPC::sub_102729d0
 0x10006a7d func   _func_lod func_lod
 0x10006a82 func   ?sub_100fdce0@CUnknown100fdce0@@QAEXH@Z CUnknown100fdce0::sub_100fdce0
+0x10006a87 func   ?vfunc123@CBasePlayer@@UAEXXZ CBasePlayer::vfunc123
 0x10006a8c func   ?sub_10280d30@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_10280d30
 0x10006a91 func   ?sub_100c08d0@CFloatPair3f4@@QAEXXZ CFloatPair3f4::sub_100c08d0
 0x10006a96 func   ?vfunc82@CNPC_VHunter@@UAEPAUdatamap_t@@XZ CNPC_VHunter::vfunc82
