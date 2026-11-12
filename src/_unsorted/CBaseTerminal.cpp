@@ -182,6 +182,31 @@ void CBaseTerminal::vfunc277()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102180c0 size=0xa1
+#include "CBaseEntity.h"
+#include "CBaseTerminal.h"
+
+inline bool IsUsable(CBaseEntity *p) { return p && *(int *)((char *)p + 0xa8); }
+
+struct CBaseTerminalView : CBaseTerminal
+{
+	EHANDLE &User() { return *(EHANDLE *)&m_hUser; }
+	char sub_102180c0(CBaseEntity *pOther);
+	bool sub_10218710(CBaseEntity *pOther);
+};
+
+char CBaseTerminalView::sub_102180c0(CBaseEntity *pOther)
+{
+	if (!m_b080c)
+		return false;
+	if (!IsUsable(pOther))
+		return false;
+	if (User().Get() && User().Get() != pOther)
+		return false;
+	return sub_10218710(pOther) != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102181a0 size=0x5a
 #include <string.h>
 #include "CBaseTerminal.h"
