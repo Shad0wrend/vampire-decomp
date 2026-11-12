@@ -277,6 +277,26 @@ have written it rather than adding temporaries that spell out the assembly:
   `pWorld->m_FogColor2 = in.value.Color32();` (0x1034e9a0, 0x1034e8c0).
 - **x87 sum order:** a term holding a const `operator[]` (returns by value) is computed first and its operand loaded
   first; use it on the one term the game computes first (0x102961a0, not matched yet: it also reorders a Length).
+- **A bit test the game keeps as `test [mem],imm; setne al; and eax,0xff`:** an inline bool helper that takes the mask
+  as a parameter, `inline bool IsSet(int x, int m) { return (x & m) != 0; }` called as `IsSet(x, 0x80000000)`;
+  spelled out, VC6 folds it to `shr eax,31` (0x101e18c0, 0x101e1890). Likewise `if (c) return true; return false;` in
+  an inline keeps a `setge; ...; sete` pair that a one-expression body folds into one `setl` (0x10224100).
+- **A ternary arm the game does not thread** (`je L; mov esi,[eax+N]; jmp T; L: xor esi,esi; T: test esi,esi`): read
+  the field through an inline accessor, `p ? p->MyNPCPointer() : NULL` (0x102efde0).
+- **Constructors: build members with their own constructors**, not hand-ordered stores: view structs whose members
+  have real constructors (handles set to -1, a base whose initialiser runs before the vptr store, a sub-object
+  calling the out-of-line ctor; `#pragma pack(1)` for odd offsets), constructed with `((V *)p)->V::V();`
+  (0x10389cc0, 4 -> 0; 0x10029610).
+- **A record's `operator=` stores members in its own order:** look for a matched copy of the same record (search its
+  hash constant) and use that member order (0x1028ea60).
+- **The SDK helper chain, not its steps:** `SetCount()` = RemoveAll + AddMultipleToTail moved the argument register
+  (0x101a4970); a 2-element member array filled with `for (i = 0; i < 2; i++) a[i] = x;` (0x10254cd0).
+- **A load VC6 copy-propagates into a temporary** (game `mov esi,[local]; test esi,esi; mov ecx,esi`, ours `mov
+  ecx,[local]; test ecx,ecx; mov esi,ecx`): `*(T *volatile *)&local` keeps it (0x10193fb0; a last resort, it is not
+  what the original said).
+- **Unit-dependent matches:** some functions match or not with the number of struct declarations in the unit
+  (0x10073c20: 0,0,2,2,0,... for 0..11 extra `struct S{int x;};`; 0x1016fa90 matched with 12 extra typedefs). A header
+  edit can release them ("unstable match"): re-submit the old score-0 source, then sweep the count.
 
 ## VC6 stack slots: what moves them and what does not (measured 2026-11-08, partial)
 
