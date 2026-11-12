@@ -3794,6 +3794,47 @@ unsigned int CAI_BaseNPC::vfunc552()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1027a420 size=0xc9
+#include "CAI_BaseNPC.h"
+#include "CBaseCombatCharacter.h"
+struct SNpcSchedule
+{
+    char m_pad[0x1c];
+    int m_type;
+};
+
+#define NPC_FIELD(type, off) (*(type *)((char *)this + (off)))
+
+struct CNpcScheduleV { char m_pad[0x1c]; int m_iScheduleId; int GetId() const { return m_iScheduleId; } };
+inline bool IsCurSchedule(CAI_BaseNPC *p, int schedId, bool fTranslate = true)
+{
+    CNpcScheduleV *pSchedule = *(CNpcScheduleV **)((char *)p + 0x5c38);
+    return (pSchedule &&
+            ((fTranslate && (void *)pSchedule == (void *)p->vfunc447(schedId)) ||
+             (!fTranslate && p->vfunc447(pSchedule->GetId()) == schedId)));
+}
+// TARGET: CAI_BaseNPC::vfunc509
+bool CAI_BaseNPC::vfunc509()
+{
+    int state = NPC_FIELD(int, 0x5cc0);
+    if ((state == 1 || state == 3) && !((char)(NPC_FIELD(unsigned int, 0x204) >> 1) & 1) && NPC_FIELD(char, 0x1480)
+        && !NPC_FIELD(EHANDLE, 0xfe8) && !((CBaseCombatCharacter *)this)->sub_1033e2b0())
+    {
+        int val = 999;
+        if (IsCurSchedule(this, 0x12f, false))
+            val = 20;
+        else if (vfunc510())
+        {
+            vfunc507();
+            return false;
+        }
+        if (enginerandom->vfunc2(0, val) == 0)
+            return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1027a530 size=0x6d
 #include "CAI_BaseNPC.h"
 #define TEN(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
