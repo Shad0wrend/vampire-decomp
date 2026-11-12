@@ -99,6 +99,84 @@ char CEnvSoundscape::vfunc110(const char *pszKey, const char *pszValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ae7a0 size=0x106
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CEnvSoundscape.h"
+
+struct SsEntity_t;
+struct SsUnknown_t {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual SsEntity_t *GetBaseEntity();
+};
+struct SsEdict_t {
+	char pad[0x40];
+	SsUnknown_t *m_pUnk;
+	SsUnknown_t *GetUnknown() { return m_pUnk; }
+};
+struct SsPlayer_t {
+	char pad0[0x1fdc];
+	CEnvSoundscapeParams m_Audio;
+};
+struct SsEntity_t {
+	char pad[0xa8];
+	SsPlayer_t *m_pPlayer;
+};
+struct SsSelf_t {
+	char pad[0x17c];
+	float m_flNextThink;
+	char pad180[0x2e0 - 0x180];
+	void *m_pEdict;
+	char pad2e4[0x454 - 0x2e4];
+	float m_flRadius454;
+};
+
+inline SsEntity_t *GetContainingEntity(SsEdict_t *pent)
+{
+	if (pent && pent->GetUnknown())
+		return pent->GetUnknown()->GetBaseEntity();
+	return 0;
+}
+
+SsEdict_t *sub_101d1800(void *pViewer);
+extern float g_104454c4;
+
+#define SELF ((SsSelf_t *)this)
+
+void CEnvSoundscape::sub_101ae7a0()
+{
+	SsEntity_t *pEntity = GetContainingEntity(sub_101d1800(pcd_stage(SELF->m_pEdict)));
+	SsPlayer_t *pPlayer = pEntity ? pEntity->m_pPlayer : 0;
+	if (!pPlayer)
+	{
+		SELF->m_flNextThink = gpGlobals->curtime + 1.0;
+		return;
+	}
+
+	CEnvSoundscapeParams &audio = pPlayer->m_Audio;
+	SsSelf_t *pCurrent = 0;
+	SELF->m_flNextThink = gpGlobals->curtime + 0.25;
+	if (audio.m_nEdictIndex)
+		pCurrent = (SsSelf_t *)GetContainingEntity((SsEdict_t *)engine->vfunc38(audio.m_nEdictIndex));
+
+	if (pCurrent == SELF)
+	{
+		if (!sub_101ae440(pPlayer))
+		{
+			SELF->m_flNextThink = SELF->m_flNextThink + 0.5;
+			SELF->m_flRadius454 = 0;
+		}
+	}
+	else if (sub_101ae440(pPlayer))
+	{
+		if (!pCurrent || pCurrent->m_flRadius454 == g_104454c4 || pCurrent->m_flRadius454 > SELF->m_flRadius454)
+			sub_101ae6c0(&audio);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ae900 size=0x26
 #include "CEnvSoundscape.h"
 #include "CUnknown1070b244.h"

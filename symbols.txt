@@ -12986,6 +12986,7 @@
 0x100124bd func   ?sub_101cf250@@YAXPAMH@Z sub_101cf250
 0x100124c2 func   ?sub_100bf600@CBitString@@QAEXH@Z CBitString::sub_100bf600
 0x100124c7 func   _item_g_badlucktalisman item_g_badlucktalisman
+0x100124cc func   ?sub_101ae7a0@CEnvSoundscape@@QAEXXZ CEnvSoundscape::sub_101ae7a0
 0x100124d1 func   ?sub_1018f690@CBreakableProp@@QAEXH@Z CBreakableProp::sub_1018f690
 0x100124d6 func   ?vfunc35@CMultiplayRules@@UAEXPAVCBaseEntity@@@Z CMultiplayRules::vfunc35
 0x100124db func   ?vfunc35@CFuncMonitor@@QAEHH@Z CFuncMonitor::vfunc35
