@@ -541,6 +541,48 @@ void CBaseCombatCharacter::vfunc31(int pFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103229d0 size=0x11b
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include <math.h>
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern "C" __declspec(dllimport) int __cdecl RandomInt(int minVal, int maxVal);
+extern "C" __declspec(dllimport) float __cdecl RandomFloat(float minVal, float maxVal);
+extern float g_104454c4;
+extern float g_10446758;
+
+#define SV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct CBCCSlotsView
+{
+	SV10(a0) SV10(a1) SV10(a2) SV10(a3) SV10(a4) SV10(a5) SV10(a6) SV10(a7) SV10(a8) SV10(a9)
+	SV10(b0) SV10(b1) SV10(b2) SV10(b3) SV10(b4) SV10(b5) SV10(b6) SV10(b7) SV10(b8) SV10(b9)
+	SV10(c0)
+	virtual void u210(); virtual void u211(); virtual void u212(); virtual void u213(); virtual void u214();
+	virtual void u215(); virtual void u216(); virtual void u217(); virtual void u218();
+	virtual const QAngle &vfunc219();
+	SV10(d0) SV10(d1) SV10(d2) SV10(d3)
+	virtual void u260(); virtual void u261(); virtual void u262(); virtual void u263(); virtual void u264();
+	virtual void vfunc265(int act, float a, float b, const char *pszName, float value);
+};
+
+void CBaseCombatCharacter::vfunc292(int unused1, const Vector *pDirection, int unused2)
+{
+	ScopeTrace trace("CBaseCombatCharacter::DamageFlinch", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	int iActivity = RandomInt(0, 1) ? 0x73 : 0x74;
+	float flYaw = 0;
+	if (pDirection->x > g_104454c4 || pDirection->y > g_104454c4)
+	{
+		flYaw = (double)((CBCCSlotsView *)this)->vfunc219().y - (float)atan2(pDirection->y, pDirection->x) * g_10446758;
+	}
+	flYaw = RandomFloat(-30.0f, 30.0f) + flYaw;
+	((CBCCSlotsView *)this)->vfunc265(iActivity, 0.1f, 0.3f, "hit_yaw", flYaw);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323a90 size=0x96
 #include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"
