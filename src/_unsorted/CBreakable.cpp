@@ -324,6 +324,181 @@ int CBreakable::vfunc74(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e750 size=0x6b4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBreakable.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "CPVSFilter.h"
+#include "CParamsExplosion.h"
+#include "COutputEvent.h"
+#include "ScopeTrace.h"
+#include "CGlobalEntityList.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include "globalvars.h"
+#include "Vector.h"
+#include <stdlib.h>
+
+__declspec(dllimport) void DevWarning(const char *pszFmt, ...);
+void sub_101c0b10();
+extern CGlobalEntityList g_106eb5d8;
+void sub_10104730(Vector *pVec, Vector *pAngles, int *pParams, void *pThis);
+extern "C" void *__cdecl __RTDynamicCast(void *inptr, long VfDelta, void *SrcType, void *TargetType, int isReference);
+extern char g_10538764[];
+extern char g_1056b4b8[];
+
+struct CBreakTempEnts
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void BreakModel(CRecipientFilter &filter, float delay, const Vector &pos, const Vector &size,
+		const Vector &vel, int modelindex, int randomization, int count, float time, int flags);
+};
+extern CBreakTempEnts *g_10540528;
+
+struct CBreakSolidFlags
+{
+	char m_pad0000[0x44];
+	unsigned short m_usSolidFlags;	// 0x44
+	int GetSolidFlags() const { return m_usSolidFlags; }
+	void sub_100dc580(int flags);	// CCollisionProperty::SetSolidFlags
+	void AddSolidFlags(int flags) { sub_100dc580(GetSolidFlags() | flags); }
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+inline const char *STRING(string_t s) { return s.pszValue ? s.pszValue : g_106b8540; }
+
+struct CBreakEntity : CBaseEntity
+{
+	int edict() { return m_pEdict2e0; }
+	int entindex() { return engine->vfunc35(edict()); }
+	CBreakSolidFlags *CollisionProp() { return (CBreakSolidFlags *)((char *)this + 0x270); }
+	void AddSolidFlags(int flags)
+	{
+		ScopeTrace scope("CBaseEntity::AddSolidFlags", STRINGR(*(const char **)((char *)this + 0x26c)));
+		CollisionProp()->AddSolidFlags(flags);
+	}
+	void sub_100a0420(string_t name);	// CBaseEntity::SetName
+};
+
+#define BREAK_SOUND(s) enginesound->vfunc3(&filter, pThis->entindex(), 2, s, fvol, 0.8f, 0, pitch, 0, 0, 1, 0)
+
+void CBreakable::sub_1010e750()
+{
+	CBreakEntity *pThis = (CBreakEntity *)this;
+	Vector vecSpot, vecVelocity;
+	char cFlag = 0;
+	int pitch;
+	float fvol;
+
+	pitch = 95 + enginerandom->vfunc2(0, 29);
+	if (pitch > 97 && pitch < 103)
+		pitch = 100;
+
+	fvol = enginerandom->vfunc1(0.85f, 1.0f) + abs(m_iHealth) * 0.01;
+	if (fvol > 1.0)
+		fvol = 1.0f;
+
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+
+	switch (m_nMaterial)
+	{
+	case 0:
+		switch (enginerandom->vfunc2(0, 1))
+		{
+		case 0: BREAK_SOUND("debris/bustglass1.wav"); break;
+		case 1: BREAK_SOUND("debris/bustglass2.wav"); break;
+		}
+		cFlag = 1;
+		break;
+	case 1:
+		switch (enginerandom->vfunc2(0, 1))
+		{
+		case 0: BREAK_SOUND("debris/bustcrate1.wav"); break;
+		case 1: BREAK_SOUND("debris/bustcrate2.wav"); break;
+		}
+		cFlag = 8;
+		break;
+	case 2:
+	case 6:
+		switch (enginerandom->vfunc2(0, 1))
+		{
+		case 0: BREAK_SOUND("debris/bustmetal1.wav"); break;
+		case 1: BREAK_SOUND("debris/bustmetal2.wav"); break;
+		}
+		cFlag = 2;
+		break;
+	case 3:
+		switch (enginerandom->vfunc2(0, 1))
+		{
+		case 0: BREAK_SOUND("debris/bustflesh1.wav"); break;
+		case 1: BREAK_SOUND("debris/bustflesh2.wav"); break;
+		}
+		cFlag = 4;
+		break;
+	case 4:
+	case 8:
+		switch (enginerandom->vfunc2(0, 1))
+		{
+		case 0: BREAK_SOUND("debris/bustconcrete1.wav"); break;
+		case 1: BREAK_SOUND("debris/bustconcrete2.wav"); break;
+		}
+		cFlag = 0x40;
+		break;
+	case 5:
+		BREAK_SOUND("debris/bustceiling.wav");
+		break;
+	}
+
+	if (m_nMaterial != 9)
+	{
+		vecSpot = *((CEntityVSlots *)this)->slot215();
+		CPVSFilter filter2(vecSpot);
+		g_10540528->BreakModel(filter2, 0.0f, vecSpot, *((CEntityVSlots *)this)->slot214(), vecVelocity,
+			m_nGibModelIndex, 100, 0, 2.5f, cFlag);
+	}
+
+	sub_1010e620();
+	pThis->sub_100a0420(string_t(0));
+	pThis->AddSolidFlags(4);
+	pThis->sub_100b3b00();
+
+	((COutputEvent *)((char *)this + 0x46c))->sub_100cd660(((EHANDLE &)m_h458).Get(), pThis, 0);
+
+	((CEntityVSlots *)this)->slot225();
+	pThis->sub_100ac4e0((int)sub_101c0b10, 0, 0);
+	*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.1;
+
+	if (m_iszExplosionParamEnt.pszValue)
+	{
+		CParamsExplosion *pParams = (CParamsExplosion *)__RTDynamicCast(
+			g_106eb5d8.sub_100f7770(0, STRING(m_iszExplosionParamEnt), ((EHANDLE &)m_h458).Get(), 0),
+			0, g_10538764, g_1056b4b8, 0);
+		if (pParams)
+		{
+			Vector vecCenter = ((CEntityVSlots *)this)->slot192();
+			sub_10104730(&vecCenter, ((CEntityVSlots *)this)->slot219(), pParams->sub_10104510(), this);
+		}
+		else
+		{
+			DevWarning("%s could not find explosion parameters: %s\n", pThis->sub_100ab4f0(),
+				STRING(m_iszExplosionParamEnt));
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010efe0 size=0x31
 #include "CBreakable.h"
 #include "CUnknown1070b244.h"

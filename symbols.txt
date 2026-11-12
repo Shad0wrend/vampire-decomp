@@ -7435,6 +7435,7 @@
 0x1000ab9b func   ?vfunc597@CNPC_VCop@@QAEXPAVCBaseEntity@@H@Z CNPC_VCop::vfunc597
 0x1000aba0 func   ?sub_1006d0a0@@YIXPAUCDumpTable1006d0a0@@@Z sub_1006d0a0
 0x1000abaa func   ?sub_100dbc60@CUnknown100dbc60@@QAEXPAVCBaseEntity@@@Z CUnknown100dbc60::sub_100dbc60
+0x1000abaf func   ?sub_1010e750@CBreakable@@QAEXXZ CBreakable::sub_1010e750
 0x1000abb4 func   ?sub_10396bc0@CNPC_VMingXiao@@QAEHXZ CNPC_VMingXiao::sub_10396bc0
 0x1000abbe func   ??0CTEBeamRing@@QAE@PBD@Z CTEBeamRing::CTEBeamRing
 0x1000abc3 func   ?sub_10138060@@YAXPBMPAY03$$CBMPAM@Z sub_10138060
