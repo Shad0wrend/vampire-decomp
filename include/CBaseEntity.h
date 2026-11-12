@@ -344,7 +344,7 @@ public:
 	char m_pad02b6[0x2b8 - 0x2b6];
 	float m_fl2b8;	// 0x02b8: the collision property's bounding radius (IsPointSized when 0)
 	char m_pad02bc[0x2e0 - 0x2bc];
-	int m_pEdict2e0;	// 0x02e0
+	void sub_10268330(CBaseEntity *pTarget, void *pDmg, float flPercent); int m_pEdict2e0;	// 0x02e0
 	char m_pad02e4[0x35c - 0x2e4];
 	int m_nMoveType35c;	// 0x035c
 	int m_nMoveCollide360;	// 0x0360
