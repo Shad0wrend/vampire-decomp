@@ -12825,6 +12825,7 @@
 0x10012003 func   _math_colorblend math_colorblend
 0x10012008 func   _flame_cluster flame_cluster
 0x1001200d func   ?sub_10084170@CSceneEntity@@QAEXPAX@Z CSceneEntity::sub_10084170
+0x10012012 func   ?sub_10381e90@CNPC_VHengeyokai@@QAE_NPAVCBaseEntity@@@Z CNPC_VHengeyokai::sub_10381e90
 0x10012017 func   _info_node_link info_node_link
 0x1001201c func   ?sub_100c1c60@@YAXPAUStudioHdrX@@PBMAAUSeqDescX@@HAAMAAH@Z sub_100c1c60
 0x10012021 func   ?sub_10149ce0@@YA_NXZ sub_10149ce0

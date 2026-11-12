@@ -237310,6 +237310,63 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10381e90 size=0x13e
+#include "CNPC_VHengeyokai.h"
+#include "CRagdollProp.h"
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct HengOriginView {
+    V100(a) V100(b) V10(c0) V10(c1)
+    virtual const Vector *GetOrigin();
+};
+struct HengPhysObjView {
+    V10(a) V10(b) V10(c)
+    virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4(); virtual void d5(); virtual void d6();
+    virtual void GetPosition(Vector *pPos, Vector *pAngles);
+};
+extern const char *g_1063bd88[];
+extern char g_10538764[];
+extern char g_1057c684[];
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int bIsReference);
+bool CNPC_VHengeyokai::sub_10381e90(CBaseEntity *pEnt)
+{
+    int i;
+    bool bFound = false;
+    float flBest = 1050625.0f;
+    CRagdollProp *pRagdoll = (CRagdollProp *)__RTDynamicCast(pEnt, 0, g_10538764, g_1057c684, 0);
+    if (pRagdoll) {
+        const char **ppName = g_1063bd88;
+        i = 0;
+        while (**ppName) {
+            HengPhysObjView *pObj = (HengPhysObjView *)pRagdoll->vfunc265(*ppName);
+            if (pObj) {
+                Vector pos, ang;
+                pObj->GetPosition(&pos, &ang);
+                const Vector *pOrigin = ((HengOriginView *)this)->GetOrigin();
+                float dx = pOrigin->x - pos.x;
+                float dy = pOrigin->y - pos.y;
+                float dz = pOrigin->z - pos.z;
+                float flDist; flDist = dx * dx + dy * dy + (dz * dz);
+                if (flDist < flBest) {
+                    bFound = true;
+                    m_vecBonePos = pos;
+                    m_n6668 = i;
+                    flBest = flDist;
+                }
+            }
+            ++ppName;
+            i++;
+        }
+    } else {
+        bFound = true;
+        m_vecBonePos = *((HengOriginView *)this)->GetOrigin();
+        m_n6668 = 0;
+    }
+    return bFound;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10382020 size=0x1f7
 #include "CNPC_VHengeyokai.h"
 #include "CEntityVSlots.h"
