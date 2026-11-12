@@ -199915,6 +199915,80 @@ float __cdecl sub_102e1470(float a, float b, float c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e1560 size=0x18b
+#include "CAI_Motor.h"
+#include "CAI_MoveProbe.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+struct AILocalMoveGoal_t
+{
+	int m_unk00;
+	int m_unk04;
+	int m_unk08;
+	Vector dir;		// 0x0c
+	int m_unk18;
+	int m_unk1c;
+	int m_unk20;
+	int m_unk24;
+	float maxDist;		// 0x28
+	int m_unk2c;
+	int m_unk30;
+	CBaseEntity *pMoveTarget;	// 0x34
+	unsigned char flags;	// 0x38
+};
+
+struct CAI_MovementSinkView
+{
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void s3();
+	virtual void s4();
+	virtual void s5();
+	virtual bool OnMoveStalled(const AILocalMoveGoal_t &move);
+};
+
+int CAI_Motor::sub_102e1560(int a, float speed, float dist, int b, int c)
+{
+	const AILocalMoveGoal_t &move = *(const AILocalMoveGoal_t *)a;
+	bool bReachingLocalGoal = (dist > move.maxDist);
+
+	if (bReachingLocalGoal)
+	{
+		if (!(move.flags & 2))
+			m_30 = m_30 * (1 - move.maxDist / dist);
+		else
+			m_30 = 0;
+		dist = move.maxDist;
+	}
+	else
+	{
+		m_30 = 0;
+	}
+
+	*(Vector *)&m_3c = move.dir * speed;
+
+	int result = 1;
+	if (dist > 0.0)
+	{
+		Vector vecFrom = *((CEntityVSlots *)m_pOuter)->slot220();
+		Vector vecTo = vecFrom + move.dir * dist;
+
+		result = sub_102e0bd0(&vecTo, move.pMoveTarget, 0xbf800000, true, bReachingLocalGoal, (AIMoveTrace_t *)b, c);
+
+		if (result == 0)
+			vfunc10();
+	}
+	else if (!((CAI_MovementSinkView *)((char *)this + 0x10))->OnMoveStalled(move))
+	{
+		result = 0;
+	}
+
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e1c10 size=0xa9
 #include "CAI_Motor.h"
 
