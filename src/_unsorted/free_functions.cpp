@@ -176674,6 +176674,93 @@ VMatrix sub_1024c980(const Vector &vOrigin, const VPlane &thePlane)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024cab0 size=0x101
+#include "Vector.h"
+#include <math.h>
+typedef float vec_t;
+class VMatrixV
+{
+public:
+	VMatrixV();
+	VMatrixV(
+		vec_t m00, vec_t m01, vec_t m02, vec_t m03,
+		vec_t m10, vec_t m11, vec_t m12, vec_t m13,
+		vec_t m20, vec_t m21, vec_t m22, vec_t m23,
+		vec_t m30, vec_t m31, vec_t m32, vec_t m33);
+	void Init(
+		vec_t m00, vec_t m01, vec_t m02, vec_t m03,
+		vec_t m10, vec_t m11, vec_t m12, vec_t m13,
+		vec_t m20, vec_t m21, vec_t m22, vec_t m23,
+		vec_t m30, vec_t m31, vec_t m32, vec_t m33);
+	VMatrixV sub_1024da80() const;
+	VMatrixV sub_1024db60() const;
+	VMatrixV sub_1024d810(const Vector &vScale);
+	vec_t m[4][4];
+};
+inline VMatrixV::VMatrixV()
+{
+}
+inline VMatrixV::VMatrixV(
+	vec_t m00, vec_t m01, vec_t m02, vec_t m03,
+	vec_t m10, vec_t m11, vec_t m12, vec_t m13,
+	vec_t m20, vec_t m21, vec_t m22, vec_t m23,
+	vec_t m30, vec_t m31, vec_t m32, vec_t m33)
+{
+	Init(
+		m00, m01, m02, m03,
+		m10, m11, m12, m13,
+		m20, m21, m22, m23,
+		m30, m31, m32, m33
+		);
+}
+inline void VMatrixV::Init(
+	vec_t m00, vec_t m01, vec_t m02, vec_t m03,
+	vec_t m10, vec_t m11, vec_t m12, vec_t m13,
+	vec_t m20, vec_t m21, vec_t m22, vec_t m23,
+	vec_t m30, vec_t m31, vec_t m32, vec_t m33
+	)
+{
+	m[0][0] = m00;
+	m[0][1] = m01;
+	m[0][2] = m02;
+	m[0][3] = m03;
+
+	m[1][0] = m10;
+	m[1][1] = m11;
+	m[1][2] = m12;
+	m[1][3] = m13;
+
+	m[2][0] = m20;
+	m[2][1] = m21;
+	m[2][2] = m22;
+	m[2][3] = m23;
+
+	m[3][0] = m30;
+	m[3][1] = m31;
+	m[3][2] = m32;
+	m[3][3] = m33;
+}
+
+void sub_1024cab0( VMatrixV &dst, const Vector &vAxisOfRot, float angleDegrees )
+{
+	float radians = angleDegrees * ( 3.14159265358979323846 / 180.0 );
+	float fSin = sin( radians );
+	float fCos = cos( radians );
+	float t = 1 - fCos;
+	float tx = t * vAxisOfRot.x;
+	float ty = t * vAxisOfRot.y;
+	float sx = fSin * vAxisOfRot.x;
+	float sy = fSin * vAxisOfRot.y;
+	float sz = fSin * vAxisOfRot.z;
+
+	dst.Init(
+		tx * vAxisOfRot.x + fCos, tx * vAxisOfRot.y - sz, tx * vAxisOfRot.z + sy, 0.0f,
+		tx * vAxisOfRot.y + sz, ty * vAxisOfRot.y + fCos, ty * vAxisOfRot.z - sx, 0.0f,
+		tx * vAxisOfRot.z - sy, ty * vAxisOfRot.z + sx, vAxisOfRot.z * (t * vAxisOfRot.z) + fCos, 0.0f,
+		0.0f, 0.0f, 0.0f, 1.0f );
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024cc10 size=0x2e
 #include "VMatrix.h"
 // TARGET: sub_1024cc10
