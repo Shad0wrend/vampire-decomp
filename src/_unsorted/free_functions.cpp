@@ -251830,6 +251830,86 @@ char CNPC_VScurrying::sub_103acac0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103acba0 size=0x3f9
+#include <math.h>
+#include "CNPC_VScurrying.h"
+#include "CAI_Navigator.h"
+#include "UTIL_Trace.h"
+#include "engineiface.h"
+#include "CEntityVSlots.h"
+
+const Vector *sub_102d6100(int hull);
+const Vector *sub_102d6120(int hull);
+
+bool CNPC_VScurrying::sub_103acba0(const Vector *pTarget, float flDist, Vector *pOut)
+{
+	Vector vecResult;
+	CAI_Navigator *pNav = m_pNav5d34;
+	if (pNav->sub_102edae0(pTarget, flDist, 0x46ea6000, &vecResult))
+	{
+		float flMinX, flMaxX, flMinY, flMaxY;
+		{
+			Vector vecDelta;
+			vecDelta = *pTarget - vecResult;
+			if (fabs(vecDelta.x) > fabs(vecDelta.y))
+			{
+				if (vecDelta.x > 0.0f) { flMinX = 0.0f; flMaxX = 60.0f; }
+				else { flMaxX = 0.0f; flMinX = -60.0f; }
+				flMinY = -80.0f;
+				flMaxY = 80.0f;
+			}
+			else
+			{
+				if (vecDelta.y > 0.0f) { flMinY = 0.0f; flMaxY = 60.0f; }
+				else { flMaxY = 0.0f; flMinY = -60.0f; }
+				flMinX = -80.0f;
+				flMaxX = 80.0f;
+			}
+		}
+		{
+			Vector vecPos = vecResult;
+			int i = 0;
+			bool bOk;
+			do
+			{
+				vecPos.Init(vecResult.x + enginerandom->vfunc1(flMinX, flMaxX),
+					vecResult.y + enginerandom->vfunc1(flMinY, flMaxY),
+					vecResult.z + vfunc522() * 0.5f);
+				bOk = sub_102a0fb0(&vecPos, 0x202400b, 0, 0);
+				i++;
+			} while (i < 5 && !bOk);
+			if (bOk)
+				VectorCopy(vecPos, vecResult);
+		}
+		if (pOut)
+			VectorCopy(vecResult, *pOut);
+		return true;
+	}
+
+	Vector vecOrigin = *((CEntityVSlots *)this)->slot217();
+	vecOrigin.z += vfunc522() * 0.5f;
+	Vector vecDir = -(*pTarget - *((CEntityVSlots *)this)->slot217());
+	VectorNormalize(vecDir);
+	do
+	{
+		vecResult = vecOrigin + vecDir * flDist;
+		vecResult.z = vecOrigin.z;
+		CGameTrace tr;
+		UTIL_TraceHull_DebugCall(vecOrigin, vecResult, *sub_102d6100(m_n1568), *sub_102d6120(m_n1568), 0x202400b, this, 0, &tr);
+		if (!(tr.m_fraction < 1.0f) && !tr.m_allsolid && !tr.m_startsolid)
+		{
+			if (pOut)
+				*pOut = vecResult;
+			return true;
+		}
+		vecDir += *(Vector *)tr.m_planeNormal * 0.5f;
+		VectorNormalize(vecDir);
+		flDist *= 0.5f;
+	} while (flDist > 1.0f);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ad0a0 size=0x35
 // TARGET: CUnknown103ad0a0::sub_103ad0a0
 struct CUnknown103ad0a0

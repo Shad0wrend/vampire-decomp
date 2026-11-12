@@ -2292,6 +2292,7 @@
 0x1000401b func   ?sub_10139d70@@YAXABVQAngle@@AAUmatrix3x4_t@@@Z sub_10139d70
 0x10004020 func   ?sub_103816e0@@YIXPAUE@@HH@Z sub_103816e0
 0x10004025 func   ?vfunc173@CBaseCombatWeapon@@UAEXPAVCBaseEntity@@0HH@Z CBaseCombatWeapon::vfunc173
+0x1000402a func   ?sub_103acba0@CNPC_VScurrying@@QAE_NPBVVector@@MPAV2@@Z CNPC_VScurrying::sub_103acba0
 0x1000402f func   ?sub_100e7890@CDialog@@QAEXPAUCDialogEntry_t@@PBU2@@Z CDialog::sub_100e7890
 0x10004039 func   ?vfunc105@CBasePlayer@@UAEXPBD@Z CBasePlayer::vfunc105
 0x1000403e func   ?sub_1023df30@CUnknown1023df30@@QAEXPAUinputdata_t@@@Z CUnknown1023df30::sub_1023df30
