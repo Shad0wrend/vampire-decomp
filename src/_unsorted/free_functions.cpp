@@ -113647,6 +113647,46 @@ int sub_101a2c00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2c30 size=0xdc
+#include "CUnknown101a2c30.h"
+#include "CGlobalEntityList.h"
+#include "CBaseEntity.h"
+#include "CEntitySaveRestoreBlockHandler.h"
+
+extern CGlobalEntityList g_106eb5d8;
+struct SREnt : CBaseEntity
+{
+	int edict() { return m_pEdict2e0; }
+	int entindex() { return engine->vfunc35(edict()); }
+	int RequiredEdictIndex() { return vfunc131(); }
+};
+
+bool CEntitySaveRestoreBlockHandler::sub_101a2c30(CUnknown101a2c30 *pSaveData)
+{
+	int number_of_entities = g_106eb5d8.sub_100f7040();
+	pSaveData->InitEntityTable((entitytable_t *)engine->vfunc47(sizeof(entitytable_t) * number_of_entities, 1), number_of_entities);
+
+	CBaseEntity *pEnt = 0;
+	int i = 0;
+	while ((pEnt = g_106eb5d8.sub_100f7060(pEnt)) != 0)
+	{
+		entitytable_t *pEntInfo = pSaveData->GetEntityInfo(i);
+		pEntInfo->id = i;
+		pEntInfo->edictindex = ((SREnt *)pEnt)->RequiredEdictIndex();
+		pEntInfo->restoreentityindex = -1;
+		pEntInfo->saveentityindex = pEnt ? ((SREnt *)pEnt)->entindex() : -1;
+		pEntInfo->hEnt = pEnt;
+		pEntInfo->classname = 0;
+		pEntInfo->globalname = 0;
+		pEntInfo->location = 0;
+		pEntInfo->size = 0;
+		pEntInfo->modelname = 0;
+		i++;
+	}
+	return i == pSaveData->NumEntities();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2d50 size=0xbd
 #include "CBaseEntity.h"
 #include "CEntitySaveRestoreBlockHandler.h"
