@@ -16826,6 +16826,7 @@
 0x10483b4c data   ??_7IKeyValues@@6B0@@ ??_7IKeyValues@@6B0@@
 0x10483b4c vtable ??_7IKeyValues@@6B@ IKeyValues::vftable
 0x10483bb8 vtable ??_7IKeyCacheable@@6B@ IKeyCacheable::vftable
+0x10483bc8 data   ??_8VKeyValues@@7BIKeyValues@@@ ??_8VKeyValues@@7BIKeyValues@@@
 0x10483bd4 data   ??_8VKeyValues@@7B0@@ ??_8VKeyValues@@7B0@@
 0x10483be8 vtable ??_7CVTraitEffectGroup_t@@6B@ CVTraitEffectGroup_t::vftable
 0x10483ce4 vtable ??_7CTraitDependencyDataDescSaveDataOps@@6B@ CTraitDependencyDataDescSaveDataOps::vftable
