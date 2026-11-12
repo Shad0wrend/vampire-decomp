@@ -207120,6 +207120,38 @@ void CUnknown102dca60::sub_102dc6a0(char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dc8f0 size=0x11d
+#include "utlrbtree.h"
+#include "CUnknown102dc2c0.h"
+#include "utlvector.h"
+#include "CAI_InterestingPlace.h"
+
+bool CUnknown102dc2c0::sub_102dc8f0()
+{
+	if (m_bDone)
+		return false;
+#define v (*(CUtlVector<CHandle<CAI_InterestingPlace> > *)&m_pHandles)
+	m_nCounted = 0;
+	bool bRemoved = false;
+	for (int i = 0; i < v.Count(); ) {
+		if (v[i].Get()) {
+			if (v[i]->m_n564 == 1)
+				m_nCounted++;
+			i++;
+		} else {
+			if (i <= m_nLimit)
+				bRemoved = true;
+			v.Remove(i);
+		}
+	}
+	if (bRemoved && m_nCounted >= 2) {
+		m_nLimit = 0;
+		sub_102dca60();
+	}
+	return m_nCounted >= 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dca60 size=0x15e
 #include "CUnknown102dca60.h"
 #include "CGlobalEntityList.h"

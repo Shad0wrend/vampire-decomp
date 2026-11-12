@@ -10359,6 +10359,7 @@
 0x1000e890 func   ?vfunc81@CItemGIdolElephant@@QAEHXZ CItemGIdolElephant::vfunc81
 0x1000e895 func   ?sub_10386a00@@YAHXZ sub_10386a00
 0x1000e89f func   ?vfunc5@CNPC_VTaxiDriver@@QAEPAV1@I@Z CNPC_VTaxiDriver::vfunc5
+0x1000e8a4 func   ?sub_102dc8f0@CUnknown102dc2c0@@QAE_NXZ CUnknown102dc2c0::sub_102dc8f0
 0x1000e8a9 func   _ambient_generic ambient_generic
 0x1000e8ae func   ?sub_102d6140@@YAPADH@Z sub_102d6140
 0x1000e8b3 func   ?sub_1020b040@CUnknown1020aea0@@QAEMPAX@Z CUnknown1020aea0::sub_1020b040
