@@ -115301,6 +115301,42 @@ struct CUnknown101afba0 { char pad[0x100]; char m_Flag; void sub_101afba0(); };
 void CUnknown101afba0::sub_101afba0() { m_Flag = 0; }
 // END FUNCTION
 
+// FUNCTION: 0x101afbc0 size=0x6f
+#include "CKeyValuesX.h"
+#include <stdio.h>
+
+__declspec(dllimport) void Msg(const char *pszFormat, ...);
+
+struct CSoundVolumeTable
+{
+	char pad_0000[0xac];
+	int m_nVolume[16];
+	bool sub_101afbc0(CKeyValuesX *pKeys);
+};
+
+// TARGET: CSoundVolumeTable::sub_101afbc0
+bool CSoundVolumeTable::sub_101afbc0(CKeyValuesX *pKeys)
+{
+	if (pKeys == 0)
+	{
+		return false;
+	}
+	for (int i = 0; i < 16; i++)
+	{
+		char szKey[4];
+		sprintf(szKey, "%d", i);
+		int nVolume = pKeys->sub_10248bb0(szKey, -1);
+		if (nVolume == -1)
+		{
+			nVolume = 0xf0;
+			Msg("Sound volume table has no setting for volume level %s.  Defaulting to %d\n", szKey, nVolume);
+		}
+		m_nVolume[i] = nVolume;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101afc50 size=0x7a
 #include <stdio.h>
 

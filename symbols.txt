@@ -4101,6 +4101,7 @@
 0x1000667c func   ?sub_102cff50@CUnk102cff50@@QAEPAU1@XZ CUnk102cff50::sub_102cff50
 0x10006681 func   ?sub_10430020@@YAII@Z sub_10430020
 0x10006690 func   ?sub_1023b5b0@CUnknown1023b5b0@@QAEXH@Z CUnknown1023b5b0::sub_1023b5b0
+0x10006695 func   ?sub_101afbc0@CSoundVolumeTable@@QAE_NPAVCKeyValuesX@@@Z CSoundVolumeTable::sub_101afbc0
 0x1000669a func   ?vfunc82@CPhysConstraintSystem@@UAEPAUdatamap_t@@XZ CPhysConstraintSystem::vfunc82
 0x1000669f func   ?vfunc312@CBaseCombatCharacter@@UAEXH@Z CBaseCombatCharacter::vfunc312
 0x100066a4 func   ?vfunc103@CEnvBeam@@UAEXXZ CEnvBeam::vfunc103
