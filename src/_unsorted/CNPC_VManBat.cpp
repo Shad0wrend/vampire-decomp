@@ -247,6 +247,82 @@ void CNPC_VManBat::vfunc259(int *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038e480 size=0x160
+#include "CBaseEntity.h"
+#include "CNPC_VManBat.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+extern "C" unsigned int __cdecl strlen(const char *);
+extern "C" char *__cdecl strcpy(char *, const char *);
+#pragma intrinsic(strlen, strcpy)
+extern char g_106b8540[];
+int sub_1042fbf0(int);
+
+struct NamedEnt {
+    char m_pad0000[0x26c];
+    const char *m_iName;
+    char m_pad0270[0x5dc - 0x270];
+    int m_nType;
+};
+
+#define HASH(x) ((((((x) & 0x710935) ^ 0x148739) + 0x4094ab) & 0x18ef6ca) ^ (x) ^ 0x412a96ec)
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline bool NamesMatch(const char *pszName, const char *const &nameToMatch)
+{
+    int len = strlen(pszName);
+    int r;
+    if (len == 0)
+        r = (int)nameToMatch;
+    else if (pszName[len - 1] != '*')
+        r = _strcmpi(STRINGR(nameToMatch), pszName);
+    else
+        r = _strnicmp(STRINGR(nameToMatch), pszName, len - 1);
+    return r == 0;
+}
+
+inline bool NameMatches(NamedEnt *pEnt, const char *pszName)
+{
+    if (pEnt->m_iName && pEnt->m_iName == pszName)
+        return true;
+    return NamesMatch(pszName, pEnt->m_iName);
+}
+
+// TARGET: CNPC_VManBat::vfunc566
+bool CNPC_VManBat::vfunc566(CBaseEntity *pEntity)
+{
+    char name[80];
+    NamedEnt *pEnt = (NamedEnt *)pEntity;
+    if (pEnt->m_nType != 20000)
+        return false;
+    int v = HASH(m_n6670);
+    switch (sub_1042fbf0(v)) {
+    case 2:
+    case 4:
+        sprintf(name, "ManBat Divepoint %d", m_n6674);
+        break;
+    case 3:
+        sprintf(name, "ManBat Divepoint %d Bottom", m_n6674);
+        break;
+    case 1:
+        strcpy(name, "ManBat Landpoint");
+        break;
+    case 8:
+        sprintf(name, "ManBat Script Node %d", m_n6674);
+        break;
+    default:
+        sprintf(name, "ManBat %d", m_n6674);
+        break;
+    }
+    if (NameMatches(pEnt, name))
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038e880 size=0x2f
 #include "CNPC_VManBat.h"
 #include "CNPC_VHuman.h"
