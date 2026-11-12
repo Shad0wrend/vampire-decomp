@@ -12719,6 +12719,7 @@
 0x10011a31 func   ?sub_102c4e80@@YIXPAVCBaseEntity@@@Z sub_102c4e80
 0x10011a36 func   ?vfunc0@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCSave@@@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc0
 0x10011a3b func   _entityflame entityflame
+0x10011a40 func   ??DVector@@QBE?AV0@M@Z ??DVector@@QBE?AV0@M@Z
 0x10011a40 func   ?sub_100a19c0@Vector@@QBE?AV1@M@Z Vector::sub_100a19c0
 0x10011a45 func   ?vfunc240@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc240
 0x10011a4f func   ?sub_102f1fa0@CAI_Navigator@@QAEXMPAUCAI_NavSource@@@Z CAI_Navigator::sub_102f1fa0
