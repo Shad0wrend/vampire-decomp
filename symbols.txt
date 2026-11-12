@@ -17400,6 +17400,7 @@
 0x105c72fc data   ??_R0?AVCThrownGrenade@@@8 ??_R0?AVCThrownGrenade@@@8
 0x105cba4c data   ??_R0?AVCNPC_VBach@@@8 ??_R0?AVCNPC_VBach@@@8
 0x105cbcd4 data   ??_R0?AVCBaseGrenade@@@8 ??_R0?AVCBaseGrenade@@@8
+0x1060ce70 data   ??_R0?AVCAI_InterestingPlace@@@8 ??_R0?AVCAI_InterestingPlace@@@8
 0x10625234 data   ??_R0?AVCNPC_VAndreiBlood@@@8 ??_R0?AVCNPC_VAndreiBlood@@@8
 0x10684584 data   ??_R0?AVCPlayerPickupController@@@8 ??_R0?AVCPlayerPickupController@@@8
 0x106845d0 data   ??_R0?AVCWeaponPhysCannon@@@8 ??_R0?AVCWeaponPhysCannon@@@8
