@@ -9943,6 +9943,7 @@
 0x1000e0cf func   ?vfunc272@CRagdollProp@@UAE_NH@Z CRagdollProp::vfunc272
 0x1000e0d4 func   ?sub_102456b0@@YAHXZ sub_102456b0
 0x1000e0d9 func   ?vfunc5@CFilterMass@@QAEPAV1@I@Z CFilterMass::vfunc5
+0x1000e0de func   ?Grow@?$CUtlMemory@V?$CHandle@VCAI_InterestingPlace@@@@@@QAEXH@Z CUtlMemory<CHandle<CAI_InterestingPlace> >::Grow
 0x1000e0de func   ?sub_102dcec0@@YIXPAUMem4@@HH@Z sub_102dcec0
 0x1000e0e3 func   ?sub_101bbd10@CUnknown101bbd10@@QAEXXZ CUnknown101bbd10::sub_101bbd10
 0x1000e0e8 func   ?vfunc5@CWeaponRanged_Rifle_SuperShotgun@@UAEPAVCWeaponRanged@@I@Z CWeaponRanged_Rifle_SuperShotgun::vfunc5
