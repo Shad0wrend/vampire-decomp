@@ -186623,6 +186623,29 @@ void CAI_BaseNPCTroika::sub_10295240()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10295460 size=0x3c
+#include "CAI_BaseNPCTroika.h"
+
+namespace block_10295460
+{
+	struct CUnknownTroika10295460 : public CAI_BaseNPCTroika
+	{
+		int sub_10295460(int a, char bFlag);
+	};
+}
+
+// TARGET: block_10295460::CUnknownTroika10295460::sub_10295460
+int block_10295460::CUnknownTroika10295460::sub_10295460(int a, char bFlag)
+{
+	int out;
+	sub_10271ff0(a, &out);
+	int r = sub_1008dc40(out, -1);
+	if (r == -1 && bFlag)
+		return sub_1008dc40(a, r);
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10295a80 size=0x11
 void __fastcall sub_10295a80(int *p, int dummy, int s1, unsigned int *out, int s3, int s4)
 {
