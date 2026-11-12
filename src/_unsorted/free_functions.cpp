@@ -105862,6 +105862,32 @@ CPropDestructable *CPropDestructable::sub_10193940()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193c30 size=0x6d
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CPropDestructable.h"
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+struct S10193c30 {
+    int m_v0;
+    int m_pad4;
+    int m_n;
+    char m_pad0c[0x18 - 0xc];
+    volatile int m_type;
+    int Count() { return m_type == 4 ? m_n : 0; }
+};
+struct CPDV : CPropDestructable
+{
+	void sub_10193c30(S10193c30 *s);
+};
+
+// TARGET: sub_10193c30
+void CPDV::sub_10193c30(S10193c30 *s)
+{
+	sub_10193cc0(clamp(s->Count() - 1, 0, 7), s->m_v0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10193cc0 size=0x174
 #include "CPropDestructable.h"
 #include "CEntityVSlots.h"
