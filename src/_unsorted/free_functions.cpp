@@ -158899,6 +158899,267 @@ char CPropHacking::sub_1021c890(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021cba0 size=0x844
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include <string.h>
+#include "CPropHacking.h"
+#include "ScopeTrace.h"
+#include "CKeyValuesX.h"
+#include "CUnknown10248a50.h"
+#include "utlmemory.h"
+
+struct LoadRec {
+	char name[0x10];
+	char desc[0x20];
+	char password[0x10];
+	int difficulty;
+	char dependency[0x40];
+	int links[20];
+};
+struct LoadFunc {
+	char name[0x10];
+	char desc[0x20];
+	char runtext[0x200];
+	char dependency[0x40];
+	char runscript[0x40];
+	int trigger;
+};
+struct LoadMail {
+	char subject[0x20];
+	char sender[0x20];
+	char body[0x200];
+	char dependency[0x40];
+	char runscript[0x40];
+};
+
+void sub_1021e320(LoadRec *p, const LoadRec &src);
+void sub_1021e3e0(LoadFunc *p, const LoadFunc &src);
+void sub_1021e270(int *p, const int &src);
+
+struct PHStrVec {
+	char **m_pMemory; int m_nAlloc; int m_nGrow; int m_Size; char **m_pElements;
+	void sub_1021e540();
+	void sub_1021e430(int n);
+	void sub_1021e4f0(int elem, int num);
+	void PurgeAndDeleteElements()
+	{
+		for (int i = 0; i < m_Size; i++)
+			delete m_pMemory[i];
+		m_Size = 0;
+		sub_1021e540();
+		m_pElements = m_pMemory;
+	}
+	int AddToTail(char *const &src)
+	{
+		int elem = m_Size;
+		sub_1021e430(1);
+		sub_1021e4f0(elem, 1);
+		CopyConstruct(&m_pMemory[elem], src);
+		return elem;
+	}
+};
+struct PHRecVec {
+	LoadRec *m_pMemory; int m_nAlloc; int m_nGrow; int m_Size; LoadRec *m_pElements;
+	void sub_1021e580(int n);
+	void sub_1021e2a0(int elem, int num);
+	void Purge()
+	{
+		m_Size = 0;
+		if (m_nGrow != -1) {
+			if (m_pMemory) { Plat_Free(m_pMemory); m_pMemory = 0; }
+			m_nAlloc = 0;
+		}
+		m_pElements = m_pMemory;
+	}
+	int AddToTail(const LoadRec &src)
+	{
+		int elem = m_Size;
+		if (m_Size + 1 > m_nAlloc) sub_1021e580(m_Size + 1 - m_nAlloc);
+		m_Size += 1;
+		m_pElements = m_pMemory;
+		sub_1021e2a0(elem, 1);
+		sub_1021e320(&m_pMemory[elem], src);
+		return elem;
+	}
+};
+struct PHFuncVec {
+	LoadFunc *m_pMemory; int m_nAlloc; int m_nGrow; int m_Size; LoadFunc *m_pElements;
+	void sub_1021e620(int n);
+	void sub_1021e350(int elem, int num);
+	void Purge()
+	{
+		m_Size = 0;
+		if (m_nGrow != -1) {
+			if (m_pMemory) { Plat_Free(m_pMemory); m_pMemory = 0; }
+			m_nAlloc = 0;
+		}
+		m_pElements = m_pMemory;
+	}
+	int AddToTail(const LoadFunc &src)
+	{
+		int elem = m_Size;
+		if (m_Size + 1 > m_nAlloc) sub_1021e620(m_Size + 1 - m_nAlloc);
+		m_Size += 1;
+		m_pElements = m_pMemory;
+		sub_1021e350(elem, 1);
+		sub_1021e3e0(&m_pMemory[elem], src);
+		return elem;
+	}
+};
+struct PHIntVec {
+	int *m_pMemory; int m_nAlloc; int m_nGrow; int m_Size; int *m_pElements;
+	void sub_100eb280(int n);
+	int Count() const { return m_Size; }
+	int AddToTail(const int &src)
+	{
+		int elem = m_Size;
+		if (m_Size + 1 > m_nAlloc) sub_100eb280(m_Size + 1 - m_nAlloc);
+		m_Size += 1;
+		m_pElements = m_pMemory;
+		int numToMove = m_Size - elem - 1;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem + 1], &m_pMemory[elem], numToMove * sizeof(int));
+		sub_1021e270(&m_pMemory[elem], src);
+		return elem;
+	}
+};
+struct PHMailVec {
+	LoadMail *m_pMemory; int m_nAlloc; int m_nGrow; int m_Size; LoadMail *m_pElements;
+	void sub_1021e6c0(int n);
+	void Purge()
+	{
+		m_Size = 0;
+		if (m_nGrow != -1) {
+			if (m_pMemory) { Plat_Free(m_pMemory); m_pMemory = 0; }
+			m_nAlloc = 0;
+		}
+		m_pElements = m_pMemory;
+	}
+	int AddToTail(const LoadMail &src)
+	{
+		int elem = m_Size;
+		if (m_Size + 1 > m_nAlloc) sub_1021e6c0(m_Size + 1 - m_nAlloc);
+		m_Size += 1;
+		m_pElements = m_pMemory;
+		int numToMove = m_Size - elem - 1;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem + 1], &m_pMemory[elem], numToMove * sizeof(LoadMail));
+		CopyConstruct(&m_pMemory[elem], src);
+		return elem;
+	}
+};
+struct KVNext { CKeyValuesX *sub_102489c0(); };
+extern void *g_1070b238;
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int nSize);
+__declspec(dllimport) int Q_snprintf(char *pDest, int nSize, const char *pFmt, ...);
+extern void (*g_109f3860)(char *pDest, int nSize);
+inline bool PH_LoadFromFile(CKeyValuesX *kv, void *pFileSystem, const char *pszFile)
+{
+	return kv->sub_102480f0(pszFile, pFileSystem, 0, true);
+}
+
+#define PH_F(T, off) (*(T *)((char *)this + (off)))
+
+bool CPropHacking::sub_1021cba0(const char *pszFile)
+{
+	LoadRec rec;
+	LoadFunc fn;
+	LoadMail mail;
+	ScopeTrace scope("CPropHacking::LoadFromFile", this ? (PH_F(const char *, 0x26c) ? PH_F(const char *, 0x26c) : g_106b8540) : g_105387dc);
+
+	CKeyValuesX *kv = (CKeyValuesX *)new CUnknown10248a50("TerminalDefinition");
+	if (kv) {
+		if (PH_LoadFromFile(kv, g_1070b238, pszFile)) {
+			Q_strncpy(m_szText0904, kv->sub_10248cd0("screen saver", g_106b8540), 0x40);
+			Q_strncpy(&m_b0984, kv->sub_10248cd0("brackets", "[]"), 3);
+			Q_strncpy(m_szText0904 + 0x40, kv->sub_10248cd0("email_password", g_106b8540), 0x20);
+			Q_strncpy(m_szText0904 + 0x60, kv->sub_10248cd0("email_username", g_106b8540), 0x20);
+
+			CKeyValuesX *pLogon = kv->sub_10248af0("LogonScreen");
+			if (pLogon) {
+				PHStrVec &lines = PH_F(PHStrVec, 0x9c8);
+				lines.PurgeAndDeleteElements();
+				int i = 0;
+				bool bDone = false;
+				do {
+					char szKey[8];
+					Q_snprintf(szKey, 8, "line%d", i);
+					const char *s = pLogon->sub_10248cd0(szKey, g_106b8540);
+					if (s && strlen(s)) {
+						int n = strlen(s) + 1;
+						char *p = new char[n];
+						Q_strncpy(p, s, n);
+						lines.AddToTail(p);
+					} else {
+						bDone = true;
+					}
+					i++;
+				} while (!bDone);
+			}
+
+			PH_F(PHRecVec, 0x9a0).Purge();
+			PH_F(PHFuncVec, 0x9b4).Purge();
+
+			for (CKeyValuesX *pSub = kv->sub_10248af0("SubDir"); pSub; pSub = ((KVNext *)pSub)->sub_102489c0()) {
+				memset(&rec, 0, sizeof(rec));
+				memset(rec.links, 0xff, sizeof(rec.links));
+				Q_strncpy(rec.name, pSub->sub_10248cd0("name", "name"), 0x10);
+				g_109f3860(rec.name, strlen(rec.name));
+				Q_strncpy(rec.desc, pSub->sub_10248cd0("description", "description"), 0x20);
+				Q_strncpy(rec.password, pSub->sub_10248cd0("password", g_106b8540), 0x10);
+				Q_strncpy(rec.dependency, pSub->sub_10248cd0("dependency", g_106b8540), 0x40);
+				rec.difficulty = pSub->sub_10248bb0("difficulty", 0);
+				CKeyValuesX *pFn = pSub->sub_10248af0("Function");
+				int nLinks = 0;
+				for (; pFn && nLinks < 20; pFn = ((KVNext *)pFn)->sub_102489c0()) {
+					memset(&fn, 0, sizeof(fn));
+					Q_strncpy(fn.name, pFn->sub_10248cd0("name", "name"), 0x10);
+					g_109f3860(fn.name, strlen(fn.name));
+					Q_strncpy(fn.desc, pFn->sub_10248cd0("description", "description"), 0x20);
+					Q_strncpy(fn.runtext, pFn->sub_10248cd0("runtext", "runtext"), 0x200);
+					Q_strncpy(fn.dependency, pFn->sub_10248cd0("dependency", g_106b8540), 0x40);
+					Q_strncpy(fn.runscript, pFn->sub_10248cd0("runscript", g_106b8540), 0x40);
+					fn.trigger = pFn->sub_10248bb0("trigger", -1);
+					rec.links[nLinks] = PH_F(PHFuncVec, 0x9b4).AddToTail(fn);
+					nLinks++;
+				}
+				PH_F(PHRecVec, 0x9a0).AddToTail(rec);
+				if (PH_F(PHRecVec, 0x9a0).m_Size > PH_F(PHIntVec, 0x98c).Count())
+					PH_F(PHIntVec, 0x98c).AddToTail(0);
+			}
+
+			PHMailVec &mails = PH_F(PHMailVec, 0xa14);
+			mails.Purge();
+			for (CKeyValuesX *pMail = kv->sub_10248af0("Email"); pMail; pMail = ((KVNext *)pMail)->sub_102489c0()) {
+				memset(&mail, 0, sizeof(mail));
+				Q_strncpy(mail.subject, pMail->sub_10248cd0("subject", "this email has no subject"), 0x20);
+				Q_strncpy(mail.sender, pMail->sub_10248cd0("sender", "this email has no sender"), 0x20);
+				Q_strncpy(mail.body, pMail->sub_10248cd0("body", "this email has no body"), 0x200);
+				Q_strncpy(mail.dependency, pMail->sub_10248cd0("dependency", g_106b8540), 0x40);
+				Q_strncpy(mail.runscript, pMail->sub_10248cd0("runscript", g_106b8540), 0x40);
+				mails.AddToTail(mail);
+			}
+
+			kv->sub_10248090();
+			delete (void *)kv;
+			return true;
+		}
+		kv->sub_10248090();
+		delete (void *)kv;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021d660 size=0x43
 #include "CPropKeypad.h"
 

@@ -12295,6 +12295,7 @@
 0x100113ec func   ?sub_1012f190@@YAHH@Z sub_1012f190
 0x100113f1 func   ?sub_1017f790@CUnknown1017f790@@QAEMXZ CUnknown1017f790::sub_1017f790
 0x100113f6 func   ?sub_1022a930@CSoundScheme@@QAE_NPBD@Z CSoundScheme::sub_1022a930
+0x100113fb func   ?sub_1021cba0@CPropHacking@@QAE_NPBD@Z CPropHacking::sub_1021cba0
 0x10011400 func   ?vfunc80@CItemGRingSerialKiller1@@QAEHXZ CItemGRingSerialKiller1::vfunc80
 0x10011405 func   ?sub_103d9e00@CNPC_VWerewolfUnit@@QAEXPAVCEntityVSlots@@PAVVector@@PAM2@Z CNPC_VWerewolfUnit::sub_103d9e00
 0x1001140f func   ?sub_10182420@CUnknown10182420@@QAEDHH@Z CUnknown10182420::sub_10182420
