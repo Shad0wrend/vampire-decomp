@@ -1,7 +1,17 @@
 // CPhysObjSaveRestoreOps (RTTI .?AVCPhysObjSaveRestoreOps@@, vtable 0x104494d0, 5 slots).
 #pragma once
 
+#include "Vector.h"
+
 class CBaseEntity;
+
+// BBox_t (game_shared/physics_saverestore.cpp): a custom physics box. Its implicit constructor is compiled out of
+// line at 0x10045a90 (`mov eax, ecx; ret`: the Vector members' empty constructors).
+struct BBox_t
+{
+	Vector mins;
+	Vector maxs;
+};
 
 // The argument of vfunc0 / vfunc2 (a fieldInfo-like record): the data pointer at +0 (its first dword is the physics
 // object's CBaseEntity *), the entity at +4 (slot 128, slot 1 and GetClassname are called on it), and at +8 a field
