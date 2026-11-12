@@ -107978,6 +107978,69 @@ PyObj *sub_10198b30(PyObj *self, PyObj *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198cc0 size=0x356
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "Python.h"
+#include "CVFeat_t.h"
+#include "CUnknown101e56e0.h"
+
+extern int *g_109f3748;
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+char *sub_101d3730(const char *fmt, ...);
+struct FeatEntV { char pad[0x9c]; CBaseCombatCharacter *m_pChar; };
+FeatEntV *sub_10196780(PyObject *pObj);
+
+#define PRINT_FEATS() \
+	for (int j = 0; j < 13; j++) \
+		DevMsg("Feat %d: %s\n", j, ((CUnknown101e56e0 *)CVFeatSet::Find(j))->Get())
+
+inline int FindFeatId(const char *pszName)
+{
+	for (int i = 0; i < g_10739d20; i++) {
+		if (!_strcmpi(((CUnknown101e56e0 **)g_10739d24)[i]->Get(), pszName))
+			return ((CUnknown101e56e0 **)g_10739d24)[i]->m_id;
+	}
+	return -1;
+}
+
+// TARGET: sub_10198cc0
+PyObject *sub_10198cc0(PyObject *self, PyObject *args)
+{
+	const char *pszName = 0;
+	PyObject *pObj = 0;
+	if (!g_109f37a0(args, "Os", &pObj, &pszName)) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f3780, "bad args to CalcFeat()");
+		PRINT_FEATS();
+		return 0;
+	}
+	if (!pszName || !*pszName) {
+		if (!g_109f377c()) {
+			PRINT_FEATS();
+			g_109f37b4(*g_109f3780, "invalid feat name");
+		}
+		return 0;
+	}
+	FeatEntV *pEnt = sub_10196780(pObj);
+	CBaseCombatCharacter *pCharacter = !pEnt ? 0 : pEnt->m_pChar;
+	if (!pCharacter) {
+		if (!g_109f377c())
+			g_109f37b4(*g_109f3780, "invalid combat character");
+		return 0;
+	}
+	int id = FindFeatId(pszName);
+	if (id == -1) {
+		PRINT_FEATS();
+		g_109f37b4(*g_109f3780, sub_101d3730("invalid feat name: %s", pszName));
+		return 0;
+	}
+	return g_109f3798(((CUnknown101e56e0 *)CVFeatSet::Find(id))->sub_101e56e0(pCharacter));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199100 size=0xfc
 struct PyObject;
 extern "C" __declspec(dllimport) int PyArg_ParseTuple(PyObject *, const char *, ...);
