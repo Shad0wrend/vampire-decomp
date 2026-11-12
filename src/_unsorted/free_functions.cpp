@@ -205574,6 +205574,45 @@ int CUnknown102f05b0::sub_102f05b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f05d0 size=0xcb
+#include "CAI_Navigator.h"
+
+#define SV1(p) virtual void p();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+struct CNavOwnerView
+{
+    SV100(a) SV100(b)
+    SV10(c0) SV10(c1)
+    virtual const Vector &vfunc220();
+};
+struct CNavOwnerView2
+{
+    SV100(a) SV100(b) SV100(c)
+    SV10(d) SV10(e) SV10(f) SV10(g) SV10(h) SV10(i)
+    SV1(s0) SV1(s1) SV1(s2) SV1(s3) SV1(s4) SV1(s5) SV1(s6) SV1(s7)
+    virtual Vector BodyDirection2D();
+};
+class Vector2D
+{
+public:
+	vec_t x, y;
+	vec_t Dot(const Vector2D &v) const { return x * v.x + y * v.y; }
+};
+inline Vector2D &AsVector2D(Vector &v) { return *(Vector2D *)&v; }
+
+bool CAI_Navigator::sub_102f05d0(const Vector *pTarget)
+{
+    if (m_f3c != 0.0f)
+        return true;
+    Vector vecToPos = (*pTarget - ((CNavOwnerView *)m_pOuter)->vfunc220());
+    vecToPos.z = 0;
+    VectorNormalize(vecToPos);
+    float dot = AsVector2D(((CNavOwnerView2 *)m_pOuter)->BodyDirection2D()).Dot(AsVector2D(vecToPos));
+    return m_f3c != 0.0f || dot > 0.766f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f06e0 size=0x222
 #include "utlmemory.h"
 #include "CBaseEntity.h"

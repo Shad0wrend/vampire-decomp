@@ -4138,6 +4138,7 @@
 0x10006857 func   ?sub_1018f920@CBaseEntityUnit@block_1018f920@@QAEXPAH@Z block_1018f920::CBaseEntityUnit::sub_1018f920
 0x1000685c func   ?sub_1028b160@@YIXPAD@Z sub_1028b160
 0x10006861 func   ?sub_103684f0@@YAEXZ sub_103684f0
+0x10006866 func   ?sub_102f05d0@CAI_Navigator@@QAE_NPBVVector@@@Z CAI_Navigator::sub_102f05d0
 0x1000686b func   ?vfunc373@CWeaponMelee_TzimisceMelee@@UAEHXZ CWeaponMelee_TzimisceMelee::vfunc373
 0x10006870 func   ?sub_1036fc00@@YADXZ sub_1036fc00
 0x10006875 func   ?vfunc3@CAI_StandoffBehavior@@UAE_NXZ CAI_StandoffBehavior::vfunc3
