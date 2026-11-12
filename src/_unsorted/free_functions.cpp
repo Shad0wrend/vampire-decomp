@@ -268404,6 +268404,56 @@ CBaseEntity *CWeaponThrown_Chang_Energy_Ball::sub_103f0200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f03e0 size=0xca
+#include "Vector.h"
+#include "CUnknown103f04f0.h"
+#include "QAngle.h"
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define SL100(p) SL10(p##0) SL10(p##1) SL10(p##2) SL10(p##3) SL10(p##4) SL10(p##5) SL10(p##6) SL10(p##7) SL10(p##8) SL10(p##9)
+
+class CSlotEnt
+{
+public:
+	SL100(a0) SL100(a1)
+	SL10(b0) virtual void b10(); virtual void b11(); virtual void b12(); virtual void b13(); virtual void b14();
+	virtual void b15(); virtual void b16();
+	virtual const Vector &GetAbsOrigin(); virtual void v218(); virtual const Vector &GetAbsAngles();
+	SL100(c2) SL10(c3) SL10(c4) SL10(c5) SL10(c6) SL10(c7)
+	virtual void d50(); virtual void d51();
+	virtual void v372(CUnknown103f04f0 handle, const Vector *pVec);
+};
+
+struct CFrag914
+{
+	char pad[0x914];
+	CUnknown103f04f0 m_h914;
+	void sub_103f03e0(CSlotEnt *pEnt);
+};
+
+CSlotEnt *sub_100a99d0(const char *, const Vector &, const Vector &, CSlotEnt *);
+void sub_10139550(const Vector &, Vector *);
+extern float g_104e15fc;
+
+void CFrag914::sub_103f03e0(CSlotEnt *pEnt)
+{
+	if (!pEnt)
+		return;
+	Vector pos = pEnt->GetAbsOrigin();
+	pos.z += g_104e15fc;
+	Vector ang = pEnt->GetAbsAngles();
+	ang.y += 180.0f;
+	CSlotEnt *pNew = sub_100a99d0("item_w_chang_ghost", pos, pEnt->GetAbsAngles(), 0);
+	if (pNew)
+	{
+		Vector vec;
+		sub_10139550(ang, &vec);
+		pNew->v372(m_h914, &vec);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f04f0 size=0xd
 #include "CUnknown103f04f0.h"
 CUnknown103f04f0* CUnknown103f04f0::sub_103f04f0(const CUnknown103f04f0& other)
