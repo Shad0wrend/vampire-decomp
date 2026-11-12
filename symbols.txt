@@ -15693,6 +15693,7 @@
 0x101ce020 func   ?sub_101ce020@@YAHMM@Z sub_101ce020
 0x101d1960 func   ?sub_101d1960@@YAHH@Z sub_101d1960
 0x101d2960 func   ?sub_101d2960@@YAIHPBDH@Z sub_101d2960
+0x101f2ec0 func   ?sub_101f2ec0@@YAPAXPAX@Z sub_101f2ec0
 0x101f2f00 func   ?sub_101f2f00@@YAXHPAD@Z sub_101f2f00
 0x101f2f30 func   ?sub_101f2f30@@YAPAXPAHHH@Z sub_101f2f30
 0x101f2f70 func   ?sub_101f2f70@@YAPADPBD@Z sub_101f2f70

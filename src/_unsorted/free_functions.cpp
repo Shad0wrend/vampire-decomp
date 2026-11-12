@@ -138079,6 +138079,17 @@ void *sub_101f2e20(const char *pszName, int pathID)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2ec0 size=0x26
+extern int g_105a5ee4[];
+extern int g_105a5f28[];
+extern void *(__cdecl *g_109f3840)(void *p);
+
+void *sub_101f2ec0(void *p)
+{
+	return __RTDynamicCast(g_109f3840(p), 0, g_105a5ee4, g_105a5f28, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2f00 size=0x1d
 typedef void (*PFN_109f383c)(int, void *);
 extern PFN_109f383c g_109f383c;
