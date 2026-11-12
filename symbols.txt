@@ -15240,6 +15240,7 @@
 0x100151b3 func   ?sub_1014a0e0@@YAXPAUCUnk1014a0e0@@@Z sub_1014a0e0
 0x100151b8 func   ?sub_1032d890@CBaseCombatCharacter@@QAEPAXPBDH@Z CBaseCombatCharacter::sub_1032d890
 0x100151bd func   ?sub_1008d5f0@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_1008d5f0
+0x100151c2 func   ?sub_1021b9c0@CPropHacking@@QAE_NHPBD@Z CPropHacking::sub_1021b9c0
 0x100151c7 func   ?sub_100ba470@@YAHXZ sub_100ba470
 0x100151cc func   ?vfunc80@CItemGHattersScreenplay@@QAEHXZ CItemGHattersScreenplay::vfunc80
 0x100151d1 func   ?vfunc41@CPhysicsPropContested@@QAEXPAVCBaseEntity@@@Z CPhysicsPropContested::vfunc41

@@ -158815,6 +158815,60 @@ char CPropHacking::sub_1021b750(int a, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021b9c0 size=0x1bd
+#include "CPropHacking.h"
+#include <string.h>
+#include <stdlib.h>
+__declspec(dllimport) int Q_strnicmp(const char *, const char *, int);
+void __fastcall sub_1021bc20(char *);
+
+
+bool CPropHacking::sub_1021b9c0(int a, const char *psz)
+{
+	if (!psz || !strlen(psz))
+		return false;
+	if (m_nSelected09f4 == -1) {
+		int n = m_n0a04;
+		int i = atoi(psz);
+		if (i > 0 && i < n + 1) {
+			i--;
+			if (i <= n - 1)
+				i = (i < 0) ? 0 : i;
+			else
+				i = n - 1;
+			sub_1021bc90(i);
+		}
+		else if (!Q_strnicmp(psz, sub_10219400(0x18) + 1, 1))
+			sub_1021c000();
+		else if (!Q_strnicmp(psz, sub_10219400(0x19) + 1, 1))
+			sub_1021bfd0();
+		else if (!Q_strnicmp(psz, sub_10219400(0x1c) + 1, 1))
+			sub_1021c890(-1);
+		else
+			return false;
+	} else {
+		int len = strlen(psz);
+		if (len != 1)
+			return false;
+		if (!Q_strnicmp(psz, sub_10219400(0x18) + 1, len))
+			sub_1021bc20((char *)this);
+		else if (!Q_strnicmp(psz, sub_10219400(0x19) + 1, 1))
+			sub_1021bc60();
+		else if (!Q_strnicmp(psz, sub_10219400(0x1a) + 1, 1)) {
+			sub_1021bbf0(m_nSelected09f4);
+			sub_1021c040();
+		}
+		else if (!Q_strnicmp(psz, sub_10219400(0x1b) + 1, 1))
+			sub_1021c040();
+		else if (!Q_strnicmp(psz, sub_10219400(0x1c) + 1, 1))
+			sub_1021c890(-1);
+		else
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021bbf0 size=0x1c
 #include "CPropHacking.h"
 
