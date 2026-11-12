@@ -103,4 +103,6 @@ struct CTouchNotifier	// the global at 0x1071a278 (extern CTouchNotifier *g_1071
 	virtual void vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc2(CGameTrace *pTrace, Vector *pVelocity);
+	virtual void vfunc3();
+	virtual void vfunc4(int nLine, const char *pszFmt, ...);	// slot 4 (+0x10): Con_NPrintf, variadic so `this` goes on the stack
 };
