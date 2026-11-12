@@ -154314,6 +154314,42 @@ void CPropHacking::sub_1021b410()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021b5e0 size=0x117
+#include "CPropHacking.h"
+#include "CUnknown10217f50.h"
+#include "CUnknown10219120.h"
+#include "CVSoundActivityTable_t.h"
+#include "utlvector.h"
+
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern CVActivitySound g_1074b330;
+extern int g_1074f75c;
+void sub_10217ac0(void *pThis, const char *pszText, ...);
+
+void CPropHacking::sub_1021b5e0(int a)
+{
+	char bFlag = (char)a;
+	if (!bFlag)
+		m_b083c = bFlag;
+	bFlag ? ((CUnknown10217f50 *)this)->sub_1021b140(sub_10219400(0xf)) : ((CUnknown10217f50 *)this)->sub_1021b140(sub_10219400(0xe));
+	if (m_n09e0 >= 0)
+	{
+		char szLine[0x80];
+		CUtlVector<CPropHackingRecord> &records = *(CUtlVector<CPropHackingRecord> *)&m_pRecords09a0;
+		Q_snprintf(szLine, sizeof(szLine), "\n%s %c%s%c\n\n", sub_10219400(0xd), m_b0984, records[m_n09e0].m_szName, m_b0985);
+		sub_10217ac0(this, szLine);
+	}
+	if (bFlag)
+		sub_10217ac0(this, sub_10219400(0x15));
+	m_flags081c &= ~2;
+	sub_10218ff0(0, m_n0814 - 1);
+	sub_10217ac0(this, sub_10219400(0xc));
+	((CUnknown10219120 *)this)->sub_10219120();
+	g_1074b330.sub_101f5950((int)this, g_1074f75c, 2, 1.0f, 1.25f);
+	sub_10218820(3, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021b750 size=0x1ed
 #include "CBaseEntity.h"
 #include "CPropHacking.h"

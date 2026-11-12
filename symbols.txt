@@ -13928,6 +13928,7 @@
 0x1001399e func   ?vfunc104@CCameraAnimated@@QAEXXZ CCameraAnimated::vfunc104
 0x100139a3 func   ?sub_10288590@@YAMM@Z sub_10288590
 0x100139a8 func   ?sub_100fa3a0@CUtlLinkedList6@@QAEXG@Z CUtlLinkedList6::sub_100fa3a0
+0x100139ad func   ?sub_1021b5e0@CPropHacking@@QAEXH@Z CPropHacking::sub_1021b5e0
 0x100139b2 func   ?sub_101f4f50@S9@@QAEPAU1@XZ S9::sub_101f4f50
 0x100139bc func   ?sub_1019e740@@YG_NPAUEntVt@@HPAM@Z sub_1019e740
 0x100139c1 func   ?vfunc274@CBaseAnimatingOverlay@@QAEXH@Z CBaseAnimatingOverlay::vfunc274
