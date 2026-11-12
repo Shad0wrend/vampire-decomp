@@ -11980,6 +11980,7 @@
 0x10010e9c func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCAI_BaseNPC@@@@V?$CUtlMemory@V?$CHandle@VCAI_BaseNPC@@@@@@@@$0M@@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc3
 0x10010ea1 func   ?sub_1019b360@@YAHXZ sub_1019b360
 0x10010ea6 func   ?sub_102517b0@@YIHPAX@Z sub_102517b0
+0x10010eb0 func   ?sub_1017ed00@CBasePlayer@@QAEXHPAVCBaseEntity@@ABVVector@@@Z CBasePlayer::sub_1017ed00
 0x10010eb5 func   ?sub_10232d80@@YA?AVVector@@XZ sub_10232d80
 0x10010eba func   ?sub_1012d290@@YAHXZ sub_1012d290
 0x10010ebf func   ?sub_1032b960@@YAPAVVector@@XZ sub_1032b960

@@ -98264,6 +98264,35 @@ void CBasePlayer::sub_1017ec40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017ed00 size=0x12a
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "ConVar.h"
+
+extern ConVar g_10725890;
+extern ConVar g_107257b8;
+
+// TARGET: CBasePlayer::sub_1017ed00
+void CBasePlayer::sub_1017ed00(int level, CBaseEntity *pNPC, const Vector &vecLocation)
+{
+	if (sub_1017f8b0() > 0)
+		return;
+	if (*(int *)&m_flSpawnResponseCopsTimer == 0x7f7fffff)
+	{
+		m_iSpawnResponseCopsLevel = level;
+		m_hSpawnResponseCopsNPC = pNPC;
+		m_vecSpawnResponseCopsLocation = vecLocation;
+		m_flSpawnResponseCopsTimer = enginerandom->vfunc1((float)(g_107257b8.GetFloat() * 1.0), (float)(g_10725890.GetFloat() * 1.0f)) + gpGlobals->curtime;
+	}
+	else if (level > m_iSpawnResponseCopsLevel)
+	{
+		m_iSpawnResponseCopsLevel = level;
+		m_hSpawnResponseCopsNPC = pNPC;
+		m_vecSpawnResponseCopsLocation = vecLocation;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017ee80 size=0x246
 #include "CBasePlayer.h"
 #include "CWorldEvents.h"
