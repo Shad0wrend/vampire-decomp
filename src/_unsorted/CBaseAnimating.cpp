@@ -1003,6 +1003,112 @@ float __fastcall sub_10091fe0(CBaseAnimating *self, int unused, int iParameter, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100927f0 size=0x2a7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+#define V4(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3();
+#define V16(a) V4(a##a) V4(a##b) V4(a##c) V4(a##d)
+#define V64(a) V16(a##a) V16(a##b) V16(a##c) V16(a##d)
+
+struct ParentView {
+    V64(p) V64(q) V64(r) V64(s)
+    virtual void vfunc256(int iBone, float *pMatrix);
+};
+struct AimEntView {
+    V64(p) V64(q) V4(r) V4(s) virtual void t0();
+    virtual ParentView *vfunc137();
+};
+struct GBT_Bone {
+    int nameindex;
+    int parent;
+    int m_unk8[32];
+    int flags;
+    int m_unk8c[5];
+    const char *Name() const { return (const char *)this + nameindex; }
+};
+struct GBT_Hdr {
+    int m_unk[60];
+    int numbones;
+    int boneindex;
+    GBT_Bone *pBone(int i) const { return (GBT_Bone *)((char *)this + boneindex) + i; }
+};
+
+extern float *sub_100c45c0(void *pCache, int iBone);
+extern void sub_10138600(float *src, float *dst);
+extern void sub_10138630(float *src, float *dst);
+extern void sub_10138df0(float *a, float *b, float *out);
+
+void CBaseAnimating::vfunc256(int iBone, float *pOut)
+{
+    ScopeTrace trace("CBaseAnimating::GetBoneTransform", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
+    GBT_Hdr *pStudio = (GBT_Hdr *)sub_100952d0(-1);
+    if (!pStudio)
+        return;
+    if (iBone < 0 || iBone >= pStudio->numbones)
+        return;
+    void *pCache = (void *)sub_10095460();
+    float *pBone = sub_100c45c0(pCache, iBone);
+    if (!pBone) {
+        if ((unsigned char)(*(unsigned int *)((char *)this + 0x268) >> 11) & 1)
+            vfunc98();
+        sub_10138600((float *)((char *)this + 0x130), pOut);
+        return;
+    }
+    sub_10138600(pBone, pOut);
+    if (vfunc94() == 0xb || vfunc94() == 0xc) {
+        AimEntView *pAim = (AimEntView *)((EHANDLE *)((char *)this + 0x37c))->Get();
+        if (pAim) {
+            ParentView *pParent = pAim->vfunc137();
+            if (pParent) {
+                GBT_Hdr *pParentStudio = (GBT_Hdr *)((CBaseAnimating *)pParent)->sub_100952d0(-1);
+                if (pParentStudio) {
+                    int cur = iBone;
+                    int j;
+                    while (cur >= 0) {
+                        GBT_Bone *pCur = pStudio->pBone(cur);
+                        const char *pName = pCur->Name();
+                        GBT_Bone *pPB = pParentStudio->pBone(0);
+                        for (j = 0; j < pParentStudio->numbones; j++, pPB++) {
+                            if ((pPB->flags & 0xc) && !_strcmpi(pPB->Name(), pName))
+                                goto found;
+                        }
+                        cur = pStudio->pBone(cur)->parent;
+                    }
+                    goto done;
+found:
+                    if (cur >= 0 && j >= 0) {
+                        if (cur == iBone) {
+                            pParent->vfunc256(j, pOut);
+                        } else {
+                            float mA[12], mInv[12], mB[12];
+                            pParent->vfunc256(j, mA);
+                            float *pMat = sub_100c45c0(pCache, cur);
+                            if (pMat) {
+                                sub_10138630(pMat, mInv);
+                                sub_10138df0(mInv, pOut, mB);
+                                sub_10138df0(mA, mB, pOut);
+                            }
+                        }
+                    }
+done:
+                    ;
+                }
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10092b50 size=0xfb
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
