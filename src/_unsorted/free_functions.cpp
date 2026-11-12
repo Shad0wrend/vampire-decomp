@@ -188977,6 +188977,76 @@ int CAI_BaseNPCTroika::sub_102a0ed0(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a0fb0 size=0x1aa
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CAI_MoveProbe.h"
+#include "CCollisionProperty.h"
+#include "CTraceFilterNav.h"
+#include "CGameTrace.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+
+struct CMoveProbeOuter
+{
+	char pad0000[0x368];
+	int m_n368;
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void sub_1026e940(const float *start, const float *end, const float *mins, const float *maxs, unsigned int mask, void *pFilter, CGameTrace *pTrace, char bFlag);
+
+struct CMoveProbeView : CAI_MoveProbe
+{
+	void TraceHull(const float *vecStart, const float *vecEnd, const float *hullMin, const float *hullMax, unsigned int mask, CGameTrace *pResult)
+	{
+		g_109f3648->EnterScope("CAI_MoveProbe_TraceHull", 0, "Unaccounted", false);
+		CTraceFilterNav filter;
+		filter.sub_102e30d0((int)m_pOuter, ((CMoveProbeOuter *)m_pOuter)->m_n368);
+		sub_1026e940(vecStart, vecEnd, hullMin, hullMax, mask, &filter, pResult, 1);
+		g_109f3648->ExitScope();
+	}
+};
+
+struct CTraceView : CGameTrace
+{
+	bool DidHit() const { return m_fraction < 1 || m_allsolid || m_startsolid; }
+};
+
+struct CIsAreaClearView : CAI_BaseNPCTroika
+{
+	const char *const &name26c() { return *(const char **)((char *)this + 0x26c); }
+	CCollisionProperty *coll() { return (CCollisionProperty *)((char *)this + 0x270); }
+	const char *GetDebugName() { return this ? STRINGR(name26c()) : g_105387dc; }
+};
+
+// TARGET: CNPC_VMingXiaoTentacle::sub_102a0fb0
+bool CNPC_VMingXiaoTentacle::sub_102a0fb0(void *vecPosition, int collisionMask, float *pMins, float *pMaxs)
+{
+	CIsAreaClearView *t = (CIsAreaClearView *)this;
+	ScopeTrace trace("CAI_BaseNPCTroika::IsAreaClear", t->GetDebugName());
+	const float *mins = pMins ? pMins : (float *)t->coll()->vfunc1();
+	const float *maxs = pMaxs ? pMaxs : (float *)t->coll()->vfunc2();
+	CTraceView tr;
+	CMoveProbeView *pProbe = (CMoveProbeView *)t->m_pMoveProbe5d40;
+	t->m_b63da = 1;
+	pProbe->TraceHull((float *)vecPosition, (float *)vecPosition, mins, maxs, collisionMask, &tr);
+	t->m_b63da = 0;
+	if (tr.DidHit())
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a11d0 size=0x182
 #include "CCollisionProperty.h"
 #include "CGameTrace.h"
