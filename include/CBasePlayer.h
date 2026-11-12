@@ -210,6 +210,7 @@ public:
 	CBP_V1(sl4) virtual float vfunc464(); virtual float vfunc465(); virtual float vfunc466(); CBP_V1(sl8)
 	virtual void vfunc468();	// registers the "player_stand" / "player_crouch" collision hulls (16x16x36 and -16,-16,0) for the sub-object at +0x270
 
+	void vfunc437();	// slot 437: player per-frame update
 	char m_pad0004[0x184 - 0x4];	// 0x0004 .. 0x0183
 	Vector m_vecViewOffset184;	// 0x0184: the eye offset (CBaseEntity::m_vecViewOffset)
 	Vector m_vecMovedir190;
