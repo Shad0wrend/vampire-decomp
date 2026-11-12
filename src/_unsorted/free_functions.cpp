@@ -3894,6 +3894,78 @@ void sub_10032380(gamevcollisionevent_t *pEvent, SSurfaceData *pSurface)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100324b0 size=0x141
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "CSoundEnt.h"
+
+void *__fastcall sub_100a8240(void *);
+void *__fastcall sub_100a82c0(void *);
+char __cdecl sub_10031bd0(int);
+void __cdecl sub_10031c70(int);
+
+struct CPhysFrictionParams
+{
+	int m_iVolume;	// 0x00
+	char m_pad04[0x31 - 4];
+	char m_bFlag;	// 0x31
+};
+extern CPhysFrictionParams g_1072bc94;
+
+#define VT10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define VT100(p) VT10(p##0) VT10(p##1) VT10(p##2) VT10(p##3) VT10(p##4) VT10(p##5) VT10(p##6) VT10(p##7) VT10(p##8) VT10(p##9)
+
+struct CPhysFrictionTarget
+{
+	VT100(a) VT100(b) VT10(c) VT10(d)
+	virtual float *vfunc220();
+};
+
+void sub_100324b0(CBaseEntity *pEntity, void *pObject, float flSpeed, int n)
+{
+	ScopeTrace trace("PhysFrictionSound", g_106b8540);
+
+	if (!pEntity)
+		return;
+	if (flSpeed < 75.0)
+		return;
+	if (n < 0)
+		return;
+
+	void *p1 = sub_100a8240(pEntity);
+	int obj1;
+	if (!p1) {
+		obj1 = 0;
+	} else {
+		obj1 = *(int *)((char *)p1 + 0x9c);
+		if (obj1 && !sub_10031bd0(obj1)) {
+			int vol = g_1072bc94.m_iVolume;
+			char flag = g_1072bc94.m_bFlag;
+			CSoundEnt::sub_101bac90(2, (const Vector *)((CPhysFrictionTarget *)pEntity)->vfunc220(), vol, 0.2f, flag, (CBaseEntity *)obj1);
+			sub_10031c70(obj1);
+		}
+	}
+	void *p2 = sub_100a82c0(pEntity);
+	if (p2) {
+		int obj2 = *(int *)((char *)p2 + 0x9c);
+		if (obj2 && obj1 != obj2 && !sub_10031bd0(obj2)) {
+			int vol = g_1072bc94.m_iVolume;
+			char flag = g_1072bc94.m_bFlag;
+			CSoundEnt::sub_101bac90(2, (const Vector *)((CPhysFrictionTarget *)pEntity)->vfunc220(), vol, 0.2f, flag, (CBaseEntity *)obj2);
+			sub_10031c70(obj2);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032660 size=0x8f
 #include "CCollisionEvent.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
