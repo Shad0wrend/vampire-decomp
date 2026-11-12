@@ -211638,6 +211638,98 @@ void CUnknown102f09a0::sub_102f09a0(CAI_Waypoint *pWaypoint, const float *pPosit
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f0ab0 size=0x2a0
+#include "CAI_Navigator.h"
+#include "CEntityVSlots.h"
+#include "CUnk102ee940.h"
+#include "Vector.h"
+
+float __cdecl sub_10146150(const Vector *pVec);
+
+struct SimplifyForwardScanParams
+{
+	float scanDist;
+	float radius;
+	float increment;
+	float maxSamples;
+};
+
+struct CAI_NavigatorScan : CAI_Navigator
+{
+	bool sub_102f0ab0(const SimplifyForwardScanParams &params, CAI_NavPathNode *pCurWaypoint, const Vector &curPoint, float distRemaining, bool skipTest, int *pTestCount, char *pbDone);
+	bool sub_10006726(const SimplifyForwardScanParams &params, CAI_NavPathNode *pCurWaypoint, const Vector &curPoint, float distRemaining, bool skipTest, int *pTestCount, char *pbDone);
+	void sub_102f09a0(CAI_NavPathNode *pWaypoint, const Vector &point);
+};
+
+inline const Vector &GetPos(const CAI_NavPathNode *p) { return *(const Vector *)&p->m_v3Pos; }
+
+inline float ComputePathDistance(int navType, const Vector &start, const Vector &end)
+{
+	if (navType == 0)
+		return (end - start).Length2D();
+	else
+		return (end - start).Length();
+}
+
+// TARGET: CAI_NavigatorScan::sub_102f0ab0
+bool CAI_NavigatorScan::sub_102f0ab0(const SimplifyForwardScanParams &params, CAI_NavPathNode *pCurWaypoint, const Vector &curPoint,
+                                 float distRemaining, bool skipTest, int *pTestCount, char *pbDone)
+{
+	if (!(*pTestCount >= params.maxSamples))
+	{
+		CAI_NavPathNode *pNextWaypoint = pCurWaypoint->m_p30;
+		if (distRemaining > 0 && pNextWaypoint && pCurWaypoint->m_p2c == pNextWaypoint->m_p2c && !(pCurWaypoint->m_flags28 & 0x2a))
+		{
+			Vector nextPoint;
+			CAI_NavPathNode *pWaypoint;
+			float distToNext;
+			if (m_i18 == 0)
+			{
+				Vector delta = GetPos(pNextWaypoint) - curPoint;
+				distToNext = ((CUnk102ee940 *)&delta)->sub_102ee940();
+			}
+			else
+			{
+				distToNext = sub_10146150(&((Vector *)&pNextWaypoint->m_v3Pos)->sub_10146190(curPoint));
+			}
+			if (distToNext < params.increment * 1.10)
+			{
+				nextPoint = GetPos(pNextWaypoint);
+				distRemaining -= distToNext;
+				pWaypoint = pNextWaypoint;
+			}
+			else
+			{
+				Vector offset = GetPos(pNextWaypoint) - GetPos(pCurWaypoint);
+				VectorNormalize(offset);
+				offset *= params.increment;
+				nextPoint = curPoint + offset;
+				distRemaining -= params.increment;
+				pWaypoint = pCurWaypoint;
+			}
+
+			int navType = m_i18;
+			bool skipTestNext = (ComputePathDistance(navType, *((CEntityVSlots *)m_pOuter)->slot220(), nextPoint) > params.radius + 0.1);
+			if (sub_10006726(params, pWaypoint, nextPoint, distRemaining, skipTestNext, pTestCount, pbDone))
+				return true;
+			if (*pbDone)
+				return false;
+		}
+
+		if (!skipTest && sub_102f05d0(&curPoint))
+		{
+			++*pTestCount;
+			if (sub_102f06e0((void *)&curPoint, pbDone))
+			{
+				sub_102f09a0(pCurWaypoint, curPoint);
+				return true;
+			}
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f0e00 size=0x5d
 #include "CAI_Navigator.h"
 struct CAI_NavigatorView : CAI_Navigator

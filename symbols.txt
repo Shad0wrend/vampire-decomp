@@ -4130,6 +4130,7 @@
 0x10006717 func   ?sub_10073a50@CUnknown10076da0Entry@@QAEPAU1@PAUCUnknown10076da0@@PBDH@Z CUnknown10076da0Entry::sub_10073a50
 0x1000671c func   ?sub_1033d7d0@CUnknown1033d7d0@@QAEXPAUinputdata_t@@@Z CUnknown1033d7d0::sub_1033d7d0
 0x10006721 func   ?sub_102e12e0@@YIXPAUCOwner@@@Z sub_102e12e0
+0x10006726 func   ?sub_102f0ab0@CAI_NavigatorScan@@QAE_NABUSimplifyForwardScanParams@@PAUCAI_NavPathNode@@ABVVector@@M_NPAHPAD@Z CAI_NavigatorScan::sub_102f0ab0
 0x1000672b func   ?sub_102e3a60@CMPV@@QAEXVVector@@0H@Z CMPV::sub_102e3a60
 0x10006730 func   ?sub_103b3110@@YADXZ sub_103b3110
 0x10006735 func   ?vfunc175@CTriggerSave@@UAEXPAVCBaseEntity@@@Z CTriggerSave::vfunc175
