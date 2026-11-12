@@ -49113,6 +49113,53 @@ float CMomentaryRotButton::sub_100ca630(float *pAngles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca710 size=0x230
+#include "CMomentaryRotButton.h"
+#include "inputdata_t.h"
+#include "QAngle.h"
+#include <math.h>
+
+extern QAngle g_1070d9d0;	// vec3_angle
+float sub_101c1af0(int flags, const float *pA, const float *pB);
+
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+#define min(a, b) (((a) < (b)) ? (a) : (b))
+
+inline float VariantFloat(const variant_t &v) { return (v.fieldType == 1) ? v.flValue : 0; }
+
+// TARGET: CMomentaryRotButton::sub_100ca710
+void CMomentaryRotButton::sub_100ca710(inputdata_t &inputdata)
+{
+	m_flTarget5fc = clamp(VariantFloat(inputdata.value), 0.0f, 1.0f);
+
+	float flCurPos = sub_100ca630(vfunc221());
+	if (flCurPos < m_flTarget5fc)
+	{
+		QAngle vel = m_flSpeed164 * *(QAngle *)m_vecMoveDir;
+		sub_100b2f50(&vel.x);
+		m_nDirection5d8 = 1;
+	}
+	else if (flCurPos > m_flTarget5fc)
+	{
+		QAngle vel = -m_flSpeed164 * *(QAngle *)m_vecMoveDir;
+		sub_100b2f50(&vel.x);
+		m_nDirection5d8 = -1;
+	}
+	else
+	{
+		sub_100b2f50(&g_1070d9d0.x);
+		return;
+	}
+
+	m_pfnThink114 = &CMomentaryRotButton::sub_100caa40;
+	QAngle vecNewAngles = *(QAngle *)&m_vecStart5e0 + *(QAngle *)m_vecMoveDir * (m_flRange4fc * m_flTarget5fc);
+	float flAngleDelta = fabs(sub_101c1af0(m_nSpawnFlags204, &vecNewAngles.x, vfunc221()));
+	float dt = flAngleDelta / m_flSpeed164;
+	m_flTimeDelta = min(dt, 0.1f);
+	m_flTime3fc = m_flTimeDelta + m_flLocalTime3f4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca9d0 size=0x46
 #include "CMomentaryRotButton.h"
 void CMomentaryRotButton::sub_100ca9d0()

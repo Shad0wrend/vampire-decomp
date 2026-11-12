@@ -8500,6 +8500,7 @@
 0x1000c649 func   ?sub_100b7cc0@CVirtList_100b7cc0@@QAEXPAH@Z CVirtList_100b7cc0::sub_100b7cc0
 0x1000c64e func   ?sub_100e7f70@@YA_NPADHPBD1@Z sub_100e7f70
 0x1000c653 func   ?sub_103e6ba0@@YAHXZ sub_103e6ba0
+0x1000c658 func   ?sub_100ca710@CMomentaryRotButton@@QAEXAAUinputdata_t@@@Z CMomentaryRotButton::sub_100ca710
 0x1000c65d func   ?vfunc580@CNPC_VSabbatLeader@@QAEHXZ CNPC_VSabbatLeader::vfunc580
 0x1000c667 func   ?vfunc82@CWeaponThrown_Chang_Energy_Ball@@UAEPAXXZ CWeaponThrown_Chang_Energy_Ball::vfunc82
 0x1000c66c func   ?vfunc82@CNPC_VTzimisce@@UAEPAUdatamap_t@@XZ CNPC_VTzimisce::vfunc82
