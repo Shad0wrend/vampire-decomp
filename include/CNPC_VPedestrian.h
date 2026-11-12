@@ -18,6 +18,9 @@ public:
 	void sub_10334b10();	// CBaseCombatCharacter
 	void sub_102c4430(const char *pszName);	// follower type
 	void sub_10273070(int a);
+	char sub_1001482b(int a);
+	void sub_1028ea60(int a, Vector *pPos, CBaseEntity *pEnt);
+	int sub_103851e0();
 
 	// Slot 301, declared as a plain member.
 	void vfunc301(int a, int b);	// scope trace aside: stores the collision bounds (mins / maxs of the object at +0x270) at +0x6660 / +0x666c, runs CAI_BaseNPCTroika::vfunc301(a, b), clears the think function and makes the entity non-solid
@@ -52,28 +55,38 @@ public:
 	int m_n1b2c;	// 0x1b2c
 	const char *m_pszFile1b30;	// 0x1b30: source file of the last schedule pick
 	int m_nLine1b34;	// 0x1b34
-	char m_pad1b38[0x1b3c - 0x1b38];
+	int m_n1b38;
 	const char *m_pszFile1b3c;	// 0x1b3c: source file of the last state change
 	int m_nLine1b40;	// 0x1b40
 	char m_pad1b44[0x5b78 - 0x1b44];
-	unsigned int m_h5b78;	// 0x5b78: entity handle
-	char m_pad5b7c[0x5cc0 - 0x5b7c];
+	EHANDLE m_h5b78;
+	EHANDLE m_h5b7c;
+	char m_b5b80;
+	char m_pad5b81[0x5cc0 - 0x5b81];
 	int m_n5cc0;	// 0x5cc0: NPC state
 	int m_n5cc4;	// 0x5cc4
 	char m_pad5cc8[0x60d0 - 0x5cc8];
 	Vector m_vec60d0;	// 0x60d0
 	char m_pad60dc[0x6160 - 0x60dc];
-	unsigned int m_h6160;	// 0x6160: entity handle
+	EHANDLE m_h6160;
 	char m_pad6164[0x618c - 0x6164];
-	unsigned int m_h618c;	// 0x618c: entity handle
+	EHANDLE m_h618c;
 	char m_pad6190[0x623c - 0x6190];
 	float m_f623c;	// 0x623c
-	char m_pad6240[0x62a8 - 0x6240];
+	char m_pad6240[0x6264 - 0x6240];
+	float m_f6264;
+	char m_pad6268[0x628c - 0x6268];
+	EHANDLE m_h628c;
+	char m_pad6290[0x62a8 - 0x6290];
 	Vector m_vecInitialPosition;	// 0x62a8 (CAI_BaseNPCTroika::m_vecInitialPosition): spawn position re-applied by vfunc130
 	Vector m_qaInitialAngles;	// 0x62b4 (CAI_BaseNPCTroika::m_qaInitialAngles): spawn angles re-applied by vfunc130
 	char m_pad62c0[0x634c - 0x62c0];
 	int m_n634c;	// 0x634c
-	char m_pad6350[0x641c - 0x6350];
+	char m_pad6350[0x6364 - 0x6350];
+	unsigned int m_n6364;
+	char m_pad6368[0x6380 - 0x6368];
+	Vector m_vecRec6380;
+	char m_pad638c[0x641c - 0x638c];
 	int m_n641c;	// 0x641c
 	char m_pad6420[0x6660 - 0x6420];
 	float m_vecMins6660[3];	// 0x6660
@@ -169,7 +182,7 @@ public:
 	virtual void vfunc217_slot();
 	virtual void vfunc218_slot();
 	virtual void vfunc219_slot();
-	virtual void vfunc220_slot();
+	virtual const Vector *vfunc220_slot();
 	virtual void vfunc221_slot();
 	virtual void vfunc222_slot();
 	virtual void vfunc223();
@@ -410,7 +423,7 @@ public:
 	virtual void vfunc458();
 	virtual void vfunc459();
 	virtual void vfunc460();
-	virtual void vfunc461();
+	virtual int vfunc461();
 	virtual void vfunc462();
 	virtual void vfunc463();
 	virtual void vfunc464();
@@ -530,6 +543,22 @@ public:
 	virtual void vfunc578();
 	virtual void vfunc579();
 	virtual int vfunc580();
+	virtual void vfunc581();
+	virtual void vfunc582();
+	virtual void vfunc583();
+	virtual void vfunc584();
+	virtual void vfunc585();
+	virtual void vfunc586();
+	virtual void vfunc587();
+	virtual void vfunc588();
+	virtual void vfunc589();
+	virtual void vfunc590();
+	virtual void vfunc591();
+	virtual void vfunc592();
+	virtual void vfunc593();
+	virtual void vfunc594();
+	virtual void vfunc595();
+	virtual void vfunc596(CBaseEntity *pEnt);
 	char m_pad6679[0x667c - 0x6679];
 	int m_eLevelResetType;	// 0x667c
 	char m_pad6680[0x6684 - 0x6680];
