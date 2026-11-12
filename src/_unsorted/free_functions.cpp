@@ -244210,6 +244210,93 @@ void CNPC_VNewscaster::sub_103a0670()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a07f0 size=0x225
+#include <string.h>
+
+__declspec(dllimport) void DevWarning(const char *fmt, ...);
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+int sub_101d2850(const char *s, int flags);
+
+struct NewsKV
+{
+	virtual const char *vfunc0();
+	virtual void vfunc1();
+	virtual NewsKV *vfunc2(const char *name);
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual NewsKV *vfunc5();
+	virtual void vfunc6();
+	virtual void vfunc7();
+	virtual void vfunc8();
+	virtual void vfunc9();
+	virtual void vfunc10();
+	virtual void vfunc11();
+	virtual void vfunc12();
+	virtual char *vfunc13(const char *name, const char *def);
+};
+
+struct NewsVersion
+{
+	char *dependency;
+	char *filename;
+};
+
+struct NewsEntry
+{
+	char *story;
+	NewsVersion versions[4];
+	int selected;
+};
+
+inline bool CopyString(char *&dest, const char *src)
+{
+	if (src && strlen(src)) {
+		dest = new char[strlen(src) + 1];
+		Q_strncpy(dest, src, strlen(src) + 1);
+		return true;
+	}
+	return false;
+}
+
+struct CThisView103a07f0 { bool sub_103a07f0(NewsKV *kv, NewsEntry *out); };
+
+// TARGET: CThisView103a07f0::sub_103a07f0
+bool CThisView103a07f0::sub_103a07f0(NewsKV *kv, NewsEntry *out)
+{
+	const char *key = kv->vfunc0();
+	int n = 0;
+	if (strstr(key, "Story")) {
+		CopyString(out->story, kv->vfunc13("Name", "STORY"));
+		for (kv = kv->vfunc2("Version"); kv; kv = kv->vfunc5()) {
+			char *dep = kv->vfunc13("dependency", 0);
+			char *file = kv->vfunc13("filename", 0);
+			if (n >= 4) {
+				DevWarning("Newscaster: too many versions in %s! skipping %s\n", out->story, file);
+			} else {
+				CopyString(out->versions[n].dependency, dep);
+				if (CopyString(out->versions[n].filename, file))
+					n++;
+			}
+		}
+	} else {
+		DevWarning("Newscaster: invalid key! (%s)\n", key);
+	}
+	for (int i = 0; i < n; i++) {
+		const char *dep = out->versions[i].dependency;
+		if (!dep || !strlen(dep) || sub_101d2850(dep, 0x102)) {
+			out->selected = i;
+			return true;
+		}
+	}
+	delete out->story;
+	for (int j = 0; j < n; j++) {
+		delete out->versions[j].dependency;
+		delete out->versions[j].filename;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a0ab0 size=0x20d
 #include "utlvector.h"
 #include "CNPC_VNewscaster.h"
