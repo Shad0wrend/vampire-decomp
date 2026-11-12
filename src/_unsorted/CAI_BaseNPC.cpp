@@ -3070,6 +3070,249 @@ Vector CAI_BaseNPC::vfunc533(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102767d0 size=0xb38
+#include "CAI_BaseNPC.h"
+#include <string.h>
+#include "Tier1.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+
+// TARGET: ?sub_102767d0@CAI_BaseNPC@@QAEHXZ
+extern char g_106b8540[];
+extern Vector g_1070d1b0;	// vec3_origin
+extern float g_1070d9d0[];	// vec3_angle
+__declspec(dllimport) int Q_snprintf(char *pDest, int destLen, const char *pFormat, ...);
+void sub_101434b0(int ent, int text_offset, const char *text, int duration, int r, int g, int b, int a);	// NDebugOverlay::EntityText
+
+#define FLD(T, o) (*(T *)((char *)this + (o)))
+#define EFLD(p, T, o) (*(T *)((char *)(p) + (o)))
+
+struct CAI_DbgTask
+{
+	int iTask;
+	float flTaskData;
+};
+
+struct CAI_DbgSchedule
+{
+	int m_unk00[8];
+	CAI_DbgTask *m_pTaskList;	// 0x20
+	int m_nTasks;	// 0x24
+	int m_unk28[6];
+	const char *m_pszName;	// 0x40
+	CAI_DbgTask *GetTaskList() const { return m_pTaskList; }
+	int NumTasks() const { return m_nTasks; }
+};
+
+struct CAI_DbgMemory
+{
+	int m_unk00[9];
+	unsigned int m_hEnemy;	// 0x24
+	int m_unk28[4];
+	CAI_DbgMemory *m_pNext;	// 0x38
+};
+
+inline CAI_DbgMemory *GetFirstDbg(void *pList, CAI_DbgMemory **pIter) { return (*pIter = *(CAI_DbgMemory **)((char *)pList + 0xc)); }
+inline CAI_DbgMemory *GetNextDbg(CAI_DbgMemory **pIter) { return (*pIter = (*pIter)->m_pNext); }
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+int CAI_BaseNPC::sub_102767d0()
+{
+	int text_offset = sub_1033e4a0();
+
+	if (FLD(unsigned int, 0x224) & 0x80000)
+	{
+		char tempstr[512];
+		Q_snprintf(tempstr, sizeof(tempstr), "Health: %i", FLD(int, 0x210));
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		Q_snprintf(tempstr, sizeof(tempstr), "Squad: %c : ", FLD(int, 0x5bb0) > 0 ? 'X' : 'O');
+		if (FLD(void *, 0x5da4))
+		{
+			const char *pName = EFLD(FLD(void *, 0x5da4), const char *, 4);
+			strncat(tempstr, pName ? pName : g_106b8540, sizeof(tempstr));
+			strncat(tempstr, "\n", sizeof(tempstr));
+		}
+		else
+		{
+			strncat(tempstr, " - \n", sizeof(tempstr));
+		}
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		g_109f3890(tempstr, "Enemy: ", sizeof(tempstr));
+		if (vfunc167())
+		{
+			if (EFLD(vfunc167(), const char *, 0x26c))
+			{
+				const char *pName = EFLD(vfunc167(), const char *, 0x26c);
+				strcat(tempstr, pName ? pName : g_106b8540);
+				strcat(tempstr, "\n");
+			}
+			else
+			{
+				strcat(tempstr, STRINGR(EFLD(vfunc167(), const char *, 0x11c)));
+				strcat(tempstr, "\n");
+			}
+		}
+		else
+		{
+			strcat(tempstr, " - \n");
+		}
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		Q_snprintf(tempstr, sizeof(tempstr), "Slot:  %s \n", ((CEntityVSlots *)this)->slot546(FLD(int, 0x5dac)));
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+	}
+
+	if (FLD(unsigned int, 0x224) & 1)
+	{
+		char tempstr[512];
+
+		int i = 0;
+		CAI_DbgMemory *iter;
+		for (CAI_DbgMemory *pEMemory = GetFirstDbg(vfunc541(), &iter); pEMemory != 0; pEMemory = GetNextDbg(&iter))
+		{
+			CAI_BaseNPC *pEnemy = (CAI_BaseNPC *)EHandle_Get(pEMemory->m_hEnemy);
+			if (pEnemy)
+			{
+				Q_snprintf(tempstr, sizeof(tempstr), "MEM%02d: %s", i, pEnemy->sub_100ab4f0());
+				sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+				text_offset++;
+			}
+			i++;
+		}
+
+		Q_snprintf(tempstr, sizeof(tempstr), "Health: %i", FLD(int, 0x210));
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		if (sub_10007e19())
+		{
+			int ammo1 = EFLD(sub_10007e19(), int, 0x748) >= 0 ? sub_103346c0(EFLD(sub_10007e19(), int, 0x748)) : -1;
+			int ammo2 = EFLD(sub_10007e19(), int, 0x744) >= 0 ? sub_103346c0(EFLD(sub_10007e19(), int, 0x744)) : -1;
+			Q_snprintf(tempstr, sizeof(tempstr), "Weapon: %s (%d/%d) (%d/%d)",
+				((CEntityVSlots *)sub_10007e19())->slot348(),
+				EFLD(sub_10007e19(), int, 0x74c), ammo2,
+				EFLD(sub_10007e19(), int, 0x750), ammo1);
+		}
+		else
+		{
+			Q_snprintf(tempstr, sizeof(tempstr), "UNARMED");
+		}
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		Q_snprintf(tempstr, sizeof(tempstr), "Stat: %s, ", vfunc406(FLD(int, 0x5cc0)));
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		int navType = sub_1027d990();
+		Q_snprintf(tempstr, sizeof(tempstr), "Move: %s, ", vfunc407(navType));
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		if (FLD(CAI_DbgSchedule *, 0x5c38))
+		{
+			const char *pName = FLD(CAI_DbgSchedule *, 0x5c38)->m_pszName;
+			if (!pName)
+				pName = "Unknown";
+			Q_snprintf(tempstr, sizeof(tempstr), "Schd: %s, ", pName);
+			sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+			text_offset++;
+
+			if (FLD(unsigned int, 0x224) & 0x100000)
+			{
+				for (int i = 0; i < FLD(CAI_DbgSchedule *, 0x5c38)->NumTasks(); i++)
+				{
+					Q_snprintf(tempstr, sizeof(tempstr), "%s%s%s%s",
+						(i == 0) ? "Task:" : "       ",
+						(i == FLD(int, 0x5c40)) ? "->" : "   ",
+						(const char *)vfunc449(FLD(CAI_DbgSchedule *, 0x5c38)->GetTaskList()[i].iTask),
+						(i == FLD(int, 0x5c40)) ? "<-" : g_106b8540);
+					sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+					text_offset++;
+				}
+			}
+			else
+			{
+				int *pTask = sub_1028a150();
+				if (pTask)
+					Q_snprintf(tempstr, sizeof(tempstr), "Task: %s (#%d), ", (const char *)vfunc449(*pTask), FLD(int, 0x5c40));
+				else
+					g_109f3890(tempstr, "Task: None", sizeof(tempstr));
+				sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+				text_offset++;
+			}
+		}
+
+		if (FLD(int, 0xfec) != -1 && FLD(int, 0xff0) != -1 && FLD(int, 0xfec) != 0)
+		{
+			int iActivity = vfunc375(FLD(int, 0xfec));
+			iActivity = vfunc381(iActivity);
+			iActivity = vfunc376(iActivity);
+			int iIdealActivity = vfunc375(FLD(int, 0xff0));
+			iIdealActivity = vfunc381(iIdealActivity);
+			iIdealActivity = vfunc376(iIdealActivity);
+			const char *pszActivity = sub_1008ff50(sub_1008dc40(iActivity, -1));
+			const char *pszIdealActivity = sub_1008ff50(sub_1008dc40(iIdealActivity, -1));
+			Q_snprintf(tempstr, sizeof(tempstr), "Actv: %s (%s)\n", pszActivity, pszIdealActivity);
+		}
+		else if (FLD(int, 0xfec) == 0)
+		{
+			g_109f3890(tempstr, "Actv: RESET", sizeof(tempstr));
+		}
+		else
+		{
+			g_109f3890(tempstr, "Actv: INVALID", sizeof(tempstr));
+		}
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		if (FLD(CAI_DbgSchedule *, 0x5f3c))
+		{
+			const char *pName = FLD(CAI_DbgSchedule *, 0x5f3c)->m_pszName;
+			if (!pName)
+				pName = "Unknown";
+			Q_snprintf(tempstr, sizeof(tempstr), "Intr: %s (%s)\n", pName, FLD(const char *, 0x5f34));
+			sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+			text_offset++;
+		}
+
+		if (FLD(CAI_DbgSchedule *, 0x5f38))
+		{
+			const char *pName = FLD(CAI_DbgSchedule *, 0x5f38)->m_pszName;
+			if (!pName)
+				pName = "Unknown";
+			Q_snprintf(tempstr, sizeof(tempstr), "Fail: %s (%s)\n", pName, FLD(const char *, 0x5f30));
+			sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+			text_offset++;
+		}
+
+		if (sub_10269aa0(0x55))
+		{
+			sub_101434b0(entindexDbg(), text_offset, "Enemy too far to attack", 0, 0xff, 0xff, 0xff, 0xff);
+			text_offset++;
+		}
+
+		if (GetAbsVelocityDbg() != g_1070d1b0 || FLD(Vector, 0x3c8) != *(Vector *)g_1070d9d0)
+		{
+			char tmp[512];
+			Q_snprintf(tmp, sizeof(tmp), "Vel %.1f %.1f %.1f   Ang: %.1f %.1f %.1f\n",
+				GetAbsVelocityDbg().x, GetAbsVelocityDbg().y, GetAbsVelocityDbg().z,
+				FLD(Vector, 0x3c8).x, FLD(Vector, 0x3c8).y, FLD(Vector, 0x3c8).z);
+			sub_101434b0(entindexDbg(), text_offset, tmp, 0, 0xff, 0xff, 0xff, 0xff);
+			text_offset++;
+		}
+	}
+	return text_offset;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102775e0 size=0x2f7
 #include "Tier1.h"
 #include "CAI_BaseNPC_vfunc76.h"
