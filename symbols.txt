@@ -15837,6 +15837,7 @@
 0x10015c9e func   ??0CBaseTransmitProxy@@QAE@PAVCBaseEntity@@@Z CBaseTransmitProxy::CBaseTransmitProxy
 0x10015ca3 func   ?sub_100770b0@CUnknown10076da0@@QAEXPBDM_N@Z CUnknown10076da0::sub_100770b0
 0x10015ca8 func   ?vfunc5@CItemGBadluckTalisman@@QAEPAV1@I@Z CItemGBadluckTalisman::vfunc5
+0x10015cad func   ?sub_100be060@bf_readX@@QAEIH@Z bf_readX::sub_100be060
 0x10015cb2 func   ?sub_103a3b80@@YIPAXPAX@Z sub_103a3b80
 0x10015cb7 func   ?vfunc41@CPhysicsProp@@QAEXH@Z CPhysicsProp::vfunc41
 0x10015cc1 func   ?vfunc394@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::vfunc394

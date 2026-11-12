@@ -46662,6 +46662,37 @@ void CUnknown100be040::sub_100be040(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be060 size=0x7b
+#include "bf_read.h"
+
+// bf_read's bit-by-bit peek without the bounds check (2003 bitbuf.h ReadOneBitNoCheck inlined), position restored by
+// subtracting numbits.
+struct bf_readX : bf_read
+{
+	int ReadOneBitNoCheck()
+	{
+		int value = ((const unsigned char *)m_pData)[m_iCurBit >> 3] & (1 << (m_iCurBit & 7));
+		++m_iCurBit;
+		return !!value;
+	}
+	unsigned int sub_100be060(int numbits);
+};
+
+unsigned int bf_readX::sub_100be060(int numbits)
+{
+	unsigned int r;
+	int i;
+
+	r = 0;
+	for(i=0; i < numbits; i++)
+	{
+		r |= ReadOneBitNoCheck() << i;
+	}
+	m_iCurBit -= numbits;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be100 size=0x233
 #include "bf_read.h"
 
