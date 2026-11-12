@@ -213182,6 +213182,74 @@ CAI_Waypoint *CAI_Pathfinder::sub_10304130(const float *pLocal, const float *pOr
 }
 // END FUNCTION
 
+// FUNCTION: 0x10304670 size=0x1d5
+#include "CAI_Waypoint.h"
+#include <math.h>
+#include "CAI_Pathfinder.h"
+float sub_101d2c70(Vector *pVec);
+void sub_1031a0e0(CAI_Waypoint *pFirst, CAI_Waypoint *pNext);
+
+#define M_PI_F ((float)(3.14159265358979323846))
+#define DEG2RAD(x) ((float)(x) * (float)(M_PI_F / 180.f))
+
+// TARGET: CAI_Pathfinder::sub_10304670
+CAI_Waypoint *CAI_Pathfinder::sub_10304670(const Vector &vStartPos, const Vector &vCenterPos, float flRadius, float flArc, float flStepDist, bool bClockwise, int goalTolerance, bool bAirRoute, bool e)
+{
+	float flAngleStep = 2.0f * atan((0.5 * flStepDist) / flRadius);
+
+	if (bClockwise) {
+		flArc *= -1;
+		flAngleStep *= -1;
+	}
+
+	Vector vStartDir = (vStartPos - vCenterPos);
+	VectorNormalize(vStartDir);
+
+	float flStartAngle = DEG2RAD(sub_101d2c70(&vStartDir));
+	float flEndAngle = flStartAngle + DEG2RAD(flArc);
+
+	flStartAngle += flAngleStep;
+
+	CAI_Waypoint *pHeadRoute = 0;
+	CAI_Waypoint *pLastRoute = 0;
+	Vector vLastPos = vStartPos;
+	float flCurAngle = flStartAngle;
+	Vector vNextPos;
+
+	while (bClockwise == 1 ? flCurAngle >= flEndAngle : flCurAngle <= flEndAngle) {
+		vNextPos = vCenterPos;
+		float flCos = cos(flCurAngle);
+		vNextPos.x += flRadius * flCos;
+		float flSin = sin(flCurAngle);
+		vNextPos.y += flRadius * flSin;
+
+		CAI_Waypoint *pNextRoute = sub_10304130(&vLastPos.x, &vNextPos.x, 0, 0, -1, bAirRoute ? 2 : 1, goalTolerance, e);
+
+		if (!pNextRoute) {
+			if (pHeadRoute)
+				pLastRoute->m_fWaypointFlags |= 8;
+			return pHeadRoute;
+		}
+
+		pLastRoute = pNextRoute;
+		pNextRoute->m_fWaypointFlags |= 0x20;
+
+		if (pHeadRoute)
+			sub_1031a0e0(pHeadRoute, pNextRoute);
+		else
+			pHeadRoute = pNextRoute;
+
+		vLastPos = vNextPos;
+
+		flCurAngle += flAngleStep;
+	}
+
+	if (pLastRoute)
+		pLastRoute->m_fWaypointFlags |= 8;
+	return pHeadRoute;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103048d0 size=0x11d
 #include "CAI_Pathfinder.h"
 
