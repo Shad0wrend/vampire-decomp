@@ -9628,6 +9628,7 @@
 0x1000db34 func   ?sub_102f9330@CMem4_t@@QAEXH@Z CMem4_t::sub_102f9330
 0x1000db39 func   ?vfunc5@CSoundControllerImp@@UAEXPAX@Z CSoundControllerImp::vfunc5
 0x1000db3e func   ?sub_10167030@CBasePlayer@@QAEXVVector@@0@Z CBasePlayer::sub_10167030
+0x1000db43 func   ?sub_100beea0@bf_readX@@QAEHXZ bf_readX::sub_100beea0
 0x1000db48 func   ?vfunc81@CItemGMercurioJournal@@QAEHXZ CItemGMercurioJournal::vfunc81
 0x1000db4d func   ?vfunc469@CHL2_Player@@UAEXPAVVector@@M@Z CHL2_Player::vfunc469
 0x1000db52 func   ?sub_10316560@CUnknown103164c0@@QAEPAV1@XZ CUnknown103164c0::sub_10316560
