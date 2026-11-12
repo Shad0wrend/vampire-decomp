@@ -125,6 +125,34 @@ void CFuncPlat::vfunc243()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159960 size=0x166
+#include "CFuncPlat.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+extern char g_106b8540[];
+#define STRING(offset) ((offset) ? reinterpret_cast<const char *>(offset) : g_106b8540)
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+inline int ENTINDEX(void *pEdict) { return engine->vfunc35((int)pEdict); }
+
+inline void EmitSound_F(CRecipientFilter &filter, int iEntIndex, int iChannel, const char *pSample, float flVolume, float flAttenuation)
+{
+	enginesound->vfunc3(&filter, iEntIndex, iChannel, pSample, flVolume, flAttenuation, 0, 100, 0, 0, 1, 0);
+}
+
+// TARGET: CFuncPlat::vfunc245
+void CFuncPlat::vfunc245()
+{
+	if (m_pszStartSound)
+		enginesound->vfunc7(ENTINDEX(m_pEdict), 6, (char *)STRINGR(m_pszStartSound));
+	if (m_pszArriveSound)
+	{
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		enginesound->vfunc3(&filter, ENTINDEX(m_pEdict), 1, (char *)STRINGR(m_pszArriveSound), m_flVolume, 0.8f, 0, 100, 0, 0, 1, 0);
+	}
+	m_nToggleState = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159b30 size=0x156
 #include "CFuncPlat.h"
 #include "CBaseToggle.h"
