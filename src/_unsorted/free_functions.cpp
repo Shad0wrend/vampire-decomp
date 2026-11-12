@@ -61371,6 +61371,76 @@ void CDialogDependency::sub_100e8fc0(int a, int b, char *pszDependency, char *ps
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e9290 size=0x1c9
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CDialogDependency.h"
+#include "CUnknown102047d0.h"
+#include <string.h>
+#include <ctype.h>
+extern "C" __declspec(dllimport) void Q_trimspace(const char *src, char *dst, int size);
+
+static inline void ParseDepBody(CDialogDependency *self, char *&pszText, unsigned int *pFlags, int *pOut)
+{
+	CUnknown102047d0 *blk = (CUnknown102047d0 *)&self->m_nType;
+	bool bNone = !blk->sub_10204250();
+	if (blk->sub_10204250())
+	{
+		while (isspace(*pszText))
+			pszText++;
+		blk->sub_102047d0(pszText, &self->m_n224, &self->m_n14);
+		if (self->m_nType == 2)
+		{
+			self->m_nIndent = self->m_n14;
+			if (pFlags && !self->m_bNoFlags0c)
+				*pFlags |= 1;
+			if (pOut && *pOut == -1)
+				*pOut = self->m_nArg;
+		}
+		else if (self->m_nType == 4)
+		{
+			self->m_nIndent = 0;
+			if (pFlags && !self->m_bNoFlags0c)
+				*pFlags |= 2;
+			if (pOut && *pOut == -1)
+				*pOut = self->m_nArg;
+		}
+		else if (self->m_nType == 6)
+			blk->sub_10204270();
+		else if (self->m_nType != -1)
+			self->m_nIndent = 0;
+	}
+	if (bNone || self->m_nType == -1)
+	{
+		Q_trimspace(pszText, (char *)self->m_a1c, 0x100);
+		if (pFlags)
+			*pFlags |= 4;
+		if (self->m_n220 == 0)
+			self->m_n220 = 2;
+		return;
+	}
+	if (self->m_n220 != 0)
+		return;
+	self->m_n220 = 1;
+}
+
+// TARGET: CDialogDependency::sub_100e9290
+void CDialogDependency::sub_100e9290(int a, char *pszText, unsigned int *pFlags, int *pOut)
+{
+	ScopeTrace trace("CDialogDependency::ParseDep", g_106b8540);
+	if (!pszText || !strlen(pszText))
+		return;
+	ParseDepBody(this, pszText, pFlags, pOut);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e94e0 size=0x1f8
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"

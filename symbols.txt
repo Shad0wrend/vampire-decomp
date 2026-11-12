@@ -5999,6 +5999,7 @@
 0x10008edb func   ?sub_10223a80@CBaseKeyframedMover@@QAEXXZ CBaseKeyframedMover::sub_10223a80
 0x10008ee0 func   ?sub_10234d20@@YAHXZ sub_10234d20
 0x10008ee5 func   ?sub_10315790@@YAPAUNode@@PBD@Z sub_10315790
+0x10008eea func   ?sub_100e9290@CDialogDependency@@QAEXHPADPAIPAH@Z CDialogDependency::sub_100e9290
 0x10008eef func   ?sub_100bac20@@YAHXZ sub_100bac20
 0x10008ef4 func   ?vfunc174@CBaseTrigger@@QAEXPAVCBaseEntity@@@Z CBaseTrigger::vfunc174
 0x10008efe func   ?sub_102726a0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_102726a0
