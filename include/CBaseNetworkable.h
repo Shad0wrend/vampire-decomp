@@ -19,6 +19,16 @@ struct CBaseNetworkableEdict_t
 	unsigned char m_b44;	// 0x44
 };
 
+// The 8 byte member at +0x14 of CBaseNetworkable; its constructor 0x10146640 zeroes it (three bytes, two words).
+struct CBaseNetworkableSub14
+{
+	unsigned char m_b0, m_b1, m_b2;
+	unsigned char m_pad3;
+	unsigned short m_w4, m_w6;
+	CBaseNetworkableSub14() { sub_10146640(); }
+	void *sub_10146640();
+};
+
 class IServerUnknown	// RTTI .?AVIServerUnknown@@ (its IHandleEntity base is not modelled: the game's constructor stores no IHandleEntity vptr)
 {
 public:
@@ -53,7 +63,7 @@ public:
 	CBaseNetworkableEdict_t *m_pEdict;	// 0x8
 	int m_n0c;	// 0xc: -1 after the constructor
 	int m_n10;	// 0x10
-	char m_Sub14[8];	// 0x14: the 8 byte object zeroed by 0x10146640 (three bytes, two words); that function is CUnknown10146640::sub_10146640, a struct the matched source defines itself
+	CBaseNetworkableSub14 m_Sub14;	// 0x14: the 8 byte object zeroed by 0x10146640 (three bytes, two words); that function is CUnknown10146640::sub_10146640, a struct the matched source defines itself
 
 	int sub_100b7de0();	// the engine's index of the edict
 	void sub_100b7da0();	// releases the edict
