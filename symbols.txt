@@ -422,6 +422,7 @@
 0x100018b6 func   ?sub_102130a0@@YAPAHXZ sub_102130a0
 0x100018bb func   ?vfunc110@CRopeKeyframe@@UAE_NPBD0@Z CRopeKeyframe::vfunc110
 0x100018c5 func   ?sub_100846c0@CSceneEntity@@QAEXPAX@Z CSceneEntity::sub_100846c0
+0x100018ca func   ??1VKeyValues@@UAE@XZ VKeyValues::~VKeyValues
 0x100018cf func   ?vfunc124@CBaseEntity@@UAEHXZ CBaseEntity::vfunc124
 0x100018d4 func   ?vfunc141@CBreakable@@QAEXPAUCTakeDamageInfo@@PBVVector@@PAUCGameTrace@@@Z CBreakable::vfunc141
 0x100018d9 func   ?sub_100ed5a0@@YAHXZ sub_100ed5a0
