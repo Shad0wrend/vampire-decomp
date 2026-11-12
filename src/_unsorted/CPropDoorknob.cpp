@@ -65,6 +65,43 @@ int CPropDoorknob::vfunc33()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10224d40 size=0x111
+#include "CPropDoorknob.h"
+#include "CItemContainerLock.h"
+#include "CItemContainer.h"
+#include "CEHandleGet.h"
+
+namespace block_10224d40 {
+struct CItemContainerLockUnit : CItemContainerLock
+{
+	bool IsLockedUnit() { return m_unk780 >= 3; }
+	bool sub_10224100();
+};
+bool CItemContainerLockUnit::sub_10224100()
+{
+	int n = m_unk780;
+	return (bool)(((unsigned)n >> 31) | ((unsigned)(n - 3) >> 31));
+}
+}
+using namespace block_10224d40;
+
+// TARGET: CPropDoorknob::vfunc35
+int CPropDoorknob::vfunc35(int a)
+{
+	CItemContainerLockUnit *l = (CItemContainerLockUnit *)this;
+	if (EHandle_Get(l->m_hContainer) && ((CItemContainer *)EHandle_Get(l->m_hContainer))->sub_100eef10())
+		return 0x3a;
+	if (l->sub_10224100()) {
+		if (l->sub_10224910(a))
+			return l->m_n820;
+		return l->m_n81c;
+	}
+	if (EHandle_Get(l->m_hContainer) && ((CItemContainer *)EHandle_Get(l->m_hContainer))->sub_100eedd0())
+		return 0x3b;
+	return l->m_n818;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10225930 size=0x8
 #include "CPropDoorknob.h"
 // TARGET: CPropDoorknob::sub_10225930
