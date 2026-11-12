@@ -33,7 +33,9 @@ struct CMovePlayerView	// CGameMovement::m_pPlayer: the "mv" (CMoveData-like) re
 	float m_flRadius;	// 0x98
 	float m_flWidth;	// 0x9c
 	float m_flSpeedFactor;	// 0xa0
-	char m_pad00a4[0xbc - 0xa4];
+	char m_pad00a4[0xb8 - 0xa4];
+	float m_flB8;
+
 	float m_fl00BC;		// 0xbc: frame time stamped by sub_10125db0
 	int m_n00c0;		// 0xc0: tested for zero before the duck trace (sub_10126fd0)
 };
@@ -48,7 +50,9 @@ struct CMoveFlagsView	// the same object as CMoveDataView, data side
 	Vector m_vec3b0;	// 0x3b0: the movement's per-frame velocity, added to / subtracted from the player's
 	char m_pad03bc[0x3e0 - 0x3bc];
 	int m_n03E0;		// 0x3e0: the move type (the same field as CBasePlayer.h's m_n03E0)
-	char m_pad03e4[0x1488 - 0x3e4];
+	char m_pad03e4[0x3ec - 0x3e4];
+	int m_n03EC;
+	char m_pad03f0[0x1488 - 0x3f0];
 	float m_fl1488;		// 0x1488: the punch-angle decay scale (CBaseCombatCharacter::m_flFrenzyRate)
 	char m_pad148c[0x1edc - 0x148c];
 	char m_b1edc;	// 0x1edc: copied by 0x10126cb0 into GetEyeOffset's second argument
