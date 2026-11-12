@@ -207557,6 +207557,17 @@ float CAI_Navigator::sub_1030a650(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030a6e0 size=0xc1
+#include "CUnknown1030a6e0.h"
+#include "utlvector.h"
+
+// TARGET: CUnknown1030a6e0::sub_1030a6e0
+void CUnknown1030a6e0::sub_1030a6e0(const Vector &vPos, float flRadius, CBaseEntity *pEnt, int nType)
+{
+	((CUtlVector<CircleObstacles_t> *)&m_List)->AddToTail(CircleObstacles_t(vPos, flRadius, pEnt, nType));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030aea0 size=0x1d9
 #include "vampire_all.h"
 #include "CUnknown1030a6e0.h"
