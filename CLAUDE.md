@@ -351,6 +351,29 @@ have written it rather than adding temporaries that spell out the assembly:
   mixing them forces a reload. Use one spelling (ehandle.h) at every use in a function.
 - **Valve's naked asm:** mathlib's VectorMA (0x101387e0) is `__declspec(naked)` x87 asm in the game; pasted verbatim
   it judges 0 but submit refuses naked (tool policy). No C++ form reaches it.
+- **Round 6 (score 2-25 + transplant twins, 26 matched):** a free `__stdcall` function whose callers set ecx is a
+  thiscall member ignoring `this` (a view `struct V { int sub_X(...); };`): ecx is then taken and every later
+  register and spill moves. A sweep of all 14 open stdcall bests matched 3 at once and 0x10227da0, a 1,055-variant
+  permuter wall (scratchpad tcsweep.py, 2026-11-12). The tell: the caller loads ecx, the callee never reads it.
+- **Hand-written cvar views are ConVar:** `g_X->vfunc1() ? 0 : g_X->m_f28` is `ConVar::GetFloat()` on `extern ConVar
+  g_<X-4>` (ConVar.h); `.GetFloat()` / `.GetBool()` took 0x10351e10 from 48 to 0.
+- **A view method named sub_<addr> links to the game's address**, so a callee can get another signature (argument
+  count, return type, bool instead of the header's int) without a header patch: `struct V : CClass { bool sub_X(); };`
+  (0x10336a50, 0x102395c0). Only for functions without a known mangled name.
+- **Template instantiations with identical code** (CUtlVector<int> vs CUtlVector<CHandle<T>>) are separate copies:
+  the caller's SDK container type names each (0x100fdd00, rename_symbol). A twin whose transplant scores ~9 may
+  have a literal where the sibling has a parameter (0x101456e0: 2048.0f).
+- **Smaller round 6 levers:** read the real `CUtlVector<T>` `operator[]` through a cast of the member (this's register
+  reused, 0x10036270), then retry the SDK control flow rejected earlier; identical case bodies written twice so VC6
+  merges table entries and cross-jumps one tail (0x10204dd0); `idx = -1; for (...) if (..) { idx = i; break; } return
+  idx;` (0x10316760); a struct with constructors but no copy constructor for a hidden-pointer return read back as a
+  dword (CUtlSymbol, 0x1024b5e0); one vtable load shared by several virtual calls = a local view of pointer-to-member
+  slots (0x102395c0, workaround); a late `push ebx` with the body moved to an inline taking the modified parameter by
+  reference (0x100e9290); store a float to a member then test the member, not the local (0x10218320); Troika studio
+  loops are `if (n > 0) { off = 0; do { ...; j++; off += size; } while (j < n); }` (0x100c7be0); `p = e ? e->m : 0;
+  if (!p) { X; return; }` keeps X its own copy (0x10384ab0); CRestore Read* = Valve's ReadSimple verbatim
+  (0x101a2320); Valve's SSE
+  helpers match with their `__asm` pasted into a plain function (0x1013d2e0, `_SSE_RSqrtAccurate`).
 
 ## VC6 stack slots: what moves them and what does not (measured 2026-11-08, partial)
 
