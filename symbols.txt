@@ -16761,6 +16761,7 @@
 0x10483528 vtable ??_7CDisciplineProjectileTraceFilter@@6B@ CDisciplineProjectileTraceFilter::vftable
 0x10483558 vtable ??_7CVFeatList_t@@6B@ CVFeatList_t::vftable
 0x1048357c vtable ??_7CVampireProjectile@@6B@ CVampireProjectile::vftable
+0x10483ab4 data   ??_7VKeyValues@@6BIKeyValues@@@ ??_7VKeyValues@@6BIKeyValues@@@
 0x10483b20 data   ??_7VKeyValues@@6BIKeyCacheable@@@ ??_7VKeyValues@@6BIKeyCacheable@@@
 0x10483b34 data   ??_7IKeyValues@@6BIKeyCacheable@@@ ??_7IKeyValues@@6BIKeyCacheable@@@
 0x10483b4c data   ??_7IKeyValues@@6B0@@ ??_7IKeyValues@@6B0@@
