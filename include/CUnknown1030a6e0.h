@@ -32,6 +32,18 @@ struct Rec1030a6e0
 	}
 };
 
+struct CircleObstacles_t	// CAI_PlaneSolver's obstacle record (0x18 bytes)
+{
+	CircleObstacles_t(const Vector &center, float radius, CBaseEntity *pEntity, int type)
+		: center(center), radius(radius), type(type), hEntity(pEntity)
+	{
+	}
+	Vector center;
+	float radius;
+	int type;
+	EHANDLE hEntity;
+};
+
 struct RecVec1030a6e0
 {
 	CUnknown1030b2f0 m_Memory;	// pointer, allocation count, grow size
