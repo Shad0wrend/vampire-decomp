@@ -109381,6 +109381,42 @@ void *sub_10199800(void *self, void *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101998c0 size=0x9b
+struct PyObj;
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(int, const char *, ...);
+__declspec(dllimport) int PyErr_Occurred();
+__declspec(dllimport) void PyErr_SetString(int *, const char *);
+__declspec(dllimport) int PyInt_FromLong(int);
+__declspec(dllimport) extern int *PyExc_AttributeError;
+}
+void *sub_10196780(PyObj *);
+int __fastcall sub_10341120(char *);
+
+int sub_101998c0(int self, int args)
+{
+    PyObj *arg = 0;
+    if (!PyArg_ParseTuple(args, "O", &arg)) {
+        if (!PyErr_Occurred()) {
+            PyErr_SetString(PyExc_AttributeError, "bad args to CurrentMoney()");
+            return 0;
+        }
+        return 0;
+    }
+    char *p = (char *)sub_10196780(arg);
+    char *q = 0;
+    if (p)
+        q = *(char **)(p + 0x9c);
+    if (q == 0) {
+        if (!PyErr_Occurred())
+            PyErr_SetString(PyExc_AttributeError, "invalid combat character in CurrentMoney()");
+    } else {
+        return PyInt_FromLong(sub_10341120(q));
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10199990 size=0xad
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntity.h"
