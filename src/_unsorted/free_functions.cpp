@@ -84317,6 +84317,70 @@ CBaseEntity *__stdcall sub_10141b10(CBaseEntity *a, CBaseEntity *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101427f0 size=0x21c
+#include "CBaseEntity.h"
+#include "CEdictView.h"
+#include "CSingleUserRecipientFilter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+extern char *(__cdecl *g_109f3890)(char *dest, const char *src, int maxLen);	// Q_strncpy
+extern int g_1072603c;
+
+inline CBaseEntity *MOTD_Instance(CEdictView *pent)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	if (!pent)
+		pent = (CEdictView *)engine->vfunc38(0);
+	return (pent && pent->m_pUnk) ? (CBaseEntity *)pent->m_pUnk->vfunc4() : 0;
+}
+
+// TARGET: sub_101427f0
+void __stdcall sub_101427f0(CEdictView *client)
+{
+	int length, char_count = 0;
+	char *pFileList;
+	char *aFileList = pFileList = (char *)engine->vfunc90("motd.txt", &length);
+
+	while (pFileList && *pFileList && char_count < 240)
+	{
+		char chunk[0x3d];
+
+		if (strlen(pFileList) < 0x3c)
+		{
+			g_109f3890(chunk, pFileList, sizeof(chunk));
+		}
+		else
+		{
+			g_109f3890(chunk, pFileList, sizeof(chunk));
+		}
+
+		char_count += strlen(chunk);
+		if (char_count < 240)
+			pFileList = aFileList + char_count;
+		else
+			*pFileList = 0;
+
+		CSingleUserRecipientFilter user(MOTD_Instance(client));
+		user.MakeReliable();
+		engine->vfunc65(&user, g_1072603c);
+		engine->vfunc67((bool)(*pFileList == 0));
+		engine->vfunc78(chunk);
+		engine->vfunc66();
+	}
+
+	engine->vfunc91(aFileList);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142aa0 size=0x36
 extern int g_1070d9d0;
 
