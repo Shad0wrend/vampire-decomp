@@ -179,7 +179,8 @@ public:
 	virtual char slot371();	// item: a boolean answer in al (the item is stackable)
 	virtual void slot372(Vector *pOut);	// character: fills pOut with a direction (the aim direction)
 	virtual void slot373(Vector *pOut);	// character: fills pOut with a direction (the view direction)
-	EVS(374) EVS(375)
+	EVS(374)
+	virtual int slot375(int a);	// character: the activity for an attack id (the player's replenish passes 0xfa4)
 	virtual int slot376(int act);	// character: the next activity of the fallback chain / the weapon's translation of act
 	EVS(377) EVS(378) EVS(379)
 	EVS(380)
