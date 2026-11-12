@@ -5046,6 +5046,7 @@
 0x10007a36 func   ?sub_1005e330@@YAHXZ sub_1005e330
 0x10007a3b func   ?sub_1038fd40@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038fd40
 0x10007a40 func   ?vfunc1@CTEBeamRing@@UAEHXZ CTEBeamRing::vfunc1
+0x10007a45 func   ?GrowVector@?$CUtlVector@UElem280_t@@V?$CUtlMemory@UElem280_t@@@@@@QAEXH@Z CUtlVector<Elem280_t,CUtlMemory<Elem280_t> >::GrowVector
 0x10007a45 func   ?sub_1030b100@CUtlVector280@@QAEXH@Z CUtlVector280::sub_1030b100
 0x10007a4a func   ?sub_102cc760@CAIPendingCondList@@QAEXPAVCAI_BaseNPCCondTarget@@@Z CAIPendingCondList::sub_102cc760
 0x10007a54 func   ?sub_101c75a0@@YAXXZ sub_101c75a0
