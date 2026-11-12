@@ -8932,6 +8932,7 @@
 0x1000ccbb func   ?vfunc23@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDXZ CAI_Behavior<CAI_BaseNPC,100000>::vfunc23
 0x1000ccc0 func   ?vfunc365@CCineNPC@@QAE_NH@Z CCineNPC::vfunc365
 0x1000ccc5 func   ?vfunc438@CNPC_VChangBros@@UAEHXZ CNPC_VChangBros::vfunc438
+0x1000ccca func   ?sub_101bcd20@CSoundControllerImp@@QAEXPAPAVCUnknown101bc140@@PAVISoundRestoreView@@@Z CSoundControllerImp::sub_101bcd20
 0x1000cccf func   ?vfunc117@CPropSwitch@@UAEHXZ CPropSwitch::vfunc117
 0x1000ccd4 func   ?sub_1028fc90@CUnknown1028fc90@@QAEHXZ CUnknown1028fc90::sub_1028fc90
 0x1000ccd9 func   ?sub_10200be0@CVStatList_t@@QAEXHH@Z CVStatList_t::sub_10200be0

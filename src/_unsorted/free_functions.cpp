@@ -119281,6 +119281,135 @@ void CUnknown101bcc40::sub_101bcc40(int id, void *pSave)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bcd20 size=0x16a
+#include "CSoundControllerImp.h"
+#include "CUnknown101bc140.h"
+#include "CUnknown101bc750.h"
+#include "Pool.h"
+
+extern Pool g_1072c4e0;
+extern Pool g_1072c4b0;
+extern const char g_1059a7b4[];
+extern const char g_1059aa0c[];
+
+struct SoundCommand_101bcd20
+{
+	int m_n[6];
+	SoundCommand_101bcd20() { for (int i = 0; i < 6; i++) m_n[i] = 0; }
+	void *operator new(unsigned int size) { return g_1072c4b0.sub_1013dc60(size); }
+};
+
+struct SoundEnvelope_101bcd20
+{
+	float m_current;
+	float m_target;
+	float m_rate;
+	bool m_forceupdate;
+	SoundEnvelope_101bcd20() { m_current = 0; m_target = 0; m_rate = 0; m_forceupdate = false; }
+};
+
+struct SoundHandle_101bcd20
+{
+	unsigned int m_Index;
+	SoundHandle_101bcd20() { m_Index = 0xffffffff; }
+};
+
+struct SoundFilter_101bcd20
+{
+	int m_vt;
+	SoundFilter_101bcd20() { ((CCopyRecipientFilter_101bc140 *)this)->sub_101bcef0(); }
+};
+
+struct SoundPatch_101bcd20
+{
+	SoundEnvelope_101bcd20 m_pitch;	// 0x00
+	SoundEnvelope_101bcd20 m_volume;	// 0x10
+	int m_nSoundLevel;	// 0x20
+	float m_fl24;
+	int m_n28;
+	const char *m_pszSample;	// 0x2c
+	SoundHandle_101bcd20 m_hEnt;	// 0x30
+	int m_nChannel;
+	int m_n38;
+	void *m_pEmitter;	// 0x3c
+	float m_flScale;
+	SoundFilter_101bcd20 m_Filter;	// 0x44
+	unsigned int m_nFlags;
+	int m_n4c;
+	int m_n50;
+	int m_n54;
+	int m_n58;
+	int m_n5c;
+	int m_n60;
+	int m_n64;
+	int m_n68;
+
+	SoundPatch_101bcd20()
+	{
+		m_pszSample = 0;
+	}
+	void *operator new(unsigned int size) { return g_1072c4e0.sub_1013dc60(size); }
+};
+
+struct SoundList_101bcd20
+{
+	SoundPatch_101bcd20 **m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	SoundPatch_101bcd20 **m_pElements;
+
+	void sub_101bdeb0(int num);
+	void sub_101bde20(int elem, int num);
+
+	int AddToTail(SoundPatch_101bcd20 *const &src)
+	{
+		int elem = m_Size;
+		if (m_Size + 1 > m_nAllocationCount)
+			sub_101bdeb0(m_Size + 1 - m_nAllocationCount);
+		m_Size++;
+		m_pElements = m_pMemory;
+		sub_101bde20(elem, 1);
+		SoundPatch_101bcd20 **p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+		return elem;
+	}
+};
+
+void CSoundControllerImp::sub_101bcd20(CUnknown101bc140 **ppSoundPatch, ISoundRestoreView *pRestore)
+{
+	SoundPatch_101bcd20 *pPatch = new SoundPatch_101bcd20;
+
+	pRestore->vfunc5();
+	bool bValidData = pRestore->vfunc2(pPatch, g_1059a7b4) != 0;
+	pRestore->vfunc8();
+
+	bValidData = bValidData && (pPatch->m_pEmitter != 0);
+
+	if (bValidData) {
+		((SoundList_101bcd20 *)&m_Sounds)->AddToTail(pPatch);
+	}
+
+	pRestore->vfunc5();
+	if (bValidData) {
+		int count;
+		pRestore->vfunc15(&count, 1, 0);
+		while (--count >= 0) {
+			SoundCommand_101bcd20 *pCommand = new SoundCommand_101bcd20;
+			pRestore->vfunc5();
+			if (pRestore->vfunc2(pCommand, g_1059aa0c)) {
+				pCommand->m_n[0] = (int)pPatch;
+				((CUnknown101bc750 *)this)->sub_101bc750((int)pCommand);
+			}
+			pRestore->vfunc8();
+		}
+	}
+	pRestore->vfunc8();
+	*ppSoundPatch = (CUnknown101bc140 *)pPatch;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bcef0 size=0x2a
 namespace lifted {
 extern char g_1047bd24;
