@@ -268920,6 +268920,72 @@ void CWeaponThrown_Grenade_Frag::sub_103ef780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103efa30 size=0x2d3
+#include "CWeaponThrown_Chang_Energy_Ball.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "IPhysicsObject.h"
+#include "globalvars.h"
+#include "CUnknown100290c0.h"
+
+extern CUnknown100290c0 *g_10566458;
+extern float g_104e15f4;
+extern float g_104e15e8;
+
+inline void VS(const Vector &in, float s, Vector &out) { out.x = in.x * s; out.y = in.y * s; out.z = in.z * s; }
+inline void VSi(const Vector &in, float s, Vector &out) { out[0] = in[0] * s; out[1] = in[1] * s; out[2] = in[2] * s; }
+inline void VSf(const Vector &in, float s, Vector &out) { const Vector &c = in; out.x = c[0] * s; out.y = c[1] * s; out.z = c[2] * s; }
+void CWeaponThrown_Chang_Energy_Ball::sub_103efa30()
+{
+	IPhysicsObject *pPhys = (IPhysicsObject *)((CBaseEntity *)this)->m_obj36c;
+	if (!pPhys)
+		return;
+	if (m_b91c) {
+		sub_103ef780();
+		return;
+	}
+	float flDt = gpGlobals->curtime - m_flLastThink93c;
+	if (!(flDt <= 0.0f)) {
+		m_flLastThink93c = gpGlobals->curtime;
+		Vector vecVel;
+		Vector vecAng;
+		pPhys->vfunc40(&vecVel.x, &vecAng.x);
+		if (m_b928) {
+			vecVel.x = m_vecVel92c[0];
+			vecVel.y = m_vecVel92c[1];
+			vecVel.z = m_vecVel92c[2];
+			m_b928 = 0;
+		}
+		CEntityVSlots *pTarget = (CEntityVSlots *)g_10566458->sub_100290c0((unsigned int *)&m_h918);
+		if (pTarget) {
+			Vector vecAim = *pTarget->slot217();
+			vecAim.z = g_104e15f4 + vecAim.z;
+			Vector vecDir = vecAim - *((CEntityVSlots *)this)->slot217();
+			VectorNormalize(vecDir);
+			if (VectorNormalize(vecDir) > 1e-6f)
+				vecDir = vecDir * 5000.0f * flDt;
+			if (gpGlobals->curtime - m_flStart938 <= 0.65f) {
+				vecVel = Vector(vecDir.x + vecVel.x, ((const Vector &)vecVel)[1] + vecDir.y, ((const Vector &)vecVel)[2] + vecDir.z);
+			}
+			float flSpeed = vecVel.Length();
+			if (flSpeed > 1e-6f) {
+				if (flSpeed > 1400.0f) {
+					VectorNormalize(vecVel);
+					vecVel.x = g_104e15e8 * vecVel.x;
+					vecVel.y = vecVel.y * 1400.0f;
+					vecVel.z = vecVel.z * 1400.0f;
+				} else if (flSpeed < m_flMaxSpeed920) {
+					VectorNormalize(vecVel);
+					const Vector &cv = vecVel; float s = m_flMaxSpeed920; vecVel.x = cv[0] * s; vecVel.y = cv[1] * s; vecVel.z = cv[2] * s;
+				}
+			}
+		}
+		pPhys->vfunc39(&vecVel.x, &vecAng.x);
+		m_flNextThink17c = gpGlobals->curtime + 0.1f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103efdd0 size=0x45
 #include "CBaseEntity.h"
 #include "CWeaponThrown_Chang_Energy_Ball.h"
