@@ -3393,6 +3393,397 @@ Vector CAI_BaseNPC::vfunc533(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10275760 size=0xd1f
+#include "CFlameCluster.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CAI_Navigator.h"
+#include "DebugOverlay.h"
+#include "ehandle.h"
+#include "globalvars.h"
+#include "Vector.h"
+#include <math.h>
+#include <string.h>
+
+void sub_10142aa0(const Vector *pOrigin, const Vector *pMins, const Vector *pMaxs, int r, int g, int b, int a, float flDuration);
+void sub_10142af0(const Vector *pOrigin, const Vector *pMins, const Vector *pMaxs, const Vector *pDir, int r, int g, int b, int a, float flDuration);
+class CDbgVt;
+CDbgVt *__fastcall sub_1032e7b0(void *pChar);
+char *sub_102d6100(int hull);
+char *sub_102d6120(int hull);
+
+extern int g_1092053c;
+
+struct CDbgCollision
+{
+	virtual void v0();
+	virtual const Vector &OBBMins();
+	virtual const Vector &OBBMaxs();
+};
+
+struct CDbgNavOwner
+{
+	char m_pad00[0x156c];
+	int m_n156c;
+};
+
+struct CDbgNode
+{
+	Vector sub_102fb0d0(int hull);
+};
+struct CDbgNetwork
+{
+	int m_nCount;
+	CDbgNode **m_ppNodes;
+	CDbgNode **AccessNodes() { return m_ppNodes; }
+	CDbgNode *GetNode(int i) { return m_ppNodes[i]; }
+};
+struct CDbgNav
+{
+	void *m_vptr;
+	CDbgNavOwner *m_pOuter;	// 0x04
+	int m_n08;
+	int m_n0c;
+	char m_pad10[0x2c - 0x10];
+	CAI_NavProviderList *m_pNetwork;	// 0x2c
+	void sub_102f28e0();
+};
+
+struct CDbgPathfinder
+{
+	int sub_103061e0(int nOverlays);
+};
+
+class CDbgVt
+{
+public:
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+	virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+	virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+	virtual void v70(); virtual void v71(); virtual void v72(); virtual void v73(); virtual void v74(); virtual void v75(); virtual void v76(); virtual void v77(); virtual void v78(); virtual void v79();
+	virtual void v80(); virtual void v81(); virtual void v82(); virtual void v83(); virtual void v84(); virtual void v85(); virtual void v86(); virtual void v87(); virtual void v88(); virtual void v89();
+	virtual void v90(); virtual void v91(); virtual void v92(); virtual void v93(); virtual void v94(); virtual void v95(); virtual void v96(); virtual void v97(); virtual void v98(); virtual void v99();
+	virtual void v100(); virtual void v101(); virtual void v102(); virtual void v103(); virtual void v104(); virtual void v105(); virtual void v106(); virtual void v107(); virtual void v108(); virtual void v109();
+	virtual void v110(); virtual void v111(); virtual void v112(); virtual void v113(); virtual void v114(); virtual void v115(); virtual void v116(); virtual void v117(); virtual void v118(); virtual void v119();
+	virtual void v120(); virtual void v121(); virtual void v122(); virtual void v123(); virtual void v124(); virtual void v125(); virtual void v126(); virtual void v127(); virtual void v128(); virtual void v129();
+	virtual void v130(); virtual void v131(); virtual void v132(); virtual void v133(); virtual void v134(); virtual void v135(); virtual void v136(); virtual void v137(); virtual void v138(); virtual void v139();
+	virtual void v140(); virtual void v141(); virtual void v142(); virtual void v143(); virtual void v144(); virtual void v145(); virtual void v146(); virtual void v147(); virtual void v148(); virtual void v149();
+	virtual void v150(); virtual void v151(); virtual void v152(); virtual void v153(); virtual void v154(); virtual void v155(); virtual void v156(); virtual void v157(); virtual void v158(); virtual void v159();
+	virtual void v160(); virtual void v161(); virtual void v162(); virtual void v163(); virtual void v164(); virtual void v165(); virtual void v166();
+	virtual int s167();
+	virtual void v168(); virtual void v169(); virtual void v170(); virtual void v171(); virtual void v172(); virtual void v173(); virtual void v174(); virtual void v175(); virtual void v176(); virtual void v177();
+	virtual void v178(); virtual void v179(); virtual void v180(); virtual void v181(); virtual void v182(); virtual void v183(); virtual void v184(); virtual void v185(); virtual void v186(); virtual void v187();
+	virtual void v188(); virtual void v189(); virtual void v190(); virtual void v191(); virtual void v192();
+	virtual Vector EyePosition();
+	virtual void v194(); virtual void v195(); virtual void v196(); virtual void v197(); virtual void v198(); virtual void v199(); virtual void v200(); virtual void v201(); virtual void v202(); virtual void v203();
+	virtual void v204(); virtual void v205(); virtual void v206(); virtual void v207(); virtual void v208(); virtual void v209(); virtual void v210(); virtual void v211(); virtual void v212(); virtual void v213();
+	virtual void v214(); virtual void v215(); virtual void v216();
+	virtual const Vector &GetAbsOrigin();
+	virtual void v218(); virtual void v219();
+	virtual const Vector &GetLocalOrigin();
+	virtual void v221(); virtual void v222(); virtual void v223(); virtual void v224(); virtual void v225(); virtual void v226(); virtual void v227(); virtual void v228(); virtual void v229(); virtual void v230();
+	virtual void v231(); virtual void v232(); virtual void v233(); virtual void v234(); virtual void v235(); virtual void v236(); virtual void v237(); virtual void v238(); virtual void v239(); virtual void v240();
+	virtual void v241(); virtual void v242(); virtual void v243(); virtual void v244(); virtual void v245(); virtual void v246(); virtual void v247(); virtual void v248(); virtual void v249(); virtual void v250();
+	virtual void v251(); virtual void v252(); virtual void v253(); virtual void v254(); virtual void v255(); virtual void v256(); virtual void v257(); virtual void v258(); virtual void v259(); virtual void v260();
+	virtual void v261(); virtual void v262(); virtual void v263(); virtual void v264(); virtual void v265(); virtual void v266(); virtual void v267(); virtual void v268(); virtual void v269(); virtual void v270();
+	virtual void v271(); virtual void v272(); virtual void v273(); virtual void v274(); virtual void v275(); virtual void v276(); virtual void v277(); virtual void v278(); virtual void v279(); virtual void v280();
+	virtual void v281(); virtual void v282(); virtual void v283(); virtual void v284(); virtual void v285(); virtual void v286(); virtual void v287(); virtual void v288(); virtual void v289(); virtual void v290();
+	virtual void v291(); virtual void v292(); virtual void v293(); virtual void v294(); virtual void v295(); virtual void v296(); virtual void v297(); virtual void v298(); virtual void v299(); virtual void v300();
+	virtual void v301(); virtual void v302(); virtual void v303(); virtual void v304(); virtual void v305(); virtual void v306(); virtual void v307(); virtual void v308(); virtual void v309(); virtual void v310();
+	virtual void v311(); virtual void v312(); virtual void v313(); virtual void v314(); virtual void v315(); virtual void v316(); virtual void v317(); virtual void v318(); virtual void v319(); virtual void v320();
+	virtual void v321(); virtual void v322(); virtual void v323(); virtual void v324(); virtual void v325(); virtual void v326(); virtual void v327(); virtual void v328(); virtual void v329(); virtual void v330();
+	virtual void v331(); virtual void v332(); virtual void v333(); virtual void v334(); virtual void v335(); virtual void v336(); virtual void v337(); virtual void v338(); virtual void v339(); virtual void v340();
+	virtual void v341(); virtual void v342(); virtual void v343(); virtual void v344(); virtual void v345(); virtual void v346(); virtual void v347(); virtual void v348(); virtual void v349(); virtual void v350();
+	virtual void v351(); virtual void v352(); virtual void v353(); virtual void v354(); virtual void v355(); virtual void v356(); virtual void v357(); virtual void v358(); virtual void v359(); virtual void v360();
+	virtual void v361(); virtual void v362(); virtual void v363(); virtual void v364(); virtual void v365(); virtual void v366(); virtual void v367();
+	virtual Vector BodyDirection2D();
+	virtual void v369(); virtual void v370(); virtual void v371();
+	virtual Vector EyeDirection2D();
+	virtual void v373(); virtual void v374(); virtual void v375(); virtual void v376(); virtual void v377(); virtual void v378(); virtual void v379(); virtual void v380(); virtual void v381(); virtual void v382();
+	virtual void v383(); virtual void v384();
+	virtual void Weapon_Drop(CDbgVt *pWeapon, int a, int b);
+	virtual void v386(); virtual void v387(); virtual void v388(); virtual void v389(); virtual void v390(); virtual void v391(); virtual void v392(); virtual void v393(); virtual void v394(); virtual void v395();
+	virtual void v396(); virtual void v397(); virtual void v398(); virtual void v399(); virtual void v400(); virtual void v401(); virtual void v402(); virtual void v403(); virtual void v404(); virtual void v405();
+	virtual void v406(); virtual void v407(); virtual void v408(); virtual void v409(); virtual void v410(); virtual void v411(); virtual void v412(); virtual void v413(); virtual void v414(); virtual void v415();
+	virtual void v416(); virtual void v417(); virtual void v418(); virtual void v419(); virtual void v420(); virtual void v421(); virtual void v422(); virtual void v423(); virtual void v424(); virtual void v425();
+	virtual void v426(); virtual void v427(); virtual void v428(); virtual void v429(); virtual void v430(); virtual void v431(); virtual void v432(); virtual void v433(); virtual void v434(); virtual void v435();
+	virtual void v436(); virtual void v437(); virtual void v438(); virtual void v439(); virtual void v440(); virtual void v441(); virtual void v442(); virtual void v443(); virtual void v444(); virtual void v445();
+	virtual void v446(); virtual void v447(); virtual void v448(); virtual void v449(); virtual void v450(); virtual void v451(); virtual void v452(); virtual void v453(); virtual void v454(); virtual void v455();
+	virtual void v456(); virtual void v457(); virtual void v458(); virtual void v459(); virtual void v460(); virtual void v461(); virtual void v462(); virtual void v463(); virtual void v464(); virtual void v465();
+	virtual void v466(); virtual void v467(); virtual void v468(); virtual void v469(); virtual void v470(); virtual void v471(); virtual void v472(); virtual void v473(); virtual void v474(); virtual void v475();
+	virtual void v476(); virtual void v477(); virtual void v478(); virtual void v479(); virtual void v480(); virtual void v481(); virtual void v482(); virtual void v483(); virtual void v484(); virtual void v485();
+	virtual void v486(); virtual void v487(); virtual void v488(); virtual void v489(); virtual void v490(); virtual void v491(); virtual void v492(); virtual void v493(); virtual void v494(); virtual void v495();
+	virtual void v496(); virtual void v497(); virtual void v498(); virtual void v499(); virtual void v500(); virtual void v501(); virtual void v502(); virtual void v503(); virtual void v504(); virtual void v505();
+	virtual void v506(); virtual void v507(); virtual void v508(); virtual void v509(); virtual void v510(); virtual void v511(); virtual void v512(); virtual void v513(); virtual void v514(); virtual void v515();
+	virtual void v516(); virtual void v517(); virtual void v518(); virtual void v519(); virtual void v520(); virtual void v521(); virtual void v522(); virtual void v523(); virtual void v524(); virtual void v525();
+	virtual void v526(); virtual void v527(); virtual void v528(); virtual void v529();
+	virtual bool IsUnreachable(CDbgVt *pEnt);
+	virtual void v531(); virtual void v532(); virtual void v533(); virtual void v534(); virtual void v535(); virtual void v536(); virtual void v537(); virtual void v538(); virtual void v539(); virtual void v540();
+	virtual void *GetEnemies();
+};
+
+class CDbgEnemy : public CDbgVt
+{
+public:
+	char m_pad04[0xa8 - 4];
+	int m_nA8;	// 0xa8
+	char m_padac[0x1568 - 0xac];
+	int m_nHull;	// 0x1568
+};
+
+struct CDbgEnemyEnt
+{
+	char m_pad00[0x9c];
+	CDbgEnemy *m_pCombatChar;	// 0x9c
+};
+
+struct CDbgEnemyInfo
+{
+	char m_pad00[0xc];
+	Vector vLastKnownLocation;	// 0x0c
+	char m_pad18[0x24 - 0x18];
+	CHandle<CDbgEnemyEnt> hEnemy;	// 0x24
+	char m_pad28[0x35 - 0x28];
+	bool bEludedMe;	// 0x35
+	char m_pad36[2];
+	CDbgEnemyInfo *m_pNext;	// 0x38
+};
+
+struct CDbgEnemies
+{
+	char m_pad00[0xc];
+	CDbgEnemyInfo *m_pHead;	// 0x0c
+};
+
+class CDbgNPC : public CDbgVt
+{
+public:
+	char m_pad04[0x98 - 4];
+	void *m_p98;	// 0x98
+	char m_pad9c[0x224 - 0x9c];
+	int m_debugOverlays;	// 0x224
+	char m_pad228[0x270 - 0x228];
+	CDbgCollision m_Collision;	// 0x270
+	char m_pad274[0x1568 - 0x274];
+	int m_nHull;	// 0x1568
+	int m_n156c;
+	int m_n1570;
+	float m_flFieldOfView;	// 0x1574
+	char m_pad1578[0x5c38 - 0x1578];
+	void *m_pSchedule;	// 0x5c38
+	char m_pad5c3c[0x5ce4 - 0x5c3c];
+	CHandle<CDbgEnemyEnt> m_hTargetEnt;	// 0x5ce4
+	char m_pad5ce8[0x5d34 - 0x5ce8];
+	CDbgNav *m_pNavigator;	// 0x5d34
+	char m_pad5d38[0x5d3c - 0x5d38];
+	CDbgPathfinder *m_pPathfinder;	// 0x5d3c
+	char m_pad5d40[0x5db8 - 0x5d40];
+	Vector m_vecLastPosition;	// 0x5db8
+
+	const Vector &Maxs2() { return m_Collision.OBBMaxs(); }
+	int GetHullType() { return m_nHull; }
+	void sub_1028ae60();
+	int sub_102cc1f0(int type);
+	int sub_100ac4e0(int pfn, int a, const char *pszContext);
+	void sub_100ad320(float *a, float *b, float *c);
+};
+
+void __fastcall sub_101c0b10(CBaseEntity *pEnt);
+
+// TARGET: CAI_BaseNPC::vfunc123
+void CAI_BaseNPC::vfunc123()
+{
+	CDbgNPC *pThis = (CDbgNPC *)this;
+
+	if (pThis->m_debugOverlays & 0x10000)
+	{
+		pThis->sub_1028ae60();
+		pThis->Weapon_Drop(sub_1032e7b0(pThis), 0, 0);
+		pThis->sub_100ac4e0((int)sub_101c0b10, 0, 0);
+	}
+
+	if (pThis->m_debugOverlays & 0x4000)
+	{
+		pThis->m_pNavigator->sub_102f28e0();
+	}
+
+	if (!(g_1092053c & 1) && pThis->m_pSchedule && (int)pThis->m_pSchedule == pThis->sub_102cc1f0(0x39))
+	{
+		sub_10142aa0(&pThis->m_vecLastPosition, &Vector(-5, -5, -5), &Vector(5, 5, 5), 255, 0, 255, 0, 0);
+	}
+
+	if (pThis->m_debugOverlays & 0x1000)
+	{
+		Vector forward, right, up;
+		pThis->sub_100ad320(&forward.x, &right.x, &up.x);
+		if (pThis->m_Collision.OBBMins().x == pThis->Maxs2().x
+			&& pThis->m_Collision.OBBMins().y == pThis->Maxs2().y
+			&& pThis->m_Collision.OBBMins().z == pThis->Maxs2().z)
+			sub_10142aa0(&pThis->GetAbsOrigin(), &Vector(-5, -5, -5), &Vector(5, 5, 5), 255, 128, 0, 20, 0);
+		else
+		{
+			const Vector &vMins = pThis->m_Collision.OBBMins();
+			sub_10142aa0(&pThis->GetAbsOrigin(), &vMins, &pThis->m_Collision.OBBMaxs(), 255, 0, 0, 20, 0);
+		}
+	}
+
+	if (pThis->m_debugOverlays & 0x2000)
+	{
+		CDbgNav *pNav = pThis->m_pNavigator;
+		pNav->m_n08 = pNav->m_pOuter->m_n156c;
+		pNav->m_n0c = gpGlobals->framecount;
+		CAI_NavProviderList *pNetwork = pThis->m_pNavigator->m_pNetwork;
+		int iNodeID = pNetwork->sub_102f3c10((int)pThis, &pThis->GetLocalOrigin());
+		if (iNodeID != -1)
+		{
+			sub_10142aa0(&((CDbgNetwork *)pThis->m_pNavigator->m_pNetwork)->AccessNodes()[iNodeID]->sub_102fb0d0(pThis->m_nHull),
+				&Vector(-10, -10, -10), &Vector(10, 10, 10), 255, 255, 255, 0, 0);
+		}
+	}
+
+	if ((pThis->m_debugOverlays & 0x400000) && !pThis->m_p98)
+	{
+		float flViewRange = acos(pThis->m_flFieldOfView);
+		Vector vEyeDir = pThis->EyeDirection2D();
+		Vector vLeftDir, vRightDir;
+		float fSin, fCos;
+		fSin = sin(flViewRange);
+		fCos = cos(flViewRange);
+
+		vLeftDir.x = vEyeDir.x * fCos - vEyeDir.y * fSin;
+		vLeftDir.y = vEyeDir.x * fSin + vEyeDir.y * fCos;
+		vLeftDir.z = vEyeDir.z;
+		fSin = sin(-flViewRange);
+		fCos = cos(-flViewRange);
+		vRightDir.x = vEyeDir.x * fCos - vEyeDir.y * fSin;
+		vRightDir.y = vEyeDir.x * fSin + vEyeDir.y * fCos;
+		vRightDir.z = vEyeDir.z;
+
+		sub_10142af0(&pThis->EyePosition(), &Vector(0, 0, -40), &Vector(200, 0, 40), &vLeftDir, 255, 0, 0, 50, 0);
+		sub_10142af0(&pThis->EyePosition(), &Vector(0, 0, -40), &Vector(200, 0, 40), &vRightDir, 255, 0, 0, 50, 0);
+		sub_10142af0(&pThis->EyePosition(), &Vector(0, 0, -40), &Vector(200, 0, 40), &vEyeDir, 0, 255, 0, 50, 0);
+		sub_10142af0(&pThis->EyePosition(), &Vector(0, 0, -10), &Vector(40, 0, 10), &vEyeDir, 0, 255, 0, 50, 0);
+	}
+
+	if (pThis->m_debugOverlays & 0x20000)
+	{
+		CDbgEnemies *pEnemies = (CDbgEnemies *)pThis->GetEnemies();
+		for (CDbgEnemyInfo *eMemory = pEnemies->m_pHead; eMemory != 0; eMemory = eMemory->m_pNext)
+		{
+			if (eMemory->hEnemy)
+			{
+				CDbgEnemy *npcEnemy = eMemory->hEnemy->m_pCombatChar;
+				if (npcEnemy)
+				{
+					float r, b, g;
+					char debugText[255];
+					debugText[0] = 0;
+
+					if ((int)npcEnemy == pThis->s167())
+					{
+						strcat(debugText, "Current Enemy");
+					}
+					else if (npcEnemy == (CDbgEnemy *)pThis->m_hTargetEnt.Get())
+					{
+						strcat(debugText, "Current Target");
+					}
+					else
+					{
+						strcat(debugText, "Other Memory");
+					}
+					if (pThis->IsUnreachable(npcEnemy))
+					{
+						strcat(debugText, " (Unreachable)");
+					}
+					if (eMemory->bEludedMe)
+					{
+						strcat(debugText, " (Eluded)");
+					}
+					if (pThis->IsUnreachable(npcEnemy))
+					{
+						r = 0;
+						g = 255;
+						b = 0;
+					}
+					else if (eMemory->bEludedMe)
+					{
+						r = 0;
+						g = 0;
+						b = 255;
+					}
+					else if ((int)npcEnemy == pThis->s167())
+					{
+						r = 255;
+						g = 0;
+						b = 0;
+					}
+					else if (npcEnemy == (CDbgEnemy *)pThis->m_hTargetEnt.Get())
+					{
+						r = 255;
+						g = 0;
+						b = 255;
+					}
+					else
+					{
+						r = 255;
+						g = 100;
+						b = 100;
+					}
+
+					Vector drawPos = eMemory->vLastKnownLocation;
+					sub_10143710(&drawPos.x, debugText, 0, 0);
+
+					if (npcEnemy->m_nA8 &&
+						(eMemory->vLastKnownLocation - npcEnemy->GetAbsOrigin()).Length() < 10)
+					{
+						Vector vEnemyFacing = npcEnemy->BodyDirection2D();
+						Vector eyePos = npcEnemy->EyePosition() + vEnemyFacing * 10.0f;
+						Vector upVec = Vector(0, 0, 2);
+						Vector sideVec;
+						CrossProduct(vEnemyFacing, upVec, sideVec);
+						sub_10142e90(&(eyePos + sideVec + upVec), &(eyePos - sideVec - upVec), r, g, b, 0, 0);
+						sub_10142e90(&(eyePos + sideVec - upVec), &(eyePos - sideVec + upVec), r, g, b, 0, 0);
+						sub_10143710(&eyePos.x, debugText, 0, 0);
+					}
+					else
+					{
+						{
+							int hull = npcEnemy->m_nHull;
+							sub_10143b70(&drawPos, (Vector *)sub_102d6100(hull), (Vector *)sub_102d6120(hull), r, g, b, 0, 0);
+						}
+						{
+							int hull = npcEnemy->m_nHull;
+							sub_10143b70(&drawPos, (Vector *)sub_102d6100(hull), (Vector *)sub_102d6120(hull), r, g, b, 0, 0);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if (pThis->m_debugOverlays & 0x200000)
+	{
+		if (pThis->s167())
+		{
+			sub_10142e90(&pThis->EyePosition(), &((CDbgVt *)pThis->s167())->EyePosition(), 255, 0, 0, 1, 0);
+		}
+		if (pThis->m_hTargetEnt.Get())
+		{
+			sub_10142e90(&pThis->EyePosition(), &((CDbgVt *)pThis->m_hTargetEnt.Get())->EyePosition(), 0, 0, 255, 1, 0);
+		}
+	}
+
+	pThis->m_pPathfinder->sub_103061e0(pThis->m_debugOverlays);
+
+	((CBaseEntity *)this)->CBaseEntity::vfunc123();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102767d0 size=0xb38
 #include "CAI_BaseNPC.h"
 #include <string.h>
