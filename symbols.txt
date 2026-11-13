@@ -2753,6 +2753,7 @@
 0x10004930 func   ?sub_101f4600@CVSoundList@@QAEPBDPAVCVSoundEnt@@H@Z CVSoundList::sub_101f4600
 0x10004935 func   ?sub_101d7bf0@@YAXXZ sub_101d7bf0
 0x1000493a func   ?vfunc2@CTEInspectionFX@@UAEPAV1@I@Z CTEInspectionFX::vfunc2
+0x1000493f func   ?vfunc444@CNPC_VSabbatLeader@@QAEXPBH@Z CNPC_VSabbatLeader::vfunc444
 0x10004944 func   ?sub_103e1cf0@@YAXPAUCUnk1032f770@@HH@Z sub_103e1cf0
 0x10004949 func   ?sub_10193ea0@CPropDestructable@@QAEXPAUinputdata_t@@@Z CPropDestructable::sub_10193ea0
 0x1000494e func   ?vfunc373@CWeaponMelee_ChangClaw@@QAEHXZ CWeaponMelee_ChangClaw::vfunc373
