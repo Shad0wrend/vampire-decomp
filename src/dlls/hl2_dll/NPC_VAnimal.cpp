@@ -1,6 +1,117 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x1035f650 size=0x249
+#include "CNPC_VTzimisce.h"
+#include "CNPC_VAnimal.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_Navigator.h"
+#include "CEntityVSlots.h"
+
+extern int g_1093a4a0;
+extern Vector g_10934060;
+extern float g_104a8730;
+float sub_102d61b0(int a);
+
+struct CAnimalMove { void sub_102ee1c0(float f); };
+
+struct AINavGoal4
+{
+	AINavGoal4(int type, const Vector &dest, int activity = -1, float tolerance = g_104a8730, unsigned flags = 0, int pTarget = g_1093a4a0);
+	int type;
+	Vector dest;
+	int destNode;
+	int activity;
+	int arrivalActivity;
+	int arrivalSequence;
+	float tolerance;
+	unsigned flags;
+	int pTarget;
+	Vector m_vec2c;
+	int m_i38;
+	int m_i3c;
+};
+
+inline AINavGoal4::AINavGoal4(int type, const Vector &dest, int activity, float tolerance, unsigned flags, int pTarget)
+ :	type(type), dest(dest), destNode(-1), activity(activity), tolerance(tolerance), flags(flags), pTarget(pTarget),
+	arrivalActivity(-1), arrivalSequence(-1), m_vec2c(g_10934060), m_i38(0), m_i3c(0)
+{
+}
+
+struct CNavGoalView : CAI_Navigator { bool SetGoal(const AINavGoal4 &goal, unsigned flags = 0) { return sub_102ecd20((void *)&goal, flags); } };
+
+struct CAnimalView
+{
+	char m_pad0000[0x1568];
+	int m_n1568;
+	char m_pad156c[0x1b44 - 0x156c];
+	const char *m_pszFile;
+	int m_nLine;
+	char m_pad1b4c[0x5d34 - 0x1b4c];
+	CAI_Navigator *m_pNav;
+	char m_pad5d38[0x5d9c - 0x5d38];
+	float m_f5d9c;
+	char m_pad5da0[0x62ec - 0x5da0];
+	void *m_p62ec;
+	Vector m_vec;
+
+	void TaskFailAt(const char *pszFile, int nLine, int code)
+	{
+		m_pszFile = pszFile;
+		m_nLine = nLine;
+		((CEntityVSlots *)this)->slot448(code);
+	}
+};
+
+struct CAnimalWeapon { char m_pad[0x8c0]; float m_f8c0; };
+
+// TARGET: CNPC_VAnimal::sub_1035f650
+void CNPC_VAnimal::sub_1035f650(int *pTask)
+{
+	CAnimalView *v = (CAnimalView *)this;
+	switch (pTask[0]) {
+	case 0x9f:
+		if (sub_1032e7b0()) {
+			CAnimalMove *pMove = (CAnimalMove *)v->m_pNav;
+			float f = sub_102d61b0(v->m_n1568) * 2;
+			pMove->sub_102ee1c0(((CAnimalWeapon *)sub_1032e7b0())->m_f8c0 * *(const float *)&pTask[1] + f);
+			((CAI_BaseNPC *)this)->sub_10273e80(0);
+			return;
+		}
+		v->TaskFailAt("E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAnimal.cpp", 0x165, 3);
+		return;
+	case 0x89:
+		v->m_f5d9c = gpGlobals->curtime;
+		((CAI_BaseNPC *)this)->sub_10289ee0(0x4b);
+		return;
+	case 0x8a:
+		v->m_f5d9c = gpGlobals->curtime;
+		((CAI_BaseNPC *)this)->sub_10289ee0(0x4b);
+		return;
+	case 0x8b:
+		((CAI_BaseNPC *)this)->sub_10289ee0(0x50);
+		return;
+	case 0x8e:
+		((CAI_BaseNPC *)this)->sub_10289ee0(0x52);
+		return;
+	case 0xa5:
+		break;
+	default:
+		sub_102a1910(pTask);
+		return;
+	}
+	if (v->m_p62ec) {
+		if (((CNavGoalView *)v->m_pNav)->SetGoal(AINavGoal4(9, v->m_vec), 0)) {
+			((CAI_BaseNPC *)this)->sub_10273e80(0);
+			return;
+		}
+		v->TaskFailAt("E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAnimal.cpp", 0x199, 0xc);
+		return;
+	}
+	v->TaskFailAt("E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VAnimal.cpp", 0x19e, 0x22);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035fb50 size=0xd5
 #include "CNPC_VAnimal.h"
 #include "CAI_BaseNPCTroika.h"
