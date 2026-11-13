@@ -931,6 +931,7 @@
 0x1000236f func   ?sub_101cb6b0@@YAPAHXZ sub_101cb6b0
 0x10002374 func   ?vfunc0@CTEBeamRingPoint@@UAEPAUServerClass@@XZ CTEBeamRingPoint::vfunc0
 0x10002379 func   ?vfunc82@CNPCMaker_Zombie@@UAEPAUdatamap_t@@XZ CNPCMaker_Zombie::vfunc82
+0x1000237e func   ?sub_10259f80@@YADPAXPBD0@Z sub_10259f80
 0x10002383 func   ?sub_101d37a0@@YA_NPAD@Z sub_101d37a0
 0x10002388 func   ?sub_100cbe60@CCameraTrack@@QAEPAV1@XZ CCameraTrack::sub_100cbe60
 0x1000238d func   ?sub_101f35c0@@YIPAXPAX@Z sub_101f35c0
