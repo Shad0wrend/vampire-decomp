@@ -238235,6 +238235,55 @@ bool __stdcall sub_10344da0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103451d0 size=0x10b
+#include "CNPC_VTzimisce.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+
+struct MeleeSeqEvent
+{
+	float m_flStart;
+	float m_flEnd;
+	char m_pad08[0xbc - 8];
+};
+
+struct MeleeSeqDesc
+{
+	char m_pad000[0x2c4];
+	int m_nEvents;
+	int m_nEventIndex;
+	MeleeSeqEvent *pEvent(int i) { return (MeleeSeqEvent *)((char *)this + m_nEventIndex) + i; }
+};
+
+bool CBaseCombatCharacter::sub_103451d0(float flTime)
+{
+	ScopeTrace trace("CBaseCombatCharacter::IsMeleeSwingActive", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	sub_100952d0(-1);
+	MeleeSeqDesc *pSeq = (MeleeSeqDesc *)((CBaseAnimating *)this)->sub_1008d990(m_nSequence6f0);
+	if (!sub_1032e7b0())
+		return true;
+	int nEvents = (pSeq->m_nEvents < 20) ? pSeq->m_nEvents : 20;
+	int i;
+	if (nEvents > 0) {
+		for (i = 0, flTime = m_fl6f8 - flTime; i < nEvents; i++)
+		{
+			if (flTime >= pSeq->pEvent(i)->m_flStart && flTime < pSeq->pEvent(i)->m_flEnd)
+				return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10345330 size=0xed
 #include "CNPC_VTzimisce.h"
 #include "CUnknown101d7520.h"

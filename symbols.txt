@@ -4425,6 +4425,7 @@
 0x10006cad func   _npc_VChangBros npc_VChangBros
 0x10006cb2 func   ?vfunc5@CEnvPlayerSurfaceTrigger@@QAEPAVCPointEntity@@I@Z CEnvPlayerSurfaceTrigger::vfunc5
 0x10006cb7 func   ?sub_103bf330@CUnknown103bf330@@QAE_NH@Z CUnknown103bf330::sub_103bf330
+0x10006cbc func   ?sub_103451d0@CBaseCombatCharacter@@QAE_NM@Z CBaseCombatCharacter::sub_103451d0
 0x10006cc1 func   ?sub_10246510@@YA?AVSendProp@@PBDHHHHMMH@Z sub_10246510
 0x10006cc6 func   ?CopyConstruct@@YAXPAPAVCAI_Hint@@ABQAV1@@Z CopyConstruct
 0x10006cc6 func   ?sub_102d4320@@YAXPAHPBH@Z sub_102d4320
