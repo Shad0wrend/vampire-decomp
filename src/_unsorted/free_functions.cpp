@@ -122348,6 +122348,42 @@ void CUnknown101b3830::sub_101b3830(int nKey, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b3990 size=0x58
+void sub_101b3990(char *pSrc, int split, int skip, char *dst, int max, char *dst2, int max2)
+{
+	char *src = pSrc;
+	char *out = dst;
+	int limit = max;
+	int i = 0;
+	int n = 0;
+	while (*src)
+	{
+		if (i == split)
+		{
+			while (--skip >= 0)
+				src++;
+			limit = max2;
+			*out = 0;
+			out = dst2;
+			i++;
+		}
+		else if (n >= limit)
+		{
+			src++;
+			i++;
+		}
+		else
+		{
+			*out++ = *src;
+			src++;
+			n++;
+			i++;
+		}
+	}
+	*out = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3a10 size=0x107
 #include "CUnknown101b3a10.h"
 
