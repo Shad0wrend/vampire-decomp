@@ -11202,6 +11202,7 @@
 0x1000f7c7 func   ?sub_10311710@CUnknown10311a20@@QAE_NPBUCUnknown10311a20_Record@@@Z CUnknown10311a20::sub_10311710
 0x1000f7cc func   ?vfunc380@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc380
 0x1000f7d1 func   ?sub_100c0900@CFuncRotating@@QAEMM@Z CFuncRotating::sub_100c0900
+0x1000f7db func   ?sub_103302e0@CBaseCombatCharacter@@QAEHPAUCTakeDamageInfo@@@Z CBaseCombatCharacter::sub_103302e0
 0x1000f7e0 func   ?sub_101e44c0@CUnknown101e44c0@@QAE_NPADPBDI@Z CUnknown101e44c0::sub_101e44c0
 0x1000f7e5 func   ?vfunc117@CLogicalEntity@@UAEHXZ CLogicalEntity::vfunc117
 0x1000f7ea func   ?vfunc126@CBasePlayer@@QAEHH@Z CBasePlayer::vfunc126

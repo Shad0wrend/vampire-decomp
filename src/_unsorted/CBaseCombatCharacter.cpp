@@ -2818,6 +2818,235 @@ bool CBaseCombatCharacter::vfunc334(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103302e0 size=0x7f7
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatInfoList_t.h"
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+#include "Tier1.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CTakeDamageInfo.h"
+#include "CBaseAnimating.h"
+
+// TARGET: CBaseCombatCharacter::sub_103302e0
+
+extern Vector g_1070d1b0;
+extern Vector g_1070ba40;
+extern int g_10739a68;
+extern CVStatInfoList_t g_1074e098;
+extern float g_104454c4;
+
+void sub_101cebc0(void *pEntity, int a, int b);
+void sub_1023e4b0(void *pCharacter, int a);
+
+class CUnknown101e8dc0 { public: int sub_101e8dc0(); };
+class CUnknown101e8de0 { public: int sub_101e8de0(); };
+class CUnknown101e8e60 { public: int sub_101e8e60(); };
+class CUnknown101c2b30 { public: char sub_101c2b30(); };
+class CNamedListXRem { public: void sub_101e3c10(int a, const char *name); };
+
+class CUnknown10936de4
+{
+public:
+	virtual char vfunc0();
+	virtual char vfunc1();
+	int m_field04;
+	int m_field08;
+	int m_field0c;
+	int m_field10;
+	int m_field14;
+	int m_field18;
+	int m_field1c;
+	int m_field20;
+	int m_field24;
+	int m_field28;
+	int m_field2c;
+};
+extern CUnknown10936de4 *g_10936de4;
+extern char g_10739d08[];
+extern char g_10739a4c[];
+
+#define EVS(n) virtual void slot##n();
+#define EVS10(p) EVS(p##0) EVS(p##1) EVS(p##2) EVS(p##3) EVS(p##4) EVS(p##5) EVS(p##6) EVS(p##7) EVS(p##8) EVS(p##9)
+
+class CCBCCVSlots299
+{
+public:
+	EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS10(19)
+	EVS10(20) EVS10(21) EVS10(22) EVS10(23) EVS10(24) EVS10(25) EVS10(26) EVS10(27) EVS10(28)
+	EVS(290) EVS(291) EVS(292) EVS(293) EVS(294) EVS(295) EVS(296) EVS(297) EVS(298)
+	virtual void vfunc299(CTakeDamageInfo *pInfo, char *pResult);
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+inline float DamageValue(CTakeDamageInfo *pInfo)
+{
+	if (pInfo->m_pVDmg00)
+		return (float)pInfo->m_pVDmg00->sub_101faa70();
+	return pInfo->m_flDamage;
+}
+
+#pragma inline_depth(1)
+int CBaseCombatCharacter::sub_103302e0(CTakeDamageInfo *pInfo)
+{
+	ScopeTrace scope("CBaseCombatCharacter::OnTakeDamage_Alive",
+	                 this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	if (sub_1033b7c0())
+		c358();
+
+	if (sub_103300c0())
+	{
+		if (m_n168 != 0x1e && m_n168 != 0x1f)
+		{
+			m_n168 = 0x1a;
+			((CBaseAnimating *)this)->sub_10090890(0);
+		}
+
+		const char *pszSound;
+		switch (g_109f3868(0, 2))
+		{
+		case 0:
+			pszSound = STRINGR(g_1074e098.sub_10200370(7)->m_apszSound[3]);
+			break;
+		case 1:
+			pszSound = STRINGR(g_1074e098.sub_10200370(7)->m_apszSound[4]);
+			break;
+		default:
+			pszSound = STRINGR(g_1074e098.sub_10200370(7)->m_apszSound[5]);
+			break;
+		}
+		if (pszSound && pszSound[0] == 0)
+			pszSound = STRINGR(g_1074e098.sub_10200370(7)->m_apszSound[3]);
+
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		enginesound->vfunc0(pszSound, 0);
+		int edict = m_pEdict2e0;
+		enginesound->vfunc3(&filter, engine->vfunc35(edict), 4, pszSound,
+		                    1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	}
+	else
+	{
+		if (sub_10330220())
+		{
+			if (m_n168 != 0x1e && m_n168 != 0x1f)
+			{
+				m_n168 = 0x25;
+				((CBaseAnimating *)this)->sub_10090890(0);
+			}
+		}
+	}
+
+	char bResult = 0;
+	((CCBCCVSlots299 *)this)->vfunc299(pInfo, &bResult);
+	if (bResult)
+		return 1;
+	else
+	{
+		CBaseEntity *pInflictor = (CBaseEntity *)pInfo->m_pInflictor;
+		if (pInflictor)
+		{
+			CBaseEntity *pPlayer = (CBaseEntity *)pInflictor->m_pA8;
+			if (pPlayer)
+				sub_101cebc0(pPlayer, 0x2a, (int)DamageValue(pInfo));
+		}
+
+		if (!((CUnknown101c2b30 *)pInfo)->sub_101c2b30() && m_pNPC98 && !m_pNPC98->m_b63d8)
+			sub_1023e4b0(this, (int)DamageValue(pInfo));
+
+		m_bitsDamageType = pInfo->m_pVDmg00
+			? (pInfo->m_pVDmg00->m_field10 | pInfo->m_nFlags38)
+			: pInfo->m_nFlags38;
+
+		Vector vecDir = g_1070d1b0;
+		if (pInfo->m_pAttacker)
+		{
+			vecDir = ((CEntitySoundOriginView *)pInfo->m_pAttacker)->WorldSpaceCenter() - Vector(0, 0, 10)
+				- ((CEntitySoundOriginView *)this)->WorldSpaceCenter();
+			VectorNormalize(vecDir);
+		}
+		g_1070ba40 = vecDir;
+
+		if (m_nTakeDamage == 1)
+			return 1;
+
+		if (!g_10936de4->vfunc1() && g_10936de4->m_field2c)
+			return 1;
+
+		float flDamage;
+		if (pInfo->m_pVDmg00)
+		{
+			int edict = engine->vfunc35(pcd_stage(m_pEdict2e0));
+			flDamage = (float)pInfo->m_pVDmg00->sub_101fb200(edict, pInfo->sub_101c29b0());
+		}
+		else
+		{
+			flDamage = pInfo->m_flDamage;
+		}
+
+		if (flDamage > g_104454c4)
+		{
+			long iBlood = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x19);
+			if (iBlood)
+			{
+				int nAbsorb = (int)(g_10739a68 * flDamage * 0.01f);
+				flDamage -= (float)nAbsorb;
+				if (nAbsorb >= iBlood)
+				{
+					CVStatListSet::Of(this)->Find(0)->sub_102008e0(0x19, 0);
+					((CNamedListXRem *)g_10739a4c)->sub_101e3c10((int)this, "Thaumaturgy_Bloodshield");
+				}
+				else
+				{
+					CVStatListSet::Of(this)->Find(0)->sub_10201100(0x19, nAbsorb);
+				}
+			}
+
+			if (flDamage > g_104454c4)
+			{
+				int nHealth = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xf);
+				if (m_bIsUnkillable && (int)flDamage + nHealth > 75)
+					flDamage = (float)(75 - nHealth);
+
+				CVStatListSet::Of(this)->Find(0)->sub_10200fc0(0xf, (int)flDamage);
+
+				if (sub_10337f30())
+				{
+					if (0xc8000008 & m_bitsDamageType)
+						CVStatListSet::Of(this)->Find(0)->sub_10200fc0(0x10, (int)flDamage);
+
+					if (pInfo->m_pInflictor && ((CBaseEntity *)pInfo->m_pInflictor)->m_p9c)
+					{
+						if ((float)((CUnknown101e8dc0 *)g_10739d08)->sub_101e8dc0() <= DamageValue(pInfo) ||
+						    ((float)((CUnknown101e8de0 *)g_10739d08)->sub_101e8de0() <= DamageValue(pInfo) &&
+						     (m_bitsDamageType & 0xc8000008)))
+							sub_1033eb60(((CUnknown101e8e60 *)g_10739d08)->sub_101e8e60());
+					}
+				}
+
+				m_iHealth = c348();
+			}
+		}
+		return 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103315e0 size=0x79
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
