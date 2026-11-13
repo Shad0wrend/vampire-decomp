@@ -324,6 +324,66 @@ void CAI_StandoffBehavior::vfunc21() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c79e0 size=0x167
+#include "CNPC_VTzimisce.h"
+#include "CAI_StandoffBehavior.h"
+#include "CAI_BaseNPCTroika.h"
+
+extern int g_10925388;
+extern int g_10925390;
+
+struct CStandoffNpcView : CAI_StandoffBehaviorOuter
+{
+    void *sub_1032d890(const char *name, int n);
+};
+void sub_1027e590(CStandoffNpcView *p, const char *fmt, ...);
+struct CAI_Hint5dc { char pad[0x5dc]; int m_nType; };
+
+struct CStandoffView : CAI_StandoffBehavior
+{
+    CStandoffNpcView *GetOuter() { return (CStandoffNpcView *)m_pOuter; }
+};
+
+#define NPC (((CStandoffView *)this)->GetOuter())
+
+// TARGET: CAI_StandoffBehavior::vfunc22
+int CAI_StandoffBehavior::vfunc22(int a)
+{
+    CAI_Hint *t = NPC->m_pHintNode;
+    if (t && ((CAI_Hint5dc *)t)->m_nType == 0x65) {
+        int act = ((CAI_BaseNPCTroika *)NPC)->vfunc569((CBaseEntity *)t);
+        if (a == 1)
+            a = ((CAI_BaseNPCTroika *)NPC)->vfunc569((CBaseEntity *)t);
+        if (m_nState1c == 0 && act == 8)
+            m_nState1c = 2;
+    }
+    if (m_nState1c == 2) {
+        if (a == 1)
+            return 8;
+        if (a == 9 && NPC->sub_1008dd30(0x12, -1) >= 0)
+            return 0x12;
+    }
+    if (m_nState1c == 1 && a == 8)
+        return 1;
+    if (m_nState1c == 3 && (a == 8 || a == 1)) {
+        if (NPC->sub_1032d890("weapon_smg1", 0)) {
+            int smg = g_10925390;
+            if (NPC->sub_1008dd30(smg, -1) >= 0)
+                return g_10925390;
+        }
+        if (NPC->sub_1032d890("weapon_pistol", 0)) {
+            int pistol = g_10925388;
+            if (NPC->sub_1008dd30(pistol, -1) >= 0)
+                return g_10925388;
+        }
+        CBaseEntity *w = (CBaseEntity *)NPC->sub_1032e7b0();
+        sub_1027e590(NPC, "NPC in standoff lacks needed low aim activity (%s)\n", w ? w->sub_1009f200() : "no weapon");
+        return 1;
+    }
+    return sub_102c6f70(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c7dd0 size=0x29
 #include "CAI_StandoffBehavior.h"
 

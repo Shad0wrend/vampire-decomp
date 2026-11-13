@@ -3042,6 +3042,7 @@
 0x10004f3e func   ?sub_1006bde0@CUtlBuffer@@QAEXPADH_N@Z CUtlBuffer::sub_1006bde0
 0x10004f43 func   ?vfunc81@CWeaponRanged_Rifle_Crossbow@@UAEHXZ CWeaponRanged_Rifle_Crossbow::vfunc81
 0x10004f48 func   ?sub_103eece0@CGrenadeUnit103eece0@@QAEEXZ CGrenadeUnit103eece0::sub_103eece0
+0x10004f4d func   ?vfunc22@CAI_StandoffBehavior@@UAEHH@Z CAI_StandoffBehavior::vfunc22
 0x10004f57 func   ?vfunc539@CAI_BaseNPC@@UAEXPBVVector@@@Z CAI_BaseNPC::vfunc539
 0x10004f5c func   ?sub_10406d70@@YAHXZ sub_10406d70
 0x10004f61 func   ?sub_101f99c0@@YGXHH@Z sub_101f99c0
