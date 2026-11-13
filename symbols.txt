@@ -10365,6 +10365,7 @@
 0x1000e7f5 func   ?sub_10205dc0@CUnknown10205dc0@@QAEPBDXZ CUnknown10205dc0::sub_10205dc0
 0x1000e7fa func   _env_terrainmorph env_terrainmorph
 0x1000e7ff func   ?vfunc81@CWeaponRanged_Rifle_RemingtonBach@@UAEHXZ CWeaponRanged_Rifle_RemingtonBach::vfunc81
+0x1000e804 func   ?vfunc12@CGameMovement@@UAEXXZ CGameMovement::vfunc12
 0x1000e809 func   ?vfunc604@CNPC_VSheriffMan@@QAEHH@Z CNPC_VSheriffMan::vfunc604
 0x1000e80e func   ?vfunc228@CPropHaunted@@QAEXHPAX@Z CPropHaunted::vfunc228
 0x1000e818 func   ?vfunc378@CItemContainer@@QAE_NHH@Z CItemContainer::vfunc378

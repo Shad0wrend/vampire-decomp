@@ -763,6 +763,115 @@ usedown:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10121ce0 size=0x39f
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CBaseEntity.h"
+#include "globalvars.h"
+
+inline void VectorLerpI(const Vector& src1, const Vector& src2, vec_t t, Vector& dest )
+{
+	dest[0] = src1[0] + (src2[0] - src1[0]) * t;
+	dest[1] = src1[1] + (src2[1] - src1[1]) * t;
+	dest[2] = src1[2] + (src2[2] - src1[2]) * t;
+}
+inline void VectorLerpJ(const Vector& src1, const Vector& src2, vec_t t, Vector& dest )
+{
+	dest.x = (src2.x - src1.x) * t + src1.x;
+	dest.y = src1.y + (src2.y - src1.y) * t;
+	dest.z = src1.z + (src2.z - src1.z) * t;
+}
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+#define MOVE ((CMoveFlagsView *)m_pMove)
+#define MOVED ((CMoveDataView *)m_pMove)
+
+// TARGET: CGameMovement::vfunc12
+void CGameMovement::vfunc12()
+{
+	if (!sub_101252e0())
+		sub_1011fa80();
+
+	if (MOVE->m_flWaterJump != 0.0f)
+	{
+		sub_1011ffe0();
+		slot19(0, 0);
+		sub_101252e0();
+		return;
+	}
+
+	if (MOVE->m_n03E0 >= 2)
+	{
+		if (MOVE->m_n03E0 == 2)
+			sub_1011fb50();
+		if (MOVE->m_n03E0 >= 3)
+			sub_101256d0(0);
+		if (PLAYER->m_vecVelocity.z < 0.0f && MOVE->m_flWaterJump != 0.0f)
+			MOVE->m_flWaterJump = 0.0f;
+		if (PLAYER->m_fFlags24 & 2)
+			slot17();
+		else
+			PLAYER->m_n0028 &= ~2;
+		sub_101200c0();
+		VectorSubtract(PLAYER->m_vecVelocity, MOVE->m_vec3b0, PLAYER->m_vecVelocity);
+		slot22();
+		if (MOVED->vfunc209())
+			PLAYER->m_vecVelocity.z = 0.0f;
+	}
+	else
+	{
+		if (PLAYER->m_fFlags24 & 2)
+			slot17();
+		else
+			PLAYER->m_n0028 &= ~2;
+		if (MOVED->vfunc209())
+		{
+			PLAYER->m_vecVelocity.z = 0.0f;
+			sub_10120ba0();
+		}
+		sub_10004ebc();
+		if (MOVED->vfunc209())
+			vfunc11();
+		else
+			vfunc8();
+		slot22();
+		VectorSubtract(PLAYER->m_vecVelocity, MOVE->m_vec3b0, PLAYER->m_vecVelocity);
+		sub_10004ebc();
+		if (!sub_101252e0())
+			sub_10120f30();
+		if (MOVED->vfunc209())
+			PLAYER->m_vecVelocity.z = 0.0f;
+		sub_10125db0();
+	}
+
+	if (MOVED->vfunc209() == 0 &&
+		(((CBaseEntity *)m_pMove)->sub_100b3700() & 2) == 0)
+	{
+		if (PLAYER->m_n00c0 >= 8)
+		{
+			float scale = sub_101282b0();
+			float t0 = PLAYER->m_fl00BC - gpGlobals->curtime;
+			float t = t0 / scale;
+			if (t > 0.0f)
+			{
+				Vector a = *(Vector *)slot4(1, MOVE->m_b1edc);
+				Vector b = *(Vector *)slot4(0, MOVE->m_b1edc);
+				if (PLAYER->m_n00c0 == 8)
+					a = 0.5f * (a + b);
+				Vector *pv = (Vector *)&MOVE->m_pad0000[0x184];
+				Vector v = *pv;
+				VectorLerpI(b, a, t, v);
+				MOVE->sub_1009f380(&v);
+			}
+		}
+		else if (!MOVE->m_bDucked)
+			MOVE->sub_1009f380((Vector *)slot4(0, MOVE->m_b1edc));
+	}
+
+	if ((m_field0c == 0 && MOVE->m_n03E0 != 0) || (m_field0c != 0 && MOVE->m_n03E0 == 0))
+		sub_10122590();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10122c30 size=0x77
 #include "CGameMovement.h"
 
