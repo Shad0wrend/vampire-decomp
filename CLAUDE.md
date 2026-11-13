@@ -546,6 +546,13 @@ have written it rather than adding temporaries that spell out the assembly:
   Recurring wall NOT moved by any source form (5 functions: 0x102a0490, 0x10176930, 0x10410bf0, 0x102bf820,
   0x101001e0): a copy from a pointer a call returned into a local whose address then goes to an out-of-line call
   (Ray Init): the game loads all components before storing any; ours interleaves. Likely needs a header/tool look.
+  Studied 2026-11-13 with standalone VC6 probes (session 30d205cb scratchpad cw/p, run.bat = cl /O2 /FAs): this
+  VC6 serializes every copy into an address-taken local (ld x, st x, ld y, st y, ...), whatever the source form
+  (implicit/user copy ctor, operator=, POD struct, const local, by-value return, inline or out-of-line Init,
+  Base()/&v.x/reference) or flag (/Oa, /Ow, /G3-/G6, /GX, pragma a/w). Free order only when the destination does
+  not escape or a copy-propagated temp sits in between (the frame grows). Among Ray-init callers: matched 23
+  serialized / 0 free; the free ones are all open (0x10410bf0, 0x102a0490, 0x10176930, 0x101001e0, 0x10177c10,
+  0x10086910, 0x102c3b50). Do not spend more source variants on the copy itself.
 - **Same-name plain member + later virtual = shifted vtable (found 2026-11-12):** MSVC puts all functions of one
   name together in the vtable, at the first declaration's position. A plain `void vfunc442(int *)` near the top of
   a class plus the `virtual void vfunc442();` placeholder further down moved slot 442 before slot 134, so every
