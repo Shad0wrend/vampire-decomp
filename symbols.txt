@@ -11648,6 +11648,7 @@
 0x10010253 func   ?sub_10315ec0@CUnknown10315ec0@@QAE_NPAUCUnknown10315ec0Ent@@@Z CUnknown10315ec0::sub_10315ec0
 0x10010258 func   ?sub_102f47b0@CUnknown102f47b0@@QAEMH@Z CUnknown102f47b0::sub_102f47b0
 0x1001025d func   ?sub_101f4170@CUnknown101f40f0@@QAEXPAVCUnknown101f5150@@PBD@Z CUnknown101f40f0::sub_101f4170
+0x10010262 func   ?sub_10306f60@CAI_Pathfinder@@QAE_NPAVCBaseEntity@@HPAVVector@@M1@Z CAI_Pathfinder::sub_10306f60
 0x10010267 func   ?sub_10216830@@YIXPADHH@Z sub_10216830
 0x1001026c func   ?vfunc1@CTETracer@@UAEHXZ CTETracer::vfunc1
 0x10010271 func   ?sub_10182da0@CUnknown10182da0@@QAEHHH@Z CUnknown10182da0::sub_10182da0

@@ -224600,6 +224600,324 @@ bool CAI_Pathfinder::sub_10306700(CBaseEntity *pEnt, const Vector *pVecStart, co
 }
 // END FUNCTION
 
+// FUNCTION: 0x10306f60 size=0x74b
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CAI_Pathfinder.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CBitString.h"
+#include "UtlVec8.h"
+#include "utlvector.h"
+#include "CUnknown102f8f10.h"
+#include "CPairFields102dda40.h"
+#include "engineiface.h"
+#include <malloc.h>
+#include <math.h>
+
+extern char g_1093408c;
+extern int g_106c994c;
+extern void (__cdecl *g_109f3658)(int, const char *, ...);
+bool __cdecl sub_102f3770(const UtlVec8Elem &, const UtlVec8Elem &);
+
+struct CFindHuntNodeView
+{
+	char m_pad0000[0x78];
+	int m_nLinks;	// 0x78
+	CPairFields102dda40 **m_ppLinks;	// 0x7c
+	Vector *sub_102fb0d0(Vector *pOut, int nHull);
+};
+
+struct CFindHuntNetworkView
+{
+	int m_nNodes;
+	CFindHuntNodeView **m_ppNodes;
+	int sub_102f3c10(void *pNPC, const Vector *pPosition);
+	CFindHuntNodeView *GetNode(int id)
+	{
+		if (id >= 0 && id < m_nNodes)
+			return m_ppNodes[id];
+		g_106c994c++;
+		return 0;
+	}
+};
+
+struct CFindHuntTroikaView
+{
+	char m_pad0000[0x6594];
+	int m_n6594;
+	void sub_1029f460(void *pRef, int a, int b, int c, int *pRoute, int d);
+};
+
+struct CFindHuntNPCView
+{
+	char m_pad0000[0x98];
+	CFindHuntTroikaView *m_pTroika;	// 0x98
+	char m_pad009c[0x156c - 0x9c];
+	int m_nHull;	// 0x156c
+	int GetHullType() const { return m_nHull; }
+};
+
+struct CFindHuntPOD { float x, y, z; };
+
+struct CFindHuntNearNode
+{
+	float dist;
+	int nodeIndex;
+};
+
+typedef CUtlMemory<UtlVec8Elem> CFindHuntMem;
+typedef bool (__cdecl *CFindHuntLess)(const UtlVec8Elem &, const UtlVec8Elem &);
+
+struct CFindHuntMemView : CFindHuntMem
+{
+	void sub_102f91b0();	// CUtlMemory::Purge, out of line
+};
+
+struct CFindHuntVecView : CUtlVector<UtlVec8Elem>
+{
+	int sub_102f90e0(int elem);	// InsertBefore, out of line
+	void sub_102f9000(int elem);	// FastRemove, out of line
+};
+
+void __fastcall sub_102f8ef0(void *p);
+
+struct CFindHuntQueueView
+{
+	CFindHuntVecView m_heap;
+	CFindHuntLess m_LessFunc;
+
+	void sub_102f9090(int index1, int index2);	// Swap, out of line
+	int Count() const { return m_heap.Count(); }
+	UtlVec8Elem const &ElementAtHead() const { return m_heap.Element(0); }
+	void Swap(int index1, int index2)
+	{
+		UtlVec8Elem tmp = m_heap[index1];
+		m_heap[index1] = m_heap[index2];
+		m_heap[index2] = tmp;
+	}
+	void RemoveAtHead()
+	{
+		m_heap.sub_102f9000(0);
+		int index = 0;
+		int count = Count();
+		if (!count)
+			return;
+		int half = count / 2;
+		int larger = index;
+		while (index < half)
+		{
+			int child = ((index + 1) * 2) - 1;
+			if (child < count)
+			{
+				if (m_LessFunc(m_heap[index], m_heap[child]))
+					larger = child;
+			}
+			child++;
+			if (child < count)
+			{
+				if (m_LessFunc(m_heap[larger], m_heap[child]))
+					larger = child;
+			}
+			if (larger == index)
+				break;
+			sub_102f9090(index, larger);
+			index = larger;
+		}
+	}
+	void InsertCall(UtlVec8Elem const &element)
+	{
+		int index = m_heap.sub_102f90e0(m_heap.Count());
+		m_heap[index] = element;
+		while (index != 0)
+		{
+			int parent = ((index + 1) / 2) - 1;
+			if (m_LessFunc(m_heap[index], m_heap[parent]))
+				break;
+			sub_102f9090(parent, index);
+			index = parent;
+		}
+	}
+	void Insert(UtlVec8Elem const &element)
+	{
+		int index = m_heap.sub_102f90e0(m_heap.Count());
+		m_heap[index] = element;
+		while (index != 0)
+		{
+			int parent = ((index + 1) / 2) - 1;
+			if (m_LessFunc(m_heap[index], m_heap[parent]))
+				break;
+			Swap(parent, index);
+			index = parent;
+		}
+	}
+	void DestroyCall()
+	{
+		m_heap.m_Size = 0;
+		((CFindHuntMemView *)&m_heap.m_Memory)->sub_102f91b0();
+		m_heap.ResetDbgInfo();
+		m_heap.m_Memory.~CFindHuntMem();
+	}
+	void DestroyCall2()
+	{
+		sub_102f8ef0(&m_heap);
+		((CFindHuntMemView *)&m_heap.m_Memory)->sub_102f91b0();
+		m_heap.ResetDbgInfo();
+		((CFindHuntMemView *)&m_heap.m_Memory)->sub_102f91b0();
+	}
+	void Destroy()
+	{
+		m_heap.m_Size = 0;
+		m_heap.m_Memory.Purge();
+		m_heap.ResetDbgInfo();
+		m_heap.m_Memory.~CFindHuntMem();
+	}
+};
+
+struct CFindHuntPathfinder : CAI_Pathfinder
+{
+	CFindHuntNetworkView *GetNetwork() { return (CFindHuntNetworkView *)((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder->m_pNetwork; }
+};
+
+inline float FindHuntLength(const Vector &v)
+{
+	return FastSqrt(v.y * v.y + (v.z * v.z + v.x * v.x));
+}
+
+inline float FindHuntSq(float f) { return f * f; }
+inline float FindHuntSqR(const float &f) { return f * f; }
+#define GetNetwork() ((CFindHuntPathfinder *)this)->GetNetwork()
+
+bool CAI_Pathfinder::sub_10306f60(CBaseEntity *pEnt, int a2, Vector *pTargetPos, float flMaxDist, Vector *pOut)
+{
+	if (!g_1093408c)
+		return false;
+
+	Vector vecOrigin = *((CEntityVSlots *)pEnt)->slot220();
+	m_unk08 = ((CFindHuntNPCView *)m_pOuter)->m_nHull;
+	m_unk0c = gpGlobals->framecount;
+	CAI_Pathfinder *pOther = ((CAI_PathfinderOuter *)pEnt)->m_pPathfinder;
+	pOther->m_unk08 = ((CFindHuntNPCView *)pOther->m_pOuter)->m_nHull;
+	pOther->m_unk0c = gpGlobals->framecount;
+	int nStart = GetNetwork()->sub_102f3c10(pEnt, &vecOrigin);
+	if (nStart == -1)
+	{
+		g_109f3658(2, "FindHuntPatrolTarget() - %s has no nearest node (%f, %f, %f)!\n",
+		           pEnt->sub_1009f200(), vecOrigin.x, vecOrigin.y, vecOrigin.z);
+		return false;
+	}
+
+	Vector vecDir;
+	if (pTargetPos)
+	{
+		vecDir = *pTargetPos - vecOrigin;
+		vecDir.z = 0;
+		VectorNormalize(vecDir);
+		vecDir.x += enginerandom->vfunc1(-0.5f, 0.5f);
+		vecDir.y += enginerandom->vfunc1(-0.5f, 0.5f);
+	}
+	else
+	{
+		vecDir.Init(enginerandom->vfunc1(-1.0f, 1.0f), enginerandom->vfunc1(-1.0f, 1.0f), 0);
+		if (vecDir.x == 0.0f)
+			vecDir.y = 1.0f;
+	}
+	VectorNormalize(vecDir);
+
+	int nCount = GetNetwork()->m_nNodes;
+	CUnknown102f8f10 queueStore((int)_alloca(nCount * sizeof(UtlVec8Elem)), nCount, (int)sub_102f3770);
+	CFindHuntQueueView &queue = *(CFindHuntQueueView *)&queueStore;
+	CBitString visited;
+	visited.sub_102fc910(GetNetwork()->m_nNodes);
+
+	float flDist = 0;
+	int nRoute = 0;
+	int route[65];
+	Vector vecEndPos;
+	Vector vecLast = *((CEntityVSlots *)pEnt)->slot220();
+
+	visited.m_pData[nStart >> 5] |= 1 << (nStart & 31);
+	CFindHuntNearNode start;
+	start.dist = 0;
+	start.nodeIndex = nStart;
+	queue.InsertCall((const UtlVec8Elem &)start);
+
+	while (queue.Count())
+	{
+		int nNode = queue.ElementAtHead().b;
+		queue.RemoveAtHead();
+
+		Vector vecPos;
+		GetNetwork()->GetNode(nNode)->sub_102fb0d0(&vecPos, ((CFindHuntNPCView *)pEnt)->GetHullType());
+		Vector vecDelta = vecPos - vecLast;
+		flDist += sub_10146150(&vecDelta);
+		vecLast = vecPos;
+		if (flDist > flMaxDist)
+			break;
+
+		route[nRoute++] = nNode;
+		if (nRoute >= 64)
+			break;
+
+		int nBest = -1;
+		float flBest = 0;
+		CFindHuntNodeView *pCur = GetNetwork()->GetNode(nNode);
+		if (nRoute < 10)
+			flBest = -1.0f;
+		for (int i = 0; i < pCur->m_nLinks; i++)
+		{
+			CPairFields102dda40 *pLink = pCur->m_ppLinks[i];
+			if (sub_102ff960(pLink, nNode))
+			{
+				int nEnd = pLink->sub_102dda40(nNode);
+				if (!(visited.m_pData[nEnd >> 5] & (1 << (nEnd & 31))))
+				{
+					visited.m_pData[nEnd >> 5] |= 1 << (nEnd & 31);
+					Vector vecToNode = *GetNetwork()->GetNode(nEnd)->sub_102fb0d0(&vecEndPos, ((CFindHuntNPCView *)pEnt)->GetHullType()) - vecOrigin;
+					VectorNormalize(vecToNode);
+					float flDot = vecToNode.x * vecDir.x + (vecToNode.y * vecDir.y + vecToNode.z * vecDir.z);
+					if (flDot > flBest)
+					{
+						flBest = flDot;
+						nBest = nEnd;
+						((CEntityVSlots *)pEnt)->slot513();
+					}
+				}
+			}
+		}
+		if (nBest == -1)
+			break;
+
+		CFindHuntNearNode next;
+		next.dist = 0;
+		next.nodeIndex = nBest;
+		queue.InsertCall((const UtlVec8Elem &)next);
+	}
+
+	route[nRoute] = -1;
+	if (nRoute <= 0)
+	{
+		visited.sub_100bf6a0();
+		queue.DestroyCall2();
+		return false;
+	}
+	route[0] = route[nRoute - 1];
+	route[1] = -1;
+	CFindHuntTroikaView *pTroika = ((CFindHuntNPCView *)pEnt)->m_pTroika;
+	if (!pTroika)
+	{
+		visited.sub_100bf6a0();
+		queue.DestroyCall2();
+		return false;
+	}
+	pTroika->sub_1029f460(&pTroika->m_n6594, 0, 0, 0, route, 1);
+	*(CFindHuntPOD *)pOut = *(CFindHuntPOD *)GetNetwork()->GetNode(route[0])->sub_102fb0d0(&vecEndPos, ((CFindHuntNPCView *)pEnt)->GetHullType());
+	visited.sub_100bf6a0();
+	queue.Destroy();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10307890 size=0x25
 #include <string.h>
 
