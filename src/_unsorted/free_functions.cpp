@@ -229155,6 +229155,69 @@ bool CBaseCombatCharacter::sub_10326360(Vector vecPos, float flScale, float flCo
 }
 // END FUNCTION
 
+// FUNCTION: 0x103264d0 size=0x1fa
+#include "CVTraitEffect_t.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "ConVar.h"
+extern ConVar g_10937a88;
+
+class CUnknown10937a8cView
+{
+public:
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	int m_n4; int m_n8; int m_nc; int m_n10; int m_n14; int m_n18; int m_n1c; int m_n20; int m_n24;
+	float m_fl28;
+};
+extern CUnknown10937a8cView *g_10937a8c;
+
+#define BV(n) virtual void v##n();
+#define BV10(p) BV(p##0) BV(p##1) BV(p##2) BV(p##3) BV(p##4) BV(p##5) BV(p##6) BV(p##7) BV(p##8) BV(p##9)
+struct CViewCone103264d0
+{
+	BV(0) BV(1) BV(2) BV(3) BV(4) BV(5) BV(6) BV(7) BV(8) BV(9)
+	BV10(1) BV10(2) BV10(3) BV10(4) BV10(5) BV10(6) BV10(7) BV10(8) BV10(9)
+	BV10(10) BV10(11) BV10(12) BV10(13) BV10(14) BV10(15) BV10(16) BV10(17) BV10(18)
+	BV(190) BV(191) BV(192)
+	virtual Vector EyePosition();
+	BV(194) BV(195) BV(196) BV(197) BV(198) BV(199)
+	BV10(20) BV10(21) BV10(22) BV10(23) BV10(24) BV10(25) BV10(26) BV10(27) BV10(28) BV10(29)
+	BV10(30) BV10(31) BV10(32) BV10(33) BV10(34) BV10(35) BV10(36)
+	BV(370) BV(371) BV(372)
+	virtual Vector EyeDirection3D();
+};
+
+char CBaseCombatCharacter::sub_103264d0(Vector pos, float flScale, int a)
+{
+	ScopeTrace trace("CBaseCombatCharacter::FinViewCone3dNew",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CViewCone103264d0 *pView = (CViewCone103264d0 *)this;
+
+	Vector los = pos - pView->EyePosition();
+	Vector forward = pView->EyeDirection3D();
+	if (DotProduct(los, forward) <= 0.0f)
+		return false;
+
+	double flOffset = g_10937a88.GetFloat();
+	los = pos - (pView->EyePosition() - flOffset * pView->EyeDirection3D());
+	los.NormalizeInPlace();
+	float flDot = DotProduct(los, forward);
+	if (flDot * flScale <= *(float *)&a)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103268e0 size=0xf1
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
