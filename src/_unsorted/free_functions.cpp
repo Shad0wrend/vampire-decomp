@@ -195417,6 +195417,72 @@ CBaseEntity *CAI_BaseNPC::sub_102729d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10272ab0 size=0x39f
+class Vector;
+__forceinline void VectorSubtract(const Vector &a, const Vector &b, Vector &c);
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "UTIL_Trace.h"
+#include "CUnknown1003ff80.h"
+
+Vector sub_102808c0(const Vector *a, const Vector *b, float c, float d);
+float sub_10146150(const Vector *v);
+struct CUnknown1004f860 { void *sub_1004f860(); };
+
+float CAI_BaseNPC::sub_10272ab0(const Vector *pStart, const Vector *pEnd, float fGravity, float fArcSize, const Vector *pMins, const Vector *pMaxs, int nTarget, Vector *jumpVelocity, int *pBlockerOut)
+{
+	const Vector &vecStart = *pStart;
+	const Vector &vecEnd = *pEnd;
+	const Vector &mins = *pMins;
+	const Vector &maxs = *pMaxs;
+	CBaseEntity *pTarget = (CBaseEntity *)nTarget;
+	CBaseEntity **pBlocker = (CBaseEntity **)pBlockerOut;
+	Vector rawJumpVel = sub_102808c0(&vecStart, &vecEnd, fGravity, fArcSize);
+	*jumpVelocity = rawJumpVel;
+	Vector vecFrom = vecStart;
+
+	Vector vecDelta = vecStart - vecEnd;
+	float jumpTime = vecDelta.Length2D() / rawJumpVel.Length2D();
+	float timeStep = jumpTime * 0.1;
+
+	Vector gravity(0, 0, fGravity);
+
+	for (float flTime = 0; flTime < jumpTime - 0.1; flTime += timeStep)
+	{
+		Vector nextPos = vecFrom + (rawJumpVel - 0.5f * gravity * timeStep) * timeStep;
+
+		if ((flTime + timeStep) > jumpTime)
+		{
+			nextPos = vecEnd;
+		}
+
+		CGameTrace tr;
+		((CUnknown1003ff80 *)&tr)->sub_1003ff80();
+		Ray_t ray;
+		((CUnknown1004f860 *)&ray)->sub_1004f860();
+		ray.sub_1006dec0(vecFrom, &nextPos.x, &mins.x, &maxs.x, 1, 0);
+		CTraceFilterSimple traceFilter(this, 0);
+		g_1070b254->vfunc4(&ray, 0x200400b, (CTraceFilterNoCharacterCollide *)&traceFilter, &tr);
+		if (g_10738960.sub_1005f190())
+			sub_10146570((const Vector *)&tr.m_startpos, (const Vector *)&tr.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+
+		if (tr.m_startsolid || tr.m_fraction < 1.0)
+		{
+			CBaseEntity *pEntity = tr.m_pEnt;
+			if (pEntity == pTarget)
+				return g_104454c4;
+			*pBlocker = pEntity;
+			Vector vecHit = *(const Vector *)tr.m_endpos - vecStart;
+			return sub_10146150(&vecHit);
+		}
+
+		rawJumpVel = rawJumpVel - gravity * timeStep;
+		vecFrom = nextPos;
+	}
+	return g_104454c4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10272f40 size=0xe5
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
