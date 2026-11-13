@@ -156531,6 +156531,97 @@ void CUnknown10206c70::sub_10206c70(int nTemplate, CBaseCombatCharacter *pChar)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10206da0 size=0x707
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CVStatList_t.h"
+#include "CStatDefault3List.h"
+#include "CBaseCombatCharacter.h"
+#include "Ent.h"
+#include "CStatLoadout.h"
+#include "string_t.h"
+
+struct CTraitTableUnit { void sub_101f9a00(CBaseCombatCharacter *pChar, int n); };
+struct StatOwner { CVStatList_t *sub_10183880(int type); };
+struct CPlayerView { void sub_10181680(int a, int b); void sub_10182e00(int a); };
+struct CMaskUnit { void sub_1017a2b0(int n); };
+struct CStatDefBodyView { string_t sub_101d4e70(int n); string_t sub_101d4eb0(int n); };
+struct CCharView
+{
+	char pad[0xa8];
+	CPlayerView *m_pa8;
+	char pad2[0x13cc - 0xac];
+	int m_n13cc;
+	char pad3[0x1a1c - 0x13d0];
+	CStatLoadout m_loadout;
+	char pad4[0x1b70 - 0x1a1c - sizeof(CStatLoadout)];
+	int m_n1b70;
+	int sub_10182dd0(int a, int b);
+};
+int __fastcall sub_1032e7b0(CPlayerView *p);
+extern CStatDefault3List g_10738d10;
+extern CTraitTableUnit g_1074df78;
+extern char g_105a9230;
+extern int g_1074e65c;
+extern int g_1074e4f4;
+extern int g_1074e09c;
+extern char g_106b8540[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+#define def ((StatDefault3 *)nTemplate)
+struct CThisView10206da0 { void sub_10206da0(int nTemplate, CBaseCombatCharacter *pChar); };
+// TARGET: CThisView10206da0::sub_10206da0
+void CThisView10206da0::sub_10206da0(int nTemplate, CBaseCombatCharacter *pChar)
+{
+	nTemplate = (int)g_10738d10.sub_101d5e80(nTemplate);
+	CCharView *pView = (CCharView *)pChar;
+	if (pView->m_pa8) {
+		CStatDefBodyView *pBody = (CStatDefBodyView *)def;
+		int nBody = CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(0x13);
+		if (((Ent *)pChar)->sub_10336920())
+			pChar->vfunc105(STRINGR(pBody->sub_101d4e70(nBody).pszValue));
+		else
+			pChar->vfunc105(STRINGR(pBody->sub_101d4eb0(nBody).pszValue));
+		CPlayerView *pPlayer = pView->m_pa8;
+		pPlayer->sub_10181680(0, 1);
+		pPlayer->sub_10182e00(sub_1032e7b0(pPlayer));
+	}
+	int bMale = ((Ent *)pChar)->sub_10336920() & 0xff;
+	for (int i = 0; i < g_1074e65c; i++) {
+		if (g_105a9230)
+			CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(i, def->m_d0[0][i]);
+		else
+			CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(i, CVStatListSet::Of(pChar)->Find(0)->sub_10200ca0(i) + def->m_d0[0][i]);
+	}
+	CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(10, def->m_d0[0][10]);
+	CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(0xb, bMale);
+	pView->m_n13cc = bMale;
+	CVStatListSet::Of(pChar)->Find(0)->sub_102008e0(0xd, CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(0xd));
+	for (int j = 0; j < g_1074e4f4; j++) {
+		if (g_105a9230)
+			CVStatListSet::Of(pChar)->Find(1)->sub_102008e0(j, def->m_d0[1][j]);
+		else
+			CVStatListSet::Of(pChar)->Find(1)->sub_102008e0(j, CVStatListSet::Of(pChar)->Find(1)->sub_10200ca0(j) + def->m_d0[1][j]);
+	}
+	for (int k = 0; k < g_1074e09c; k++) {
+		if (g_105a9230)
+			CVStatListSet::Of(pChar)->Find(2)->sub_102008e0(k, def->m_pd8[k]);
+		else
+			((StatOwner *)CVStatListSet::Of(pChar))->sub_10183880(2)->sub_102008e0(k, CVStatListSet::Of(pChar)->Find(2)->sub_10200ca0(k) + def->m_pd8[k]);
+	}
+	g_1074df78.sub_101f9a00(pChar, def->m_84);
+	if (pView->m_pa8) {
+		if (g_105a9230) {
+			pView->m_loadout.sub_1017b330(pChar);
+			((CMaskUnit *)&pView->m_loadout)->sub_1017a2b0(def->m_b0);
+		}
+		pView->m_n1b70 = pView->sub_10182dd0(0, 0);
+	}
+	pChar->vfunc111();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10207680 size=0x474
 #include "utlrbtree.h"
 #include "utlsortvector.h"
