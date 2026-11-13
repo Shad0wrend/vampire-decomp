@@ -22216,6 +22216,61 @@ void CBaseCineCam::sub_10070750(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10070780 size=0x193
+#include "CHL2_Player.h"
+#include "MvsnSec0.h"
+#include "CBaseEntity.h"
+#include "CBaseCineCam.h"
+#include "CBasePlayer.h"
+#include "CBaseHandle.h"
+#include "ehandle.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+struct S10070780Finder
+{
+	void *sub_100f7770(int a, const char *pszName, int b, int c);
+};
+extern S10070780Finder g_106eb5d8;
+struct Holder;
+void *__fastcall sub_1017cf90(Holder *p);
+void __fastcall sub_1015ef40(char *p);
+CBaseEntity *sub_10070470(const char *pszName, void *a, void *b, void *c, void *d);
+extern void (*g_109f364c)(const char *fmt, ...);
+
+void CBaseCineCam::sub_10070780(CBasePlayer *pPlayer)
+{
+	if (!pPlayer)
+		return;
+	void *a = g_106eb5d8.sub_100f7770(0, STRINGR_F(m_psz5d8), 0, 0);
+	void *b = g_106eb5d8.sub_100f7770(0, STRINGR_F(m_psz5dc), 0, 0);
+	void *c = g_106eb5d8.sub_100f7770(0, STRINGR_F(m_psz5e0), 0, 0);
+	void *d = g_106eb5d8.sub_100f7770(0, STRINGR_F(m_psz5e4), 0, 0);
+	CBaseCineCam *pCam = (CBaseCineCam *)sub_1017cf90((Holder *)pPlayer);
+	if (pCam) {
+		pCam->sub_1006e130(STRINGR_F(m_psz5d4), 1, (int)pPlayer);
+		if (a)
+			pCam->sub_1006ef50(a, 0);
+		if (b)
+			pCam->sub_1006ef50(b, 1);
+		if (c)
+			pCam->sub_1006ef50(c, 2);
+		if (d)
+			pCam->sub_1006ef50(d, 3);
+		pCam->sub_1006e8e0();
+	} else {
+		pCam = (CBaseCineCam *)sub_10070470(STRINGR_F(m_psz5d4), a, b, c, d);
+		((CBaseHandle *)&pCam->m_hTarget5d0)->Set((IHandleEntity *)pPlayer);
+	}
+	if (!pCam) {
+		g_109f364c("%s could not start shot properly\n", sub_100ab4f0());
+		return;
+	}
+	pCam->m_b640 = m_b640;
+	pPlayer->sub_1017cef0((CBaseEntity *)pCam);
+	sub_1015ef40((char *)pPlayer);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10070990 size=0x59
 namespace block_10070990 {
 void __fastcall sub_1006e0e0(char *p)
