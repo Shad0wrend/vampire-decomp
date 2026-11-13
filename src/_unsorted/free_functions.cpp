@@ -51557,6 +51557,67 @@ void sub_100c7be0(CUtlVector<SeqMatch_100c7be0> *pOut, SeqHdr_100c7be0 *pFrom, c
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c7ff0 size=0xad
+struct SeqDesc_c7ff0
+{
+	char m_pad00[0x88];
+	unsigned int m_nFlags;	// 0x88
+	char m_pad8c[0xa0 - 0x8c];
+};
+
+struct SeqHdr_c7ff0
+{
+	char m_pad00[0xf0];
+	int m_nSeq;	// 0xf0
+	int m_nSeqIndex;	// 0xf4
+	SeqDesc_c7ff0 *Seq(int i) { return (SeqDesc_c7ff0 *)((char *)this + m_nSeqIndex) + i; }
+};
+
+struct CBitListFill
+{
+	int m_nBits;
+	unsigned int m_Ints[1];
+	void sub_100c7ff0(SeqHdr_c7ff0 *pHdr, unsigned int m1, unsigned int m2);
+};
+
+#define F(x) ((((int)-(~((int)-((x) & m2) >> 16) & (x) & m1)) >> 16))
+
+// TARGET: CBitListFill::sub_100c7ff0
+void CBitListFill::sub_100c7ff0(SeqHdr_c7ff0 *pHdr, unsigned int m1, unsigned int m2)
+{
+	if (!pHdr)
+	{
+		m_nBits = 0;
+		return;
+	}
+	unsigned int *out = m_Ints;
+	unsigned int acc = 0;
+	unsigned int bit = 1;
+	SeqDesc_c7ff0 *pSeq = pHdr->Seq(0);
+	m_nBits = pHdr->m_nSeq;
+	int n = m_nBits;
+	if (n > 0)
+	{
+		
+		acc = F(pSeq->m_nFlags) & bit;
+		while (--n != 0)
+		{
+			bit += bit;
+			pSeq++;
+			if (bit == 0)
+			{
+				*out = acc;
+				out++;
+				bit = 1;
+				acc = 0;
+			}
+			acc += F(pSeq->m_nFlags) & bit;
+		}
+	}
+	*out = acc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c81b0 size=0x8e
 #include "CUnknown100c81b0.h"
 
