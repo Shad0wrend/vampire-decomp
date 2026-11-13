@@ -78194,6 +78194,117 @@ void CGameMovement::sub_1011fa80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011fb50 size=0x397
+#include "CBaseEntity.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "VectorHelpers.h"
+#include "Ray_t.h"
+
+extern CGlobalEntityList *g_10566458;
+extern CUnknown1070b254 *g_1070b254;
+extern Vector g_1070d1b0;
+void sub_10146570(Vector *pStart, Vector *pEnd, int r, int g, int b, int c, float d);
+
+struct CGMSlot3View { virtual void s0(); virtual void s1(); virtual void s2(); virtual float *slot3(char a, char b); };
+
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+#define MOVE ((CMoveFlagsView *)m_pMove)
+
+inline Vector AddV(const Vector &a, const Vector &b) { Vector r; r.x = a.x + b.x; r.y = a[1] + b.y; r.z = a[2] + b.z; return r; }
+namespace block_1011fb50 {
+struct CGameMovementUnit : CGameMovement
+{
+	const Vector &sub_1011e350();
+	const Vector &sub_1011e310();
+};
+
+const Vector &CGameMovementUnit::sub_1011e350()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return m_vecObsHullMax;
+	return pMove->m_bDucked ? m_vecDuckHullMax : m_vecHullMax;
+}
+
+const Vector &CGameMovementUnit::sub_1011e310()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return m_vecObsHullMin;
+	return pMove->m_bDucked ? m_vecDuckHullMin : m_vecHullMin;
+}
+}
+using namespace block_1011fb50;
+
+// TARGET: CGameMovement::sub_1011fb50
+void CGameMovement::sub_1011fb50()
+{
+	Vector fwd;
+	Vector flatvel;
+	Vector flatfwd;
+	Vector vecStart;
+	Vector vecEnd;
+	Ray_t ray;
+	CGameTrace tr;
+	float curspeed;
+	CBaseEntity *pEnt;
+
+	sub_10139550(PLAYER->m_vecViewAngles0c, &fwd);
+	if (MOVE->m_flWaterJump != g_104454c4)
+		return;
+	if (PLAYER->m_vecVelocity.z < -180.0f)
+		return;
+	flatvel.x = PLAYER->m_vecVelocity.x;
+	flatvel.y = PLAYER->m_vecVelocity.y;
+	flatvel.z = 0.0f;
+	curspeed = VectorNormalize(flatvel);
+	flatfwd.x = fwd.x;
+	flatfwd.y = fwd.y;
+	flatfwd.z = 0.0f;
+	VectorNormalize(flatfwd);
+	if (curspeed != 0.0 && flatfwd.x * flatvel.x + (flatfwd.y * flatvel.y + flatfwd.z * flatvel.z) < 0.0)
+		return;
+
+	const Vector &mn = ((CGameMovementUnit *)this)->sub_1011e310();
+	const Vector &mx = ((CGameMovementUnit *)this)->sub_1011e350();
+	vecStart = PLAYER->m_vecOrigin + AddV(mn, mx) * 0.5f;
+	vecStart.z += 8.0f;
+	sub_10139500(&vecStart, 24.0f, &flatfwd, &vecEnd);
+	pEnt = (CBaseEntity *)EHandle_Get(PLAYER->m_hRef);
+	ray.sub_1004f7a0(&vecStart.x, &vecEnd.x);
+	{
+		CTraceFilterSimple filter(pEnt, 0);
+		g_1070b254->vfunc4(&ray, 0x1400b, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10146570((Vector *)tr.m_startpos, (Vector *)tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+	}
+	if (tr.m_fraction < 1.0) {
+		vecStart.z = (((CGMSlot3View *)this)->slot3(((CMoveFlagsView *)m_pMove)->m_bDucked, ((CMoveFlagsView *)m_pMove)->m_b1edc)[2] - 8.0f) + vecStart.z;
+		sub_10139500(&vecStart, 24.0f, &flatfwd, &vecEnd);
+		sub_10139500(&g_1070d1b0, -50.0f, (Vector *)tr.m_planeNormal, (Vector *)((char *)m_pMove + 0x2318));
+		pEnt = (CBaseEntity *)EHandle_Get(PLAYER->m_hRef);
+		ray.sub_1004f7a0(&vecStart.x, &vecEnd.x);
+		CTraceFilterSimple filter(pEnt, 0);
+		g_1070b254->vfunc4(&ray, 0x1400b, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10146570((Vector *)tr.m_startpos, (Vector *)tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+		if (tr.m_fraction == 1.0) {
+			PLAYER->m_vecVelocity.z = 260.0f;
+			PLAYER->m_n0028 |= 2;
+			((CBaseEntity *)m_pMove)->sub_100b3580(4);
+			MOVE->m_flWaterJump = 2000.0f;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ffe0 size=0xa9
 #include "CBaseEntity.h"
 #include "CGameMovement.h"
