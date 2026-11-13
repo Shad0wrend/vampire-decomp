@@ -40972,6 +40972,109 @@ int __fastcall sub_100a6bb0(char *self, int, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a72e0 size=0x610
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+
+#define CORNER(CX, CY, CZ, OX, OY, OZ) \
+	{ float mx = ((CX) + (OX)) * 0.5f; float my = ((CY) + (OY)) * 0.5f; float mz = ((CZ) + (OZ)) * 0.5f; \
+	pt.x = ((CX) - mx) + mx; pt.y = ((CY) - my) + my; pt.z = ((CZ) - mz) * 0.9f + mz; \
+	*pOut = pt + *((CEntityVSlots *)pTarget)->slot220(); return; }
+
+// TARGET: CBaseEntity::sub_100a72e0
+void CBaseEntity::sub_100a72e0(CBaseEntity *pTarget, int nOrigin, Vector *pOut)
+{
+	ScopeTrace trace("CBaseEntity::FVisibleTargetOrigin", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY", g_106b8540);
+	Vector pt;
+	switch (nOrigin)
+	{
+	case 1:
+	{
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pTarget + 0x270);
+		const Vector &mins = *(Vector *)pCol->vfunc1();
+		const Vector &maxs = *(Vector *)pCol->vfunc2();
+		Vector vecCenter = (maxs + mins) * 0.5f;
+		*pOut = vecCenter + *((CEntityVSlots *)pTarget)->slot220();
+		return;
+	}
+	case 2:
+	{
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pTarget + 0x270);
+		Vector mins = *(Vector *)pCol->vfunc1();
+		Vector maxs = *(Vector *)pCol->vfunc2();
+		CORNER(mins.x, mins.y, maxs.z, maxs.x, maxs.y, mins.z)
+	}
+	case 3:
+	{
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pTarget + 0x270);
+		Vector mins = *(Vector *)pCol->vfunc1();
+		Vector maxs = *(Vector *)pCol->vfunc2();
+		CORNER(mins.x, maxs.y, maxs.z, maxs.x, mins.y, mins.z)
+	}
+	case 4:
+	{
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pTarget + 0x270);
+		Vector mins = *(Vector *)pCol->vfunc1();
+		Vector maxs = *(Vector *)pCol->vfunc2();
+		CORNER(maxs.x, mins.y, maxs.z, mins.x, maxs.y, mins.z)
+	}
+	case 5:
+	{
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pTarget + 0x270);
+		Vector mins = *(Vector *)pCol->vfunc1();
+		Vector maxs = *(Vector *)pCol->vfunc2();
+		CORNER(maxs.x, maxs.y, maxs.z, mins.x, mins.y, mins.z)
+	}
+	case 6:
+	{
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pTarget + 0x270);
+		Vector mins = *(Vector *)pCol->vfunc1();
+		Vector maxs = *(Vector *)pCol->vfunc2();
+		CORNER(mins.x, mins.y, mins.z, maxs.x, maxs.y, maxs.z)
+	}
+	case 7:
+	{
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pTarget + 0x270);
+		Vector mins = *(Vector *)pCol->vfunc1();
+		Vector maxs = *(Vector *)pCol->vfunc2();
+		CORNER(mins.x, maxs.y, mins.z, maxs.x, mins.y, maxs.z)
+	}
+	case 8:
+	{
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pTarget + 0x270);
+		Vector mins = *(Vector *)pCol->vfunc1();
+		Vector maxs = *(Vector *)pCol->vfunc2();
+		CORNER(maxs.x, mins.y, mins.z, mins.x, maxs.y, maxs.z)
+	}
+	case 9:
+	{
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pTarget + 0x270);
+		Vector mins = *(Vector *)pCol->vfunc1();
+		Vector maxs = *(Vector *)pCol->vfunc2();
+		CORNER(maxs.x, maxs.y, mins.z, mins.x, mins.y, maxs.z)
+	}
+
+	case 0:
+		nOrigin = 0;
+		break;
+	case 10:
+		nOrigin = 10;
+		break;
+	}
+	Vector vecTmp;
+	*pOut = *((CEntityVSlots *)pTarget)->slot193(&vecTmp);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a7bd0 size=0xef
 #include "CBaseEntity.h"
 struct TraceEntry { const char *a, *b, *c; };

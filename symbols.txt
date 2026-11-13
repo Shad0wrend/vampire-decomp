@@ -6701,6 +6701,7 @@
 0x10009b1f func   ?vfunc104@CRopeKeyframe@@UAEXXZ CRopeKeyframe::vfunc104
 0x10009b24 func   ?sub_1018f700@CUnknown1018f700@@QAEXD@Z CUnknown1018f700::sub_1018f700
 0x10009b29 func   ?vfunc5@CPayphone@@QAEPAV1@I@Z CPayphone::vfunc5
+0x10009b2e func   ?sub_100a72e0@CBaseEntity@@QAEXPAV1@HPAVVector@@@Z CBaseEntity::sub_100a72e0
 0x10009b33 func   ?sub_101d2300@@YA_NPAVCEntityVSlots@@0@Z sub_101d2300
 0x10009b38 func   ?vfunc82@CPhysTorque@@UAEPAUdatamap_t@@XZ CPhysTorque::vfunc82
 0x10009b3d func   ?sub_102c6370@CBaseHandle@@QAEPAVIHandleEntity@@XZ CBaseHandle::sub_102c6370
