@@ -3971,6 +3971,278 @@ void CBasePlayer::vfunc450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10172e60 size=0xd1b
+#include "CVStatInfo_t.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CBloodSplat.h"
+#include "UTIL_Trace.h"
+#include "CVStatList_t.h"
+#include "CVDmg_t.h"
+#include "QAngle.h"
+#include "string_t.h"
+#include "globalvars.h"
+#include "engineserver.h"
+
+__declspec(dllimport) void Msg(const char *pMsg, ...);
+
+extern int g_10752e9c;
+extern int g_10726008;
+extern int g_107255e4;
+extern const char *g_10583658[];
+extern void *g_10920540;
+extern char g_106b8540[];
+
+struct CVStatInfo_t;
+struct CVStatInfoView { int sub_101ff190(void *pOwner); };
+CVStatInfoView *__fastcall sub_10204ba0(int *pBlock);
+bool __fastcall sub_10204250(int *pBlock);
+int __cdecl sub_10202780(int n);
+CBaseEntity *sub_10172410(CBasePlayer *pPlayer);
+void __cdecl sub_1012a6e0(CBaseEntity *pEnt, int a, int b);
+void __cdecl sub_101cd940(char *pEnt);
+CBaseEntity *sub_100a99d0(const char *pszName, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
+CBaseEntity *sub_100a99d0(const char *pszName, const Vector &vecOrigin, const float *pAngles, CBaseEntity *pOwner);
+Vector sub_101d2f40(float flYaw);
+void __cdecl sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+
+struct SBaseEntObj { virtual const char *vfunc0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual const char *vfunc5(); };
+struct SUnkView { virtual void v0(); virtual void v1(); virtual void v2(); virtual SBaseEntObj *vfunc3(); };
+struct SEdictView { char pad[0x40]; SUnkView *m_pUnk; };
+
+#define HV_V(n) virtual void v##n();
+#define HV_T(p) HV_V(p##0) HV_V(p##1) HV_V(p##2) HV_V(p##3) HV_V(p##4) HV_V(p##5) HV_V(p##6) HV_V(p##7) HV_V(p##8) HV_V(p##9)
+#define HV_H(p) HV_T(p##0) HV_T(p##1) HV_T(p##2) HV_T(p##3) HV_T(p##4) HV_T(p##5) HV_T(p##6) HV_T(p##7) HV_T(p##8) HV_T(p##9)
+
+struct CNPCView451 { HV_H(a) HV_H(b) HV_H(c) HV_H(d) HV_H(e) HV_T(f0) HV_T(f1) HV_T(f2) HV_T(f3) HV_T(f4) HV_T(f5) HV_T(f6) HV_T(f7) HV_V(f80) virtual void vfunc581(); };
+struct CEntView451
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual string_t vfunc9();
+	char m_pad0004[0x94 - 4];
+	CNPCView451 *m_pNPC94;	// 0x94
+	char m_pad0098[0x120 - 0x98];
+	const char *m_iGlobalname120;	// 0x120
+	const char *m_iParent124;	// 0x124
+	char m_pad0128[0x26c - 0x128];
+	const char *m_name26c;	// 0x26c
+	char m_pad0270[0x2e0 - 0x270];
+	SEdictView *m_pEdict2e0;	// 0x2e0
+};
+
+struct CBasePlayer451 : CBasePlayer
+{
+	void sub_100b3580(unsigned int flags);
+	int sub_103343f0(int count, const char *pszAmmoName);
+	void sub_10340e50(int amount);
+};
+
+static inline const char *EntClassname(SEdictView *pEdict)
+{
+	return !pEdict->m_pUnk ? g_106b8540 : pEdict->m_pUnk->vfunc3()->vfunc5();
+}
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+extern CVStatList_t g_109f0b40;
+void __cdecl sub_10012a8a();
+extern "C" int __cdecl atexit(void (__cdecl *)());
+
+inline CVStatList_t *FindStatList(CVStatListSet *pSet, int type)
+{
+	for (int i = 0; i < pSet->m_nLists; i++) {
+		if (pSet->m_pLists[i]->m_field10 == type)
+			return pSet->m_pLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		g_109f0b40.CVStatList_t::CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+#define StatList(p, t) FindStatList(CVStatListSet::Of(p), t)
+
+// TARGET: CBasePlayer::vfunc451
+void CBasePlayer::vfunc451(int iImpulse)
+{
+	if (g_10752e9c == 0)
+		return;
+
+	CEntView451 *pEntity;
+	CGameTrace tr;
+
+	switch (iImpulse) {
+	case 76:
+		if (!g_10726008) {
+			g_10726008 = 1;
+			Msg("You must now restart to use Grunt-o-matic.\n");
+		} else {
+			Vector forward = sub_101d2f40(m_vec206c.y);
+			sub_100a99d0("NPC_human_grunt", *(Vector *)vfunc220() + forward * 128.0f, vfunc221(), 0);
+		}
+		break;
+
+	case 69: {
+		for (int i = 0; g_10583658[i]; i++) {
+			int raw[4];
+			CVDmgBlock16_t &blk = *(CVDmgBlock16_t *)raw;
+			blk.sub_10230ed0();
+			blk.sub_10204570(g_10583658[i]);
+			if (sub_10204250(raw))
+				continue;
+			int nType = sub_10202780(raw[0]);
+			int nStat = raw[1];
+			if (StatList(this, nType)->sub_102012d0(nStat) >= 0) {
+				for (;;) {
+					CVStatList_t *pList = StatList(this, nType);
+					int nMax = sub_10204ba0(raw)->sub_101ff190(this);
+					if (pList->sub_10200ca0(nStat) >= nMax)
+						break;
+					StatList(this, nType)->sub_10200d60(nStat);
+				}
+			}
+			Msg("%s = %d\n", g_10583658[i], StatList(this, nType)->sub_102012d0(nStat));
+		}
+		((CBasePlayer451 *)this)->sub_100b3580(0x4000);
+		Msg("godmode on\n");
+	}
+	case 101:
+		g_107255e4 = 1;
+		((CBasePlayer451 *)this)->sub_103343f0(999, "MediumRound");
+		((CBasePlayer451 *)this)->sub_103343f0(999, "AnacondaRound");
+		((CBasePlayer451 *)this)->sub_103343f0(999, "CrossbowBolt");
+		((CBasePlayer451 *)this)->sub_103343f0(999, "DesertEagle_Round");
+		((CBasePlayer451 *)this)->sub_103343f0(999, "Glock_17cRound");
+		((CBasePlayer451 *)this)->sub_103343f0(999, "Ithica_M37Round");
+		((CBasePlayer451 *)this)->sub_103343f0(999, "Mac_10Round");
+		((CBasePlayer451 *)this)->sub_103343f0(999, "Remington_M_700Round");
+		((CBasePlayer451 *)this)->sub_103343f0(999, "Steyr_AugRound");
+		((CBasePlayer451 *)this)->sub_103343f0(999, "Super_ShotgunRound");
+		((CBasePlayer451 *)this)->sub_103343f0(999, "UziRound");
+		((CBasePlayer451 *)this)->sub_103343f0(999, "FlameThrowerRound");
+		((CBasePlayer451 *)this)->sub_103343f0(999, "ThirtyeightRound");
+		vfunc459("item_g_lockpick", 0);
+		vfunc459("item_w_colt_anaconda", 0);
+		vfunc459("item_w_deserteagle", 0);
+		vfunc459("item_w_ithaca_m_37", 0);
+		vfunc459("item_w_mac_10", 0);
+		vfunc459("item_w_supershotgun", 0);
+		vfunc459("item_w_uzi", 0);
+		vfunc459("item_w_katana", 0);
+		vfunc459("item_w_bush_hook", 0);
+		vfunc459("item_w_tire_iron", 0);
+		vfunc459("item_w_knife", 0);
+		vfunc459("item_w_baseball_bat", 0);
+		vfunc459("item_w_sledgehammer", 0);
+		vfunc459("item_a_hvy_cloth", 0);
+		vfunc459("item_a_lt_leather", 0);
+		vfunc459("item_a_hvy_leather", 0);
+		vfunc459("item_a_body_armor", 0);
+		vfunc459("item_g_bluebloodpack", 0);
+		vfunc459("item_g_bloodpack", 0);
+		vfunc459("item_g_eldervitaepack", 0);
+		((CBasePlayer451 *)this)->sub_103343f0(2, "BloodRound");
+		((CBasePlayer451 *)this)->sub_103343f0(1, "BlueBloodRound");
+		((CBasePlayer451 *)this)->sub_10340e50(1000);
+		g_107255e4 = 0;
+		break;
+
+	case 102:
+		sub_1012a6e0((CBaseEntity *)this, 1, 0);
+		break;
+
+	case 103:
+		pEntity = (CEntView451 *)sub_10172410(this);
+		if (pEntity) {
+			CNPCView451 *pNPC = pEntity->m_pNPC94;
+			if (pNPC)
+				pNPC->vfunc581();
+		}
+		break;
+
+	case 105:
+		if (m_bSilent22a0) {
+			Msg("Player is audible\n");
+			m_bSilent22a0 = 0;
+		} else {
+			Msg("Player is silent\n");
+			m_bSilent22a0 = 1;
+		}
+		break;
+
+	case 106:
+		pEntity = (CEntView451 *)sub_10172410(this);
+		if (pEntity) {
+			Msg("Classname: %s", EntClassname(pEntity->m_pEdict2e0));
+			if (pEntity->m_name26c)
+				Msg(" - Name: %s\n", pEntity->m_name26c);
+			else
+				Msg(" - Name: No Targetname\n");
+			if (pEntity->m_iParent124)
+				Msg("Parent: %s\n", STRINGR(pEntity->m_iParent124));
+			Msg("Model: %s\n", STRINGR(pEntity->vfunc9().pszValue));
+			if (pEntity->m_iGlobalname120)
+				Msg("Globalname: %s\n", STRINGR(pEntity->m_iGlobalname120));
+		}
+		break;
+
+	case 107: {
+		CGameTrace tr;
+		void *pWorld = engine->vfunc38(0);
+		Vector start = vfunc193();
+		Vector forward;
+		sub_10139610(*(QAngle *)&m_vec206c, &forward, 0, 0);
+		Vector end = start + forward * 1024.0f;
+		UTIL_TraceLine(start, end, 0x400b, this, 0, &tr);
+		const char *pTextureName = tr.m_surfaceName;
+		if (pTextureName)
+			Msg("Texture: %s\n", pTextureName);
+		break;
+	}
+
+	case 108:
+		pEntity = (CEntView451 *)sub_10172410(this);
+		if (pEntity) {
+			CEntView451 *pNPC = (CEntView451 *)pEntity->m_pNPC94;
+			if (pNPC) {
+				Msg("Debugging %s (0x%x)\n", EntClassname(pNPC->m_pEdict2e0), pNPC);
+				g_10920540 = pNPC;
+			}
+		}
+		break;
+
+	case 195:
+		sub_100a99d0("node_viewer_fly", vfunc220(), vfunc221(), 0);
+		break;
+	case 196:
+		sub_100a99d0("node_viewer_large", vfunc220(), vfunc221(), 0);
+		break;
+	case 197:
+		sub_100a99d0("node_viewer_human", vfunc220(), vfunc221(), 0);
+		break;
+
+	case 202: {
+		Vector forward;
+		sub_10139610(*(QAngle *)&m_vec206c, &forward, 0, 0);
+		UTIL_TraceLine(vfunc193(), vfunc193() + forward * 128.0f, 0x400b, this, 0, &tr);
+		if (tr.m_fraction != 1.0) {
+			CBloodSplat *pBlood = new CBloodSplat;
+			pBlood->vfunc106("bloodsplat");
+			pBlood->sub_101719d0((CBaseEntity *)this);
+		}
+		break;
+	}
+
+	case 203:
+		pEntity = (CEntView451 *)sub_10172410(this);
+		if (pEntity)
+			sub_101cd940((char *)pEntity);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10173ed0 size=0x87
 #include "CBasePlayer.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
