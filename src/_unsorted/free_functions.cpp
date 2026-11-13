@@ -48572,6 +48572,59 @@ bool CUnknown100bf030::sub_100bf030(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf060 size=0x6f
+#include "bf_read.h"
+
+#pragma auto_inline(off)
+namespace block_100bf060 {
+struct bf_readX : bf_read
+{
+	int sub_10003e4f(int numbits);	// ReadSBitLong (stub)
+	int sub_100bee80();	// ReadChar
+	bool IsOverflowed() const { return m_bOverflow; }
+	int sub_100bf060(char *pStr, int maxLen, bool bLine, int *pOutNumChars);
+};
+int bf_readX::sub_100bee80()
+{
+	return sub_10003e4f(8);
+}
+}
+using namespace block_100bf060;
+#pragma auto_inline(on)
+
+// TARGET: block_100bf060::bf_readX::sub_100bf060
+int bf_readX::sub_100bf060(char *pStr, int maxLen, bool bLine, int *pOutNumChars)
+{
+	bool bTooSmall = false;
+	int iChar = 0;
+	while(1)
+	{
+		char val = sub_100bee80();
+		if ( val == 0 )
+			break;
+		else if ( bLine && val == '\n' )
+			break;
+
+		if ( iChar < (maxLen-1) )
+		{
+			pStr[iChar] = val;
+			++iChar;
+		}
+		else
+		{
+			bTooSmall = true;
+		}
+	}
+
+	pStr[iChar] = 0;
+
+	if ( pOutNumChars )
+		*pOutNumChars = iChar;
+
+	return !IsOverflowed() && !bTooSmall;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf180 size=0x2f
 // TARGET: bf_read::sub_100bf180
 #include "bf_read.h"
