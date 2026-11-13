@@ -1966,6 +1966,41 @@ void CBaseCombatWeapon::vfunc319()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10254250 size=0xc6
+#include "CBaseCombatWeapon.h"
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+
+static inline CBasePlayer *PlayerOf(CBaseEntity *p)
+{
+	return p ? (CBasePlayer *)p->m_pA8 : 0;
+}
+
+void CBaseCombatWeapon::vfunc320()
+{
+	CBasePlayer *pPlayer = sub_102521f0() ? PlayerOf((CBaseEntity *)sub_102521f0()) : 0;
+	switch (pPlayer != 0) { case 0: return; }
+	int nSlot = pPlayer->sub_10345480();
+	if (nSlot < 0)
+		return;
+	if (!pPlayer->sub_10160dc0())
+		return;
+	if (!(pPlayer->m_b208C & 1))
+		return;
+	CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(pPlayer->m_h1C5C);
+	if (pEnt && pPlayer->sub_101611e0(pEnt))
+		return;
+	((CEntityVSlots *)pPlayer)->slot410();
+	int nAct = ((CEntityVSlots *)this)->slot361(0x4b);
+	int nTrans = ((CEntityVSlots *)pPlayer)->slot376(nAct);
+	((CEntityVSlots *)pPlayer)->slot311(0x4b, nTrans, nSlot);
+	((CBaseCombatCharacter *)pPlayer)->sub_10346760();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10254360 size=0x3
 #include "CBaseCombatWeapon.h"
 // TARGET: CBaseCombatWeapon::vfunc330
