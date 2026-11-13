@@ -79591,6 +79591,127 @@ void CGameMovement::sub_101263c0(char bMoveUp)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101265d0 size=0x338
+#define inline __forceinline
+#include "Vector.h"
+#undef inline
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CVProfile.h"
+#include "CGlobalEntityList.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "Ray_t.h"
+#include <math.h>
+
+extern CGlobalEntityList *g_10566458;
+extern CUnknown1070b254 *g_1070b254;
+
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+
+namespace block_101265d0 {
+struct CGameMovementUnit : CGameMovement
+{
+	float *sub_1011e350();
+	float *sub_1011e310();
+};
+
+float *CGameMovementUnit::sub_1011e350()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMax.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMax.x : &m_vecHullMax.x;
+}
+
+float *CGameMovementUnit::sub_1011e310()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMin.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMin.x : &m_vecHullMin.x;
+}
+}
+using namespace block_101265d0;
+struct Ray_tView {
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_f34;
+	__forceinline void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, char a, char b)
+	{
+		VectorSubtract(end, start, m_Delta);
+		m_IsSwept = (m_Delta.LengthSqr() != 0.0f);
+		VectorSubtract(maxs, mins, m_Extents);
+		m_Extents *= 0.5f;
+		m_IsRay = (m_Extents.LengthSqr() < 1e-6);
+		VectorAdd(mins, maxs, m_StartOffset);
+		m_StartOffset *= 0.5f;
+		VectorAdd(start, m_StartOffset, m_Start);
+		m_StartOffset *= -1.0f;
+		m_b32 = b;
+		m_b33 = 0;
+		m_f34 = 0.0f;
+		if (a && !m_IsRay) {
+			float l = (m_Extents.x * m_Extents.x) + (m_Extents.y * m_Extents.y); m_f34 = (float)sqrt(l);
+			if (1e-6 < m_f34)
+				m_b33 = 1;
+		}
+	}
+};
+
+struct CGMView : CGameMovement
+{
+	__forceinline void TracePlayerBBox(const Vector &start, const Vector &end, unsigned int fMask, int collisionGroup, CGameTrace &pm)
+	{
+		g_109f3648->EnterScope("CGameMovement::TracePlayerBBox", 0, "Unaccounted", false);
+		Ray_tView ray;
+		ray.Init(start, end, *(Vector *)((CGameMovementUnit *)this)->sub_1011e310(), *(Vector *)((CGameMovementUnit *)this)->sub_1011e350(), (char)((((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1), 0);
+		CTraceFilterSimple filter(g_10566458->sub_100290c0(&((CMovePlayerView *)m_pPlayer)->m_hRef), collisionGroup);
+		g_1070b254->vfunc4((Ray_t *)&ray, fMask, (CTraceFilterNoCharacterCollide *)&filter, &pm);
+		g_109f3648->ExitScope();
+	}
+};
+
+
+bool CGameMovement::sub_101265d0()
+{
+	int i;
+	CGameTrace trace;
+	Vector newOrigin;
+	VectorCopy(PLAYER->m_vecOrigin, newOrigin);
+	if (((CMoveDataView *)m_pMove)->vfunc209())
+	{
+		for (i = 0; i < 3; i++)
+		{
+			newOrigin[i] += (m_vecDuckHullMin[i] - m_vecHullMin[i]);
+		}
+	}
+	else
+	{
+		Vector hullSizeNormal = m_vecHullMax - m_vecHullMin;
+		Vector hullSizeCrouch = m_vecDuckHullMax - m_vecDuckHullMin;
+		Vector viewDelta = -0.5f * (hullSizeNormal - hullSizeCrouch);
+		VectorAdd(newOrigin, viewDelta, newOrigin);
+	}
+	char saveducked = ((CMoveFlagsView *)m_pMove)->m_bDucked;
+	((CMoveFlagsView *)m_pMove)->m_bDucked = false;
+	((CGMView *)this)->TracePlayerBBox(newOrigin, newOrigin, 0x201400b, 6, trace);
+	((CMoveFlagsView *)m_pMove)->m_bDucked = saveducked;
+	if (!trace.m_startsolid)
+	{
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10126cb0 size=0x11c
 #include "CGameMovement.h"
 #include "CGameMovementViews.h"

@@ -11358,6 +11358,7 @@
 0x1000fca4 func   ?sub_102f91b0@UtlMem@@QAEXXZ UtlMem::sub_102f91b0
 0x1000fca9 func   ?sub_100c9190@CUnknown100c9190@@QAEXXZ CUnknown100c9190::sub_100c9190
 0x1000fcae func   ?vfunc5@CRopeKeyframe@@QAEPAV1@I@Z CRopeKeyframe::vfunc5
+0x1000fcb3 func   ?sub_101265d0@CGameMovement@@QAE_NXZ CGameMovement::sub_101265d0
 0x1000fcb8 func   ?sub_101e80a0@@YGHH@Z sub_101e80a0
 0x1000fcc7 func   ?sub_10080830@CSceneEntity@@QAEPAV1@XZ CSceneEntity::sub_10080830
 0x1000fccc func   ?vfunc580@CNPC_VCamera@@UAEHXZ CNPC_VCamera::vfunc580
