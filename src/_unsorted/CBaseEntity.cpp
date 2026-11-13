@@ -3258,6 +3258,119 @@ int CBaseEntity::vfunc233(int *pList, int maxObjects)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6c50 size=0x296
+#include "utlrbtree.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CBaseCombatCharacter.h"
+#include "CGameTrace.h"
+#include "CPASFilter.h"
+#include "CBroadcastRecipientFilter.h"
+#include "UTIL_BloodStream.h"
+#include "IPhysicsSurfaceProps.h"
+#include "ScopeTrace.h"
+
+template <> inline void CUtlVector<int, CUtlMemory<int> >::RemoveAll() { m_Size = 0; }
+extern IPhysicsSurfaceProps *g_10723944;
+
+struct DecalTableEntry { int m_nValue; int m_pad; };
+extern DecalTableEntry g_105c230c[];
+
+int __fastcall sub_102517b0(void *p);
+
+template <class E> inline int ENTINDEX_DT(E pEdict)
+{
+	return engine->vfunc35(pEdict);
+}
+
+__forceinline void DecalPAS(CGameTrace *pTrace, int tableEntry, int decalIndex, char material, int a4,
+                     CBasePlayer *pPlayer, int nType)
+{
+	CPASFilter filter(pTrace->m_endpos);
+
+	int field740 = 0;
+	int info = -1;
+	if (pPlayer)
+	{
+		field740 = *(int *)((char *)pPlayer + 0x740);
+		info = ((signed char *)sub_102517b0(pPlayer))[0x2418];
+	}
+
+	g_10540528->vfunc25(filter, 0, (const Vector *)pTrace->m_endpos, pTrace,
+	                    ENTINDEX_DT(pTrace->m_pEnt->m_pEdict2e0), pTrace->m_hitbox,
+	                    tableEntry, decalIndex, material, a4, field740, info, nType);
+}
+
+__forceinline void DecalMaterialPAS(CGameTrace *pTrace, int tableEntry, int decalIndex, int a4,
+                     CBasePlayer *pPlayer, int nType)
+{
+	char material = g_10723944->vfunc5(pTrace->m_surfaceProps)->m_nMaterial70;
+	if (nType == 1)
+	{
+		if (material == 'F')
+		{
+			material = 'K';
+			if (pTrace->m_pEnt && pTrace->m_pEnt->m_p9c)
+			{
+				CBaseCombatCharacter *pChar = (CBaseCombatCharacter *)pTrace->m_pEnt->m_p9c;
+				if (pChar->sub_103300c0())
+					material = 'R';
+				else if (pChar->sub_10330220())
+					material = 'Z';
+				else if (pChar->sub_1033c900(0x400))
+					material = 'Q';
+			}
+		}
+		else if (material == 'A')
+		{
+			material = 'B';
+		}
+	}
+	else if (material == 'F' && pTrace->m_pEnt && pTrace->m_pEnt->m_p9c &&
+	         ((CBaseCombatCharacter *)pTrace->m_pEnt->m_p9c)->sub_1033c900(0x400))
+	{
+		material = 'Q';
+	}
+
+	DecalPAS(pTrace, tableEntry, decalIndex, material, a4, pPlayer, nType);
+}
+
+// TARGET: CBaseEntity::vfunc155
+void CBaseEntity::vfunc155(CGameTrace *pTrace, int decalIndex, char bFlag, int a4,
+                           CBasePlayer *pPlayer, int nType, char bTrace)
+{
+	ScopeTrace scope("CBaseEntity::DecalTrace",
+	                 this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	if (decalIndex < 0)
+		return;
+
+	int tableEntry = g_105c230c[decalIndex].m_nValue;
+	if (tableEntry < 0)
+		return;
+
+	if (bFlag)
+	{
+		DecalMaterialPAS(pTrace, tableEntry, decalIndex, a4, pPlayer, nType);
+	}
+	else
+	{
+		CBroadcastRecipientFilter filter;
+		g_10540528->vfunc19(filter, 0, (const Vector *)pTrace->m_endpos, pTrace,
+		                    ENTINDEX_DT(pTrace->m_pEnt->m_pEdict2e0), pTrace->m_hitbox, tableEntry,
+		                    bTrace || pPlayer);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a6fa0 size=0x283
 #include "CTraceFilterNoCharacterCollide.h"
 #include "CUnknown101d7520.h"
