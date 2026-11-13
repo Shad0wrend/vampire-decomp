@@ -15529,6 +15529,7 @@
 0x1001514a func   ?sub_100b3b00@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b3b00
 0x1001514f func   ?vfunc5@CAI_TestHull@@QAEPAV1@I@Z CAI_TestHull::vfunc5
 0x10015154 func   ?sub_1013b390@@YAXABUSRadianEuler@@AAVQuaternion@@@Z sub_1013b390
+0x10015159 func   ?sub_100c80d0@CUnknown100c80d0@@QAEXPBIPBFPBX@Z CUnknown100c80d0::sub_100c80d0
 0x1001515e func   ?sub_10091310@CBaseAnimating@@QAEMHH@Z CBaseAnimating::sub_10091310
 0x10015163 func   ?vfunc104@CVampireProjectile@@UAEXXZ CVampireProjectile::vfunc104
 0x10015168 func   ??0?$CUtlMemory@USaveRestoreBlockHeader_t@@@@QAE@HH@Z CUtlMemory<SaveRestoreBlockHeader_t>::CUtlMemory
