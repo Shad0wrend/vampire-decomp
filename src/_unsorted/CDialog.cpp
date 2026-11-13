@@ -1,6 +1,33 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100df2d0 size=0x22d
+#include "vampire_all.h"
+#include "CDialog.h"
+#include "ScopeTrace.h"
+
+extern int g_106ea764[7];
+struct CNamedListView { int sub_101d5bd0(const char *psz); };
+extern CNamedListView g_10738d10;
+
+// TARGET: CDialog::CDialog
+CDialog::CDialog()
+	: m_hSpeaker(0xffffffff), m_hNPC(0xffffffff)
+{
+	ScopeTrace scope("CDialog::CDialog", g_106b8540);
+	m_b30e8 = 0;
+	m_pTable = 0;
+	memset(g_106ea764, 0, 28);
+	g_106ea764[0] = g_10738d10.sub_101d5bd0("Player_Brujah");
+	g_106ea764[1] = g_10738d10.sub_101d5bd0("Player_Gangrel");
+	g_106ea764[2] = g_10738d10.sub_101d5bd0("Player_Nosferatu");
+	g_106ea764[3] = g_10738d10.sub_101d5bd0("Player_Toreador");
+	g_106ea764[4] = g_10738d10.sub_101d5bd0("Player_Tremere");
+	g_106ea764[5] = g_10738d10.sub_101d5bd0("Player_Ventrue");
+	g_106ea764[6] = g_10738d10.sub_101d5bd0("Player_Malkavian");
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df590 size=0x1b0
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
