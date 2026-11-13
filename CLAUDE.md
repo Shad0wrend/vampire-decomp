@@ -530,6 +530,22 @@ have written it rather than adding temporaries that spell out the assembly:
   Saved under view names (watch the link audit): 0x103f03e0 CFrag914::sub_103f03e0, 0x10295ed0
   CAI_BaseNPCTroikaV::sub_10295ed0. Unsolved patterns: the game hoists pointer loads above stack stores
   (0x102e7e80, 0x101001e0, 0x10176930); include-loop address reassociation (0x10429080, 0x10427df0, 0x101810f0).
+- **x87 retry (6 of 24 open x87 near misses, 4.1 KB, 2026-11-13):** the game keeps a scale on the x87 stack
+  (`fld s; fld x; fmul st(1); fstp x; ... fstp st(0)`); ours reloads it (`fmul [mem]`). Forms that give the game's
+  shape (try each; which one depends on the function):
+  - by-value const operator[] on the LAST component only: `const Vector &cv = v; v.x = cv.x*s; v.y = cv.y*s;
+    v.z = cv[2]*s;` (0x103efa30, 0x103f0d10); `v *= s`, `v.x *= s`, by-ref VectorScale, `v = v*s` all reload;
+  - same for adds: `v.x = v.x + a.x; v.y = ((const Vector &)v)[1] + a.y; ...` where the game does `fadd st(1)`;
+  - a temp-returning helper `inline Vector MulV(const Vector &a, float b) { Vector r; r.x = a[0]*b; r.y = a[1]*b;
+    r.z = a[2]*b; return r; }` behind `MulF(float, const Vector &)` in place of the SDK `fl * v` (0x101cb340);
+  - a plain `Vector n(d.x * r, d.y * r, 0.0f)` ctor (0x102961a0: here the const-ref form went to 41);
+  - a `double` scale: `double s = a / b; v.x *= s; ...` (0x101200c0) or `double f = cvar; p - (e - f * dir)` gives
+    `fld st(0)` reuse (0x103264d0).
+  Also: one nested ternary instead of a count local + if/else fixed both loops' registers (0x10350620); `x < 0.0f`
+  and `0.0f > x` compile differently (fcom [const] vs fld const; fcomp st(1)).
+  Recurring wall NOT moved by any source form (5 functions: 0x102a0490, 0x10176930, 0x10410bf0, 0x102bf820,
+  0x101001e0): a copy from a pointer a call returned into a local whose address then goes to an out-of-line call
+  (Ray Init): the game loads all components before storing any; ours interleaves. Likely needs a header/tool look.
 - **Same-name plain member + later virtual = shifted vtable (found 2026-11-12):** MSVC puts all functions of one
   name together in the vtable, at the first declaration's position. A plain `void vfunc442(int *)` near the top of
   a class plus the `virtual void vfunc442();` placeholder further down moved slot 442 before slot 134, so every
