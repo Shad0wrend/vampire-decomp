@@ -156410,6 +156410,98 @@ void *CVStatInfo_t::sub_101ff4b0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ff540 size=0x26d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CVStatInfoList_t.h"
+#include "ScopeTrace.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+__declspec(dllimport) void Msg(const char *pMsg, ...);
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+extern void *g_1070b238;
+
+struct CVStatKVBase
+{
+	virtual void a0();
+	virtual void Release();
+};
+
+struct CVStatKVFile : public CVStatKV, virtual public CVStatKVBase
+{
+};
+
+struct CVStatSymbol
+{
+	int m_v;
+	CVStatSymbol() { }
+	CVStatSymbol(const CVStatSymbol &o) : m_v(o.m_v) { }
+};
+
+CVStatKVFile *sub_101f2e20(const char *pszName, void *pFileSystem);
+CVStatSymbol sub_10203920(CVStatKV *pKV);
+CVStatSymbol sub_102038e0(CVStatKV *pKV, const char *pszName);
+
+// TARGET: CVStatInfoList_t::sub_101ff540
+void CVStatInfoList_t::sub_101ff540()
+{
+	ScopeTrace trace("CVStatInfoList_t::PreCache", g_106b8540);
+	if (m_pStats) {
+		delete [] m_pStats;
+		m_pStats = 0;
+		m_nStats = 0;
+	}
+	char szPath[128];
+	sprintf(szPath, "%s%s.txt", "vdata\\system\\", "stats");
+	CVStatKVFile *pFile = sub_101f2e20(szPath, g_1070b238);
+	if (pFile) {
+		CVStatKV *pKV = pFile->vfunc2(m_szName);
+		if (pKV) {
+			m_pszName24 = (const char *)sub_10203920(pKV).m_v;
+			m_field28 = sub_102038e0(pKV, "InternalName").m_v;
+			for (CVStatKV *pCount = pKV->vfunc2("Stat"); pCount; pCount = pCount->vfunc3())
+				m_nStats++;
+			int nStats = m_nStats;
+			if (nStats > 0) {
+				m_pStats = new CVStatInfo_t[nStats];
+				CVStatKV *pStat = pKV->vfunc2("Stat");
+				for (int i = 0; i < m_nStats; i++) {
+					CVStatInfo_t &rec = m_pStats[i];
+					int id = m_field2c;
+					rec.m_field000c = id;
+					rec.m_field0010 = i;
+					rec.m_field0118 = id;
+					rec.m_field011c = i;
+					m_pStats[i].sub_101fdfd0(pStat);
+					pStat = pStat->vfunc3();
+				}
+			}
+			if (m_nStats != m_pad0000) {
+				const char *pszName = m_pszName24;
+				if (!pszName)
+					pszName = g_106b8540;
+				DevMsg("ERROR: Stat Count Mismatch!: (%s) Expected: %d, but Found: %d!!!\n", pszName, m_pad0000, m_nStats);
+			} else {
+				pFile->Release();
+				return;
+			}
+		} else {
+			Msg("Unable to open Stat data file for: %s\n", m_szName);
+		}
+		pFile->Release();
+	} else {
+		Msg("Unable to load Stat data for: %s\n", szPath);
+	}
+done:;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ff850 size=0x1cc
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
