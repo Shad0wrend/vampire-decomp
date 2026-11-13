@@ -102,6 +102,36 @@ int CPropDoorknob::vfunc35(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102258a0 size=0x48
+#include "CPropDoorknob.h"
+#include "CBaseVampireSkillEntity.h"
+#include "CBaseHandle.h"
+
+extern void *vt_1048c364[];
+void __fastcall sub_1008b490(char *pThis);
+
+struct CPropDoorknobParts	// the member the doorknob constructor builds: the attached handle at +0x80c
+{
+	char pad0[0x80c];
+	CBaseHandle m_hAttached;
+	CPropDoorknobParts() {}
+};
+
+// TARGET: CPropDoorknob::sub_102258a0
+CPropDoorknob *CPropDoorknob::sub_102258a0()
+{
+	((CBaseVampireSkillEntity *)this)->sub_1020aa70();
+	((CPropDoorknobParts *)this)->CPropDoorknobParts::CPropDoorknobParts();
+	*(void ***)this = vt_1048c364;
+	sub_1008b490((char *)this);
+	*((char *)this + 0x815) = 0;
+	*(int *)((char *)this + 0x81c) = 3;
+	*(int *)((char *)this + 0x818) = 10;
+	*(int *)((char *)this + 0x820) = 4;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10225930 size=0x8
 #include "CPropDoorknob.h"
 // TARGET: CPropDoorknob::sub_10225930
