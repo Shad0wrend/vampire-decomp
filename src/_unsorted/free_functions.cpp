@@ -176734,6 +176734,169 @@ bool sub_102437d0(const mat34 &worldToBox1, const mat34 &box2ToWorld,
 }
 // END FUNCTION
 
+// FUNCTION: 0x102441b0 size=0x5d3
+#include <math.h>
+#include "Vector.h"
+#include "QAngle.h"
+#include "matrix3x4_t.h"
+#include "Ray_t.h"
+
+extern float g_1070d9d0[];	// vec3_origin / vec3_angle
+extern float g_1070d1b0[];	// vec3_origin
+
+struct cplane_t
+{
+    Vector normal;
+    float dist;
+    unsigned char type;
+    unsigned char signbits;
+    unsigned char pad[2];
+};
+
+void sub_10139f00(const QAngle &angles, const Vector &position, matrix3x4_t &mat);	// AngleIMatrix
+void sub_10137fe0(const float *in1, const matrix3x4_t &in2, float *out);	// VectorTransform
+void sub_101381b0(const float *in1, const matrix3x4_t &in2, float *out);	// VectorRotate
+void sub_10138460(const float *in1, const matrix3x4_t &in2, float *out);	// VectorIRotate
+void sub_10139a90(matrix3x4_t &mat);	// SetIdentityMatrix
+void sub_10138760(const Vector &in, int column, matrix3x4_t &out);	// MatrixSetColumn
+void sub_10139500(const Vector &start, float scale, const Vector &direction, Vector &dest);	// VectorMA
+void sub_10243630(const Vector &org, const QAngle &angles, const Vector &mins, const Vector &maxs, matrix3x4_t &mat);	// ComputeCenterMatrix
+bool sub_10240670(const Vector &boxMin, const Vector &boxMax, const Ray_t &ray, float flTolerance);	// IsBoxIntersectingRay
+bool sub_102434d0(const Vector &org1, const QAngle &angles1, const Vector &min1, const Vector &max1,
+    const Vector &org2, const QAngle &angles2, const Vector &min2, const Vector &max2,
+    float tolerance, cplane_t *pPlane);	// ComputeSeparatingPlane
+bool sub_102437d0(const matrix3x4_t &worldToBox1, const matrix3x4_t &box2ToWorld,
+    const Vector &box1Size, const Vector &box2Size, float tolerance, cplane_t *pPlane);	// ComputeSeparatingPlane
+
+inline float FloatMakePositive(float f) { return (float)fabs(f); }
+inline unsigned long &FloatBits(float &f) { return *reinterpret_cast<unsigned long *>(&f); }
+
+inline void VectorAbsX(const Vector &src, Vector &dst) { dst.x = FloatMakePositive(src.x); dst.y = FloatMakePositive(src.y); dst.z = FloatMakePositive(src.z); }
+inline void VectorAbsY(Vector &v) { v.x = FloatMakePositive(v.x); v.y = FloatMakePositive(v.y); v.z = FloatMakePositive(v.z); }
+inline float DotProductAbs(const Vector &v0, const Vector &v1)
+{
+    return FloatMakePositive(v0.x * v1.x) + FloatMakePositive(v0.y * v1.y) + FloatMakePositive(v0.z * v1.z);
+}
+
+#define RAY_START(r) (*(const Vector *)(r).m_Start)
+#define RAY_DELTA(r) (*(const Vector *)(r).m_Delta)
+#define RAY_EXTENTS(r) (*(const Vector *)(r).m_StartOffset)
+
+inline void CrossProductX(const Vector &a, const Vector &b, Vector &result)
+{
+	result.x = a.y * b.z - b.y * a.z;
+	result.y = a.z * b.x - a.x * b.z;
+	result.z = a.x * b.y - a.y * b.x;
+}
+bool sub_102441b0(const Ray_t &ray, const Vector &org, const QAngle &angles, const Vector &mins, const Vector &maxs)
+{
+    if (angles == *(const QAngle *)g_1070d9d0)
+    {
+        Vector vecWorldMins, vecWorldMaxs;
+        VectorAdd(org, mins, vecWorldMins);
+        VectorAdd(org, maxs, vecWorldMaxs);
+        return sub_10240670(vecWorldMins, vecWorldMaxs, ray, 0.0f);
+    }
+
+    matrix3x4_t worldToBox;
+    Ray_t rotatedRay;
+    if (ray.m_IsRay)
+    {
+        sub_10139f00(angles, org, worldToBox);
+
+        sub_10137fe0(ray.m_Start, worldToBox, rotatedRay.m_Start);
+        sub_101381b0(ray.m_Delta, worldToBox, rotatedRay.m_Delta);
+        *(Vector *)rotatedRay.m_Extents = *(const Vector *)g_1070d1b0;
+        *(Vector *)rotatedRay.m_StartOffset = *(const Vector *)g_1070d1b0;
+        rotatedRay.m_IsRay = ray.m_IsRay;
+        rotatedRay.m_IsSwept = ray.m_IsSwept;
+
+        return sub_10240670(mins, maxs, rotatedRay, 0.0f);
+    }
+
+    if (!ray.m_IsSwept)
+    {
+        cplane_t plane;
+        const Vector &ext = RAY_EXTENTS(ray);
+        Vector vecNegExtents;
+        vecNegExtents.sub_100f2f90(-ext.x, -ext.y, -ext.z);
+        return sub_102434d0(RAY_START(ray), *(const QAngle *)g_1070d9d0, vecNegExtents, ext,
+            org, angles, mins, maxs, 0.0f, &plane) == false;
+    }
+
+    {
+    matrix3x4_t worldToBox1, box2ToWorld;
+    sub_10243630(org, angles, mins, maxs, box2ToWorld);
+
+    Vector vecRayCenter;
+    sub_10139500(RAY_START(ray), 0.5f, RAY_DELTA(ray), vecRayCenter);
+    vecRayCenter *= -1.0f;
+    sub_10139a90(worldToBox1);
+    sub_10138760(vecRayCenter, 3, worldToBox1);
+
+    Vector box2Size;
+    cplane_t plane;
+    {
+    Vector box1Size;
+    box1Size.x = RAY_EXTENTS(ray).x + FloatMakePositive(RAY_DELTA(ray).x) * 0.5f;
+    box1Size.y = RAY_EXTENTS(ray).y + FloatMakePositive(RAY_DELTA(ray).y) * 0.5f;
+    box1Size.z = RAY_EXTENTS(ray).z + FloatMakePositive(RAY_DELTA(ray).z) * 0.5f;
+
+    VectorSubtract(maxs, mins, box2Size);
+    box2Size *= 0.5f;
+
+    if (sub_102437d0(worldToBox1, box2ToWorld, box1Size, box2Size, 0.0f, &plane))
+        return false;
+    }
+    {
+
+    Vector vecRayDirection = RAY_DELTA(ray);
+    VectorNormalize(vecRayDirection);
+    Vector vecCenterDelta;
+    vecCenterDelta.x = box2ToWorld.m_flMatVal[0][3] - RAY_START(ray).x;
+    vecCenterDelta.y = box2ToWorld.m_flMatVal[1][3] - RAY_START(ray).y;
+    vecCenterDelta.z = box2ToWorld.m_flMatVal[2][3] - RAY_START(ray).z;
+
+    Vector vecAbsRayDirBox2;
+    sub_10138460(&vecRayDirection.x, box2ToWorld, &vecAbsRayDirBox2.x);
+
+    VectorAbsX(vecAbsRayDirBox2, vecAbsRayDirBox2);
+
+    Vector &vecPlaneNormal = vecRayCenter;
+
+    Vector vecBox2AxisX(box2ToWorld.m_flMatVal[0][0], box2ToWorld.m_flMatVal[1][0], box2ToWorld.m_flMatVal[2][0]);
+    CrossProductX(vecRayDirection, vecBox2AxisX, vecPlaneNormal);
+    float flCenterDeltaProjection = FloatMakePositive(DotProduct(vecPlaneNormal, vecCenterDelta));
+    float flBoxProjectionSum =
+        vecAbsRayDirBox2.z * box2Size.y + vecAbsRayDirBox2.y * box2Size.z +
+        DotProductAbs(vecPlaneNormal, RAY_EXTENTS(ray));
+    if (FloatBits(flCenterDeltaProjection) > FloatBits(flBoxProjectionSum))
+        return false;
+
+    Vector vecBox2AxisY(box2ToWorld.m_flMatVal[0][1], box2ToWorld.m_flMatVal[1][1], box2ToWorld.m_flMatVal[2][1]);
+    CrossProduct(vecRayDirection, vecBox2AxisY, vecPlaneNormal);
+    flCenterDeltaProjection = FloatMakePositive(DotProduct(vecPlaneNormal, vecCenterDelta));
+    flBoxProjectionSum =
+        vecAbsRayDirBox2.z * box2Size.x + vecAbsRayDirBox2.x * box2Size.z +
+        DotProductAbs(vecPlaneNormal, RAY_EXTENTS(ray));
+    if (FloatBits(flCenterDeltaProjection) > FloatBits(flBoxProjectionSum))
+        return false;
+
+    Vector vecBox2AxisZ(box2ToWorld.m_flMatVal[0][2], box2ToWorld.m_flMatVal[1][2], box2ToWorld.m_flMatVal[2][2]);
+    CrossProduct(vecRayDirection, vecBox2AxisZ, vecPlaneNormal);
+    flCenterDeltaProjection = FloatMakePositive(DotProduct(vecPlaneNormal, vecCenterDelta));
+    flBoxProjectionSum =
+        vecAbsRayDirBox2.y * box2Size.x + vecAbsRayDirBox2.x * box2Size.y +
+        DotProductAbs(vecPlaneNormal, RAY_EXTENTS(ray));
+    if (FloatBits(flCenterDeltaProjection) > FloatBits(flBoxProjectionSum))
+        return false;
+    }
+    }
+
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10244910 size=0x882
 #include <math.h>
 #include "Vector.h"
