@@ -530,6 +530,30 @@ have written it rather than adding temporaries that spell out the assembly:
   Saved under view names (watch the link audit): 0x103f03e0 CFrag914::sub_103f03e0, 0x10295ed0
   CAI_BaseNPCTroikaV::sub_10295ed0. Unsolved patterns: the game hoists pointer loads above stack stores
   (0x102e7e80, 0x101001e0, 0x10176930); include-loop address reassociation (0x10429080, 0x10427df0, 0x101810f0).
+- **Near-miss pass 2 (11 of 40 never-hand-tried near misses scored 1-13, 5.5 KB, 2026-11-13):** new idioms:
+  - one inline expansion too many (game calls the 4th AddDataAccessor out of line): dead `if (0) m[i] = 0;` stores
+    inside the CALLEE's body raise its cost; sweep the count (0x1003c660: 1 = 13, 2 = 0, 3+ = 25). The same dead
+    code in the caller only pushes other inlines out;
+  - a record passed by address (AI_NavGoal_t): build it as a temporary in the argument list through an inline
+    `SetGoal(const T &g, unsigned f = 0)` view wrapper, with the SDK ctor's default args (`float tol = g_<per-unit
+    const>`, `pTarget = g_<null>`) in the init list; a named local keeps a different copy schedule (0x103ac740,
+    0x1035f650: twins, 17 -> 0 with the same form);
+  - fadd/fmul operand order per component: a temp-returning `AddV(a, b)` with by-value `a[1]`/`a[2]` on just the
+    components the game flips (0x1011fb50 y,z; 0x1032a490 x,z); the same mix in a `Vector(...)` ctor never closes;
+    SDK VectorLerp through operator[] fixes a lerp's schedule against a nearby struct copy (0x10121ce0);
+  - two byte-identical tails VC6 cross-jumps but the game keeps: call the callee through a view method named
+    `sub_<addr>` on ANOTHER class in one tail; different symbols, same stub (0x103954e0);
+  - a clamp as a ternary initializer `int n = (c < 20) ? c : 20;`, not `if (n >= 20) n = 20;` (registers rotate,
+    0x103451d0); a named local for a constant used twice moves a later loop's temp registers (0x1024b880, SDK
+    `I prev = InvalidIndex()`); `switch (p != 0) { case 0: return; }` keeps an unthreaded ternary-join test
+    (0x10254250); a cheaper `template <> CUtlVector<int>::RemoveAll() { m_Size = 0; }` lets the inliner take the
+    teardown the game inlines (0x100a6c50);
+  - copy the same-class sibling's loop line for line (early-return form) to get the game's tail merge (0x1008eb70
+    after CalcPose 0x1008e770).
+  Judges 0 but unsaved: 0x1002dc50 needs `static T *g_106b89bc;` (SDK file-static g_pShadowEntities); a defined
+  static gets its own storage in the linked hybrid (hybrid/binding.py DATA), so it waits for a tool rule binding
+  g_<addr> statics. Twin walls: 0x103e0540/0x1037b1f0 `mov ecx,imm` before `push esi` (only these two in the DLL);
+  reload-order walls 0x102f6d80/0x101e56e0 (game reloads in the reverse order).
 - **Round 13 (14 of 40 never-hand-tried >1 KB functions, 19.9 KB, 2026-11-13):** SDK identification again won the
   biggest ones (0x1018b7e0 ClientData_Update 320 -> 0, 0x100f4b90 CGibShooter::ShootThink 288, 0x1011d980
   DrawDispCollPlane 242, 0x1017b8a0 VPhysicsShadowUpdate 301, 0x101213b0 WalkMove 209 via local dllimport VPROF).
