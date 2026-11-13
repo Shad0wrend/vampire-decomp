@@ -149492,6 +149492,294 @@ void CUnknown101f0e50::sub_101f8e20(CTraitOwnerX *pOwner, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f8f30 size=0x4e0
+#include "CBaseCombatCharacter.h"
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CNPC_VTzimisce.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CUnknown101f0e50.h"
+#include "CUnknown10227c90.h"
+#include "CVTraitEffectGroup_t.h"
+#include "CVStatList_t.h"
+#include "CUnknown101e3af0.h"
+#include "ConVar.h"
+#include "Vector.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include <stdio.h>
+
+#define TV1(p) virtual void p();
+#define TV10(p) TV1(p##0) TV1(p##1) TV1(p##2) TV1(p##3) TV1(p##4) TV1(p##5) TV1(p##6) TV1(p##7) TV1(p##8) TV1(p##9)
+#define TV100(p) TV10(p##0) TV10(p##1) TV10(p##2) TV10(p##3) TV10(p##4) TV10(p##5) TV10(p##6) TV10(p##7) TV10(p##8) TV10(p##9)
+
+struct TraitStudioHdr
+{
+	int id;
+	int version;
+	int checksum;
+	char name[64];
+};
+
+inline int ENTINDEX(int pEdict)
+{
+	return engine->vfunc35(pEdict);
+}
+
+struct TraitEnt
+{
+	TV1(v0)
+	virtual const CBaseHandle &vfunc1();
+	TV100(va) TV1(vb0) TV1(vb1) TV1(vb2)		// 2..104
+	virtual void vfunc105(const char *pszModel);
+	TV100(vc) TV10(vd0) TV1(vd10) TV1(vd11) TV1(vd12) TV1(vd13)	// 106..219
+	virtual const Vector &vfunc220();
+	TV10(ve0) TV10(ve1) TV10(ve2) TV10(ve3) TV10(ve4) TV10(ve5) TV10(ve6) TV10(ve7) TV10(ve8)	// 221..310
+	virtual void vfunc311(int a, int b, int c);
+	TV1(vf0) TV1(vf1) TV1(vf2) TV1(vf3)	// 312..315
+	virtual void vfunc316(int a);
+
+	char m_pad0004[0xa8 - 4];
+	TraitEnt *m_pA8;	// 0xa8
+	char m_pad00ac[0x168 - 0xac];
+	int m_n168;	// 0x168
+	int m_n16c;	// 0x16c
+	char m_pad0170[0x19c - 0x170];
+	int m_n19c;	// 0x19c
+	char m_pad01a0[3];
+	unsigned char m_b1a3;	// 0x1a3
+	char m_pad01a4[0x2e0 - 0x1a4];
+	int m_n2e0;	// 0x2e0
+	char m_pad02e4[0x13cc - 0x2e4];
+	int m_n13cc;	// 0x13cc
+	char m_pad13d0[0x1460 - 0x13d0];
+	CUnknown10227c90 m_Applied;	// 0x1460
+	char m_pad1460[0x1484 - 0x1460 - sizeof(CUnknown10227c90)];
+	int m_n1484;	// 0x1484
+	char m_pad1488[0x155c - 0x1488];
+	CBaseHandle m_h155c;	// 0x155c
+	float m_f1560;	// 0x1560
+	char m_pad1564[0x1c68 - 0x1564];
+	float m_f1c68;	// 0x1c68
+	char m_pad1c6c[0x1ebc - 0x1c6c];
+	int m_n1ebc;	// 0x1ebc
+	char m_pad1ec0[0x1edc - 0x1ec0];
+	bool m_b1edc;	// 0x1edc
+	char m_pad1edd[0x23d4 - 0x1edd];
+	char m_sz23d4[4];	// 0x23d4
+
+	int edict() { return m_n2e0; }
+
+	TraitEnt *sub_1032e7b0();
+	TraitEnt *sub_1015d680(int index);
+	TraitEnt *sub_10161a70(const char *pszClass);
+	void sub_101644f0(int a, int b, int c);
+	void sub_10090890(int a);
+	TraitStudioHdr *sub_100952d0(int a);
+	int sub_1008dc40(int a, int b);
+	void sub_10323370();
+	void sub_103234a0();
+	void sub_1033c830(unsigned int flags);
+	bool sub_10336920();
+};
+
+struct TraitVar : ConVar
+{
+	const char *sub_10246270();
+};
+
+struct TraitCvarSys
+{
+	virtual void v0();
+	virtual void v1();
+	virtual TraitVar *vfunc2(const char *pszName);
+};
+
+struct TraitCsActList
+{
+	void sub_102ca2a0(int a, TraitEnt *pA, Vector vec, int n, float f, TraitEnt *pB, TraitEnt *pC, int d);
+};
+
+struct TraitSList2
+{
+	void sub_10227a30(TraitEnt *pEnt, int n);
+};
+
+struct TraitDiscMgr : CUnknown101e3af0
+{
+	void sub_101e3560(TraitEnt *pChar, unsigned int flags);
+};
+
+struct color32
+{
+	unsigned char r, g, b, a;
+};
+
+extern TraitCvarSys *g_1070b234;
+extern TraitCsActList *g_109253f8;
+extern TraitSList2 g_10750cb4;
+extern TraitDiscMgr g_10739a4c;
+extern const char g_106b8540[];
+
+void sub_101ce290(TraitEnt *pEnt, color32 &color, float fadeTime, float fadeHold, int flags);
+void sub_101cdba0(const Vector &center, float amplitude, float frequency, float duration, float radius, int eCommand, int bAirShake);
+void sub_10050d90(TraitEnt *pEnt, int a, float x, float y, float z, const char *pszName, int b, const char *pszBone, int c, int d);
+void sub_10230260(void *pOwner);
+
+
+// TARGET: CUnknown101f0e50::sub_101f8f30
+void CUnknown101f0e50::sub_101f8f30(CTraitOwnerX *pOwner, int index)
+{
+	TraitEnt *pChar = (TraitEnt *)pOwner;
+	if (!pChar)
+		return;
+
+	CVTraitEffectGroup_t *pGroup = sub_101f8480(index);
+	for (int i = 0; i < pGroup->m_nEffects; i++)
+	{
+		CVTraitEffect_t *e = &pGroup->m_pEffects[i];
+		switch (e->m_nType)
+		{
+		case 5:
+			if (e->m_n14 <= 0)
+			{
+				for (int n = -e->m_n14; n > 0; n--)
+					pChar->m_Applied.sub_101f1be0((int)e->m_psz04);
+			}
+			break;
+		case 6:
+			if (e->m_n14 <= 0)
+			{
+				for (int n = -e->m_n14; n > 0; n--)
+					sub_101f9a80(pOwner, e->m_psz04 ? e->m_psz04 : g_106b8540);
+			}
+			break;
+		case 7:
+		{
+			TraitVar *pVar = g_1070b234->vfunc2(e->m_psz04 ? e->m_psz04 : g_106b8540);
+			if (pVar && !pVar->vfunc1())
+			{
+				if (e->m_n10)
+				{
+					if (e->m_n10 == 6)
+						pVar->vfunc6(pVar->sub_10246270());
+				}
+				else
+					pVar->vfunc4(pVar->GetInt() - e->m_n14);
+			}
+			break;
+		}
+		case 8:
+			switch ((int)e->m_psz04)
+			{
+			case 1:
+				pChar->m_n168 = 0;
+				pChar->m_n16c = 0;
+				if (pChar->sub_1032e7b0())
+				{
+					pChar->sub_1032e7b0()->m_n168 = 0;
+					pChar->sub_1032e7b0()->m_n16c = 0;
+				}
+				if (pChar->m_pA8)
+				{
+					for (int k = 0; k < 2; k++)
+					{
+						TraitEnt *p = pChar->sub_1015d680(k);
+						if (p)
+						{
+							p->m_n168 = 0;
+							p->m_n16c = 0;
+						}
+					}
+				}
+				break;
+			case 2:
+				if (pChar->m_pA8)
+				{
+					color32 color;
+					color.r = 0xff;
+					color.g = 0x78;
+					color.b = 0x78;
+					color.a = 0x78;
+					sub_101ce290(pChar, color, 0.4f, 0.1f, 0x11);
+				}
+				break;
+			case 4:
+				pChar->m_n1484 -= e->m_n14;
+				if (pChar->m_n1484 < 0)
+					pChar->m_n1484 = 0;
+				if (pChar->m_n1484 > 5)
+					pChar->m_n1484 = 5;
+				break;
+			case 5:
+			{
+				TraitEnt *pPlayer = pChar->m_pA8;
+				TraitEnt *pMorph = pPlayer->sub_10161a70("npc_VWolfMorph");
+				g_10750cb4.sub_10227a30(pPlayer, 2);
+				pMorph->vfunc105(pPlayer->m_sz23d4);
+				pMorph->m_n19c &= ~0x60;
+				pMorph->m_b1a3 = 1;
+				pMorph->m_n168 = 0x1f;
+				pMorph->m_n16c = 2;
+				pMorph->m_h155c = pChar->vfunc1();
+				pMorph->m_f1560 = pChar->m_f1560 = gpGlobals->curtime;
+				pPlayer->m_n168 = 0x1e;
+				pPlayer->m_n16c = 2;
+				CBaseHandle &hMorph = pPlayer->m_h155c;
+				hMorph = pMorph->vfunc1();
+				pPlayer->m_b1edc = true;
+				pPlayer->m_n1ebc = ENTINDEX(pMorph->edict());
+				pPlayer->sub_101644f0(0x1145, 0x1145, 1);
+				sub_10050d90(pPlayer, 11, 1.0f, 1.0f, 1.0f, "D_ProteanTransform_Emitter", 2, "Bip01 Spine2", 0, 0);
+				break;
+			}
+			case 6:
+			{
+				pChar->sub_103234a0();
+				CVStatList_t *pList = CVStatListSet::Of(pChar)->Find(2);
+				g_10739a4c.sub_101e1520(10, pList->sub_102012d0(10));
+				g_10739a4c.sub_101e40b0((CBaseCombatCharacter *)pChar);
+				break;
+			}
+			case 8:
+				if (pChar->m_n168 == 0x19 || pChar->m_n168 == 0x1a)
+					pChar->m_n168 = 0;
+				break;
+			case 9:
+				if (pChar->m_n168 == 0x24 || pChar->m_n168 == 0x25)
+					pChar->m_n168 = 0;
+				break;
+			case 10:
+				if (pChar->m_n168 == 0x1d)
+					pChar->m_n168 = 0;
+				break;
+			case 12:
+				pChar->sub_1033c830(0x1000);
+				break;
+			case 13:
+				pChar->sub_1033c830(0x8000);
+				break;
+			case 14:
+				pChar->sub_1033c830(0x2000);
+				break;
+			case 15:
+				pChar->sub_1033c830(0x4000);
+				break;
+			case 16:
+				pChar->sub_1033c830(0x10000);
+				break;
+			case 17:
+				pChar->sub_1033c830(0x40000);
+				break;
+			}
+			break;
+		}
+	}
+	sub_10230260(pOwner);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f9550 size=0xa
 extern int g_1074e008;
 void sub_101f9550(int value)
