@@ -141,6 +141,33 @@ void CNPC_VGhoulCroucher::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037b1f0 size=0x77
+#include "CNPC_VGhoulCroucher.h"
+
+extern char g_106b8540[];
+
+struct CSoundTableX {
+	int sub_101f55a0(CBaseEntity &entity, const char *pszName, bool bFemale);
+};
+extern CSoundTableX g_1073dc28;
+
+// TARGET: CNPC_VGhoulCroucher::vfunc105
+void CNPC_VGhoulCroucher::vfunc105(const char *pszModel)
+{
+	const char **ppName = (const char **)((char *)this + 0xc0);
+	sub_10298ce0(pszModel);
+	if (sub_10336920()) {
+		*ppName = "Zombie_Male"[0] ? "Zombie_Male" : 0;
+		m_nVSoundTableIdx = 2;
+		m_nVSoundGroup = g_1073dc28.sub_101f55a0(*this, *ppName ? *ppName : g_106b8540, false);
+	} else {
+		*ppName = "Zombie_Female"[0] ? "Zombie_Female" : 0;
+		m_nVSoundTableIdx = 2;
+		m_nVSoundGroup = g_1073dc28.sub_101f55a0(*this, *ppName ? *ppName : g_106b8540, false);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037b290 size=0x107
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
