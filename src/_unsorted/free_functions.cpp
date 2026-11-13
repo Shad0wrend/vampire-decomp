@@ -224516,6 +224516,350 @@ void sub_103021b0(const Vector &start, const Vector &end, unsigned int fMask, CT
 }
 // END FUNCTION
 
+// FUNCTION: 0x10302e50 size=0x720
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+class Vector;
+__forceinline void VectorSubtract(const Vector &a, const Vector &b, Vector &c);
+#include "CAI_Pathfinder.h"
+#include "CAI_Navigator.h"
+#include "CUnknown102f8f10.h"
+#include "UtlVec8.h"
+#include "UtlMem.h"
+#include "CUtlVector16.h"
+#include "CBitString.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include <malloc.h>
+
+extern char g_1093408c;
+extern int g_10934148;
+extern int g_106c994c;
+extern Vector g_1070d1b0;
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *fmt, ...);
+int __cdecl sub_102f3770(const float *a, const float *b);
+float sub_10146150(const Vector *v);
+extern void (__cdecl *g_109f3624)(void *);
+
+#define NO_NODE -1
+inline float LSZ(const Vector &v) { return v.x * v.x + (v.y * v.y + v.z * v.z); }
+inline float VLen(const Vector &v) { return sub_10146150(&v); }
+
+struct AI_NearNode_t
+{
+	AI_NearNode_t(int index, float nodedist) { dist = nodedist; nodeIndex = index; }
+	float dist;
+	int nodeIndex;
+};
+
+struct CNodeListV
+{
+	AI_NearNode_t *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	AI_NearNode_t *m_pElements;
+	bool (__cdecl *m_LessFunc)(const AI_NearNode_t &, const AI_NearNode_t &);
+
+	CNodeListV(AI_NearNode_t *pMemory, int count) { ((CUnknown102f8f10 *)this)->CUnknown102f8f10::CUnknown102f8f10((int)pMemory, count, (int)sub_102f3770); }
+	int Count() const { return m_Size; }
+	const AI_NearNode_t &ElementAtHead() const { return m_pMemory[0]; }
+	void Swap(int index1, int index2) { ((UtlVec8 *)this)->sub_102f9090(index1, index2); }
+	void SwapI(int index1, int index2)
+	{
+		AI_NearNode_t tmp = m_pMemory[index1];
+		m_pMemory[index1] = m_pMemory[index2];
+		m_pMemory[index2] = tmp;
+	}
+	void RemoveAtHead()
+	{
+		((UtlVec8 *)this)->sub_102f9000(0);
+		int index = 0;
+
+		int count = Count();
+		if (!count)
+			return;
+
+		int half = count / 2;
+		int larger = index;
+		while (index < half)
+		{
+			int child = ((index + 1) * 2) - 1;
+			if (child < count)
+			{
+				if (m_LessFunc(m_pMemory[index], m_pMemory[child]))
+				{
+					larger = child;
+				}
+			}
+			child++;
+			if (child < count)
+			{
+				if (m_LessFunc(m_pMemory[larger], m_pMemory[child]))
+					larger = child;
+			}
+
+			if (larger == index)
+				break;
+
+			((UtlVec8 *)this)->sub_102f9090(index, larger);
+			index = larger;
+		}
+	}
+	void Insert(const AI_NearNode_t &element)
+	{
+		int index = ((UtlVec8 *)this)->sub_102f90e0(m_Size);
+		m_pMemory[index] = element;
+
+		while (index != 0)
+		{
+			int parent = ((index + 1) / 2) - 1;
+			if (m_LessFunc(m_pMemory[index], m_pMemory[parent]))
+				break;
+
+			((UtlVec8 *)this)->sub_102f9090(parent, index);
+			index = parent;
+		}
+	}
+	void InsertI(const AI_NearNode_t &element)
+	{
+		int index = ((UtlVec8 *)this)->sub_102f90e0(m_Size);
+		m_pMemory[index] = element;
+
+		while (index != 0)
+		{
+			int parent = ((index + 1) / 2) - 1;
+			if (m_LessFunc(m_pMemory[index], m_pMemory[parent]))
+				break;
+
+			SwapI(parent, index);
+			index = parent;
+		}
+	}
+};
+
+struct LinkV
+{
+	char m_pad0[0xc];
+	int m_iAcceptedMoveTypes[22];
+	int m_LinkInfo;
+	int sub_102dda40(int startID);
+	int DestNodeID(int id) { return sub_102dda40(id); }
+};
+
+struct HintV
+{
+	bool sub_102d14c0();
+	bool sub_102d1350(CBaseEntity *pEnt);
+};
+
+struct NodeV
+{
+	char m_pad0[0x70];
+	int m_eNodeType;
+	char m_pad74[4];
+	int m_nLinks;
+	LinkV **m_Links;
+	char m_pad80[0x9c - 0x80];
+	float m_flNextUseTime;
+	HintV *m_pHint;
+
+	Vector sub_102fb0d0(int hull);
+	Vector GetPosition(int hull) { return sub_102fb0d0(hull); }
+	int GetType() const { return m_eNodeType; }
+	bool IsLocked() const { return (m_flNextUseTime > gpGlobals->curtime); }
+	void Lock(float duration) { m_flNextUseTime = gpGlobals->curtime + duration; }
+	HintV *GetHint() { return m_pHint; }
+	int NumLinks() { return m_nLinks; }
+	LinkV *GetLinkByIndex(int i) { return m_Links[i]; }
+};
+
+struct NetV
+{
+	int m_iNumNodes;
+	NodeV **m_pAInode;
+	int sub_102f3c10(int pOuter, const Vector *pPos);
+	int NumNodes() const { return m_iNumNodes; }
+	NodeV *GetNode(int id)
+	{
+		if (id >= 0 && id < m_iNumNodes)
+			return m_pAInode[id];
+		++g_106c994c;
+		return 0;
+	}
+};
+
+struct OuterV
+{
+	char m_pad0[0x5d34];
+	CAI_Navigator *m_pNav;
+	char m_pad5d38[0x5ddc - 0x5d38];
+	HintV *m_pHintNode;
+};
+
+struct CUnitHelperV
+{
+	char sub_1026ff00(const Vector *pPos, const void *pEnt);
+};
+
+struct BSV
+{
+	unsigned short m_nBits;
+	unsigned short m_nDwords;
+	int m_nInline;
+	int *m_pData;
+	int *GetInts() { return m_pData; }
+	const int *GetInts() const { return m_pData; }
+	bool GetBit(int bitNum) const
+	{
+		const int *pInt = GetInts() + (bitNum >> 5);
+		return ((*pInt & (1 << (bitNum & 31))) != 0);
+	}
+	void SetBit(int bitNum)
+	{
+		int *pInt = GetInts() + (bitNum >> 5);
+		*pInt |= (1 << (bitNum & 31));
+	}
+};
+struct CompV
+{
+	void *m_vt;
+	int m_pOuter;
+	int m_iHull;
+	CBaseEntity *GetOuter() { return (CBaseEntity *)m_pOuter; }
+	NetV *GetNetwork() { return (NetV *)((OuterV *)m_pOuter)->m_pNav->m_pProviders; }
+	int GetHullType() { return m_iHull; }
+	CEntityVSlots *GetOuterSV() { return (CEntityVSlots *)m_pOuter; }
+	const Vector &GetLocalOrigin() { CEntityVSlots *p = GetOuterSV(); return *p->slot220(); }
+	const char *GetEntClassname() { return ((CBaseEntity *)m_pOuter)->sub_1009f200(); }
+};
+#define GetOuter() (((CompV *)this)->GetOuter())
+#define GetOuterV() ((OuterV *)m_pOuter)
+#define GetOuterS() ((CEntityVSlots *)m_pOuter)
+#define GetNetwork() (((CompV *)this)->GetNetwork())
+#define GetHullType() (((CompV *)this)->GetHullType())
+#define GetLocalOrigin() (((CompV *)this)->GetLocalOrigin())
+
+// TARGET: CAI_Navigator::sub_10302e50
+int CAI_Navigator::sub_10302e50(const Vector *pThreatPos, class CBaseEntity *pThreatEyePos, float flMinThreatDist, float flMaxThreatDist, float flBlockTime, const Vector *pThreatFacing, char bFlag)
+{
+	if (!g_1093408c)
+		return NO_NODE;
+
+	int iMyNode = GetNetwork()->sub_102f3c10((int)GetOuter(), &GetLocalOrigin());
+
+	if (iMyNode == NO_NODE)
+	{
+		DevWarning(2, "FindShootNode() - %s has no nearest node (%f, %f, %f)!\n", ((CompV *)this)->GetEntClassname(), GetLocalOrigin().x, GetLocalOrigin().y, GetLocalOrigin().z);
+		return NO_NODE;
+	}
+
+	AI_NearNode_t *pBuffer = (AI_NearNode_t *)_alloca(sizeof(AI_NearNode_t) * GetNetwork()->NumNodes());
+	CNodeListV list(pBuffer, GetNetwork()->NumNodes());
+	CBitString wasVisited;
+	wasVisited.sub_102fc910(GetNetwork()->NumNodes());
+
+	{
+		((BSV &)wasVisited).SetBit(iMyNode);
+	}
+	list.Insert(AI_NearNode_t(iMyNode, 0));
+
+	while (list.Count())
+	{
+		int nodeIndex = list.ElementAtHead().nodeIndex;
+		list.RemoveAtHead();
+
+		Vector nodeOrigin = GetNetwork()->GetNode(nodeIndex)->sub_102fb0d0(GetHullType());
+
+		if (nodeIndex != iMyNode)
+		{
+			bool skip = false;
+			if (*pThreatFacing != g_1070d1b0)
+			{
+				Vector nodeToThreat = (*pThreatPos - nodeOrigin);
+				if (DotProduct(nodeToThreat, *pThreatFacing) < 0)
+				{
+					skip = true;
+				}
+			}
+			if (!skip && !GetNetwork()->GetNode(nodeIndex)->IsLocked() &&
+				GetNetwork()->GetNode(nodeIndex)->GetType() != 4)
+			{
+				float flThreatDist = VLen(nodeOrigin - *pThreatPos);
+
+				if (flThreatDist < flMaxThreatDist &&
+					flThreatDist > flMinThreatDist)
+				{
+					HintV *pHint = GetNetwork()->GetNode(nodeIndex)->GetHint();
+					char bOk;
+					if (bFlag)
+						bOk = ((CUnitHelperV *)GetOuter())->sub_1026ff00(&nodeOrigin, pThreatEyePos);
+					else if (GetOuterS()->slot549(&nodeOrigin, pHint))
+						bOk = GetOuterS()->slot562(&nodeOrigin, pThreatEyePos, 0);
+					else
+						bOk = 0;
+					if (bOk)
+					{
+						if (!pHint || !pHint->sub_102d14c0())
+						{
+							GetNetwork()->GetNode(nodeIndex)->Lock(flBlockTime);
+							if (pHint)
+							{
+								GetOuterV()->m_pHintNode = pHint;
+								pHint->sub_102d1350(GetOuter());
+							}
+							g_10934148 = nodeIndex;
+							wasVisited.sub_100bf6a0();
+							((CUtlVector16 *)&list)->sub_102f9040();
+							((UtlMem *)&list)->sub_102f91b0();
+							return nodeIndex;
+						}
+					}
+				}
+			}
+		}
+
+		for (int link = 0; link < GetNetwork()->GetNode(nodeIndex)->NumLinks(); link++)
+		{
+			int index = (link + g_10934148) % GetNetwork()->GetNode(nodeIndex)->NumLinks();
+			LinkV *nodeLink = GetNetwork()->GetNode(nodeIndex)->GetLinkByIndex(index);
+
+			if (nodeLink->m_LinkInfo & 0x1000)
+				continue;
+			if (!(nodeLink->m_iAcceptedMoveTypes[GetHullType()] & GetOuterS()->slot513()))
+				continue;
+
+			int newID = nodeLink->sub_102dda40(nodeIndex);
+
+			if (!((BSV &)wasVisited).GetBit(newID))
+			{
+				float dist = LSZ(GetLocalOrigin() - GetNetwork()->GetNode(newID)->sub_102fb0d0(GetHullType()));
+				list.InsertI(AI_NearNode_t(newID, dist));
+				((BSV &)wasVisited).SetBit(newID);
+			}
+		}
+	}
+
+	wasVisited.sub_100bf6a0();
+	list.m_Size = 0;
+	if (list.m_nGrowSize != -1)
+	{
+		if (list.m_pMemory)
+		{
+			Plat_Free(list.m_pMemory);
+			list.m_pMemory = 0;
+		}
+		list.m_nAllocationCount = 0;
+	}
+	list.m_pElements = list.m_pMemory;
+	if (list.m_nGrowSize != -1 && list.m_pMemory)
+		Plat_Free(list.m_pMemory);
+	return NO_NODE;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10303740 size=0xcb
 #include "CBaseEntity.h"
 #include "CAI_Pathfinder.h"
