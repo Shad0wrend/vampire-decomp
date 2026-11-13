@@ -8270,6 +8270,7 @@
 0x1000bc26 func   ?vfunc422@CBasePlayer@@QAEDH@Z CBasePlayer::vfunc422
 0x1000bc2b func   ?sub_1034e8c0@@YGXAAUInputData1034e8c0@@@Z sub_1034e8c0
 0x1000bc30 func   ?sub_101cccf0@CUnknown101cccf0@@QAEPAU1@HHHH@Z CUnknown101cccf0::sub_101cccf0
+0x1000bc35 func   ?sub_10151150@@YAXPAUIPhysicsFluidControllerV@@PAUIPhysicsObjectV@@PAUCSplashEntity@@@Z sub_10151150
 0x1000bc3a func   ?sub_103e8c50@CWeaponMelee_TzimisceMelee@@QAEXXZ CWeaponMelee_TzimisceMelee::sub_103e8c50
 0x1000bc3f func   ?sub_1036fb30@@YAPADXZ sub_1036fb30
 0x1000bc44 func   ?sub_10323a70@@YIFPAD@Z sub_10323a70

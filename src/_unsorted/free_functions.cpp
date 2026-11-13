@@ -93737,6 +93737,230 @@ void CPhysicsCannister::sub_101510c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151150 size=0x7a0
+#define inline __forceinline
+#include "Vector.h"
+#undef inline
+#include "matrix3x4_t.h"
+#include "engineiface.h"
+#include <math.h>
+
+void sub_10138720(const matrix3x4_t &mat, int iCol, Vector &out);
+void sub_10139970(const Vector &forward, Vector &angles);
+
+#pragma auto_inline(off)
+namespace block_10151150 {
+int sub_10151ae0(const matrix3x4_t &mat, const Vector &dir)
+{
+	int iBest = 0;
+	float flBest = -1.0f;
+	for (int i = 0; i < 3; i++) {
+		Vector axis;
+		sub_10138720(mat, i, axis);
+		float flDot = fabs(DotProduct(axis, dir));
+		if (flDot > flBest) {
+			flBest = flDot;
+			iBest = i;
+		}
+	}
+	return iBest;
+}
+}
+#pragma auto_inline(on)
+
+struct CPhysCollide;
+#define PV(n) virtual void v##n();
+struct IPhysicsFluidControllerV
+{
+	PV(0) PV(1) PV(2)
+	virtual void GetSurfacePlane(Vector *pNormal, float *pDist);
+};
+struct IPhysicsObjectV
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7)
+	virtual unsigned short GetGameFlags();
+	PV(9) PV(10) PV(11)
+	virtual float GetMass();
+	PV(13) PV(14) PV(15) PV(16) PV(17) PV(18) PV(19)
+	PV(20) PV(21) PV(22) PV(23) PV(24) PV(25) PV(26) PV(27) PV(28) PV(29)
+	PV(30) PV(31) PV(32) PV(33) PV(34) PV(35) PV(36) PV(37) PV(38) PV(39)
+	virtual void GetVelocity(Vector *velocity, Vector *angularVelocity);
+	PV(41) PV(42) PV(43) PV(44) PV(45) PV(46) PV(47) PV(48)
+	virtual const CPhysCollide *GetCollide();
+};
+struct IPhysicsCollisionV
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7) PV(8) PV(9)
+	PV(10) PV(11) PV(12) PV(13) PV(14) PV(15) PV(16)
+	virtual Vector CollideGetExtent(const CPhysCollide *pCollide, const Vector &collideOrigin, const Vector &collideAngles, const Vector &direction);
+};
+extern IPhysicsCollisionV *g_1072393c;
+#define physcollision g_1072393c
+
+#define EV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+struct CSplashEntity
+{
+	EV10() EV10(1) EV10(2) EV10(3) EV10(4) EV10(5) EV10(6) EV10(7) EV10(8)
+	PV(90) PV(91) PV(92) PV(93) PV(94) PV(95) PV(96) PV(97)
+	virtual void CalcAbsolutePosition();
+	PV(99)
+	EV10(10) EV10(11) EV10(12) EV10(13) EV10(14) EV10(15) EV10(16) EV10(17) EV10(18) EV10(19) EV10(20)
+	PV(210) PV(211) PV(212) PV(213) PV(214) PV(215) PV(216)
+	virtual const Vector &GetAbsOrigin();
+	PV(218)
+	virtual const Vector &GetAbsAngles();
+
+	char m_pad[0x130 - 4];
+	matrix3x4_t m_rgflCoordinateFrame;
+	char m_pad2[0x268 - 0x160];
+	unsigned int m_iEFlags;
+
+	matrix3x4_t &EntityToWorldTransform()
+	{
+		if ((bool)((m_iEFlags >> 11) & 1))
+			CalcAbsolutePosition();
+		return m_rgflCoordinateFrame;
+	}
+};
+
+struct CEffectData
+{
+	Vector m_vOrigin;
+	Vector m_vStart;
+	Vector m_vNormal;
+	Vector m_vAngles;
+	int m_fFlags;
+	int m_nEntIndex;
+	float m_flScale;
+	float m_flMagnitude;
+};
+
+inline Vector CrossProduct(const Vector &a, const Vector &b)
+{
+	return Vector(a.y * b.z - a.z * b.y, a.z * b.x - a.x * b.z, a.x * b.y - a.y * b.x);
+}
+inline void MatrixGetColumn(const matrix3x4_t &in, int column, Vector &out) { sub_10138720(in, column, out); }
+inline float RemapVal(float val, float A, float B, float C, float D)
+{
+	return C + (D - C) * (val - A) / (B - A);
+}
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+inline Vector RandomVector(float minVal, float maxVal)
+{
+	Vector random;
+	random.sub_1010e530(minVal, maxVal);
+	return random;
+}
+extern float g_104454c4;
+#define VectorAngles sub_10139970
+#define random enginerandom
+
+// TARGET: sub_10151150
+void sub_10151150(IPhysicsFluidControllerV *pFluid, IPhysicsObjectV *pObject, CSplashEntity *pEntity)
+{
+	Vector normal;
+	float dist;
+	pFluid->GetSurfacePlane(&normal, &dist);
+
+	matrix3x4_t &matrix = pEntity->EntityToWorldTransform();
+
+	int bestAxis = block_10151150::sub_10151ae0(matrix, normal);
+
+	Vector tangent, binormal;
+	MatrixGetColumn(matrix, (bestAxis + 1) % 3, tangent);
+	binormal = CrossProduct(normal, tangent);
+	VectorNormalize(binormal);
+	tangent = CrossProduct(binormal, normal);
+	VectorNormalize(tangent);
+
+	Vector tanPts[2], binPts[2];
+	tanPts[0] = physcollision->CollideGetExtent(pObject->GetCollide(), pEntity->GetAbsOrigin(), pEntity->GetAbsAngles(), -tangent);
+	tanPts[1] = physcollision->CollideGetExtent(pObject->GetCollide(), pEntity->GetAbsOrigin(), pEntity->GetAbsAngles(), tangent);
+	binPts[0] = physcollision->CollideGetExtent(pObject->GetCollide(), pEntity->GetAbsOrigin(), pEntity->GetAbsAngles(), -binormal);
+	binPts[1] = physcollision->CollideGetExtent(pObject->GetCollide(), pEntity->GetAbsOrigin(), pEntity->GetAbsAngles(), binormal);
+
+	float mins[2], maxs[2], center[2], extents[2];
+	mins[0] = DotProduct(tanPts[0], tangent);
+	maxs[0] = DotProduct(tanPts[1], tangent);
+
+	mins[1] = DotProduct(binPts[0], binormal);
+	maxs[1] = DotProduct(binPts[1], binormal);
+
+	center[0] = 0.5 * (mins[0] + maxs[0]);
+	center[1] = 0.5 * (mins[1] + maxs[1]);
+
+	extents[0] = maxs[0] - center[0];
+	extents[1] = maxs[1] - center[1];
+
+	Vector centerPoint = center[0] * tangent + center[1] * binormal + dist * normal;
+
+	Vector axes[2];
+	axes[0] = (maxs[0] - center[0]) * tangent;
+	axes[1] = (maxs[1] - center[1]) * binormal;
+
+	Vector corner[4];
+
+	corner[0] = centerPoint - axes[0] - axes[1];
+	corner[1] = centerPoint + axes[0] - axes[1];
+	corner[2] = centerPoint + axes[0] + axes[1];
+	corner[3] = centerPoint - axes[0] + axes[1];
+
+	CEffectData data;
+
+	if (pObject->GetGameFlags() & 8)
+	{
+		return;
+	}
+
+	Vector vel;
+	pObject->GetVelocity(&vel, 0);
+	float speed = -DotProduct(normal, vel);
+
+	speed = speed * speed * extents[0] * extents[1] * (1.0f / 2500000.0f) * pObject->GetMass() * (0.01f);
+
+	speed = clamp(speed, 0, 50);
+
+	bool bRippleOnly = false;
+
+	if (speed <= 0.35f)
+	{
+		if (speed <= 0.1f)
+			return;
+
+		bRippleOnly = true;
+	}
+
+	float size = RemapVal(speed, 0.35, 50, 8, 18);
+
+	float radius = extents[0] * extents[1];
+
+	Vector point;
+
+	data.m_vOrigin = centerPoint;
+	data.m_vNormal = normal;
+	VectorAngles(normal, data.m_vAngles);
+	data.m_flScale = size + random->vfunc1(0, 2);
+
+	if (radius > 500.0f)
+	{
+		int splashes = random->vfunc2(1, 4);
+
+		for (int i = 0; i < splashes; i++)
+		{
+			point = RandomVector(-4.0f, 4.0f);
+			point[2] = 0.0f;
+
+			point += corner[i];
+
+			data.m_vOrigin = point;
+			data.m_vNormal = normal;
+			VectorAngles(normal, data.m_vAngles);
+			data.m_flScale = size + random->vfunc1(-3, 1);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151ae0 size=0x6b
 #include "matrix3x4_t.h"
 #include <math.h>
