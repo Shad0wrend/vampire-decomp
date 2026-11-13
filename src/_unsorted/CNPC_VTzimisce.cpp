@@ -1009,6 +1009,29 @@ int CNPC_VTzimisce::sub_103bde40(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bdef0 size=0x50
+#include "CNPC_VTzimisce.h"
+void CNPC_VTzimisce::vfunc432(int a)
+{
+	int kind;
+	void *pObj = sub_103c0160(&kind);
+	if (pObj) {
+		switch (kind) {
+		case 0:
+			goto other;
+		case 1:
+			sub_103c0860(pObj);
+			break;
+		default:
+		other:
+			sub_103c05e0((int)pObj);
+			break;
+		}
+	}
+	sub_1028fcc0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bdf60 size=0x1
 #include "CNPC_VTzimisce.h"
 void CNPC_VTzimisce::vfunc434()
