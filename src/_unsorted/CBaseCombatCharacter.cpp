@@ -1796,6 +1796,127 @@ void CBaseCombatCharacter::vfunc403()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032c0e0 size=0x3a8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+#include "CTakeDamageInfo.h"
+#include "CAI_BaseNPC.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "ehandle.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include "globalvars.h"
+
+#define PS(n) virtual void p##n();
+#define PS10(a) PS(a##0) PS(a##1) PS(a##2) PS(a##3) PS(a##4) PS(a##5) PS(a##6) PS(a##7) PS(a##8) PS(a##9)
+struct CSlotsA
+{
+	PS10(0) PS10(1) PS10(2) PS10(3) PS10(4) PS10(5)
+	PS(60) PS(61) PS(62) PS(63) PS(64) PS(65)
+	virtual void s66();
+	PS(67) PS(68) PS(69)
+	PS10(7) PS10(8) PS10(9) PS10(10) PS10(11) PS10(12)
+	PS(130) PS(131) PS(132) PS(133) PS(134) PS(135) PS(136)
+	virtual CBaseEntity *s137();
+	PS(138) PS(139)
+	PS10(14) PS10(15) PS10(16) PS10(17) PS10(18) PS10(19) PS10(20) PS10(21) PS10(22) PS10(23)
+	PS(240) PS(241) PS(242)
+	virtual void s243(int a);
+	virtual int s244(int a);
+};
+struct CNpcView { char pad[0x1a94]; EHANDLE m_h1a94; };
+struct CCorpseView { char pad[0xa8]; void *m_pA8; char pad2[0x17c - 0xac]; float m_flNextThink17c; };
+void sub_101cd940(CBaseEntity *p);
+void sub_101c0b10();
+void sub_102696f0();
+struct CVendorUnit { char sub_10207df0(CBaseEntity *p); };
+extern CVendorUnit g_1074f028;
+
+inline void EmitBurnSound(CBaseCombatCharacter *pThis)
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)pThis);
+	filter.MakeReliable();
+	int edict = (int)pThis->m_pEdict2e0;
+	enginesound->vfunc3(&filter, engine->vfunc35(edict), 0, "character/vampire burning death.wav", 1.0f, 0.8f, 1, 100, 0, 0, 1, 0);
+}
+
+// TARGET: CBaseCombatCharacter::vfunc301
+void CBaseCombatCharacter::vfunc301(const Vector *pForce, CTakeDamageInfo *pInfo)
+{
+	ScopeTrace trace("CBaseCombatCharacter::CreateCorpse", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	{
+		Vector vecHalf;
+		float flHalf = FastSqrt(pForce->x * pForce->x + pForce->y * pForce->y + pForce->z * pForce->z) * 0.5;
+		vecHalf.sub_1010e530(-flHalf, flHalf);
+	}
+	if (m_pNPC98) {
+		CNpcView *pNpc = (CNpcView *)m_pNPC98;
+		m_pNPC98->sub_10265a90(pNpc->m_h1a94.Get());
+	}
+	int bone;
+	if (pInfo->sub_101c2a30() > -1) {
+		int idx = pInfo->sub_101c2a30();
+		char *pStudio = (char *)sub_100952d0(-1);
+		char *pHdr = pStudio + *(int *)(pStudio + 0x104);
+		char *pHit;
+		if (!pHdr)
+			pHit = 0;
+		else
+			pHit = pHdr + *(int *)(pHdr + 8) + idx * 32;
+		bone = *(int *)pHit;
+	} else {
+		bone = sub_10092550((int)"Bip01 Spine2");
+	}
+	CBaseEntity *pCorpse;
+	if (m_pA8) {
+		pCorpse = (CBaseEntity *)sub_1032be80();
+		EHANDLE *ph = (EHANDLE *)((char *)this + 0xff8);
+		int n = 0x12;
+		do {
+			sub_101cd940(ph->Get());
+			ph++;
+		} while (--n);
+	} else if (!sub_1033c900(0x80000)) {
+		sub_10090180((int)pForce, bone, 0);
+		pCorpse = ((CSlotsA *)this)->s137();
+	} else {
+		pCorpse = (CBaseEntity *)sub_1032be80();
+		((CSlotsA *)this)->s66();
+		sub_100ac4e0((int)sub_101c0b10, 0, 0);
+		((CCorpseView *)this)->m_flNextThink17c = gpGlobals->curtime + 0.5f;
+	}
+	if (pCorpse) {
+		CCorpseView *pView = (CCorpseView *)pCorpse;
+		if (g_1074f028.sub_10207df0(this)) {
+			if (!pView->m_pA8) {
+				((CSlotsA *)pCorpse)->s243(((CSlotsA *)this)->s244(1));
+				pCorpse->sub_100ac4e0((int)sub_101c0b10, 0, 0);
+				pView->m_flNextThink17c = gpGlobals->curtime + 10.0f;
+				EmitBurnSound(this);
+			}
+		} else if (!pView->m_pA8) {
+			pCorpse->sub_100ac4e0((int)sub_102696f0, 0, 0);
+			pView->m_flNextThink17c = gpGlobals->curtime + 10.0f;
+		}
+		sub_101cd940((CBaseEntity *)m_hAnimFollowModel.Get());
+		*(unsigned int *)&m_hAnimFollowModel = 0xffffffff;
+		sub_1009d1e0();
+		pCorpse->sub_1009d1e0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032c580 size=0xd4
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
