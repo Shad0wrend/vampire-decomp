@@ -34690,6 +34690,63 @@ void CBaseAnimating::sub_1008e770(Vector *pos, Quaternion *q, int iSequence, int
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008eb70 size=0x172
+#include "CBaseAnimating.h"
+#include "StudioHdr.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+void sub_100c13a0(StudioHdr *pHdr, int a, int b, int sequence, int c, int d, int e, int f, int count, int base);
+
+struct SlerpMap
+{
+	int m_base;
+	int m_n5c8;
+	int m_n5cc;
+	int m_count;
+	int m_n5d4;
+};
+
+struct SlerpView
+{
+	char m_pad0000[0x5c4];
+	SlerpMap m_maps[2];
+};
+
+static inline int GetNumSeq(StudioHdr *hdr)
+{
+	if (hdr->m_nIncludeModels != 0)
+		return hdr->IncludeModel(hdr->m_nIncludeModels - 1)->m_nBase + hdr->IncludeModel(hdr->m_nIncludeModels - 1)->m_nCount;
+	return hdr->m_nLocalSeq;
+}
+
+// TARGET: CBaseAnimating::sub_1008eb70
+void CBaseAnimating::sub_1008eb70(int a, int b, int sequence, int c, int d, int e, int f)
+{
+	ScopeTrace trace("CBaseAnimating::SlerpBones", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	if (sequence < 0)
+		return;
+	StudioHdr *hdr = (StudioHdr *)sub_100952d0(-1);
+	int count = hdr ? GetNumSeq(hdr) : 0;
+	if (sequence < count) {
+		sub_100c13a0(hdr, a, b, sequence, c, d, e, f, 0, 0);
+		return;
+	}
+	for (int i = 0; i < 2; i++) {
+		StudioHdr *h = (StudioHdr *)sub_100952d0(i);
+		if (!h)
+			continue;
+		sequence -= count;
+		count = GetNumSeq(h);
+		if (sequence < count) {
+			SlerpView *v = (SlerpView *)this;
+			sub_100c13a0(h, a, b, sequence, c, d, e, f, v->m_maps[i].m_count, v->m_maps[i].m_base);
+			return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008ed50 size=0x117
 #include "CBaseAnimating.h"
 #include "StudioHdr.h"

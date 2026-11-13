@@ -5523,6 +5523,7 @@
 0x10008355 func   ?sub_10207e60@CUnknown10206c70@@QAEXPAVCBaseCombatCharacter@@@Z CUnknown10206c70::sub_10207e60
 0x1000835a func   ?sub_102daef0@CUnknown102daef0@@QAEPAXXZ CUnknown102daef0::sub_102daef0
 0x1000835f func   ?sub_101dc5a0@CUnknown101dc5a0@@QAE_NPAUCUnknown101dc5a0Keys@@@Z CUnknown101dc5a0::sub_101dc5a0
+0x10008364 func   ?sub_1008eb70@CBaseAnimating@@QAEXHHHHHHH@Z CBaseAnimating::sub_1008eb70
 0x10008369 func   ?sub_100d8490@@YAXXZ sub_100d8490
 0x1000836e func   ?sub_1013ca80@@YAMABVVector@@00PAM@Z sub_1013ca80
 0x10008373 func   ?vfunc363@CNPCMaker_Zombie@@UAE_NH@Z CNPCMaker_Zombie::vfunc363
