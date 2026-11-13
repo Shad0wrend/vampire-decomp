@@ -2772,6 +2772,7 @@
 0x100049f8 func   ?sub_102f48b0@NodeGraph@@QAE_NHH@Z NodeGraph::sub_102f48b0
 0x100049fd func   ?sub_102030a0@CTableList@@QAEPBDHH@Z CTableList::sub_102030a0
 0x10004a02 func   ?sub_10185620@CUtlVector576@@QAEXH@Z CUtlVector576::sub_10185620
+0x10004a07 func   ?sub_102fe9f0@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@HHDH@Z CAI_Pathfinder::sub_102fe9f0
 0x10004a0c func   ?sub_103830e0@CUnknown103830e0@@QAEXXZ CUnknown103830e0::sub_103830e0
 0x10004a11 func   ?sub_10046a90@SPhysRecordX@@QAEPAU1@PBU1@@Z SPhysRecordX::sub_10046a90
 0x10004a16 func   ?sub_101082a0@@YAHXZ sub_101082a0
