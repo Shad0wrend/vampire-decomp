@@ -1590,6 +1590,7 @@
 0x10003125 func   ?vfunc451@CNPC_VAsianVampire@@QAEHXZ CNPC_VAsianVampire::vfunc451
 0x1000312a func   ?sub_100ccf90@CEventAction@@QAEPAV1@PBD@Z CEventAction::sub_100ccf90
 0x1000312f func   ?sub_103c6eb0@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::sub_103c6eb0
+0x10003134 func   ?sub_102817c0@CMaintainScheduleView@@QAEXD@Z CMaintainScheduleView::sub_102817c0
 0x10003139 func   ?vfunc363@CWeaponMelee_WerewolfAttacks@@QAEHXZ CWeaponMelee_WerewolfAttacks::vfunc363
 0x1000313e func   ?sub_10075230@CUnknown10075aa0@@QAEPAV1@HHHH@Z CUnknown10075aa0::sub_10075230
 0x10003143 func   ?sub_101dc8a0@CUnknown101e0f00SrcA@@QAEXXZ CUnknown101e0f00SrcA::sub_101dc8a0
