@@ -132012,6 +132012,47 @@ char *sub_101cf720(const char *format, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cf7c0 size=0x114
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+extern "C" unsigned int strlen(const char *);
+extern void (*g_109f3890)(char *, const char *, int);
+
+void sub_101cf7c0(const char *in, char *out, int maxlen)
+{
+    ScopeTrace scope("UTIL_Extract_FileBase", g_106b8540);
+    if (out && maxlen > 0) {
+        if (!in || !in[0]) {
+            *out = 0;
+        } else {
+            int len = strlen(in);
+            int end = len - 1;
+            while (end && in[end] != '.' && in[end] != '/' && in[end] != '\\')
+                end--;
+            if (in[end] != '.')
+                end = len - 1;
+            else
+                end--;
+            int start = len - 1;
+            while (start >= 0 && in[start] != '/' && in[start] != '\\')
+                start--;
+            if (start >= 0 && (in[start] == '/' || in[start] == '\\'))
+                start++;
+            else
+                start = 0;
+            g_109f3890(out, &in[start], (end - start + 2 < maxlen) ? end - start + 2 : maxlen);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cf930 size=0x53
 #include "CGlobalEntityList.h"
 #include "CBaseEntity.h"
