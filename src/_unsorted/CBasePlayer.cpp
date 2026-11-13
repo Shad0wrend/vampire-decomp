@@ -2234,6 +2234,57 @@ char CBasePlayer::vfunc418(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101655b0 size=0x171
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+
+#define F14a8 (*(char *)((char *)this + 0x14a8))
+#define S426 (((CEntityVSlots *)this)->slot426())
+char CBasePlayer::vfunc419(int unused)
+{
+	sub_101644f0(-1, 0, 0);
+	CGlobalEntityList_Ent *pTarget = (m_n153C != -1) ? EHandle_Get(m_h1538) : 0;
+	int nActivity = *(int *)((char *)this + 0xff0);
+	if (!pTarget || !((CEntityVSlots *)pTarget)->slot158()) {
+		*(char *)((char *)this + 0x14a8) = 0;
+		*(char *)((char *)this + 0x1475) = 0;
+		*(int *)((char *)this + 0x1478) = 0;
+	}
+	if (*(char *)((char *)this + 0x65c)) {
+		int nNew;
+		*(char *)((char *)this + 0x1b6c) = 0;
+		switch (nActivity) {
+		case 0xf5b:
+			if (F14a8) goto run;
+			nNew = S426 ? 0xf9a : 0xf91;
+			break;
+		case 0xf64:
+			if (F14a8) goto run;
+			nNew = S426 ? 0xf9a : 0xf91;
+			break;
+		case 0xf76:
+		case 0xf7f:
+			if (F14a8 && sub_103395f0()) {
+				nNew = 0xf7f;
+				*(char *)((char *)this + 0x1b6c) = 1;
+			} else {
+				nNew = S426 ? 0xf9a : 0xf88;
+			}
+			break;
+		default:
+			if (1) return 1;
+run:
+			nNew = 0xf76;
+			break;
+		}
+		if (nNew != nActivity)
+			sub_1032a100(nNew);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10165a00 size=0x47
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
