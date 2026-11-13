@@ -2377,6 +2377,77 @@ char CBasePlayer::vfunc421(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10165f20 size=0x190
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+
+struct SPlayerStepView423
+{
+	char pad0[0x65c];
+	bool b65c;
+	char pad1[0xff0 - 0x65d];
+	int nActivity;
+	char pad2[0x1475 - 0xff4];
+	bool b1475;
+	char pad3[2];
+	int n1478;
+	char pad5[0x14a8 - 0x147c];
+	bool b14a8;
+	char pad6[0x1b6c - 0x14a9];
+	bool b1b6c;
+};
+
+#define F14a8 (*(char *)((char *)this + 0x14a8))
+#define S427 (((CEntityVSlots *)this)->slot427())
+char CBasePlayer::vfunc423(int unused)
+{
+	sub_101644f0(-1, 0, 0);
+	CGlobalEntityList_Ent *pTarget = (m_n153C != -1) ? EHandle_Get(m_h1538) : 0;
+	int nActivity = *(int *)((char *)this + 0xff0);
+	if (!pTarget || !((CEntityVSlots *)pTarget)->slot158()) {
+		*(char *)((char *)this + 0x14a8) = 0;
+		*(char *)((char *)this + 0x1475) = 0;
+		*(int *)((char *)this + 0x1478) = 0;
+	}
+	if (*(char *)((char *)this + 0x65c)) {
+		int nNew;
+		*(char *)((char *)this + 0x1b6c) = 0;
+		switch (nActivity) {
+		case 0xfca:
+			if (F14a8) goto run;
+			nNew = S427 ? 0x1009 : 0x1000;
+			break;
+		case 0xfd3:
+			if (F14a8) goto run;
+			nNew = S427 ? 0x1009 : 0x1000;
+			break;
+		case 0xfdc:
+		case 0xfe5:
+			if (F14a8 && sub_103395f0()) {
+				nNew = 0xfe5;
+				*(char *)((char *)this + 0x1b6c) = 1;
+			} else {
+				nNew = S427 ? 0x1009 : 0xff7;
+			}
+			break;
+		case 0xff7:
+		case 0x1000:
+		case 0x1009:
+			return 1;
+		default:
+			if (1) return 1;
+run:
+			nNew = 0xfdc;
+			break;
+		}
+		if (nNew != nActivity)
+			sub_1032a100(nNew);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10168320 size=0x30d
 #include "CNPC_VTzimisce.h"
 #include "CBasePlayer.h"
