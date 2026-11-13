@@ -192156,6 +192156,79 @@ CBaseEntity *CAI_BaseNPC::sub_1026a930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026ab50 size=0x281
+#include <math.h>
+#include "UTIL_Trace.h"
+#include "CAI_BaseNPC.h"
+
+const Vector &sub_102d6120(int hull);	// NAI_Hull::Maxs
+const Vector &sub_102d6100(int hull);	// NAI_Hull::Mins
+
+inline float HullSqrt(float f)
+{
+	return (float)sqrt(f);
+}
+
+struct CHullRay
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_f34;
+
+	__forceinline void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, bool a = true, char b = 0)
+	{
+		VectorSubtract(end, start, m_Delta);
+		m_IsSwept = (m_Delta.LengthSqr() != 0.0f);
+		VectorSubtract(maxs, mins, m_Extents);
+		m_Extents *= 0.5f;
+		m_IsRay = ((m_Extents.x * m_Extents.x + (m_Extents.y * m_Extents.y + m_Extents.z * m_Extents.z)) < 1e-6);
+		VectorAdd(mins, maxs, m_StartOffset);
+		m_StartOffset *= 0.5f;
+		VectorAdd(start, m_StartOffset, m_Start);
+		m_StartOffset *= -1.0f;
+		m_b32 = b;
+		m_b33 = 0;
+		m_f34 = 0.0f;
+		if (a && !m_IsRay) {
+			float fl = HullSqrt(m_Extents.x * m_Extents.x + m_Extents.y * m_Extents.y);
+			m_f34 = fl;
+			if (m_f34 > 1e-6)
+				m_b33 = 1;
+		}
+	}
+};
+
+inline void UTIL_TraceHullR(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr)
+{
+	CHullRay ray;
+	ray.Init(vecAbsStart, vecAbsEnd, hullMin, hullMax);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4((Ray_t *)&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+void CAI_BaseNPC::sub_1026ab50()
+{
+	if (*((char *)this + 0x5f2d) && *((char *)this + 0x5f2c))
+	{
+		Vector vecEnd = *(Vector *)vfunc217();
+		vecEnd.z += 1.0f;
+		CGameTrace tr;
+		UTIL_TraceHullR(*(Vector *)vfunc217(), vecEnd, sub_102d6100(*(int *)((char *)this + 0x1568)), sub_102d6120(*(int *)((char *)this + 0x1568)), 0x200400b, this, 0, &tr);
+		if (!tr.m_startsolid && tr.m_fraction == 1.0)
+			sub_10273070(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026aeb0 size=0x21
 #include "CSound.h"
 #include "CAI_BaseNPC.h"
