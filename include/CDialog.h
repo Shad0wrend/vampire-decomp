@@ -36,6 +36,50 @@ struct CDialogVecs2
 	~CDialogVecs2() {}
 };
 
+// The memory of the dialog's int vectors: the game calls its constructor out of line (0x100eb0e0, (0, 0)).
+struct CDialogMem : CUtlMemory<int>
+{
+	CDialogMem(int nGrowSize, int nInitSize);	// 0x100eb0e0
+};
+
+// The memory of the history vector at +0x32f8 (bigger elements in the game): constructor 0x100eb150.
+struct CDialogMemBig : CUtlMemory<int>
+{
+	CDialogMemBig(int nGrowSize, int nInitSize);	// 0x100eb150
+};
+
+// The secure int at +0x32ec: vptr of MvsnSec::CSecureTypeBase<CPfnTraits3,int,...> (0x1045467c), the encoded value
+// (+4, set by CUnknown100eb030::sub_100eb030 from sub_100eb060(sub_100eb0a0(0))), and +8 cleared first.
+extern void *vt_1045467c[];
+unsigned int sub_100eb0a0(unsigned int x);
+struct CDialogSecureTemp
+{
+	char m_b0;
+	char m_b1;
+	int m_Value;
+	unsigned int sub_100eb060(unsigned int x);
+};
+struct CDialogSecureValue
+{
+	char m_b0;
+	char m_b1;
+	int m_Value;
+	CDialogSecureValue() : m_Value(0) {}
+	void sub_100eb030(const CDialogSecureValue *p);
+};
+struct CDialogSecureInt
+{
+	void *m_pVtbl;	// 0x00
+	CDialogSecureValue m_v;	// 0x04: m_v.m_Value (+8) is the plain value the dialog compares with
+	CDialogSecureInt()
+	{
+		m_pVtbl = vt_1045467c;
+		CDialogSecureTemp tmp;
+		tmp.m_Value = tmp.sub_100eb060(sub_100eb0a0(0));
+		m_v.sub_100eb030((const CDialogSecureValue *)&tmp);
+	}
+};
+
 struct CDialogEntry_t
 {
 	int m_data[13];	// 0x34 bytes; the first dword is the sort key
@@ -66,17 +110,15 @@ public:
 	char m_b30e8;	// 0x30e8: cleared by the constructor
 	char m_bNoReply;	// 0x30e9: set when a response could not be built
 	char m_pad30ea[0x32ec - 0x30ea];
-	void *m_pSecure32ec;	// 0x32ec: vptr of MvsnSec::CSecureTypeBase<CPfnTraits3,int,...> (0x1045467c), an embedded secure int (+0x32ec .. +0x32f7)
-	int m_nSecure32f0;	// 0x32f0: its encoded value (set by CUnknown100eb030::sub_100eb030 from sub_100eb060(~0 via 0x100eb0a0))
-	int m_n32f4;	// 0x32f4: cleared before the secure value is set
-	CUtlVector<int> m_vec32f8;	// 0x32f8 (the game's type differs: own RemoveAll 0x100eb130 / Purge 0x100eb1a0)
-	CUtlVector<int> m_vec330c;	// 0x330c
-	CUtlVector<int> m_vec3320;	// 0x3320
-	CUtlVector<int> m_vec3334;	// 0x3334
-	CUtlVector<int> m_vec3348;	// 0x3348
-	CUtlVector<int> m_vec335c;	// 0x335c
-	CUtlVector<int> m_vec3370;	// 0x3370
-	CUtlVector<int> m_vec3384;	// 0x3384
+	CDialogSecureInt m_Secure32ec;	// 0x32ec: an embedded secure int (+0x32ec .. +0x32f7)
+	CUtlVector<int, CDialogMemBig> m_vec32f8;	// 0x32f8 (the game's element type is bigger: own ctor 0x100eb150, RemoveAll 0x100eb130 / Purge 0x100eb1a0)
+	CUtlVector<int, CDialogMem> m_vec330c;	// 0x330c
+	CUtlVector<int, CDialogMem> m_vec3320;	// 0x3320
+	CUtlVector<int, CDialogMem> m_vec3334;	// 0x3334
+	CUtlVector<int> m_vec3348;	// 0x3348: no ctor call (five dwords zeroed inline)
+	CUtlVector<int, CDialogMem> m_vec335c;	// 0x335c
+	CUtlVector<int, CDialogMem> m_vec3370;	// 0x3370
+	CUtlVector<int, CDialogMem> m_vec3384;	// 0x3384
 	int m_nLines3398;	// 0x3398: cleared and then filled by sub_100e2ad0 in dump_script_stats (printed in the \"%d total nodes, with %d NPC lines, and %d ...\" line)
 	int m_n339c;	// 0x339c: same line
 	int m_n33a0;	// 0x33a0: \"There are %d python depedencies, and %d event scripts\" (first value)

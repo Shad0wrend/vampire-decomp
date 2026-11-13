@@ -62995,14 +62995,14 @@ int CDialog::sub_100e65d0()
 		MK(a5, "Player_Ventrue")
 		MK(a6, "Player_Malkavian")
 		SecStatic t1(((CBaseCombatCharacter *)((CUnknown100290c0 *)g_10566458)->sub_100290c0(&m_hNPC))->sub_10337860());
-		((SecVal *)&m_nSecure32f0)->sub_100eb030((SecTmp *)&t1.s);
-		if (Eq(a0.s.v, m_n32f4)) return 0;
-		if (Eq(a1.s.v, m_n32f4)) return 1;
-		if (Eq(a2.s.v, m_n32f4)) return 2;
-		if (Eq(a3.s.v, m_n32f4)) return 3;
-		if (Eq(a4.s.v, m_n32f4)) return 4;
-		if (Eq(a5.s.v, m_n32f4)) return 5;
-		unsigned int b = m_n32f4;
+		((SecVal *)&m_Secure32ec.m_v)->sub_100eb030((SecTmp *)&t1.s);
+		if (Eq(a0.s.v, m_Secure32ec.m_v.m_Value)) return 0;
+		if (Eq(a1.s.v, m_Secure32ec.m_v.m_Value)) return 1;
+		if (Eq(a2.s.v, m_Secure32ec.m_v.m_Value)) return 2;
+		if (Eq(a3.s.v, m_Secure32ec.m_v.m_Value)) return 3;
+		if (Eq(a4.s.v, m_Secure32ec.m_v.m_Value)) return 4;
+		if (Eq(a5.s.v, m_Secure32ec.m_v.m_Value)) return 5;
+		unsigned int b = m_Secure32ec.m_v.m_Value;
 		if (sub_100eb0c0(Scr(b)) == a6.Get3()) return 6;
 	}
 	return -1;
