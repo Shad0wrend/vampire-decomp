@@ -135,6 +135,83 @@ char CAI_BaseHumanoid::vfunc588(const Vector &vecPos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025eaf0 size=0x3cc
+#define inline __forceinline
+#include "Vector.h"
+#undef inline
+#include "CAI_BaseHumanoid.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "VectorHelpers.h"
+#include <math.h>
+
+struct CHumanoidPoseView
+{
+	EVS10(a) EVS10(b) EVS10(c) EVS10(d) EVS10(e) EVS10(f) EVS10(g) EVS10(h) EVS10(i) EVS10(j)
+	EVS10(k) EVS10(l) EVS10(m) EVS10(n) EVS10(o) EVS10(p) EVS10(q) EVS10(r) EVS10(s) EVS10(t)
+	EVS10(u) EVS10(v) EVS10(w) EVS10(x) EVS10(y) EVS10(z) EVS10(aa) EVS10(ab)
+	EVS(ac0)
+	virtual float GetFlexWeight(int index);
+	EVS10(ba) EVS10(bb) EVS10(bc) EVS10(bd) EVS10(be) EVS10(bf)
+	EVS(bg0) EVS(bg1) EVS(bg2) EVS(bg3)
+	virtual float SetPoseParameter(int index, float value, int a = 0);
+};
+
+struct CAI_BaseActorV : CAI_BaseHumanoid
+{
+	void SetP(int index, float flValue) { ((CHumanoidPoseView *)this)->SetPoseParameter(index, flValue); }
+	float GetP(int index) { return ((CBaseAnimating *)this)->sub_10092190(index); }
+	float GetF(int index) { return ((CHumanoidPoseView *)this)->GetFlexWeight(index); }
+	float VecToYaw(const Vector &v) { return ((CAI_BaseNPC *)this)->sub_1027db80(&v); }
+};
+
+// TARGET: CAI_BaseHumanoid::vfunc537
+void CAI_BaseHumanoid::vfunc537(const Vector *pPos, float flInterval)
+{
+	CAI_BaseActorV *a = (CAI_BaseActorV *)this;
+	const Vector &vTargetPos = *pPos;
+	float flDiff;
+
+	if (!(((CAI_BaseNPC *)this)->vfunc513() & 0x1000))
+	{
+		return;
+	}
+
+	Vector vEyePosition;
+	Vector vEyeAngles;
+	sub_10092e20("eyes", &vEyePosition, &vEyeAngles);
+
+	float flDesiredYaw = a->VecToYaw(vTargetPos - vEyePosition) + a->GetF(m_nPose5fec[10]);
+	flDiff = sub_1013d580(flDesiredYaw, vEyeAngles.y);
+	a->SetP(m_nPose5fe0[0], a->GetP(m_nPose5fe0[0]) + flDiff);
+
+	float flDesiredPitch = sub_101d2ce0(&(vTargetPos - vEyePosition)) + a->GetF(m_nPose5fec[11]);
+	flDiff = sub_1013d580(flDesiredPitch, vEyeAngles.x);
+	a->SetP(m_nPose5fe0[1], a->GetP(m_nPose5fe0[1]) + flDiff);
+
+	float flDesiredRoll = a->GetF(m_nPose5fec[12]);
+	flDiff = sub_1013d580(flDesiredRoll, vEyeAngles.z);
+	if (fabs(flDiff) > 10.0)
+		flDiff = flDiff;
+	a->SetP(m_nPose5fe0[2], a->GetP(m_nPose5fe0[2]) + flDiff);
+
+	a->SetP(m_nPose5fb8[0], a->GetF(m_nPose5fec[0]));
+	a->SetP(m_nPose5fb8[1], a->GetF(m_nPose5fec[1]));
+	a->SetP(m_nPose5fb8[2], a->GetF(m_nPose5fec[2]));
+	a->SetP(m_nPose5fb8[3], a->GetF(m_nPose5fec[3]));
+	a->SetP(m_nPose5fb8[4], a->GetF(m_nPose5fec[4]));
+	a->SetP(m_nPose5fb8[5], a->GetF(m_nPose5fec[5]));
+	a->SetP(m_nPose5fb8[6], a->GetF(m_nPose5fec[6]));
+	a->SetP(m_nPose5fb8[7], a->GetF(m_nPose5fec[7]));
+	a->SetP(m_nPose5fb8[8], a->GetF(m_nPose5fec[8]));
+	a->SetP(m_nPose5fb8[9], a->GetF(m_nPose5fec[9]));
+
+	((CBaseAnimating *)this)->sub_100955c0();
+	m_flags5f4c &= ~3;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1025f040 size=0x44
 #include "CAI_BaseHumanoid.h"
 #define HV1(p) virtual void p();
