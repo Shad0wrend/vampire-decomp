@@ -255794,6 +255794,60 @@ float CNPC_VChangBros::sub_1036dc60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1036dd20 size=0x1bf
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VChangBros.h"
+#include "ScopeTrace.h"
+#include "QAngle.h"
+
+#define SV1(p) virtual void p();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct SChangBrosPosView
+{
+	SV100(sa) SV100(sb) SV10(sc0) SV1(sc10) SV1(sc11) SV1(sc12) SV1(sc13) SV1(sc14) SV1(sc15) SV1(sc16)
+	virtual const Vector &vfunc217();
+	SV1(sd0)
+	virtual const QAngle &vfunc219();
+};
+
+struct SEnergyBallView
+{
+	SV100(sa) SV100(sb) SV100(sc) SV10(sd0) SV10(sd1) SV10(sd2) SV10(sd3) SV10(sd4) SV10(sd5) SV10(sd6) SV1(se0) SV1(se1)
+	virtual void vfunc372(CBaseEntity *pThrower, float flSpeed, EHANDLE hTarget);
+};
+
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+CBaseEntity *sub_100a99d0(const char *pszClassname, const float *pOrigin, const float *pAngles, CBaseEntity *pOwner);
+extern float g_1070d9d0[3];
+extern float g_104ada30;
+static const float g_104ada28 = 40.0f;
+
+CBaseEntity *CNPC_VChangBros::sub_1036dd20()
+{
+	ScopeTrace trace("CNPC_VChangBros::SpawnEnergyBall", g_106b8540);
+	Vector vecForward, vecRight, vecUp;
+	SChangBrosPosView *pThis = (SChangBrosPosView *)this;
+	sub_10139610(pThis->vfunc219(), &vecForward, &vecRight, &vecUp);
+	Vector vecOrigin = pThis->vfunc217();
+	vecOrigin += vecForward * g_104ada28;
+	vecOrigin += vecRight * -10.0f;
+	vecOrigin += vecUp * 50.0f;
+	CBaseEntity *pBall = sub_100a99d0("item_w_chang_energy_ball", &vecOrigin.x, g_1070d9d0, 0);
+	if (pBall && m_h628c.Get())
+		((SEnergyBallView *)pBall)->vfunc372((CBaseEntity *)this, g_104ada30, m_h628c);
+	return pBall;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1036df50 size=0x195
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

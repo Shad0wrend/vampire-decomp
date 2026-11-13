@@ -2923,6 +2923,7 @@
 0x10004cd2 func   ?sub_103bcc00@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bcc00
 0x10004cd7 func   ?vfunc530@CAI_BaseNPC@@UAE_NPAVCBaseEntity@@@Z CAI_BaseNPC::vfunc530
 0x10004cdc func   ?vfunc326@CWeaponIGeneric@@QAEXXZ CWeaponIGeneric::vfunc326
+0x10004ce1 func   ?sub_1036dd20@CNPC_VChangBros@@QAEPAVCBaseEntity@@XZ CNPC_VChangBros::sub_1036dd20
 0x10004ce6 func   ?vfunc91@CVampireProjectile_MingXiaoSpit@@UAEDPAXH@Z CVampireProjectile_MingXiaoSpit::vfunc91
 0x10004ceb func   ?vfunc5@CItemGDrugsMorphineBottle@@QAEPAV1@I@Z CItemGDrugsMorphineBottle::vfunc5
 0x10004cf0 func   ?vfunc603@CNPC_VMingXiao@@QAEMPAM0@Z CNPC_VMingXiao::vfunc603
