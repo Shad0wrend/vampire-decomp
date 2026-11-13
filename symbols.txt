@@ -15846,6 +15846,7 @@
 0x10015997 func   ?vfunc8@CSoundSchemeManager@@UAEPAV1@I@Z CSoundSchemeManager::vfunc8
 0x1001599c func   ?vfunc104@CGibShooter@@QAEXXZ CGibShooter::vfunc104
 0x100159a1 func   ?vfunc362@CWeaponMelee_AVampBlade@@QAEHXZ CWeaponMelee_AVampBlade::vfunc362
+0x100159a6 func   ?sub_102d1760@@YAPAVCAI_Hint@@PAVCEntityVSlots@@HIMPBVVector@@@Z sub_102d1760
 0x100159ab func   ?sub_10295a80@@YIXPAHHHPAIHH@Z sub_10295a80
 0x100159b0 func   ?sub_10188280@CUnknown10188280@@QAEPAXXZ CUnknown10188280::sub_10188280
 0x100159ba func   ?vfunc44@CGameSign@@UAE_NH@Z CGameSign::vfunc44

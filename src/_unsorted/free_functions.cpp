@@ -207010,6 +207010,92 @@ bool CAI_BaseNPCTroika::sub_102d1540(void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d1760 size=0x2c1
+#include "utlrbtree.h"
+#include "CAIHintSlots.h"
+#include "CAI_Hint.h"
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+#include "UTIL_Trace.h"
+#include "utlvector.h"
+#include "engineiface.h"
+
+#include "globalvars.h"
+struct CNpcView14c0 {
+	char m_pad0000[0x5e0];
+	EHANDLE m_h5e0;
+	char m_pad5e4[4];
+	int m_n5e8;
+	float m_f5ec;
+};
+#pragma auto_inline(off)
+namespace block_102d1760 {
+struct CAI_HintU : CAI_Hint { bool sub_102d14c0(); };
+bool CAI_HintU::sub_102d14c0()
+{
+	CNpcView14c0 *p = (CNpcView14c0 *)this;
+	if (p->m_n5e8)
+		return true;
+	if (gpGlobals->curtime < p->m_f5ec)
+		return true;
+	if (p->m_h5e0.Get())
+		return true;
+	return false;
+}
+}
+#pragma auto_inline(on)
+using namespace block_102d1760;
+// TARGET: sub_102d1760
+CAI_Hint *sub_102d1760(CEntityVSlots *pNPC, int hintType, unsigned flags, float radius, const Vector *pCenter)
+{
+	if (!g_10925450)
+		return 0;
+
+	float flRadiusSqr = radius * radius;
+	CUtlVector<CAI_Hint *> hintList;
+
+	if (!pCenter)
+		pCenter = pNPC->slot217();
+
+	for (CAI_Hint *pHint = g_10925450; pHint; pHint = pHint->m_pNext)
+	{
+		CAI_Hint *pTest = pHint;
+		if (((CAI_HintU *)pTest)->sub_102d14c0())
+			continue;
+		if (hintType && pTest->m_n5dc != hintType)
+			continue;
+		Vector d;
+		VectorSubtract(*((CEntityVSlots *)pTest)->slot217(), *pCenter, d);
+		if (d.LengthSqr() < flRadiusSqr && pNPC->slot566(pHint))
+		{
+			if (flags & 1)
+			{
+				Vector vecTarget = *((CEntityVSlots *)pHint)->slot217() + ((CBaseEntity *)pNPC)->m_vecViewOffset;
+				Vector vecEye;
+				CGameTrace tr;
+				UTIL_TraceLine_Calls(*pNPC->slot193(&vecEye), vecTarget, 0x2400b, pNPC, 0, &tr);
+				if (tr.m_fraction == 1.0)
+					hintList.AddToTail(pHint);
+			}
+			else
+				hintList.AddToTail(pHint);
+		}
+	}
+
+	if (hintList.Count() <= 0)
+	{
+		g_10925454 = 0;
+		return 0;
+	}
+	else
+	{
+		int index = enginerandom->vfunc2(0, hintList.Count() - 1);
+		g_10925454 = hintList[index];
+		return g_10925454;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d1af0 size=0x3ea
 #include "CAI_Hint.h"
 #include "CAI_BaseNPCTroika.h"
