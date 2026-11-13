@@ -58820,6 +58820,62 @@ void sub_100db6c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100db7a0 size=0xc0
+#include "CBaseEntity.h"
+#include "engineserver.h"
+#include "ehandle.h"
+
+extern "C" int atoi(const char *);
+extern CBaseEntity *sub_101193b0();
+
+struct CmdTarget
+{
+	char m_pad0000[0x1040];
+	EHANDLE m_hEnt;
+	void sub_10167fd0();
+};
+
+struct CmdClient
+{
+	char m_pad0000[0xa8];
+	CmdTarget *m_pTarget;
+};
+
+inline CmdTarget *GetCmdTarget()
+{
+	CmdClient *pClient = (CmdClient *)sub_101193b0();
+	if (!pClient)
+		return 0;
+	return pClient->m_pTarget;
+}
+
+void sub_100db7a0()
+{
+	int nArgs = engine->vfunc85();
+	if (nArgs == 2)
+	{
+		int nUserId = atoi(engine->vfunc84(nArgs - 1));
+		CmdTarget *pTarget = GetCmdTarget();
+		if (pTarget)
+		{
+			CBaseEntity *pEnt = pTarget->m_hEnt.Get();
+			if (pEnt)
+			{
+				int edict = pEnt->m_pEdict2e0;
+				if (engine->vfunc35(edict) == nUserId)
+					pTarget->sub_10167fd0();
+			}
+		}
+	}
+	else if (engine->vfunc85() == 1)
+	{
+		CmdTarget *pTarget = GetCmdTarget();
+		if (pTarget)
+			pTarget->sub_10167fd0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db920 size=0xb2
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

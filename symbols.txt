@@ -437,6 +437,7 @@
 0x100018f2 func   ?sub_103d7210@CNPC_VWerewolf@@QAEMPAVCBaseEntity@@@Z CNPC_VWerewolf::sub_103d7210
 0x100018f7 func   ?sub_101b45b0@CUnknown101b45b0@@QAEPAV1@XZ CUnknown101b45b0::sub_101b45b0
 0x100018fc func   ?sub_102f2ea0@CAI_Navigator@@QAE_NXZ CAI_Navigator::sub_102f2ea0
+0x10001901 func   ?sub_100db7a0@@YAXXZ sub_100db7a0
 0x10001906 func   ?sub_100ddc40@CUnknown100dda50@@QAEXXZ CUnknown100dda50::sub_100ddc40
 0x1000190b func   ?vfunc124@CFuncRotating@@UAEHXZ CFuncRotating::vfunc124
 0x10001915 func   ?sub_100e8b90@CDialog@@QAEXPAVCDialogDependency@@@Z CDialog::sub_100e8b90
