@@ -11324,6 +11324,7 @@
 0x1000faab func   ?sub_103a6f70@TLeader@@QAEXHH@Z TLeader::sub_103a6f70
 0x1000fab0 func   ?sub_102be9f0@CTimerTriple@@QAE_NPAUCTimerArgs@@PAUCTimerOwner@@@Z CTimerTriple::sub_102be9f0
 0x1000fab5 func   ?vfunc1@CThinkContextsSaveDataOps@@UAEXPAX0@Z CThinkContextsSaveDataOps::vfunc1
+0x1000faba func   ?sub_101c7890@CChangeLevel@@QAEXPAVCBaseEntity@@@Z CChangeLevel::sub_101c7890
 0x1000fabf func   ?vfunc2@CSave@@UAEXPAXPBD@Z CSave::vfunc2
 0x1000fac4 func   ?vfunc82@CPhysicsPropContested@@UAEPAUdatamap_t@@XZ CPhysicsPropContested::vfunc82
 0x1000fac9 func   ??0CUnknown10076da0TimingTag@@QAE@ABU0@@Z CUnknown10076da0TimingTag::CUnknown10076da0TimingTag

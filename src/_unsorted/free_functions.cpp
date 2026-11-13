@@ -129468,6 +129468,127 @@ int __stdcall sub_101c7870(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7890 size=0x24a
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CChangeLevel.h"
+#include "CBaseEntity.h"
+#include "CGameRules.h"
+#include "COutputEvent.h"
+#include "ScopeTrace.h"
+#include "Tier1.h"
+#include "CBaseCombatCharacter.h"
+#include "CEntityVSlots.h"
+
+struct CServerUnknownView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual CBaseEntity *v4();
+};
+
+struct CEntityHelper
+{
+	void sub_10170090();
+};
+
+extern CGameRules *g_1070ba0c;
+extern char g_1072cf78[];
+extern char g_1072cf44[];
+__declspec(dllimport) void Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+__declspec(dllimport) char *Q_stristr(char *pStr, const char *pSearch);
+extern void (*g_109f3650)(int nLevel, const char *pMsg, ...);
+
+int __cdecl sub_101c7fa0(void *p, void *q);
+CBaseEntity *__cdecl sub_101c7690(const char *pLandmark, CChangeLevel *pLevel);
+long __cdecl sub_101d2850(const char *pExpr, int nMode);
+CBaseEntity *__cdecl sub_101cd9e0(int index);
+
+inline CBaseEntity *GetContainingEntityX(void *pEdict)
+{
+	if (pEdict && *(CServerUnknownView **)((char *)pEdict + 0x40))
+		return (*(CServerUnknownView **)((char *)pEdict + 0x40))->v4();
+	return 0;
+}
+
+inline CBaseEntity *InstanceX(void *pEdict)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+	if (!pEdict)
+		pEdict = engine->vfunc38(0);
+	return GetContainingEntityX(pEdict);
+}
+
+inline int InTransitionX(CBaseCombatCharacter *pCharacter, char *pszLandmark)
+{
+	return sub_101c7fa0(pCharacter, pszLandmark);
+}
+
+inline bool IsSpecial(char *p) { return Q_stristr(p, "sewer_map_landmark") != 0 || Q_stristr(p, "taxi_landmark") != 0; }
+inline bool HasLandmark(char *p, CChangeLevel *pl) { return sub_101c7690(p, pl) != 0 || Q_stristr(p, "sewer_map_landmark") != 0 || Q_stristr(p, "taxi_landmark") != 0; }
+inline void CopySpot(char *p) { Q_strncpy(g_1072cf44, p, 0x20); }
+void CChangeLevel::sub_101c7890(CBaseEntity *pPlayer)
+{
+	if (((CGameRules *)g_1070ba0c)->vfunc22())
+		return;
+
+	if (gpGlobals->curtime == *(float *)((char *)this + 0x5d8))
+		return;
+
+	*(float *)((char *)this + 0x5d8) = gpGlobals->curtime;
+
+	CBaseEntity *pEntity = InstanceX(engine->vfunc38(1));
+	CBaseCombatCharacter *pCharacter = pEntity ? (CBaseCombatCharacter *)pEntity->m_pA8 : 0;
+
+	int transitionState = sub_101c7fa0(pCharacter, m_szLandmarkName);
+	if (transitionState == 0)
+	{
+		g_109f3650(2, "Player isn't in the transition volume %s, aborting\n", m_szLandmarkName);
+		return;
+	}
+
+	char szCmd[0x40];
+	int nStoryState = sub_101d2850("__main__.G.Story_State", 0x102);
+	const char *pszBkg = *(const char * const *)&m_sTip_BkgImage;
+	g_109f388c(szCmd, 0x40, "vloadtips \"%s\" %d %d %d",
+		pszBkg ? pszBkg : g_106b8540, m_iTip_Size, nStoryState, pCharacter->sub_10337860());
+	engine->vfunc7(szCmd);
+
+	Q_strncpy(g_1072cf78, m_szMapName, 0x20);
+
+	if (pPlayer)
+		*(int *)((char *)this + 0x53c) = *((CEntityVSlots *)pPlayer)->slot1();
+	else
+		*(int *)((char *)this + 0x53c) = -1;
+
+	((COutputEvent *)((char *)this + 0x5e4))->sub_100cd660(pPlayer, this, 0.0f);
+
+	g_1072cf44[0] = 0;
+	if (sub_101c7690(m_szLandmarkName, this))
+		Q_strncpy(g_1072cf44, m_szLandmarkName, 0x20);
+	else if (Q_stristr(m_szLandmarkName, "sewer_map_landmark"))
+		Q_strncpy(g_1072cf44, m_szLandmarkName, 0x20);
+	else if (Q_stristr(m_szLandmarkName, "taxi_landmark"))
+		Q_strncpy(g_1072cf44, m_szLandmarkName, 0x20);
+
+	g_109f3650(3, "CHANGE LEVEL: %s %s\n", g_1072cf78, g_1072cf44);
+
+	CBaseEntity *pWho = sub_101cd9e0(1);
+	if (pWho)
+		((CEntityHelper *)pWho)->sub_10170090();
+
+	engine->vfunc9(g_1072cf78, g_1072cf44);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c7b80 size=0x195
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
