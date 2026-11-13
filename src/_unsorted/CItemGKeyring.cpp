@@ -32,6 +32,24 @@ int CItemGKeyring::vfunc81()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10407b30 size=0x32
+#include "CItemGKeyring.h"
+
+extern int vt_105139dc[];
+void __fastcall sub_103f42b0(void *);
+struct CKeyVecView { int a, b, c, size, elem; };
+
+// TARGET: CItemGKeyring::sub_10407b30
+CItemGKeyring *CItemGKeyring::sub_10407b30()
+{
+	sub_103f42b0(this);
+	CKeyVecView *v = (CKeyVecView *)((char *)this + 0x914);
+	v->a = 0; v->b = 0; v->c = 0; v->size = 0; v->elem = v->a;
+	*(int **)this = vt_105139dc;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10407b80 size=0x86
 #include "CBaseCombatWeapon.h"
 #include "CItemGKeyring.h"
