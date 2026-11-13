@@ -14284,6 +14284,7 @@
 0x1001397b func   ?vfunc79@CBaseEntity@@UAEHXZ CBaseEntity::vfunc79
 0x10013980 func   ?sub_101987b0@@YAPAUPyObject@@PAU1@0@Z sub_101987b0
 0x10013985 func   ?vfunc1@?$CEntityDataInstantiator@Utouchlink_t@@@@UAEHI@Z CEntityDataInstantiator<touchlink_t>::vfunc1
+0x1001398a func   ?sub_102e8b80@CUtlVector280@@QAEXPAVVector@@@Z CUtlVector280::sub_102e8b80
 0x1001398f func   ?sub_10050e70@CDisciplineParticle@@SAPAV1@PBDHHHHHHHHHHH@Z CDisciplineParticle::sub_10050e70
 0x10013994 func   ?vfunc104@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc104
 0x10013999 func   ?vfunc6@CSave@@UAEXXZ CSave::vfunc6

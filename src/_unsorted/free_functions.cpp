@@ -213057,6 +213057,115 @@ void __fastcall sub_102e8ac0(char *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e8b80 size=0x4e7
+#include "utlrbtree.h"
+#include "utlmemory.h"
+#include "utlvector.h"
+#include "CUtlVector280.h"
+#include "CBaseEntity.h"
+#include "ehandle.h"
+#include "Vector.h"
+
+struct E8b80
+{
+	int m_type;
+	float m_flScale;
+	float m_flYaw;
+	float m_flWidth;
+	EHANDLE m_hEnt;
+	int m_f;
+	char m_szName[0x100];
+};
+
+template <> inline CUtlMemory<E8b80>::CUtlMemory(int nGrowSize, int nInit)
+{
+	((CUtlVector280 *)this)->sub_102e9c00(nGrowSize, nInit);
+}
+
+template <> inline int CUtlVector<E8b80>::AddMultipleToTail(int num, const E8b80 *pToCopy)
+{
+	return ((CUtlVector280 *)this)->sub_102e9a90(num, pToCopy);
+}
+
+struct CView102e9910
+{
+	void sub_102e9910(E8b80 *pBegin, E8b80 *pEnd);
+};
+
+struct CFoo1005f190
+{
+	int sub_1005f190();
+};
+extern CFoo1005f190 g_10933fb8;
+
+extern float g_104454c4;
+extern double g_10499408;
+extern double g_1049d920;
+extern double g_1044fac0;
+
+Vector sub_101d2f40(float flYaw);
+const char *sub_101d3730(const char *fmt, ...);
+void sub_10143140(const Vector *pA, const Vector *pB, const Vector *pC,
+	int a4, int a5, int a6, int a7, unsigned char a8, float a9);
+void sub_10144db0(const Vector *pA, const Vector *pB, float f3, float f4, float f5,
+	int a6, int a7, int a8, int a9, float f10);
+void sub_10143710(const Vector &pPos, const char *pszText, int a3, float a4);
+
+void CUtlVector280::sub_102e8b80(Vector *pPos)
+{
+	CUtlVector<E8b80> &self = *(CUtlVector<E8b80> *)this;
+	if (self.Count() == 0)
+		return;
+	CUtlVector<E8b80> list;
+	list.AddMultipleToTail(self.Count());
+	for (int k = 0; k < self.Count(); k++)
+		list[k] = self[k];
+	((CView102e9910 *)this)->sub_102e9910(list.Base(), list.Base() + list.Count());
+	if (!g_10933fb8.sub_1005f190())
+	{
+		for (int i = list.Count() - 1; i >= 0; i--)
+		{
+			float flHalf = list[i].m_flWidth * 0.5f;
+			float flMin = list[i].m_flYaw - flHalf;
+			float flMax = flHalf + list[i].m_flYaw;
+			Vector vA, vB, vC;
+			vA = sub_101d2f40(flMin);
+			vB = sub_101d2f40(flMax);
+			vC = sub_101d2f40(list[i].m_flYaw);
+			if (list[i].m_flScale < g_104454c4)
+			{
+				float f = list[i].m_flScale * g_1049d920 * g_10499408 + g_1044fac0;
+				vA *= f;
+				vB *= f;
+				vC *= f;
+				vA += *pPos;
+				vB += *pPos;
+				vC += *pPos;
+				sub_10143140(pPos, &vC, &vA, 0xff, 0, 0, 0x30, 1, 0.1f);
+				sub_10143140(pPos, &vB, &vC, 0xff, 0, 0, 0x30, 1, 0.1f);
+				sub_10143710(vC, sub_101d3730("%s:%s", !list[i].m_hEnt ? "**UNKNOWN**" : list[i].m_hEnt->sub_1000b5cd(), list[i].m_szName), 0, 0.1f);
+			}
+		}
+	}
+	else
+	{
+		for (int i = list.Count() - 1; i >= 0; i--)
+		{
+			Vector v;
+			v = sub_101d2f40(list[i].m_flYaw);
+			if (list[i].m_flScale < g_104454c4)
+			{
+				float f = list[i].m_flScale * g_1049d920 * g_10499408 + g_1044fac0;
+				sub_10144db0(pPos, &v, f, 1.0f, list[i].m_flWidth, 0xff, 0, 0, 0x30, 0.1f);
+				Vector vv;
+				vv = v * f + *pPos;
+				sub_10143710(vv, sub_101d3730("%s:%s", !list[i].m_hEnt ? "**UNKNOWN**" : list[i].m_hEnt->sub_1000b5cd(), list[i].m_szName), 0, 0.1f);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e91b0 size=0x3ad
 template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "Vector.h"
