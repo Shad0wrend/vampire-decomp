@@ -250,6 +250,30 @@ int CNPC_VGargoyle::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378b80 size=0x50
+#include "CNPC_VGargoyle.h"
+// TARGET: CNPC_VGargoyle::vfunc432
+void CNPC_VGargoyle::vfunc432(int a)
+{
+	int kind;
+	void *pObj = sub_10006ae6(&kind);
+	if (pObj) {
+		switch (kind) {
+		case 0:
+			goto other;
+		case 1:
+			sub_1000d3cd(pObj);
+			break;
+		default:
+		other:
+			sub_100027a7(pObj);
+			break;
+		}
+	}
+	sub_1000698d(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10378c10 size=0x7c
 #include "CBaseEntity.h"
 #include "CNPC_VGargoyle.h"
