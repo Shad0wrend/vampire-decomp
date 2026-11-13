@@ -3601,6 +3601,7 @@
 0x10005b64 func   ?sub_10194160@CNPCUnit@@QAEXPAUinputdata_t@@@Z CNPCUnit::sub_10194160
 0x10005b69 func   ?vfunc300@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc300
 0x10005b6e func   ?sub_10428ad0@@YAHPAUCStudioHdr@@HHPAH@Z sub_10428ad0
+0x10005b73 func   ?vfunc5@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc5
 0x10005b78 func   ?vfunc81@CItemGIdolCat@@QAEHXZ CItemGIdolCat::vfunc81
 0x10005b7d func   ?vfunc362@CNPCMaker_Zombie@@UAE_NH@Z CNPCMaker_Zombie::vfunc362
 0x10005b82 func   ?vfunc4@CTEImpact@@UAEXHH@Z CTEImpact::vfunc4

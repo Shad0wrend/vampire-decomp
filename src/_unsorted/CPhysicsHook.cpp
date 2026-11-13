@@ -223,6 +223,49 @@ void CPhysicsHook::vfunc4()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002dc50 size=0xd5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CPhysicsHook.h"
+#include "CCollisionEvent.h"
+#include "ScopeTrace.h"
+extern char g_10539b24[];
+struct S1053c5e0 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void vfunc4(); };
+struct S10723934 { virtual void v0(); virtual void vfunc1(int a); virtual void v2(); virtual void v3(); virtual void vfunc4(int a); };
+struct SListOwner_t;
+void __fastcall sub_100d1250(SListOwner_t *pThis);
+struct S106b89bc { ~S106b89bc() { sub_100d1250((SListOwner_t *)this); } };
+extern int g_10723940;
+extern int g_10723948;
+extern int g_10723938;
+extern S1053c5e0 *g_1053c5e0;
+extern S10723934 *g_10723934;
+static S106b89bc *g_106b89bc;
+extern CCollisionEvent g_106b86d8;
+void CPhysicsHook::vfunc5()
+{
+    ScopeTrace t(g_10539b24, g_106b8540);
+    if (!g_10723940)
+        return;
+    g_1053c5e0->vfunc4();
+    g_106b86d8.sub_10031520();
+    g_10723934->vfunc1(g_10723940);
+    g_10723940 = 0;
+    g_10723934->vfunc4(g_10723948);
+    g_10723948 = 0;
+    g_10723938 = 0;
+    delete g_106b89bc;
+    g_106b89bc = 0;
+    *(int *)((char *)this + 0x10) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002dd70 size=0x1ec
 #include "CPhysicsHook.h"
 struct ScopeTraceEntry_ { const char *name; const char *a; const char *b; };
