@@ -105832,6 +105832,134 @@ CUnknown1018b790 *CUnknown1018b790::sub_1018b790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018b7e0 size=0x4e6
+#include "CVTraitEffect_t.h"
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+#include "CPlayerLocalPredictedData.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+struct SWorldInfo { char m_b00; char m_b01; char m_pad02[2]; int m_n04; int m_n08; int m_n0c; int m_n10; int m_n14; int m_n18; int m_n1c; };
+void sub_1023cde0(SWorldInfo *pInfo);
+extern int *g_1072a498;
+struct CUnknownCopy1018be10 { CUnknownCopy1018be10 *sub_1018be10(const CUnknownCopy1018be10 *p); };
+
+struct SW_ {
+	CBP_V100(wa) CBP_V100(wb) CBP_V100(wc) CBP_V10(wd0) CBP_V10(wd1) CBP_V10(wd2) CBP_V10(wd3) CBP_V10(wd4) CBP_V10(wd5)
+	virtual unsigned int vfunc360();
+};
+struct SEnt_ { char m_pad[0x2e0]; int m_n2e0; int edict() { return m_n2e0; } };
+struct SBlk30 { int a[0x30]; };
+struct SBlk15 { int a[0x15]; };
+struct SPlV {
+	CBP_V100(pa) CBP_V100(pb) CBP_V10(pc0) CBP_V10(pc1) CBP_V10(pc2) CBP_V10(pc3) CBP_V10(pc4) CBP_V10(pc5) CBP_V10(pc6)
+	CBP_V1(pd0) CBP_V1(pd1) CBP_V1(pd2) CBP_V1(pd3) CBP_V1(pd4) CBP_V1(pd5) CBP_V1(pd6)
+	virtual void vfunc277(int a);
+	virtual int vfunc278();
+	char m_pad4[0x170];
+	int m_n174;
+	char m_pad178[0x19c - 0x178];
+	unsigned int m_f19c;
+	char m_pad1a0[0x6f0 - 0x1a0];
+	int m_n6f0;
+	int m_n6f4;
+	int m_n6f8;
+	char m_pad6fc[0x734 - 0x6fc];
+	SBlk30 m_b734;
+	SBlk15 m_b7f4;
+};
+SW_ *__fastcall sub_1032e7b0(CBasePlayer *p);
+char __fastcall sub_1033b7c0(CBasePlayer *p);
+SPlV *__fastcall sub_101618a0(CBasePlayer *p);
+struct SLook { int sub_100290c0(unsigned int *ph); };
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+// TARGET: sub_1018b7e0
+void sub_1018b7e0(CBasePlayer *pPlayer)
+{
+	CPlayerLocalPredictedData *pLocal = &pPlayer->m_Local1E40;
+	if (!pLocal)
+		return;
+	Vector *pOrigin = (Vector *)pPlayer->vfunc220();
+	Vector vecEye;
+	const Vector &o = *pOrigin;
+	vecEye.x = o[0] + pPlayer->m_vecViewOffset184[0];
+	vecEye.y = o[1] + pPlayer->m_vecViewOffset184[1];
+	vecEye.z = o[2] + pPlayer->m_vecViewOffset184[2];
+	pLocal->m_i04 = 0;
+	SW_ *pWep = sub_1032e7b0(pPlayer);
+	if (!pWep || !(pWep->vfunc360() & 0x18000))
+		pLocal->m_i04 = pPlayer->m_sTargetmodel.pszValue ? engine->vfunc13(STRINGR(pPlayer->m_sTargetmodel.pszValue), 0) : pPlayer->m_nDefaultTargetModel;
+	pLocal->m_i08 = pPlayer->m_nDefaultSpreadLModel;
+	pLocal->m_i0c = pPlayer->m_nDefaultSpreadRModel;
+	pLocal->m_i10 = pPlayer->m_n2068;
+	pPlayer->m_nEdict1EB0 = 0;
+	pPlayer->m_b1EB4 = pPlayer->m_b1474;
+	bool bGrapple = (((SLook *)g_10566458)->sub_100290c0(&pPlayer->m_h1538) && pPlayer->m_n153C != -1 && pPlayer->m_n1540 == 0)
+		|| (EHandle_Get(pPlayer->m_h1538) && pPlayer->m_n153C != -1 && pPlayer->m_n1540 == 2);
+	if (!bGrapple)
+	{
+		if (sub_1033b7c0(pPlayer) && pPlayer->m_b14AA && ((EHANDLE &)pPlayer->m_n14AC).Get())
+			pPlayer->m_nEdict1EB0 = engine->vfunc35(((SEnt_ *)((EHANDLE &)pPlayer->m_n14AC).Get())->edict());
+	}
+	else
+	{
+		int n = pPlayer->m_n153C;
+		if ((EHandle_Get(pPlayer->m_h1538) && n == 0 && EHandle_Get(pPlayer->m_h149C))
+			|| (EHandle_Get(pPlayer->m_h1538) && n == 1 && EHandle_Get(pPlayer->m_h1538)
+				&& EHandle_Get(*(unsigned int *)((char *)EHandle_Get(pPlayer->m_h1538) + 0x149c))))
+			pPlayer->m_nEdict1EB0 = engine->vfunc35(((SEnt_ *)EHandle_Get(pPlayer->m_h1538))->edict());
+	}
+	pPlayer->m_nEdict1EAC = 0;
+	if (EHandle_Get(pPlayer->m_hMeleeOpponent))
+		pPlayer->m_nEdict1EAC = engine->vfunc35(((SEnt_ *)EHandle_Get(pPlayer->m_hMeleeOpponent))->edict());
+	if (pPlayer->m_nUseEdict1EC4 && !engine->vfunc38(pPlayer->m_nUseEdict1EC4))
+		pPlayer->m_nUseEdict1EC4 = 0;
+	int area = engine->vfunc111(&vecEye.x);
+	engine->vfunc112(area, pLocal->m_aData);
+	int *pSky = g_1072a498;
+	if (pSky) {
+		pPlayer->m_aSkyCam1F88[0] = pSky[0x450 / 4];
+		pPlayer->m_aSkyCam1F88[1] = pSky[0x454 / 4];
+		pPlayer->m_aSkyCam1F88[2] = pSky[0x458 / 4];
+		pPlayer->m_aSkyCam1F88[3] = pSky[0x45c / 4];
+		pPlayer->m_aSkyCam1F88[4] = pSky[0x460 / 4];
+		((CUnknownCopy1018be10 *)pPlayer->m_SkyCamCopy1F9C)->sub_1018be10((const CUnknownCopy1018be10 *)(pSky + 0x464 / 4));
+	} else {
+		pPlayer->m_aSkyCam1F88[4] = 0xff;
+	}
+	sub_1023cde0((SWorldInfo *)pPlayer->m_WorldInfo1FBC);
+	SPlV *pT = sub_101618a0(pPlayer);
+	SPlV *pMe = (SPlV *)pPlayer;
+	if (pT && !pPlayer->m_b1EDC) {
+		pMe->m_n6f0 = pT->m_n6f0;
+		pMe->m_n174 = pT->m_n174;
+		pMe->m_n6f8 = pT->m_n6f8;
+		pMe->m_n6f4 = pT->m_n6f4;
+		pMe->m_b734 = pT->m_b734;
+		pMe->m_b7f4 = pT->m_b7f4;
+		int mask = 0xb10;
+		pMe->m_f19c = (pMe->m_f19c & ~mask) | (pT->m_f19c & mask);
+		pMe->vfunc277(pT->vfunc278());
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018be10 size=0x3d
 struct CUnknownCopy1018be10
 {

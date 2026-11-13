@@ -3726,6 +3726,7 @@
 0x10005e16 func   ?sub_101db960@CUnk101db960@@QAEPAU1@XZ CUnk101db960::sub_101db960
 0x10005e1b func   ?sub_103419c0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_103419c0
 0x10005e20 func   ?vfunc440@CNPC_VHuman@@QAEHH@Z CNPC_VHuman::vfunc440
+0x10005e2a func   ?sub_1018b7e0@@YAXPAVCBasePlayer@@@Z sub_1018b7e0
 0x10005e2f func   ?sub_1008e770@CBaseAnimating@@QAEXPAVVector@@PAVQuaternion@@HHPAMPAVCUnknown100c81b0@@@Z CBaseAnimating::sub_1008e770
 0x10005e39 func   ?sub_1035bee0@S@@QAEXH@Z S::sub_1035bee0
 0x10005e3e func   ?sub_1024c980@@YA?AVVMatrix@@ABVVector@@ABUVPlane@@@Z sub_1024c980
