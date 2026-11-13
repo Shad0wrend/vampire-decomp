@@ -169021,6 +169021,76 @@ void CUnknown10227f60::sub_10227f60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10228020 size=0x182
+#include "CUnknown10228020.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+void *operator new(unsigned int);
+void operator delete(void *);
+
+struct IFileSys;
+extern IFileSys *g_1070b238;
+
+class CUnknown10248a50
+{
+public:
+	char m_pad0000[0x1c];
+
+	CUnknown10248a50 *sub_10247ba0(const char *pszName);	// the constructor body (stub 0x1000e363)
+	void sub_100046f1();	// the destructor body (stub 0x100046f1)
+	bool sub_102480f0(const char *pszFile, IFileSys *pFileSys, const char *pszPathID, bool bRefresh);
+};
+
+char CUnknown10228020::sub_10228020()
+{
+	bool bOK = true;
+	char szFile[128];
+	sprintf(szFile, "%s%s.txt", "vdata\\precache\\", "Entities");
+	CUnknown10248a50 *pData = (CUnknown10248a50 *)operator new(0x1c);
+	if (pData)
+		pData = pData->sub_10247ba0("PreCacheData");
+	if (pData) {
+		IFileSys *fs = g_1070b238;
+		if (pData->sub_102480f0(szFile, fs, 0, true) == true) {
+			if (!sub_10228220(pData)) {
+				Msg("Unable to open data file for: %s\n", szFile);
+				bOK = false;
+			}
+		} else {
+			Msg("Unable to open data file for: %s\n", szFile);
+			bOK = false;
+		}
+		pData->sub_100046f1();
+		operator delete(pData);
+	} else {
+		Msg("Unable to load data for: %s\n", szFile);
+	}
+	int i = 0;
+	for (int n = 0; n < 0x100; n++) {
+		sprintf(szFile, "%s%s%3d.txt", "vdata\\system\\", "PreCache", i++);
+		pData = (CUnknown10248a50 *)operator new(0x1c);
+		if (pData)
+			pData = pData->sub_10247ba0("PreCacheData");
+		if (pData) {
+			IFileSys *fs = g_1070b238;
+			if (pData->sub_102480f0(szFile, fs, 0, true) != true) {
+				pData->sub_100046f1();
+				operator delete(pData);
+				return bOK;
+			}
+			if (!sub_10228220(pData)) {
+				Msg("Unable to open data file for: %s\n", szFile);
+				bOK = false;
+			}
+			pData->sub_100046f1();
+			operator delete(pData);
+		}
+	}
+	return bOK;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10228220 size=0x75
 #include "CUnknown10228020.h"
 #include "CUnknown10248a50.h"
