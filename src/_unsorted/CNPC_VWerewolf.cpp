@@ -279,6 +279,55 @@ void CNPC_VWerewolf::vfunc113()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cb2a0 size=0x12a
+#include "CBaseEntity.h"
+#include "CNPC_VWerewolf.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern CUnknown1073dc28 g_1073dc28;
+extern char g_106618d8[];
+extern const char *g_1065f4d0[4];
+void sub_101d0f10(const char *pszPath, const char *pszExtension, int a, int b);
+void sub_101d0ec0(const char *pszName);
+
+static inline const char *AllocPooledString(const char *pszValue)
+{
+	return (pszValue && *pszValue) ? pszValue : 0;
+}
+
+static inline const char *STRING(const char *pszOffset)
+{
+	return STRINGR_F(pszOffset);
+}
+
+static inline void SetModelName(CNPC_VWerewolf *pNPC, const char *pszName)
+{
+	*(int *)((char *)pNPC + 0xbc) = 2;
+	*(const char **)((char *)pNPC + 0xc0) = pszName;
+}
+
+struct ISoundPrecache { virtual int Precache(const char *pszSound, int bPreload); };
+extern ISoundPrecache *g_1070b248;
+
+void CNPC_VWerewolf::vfunc104()
+{
+	ScopeTrace trace("CNPC_VWerewolf::Precache", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	sub_10298ad0();
+	sub_101d0f10("sound/Character/Monster/Werewolf", ".wav", 0, 1);
+	sub_101d0f10("sound/Area/Special/Observatory", ".wav", 0, 1);
+	*(const char **)((char *)this + 0xc0) = *g_106618d8 ? g_106618d8 : 0; *(int *)((char *)this + 0xbc) = 2;
+	*(int *)((char *)this + 0xb4) = g_1073dc28.sub_101f55a0((CBaseEntity *)this, STRINGR_F(*(const char **)((char *)this + 0xc0)), 0);
+	for (unsigned int i = 0; i < 4; i++)
+		g_1070b248->Precache(g_1065f4d0[i], 0);
+	sub_101d0ec0("item_w_werewolf_attacks");
+	g_1070b248->Precache("dev/ww_tele_out.wav", 0);
+	g_1070b248->Precache("dev/ww_tele_in.wav", 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cb7f0 size=0xb
 #include "CNPC_VWerewolf.h"
 struct W {
