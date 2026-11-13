@@ -148398,6 +148398,41 @@ const char *__stdcall sub_101f63b0(const char *szName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f6530 size=0x13f
+#include "CBaseEntity.h"
+#include "CSingleUserRecipientFilter.h"
+
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *fmt, ...);
+
+struct CWhisperObj
+{
+	const char *sub_101f63b0(const char *name);
+	void sub_101f6530(CBaseEntity *pEnt, const char *name);
+};
+
+void CWhisperObj::sub_101f6530(CBaseEntity *pEnt, const char *name)
+{
+	if (name) {
+		const char *sample = sub_101f63b0(name);
+		if (sample) {
+			DevMsg(2, "VWhisper: Server Playing: %s\n", sample);
+			enginesound->vfunc0(sample, 0);
+			CBaseEntity *pPlayer;
+			if (pEnt && (pPlayer = (CBaseEntity *)pEnt->m_pA8) != 0) {
+				CSingleUserRecipientFilter filter(pPlayer);
+				int edict = pPlayer->m_pEdict2e0;
+				enginesound->vfunc3(&filter, engine->vfunc35(edict), 0, sample, 1.0f, 1.25f, 0, 100, 0, 0, 1, 0);
+			} else {
+				DevWarning(1, "ERROR: Vsnd: Failed to play Whisper due to invalid Player Entity!\n");
+			}
+		} else {
+			DevMsg(2, "VWhisper: Server: No Sounds found: %s\n", name);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f66c0 size=0x14f
 #include "CUnknown101f5050.h"
 #include "CUnknown101f5150.h"

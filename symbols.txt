@@ -1150,6 +1150,7 @@
 0x10002829 func   ?sub_102da600@CHolder@@QAEXPADDD@Z CHolder::sub_102da600
 0x1000282e func   ?sub_102038e0@@YAHHPAUIObj102038e0@@H@Z sub_102038e0
 0x10002838 func   ?sub_101b2250@CRangeView@@QAEPBDXZ CRangeView::sub_101b2250
+0x10002842 func   ?sub_101f6530@CWhisperObj@@QAEXPAVCBaseEntity@@PBD@Z CWhisperObj::sub_101f6530
 0x10002847 func   ?vfunc546@CNPC_VHumanCombatant@@QAEHH@Z CNPC_VHumanCombatant::vfunc546
 0x1000284c func   ?sub_102391c0@CUnknown102391c0@@QAE_NXZ CUnknown102391c0::sub_102391c0
 0x10002851 func   ?vfunc127@CNPC_VAsianVampire@@QAEHPAX@Z CNPC_VAsianVampire::vfunc127
