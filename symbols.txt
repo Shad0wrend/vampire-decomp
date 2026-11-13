@@ -3924,6 +3924,7 @@
 0x100061b8 func   ?sub_102781a0@CUnknown102781a0@@QAE_NPAU1@@Z CUnknown102781a0::sub_102781a0
 0x100061bd func   ?sub_101668b0@CHL2_Player@@QAEXXZ CHL2_Player::sub_101668b0
 0x100061c2 func   ?vfunc272@CInstancedSceneEntity@@QAEXH@Z CInstancedSceneEntity::vfunc272
+0x100061cc func   ?sub_10316ff0@@YAXXZ sub_10316ff0
 0x100061d1 func   ?vfunc26@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::vfunc26
 0x100061d6 func   ?sub_10428ce0@@YAHPAUSeqHdr@@HH@Z sub_10428ce0
 0x100061db func   ?vfunc293@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc293
