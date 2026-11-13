@@ -269353,6 +269353,75 @@ void CWeaponThrown_Grenade_Frag::sub_103f0a00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f0d10 size=0x2e2
+#include "TestBit.h"
+#include "CWeaponThrown_Chang_Ghost.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+#include "CUnknown100290c0.h"
+
+extern CUnknown100290c0 *g_10566458;
+extern float g_104e1620;
+extern float g_104e1628;
+extern float g_104e1610;
+void sub_10139970(const Vector *vel, Vector *ang);
+
+void CWeaponThrown_Chang_Ghost::sub_103f0d10()
+{
+	if (m_b0918) {
+		sub_103f0a00();
+		return;
+	}
+	float flDt = gpGlobals->curtime - m_f0928;
+	if (!(flDt <= 0.0f)) {
+		m_f0928 = gpGlobals->curtime;
+		if (TestBit(m_flags268, 12))
+			sub_100b1d10();
+		Vector vecVel;
+		vecVel.x = *(m_vecVelocity3bc + 0);
+		vecVel.y = m_vecVelocity3bc[1];
+		vecVel.z = m_vecVelocity3bc[2];
+		CEntityVSlots *pTarget = (CEntityVSlots *)g_10566458->sub_100290c0((unsigned int *)&m_n0914);
+		if (pTarget) {
+			Vector vecAim = *pTarget->slot217();
+			vecAim.z = vecAim.z + g_104e1620;
+			Vector vecDir = vecAim - *((CEntityVSlots *)this)->slot217();
+			if (VectorNormalize(vecDir) < 100.0f) {
+				sub_103f1270(pTarget);
+			} else {
+				float t1 = gpGlobals->curtime - m_f0924; float flRamp = (t1) / g_104e1628;
+				if (flRamp > 1.0f)
+					flRamp = 1.0f;
+				else if (flRamp < 0.0f)
+					flRamp = 0.0f;
+				flRamp = 2000.0f * flRamp;
+				Vector t0 = vecDir * flRamp; Vector vecAccel = flDt * t0;
+				vecVel.x = vecVel.x + vecAccel.x; vecVel.y = ((const Vector &)vecVel)[1] + vecAccel.y; vecVel.z = ((const Vector &)vecVel)[2] + vecAccel.z;
+			}
+			float flSpeed = vecVel.Length();
+			if (flSpeed > 1e-6f) {
+				if (flSpeed > 500.0f) {
+					VectorNormalize(vecVel);
+					vecVel.x = g_104e1610 * vecVel.x;
+					vecVel.y = vecVel.y * 500.0f;
+					vecVel.z = vecVel.z * 500.0f;
+				} else if (flSpeed < m_flThrowSpeed) {
+					VectorNormalize(vecVel);
+					const Vector &cv = vecVel; float s = m_flThrowSpeed; vecVel.x = cv[0] * s; vecVel.y = cv[1] * s; vecVel.z = cv[2] * s;
+				}
+			}
+		}
+		Vector vecAng;
+		sub_10139970(&vecVel, &vecAng);
+		((CEntityVSlots *)this)->slot218(&vecAng);
+		((CEntityVSlots *)this)->slot64(&vecAng.x);
+		sub_100b2770(&vecVel.x);
+		m_flNextThink = gpGlobals->curtime + 0.1f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f10c0 size=0x3
 void __stdcall sub_103f10c0(int a0)
 {

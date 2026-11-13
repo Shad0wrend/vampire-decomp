@@ -12752,6 +12752,7 @@
 0x100119f5 func   ?sub_101ef880@STarget@@QAEXPAVCBaseEntity@@DH@Z STarget::sub_101ef880
 0x100119fa func   ?sub_101f5950@CVActivitySound@@QAEXHHHMM@Z CVActivitySound::sub_101f5950
 0x100119ff func   ?sub_10032f90@CUnknown10032f90@@QAEPAXXZ CUnknown10032f90::sub_10032f90
+0x10011a04 func   ?sub_103f0d10@CWeaponThrown_Chang_Ghost@@QAEXXZ CWeaponThrown_Chang_Ghost::sub_103f0d10
 0x10011a09 func   ?sub_102e2690@CUnknown102e2690@@QAEHXZ CUnknown102e2690::sub_102e2690
 0x10011a0e func   ?sub_102180c0@CBaseTerminalView@@QAEDPAVCBaseEntity@@@Z CBaseTerminalView::sub_102180c0
 0x10011a13 func   ?sub_100ac920@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100ac920
