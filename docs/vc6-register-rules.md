@@ -190,3 +190,27 @@ Measured on real vtmb functions (hand-120..124, reloadstudy). Each line names th
 - Beyond the rules: the inline budget is used up by later code (0x103a8990: a hand-written ScopeTrace in a later
   case let an earlier CUtlVector Purge inline); x87 tails follow a shared result local (`r = expr; return r;`,
   0x10182160) and per-component `+=` (0x101269e0).
+
+## Inline / x87 pass (2026-11-13, 39 functions picked by diff kind, 3 matched)
+Targets were picked by re-judging every open function's best source: 41 had a different call count than the game
+(inline vs out-of-line), 16 had diffs that were mostly x87. Many call-count differences were stale (the newest best
+source was not the real best); re-judge before trusting such a scan.
+- Big call deficits close: an object with out-of-line teardown on the stack is POD storage with an explicit
+  `->CRestore::CRestore(...)` call and per-return teardown through bodyless stubs (0x101a3470, 164 -> 0); a node list
+  `Destroy()` written at each exit and the matched sibling's shape (0x102f3c10, 333 -> 0).
+- A global kept in a callee-saved register across unknown calls and reloaded on one path: a local copy reassigned
+  from the global after the call on that path only (0x101a3470).
+- A vptr stored after member stores (SDK ctor with an initializer list): POD view, explicit vptr store after the
+  members; read later members through the stored member, not the local (0x102f3c10).
+- Object addresses in `mov ecx, imm` are relocated: `extern char g_<addr>[];` and a cast, never an int cast
+  (0x103302e0, score 1 = "absolute-address slots differ").
+- `pcd_stage(x)` on a call argument / call object fixes R9 cursor shifts and can bring back a tail cross-jump.
+- Recursion through the ILT stub: declare and call `sub_<stub>` (0x100c25c0).
+- Volatile int component loads reproduce reload-per-copy of a global Vector (every non-volatile form is CSE'd), not
+  the game's 2-register pipelining (0x102387b0).
+- x87 schedules are mostly not source-movable: an `fstp` placed before or after a call setup / vtable load
+  (0x101bef50, 0x103ab580, 0x102e7e80) stayed in place under every form tried. Statement order moves int copies
+  against x87 ops (0x1012a1d0); a constructor's internal store order does not.
+- `(double &)floatLocal` in a compare gives `fcom qword ptr [float slot]` but makes the local address-taken (top of
+  the frame) (0x10242640). Valve's naked `_asm` VectorMA (0x101387e0, 0x10139500) and TransformAndRotate
+  (0x101382f0) have no C form.
