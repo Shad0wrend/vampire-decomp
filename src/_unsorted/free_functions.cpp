@@ -203110,6 +203110,59 @@ void CAI_BaseNPCTroika::sub_10297a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10298340 size=0x105
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "Vector.h"
+
+struct CInfo98 { char pad[0x14b8]; unsigned int b0 : 1; unsigned int b1 : 1; unsigned int b2 : 1; bool IsBit2() const { return b2; } };
+struct CEnt60 { char pad[0x98]; CInfo98 *p98; };
+struct CPEnt { char pad[0x60]; CEnt60 *p60; };
+struct CHolder30 { char pad[0x24]; Vector *pTarget; };
+struct CHolder { char pad[0x30]; CHolder30 *p30; void sub_10006744(); };
+
+struct CBaseObj {
+    bool sub_10011284(Vector *p);
+};
+
+typedef Vector *(__fastcall *Slot217)(CBaseObj *);
+
+struct CFoo {
+    char pad0[0x4384];
+    CHolder *m_pHolder;
+    bool sub_100087d3(CPEnt *pEnt, int a, int *out);
+    bool sub_10298340(CPEnt *pEnt, int a, int *out);
+    bool CheckNear(CBaseObj *pBase)
+    {
+        Vector vTarget = *m_pHolder->p30->pTarget;
+        Vector *pPos = (*(Slot217 **)pBase)[217](pBase);
+        float dx = pPos->x - vTarget.x;
+        float dy = pPos->y - vTarget.y;
+        float dz = pPos->z - vTarget.z;
+        if (dz * dz + dx * dx + dy * dy <= 1024.0f) {
+            m_pHolder->sub_10006744();
+            return true;
+        }
+        return false;
+    }
+};
+
+bool CFoo::sub_10298340(CPEnt *pEnt, int a, int *out)
+{
+    if (pEnt->p60 && pEnt->p60->p98 && pEnt->p60->p98->IsBit2()) {
+        CBaseObj *pBase = (CBaseObj *)((char *)this - 0x19b0);
+        if (pBase->sub_10011284(pcd_stage(m_pHolder->p30->pTarget))) {
+            *out = 0;
+            return true;
+        }
+        if (CheckNear(pBase)) {
+            *out = 0;
+            return true;
+        }
+    }
+    return sub_100087d3(pEnt, a, out);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10298800 size=0x24
 struct CUnknown102ee2a0
 {
