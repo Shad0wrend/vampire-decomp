@@ -125561,6 +125561,51 @@ Vec3 sub_101c3bb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c3c90 size=0x1c4
+#include "UtlVec8.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "ehandle.h"
+#include "engineserver.h"
+#include <stdlib.h>
+
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *fmt, ...);
+
+struct CRandomSpawnFactory
+{
+	CRandomSpawnFactory *m_pNext;
+};
+extern CRandomSpawnFactory *g_1072cdb0;
+
+extern CUtlVector<CRandomSpawnFactory *> g_1072cd10;
+extern CUtlVector<EHANDLE> g_1072cd9c;
+
+
+template <> inline void CUtlVector<EHANDLE>::ShiftElementsRight(int elem, int num)
+{
+	((UtlVec8 *)this)->sub_10055000(elem, num);
+}
+inline void StressSetSlots(int nSlots)
+{
+	g_1072cd9c.SetSize(nSlots);
+}
+
+void sub_101c3c90()
+{
+	g_1072cd10.Purge();
+	for (CRandomSpawnFactory *pCur = g_1072cdb0; pCur; pCur = pCur->m_pNext)
+		g_1072cd10.AddToTail(pCur);
+
+	int nSlots = 100;
+	if (engine->vfunc85() >= 2)
+		nSlots = atoi(engine->vfunc84(1));
+
+	g_1072cd9c.Purge();
+	g_1072cd9c.SetSize(nSlots);
+	Msg("Test_InitRandomEntitySpawner: created %d slots.\n", nSlots);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c3ee0 size=0x13c
 #include "CBaseEntity.h"
 #include "utlmemory.h"
