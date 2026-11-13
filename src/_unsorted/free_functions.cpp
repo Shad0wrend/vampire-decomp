@@ -224328,6 +224328,92 @@ char __fastcall sub_102ef0e0(void *self, int unused, Info102ef0e0 *pInfo, float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ef1a0 size=0x14b
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CAI_DefMovementSink.h"
+#include "CAI_Navigator.h"
+struct Info102ef1a0
+{
+	char m_pad00[0x28];
+	float m_f28;
+	char m_pad2c[0x0c];
+	unsigned int m_uFlags;
+};
+
+struct CNavRoute102ef1a0
+{
+	char m_pad00[0x28];
+	float m_f28;
+};
+
+struct CSinkDispatch102ef1a0
+{
+	virtual void s0();
+	virtual void s1();
+	virtual char s2(void *pGoal, float flValue, int *pOut);
+};
+
+struct CNavView102ef1a0 : CAI_Navigator
+{
+	bool Prepend(float dist) { return sub_102ede30(dist, 0); }
+};
+
+float __fastcall sub_102f1d90(CAI_Navigator *pNav);
+float __cdecl sub_102d61b0(int index);
+
+#define NAV102EF1A0 ((CAI_Navigator *)((char *)this - 0x10))
+
+bool CAI_DefMovementSink::sub_102ef1a0(void *pGoal, float flValue, int *pOut)
+{
+	Info102ef1a0 *pInfo = (Info102ef1a0 *)pGoal;
+	if ( ((CSinkDispatch102ef1a0 *)((char *)NAV102EF1A0->m_pOuter + 0x19b0))->s2(pGoal, flValue, pOut) )
+		return true;
+
+	if ( pInfo->m_uFlags & 1 )
+	{
+		float fLimit = sub_102f1d90(NAV102EF1A0);
+		if ( fLimit <= flValue )
+		{
+			*pOut = 0;
+			return true;
+		}
+		float flRoute = ((CNavRoute102ef1a0 *)NAV102EF1A0->m_p30)->m_f28;
+		if ( (pInfo->m_f28 - flRoute) < flValue )
+		{
+			if ( pInfo->m_f28 > flValue )
+				pInfo->m_f28 = flValue;
+			if ( flValue < 0.125 )
+				NAV102EF1A0->vfunc8();
+			pInfo->m_uFlags |= 2;
+			*pOut = 0;
+			return true;
+		}
+	}
+	if ( !(pInfo->m_uFlags & 4) )
+	{
+		float fA = NAV102EF1A0->sub_102f1cf0();
+		double flHalf = sub_102d61b0(pcd_stage(NAV102EF1A0->m_i08)) * 0.5;
+		if ( fA < flHalf )
+		{
+			if ( fA + flHalf < flValue )
+			{
+				*pOut = 0;
+				return true;
+			}
+		}
+	}
+	if ( flValue < pInfo->m_f28 )
+	{
+		if ( ((CNavView102ef1a0 *)NAV102EF1A0)->Prepend(flValue) )
+		{
+			*pOut = 1;
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ef350 size=0x67
 #include "CUnknown102ef350.h"
 // TARGET: CUnknown102ef350Iface::sub_102ef350
