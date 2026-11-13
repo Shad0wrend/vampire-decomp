@@ -14078,6 +14078,104 @@ void *__fastcall sub_100501f0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100502b0 size=0x201
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CPhysConvert.h"
+#include "inputdata_t.h"
+#include "COutputEvent.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+__declspec(dllimport) void Warning(const char *fmt, ...);
+__declspec(dllimport) void DevWarning(const char *fmt, ...);
+void sub_1012c840(CBaseEntity *pEnt);
+CBaseEntity *sub_1004ff40(CBaseEntity *pEnt);
+void sub_1012c600(CBaseEntity *pOld, CBaseEntity *pNew);
+void sub_101cf600(CBaseEntity *pEnt);
+void sub_101cd940(CBaseEntity *pEnt);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+#define ARRAYSIZE(p) (sizeof(p) / sizeof(p[0]))
+
+inline CBaseEntity *FindByName(CBaseEntity *pStart, const char *name, CBaseEntity *pAct) { return g_106eb5d8.sub_100f7770(pStart, STRINGR(name), pAct, 0); }
+struct SN_t { const char *p; };
+inline SN_t GetEntityName(CBaseEntity *e) { SN_t s; s.p = e->m_name26c; return s; }
+inline void PSetName(CBaseEntity *e, SN_t s) { e->sub_100a0420(s.p); }
+void CPhysConvert::sub_100502b0(inputdata_t *pInput)
+{
+	((COutputEvent *)m_OnConvert)->sub_100cd660(pInput->pActivator, this, 0);
+
+	CBaseEntity *entlist[512];
+	CBaseEntity *pSwap = FindByName(0, m_swapModel468, (CBaseEntity *)pInput->pActivator);
+	CBaseEntity *pEntity = 0;
+
+	int count = 0;
+	while ((pEntity = FindByName(pEntity, m_target20c, (CBaseEntity *)pInput->pActivator)) != 0)
+	{
+		entlist[count++] = pEntity;
+		if (count >= ARRAYSIZE(entlist))
+			break;
+	}
+
+	if (pSwap && count > 0)
+		count = 1;
+
+	for (int i = 0; i < count; i++)
+	{
+		pEntity = entlist[i];
+
+		if (pEntity->vfunc94() == 7)
+		{
+			Warning("ERROR phys_convert %s ! Already MOVETYPE_VPHYSICS\n", STRINGR(pEntity->m_classname11c));
+			continue;
+		}
+
+		sub_1012c840(pEntity);
+
+		if (pSwap)
+		{
+			((void (__fastcall *)(CBaseEntity *))(*(void ***)pEntity)[225])(pEntity);
+			int tmp;
+			pEntity->vfunc105(STRINGR(*pSwap->vfunc9(&tmp)));
+		}
+
+		CBaseEntity *pPhys = sub_1004ff40(pEntity);
+		if (pPhys)
+		{
+			if (m_bFlag46c)
+				pPhys->sub_100aaa40(1);
+			if (m_bFlag46d)
+				pPhys->sub_100b3840(2);
+			else
+				pPhys->sub_100b3900(2);
+			if (pPhys->m_obj36c)
+			{
+				PSetName(pPhys, GetEntityName(pEntity));
+				(*(void (__fastcall ***)(int))pPhys->m_obj36c)[2](pPhys->m_obj36c);
+				sub_1012c600(pEntity, pPhys);
+				pEntity->vfunc77();
+				sub_101cf600(pEntity);
+				sub_101cd940(pEntity);
+			}
+			else
+			{
+				int tmp2;
+				DevWarning("ERROR phys_convert %s! Could not create proper physics object for %s !\n", STRINGR(pEntity->m_classname11c), STRINGR(*pEntity->vfunc9(&tmp2)));
+				sub_101cd940(pPhys);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050720 size=0x59
 #include "SendProp.h"
 struct CUnknown10247240 { void sub_10247240(int a, int b, int c); };
