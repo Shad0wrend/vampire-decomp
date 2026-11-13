@@ -188370,6 +188370,364 @@ int CAI_BaseHumanoid::sub_10262ea0(int idx, float flAngle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102630b0 size=0x9f4
+#include "utlrbtree.h"
+class Vector;
+__forceinline void VectorSubtract(const Vector &a, const Vector &b, Vector &c);
+#define inline __forceinline
+#include "Vector.h"
+#undef inline
+#include "CAI_BaseHumanoid.h"
+#include "utlvector.h"
+#include <string.h>
+#include <math.h>
+
+extern float g_104454c4;
+bool sub_1013a6f0(float a, float b, float c, float &root1, float &root2);
+float sub_102e1470(float a, float b, float c);
+float sub_10146150(const Vector *v);
+struct CBlock4k { int m_data[0xe]; };
+void sub_10264300(CBlock4k *dst, const CBlock4k *src);
+struct SElemVec
+{
+	void sub_10264130(int from, int num);
+	void sub_10264280(int elem, int num);
+};
+struct Mem38
+{
+	void sub_10264370(int num);
+};
+
+__forceinline Vector VSub(const Vector &a, const Vector &b) { Vector r; r.x = a.x - b.x; r.y = a.y - b.y; r.z = a.z - b.z; return r; }
+#define SolveQuadratic sub_1013a6f0
+#define DeltaV sub_102e1470
+
+struct AI_Waypoint_t
+{
+	Vector vecLocation;
+	char m_pad0c[0x30 - 0x0c];
+	AI_Waypoint_t *pNext;
+	AI_Waypoint_t *GetNext() { return pNext; }
+};
+
+struct AI_Movementscript_t
+{
+	AI_Movementscript_t() { Init(); }
+	void Init() { memset(this, 0, sizeof(*this)); }
+
+	float flTime;
+	float flElapsedTime;
+	float flDist;
+	float flMaxVelocity;
+	float flYaw;
+	float flAngularVelocity;
+	bool bLooping;
+	int nFlags;
+	AI_Waypoint_t *pWaypoint;
+	AI_Movementscript_t *pNext;
+	AI_Movementscript_t *pPrev;
+	Vector vecLocation;
+};
+
+struct CScriptVec
+{
+	AI_Movementscript_t *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	AI_Movementscript_t *m_pElements;
+
+	int Count() const { return m_Size; }
+	AI_Movementscript_t &operator[](int i) { return m_pMemory[i]; }
+	int AddToTail(const AI_Movementscript_t &src) { return ((CUtlVector56 *)this)->sub_10264000(m_Size, &src); }
+	void Remove(int elem) { ((SElemVec *)this)->sub_10264130(elem, 1); --m_Size; }
+	int InsertBefore(int elem, const AI_Movementscript_t &src)
+	{
+		((CUtlVector56 *)this)->sub_102641b0(1);
+		((SElemVec *)this)->sub_10264280(elem, 1);
+		sub_10264300((CBlock4k *)&m_pMemory[elem], (const CBlock4k *)&src);
+		return elem;
+	}
+	int InsertAfter(int elem, const AI_Movementscript_t &src) { return InsertBefore(elem + 1, src); }
+	void GrowVectorI(int num)
+	{
+		if (m_Size + num > m_nAllocationCount)
+			((Mem38 *)this)->sub_10264370(m_Size + num - m_nAllocationCount);
+		m_Size += num;
+		m_pElements = m_pMemory;
+	}
+	int InsertAfterI(int elem, const AI_Movementscript_t &src)
+	{
+		elem++;
+		GrowVectorI(1);
+		((SElemVec *)this)->sub_10264280(elem, 1);
+		sub_10264300((CBlock4k *)&m_pMemory[elem], (const CBlock4k *)&src);
+		return elem;
+	}
+	void RemoveI(int elem)
+	{
+		int numToMove = m_Size - elem - 1;
+		if (numToMove > 0)
+			memmove(&m_pMemory[elem], &m_pMemory[elem + 1], numToMove * sizeof(AI_Movementscript_t));
+		--m_Size;
+	}
+};
+
+struct CPathView
+{
+	char m_pad[0x24];
+	AI_Waypoint_t *m_pFirst;
+	AI_Waypoint_t *GetCurWaypoint() { return m_pFirst; }
+};
+struct CNavView
+{
+	char m_pad[0x30];
+	CPathView *m_pPath;
+	CPathView *GetPath() { return m_pPath; }
+};
+struct CMotorView
+{
+	char m_pad[0x3c];
+	Vector m_vecVelocity;
+	float GetCurSpeed() { return sub_10146150(&m_vecVelocity); }
+};
+
+#define HV(n) virtual void v##n();
+#define HV10(p) HV(p##0) HV(p##1) HV(p##2) HV(p##3) HV(p##4) HV(p##5) HV(p##6) HV(p##7) HV(p##8) HV(p##9)
+struct CHumanoidV
+{
+	HV10() HV10(1) HV10(2) HV10(3) HV10(4) HV10(5) HV10(6) HV10(7) HV10(8) HV10(9)
+	HV10(10) HV10(11) HV10(12) HV10(13) HV10(14) HV10(15) HV10(16) HV10(17) HV10(18) HV10(19)
+	HV10(20)
+	HV(210) HV(211) HV(212) HV(213) HV(214) HV(215) HV(216)
+	virtual const Vector &GetAbsOrigin();
+	HV(218)
+	virtual const Vector &GetAbsAngles();
+	HV10(22) HV10(23)
+	HV(240) HV(241) HV(242) HV(243) HV(244) HV(245) HV(246) HV(247)
+	virtual float GetIdealSpeed();
+};
+
+#define HS ((CHumanoidV *)this)
+#define m_scriptMove (*(CUtlVector<AI_Movementscript_t> *)&m_Waypoints6024)
+#define MSV (*(CScriptVec *)&m_Waypoints6024)
+#define GetNavigator() (*(CNavView **)((char *)this + 0x5d34))
+#define GetMotor() (*(CMotorView **)((char *)this + 0x5d44))
+
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+
+// TARGET: CAI_BaseHumanoid::sub_102630b0
+void CAI_BaseHumanoid::sub_102630b0()
+{
+	int i;
+	float a;
+
+	float idealVelocity = 50;
+	if (HS->GetIdealSpeed() != 0)
+	{
+		idealVelocity = HS->GetIdealSpeed();
+	}
+	float idealAccel = idealVelocity / 1.0 + 50;
+
+	AI_Movementscript_t script;
+	if (0) VSub(script.vecLocation, script.vecLocation);
+	if (0) VSub(script.vecLocation, script.vecLocation);
+
+	script.vecLocation = HS->GetAbsOrigin();
+	script.flYaw = HS->GetAbsAngles().y;
+	script.flMaxVelocity = GetMotor()->GetCurSpeed();
+	MSV.AddToTail(script);
+
+	AI_Waypoint_t *pCurWaypoint = GetNavigator()->GetPath()->GetCurWaypoint();
+	float flTotalDist = 0;
+	while (pCurWaypoint)
+	{
+		script.Init();
+
+		script.vecLocation = pCurWaypoint->vecLocation;
+		script.pWaypoint = pCurWaypoint;
+
+		AI_Waypoint_t *pNext = pCurWaypoint->GetNext();
+
+		if (pNext)
+		{
+			Vector d1 = pCurWaypoint->GetNext()->vecLocation - script.vecLocation;
+			Vector d2 = script.vecLocation - m_scriptMove[m_scriptMove.Count() - 1].vecLocation;
+
+			d1.z = 0;
+			flTotalDist += VectorNormalize(d1);
+			d2.z = 0;
+			VectorNormalize(d2);
+
+			float dot = (DotProduct(d1, d2) + 0.2);
+			if (dot > g_104454c4)
+			{
+				if (dot > 1.0f) dot = 1.0f;
+				script.flMaxVelocity = idealVelocity * dot;
+			}
+			else
+			{
+				script.flMaxVelocity = 0;
+			}
+		}
+		else
+		{
+			script.flMaxVelocity = 0;
+		}
+
+		MSV.AddToTail(script);
+		pCurWaypoint = pCurWaypoint->GetNext();
+	}
+
+	for (i = 0; i < m_scriptMove.Count() - 1; )
+	{
+		Vector vecDir = m_scriptMove[i + 1].vecLocation - m_scriptMove[i].vecLocation;
+		m_scriptMove[i].flDist = VectorNormalize(vecDir);
+
+		if (m_scriptMove[i].flDist < 0.01)
+		{
+			if (i != 0)
+			{
+				MSV.Remove(i);
+				continue;
+			}
+		}
+		i++;
+	}
+
+	for (i = 0; i < m_scriptMove.Count() - 1; i++)
+	{
+		float dv = m_scriptMove[i + 1].flMaxVelocity - m_scriptMove[i].flMaxVelocity;
+
+		if (dv > 0.0)
+		{
+			float t1 = dv / idealAccel;
+			float d1 = m_scriptMove[i].flMaxVelocity * t1 + 0.5 * (idealAccel) * t1 * t1;
+
+			if (d1 > m_scriptMove[i].flDist)
+			{
+				float r1, r2;
+
+				if (SolveQuadratic(0.5 * idealAccel, m_scriptMove[i].flMaxVelocity, -m_scriptMove[i].flDist, r1, r2))
+				{
+					m_scriptMove[i + 1].flMaxVelocity = m_scriptMove[i].flMaxVelocity + idealAccel * r1;
+				}
+			}
+		}
+	}
+
+	if (0) VSub(script.vecLocation, script.vecLocation);
+	for (i = m_scriptMove.Count() - 1; i > 0; i--)
+	{
+		float dv = m_scriptMove[i].flMaxVelocity - m_scriptMove[i - 1].flMaxVelocity;
+
+		if (dv > 0.0)
+		{
+			float t1 = dv / idealAccel;
+			float d1 = m_scriptMove[i].flMaxVelocity * t1 + 0.5 * (idealAccel) * t1 * t1;
+
+			if (d1 > m_scriptMove[i].flDist)
+			{
+				float r1, r2;
+
+				if (SolveQuadratic(0.5 * idealAccel, m_scriptMove[i].flMaxVelocity, -m_scriptMove[i].flDist, r1, r2))
+				{
+					m_scriptMove[i - 1].flMaxVelocity = m_scriptMove[i].flMaxVelocity - idealAccel * r1;
+				}
+			}
+		}
+	}
+
+	for (i = 0; i < m_scriptMove.Count() - 1;)
+	{
+		float t1 = (idealVelocity - m_scriptMove[i].flMaxVelocity) / idealAccel;
+		float d1 = m_scriptMove[i].flMaxVelocity * t1 + 0.5 * (idealAccel) * t1 * t1;
+
+		float t2 = (idealVelocity - m_scriptMove[i + 1].flMaxVelocity) / idealAccel;
+		float d2 = m_scriptMove[i + 1].flMaxVelocity * t2 + 0.5 * (idealAccel) * t2 * t2;
+
+		if (d1 + d2 < m_scriptMove[i].flDist)
+		{
+			a = d1 / m_scriptMove[i].flDist;
+
+			script.Init();
+			script.vecLocation = m_scriptMove[i + 1].vecLocation * a + m_scriptMove[i].vecLocation * (1 - a);
+			script.flMaxVelocity = idealVelocity;
+			MSV.InsertAfter(i, script);
+
+			a = (m_scriptMove[i].flDist - d2) / m_scriptMove[i].flDist;
+
+			script.Init();
+			script.vecLocation = m_scriptMove[i + 2].vecLocation * a + m_scriptMove[i].vecLocation * (1 - a);
+			script.flMaxVelocity = idealVelocity;
+			MSV.InsertAfter(i + 1, script);
+
+			i += 3;
+		}
+		else
+		{
+			float flNeededAccel = fabs(DeltaV(m_scriptMove[i].flMaxVelocity, m_scriptMove[i + 1].flMaxVelocity, m_scriptMove[i].flDist));
+			if (flNeededAccel < idealAccel)
+			{
+				float q = (idealAccel + m_scriptMove[i].flMaxVelocity) / (idealAccel + m_scriptMove[i + 1].flMaxVelocity);
+				float a = (0.5 * q * q + 0.5) * idealAccel;
+				float b = q * m_scriptMove[i + 1].flMaxVelocity + m_scriptMove[i].flMaxVelocity;
+				float c = -m_scriptMove[i].flDist;
+
+				float t1, t1b;
+
+				if (SolveQuadratic(a, b, c, t1, t1b))
+				{
+					float d1 = m_scriptMove[i].flMaxVelocity * t1 + 0.5 * idealAccel * t1 * t1;
+					float t2 = t1 * q;
+					float d2 = m_scriptMove[i + 1].flMaxVelocity * t1 * q + 0.5 * idealAccel * t2 * t2;
+
+					float a = d1 / (d1 + d2);
+					script.Init();
+					script.vecLocation = m_scriptMove[i + 1].vecLocation * a + m_scriptMove[i].vecLocation * (1 - a);
+					script.flMaxVelocity = m_scriptMove[i].flMaxVelocity + idealAccel * t1;
+
+					if (script.flMaxVelocity < idealVelocity)
+					{
+						MSV.InsertAfterI(i, script);
+						i += 1;
+					}
+				}
+			}
+			i += 1;
+		}
+	}
+
+	if (0) VSub(script.vecLocation, script.vecLocation);
+	if (0) VSub(script.vecLocation, script.vecLocation);
+	m_scriptMove[0].flElapsedTime = 0;
+	for (i = 0; i < m_scriptMove.Count() - 1; )
+	{
+		m_scriptMove[i].flDist = (m_scriptMove[i + 1].vecLocation - m_scriptMove[i].vecLocation).Length();
+
+		if (m_scriptMove[i].flMaxVelocity > g_104454c4 || m_scriptMove[i + 1].flMaxVelocity > g_104454c4)
+		{
+			float t = m_scriptMove[i].flDist / (0.5 * (m_scriptMove[i].flMaxVelocity + m_scriptMove[i + 1].flMaxVelocity));
+			m_scriptMove[i].flTime = t;
+		}
+		else
+		{
+			m_scriptMove[i].flTime = 1.0;
+		}
+
+		if (m_scriptMove[i].flDist < 0.01 || m_scriptMove[i].flTime < 0.01)
+		{
+			MSV.RemoveI(i + 1);
+			continue;
+		}
+
+		m_scriptMove[i + 1].flElapsedTime = m_scriptMove[i].flElapsedTime + m_scriptMove[i].flTime;
+
+		i++;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10263d30 size=0x1f1
 float sub_102e1470(float a, float b, float c);
 

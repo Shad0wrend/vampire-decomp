@@ -5317,6 +5317,7 @@
 0x10007eaa func   ??2CUnknown100d1290Node@@SAPAXI@Z ??2CUnknown100d1290Node@@SAPAXI@Z
 0x10007eaa func   ?sub_100d11f0@@YAHH@Z sub_100d11f0
 0x10007eaf func   ?vfunc5@CWeaponList@@UAEXXZ CWeaponList::vfunc5
+0x10007eb4 func   ?sub_102630b0@CAI_BaseHumanoid@@QAEXXZ CAI_BaseHumanoid::sub_102630b0
 0x10007eb9 func   ?sub_1016af80@CBasePlayer@@QAEXPAX0@Z CBasePlayer::sub_1016af80
 0x10007ebe func   ??0CTriggerTeleport@@QAE@XZ CTriggerTeleport::CTriggerTeleport
 0x10007ec8 func   ?sub_10079100@@YIXPAUMem@@HH@Z sub_10079100
