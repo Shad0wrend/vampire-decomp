@@ -872,3 +872,95 @@ void CMultiplayRules::vfunc80()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10142540 size=0x215
+#include "CMultiplayRules.h"
+#include "ConVar.h"
+#include "engineserver.h"
+#include "globalvars.h"
+#include <string.h>
+#include <stdio.h>
+#include <ctype.h>
+
+__declspec(dllimport) void Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+__declspec(dllimport) void Msg(const char *pszFormat, ...);
+extern ConVar g_1070aad0;
+extern char g_1070ba2c;
+
+struct ConVarS : ConVar
+{
+	const char *GetStringS() const
+	{
+		if (m_pParent->vfunc1())
+		{
+			return "";
+		}
+		if (m_nFlags & 0x1000)
+		{
+			return "FCVAR_NEVER_AS_STRING";
+		}
+		ConVar *var = (ConVar *)m_pParent;
+		return (var->m_pszString) ? var->m_pszString : "";
+	}
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : ""; }
+
+void CMultiplayRules::vfunc79()
+{
+	char szNextMap[32];
+	char szFirstMapInList[32];
+	Q_strncpy(szFirstMapInList, "hldm1", sizeof(szFirstMapInList));
+
+	const char *mapcfile = ((ConVarS *)&g_1070aad0)->GetStringS();
+	Q_strncpy(szNextMap, STRINGR(gpGlobals->mapname), sizeof(szNextMap));
+	Q_strncpy(szFirstMapInList, STRINGR(gpGlobals->mapname), sizeof(szFirstMapInList));
+
+	int length;
+	char *pFileList;
+	char *aFileList = pFileList = (char *)engine->vfunc90(mapcfile, &length);
+	if (pFileList && length)
+	{
+		sscanf(pFileList, " %32s", szNextMap);
+		if (engine->vfunc10(szNextMap))
+			Q_strncpy(szFirstMapInList, szNextMap, sizeof(szFirstMapInList));
+
+		bool next_map_is_it = false;
+		while (1)
+		{
+			while (*pFileList && isspace(*pFileList))
+				pFileList++;
+			if (!(*pFileList))
+				break;
+
+			char cBuf[32];
+			int ret = sscanf(pFileList, " %32s", cBuf);
+			if (ret != 1 || *cBuf < 13)
+				break;
+
+			if (next_map_is_it)
+			{
+				if (engine->vfunc10(cBuf))
+				{
+					Q_strncpy(szNextMap, cBuf, sizeof(szNextMap));
+					break;
+				}
+			}
+
+			if (_strcmpi(cBuf, STRINGR(gpGlobals->mapname)) == 0)
+				next_map_is_it = true;
+
+			pFileList += strlen(cBuf);
+		}
+
+		engine->vfunc91(aFileList);
+	}
+
+	if (!engine->vfunc10(szNextMap))
+		Q_strncpy(szNextMap, szFirstMapInList, sizeof(szNextMap));
+
+	g_1070ba2c = 1;
+	Msg("CHANGE LEVEL: %s\n", szNextMap);
+	engine->vfunc9(szNextMap, 0);
+}
+// END FUNCTION
