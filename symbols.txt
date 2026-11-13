@@ -6097,6 +6097,7 @@
 0x10008e9a func   ?sub_103b51a0@@YAXM@Z sub_103b51a0
 0x10008e9f func   ?vfunc207@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc207
 0x10008ea4 func   _info_node_manbat_fly_to_point info_node_manbat_fly_to_point
+0x10008ea9 func   ?sub_1016e0c0@@YAXXZ sub_1016e0c0
 0x10008eae func   ?sub_1014f790@@YG_NHH@Z sub_1014f790
 0x10008eb3 func   ?sub_10397e90@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_10397e90
 0x10008ebd func   ?vfunc274@CPropDoorknobElectronic@@QAEXXZ CPropDoorknobElectronic::vfunc274

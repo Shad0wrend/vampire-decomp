@@ -99240,6 +99240,123 @@ void CBasePlayer::sub_1016cf30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016e0c0 size=0x355
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CCollisionProperty.h"
+#include "CUnknown100a8220.h"
+#include "CUnknown101cccf0.h"
+
+extern float g_1070d1b0[];
+void sub_101cf600(CBaseEntity *pEnt);
+
+struct CUnknown10273070 { void sub_10273070(int a); };
+
+struct CColl1016e0c0 : CCollisionProperty
+{
+	int GetSolidFlags() const { return m_usSolidFlags; }
+	void SetSolidFlags(int flags) { sub_100dc580(flags); }
+	void AddSolidFlags(int flags) { SetSolidFlags(GetSolidFlags() | flags); }
+	void SetSolid(int solid) { sub_100dc480(solid); }
+};
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+__forceinline void TracePush(const char *func, const char *name, const char *line)
+{
+	g_109f3620[*g_109f3680].name = func;
+	g_109f3620[*g_109f3680].file = name;
+	g_109f3620[*g_109f3680].line = line;
+	(*g_109f3680)++;
+}
+__forceinline void TracePop() { (*g_109f3680)--; }
+
+struct CEntSolid1016e0c0 : CBaseEntity
+{
+	void SetSolidFlagsI(int flags)
+	{
+		TracePush("CBaseEntity::SetSolidFlags", GetDebugName(), g_106b8540);
+		CollisionProp()->SetSolidFlags(flags);
+		TracePop();
+	}
+	void AddSolidFlagsI(int flags)
+	{
+		TracePush("CBaseEntity::AddSolidFlags", GetDebugName(), g_106b8540);
+		CollisionProp()->AddSolidFlags(flags);
+		TracePop();
+	}
+	CColl1016e0c0 *CollisionProp() { return (CColl1016e0c0 *)((char *)this + 0x270); }
+	const char *GetDebugName() { return STRINGR(m_name26c); }
+	void SetSolidFlags(int flags)
+	{
+		ScopeTrace t("CBaseEntity::SetSolidFlags", GetDebugName(), g_106b8540);
+		CollisionProp()->SetSolidFlags(flags);
+	}
+	void AddSolidFlags(int flags)
+	{
+		ScopeTrace t("CBaseEntity::AddSolidFlags", GetDebugName(), g_106b8540);
+		CollisionProp()->AddSolidFlags(flags);
+	}
+	void SetSolid(int solid)
+	{
+		ScopeTrace t("CBaseEntity::SetSolid", GetDebugName(), g_106b8540);
+		CollisionProp()->SetSolid(solid);
+	}
+};
+
+// TARGET: sub_1016e0c0
+void sub_1016e0c0()
+{
+	CUnknown101cccf0 sphere;
+	CBaseEntity *pEnt;
+	for (sphere.sub_101cccf0((int)g_1070d1b0, 0x45800000, 0, 0); (pEnt = sphere.sub_101ccd40()) != 0; sphere.m_nIndex++) {
+		if (!pEnt->m_pEdict2e0 || ((CUnknown100a8220 *)pEnt)->sub_100a8220())
+			continue;
+		CEntSolid1016e0c0 *pA = *(CEntSolid1016e0c0 **)((char *)pEnt + 0xa8);
+		CEntSolid1016e0c0 *pB = *(CEntSolid1016e0c0 **)((char *)pEnt + 0x98);
+		if (!pA)
+			goto doB;
+		pA->SetSolidFlagsI(0);
+		pA->AddSolidFlagsI(1);
+		pA->AddSolidFlags(0x10);
+		pA->SetSolid(2);
+		pA->sub_100aaa40(3);
+		pA->vfunc93(3, 0);
+		if (pA->sub_100b3700() & 2) {
+			Vector maxs(16.0f, 16.0f, 36.0f);
+			Vector mins(-16.0f, -16.0f, 0.0f);
+			pA->sub_100adf10(&mins.x, &maxs.x);
+		} else {
+			Vector maxs(16.0f, 16.0f, 72.0f);
+			Vector mins(-16.0f, -16.0f, 0.0f);
+			pA->sub_100adf10(&mins.x, &maxs.x);
+		}
+		sub_101cf600(pA);
+doB:
+		if (!pB)
+			continue;
+		if (0) pB->SetSolidFlags(0);
+		if (0) pB->SetSolidFlags(0);
+		if (0) pB->SetSolidFlags(0);
+		pB->SetSolidFlags(0);
+		pB->AddSolidFlags(1);
+		pB->AddSolidFlags(0x10);
+		pB->sub_1016e500(2);
+		pB->sub_100aaa40(7);
+		pB->vfunc93(4, 0);
+		((CUnknown10273070 *)pB)->sub_10273070(0);
+		sub_101cf600(pB);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016e500 size=0x84
 #include "CCollisionProperty.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
