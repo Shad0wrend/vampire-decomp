@@ -78547,6 +78547,155 @@ int sub_101245c0(int nIndex, int server, Vector &offset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10124630 size=0x450
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include <math.h>
+#include <string.h>
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CTraceFilterSimpleTwoEnt.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "Ray_t.h"
+#include "ScopeTrace.h"
+
+extern CUnknown1070b254 *g_1070b254;
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int noDepth, float flDuration);
+
+inline Vector SumY1(const Vector &a, const Vector &b) { Vector r; r.x = a.x + b.x; r.y = a[1] + b.y; r.z = a.z + b.z; return r; }
+inline Vector SumY2(const Vector &a, const Vector &b) { Vector r; r.x = a.x + b.x; r.y = a[1] + b[1]; r.z = a.z + b.z; return r; }
+inline Vector SumY3(const Vector &a, const Vector &b) { Vector r; r.x = a[0] + b.x; r.y = a[1] + b.y; r.z = a[2] + b.z; return r; }
+inline Vector SumY4(const Vector &a, const Vector &b) { Vector r; VectorAdd(a, b, r); return r; }
+struct I3POD { int a, b, c; };
+struct CStuckColl
+{
+	virtual void s0();
+	virtual Vector *vfunc1();
+	virtual Vector *vfunc2();
+};
+
+#define EVV(n) virtual void e##n();
+#define EVV10(p) EVV(p##0) EVV(p##1) EVV(p##2) EVV(p##3) EVV(p##4) EVV(p##5) EVV(p##6) EVV(p##7) EVV(p##8) EVV(p##9)
+struct CStuckEnt
+{
+	EVV10(0) EVV10(1) EVV10(2) EVV10(3) EVV10(4) EVV10(5) EVV10(6) EVV10(7) EVV10(8) EVV10(9)
+	EVV10(10) EVV10(11) EVV10(12) EVV10(13) EVV10(14) EVV10(15) EVV10(16) EVV10(17) EVV10(18) EVV10(19)
+	EVV10(20) EVV(210) EVV(211) EVV(212) EVV(213) EVV(214) EVV(215) EVV(216)
+	virtual Vector *vfunc217();
+	char m_pad0004[0x270 - 4];
+	CStuckColl m_coll;
+};
+
+namespace block_10124630 {
+struct CGameMovementUnit : CGameMovement
+{
+	float *sub_1011e350();
+	float *sub_1011e310();
+};
+
+float *CGameMovementUnit::sub_1011e350()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMax.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMax.x : &m_vecHullMax.x;
+}
+
+float *CGameMovementUnit::sub_1011e310()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMin.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMin.x : &m_vecHullMin.x;
+}
+}
+using namespace block_10124630;
+
+inline void TraceHullInl(const float *pStart, const float *pEnd, const float *pMins, const float *pMaxs, CTraceFilterSimpleTwoEnt *pFilter, CGameTrace *pTrace)
+{
+	ScopeTrace st("UTIL_TraceHull", g_106b8540);
+	Ray_t ray;
+	ray.sub_1006dec0(*(const Vector *)pStart, pEnd, pMins, pMaxs, 1, 0);
+	g_1070b254->vfunc4(&ray, 0x201400b, (CTraceFilterNoCharacterCollide *)pFilter, pTrace);
+	if (g_10738960.sub_1005f190())
+		sub_10146570(pTrace->m_startpos, pTrace->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+// TARGET: CGameMovement::sub_10124630
+void CGameMovement::sub_10124630(void *pEnt)
+{
+	CStuckEnt *pB = (CStuckEnt *)pEnt;
+	Vector posA, posB;
+	Vector *mins = ((CStuckEnt *)m_pMove)->m_coll.vfunc1();
+	Vector *maxs = ((CStuckEnt *)m_pMove)->m_coll.vfunc2();
+	float dx = maxs->x - mins->x;
+	float dy = maxs->y - mins->y;
+	float rA = (float)sqrt(dx * dx + dy * dy) * 0.5f;
+	const Vector &midA = SumY3(*maxs, *mins) * 0.5f;
+	Vector *c = ((CStuckEnt *)m_pMove)->vfunc217();
+	posA.x = midA.x + c->x;
+	posA.y = midA.y + c->y;
+
+	mins = pB->m_coll.vfunc1();
+	maxs = pB->m_coll.vfunc2();
+	dx = maxs->x - mins->x;
+	dy = maxs->y - mins->y;
+	float rB = (float)sqrt(dx * dx + dy * dy) * 0.5f;
+	const Vector &midB = (*maxs + *mins) * 0.5f;
+	c = pB->vfunc217();
+	posB.x = midB.x + c->x;
+	posB.y = midB.y + c->y;
+
+	CTraceFilterSimpleTwoEnt filter(m_pMove, pEnt, 0);
+	CGameTrace tr;
+	CGameMovementUnit *pThis = (CGameMovementUnit *)this;
+
+	dx = posA.x - posB.x;
+	dy = posA.y - posB.y;
+	float yaw = 0.0f;
+	if (dx * dx + dy * dy > 1e-12f)
+		yaw = (float)atan2(dx, dy);
+
+	bool bFirst = true;
+	for (int pass = 0; pass < 2; pass++) {
+		float fRadius = rB + rA + 1.0f;
+		for (; fRadius < 150.0f; fRadius += 32.0f) {
+			for (float fz = 0.0f; fz < 100.0f; fz += 25.0f) {
+				Vector pos;
+				float fa = 0.0f;
+				float ang = yaw;
+				for (; fa < 6.283185307179586; ang += 0.7853981633974483, fa += 0.7853981633974483) {
+					pos.x = cos(ang);
+					pos.y = sin(ang);
+					pos.x *= fRadius;
+					pos.y *= fRadius;
+					pos.x += posA.x;
+					pos.y += posA.y;
+					pos.z = fz + ((CMovePlayerView *)m_pPlayer)->m_vecOrigin.z;
+					if (bFirst)
+						TraceHullInl(&((CMovePlayerView *)m_pPlayer)->m_vecOrigin.x, &pos.x, pThis->sub_1011e310(), pThis->sub_1011e350(), &filter, &tr);
+					else
+						TraceHullInl(&pos.x, &pos.x, pThis->sub_1011e310(), pThis->sub_1011e350(), &filter, &tr);
+					if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid)
+						continue;
+					I3POD t = *(I3POD *)&pos; *(I3POD *)&((CMovePlayerView *)m_pPlayer)->m_vecOrigin = t;
+					return;
+				}
+			}
+		}
+		bFirst = false;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124ba0 size=0x14f
 #include "CTraceFilterNoCharacterCollide.h"
 #include "CGameMovement.h"
