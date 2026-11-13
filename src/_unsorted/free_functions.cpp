@@ -282220,6 +282220,181 @@ CBaseEntity *CWeaponMelee::sub_1040f550(const Vector *pOrigin, const Vector *pDi
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040f940 size=0x816
+class Vector;
+__forceinline void VectorSubtract(const Vector &a, const Vector &b, Vector &c);
+#include "Vector.h"
+#include "CEntityVSlots.h"
+#include "CGrabController.h"
+#include "CUnknown1040cb60.h"
+#include "Vector.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimpleTwoEnt.h"
+#include "CCollisionProperty.h"
+#include "CUnknown10738960.h"
+#include "CUnknown1003ff80.h"
+#include <math.h>
+
+float sub_1013d600(float next, float cur);
+void sub_10139610(const Vector *ang, Vector *fwd, Vector *right, Vector *up);
+void sub_10139b90(const Vector *angles, float *matrix);
+void sub_101381b0(const float *in, const float *matrix, Vector *out);
+void sub_10410500(CEntityVSlots *pPlayer, float *matrix);
+bool sub_10410490(CEntityVSlots *pEntity, CEntityVSlots *pPlayer);
+Vector *sub_10138580(Vector *pOut, const Vector *pAngles, const float *matrix);
+Vector &sub_1032b960();
+void sub_10410370(const Vector &a, const Vector &b, float t, Vector &out);
+void sub_1013ca00(const Vector &P, const Vector &A, const Vector &B, Vector &nearest, float *t);
+void sub_10142aa0(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float flDuration);
+
+#define V1(a) virtual void a();
+#define V10(p) V1(p##0) V1(p##1) V1(p##2) V1(p##3) V1(p##4) V1(p##5) V1(p##6) V1(p##7) V1(p##8) V1(p##9)
+struct PhysObjV { V10(a) V10(b) V10(c) V10(d) V1(e0) V1(e1) V1(e2) V1(e3) V1(e4) V1(e5) V1(e6) V1(e7) V1(e8) virtual const void *GetCollide(); };
+struct PhysCollideV { V10(a) V1(b0) V1(b1) V1(b2) V1(b3) V1(b4) V1(b5) V1(b6) virtual Vector CollideGetExtent(const void *pCollide, const Vector &collideOrigin, const Vector &collideAngles, const Vector &direction); };
+extern PhysCollideV *g_1072393c;
+struct EngineTraceV { V1(a0) V1(a1) V1(a2) V1(a3) virtual void TraceRay(const Ray_t &ray, unsigned int fMask, void *pTraceFilter, void *pTrace); };
+extern EngineTraceV *g_1070b254;
+extern CFoo1005f190 g_1094aac0;
+extern Vector g_1070d1b0;
+extern float g_1070d9d0[];
+struct EntListV { CEntityVSlots *sub_100290c0(const void *h); };
+extern EntListV *g_10566458;
+
+struct CollPropV
+{
+	virtual void v0();
+	virtual const Vector *OBBMins();
+	virtual const Vector *OBBMaxs();
+	Vector m_vecMins;
+	Vector m_vecMaxs;
+	void sub_100dcd90(const Vector &mins, const Vector &maxs, Vector *pOutMins, Vector *pOutMaxs);
+	void sub_104103c0(const Vector &in, Vector *pOut);
+	void WorldSpaceAABB(Vector *pWorldMins, Vector *pWorldMaxs) { sub_100dcd90(m_vecMins, m_vecMaxs, pWorldMins, pWorldMaxs); }
+	__forceinline const Vector &OBBCenter()
+	{
+		Vector &vecResult = sub_1032b960();
+		sub_10410370(m_vecMins, m_vecMaxs, 0.5f, vecResult);
+		return vecResult;
+	}
+	__forceinline const Vector &WorldSpaceCenter()
+	{
+		Vector &vecResult = sub_1032b960();
+		sub_104103c0(OBBCenter(), &vecResult);
+		return vecResult;
+	}
+};
+
+struct TraceV { char m_pad[0x2c]; float fraction; char m_pad2[0x54 - 0x30]; };
+
+struct CGrabV : CGrabController
+{
+	CEntityVSlots *GetAttached() { return g_10566458->sub_100290c0(&m_h14c); }
+	float ComputeError() { return ((CUnknown1040cb60 *)this)->sub_1040c080(); }
+	void SetTargetPosition(const Vector &target, const Vector &targetOrientation) { ((CUnknown1040cb60 *)this)->sub_1040bfc0(&target.x, &targetOrientation.x); }
+};
+
+inline vec_t DotR(const Vector &a, const Vector &b) { return a.x * b.x + (a.y * b.y + a.z * b.z); }
+#define PHYS(e) (*(PhysObjV **)((char *)(e) + 0x36c))
+#define COLL(e) ((CollPropV *)((char *)(e) + 0x270))
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+
+// TARGET: CGrabController::sub_1040f940
+bool CGrabController::sub_1040f940(CEntityVSlots *pPlayer, float flError)
+{
+	CEntityVSlots *pEntity = ((CGrabV *)this)->GetAttached();
+	if (!pEntity || ((CGrabV *)this)->ComputeError() > flError || pPlayer->slot209() == pEntity || !PHYS(pEntity))
+	{
+		return false;
+	}
+
+	Vector forward, right, up;
+	Vector playerAngles = *pPlayer->slot194();
+	float pitch = sub_1013d600(playerAngles.x, 0);
+	playerAngles.x = clamp(pitch, -75, 75);
+	sub_10139610(&playerAngles, &forward, &right, &up);
+
+	if (0) { Vector q = -right; }
+	if (0) { Vector q = -right; }
+	if (0) { Vector q = -right; }
+	Vector radial = g_1072393c->CollideGetExtent(PHYS(pEntity)->GetCollide(), g_1070d1b0, *pEntity->slot219(), -forward);
+	Vector player2d = *COLL(pPlayer)->OBBMaxs();
+	float playerRadius = player2d.Length2D();
+	float radius = playerRadius + fabs(DotR(forward, radial));
+
+	float distance = 24 + (radius * 2.0f);
+
+	Vector start = pPlayer->slot389(*pPlayer->slot220());
+	Vector end = start + (forward * distance);
+
+	TraceV tr;
+	((CUnknown1003ff80 *)&tr)->sub_1003ff80();
+	CTraceFilterSimpleTwoEnt traceFilter(pPlayer, pEntity, 0);
+	Ray_t ray;
+	ray.Init(start, end);
+	g_1070b254->TraceRay(ray, 0x400b, &traceFilter, &tr);
+
+	if (tr.fraction < 0.5)
+	{
+		end = start + forward * (radius * 0.5f);
+	}
+	else if (tr.fraction <= 1.0f)
+	{
+		end = start + forward * (distance - radius);
+	}
+	Vector playerMins, playerMaxs, nearest;
+	COLL(pPlayer)->WorldSpaceAABB(&playerMins, &playerMaxs);
+	Vector playerLine = COLL(pPlayer)->WorldSpaceCenter();
+	sub_1013ca00(end, playerLine + Vector(0, 0, playerMins.z), playerLine + Vector(0, 0, playerMaxs.z), nearest, 0);
+
+	Vector delta = end - nearest;
+	float len = VectorNormalize(delta);
+	if (len < radius)
+	{
+		end = nearest + radius * delta;
+	}
+
+	if (g_1094aac0.sub_1005f190())
+	{
+		sub_10142aa0(end, Vector(-2, -2, -2), Vector(2, 2, 2), 0, 255, 0, true, 0);
+
+		sub_10142aa0(*((CGrabV *)this)->GetAttached()->slot215(),
+			Vector(-radius, -radius, -radius),
+			Vector(radius, radius, radius),
+			255, 0, 0,
+			true,
+			0.0f);
+	}
+
+	Vector angles;
+	sub_1040c500(&angles, (const Vector *)m_v160, pPlayer);
+
+	if (sub_10410490(pEntity, pPlayer))
+	{
+		float tmp[12];
+		sub_10410500(pPlayer, tmp);
+		Vector r;
+		angles = *sub_10138580(&r, (const Vector *)g_1070d9d0, tmp);
+	}
+
+	if (m_b15c)
+	{
+		float tmp[12];
+		sub_10410500(pPlayer, tmp);
+		Vector r;
+		angles = *sub_10138580(&r, (const Vector *)m_v150, tmp);
+	}
+
+	float attachedToWorld[12];
+	Vector offset;
+	sub_10139b90(&angles, attachedToWorld);
+	sub_101381b0(m_v16c, attachedToWorld, &offset);
+
+	((CGrabV *)this)->SetTargetPosition(end - offset, angles);
+
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10410370 size=0x39
 // TARGET: sub_10410370
 void sub_10410370(const float *a, const float *b, float t, float *out)
