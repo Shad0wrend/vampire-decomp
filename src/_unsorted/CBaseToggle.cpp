@@ -32,6 +32,20 @@ datamap_t * CBaseToggle::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0e20 size=0x34
+#include "CBaseEntity.h"
+#include "COutputEvent.h"
+#include "ehandle.h"
+#include "Vector.h"
+#define m_i4a0 m_i4a0; COutputEvent m_Out4a4; COutputEvent m_Out4bc; char m_pad04d4[0x53c - 0x4d4]; EHANDLE m_hActivator53c
+#include "CBaseToggle.h"
+#undef m_i4a0
+
+CBaseToggle::CBaseToggle() : CBaseEntity(0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0e70 size=0x36
 #include "CBaseToggle.h"
 
