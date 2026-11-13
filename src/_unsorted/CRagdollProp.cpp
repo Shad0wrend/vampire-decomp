@@ -569,6 +569,103 @@ void CRagdollProp::vfunc181(const float *pPosition, const float *pAngles, const 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155fb0 size=0x2e8
+#include <math.h>
+#include "CRagdollProp.h"
+#include "CCollisionProperty.h"
+#include "CUnknown100dd990.h"
+#include "CBaseEntity_ext.h"
+#include "matrix3x4_t.h"
+#include "QAngle.h"
+
+struct CRagdollPropUnit : CRagdollProp
+{
+	char m_padUnit[0xa08 - 0x75c];
+	int m_BoneIdx[30];	// 0xa08
+	Vector m_ragPos[30];	// 0xa80
+	QAngle m_ragAngles[30];	// 0xbe8
+	int m_nd50;
+	int m_lastUpdateTickCount;	// 0xd54
+	char m_allAsleep;	// 0xd58
+	char m_padd59[0xd68 - 0xd59];
+	Vector m_ragdollMins[30];	// 0xd68
+	Vector m_ragdollMaxs[30];	// 0xed0
+
+	void sub_1009edc0(const Vector &mins, const Vector &maxs);
+};
+
+struct CRagdollBoneAccessor { int m_n0; matrix3x4_t *m_pBones; };
+struct CCollOriginView { virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual const Vector *s8(); };
+
+void sub_1019cae0(void *pRagdoll, CRagdollBoneAccessor *pAcc, int index);
+void sub_10137ed0(const matrix3x4_t *pMatrix, float *pAngles);
+void sub_10138720(const matrix3x4_t *pMatrix, int n, float *pOrigin);
+void sub_101cd940(CBaseEntity *pEnt);
+char sub_1019cd10(void *pRagdoll);
+void sub_1013c0e0(const matrix3x4_t *pMatrix, const float *pMins, const float *pMaxs, float *pOutMins, float *pOutMaxs);
+
+inline void TransformAABB(const matrix3x4_t &m, const Vector &mins, const Vector &maxs, Vector &outMins, Vector &outMaxs)
+{
+	sub_1013c0e0(&m, &mins.x, &maxs.x, &outMins.x, &outMaxs.x);
+}
+
+struct CBoneAccessorX { int m_n0; matrix3x4_t *m_pBones; int m_ReadableBones; int m_WritableBones; CBoneAccessorX(matrix3x4_t *p) { m_n0 = 0; m_pBones = p; } };
+inline void MatrixAnglesX(const matrix3x4_t &m, QAngle &angles, Vector &pos)
+{
+	sub_10137ed0(&m, &angles.x);
+	sub_10138720(&m, 3, &pos.x);
+}
+void CRagdollProp::vfunc226(void *pPhysics)
+{
+	CRagdollPropUnit *p = (CRagdollPropUnit *)this;
+	if (p->m_lastUpdateTickCount == gpGlobals->m_n18)
+		return;
+	p->m_lastUpdateTickCount = gpGlobals->m_n18;
+	char *pChanged = &m_bChanged1b1;
+	*pChanged = 1;
+
+	matrix3x4_t boneToWorld[350];
+	QAngle angles;
+	int i;
+	for (i = 0; i < m_nBodies730; i++)
+	{
+		CBoneAccessorX boneaccessor(boneToWorld);
+		sub_1019cae0(&m_nBodies730, (CRagdollBoneAccessor *)&boneaccessor, i);
+		Vector vNewPos;
+		MatrixAnglesX(boneToWorld[p->m_BoneIdx[i]], angles, vNewPos);
+		p->m_ragPos[i] = vNewPos;
+		p->m_ragAngles[i] = angles;
+		if (fabs(vNewPos.x) > 10000.0 || fabs(vNewPos.y) > 10000.0 || fabs(vNewPos.z) > 10000.0)
+			sub_101cd940(this);
+	}
+	p->m_allAsleep = sub_1019cd10(&m_nBodies730);
+
+	Vector vecFullMins, vecFullMaxs;
+	vecFullMins = p->m_ragPos[0];
+	vecFullMaxs = p->m_ragPos[0];
+	for (i = 0; i < m_nBodies730; i++)
+	{
+		Vector mins, maxs;
+		TransformAABB(boneToWorld[p->m_BoneIdx[i]], p->m_ragdollMins[i], p->m_ragdollMaxs[i], mins, maxs);
+		for (int j = 0; j < 3; j++)
+		{
+			if (mins[j] < vecFullMins[j])
+				vecFullMins[j] = mins[j];
+			if (maxs[j] > vecFullMaxs[j])
+				vecFullMaxs[j] = maxs[j];
+		}
+	}
+	vfunc216(&p->m_ragPos[0].x);
+	CCollisionProperty *pColl = (CCollisionProperty *)((char *)this + 0x270);
+	const Vector &vecOrigin = *((CCollOriginView *)pColl)->s8();
+	pColl->AddSolidFlags(0x80);
+	((CUnknown100dd990 *)pColl)->sub_100dd990(6, 0, 0);
+	p->sub_1009edc0(vecFullMins - vecOrigin, vecFullMaxs - vecOrigin);
+	pColl->sub_100dda20();
+	sub_100a53d0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156360 size=0x40
 #include "vampire.h"
 #include "CRagdollProp.h"
