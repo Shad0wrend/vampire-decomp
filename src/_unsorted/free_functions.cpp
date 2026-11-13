@@ -174673,6 +174673,67 @@ int CUnknown102308f0::sub_102308f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230910 size=0x2fb
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include <stdio.h>
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "CVStatInfoList_t.h"
+#include "StatOwner2.h"
+#include "CUnknown10202ba0.h"
+
+struct CVStatRef_10230910 { int m_nKind; int m_nStat; };
+struct CPlayerObject_10230910 { char pad[0x1adc]; int m_a1adc[17]; int m_a1b20[17]; };
+extern CVStatInfoList_t g_1074e098;
+extern StatOwner2 g_1074e968;
+int sub_10202780(int kind);
+bool sub_100d94a0(CBaseCombatCharacter *pChar, int stat);
+bool sub_100d9610(CBaseCombatCharacter *pChar, int stat, int amount, float f);
+void sub_101cecf0(void *pOwner, int msg, const char *pszText);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : ""; }
+
+inline const char *Title(int n) { return STRINGR(g_1074e098.sub_10200370(n)->m_pszTitle); }
+inline const char *STRINGR2(const char *s) { return s ? s : ""; }
+inline int GetVal(CVStatList_t *p, int n) { return p->sub_102012d0(n); }
+// TARGET: sub_10230910
+void sub_10230910(CVStatRef_10230910 *pRef, CBaseCombatCharacter *pChar, int amount, bool bFlag)
+{
+	if (!pRef || !pChar || pRef->m_nStat == -1 || pRef->m_nKind < 0 || pRef->m_nKind > 3)
+		return;
+	int type = sub_10202780(pRef->m_nKind);
+	int stat = pRef->m_nStat;
+	if (amount > 0) {
+		CVStatListSet::Of(pChar)->Find(type)->sub_10200fc0(stat, amount);
+		return;
+	}
+	if (amount >= 0)
+		return;
+	if (pRef->m_nKind == 3 && bFlag && sub_100d94a0(pChar, stat))
+		return;
+	if (pChar->vfunc296(stat) && sub_100d9610(pChar, stat, amount, 1.0f))
+		return;
+	CVStatListSet::Of(pChar)->Find(type)->sub_10201100(stat, -amount);
+	CPlayerObject_10230910 *pOwner = (CPlayerObject_10230910 *)pChar->m_pA8;
+	if (!pOwner)
+		return;
+	pOwner->m_a1b20[stat] = 0;
+	pOwner->m_a1adc[stat] = 0;
+	if (pRef->m_nKind == 2 || pRef->m_nKind == 3) {
+		static int s_nFeedback = g_1074e968.sub_10203020("UI_Discipline_Feedback");
+		char buf[0x80];
+		const char *pszFormat = ((CUnknown10202ba0 *)g_1074e968.sub_10203190(s_nFeedback))->sub_10202a10(0);
+		CVStatList_t *pList;
+		int nStat = pRef->m_nStat;
+		pList = CVStatListSet::Of(pChar)->Find(type);
+		sprintf(buf, pszFormat, Title(pRef->m_nStat), pList->sub_102012d0(nStat));
+		sub_101cecf0(pOwner, 0x3a, buf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230cd0 size=0x19
 struct CUnknown10230cd0 { void * sub_10230cd0(int); };
 void * CUnknown10230cd0::sub_10230cd0(int a0)
