@@ -164,3 +164,29 @@ Measured on real vtmb functions (hand-120..124, reloadstudy). Each line names th
   0x10427df0, 0x1025b930); source parentheses never matter (0x101810f0). The lever left is a statement VC6 deletes
   after register allocation (0x101e56e0: 3-4 real stores after `int nTotal = 0;` flip all four loops).
   Test candidates with scratchpad tool reload/rl.py (same code hash, order flipped) before judging.
+
+## Corrections from rule pass 2 (best score 21-100, 65 functions, 2026-11-13, 8 matched)
+- Weights are counted before VC6 simplifies the code, so source that VC6 later deletes still moves the ranking:
+  - a redundant compare `x != k && (x != k || x == -1)` adds counted reads to a call result and compiles to the same
+    code (0x1038e340); `x == x`, `x - x`, `c ? x : x` fold too early and count nothing;
+  - a counter `i++` written once in each if/else arm (tail-merged later) adds reads (0x101b3990);
+  - one loop with a conditional reload (`if (bit == 0) { bits = *pw; bit = 1; pw++; }`), which VC6 threads into
+    nested loops later, keeps the game's ranking; nested loops in the source over-weight the inner loop by R5
+    (0x100c80d0);
+  - a pointer local assigned the same constant separately in both branches gains a definition (0x101f39d0).
+- Reads that do not count: reads that propagate into a constant (R1), reads that CSE away (R4), redundant null
+  tests of an already-tested pointer, and extra reads of a parameter (0x10182260, 0x101582a0: parameter reads look
+  merged before counting).
+- An extra read counts only inside the region where the registers split (0x10182260).
+- `test r1,r2` operand order follows the definition order of the two values (0x100c80d0).
+- With esi/edi held by rep movs/stos the heavier value took ebp, not ebx (0x101582a0).
+- A byte constant 1 held in bl is not an R7 candidate (0x1026ec30); a byte value may outrank a pointer with more
+  reads for a callee-saved register (0x10174580, R6 over R1?).
+- R10 (ebp for a parameter) fails when VC6 shrink-wraps ebp around an inlined loop (0x10344f80) or CSEs an address
+  the game recomputes (0x101b5870).
+- Check the callee's `ret N` and return type before trusting a register wall (0x101a7600: slot 482 is `ret 8`).
+- Not weight-driven: the 0x103d93b0 stack slot swap (+10 reads do not move it).
+- Probe for N candidates on N-1 callee-saved registers: delete one at a time and see who takes its register.
+- Beyond the rules: the inline budget is used up by later code (0x103a8990: a hand-written ScopeTrace in a later
+  case let an earlier CUtlVector Purge inline); x87 tails follow a shared result local (`r = expr; return r;`,
+  0x10182160) and per-component `+=` (0x101269e0).
