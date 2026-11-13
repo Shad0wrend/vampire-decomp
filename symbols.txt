@@ -7160,6 +7160,7 @@
 0x1000a51a func   ?sub_100420a0@UtlHash8@@QAEPAV1@HHHP6A_NPAX0@ZP6AI0@Z@Z UtlHash8::sub_100420a0
 0x1000a51f func   ?sub_10398630@CUnknown10398630@@QAEXHH@Z CUnknown10398630::sub_10398630
 0x1000a524 func   ?sub_103388e0@@YAHXZ sub_103388e0
+0x1000a529 func   ?vfunc432@CAI_BaseNPC@@UAEXD@Z CAI_BaseNPC::vfunc432
 0x1000a52e func   ?sub_1027ee90@@YAXXZ sub_1027ee90
 0x1000a533 func   ?sub_100617a0@@YAXPAVCRecipientFilter@@MPBVVector@@1D@Z sub_100617a0
 0x1000a538 func   ?sub_1036cab0@CChangBrosUnit@@QAE_NXZ CChangBrosUnit::sub_1036cab0

@@ -2158,6 +2158,100 @@ void CAI_BaseNPC::vfunc477()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026f110 size=0x2f4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "ehandle.h"
+
+extern void (CVProfile::*g_109f3660)(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted);	// the import slot of CVProfile::EnterScope
+
+struct CCycleCount {
+	unsigned __int64 m_Int64;
+	CCycleCount() { m_Int64 = 0; }
+	void Sample() {
+		unsigned long *p = (unsigned long *)this;
+		__asm {
+			mov ecx, p
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void Start() { Sample(); }
+	void End() {
+		CCycleCount now;
+		now.Sample();
+		m_Int64 = now.m_Int64 - m_Int64;
+	}
+};
+
+struct CAIInner1070af4cB { virtual bool vfunc0(); virtual bool vfunc1(); char m_pad[0x2c - 4]; int m_i2c; };
+struct CAIInner1070af4c { int m_i0; CAIInner1070af4cB *m_p4; };
+struct CAINav5d34 { char m_pad[0x34]; char m_b34; };
+
+extern CCycleCount g_109203e8;
+extern CCycleCount g_1090fe68;
+extern CAIInner1070af4c *g_1070af4c;
+
+struct CRunAIView : CAI_BaseNPC {
+	char m_pad0004[0x26c - 4];
+	const char *m_name26c;
+	char m_pad0270[0xfe8 - 0x270];
+	EHANDLE m_hfe8;
+	char m_pad0fec[0x1b4c - 0xfec];
+	char m_b1b4c;
+	char m_pad1b4d[0x5ca4 - 0x1b4d];
+	char m_b5ca4;
+	char m_pad5ca5[0x5d34 - 0x5ca5];
+	CAINav5d34 *m_p5d34;
+	void sub_1026ab50();
+	void sub_102817c0(char b);
+};
+
+// TARGET: CAI_BaseNPC::vfunc432
+void CAI_BaseNPC::vfunc432(char bSkip)
+{
+	CRunAIView *self = (CRunAIView *)this;
+	ScopeTrace trace("CAI_BaseNPC::RunAI", self ? (self->m_name26c ? self->m_name26c : g_106b8540) : g_105387dc);
+	g_109f3648->EnterScope("CAI_BaseNPC_RunAI", 0, "Unaccounted", false);
+	g_109203e8.Start();
+	self->m_b5ca4 = 0;
+	CAIInner1070af4c *g = g_1070af4c;
+	if (!g->m_p4->vfunc1() && g->m_p4->m_i2c != 0 && self->m_p5d34->m_b34 != 0)
+		((CBaseEntity *)this)->sub_1009f3c0("NPC w/no reachable nodes!", 5);
+	if (!bSkip && !self->m_hfe8.Get()) {
+		(g_109f3648->*g_109f3660)("CAI_BaseNPC_RunAI_GatherConditions", 0, "Unaccounted", false);
+		vfunc433();
+		if (!self->m_b5ca4)
+			self->m_b5ca4 = 1;
+		g_109f3648->ExitScope();
+	}
+	self->sub_1026ab50();
+	g_1090fe68.Start();
+	vfunc434();
+	g_1090fe68.End();
+	self->sub_102817c0(bSkip);
+	if (!bSkip) {
+		sub_10269b50(0x4c);
+		sub_10269b50(0x4d);
+		sub_10269b50(0x38);
+	}
+	self->m_b1b4c = 1;
+	g_109203e8.End();
+	g_109f3648->ExitScopeInlined();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026f590 size=0x96
 #include "CAI_BaseNPC.h"
 
