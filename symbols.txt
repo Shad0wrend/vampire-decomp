@@ -3851,6 +3851,7 @@
 0x100060be func   ?vfunc494@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc494
 0x100060c3 func   ?sub_10249470@CUnknown10249470@@QAEHH@Z CUnknown10249470::sub_10249470
 0x100060c8 func   ?vfunc0@CRopeDelegate@@UAEHHHH@Z CRopeDelegate::vfunc0
+0x100060cd func   ?sub_1016a030@CBasePlayer@@QAEPAVCBaseEntity@@IH@Z CBasePlayer::sub_1016a030
 0x100060d2 func   ?sub_100281c0@@YAHXZ sub_100281c0
 0x100060d7 func   ?sub_102dcf70@CUnknown102dcf70@@QAE_NPAVCKeyValuesX@@PAHPAUCUnknown102dcf70Entry@@@Z CUnknown102dcf70::sub_102dcf70
 0x100060dc func   ?sub_101e1610@CStatusFlagList@@QAEIH@Z CStatusFlagList::sub_101e1610

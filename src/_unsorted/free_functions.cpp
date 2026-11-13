@@ -97319,6 +97319,111 @@ bool sub_10168e60(void *unused, EntX *ent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016a030 size=0x4ca
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "UTIL_Trace.h"
+#include "QAngle.h"
+#include <math.h>
+
+void sub_10139550(const QAngle &angles, Vector *pForward);
+void sub_10139500(const Vector *pStart, float flScale, const Vector *pDir, Vector *pOut);
+
+struct RayBoxView
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_flRadius;
+
+	__forceinline void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs)
+	{
+		VectorSubtract(end, start, m_Delta);
+		m_IsSwept = (m_Delta.z * m_Delta.z + (m_Delta.x * m_Delta.x + m_Delta.y * m_Delta.y)) != 0.0f;
+		VectorSubtract(maxs, mins, m_Extents);
+		m_Extents *= 0.5f;
+		m_IsRay = (m_Extents.x * m_Extents.x + (m_Extents.y * m_Extents.y + m_Extents.z * m_Extents.z) < 1e-6);
+		m_b32 = 0;
+		m_b33 = 0;
+		m_flRadius = 0;
+		m_StartOffset.x = mins[0] + maxs.x; m_StartOffset.y = mins.y + maxs.y; m_StartOffset.z = mins.z + maxs.z;
+		m_StartOffset *= 0.5f;
+		VectorAdd(start, m_StartOffset, m_Start);
+		m_StartOffset *= -1.0f;
+		if (!m_IsRay)
+		{
+			float fl = (float)sqrt(m_Extents.x * m_Extents.x + m_Extents.y * m_Extents.y);
+			m_flRadius = fl;
+			if (m_flRadius > 1e-6)
+				m_b33 = 1;
+		}
+	}
+};
+
+__forceinline void TraceHullInlineRay(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr)
+{
+	RayBoxView ray;
+	ray.Init(vecAbsStart, vecAbsEnd, hullMin, hullMax);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4((Ray_t *)&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+CBaseEntity *CBasePlayer::sub_1016a030(unsigned int mask, int unused)
+{
+	Vector dir;
+	sub_10139550(*(QAngle *)vfunc221(), &dir);
+	dir.z = 0;
+	VectorNormalize(dir);
+	Vector start = *(Vector *)vfunc220();
+	start.z += 18.0f;
+	Vector delta;
+	float s = vfunc466(); delta.x = dir.x * s; delta.y = dir.y * s; delta.z = dir.z * s;
+	Vector end;
+	VectorAdd(start, delta, end);
+	CGameTrace tr;
+	{
+		int group = m_nCollisionGroup368;
+		const Vector *mins = (const Vector *)m_sub270.vfunc1();
+		const Vector *maxs = (const Vector *)m_sub270.vfunc2();
+		UTIL_TraceHull_DebugCall(start, end, *mins, *maxs, mask, this, group, &tr, 1, 0);
+	}
+	if (tr.m_fraction != 1.0f)
+	{
+		Vector &normal = *(Vector *)tr.m_planeNormal;
+		if (!(normal.Dot(dir) > -0.5f))
+		{
+			sub_10139500((Vector *)vfunc220(), tr.m_fraction, &delta, &start);
+			sub_10139500(&start, (normal.Dot(start) - tr.m_planeDist) * -2.0f, &normal, &start);
+			end = start;
+			end.z += vfunc465();
+			{
+				int group = m_nCollisionGroup368;
+				const Vector *mins = (const Vector *)m_sub270.vfunc1();
+				const Vector *maxs = (const Vector *)m_sub270.vfunc2();
+				TraceHullInlineRay(start, end, *mins, *maxs, mask, this, group, &tr);
+			}
+			{
+				float flMax = vfunc465() * tr.m_fractionleftsolid;
+				if (tr.m_fractionleftsolid != 1.0f && !(vfunc464() > flMax))
+				{
+					CBaseEntity *pEnt = tr.m_pEnt;
+					return vfunc166(pEnt) ? 0 : pEnt;
+				}
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a660 size=0x191
 #include "CEntityVSlots.h"
 #include "TempVector.h"
