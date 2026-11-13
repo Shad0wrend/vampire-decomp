@@ -355,6 +355,43 @@ void CNPC_VZombie::vfunc141(CUnknown101c2a50 *pInfo, int b, char *pTrace)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e0540 size=0x77
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "ScopeTrace.h"
+#include "CNPC_VZombie.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+extern CUnknown1073dc28 g_1073dc28;
+
+inline const char *STRINGR_103e0540(const string_t &s)
+{
+	return s.pszValue ? s.pszValue : g_106b8540;
+}
+
+struct CNPC_VZombieUnit : CNPC_VZombie {
+	void sub_10298ce0(const char *pszModel);
+};
+
+void CNPC_VZombie::vfunc105(const char *pszModel)
+{
+	((CNPC_VZombieUnit *)this)->sub_10298ce0(pszModel);
+	if (((CBaseCombatCharacter *)this)->sub_10336920()) {
+		m_iszVSoundGroup = string_t("Zombie_Male"[0] ? "Zombie_Male" : 0);
+		m_nVSoundTableIdx = 2;
+		m_nVSoundGroup = g_1073dc28.sub_101f55a0(this, STRINGR_103e0540(m_iszVSoundGroup), 0);
+	} else {
+		m_iszVSoundGroup = string_t("Zombie_Female"[0] ? "Zombie_Female" : 0);
+		m_nVSoundTableIdx = 2;
+		m_nVSoundGroup = g_1073dc28.sub_101f55a0(this, STRINGR_103e0540(m_iszVSoundGroup), 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e0bc0 size=0xca
 #include "CNPC_VZombie.h"
 #include "CBaseCombatCharacter.h"

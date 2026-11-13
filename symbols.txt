@@ -4305,6 +4305,7 @@
 0x10006992 func   ?sub_102d1220@CUnknown102d1220@@QAE_NHPBD@Z CUnknown102d1220::sub_102d1220
 0x10006997 func   ?sub_1016e500@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1016e500
 0x1000699c func   ?sub_1003f070@CBaseEntity@@QAEXPAUCGameTrace@@PAVVector@@@Z CBaseEntity::sub_1003f070
+0x100069a1 func   ?vfunc105@CNPC_VZombie@@UAEXPBD@Z CNPC_VZombie::vfunc105
 0x100069a6 func   ?sub_10146790@CUnknown10146790@@QAEXXZ CUnknown10146790::sub_10146790
 0x100069ab func   ?vfunc362@CWeaponLockpick@@UAEHXZ CWeaponLockpick::vfunc362
 0x100069b0 func   ?sub_10269df0@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_10269df0
