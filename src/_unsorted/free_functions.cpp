@@ -61657,6 +61657,97 @@ bool CUnk100e58b0::sub_100e58b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e58e0 size=0x2cc
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CBaseEntity.h"
+#include "CReliableSingleUserRecipientFilter.h"
+#include "engineserver.h"
+extern int g_1072608c;
+void sub_100dfaf0(int, const char *, ...);
+struct CUnknown102c0470 { void sub_102c0470(const char *, unsigned char); };
+
+namespace block_100e58e0 {
+struct CDialogUnit : CDialog
+{
+	void sub_100e1220(unsigned char value);
+	void sub_100e13d0(unsigned char value);
+	unsigned char sub_100e58b0();
+};
+void CDialogUnit::sub_100e1220(unsigned char value)
+{
+	ScopeTrace trace("CDialog::ShowHistoryWindow", g_106b8540);
+	CGlobalEntityList_Ent *pPlayer = EHandle_Get(m_hNPC);
+	CReliableSingleUserRecipientFilter filter(pPlayer);
+	engine->vfunc65(&filter, g_1072608c);
+	engine->vfunc67(6);
+	engine->vfunc67(value);
+	engine->vfunc66();
+}
+void CDialogUnit::sub_100e13d0(unsigned char value)
+{
+	ScopeTrace trace("CDialog::ShowPlayerChoices", g_106b8540);
+	CGlobalEntityList_Ent *pPlayer = EHandle_Get(m_hNPC);
+	CReliableSingleUserRecipientFilter filter(pPlayer);
+	engine->vfunc65(&filter, g_1072608c);
+	engine->vfunc67(7);
+	engine->vfunc67(value);
+	engine->vfunc66();
+}
+unsigned char CDialogUnit::sub_100e58b0()
+{
+	if (m_bNoReply)
+		return true;
+	return m_nChoices == 0;
+}
+}
+using namespace block_100e58e0;
+
+void CDialog::sub_100e58e0(char *pPacket)
+{
+	CDialogUnit *self = (CDialogUnit *)this;
+	ScopeTrace trace("CDialog::message_send", g_106b8540, g_106b8540);
+	CReliableSingleUserRecipientFilter filter(EHandle_Get(m_hNPC));
+	engine->vfunc65(&filter, g_1072608c);
+	engine->vfunc67(0);
+	engine->vfunc67(m_nResponses);
+	engine->vfunc66();
+	sub_100dfaf0(1, "\n\n\t\tNPC Response: %s\n", pPacket);
+	sub_100e5d00(0, pPacket);
+	char *pSpeech = sub_100e1880(m_nChoices);
+	if (pSpeech) {
+		((CUnknown102c0470 *)EHandle_Get(m_hSpeaker))->sub_102c0470(pSpeech, self->sub_100e58b0());
+		self->sub_100e13d0(0);
+	} else {
+		self->sub_100e13d0(1);
+		self->sub_100e1220(1);
+		sub_100e0a40(0);
+	}
+	int i;
+	for (i = 0; i < m_nResponses; i++)
+		sub_100e5d00(i + 1, pPacket + 0x804 + i * 0x800);
+	engine->vfunc65(&filter, g_1072608c);
+	engine->vfunc67(2);
+	for (i = 0; i < m_nResponses; i++)
+		engine->vfunc67(*(int *)(pPacket + 0x2804 + i * 4));
+	for (i = 0; i < m_nResponses; i++)
+		engine->vfunc68(*(int *)(pPacket + 0x2814 + i * 4));
+	engine->vfunc66();
+	engine->vfunc65(&filter, g_1072608c);
+	engine->vfunc67(3);
+	engine->vfunc66();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e5c70 size=0x6d
 #include "CDialog.h"
 

@@ -12923,6 +12923,7 @@
 0x10011cc0 func   ?sub_10187280@CPlayerMove@@QAEXPAVCBasePlayer@@@Z CPlayerMove::sub_10187280
 0x10011cc5 func   ?sub_1040be30@@YAHXZ sub_1040be30
 0x10011cca func   ?sub_10114aa0@CUnknown10114aa0@@QAEHXZ CUnknown10114aa0::sub_10114aa0
+0x10011ccf func   ?sub_100e58e0@CDialog@@QAEXPAD@Z CDialog::sub_100e58e0
 0x10011cd4 func   ?sub_10078bd0@@YIXPAH@Z sub_10078bd0
 0x10011cd9 func   ?vfunc67@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::vfunc67
 0x10011cde func   ?sub_101f3ba0@CVSoundFileFolder_t@@QAEXHHH@Z CVSoundFileFolder_t::sub_101f3ba0
