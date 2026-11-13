@@ -101747,6 +101747,128 @@ Vector CBasePlayer::sub_10176520(float flDelta)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10176930 size=0x647
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include "UTIL_Trace.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "CUnknown1003ff80.h"
+#include <math.h>
+
+struct CAimRules { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual char vfunc22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29(); virtual void v30(); virtual void v31(); virtual char vfunc32(void *pPlayer, void *pEdict); };
+extern CAimRules *g_1070ba0c;
+struct CAimEntObj { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void *vfunc4(); };
+struct CAimEdict { char m_pad[0x40]; CAimEntObj *m_pUnk40; char m_pad2[8]; char m_bFree4c; char m_pad3[0x78 - 0x4d]; };
+struct CAimEnt : CEntityVSlots { char m_pad[0x1fc - 4]; int m_n1fc; char m_pad2[0x2e0 - 0x200]; void *m_pEdict2e0; char m_pad3[0x3e0 - 0x2e4]; int m_n3e0; };
+struct CAimEntA8 { char m_pad[0xa8]; int m_na8; };
+struct ST3 { void sub_10037300(const char *a, const char *b, const char *c); ~ST3() { (*g_109f3680)--; } };
+struct CRayCtor1004f860 { void sub_1004f860(); };
+struct CAimPod3 { int a, b, c; };
+extern float g_1070d9d0[3];
+void sub_10139610(const Vector &ang, Vector *f, Vector *r, Vector *u);
+void sub_10139970(const Vector *in, Vector *out);
+
+inline CAimEnt *AimInstance(CAimEdict *pent)
+{
+	ST3 st;
+	st.sub_10037300("CBaseEntity::Instance", g_106b8540, g_106b8540);
+	return pent->m_pUnk40 ? (CAimEnt *)pent->m_pUnk40->vfunc4() : 0;
+}
+
+Vector CBasePlayer::sub_10176930(Vector &vecSrc, float flDist, float flDelta)
+{
+	CAimEdict *pEdict = (CAimEdict *)engine->vfunc38(1);
+	CGameTrace tr;
+	((CUnknown1003ff80 *)&tr)->sub_1003ff80();
+	if (!sub_101764d0()) {
+		m_b20A8 = 0;
+		return *(Vector *)g_1070d9d0;
+	}
+	Vector forward, right, up;
+	sub_10139610(m_vec206c + m_vec1EFC + *(Vector *)&m_f22A8, &forward, &right, &up);
+	Vector bestdir = forward;
+	float bestdot = flDelta;
+	CAimEnt *bestent = 0;
+	m_b20A8 = 0;
+	{
+		Vector vecEnd = vecSrc + forward * flDist;
+		Ray_t ray;
+		((CRayCtor1004f860 *)&ray)->sub_1004f860();
+		ray.sub_1004f7a0(&vecSrc.x, &vecEnd.x);
+		CTraceFilterSimple traceFilter(this, 0);
+		g_1070b254->vfunc4(&ray, 0x46004003, (CTraceFilterNoCharacterCollide *)&traceFilter, &tr);
+		if (g_10738960.sub_1005f190())
+			sub_10146570((const Vector *)&tr.m_startpos, (const Vector *)&tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+	}
+	CAimEnt *pHit = (CAimEnt *)tr.m_pEnt;
+	if (pHit && pHit->m_n1fc && (m_n03E0 == 3 || pHit->m_n3e0 != 3) && (m_n03E0 != 3 || pHit->m_n3e0 != 0)) {
+		if (((CBaseEntity *)pHit)->sub_100b3700() & 0x10000)
+			m_b20A8 = 1;
+		return Vector(0, 0, 0);
+	}
+	for (int i = 1; i < gpGlobals->m_nEdicts; i++, pEdict++) {
+		if (pEdict->m_bFree4c)
+			continue;
+		if (pEdict == (CAimEdict *)((CAimEnt *)this)->m_pEdict2e0)
+			continue;
+		if (!g_1070ba0c->vfunc32(this, pEdict))
+			continue;
+		CAimEnt *pEnt = AimInstance(pEdict);
+		if (!pEnt)
+			continue;
+		if (!(((CBaseEntity *)pEnt)->sub_100b3700() & 0x10000))
+			continue;
+		if (!pEnt->slot158())
+			continue;
+		if (!((m_n03E0 == 3 || pEnt->m_n3e0 != 3) && (m_n03E0 != 3 || pEnt->m_n3e0 != 0)))
+			continue;
+		if (((CEntityVSlots *)this)->slot404(pEnt) != 1 && !((CAimEntA8 *)pEnt)->m_na8 && !g_1070ba0c->vfunc22())
+			continue;
+		Vector tmp;
+		Vector center;
+		const CAimPod3 *pc = (CAimPod3 *)pEnt->slot197((int)&tmp, (int)&vecSrc, 1, 0);
+		int a = pc->a; int b = pc->b; int c = pc->c;
+		CAimPod3 *pd = (CAimPod3 *)&center; pd->c = c; pd->b = b; pd->a = a;
+		Vector dir;
+		dir = center - vecSrc;
+		VectorNormalize(dir);
+		float dot = DotProduct(forward, dir);
+		if (dot < 0.0f)
+			continue;
+		float size = (float)(fabs(DotProduct(up, dir)) * 0.5 + fabs(DotProduct(right, dir)));
+		size *= ((center - vecSrc).Length() / flDist * 0.2 + 1.0);
+		if (size > bestdot)
+			continue;
+		UTIL_TraceLine_Calls(vecSrc, center, 0x46004003, this, 0, &tr);
+		if (tr.m_fraction == 1.0 || ((CAimEnt *)tr.m_pEnt)->m_pEdict2e0 == pEdict) {
+			bestdot = size;
+			bestent = pEnt;
+			bestdir = dir;
+		}
+	}
+	if (bestent) {
+		Vector angles;
+		sub_10139970(&bestdir, &angles);
+		angles -= m_vec206c - m_vec1EFC;
+		if (((CBaseEntity *)bestent)->sub_100b3700() & 0x10000)
+			m_b20A8 = 1;
+		return angles;
+	}
+	return Vector(0, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177120 size=0x67
 #include "CBasePlayer.h"
 

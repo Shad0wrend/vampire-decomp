@@ -1503,6 +1503,7 @@
 0x10002f40 func   ?sub_1013c0e0@@YAXABUmatrix3x4_t@@ABVVector@@1AAV2@2@Z sub_1013c0e0
 0x10002f45 func   ?sub_102f37d0@CUnknown102f37d0@@QAEPAXHH@Z CUnknown102f37d0::sub_102f37d0
 0x10002f4a func   ?vfunc465@CNPC_Crow@@QAEXH@Z CNPC_Crow::vfunc465
+0x10002f4f func   ?sub_10176930@CBasePlayer@@QAE?AVVector@@AAV2@MM@Z CBasePlayer::sub_10176930
 0x10002f54 func   ?sub_1012f790@@YA_NHPBUSlot16@@@Z sub_1012f790
 0x10002f59 func   ?sub_10227da0@CLevelNames@@QAEHPAVCBaseCombatCharacter@@0@Z CLevelNames::sub_10227da0
 0x10002f5e func   ?vfunc113@CEnvMicrophone@@UAEXXZ CEnvMicrophone::vfunc113
