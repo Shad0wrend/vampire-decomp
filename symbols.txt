@@ -12136,6 +12136,7 @@
 0x10010c30 func   ?sub_100d8040@@YAXXZ sub_100d8040
 0x10010c35 func   ?sub_10010c35@CBaseKeyframedMover@@QAEXXZ CBaseKeyframedMover::sub_10010c35
 0x10010c3f func   ?sub_10344da0@@YG_NH@Z sub_10344da0
+0x10010c44 func   ?sub_100e37d0@CDialog@@QAEXXZ CDialog::sub_100e37d0
 0x10010c49 func   ?vfunc82@CFilterMultiple@@UAEPAUdatamap_t@@XZ CFilterMultiple::vfunc82
 0x10010c4e func   ?sub_10204550@@YAXH@Z sub_10204550
 0x10010c53 func   ?vfunc488@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc488

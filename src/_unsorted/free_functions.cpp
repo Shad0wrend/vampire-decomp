@@ -61225,6 +61225,206 @@ void CDialog::sub_100e34d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e37d0 size=0x842
+#include "utlrbtree.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include "FileSystemViews.h"
+#include "CEHandleGet.h"
+#include "CUnknown100eb310.h"
+#include "CUtlVector4100.h"
+#include <string.h>
+
+__declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+extern "C" __declspec(dllimport) char *Q_strcat(char *, const char *);
+__declspec(dllimport) char *Q_stristr(char *, const char *);
+#define g_109f388c Q_snprintf
+#define g_109f3864 Q_strcat
+#define g_109f386c Q_stristr
+void sub_100dfaf0(int level, const char *fmt, ...);
+void __cdecl sub_101d1070(char *pszOut, int nMax);
+const char *sub_101d3730(const char *, const char *);
+
+struct CFSv {
+	virtual int v0(const char *, const char *, int);
+	virtual void v1(int);
+	virtual void v2(void *, int, int);
+	virtual void v3(const char *, int, int);
+	virtual void v4(int, int, int);
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18();
+	virtual char v19(int);
+};
+#define FS ((CFSv *)g_1070b238)
+
+struct StrTV { const char *p; StrTV &operator=(const StrTV &); };
+struct CDumpEntV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual StrTV vfunc9(); };
+struct CDumpNameV { char pad[0x26c]; const char *m_pszName; const char *sub_1009f200(); char sub_10336920(); };
+
+struct CBlock4k
+{
+	int m_data[0x401];
+};
+void sub_100eb250(CBlock4k *dst, const CBlock4k *src);
+
+struct CDumpVecV
+{
+	CBlock4k *m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_Size;
+	CBlock4k *m_pElements;
+	void GrowVector(int num = 1)
+	{
+		if (m_Size + num > m_nAlloc)
+			((CUnknown100eb310 *)this)->sub_100eb310(m_Size - m_nAlloc + num);
+		m_Size += num;
+		m_pElements = m_pMemory;
+	}
+	int InsertBefore(int elem, const CBlock4k &src)
+	{
+		GrowVector();
+		((CUtlVector4100 *)this)->sub_100eb1e0(elem, 1);
+		sub_100eb250(&m_pMemory[elem], &src);
+		return elem;
+	}
+	int AddToTail(const CBlock4k &src) { return InsertBefore(m_Size, src); }
+};
+
+#pragma auto_inline(off)
+namespace block_100e37d0 {
+struct S100df010 { int a, b, c, d; };
+bool sub_100df010(S100df010 *p)
+{
+	return p->d == -1;
+}
+}
+#pragma auto_inline(on)
+using namespace block_100e37d0;
+
+inline const char *STRINGR(const char *s) { return s ? s : g_106b8540; }
+#define WRITE(b) FS->v3(b, strlen(b), hFile)
+
+void CDialog::sub_100e37d0()
+{
+	ScopeTrace trace("CDialog::dump_script_file", g_106b8540, g_106b8540);
+	char buf[0x800];
+	char tm[0x80];
+	char path[0x104];
+	((char *)this)[0x33ac] = 1;
+	strcpy(buf, sub_100e7310());
+	buf[strlen(buf) - 4] = 0;
+	g_109f388c(path, 0x104, "%s_script.txt", buf);
+	int hFile = FS->v0(path, "w+", 0);
+	if (!hFile)
+	{
+		sub_100dfaf0(3, "Could not open script output file %s\n", path);
+		return;
+	}
+	sub_101d1070(tm, 0x80);
+	g_109f388c(buf, 0x800, "This script file was generated on %s\n", tm);
+	WRITE(buf);
+	g_109f388c(buf, 0x800, "\nFACEPOSER_NPC : %s \n\n", STRINGR(((CDumpNameV *)EHandle_Get(m_hSpeaker))->m_pszName));
+	WRITE(buf);
+	g_109f388c(buf, 0x800, "NPC %s (%s) is currently using model: %s.\n",
+		STRINGR(((CDumpNameV *)EHandle_Get(m_hSpeaker))->m_pszName),
+		((CDumpNameV *)EHandle_Get(m_hSpeaker))->sub_1009f200(),
+		((CDumpEntV *)EHandle_Get(m_hSpeaker))->vfunc9().p);
+	WRITE(buf);
+
+	memset(buf, 0, 0x800);
+	g_109f3864(buf, "Put this NPC's dialog speech files in: ");
+	g_109f3864(buf, sub_101d3730("sound/character/%s", sub_100e7310()));
+	char *p = g_109f386c(buf, ".dlg");
+	if (p)
+		strcpy(p, "/");
+	g_109f3864(buf, ".\n");
+	WRITE(buf);
+
+	memset(buf, 0, 0x800);
+	g_109f3864(buf, "Put this NPC's action speech files in: sound/character/");
+	if (((CDumpNameV *)EHandle_Get(m_hSpeaker))->sub_10336920())
+		g_109f3864(buf, "Male/Unique/");
+	else
+		g_109f3864(buf, "Female/Unique/");
+	g_109f3864(buf, STRINGR(((CDumpNameV *)EHandle_Get(m_hSpeaker))->m_pszName));
+	p = g_109f386c(buf, ".dlg");
+	if (p)
+		strcpy(p, "/");
+	g_109f3864(buf, ".\n");
+	WRITE(buf);
+
+	if (!sub_100e5410(sub_100e7310()))
+		return;
+
+	m_vec32f8.Purge();
+	for (int i = 0; i < m_pTable->m_nEntries; i++)
+	{
+		if (sub_100df010((S100df010 *)&m_pTable->m_pEntries[i]))
+		{
+			CBlock4k ent;
+			memset(&ent, 0, sizeof(ent));
+			ent.m_data[0] = m_pTable->m_pEntries[i].m_data[0];
+			if (m_pTable->m_pEntries[i].m_data[1])
+				strcpy((char *)&ent.m_data[1], (const char *)m_pTable->m_pEntries[i].m_data[1]);
+			if (m_pTable->m_pEntries[i].m_data[2])
+				strcpy((char *)&ent.m_data[0x201], (const char *)m_pTable->m_pEntries[i].m_data[2]);
+			((CDumpVecV *)&m_vec32f8)->AddToTail(ent);
+		}
+	}
+	g_109f388c(buf, 0x800, "\n\n\n\n\n====================================================================================================================\n");
+	WRITE(buf);
+	sub_100e1c40(hFile);
+	sub_100e4240(hFile);
+	g_109f388c(buf, 0x800, "\n\n\n\n\n====================================================================================================================\n");
+	WRITE(buf);
+	g_109f388c(buf, 0x800, "CHARACTER ACTION SPEECH FILES\n\tThe NPC will speak these while taking certain actions in the game,\n\tbut not while speaking with the character.\n\n");
+	WRITE(buf);
+
+	memset(buf, 0, 0x800);
+	g_109f3864(buf, "Put this NPC's action speech files in: sound/character/");
+	if (((CDumpNameV *)EHandle_Get(m_hSpeaker))->sub_10336920())
+		g_109f3864(buf, "Male/Unique/");
+	else
+		g_109f3864(buf, "Female/Unique/");
+	g_109f3864(buf, STRINGR(((CDumpNameV *)EHandle_Get(m_hSpeaker))->m_pszName));
+	p = g_109f386c(buf, ".dlg");
+	if (p)
+		strcpy(p, "/");
+	g_109f3864(buf, ".\n");
+	WRITE(buf);
+
+	int hIn = FS->v0("vdata/System/CharAction_Sounds.txt", "rt", 0);
+	if (!hIn)
+	{
+		g_109f388c(buf, 0x800, "Could not access Character Action Sounds file.\n");
+		WRITE(buf);
+	}
+	else
+	{
+		FS->v4(hIn, 0, 0);
+		while (!FS->v19(hIn))
+		{
+			memset(buf, 0, 0x800);
+			FS->v2(buf, 0x800, hIn);
+			WRITE(buf);
+		}
+	}
+	FS->v1(hIn);
+	FS->v1(hFile);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e4240 size=0x423
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
