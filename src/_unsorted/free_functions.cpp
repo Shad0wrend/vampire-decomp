@@ -14577,6 +14577,273 @@ void CBaseCombatCharacter::sub_10052030()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100521e0 size=0xd69
+#include "vampire_all.h"
+#include "utlrbtree.h"
+#include "CBaseCombatCharacter.h"
+#include "CDisciplineParticle.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include "globalvars.h"
+#include <math.h>
+#ifndef clamp
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+#endif
+
+extern char g_106b8540[];
+extern char g_105387dc[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+extern unsigned char g_109f0b2a;
+extern CVStatList_t g_109f0b40;
+void __cdecl sub_10012a8a();
+extern "C" int __cdecl atexit(void (__cdecl *)());
+
+inline CVStatList_t *FindStatList(CVStatListSet *pSet, int type)
+{
+	for (int i = 0; i < pSet->m_nLists; i++) {
+		if (pSet->m_pLists[i]->m_field10 == type)
+			return pSet->m_pLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		g_109f0b40.CVStatList_t::CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+#define StatList(p, t) FindStatList(CVStatListSet::Of(p), t)
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct UDVPlayer
+{
+	V100(a) V100(b) V100(c) V100(d)
+	virtual void e0(); virtual void e1(); virtual void e2(); virtual void e3(); virtual void e4(); virtual void e5();
+	virtual char slot406();
+	char m_pad[0x1f18 - 4];
+	int m_n1f18;
+	int m_n1f1c;
+	CBaseEntity *sub_1015d680(int index);
+	void sub_1017e840(int level);
+	void sub_10183120(int nOldIndex, int nNewIndex, float flOldScale, float flNewScale);
+	void sub_1017e760(int level);
+};
+
+struct UDVSelf
+{
+	V100(a) V10(b0) V10(b1) V10(b2) V10(b3) V10(b4)
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5(); virtual void f6(); virtual void f7();
+	virtual char slot158(); virtual void g159();
+	V10(b6) V10(b7) V10(b8) V10(b9) V100(c) V10(d0) V10(d1) V10(d2) V10(d3)
+	virtual void slot340(); virtual void slot341(int flag, int unused);
+	virtual void slot342(); virtual void slot343(); virtual void slot344(); virtual void slot345(); virtual void slot346(); virtual void slot347();
+	virtual int slot348();
+};
+
+struct UDVList : public CUtlVector<CHandle<CDisciplineParticle> >
+{
+	void FastRemoveMove(int elem)
+	{
+		if (m_Size > 0) {
+			memmove(&Element(elem), &Element(m_Size - 1), sizeof(CHandle<CDisciplineParticle>));
+			--m_Size;
+		}
+	}
+};
+
+struct UDVNpc
+
+{
+	char m_pad[0x628c];
+	EHANDLE m_h628c;
+};
+
+struct UDVFxMgr
+{
+	void sub_101e4220(UDVPlayer *pPlayer);
+};
+extern UDVFxMgr g_10739a4c;
+extern float g_1053e3a0[6];
+extern float g_104454c4;	// 0.0f
+extern float g_104454c0;	// 1.0f
+extern double g_1044c398;	// 0.01
+bool sub_101d1a90(CBaseEntity *pViewer, CBaseEntity *pEntity);
+void sub_102695d0();
+
+inline float UDVDiff(float a, float b) { return fabs(a - b); }
+
+void CBaseCombatCharacter::sub_100521e0()
+{
+	ScopeTrace t("CBaseCombatCharacter::UpdateDisciplineVisuals", this ? STRINGR(m_name26c) : g_105387dc);
+	bool bHave[17];
+	memset(bHave, 0, sizeof(bHave));
+	UDVPlayer *pPlayer = !this ? 0 : (UDVPlayer *)m_pA8;
+	CBaseEntity *pView = 0;
+	if (pPlayer)
+		pView = pPlayer->sub_1015d680(0);
+	if (!((UDVSelf *)this)->slot158())
+		return;
+	if (pPlayer && pPlayer->slot406())
+		return;
+
+	int i;
+	for (i = 0; i < ((UDVList *)&m_pDiscParticles14c0)->Count(); ) {
+		if ((*(UDVList *)&m_pDiscParticles14c0)[i]) {
+			int n = (*(UDVList *)&m_pDiscParticles14c0)[i]->m_n4a4;
+			if (n >= 0 && n < 17)
+				bHave[n] = 1;
+			i++;
+		} else {
+			((UDVList *)&m_pDiscParticles14c0)->FastRemoveMove(i);
+		}
+	}
+	UDVList &l = *(UDVList *)&m_pDiscParticles14c0;
+
+
+	sub_10147960(StatList(this, 3)->sub_102012d0(8), 8);
+	for (int k = 0; k < 17; k++) {
+		if (bHave[k])
+			continue;
+		if (StatList(this, 3)->sub_102012d0(k) < 1)
+			continue;
+		switch (k) {
+
+		case 0:
+			CDisciplineParticle::sub_10050d90((int)this, 0, 0x3f800000, 0x3e4ccccd, 0x3f800000, (int)"D_Animalisim_BodySmoke_Emitter", 1, (int)"Bip01 Spine", 0, 0);
+			CDisciplineParticle::sub_10050d90((int)this, 0, 0x3dcccccd, 0x3f800000, 0x3f800000, (int)"D_Animalisim_Ground_Emitter", 0, (int)g_106b8540, 0, 0);
+			break;
+		case 1:
+			CDisciplineParticle::sub_10050d90((int)this, 1, 0x3f800000, 0x3ecccccd, 0x3f800000, (int)"D_AuspexCast_Emitter", 2, (int)"Bip01 Head", 0, 0);
+			if (pView)
+				CDisciplineParticle::sub_10050d90((int)this, 1, 0x3f800000, 0x3e99999a, 0x3f000000, (int)"D_AuspexView_Emitter", 5, (int)g_106b8540, (int)pView, 0);
+			break;
+		case 9:
+			CDisciplineParticle::sub_10050d90((int)this, 9, 0x3f000000, 0x3dcccccd, 0x3f800000, (int)"D_Potence_Emitter", 2, (int)"Bip01 L Hand", 0, 0);
+			CDisciplineParticle::sub_10050d90((int)this, 9, 0x3f000000, 0x3dcccccd, 0x3f800000, (int)"D_Potence_Emitter", 2, (int)"Bip01 R Hand", 0, 0);
+			if (pView) {
+				CDisciplineParticle::sub_10050d90((int)this, 9, 0x3f000000, 0x3dcccccd, 0x3f800000, (int)"D_PotenceView_Emitter", 5, (int)g_106b8540, (int)pView, 0);
+				CDisciplineParticle::sub_10050d90((int)this, 9, 0x3f000000, 0x3dcccccd, 0x3f800000, (int)"D_PotenceView_Emitter", 5, (int)g_106b8540, (int)pView, 0);
+			}
+			break;
+		case 12:
+			CDisciplineParticle::sub_10050d90((int)this, 12, 0x3f000000, 0x3dcccccd, 0x3f800000, (int)"D_ThaumaturgyCast_Emitter", 2, (int)"Bip01 R Hand", 0, 0);
+			break;
+		case 13:
+			CDisciplineParticle::sub_10050d90((int)this, 13, 0x3f800000, 0x3e4ccccd, 0x3f800000, (int)"N_ShieldOfFaith_Emitter", 2, (int)"Bip01 Spine1", 0, 0);
+			break;
+		case 14:
+			CDisciplineParticle::sub_10050d90((int)this, 14, 0x3f000000, 0x3e4ccccd, 0x3f800000, (int)"N_DivineSight_Emitter", 2, (int)"Bip01 Head", 0, 0);
+			if (pView)
+				CDisciplineParticle::sub_10050d90((int)this, 14, 0x3f800000, 0x3e99999a, 0x3f000000, (int)"N_DivineSightView_Emitter", 5, (int)g_106b8540, (int)pView, 0);
+			break;
+		case 15:
+			CDisciplineParticle::sub_10050d90((int)this, 15, 0x3f000000, 0x3e4ccccd, 0x3f800000, (int)"N_HolyLight_Emitter", 2, (int)"Bip01 R Hand", 0, 0);
+			if (pView)
+				CDisciplineParticle::sub_10050d90((int)this, 15, 0x3f800000, 0x3e99999a, 0x3f000000, (int)"N_HolyLightView_Emitter", 4, (int)"Box01", (int)pView, 0);
+			break;
+		case 16:
+			CDisciplineParticle::sub_10050d90((int)this, 16, 0x3f000000, 0x3e4ccccd, 0x3f800000, (int)"N_MindShield_Emitter", 2, (int)"Bip01 Head", 0, 0);
+			break;
+		}
+	}
+
+	if (pPlayer) {
+		int nAuspex = StatList(this, 3)->sub_102012d0(1);
+		int nSight = StatList(this, 3)->sub_102012d0(14);
+		int nProtean = StatList(this, 3)->sub_102012d0(11);
+		pPlayer->m_n1f18 = clamp(nAuspex, 0, 5);
+		pPlayer->m_n1f1c = clamp(nSight, 0, 5);
+		if (nAuspex > 0 || nSight > 0 || nProtean > 0) {
+			sub_100532b0();
+			if (nProtean > 0) {
+				pPlayer->sub_1017e840(nProtean);
+				pPlayer->m_n1f18 = 5;
+			}
+		}
+		g_10739a4c.sub_101e4220(pPlayer);
+		if (StatList(this, 3)->sub_102012d0(8) > 0)
+			sub_10147710(-1);
+	}
+
+	int nFaith = StatList(this, 3)->sub_102012d0(13);
+	if (nFaith < 1) {
+		m_flLastFaithShieldHealTime = -1.0f;
+	} else if (m_flLastFaithShieldHealTime < g_104454c4) {
+		m_flLastFaithShieldHealTime = gpGlobals->curtime;
+	} else {
+		float flNext = 9.0f / nFaith + m_flLastFaithShieldHealTime;
+		if (flNext < gpGlobals->curtime) {
+			m_flLastFaithShieldHealTime = flNext;
+			int nHealth = StatList(this, 0)->sub_102012d0(15);
+			if (nHealth > 0 && nHealth < StatList(this, 0)->sub_102012d0(15)) {
+				CDisciplineParticle::sub_10050d90((int)this, 13, 0x3f800000, 0x3f800000, 0x3f800000, (int)"N_FaithHealing_Emitter", 2, (int)"Bip01 Spine2", 0, 0);
+				int bAtMax = nHealth <= StatList(this, 0)->sub_102012d0(16);
+				StatList(this, 0)->sub_10201100(15, 1);
+				StatList(this, 0)->sub_10201100(16, bAtMax);
+				m_iHealth = ((UDVSelf *)this)->slot348();
+			}
+		}
+	}
+
+	if (m_iDisciplineFlags) {
+		int bit = 1;
+		float *pTime = &m_fDisciplineTimers[0];
+		for (int n = 30; n; n--) {
+			if ((m_iDisciplineFlags & bit) && *pTime < gpGlobals->curtime)
+				((UDVSelf *)this)->slot341(bit, 0);
+			bit += bit;
+			pTime++;
+		}
+	}
+	if (m_iDisciplineFlags2) {
+		if ((m_bfAINPCFlags2 & 0x200000) == 0x200000 && m_pNPC98) {
+			UDVNpc *pNpc = (UDVNpc *)m_pNPC98;
+			if (!sub_101d1a90(pNpc->m_h628c.Get(), this) || !CBaseEntity::vfunc201(pNpc->m_h628c.Get(), 0x2804091, 0, 0)) {
+				sub_100ac4e0((int)::sub_102695d0, 0, 0);
+				m_flNextThink = gpGlobals->curtime + 0.1f;
+			}
+		}
+		int bit = 1;
+		float *pTime = &m_fDisciplineTimers[30];
+		for (int n = 30; n; n--) {
+			if ((m_iDisciplineFlags2 & bit) && *pTime < gpGlobals->curtime)
+				((UDVSelf *)this)->slot341(bit | 0x80000000, 0);
+			bit += bit;
+			pTime++;
+		}
+	}
+
+	for (i = 0; i < l.Count(); i++) {
+		CDisciplineParticle *p = l[i];
+		if (p)
+			p->sub_100511e0();
+	}
+
+	int nLevel = StatList(this, 3)->sub_102012d0(3);
+	if (nLevel < 0)
+		nLevel = 0;
+	else if (nLevel > 5)
+		nLevel = 5;
+	float flOld = m_flFrenzyRate;
+	float flRate = g_104454c0 / g_1053e3a0[nLevel];
+	m_flFrenzyRate = flRate;
+	for (int j = 0; j < 6; j++) {
+		if (UDVDiff(g_104454c0 / flOld, g_1053e3a0[j]) < g_1044c398) {
+
+
+			if (pPlayer)
+				pPlayer->sub_10183120(j, nLevel, flOld, flRate);
+			break;
+		}
+	}
+	if (pPlayer)
+		pPlayer->sub_1017e760(nLevel);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10053df0 size=0x13
 bool sub_10053df0(const unsigned int *a, const unsigned int *b)
 {
