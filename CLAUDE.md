@@ -530,6 +530,33 @@ have written it rather than adding temporaries that spell out the assembly:
   Saved under view names (watch the link audit): 0x103f03e0 CFrag914::sub_103f03e0, 0x10295ed0
   CAI_BaseNPCTroikaV::sub_10295ed0. Unsolved patterns: the game hoists pointer loads above stack stores
   (0x102e7e80, 0x101001e0, 0x10176930); include-loop address reassociation (0x10429080, 0x10427df0, 0x101810f0).
+- **Round 16 + family / near-miss / holder passes (2026-11-13, vtmb 15,955 -> 16,005):** register rules measured on
+  small functions are in docs/vc6-register-rules.md (R1 weight = refs, esi>edi>ebx>ebp; R2 ties go to the value
+  DEFINED first; R7 int -1 and 0 are register candidates by count; R9 one eax->ecx->edx cursor runs through the whole
+  function). Search before guessing: `pcdecomp holders` / the compile_and_diff `holders:` block list matched functions
+  whose game code has the game's instructions where yours differ; read that spot of their source. New idioms:
+  - big switches: InitCustomSchedules bodies generated from a matched twin's PushBack list; case bodies in the game's
+    code order; `default:` first + separate `case 0:` last (or `case 0: case 1: ; default:`) keeps the table from 0;
+    `case 0: goto other; ... default: other:` keeps one push per arm; teardown copies inside each failing `if` with
+    their own `return`; `bool b = A(); if (!b) b = B(); if (b) {...}` = local zero register + success-first.
+  - inline budget: N inlined sites then out-of-line = `__forceinline` wrapper for the first N + explicit
+    `sub_<outofline>` calls; POD `*(Vec3 *)&v = *p` frees budget, Vector operator= spends it; dead `if (0)` uses spend it.
+  - zero register: whole-function threshold; an int 0 counts, a float 0.0f store does not; a dead SDK range clamp
+    (`if (i < 0 || i >= n) i = 0;`) in an inline accessor adds zero uses.
+  - copy order (call-returned pointer into an address-taken local): named int locals, loads in order, stores in the
+    game's order (`a,b,c; c,b,a` / `a,b; b,a; c direct` / interleaved `La Lb Sa Lc Sb Sc`); fails when the game keeps
+    a dead store, and when the destination escapes to a non-inline call (escape wall: 0x101001e0, 0x10177c10).
+  - slots: a literal float compare counts as a reference to the variable, `extern float g_<const addr>` does not;
+    a named float local's slot follows first mention (`if (0) x = 0;`); one unnamed temporary passed straight as an
+    argument can shift every high temporary.
+  - x87: CHullRay member `__forceinline Init` (`float fl = sqrt(..); m_f34 = fl; if (m_f34 > 1e-6)`) = `fxch; fadd
+    st(1); fsqrt; fstp st(1)`; `mins[0] + maxs.x` sets the commuted fadd order; float member template view without
+    outer parens changes operand order; unresolved `fcomp [0]` needs `extern` g_104454c4 / g_104492dc.
+  - calls: a `lea` pushed before an inner virtual call can be the outer call's last argument (check `ret N`); VC6
+    alternates eax/edx between consecutive virtual calls and code-free inline helpers advance it (open-code them);
+    callers' declarations in src/ tell parameter types (char); macro injection `#define sub_X() sub_X(); virtual
+    int vfuncN()` adds a missing override (slim narrow form only).
+  - a big all-member copy can be the compiler-generated `operator=`: force it out of line with `&S::operator=`.
 - **Round 15 (28 of 63 never-hand-tried functions, 31.2 KB, 2026-11-13; 1-3 KB ones 17/41, mostly SDK code):** new idioms:
   - inline budget: `__forceinline` forward declarations of header free inlines (VectorSubtract before Vector.h,
     StatDefault2 helpers) keep them inline when the budget runs out (0x1040f940, 0x1017aa40); dead
