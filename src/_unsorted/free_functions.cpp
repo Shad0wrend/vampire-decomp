@@ -253003,6 +253003,52 @@ int CNPC_VMingXiao::sub_103952b0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103954e0 size=0x120
+#include "CNPC_VMingXiao.h"
+#include "CEntityVSlots.h"
+
+struct CNPC_VMingXiaoV
+{
+	bool sub_10398000(int n);
+};
+
+int CNPC_VMingXiao::sub_103954e0(int a, void *pWeapon)
+{
+	if (pWeapon && (((CEntityVSlots *)pWeapon)->slot360() & 0x18000))
+		return sub_103952b0(a);
+	else {
+		switch (*(int *)((char *)this + 0x1594)) {
+		case 1:
+			return -2;
+		case 4:
+			if (sub_10398000(1))
+				return 1;
+			if (sub_10398000(3))
+				return 3;
+			return sub_10398000(5) ? 5 : -1;
+		case 8:
+			if (sub_10398000(3))
+				return 3;
+			return sub_10398000(5) ? 5 : -1;
+		case 6:
+			return sub_10398000(5) ? 5 : -1;
+		case 5:
+			if (sub_10398000(0))
+				return 0;
+			if (sub_10398000(2))
+				return 2;
+			return sub_10398000(4) ? 4 : -1;
+		case 9:
+			if (((CNPC_VMingXiaoV *)this)->sub_10398000(2))
+				return 2;
+		case 7:
+			return ((CNPC_VMingXiaoV *)this)->sub_10398000(4) ? 4 : -1;
+		}
+		return -1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10395650 size=0xa8
 #include "CBaseEntity.h"
 #include "CNPC_VMingXiao.h"
