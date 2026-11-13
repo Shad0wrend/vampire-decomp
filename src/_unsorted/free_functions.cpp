@@ -239568,6 +239568,57 @@ void sub_10350340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10350620 size=0x19e
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBaseAnimating.h"
+#include "CHL2_Player.h"
+#include "Vector.h"
+#include "QAngle.h"
+struct CStudioHdr;
+struct CBoneOwner;
+struct BoneRecView { int m0; float fps; int m8; int numframes; int pad[14]; };
+struct SeqDescView { char pad0[0x34]; int type; short anim[8][16]; };
+struct StudioHdrView { char pad0[0x10c]; int hitboxOffset; int numlocalseq; char pad114[0x194 - 0x114]; int numincludemodels; int includeOffset;
+    BoneRecView *pRec(int i) { return (BoneRecView *)(((char *)this) + hitboxOffset) + i; } };
+SeqDescView *sub_100c7560(CStudioHdr *, int, StudioHdrView **);
+bool sub_100c5b00(BoneRecView *, float, float, Vector &, QAngle &);
+#ifndef max
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+#endif
+
+// TARGET: CHL2_Player::sub_10350620
+void CHL2_Player::sub_10350620(int nActivity, float *pForward, float *pSide, float *pMaxSpeed, float flScale)
+{
+    CBaseAnimating *pAnim = (CBaseAnimating *)this;
+    int seq = pAnim->sub_1008dd30(vfunc376(vfunc381(vfunc375(nActivity))), -1);
+    int i;
+    SeqDescView *pSeq;
+    StudioHdrView *pStudio;
+    for (i = -1; i < 2; ++i) {
+        CStudioHdr *pHdr = (CStudioHdr *)pAnim->sub_100952d0(i);
+        pSeq = sub_100c7560(pHdr, seq, &pStudio);
+        if (pSeq && pStudio && pSeq->type == 9)
+            break;
+        StudioHdrView *h = (StudioHdrView *)pHdr;
+        seq -= h ? (h->numincludemodels ? *(int *)((char *)h + h->includeOffset + h->numincludemodels * 0x74 - 0x6c) + *(int *)((char *)h + h->includeOffset + h->numincludemodels * 0x74 - 0x68) : h->numlocalseq) : 0;
+    }
+    if (i == 2)
+        return;
+    for (int k = 0; k < 8; k++) {
+        QAngle w;
+        Vector v;
+        BoneRecView &anim = *pcd_stage(pStudio)->pRec(pSeq->anim[k][0]);
+        if (sub_100c5b00(&anim, 0.0, 1.0f, v, w)) {
+            v *= flScale * anim.fps / (anim.numframes - 1);
+            pForward[k] = v.x;
+            pSide[k] = -v.y;
+            float len = v.Length();
+            *pMaxSpeed = max(*pMaxSpeed, len);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10351510 size=0xb
 namespace lifted {
 extern char g_104a271c;

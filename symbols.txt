@@ -8846,6 +8846,7 @@
 0x1000c89c func   ?sub_1026ff80@CUnitHelper@@QAE_NPAVCBaseEntity@@PBM1@Z CUnitHelper::sub_1026ff80
 0x1000c8a1 func   ?sub_103395f0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_103395f0
 0x1000c8a6 func   ?vfunc1@CTEDecal@@UAEHXZ CTEDecal::vfunc1
+0x1000c8ab func   ?sub_10350620@CHL2_Player@@QAEXHPAM00M@Z CHL2_Player::sub_10350620
 0x1000c8b0 func   ?sub_102cc4f0@@YAHXZ sub_102cc4f0
 0x1000c8b5 func   ?sub_103380d0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_103380d0
 0x1000c8ba func   ?sub_100ac720@CBaseEntity@@QAEMPBD@Z CBaseEntity::sub_100ac720
