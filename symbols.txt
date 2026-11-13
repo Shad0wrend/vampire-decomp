@@ -2582,6 +2582,7 @@
 0x1000459d func   ?sub_100d4240@@YAXXZ sub_100d4240
 0x100045a2 func   _npc_VScurrying npc_VScurrying
 0x100045a7 func   ?sub_10046cd0@UtlMem@@QAEXXZ UtlMem::sub_10046cd0
+0x100045ac func   ?sub_102dc180@CUnknown102dc2c0@@QAEXXZ CUnknown102dc2c0::sub_102dc180
 0x100045b1 func   _scripted_scene scripted_scene
 0x100045b6 func   ?vfunc3@CTETParticle@@UAEXPBM0@Z CTETParticle::vfunc3
 0x100045bb func   ?sub_10227280@@YGXH@Z sub_10227280

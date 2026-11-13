@@ -217454,6 +217454,77 @@ void CUnknown102dca60::sub_102dbfb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dc180 size=0xf5
+#include "CUnknown102dc2c0.h"
+#include "CUnknown102dc350.h"
+#include "COutputEvent.h"
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+
+struct CDc180View
+{
+	char m_pad0000[0x17c];
+	float m_flNextThink;	// 0x17c
+	char m_pad0180[0x464 - 0x180];
+	float m_flRange;	// 0x464
+	char m_pad0468[0x4e4 - 0x468];
+	COutputEvent m_Output;	// 0x4e4
+};
+
+#define BV(n) virtual void v##n();
+#define BV10(p) BV(p##0) BV(p##1) BV(p##2) BV(p##3) BV(p##4) BV(p##5) BV(p##6) BV(p##7) BV(p##8) BV(p##9)
+struct CEyeView102dc180
+{
+	BV(0) BV(1) BV(2) BV(3) BV(4) BV(5) BV(6) BV(7) BV(8) BV(9)
+	BV10(1) BV10(2) BV10(3) BV10(4) BV10(5) BV10(6) BV10(7) BV10(8) BV10(9)
+	BV10(10) BV10(11) BV10(12) BV10(13) BV10(14) BV10(15) BV10(16) BV10(17) BV10(18)
+	BV(190) BV(191) BV(192)
+	virtual Vector EyePosition();
+	BV(194) BV(195) BV(196) BV(197) BV(198) BV(199)
+	BV10(20) BV(210) BV(211) BV(212) BV(213) BV(214) BV(215) BV(216) BV(217) BV(218) BV(219)
+	virtual Vector *GetAbsOrigin220();
+};
+
+CBaseEntity *sub_101cd9e0(int index);
+
+inline float DcLength(const Vector &v)
+{
+	float flZZ = v.z * v.z;
+	return FastSqrt(flZZ + v.x * v.x + v.y * v.y);
+}
+
+void CUnknown102dc2c0::sub_102dc180()
+{
+	CDc180View *pView = (CDc180View *)this;
+	CBaseEntity *pPlayer = sub_101cd9e0(1);
+	if (pPlayer)
+	{
+		if (sub_102dc8f0())
+		{
+			sub_102dc420();
+			return;
+		}
+		if (!m_bDone)
+		{
+			pView->m_flNextThink = gpGlobals->curtime + 0.5;
+			return;
+		}
+		{
+			float flDist = DcLength(((CEyeView102dc180 *)pPlayer)->EyePosition() - *((CEntityVSlots *)this)->slot220());
+			if (flDist > pView->m_flRange + 120.0f)
+			{
+				((CUnknown102dc350 *)this)->sub_102dc350();
+				pView->m_Output.sub_100cd660(pPlayer, this, 0.0f);
+			}
+			pView->m_flNextThink = gpGlobals->curtime + 0.5;
+			return;
+		}
+	}
+	pView->m_flNextThink = gpGlobals->curtime + 0.5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dc2c0 size=0x68
 #include "CUnknown102dc2c0.h"
 
