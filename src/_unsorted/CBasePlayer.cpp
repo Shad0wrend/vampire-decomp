@@ -2311,6 +2311,70 @@ void CBasePlayer::vfunc427()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10165ae0 size=0x220
+#include "CBasePlayer.h"
+#include "CBaseCombatCharacter.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+
+inline void *operator new(unsigned int, void *p) { return p; }
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+void __cdecl sub_10012a8a();
+extern unsigned char g_109f0b2a;
+extern CVStatList_t g_109f0b40;
+
+inline CVStatList_t *GetActiveList(CBaseCombatCharacter *pChar)
+{
+	for (int i = 0; i < pChar->m_nStatLists; i++) {
+		if (pChar->m_pStatLists[i]->m_field10 == 0)
+			return pChar->m_pStatLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		new (&g_109f0b40) CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+
+#define F14a8 (*(char *)((char *)this + 0x14a8))
+char CBasePlayer::vfunc420(int unused)
+{
+	sub_101644f0(-1, 0, 0);
+	CGlobalEntityList_Ent *pTarget = (m_n153C != -1) ? EHandle_Get(m_h1538) : 0;
+	int nActivity = *(int *)((char *)this + 0xff0);
+	if (!pTarget || !((CEntityVSlots *)pTarget)->slot158()) {
+		*(char *)((char *)this + 0x14a8) = 0;
+		*(char *)((char *)this + 0x1475) = 0;
+		*(int *)((char *)this + 0x1478) = 0;
+	}
+	if (*(char *)((char *)this + 0x65c)) {
+		int nNew;
+		switch (nActivity) {
+		case 0xfa5:
+			if (F14a8) goto run;
+			nNew = GetActiveList((CBaseCombatCharacter *)pTarget)->sub_10010609(0xc) <= 0 ? 0xfb7 : 0xfc0;
+			break;
+		case 0xfae:
+			if (F14a8 && sub_103395f0()) goto run;
+			nNew = GetActiveList((CBaseCombatCharacter *)pTarget)->sub_10010609(0xc) <= 0 ? 0xfb7 : 0xfc0;
+			break;
+		case 0xfb7:
+		case 0xfc0:
+			return 1;
+		default:
+			if (1) return 1;
+run:
+			nNew = 0xfae;
+			break;
+		}
+		if (nNew != nActivity)
+			sub_1032a100(nNew);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10165d90 size=0x13d
 #include "CBasePlayer.h"
 #include "CBaseCombatCharacter.h"

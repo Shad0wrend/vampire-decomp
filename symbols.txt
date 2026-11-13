@@ -5530,6 +5530,7 @@
 0x10008314 func   ?sub_10260820@@YIXPAUCUnknownVector10260820@@PAXHH@Z sub_10260820
 0x10008319 func   ?sub_1020f300@CUnk1020f300@@QAEXH@Z CUnk1020f300::sub_1020f300
 0x1000831e func   ?sub_103c51c0@@YADXZ sub_103c51c0
+0x10008323 func   ?vfunc420@CBasePlayer@@QAEDH@Z CBasePlayer::vfunc420
 0x10008328 func   _item_a_body_armor item_a_body_armor
 0x1000832d func   ?sub_10295ab0@CAI_BaseNPCTroika@@QAEXM@Z CAI_BaseNPCTroika::sub_10295ab0
 0x10008337 func   ?sub_10248060@CUnk10248060@@QAEPAU1@H@Z CUnk10248060::sub_10248060
