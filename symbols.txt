@@ -6333,6 +6333,7 @@
 0x100092f0 func   ?vfunc0@CAI_MemoryListSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVCSave@@@Z CAI_MemoryListSaveRestoreOps::vfunc0
 0x100092f5 func   ?sub_101f7110@CVTraitEffect_t@@QAEPBDPBD@Z CVTraitEffect_t::sub_101f7110
 0x100092fa func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc3
+0x100092ff func   ?sub_1016b750@@YAXPAUUnstickView@@@Z sub_1016b750
 0x10009304 func   ?vfunc372@CAI_BaseHumanoid@@QAE?AVVector@@XZ CAI_BaseHumanoid::vfunc372
 0x10009309 func   ?sub_101b0110@CSoundEmitterSystem@@QAEPAV1@E@Z CSoundEmitterSystem::sub_101b0110
 0x1000930e func   ?sub_10293df0@CUnknown10293df0@@QAEXM@Z CUnknown10293df0::sub_10293df0

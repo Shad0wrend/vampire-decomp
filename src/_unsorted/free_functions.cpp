@@ -99931,6 +99931,91 @@ void CUnknown1016b460::sub_1016b460(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016b750 size=0x1bd
+#include "UTIL_Trace.h"
+#include <math.h>
+
+#define PV(n) virtual void v##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+
+struct UnstickView
+{
+	PV(0) PV(1) PV(2) PV(3) PV(4) PV(5) PV(6) PV(7) PV(8) PV(9)
+	PV10(1) PV10(2) PV10(3) PV10(4) PV10(5)
+	PV(60) PV(61)
+	virtual void v62(const Vector &org);
+	PV(63) PV(64) PV(65) PV(66) PV(67) PV(68) PV(69)
+	PV10(7) PV10(8) PV10(9) PV10(10) PV10(11) PV10(12) PV10(13) PV10(14) PV10(15) PV10(16) PV10(17) PV10(18) PV10(19)
+	PV10(20) PV10(21)
+	virtual const Vector &v220();
+};
+
+inline float HullSqrt(float f)
+{
+	return (float)sqrt(f);
+}
+
+struct CHullRay
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_f34;
+
+	__forceinline void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, bool a = true, char b = 0)
+	{
+		VectorSubtract(end, start, m_Delta);
+		m_IsSwept = (m_Delta.LengthSqr() != 0.0f);
+		VectorSubtract(maxs, mins, m_Extents);
+		m_Extents *= 0.5f;
+		m_IsRay = ((m_Extents.x * m_Extents.x + (m_Extents.y * m_Extents.y + m_Extents.z * m_Extents.z)) < 1e-6);
+		VectorAdd(mins, maxs, m_StartOffset);
+		m_StartOffset *= 0.5f;
+		VectorAdd(start, m_StartOffset, m_Start);
+		m_StartOffset *= -1.0f;
+		m_b32 = b;
+		m_b33 = 0;
+		m_f34 = 0.0f;
+		if (a && !m_IsRay) {
+			float fl = HullSqrt(m_Extents.x * m_Extents.x + m_Extents.y * m_Extents.y);
+			m_f34 = fl;
+			if (m_f34 > 1e-6)
+				m_b33 = 1;
+		}
+	}
+};
+
+inline void UTIL_TraceHullR(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr)
+{
+	CHullRay ray;
+	ray.Init(vecAbsStart, vecAbsEnd, hullMin, hullMax);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4((Ray_t *)&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+void sub_1016b750(UnstickView *pPlayer)
+{
+	for (int i = 0; i < 18; i++)
+	{
+		CGameTrace tr;
+		UTIL_TraceHullR(pPlayer->v220(), pPlayer->v220(), Vector(-16, -16, 0), Vector(16, 16, 36), 0x201400b, pPlayer, 0, &tr);
+		if (!tr.m_startsolid)
+			break;
+		Vector org = pPlayer->v220();
+		org.z += 1.0f;
+		pPlayer->v62(org);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016b980 size=0x39
 struct CBasePlayer1016b980
 {
