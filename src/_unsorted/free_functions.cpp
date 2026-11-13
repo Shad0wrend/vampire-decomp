@@ -100279,6 +100279,159 @@ void CUnknown1016b460::sub_1016b460(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016b480 size=0x231
+#include "vampire_all.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CSoundEnt.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include "Tier1.h"
+
+extern int g_1072bc20, g_1072bc24, g_1072bc28, g_1072bc2c, g_1072bc30, g_1072bc34;
+extern unsigned char g_1072bca8, g_1072bca9, g_1072bcaa, g_1072bcab, g_1072bcac, g_1072bcad;
+extern float g_1072bd1c;
+extern CSoundEnt *g_1072c464;
+extern float g_107260a8;
+
+int sub_101bb220(int edict);
+
+struct CSoundV
+{
+	unsigned int m_hOwner;
+	int m_iType;
+	int m_iVolume;
+	float m_flExpireTime;
+	int m_n10;
+	unsigned char m_bType14;
+	char m_pad15[0x20 - 0x15];
+	Vector m_vecOrigin;
+	int Volume() { return m_iVolume; }
+	void sub_101b9a50(int a);
+};
+
+static inline bool TestBit(unsigned int value, int bit)
+{
+	return ((value >> bit) & 1) != 0;
+}
+
+struct CBasePlayerV : public CBasePlayer
+{
+	void sub_1016b480();
+	int edict() { return m_n02E0; }
+	int GetFlags() { return ((CBaseEntity *)(void *)this)->sub_100b3700(); }
+	
+	const Vector &GetAbsVelocity()
+	{
+		if (TestBit(m_fFlags268, 12))
+			sub_100b1d10();
+		return m_vec03BC;
+	}
+};
+
+// TARGET: CBasePlayerV::sub_1016b480
+void CBasePlayerV::sub_1016b480()
+{
+	int iBodyVolume;
+	int iVolume;
+	CSoundV *pSound;
+
+	pSound = (CSoundV *)CSoundEnt::sub_101bb150(sub_101bb220(edict()));
+	if (!pSound)
+	{
+		g_109f3628("Client lost reserved sound!\n");
+		return;
+	}
+
+	if (GetFlags() & 0x8000)
+	{
+		pSound->m_iVolume = 0;
+		return;
+	}
+
+	iBodyVolume = 0;
+	if (m_nFlags2088 & 2)
+	{
+		iBodyVolume = g_1072bc2c;
+		pSound->m_bType14 = g_1072bcab;
+	}
+	else if (GetFlags() & 1)
+	{
+		if (m_nSpeedScaleState1DB4 == 8)
+		{
+			iBodyVolume = g_1072bc30;
+			pSound->m_bType14 = g_1072bcac;
+		}
+		else if (m_nSpeedScaleState1DB4 == 0xa || m_nSpeedScaleState1DB4 == 0xb)
+		{
+			iBodyVolume = g_1072bc34;
+			pSound->m_bType14 = g_1072bcad;
+		}
+		else
+		{
+			float speed = GetAbsVelocity().Length();
+			if (speed > 0.0f)
+			{
+				if (GetFlags() & 2)
+				{
+					iBodyVolume = g_1072bc20;
+					pSound->m_bType14 = g_1072bca8;
+				}
+				else if (g_1072bd1c >= speed)
+				{
+					iBodyVolume = g_1072bc24;
+					pSound->m_bType14 = g_1072bca9;
+				}
+				else
+				{
+					iBodyVolume = g_1072bc28;
+					pSound->m_bType14 = g_1072bcaa;
+				}
+			}
+		}
+	}
+
+	m_iTargetVolume = iBodyVolume;
+
+	iVolume = pSound->Volume();
+
+	if (m_iTargetVolume > iVolume)
+	{
+		iVolume = m_iTargetVolume;
+	}
+	else if (iVolume > m_iTargetVolume)
+	{
+		iVolume -= 250 * gpGlobals->frametime;
+
+		if (iVolume < m_iTargetVolume)
+		{
+			iVolume = m_iTargetVolume;
+		}
+	}
+
+	if (m_bSilent22a0)
+	{
+		iVolume = 0;
+	}
+
+	pSound->m_hOwner = *((CEntityVSlots *)(void *)this)->slot1();
+	pSound->m_vecOrigin = *((CEntityVSlots *)(void *)this)->slot220();
+	pSound->m_iType = 4;
+	pSound->m_iVolume = iVolume;
+	pSound->m_flExpireTime = gpGlobals->curtime;
+
+	if ((*(unsigned char *)((char *)g_1072c464 + 0x460) & 3)
+		&& gpGlobals->curtime >= g_107260a8)
+	{
+		g_107260a8 = gpGlobals->curtime + 0.5f;
+		pSound->sub_101b9a50(100);
+	}
+
+	int &smoothed = *(int *)((char *)this + 0x1c9c);
+	smoothed = (iVolume + smoothed * 3) >> 2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016b750 size=0x1bd
 #include "UTIL_Trace.h"
 #include <math.h>
