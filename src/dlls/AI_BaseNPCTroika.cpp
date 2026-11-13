@@ -1222,6 +1222,457 @@ int CAI_BaseNPCTroika::vfunc437()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102af660 size=0x15e0
+#define sub_102af660() sub_102af660(); virtual int vfunc438()
+#include "CAI_BaseNPCTroika.h"
+#undef sub_102af660
+#include "CEHandleGet.h"
+#include "CSoundEnt.h"
+
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+struct V438S
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29();
+	virtual void s30(); virtual void s31(); virtual void s32(); virtual void s33(); virtual void s34(); virtual void s35(); virtual void s36(); virtual void s37(); virtual void s38(); virtual void s39();
+	virtual void s40(); virtual void s41(); virtual void s42(); virtual void s43(); virtual void s44(); virtual void s45(); virtual void s46(); virtual void s47(); virtual void s48(); virtual void s49();
+	virtual void s50(); virtual void s51(); virtual void s52(); virtual void s53(); virtual void s54(); virtual void s55(); virtual void s56(); virtual void s57(); virtual void s58(); virtual void s59();
+	virtual void s60(); virtual void s61(); virtual void s62(); virtual void s63(); virtual void s64(); virtual void s65(); virtual void s66(); virtual void s67(); virtual void s68(); virtual void s69();
+	virtual void s70(); virtual void s71(); virtual void s72(); virtual void s73(); virtual void s74(); virtual void s75(); virtual void s76(); virtual void s77(); virtual void s78(); virtual void s79();
+	virtual void s80(); virtual void s81(); virtual void s82(); virtual void s83(); virtual void s84(); virtual void s85(); virtual void s86(); virtual void s87(); virtual void s88(); virtual void s89();
+	virtual void s90(); virtual void s91(); virtual void s92(); virtual void s93(); virtual void s94(); virtual void s95(); virtual void s96(); virtual void s97(); virtual void s98(); virtual void s99();
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105(); virtual void s106(); virtual void s107(); virtual void s108(); virtual void s109();
+	virtual void s110(); virtual void s111(); virtual void s112(); virtual void s113(); virtual void s114(); virtual void s115(); virtual void s116(); virtual void s117(); virtual void s118(); virtual void s119();
+	virtual void s120(); virtual void s121(); virtual void s122(); virtual void s123(); virtual void s124(); virtual void s125(); virtual void s126(); virtual void s127(); virtual void s128(); virtual void s129();
+	virtual void s130(); virtual void s131(); virtual void s132(); virtual void s133(); virtual void s134(); virtual void s135(); virtual void s136(); virtual void s137(); virtual void s138(); virtual void s139();
+	virtual void s140(); virtual void s141(); virtual void s142(); virtual void s143(); virtual void s144(); virtual void s145(); virtual void s146(); virtual void s147(); virtual void s148(); virtual void s149();
+	virtual void s150(); virtual void s151(); virtual void s152(); virtual void s153(); virtual void s154(); virtual void s155(); virtual void s156(); virtual void s157(); virtual char slot158(); virtual void s159();
+	virtual void s160(); virtual void s161(); virtual void s162(); virtual void s163(); virtual void s164(); virtual void s165(); virtual void s166(); virtual int slot167(); virtual V438S *slot168(); virtual void s169();
+	virtual void s170(); virtual void s171(); virtual void s172(); virtual void s173(); virtual void s174(); virtual void s175(); virtual void s176(); virtual void s177(); virtual void s178(); virtual void s179();
+	virtual void s180(); virtual void s181(); virtual void s182(); virtual void s183(); virtual void s184(); virtual void s185(); virtual void s186(); virtual void s187(); virtual void s188(); virtual void s189();
+	virtual void s190(); virtual void s191(); virtual void s192(); virtual void s193(); virtual void s194(); virtual void s195(); virtual void s196(); virtual void s197(); virtual void s198(); virtual void s199();
+	virtual void s200(); virtual void s201(); virtual void s202(); virtual void s203(); virtual void s204(); virtual void s205(); virtual void s206(); virtual void s207(); virtual void s208(); virtual void s209();
+	virtual void s210(); virtual void s211(); virtual void s212(); virtual void s213(); virtual void s214(); virtual void s215(); virtual void s216(); virtual void *slot217(); virtual void s218(); virtual void s219();
+	virtual void s220(); virtual void s221(); virtual void s222(); virtual void s223(); virtual void s224(); virtual void s225(); virtual void s226(); virtual void s227(); virtual void s228(); virtual void s229();
+	virtual void s230(); virtual void s231(); virtual void s232(); virtual void s233(); virtual void s234(); virtual void s235(); virtual void s236(); virtual void s237(); virtual void s238(); virtual void s239();
+	virtual void s240(); virtual void s241(); virtual void s242(); virtual void s243(); virtual void s244(); virtual void s245(); virtual void s246(); virtual void s247(); virtual void s248(); virtual void s249();
+	virtual void s250(); virtual void s251(); virtual void s252(); virtual void s253(); virtual void s254(); virtual void s255(); virtual void s256(); virtual void s257(); virtual void s258(); virtual void s259();
+	virtual void s260(); virtual void s261(); virtual void s262(); virtual void s263(); virtual void s264(); virtual void s265(); virtual void s266(); virtual void s267(); virtual void s268(); virtual void s269();
+	virtual void s270(); virtual void s271(); virtual void s272(); virtual void s273(); virtual void s274(); virtual void s275(); virtual void s276(); virtual void s277(); virtual void s278(); virtual void s279();
+	virtual void s280(); virtual void s281(); virtual void s282(); virtual void s283(); virtual void s284(); virtual void s285(); virtual void s286(); virtual void s287(); virtual void s288(); virtual void s289();
+	virtual void s290(); virtual void s291(); virtual void s292(); virtual void s293(); virtual void s294(); virtual void s295(); virtual void s296(); virtual void s297(); virtual void s298(); virtual void s299();
+	virtual void s300(); virtual void s301(); virtual void s302(); virtual void s303(); virtual void s304(); virtual void s305(); virtual void s306(); virtual void s307(); virtual void s308(); virtual void s309();
+	virtual void s310(); virtual void s311(); virtual void s312(); virtual void s313(); virtual void s314(); virtual void s315(); virtual void s316(); virtual void s317(); virtual void s318(); virtual void s319();
+	virtual void s320(); virtual void s321(); virtual void s322(); virtual void s323(); virtual void s324(); virtual void s325(); virtual void s326(); virtual void s327(); virtual void s328(); virtual void s329();
+	virtual void s330(); virtual void s331(); virtual void s332(); virtual void s333(); virtual void s334(); virtual void s335(); virtual void s336(); virtual void s337(); virtual void s338(); virtual void s339();
+	virtual void s340(); virtual void s341(); virtual void s342(); virtual void s343(); virtual void s344(); virtual void s345(); virtual void s346(); virtual void s347(); virtual void s348(); virtual void s349();
+	virtual void s350(); virtual void s351(); virtual void s352(); virtual void s353(); virtual void s354(); virtual void s355(); virtual void s356(); virtual void s357(); virtual void s358(); virtual void s359();
+	virtual unsigned int slot360(); virtual void s361(); virtual void s362(); virtual void s363(); virtual void s364(); virtual void s365(); virtual void s366(); virtual void s367(); virtual void s368(); virtual void s369();
+	virtual void s370(); virtual void s371(); virtual void s372(); virtual void s373(); virtual void s374(); virtual void s375(); virtual void s376(); virtual void s377(); virtual void s378(); virtual void s379();
+	virtual void s380(); virtual void s381(); virtual void s382(); virtual void s383(); virtual void s384(); virtual void s385(); virtual void s386(); virtual void s387(); virtual void s388(); virtual void s389();
+	virtual void s390(); virtual void s391(); virtual void s392(); virtual void s393(); virtual void s394(); virtual void s395(); virtual void s396(); virtual void s397(); virtual void s398(); virtual void s399();
+	virtual void s400(); virtual void s401(); virtual void s402(); virtual void s403(); virtual int slot404(int pEnt); virtual void s405(); virtual void s406(); virtual void s407(); virtual void s408(); virtual void s409();
+	virtual void s410(); virtual void s411(); virtual void s412(); virtual void s413(); virtual void s414(); virtual void s415(); virtual void s416(); virtual void s417(); virtual void s418(); virtual void s419();
+	virtual void s420(); virtual void s421(); virtual void s422(); virtual void s423(); virtual void s424(); virtual void s425(); virtual void s426(); virtual void s427(); virtual void s428(); virtual void s429();
+	virtual void s430(); virtual void s431(); virtual void s432(); virtual void s433(); virtual void s434(); virtual void s435(); virtual void s436(); virtual void s437(); virtual void s438(); virtual void s439();
+	virtual void s440(); virtual void s441(); virtual void s442(); virtual void s443(); virtual void s444(); virtual void s445(); virtual void s446(); virtual void s447(); virtual void s448(); virtual void s449();
+	virtual void s450(); virtual void s451(); virtual void s452(); virtual void s453(); virtual void s454(); virtual void s455(); virtual void s456(); virtual void s457(); virtual void s458(); virtual void s459();
+	virtual void s460(); virtual void s461(); virtual void s462(); virtual void s463(); virtual void s464(); virtual void s465(); virtual void s466(); virtual void s467(); virtual void s468(); virtual void s469();
+	virtual void s470(); virtual void s471(); virtual void s472(); virtual void s473(); virtual void s474(); virtual void s475(); virtual void s476(); virtual void s477(); virtual void s478(); virtual void s479();
+	virtual void s480(); virtual void s481(); virtual void s482(); virtual void s483(); virtual void s484(); virtual void s485(); virtual void s486(); virtual void s487(); virtual void s488(); virtual void s489();
+	virtual void s490(); virtual void s491(); virtual void slot492(); virtual void s493(); virtual void s494(); virtual void s495(); virtual void s496(); virtual void s497(); virtual void slot498(); virtual void s499();
+	virtual void s500(); virtual void s501(); virtual void s502(); virtual void s503(); virtual void s504(); virtual void s505(); virtual void s506(); virtual void s507(); virtual void s508(); virtual void s509();
+	virtual void s510(); virtual void s511(); virtual void s512(); virtual void s513(); virtual void s514(); virtual void s515(); virtual void s516(); virtual void s517(); virtual void s518(); virtual void s519();
+	virtual void s520(); virtual void s521(); virtual void s522(); virtual void s523(); virtual void s524(); virtual void s525(); virtual void s526(); virtual void s527(); virtual void s528(); virtual void s529();
+	virtual void s530(); virtual void s531(); virtual void s532(); virtual void s533(); virtual void s534(); virtual void s535(); virtual void s536(); virtual void s537(); virtual void s538(); virtual void s539();
+	virtual void s540(); virtual void s541(); virtual void s542(); virtual void s543(); virtual void s544(); virtual void s545(); virtual void s546(); virtual void s547(); virtual void s548(); virtual void s549();
+	virtual void s550(); virtual void s551(); virtual void s552(); virtual void s553(); virtual void s554(); virtual void s555(); virtual void s556(); virtual void s557(); virtual void s558(); virtual void s559();
+	virtual void s560(); virtual void s561(); virtual void s562(); virtual void s563(); virtual void s564(); virtual void s565(); virtual void s566(); virtual void s567(); virtual void s568(); virtual void s569();
+	virtual void s570(); virtual void s571(); virtual void s572(); virtual void s573(); virtual void s574(); virtual void s575(); virtual void s576(); virtual void s577(); virtual void s578(); virtual void s579();
+	virtual void s580(); virtual void s581(); virtual void s582(); virtual void s583(); virtual void s584(); virtual void s585(); virtual void s586(); virtual void s587(); virtual void s588(); virtual void s589();
+	virtual void s590(); virtual void s591(); virtual void s592(); virtual void s593(); virtual void s594(); virtual void s595(); virtual void slot596(int pEnt); virtual void s597(); virtual void s598(); virtual void s599();
+	virtual void s600(); virtual void s601(); virtual void s602(); virtual void s603(); virtual void s604(); virtual void s605(); virtual void s606(); virtual int slot607();
+};
+
+namespace v438 {
+struct RandV { virtual void v0(); virtual float RandomFloat(float a, float b); virtual int RandomInt(int a, int b); };
+extern RandV *g_1070b244;
+struct GlobV { float realtime; int framecount; float absframetime; float curtime; };
+extern GlobV *g_1070b228;
+extern char g_1072bcc2;
+extern int g_1072bc88;
+struct NavV { int sub_102ee620(); };
+struct PatrolV { int m_n0; int m_nSchedule; };
+struct StatusV { bool sub_101e3f50(void *p); };
+extern StatusV g_10739a4c;
+struct PlayerV
+{
+	void sub_1017f4a0(int priority, void *pEnt, const void *pPos);
+	void sub_1017f2a0(int priority, void *pEnt, const void *pPos);
+	void sub_1017fd60(int value, void *pNpc);
+	int sub_1017e740();
+	int sub_1017e720();
+};
+struct Vec3
+{
+	float x, y, z;
+	Vec3 &operator=(const Vec3 &o)
+	{
+		x = o.x;
+		y = o.y;
+		z = o.z;
+		return *this;
+	}
+};
+struct CRec6360
+{
+	char m_b0;
+	char m_b1;
+	unsigned int m_hash;
+	operator unsigned int() const { return (((m_hash & 0x68d8635) ^ 0xce9f66a) + 0xffa91d8 & 0x197279ca) ^ m_hash ^ 0xa641cacd; }
+};
+struct WpnV { char pad[0x744]; int m_iPrimaryAmmoType; };
+}
+using namespace v438;
+int sub_1042fe90(unsigned int h);
+
+#define F(type, off) (*(type *)((char *)this + (off)))
+#define H(off) (*(EHANDLE *)((char *)this + (off)))
+#define SL ((V438S *)this)
+#define FILE_ "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp"
+#define RET(line, val) { m_pszFile1b30 = FILE_; m_nLine1b34 = line; return val; }
+
+// TARGET: CAI_BaseNPCTroika::vfunc438
+int CAI_BaseNPCTroika::vfunc438()
+{
+	int r;
+	F(int, 0x1b2c) = 2;
+	switch (F(int, 0x5cc0))
+	{
+	case 1:
+		if (!sub_1033e2b0() && !F(char, 0x5bc4))
+		{
+			r = SL->slot607();
+			if (r)
+				return r;
+			if (F(PatrolV *, 0x6590))
+			{
+				if (!F(PatrolV *, 0x6590)->m_nSchedule)
+				{
+					DevMsg("WARNING:  Patrol path for '%s' has no schedule.\n", sub_1000b5cd());
+					sub_1029f5d0((char *)this + 0x658c);
+				}
+				else
+				{
+					sub_1029f650((char *)this + 0x658c);
+					RET(0x498d, F(PatrolV *, 0x6590)->m_nSchedule);
+				}
+			}
+			if (F(bool, 0x63d9))
+			{
+				if (F(NavV *, 0x5d34)->sub_102ee620() == 8 || F(void *, 0x62ec))
+				{
+					if (sub_10269d30(0x13))
+						RET(0x4998, 0x102);
+					if (sub_10269d30(0x10))
+						RET(0x499c, 0x106);
+					if (sub_10269d30(0x11))
+						RET(0x49a0, 0x105);
+					RET(0x49a4, 0x100);
+				}
+				RET(0x49a9, 0xff);
+			}
+			if (F(bool, 0x6434))
+			{
+				int c = (F(int, 0x60a8) + 2) * 5;
+				int n = (c < 30) ? c : 30;
+				if (n > g_1070b244->RandomInt(0, 99))
+					RET(0x49b4, 0x4f);
+			}
+			if (H(0x5d28).Get() || H(0x5d2c).Get())
+			{
+				r = sub_102b7370();
+				if (r)
+					return r;
+			}
+			if (F(bool, 0x6494))
+			{
+				F(bool, 0x6494) = 0;
+				RET(0x49c6, 0x45);
+			}
+		}
+		RET(0x49d2, 0x6b);
+	case 3:
+		r = sub_102b8a60();
+		if (r)
+			return r;
+		r = sub_102b8c40();
+		if (r)
+			return r;
+		if (sub_10014df8(0xb))
+			RET(0x49e8, 0x56);
+		r = sub_102b7370();
+		if (r)
+			return r;
+		r = sub_102b9060();
+		if (r)
+			return r;
+		F(bool, 0x63fc) = 1;
+		F(bool, 0x1b28) = 1;
+		RET(0x4a08, 0x4b);
+	case 11:
+		if (sub_10269d30(1) || sub_10269d30(0x26))
+			RET(0x4a1a, 0x81);
+		r = sub_102b8c40();
+		if (r)
+			return r;
+		if (sub_10269d30(2))
+			RET(0x4a26, 0x82);
+		if (sub_10269d30(0x25) || sub_10269d30(0x6a) || sub_10269d30(0x6d) || sub_10269d30(0x6e) || sub_10269d30(0x70) || sub_10269d30(0x6f))
+		{
+			F(float, 0x623c) = v438::g_1070b228->curtime + 2.0f;
+			sub_102b4090();
+			if ((sub_10014df8(0x6d) || sub_10014df8(0x70)) && g_1070b244->RandomInt(0, 99) < 100)
+				RET(0x4a39, 0x7f);
+			RET(0x4a3d, 0x80);
+		}
+		if (sub_10269d30(0x72))
+		{
+			sub_102b4090();
+			RET(0x4a43, 0x50);
+		}
+		if (sub_10014df8(0x2d))
+		{
+			r = sub_102b8d20(0x84, 0x73);
+			if (r)
+				return r;
+		}
+		if (!F(void *, 0x6598))
+			F(unsigned int, 0x14b8) &= 0xffffefff;
+		if (~F(unsigned int, 0x14b8) & 0x1000)
+		{
+			const float &rHunt = F(float, 0x6474);
+			if (v438::g_1070b228->curtime >= rHunt)
+				RET(0x4a9a, 0x85);
+			if (!SL->slot168() || !SL->slot168()->slot158())
+				RET(0x4a9f, 0x7d);
+			RET(0x4aa3, 0x7c);
+		}
+		RET(0x4aa8, 0x7e);
+	case 2:
+		F(char, 0x5b80) = 0;
+		if (sub_10014df8(0x58))
+		{
+			sub_10279a50(0);
+			if (sub_10279dd0())
+			{
+				sub_10269b50(0x58);
+				m_pszFile1b30 = FILE_;
+				m_nLine1b34 = 0x4abf;
+				return sub_1028a260();
+			}
+			if (F(char, 0x65f6))
+				sub_1026e340(1);
+			else
+				sub_1026e340(3);
+			m_pszFile1b30 = FILE_;
+			m_nLine1b34 = 0x4acb;
+			return sub_1028a260();
+		}
+		if ((sub_10014df8(0x4c) || sub_10014df8(0x4d)) && !(F(unsigned int, 0x5d8c) & 0x40) && sub_1008dc40(0x49, -1) != -1)
+		{
+			F(char, 0x5b80) = 0;
+			RET(0x4ad5, 0x14);
+		}
+		if (SL->slot404(SL->slot167()) == 2)
+		{
+			if (sub_10014df8(0x46) || sub_10014df8(0x4c) || sub_10014df8(0x4d))
+			{
+				F(char, 0x5b80) = 0;
+				SL->slot492();
+				RET(0x4ae2, 0x1b);
+			}
+			RET(0x4ae6, 0xd);
+		}
+		if (sub_10014df8(0x40) && sub_10007e19() && sub_103346c0(((WpnV *)sub_10007e19())->m_iPrimaryAmmoType) > 0)
+			RET(0x4aeb, 0x28);
+		if (F(void *, 0x6444) && !sub_10014df8(0x2f))
+		{
+			if (sub_10007e19() && (((V438S *)sub_10007e19())->slot360() & 0x6000))
+				RET(0x4af3, 0xec);
+			break;
+		}
+		if (!sub_10014df8(0x46))
+		{
+			if (!sub_10014df8(0x48))
+				RET(0x4b02, 0xb);
+			RET(0x4b07, 0xb1);
+		}
+		if (sub_10014df8(8) || sub_10014df8(0x5f))
+		{
+			if (sub_10007e19() && (((V438S *)sub_10007e19())->slot360() & 0x6000) && !sub_10014df8(0x2f) && !sub_10014df8(0x63))
+			{
+				if (sub_102b7f40())
+					RET(0x4b15, 0xef);
+				RET(0x4b19, 0xf0);
+			}
+			RET(0x4b1f, 0xb8);
+		}
+		if (sub_10014df8(0x4f))
+		{
+			if (g_10739a4c.sub_101e3f50(this))
+				RET(0x4b29, 0xef);
+			if (g_1070b244->RandomInt(0, 99) < 20 && !F(void *, 0x5ddc) && F(float, 0x6268) < 800.0f)
+				RET(0x4b2e, 0xef);
+			RET(0x4b32, 0xed);
+		}
+		if (sub_10014df8(0x50))
+			RET(0x4b37, 0xee);
+		if (sub_10014df8(0x51))
+			RET(0x4b3b, 0xdc);
+		if (sub_10014df8(0x52))
+			RET(0x4b3f, 0xdf);
+		if (sub_10014df8(0x61))
+			RET(0x4b43, 0xb);
+		if (sub_10014df8(0x60))
+			RET(0x4b48, 0xb1);
+		if (sub_10014df8(0x63) || sub_10014df8(0x2f))
+			RET(0x4b4d, 0xbc);
+		if (sub_10014df8(0x59))
+			RET(0x4b52, 0x17);
+		if (sub_10014df8(0x66) && sub_10007e19() && (((V438S *)sub_10007e19())->slot360() & 0x6000))
+			RET(0x4b60, 0xf0);
+		if (sub_10014df8(0x4a) && sub_10007e19())
+		{
+			if (((V438S *)sub_10007e19())->slot360() & 0x6000)
+				RET(0x4b73, 0xf0);
+			if (((V438S *)sub_10007e19())->slot360() & 0x18000)
+				RET(0x4b77, 0xca);
+		}
+		RET(0x4b81, 0xbf);
+	case 12:
+		RET(0x4bd7, 0x6b);
+	case 13:
+		RET(0x4bdb, 0x44);
+	case 8:
+		if (sub_10014df8(0x39))
+			RET(0x4be4, 0x73);
+		if (sub_10014df8(0x46) || sub_10014df8(0x44) || sub_10014df8(0x4c) || sub_10014df8(0x4d) || sub_10014df8(0x4e) || sub_10014df8(0x21) || sub_10014df8(0x1f))
+		{
+			F(char, 0x5b80) = 0;
+			if ((F(unsigned int, 0x14b8) & 0x100) == 0x100)
+			{
+				F(unsigned int, 0x14b8) &= 0xfffffeff;
+				F(float, 0x641c) = g_1070b244->RandomFloat(10.0f, 20.0f) + v438::g_1070b228->curtime;
+				SL->slot498();
+				if (sub_10014df8(0x4c) || sub_10014df8(0x4d) || sub_10014df8(0x4e))
+					RET(0x4c00, 0x72);
+				if (sub_10014df8(0x21))
+				{
+					if (H(0x6390).Get())
+						SL->slot596((int)H(0x6390).Get());
+					if (H(0x628c).Get() == H(0x6390).Get())
+					{
+						if (H(0x628c).Get())
+						{
+							char c = g_1072bcc2;
+							int vol = g_1072bc88;
+							CSoundEnt::sub_101bac90(8, (const Vector *)((V438S *)H(0x628c).Get())->slot217(), vol, 10.0f, c, (CBaseEntity *)this);
+						}
+						if (!F(bool, 0x6394))
+						{
+							((PlayerV *)H(0x628c).Get())->sub_1017f4a0(F(int, 0x6368), this, (char *)this + 0x6374);
+							F(int, 0x6370) = ((PlayerV *)H(0x628c).Get())->sub_1017e740();
+						}
+						else if (sub_10014df8(0x5a))
+						{
+							((PlayerV *)H(0x628c).Get())->sub_1017fd60(F(int, 0x6368), this);
+							F(int, 0x6370) = ((PlayerV *)H(0x628c).Get())->sub_1017e740();
+						}
+						if (F(float, 0x6264) <= 512.0f && g_1070b244->RandomInt(0, 99) < 80)
+							RET(0x4c23, 0x71);
+						RET(0x4c27, 0x70);
+					}
+					if (H(0x6390).Get())
+						RET(0x4c2c, 0x73);
+					F(Vec3, 0x5dd0) = F(Vec3, 0x6374);
+					RET(0x4c31, 0x76);
+				}
+				if (sub_10014df8(0x1f))
+				{
+					if (H(0x638c).Get())
+						SL->slot596((int)H(0x638c).Get());
+					if (H(0x628c).Get() == H(0x638c).Get())
+					{
+						if (H(0x628c).Get())
+						{
+							char c = g_1072bcc2;
+							int vol = g_1072bc88;
+							CSoundEnt::sub_101bac90(8, (const Vector *)((V438S *)H(0x628c).Get())->slot217(), vol, 10.0f, c, (CBaseEntity *)this);
+						}
+						unsigned int rh = F(CRec6360, 0x6360);
+						int h = sub_1042fe90(rh);
+						((PlayerV *)H(0x628c).Get())->sub_1017f2a0(h, this, (char *)this + 0x6380);
+						F(int, 0x636c) = ((PlayerV *)H(0x628c).Get())->sub_1017e720();
+						if (F(float, 0x6264) <= 512.0f && g_1070b244->RandomInt(0, 99) < 80)
+							RET(0x4c4d, 0x71);
+						RET(0x4c51, 0x70);
+					}
+					if (H(0x638c).Get())
+						RET(0x4c56, 0x73);
+					F(Vec3, 0x5dd0) = F(Vec3, 0x6380);
+					RET(0x4c5b, 0x76);
+				}
+				if (sub_10014df8(0x44))
+					SL->slot596((int)H(0x5b6c).Get());
+				RET(0x4c69, 0x72);
+			}
+			RET(0x4c72, 0x73);
+		}
+		if (sub_10014df8(0xb))
+			RET(0x4c78, 0x56);
+		if (sub_10014df8(0x25))
+		{
+			F(float, 0x623c) = v438::g_1070b228->curtime + 2.0f;
+			F(unsigned int, 0x14b8) &= 0xfffffeff;
+			sub_102b4090();
+			RET(0x4c83, 0x48);
+		}
+		RET(0x4c86, 0x77);
+	case 14:
+		switch (F(int, 0x63f8))
+		{
+		default:
+			F(int, 0x63f8) = 1;
+			RET(0x4c9a, 0x116);
+		case 1:
+			F(int, 0x63f8) = 2;
+			RET(0x4c9f, 0x117);
+		case 2:
+			F(int, 0x63f8) = 3;
+			RET(0x4ca4, 0x118);
+		case 3:
+			F(int, 0x63f8) = 4;
+			RET(0x4ca9, 0x119);
+		case 4:
+			F(int, 0x63f8) = 5;
+			if (sub_10014df8(0x46))
+				RET(0x4cb0, 0x11b);
+			RET(0x4cb4, 0x11a);
+		case 5:
+			F(int, 0x63f8) = 2;
+			RET(0x4cba, 0x117);
+		case 0:
+			F(int, 0x63f8) = 1;
+			RET(0x4c9a, 0x116);
+		}
+	}
+	return CAI_BaseNPC::vfunc438();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b4fe0 size=0x91
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102dfaa0.h"
