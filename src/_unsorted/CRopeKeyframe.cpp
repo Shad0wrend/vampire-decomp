@@ -31,6 +31,52 @@ datamap_t * CRopeKeyframe::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019dc80 size=0xb5
+// The header models the start / end point handles as plain dwords; rope.h has CNetworkHandles, whose
+// constructors store -1. Injected: the class ends with the two handles, the header's rest goes to a tail view.
+#define sub_1019dc80() sub_1019dc80(); CRopeKeyframe()
+#define m_padRope048e m_padRope048e[2]; EHANDLE m_hStart490, m_hEnd494; public: virtual datamap_t *vfunc82(); virtual int vfunc81(); virtual int vfunc80(); virtual int vfunc117(); }; struct CRopeKeyframeHeaderTail : CBaseEntity { char m_tail048e
+#include "CRopeKeyframe.h"
+#undef m_padRope048e
+#undef sub_1019dc80
+
+// The SDK members the header does not name yet (rope.h CNetworkVars).
+struct CRopeKeyframeFields
+{
+	char m_pad0000[0x464];
+	float m_TextureScale;	// 0x464
+	char m_pad0468[0x470 - 0x468];
+	int m_Subdiv;	// 0x470
+	char m_pad0474[0x484 - 0x474];
+	float m_flScrollSpeed;	// 0x484
+	char m_pad0488[0x498 - 0x488];
+	short m_iStartAttachment;	// 0x498
+	short m_iEndAttachment;	// 0x49a
+};
+#define F ((CRopeKeyframeFields *)this)
+
+// TARGET: CRopeKeyframe::CRopeKeyframe
+CRopeKeyframe::CRopeKeyframe() : CBaseEntity(0)
+{
+	m_flags268 |= 0x80;
+	m_nTakeDamage = 2;
+	F->m_iStartAttachment = F->m_iEndAttachment = 0;
+	m_n45c = 0;
+	m_flWidth = 2.0f;
+	F->m_TextureScale = 4.0f;
+	m_nSegments = 5;
+	m_n474 = 20;
+	m_n478 = 3;
+	F->m_flScrollSpeed = 0;
+	m_nRopeFlags = 0x48;
+	m_flRemoveTime480 = 0;
+	m_nMaterialIndex = -1;
+	F->m_Subdiv = 2;
+	m_bCreatedFromMapFile = 1;
+	m_b450 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019dd70 size=0x8
 #include "CRopeKeyframe.h"
 // TARGET: CRopeKeyframe::sub_1019dd70
