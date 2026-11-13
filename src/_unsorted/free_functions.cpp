@@ -51592,6 +51592,64 @@ SPoseHdr *sub_100c73b0(SPoseHdr *pHdr, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c7480 size=0xad
+struct StudioHdr;
+
+struct IncludeModelProvider
+{
+	virtual void v0();
+	virtual StudioHdr *vfunc1(StudioHdr *pHdr, int index);
+};
+
+struct IncludeModel
+{
+	int m_pad0000;
+	IncludeModelProvider *m_pProvider;	// 0x04
+	int m_nBaseSequence;	// 0x08
+	int m_nNumSequences;	// 0x0c
+	int m_nBoneRemapIndex;	// 0x10
+	char m_pad0014[0x74 - 0x14];
+};
+
+struct SeqDesc
+{
+	char m_pad[0x2fc];
+};
+
+struct StudioHdr
+{
+	char m_pad0000[0x110];
+	int numseq;	// 0x110
+	int seqindex;	// 0x114
+	char m_pad0118[0x194 - 0x118];
+	int numincludemodels;	// 0x194
+	int includemodelindex;	// 0x198
+	SeqDesc *pSeqdesc(int i) const { if (i < 0 || i >= numseq) i = 0; return (SeqDesc *)((char *)this + seqindex) + i; }
+};
+
+SeqDesc *sub_1001215c(StudioHdr *pHdr, int iSequence);
+
+SeqDesc *sub_100c7480(StudioHdr *pHdr, int iSequence)
+{
+	if (pHdr && iSequence >= 0) {
+		if (iSequence < pHdr->numseq)
+			return pHdr->pSeqdesc(iSequence);
+		for (int j = 0; j < pHdr->numincludemodels; j++) {
+			IncludeModel *pInc = (IncludeModel *)((char *)pHdr + (pHdr->includemodelindex + j * sizeof(IncludeModel)));
+			if (pInc->m_nBaseSequence <= iSequence && pInc->m_nBaseSequence + pInc->m_nNumSequences > iSequence && pInc->m_pProvider) {
+				StudioHdr *pSub = pInc->m_pProvider->vfunc1(pHdr, j);
+				if (pSub) {
+					SeqDesc *r = sub_1001215c(pSub, iSequence - pInc->m_nBaseSequence);
+					if (r)
+						return r;
+				}
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c7560 size=0xb8
 struct CStudioSub
 {
