@@ -262,6 +262,106 @@ void CRotDoor::vfunc156(int bFirst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f26b0 size=0x297
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CRotDoor.h"
+#include "CBaseDoor.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "CBaseCombatCharacter.h"
+#include "inputdata_t.h"
+
+namespace block_100f26b0 {
+struct EntListUnit : EHandleEntityList
+{
+	IHandleEntity *sub_100290c0(const CBaseHandle &handle) const;
+};
+#pragma auto_inline(off)
+IHandleEntity *EntListUnit::sub_100290c0(const CBaseHandle &handle) const
+{
+	unsigned int i = handle.m_Index;
+	if (i == 0xffffffff)
+		return 0;
+	const EHandleEntInfo *pInfo = &m_EntPtrArray[i & 0x1fff];
+	if ((unsigned int)pInfo->m_SerialNumber == (i >> m_EntPtrArray[0].m_pad))
+		return pInfo->m_pEntity;
+	else
+		return 0;
+}
+#pragma auto_inline(on)
+}
+using namespace block_100f26b0;
+
+class CUnknown1017f770
+{
+public:
+	int sub_1017f770();
+};
+
+struct CKnobView
+{
+	void sub_10224170(inputdata_t *pInput);
+};
+
+struct SDoorActivator
+{
+	char m_pad0000[0xa8];
+	CBaseCombatCharacter *m_pPlayer;	// 0xa8
+};
+
+// TARGET: ?vfunc242@CRotDoor@@UAEHXZ
+int CRotDoor::vfunc242()
+{
+	ScopeTrace trace("CRotDoor::DoorActivate", g_106b8540);
+	CBaseDoor *pDoor = (CBaseDoor *)this;
+	SDoorActivator *pActivator = (SDoorActivator *)((EntListUnit *)EHandleDetail::g_10566458)->sub_100290c0(pDoor->m_hActivator53c);
+	CBaseCombatCharacter *pPlayer;
+	if (!pActivator)
+		pPlayer = (CBaseCombatCharacter *)pActivator;
+	else
+	{
+		pPlayer = pActivator->m_pPlayer;
+		if (pPlayer && pDoor->m_bNoOpenWanted && ((CUnknown1017f770 *)pPlayer)->sub_1017f770() > 0)
+			return 0;
+	}
+	if (pDoor->m_nState4f8 == 2 || pDoor->m_nState4f8 == 0)
+		pDoor->vfunc244(1);
+	else if (pDoor->m_nState4f8 == 1 || pDoor->m_nState4f8 == 3)
+		pDoor->vfunc243(1, 1);
+	inputdata_t input;
+	input.value.iValue = 0;
+	input.value.eVal = 0xffffffff;
+	input.value.fieldType = 0;
+	input.pCaller = this;
+	input.pActivator = pDoor->m_hActivator53c.Get();
+	if (((CBaseHandle *)&pDoor->m_hDoorknob0)->Get()) {
+		((CKnobView *)((CBaseHandle *)&pDoor->m_hDoorknob0)->Get())->sub_10224170(&input);
+		((CEntityVSlots *)EHandle_Get(pDoor->m_hDoorknob0))->slot273();
+	}
+	if (((CBaseHandle *)&pDoor->m_hDoorknob1)->Get()) {
+		((CKnobView *)((CBaseHandle *)&pDoor->m_hDoorknob1)->Get())->sub_10224170(&input);
+		((CEntityVSlots *)EHandle_Get(pDoor->m_hDoorknob1))->slot273();
+	}
+	if (pPlayer)
+		pDoor->sub_100ee560(pPlayer->sub_101671a0());
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2a00 size=0x16f
 #include "CRotDoor.h"
 #include "CEntityVSlots.h"
