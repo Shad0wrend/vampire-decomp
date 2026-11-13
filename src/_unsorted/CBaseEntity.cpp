@@ -3746,6 +3746,95 @@ void CBaseEntity::vfunc141(CVDmg_t *pInfo, const Vector *pDir, CGameTrace *pTrac
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a8400 size=0x265
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CUnknown100a8340.h"
+#include "CTakeDamageInfo.h"
+#include "ScopeTrace.h"
+
+struct CollisionEventView {
+	char m_pad0000[0x68];
+	CBaseEntity *m_pEntities[2];	// 0x68
+};
+extern char g_1057d268[];
+extern char g_1057d360[];
+extern float g_104454c4;
+CBaseEntity *sub_1023bd00();
+float sub_10151c00(int index, void *pEvent, const void *pTable, int energyScale, int allowStatic, int *pDamageType);
+float sub_10152060(int index, void *pEvent, int energyScale, int allowStatic, int *pDamageType);
+void sub_101520a0(void *pEvent, int index, Vector *pPos, Vector *pForce);
+void sub_10032720(CBaseEntity *pEnt, CTakeDamageInfo *pInfo);
+
+static inline CBaseEntity *LookupD0(const CBaseHandle &h)
+{
+	EHandleDetail::EntityList *pList = EHandleDetail::g_10566458;
+	if (h.m_Index == 0xffffffff)
+		return 0;
+	const EHandleEntInfo *pInfo = &pList->m_EntPtrArray[h.GetEntryIndex()];
+	if (pInfo->m_SerialNumber == h.GetSerialNumber())
+		return (CBaseEntity *)pInfo->m_pEntity;
+	return 0;
+}
+
+// TARGET: CBaseEntity::vfunc75
+void CBaseEntity::vfunc75(int index, void *pEvent)
+{
+	ScopeTrace trace("CBaseEntity::TakeDamageFromCollision", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CBaseEntity *pOther = ((CollisionEventView *)pEvent)->m_pEntities[index == 0];
+	if (!pOther)
+		pOther = sub_1023bd00();
+	if (engine->vfunc35(pcd_stage(pOther->m_pEdict2e0))) {
+		if (LookupD0(pOther->m_hD0) == this && pOther->m_nD4 == engine->vfunc120())
+			return;
+		pOther->sub_100a8390(this, 10.0f);
+	}
+	if (pOther->vfunc73(this) && vfunc74((int)pOther)) {
+		float damage;
+		int damageType = 0;
+		if (sub_100b3700() & 0x80) {
+			damage = sub_10151c00(index, pEvent, g_1057d268, m_nDC, 1, &damageType);
+		} else if (sub_100b3700() & 0x2000) {
+			damage = sub_10151c00(index, pEvent, g_1057d360, m_nDC, 1, &damageType);
+		} else {
+			damage = sub_10152060(index, pEvent, m_nDC, 1, &damageType);
+		}
+		if (damage > g_104454c4) {
+			if (!damageType)
+				damageType = 1;
+			Vector vecPos, vecForce;
+			sub_101520a0(pEvent, index, &vecPos, &vecForce);
+			if (m_iMaxHealth > 0)
+				damage = (float)m_iMaxHealth * damage * 0.01f;
+			CUnknown100a8340 *pView = (CUnknown100a8340 *)pOther;
+			CBaseEntity *pAttacker = pView->sub_100a8240();
+			if (!pAttacker)
+				pAttacker = pOther;
+			else
+				pAttacker = pView->sub_100a8240();
+			CTakeDamageInfo info;
+			info.sub_101c2720(pOther, pAttacker, &vecForce.x, &vecPos.x, damage, damageType, 0);
+			sub_10032720(this, &info);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a8710 size=0x1fe
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
