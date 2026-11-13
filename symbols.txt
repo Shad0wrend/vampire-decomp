@@ -13839,6 +13839,7 @@
 0x10013007 func   ?sub_1013bef0@@YAXABVVector@@000MAAV1@@Z sub_1013bef0
 0x1001300c func   ?sub_102c2c10@@YIXPADH0@Z sub_102c2c10
 0x10013011 func   ?sub_102ecc00@CUnknown102ecc00@@QAEHXZ CUnknown102ecc00::sub_102ecc00
+0x10013016 func   ?vfunc404@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc404
 0x1001301b func   ?sub_10312b50@CAI_Expresser@@QAEXXZ CAI_Expresser::sub_10312b50
 0x10013020 func   ?vfunc1@ConCommand@@UAE_NXZ ConCommand::vfunc1
 0x10013025 func   ?vfunc6@CRestore@@UAEXPAX@Z CRestore::vfunc6

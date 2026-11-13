@@ -2971,6 +2971,87 @@ void CUnknown10332fc0::sub_10332ef0(void *pSpeaker, int nDelta, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10333340 size=0x2f4
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+struct CRelationRecord
+{
+	EHANDLE m_hEntity;
+	int m_nClass;
+	int m_nDisposition;
+};
+
+struct CRelationView
+{
+	char m_pad0000[0x98];
+	CRelationView *m_pAI98;
+	CBaseCombatCharacter *m_pOwner9c;
+	char m_pad00a0[0x14bc - 0xa0];
+	unsigned int m_nFlags14bc;
+};
+
+typedef int (__fastcall *PFN_SLOT)(CBaseEntity *pThis);
+static inline int CallSlot(CBaseEntity *p, int slot) { return ((PFN_SLOT)(*(void ***)p)[slot])(p); }
+static inline CBaseEntity *const &Ref(CBaseEntity *const &r) { return r; }
+
+// TARGET: CBaseCombatCharacter::vfunc404
+int CBaseCombatCharacter::vfunc404(CBaseEntity *pTarget)
+{
+	ScopeTrace trace("CBaseCombatCharacter::IRelationType", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	if (pTarget == this)
+		return 0;
+	if (!pTarget)
+		return 0;
+	CBaseCombatCharacter *pOwner = ((CRelationView *)pTarget)->m_pOwner9c;
+	CRelationView *pThis = (CRelationView *)this;
+	CRelationView *pOtherAI = ((CRelationView *)pTarget)->m_pAI98;
+	if (pOwner && pOwner->m_b1480 && !pOwner->sub_100b5190()) {
+		unsigned int flags = pThis->m_nFlags14bc;
+		if (0x20000 == (flags & 0x20000)) {
+			if (!pTarget->m_pA8) return 1; return 3;
+		}
+		if ((flags & 0x10000) == 0x10000)
+			return 3;
+		if (0x40000 == (flags & 0x40000)) {
+			if (pOtherAI && (pOtherAI->m_nFlags14bc & 0x40000) != 0x40000) {
+				CBaseEntity *pCompare;
+				CRelationView *pMyAI = pThis->m_pAI98;
+				if (pMyAI)
+					pCompare = ((EHANDLE *)(0x628c + (char *)pMyAI))->Get();
+				else
+					pCompare = *(CBaseEntity *volatile *)&pTarget;
+				if (pCompare && (CBaseEntity *)CallSlot((CBaseEntity *)pOtherAI, 168) == pCompare)
+					return 1;
+			}
+			return 3;
+		}
+		if (0 < m_field146c && sub_10337f30())
+			return 1;
+	}
+	if (m_nRelationships15a0) {
+		CRelationRecord **ppRecords = (CRelationRecord **)m_ppRelationships1598;
+		if (ppRecords) {
+			CRelationRecord **pp = ppRecords;
+			int i;
+			i = 0; while (i < m_nRelationships15a0) { if (pTarget == (*pp)->m_hEntity.Get())
+					return ppRecords[i]->m_nDisposition; i++, pp++; }
+			if (CallSlot(pTarget, 138)) {
+				i = 0; while (i < m_nRelationships15a0) { if (CallSlot(pTarget, 138) == ((CRelationRecord **)m_ppRelationships1598)[i]->m_nClass)
+						return ((CRelationRecord **)m_ppRelationships1598)[i]->m_nDisposition; ++i; }
+			}
+		} else {
+			DevMsg("ERROR: no relationships found, but there SHOULD be!\n");
+		}
+	}
+	return 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10333700 size=0x15a
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
