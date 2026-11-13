@@ -105955,6 +105955,28 @@ void CBasePlayer::sub_10181be0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182160 size=0x59
+#include <math.h>
+float sub_10182160(const float *v)
+{
+	float x = fabs(v[0]);
+	float y = fabs(v[1]);
+	float z = fabs(v[2]);
+	float r;
+	if (x > y) {
+		if (x > z)
+			return x + (z + y) * 0.25f;
+	} else {
+		if (y > z) {
+			r = y + (x + z) * 0.25f;
+			return r;
+		}
+	}
+	r = z + (x + y) * 0.25f;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182210 size=0x3b
 #include "CBasePlayer.h"
 
