@@ -2395,6 +2395,107 @@ char CBaseCombatCharacter::vfunc388(void *weapon, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032e330 size=0x385
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "S1033d380.h"
+#include "CBaseCombatCharacter.h"
+#include "animevent_t.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CBaseAnimating.h"
+#include "CUnknown101e0f00.h"
+#include "COrnamentProp.h"
+
+extern CUnknown101e0f00 g_10739a4c;
+void sub_101cd940(CBaseEntity *p);
+char *sub_101d3730(const char *fmt, ...);
+char **sub_10203ed0(char **tmp, char *s);
+COrnamentProp *sub_10190e50(const char *pszModel, CBaseEntity *pParent);
+
+static inline CBaseEntity *LookH(const unsigned int &rh)
+{
+	if (rh == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[rh & 0x1fff];
+	if (pSlot->m_Serial == (int)(rh >> 13))
+		return (CBaseEntity *)pSlot->m_pEntity;
+	return 0;
+}
+
+// TARGET: CBaseCombatCharacter::sub_1032e330
+void CBaseCombatCharacter::sub_1032e330(void *pv)
+{
+	animevent_t *pEvent = (animevent_t *)pv;
+	ScopeTrace trace("CBaseCombatCharacter::HandleAnimEvent", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (pEvent->pSource != (CBaseEntity *)this || (pEvent->event >= 3000 && pEvent->event <= 3999)) {
+		sub_1032e210(pEvent);
+		return;
+	}
+	switch (pEvent->event) {
+	case 0x1004:
+	case 0x1006: {
+		sub_101cd940(LookH(m_hAnimFollowModel.m_Index));
+		char *name;
+		if (pEvent->event == 0x1006)
+			name = sub_101d3730("%s_%s.mdl", pEvent->options, sub_10336920() ? "male" : "female");
+		else
+			name = sub_101d3730("%s.mdl", pEvent->options);
+		char *tmp;
+		const char *str = *sub_10203ed0(&tmp, name);
+		if (!str)
+			str = g_106b8540;
+		COrnamentProp *pProp = sub_10190e50(str, (CBaseEntity *)this);
+		if (pProp) {
+			m_hAnimFollowModel.m_Index = *((IHandleEntity *)pProp)->vfunc1();
+			return;
+		}
+		m_hAnimFollowModel.m_Index = 0xffffffff;
+		return;
+	}
+	case 0x1005:
+		sub_101cd940((CBaseEntity *)EHandle_Get(m_hAnimFollowModel.m_Index));
+		m_hAnimFollowModel.m_Index = 0xffffffff;
+		break;
+	case 0xfa7:
+		if (m_hTarget1538.Get() && m_nTarget153c == 0) {
+			CBaseEntity *pT = m_hTarget1538.Get();
+			if (pT) {
+				vfunc351((CBaseCombatCharacter *)pT);
+				return;
+			}
+		}
+		break;
+	case 0xfa6:
+		if (m_hTarget1538.Get() && m_nTarget153c == 1)
+			break;
+		if (m_hTarget1538.Get() && m_nTarget153c == 0) {
+			c353();
+			return;
+		}
+		break;
+	case 0xfb4:
+		g_10739a4c.sub_101e3e70((S1033d380 *)(void *)this, pEvent->options);
+		return;
+	default:
+		((CBaseAnimating *)(void *)this)->vfunc259((animevent_t *)pEvent);
+		return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032ebc0 size=0x9d
 #include "CBaseCombatCharacter.h"
 #include "CBaseEntity.h"
