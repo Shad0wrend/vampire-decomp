@@ -118179,6 +118179,81 @@ void sub_101a75e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7600 size=0x110
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CCineNPC.h"
+#include "CCineNPCSlots.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList g_106eb5d8;
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+
+struct SeqV
+{
+	CCS_V100(a) CCS_V100(b)
+	CCS_V10(c0) CCS_V10(c1)
+	virtual const Vector &slot220();
+	CCS_V(c221) CCS_V(c222) CCS_V(c223) CCS_V(c224) CCS_V(c225) CCS_V(c226) CCS_V(c227) CCS_V(c228) CCS_V(c229)
+	CCS_V10(c3) CCS_V10(c4) CCS_V10(c5) CCS_V10(c6) CCS_V10(c7) CCS_V10(c8) CCS_V10(c9)
+	CCS_V100(d)
+	CCS_V10(e0) CCS_V10(e1) CCS_V10(e2) CCS_V10(e3) CCS_V10(e4) CCS_V10(e5) CCS_V10(e6) CCS_V10(e7)
+	CCS_V(e480) CCS_V(e481)
+	virtual int CanPlaySequence(bool a, int b);
+	CCS_V(e483) CCS_V(e484) CCS_V(e485) CCS_V(e486) CCS_V(e487) CCS_V(e488) CCS_V(e489)
+	CCS_V10(g49) CCS_V10(g50) CCS_V10(g51) CCS_V10(g52) CCS_V10(g53) CCS_V10(g54) CCS_V10(g55) CCS_V10(g56) CCS_V10(g57)
+	CCS_V(g580) CCS_V(g581) CCS_V(g582) CCS_V(g583) CCS_V(g584)
+	virtual bool FCanOverrideState();
+};
+
+void *CCineNPC::sub_101a7600()
+{
+	SeqV *pEnqueueNPC = 0;
+
+	CBaseEntity *pEntity = g_106eb5d8.sub_100f7f70(m_pSearchStart5f98, STRINGR(m_pszTarget5f54), ((CCineNPCSlots *)this)->slot220(), *(float *)&m_n5f68, (CBaseEntity *)this, 0);
+
+	while (pEntity != 0)
+	{
+		SeqV *pNPC = *(SeqV **)((char *)pEntity + 0x94);
+		if (pNPC)
+		{
+			int eCanPlay = pNPC->CanPlaySequence(((SeqV *)this)->FCanOverrideState(), 0);
+			if (eCanPlay == 1)
+			{
+				return pNPC;
+			}
+			else if (eCanPlay == 2)
+			{
+				pEnqueueNPC = pNPC;
+			}
+			else if (!(m_flags204 & 0x800))
+			{
+				g_109f3628("Found %s, but can't play!\n", STRINGR(m_pszTarget5f54));
+			}
+		}
+
+		pEntity = g_106eb5d8.sub_100f7f70(pEntity, STRINGR(m_pszTarget5f54), ((CCineNPCSlots *)this)->slot220(), *(float *)&m_n5f68, (CBaseEntity *)this, 0);
+	}
+
+	if (pEnqueueNPC != 0)
+	{
+		return pEnqueueNPC;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a7760 size=0x2e
 #include "CBaseEntity.h"
 // TARGET: CCineNPC::sub_101a7760
