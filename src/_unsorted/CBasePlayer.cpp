@@ -4098,6 +4098,302 @@ Vector CBasePlayer::vfunc197(const Vector &posSrc, char bRandom, char bAddViewOf
 }
 // END FUNCTION
 
+// FUNCTION: 0x101755d0 size=0xbc4
+#include "CNPC_VTzimisce.h"
+#include "CBasePlayer.h"
+#include "CSingleUserRecipientFilter.h"
+#include "CVStatList_t.h"
+#include "globalvars.h"
+#include "engineserver.h"
+
+#define HV_V(n) virtual void v##n();
+#define HV_T(p) HV_V(p##0) HV_V(p##1) HV_V(p##2) HV_V(p##3) HV_V(p##4) HV_V(p##5) HV_V(p##6) HV_V(p##7) HV_V(p##8) HV_V(p##9)
+#define HV_H(p) HV_T(p##0) HV_T(p##1) HV_T(p##2) HV_T(p##3) HV_T(p##4) HV_T(p##5) HV_T(p##6) HV_T(p##7) HV_T(p##8) HV_T(p##9)
+
+struct ELSlot { void *m_pEnt; unsigned int m_Serial; int m_pad; };
+struct ELView { int m_vptr; ELSlot m_Slots[1]; };
+extern ELView *g_10566458;
+
+struct UCDEngine { HV_V(a0) HV_V(a1) HV_V(a2) HV_V(a3) HV_V(a4) virtual void vfunc5(int n); };
+struct UCDSelf { HV_H(a) HV_H(b) HV_H(c) HV_H(d) HV_T(e0) HV_T(e1) HV_T(e2) virtual void vfunc430(); virtual void vfunc431(); virtual void vfunc432(); };
+struct UCDEnt { HV_H(a) HV_H(b) HV_H(c) HV_T(d0) HV_T(d1) HV_T(d2) HV_T(d3) HV_V(d40) HV_V(d41) HV_V(d42) HV_V(d43) HV_V(d44) HV_V(d45) HV_V(d46) HV_V(d47) virtual char vfunc348(); };
+struct UCDWeapon { HV_H(a) HV_H(b) HV_T(c0) HV_T(c1) HV_T(c2) HV_T(c3) HV_T(c4) HV_T(c5) HV_T(c6) HV_T(c7) HV_V(c80) HV_V(c81) HV_V(c82) HV_V(c83) HV_V(c84) virtual void *vfunc285(); virtual bool vfunc286(); };
+struct UCDWeapon2 { HV_H(a) HV_H(b) HV_H(c) virtual void vfunc300(); virtual void vfunc301(void *pPlayer); };
+struct UCDRules { HV_T(a) HV_T(b) HV_V(c0) HV_V(c1) HV_V(c2) HV_V(c3) HV_V(c4) HV_V(c5) HV_V(c6) virtual void vfunc27(void *p); HV_T(d) HV_T(e) HV_T(f) HV_T(g) HV_V(h0) HV_V(h1) HV_V(h2) virtual void vfunc71(void *p); };
+extern UCDRules *g_1070ba0c;
+
+extern char g_10580ae8;
+extern int g_1070ba24;
+extern int g_10726014;
+extern int g_10726018;
+extern int g_1072601c;
+extern int g_10726020;
+extern int g_10726058;
+extern int g_1072605c;
+extern int g_10726060;
+extern int g_10726064;
+extern int g_10726068;
+extern int g_1072606c;
+extern int g_10726074;
+extern int g_10726090;
+extern int g_10726094;
+extern int g_1074e5fc;
+extern char g_10924fb8;
+extern unsigned int g_109247e0[2];
+
+struct CPlayerUnit : CBasePlayer { int sub_10174f80(); };
+struct UCDChar { int sub_10337860(); };
+struct UCDPlayer : CBasePlayer
+{
+	void *sub_1032e7b0();
+	void *sub_1032e8b0(int i);
+};
+
+#define M(T, o) (*(T *)((char *)this + (o)))
+
+struct HView
+{
+	unsigned int m_Index;
+	void *Get() const
+	{
+		if (m_Index != 0xffffffff) {
+			ELSlot *s = &g_10566458->m_Slots[m_Index & 0x1fff];
+			if (s->m_Serial == (m_Index >> 13))
+				return s->m_pEnt;
+		}
+		return 0;
+	}
+};
+#define HGet(h) (((const HView *)&(h))->Get())
+struct HView2 : HView { CBasePlayer *Get() const { return (CBasePlayer *)HView::Get(); } };
+struct ELView2 : ELView
+{
+	void *LookupEntity(const HView &h) const
+	{
+		if (h.m_Index == 0xffffffff)
+			return 0;
+		const ELSlot *pInfo = &m_Slots[h.m_Index & 0x1fff];
+		if (pInfo->m_Serial == (h.m_Index >> 13))
+			return pInfo->m_pEnt;
+		else
+			return 0;
+	}
+};
+struct HView6 : HView { CBasePlayer *Get() const { return (CBasePlayer *)((ELView2 *)g_10566458)->LookupEntity(*this); } };
+#define HGet2(h) (((const HView2 *)&(h))->Get())
+
+extern CVStatList_t g_109f0b40;
+void __cdecl sub_10012a8a();
+extern "C" int __cdecl atexit(void (__cdecl *)());
+
+inline CVStatList_t *FindStatList(CVStatListSet *pSet, int type)
+{
+	for (int i = 0; i < pSet->m_nLists; i++) {
+		if (pSet->m_pLists[i]->m_field10 == type)
+			return pSet->m_pLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		g_109f0b40.CVStatList_t::CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+#define StatList(p, t) FindStatList(CVStatListSet::Of(p), t)
+
+#define max(a, b) (((a) > (b)) ? (a) : (b))
+
+// TARGET: CBasePlayer::vfunc444
+void CBasePlayer::vfunc444()
+{
+	sub_10174580();
+	int nState = ((CPlayerUnit *)this)->sub_10174f80();
+	((UCDEngine *)engine)->vfunc5(nState);
+	M(int, 0x1f84) = sub_10175220();
+	M(int, 0x1f80) = sub_10175290();
+	CSingleUserRecipientFilter user(this);
+	user.MakeReliable();
+	if (HGet(m_h1538) && m_n153C != -1 && m_n1540 == 8)
+		sub_10175400(1);
+	if (m_fInitHUD) {
+		m_fInitHUD = false;
+		g_10580ae8 = 0;
+		engine->vfunc65(&user, g_10726014);
+		engine->vfunc67(0);
+		engine->vfunc66();
+		if (!M(bool, 0x2299)) {
+			engine->vfunc65(&user, g_10726018);
+			engine->vfunc66();
+			g_1070ba0c->vfunc27(this);
+			((UCDSelf *)this)->vfunc432();
+			M(bool, 0x2299) = true;
+		}
+	}
+	if (g_1070ba24) {
+		engine->vfunc65(&user, g_1072601c);
+		engine->vfunc67(0);
+		engine->vfunc66();
+		g_1070ba24 = 0;
+	}
+	if (m_iHealth != M(int, 0x20e8)) {
+		int iHealth = max(m_iHealth, 0);
+		if (g_10726020) {
+			engine->vfunc65(&user, g_10726020);
+			engine->vfunc67(iHealth);
+			engine->vfunc66();
+		}
+		M(int, 0x20e8) = m_iHealth;
+	}
+	int v = StatList(this, 0)->sub_102012d0(0x10);
+	if (v != M(int, 0x1a94)) {
+		if (g_1072606c) {
+			engine->vfunc65(&user, g_1072606c);
+			engine->vfunc67(max(v, 0));
+			engine->vfunc66();
+		}
+		M(int, 0x1a94) = v;
+	}
+	v = StatList(this, 0)->sub_102012d0(0xc);
+	if (v != M(int, 0x1a84)) {
+		if (g_10726058) {
+			engine->vfunc65(&user, g_10726058);
+			engine->vfunc67(max(v, 0));
+			engine->vfunc66();
+		}
+		M(int, 0x1a84) = v;
+	}
+	v = StatList(this, 0)->sub_102012d0(0xe);
+	if (v != M(int, 0x1a88)) {
+		if (g_1072605c) {
+			engine->vfunc65(&user, g_1072605c);
+			engine->vfunc67(max(v, 0));
+			engine->vfunc66();
+		}
+		M(int, 0x1a88) = v;
+	}
+	if (!(HGet(m_h1538) && m_n153C != -1 && m_n1540 == 8)) {
+		CBasePlayer *pTarget = ((const HView6 *)&m_h149C)->Get();
+		if (!pTarget && HGet(m_h1538) && m_n153C == 0)
+			pTarget = HGet2(m_h1538);
+		if (HGet(m_h149C) || (pTarget && m_b14A8)) {
+			v = StatList(pTarget, 0)->sub_102012d0(0xc);
+			if (v != M(int, 0x1a8c)) {
+				v = max(v, 0);
+				if (g_10726060) {
+					engine->vfunc65(&user, g_10726060);
+					engine->vfunc67(v);
+					engine->vfunc66();
+				}
+				M(int, 0x1a8c) = v;
+			}
+		} else {
+			UCDWeapon *pWeapon = (UCDWeapon *)((UCDPlayer *)this)->sub_1032e7b0();
+			if (pWeapon && pWeapon->vfunc286()) {
+				void *pObj = pWeapon->vfunc285();
+				if (pObj) {
+					void *pOwner = *(void **)((char *)pObj + 0x9c);
+					if (pOwner) {
+						v = StatList(pOwner, 0)->sub_102012d0(0xc);
+						if (v != M(int, 0x1a8c)) {
+							if (g_10726060) {
+								engine->vfunc65(&user, g_10726060);
+								engine->vfunc67(max(v, 0));
+								engine->vfunc66();
+							}
+							M(int, 0x1a8c) = v;
+						}
+					}
+				}
+			}
+		}
+	}
+	bool bSend = false;
+	const float &rLast = M(float, 0x1b80);
+	if (g_10924fb8 != M(char, 0x1b7c))
+		bSend = true;
+	else {
+		for (int i = 0; i < g_10924fb8; i++) {
+			UCDEnt *pEnt = (UCDEnt *)HGet(g_109247e0[i]);
+			if (pEnt) {
+				if (pEnt->vfunc348() != M(char, 0x1b7d + i))
+					bSend = true;
+			} else {
+				int j;
+				for (j = i; j < g_10924fb8 - 1; j++)
+					g_109247e0[j] = g_109247e0[j + 1];
+				g_10924fb8--;
+				g_109247e0[j] = 0xffffffff;
+				i--;
+			}
+		}
+	}
+	if ((g_10924fb8 && rLast + 2.0f < gpGlobals->curtime) || bSend) {
+		engine->vfunc65(&user, g_10726064);
+		engine->vfunc67(g_10924fb8);
+		M(char, 0x1b7c) = g_10924fb8;
+		for (int i = 0; i < g_10924fb8; i++) {
+			char b = 0;
+			int n = 0;
+			UCDEnt *pEnt = (UCDEnt *)HGet(g_109247e0[i]);
+			if (pEnt) {
+				b = pEnt->vfunc348();
+				n = ((UCDChar *)pEnt)->sub_10337860();
+			}
+			engine->vfunc67(b);
+			engine->vfunc71(n);
+			M(char, 0x1b7d + i) = b;
+		}
+		M(float, 0x1b80) = gpGlobals->curtime;
+		engine->vfunc66();
+	}
+	if (m_n146c != M(int, 0x1b68)) {
+		if (g_10726068) {
+			engine->vfunc65(&user, g_10726068);
+			engine->vfunc67(m_n146c);
+			engine->vfunc66();
+		}
+		M(int, 0x1b68) = m_n146c;
+	}
+	if (M(int, 0x13a4) & 1) {
+		M(int, 0x13a4) &= ~1;
+		for (int i = 0; i < g_1074e5fc; i++) {
+			int n = StatList(this, 3)->sub_10200ca0(i);
+			if (n == -1)
+				n = 0;
+			if (M(int, 0x1a98 + i * 4) != n) {
+				M(int, 0x1a98 + i * 4) = n;
+				if (g_10726074) {
+					engine->vfunc65(&user, g_10726074);
+					engine->vfunc67(i);
+					engine->vfunc67(n);
+					engine->vfunc66();
+				}
+			}
+		}
+	}
+	if (m_fClientCurrentRangedAccuracy != m_f1DDC) {
+		if (g_10726090) {
+			int n = (int)m_f1DDC;
+			engine->vfunc65(&user, g_10726090);
+			engine->vfunc67(n);
+			engine->vfunc66();
+			m_fClientCurrentRangedAccuracy = m_f1DDC;
+		}
+	}
+	if (g_10726094 && (m_iForceCameraType == 8 || m_iForceCameraType == 16)) {
+		engine->vfunc65(&user, g_10726094);
+		engine->vfunc67(m_iForceCameraType);
+		engine->vfunc66();
+	}
+	m_iForceCameraType = 0;
+	for (int i = 0; i < 0xe0; i++) {
+		if (((UCDPlayer *)this)->sub_1032e8b0(i))
+			((UCDWeapon2 *)((UCDPlayer *)this)->sub_1032e8b0(i))->vfunc301(this);
+	}
+	g_1070ba0c->vfunc71(this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10177210 size=0x73
 #include "CBasePlayer.h"
 #include "CBaseCombatCharacter.h"
