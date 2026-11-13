@@ -259742,6 +259742,97 @@ bool CUnk10380470::sub_10380470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10380fc0 size=0x3b0
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VHengeyokai.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "ScopeTrace.h"
+#include "CTraceFilterSimpleTwoEnt.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CUnknown10738964.h"
+
+struct CHengScale { virtual void vfunc0(); virtual char vfunc1(); char pad[0x24]; float m_fl28; int m_n2c; };
+struct CHengHull { virtual void vfunc0(); virtual const float *GetMins(); virtual const float *GetMaxs(); };
+struct SHengView : CEntityVSlots {
+	char pad[0x270 - 4];
+	CHengHull m_hull;
+	char pad2[0x368 - 0x274];
+	int m_n368;
+};
+extern CHengScale *g_1093b23c;
+void sub_10139610(const Vector *angles, Vector *fwd, Vector *right, Vector *up);
+void sub_10146570(const float *a, const float *b, int c, int d, int e, int f, float g);
+int __fastcall sub_1008bf00(void *p);
+int sub_1023bd00();
+struct CUnknown1004f860 { void sub_1004f860(); };
+
+// TARGET: CNPC_VHengeyokai::sub_10380fc0
+void *CNPC_VHengeyokai::sub_10380fc0(int *pState)
+{
+	SHengView *self = (SHengView *)this;
+	Vector vecStart = *self->slot220();
+	vecStart.z += 4.0f;
+	Vector vecEnd;
+	sub_10139610(self->slot221(), &vecEnd, 0, 0);
+	float flScale = g_1093b23c->vfunc1() ? g_104454c4 : g_1093b23c->m_fl28;
+	vecEnd = vecStart + vecEnd * flScale;
+	int n0 = self->m_n368;
+	CTraceFilterSimpleTwoEnt filter(self, (void *)sub_1008bf00(self), n0);
+	CGameTrace trace;
+	Ray_t ray;
+	CHengHull *pHull = &self->m_hull;
+	const float *pMins = pHull->GetMins();
+	const float *pMaxs = pHull->GetMaxs();
+	{
+		ScopeTrace scope("UTIL_TraceHull", g_106b8540, g_106b8540);
+		((CUnknown1004f860 *)&ray)->sub_1004f860();
+		ray.sub_1006dec0(vecStart, &vecEnd.x, pMins, pMaxs, 1, 0);
+		g_1070b254->vfunc4(&ray, 0x202400b, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+		if (g_10738960.sub_1005f190())
+			sub_10146570(trace.m_startpos, trace.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+	}
+	if (trace.m_fraction == 1.0f)
+		return 0;
+	void *pHit = trace.m_pEnt;
+	if (pHit == (void *)sub_1023bd00())
+		return 0;
+	if (!self->slot69(pHit))
+		return 0;
+	int n368 = self->m_n368;
+	CTraceFilterSimpleTwoEnt filter2(self, (void *)sub_1008bf00(self), n368);
+	vecStart.z += self->slot522();
+	vecEnd.z += self->slot522();
+	CGameTrace trace2;
+	pMins = pHull->GetMins();
+	pMaxs = pHull->GetMaxs();
+	{
+		ScopeTrace scope2("UTIL_TraceHull", g_106b8540, g_106b8540);
+		ray.sub_1006dec0(vecStart, &vecEnd.x, pMins, pMaxs, 1, 0);
+		g_1070b254->vfunc4(&ray, 0x202400b, (CTraceFilterNoCharacterCollide *)&filter2, &trace2);
+		if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+			sub_10146570(trace2.m_startpos, trace2.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+	}
+	void *pHit2 = trace2.m_pEnt;
+	if (trace2.m_fraction != 1.0f && pHit2 != (void *)sub_1023bd00() && self->slot69(pHit2))
+		*pState = 0;
+	else
+		*pState = 1;
+	return pHit;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10381460 size=0x1f5
 #include "CNPC_VHengeyokai.h"
 #include "CBaseEntity.h"
