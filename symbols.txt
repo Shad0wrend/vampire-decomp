@@ -3171,6 +3171,7 @@
 0x10005268 func   ?sub_100dc220@CCollisionProperty@@QAEXH@Z CCollisionProperty::sub_100dc220
 0x1000526d func   ?vfunc566@CNPC_VBach@@UAE_NPAVCBaseEntity@@@Z CNPC_VBach::vfunc566
 0x10005272 func   ?sub_1010b7d0@CFire@@QAEXMM@Z CFire::sub_1010b7d0
+0x10005277 func   ?vfunc619@CNPC_VTzimisceRunner@@QAEXD@Z CNPC_VTzimisceRunner::vfunc619
 0x1000527c func   ?vfunc127@CAI_BaseNPCTroika@@UAEHPAVCRestore@@@Z CAI_BaseNPCTroika::vfunc127
 0x10005281 func   ?vfunc1@CSave@@UAEXH@Z CSave::vfunc1
 0x10005286 func   ?sub_1035b200@@YGXHHHH@Z sub_1035b200

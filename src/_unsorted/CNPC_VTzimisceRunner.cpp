@@ -570,6 +570,36 @@ void CNPC_VTzimisceRunner::vfunc618()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c4160 size=0x1ce
+#include "CNPC_VTzimisceRunner.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "engineiface.h"
+#include "engineserver.h"
+
+extern const char *g_1065d680[2];
+extern const char *g_1065d688[2];
+extern const char *g_1065d690[4];
+
+void CNPC_VTzimisceRunner::vfunc619(char bRight)
+{
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	filter.MakeReliable();
+	if (bRight) {
+		int edict = m_pEdict2e0;
+		int ent = engine->vfunc35(edict);
+		enginesound->vfunc3(&filter, ent, 4, g_1065d688[enginerandom->vfunc2(0, 1)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	} else {
+		int edict = m_pEdict2e0;
+		int ent = engine->vfunc35(edict);
+		enginesound->vfunc3(&filter, ent, 4, g_1065d680[enginerandom->vfunc2(0, 1)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+	}
+	int edict = m_pEdict2e0;
+	int ent = engine->vfunc35(edict);
+	enginesound->vfunc3(&filter, ent, 4, g_1065d690[enginerandom->vfunc2(0, 3)], 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c43b0 size=0x2a
 #include "CNPC_VTzimisceRunner.h"
 
