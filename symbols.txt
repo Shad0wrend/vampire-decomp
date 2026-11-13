@@ -3646,6 +3646,7 @@
 0x10005c13 func   ?ShiftElementsRight@?$CUtlVector@UCUnknown10076da0TimingTag@@V?$CUtlMemory@UCUnknown10076da0TimingTag@@@@@@QAEXHH@Z CUtlVector<CUnknown10076da0TimingTag,CUtlMemory<CUnknown10076da0TimingTag> >::ShiftElementsRight
 0x10005c13 func   ?ShiftElementsRight@?$CUtlVector@UCUnknown10076da0TimingTag@@VCUnknown10076da0TagMemory@@@@QAEXHH@Z CUtlVector<CUnknown10076da0TimingTag,CUnknown10076da0TagMemory>::ShiftElementsRight
 0x10005c18 func   ?sub_10185570@UtlVec72@@QAEXHH@Z UtlVec72::sub_10185570
+0x10005c1d func   ?sub_103d6000@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::sub_103d6000
 0x10005c22 func   ?vfunc442@CNPC_VMingXiao@@UAEXPAX@Z CNPC_VMingXiao::vfunc442
 0x10005c27 func   ?sub_102457f0@@YGPADPAD@Z sub_102457f0
 0x10005c2c func   ?vfunc489@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc489

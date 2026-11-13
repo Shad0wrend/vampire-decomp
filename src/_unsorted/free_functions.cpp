@@ -267271,6 +267271,78 @@ void CNPC_VWerewolf::sub_103d5590(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d6000 size=0x1f8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CNPC_VWerewolf.h"
+#include "ConVar.h"
+#include "Tier1.h"
+
+struct CWWHintTypeView { char pad[0x5dc]; int m_type; };
+extern ConVar g_1093f858;
+
+struct CNPC_VWerewolfHintUnit : CNPC_VWerewolf
+{
+	inline bool SetHintActivityInner(void *pHint)
+	{
+		bool bRet;
+		int type = ((CWWHintTypeView *)pHint)->m_type;
+		int chance = g_1093f858.GetInt();
+		int (*pfnRandom)(int, int) = g_109f3868;
+		bool bRoll = pfnRandom(1, 100) <= chance;
+		int act;
+		int alt;
+		switch (type) {
+		case 0x3a99: act = 0x119; break;
+		case 0x3a9a: act = 0x11a; break;
+		case 0x3a9b: act = 0x11b; break;
+		case 0x3a98: act = 0x10c; break;
+		case 0x3a9c: alt = bRoll ? 0x112 : 0x113; goto setalt;
+		case 0x3a9d: alt = bRoll ? 0x114 : 0x115; goto setalt;
+		case 0x3a9e: alt = bRoll ? 0x116 : 0x117; goto setalt;
+		case 0x3a9f: act = 0x10d; break;
+		case 0x3aa1: act = 0x110; break;
+		case 0x3aa0: act = 0x10f; break;
+		case 0x3aa2: act = 0x10e; break;
+		case 0x3aa3: act = 0x111; break;
+		case 0x3aa6: act = 0x122; break;
+		case 0x3aa7: act = 0x123; break;
+		case 0x3aa8: act = 0x10b; break;
+		case 0x3aaa: act = 0x121; break;
+		case 0x3aa9: act = pfnRandom(0, 1) ? 0x124 : 0x125; break;
+		default: bRet = false; goto done;
+		}
+		if (0)
+		{
+setalt:
+			act = alt;
+		}
+		sub_103d6280(pHint);
+		bRet = true;
+		sub_10289ee0(act);
+done:
+		return bRet;
+	}
+};
+
+bool CNPC_VWerewolf::sub_103d6000(void *pHint)
+{
+	ScopeTrace trace("CNPC_VWerewolf::SetHintActivity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	bool bResult;
+	if (!pHint)
+		return false;
+	bResult = ((CNPC_VWerewolfHintUnit *)this)->SetHintActivityInner(pHint);
+	return bResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d6280 size=0xce
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
