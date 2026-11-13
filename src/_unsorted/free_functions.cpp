@@ -189605,6 +189605,86 @@ CUnknown102718e0 *CUnknown102718e0::sub_102718e0(const CUnknown102718e0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10271900 size=0x19a
+#include "CUnknown102e0150.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "CAI_Navigator.h"
+#include "CUnknown102ee120.h"
+#include "CUnknown102ee1a0.h"
+#include "CUnknown102f2fc0.h"
+#include "ehandle.h"
+#include "CGlobalEntityList.h"
+#include <math.h>
+
+extern Vector g_1070d1b0;
+
+struct CAI_BaseNPCView : CAI_BaseNPC
+{
+	char m_pad04[0x5ce0 - 4];
+	EHANDLE m_h5ce0;
+	char m_pad5ce4[0x5d34 - 0x5ce4];
+	CAI_Navigator *m_pNav;
+};
+
+#include "CUnknown100290c0.h"
+#pragma auto_inline(off)
+namespace block_10271900 {
+struct CLookUnit : CUnknown100290c0 { unsigned int sub_100290c0(unsigned int *pHandle); };
+static int g_shift71 = 13;
+unsigned int CLookUnit::sub_100290c0(unsigned int *pHandle)
+{
+    unsigned int h = *pHandle;
+    if (h != 0xffffffff) {
+        CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (int)(h >> g_shift71)) {
+            return pSlot->m_Value;
+        }
+    }
+    return 0;
+}
+}
+#pragma auto_inline(on)
+struct HV271 : CBaseHandle
+{
+	bool operator!=(CBaseEntity *v) const { return (CBaseEntity *)((block_10271900::CLookUnit *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)this) != v; }
+};
+void CAI_BaseNPC::sub_10271900()
+{
+	CAI_BaseNPCView *p = (CAI_BaseNPCView *)this;
+	if (p->m_pNav->m_i18 != 3 && p->m_pNav->m_i18 != 1 && p->m_pNav->sub_102ee620() == 2)
+	{
+		if (*(HV271 *)&p->m_h5ce0 != p->m_pNav->sub_102ee160())
+		{
+			p->m_pNav->sub_102ed310((CBaseEntity *)p->m_h5ce0.Get(), &g_1070d1b0);
+			return;
+		}
+		Vector vecGoal;
+		vfunc541()->sub_102dfed0(&vecGoal, (CBaseEntity *)vfunc167());
+		float flA = ((CUnknown102ee1a0 *)p->m_pNav)->sub_102ee1a0();
+		float flB = ((CUnknown102f2fc0 *)p->m_pNav)->sub_102f2fc0();
+		vfunc563((CBaseEntity *)vfunc167(), &vecGoal, &flA, &flB);
+		const Vector *pDest = p->m_pNav->sub_102ee140();
+		float dx = pDest->x - vecGoal.x;
+		float dy = pDest->y - vecGoal.y;
+		float dz = pDest->z - vecGoal.z;
+		if (FastSqrt(dx * dx + (dy * dy + dz * dz)) > 80.0f || fabs(flB - ((CUnknown102f2fc0 *)p->m_pNav)->sub_102f2fc0()) > 12.0)
+		{
+			((CUnknown102ee120 *)p->m_pNav)->sub_102ee1c0(*(int *)&flA);
+			((CUnknown102ee120 *)p->m_pNav)->sub_102f2fe0(*(int *)&flB);
+			p->m_pNav->sub_102ee200();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10271b10 size=0x188
 #include "CGlobalEntityList.h"
 #include "CAI_BaseNPC.h"
