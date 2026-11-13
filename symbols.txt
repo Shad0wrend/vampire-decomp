@@ -9892,6 +9892,7 @@
 0x1000dc88 func   ?vfunc461@CNPC_VMingXiao@@QAEHXZ CNPC_VMingXiao::vfunc461
 0x1000dc8d func   ?vfunc7@CPython_SaveRestoreBlockHandler@@UAEXPAVIRestorePy@@HH@Z CPython_SaveRestoreBlockHandler::vfunc7
 0x1000dc92 func   ?sub_103fdc50@@YAHXZ sub_103fdc50
+0x1000dc97 func   ?vfunc438@CNPC_VManBat@@QAEHXZ CNPC_VManBat::vfunc438
 0x1000dc9c func   ?vfunc43@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc43
 0x1000dca1 func   ?vfunc421@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc421
 0x1000dcab func   ?sub_1013c7e0@@YAMABVVector@@00@Z sub_1013c7e0

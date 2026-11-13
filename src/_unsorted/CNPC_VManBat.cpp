@@ -247,6 +247,60 @@ void CNPC_VManBat::vfunc259(int *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038e340 size=0xf8
+#include "CVTraitEffect_t.h"
+#include "CNPC_VManBat.h"
+
+struct DebugCvarMB
+{
+	virtual void v0();
+	virtual char vfunc1();
+	int m_n04; int m_n08; int m_n0c; int m_n10; int m_n14; int m_n18; int m_n1c; int m_n20; int m_n24; int m_n28;
+	int m_nValue;	// 0x2c
+};
+extern DebugCvarMB *g_1093b814;
+int sub_1042fbf0(int v);
+
+#define HASH(n) (((((n) & 0x710935) ^ 0x148739) + 0x4094ab) & 0x18ef6ca) ^ (n) ^ 0x412a96ec
+
+int CNPC_VManBat::vfunc438()
+{
+	int iDecoded;
+	if (sub_1027d990() == 2)
+	{
+		int v = HASH(m_n6670);
+		iDecoded = sub_1042fbf0(v);
+		int k = sub_1042fbf0(0xfa0b0694);
+		if (iDecoded != k && (iDecoded != k || iDecoded == -1))
+		{
+			m_n6674 = 1;
+			return 0x159;
+		}
+		if (sub_10269d30(0x4d))
+			return 0x15f;
+		if (!g_1093b814->vfunc1() && g_1093b814->m_nValue)
+			return 0x15d;
+		switch (enginerandom->vfunc2(1, 10))
+		{
+		case 1:
+			return 0x15c;
+		case 2:
+			return 0x15d;
+		case 3:
+			return 0x161;
+		case 4:
+		case 5:
+		case 6:
+			return 0x163;
+		default:
+			return 0x159;
+		}
+	}
+	m_n6674 = 1;
+	return 0x158;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038e480 size=0x160
 #include "CBaseEntity.h"
 #include "CNPC_VManBat.h"
