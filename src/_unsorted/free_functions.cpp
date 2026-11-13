@@ -233732,6 +233732,535 @@ int __stdcall sub_1030d7e0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030d850 size=0x1498
+#include "CUnknown10359c50.h"
+#include "CUnknown10936b68.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+extern "C" double __cdecl atof(const char *);
+void *operator new(unsigned int);
+__declspec(dllimport) void Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+__declspec(dllimport) void DevMsg(const char *, ...);
+__declspec(dllimport) void Warning(const char *, ...);
+extern void (__cdecl *g_109f366c)(const char *, ...);
+
+#define SL10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8();	virtual void p##9();
+struct SEngineSch {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8(); virtual void a9();
+	virtual void b0(); virtual void b1(); virtual void b2();
+	virtual int PrecacheModel(const char *s, bool preload);	// 13
+	virtual void b4(); virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8(); virtual void b9();
+	SL10(c2) SL10(c3) SL10(c4) SL10(c5) SL10(c6) SL10(c7) SL10(c8)
+	virtual void d0(); virtual void d1(); virtual void d2(); virtual void d3(); virtual void d4();
+	virtual void d5(); virtual void d6(); virtual void d7();
+	virtual char *ParseFile(char *data, char *token);	// 98
+};
+extern SEngineSch *g_1070b22c;
+
+struct Task_t
+{
+	int iTask;
+	float flTaskData;
+};
+
+struct SchedBitsV
+{
+	int m_ints[6];
+	void SetBit(int bit) { m_ints[bit >> 5] |= (1 << (bit & 31)); }
+};
+
+struct CAI_ScheduleV
+{
+	SchedBitsV m_NotInterruptMask;	// 0x00
+	int m_iFlags;	// 0x18
+	int m_iScheduleID;	// 0x1c
+	Task_t *m_pTaskList;	// 0x20
+	int m_iNumTasks;	// 0x24
+	SchedBitsV m_InterruptMask;	// 0x28
+	const char *m_pName;	// 0x40
+	const char *GetName() { return m_pName; }
+};
+
+struct IdSpaceV
+{
+	int sub_102ea280(int id);
+	char pad[0x18];
+};
+
+struct ClassIdSpaceV
+{
+	IdSpaceV m_ScheduleIds;
+	IdSpaceV m_TaskIds;
+	int ScheduleGlobalToLocal(int id) { return m_ScheduleIds.sub_102ea280(id); }
+	int TaskGlobalToLocal(int id) { return m_TaskIds.sub_102ea280(id); }
+};
+
+extern char g_106b8540[];
+struct string_tV
+{
+	const char *pszValue;
+	string_tV() {}
+	const char *ToCStr() const { return pszValue ? pszValue : g_106b8540; }
+};
+string_tV sub_1042bff0(const char *v);
+
+int sub_102cadb0(const char *);	// CAI_BaseNPC::GetScheduleID
+int sub_10316fd0(const char *);	// CAI_BaseNPC::GetTaskID
+int sub_1025d760(const char *);	// CAI_BaseNPC::GetActivityID
+int sub_102d3f50(const char *);	// CAI_Hint::GetFlags
+int sub_1030cbd0(const char *);	// NPCFlag
+int sub_1030d390(const char *);	// MiscFlag
+int sub_102c8cc0(const char *);	// CAI_BaseNPC::GetConditionID
+int sub_102c8c80();
+
+struct SchedMgrV
+{
+	CAI_ScheduleV *sub_1030c5b0(const char *name, int id);	// CreateSchedule
+	int sub_1030c600(const char *);	// GetStateID
+	int sub_1030c800(const char *);	// GetMemoryID
+	int sub_1030ca70(const char *);	// GetPathID
+	int sub_1030cb00(const char *);	// GetGoalID
+	int sub_1030d3d0(const char *);	// Model
+	int sub_1030d400(const char *);	// SOUND
+	int sub_1030f5f0(const char *);	// EXPRESSION
+	int sub_1030d480(const char *);	// STO
+	int sub_1030d4f0(const char *);	// DIST
+	int sub_1030d650(const char *);	// MXTPHASE
+	int sub_1030d710(const char *);	// TOMODE
+	int sub_1030d7e0(const char *);	// schedule flag
+};
+
+inline int AI_RemapFromGlobal(int id) { return (id != -1) ? id - 1000000000 : -1; }
+
+#define engine g_1070b22c
+
+// TARGET: CUnknown10936b68::sub_1030d850
+bool CUnknown10936b68::sub_1030d850(const char *prefix, void *pStartFile, CUnknown10359c50 *pRegistries)
+{
+	char token[1024];
+	char save_token[1024];
+	ClassIdSpaceV *pIdSpace = (ClassIdSpaceV *)pRegistries;
+	SchedMgrV *pMgr = (SchedMgrV *)this;
+	int nConditions = 0;
+	char *pfile = engine->ParseFile((char *)pStartFile, token);
+
+	while (!_strcmpi("Schedule", token))
+	{
+		pfile = engine->ParseFile(pfile, token);
+
+		if (sub_1030f350(token))
+		{
+			DevMsg("ERROR: file contains a schedule (%s) that has already been defined!\n", token);
+			g_109f366c("       Aborting schedule load.\n");
+			return false;
+		}
+
+		int scheduleID = sub_102cadb0(token);
+		if (scheduleID == -1)
+		{
+			g_109f366c("ERROR: LoadSchd (%s): Unknown schedule type (%s)\n", prefix, token);
+			return false;
+		}
+
+		CAI_ScheduleV *new_schedule = pMgr->sub_1030c5b0(token, scheduleID);
+
+		pfile = engine->ParseFile(pfile, token);
+		if (_strcmpi(token, "Tasks"))
+		{
+			g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting 'Tasks' keyword.\n", prefix, new_schedule->GetName());
+			return false;
+		}
+
+		Task_t tempTask[64];
+		int taskNum = 0;
+
+		pfile = engine->ParseFile(pfile, token);
+		while ((token[0] != 0) && (_strcmpi("Interrupts", token)))
+		{
+			if (taskNum >= 64)
+			{
+				g_109f366c("ERROR: LoadSchd (%s): (%s) Too many tasks (max = %d)!\n", prefix, new_schedule->GetName(), 64);
+				return false;
+			}
+
+			int taskID = sub_10316fd0(token);
+			tempTask[taskNum].iTask = (pIdSpace) ? pIdSpace->TaskGlobalToLocal(taskID) : AI_RemapFromGlobal(taskID);
+
+			if (tempTask[taskNum].iTask == -1)
+			{
+				g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown task %s!\n", prefix, new_schedule->GetName(), token);
+				return false;
+			}
+
+			pfile = engine->ParseFile(pfile, token);
+
+			if (!_strcmpi("Activity", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'ACTIVITY.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				tempTask[taskNum].flTaskData = sub_1025d760(token);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown activity %s!\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("Task", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'ACTIVITY.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				int taskID = sub_10316fd0(token);
+				tempTask[taskNum].flTaskData = (pIdSpace) ? pIdSpace->TaskGlobalToLocal(taskID) : AI_RemapFromGlobal(taskID);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown task %s!\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("Schedule", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'ACTIVITY.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				int schedID = sub_102cadb0(token);
+				tempTask[taskNum].flTaskData = (pIdSpace) ? pIdSpace->ScheduleGlobalToLocal(schedID) : AI_RemapFromGlobal(schedID);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd %d (%s): (%s) Unknown shedule %s!\n", 629, prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("State", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'STATE.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				tempTask[taskNum].flTaskData = pMgr->sub_1030c600(token);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd %d (%s): (%s) Unknown shedule %s!\n", 650, prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("Memory", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'STATE.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				tempTask[taskNum].flTaskData = pMgr->sub_1030c800(token);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd %d (%s): (%s) Unknown shedule %s!\n", 672, prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("Path", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'PATH.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				tempTask[taskNum].flTaskData = pMgr->sub_1030ca70(token);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown path type %s!\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("Goal", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'GOAL.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				tempTask[taskNum].flTaskData = pMgr->sub_1030cb00(token);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown goal type  %s!\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("HintFlags", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'HINTFLAG'\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				tempTask[taskNum].flTaskData = sub_102d3f50(token);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown hint flag type  %s!\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("Interrupts", token) || !_strnicmp("TASK_", token, 5))
+			{
+				Warning("ERROR: LoadSchd (%s): (%s) Bad syntax at task #%d (wasn't expecting %s)\n", prefix, new_schedule->GetName(), taskNum, token);
+				return false;
+			}
+			else if (!_strcmpi("NPCFlag", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'NPCFlag'.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				int nFlag = sub_1030cbd0(token);
+				tempTask[taskNum].flTaskData = *(float *)&nFlag;
+				if (*(float *)&nFlag == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown NPCFlag type  %s!\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("MiscFlag", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'MiscFlag'.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				int nFlag = sub_1030d390(token);
+				tempTask[taskNum].flTaskData = *(float *)&nFlag;
+				if (*(float *)&nFlag == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown MiscFlag type  %s!\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("Model", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'Model'.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				int nModel = pMgr->sub_1030d3d0(token);
+				tempTask[taskNum].flTaskData = *(float *)&nModel;
+				if (*(float *)&nModel == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown Model value %s!\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+				string_tV s = sub_1042bff0(token);
+				engine->PrecacheModel(s.ToCStr(), false);
+			}
+			else if (!_strcmpi("SOUND", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'SOUND'.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				tempTask[taskNum].flTaskData = pMgr->sub_1030d400(token);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown SOUND type  %s!  See your local programmer and have him add it to CAI_SchedulesManager::GetSoundID()\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("EXPRESSION", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'SOUND'.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				tempTask[taskNum].flTaskData = pMgr->sub_1030f5f0(token);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown EXPRESSION type  %s!  See your local programmer and have him add it to CAI_SchedulesManager::GetSoundID()\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("STO", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'STO'.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				tempTask[taskNum].flTaskData = pMgr->sub_1030d480(token);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown ShootTargetOffset( STO ) type  %s!\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("DIST", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'DIST'.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				tempTask[taskNum].flTaskData = pMgr->sub_1030d4f0(token);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown DIST type  %s!\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("MXTPHASE", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'MXTPHASE'.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				tempTask[taskNum].flTaskData = pMgr->sub_1030d650(token);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown MXTPHASE type  %s!\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("TOMODE", token))
+			{
+				pfile = engine->ParseFile(pfile, token);
+				if (_strcmpi(token, ":"))
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Malformed AI Schedule.  Expecting ':' after type 'TOMODE'.\n", prefix, new_schedule->GetName());
+					return false;
+				}
+				pfile = engine->ParseFile(pfile, token);
+				tempTask[taskNum].flTaskData = pMgr->sub_1030d710(token);
+				if (tempTask[taskNum].flTaskData == -1)
+				{
+					g_109f366c("ERROR: LoadSchd (%s): (%s) Unknown TOMODE type  %s!\n", prefix, new_schedule->GetName(), token);
+					return false;
+				}
+			}
+			else if (!_strcmpi("TRUE", token) || !_strcmpi("ON", token))
+			{
+				tempTask[taskNum].flTaskData = 1.0f;
+			}
+			else if (!_strcmpi("FALSE", token) || !_strcmpi("OFF", token))
+			{
+				tempTask[taskNum].flTaskData = 0.0f;
+			}
+			else
+			{
+				tempTask[taskNum].flTaskData = atof(token);
+			}
+			taskNum++;
+
+			Q_strncpy(save_token, token, sizeof(save_token));
+			pfile = engine->ParseFile(pfile, token);
+
+			if (!_strcmpi(token, ":"))
+			{
+				g_109f366c("ERROR: LoadSchd (%s): Schedule (%s),\n        Task (%s), has a malformed AI Task Argument = (%s)\n",
+						prefix, new_schedule->GetName(), taskID, save_token);
+				return false;
+			}
+		}
+
+		new_schedule->m_iNumTasks = taskNum;
+		new_schedule->m_pTaskList = new Task_t[taskNum];
+		for (int i = 0; i < taskNum; i++)
+		{
+			new_schedule->m_pTaskList[i].iTask = tempTask[i].iTask;
+			new_schedule->m_pTaskList[i].flTaskData = tempTask[i].flTaskData;
+		}
+
+		pfile = engine->ParseFile(pfile, token);
+		while ((token[0] != 0) && _strcmpi("Schedule", token) && _strcmpi("Flags", token))
+		{
+			bool bNot = false;
+			char *pszCond = token;
+			if (token[0] == '!')
+			{
+				bNot = true;
+				pszCond = token + 1;
+			}
+			int condID = sub_102c8cc0(pszCond);
+			nConditions++;
+			if (condID == -1)
+			{
+				sub_102c8c80();
+				DevMsg("ERROR: LoadSchd (%s): Schedule (%s), Unknown condition %s!\n", prefix, new_schedule->GetName(), token);
+			}
+			else
+			{
+				int interrupt = AI_RemapFromGlobal(condID);
+				if (bNot)
+					new_schedule->m_NotInterruptMask.SetBit(interrupt);
+				else
+					new_schedule->m_InterruptMask.SetBit(interrupt);
+			}
+			pfile = engine->ParseFile(pfile, token);
+		}
+
+		new_schedule->m_iFlags = 0;
+		if (!_strcmpi("Flags", token))
+		{
+			pfile = engine->ParseFile(pfile, token);
+			while ((token[0] != 0) && _strcmpi("Schedule", token))
+			{
+				int flag = pMgr->sub_1030d7e0(token);
+				if (!flag)
+					DevMsg("ERROR: LoadSchd (%s): Schedule (%s), Unknown schedule flag %s!\n", prefix, new_schedule->GetName(), token);
+				else
+					new_schedule->m_iFlags |= flag;
+				pfile = engine->ParseFile(pfile, token);
+			}
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030f220 size=0xa7
 #include "CUnknown1030f480.h"
 extern int (__cdecl *g_109f388c)(char *buf, int count, const char *fmt, ...);
