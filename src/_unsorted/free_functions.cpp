@@ -103010,6 +103010,108 @@ void CBasePlayer::sub_1017c1d0(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017c300 size=0x1f6
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CUtlVector4.h"
+
+#include "CUnknown100290c0.h"
+#pragma auto_inline(off)
+namespace block_1017c300 {
+struct CLookUnit : CUnknown100290c0 { unsigned int sub_100290c0(const unsigned int *pHandle); };
+static int g_shift71 = 13;
+unsigned int CLookUnit::sub_100290c0(const unsigned int *pHandle)
+{
+    unsigned int h = *pHandle;
+    if (h != 0xffffffff) {
+        CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (int)(h >> g_shift71)) {
+            return pSlot->m_Value;
+        }
+    }
+    return 0;
+}
+}
+#pragma auto_inline(on)
+#define LK(g, p) ((CBaseEntity *)((block_1017c300::CLookUnit *)(g))->sub_100290c0(p))
+struct CSimVec17c300 : CUtlVector4
+{
+	void sub_101850b0(int elem, int num);
+	int FindH(const unsigned int &h)
+	{
+		int n = m_size;
+		int j = 0;
+		if (j < n) {
+			unsigned int *p = (unsigned int *)m_pMemory;
+			do {
+				if (g_10566458->sub_100290c0(p) == LK(g_10566458, &h))
+					return j;
+				j++; p++;
+			} while (j < n);
+		}
+		return -1;
+	}
+	void FindAndRemoveH(const unsigned int &h)
+	{
+		int j = FindH(h);
+		if (j != -1) {
+			sub_101850b0(j, 1);
+			m_size--;
+		}
+	}
+};
+#define PV ((CSimVec17c300 *)&m_SimulationList)
+
+void CBasePlayer::sub_1017c300()
+{
+	ScopeTrace scope1("CBasePlayer::SimulatePlayerSimulatedEntities", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	int i;
+	for (i = PV->m_size - 1; i >= 0; i--) {
+		CSimVec17c300 *pv = PV;
+		unsigned int h = -1;
+		h = pv->m_pMemory[i];
+		CBaseEntity *e = g_10566458->sub_100290c0(&h);
+		if (!e) {
+			int idx = pv->sub_101842a0(&h);
+			if (idx != -1) {
+				pv->sub_101850b0(idx, 1);
+				pv->m_size--;
+			}
+		} else {
+			e->sub_10040390();
+		}
+	}
+	ScopeTrace scope2("CBasePlayer::SimulatePlayerSimulatedEntities-untouch", m_name26c ? m_name26c : g_106b8540);
+	for (i = m_SimulationList.m_Size - 1; i >= 0; i--) {
+		EHANDLE h = *(EHANDLE *)&PV->m_pMemory[i];
+		CBaseEntity *e = h.Get();
+		if (!e) {
+			PV->FindAndRemoveH(*(unsigned int *)&h);
+			continue;
+		}
+		if (!(*((unsigned char *)e + 0x26b) & 1))
+			continue;
+		e->sub_1003d490();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c580 size=0x53
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
