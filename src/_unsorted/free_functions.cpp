@@ -9366,6 +9366,92 @@ void CBaseEntity::sub_1003f070(CGameTrace *pTrace, Vector *pMove)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003f4d0 size=0x28d
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CUnknown1070b254.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "ScopeTrace.h"
+#include "engineiface.h"
+#include "engineserver.h"
+
+struct CWaterView
+{
+	char m_pad0000[0x184];
+	Vector m_vecViewOffset;
+	char m_pad0190[0x3e0 - 0x190];
+	int m_nWaterLevel;
+	int m_nWaterType;
+	int GetWaterType() const { return m_nWaterType; }
+};
+
+#define CONTENTS_WATERMASK 0x4030
+
+void CBaseEntity::sub_1003f4d0()
+{
+	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc;
+	g_109f3620[*g_109f3680].name = "CBaseEntity::PhysicsCheckWaterTransition";
+	g_109f3620[*g_109f3680].file = name;
+	g_109f3620[*g_109f3680].line = g_106b8540;
+	(*g_109f3680)++;
+	CWaterView *pView = (CWaterView *)this;
+	Vector point;
+	Vector vecMins, vecMaxs;
+	((CCollisionProperty *)((char *)this + 0x270))->vfunc15(&vecMins, &vecMaxs);
+	point[0] = (vecMins[0] + vecMaxs[0]) * 0.5;
+	point[1] = (vecMaxs[1] + vecMins[1]) * 0.5;
+	point[2] = vecMins[2] + 1.0f;
+	int cont = g_1070b254->vfunc0(&point.x, 0);
+	if (pView->GetWaterType() == 0) {
+		pView->m_nWaterType = cont;
+		pView->m_nWaterLevel = 0;
+		(*g_109f3680)--;
+		return;
+	} else if (cont & CONTENTS_WATERMASK) {
+		pView->m_nWaterType = cont;
+		pView->m_nWaterLevel = 1;
+		if (vecMins[2] == vecMaxs[2]) {
+			pView->m_nWaterLevel = 3;
+			(*g_109f3680)--;
+			return;
+		}
+		point[2] = (vecMaxs[2] + vecMins[2]) * 0.5;
+		cont = g_1070b254->vfunc0(&point.x, 0);
+		if (cont & CONTENTS_WATERMASK) {
+			pView->m_nWaterLevel = 2;
+			point[2] += pView->m_vecViewOffset[2];
+			cont = g_1070b254->vfunc0(&point.x, 0);
+			if (cont & CONTENTS_WATERMASK) {
+				pView->m_nWaterLevel = 3;
+				(*g_109f3680)--;
+				return;
+			}
+		}
+		(*g_109f3680)--;
+		return;
+	} else {
+		{
+			CPASAttenuationFilter filter((CEntitySoundOriginView *)this, 1.0f);
+			int edict = m_pEdict2e0;
+			enginesound->vfunc3(&filter, engine->vfunc35(edict), 0, "player/pl_wade2.wav", 1.0f, 1.0f, 0, 100, 0, 0, 1, 0);
+		}
+		pView->m_nWaterType = 0;
+	}
+	pView->m_nWaterLevel = 0;
+	if (0) pView->GetWaterType();	// WORKAROUND: spends inline budget so the first CUtlMemory<int>::Purge of the filter teardown stays a call (0x1002cbd0)
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003f810 size=0xc6
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
