@@ -197475,6 +197475,231 @@ bool CUnknown1028ebc0::sub_1028ebc0(void *pRecord)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1028efc0 size=0x869
+#include "Vector.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+
+int sub_1023bd00();
+
+struct ObjView { char pad[0x49c]; int m_49c; char pad2[8]; char m_4a8; };
+struct TroV;
+struct CaView { void sub_102ca780(TroV *self, int *a, int *b, int *c, int *d, Vector *e, Vector *f, CBaseEntity **g, CBaseEntity **h); };
+struct GView { virtual void v0(); virtual void v1(); };
+struct NLV { int sub_101d5bd0(const char *s); };
+struct EntListV { CBaseEntity *sub_100290c0(const void *h); };
+
+struct TgtV
+{
+	int sub_1017e720();
+	int sub_1017e740();
+	int sub_1017ddd0();
+	int sub_1017dd80();
+	int sub_1017de60();
+	int sub_10337860();
+	void sub_1017fd60(int a, CBaseEntity *pEnt);
+};
+
+extern CaView *g_109253f8;
+extern GView *g_10924a6c;
+extern unsigned char g_10924834;
+extern int g_109248ec;
+extern NLV g_10738d10;
+extern EntListV *g_10566458;
+
+struct TroV
+{
+	void ClearCondition(int c) { sub_10269b50(c); }
+	void SetCondition(int c) { sub_10269a20(c); }
+	bool HasCondition(int c) { return sub_10269aa0(c); }
+	void sub_10269b50(int a);
+	void sub_10269a20(int a);
+	bool sub_10269aa0(int a);
+	bool sub_1033e2b0();
+	void sub_10293df0(float f);
+	char sub_103268e0(const Vector *p, float f);
+	void sub_1028ea60(int a, const Vector *v, void *p);
+	void sub_1028eb30(int a, const Vector *v, void *p, char d);
+	TgtV *GetTarget() { return (TgtV *)m_hTarget.Get(); }
+	void sub_1028efc0();
+	CEntityVSlots *GetTargetS() { return (CEntityVSlots *)m_hTarget.Get(); }
+
+	char m_pad0000[0x128];
+	void *m_p128;
+	char m_pad012c[0x5b84 - 0x12c];
+	unsigned char m_flags5b84;
+	char m_pad5b85[0x6264 - 0x5b85];
+	float m_f6264;
+	char m_pad6268[0x628c - 0x6268];
+	EHANDLE m_hTarget;
+	char m_pad6290[0x6348 - 0x6290];
+	int m_n6348;
+	int m_n634c;
+	int m_n6350;
+	int m_n6354;
+	int m_n6358;
+	char m_pad635c[0x636c - 0x635c];
+	int m_n636c;
+	int m_n6370;
+	char m_pad6374[0x6398 - 0x6374];
+	float m_f6398;
+	float m_f639c;
+	float m_f63a0;
+};
+
+// TARGET: sub_1028efc0
+void TroV::sub_1028efc0()
+{
+	this->sub_10269b50(0x1e);
+	this->sub_10269b50(0x1f);
+	this->sub_10269b50(0x20);
+	this->sub_10269b50(0x21);
+	this->sub_10269b50(0x22);
+
+	if (this->m_flags5b84 & 0x10)
+		return;
+	if (this->sub_1033e2b0())
+		return;
+
+	bool b13 = gpGlobals->curtime <= this->m_f6398;
+	bool b12 = gpGlobals->curtime <= this->m_f639c;
+	bool bl = gpGlobals->curtime <= this->m_f63a0;
+
+	ObjView *obj = (ObjView *)sub_1023bd00();
+	if (obj && obj->m_49c == 0)
+		b12 = true;
+	if (b13)
+	{
+		if (b12)
+			return;
+	}
+	else if (b12)
+		bl = true;
+	if (obj && (obj->m_49c != 1 || obj->m_4a8))
+		bl = true;
+	if (this->m_p128)
+		bl = true;
+	if (g_10566458->sub_100290c0(&this->m_hTarget) &&
+		g_10566458->sub_100290c0((char *)g_10566458->sub_100290c0(&this->m_hTarget) + 0xfe8))
+	{
+		bl = true;
+		this->sub_10293df0(5.0f);
+	}
+
+	int n634c = this->m_n634c;
+	int n6350 = this->m_n6350;
+	int n6354 = this->m_n6354;
+	int n6358 = this->m_n6358;
+	Vector v1, v2;
+	CBaseEntity *p1, *p2;
+	g_109253f8->sub_102ca780(this, &n634c, &n6350, &n6354, &n6358, &v1, &v2, &p1, &p2);
+
+	if (!b13 && n634c > 0)
+	{
+		g_10924a6c->v1();
+		this->sub_10269a20(0x1f);
+		this->sub_1028ea60(n634c, &v1, p1);
+	}
+	if (!b12 && n6354 > 0)
+	{
+		g_10924a6c->v1();
+		this->sub_10269a20(0x21);
+		this->sub_1028eb30(n6354, &v2, p2, 0);
+	}
+
+	if (!this->m_hTarget.Get() || !this->sub_10269aa0(0x5a))
+		return;
+
+	Vector pos = Vector(*this->GetTargetS()->slot217());
+	Vector ang;
+	this->GetTargetS()->slot193(&ang);
+
+	if (!bl && (this->m_n6354 <= 2 || this->m_n6358 <= 2) && this->m_f6264 <= 64.0f && this->sub_10269aa0(0x5a))
+	{
+		if (!(g_10924834 & 1))
+		{
+			g_10924834 |= 1;
+			g_109248ec = g_10738d10.sub_101d5bd0("Player_Nosferatu");
+		}
+		if (this->GetTarget()->sub_10337860() == g_109248ec && this->sub_103268e0(&ang, 0.766f))
+		{
+			if (this->m_n6354 <= 2)
+			{
+				this->GetTarget()->sub_1017fd60(2, (CBaseEntity *)this);
+				this->m_n6370 = this->GetTarget()->sub_1017e740();
+				g_10924a6c->v1();
+				this->sub_10269a20(0x21);
+				this->sub_1028eb30(2, &pos, this->m_hTarget.Get(), 1);
+			}
+			if (this->m_n6358 <= 2)
+			{
+				this->GetTarget()->sub_1017fd60(2, (CBaseEntity *)this);
+				this->m_n6370 = this->GetTarget()->sub_1017e740();
+				g_10924a6c->v1();
+				this->sub_10269a20(0x22);
+				this->sub_1028eb30(2, &pos, this->m_hTarget.Get(), 1);
+			}
+		}
+	}
+
+	if (this->GetTarget()->sub_1017de60() >= this->m_n6348)
+	{
+		g_10924a6c->v1();
+		this->sub_10269a20(0x1e);
+	}
+
+	if (b13)
+	{
+		this->m_n636c = this->GetTarget()->sub_1017e720();
+	}
+	else if (this->GetTarget()->sub_1017e720() > this->m_n636c)
+	{
+		int e = this->GetTarget()->sub_1017ddd0();
+		if (e >= n634c)
+		{
+			if (e >= this->m_n634c)
+			{
+				this->sub_1028ea60(e, &pos, this->m_hTarget.Get());
+				g_10924a6c->v1();
+				this->sub_10269a20(0x1f);
+			}
+			if (e >= this->m_n6350)
+			{
+				this->sub_1028ea60(e, &pos, this->m_hTarget.Get());
+				g_10924a6c->v1();
+				this->sub_10269a20(0x20);
+			}
+		}
+	}
+
+	if (b12)
+	{
+		this->m_n6370 = this->GetTarget()->sub_1017e740();
+		return;
+	}
+	if (this->GetTarget()->sub_1017e740() > this->m_n6370)
+	{
+		int e = this->GetTarget()->sub_1017dd80();
+		if (e >= n6354)
+		{
+			if (e >= this->m_n6354)
+			{
+				this->sub_1028eb30(e, &pos, this->m_hTarget.Get(), 0);
+				g_10924a6c->v1();
+				this->sub_10269a20(0x21);
+			}
+			if (e >= this->m_n6358)
+			{
+				this->sub_1028eb30(e, &pos, this->m_hTarget.Get(), 0);
+				g_10924a6c->v1();
+				this->sub_10269a20(0x22);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1028fa50 size=0xe0
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown102cabd0.h"

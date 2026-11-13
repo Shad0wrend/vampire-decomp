@@ -12863,6 +12863,7 @@
 0x10011b1c func   ?sub_1015dcf0@@YIXPAX@Z sub_1015dcf0
 0x10011b21 func   ?sub_10085770@@YAHXZ sub_10085770
 0x10011b26 func   ?sub_103a1320@CUnknown103a1320@@QAEXH@Z CUnknown103a1320::sub_103a1320
+0x10011b2b func   ?sub_1028efc0@TroV@@QAEXXZ TroV::sub_1028efc0
 0x10011b30 func   ?vfunc363@CWeaponMelee_Fists@@QAEHXZ CWeaponMelee_Fists::vfunc363
 0x10011b35 func   ?vfunc453@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc453
 0x10011b3a func   _player_loadsaved player_loadsaved
