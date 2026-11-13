@@ -1993,7 +1993,7 @@ int CAI_BaseNPCTroika::sub_102b8c40()
 #include "globalvars.h"
 
 void sub_10139610(const Vector &angles, Vector *fwd, Vector *right, Vector *up);
-extern int g_shiftTest;
+static int g_shiftTest = 13;  // the game's shr 0xd; the same-unit copy must read it for VC6 to compile the caller as the game
 
 namespace block_102b8d20 {
 struct CUnknown100290c0 : EHandleEntityList

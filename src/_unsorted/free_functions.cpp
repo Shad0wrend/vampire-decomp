@@ -252383,7 +252383,7 @@ void CNPC_VManBat::sub_1038e9c0(CBaseEntity *pTarget)
 #include "CNPC_VManBat.h"
 #include "CBaseCombatCharacter.h"
 
-extern int g_1038f020_shift;
+static int g_1038f020_shift = 13;  // the game's shr 0xd; the same-unit copy must read it for VC6 to compile the caller as the game
 
 #pragma auto_inline(off)
 struct CEntList1038f020
