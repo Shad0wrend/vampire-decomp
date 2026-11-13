@@ -15181,6 +15181,7 @@
 0x10014b82 func   ?sub_1021a740@CPropHacking@@QAEXXZ CPropHacking::sub_1021a740
 0x10014b87 func   ?vfunc81@CItemGRingSilver@@QAEHXZ CItemGRingSilver::vfunc81
 0x10014b8c func   ?sub_102e1c10@CAI_Motor@@QAEXMM@Z CAI_Motor::sub_102e1c10
+0x10014b91 func   ?sub_101c2d20@@YAXABUCTDIView@@PAVCBaseEntity@@@Z sub_101c2d20
 0x10014b96 func   ?sub_1034e610@@YGXPAUInputLike@@@Z sub_1034e610
 0x10014b9b func   ?sub_1023bb60@@YAHXZ sub_1023bb60
 0x10014ba0 func   ?vfunc347@CBaseCombatCharacter@@QAE_NHPADPAM111@Z CBaseCombatCharacter::vfunc347

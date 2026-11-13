@@ -125724,6 +125724,92 @@ void sub_101c2c60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2d20 size=0x1bb
+#include "CBaseEntity.h"
+#include "CTakeDamageInfo.h"
+#include "CVDmg_t.h"
+#include "Vector.h"
+#include "ehandle.h"
+
+class CBaseEntity;
+struct CTDIView
+{
+	CVDmg_t *m_pVDmg;	// 0x00
+	float m_fl04, m_fl08, m_fl0c;
+	Vector m_vecDamageForce;	// 0x10
+	Vector m_vecDamagePosition;	// 0x1c
+	int m_hAttacker;	// 0x28
+	int m_hInflictor;	// 0x2c
+	float m_flDamage;	// 0x30
+	float m_flMaxDamage;	// 0x34
+	int m_bitsDamageType;	// 0x38
+	int m_iCustomKillType;	// 0x3c
+	int m_iAmmoType;	// 0x40
+	float m_fl44;
+	char m_b48, m_b49, m_b4a, m_pad4b;
+
+	int GetDamageType() const { return m_pVDmg ? (m_pVDmg->m_field10 | m_bitsDamageType) : m_bitsDamageType; }
+	int GetCustomKill() const { return m_iCustomKillType; }
+	CBaseEntity *GetAttacker() const { return (CBaseEntity *)m_hAttacker; }
+	CBaseEntity *GetInflictor() const { return (CBaseEntity *)m_hInflictor; }
+	void AddDamageType(int bits) { m_bitsDamageType |= bits; }
+	float GetDamage() const { if (m_pVDmg) return (float)m_pVDmg->sub_101faa70(); return m_flDamage; }
+	void SetDamage(float fl) { m_flDamage = fl; }
+	Vector GetDamageForce() const { return m_vecDamageForce; }
+	void SetDamageForce(const Vector &v) { m_vecDamageForce = v; }
+	Vector GetDamagePosition() const { return m_vecDamagePosition; }
+	void SetDamagePosition(const Vector &v) { m_vecDamagePosition = v; }
+
+	char sub_101c2ab0();
+	char sub_101c2af0();
+	char sub_101c2b30();
+	int sub_101c2a30();
+	void sub_101c2a10(int n);
+	void sub_101c2a90(char c);
+	void sub_101c2ad0(char c);
+	void sub_101c2b10(char c);
+};
+
+struct CMultiDamageView : CTDIView
+{
+	CBaseHandle m_hTarget;	// 0x4c
+	void sub_101c2bc0(CBaseEntity *pTarget, CBaseEntity *a, CBaseEntity *b, const float *pVec, int c, int d, int e);
+};
+
+struct CEntityListStub
+{
+	IHandleEntity *sub_100290c0(const CBaseHandle &h);
+};
+
+extern CMultiDamageView g_1072cb10;
+extern CEntityListStub *g_10566458;
+extern float g_1070d1b0[3];
+void sub_101c2c60();
+
+// TARGET: sub_101c2d20
+void sub_101c2d20(const CTDIView &info, CBaseEntity *pEntity)
+{
+	if (!pEntity)
+		return;
+
+	if ((IHandleEntity *)pEntity != g_10566458->sub_100290c0(g_1072cb10.m_hTarget))
+	{
+		sub_101c2c60();
+		g_1072cb10.sub_101c2bc0(pEntity, info.GetAttacker(), info.GetInflictor(), g_1070d1b0, 0, info.GetDamageType(), info.GetCustomKill());
+		g_1072cb10.sub_101c2b10(((CTDIView &)info).sub_101c2b30());
+		g_1072cb10.sub_101c2a90(((CTDIView &)info).sub_101c2ab0());
+		g_1072cb10.sub_101c2ad0(((CTDIView &)info).sub_101c2af0());
+	}
+
+	g_1072cb10.AddDamageType(info.GetDamageType());
+	g_1072cb10.SetDamage(g_1072cb10.GetDamage() + info.GetDamage());
+	g_1072cb10.SetDamageForce(g_1072cb10.GetDamageForce() + info.GetDamageForce());
+	g_1072cb10.SetDamagePosition(info.GetDamagePosition());
+	if (g_1072cb10.sub_101c2a30() == -1)
+		g_1072cb10.sub_101c2a10(((CTDIView &)info).sub_101c2a30());
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2fc0 size=0x6
 namespace lifted {
 extern char g_1072cc90;
