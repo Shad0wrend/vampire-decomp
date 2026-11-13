@@ -78766,6 +78766,101 @@ void CGameMovement::sub_10123e20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10123f40 size=0x177
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CVProfile.h"
+#include "CGlobalEntityList.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "Ray_t.h"
+
+extern CGlobalEntityList *g_10566458;
+extern CUnknown1070b254 *g_1070b254;
+extern CTouchNotifier *g_1071a278;
+
+struct VProfScope_F
+{
+	VProfScope_F(const char *pszName, int detail, const char *pszGroup, bool bAssert)
+	{
+		g_109f3648->EnterScope(pszName, detail, pszGroup, bAssert);
+	}
+	~VProfScope_F() { g_109f3648->ExitScope(); }
+};
+
+namespace block_10123f40 {
+struct CGameMovementUnit : CGameMovement
+{
+	float *sub_1011e350();
+	float *sub_1011e310();
+	void TPBBegin(Ray_t &ray, const Vector &start, const Vector &end)
+	{
+		g_109f3648->EnterScope("CGameMovement::TracePlayerBBox", 0, "Unaccounted", false);
+		ray.sub_1006dec0(start, &end.x, sub_1011e310(), sub_1011e350(), (char)((((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1), 0);
+	}
+	void TPBEnd(Ray_t &ray, unsigned int fMask, int collisionGroup, CGameTrace &pm)
+	{
+		CTraceFilterSimple filter(g_10566458->sub_100290c0(&((CMovePlayerView *)m_pPlayer)->m_hRef), collisionGroup);
+		g_1070b254->vfunc4(&ray, fMask, (CTraceFilterNoCharacterCollide *)&filter, &pm);
+		g_109f3648->ExitScope();
+	}
+	void TPB2(const Vector &start, const Vector &push, unsigned int fMask, int collisionGroup, CGameTrace &pm)
+	{
+		Ray_t ray;
+		{ Vector end; VectorAdd(start, push, end); g_109f3648->EnterScope("CGameMovement::TracePlayerBBox", 0, "Unaccounted", false); ray.sub_1006dec0(start, &end.x, sub_1011e310(), sub_1011e350(), (char)((((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1), 0); }
+		{ CTraceFilterSimple filter(g_10566458->sub_100290c0(&((CMovePlayerView *)m_pPlayer)->m_hRef), collisionGroup);
+		g_1070b254->vfunc4(&ray, fMask, (CTraceFilterNoCharacterCollide *)&filter, &pm); }
+		g_109f3648->ExitScope();
+	}
+	void TracePlayerBBox(const Vector &start, const Vector &end, unsigned int fMask, int collisionGroup, CGameTrace &pm)
+	{
+		VProfScope_F scope("CGameMovement::TracePlayerBBox", 0, "Unaccounted", false);
+		Ray_t ray;
+		ray.sub_1006dec0(start, &end.x, sub_1011e310(), sub_1011e350(), (char)((((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1), 0);
+		CTraceFilterSimple filter(g_10566458->sub_100290c0(&((CMovePlayerView *)m_pPlayer)->m_hRef), collisionGroup);
+		g_1070b254->vfunc4(&ray, fMask, (CTraceFilterNoCharacterCollide *)&filter, &pm);
+	}
+};
+
+float *CGameMovementUnit::sub_1011e350()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMax.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMax.x : &m_vecHullMax.x;
+}
+
+float *CGameMovementUnit::sub_1011e310()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMin.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMin.x : &m_vecHullMin.x;
+}
+}
+using namespace block_10123f40;
+
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+
+// TARGET: CGameMovement::sub_10123f40
+CGameTrace CGameMovement::sub_10123f40(const Vector &vecOffset)
+{
+	CGameTrace trace;
+	Ray_t ray;
+	{
+		Vector end;
+		VectorAdd(PLAYER->m_vecOrigin, vecOffset, end);
+		((CGameMovementUnit *)this)->TPBBegin(ray, PLAYER->m_vecOrigin, end);
+	}
+	((CGameMovementUnit *)this)->TPBEnd(ray, 0x201400b, 6, trace);
+	PLAYER->m_vecOrigin = *(Vector *)trace.m_endpos;
+	if (trace.m_fraction < 1.0 && !trace.m_allsolid)
+		g_1071a278->vfunc2(&trace, &PLAYER->m_vecVelocity);
+	return trace;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10124120 size=0xa5
 #include "CGameMovement.h"
 

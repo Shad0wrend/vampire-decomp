@@ -6100,6 +6100,7 @@
 0x10008efe func   ?sub_102726a0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_102726a0
 0x10008f03 func   ?sub_102223f0@CExperienceTable@@QAEXXZ CExperienceTable::sub_102223f0
 0x10008f08 func   ?sub_103e16e0@@YAMXZ sub_103e16e0
+0x10008f0d func   ?sub_10123f40@CGameMovement@@QAE?AUCGameTrace@@ABVVector@@@Z CGameMovement::sub_10123f40
 0x10008f12 func   ?sub_101ffb90@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffb90
 0x10008f1c func   ?sub_101ffaa0@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffaa0
 0x10008f21 func   ?vfunc103@CRopeKeyframe@@UAEXXZ CRopeKeyframe::vfunc103
