@@ -330,6 +330,39 @@ void CItemContainer::vfunc350(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209090 size=0x203
+#include "CBaseEntity.h"
+#include "CItemContainer.h"
+#include "CEHandleGet.h"
+
+struct CVActivitySoundView
+{
+	void sub_101f5950(CItemContainer *pEnt, int a, int b, float c, float d);
+};
+extern CVActivitySoundView g_1074b308;
+extern int g_1074f038;
+
+void CItemContainer::vfunc133()
+{
+	sub_101c1720();
+	switch (m_nState49c)
+	{
+	case 1:
+		if (m_nState498 == 1)
+			{ if (EHandle_Get(m_hUser.m_Index)) sub_103411c0((CBaseEntity *)EHandle_Get(m_hUser.m_Index), 1); }
+		else if (m_nState498 == 0)
+			{ if (EHandle_Get(m_hUser.m_Index)) { if (m_nVSoundGroupb4 != -1) g_1074b308.sub_101f5950(this, g_1074f038, 2, 1.0f, 1.25f); sub_1000e020((CBaseEntity *)EHandle_Get(m_hUser.m_Index), 1); } }
+		break;
+	case 2:
+		if (m_nState498 == 3)
+			{ if (EHandle_Get(m_hUser.m_Index)) sub_103411c0((CBaseEntity *)EHandle_Get(m_hUser.m_Index), 1); }
+		else if (m_nState498 == 2)
+			{ if (EHandle_Get(m_hUser.m_Index)) { if (m_nVSoundGroupb4 != -1) g_1074b308.sub_101f5950(this, g_1074f038, 2, 1.0f, 1.25f); sub_1000e020((CBaseEntity *)EHandle_Get(m_hUser.m_Index), 1); } }
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209330 size=0xa
 unsigned char __fastcall sub_100b4320(void *pThis);
 
