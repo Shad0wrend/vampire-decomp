@@ -272025,6 +272025,36 @@ void CWeaponThrown_Chang_Ghost::sub_103f1270(void *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f1330 size=0x58
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
+
+void *sub_100aa720(unsigned int size);	// the entities' operator new (stub 0x1000db89)
+extern char g_104e2b7c[];	// CWeaponThrown_Chang_Ghost's vftable
+
+// The factory's view of CWeaponThrown_Chang_Ghost (the header models it without its weapon base): the
+// constructor sets the two handles (+0x914 target, +0x92c bone tree emitter) to -1, then the class's vftable.
+class __declspec(novtable) CChangGhostFactoryView : public CBaseCombatWeapon
+{
+public:
+	CChangGhostFactoryView() { *(void **)this = g_104e2b7c; }
+	void *operator new(unsigned int size) { return sub_100aa720(size); }
+
+	char m_pad0898[0x914 - 0x898];
+	EHANDLE m_h914;	// 0x914: the target
+	char m_pad0918[0x92c - 0x918];
+	EHANDLE m_hEmitter92c;	// 0x92c: the bone tree emitter entity
+};
+
+// TARGET: item_w_chang_ghost
+extern "C" CBaseEntity *item_w_chang_ghost()
+{
+	CChangGhostFactoryView *p = new CChangGhostFactoryView;
+	((CBaseEntity *)p)->vfunc106("item_w_chang_ghost");
+	return (CBaseEntity *)p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f15b0 size=0x72
 #include "SendProp.h"
 
