@@ -121566,6 +121566,186 @@ char CSoundEmitterSystemBase::sub_101b4200(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b4240 size=0x2b5
+#include "CUnknown101b2570.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CSoundEmitterSystemBase.h"
+#include "CUnknown10248a50.h"
+#include "CUtlVector130.h"
+#include "CUnknown101b30d0.h"
+#include "CUnknown101b45b0.h"
+#include "CUnknown101b6320.h"
+#include "CUtlRBTreeFind232.h"
+#include <string.h>
+
+extern IFileSys *g_1070b238;
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+struct CSoundScriptFileX
+{
+	char dirty;
+	char precachealways;
+	char filename[0x80];
+};
+void sub_101b72b0(CSoundScriptFileX *dst, const CSoundScriptFileX *src);
+
+struct CKVView : CUnknown10248a50
+{
+	const char *sub_102480b0();
+	CKVView *sub_10248a30();
+	void deleteThis()
+	{
+		if (this)
+		{
+			sub_100046f1();
+			operator delete(this);
+		}
+	}
+};
+
+struct CVecDtorView
+{
+	int m_a[5];
+	void sub_101b6120();
+};
+struct CTempVecView
+{
+	void sub_101b65e0();
+};
+struct CTempMemView
+{
+	void sub_101b6b90();
+};
+
+struct CSoundSymX
+{
+	unsigned short m_id;
+	CSoundSymX() { m_id = 0xffff; }
+	CSoundSymX(const CSoundSymX &o) { m_id = o.m_id; }
+};
+struct CStrTableView
+{
+	CSoundSymX sub_1024b5e0(const char *name);
+};
+
+struct CSoundKeyX
+{
+	CSoundSymX sym;
+	CUnknown101b45b0 data;
+	CSoundKeyX() { data.sub_101b45b0(); }
+	~CSoundKeyX()
+	{
+		((CVecDtorView *)&data.m_nField3c)->sub_101b6120();
+		((CVecDtorView *)&data.m_nField28)->sub_101b6120();
+	}
+};
+
+struct CSoundEntryX : CUnknown101b6320
+{
+	CSoundEntryX() { ((CUnknown101b30d0 *)&m_params)->sub_101b30d0(); }
+	~CSoundEntryX()
+	{
+		((CTempVecView *)&m_params.m_vecB)->sub_101b65e0();
+		((CTempMemView *)&m_params.m_vecB)->sub_101b6b90();
+		((CVecDtorView *)&m_params.m_vecA)->sub_101b6120();
+	}
+};
+
+struct CSoundTreeX : CUtlRBTree<CSoundEmitterRecord, int>
+{
+	int sub_101b68f0(const CSoundKeyX &key);
+	int sub_101b66e0(const CSoundKeyX &key);
+};
+
+struct CSoundDictX
+{
+	CSoundTreeX m_tree;
+	CStrTableView m_strings;
+
+	int Find(const char *name)
+	{
+		CSoundKeyX key;
+		key.sym = m_strings.sub_1024b5e0(name);
+		return m_tree.sub_101b68f0(key);
+	}
+	int Insert(const char *name, const CUnknown101b6320 &entry)
+	{
+		CSoundKeyX key;
+		key.sym = m_strings.sub_1024b5e0(name);
+		int idx = m_tree.sub_101b66e0(key);
+		((CUnknown101b6320 &)m_tree[idx].m_b4).sub_101b6320(entry);
+		return idx;
+	}
+};
+
+struct CScriptFileVec : CUtlVector130
+{
+	CSoundScriptFileX &Element(int i) { return ((CSoundScriptFileX *)m_pMemory)[i]; }
+	int AddToTail(const CSoundScriptFileX &src)
+	{
+		int elem = m_size;
+		sub_101b7170(1);
+		sub_101b7240(elem, 1);
+		sub_101b72b0(&Element(elem), &src);
+		return elem;
+	}
+	void Remove(int elem)
+	{
+		int numToMove = m_size - elem - 1;
+		if (numToMove > 0)
+			memmove(&Element(elem), &Element(elem + 1), numToMove * sizeof(CSoundScriptFileX));
+		m_size--;
+	}
+};
+
+void CSoundEmitterSystemBase::sub_101b4240(const char *filename, bool precachealways)
+{
+	CSoundScriptFileX sf;
+	Q_strncpy(sf.filename, filename, sizeof(sf.filename));
+	sf.dirty = false;
+	sf.precachealways = precachealways;
+
+	int scriptindex = ((CScriptFileVec *)&m_i9c)->AddToTail(sf);
+
+	CKVView *kv = (CKVView *)new CUnknown10248a50(filename);
+
+	IFileSys * __arg0 = g_1070b238;
+	if (kv->sub_102480f0(filename, __arg0, 0, true))
+	{
+		for (CKVView *pKeys = kv; pKeys; pKeys = pKeys->sub_10248a30())
+		{
+			if (!pKeys->sub_10248a10())
+				continue;
+
+			CSoundEntryX entry;
+			entry.m_bField00 = false;
+			entry.m_bField01 = precachealways;
+			entry.m_nField04 = scriptindex;
+
+			if (((CSoundDictX *)&m_pfn50)->Find(pKeys->sub_102480b0()) != -1)
+			{
+				DevMsg("CSoundEmitterSystem::AddSoundsFromFile(%s):  Entry %s duplicated, skipping\n", filename, pKeys->sub_102480b0());
+			}
+			else
+			{
+				sub_101b3bb0(pKeys->sub_102480b0(), pKeys, (CUnknown101b2570 *)&entry.m_params);
+				((CSoundDictX *)&m_pfn50)->Insert(pKeys->sub_102480b0(), entry);
+			}
+		}
+	}
+	else
+	{
+		DevMsg("CSoundEmitterSystem::AddSoundsFromFile:  No such file %s\n", filename);
+		((CScriptFileVec *)&m_i9c)->Remove(scriptindex);
+		kv->deleteThis();
+		return;
+	}
+	kv->deleteThis();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b45b0 size=0x99
 #include "CUnknown101b45b0.h"
 extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
