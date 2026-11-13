@@ -1518,6 +1518,7 @@
 0x10002f7c func   ?sub_10088ce0@@YAXXZ sub_10088ce0
 0x10002f81 func   ?vfunc107@CNPCMaker@@UAEXPAVCEntityMapData@@@Z CNPCMaker::vfunc107
 0x10002f86 func   ?vfunc6@CSoundControllerImp@@UAEPAVCUnknown101bc140@@PAXIHPBDH@Z CSoundControllerImp::vfunc6
+0x10002f8b func   ?vfunc113@CPhysicsSpring@@QAEXXZ CPhysicsSpring::vfunc113
 0x10002f90 func   ?vfunc82@CNPCMaker@@UAEPAUdatamap_t@@XZ CNPCMaker::vfunc82
 0x10002f95 func   ?sub_101fc950@TStat@@QAEXHH@Z TStat::sub_101fc950
 0x10002f9a func   ?vfunc82@CAI_ChangeTarget@@QAEPAUdatamap_t@@XZ CAI_ChangeTarget::vfunc82

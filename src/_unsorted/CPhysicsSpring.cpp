@@ -76,6 +76,80 @@ void CPhysicsSpring::vfunc123()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d780 size=0x1a8
+#include "CPhysicsSpring.h"
+extern char g_106b8540[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+#define PV(n) virtual void pv##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+
+struct EntSlot37 {
+	PV10(0) PV10(1)
+	PV(20) PV(21) PV(22) PV(23) PV(24) PV(25) PV(26)
+	virtual void pv27(Vector *pOut, Vector *pIn);
+};
+
+struct SpringParams {
+	float constant;
+	float naturalLength;
+	float damping;
+	float relativeDamping;
+	Vector startPosition;
+	Vector endPosition;
+	bool useLocalPositions;
+};
+
+struct PhysEnvStub {
+	PV10(0)
+	PV(10)
+	virtual void *CreateSpring(EntSlot37 *pObject1, EntSlot37 *pObject2, SpringParams *pParams);
+};
+
+extern PhysEnvStub *g_10723940;
+extern void (*g_109f3630)(const char *, ...);
+char sub_1004d590(EntSlot37 *pObject, const Vector &a, const Vector &b);
+void sub_101cd940(CPhysicsSpring *pEntity);
+
+void CPhysicsSpring::vfunc113()
+{
+	sub_10001226();
+	EntSlot37 *pStart, *pEnd; EntSlot37 *pE;
+	sub_1004d6a0(m_pszStartName, m_pszEndName, (void **)&pStart, (void **)&pEnd);
+	if ((!pStart && !pEnd) || pStart == pEnd) {
+		g_109f3630("ERROR: Can't init spring %s from \"%s\" to \"%s\"\n", sub_100ab4f0(),
+			STRINGR_F(m_pszStartName), STRINGR_F(m_pszEndName));
+		sub_101cd940(this);
+		return;
+	}
+	pE = pEnd;
+	if (!m_bStartEndFixed) {
+		m_bStartEndFixed = 1;
+		Vector &vecStart = m_vecStart;
+		Vector &vecEnd = m_vecEnd;
+		if (!sub_1004d590(pEnd, vecEnd, vecStart)) {
+			Vector vecTemp = vecStart;
+			vecStart = vecEnd;
+			vecEnd = vecTemp;
+		}
+		pStart->pv27(&vecStart, &vecStart);
+		pE = *(EntSlot37 *volatile *)&pEnd; pE->pv27(&vecEnd, &vecEnd);
+	}
+	SpringParams params;
+	memset(&params, 0, sizeof(params));
+	params.constant = m_flSpringConstant;
+	params.damping = m_flDamping;
+	params.naturalLength = m_flLength;
+	params.relativeDamping = m_flRelativeDamping;
+	params.startPosition = m_vecStart;
+	params.endPosition = m_vecEnd;
+	params.useLocalPositions = true;
+	m_pSpring = (IPhysicsSpringStub *)g_10723940->CreateSpring(pStart, pE, &params);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d9a0 size=0x107
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
