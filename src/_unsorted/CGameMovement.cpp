@@ -405,6 +405,364 @@ void CGameMovement::vfunc10(Vector &wishdir, float wishspeed, float accel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101213b0 size=0x71b
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CGlobalEntityList.h"
+#include "CBaseHandle.h"
+#include "CGameTrace.h"
+#include "ConVar.h"
+#include "Ray_t.h"
+#include "Vector.h"
+#include "QAngle.h"
+#include "globalvars.h"
+
+extern CGlobalEntityList *g_10566458;
+extern char g_10572420;
+void sub_1011e8f0(Ray_t *pRay, unsigned int mask, void *pPassEnt, int group, CGameTrace *pTrace);
+void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+#define MOVE ((CMoveFlagsView *)m_pMove)
+
+
+class CCycleCount
+{
+public:
+	CCycleCount() { Init(); }
+	void Init() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm
+		{
+			mov		ecx, pSample
+			rdtsc
+			mov		[ecx],     eax
+			mov		[ecx+4],   edx
+		}
+	}
+	CCycleCount &operator+=(CCycleCount const &other) { m_Int64 += other.m_Int64; return *this; }
+	__int64 m_Int64;
+};
+
+class CFastTimer
+{
+public:
+	void Start() { m_Duration.Sample(); }
+	void sub_100335e0()	// CFastTimer::End (its out-of-line copy is 0x100335e0)
+	{
+		CCycleCount cnt;
+		cnt.Sample();
+		m_Duration.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+	}
+	const CCycleCount &GetDuration() const { return m_Duration; }
+	CCycleCount m_Duration;
+};
+
+class CVProfile;
+extern CVProfile *g_109f3648;
+
+class __declspec(dllimport) CVProfNode
+{
+public:
+	CVProfNode *GetSubNode(const char *pszName, int detailLevel, const char *pBudgetGroupName);
+	void EnterScope();
+	bool ExitScope();
+	const char *GetName() { return m_pszName; }
+	CVProfNode *GetParent() { return m_pParent; }
+	int GetBudgetGroupID() { return m_BudgetGroupID; }
+
+	const char *m_pszName;	// 0x00
+	CFastTimer m_Timer;	// 0x08
+	int m_nRecursions;	// 0x10
+	unsigned m_nCurFrameCalls;	// 0x14
+	CCycleCount m_CurFrameTime;	// 0x18
+	unsigned m_nPrevFrameCalls;
+	CCycleCount m_PrevFrameTime;
+	unsigned m_nTotalCalls;
+	CCycleCount m_TotalTime;
+	CCycleCount m_PeakTime;
+	CVProfNode *m_pParent;	// 0x48
+	CVProfNode *m_pChild;
+	CVProfNode *m_pSibling;
+	int m_BudgetGroupID;	// 0x54
+};
+
+class __declspec(dllimport) CVProfile
+{
+public:
+	void EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted);
+	void ExitScope();
+	void PushGroup(int nGroupID);
+	void PopGroup();
+
+	char m_bVTuneGroupsEnabled;	// 0x0000
+	char m_pad0001[3];
+	int m_nVTuneGroupID;	// 0x0004
+	int m_GroupIDStack[1024];	// 0x0008
+	int m_nGroupStackDepth;	// 0x1008
+	int m_enabled;	// 0x100c
+	bool m_fAtRoot;	// 0x1010
+	char m_pad1011[3];
+	CVProfNode *m_pCurNode;	// 0x1014
+	CVProfNode *m_pRoot;	// 0x1018
+};
+
+inline void CVProfNode::EnterScope()
+{
+	m_nCurFrameCalls++;
+	if (m_nRecursions++ == 0)
+	{
+		m_Timer.Start();
+		g_109f3648->PushGroup(m_BudgetGroupID);
+	}
+}
+
+inline bool CVProfNode::ExitScope()
+{
+	if (--m_nRecursions == 0 && m_nCurFrameCalls != 0)
+	{
+		m_Timer.sub_100335e0();
+		m_CurFrameTime += m_Timer.GetDuration();
+		g_109f3648->PopGroup();
+	}
+	return (m_nRecursions == 0);
+}
+
+inline void CVProfile::EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted)
+{
+	if (m_enabled != 0 || !m_fAtRoot)
+	{
+		if (pszName != m_pCurNode->GetName())
+		{
+			m_pCurNode = m_pCurNode->GetSubNode(pszName, detailLevel, pBudgetGroupName);
+		}
+		m_pCurNode->EnterScope();
+		m_fAtRoot = false;
+	}
+}
+
+inline void CVProfile::ExitScope()
+{
+	if (!m_fAtRoot || m_enabled != 0)
+	{
+		if (m_pCurNode->ExitScope())
+		{
+			m_pCurNode = m_pCurNode->GetParent();
+		}
+		m_fAtRoot = (m_pCurNode == m_pRoot);
+	}
+}
+
+namespace block_101213b0 {
+class CVProfScope
+{
+public:
+	CVProfScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted)
+	{
+		g_109f3648->EnterScope(pszName, detailLevel, pBudgetGroupName, bAssertAccounted);
+	}
+	~CVProfScope()
+	{
+		g_109f3648->ExitScope();
+	}
+};
+
+struct CGameMovementUnit : CGameMovement
+{
+	float *sub_1011e350();
+	float *sub_1011e310();
+	void TracePlayerBBox(const Vector &start, const Vector &end, unsigned int fMask, int collisionGroup, CGameTrace &pm)
+	{
+		CVProfScope VProf_("CGameMovement::TracePlayerBBox", 0, "Unaccounted", false);
+		Ray_t ray;
+		ray.sub_1006dec0(start, &end.x, sub_1011e310(), sub_1011e350(), (char)((((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1), 0);
+		sub_1011e8f0(&ray, fMask, g_10566458->sub_100290c0((const unsigned int *)&((CMovePlayerView *)m_pPlayer)->m_hRef), collisionGroup, &pm);
+	}
+};
+
+float *CGameMovementUnit::sub_1011e350()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMax.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMax.x : &m_vecHullMax.x;
+}
+
+float *CGameMovementUnit::sub_1011e310()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMin.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMin.x : &m_vecHullMin.x;
+}
+}
+using namespace block_101213b0;
+
+__forceinline void VAddX(const Vector &a, const Vector &b, Vector &c) { c.x = a.x + b.x; c.y = a.y + b[1]; c.z = a.z + b[2]; }
+// TARGET: CGameMovement::vfunc11
+void CGameMovement::vfunc11()
+{
+	int i;
+	Vector wishvel;
+	float spd;
+	float fmove, smove;
+	Vector wishdir;
+	float wishspeed;
+	Vector dest;
+	Vector original, originalvel;
+	Vector down, downvel;
+	float downdist, updist;
+	CGameTrace pm;
+	Vector forward, right, up;
+
+	sub_10139610(*(QAngle *)&PLAYER->m_vec58, &forward, &right, &up);
+
+	CBaseHandle oldground;
+	oldground = (IHandleEntity *)((CMoveDataView *)m_pMove)->vfunc209();
+
+	fmove = PLAYER->m_flForwardMove;
+	smove = PLAYER->m_flSideMove;
+
+	if (g_10572420)
+	{
+		if (forward[2] != 0)
+		{
+			forward[2] = 0;
+			VectorNormalize(forward);
+		}
+		if (right[2] != 0)
+		{
+			right[2] = 0;
+			VectorNormalize(right);
+		}
+	}
+	else
+	{
+		forward[2] = 0;
+		right[2] = 0;
+		VectorNormalize(forward);
+		VectorNormalize(right);
+	}
+
+	for (i = 0; i < 2; i++)
+		wishvel[i] = forward[i] * fmove + right[i] * smove;
+
+	wishvel[2] = 0;
+
+	VectorCopy(wishvel, wishdir);
+	wishspeed = VectorNormalize(wishdir);
+
+	if (wishspeed > PLAYER->m_flMaxSpeed)
+	{
+		VectorScale(wishvel, PLAYER->m_flMaxSpeed / wishspeed, wishvel);
+		wishspeed = PLAYER->m_flMaxSpeed;
+	}
+
+	PLAYER->m_vecVelocity[2] = 0;
+	if (PLAYER->m_bD0)
+	{
+		PLAYER->m_vecVelocity = wishvel;
+	}
+	else
+	{
+		vfunc10(wishdir, wishspeed, g_109ef28c->vfunc1() ? 0.0f : g_109ef28c->m_fValue);
+	}
+	PLAYER->m_vecVelocity[2] = 0;
+
+	VAddX(MOVE->m_vec3b0, PLAYER->m_vecVelocity, PLAYER->m_vecVelocity);
+
+	spd = VectorLength(PLAYER->m_vecVelocity);
+
+	if (spd < 1.0f)
+	{
+		PLAYER->m_vecVelocity.Init();
+		return;
+	}
+
+	dest[0] = PLAYER->m_vecOrigin[0] + PLAYER->m_vecVelocity[0] * gpGlobals->frametime;
+	dest[1] = PLAYER->m_vecOrigin[1] + PLAYER->m_vecVelocity[1] * gpGlobals->frametime;
+	dest[2] = PLAYER->m_vecOrigin[2];
+
+	((CGameMovementUnit *)this)->TracePlayerBBox(PLAYER->m_vecOrigin, dest, 0x201400b, 6, pm);
+
+	PLAYER->m_vec80 += wishdir * wishspeed;
+
+	if (pm.m_fraction == 1)
+	{
+		VectorCopy(*(Vector *)pm.m_endpos, PLAYER->m_vecOrigin);
+		return;
+	}
+
+	if (g_10566458->sub_100290c0((const unsigned int *)&oldground) == 0 && MOVE->m_n03E0 == 0)
+		return;
+
+	if (MOVE->m_flWaterJump)
+		return;
+
+	VectorCopy(PLAYER->m_vecOrigin, original);
+	VectorCopy(PLAYER->m_vecVelocity, originalvel);
+
+	slot19((int)&dest, (int)&pm);
+
+	VectorCopy(PLAYER->m_vecOrigin, down);
+	VectorCopy(PLAYER->m_vecVelocity, downvel);
+
+	VectorCopy(original, PLAYER->m_vecOrigin);
+	VectorCopy(originalvel, PLAYER->m_vecVelocity);
+
+	VectorCopy(PLAYER->m_vecOrigin, dest);
+	if (MOVE->m_b1F28)
+		dest[2] += MOVE->m_fl1F24;
+
+	((CGameMovementUnit *)this)->TracePlayerBBox(PLAYER->m_vecOrigin, dest, 0x201400b, 6, pm);
+
+	if (!pm.m_startsolid && !pm.m_allsolid)
+	{
+		VectorCopy(*(Vector *)pm.m_endpos, PLAYER->m_vecOrigin);
+	}
+
+	slot19(0, 0);
+
+	VectorCopy(PLAYER->m_vecOrigin, dest);
+	if (MOVE->m_b1F28)
+		dest[2] -= MOVE->m_fl1F24;
+
+	((CGameMovementUnit *)this)->TracePlayerBBox(PLAYER->m_vecOrigin, dest, 0x201400b, 6, pm);
+
+	if (pm.m_planeNormal[2] < 0.7)
+		goto usedown;
+
+	if (!pm.m_startsolid && !pm.m_allsolid)
+	{
+		VectorCopy(*(Vector *)pm.m_endpos, PLAYER->m_vecOrigin);
+	}
+
+	VectorCopy(PLAYER->m_vecOrigin, up);
+
+	downdist = (down[0] - original[0]) * (down[0] - original[0])
+		+ (down[1] - original[1]) * (down[1] - original[1]);
+	updist = (up[0] - original[0]) * (up[0] - original[0])
+		+ (up[1] - original[1]) * (up[1] - original[1]);
+
+	if (downdist > updist)
+	{
+usedown:
+		VectorCopy(down, PLAYER->m_vecOrigin);
+		VectorCopy(downvel, PLAYER->m_vecVelocity);
+	}
+	else
+		PLAYER->m_vecVelocity[2] = downvel[2];
+
+	float stepDist = PLAYER->m_vecOrigin.z - original.z;
+	if (stepDist > 0)
+	{
+		PLAYER->m_fl007C += stepDist;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10122c30 size=0x77
 #include "CGameMovement.h"
 

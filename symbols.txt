@@ -11059,6 +11059,7 @@
 0x1000f6af func   ?vfunc61@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc61
 0x1000f6b4 func   ?sub_1023fd00@@YA_NABVVector@@00M@Z sub_1023fd00
 0x1000f6b9 func   ?sub_1030b580@CUnknown1030b580@@QAEHXZ CUnknown1030b580::sub_1030b580
+0x1000f6c3 func   ?vfunc11@CGameMovement@@UAEXXZ CGameMovement::vfunc11
 0x1000f6c8 func   _npc_VWolfMorph npc_VWolfMorph
 0x1000f6cd func   ?vfunc54@CBaseEntity@@UAE_NH@Z CBaseEntity::vfunc54
 0x1000f6d2 func   ?vfunc5@CItemGWerewolfBlood@@QAEPAV1@I@Z CItemGWerewolfBlood::vfunc5
