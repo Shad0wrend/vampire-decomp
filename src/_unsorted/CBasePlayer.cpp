@@ -4485,6 +4485,186 @@ void __stdcall sub_1017b880(int a) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017b8a0 size=0x463
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "IPhysicsObject.h"
+#include "CGameTrace.h"
+#include "ConVar.h"
+#include "Vector.h"
+
+extern ConVar g_10725ca0;	// physicsshadowupdate_render
+extern float (__fastcall *g_1057966c)(Vector *pVec);
+void sub_10142aa0(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float duration);
+void sub_101cd190(CBasePlayer *pEntity, const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, CBasePlayer *pIgnore, int nCollisionGroup, CGameTrace *ptr);
+
+#define VPHYS_MAX_DISTANCE 2.0
+#define VPHYS_MAX_VEL 10
+#define VPHYS_MAX_DISTSQR (VPHYS_MAX_DISTANCE*VPHYS_MAX_DISTANCE)
+#define VPHYS_MAX_VELSQR (VPHYS_MAX_VEL*VPHYS_MAX_VEL)
+struct CPlayerShadowView
+{
+	char sub_1016b980(IPhysicsObject *pPhysics);	// IsRideablePhysics
+	IPhysicsObject *sub_1016b9d0();	// GetGroundVPhysics
+	int sub_100b3700();	// GetFlags
+	void sub_100b1d10();	// CalcAbsoluteVelocity
+	void sub_100b2aa0(const Vector &v);	// ApplyAbsVelocityImpulse
+};
+
+#define PV ((CPlayerShadowView *)this)
+
+struct CPhysObj12R
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3();
+	virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7();
+	virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual float slot12();
+};
+#pragma auto_inline(off)
+namespace block_1017b8a0 {
+struct CBasePlayer1016b980
+{
+	char m_pad0000[0x36c];
+	int m_pObj;
+	char sub_1016b980(void *pObj);
+};
+char CBasePlayer1016b980::sub_1016b980(void *pObj)
+{
+	if (pObj)
+	{
+		CPhysObj12R *pOther = (CPhysObj12R *)pObj;
+		CPhysObj12R *pSelf = (CPhysObj12R *)m_pObj;
+		float a = pOther->slot12();
+		float b = pSelf->slot12();
+		return a > (b + b);
+	}
+	return false;
+}
+}
+#pragma auto_inline(on)
+#define RIDE(p) (((block_1017b8a0::CBasePlayer1016b980 *)this)->sub_1016b980(p))
+
+struct CPlayerVelView
+{
+	char m_pad0[0x268];
+	unsigned int m_iEFlags;
+	char m_pad1[0x270 - 0x26c];
+	CBasePlayerSub270 m_Collision;
+	char m_pad2[0x3bc - 0x274];
+	Vector m_vecAbsVelocity;
+	void sub_100b1d10();
+	bool IsEFlagSet(int nEFlagMask) const { return (m_iEFlags & nEFlagMask) != 0; }
+	const Vector &GetAbsVelocity() { if ((bool)((m_iEFlags >> 12) & 1)) sub_100b1d10(); return m_vecAbsVelocity; }
+	const Vector &WorldAlignMins() { return *(Vector *)m_Collision.vfunc1(); }
+	const Vector &WorldAlignMaxs() { return *(Vector *)m_Collision.vfunc2(); }
+};
+#define VV ((CPlayerVelView *)this)
+#define m_touchedPhysObject m_pad2128[0]
+#define EV ((CEntityVSlots *)this)
+
+// TARGET: CBasePlayer::vfunc229
+void CBasePlayer::vfunc229(CBaseEntity *pOther)
+{
+	IPhysicsObject *pPhysics = (IPhysicsObject *)pOther;
+	Vector newPosition;
+
+	bool physicsUpdated = m_pPartOwner->vfunc6(&newPosition, 0) > 0 ? true : false;
+
+	if (m_pPartOwner->vfunc3())
+	{
+		m_touchedPhysObject = true;
+	}
+
+	if (vfunc94() == 9 || vfunc94() == 0 || sub_101618a0())
+	{
+		m_oldOrigin = *EV->slot217();
+		return;
+	}
+
+	if (!physicsUpdated)
+		return;
+
+	IPhysicsObject *pPhysGround = PV->sub_1016b9d0();
+
+	Vector newVelocity;
+	pPhysics->vfunc37(&newPosition, 0);
+	pPhysics->vfunc40((float *)&newVelocity, 0);
+
+	if (g_10725ca0.GetInt())
+	{
+		sub_10142aa0(*EV->slot217(), VV->WorldAlignMins(), VV->WorldAlignMaxs(), 255, 0, 0, 24, 15.0f);
+		sub_10142aa0(newPosition, VV->WorldAlignMins(), VV->WorldAlignMaxs(), 0, 0, 255, 24, 15.0f);
+	}
+
+	Vector tmp = *EV->slot217() - newPosition;
+	if (!m_touchedPhysObject && !(PV->sub_100b3700() & 1))
+	{
+		tmp.z *= 0.5f;
+	}
+
+	float dist = tmp.LengthSqr();
+	float deltaV = (newVelocity - VV->GetAbsVelocity()).LengthSqr();
+
+	float maxVelErrorSqr = VPHYS_MAX_VELSQR;
+	float maxDistErrorSqr;
+	maxDistErrorSqr = 4.0f;
+	if (RIDE(pPhysGround)) { maxVelErrorSqr *= 0.25; maxDistErrorSqr = 1.0f; }
+
+	if (dist >= maxDistErrorSqr || deltaV >= maxVelErrorSqr || (pPhysGround && !m_touchedPhysObject))
+	{
+		if (m_touchedPhysObject || pPhysGround)
+		{
+			if (deltaV >= maxVelErrorSqr)
+			{
+				Vector dir = VV->GetAbsVelocity();
+				float len = g_1057966c(&dir);
+				float dot = DotProduct(newVelocity, dir);
+				if (dot > len)
+					dot = len;
+				else if (dot < -len)
+					dot = -len;
+
+				dir *= dot;
+				newVelocity -= dir;
+
+				if (!PV->sub_1016b980(pPhysGround))
+					PV->sub_100b2aa0(newVelocity);
+			}
+
+			CGameTrace trace;
+			sub_101cd190(this, newPosition, newPosition, 0x201400b, this, 6, &trace);
+			if (!trace.m_allsolid && !trace.m_startsolid)
+			{
+				EV->slot216(&newPosition);
+			}
+		}
+		else
+		{
+			CGameTrace trace;
+			sub_101cd190(this, *EV->slot217(), *EV->slot217(), 0x201400b, this, 6, &trace);
+			if (trace.m_allsolid || trace.m_startsolid)
+			{
+				EV->slot216(&newPosition);
+			}
+		}
+	}
+	else
+	{
+		if (m_touchedPhysObject)
+		{
+			CGameTrace trace;
+			sub_101cd190(this, *EV->slot217(), *EV->slot217(), 0x201400b, this, 6, &trace);
+			if (trace.m_allsolid || trace.m_startsolid)
+			{
+				EV->slot216(&newPosition);
+			}
+		}
+	}
+	m_oldOrigin = *EV->slot217();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017be30 size=0x3
 // TARGET: sub_1017be30
 char sub_1017be30() {
