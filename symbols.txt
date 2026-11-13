@@ -6200,6 +6200,7 @@
 0x1000912e func   ?vfunc104@CBaseEntity@@UAEXXZ CBaseEntity::vfunc104
 0x10009133 func   ?sub_1040cfd0@CPlayerPickupController@@QAEXPAVCBaseCombatCharacter@@PAVCBaseEntity@@@Z CPlayerPickupController::sub_1040cfd0
 0x10009138 func   ?sub_1034d000@CNPCMaker@@QAEXPAUCMakerInputData@@@Z CNPCMaker::sub_1034d000
+0x1000913d func   ?sub_100f4b90@CGibShooter@@QAEXXZ CGibShooter::sub_100f4b90
 0x10009142 func   ?sub_102ea240@CUnknown10359c50@@QAE_NH@Z CUnknown10359c50::sub_102ea240
 0x10009147 func   ?sub_101998c0@@YAHHH@Z sub_101998c0
 0x1000914c func   ?sub_101f9a40@@YGXPAVCBaseEntity@@H@Z sub_101f9a40

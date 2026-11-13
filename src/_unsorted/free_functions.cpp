@@ -65879,6 +65879,117 @@ void CGibShooter::sub_100f49e0(CGib *pGib, const Vector &vecShootDir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4b90 size=0x440
+#include "CGib.h"
+#include "CGibShooter.h"
+#include "CBaseEntity.h"
+#include "IPhysicsObject.h"
+#include "engineiface.h"
+#include "globalvars.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);	// AngleVectors
+void sub_10139970(const Vector &forward, QAngle &angles);	// VectorAngles
+void sub_1012b320(const char *pszName, const Vector &origin, const QAngle &angles, const Vector &force);	// CreateRagGib
+extern "C" __declspec(dllimport) float RandomFloat(float flMinVal, float flMaxVal);
+extern char g_106b8540[];
+
+struct string_tV { const char *pszValue; };
+
+#define GV(n) virtual void gv##n();
+#define GV10(p) GV(p##0) GV(p##1) GV(p##2) GV(p##3) GV(p##4) GV(p##5) GV(p##6) GV(p##7) GV(p##8) GV(p##9)
+
+struct CGibShooterV
+{
+	GV(0) GV(1) GV(2) GV(3) GV(4) GV(5) GV(6) GV(7) GV(8)
+	virtual string_tV GetModelName();	// 9
+	GV(10) GV(11) GV(12) GV(13) GV(14) GV(15) GV(16) GV(17) GV(18) GV(19)
+	GV10(2) GV10(3) GV10(4) GV10(5) GV10(6) GV10(7) GV10(8) GV10(9)
+	GV10(10) GV10(11) GV10(12) GV10(13) GV10(14) GV10(15) GV10(16) GV10(17) GV10(18) GV10(19) GV10(20)
+	GV(210) GV(211) GV(212) GV(213) GV(214) GV(215) GV(216)
+	virtual const Vector &GetAbsOrigin();	// 217
+	GV(218)
+	virtual const QAngle &GetAbsAngles();	// 219
+	GV(220) GV(221) GV(222) GV(223) GV(224) GV(225) GV(226) GV(227) GV(228) GV(229)
+	GV(230) GV(231) GV(232) GV(233) GV(234) GV(235) GV(236) GV(237) GV(238) GV(239) GV(240)
+	virtual CGib *CreateGib();	// 241
+	virtual CGib *CreatePhysGib(Vector origin, QAngle angles);	// 242
+};
+
+struct CGibV { char pad[0x36c]; IPhysicsObject *m_pPhysicsObject; };
+
+#define SF_GIBSHOOTER_REPEATABLE 1
+struct CGibShooterR : CGibShooter { void sub_101c0b10(); };
+
+// TARGET: CGibShooter::sub_100f4b90
+void CGibShooter::sub_100f4b90()
+{
+	CGibShooterV *pV = (CGibShooterV *)this;
+	*(float *)&m_nNextThink = m_flDelay + gpGlobals->curtime;
+
+	Vector vecShootDir, vForward, vRight, vUp;
+	sub_10139610(pV->GetAbsAngles(), &vForward, &vRight, &vUp);
+	vecShootDir = vForward;
+	vecShootDir = vecShootDir + vRight * enginerandom->vfunc1(-1, 1) * m_flVariance;
+	vecShootDir = vecShootDir + vForward * enginerandom->vfunc1(-1, 1) * m_flVariance;
+	vecShootDir = vecShootDir + vUp * enginerandom->vfunc1(-1, 1) * m_flVariance;
+
+	VectorNormalize(vecShootDir);
+
+	switch (m_nShootMode)
+	{
+		case 2:
+		{
+			Vector flForce = vecShootDir * m_flGibVelocity * 200;
+			const char *pszName = pV->GetModelName().pszValue;
+			sub_1012b320(pszName ? pszName : g_106b8540, pV->GetAbsOrigin(), pV->GetAbsAngles(), flForce);
+			break;
+		}
+		case 1:
+		{
+			QAngle angles;
+			sub_10139970(vecShootDir, angles);
+			CGib *pGib = pV->CreatePhysGib(pV->GetAbsOrigin(), angles);
+			if (pGib)
+			{
+				((CBaseEntity *)pGib)->sub_100aaa40(1);
+				((CBaseEntity *)pGib)->sub_100b3b00();
+				IPhysicsObject *pPhysicsObject = ((CGibV *)pGib)->m_pPhysicsObject;
+				if (pPhysicsObject)
+				{
+					Vector vVel = vecShootDir * m_flGibVelocity;
+					Vector angImp(RandomFloat(-60, 60), RandomFloat(-60, 60), RandomFloat(-60, 60));
+					pPhysicsObject->vfunc41(&vVel, &angImp);
+				}
+			}
+			break;
+		}
+		case 0:
+		{
+			CGib *pGib = pV->CreateGib();
+			sub_100f49e0(pGib, vecShootDir);
+			break;
+		}
+	}
+
+	if (--m_iGibs <= 0)
+	{
+		if (*(int *)((char *)this + 0x204) & SF_GIBSHOOTER_REPEATABLE)
+		{
+			m_iGibs = m_iGibCapacity;
+			sub_100ac4e0(0, 0, 0);
+			*(float *)&m_nNextThink = gpGlobals->curtime;
+		}
+		else
+		{
+			sub_100ac4e0(static_cast<void (CGibShooter::*)()>(&CGibShooterR::sub_101c0b10), 0, 0);
+			*(float *)&m_nNextThink = gpGlobals->curtime;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f5140 size=0x1a
 namespace lifted {
 extern int g_10565b94;
