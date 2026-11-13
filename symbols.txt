@@ -1774,6 +1774,7 @@
 0x1000350d func   ?vfunc103@CBaseEntity@@UAEXXZ CBaseEntity::vfunc103
 0x10003512 func   ?sub_10218080@@YIXPADHH@Z sub_10218080
 0x10003517 func   ?vfunc82@CPhysForce@@UAEPAUdatamap_t@@XZ CPhysForce::vfunc82
+0x10003521 func   ?vfunc442@CNPC_VScurrying@@UAEXPAH@Z CNPC_VScurrying::vfunc442
 0x10003526 func   ??0CUnknown10076da0TimingTag@@QAE@HPBDM_N@Z CUnknown10076da0TimingTag::CUnknown10076da0TimingTag
 0x1000352b func   _npc_VTzimisce npc_VTzimisce
 0x10003530 func   ?sub_1028ad00@@YGHH@Z sub_1028ad00
