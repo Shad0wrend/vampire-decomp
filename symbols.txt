@@ -7615,6 +7615,7 @@
 0x1000aede func   ?sub_100b5620@@YAHXZ sub_100b5620
 0x1000aee3 func   _item_k_hitman_ji_key item_k_hitman_ji_key
 0x1000aee8 func   ?sub_1012e4f0@@YAHXZ sub_1012e4f0
+0x1000aeed func   ?sub_100e65d0@CDialog@@QAEHXZ CDialog::sub_100e65d0
 0x1000aef2 func   ?vfunc5@CNPC_VTest@@QAEPAV1@I@Z CNPC_VTest::vfunc5
 0x1000aef7 func   ?sub_1035fcf0@CUnk1035fcf0@@QAEXH@Z CUnk1035fcf0::sub_1035fcf0
 0x1000aefc func   ?sub_1037c620@@YIPAXPAD@Z sub_1037c620

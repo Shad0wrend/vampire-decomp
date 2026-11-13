@@ -61757,6 +61757,72 @@ int CDialog::sub_100e61d0(void *pFile, DialogLine *pLine, int *pLineNo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e65d0 size=0x672
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CDialog.h"
+#include "MvsnSec.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CUnknown100290c0.h"
+#include "CUnknown101d5bd0.h"
+extern CUnknown101d5bd0 g_10738d10;
+int sub_1042ffe0(int x);
+unsigned int sub_100eb0a0(unsigned int x);
+int sub_100eb0c0(unsigned int x);
+struct SecTmp { int m; int pad; SecTmp *sub_100eafb0(unsigned int x); int sub_100eb060(unsigned int x); };
+inline unsigned int Scr(unsigned int x) { return (((((x) & 0x98b2235) ^ 0xc80e68e3) + 0x4e242ee1) & 0xf674ddca) ^ (x) ^ 0x10ade2d8; }
+struct SecVal { char b0; char b1; int v; void sub_100eb030(SecTmp *p); int Get() const { return sub_1042ffe0(Scr(v)); } };
+extern char g_1045467c[];
+struct SecStatic {
+	void *vt; SecVal s;
+	SecStatic(unsigned int x) { s.v = 0; vt = (void *)g_1045467c; SecTmp t; t.sub_100eafb0(x); s.sub_100eb030(&t); }
+	SecStatic(unsigned int x, int) { s.v = 0; vt = (void *)g_1045467c; SecTmp t; t.pad = t.sub_100eb060(sub_100eb0a0(x)); s.sub_100eb030(&t); }
+	~SecStatic() {}
+	int Get2() const { return sub_1042ffe0(Scr(s.v)); }
+	int Get3() const { unsigned int t = s.v & 0x98b2235; t ^= 0xc80e68e3; t += 0x4e242ee1; t &= 0xf674ddca; t ^= s.v; t ^= 0x10ade2d8; return sub_1042ffe0(t); }
+};
+inline bool Eq(unsigned int a, unsigned int b) { return sub_100eb0c0(Scr(b)) == sub_100eb0c0(Scr(a)); }
+#define MK(n, nm) static SecStatic n((unsigned int)g_10738d10.sub_101d5bd0(nm));
+int CDialog::sub_100e65d0()
+{
+	ScopeTrace scope("CDialog::clan_offset", g_106b8540);
+	if (((CUnknown100290c0 *)g_10566458)->sub_100290c0(&m_hNPC)) {
+		static SecStatic a0((unsigned int)g_10738d10.sub_101d5bd0("Player_Brujah"), 0);
+		MK(a1, "Player_Gangrel")
+		MK(a2, "Player_Nosferatu")
+		MK(a3, "Player_Toreador")
+		MK(a4, "Player_Tremere")
+		MK(a5, "Player_Ventrue")
+		MK(a6, "Player_Malkavian")
+		SecStatic t1(((CBaseCombatCharacter *)((CUnknown100290c0 *)g_10566458)->sub_100290c0(&m_hNPC))->sub_10337860());
+		((SecVal *)&m_nSecure32f0)->sub_100eb030((SecTmp *)&t1.s);
+		if (Eq(a0.s.v, m_n32f4)) return 0;
+		if (Eq(a1.s.v, m_n32f4)) return 1;
+		if (Eq(a2.s.v, m_n32f4)) return 2;
+		if (Eq(a3.s.v, m_n32f4)) return 3;
+		if (Eq(a4.s.v, m_n32f4)) return 4;
+		if (Eq(a5.s.v, m_n32f4)) return 5;
+		unsigned int b = m_n32f4;
+		if (sub_100eb0c0(Scr(b)) == a6.Get3()) return 6;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6ed0 size=0x2a2
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
