@@ -178565,6 +178565,80 @@ void CRopeKeyframe::sub_1023a7d0(int a, int b, int c, int d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023aa30 size=0x1d8
+#include "UTIL_Trace.h"
+#include "CDecal.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "engineserver.h"
+
+void sub_10138130(const float *in1, const float (*in2)[4], float *out);	// VectorITransform
+void __fastcall sub_101c0b10(CBaseEntity *pEnt);	// SUB_Remove
+
+#define EV10(p) virtual void e##p##0(); virtual void e##p##1(); virtual void e##p##2(); virtual void e##p##3(); virtual void e##p##4(); \
+	virtual void e##p##5(); virtual void e##p##6(); virtual void e##p##7(); virtual void e##p##8(); virtual void e##p##9();
+struct CEngineDecalView
+{
+	EV10(0) EV10(1) EV10(2)
+	virtual void e30(); virtual void e31(); virtual void e32(); virtual void e33(); virtual void e34();
+	virtual int IndexOfEdict(int edict);
+	virtual void e36(); virtual void e37(); virtual void e38(); virtual void e39();
+	EV10(4) EV10(5)
+	virtual void e60(); virtual void e61(); virtual void e62();
+	virtual void StaticDecal(const Vector &origin, int decalIndex, int entityIndex, int modelIndex);
+};
+
+inline void VectorITransform(const Vector &in1, const float (&in2)[3][4], Vector &out)
+{
+	sub_10138130(&in1.x, in2, &out.x);
+}
+
+static inline bool TestBit(unsigned int value, int bit)
+{
+	return ((value >> bit) & 1) != 0;
+}
+
+inline int ENTINDEX(int pEdict) { return ((CEngineDecalView *)engine)->IndexOfEdict(pEdict); }
+
+struct CDecalEntView : CBaseEntity
+{
+	const Vector &GetAbsOrigin() { return *((CEntityVSlots *)this)->slot217(); }
+	int entindex() { return ENTINDEX(m_pEdict2e0); }
+	int GetModelIndex() { return ((CEntityVSlots *)this)->slot8(); }
+	const float (&EntityToWorldTransform())[3][4]
+	{
+		if (TestBit(m_flags268, 11))
+			((CEntityVSlots *)this)->slot98();
+		return *(const float (*)[3][4])((char *)this + 0x130);
+	}
+};
+
+void CDecal::sub_1023aa30()
+{
+	CGameTrace trace;
+	CDecal::CTraceFilterValidForDecal traceFilter(this, 0);
+	int entityIndex, modelIndex = 0;
+
+	Vector position = *((CEntityVSlots *)this)->slot217();
+	UTIL_TraceLine_RayCall(position - Vector(5, 5, 5), position + Vector(5, 5, 5), 0x200400b, &traceFilter, &trace);
+
+	entityIndex = (short)(int)trace.m_pEnt ? ((CDecalEntView *)trace.m_pEnt)->entindex() : 0;
+	if (entityIndex)
+	{
+		CDecalEntView *ent = (CDecalEntView *)trace.m_pEnt;
+		if (ent)
+		{
+			modelIndex = ent->GetModelIndex();
+			VectorITransform(((CDecalEntView *)this)->GetAbsOrigin(), ent->EntityToWorldTransform(), position);
+		}
+	}
+
+	((CEngineDecalView *)engine)->StaticDecal(position, m_nTexture, entityIndex, modelIndex);
+
+	sub_101c0b10((CBaseEntity *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023ae40 size=0x43
 #include "CWorld.h"
 void *sub_100aa720(int size);

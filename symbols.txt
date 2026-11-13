@@ -3771,6 +3771,7 @@
 0x10005e4d func   ?sub_103ff730@@YAHXZ sub_103ff730
 0x10005e52 func   ?sub_103c7880@@YIPAXPAX@Z sub_103c7880
 0x10005e57 func   ?vfunc74@CNPC_VHengeyokai@@UAE_NH@Z CNPC_VHengeyokai::vfunc74
+0x10005e5c func   ?sub_1023aa30@CDecal@@QAEXXZ CDecal::sub_1023aa30
 0x10005e61 func   ?vfunc1@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc1
 0x10005e66 func   ?sub_103f97d0@@YAHXZ sub_103f97d0
 0x10005e6b func   ?sub_10069430@CTETParticle@@QAEPAV1@H@Z CTETParticle::sub_10069430
