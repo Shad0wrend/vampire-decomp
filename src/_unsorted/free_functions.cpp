@@ -243428,6 +243428,110 @@ void *CBaseCombatCharacter::sub_1032d890(const char *pszClassname, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032db60 size=0x1f2
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CEHandleGet.h"
+#include "CUnknown100290c0.h"
+#include "ScopeTrace.h"
+#include <string.h>
+
+#define SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+struct SCanSwitchWeapon
+{
+	SLOTS10(a0) SLOTS10(a1) SLOTS10(a2) SLOTS10(a3) SLOTS10(a4) SLOTS10(a5) SLOTS10(a6) SLOTS10(a7) SLOTS10(a8) SLOTS10(a9)
+	SLOTS10(b0) SLOTS10(b1) SLOTS10(b2) SLOTS10(b3) SLOTS10(b4) SLOTS10(b5) SLOTS10(b6) SLOTS10(b7) SLOTS10(b8) SLOTS10(b9)
+	SLOTS10(c0) SLOTS10(c1) SLOTS10(c2) SLOTS10(c3) SLOTS10(c4) SLOTS10(c5) SLOTS10(c6) SLOTS10(c7) SLOTS10(c8) SLOTS10(c9)
+	SLOTS10(d0)
+	virtual void d10();
+	virtual void d11();
+	virtual char vfunc312();
+	virtual char vfunc313();
+	virtual char vfunc314();
+
+	char m_pad0004[0x11c - 4];
+	const char *m_classname11c;
+	char sub_102585c0();
+};
+
+struct SCanSwitchPlayer
+{
+	char m_pad0000[0x1040];
+	unsigned int m_h1040;
+};
+
+struct Holder;
+bool __fastcall sub_101681a0(Holder *p);
+int sub_1023bd00();
+struct CMsgPlayerView;
+void sub_101cebc0(CMsgPlayerView *pPlayer, int a, int b);
+
+static int g_shift1032db60 = 13;
+namespace block_1032db60 {
+struct CUnknown100290c0 : EHandleEntityList
+{
+	unsigned int sub_100290c0(unsigned int *ph);
+};
+unsigned int CUnknown100290c0::sub_100290c0(unsigned int *ph)
+{
+	unsigned int h = *ph;
+	if (h == 0xffffffff)
+		return 0;
+	EHandleEntInfo *p = &m_EntPtrArray[h & 0x1fff];
+	if (p->m_SerialNumber == (int)(h >> g_shift1032db60))
+		return (unsigned int)p->m_pEntity;
+	return 0;
+}
+}
+using namespace block_1032db60;
+
+bool CBaseCombatCharacter::sub_1032db60(void *pWeapon)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Weapon_CanSwitchTo", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY", g_106b8540);
+	SCanSwitchWeapon *pNew = (SCanSwitchWeapon *)pWeapon;
+	if (pNew) {
+		if (!pNew->vfunc312())
+			return false;
+		if (!pNew->vfunc314())
+			return false;
+	}
+	if (((block_1032db60::CUnknown100290c0 *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)&m_hActiveWeapon19a4)) {
+		if (!((SCanSwitchWeapon *)m_hActiveWeapon19a4.Get())->vfunc313())
+			return false;
+	}
+	SCanSwitchPlayer *p = *(SCanSwitchPlayer **)((char *)this + 0xa8);
+	if (p && pNew && pNew->sub_102585c0()) {
+		if (EHandle_Get((const unsigned int &)p->m_h1040))
+			return false;
+		if (sub_101681a0((Holder *)p)) {
+			if (sub_1023bd00()) {
+				if (*(int *)(sub_1023bd00() + 0x49c) == 2) {
+					if (strcmpi(pNew->m_classname11c ? pNew->m_classname11c : g_106b8540, "item_w_unarmed") != 0)
+						sub_101cebc0((CMsgPlayerView *)p, 0x3d, 0);
+				}
+			}
+			return false;
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032e120 size=0xbf
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
