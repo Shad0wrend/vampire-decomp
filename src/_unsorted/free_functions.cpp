@@ -107656,6 +107656,144 @@ void sub_10188da0(float t, const float *a, const float *b, float *out) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x10188de0 size=0x5b5
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "CClientPosSync.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include "UTIL_Trace.h"
+#include <math.h>
+
+struct CPosSyncPlayerView { char m_pad[0xa8]; CEntityVSlots *m_pEnt; };
+CPosSyncPlayerView *sub_101cd9e0(int i);
+void sub_101cf5c0(CEntityVSlots *pEnt, const Vector *pPos, int bTraced);
+
+inline void SetZYX(Vector &v, float z, float y, float x) { v.x = x; v.y = y; v.z = z; }
+
+inline float HullSqrt(float f)
+{
+	return (float)sqrt(f);
+}
+
+struct CHullRayPS
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_f34;
+
+	__forceinline void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, bool a = true, char b = 0)
+	{
+		VectorSubtract(end, start, m_Delta);
+		m_IsSwept = (m_Delta.LengthSqr() != 0.0f);
+		VectorSubtract(maxs, mins, m_Extents);
+		m_Extents *= 0.5f;
+		m_IsRay = ((m_Extents.x * m_Extents.x + (m_Extents.y * m_Extents.y + m_Extents.z * m_Extents.z)) < 1e-6);
+		m_StartOffset.x = mins[0] + maxs.x; m_StartOffset.y = mins.y + maxs.y; m_StartOffset.z = mins.z + maxs.z;
+		m_StartOffset *= 0.5f;
+		VectorAdd(start, m_StartOffset, m_Start);
+		m_StartOffset *= -1.0f;
+		m_b32 = b;
+		m_b33 = 0;
+		m_f34 = 0.0f;
+		if (a && !m_IsRay) {
+			float fl = HullSqrt(m_Extents.x * m_Extents.x + m_Extents.y * m_Extents.y);
+			m_f34 = fl;
+			if (m_f34 > 1e-6)
+				m_b33 = 1;
+		}
+	}
+};
+
+inline void UTIL_TraceHullPS(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr)
+{
+	CHullRayPS ray;
+	ray.Init(vecAbsStart, vecAbsEnd, hullMin, hullMax);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4((Ray_t *)&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+void CClientPosSync::sub_10188de0(int unused)
+{
+	if (!m_bEnabled || !m_nClientMask)
+		return;
+	for (int i = 1; i <= gpGlobals->maxClients; i++)
+	{
+		CPosSyncPlayerView *pPlayer = sub_101cd9e0(i);
+		if (!pPlayer)
+			continue;
+		CEntityVSlots *pVEnt = pPlayer->m_pEnt;
+		if (!pVEnt)
+			continue;
+		CBaseEntity *pEnt = (CBaseEntity *)pVEnt;
+		int idx = engine->vfunc35((int)pEnt->m_pEdict2e0) - 1;
+		if (!(m_nClientMask & (1 << idx)))
+			continue;
+		CClientPosRecord *pWanted = &m_Wanted[idx];
+		CClientPosRecord *pLast = &m_Last[idx];
+		if (!pWanted->m_bActive || !pLast->m_bActive)
+			continue;
+		if (pWanted->m_nFlags & 0x400)
+		{
+			CCollisionProperty *pCol = (CCollisionProperty *)((char *)pEnt + 0x270);
+			if (*(Vector *)pCol->vfunc1() == pLast->m_vecMins && *(Vector *)pCol->vfunc2() == pLast->m_vecMaxs)
+				pEnt->sub_100adf10(&pWanted->m_vecMins.x, &pWanted->m_vecMaxs.x);
+		}
+		if (pWanted->m_nFlags & 0x200)
+		{
+			if (*pVEnt->slot221() == pLast->m_vecAngles)
+				pVEnt->slot64(&pWanted->m_vecAngles.x);
+		}
+		if (pWanted->m_nFlags & 0x100)
+		{
+			if (*pVEnt->slot220() == pLast->m_vecOrigin)
+			{
+				sub_101cf5c0(pVEnt, &pWanted->m_vecOrigin, 0);
+			}
+			else
+			{
+				Vector delta = *pVEnt->slot220() - pLast->m_vecOrigin;
+				if (delta.x*delta.x + (delta.y*delta.y + delta.z*delta.z) < 4096.0f)
+				{
+					Vector vecEnd = delta + pWanted->m_vecOrigin;
+					CCollisionProperty *pCol = (CCollisionProperty *)((char *)pEnt + 0x270);
+					CGameTrace tr;
+					{
+						int group = pEnt->m_field368;
+						const Vector &mins = *(Vector *)pCol->vfunc1();
+						const Vector &maxs = *(Vector *)pCol->vfunc2();
+						UTIL_TraceHull(vecEnd, vecEnd, mins, maxs, 0x201400b, pEnt, group, &tr, 1, 0);
+					}
+					if (!tr.m_startsolid && !tr.m_allsolid)
+					{
+						sub_101cf5c0(pVEnt, &vecEnd, 1);
+					}
+					else
+					{
+						int group = pEnt->m_field368;
+						const Vector &mins = *(Vector *)pCol->vfunc1();
+						const Vector &maxs = *(Vector *)pCol->vfunc2();
+						UTIL_TraceHullPS(pWanted->m_vecOrigin, vecEnd, mins, maxs, 0x201400b, pEnt, group, &tr);
+						if (!tr.m_startsolid && !tr.m_allsolid)
+							sub_101cf5c0(pVEnt, (const Vector *)&tr.m_endpos, 1);
+					}
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189510 size=0x77
 struct Elem784 { char d[0x784]; };
 extern void *(*g_109f3638)(void *, int);

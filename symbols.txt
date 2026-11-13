@@ -15818,6 +15818,7 @@
 0x100157c1 func   ?sub_1009edc0@CBaseEntity@@QAEXPBM0@Z CBaseEntity::sub_1009edc0
 0x100157c6 func   _item_container_animated item_container_animated
 0x100157cb func   ?sub_100b7de0@@YIHPAX@Z sub_100b7de0
+0x100157d0 func   ?sub_10188de0@CClientPosSync@@QAEXH@Z CClientPosSync::sub_10188de0
 0x100157d5 func   ?sub_102d3f50@@YAHPBD@Z sub_102d3f50
 0x100157da func   ?sub_10307db0@@YAXPAUCSlot10307db0@@@Z sub_10307db0
 0x100157df func   ?sub_1028d230@CAI_BaseNPCTroika@@QAEPAV1@XZ CAI_BaseNPCTroika::sub_1028d230
