@@ -530,6 +530,34 @@ have written it rather than adding temporaries that spell out the assembly:
   Saved under view names (watch the link audit): 0x103f03e0 CFrag914::sub_103f03e0, 0x10295ed0
   CAI_BaseNPCTroikaV::sub_10295ed0. Unsolved patterns: the game hoists pointer loads above stack stores
   (0x102e7e80, 0x101001e0, 0x10176930); include-loop address reassociation (0x10429080, 0x10427df0, 0x101810f0).
+- **Round 15 (28 of 63 never-hand-tried functions, 31.2 KB, 2026-11-13; 1-3 KB ones 17/41, mostly SDK code):** new idioms:
+  - inline budget: `__forceinline` forward declarations of header free inlines (VectorSubtract before Vector.h,
+    StatDefault2 helpers) keep them inline when the budget runs out (0x1040f940, 0x1017aa40); dead
+    `if (0) { Vector q = -right; }` spends budget so a depth-2 ctor goes out of line; calling
+    Clear/Set/HasCondition directly instead of wrappers frees budget for EHANDLE::Get (0x1028efc0).
+  - factories/ctors: a `__declspec(novtable)` view with a manual vptr store; a this-returning method and a ctor
+    compile alike, take the name the factory calls (rename_symbol, 0x10407b30, 0x102258a0); hand-written ??_E.
+  - frame/slots: `{}` blocks around mid-function temporaries shrink the frame (0x10292de0, 0x10241620); a goto into
+    a shared exit tail stops slot packing, write the tail out again (VC6 tail-merges it); a function-scope result
+    local shared by tail-merged switch cases; a goto-target assignment block `if (0) { L: x = t; }` after a switch.
+  - order: copy through a temporary `Vector pos = Vector(*p->slot217());` closes an interleaved-store copy wall;
+    a float z temp then x/y/z member stores gives integer x/y copies; member-assign Vector copies ints, the
+    Vector(x,y,z) ctor copies fld/fstp; store-then-read-back member `m = expr; int n = m;`.
+  - x87: `0.5 * q * q + 0.5` (VC6 rewrites `q*q*0.5 + 0.5` as `(q*q+1)*0.5`); dot association
+    `a.x*b.x + (a.y*b.y + a.z*b.z)`; Length() operand order follows the count of Vector temporaries (dead
+    `if (0) (void)(a - b);` per site, 0x102fd240); `(a-b).Length()` + `fabs(dz)` from one delta = fst reuse;
+    SDK DEG2RAD spelling; `clamp(x, 0, 50)` with a literal 0 folds as the game.
+  - calls: dllimport callees are kept in esi (`call esi`), a function-pointer global is reloaded (0x100e37d0;
+    Q_strcat needs extern "C"); a thiscall view member instead of a free __fastcall fixes push/mov ecx order; a
+    callee that keeps edx alive goes in the same-unit block (sub_100df010); a non-POD 4-byte struct return is a
+    hidden-pointer temp; an inline getter as a call argument picks the argument register.
+  - switches/loops: a jump table from 0 needs real labels with dead stores (`case 0: n = 0; break;`);
+    `if (n) do { } while (n);` places the loop-exit block as the game (0x10301720).
+  - templates: InitCustomSchedules bodies (AI_BEGIN_CUSTOM_NPC, callers of stubs 0x1001528a/0x1000ce8c/0x10006398)
+    are generated from the game's PushBack list (scratchpad h89/ext.py) on a matched twin; FindLosNode 0x10302e50
+    is the template of FindCover 0x10301720; opcode twin search finds byte twins (0x103835f0 from 0x101839a0).
+  - workaround searches: random search over dead `int` locals for commutative operand order (0x10241620) and
+    dead-statement anchors for [a+b] index order (0x102630b0); not real source, kept only at 0.
 - **Round 14 (20 of 75 never-hand-tried functions scored 14-60, 11.3 KB, 2026-11-13):** new idioms:
   - same-unit block callee beyond x87: a read-only callee in the block lets VC6 keep a global (g_10566458) in a
     register across the call (0x10182550); a LookupEntity (sub_100290c0) block copy must clobber ecx (variable shift
