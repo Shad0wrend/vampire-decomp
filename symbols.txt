@@ -5530,6 +5530,7 @@
 0x1000826f func   ?sub_100622d0@@YAHXZ sub_100622d0
 0x10008274 func   ?sub_103b2530@CNPC_VSheriffSwarmFwd@@QAEXHH@Z CNPC_VSheriffSwarmFwd::sub_103b2530
 0x10008279 func   ?sub_10406ac0@@YAHXZ sub_10406ac0
+0x1000827e func   ?sub_102f3c10@CAI_PathfinderNetwork@@QAEHPAXPBM@Z CAI_PathfinderNetwork::sub_102f3c10
 0x10008283 func   ?sub_1013c050@@YAXHHHHH@Z sub_1013c050
 0x10008288 func   ?sub_103822a0@CNPC_VHengeyokai@@QAE_NPAVCBaseEntity@@@Z CNPC_VHengeyokai::sub_103822a0
 0x1000828d func   ?sub_10311500@CExpresserEntryTree@@QAEXXZ CExpresserEntryTree::sub_10311500

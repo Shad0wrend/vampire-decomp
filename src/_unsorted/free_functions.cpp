@@ -226289,6 +226289,196 @@ bool CUnknown102f3900::sub_102f39a0(CUnknown102f3900Ent *pEnt, Vector vecA, Vect
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f3c10 size=0x3da
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "Vector.h"
+#include "UtlVec8.h"
+#include "CAI_Network.h"
+#include "CAI_Pathfinder.h"
+#include "CAI_BaseNPC.h"
+#include "CNodeNPCFilter.h"
+#include "CUnknown102f45f0.h"
+#include "CUnknown102f3900.h"
+#include "CUnknown102f8f10.h"
+#include "CUtlVector16.h"
+#include "CVProfile.h"
+#include <malloc.h>
+
+int __cdecl sub_102f3770(const float *a, const float *b);
+
+struct AI_NearNode_t
+{
+	float dist;
+	int nodeIndex;
+};
+
+struct CNodeListV
+{
+	AI_NearNode_t *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	AI_NearNode_t *m_pElements;
+	bool (__cdecl *m_LessFunc)(const AI_NearNode_t &, const AI_NearNode_t &);
+
+	CNodeListV(AI_NearNode_t *pMemory, int count) { ((CUnknown102f8f10 *)this)->CUnknown102f8f10::CUnknown102f8f10((int)pMemory, count, (int)sub_102f3770); }
+	void Destroy() { ((CUtlVector16 *)this)->sub_102f9040(); ((UtlVec8 *)this)->sub_102f91b0(); }
+	int Count() const { return m_Size; }
+	const AI_NearNode_t &ElementAtHead() const { return m_pMemory[0]; }
+	void RemoveAtHead()
+	{
+		((UtlVec8 *)this)->sub_102f9000(0);
+		int index = 0;
+
+		int count = Count();
+		if (!count)
+			return;
+
+		int half = count / 2;
+		int larger = index;
+		while (index < half)
+		{
+			int child = ((index + 1) * 2) - 1;
+			if (child < count)
+			{
+				if (m_LessFunc(m_pMemory[index], m_pMemory[child]))
+				{
+					larger = child;
+				}
+			}
+			child++;
+			if (child < count)
+			{
+				if (m_LessFunc(m_pMemory[larger], m_pMemory[child]))
+					larger = child;
+			}
+
+			if (larger == index)
+				break;
+
+			((UtlVec8 *)this)->sub_102f9090(index, larger);
+			index = larger;
+		}
+	}
+};
+
+struct NodeV3c
+{
+	char m_pad0[0x70];
+	int m_eNodeType;
+	Vector sub_102fb0d0(int hull);
+	Vector *sub_102fb0d0(Vector *pOut, int hull);
+	Vector GetPosition(int hull) { return sub_102fb0d0(hull); }
+	int GetType() const { return m_eNodeType; }
+};
+
+struct NavV3c { char sub_102f1900(int nodeNum, unsigned int collisionMask); };
+
+struct NPCV3c
+{
+	char m_pad0[0x156c];
+	int m_iHull;
+	char m_pad1570[0x5d34 - 0x1570];
+	NavV3c *m_pNavigator;
+	unsigned int CapabilitiesGet() { return ((CAI_BaseNPC *)this)->vfunc513(); }
+	int GetHullType() { return m_iHull; }
+	NavV3c *GetNavigator() { return m_pNavigator; }
+	bool sub_1027db30(int nNode);
+};
+
+extern void *g_1049da40;	// CNodeNPCFilter::vftable
+struct FilterRawV { void *m_vptr; const Vector *m_pVec4; void *m_pObj8; int m_flags0c; int m_nHull10; };
+inline bool NodeIsValid(FilterRawV *f, NodeV3c &node)
+{
+	if ((node.GetType() == 3 && !(f->m_flags0c & 4)) ||
+		(node.GetType() == 2 && !(f->m_flags0c & 1)))
+		return false;
+	if (((CAI_BaseNPC *)f->m_pObj8)->vfunc527((CAI_NavProvider *)&node))
+		return false;
+	return true;
+}
+
+struct TraceHelperV3c { bool sub_102f3900(NPCV3c *pEnt, Vector vecA, Vector vecB, bool *pFlag); };
+
+struct NetLV3c { int sub_102f32f0(void *pOutVec, int nMax, const Vector &mins, const Vector &maxs, void *pFilter); };
+
+struct NetV3c
+{
+	int m_iNumNodes;
+	NodeV3c **m_pAInode;
+	int sub_102f3c10(NPCV3c *pNPC, const Vector &vecOrigin);
+};
+
+// TARGET: CAI_PathfinderNetwork::sub_102f3c10
+int CAI_PathfinderNetwork::sub_102f3c10(void *pNPCRaw, const float *pPosition)
+{
+	NPCV3c *pNPC = (NPCV3c *)pNPCRaw;
+	const Vector &vecOrigin = *(const Vector *)pPosition;
+	g_109f3648->EnterScope("CAI_Network_NearestNodeToNPCAtPoint", 0, "Unaccounted", false);
+	if (m_nNodes == 0) {
+		g_109f3648->ExitScopeCall();
+		return -1;
+	}
+
+	FilterRawV filter;
+	filter.m_pVec4 = &vecOrigin;
+	filter.m_pObj8 = pNPC;
+	filter.m_vptr = &g_1049da40;
+	filter.m_flags0c = ((NPCV3c *)filter.m_pObj8)->CapabilitiesGet();
+	filter.m_nHull10 = ((NPCV3c *)filter.m_pObj8)->GetHullType();
+
+	int nodeID = ((CUnknown102f45f0 *)this)->sub_102f4520((const CachedPos_t *)&vecOrigin);
+	if (nodeID >= 0) {
+		if (NodeIsValid(&filter, *((NetV3c *)this)->m_pAInode[nodeID]) && pNPC->GetNavigator()->sub_102f1900(nodeID, 0x2400b)) {
+			g_109f3648->ExitScopeCall();
+			return nodeID;
+		}
+	}
+
+	AI_NearNode_t *pBuffer = (AI_NearNode_t *)_alloca(sizeof(AI_NearNode_t) * 10);
+	CNodeListV list(pBuffer, 10);
+
+	Vector ext(800, 800, 200);
+	if (pNPC->CapabilitiesGet() & 4)
+		ext.Init(2048, 2048, 2048);
+
+	((NetLV3c *)this)->sub_102f32f0(&list, 10, vecOrigin - ext, vecOrigin + ext, &filter);
+
+	int smallestVisibleID = -1;
+	Vector origin = vecOrigin;
+	for (; list.Count(); list.RemoveAtHead()) {
+		int smallest = list.ElementAtHead().nodeIndex;
+		if (!pNPC->GetNavigator()->sub_102f1900(smallest, 0x2400b))
+			continue;
+		if (pNPC->sub_1027db30(smallest))
+			continue;
+		bool bBlocked;
+		Vector tmp;
+		if (((TraceHelperV3c *)this)->sub_102f3900(pNPC, origin, *((NetV3c *)this)->m_pAInode[smallest]->sub_102fb0d0(&tmp, pNPC->GetHullType()), &bBlocked)) {
+			if (!bBlocked) {
+				list.Destroy();
+				g_109f3648->ExitScopeCall();
+				return smallest;
+			}
+			if (smallestVisibleID == -1)
+				smallestVisibleID = smallest;
+		}
+	}
+
+	if (smallestVisibleID == -1) {
+		((CUnknown102f45f0 *)this)->sub_102f45f0((const CachedPos_t *)&vecOrigin, -1, pNPC->GetHullType());
+		list.Destroy();
+		g_109f3648->ExitScopeCall();
+		return -1;
+	}
+	list.Destroy();
+	g_109f3648->ExitScope();
+	return smallestVisibleID;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f41b0 size=0x25a
 // TARGET: CAI_Network::sub_102f41b0
 #include "Vector.h"
