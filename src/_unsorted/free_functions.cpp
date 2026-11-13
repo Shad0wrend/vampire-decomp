@@ -150392,6 +150392,56 @@ bool CUnknown101f3d80::sub_101f3810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f39d0 size=0xe9
+#include "CUnknown101f39d0.h"
+#include <string.h>
+
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+extern "C" __declspec(dllimport) void Q_FixSlashes(char *, char);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct CNodeV { int sub_101f39d0(const char *pszPath); };
+extern char g_1073dad0[];
+extern char g_1074b180[];
+extern char g_1073dc50[];
+extern char g_106b8540[];
+
+int CUnknown101f39d0::sub_101f39d0(const char *pszPath)
+{
+	char *pRest;
+	int len = 0;
+	Q_strncpy(g_1073dad0, pszPath, 0x104);
+	Q_FixSlashes(g_1073dad0, '\\');
+	char *pSlash = strchr(g_1073dad0, '\\');
+	if (pSlash == 0) {
+		pRest = g_1073dad0;
+		pszPath = pRest;
+	} else {
+		pRest = g_1073dad0;
+		len = pSlash - g_1073dad0 + 1;
+		pszPath = g_1074b180;
+		Q_strncpy(g_1074b180, g_1073dad0, len);
+	}
+	if (*pszPath != 0) {
+		const char *pName = m_pszName;
+		if (pName == 0)
+			pName = g_106b8540;
+		if (_strcmpi(pName, pszPath) == 0) {
+			if (pSlash == 0)
+				return m_nId;
+			pRest = g_1073dc50;
+			strcpy(pRest, g_1073dad0 + len);
+		}
+		for (int i = 0; i < m_nChildren; i++) {
+			int r = ((CNodeV *)m_ppChildren[i])->sub_101f39d0(pRest);
+			if (r != -1)
+				return r;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f3b00 size=0x71
 struct CTreeSub {
 	int sub_101f4530(int a, int b);

@@ -9663,6 +9663,7 @@
 0x1000d7c4 func   ?vfunc8@CPhysSaveRestoreBlockHandler@@QAEXXZ CPhysSaveRestoreBlockHandler::vfunc8
 0x1000d7c9 func   ?sub_102f1860@CUnknown102f1860@@QAEMHABVVector@@0@Z CUnknown102f1860::sub_102f1860
 0x1000d7ce func   ?sub_1019dea0@CUnit1019dea0@@QAEX_N@Z CUnit1019dea0::sub_1019dea0
+0x1000d7d3 func   ?sub_101f39d0@CUnknown101f39d0@@QAEHPBD@Z CUnknown101f39d0::sub_101f39d0
 0x1000d7d8 func   ?vfunc383@CItemContainer@@QAEHHH@Z CItemContainer::vfunc383
 0x1000d7dd func   ?vfunc361@CBaseCombatWeapon@@QAEHH@Z CBaseCombatWeapon::vfunc361
 0x1000d7e2 func   ?vfunc473@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc473
