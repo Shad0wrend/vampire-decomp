@@ -514,6 +514,156 @@ void CBaseFlex::vfunc289(CBaseFlexItem *info)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6cf0 size=0x1a1
+#include "CBaseFlex.h"
+#include "CUnknown100b6f10.h"
+#include "CUnknown100b6f80.h"
+
+extern "C" int __cdecl _strcmpi(const char *pStr1, const char *pStr2);
+typedef unsigned char byte;
+
+struct flexweight_t { int key; float weight; float influence; };
+struct flexmarkovgroup_t { int settingnumber; int weight; };
+struct flexsettinghdr_t;
+
+struct flexsetting_t
+{
+	int nameindex;
+	int type;
+	int numsettings;
+	int index;
+	int currentindex;
+	int settingindex;
+
+	char *pszName() const { return (char *)(((byte *)this) + nameindex); }
+	bool IsMarkov() const { return type == 1; }
+	flexmarkovgroup_t *pMarkovGroup(int member) const
+	{
+		if (!IsMarkov())
+			return 0;
+		if (member < 0 || member >= numsettings)
+			return 0;
+		flexmarkovgroup_t *group = (flexmarkovgroup_t *)(((byte *)this) + settingindex) + member;
+		return group;
+	}
+	int GetMarkovSetting(int member) const
+	{
+		flexmarkovgroup_t *group = pMarkovGroup(member);
+		if (!group)
+			return -1;
+		return group->settingnumber;
+	}
+	inline int psetting(byte *base, int i, flexweight_t **weights) const;
+};
+
+struct flexsettinghdr_t
+{
+	char pad[0x8c];
+	int numflexsettings;
+	int flexsettingindex;
+	flexsetting_t *pSetting(int i) const { return (flexsetting_t *)(((byte *)this) + flexsettingindex) + i; }
+	int pad94[5];
+	int keymappingindex;
+	int *pLocalToGlobal(int i) const { return (int *)(((byte *)this) + keymappingindex) + i; }
+	int LocalToGlobal(int i) const { return *pLocalToGlobal(i); }
+
+	flexsetting_t *pTranslatedSetting(int i) const
+	{
+		flexsetting_t *setting = (flexsetting_t *)(((byte *)this) + flexsettingindex) + i;
+		if (!setting->IsMarkov())
+			return setting;
+		int newindex = setting->GetMarkovSetting(setting->currentindex);
+		if (newindex == -1)
+			return setting;
+		return (flexsetting_t *)((CUnknown100b6f10 *)this)->sub_100b6f10(newindex);
+	}
+};
+
+inline int flexsetting_t::psetting(byte *base, int i, flexweight_t **weights) const
+{
+	*weights = 0;
+	if (IsMarkov()) {
+		int settingnum = GetMarkovSetting(currentindex);
+		if (settingnum == -1)
+			return -1;
+		flexsetting_t *setting = ((flexsettinghdr_t *)base)->pSetting(settingnum);
+		if (!setting)
+			return -1;
+		return ((CUnknown100b6f80 *)setting)->sub_100b6f80((CUnknown100b6f80Hdr *)base, i, (int *)weights);
+	}
+	*weights = (flexweight_t *)(((byte *)this) + settingindex) + i;
+	return numsettings;
+}
+
+void __cdecl sub_100b68d0(flexsettinghdr_t *pSettinghdr, flexsetting_t *pSetting);
+
+struct CFlexSeqHdrOps
+{
+	const flexsetting_t *sub_100b6850(flexsettinghdr_t const *pSettinghdr, const char *expr);
+};
+
+#define expr ((const char *)expr0)
+#define pSettinghdr ((flexsettinghdr_t *)pSettinghdr0)
+#define pOverrideHdr ((flexsettinghdr_t *)pOverrideHdr0)
+// TARGET: CBaseFlex::vfunc288
+void CBaseFlex::vfunc288(void *expr0, float scale, CBaseFlexFileData *pSettinghdr0, CBaseFlexFileData *pOverrideHdr0, bool newexpression)
+{
+	int i;
+	flexsetting_t const *pSetting = 0;
+
+	for (i = 0; i < pSettinghdr->numflexsettings; i++)
+	{
+		pSetting = pSettinghdr->pSetting(i);
+		if (!pSetting)
+			continue;
+		const char *name = pSetting->pszName();
+		if (!_strcmpi(name, expr))
+			break;
+	}
+
+	if (i >= pSettinghdr->numflexsettings)
+	{
+		return;
+	}
+
+	if (newexpression)
+	{
+		if (pSetting->type == 1)
+		{
+			sub_100b68d0(pSettinghdr, (flexsetting_t *)pSetting);
+		}
+	}
+
+	pSetting = pSettinghdr->pTranslatedSetting(i);
+
+	if (pOverrideHdr)
+	{
+		const char *resolvedName = pSetting->pszName();
+		if (resolvedName)
+		{
+			flexsetting_t const *override = ((CFlexSeqHdrOps *)this)->sub_100b6850(pOverrideHdr, resolvedName);
+			if (override)
+			{
+				pSettinghdr0 = pOverrideHdr0;
+				pSetting = override;
+			}
+		}
+	}
+
+	flexweight_t *pWeights = 0;
+	int truecount = pSetting->psetting((byte *)pSettinghdr, 0, &pWeights);
+	if (!pWeights)
+		return;
+
+	for (i = 0; i < truecount; i++, pWeights++)
+	{
+		int index = pSettinghdr->LocalToGlobal(pWeights->key);
+		float value = vfunc281(index) + scale * pWeights->weight;
+		vfunc279(index, value);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b7040 size=0x75
 #include "CBaseFlex.h"
 

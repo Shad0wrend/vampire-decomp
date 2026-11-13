@@ -2623,6 +2623,7 @@
 0x1000466f func   ?vfunc138@CNPC_VTaxiDriver@@QAEHXZ CNPC_VTaxiDriver::vfunc138
 0x10004674 func   ?sub_1036eb90@@YAHXZ sub_1036eb90
 0x10004683 func   ?sub_1021bec0@CUnknown1021bec0@@QAE_NPBD@Z CUnknown1021bec0::sub_1021bec0
+0x10004688 func   ?vfunc288@CBaseFlex@@UAEXPAXMPAUCBaseFlexFileData@@1_N@Z CBaseFlex::vfunc288
 0x1000468d func   ?vfunc78@CBaseEntity@@UAEXXZ CBaseEntity::vfunc78
 0x10004692 func   ?vfunc385@CBasePlayer@@QAEXPAVCBaseEntity@@HD@Z CBasePlayer::vfunc385
 0x10004697 func   ?sub_103008f0@CUnknown103008f0@@QAEHPBVVector@@MH@Z CUnknown103008f0::sub_103008f0
