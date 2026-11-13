@@ -530,6 +530,39 @@ have written it rather than adding temporaries that spell out the assembly:
   Saved under view names (watch the link audit): 0x103f03e0 CFrag914::sub_103f03e0, 0x10295ed0
   CAI_BaseNPCTroikaV::sub_10295ed0. Unsolved patterns: the game hoists pointer loads above stack stores
   (0x102e7e80, 0x101001e0, 0x10176930); include-loop address reassociation (0x10429080, 0x10427df0, 0x101810f0).
+- **Round 14 (20 of 75 never-hand-tried functions scored 14-60, 11.3 KB, 2026-11-13):** new idioms:
+  - same-unit block callee beyond x87: a read-only callee in the block lets VC6 keep a global (g_10566458) in a
+    register across the call (0x10182550); a LookupEntity (sub_100290c0) block copy must clobber ecx (variable shift
+    `h >> g_s` with `static int g_s = 13;`) or VC6 keeps the list in ecx (0x10271900, 0x1017c300);
+  - block copy return type = the callee's parameter type from its mangled name (E = unsigned char; bool adds a
+    conversion, 0x100e58e0 52 -> 0); a callee called with no ecx setup right after entry is a same-class thiscall
+    member using `this` still in ecx (0x101f6530); a recursive call needs a view symbol on another struct (its own
+    symbol links to the body, the game calls its stub, 0x101f39d0);
+  - the game reloads a register parameter from its stack home: read it once through `*(T *volatile *)&p`
+    (0x10333340); `default: if (1) return 1; run: ...; break;` with `goto run` keeps a return block where the game
+    has it (0x101655b0, 0x10165f20);
+  - zero register: VC6 counts zero uses BEFORE tail merging, so an extra identical `x = 0; return;` tail brings
+    `xor ebx,ebx` back (0x1003f4d0); `memset(p, 0, 8)` stores are expanded late and do not count (0x103c5ac0);
+  - a dllimport called twice where the game does `call [imp]` both times: call one site through
+    `extern R (C::*g_<IAT slot>)(args); (obj->*g_<slot>)(...)` (0x1026f110);
+  - `#define inline __forceinline` around `#include "Vector.h"` lifts the Vector inline budget for SDK-verbatim
+    bodies (0x101265d0 CanUnduck, 0x1025eaf0 SetHeadDirection); writing `VectorSubtract(a, b, d); d.LengthSqr()`
+    for `(a-b).LengthSqr()` frees budget for a later RemoveAll (0x102d1760); splitting a VPROF scope over two block
+    inlines lets a sibling-block local's slot be reused (0x10123f40);
+  - one inline called in both if/else arms with different constants gives the game's cross-jumped
+    "then, join, else jumps back" shape (0x100ee560); a local copy of a global right before the call
+    (`T *fs = g_X; f(.., fs, ..)`) or an `int c = n->m;` argument local in an inline fixes push-register rotation
+    (0x10228020, 0x101053a0 28 -> 4); STRING applied inside an inline wrapper moves the other arguments' loads
+    above its branch (0x100502b0 60 -> 8); `const char *p = STRINGR(x); strcpy(d, p);` gives the one-induction copy
+    loop (0x1034b7b0 24 -> 9);
+  - an unexplained 4-byte frame difference can be a view struct declared too small that shares a sibling slot:
+    use the SDK struct at full size (CBoneAccessor 16 B, 0x10155fb0); a statement-order hill-climb script over
+    per-component Init stores beats hand tries for x87 scheduling (0x1016b750 20 -> 12, S/h78/hc750*.py);
+  - copying a matched sibling line for line closed 0x1021f920, 0x103c4160 (separate `int edict` local before
+    engine->vfunc35), 0x10165f20.
+  Hybrid rules now in the briefs: a header-inline target is written `// TARGET:` + `static ... (T::*s_X) = &T::X;`
+  (never a non-inline template<> specialisation: LNK2005 with every inline copy); a helper global a source invents
+  is defined in its block (`static int g = value;`).
 - **Near-miss pass 2 (11 of 40 never-hand-tried near misses scored 1-13, 5.5 KB, 2026-11-13):** new idioms:
   - one inline expansion too many (game calls the 4th AddDataAccessor out of line): dead `if (0) m[i] = 0;` stores
     inside the CALLEE's body raise its cost; sweep the count (0x1003c660: 1 = 13, 2 = 0, 3+ = 25). The same dead
