@@ -160445,6 +160445,59 @@ void CFuncElevator::sub_1020f3f0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1020f5d0 size=0xc0
+#include "CEntityVSlots.h"
+#include "COutputEvent.h"
+
+// CFuncElevator's think: fires the floor outputs the elevator passes
+struct CFuncElevatorV
+{
+	void sub_1020f5d0();
+
+	char m_pad0000[0x17c];
+	float m_flNextThink;	// 0x17c
+	char m_pad0180[0x548 - 0x180];
+	float m_flPrevZ548;
+	char m_pad054c[0x608 - 0x54c];
+	float m_flFloorZ608[8];
+	char m_pad628[0x668 - 0x628];
+	COutputEvent m_Output668;
+	char m_pad680[0x740 - 0x680];
+	COutputEvent m_Outputs740[8];
+	char m_pad800[0x80d - 0x800];
+	bool m_bFired80d[8];
+};
+
+// TARGET: CFuncElevatorV::sub_1020f5d0
+void CFuncElevatorV::sub_1020f5d0()
+{
+	const Vector &vecOrigin = *((CEntityVSlots *)this)->slot220();
+	float z = vecOrigin.z;
+	bool bDown = m_flPrevZ548 > z;
+	for (int i = 1; i < 8; i++)
+	{
+		if (m_bFired80d[i])
+			continue;
+		if (bDown)
+		{
+			if (z > m_flFloorZ608[i])
+			{
+				m_Output668.sub_100cd660(this, this, 0);
+				m_Outputs740[i].sub_100cd660(this, this, 0);
+				m_bFired80d[i] = true;
+			}
+		}
+		else if (z < m_flFloorZ608[i])
+		{
+			m_Output668.sub_100cd660(this, this, 0);
+			m_Outputs740[i].sub_100cd660(this, this, 0);
+			m_bFired80d[i] = true;
+		}
+	}
+	m_flNextThink = gpGlobals->curtime + 0.1f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1020f700 size=0x35
 #include "CFuncElevator.h"
 // TARGET: CFuncElevator::sub_1020f700

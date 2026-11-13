@@ -2146,6 +2146,7 @@
 0x10003cbf func   ?sub_101dda30@CUnknown101dda30@@QAEPAXXZ CUnknown101dda30::sub_101dda30
 0x10003cc4 func   ?sub_100749d0@CUnk100749d0@@QAEHH@Z CUnk100749d0::sub_100749d0
 0x10003cc9 func   ?sub_102d6180@@YAMH@Z sub_102d6180
+0x10003cce func   ?sub_1020f5d0@CFuncElevatorV@@QAEXXZ CFuncElevatorV::sub_1020f5d0
 0x10003cd3 func   ?sub_10073f60@CUnknown10073f60@@QAEXXZ CUnknown10073f60::sub_10073f60
 0x10003cd8 func   ?sub_10289fe0@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_10289fe0
 0x10003cdd func   ?sub_10103c80@@YAPAHXZ sub_10103c80
