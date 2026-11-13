@@ -110820,6 +110820,110 @@ void sub_10191cc0(CUtlVector<CBreakModelRec> *pList, int modelIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192130 size=0x3be
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "utlrbtree.h"
+#include "CPropDestructable.h"
+#include "QAngle.h"
+#include "matrix3x4_t.h"
+#include "VMatrix.h"
+#include "StudioHdr.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include "utlvector.h"
+
+struct CBreakModelEntry10192130
+{
+	Vector m_vecOffset;
+	char m_szModel[0x104];
+	float m_flFadeTime;
+	float m_flHealth;
+	int m_nBodyIndex;
+};
+
+struct CDebrisPhysView
+{
+	virtual void v0();
+	virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(int a); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37(); virtual void v38(); virtual void v39();
+	virtual void v40(); virtual void v41(); virtual void v42(Vector *pPos, Vector *pVel);
+};
+
+extern Vector g_1070d1b0;
+void sub_10191cc0(CUtlVector<CBreakModelEntry10192130> *pList, int nModel);
+void sub_1024cc50(VMatrix *pOut, const void *pOrigin, const void *pAngles);
+void sub_10138720(const matrix3x4_t *pMat, int nCol, Vector *pOut);
+void sub_10428ed0(void *pStudio, int nBone, matrix3x4_t *pOut);
+void sub_101925e0(void *pEntry, Vector *pPos, const void *pAbsAngles, Vector *pVel, Vector *pAngVel, int a6, int a7, char a9);
+
+inline void Vector3DMultiplyPositionX(const VMatrix &src1, const Vector &src2, Vector &dst)
+{
+	dst.x = src1.m[0][0] * src2.x + src1.m[0][1] * src2.y + src1.m[0][2] * src2.z + src1.m[0][3];
+	dst.y = src1.m[1][0] * src2.x + src1.m[1][1] * src2.y + src1.m[1][2] * src2.z + src1.m[1][3];
+	dst.z = src1.m[2][0] * src2.x + src1.m[2][1] * src2.y + src1.m[2][2] * src2.z + src1.m[2][3];
+}
+
+// TARGET: sub_10192130
+void sub_10192130(int nModelIndex, void *pPhys, const void *pOrigin, const void *pAngles, const void *pVel, const void *pAngVel, int nDc, int n76c, int a8, char a9)
+{
+	if (!engine->vfunc58(nModelIndex))
+		return;
+	CDebrisPhysView *pPhysics = (CDebrisPhysView *)pPhys;
+	if (pPhysics)
+		pPhysics->v21(0);
+	void *pStudioHdr = engine->vfunc18(nModelIndex);
+	Vector parentOrigin = g_1070d1b0;
+	matrix3x4_t localToWorld;
+	int parentAttachment = sub_100c6350(pStudioHdr, "placementOrigin") + 1;
+	if (parentAttachment > 0)
+	{
+		sub_10428ed0(pStudioHdr, parentAttachment, &localToWorld);
+		sub_10138720(&localToWorld, 3, &parentOrigin);
+	}
+	else
+	{
+		sub_10139b90(*(QAngle *)g_1070d9d0, localToWorld);
+	}
+	VMatrix matrix;
+	sub_1024cc50(&matrix, pOrigin, pAngles);
+
+	float flRand = *(float *)&a8;
+	CUtlVector<CBreakModelEntry10192130> list;
+	sub_10191cc0(&list, nModelIndex);
+	for (int i = 0; i < list.Count(); i++)
+	{
+		int modelIndex = engine->vfunc13(list[i].m_szModel, 0);
+		if (modelIndex <= 0)
+			continue;
+		void *pStudio = engine->vfunc18(modelIndex);
+		int placementIndex = sub_100c6350(pStudio, "placementOrigin") + 1;
+		Vector placementOrigin = parentOrigin;
+		if (placementIndex > 0)
+		{
+			sub_10428ed0(pStudio, placementIndex, &localToWorld);
+			sub_10138720(&localToWorld, 3, &placementOrigin);
+			placementOrigin -= parentOrigin;
+		}
+		Vector position;
+		Vector3DMultiplyPositionX(matrix, list[i].m_vecOffset - placementOrigin, position);
+		Vector objectVelocity = *(const Vector *)pVel;
+		Vector objectAngVelocity = *(const Vector *)pAngVel;
+		if (flRand > 0.0f)
+		{
+			objectVelocity.x += enginerandom->vfunc1(-flRand, flRand);
+			objectVelocity.z += enginerandom->vfunc1(-flRand, flRand);
+			objectAngVelocity.x += enginerandom->vfunc1(-200.0f, 200.0f);
+			objectAngVelocity.z += enginerandom->vfunc1(-200.0f, 200.0f);
+		}
+		if (pPhysics)
+			pPhysics->v42(&position, &objectVelocity);
+		sub_101925e0(&list[i], &position, pAngles, &objectVelocity, &objectAngVelocity, nDc, n76c, a9);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101925e0 size=0x17e
 #include "CEntityVSlots.h"
 #include "CBaseEntity.h"
