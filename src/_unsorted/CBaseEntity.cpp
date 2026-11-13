@@ -1987,6 +1987,208 @@ void CBaseEntity::vfunc107(CEntityMapData *pMapData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009e430 size=0x5fa
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ConVar.h"
+#include "ScopeTrace.h"
+#include "Tier1.h"
+#include "CCollisionProperty.h"
+#include "CBaseEntitySlots.h"
+#include "datamap.h"
+
+extern "C" char *strchr(const char *, int);
+extern "C" int _strcmpi(const char *, const char *);
+extern "C" int atoi(const char *);
+extern "C" double atof(const char *);
+
+struct KVColor32
+{
+	unsigned char r, g, b, a;
+};
+
+struct KVColorView
+{
+	char pad[0x1a0];
+	unsigned char r, g, b;
+};
+
+#define KVS(n) virtual void slot##n();
+class KVSlots : public CBaseEntitySlots
+{
+public:
+	KVS(194) KVS(195) KVS(196) KVS(197) KVS(198) KVS(199)
+	KVS(200) KVS(201) KVS(202) KVS(203) KVS(204) KVS(205) KVS(206) KVS(207) KVS(208) KVS(209)
+	KVS(210) KVS(211) KVS(212) KVS(213) KVS(214) KVS(215)
+	virtual void slot216(const float *pVec);
+	KVS(217)
+	virtual void slot218(const float *pVec);
+	KVS(219) KVS(220)
+	virtual float *slot221();
+};
+
+struct KVConVar : ConVar
+{
+	const char *GetStr()
+	{
+		if (m_pParent->vfunc1())
+			return "";
+		if (m_nFlags & 0x1000)
+			return "FCVAR_NEVER_AS_STRING";
+		ConVar *var = (ConVar *)m_pParent;
+		return (var->m_pszString) ? var->m_pszString : "";
+	}
+};
+
+extern KVConVar g_106cf420;
+extern char g_106cf040[];
+extern float g_104454c4;
+void sub_101d0630(KVColor32 *out, const char *s);
+void sub_101d03e0(float *out, const char *s);
+bool sub_101a5a80(CBaseEntity *pEnt, typedescription_t *pDesc, int num, const char *key, const char *value);
+
+bool CBaseEntity::vfunc110(const char *szKeyName, const char *szValue)
+{
+	ScopeTrace scope("CBaseEntity::KeyValue", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	char *s = strchr(szKeyName, '#');
+	if (s)
+		*s = 0;
+
+	if (szKeyName[0] == 'r')
+	{
+		if (!_strcmpi(szKeyName, "rendercolor") || !_strcmpi(szKeyName, "rendercolor32"))
+		{
+			KVColor32 tmp;
+			sub_101d0630(&tmp, szValue);
+			KVColorView *pc = (KVColorView *)this;
+			pc->r = tmp.r;
+			pc->g = tmp.g;
+			pc->b = tmp.b;
+			return true;
+		}
+		if (!_strcmpi(szKeyName, "renderamt"))
+		{
+			m_bAlpha1a3 = atoi(szValue);
+			return true;
+		}
+	}
+
+	if (!_strcmpi(szKeyName, "disableshadows"))
+	{
+		if (atoi(szValue))
+			m_nEffectFlags |= 0x20;
+		return true;
+	}
+	if (!_strcmpi(szKeyName, "mins"))
+	{
+		Vector mins;
+		sub_101d03e0(&mins.x, szValue);
+		CCollisionProperty *pColl = (CCollisionProperty *)((char *)this + 0x270);
+		pColl->sub_100dc770(&mins.x, pColl->vfunc2());
+		return true;
+	}
+	if (!_strcmpi(szKeyName, "maxs"))
+	{
+		Vector maxs;
+		sub_101d03e0(&maxs.x, szValue);
+		CCollisionProperty *pColl = (CCollisionProperty *)((char *)this + 0x270);
+		pColl->sub_100dc770(pColl->vfunc1(), &maxs.x);
+		return true;
+	}
+	if (!_strcmpi(szKeyName, "disablereceiveshadows"))
+	{
+		if (atoi(szValue))
+			m_nEffectFlags |= 0x80;
+		return true;
+	}
+
+	KVSlots *pSlots = (KVSlots *)this;
+	if (!_strcmpi(szKeyName, "angle"))
+	{
+		float y = (float)atof(szValue);
+		if (y >= g_104454c4)
+		{
+			float z = pSlots->slot221()[2];
+			g_109f388c(g_106cf040, 0x40, "%f %f %f", pSlots->slot221()[0], y, z);
+		}
+		else if ((int)y == -1)
+		{
+			g_109f3890(g_106cf040, "-90 0 0", 0x40);
+		}
+		else
+		{
+			g_109f3890(g_106cf040, "90 0 0", 0x40);
+		}
+		szKeyName = "angles";
+		szValue = g_106cf040;
+	}
+
+	if (!_strcmpi(szKeyName, "angles"))
+	{
+		Vector angles;
+		sub_101d03e0(&angles.x, szValue);
+		pSlots->slot218(&angles.x);
+		return true;
+	}
+
+	if (!_strcmpi(szKeyName, "origin"))
+	{
+		Vector vecOrigin;
+		sub_101d03e0(&vecOrigin.x, szValue);
+		pSlots->slot216(&vecOrigin.x);
+		return true;
+	}
+
+	datamap_t *dmap;
+	if (!*g_106cf420.GetStr())
+	{
+		for (dmap = vfunc82(); dmap != 0; dmap = dmap->baseMap)
+		{
+			if (sub_101a5a80(this, dmap->dataDesc, dmap->dataNumFields, szKeyName, szValue))
+				return true;
+		}
+	}
+	else
+	{
+		bool printKeyHits = false;
+		const char *debugName = "";
+		if (*g_106cf420.GetStr() && !_strcmpi(g_106cf420.GetStr(), m_classname11c ? m_classname11c : ""))
+		{
+			printKeyHits = true;
+			debugName = m_classname11c ? m_classname11c : "";
+		}
+		for (dmap = vfunc82(); dmap != 0; dmap = dmap->baseMap)
+		{
+			if (!printKeyHits && *g_106cf420.GetStr() && !_strcmpi(dmap->dataClassName, g_106cf420.GetStr()))
+			{
+				printKeyHits = true;
+				debugName = dmap->dataClassName;
+			}
+			if (sub_101a5a80(this, dmap->dataDesc, dmap->dataNumFields, szKeyName, szValue))
+			{
+				if (printKeyHits)
+					g_109f3628("(%s) key: %-16s value: %s\n", debugName, szKeyName, szValue);
+				return true;
+			}
+		}
+		if (printKeyHits)
+		{
+			const char *pszClass = m_classname11c;
+			if (!pszClass)
+				pszClass = "";
+			g_109f3628("!! (%s) key not handled: \"%s\" \"%s\"\n", pszClass, szKeyName, szValue);
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ebb0 size=0xbe
 #include "CBaseEntity.h"
 struct TraceEntry { const char *a, *b, *c; };
