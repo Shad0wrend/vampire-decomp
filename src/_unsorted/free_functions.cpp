@@ -72964,6 +72964,123 @@ void CPointExplosion::sub_10104650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104730 size=0x3a6
+#include "utlrbtree.h"
+#include "CSoundEnt.h"
+#include "UTIL_BloodStream.h"
+#include "CPASAttenuationFilter.h"
+#include "CPVSFilter.h"
+#include "CUnknown101c26d0.h"
+#include "Tier1.h"
+#include "CBaseEntity.h"
+#include "engineserver.h"
+#include "engineiface.h"
+template <> __forceinline void CUtlVector<int, CUtlMemory<int> >::Purge()
+{
+	RemoveAll();
+	if (m_Memory.m_nGrowSize != -1) {
+		if (m_Memory.m_pMemory) {
+			Plat_Free((void *)m_Memory.m_pMemory);
+			m_Memory.m_pMemory = 0;
+		}
+		m_Memory.m_nAllocationCount = 0;
+	}
+	ResetDbgInfo();
+}
+struct ExplosionParams_10104730 {
+	int m_nFlags;	// 0
+	unsigned char m_r, m_g, m_b, m_pad7;	// 4
+	float m_f08, m_f0c, m_f10;	// 8
+	float m_f14;
+	float m_f18;
+	float m_f1c;
+	int m_n20;
+	int m_n24, m_n28, m_n2c, m_n30;
+	char m_c34;
+	char m_szSound35[0x138 - 0x35];
+	float m_f138;
+	int m_n13c, m_n140;
+};
+extern int g_1072bca4;
+extern char g_1072bcc9;
+extern float g_104454c4;
+void sub_101cdba0(const Vector *pOrigin, int a, int b, int c, int d, int e, char f);
+
+inline void Shake_10104730(const Vector *pOrigin, ExplosionParams_10104730 *p)
+{
+	sub_101cdba0(pOrigin, p->m_n24, p->m_n28, p->m_n2c, p->m_n30, 0, p->m_c34);
+}
+
+__forceinline void B3Help(const Vector *pOrigin, int a2, const char *psz)
+{
+	CPVSFilter filter(*pOrigin);
+	filter.MakeReliable();
+	g_10540528->vfunc2(filter, 0, pOrigin, a2, psz);
+}
+inline void B1Help(const Vector *pOrigin, ExplosionParams_10104730 *p)
+{
+	int level = sub_10228350(p->m_f08);
+	CPASAttenuationFilter filter(*pOrigin, (soundlevel_t)level);
+	filter.MakeReliable();
+	g_10540528->vfunc20(filter, 0, pOrigin, p->m_r, p->m_g, p->m_b, (int)p->m_f14, p->m_f08, p->m_f0c, p->m_f10);
+}
+__forceinline void B2Help(const Vector *pOrigin, ExplosionParams_10104730 *p, CBaseEntity *pOwner)
+{
+	bool bFlag = (p->m_nFlags & 0x200) == 0x200;
+	int bits = 0x40;
+	if (p->m_nFlags & 0x40)
+		bits = 0x48;
+	if (p->m_nFlags & 0x100)
+		bits |= 0x100;
+	if (p->m_nFlags & 0x80)
+		bits |= 0x10;
+	CUnknown101c26d0 info;
+	info.sub_101c26d0(pOwner, pOwner, p->m_f18, bits, 0, 0, -1);
+	info.m_vec001c = *pOrigin;
+	g_1070ba0c->vfunc33(info, pOrigin, p->m_f1c, p->m_n20, bFlag);
+	}
+__forceinline void B5Help(const Vector *pOrigin, ExplosionParams_10104730 *p, CBaseEntity *pOwner)
+{
+	int level = sub_10228350(p->m_f138);
+	CPASAttenuationFilter filter(*pOrigin, (soundlevel_t)level);
+	filter.MakeReliable();
+	int pitch = g_109f3868(p->m_n13c, p->m_n140);
+	int edict = (int)pOwner->m_pEdict2e0;
+	enginesound->vfunc2(&filter, engine->vfunc35(edict), 0, p->m_szSound35 + 0x80, 1.0f, level, 0x80, pitch, (const float *)pOrigin, 0, 1, 0);
+	char c = g_1072bcc9;
+	int n = g_1072bca4;
+	CSoundEnt::sub_101bac90(0x800, pOrigin, n, enginesound->vfunc12(p->m_szSound35 + 0x80), c, pOwner);
+	}
+void sub_10104730(const Vector *pOrigin, int a2, ExplosionParams_10104730 *p, CBaseEntity *pOwner)
+{
+	if ((p->m_nFlags & 1) && p->m_f08 > 1.0f)
+	{
+		int level = sub_10228350(p->m_f08);
+		CPASAttenuationFilter filter(*pOrigin, (soundlevel_t)level);
+		filter.MakeReliable();
+		g_10540528->vfunc20(filter, 0, pOrigin, p->m_r, p->m_g, p->m_b, (int)p->m_f14, p->m_f08, p->m_f0c, p->m_f10);
+	}
+	if ((p->m_nFlags & 2) && p->m_f18 > g_104454c4 && p->m_f1c > g_104454c4)
+		B2Help(pOrigin, p, pOwner);
+	if (p->m_nFlags & 4)
+		B3Help(pOrigin, a2, p->m_szSound35);
+	if (p->m_nFlags & 8)
+		sub_101cdba0(pOrigin, p->m_n24, p->m_n28, p->m_n2c, p->m_n30, 0, p->m_c34);
+	if ((p->m_nFlags & 0x20) && p->m_f138 > 1.0)
+	{
+		int level = sub_10228350(p->m_f138);
+		CPASAttenuationFilter filter(*pOrigin, (soundlevel_t)level);
+		filter.MakeReliable();
+		int pitch = g_109f3868(p->m_n13c, p->m_n140);
+		int edict = (int)pOwner->m_pEdict2e0;
+		enginesound->vfunc2(&filter, engine->vfunc35(edict), 0, p->m_szSound35 + 0x80, 1.0f, level, 0x80, pitch, (const float *)pOrigin, 0, 1, 0);
+		char c = g_1072bcc9;
+		int n = g_1072bca4;
+		CSoundEnt::sub_101bac90(0x800, pOrigin, n, enginesound->vfunc12(p->m_szSound35 + 0x80), c, pOwner);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104ea0 size=0x5a
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
