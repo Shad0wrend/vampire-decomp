@@ -117569,6 +117569,113 @@ bool __stdcall sub_101a3380(VEnt *ent, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3470 size=0x23b
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CEntitySaveRestoreBlockHandler.h"
+#include "CUnknown10057680.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "CRestore.h"
+#include "globalvars.h"
+
+struct CSaveRestoreDataView { char *m_pBase; char *m_pCur; int m_nPos; int m_nSize; char m_pad10[0x12f4 - 0x10]; int m_vecLandmark[3]; char m_pad1300[4]; char m_szMap[1]; };
+struct CEntityTableView { char m_pad0[0x14]; int m_nLocation; };
+struct CRestoreRaw { void *m_vptr; int m_vec[5]; void *m_pData; char *m_pData2; int m_field20; bool m_bField24; };
+struct CEntGN { char pad[0x11c]; const char *m_iClassname; const char *m_iGlobalname; };
+struct CEntInit { CBaseEntity *sub_1009d980(char b); };
+struct CGlobalStateV3 : CUnknown10057680 { char *sub_10057800(const char *pszName); };
+extern CUnknown10057680 g_106be530;
+extern "C" int _strcmpi(const char *, const char *);
+void sub_101cd970(CBaseEntity *);
+int sub_101cf600(int);
+void *sub_100aa720(int);
+void __fastcall sub_10003576(void *p);	// CUtlVector<int>::Purge
+void __fastcall sub_10007275(void *p);	// CUtlMemory<int>::Purge
+void __fastcall sub_1000a06f(void *p);	// CUtlVector<int>::~CUtlVector
+extern void *g_104626bc;
+
+// TARGET: CEntitySaveRestoreBlockHandler::sub_101a3470
+int CEntitySaveRestoreBlockHandler::sub_101a3470(CBaseEntity *pEntity, CSaveRestoreDataView *pSaveData, CEntityTableView *pEntInfo)
+{
+	int oldOffset[3];
+	if (pEntity)
+		pEntity->vfunc1();
+	CRestoreRaw restoreHelper;
+	((CRestore *)&restoreHelper)->CRestore::CRestore(pSaveData);
+	void *mem = sub_100aa720(0x450);
+	CBaseEntity *tmpEnt = mem ? ((CEntInit *)mem)->sub_1009d980(0) : 0;
+	CRestoreRaw tmpRestore;
+	((CRestore *)&tmpRestore)->CRestore::CRestore(pSaveData);
+	tmpRestore.m_bField24 = 0;
+	tmpEnt->vfunc127((int)&tmpRestore);
+	int loc = pEntInfo->m_nLocation;
+	if (loc >= 0 && loc < pSaveData->m_nSize) {
+		pSaveData->m_nPos = loc;
+		pSaveData->m_pCur = pSaveData->m_pBase + loc;
+	}
+	const char *globalName = ((CEntGN *)tmpEnt)->m_iGlobalname;
+	const char *className = ((CEntGN *)tmpEnt)->m_iClassname;
+	sub_101cd970(tmpEnt);
+	if (_strcmpi(pSaveData->m_szMap, ((CGlobalStateV3 *)&g_106be530)->sub_10057800(globalName) + 0x40) != 0) {
+		sub_101cd970(0);
+		sub_10003576(&tmpRestore.m_vec);
+		sub_10007275(&tmpRestore.m_vec);
+		tmpRestore.m_vptr = &g_104626bc;
+		sub_10003576(&restoreHelper.m_vec);
+		sub_10007275(&restoreHelper.m_vec);
+		return 0;
+	}
+	{
+		oldOffset[0] = pSaveData->m_vecLandmark[0];
+		oldOffset[1] = pSaveData->m_vecLandmark[1];
+		oldOffset[2] = pSaveData->m_vecLandmark[2];
+		CBaseEntity *pNewEntity = sub_101a2d50(className, globalName);
+		if (pNewEntity) {
+			restoreHelper.m_field20 = 1;
+			g_106be530.sub_100579b0(((CEntGN *)pNewEntity)->m_iGlobalname, gpGlobals->mapname);
+			CBaseHandle h;
+			h = (IHandleEntity *)pNewEntity;
+			pNewEntity->vfunc127((int)&restoreHelper);
+			if (pNewEntity->vfunc117() & 4)
+				pNewEntity->vfunc103();
+			else
+				pNewEntity->vfunc104();
+			CGlobalEntityList *pList = g_10566458;
+			if (pList->sub_100290c0((const unsigned int *)&h)) {
+				pList->sub_100290c0((const unsigned int *)&h)->sub_1009d1e0();
+				pList = g_10566458;
+			}
+			if (!pList->sub_100290c0((const unsigned int *)&h))
+				pNewEntity = 0;
+			pSaveData->m_vecLandmark[0] = oldOffset[0];
+			pSaveData->m_vecLandmark[1] = oldOffset[1];
+			pSaveData->m_vecLandmark[2] = oldOffset[2];
+			if (pNewEntity) {
+				if (pNewEntity->m_pEdict2e0)
+					sub_101cf600((int)pNewEntity);
+				pNewEntity->vfunc132();
+			}
+			sub_10003576(&tmpRestore.m_vec);
+			sub_10007275(&tmpRestore.m_vec);
+			tmpRestore.m_vptr = &g_104626bc;
+			sub_1000a06f(&restoreHelper.m_vec);
+			return 0;
+		}
+	}
+	sub_10003576(&tmpRestore.m_vec);
+	sub_10007275(&tmpRestore.m_vec);
+	tmpRestore.m_vptr = &g_104626bc;
+	sub_10003576(&restoreHelper.m_vec);
+	sub_10007275(&restoreHelper.m_vec);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3b00 size=0x6
 namespace lifted {
 extern char g_1072bb44;
