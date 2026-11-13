@@ -16028,6 +16028,7 @@
 0x10015b04 func   ?vfunc4@CServerGameClients@@UAEHHH@Z CServerGameClients::vfunc4
 0x10015b09 func   ?sub_100c6020@@YA_NPAXHMPBMAAVVector@@2@Z sub_100c6020
 0x10015b0e func   ?sub_10170eb0@CUnknown10170eb0@@QAEXXZ CUnknown10170eb0::sub_10170eb0
+0x10015b13 func   ?sub_10266780@CAI_BaseNPC@@QAEXPAUCTakeDamageInfo@@PBVVector@@PAUCGameTrace@@@Z CAI_BaseNPC::sub_10266780
 0x10015b18 func   ?vfunc82@CEnvFloatingCamera@@UAEPAUdatamap_t@@XZ CEnvFloatingCamera::vfunc82
 0x10015b1d func   ?sub_100f8ec0@CEntityListSystem@@QAEXXZ CEntityListSystem::sub_100f8ec0
 0x10015b27 func   ?vfunc103@CFunc_Dust@@QAEXXZ CFunc_Dust::vfunc103

@@ -860,6 +860,91 @@ bool __stdcall sub_10266660(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10266780 size=0x2cc
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CAI_BaseNPC.h"
+#include "CTakeDamageInfo.h"
+#include "CGameTrace.h"
+#include "CVDmg_t.h"
+#include "ConVar.h"
+#include "engineserver.h"
+
+extern float g_104454c4;
+
+extern ConVar g_109201a8;
+extern ConVar g_1090fe70;
+extern ConVar g_109204f0;
+extern ConVar g_1090fdc0;
+extern ConVar g_10920238;
+
+struct CTDIDmg : CTakeDamageInfo
+{
+	float GetDamage() { return m_pVDmg00 ? (float)m_pVDmg00->sub_101faa70() : m_flDamage; }
+	unsigned int GetDamageType() { return m_pVDmg00 ? (m_pVDmg00->m_field10 | m_nFlags38) : m_nFlags38; }
+};
+
+void CAI_BaseNPC::sub_10266780(CTakeDamageInfo *pInfo, const Vector *pVecDir, CGameTrace *pTrace)
+{
+	*(char *)((char *)this + 0x5df0) = 0;
+	if (*(int *)((char *)this + 0x1fc) == 0)
+		return;
+
+	long iEdict = *(int *)(0x2e0 + (char *)this);
+	if (!(!(pInfo->m_pVDmg00->sub_101fb340(engine->vfunc35(iEdict))))) return; else { CTDIDmg info = *(CTDIDmg *)pInfo;
+
+	*(int *)((char *)this + 0x1594) = pTrace->m_hitgroup;
+	long t0 = pTrace->m_physicsbone; *(int *)((char *)this + 0x660) = t0;
+
+	int iIndex = engine->vfunc35(pcd_stage(*(int *)((char *)this + 0x2e0)));
+	float flDamage; flDamage = (float)pInfo->m_pVDmg00->sub_101fb200(iIndex, pInfo->sub_101c29b0());
+
+	switch (pTrace->m_hitgroup)
+	{
+	case 10:
+		flDamage = 0.01f;
+		pTrace->m_hitgroup = 0;
+		break;
+	case 1:
+		{
+			ConVar *pVar = g_109201a8.m_pParent;
+			flDamage *= pVar->vfunc1() ? g_104454c4 : g_109201a8.m_pParent->m_fValue;
+		}
+		break;
+	case 2:
+		flDamage *= g_1090fe70.m_pParent->vfunc1() ? g_104454c4 : g_1090fe70.m_pParent->m_fValue;
+		break;
+	case 3:
+		flDamage *= g_109204f0.m_pParent->vfunc1() ? g_104454c4 : g_109204f0.m_pParent->m_fValue;
+		break;
+	case 4:
+	case 5:
+		flDamage *= g_1090fdc0.m_pParent->vfunc1() ? g_104454c4 : g_1090fdc0.m_pParent->m_fValue;
+		break;
+	case 6:
+	case 7:
+		flDamage *= g_10920238.m_pParent->vfunc1() ? g_104454c4 : g_10920238.m_pParent->m_fValue;
+		break;
+	}
+
+	info.m_flDamage = flDamage;
+
+	if (1.0 <= info.GetDamage() && !(info.GetDamageType() & 0x100))
+	{
+		if (!(1 == pTrace->m_hitgroup && !(((float)*(int *)(0x210 + (char *)this) - info.GetDamage()) <= g_104454c4))) {
+			sub_102699e0(*(Vector *)pTrace->m_endpos, vfunc145(), info.GetDamage());
+			vfunc146(info.m_pVDmg00, pVecDir, pTrace);
+		} else {
+			*(char *)((char *)this + 0x5df0) = 1;
+		}
+	}
+
+	vfunc292(pInfo, pVecDir, pTrace);
+	info.m_pAttacker = pInfo->m_pAttacker;
+	info.sub_101c2a10(pTrace->m_hitbox);
+	sub_101c2d20(&info, this); }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026a2c0 size=0x280
 #include "CAI_BaseNPC.h"
 #include "CAI_BaseNPCTroika.h"
