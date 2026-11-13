@@ -5,14 +5,7 @@
 #include "utlrbtree.h"
 #include "utlvector.h"
 #include "CHumanoidRec.h"
-
-extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
-
-template <>
-void CUtlVector<CHumanoidRec, CUtlMemory<CHumanoidRec> >::ShiftElementsRight(int elem, int num)
-{
-	int numToMove = m_Size - elem - num;
-	if (numToMove > 0 && num > 0)
-		memmove(&Element(elem + num), &Element(elem), numToMove * sizeof(CHumanoidRec));
-}
+// TARGET: ?ShiftElementsRight@?$CUtlVector@UCHumanoidRec@@V?$CUtlMemory@UCHumanoidRec@@@@@@QAEXHH@Z
+// one member, not a definition of its own: utlvector.h's inline ShiftElementsRight, so every block's copy is the same COMDAT
+static void (CUtlVector<CHumanoidRec, CUtlMemory<CHumanoidRec> >::*s_ShiftElementsRight)(int, int) = &CUtlVector<CHumanoidRec, CUtlMemory<CHumanoidRec> >::ShiftElementsRight;
 // END FUNCTION
