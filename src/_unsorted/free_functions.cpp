@@ -194666,6 +194666,181 @@ bool CAI_BaseNPCTroikaV::sub_10295ed0(CAI_Hint *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102961a0 size=0x52e
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Hint.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "UTIL_Trace.h"
+#include "Vector.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct CTroikaCollView102961a0
+{
+	virtual void v0();
+	virtual void v1();
+	virtual Vector *v2();
+};
+
+struct CTroikaView102961a0
+{
+	char pad0000[0x26c];
+	const char *m_pszName26c;
+	CTroikaCollView102961a0 m_coll270;
+	char pad274[0x5ddc - 0x274];
+	CAI_Hint *m_pHint5ddc;
+	char pad5de0[0x6448 - 0x5de0];
+	EHANDLE m_h6448;
+};
+
+struct CHintNameView102961a0
+{
+	char pad0000[0x468];
+	const char *m_psz468;
+};
+
+class CAI_FailView
+{
+public:
+	void sub_102d0ab0(const char *pszMsg);
+};
+
+struct CNameView102961a0
+{
+	const char *sub_100ab4f0();
+};
+
+class Vector2D102961a0
+{
+public:
+	float x, y;
+	Vector2D102961a0 operator-(const Vector2D102961a0 &v) const;
+	float Length() const;
+	float Dot(const Vector2D102961a0 &v) const;
+	float operator[](int i) const { return ((const float *)this)[i]; }
+};
+
+inline void Vector2DSubtract(const Vector2D102961a0 &a, const Vector2D102961a0 &b, Vector2D102961a0 &c)
+{
+	c.x = a.x - b.x;
+	c.y = a.y - b.y;
+}
+
+inline float Vector2DLength(const Vector2D102961a0 &v)
+{
+	return FastSqrt(v.x * v.x + v.y * v.y);
+}
+
+inline float DotProduct2D(const Vector2D102961a0 &a, const Vector2D102961a0 &b)
+{
+	return a.x * b.x + a.y * b.y;
+}
+
+inline Vector2D102961a0 Vector2D102961a0::operator-(const Vector2D102961a0 &v) const
+{
+	Vector2D102961a0 res;
+	Vector2DSubtract(*this, v, res);
+	return res;
+}
+
+inline float Vector2D102961a0::Length() const
+{
+	return Vector2DLength(*this);
+}
+
+inline float Vector2D102961a0::Dot(const Vector2D102961a0 &v) const
+{
+	return DotProduct2D(*this, v);
+}
+
+typedef Vector2D102961a0 V2;
+extern EHANDLE g_10925444;
+const char *sub_101d3730(const char *pszFmt, ...);
+float __fastcall sub_102d12e0(void *pThis);
+Vector *sub_101d2f40(Vector *pOut, float flYaw);
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+#define HINT_FAIL(msg) \
+	{ \
+		if (g_10925444.Get() == (CBaseEntity *)this) \
+			((CAI_FailView *)pHint)->sub_102d0ab0(msg); \
+		return false; \
+	}
+
+bool CAI_BaseNPCTroika::sub_102961a0(CBaseEntity *pEnt)
+{
+	CAI_Hint *pHint = (CAI_Hint *)pEnt;
+	CTroikaView102961a0 *pView = (CTroikaView102961a0 *)this;
+	CHintNameView102961a0 *pHintName = (CHintNameView102961a0 *)pEnt;
+
+	if (!pHint || pHint->m_n5e8)
+		return false;
+
+	if (*STRINGR(pHintName->m_psz468) && _strcmpi(STRINGR(pHintName->m_psz468), STRINGR(pView->m_pszName26c)) != 0)
+	{
+		if (g_10566458->sub_100290c0((const unsigned int *)&g_10925444) == (void *)this)
+			((CAI_FailView *)pHint)->sub_102d0ab0(sub_101d3730("Target name mismatch (%s)", STRINGR(pHintName->m_psz468)));
+		return false;
+	}
+
+	CBaseEntity *pCover = pView->m_h6448.Get();
+	if (!pCover)
+		HINT_FAIL("No cover object");
+
+	float flCos = pHint->m_f458;
+	Vector *pHintPos = ((CEntityVSlots *)pHint)->slot217();
+	Vector *pCoverPos = ((CEntityVSlots *)pCover)->slot217();
+	V2 vecToCover = *(V2 *)pCoverPos - *(V2 *)pHintPos;
+	float flDist = vecToCover.Length();
+
+	if (pHint == pView->m_pHint5ddc)
+	{
+		if (pHint->m_f45c - 64.0f > flDist || pHint->m_f460 + 64.0f < flDist)
+			HINT_FAIL(sub_101d3730("Distance (%d) < %d or > %d", (int)flDist, (int)pHint->m_f45c, (int)pHint->m_f460));
+	}
+	else if (flDist < pHint->m_f45c || flDist > pHint->m_f460)
+		HINT_FAIL(sub_101d3730("Distance (%d) < %d or > %d", (int)flDist, (int)pHint->m_f45c, (int)pHint->m_f460));
+
+	float flInv = 1.0f / (flDist + 1.1920929e-7f);
+	Vector vecDir(vecToCover.x * flInv, vecToCover.y * flInv, 0.0f);
+	Vector vecFacing;
+	sub_101d2f40(&vecFacing, sub_102d12e0(pHint));
+	flDist = vecFacing.x * vecDir.x + vecDir.y * vecFacing.y;
+	if (flDist <= flCos)
+		HINT_FAIL(sub_101d3730("Enemy outside of good range (%.2f) <= %.2f", (double)flDist, (double)flCos));
+
+	if (pHint != pView->m_pHint5ddc)
+	{
+		Vector vecStart = *((CEntityVSlots *)this)->slot217();
+		vecStart.z += pView->m_coll270.v2()->z;
+		Vector vecTarget;
+		((CAI_VecView *)pHint)->sub_102d1180(this, &vecTarget);
+		CGameTrace tr;
+		UTIL_TraceLine_DebugCall(vecStart, vecTarget, 0x46804099, this, 0, &tr);
+		if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid)
+			HINT_FAIL(sub_101d3730("Failed LOS check (%s)", tr.m_pEnt ? ((CNameView102961a0 *)tr.m_pEnt)->sub_100ab4f0() : "**UNKNOWN**"));
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10296820 size=0x12
 namespace lifted {
 extern char g_1049ae1c;
