@@ -78673,6 +78673,132 @@ float *CGameMovement::sub_1011e350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011e560 size=0x2c5
+#include <math.h>
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CVProfile.h"
+#include "CGlobalEntityList.h"
+#include "Ray_t.h"
+#include "IPhysicsSurfaceProps.h"
+
+extern CGlobalEntityList *g_10566458;
+void sub_1011e8f0(Ray_t *pRay, unsigned int mask, void *pPassEnt, int group, CGameTrace *pTrace);
+
+struct CSurfaceView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void vfunc4(int index, int a, int b, float *pOut, int c);
+	virtual surfacedata_t_view *vfunc5(int index);
+};
+
+struct CSurfaceHolder
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual CSurfaceView *vfunc9();
+};
+extern CSurfaceHolder *g_1071a278;
+
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+
+namespace block_1011e560 {
+struct RayHull : Ray_t
+{
+	__forceinline void InitHull(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, bool bSwept, char b32)
+	{
+		Vector &delta = *(Vector *)m_Delta;
+		Vector &extents = *(Vector *)m_StartOffset;
+		Vector &offset = *(Vector *)m_Extents;
+		Vector &rstart = *(Vector *)m_Start;
+		VectorSubtract(end, start, delta);
+		m_IsSwept = (delta.LengthSqr() != 0.0f);
+		VectorSubtract(maxs, mins, extents);
+		extents *= 0.5f;
+		float flX2;
+		if (0) flX2 = 0.0f;
+		float flY2 = extents.y * extents.y;
+		flX2 = extents.x * extents.x;
+		m_IsRay = (extents.z * extents.z + flY2 + flX2 < 1e-6);
+		offset.x = mins.x + maxs[0];
+		offset.y = mins.y + maxs.y;
+		offset.z = mins.z + maxs.z;
+		offset *= 0.5f;
+		VectorAdd(start, offset, rstart);
+		offset *= -1.0f;
+		m_b32 = b32;
+		m_b33 = 0;
+		m_n34 = 0;
+		if (bSwept && !m_IsRay)
+		{
+			m_n34 = sqrt(flY2 + flX2);
+			if (m_n34 > 1e-6)
+				m_b33 = 1;
+		}
+	}
+};
+
+struct CPlayerHandleRef
+{
+	unsigned int m_Index;
+	void *Get() { return (void *)g_10566458->sub_100290c0(&m_Index); }
+};
+
+struct CGameMovementUnit : CGameMovement
+{
+	float *sub_1011e350();
+	float *sub_1011e310();
+	__forceinline void TracePlayerBBox(const Vector &start, const Vector &end, unsigned int fMask, int collisionGroup, CGameTrace &pm)
+	{
+		g_109f3648->EnterScope("CGameMovement::TracePlayerBBox", 0, "Unaccounted", false);
+		RayHull ray;
+		ray.InitHull(start, end, *(Vector *)sub_1011e310(), *(Vector *)sub_1011e350(),
+			(((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1, 0);
+		sub_1011e8f0(&ray, fMask, ((CPlayerHandleRef *)&PLAYER->m_hRef)->Get(), collisionGroup, &pm);
+		g_109f3648->ExitScopeCall();
+	}
+};
+
+float *CGameMovementUnit::sub_1011e350()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMax.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMax.x : &m_vecHullMax.x;
+}
+
+float *CGameMovementUnit::sub_1011e310()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMin.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMin.x : &m_vecHullMin.x;
+}
+}
+using namespace block_1011e560;
+
+// TARGET: CGameMovement::sub_1011e560
+void CGameMovement::sub_1011e560()
+{
+	Vector start, end;
+	VectorCopy(PLAYER->m_vecOrigin, start);
+	VectorCopy(PLAYER->m_vecOrigin, end);
+	end[2] -= 64;
+
+	CGameTrace trace;
+	((CGameMovementUnit *)this)->TracePlayerBBox(start, end, 0x1400b, 6, trace);
+
+	CSurfaceView *physprops = g_1071a278->vfunc9();
+	m_field98 = trace.m_surfaceProps;
+	m_pSurface9c = physprops->vfunc5(m_field98);
+	physprops->vfunc4(m_field98, 0, 0, &m_fieldA0, 0);
+	m_fieldA0 *= 1.25f;
+	if (m_fieldA0 > 1.0f)
+		m_fieldA0 = 1.0f;
+	m_bA4 = ((surfacedata_t_view *)m_pSurface9c)->m_nMaterial70;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e8f0 size=0x39
 #include "CGameTrace.h"
 #include "CTraceFilterNoCharacterCollide.h"
