@@ -14822,6 +14822,7 @@
 0x1001424f func   ?vfunc431@CNPC_VNewscaster@@QAEXXZ CNPC_VNewscaster::vfunc431
 0x10014254 func   ?vfunc257@CRagdollProp@@UAEXPAXH@Z CRagdollProp::vfunc257
 0x10014259 func   ?vfunc130@CWorld@@UAEXH@Z CWorld::vfunc130
+0x1001425e func   ?sub_101269e0@CGameMovement@@QAEXXZ CGameMovement::sub_101269e0
 0x10014263 func   ?vfunc319@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc319
 0x10014268 func   _logic_multicompare logic_multicompare
 0x10014272 func   ?vfunc113@CKeepUpright@@UAEXXZ CKeepUpright::vfunc113
