@@ -180776,6 +180776,43 @@ const char *CUnknown1024b2d0::sub_1024b830(CUnknown1024b2d0Id id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1024b880 size=0x86
+#include "Vector.h"
+#include "CUnknown1024b370.h"
+#include "utlmemory.h"
+
+extern "C" void __cdecl free(void *);
+
+struct Node1024b370
+{
+	unsigned short m_Id;
+	unsigned short m_Prev;
+	char m_pad[8];
+};
+
+void CUnknown1024b370::sub_1024b880()
+{
+	unsigned short prev = 0xffff;
+	for (int i = m_s16 - 1; i >= 0; i--) {
+		sub_1024bf80(i);
+		Node1024b370 *pNodes = (Node1024b370 *)m_mem0.m_pMemory;
+		pNodes[(unsigned short)i].m_Prev = prev;
+		pNodes = (Node1024b370 *)m_mem0.m_pMemory;
+		pNodes[(unsigned short)i].m_Id = (unsigned short)i;
+		prev = (unsigned short)i;
+	}
+	unsigned short inv = 0xffff;
+	m_s14 = (m_s16 != 0) ? 0 : inv;
+	m_s10 = inv;
+	int nZero = 0;
+	m_s12 = (unsigned short)nZero;
+	CUtlMemory<char *> &pools = *(CUtlMemory<char *> *)&m_mem1;
+	for (int j = nZero; j < m_n24; j++)
+		free(pools.Base()[j]);
+	m_n24 = nZero;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1024b940 size=0x56
 #include "CUnknown1024b370.h"
 
