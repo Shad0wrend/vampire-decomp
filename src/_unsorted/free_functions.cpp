@@ -106091,6 +106091,49 @@ char sub_101896f0(CBaseEntity *pEnt, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189780 size=0xbb
+#include "CRagdollProp.h"
+
+struct QAngleView { float x, y, z; QAngleView &operator=(const QAngleView &o) { x = o.x; y = o.y; z = o.z; return *this; } };
+QAngleView sub_10138580(const QAngleView &a, const QAngleView &b);
+struct CPickupView
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual bool vfunc3(int a);
+	virtual const QAngleView &vfunc4();
+};
+extern "C" void *__cdecl __RTDynamicCast(void *pObject, long lVfDelta, void *pSrcType, void *pTargetType, int isReference);
+extern char g_10538764[];	// type descriptor of CBaseEntity
+extern char g_10589544[];	// type descriptor of IPlayerPickupVPhysics
+extern char g_1057c684[];	// type descriptor of CRagdollProp
+
+// TARGET: sub_10189780
+bool sub_10189780(CBaseEntity *pObject, int pPlayer, const QAngleView &localToWorld, QAngleView &outputAnglesWorldSpace)
+{
+	CPickupView *pPickup = (CPickupView *)__RTDynamicCast(pObject, 0, g_10538764, g_10589544, 0);
+	if (pPickup)
+	{
+		if (pPickup->vfunc3(pPlayer))
+		{
+			outputAnglesWorldSpace = sub_10138580(pPickup->vfunc4(), localToWorld);
+			return true;
+		}
+	}
+	else
+	{
+		CRagdollProp *pRagdoll = (CRagdollProp *)__RTDynamicCast(pObject, 0, g_10538764, g_1057c684, 0);
+		if (pRagdoll && pRagdoll->vfunc272(pPlayer))
+		{
+			outputAnglesWorldSpace = sub_10138580(*(const QAngleView *)pRagdoll->vfunc273(), localToWorld);
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189870 size=0x5e
 #include "CBaseEntity.h"
 #include "CRagdollProp.h"

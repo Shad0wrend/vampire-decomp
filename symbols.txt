@@ -11608,6 +11608,7 @@
 0x10010195 func   ?vfunc338@CBaseCombatWeapon@@UAEXHH@Z CBaseCombatWeapon::vfunc338
 0x1001019a func   ?sub_102c0aa0@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_102c0aa0
 0x1001019f func   ?vfunc5@CGameSign@@QAEPAV1@I@Z CGameSign::vfunc5
+0x100101a4 func   ?sub_10189780@@YA_NPAVCBaseEntity@@HABUQAngleView@@AAU2@@Z sub_10189780
 0x100101a9 func   ?sub_102a9ec0@CAI_BaseNPCTroika@@QAEDH@Z CAI_BaseNPCTroika::sub_102a9ec0
 0x100101ae func   ?sub_1017b330@CStatLoadout@@QAEXPAVCBaseEntity@@@Z CStatLoadout::sub_1017b330
 0x100101b3 func   ?vfunc0@CPhysObjSaveRestoreOps@@UAEXPAUCPhysObjSaveRestoreOps_Arg@@H@Z CPhysObjSaveRestoreOps::vfunc0
