@@ -4909,6 +4909,98 @@ void sub_10182530(int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182550 size=0x1b8
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "CUnknown1074e098.h"
+
+extern CUnknown1074e098 g_1074e098;
+
+struct CLocalPlayerView
+{
+	char m_pad0000[0x49c];
+	int m_n49c;
+};
+
+int sub_1023bd00();
+struct Holder;
+bool __fastcall sub_101681a0(Holder *p);
+
+static inline CBaseEntity *LookupIn(CGlobalEntityList *pList, unsigned int h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &pList->m_Slots[h & 0x1fff];
+	if ((unsigned int)pSlot->m_Serial == (h >> 13))
+		return (CBaseEntity *)pSlot->m_pEntity;
+	return 0;
+}
+
+static inline CBaseEntity *LookupG(const unsigned int &h)
+{
+	if (h == 0xffffffff)
+		return 0;
+	CGlobalEntityList_Slot *pSlot = &g_10566458->m_Slots[h & 0x1fff];
+	if ((unsigned int)pSlot->m_Serial == (h >> 13))
+		return (CBaseEntity *)pSlot->m_pEntity;
+	return 0;
+}
+
+#pragma auto_inline(off)
+namespace block_10182550 {
+struct CBasePlayer101618a0
+{
+	char m_pad0000[0x1db0];
+	unsigned int m_h1db0;
+	CBaseEntity *sub_101618a0();
+};
+CBaseEntity *CBasePlayer101618a0::sub_101618a0()
+{
+	unsigned int h = m_h1db0;
+	if (h != 0xffffffff) {
+		CGlobalEntityList_Slot *info = &g_10566458->m_Slots[h & 0x1fff];
+		if ((unsigned int)info->m_Serial == (h >> 13))
+			return (CBaseEntity *)info->m_pEntity;
+	}
+	return 0;
+}
+}
+#pragma auto_inline(on)
+
+// TARGET: CBasePlayer::vfunc334
+bool CBasePlayer::vfunc334(int a, int b)
+{
+	CBaseEntity *pEnt;
+	if (a == 4 && (pEnt = LookupG(m_hUseEnt1040)) && pEnt->vfunc33() == 300)
+		return true;
+	if (LookupG(m_hDialogPartnerFE8))
+		return false;
+	if (((block_10182550::CBasePlayer101618a0 *)this)->sub_101618a0() && !LookupG(m_h155C))
+		return false;
+	if (sub_1017d900() > 0.0)
+		return false;
+	if (LookupIn(g_10566458, *(unsigned int *)&m_hFadeEnt19C0))
+		return false;
+	if (EHandle_Get(*(unsigned int *)&m_hFadeEnt19CC))
+		return false;
+	if (sub_1000306c())
+		return false;
+	if (g_1074e098.sub_10200370(a)->m_b108 && sub_101681a0((Holder *)this))
+		return false;
+	CLocalPlayerView *pLocal = (CLocalPlayerView *)sub_1023bd00();
+	if (pLocal && pLocal->m_n49c == 2)
+		return false;
+	return sub_10330020(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182ec0 size=0x40
 struct CPlayerAcc
 {

@@ -11931,6 +11931,7 @@
 0x10010857 func   ?vfunc341@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::vfunc341
 0x1001085c func   ?vfunc105@CBeam@@UAEXPBD@Z CBeam::vfunc105
 0x10010861 func   ?sub_101f19c0@CNamedList19c0@@QAEHPBD@Z CNamedList19c0::sub_101f19c0
+0x10010866 func   ?vfunc334@CBasePlayer@@UAE_NHH@Z CBasePlayer::vfunc334
 0x1001086b func   ?vfunc5@CEnvGlobal@@QAEPAV1@I@Z CEnvGlobal::vfunc5
 0x10010870 func   ?sub_101337a0@CUnknown101337a0@@QAEXAAUinputdata_t@@@Z CUnknown101337a0::sub_101337a0
 0x10010875 func   ?sub_101f2c60@CKV@@QAEXXZ CKV::sub_101f2c60
