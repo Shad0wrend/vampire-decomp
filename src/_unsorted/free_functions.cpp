@@ -64830,6 +64830,34 @@ void CBaseDoor::sub_100ee4e0(int a, char b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee560 size=0x93
+#include "CBaseDoor.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+#include "CSoundControllerImp.h"
+#include "CSoundEnt.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+extern int g_1072bc9c, g_1072bca0;
+extern char g_1072bcc7, g_1072bcc8;
+
+inline bool HasSF(int f, int m) { return (f & m) != 0; }
+__forceinline void DoorSnd(CBaseDoor *p, int volume, char level) { CSoundEnt::sub_101bac90(4, &((CEntityVSlots *)p)->slot192(), volume, 2.0f, level, (CBaseEntity *)p->m_hActivator53c.Get()); }
+void CBaseDoor::sub_100ee560(char bOpen)
+{
+	if (m_flags204 & 0x1000)
+		return;
+	if (bOpen)
+		DoorSnd(this, g_1072bc9c, g_1072bcc7);
+	else
+		DoorSnd(this, g_1072bca0, g_1072bcc8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee630 size=0xd8
 #include "CBaseEntity.h"
 #include "CBaseDoor.h"
