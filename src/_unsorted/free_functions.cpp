@@ -101840,6 +101840,69 @@ void CStatLoadout::sub_1017a550(CBaseEntity *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017aa40 size=0x71c
+struct StatDefault2;
+__forceinline StatDefault2 *StatDefault2_Default();
+__forceinline StatDefault2 *FindStatDefault2(int type);
+#include "CBaseEntity.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CStatLoadout.h"
+
+struct StatOwner2V { StatDefault2 *sub_10183910(int type); };
+struct StatOwnerV { CVStatList_t *sub_10183880(int type); };
+extern StatOwner2V g_1073a338;
+void sub_1021fee0(CBaseEntity *pCharacter, const char *pszName);
+void sub_1021fe50(CBaseEntity *pCharacter, const char *pszName, int a);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : ""; }
+
+void CStatLoadout::sub_1017aa40(CBaseEntity *pCharacter)
+{
+	sub_1017a550(pCharacter);
+	if (m_nArmor) {
+		int cost = FindStatDefault2(m_nType)->m_pCost24[m_nArmor];
+		CVStatListSet::Of(pCharacter)->Find(0)->sub_10200fc0(0x22, cost);
+		sub_1021fee0(pCharacter, STRINGR((const char *const &)FindStatDefault2(m_nType)->m_pNames20[m_nArmor]));
+	}
+	if (m_nArmorNew) {
+		int cost = FindStatDefault2(m_nType)->m_pCost24[m_nArmorNew];
+		if (cost <= CVStatListSet::Of(pCharacter)->Find(0)->sub_102012d0(0x22)) {
+			CVStatListSet::Of(pCharacter)->Find(0)->sub_10201100(0x22, cost);
+			sub_1021fe50(pCharacter, STRINGR((const char *const &)FindStatDefault2(m_nType)->m_pNames20[m_nArmorNew]), 0);
+		}
+	}
+	for (int i = 0; i < FindStatDefault2(m_nType)->m_nFlags0c; i++) {
+		if (m_nEquipNew[i] != -1) {
+			if (m_nEquip[i] != -1) {
+				int cost = FindStatDefault2(m_nType)->m_pCost14[m_nEquip[i]];
+				CVStatListSet::Of(pCharacter)->Find(0)->sub_10200fc0(0x22, cost);
+				sub_1021fee0(pCharacter, STRINGR((const char *const &)FindStatDefault2(m_nType)->m_pNames10[m_nEquip[i]]));
+			}
+		} else if (m_nEquip[i] != -1) {
+			int cost = FindStatDefault2(m_nType)->m_pCost14[m_nEquip[i]];
+			CVStatListSet::Of(pCharacter)->Find(0)->sub_10200fc0(0x22, cost);
+			int idx = m_nEquip[i];
+			sub_1021fee0(pCharacter, STRINGR((const char *const &)g_1073a338.sub_10183910(m_nType)->m_pNames10[idx]));
+		}
+	}
+	for (int j = 0; j < g_1073a338.sub_10183910(m_nType)->m_nFlags0c; j++) {
+		int nNew = m_nEquipNew[j];
+		if (nNew != -1) {
+			int cost = g_1073a338.sub_10183910(m_nType)->m_pCost14[nNew];
+			if (cost <= ((StatOwnerV *)CVStatListSet::Of(pCharacter))->sub_10183880(0)->sub_102012d0(0x22)) {
+				((StatOwnerV *)CVStatListSet::Of(pCharacter))->sub_10183880(0)->sub_10201100(0x22, cost);
+				sub_1021fe50(pCharacter, STRINGR((const char *const &)g_1073a338.sub_10183910(m_nType)->m_pNames10[m_nEquipNew[j]]), 0);
+			}
+		}
+	}
+	m_nArmor = m_nArmorNew;
+	for (int k = 0; k < 11; k++)
+		m_nEquip[k] = m_nEquipNew[k];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017b330 size=0x2cd
 #include "CBaseEntity.h"
 #include "utlrbtree.h"
