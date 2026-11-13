@@ -9636,6 +9636,7 @@
 0x1000d765 func   ?sub_1009f850@CBaseEntity@@QAEXXZ CBaseEntity::sub_1009f850
 0x1000d76a func   ?sub_101b6320@CUnknown101b6320@@QAEAAV1@ABV1@@Z CUnknown101b6320::sub_101b6320
 0x1000d76f func   ?sub_102400e0@@YA_NPBVVector@@00@Z sub_102400e0
+0x1000d774 func   ?sub_103a9ad0@CNPC_VSabbatLeader@@QAEPAUCNPC_VSabbatLeaderHint@@XZ CNPC_VSabbatLeader::sub_103a9ad0
 0x1000d779 func   ?sub_10339a90@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10339a90
 0x1000d77e func   ?sub_10136600@@YAXPAVCUnknown10136600@@@Z sub_10136600
 0x1000d783 func   ?sub_101dadd0@CUnknown101da960@@QAEXXZ CUnknown101da960::sub_101dadd0

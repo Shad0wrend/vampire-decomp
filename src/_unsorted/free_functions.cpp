@@ -269428,6 +269428,68 @@ CNPC_VSabbatLeaderHint *CNPC_VSabbatLeader::sub_103a9540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a9ad0 size=0x1b1
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include "CNPC_VSabbatLeader.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "QAngle.h"
+#include "Vector.h"
+
+extern CNPC_VSabbatLeaderHint *g_10925450;
+void __cdecl sub_10139970(const Vector &, QAngle &);
+float __cdecl sub_1013d580(float, float);
+extern float g_104c3cfc;
+
+inline float Dist2D_103a9ad0(const Vector &vecDir)
+{
+	float flDist = vecDir.Length2D();
+	return flDist;
+}
+CNPC_VSabbatLeaderHint *CNPC_VSabbatLeader::sub_103a9ad0()
+{
+	ScopeTrace trace("CNPC_VSabbatLeader::SelectDiveOutPoint", g_106b8540);
+	CEntityVSlots *pPlayer = (CEntityVSlots *)EHandle_Get(m_hPlayer);
+	if (!pPlayer)
+		return 0;
+	CNPC_VSabbatLeaderHint *pBest = 0;
+	float flBest = 3.402823466e+38f;
+	for (CNPC_VSabbatLeaderHint *pHint = g_10925450; pHint; pHint = pHint->m_pNext)
+	{
+		if (pHint->m_hintType == 0x3e85)
+		{
+			const Vector *pHintOrigin = ((CEntityVSlots *)pHint)->slot217();
+			Vector vecDir = *pPlayer->slot217() - *pHintOrigin;
+			vecDir.z = 0;
+			float dist = Dist2D_103a9ad0(vecDir);
+			if (dist >= g_104c3cfc)
+			{
+				QAngle angles;
+				sub_10139970(vecDir, angles);
+				Vector *pStartAng = pPlayer->slot219();
+				float yaw = pStartAng->y;
+				float score = (float)fabs(sub_1013d580(yaw, angles.y)) + dist;
+				if (score < flBest)
+				{
+					flBest = score;
+					pBest = pHint;
+				}
+			}
+		}
+	}
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a9d00 size=0x6c
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
