@@ -426,6 +426,91 @@ void CNPC_VManBat::vfunc444(int *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1038f790 size=0x22a
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CNPC_VManBat.h"
+#include "CEHandleGet.h"
+#include "CEntRemoveView.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CUnknown100290c0.h"
+#include "CRagdollPropSpecial.h"
+#define V(n) virtual void v##n();
+#define V10(p) V(p##0) V(p##1) V(p##2) V(p##3) V(p##4) V(p##5) V(p##6) V(p##7) V(p##8) V(p##9)
+struct PhysView {
+    V10(0) V10(1) V10(2) V(30) V(31) V(32) V(33) V(34) V(35) V(36) V(37) V(38)
+    virtual void s39(const Vector *a, const Vector *b);
+};
+struct RagView {
+    V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10(9)
+    V10(10) V10(11) V10(12) V10(13) V10(14) V10(15) V10(16) V10(17) V10(18) V10(19)
+    V10(20) V10(21) V10(22) V10(23) V10(24) V10(25)
+    V(260) V(261) V(262) V(263) V(264) V(265)
+    virtual void s266(const Vector *a, const Vector *b);
+};
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+extern char g_10538764[];
+extern char g_1057fff0[];
+
+#pragma auto_inline(off)
+namespace block_1038f790 {
+struct CLookUnit : CUnknown100290c0 { unsigned int sub_100290c0(unsigned int *pHandle); };
+static int g_shift790 = 13;
+unsigned int CLookUnit::sub_100290c0(unsigned int *pHandle)
+{
+    unsigned int h = *pHandle;
+    if (h != 0xffffffff) {
+        CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (int)(h >> g_shift790)) {
+            return pSlot->m_Value;
+        }
+    }
+    return 0;
+}
+}
+#pragma auto_inline(on)
+#define L ((block_1038f790::CLookUnit *)g_10566458)
+
+void CNPC_VManBat::sub_1038f790()
+{
+    if (L->sub_100290c0(&m_h6690))
+        sub_101cd970((CEntRemoveView *)L->sub_100290c0(&m_h6690));
+    m_h6690 = -1;
+    CEntityVSlots *target = (CEntityVSlots *)L->sub_100290c0(&m_h628c);
+    if (target && L->sub_100290c0(&m_h668c)) {
+        Vector zero(0, 0, 0);
+        Vector vec;
+        const Vector *p = target->slot217();
+        vec.x = p->x;
+        vec.y = p->y;
+        vec.z = p->z + 48.0f;
+        sub_102c4cc0(&zero, ((CEntityVSlots *)EHandle_Get(m_h668c))->slot217(), &vec);
+        CRagdollPropSpecial *r = (CRagdollPropSpecial *)__RTDynamicCast(EHandle_Get(m_h668c), 0, g_10538764, g_1057fff0, 0);
+        if (r) {
+            Vector z2(0, 0, 0);
+            ((RagView *)r)->s266(&zero, &z2);
+            r->sub_101578d0(m_b6694);
+        } else {
+            CBaseEntity *en = (CBaseEntity *)EHandle_Get(m_h668c);
+            PhysView *phys = *(PhysView **)((char *)en + 0x36c);
+            if (phys) {
+                Vector z2(0, 0, 0);
+                phys->s39(&zero, &z2);
+            }
+        }
+    }
+    sub_102c4380((CBaseEntity *)EHandle_Get(m_h668c));
+    sub_102c43b0(2.0f);
+    m_h668c = -1;
+    sub_1038f600(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1038fa50 size=0x23
 #include "CAI_BaseNPCTroika.h"
 

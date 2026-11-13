@@ -15331,6 +15331,7 @@
 0x10014e07 func   ?sub_10352df0@@YAPBDXZ sub_10352df0
 0x10014e0c func   ?vfunc5@CPointExplosion@@QAEPAV1@I@Z CPointExplosion::vfunc5
 0x10014e11 func   ?vfunc580@CNPC_VTaxiDriver@@QAEHXZ CNPC_VTaxiDriver::vfunc580
+0x10014e16 func   ?sub_1038f790@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038f790
 0x10014e1b func   ?sub_100f8a40@CInner100f8a40@@QAEXPBD@Z CInner100f8a40::sub_100f8a40
 0x10014e20 func   ?vfunc589@CAI_BaseNPCTroika@@UAEXHH@Z CAI_BaseNPCTroika::vfunc589
 0x10014e25 func   ?sub_1018f620@CBreakableProp@@QAEXXZ CBreakableProp::sub_1018f620
