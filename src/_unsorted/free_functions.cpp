@@ -280548,6 +280548,87 @@ void CNPC_VZombie::sub_103e0980(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e0a00 size=0x15b
+#include "CBaseEntity.h"
+#include "CBaseCombatCharacter.h"
+#include "CNPC_VZombie.h"
+#include "CGlobalEntityList.h"
+
+extern CGlobalEntityList *g_10566458;
+
+#define ZS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define ZS100(p) ZS10(p##0) ZS10(p##1) ZS10(p##2) ZS10(p##3) ZS10(p##4) ZS10(p##5) ZS10(p##6) ZS10(p##7) ZS10(p##8) ZS10(p##9)
+
+struct CMemoryEntry
+{
+	bool sub_102dfa20();
+};
+
+struct CZombieSlots
+{
+	ZS100(a) ZS10(b0) ZS10(b1) ZS10(b2) ZS10(b3) ZS10(b4) ZS10(b5)
+	virtual void b60(); virtual void b61(); virtual void b62(); virtual void b63(); virtual void b64(); virtual void b65(); virtual void b66();
+	virtual CBaseEntity *vfunc167();
+	ZS10(c0) ZS10(c1) ZS10(c2) ZS10(c3)
+	virtual void c40(); virtual void c41(); virtual void c42(); virtual void c43(); virtual void c44(); virtual void c45(); virtual void c46(); virtual void c47(); virtual void c48();
+	virtual Vector *vfunc217();
+	ZS100(d) ZS100(e) ZS100(f) ZS10(g0) ZS10(g1)
+	virtual void g20(); virtual void g21(); virtual void g22();
+	virtual CMemoryEntry *vfunc541(CBaseCombatCharacter *pChar);
+	virtual void h0(); virtual void h1();
+	virtual void vfunc544(CBaseCombatCharacter *pChar, Vector *pPos, const Vector *pB);
+	ZS10(i0) ZS10(i1) ZS10(i2) ZS10(i3) ZS10(i4)
+	virtual void i50();
+	virtual void vfunc596(CBaseCombatCharacter *pEnt);
+};
+
+struct CZombieTargetHandle
+{
+	unsigned int m_Index;
+	CBaseCombatCharacter *Get() const
+	{
+		if (m_Index == 0xffffffff)
+			return 0;
+		CGlobalEntityList_Slot *e = &g_10566458->m_Slots[m_Index & 0x1fff];
+		return e->m_Serial == (m_Index >> 13) ? (CBaseCombatCharacter *)e->m_pEntity : 0;
+	}
+};
+
+inline bool IsHandleValid(unsigned int index)
+{
+    if (index == 0xffffffff)
+        return false;
+    CGlobalEntityList_Slot *e = &g_10566458->m_Slots[index & 0x1fff];
+    return e->m_Serial == (index >> 13) && e->m_pEntity != 0;
+}
+
+// TARGET: CNPC_VZombie::sub_103e0a00
+void CNPC_VZombie::sub_103e0a00()
+{
+    CZombieSlots *slots = (CZombieSlots *)this;
+    CBaseEntity *pEnemy = slots->vfunc167();
+    CBaseCombatCharacter *pChar;
+    if (pEnemy && (pChar = *(CBaseCombatCharacter **)((char *)pEnemy + 0x9c)) != 0) {
+        if (pChar->sub_10146a80()) {
+            if (!slots->vfunc541(pChar)->sub_102dfa20())
+                return;
+            sub_10279c20();
+            return;
+        }
+        slots->vfunc544(pChar, ((CZombieSlots *)pChar)->vfunc217(), (const Vector *)((char *)pChar + 0x3d4));
+        return;
+    }
+    CZombieTargetHandle *h = (CZombieTargetHandle *)((char *)this + 0x628c);
+    if (IsHandleValid(*(unsigned int *)((char *)this + 0x628c))) {
+        if (h->Get()->sub_10146a80())
+            sub_10279a50(h->Get());
+        else
+            slots->vfunc596(h->Get());
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e0cd0 size=0x107
 extern "C" int _strcmpi(const char *, const char *);
 extern void (*g_109f366c)(const char *, ...);
