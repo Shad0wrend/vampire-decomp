@@ -293224,6 +293224,99 @@ void CWeaponMelee::sub_10410830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10410bf0 size=0x3d3
+#include "CNPC_VTzimisce.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "ConVar.h"
+#include "CWeaponPhysCannon.h"
+#include "CSoundEnt.h"
+#include "CEHandleGet.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+#include "CTraceFilterSimple.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "AITrace.h"
+#include "globalvars.h"
+#include "CSoundControllerImp.h"
+#include "CBasePlayer.h"
+#include "UTIL_Trace.h"
+struct CPod3 { int a, b, c; };
+
+class CPlayerUnit
+{
+public:
+	void sub_10167fd0();
+};
+
+CSoundControllerImp *__cdecl sub_101bdb50();
+
+class CPhysCannonPhysObj
+{
+public:
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+	virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual float GetMass();
+};
+
+void CWeaponPhysCannon::sub_10410bf0(Vector *pPos, float flValue)
+{
+	flValue = (g_1094a944->vfunc1() ? g_104454c4 : g_1094a944->m_fValue) * flValue;
+	const unsigned int *pHandle = &m_grab.m_hEntity;
+	EHandleDetail::EntityList *pList = EHandleDetail::g_10566458;
+	if (((CGlobalEntityList *)pList)->sub_100290c0(pHandle)) {
+		CBaseEntity *pHeld = (CBaseEntity *)((CGlobalEntityList *)pList)->sub_100290c0(pHandle);
+		sub_104106a0(0, 1);
+		CPhysCannonPhysObj *pPhysObj = *(CPhysCannonPhysObj **)((char *)pHeld + 0x36c);
+		float flObjMass;
+		if (pPhysObj)
+			flObjMass = pPhysObj->GetMass();
+		else
+			flObjMass = 0;
+		if (flObjMass <= (g_1094aa7c->vfunc1() ? g_104454c4 : g_1094aa7c->m_fValue)) {
+			if (g_1094ab14->vfunc1())
+				flValue = 0;
+			else
+				flValue = g_1094ab14->m_fValue;
+		}
+		const Vector &forward = *pPos;
+		Vector start; { const CPod3 *pc = (const CPod3 *)(((CEntityVSlots *)pHeld)->slot217()); int a = pc->a; int b = pc->b; CPod3 *pd = (CPod3 *)&start; pd->b = b; pd->a = a; pd->c = pc->c; }
+		CGameTrace tr;
+		UTIL_TraceLine_Calls(start, start + forward * flValue, 0x46004003, pHeld, 0, &tr);
+		int nLen = (int)(*(Vector *)tr.m_startpos - *(Vector *)tr.m_endpos).Length();
+		Vector cur;
+		cur = start + forward * 128.0f;
+		for (int i = 0x80; i < nLen; i += 0x80) {
+			CSoundEnt::sub_101bac90(0x400, &cur, 0x80, 0.5f, 0, pHeld);
+			cur = cur + forward * 128.0f;
+		}
+		sub_1040e1c0(pHeld, pPos, flValue);
+		m_flTimes730[1] = m_flTimes730[0] = gpGlobals->curtime + 0.2;
+		((CEntityVSlots *)pHeld)->slot215();
+	}
+	if (sub_104112d0()) {
+		sub_101bdb50()->vfunc11((int)sub_104112d0(), 0x3dcccccd, 0x3f800000);
+		sub_101bdb50()->vfunc10((int)sub_104112d0(), 0x42480000, 0x3f800000);
+	}
+	m_flElementDebounce = gpGlobals->curtime + 0.1f;
+	*(float *)&m_n918 = gpGlobals->curtime + 0.25f;
+	char *pOwner = (char *)sub_102521f0();
+	if (pOwner && *(CBasePlayer **)(pOwner + 0xa8)) {
+		CBasePlayer *pPlayer = *(CBasePlayer **)(pOwner + 0xa8);
+		((CPlayerUnit *)pPlayer)->sub_10167fd0();
+		float *pTimes = (float *)pPlayer->sub_1032e7b0();
+		if (pTimes)
+			pTimes[0x730 / 4] = gpGlobals->curtime + 0.5;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x104110d0 size=0x6d
 #define V10(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
 #define V100(a) V10(a##0) V10(a##1) V10(a##2) V10(a##3) V10(a##4) V10(a##5) V10(a##6) V10(a##7) V10(a##8) V10(a##9)

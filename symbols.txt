@@ -4980,6 +4980,7 @@
 0x1000775c func   ?sub_104281f0@@YAHHHHHH@Z sub_104281f0
 0x10007761 func   ?sub_103878e0@@YAXXZ sub_103878e0
 0x10007766 func   ?vfunc103@CPropSlashable@@UAEXXZ CPropSlashable::vfunc103
+0x1000776b func   ?sub_10410bf0@CWeaponPhysCannon@@QAEXPAVVector@@M@Z CWeaponPhysCannon::sub_10410bf0
 0x10007775 func   ?vfunc379@CNPC_VGhoulCroucher@@QAEDPAXHHHHMM@Z CNPC_VGhoulCroucher::vfunc379
 0x1000777a func   ?sub_10203110@CUnknown10203110@@QAEHH@Z CUnknown10203110::sub_10203110
 0x1000777f func   ?vfunc174@CRagdollPropSpecial@@UAEXPAVCBaseEntity@@@Z CRagdollPropSpecial::vfunc174
