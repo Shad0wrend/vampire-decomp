@@ -165189,6 +165189,51 @@ const char *sub_1021f710(CKeyHolderSet *pSet, int entindex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021f920 size=0x1b8
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CKeyHolder.h"
+#include "CEdictView.h"
+#include "ScopeTrace.h"
+#include "CBaseCombatWeapon.h"
+
+struct CEntWithItem
+{
+	char m_pad0000[0xa0];
+	CBaseCombatWeapon *m_pItem;	// 0xa0
+};
+
+const char *sub_1021f920(CKeyHolderSet *pSet, int entindex, int keyIndex)
+{
+	CEdictView *edict = (CEdictView *)engine->vfunc38(entindex);
+	CEntWithItem *pEnt;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+		if (!edict)
+			edict = (CEdictView *)engine->vfunc38(0);
+		pEnt = (edict && edict->m_pUnk) ? (CEntWithItem *)edict->m_pUnk->vfunc4() : 0;
+	}
+	CBaseCombatWeapon *pItem = pEnt ? pEnt->m_pItem : 0;
+	if (!pItem)
+		return g_106b8540;
+	int type = *(int *)((char *)pItem->sub_102517e0() + 0x25c);
+	for (int i = 0; i < pSet->m_nHolders; i++) {
+		if (pSet->Find(i)->m_nKey == type)
+			return pSet->Find(i)->sub_101ebf30(keyIndex);
+	}
+	return g_106b8540;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021fb50 size=0xff
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

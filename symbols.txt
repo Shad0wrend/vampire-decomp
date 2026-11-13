@@ -5277,6 +5277,7 @@
 0x10007e0f func   ?sub_101e7d70@CUnknown101e7d70@@QAEMXZ CUnknown101e7d70::sub_101e7d70
 0x10007e14 func   _npc_maker_fleshpile npc_maker_fleshpile
 0x10007e19 func   ?sub_1032e7b0@@YIPAVCBaseEntity@@PAV1@@Z sub_1032e7b0
+0x10007e1e func   ?sub_1021f920@@YAPBDPAUCKeyHolderSet@@HH@Z sub_1021f920
 0x10007e23 func   ?sub_101fc000@CVStatSubCost_t@@QAEXPBD@Z CVStatSubCost_t::sub_101fc000
 0x10007e28 func   ?vfunc370@CWeaponMelee_MingXiaoTentacle@@UAEXPAUCWeaponMeleeEvent@@H@Z CWeaponMelee_MingXiaoTentacle::vfunc370
 0x10007e32 func   ?sub_10216850@@YIXPADHH@Z sub_10216850
