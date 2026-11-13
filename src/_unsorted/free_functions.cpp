@@ -77206,6 +77206,114 @@ void SInit::sub_1011cc10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ccc0 size=0x4d8
+// TARGET: sub_1011ccc0
+#include "bf_read.h"
+#include "CUserCmd.h"
+#include "QAngle.h"
+
+struct bf_readQ : bf_read {
+	bool sub_1011d310(int nBits) { if (m_iCurBit + nBits > m_nDataBits) m_bOverflow = true; return m_bOverflow; }
+	int ReadOneBit() { return (!sub_1011d310(1)) ? sub_100bedf0() : 0; }
+};
+#define RB(b) ((bf_readQ *)(b))->ReadOneBit()
+struct CUnk1011d310 { char sub_1011d310(int n); };
+
+inline int ReadOneBitFlag(bf_read *buf)
+{
+	if (((CUnk1011d310 *)buf)->sub_1011d310(1))
+		return 0;
+	return buf->sub_100bedf0();
+}
+
+inline int ReadOneBitFlag2(bf_read *buf)
+{
+	if (!((CUnk1011d310 *)buf)->sub_1011d310(1))
+		return buf->sub_100bedf0();
+	return 0;
+}
+
+inline void CopyUserCmd(CUserCmd *dst, const CUserCmd *src)
+{
+	if (dst == src)
+		return;
+	dst->command_number = src->command_number;
+	dst->m_fl08 = src->m_fl08;
+	dst->msec = src->msec;
+	dst->frametime = src->frametime;
+	*(QAngle *)&dst->viewangles = *(const QAngle *)&src->viewangles;
+	dst->forwardmove = src->forwardmove;
+	dst->sidemove = src->sidemove;
+	dst->upmove = src->upmove;
+	dst->m_b2c = src->m_b2c;
+	dst->buttons = src->buttons;
+	dst->m_n34 = src->m_n34;
+	dst->impulse = src->impulse;
+	dst->m_n3c = src->m_n3c;
+	dst->m_n40 = src->m_n40;
+	dst->m_b44 = src->m_b44;
+	dst->m_b45 = src->m_b45;
+	dst->m_b46 = src->m_b46;
+	dst->m_b47 = src->m_b47;
+	dst->m_n48 = src->m_n48;
+	dst->m_n4c = src->m_n4c;
+	dst->m_vec50 = src->m_vec50;
+	dst->m_b5c = src->m_b5c;
+}
+
+void sub_1011ccc0(bf_read *buf, CUserCmd *move, CUserCmd *from)
+{
+	CopyUserCmd(move, from);
+
+	if (RB(buf))
+		move->command_number = buf->ReadUBitLong(32);
+	else
+		move->command_number = from->command_number + 1;
+
+	if (RB(buf))
+		move->viewangles.x = buf->sub_100be3d0(16);
+	if (RB(buf))
+		move->viewangles.y = buf->sub_100be3d0(16);
+	if (RB(buf))
+		move->viewangles.z = buf->sub_100be3d0(8);
+
+	if (RB(buf))
+		move->forwardmove = (float)buf->sub_100be590(16);
+	if (RB(buf))
+		move->sidemove = (float)buf->sub_100be590(16);
+	if (RB(buf))
+		move->upmove = (float)buf->sub_100be590(16);
+
+	if (RB(buf))
+		move->buttons = buf->ReadUBitLong(32);
+	if (RB(buf))
+		move->impulse = (unsigned char)buf->ReadUBitLong(8);
+
+	int msec;
+	move->m_b2c = (unsigned char)buf->ReadUBitLong(8);
+	msec = buf->ReadUBitLong(8);
+	move->msec = msec;
+	move->msec = (move->msec > 0xfa) ? 0xfa : ((move->msec < 0) ? 0 : move->msec);
+	move->frametime = (float)move->msec * 0.001f;
+	move->frametime = (move->frametime > 0.25f) ? 0.25f : ((move->frametime < 0.0f) ? 0.0f : move->frametime);
+
+	move->m_b44 = RB(buf) != 0;
+	move->m_b45 = RB(buf) != 0;
+
+	if (RB(buf))
+		move->m_n4c = buf->ReadUBitLong(5);
+	if (RB(buf))
+		buf->sub_100bea10(move->m_vec50);
+	if (RB(buf))
+		move->m_fl08 = (float)buf->ReadUBitLong(8);
+	if (RB(buf))
+		move->m_b47 = (unsigned char)buf->ReadUBitLong(8);
+
+	if (RB(buf))
+		move->m_b46 = (unsigned char)buf->ReadUBitLong(8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011d2e0 size=0x19
 #include "Vector.h"
 Vector &Vector::sub_1011d2e0(const Vector &v)
