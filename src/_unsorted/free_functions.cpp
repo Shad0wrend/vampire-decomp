@@ -249818,6 +249818,108 @@ void sub_10348720()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10348d00 size=0x32f
+#include "CBaseCombatCharacter.h"
+#include "CCollisionProperty.h"
+#include "UTIL_Trace.h"
+#include <math.h>
+
+extern float g_10936f6c;
+extern float g_10937b0c;
+extern float g_10936d70;
+
+#define SV1(n) virtual void sv##n();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+struct CSlot216View { SV100(a) SV100(b) SV10(c0) SV1(c10) SV1(c11) SV1(c12) SV1(c13) SV1(c14) SV1(c15) virtual void vfunc216(const Vector &v); };
+struct CBCCFindSpotV : CBaseCombatCharacter { void sub_10348d00(); };
+inline float HullSqrt(float f)
+{
+	return (float)sqrt(f);
+}
+
+struct CHullRayFS
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_f34;
+
+	__forceinline void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, bool a = true, char b = 0)
+	{
+		VectorSubtract(end, start, m_Delta);
+		m_IsSwept = (m_Delta.LengthSqr() != 0.0f);
+		VectorSubtract(maxs, mins, m_Extents);
+		m_Extents *= 0.5f;
+		m_IsRay = ((m_Extents.x * m_Extents.x + (m_Extents.y * m_Extents.y + m_Extents.z * m_Extents.z)) < 1e-6);
+		m_StartOffset.x = mins[0] + maxs.x; m_StartOffset.y = mins.y + maxs.y; m_StartOffset.z = mins.z + maxs.z;
+		m_StartOffset *= 0.5f;
+		VectorAdd(start, m_StartOffset, m_Start);
+		m_StartOffset *= -1.0f;
+		m_b32 = b;
+		m_b33 = 0;
+		m_f34 = 0.0f;
+		if (a && !m_IsRay) {
+			float fl = HullSqrt(m_Extents.x * m_Extents.x + m_Extents.y * m_Extents.y);
+			m_f34 = fl;
+			if (m_f34 > 1e-6)
+				m_b33 = 1;
+		}
+	}
+};
+
+inline void TraceHullFS(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, void *pIgnore, CGameTrace *ptr)
+{
+	CHullRayFS ray;
+	ray.Init(start, end, mins, maxs);
+	CTraceFilterSimple traceFilter(pIgnore, 0);
+	g_1070b254->vfunc4((Ray_t *)&ray, 0x201400b, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+void CBCCFindSpotV::sub_10348d00()
+{
+	static const float s_flRadiusMin = 0.0f;
+	static const float s_flRadiusMax = 240.0f;
+	static const float s_flHeightMin = 0.0f;
+	static const float s_flHeightMax = 100.0f;
+	Vector origin = *(Vector *)a83();
+	for (float radius = s_flRadiusMin; radius < s_flRadiusMax; radius += g_10936f6c)
+	{
+		for (float height = s_flHeightMin; height < s_flHeightMax; height += g_10937b0c)
+		{
+			for (float phi = 0.0f; phi < 6.283185307179586; phi += g_10936d70)
+			{
+				Vector pos(cos(phi), sin(phi), 0.0f);
+				pos *= radius;
+				pos[0] += origin.x; pos.y += origin.y; pos.z += origin.z;
+				pos.z += height;
+				CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+				CGameTrace tr;
+				{
+					const Vector &mins = *(Vector *)pCol->vfunc1();
+					const Vector &maxs = *(Vector *)pCol->vfunc2();
+					TraceHullFS(pos, pos, mins, maxs, this, &tr);
+				}
+				if (!(tr.m_fraction < 1.0f) && !tr.m_allsolid && !tr.m_startsolid)
+				{
+					((CSlot216View *)this)->vfunc216(pos);
+					return;
+				}
+				if (radius <= g_104454c4)
+					break;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10349590 size=0x8a
 #include "CUnknown10349590.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
