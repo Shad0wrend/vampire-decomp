@@ -252,6 +252,185 @@ void CNPC_VZombie::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dfd80 size=0x364
+#include "CNPC_VZombie.h"
+#include "CAI_Navigator.h"
+#include "CAI_Motor.h"
+#include "CUnknown10739d08.h"
+#include "CUnknown102ee120.h"
+#include "CEHandleGet.h"
+
+extern CUnknown10739d08 g_10739d08;
+extern int g_106c994c;
+extern float g_104d1d00;
+extern int g_10940390;
+extern Vector g_10934060;
+
+struct CEnemiesViewZ
+{
+	void sub_102dfed0(Vector *pOut, void *pEnemy);
+};
+
+#define V(n) virtual void a##n();
+#define V10(p) V(p##0) V(p##1) V(p##2) V(p##3) V(p##4) V(p##5) V(p##6) V(p##7) V(p##8) V(p##9)
+
+struct CZombieTaskSlots
+{
+	V10(0) V10(1) V10(2) V10(3) V10(4) V10(5)
+	V(60) V(61) V(62) V(63) V(64) V(65) V(66)
+	virtual void vfunc67();
+	V(68) V(69)
+	V10(7) V10(8) V10(9) V10(10) V10(11) V10(12) V10(13) V10(14) V10(15)
+	V(160) V(161) V(162) V(163) V(164) V(165) V(166)
+	virtual void *vfunc167();
+	V(168) V(169)
+	V10(17) V10(18) V10(19) V10(20) V10(21)
+	virtual const Vector *vfunc220();
+	V(221) V(222) V(223) V(224) V(225) V(226) V(227) V(228) V(229)
+	V10(23) V10(24)
+	V(250)
+	virtual char vfunc251();
+	V(252) V(253) V(254) V(255) V(256) V(257) V(258) V(259)
+	V10(26) V10(27) V10(28) V10(29) V10(30)
+	V10(31)
+	V10(32) V10(33) V10(34) V10(35) V10(36) V10(37) V10(38) V10(39)
+	V10(40) V10(41) V10(42) V10(43)
+	V(440) V(441) V(442) V(443) V(444) V(445) V(446) V(447)
+	virtual void vfunc448(int a);
+	V(449)
+	V10(45) V10(46) V10(47) V10(48) V10(49) V10(50) V10(51) V10(52) V10(53)
+	V(540)
+	virtual CEnemiesViewZ *vfunc541();
+};
+
+struct CZombieSlot425
+{
+	V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10(9)
+	V10(10) V10(11) V10(12) V10(13) V10(14) V10(15) V10(16) V10(17) V10(18) V10(19)
+	V10(20) V10(21) V10(22) V10(23) V10(24) V10(25) V10(26) V10(27) V10(28) V10(29)
+	V10(30) V10(31) V10(32) V10(33) V10(34) V10(35) V10(36) V10(37) V10(38) V10(39)
+	V10(40) V10(41) V(420) V(421) V(422) V(423) V(424)
+	virtual void vfunc425(CNPC_VZombie *p);
+};
+
+struct CZombieGoal
+{
+	int m_type;
+	Vector m_pos;
+	int m_h[4];
+	float m_f8;
+	float m_i9;
+	int m_i10;
+	Vector m_v11;
+	int m_i14;
+	int m_i15;
+	CZombieGoal(int type, const Vector &pos, int a, int b, int c, int d, float f, int i10)
+	{
+		m_type = type;
+		m_pos = pos;
+		m_h[0] = a;
+		m_h[1] = b;
+		m_h[2] = c;
+		m_h[3] = d;
+		m_f8 = f;
+		m_i9 = 0.0f;
+		m_i10 = i10;
+		m_v11 = g_10934060;
+		m_i14 = 0;
+		m_i15 = 0;
+	}
+};
+
+inline CAI_NavProvider *ZombieGetNode(CAI_NavProviderList *pList, int i)
+{
+	if (i >= 0 && i < pList->m_nCount)
+		return pList->m_ppItems[i];
+	g_106c994c++;
+	return 0;
+}
+
+#define SLOTS ((CZombieTaskSlots *)this)
+
+// TARGET: CNPC_VZombie::vfunc442
+void CNPC_VZombie::vfunc442(int *pTask)
+{
+	Vector vecPos;
+	Vector vecTmp;
+	switch (*pTask) {
+	case 0x36:
+	{
+		sub_10280a50();
+		sub_102e0b40((float *)m_pMotor5d44);
+		SLOTS->vfunc541()->sub_102dfed0(&vecPos, SLOTS->vfunc167());
+		m_pMotor5d44->sub_102e20b0(&vecPos.x, -2.0f);
+		sub_10289ee0(0x4b);
+		if (SLOTS->vfunc251())
+			sub_10273e80(0);
+		break;
+	}
+	case 0x14c:
+		if (m_b667c)
+			m_b667c = 0;
+		SLOTS->vfunc67();
+		sub_10289ee0(0x1053);
+		break;
+	case 0x14e:
+		sub_10272650(0x1081);
+		break;
+	case 0x14f:
+		sub_10272650(0x4a);
+		break;
+	case 0x150:
+	{
+		CAI_Navigator *pNav = m_pNavigator5d34;
+		pNav->m_i08 = *(int *)(pNav->m_pOuter + 0x156c);
+		pNav->m_i0c = gpGlobals->framecount;
+		CAI_NavProviderList *pProv = m_pNavigator5d34->m_pProviders;
+		int node = pProv->sub_102f3c10((int)this, SLOTS->vfunc220());
+		if (node != -1) {
+			CZombieGoal goal(4, *ZombieGetNode(m_pNavigator5d34->m_pProviders, node)->sub_102fb0d0(&vecTmp, m_nHull1568), -1, -1, -1, -1, g_104d1d00, g_10940390);
+			m_pNavigator5d34->sub_102ecd20(&goal, 4);
+		} else {
+			SLOTS->vfunc448(0x18);
+		}
+		break;
+	}
+	case 0x151:
+		m_b1a40 = 1;
+		((CUnknown102ee120 *)m_pNavigator5d34)->sub_102ee250(0x1014);
+		m_flNextTime5db4 = enginerandom->vfunc1(g_10739d08.sub_101e8a90(), g_10739d08.sub_101e8ab0()) + gpGlobals->curtime;
+		break;
+	case 0x152:
+	{
+		CGlobalEntityList_Ent *pEnt = EHandle_Get(m_hEnemy628c);
+		if (pEnt) {
+			CZombieSlot425 *pObj = *(CZombieSlot425 **)((char *)pEnt + 0xa8);
+			if (pObj)
+				pObj->vfunc425(this);
+		}
+		sub_10273e80(0);
+		break;
+	}
+	case 0x153:
+	{
+		int act = m_nState0fec;
+		switch (m_nVariant66e4) {
+		case 1: act = 0x1098; break;
+		case 2: act = 0x109b; break;
+		case 3: act = 0x109e; break;
+		}
+		sub_10289ee0(act);
+		if (m_nIdealActivity0ff0 != act)
+			SLOTS->vfunc448(0x15);
+		break;
+	}
+	default:
+		sub_10009b06(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e01d0 size=0x17c
 #include "CBaseCombatCharacter.h"
 #include "CNPC_VZombie.h"
