@@ -275934,6 +275934,145 @@ bool CNPC_VWerewolf::sub_103d1200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d14f0 size=0x612
+#define sub_103d0db0(a, b) sub_103d0db0_int(a, b); bool sub_103d0db0(a, b)
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include "CAIHintSlots.h"
+#include "CEHandleGet.h"
+#include "CGlobalEntityList.h"
+#include "Tier1.h"
+
+#undef sub_103d0db0
+
+extern Vector g_1070d1b0;
+
+inline bool operator==(const CNPC_VWerewolfVec3 &a, const CNPC_VWerewolfVec3 &b) { return b.x == a.x && b.y == a.y && b.z == a.z; }
+
+// TARGET: CNPC_VWerewolf::sub_103d14f0
+bool CNPC_VWerewolf::sub_103d14f0()
+{
+	ScopeTrace trace("CNPC_VWerewolf::FindRandomMoveHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (m_nTick66d4 == engine->vfunc120())
+		return false;
+	if (m_fl66d8 + 0.25f > gpGlobals->curtime)
+		return false;
+	if (m_pHint66bc)
+		return true;
+	sub_103d1ca0();
+	m_nTick66d4 = engine->vfunc120();
+	m_fl66d8 = gpGlobals->curtime;
+	if (!g_10925450)
+		return false;
+	if (!g_10566458->sub_100290c0((unsigned int *)((char *)this + 0x628c)))
+		return false;
+
+	CAI_Hint *pCur = m_n66b8 ? ((CAI_Hint *)m_n66b8)->m_pNext : 0;
+	if (!pCur)
+		pCur = g_10925450;
+
+	CAI_Hint *pBest = 0;
+	int nTried = 0;
+	bool bSuccess = false;
+	float flBest = 3.4028235e+38f;
+	Vector vecOrigin = *(Vector *)vfunc217();
+	CNPC_VWerewolfVec3 vecRef3 = sub_103d9c90();
+	Vector &vecRef = *(Vector *)&vecRef3;
+	bool bFound = false;
+	Vector vecHint = g_1070d1b0;
+	Vector vecEnd = g_1070d1b0;
+	CUtlVector<CNPC_VWerewolfVec3> vecUnreachable;
+	CUtlVector<CNPC_VWerewolfVec3> vecReachable;
+	if ((m_nFlags66e8 & 2) == 2 && m_pHint66c4)
+	{
+		CNPC_VWerewolfVec3 tmp;
+		vecRef3 = *sub_103d6770(&tmp, m_pHint66c4);
+	}
+	do
+	{
+		if (sub_103d2810(pCur))
+		{
+			pBest = pCur;
+			break;
+		}
+		if (sub_103d7dc0(pCur))
+		{
+			if (nTried >= 5)
+			{
+				if (!pBest)
+				{
+					m_n66b8 = (int)pCur;
+					return sub_103d1d60("FindRandomMoveHint", false);
+				}
+				break;
+			}
+			bFound = false;
+			CNPC_VWerewolfVec3 t1;
+			CNPC_VWerewolfVec3 t2;
+			vecHint = *(Vector *)sub_103d6770(&t1, pCur);
+			vecEnd = *(Vector *)sub_103d68d0(&t2, pCur);
+			float dist = (vecEnd - vecRef).Length();
+			if (dist < flBest && vecUnreachable.Find(*(CNPC_VWerewolfVec3 *)&vecEnd) == -1)
+			{
+				if (vecReachable.Find(*(CNPC_VWerewolfVec3 *)&vecEnd) != -1)
+				{
+					bFound = true;
+				}
+				else
+				{
+					nTried++;
+					if (sub_103d0db0(*(CNPC_VWerewolfVec3 *)&vecOrigin, *(CNPC_VWerewolfVec3 *)&vecHint))
+					{
+						vecReachable.AddToTail(*(CNPC_VWerewolfVec3 *)&vecEnd);
+						bFound = true;
+					}
+				}
+				if (bFound)
+				{
+					pBest = pCur;
+					flBest = dist;
+				}
+			}
+		}
+		if (!bFound)
+			vecUnreachable.AddToTail(*(CNPC_VWerewolfVec3 *)&vecEnd);
+		pCur = pCur->m_pNext;
+		if (!pCur && m_n66b8)
+		{
+			void *pNode = sub_103d0ad0();
+			if (pNode)
+				m_n670c = *(int *)((char *)pNode + 0x94);
+			g_109f3630("FindRandomMoveHint() looped through the entire list\n");
+			pCur = g_10925450;
+		}
+	} while (pCur != (CAI_Hint *)m_n66b8);
+	m_n66b8 = (int)pBest;
+	if (pBest)
+	{
+		bSuccess = true;
+		sub_103d44e0((CNPC_VWerewolfHint66b0 *)pBest, 1);
+	}
+	return sub_103d1d60("FindRandomMoveHint", bSuccess);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d1ca0 size=0x81
 #include "CNPC_VWerewolf.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };

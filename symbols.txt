@@ -1214,6 +1214,7 @@
 0x1000295f func   ?sub_100cfac0@@YAHXZ sub_100cfac0
 0x10002964 func   ?sub_10129770@CUnk10129770@@QAEHXZ CUnk10129770::sub_10129770
 0x10002969 func   ?vfunc103@CPhysConstraintSystem@@QAEXXZ CPhysConstraintSystem::vfunc103
+0x1000296e func   ?sub_103d14f0@CNPC_VWerewolf@@QAE_NXZ CNPC_VWerewolf::sub_103d14f0
 0x10002973 func   ?sub_1020c4f0@CSecCamera@@QAEXH@Z CSecCamera::sub_1020c4f0
 0x10002978 func   ?vfunc82@CCameraTrack@@UAEPAUdatamap_t@@XZ CCameraTrack::vfunc82
 0x1000297d func   ?sub_101d5bd0@CNamedListX@@QAEHPBD@Z CNamedListX::sub_101d5bd0
