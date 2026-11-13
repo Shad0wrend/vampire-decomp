@@ -25970,6 +25970,60 @@ int CUnknown100778b0::sub_100778b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100778d0 size=0x65
+struct CUnknown1007edb0Obj { void sub_1007edb0(float x); };
+#pragma auto_inline(off)
+namespace block_100778d0 {
+struct CView {
+	char m_pad0000[0x184];
+	float m_fl184;
+	float m_fl188;
+	char m_pad18c[0xc];
+	char m_b198;
+	char m_pad199[0x330 - 0x199];
+	int m_n330;
+	unsigned char sub_10075f30();
+	char sub_10076ab0();
+	int sub_10077990();
+	float sub_10077960(float x);
+};
+unsigned char CView::sub_10075f30()
+{
+	if (m_fl188 != -1.0f)
+		return 1;
+	return 0;
+}
+char CView::sub_10076ab0()
+{
+	return m_b198;
+}
+int CView::sub_10077990()
+{
+	return m_n330;
+}
+float CView::sub_10077960(float x)
+{
+	CUnknown1007edb0Obj *p = (CUnknown1007edb0Obj *)sub_10077990();
+	if (!p)
+		return x;
+	p->sub_1007edb0(x);
+}
+}
+#pragma auto_inline(on)
+using namespace block_100778d0;
+struct CUnknown100778d0 : CView { void sub_100778d0(); };
+// TARGET: sub_100778d0
+void CUnknown100778d0::sub_100778d0()
+{
+	if (sub_10075f30() && !sub_10076ab0())
+		m_fl188 = sub_10077960(m_fl188);
+	float flOld = m_fl184;
+	m_fl184 = sub_10077960(m_fl184);
+	if (sub_10076ab0())
+		m_fl188 += m_fl184 - flOld;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10077960 size=0x1f
 struct CUnknown1007edb0Obj { void sub_1007edb0(float x); };
 int __cdecl sub_10077990(void);

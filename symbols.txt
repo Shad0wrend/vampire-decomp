@@ -5247,6 +5247,7 @@
 0x10007d3d func   ?sub_1007f690@CUtlVector12@@QAEXH@Z CUtlVector12::sub_1007f690
 0x10007d42 func   ?vfunc4@CRecipientFilter@@UAEDXZ CRecipientFilter::vfunc4
 0x10007d47 func   ?sub_10083a60@CSceneEntity@@QAEXXZ CSceneEntity::sub_10083a60
+0x10007d4c func   ?sub_100778d0@CUnknown100778d0@@QAEXXZ CUnknown100778d0::sub_100778d0
 0x10007d51 func   ?vfunc1@CTEBubbleTrail@@UAEHXZ CTEBubbleTrail::vfunc1
 0x10007d56 func   ?sub_102b9060@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102b9060
 0x10007d5b func   _item_k_gimble_key item_k_gimble_key
