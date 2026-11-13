@@ -200353,6 +200353,97 @@ bool CAI_BaseNPCTroika::sub_1028fd80(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10290040 size=0x151
+#include "CBaseEntity.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown100290c0.h"
+#include "CUnknown10290040.h"
+#include "CEHandleGet.h"
+#include "Vector.h"
+
+float sub_101d2c70(const Vector &vec);
+void __fastcall sub_102e0b40(float *p);
+
+struct CTargetAnswer
+{
+	char m_pad0000[0xc];
+	Vector m_vecDir;
+	int m_nNode;
+};
+
+#define TGV(n) virtual void t##n();
+#define TGV10(p) TGV(p##0) TGV(p##1) TGV(p##2) TGV(p##3) TGV(p##4) TGV(p##5) TGV(p##6) TGV(p##7) TGV(p##8) TGV(p##9)
+struct CTargetView
+{
+	TGV10(0) TGV10(1) TGV10(2) TGV10(3) TGV10(4) TGV10(5) TGV10(6) TGV10(7) TGV10(8) TGV10(9)
+	TGV10(10) TGV10(11) TGV10(12) TGV10(13) TGV10(14) TGV10(15) TGV10(16) TGV10(17) TGV10(18) TGV10(19)
+	TGV10(20) TGV10(21) TGV10(22) TGV10(23)
+	TGV(240) TGV(241) TGV(242) TGV(243) TGV(244) TGV(245)
+	virtual void vfunc246(CUnknown10290040 *pAsker, CTargetAnswer *pOut, char bFlag);
+};
+
+
+namespace block_10290040
+{
+	struct CUnknown100290c0Unit : CUnknown100290c0
+	{
+		unsigned int sub_100290c0(unsigned int *pHandle);
+	};
+	unsigned int CUnknown100290c0Unit::sub_100290c0(unsigned int *pHandle)
+	{
+		unsigned int h = *pHandle;
+		if (h != 0xffffffff)
+		{
+			int s = (int)pHandle[1];
+			CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
+			if (pSlot->m_Serial == (int)(h >> s))
+				return pSlot->m_Value;
+		}
+		return 0;
+	}
+}
+using namespace block_10290040;
+
+bool CUnknown10290040::sub_10290040(int a)
+{
+	unsigned int *ph = &m_hTarget5d24;
+	if (!((CUnknown100290c0Unit *)EHandleDetail::g_10566458)->sub_100290c0(ph))
+	{
+		m_nState644c = 0;
+		return false;
+	}
+	CTargetView *pTarget = (CTargetView *)((const CBaseHandle *)ph)->Get();
+	CTargetAnswer answer;
+	pTarget->vfunc246(this, &answer, m_bFlag5d30);
+	if (answer.m_nNode == -1)
+		return false;
+	sub_102e0b40((float *)m_pMotor5d44);
+	float flYaw = sub_101d2c70(answer.m_vecDir);
+	m_pMotor5d44->sub_102e1c10(flYaw, -1.0f);
+	if (sub_10278c80())
+	{
+		if (m_bFlag5d30)
+		{
+			m_nState644c = 2;
+			m_flTime6450 = gpGlobals->curtime + 1.0f;
+			return true;
+		}
+		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(*ph);
+		if (sub_10298840(pEnt))
+		{
+			m_nState644c = 2;
+			m_flTime6450 = gpGlobals->curtime + 5.0f;
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10290200 size=0xad
 #include "CAI_BaseNPCTroika.h"
 #include "CGlobalEntityList.h"
