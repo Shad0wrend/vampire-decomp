@@ -124,3 +124,43 @@ Variants in fx/ (judged with S/try.py, S/h116/regs.py; nothing saved, no notes).
   our IL has one scratch temp more before that block (or the game two more). Not closed.
 - 0x102f7a90 (h107 variant c, 9): R1 diagnosis: this (game ebx) vs pTestHull (game edi) ranked the other way;
   5 levers (earlier definition, vector local, extra/direct pathfinder reads, this copy): no flip.
+
+## Corrections from the rule-based pass on 42 game register walls (2026-11-13, 14 matched)
+
+Measured on real vtmb functions (hand-120..124, reloadstudy). Each line names the function that showed it.
+
+- **R1 counts happen before tail merging.** Three identical calls VC6 merges into one still add their reads
+  (0x101c7890); where a later block's Release sits (own copy vs shared tail) swapped a far delete[] loop's
+  ebp/ebx (0x101ff540). Find such far causes with truncation probes: delete blocks until the registers flip.
+- **What counts and what does not.** Reads and -1 stores VC6 folds away later still count (an inline handle
+  `Set()`'s null test on an already-tested pointer, 0x10070780). A duplicate test in the same condition, or a
+  dead read/store, is removed BEFORE counting and does not count (0x102f6d80, 0x100cebb0).
+- **R1 fails** in 0x101ac9c0: a 4-ref value loses edi to a 2-ref value; its null-test read seems not to count.
+- **R5 span** is stronger than +1-2 reads: a value live across a loop it does not use loses to a value with fewer
+  refs; only a read inside that loop flips it (0x1019bc80). Block structure alone flipped the zero register vs a
+  hoisted import pointer (0x102dd0f0).
+- **R6/R7.** A constant candidate with any byte use asks for ebx first; dropped later it still pushes the other
+  constant from ebx to ebp (0x103dfd80, 0x1032b9b0). A float field set with `0.0f` removes an int-0 use (closed
+  0x103dfd80). `push 0` call arguments did not count toward the zero candidate there. A char-returning callee can
+  stop a char local from getting bl: declare the callee `int` and truncate, `char v = f();` (0x100bf060).
+  One more int -1 gave the game's whole assignment in 0x100cebb0 (no same-code form found yet).
+- **R8.** A split named copy changes register choice and even address grouping (0x100b6cf0: SDK verbatim, one
+  variable). A named global-copy local is its own value: a same-unit block copy of the callee lets VC6 keep the
+  global across the call with identical code (0x1032db60).
+- **R9 levers that matched:** an extra named local at a call (`int edict = p->m_x; engine->f(edict);`,
+  0x100db7a0), an inline wrapper's parameter copy (0x10230910), an SDK early return (`if (!flag) { tail; return; }`,
+  which also stops a cross-jump, 0x102dc180), the SDK `ConVar::GetString` with its `var` local (0x10142540,
+  0x1009e430), an inline `Base()` accessor so `Base() + i` puts the sum in the offset register (0x1022a4b0).
+  The cursor does not carry straight across merged tails (0x1022b690); named int temps do not follow it (0x102bf820).
+- **Volatile read lever:** `*(T *volatile *)&x` keeps a load at its source position and loads straight into the
+  destination variable's register with the same bytes. An address-taken local stays in a callee-saved register
+  across a call only through a non-escaped copy local (0x1004d780).
+- **Live ranges split** (spill + reload), so a one-ref margin can reshuffle more than two values (0x1032a490).
+  A `this + const` address in a named local is rematerialised with lea at each use, not given a register (0x1033a400).
+- **R12 (negative): reload order at a block start and operand association are globally numbered.** About 190
+  same-code variants never flipped the order two values are reloaded in (0x102f6d80, 0x101f14a0, 0x101e56e0);
+  only real IL changes flip it, non-monotonically, even ones that touch neither value. Address association
+  ((idx + off) + base vs (off + base) + idx) behaves the same: restructuring another loop flips it (0x10429080,
+  0x10427df0, 0x1025b930); source parentheses never matter (0x101810f0). The lever left is a statement VC6 deletes
+  after register allocation (0x101e56e0: 3-4 real stores after `int nTotal = 0;` flip all four loops).
+  Test candidates with scratchpad tool reload/rl.py (same code hash, order flipped) before judging.
