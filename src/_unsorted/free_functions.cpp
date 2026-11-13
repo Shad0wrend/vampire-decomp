@@ -77481,6 +77481,75 @@ void sub_1011d8e0(const char *file, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011d980 size=0x540
+#include "DebugOverlay.h"
+#include "Vector.h"
+#include <math.h>
+
+struct CTracePlaneView	// the CBaseTrace fields the drawer reads
+{
+	Vector startpos;	// 0x00
+	Vector endpos;	// 0x0c
+	struct cplaneV { Vector normal; float dist; int type; } plane;	// 0x18
+	float fraction;	// 0x2c
+};
+
+void sub_10143140(const Vector *p1, const Vector *p2, const Vector *p3, int r, int g, int b, int a, unsigned char noDepthTest, float duration);
+
+inline Vector VSub(const Vector &a, const Vector &b) { Vector res; res.x = a.x - b.x; res.y = a.y - b.y; res.z = a.z - b.z; return res; }
+
+// TARGET: sub_1011d980
+void sub_1011d980(CTracePlaneView *pTrace)
+{
+	float flLength = 30.0f;
+
+	// Create a basis, based on the impact normal.
+	int nMajorAxis = 0;
+	Vector vecBasisU, vecBasisV, vecNormal;
+	vecNormal = pTrace->plane.normal;
+	float flAxisValue = vecNormal[0];
+	if ( fabs( vecNormal[1] ) > fabs( flAxisValue ) ) { nMajorAxis = 1; flAxisValue = vecNormal[1]; }
+	if ( fabs( vecNormal[2] ) > fabs( flAxisValue ) ) { nMajorAxis = 2; }
+	if ( ( nMajorAxis == 1 ) || ( nMajorAxis == 2 ) )
+	{
+		vecBasisU.Init( 1.0f, 0.0f, 0.0f );
+	}
+	else
+	{
+		vecBasisU.Init( 0.0f, 1.0f, 0.0f );
+	}
+
+	vecBasisV = vecNormal.Cross( vecBasisU );
+	VectorNormalize( vecBasisV );
+
+	vecBasisU = vecBasisV.Cross( vecNormal );
+	VectorNormalize( vecBasisU );
+
+	// Create the impact point.  Push off the surface a bit.
+	Vector vecImpactPoint = pTrace->startpos + pTrace->fraction * VSub( pTrace->endpos, pTrace->startpos );
+	vecImpactPoint += vecNormal;
+
+	// Generate a quad to represent the plane.
+	Vector vecPlanePoints[4];
+	vecPlanePoints[0] = vecImpactPoint + ( vecBasisU * -flLength ) + ( vecBasisV * -flLength );
+	vecPlanePoints[1] = vecImpactPoint + ( vecBasisU * -flLength ) + ( vecBasisV * flLength );
+	vecPlanePoints[2] = vecImpactPoint + ( vecBasisU * flLength ) + ( vecBasisV * flLength );
+	vecPlanePoints[3] = vecImpactPoint + ( vecBasisU * flLength ) + ( vecBasisV * -flLength );
+
+	// Draw the plane.
+	sub_10143140( &vecPlanePoints[0], &vecPlanePoints[1], &vecPlanePoints[2], 125, 125, 125, 125, false, 5.0f );
+	sub_10143140( &vecPlanePoints[0], &vecPlanePoints[2], &vecPlanePoints[3], 125, 125, 125, 125, false, 5.0f );
+
+	sub_10142e90( &vecPlanePoints[0], &vecPlanePoints[1], 255, 255, 255, false, 5.0f );
+	sub_10142e90( &vecPlanePoints[1], &vecPlanePoints[2], 255, 255, 255, false, 5.0f );
+	sub_10142e90( &vecPlanePoints[2], &vecPlanePoints[3], 255, 255, 255, false, 5.0f );
+	sub_10142e90( &vecPlanePoints[3], &vecPlanePoints[0], 255, 255, 255, false, 5.0f );
+
+	// Draw the normal.
+	sub_10142e90( &vecImpactPoint, &(vecImpactPoint + ( vecNormal * flLength )), 255, 0, 0, false, 5.0f );
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011e010 size=0x3b
 #include "Vector.h"
 

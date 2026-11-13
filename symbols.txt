@@ -5772,6 +5772,7 @@
 0x10008855 func   ?sub_1037c090@CNPC_VGhoulCroucher@@QAEXPAXM@Z CNPC_VGhoulCroucher::sub_1037c090
 0x1000885a func   _gravity_pellet gravity_pellet
 0x1000885f func   ?vfunc104@CWindowPane@@UAEXXZ CWindowPane::vfunc104
+0x10008864 func   ?sub_1011d980@@YAXPAUCTracePlaneView@@@Z sub_1011d980
 0x10008869 func   ?sub_102ee9c0@CAI_Navigator@@QAEPAVVector@@PAV2@H@Z CAI_Navigator::sub_102ee9c0
 0x1000886e func   _aiscripted_sequence aiscripted_sequence
 0x10008873 func   ?sub_1021e9c0@CUnknown1021e8e0@@QAEHPBDH@Z CUnknown1021e8e0::sub_1021e9c0
