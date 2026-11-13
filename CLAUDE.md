@@ -530,6 +530,29 @@ have written it rather than adding temporaries that spell out the assembly:
   Saved under view names (watch the link audit): 0x103f03e0 CFrag914::sub_103f03e0, 0x10295ed0
   CAI_BaseNPCTroikaV::sub_10295ed0. Unsolved patterns: the game hoists pointer loads above stack stores
   (0x102e7e80, 0x101001e0, 0x10176930); include-loop address reassociation (0x10429080, 0x10427df0, 0x101810f0).
+- **Round 13 (14 of 40 never-hand-tried >1 KB functions, 19.9 KB, 2026-11-13):** SDK identification again won the
+  biggest ones (0x1018b7e0 ClientData_Update 320 -> 0, 0x100f4b90 CGibShooter::ShootThink 288, 0x1011d980
+  DrawDispCollPlane 242, 0x1017b8a0 VPhysicsShadowUpdate 301, 0x101213b0 WalkMove 209 via local dllimport VPROF).
+  New idioms:
+  - x87 value kept across a call (`fld c; call f; ... fstp st(0)`): the callee is in the same unit; define it before
+    the caller in a `block_<caller>` namespace under `#pragma auto_inline(off)` (0x1017b8a0: callee 0x1016b980).
+    VC6 then knows the callee's x87 depth. scratchpad r13/mkblock.py builds such a block from matched callees;
+  - identical stores/calls written in both if/else branches give VC6's tail-merged single copy (0x1018b7e0,
+    0x10206da0); `if ((bool)((m_iEFlags >> 12) & 1))` gives `shr eax,0xc; test al,1` where `& 0x1000` caches the
+    mask in a register and shifts the whole function (0x1017b8a0 92 -> 5);
+  - an int local mask `int m = 0xb10; f = (f & ~m) | (t & m);` changes the register choice of a flag merge;
+  - a CUtlVector whose ctor/AddMultipleToTail are out of line under another symbol: explicit `template <>`
+    specialisations before use that call the view member (0x102e8b80, 0x103cfc50); re-index `list[i].f` in every
+    statement instead of an element pointer; declare-then-assign `Vector v; v = f();` keeps separate return temps;
+  - the bf_read ReadOneBit with CheckForOverflow as an inline view method named after its out-of-line address
+    (0x1011ccc0); `extern "C" __declspec(dllimport) float RandomFloat(float, float)` for the vstdlib import;
+    `extern char g_X[]; vt = (void *)g_X;` fixes a score-1 vftable reloc; `extern T g_X; g_X.f()` instead of a
+    cast address fixes a relocation-only mismatch;
+  - sibling blocks `{ Vector a; ... } { Vector b; ... }` share stack slots (0x102441b0); splitting an inline address
+    expression into a local inside the inline changes VC6's sum association (0x100c67b0);
+  - forward-declaring `__forceinline void VectorSubtract(...)` before `#include "Vector.h"` forces that inline.
+  Near misses left: 0x103302e0 (9), 0x10326de0 (14), 0x101257b0 (14), 0x103ed9b0 (17), 0x10301010 (18),
+  0x102fe150 (18), 0x1014a4f0 (25), 0x1014d7c0 (25), 0x102fa630 (27), 0x10188de0 (29).
 - **x87 retry (6 of 24 open x87 near misses, 4.1 KB, 2026-11-13):** the game keeps a scale on the x87 stack
   (`fld s; fld x; fmul st(1); fstp x; ... fstp st(0)`); ours reloads it (`fmul [mem]`). Forms that give the game's
   shape (try each; which one depends on the function):
