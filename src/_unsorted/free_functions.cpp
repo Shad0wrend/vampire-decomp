@@ -177957,6 +177957,289 @@ void sub_102414f0(int a, int b, const Vector *pOrigin, const Vector *pAngles, co
 }
 // END FUNCTION
 
+// FUNCTION: 0x10241620 size=0x983
+#include <math.h>
+#include "Vector.h"
+#include "matrix3x4_t.h"
+#include "Ray_t.h"
+
+struct cplane_t
+{
+	Vector normal;
+	float dist;
+	unsigned char type;
+	unsigned char signbits;
+	unsigned char pad[2];
+};
+
+struct CBaseTraceV
+{
+	Vector startpos;
+	Vector endpos;
+	cplane_t plane;
+	float fraction;
+	int contents;
+	unsigned short dispFlags;
+	bool allsolid;
+	bool startsolid;
+};
+
+#define CONTENTS_SOLID 1
+__forceinline float FloatMakePositive(float f) { return (float)fabs(f); }
+#define RAY_START(r) (*(const Vector *)(r).m_Start)
+#define RAY_DELTA(r) (*(const Vector *)(r).m_Delta)
+#define RAY_STARTOFFSET(r) (*(const Vector *)(r).m_Extents)
+#define RAY_EXTENTS(r) (*(const Vector *)(r).m_StartOffset)
+
+bool sub_10241100(const Vector &vecRayStart, const Vector &vecRayDelta, const matrix3x4_t &matOBBToWorld,
+	const Vector &vecOBBMins, const Vector &vecOBBMaxs, float flTolerance, CBaseTraceV *pTrace);
+void sub_1023f3d0(const Vector &vecRayStart, const Vector &vecRayDelta, CBaseTraceV *pTrace);	// Collision_ClearTrace
+bool sub_1023ffa0(const Vector &vecRayStart, const Vector &vecRayDelta, const Vector &vecCenter, float flRadius, float flTolerance);	// IsRayIntersectingSphere
+void sub_10138130(const Vector &in1, const matrix3x4_t &in2, Vector &out);	// VectorITransform
+void sub_10138460(const Vector &in1, const matrix3x4_t &in2, Vector &out);	// VectorIRotate
+void sub_10138720(const matrix3x4_t &in, int column, Vector &out);	// MatrixGetColumn
+void sub_10139500(const Vector &start, float scale, const Vector &direction, Vector &dest);	// VectorMA
+
+inline void MatrixITransformPlane(const matrix3x4_t &src, const cplane_t &inPlane, cplane_t &outPlane)
+{
+	Vector vecTranslation;
+	sub_10138720(src, 3, vecTranslation);
+
+	Vector vecInvTranslation;
+	sub_10138460(vecTranslation, src, vecInvTranslation);
+
+	sub_10138460(inPlane.normal, src, outPlane.normal);
+	outPlane.dist = inPlane.dist * DotProduct(outPlane.normal, outPlane.normal);
+	outPlane.dist -= outPlane.normal.x * vecInvTranslation[0] + outPlane.normal.y * vecInvTranslation[1] + outPlane.normal.z * vecInvTranslation[2];
+}
+
+inline void ComputeSupportMap(const Vector &vecDirection, const Vector &vecBoxMins,
+	const Vector &vecBoxMaxs, float pDist[2])
+{
+	int nIndex = (vecDirection.x > 0.0f);
+	pDist[nIndex] = vecBoxMaxs.x * vecDirection.x;
+	pDist[1 - nIndex] = vecBoxMins.x * vecDirection.x;
+
+	nIndex = (vecDirection.y > 0.0f);
+	pDist[nIndex] += vecBoxMaxs.y * vecDirection.y;
+	pDist[1 - nIndex] += vecBoxMins.y * vecDirection.y;
+
+	nIndex = (vecDirection.z > 0.0f);
+	pDist[nIndex] += vecBoxMaxs.z * vecDirection.z;
+	pDist[1 - nIndex] += vecBoxMins.z * vecDirection.z;
+}
+
+inline void ComputeSupportMap(const Vector &vecDirection, int i1, int i2,
+	const Vector &vecBoxMins, const Vector &vecBoxMaxs, float pDist[2])
+{
+	int nIndex = (vecDirection[i1] > 0.0f);
+	pDist[nIndex] = vecBoxMaxs[i1] * vecDirection[i1];
+	pDist[1 - nIndex] = vecBoxMins[i1] * vecDirection[i1];
+
+	nIndex = (vecDirection[i2] > 0.0f);
+	pDist[nIndex] += vecBoxMaxs[i2] * vecDirection[i2];
+	pDist[1 - nIndex] += vecBoxMins[i2] * vecDirection[i2];
+}
+
+extern int g_105c4e34[3][2];	// s_ExtIndices
+extern int g_105c4e4c[3][2];	// s_MatIndices
+#define s_ExtIndices g_105c4e34
+#define s_MatIndices g_105c4e4c
+
+// TARGET: sub_10241620
+bool sub_10241620(const Ray_t &ray, const matrix3x4_t &matOBBToWorld,
+	const Vector &vecOBBMins, const Vector &vecOBBMaxs, float flTolerance, CBaseTraceV *pTrace)
+{
+	int dz0_0 = 0 * 3;
+	int dz0_1 = 1 * 3;
+	if (ray.m_IsRay)
+	{
+		return sub_10241100(RAY_START(ray), RAY_DELTA(ray), matOBBToWorld,
+			vecOBBMins, vecOBBMaxs, flTolerance, pTrace);
+	}
+
+	sub_1023f3d0(RAY_START(ray) + RAY_STARTOFFSET(ray), RAY_DELTA(ray), pTrace);
+
+	{
+	Vector vecOBBCenter;
+	VectorAdd(vecOBBMins, vecOBBMaxs, vecOBBCenter);
+	vecOBBCenter *= 0.5f;
+	vecOBBCenter.x += matOBBToWorld.m_flMatVal[0][3];
+	vecOBBCenter.y += matOBBToWorld.m_flMatVal[1][3];
+	vecOBBCenter.z += matOBBToWorld.m_flMatVal[2][3];
+
+	Vector vecOBBHalfDiagonal;
+	VectorSubtract(vecOBBMaxs, vecOBBMins, vecOBBHalfDiagonal);
+	vecOBBHalfDiagonal *= 0.5f;
+
+	float flRadius = vecOBBHalfDiagonal.Length() + RAY_EXTENTS(ray).Length();
+	if (!sub_1023ffa0(RAY_START(ray), RAY_DELTA(ray), vecOBBCenter, flRadius, flTolerance))
+		return false;
+	}
+
+	Vector vecLocalRayOrigin, vecLocalRayDirection;
+	sub_10138130(RAY_START(ray), matOBBToWorld, vecLocalRayOrigin);
+	sub_10138460(RAY_DELTA(ray), matOBBToWorld, vecLocalRayDirection);
+
+	Vector pPlaneNormal[15];
+	float ppPlaneDist[15][2];
+
+	int i;
+	for (i = 0; i < 3; ++i)
+	{
+		int dz1_0 = 0 * 3;
+		int dz1_1 = 1 * 3;
+		pPlaneNormal[i].Init();
+		pPlaneNormal[i][i] = 1.0f;
+
+		float flExtentDotNormal =
+			FloatMakePositive(matOBBToWorld.m_flMatVal[0][i] * RAY_EXTENTS(ray).x) +
+			FloatMakePositive(matOBBToWorld.m_flMatVal[1][i] * RAY_EXTENTS(ray).y) +
+			FloatMakePositive(matOBBToWorld.m_flMatVal[2][i] * RAY_EXTENTS(ray).z);
+
+		ppPlaneDist[i][0] = vecOBBMins[i] - flExtentDotNormal;
+		ppPlaneDist[i][1] = vecOBBMaxs[i] + flExtentDotNormal;
+
+		VectorCopy(*(const Vector *)matOBBToWorld.m_flMatVal[i], pPlaneNormal[i+3]);
+		ComputeSupportMap(pPlaneNormal[i+3], vecOBBMins, vecOBBMaxs, ppPlaneDist[i+3]);
+		ppPlaneDist[i+3][0] -= RAY_EXTENTS(ray)[i];
+		ppPlaneDist[i+3][1] += RAY_EXTENTS(ray)[i];
+
+		float flRayExtent0 = RAY_EXTENTS(ray)[s_ExtIndices[i][0]];
+		float flRayExtent1 = RAY_EXTENTS(ray)[s_ExtIndices[i][1]];
+		const float *pMatRow0 = matOBBToWorld.m_flMatVal[s_MatIndices[i][0]];
+		const float *pMatRow1 = matOBBToWorld.m_flMatVal[s_MatIndices[i][1]];
+
+		pPlaneNormal[i+6].Init(0.0f, -matOBBToWorld.m_flMatVal[i][2], matOBBToWorld.m_flMatVal[i][1]);
+		ComputeSupportMap(pPlaneNormal[i+6], 1, 2, vecOBBMins, vecOBBMaxs, ppPlaneDist[i+6]);
+		flExtentDotNormal =
+			FloatMakePositive(pMatRow0[0]) * flRayExtent0 +
+			FloatMakePositive(pMatRow1[0]) * flRayExtent1;
+		ppPlaneDist[i+6][0] -= flExtentDotNormal;
+		ppPlaneDist[i+6][1] += flExtentDotNormal;
+
+		pPlaneNormal[i+9].Init(matOBBToWorld.m_flMatVal[i][2], 0.0f, -matOBBToWorld.m_flMatVal[i][0]);
+		ComputeSupportMap(pPlaneNormal[i+9], 0, 2, vecOBBMins, vecOBBMaxs, ppPlaneDist[i+9]);
+		flExtentDotNormal =
+			FloatMakePositive(pMatRow0[1]) * flRayExtent0 +
+			FloatMakePositive(pMatRow1[1]) * flRayExtent1;
+		ppPlaneDist[i+9][0] -= flExtentDotNormal;
+		ppPlaneDist[i+9][1] += flExtentDotNormal;
+
+		pPlaneNormal[i+12].Init(-matOBBToWorld.m_flMatVal[i][1], matOBBToWorld.m_flMatVal[i][0], 0.0f);
+		ComputeSupportMap(pPlaneNormal[i+12], 0, 1, vecOBBMins, vecOBBMaxs, ppPlaneDist[i+12]);
+		flExtentDotNormal =
+			FloatMakePositive(pMatRow0[2]) * flRayExtent0 +
+			FloatMakePositive(pMatRow1[2]) * flRayExtent1;
+		ppPlaneDist[i+12][0] -= flExtentDotNormal;
+		ppPlaneDist[i+12][1] += flExtentDotNormal;
+	}
+
+	float enterfrac, leavefrac;
+	float d1[2], d2[2];
+	float f;
+
+	int hitplane = -1;
+	int hitside = -1;
+	enterfrac = -1.0f;
+	leavefrac = 1.0f;
+
+	pTrace->startsolid = true;
+
+	Vector vecLocalRayEnd;
+	VectorAdd(vecLocalRayOrigin, vecLocalRayDirection, vecLocalRayEnd);
+
+	for (i = 0; i < 15; ++i)
+	{
+		int dz2_0 = 0 * 3;
+		int dz2_1 = 1 * 3;
+		int dz2_2 = 2 * 3;
+		float flStartDot = DotProduct(pPlaneNormal[i], vecLocalRayOrigin);
+		float flEndDot = DotProduct(pPlaneNormal[i], vecLocalRayEnd);
+
+		d1[0] = -(flStartDot - ppPlaneDist[i][0]);
+		d2[0] = -(flEndDot - ppPlaneDist[i][0]);
+
+		d1[1] = flStartDot - ppPlaneDist[i][1];
+		d2[1] = flEndDot - ppPlaneDist[i][1];
+
+		int j;
+		for (j = 0; j < 2; ++j)
+		{
+			if (d1[j] > 0 && d2[j] > 0)
+				return false;
+
+			if (d1[j] <= 0 && d2[j] <= 0)
+				continue;
+
+			if (d1[j] > 0)
+			{
+				pTrace->startsolid = false;
+			}
+
+			float flDenom = 1.0f / (d1[j] - d2[j]);
+			if (d1[j] > d2[j])
+			{
+				f = d1[j] - flTolerance;
+				if (f < 0)
+				{
+					f = 0;
+				}
+				f *= flDenom;
+				if (f > enterfrac)
+				{
+					enterfrac = f;
+					hitplane = i;
+					hitside = j;
+				}
+			}
+			else
+			{
+				f = (d1[j] + flTolerance) * flDenom;
+				if (f < leavefrac)
+				{
+					leavefrac = f;
+				}
+			}
+		}
+	}
+
+	if (enterfrac < leavefrac && enterfrac >= 0.0f)
+	{
+		pTrace->fraction = enterfrac;
+		sub_10139500(pTrace->startpos, enterfrac, RAY_DELTA(ray), pTrace->endpos);
+		pTrace->contents = CONTENTS_SOLID;
+
+		cplane_t temp;
+		temp.normal = pPlaneNormal[hitplane];
+		temp.dist = ppPlaneDist[hitplane][hitside];
+		if (hitside == 0)
+		{
+			temp.normal *= -1.0f;
+			temp.dist *= -1.0f;
+		}
+		temp.type = 3;
+
+		MatrixITransformPlane(matOBBToWorld, temp, pTrace->plane);
+		return true;
+	}
+
+	if (pTrace->startsolid)
+	{
+		pTrace->allsolid = (leavefrac <= 0.0f) || (leavefrac >= 1.0f);
+		pTrace->fraction = 0;
+		pTrace->endpos = pTrace->startpos;
+		pTrace->contents = CONTENTS_SOLID;
+		pTrace->plane.dist = pTrace->startpos[0];
+		pTrace->plane.normal.Init(1.0f, 0.0f, 0.0f);
+		pTrace->plane.type = 0;
+		return true;
+	}
+
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10242220 size=0x113
 #include "Vector.h"
 
