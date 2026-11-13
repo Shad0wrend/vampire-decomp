@@ -15702,6 +15702,7 @@
 0x10015573 func   ?vfunc80@CItemGWatchNormal@@QAEHXZ CItemGWatchNormal::vfunc80
 0x10015578 func   ?sub_1021b030@CPropHacking@@QAEXXZ CPropHacking::sub_1021b030
 0x1001557d func   ?sub_102a9c60@CUnknown102a9c60@@QAEHXZ CUnknown102a9c60::sub_102a9c60
+0x10015582 func   ?sub_102a0490@CAI_BaseNPCTroika@@QAE_NPAVVector@@@Z CAI_BaseNPCTroika::sub_102a0490
 0x10015587 func   ?vfunc113@CPropPadlock@@UAEXXZ CPropPadlock::vfunc113
 0x1001558c func   ?vfunc103@CLight@@QAEXXZ CLight::vfunc103
 0x10015591 func   ?sub_1038f020@CNPC_VManBat@@QAEXD@Z CNPC_VManBat::sub_1038f020

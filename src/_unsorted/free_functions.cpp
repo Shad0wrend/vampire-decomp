@@ -202116,6 +202116,57 @@ void CAI_BaseNPCTroika::sub_1029ff40(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a0490 size=0x302
+#include "CAI_BaseNPCTroika.h"
+#include "UTIL_Trace.h"
+#include <math.h>
+struct CPod3 { int a, b, c; };
+
+// TARGET: CAI_BaseNPCTroika::sub_102a0490
+bool CAI_BaseNPCTroika::sub_102a0490(Vector *pOut)
+{
+	static const float kDist = 50.0f;
+
+	if (!sub_10014df8(0x36))
+		return false;
+
+	CGameTrace tr;
+	sub_1003e250(&tr);
+
+	*pOut = *(Vector *)tr.m_planeNormal;
+
+	Vector vecDir = -*pOut;
+	vecDir.z = 0;
+	VectorNormalize(vecDir);
+	Vector vecFwd = vecDir * kDist;
+	Vector vecRight;
+	CrossProduct(Vector(0, 0, 1), vecDir, vecRight);
+	VectorNormalize(vecRight);
+	vecFwd *= kDist;
+
+	float flPrev = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		Vector vecStart; { const CPod3 *pc = (const CPod3 *)(vfunc217()); int a = pc->a; int b = pc->b; CPod3 *pd = (CPod3 *)&vecStart; pd->b = b; pd->a = a; pd->c = pc->c; }
+		Vector vecOfs = vecRight * g_105d1030[i * 2];
+		vecStart += vecOfs;
+		vecStart.z += g_105d1030[i * 2 + 1];
+		Vector vecEnd = vecStart + vecFwd;
+		UTIL_TraceLine_Calls(vecStart, vecEnd, 0x201400b, this, 0, &tr);
+		if (!(tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid))
+			return false;
+		if (DotProduct(*pOut, *(Vector *)tr.m_planeNormal) < 0.9659258f)
+			return false;
+		float f = kDist * tr.m_fraction;
+		if (i == 0)
+			flPrev = f;
+		else if ((float)fabs(f - flPrev) >= 3.0f)
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0870 size=0x80
 template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CAI_BaseNPCTroika.h"
