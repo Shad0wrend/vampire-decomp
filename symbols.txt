@@ -8597,6 +8597,7 @@
 0x1000c27a func   ?sub_10280de0@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_10280de0
 0x1000c27f func   ?vfunc315@CElderVitaePack@@UAE_NXZ CElderVitaePack::vfunc315
 0x1000c284 func   ?sub_103c8e70@@YAEXZ sub_103c8e70
+0x1000c289 func   ?sub_102f7e60@EditToolsV@@QAEXXZ EditToolsV::sub_102f7e60
 0x1000c28e func   ?vfunc180@CFuncMonitor@@QAEXXZ CFuncMonitor::vfunc180
 0x1000c293 func   ?sub_10135c10@CLogicSquadCondition@@QAE_NXZ CLogicSquadCondition::sub_10135c10
 0x1000c298 func   ?sub_100d5920@@YAXXZ sub_100d5920

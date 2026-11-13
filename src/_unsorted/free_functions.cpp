@@ -225053,6 +225053,449 @@ void CUnknown102f7ca0::sub_102f7ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f7e60 size=0xc92
+#include "Vector.h"
+#include "QAngle.h"
+#include "UTIL_Trace.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include <math.h>
+
+#define DEG2RAD(x) ((float)(x) * (float)(3.14159265358979323846f / 180.f))
+void __cdecl sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);	// AngleVectors
+
+#define V1(n) virtual void v##n();
+#define V10(p) V1(p##0) V1(p##1) V1(p##2) V1(p##3) V1(p##4) V1(p##5) V1(p##6) V1(p##7) V1(p##8) V1(p##9)
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+// the debug player: slot 193 = EyePosition, +0x206c = pl.v_angle
+class PlayerV
+{
+public:
+	V100(0) V10(10) V10(11) V10(12) V10(13) V10(14) V10(15) V10(16) V10(17) V10(18)
+	V1(190) V1(191) V1(192)
+	virtual Vector EyePosition();
+	char m_pad4[0x2068];
+	QAngle m_vAngle;	// 0x206c
+	void EyeVectors(Vector *pForward) { sub_10139610(m_vAngle, pForward, 0, 0); }
+};
+
+struct LinkV
+{
+	int m_h;
+	int m_iSrcID;	// 4
+	int m_iDestID;	// 8
+	int m_iAcceptedMoveTypes[22];	// 0xc
+	int m_LinkInfo;	// 0x64
+	int sub_102dda40(int startID);	// DestNodeID
+};
+
+struct NodeV
+{
+	unsigned int m_nHullMask;	// 0
+	int m_iID;	// 4
+	Vector m_vOrigin;	// 8
+	char m_pad14[0x6c - 0x14];
+	float m_flYaw;	// 0x6c
+	int m_eNodeType;	// 0x70
+	int m_eNodeInfo;	// 0x74
+	int m_nLinks;	// 0x78
+	LinkV **m_pLinks;	// 0x7c
+	char m_pad80[0x9c - 0x80];
+	float m_fl9c;	// 0x9c
+	Vector sub_102fb0d0(int hull);	// GetPosition
+	int NumLinks() { return m_nLinks; }
+	LinkV *GetLinkByIndex(int i) { return m_pLinks[i]; }
+	int GetType() { return m_eNodeType; }
+};
+
+struct NetworkV
+{
+	int m_iNumNodes;
+	NodeV **m_pAInode;
+	int NumNodes() { return m_iNumNodes; }
+	NodeV **AccessNodes() { return m_pAInode; }
+	bool sub_102f48b0(int a, int b);	// IsConnected
+};
+
+struct ManagerV { void sub_102f5120(); };	// RebuildNetworkGraph
+
+struct EditToolsV
+{
+	int m_pad0;
+	int m_pad4;
+	int m_debugNetOverlays;	// 8
+	int *m_pNodeIndexTable;	// 0xc
+	ManagerV *m_pManager;	// 0x10
+	NetworkV *m_pNetwork;	// 0x14
+	void sub_102f7e60();	// DrawAINetworkOverlay
+	void sub_102f7ca0();	// DrawEditInfoOverlay
+};
+
+extern char g_1093408c;	// CAI_NetworkManager::gm_fNetworksLoaded
+extern int g_109340e0;	// startDrawNode
+extern int g_109340e4;	// endDrawNode
+extern float g_10934084;	// flDrawDuration
+extern int g_109340d8;	// m_iHullDrawNum
+extern int g_106102f4;	// m_iVisibilityNode
+extern int g_106102f8;	// m_iGConnectivityNode
+extern int g_10552810;	// CBaseEntity::m_nDebugPlayer
+extern int (*g_109f388c)(char *, int, const char *, ...);	// Q_snprintf
+
+PlayerV *sub_101cd9e0(int index);	// UTIL_PlayerByIndex
+void sub_10143630(const Vector *pPos);	// NDebugOverlay::Grid
+void sub_10142e90(const Vector *pStart, const Vector *pEnd, int r, int g, int b, int noDepthTest, float flDuration);	// Line
+void sub_10142af0(const Vector *pOrigin, const Vector *pMins, const Vector *pMaxs, const Vector *pDir, int r, int g, int b, int a, float flDuration);	// BoxDirection
+void sub_10142aa0(const Vector *pOrigin, const Vector *pMins, const Vector *pMaxs, int r, int g, int b, int a, float flDuration);	// Box
+void sub_10143710(const Vector *pOrigin, const char *pszText, int bViewCheck, float flDuration);	// Text
+void sub_102d31c0(float flDuration);	// CAI_Hint::DrawHintOverlays
+const Vector &sub_102d6100(int hull);	// NAI_Hull::Mins
+const Vector &sub_102d6120(int hull);	// NAI_Hull::Maxs
+int sub_102d6210(int hull);	// NAI_Hull::Bits
+
+void EditToolsV::sub_102f7e60()
+{
+	if (!g_1093408c)
+	{
+		return;
+	}
+
+	g_109340e4 = g_109340e0 + 20;
+	g_10934084 = 0.1 * (m_pNetwork->NumNodes() - 1) / 20;
+	if (g_109340e4 > m_pNetwork->NumNodes())
+	{
+		g_109340e4 = m_pNetwork->NumNodes();
+	}
+
+	if (m_debugNetOverlays & 0x40)
+	{
+		PlayerV *pPlayer = sub_101cd9e0(g_10552810);
+
+		if (pPlayer)
+		{
+			Vector vForward;
+			Vector vSource = pPlayer->EyePosition();
+			pPlayer->EyeVectors(&vForward);
+
+			CGameTrace tr;
+			UTIL_TraceLine_Calls(vSource, vSource + vForward * 2048, 0x200400b, pPlayer, 0, &tr);
+
+			float dotPr = DotProduct(Vector(0, 0, 1), *(Vector *)&tr.m_planeNormal);
+			if (tr.m_fraction != 1.0 && dotPr > 0.5)
+			{
+				sub_10143630(&(*(Vector *)&tr.m_endpos + Vector(0, 0, 1)));
+			}
+		}
+	}
+
+	NodeV **pAINode = m_pNetwork->AccessNodes();
+
+	if (m_debugNetOverlays & 0x20)
+	{
+		if (m_debugNetOverlays & 0x10000000)
+		{
+			m_pManager->sub_102f5120();
+		}
+		else if (g_106102f8 != -1)
+		{
+			for (int node = 0; node < m_pNetwork->NumNodes(); node++)
+			{
+				if (m_pNetwork->sub_102f48b0(g_106102f8, node))
+				{
+					Vector srcPos = pAINode[g_106102f8]->sub_102fb0d0(g_109340d8);
+					Vector desPos = pAINode[node]->sub_102fb0d0(g_109340d8);
+					sub_10142e90(&srcPos, &desPos, 255, 0, 255, false, 0);
+				}
+			}
+		}
+	}
+
+	if (m_debugNetOverlays & 0x4)
+	{
+		if (m_debugNetOverlays & 0x10000000)
+		{
+			m_pManager->sub_102f5120();
+		}
+		else
+		{
+			for (int node = g_109340e0; node < g_109340e4; node++)
+			{
+				for (int link = 0; link < pAINode[node]->NumLinks(); link++)
+				{
+					if (pAINode[node]->GetLinkByIndex(link)->sub_102dda40(node) < node)
+					{
+						Vector srcPos = pAINode[pAINode[node]->GetLinkByIndex(link)->m_iSrcID]->sub_102fb0d0(g_109340d8);
+						Vector desPos = pAINode[pAINode[node]->GetLinkByIndex(link)->m_iDestID]->sub_102fb0d0(g_109340d8);
+						Vector direction = desPos - srcPos;
+						float length = VectorNormalize(direction);
+						Vector hullMins = sub_102d6100(g_109340d8);
+						Vector hullMaxs = sub_102d6120(g_109340d8);
+						hullMaxs.x = length + hullMaxs.x;
+
+						if (pAINode[node]->GetLinkByIndex(link)->m_iAcceptedMoveTypes[g_109340d8] & 4)
+						{
+							sub_10142af0(&srcPos, &hullMins, &hullMaxs, &direction, 100, 255, 255, 20, g_10934084);
+						}
+
+						if (pAINode[node]->GetLinkByIndex(link)->m_iAcceptedMoveTypes[g_109340d8] & 8)
+						{
+							if (pAINode[pAINode[node]->GetLinkByIndex(link)->m_iSrcID]->m_vOrigin != pAINode[pAINode[node]->GetLinkByIndex(link)->m_iDestID]->m_vOrigin)
+							{
+								hullMaxs.x = hullMaxs.x - length;
+								if (srcPos.z < desPos.z)
+								{
+									hullMaxs.z = length + hullMaxs.z;
+								}
+								else
+								{
+									hullMins.z = hullMins.z - length;
+								}
+								direction = Vector(0, 1, 0);
+							}
+							sub_10142af0(&srcPos, &hullMins, &hullMaxs, &direction, 255, 0, 255, 20, g_10934084);
+						}
+
+						if (pAINode[node]->GetLinkByIndex(link)->m_iAcceptedMoveTypes[g_109340d8] & 1)
+						{
+							sub_10142af0(&srcPos, &hullMins, &hullMaxs, &direction, 0, 255, 50, 20, g_10934084);
+						}
+						else if (pAINode[node]->GetLinkByIndex(link)->m_iAcceptedMoveTypes[g_109340d8] & 2)
+						{
+							sub_10142af0(&srcPos, &hullMins, &hullMaxs, &direction, 0, 0, 255, 20, g_10934084);
+						}
+					}
+				}
+			}
+		}
+	}
+
+	if (m_debugNetOverlays & 0x80)
+	{
+		sub_102d31c0(g_10934084);
+	}
+
+	if (m_debugNetOverlays & 0x10b)
+	{
+		Vector hullMins = sub_102d6100(g_109340d8);
+		Vector hullMaxs = sub_102d6120(g_109340d8);
+
+		for (int node = g_109340e0; node < g_109340e4; node++)
+		{
+			NodeV *pNode = pAINode[node];
+			if (pNode->GetType() != 1)
+			{
+				if (m_debugNetOverlays & 0x8)
+				{
+					if (m_debugNetOverlays & 0x10000000)
+					{
+						m_pManager->sub_102f5120();
+					}
+					else
+					{
+						for (int link = 0; link < pNode->NumLinks(); link++)
+						{
+							if (pNode->GetLinkByIndex(link)->sub_102dda40(node) < node)
+							{
+								Vector srcPos = pAINode[pNode->GetLinkByIndex(link)->m_iSrcID]->sub_102fb0d0(g_109340d8);
+								Vector desPos = pAINode[pNode->GetLinkByIndex(link)->m_iDestID]->sub_102fb0d0(g_109340d8);
+
+								if (pAINode[pNode->GetLinkByIndex(link)->m_iSrcID]->GetType() == 2)
+								{
+									srcPos.z += 1.0;
+								}
+								if (pAINode[pNode->GetLinkByIndex(link)->m_iDestID]->GetType() == 2)
+								{
+									desPos.z += 1.0;
+								}
+
+								int linkInfo = pNode->GetLinkByIndex(link)->m_LinkInfo;
+								if (linkInfo & 1)
+								{
+									sub_10142e90(&srcPos, &desPos, 255, 0, 0, false, g_10934084);
+								}
+								else if (linkInfo & 0x1000)
+								{
+									sub_10142e90(&srcPos, &desPos, 100, 100, 100, false, g_10934084);
+								}
+								else if (linkInfo & 0x2000)
+								{
+									sub_10142e90(&srcPos, &desPos, 0xc0, 0xc0, 0x40, false, g_10934084);
+								}
+								else if (linkInfo & 0xf0)
+								{
+									int bit = 0x10 << (((int)gpGlobals->curtime >> 4) & 3);
+									if (linkInfo & bit)
+									{
+										sub_10142e90(&srcPos, &desPos, 0x60, 0x20, 0x20, false, g_10934084);
+									}
+									else
+									{
+										sub_10142e90(&srcPos, &desPos, 0x20, 0x60, 0x20, false, g_10934084);
+									}
+								}
+								else
+								{
+									int moveTypes = pNode->GetLinkByIndex(link)->m_iAcceptedMoveTypes[g_109340d8];
+									if (moveTypes & 4)
+									{
+										sub_10142e90(&srcPos, &desPos, 100, 255, 255, false, g_10934084);
+									}
+									else if (moveTypes & 8)
+									{
+										sub_10142e90(&srcPos, &desPos, 255, 0, 255, false, g_10934084);
+									}
+									else if (moveTypes & 1)
+									{
+										sub_10142e90(&srcPos, &desPos, 0, 255, 50, false, g_10934084);
+									}
+									else if (moveTypes & 2)
+									{
+										sub_10142e90(&srcPos, &desPos, 0, 0, 255, false, g_10934084);
+									}
+									else
+									{
+										sub_10142e90(&srcPos, &desPos, 100, 25, 25, false, g_10934084);
+									}
+								}
+							}
+						}
+					}
+				}
+
+				if (m_debugNetOverlays & 0x103)
+				{
+					int r = 255;
+					int g = 0;
+					int b = 0;
+
+					if ((m_debugNetOverlays & 0x10) && g_106102f4 != -1)
+					{
+						if (m_debugNetOverlays & 0x10000000)
+						{
+							m_pManager->sub_102f5120();
+						}
+					}
+
+					if ((m_debugNetOverlays & 0x20) && g_106102f8 != -1)
+					{
+						if (m_debugNetOverlays & 0x10000000)
+						{
+							m_pManager->sub_102f5120();
+						}
+						else if (m_pNetwork->sub_102f48b0(g_106102f8, node))
+						{
+							r = 0;
+							g = 0;
+							b = 255;
+						}
+					}
+					else
+					{
+						if (pNode->m_eNodeInfo & 0x20000000)
+						{
+							r = 200;
+							g = 200;
+							b = 200;
+						}
+						else if (pNode->m_eNodeInfo & 0x40000000)
+						{
+							r = 100;
+							g = 25;
+							b = 25;
+						}
+						else if (pNode->GetType() == 4)
+						{
+							r = 255;
+							g = 0;
+							b = 255;
+						}
+						else if (pNode->GetType() == 3)
+						{
+							r = 0;
+							g = 255;
+							b = 255;
+						}
+						else if (pNode->GetType() == 2)
+						{
+							r = 0;
+							g = 255;
+							b = 100;
+						}
+					}
+
+					if (pNode->m_fl9c > gpGlobals->curtime)
+					{
+						r >>= 1;
+						g >>= 1;
+						b >>= 1;
+					}
+
+					Vector nodePos;
+					nodePos = pNode->sub_102fb0d0(g_109340d8);
+
+					if (m_debugNetOverlays & 0x1)
+					{
+						sub_10142aa0(&nodePos, &Vector(-5, -5, -5), &Vector(5, 5, 5), r, g, b, 0, g_10934084);
+					}
+					if (m_debugNetOverlays & 0x100)
+					{
+						sub_10142aa0(&nodePos, &hullMins, &hullMaxs, r, g, b, 0, g_10934084);
+					}
+
+					if (pNode->m_nHullMask & sub_102d6210(g_109340d8))
+					{
+						if (m_debugNetOverlays & 0x1)
+						{
+							sub_10142aa0(&pNode->m_vOrigin, &Vector(-5, -5, -5), &Vector(5, 5, 5), 255, 0x60, 0x60, 0x40, g_10934084);
+						}
+						if (m_debugNetOverlays & 0x100)
+						{
+							sub_10142aa0(&pNode->m_vOrigin, &hullMins, &hullMaxs, 255, 0x60, 0x60, 0x40, g_10934084);
+						}
+					}
+
+					if (pNode->GetType() == 4)
+					{
+						Vector offsetDir = 12.0f * Vector(cos(DEG2RAD(pNode->m_flYaw)), sin(DEG2RAD(pNode->m_flYaw)), g_10934084);
+						sub_10142e90(&nodePos, &(nodePos + offsetDir), r, g, b, false, g_10934084);
+					}
+
+					if (m_debugNetOverlays & 0x2)
+					{
+						char id[5];
+
+						if (engine->vfunc12())
+						{
+							g_109f388c(id, sizeof(id), "%i (%i)", node, m_pNodeIndexTable[pNode->m_iID]);
+						}
+						else
+						{
+							g_109f388c(id, sizeof(id), "%i", node);
+						}
+						Vector loc = nodePos;
+						loc.x += 6;
+						loc.y += 6;
+						loc.z += 6;
+						sub_10143710(&loc, id, true, g_10934084);
+					}
+				}
+			}
+		}
+	}
+
+	if (m_debugNetOverlays & 0x10f)
+	{
+		sub_102f7ca0();
+	}
+
+	g_109340e0 = g_109340e4;
+	if (g_109340e0 >= m_pNetwork->NumNodes())
+	{
+		g_109340e0 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f8e30 size=0x65
 #include "CAI_NetworkManager.h"
 #include "engineserver.h"
