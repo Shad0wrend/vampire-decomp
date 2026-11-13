@@ -679,6 +679,7 @@
 0x10001e24 func   ?sub_103d4a60@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103d4a60
 0x10001e2e func   ?vfunc328@CNPC_VWerewolf@@UAE_NXZ CNPC_VWerewolf::vfunc328
 0x10001e33 func   ?sub_10149e00@@YIHH@Z sub_10149e00
+0x10001e38 func   ?sub_101200c0@CGameMovement@@QAEXXZ CGameMovement::sub_101200c0
 0x10001e3d func   ?vfunc82@CSteamJet@@UAEPAUdatamap_t@@XZ CSteamJet::vfunc82
 0x10001e47 func   ?sub_104292c0@@YAHXZ sub_104292c0
 0x10001e4c func   ??0CPlayerEvents@@QAE@XZ CPlayerEvents::CPlayerEvents

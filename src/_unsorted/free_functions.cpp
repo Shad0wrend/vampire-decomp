@@ -79357,6 +79357,293 @@ void CGameMovement::sub_1011ffe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101200c0 size=0x8a4
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CVProfile.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "Ray_t.h"
+#include "ConVar.h"
+#include "globalvars.h"
+#include <math.h>
+
+extern Vector g_1070d1b0;	// vec3_origin
+extern ConVar g_109eefb8;	// sv_friction
+extern ConVar g_109ef288;	// sv_accelerate
+void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+void sub_10139500(const Vector &start, float scale, const Vector &dir, Vector &dest);
+
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+#define MOVE ((CMoveFlagsView *)m_pMove)
+
+struct CCycleCountX
+{
+	unsigned __int64 m_Int64;
+	CCycleCountX() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm
+		{
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx+4], edx
+		}
+	}
+	void End()
+	{
+		CCycleCountX cnt;
+		cnt.Sample();
+		m_Int64 = cnt.m_Int64 - m_Int64;
+	}
+};
+
+struct CGameMovementHullView
+{
+	virtual void s0();
+	virtual void s1();
+	virtual const Vector &GetPlayerMins(char bDucked, char b);
+	virtual const Vector &GetPlayerMaxs(char bDucked, char b);
+};
+
+// ConVar::GetFloat with the game's shared 0.0f
+inline float CvarFloat(ConVar &cv) { return cv.m_pParent->vfunc1() ? g_104454c4 : cv.m_pParent->m_fValue; }
+
+struct CMoveViewOffsetView
+{
+	char m_pad0000[0x184];
+	Vector m_vecViewOffset;
+	const Vector &GetViewOffset() const { return m_vecViewOffset; }
+};
+
+// Troika's Ray_t::Init(start, end, mins, maxs, bSwept): the SDK body plus the 2D extent length
+struct RayX : Ray_t
+{
+	void InitX(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, bool bSwept)
+	{
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != g_104454c4;
+		Vector &extents = *(Vector *)m_StartOffset;
+		Vector &offset = *(Vector *)m_Extents;
+		VectorSubtract(maxs, mins, extents);
+		VectorScale(extents, 0.5f, extents);
+		float xx, yy;
+		if (0) xx = 0;
+		yy = extents.y * extents.y;
+		xx = extents.x * extents.x;
+		m_IsRay = (extents.z * extents.z + yy + xx < 1e-6);
+		offset.x = maxs[0] + mins.x;
+		offset.y = mins.y + maxs.y;
+		offset.z = maxs.z + mins.z;
+		VectorScale(offset, 0.5f, offset);
+		VectorAdd(start, offset, *(Vector *)m_Start);
+		VectorScale(offset, -1.0f, offset);
+		m_b32 = 0;
+		m_b33 = 0;
+		m_n34 = 0;
+		if (bSwept && !m_IsRay) {
+			m_n34 = sqrt(yy + xx);
+			if (m_n34 > 1e-6)
+				m_b33 = 1;
+		}
+	}
+};
+
+__forceinline void VProfEnter(const char *pszName, int detail, const char *pszGroup)
+{
+	CVProfile *p = g_109f3648;
+	if (p->m_enabled != 0 || !p->m_bAtRoot) {
+		if (pszName != p->m_pCurNode->m_pszName)
+			p->m_pCurNode = p->m_pCurNode->GetSubNode(pszName, detail, pszGroup);
+		CVProfNode *node = p->m_pCurNode;
+		node->m_nCurFrameCalls++;
+		if (node->m_nRecursions++ == 0) {
+			((CCycleCountX *)&node->m_CurFrameTime)->Sample();
+			g_109f3648->PushGroup(node->m_nBudgetGroupID);
+		}
+		p->m_bAtRoot = false;
+	}
+}
+
+__forceinline void VProfPopGroup(CVProfile *p)
+{
+	p->m_nGroupStackDepth--;
+	if (p->m_GroupIDStack[p->m_nGroupStackDepth] != p->m_GroupIDStack[p->m_nGroupStackDepth + 1] && p->m_bVTuneGroupsEnabled && p->m_GroupIDStack[p->m_nGroupStackDepth + 1] == p->m_nVTuneGroupID)
+		vtune(false);
+}
+
+__forceinline bool VProfNodeExit(CVProfNode *node)
+{
+	if (--node->m_nRecursions == 0 && node->m_nCurFrameCalls != 0) {
+		CCycleCountX *pTimer = (CCycleCountX *)&node->m_CurFrameTime;
+		pTimer->End();
+		node->m_TotalTime += pTimer->m_Int64;
+		VProfPopGroup(g_109f3648);
+	}
+	return node->m_nRecursions == 0;
+}
+
+__forceinline void VProfExit()
+{
+	CVProfile *p = g_109f3648;
+	if (!p->m_bAtRoot || p->m_enabled != 0) {
+		if (VProfNodeExit(p->m_pCurNode))
+			p->m_pCurNode = p->m_pCurNode->m_pParent;
+		p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+	}
+}
+
+namespace block_101200c0 {
+struct CGameMovementUnit : CGameMovement
+{
+	float *sub_1011e350();
+	float *sub_1011e310();
+	__forceinline void TraceStep(const Vector &dest, unsigned int fMask, int collisionGroup, CGameTrace &pm)
+	{
+		RayX ray;
+		{
+			Vector start = dest;
+			if (((CMoveFlagsView *)m_pMove)->m_b1F28)
+				start.z = dest.z + ((CMoveFlagsView *)m_pMove)->m_fl1F24 + 1.0f;
+			VProfEnter("CGameMovement::TracePlayerBBox", 0, "Unaccounted");
+			bool bSwept = (((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1;
+			const Vector &maxs = *(Vector *)sub_1011e350();
+			const Vector &mins = *(Vector *)sub_1011e310();
+			ray.InitX(start, dest, mins, maxs, bSwept);
+		}
+		{
+			CTraceFilterSimple filter(((CBaseHandle *)&((CMovePlayerView *)m_pPlayer)->m_hRef)->Get(), collisionGroup);
+			g_1070b254->vfunc4(&ray, fMask, (CTraceFilterNoCharacterCollide *)&filter, &pm);
+		}
+		VProfExit();
+	}
+};
+
+float *CGameMovementUnit::sub_1011e350()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMax.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMax.x : &m_vecHullMax.x;
+}
+
+float *CGameMovementUnit::sub_1011e310()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMin.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMin.x : &m_vecHullMin.x;
+}
+}
+using namespace block_101200c0;
+
+// TARGET: CGameMovement::sub_101200c0
+void CGameMovement::sub_101200c0()
+{
+	int i;
+	CGameMovementHullView *hull = (CGameMovementHullView *)this;
+	Vector wishvel; wishvel = g_1070d1b0;
+	float speed, newspeed, addspeed, accelspeed;
+	float wishspeed;
+	Vector wishdir;
+	Vector dest;
+	Vector temp;
+	CGameTrace pm;
+	Vector forward, right, up;
+
+	sub_10139610(PLAYER->m_vecViewAngles0c, &forward, &right, &up);
+
+	for (i = 0; i < 3; i++)
+		wishvel[i] = forward[i] * PLAYER->m_flForwardMove + ((const Vector &)right)[i] * PLAYER->m_flSideMove;
+
+	bool bInWater; bInWater = false;
+	bool bAtSurface = false;
+	Vector point;
+	point[0] = (hull->GetPlayerMins(MOVE->m_bDucked, MOVE->m_b1edc)[0] + hull->GetPlayerMaxs(MOVE->m_bDucked, MOVE->m_b1edc)[0]) * 0.5 + PLAYER->m_vecOrigin[0];
+	point[1] = (hull->GetPlayerMins(MOVE->m_bDucked, MOVE->m_b1edc)[1] + hull->GetPlayerMaxs(MOVE->m_bDucked, MOVE->m_b1edc)[1]) * 0.5 + PLAYER->m_vecOrigin[1];
+	point[2] = PLAYER->m_vecOrigin[2] + ((CMoveViewOffsetView *)m_pMove)->GetViewOffset()[2];
+	point[2] -= (point[2] - ((hull->GetPlayerMins(MOVE->m_bDucked, MOVE->m_b1edc)[2] + hull->GetPlayerMaxs(MOVE->m_bDucked, MOVE->m_b1edc)[2]) * 0.75 + PLAYER->m_vecOrigin[2])) * 0.5;
+
+	if (g_1070b254->vfunc0(&point.x, 0) & 0x4030) {
+		point[2] += 3.0f;
+		bInWater = true;
+		if (!(g_1070b254->vfunc0(&point.x, 0) & 0x4030))
+			bAtSurface = bInWater;
+	} else if (wishvel.z > g_104454c4 && !(2 & PLAYER->m_fFlags24)) {
+		wishvel.z = 0;
+	}
+
+	if (PLAYER->m_fFlags24 & 2) {
+		wishvel.z = wishvel.z + PLAYER->m_flClientMaxSpeed;
+	} else if (PLAYER->m_flForwardMove == g_104454c4 && PLAYER->m_flSideMove == g_104454c4 && PLAYER->m_flUpMove == g_104454c4) {
+		if (!bAtSurface) {
+			if (bInWater)
+				wishvel.z = wishvel.z + 40.0f;
+			else
+				wishvel.z = -40.0f;
+		}
+	} else {
+		wishvel.z += PLAYER->m_flUpMove;
+	}
+
+	VectorCopy(wishvel, wishdir);
+	wishspeed = VectorNormalize(wishdir);
+	if (wishspeed > PLAYER->m_flMaxSpeed) {
+		double s = PLAYER->m_flMaxSpeed / wishspeed;
+		wishvel.x *= s;
+		wishvel.y *= s;
+		wishvel.z *= s;
+		wishspeed = PLAYER->m_flMaxSpeed;
+	}
+	wishspeed *= 0.8;
+
+	VectorCopy(PLAYER->m_vecVelocity, temp);
+	speed = VectorNormalize(temp);
+	if (speed != g_104454c4) {
+		newspeed = speed - gpGlobals->frametime * m_fieldA0 * CvarFloat(g_109eefb8) * speed;
+		if (newspeed < 0.1f)
+			newspeed = g_104454c4;
+		VectorScale(PLAYER->m_vecVelocity, newspeed / speed, PLAYER->m_vecVelocity);
+	} else {
+		newspeed = g_104454c4;
+	}
+
+	if (wishspeed >= 0.1f) {
+		addspeed = wishspeed - newspeed;
+		if (addspeed > g_104454c4) {
+			VectorNormalize(wishvel);
+			accelspeed = gpGlobals->frametime * m_fieldA0 * CvarFloat(g_109ef288) * wishspeed;
+			if (accelspeed > addspeed)
+				accelspeed = addspeed;
+			for (i = 0; i < 3; i++) {
+				float deltaSpeed = accelspeed * wishvel[i];
+				PLAYER->m_vecVelocity[i] = PLAYER->m_vecVelocity[i] + deltaSpeed;
+				PLAYER->m_vec80[i] += deltaSpeed;
+			}
+		}
+	}
+
+	VectorAdd(PLAYER->m_vecVelocity, MOVE->m_vec3b0, PLAYER->m_vecVelocity);
+
+	sub_10139500(PLAYER->m_vecOrigin, gpGlobals->frametime, PLAYER->m_vecVelocity, dest);
+
+	((CGameMovementUnit *)this)->TraceStep(dest, 0x201400b, 6, pm);
+
+	if (!pm.m_startsolid && !pm.m_allsolid) {
+		PLAYER->m_fl007C += (pm.m_endpos[2] - PLAYER->m_vecOrigin.z);
+		PLAYER->m_vecOrigin = *(Vector *)pm.m_endpos;
+	} else {
+		slot19(0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120ba0 size=0x2c1
 #include "CTraceFilterNoCharacterCollide.h"
 #include "CGameMovement.h"
