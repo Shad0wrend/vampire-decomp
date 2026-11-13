@@ -190130,6 +190130,47 @@ void CUnk10265a90::sub_10265a90(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10266690 size=0x57
+#include "CAI_BaseNPC.h"
+#include "CVDmg_t.h"
+
+struct SInfo
+{
+	CVDmg_t *m_pDmg;
+	int m_unk04; int m_unk08; int m_unk0c; int m_unk10; int m_unk14; int m_unk18; int m_unk1c;
+	int m_unk20; int m_unk24; int m_unk28; int m_unk2c;
+	float m_flDamage;
+	float GetDamage() const { return m_pDmg ? (float)m_pDmg->sub_101faa70() : m_flDamage; }
+};
+
+#define V(n) virtual void v##n();
+#define V10(p) V(p##0) V(p##1) V(p##2) V(p##3) V(p##4) V(p##5) V(p##6) V(p##7) V(p##8) V(p##9)
+
+struct SRulesView
+{
+	V10(0) V10(1) V10(2) V(30) V(31) V(32)
+	virtual void RadiusDamage(const SInfo &info, const Vector &vecSrc, float flRadius, int iClassIgnore, void *pIgnore);
+};
+
+struct SNpcSlots
+{
+	V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10(9)
+	V10(10) V10(11) V10(12) V10(13) V10(14) V10(15) V10(16) V10(17) V10(18) V10(19)
+	V10(20)
+	V(210) V(211) V(212) V(213) V(214) V(215) V(216)
+	virtual const Vector &GetAbsOrigin();
+};
+
+extern SRulesView *g_1070ba0c;
+
+// TARGET: CAI_BaseNPC::sub_10266690
+void CAI_BaseNPC::sub_10266690(void *pInfo, void *pOther)
+{
+	const SInfo &info = *(SInfo *)pInfo;
+	g_1070ba0c->RadiusDamage(info, ((SNpcSlots *)this)->GetAbsOrigin(), info.GetDamage() * 2.5, (int)pOther, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10266710 size=0x46
 #include "CVDmg_t.h"
 #include "CGameRules.h"
