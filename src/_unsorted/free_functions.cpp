@@ -166570,6 +166570,45 @@ CPropKeypad *CPropKeypad::sub_1021d890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021da40 size=0x132
+#include "CBaseEntity.h"
+#include "CPropKeypad.h"
+#include "CUnknown10248a50.h"
+#include "CKeyValuesX.h"
+#include <string.h>
+extern char g_106b8540[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+__declspec(dllimport) void Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+__declspec(dllimport) int Q_strnicmp(const char *s1, const char *s2, int n);
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+extern IFileSys *g_1070b238;
+
+void CPropKeypad::sub_1021da40()
+{
+	Q_strncpy(m_szTitle840, "##ERROR##", sizeof(m_szTitle840));
+	CUnknown10248a50 *pFile = new CUnknown10248a50("keypad_strings");
+	if (pFile) {
+		IFileSys *fs = g_1070b238;
+		if (pFile->sub_102480f0("vdata/HackTerminals/prop_keypad.txt", fs, 0, true)) {
+			for (CKeyValuesX *pKey = ((CKeyValuesX *)pFile)->sub_10248af0("keypad"); pKey; pKey = pKey->sub_10248b60()) {
+				const char *pszID = pKey->sub_10248cd0("TextID", g_106b8540);
+				if (!Q_strnicmp(pszID, STRINGR(m_pszTextID884), strlen(pszID))) {
+					Q_strncpy(this->m_szTitle840 + 0, (const char *)(pKey->sub_10248cd0("TitleText", g_106b8540)), sizeof(m_szTitle840));
+					break;
+				}
+			}
+			pFile->sub_100046f1();
+			operator delete(pFile);
+			return;
+		}
+		pFile->sub_100046f1();
+		operator delete(pFile);
+	}
+	Warning("Error in CPropKeypad::LoadTextStrings for %s\n", ((CBaseEntity *)this)->sub_100ab4f0());
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021dbd0 size=0x17
 #include "CPropKeypad.h"
 #include "CBaseEntity.h"
