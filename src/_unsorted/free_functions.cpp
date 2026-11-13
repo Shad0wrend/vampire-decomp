@@ -275702,6 +275702,146 @@ bool CNPC_VWerewolf::sub_103d2810(void *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d2a10 size=0x66b
+#define sub_103d2a10() sub_103d2a10_void(); bool sub_103d2a10()
+#define sub_103d0db0(a, b) sub_103d0db0_int(a, b); bool sub_103d0db0(a, b)
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include "CAIHintSlots.h"
+#include "CEHandleGet.h"
+#include "CGlobalEntityList.h"
+
+#undef sub_103d2a10
+#undef sub_103d0db0
+
+extern Vector g_1070d1b0;
+
+inline bool operator==(const CNPC_VWerewolfVec3 &a, const CNPC_VWerewolfVec3 &b) { return b.x == a.x && b.y == a.y && b.z == a.z; }
+
+// TARGET: CNPC_VWerewolf::sub_103d2a10
+bool CNPC_VWerewolf::sub_103d2a10()
+{
+	ScopeTrace trace("CNPC_VWerewolf::FindMoveHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (m_nTick66d4 == engine->vfunc120())
+		return false;
+	if (m_fl66d8 + 0.5f > gpGlobals->curtime)
+		return false;
+	if (m_pHint66bc)
+		return true;
+	if (!sub_103cf5f0())
+		return false;
+	sub_103d1ca0();
+	m_nTick66d4 = engine->vfunc120();
+	m_fl66d8 = gpGlobals->curtime;
+	CAI_Hint *pHead = g_10925450;
+	if (!pHead)
+		return false;
+	if (!g_10566458->sub_100290c0((unsigned int *)&m_h628c))
+		return false;
+
+	CAI_Hint *pCur = m_n66b8 ? ((CAI_Hint *)m_n66b8)->m_pNext : 0;
+	if (!pCur)
+		pCur = pHead;
+
+	CAI_Hint *pBest = 0;
+	int nTried = 0;
+	bool bSuccess = false;
+	float flBest = 2500.0f;
+	Vector vecOrigin = *(Vector *)vfunc217();
+	CNPC_VWerewolfVec3 vecRef3 = sub_103d9c90();
+	Vector &vecRef = *(Vector *)&vecRef3;
+	Vector vecHint = g_1070d1b0;
+	Vector vecEnd = g_1070d1b0;
+	CUtlVector<CNPC_VWerewolfVec3> vecUnreachable;
+	CUtlVector<CNPC_VWerewolfVec3> vecReachable;
+	if ((m_nFlags66e8 & 2) == 2 && m_pHint66c4)
+	{
+		CNPC_VWerewolfVec3 tmp;
+		vecRef = *(Vector *)sub_103d6770(&tmp, m_pHint66c4);
+	}
+	do
+	{
+		if (sub_103d2070(pCur))
+		{
+			pBest = pCur;
+			break;
+		}
+		if (sub_103d8060(pCur))
+		{
+			if (nTried >= 15)
+			{
+				if (pBest)
+					break;
+				m_n66b8 = (int)pCur;
+				return sub_103d1d60("FindMoveHint", false);
+			}
+			int nType = pCur->m_n5dc;
+			sub_103d6390(pCur);
+			CNPC_VWerewolfVec3 t1;
+			CNPC_VWerewolfVec3 t2;
+			vecHint = *(Vector *)sub_103d6770(&t1, pCur);
+			*(CNPC_VWerewolfVec3 *)&vecEnd = *sub_103d68d0(&t2, pCur);
+			Vector vd; VectorSubtract(vecOrigin, vecHint, vd); float dist = vd.Length();
+			if (dist < flBest || nType == 0x3aa5)
+			{
+				if (vecUnreachable.Find(*(CNPC_VWerewolfVec3 *)&vecEnd) == -1)
+				{
+					if (vecReachable.Find(*(CNPC_VWerewolfVec3 *)&vecEnd) == -1)
+					{
+						nTried++;
+						if (!sub_103d0db0(*(CNPC_VWerewolfVec3 *)&vecEnd, *(CNPC_VWerewolfVec3 *)&vecRef))
+							goto add;
+						nTried++;
+						if (!sub_103d0db0(*(CNPC_VWerewolfVec3 *)&vecOrigin, *(CNPC_VWerewolfVec3 *)&vecHint))
+							goto add;
+						vecReachable.AddToTail(*(CNPC_VWerewolfVec3 *)&vecEnd);
+					}
+					flBest = dist;
+					pBest = pCur;
+					goto next;
+				}
+			}
+add:
+			vecUnreachable.AddToTail(*(CNPC_VWerewolfVec3 *)&vecEnd);
+		}
+next:
+		if (0) VectorClear(vecHint);
+		pCur = pCur->m_pNext;
+		if (!pCur && m_n66b8)
+		{
+			void *pNode = sub_103d0ad0();
+			if (pNode)
+				m_n6708 = *(int *)((char *)pNode + 0x94);
+			pCur = g_10925450;
+		}
+	} while (pCur != (CAI_Hint *)m_n66b8);
+	m_n66b8 = (int)pBest;
+	if (pBest)
+	{
+		bSuccess = true;
+		sub_103d44e0((CNPC_VWerewolfHint66b0 *)pBest, 0);
+	}
+	return sub_103d1d60("FindMoveHint", bSuccess);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d3220 size=0xf6
 #include "CNPC_VWerewolf.h"
 struct TraceEntry { const char *a, *b, *c; };
