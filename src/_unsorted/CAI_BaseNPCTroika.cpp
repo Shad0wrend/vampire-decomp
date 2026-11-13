@@ -2330,6 +2330,65 @@ bool CAI_BaseNPCTroika::vfunc531(void *pTarget, void *pDoor, float flDist, int *
 }
 // END FUNCTION
 
+// FUNCTION: 0x10298ad0 size=0x19d
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include <string.h>
+extern int (*g_109f388c)(char *pDest, int nSize, const char *pFmt, ...);
+extern void (*g_109f3860)(char *pDest, int nSize);
+extern char g_105d90c4[];
+extern char g_106b8540[];
+void sub_101d0ec0(const char *);
+void sub_101d0f10(char *, const char *, int, int);
+struct CUnknown10924980 { int sub_100ec640(void *p); };
+extern CUnknown10924980 g_10924980;
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CS { const char *p; CS(const char *s) { p = *s ? s : 0; } };
+struct SV { const char *pszValue; bool operator!() const { return pszValue == 0; } const char *ToCStr() const { return pszValue ? pszValue : g_106b8540; } };
+struct NPCView {
+    virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+    virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8();
+    virtual SV *GetN(int *pOut);
+    virtual void SetIdx(int idx);
+    V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j) V10(k) V10(l) V10(m) V10(n) V10(o) V10(p) V10(q) V10(r) V10(s) V10(t) V10(u) V10(v)
+    virtual void z0();
+    virtual void SetThing(CS s);
+    char pad[0x128 - 4];
+    const char *m_pName128;
+    char pad2[0x1a98 - 0x12c];
+    const char *m_pWeapon1a98;
+    char pad3[0x64e8 - 0x1a9c];
+    int m_n64e8;
+};
+inline const char *STRS(const string_t &s) { return s.pszValue ? s.pszValue : g_106b8540; }
+inline const char *STRING(const char *s) { return s ? s : g_106b8540; }
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+void CAI_BaseNPCTroika::vfunc104()
+{
+    char buf[0x104];
+    NPCView *v = (NPCView *)this;
+    int n;
+    if (!*v->GetN(&n) || !v->GetN(&n)->ToCStr() || !v->GetN(&n)->ToCStr()[0])
+        v->SetThing(CS(g_105d90c4));
+    v->SetIdx(engine->vfunc13(v->GetN(&n)->ToCStr(), 0));
+    if (v->m_pWeapon1a98) {
+        if (strcmp(STRINGR(v->m_pWeapon1a98), "0") && strcmp(STRINGR(v->m_pWeapon1a98), "item_w_unarmed"))
+            sub_101d0ec0(STRINGR(v->m_pWeapon1a98));
+    }
+    CAI_BaseNPC::vfunc104();
+    if (v->m_pName128) {
+        g_109f388c(buf, 0x104, "sound/character/%s", STRINGR(v->m_pName128));
+        buf[strlen(buf) - 4] = 0;
+        g_109f3860(buf, strlen(buf));
+        sub_101d0f10(buf, ".wav", 1, 0);
+        sub_101d0f10(buf, ".mp3", 1, 0);
+    }
+    v->m_n64e8 = g_10924980.sub_100ec640(this);
+    this->vfunc608("Normal");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10298ce0 size=0x32
 #include "CAI_BaseNPCTroika.h"
 #include "CUnknown100ecee0.h"

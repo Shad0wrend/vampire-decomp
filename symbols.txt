@@ -6556,6 +6556,7 @@
 0x100097a5 func   ?sub_10360560@@YADXZ sub_10360560
 0x100097aa func   ?sub_101ecb90@CUnknown109f08c0@@QAEDPAVIKVNodeView@@@Z CUnknown109f08c0::sub_101ecb90
 0x100097af func   ?vfunc113@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc113
+0x100097b4 func   ?vfunc104@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc104
 0x100097b9 func   _trigger_werewolf_zone trigger_werewolf_zone
 0x100097be func   ?vfunc38@CSave@@UAEHXZ CSave::vfunc38
 0x100097c3 func   _hud_image hud_image
