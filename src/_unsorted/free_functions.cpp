@@ -187790,6 +187790,58 @@ int CUnknown10249aa0::sub_10249aa0(unsigned int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10249c70 size=0x299
+#include "utlvector.h"
+#include "utlrbtree.h"
+#include "CUnknown10249fc0.h"
+
+struct CUnknown10249fc0_Entry
+{
+	int m_n0;
+	int m_nKey;
+};
+
+class CSymMap
+{
+public:
+	CUtlRBTree<CUnknown10249fc0_Entry, unsigned short> m_Tree;
+	CUnknown10249fc0_Sub m_Symbols;	// 0x18
+
+	int &Element(unsigned short i) { return m_Tree.Element(i).m_nKey; }
+	int &operator[](unsigned short i) { return m_Tree.Element(i).m_nKey; }
+	const unsigned short *sub_1024a2e0(unsigned short i);
+	bool IsValidIndex(unsigned short i) const { return m_Tree.IsValidIndex(i); }
+	unsigned short FirstInorder() const { return m_Tree.FirstInorder(); }
+	unsigned short NextInorder(unsigned short i) const { return m_Tree.NextInorder(i); }
+};
+#define M ((CSymMap *)m_pTree)
+struct CU : CUnknown10249fc0
+{
+	bool IsValidIndex(unsigned short i) { return M->IsValidIndex(i); }
+	unsigned short FirstInorder() { return M->FirstInorder(); }
+	unsigned short NextInorder(unsigned short i) { return M->NextInorder(i); }
+	int &Element(unsigned short i) { return (*M)[i]; }
+	const char *String(unsigned short i) { return (const char *)M->m_Symbols.sub_1024b830(*M->sub_1024a2e0(i)); }
+};
+#define U ((CU *)this)
+
+// TARGET: CUnknown10249fc0::sub_10249c70
+int CUnknown10249fc0::sub_10249c70(int nKey)
+{
+	unsigned short i = M->FirstInorder();
+	while (U->IsValidIndex(i))
+	{
+		if (*(int *)(i * 16 + *(char **)((char *)m_pTree + 4) + 12) == nKey)
+		{
+			CSymMap *map = M;
+			return map->m_Symbols.sub_1024b830(*map->sub_1024a2e0(i));
+		}
+		i = M->NextInorder(i);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10249fc0 size=0x89
 #include "utlrbtree.h"
 #include "CUnknown10249fc0.h"
