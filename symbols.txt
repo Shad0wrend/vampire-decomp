@@ -7762,6 +7762,7 @@
 0x1000afec func   ?sub_100ed3b0@@YAHXZ sub_100ed3b0
 0x1000aff1 func   ?vfunc3@?$CEntityDataInstantiator@UModelWidthScale@@@@UAEXI@Z CEntityDataInstantiator<ModelWidthScale>::vfunc3
 0x1000aff6 func   ?vfunc171@CTriggerImpact@@QAEXXZ CTriggerImpact::vfunc171
+0x1000affb func   ?sub_10310d70@CUnknown10310c10@@QAEDPAX0PAM@Z CUnknown10310c10::sub_10310d70
 0x1000b005 func   ?sub_102c1170@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_102c1170
 0x1000b00a func   ?vfunc4@CEntitySaveRestoreBlockHandler@@UAEXXZ CEntitySaveRestoreBlockHandler::vfunc4
 0x1000b00f func   ?sub_1042c4e0@@YA_NXZ sub_1042c4e0

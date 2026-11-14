@@ -240922,6 +240922,273 @@ void *CUnknown10310c10::sub_10310cf0(Vector vecOrigin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10310d70 size=0x57a
+#include "utlrbtree.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "CAI_Network.h"
+#include "CBitString.h"
+#include "UtlVec8.h"
+#include "utlvector.h"
+#include "CUnknown102f8f10.h"
+#include "CPairFields102dda40.h"
+#include "CUnknown10310c10.h"
+#include "CUnknown1003ff80.h"
+#include "CGameTrace.h"
+#include "globalvars.h"
+#include <malloc.h>
+
+extern char g_1093408c;
+extern int g_10936c2c;
+extern int g_106c994c;
+extern CAI_Network *g_1093407c;
+bool __cdecl sub_102f3770(const UtlVec8Elem &, const UtlVec8Elem &);
+void sub_101006e0(const float *pStart, const float *pEnd, unsigned int mask, void *pFilter, int group, CGameTrace *pTrace);
+
+#define GV(n) virtual void s##n();
+#define GV10(p) GV(p##0) GV(p##1) GV(p##2) GV(p##3) GV(p##4) GV(p##5) GV(p##6) GV(p##7) GV(p##8) GV(p##9)
+
+class CSpawnSlot548View
+{
+public:
+	GV10(0) GV10(1) GV10(2) GV10(3) GV10(4) GV10(5) GV10(6) GV10(7) GV10(8) GV10(9)
+	GV10(10) GV10(11) GV10(12) GV10(13) GV10(14) GV10(15) GV10(16) GV10(17) GV10(18) GV10(19)
+	GV10(20) GV10(21) GV10(22) GV10(23) GV10(24) GV10(25) GV10(26) GV10(27) GV10(28) GV10(29)
+	GV10(30) GV10(31) GV10(32) GV10(33) GV10(34) GV10(35) GV10(36) GV10(37) GV10(38) GV10(39)
+	GV10(40) GV10(41) GV10(42) GV10(43) GV10(44) GV10(45) GV10(46) GV10(47) GV10(48) GV10(49)
+	GV10(50) GV10(51) GV10(52) GV10(53) GV(540) GV(541) GV(542) GV(543) GV(544) GV(545) GV(546) GV(547)
+	virtual char vfunc548(Vector *pPos, void *pHint);
+};
+
+struct CSpawnNodeView
+{
+	char m_pad0000[0x70];
+	int m_nType;	// 0x70
+	char m_pad0074[0x78 - 0x74];
+	int m_nLinks;	// 0x78
+	CPairFields102dda40 **m_ppLinks;	// 0x7c
+	char m_pad0080[0x9c - 0x80];
+	float m_flNextUse;	// 0x9c
+	void *m_pHint;	// 0xa0
+	Vector *sub_102fb0d0(Vector *pOut, int nHull);
+};
+
+struct CSpawnNetworkView
+{
+	int m_nNodes;
+	CSpawnNodeView **m_ppNodes;
+	CSpawnNodeView *GetNode(int id)
+	{
+		if (id >= 0 && id < m_nNodes)
+			return m_ppNodes[id];
+		g_106c994c++;
+		return 0;
+	}
+};
+
+struct CSpawnNPCView
+{
+	char m_pad0000[0x270];
+	CCollisionProperty m_Collision;	// 0x270
+};
+
+struct CSpawnNPCSlots : CEntityVSlots
+{
+};
+
+struct CSpawnNearNode
+{
+	float dist;
+	int nodeIndex;
+};
+
+typedef CUtlMemory<UtlVec8Elem> CSpawnMem;
+typedef bool (__cdecl *CSpawnLess)(const UtlVec8Elem &, const UtlVec8Elem &);
+
+struct CSpawnMemView : CSpawnMem
+{
+	void sub_102f91b0();	// CUtlMemory::Purge, out of line
+};
+
+struct CSpawnVecView : CUtlVector<UtlVec8Elem>
+{
+	int sub_102f90e0(int elem);	// InsertBefore, out of line
+	void sub_102f9000(int elem);	// FastRemove, out of line
+};
+
+struct CSpawnQueueView
+{
+	CSpawnVecView m_heap;
+	CSpawnLess m_LessFunc;
+
+	void sub_102f9090(int index1, int index2);	// Swap, out of line
+	void sub_103078d0();	// destructor, out of line
+	int Count() const { return m_heap.Count(); }
+	UtlVec8Elem const &ElementAtHead() const { return m_heap.Element(0); }
+	void RemoveAtHead()
+	{
+		m_heap.sub_102f9000(0);
+		int index = 0;
+		int count = Count();
+		if (!count)
+			return;
+		int half = count / 2;
+		int larger = index;
+		while (index < half)
+		{
+			int child = ((index + 1) * 2) - 1;
+			if (child < count)
+			{
+				if (m_LessFunc(m_heap[index], m_heap[child]))
+					larger = child;
+			}
+			child++;
+			if (child < count)
+			{
+				if (m_LessFunc(m_heap[larger], m_heap[child]))
+					larger = child;
+			}
+			if (larger == index)
+				break;
+			sub_102f9090(index, larger);
+			index = larger;
+		}
+	}
+	void InsertCall(UtlVec8Elem const &element)
+	{
+		int index = m_heap.sub_102f90e0(m_heap.Count());
+		m_heap[index] = element;
+		while (index != 0)
+		{
+			int parent = ((index + 1) / 2) - 1;
+			if (m_LessFunc(m_heap[index], m_heap[parent]))
+				break;
+			sub_102f9090(parent, index);
+			index = parent;
+		}
+	}
+	void DestroyCall()
+	{
+		m_heap.m_Size = 0;
+		((CSpawnMemView *)&m_heap.m_Memory)->sub_102f91b0();
+		m_heap.ResetDbgInfo();
+		m_heap.m_Memory.~CSpawnMem();
+	}
+};
+
+inline float LSQ(const Vector &d) { return d.x * d.x + (d.y * d.y + d.z * d.z); }
+
+#define NETWORK ((CSpawnNetworkView *)g_1093407c)
+
+char CUnknown10310c10::sub_10310d70(void *pSpawnPoint, void *pNpc, float *pOutOrigin)
+{
+	CEntityVSlots *pSpawn = (CEntityVSlots *)pSpawnPoint;
+	const Vector &vecOrigin = *pSpawn->slot220();
+	float *pMaxs = ((CSpawnNPCView *)pSpawnPoint)->m_Collision.vfunc2();
+	Vector vecStart;
+	vecStart.z = pMaxs[2] + vecOrigin.z;
+	vecStart.x = vecOrigin.x;
+	vecStart.y = vecOrigin.y;
+	Vector vecTraceStart = vecStart;
+
+	if (!g_1093408c)
+		return 0;
+
+	int nStart = g_1093407c->sub_102f41b0(pSpawn->slot220());
+	if (nStart == -1)
+		return 0;
+
+	int nCount = NETWORK->m_nNodes;
+	CUnknown102f8f10 queueStore((int)_alloca(nCount * sizeof(UtlVec8Elem)), nCount, (int)sub_102f3770);
+	CSpawnQueueView &queue = *(CSpawnQueueView *)&queueStore;
+	CBitString visited;
+	visited.sub_102fc910(NETWORK->m_nNodes);
+
+	CSpawnNearNode start;
+	start.dist = 0;
+	start.nodeIndex = nStart;
+	queue.InsertCall((const UtlVec8Elem &)start);
+	visited.m_pData[nStart >> 5] |= 1 << (nStart & 31);
+
+	CCollisionProperty *pColl = &((CSpawnNPCView *)pNpc)->m_Collision;
+	pColl->vfunc1();
+	pColl->vfunc2();
+	pColl->vfunc1();
+	pColl->vfunc2();
+
+	Vector vecSpawnOrigin = *pSpawn->slot220();
+	int nHull = *(int *)((char *)pNpc + 0x1568);
+
+	while (queue.Count())
+	{
+		Vector vecPos;
+		int nCur = queue.ElementAtHead().b;
+		float flDist = ((const CSpawnNearNode &)queue.ElementAtHead()).dist;
+		queue.RemoveAtHead();
+
+		CSpawnNodeView *pNode = NETWORK->GetNode(nCur);
+		pNode->sub_102fb0d0(&vecPos, nHull);
+
+		if (flDist >= 262144.0f)
+		{
+			Vector vecEnd = vecPos;
+			vecEnd.z += ((CSpawnNPCView *)pNpc)->m_Collision.vfunc2()[2];
+			CGameTrace tr;
+			((CUnknown1003ff80 *)&tr)->sub_1003ff80();
+			sub_101006e0(&vecTraceStart.x, &vecEnd.x, 0x2804091, pNpc, 0, &tr);
+			if (tr.m_fraction != 1.0)
+			{
+				void *pHint = pNode->m_pHint;
+				if (((CSpawnSlot548View *)pNpc)->vfunc548(&vecPos, pHint))
+				{
+					pNode->m_flNextUse = gpGlobals->curtime + 1.0f;
+					*(Vector *)pOutOrigin = vecPos;
+					g_10936c2c = nCur;
+					visited.sub_100bf6a0();
+					queue.sub_103078d0();
+					return 1;
+				}
+			}
+		}
+
+		for (int i = 0; i < pNode->m_nLinks; i++)
+		{
+			CPairFields102dda40 *pLink = pNode->m_ppLinks[(i + g_10936c2c) % pNode->m_nLinks];
+			if (pLink->m_LinkInfo & 0x1000)
+				continue;
+			if (!(pLink->m_iAcceptedMoveTypes[nHull] & ((CEntityVSlots *)pNpc)->slot513()))
+				continue;
+			int nEnd = pLink->sub_102dda40(nCur);
+			if (!(visited.m_pData[nEnd >> 5] & (1 << (nEnd & 31))))
+			{
+				if (NETWORK->GetNode(nEnd)->m_nType != 4 && !(NETWORK->GetNode(nEnd)->m_flNextUse > gpGlobals->curtime))
+				{
+					Vector vecTmp;
+					vecPos = *NETWORK->GetNode(nEnd)->sub_102fb0d0(&vecTmp, nHull);
+					float flDistSq = LSQ(vecSpawnOrigin - vecPos);
+					if (flDistSq < 67108864.0f)
+					{
+						CSpawnNearNode next;
+						next.dist = flDistSq;
+						next.nodeIndex = nEnd;
+						queue.InsertCall((const UtlVec8Elem &)next);
+					}
+				}
+				visited.m_pData[nEnd >> 5] |= 1 << (nEnd & 31);
+			}
+		}
+	}
+
+	pOutOrigin[0] = 0;
+	pOutOrigin[1] = 0;
+	pOutOrigin[2] = 0;
+	visited.sub_100bf6a0();
+	queue.DestroyCall();
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10311490 size=0x30
 void sub_10002c39();
 void sub_10001096();
