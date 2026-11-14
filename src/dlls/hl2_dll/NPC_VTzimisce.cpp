@@ -662,6 +662,60 @@ int CNPC_VTzimisce::sub_103bcc00(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bccc0 size=0x125
+#include "CNPC_VTzimisce.h"
+
+struct CNPC_VTzimisceUnit : CNPC_VTzimisce
+{
+	int sub_103bccc0();
+};
+
+#define m_fl65a4 (*(float *)((char *)this + 0x65a4))
+#define SOURCE_FILE "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp"
+
+static inline bool TzTimeAfter(const float &t) { return gpGlobals->curtime > t; }
+
+// TARGET: CNPC_VTzimisceUnit::sub_103bccc0
+int CNPC_VTzimisceUnit::sub_103bccc0()
+{
+	if (sub_10269aa0(0x47))
+	{
+		m_pszFile1b30 = SOURCE_FILE;
+		m_nLine1b34 = 0xc17;
+		return 0x10;
+	}
+	if ((m_flags14b8 & 0x800) == 0x800)
+	{
+		m_flags14b8 &= ~0x800;
+		if (enginerandom->vfunc2(0, 99) < 0x46)
+		{
+			m_pszFile1b30 = SOURCE_FILE;
+			m_nLine1b34 = 0xc1f;
+			return 0x164;
+		}
+		m_fl65a4 += 5.0f;
+		m_pszFile1b30 = SOURCE_FILE;
+		m_nLine1b34 = 0xc26;
+		return 0x165;
+	}
+	if (!sub_10269aa0(0x48) && TzTimeAfter(m_fl65a4))
+	{
+		float t = enginerandom->vfunc1(3.0f, 10.0f);
+		m_fl65a4 = (t + 0.0f) + gpGlobals->curtime;
+		if (enginerandom->vfunc2(0, 99) < 0x3c)
+		{
+			m_pszFile1b30 = SOURCE_FILE;
+			m_nLine1b34 = 0xc34;
+			return 0x162;
+		}
+		m_pszFile1b30 = SOURCE_FILE;
+		m_nLine1b34 = 0xc38;
+		return 0x163;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bd270 size=0xd2
 #include "CNPC_VTzimisce.h"
 #include "CCineNPC.h"
