@@ -191766,6 +191766,13 @@ int sub_1025b860(int which)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1025b930 size=0xa8f
+#include "CValRecord.h"
+
+// TARGET: ??4CValRecord@@QAEAAU0@ABU0@@Z
+CValRecord &(CValRecord::*pcd_force)(const CValRecord &) = &CValRecord::operator=;
+// END FUNCTION
+
 // FUNCTION: 0x1025c670 size=0x13
 bool sub_1025c670(unsigned short *a, unsigned short *b)
 {
