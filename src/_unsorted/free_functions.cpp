@@ -45726,6 +45726,94 @@ int CBaseFlex::sub_100b5d10(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b62a0 size=0x17e
+#include "utlrbtree.h"
+#include "CBaseFlex.h"
+#include "FileSystemViews.h"
+
+extern IFileSystemView *g_1070b238;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+typedef unsigned char byte;
+#include "CBaseAnimating.h"
+extern "C" int __cdecl strcmpi(const char *, const char *);
+namespace block_100b62a0 {
+#pragma auto_inline(off)
+struct CBaseFlexU : CBaseFlex
+{
+	int sub_100b5d10(const char *pszName);
+};
+int CBaseFlexU::sub_100b5d10(const char *pszName)
+{
+	CBaseAnimating *pAnim = (CBaseAnimating *)this;
+	for (int i = 0; i < pAnim->sub_10094520(); i++) {
+		if (!strcmpi(pAnim->sub_100946b0(i), pszName))
+			return i;
+	}
+	return 0;
+}
+#pragma auto_inline(on)
+}
+using namespace block_100b62a0;
+
+
+struct flexsettinghdr_v
+{
+	char m_pad00[0xa0];
+	int numkeys;
+	int keynameindex;
+	inline char *pLocalName( int i ) const { return (char *)(((byte *)this) + *((int *)(((byte *)this) + keynameindex) + i)); };
+	int keymappingindex;
+	inline int *pLocalToGlobal( int i ) const { return (int *)(((byte *)this) + keymappingindex) + i; };
+};
+
+CBaseFlexFileData *CBaseFlex::sub_100b62a0(const char *filename)
+{
+	// See if it's already loaded
+	int i;
+	for ( i = 0; i < m_FileCache.Size(); i++ )
+	{
+		CBaseFlexFileRec *file = m_FileCache[ i ];
+		if ( file && !_strcmpi( file->m_szName, filename ) )
+		{
+			return file->m_pData;
+		}
+	}
+
+	// Load file into memory
+	unsigned int file = g_1070b238->vfunc0( filename, "rb", 0 );
+
+	if ( !file )
+		return 0;
+
+	int len = g_1070b238->vfunc6( file );
+
+	// read the file
+	byte *buffer = new unsigned char[ len ];
+	g_1070b238->vfunc2( buffer, len, file );
+	g_1070b238->vfunc1( file );
+
+	// Create scene entry
+	CBaseFlexFileRec *pfile = new CBaseFlexFileRec();
+	// Remember filename
+	Q_strncpy( pfile->m_szName, filename ,sizeof(pfile->m_szName));
+	// Remember data pointer
+	pfile->m_pData = (CBaseFlexFileData *)buffer;
+	// Add to list
+	m_FileCache.AddToTail( pfile );
+
+	// Fill in translation table
+	flexsettinghdr_v *pSettinghdr = ( flexsettinghdr_v * )pfile->m_pData;
+	for (i = 0; i < pSettinghdr->numkeys; i++)
+	{
+		*(pSettinghdr->pLocalToGlobal(i)) = ((CBaseFlexU *)this)->sub_100b5d10( pSettinghdr->pLocalName( i ) );
+	}
+
+	// Return data
+	return pfile->m_pData;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6480 size=0x6b
 #include "utlrbtree.h"
 #include "CUnknown100b6480.h"
