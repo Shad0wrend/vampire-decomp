@@ -146567,6 +146567,98 @@ int CUnknown101e56e0::sub_101e54c0(CBaseCombatCharacter *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e56e0 size=0x370
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown1073a104.h"
+#include "CUnknown101f9bf0.h"
+#include "CVStatList_t.h"
+#include "Tier1.h"
+
+#include "ConVar.h"
+extern ConVar g_10739cb0;
+extern ConVar g_10739c68;
+extern ConVar g_1073a100;
+extern ConVar g_10739bd8;
+extern ConVar g_10739c20;
+
+// TARGET: CUnknown101e56e0::sub_101e56e0
+int CUnknown101e56e0::sub_101e56e0(CBaseCombatCharacter *pCharacter)
+{
+	int nLimit = m_n18;
+	int nTotal = 0;
+	if (pCharacter) {
+		for (int i = 0; i < m_nCount1c; i++) {
+			int nStat = ((CVDmgBlock16_t *)(m_pTable20 + i * 16))->m_b;
+			switch (((CVDmgBlock16_t *)(m_pTable20 + i * 16))->m_a) {
+			case 0:
+			{
+				CVStatListSet *pSet = CVStatListSet::Of(pCharacter);
+				int nValue = ((CVDmgBlock16_t *)(m_pTable20 + i * 16))->sub_10204c20(pSet->Find(0)->sub_102012d0(nStat));
+				if (nValue <= 0 && nStat < 10)
+					nValue = 1;
+				if ((int)this == -1) nTotal += nValue; else nTotal += nValue;
+				break;
+			}
+			case 1:
+			{
+				CVStatListSet *pSet = CVStatListSet::Of(pCharacter);
+				nTotal += ((CVDmgBlock16_t *)(m_pTable20 + i * 16))->sub_10204c20(pSet->Find(1)->sub_102012d0(nStat));
+				break;
+			}
+			}
+		}
+	} else {
+		g_109f3630("Invalid Character pointer for: Feats::FeatValue\n");
+	}
+	switch (m_nKind) {
+	case 1:
+		nTotal += pCharacter->sub_1032fab0();
+		break;
+	case 9:
+		nTotal += pCharacter->sub_10323210();
+		nTotal -= pCharacter->sub_103232b0();
+		break;
+	case 10:
+		nTotal += pCharacter->sub_10323210();
+		nTotal -= pCharacter->sub_103232b0();
+		break;
+	case 11:
+		nTotal += pCharacter->sub_10323210();
+		nTotal -= pCharacter->sub_103232b0();
+		break;
+	}
+	switch (m_nKind) {
+	case 11:
+		if (g_10739cb0.GetInt() > 0)
+			nTotal = g_10739cb0.GetInt();
+		break;
+	case 12:
+		if (g_10739c68.GetInt() > 0)
+			nTotal = g_10739c68.GetInt();
+		break;
+	case 9:
+		if (g_1073a100.GetInt() > 0)
+			nTotal = g_1073a100.GetInt();
+		break;
+	case 10:
+		if (g_10739bd8.GetInt() > 0)
+			nTotal = g_10739bd8.GetInt();
+		break;
+	case 13: case 14: case 15: case 16: case 17: case 18: case 19: case 20:
+		if (g_10739c20.GetInt() > 0)
+			nTotal = g_10739c20.GetInt();
+		break;
+	}
+	int nResult = pCharacter->m_pTraits13c8->sub_101f9bf0(4, m_nKind, nTotal);
+	if (nResult > nLimit)
+		return nLimit;
+	return nResult < 0 ? 0 : nResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e5b30 size=0x11a
 #include "utlrbtree.h"
 #include "utlsortvector.h"
