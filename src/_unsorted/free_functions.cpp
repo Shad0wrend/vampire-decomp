@@ -283538,6 +283538,102 @@ CNPC_VWerewolfVec3 *CNPC_VWerewolf::sub_103d68d0(CNPC_VWerewolfVec3 *pOut, void 
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d6a40 size=0x229
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "UTIL_Trace.h"
+#include "ScopeTrace.h"
+#include "CNPC_VWerewolf.h"
+#include <math.h>
+namespace block_103d6a40 {
+#pragma auto_inline(off)
+struct Ray_tU {
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_f34;
+	void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b);
+};
+void Ray_tU::sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b)
+{
+	const Vector &end = *(const Vector *)pEnd;
+	Ray_tU *r = this;
+	const Vector &mins = *(const Vector *)pMins;
+	const Vector &maxs = *(const Vector *)pMaxs;
+	VectorSubtract(end, start, r->m_Delta);
+	r->m_IsSwept = (r->m_Delta.LengthSqr() != 0.0f);
+	VectorSubtract(maxs, mins, r->m_Extents);
+	r->m_Extents *= 0.5f;
+	r->m_IsRay = (r->m_Extents.LengthSqr() < 1e-6);
+	VectorAdd(mins, maxs, r->m_StartOffset);
+	r->m_StartOffset *= 0.5f;
+	VectorAdd(start, r->m_StartOffset, r->m_Start);
+	r->m_StartOffset *= -1.0f;
+	r->m_b32 = b;
+	r->m_b33 = 0;
+	r->m_f34 = 0.0f;
+	if (a && !r->m_IsRay) {
+		r->m_f34 = (float)sqrt((r->m_Extents.x * r->m_Extents.x) + (r->m_Extents.y * r->m_Extents.y));
+		if (1e-6 < r->m_f34)
+			r->m_b33 = 1;
+	}
+}
+#pragma auto_inline(on)
+inline void TraceHullDC(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr, char a = 0, char b = 0)
+{
+	Ray_tU ray;
+	ray.sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, a, b);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4((Ray_t *)&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+}
+using namespace block_103d6a40;
+
+const Vector &sub_102d6140(int hull);
+const Vector &sub_102d6160(int hull);
+extern Vector g_10713de0;
+
+struct CNPC_VWerewolfV : CNPC_VWerewolf
+{
+	Vector sub_103d6a40(Vector vOrigin);
+};
+
+inline Vector AddV(const Vector &a, const Vector &b) { Vector r; r.x = a[0] + b.x; r.y = a.y + b.y; r.z = a.z + b.z; return r; }
+Vector CNPC_VWerewolfV::sub_103d6a40(Vector vOrigin)
+{
+	ScopeTrace trace("CNPC_VWerewolf::GetGroundpoint",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	Vector vecMins = pcd_stage(sub_102d6140(*(int *)((char *)this + 0x1568)));
+	Vector vecMaxs = sub_102d6160(*(int *)((char *)this + 0x1568));
+	CGameTrace tr;
+	{
+		Vector vecStart = vOrigin;
+		Vector vecEnd = vOrigin - Vector(0, 0, 1000.0f);
+		TraceHullDC(vecStart, vecEnd, vecMins, vecMaxs, 0x202400b, this, 7, &tr);
+	}
+	Vector res = g_10713de0;
+	if (tr.m_fraction < 1.0)
+		res = AddV(vOrigin, tr.m_fraction * Vector(0, 0, -1000.0f));
+	return res;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d6d00 size=0x2c4
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

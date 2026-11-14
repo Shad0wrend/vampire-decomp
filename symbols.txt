@@ -842,6 +842,7 @@
 0x1000218a func   ?sub_10237570@CWeaponRanged@@QAE_NHPAM0@Z CWeaponRanged::sub_10237570
 0x1000218f func   ?vfunc82@CTerrainMorph@@UAEPAUdatamap_t@@XZ CTerrainMorph::vfunc82
 0x10002194 func   ?sub_1028acc0@CBaseHandle@@QAEPAVIHandleEntity@@XZ CBaseHandle::sub_1028acc0
+0x10002199 func   ?sub_103d6a40@CNPC_VWerewolfV@@QAE?AVVector@@V2@@Z CNPC_VWerewolfV::sub_103d6a40
 0x1000219e func   ?sub_1034e4f0@@YAHXZ sub_1034e4f0
 0x100021a3 func   ?sub_100794e0@CChoreoScene@@QAEPAV1@PBV1@@Z CChoreoScene::sub_100794e0
 0x100021a8 func   ?sub_1022cfd0@UtlMem@@QAEXXZ UtlMem::sub_1022cfd0
