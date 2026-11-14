@@ -183579,6 +183579,131 @@ bool sub_10240fd0(const Ray_t &ray, const Vector &boxMins, const Vector &boxMaxs
 }
 // END FUNCTION
 
+// FUNCTION: 0x10241100 size=0x312
+class Vector;
+__forceinline void VectorSubtract(const Vector &a, const Vector &b, Vector &c);
+#include "utlmemory.h"
+#include "StudioBones.h"
+#include "CGameTrace.h"
+#include "Vector.h"
+#include <math.h>
+
+namespace block_10241100 {
+#pragma auto_inline(off)
+void sub_10137fe0(const float *in1, const float *in2, float *out)
+{
+	float t = in2[2] * in1[2];
+	t += in2[1] * in1[1];
+	t += in1[0] * in2[0];
+	out[0] = t + in2[3];
+	t = in2[6] * in1[2];
+	t += in2[5] * in1[1];
+	t += in2[4] * in1[0];
+	out[1] = t + in2[7];
+	t = in2[10] * in1[2];
+	t += in2[9] * in1[1];
+	t += in2[8] * in1[0];
+	out[2] = t + in2[11];
+}
+void sub_10138130(const float *in1, const float in2[3][4], float *out)
+{
+	float tx = in1[0] - in2[0][3];
+	float ty = in1[1] - in2[1][3];
+	float tz = in1[2] - in2[2][3];
+	out[0] = tx * in2[0][0] + ty * in2[1][0] + tz * in2[2][0];
+	out[1] = tx * in2[0][1] + ty * in2[1][1] + tz * in2[2][1];
+	out[2] = tx * in2[0][2] + ty * in2[1][2] + tz * in2[2][2];
+}
+void sub_1011e010(Vector *a, Vector *b, Vector *out)
+{
+    CrossProduct(*a, *b, *out);
+}
+#pragma auto_inline(on)
+}
+inline void VectorTransform(const Vector &in1, const matrix3x4_t &in2, Vector &out)
+{
+	sub_10137fe0(&in1.x, &in2.m_flMatVal[0][0], &out.x);
+}
+
+inline void VectorITransform(const Vector &in1, const matrix3x4_t &in2, Vector &out)
+{
+	sub_10138130(&in1.x, &in2.m_flMatVal[0][0], &out.x);
+}
+
+struct M34V
+{
+	float m_flMatVal[3][4];
+	const float *operator[](int i) const { return m_flMatVal[i]; }
+};
+#define MAT(m) (*(const M34V *)&(m))
+
+bool sub_10241100(const Vector &vecRayStart, const Vector &vecRayDelta, const matrix3x4_t &matOBBToWorld, const Vector &vecOBBMins, const Vector &vecOBBMaxs, float flTolerance, CGameTrace *pTrace)
+{
+	sub_1023f3d0(&vecRayStart, &vecRayDelta, pTrace);
+
+	Vector vecBoxExtents = (vecOBBMins + vecOBBMaxs) * 0.5;
+	Vector vecBoxCenter;
+
+	VectorTransform(vecBoxExtents, matOBBToWorld, vecBoxCenter);
+
+	vecBoxExtents = vecOBBMaxs - vecBoxExtents;
+
+	Vector extent, uextent;
+	Vector segmentCenter = vecRayStart + vecRayDelta - vecBoxCenter;
+
+	extent.Init();
+
+	for (int j = 0; j < 3; j++)
+	{
+		extent[j] = vecRayDelta.x * MAT(matOBBToWorld)[0][j] + (vecRayDelta.y * MAT(matOBBToWorld)[1][j] + vecRayDelta.z * MAT(matOBBToWorld)[2][j]);
+		uextent[j] = fabs(extent[j]);
+		float coord = segmentCenter[0] * MAT(matOBBToWorld)[0][j] + segmentCenter.y * MAT(matOBBToWorld)[1][j] + segmentCenter.z * MAT(matOBBToWorld)[2][j];
+		coord = fabs(coord);
+
+		if (coord > (vecBoxExtents[j] + uextent[j]))
+			return false;
+	}
+
+	float tmp, cextent;
+	Vector cross;
+	block_10241100::sub_1011e010((Vector *)&vecRayDelta, &segmentCenter, &cross);
+	cextent = cross.z * MAT(matOBBToWorld)[2][0] + cross.y * MAT(matOBBToWorld)[1][0] + cross.x * MAT(matOBBToWorld)[0][0];
+	cextent = fabs(cextent);
+	tmp = vecBoxExtents[1] * uextent[2] + vecBoxExtents[2] * uextent[1];
+	if (cextent > tmp)
+		return false;
+
+	cextent = cross.x * MAT(matOBBToWorld)[0][1] + cross.y * MAT(matOBBToWorld)[1][1] + cross.z * MAT(matOBBToWorld)[2][1];
+	cextent = fabs(cextent);
+	tmp = vecBoxExtents[0] * uextent[2] + vecBoxExtents[2] * uextent[0];
+	if (cextent > tmp)
+		return false;
+
+	cextent = cross.x * MAT(matOBBToWorld)[0][2] + cross.y * MAT(matOBBToWorld)[1][2] + cross.z * MAT(matOBBToWorld)[2][2];
+	cextent = fabs(cextent);
+	tmp = vecBoxExtents[0] * uextent[1] + vecBoxExtents[1] * uextent[0];
+	if (cextent > tmp)
+		return false;
+
+	Vector start;
+	VectorITransform(vecRayStart, matOBBToWorld, start);
+	extent *= 2.0f;
+
+	if (!sub_10240cb0(start.Base(), extent.Base(), vecOBBMins.Base(), vecOBBMaxs.Base(), flTolerance, pTrace))
+		return false;
+
+	Vector &normal = *(Vector *)pTrace->m_planeNormal;
+	const Vector &endpos = *(const Vector *)pTrace->m_endpos;
+	float flSign = pTrace->m_planeNormal[(unsigned char)pTrace->m_planeType];
+	normal[0] = flSign * MAT(matOBBToWorld)[0][(unsigned char)pTrace->m_planeType];
+	normal[1] = flSign * MAT(matOBBToWorld)[1][(unsigned char)pTrace->m_planeType];
+	normal[2] = flSign * MAT(matOBBToWorld)[2][(unsigned char)pTrace->m_planeType];
+	pTrace->m_planeDist = DotProduct(endpos, normal);
+	pTrace->m_planeType = 3;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102414f0 size=0xe7
 #include "Vector.h"
 
