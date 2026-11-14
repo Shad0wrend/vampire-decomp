@@ -210687,6 +210687,135 @@ void CUnknown102bf7e0::sub_102bf7e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102bf820 size=0x49b
+#define inline __forceinline
+#include "Vector.h"
+#undef inline
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include "CBaseEntity.h"
+#include "engineiface.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "CAI_MoveProbe.h"
+#include "CCollisionProperty.h"
+#include "CTraceFilterNav.h"
+#include "CGameTrace.h"
+
+struct V3i { int a, b, c; };
+struct CMoveProbeOuter3
+{
+	char pad0000[0x368];
+	int m_n368;
+};
+
+extern float g_104454c4;
+extern float g_1049a1f4;
+void sub_1026e940(const float *start, const float *end, const float *mins, const float *maxs, unsigned int mask, void *pFilter, CGameTrace *pTrace, char bFlag);
+
+struct CMoveProbeView3 : CAI_MoveProbe
+{
+	void TraceHull(const Vector &vecStart, const Vector &vecEnd, const float *hullMin, const float *hullMax, unsigned int mask, CGameTrace *pResult)
+	{
+		g_109f3648->EnterScope("CAI_MoveProbe_TraceHull", 0, "Unaccounted", false);
+		CTraceFilterNav filter;
+		filter.sub_102e30d0((int)m_pOuter, ((CMoveProbeOuter3 *)m_pOuter)->m_n368);
+		sub_1026e940(&vecStart.x, &vecEnd.x, hullMin, hullMax, mask, &filter, pResult, 1);
+		g_109f3648->ExitScopeCall();
+	}
+};
+
+struct CEntListGroundView : CGlobalEntityList
+{
+	CEntityVSlots *GroundNPC(unsigned int *h)
+	{
+		if (sub_100290c0(h))
+			return *(CEntityVSlots **)((char *)sub_100290c0(h) + 0x9c);
+		return 0;
+	}
+};
+
+struct CStandOnHeadView : CAI_BaseNPCTroika
+{
+	char m_pad65c0[0x65fc - 0x65c0];
+	float m_f65fc;
+	CCollisionProperty *coll() { return (CCollisionProperty *)((char *)this + 0x270); }
+};
+
+void CAI_BaseNPCTroika::sub_102bf820(float flFrame)
+{
+	CStandOnHeadView *t = (CStandOnHeadView *)this;
+	ScopeTrace trace("CAI_BaseNPCTroika::ResolveStandingOnHead", this ? (*(const char **)((char *)this + 0x26c) ? *(const char **)((char *)this + 0x26c) : g_106b8540) : g_105387dc);
+	CEntityVSlots *pOther = ((CEntListGroundView *)g_10566458)->GroundNPC((unsigned int *)((char *)this + 0x384));
+	if (pOther)
+	{
+		Vector origin;
+		{ const Vector *pv = ((CEntityVSlots *)this)->slot217(); typedef volatile const int VI; int y = ((VI *)pv)[1]; int x = ((VI *)pv)[0]; int z = ((VI *)pv)[2]; int *o = (int *)&origin; o[1] = y; if (x > 7) { o[0] = x; o[2] = z; } else { o[0] = x; o[2] = z; } }
+		Vector other = *pOther->slot217();
+		Vector dir = origin - other;
+		dir.z = 0;
+		if (dir.x == g_104454c4 && dir.y == g_104454c4)
+		{
+			switch (enginerandom->vfunc2(0, 3))
+			{
+			case 1: dir.x = -0.707f; dir.y = 0.707f; break;
+			case 2: dir.x = 0.707f; dir.y = -0.707f; break;
+			case 3: dir.x = -0.707f; dir.y = -0.707f; break;
+			default: dir.x = 0.707f; dir.y = 0.707f; break;
+			}
+		}
+		else
+		{
+			VectorNormalize(dir);
+			dir.x += enginerandom->vfunc1(-0.1f, 0.1f);
+			dir.y += enginerandom->vfunc1(-0.1f, 0.1f);
+			VectorNormalize(dir);
+		}
+		float flSpeed = flFrame + t->m_f65fc;
+		t->m_f65fc = (5.0f < flSpeed) ? 5.0f : flSpeed;
+		origin.z += g_1049a1f4;
+		dir = dir * t->m_f65fc * 40.0f * flFrame;
+		Vector end = origin + dir;
+		CGameTrace tr;
+		{
+			const float *pMins = (const float *)t->coll()->vfunc1();
+			CMoveProbeView3 *pProbe = (CMoveProbeView3 *)t->m_pMoveProbe5d40;
+			pProbe->TraceHull(origin, end, pMins, (const float *)t->coll()->vfunc2(), 0x202400b, &tr);
+		}
+		if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid)
+		{
+			end = origin - dir;
+			const float *pMins = (const float *)t->coll()->vfunc1();
+			CMoveProbeView3 *pProbe = (CMoveProbeView3 *)t->m_pMoveProbe5d40;
+			pProbe->TraceHull(origin, end, pMins, (const float *)t->coll()->vfunc2(), 0x202400b, &tr);
+		}
+		if (!(tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid))
+		{
+			end.z -= 0.1f;
+			((CEntityVSlots *)this)->slot216(&end);
+			((CBaseEntity *)this)->sub_100b3b00();
+			return;
+		}
+	}
+	t->m_f65fc = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102bfdf0 size=0x3
 void __stdcall sub_102bfdf0(int a0)
 {
