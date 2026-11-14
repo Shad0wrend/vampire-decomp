@@ -4976,6 +4976,130 @@ int CBasePlayer::vfunc200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10177c10 size=0x3c1
+// TARGET: ?vfunc440@CBasePlayer@@UAEXHMPAVVector@@@Z
+#include "UTIL_Trace.h"
+#include "CBasePlayer.h"
+#include "CSprayCan.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "engineserver.h"
+
+namespace block_10177c10 {
+#pragma auto_inline(off)
+struct RayInit : Ray_t { void sub_1004f7a0(const float *pStart, const float *pEnd); };
+void RayInit::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+#pragma auto_inline(on)
+}
+using namespace block_10177c10;
+inline void TraceLineCallsR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+inline void TraceLineRayCallR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+struct CPod3 { int a, b, c; };
+
+struct CServerUnknownView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CBaseEntity *GetBaseEntity(); };
+
+inline CBaseEntity *UTIL_EntityByIndex440(int i)
+{
+	CBaseEntity *pEntity = 0;
+	void *pEdict = engine->vfunc38(i);
+	if (pEdict)
+	{
+		CServerUnknownView *pUnk = *(CServerUnknownView **)((char *)pEdict + 0x40);
+		if (pUnk)
+			pEntity = pUnk->GetBaseEntity();
+	}
+	return pEntity;
+}
+
+void CBasePlayer::vfunc440(int nUnused, float flDelta, Vector *pOut)
+{
+	Vector vecSrc;
+	Vector forward;
+	{ const CPod3 *pc = (const CPod3 *)(&(const Vector &)vfunc193()); CPod3 *pd = (CPod3 *)&vecSrc; int a = pc->a; int b = pc->b; pd->a = a; int c = pc->c; pd->b = b; pd->c = c; }
+	sub_10139610(*(QAngle *)&m_vec206c, &forward, 0, 0);
+	Vector dir;
+	dir = forward;
+	Vector vecEnd;
+	{
+		Vector scaled = dir.sub_100a19c0(4096.0f);
+		vecEnd = vecSrc + scaled;
+	}
+	CGameTrace tr;
+	TraceLineCallsR(vecSrc, vecEnd, 0x200400b, this, 0, &tr);
+	if (tr.m_pEnt && (tr.m_pEnt->sub_100b3700() & 0x10000))
+	{
+		*pOut = forward;
+		return;
+	}
+	Vector bestdir = dir;
+	float bestdot = flDelta;
+	for (int i = 1; i < engine->vfunc39(); i++)
+	{
+		CBaseEntity *pEntity = UTIL_EntityByIndex440(i);
+		if (!pEntity)
+			continue;
+		if (!(pEntity->sub_100b3700() & 0x10000))
+			continue;
+		if (pEntity->sub_100b3700() & 0x40000)
+			continue;
+		if ((void *)pEntity == (void *)this)
+			continue;
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pEntity + 0x270);
+		for (int j = 0; j < 3; j++)
+			vecEnd[j] = (*(const Vector *)((CEntityVSlots *)pEntity)->slot220())[j] + (((*(const Vector *)pCol->vfunc1())[j] + (*(const Vector *)pCol->vfunc2())[j]) * 0.75 + m_vecViewOffset184[j] * 0.0);
+		dir = vecEnd - vecSrc;
+		VectorNormalize(dir);
+		float dot = DotProduct(dir, forward);
+		if (dot < bestdot)
+			continue;
+		TraceLineRayCallR(vecSrc, vecEnd, 0x200400b, this, 0, &tr);
+		if (tr.m_pEnt == pEntity)
+		{
+			bestdot = dot;
+			bestdir = dir;
+		}
+	}
+	*pOut = bestdir;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10178280 size=0x127
 #include "CBasePlayer.h"
 #include "CAI_BaseNPCTroika.h"

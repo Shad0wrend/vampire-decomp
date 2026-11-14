@@ -4571,6 +4571,7 @@
 0x10006e42 func   ?vfunc17@CSave@@UAEXPBDPAXH@Z CSave::vfunc17
 0x10006e47 func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIENCE_ENTRY> >,9>::vfunc1
 0x10006e4c func   ?vfunc499@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc499
+0x10006e51 func   ?vfunc440@CBasePlayer@@UAEXHMPAVVector@@@Z CBasePlayer::vfunc440
 0x10006e5b func   _item_g_pisha_book item_g_pisha_book
 0x10006e60 func   ?sub_10031990@@YAXPAVCBaseEntity@@HHIGM@Z sub_10031990
 0x10006e65 func   ?vfunc130@CBasePlayer@@QAEXD@Z CBasePlayer::vfunc130
