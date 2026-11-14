@@ -196839,6 +196839,168 @@ void __fastcall sub_10262590(CAI_BaseHumanoid *self, int edx, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102627e0 size=0x354
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CAI_BaseHumanoid.h"
+#include "CEntityVSlots.h"
+#include <string.h>
+#include <math.h>
+
+float sub_101d2c70(const Vector *pDir);	// UTIL_VecToYaw
+float sub_1013d450(float a, float b, float c);	// UTIL_ApproachAngle
+float sub_1013d580(float a, float b);	// UTIL_AngleDiff
+
+struct AI_Waypoint_t
+{
+	Vector vecLocation;
+	int m_n0c[9];
+	AI_Waypoint_t *m_pNext;	// 0x30
+	AI_Waypoint_t *GetNext() { return m_pNext; }
+};
+
+struct AI_Movementscript_t
+{
+	AI_Movementscript_t() { Init(); }
+	void Init() { memset(this, 0, sizeof(*this)); }
+	float flTime;
+	float flElapsedTime;
+	float flDist;
+	float flMaxVelocity;
+	float flYaw;
+	float flAngularVelocity;
+	bool bLooping;
+	int nFlags;
+	AI_Waypoint_t *pWaypoint;
+	AI_Movementscript_t *pNext;
+	AI_Movementscript_t *pPrev;
+	Vector vecLocation;
+	float Yaw() const { return flYaw; }
+};
+
+struct CScriptVec : CUtlVector56
+{
+	AI_Movementscript_t &operator[](int i) { return ((AI_Movementscript_t *)m_pMemory)[i]; }
+	int Count() const { return m_size; }
+	int AddToTail0(const AI_Movementscript_t &src) { return sub_10264000(m_size, &src); }
+	int AddToTail(const AI_Movementscript_t &src)
+	{
+		int elem = m_size;
+		sub_102641b0(1);
+		sub_10264280(elem, 1);
+		sub_10264300(&(*this)[elem], &src);
+		return elem;
+	}
+};
+
+struct CAI_NavigatorView
+{
+	Vector sub_102ee5b0();	// GetArrivalDirection
+};
+
+struct CAI_BaseHumanoidX : CAI_BaseHumanoid
+{
+	CScriptVec &ScriptMove() { return *(CScriptVec *)&m_Waypoints6024; }
+	CScriptVec &ScriptTurn() { return *(CScriptVec *)&m_Waypoints6038; }
+	CAI_NavigatorView *GetNavigator() { return *(CAI_NavigatorView **)((char *)this + 0x5d34); }
+};
+
+
+__forceinline void VSubF(const Vector &a, const Vector &b, Vector &c)
+{
+	c.x = a.x - b.x;
+	c.y = a.y - b.y;
+	c.z = a.z - b.z;
+}
+__forceinline Vector SubV(const Vector &a, const Vector &b)
+{
+	Vector res;
+	VSubF(a, b, res);
+	return res;
+}
+__forceinline float ApW(float target, float value, float speed) { float v = value; float t = target; return sub_1013d450(t, v, speed); }
+inline float ApJ(AI_Movementscript_t *b, int i, float m) { return ApW(b[i-1].Yaw(), b[i].Yaw(), m); }
+#define YAWSPEED	150
+#define m_scriptMove (*(CScriptVec *)&m_Waypoints6024)
+#define m_scriptTurn (*(CScriptVec *)&m_Waypoints6038)
+
+// TARGET: CAI_BaseHumanoid::sub_102627e0
+void CAI_BaseHumanoid::sub_102627e0()
+{
+	int i;
+
+	AI_Movementscript_t script;
+	script.Init();
+
+	script.vecLocation = *((CEntityVSlots *)this)->slot217();
+	script.flYaw = ((CEntityVSlots *)this)->slot219()->y;
+	m_scriptTurn.AddToTail0(script);
+
+	int prev = 0;
+	for (i = 0; i < m_scriptMove.Count(); i++)
+	{
+		AI_Waypoint_t *pCurWaypoint = m_scriptMove[i].pWaypoint;
+		if (pCurWaypoint)
+		{
+			script.Init();
+			script.vecLocation = pCurWaypoint->vecLocation;
+			script.pWaypoint = pCurWaypoint;
+			script.flElapsedTime = m_scriptMove[i].flElapsedTime;
+
+			m_scriptTurn[prev].flTime = script.flElapsedTime - m_scriptTurn[prev].flElapsedTime;
+
+			if (pCurWaypoint->GetNext())
+			{
+				Vector d1 = SubV(pCurWaypoint->GetNext()->vecLocation, script.vecLocation);
+				Vector d2 = SubV(script.vecLocation, m_scriptTurn[prev].vecLocation);
+
+				d1.z = 0;
+				VectorNormalize( d1 );
+				d2.z = 0;
+				VectorNormalize( d2 );
+
+				float y1 = sub_101d2c70( &d1 );
+				float y2 = sub_101d2c70( &d2 );
+
+				float deltaYaw = fabs( sub_1013d580( y1, y2 ) );
+
+				if (deltaYaw > 0.1)
+				{
+					script.flYaw = sub_1013d450( y1, y2, deltaYaw * 0.8 );
+					m_scriptTurn.AddToTail( script );
+					prev++;
+				}
+			}
+			else
+			{
+				Vector vecDir = ((CAI_BaseHumanoidX *)this)->GetNavigator()->sub_102ee5b0();
+				script.flYaw = sub_101d2c70( &vecDir );
+				m_scriptTurn.AddToTail( script );
+				prev++;
+			}
+		}
+	}
+
+	for (i = m_scriptTurn.Count()-1; i > 1; i--)
+	{
+		float deltaYaw = sub_1013d580( m_scriptTurn[i-1].Yaw(), m_scriptTurn[i].Yaw() );
+
+		float maxYaw = YAWSPEED * m_scriptTurn[i-1].flTime;
+
+		if (fabs(deltaYaw) > maxYaw)
+		{
+			m_scriptTurn[i-1].flYaw = ApJ((AI_Movementscript_t *)m_scriptTurn.m_pMemory, i, maxYaw);
+		}
+	}
+
+	for (i = 0; i < m_scriptTurn.Count() - 1; )
+	{
+		i = i + sub_10262c20( i, i + 1 ) + 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10262c20 size=0x1fc
 #include "CAI_BaseHumanoid.h"
 #include <math.h>
