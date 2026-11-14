@@ -873,7 +873,6 @@ void CGameMovement::vfunc12()
 // END FUNCTION
 
 // FUNCTION: 0x101226b0 size=0x45a
-#define slot17() slot17(); void vfunc17()
 #include "CTraceFilterNoCharacterCollide.h"
 #include "CGameMovement.h"
 #include "CGameMovementViews.h"
@@ -884,7 +883,6 @@ void CGameMovement::vfunc12()
 #include "CUnknown1015ef20.h"
 #include "Ray_t.h"
 #include "globalvars.h"
-#undef slot17
 
 extern CGlobalEntityList *g_10566458;
 extern CUnknown1070b254 *g_1070b254;
