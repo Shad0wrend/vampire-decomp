@@ -248977,6 +248977,138 @@ int CBaseCombatCharacter::sub_10328380(int a, int b, CBaseCombatCharacter *pOthe
 }
 // END FUNCTION
 
+// FUNCTION: 0x103285a0 size=0x438
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#define sub_10348d00() sub_10348d00(); bool sub_103285a0(CBaseCombatCharacter *pTarget, int nType, int nArg)
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseEntity.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "CStealthKillRules.h"
+#include "CUnknown10739d08.h"
+
+#undef sub_10348d00
+struct CUnknown1004f860 { void *sub_1004f860(); };
+struct C10739d08V : CUnknown10739d08 { float sub_101e8b10(); };
+#define GS(n) virtual void gs##n();
+#define GS10(p) GS(p##0) GS(p##1) GS(p##2) GS(p##3) GS(p##4) GS(p##5) GS(p##6) GS(p##7) GS(p##8) GS(p##9)
+#define GS100(p) GS10(p##0) GS10(p##1) GS10(p##2) GS10(p##3) GS10(p##4) GS10(p##5) GS10(p##6) GS10(p##7) GS10(p##8) GS10(p##9)
+struct CGrappleSlots
+{
+	GS(0) GS(1) GS(2) GS(3) GS(4) GS(5) GS(6) GS(7) GS(8) GS(9)
+	GS10(1) GS10(2) GS10(3) GS10(4) GS10(5) GS10(6) GS10(7) GS10(8) GS10(9)
+	GS100(1) GS100(2)
+	GS10(30) GS10(31) GS10(32) GS10(33) GS10(34) GS10(35) GS10(36)
+	GS(370) GS(371) GS(372) GS(373) GS(374) GS(375) GS(376)
+	virtual char slot377(CGrappleSlots *pTarget, int nType);
+	virtual char slot378(CGrappleSlots *pOther, int nType);
+};
+extern CStealthKillRules g_1072c540;
+extern CUnknown10739d08 g_10739d08;
+
+// TARGET: CBaseCombatCharacter::sub_103285a0
+bool CBaseCombatCharacter::sub_103285a0(CBaseCombatCharacter *pTarget, int nType, int nArg)
+{
+	ScopeTrace trace("CBaseCombatCharacter::CanStartGrappleAttack", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!pTarget)
+		return false;
+	CBaseEntity *pPlayer = (CBaseEntity *)m_pA8;
+	if (pPlayer && (pPlayer->sub_100b3700() & 2)) {
+		Vector maxs(16.0f, 16.0f, 72.0f);
+		Vector mins(-16.0f, -16.0f, 0.0f);
+		CEntityVSlots *pSlots = (CEntityVSlots *)pPlayer;
+		Vector *pEnd = pSlots->slot220();
+		Vector *volatile pStart = pSlots->slot220();
+		Ray_t ray;
+		((CUnknown1004f860 *)&ray)->sub_1004f860();
+		ray.sub_1006dec0(*pStart, &pEnd->x, &mins.x, &maxs.x, 1, 0);
+		CTraceFilterSimple filter(pPlayer, 0);
+		CGameTrace tr;
+		g_1070b254->vfunc4(&ray, 0x201400b, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+		if (g_10738960.sub_1005f190())
+			sub_10146570((const Vector *)&tr.m_startpos, (const Vector *)&tr.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+		if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid)
+			return false;
+	}
+	if (!((CGrappleSlots *)this)->slot377((CGrappleSlots *)pTarget, nType))
+		return false;
+	if (!((CGrappleSlots *)pTarget)->slot378((CGrappleSlots *)this, nType))
+		return false;
+	CGlobalEntityList *pList = g_10566458;
+	if (pTarget->m_nTarget153c != -1 && pList->sub_100290c0((const unsigned int *)&pTarget->m_hTarget1538)) {
+		if (pList->sub_100290c0((const unsigned int *)&pTarget->m_hTarget1538) == this) {
+			int idx;
+			if (pList->sub_100290c0((const unsigned int *)&m_hTarget1538) && m_nTarget153c != -1) idx = m_nTargetMode1540; else idx = -1;
+			if (idx != nType)
+				return false;
+			return true;
+		}
+		return false;
+	}
+	EHandleEntityList *pEL = (EHandleEntityList *)pList;
+	if (m_nTarget153c != -1 && pEL->LookupEntity(m_hTarget1538)) {
+		if (!pEL->LookupEntity(m_hTarget1538) || m_nTarget153c != 0)
+			return false;
+		if ((int)nType == -1)
+			sub_10329560();
+		else
+			sub_10329560();
+	}
+	float flRange;
+	switch (nType) {
+	case 5:
+	case 7:
+		flRange = 144.0f;
+		break;
+	case 3:
+	case 4:
+		flRange = g_1072c540.sub_101be1d0(pcd_stage((CBaseEntity *)m_pA8));
+		break;
+	case 8:
+		flRange = ((C10739d08V *)&g_10739d08)->sub_101e8b10();
+		break;
+	case 6:
+		flRange = 120.0f;
+		break;
+	case 2:
+		flRange = 0.0f;
+		break;
+	default:
+		flRange = 64.0f;
+		break;
+	}
+	if (flRange > 0.0f) {
+		Vector *pT = ((CEntityVSlots *)pTarget)->slot217();
+		Vector *pM = ((CEntityVSlots *)this)->slot217();
+		float dx = pM->x - pT->x;
+		float dy = pM->y - pT->y;
+		if (dy * dy + dx * dx > flRange * flRange)
+			return false;
+	}
+	int nSlot = sub_10328af0(pTarget, nType, nArg);
+	if (nSlot == -1)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10328af0 size=0x139
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
