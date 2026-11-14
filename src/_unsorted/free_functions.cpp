@@ -99021,6 +99021,81 @@ CRagdollProp *sub_10157da0(CBaseAnimating *pAnimating, int forceBone, CRagdollDa
 }
 // END FUNCTION
 
+// FUNCTION: 0x101582a0 size=0x198
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include <string.h>
+
+struct Str512 { char s[0x200]; Str512 &operator=(const Str512 &o) { memcpy(s, o.s, sizeof(s)); return *this; } };
+struct S48 {
+	int d[6];
+	const char *name;
+	void *ent;
+	int d2[3];
+	char flag;
+	char pad[3];
+};
+extern S48 g_1046ecb4;
+struct MapKeyResult {
+	int key;
+	Str512 a;
+	Str512 b;
+	Str512 c;
+	int i604, i608, i60c;
+	S48 tail;
+	MapKeyResult() { memset(this, 0, sizeof(*this)); tail = g_1046ecb4; }
+};
+extern char g_107238e0[];
+int _strcmpi(const char *, const char *);
+
+struct IMapIter {
+	virtual void v0();
+	virtual const char *Name();
+	virtual char IsDone();
+	virtual void Get(MapKeyResult *, void *);
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void Skip();
+};
+struct IMapSys {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25();
+	virtual IMapIter *Begin(int);
+	virtual void End(IMapIter *);
+};
+struct IMapEnt { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual const char **GetName(int *); };
+extern IMapSys *g_1072393c;
+struct MapSrc { char pad[8]; int m8; };
+extern char g_106b8540[];
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+bool sub_101582a0(MapKeyResult *out, IMapEnt *pEnt, MapSrc *pSrc, int filter)
+{
+	bool found = false;
+	out->MapKeyResult::MapKeyResult();
+	IMapIter *it = pcd_stage(g_1072393c)->Begin(pSrc->m8);
+	while (!it->IsDone()) {
+		if (_strcmpi(pcd_stage(it->Name()), "solid") == 0) {
+			MapKeyResult tmp;
+			pcd_stage(it)->Get(pcd_stage(&tmp), g_107238e0);
+			if (0 <= (int)pcd_stage(filter) && tmp.key != filter)
+				continue;
+			*out = tmp;
+			found = true;
+			break;
+		}
+		pcd_stage(it)->Skip();
+	}
+	g_1072393c->End(it);
+	if ((char)(int)it == -1) out->tail.ent = pEnt; else out->tail.ent = pEnt;
+	out->tail.flag = 1;
+	int tmpi;
+	const char *s = pcd_stage(*pcd_stage(pEnt)->GetName(pcd_stage(&tmpi)));
+	if (!s) s = g_106b8540;
+	out->tail.name = pcd_stage(s);
+	return pcd_stage(found);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101584b0 size=0x46
 #include <string.h>
 struct CBlock { int d[12]; };
