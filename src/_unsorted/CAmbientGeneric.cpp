@@ -167,6 +167,62 @@ void CAmbientGeneric::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac9c0 size=0x14f
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+// TARGET: ?vfunc113@CAmbientGeneric@@QAEXXZ
+#include "CAmbientGeneric.h"
+#include "CGlobalEntityList.h"
+#include "CEntityVSlots.h"
+
+extern CGlobalEntityList g_106eb5d8;
+void sub_101cdac0(int edict, const Vector *pOrigin, const char *pszName, float flVolume, int soundlevel, int flags, int pitch);
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+inline const char *STRINGV(const char *s) { return s ? s : g_106b8540; }
+struct CEdictView { char pad[0x2e0]; int m_edict; int edict() { return m_edict; } };
+
+namespace block_101ac9c0 {
+struct CAmbientGenericUnit : CAmbientGeneric
+{
+	int sub_101ac670(int flags);
+};
+int CAmbientGenericUnit::sub_101ac670(int flags)
+{
+	return m_n04e0 | flags;
+}
+}
+using namespace block_101ac9c0;
+
+void CAmbientGeneric::vfunc113()
+{
+	if (0 == m_hSoundEnt.Get()) {
+		if (m_pszSoundEntName) {
+			m_hSoundEnt = g_106eb5d8.sub_100f7770(0, m_pszSoundEntName, 0, 0);
+		}
+		if (m_hSoundEnt.Get() == 0)
+			m_hSoundEnt = (CBaseEntity *)this;
+	}
+	if (!(m_b04bc)) return; CBaseEntity *pSource = m_hSoundEnt.Get();
+		if (pSource) {
+			const char *szSoundFile = *(const char **)&m_pszSoundFile;
+			if (!szSoundFile)
+				szSoundFile = g_106b8540;
+			int edict;
+			if ((char)(int)szSoundFile == -1) edict = ((CEdictView *)pSource)->edict(); else edict = ((CEdictView *)pSource)->edict();
+			sub_101cdac0(edict, ((CEntityVSlots *)pSource)->slot217(), szSoundFile, (float)(m_dpv.vol * 0.01), m_n0454, ((CAmbientGenericUnit *)this)->sub_101ac670(8), m_dpv.pitch);
+		}
+		m_flNextThink = gpGlobals->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ada80 size=0x456
 #include "CAmbientGeneric.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
