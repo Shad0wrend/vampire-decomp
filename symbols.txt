@@ -6395,6 +6395,7 @@
 0x10009322 func   ?sub_102ecc40@CAI_Navigator@@QAEPAXXZ CAI_Navigator::sub_102ecc40
 0x10009327 func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCAI_BaseNPC@@@@V?$CUtlMemory@V?$CHandle@VCAI_BaseNPC@@@@@@@@$0M@@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc1
 0x1000932c func   ?vfunc326@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc326
+0x10009331 func   ?sub_101f55a0@CUnknown1073dc28@@QAEHPAVCBaseEntity@@PBDH@Z CUnknown1073dc28::sub_101f55a0
 0x1000933b func   ?sub_100acd40@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100acd40
 0x10009340 func   ?vfunc81@CItemGVVPhoto@@QAEHXZ CItemGVVPhoto::vfunc81
 0x10009345 func   ?vfunc76@CGameRules@@UAEMABVVector@@000IPAVCBaseEntity@@HHPAUCGameTrace@@@Z CGameRules::vfunc76

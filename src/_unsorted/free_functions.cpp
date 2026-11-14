@@ -156106,6 +156106,118 @@ bool CUnknown101f5d60::sub_101f5390(void *pKVData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f55a0 size=0x283
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBaseCombatCharacter.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "ScopeTrace.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CStatDefault3List.h"
+
+struct CUnk101f42a0 {
+	char m_pad0000[0x10];
+	int m_n0010;
+	int sub_101f42a0(const char *pszName);
+};
+struct CUnk101f42a0B {
+	char m_pad0000[0x10];
+	int m_n0010;
+	int sub_101f42a0(const char *pszName);
+};
+extern CStatDefault3List g_10738d10;
+int __fastcall sub_102517b0(void *p);
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" int _strcmpi(const char *, const char *);
+extern char g_10538764[];
+extern char g_105606d4[];
+extern char g_105a6404[];
+
+inline const char *FemaleOverride(char *buf, const char *name, char bFemale)
+{
+	if (bFemale) {
+		if (name && *name) {
+			sprintf(buf, "%s\\Female_PC_Override", name);
+			name = buf;
+		} else {
+			name = "Female_PC_Override";
+		}
+	}
+	return name;
+}
+
+struct StrT { const char *p; };
+inline bool IsNZ(void *p) { return p != 0; }
+inline int A4Of(CBaseEntity *p) { return *(int *)((char *)p + 0xa4); }
+inline int LookG(void *g, const char *n) { return ((CUnk101f42a0B *)g)->sub_101f42a0(n); }
+inline int LookN(const char *n, void *g) { return ((CUnk101f42a0B *)g)->sub_101f42a0(n); }
+inline int LookJ(void **groups, int i, const char *n) { return ((CUnk101f42a0 *)groups[i])->sub_101f42a0(n); }
+inline int LookI(void **groups, int i, const char *n) { return ((CUnk101f42a0B *)groups[i])->sub_101f42a0(n); }
+inline void *DynSw(CBaseEntity *p) { return __RTDynamicCast(p, 0, g_10538764, g_105a6404, 0); }
+struct GroupsV : CUnknown1073dc28
+{
+	void *GroupAt(int i) { return m_ppGroups[i]; }
+	void **Groups() { return (void **)m_ppGroups; }
+	int LookM(int i, const char *n) { return ((CUnk101f42a0B *)m_ppGroups[i])->sub_101f42a0(n); }
+};
+struct EntA4 : CBaseEntity { int A4() { return *(int *)((char *)this + 0xa4); } };
+
+int CUnknown1073dc28::sub_101f55a0(CBaseEntity *pEntity, const char *pszName, int bFemale)
+{
+	char buf[260];
+	if (!m_ppGroups)
+		return 0;
+	int idx = pEntity->sub_1009d5e0();
+	void *p9c = pEntity->m_p9c;
+	if (p9c) {
+		if (__RTDynamicCast(pEntity, 0, g_10538764, g_105606d4, 0)) {
+			return ((CUnk101f42a0 *)m_ppGroups[idx])->sub_101f42a0(FemaleOverride(buf, pszName, (char)bFemale));
+		}
+		if (!pszName || !*pszName) {
+			pszName = ((CUnknown1073dc28Name *)((char *)g_10738d10.sub_101d5f10((CBaseCombatCharacter *)p9c) + 0x20))->Get();
+		}
+		if ((char)bFemale) {
+			if (pszName && *pszName) {
+				sprintf(buf, "%s\\Female_PC_Override", pszName);
+				pszName = buf;
+			} else {
+				pszName = "Female_PC_Override";
+			}
+		}
+		return ((CUnk101f42a0 *)m_ppGroups[idx])->sub_101f42a0(pszName);
+	} else {
+		void *pA0 = (void *)pEntity->m_n00a0;
+		if (pA0) {
+			if (*(int *)(sub_102517b0(pA0) + 0x2554) != -2) {
+				*(int *)(sub_102517b0(pA0) + 0x2554) = LookJ((void **)m_ppGroups, idx, (pszName && *pszName) ? pszName : (const char *)(sub_102517b0(pA0) + 0x24d4));
+			}
+			return *(int *)(sub_102517b0(pA0) + 0x2554);
+		}
+		if (*(int *)((char *)pEntity + 0xa4) == 0) {
+			if (__RTDynamicCast(pEntity, 0, g_10538764, g_105a6404, 0))
+				return ((CUnk101f42a0B *)m_ppGroups[idx])->sub_101f42a0(pszName);
+			const char *cn = pEntity->m_classname11c;
+			if (!cn) cn = g_106b8540;
+			if (_strcmpi(cn, "func_button") != 0) {
+				cn = pEntity->m_classname11c;
+				if (!cn) cn = g_106b8540;
+				if (_strcmpi(cn, "func_rot_button") != 0) {
+					if (__RTDynamicCast(pEntity, 0, g_10538764, g_105606d4, 0))
+						return ((CUnk101f42a0B *)m_ppGroups[idx])->sub_101f42a0(pszName);
+					return -1;
+				}
+			}
+		}
+	}
+	return ((CUnk101f42a0 *)m_ppGroups[idx])->sub_101f42a0(pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f58e0 size=0x50
 #include "CVSoundActivityTable_t.h"
 
