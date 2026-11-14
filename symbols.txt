@@ -1858,6 +1858,7 @@
 0x10003675 func   ?vfunc51@CBaseEntity@@UAEXHPAVVector@@@Z CBaseEntity::vfunc51
 0x1000367a func   ?vfunc82@CPointCamera@@UAEPAUdatamap_t@@XZ CPointCamera::vfunc82
 0x1000367f func   ?sub_1013d380@@YADXZ sub_1013d380
+0x10003684 func   ?vfunc144@CBaseCombatCharacter@@QAEXPAX@Z CBaseCombatCharacter::vfunc144
 0x10003689 func   ?sub_10358f70@@YAHXZ sub_10358f70
 0x10003693 func   ?vfunc73@CRagdollPropSpecial@@UAE_NPAVCBaseEntity@@@Z CRagdollPropSpecial::vfunc73
 0x10003698 func   ?sub_100903e0@CBaseAnimating@@QAEDXZ CBaseAnimating::sub_100903e0

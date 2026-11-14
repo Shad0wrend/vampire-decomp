@@ -1778,6 +1778,115 @@ char CBaseCombatCharacter::vfunc402()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032b9b0 size=0x356
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTakeDamageInfo.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "Vector.h"
+#include "CUnknown101c2af0.h"
+#include "CUnknown101c2ab0.h"
+#include "ScopeTrace.h"
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(p) S10(p##a) S10(p##b) S10(p##c) S10(p##d) S10(p##e) S10(p##f) S10(p##g) S10(p##h) S10(p##i) S10(p##j)
+
+struct KView
+{
+	S10(a) S10(b) S10(c) S10(d) S10(e) S10(f) S10(g) S10(h) S10(i)
+	virtual void j0(); virtual void j1(); virtual void j2(); virtual void j3(); virtual void j4(); virtual void j5(); virtual void j6();
+	virtual KView *w97();
+	S10(k) S10(l) S10(m) S10(n) virtual void o0();
+	virtual void w139(void *p);
+	S100(p) S10(q) S10(r) S10(s) S10(t) S10(u) S10(v)
+	virtual void w300(void *p, char a, char b);
+	virtual void w301(const Vector *pF, void *pInfo);
+	S10(x) S10(y) S10(z) S10(zz) S10(zy) virtual void yq0();
+	virtual void w353();
+	S10(m1) S10(m2) S10(m3) virtual void mq4();
+	virtual void w385(void *p, void *a, void *b);
+};
+struct PhysView { S10(a) S10(b) S10(c) S10(d) virtual void w40(Vector *p, int a); };
+struct DevView { virtual void a0(); virtual char w1(); char pad[0x2c - 4]; void *m_p2c; };
+extern DevView *g_106bbaa4;
+extern void (*g_109f3650)(int, const char *, ...);
+extern float g_104454c4;
+
+inline Vector InfoForce(CTakeDamageInfo *p) { return *(Vector *)((char *)p + 0x10); }
+inline IHandleEntity *L1(EHandleDetail::EntityList *l, const CBaseHandle *h) { return l->LookupEntity(*h); }
+inline IHandleEntity *L2(EHandleDetail::EntityList *l, const CBaseHandle *h) { return L1(l, h); }
+inline unsigned int FlagBit(unsigned int f, int bit) { return (f >> bit) & 1; }
+inline bool FlagB(unsigned int f, int bit) { return (f >> bit) & 1; }
+template <class T> inline int ENTINDEX(T e) { return engine->vfunc35(e); }
+
+// TARGET: CBaseCombatCharacter::vfunc144
+void CBaseCombatCharacter::vfunc144(void *pInfo)
+{
+	ScopeTrace trace("CBaseCombatCharacter::Event_Killed", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	m_field200 = 1;
+	((KView *)this)->w385(m_hActiveWeapon19a4.Get(), 0, 0);
+	const CBaseHandle *h = &m_hTarget1538;
+	EHandleDetail::EntityList *pList = EHandleDetail::g_10566458;
+	if (L2(pList, h) && m_nTarget153c == 1)
+	{
+		KView *p = (KView *)L2(pList, h);
+		if (p)
+			p->w353();
+	}
+	if ((char)(int)pList == -1) sub_10052030(); else sub_10052030();
+	sub_103234a0(this);
+	sub_10323770();
+	enginesound->vfunc6(ENTINDEX(m_pEdict2e0), 1);
+	KView *pOwner = ((KView *)this)->w97();
+	if (pOwner)
+		pOwner->w139(this);
+	CTakeDamageInfo *info = (CTakeDamageInfo *)pInfo;
+	Vector forceVector;
+	if (InfoForce(info).Length() > g_104454c4)
+		forceVector = InfoForce(info);
+	else
+		forceVector = sub_1032b290(info);
+	if (FlagB(m_flags268, 12))
+		sub_100b1d10();
+	forceVector = forceVector + m_vecVelocity3bc;
+	if (!g_106bbaa4->w1() && g_106bbaa4->m_p2c && m_obj36c)
+	{
+		Vector d;
+		((PhysView *)m_obj36c)->w40(&d, 0);
+		forceVector += d;
+		sub_100b2e30(&forceVector.x);
+	}
+	float len = forceVector.Length();
+	if (len > 50000.0f)
+	{
+		g_109f3650(1, "Clamping ragdoll force from %.2f to %.2f.\n", (double)len, 50000.0);
+		VectorNormalize(forceVector);
+		forceVector *= 50000.0f;
+	}
+	((KView *)this)->w301(&forceVector, info);
+	m_field146c = 0;
+	if (info->m_pInflictor)
+	{
+		KView *pObj = *(KView **)((char *)info->m_pInflictor + 0x9c);
+		if (pObj)
+			pObj->w300(this, ((CUnknown101c2ab0 *)pInfo)->sub_101c2ab0(), info->sub_101c2af0());
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032bdf0 size=0x6f
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
