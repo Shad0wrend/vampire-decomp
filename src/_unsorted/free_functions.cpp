@@ -53621,6 +53621,249 @@ void CCameraTrack::sub_100cc360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc430 size=0x7d1
+// TARGET: CCameraTrackV::sub_100cc430
+#include "CCameraTrack.h"
+#include "CBasePlayer.h"
+#include "CUnknown1017d630.h"
+#include "CUnknown1017d680.h"
+
+extern char g_106b8540[];
+extern float g_104454c4;
+extern char g_10538764;
+extern char g_1055d904;
+extern "C" int __cdecl _strcmpi(const char *s1, const char *s2);
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+
+#include <math.h>
+namespace block_100cc430 {
+#pragma auto_inline(off)
+#define VMUL(d, s, k) { (d).x = (s).x * (k); (d).y = (s).y * (k); (d).z = (s).z * (k); }
+void sub_1013b610(const Vector *p1, const Vector *p2, const Vector *p3, const Vector *p4, float t, Vector *pOut)
+{
+	Vector &out = *pOut;
+	float t2h = t * t * 0.5f;
+	out.x = 0.0f;
+	out.y = 0.0f;
+	out.z = 0.0f;
+	float t3h = t * t2h;
+	float th = t * 0.5f;
+	Vector a1, a2, a3, a4;
+	VMUL(a1, *p1, -t3h);
+	VMUL(a2, *p2, t3h * 3.0f);
+	VMUL(a3, *p3, t3h * -3.0f);
+	VMUL(a4, *p4, t3h);
+	out.x = a4.x + a3.x + a2.x + a1.x;
+	out.y = a4.y + a3.y + a2.y + a1.y;
+	out.z = a4.z + a3.z + a2.z + a1.z;
+	VMUL(a1, *p1, t2h + t2h);
+	VMUL(a2, *p2, t2h * -5.0f);
+	VMUL(a3, *p3, t2h * 4.0f);
+	VMUL(a4, *p4, -t2h);
+	out.x = a4.x + out.x + a3.x + a2.x + a1.x;
+	out.y = a4.y + out.y + a3.y + a2.y + a1.y;
+	out.z = a4.z + out.z + a3.z + a2.z + a1.z;
+	VMUL(a1, *p1, -th);
+	VMUL(a2, *p3, th);
+	out.x = a2.x + out.x + a1.x;
+	out.y = a2.y + out.y + a1.y;
+	out.z = a2.z + out.z + a1.z;
+	out.x = out.x + p2->x;
+	out.y = out.y + p2->y;
+	out.z = out.z + p2->z;
+}
+#pragma auto_inline(on)
+}
+using namespace block_100cc430;
+
+float sub_100cce10(float flValue);
+CBaseEntity *sub_101cd9e0(int index);
+
+inline const char *STRINGR(const char *const &s)
+{
+	return s ? s : g_106b8540;
+}
+
+// the game's recursive call goes through the incremental-link stub of this function
+struct CCameraTrackStub : public CCameraTrack
+{
+	char sub_100157b2(float *pflStartTime, EHANDLE *phKey, char *pbChanged, Vector *pvecOrigin, float *pflRoll, float *pflFOV, char bSecond, float flDelta);
+};
+
+#define S10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+struct CEngineV119
+{
+	S10(a0) S10(a1) S10(a2) S10(a3) S10(a4) S10(a5) S10(a6) S10(a7) S10(a8) S10(a9) S10(b0)
+	virtual void c0(); virtual void c1(); virtual void c2(); virtual void c3(); virtual void c4(); virtual void c5(); virtual void c6(); virtual void c7(); virtual void c8();
+	virtual float vfunc119(int flag);
+};
+struct CCameraTrackV : public CCameraTrack
+{
+	char sub_100cc430(float *pflStartTime, EHANDLE *phKey, char *pbChanged, Vector *pvecOrigin, float *pflRoll, float *pflFOV, char bSecond, float flDelta);
+};
+
+char CCameraTrackV::sub_100cc430(float *pflStartTime, EHANDLE *phKey, char *pbChanged, Vector *pvecOrigin, float *pflRoll, float *pflFOV, char bSecond, float flDelta)
+{
+	CCameraKeyFrame *pKey;
+
+	if (*pflStartTime < g_104454c4)
+		return 0;
+
+	float fTime = ((CEngineV119 *)engine)->vfunc119(0) - *pflStartTime;
+	pKey = this;
+	fTime -= m_fl470;
+
+	for (;;)
+	{
+		if (fTime < g_104454c4)
+		{
+			if (*pbChanged && fTime + flDelta >= g_104454c4 && pKey->m_pNext454 && pKey->m_b464 && pKey->m_flDelay46c == g_104454c4)
+			{
+				sub_100ccea0(&pKey->m_Output498, bSecond);
+				*pbChanged = 1;
+				*pflStartTime += fTime - 0.0001f;
+
+				pKey = pKey->m_pNext454;
+				*phKey = pKey;
+				sub_100ccea0(&pKey->m_Output480, bSecond);
+			}
+
+			*pvecOrigin = *(Vector *)pKey->vfunc217();
+			*pflRoll = pKey->m_fl45c;
+			*pflFOV = sub_100cce10(pKey->m_fl460);
+			return 1;
+		}
+
+		if (phKey->Get() == pKey && *pbChanged)
+		{
+			*pbChanged = 0;
+			sub_100ccea0(&pKey->m_Output498, bSecond);
+		}
+
+		CCameraKeyFrame *pNext = pKey->m_pNext454;
+		if (!pNext)
+		{
+			*pflStartTime = -1.0f;
+			sub_100ccea0(&m_Output4f4, bSecond);
+			if (!m_bHoldAtEnd)
+			{
+				for (int i = 1; i <= gpGlobals->maxClients; i++)
+				{
+					CBasePlayer *pPlayer = (CBasePlayer *)sub_101cd9e0(i);
+					if (pPlayer && (CBaseEntity *)(bSecond ? (CBaseEntity *)((CUnknown1017d680 *)pPlayer)->sub_1017d680() : (CBaseEntity *)((CUnknown1017d630 *)pPlayer)->sub_1017d630()) == this)
+						pPlayer->sub_1017d6d0(0);
+				}
+			}
+			return 0;
+		}
+
+		float flDist = (*(Vector *)pNext->vfunc217() - *(Vector *)pKey->vfunc217()).Length();
+
+		float fInterval = pKey->m_flDelay46c;
+		if (!pKey->m_b464)
+		{
+			if (pNext->m_b47c)
+				fInterval = flDist / pKey->m_flMoveSpeed;
+			else
+				fInterval = flDist / ((pNext->m_flMoveSpeed + pKey->m_flMoveSpeed) * 0.5f);
+		}
+
+		if (fInterval > g_104454c4)
+		{
+			if (fInterval > fTime && flDist > g_104454c4)
+			{
+				if (fTime + flDelta >= fInterval + pNext->m_fl470 && pNext->m_b464 && pNext->m_flDelay46c == g_104454c4 && pNext->m_pNext454)
+				{
+					sub_100ccea0(&pKey->m_Output498, bSecond);
+					sub_100ccea0(&pNext->m_Output480, bSecond);
+					sub_100ccea0(&pNext->m_Output498, bSecond);
+					sub_100ccea0(&pNext->m_pNext454->m_Output480, bSecond);
+
+					*pbChanged = 1;
+					*pflStartTime -= ((fInterval + pNext->m_fl470) - fTime) + 0.0001f;
+
+					pNext = pNext->m_pNext454;
+					*phKey = pNext;
+
+					*pvecOrigin = *(Vector *)pNext->vfunc217();
+					*pflRoll = pNext->m_fl45c;
+					*pflFOV = sub_100cce10(pNext->m_fl460);
+					return 1;
+				}
+
+				float flRateOut = pKey->m_flRateOut;
+				float flRateIn = pNext->m_flRateIn;
+				float t = fTime / fInterval;
+				float flA = (3.0f - flRateIn) - (flRateOut + flRateOut);
+				float flB = (flRateIn + flRateOut) - 2.0f;
+				float tSpline = ((flA + flB * t) * t + (flRateOut + 0.0f)) * t;
+
+				CCameraKeyFrame *pPrevKey = (pKey->m_pPrevious458 && !pKey->m_b47c) ? pKey->m_pPrevious458 : pKey;
+				CCameraKeyFrame *pNextKey = (pNext->m_pNext454 && !pNext->m_b47c) ? pNext->m_pNext454 : pNext;
+
+				sub_1013b610((const Vector *)pPrevKey->vfunc217(), (const Vector *)pKey->vfunc217(), (const Vector *)pNext->vfunc217(), (const Vector *)pNextKey->vfunc217(), tSpline, pvecOrigin);
+
+				Vector vOut;
+				Vector v1(sub_100cce10(pPrevKey->m_fl460), pPrevKey->m_fl45c, 0.0f);
+				Vector v2(sub_100cce10(pKey->m_fl460), pKey->m_fl45c, 0.0f);
+				Vector v3(sub_100cce10(pNext->m_fl460), pNext->m_fl45c, 0.0f);
+				Vector v4(sub_100cce10(pNextKey->m_fl460), pNextKey->m_fl45c, 0.0f);
+				sub_1013b610(&v1, &v2, &v3, &v4, tSpline, &vOut);
+
+				*pflFOV = vOut.x;
+				*pflRoll = vOut.y;
+				return 1;
+			}
+			fTime -= fInterval;
+		}
+		else
+		{
+			if (flDelta <= g_104454c4 && _strcmpi(STRINGR(gpGlobals->mapname), "sp_endsequences_b") != 0)
+			{
+				for (int i = 1; i <= gpGlobals->maxClients; i++)
+				{
+					CBasePlayer *pPlayer = (CBasePlayer *)sub_101cd9e0(i);
+					if (pPlayer)
+					{
+						CCameraTrackStub *pTrack = 0;
+						if (bSecond)
+						{
+							if ((CBaseEntity *)((CUnknown1017d680 *)pPlayer)->sub_1017d680() == this)
+								pTrack = (CCameraTrackStub *)__RTDynamicCast((void *)(CBaseEntity *)((CUnknown1017d630 *)pPlayer)->sub_1017d630(), 0, &g_10538764, &g_1055d904, 0);
+						}
+						else
+						{
+							if ((CBaseEntity *)((CUnknown1017d630 *)pPlayer)->sub_1017d630() == this)
+								pTrack = (CCameraTrackStub *)__RTDynamicCast((void *)(CBaseEntity *)((CUnknown1017d680 *)pPlayer)->sub_1017d680(), 0, &g_10538764, &g_1055d904, 0);
+						}
+						if (pTrack)
+						{
+							if (bSecond)
+								pTrack->sub_100157b2(&pTrack->m_flStartTime, &pTrack->m_hHandle, &pTrack->m_bStarted, &pTrack->m_vecViewPos, &pTrack->m_flViewRoll, &pTrack->m_flViewFOV, 0, 0.1f);
+							else
+							{
+								float flDummy = 0.0f;
+								pTrack->sub_100157b2(&pTrack->m_flStartTime4bc, &pTrack->m_hHandle4c0, &pTrack->m_bStarted4c4, &pTrack->m_vecTargetPos, &flDummy, &flDummy, 1, 0.1f);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		if (pKey == phKey->Get())
+		{
+			*phKey = pNext;
+			*pbChanged = 1;
+			sub_100ccea0(&pNext->m_Output480, bSecond);
+		}
+
+		pKey = pNext;
+		fTime -= pKey->m_fl470;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cce10 size=0x63
 #include <math.h>
 float sub_100cce10(float x)
