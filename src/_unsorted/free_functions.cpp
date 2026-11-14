@@ -130772,6 +130772,42 @@ float sub_101beed0(float x, float lo, float hi)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bef50 size=0xc2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CStealthKillRules.h"
+#include "ScopeTrace.h"
+
+extern float g_104454c4;
+
+namespace block_101bef50 {
+float sub_101beed0(float x, float lo, float hi)
+{
+	if (x > hi)
+		return (hi - lo) / (hi - lo);
+	if (x < lo)
+		return (lo - lo) / (hi - lo);
+	return (x - lo) / (hi - lo);
+}
+}
+
+// TARGET: CStealthKillRules::sub_101bef50
+float CStealthKillRules::sub_101bef50(int a, float b)
+{
+	ScopeTrace trace("CStealthKillRules::ComputeMinDepth", g_106b8540);
+	float flDepth = m_flRange - ((block_101bef50::sub_101beed0((float)a, (float)m_n0a0, (float)m_n0a4) + 0.0f) - block_101bef50::sub_101beed0(b, *(float *)&m_n0a8, m_f0ac)) * m_flRange;
+	if (g_104454c4 > flDepth)
+		flDepth = g_104454c4;
+	return flDepth;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bf060 size=0x192
 #include "CBaseEntity.h"
 #include "CUnknown101d7520.h"
