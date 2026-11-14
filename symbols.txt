@@ -11055,6 +11055,7 @@
 0x1000f489 func   ?vfunc326@CAI_BaseNPCTroika@@QAE_NPAVCBaseEntity@@H@Z CAI_BaseNPCTroika::vfunc326
 0x1000f48e func   ?vfunc0@CAimTargetManager@@UAEXH@Z CAimTargetManager::vfunc0
 0x1000f493 func   ?sub_10139550@@YAXABVQAngle@@PAVVector@@@Z sub_10139550
+0x1000f49d func   ?vfunc17@CGameMovement@@QAEXXZ CGameMovement::vfunc17
 0x1000f4a2 func   ?ShiftElementsLeft@?$CUtlVector@V?$CHandle@VCEnvPlayerSurfaceTrigger@@@@V?$CUtlMemory@V?$CHandle@VCEnvPlayerSurfaceTrigger@@@@@@@@QAEXHH@Z CUtlVector<CHandle<CEnvPlayerSurfaceTrigger>,CUtlMemory<CHandle<CEnvPlayerSurfaceTrigger> > >::ShiftElementsLeft
 0x1000f4ac func   ?sub_10140550@@YAHXZ sub_10140550
 0x1000f4b1 func   ?sub_101a6b80@@YAMXZ sub_101a6b80
