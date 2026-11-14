@@ -81516,6 +81516,163 @@ void CGameMovement::sub_101256d0(void *pNewGround)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10125db0 size=0x495
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include <math.h>
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "ConVar.h"
+#include "CUnknown1011eee0.h"
+#include "CUnknown10739d08.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+
+extern ConVar *g_109ef004;
+extern ConVar *g_1070b70c;
+extern CUnknown10739d08 g_10739d08;
+extern float g_104454c4;
+extern double g_10449280;
+extern double g_1044fab0;
+extern double g_10462958;
+
+struct CNotifierView
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3();
+	virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7();
+	virtual void vfunc8(); virtual void vfunc9(); virtual void vfunc10(); virtual void vfunc11();
+	virtual void vfunc12();
+};
+extern CNotifierView *g_1071a278;
+
+int __fastcall sub_10121ca0(char *self);
+
+#define PMV ((CMovePlayerView *)m_pPlayer)
+#define PENT ((CBasePlayer *)m_pMove)
+struct PF1EE8 { char pad[0x1ee8]; float f; };
+#define F1EE8 ((PF1EE8 *)m_pMove)->f
+#define PMV_A8 (*(float *)((char *)m_pPlayer + 0xa8))
+#define PMV_B4 (*(float *)((char *)m_pPlayer + 0xb4))
+struct CUnknown10739d08V : CUnknown10739d08
+{
+	float sub_101e7db0();
+	float sub_101e7e40();
+};
+#define G39 ((CUnknown10739d08V &)g_10739d08)
+
+// TARGET: CGameMovement::sub_10125db0  (duck-state per-frame worker)
+void CGameMovement::sub_10125db0()
+{
+	float flA = g_109ef2d4->vfunc1() ? 0.0f : g_109ef2d4->m_fValue;
+	float flB = g_109ef004->vfunc1() ? 0.0f : g_109ef004->m_fValue;
+
+	double flT = g_10739d08.sub_101e7d90() * PMV_B4 * PMV_A8 * g_10462958;
+	float flSpeed = g_10739d08.sub_101e7d90() * PMV_A8 + flT;
+	float flThreshold = flSpeed + sqrt(2.0f * flA * flB);
+
+	if (flThreshold < (g_1070b70c->vfunc1() ? g_104454c4 : g_1070b70c->m_fValue))
+		flThreshold = g_1070b70c->vfunc1() ? 0.0f : g_1070b70c->m_fValue;
+
+	float fDuck = 0.0f;
+
+	if (F1EE8 == g_1044fab0)
+	{
+		if (PENT->vfunc209() && !(unsigned char)sub_10121ca0((char *)this))
+			PMV->m_n00c0 = 0;
+	}
+
+	if (PENT->vfunc209() != 0 && !((CUnknown1011eee0 *)this)->sub_1011eee0())
+	{
+		if (F1EE8 >= flThreshold)
+		{
+			if (PENT->m_n03E0 > 0)
+			{
+				PMV->m_n00c0 = 9;
+				fDuck = (F1EE8 / G39.sub_101e7db0() > g_10449280)
+					? g_10449280
+					: ((F1EE8 / G39.sub_101e7db0() < g_104454c4)
+						? g_104454c4
+						: F1EE8 / G39.sub_101e7db0());
+			}
+			else
+			{
+				if (PENT->vfunc209()->sub_100b3350())
+					F1EE8 = F1EE8 - 173.0f;
+
+				if (F1EE8 > G39.sub_101e7db0())
+				{
+					if (F1EE8 > G39.sub_101e7e40())
+					{
+						PMV->m_n00c0 = 8;
+						PMV->m_fl00BC = gpGlobals->curtime + sub_101282b0();
+					}
+					else
+					{
+						PMV->m_n00c0 = 8;
+						PMV->m_fl00BC = gpGlobals->curtime + sub_101282b0();
+					}
+					g_1071a278->vfunc7();
+					fDuck = 1.0f;
+				}
+				else
+				{
+					if (!(PMV->m_fFlags24 & 0x79a))
+						PMV->m_n00c0 = 8;
+					PMV->m_fl00BC = gpGlobals->curtime + sub_101282b0();
+					if (F1EE8 > 0.5f * G39.sub_101e7db0())
+						fDuck = 0.85f;
+					else if (F1EE8 < 200.0f)
+						fDuck = 0.65f;
+					else
+						fDuck = 0.5f;
+				}
+			}
+		}
+		else
+		{
+			if (F1EE8 > g_104454c4)
+			{
+				PMV->m_n00c0 = (PMV->m_n00c0 < 5) ? 0 : 8;
+				PMV->m_fl00BC = 0;
+				fDuck = 0.25f;
+			}
+		}
+	}
+	else
+	{
+		if (PENT->vfunc209() == 0 && !((CUnknown1011eee0 *)this)->sub_1011eee0())
+		{
+			if (PMV->m_n00c0 == 3)
+			{
+				if (PMV->m_vecVelocity.z < g_104454c4)
+					PMV->m_n00c0 = 4;
+			}
+			else if ((PMV->m_n00c0 == 4 || PMV->m_n00c0 == 1) && PENT->m_b65c)
+				PMV->m_n00c0 = 7;
+		}
+	}
+
+	if (fDuck > g_1044fab0)
+	{
+		PENT->m_flStepSoundTime = 0;
+		sub_1011e940();
+		slot16(m_pSurface9c, fDuck, 1);
+		if (F1EE8 >= flThreshold)
+		{
+			if (PENT->vfunc209())
+			{
+				if (PMV->m_n00c0 == 0xb)
+					g_1071a278->vfunc12();
+				PENT->m_vec1EFC.z = F1EE8 * 0.013;
+				if (PENT->m_vec1EFC.x > 8.0f)
+					PENT->m_vec1EFC.x = 8.0f;
+			}
+		}
+	}
+	if (PENT->vfunc209())
+		F1EE8 = 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10126380 size=0x21
 // TARGET: sub_10126380
 float __stdcall sub_10126380(float a, float b)
