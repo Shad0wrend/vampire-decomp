@@ -148934,6 +148934,512 @@ void CVFeatMgr::sub_101e6040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e6310 size=0x1429
+#include "CVFeatMgr.h"
+#include "utlvector.h"
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+
+struct CVKeyBase
+{
+	virtual void a0();
+	virtual void Release();
+};
+
+struct CVKeys : virtual CVKeyBase
+{
+	virtual const char *GetName(); virtual void v1(); virtual CVKeys *FindKey(const char *pszName); virtual CVKeys *GetNextKey(); virtual CVKeys *GetFirstSubKey();
+	virtual CVKeys *GetNextSubKey(); virtual void *HasKey(const char *pszKey); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual int GetInt(const char *pszKey, int nDefault);
+	virtual float GetFloat(const char *pszKey, float flDefault);
+	virtual char GetBool(const char *pszKey, int nDefault);
+	virtual const char *GetString(const char *pszKey, const char *pszDefault);
+};
+typedef CVKeys CVFeatFile;
+
+struct CVDataTables { bool sub_1006cec0(CVKeys *pKeys, int a); };	// stub 0x10011be9
+
+struct CVar109ef2d4
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad04[0x28 - 4];
+	float m_fValue;
+};
+
+struct CNpcFollowerInfo
+{
+	char m_szName[32];
+	float m_flBackaway;
+	float m_flWalkTo;
+	float m_flRunTo;
+};
+
+struct CHandStrength
+{
+	int m_nMass;
+	int m_nVel;
+	float m_flForce;
+	int m_nTorque;
+	int m_nGlueRadius;
+	float m_flEncumbranceMod;
+};
+
+struct CVFeatRules : CVFeatMgr
+{
+	float m_flJumpVertical[10];	// 0x20
+	float m_flJumpHorizontal[10];	// 0x48
+	float m_flJumpGravity[10];	// 0x70
+	float m_flJumpDuration[10];	// 0x98
+	float m_flJumpHorizontalUndo[10];	// 0xc0
+	int m_nAnimalFriendship[10][3];	// 0xe8
+	CHandStrength m_hand[10];	// 0x160
+	float m_flLungeDistanceMin;	// 0x250
+	float m_flLungeDistanceMax;
+	float m_flLungeTimeMin;
+	float m_flLungeTimeMax;
+	float m_flGrappleDistanceMax;	// 0x260
+	int m_nGrapplePercent;
+	float m_flDamageTimeInitial;
+	float m_flDamageTimeStep;
+	int m_nDamagePerTick;	// 0x270
+	float m_flBreakTime;
+	float m_flBreakTimeSub;
+	float m_flDelayInitial;
+	float m_flDelayBetween;	// 0x280
+	float m_flFreeKnowledgeDuration;
+	float m_flOccludedDelayNormal;
+	float m_flOccludedDelayCover;
+	float m_flAttackerBlockedMajor;	// 0x290
+	float m_flAttackerBlocked;
+	float m_flDefenderDodgeAttack;
+	float m_flDefenderDodge;
+	float m_flDefenderBlock;	// 0x2a0
+	float m_flDefenderBlockStagger;
+	CUtlVector<CNpcFollowerInfo> m_followers;	// 0x2a8
+	float m_flTentacleHPInitial;	// 0x2bc
+	float m_flTentacleHPRegrown;	// 0x2c0
+	int m_nThrowChance;
+	float m_flChargeResetTimeNormal;
+	float m_flChargeResetTimeDesperate;
+	float m_flProxySpeedXGeneral;	// 0x2d0
+	float m_flProxySpeedXAttack;
+	float m_flProxySpeedXMovement;
+	float m_flProxySpitAttackTime;
+	float m_flNohitDamageDivide;	// 0x2e0
+	float m_flMeleeDamageScalar;
+	int m_nMeleeTentacleHitPercent;
+	float m_flFrontAttackTimeLongRange;
+	float m_flFrontAttackTimeMediumRange;	// 0x2f0
+	float m_flFrontAttackTimeShortRange;
+	float m_flMiddleAttackTimeMediumRange;
+	float m_flMiddleAttackTimeShortRange;
+	float m_flTurnSpeedNormal;	// 0x300
+	float m_flTurnSpeedAttack;
+	float m_flSpeedXGeneralBase;	// 0x308
+	float m_flSpeedXGeneralDelta;
+	float m_flSpeedXAttackBase;	// 0x310
+	float m_flSpeedXAttackDelta;
+	float m_flSpeedXMovementBase;
+	float m_flSpeedXMovementDelta;
+	float m_flProxyRespawnTimeBase;	// 0x320
+	float m_flProxyRespawnTimeDelta;
+	float m_flSpitAttackTimeBase;
+	float m_flSpitAttackTimeDelta;
+	float m_flAttackTimeScalarBase;	// 0x330
+	float m_flAttackTimeScalarDelta;
+	float m_flThrowAttackTimeFarBase;
+	float m_flThrowAttackTimeFarDelta;
+	float m_flThrowAttackTimeNearBase;	// 0x340
+	float m_flThrowAttackTimeNearDelta;
+	int m_nFrenzyDmg;	// 0x348
+	int m_nFrenzyAggrDmg;
+	float m_flFrenzySuccessCoolDown;	// 0x350
+	float m_flFrenzyFailureCoolDown;
+	int m_nBloodPoolMinPenalty;
+	int m_nDefaultDifficulty;
+	int m_nBloodPoolMinForHunger;	// 0x360
+	int m_nHungerDifficulty;
+	int m_nSoakDifficultyPC;
+	int m_nSoakDifficultyNPC;
+	int m_nDefenseDifficultyPC;	// 0x370
+	int m_nDefenseDifficultyNPC;
+	int m_nObfStealthAtkBonus[5];	// 0x378
+	float m_flObfBrokeResetDelay;	// 0x38c
+	int m_nStealthMeterFudgePercent;	// 0x390
+	float m_flMoveBreakStandStillDelay;
+	int m_nOccultRegenKillCount;	// 0x398
+	int m_nOccultRegenMaxBlood;
+	float m_flShakeAmplitude;	// 0x3a0
+	float m_flShakeFrequency;
+	float m_flShakeDuration;
+	int m_nShakeRadius;
+	float m_flHealRate;	// 0x3b0
+	int m_nHealPercent;
+	int m_nHealPercentOf;
+	int m_nAggravatedHealDelayPercent;
+	char m_bFeedUsesRatio;	// 0x3c0
+	int m_nBloodToHealthRatio;	// 0x3c4
+	float m_flBaseJumpVelocity;	// 0x3c8
+	float m_flJumpGravityMultiplier;
+	float m_flJumpHoldTime;	// 0x3d0
+	float m_flLadderClimbSpeedVertical;
+	float m_flLadderClimbSpeedHorizontal;
+	float m_flKnockbackPreventTime;
+	float m_flSafeFallDist;	// 0x3e0
+	float m_flFallDistPerDmg;
+	float m_flSupernaturalFallDist;
+	float m_flSafeFallSpeed;
+	float m_flSupernaturalFallSpeed;	// 0x3f0
+
+	void sub_101e6310();
+};
+
+CVFeatFile *sub_101f2e20(const char *pszPath, void *pPathID);
+extern void *g_1070b238;
+extern CVDataTables g_106c7c34;
+extern CVar109ef2d4 *g_109ef2d4;
+extern float g_104454c4;
+extern void (*g_1073a144)(int, int, int, int);
+extern void (__cdecl *g_109f3628)(const char *fmt, ...);	// Msg
+extern void (__cdecl *g_109f366c)(const char *fmt, ...);	// Error
+
+// TARGET: CVFeatRules::sub_101e6310
+void CVFeatRules::sub_101e6310()
+{
+	char szPath[128];
+	sprintf(szPath, "%s%s.txt", "vdata\\system\\", "feats");
+	CVFeatFile *pFile = sub_101f2e20(szPath, g_1070b238);
+	if (pFile) {
+		CVKeys *pFeats = pFile->FindKey("Feats");
+		if (m_nCount > 0) {
+			CVDmgBlock16_t block;
+			CVKeys *pKV = pFeats->FindKey("Feat");
+			for (int i = 0; i < m_nCount; ) {
+				block.sub_102042a0(4, i);
+				m_ppFeats[i]->sub_101e50b0((CVFeatKV *)pKV, (int)&block);
+				pKV = pKV->GetNextKey();
+				if (pKV) { if ((char)(int)i == -1) i++; else i++; } else { if ((char)(int)i == -1) i++; else i++; }
+			}
+		}
+		pFile->Release();
+	} else
+		g_109f3628("Unable to open [%s] data file for: Feats\n", szPath);
+
+	sprintf(szPath, "%s%s.txt", "vdata\\system\\", "rules");
+	CVFeatFile *pRules = sub_101f2e20(szPath, g_1070b238);
+	if (pRules) {
+	CVKeys *p1 = pRules->FindKey("Tables");
+	if (p1)
+		g_106c7c34.sub_1006cec0(p1, 0);
+
+	m_nFrenzyDmg = 57;
+	m_nFrenzyAggrDmg = 29;
+	m_flFrenzySuccessCoolDown = 190.0f;
+	m_flFrenzyFailureCoolDown = 120.0f;
+	m_nBloodPoolMinPenalty = 5;
+	m_nDefaultDifficulty = 5;
+	m_nBloodPoolMinForHunger = 3;
+	m_nHungerDifficulty = 5;
+	CVKeys *p2 = pRules->FindKey("VampFrenzy_Info");
+	if (p2) {
+		m_nFrenzyDmg = p2->GetInt("Dmg_Amount", m_nFrenzyDmg);
+		m_nFrenzyAggrDmg = p2->GetInt("AggrDmg_Amount", m_nFrenzyAggrDmg);
+		m_flFrenzySuccessCoolDown = p2->GetFloat("Success_CoolDown_Time", m_flFrenzySuccessCoolDown);
+		m_flFrenzyFailureCoolDown = p2->GetFloat("Failure_CoolDown_Time", m_flFrenzyFailureCoolDown);
+		m_nBloodPoolMinPenalty = p2->GetInt("BloodPool_Min_Penalty", m_nBloodPoolMinPenalty);
+		m_nDefaultDifficulty = p2->GetInt("Default_Difficulty", m_nDefaultDifficulty);
+		m_nBloodPoolMinForHunger = p2->GetInt("BloodPool_Min_For_Hunger", m_nBloodPoolMinForHunger);
+		m_nHungerDifficulty = p2->GetInt("Hunger_Difficulty", m_nHungerDifficulty);
+	}
+
+	m_nSoakDifficultyPC = 5;
+	m_nSoakDifficultyNPC = 6;
+	m_nDefenseDifficultyPC = 5;
+	m_nDefenseDifficultyNPC = 6;
+	CVKeys *p3 = pRules->FindKey("Damage_Info");
+	if (p3) {
+		m_nSoakDifficultyPC = p3->GetInt("Soak_Difficulty_PC", m_nSoakDifficultyPC);
+		m_nSoakDifficultyNPC = p3->GetInt("Soak_Difficulty_NPC", m_nSoakDifficultyNPC);
+		m_nDefenseDifficultyPC = p3->GetInt("Defense_Difficulty_PC", m_nDefenseDifficultyPC);
+		m_nDefenseDifficultyNPC = p3->GetInt("Defense_Difficulty_NPC", m_nDefenseDifficultyNPC);
+	}
+
+	char szKey[64];
+	int i;
+	for (i = 0; i < 5; i++)
+		m_nObfStealthAtkBonus[i] = 200;
+	m_flObfBrokeResetDelay = 1.0f;
+	m_nStealthMeterFudgePercent = 14;
+	m_flMoveBreakStandStillDelay = 0.01f;
+	CVKeys *p4 = pRules->FindKey("Obfuscate_Info");
+	if (p4) {
+		for (i = 0; i < 5; i++) {
+			sprintf(szKey, "Obf_StealthAtk_Bonus_Percent%d", i + 1);
+			m_nObfStealthAtkBonus[i] = p4->GetInt(szKey, m_nObfStealthAtkBonus[i]);
+		}
+		m_flObfBrokeResetDelay = p4->GetFloat("Obf_Broke_Reset_Delay", m_flObfBrokeResetDelay);
+		m_nStealthMeterFudgePercent = p4->GetInt("StealthMeter_FudgePercent", m_nStealthMeterFudgePercent);
+		m_flMoveBreakStandStillDelay = p4->GetFloat("Move_BreakStandStillEffects_Delay", m_flMoveBreakStandStillDelay);
+	}
+	m_nStealthMeterFudgePercent += 100;
+
+	m_nOccultRegenKillCount = 1;
+	m_nOccultRegenMaxBlood = 10;
+	CVKeys *p5 = pRules->FindKey("Occult_Info");
+	if (p5) {
+		m_nOccultRegenKillCount = p5->GetInt("Occult_Regen_Kill_Count", m_nOccultRegenKillCount);
+		m_nOccultRegenMaxBlood = p5->GetInt("Occult_Regen_Max_Blood", m_nOccultRegenMaxBlood);
+	}
+
+	m_flShakeAmplitude = 25.0f;
+	m_flShakeFrequency = 150.0f;
+	m_flShakeDuration = 1.0f;
+	m_nShakeRadius = 750;
+	CVKeys *p6 = pRules->FindKey("Discipline_Info");
+	if (p6) {
+		CVKeys *p7 = p6->FindKey("Potence_ScreenShake");
+		if (p7) {
+			m_flShakeAmplitude = p7->GetFloat("Amplitude", m_flShakeAmplitude);
+			m_flShakeFrequency = p7->GetFloat("Frequency", m_flShakeFrequency);
+			m_flShakeDuration = p7->GetFloat("Duration", m_flShakeDuration);
+			m_nShakeRadius = p7->GetInt("Radius", m_nShakeRadius);
+		}
+	}
+
+	m_nAggravatedHealDelayPercent = 200;
+	CVKeys *p8 = pRules->FindKey("VampHeal_Info");
+	if (p8) {
+		m_flHealRate = p8->GetFloat("Rate", 1.5f);
+		m_nHealPercent = p8->GetInt("Percent", 5);
+		m_nHealPercentOf = 0;
+		p8->GetBool("Percent_Is_Of_Max_Health", 0);
+		if (p8->GetBool("Percent_Is_Of_Max_Health", 0))
+			m_nHealPercentOf = 0;
+		else if (p8->GetBool("Percent_Is_Of_Cur_Health", 0))
+			m_nHealPercentOf = 1;
+		else if (p8->GetBool("Percent_Is_Of_Cur_Damage", 0))
+			m_nHealPercentOf = 2;
+		m_nAggravatedHealDelayPercent = p8->GetInt("Aggravated_Heal_Delay_Percent", m_nAggravatedHealDelayPercent);
+		CVKeys *p9 = p8->FindKey("VampFeedingHeal_Info");
+		if (p9) {
+			m_bFeedUsesRatio = p9->GetBool("UsesRatio", 0);
+			m_nBloodToHealthRatio = p9->GetInt("BloodToHealthRatio", 0);
+		}
+	}
+
+	CVKeys *p10 = pRules->FindKey("Ladder");
+	if (p10) {
+		m_flLadderClimbSpeedVertical = p10->GetFloat("LadderClimbSpeedVertical", 150.0f);
+		m_flLadderClimbSpeedHorizontal = p10->GetFloat("LadderClimbSpeedHorizontal", 75.0f);
+	}
+	CVKeys *p11 = pRules->FindKey("Knockbacks");
+	if (p11)
+		m_flKnockbackPreventTime = p11->GetFloat("KnockbackPreventTime", 5.0f);
+
+	CVKeys *pJump = pRules->FindKey("Jumping");
+	if (pJump) {
+		m_flBaseJumpVelocity = pJump->GetFloat("BaseJumpVelocity", 270.0f);
+		m_flJumpGravityMultiplier = pJump->GetFloat("JumpGravityMultiplier", 1.0f);
+		m_flJumpHoldTime = pJump->GetFloat("JumpHoldTime", 3.4f);
+		m_flSafeFallDist = pJump->GetFloat("SafeFallDist", 240.0f);
+		m_flFallDistPerDmg = pJump->GetFloat("FallDistPerDmg", 120.0f);
+		m_flSupernaturalFallDist = pJump->GetFloat("SupernaturalFallDist", 1200.0f);
+		m_flSafeFallSpeed = sqrt((g_109ef2d4->vfunc1() ? g_104454c4 : g_109ef2d4->m_fValue) * m_flSafeFallDist * 2);
+		m_flSupernaturalFallSpeed = sqrt((g_109ef2d4->vfunc1() ? g_104454c4 : g_109ef2d4->m_fValue) * m_flSupernaturalFallDist * 2);
+
+		CVKeys *pSub;
+		pSub = pJump->FindKey("Vertical");
+		if (pSub) {
+			for (i = 0; i < 10; i++) {
+				sprintf(szKey, "%d", i + 1);
+				m_flJumpVertical[i] = pSub->GetFloat(szKey, 1.0f);
+			}
+		} else
+			g_109f3628("Unable to load VFeat Rules data for Jumping: %s\n", szPath);
+		pSub = pJump->FindKey("Horizontal");
+		if (pSub) {
+			for (i = 0; i < 10; i++) {
+				sprintf(szKey, "%d", i + 1);
+				m_flJumpHorizontal[i] = pSub->GetFloat(szKey, 1.0f);
+			}
+		} else
+			g_109f3628("Unable to load VFeat Rules data for Jumping: %s\n", szPath);
+		pSub = pJump->FindKey("HorizontalUndo");
+		if (pSub) {
+			for (i = 0; i < 10; i++) {
+				sprintf(szKey, "%d", i + 1);
+				m_flJumpHorizontalUndo[i] = pSub->GetFloat(szKey, 1.0f);
+			}
+		} else
+			g_109f3628("Unable to load VFeat Rules data for Jumping: %s\n", szPath);
+		pSub = pJump->FindKey("Gravity");
+		if (pSub) {
+			for (i = 0; i < 10; i++) {
+				sprintf(szKey, "%d", i + 1);
+				m_flJumpGravity[i] = pSub->GetFloat(szKey, 1.0f);
+			}
+		} else
+			g_109f3628("Unable to load VFeat Rules data for Jumping: %s\n", szPath);
+		pSub = pJump->FindKey("JumpDuration");
+		if (pSub) {
+			for (i = 0; i < 10; i++) {
+				sprintf(szKey, "%d", i + 1);
+				m_flJumpDuration[i] = pSub->GetFloat(szKey, 1.0f);
+			}
+		} else
+			g_109f3628("Unable to load VFeat Rules data for Jumping: %s\n", szPath);
+	}
+
+	CVKeys *pAnimal = pRules->FindKey("Animal_Friendship");
+	for (i = 0; i < 10; i++) {
+		sprintf(szKey, "%d", i);
+		CVKeys *p17 = pAnimal->FindKey(szKey);
+		if (p17) {
+			for (int j = 0; j < 3; j++) {
+				sprintf(szKey, "%d", j);
+				m_nAnimalFriendship[i][j] = p17->GetInt(szKey, 0);
+			}
+		} else
+			g_109f3628("Unable to load VFeat Rules data for Animal_Friendship: %s\n", szPath);
+	}
+
+	CVKeys *pHand = pRules->FindKey("Physics_Hand");
+	int nMin = pHand->GetInt("Hand_Min_Distance", 24);
+	int nInitial = pHand->GetInt("Hand_Initial_Distance", 80);
+	int nHold = pHand->GetInt("Hand_Hold_Distance", 80);
+	int nDamping = pHand->GetInt("Hand_Damping", 500);
+	if (g_1073a144)
+		g_1073a144(nMin, nInitial, nHold, nDamping);
+	for (int n = 1; n <= 10; n++) {
+		sprintf(szKey, "Strength_%d", n);
+		CVKeys *p18 = pHand->FindKey(szKey);
+		if (p18) {
+			CHandStrength &h = m_hand[n - 1];
+			h.m_nMass = p18->GetInt("mass", 200);
+			h.m_nVel = p18->GetInt("vel", 400);
+			h.m_flForce = p18->GetFloat("force", 500000.0f);
+			h.m_nTorque = p18->GetInt("torque", 100);
+			h.m_nGlueRadius = p18->GetInt("glueradius", 128);
+			h.m_flEncumbranceMod = p18->GetInt("encumbranceMod", 50);
+		} else
+			g_109f3628("Unable to load VFeat Rules data for Physics_Hand: %s\n", szPath);
+	}
+
+	CVKeys *p19 = pRules->FindKey("Zombie_Grapple_Info");
+	if (p19) {
+		m_flLungeDistanceMin = p19->GetFloat("LungeDistanceMin", 98.0f);
+		m_flLungeDistanceMax = p19->GetFloat("LungeDistanceMax", 160.0f);
+		m_flLungeTimeMin = p19->GetFloat("LungeTimeMin", 3.6f);
+		m_flLungeTimeMax = p19->GetFloat("LungeTimeMax", 3.6f);
+		m_flGrappleDistanceMax = p19->GetFloat("GrappleDistanceMax", 64.0f);
+		m_nGrapplePercent = p19->GetInt("Percent", 2);
+		m_flDamageTimeInitial = p19->GetFloat("DamageTimeInitial", 1.3f);
+		m_flDamageTimeStep = p19->GetFloat("DamageTimeStep", 0.2f);
+		m_nDamagePerTick = p19->GetInt("DamagePerTick", 1);
+		m_flBreakTime = p19->GetFloat("BreakTime", 9.0f);
+		m_flBreakTimeSub = p19->GetFloat("BreakTimeSub", 0.3f);
+		m_flDelayInitial = p19->GetFloat("DelayInitial", 20.0f);
+		m_flDelayBetween = p19->GetFloat("DelayBetween", 20.0f);
+	}
+	CVKeys *p20 = pRules->FindKey("Npc_Combat_Info");
+	if (p20) {
+		m_flFreeKnowledgeDuration = p20->GetFloat("FreeKnowledgeDuration", 0.25f);
+		m_flOccludedDelayNormal = p20->GetFloat("OccludedDelayNormal", 0.5f);
+		m_flOccludedDelayCover = p20->GetFloat("OccludedDelayCover", 5.0f);
+	}
+
+	m_followers.SetGrowSize(16);
+	int nFollowers = 0;
+	CNpcFollowerInfo info;
+	CVKeys *p21 = pRules->FindKey("Npc_Follower_Info");
+	if (p21) {
+		for (CVKeys *pKV = p21->GetFirstSubKey(); pKV; pKV = pKV->GetNextSubKey()) {
+			const char *pszName = pKV->GetName();
+			if (strlen(pszName) >= 32) {
+				g_109f366c("Rules.txt - Npc_Follower_Info - Name (%s) is too long (longer than %d characters).\n", pszName, 31);
+				continue;
+			}
+			{ char *d = info.m_szName; const char *s = pszName; while ((*d++ = *s++) != 0) ; }
+			info.m_flBackaway = pKV->GetFloat("DistanceBackaway", 64.0f);
+			info.m_flWalkTo = pKV->GetFloat("DistanceWalkTo", 160.0f);
+			info.m_flRunTo = pKV->GetFloat("DistanceRunTo", 320.0f);
+			m_followers.AddToTail(info);
+			nFollowers++;
+		}
+	}
+	if (!nFollowers) {
+		strcpy(info.m_szName, "Default");
+		info.m_flBackaway = 64.0f;
+		info.m_flWalkTo = 160.0f;
+		info.m_flRunTo = 320.0f;
+		m_followers.AddToTail(info);
+	}
+
+	CVKeys *pMing = pRules->FindKey("Ming_Xiao_Info");
+	if (pMing) {
+		CVKeys *p22 = pMing->FindKey("General");
+		if (p22) {
+			m_flTentacleHPInitial = p22->GetFloat("TentacleHPInitial", 200.0f);
+			m_flTentacleHPRegrown = p22->GetFloat("TentacleHPRegrown", 160.0f);
+			m_nThrowChance = p22->GetInt("ThrowChance", 60);
+			m_flChargeResetTimeNormal = p22->GetFloat("ChargeResetTimeNormal", 10.0f);
+			m_flChargeResetTimeDesperate = p22->GetFloat("ChargeResetTimeDesperate", 10.0f);
+			m_flProxySpeedXGeneral = p22->GetFloat("ProxySpeedXGeneral", 1.4f);
+			m_flProxySpeedXAttack = p22->GetFloat("ProxySpeedXAttack", 2.0f);
+			m_flProxySpeedXMovement = p22->GetFloat("ProxySpeedXMovement", 2.0f);
+			m_flProxySpitAttackTime = p22->GetFloat("ProxySpitAttackTime", 16.0f);
+			m_flNohitDamageDivide = p22->GetFloat("NohitDamageDivide", 4.0f);
+			m_flMeleeDamageScalar = p22->GetFloat("MeleeDamageScalar", 2.0f);
+			m_nMeleeTentacleHitPercent = p22->GetInt("MeleeTentacleHitPercent", 20);
+			m_flFrontAttackTimeLongRange = p22->GetFloat("FrontAttackTimeLongRange", 8.0f);
+			m_flFrontAttackTimeMediumRange = p22->GetFloat("FrontAttackTimeMediumRange", 5.0f);
+			m_flFrontAttackTimeShortRange = p22->GetFloat("FrontAttackTimeShortRange", 8.0f);
+			m_flMiddleAttackTimeMediumRange = p22->GetFloat("MiddleAttackTimeMediumRange", 4.0f);
+			m_flMiddleAttackTimeShortRange = p22->GetFloat("MiddleAttackTimeShortRange", 1.5f);
+			m_flTurnSpeedNormal = p22->GetFloat("TurnSpeedNormal", 6.0f);
+			m_flTurnSpeedAttack = p22->GetFloat("TurnSpeedAttack", 2.0f);
+		} else
+			g_109f366c("Rules.txt - Ming_Xiao_Info - Is missing TentacleCountDependent section\n");
+		CVKeys *p23 = pMing->FindKey("TentacleCountDependent");
+		if (p23) {
+			m_flSpeedXGeneralBase = p23->GetFloat("MingXiaoSpeedXGeneralBase", 1.0f);
+			m_flSpeedXGeneralDelta = p23->GetFloat("MingXiaoSpeedXGeneralDelta", 0.0f);
+			m_flSpeedXAttackBase = p23->GetFloat("MingXiaoSpeedXAttackBase", 1.4f);
+			m_flSpeedXAttackDelta = p23->GetFloat("MingXiaoSpeedXAttackDelta", 0.05f);
+			m_flSpeedXMovementBase = p23->GetFloat("MingXiaoSpeedXMovementBase", 1.6f);
+			m_flSpeedXMovementDelta = p23->GetFloat("MingXiaoSpeedXMovementDelta", 0.05f);
+			m_flProxyRespawnTimeBase = p23->GetFloat("ProxyRespawnTimeBase", 6.0f);
+			m_flProxyRespawnTimeDelta = p23->GetFloat("ProxyRespawnTimeDelta", -1.0f);
+			m_flSpitAttackTimeBase = p23->GetFloat("SpitAttackTimeBase", 15.0f);
+			m_flSpitAttackTimeDelta = p23->GetFloat("SpitAttackTimeDelta", -1.0f);
+			m_flAttackTimeScalarBase = p23->GetFloat("AttackTimeScalarBase", 1.0f);
+			m_flAttackTimeScalarDelta = p23->GetFloat("AttackTimeScalarDelta", -0.2f);
+			m_flThrowAttackTimeFarBase = p23->GetFloat("ThrowAttackTimeFarBase", 16.0f);
+			m_flThrowAttackTimeFarDelta = p23->GetFloat("ThrowAttackTimeFarDelta", -3.0f);
+			m_flThrowAttackTimeNearBase = p23->GetFloat("ThrowAttackTimeNearBase", 30.0f);
+			m_flThrowAttackTimeNearDelta = p23->GetFloat("ThrowAttackTimeNearDelta", -7.0f);
+		} else
+			g_109f366c("Rules.txt - Ming_Xiao_Info - Is missing TentacleCountDependent section\n");
+	} else
+		g_109f366c("Rules.txt - Ming_Xiao_Info - Is missing\n");
+
+	CVKeys *p24 = pRules->FindKey("Melee_Reactions");
+	if (p24) {
+		m_flAttackerBlockedMajor = p24->GetFloat("SuccessesForAttackerBlockedMajor", -3.0f);
+		m_flAttackerBlocked = p24->GetFloat("SuccessesForAttackerBlocked", 0.0f);
+		m_flDefenderDodgeAttack = p24->GetFloat("SuccessesForDefenderDodgeAttack", -4.0f);
+		m_flDefenderDodge = p24->GetFloat("SuccessesForDefenderDodge", -2.0f);
+		m_flDefenderBlock = p24->GetFloat("SuccessesForDefenderBlock", 0.0f);
+		m_flDefenderBlockStagger = p24->GetFloat("SuccessesForDefenderBlockStagger", 2.0f);
+	}
+	pRules->Release();
+	} else
+		g_109f3628("Unable to open [%s] data file for: Feats\n", szPath);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e7c50 size=0x8e
 #include "CUnknown101e7c50.h"
 
