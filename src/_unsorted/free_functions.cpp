@@ -77000,6 +77000,151 @@ float SSmoothGrid::sub_10112470(int x, int y)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10112650 size=0x1f9
+#include "CBreakableSurface.h"
+#include "CEntityMessageFilter.h"
+
+extern Vector g_1070d1b0;
+#define WINDOW_MAX_SUPPORT			6.75
+#define WINDOW_BREAK_SUPPORT		0.20
+
+struct SSmoothGrid
+{
+	float sub_10112470(int nCol, int nRow);
+};
+
+namespace block_10112650 {
+#pragma auto_inline(off)
+struct CSupportU
+{
+	char m_pad0000[0x49c];
+	int m_nWidth;	// 0x49c
+	int m_nHeight;	// 0x4a0
+	char m_pad04a4[0x4d0 - 0x4a4];
+	float m_fl4d0[256];
+
+	float sub_10112420(int a, int b);
+	float sub_10112470(int x, int y);
+};
+float CSupportU::sub_10112420(int a, int b)
+{
+	float *pValue = &m_fl4d0[a * 16 + b];
+	if (*pValue < 0.0f)
+	{
+		return 0.0f;
+	}
+	return *pValue;
+}
+float CSupportU::sub_10112470(int x, int y)
+{
+	int maxY = m_nHeight - 1;
+	float flSum;
+	if (y == maxY)
+		flSum = 1.01f;
+	else
+		flSum = sub_10112420(x, y + 1) + 0.01f;
+	if (y == 0)
+		flSum += 1.25;
+	else
+		flSum += sub_10112420(x, y - 1) * 1.25;
+	if (x == 0)
+		flSum += 1.0;
+	else
+		flSum += sub_10112420(x - 1, y);
+	int width = m_nWidth;
+	if (x == width - 1)
+		flSum += 1.0;
+	else
+		flSum += sub_10112420(x + 1, y);
+	if (y == 0 || x == 0)
+		flSum += 1.0;
+	else
+		flSum += sub_10112420(x - 1, y - 1);
+	if (y == 0 || x == width - 1)
+		flSum += 1.0;
+	else
+		flSum += sub_10112420(x + 1, y - 1);
+	if (y == maxY || x == width - 1)
+		flSum += 0.25;
+	else
+		flSum += sub_10112420(x + 1, y + 1) * 0.25;
+	if (y == maxY || x == 0)
+		return flSum + 0.25;
+	return flSum + sub_10112420(x - 1, y + 1) * 0.25;
+}
+#pragma auto_inline(on)
+struct CBreakableSurfaceUnit : CBreakableSurface
+{
+	bool sub_101123b0(int nCol, int nRow);
+	int edict() { return m_pEdict2e0; }
+};
+bool CBreakableSurfaceUnit::sub_101123b0(int nCol, int nRow)
+{
+	if ( nCol < 0 || nCol >= m_nCols49c || nRow < 0 || nRow >= m_nRows4a0 )
+		return true;
+	if ( m_aflPanes[nCol][nRow] == -1.0f )
+		return 1;
+	return 0;
+}
+}
+using namespace block_10112650;
+
+// TARGET: ?sub_10112650@CBreakableSurface@@QAEXXZ
+void CBreakableSurface::sub_10112650()
+{
+	if (m_nSurfaceType4c8 == 1)
+		return;
+
+	int w;
+	float flSupport[16][16];
+	for (w = 0; w < m_nCols49c; w++)
+	{
+		int h;
+		for (h = 0; h < m_nRows4a0; h++)
+		{
+			if (!((CBreakableSurfaceUnit *)this)->sub_101123b0(w, h))
+				flSupport[w][h] = ((CSupportU *)this)->sub_10112470(w, h);
+		}
+	}
+
+	float flBreakValue = WINDOW_BREAK_SUPPORT*(m_nFragility/100.0);
+	bool  bNeedUpdate  = false;
+	for (w=0;w<m_nCols49c;w++)
+	{
+		for (int h=0;h<m_nRows4a0;h++)
+		{
+			if (!((CBreakableSurfaceUnit *)this)->sub_101123b0(w,h))
+			{
+				m_aflPanes[w][h] = flSupport[w][h]/WINDOW_MAX_SUPPORT;
+				if (m_aflPanes[w][h] < flBreakValue)
+				{
+					if (enginerandom->vfunc2(0,1))
+					{
+						sub_10112d50(w,h);
+					}
+					else
+					{
+						sub_101132a0(w,h,&g_1070d1b0,&g_1070d1b0);
+					}
+					m_flNextThink = gpGlobals->curtime;
+					bNeedUpdate   = true;
+				}
+			}
+		}
+	}
+
+	if (bNeedUpdate)
+	{
+		CEntityMessageFilter filter;
+		filter.sub_1019d2f0(engine->vfunc35(((CBreakableSurfaceUnit *)this)->edict()));
+		filter.MakeReliable();
+		engine->vfunc65(&filter, 0);
+		engine->vfunc67(3);
+		engine->vfunc66();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101128d0 size=0xf7
 #include "CBreakableSurface.h"
 void sub_10003d4b(Vector *, Vector *);
