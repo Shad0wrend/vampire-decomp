@@ -111330,6 +111330,104 @@ void CUnknown1018e2a0::sub_1018e2a0(CBaseEntity *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e330 size=0x37c
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "vampire.h"
+#include "CActivityCopyProp.h"
+#include "CBaseAnimating.h"
+#include "CAI_BaseNPC.h"
+#include "CEntityVSlots.h"
+#include "CEHandleGet.h"
+#include <stdlib.h>
+
+extern float (__cdecl *g_109f385c)(float, float);
+float sub_102283a0(float cur, float target, float step, float dt);
+void sub_101cd940(void *p);
+extern unsigned char g_1058d1ac[];
+
+struct CActivityCopyClrView
+{
+	char m_pad[0x1a0];
+	unsigned char clr[4];
+};
+
+// TARGET: CActivityCopyProp::sub_1018e330
+void CActivityCopyProp::sub_1018e330()
+{
+	if (!EHandle_Get(m_hTarget))
+	{
+		sub_100ac4e0(0, 0, 0);
+		sub_101cd940(this);
+		return;
+	}
+	int act = *(int *)((char *)EHandle_Get(m_hTarget) + 0xfec);
+	if (act != m_n73c)
+	{
+		m_n73c = -1;
+		int seq = ((CBaseAnimating *)this)->sub_1008dc40(act, -1);
+		if (seq != -1)
+		{
+			if (seq != *(int *)((char *)this + 0x6f0))
+			{
+				((CAI_BaseNPC *)this)->sub_10260a50(seq);
+				if (m_b734)
+					*(float *)(0x6f8 + (char *)this) = g_109f385c(0.0f, 0.45f);
+				else
+					*(float *)((char *)this + 0x6f8) = 0.0f;
+			}
+			((CEntityVSlots *)this)->slot250(0.0f);
+		}
+		((CEntityVSlots *)this)->slot67();
+		if (m_nEffectFlags & 0x10)
+			m_nEffectFlags &= ~0x10;
+	}
+	if (m_n16c == 2)
+	{
+		float dt = gpGlobals->curtime - *(float *)((char *)this + 0x178);
+		unsigned int step = m_n738;
+		if (step)
+		{
+			if (step < 5)
+			{
+				CActivityCopyClrView *c = (CActivityCopyClrView *)this;
+				float flStep = pcd_stage(m_f740) * 0.25f;
+				float flRate = 1.0f / flStep;
+				int toR = g_1058d1ac[4 + step];
+				int toG = g_1058d1ac[0xc + step];
+				int toB = g_1058d1ac[0x14 + step];
+				int dR = abs(g_1058d1ac[3 + step] - toR);
+				int dG = abs(g_1058d1ac[0xb + step] - pcd_stage(toG));
+				int dB = abs(g_1058d1ac[0x13 + step] - toB);
+				float stR = (float)dR * flRate;
+				float stG = (float)dG * flRate;
+				float stB = (float)dB * flRate;
+				float stB2 = stB;
+				c->clr[0] = sub_102283a0(c->clr[0], toR, stR, dt);
+				c->clr[1] = sub_102283a0(c->clr[1], toG, stG, dt);
+				c->clr[2] = sub_102283a0(c->clr[2], toB, stB2, dt);
+				m_f744 = m_f744 + dt;
+				dt = m_f744;
+				if (c->clr[0] == toR && c->clr[1] == toG && c->clr[2] == toB)
+				{
+					if ((float)m_n738 * flStep <= dt)
+						m_n738++;
+				}
+			}
+		}
+		else
+		{
+			m_n16c = 2;
+			float flFade = 255.0 / m_f740;
+			unsigned char a = (unsigned char)(int)sub_102283a0((float)m_bAlpha1a3, 0.0f, flFade, dt);
+			m_bAlpha1a3 = a;
+			if (a == 0 && m_bActive == 1)
+				sub_101cd940(this);
+		}
+	}
+	*(float *)((char *)this + 0x17c) = gpGlobals->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e790 size=0x12e
 #include "CActivityCopyProp.h"
 #include "CBaseAnimating.h"
