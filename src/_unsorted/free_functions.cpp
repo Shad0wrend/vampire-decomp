@@ -231026,6 +231026,312 @@ bool CAI_Pathfinder::sub_102fdcc0(const float *pStart, const float *pEnd)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fe150 size=0x695
+#include "CAI_Pathfinder.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_Navigator.h"
+#include "CBitString.h"
+#include "CPairFields102dda40.h"
+#include <malloc.h>
+
+float sub_10182160(const Vector &v);
+void sub_10143b70(const Vector &pos, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float flTime);
+extern int g_10611238[4];
+extern int g_10611228[4];
+
+struct CAI_NodePosView
+{
+	Vector sub_102fb0d0(int hull);
+};
+
+struct CCycleSample102fe150
+{
+	unsigned __int64 m_Int64;
+	void Sample()
+	{
+		unsigned __int64 *p = &m_Int64;
+		__asm {
+			mov ecx, p
+			rdtsc
+			mov [ecx], eax
+			mov [ecx+4], edx
+		}
+	}
+};
+
+inline bool BitsIsAllClear(CBitString &b)
+{
+	b.m_pData[b.m_nDwords - 1] &= ~g_1055b298[b.m_nBits % 32];
+	for (int i = b.m_nDwords - 1; i >= 0; --i) {
+		if (b.m_pData[i] != 0)
+			return false;
+	}
+	return true;
+}
+
+inline bool BitsIsSet(CBitString &b, int bitNum)
+{
+	const int *pInt = b.m_pData + (bitNum >> 5);
+	return ((*pInt & (1 << (bitNum & 31))) != 0);
+}
+
+inline void BitsSet(CBitString &b, int bitNum)
+{
+	int *pInt = b.m_pData + (bitNum >> 5);
+	*pInt |= (1 << (bitNum & 31));
+}
+
+inline void BitsClear(CBitString &b, int bitNum)
+{
+	int *pInt = b.m_pData + (bitNum >> 5);
+	*pInt &= ~(1 << (bitNum & 31));
+}
+
+inline void BitsSetP(CBitString &b, int bitNum)
+{
+	int *pInt = b.m_pData + (bitNum >> 5);
+	*pInt |= (1 << (bitNum & 31));
+}
+
+class CCycleCount
+{
+public:
+	CCycleCount() { Init(); }
+	void Init() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm
+		{
+			mov		ecx, pSample
+			rdtsc
+			mov		[ecx],     eax
+			mov		[ecx+4],   edx
+		}
+	}
+	CCycleCount &operator+=(CCycleCount const &other) { m_Int64 += other.m_Int64; return *this; }
+	__int64 m_Int64;
+};
+
+class CFastTimer
+{
+public:
+	void Start() { m_Duration.Sample(); }
+	void sub_100335e0()	// CFastTimer::End (its out-of-line copy is 0x100335e0)
+	{
+		CCycleCount cnt;
+		cnt.Sample();
+		m_Duration.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+	}
+	const CCycleCount &GetDuration() const { return m_Duration; }
+	CCycleCount m_Duration;
+};
+
+class CVProfile;
+extern CVProfile *g_109f3648;
+__declspec(dllimport) void vtune(bool bEnable);
+
+class __declspec(dllimport) CVProfNode
+{
+public:
+	CVProfNode *GetSubNode(const char *pszName, int detailLevel, const char *pBudgetGroupName);
+	void EnterScope();
+	bool ExitScope();
+	const char *GetName() { return m_pszName; }
+	CVProfNode *GetParent() { return m_pParent; }
+	int GetBudgetGroupID() { return m_BudgetGroupID; }
+
+	const char *m_pszName;	// 0x00
+	CFastTimer m_Timer;	// 0x08
+	int m_nRecursions;	// 0x10
+	unsigned m_nCurFrameCalls;	// 0x14
+	CCycleCount m_CurFrameTime;	// 0x18
+	unsigned m_nPrevFrameCalls;
+	CCycleCount m_PrevFrameTime;
+	unsigned m_nTotalCalls;
+	CCycleCount m_TotalTime;
+	CCycleCount m_PeakTime;
+	CVProfNode *m_pParent;	// 0x48
+	CVProfNode *m_pChild;
+	CVProfNode *m_pSibling;
+	int m_BudgetGroupID;	// 0x54
+};
+
+class __declspec(dllimport) CVProfile
+{
+public:
+	void EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted);
+	void ExitScope();
+	void PushGroup(int nGroupID);
+	void PopGroup();
+
+	char m_bVTuneGroupsEnabled;	// 0x0000
+	char m_pad0001[3];
+	int m_nVTuneGroupID;	// 0x0004
+	int m_GroupIDStack[1024];	// 0x0008
+	int m_nGroupStackDepth;	// 0x1008
+	int m_enabled;	// 0x100c
+	bool m_fAtRoot;	// 0x1010
+	char m_pad1011[3];
+	CVProfNode *m_pCurNode;	// 0x1014
+	CVProfNode *m_pRoot;	// 0x1018
+};
+
+
+inline void CVProfile::PopGroup()
+{
+	--m_nGroupStackDepth;
+	int nNew = m_GroupIDStack[m_nGroupStackDepth];
+	int nOld = m_GroupIDStack[m_nGroupStackDepth + 1];
+	if (nNew != nOld && m_bVTuneGroupsEnabled && nOld == m_nVTuneGroupID)
+		vtune(false);
+}
+
+inline bool CVProfNode::ExitScope()
+{
+	if (--m_nRecursions == 0 && m_nCurFrameCalls != 0)
+	{
+		m_Timer.sub_100335e0();
+		m_CurFrameTime += m_Timer.GetDuration();
+		g_109f3648->PopGroup();
+	}
+	return (m_nRecursions == 0);
+}
+
+inline void CVProfile::ExitScope()
+{
+	if (!m_fAtRoot || m_enabled != 0)
+	{
+		if (m_pCurNode->ExitScope())
+		{
+			m_pCurNode = m_pCurNode->GetParent();
+		}
+		m_fAtRoot = (m_pCurNode == m_pRoot);
+	}
+}
+
+class CVProfScope
+{
+public:
+	CVProfScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted)
+	{
+		g_109f3648->EnterScope(pszName, detailLevel, pBudgetGroupName, bAssertAccounted);
+	}
+	~CVProfScope()
+	{
+		g_109f3648->ExitScope();
+	}
+};
+#define VPROF(name) CVProfScope VProf_(name, 0, "Unaccounted", false)
+#define AI_PROFILE_SCOPE(tag) VPROF(#tag)
+#define AI_PROFILE_SCOPE_BEGIN(tag) if (0) ; else { AI_PROFILE_SCOPE(tag)
+#define AI_PROFILE_SCOPE_END() } do {} while (0)
+
+class CBitStringV : public CBitString
+{
+public:
+	CBitStringV(int numBits) { sub_102fe9a0(numBits); sub_10307890(this); }
+	~CBitStringV() { sub_100bf6a0(); }
+};
+// TARGET: CAI_Pathfinder::sub_102fe150
+bool CAI_Pathfinder::sub_102fe150(int startNode, int endNode)
+{
+	AI_PROFILE_SCOPE(CAI_Pathfinder_HasPathInner);
+	CAI_PathfinderOuter *pOuter = (CAI_PathfinderOuter *)m_pOuter;
+	CAI_NavProviderList *pProviders = ((CAI_Navigator *)pOuter->m_pPathfinder)->m_pProviders;
+	int nNodes = pProviders->m_nCount;
+	if (nNodes == 0)
+		return false;
+	int hull = m_unk08;
+	CAI_NodePosView **ppNodes = (CAI_NodePosView **)pProviders->m_ppItems;
+
+	Vector vecEnd = ppNodes[endNode]->sub_102fb0d0(hull);
+
+	CBitStringV bitsOpen(nNodes);
+	CBitStringV bitsDebug(nNodes);	// the "seen" set; VC6 orders frame slots by local name, so the names are swapped to get the game's layout
+	CAI_PathfinderOuter *pNpc = (CAI_PathfinderOuter *)m_pOuter;
+	CBitStringV bitsSeen(nNodes);
+
+	float *g = (float *)_alloca(nNodes * 4);
+	float *h = (float *)_alloca(nNodes * 4);
+	float *f = (float *)_alloca(nNodes * 4);
+	for (int i = 0; i < nNodes; i++)
+		g[i] = 3.4028235e38f;
+
+	g[startNode] = 0.0f;
+	{
+		Vector vecDelta;
+		VectorSubtract(vecEnd, ppNodes[startNode]->sub_102fb0d0(hull), vecDelta);
+		float len = sub_10182160(vecDelta);
+		f[startNode] = (h[startNode] = len * 0.1) + g[startNode];
+	}
+
+	{
+		BitsSetP(bitsOpen, startNode);
+		BitsSetP(bitsDebug, startNode);
+	}
+
+	while (!BitsIsAllClear(bitsOpen)) {
+		int minNode = sub_102f3270(&bitsOpen, f, nNodes);
+		BitsClear(bitsOpen, minNode);
+		CAI_NavProvider *pNode = (CAI_NavProvider *)ppNodes[minNode];
+		if (pNpc->m_nDebugBits & 0x804000)
+			BitsSet(bitsSeen, minNode);
+		if (minNode == endNode) {
+			if (pNpc->m_nDebugBits & 0x4000) {
+				for (int i = 0; i < nNodes; i++) {
+					if (BitsIsSet(bitsSeen, i)) {
+						Vector vecPos = ppNodes[i]->sub_102fb0d0(hull);
+						sub_10143b70(vecPos, Vector(-4.0f, -4.0f, -4.0f), Vector(4.0f, 4.0f, 4.0f), g_10611228[0], g_10611228[1], g_10611228[2], 1, 5.0f);
+						int t = g_10611228[0];
+						g_10611228[0] = g_10611228[1];
+						g_10611228[1] = g_10611228[2];
+						g_10611228[2] = g_10611228[3];
+						g_10611228[3] = t;
+					}
+				}
+			}
+			return true;
+		}
+
+		Vector vecCur = ((CAI_NodePosView *)pNode)->sub_102fb0d0(hull);
+		for (int i = 0; i < pNode->m_nEntries; i++) {
+			CPairFields102dda40 *pLink = (CPairFields102dda40 *)pNode->m_ppEntries[i];
+			if (!sub_102ff960(pLink, minNode))
+				continue;
+			int otherNode = pLink->sub_102dda40(minNode);
+			Vector vecD;
+			VectorSubtract(vecCur, ppNodes[otherNode]->sub_102fb0d0(hull), vecD);
+			float flNew = sub_10182160(vecD) + g[minNode];
+			if (!BitsIsSet(bitsDebug, otherNode) || flNew < g[otherNode]) {
+				g[otherNode] = flNew;
+				Vector vecE;
+				VectorSubtract(vecEnd, ppNodes[otherNode]->sub_102fb0d0(hull), vecE);
+				h[otherNode] = sub_10182160(vecE);
+				f[otherNode] = h[otherNode] + g[otherNode];
+				BitsSet(bitsDebug, otherNode);
+				BitsSet(bitsOpen, otherNode);
+			}
+		}
+	}
+
+	if (pNpc->m_nDebugBits & 0x804000) {
+		for (int i = 0; i < nNodes; i++) {
+			if (BitsIsSet(bitsSeen, i)) {
+				Vector vecPos = ppNodes[i]->sub_102fb0d0(hull);
+				sub_10143b70(vecPos, Vector(-4.0f, -4.0f, -4.0f), Vector(4.0f, 4.0f, 4.0f), g_10611238[0], g_10611238[1], g_10611238[2], 1, 5.0f);
+			}
+		}
+		int t = g_10611238[0];
+		g_10611238[0] = g_10611238[1];
+		g_10611238[1] = g_10611238[2];
+		g_10611238[2] = g_10611238[3];
+		g_10611238[3] = t;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fe9a0 size=0x32
 #include "CBitString.h"
 
