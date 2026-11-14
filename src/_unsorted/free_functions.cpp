@@ -98647,6 +98647,126 @@ int CUnk1015fdc0::sub_1015fdc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101600a0 size=0x38e
+#include "CNPC_VTzimisce.h"
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CGlobalEntityList.h"
+#include "QAngle.h"
+#include "TestBit.h"
+#include "Vector.h"
+#include <math.h>
+
+extern float sub_1013d580(float a, float b);	// the angle difference
+extern CGlobalEntityList *g_10566458;
+extern float g_1046fb1c;	// 0.05f
+extern float g_1046fb20;	// 0.05f
+
+struct CWeaponAttackRoll	// what CBaseCombatWeapon::sub_102517e0 returns
+{
+	char m_pad000[0x3cc];
+	int m_n3cc;
+	int m_n3d0;
+	int m_n3d4;
+	int m_n3d8;
+	int m_n3dc;
+	int m_n3e0;
+	int m_n3e4;
+	int m_n3e8;
+	int m_n3ec;
+	int m_n3f0;
+	int m_n3f4;
+};
+
+struct CWeaponHandleView
+{
+	virtual void v0();
+	virtual unsigned int *GetRefEHandle();
+};
+
+inline const Vector &PlayerAbsVelocity(CBasePlayer *p)
+{
+	if (TestBit(p->m_fFlags268, 12))
+		p->sub_100b1d10();
+	return p->m_vec03BC;
+}
+
+inline float AngleDelta(float flOld, float flNew)
+{
+	return sub_1013d580(flOld, flNew);
+}
+
+void CBasePlayer::sub_101600a0(float flFrame)
+{
+	CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e7b0();
+	if (pWeapon)
+	{
+		if (g_10566458->sub_100290c0((const unsigned int *)&m_hLastRangedWeapon) != (CBaseEntity *)pWeapon)
+		{
+			sub_10160520();
+			*(unsigned int *)&m_hLastRangedWeapon = *((CWeaponHandleView *)pWeapon)->GetRefEHandle();
+		}
+		if (pWeapon->vfunc360() & 0x6000)
+		{
+			CWeaponAttackRoll *w = (CWeaponAttackRoll *)pWeapon->sub_102517e0();
+			float t = sub_10346070() * 0.1f;
+			float flBase = (float)w->m_n3cc;
+			float flWalk = ((float)w->m_n3d8 - (float)w->m_n3dc) * t * t * t + (float)w->m_n3dc;
+			float flRun = ((float)w->m_n3e0 - (float)w->m_n3e4) * t * t * t + (float)w->m_n3e4;
+			float flGrow = ((float)w->m_n3e8 - (float)w->m_n3ec) * t + (float)w->m_n3ec;
+			float flShrink = ((float)w->m_n3f4 - (float)w->m_n3f0) * t + (float)w->m_n3f0;
+			float flSpeed = PlayerAbsVelocity(this).Length();
+			flGrow = flGrow * flFrame * 3.0f;
+			flShrink = flShrink * flFrame * 3.0f;
+			float flTarget = flBase;
+			if (m_nFlags2088 & 0x79a)
+			{
+				if (flSpeed >= 110.0f)
+					flTarget = flRun;
+				else if (flSpeed >= 60.0f)
+					flTarget = flWalk;
+			}
+			const QAngle angles = *(const QAngle *)&m_vec206c + *(const QAngle *)&m_vec1EFC;
+			float flYawDelta = AngleDelta(m_f1DE4, angles[1]) * flFrame;
+			float flPitchDelta = AngleDelta(m_f1DE8, angles[0]) * flFrame;
+			float flYawRate = fabs(flYawDelta) / g_1046fb1c;
+			float flPitchRate = fabs(flPitchDelta) / g_1046fb20;
+			float flMax = flYawRate > flPitchRate ? flYawRate : flPitchRate;
+			flMax = flMax > 1.0f ? 1.0f : (flMax < 0.0f ? 0.0f : flMax);
+			double flRate = flMax;
+			float flTurn = (flWalk - flBase) * flRate + flBase;
+			if (flTurn > flTarget)
+			{
+				flTarget = flTurn;
+				flGrow *= flRate;
+			}
+			m_f1DE4 = angles.y;
+			m_f1DE8 = angles.x;
+			if (m_f1DDC < flTarget)
+			{
+				m_f1DDC += flGrow;
+				if (m_f1DDC > flTarget)
+					m_f1DDC = flTarget;
+			}
+			else if (m_f1DDC > flTarget)
+			{
+				m_f1DDC = m_f1DDC - flShrink;
+				if (m_f1DDC < flTarget)
+					m_f1DDC = flTarget;
+			}
+			float flNew = m_f1DDC > 99.0f ? 99.0f : (m_f1DDC < 0.0f ? 0.0f : (float)(m_f1DDC * 1.0));
+			m_f1DDC = flNew;
+		}
+	}
+	else
+	{
+		*(unsigned int *)&m_hLastRangedWeapon = -1;
+		sub_10160520();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160520 size=0x30
 #include "CBasePlayer.h"
 
