@@ -107075,6 +107075,60 @@ int sub_10181040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101810f0 size=0x185
+#include "StudioHdr.h"
+
+struct FileSystemLite
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20();
+	virtual void FPrintf(void *file, const char *pszFormat, ...);
+};
+extern FileSystemLite *g_1070b238;
+extern "C" __declspec(dllimport) void Msg(const char *pMsg, ...);
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+int __cdecl sub_1025d760(const char *pszActivityName);
+void __cdecl sub_1000cd33(void *file, StudioHdr *hdr, int *counter);
+
+// TARGET: sub_101810f0
+void __cdecl sub_101810f0(void *file, StudioHdr *hdr, int *counter)
+{
+	if (!hdr)
+		return;
+	Msg("Dumping activity activities for %s:\n", hdr->m_name);
+	g_1070b238->FPrintf(file, "Dumping activity activities for %s:\n", hdr->m_name);
+	for (int i = 0; i < hdr->m_nLocalSeq; i++) {
+		char buf[256];
+		int idx = i;
+		if (idx < 0)
+			idx = 0;
+		int *seq = (int *)hdr->LocalSeq(idx);
+		if (seq[3] == -1) {
+			Q_snprintf(buf, 0x100, "%-4d: (NONE)\t%-56s [%s]\n", *counter, "ACT_INVALID", (char *)seq + seq[0]);
+		} else {
+			int id = sub_1025d760((char *)seq + seq[1]);
+			if (seq[3] == id)
+				Q_snprintf(buf, 0x100, "%-4d: (%-4d)\t%-56s [%s] \n", *counter, seq[3], (char *)seq + seq[1], (char *)seq + seq[0]);
+			else
+				Q_snprintf(buf, 0x100, "%-4d: (ERROR) %s has id %d but should be %d\n", *counter, (char *)seq + seq[1], seq[3], id);
+		}
+		if ((char)(int)(counter) == -1) { g_1070b238->FPrintf(file, buf); } else { g_1070b238->FPrintf(file, buf); }
+		(*counter)++;
+	}
+	for (int j = 0; j < hdr->m_nIncludeModels; j++) {
+		StudioIncludeModel *pInc = (StudioIncludeModel *)(hdr->m_nIncludeIndex + (char *)hdr) + j;
+		if (pInc->m_pVirtual) {
+			StudioHdr *sub = pInc->m_pVirtual->vfunc1(hdr, j);
+			if (sub)
+				sub_1000cd33(file, sub, counter);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101812f0 size=0x18d
 #include "CBasePlayer.h"
 #include "CBaseAnimating.h"
