@@ -2004,6 +2004,7 @@
 0x10003963 func   ?vfunc103@CSoundEnt@@UAEXXZ CSoundEnt::vfunc103
 0x10003968 func   ?sub_1010d050@@YIPAXPAX@Z sub_1010d050
 0x1000396d func   ?sub_10072810@CCameraShotTable@@QAEXPBD@Z CCameraShotTable::sub_10072810
+0x10003972 func   ?sub_10346380@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10346380
 0x10003977 func   ?sub_10180100@CBasePlayer@@QAEPAVCBaseEntity@@H@Z CBasePlayer::sub_10180100
 0x1000397c func   ?sub_103e3930@CWeaponRanged_FlameThrower@@QAEXXZ CWeaponRanged_FlameThrower::sub_103e3930
 0x10003981 func   ?sub_102c41d0@CAI_BaseNPCTroika@@QAEXHPBVVector@@0H@Z CAI_BaseNPCTroika::sub_102c41d0

@@ -253510,6 +253510,96 @@ float CBaseCombatCharacter::sub_10346220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10346380 size=0x30d
+#include "CNPC_VTzimisce.h"
+#define CVDmg_t() CVDmg_t(); ~CVDmg_t()
+#include "CVDmg_t.h"
+#undef CVDmg_t
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CUtlVector16.h"
+#include "CVDmg_t.h"
+#include "CUnknown101d8a70.h"
+#include "CUnknown1028b190.h"
+#include "CWeaponOwner.h"
+#include "ScopeTrace.h"
+#include "ConVar.h"
+extern ConVar g_1074f048;
+extern ConVar g_10937078;
+extern void (*g_109f3630)(const char *pMsg, ...);
+inline void *operator new(unsigned int, void *p) { return p; }
+inline int MeleeFloor(int a) { if (a <= 0) return 0; return a; }
+
+struct CMeleeDbgObj { virtual void v0(); virtual char v1(); char pad[0x28]; int m_n2c; };
+extern CMeleeDbgObj *g_1074f04c;
+extern CMeleeDbgObj *g_1093707c;
+struct CMeleeRoll { EHANDLE m_hTarget; int m_nLethality; int m_nDefense; int m_nSoak; };
+struct CMeleeLethal { int sub_10258290(CBaseCombatCharacter *p); };
+int __cdecl sub_1022f4f0(CBaseEntity *pTarget, int a, int b);
+struct CMeleeUnk101e8ef0 { int sub_101e8ef0(CBaseEntity *p); };
+extern char g_10739d08[];
+struct CMeleeOwner { char pad[0x98]; char *m_p98; };
+
+int CBaseCombatCharacter::sub_10346380(CBaseEntity *pTarget)
+{
+	ScopeTrace scope("CBaseCombatCharacter::CalcAndStoreMeleeDiceRolls", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!pTarget)
+		return -1;
+	CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e7b0();
+	if (!pWeapon)
+		return -1;
+	int *pSlot = (int *)pWeapon->sub_102517e0();
+	int index = *(int *)((char *)this + 0xa94);
+	CUtlVector16 *pRolls = (CUtlVector16 *)((char *)this + 0xa88);
+	pRolls->sub_10349d50(1);
+	pRolls->sub_10349e10(index, 1);
+	new (&((CMeleeRoll *)pRolls->m_pMemory)[index]) CMeleeRoll;
+	CMeleeRoll *pRoll = &((CMeleeRoll *)pRolls->m_pMemory)[index];
+	if (!pRoll)
+		return -1;
+	*(unsigned int *)&pRoll->m_hTarget = *pTarget->vfunc1();
+	pRoll->m_nLethality = ((CMeleeLethal *)pWeapon)->sub_10258290(this);
+	if (g_1074f048.GetBool())
+		g_109f3630("Melee Attack: (lethality) = %d\n", pRoll->m_nLethality);
+	if (g_1074f048.GetBool())
+		g_109f3630("Rolling Defense\n");
+	int nSeed = ((CMeleeUnk101e8ef0 *)g_10739d08)->sub_101e8ef0(pTarget);
+	CVDmgBlock16_t block(4, 0xc);
+	CUnknown101d8a70 result;
+	result.sub_101d8820((int)pTarget, 0, &block, nSeed);
+	{
+		int pv;
+		result.sub_101d8a70(&pv);
+	}
+	pRoll->m_nDefense = MeleeFloor(result.m_n04 - result.m_n0c);
+	if (m_pA8 && ((CMeleeOwner *)pTarget)->m_p98) {
+		CUnknown1028b190 *pTable = (CUnknown1028b190 *)(((CMeleeOwner *)pTarget)->m_p98 + 0x6028);
+		int bonus = pTable->sub_1028b300(this);
+		if (bonus > g_10937078.GetInt())
+			bonus = g_10937078.GetInt();
+		if (g_1074f048.GetBool())
+			g_109f3630("Added Defense Bonus of %d since player is using the same move on this NPC\n", bonus);
+		pRoll->m_nDefense += bonus;
+		pTable->sub_1028b190(this);
+		pTarget = *(CBaseEntity *volatile *)&pTarget;
+	}
+	CVDmg_t dmg = *(CVDmg_t *)((char *)pWeapon + 0x77c + *pSlot * 0x44);
+	if (g_1074f048.GetBool())
+		g_109f3630("Rolling Soak\n");
+	int nSoak = sub_1022f4f0(pTarget, dmg.m_pad0000, dmg.m_field10);
+	if ((char)(int)pRoll == -1) pRoll->m_nSoak = nSoak; else pRoll->m_nSoak = nSoak;
+	return index;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10346760 size=0x94
 #include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
