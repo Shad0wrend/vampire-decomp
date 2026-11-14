@@ -246951,6 +246951,160 @@ void CBaseCombatCharacter::sub_1032a100(int nAct)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1032a490 size=0x388
+#include <math.h>
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+#include "CCollisionProperty.h"
+#include "globalvars.h"
+#include "CTraceFilterSimpleTwoEnt.h"
+
+void sub_100c5d10(void *pHdr, int nSeq, float flOld, float flNow, const float *pPose, Vector &deltaPos, Vector &deltaAngles);
+extern float g_1049e030;
+
+#define S10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+#define S100(n) S10(n##0) S10(n##1) S10(n##2) S10(n##3) S10(n##4) S10(n##5) S10(n##6) S10(n##7) S10(n##8) S10(n##9)
+struct CNpc94View
+{
+	S100(a) S100(b) S100(c) S100(d) S10(e0)
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4(); virtual void f5();
+	virtual void vfunc416(int a);
+	S100(g)
+	virtual void h0(); virtual void h1(); virtual void h2(); virtual void h3(); virtual void h4();
+	virtual float vfunc522();
+};
+
+inline int GetSequenceOf(CBaseCombatCharacter *p) { return p->m_nSequence6f0; }
+inline const float *GetPoseParameterArrayOf(CBaseCombatCharacter *p) { return (const float *)((char *)p + 0x690); }
+
+inline Vector AddV(const Vector &a, const Vector &b)
+{
+	Vector r;
+	r.x = a[0] + b.x;
+	r.y = a.y + b.y;
+	r.z = a[2] + b.z;
+	return r;
+}
+
+namespace block_1032a490 {
+struct Ray_tView {
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_f34;
+};
+#pragma auto_inline(off)
+struct RayInit : Ray_t { void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b); };
+void RayInit::sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b)
+{
+	const Vector &end = *(const Vector *)pEnd;
+	Ray_tView *r = (Ray_tView *)this;
+	const Vector &mins = *(const Vector *)pMins;
+	const Vector &maxs = *(const Vector *)pMaxs;
+	VectorSubtract(end, start, r->m_Delta);
+	r->m_IsSwept = (r->m_Delta.LengthSqr() != 0.0f);
+	VectorSubtract(maxs, mins, r->m_Extents);
+	r->m_Extents *= 0.5f;
+	r->m_IsRay = (r->m_Extents.LengthSqr() < 1e-6);
+	VectorAdd(mins, maxs, r->m_StartOffset);
+	r->m_StartOffset *= 0.5f;
+	VectorAdd(start, r->m_StartOffset, r->m_Start);
+	r->m_StartOffset *= -1.0f;
+	r->m_b32 = b;
+	r->m_b33 = 0;
+	r->m_f34 = 0.0f;
+	if (a && !r->m_IsRay) {
+		r->m_f34 = (float)sqrt((r->m_Extents.x * r->m_Extents.x) + (r->m_Extents.y * r->m_Extents.y));
+		if (1e-6 < r->m_f34)
+			r->m_b33 = 1;
+	}
+}
+#pragma auto_inline(on)
+inline void TraceHullR(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, void *pFilter, CGameTrace *ptr, char a = 0, char b = 0)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, a, b);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+}
+using namespace block_1032a490;
+bool CBaseCombatCharacter::sub_1032a490()
+{
+	CNpc94View *pNpc = *(CNpc94View **)((char *)this + 0x94);
+	Vector vecTemp;
+	Vector vecLocal;
+	if (m_flTimeA9c < 0.0f)
+	{
+		vecTemp.z = 0;
+		vecTemp.y = 0;
+		vecTemp.x = 0;
+	}
+	else
+		sub_100c5d10((void *)sub_100952d0(-1), GetSequenceOf(this), m_flTimeA9c, gpGlobals->curtime, GetPoseParameterArrayOf(this), vecTemp, vecLocal);
+	m_flTimeA9c = gpGlobals->curtime;
+	float flHeight = g_1049e030;
+	if (pNpc)
+		flHeight = pNpc->vfunc522() + 0.5f;
+	Vector vecEye = *(Vector *)a83();
+	vecEye[2] += flHeight;
+	int nBone = sub_10092550((int)"Bip01");
+	if (nBone >= 0)
+	{
+		Vector vecEnd;
+		{
+			Vector vecBoneAng;
+			sub_100926e0(nBone, &vecEnd.x, &vecBoneAng.x);
+		}
+		vecEnd[2] = vecEye[2];
+		vecEnd = AddV(vecTemp, vecEnd);
+		if (vecEye != vecEnd)
+		{
+			CBaseEntity *pTarget = (m_nTarget153c != -1) ? m_hTarget1538.Get() : 0;
+			CTraceFilterSimpleTwoEnt filter(this, pTarget, 0);
+			CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+			CGameTrace tr;
+			const Vector &mins = *(Vector *)pCol->vfunc1();
+			const Vector &maxs = *(Vector *)pCol->vfunc2();
+			{
+				ScopeTrace scope("UTIL_TraceHull", g_106b8540, g_106b8540);
+				TraceHullR(vecEye, vecEnd, mins, maxs, 0x202400b, &filter, &tr, 1, 0);
+			}
+			bool bRet;
+			if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid)
+			{
+				VectorScale(vecEnd - vecEye, 1.0f - tr.m_fraction, vecEye);
+				bRet = true;
+				if (pNpc)
+					pNpc->vfunc416(1);
+				Vector vecNew = *(Vector *)a86() - vecEye;
+				vfunc62(&vecNew.x);
+			}
+			else
+				bRet = false;
+			return bRet;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1032a910 size=0xe3
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
