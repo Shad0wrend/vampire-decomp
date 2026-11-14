@@ -1209,6 +1209,7 @@
 0x10002932 func   ?sub_103a40c0@CNPC_VPlaceholder@@QAEPAV1@XZ CNPC_VPlaceholder::sub_103a40c0
 0x10002937 func   ?sub_10359dc0@@YIPAXPAX@Z sub_10359dc0
 0x1000293c func   ?vfunc113@CPointTeleport@@UAEXXZ CPointTeleport::vfunc113
+0x10002941 func   ?sub_10138830@@YAXPBMM0PAM@Z sub_10138830
 0x10002946 func   ?sub_100826b0@@YAXPAVCSceneEntity@@@Z sub_100826b0
 0x1000294b func   ?vfunc451@CNPC_VSabbatLeader@@QAEHXZ CNPC_VSabbatLeader::vfunc451
 0x10002950 func   ?sub_10256890@@YAPAVCBaseCombatWeapon@@HPAV1@PAI@Z sub_10256890

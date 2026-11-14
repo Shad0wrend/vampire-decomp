@@ -88906,6 +88906,36 @@ __declspec(naked) void sub_101387e0(const float *start, float scale, const float
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138830 size=0x26
+// TARGET: sub_10138830
+void __declspec(naked) __cdecl sub_10138830(const float *start, float scale, const float *direction, float *dest)
+{
+	// FIXME: This don't work!! It will overwrite memory in the write to dest
+
+	_asm {  // Intel SSE only routine
+		mov	eax, DWORD PTR [esp+0x04]	; *start, s0..s2
+		mov ecx, DWORD PTR [esp+0x0c]	; *direction, d0..d2
+		mov edx, DWORD PTR [esp+0x10]	; *dest
+		movss	xmm2, [esp+0x08]		; x2 = scale, 0, 0, 0
+#ifdef ALIGNED_VECTOR
+		movaps	xmm3, [ecx]				; x3 = dir0,dir1,dir2,X
+		pshufd	xmm2, xmm2, 0			; x2 = scale, scale, scale, scale
+		movaps	xmm1, [eax]				; x1 = start1, start2, start3, X
+		mulps	xmm3, xmm2				; x3 *= x2
+		addps	xmm3, xmm1				; x3 += x1
+		movaps	[edx], xmm3				; *dest = x3
+#else
+		movups	xmm3, [ecx]				; x3 = dir0,dir1,dir2,X
+		pshufd	xmm2, xmm2, 0			; x2 = scale, scale, scale, scale
+		movups	xmm1, [eax]				; x1 = start1, start2, start3, X
+		mulps	xmm3, xmm2				; x3 *= x2
+		addps	xmm3, xmm1				; x3 += x1
+		movups	[edx], xmm3				; *dest = x3
+#endif
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138870 size=0x3b
 #include "Vector.h"
 
