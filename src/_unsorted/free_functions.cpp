@@ -229412,6 +229412,70 @@ void sub_102f7a10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f7a90 size=0x113
+#include "CUnknown102f7970.h"
+#include "CAI_Pathfinder.h"
+
+extern int g_109340d8;
+extern int g_106c994c;
+extern CAI_PathfinderNetwork *g_1093407c;
+int sub_102d6210(int);
+void sub_102d7640();
+struct CEnt5f44;
+CEnt5f44 *sub_102d74c0();
+
+struct CEnt5f44View
+{
+	char pad[0x5d34];
+	CAI_Pathfinder *m_pPathfinder;
+	CAI_Pathfinder *GetPathfinder() { return m_pPathfinder; }
+	void sub_10012738(int);
+	void SetNet() { GetPathfinder()->m_pNetwork = g_1093407c; }
+	void SetupHull(int hull)
+	{
+		sub_10012738(hull);
+		CAI_Pathfinder *pf = GetPathfinder();
+		pf->m_unk08 = *(int *)((char *)pf->m_pOuter + 0x156c);
+		pf->m_unk0c = gpGlobals->framecount;
+	}
+};
+
+inline CUnknown102f7970Node *NodeAt(CUnknown102f7970Vec *v, int i)
+{
+	if (i >= 0 && i < v->m_count)
+		return v->m_pData[i];
+	g_106c994c++;
+	return 0;
+}
+
+inline void SelectHull(unsigned int mask)
+{
+	if ((int)mask > 0) {
+		while (!(mask & sub_102d6210(g_109340d8))) {
+			g_109340d8++;
+			if (g_109340d8 == 0x16)
+				g_109340d8 = 0;
+		}
+	}
+}
+
+// TARGET: CUnknown102f7970::sub_102f7a90
+void CUnknown102f7970::sub_102f7a90()
+{
+	SelectHull(sub_102f9950());
+	CEnt5f44View *pTestHull = (CEnt5f44View *)sub_102d74c0();
+	pTestHull->SetNet();
+	pTestHull->SetupHull(*(volatile int *)&g_109340d8);
+	for (int node = 0; node < m_pVec->m_count; node++) {
+		if (pTestHull->GetPathfinder()->sub_102f1900(node, 0x2400b))
+			NodeAt(m_pVec, node)->m_flags74 &= ~0x40000000;
+		else
+			NodeAt(m_pVec, node)->m_flags74 |= 0x40000000;
+	}
+	sub_102d7640();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f7c00 size=0x72
 struct CUnk102f7c00State {
     char pad[8];
