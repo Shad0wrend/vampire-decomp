@@ -5161,6 +5161,381 @@ void CBaseCombatCharacter::vfunc315()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10347180 size=0xc58
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Vector.h"
+#include "CGameTrace.h"
+#include "ConVar.h"
+#include "ScopeTrace.h"
+#include "ehandle.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "CTraceFilterPlayerMovement.h"
+#include "UTIL_Trace.h"
+#include <math.h>
+
+#include <math.h>
+namespace block_10347180 {
+#pragma auto_inline(off)
+struct RayInit : Ray_t { void sub_1004f7a0(const float *pStart, const float *pEnd); };
+void RayInit::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+struct Ray_tViewH { Vector m_Start; Vector m_Delta; Vector m_StartOffset; Vector m_Extents; bool m_IsRay; bool m_IsSwept; char m_b32; char m_b33; float m_f34; };
+struct RayHull : Ray_t { void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b); };
+void RayHull::sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b)
+{
+	const Vector &end = *(const Vector *)pEnd;
+	Ray_tViewH *r = (Ray_tViewH *)this;
+	const Vector &mins = *(const Vector *)pMins;
+	const Vector &maxs = *(const Vector *)pMaxs;
+	VectorSubtract(end, start, r->m_Delta);
+	r->m_IsSwept = (r->m_Delta.LengthSqr() != 0.0f);
+	VectorSubtract(maxs, mins, r->m_Extents);
+	r->m_Extents *= 0.5f;
+	r->m_IsRay = (r->m_Extents.LengthSqr() < 1e-6);
+	VectorAdd(mins, maxs, r->m_StartOffset);
+	r->m_StartOffset *= 0.5f;
+	VectorAdd(start, r->m_StartOffset, r->m_Start);
+	r->m_StartOffset *= -1.0f;
+	r->m_b32 = b;
+	r->m_b33 = 0;
+	r->m_f34 = 0.0f;
+	if (a && !r->m_IsRay) {
+		r->m_f34 = (float)sqrt((r->m_Extents.x * r->m_Extents.x) + (r->m_Extents.y * r->m_Extents.y));
+		if (1e-6 < r->m_f34)
+			r->m_b33 = 1;
+	}
+}
+#pragma auto_inline(on)
+}
+using namespace block_10347180;
+
+struct CMeleeHook
+{
+	virtual void v0();
+	virtual bool v1();
+};
+extern CMeleeHook *g_10924a6c;
+extern CMeleeHook *g_10936d14;
+extern CMeleeHook *g_10936e9c;
+
+struct CMeleeHullSource
+{
+	virtual void v0();
+	virtual void v1();
+	virtual const Vector *v2(int a, int b);
+	virtual const Vector *v3(int a, int b);
+};
+extern CMeleeHullSource *g_10627580;
+
+struct CMeleeEntList
+{
+	void *sub_100290c0(const void *pHandle);
+};
+extern CMeleeEntList *g_10566458;
+
+int sub_10348100(int count, int *values, int *weights, unsigned int *flags, unsigned int mask);
+bool sub_100c6020(void *pStudioHdr, int iSequence, float flCycle, const float *poseParameter, Vector &deltaPos, Vector &deltaAngles);
+void sub_1011e010(const Vector &a, const Vector &b, Vector &result);
+void sub_10137fe0(const float *in1, const float *in2, float *out);
+
+struct CMeleeSeqBox
+{
+	float mins[3];
+	float maxs[3];
+};
+
+struct CMeleeSeqDesc
+{
+	char m_pad0000[0x2bc];
+	int m_nBoxes;	// 0x2bc
+	int m_nBoxIndex;	// 0x2c0
+	int m_pad2c4[2];
+	float m_flMinRange;	// 0x2cc
+	float m_flMaxRange;	// 0x2d0
+	int m_n2d4;	// 0x2d4
+	float GetMinRange() { return m_flMinRange; }
+	float GetMaxRange() { return m_flMaxRange; }
+	CMeleeSeqBox *pBox(int i) { return (CMeleeSeqBox *)((char *)this + m_nBoxIndex) + i; }
+};
+
+struct CMeleeStatRef
+{
+	int sub_10204900(void *pCharacter);
+	char m_pad[0x44];
+};
+
+class CMeleeMoveProbe
+{
+public:
+	void sub_102e37b0(const Vector &vecStart, const Vector &vecEnd, unsigned int fMask, bool bUseOwner, CGameTrace *pTrace);
+	void sub_102e3450(const Vector &vecStart, const float *vecEnd, unsigned int collisionMask, CGameTrace *pTrace, char bGround);
+};
+
+class CMeleeWeapon : public CEntityVSlots
+{
+public:
+	int *sub_102517e0();
+	char m_pad0004[0x7a0 - 4];
+	CMeleeStatRef m_Stats[1];	// 0x7a0
+	char m_pad07e4[0x8b8 - 0x7e4];
+	float m_flMinRange;	// 0x8b8
+	int m_pad8bc;
+	float m_flMaxRange;	// 0x8c0
+	float GetMinRange() { return m_flMinRange; }
+	float GetMaxRange() { return m_flMaxRange; }
+};
+
+class CMeleeChar : public CEntityVSlots
+{
+public:
+	bool sub_10347180(CMeleeWeapon *pWeapon, CMeleeChar *pEnemy, int nActivity, int *pOutSequence);
+	void *sub_100952d0(int a);
+	int sub_1008dac0(int nActivity, int *pSequences, int *pWeights, int nStat);
+	CMeleeSeqDesc *sub_1008d990(int nSequence);
+	void sub_10269a20(int nCondition);
+
+	CCollisionProperty *CollisionProp() { return (CCollisionProperty *)((char *)this + 0x270); }
+	CMeleeMoveProbe *GetMoveProbe() { return *(CMeleeMoveProbe **)((char *)this + 0x5d40); }
+	const float *EntityToWorldTransform()
+	{
+		if ((bool)((m_iEFlags >> 11) & 1))
+			slot98();
+		return m_rgflCoordinateFrame;
+	}
+	void EntityToWorldSpace(const Vector &in, Vector *pOut)
+	{
+		sub_10137fe0(&in.x, EntityToWorldTransform(), &pOut->x);
+	}
+
+	char m_pad0004[0x4c - 4];
+	unsigned int m_fFlags4c;	// 0x4c
+	char m_pad0050[0x98 - 0x50];
+	CMeleeChar *m_pNPC98;	// 0x98
+	char m_pad009c[0xa8 - 0x9c];
+	void *m_pA8;	// 0xa8
+	char m_pad00ac[0x130 - 0xac];
+	float m_rgflCoordinateFrame[12];	// 0x130
+	char m_pad0160[0x268 - 0x160];
+	unsigned int m_iEFlags;	// 0x268
+	const char *m_name26c;	// 0x26c
+	char m_pad0270[0x690 - 0x270];
+	float m_flPoseParameter[24];	// 0x690
+	char m_pad06f0[0xfe0 - 0x6f0];
+	bool m_bAllowsInterpenetratingAttacks;	// 0xfe0
+	char m_pad0fe1[0x1538 - 0xfe1];
+	EHANDLE m_hTarget1538;	// 0x1538
+	int m_nTarget153c;	// 0x153c
+};
+
+inline void UTIL_TraceHull_Scoped(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, void *pFilter, CGameTrace *ptr)
+{
+	ScopeTrace trace("UTIL_TraceHull", g_106b8540);
+	Ray_t ray;
+	((RayHull *)&ray)->sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, 1, 0);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+inline Vector AddV(const Vector &a, const Vector &b) { Vector r; r.x = a.x + b[0]; r.y = a.y + b.y; r.z = a.z + b.z; return r; }
+inline float LenV(const Vector &v) { return (float)FastSqrt((v[0] * v.x + v.z * v.z) + v.y * v.y); }
+// side * delta.y: x reads side through the by-value operator[], y/z read delta.y through it (game fmul operand order)
+__forceinline void SideMul(const Vector &a, const Vector &dp, Vector &c) { c.x = a[0] * dp.y; c.y = a.y * dp[1]; c.z = a.z * dp[1]; }
+struct VecM : Vector { Vector MulY(const Vector &dp) const { Vector res; SideMul(*this, dp, res); return res; } };
+// TARGET: CMeleeChar::sub_10347180
+bool CMeleeChar::sub_10347180(CMeleeWeapon *pWeapon, CMeleeChar *pEnemy, int nActivity, int *pOutSequence)
+{
+	int nSequences[2048];
+	unsigned int nFlags[2048];
+	int nWeights[2048];
+	CGameTrace tr;
+	Vector vecMins, vecMaxs;
+	Vector vecLocal;
+	Vector vecForward, vecSide;
+
+	ScopeTrace trace("CBaseCombatCharacter::ChooseMeleeAttackSequence", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	*pOutSequence = -1;
+	void *pStudioHdr = sub_100952d0(-1);
+	if (!pStudioHdr)
+		return false;
+
+	CMeleeChar *pNPC = m_pNPC98;
+	if (pNPC && pEnemy) {
+		pNPC->GetMoveProbe()->sub_102e37b0(pNPC->slot192(), pEnemy->slot192(), 0x202400b, true, &tr);
+		if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid) {
+			CMeleeChar *pHit = *(CMeleeChar * volatile *)&tr.m_pEnt;
+			if (pHit && pHit != pEnemy
+				&& pHit != (pEnemy->m_nTarget153c != -1 ? g_10566458->sub_100290c0(&pEnemy->m_hTarget1538) : 0)
+				&& !(bool)((pHit->m_fFlags4c >> 10) & 1)) {
+				g_10924a6c->v1();
+				pNPC->sub_10269a20(0x3a);
+				return false;
+			}
+		}
+	}
+	if (pEnemy) {
+		pEnemy->CollisionProp()->vfunc15(&vecMins, &vecMaxs);
+		Vector vecCenter = AddV(vecMins, vecMaxs) * 0.5f;
+		vecLocal = vecCenter - *slot217();
+		float flDist = sqrt(vecLocal.x * vecLocal.x + vecLocal.y * vecLocal.y);
+		vecLocal.x = flDist;
+		vecLocal.y = 0.0f;
+		Vector vecHalf = (vecMaxs - vecMins) * 0.5f;
+		vecMins = vecLocal - vecHalf;
+		vecMaxs = vecLocal + vecHalf;
+		g_10936d14->v1();
+	}
+
+	float flStepHeight = 4.0f;
+	if (pNPC)
+		flStepHeight = pNPC->slot522();
+	if (!pWeapon || !(pWeapon->slot360() & 0x18000))
+		return false;
+
+	int nCount = sub_1008dac0(nActivity, nSequences, nWeights, pWeapon->m_Stats[*pWeapon->sub_102517e0()].sub_10204900(this));
+	if (pEnemy && pNPC) {
+		vecForward = *pEnemy->slot217() - *slot217();
+		VectorNormalize(vecForward);
+		vecSide = vecForward;
+		Vector vecRight;
+		sub_1011e010(vecSide, Vector(0, 0, 1), vecRight);
+	}
+
+	for (int i = 0; i < nCount; i++) {
+		CMeleeSeqDesc *pDesc = sub_1008d990(nSequences[i]);
+		unsigned int fl = 0;
+		if (pEnemy && vecLocal.x >= pDesc->m_flMinRange && vecLocal.x <= pDesc->m_flMaxRange)
+			fl = 8;
+		pWeapon->m_flMinRange = (pWeapon->GetMinRange() < pDesc->GetMinRange()) ? pWeapon->GetMinRange() : pDesc->GetMinRange();
+		pWeapon->m_flMaxRange = (pWeapon->GetMaxRange() > pDesc->GetMaxRange()) ? pWeapon->GetMaxRange() : pDesc->GetMaxRange();
+		fl |= 4;
+
+		Vector vecDeltaPos, vecDeltaAngles;
+		if (sub_100c6020(pStudioHdr, nSequences[i], 1.0f, m_flPoseParameter, vecDeltaPos, vecDeltaAngles)) {
+			Vector vecStart = *slot217();
+			Vector vecEnd;
+			if (pEnemy && pNPC)
+				vecEnd = vecStart + (vecForward * vecDeltaPos.x + ((const VecM &)vecSide).MulY(vecDeltaPos));
+			else
+				EntityToWorldSpace(vecDeltaPos, &vecEnd);
+			vecStart.z += flStepHeight;
+			vecEnd.z += flStepHeight;
+
+			Vector vecHullMins, vecHullMaxs;
+			if (m_pA8) {
+				vecHullMins = *g_10627580->v2(0, 0);
+				vecHullMaxs = *g_10627580->v3(0, 0);
+				CTraceFilterPlayerMovement filter(this, 6);
+				UTIL_TraceHull_Scoped(vecStart, vecEnd, vecHullMins, vecHullMaxs, 0x201400b, &filter, &tr);
+			} else {
+				CCollisionProperty *pColl = pNPC->CollisionProp();
+				vecHullMins = *(Vector *)pColl->vfunc1();
+				vecHullMaxs = *(Vector *)pColl->vfunc2();
+				pNPC->GetMoveProbe()->sub_102e3450(vecStart, &vecEnd.x, 0x202400b, &tr, 0);
+				if (pDesc->m_n2d4 >= 0)
+					fl = 0;
+			}
+
+			if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid) {
+				CMeleeChar *pHit = (CMeleeChar *)tr.m_pEnt;
+				if (pHit && pEnemy && pEnemy->m_nTarget153c != -1 && pEnemy->m_hTarget1538.Get()
+					&& pHit == (CMeleeChar *)pEnemy->m_hTarget1538.Get())
+					pHit = pEnemy;
+				if (m_pA8) {
+					if (!tr.m_startsolid) {
+						if (!(tr.m_fraction < 0.9f))
+							goto done;
+						if (!((1.0f - tr.m_fraction) * LenV(vecEnd - vecStart) > 8.0f))
+							goto done;
+					}
+				} else {
+					if (!pHit || pHit == pEnemy) {
+						static ConVar debug_melee_npc_range("debug_melee_npc_range", "128", 0, g_106b8540);
+						if (!tr.m_startsolid) {
+							float flLen = LenV(vecEnd - vecStart);
+							if (!(debug_melee_npc_range.GetFloat() < (1.0f - tr.m_fraction) * flLen))
+								goto done;
+						}
+					}
+				}
+				if (pHit && pHit == pEnemy && m_bAllowsInterpenetratingAttacks)
+					fl |= 1;
+				else
+					fl &= ~4;
+			}
+		} else {
+			fl |= 0x10;
+		}
+done:
+		if (pEnemy) {
+			CMeleeSeqDesc *pD = pDesc;
+			for (int j = 0; j < pD->m_nBoxes; j++) {
+				CMeleeSeqBox *pBox = pD->pBox(j);
+				if (pBox->mins[0] < vecMaxs.x && pBox->maxs[0] > vecMins.x
+					&& pBox->mins[1] < vecMaxs.y && pBox->maxs[1] > vecMins.y
+					&& pBox->mins[2] < vecMaxs.z && pBox->maxs[2] > vecMins.z) {
+					fl |= 2;
+					g_10936d14->v1();
+					break;
+				}
+				g_10936e9c->v1();
+			}
+		}
+		nFlags[i] = fl;
+	}
+
+	if (!pEnemy) {
+		*pOutSequence = sub_10348100(nCount, nSequences, nWeights, nFlags, 0x10);
+		if (*pOutSequence < 0)
+			*pOutSequence = sub_10348100(nCount, nSequences, nWeights, nFlags, 0);
+		return false;
+	}
+
+	int nOrder[8] = { 7, 5, 6, 3, 1, 2, 4, 0 };
+	for (int nPass = 0; nPass < 2; nPass++) {
+		for (int k = 0; k < sizeof(nOrder) / sizeof(nOrder[0]); k++) {
+			unsigned int nMask = nOrder[k];
+			if (nPass == 0)
+				nMask |= 8;
+			*pOutSequence = sub_10348100(nCount, nSequences, nWeights, nFlags, nMask);
+			if (*pOutSequence >= 0)
+			{
+				if ((nMask & 3) && (nMask & 4) && (nMask & 8))
+					return true;
+				return false;
+			}
+		}
+	}
+	*pOutSequence = -1;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103482e0 size=0xaa
 #include "utlrbtree.h"
 #include "utlsortvector.h"
