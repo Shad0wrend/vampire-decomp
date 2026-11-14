@@ -300636,6 +300636,169 @@ CBaseEntity *CUnknown10411630::sub_10411630(float arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x104116d0 size=0x36a
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CWeaponMelee.h"
+#include "CEntityVSlots.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+#include "engineserver.h"
+
+#include <math.h>
+namespace block_104116d0 {
+#pragma auto_inline(off)
+struct RayInit : Ray_t { void sub_1004f7a0(const float *pStart, const float *pEnd); };
+void RayInit::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+struct Ray_tViewH { Vector m_Start; Vector m_Delta; Vector m_StartOffset; Vector m_Extents; bool m_IsRay; bool m_IsSwept; char m_b32; char m_b33; float m_f34; };
+struct RayHull : Ray_t { void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b); };
+void RayHull::sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b)
+{
+	const Vector &end = *(const Vector *)pEnd;
+	Ray_tViewH *r = (Ray_tViewH *)this;
+	const Vector &mins = *(const Vector *)pMins;
+	const Vector &maxs = *(const Vector *)pMaxs;
+	VectorSubtract(end, start, r->m_Delta);
+	r->m_IsSwept = (r->m_Delta.LengthSqr() != 0.0f);
+	VectorSubtract(maxs, mins, r->m_Extents);
+	r->m_Extents *= 0.5f;
+	r->m_IsRay = (r->m_Extents.LengthSqr() < 1e-6);
+	VectorAdd(mins, maxs, r->m_StartOffset);
+	r->m_StartOffset *= 0.5f;
+	VectorAdd(start, r->m_StartOffset, r->m_Start);
+	r->m_StartOffset *= -1.0f;
+	r->m_b32 = b;
+	r->m_b33 = 0;
+	r->m_f34 = 0.0f;
+	if (a && !r->m_IsRay) {
+		r->m_f34 = (float)sqrt((r->m_Extents.x * r->m_Extents.x) + (r->m_Extents.y * r->m_Extents.y));
+		if (1e-6 < r->m_f34)
+			r->m_b33 = 1;
+	}
+}
+#pragma auto_inline(on)
+}
+using namespace block_104116d0;
+inline void TraceLineCallsR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+inline void TraceLineCallsR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, void *pFilter, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+inline void TraceHullDCR(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr, char a = 0, char b = 0)
+{
+	Ray_t ray;
+	((RayHull *)&ray)->sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, a, b);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+inline void TraceHullDCR(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, void *pFilter, CGameTrace *ptr, char a = 0, char b = 0)
+{
+	Ray_t ray;
+	((RayHull *)&ray)->sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, a, b);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+class CPlayerGetVectors
+{
+public:
+	void sub_100b7fa0(Vector *pForward, Vector *pRight, Vector *pUp);
+};
+bool sub_10411b20(CBaseEntity *pEnt);
+struct CMeleeRange
+{
+	virtual char vfunc0();
+	virtual bool vfunc1();
+	char m_pad[0x28 - 4];
+	float m_fl28;
+};
+extern CMeleeRange *g_1094a98c;
+
+// TARGET: CWeaponMelee::sub_104116d0
+CBaseEntity *CWeaponMelee::sub_104116d0(int slot)
+{
+	CBaseEntity *pOwner = (CBaseEntity *)sub_102521f0();
+	CEntityVSlots *pPlayer = pOwner ? (CEntityVSlots *)pOwner->m_pA8 : 0;
+	if (!pPlayer)
+		return 0;
+	unsigned int idx = slot & 0xff;
+	if (engine->vfunc120() != *(int *)((char *)this + 0x884 + idx * 4))
+	{
+		*(CBaseEntity **)((char *)this + 0x87c + idx * 4) = 0;
+		*(int *)((char *)this + 0x884 + idx * 4) = engine->vfunc120();
+		Vector vecForward;
+		((CPlayerGetVectors *)pPlayer)->sub_100b7fa0(&vecForward, 0, 0);
+		Vector vecStart = pPlayer->slot389(*pPlayer->slot220());
+		Vector vecEnd = vecStart + vecForward * sub_1040e5b0();
+		CTraceFilterNoOwnerTest filter(pPlayer);
+		CGameTrace trace;
+		TraceLineCallsR(vecStart, vecEnd, 0x46004003, &filter, &trace);
+		if (trace.m_fraction == 1.0 || !trace.m_pEnt || !engine->vfunc35(pcd_stage(trace.m_pEnt->m_pEdict2e0)))
+		{
+			ScopeTrace scope("UTIL_TraceHull", g_106b8540);
+			TraceHullDCR(vecStart, vecEnd, Vector(-4.0f, -4.0f, -4.0f), Vector(4.0f, 4.0f, 4.0f), 0x46004003, &filter, &trace);
+		}
+		CBaseEntity *pCandidate = trace.m_pEnt;
+		if (!sub_10411160(pCandidate, slot) || !pCandidate || !engine->vfunc35(pcd_stage(pCandidate->m_pEdict2e0)))
+		{
+			pCandidate = sub_1040f550(&vecStart, &vecForward, g_1094a98c->vfunc1() ? 0.0f : g_1094a98c->m_fl28);
+			if (!sub_10411160(pCandidate, slot))
+				pCandidate = 0;
+		}
+		if (sub_10411b20(pCandidate))
+			*(CBaseEntity **)((char *)this + 0x87c + idx * 4) = pCandidate;
+	}
+	return *(CBaseEntity **)((char *)this + 0x87c + idx * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10411b20 size=0x1d
 // TARGET: sub_10411b20
 struct CUnk10411b20
