@@ -9634,6 +9634,7 @@
 0x1000d5ee func   ??0CBaseButtonBase@@QAE@XZ CBaseButtonBase::CBaseButtonBase
 0x1000d5ee func   ??0CBaseEntity@@QAE@XZ CBaseEntity::CBaseEntity
 0x1000d5ee func   ??0CBaseToggle@@QAE@XZ CBaseToggle::CBaseToggle
+0x1000d5f3 func   ?sub_103ed200@CWeaponThrown_Grenade_Frag@@QAEXXZ CWeaponThrown_Grenade_Frag::sub_103ed200
 0x1000d5f8 func   ?vfunc98@CBaseEntity@@UAEXXZ CBaseEntity::vfunc98
 0x1000d5fd func   ?vfunc138@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc138
 0x1000d602 func   ?vfunc409@CBasePlayer@@UAEHXZ CBasePlayer::vfunc409

@@ -293722,6 +293722,115 @@ int sub_103ed0e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ed200 size=0x4e6
+#include "vampire_all.h"
+#include "CBaseEntity.h"
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CBasePlayer.h"
+#include "UTIL_Trace.h"
+#include "CUnknown101e8080.h"
+#include "QAngle.h"
+#include <math.h>
+
+struct SCurve6caa0 { float sub_1006caa0(int a); };
+struct StatOwner { SCurve6caa0 *sub_1006cff0(int id); };
+struct CNamedList1006cf30 { int sub_1006cf30(const char *name); };
+struct CUnknown1004f860 { void *sub_1004f860(); };
+extern StatOwner g_106c7c34;
+extern unsigned char g_10942e28;
+extern int g_10942e24;
+extern CUnknown101e8080 g_10739d08;
+__declspec(dllimport) void Msg(const char *fmt, ...);
+void sub_101cebc0(void *p, int a, int b);
+void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+void sub_103ed8f0();
+struct CAnimView { int sub_10092550(const char *n); void sub_100926e0(int i, Vector *pos, QAngle *ang); };
+extern Vector g_1070d1b0;
+struct CGrenadeView { char pad[0x910]; int m_n910; };
+struct CEntV { virtual void v0(); virtual int *vfunc1(); };
+
+inline Vector AddA(const Vector &a, const Vector &b) { Vector r; r.x = a[0] + b.x; r.y = a[1] + b.y; r.z = a[2] + b.z; return r; }
+void CWeaponThrown_Grenade_Frag::sub_103ed200()
+{
+	void *pOwner = sub_102521f0();
+	if (!pOwner)
+		return;
+	CBasePlayer *pPlayer = *(CBasePlayer **)((char *)pOwner + 0xa8);
+	if (!pPlayer)
+		return;
+
+	Vector vecEye;
+	pPlayer->vfunc389(&vecEye, (const Vector *)((CWeaponThrown_Grenade_Frag *)pPlayer)->vfunc217());
+	Vector vecForward = pPlayer->sub_10176520(0.087155744f);
+		Vector vecEnd = AddA(vecEye, vecForward * 56755.84f);
+		Msg("Grenade facing vector %f %f %f\n", vecForward.x, vecForward.y, vecForward.z);
+
+		CGameTrace tr;
+		{
+			Ray_t ray;
+			((CUnknown1004f860 *)&ray)->sub_1004f860();
+			ray.sub_1004f7a0(&vecEye.x, &vecEnd.x);
+			CTraceFilterSimple filter(pPlayer, 0);
+			g_1070b254->vfunc4(&ray, 0x201400b, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+			if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+				sub_10146570((const Vector *)&tr.m_startpos, (const Vector *)&tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
+		}
+
+		int res;
+		g_10739d08.sub_101e8080(&res, pPlayer, fabs(vecEye.x - tr.m_endpos[0]) + fabs(vecEye.y - tr.m_endpos[1]) + fabs(vecEye.z - tr.m_endpos[2]), 0);
+		if (res == 0) {
+			sub_101cebc0(pPlayer, 2, 0);
+			vfunc373_slot(pPlayer);
+			return;
+		}
+
+	{
+		if (!(g_10942e28 & 1)) {
+			g_10942e28 |= 1;
+			g_10942e24 = ((CNamedList1006cf30 *)&g_106c7c34)->sub_1006cf30("Throwing_Angle_Adjustment");
+		}
+		float flAdjust = g_106c7c34.sub_1006cff0(g_10942e24)->sub_1006caa0(10);
+		QAngle angThrow = *(QAngle *)g_1070d9d0;
+		float flRand = enginerandom->vfunc1(0, flAdjust);
+		if (enginerandom->vfunc2(0, 1))
+			angThrow.y = flRand;
+		else
+			angThrow.y = -flRand;
+
+		Vector vecDir = vecForward;
+		QAngle ang = angThrow + *(QAngle *)vfunc219();
+		sub_10139610(ang, &vecDir, 0, 0);
+		vecForward.x = vecDir.x;
+
+		CAnimView *pAnim = (CAnimView *)pPlayer;
+		int iBone = pAnim->sub_10092550("Bip01 R Hand");
+		if (iBone != -1)
+			pAnim->sub_100926e0(iBone, &vecEye, &ang);
+	}
+
+	vecEye = vecEye + vecForward * 18.0f;
+	CBaseEntity *pGrenade;
+	{
+		Vector vecVel;
+		if (m_n86c == 0) {
+			vecVel = vecForward * 800.0f + pPlayer->m_vec03D4;
+		} else {
+			vecForward.z = -0.25f;
+			vecVel = vecForward * 500.0f + pPlayer->m_vec03D4;
+		}
+		Vector angVel = g_1070d1b0;
+		pGrenade = vfunc372_slot(vecEye, vecForward, vecVel, angVel);
+	}
+	if (!pGrenade)
+		return;
+	((CGrenadeView *)pGrenade)->m_n910 = *((CEntV *)pPlayer)->vfunc1();
+	sub_103ed830(pPlayer);
+	m_flTime730 = *(float *)((char *)sub_102517e0() + 0x260) + gpGlobals->curtime;
+	sub_100ac4e0((void *)sub_103ed8f0, 0, 0);
+	m_flNextThink17c = gpGlobals->curtime + 0.5;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ed830 size=0x61
 #include "CWeaponThrown_Grenade_Frag.h"
 #include "CBaseCombatCharacter.h"
