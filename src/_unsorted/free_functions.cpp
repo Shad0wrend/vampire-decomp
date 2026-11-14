@@ -207170,6 +207170,98 @@ void CAI_BaseNPCTroika::sub_102b2730()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b3270 size=0x290
+#include <math.h>
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "ehandle.h"
+
+extern void (*g_109f364c)(const char *pMsg, ...);
+
+namespace block_102b8cd0 {
+struct CAI_BaseNPCTroikaUnit : CAI_BaseNPCTroika
+{
+	bool sub_102b8cd0(CBaseEntity *pEnt);
+};
+}
+using namespace block_102b8cd0;
+
+inline bool IsNear(CEntityVSlots *pThis, CEntityVSlots *pOther)
+{
+	if ((*pThis->slot217() - *pOther->slot217()).Length2DSqr() <= 65536.0f) {
+		float zThis = pThis->slot217()->z;
+		if ((float)fabs(zThis - pOther->slot217()->z) <= 80.0f)
+			return true;
+	}
+	return false;
+}
+
+// TARGET: CAI_BaseNPCTroika::sub_102b3270
+bool CAI_BaseNPCTroika::sub_102b3270(CBaseEntity *pEnt, char bFlag)
+{
+	if (m_flags14b8 & 0x4000080)
+		return false;
+	if (m_b6435)
+		return false;
+	if (!pEnt)
+		return false;
+	if (pEnt == m_h647c.Get())
+		return false;
+	if (pEnt == vfunc168())
+		return true;
+	if (((CAI_BaseNPCTroikaUnit *)this)->sub_102b8cd0(pEnt)) {
+		int m = *(int *)((char *)this + 0x60e0);
+		if (m == 0) {
+			if (bFlag) {
+				CEntityVSlots *pFocus = (CEntityVSlots *)((CEntityVSlots *)pEnt)->slot167();
+				if (pFocus != (CEntityVSlots *)this && pFocus && ((CEntityVSlots *)this)->slot404(pFocus) == 1) {
+					CEntityVSlots *pCheck = (CEntityVSlots *)pEnt;
+					if (IsNear((CEntityVSlots *)this, pCheck))
+						return true;
+					pCheck = pFocus;
+					if (IsNear((CEntityVSlots *)this, pCheck))
+						return true;
+				}
+			}
+		} else {
+			if (!bFlag)
+				return false;
+			if (m == 1 || m == 0x10)
+				return false;
+		}
+	}
+	switch (bFlag ? m_n633c : m_n6338) {
+	case 0:
+		break;
+	case 1:
+		if (!pEnt->m_pA8)
+			return false;
+		if (((CEntityVSlots *)this)->slot404(pEnt) == 1)
+			return true;
+		break;
+	case 2:
+		if (!pEnt->m_pA8)
+			return false;
+	case 5:
+		if (((CEntityVSlots *)this)->slot404(pEnt) == 4)
+			break;
+	case 6:
+		return true;
+	case 4:
+		if (((CEntityVSlots *)this)->slot404(pEnt) == 1)
+			return true;
+		break;
+	case 3:
+		if (pEnt->m_pA8)
+			return true;
+		break;
+	default:
+		g_109f364c("Hey FOO!!!  I don't recognize your investigate mode!\n");
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b3d90 size=0x49
 struct CAI_Timer2c
 {
