@@ -178,3 +178,91 @@ void CSoundScheme::vfunc104()
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1022b690 size=0x3ac
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "IVEngineServer.h"
+#include "ScopeTrace.h"
+#include "CSoundScheme.h"
+#include "DebugOverlay.h"
+#include "Tier1.h"
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+inline CSoundSchemeList &ListElem(CSoundSchemeList *const &base, int i) { return base[i]; }
+
+struct CSSView : CSoundScheme
+{
+	int edict() { return m_pEdict2e0; }
+	int entindex() { return engine->vfunc35(edict()); }
+	void EntityText(int off, const char *t, int dur) { sub_101434b0(entindex(), off, t, dur, 255, 255, 255, 255); }
+};
+
+int CSoundScheme::vfunc124()
+{
+	char buf[0x80];
+	int i;
+	int line = 0;
+	int ed;
+	if (m_fDebugOverlays224 & 1) {
+		int (*snp)(char *, int, const char *, ...);
+		line = CBaseEntity::vfunc124();
+
+		if (m_nSoundCount == 0 && !m_bList460Valid && !m_bList4f0Valid && !m_bList4a8Valid && !m_bList538Valid) {
+			const char *nm = sub_100ab4f0();
+			snp = g_109f388c;
+			snp(buf, 0x80, "%s: Not Playing", nm);
+			((CSSView *)this)->EntityText(line, buf, 0);
+			line++;
+			snp(buf, 0x80, "INVALID SCHEME FILE: %s", STRINGR(m_sSchemeFile.pszValue));
+			((CSSView *)this)->EntityText(line, buf, 0);
+			line++;
+		} else if (m_bStarted) {
+			snp = g_109f388c;
+			if (m_bList460Valid) {
+				snp(buf, 0x80, "Ambient loop: %s  Vol: %.2f", m_lists460[0].m_szName, (double)*(float *)&m_lists460[0].m_n40);
+			} else
+				snp(buf, 0x80, "Invalid Ambient loop");
+			((CSSView *)this)->EntityText(line, buf, 0);
+			line++;
+			if (m_bList4f0Valid)
+				snp(buf, 0x80, "Music track: %s  Vol: %.2f", m_lists460[2].m_szName, (double)*(float *)&m_lists460[2].m_n40);
+			else
+				snp(buf, 0x80, "Invalid Music Track");
+			((CSSView *)this)->EntityText(line, buf, 0);
+			line++;
+			if (m_bList4a8Valid)
+				snp(buf, 0x80, "Combat track: %s  Vol: %.2f", m_lists460[1].m_szName, (double)*(float *)&m_lists460[1].m_n40);
+			else
+				snp(buf, 0x80, "Invalid Combat Track");
+			((CSSView *)this)->EntityText(line, buf, 0);
+			line++;
+			if (m_bList538Valid)
+				snp(buf, 0x80, "Alert track: %s  Vol: %.2f", m_lists460[3].m_szName, (double)*(float *)&m_lists460[3].m_n40);
+			else
+				snp(buf, 0x80, "Invalid Alsert Track");
+			((CSSView *)this)->EntityText(line, buf, 0);
+			line++;
+		} else {
+			const char *nm = sub_100ab4f0();
+			snp = g_109f388c;
+			snp(buf, 0x80, "%s: Not Playing", nm);
+			((CSSView *)this)->EntityText(line, buf, 0);
+			line++;
+		}
+		for (i = 0; i < m_n594Count5a0; i++) {
+			snp(buf, 0x80, "Invalid file: %s \n", ListElem(m_pListMemory594, i).m_szName);
+			((CSSView *)this)->EntityText(line, buf, 0);
+			line++;
+		}
+	}
+	return line;
+}
+// END FUNCTION
