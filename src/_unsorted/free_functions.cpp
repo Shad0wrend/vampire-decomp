@@ -94619,6 +94619,143 @@ float sub_101456e0(const Vector *pOrigin)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145980 size=0x63a
+#include "CUnknown1003ff80.h"
+// TARGET: sub_10145980
+class Vector;
+__forceinline void VectorSubtract(const Vector &a, const Vector &b, Vector &c);
+#include "Vector.h"
+#include "QAngle.h"
+#include "CBasePlayer.h"
+#include "DebugOverlay.h"
+#include "UTIL_Trace.h"
+
+#include <math.h>
+namespace block_10145980 {
+#pragma auto_inline(off)
+struct RayInit : Ray_t { void sub_1004f7a0(const float *pStart, const float *pEnd); };
+void RayInit::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+struct Ray_tViewH { Vector m_Start; Vector m_Delta; Vector m_StartOffset; Vector m_Extents; bool m_IsRay; bool m_IsSwept; char m_b32; char m_b33; float m_f34; };
+struct RayHull : Ray_t { void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b); };
+void RayHull::sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b)
+{
+	const Vector &end = *(const Vector *)pEnd;
+	Ray_tViewH *r = (Ray_tViewH *)this;
+	const Vector &mins = *(const Vector *)pMins;
+	const Vector &maxs = *(const Vector *)pMaxs;
+	VectorSubtract(end, start, r->m_Delta);
+	r->m_IsSwept = (r->m_Delta.LengthSqr() != 0.0f);
+	VectorSubtract(maxs, mins, r->m_Extents);
+	r->m_Extents *= 0.5f;
+	r->m_IsRay = (r->m_Extents.LengthSqr() < 1e-6);
+	VectorAdd(mins, maxs, r->m_StartOffset);
+	r->m_StartOffset *= 0.5f;
+	VectorAdd(start, r->m_StartOffset, r->m_Start);
+	r->m_StartOffset *= -1.0f;
+	r->m_b32 = b;
+	r->m_b33 = 0;
+	r->m_f34 = 0.0f;
+	if (a && !r->m_IsRay) {
+		r->m_f34 = (float)sqrt((r->m_Extents.x * r->m_Extents.x) + (r->m_Extents.y * r->m_Extents.y));
+		if (1e-6 < r->m_f34)
+			r->m_b33 = 1;
+	}
+}
+#pragma auto_inline(on)
+}
+using namespace block_10145980;
+
+class CUnknown1004f860 { public: void *sub_1004f860(); };
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_101006e0(const float *pStart, const float *pEnd, unsigned int mask, void *pIgnore, int collisionGroup, CGameTrace *pTrace);
+float sub_10146150(const Vector *v);
+Vector sub_10232d80();
+
+inline Vector AddX(const Vector &a, const Vector &b) { Vector r; r.x = a.x + b[0]; r.y = a.y + b.y; r.z = a.z + b.z; return r; }
+inline float VectorLengthO(const Vector &v) { return sub_10146150(&v); }
+
+inline void UTIL_TL(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((CUnknown1004f860 *)&ray)->sub_1004f860();
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+void sub_10145980(void)
+{
+	CBasePlayer *pPlayer = (CBasePlayer *)sub_101cd9e0(g_10552810);
+	if (!pPlayer)
+		return;
+
+	Vector vecEnd;
+	Vector forward;
+	sub_10139610(*(QAngle *)((char *)pPlayer + 0x206c), 0, &forward, 0);
+
+	const Vector &vecPos = sub_10232d80();
+	Vector vecGround = vecPos;
+	vecGround.z = sub_101456e0(&vecGround);
+
+	CGameTrace tr;
+	((CUnknown1003ff80 *)&tr)->sub_1003ff80();
+	UTIL_TL(pPlayer->vfunc193(), vecPos, 0x2400b, pPlayer, 0, &tr);
+
+	if (tr.m_fraction == 1.0)
+	{
+		float len;
+
+		{
+		Vector vecTarget = vecPos + forward * 400.0f;
+		len = VectorLengthO(vecPos - vecTarget);
+		UTIL_TL(vecPos, vecTarget, 0x2400b, pPlayer, 0, &tr);
+		vecEnd = AddX(vecPos, forward * len * tr.m_fraction);
+		sub_10145300(&vecPos, &vecEnd, 24.0f, 5, 0xff, 0, 0, 0, 0);
+		}
+
+		{
+		Vector vecBack = vecPos - forward * 400.0f;
+		len = VectorLengthO(vecPos - vecBack);
+		UTIL_TL(vecPos, vecBack, 0x2400b, pPlayer, 0, &tr);
+		vecEnd = vecPos - forward * len * tr.m_fraction;
+		sub_10145300(&vecPos, &vecEnd, 24.0f, 5, 0xff, 0, 0, 0, 0);
+		}
+
+		Vector vecUp = vecPos + Vector(0, 0, 400.0f);
+		len = sub_10146150(&((Vector &)vecPos).sub_10146190(vecUp));
+		sub_101006e0(&vecPos.x, &vecUp.x, 0x2400b, pPlayer, 0, &tr);
+		vecEnd.sub_1003e4b0(((Vector &)vecPos).sub_1011e060(Vector().sub_100f2f90(0, 0, 1.0f).sub_100a19c0(len).sub_100a19c0(tr.m_fraction)));
+		sub_10145300(&vecGround, &vecEnd, 24.0f, 5, 0xff, 0, 0, 0, 0);
+
+		sub_10143b70(&vecPos, &Vector().sub_100f2f90(-2.0f, -2.0f, -2.0f), &Vector().sub_100f2f90(2.0f, 2.0f, 2.0f), 0xff, 0xff, 0xff, 1, 0);
+	}
+	else
+	{
+		sub_10143b70(&vecPos, &Vector().sub_100f2f90(-2.0f, -2.0f, -2.0f), &Vector().sub_100f2f90(2.0f, 2.0f, 2.0f), 0xff, 0x64, 0x64, 1, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146150 size=0x2e
 // TARGET: sub_10146150
 #include "Vector.h"
