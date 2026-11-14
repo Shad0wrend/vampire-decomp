@@ -6776,6 +6776,7 @@
 0x10009b51 func   ?Links@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::Links
 0x10009b51 func   ?sub_10049d20@CUtlRBTreeNode36@@QBEABURBTreeNode36Links@@G@Z CUtlRBTreeNode36::sub_10049d20
 0x10009b56 func   ?vfunc82@CTestTraceline@@UAEPAUdatamap_t@@XZ CTestTraceline::vfunc82
+0x10009b5b func   ?sub_103c0160@CNPC_VTzimisce@@QAEPAXPAH@Z CNPC_VTzimisce::sub_103c0160
 0x10009b60 func   ?sub_10084c30@@YAXHI@Z sub_10084c30
 0x10009b65 func   ?vfunc103@CNPC_VCop@@UAEXXZ CNPC_VCop::vfunc103
 0x10009b6a func   ?vfunc4@CTEBeamRingPoint@@UAEXHH@Z CTEBeamRingPoint::vfunc4

@@ -279192,6 +279192,123 @@ char CNPC_VTzimisce::sub_103bfc20(CBaseEntity *pTarget, CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c0160 size=0x38d
+#include "CSprayCan.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VTzimisce.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "CCollisionProperty.h"
+#include "CTraceFilterSimpleTwoEnt.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "ScopeTrace.h"
+#include "QAngle.h"
+#include <math.h>
+
+#include "ConVar.h"
+#include "UTIL_TraceCv.h"
+extern ConVar g_1093cd28;
+CBaseEntity * __fastcall sub_1008bf00(CBaseEntity *p);
+CBaseEntity *sub_1023bd00();
+void sub_10146570(const void *a, const void *b, int c, int d, int e, int f, float g);
+
+struct CVTzimisceSlot69
+{
+	VT_SLOTS10(a0) VT_SLOTS10(a1) VT_SLOTS10(a2) VT_SLOTS10(a3) VT_SLOTS10(a4) VT_SLOTS10(a5)
+	virtual void b0(); virtual void b1(); virtual void b2(); virtual void b3(); virtual void b4();
+	virtual void b5(); virtual void b6(); virtual void b7(); virtual void b8();
+	virtual char vfunc69(void *pOther);
+};
+
+// m_Extents (+0x18) here is the game's start offset and m_StartOffset (+0x24) its extents
+inline float HullSqrt(float f)
+{
+	return (float)sqrt(f);
+}
+
+struct HullRay : Ray_t
+{
+	void InitHull(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs)
+	{
+		Vector &offset = *(Vector *)m_Extents;
+		Vector &extents = *(Vector *)m_StartOffset;
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != g_104454c4;
+		extents.x = maxs.x - mins.x; extents.y = maxs.y - mins.y; extents.z = maxs.z - mins.z;
+		extents.x *= 0.5f;
+		extents.y *= 0.5f;
+		extents.z *= 0.5f;
+		m_IsRay = (extents.z * extents.z + extents.y * extents.y + extents.x * extents.x) < 1e-6;
+		offset.x = mins.x + maxs.x; offset.y = mins.y + maxs.y; offset.z = maxs[2] + mins.z;
+		offset.x *= 0.5f;
+		offset.y *= 0.5f;
+		offset.z *= 0.5f;
+		m_Start[0] = offset.x + start.x;
+		m_Start[1] = offset.y + start.y;
+		m_Start[2] = offset.z + start.z;
+		offset.x *= -1.0f;
+		offset.y *= -1.0f;
+		offset.z *= -1.0f;
+		m_b32 = 0;
+		m_b33 = 0;
+		m_n34 = 0;
+	}
+};
+
+inline void UTIL_TraceHullScoped(const Vector &vecStart, const Vector &vecEnd, const Vector &hullMin, const Vector &hullMax, unsigned mask, void *filter, CGameTrace *ptr, char bTraceOffset)
+{
+	ScopeTrace trace("UTIL_TraceHull", g_106b8540, g_106b8540);
+	HullRay ray;
+	ray.InitHull(vecStart, vecEnd, hullMin, hullMax);
+	if (bTraceOffset && !ray.m_IsRay) {
+		float f = sqrt(ray.m_StartOffset[1] * ray.m_StartOffset[1] + ray.m_StartOffset[0] * ray.m_StartOffset[0]);
+		*(float *)&ray.m_n34 = f;
+		if (*(float *)&ray.m_n34 > 1e-6)
+			ray.m_b33 = 1;
+	}
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)filter, ptr);
+	if (r_visualizetrace_cv.GetInt())
+		sub_10146570(&ptr->m_startpos, &ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+
+void *CNPC_VTzimisce::sub_103c0160(int *pOut)
+{
+	Vector vecStart = *(Vector *)vfunc220();
+	vecStart.z += 4.0f;
+	Vector vecDir;
+	sub_10139610(*(QAngle *)vfunc221(), &vecDir, 0, 0);
+	float flScale = g_1093cd28.GetFloat();
+	vecDir = vecStart + vecDir * flScale;
+	int n0 = *(int *)((char *)this + 0x368);
+	CTraceFilterSimpleTwoEnt filter(this, sub_1008bf00((CBaseEntity *)this), n0);
+	CGameTrace tr;
+	ICollideable *pColl = (ICollideable *)((char *)this + 0x270);
+	const Vector &mins = *(const Vector *)pColl->vfunc1();
+	const Vector &maxs = *(const Vector *)pColl->vfunc2();
+	UTIL_TraceHullScoped(vecStart, vecDir, mins, maxs, 0x202400b, &filter, &tr, 1);
+	if (tr.m_fraction == 1.0f)
+		return 0;
+	CBaseEntity *pHit = tr.m_pEnt;
+	if (pHit == sub_1023bd00())
+		return 0;
+	if (!((CVTzimisceSlot69 *)this)->vfunc69(pHit))
+		return 0;
+	*pOut = 0;
+	return pHit;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c05e0 size=0x1f5
 #include "CNPC_VTzimisce.h"
 #include "CBaseEntity.h"
