@@ -12251,6 +12251,7 @@
 0x10010bc2 func   ?vfunc86@CNPCMaker@@UAE_NHPAXHHH@Z CNPCMaker::vfunc86
 0x10010bc7 func   ?vfunc69@CNPC_VGargoyle@@QAEDPAVCBaseEntity@@@Z CNPC_VGargoyle::vfunc69
 0x10010bcc func   ?sub_1009c1e0@CBaseEntity@@QAEXHHPAH@Z CBaseEntity::sub_1009c1e0
+0x10010bd1 func   ?sub_10214480@CPropHaunted@@QAEXXZ CPropHaunted::sub_10214480
 0x10010bd6 func   ?sub_100839c0@CSceneEntity@@QAEPAXPBD@Z CSceneEntity::sub_100839c0
 0x10010bdb func   ?sub_1006bb00@@YAHXZ sub_1006bb00
 0x10010be0 func   ?vfunc3@CTEBeamPoints@@UAEXABVVector@@ABVQAngle@@@Z CTEBeamPoints::vfunc3
