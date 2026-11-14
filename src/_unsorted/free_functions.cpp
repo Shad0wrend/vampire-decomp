@@ -119033,6 +119033,74 @@ PyString *sub_1019bba0(PyIRestoreObj *self, void *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019bc80 size=0x109
+#include <string.h>
+
+class SPyFileObj
+{
+public:
+	virtual int Tell();
+	virtual void Seek(int nPos);
+	virtual void vf2(); virtual void vf3(); virtual void vf4(); virtual void vf5(); virtual void vf6(); virtual void vf7(); virtual void vf8(); virtual void vf9();
+	virtual void vf10(); virtual void vf11(); virtual void vf12(); virtual void vf13(); virtual void vf14(); virtual void vf15(); virtual void vf16(); virtual void vf17(); virtual void vf18();
+	virtual int Read(void *pBuf, int nSize, int nCount);
+};
+
+struct SPyReader
+{
+	int m_pad00;
+	int m_pad04;
+	SPyFileObj *m_pStream;	// 0x08
+	int m_nEnd;	// 0x0c
+};
+
+extern void *(*g_109f37c8)(const char *psz);
+bool sub_1019bde0(char c);
+
+void *sub_1019bc80(SPyReader *pReader)
+{
+	int nCount = 0;
+	char *pBuf = new char[0x80];
+	volatile bool bEof = false;
+	char ch;
+	do
+	{
+		if (pReader->m_nEnd - pReader->m_pStream->Tell() <= 0 || !pReader->m_pStream->Read(&ch, 1, 1))
+		{
+			bEof = true;
+			break;
+		}
+		if (nCount >= 0x80)
+		{
+			char *pNew;
+			pNew = new char[0x100];
+			memcpy(pNew, pBuf, 0x80);
+			delete pBuf;
+			pBuf = pNew;
+		}
+		pBuf[nCount] = ch;
+		if ((char)(int)pBuf == -1) nCount++; else nCount++;
+	} while (!sub_1019bde0(ch));
+	pBuf[nCount] = 0;
+
+	if (!bEof)
+	{
+		int nPos;
+		do
+		{
+			nPos = pReader->m_pStream->Tell();
+			if (pReader->m_nEnd - nPos <= 0 || !pReader->m_pStream->Read(&ch, 1, 1))
+				goto done;
+		} while (sub_1019bde0(ch));
+		pReader->m_pStream->Seek(nPos);
+	}
+done:
+	void *pRet = g_109f37c8(pBuf);
+	delete pBuf;
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019bde0 size=0x15
 int sub_1019bde0(char c)
 {
