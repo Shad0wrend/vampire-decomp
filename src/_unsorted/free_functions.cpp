@@ -237262,6 +237262,190 @@ void CUnknown1030a6e0::sub_1030a6e0(const Vector &vPos, float flRadius, CBaseEnt
 }
 // END FUNCTION
 
+// FUNCTION: 0x1030a7f0 size=0x548
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CHL2_Player.h"
+#include "MvsnSec0.h"
+#include "utlrbtree.h"
+// TARGET: CAI_PlaneSolverCircle::sub_1030a7f0
+#include "CAI_PlaneSolver.h"
+#include "CAI_BaseNPC.h"
+#include "CCollisionProperty.h"
+#include "ehandle.h"
+#include "utlvector.h"
+#include "Vector.h"
+#include <math.h>
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+float sub_103090d0(float flAngle);	// UTIL_AngleMod (out-of-line copy)
+float sub_101d2c70(const Vector *pVec);	// UTIL_VecToYaw
+void sub_10144a30(const Vector *pvA, const Vector *pvB, float f3, float f4, int i5, int i6, int i7, int i8, float f9);
+
+struct CUnknown102e4f20
+{
+	void *sub_102e4f20(int a);	// Vector2D copy constructor (out of line)
+};
+
+struct CNPCView;
+struct CNavView
+{
+	float sub_103082b0(CNPCView *pOther, float flValue);	// AdjustRegulationWeight
+};
+
+inline float UTIL_AngleModH(float a)
+{
+	if (a < 0.0)
+		a = a + 360.0;
+	else if (a >= 360.0)
+		a = a - 360.0;
+	return a;
+}
+
+struct AI_ArcH
+{
+	AI_ArcH() : center(0), span(0) {}
+	void Set(float newCenter, float newSpan) { center = UTIL_AngleModH(newCenter); span = sub_103090d0(newSpan); }
+	float center;
+	float span;
+};
+
+struct Elem280_t
+{
+	Elem280_t(int newType, float newWeight, float newDir, float newSpan, IHandleEntity *pEntity = 0)
+	{
+		type = newType;
+		weight = newWeight;
+		hObstacleEntity = pEntity;
+		m_14 = 0;
+		arc.Set(newDir, newSpan);
+		name[0] = 0;
+	}
+	Elem280_t(const Elem280_t &other);	// 0x1030b2a0
+	int type;
+	float weight;
+	AI_ArcH arc;
+	CBaseHandle hObstacleEntity;
+	int m_14;
+	char name[0x100];
+};
+
+struct CircleObstacles_t
+{
+	Vector center;
+	float radius;
+	int type;
+	EHANDLE hEntity;
+};
+
+struct CNpcH83 : CAI_BaseNPC
+{
+	CCollisionProperty *CollisionPropH() { return (CCollisionProperty *)((char *)this + 0x270); }
+};
+
+struct CAI_PlaneSolverCircle : CAI_PlaneSolver
+{
+	CNpcH83 *GetNpc() { return (CNpcH83 *)m_owner; }
+	bool sub_1030a7f0(float probeDist);
+};
+
+#define m_Obstacles (*(CUtlVector<CircleObstacles_t> *)&m_p3c)
+#define m_Suggestions (*(CUtlVector<Elem280_t> *)&m_pBuf50)
+#define min(a, b) (((a) < (b)) ? (a) : (b))
+#define sq(x) ((x) * (x))
+#define RAD2DEG(x) ((float)(x) * (float)(180.f / 3.14159265358979323846))
+
+extern float g_104454c4;
+
+inline float sqf(float x) { return x * x; }
+
+bool CAI_PlaneSolverCircle::sub_1030a7f0(float probeDist)
+{
+	CAI_BaseNPC *pNpc = (CAI_BaseNPC *)m_owner;
+	bool result = false;
+	Vector mins, maxs;
+	Vector npcLoc = pNpc->vfunc192();
+
+	((CCollisionProperty *)(pcd_stage((char *)m_owner) + 0x270))->vfunc15(pcd_stage(&mins), &maxs);
+	float radiusNpc;
+	{
+		float size[2];
+		{
+			float diff[2];
+			diff[0] = mins.x - maxs.x;
+			diff[1] = mins.y - maxs.y;
+			((CUnknown102e4f20 *)size)->sub_102e4f20((int)diff);
+		}
+		radiusNpc = FastSqrt(sq(size[0]) + sq(size[1])) * 0.5;
+	}
+
+	{ int i; i = 0; while (i < m_Obstacles.Count()) { Vector vecToNpc = npcLoc - (i)[m_Obstacles.Base()].center;
+		vecToNpc.z = 0;
+		float distToObstacleSq = sq(vecToNpc.x) + sq(vecToNpc.y);
+		float radius = (i)[m_Obstacles.Base()].radius + radiusNpc;
+
+		if (distToObstacleSq > 0.001 && distToObstacleSq < sqf(radius + probeDist))
+		{
+			Vector vecToObstacle = vecToNpc * -1;
+			float distToObstacle = VectorNormalize(vecToObstacle);
+			float weight;
+			float arc;
+			float radiusSq = sq(radius);
+			if (radiusSq < distToObstacleSq)
+			{
+				float distToTangent = FastSqrt(distToObstacleSq - radiusSq);
+				Vector vecTangent;
+
+				float oneOverDistToObstacleSq = 1 / distToObstacleSq;
+
+				vecTangent.x = oneOverDistToObstacleSq * (-distToTangent * vecToNpc.x + radius * vecToNpc.y);
+				vecTangent.y = (-distToTangent * vecToNpc.y - pcd_stage(radius) * vecToNpc.x) * oneOverDistToObstacleSq;
+				vecTangent.z = 0;
+
+				arc = RAD2DEG(acosf(vecToObstacle.Dot(vecTangent))) * 2.0;
+				weight = 1.0 - (distToObstacle - radius) / probeDist;
+				if (weight > 0.75)
+				{
+					float newArc = (((arc * 0.5) * ((weight - 0.75)) / 0.25f)) + arc;
+					arc = (newArc < 190.0f) ? newArc : 190.0f;
+				}
+			}
+			else
+			{
+				arc = 210;
+				weight = 1.0;
+			}
+
+			if ((i)[m_Obstacles.Base()].hEntity != 0)
+			{
+				weight = (pcd_stage((CNavView *)pcd_stage(this)))->sub_103082b0((CNPCView *)(i)[m_Obstacles.Base()].hEntity.Get(), weight);
+			}
+
+			Elem280_t suggestion((i)[m_Obstacles.Base()].type, weight, sub_101d2c70(&vecToObstacle), arc);
+			switch ((i)[m_Obstacles.Base()].type)
+			{
+			case 0: Q_snprintf(suggestion.name, 0x100, "CI_MOVE"); break;
+			case 1: Q_snprintf(suggestion.name, 0x100, "CI_DANGER"); break;
+			case 2: Q_snprintf(suggestion.name, 0x100, "CI_OBJECT"); break;
+			case 3: Q_snprintf(pcd_stage(suggestion.name), 0x100, "CI_NPC"); break;
+			case 4: Q_snprintf(suggestion.name, 0x100, "CI_WORLD"); break;
+			case 5: Q_snprintf(suggestion.name, 0x100, "CI_NOKNOW"); break;
+			case 6: Q_snprintf(suggestion.name, 0x100, "CI_OSCILL"); break;
+			case 7: Q_snprintf(suggestion.name, 0x100, "CI_INVLD"); break;
+			}
+			m_Suggestions.AddToTail(suggestion);
+			result = true;
+		}
+
+		if (*(unsigned int *)((char *)GetNpc() + 0x224) & 0x4000000)
+		{
+			sub_10144a30(&(i)[m_Obstacles.Base()].center, &Vector(1, 0, 0), (i)[m_Obstacles.Base()].radius, 1.0f, 0x80, 0xff, 0x40, 0x14, 1.0f);
+		} i = 1 + i; } }
+
+	m_Obstacles.RemoveAll();
+	return result;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1030aea0 size=0x1d9
 #include "vampire_all.h"
 #include "CUnknown1030a6e0.h"
