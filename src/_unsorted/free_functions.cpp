@@ -133196,6 +133196,80 @@ int sub_101cd340(CBaseEntity *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cd390 size=0x3e2
+#include "AINodeGroundCheck.h"
+#include "CTracePassFilter.h"
+#include "CUnknown1003ff80.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+#include "UTIL_TraceCv.h"
+
+// TARGET: sub_101cd390
+char sub_101cd390(CBaseEntity *pEntity, CTracePassFilter *pTraceFilter, float flStepSize)
+{
+	Vector	mins, maxs, start, stop;
+	CGameTrace	trace;
+	((CUnknown1003ff80 *)&trace)->sub_1003ff80();
+	int		x, y;
+	float	mid, bottom;
+
+	CTracePassFilter traceFilter(pEntity);
+	if ( !pTraceFilter )
+	{
+		pTraceFilter = &traceFilter;
+	}
+
+	unsigned int mask = ((CEntityVSlots *)pEntity)->slot237();
+
+	VectorAdd (*((CEntityVSlots *)pEntity)->slot217(), *(Vector *)((CCollisionProperty *)((char *)pEntity + 0x270))->vfunc1(), mins);
+	VectorAdd (*((CEntityVSlots *)pEntity)->slot217(), *(Vector *)((CCollisionProperty *)((char *)pEntity + 0x270))->vfunc2(), maxs);
+
+	start[2] = mins[2] - 1;
+	for	(x=0 ; x<=1 ; x++)
+	{
+		for	(y=0 ; y<=1 ; y++)
+		{
+			start[0] = x ? maxs[0] : mins[0];
+			start[1] = y ? maxs[1] : mins[1];
+			if (g_1070b254->vfunc0(&start.x, 0) != 1)
+				goto realcheck;
+		}
+	}
+	return true;
+
+realcheck:
+	start[2] = mins[2] + flStepSize;
+
+	start[0] = stop[0] = (mins[0] + maxs[0])*0.5;
+	start[1] = stop[1] = (mins[1] + maxs[1])*0.5;
+	stop[2] = start[2] - 2*flStepSize;
+
+	UTIL_TraceLine_Calls( start, stop, mask, pTraceFilter, &trace );
+
+	if (trace.m_fraction == 1.0)
+		return false;
+	mid = bottom = trace.m_endpos[2];
+
+	for	(x=0 ; x<=1 ; x++)
+	{
+		for	(y=0 ; y<=1 ; y++)
+		{
+			start[0] = stop[0] = x ? maxs[0] : mins[0];
+			start[1] = stop[1] = y ? maxs[1] : mins[1];
+
+			UTIL_TraceLine_Cv( start, stop, mask, pTraceFilter, &trace );
+
+			if (trace.m_fraction != 1.0 && trace.m_endpos[2] > bottom)
+				bottom = trace.m_endpos[2];
+			if (trace.m_fraction == 1.0 || mid - trace.m_endpos[2] > flStepSize)
+				return false;
+		}
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cd8c0 size=0x5a
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
