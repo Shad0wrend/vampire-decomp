@@ -223417,6 +223417,132 @@ void CUnknown102e12c0::sub_102e7e60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e7e80 size=0x27c
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CAI_Motor.h"
+#include "CBaseEntity.h"
+#include "CGameTrace.h"
+#include "CTraceFilterNav.h"
+#include "CCollisionProperty.h"
+#include "CVProfile.h"
+
+#include "ScopeTrace.h"
+#include "Ray_t.h"
+#include <math.h>
+struct HullTrace { Vector startpos; Vector endpos; char rest[0x54 - 0x18]; };
+struct IHullTrace { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void TraceRay(const Ray_t &ray, unsigned mask, void *filter, HullTrace *tr); };
+struct IHullClient { virtual void v0(); virtual bool v1(); char pad[0x28]; void *m2c; };
+extern IHullTrace *g_1070b254;
+extern IHullClient *g_10738964;
+void sub_10146570(void *, void *, int, int, int, int, float);
+namespace block_102e7e80 {
+#pragma auto_inline(off)
+struct HullRay : Ray_t
+{
+	void InitHull(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs)
+	{
+		Vector &offset = *(Vector *)m_Extents;
+		Vector &extents = *(Vector *)m_StartOffset;
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != 0;
+		VectorSubtract(maxs, mins, extents);
+		extents *= 0.5f;
+		m_IsRay = (extents.z * extents.z + extents.y * extents.y + extents.x * extents.x) < 1e-6;
+		VectorAdd(mins, maxs, offset);
+		offset *= 0.5f;
+		m_Start[0] = offset.x + start.x;
+		m_Start[1] = offset.y + start.y;
+		m_Start[2] = offset.z + start.z;
+		offset *= -1.0f;
+		m_b32 = 0;
+		m_b33 = 0;
+		m_n34 = 0;
+	}
+};
+void sub_1026e940(const Vector &vecStart, const Vector &vecEnd, const Vector &hullMin, const Vector &hullMax, unsigned mask, void *filter, HullTrace *ptr, char bTraceOffset)
+{
+	ScopeTrace trace("UTIL_TraceHull", g_106b8540, g_106b8540);
+	HullRay ray;
+	ray.InitHull(vecStart, vecEnd, hullMin, hullMax);
+	if (bTraceOffset && !ray.m_IsRay) {
+		float f = sqrt(ray.m_StartOffset[1] * ray.m_StartOffset[1] + ray.m_StartOffset[0] * ray.m_StartOffset[0]);
+		*(float *)&ray.m_n34 = f;
+		if (f > 1e-6)
+			ray.m_b33 = 1;
+	}
+	g_1070b254->TraceRay(ray, mask, filter, ptr);
+	if (!g_10738964->v1() && g_10738964->m2c)
+		sub_10146570(ptr, (char *)ptr + 0xc, 0xff, 0xff, 0, 1, -1.0f);
+}
+#pragma auto_inline(on)
+}
+using namespace block_102e7e80;
+
+typedef void (CVProfile::*EnterScopeFn102e7e80)(const char *, int, const char *, bool);
+extern EnterScopeFn102e7e80 g_109f3660;
+
+struct CVProfScopeOuter102e7e80
+{
+	CVProfScopeOuter102e7e80(const char *pszName) { (g_109f3648->*g_109f3660)(pszName, 0, "Unaccounted", false); }
+	~CVProfScopeOuter102e7e80() { g_109f3648->ExitScopeInlined(); }
+};
+struct CVProfScopeInner102e7e80
+{
+	CVProfScopeInner102e7e80(const char *pszName) { (g_109f3648->*g_109f3660)(pszName, 0, "Unaccounted", false); }
+	~CVProfScopeInner102e7e80() { g_109f3648->ExitScope(); }
+};
+
+struct CEntityCollision102e7e80 : CBaseEntity
+{
+	ICollideable *CollisionProp() { return (ICollideable *)((char *)this + 0x270); }
+};
+
+struct CAI_MotorW102e7e80 : CAI_Motor
+{
+	CBaseEntity *sub_102e7e80(const Vector &start, const Vector &end, unsigned int collisionMask);
+};
+
+struct CAI_MoveProbe102e7e80 : CAI_Motor
+{
+	CEntityCollision102e7e80 *GetOuter() { return (CEntityCollision102e7e80 *)m_pOuter; }
+	void TraceHull(const Vector &vecStart, const Vector &vecEnd, unsigned int mask, CGameTrace *pResult)
+	{
+		CEntityCollision102e7e80 &outer = *GetOuter();
+		const Vector &mins = *(Vector *)outer.CollisionProp()->vfunc1();
+		const Vector &maxs = *(Vector *)outer.CollisionProp()->vfunc2();
+		CVProfScopeInner102e7e80 VProf_("CAI_MoveProbe_TraceHull");
+		CBaseEntity *pOuter2 = GetOuter();
+		CTraceFilterNav filter;
+		filter.sub_102e30d0( (int)pOuter2, pOuter2->m_field368 );
+		sub_1026e940( vecStart, vecEnd, mins, maxs, mask, &filter, (HullTrace *)pResult, 1 );
+	}
+};
+
+CBaseEntity *CAI_MotorW102e7e80::sub_102e7e80(const Vector &start, const Vector &end, unsigned int collisionMask)
+{
+	CVProfScopeOuter102e7e80 VProf_("CAI_Motor_CheckWanderStep");
+
+	Vector vecStart(start.x, start.y, start.z + 0.0625f);
+	Vector vecEnd(end.x, end.y, pcd_stage(end.z) + 0.0625f);
+	CGameTrace trace;
+	((CAI_MoveProbe102e7e80 *)this)->TraceHull(vecStart, vecEnd, collisionMask, &trace);
+
+	if ( trace.m_startsolid || trace.m_fraction < 1.0f )
+		return trace.m_pEnt;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e8220 size=0x1a
 namespace lifted {
 extern int g_1060ee50;

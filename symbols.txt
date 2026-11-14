@@ -2398,6 +2398,7 @@
 0x100041ab func   ?vfunc119@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc119
 0x100041b0 func   ?sub_10269a20@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_10269a20
 0x100041b5 func   ?vfunc80@COccultBloodBuff@@QAEHXZ COccultBloodBuff::vfunc80
+0x100041ba func   ?sub_102e7e80@CAI_MotorW102e7e80@@QAEPAVCBaseEntity@@ABVVector@@0I@Z CAI_MotorW102e7e80::sub_102e7e80
 0x100041bf func   ?sub_101d2ab0@@YAXPAVVector@@HHMM@Z sub_101d2ab0
 0x100041c4 func   ??1CUnknown101f4120@@QAE@XZ CUnknown101f4120::~CUnknown101f4120
 0x100041c9 func   ?vfunc173@CSteamJet@@QAEXPAX0HM@Z CSteamJet::vfunc173
