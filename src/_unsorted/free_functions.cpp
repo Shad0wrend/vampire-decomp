@@ -52988,6 +52988,43 @@ void sub_100c7be0(CUtlVector<SeqMatch_100c7be0> *pOut, SeqHdr_100c7be0 *pFrom, c
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c7f30 size=0x82
+#include "CUnknown100c7f30.h"
+
+struct Bone100c7f30 { int m_unk[0x22]; unsigned int flags; int m_unk8c[5]; };
+struct Hdr100c7f30 : CUnknown100c7f30Hdr {
+    Bone100c7f30 *pBone(int i) { return (Bone100c7f30 *)((char *)this + m_boneOffset) + i; }
+};
+
+void CUnknown100c7f30::sub_100c7f30(CUnknown100c7f30Hdr *hdr, unsigned int mask)
+{
+    if (hdr == 0) {
+        m_count = 0;
+        return;
+    }
+    unsigned int *out = m_bits;
+    unsigned int acc = 0;
+    unsigned int bit = 1;
+    int n = hdr->m_numBones;
+    m_count = n;
+    if (n > 0) {
+        Bone100c7f30 *pb = ((Hdr100c7f30 *)hdr)->pBone(0);
+        if ((int)bit == -1) acc = (-(int)(mask & pb->flags) >> 16) & (int)bit; else acc = (-(int)(mask & pb->flags) >> 16) & (int)bit;
+        while (--n != 0) {
+            bit += bit;
+            pb++;
+            if (bit == 0) {
+                *out++ = acc;
+                bit = 1;
+                acc = 0;
+            }
+            if ((char)(int)n == -1) acc += (-(int)(mask & pb->flags) >> 16) & bit; else acc += (-(int)(mask & pb->flags) >> 16) & bit;
+        }
+    }
+    *out = acc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c7ff0 size=0xad
 struct SeqDesc_c7ff0
 {
