@@ -215629,6 +215629,110 @@ const char* CAI_BaseNPCTroika::sub_102c36b0(int schedule)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c36d0 size=0x38d
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VTzimisce.h"
+#include "CEntityVSlots.h"
+#include "CUnknown102e0150.h"
+#include "UTIL_Trace.h"
+#include "ScopeTrace.h"
+#include "CTraceFilterWorldOnly.h"
+#include "CUnknown1003ff80.h"
+
+#include <math.h>
+namespace block_102c36d0 {
+#pragma auto_inline(off)
+struct VecMul : Vector { Vector sub_100a19c0(float fl) const; };
+Vector VecMul::sub_100a19c0(float fl) const
+{
+	Vector res;
+	VectorMultiply(*this, fl, res);
+	return res;
+}
+#pragma auto_inline(on)
+}
+using namespace block_102c36d0;
+float sub_10146150(const Vector &v);
+struct CUnknown1004f860 { void sub_1004f860(); };
+struct CHullView { virtual void v0(); virtual const Vector &vfunc1(); virtual const Vector &vfunc2(); };
+struct CScopeTraceCtor { void sub_10037300(const char *func, const char *name, const char *line); };
+
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+
+struct CTzStepView
+{
+	char pad[0x270];
+	CHullView m_Collision;
+	char pad2[0x655c - 0x274];
+	float m_f655c, m_f6560, m_f6564, m_f6568, m_f656c;
+	float MinScale() const { return m_f655c; }
+	float MaxScale() const { return m_f6560; }
+	float OwnScale() const { return m_f6564; }
+	float TargetScale() const { return m_f6568; }
+};
+
+inline Vector MulV(const Vector &v, float f) { Vector r; r.x = v.x * f; r.y = v.y * f; r.z = v.z * f; return r; }
+inline Vector AddV(const Vector &a, const Vector &b) { Vector r; r.x = a.x + b.x; r.y = a.y + b.y; r.z = a.z + b.z; return r; }
+void CNPC_VTzimisce::sub_102c36d0(Vector vecOrigin, void *pEntity, float flTime, Vector *pVec, Vector *pOut)
+{
+	CBaseEntity *pEnt = (CBaseEntity *)pEntity;
+	if (!pEnt)
+	{
+		if (pVec)
+			*pOut = *pVec;
+		return;
+	}
+	CTzStepView *pz = (CTzStepView *)this;
+	Vector vecDir;
+	if (flTime > 0.0f && vfunc541()->sub_102e0290(pEnt, pOut, &vecDir))
+	{
+		float flSpeed = sub_10146150(Vector(vecOrigin.x - pOut->x, vecOrigin.y - pOut->y, vecOrigin.z - pOut->z)) / flTime;
+		float flScale = clamp(flSpeed, pz->MinScale(), pz->MaxScale());
+		vecDir.z = 0;
+		Vector vecTarget;
+		vecTarget = MulV(vecDir, flScale) + *pOut;
+		if (pVec)
+		{
+			Vector P = ((const VecMul &)vecTarget).sub_100a19c0(pz->TargetScale());
+			Vector D = ((const VecMul *)pVec)->sub_100a19c0(pz->OwnScale());
+			*pOut = AddV(D, P) * pz->m_f656c;
+			CGameTrace tr;
+			((CUnknown1003ff80 *)&tr)->sub_1003ff80();
+			CTraceFilterWorldOnly filter;
+			const Vector &mins = pz->m_Collision.vfunc1();
+			const Vector &maxs = pz->m_Collision.vfunc2();
+			{
+				char scope;
+				((CScopeTraceCtor *)&scope)->sub_10037300("UTIL_TraceHull", g_106b8540, g_106b8540);
+				Ray_t ray;
+				((CUnknown1004f860 *)&ray)->sub_1004f860();
+				ray.sub_1006dec0(*pVec, &pOut->x, &mins.x, &maxs.x, 1, 0);
+				g_1070b254->vfunc4(&ray, 0x2000b, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+				if (g_10738960.sub_1005f190())
+					sub_10146570((const Vector *)&tr.m_startpos, (const Vector *)&tr.m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+				(*g_109f3680)--;
+			}
+			if (tr.m_fraction != 1.0f)
+				*pOut = *pVec;
+		}
+		else
+		{
+			*pOut = (*pOut * pz->OwnScale() + vecTarget * pz->TargetScale()) * pz->m_f656c;
+		}
+		return;
+	}
+	*pOut = *((CEntityVSlots *)pEnt)->slot217();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c41b0 size=0xd
 #include "CAI_BaseNPCTroika.h"
 #include "Vector.h"
