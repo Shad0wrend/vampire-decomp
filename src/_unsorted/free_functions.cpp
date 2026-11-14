@@ -229384,6 +229384,68 @@ int CAI_Network::sub_102f6d10(int wcId)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f6d80 size=0x2e8
+#include "CAI_Node.h"
+#include "CAI_NodeGraph.h"
+#include "CGameTrace.h"
+#include "UTIL_Trace.h"
+#include "Vector.h"
+#include "ConVar.h"
+#define r_visualizetrace (*(ConVar *)&g_10738960)
+inline void UTIL_TraceLineCv(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	ray.InitInline(vecAbsStart, vecAbsEnd);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (r_visualizetrace.GetInt())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+inline void AI_TraceLine(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	UTIL_TraceLineCv(vecAbsStart, vecAbsEnd, mask, ignore, collisionGroup, ptr);
+}
+extern CAI_NodeGraph *g_1093407c;
+extern int g_109340d8;
+
+CAI_Node *sub_102f6d80(const Vector *pFrom, const Vector *pDir, float flMaxDist, int nType)
+{
+	CAI_NodeGraph *g = g_1093407c;
+	float flBest = flMaxDist;
+	CAI_Node *pResult = 0;
+	for (int i = 0; i < g->m_nNodes; i++)
+	{
+		if (g->NodeAt(i)->m_nType == 1)
+			continue;
+		if (nType)
+		{
+			if (nType != g->NodeAt(i)->m_nType)
+				continue;
+		}
+		float tmp1[3];
+		Vector *pPos = (Vector *)g->NodeAt(i)->sub_102fb0d0(tmp1, g_109340d8);
+		Vector delta = *pPos - *pFrom;
+		VectorNormalize(delta);
+		float flDot = pDir->x * delta.x + (pDir->y * delta.y + pDir->z * delta.z);
+		if (flDot > flBest)
+		{
+			float tmp2[3];
+			Vector *pPos2 = (Vector *)g->NodeAt(i)->sub_102fb0d0(tmp2, g_109340d8);
+			CGameTrace trace;
+			UTIL_TraceLineCv(*pFrom, *pPos2, 0x2804091, 0, 0, &trace);
+			if (trace.m_fraction == 1.0)
+			{
+				flBest = flDot;
+				pResult = g->NodeAt(i);
+			}
+		}
+	}
+	return pResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f7130 size=0x13f
 #include "Vector.h"
 
