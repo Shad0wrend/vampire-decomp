@@ -11406,6 +11406,7 @@
 0x1000fb73 func   ?vfunc104@CWeaponThrown_Grenade_Frag@@UAEXXZ CWeaponThrown_Grenade_Frag::vfunc104
 0x1000fb7d func   ?vfunc243@CFuncPlatRot@@QAEXXZ CFuncPlatRot::vfunc243
 0x1000fb82 func   ?vfunc4@CEffectsServer@@UAEXPBMHHH@Z CEffectsServer::vfunc4
+0x1000fb87 func   ?sub_101387e0@@YAXPBMM0PAM@Z sub_101387e0
 0x1000fb8c func   ?sub_1034e7e0@@YGXH@Z sub_1034e7e0
 0x1000fb91 func   ?LinkToParent@?$CUtlRBTree@UCAI_ExpresserUse@@G@@QAEXGG_N@Z CUtlRBTree<CAI_ExpresserUse,unsigned short>::LinkToParent
 0x1000fb96 func   ?sub_1014fa50@@YA_NXZ sub_1014fa50
