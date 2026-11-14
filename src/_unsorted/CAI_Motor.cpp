@@ -251,6 +251,95 @@ int CAI_Motor::vfunc19(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e1760 size=0x1fa
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBaseEntity.h"
+// TARGET: CAI_Motor::vfunc20
+#include "CAI_Motor.h"
+#include <math.h>
+
+struct CMoveRequestView
+{
+	char m_pad00[0xc];
+	Vector dir;	// 0x0c
+	char m_pad18[0x10];
+	float maxDist;	// 0x28
+	char m_pad2c[8];
+	int pMoveTarget;	// 0x34
+};
+
+struct CMoveVecView
+{
+	Vector v;
+	CMoveVecView &operator=(const CMoveVecView &o) { v.sub_1003e4b0(o.v); return *this; }
+};
+
+struct CMoveTraceView
+{
+	int fStatus;	// 0x00
+	Vector vEndPosition;	// 0x04
+	Vector vHitNormal;	// 0x10
+	int pObstruction;	// 0x1c
+	float flTotalDist;	// 0x20
+	float flDistObstructed;	// 0x24
+	CMoveVecView vJumpVelocity;	// 0x28
+	float flStepUpDistance;	// 0x34
+
+	CMoveTraceView() { memset(this, 0, sizeof(*this)); }
+};
+
+void __cdecl sub_10139500(const Vector *pStart, float flScale, const Vector *pDir, Vector *pDest);
+void __cdecl sub_101cf5c0(CBaseEntity *pEntity, int a, int b);
+
+int CAI_Motor::vfunc20(int a, int b, int c)
+{
+	CMoveTraceView *pTraceResult = (CMoveTraceView *)b;
+	const CMoveRequestView &move = *(CMoveRequestView *)a;
+
+	vfunc18(a);
+
+	float flNewSpeed = sub_102e12c0();
+	*(Vector *)&m_3c = move.dir * flNewSpeed;
+
+	float flTotal = 0.5 * (((Vector *)&m_3c)->Length() + flNewSpeed) * GetMoveInterval();
+
+	float distance = move.maxDist;
+	if (flTotal > distance) {
+		m_30 = GetMoveInterval() * (1 - distance / flTotal);
+		flTotal = distance;
+	} else {
+		m_30 = 0;
+	}
+
+	Vector vecStart, vecEnd;
+	vecStart = *((CEntityVSlots *)m_pOuter)->slot220();
+	sub_10139500(&vecStart, flTotal, &move.dir, &vecEnd);
+
+	CMoveTraceView moveTrace;
+	((CAI_MoveProbe *)m_68)->sub_102e6d70(2, (const float *)&vecStart, (const float *)&vecEnd, 0x202400b, 0, 100.0, 0, (AIMoveTrace_t *)&moveTrace, c, 0);
+	int pObstruction;
+	if ((char)a == -1) pObstruction = *(volatile int *)&moveTrace.pObstruction; else pObstruction = *(volatile int *)&moveTrace.pObstruction;
+	if (pTraceResult) {
+		pTraceResult->fStatus = moveTrace.fStatus;
+		pTraceResult->vEndPosition = moveTrace.vEndPosition;
+		pTraceResult->vHitNormal = moveTrace.vHitNormal;
+		pTraceResult->pObstruction = pObstruction;
+		pTraceResult->flTotalDist = moveTrace.flTotalDist;
+		pTraceResult->flDistObstructed = moveTrace.flDistObstructed;
+		pTraceResult->vJumpVelocity = moveTrace.vJumpVelocity;
+		pTraceResult->flStepUpDistance = moveTrace.flStepUpDistance;
+	}
+
+	if (fabs(moveTrace.flDistObstructed - flTotal) <= 1e-1) {
+		if (move.pMoveTarget && (pObstruction == move.pMoveTarget))
+			return 4;
+		return 0;
+	}
+	sub_101cf5c0((CBaseEntity *)m_pOuter, (int)&moveTrace.vEndPosition, 1);
+	return (moveTrace.fStatus < 0) ? 3 : 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e19e0 size=0x1b4
 #include "CAI_Motor.h"
 #include "CAI_BaseNPC.h"

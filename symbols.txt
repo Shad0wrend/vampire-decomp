@@ -8405,6 +8405,7 @@
 0x1000bd48 func   ?sub_10390040@@YIXPAD@Z sub_10390040
 0x1000bd4d func   ?sub_1030c4e0@@YAXXZ sub_1030c4e0
 0x1000bd52 func   ?sub_10107ec0@@YAHXZ sub_10107ec0
+0x1000bd5c func   ?vfunc20@CAI_Motor@@UAEHHHH@Z CAI_Motor::vfunc20
 0x1000bd61 func   ?vfunc434@CNPC_VMingXiao@@UAEXXZ CNPC_VMingXiao::vfunc434
 0x1000bd66 func   ?sub_102f6690@@YAXXZ sub_102f6690
 0x1000bd6b func   ?vfunc103@CEnvSoundscape@@QAEXXZ CEnvSoundscape::vfunc103
