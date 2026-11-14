@@ -1,6 +1,100 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103743c0 size=0x327
+#include "CNPC_VDog.h"
+#include "CDevFlagObj.h"
+#include "engineiface.h"
+#include "globalvars.h"
+
+extern CDevFlagObj *g_10924a6c;
+
+#define VDOG_INT(off) (*(int *)((char *)this + (off)))
+#define VDOG_IDEAL (*(volatile int *)((char *)this + 0x5cc4))
+#define VDOG_FILE "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VDog.cpp"
+#define VDOG_STAMP(line) { VDOG_INT(0x1b3c) = (int)VDOG_FILE; VDOG_INT(0x1b40) = (line); }
+static inline int SetIdeal(volatile int *p, int s) { *p = s; return *p; }
+#define VDOG_SET(state, line) { r = SetIdeal(&VDOG_IDEAL, state); VDOG_STAMP(line); return r; }
+
+int CNPC_VDog::vfunc461()
+{
+	int r;
+
+	VDOG_INT(0x1b38) = 0xd;
+	switch (VDOG_INT(0x5cc0))
+	{
+	case 3:
+		if (sub_1001482b(0x44))
+			VDOG_SET(8, 0x357);
+		if (!sub_1001482b(0x54) && !sub_1001482b(0x46))
+		{
+			if ((sub_1001482b(0x6a) || sub_1001482b(0x6d) || sub_1001482b(0x6f) || sub_1001482b(0x70)
+				|| (*(char (__fastcall **)(CNPC_VDog *))(*(int *)this + 0x738))(this)))
+				goto L_check;
+			if (sub_1001482b(0x78))
+				VDOG_SET(2, 0x36d);
+			if (sub_1001482b(0x7c) || sub_1001482b(0x7d))
+				VDOG_SET(1, 0x372);
+			goto L_check;
+		}
+		{ r = SetIdeal(&VDOG_IDEAL, 2); VDOG_STAMP(0x35d); if (0) goto L_check; return r; }
+	L_check:
+		if (sub_103747c0(1))
+			return VDOG_INT(0x5cc4);
+		break;
+	case 1:
+		if (sub_1001482b(0x44))
+		{
+			VDOG_INT(0x1b40) = 0x30f;
+			VDOG_IDEAL = 8;
+		}
+		else if (sub_1001482b(0x54))
+		{
+			VDOG_INT(0x1b40) = 0x31d;
+			VDOG_IDEAL = 2;
+		}
+		else
+		{
+			if (sub_1001482b(0x4c) || sub_1001482b(0x4d))
+			{
+				*(char *)((char *)this + 0x5b80) = 0;
+				break;
+			}
+			if (sub_1001482b(1))
+			{
+				g_10924a6c->vfunc1();
+				sub_100041b0(0x7b);
+				return CNPC_VAnimal::vfunc461();
+			}
+			if (sub_1001482b(0x6a) || sub_1001482b(0x6d) || sub_1001482b(0x6e) || sub_1001482b(0x6f)
+				|| sub_1001482b(0x6b) || sub_1001482b(0x70) || sub_1001482b(0x5e))
+				break;
+			if (sub_1001482b(0x2b))
+			{
+				VDOG_STAMP(0x347);
+				VDOG_IDEAL = 3;
+				g_10924a6c->vfunc1();
+				sub_100041b0(0x7b);
+				int a = VDOG_INT(0x667c);
+				EngineGlobals::CGlobalVars *g = gpGlobals;
+				int t = *(int *)&g->curtime;
+				VDOG_INT(0x6678) = t;
+				VDOG_INT(0x6680) = a;
+			}
+			break;
+		}
+		VDOG_INT(0x1b3c) = (int)VDOG_FILE;
+		if (enginerandom->vfunc2(0, 0x63) < 0x32)
+		{
+			g_10924a6c->vfunc1();
+			sub_100041b0(0x7b);
+		}
+		return VDOG_INT(0x5cc4);
+	}
+	return CNPC_VAnimal::vfunc461();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10374b00 size=0x1fc
 #include <math.h>
 #include "CNPC_VDog.h"
