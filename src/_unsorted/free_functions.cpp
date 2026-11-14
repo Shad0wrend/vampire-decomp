@@ -285343,6 +285343,125 @@ zmax:
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d2070 size=0x60b
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VWerewolf.h"
+#include "CAI_BaseNPC.h"
+#include "CUnknown102d1220.h"
+#include "ScopeTrace.h"
+#include "string_t.h"
+#include <string.h>
+#pragma intrinsic(strlen)
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl _strnicmp(const char *, const char *, unsigned int);
+
+struct WWHint103d2070 {
+	char m_pad0[0x26c];
+	string_t m_iName;
+	char m_pad1[0x5dc - 0x270];
+	int m_type5dc;
+	char m_pad2[0x5e8 - 0x5e0];
+	int m_flag5e8;
+
+	const char *GetName() const { const char *p = *(const char * volatile *)&m_iName.pszValue; return p ? p : g_106b8540; }
+	bool NameMatches(const char *pszQuery)
+	{
+		if (m_iName.pszValue && m_iName.pszValue == pszQuery)
+			return true;
+		int len = strlen(pszQuery);
+		if (!len)
+			return *(const char * volatile *)&m_iName.pszValue == 0;
+		char c = pszQuery[len - 1];
+		if (c != '*')
+			return !_strcmpi(GetName(), pszQuery);
+		return !_strnicmp(GetName(), pszQuery, len - 1);
+	}
+};
+
+#define HINT_IS(type, name) ((CUnknown102d1220 *)pH)->sub_102d1220(type, name)
+#define ORIGIN ((float *)((CAI_BaseNPC *)this)->vfunc220())
+
+// TARGET: CNPC_VWerewolf::sub_103d2070
+bool CNPC_VWerewolf::sub_103d2070(void *pHint)
+{
+	ScopeTrace trace("CNPC_VWerewolf::IsImperativeMoveHint", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	WWHint103d2070 *pH = (WWHint103d2070 *)pHint;
+	CNPC_VWerewolfVec3 tmp;
+	CNPC_VWerewolfVec3 *pGround;
+	float *pOrigin;
+
+	if ((m_nFlags66e8 & 0x100) == 0x100 && (m_nFlags66e8 & 4) != 4) {
+		if ((m_nFlags66e8 & 0x80) == 0x80 && sub_103d1e50()) {
+			if (pH->m_type5dc == 0x3aaa)
+				return true;
+		} else if (pH->m_type5dc == 0x3aa6)
+			goto RetTrue;
+	}
+	if ((m_nFlags66e8 & 0x200) == 0x200) {
+		if (pH->m_flag5e8 != 0)
+			goto RetFalse;
+		if (HINT_IS(0x3a9b, "wall_b_1_breakthrough_r") || HINT_IS(0x3a99, "wall_b_1_breakthrough_f") || HINT_IS(0x3a9a, "wall_b_1_breakthrough_l")
+			|| HINT_IS(0x3a9e, "wall_b_1_squeeze_right") || HINT_IS(0x3a9c, "wall_b_1_squeeze_front") || HINT_IS(0x3a9d, "wall_b_1_squeeze_left")
+			|| HINT_IS(0x3a99, "door_b_5_breakthrough") || HINT_IS(0x3a9c, "door_b_5_squeeze_front")) {
+			pGround = sub_103d6770(&tmp, pH);
+			pOrigin = ORIGIN;
+			if ((char)sub_103d0db0(*(CNPC_VWerewolfVec3 *)pOrigin, *pGround))
+				goto RetTrue;
+		}
+	}
+	if ((m_nFlags66e8 & 0x400) == 0x400) {
+		if (pH->m_flag5e8 != 0)
+			goto RetFalse;
+		if (HINT_IS(0x3a99, "tramdoor_b_1_breakthrough_f") || HINT_IS(0x3a9c, "tramdoor_b_1_squeeze_front") || HINT_IS(0x3a9e, "tramdoor_a_1_squeeze_right")
+			|| HINT_IS(0x3a9c, "tramdoor_a_1_squeeze_front") || HINT_IS(0x3a9d, "tramdoor_a_1_squeeze_left")) {
+			pGround = sub_103d6770(&tmp, pH);
+			pOrigin = ORIGIN;
+			if ((char)sub_103d0db0(*(CNPC_VWerewolfVec3 *)pOrigin, *pGround))
+				goto RetTrue;
+		}
+	}
+	if ((m_nFlags66e8 & 4) != 4 || (m_nFlags66e8 & 0x100) == 0x100)
+		goto RetFalse;
+	if (pH->m_type5dc == 0x3aa7) {
+		pGround = sub_103d6770(&tmp, pH);
+		pOrigin = ORIGIN;
+		goto HasPath;
+	} else if (sub_103d1e50()) {
+		if (pH->m_type5dc == 0x3aa5) {
+			pGround = sub_103d6770(&tmp, pH);
+			pOrigin = ORIGIN;
+			if ((char)sub_103d0db0(*(CNPC_VWerewolfVec3 *)pOrigin, *pGround))
+				goto RetTrue;
+		}
+		if (pH->m_type5dc != 0x3aa4)
+			goto RetFalse;
+		if (!(pH->NameMatches("jump_to_platform_hint_1") || pH->NameMatches("jump_to_platform_hint_2")))
+			goto RetFalse;
+	} else {
+		if (pH->m_type5dc != 0x3a9c)
+			goto RetFalse;
+		if (!(pH->NameMatches("archway_a_5_squeeze_front") || pH->NameMatches("archway_b_6_squeeze_front")))
+			goto RetFalse;
+	}
+	pGround = sub_103d6770(&tmp, pH);
+	pOrigin = ORIGIN;
+HasPath:
+	if ((char)sub_103d0db0(*(CNPC_VWerewolfVec3 *)pOrigin, *pGround)) {
+RetTrue:
+		return true;
+	}
+RetFalse:
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d2810 size=0x184
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
