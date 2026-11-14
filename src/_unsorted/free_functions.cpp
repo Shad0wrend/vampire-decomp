@@ -247977,6 +247977,64 @@ short __fastcall sub_10323a70(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10323cc0 size=0x2f4
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "CUnknown10206400.h"
+#include <string.h>
+
+struct CUnkPlayer119 { char m_pad[0xa8]; CBaseCombatCharacter *m_pChar; CBaseCombatCharacter *GetChar() { return m_pChar; } };
+struct CUnkItem258 { void sub_10258620(int a); };
+CUnkPlayer119 *sub_101193b0();
+void sub_1021fe50(CBaseCombatCharacter *pChar, const char *pszName, int n);
+
+inline const char *EntryName(CUnknown10206340 *e) { return e->m_field0004 ? (const char *)e->m_field0004 : g_106b8540; }
+
+void CBaseCombatCharacter::sub_10323cc0(int nStage, int nSetting, int nVendorState)
+{
+	(void)g_1074f01c;
+	ScopeTrace trace("CBaseCombatCharacter::SyncVendorInventory", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	m_nVendorSettingE34 = nSetting;
+	for (nSetting = 0; nSetting < g_1074f018; nSetting++)
+	{
+		if (_strcmpi(CUnknown10206400_FindById(nSetting)->GetName(), m_name26c ? m_name26c : g_106b8540) == 0)
+		{
+			m_nVendorE30 = nSetting;
+			for (int j = 0; j < CUnknown10206400_FindById(nSetting)->m_nEntries; j++)
+			{
+				CUnknown10206340 *pEntry = CUnknown10206400_FindEntry(CUnknown10206400_FindById(nSetting), j);
+				if (nStage >= pEntry->m_field000c && nVendorState >= pEntry->m_field0010)
+				{
+					if (!sub_1032d890(EntryName(pEntry), 0))
+					{
+						if (pEntry->m_field0008)
+						{
+							CUnkPlayer119 *pPlayer = sub_101193b0();
+							if (!(!pPlayer ? 0 : pPlayer->GetChar())->sub_1032d890(EntryName(pEntry), 0))
+								continue;
+						}
+						{ if ((int)j == -1) sub_1021fe50(this, EntryName(pEntry), 1); else sub_1021fe50(this, EntryName(pEntry), 1); }
+					}
+					else
+					{
+						CUnkItem258 *pItem = (CUnkItem258 *)sub_10335950(EntryName(pEntry));
+						if (pItem)
+							pItem->sub_10258620(0);
+					}
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10324080 size=0xc1
 #include "CBaseCombatCharacter.h"
 extern char g_106b8540[];
