@@ -12862,6 +12862,7 @@
 0x100119b4 func   ?sub_101d07f0@@YAXPAVVector@@PBV1@1@Z sub_101d07f0
 0x100119b9 func   ?sub_1027d170@CAI_CineCleanupNPC@@QAE_NXZ CAI_CineCleanupNPC::sub_1027d170
 0x100119be func   ?sub_103c7770@@YIPAXPAD@Z sub_103c7770
+0x100119c3 func   ?sub_101053a0@CExpressionTable@@QAEXPAVCBaseCombatCharacter@@PAVCBaseAnimating@@D@Z CExpressionTable::sub_101053a0
 0x100119c8 func   ?vfunc245@CFuncPlat@@UAEXXZ CFuncPlat::vfunc245
 0x100119cd func   ?sub_100cf680@@YAHXZ sub_100cf680
 0x100119d2 func   ?sub_103c6570@CNPC_VVampireBoss@@QAEMPAVCEntityVSlots@@PBVVector@@@Z CNPC_VVampireBoss::sub_103c6570

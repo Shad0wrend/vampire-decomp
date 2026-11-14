@@ -73267,6 +73267,118 @@ int CExpressionTable::sub_10105270(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101053a0 size=0x399
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
+#include "CExpressionTable.h"
+#include "ScopeTrace.h"
+#include "Tier1.h"
+#include "utlvector.h"
+#include "CUnknown100b62a0.h"
+#include "CUnknown100b6f10.h"
+#include "CUnknown100b6f80.h"
+#include <string.h>
+
+void sub_100b68d0(CUnknown100b6f10 *pAnim, S100b6f10Node *pNode);
+extern float g_104454c4;
+
+inline int LinkIdx2(S100b6f10Node *n) { int c = n->m_nCurrent; int *pEntry = n->sub_10105830(c); return pEntry ? *pEntry : -1; }
+
+inline void FixupNode(CUnknown100b6f10 *pAnim, S100b6f10Node *pNode)
+{
+	if (pNode->m_nType == 1)
+		sub_100b68d0(pAnim, pNode);
+}
+
+inline S100b6f10Node *ResolveNode(CUnknown100b6f10 *pAnim, S100b6f10Node *pNode)
+{
+	if (pNode->m_nType == 1) {
+		int i = LinkIdx2(pNode);
+		if (i != -1)
+			return pAnim->sub_100b6f10(i);
+	}
+	return pNode;
+}
+
+inline int GetWeights(S100b6f10Node *pNode, CUnknown100b6f10 *pAnim, int index, CExpressionWeight **ppOut)
+{
+	*ppOut = 0;
+	if (pNode->m_nType == 1) {
+		int i = LinkIdx2(pNode);
+		if (i == -1)
+			return -1;
+		S100b6f10Node *p = pAnim->pNode(i);
+		if (!p)
+			return -1;
+		return ((CUnknown100b6f80 *)p)->sub_100b6f80((CUnknown100b6f80Hdr *)pAnim, index, (int *)ppOut);
+	}
+	*ppOut = (CExpressionWeight *)((char *)pNode + pNode->m_nListOffset) + index;
+	return pNode->m_nCount;
+}
+
+// TARGET: CExpressionTable::sub_101053a0
+void CExpressionTable::sub_101053a0(CBaseCombatCharacter *pChar, CBaseAnimating *pModel, char bFlag)
+{
+	ScopeTrace trace("CExpressionTable::PrecacheCharacter", g_106b8540);
+	if (!pChar->sub_100952d0(-1))
+		return;
+	int nCharacter = pChar->vfunc8();
+	pChar->sub_100952d0(-1);
+	CUnknown100b6f10 *pAnim = ((CUnknown100b62a0 *)pChar)->sub_100b62a0(pModel);
+	if (!pAnim)
+		return; else { CUtlVector<CExpressionRecord> &records = *(CUtlVector<CExpressionRecord> *)this;
+	for (int n = 0; n < pAnim->m_nNodes; n++) {
+		FixupNode(pAnim, pAnim->pNode(n));
+		S100b6f10Node *pNode = ResolveNode(pAnim, pAnim->pNode(n));
+		char szName[64];
+		g_109f3888(pNode->pszName(), szName, 0x40);
+		g_109f3860(szName, strlen(szName));
+		if (pChar->sub_10106a40(szName) != -1)
+			continue;
+		CUnknown1024b2d0Id id;
+		m_list.sub_1024b5e0(&id, szName);
+		if (id.m_id == 0xffff)
+			continue;
+		CExpressionRecord rec;
+		memset(&rec, 0, sizeof(rec));
+		CExpressionWeight *pFlex;
+		int nUsed; nUsed = 0;
+		int nFlex = GetWeights(pNode, pAnim, 0, &pFlex);
+		if (!pFlex) {
+			g_109f364c("Could not find expression weights  %s for character %s:", rec.m_szName, pChar->sub_100ab4f0());
+			return;
+		}
+		for (int j = 0; j < nFlex; j++, pFlex++) {
+			float flWeight; flWeight = pFlex->m_flWeight;
+			if (flWeight > g_104454c4) {
+				nUsed++;
+				rec.m_flex[nUsed - 1].m_nIndex = (*(int *)((char *)pAnim + pAnim->m_nFlexTable + pFlex->m_nIndex * 4));
+				rec.m_flex[nUsed - 1].m_flWeight = flWeight;
+			}
+			if (nUsed >= 40) {
+				g_109f364c("Too many flexes in %s\n", rec.m_szName);
+				return;
+			}
+		}
+		rec.m_nKey = (id.m_id << 16) | (nCharacter & 0xffff);
+		rec.m_nFlexes = nUsed;
+		strncpy(rec.m_szName, szName, 0x40);
+		rec.m_nCharacter = nCharacter & 0xffff;
+		if (bFlag)
+			rec.m_nFlags |= 1;
+		records.AddToTail(rec);
+	} }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10105830 size=0x23
 // TARGET: sub_10105830
 void *__fastcall sub_10105830(void *pSelf, int unused, int index)
