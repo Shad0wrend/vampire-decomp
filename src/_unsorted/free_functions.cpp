@@ -109013,6 +109013,68 @@ void CBasePlayer::sub_101816c0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10181780 size=0x371
+#include "CBasePlayer.h"
+#include "CBaseCombatCharacter.h"
+#include "CEHandleGet.h"
+
+inline bool Player1538Valid(CBasePlayer *p) { return EHandle_Get(p->m_h1538) && p->m_n153C != -1; }
+
+// TARGET: CBasePlayer::sub_10181780
+void CBasePlayer::sub_10181780()
+{
+	if (!Player1538Valid(this))
+		m_nFlags1ED8 &= ~2;
+	else
+	{
+		unsigned int f = m_nFlags1ED8;
+		m_nFlags1ED8 = f | 2;
+		unsigned int g = f | 2;
+		if (!EHandle_Get(m_h1538) || m_n1540 != 2)
+			m_nFlags1ED8 = g & ~0x20;
+		else
+			m_nFlags1ED8 = g | 0x20;
+		if (EHandle_Get(m_h1538) && m_n1540 == 8)
+			m_nFlags1ED8 |= 0x100;
+		else
+			m_nFlags1ED8 &= ~0x100;
+	}
+	if (((CBaseCombatCharacter *)this)->sub_10146a80())
+		m_nFlags1ED8 |= 1;
+	else
+		m_nFlags1ED8 &= ~1;
+	if (m_b14AA) m_nFlags1ED8 |= 4; else m_nFlags1ED8 &= ~4;
+	if (EHandle_Get(m_hUseEnt1040) && EHandle_Get(m_hUseEnt1040) == EHandle_Get(m_h1CB8))
+		m_nFlags1ED8 |= 0x200;
+	else
+		m_nFlags1ED8 &= ~0x200;
+	if (EHandle_Get(m_hUseEnt1040) && EHandle_Get(m_hUseEnt1040) == EHandle_Get(m_h1CBC))
+		m_nFlags1ED8 |= 0x200;
+	else
+		m_nFlags1ED8 &= ~0x200;
+	if (((CBaseCombatCharacter *)this)->sub_1033b7c0())
+		m_nFlags1ED8 |= 0x10;
+	else
+		m_nFlags1ED8 &= ~0x10;
+	if ((*(char (__fastcall **)(void *))(*(int *)this + 0x674))(this))
+		m_nFlags1ED8 |= 0x80;
+	else
+		m_nFlags1ED8 &= ~0x80;
+	if ((*(char (__fastcall **)(void *))(*(int *)this + 0x670))(this))
+		m_nFlags1ED8 |= 8;
+	else
+		m_nFlags1ED8 &= ~8;
+	char bA = ((CBaseCombatCharacter *)this)->sub_10167240();
+	char bB = ((CBaseCombatCharacter *)this)->sub_10146a80();
+	if (!bA && !bB)
+		m_nFlags1ED8 &= ~0x40;
+	else if (EHandle_Get(m_h1D40) || EHandle_Get(m_h1D44))
+		m_nFlags1ED8 |= 0x40;
+	else
+		m_nFlags1ED8 &= ~0x40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10181be0 size=0x457
 #include "CBasePlayer.h"
 #include "CUnknown101cccf0.h"
