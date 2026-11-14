@@ -59951,6 +59951,271 @@ void sub_100da040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100da230 size=0x778
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "vampire.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CWeaponRanged.h"
+#include "CWeaponOwner.h"
+#include "CItemContainer.h"
+#include "CPASAttenuationFilter.h"
+#include "ScopeTrace.h"
+#include "CGlobalEntityList.h"
+#include <string.h>
+#include <stdlib.h>
+
+int sub_101193b0();
+extern "C" void *__cdecl __RTDynamicCast(void *pObj, long lDelta, void *pSrcType, void *pTargetType, int bReference);
+extern char g_10560638[];
+extern char g_10560664[];
+void sub_1012c900(char *pEnt);
+CBaseCombatWeapon *sub_1021fe50(CBaseCombatCharacter *pOwner, const char *pszName, char b);
+
+#define TS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+
+class CTradeCharSlots
+{
+public:
+	TS10(a00) TS10(a01) TS10(a02) TS10(a03) TS10(a04) TS10(a05) TS10(a06) TS10(a07) TS10(a08) TS10(a09)
+	TS10(a10) TS10(a11) TS10(a12) TS10(a13) TS10(a14) TS10(a15) TS10(a16) TS10(a17) TS10(a18) TS10(a19)
+	TS10(a20) TS10(a21) virtual void a220(); virtual void a221();
+	virtual Vector GetSoundEmissionOrigin();	// slot 222
+	virtual void a223(); virtual void a224(); virtual void a225(); virtual void a226(); virtual void a227(); virtual void a228(); virtual void a229();
+	TS10(a23) TS10(a24) TS10(a25) TS10(a26) TS10(a27) TS10(a28) TS10(a29) TS10(a30) TS10(a31) TS10(a32) TS10(a33) TS10(a34) TS10(a35) TS10(a36)
+	virtual void a370(); virtual void a371(); virtual void a372(); virtual void a373();
+	virtual int GiveAmmo(int count, int ammoIndex, int unused);	// slot 374
+	virtual void a375(); virtual void a376(); virtual void a377(); virtual void a378(); virtual void a379();
+	virtual void a380(); virtual void a381(); virtual void a382();
+	virtual void Weapon_Equip(CBaseCombatWeapon *pWeapon, char bNoSwitch);	// slot 383
+	virtual void a384();
+	virtual void Weapon_Drop(CBaseCombatWeapon *pWeapon, int nUnused, char bForce);	// slot 385
+};
+
+struct CTradeRangedView
+{
+	int sub_102573a0(void *pFrom, void *pTo, bool bOwned);
+	int sub_10257280(void *pFrom, void *pTo, int a);
+};
+
+struct CTradeItemView
+{
+	char m_pad0000[0x90];
+	float m_flTransmitTime;	// 0x90
+	char m_pad0094[0x8d0 - 0x94];
+	int m_nCount;	// 0x8d0
+};
+
+struct CTradeOwnerView
+{
+	char m_pad0000[0x2450];
+	char m_szClass[1];	// 0x2450
+};
+
+struct CTradeEdict
+{
+	char m_pad0000[0x40];
+	CGlobalEntityList_Ent *m_pUnk;
+};
+
+struct CTradeEnt
+{
+	char m_pad0000[0x9c];
+	CBaseCombatCharacter *m_pChar;
+};
+
+struct CTradeChar
+{
+	char m_pad0000[0x2e0];
+	int m_pEdict;	// 0x2e0
+	char m_pad02e4[0x1588 - 0x2e4];
+	char m_bCanSwitchWeapons;	// 0x1588
+	char m_pad1589[0x1eb8 - 0x1589];
+	int m_nUseIndex;	// 0x1eb8
+};
+
+struct CTradePlayer
+{
+	char m_pad0000[0xa8];
+	CBaseCombatCharacter *m_pChar;
+};
+
+static inline CTradeEnt *Trade_Instance(CTradeEdict *pEdict)
+{
+	ScopeTrace trace("CBaseEntity::Instance", g_106b8540);
+	if (!pEdict)
+		pEdict = (CTradeEdict *)engine->vfunc38(0);
+	return (pEdict && pEdict->m_pUnk) ? (CTradeEnt *)pEdict->m_pUnk->vfunc4() : 0;
+}
+
+#define COUNT(w) (((CTradeItemView *)(w))->m_nCount)
+#define SLOTS(c) ((CTradeCharSlots *)(c))
+
+void sub_100da230()
+{
+	CTradePlayer *pPlayer = (CTradePlayer *)sub_101193b0();
+	if (!pPlayer)
+		return;
+	CBaseCombatCharacter *pMe = pPlayer->m_pChar;
+	if (!pMe)
+		return;
+	if (engine->vfunc85() != 3)
+		return;
+	const char *pszCmd = engine->vfunc84(1);
+	int id = atoi(engine->vfunc84(2));
+	CTradeEnt *pEnt = Trade_Instance((CTradeEdict *)engine->vfunc38(((CTradeChar *)pMe)->m_nUseIndex));
+	CBaseCombatCharacter *pOther = pEnt->m_pChar;
+	if (!pOther)
+		return;
+
+	CBaseCombatWeapon *pItem;
+	if (!_strcmpi(pszCmd, "Buy"))
+	{
+		pItem = (CBaseCombatWeapon *)pOther->sub_1032e8b0(id);
+		if (!pItem)
+			return;
+		if (pMe->sub_10334c20(pItem))
+		{
+			pMe->sub_1032d890(pItem->vfunc348(), pItem->vfunc296());
+			bool bOwned = false;
+			if (pMe->sub_1032d890(pItem->vfunc348(), pItem->vfunc296()))
+				bOwned = true;
+			if (pItem->vfunc371())
+			{
+				if (!pOther->sub_10324190(pItem))
+					COUNT(pItem)--;
+				CBaseCombatWeapon *pHave = (CBaseCombatWeapon *)pMe->sub_1032d890(pItem->vfunc348(), pItem->vfunc296());
+				if (COUNT(pItem) <= 0)
+				{
+					COUNT(pItem) = 1;
+					SLOTS(pOther)->Weapon_Drop(pItem, 0, 0);
+					pMe->sub_10173f90(pItem, 1, 1, 0);
+				}
+				else if (pHave)
+					COUNT(pHave)++;
+				else
+					sub_1021fe50(pMe, pItem->vfunc348(), 1);
+			}
+			else if (bOwned)
+			{
+				((CTradeChar *)pMe)->m_bCanSwitchWeapons = 0;
+				int nCount = 1;
+				if (&pItem->sub_102517b0()->m_n2668)
+					nCount = pItem->sub_102517b0()->m_n2668;
+				int r = SLOTS(pMe)->GiveAmmo(nCount, pItem->m_nAmmoType, 0);
+				((CTradeChar *)pMe)->m_bCanSwitchWeapons = 1;
+				if (!r)
+					return;
+			}
+			else
+			{
+				if (strstr(((CTradeOwnerView *)pItem->sub_102517b0())->m_szClass, "weapon_"))
+					((COutputEvent *)((char *)pOther + 0x151c))->sub_100cd660(pOther, pOther, 0);
+				sub_1021fe50(pMe, pItem->vfunc348(), 1);
+			}
+			int nPrice = ((CTradeRangedView *)pItem)->sub_102573a0(pMe, pOther, bOwned);
+			pMe->sub_10341030(nPrice);
+			pOther->sub_10340e50(nPrice);
+			CPASAttenuationFilter filter(SLOTS(pMe));
+			int edict = ((CTradeChar *)pMe)->m_pEdict;
+			enginesound->vfunc3(&filter, engine->vfunc35(edict), 3, "Interface/InfoBar/Money_Gained.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		}
+	}
+	else if (!_strcmpi(pszCmd, "Take"))
+	{
+		pItem = (CBaseCombatWeapon *)pOther->sub_1032e8b0(id);
+		if (!pItem)
+			return;
+		if (pMe->sub_10334c20(pItem))
+		{
+			if (pItem->vfunc371() && COUNT(pItem) > 1)
+			{
+				COUNT(pItem)--;
+				CBaseCombatWeapon *pHave = (CBaseCombatWeapon *)pMe->sub_1032d890(pItem->vfunc348(), pItem->vfunc296());
+				if (pHave)
+					COUNT(pHave)++;
+				else
+					sub_1021fe50(pMe, pItem->vfunc348(), 1);
+			}
+			else
+			{
+				SLOTS(pOther)->Weapon_Drop(pItem, 0, 0);
+				pMe->sub_10173f90(pItem, 1, 1, 0);
+			}
+			CItemContainer *pBox = (CItemContainer *)__RTDynamicCast(pOther, 0, g_10560638, g_10560664, 0);
+			if (pBox)
+				pBox->m_Output19b0.sub_100cd660(pMe, pMe, 0);
+			pItem->vfunc333(0x16, 3, 0, 0, 0, 0);
+		}
+	}
+	else if (!_strcmpi(pszCmd, "Sell"))
+	{
+		pItem = (CBaseCombatWeapon *)pMe->sub_1032e8b0(id);
+		if (!pItem)
+			return;
+		if (pOther->sub_10334c20(pItem))
+		{
+			if (pItem->vfunc371())
+			{
+				if (COUNT(pItem) > 1)
+				{
+					COUNT(pItem)--;
+					sub_1021fe50(pOther, pItem->vfunc348(), 1);
+				}
+				else
+					{ SLOTS(pMe)->Weapon_Drop(pItem, 0, 0); SLOTS(pOther)->Weapon_Equip(pItem, 1); }
+			}
+			else
+				{ SLOTS(pMe)->Weapon_Drop(pItem, 0, 0); SLOTS(pOther)->Weapon_Equip(pItem, 1); }
+			int nPrice = ((CTradeRangedView *)pItem)->sub_10257280(pMe, pOther, 0);
+			pOther->sub_10341030(nPrice);
+			pMe->sub_10340e50(nPrice);
+			CPASAttenuationFilter filter(SLOTS(pMe));
+			int edict = ((CTradeChar *)pMe)->m_pEdict;
+			enginesound->vfunc3(&filter, engine->vfunc35(edict), 3, "Interface/InfoBar/Money_Gained.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		}
+	}
+	else if (!_strcmpi(pszCmd, "Give"))
+	{
+		pItem = (CBaseCombatWeapon *)pMe->sub_1032e8b0(id);
+		if (!pItem)
+			return;
+		if (pOther->sub_10334c20(pItem))
+		{
+			if (pItem->vfunc371())
+			{
+				if (COUNT(pItem) > 1)
+				{
+					COUNT(pItem)--;
+					sub_1021fe50(pOther, pItem->vfunc348(), 1);
+				}
+				else
+					{ SLOTS(pMe)->Weapon_Drop(pItem, 0, 1); SLOTS(pOther)->Weapon_Equip(pItem, 1); }
+			}
+			else
+				{ SLOTS(pMe)->Weapon_Drop(pItem, 0, 1); SLOTS(pOther)->Weapon_Equip(pItem, 1); }
+			CItemContainer *pBox = (CItemContainer *)__RTDynamicCast(pOther, 0, g_10560638, g_10560664, 0);
+			if (pBox)
+				pBox->m_Output19c8.sub_100cd660(pMe, pMe, 0);
+			pItem->vfunc333(0x16, 3, 0, 0, 0, 0);
+		}
+	}
+	else
+		return;
+
+	((CTradeItemView *)pItem)->m_flTransmitTime = gpGlobals->curtime + 10.0f;
+	sub_1012c900((char *)pItem);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dac20 size=0x74
 #include "CGlobalEntityList.h"
 
