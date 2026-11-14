@@ -15625,6 +15625,7 @@
 0x100152d0 func   ?sub_103b03b0@CNPC_VSheriffMan@@QAEXXZ CNPC_VSheriffMan::sub_103b03b0
 0x100152d5 func   ?vfunc1@CEntityTouchManager@@UAEXPAUCEntityListSystem_Ent@@@Z CEntityTouchManager::vfunc1
 0x100152da func   ?vfunc379@CBaseCombatCharacter@@QAEDPAVCBaseEntity@@HHHHHD@Z CBaseCombatCharacter::vfunc379
+0x100152df func   ?vfunc334@CBaseCombatWeapon@@UAEXHH@Z CBaseCombatWeapon::vfunc334
 0x100152e4 func   ?sub_100bd620@bf_write@@QAEXABVVector@@@Z bf_write::sub_100bd620
 0x100152e9 func   ?sub_1009b440@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b440
 0x100152f3 func   ?sub_10027890@S10027890@@QAEXAAUinputdata_t@@@Z S10027890::sub_10027890

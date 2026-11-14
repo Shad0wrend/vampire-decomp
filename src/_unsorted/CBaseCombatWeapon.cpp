@@ -2031,6 +2031,37 @@ void CBaseCombatWeapon::vfunc332()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10254990 size=0x11a
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBaseCombatWeapon.h"
+struct CBCWOwnerV { char pad[0x2e0]; int m_edict; int entindex() { return engine->vfunc35(m_edict); } };
+struct CBCWV : CBaseCombatWeapon
+{
+	CBCWOwnerV *GetOwner() { return (CBCWOwnerV *)sub_102521f0(); }
+	int entindex() { return engine->vfunc35(*(int *)((char *)this + 0x2e0)); }
+};
+void CBaseCombatWeapon::vfunc334(int a, int b)
+{
+	CBCWV *self = (CBCWV *)this;
+	if (vfunc347(a) <= 0)
+		return;
+	for (int i = 0; i < vfunc347(a); i++) {
+		char *pRecord = sub_10252120(a, i);
+		if (pRecord[0x90]) {
+			if (self->GetOwner())
+				enginesound->vfunc7(self->GetOwner()->entindex(), 6, pRecord);
+		} else {
+			if (self->GetOwner())
+				enginesound->vfunc7(self->GetOwner()->entindex(), b, pRecord);
+			else {
+				int edict = *(int *)((char *)this + 0x2e0);
+				enginesound->vfunc7(engine->vfunc35(edict), b, pRecord);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10254e90 size=0xb
 #include "CBaseCombatWeapon.h"
 
