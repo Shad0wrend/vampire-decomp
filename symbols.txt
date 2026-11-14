@@ -3457,6 +3457,7 @@
 0x10005790 func   ?vfunc73@CPhysBox@@UAE_NPAVCBaseEntity@@@Z CPhysBox::vfunc73
 0x1000579a func   ?sub_10249940@@YAXXZ sub_10249940
 0x1000579f func   ?sub_10099f20@@YAXPAUEntB@@HPAM@Z sub_10099f20
+0x100057a4 func   ?sub_10429080@@YAXPAUStudioHdr@@H@Z sub_10429080
 0x100057a9 func   ?vfunc35@CItemGAstrolite@@QAEHPAVCBaseEntity@@@Z CItemGAstrolite::vfunc35
 0x100057ae func   ?sub_10223130@CUnknown10223130@@QAEHHH@Z CUnknown10223130::sub_10223130
 0x100057b3 func   ?sub_1018cc00@@YAPAHXZ sub_1018cc00

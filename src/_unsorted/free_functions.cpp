@@ -304284,6 +304284,77 @@ unsigned int sub_10428fd0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10429080 size=0x12e
+#include "StudioHdr.h"
+
+struct S10429080Seq
+{
+	int m_nLabelIndex;
+	int m_pad04[2];
+	int m_nActivity;
+	int m_nActWeight;
+	char m_pad14[0x260 - 0x14];
+	int m_n260;
+	char m_pad264[0x2fc - 0x264];
+
+	const char *Label() { return (char *)this + m_nLabelIndex; }
+};
+
+struct S10429080Hdr
+{
+	char m_pad00[0xc];
+	char m_szName[0x104];
+	int m_nLocalSeq;
+	int m_nLocalSeqIndex;
+
+	S10429080Seq *Seqs() { return (S10429080Seq *)((char *)this + m_nLocalSeqIndex); }
+	S10429080Seq &Seq(int i)
+	{
+		if (i < 0)
+			i = 0;
+		return Seqs()[i];
+	}
+};
+
+struct S109ee3dc
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad[0x2c - 4];
+	int m_n2c;
+};
+
+extern S109ee3dc *g_109ee3dc;
+#include "ConVar.h"
+extern ConVar g_109ee3d8;
+void sub_10427dc0(StudioHdr *pHdr);
+const char *sub_10412550(int nActivity);
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+void sub_100057a4(StudioHdr *pHdr, int nBase);
+
+void sub_10429080(StudioHdr *pHdr, int nBase)
+{
+	if (g_109ee3d8.GetInt() && pHdr) {
+		
+		sub_10427dc0(pHdr);
+		DevMsg("\nAnim sequence dump for '%s'\n", ((S10429080Hdr *)pHdr)->m_szName);
+		DevMsg("ID   | %-60s | %-50s | seq | wgt\n", "Act Name", "Seq Name");
+		DevMsg("-----+--------------------------------------------------------------+----------------------------------------------------+-----+----\n");
+		if (((S10429080Hdr *)pHdr)->m_nLocalSeq > 0) {
+			int i = 0;
+			S10429080Seq *pSeq = ((S10429080Hdr *)pHdr)->Seqs();
+			while (i < ((S10429080Hdr *)pHdr)->m_nLocalSeq) { DevMsg("%-4d | %-60s | %-50s | %3d | %3d\n", i + nBase, sub_10412550(pSeq->m_nActivity), ((S10429080Hdr *)pHdr)->Seq(i).Label(), pSeq->m_n260, pSeq->m_nActWeight); i++, pSeq++; }
+		}
+		for (int j = 0; j < pHdr->m_nIncludeModels; j++) {
+			int idx = pHdr->m_nIncludeIndex;
+			StudioIncludeModel *pInc = (StudioIncludeModel *)((sizeof(StudioIncludeModel) * j) + (char *)pHdr + idx);
+			if (pInc->m_pVirtual)
+				sub_100057a4(pInc->m_pVirtual->vfunc1(pHdr, j), pInc->m_nBase + nBase);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10429200 size=0x2e
 #include <string.h>
 // TARGET: sub_10429200
