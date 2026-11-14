@@ -101790,6 +101790,170 @@ char CPlayerTargetView::sub_10167370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10167470 size=0x30c
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CEHandleGet.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "ehandle.h"
+#include "UTIL_Trace.h"
+#include "CBaseCombatWeapon.h"
+#include <math.h>
+
+#include <math.h>
+namespace block_10167470 {
+#pragma auto_inline(off)
+struct RayInit : Ray_t { void sub_1004f7a0(const float *pStart, const float *pEnd); };
+void RayInit::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+struct Ray_tViewH { Vector m_Start; Vector m_Delta; Vector m_StartOffset; Vector m_Extents; bool m_IsRay; bool m_IsSwept; char m_b32; char m_b33; float m_f34; };
+struct RayHull : Ray_t { void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b); };
+void RayHull::sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b)
+{
+	const Vector &end = *(const Vector *)pEnd;
+	Ray_tViewH *r = (Ray_tViewH *)this;
+	const Vector &mins = *(const Vector *)pMins;
+	const Vector &maxs = *(const Vector *)pMaxs;
+	VectorSubtract(end, start, r->m_Delta);
+	r->m_IsSwept = (r->m_Delta.LengthSqr() != 0.0f);
+	VectorSubtract(maxs, mins, r->m_Extents);
+	r->m_Extents *= 0.5f;
+	r->m_IsRay = (r->m_Extents.LengthSqr() < 1e-6);
+	VectorAdd(mins, maxs, r->m_StartOffset);
+	r->m_StartOffset *= 0.5f;
+	VectorAdd(start, r->m_StartOffset, r->m_Start);
+	r->m_StartOffset *= -1.0f;
+	r->m_b32 = b;
+	r->m_b33 = 0;
+	r->m_f34 = 0.0f;
+	if (a && !r->m_IsRay) {
+		r->m_f34 = (float)sqrt((r->m_Extents.x * r->m_Extents.x) + (r->m_Extents.y * r->m_Extents.y));
+		if (1e-6 < r->m_f34)
+			r->m_b33 = 1;
+	}
+}
+#pragma auto_inline(on)
+}
+using namespace block_10167470;
+inline void TraceLineCallsR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+inline void TraceLineCallsR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, void *pFilter, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+inline void TraceLineRayCallR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+inline void TraceLineRayCallR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, void *pFilter, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+struct CConVarView10725cec { virtual void v0(); virtual bool vfunc1(); char pad[0x24]; float m_f28; };
+extern CConVarView10725cec *g_10725cec;
+extern float g_1044eb08;
+void *sub_1023bd00();
+void sub_10342590();
+void sub_10342470();
+struct CEntListView { int sub_100290c0(unsigned int *pHandle); };
+struct CFinderView { CBaseEntity *sub_10341c30(void *cb, float a, float cs, char c, float d, int mask); };
+#define V1(p) virtual void p();
+#define V10(p) V1(p##0) V1(p##1) V1(p##2) V1(p##3) V1(p##4) V1(p##5) V1(p##6) V1(p##7) V1(p##8) V1(p##9)
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+struct CUseObj { V100(a) V100(b) V10(c) V10(d) V10(e) V10(f) V10(g) V10(h) V10(i) V10(j) V10(k) V1(l0) V1(l1) V1(l2) V1(l3) V1(l4) virtual char vfunc295(void *p); };
+struct CEntView { char pad[0x98]; CUseObj *m_p98; int pad2; int m_a0; };
+
+#define M_PI_F ((float)(3.14159265358979323846))
+#define DEG2RAD(x) ((float)(x) * (float)(M_PI_F / 180.f))
+// TARGET: CBasePlayer::sub_10167470
+CBaseEntity *CBasePlayer::sub_10167470(char bFlag)
+{
+	CEntListView *pList = (CEntListView *)EHandleDetail::g_10566458;
+	if (pList->sub_100290c0(&m_hDialogPartnerFE8))
+		return 0;
+	if (m_n153C != -1 && pList->sub_100290c0(&m_h1538))
+		return 0;
+	if (sub_101618a0())
+		return 0;
+	if (sub_1023bd00() && *(int *)((char *)sub_1023bd00() + 0x4ac))
+		return 0;
+	float flAngle;
+	if (g_10725cec->vfunc1())
+		flAngle = g_104454c4;
+	else
+		flAngle = g_10725cec->m_f28;
+	CBaseEntity *pFound;
+	float flCos = cos(DEG2RAD(flAngle * 0.5));
+	if (bFlag)
+		pFound = ((CFinderView *)this)->sub_10341c30((void *)sub_10342590, 80.0f, flCos, 0, 0, 0x600408b);
+	else
+		pFound = ((CFinderView *)this)->sub_10341c30((void *)sub_10342470, 80.0f, flCos, 0, 0, 0x600408b);
+	if (pFound)
+		return pFound;
+	Vector vecBody = vfunc369();
+	Vector vecEye = vfunc193();
+	Vector vecEnd = vecEye + vecBody * 80.0f * 2.0f;
+	CGameTrace tr;
+	TraceLineCallsR(vecEye, vecEnd, 0x600408b, this, 0, &tr);
+	CEntView *pEnt = (CEntView *)tr.m_pEnt;
+	if (pEnt && !((CBaseEntity *)pEnt)->sub_100a52a0()) {
+		if (pEnt->m_p98 && pEnt->m_p98->vfunc295(this))
+			return (CBaseEntity *)pEnt;
+		if (pEnt->m_a0 && vfunc382((CBaseCombatWeapon *)pEnt->m_a0))
+			return (CBaseEntity *)pEnt;
+	}
+	TraceLineRayCallR(vecEye, vecEnd, 0x2004089, this, 0, &tr);
+	pEnt = (CEntView *)tr.m_pEnt;
+	if (pEnt && !((CBaseEntity *)pEnt)->sub_100a52a0() && pEnt->m_p98 && pEnt->m_p98->vfunc295(this))
+		return (CBaseEntity *)pEnt;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10167d70 size=0x63
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
