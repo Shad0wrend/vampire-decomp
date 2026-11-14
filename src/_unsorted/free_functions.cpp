@@ -290042,6 +290042,154 @@ void CNPC_VWerewolf::sub_103d8df0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d93b0 size=0x4b2
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+// TARGET: CNPC_VWerewolf::sub_103d93b0
+#include "ScopeTrace.h"
+#include "CNPC_VWerewolf.h"
+#include "CCollisionProperty.h"
+#include "CUnknown101c26d0.h"
+#include "CUnknown101c2a50.h"
+#include "CBaseAnimating.h"
+
+extern Vector g_1070d1b0;	// vec3_origin
+
+const Vector *sub_102d6100(int hull);
+const Vector *sub_102d6120(int hull);
+void sub_10137fe0(const Vector *in1, const void *in2, Vector *out);
+bool sub_10240250(const Vector *a, const Vector *b, const Vector *c, const Vector *d);
+
+struct CUnknown101c2a10 { void sub_101c2a10(int a); };
+struct CUnknown101c2b10 { void sub_101c2b10(int a); };
+
+struct CDevObj
+{
+	virtual void v0();
+	virtual char v1();
+	char m_pad[0x2c - 4];
+	int m_n2c;
+};
+extern CDevObj *g_1093f73c;
+
+struct CDamageInfoFull
+{
+	int m_n0000;
+	Vector m_vecForce;			// 0x04
+	Vector m_vecDamagePosition;	// 0x10
+	Vector m_vecReportedPosition;	// 0x1c
+	char m_pad28[0x4c - 0x28];
+};
+
+#define WS(n) virtual void w##n();
+#define WS10(p) WS(p##a) WS(p##b) WS(p##c) WS(p##d) WS(p##e) WS(p##f) WS(p##g) WS(p##h) WS(p##i) WS(p##j)
+
+struct CEnemySlots
+{
+	WS10(0) WS10(10) WS10(20) WS10(30) WS10(40) WS10(50) WS10(60) WS10(70) WS10(80) WS10(90)
+	WS10(100) WS10(110) WS10(120) WS10(130) WS10(140) WS10(150) WS10(160) WS10(170) WS10(180) WS10(190)
+	WS10(200)
+	WS(210) WS(211) WS(212) WS(213) WS(214) WS(215) WS(216)
+	virtual Vector *w217();
+	WS(218) WS(219)
+	WS10(220) WS10(230) WS10(240)
+	WS(250) WS(251) WS(252) WS(253) WS(254) WS(255)
+	virtual void w256(int bone, float *mat);
+	WS(257) WS(258) WS(259)
+	WS10(260) WS10(270) WS10(280) WS10(290)
+	WS10(300) WS10(310)
+	virtual void w320(void *pEnt, int n);
+	WS(321) WS(322)
+	virtual int w323(const Vector *pVec);
+};
+
+void CNPC_VWerewolf::sub_103d93b0()
+{
+	ScopeTrace trace("CNPC_VWerewolf::UpdateFakeHull",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	Vector &vecSnap = *(Vector *)&m_vSnap66dc;
+	Vector vecNew;
+
+	if (!vfunc167())
+	{
+		vecSnap = g_1070d1b0;
+	}
+	else
+	{
+		CBaseAnimating *pAnim = (CBaseAnimating *)this;
+		int bone = pAnim->sub_10092550((int)"Bip01");
+		char *hdr = (char *)pAnim->sub_100952d0(-1);
+		char *pBone = hdr + *(int *)(hdr + 0xf4) + bone * 0xa0;
+		float mat[12];
+		((CEnemySlots *)this)->w256(bone, mat);
+
+		Vector vecBonePos;
+		sub_10137fe0(&g_1070d1b0, pBone + 0x58, &vecBonePos);
+		sub_10137fe0(&vecBonePos, mat, &vecNew);
+
+		if (vecSnap != g_1070d1b0)
+		{
+			if (!g_1093f73c->v1() && g_1093f73c->m_n2c)
+				sub_103d4820(vecNew, 0.0f);
+
+			const Vector &hullMins = *sub_102d6100(*(int *)((char *)this + 0x1568));
+			Vector vecMins = hullMins * 1.25f + vecNew;
+			const Vector &hullMaxs = *sub_102d6120(*(int *)((char *)this + 0x1568));
+			Vector vecMaxs = hullMaxs * 1.25f + vecNew;
+
+			Vector vecEnemyMins, vecEnemyMaxs;
+			((CCollisionProperty *)((char *)vfunc167() + 0x270))->vfunc15(&vecEnemyMins, &vecEnemyMaxs);
+
+			if (sub_10240250(&vecMins, &vecMaxs, &vecEnemyMins, &vecEnemyMaxs))
+			{
+				Vector vecDelta = vecNew - vecSnap;
+				Vector vecPos(g_1070d1b0);
+
+				CBaseEntity *pEnemy = vfunc167();
+				CBaseEntity *pOwner = !pEnemy ? 0 : (CBaseEntity *)pEnemy->m_pA8;
+				((CCollisionProperty *)((char *)pOwner + 0x270))->sub_100dd000(vecNew, vecPos);
+				Vector vecDir = *((CEnemySlots *)pOwner)->w217() - vfunc192();
+				int nKind = ((CEnemySlots *)pOwner)->w323(&vecDir);
+				int nAct = 0x79;
+				VectorNormalize(vecDir);
+				switch (nKind)
+				{
+				case 1: nAct = 0x7a; break;
+				case 3: nAct = 0x7b; break;
+				}
+				((CEnemySlots *)pOwner)->w320(this, nAct);
+
+				if (m_fl66f4 + 1.0f < gpGlobals->curtime)
+				{
+					CUnknown101c26d0 info;
+					info.sub_101c26d0(this, this, 20.0f, 1, 0, 0, -1);
+					((CUnknown101c2a10 *)&info)->sub_101c2a10(2);
+					((CUnknown101c2b10 *)&info)->sub_101c2b10(1);
+					CDamageInfoFull *pInfo = (CDamageInfoFull *)&info;
+					pInfo->m_vecReportedPosition = vecPos;
+					pInfo->m_vecDamagePosition = vecDelta * 500.0f;
+					((CUnknown101c2a50 *)&info)->sub_101c2a50(0x3f800000);
+					pOwner->sub_100a1250(pInfo);
+					m_fl66f4 = gpGlobals->curtime;
+					{ vecSnap.x = vecNew.x; vecSnap.y = vecNew.y; vecSnap.z = vecNew.z; }
+				}
+				else { vecSnap.x = vecNew.x; vecSnap.y = vecNew.y; vecSnap.z = vecNew.z; }
+			}
+			else { vecSnap.x = vecNew.x; vecSnap.y = vecNew.y; vecSnap.z = vecNew.z; }
+		}
+		else { vecSnap.x = vecNew.x; vecSnap.y = vecNew.y; vecSnap.z = vecNew.z; }
+
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d99a0 size=0xcd
 #include "CNPC_VWerewolf.h"
 #include "inputdata_t.h"
