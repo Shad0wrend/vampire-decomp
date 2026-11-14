@@ -71639,6 +71639,81 @@ void SView::sub_10100080(int x, int y)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101001e0 size=0x3f5
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CEnvBeam.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+struct CUnknown1004f860 { void *sub_1004f860(); };
+struct SView { void sub_10100080(const float *a, const float *b); };
+void sub_101006e0(const float *a, const float *b, int mask, CBaseEntity *pEnt, int n, CGameTrace *pTrace);
+
+inline Vector RandomDir_101001e0()
+{
+	return Vector(enginerandom->vfunc1(-1.0f, 1.0f), enginerandom->vfunc1(-1.0f, 1.0f), enginerandom->vfunc1(-1.0f, 1.0f));
+}
+
+
+#pragma auto_inline(off)
+void Ray_t::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+#pragma auto_inline(on)
+void CEnvBeam::sub_101001e0()
+{
+	int iLoops; iLoops = 0;
+	for (iLoops = 0; iLoops < 10; ++iLoops)
+	{
+		Vector origin = Vector(*((CEntityVSlots *)this)->slot217());
+		Vector dir = Vector(enginerandom->vfunc1(-1.0f, 1.0f), enginerandom->vfunc1(-1.0f, 1.0f), enginerandom->vfunc1(-1.0f, 1.0f));
+		VectorNormalize(dir);
+		Vector t1; t1 = pcd_stage(dir) * m_radius; Vector end = origin + t1;
+		Ray_t ray;
+		((CUnknown1004f860 *)&ray)->sub_1004f860();
+		ray.sub_1004f7a0(&origin.x, &end.x);
+		CGameTrace trace;
+		CTraceFilterSimple filter(this, 0);
+		g_1070b254->vfunc4(&ray, 0x400b, (CTraceFilterNoCharacterCollide *)&filter, &trace);
+		if (g_10738960.sub_1005f190())
+			sub_10146570((const Vector *)&trace.m_startpos, (const Vector *)&trace.m_endpos, 0xff, 0, 0, 1, -1.0f);
+		if (trace.m_fraction == 1.0)
+			continue;
+		Vector dir2;
+		do
+		{
+			dir2 = Vector(enginerandom->vfunc1(-1.0f, 1.0f), enginerandom->vfunc1(-1.0f, 1.0), enginerandom->vfunc1(-1.0f, 1.0));
+		} while (0.0f < DotProduct(dir2, dir));
+		VectorNormalize(dir2);
+		CGameTrace trace2; Vector t0 = m_radius * dir2;
+		UTIL_TraceLine_Calls(origin, ((t0) + origin), 0x400b, this, 0, &trace2);
+		if (trace2.m_fraction == 1.0)
+			continue;
+		if (pcd_stage((*(Vector *)trace.m_endpos - *(Vector *)trace2.m_endpos).Length()) < m_radius * 0.1)
+			continue;
+		sub_101006e0(trace.m_endpos, trace2.m_endpos, 0x400b, pcd_stage(this), 0, &trace2);
+		if (1.0 != trace2.m_fraction)
+			continue;
+		((SView *)this)->sub_10100080(trace.m_endpos, trace2.m_endpos);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101006e0 size=0x125
 #include "CTraceFilterNoCharacterCollide.h"
 #include "Ray_t.h"

@@ -12854,6 +12854,7 @@
 0x100118dd func   ?sub_100c7900@@YAHPAUStudioHdr@@HH@Z sub_100c7900
 0x100118e2 func   ?vfunc166@CNPC_VMingXiaoTentacle@@QAEDPAVCBaseEntity@@@Z CNPC_VMingXiaoTentacle::vfunc166
 0x100118e7 func   ?sub_1031a000@CUnk1031a000@@QAEPAXXZ CUnk1031a000::sub_1031a000
+0x100118ec func   ?sub_101001e0@CEnvBeam@@QAEXXZ CEnvBeam::sub_101001e0
 0x100118f1 func   ?vfunc436@CBasePlayer@@QAEXXZ CBasePlayer::vfunc436
 0x100118f6 func   ?sub_101dae70@S6@@QAEPAU1@H@Z S6::sub_101dae70
 0x100118fb func   ?vfunc1@CTEBaseBeam@@UAEHXZ CTEBaseBeam::vfunc1
