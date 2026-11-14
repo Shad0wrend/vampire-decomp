@@ -371,6 +371,169 @@ char CNPCMaker::vfunc618(char bForce)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1034b7b0 size=0x352
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include <string.h>
+#include "CNPCMaker.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+#include "COutputEvent.h"
+
+extern char g_106b8540[];
+CBaseEntity *sub_10136580(const char *pszClass);
+void sub_101d1280(void *pEnt);
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CMakerEntityMapData
+{
+	char *m_pEntData;
+	char *m_pCurrentKey;
+	CMakerEntityMapData(char *pText) { m_pEntData = pText; m_pCurrentKey = pText; }
+};
+
+struct StrT { const char *p; };
+struct CMakerNPCView
+{
+	char pad0000[0x204];
+	int m_spawnflags204;
+	char pad0208[0x1584 - 0x208];
+	int m_n1584;
+	char pad1588[0x63b0 - 0x1588];
+	int m_n63b0;
+	int m_n63b4;
+	int m_n63b8;
+	int m_n63bc;
+	char pad63c0[0x63d9 - 0x63c0];
+	char m_b63d9;
+	char pad63da[0x6420 - 0x63da];
+	int m_n6420;
+	int m_n6424;
+	int m_n6428;
+	int m_n642c;
+	int m_n6430;
+	char m_b6434;
+	char m_b6435;
+	char m_b6436;
+	char pad6437[0x65f4 - 0x6437];
+	char m_b65f4;
+
+	char sub_1029f2e0();
+	void sub_1029f300(char b);
+	void sub_1028fb70();
+	void sub_1028fc90();
+	void SetS0(StrT s) { *(StrT *)&m_n63b0 = s; }
+	void SetS4(StrT s) { *(StrT *)&m_n63b4 = s; }
+	void SetSc(StrT s) { *(StrT *)&m_n63bc = s; }
+	void Set63b0(int v) { m_n63b0 = v; }
+	void Set63b4(int v) { m_n63b4 = v; }
+	void Set63bc(int v) { m_n63bc = v; }
+	void Set2(int a, int b) { m_n63b4 = b; m_n63b0 = a; }
+	void Set2r(int b, int a) { m_n63b0 = a; m_n63b4 = b; }
+	void Set3(int a, int b, int c) { m_n63b0 = a; m_n63b4 = b; m_n63bc = c; }
+	void SetRef(const int &v) { m_n63b0 = v; }
+};
+
+#pragma auto_inline(off)
+namespace block_1034b7b0
+{
+	struct CNPCMakerUnit : CNPCMaker
+	{
+		char sub_1034b430();
+	};
+	char CNPCMakerUnit::sub_1034b430()
+	{
+		if (!m_b66c3 && m_n6660 <= 0)
+			return 1;
+		return 0;
+	}
+}
+using namespace block_1034b7b0;
+#pragma auto_inline(on)
+
+struct NameV { void sub_100a0420(StrT n); };
+inline bool operator!=(const StrT &a, int) { return a.p != 0; }
+// TARGET: ?vfunc617@CNPCMaker@@UAEPAVCBaseEntity@@H@Z
+CBaseEntity *CNPCMaker::vfunc617(int bForce)
+{
+	if (m_flGroundZ66b8 == 0)
+	{
+		CGameTrace tr;
+		UTIL_TraceLine_Calls(*((CEntityVSlots *)this)->slot217(), *((CEntityVSlots *)this)->slot217() - Vector(0, 0, 2048), 0x2400b, this, 0, &tr);
+		m_flGroundZ66b8 = tr.m_endpos[2];
+		((CEntityVSlots *)this)->slot217();
+		((CEntityVSlots *)this)->slot217();
+		((CEntityVSlots *)this)->slot217();
+	}
+
+	if (!vfunc618_slot(bForce))
+		return 0;
+
+	CBaseEntity *pEnt = sub_10136580(STRINGR(m_pszNPCClassname665c));
+	if (!pEnt)
+	{
+		Warning("NULL Ent in NPCMaker!\n");
+		return 0;
+	}
+	CMakerNPCView *pNPC = (CMakerNPCView *)pEnt->m_pNPC98;
+	if (!pNPC)
+	{
+		Warning("Non Troika Ent in NPCMaker!\n");
+		return 0;
+	}
+
+	const char *pSrc = STRINGR(m_pMapData);
+	strcpy(m_szMapData, pSrc);
+	CMakerEntityMapData entData(m_szMapData);
+	((CEntityVSlots *)pNPC)->slot107((const float *)&entData);
+	((CEntityVSlots *)pNPC)->slot111();
+	((CEntityVSlots *)pNPC)->slot122(STRINGR(m_pszNPCClassname665c));
+
+	CMakerNPCView *pThis = (CMakerNPCView *)this;
+	pNPC->m_n1584 = pThis->m_n1584;
+	((COutputEvent *)m_Output6668)->sub_100cd660(this, this, 0);
+	pNPC->m_spawnflags204 = 4;
+	if (m_b66c2)
+		pNPC->m_spawnflags204 = 0x204;
+	pNPC->sub_1029f300(pThis->sub_1029f2e0());
+	pNPC->SetS0(*(StrT *)&pThis->m_n63b0);
+	pNPC->m_n63b4 = pThis->m_n63b4;
+	pNPC->m_n63bc = pThis->m_n63bc;
+	pThis->sub_1028fb70();
+	pThis->sub_1028fc90();
+	pNPC->m_b63d9 = pThis->m_b63d9;
+	pNPC->m_n6420 = pThis->m_n6420;
+	pNPC->m_n6424 = pThis->m_n6424;
+	pNPC->m_n6428 = pThis->m_n6428;
+	pNPC->m_n642c = pThis->m_n642c;
+	pNPC->m_n6430 = pThis->m_n6430;
+	pNPC->m_b6434 = pThis->m_b6434;
+	pNPC->m_b6435 = pThis->m_b6435;
+	pNPC->m_b6436 = pThis->m_b6436;
+	vfunc619((int)pNPC);
+
+	sub_101d1280(pNPC);
+	((CEntityVSlots *)pNPC)->slot202((CEntityVSlots *)this);
+	if (m_pszTargetName66bc)
+		((NameV *)pNPC)->sub_100a0420(*(StrT *)&m_pszTargetName66bc);
+	vfunc620((int)pNPC);
+
+	m_n66b0++;
+	if (!m_b66c3)
+	{
+		m_n6660--;
+		if (((CNPCMakerUnit *)this)->sub_1034b430())
+		{
+			sub_100ac4e0(0, 0, 0);
+			m_pfnUse = 0;
+		}
+	}
+	pNPC->m_b65f4 = 1;
+	return (CBaseEntity *)pNPC;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1034bc90 size=0x74
 #include "CNPCMaker.h"
 #define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
