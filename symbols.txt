@@ -6699,6 +6699,7 @@
 0x10009a02 func   ?sub_1010bd70@CEnvFireSource@@QAEXXZ CEnvFireSource::sub_1010bd70
 0x10009a07 func   ?sub_10070720@CBaseCineCam@@QAEXH@Z CBaseCineCam::sub_10070720
 0x10009a0c func   ?sub_101317d0@CToggleRelayUnit@@QAEXXZ CToggleRelayUnit::sub_101317d0
+0x10009a11 func   ?sub_102b7cf0@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102b7cf0
 0x10009a16 func   ?sub_10248850@CUnknown10248850@@QAEXH@Z CUnknown10248850::sub_10248850
 0x10009a1b func   ?sub_1007ccc0@CChoreoSaverView@@QAEXPAXHPAUCChoreoActorView@@@Z CChoreoSaverView::sub_1007ccc0
 0x10009a20 func   ?vfunc106@CBaseEntity@@UAEXPBD@Z CBaseEntity::vfunc106

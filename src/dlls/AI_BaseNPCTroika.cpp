@@ -2103,6 +2103,47 @@ int CAI_BaseNPCTroika::sub_102b7690(char a1, char a2, char a3, char a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102b7cf0 size=0x1ce
+#include "CAI_BaseNPCTroika.h"
+struct SGlobal248f4 { virtual void v0(); virtual char v1(); char m_pad[0x28]; int m2c; };
+extern SGlobal248f4 *g_109248f4;
+#define SCHED(line, result) do { m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp"; m_nLine1b34 = (line); return (result); } while (0)
+int CAI_BaseNPCTroika::sub_102b7cf0()
+{
+    if (sub_10014df8(0x47))
+        SCHED(0x5d24, 0x10);
+    if (vfunc167() && vfunc592()) {
+        int r = sub_102b7690(1, 1, 1, 1);
+        if (r)
+            return r;
+        if (!g_109248f4->v1() && g_109248f4->m2c) {
+            if ((m_flags14b8 & 0x800) == 0x800) {
+                m_flags14b8 &= ~0x800;
+                if (enginerandom->vfunc2(0, 99) < 0x46) {
+                    m_flags14b8 |= 0x10000000;
+                    SCHED(0x5d4c, 0x8e);
+                }
+                m_f65a4 += 15.0f;
+                SCHED(0x5d53, 0x8f);
+            }
+            if (sub_10014df8(0x46) && gpGlobals->curtime > m_f65a4 && (m_flags5b84 & 0x2000) == 0x2000 && (m_flags14bc & 0x20000) != 0x20000 && !m_b6435) {
+                m_f65a4 = (enginerandom->vfunc1(10.0f, 20.0f) + 0.0f) + gpGlobals->curtime;
+                int nRoll = enginerandom->vfunc2(0, 99);
+                m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp";
+                if (nRoll < 0x3c)
+                {
+                    m_nLine1b34 = 0x5d61;
+                    return 0x8c;
+                }
+                m_nLine1b34 = 0x5d65;
+                return 0x8d;
+            }
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102b7fc0 size=0x2a5
 #include "CAI_BaseNPCTroika.h"
 #include "CStatusFlagList.h"
