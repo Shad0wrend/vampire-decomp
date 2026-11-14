@@ -2245,6 +2245,106 @@ bool sub_1002e210(SPhysSolid102e210 *pSolid, CBaseEntity *pEntity, int modelInde
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002e3a0 size=0x17a
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "Tier1.h"
+
+struct SweepA { int x; };
+struct SweepB { int x; };
+struct SweepC { int x; };
+struct SweepD { int x; };
+struct SweepE { int x; };
+struct SweepF { int x; };
+
+struct SVCollide
+{
+	int solidCount;
+	void **solids;
+};
+
+struct SSolid
+{
+	char m_pad0000[0x404];
+	char surfaceprop[0x610 - 0x404];
+	char params[0x640 - 0x610];
+};
+
+struct SPhysEnv
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void *vfunc7(void *pCollide, int surfaceProp, const float *origin, const float *angles, void *params);
+};
+
+struct SPhysProps
+{
+	virtual void v0(); virtual void v1(); virtual void v2();
+	virtual int vfunc3(const char *pszName);
+};
+
+struct SPhysObjects
+{
+	virtual void v0(); virtual void v1();
+	virtual void vfunc2(void *pObject, int modelIndex);
+};
+
+extern SPhysEnv *g_10723940;
+extern SPhysProps *g_10723944;
+extern SPhysObjects *g_1053c5e0;
+
+bool sub_1002e210(SSolid *solid, CBaseEntity *pEntity, int modelIndex);
+
+struct PMEnt : CBaseEntity
+{
+	int edictX() { return m_pEdict2e0; }
+	int entindexX() { return engine->vfunc35(edictX()); }
+	int entindexY() { return engine->vfunc35(m_pEdict2e0); }
+	const char *GetDebugNameX() { return sub_100ab4f0(); }
+};
+inline int ENTINDEXX(int e) { return engine->vfunc35(e); }
+
+inline bool IsValidCollide(SVCollide *pCollide, CBaseEntity *pEntity)
+{
+	if (!pCollide)
+		return false;
+	if (!pCollide->solidCount || !pCollide->solids) {
+		int idx = engine->vfunc35(((PMEnt *)pEntity)->edictX());
+		g_109f364c("(%d)%s has invalid collision data\n", idx, pEntity->sub_100ab4f0());
+		return false;
+	}
+	return true;
+}
+
+void *sub_1002e3a0(CBaseEntity *pEntity, int modelIndex, const float *origin, const float *angles, SSolid *pSolid)
+{
+	ScopeTrace trace("PhysModelCreate", g_106b8540);
+	SVCollide *pCollide = (SVCollide *)engine->vfunc58(modelIndex);
+	if (!IsValidCollide(pCollide, pEntity))
+		return 0;
+	SSolid tmpSolid;
+	if (!pSolid) {
+		pSolid = &tmpSolid;
+		if (!sub_1002e210(&tmpSolid, pEntity, modelIndex))
+			return 0;
+	}
+	int surfaceProp = -1;
+	if (pSolid->surfaceprop[0])
+		surfaceProp = g_10723944->vfunc3(pSolid->surfaceprop);
+	void *pObject = g_10723940->vfunc7(pCollide->solids[0], surfaceProp, origin, angles, pSolid->params);
+	if (pObject)
+		g_1053c5e0->vfunc2(pObject, modelIndex);
+	return pObject;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002e580 size=0x1de
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

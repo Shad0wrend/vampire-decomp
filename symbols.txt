@@ -9926,6 +9926,7 @@
 0x1000dbed func   ?sub_1011a710@@YAXD@Z sub_1011a710
 0x1000dbf2 func   ?vfunc32@CSimplePhysicsProp@@QAE_NH@Z CSimplePhysicsProp::vfunc32
 0x1000dbf7 func   ?vfunc117@CGib@@UAEHXZ CGib::vfunc117
+0x1000dbfc func   ?sub_1002e3a0@@YAPAXPAVCBaseEntity@@HPBM1PAUSSolid@@@Z sub_1002e3a0
 0x1000dc01 func   ?sub_1007ceb0@CUnknown1007ce20@@QAEMXZ CUnknown1007ce20::sub_1007ceb0
 0x1000dc06 func   ?sub_1042fe90@@YAII@Z sub_1042fe90
 0x1000dc10 func   ?sub_10067690@CUnknown10067690@@QAEHXZ CUnknown10067690::sub_10067690
