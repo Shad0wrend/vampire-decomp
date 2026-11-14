@@ -1,5 +1,5 @@
 #pragma once
-// The 0x5f318-byte record that 0x102bxxxx copies with its compiler-generated operator= (0x1025b930).
+// The 0x5f318-byte record that 0x1025afe0 copies with its compiler-generated operator= (0x1025b930).
 // The member operator= of the part types are how VC6 copies them (block copies; B4's dead if (0) lines
 // keep the numbering of the generated CValRecord::operator= as the game has it).
 struct CValRec_B1r { int d[0x424f]; };
