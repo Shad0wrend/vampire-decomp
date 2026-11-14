@@ -199704,6 +199704,125 @@ void CAI_BaseNPC::sub_102792b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10279420 size=0x4e2
+#include "CAI_BaseNPC.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "UTIL_Trace.h"
+
+float __cdecl sub_10146150(const Vector *v);
+
+#include <math.h>
+namespace block_10279420 {
+#pragma auto_inline(off)
+struct RayInit : Ray_t { void sub_1004f7a0(const float *pStart, const float *pEnd); };
+void RayInit::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+struct Ray_tViewH { Vector m_Start; Vector m_Delta; Vector m_StartOffset; Vector m_Extents; bool m_IsRay; bool m_IsSwept; char m_b32; char m_b33; float m_f34; };
+struct RayHull : Ray_t { void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b); };
+void RayHull::sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b)
+{
+	const Vector &end = *(const Vector *)pEnd;
+	Ray_tViewH *r = (Ray_tViewH *)this;
+	const Vector &mins = *(const Vector *)pMins;
+	const Vector &maxs = *(const Vector *)pMaxs;
+	VectorSubtract(end, start, r->m_Delta);
+	r->m_IsSwept = (r->m_Delta.LengthSqr() != 0.0f);
+	VectorSubtract(maxs, mins, r->m_Extents);
+	r->m_Extents *= 0.5f;
+	r->m_IsRay = (r->m_Extents.LengthSqr() < 1e-6);
+	VectorAdd(mins, maxs, r->m_StartOffset);
+	r->m_StartOffset *= 0.5f;
+	VectorAdd(start, r->m_StartOffset, r->m_Start);
+	r->m_StartOffset *= -1.0f;
+	r->m_b32 = b;
+	r->m_b33 = 0;
+	r->m_f34 = 0.0f;
+	if (a && !r->m_IsRay) {
+		r->m_f34 = (float)sqrt((r->m_Extents.x * r->m_Extents.x) + (r->m_Extents.y * r->m_Extents.y));
+		if (1e-6 < r->m_f34)
+			r->m_b33 = 1;
+	}
+}
+#pragma auto_inline(on)
+}
+using namespace block_10279420;
+inline void TraceLineCallsR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+inline void TraceLineCallsR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, void *pFilter, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+__forceinline Vector VSubG(const Vector &a, const Vector &b) { Vector r; r.x = a.x - b.x; r.y = a.y - b.y; r.z = a.z - b.z; return r; }
+bool CAI_BaseNPC::sub_10279420()
+{
+	float hx = vfunc214()[0] * 0.5f;
+	float hy = vfunc214()[1] * 0.5f;
+	Vector start;
+	start.x = hx + vfunc217()[0];
+	start.y = hy + vfunc217()[1];
+	start.z = vfunc217()[2];
+	CGameTrace tr;
+	float last, cur;
+	{ Vector end = VSubG(start, Vector(0, 0, 100.0f)); TraceLineCallsR(start, end, 0x2400b, this, 0, &tr); }
+	{ Vector d = VSubG(start, *(Vector *)&tr.m_endpos); last = sub_10146150(&d); }
+	start.x = vfunc217()[0] - hx;
+	start.y = vfunc217()[1] - hy;
+	{ Vector end = VSubG(start, Vector(0, 0, 100.0f)); TraceLineCallsR(start, end, 0x2400b, this, 0, &tr); }
+	{ Vector d = VSubG(start, *(Vector *)&tr.m_endpos); cur = sub_10146150(&d); }
+	if (cur > last)
+		return false;
+	last = cur;
+	start.x = vfunc217()[0] - hx;
+	start.y = hy + vfunc217()[1];
+	{ Vector end = VSubG(start, Vector(0, 0, 100.0f)); TraceLineCallsR(start, end, 0x2400b, this, 0, &tr); }
+	{ Vector d = VSubG(start, *(Vector *)&tr.m_endpos); cur = sub_10146150(&d); }
+	if (cur > last)
+		return false;
+	last = cur;
+	start.x = hx + vfunc217()[0];
+	start.y = vfunc217()[1] - hy;
+	{ Vector end = VSubG(start, Vector(0, 0, 100.0f)); TraceLineCallsR(start, end, 0x2400b, this, 0, &tr); }
+	{ Vector d = VSubG(start, *(Vector *)&tr.m_endpos); cur = sub_10146150(&d); }
+	if (cur > last)
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10279a50 size=0xd5
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"

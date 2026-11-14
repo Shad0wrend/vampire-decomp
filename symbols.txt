@@ -4304,6 +4304,7 @@
 0x1000689d func   ?sub_10209a20@CItemContainer@@QAEPAXXZ CItemContainer::sub_10209a20
 0x100068a2 func   ?sub_1024cc90@@YA_NABUSPlane@@00AAVVector@@@Z sub_1024cc90
 0x100068a7 func   ?sub_101ebf30@CKeyHolder@@QAEPBDH@Z CKeyHolder::sub_101ebf30
+0x100068ac func   ?sub_10279420@CAI_BaseNPC@@QAE_NXZ CAI_BaseNPC::sub_10279420
 0x100068b1 func   ?vfunc80@CBaseEntity@@UAEHXZ CBaseEntity::vfunc80
 0x100068b6 func   ?vfunc0@CPhysSaveRestoreBlockHandler@@QAEHXZ CPhysSaveRestoreBlockHandler::vfunc0
 0x100068bb func   ?sub_102eca20@@YAHXZ sub_102eca20
