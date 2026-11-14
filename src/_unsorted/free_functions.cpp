@@ -9783,6 +9783,277 @@ void CBaseEntity::sub_10040220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040390 size=0x3ec
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CBaseEntitySlots.h"
+#include "CUnknown100290c0.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "CEHandleGet.h"
+extern Vector g_1070d1b0;
+void sub_10139500(const float *pStart, float flScale, const float *pDir, float *pDest);
+__declspec(dllimport) void Warning(const char *pMsg, ...);
+
+static inline bool FlagBit12(unsigned int f)
+{
+	return ((f >> 12) & 1) != 0;
+}
+
+class CCycleCount
+{
+public:
+	CCycleCount &operator+=(CCycleCount const &other) { m_Int64 += other.m_Int64; return *this; }
+	__int64 m_Int64;
+};
+
+class CFastTimer
+{
+public:
+	void sub_100335e0();	// End (out of line: rdtsc asm)
+	void End() { sub_100335e0(); }
+	const CCycleCount &GetDuration() const { return m_Duration; }
+	CCycleCount m_Duration;
+};
+
+class CVProfile;
+extern CVProfile *g_109f3648;
+
+class __declspec(dllimport) CVProfNode
+{
+public:
+	bool ExitScope();
+	void EnterScope();
+	CVProfNode *GetSubNode(const char *pszName, int detailLevel, const char *pBudgetGroupName);
+	const char *GetName() { return m_pszName; }
+	CVProfNode *GetParent() { return m_pParent; }
+
+	const char *m_pszName;	// 0x00
+	CFastTimer m_Timer;	// 0x08
+	int m_nRecursions;	// 0x10
+	unsigned m_nCurFrameCalls;	// 0x14
+	CCycleCount m_CurFrameTime;	// 0x18
+	unsigned m_nPrevFrameCalls;
+	CCycleCount m_PrevFrameTime;
+	unsigned m_nTotalCalls;
+	CCycleCount m_TotalTime;
+	CCycleCount m_PeakTime;
+	CVProfNode *m_pParent;	// 0x48
+	CVProfNode *m_pChild;
+	CVProfNode *m_pSibling;
+	int m_BudgetGroupID;	// 0x54
+};
+
+class __declspec(dllimport) CVProfile
+{
+public:
+	void EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted);
+	void ExitScope();
+	void PopGroup();
+
+	char m_bVTuneGroupsEnabled;	// 0x0000
+	char m_pad0001[3];
+	int m_nVTuneGroupID;	// 0x0004
+	int m_GroupIDStack[1024];	// 0x0008
+	int m_nGroupStackDepth;	// 0x1008
+	int m_enabled;	// 0x100c
+	bool m_fAtRoot;	// 0x1010
+	char m_pad1011[3];
+	CVProfNode *m_pCurNode;	// 0x1014
+	CVProfNode *m_pRoot;	// 0x1018 (stand-in for &m_Root)
+};
+
+inline bool CVProfNode::ExitScope()
+{
+	if (--m_nRecursions == 0 && m_nCurFrameCalls != 0)
+	{
+		CFastTimer *t = &m_Timer;
+		if ((char)(int)t == -1) t->End(); else t->End();
+		m_CurFrameTime += t->GetDuration();
+		g_109f3648->PopGroup();
+	}
+	return (m_nRecursions == 0);
+}
+
+inline void CVProfile::EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted)
+{
+	if (m_enabled != 0 || !m_fAtRoot)
+	{
+		if (pszName != m_pCurNode->GetName())
+		{
+			m_pCurNode = m_pCurNode->GetSubNode(pszName, detailLevel, pBudgetGroupName);
+		}
+		m_pCurNode->EnterScope();
+		m_fAtRoot = false;
+	}
+}
+
+inline void CVProfile::ExitScope()
+{
+	if (!m_fAtRoot || m_enabled != 0)
+	{
+		if (m_pCurNode->ExitScope())
+		{
+			m_pCurNode = m_pCurNode->GetParent();
+		}
+		m_fAtRoot = (m_pCurNode == m_pRoot);
+	}
+}
+
+class CVProfScope
+{
+public:
+	CVProfScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted)
+	{
+		g_109f3648->EnterScope(pszName, detailLevel, pBudgetGroupName, bAssertAccounted);
+	}
+	~CVProfScope()
+	{
+		g_109f3648->ExitScope();
+	}
+};
+
+inline void VProfExitPlain(CVProfile *p)
+{
+	if (!p->m_fAtRoot || p->m_enabled != 0)
+	{
+		CVProfNode *n = p->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0)
+		{
+			n->m_Timer.End();
+			n->m_CurFrameTime += n->m_Timer.GetDuration();
+			g_109f3648->PopGroup();
+		}
+		if (n->m_nRecursions == 0)
+		{
+			p->m_pCurNode = p->m_pCurNode->GetParent();
+		}
+		p->m_fAtRoot = (p->m_pCurNode == p->m_pRoot);
+	}
+}
+class CVProfScopeI
+{
+public:
+	CVProfScopeI(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted)
+	{
+		g_109f3648->EnterScope(pszName, detailLevel, pBudgetGroupName, bAssertAccounted);
+	}
+	~CVProfScopeI()
+	{
+		VProfExitPlain(g_109f3648);
+	}
+};
+#define VPROF(name) CVProfScope VProf_(name, 0, "Unaccounted", false)
+
+struct CBaseEntitySlotsV : CBaseEntitySlots
+{
+	virtual void slot194(); virtual void slot195(); virtual void slot196(); virtual void slot197(); virtual void slot198(); virtual void slot199();
+	virtual void slot200(); virtual void slot201(); virtual void slot202(); virtual void slot203(); virtual void slot204(); virtual void slot205(); virtual void slot206(); virtual void slot207(); virtual void slot208();
+	virtual int slot209();
+};
+struct CBaseEntityV : CBaseEntity
+{
+	void sub_1003aca0();
+	const Vector &GetBaseVelocity() const { return m_vecBaseVelocity; }
+	const Vector &GetAbsVelocity() const { return m_vecVelocity3bc; }
+	void SetBaseVelocity(const Vector &v) { m_vecBaseVelocity = v; }
+	CBaseEntity *GetMoveParent() { return (CBaseEntity *)((CUnknown100290c0 *)g_10566458)->sub_100290c0(&m_hMoveParent); }
+};
+#define V ((CBaseEntityV *)this)
+
+void CBaseEntity::sub_10040390()
+{
+	ScopeTrace scope("CBaseEntity::PhysicsSimulate", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	VPROF("CBaseEntity_PhysicsSimulate");
+
+	if (m_pA8)
+	{
+		sub_1003ffa0();
+		return;
+	}
+
+	CBaseEntity *pMoveParent = (CBaseEntity *)((CUnknown100290c0 *)g_10566458)->sub_100290c0(&m_hMoveParent);
+
+	if ((vfunc94() == 0 && !pMoveParent) || vfunc94() == 7)
+	{
+		sub_100391f0();
+		return;
+	}
+
+	if (!((CBaseEntitySlotsV *)this)->slot209())
+		sub_100b3640(1);
+
+	{
+		CVProfScopeI VProfI_("CBaseEntity::PhysicsSimulate-BaseVelocity", 0, "Unaccounted", false);
+
+		sub_10040220();
+
+		if (((sub_100b3700() & 0x800000) == 0) && V->GetBaseVelocity() != g_1070d1b0)
+		{
+			if (FlagBit12(m_flags268))
+				sub_100b1d10();
+			Vector vecAbsVelocity;
+			sub_10139500(&V->GetAbsVelocity().x, (float)(1.0 + gpGlobals->frametime * 0.5), &V->GetBaseVelocity().x, &vecAbsVelocity.x);
+			sub_100b2770(vecAbsVelocity);
+			V->SetBaseVelocity(g_1070d1b0);
+		}
+		sub_100b3640(0x800000);
+	}
+
+	int moveType = vfunc94();
+	switch (moveType)
+	{
+	case 8:
+		sub_10038cb0();
+		break;
+	case 0:
+	case 7:
+		sub_100391f0();
+		break;
+	case 11:
+		sub_10039470();
+		break;
+	case 12:
+		sub_100332c0();
+		break;
+	case 9:
+		sub_100397c0();
+		break;
+	case 1:
+		sub_10039ac0();
+		break;
+	case 4:
+		((CBaseEntityV *)this)->sub_1003aca0();
+		break;
+	case 5:
+	case 6:
+		sub_1003f920();
+		break;
+	case 13:
+		sub_1003a090();
+		break;
+	default:
+		Warning("PhysicsSimulate: %s bad movetype %d", sub_1009f200(), vfunc94());
+		break;
+	}
+
+	sub_1003ffa0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041b40 size=0x16
 bool sub_10041b40(int *a, int *b)
 {
