@@ -219355,6 +219355,129 @@ bool CUnk102dd0a0::sub_102dd0a0(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102dd0f0 size=0x2a1
+#include "CKeyValuesX.h"
+#include "string_t.h"
+extern char g_106b8540[];
+
+extern "C++" __declspec(dllimport) void DevWarning(const char *fmt, ...);
+string_t sub_1042bff0(const char *psz);
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct PatrolActivityEntry
+{
+	string_t m_Name;
+	float m_flWeight;
+};
+
+struct CPatrolPlaceView
+{
+	const char *m_pszName;
+	int m_nIntoActivities;
+	PatrolActivityEntry m_IntoActivities[8];
+	int m_nActivities;
+	PatrolActivityEntry m_Activities[8];
+	int m_nOutofActivities;
+	PatrolActivityEntry m_OutofActivities[8];
+	int m_nDeathActivities;
+	PatrolActivityEntry m_DeathActivities[8];
+	int m_nTalkerActivities;
+	PatrolActivityEntry m_TalkerActivities[8];
+	int m_nListenerActivities;
+	PatrolActivityEntry m_ListenerActivities[8];
+	char m_bInstantDeathPreference;
+	char m_pad19d[3];
+	int m_nAcceptedClasses;
+	PatrolActivityEntry m_AcceptedClasses[32];
+
+	bool sub_102dcf70(CKeyValuesX *pKV, int *pCount, PatrolActivityEntry *pArray);
+	bool sub_102dd0a0(void *pKV);
+	bool sub_102dd450();
+	bool sub_102dd0f0(CKeyValuesX *pKV);
+};
+
+bool CPatrolPlaceView::sub_102dd0f0(CKeyValuesX *pKV)
+{
+	CKeyValuesX *pIdent = pKV->sub_102489a0("Identifiers", 0);
+	if (pIdent)
+	{
+		m_pszName = sub_1042bff0(pIdent->sub_10248cd0("Name", g_106b8540)).pszValue;
+
+		CKeyValuesX *pInto = pKV->sub_102489a0("Into_Activities", 0);
+		if (pInto)
+			sub_102dcf70(pInto, &m_nIntoActivities, m_IntoActivities);
+		else
+			m_nIntoActivities = 0;
+
+		CKeyValuesX *pAct = pKV->sub_102489a0("Activities", 0);
+		if (pAct)
+		{
+			sub_102dcf70(pAct, &m_nActivities, m_Activities);
+
+			CKeyValuesX *pOutof = pKV->sub_102489a0("Outof_Activities", 0);
+			if (pOutof)
+				sub_102dcf70(pOutof, &m_nOutofActivities, m_OutofActivities);
+			else
+				m_nOutofActivities = 0;
+
+			CKeyValuesX *pDeath = pKV->sub_102489a0("Death_Activities", 0);
+			if (pDeath)
+				sub_102dcf70(pDeath, &m_nDeathActivities, m_DeathActivities);
+			else
+				m_nDeathActivities = 0;
+
+			CKeyValuesX *pTalker = pKV->sub_102489a0("Talker_Activities", 0);
+			if (pTalker)
+				sub_102dcf70(pTalker, &m_nTalkerActivities, m_TalkerActivities);
+			else
+				m_nTalkerActivities = 0;
+
+			CKeyValuesX *pListener = pKV->sub_102489a0("Listener_Activities", 0);
+			if (pListener)
+				sub_102dcf70(pListener, &m_nListenerActivities, m_ListenerActivities);
+			else
+				m_nListenerActivities = 0;
+
+			CKeyValuesX *pFlags = pKV->sub_102489a0("Flags", 0);
+			if (pFlags)
+				sub_102dd0a0(pFlags);
+			else
+				m_bInstantDeathPreference = sub_102dd450();
+
+			CKeyValuesX *pClasses = pKV->sub_102489a0("AcceptedClasses", 0);
+			m_nAcceptedClasses = 0;
+			if (pClasses)
+			{
+				float flTotal = 0;
+				for (CKeyValuesX *pSub = pClasses->sub_10004c8c(); pSub; pSub = pSub->sub_1000fa65())
+				{
+					if (pSub != 0 && (int)m_nAcceptedClasses >= 32)
+					{
+						DevWarning("Interesting place type '%s' has too many classes.  Ignoring the rest.\n", STRINGR(m_pszName));
+					}
+					else
+					{
+						m_AcceptedClasses[m_nAcceptedClasses].m_Name = sub_1042bff0(pSub->sub_102480b0());
+						m_AcceptedClasses[m_nAcceptedClasses].m_flWeight = pSub->sub_10248c60(0, 0);
+						flTotal += m_AcceptedClasses[m_nAcceptedClasses].m_flWeight;
+						m_nAcceptedClasses++;
+					}
+				}
+				flTotal = 100.0f / flTotal;
+				for (int i = 0; i < m_nAcceptedClasses; i++) m_AcceptedClasses[i].m_flWeight = flTotal * m_AcceptedClasses[i].m_flWeight;
+			}
+			return true;
+		} DevWarning("Interesting place type with no activities.  Can't load.\n");
+			return false;
+	}
+	else
+	{
+		DevWarning("Interesting place type with no name.  Can't load.\n");
+		return false;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102dd450 size=0x9
 #include "CUnknown102dd450.h"
 bool CUnknown102dd450::sub_102dd450()
