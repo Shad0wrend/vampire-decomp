@@ -1542,6 +1542,7 @@
 0x10002fdb func   ?sub_1009ad70@@YIPADPAD@Z sub_1009ad70
 0x10002fe0 func   ?vfunc82@CBaseFlex@@UAEPAUdatamap_t@@XZ CBaseFlex::vfunc82
 0x10002fe5 func   ?sub_100c4d50@@YA_NPBURay_t@@PAUStudioHdr@@PAUStudioHitboxSet@@PAPAUmatrix3x4_t@@IPAUCGameTrace@@@Z sub_100c4d50
+0x10002fea func   ?sub_10301010@CAI_Pathfinder@@QAEHPBVVector@@MH@Z CAI_Pathfinder::sub_10301010
 0x10002fef func   ?sub_1026e940@@YAXABVVector@@000IPAXPAUHullTrace@@D@Z sub_1026e940
 0x10002ff4 func   ?sub_101fee50@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101fee50
 0x10002ff9 func   ?vfunc4@CTEBloodStream@@QAEXHH@Z CTEBloodStream::vfunc4
