@@ -1816,6 +1816,46 @@ void CAI_BaseNPC::vfunc380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026cec0 size=0x9c
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+
+struct COutX5c08
+{
+	void sub_10010794(CBaseEntity *pEnt, CAI_BaseNPC *pNpc, int a);
+};
+
+struct CAI_BaseNPCX354 : CAI_BaseNPC
+{
+	char m_pad0004[0x1538 - 4];
+	EHANDLE m_hTarget;
+	int m_iKind;
+	int m_iMode;
+	char m_pad1544[0x5c08 - 0x1544];
+	COutX5c08 m_Output;
+	void sub_1026d130();
+	CBaseEntity *GetTarget() { return m_hTarget; }
+};
+
+// TARGET: CAI_BaseNPC::vfunc354
+void CAI_BaseNPC::vfunc354()
+{
+	CAI_BaseNPCX354 *p = (CAI_BaseNPCX354 *)this;
+	p->sub_1026d130();
+	if (p->GetTarget() && p->m_iKind != -1 && p->m_iMode == 8)
+		return;
+	if ((char)(int)EHandleDetail::g_10566458 == -1) p->m_Output.sub_10010794(p->m_iKind != -1 ? p->GetTarget() : 0, p, 0);
+	else p->m_Output.sub_10010794(p->m_iKind != -1 ? p->GetTarget() : 0, p, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026cf90 size=0x8f
 #include "CEHandleGet.h"
 #include "CSoundControllerImp.h"
