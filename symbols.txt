@@ -14848,6 +14848,7 @@
 0x1001425e func   ?sub_101269e0@CGameMovement@@QAEXXZ CGameMovement::sub_101269e0
 0x10014263 func   ?vfunc319@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc319
 0x10014268 func   _logic_multicompare logic_multicompare
+0x1001426d func   ?sub_1042d770@CUnknown1042d770@@QAEXHHPBD0H@Z CUnknown1042d770::sub_1042d770
 0x10014272 func   ?vfunc113@CKeepUpright@@UAEXXZ CKeepUpright::vfunc113
 0x10014277 func   ?vfunc14@CAI_Navigator@@UAEHH@Z CAI_Navigator::vfunc14
 0x1001427c func   ?sub_1012ca50@@YA_NPAUEnt@@0@Z sub_1012ca50
