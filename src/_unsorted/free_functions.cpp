@@ -111332,6 +111332,588 @@ bool CUnknown101882d0::sub_101882d0(float time, int *pFirst, int *pSecond)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10188390 size=0x7ca
+class Vector;
+__forceinline void VectorSubtract(const Vector &a, const Vector &b, Vector &c);
+#include "vampire_all.h"
+#include "QAngle.h"
+#include "ConVar.h"
+#include "CUnknown101882d0.h"
+extern float g_107278b8;
+
+#define LC_NONE				0
+#define LC_ALIVE			(1<<0)
+#define LC_ORIGIN_CHANGED	(1<<8)
+#define LC_ANGLES_CHANGED	(1<<9)
+#define LC_SIZE_CHANGED		(1<<10)
+#define LAG_COMPENSATION_TELEPORTED_DISTANCE_SQR ( 64.0f * 64.0f )
+#define LAG_COMPENSATION_EPS_SQR ( 0.1f * 0.1f )
+#define LAG_COMPENSATION_ERROR_EPS_SQR ( 4.0f * 4.0f )
+#define LAG_COMPENSATION_DATA_TIME	1.0f
+
+#ifndef min
+#define min(a,b)  (((a) < (b)) ? (a) : (b))
+#endif
+#ifndef clamp
+#define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
+#endif
+
+extern ConVar g_107278c0;	// sv_maxunlag
+extern ConVar g_107268b8;	// sv_unlagpush
+
+struct LagRecordV
+{
+	bool					m_bActive;
+	int						m_nPlayerIndex;
+	int						m_fFlags;
+	Vector					m_vecOrigin;
+	QAngle					m_vecAngles;
+	Vector					m_vecMins;
+	Vector					m_vecMaxs;
+};
+
+struct LagContextV
+{
+	float			m_flRecordTime;
+	LagRecordV		m_Records[32];
+};
+
+struct LagVecV
+{
+	LagContextV *m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_Size;
+	LagContextV *m_pElements;
+	LagContextV &operator[](int i) { return m_pMemory[i]; }
+};
+
+struct LagUserCmdV
+{
+	char pad0[8];
+	float lerp_msec;	// 0x08
+	char pad0c[4];
+	float frametime;	// 0x10
+	char pad14[0x45 - 0x14];
+	bool lag_compensation;	// 0x45
+	unsigned char updaterate;	// 0x46
+	char pad47[0x4c - 0x47];
+	int lc_index;	// 0x4c
+	Vector lc_origin;	// 0x50
+};
+
+struct LagCollV { virtual void s0(); virtual const Vector &WorldAlignMins(); virtual const Vector &WorldAlignMaxs(); };
+
+struct LagPlayerV
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual void v18();
+	virtual void v19();
+	virtual void v20();
+	virtual void v21();
+	virtual void v22();
+	virtual void v23();
+	virtual void v24();
+	virtual void v25();
+	virtual void v26();
+	virtual void v27();
+	virtual void v28();
+	virtual void v29();
+	virtual void v30();
+	virtual void v31();
+	virtual void v32();
+	virtual void v33();
+	virtual void v34();
+	virtual void v35();
+	virtual void v36();
+	virtual void v37();
+	virtual void v38();
+	virtual void v39();
+	virtual void v40();
+	virtual void v41();
+	virtual void v42();
+	virtual void v43();
+	virtual void v44();
+	virtual void v45();
+	virtual void v46();
+	virtual void v47();
+	virtual void v48();
+	virtual void v49();
+	virtual void v50();
+	virtual void v51();
+	virtual void v52();
+	virtual void v53();
+	virtual void v54();
+	virtual void v55();
+	virtual void v56();
+	virtual void v57();
+	virtual void v58();
+	virtual void v59();
+	virtual void v60();
+	virtual void v61();
+	virtual void v62();
+	virtual void v63();
+	virtual void SetLocalAngles(const QAngle &a);
+	virtual void v65();
+	virtual void v66();
+	virtual void v67();
+	virtual void v68();
+	virtual void v69();
+	virtual void v70();
+	virtual void v71();
+	virtual void v72();
+	virtual void v73();
+	virtual void v74();
+	virtual void v75();
+	virtual void v76();
+	virtual void v77();
+	virtual void v78();
+	virtual void v79();
+	virtual void v80();
+	virtual void v81();
+	virtual void v82();
+	virtual void v83();
+	virtual void v84();
+	virtual void v85();
+	virtual void v86();
+	virtual void v87();
+	virtual void v88();
+	virtual void v89();
+	virtual void v90();
+	virtual void v91();
+	virtual void v92();
+	virtual void v93();
+	virtual void v94();
+	virtual void v95();
+	virtual void v96();
+	virtual void v97();
+	virtual void v98();
+	virtual void v99();
+	virtual void v100();
+	virtual void v101();
+	virtual void v102();
+	virtual void v103();
+	virtual void v104();
+	virtual void v105();
+	virtual void v106();
+	virtual void v107();
+	virtual void v108();
+	virtual void v109();
+	virtual void v110();
+	virtual void v111();
+	virtual void v112();
+	virtual void v113();
+	virtual void v114();
+	virtual void v115();
+	virtual void v116();
+	virtual void v117();
+	virtual void v118();
+	virtual void v119();
+	virtual void v120();
+	virtual void v121();
+	virtual void v122();
+	virtual void v123();
+	virtual void v124();
+	virtual void v125();
+	virtual void v126();
+	virtual void v127();
+	virtual void v128();
+	virtual void v129();
+	virtual void v130();
+	virtual void v131();
+	virtual void v132();
+	virtual void v133();
+	virtual void v134();
+	virtual void v135();
+	virtual void v136();
+	virtual void v137();
+	virtual void v138();
+	virtual void v139();
+	virtual void v140();
+	virtual void v141();
+	virtual void v142();
+	virtual void v143();
+	virtual void v144();
+	virtual void v145();
+	virtual void v146();
+	virtual void v147();
+	virtual void v148();
+	virtual void v149();
+	virtual void v150();
+	virtual void v151();
+	virtual void v152();
+	virtual void v153();
+	virtual void v154();
+	virtual void v155();
+	virtual void v156();
+	virtual void v157();
+	virtual void v158();
+	virtual void v159();
+	virtual void v160();
+	virtual void v161();
+	virtual void v162();
+	virtual void v163();
+	virtual void v164();
+	virtual void v165();
+	virtual void v166();
+	virtual void v167();
+	virtual void v168();
+	virtual void v169();
+	virtual void v170();
+	virtual void v171();
+	virtual void v172();
+	virtual void v173();
+	virtual void v174();
+	virtual void v175();
+	virtual void v176();
+	virtual void v177();
+	virtual void v178();
+	virtual void v179();
+	virtual void v180();
+	virtual void v181();
+	virtual void v182();
+	virtual void v183();
+	virtual void v184();
+	virtual void v185();
+	virtual void v186();
+	virtual void v187();
+	virtual void v188();
+	virtual void v189();
+	virtual void v190();
+	virtual void v191();
+	virtual void v192();
+	virtual void v193();
+	virtual void v194();
+	virtual void v195();
+	virtual void v196();
+	virtual void v197();
+	virtual void v198();
+	virtual void v199();
+	virtual void v200();
+	virtual void v201();
+	virtual void v202();
+	virtual void v203();
+	virtual void v204();
+	virtual void v205();
+	virtual void v206();
+	virtual void v207();
+	virtual void v208();
+	virtual void v209();
+	virtual void v210();
+	virtual void v211();
+	virtual void v212();
+	virtual void v213();
+	virtual void v214();
+	virtual void v215();
+	virtual void v216();
+	virtual void v217();
+	virtual void v218();
+	virtual void v219();
+	virtual const Vector &GetLocalOrigin();
+	virtual const QAngle &GetLocalAngles();
+	int edict() { return m_pEdict; }
+	int entindex() { return engine->vfunc35(edict()); }
+	const Vector &GetAbsOrigin() { return GetLocalOrigin(); }
+	const Vector &WorldAlignMins() { return m_Collision.WorldAlignMins(); }
+	const Vector &WorldAlignMaxs() { return m_Collision.WorldAlignMaxs(); }
+	void SetSize(const Vector &mins, const Vector &maxs) { ((CBaseEntity *)this)->sub_100adf10((float *)&mins, (float *)&maxs); }
+	char pad[0x26c];
+	LagCollV m_Collision;	// +0x270
+	char pad2[0x2e0 - 0x274];
+	int m_pEdict;	// +0x2e0
+};
+
+struct LagEntV { char pad[0xa8]; LagPlayerV *m_pPlayer; };
+
+struct LagMgrV { float sub_10187e60(LagPlayerV *player); };
+
+CBaseEntity *sub_101cd9e0(int);
+void __cdecl sub_101cf5c0(CBaseEntity *pEntity, int pOrigin, int bTouch);
+inline float QLenSqr(const QAngle &a) { return a.x * a.x + a.y * a.y + a.z * a.z; }
+void sub_10142aa0(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, int flDuration);
+
+inline void UTIL_SetOriginV(LagPlayerV *p, const Vector &v, bool bFire = false) { sub_101cf5c0((CBaseEntity *)p, (int)&v, bFire); }
+#define BoxV sub_10142aa0
+
+#pragma auto_inline(off)
+namespace block_10188390 {
+void sub_10188d60(float t, const float *a, const float *b, float *out) {
+    for (int i = 0; i < 3; i++) {
+        out[i] = (b[i] - a[i]) * t + a[i];
+    }
+}
+void sub_10188da0(float t, const float *a, const float *b, float *out) {
+    for (int i = 0; i < 3; i++) {
+        out[i] = (b[i] - a[i]) * t + a[i];
+    }
+}
+struct FSC : CUnknown101882d0 { bool sub_101882d0(float time, int *pFirst, int *pSecond); };
+bool FSC::sub_101882d0(float time, int *pFirst, int *pSecond)
+{
+	*pFirst = -1;
+	*pSecond = -1;
+	int count = m_nRecords;
+	if (count < 2)
+		return false;
+	int last = count - 1;
+	for (int i = 0; i < last; i++)
+	{
+		int next = i + 1;
+		if (time >= m_pRecords[next].m_flTime && time <= m_pRecords[i].m_flTime)
+		{
+			*pFirst = i;
+			*pSecond = next;
+			return true;
+		}
+	}
+	*pFirst = count - 2;
+	*pSecond = last;
+	return true;
+}
+}
+#pragma auto_inline(on)
+using namespace block_10188390;
+
+struct CLagStartV
+{
+	void *m_vptr;
+	LagVecV m_Data;	// +0x04
+	unsigned int restorebits;	// +0x18
+	bool m_bNeedToRestore;	// +0x1c
+	LagRecordV restoreData[2][32];	// +0x20
+
+	LagMgrV *Mgr() { return (LagMgrV *)((char *)this - 8); }
+	float GetLatency(LagPlayerV *player) { return Mgr()->sub_10187e60(player); }
+	bool FindSpanningContexts(float targettime, int *newer, int *older) { return ((FSC *)((char *)this - 8))->sub_101882d0(targettime, newer, older); }
+	void sub_10188390(LagPlayerV *player, LagUserCmdV *cmd);
+};
+
+// TARGET: CLagStartV::sub_10188390
+void CLagStartV::sub_10188390(LagPlayerV *player, LagUserCmdV *cmd)
+{
+	// Assume no players need to be restored
+	restorebits = 0UL;
+	m_bNeedToRestore = false;
+	memset( restoreData, 0, sizeof( restoreData ) );
+
+	// Player not wanting lag compensation
+	if ( !cmd->lag_compensation )
+		return;
+
+	// Get true latency
+	float latency = GetLatency( player ) * 0.001f;
+
+	float update_interval = 0.0f;
+	if (  cmd->updaterate > 0 )
+	{
+		update_interval = 1.0f / (float)cmd->updaterate;
+	}
+
+	latency -= update_interval;
+	latency -= ( cmd->frametime );
+
+	float correct = min( LAG_COMPENSATION_DATA_TIME, latency );
+
+	if ( g_107278c0.GetFloat() )
+	{
+		if ( g_107278c0.GetFloat() < 0.0f )
+		{
+			g_107278c0.vfunc5( 0.0f );
+		}
+		correct = min( correct, g_107278c0.GetFloat() );
+	}
+
+	float realtime = engine->vfunc119(1);
+	float targettime = realtime - correct;
+	targettime -= cmd->lerp_msec * 0.001f;
+	targettime += g_107268b8.GetFloat();
+	targettime = min( realtime, targettime );
+
+	int newer = -1;
+	int older = -1;
+
+	if ( !FindSpanningContexts( targettime, &newer, &older ) )
+	{
+		return;
+	}
+
+	if ( newer == -1 || older == -1 )
+	{
+		return;
+	}
+
+	int i;
+	for ( i = 1; i <= gpGlobals->maxClients; i++ )
+	{
+		LagEntV *pEnt = (LagEntV *)sub_101cd9e0( i );
+		if ( !pEnt )
+			continue;
+		LagPlayerV *pPlayer = pEnt->m_pPlayer;
+		if ( !pPlayer )
+		{
+			continue;
+		}
+
+		if ( player == pPlayer )
+		{
+			continue;
+		}
+
+		int index = pPlayer->entindex() - 1;
+
+		Vector prevOrigin;
+		prevOrigin.Init();
+		bool wasAlive = true;
+
+		bool lost_track = false;
+
+		for ( int j = 0; j <= older; j++ )
+		{
+			LagContextV *context = &m_Data[ j ];
+
+			LagRecordV *record = &context->m_Records[ index ];
+
+			if ( !record->m_bActive )
+			{
+				lost_track = true;
+				break;
+			}
+
+			if ( j != 0 )
+			{
+				bool alive = ( record->m_fFlags & LC_ALIVE ) ? true : false;
+				if ( alive ^ wasAlive )
+				{
+					lost_track = true;
+					break;
+				}
+
+				Vector delta = record->m_vecOrigin - prevOrigin;
+				if ( delta.LengthSqr() > LAG_COMPENSATION_TELEPORTED_DISTANCE_SQR )
+				{
+					lost_track = true;
+					break;
+				}
+			}
+
+			wasAlive = ( record->m_fFlags & LC_ALIVE ) ? true : false;
+			prevOrigin = record->m_vecOrigin;
+		}
+
+		if ( lost_track )
+			continue;
+
+		LagContextV *newcontext, *oldcontext;
+
+		newcontext = &m_Data[ newer ];
+		oldcontext = &m_Data[ older ];
+
+		LagRecordV *newrecord, *oldrecord;
+
+		newrecord = &newcontext->m_Records[ index ];
+		oldrecord = &oldcontext->m_Records[ index ];
+
+		float frac = 1.0f;
+		if ( oldcontext->m_flRecordTime != newcontext->m_flRecordTime )
+		{
+			frac = ( targettime - oldcontext->m_flRecordTime ) / ( newcontext->m_flRecordTime - oldcontext->m_flRecordTime );
+			frac = clamp( frac, 0.0f, 1.0f );
+		}
+
+		Vector org;
+		QAngle ang;
+		Vector mins;
+		Vector maxs;
+
+		sub_10188d60( frac, (const float *)&oldrecord->m_vecOrigin, (const float *)&newrecord->m_vecOrigin, (float *)&org );
+		sub_10188da0( frac, (const float *)&oldrecord->m_vecAngles, (const float *)&newrecord->m_vecAngles, (float *)&ang );
+		sub_10188d60( frac, (const float *)&oldrecord->m_vecMins, (const float *)&newrecord->m_vecMins, (float *)&mins );
+		sub_10188d60( frac, (const float *)&oldrecord->m_vecMaxs, (const float *)&newrecord->m_vecMaxs, (float *)&maxs );
+
+		int flags = 0;
+		LagRecordV *restore = &restoreData[ 0 ][ index ];
+		LagRecordV *change  = &restoreData[ 1 ][ index ];
+
+		QAngle angdiff = pPlayer->GetLocalAngles() - ang;
+
+		if ( QLenSqr(angdiff) > LAG_COMPENSATION_EPS_SQR )
+		{
+			flags |= LC_ANGLES_CHANGED;
+			restore->m_vecAngles = pPlayer->GetLocalAngles();
+			pPlayer->SetLocalAngles( angdiff );
+			change->m_vecAngles = angdiff;
+		}
+
+		if ( ( mins != pPlayer->WorldAlignMins() ) ||
+			 ( maxs != pPlayer->WorldAlignMaxs() ) )
+		{
+			flags |= LC_SIZE_CHANGED;
+			restore->m_vecMins = pPlayer->WorldAlignMins() ;
+			restore->m_vecMaxs = pPlayer->WorldAlignMaxs();
+			pPlayer->SetSize( mins, maxs );
+			change->m_vecMins = mins;
+			change->m_vecMaxs = maxs;
+		}
+
+		Vector diff = pPlayer->GetLocalOrigin() - org;
+
+		if ( diff.LengthSqr() > LAG_COMPENSATION_EPS_SQR )
+		{
+			flags |= LC_ORIGIN_CHANGED;
+			restore->m_vecOrigin = pPlayer->GetLocalOrigin();
+			UTIL_SetOriginV( pPlayer, org );
+			change->m_vecOrigin = org;
+		}
+
+		if ( !flags )
+		{
+			continue;
+		}
+
+		restorebits |= (1<<index);
+		m_bNeedToRestore = true;
+		restore->m_bActive = true;
+		restore->m_fFlags = flags;
+
+		change->m_bActive = true;
+		change->m_fFlags = flags;
+
+		if ( cmd->lc_index == pPlayer->entindex() )
+		{
+			Vector lc_error;
+			lc_error = pPlayer->GetLocalOrigin() - cmd->lc_origin;
+
+			if ( lc_error.LengthSqr() > LAG_COMPENSATION_ERROR_EPS_SQR )
+			{
+				if ( realtime > g_107278b8 + 0.5f )
+				{
+					g_107278b8 = realtime;
+					BoxV( cmd->lc_origin, pPlayer->WorldAlignMins(), pPlayer->WorldAlignMaxs(), 255, 0, 255, 0 ,0x40a00000);
+					BoxV( pPlayer->GetLocalOrigin(), pPlayer->WorldAlignMins(), pPlayer->WorldAlignMaxs(), 255, 255, 0, 0 ,0x40a00000);
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10188d60 size=0x2e
 // TARGET: sub_10188d60
 void sub_10188d60(float t, const float *a, const float *b, float *out) {

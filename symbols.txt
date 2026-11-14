@@ -16055,6 +16055,7 @@
 0x10015a19 func   ?vfunc82@CLogicCompare@@UAEPAUdatamap_t@@XZ CLogicCompare::vfunc82
 0x10015a1e func   ?sub_101d76e0@CUnknown101d76e0@@QAEHPAX@Z CUnknown101d76e0::sub_101d76e0
 0x10015a23 func   ?vfunc448@CNPC_VChangBros@@UAEXH@Z CNPC_VChangBros::vfunc448
+0x10015a28 func   ?sub_10188390@CLagStartV@@QAEXPAULagPlayerV@@PAULagUserCmdV@@@Z CLagStartV::sub_10188390
 0x10015a2d func   ?sub_101802e0@@YAXXZ sub_101802e0
 0x10015a32 func   ?sub_1026f4d0@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_1026f4d0
 0x10015a37 func   ?vfunc266@CWeaponThrown_Grenade_Frag@@UAEXXZ CWeaponThrown_Grenade_Frag::vfunc266
