@@ -5350,6 +5350,89 @@ int CBaseEntity::sub_10034590(float flTime, CGameTrace *steptrace)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10035030 size=0x2c2
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include <math.h>
+#include "UTIL_Trace.h"
+#include "CGameRules.h"
+#include "ScopeTrace.h"
+#include "PhysicsTrace.h"
+
+extern CGameRules *g_1070ba0c;
+
+#define V(n) virtual void v##n();
+#define V10(p) V(p##0) V(p##1) V(p##2) V(p##3) V(p##4) V(p##5) V(p##6) V(p##7) V(p##8) V(p##9)
+struct CPhysTraceView
+{
+	V10(0) V10(1) V10(2) V10(3) V10(4) V10(5) V10(6) V10(7) V10(8) V10(9)
+	V10(10) V10(11) V10(12) V10(13) V10(14) V10(15) V10(16) V10(17)
+	V(180) V(181) V(182) V(183) V(184) V(185) V(186) V(187) V(188) virtual void *v189();
+	V10(19) V10(20) V(210) virtual unsigned int v211();
+	char m_pad[0x368 - 4];
+	int m_nColGroup;
+};
+
+// TARGET: sub_10035030
+void sub_10035030(CBaseEntity *pEntity, const Vector *pStart, const Vector *pEnd, const Vector *pMins, const Vector *pMaxs, unsigned int fMask, CGameTrace *pTrace)
+{
+	ScopeTrace scope("Physics_TraceHull", g_106b8540, g_106b8540);
+	CPhysTraceView *pEnt = (CPhysTraceView *)pEntity;
+	if (pEnt->v189()) {
+		g_1070ba0c->vfunc76(*pStart, *pEnd, *pMins, *pMaxs, fMask, (CBaseEntity *)pEnt, pEnt->m_nColGroup, pcd_stage((int)pcd_stage(pEnt)), pTrace);
+		return;
+	} else { volatile int group = pEnt->m_nColGroup; char bSweptBox = ((pEnt->v211() >> 6)) & 1;
+	Ray_t ray;
+	const Vector &start = *pStart;
+	const Vector &end = *pEnd;
+	ray.m_Delta[0] = end.x - start.x;
+	ray.m_Delta[1] = end.y - start.y;
+	ray.m_Delta[2] = end.z - start.z;
+	int bSw = ((ray.m_Delta[2] * *(ray.m_Delta + 2) + ray.m_Delta[1] * ray.m_Delta[1] + ray.m_Delta[0] * ray.m_Delta[0]) != g_104454c4); *(char *)&ray.m_IsSwept = bSw;
+	const Vector &mins = *pMins;
+	const Vector &maxs = *pMaxs;
+	ray.m_StartOffset[0] = maxs.x - mins.x;
+	ray.m_StartOffset[1] = maxs.y - mins.y;
+	ray.m_StartOffset[2] = maxs.z - mins.z;
+	ray.m_StartOffset[0] *= 0.5f;
+	ray.m_StartOffset[1] *= 0.5f;
+	ray.m_StartOffset[2] *= 0.5f;
+	int bR = (1e-6 > (ray.m_StartOffset[2] * pcd_stage(ray.m_StartOffset[2]) + ray.m_StartOffset[1] * ray.m_StartOffset[1] + pcd_stage(ray.m_StartOffset[0]) * ray.m_StartOffset[0])); *(char *)&ray.m_IsRay = bR;
+	if ((int)bSweptBox == -1) { ray.m_Extents[0] = mins.x + maxs.x; } else { ray.m_Extents[0] = mins.x + maxs.x; }
+	ray.m_Extents[1] = mins[1] + maxs.y;
+	ray.m_Extents[2] = pcd_stage(maxs.z) + mins.z;
+	ray.m_Extents[0] *= 0.5f;
+	ray.m_Extents[1] *= 0.5f;
+	ray.m_Extents[2] *= 0.5f;
+	ray.m_Start[0] = ray.m_Extents[0] + start.x;
+	ray.m_Start[1] = ray.m_Extents[1] + start.y;
+	ray.m_Start[2] = pcd_stage(ray.m_Extents[2]) + start.z;
+	ray.m_Extents[0] *= -1.0f;
+	ray.m_Extents[1] *= -1.0f;
+	ray.m_Extents[2] *= -1.0f;
+	ray.m_b32 = 0;
+	ray.m_b33 = 0;
+	ray.m_n34 = 0;
+	if (bSweptBox && !ray.m_IsRay) {
+		ray.m_n34 = sqrt((ray.m_StartOffset[0] * ray.m_StartOffset[0]) + (ray.m_StartOffset[1] * ray.m_StartOffset[1]));
+		if (ray.m_n34 > 1e-6)
+			ray.m_b33 = 1;
+	}
+	CTraceFilterSimple filter((CBaseEntity *)pEnt, group);
+	g_1070b254->vfunc4(&ray, fMask, (CTraceFilterNoCharacterCollide *)&filter, pTrace);
+	if (!pcd_stage(g_10738964)->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&pTrace->m_startpos, (const Vector *)&pTrace->m_endpos, 0xff, 0xff, 0, 1, -1.0f); }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100353c0 size=0x93
 #include "CUnknown100353c0.h"
 
