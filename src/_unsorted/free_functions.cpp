@@ -48913,6 +48913,82 @@ int bf_readX::sub_100bf060(char *pStr, int maxLen, bool bLine, int *pOutNumChars
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bf0f0 size=0x65
+#include "bf_read.h"
+#include <string.h>
+
+namespace block_100bf0f0 {
+#pragma auto_inline(off)
+struct bf_readRS : bf_read
+{
+	int sub_10003e4f(int numbits);	// ReadSBitLong (stub)
+	int sub_100bee80();	// ReadChar
+	bool IsOverflowed() const { return m_bOverflow; }
+	bool sub_100bf060(char *pStr, int maxLen, bool bLine, int *pOutNumChars);
+};
+int bf_readRS::sub_100bee80()
+{
+	return sub_10003e4f(8);
+}
+bool bf_readRS::sub_100bf060(char *pStr, int maxLen, bool bLine, int *pOutNumChars)
+{
+	bool bTooSmall = false;
+	int iChar = 0;
+	while(1)
+	{
+		char val = sub_100bee80();
+		if ( val == 0 )
+			break;
+		else if ( bLine && val == '\n' )
+			break;
+
+		if ( iChar < (maxLen-1) )
+		{
+			pStr[iChar] = val;
+			++iChar;
+		}
+		else
+		{
+			bTooSmall = true;
+		}
+	}
+
+	pStr[iChar] = 0;
+
+	if ( pOutNumChars )
+		*pOutNumChars = iChar;
+
+	return !IsOverflowed() && !bTooSmall;
+}
+#pragma auto_inline(on)
+}
+using namespace block_100bf0f0;
+
+struct bf_readX : bf_readRS
+{
+	char *sub_100bf0f0(bool *pOverflow);
+};
+
+// TARGET: bf_readX::sub_100bf0f0
+char *bf_readX::sub_100bf0f0(bool *pOverflow)
+{
+	char str[2048];
+
+	int nChars;
+	bool bOverflow = !sub_100bf060( str, sizeof( str ), false, &nChars );
+	if ( pOverflow )
+		*pOverflow = bOverflow;
+
+	// Now copy into the output and return it;
+	int n = nChars;
+	char *pRet = new char[ n + 1 ];
+	if ( n >= 0 )
+		memcpy( pRet, str, n + 1 );
+
+	return pRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf180 size=0x2f
 // TARGET: bf_read::sub_100bf180
 #include "bf_read.h"
