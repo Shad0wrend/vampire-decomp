@@ -349,8 +349,11 @@ have written it rather than adding temporaries that spell out the assembly:
   real `CUtlVector<T>` with its inline `operator[]` (0x101b4cc0).
 - **Two names for one global break CSE:** `::g_10566458` and `EHandleDetail::g_10566458` are separate symbols to VC6;
   mixing them forces a reload. Use one spelling (ehandle.h) at every use in a function.
-- **Valve's naked asm:** mathlib's VectorMA (0x101387e0) is `__declspec(naked)` x87 asm in the game; pasted verbatim
-  it judges 0 but submit refuses naked (tool policy). No C++ form reaches it.
+- **Valve's naked asm:** mathlib's VectorMA (0x101387e0, 0x10139500) is `__declspec(naked)` x87 asm in the game.
+  Since 2026-11-14 pcdecomp accepts an `__asm` block that is a word-for-word copy of a whole block in the [reference]
+  trees (naked too when that file is naked): paste Valve's block verbatim (comments and `#if` lines may stay), never
+  an edited one. Listed apart like other inline assembly. _SSE_VectorMA 0x10138830 had its size cut 49 -> 38 (no ret:
+  the extent ran over the padding).
 - **Round 6 (score 2-25 + transplant twins, 26 matched):** a free `__stdcall` function whose callers set ecx is a
   thiscall member ignoring `this` (a view `struct V { int sub_X(...); };`): ecx is then taken and every later
   register and spill moves. A sweep of all 14 open stdcall bests matched 3 at once and 0x10227da0, a 1,055-variant
@@ -405,7 +408,8 @@ have written it rather than adding temporaries that spell out the assembly:
   no constructors yet, a local view class with them is used).
 - **SDK `__asm` (SSE/SSE2/3DNow) pasted into a plain function** matches; `_ps_*` constants are `extern int g_X`
   operands; a game ebp frame on a no-locals asm function = `#pragma optimize("y", off)` (0x10137b20). Hand-scheduled
-  plain-x87 asm (TransformAndRotate 0x101382f0, naked VectorMA) is refused by policy: left open with a note.
+  plain-x87 asm (TransformAndRotate 0x101382f0, naked VectorMA) is accepted only as a verbatim copy of the
+  [reference] block (2026-11-14).
 - **Struct members as Vector, not float[3]** (`cplane_t::normal`): `operator[]` decides the load order (0x10139200).
 - **x87 in double:** `fld [m]; faddp st(N)` where ours is `fxch; fadd [m]` = the add done in double, `(double)a + b`
   (0x102808c0); `fild a; fidiv b` kept together = `(a + 0.0f) / b` (0x101d8b40); `fxch st(1); fxch st(1)` after
