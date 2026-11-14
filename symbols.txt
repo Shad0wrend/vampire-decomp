@@ -6337,6 +6337,7 @@
 0x100092a5 func   ?sub_1035c2a0@@YAPAXXZ sub_1035c2a0
 0x100092aa func   ?sub_102c2680@CAI_BaseNPCTroika@@QAEXPBUCAI_FloatParam@@@Z CAI_BaseNPCTroika::sub_102c2680
 0x100092af func   ?sub_1019dee0@CRopeKeyframe@@SAPAV1@PAVCBaseEntity@@0HHHPBDH@Z CRopeKeyframe::sub_1019dee0
+0x100092b4 func   ?sub_100e05f0@CDialog@@QAEDPAVCBaseEntity@@0@Z CDialog::sub_100e05f0
 0x100092b9 func   ?sub_1013af60@@YAXABVQuaternion@@0AAV1@@Z sub_1013af60
 0x100092be func   ?sub_10336920@Ent@@QAE_NXZ Ent::sub_10336920
 0x100092c3 func   ?sub_1020a0a0@@YAPAVCBaseEntity@@PBDPBM1@Z sub_1020a0a0

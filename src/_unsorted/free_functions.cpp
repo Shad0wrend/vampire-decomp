@@ -61389,6 +61389,117 @@ int CDialog::sub_100e0290(CBaseEntity *pNPC, CBaseEntity *pSpeaker, int hFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e05f0 size=0x2e5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEHandleGet.h"
+#include "engineserver.h"
+
+struct CRefView
+{
+	virtual void v0();
+	virtual unsigned int *vfunc1();
+};
+
+struct CCaptionObj
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char pad[0x2c - 4];
+	int m_n2c;
+};
+
+struct CCaptionVar
+{
+	int m_n0;
+	CCaptionObj *m_pObj;
+};
+
+struct CEntNameView
+{
+	const char *sub_100ab4f0();
+};
+
+struct CDialogView : CDialog
+{
+	int sub_100e0b10();
+	void *sub_100e19f0(int n);
+};
+
+void sub_100dfaf0(int level, const char *fmt, ...);
+CCaptionVar *sub_10245660(const char *name);
+
+inline CRefView *ControllerOf(CBaseEntity *p)
+{
+	return p == 0 ? 0 : (CRefView *)p->m_pA8;
+}
+
+inline void SetHandleFrom(unsigned int &h, CRefView *p)
+{
+	if (p)
+		h = *p->vfunc1();
+	else
+		h = -1;
+}
+
+// TARGET: CDialog::sub_100e05f0
+char CDialog::sub_100e05f0(CBaseEntity *pNPC, CBaseEntity *pSpeaker)
+{
+	ScopeTrace trace("CDialog::Acquire", g_106b8540);
+	if (m_pTable)
+		return 1;
+	m_szWhisper[0] = 0;
+	if (pSpeaker && pSpeaker->m_pNPC98)
+		m_hSpeaker = *((CRefView *)pSpeaker->m_pNPC98)->vfunc1();
+	else
+		m_hSpeaker = -1;
+	SetHandleFrom(m_hNPC, ControllerOf(pNPC));
+	if (EHandle_Get(m_hNPC) && EHandle_Get(m_hSpeaker)) {
+		((char *)this)[0x33ac] = 0;
+		m_b30e8 = sub_100e5410(sub_100e7310());
+		sub_100e0f90(m_b30e8);
+		engine->vfunc7("clear_io_states");
+		if (m_b30e8) {
+			int pNpcEnt = (int)EHandle_Get(m_hNPC);
+			CAI_BaseNPCTroika *pSpkEnt = (CAI_BaseNPCTroika *)EHandle_Get(m_hSpeaker);
+			pSpkEnt->sub_102c0270(pNpcEnt);
+			m_nChoices = ((CDialogView *)this)->sub_100e0b10();
+			if (!((CDialogView *)this)->sub_100e19f0(m_nChoices)) {
+				CEntNameView *pName = (CEntNameView *)EHandle_Get(m_hSpeaker);
+				sub_100dfaf0(3, "%s has invalid starting conditions, cannot start on line %d!!!\n", pName->sub_100ab4f0(), m_nChoices);
+				m_nChoices = m_pTable->m_pEntries->m_data[0];
+			}
+			sub_100dfaf0(1, "\n\n\n******************Starting on line: %d******************\n", m_nChoices);
+			char *pPacket = (char *)this + 0xc;
+			sub_100e7da0(pPacket);
+			if (m_bNoReply) {
+				if (sub_100e1880(m_nChoices)) sub_100e58e0(pPacket); else sub_100e58e0(pPacket);
+				sub_100e5240();
+			} else {
+				sub_100e58e0(pPacket);
+			}
+			CCaptionVar *pVar = sub_10245660("cl_captions");
+			if (pVar && !pVar->m_pObj->vfunc1() && pVar->m_pObj->m_n2c)
+				sub_100e1220(1);
+		}
+		if (m_b30e8 && m_bNoReply)
+			return 0;
+		return m_b30e8;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e09a0 size=0x77
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
