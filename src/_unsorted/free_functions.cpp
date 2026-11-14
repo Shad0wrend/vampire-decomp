@@ -225446,6 +225446,357 @@ void CAI_MoveProbe::sub_102e6090(const float *vecStart, const float *vecEnd, uns
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e6290 size=0x76f
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CAI_MoveProbe.h"
+#include "CCollisionProperty.h"
+#include "CTraceFilterNav.h"
+#include "CGameTrace.h"
+#include "CVProfile.h"
+#include "ConVar.h"
+#include "ScopeTrace.h"
+#include "ScopeTrace.h"
+#include "Ray_t.h"
+#include <math.h>
+typedef void (CVProfile::*EnterFn6290)(const char *, int, const char *, bool);
+extern EnterFn6290 g_109f3660;
+typedef void (CVProfile::*ExitFn6290)();
+extern ExitFn6290 g_109f365c;
+typedef void (CVProfile::*PopFn6290)();
+extern PopFn6290 g_109f363c;
+typedef void (CVProfile::*PushFn6290)(int);
+extern PushFn6290 g_109f3668;
+typedef CVProfNode *(CVProfNode::*SubFn6290)(const char *, int, const char *);
+extern SubFn6290 g_109f3644;
+typedef bool (CVProfNode::*NodeExitFn6290)();
+extern NodeExitFn6290 g_109f3654;
+struct CVProfL6290 : CVProfile
+{
+	void ExitScopeL()
+	{
+		if (!m_bAtRoot || m_enabled) {
+			if ((m_pCurNode->*g_109f3654)())
+				m_pCurNode = m_pCurNode->m_pParent;
+			m_bAtRoot = (m_pCurNode == m_pRoot);
+		}
+	}
+	void ExitScopeInlinedL()
+	{
+		if (!m_bAtRoot || m_enabled) {
+			CVProfNode *n = m_pCurNode;
+			if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+				sub_100335e0(&n->m_CurFrameTime);
+				n->m_TotalTime += n->m_CurFrameTime.m_Int64;
+				(g_109f3648->*g_109f363c)();
+			}
+			if (n->m_nRecursions == 0)
+				m_pCurNode = m_pCurNode->m_pParent;
+			m_bAtRoot = (m_pCurNode == m_pRoot);
+		}
+	}
+};
+
+struct HullTrace102e6290 { Vector startpos; Vector endpos; char rest[0x54 - 0x18]; };
+struct IHullTrace102e6290 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void TraceRay(const Ray_t &ray, unsigned mask, void *filter, HullTrace102e6290 *tr); };
+struct IHullClient102e6290 { virtual void v0(); virtual bool v1(); char pad[0x28]; void *m2c; };
+extern IHullTrace102e6290 *g_1070b254;
+extern IHullClient102e6290 *g_10738964;
+void sub_10146570(void *, void *, int, int, int, int, float);
+namespace block_102e6290 {
+#pragma auto_inline(off)
+struct HullRay : Ray_t
+{
+	void InitHull(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs)
+	{
+		Vector &offset = *(Vector *)m_Extents;
+		Vector &extents = *(Vector *)m_StartOffset;
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != 0;
+		VectorSubtract(maxs, mins, extents);
+		extents *= 0.5f;
+		m_IsRay = (extents.z * extents.z + extents.y * extents.y + extents.x * extents.x) < 1e-6;
+		VectorAdd(mins, maxs, offset);
+		offset *= 0.5f;
+		m_Start[0] = offset.x + start.x;
+		m_Start[1] = offset.y + start.y;
+		m_Start[2] = offset.z + start.z;
+		offset *= -1.0f;
+		m_b32 = 0;
+		m_b33 = 0;
+		m_n34 = 0;
+	}
+};
+void sub_1026e940(const Vector *pStart, const Vector *pEnd, const Vector *pMin, const Vector *pMax, unsigned mask, void *filter, void *ptr, char bTraceOffset)
+{
+	const Vector &vecStart = *pStart; const Vector &vecEnd = *pEnd; const Vector &hullMin = *pMin; const Vector &hullMax = *pMax;
+	ScopeTrace trace("UTIL_TraceHull", g_106b8540, g_106b8540);
+	HullRay ray;
+	ray.InitHull(vecStart, vecEnd, hullMin, hullMax);
+	if (bTraceOffset && !ray.m_IsRay) {
+		float f = sqrt(ray.m_StartOffset[1] * ray.m_StartOffset[1] + ray.m_StartOffset[0] * ray.m_StartOffset[0]);
+		*(float *)&ray.m_n34 = f;
+		if (f > 1e-6)
+			ray.m_b33 = 1;
+	}
+	g_1070b254->TraceRay(ray, mask, filter, (HullTrace102e6290 *)ptr);
+	if (!g_10738964->v1() && g_10738964->m2c)
+		sub_10146570(ptr, (char *)ptr + 0xc, 0xff, 0xff, 0, 1, -1.0f);
+}
+#pragma auto_inline(on)
+}
+using namespace block_102e6290;
+
+
+extern ConVar g_109ef2d0;	// sv_gravity
+extern Vector g_1070d1b0;	// vec3_origin
+
+int sub_102e2d70(CBaseEntity *pEnt);
+CBaseEntity *sub_100ab250(void *pEdict);
+float sub_10146150(const Vector &v);
+
+#define JV(n) virtual void jv##n();
+#define JV10(p) JV(p##0) JV(p##1) JV(p##2) JV(p##3) JV(p##4) JV(p##5) JV(p##6) JV(p##7) JV(p##8) JV(p##9)
+
+struct CJumpMoveOuter
+{
+	JV(0) JV(1) JV(2) JV(3) JV(4) JV(5) JV(6) JV(7) JV(8) JV(9)
+	JV10(1) JV10(2) JV10(3) JV10(4) JV10(5) JV10(6) JV10(7) JV10(8) JV10(9)
+	JV10(10) JV10(11) JV10(12) JV10(13) JV10(14) JV10(15) JV10(16) JV10(17) JV10(18) JV10(19)
+	JV10(20) JV10(21) JV10(22) JV10(23) JV10(24) JV10(25) JV10(26) JV10(27) JV10(28) JV10(29)
+	JV10(30) JV10(31) JV10(32) JV10(33) JV10(34) JV10(35) JV10(36) JV10(37) JV10(38) JV10(39)
+	JV10(40) JV10(41) JV10(42) JV10(43) JV10(44) JV10(45) JV10(46) JV10(47) JV10(48) JV10(49)
+	JV10(50) JV10(51) JV(520) JV(521) JV(522) JV(523)
+	virtual float GetMaxJumpSpeed();	// slot 524
+
+	char m_pad0004[0x270 - 4];
+	CCollisionProperty m_Collision;	// 0x270
+	char m_pad02d4[0x368 - 0x2d4];
+	int m_CollisionGroup;	// 0x368
+	char m_pad036c[0x3ec - 0x36c];
+	float m_flGravity;	// 0x3ec
+
+	CCollisionProperty *CollisionProp() { return &m_Collision; }
+	const Vector &WorldAlignMins() { return *(Vector *)CollisionProp()->vfunc1(); }
+	const Vector &WorldAlignMaxs() { return *(Vector *)CollisionProp()->vfunc2(); }
+};
+
+struct CJumpHeldObject
+{
+	virtual void vfunc0();
+	virtual CBaseEntity *vfunc1();
+};
+
+struct CJumpPlayerA8
+{
+	char m_pad0000[0x20f4];
+	bool m_b20f4;
+	char m_pad20f5[0x20fc - 0x20f5];
+	CJumpHeldObject *m_p20fc;
+};
+
+struct CJumpPlayer
+{
+	char m_pad0000[0xa8];
+	CJumpPlayerA8 *m_pA8;
+};
+
+CJumpPlayer *sub_101cd9e0(int index);
+
+struct ScopeTraceInstance
+{
+	__forceinline ScopeTraceInstance(const char *func, const char *name)
+	{
+		g_109f3620[*g_109f3680].name = func;
+		g_109f3620[*g_109f3680].file = name;
+		g_109f3620[*g_109f3680].line = g_106b8540;
+		(*g_109f3680)++;
+	}
+	__forceinline ~ScopeTraceInstance() { (*g_109f3680)--; }
+};
+
+inline CBaseEntity *EntityInstance(void *pent)
+{
+	ScopeTraceInstance scope("CBaseEntity::Instance", g_106b8540);
+	if (!pent)
+		pent = (void *)engine->vfunc38(0);
+	return sub_100ab250(pent);
+}
+
+struct CAI_MoveProbeJump : public CAI_MoveProbe
+{
+	bool sub_102e7e60(const Vector &vecStart, const Vector &vecApex, const Vector &vecEnd);
+	Vector sub_102e7060(const Vector &startPos, const Vector &endPos, float flGravity, float *pminHeight, float maxHorzVelocity, Vector *pvecApex);
+	CJumpMoveOuter *GetOuter() { return (CJumpMoveOuter *)m_pOuter; }
+
+	float ComputePathDistance(const Vector &vecStart, const Vector &vecEnd)
+	{
+		return sub_10146150(vecEnd.sub_10146190(vecStart));
+	}
+
+	void TraceHull(const Vector &vecStart, const Vector &vecEnd, const Vector &hullMin, const Vector &hullMax, unsigned int mask, CGameTrace *pResult)
+	{
+		(g_109f3648->*g_109f3660)("CAI_MoveProbe_TraceHull", 0, "Unaccounted", false);
+		CTraceFilterNav filter;
+		filter.sub_102e30d0((int)GetOuter(), GetOuter()->m_CollisionGroup);
+		sub_1026e940(&vecStart, &vecEnd, &hullMin, &hullMax, mask, &filter, pResult, 1);
+		(g_109f3648->*g_109f365c)();
+	}
+};
+
+void CAI_MoveProbe::sub_102e6290(const float *pStart, const float *pEnd, unsigned int collisionMask, const CBaseEntity *pTarget, AIMoveTrace_t *pMoveTrace, int a6)
+{
+	CAI_MoveProbeJump *self = (CAI_MoveProbeJump *)this;
+	const Vector &vecStart = *(const Vector *)pStart;
+	const Vector &vecEnd = *(const Vector *)pEnd;
+
+	((Vector *)&pMoveTrace->m_fields.s0)->Init(0, 0, 0);
+
+	float flDist = self->ComputePathDistance(vecStart, vecEnd);
+
+	if (!self->sub_102e7e60(vecStart, vecEnd, vecEnd))
+		{ pMoveTrace->fStatus = -4; pMoveTrace->m_fields.f24 = flDist; return; }
+
+	{
+	Vector vecFrom;
+	sub_102e7ba0(&vecStart.x, collisionMask, &vecFrom.x);
+
+	Vector vecTo;
+	sub_102e7ba0(&vecEnd.x, collisionMask, &vecTo.x);
+	if (!sub_102e7270(&vecTo.x, collisionMask, 0, 0, a6, 0))
+		{ pMoveTrace->fStatus = -4; pMoveTrace->m_fields.f24 = flDist; return; }
+
+	if (vecFrom == vecTo)
+	{
+		pMoveTrace->fStatus = -4;
+		pMoveTrace->m_fields.f24 = flDist;
+		return;
+	}
+
+	if ((vecFrom - vecTo).Length2D() == 0.0)
+		{ pMoveTrace->fStatus = -4; pMoveTrace->m_fields.f24 = flDist; return; }
+
+	float maxHorzVel = self->GetOuter()->GetMaxJumpSpeed();
+
+	Vector gravity = Vector(0, 0, g_109ef2d0.GetFloat() * self->GetOuter()->m_flGravity);
+
+	if (gravity.z == 0.0f)
+		gravity.z = 1e-7f;
+
+	CBaseEntity *pObstruction = 0;
+	int fStatus = -4;
+	float flDistObstructed = flDist;
+
+	float minSuccessfulJumpHeight = 1024.0f;
+	float minJumpHeight = 0.0f;
+	float minJumpStep = 1024.0f;
+
+	Vector vecApex;
+	Vector rawJumpVel = self->sub_102e7060(vecFrom, vecTo, gravity.z, &minJumpHeight, maxHorzVel, &vecApex);
+	float baselineJumpHeight = minJumpHeight;
+
+	do
+	{
+		rawJumpVel = self->sub_102e7060(vecFrom, vecTo, gravity.z, &minJumpHeight, maxHorzVel, &vecApex);
+
+		if (!self->sub_102e7e60(vecFrom, vecApex, vecTo))
+		{
+			minJumpStep = minJumpStep / 2.0;
+			minJumpHeight = minJumpHeight - minJumpStep;
+		}
+		else
+		{
+			float jumpTime = (vecFrom - vecTo).Length2D() / rawJumpVel.Length2D();
+			float timeStep = 0.1 * jumpTime;
+
+			Vector vecTest = vecFrom;
+			bool bMadeIt = true;
+
+			for (float flTime = 0; flTime < jumpTime - 0.01; flTime += timeStep)
+			{
+				CGameTrace trace;
+
+				Vector nextPos = vecTest + (rawJumpVel - 0.5 * gravity * timeStep) * timeStep;
+
+				Vector vecEnd = nextPos;
+				self->TraceHull(vecTest, vecEnd, self->GetOuter()->WorldAlignMins(), self->GetOuter()->WorldAlignMaxs(), collisionMask, &trace);
+
+				if (trace.m_startsolid || trace.m_fraction < 0.99)
+				{
+					CJumpPlayer *pPlayer = sub_101cd9e0(1);
+					if (pPlayer && pPlayer->m_pA8 && pPlayer->m_pA8->m_b20f4)
+					{
+						CBaseEntity *pVehicleEnt = pPlayer->m_pA8->m_p20fc->vfunc1();
+						if (pVehicleEnt == trace.m_pEnt)
+						{
+							bMadeIt = true;
+							break;
+						}
+					}
+
+					pObstruction = trace.m_pEnt;
+					if (!pObstruction)
+						pObstruction = EntityInstance((void *)engine->vfunc38(0));
+					fStatus = sub_102e2d70(pObstruction);
+					flDistObstructed = self->ComputePathDistance(vecTest, vecTo);
+
+					if (trace.m_planeNormal[2] < 0.0)
+					{
+						minJumpStep = minJumpStep / 2.0;
+						minJumpHeight = minJumpHeight - minJumpStep;
+					}
+					else
+					{
+						minJumpStep = minJumpStep / 2.0;
+						minJumpHeight += minJumpStep;
+					}
+
+					bMadeIt = false;
+					break;
+				}
+
+				rawJumpVel = rawJumpVel - gravity * timeStep;
+				vecTest = nextPos;
+			}
+
+			if (bMadeIt)
+			{
+				minSuccessfulJumpHeight = minJumpHeight;
+				minJumpStep = minJumpStep / 2.0;
+				minJumpHeight -= minJumpStep;
+			}
+		}
+	}
+	while (minJumpHeight > baselineJumpHeight && minJumpHeight <= 1024.0 && minJumpStep >= 16.0);
+
+	if (minSuccessfulJumpHeight != 1024.0)
+	{
+		*(Vector *)&pMoveTrace->m_fields.s0 = self->sub_102e7060(vecFrom, vecTo, gravity.z, &minSuccessfulJumpHeight, maxHorzVel, &vecApex);
+	}
+	else
+	{
+		pMoveTrace->m_fields.nHit = (int)pObstruction;
+		*(Vector *)&pMoveTrace->m_fields.n0 = g_1070d1b0;
+		pMoveTrace->fStatus = fStatus;
+		pMoveTrace->m_fields.f24 = flDistObstructed;
+	}
+	return;
+	}
+
+illegal:
+	pMoveTrace->fStatus = -4;
+	pMoveTrace->m_fields.f24 = flDist;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e6be0 size=0x139
 #include "CAI_MoveProbe.h"
 #include "CCollisionProperty.h"

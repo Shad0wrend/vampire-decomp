@@ -2777,6 +2777,7 @@
 0x10004962 func   ?sub_101c4560@CUnknown101c4560@@QAEPAXXZ CUnknown101c4560::sub_101c4560
 0x10004967 func   ?vfunc103@CPhysMotor@@UAEXXZ CPhysMotor::vfunc103
 0x1000496c func   ?sub_1030be50@CBaseCineCam@@QAEPAMPAM@Z CBaseCineCam::sub_1030be50
+0x10004971 func   ?sub_102e6290@CAI_MoveProbe@@QAEXPBM0IPBVCBaseEntity@@PAUAIMoveTrace_t@@H@Z CAI_MoveProbe::sub_102e6290
 0x10004976 func   ?vfunc474@CHL2_Player@@UAEXM@Z CHL2_Player::vfunc474
 0x1000497b func   ?sub_100379e0@CPhysicsPushedEntities@@QAEXPAVCBaseEntity@@@Z CPhysicsPushedEntities::sub_100379e0
 0x10004980 func   ?vfunc5@CWeaponMelee_Tzimisce2Claw@@QAEPAV1@I@Z CWeaponMelee_Tzimisce2Claw::vfunc5
