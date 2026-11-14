@@ -472,6 +472,7 @@
 0x100019ab func   ?sub_101b99d0@S101b9920@@QAEPBVVector@@XZ S101b9920::sub_101b99d0
 0x100019b0 func   ?vfunc8@CServerGameClients@@UAEMPAUCServerGameClients_Edict@@PAXHHHDH@Z CServerGameClients::vfunc8
 0x100019b5 func   ?sub_1006c4a0@CUtlBuffer@@QAEXPBXH@Z CUtlBuffer::sub_1006c4a0
+0x100019ba func   ?sub_10174580@CBasePlayer@@QAEXXZ CBasePlayer::sub_10174580
 0x100019bf func   ?sub_100d2a60@@YAXXZ sub_100d2a60
 0x100019c4 func   ?vfunc259@CNPC_VHengeyokai@@QAEXPAUCNPC_VHengeyokaiEvent@@@Z CNPC_VHengeyokai::vfunc259
 0x100019c9 func   ?vfunc5@CPropDoorknobElectronic@@QAEPAV1@I@Z CPropDoorknobElectronic::vfunc5

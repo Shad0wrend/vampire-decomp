@@ -105189,6 +105189,164 @@ void CFlagSet10174550::sub_10174550(bool v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174580 size=0x536
+#include "CNPC_VTzimisce.h"
+#include "CBasePlayer.h"
+struct EV {
+	CBP_V10(a0) CBP_V10(a1) CBP_V10(a2) CBP_V1(a30) CBP_V1(a31)
+	virtual char vfunc32(CBasePlayer *p);
+	CBP_V1(a33)
+	virtual int vfunc34(CBasePlayer *p);
+	virtual int vfunc35(CBasePlayer *p);
+	CBP_V1(a36) CBP_V1(a37)
+	virtual EV *vfunc38(CBasePlayer *p);
+	CBP_V10(b0) CBP_V10(b1) CBP_V10(b2) CBP_V10(b3) CBP_V10(b4) CBP_V10(b5) CBP_V10(b6) CBP_V10(b7) CBP_V10(b8) CBP_V10(b9) CBP_V10(b10)
+	CBP_V1(b110) CBP_V1(b111) CBP_V1(b112) CBP_V1(b113) CBP_V1(b114) CBP_V1(b115) CBP_V1(b116) CBP_V1(b117) CBP_V1(b118)
+	virtual char vfunc158();
+	CBP_V100(c0) CBP_V1(c100) CBP_V1(c101) CBP_V1(c102) CBP_V1(c103) CBP_V1(c104) CBP_V1(c105) CBP_V1(c106) CBP_V1(c107)
+	virtual void vfunc267();
+	CBP_V10(d0) CBP_V1(d10) CBP_V1(d11) CBP_V1(d12) CBP_V1(d13) CBP_V1(d14) CBP_V1(d15) CBP_V1(d16)
+	virtual EV *vfunc285();
+	CBP_V100(e0) CBP_V10(e1) CBP_V1(e20) CBP_V1(e21) CBP_V1(e22) CBP_V1(e23) CBP_V1(e24) CBP_V1(e25) CBP_V1(e26) CBP_V1(e27)
+	virtual int vfunc404(CBasePlayer *p);
+	int m_n4;
+	char pad8[0x98 - 8];
+	EV *p98;
+	EV *p9c;
+	char pad_a0[0x19c - 0xa0];
+	unsigned int f19c;
+	char pad_1a0[0x2e0 - 0x1a0];
+	int edict;
+	char pad_2e4[0x1480 - 0x2e4];
+	char b1480;
+	char pad_1481[0x647c - 0x1481];
+	EHANDLE h647c;
+};
+struct EVHolder { EV *sub_101be1f0(CBasePlayer *p); };
+extern char g_1072c540[];
+EV *sub_104115b0(CBasePlayer *p, int a);
+#define HH(off) (*(EHANDLE *)((char *)this + (off)))
+
+void CBasePlayer::sub_10174580()
+{
+	if (m_iHealth <= 0) {
+		m_n1EA8 = 0;
+		m_n1E90 = 0;
+		m_n1EA0 = 0;
+		m_n1EA4 = 0;
+		m_n1ECC = 0;
+		return;
+	}
+	if (HH(0xfe8).Get()) {
+		int ed = ((EV *)HH(0xfe8).Get())->edict;
+		m_n1ED4 = engine->vfunc35(ed);
+	} else
+		m_n1ED4 = 0;
+	if (!HH(0x1040).Get())
+		m_n1E9C = 0;
+	else {
+		int ed = ((EV *)HH(0x1040).Get())->edict;
+		m_n1E9C = engine->vfunc35(ed);
+	}
+	m_n1EA8 = 0;
+	if (!((m_n153C != -1 && HH(0x1538).Get()) || HH(0xfe8).Get() || HH(0x1040).Get()
+		|| sub_1000306c() || sub_1017d630() || sub_101618a0())) {
+		m_b1E8C = 1;
+		m_n1E90 = 0;
+		EV *weapon = (EV *)sub_1032e7b0();
+		EV *ent = (EV *)HH(0x1040).Get();
+		int mode = 0;
+		char b = 0;
+		if ((char)(int)weapon == -1) { m_n1E94 = sub_10182780(); } else { m_n1E94 = sub_10182780(); }
+		m_n1E98 = sub_10182810();
+		if (!ent) {
+			ent = ((EVHolder *)g_1072c540)->sub_101be1f0(this);
+			if (ent) {
+				mode = 0x13;
+			} else {
+				ent = sub_104115b0(this, 1);
+				if (ent) {
+					if (ent->vfunc32(this)) {
+						EV *w2 = (*(EV *volatile *)&weapon);
+						if (w2)
+							w2->vfunc267();
+						mode = 9;
+					}
+				} else {
+					ent = (EV *)sub_10167470(1);
+					b = 1;
+					if (!ent) {
+						if (HH(0x1cb8).Get())
+							ent = (EV *)HH(0x1cb8).Get();
+						if (!ent) {
+							if (HH(0x1cbc).Get())
+								ent = (EV *)HH(0x1cbc).Get();
+							if (!ent) {
+								if (!weapon)
+									goto clear;
+								ent = weapon->vfunc285();
+								b = 0;
+								if (!ent)
+									goto clear;
+							}
+						}
+					}
+				}
+			}
+		}
+		{
+			ent = ent->vfunc38(this);
+			if (ent) {
+				int ed = ent->edict;
+				m_n1E90 = engine->vfunc35(ed);
+				m_n1EA0 = ent->vfunc34(this);
+				if (mode)
+					m_n1EA4 = mode;
+				else if (b)
+					m_n1EA4 = ent->vfunc35(this);
+				else
+					m_n1EA4 = 0;
+				if (m_n1EA4 == 0xe || m_n1EA4 == 0xf)
+					m_b1E8C = 0;
+				EV *z = ent->p9c;
+				if (!z || (z->f19c & 0x40) || !z->vfunc158() || !z->b1480)
+					return;
+				m_n1EA8 = 3;
+				EV *w = ent->p98;
+				if (!w)
+					return;
+				if (w->h647c.Get()) {
+					m_n1EA8 = 1;
+					return;
+				}
+				switch (w->vfunc404(this)) {
+				case 1:
+					m_n1EA8 = 2;
+					break;
+				case 3:
+					m_n1EA8 = 1;
+					break;
+				}
+				return;
+			}
+		}
+	clear:
+		m_n1E90 = 0;
+		m_n1EA0 = 0;
+		m_n1EA4 = 0;
+		m_n1EA8 = 0;
+		m_n1ECC = 0;
+		return;
+	}
+	m_b1E8C = 0;
+	m_n1E94 = 0;
+	m_n1E90 = 0;
+	m_n1EA0 = 0;
+	m_n1EA4 = 0;
+	m_n1ECC = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174c10 size=0x94
 #include "CBaseCombatCharacter.h"
 #include "CBaseCombatWeapon.h"
