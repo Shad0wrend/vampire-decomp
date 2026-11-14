@@ -96275,6 +96275,106 @@ char sub_1014a4a0(CEntView1014a4a0 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a4f0 size=0x463
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "CEntityVSlots.h"
+#include "UTIL_Trace.h"
+#include "CUnknown101cccf0.h"
+#include "CCollisionProperty.h"
+struct CUnknown1004f860 { void *sub_1004f860(); };
+
+extern int g_1057b7b4;
+extern int g_1057b7b0;
+extern float g_1071a41c;
+extern CUnknown10738964 *g_1071a32c;
+void sub_10139610(void *pAngles, Vector *fwd, Vector *right, Vector *up);
+void sub_1013c8c0(const Vector *a, const Vector *b, const Vector *c, Vector *out);
+
+namespace block_1014a4f0
+{
+struct CEntView1014a4a0
+{
+	char m_pad0000[0x4c];
+	unsigned char m_flags4c;
+	char m_pad004d[0xa0 - 0x4d];
+	int m_n0a0;
+};
+
+char sub_1014a4a0(CEntView1014a4a0 *p)
+{
+	if (p && (p->m_flags4c & 0x1e) && !((float)g_1057b7b4 * g_1071a41c < (float)g_1057b7b0))
+		return p->m_n0a0 == 0;
+	return 0;
+}
+}
+using namespace block_1014a4f0;
+
+inline void TraceLineCtorCalls(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((CUnknown1004f860 *)&ray)->sub_1004f860();
+	ray.sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+CBaseEntity *sub_1014a4f0(CBaseEntity *pIgnore, CBasePlayer *pPlayer)
+{
+	Vector forward;
+	sub_10139610((char *)pPlayer + 0x206c, &forward, 0, 0);
+	float flRange = (float)g_1057b7b4;
+	Vector eye = pPlayer->vfunc193();
+	Vector vecEnd = eye + forward * flRange;
+	{
+		CGameTrace tr;
+		TraceLineCtorCalls(eye, vecEnd, 0x200400b, pIgnore, 0, &tr);
+		if (sub_1014a4a0((CEntView1014a4a0 *)tr.m_pEnt))
+			return (CBaseEntity *)tr.m_pEnt;
+	}
+	Vector searchCenter = eye;
+	float nearestDot = 0.707f;
+	CBaseEntity *pNearest = 0;
+	CBaseEntity *pGround = (CBaseEntity *)((CEntityVSlots *)pPlayer)->slot209();
+	if (pGround && sub_1014a4a0((CEntView1014a4a0 *)pGround))
+	{
+		pNearest = pGround;
+		nearestDot = 0.707f;
+	}
+	CUnknown101cccf0 sphere;
+	CBaseEntity *pObject;
+	for (sphere.sub_101cccf0((int)&searchCenter, *(int *)&flRange, 0, 0); (pObject = sphere.sub_101ccd40()) != 0; ++sphere.m_nIndex)
+	{
+		if (pObject->m_pEdict2e0 && sub_1014a4a0((CEntView1014a4a0 *)pObject))
+		{
+			Vector mins, maxs, point;
+			((CCollisionProperty *)((char *)pObject + 0x270))->vfunc15(&mins, &maxs);
+			sub_1013c8c0(&mins, &maxs, &searchCenter, &point);
+			Vector dir = point - searchCenter;
+			VectorNormalize(dir);
+			float dot = DotProduct(dir, forward);
+			if (dot > nearestDot)
+			{
+				if (!g_1071a32c->vfunc1() && g_1071a32c->m_n2c >= 2)
+				{
+					CGameTrace trCheck;
+					vecEnd = *((CEntityVSlots *)pObject)->slot217();
+					UTIL_TraceLine(eye, vecEnd, 0x200400b, pIgnore, 0, &trCheck);
+					if ((CBaseEntity *)trCheck.m_pEnt != pObject)
+						continue;
+				}
+				pNearest = pObject;
+				nearestDot = dot;
+			}
+		}
+	}
+	return pNearest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014c0f0 size=0xf
 namespace lifted {
 int sub_10002392();
