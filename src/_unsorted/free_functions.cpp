@@ -250076,6 +250076,169 @@ char CBaseCombatCharacter::sub_103268e0(const float *pos, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10326de0 size=0x554
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CVStatList_t.h"
+#include "engineserver.h"
+#include "Vector.h"
+#include <string.h>
+struct V {
+	void sub_1000d283();
+	void sub_1000923c(int, int);
+	void sub_1000c94b(int, int);
+	void sub_1000c3b5();
+	void sub_100099fd();
+	void sub_10002ddd();
+	void sub_10015000();
+	void sub_10004f93(int, void *);
+	void sub_100089c2(int, void *);
+	void sub_10012c6a();
+	int sub_100092be();
+	int sub_1000fb46(const char *);
+	int sub_100038be(int, int);
+	int sub_10013ccd();
+	void sub_10013ba6(int);
+	void sub_102008e0(int, int);
+};
+extern V g_106c7c34;
+extern int g_10937000;
+extern char g_10937b08;
+extern V g_109f0b40;
+extern unsigned char g_109f0b2a;
+extern void *vt_1049e0dc[];
+extern "C" int atexit(void (*)(void));
+void sub_10012a8a();
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+struct HInv { int h; HInv() { h = -1; } };
+struct UMem { int *m; int a; int g; UMem() : m(0), a(0), g(0) {} };
+struct UVec { UMem mem; int sz; int *el; UVec() : sz(0) { el = mem.m; } };
+#define D(o) (*(int *)((char *)p + (o)))
+#define B(o) (*(char *)((char *)p + (o)))
+
+struct CBCCView : V { void *sub_10326de0(); };
+void *CBCCView::sub_10326de0()
+{
+	void *p = this;
+	V *v = (V *)p;
+	v->sub_1000d283();
+	int *vec = (int *)((char *)p + 0xa88);
+	((V *)vec)->sub_1000923c(0, 0);
+	vec[3] = 0;
+	vec[4] = vec[0];
+	for (int i = 0; i < 20; i++)
+		((V *)((char *)p + 0xca0 + i * 0x14))->sub_1000c94b(0, 0);
+	((HInv *)((char *)p + 0xe64))->HInv::HInv();
+	((HInv *)((char *)p + 0xe70))->HInv::HInv();
+	((HInv *)((char *)p + 0xea4))->HInv::HInv();
+	((HInv *)((char *)p + 0xea8))->HInv::HInv();
+	((UVec *)((char *)p + 0xfb4))->UVec::UVec();
+	((HInv *)((char *)p + 0xfe8))->HInv::HInv();
+	for (int j = 0; j < 18; j++) ((HInv *)((char *)p + 0xff8 + j * 4))->HInv::HInv();
+	((HInv *)((char *)p + 0x1040))->HInv::HInv();
+	((UVec *)((char *)p + 0x10bc))->UVec::UVec();
+	((HInv *)((char *)p + 0x10dc))->HInv::HInv();
+	((HInv *)((char *)p + 0x10e0))->HInv::HInv();
+	int *s = (int *)((char *)p + 0x13a8);
+	V *st = (V *)s;
+	s[0] = 1; s[1] = 0; s[4] = 0; s[5] = 0; s[6] = 0;
+	((V *)((char *)p + 0x13dc))->sub_1000c3b5();
+	((V *)((char *)p + 0x1460))->sub_100099fd();
+	((HInv *)((char *)p + 0x149c))->HInv::HInv();
+	((HInv *)((char *)p + 0x14ac))->HInv::HInv();
+	((UVec *)((char *)p + 0x14c0))->UVec::UVec();
+	((V *)((char *)p + 0x1504))->sub_10002ddd();
+	((V *)((char *)p + 0x151c))->sub_10002ddd();
+	((HInv *)((char *)p + 0x1538))->HInv::HInv();
+	((HInv *)((char *)p + 0x1558))->HInv::HInv();
+	((HInv *)((char *)p + 0x155c))->HInv::HInv();
+	for (int k = 0; k < 224; k++) ((HInv *)((char *)p + 0x1624 + k * 4))->HInv::HInv();
+	((HInv *)((char *)p + 0x19a4))->HInv::HInv();
+	*(void ***)p = vt_1049e0dc;
+	ScopeTrace scope("CBaseCombatCharacter::CBaseCombatCharacter", STRINGR(pcd_stage(*(const char **)((char *)p + 0x26c))));
+	*(Vector *)((char *)p + 0x1578) = Vector(12.0f, 0.0f, 42.0f);
+	D(0x19a4) = -1; D(0x10dc) = -1; D(0x10e0) = -1;
+	v->sub_10015000();
+	int ent = D(0x2e0);
+	void *pOwn = (char *)p + 0x13dc;
+	D(0x1598) = 0; D(0x159c) = 0; D(0x15a0) = 0;
+	st->sub_10004f93(engine->vfunc35(ent), pOwn);
+	D(0x1208) = (int)((char *)p + 0x10f0);
+	D(0x120c) = (int)((char *)p + 0x117c);
+	D(0x1278) = (int)((char *)p + 0x1210);
+	D(0x127c) = (int)((char *)p + 0x1244);
+	D(0x1308) = (int)((char *)p + 0x1280);
+	D(0x130c) = (int)((char *)p + 0x12c4);
+	D(0x1398) = (int)((char *)p + 0x1310);
+	D(0x139c) = (int)((char *)p + 0x1354);
+	st->sub_100089c2(0, (char *)p + 0x1208);
+	st->sub_100089c2(1, (char *)p + 0x1278);
+	st->sub_100089c2(2, (char *)p + 0x1308);
+	st->sub_100089c2(3, (char *)p + 0x1398);
+	{
+		V *lst;
+		for (int m = 0; m < s[5]; m++) {
+			if (((int *)((V **)s[6])[m])[4] == 0) {
+				lst = ((V **)s[6])[m];
+				goto found;
+			}
+		}
+		if (!(g_109f0b2a & 1)) {
+			g_109f0b2a |= 1;
+			g_109f0b40.sub_10013ba6(-1);
+			atexit(sub_10012a8a);
+		}
+		lst = &g_109f0b40;
+found:
+		lst->sub_102008e0(0xb, 1);
+	}
+	D(0x13a0) = -1; D(0x149c) = -1;
+	D(0x1468) = 0xffffd8f1; D(0x148c) = 0; D(0x1484) = 0;
+	D(0x1488) = 0x3f800000; D(0x146c) = 0;
+	B(0x1474) = 0; B(0x1475) = 0; D(0x1478) = 0; B(0x1476) = 0;
+	B(0x14a9) = 0; B(0x14a8) = 0; B(0x14aa) = 0;
+	((HInv *)((char *)p + 0x1538))->HInv::HInv();
+	((HInv *)((char *)p + 0x153c))->HInv::HInv();
+	sub_10012c6a();
+	D(0x13cc) = v->sub_100092be() & 0xff;
+	memset((char *)p + 0x14e4, 0, 32);
+	D(0x13d0) = 0xbf800000; D(0x13d4) = 0xbf800000;
+	D(0xeb0) = 0; D(0xeb4) = 0; D(0xeb8) = 0; D(0xebc) = 0;
+	D(0xfb0) = 0; D(0xfcc) = 0;
+	D(0xe80) = 0; D(0xe84) = 0; D(0xe8c) = 0; D(0xe90) = 0; D(0xe94) = 0;
+	D(0x9c) = (int)p;
+	B(0x1588) = 1;
+	D(0xe30) = -1; D(0xe34) = 0; D(0xe38) = 0;
+	D(0x1044) = -1; D(0x1048) = 0; D(0x1050) = 0; D(0x104c) = 0;
+	D(0x1074) = 0x3f800000; D(0x1078) = 0; D(0x107c) = 0;
+	D(0x1470) = 0; D(0xeac) = 0;
+	B(0x1088) = 1; B(0x1480) = 0; B(0x1481) = 1; B(0x1482) = 0;
+	if (!(g_10937b08 & 1)) {
+		g_10937b08 |= 1;
+		g_10937000 = g_106c7c34.sub_1000fb46("Float_Sound_Info");
+	}
+	V *so = (V *)g_106c7c34.sub_100038be(g_10937000, 2);
+	D(0x10e8) = so->sub_10013ccd();
+	D(0x10ec) = 0;
+	B(0xfe0) = 0; D(0xfd0) = 2; D(0xfd4) = -1; B(0xfd8) = 0; D(0xfdc) = 0;
+	D(0x14a0) = 0; D(0x14a4) = 0;
+	D(0x156c) = D(0x1568) = 0x17;
+	D(0xa9c) = 0xbf800000; D(0x158c) = 0; D(0xe68) = 0;
+	D(0xe3c) = 0x3f59999a;
+	*(unsigned short *)((char *)p + 0x10b0) = 0xffff;
+	D(0x14e0) = 0; D(0xfe4) = 0; B(0xfc8) = 0; D(0x10d8) = -1;
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103274d0 size=0x221
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

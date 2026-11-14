@@ -2656,6 +2656,7 @@
 0x100046ba func   ?vfunc2@CTESparks@@UAEPAV1@I@Z CTESparks::vfunc2
 0x100046bf func   ?sub_10036270@CPhysicsPushedEntities@@QAE_NAAUMovedEntity_t@@ABVVector@@_N@Z CPhysicsPushedEntities::sub_10036270
 0x100046c4 func   ?sub_1021a560@CUnk1021a560@@QAEXH@Z CUnk1021a560::sub_1021a560
+0x100046c9 func   ?sub_10326de0@CBCCView@@QAEPAXXZ CBCCView::sub_10326de0
 0x100046dd func   ?sub_10078860@@YIXPAD@Z sub_10078860
 0x100046e2 func   ?sub_103c4840@@YAHXZ sub_103c4840
 0x100046e7 func   ?vfunc124@CTriggerImpact@@QAEHXZ CTriggerImpact::vfunc124
