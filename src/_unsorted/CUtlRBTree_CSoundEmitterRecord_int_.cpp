@@ -1,6 +1,82 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101b66e0 size=0x197
+#include "CHumanoidRec.h"
+#include "utlvector.h"
+// TARGET: ?Insert@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QAEHABUCSoundEmitterRecord@@@Z
+#include "utlrbtree.h"
+#include "CSoundEmitterSystemBase.h"
+
+template <>
+inline CSoundEmitterRecord &CUtlRBTree<CSoundEmitterRecord, int>::Element(int i)
+{
+	return m_Elements.m_pMemory[i].m_Data;
+}
+
+template <>
+inline int CUtlRBTree<CSoundEmitterRecord, int>::NewNode()
+{
+	int newElem;
+
+	// nothing in the free list; add
+	if (m_FirstFree == InvalidIndex()) {
+		if (m_Elements.NumAllocated() == m_TotalElements)
+			m_Elements.Grow();
+		newElem = m_TotalElements++;
+	} else {
+		newElem = m_FirstFree;
+		m_FirstFree = RightChild(m_FirstFree);
+	}
+
+	Construct(&Element(newElem));
+
+	return newElem;
+}
+
+template <>
+inline void CUtlRBTree<CSoundEmitterRecord, int>::FindInsertionPosition(CSoundEmitterRecord const &insert, int &parent, bool &leftchild)
+{
+	// find where the node belongs
+	int current = m_Root;
+	parent = InvalidIndex();
+	leftchild = false;
+	while (current != InvalidIndex()) {
+		parent = current;
+		if (m_LessFunc(insert, Element(current))) {
+			leftchild = true;
+			current = LeftChild(current);
+		} else {
+			leftchild = false;
+			current = RightChild(current);
+		}
+	}
+}
+
+template <>
+inline int CUtlRBTree<CSoundEmitterRecord, int>::InsertAt(int parent, bool leftchild)
+{
+	int i = NewNode();
+	LinkToParent(i, parent, leftchild);
+	++m_NumElements;
+	return i;
+}
+
+template <>
+inline int CUtlRBTree<CSoundEmitterRecord, int>::Insert(CSoundEmitterRecord const &insert)
+{
+	// copy constructs the element in
+	int parent;
+	bool leftchild;
+	FindInsertionPosition(insert, parent, leftchild);
+	int newNode = InsertAt(parent, leftchild);
+	CopyConstruct(&Element(newNode), insert);
+	return newNode;
+}
+
+static int (CUtlRBTree<CSoundEmitterRecord, int>::*s_Insert)(const CSoundEmitterRecord &) = &CUtlRBTree<CSoundEmitterRecord, int>::Insert;
+// END FUNCTION
+
 // FUNCTION: 0x101b7450 size=0x3a5
 #include "CSoundEmitterSystemBase.h"
 // TARGET: ?LinkToParent@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QAEXHH_N@Z
