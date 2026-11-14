@@ -286846,6 +286846,54 @@ void CWeaponRanged_FlameThrower::sub_103e3930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e3c40 size=0xf1
+#include "CWeaponRanged_FlameThrower.h"
+
+float sub_103e1710();
+void sub_10144290(const float *pPos, const Vector *pColor, const Vector *pSize, int a, int b, int c, int alpha, int d);
+void sub_10143b70(const float *pPos, const Vector *pMin, const Vector *pMax, int a, int b, int c, int d, float flDuration);
+
+struct FlameParticle_t
+{
+	int type;
+	float time;
+	float pad[13];
+};
+
+void CWeaponRanged_FlameThrower::sub_103e3c40()
+{
+	FlameParticle_t *list = (FlameParticle_t *)((char *)this + 0x91c);
+	for (int i = 0; i < 50; i++)
+	{
+		float flSize = sub_103e3900();
+		float *t = &list[i].time;
+		if (list[i].type == 1)
+		{
+			float flFade = *t / sub_103e1710();
+			Vector vecSize;
+			vecSize.x = flSize;
+			vecSize.y = flSize;
+			vecSize.z = flSize;
+			Vector vecColor;
+			vecColor.x = 1.0f;
+			vecColor.y = 0.0f;
+			vecColor.z = 0.0f;
+			sub_10144290(t + 1, &vecColor, &vecSize, 255, 0, 0, (int)(flFade * 255.0f), 0);
+		}
+		else if (list[i].type != 0)
+		{
+			Vector vecMax;
+			Vector vecMin;
+			float flAge = sub_103e1710() - *t;
+			float flAge2 = flAge;
+			vecMax.Init(flSize, flSize, flSize);
+			vecMin.Init(-flSize, -flSize, -flSize);
+			sub_10143b70(t + 1, &vecMin, &vecMax, 100, 255, 100, 0, flAge2);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e3d80 size=0x8f
 #include "CBaseAnimating.h"
 #include "CWeaponRanged_FlameThrower.h"
