@@ -81925,6 +81925,230 @@ void sub_10124d50(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10124d80 size=0x33e
+#include "CBaseEntity.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameMovement.h"
+#include "CGameMovementViews.h"
+#include "CGlobalEntityList.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "Ray_t.h"
+#include "engineserver.h"
+#include <math.h>
+
+extern CGlobalEntityList *g_10566458;
+extern CUnknown1070b254 *g_1070b254;
+extern CTouchNotifier *g_1071a278;
+extern float g_1070b798[][2];
+void sub_1011e8f0(Ray_t *pRay, unsigned int mask, void *pPassEnt, int group, CGameTrace *pTrace);
+void sub_10124300();
+void sub_10124d50(int nIndex, int nServer);
+int sub_101245c0(int nIndex, int nServer, Vector *pOut);
+
+extern CFoo1005f190 g_1070b750;
+
+struct CConVarInner
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad[0x28];
+	int m_nValue;
+};
+struct CConVarEntry
+{
+	char m_pad[4];
+	CConVarInner *m_pVar;
+};
+struct CCvarSys
+{
+	virtual void v0();
+	virtual void v1();
+	virtual CConVarEntry *vfunc2(const char *pszName);
+};
+extern CCvarSys *g_1070b234;
+
+class EntityHandle_t
+{
+public:
+	EntityHandle_t() { m_Index = 0xffffffff; }
+	EntityHandle_t(const EntityHandle_t &other) { m_Index = other.m_Index; }
+	EntityHandle_t(unsigned long value) { m_Index = value; }
+	bool operator==(const EntityHandle_t &other) const { return m_Index == other.m_Index; }
+	unsigned long m_Index;
+};
+#define INVALID_ENTITY_HANDLE 0xffffffff
+
+struct IMoveHelperView
+{
+	virtual const char *GetName(EntityHandle_t handle);
+	virtual bool IsWorldEntity(const EntityHandle_t &handle);
+};
+IMoveHelperView *sub_10125190();
+
+struct VecPOD { float x, y, z; };
+
+#define PLAYER ((CMovePlayerView *)m_pPlayer)
+
+namespace block_10124d80 {
+#pragma auto_inline(off)
+struct Ray_tView {
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_StartOffset;
+	Vector m_Extents;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_f34;
+};
+struct RayHull : Ray_t { void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b); };
+void RayHull::sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b)
+{
+	const Vector &end = *(const Vector *)pEnd;
+	Ray_tView *r = (Ray_tView *)this;
+	const Vector &mins = *(const Vector *)pMins;
+	const Vector &maxs = *(const Vector *)pMaxs;
+	VectorSubtract(end, start, r->m_Delta);
+	r->m_IsSwept = (r->m_Delta.LengthSqr() != 0.0f);
+	VectorSubtract(maxs, mins, r->m_Extents);
+	r->m_Extents *= 0.5f;
+	r->m_IsRay = (r->m_Extents.LengthSqr() < 1e-6);
+	VectorAdd(mins, maxs, r->m_StartOffset);
+	r->m_StartOffset *= 0.5f;
+	VectorAdd(start, r->m_StartOffset, r->m_Start);
+	r->m_StartOffset *= -1.0f;
+	r->m_b32 = b;
+	r->m_b33 = 0;
+	r->m_f34 = 0.0f;
+	if (a && !r->m_IsRay) {
+		r->m_f34 = (float)sqrt((r->m_Extents.x * r->m_Extents.x) + (r->m_Extents.y * r->m_Extents.y));
+		if (1e-6 < r->m_f34)
+			r->m_b33 = 1;
+	}
+}
+#pragma auto_inline(on)
+struct CMovePlayerEnt
+{
+	int edict() { return ((CBaseEntity *)this)->m_pEdict2e0; }
+	int entindex() { return engine->vfunc35(edict()); }
+};
+
+struct CGameMovementUnit : CGameMovement
+{
+	CMovePlayerEnt *player() { return (CMovePlayerEnt *)m_pMove; }
+	bool IsServer() { return true; }
+	float *sub_1011e350();
+	float *sub_1011e310();
+	EntityHandle_t TestPlayerPosition(const Vector &pos, int collisionGroup, CGameTrace &pm)
+	{
+		Ray_t ray;
+		((RayHull *)&ray)->sub_1006dec0(pos, &pos.x, sub_1011e310(), sub_1011e350(), (char)((((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1), 0);
+		sub_1011e8f0(&ray, 0x201400b, g_10566458->sub_100290c0(&PLAYER->m_hRef), collisionGroup, &pm);
+		if ((pm.m_contents & 0x201400b) && pm.m_pEnt)
+			return *(EntityHandle_t *)pm.m_pEnt->vfunc1();
+		else
+			return INVALID_ENTITY_HANDLE;
+	}
+	EntityHandle_t TestPlayerPosition2(const Vector &pos, int collisionGroup, CGameTrace &pm)
+	{
+		Ray_t ray;
+		((RayHull *)&ray)->sub_1006dec0(pos, &pos.x, sub_1011e310(), sub_1011e350(), (char)((((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1), 0);
+		CTraceFilterSimple filter(g_10566458->sub_100290c0(&PLAYER->m_hRef), collisionGroup);
+		g_1070b254->vfunc4(&ray, 0x201400b, (CTraceFilterNoCharacterCollide *)&filter, &pm);
+		if ((pm.m_contents & 0x201400b) && pm.m_pEnt)
+			return *(EntityHandle_t *)pm.m_pEnt->vfunc1();
+		else
+			return INVALID_ENTITY_HANDLE;
+	}
+};
+
+float *CGameMovementUnit::sub_1011e350()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMax.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMax.x : &m_vecHullMax.x;
+}
+
+float *CGameMovementUnit::sub_1011e310()
+{
+	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
+	if ((unsigned char)(pMove->m_fFlags >> 5) & 1)
+		return &m_vecObsHullMin.x;
+	return pMove->m_bDucked ? &m_vecDuckHullMin.x : &m_vecHullMin.x;
+}
+}
+using namespace block_10124d80;
+
+inline void SetOrigin(CMovePlayerView *mv, VecPOD v) { *(VecPOD *)&mv->m_vecOrigin = v; }
+
+// TARGET: CGameMovement::sub_10124d80
+int CGameMovement::sub_10124d80()
+{
+	Vector base;
+	Vector test;
+	EntityHandle_t hitent;
+	float fTime;
+	int i;
+	CGameTrace traceresult;
+	CGameMovementUnit *pThis = (CGameMovementUnit *)this;
+
+	sub_10124300();
+
+	hitent = pThis->TestPlayerPosition(PLAYER->m_vecOrigin, 6, traceresult);
+	if (hitent == INVALID_ENTITY_HANDLE) {
+		sub_10124d50(pThis->player()->entindex(), 1);
+		sub_10124ba0();
+		return 0;
+	}
+	if (g_1070b750.sub_1005f190()) {
+		sub_10124ba0();
+		return 0;
+	}
+	CConVarEntry *pDev = g_1070b234->vfunc2("developer");
+	if (pDev && !pDev->m_pVar->vfunc1() && pDev->m_pVar->m_nValue)
+		g_1071a278->vfunc4(1, "%s stuck on object %i/%s", "server", hitent, sub_10125190()->GetName(hitent));
+
+	VectorCopy(PLAYER->m_vecOrigin, base);
+
+	if (!pThis->IsServer())
+	{
+		if (sub_10125190()->IsWorldEntity(hitent))
+		{
+			sub_10124d50(pThis->player()->entindex(), 0);
+		}
+	}
+
+	int idx = pThis->IsServer() ? 0 : 1;
+
+	fTime = engine->vfunc87();
+	if (!(g_1070b798[pThis->player()->entindex()][idx] >= fTime - 0.05)) {
+		g_1070b798[pThis->player()->entindex()][idx] = fTime;
+
+		g_1071a278->vfunc2(&traceresult, &PLAYER->m_vecVelocity);
+
+		{
+			Vector offset;
+			i = sub_101245c0(pThis->player()->entindex(), 1, &offset);
+
+			VectorAdd(base, offset, test);
+		}
+
+		if (pThis->TestPlayerPosition2(test, 6, traceresult) == INVALID_ENTITY_HANDLE) {
+			sub_10124d50(pThis->player()->entindex(), 1);
+			VectorCopy(test, PLAYER->m_vecOrigin);
+			return 0;
+		}
+		if (i >= 0x35)
+			sub_10124ba0();
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10125190 size=0x6
 namespace lifted {
 extern int g_1071a278;
