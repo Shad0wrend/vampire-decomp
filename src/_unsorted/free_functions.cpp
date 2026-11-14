@@ -274022,6 +274022,91 @@ CNPC_VSabbatLeaderHint *CNPC_VSabbatLeader::sub_103a9540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a9760 size=0x2b6
+#include "CBaseEntity.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VSabbatLeader.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+#include "VectorHelpers.h"
+#include <math.h>
+
+extern CNPC_VSabbatLeaderHint *g_10925450;
+
+void __cdecl sub_10139970(const Vector *pDir, Vector *pAngles);
+
+extern float g_104c3cfc;
+extern float g_104c3d00;
+CNPC_VSabbatLeaderHint *CNPC_VSabbatLeader::sub_103a9760()
+{
+	ScopeTrace st("CNPC_VSabbatLeader::SelectDiveInPoint", g_106b8540);
+
+	CBaseEntity *pPlayer = g_10566458->sub_100290c0(&m_hPlayer);
+	if (!pPlayer)
+		return 0;
+
+	Vector vecDir = *((CEntityVSlots *)pPlayer)->slot217() - *((CEntityVSlots *)this)->slot217();
+	vecDir.z = 0.0f;
+	float flDist = VectorNormalize(vecDir);
+	if (flDist < 45.0f)
+		return 0;
+
+	CNPC_VSabbatLeaderHint *pBest = 0;
+	float flBest;
+	if ((int)pPlayer == -1) flBest = 3.4028235e38f; else flBest = 3.4028235e38f;
+	for (CNPC_VSabbatLeaderHint *pHint = g_10925450; pHint; pHint = pHint->m_pNext)
+	{
+		if (pHint->m_hintType == 0x3e85)
+		{
+			Vector vecToHint = *((CEntityVSlots *)pPlayer)->slot217() - *((CEntityVSlots *)pHint)->slot217();
+			vecToHint.z = 0.0f;
+			float flHintDist = vecToHint.Length2D();
+
+			if (flHintDist >= g_104c3cfc)
+			{
+				Vector vecHintDir = *((CEntityVSlots *)pHint)->slot217() - *((CEntityVSlots *)this)->slot217();
+				float flHintDirLen = VectorNormalize(vecHintDir);
+
+				if (flHintDirLen > 0.0001f)
+				{
+					if (DotProduct(vecHintDir, vecDir) < 0.0f)
+					{
+						Vector vecAngles;
+						sub_10139970(&vecToHint, &vecAngles);
+
+						float flPlayerYaw = ((CEntityVSlots *)pPlayer)->slot219()->y;
+						float flYawDiff = fabs(sub_1013d580(flPlayerYaw, vecAngles.y));
+						if (flYawDiff + flHintDist < flBest)
+						{
+							flBest = flYawDiff + flHintDist;
+							pBest = pHint;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a9ad0 size=0x1b1
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
