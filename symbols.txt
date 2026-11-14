@@ -3158,6 +3158,7 @@
 0x10005155 func   ?vfunc141@CBasePlayer@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z CBasePlayer::vfunc141
 0x1000515a func   ?sub_100933b0@CBaseAnimating@@QAEDHPAM@Z CBaseAnimating::sub_100933b0
 0x1000515f func   ?vfunc5@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc5
+0x10005164 func   ?sub_1009f4e0@CBaseEntity@@QAEXXZ CBaseEntity::sub_1009f4e0
 0x10005169 func   ?sub_10376d00@@YAHPAVCEntityVSlots@@@Z sub_10376d00
 0x1000516e func   ?vfunc1@CTETParticle@@UAEHXZ CTETParticle::vfunc1
 0x10005173 func   ?sub_10043c40@CSaveBlockFields10043c40@@QAEXH@Z CSaveBlockFields10043c40::sub_10043c40

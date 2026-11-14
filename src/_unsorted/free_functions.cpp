@@ -40225,6 +40225,108 @@ void CBaseEntity::sub_1009f3c0(const char *msg, int duration)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f4e0 size=0x2c0
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include <math.h>
+#include "ScopeTrace.h"
+#include "CBaseEntity.h"
+#include "CCollisionProperty.h"
+#include "CEntityVSlots.h"
+#include "Vector.h"
+
+void sub_10142e20(CBaseEntity *pEntity, int a, int b, int c, int d, int e);
+void sub_10142aa0(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float duration);
+#include "CSingleUserRecipientFilter.h"
+struct CEdictUnknown10144a30 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CBaseEntity *vfunc4(); };
+struct CEdict10144a30 { char m_pad[0x40]; CEdictUnknown10144a30 *m_pUnk40; };
+#define V10_(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+struct CEntView10144a30
+{
+	V10_(a0) V10_(a1) V10_(a2) V10_(a3) V10_(a4) V10_(a5) V10_(a6) V10_(a7) V10_(a8) V10_(a9)
+	V10_(b0) V10_(b1) V10_(b2) V10_(b3) V10_(b4) V10_(b5) V10_(b6) V10_(b7) V10_(b8) V10_(b9)
+	V10_(c0) V10_(c1)
+	virtual Vector *vfunc220();
+};
+namespace block_1009f4e0 {
+#pragma auto_inline(off)
+void sub_10144a30(const Vector *pvA, const Vector *pvB, float f3, float f4, int i5, int i6, int i7, int i8, float f9)
+{
+	CEdict10144a30 *pEdict = (CEdict10144a30 *)engine->vfunc38(1);
+	CBaseEntity *pEnt;
+	{
+		ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
+		if (!pEdict)
+			pEdict = (CEdict10144a30 *)engine->vfunc38(0);
+		if (pEdict && pEdict->m_pUnk40)
+			pEnt = pEdict->m_pUnk40->vfunc4();
+		else
+			pEnt = 0;
+	}
+	if (!pEnt)
+		return;
+	if ((*((CEntView10144a30 *)pEnt)->vfunc220() - *pvA).LengthSqr() > 9e7f)
+		return;
+	CSingleUserRecipientFilter filter(pEnt);
+	engine->vfunc65(&filter, 0x3a);
+	engine->vfunc75((int)pvA);
+	engine->vfunc75(*(int *)pvB);
+	engine->vfunc72(f3);
+	engine->vfunc72(f4);
+	engine->vfunc69(i5);
+	engine->vfunc69(i6);
+	engine->vfunc69(i7);
+	engine->vfunc69(i8);
+	engine->vfunc72(f9);
+	engine->vfunc66();
+}
+#pragma auto_inline(on)
+}
+using namespace block_1009f4e0;
+
+void CBaseEntity::sub_1009f4e0()
+{
+	ScopeTrace trace("CBaseEntity::DrawBBoxOverlay",
+	                 this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	if (m_pEdict2e0)
+	{
+		sub_10142e20(this, 0xff, 100, 0, 0, 0);
+
+		if (m_bDebug2b5 & 1)
+		{
+			Vector vecTriggerMins, vecTriggerMaxs;
+			((CCollisionProperty *)((char *)this + 0x270))->vfunc3(&vecTriggerMins, &vecTriggerMaxs);
+			Vector center = 0.5f * (vecTriggerMins + vecTriggerMaxs);
+			Vector extents = vecTriggerMaxs - center;
+			sub_10142aa0(center, -extents, extents, 0, 0xff, 0xff, 0, 0);
+		}
+
+		if (((CEntityVSlots *)this)->slot211() & 0x40)
+		{
+			CCollisionProperty *pCollide = (CCollisionProperty *)((char *)this + 0x270);
+			Vector center = 0.5f * (*(Vector *)pCollide->vfunc2() + *(Vector *)pCollide->vfunc1());
+			const Vector &maxs = *(Vector *)pCollide->vfunc2();
+			Vector extents;
+			extents.x = maxs.x - center.x;
+			Vector vecDir(1.0f, 0.0f, 0.0f);
+			extents.y = maxs.y - center.y;
+			const float *pMins = pCollide->vfunc1();
+			Vector vecOrigin(center.x, center.y, pMins[2]);
+			Vector vecPos = vecOrigin + *((CEntityVSlots *)this)->slot217();
+			sub_10144a30(&vecPos, &vecDir, (float)sqrt(extents.x * extents.x + extents.y * extents.y), 1.0f, 0xff, 0xff, 0, 0x14, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f850 size=0x199
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
