@@ -150354,6 +150354,89 @@ bool CUnknown101f10e0::sub_101f13c0(const char *pszFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f14a0 size=0x212
+#include "vampire_all.h"
+#include "CReactionData.h"
+#include "CUnknown101f10e0.h"
+#include "IFileSystemFind.h"
+#include "CStatDefaultList.h"
+#include <string.h>
+#include "string_t.h"
+struct ReactView { char pad[0xc]; string_t m_name; string_t m_10; char pad2[8]; string_t m_mods[6]; int m_lens[6]; };
+
+struct CKV;
+struct CNamedStrings1074e968 { void sub_10202fd0(CKV *pKV); };
+extern IFileSystemFind *g_1070b238;
+extern CStatDefaultList g_106c7c34;
+extern CNamedStrings1074e968 g_1074e968;
+extern char g_106b8540[];
+extern void (*g_109f3628)(const char *, ...);
+int sub_10431c2f(char *, const char *, ...);
+#define sprintf sub_10431c2f
+#define Msg g_109f3628
+
+struct CKVBase { virtual void a0(); virtual void Release(); };
+struct CKV : virtual CKVBase {
+	virtual void k0(); virtual void k1();
+	virtual CKV *FindKey(const char *pszName);
+	virtual void k3(); virtual void k4(); virtual void k5(); virtual void k6(); virtual void k7(); virtual void k8();
+	virtual void k9(); virtual void k10(); virtual void k11(); virtual void k12();
+	virtual const char *GetString(const char *pszKey, const char *pszDefault);
+};
+CKV *sub_101f2e20(const char *pszFile, IFileSystemFind *pFS);
+string_t sub_102038e0(CKV *pKV, const char *pszName);
+string_t sub_10203920(CKV *pKV);
+string_t sub_10203ed0(const char *psz);
+
+void CUnknown101f10e0::sub_101f14a0()
+{
+	((CReactionData *)this)->sub_101f0fd0();
+	char szName[128];
+	sprintf(szName, "%s%s.txt", "vdata\\system\\", "Reaction");
+	CKV *pKV = sub_101f2e20(szName, g_1070b238);
+	if (pKV) {
+		CKV *pGeneral = pKV->FindKey("General");
+		if (pGeneral) {
+			ReactView *pV = (ReactView *)this;
+			pV->m_name = sub_102038e0(pGeneral, "InternalName");
+			pV->m_10 = sub_10203920(pGeneral);
+			CKV *pMod = pGeneral->FindKey("ModifierNames");
+			if (pMod) {
+				for (int i = 0; i < 6; i++) {
+					sprintf(szName, "%0d", i);
+					const char *psz = pMod->GetString(szName, g_106b8540);
+					pV->m_mods[i] = sub_10203ed0(psz);
+					pV->m_lens[i] = strlen(psz);
+				}
+			} else
+				Msg("Unable to open Reaction data file for: %s\n", szName);
+			g_106c7c34.sub_1006cec0((CVTraitKV *)pGeneral, 0);
+		}
+		CKV *pStrings = pKV->FindKey("Strings");
+		if (pStrings)
+			g_1074e968.sub_10202fd0(pStrings);
+		pKV->Release();
+		int hFind;
+		int nFiles = 0;
+		if (g_1070b238->vfunc22("vdata\\system\\Reactions*.txt", &hFind)) {
+			do {
+				nFiles++;
+			} while (g_1070b238->vfunc23(hFind));
+			g_1070b238->vfunc25(hFind);
+			if (nFiles > 0) {
+				char szFile[260];
+				for (int i = 0; i < nFiles; i++) {
+					sprintf(szFile, "%sReactions%03d.txt", "vdata\\system\\", i);
+					if (!sub_101f12e0(szFile))
+						Msg("Unable to open Reaction List data file for: %s\n", szFile);
+				}
+			}
+		}
+	} else
+		Msg("Unable to load Reaction data for: %s\n", szName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f1750 size=0x110
 #include "IFileSystemFind.h"
 #include "CUnknown101f10e0.h"
