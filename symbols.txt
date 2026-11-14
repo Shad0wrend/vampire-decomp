@@ -14153,6 +14153,7 @@
 0x1001332c func   ?vfunc80@CItemGHorrorTape_1@@QAEHXZ CItemGHorrorTape_1::vfunc80
 0x10013331 func   ?vfunc599@CNPC_VTzimisceRunner@@UAE_NPAX@Z CNPC_VTzimisceRunner::vfunc599
 0x10013336 func   ?vfunc442@CNPC_VHuman@@QAEXPBH@Z CNPC_VHuman::vfunc442
+0x10013340 func   ?sub_100c1f40@@YAXPAUStudioHdrX@@PAVVector@@PAVQuaternion@@HMPBMH@Z sub_100c1f40
 0x10013345 func   ?sub_1012caf0@@YAHPAUCHolder260@@PAUCOut12@@@Z sub_1012caf0
 0x1001334a func   ?vfunc0@CPhysicsGameTrace@@UAEXPAURay_t@@PAXPAUCGameTrace@@@Z CPhysicsGameTrace::vfunc0
 0x1001334f func   ?sub_102edc80@CAI_Navigator@@QAE_NPBVVector@@MHHPAV2@H@Z CAI_Navigator::sub_102edc80
