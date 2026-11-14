@@ -278576,6 +278576,54 @@ CNPC_VTzimisceHeadClaw *CNPC_VTzimisceHeadClaw::sub_103c1220()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c2230 size=0x1ee
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CNPC_VTzimisceHeadClaw.h"
+#include "CGlobalEntityList.h"
+#include "CBaseCombatCharacter.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+
+void __cdecl sub_101cd940(CBaseEntity *pEnt);
+
+void CNPC_VTzimisceHeadClaw::sub_103c2230(char bForce)
+{
+	if (sub_103c24a0() && (bForce || gpGlobals->curtime >= m_f6678)) {
+		m_f6678 = 0;
+		EHandleDetail::EntityList *pList;
+		CBaseEntity *pEnt = ((CGlobalEntityList *)(pList = EHandleDetail::g_10566458))->sub_100290c0((const unsigned int *)&m_h6674);
+		if (pEnt) {
+			CBaseCombatCharacter *pl = *(CBaseCombatCharacter **)((char *)pEnt + 0x9c);
+			if (pl) {
+				pl->sub_103327f0(500.0f);
+				if ((char)(int)(pList) == -1) { m_h6674 = (CBaseEntity *)0; } else { m_h6674 = (CBaseEntity *)0; }
+				{
+					CPASAttenuationFilter filter((CEntitySoundOriginView *)pl, 0.8f);
+					int edict = pl->m_pEdict2e0;
+					enginesound->vfunc7(engine->vfunc35(edict), 3, "Character/Monster/TC_FatGuy/Sluge_Affected.wav");
+				}
+				pList = EHandleDetail::g_10566458;
+			}
+		}
+		if (pList->LookupEntity(m_h667c)) {
+			sub_101cd940((CBaseEntity *)pList->LookupEntity(m_h667c));
+			m_h667c = (CBaseEntity *)0;
+			pList = EHandleDetail::g_10566458;
+		}
+		if (pList->LookupEntity(m_h6680)) {
+			sub_101cd940((CBaseEntity *)pList->LookupEntity(m_h6680));
+			m_h6680 = (CBaseEntity *)0;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c24a0 size=0x1e
 struct CUnk103c24a0 {
 	char m_pad0000[0x6678];
