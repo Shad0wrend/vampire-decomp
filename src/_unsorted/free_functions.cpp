@@ -89251,6 +89251,42 @@ dist2 = p->normal[0]*emaxs[0] + p->normal[1]*emaxs[1] + p->normal[2]*emaxs[2];
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139500 size=0x3d
+#include "VectorHelpers.h"
+#include "Vector.h"
+
+// Source mathlib.cpp's x87 VectorMA (the _WIN32 naked version)
+__declspec(naked) void sub_10139500(const Vector &start, float scale, const Vector &direction, Vector &dest)
+{
+	_asm {
+		mov	eax, DWORD PTR [esp+0x04]
+		mov ecx, DWORD PTR [esp+0x0c]
+		mov edx, DWORD PTR [esp+0x10]
+		fld DWORD PTR [esp+0x08]
+		fld	DWORD PTR [eax]
+		fld DWORD PTR [ecx]
+		fld DWORD PTR [eax+4]
+		fld DWORD PTR [ecx+4]
+		fld DWORD PTR [eax+8]
+		fxch st(4)
+		fld DWORD PTR [ecx+8]
+		fxch st(4)
+		fmul st,st(6)
+		fxch st(2)
+		fmul st,st(6)
+		fxch st(4)
+		fmulp st(6),st
+		faddp st(1),st
+		fstp DWORD PTR [edx]
+		faddp st(1),st
+		fstp DWORD PTR [edx+4]
+		faddp st(1),st
+		fstp DWORD PTR [edx+8]
+		ret
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139550 size=0x8a
 #include "Vector.h"
 #include "QAngle.h"
