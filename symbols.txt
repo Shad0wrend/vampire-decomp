@@ -9511,6 +9511,7 @@
 0x1000d39b func   ?sub_10212810@CGameSign@@QAEXPAVCBaseEntity@@@Z CGameSign::sub_10212810
 0x1000d3a0 func   ?vfunc587@CNPC_VPlaceholder@@UAE_NH@Z CNPC_VPlaceholder::vfunc587
 0x1000d3a5 func   ?vfunc492@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc492
+0x1000d3aa func   ?vfunc431@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc431
 0x1000d3af func   ?sub_1017ce70@CUnknown1017ce70@@QAEXH@Z CUnknown1017ce70::sub_1017ce70
 0x1000d3b4 func   _item_g_edane_report item_g_edane_report
 0x1000d3b9 func   ?vfunc126@CNPC_VMingXiao@@UAEHH@Z CNPC_VMingXiao::vfunc126

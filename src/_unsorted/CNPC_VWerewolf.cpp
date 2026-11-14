@@ -328,6 +328,74 @@ void CNPC_VWerewolf::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cb590 size=0x1d8
+#include "CNPC_VWerewolf.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "ConVar.h"
+
+extern ConVar *g_1093f73c;
+extern ConVar *g_1093f95c;
+extern unsigned char g_1092053c;
+void sub_103dbad0(CNPC_VWerewolf *p);
+
+inline int WWDevValue(ConVar *const &cv)
+{
+	if (cv->vfunc1())
+		return 0;
+	return cv->m_nValue;
+}
+
+void CNPC_VWerewolf::vfunc431()
+{
+	ScopeTrace trace("CNPC_VWerewolf::NPCThink", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (WWDevValue(g_1093f73c)) {
+		if ((char)(int)g_1093f73c == -1) { sub_103dbad0(this); } else { sub_103dbad0(this); }
+	}
+	if (WWDevValue(g_1093f95c)) {
+		if ((char)(int)g_1093f95c == -1) { sub_103cb4b0(); } else { sub_103cb4b0(); }
+		vfunc614();
+		return;
+	}
+	if (!m_b66a0 || !m_n6720) {
+		sub_103d7710();
+		sub_103cade0();
+		m_b66a0 = 1;
+	}
+	if (!(g_1092053c & 1)) {
+		int f = m_nFlags66e8 & 0x20;
+		if ((char)f == 0x20) {
+			sub_103d4a60();
+		}
+		if (vfunc167()) {
+			switch (engine->vfunc120() % 5) {
+			case 0: sub_103cc0d0(); break;
+			case 1: sub_103cc320(); break;
+			case 2: sub_103cc890(); break;
+			case 3: sub_103cc5c0(); break;
+			case 4: sub_103cb920(1); break;
+			default: __assume(0);
+			}
+		}
+		if (vfunc167()) {
+			vfunc600((int)vfunc167());
+		}
+		sub_10292de0();
+		if (m_b5f2d && vfunc163()) {
+			sub_103d93b0();
+		}
+	}
+	vfunc614();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cb7f0 size=0xb
 #include "CNPC_VWerewolf.h"
 struct W {
