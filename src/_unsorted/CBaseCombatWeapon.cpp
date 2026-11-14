@@ -2031,6 +2031,380 @@ void CBaseCombatWeapon::vfunc332()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10254450 size=0x424
+#include "CBaseCombatWeapon.h"
+#include "CBasePlayer.h"
+#include "CPASAttenuationFilter.h"
+#include "CSingleUserRecipientFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "engineserver.h"
+#include "engineiface.h"
+extern char g_10937cf1;
+struct CWeaponSoundVS333
+{
+	virtual void vs0();
+	virtual void vs1();
+	virtual void vs2();
+	virtual void vs3();
+	virtual void vs4();
+	virtual void vs5();
+	virtual void vs6();
+	virtual void vs7();
+	virtual void vs8();
+	virtual void vs9();
+	virtual void vs10();
+	virtual void vs11();
+	virtual void vs12();
+	virtual void vs13();
+	virtual void vs14();
+	virtual void vs15();
+	virtual void vs16();
+	virtual void vs17();
+	virtual void vs18();
+	virtual void vs19();
+	virtual void vs20();
+	virtual void vs21();
+	virtual void vs22();
+	virtual void vs23();
+	virtual void vs24();
+	virtual void vs25();
+	virtual void vs26();
+	virtual void vs27();
+	virtual void vs28();
+	virtual void vs29();
+	virtual void vs30();
+	virtual void vs31();
+	virtual void vs32();
+	virtual void vs33();
+	virtual void vs34();
+	virtual void vs35();
+	virtual void vs36();
+	virtual void vs37();
+	virtual void vs38();
+	virtual void vs39();
+	virtual void vs40();
+	virtual void vs41();
+	virtual void vs42();
+	virtual void vs43();
+	virtual void vs44();
+	virtual void vs45();
+	virtual void vs46();
+	virtual void vs47();
+	virtual void vs48();
+	virtual void vs49();
+	virtual void vs50();
+	virtual void vs51();
+	virtual void vs52();
+	virtual void vs53();
+	virtual void vs54();
+	virtual void vs55();
+	virtual void vs56();
+	virtual void vs57();
+	virtual void vs58();
+	virtual void vs59();
+	virtual void vs60();
+	virtual void vs61();
+	virtual void vs62();
+	virtual void vs63();
+	virtual void vs64();
+	virtual void vs65();
+	virtual void vs66();
+	virtual void vs67();
+	virtual void vs68();
+	virtual void vs69();
+	virtual void vs70();
+	virtual void vs71();
+	virtual void vs72();
+	virtual void vs73();
+	virtual void vs74();
+	virtual void vs75();
+	virtual void vs76();
+	virtual void vs77();
+	virtual void vs78();
+	virtual void vs79();
+	virtual void vs80();
+	virtual void vs81();
+	virtual void vs82();
+	virtual void vs83();
+	virtual void vs84();
+	virtual void vs85();
+	virtual void vs86();
+	virtual void vs87();
+	virtual void vs88();
+	virtual void vs89();
+	virtual void vs90();
+	virtual void vs91();
+	virtual void vs92();
+	virtual void vs93();
+	virtual void vs94();
+	virtual void vs95();
+	virtual void vs96();
+	virtual void vs97();
+	virtual void vs98();
+	virtual void vs99();
+	virtual void vs100();
+	virtual void vs101();
+	virtual void vs102();
+	virtual void vs103();
+	virtual void vs104();
+	virtual void vs105();
+	virtual void vs106();
+	virtual void vs107();
+	virtual void vs108();
+	virtual void vs109();
+	virtual void vs110();
+	virtual void vs111();
+	virtual void vs112();
+	virtual void vs113();
+	virtual void vs114();
+	virtual void vs115();
+	virtual void vs116();
+	virtual void vs117();
+	virtual void vs118();
+	virtual void vs119();
+	virtual void vs120();
+	virtual void vs121();
+	virtual void vs122();
+	virtual void vs123();
+	virtual void vs124();
+	virtual void vs125();
+	virtual void vs126();
+	virtual void vs127();
+	virtual void vs128();
+	virtual void vs129();
+	virtual void vs130();
+	virtual void vs131();
+	virtual void vs132();
+	virtual void vs133();
+	virtual void vs134();
+	virtual void vs135();
+	virtual void vs136();
+	virtual void vs137();
+	virtual void vs138();
+	virtual void vs139();
+	virtual void vs140();
+	virtual void vs141();
+	virtual void vs142();
+	virtual void vs143();
+	virtual void vs144();
+	virtual void vs145();
+	virtual void vs146();
+	virtual void vs147();
+	virtual void vs148();
+	virtual void vs149();
+	virtual void vs150();
+	virtual void vs151();
+	virtual void vs152();
+	virtual void vs153();
+	virtual void vs154();
+	virtual void vs155();
+	virtual void vs156();
+	virtual void vs157();
+	virtual void vs158();
+	virtual void vs159();
+	virtual void vs160();
+	virtual void vs161();
+	virtual void vs162();
+	virtual void vs163();
+	virtual void vs164();
+	virtual void vs165();
+	virtual void vs166();
+	virtual void vs167();
+	virtual void vs168();
+	virtual void vs169();
+	virtual void vs170();
+	virtual void vs171();
+	virtual void vs172();
+	virtual void vs173();
+	virtual void vs174();
+	virtual void vs175();
+	virtual void vs176();
+	virtual void vs177();
+	virtual void vs178();
+	virtual void vs179();
+	virtual void vs180();
+	virtual void vs181();
+	virtual void vs182();
+	virtual void vs183();
+	virtual void vs184();
+	virtual void vs185();
+	virtual void vs186();
+	virtual void vs187();
+	virtual void vs188();
+	virtual void vs189();
+	virtual void vs190();
+	virtual void vs191();
+	virtual void vs192();
+	virtual void vs193();
+	virtual void vs194();
+	virtual void vs195();
+	virtual void vs196();
+	virtual void vs197();
+	virtual void vs198();
+	virtual void vs199();
+	virtual void vs200();
+	virtual void vs201();
+	virtual void vs202();
+	virtual void vs203();
+	virtual void vs204();
+	virtual void vs205();
+	virtual void vs206();
+	virtual void vs207();
+	virtual void vs208();
+	virtual void vs209();
+	virtual void vs210();
+	virtual void vs211();
+	virtual void vs212();
+	virtual void vs213();
+	virtual void vs214();
+	virtual void vs215();
+	virtual void vs216();
+	virtual void vs217();
+	virtual void vs218();
+	virtual void vs219();
+	virtual void vs220();
+	virtual void vs221();
+	virtual void vs222();
+	virtual void vs223();
+	virtual void vs224();
+	virtual void vs225();
+	virtual void vs226();
+	virtual void vs227();
+	virtual void vs228();
+	virtual void vs229();
+	virtual void vs230();
+	virtual void vs231();
+	virtual void vs232();
+	virtual void vs233();
+	virtual void vs234();
+	virtual void vs235();
+	virtual void vs236();
+	virtual void vs237();
+	virtual void vs238();
+	virtual void vs239();
+	virtual void vs240();
+	virtual void vs241();
+	virtual void vs242();
+	virtual void vs243();
+	virtual void vs244();
+	virtual void vs245();
+	virtual void vs246();
+	virtual void vs247();
+	virtual void vs248();
+	virtual void vs249();
+	virtual void vs250();
+	virtual void vs251();
+	virtual void vs252();
+	virtual void vs253();
+	virtual void vs254();
+	virtual void vs255();
+	virtual void vs256();
+	virtual void vs257();
+	virtual void vs258();
+	virtual void vs259();
+	virtual void vs260();
+	virtual void vs261();
+	virtual void vs262();
+	virtual void vs263();
+	virtual void vs264();
+	virtual void vs265();
+	virtual void vs266();
+	virtual void vs267();
+	virtual void vs268();
+	virtual void vs269();
+	virtual void vs270();
+	virtual void vs271();
+	virtual void vs272();
+	virtual void vs273();
+	virtual void vs274();
+	virtual void vs275();
+	virtual void vs276();
+	virtual void vs277();
+	virtual void vs278();
+	virtual void vs279();
+	virtual void vs280();
+	virtual void vs281();
+	virtual void vs282();
+	virtual void vs283();
+	virtual void vs284();
+	virtual void vs285();
+	virtual void vs286();
+	virtual void vs287();
+	virtual void vs288();
+	virtual void vs289();
+	virtual void vs290();
+	virtual void vs291();
+	virtual void vs292();
+	virtual void vs293();
+	virtual void vs294();
+	virtual bool vfunc295();
+};
+struct CWeaponSoundRec333 { char pad[0x80]; int m80; int m84; int m88; float m8c; char m90; };
+
+inline int WpnEntIdx(int e) { return engine->vfunc35(e); }
+inline int WpnDead(int x) { return x + 1; }
+struct WpnEntV { char m_pad0000[0x2e0]; int m_pEdict; int entindex() { return engine->vfunc35(m_pEdict); } };
+
+void CBaseCombatWeapon::vfunc333(int a, int b, int c, int d, int e, int f)
+{
+	if (g_10937cf1)
+		return;
+	int idx = a;
+	if (vfunc347(idx) <= 0)
+		return;
+	int r = enginerandom->vfunc2(0, vfunc347(idx) - 1);
+	float atten = 0.27f;
+	int x = 0;
+	CWeaponSoundRec333 *rec = (CWeaponSoundRec333 *)sub_10252120(idx, r);
+	float flVolume;
+	if (*(float *)&c == 0.0f) {
+		flVolume = 1.0f;
+		if (rec->m8c != 0.0f)
+			flVolume = rec->m8c;
+	} else
+		flVolume = *(float *)&c;
+	if (d == 0) {
+		d = 100;
+		if (rec->m80)
+			d = rec->m80;
+		if (rec->m84 && rec->m88)
+			d = enginerandom->vfunc2(rec->m84, rec->m88);
+	}
+	if (*(float *)&e != 0.0f)
+		atten = *(float *)&e;
+	if (f)
+		x = f;
+	if (rec->m90) {
+		if (!sub_102521f0())
+			return;
+		if (!*(int *)((char *)sub_102521f0() + 0xa8))
+			return;
+		enginesound->vfunc0((const char *)rec, 0);
+		void *o = sub_102521f0();
+		CBasePlayer *pl = 0;
+		if (o)
+			pl = *(CBasePlayer **)((char *)o + 0xa8);
+		CSingleUserRecipientFilter filter(pl);
+		if (((CWeaponSoundVS333 *)this)->vfunc295())
+			filter.UsePredictionRules();
+		int edict = *(int *)((char *)sub_102521f0() + 0x2e0);
+		enginesound->vfunc3(&filter, engine->vfunc35(edict), 6, (const char *)rec, flVolume, atten, 0, d, 0, 0, 1, 0);
+	} else if (sub_102521f0()) {
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)sub_102521f0(), atten);
+		if (((CWeaponSoundVS333 *)this)->vfunc295())
+			filter.UsePredictionRules();
+		int edict = *(int *)((char *)sub_102521f0() + 0x2e0);
+		enginesound->vfunc3(&filter, engine->vfunc35(edict), b, (const char *)rec, flVolume, atten, x, d, 0, 0, 1, 0);
+	} else {
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this, atten);
+		if (((CWeaponSoundVS333 *)this)->vfunc295())
+			filter.UsePredictionRules();
+		enginesound->vfunc3(&filter, WpnEntIdx((int)m_pHolder), b, (const char *)rec, flVolume, atten, x, d, 0, 0, 1, 0);
+		
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10254990 size=0x11a
 template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CBaseCombatWeapon.h"

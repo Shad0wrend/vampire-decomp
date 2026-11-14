@@ -13315,6 +13315,7 @@
 0x100121f2 func   ?sub_1010b530@CFire@@QAEXM@Z CFire::sub_1010b530
 0x100121f7 func   ?sub_100dda20@@YIXPAX@Z sub_100dda20
 0x100121fc func   ?vfunc102@CNPC_VManBat@@QAEXPAVCBaseEntity@@HHHH@Z CNPC_VManBat::vfunc102
+0x10012201 func   ?vfunc333@CBaseCombatWeapon@@UAEXHHHHHH@Z CBaseCombatWeapon::vfunc333
 0x10012206 func   ?vfunc241@CBaseTrigger@@QAEXH@Z CBaseTrigger::vfunc241
 0x1001220b func   ?sub_10068380@@YAXHHPAHHHHH0D@Z sub_10068380
 0x10012210 func   ?vfunc362@CWeaponMelee_Fists@@QAEHXZ CWeaponMelee_Fists::vfunc362
