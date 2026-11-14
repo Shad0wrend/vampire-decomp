@@ -1816,6 +1816,47 @@ void CAI_BaseNPC::vfunc380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026cf90 size=0x8f
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseEntity.h"
+
+struct COutputEvent355
+{
+	char m_data[0x1c];
+	void sub_100cd660(CBaseEntity *pActivator, CAI_BaseNPC *pCaller, int delay);
+};
+
+struct CAI_BaseNPCView355 : CAI_BaseNPC
+{
+	char m_pad0004[0x1538 - 4];
+	EHANDLE m_h1538;
+	int m_n153c;
+	int m_n1540;
+	char m_pad1544[0x5c20 - 0x1544];
+	COutputEvent355 m_Output5c20;
+	bool sub_1026d160();
+};
+
+// TARGET: CAI_BaseNPC::vfunc355
+bool CAI_BaseNPC::vfunc355()
+{
+	CAI_BaseNPCView355 *p = (CAI_BaseNPCView355 *)this;
+	if (!p->m_h1538 || p->m_n153c == -1 || p->m_n1540 != 8)
+	{
+		if ((char)(int)EHandleDetail::g_10566458 == -1) p->m_Output5c20.sub_100cd660(p->m_n153c != -1 ? p->m_h1538.Get() : 0, this, 0);
+		else p->m_Output5c20.sub_100cd660(p->m_n153c != -1 ? p->m_h1538.Get() : 0, this, 0);
+	}
+	return p->sub_1026d160();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026d7f0 size=0x75
 #include "CAI_BaseNPC.h"
 struct SHandleEntry { void *p; unsigned serial; int pad; };

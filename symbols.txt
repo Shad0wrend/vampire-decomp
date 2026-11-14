@@ -15522,6 +15522,7 @@
 0x10015082 func   ?vfunc20@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc20
 0x10015087 func   ?vfunc80@CBaseGrenade@@UAEHXZ CBaseGrenade::vfunc80
 0x1001508c func   ?sub_10078c50@UtlMem@@QAEXXZ UtlMem::sub_10078c50
+0x10015091 func   ?vfunc355@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc355
 0x10015096 func   ?vfunc82@CGameUI@@QAEPAUdatamap_t@@XZ CGameUI::vfunc82
 0x100150a0 func   ?vfunc490@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc490
 0x100150aa func   ?vfunc5@CPropKeypad@@QAEPAV1@I@Z CPropKeypad::vfunc5
