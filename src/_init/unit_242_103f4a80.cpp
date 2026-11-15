@@ -821,3 +821,11 @@ int g_10943b98 = ((int (*)(int))sub_103fc350)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10944018(&CPrecacheRegister::PrecacheFn_Other, "item_g_bloodpack");
 // END FUNCTION
+
+// FUNCTION: 0x103fc640 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10944ba4;
+extern char g_1067f54c[];
+ServerClassReg g_1094904c("CBlueBloodPack", &g_10944ba4, g_1067f54c);
+// END FUNCTION
