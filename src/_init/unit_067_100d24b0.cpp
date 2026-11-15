@@ -285,3 +285,9 @@ ConCommand g_106e7668("vtables", sub_100d75e0, "Lists the available Vampire Tabl
 void sub_100d76a0(void);
 ConCommand g_106e759c("vstrings", sub_100d76a0, "Lists the available Vampire Strings used internally by the Game System", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d79e0 size=0xa
+#include "ConCommand.h"
+void sub_100d7760(void);
+ConCommand g_106e7a90("viteminfo", sub_100d7760, "Lists the available Vampire Item Information", 0, 0);
+// END FUNCTION
