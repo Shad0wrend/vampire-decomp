@@ -1271,3 +1271,8 @@ extern SendTable g_10944bc4;
 extern char g_1067f6cc[];
 ServerClassReg g_10945260("CItemGOHDiary", &g_10944bc4, g_1067f6cc);
 // END FUNCTION
+
+// FUNCTION: 0x10400940 size=0xa
+#include "SendTable.h"
+SendTable g_10944bc4;
+// END FUNCTION
