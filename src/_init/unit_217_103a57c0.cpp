@@ -5,3 +5,8 @@
 inline int pcd_initial_1093c2ac() { return 0x450; }
 int g_1093c2ac = pcd_initial_1093c2ac();
 // END FUNCTION
+
+// FUNCTION: 0x103a58a0 size=0xa
+#include "ConVar.h"
+ConVar g_1093c2f8("andrei_force_charge_attack", "0", 0);
+// END FUNCTION
