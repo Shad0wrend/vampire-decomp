@@ -401,3 +401,9 @@ ConCommand g_106e7da0("vgender_int", sub_100da040, "Changes the gender of a play
 void sub_100da230(void);
 ConCommand g_106e72f0("vbarter", sub_100da230, "Bartering", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100dacc0 size=0xa
+#include "ConCommand.h"
+void sub_100dac20(void);
+ConCommand g_106e7340("hackcmd", sub_100dac20, "Command to current hacking console", 0, 0);
+// END FUNCTION
