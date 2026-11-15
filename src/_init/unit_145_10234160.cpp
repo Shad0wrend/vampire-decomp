@@ -266,3 +266,8 @@ SendTable g_10752844;
 int sub_10236a30(void);
 int g_10752840 = ((int (*)(int))sub_10236a30)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10236bb0 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_107522c0(&CPrecacheRegister::PrecacheFn_Other, "item_w_supershotgun");
+// END FUNCTION
