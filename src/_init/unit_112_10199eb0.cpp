@@ -6,3 +6,9 @@
 void sub_1019a980(void);
 ConCommand g_1072b32c("gclearall", sub_1019a980, "Resets all state flags.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x1019acd0 size=0xa
+#include "ConCommand.h"
+void sub_1019ab40(void);
+ConCommand g_1072b2f4("gcleardialog", sub_1019ab40, "Resets all dialog state flags.", 0, 0);
+// END FUNCTION
