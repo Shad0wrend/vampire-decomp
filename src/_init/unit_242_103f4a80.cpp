@@ -952,3 +952,8 @@ ServerClassReg g_10944b48("CItemGDrugsPerscriptionBottle", &g_10949304, g_1067f5
 #include "SendTable.h"
 SendTable g_10949304;
 // END FUNCTION
+
+// FUNCTION: 0x103fd960 size=0x5
+int sub_103fd9a0(void);
+int g_10949300 = ((int (*)(int))sub_103fd9a0)(0);
+// END FUNCTION
