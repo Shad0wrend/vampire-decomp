@@ -467,3 +467,9 @@ ConCommand g_106e7408("unlockpcangles", sub_100db5c0, "unlock a player's angles 
 void sub_100db6c0(void);
 ConCommand g_106e74a8("burnpeel", sub_100db6c0, "burn effect on the player", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100db890 size=0xa
+#include "ConCommand.h"
+void sub_100db7a0(void);
+ConCommand g_106e7758("player_stopuse", sub_100db7a0, "kicks the player out from what they are using", 0, 0);
+// END FUNCTION
