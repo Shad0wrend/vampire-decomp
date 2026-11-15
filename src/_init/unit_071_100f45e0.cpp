@@ -10,3 +10,11 @@ int g_106eb418 = ((int (*)(int))sub_100f4620)(0);
 int sub_100f5140(void);
 int g_106eb534 = ((int (*)(int))sub_100f5140)(0);
 // END FUNCTION
+
+// FUNCTION: 0x100f5170 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_106eb3fc;
+extern char g_10565c34[];
+ServerClassReg g_106eb41c("CEntityFlame", &g_106eb3fc, g_10565c34);
+// END FUNCTION
