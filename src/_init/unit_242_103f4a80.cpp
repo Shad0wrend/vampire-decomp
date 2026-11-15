@@ -82,3 +82,8 @@ extern SendTable g_10943d2c;
 extern char g_1067f234[];
 ServerClassReg g_109483e8("CItemMMoneyClip", &g_10943d2c, g_1067f234);
 // END FUNCTION
+
+// FUNCTION: 0x103f5c30 size=0xa
+#include "SendTable.h"
+SendTable g_10943d2c;
+// END FUNCTION
