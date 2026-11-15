@@ -106,3 +106,8 @@ ConVar g_10725630("melee_flinch_big_time", "5.0", 0, "Duration of time for melee
 #include "ConVar.h"
 ConVar g_10725ce8("player_use_arc", "30", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10168f00 size=0xa
+#include "ConVar.h"
+ConVar g_10725a00("debug_ratfeed_drawcone", "0", 0);
+// END FUNCTION
