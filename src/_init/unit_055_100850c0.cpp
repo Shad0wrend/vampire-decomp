@@ -232,3 +232,9 @@ ConCommand g_106c8f0c("npc_viewcone", sub_10087d10, "Displays the viewcone of th
 void sub_10087de0(void);
 ConCommand g_106c8bd0("npc_camera_viewcone", sub_10087de0, "Displays the viewcone of all NPC cameras on a map.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10087f20 size=0xa
+#include "ConCommand.h"
+void sub_10087ee0(void);
+ConCommand g_106c91dc("npc_attack_range", sub_10087ee0, "Show NPC's current attack range.", 0, 0);
+// END FUNCTION
