@@ -297,3 +297,10 @@ ConCommand g_106e7a90("viteminfo", sub_100d7760, "Lists the available Vampire It
 void sub_100d7a70(void);
 ConCommand g_106e7228("vitems", sub_100d7a70, "Lists the available Vampire Items", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d7ba0 size=0xa
+#include "ConCommand.h"
+void sub_100d7b30(void);
+void sub_100d2c30(void);
+ConCommand g_106e78d4("vitem", sub_100d7b30, "Lists descriptive info for a Vampire Item, accepts partial name matches", 0, sub_100d2c30);
+// END FUNCTION
