@@ -36,3 +36,11 @@ SendTable g_106c6b78;
 int sub_10069ca0(void);
 int g_106c6b74 = ((int (*)(int))sub_10069ca0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1006a020 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_106c6d98;
+extern char g_10545670[];
+ServerClassReg g_106c6760("CTETParticleHUD", &g_106c6d98, g_10545670);
+// END FUNCTION
