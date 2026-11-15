@@ -185,3 +185,8 @@ ConVar g_10923cf0("debug_allow_mf_turn", "0", 0, "If this is on, NPCs will turn 
 #include "ConVar.h"
 ConVar g_10924478("debug_allow_npc_hunting", "0", 0, "Set this to 1 to allow NPCs to do their 'scouring the area' hunting state.");
 // END FUNCTION
+
+// FUNCTION: 0x1028c8b0 size=0xa
+#include "ConVar.h"
+ConVar g_10924848("debug_show_npc_pos", "0", 0, "Set this to 1 to show all of the NPC's stored positions.");
+// END FUNCTION
