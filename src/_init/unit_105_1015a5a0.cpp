@@ -235,3 +235,8 @@ ConVar g_10725890("debug_response_timer_max", "7.5", 0, "Sets the maximum amount
 #include "ConVar.h"
 ConVar g_10725f70("debug_heightened_alert_expire_time", "40.0", 0, "Determines how long NPC's stay in heightened alert mode.");
 // END FUNCTION
+
+// FUNCTION: 0x1017f380 size=0xa
+#include "ConVar.h"
+ConVar g_10723980("debug_masquerade_timer", "300", 0, "Determines how long of a grace period the player has after violating the masquerade, so that you don't wipe yourself after a single spree.");
+// END FUNCTION
