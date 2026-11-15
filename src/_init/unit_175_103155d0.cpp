@@ -93,3 +93,8 @@ ConVar g_10936f70("debug_view_cone_2d3d", "3", 0, "Set the view cone tests to be
 #include "ConVar.h"
 ConVar g_109371c0("gib_xz_vel", "200.0", 0, "Gib Vel");
 // END FUNCTION
+
+// FUNCTION: 0x1032b170 size=0xa
+#include "ConVar.h"
+ConVar g_10936fb8("debug_force_scale", "3", 0);
+// END FUNCTION
