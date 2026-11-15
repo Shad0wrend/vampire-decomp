@@ -31,3 +31,8 @@ ServerClassReg g_106beac4("CTEArmorRicochet", &g_106beb4c, g_10540730);
 #include "SendTable.h"
 SendTable g_106beb4c;
 // END FUNCTION
+
+// FUNCTION: 0x1005a4d0 size=0x5
+int sub_1005a510(void);
+int g_106beb48 = ((int (*)(int))sub_1005a510)(0);
+// END FUNCTION
