@@ -12351,6 +12351,7 @@
 0x10010ccb func   ?sub_1007ab40@CUnknown1007b7b0@@QAEPAVCUnknown10075aa0@@PAVCUnknown10076670@@PAXM@Z CUnknown1007b7b0::sub_1007ab40
 0x10010cd0 func   ?sub_101f0b80@CUnknown101f0b80@@QAEXHH@Z CUnknown101f0b80::sub_101f0b80
 0x10010cd5 func   ?sub_101b2320@CUnknown101b2570@@QAEPBDXZ CUnknown101b2570::sub_101b2320
+0x10010cda func   ??0CAI_LocalIdSpace@@QAE@_N@Z CAI_LocalIdSpace::CAI_LocalIdSpace
 0x10010cda func   ?sub_102ea090@CUnknown102ea090@@QAEPAU1@D@Z CUnknown102ea090::sub_102ea090
 0x10010cdf func   ?vfunc175@CTriggerLook@@QAEXPAVCBaseEntity@@@Z CTriggerLook::vfunc175
 0x10010ce4 func   ?sub_10429f40@@YIXPADHHHHH@Z sub_10429f40
