@@ -1137,3 +1137,11 @@ SendTable g_10949030;
 int sub_103ff480(void);
 int g_1094902c = ((int (*)(int))sub_103ff480)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103ff5c0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109469c4;
+extern char g_1067f65c[];
+ServerClassReg g_109449ec("CItemGBailbondReceipt", &g_109469c4, g_1067f65c);
+// END FUNCTION
