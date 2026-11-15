@@ -422,3 +422,8 @@ ServerClassReg g_10941c20("CWeaponMelee_WerewolfAttacks", &g_10941eac, g_106745b
 #include "SendTable.h"
 SendTable g_10941eac;
 // END FUNCTION
+
+// FUNCTION: 0x103e8530 size=0x5
+int sub_103e8570(void);
+int g_10941ea8 = ((int (*)(int))sub_103e8570)(0);
+// END FUNCTION
