@@ -97,3 +97,9 @@ ConCommand g_106cf080("ent_bbox", sub_100ae580, "Displays the movement bounding 
 void sub_100ae6b0(void);
 ConCommand g_106cfd18("ent_absbox", sub_100ae6b0, "Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100ae880 size=0xa
+#include "ConCommand.h"
+void sub_100ae7e0(void);
+ConCommand g_106cf2d0("ent_muzzle", sub_100ae7e0, "Displays the muzzleflash attachment point", 0, 0);
+// END FUNCTION
