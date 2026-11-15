@@ -115,3 +115,8 @@ ConVar g_109243e8("ent_trace_sound", "0", 0, "When ent_trace is on, this will du
 #include "ConVar.h"
 ConVar g_109249d0("ent_trace_frenzy", "0", 0, "When ent_trace is on, this will dump info about frenzying also.");
 // END FUNCTION
+
+// FUNCTION: 0x1028c090 size=0xa
+#include "ConVar.h"
+ConVar g_109242e0("ent_trace_scripted", "0", 0, "When ent_trace is on, this will dump info about scripted sequences also.");
+// END FUNCTION
