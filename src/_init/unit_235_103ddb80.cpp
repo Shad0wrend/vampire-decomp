@@ -20,3 +20,8 @@ ConVar g_10940400("zombie_melee_mod", "1.0", 0);
 #include "ConVar.h"
 ConVar g_10940498("zombie_gib_amt", "100", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103dde00 size=0x5
+int * sub_103dde40(void);
+int * g_1094048c = ((int * (*)(int))sub_103dde40)(0);
+// END FUNCTION
