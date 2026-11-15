@@ -113,3 +113,8 @@ SendTable g_1094aea8;
 int sub_1040d690(void);
 int g_1094aea4 = ((int (*)(int))sub_1040d690)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1040d800 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_1094ad54(&CPrecacheRegister::PrecacheFn_Other, "weapon_physcannon");
+// END FUNCTION
