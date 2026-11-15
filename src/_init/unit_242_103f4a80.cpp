@@ -1019,3 +1019,8 @@ extern SendTable g_109444ac;
 extern char g_1067f5ec[];
 ServerClassReg g_10945db8("CItemGRingSilver", &g_109444ac, g_1067f5ec);
 // END FUNCTION
+
+// FUNCTION: 0x103fe3a0 size=0xa
+#include "SendTable.h"
+SendTable g_109444ac;
+// END FUNCTION
