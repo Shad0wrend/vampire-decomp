@@ -325,3 +325,8 @@ extern SendTable g_1075228c;
 extern char g_105bf8dc[];
 ServerClassReg g_1075273c("CWeaponRanged_Tzimisce2Head", &g_1075228c, g_105bf8dc);
 // END FUNCTION
+
+// FUNCTION: 0x10237330 size=0xa
+#include "SendTable.h"
+SendTable g_1075228c;
+// END FUNCTION
