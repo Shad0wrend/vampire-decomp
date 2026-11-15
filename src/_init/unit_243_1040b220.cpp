@@ -50,3 +50,8 @@ ConVar g_1094ad60("physcannon_pullforce", "4000", 0);
 #include "ConVar.h"
 ConVar g_1094abf0("physcannon_mega_pullforce", "8000", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1040ba90 size=0xa
+#include "ConVar.h"
+ConVar g_1094a988("physcannon_cone", "0.97", 0);
+// END FUNCTION
