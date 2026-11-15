@@ -33,3 +33,8 @@ int g_1073a45c = ((int (*)(int))sub_101ee2b0)(0);
 #include "ConVar.h"
 ConVar g_1073a6d8("projectile_lighttime", "3", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101efc60 size=0xa
+#include "ConVar.h"
+ConVar g_1073a418("projectile_lightdecay", "2000", 0);
+// END FUNCTION
