@@ -1024,3 +1024,8 @@ ServerClassReg g_10945db8("CItemGRingSilver", &g_109444ac, g_1067f5ec);
 #include "SendTable.h"
 SendTable g_109444ac;
 // END FUNCTION
+
+// FUNCTION: 0x103fe420 size=0x5
+int sub_103fe460(void);
+int g_109444a8 = ((int (*)(int))sub_103fe460)(0);
+// END FUNCTION
