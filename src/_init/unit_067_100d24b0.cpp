@@ -158,3 +158,9 @@ ConCommand g_106e7824("ent_vfeats", sub_100d56b0, "Lists the Entity's Vampire Fe
 void sub_100d5860(void);
 ConCommand g_106e71d8("quest_refresh", sub_100d5860, "Refreshes client quest info", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d5990 size=0xa
+#include "ConCommand.h"
+void sub_100d5920(void);
+ConCommand g_106e7dc8("quest_log_close", sub_100d5920, "Called upon quest log closure", 0, 0);
+// END FUNCTION
