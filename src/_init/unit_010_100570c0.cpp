@@ -8,3 +8,8 @@ extern SendTable g_106be224;
 extern char g_1053f8a8[];
 ServerClassReg g_106be494("CFireSmoke", &g_106be224, g_1053f8a8);
 // END FUNCTION
+
+// FUNCTION: 0x10057170 size=0xa
+#include "SendTable.h"
+SendTable g_106be224;
+// END FUNCTION
