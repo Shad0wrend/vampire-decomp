@@ -637,3 +637,11 @@ int g_10944110 = ((int (*)(int))sub_103fa9d0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10944024(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_strength");
 // END FUNCTION
+
+// FUNCTION: 0x103fab60 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10944ac0;
+extern char g_1067f4cc[];
+ServerClassReg g_1094769c("COccultExperience", &g_10944ac0, g_1067f4cc);
+// END FUNCTION
