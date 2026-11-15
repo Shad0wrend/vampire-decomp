@@ -404,3 +404,8 @@ SendTable g_10942544;
 int sub_103e8210(void);
 int g_10942540 = ((int (*)(int))sub_103e8210)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103e83b0 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_109418f4(&CPrecacheRegister::PrecacheFn_Other, "item_w_baton");
+// END FUNCTION
