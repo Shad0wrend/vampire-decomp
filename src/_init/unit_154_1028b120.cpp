@@ -125,3 +125,8 @@ ConVar g_109242e0("ent_trace_scripted", "0", 0, "When ent_trace is on, this will
 #include "ConVar.h"
 ConVar g_10924ab0("ent_trace_moveshoot", "0", 0, "When ent_trace is on, this will dump info about moving and shooting also.");
 // END FUNCTION
+
+// FUNCTION: 0x1028c1b0 size=0xa
+#include "ConVar.h"
+ConVar g_10923fa0("ent_trace_status", "0", 0, "When ent_trace is on, this will dump info about status also.");
+// END FUNCTION
