@@ -30,3 +30,8 @@ ConVar g_1093cf00("tzimisce_act_override", "0", 0, "Set this var to override the
 #include "ConVar.h"
 ConVar g_1093ca88("tzimisce_throw_power", ".007", 0, "Set this var to override the throw power.");
 // END FUNCTION
+
+// FUNCTION: 0x103b6490 size=0xa
+#include "ConVar.h"
+ConVar g_1093ca40("tzimisce_throw_hds", ".0008", 0, "Set this var to override the throw height to distance scalar.");
+// END FUNCTION
