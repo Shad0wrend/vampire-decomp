@@ -489,3 +489,8 @@ ServerClassReg g_10946e38("COccultHacking", &g_10948848, g_1067f45c);
 #include "SendTable.h"
 SendTable g_10948848;
 // END FUNCTION
+
+// FUNCTION: 0x103f9790 size=0x5
+int sub_103f97d0(void);
+int g_10948844 = ((int (*)(int))sub_103f97d0)(0);
+// END FUNCTION
