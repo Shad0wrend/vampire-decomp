@@ -83,3 +83,9 @@ ConCommand g_106c904c("ai_nodes", sub_10085bd0, "Toggles node display.  First ca
 void sub_10085d00(void);
 ConCommand g_106c95d8("ai_show_visibility", sub_10085d00, "Toggles visibility display for the node that the player is looking at.  Nodes that are visible from the selected node will be drawn in red with yellow lines connecting to the selected node.  Nodes that are not visible from the selected node will be drawn in blue.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10085e70 size=0xa
+#include "ConCommand.h"
+void sub_10085e00(void);
+ConCommand g_106c8bf8("ai_show_graph_connect", sub_10085e00, "Toggles graph connection display for the node that the player is looking at.  Nodes that are connected to the selected node by the net graph will be drawn in red with magenta lines connecting to the selected node.  Nodes that are not connected via the net graph from the selected node will be drawn in blue.", 0, 0);
+// END FUNCTION
