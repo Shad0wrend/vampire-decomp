@@ -124,3 +124,9 @@ ConCommand g_106c8e44("npc_focus", sub_10086220, "Displays red line to NPC's ene
 #include "ConVar.h"
 ConVar g_106c8d38("npc_create_equipment", "", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10086880 size=0xa
+#include "ConCommand.h"
+void sub_10086380(void);
+ConCommand g_106c8f5c("npc_create", sub_10086380, "Creates an NPC of the given type where the player is looking (if the given NPC can actually stand at that location).  Note that this only works for npc classes that are already in the world.  You can not create an entity that doesn't have an instance in the level.\n\tArguments:\t{npc_class_name}", 0, 0);
+// END FUNCTION
