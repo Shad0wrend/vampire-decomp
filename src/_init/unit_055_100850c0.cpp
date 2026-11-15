@@ -346,3 +346,9 @@ ConCommand g_106c95b0("ai_clear_bad_links", sub_100891c0, "Clears bits set on na
 void sub_100892e0(void);
 ConCommand g_106c8ce8("npc_removeall", sub_100892e0, "finds and removes every NPC entity on the map", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100893a0 size=0xa
+#include "ConCommand.h"
+void sub_10089430(void);
+ConCommand g_106c9560("npc_play_dialog_file", sub_10089430, "Tells the NPC you are looking at to play a WAV or .VCD file.", 0, 0);
+// END FUNCTION
