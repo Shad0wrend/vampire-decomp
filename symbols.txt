@@ -12050,6 +12050,7 @@
 0x100106f9 func   ?sub_10083a30@CUnk10083a30@@QAEXH@Z CUnk10083a30::sub_10083a30
 0x100106fe func   ?vfunc259@CGenericNPC@@UAEXPAUanimevent_t@@@Z CGenericNPC::vfunc259
 0x10010703 func   ?vfunc599@CNPC_VMingXiao@@UAE_NH@Z CNPC_VMingXiao::vfunc599
+0x10010708 func   ?sub_102d1fe0@@YAPAVCAI_Hint@@PAVCBaseEntity@@PAUCHintQuery@@@Z sub_102d1fe0
 0x1001070d func   ?sub_10063500@@YAHXZ sub_10063500
 0x10010712 func   ?vfunc495@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc495
 0x10010717 func   ?vfunc371@CNPCMaker_Fleshpile@@UAEHH@Z CNPCMaker_Fleshpile::vfunc371

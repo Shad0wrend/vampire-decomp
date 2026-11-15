@@ -223919,6 +223919,164 @@ next:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d1fe0 size=0x3ce
+#include "CVTraitEffect_t.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CAI_Hint.h"
+#include "CAIHintSlots.h"
+#include "AITrace.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738960.h"
+#include "CUnknown102d01e0.h"
+#include "CUnknown102d0270.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "Vector.h"
+#include "UTIL_Trace.h"
+#include <string.h>
+
+struct CHintQuery
+{
+	unsigned int m_flags;
+	int m_type;
+	const char *m_name;
+	int m_n0c;
+	int m_n10;
+	int m_n14;
+	int m_n18;
+	int m_n1c;
+	int m_n20;
+	int m_n24;
+	int m_n28;
+	int m_n2c;
+};
+
+extern char g_106b8540[];
+
+inline const char *STRINGR(const char *const &s)
+{
+	return s ? s : g_106b8540;
+}
+
+
+namespace block_102d1fe0l {
+#pragma auto_inline(off)
+struct CNpcView14c0 {
+	char m_pad0000[0x5e0];
+	EHANDLE m_h5e0;
+	char m_pad5e4[4];
+	int m_n5e8;
+	float m_f5ec;
+	bool sub_102d14c0();
+};
+bool CNpcView14c0::sub_102d14c0()
+{
+	CNpcView14c0 *p = this;
+	if (p->m_n5e8)
+		return true;
+	if (gpGlobals->curtime < p->m_f5ec)
+		return true;
+	if (p->m_h5e0.Get())
+		return true;
+	return false;
+}
+#pragma auto_inline(on)
+}
+
+struct MyRay : Ray_t
+{
+	__forceinline void MyInit(const Vector &start, const Vector &end)
+	{
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != g_104454c4;
+		m_StartOffset[0] = m_StartOffset[1] = m_StartOffset[2] = 0.0f;
+		m_IsRay = true;
+		m_Extents[0] = m_Extents[1] = m_Extents[2] = 0.0f;
+		m_Start[0] = start.x;
+		m_Start[1] = start.y;
+		m_Start[2] = start.z;
+		m_b32 = 0;
+		m_n34 = 0;
+		m_b33 = 0;
+	}
+};
+
+inline void MyTraceLine(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	MyRay ray;
+	ray.MyInit(vecAbsStart, vecAbsEnd);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+inline const char *STRINGV(const char *s)
+{
+	return s ? s : g_106b8540;
+}
+CAI_Hint *sub_102d1fe0(CBaseEntity *pNPC, CHintQuery *pQuery)
+{
+	if (!g_10925450)
+		return 0;
+	CAI_Hint *pHint = g_10925454 ? g_10925454->m_pNext : 0;
+	if (!pHint)
+		pHint = g_10925450;
+	unsigned int nBest = (unsigned int)-1;
+	CAI_Hint *pBest = 0;
+	do {
+		if (!((block_102d1fe0l::CNpcView14c0 *)pHint)->sub_102d14c0() && pHint->m_n5dc == pQuery->m_type) {
+			if (pQuery->m_name && pHint->m_strGroup.pszValue) {
+				if (strcmp(STRINGV(pHint->m_strGroup.pszValue), STRINGV(pQuery->m_name)) != 0)
+					goto next;
+			}
+			if (pQuery->m_n18 && !((CUnknown102d01e0 *)pQuery)->sub_102d01e0((const float *)((CEntityVSlots *)pHint)->slot217()))
+				goto next;
+			if (pQuery->m_n2c && ((CUnknown102d0270 *)pQuery)->sub_102d0270((const float *)((CEntityVSlots *)pHint)->slot217()))
+				goto next;
+			if (((CEntityVSlots *)pNPC)->slot566(pHint)) {
+				if (pQuery->m_flags & 1) {
+					Vector vecPos;
+					((CAI_VecView *)pHint)->sub_102d1180(pNPC, &vecPos);
+					Vector vecEnd = vecPos + pNPC->m_vecViewOffset;
+					Vector vecEyeBuf;
+					CGameTrace trace;
+					MyTraceLine(*((CEntityVSlots *)pNPC)->slot193(&vecEyeBuf), vecEnd, 0x2400b, pNPC, 0, &trace);
+					if (trace.m_fraction != 1.0f) goto next;
+				}
+				if (pQuery->m_flags & 8) {
+					unsigned int nDist = (unsigned int)((float)(__int64)(unsigned int)(*((CEntityVSlots *)pHint)->slot217() - *((CEntityVSlots *)pNPC)->slot217()).Length() * pHint->m_f464);
+					if (nDist > nBest) {
+						pBest = pHint;
+						nBest = nDist;
+					}
+				} else if (pQuery->m_flags & 2) {
+					unsigned int nDist = (unsigned int)(*((CEntityVSlots *)pHint)->slot217() - *((CEntityVSlots *)pNPC)->slot217()).Length();
+					if (nDist < nBest) {
+						pBest = pHint;
+						nBest = nDist;
+					}
+				} else {
+					g_10925454 = pHint; return pHint;
+				}
+			}
+		}
+next:
+		pHint = pHint->m_pNext;
+		if (!pHint && g_10925454)
+			pHint = g_10925450;
+	} while (pHint != *(CAI_Hint *volatile *)&g_10925454);
+	g_10925454 = pBest;
+	return pBest;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d24b0 size=0x2cc
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_Hint.h"
