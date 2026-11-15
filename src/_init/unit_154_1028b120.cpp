@@ -220,3 +220,8 @@ CAI_NPCPatrolPathSaveRestoreOps g_10924a5c;
 int * sub_1028cd70(void);
 int * g_10924628 = ((int * (*)(int))sub_1028cd70)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10291b40 size=0xa
+#include "ConVar.h"
+ConVar g_109240d0("temp_cover_enemy_x", "-12.3", 0, "");
+// END FUNCTION
