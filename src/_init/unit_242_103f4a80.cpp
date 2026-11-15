@@ -1744,3 +1744,8 @@ ServerClassReg g_10948448("CItemGJunkyardBusinesscard", &g_1094439c, g_1067f86c)
 #include "SendTable.h"
 SendTable g_1094439c;
 // END FUNCTION
+
+// FUNCTION: 0x10404fa0 size=0x5
+int sub_10404fe0(void);
+int g_10944398 = ((int (*)(int))sub_10404fe0)(0);
+// END FUNCTION
