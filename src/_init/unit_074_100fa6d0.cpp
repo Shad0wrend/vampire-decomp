@@ -46,3 +46,8 @@ ServerClassReg g_1070871c("CFuncParticle", &g_10708dfc, g_10566edc);
 #include "SendTable.h"
 SendTable g_10708dfc;
 // END FUNCTION
+
+// FUNCTION: 0x100fc760 size=0x5
+int sub_100fc7a0(void);
+int g_10708df8 = ((int (*)(int))sub_100fc7a0)(0);
+// END FUNCTION
