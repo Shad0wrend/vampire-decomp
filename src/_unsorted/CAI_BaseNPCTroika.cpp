@@ -777,6 +777,657 @@ random:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10292de0 size=0x9f8
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Vector.h"
+#include "QAngle.h"
+#include "globalvars.h"
+#include "ehandle.h"
+#include "ScopeTrace.h"
+#include <math.h>
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_105387dc[];
+
+
+class CCycleCount
+{
+public:
+	CCycleCount() { Init(); }
+	void Init() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm
+		{
+			mov		ecx, pSample
+			rdtsc
+			mov		[ecx],     eax
+			mov		[ecx+4],   edx
+		}
+	}
+	CCycleCount &operator+=(CCycleCount const &other) { m_Int64 += other.m_Int64; return *this; }
+	__int64 m_Int64;
+};
+
+class CFastTimer
+{
+public:
+	void Start() { m_Duration.Sample(); }
+	void sub_100335e0()	// CFastTimer::End (its out-of-line copy is 0x100335e0)
+	{
+		CCycleCount cnt;
+		cnt.Sample();
+		m_Duration.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+	}
+	const CCycleCount &GetDuration() const { return m_Duration; }
+	CCycleCount m_Duration;
+};
+
+class CVProfile;
+extern CVProfile *g_109f3648;
+__declspec(dllimport) void vtune(bool bEnable);
+
+class __declspec(dllimport) CVProfNode
+{
+public:
+	CVProfNode *GetSubNode(const char *pszName, int detailLevel, const char *pBudgetGroupName);
+	void EnterScope();
+	bool ExitScope();
+	const char *GetName() { return m_pszName; }
+	CVProfNode *GetParent() { return m_pParent; }
+	int GetBudgetGroupID() { return m_BudgetGroupID; }
+
+	const char *m_pszName;	// 0x00
+	CFastTimer m_Timer;	// 0x08
+	int m_nRecursions;	// 0x10
+	unsigned m_nCurFrameCalls;	// 0x14
+	CCycleCount m_CurFrameTime;	// 0x18
+	unsigned m_nPrevFrameCalls;
+	CCycleCount m_PrevFrameTime;
+	unsigned m_nTotalCalls;
+	CCycleCount m_TotalTime;
+	CCycleCount m_PeakTime;
+	CVProfNode *m_pParent;	// 0x48
+	CVProfNode *m_pChild;
+	CVProfNode *m_pSibling;
+	int m_BudgetGroupID;	// 0x54
+};
+
+class __declspec(dllimport) CVProfile
+{
+public:
+	void EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted);
+	void ExitScope();
+	void PushGroup(int nGroupID);
+	void PopGroup();
+
+	char m_bVTuneGroupsEnabled;	// 0x0000
+	char m_pad0001[3];
+	int m_nVTuneGroupID;	// 0x0004
+	int m_GroupIDStack[1024];	// 0x0008
+	int m_nGroupStackDepth;	// 0x1008
+	int m_enabled;	// 0x100c
+	bool m_fAtRoot;	// 0x1010
+	char m_pad1011[3];
+	CVProfNode *m_pCurNode;	// 0x1014
+	CVProfNode *m_pRoot;	// 0x1018
+};
+
+inline void CVProfile::PushGroup(int nGroupID)
+{
+	m_GroupIDStack[m_nGroupStackDepth] = nGroupID;
+	m_nGroupStackDepth++;
+	if (m_GroupIDStack[m_nGroupStackDepth - 2] != nGroupID && m_bVTuneGroupsEnabled && nGroupID == m_nVTuneGroupID)
+		vtune(true);
+}
+
+inline void CVProfNode::EnterScope()
+{
+	m_nCurFrameCalls++;
+	if (m_nRecursions++ == 0)
+	{
+		m_Timer.Start();
+		g_109f3648->PushGroup(m_BudgetGroupID);
+	}
+}
+
+inline bool CVProfNode::ExitScope()
+{
+	if (--m_nRecursions == 0 && m_nCurFrameCalls != 0)
+	{
+		m_Timer.sub_100335e0();
+		m_CurFrameTime += m_Timer.GetDuration();
+		g_109f3648->PopGroup();
+	}
+	return (m_nRecursions == 0);
+}
+
+inline void CVProfile::ExitScope()
+{
+	if (!m_fAtRoot || m_enabled != 0)
+	{
+		if (m_pCurNode->ExitScope())
+		{
+			m_pCurNode = m_pCurNode->GetParent();
+		}
+		m_fAtRoot = (m_pCurNode == m_pRoot);
+	}
+}
+
+class CVProfScope
+{
+public:
+	CVProfScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted)
+	{
+		g_109f3648->EnterScope(pszName, detailLevel, pBudgetGroupName, bAssertAccounted);
+	}
+	~CVProfScope()
+	{
+		g_109f3648->ExitScope();
+	}
+};
+struct CNTTimerOOL
+{
+	void sub_100335e0();
+};
+
+class CNTInnerScope
+{
+public:
+	CNTInnerScope(const char *pszName)
+	{
+		CVProfile *p = g_109f3648;
+		if (p->m_enabled != 0 || !p->m_fAtRoot)
+		{
+			if (pszName != p->m_pCurNode->GetName())
+				p->m_pCurNode = p->m_pCurNode->GetSubNode(pszName, 0, "Unaccounted");
+			p->m_pCurNode->EnterScope();
+			p->m_fAtRoot = false;
+		}
+	}
+	~CNTInnerScope()
+	{
+		CVProfile *pP = g_109f3648;
+		if (!pP->m_fAtRoot || pP->m_enabled != 0)
+		{
+			CVProfNode *pN = pP->m_pCurNode;
+			if (--pN->m_nRecursions == 0 && pN->m_nCurFrameCalls != 0)
+			{
+				((CNTTimerOOL *)&pN->m_Timer)->sub_100335e0();
+				pN->m_CurFrameTime += pN->m_Timer.GetDuration();
+				g_109f3648->PopGroup();
+			}
+			if (pN->m_nRecursions == 0)
+				pP->m_pCurNode = pP->m_pCurNode->GetParent();
+			pP->m_fAtRoot = (pP->m_pCurNode == pP->m_pRoot);
+		}
+	}
+};
+#define VPROF(name) CVProfScope VProf_(name, 0, "Unaccounted", false)
+#define AI_PROFILE_SCOPE(tag) VPROF(#tag)
+#define AI_PROFILE_SCOPE_BEGIN(tag) if (0) ; else { AI_PROFILE_SCOPE(tag)
+#define AI_PROFILE_SCOPE_END() } do {} while (0)
+
+
+class CBaseEntity;
+struct CNTEnemies
+{
+	Vector sub_102dfed0(CBaseEntity *pEnemy);
+};
+
+class CNTSlots
+{
+public:
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+	virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29();
+	virtual void s30(); virtual void s31(); virtual void s32(); virtual void s33(); virtual void s34(); virtual void s35(); virtual void s36(); virtual void s37(); virtual void s38(); virtual void s39();
+	virtual void s40(); virtual void s41(); virtual void s42(); virtual void s43(); virtual void s44(); virtual void s45(); virtual void s46(); virtual void s47(); virtual void s48(); virtual void s49();
+	virtual void s50(); virtual void s51(); virtual void s52(); virtual void s53(); virtual void s54(); virtual void s55(); virtual void s56(); virtual void s57(); virtual void s58(); virtual void s59();
+	virtual void s60(); virtual void s61(); virtual void s62(); virtual void s63(); virtual void s64(); virtual void s65(); virtual void s66(); virtual void s67(); virtual void s68(); virtual void s69();
+	virtual void s70(); virtual void s71(); virtual void s72(); virtual void s73(); virtual void s74(); virtual void s75(); virtual void s76(); virtual void s77(); virtual void s78(); virtual void s79();
+	virtual void s80(); virtual void s81(); virtual void s82(); virtual void s83(); virtual void s84(); virtual void s85(); virtual void s86(); virtual void s87(); virtual void s88(); virtual void s89();
+	virtual void s90(); virtual void s91(); virtual void s92(); virtual void s93(); virtual void s94(); virtual void s95(); virtual void s96(); virtual void s97(); virtual void s98(); virtual void s99();
+	virtual void s100(); virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105(); virtual void s106(); virtual void s107(); virtual void s108(); virtual void s109();
+	virtual void s110(); virtual void s111(); virtual void s112(); virtual void s113(); virtual void s114(); virtual void s115(); virtual void s116(); virtual void s117(); virtual void s118(); virtual void s119();
+	virtual void s120(); virtual void s121(); virtual void s122(); virtual void s123(); virtual void s124(); virtual void s125(); virtual void s126(); virtual void s127(); virtual void s128(); virtual void s129();
+	virtual void s130(); virtual void s131(); virtual void s132(); virtual void s133(); virtual void s134(); virtual void s135(); virtual void s136(); virtual void s137(); virtual void s138(); virtual void s139();
+	virtual void s140(); virtual void s141(); virtual void s142(); virtual void s143(); virtual void s144(); virtual void s145(); virtual void s146(); virtual void s147(); virtual void s148(); virtual void s149();
+	virtual void s150(); virtual void s151(); virtual void s152(); virtual void s153(); virtual void s154(); virtual void s155(); virtual void s156(); virtual void s157(); virtual void s158(); virtual void s159();
+	virtual void s160(); virtual void s161(); virtual void s162(); virtual void s163(); virtual void s164(); virtual void s165(); virtual void s166();
+	virtual CBaseEntity *GetEnemy();	// slot 167
+	virtual void s168(); virtual void s169(); virtual void s170(); virtual void s171(); virtual void s172(); virtual void s173(); virtual void s174(); virtual void s175(); virtual void s176(); virtual void s177();
+	virtual void s178(); virtual void s179(); virtual void s180(); virtual void s181(); virtual void s182(); virtual void s183(); virtual void s184(); virtual void s185(); virtual void s186(); virtual void s187();
+	virtual void s188(); virtual void s189(); virtual void s190(); virtual void s191(); virtual void s192(); virtual void s193(); virtual void s194(); virtual void s195(); virtual void s196(); virtual void s197();
+	virtual void s198(); virtual void s199(); virtual void s200();
+	virtual bool FVisible(CBaseEntity *pEnt, int mask, CBaseEntity **ppBlocker, int nOrigin);	// slot 201
+	virtual void s202(); virtual void s203(); virtual void s204(); virtual void s205(); virtual void s206(); virtual void s207(); virtual void s208(); virtual void s209(); virtual void s210(); virtual void s211();
+	virtual void s212(); virtual void s213(); virtual void s214(); virtual void s215(); virtual void s216();
+	virtual const Vector *GetAbsOrigin();	// slot 217
+	virtual void s218(); virtual void s219(); virtual void s220();
+	virtual const QAngle *GetAbsAngles();	// slot 221
+	virtual void s222(); virtual void s223(); virtual void s224(); virtual void s225(); virtual void s226(); virtual void s227(); virtual void s228(); virtual void s229(); virtual void s230(); virtual void s231();
+	virtual void s232(); virtual void s233(); virtual void s234(); virtual void s235(); virtual void s236(); virtual void s237(); virtual void s238(); virtual void s239(); virtual void s240(); virtual void s241();
+	virtual void s242(); virtual void s243(); virtual void s244(); virtual void s245(); virtual void s246(); virtual void s247(); virtual void s248(); virtual void s249(); virtual void s250(); virtual void s251();
+	virtual void s252(); virtual void s253(); virtual void s254(); virtual void s255(); virtual void s256(); virtual void s257(); virtual void s258(); virtual void s259(); virtual void s260(); virtual void s261();
+	virtual void s262(); virtual void s263(); virtual void s264(); virtual void s265(); virtual void s266(); virtual void s267(); virtual void s268(); virtual void s269(); virtual void s270(); virtual void s271();
+	virtual void s272(); virtual void s273(); virtual void s274(); virtual void s275(); virtual void s276(); virtual void s277(); virtual void s278(); virtual void s279(); virtual void s280(); virtual void s281();
+	virtual void s282(); virtual void s283(); virtual void s284(); virtual void s285(); virtual void s286(); virtual void s287(); virtual void s288(); virtual void s289(); virtual void s290(); virtual void s291();
+	virtual void s292(); virtual void s293(); virtual void s294(); virtual void s295(); virtual void s296(); virtual void s297(); virtual void s298(); virtual void s299(); virtual void s300(); virtual void s301();
+	virtual void s302(); virtual void s303(); virtual void s304(); virtual void s305(); virtual void s306(); virtual void s307(); virtual void s308(); virtual void s309(); virtual void s310(); virtual void s311();
+	virtual void UpdateCharacter(float flInterval);	// slot 312
+	virtual void s313(); virtual void s314(); virtual void s315(); virtual void s316(); virtual void s317(); virtual void s318(); virtual void s319(); virtual void s320(); virtual void s321(); virtual void s322();
+	virtual void s323(); virtual void s324(); virtual void s325(); virtual void s326(); virtual void s327(); virtual void s328(); virtual void s329(); virtual void s330(); virtual void s331(); virtual void s332();
+	virtual void s333(); virtual void s334(); virtual void s335(); virtual void s336(); virtual void s337(); virtual void s338(); virtual void s339(); virtual void s340(); virtual void s341(); virtual void s342();
+	virtual void s343(); virtual void s344(); virtual void s345(); virtual void s346(); virtual void s347(); virtual void s348(); virtual void s349(); virtual void s350(); virtual void s351(); virtual void s352();
+	virtual void s353(); virtual void s354(); virtual void s355(); virtual void s356(); virtual void s357(); virtual void s358(); virtual void s359(); virtual void s360(); virtual void s361(); virtual void s362();
+	virtual void s363(); virtual void s364(); virtual void s365(); virtual void s366(); virtual void s367(); virtual void s368(); virtual void s369(); virtual void s370(); virtual void s371(); virtual void s372();
+	virtual void s373(); virtual void s374(); virtual void s375(); virtual void s376(); virtual void s377(); virtual void s378(); virtual void s379(); virtual void s380(); virtual void s381(); virtual void s382();
+	virtual void s383(); virtual void s384(); virtual void s385(); virtual void s386(); virtual void s387(); virtual void s388(); virtual void s389(); virtual void s390(); virtual void s391(); virtual void s392();
+	virtual void s393(); virtual void s394(); virtual void s395(); virtual void s396(); virtual void s397(); virtual void s398(); virtual void s399(); virtual void s400(); virtual void s401(); virtual void s402();
+	virtual void s403(); virtual void s404(); virtual void s405(); virtual void s406(); virtual void s407(); virtual void s408(); virtual void s409(); virtual void s410(); virtual void s411(); virtual void s412();
+	virtual void s413(); virtual void s414(); virtual void s415(); virtual void s416(); virtual void s417(); virtual void s418(); virtual void s419(); virtual void s420(); virtual void s421(); virtual void s422();
+	virtual void s423(); virtual void s424(); virtual void s425(); virtual void s426(); virtual void s427(); virtual void s428(); virtual void s429(); virtual void s430(); virtual void s431();
+	virtual void RunAI(char bSkip);	// slot 432
+	virtual void s433(); virtual void s434(); virtual void s435(); virtual void s436(); virtual void s437(); virtual void s438(); virtual void s439(); virtual void s440(); virtual void s441(); virtual void s442();
+	virtual void s443(); virtual void s444(); virtual void s445(); virtual void s446(); virtual void s447(); virtual void s448(); virtual void s449(); virtual void s450(); virtual void s451(); virtual void s452();
+	virtual void s453(); virtual void s454(); virtual void s455(); virtual void s456(); virtual void s457(); virtual void s458(); virtual void s459(); virtual void s460(); virtual void s461(); virtual void s462();
+	virtual void s463(); virtual void s464(); virtual void s465(); virtual void s466(); virtual void s467(); virtual void s468(); virtual void s469(); virtual void s470(); virtual void s471(); virtual void s472();
+	virtual void s473(); virtual void s474(); virtual void s475(); virtual void s476(); virtual void s477(); virtual void s478(); virtual void s479(); virtual void s480(); virtual void s481(); virtual void s482();
+	virtual void s483(); virtual void s484(); virtual void s485(); virtual void s486(); virtual void s487(); virtual void s488(); virtual void s489(); virtual void s490(); virtual void s491(); virtual void s492();
+	virtual void s493(); virtual void s494(); virtual void s495(); virtual void s496(); virtual void s497(); virtual void s498(); virtual void s499(); virtual void s500(); virtual void s501(); virtual void s502();
+	virtual void s503(); virtual void s504(); virtual void s505(); virtual void s506(); virtual void s507(); virtual void s508(); virtual void s509(); virtual void s510(); virtual void s511(); virtual void s512();
+	virtual void s513(); virtual void s514(); virtual void s515(); virtual void s516();
+	virtual void MotorSlot517(CBaseEntity *pEnt, Vector *pPos, float a, float b, int c);	// slot 517
+	virtual void s518(); virtual void s519(); virtual void s520(); virtual void s521(); virtual void s522(); virtual void s523(); virtual void s524(); virtual void s525(); virtual void s526(); virtual void s527();
+	virtual void s528(); virtual void s529(); virtual void s530(); virtual void s531(); virtual void s532(); virtual void s533(); virtual void s534(); virtual void s535(); virtual void s536(); virtual void s537();
+	virtual void s538(); virtual void s539(); virtual void s540();
+	virtual CNTEnemies *GetEnemies();	// slot 541
+	virtual void s542(); virtual void s543(); virtual void s544(); virtual void s545(); virtual void s546(); virtual void s547(); virtual void s548(); virtual void s549(); virtual void s550(); virtual void s551();
+	virtual void s552(); virtual void s553(); virtual void s554(); virtual void s555(); virtual void s556(); virtual void s557(); virtual void s558(); virtual void s559(); virtual void s560(); virtual void s561();
+	virtual void s562(); virtual void s563(); virtual void s564(); virtual void s565();
+	virtual bool FValidateHint(void *pHint);	// slot 566
+};
+
+struct CNTConVar
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+
+struct CNTDevFlag { virtual void vfunc0(); virtual void vfunc1(); };
+
+struct CNTRandom
+{
+	virtual void v0();
+	virtual void v1();
+	virtual int RandomInt(int a, int b);
+};
+
+struct CNTSoundName
+{
+	const char *m_psz;
+	const char *Get() const { return m_psz ? m_psz : g_106b8540; }
+};
+
+struct CNTSoundEntry
+{
+	int m_id;
+	CNTSoundName m_name;
+};
+
+struct CNTSoundPlayer
+{
+	void sub_100119fa(void *pEntity, int id, int flags, float volume, float pitch);
+};
+
+extern CNTConVar *g_10924f74;
+extern CNTConVar *g_10924d24;
+extern CNTDevFlag *g_10924a6c;
+extern CNTRandom *g_1070b244;
+extern int g_1073dc3c;
+extern CNTSoundEntry **g_1073dc40;
+extern CNTSoundPlayer g_1073dc28;
+extern char g_1093408c;
+extern char g_105d0fb0[];
+extern char g_105d0ff0[];
+extern unsigned char g_10923dd7;
+extern int g_109246c0;
+
+static inline float NT_min(float a, float b)
+{
+	return a <= b ? a : b;
+}
+
+static inline int NT_LookupSound(const char *name)
+{
+	for (int i = 0; i < g_1073dc3c; i++) {
+		if (!_strcmpi(g_1073dc40[i]->m_name.Get(), name))
+			return g_1073dc40[i]->m_id;
+	}
+	return -1;
+}
+
+void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);
+char sub_101d1a90(CBaseEntity *pTarget, void *pNPC);
+void sub_101cd940(void *pEnt);
+
+
+#pragma auto_inline(off)
+namespace block_10292de0 {
+int __stdcall sub_10290660(float a)
+{
+	float d = a - gpGlobals->curtime;
+	if (d <= gpGlobals->frametime) {
+		return 1;
+	}
+	return 0;
+}
+struct CNTUnit
+{
+	char sub_102906e0();
+	int sub_10290700();
+	int sub_102906a0();
+	int sub_102906c0();
+};
+char CNTUnit::sub_102906e0()
+{
+	return 1;
+}
+int CNTUnit::sub_10290700()
+{
+	return sub_10290660(*(float *)((char *)this + 0x6250));
+}
+int CNTUnit::sub_102906a0()
+{
+	return sub_10290660(*(float *)((char *)this + 0x6244));
+}
+int CNTUnit::sub_102906c0()
+{
+	return sub_10290660(*(float *)((char *)this + 0x6248));
+}
+}
+#pragma auto_inline(on)
+#define UNIT ((block_10292de0::CNTUnit *)this)
+
+
+struct CNTTimer
+{
+	void sub_100335e0();
+};
+
+#define NT_TRACE_PUSH(fn, nm) 	g_109f3620[*g_109f3680].name = fn; 	g_109f3620[*g_109f3680].file = nm; 	g_109f3620[*g_109f3680].line = g_106b8540; 	(*g_109f3680)++;
+#define NT_TRACE_POP() (*g_109f3680)--;
+
+#define NT_EXIT_CALL() 	{ 		CVProfile *pP = g_109f3648; 		if (!pP->m_fAtRoot || pP->m_enabled != 0) 		{ 			CVProfNode *pN = pP->m_pCurNode; 			if (--pN->m_nRecursions == 0 && pN->m_nCurFrameCalls != 0) 			{ 				((CNTTimer *)&pN->m_Timer)->sub_100335e0(); 				pN->m_CurFrameTime += pN->m_Timer.GetDuration(); 				g_109f3648->PopGroup(); 			} 			if (pN->m_nRecursions == 0) 				pP->m_pCurNode = pP->m_pCurNode->GetParent(); 			pP->m_fAtRoot = (pP->m_pCurNode == pP->m_pRoot); 		} 	}
+
+#define NT_EXIT_FULL() 	{ 		CVProfile *pP = g_109f3648; 		if (!pP->m_fAtRoot || pP->m_enabled != 0) 		{ 			CVProfNode *pN = pP->m_pCurNode; 			if (--pN->m_nRecursions == 0 && pN->m_nCurFrameCalls != 0) 			{ 				pN->m_Timer.sub_100335e0(); 				pN->m_CurFrameTime += pN->m_Timer.GetDuration(); 				CVProfile *pG = g_109f3648; 				pG->m_nGroupStackDepth--; 				if (pG->m_GroupIDStack[pG->m_nGroupStackDepth] != pG->m_GroupIDStack[pG->m_nGroupStackDepth + 1] && pG->m_bVTuneGroupsEnabled && pG->m_GroupIDStack[pG->m_nGroupStackDepth + 1] == pG->m_nVTuneGroupID) 					vtune(false); 			} 			if (pN->m_nRecursions == 0) 				pP->m_pCurNode = pP->m_pCurNode->GetParent(); 			pP->m_fAtRoot = (pP->m_pCurNode == pP->m_pRoot); 		} 	}
+
+struct CNTFields
+{
+	char m_pad0000[0x17c];
+	float m_flNextThink;	// 0x17c
+	char m_pad0180[0x26c - 0x180];
+	const char *m_name;	// 0x26c
+	char m_pad0270[0x14b8 - 0x270];
+	int m_bfAINPCFlags;	// 0x14b8
+	int m_bfAINPCFlags2;	// 0x14bc
+	char m_pad14c0[0x5b84 - 0x14c0];
+	unsigned int m_flags5b84;	// 0x5b84
+	char m_pad5b88[0x5ba8 - 0x5b88];
+	EHANDLE m_h5ba8;	// 0x5ba8
+	char m_pad5bac[0x5ddc - 0x5bac];
+	void *m_pHintNode;	// 0x5ddc
+	char m_pad5de0[0x6080 - 0x5de0];
+	char m_b6080;	// 0x6080
+	char m_pad6081[0x6244 - 0x6081];
+	float m_f6244;	// 0x6244
+	float m_f6248;	// 0x6248
+	char m_pad624c[0x6254 - 0x624c];
+	float m_f6254;	// 0x6254
+	float m_f6258;	// 0x6258
+	char m_pad625c[0x6264 - 0x625c];
+	float m_f6264;	// 0x6264
+	float m_f6268;	// 0x6268
+	float m_f626c;	// 0x626c
+	float m_f6270;	// 0x6270
+	char m_pad6274[0x628c - 0x6274];
+	EHANDLE m_h628c;	// 0x628c
+	Vector m_vecForward;	// 0x6290
+	Vector m_vecRight;	// 0x629c
+	char m_pad62a8[0x62c0 - 0x62a8];
+	float m_flOccludedDelayNormal;	// 0x62c0
+	float m_flOccludedDelayCover;	// 0x62c4
+	float m_flOccludedDelay;	// 0x62c8
+	char m_pad62cc[0x6435 - 0x62cc];
+	char m_b6435;	// 0x6435
+	char m_pad6436[0x6444 - 0x6436];
+	CBaseEntity *m_p6444;	// 0x6444
+	EHANDLE m_h6448;	// 0x6448
+	char m_pad644c[0x6498 - 0x644c];
+	char m_bJumping;	// 0x6498
+	char m_pad6499[0x64c0 - 0x6499];
+	char m_b64c0;	// 0x64c0
+};
+
+struct CNTEnemyFields
+{
+	char m_pad0000[0x200];
+	int m_lifeState;	// 0x200
+};
+
+class CTroikaView_10292de0
+{
+public:
+	bool sub_10291230(float *pOut);
+	bool sub_10290720(float *pOut);
+	bool sub_10290b60(float *pOut);
+	bool sub_10290fc0(float *pOut);
+	void sub_10292500();
+	bool sub_1028fd80(char arg);
+	void sub_10291610();
+	char sub_102c0aa0();
+	void sub_102c0ca0();
+	void sub_10295ab0(float flDelay);
+	void sub_102bf820(float flFrame);
+	void sub_102bfdf0(float flFrame);
+	void sub_102bfe10(float flFrame);
+	void sub_102bf310(float flFrame);
+	float sub_10293a80();
+	void sub_1026a0f0();
+	bool sub_10280a50();
+	bool sub_10269aa0(int condition);
+	void sub_10269a20(int a);
+	char sub_1026c3d0();
+	float sub_1026c7c0();
+	void sub_1026c120(int a, char b);
+	void sub_10292dc0();
+	void sub_10292de0();
+};
+
+#define F ((CNTFields *)this)
+#define SL ((CNTSlots *)this)
+
+// TARGET: CTroikaView_10292de0::sub_10292de0
+void CTroikaView_10292de0::sub_10292de0()
+{
+	float flNormal;
+	ScopeTrace trace("CAI_BaseNPCTroika::NPCThink", this ? (F->m_name ? F->m_name : g_106b8540) : g_105387dc, g_106b8540);
+	sub_10292500();
+	F->m_bfAINPCFlags2 &= 0x7ffffffb;
+	if (F->m_b6080)
+		return;
+
+	g_109f3648->EnterScope("CAI_BaseNPC_NPCThink", 0, "Unaccounted", false);
+	CVProfile *pP;
+	CVProfNode *pN;
+
+	char bSet1 = UNIT->sub_102906c0();
+	if (bSet1)
+	{
+		ScopeTrace trace1("CAI_BaseNPCTroika::NPCThink Set1", F->m_name ? F->m_name : g_106b8540, g_106b8540);
+		F->m_f6264 = sub_10293a80();
+		CBaseEntity *pEnemy = SL->GetEnemy();
+		if (pEnemy && !((CNTEnemyFields *)pEnemy)->m_lifeState)
+		{
+			Vector vecMy = *SL->GetAbsOrigin();
+			Vector vecEnemy = *((CNTSlots *)pEnemy)->GetAbsOrigin();
+			Vector vecLKP = SL->GetEnemies()->sub_102dfed0(pEnemy);
+			F->m_f6268 = (vecMy - vecEnemy).Length();
+			F->m_f626c = fabs(vecMy.z - vecEnemy.z);
+			F->m_f6270 = (*SL->GetAbsOrigin() - vecLKP).Length();
+			if (!g_10924f74->vfunc1() && g_10924f74->m_n2c && (F->m_bfAINPCFlags2 & 0x400) == 0x400)
+				SL->MotorSlot517(pEnemy, &vecLKP, 1.0f, 0.8f, 0);
+		}
+		else
+		{
+			F->m_f6268 = 20000.0f;
+			F->m_f626c = 20000.0f;
+			F->m_f6270 = 20000.0f;
+		}
+		sub_10139610(SL->GetAbsAngles(), &F->m_vecForward, &F->m_vecRight, 0);
+		sub_10291610();
+		sub_1026a0f0();
+		if ((F->m_bfAINPCFlags & 0x4000) == 0x4000)
+			sub_10280a50();
+		if (F->m_pHintNode)
+		{
+			F->m_flOccludedDelay = F->m_flOccludedDelayCover;
+			if (!SL->FValidateHint(F->m_pHintNode) || (!F->m_b6435 && F->m_h6448.Get() == SL->GetEnemy() && (sub_10269aa0(0x2e) || sub_10269aa0(0x48))))
+			{
+				sub_10295ab0(5.0f);
+				g_10924a6c->vfunc1();
+				sub_10269a20(0x29);
+			}
+		}
+		else
+			F->m_flOccludedDelay = F->m_flOccludedDelayNormal;
+		if (F->m_p6444)
+		{
+			if (SL->FValidateHint(F->m_p6444))
+				F->m_h5ba8 = F->m_p6444;
+			else
+			{
+				F->m_h5ba8 = 0;
+				F->m_p6444 = 0;
+			}
+		}
+		if ((F->m_flags5b84 & 0x8000) == 0x8000 && g_1070b244->RandomInt(0, 0x63) < 1)
+		{
+			if (!(g_10923dd7 & 1))
+			{
+				g_10923dd7 |= 1;
+				g_109246c0 = NT_LookupSound("Scream_Death");
+			}
+			g_1073dc28.sub_100119fa(this, g_109246c0, 2, 1.0f, 1.25f);
+		}
+	}
+
+	{
+	float flUpdate = gpGlobals->curtime - F->m_f6254;
+	char bUpdate = UNIT->sub_102906a0();
+	{
+	flNormal = gpGlobals->curtime - F->m_f6258;
+	if (bSet1)
+	{
+		const char *pszName2 = F->m_name ? F->m_name : g_106b8540;
+		NT_TRACE_PUSH("CAI_BaseNPCTroika::NPCThink Set2", pszName2)
+		sub_102bf820(flNormal);
+		if (~F->m_bfAINPCFlags2 & 0x4000)
+			sub_102bfdf0(flNormal);
+		if (!g_10924d24->vfunc1() && g_10924d24->m_n2c)
+			sub_102bfe10(flNormal);
+		sub_102bf310(flNormal);
+		if (F->m_bfAINPCFlags2 & 0x20000000)
+		{
+			if (!sub_101d1a90(F->m_h628c.Get(), this) || !((CBaseEntity *)this)->vfunc201((CBaseEntity *)F->m_h628c.Get(), 0x2804091, 0, 0))
+				sub_101cd940(this);
+		}
+		if (!sub_1026c3d0())
+		{
+			if (!g_1093408c)
+				F->m_flNextThink = gpGlobals->curtime + 0.1f;
+			NT_TRACE_POP()
+			pP = g_109f3648;
+			if (!pP->m_fAtRoot || pP->m_enabled != 0)
+			{
+				pN = pP->m_pCurNode;
+				if (--pN->m_nRecursions == 0 && pN->m_nCurFrameCalls != 0)
+				{
+					((CNTTimer *)&pN->m_Timer)->sub_100335e0();
+					pN->m_CurFrameTime += pN->m_Timer.GetDuration();
+					g_109f3648->PopGroup();
+				}
+				if (pN->m_nRecursions == 0)
+					pP->m_pCurNode = pP->m_pCurNode->GetParent();
+				pP->m_fAtRoot = (pP->m_pCurNode == pP->m_pRoot);
+			}
+			return;
+		}
+		char bNormal = UNIT->sub_102906e0();
+		char bSimple = UNIT->sub_10290700();
+		{
+			CNTInnerScope vprof2(bNormal ? g_105d0fb0 : g_105d0ff0);
+			if (!sub_1028fd80(!bSimple))
+				SL->RunAI(!bSimple);
+			flNormal = sub_1026c7c0();
+			sub_1026c120(*(int *)&flNormal, !bNormal);
+		}
+		{
+		float flNext;
+		sub_10290fc0(&flNext);
+		sub_10291230(&flNext);
+		}
+		NT_TRACE_POP()
+	}
+	}
+	if (bUpdate)
+	{
+		SL->UpdateCharacter(flUpdate);
+		if (F->m_b64c0 && !sub_102c0aa0())
+			sub_102c0ca0();
+	}
+	sub_10290720(&flUpdate);
+	}
+	{
+		float flNext2;
+		sub_10290b60(&flNext2);
+	}
+	F->m_flNextThink = ((F->m_f6248 + 0.0f) < (F->m_f6244 + 0.0f)) ? F->m_f6248 : F->m_f6244;
+	if (F->m_bJumping)
+		F->m_flNextThink = gpGlobals->curtime + 0.01f;
+	sub_10292dc0();
+	pP = g_109f3648;
+	if (!pP->m_fAtRoot || pP->m_enabled != 0)
+	{
+		pN = pP->m_pCurNode;
+		if (--pN->m_nRecursions == 0 && pN->m_nCurFrameCalls != 0)
+		{
+			pN->m_Timer.sub_100335e0();
+			pN->m_CurFrameTime += pN->m_Timer.GetDuration();
+			CVProfile *pG = g_109f3648;
+			pG->m_nGroupStackDepth--;
+			if (pG->m_GroupIDStack[pG->m_nGroupStackDepth] != pG->m_GroupIDStack[pG->m_nGroupStackDepth + 1] && pG->m_bVTuneGroupsEnabled && pG->m_GroupIDStack[pG->m_nGroupStackDepth + 1] == pG->m_nVTuneGroupID)
+				vtune(false);
+		}
+		if (pN->m_nRecursions == 0)
+			pP->m_pCurNode = pP->m_pCurNode->GetParent();
+		pP->m_fAtRoot = (pP->m_pCurNode == pP->m_pRoot);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293e50 size=0x1d
 #include "CAI_BaseNPCTroika.h"
 

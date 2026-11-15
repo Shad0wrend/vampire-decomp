@@ -714,6 +714,7 @@
 0x10001ed8 func   ?sub_100ad030@CUnknown100ad030@@QAEXPAUinputdata_t@@@Z CUnknown100ad030::sub_100ad030
 0x10001edd func   ?sub_102b50b0@CAI_BaseNPCTroikaUnit54@@QAE_NH@Z CAI_BaseNPCTroikaUnit54::sub_102b50b0
 0x10001ee2 func   ?vfunc278@CPropHacking@@QAEXH@Z CPropHacking::vfunc278
+0x10001eec func   ??0CWWHandle@@QAE@PAX@Z CWWHandle::CWWHandle
 0x10001eec func   ?sub_103dbe70@CIntHolder103dbe70@@QAEPAU1@PAUCIntObj103dbe70@@@Z CIntHolder103dbe70::sub_103dbe70
 0x10001ef1 func   ?sub_100bc600@bf_write03@@QAEXHH@Z bf_write03::sub_100bc600
 0x10001ef6 func   ?sub_10250400@@YAXPAX@Z sub_10250400
@@ -1277,6 +1278,7 @@
 0x10002a6d func   ?sub_1006edb0@CUnknown1006edb0@@QAEHXZ CUnknown1006edb0::sub_1006edb0
 0x10002a72 func   ?sub_102013a0@CVStatList_t@@QAEPBDH@Z CVStatList_t::sub_102013a0
 0x10002a77 func   ?sub_10080730@CUnknown10080730@@QAEPAXXZ CUnknown10080730::sub_10080730
+0x10002a7c func   ?sub_10292de0@CTroikaView_10292de0@@QAEXXZ CTroikaView_10292de0::sub_10292de0
 0x10002a81 func   ?vfunc363@CWeaponMelee_SabbatLeaderAttack@@QAEHXZ CWeaponMelee_SabbatLeaderAttack::vfunc363
 0x10002a86 func   ?Links@?$CUtlRBTree@UCExpresserTreeEntry@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CExpresserTreeEntry,unsigned short>::Links
 0x10002a8b func   ?vfunc6@CAI_Motor@@UAEXPAVVector@@@Z CAI_Motor::vfunc6
