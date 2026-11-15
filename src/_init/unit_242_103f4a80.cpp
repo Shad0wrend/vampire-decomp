@@ -1726,3 +1726,8 @@ ServerClassReg g_1094398c("CItemGHannahsApptBook", &g_10943d6c, g_1067f85c);
 #include "SendTable.h"
 SendTable g_10943d6c;
 // END FUNCTION
+
+// FUNCTION: 0x10404cf0 size=0x5
+int sub_10404d30(void);
+int g_10943d68 = ((int (*)(int))sub_10404d30)(0);
+// END FUNCTION
