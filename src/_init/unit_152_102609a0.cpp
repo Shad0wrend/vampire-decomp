@@ -15,3 +15,8 @@ int g_1090fd64 = pcd_initial_1090fd64();
 inline int pcd_initial_1090fdb4() { return 0x450; }
 int g_1090fdb4 = pcd_initial_1090fdb4();
 // END FUNCTION
+
+// FUNCTION: 0x10264bb0 size=0xa
+#include "ConVar.h"
+ConVar g_109201a8("sk_npc_head", "2", 0);
+// END FUNCTION
