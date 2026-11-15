@@ -298707,6 +298707,140 @@ void CWeaponUnit::sub_103ed920()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ed9b0 size=0x404
+#include "Vector.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "Tier1.h"
+#include <math.h>
+struct EntList { void *sub_100290c0(void *); };
+extern EntList *g_10566458;
+struct PhysT;
+struct Link { Link *sub_1014eef0(); void sub_1014f210(void *, int, PhysT *, Vector *, Vector *); virtual void l0(); virtual int *l1(); };
+void *sub_100aa720(int);
+
+#define V1(a) virtual void v##a();
+#define V10(a) V1(a##0) V1(a##1) V1(a##2) V1(a##3) V1(a##4) V1(a##5) V1(a##6) V1(a##7) V1(a##8) V1(a##9)
+struct PhysT
+{
+	V10(a0) V10(a1) V10(a2) V10(a3)
+	virtual void GetVelocity(Vector *vel, Vector *angvel);
+};
+struct EntT
+{
+	V10(a0) V10(a1) V10(a2) V10(a3)
+	V1(b40) V1(b41) V1(b42) V1(b43) V1(b44) V1(b45) V1(b46) V1(b47) V1(b48) V1(b49)
+	V10(b5) V10(b6) V10(b7) V10(b8)
+	V1(b90) V1(b91) V1(b92) V1(b93) V1(b94) V1(b95) V1(b96) V1(b97) V1(b98)
+	virtual bool TestCollision(const Ray_t &ray, unsigned int mask, CGameTrace &tr);
+	V10(c10) V10(c11) V10(c12)
+	V1(c130) V1(c131) V1(c132) V1(c133) V1(c134) V1(c135) V1(c136)
+	virtual EntT *slot137();
+	V1(d138) V1(d139)
+	V10(d14) V10(d15) V10(d16) V10(d17) V10(d18) V10(d19) V10(d20)
+	V1(d210) V1(d211) V1(d212) V1(d213) V1(d214) V1(d215) V1(d216)
+	virtual const Vector &GetAbsOrigin();
+	virtual void s218();
+	virtual const Vector &GetAbsAngles();
+	V10(e22) V10(e23) V10(e24) V10(e25) V10(e26) V10(e27) V10(e28) V10(e29)
+	V1(e300) V1(e301) V1(e302) V1(e303) V1(e304)
+	virtual void slot305();
+	char pad[0x36c - 4];
+	PhysT *m_pPhysicsObject;
+	char pad2[0x910 - 0x370];
+	int m910;
+	int m914;
+	int *sub_100952d0(int);
+	void sub_100926e0(int, Vector *, Vector *);
+	const char *sub_100ab4f0();
+	void sub_103eded0(float f);
+	void sub_103ed9b0(EntT *other);
+};
+
+inline void RayInit(Ray_t &ray, const Vector &start, const Vector &end)
+{
+	ray.m_Delta[0] = end.x - start.x;
+	ray.m_Delta[1] = end.y - start.y;
+	ray.m_Delta[2] = end.z - start.z;
+	const Vector &cd = *(const Vector *)ray.m_Delta;
+	int nSwept = ((cd[0] * cd.x + cd.z * cd.z) + cd.y * cd.y) != 0.0f;
+	*(char *)&ray.m_IsSwept = (char)nSwept;
+	ray.m_StartOffset[0] = ray.m_StartOffset[1] = ray.m_StartOffset[2] = 0.0f;
+	ray.m_IsRay = true;
+	ray.m_Extents[0] = ray.m_Extents[1] = ray.m_Extents[2] = 0.0f;
+	ray.m_Start[0] = start.x;
+	ray.m_Start[1] = start.y;
+	ray.m_Start[2] = start.z;
+	ray.m_b32 = 0;
+	ray.m_n34 = 0;
+	ray.m_b33 = 0;
+}
+
+struct Box32 { int a[8]; };
+struct BoxSet { int a, b, hitboxindex; int *pHitbox(int i) { return (int *)((char *)this + hitboxindex) + i * 8; } };
+__forceinline int *GetBox(EntT *t, const CGameTrace &tr2)
+{
+	int *tbl = t->sub_100952d0(-1);
+	BoxSet *set = (BoxSet *)(*(int *)((char *)tbl + 0x104) + (int)tbl);
+	if (!set)
+		return 0;
+	return set->pHitbox(tr2.m_hitbox);
+}
+void EntT::sub_103ed9b0(EntT *other)
+{
+	if (g_10566458->sub_100290c0(&m910) == other)
+		return;
+	Vector vel;
+	Vector angvel;
+	PhysT *pPhys = m_pPhysicsObject;
+	pPhys->GetVelocity(&vel, &angvel);
+	float speed = FastSqrt(vel.x * vel.x + (vel.z * vel.z + vel.y * vel.y));
+	if (speed < 5.0f) {
+		slot305();
+		return;
+	}
+	if (speed < 300.0f) {
+		sub_103eded0(10.0f);
+		return;
+	}
+	EntT *tgt = other->slot137();
+	if (tgt) {
+		Vector dir = vel * 0.1f * -1.0f;
+		Ray_t ray;
+		RayInit(ray, GetAbsOrigin(), GetAbsOrigin() + dir);
+		CGameTrace tr;
+		if (!tgt->TestCollision(ray, 0x40000000, tr))
+			return;
+		void *mem = sub_100aa720(0x4d8);
+		Link *lk = mem ? ((Link *)mem)->sub_1014eef0() : 0;
+		int b = tr.m_hitbox;
+		int *tbl = tgt->sub_100952d0(-1);
+		BoxSet *set = (BoxSet *)(*(int *)((char *)tbl + 0x104) + (int)tbl);
+		if (!set)
+			b = 0;
+		else
+			{ b = b * 32 + set->hitboxindex; if (*(short *)&tbl == -1) b += (int)set; else b += (int)set; }
+		int *bone = (int *)b;
+		if (lk && bone) {
+			Vector pos, ang;
+			tgt->sub_100926e0(bone[0], &pos, &ang);
+			const Vector &org = GetAbsOrigin();
+			float dx = pos.x - org.x;
+			float dy = pos.y - org.y;
+			float dz = pos.z - org.z;
+			int *tbl2 = tgt->sub_100952d0(-1);
+			int p = *bone * 0xa0 + *(int *)((char *)tbl2 + 0xf4) + (int)tbl2;
+			g_109f3628("Attaching %s to %s: %s (dist: %f)", sub_100ab4f0(), tgt->sub_100ab4f0(), (const char *)(*(int *)p + p), (double)(fabs(dx) + fabs(dy) + fabs(dz)));
+			Vector rel = GetAbsOrigin() - pos;
+			Vector rel2 = GetAbsAngles() - ang;
+			lk->sub_1014f210(tgt, bone[0], pPhys, &rel, &rel2);
+			m914 = *lk->l1();
+		}
+	}
+	sub_103eded0(20.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eded0 size=0x3b
 #include "CBaseEntity.h"
 #include "ehandle.h"
