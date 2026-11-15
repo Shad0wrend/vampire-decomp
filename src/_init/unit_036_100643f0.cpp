@@ -31,3 +31,8 @@ ServerClassReg g_106c41c8("CTEExplosiveGunshotDecal", &g_106c4238, g_10543b30);
 #include "SendTable.h"
 SendTable g_106c4238;
 // END FUNCTION
+
+// FUNCTION: 0x10064c60 size=0x5
+int sub_10064ca0(void);
+int g_106c4234 = ((int (*)(int))sub_10064ca0)(0);
+// END FUNCTION
