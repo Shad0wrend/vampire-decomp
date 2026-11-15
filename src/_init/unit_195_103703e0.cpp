@@ -10,3 +10,8 @@ int g_1093ac38 = pcd_initial_1093ac38();
 inline int pcd_initial_1093ac3c() { return 0xffffffff; }
 int g_1093ac3c = pcd_initial_1093ac3c();
 // END FUNCTION
+
+// FUNCTION: 0x10370480 size=0x5
+int sub_103704c0(void);
+int g_1093ac58 = ((int (*)(int))sub_103704c0)(0);
+// END FUNCTION
