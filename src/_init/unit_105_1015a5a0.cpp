@@ -190,3 +190,8 @@ ServerClassReg g_10725674("CBasePlayer", &g_10725a70, g_10583860);
 #include "SendTable.h"
 SendTable g_10725a70;
 // END FUNCTION
+
+// FUNCTION: 0x10179800 size=0x5
+int sub_10179840(void);
+int g_10725a6c = ((int (*)(int))sub_10179840)(0);
+// END FUNCTION
