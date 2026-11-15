@@ -15,3 +15,8 @@ CDebugSaveRestoreOps g_106e8610;
 #include "ConVar.h"
 ConVar g_106e8680("dialog_start", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100dee60 size=0xa
+#include "ConVar.h"
+ConVar g_106e8618("dialog_line_numbers", "0", 0);
+// END FUNCTION
