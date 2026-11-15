@@ -248,3 +248,8 @@ ServerClassReg g_10948a98("CResearchBook_MG_FIN", &g_10948b5c, g_1067f320);
 #include "SendTable.h"
 SendTable g_10948b5c;
 // END FUNCTION
+
+// FUNCTION: 0x103f75f0 size=0x5
+int sub_103f7630(void);
+int g_10948b58 = ((int (*)(int))sub_103f7630)(0);
+// END FUNCTION
