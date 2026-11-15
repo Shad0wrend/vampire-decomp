@@ -205,3 +205,9 @@ ConCommand g_106cf3f4("ent_step", sub_100b0720, "When 'ent_pause' is set this wi
 void sub_100b0850(void);
 ConCommand g_106ceb94("ent_vstats", sub_100b0850, "Displays the Vampire Stats for the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100b0a40 size=0xa
+#include "ConCommand.h"
+void sub_100b0980(void);
+ConCommand g_106cfeb8("ent_takedamageself", sub_100b0980, "Damages the entity", 0, 0);
+// END FUNCTION
