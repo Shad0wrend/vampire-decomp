@@ -5,3 +5,8 @@
 #include "CAI_MemoryListSaveRestoreOps.h"
 CAI_MemoryListSaveRestoreOps g_10933ddc;
 // END FUNCTION
+
+// FUNCTION: 0x102df240 size=0x5
+int sub_102df280(void);
+int g_10933de0 = ((int (*)(int))sub_102df280)(0);
+// END FUNCTION
