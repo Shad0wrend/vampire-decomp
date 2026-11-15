@@ -1294,3 +1294,8 @@ ServerClassReg g_1094880c("CItemGBachJournal", &g_10943948, g_1067f6dc);
 #include "SendTable.h"
 SendTable g_10943948;
 // END FUNCTION
+
+// FUNCTION: 0x10400c70 size=0x5
+int sub_10400cb0(void);
+int g_10943944 = ((int (*)(int))sub_10400cb0)(0);
+// END FUNCTION
