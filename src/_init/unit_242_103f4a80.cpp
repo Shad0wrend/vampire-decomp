@@ -747,3 +747,8 @@ SendTable g_10947c2c;
 int sub_103fb8d0(void);
 int g_10947c28 = ((int (*)(int))sub_103fb8d0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103fba10 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10947db8(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_passive_durations");
+// END FUNCTION
