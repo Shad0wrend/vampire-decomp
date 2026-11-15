@@ -18,3 +18,8 @@ extern SendTable g_1070c06c;
 extern char g_10574b60[];
 ServerClassReg g_1070c08c("CHudEntity", &g_1070c06c, g_10574b60);
 // END FUNCTION
+
+// FUNCTION: 0x1012e870 size=0xa
+#include "SendTable.h"
+SendTable g_1070c06c;
+// END FUNCTION
