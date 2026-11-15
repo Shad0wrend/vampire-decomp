@@ -15426,6 +15426,7 @@
 0x10014c1d func   ?sub_100ce810@@YGEPAUEv_t@@PAXPAH@Z sub_100ce810
 0x10014c22 func   ?sub_103c6a00@@YIXPAX@Z sub_103c6a00
 0x10014c27 func   ?sub_103983d0@@YIMPAVCNPC_VMingXiao@@HH@Z sub_103983d0
+0x10014c2c func   ?sub_1038c390@CManBatV@@QAEXPAH@Z CManBatV::sub_1038c390
 0x10014c31 func   ?sub_10211f10@CPropSign@@QAEXPAVCBaseEntity@@@Z CPropSign::sub_10211f10
 0x10014c36 func   ?sub_1010b840@CFire@@QAEXM@Z CFire::sub_1010b840
 0x10014c40 func   ?vfunc103@CMessage@@UAEXXZ CMessage::vfunc103
