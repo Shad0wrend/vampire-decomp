@@ -867,3 +867,11 @@ int g_10947c08 = ((int (*)(int))sub_103fcbe0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_1094779c(&CPrecacheRegister::PrecacheFn_Other, "item_g_eldervitaepack");
 // END FUNCTION
+
+// FUNCTION: 0x103fcd70 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10946248;
+extern char g_1067f56c[];
+ServerClassReg g_10945220("CItemGCarStereo", &g_10946248, g_1067f56c);
+// END FUNCTION
