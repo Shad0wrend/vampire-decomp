@@ -15,3 +15,8 @@ ConVar g_10936de0("debug_no_damage", "0", 0, "If this is true, no one takes dama
 #include "ConVar.h"
 ConVar g_10937030("debug_feed_trace", "0", 0, "Turn this on to trace feeding in detail.");
 // END FUNCTION
+
+// FUNCTION: 0x1031a2f0 size=0xa
+#include "ConVar.h"
+ConVar g_10936d10("debug_show_melee_attack_boxes", "0", 0, "Show some attack boxes.", true, 0.0f, true, 1.0f);
+// END FUNCTION
