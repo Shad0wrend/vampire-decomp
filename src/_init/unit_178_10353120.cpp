@@ -290,3 +290,8 @@ ConVar g_10939ac0("sk_max_large_round", "0", 0);
 #include "ConVar.h"
 ConVar g_109396d0("sk_plr_dmg_buckshot", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103552c0 size=0xa
+#include "ConVar.h"
+ConVar g_10939910("sk_npc_dmg_buckshot", "0", 0);
+// END FUNCTION
