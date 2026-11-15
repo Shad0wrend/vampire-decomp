@@ -299,3 +299,9 @@ ConCommand g_10725b9c("remove_entities_by_class", sub_10180d10, "deletes all ent
 void sub_10180e70(void);
 ConCommand g_10724ec8("remove_entities_by_name", sub_10180e70, "Deletes all entities that match the give name, can use wildcards, (i.e. 'rope_*')", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10181060 size=0xa
+#include "ConCommand.h"
+void sub_10181040(void);
+ConCommand g_107259d8("remove_discipline_effects", sub_10181040, "", 0, 0);
+// END FUNCTION
