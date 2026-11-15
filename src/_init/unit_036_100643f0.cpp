@@ -26,3 +26,8 @@ extern SendTable g_106c4238;
 extern char g_10543b30[];
 ServerClassReg g_106c41c8("CTEExplosiveGunshotDecal", &g_106c4238, g_10543b30);
 // END FUNCTION
+
+// FUNCTION: 0x10064be0 size=0xa
+#include "SendTable.h"
+SendTable g_106c4238;
+// END FUNCTION
