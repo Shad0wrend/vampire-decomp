@@ -13,3 +13,8 @@ ServerClassReg g_106be568("CSteamJet", &g_106be544, g_1053ff28);
 #include "SendTable.h"
 SendTable g_106be544;
 // END FUNCTION
+
+// FUNCTION: 0x10057cb0 size=0x5
+int sub_10057cf0(void);
+int g_106be540 = ((int (*)(int))sub_10057cf0)(0);
+// END FUNCTION
