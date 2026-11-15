@@ -737,3 +737,8 @@ extern SendTable g_10947c2c;
 extern char g_1067f50c[];
 ServerClassReg g_10944de0("COccultPassiveDurations", &g_10947c2c, g_1067f50c);
 // END FUNCTION
+
+// FUNCTION: 0x103fb810 size=0xa
+#include "SendTable.h"
+SendTable g_10947c2c;
+// END FUNCTION
