@@ -35,3 +35,11 @@ SendTable g_106cf1d4;
 int sub_1009a500(void);
 int g_106cf1d0 = ((int (*)(int))sub_1009a500)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1009a5f0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_106cec14;
+extern char g_106cff58[];
+ServerClassReg g_106cfe10("CBaseEntity", &g_106cec14, g_106cff58);
+// END FUNCTION
