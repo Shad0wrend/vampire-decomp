@@ -15,3 +15,8 @@ ConVar g_1093af60("gargoyle_obstruction_lookahead", "24", 0, "Set this var to ov
 #include "ConVar.h"
 ConVar g_1093b050("gargoyle_obstruction_z", "75", 0, "Set this var to override the z push for obstructing physics objects.");
 // END FUNCTION
+
+// FUNCTION: 0x10377880 size=0xa
+#include "ConVar.h"
+ConVar g_1093afa8("gargoyle_obstruction_scalar", "5", 0, "Set this var to override the forward push for obstructing physics objects.");
+// END FUNCTION
