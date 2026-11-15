@@ -8,3 +8,8 @@ extern SendTable g_106bfacc;
 extern char g_10541248[];
 ServerClassReg g_106bfaec("CTEBeamPoints", &g_106bfacc, g_10541248);
 // END FUNCTION
+
+// FUNCTION: 0x1005c250 size=0xa
+#include "SendTable.h"
+SendTable g_106bfacc;
+// END FUNCTION
