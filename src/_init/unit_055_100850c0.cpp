@@ -406,3 +406,9 @@ ConCommand g_106c8fd4("npc_relationship_table", sub_10089fc0, "Dumps a table of 
 void sub_1008a520(void);
 ConCommand g_106c9498("npc_set_free_knowledge_duration", sub_1008a520, "Sets the NPC's free knowledge duration.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x1008a640 size=0xa
+#include "ConCommand.h"
+void sub_1008a6d0(void);
+ConCommand g_106c8c70("npc_door_test", sub_1008a6d0, "Gets a door's open data and draws info about it.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at.", 0, 0);
+// END FUNCTION
