@@ -130,3 +130,9 @@ ConVar g_106c8d38("npc_create_equipment", "", 0);
 void sub_10086380(void);
 ConCommand g_106c8f5c("npc_create", sub_10086380, "Creates an NPC of the given type where the player is looking (if the given NPC can actually stand at that location).  Note that this only works for npc classes that are already in the world.  You can not create an entity that doesn't have an instance in the level.\n\tArguments:\t{npc_class_name}", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10086dc0 size=0xa
+#include "ConCommand.h"
+void sub_10086910(void);
+ConCommand g_106c8c98("npc_create_aimed", sub_10086910, "Creates an NPC aimed away from the player of the given type where the player is looking (if the given NPC can actually stand at that location).  Note that this only works for npc classes that are already in the world.  You can not create an entity that doesn't have an instance in the level.\n\tArguments:\t{npc_class_name}", 0, 0);
+// END FUNCTION
