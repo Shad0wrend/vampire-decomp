@@ -285763,6 +285763,49 @@ int CNPC_VVampireBoss::sub_103c6a90(int *pBalance, int limit, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c6b70 size=0x1f3
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "Vector.h"
+
+__forceinline void VSubFI(const Vector &a, const Vector &b, Vector &c)
+{
+	c.x = a.x - b.x;
+	c.y = a.y - b.y;
+	c.z = a.z - b.z;
+}
+struct VF : Vector
+{
+	Vector operator-(const Vector &v) const { Vector res; VSubFI(*this, v, res); return res; }
+};
+#define SUB(a, b) ((const VF &)(a) - (b))
+
+inline Vector AddV(Vector v, const Vector &a) { v += a; return v; }
+// TARGET: sub_103c6b70
+float __stdcall sub_103c6b70(const Vector &a, const Vector &b, const Vector &p)
+{
+	ScopeTrace trace("CNPC_VVampireBoss::DistToSegment", g_106b8540);
+	Vector dir = SUB(b, a);
+	float lenSq = dir.LengthSqr();
+	if (lenSq < 1e-5f)
+		return 0.0f;
+	Vector ap = SUB(p, a);
+	float t = DotProduct(ap, dir) / lenSq;
+	if (t <= 0.0f)
+		return ap.Length();
+	if (t >= 1.0f)
+		return SUB(p, b).Length();
+	return SUB(p, AddV(dir * t, a)).Length();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c6df0 size=0x69
 #include "CNPC_VVampireBoss.h"
 

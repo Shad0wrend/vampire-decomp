@@ -10053,6 +10053,7 @@
 0x1000de72 func   ?vfunc384@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc384
 0x1000de77 func   ?vfunc103@CPhysImpact@@UAEXXZ CPhysImpact::vfunc103
 0x1000de81 func   ?sub_1012d4e0@CUnknown1012cf50@@QAEXH@Z CUnknown1012cf50::sub_1012d4e0
+0x1000de86 func   ?sub_103c6b70@@YGMABVVector@@00@Z sub_103c6b70
 0x1000de8b func   ?sub_10367330@@YAHXZ sub_10367330
 0x1000de90 func   ?vfunc0@CTraitEffectsListSaveDataOps@@UAEXPAUCTraitEffectsListField@@PAVCSave@@@Z CTraitEffectsListSaveDataOps::vfunc0
 0x1000de95 func   _item_g_bertrams_cd item_g_bertrams_cd
