@@ -988,3 +988,8 @@ ServerClassReg g_10947af0("CItemGGhostPendant", &g_109477e4, g_1067f5cc);
 #include "SendTable.h"
 SendTable g_109477e4;
 // END FUNCTION
+
+// FUNCTION: 0x103fdec0 size=0x5
+int sub_103fdf00(void);
+int g_109477e0 = ((int (*)(int))sub_103fdf00)(0);
+// END FUNCTION
