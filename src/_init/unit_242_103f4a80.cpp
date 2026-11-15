@@ -74,3 +74,11 @@ int g_10947130 = ((int (*)(int))sub_103f59f0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10948554(&CPrecacheRegister::PrecacheFn_Other, "item_m_wallet");
 // END FUNCTION
+
+// FUNCTION: 0x103f5b80 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10943d2c;
+extern char g_1067f234[];
+ServerClassReg g_109483e8("CItemMMoneyClip", &g_10943d2c, g_1067f234);
+// END FUNCTION
