@@ -26,3 +26,8 @@ extern SendTable g_106c6b78;
 extern char g_10545660[];
 ServerClassReg g_106c6798("CTETParticleAttached", &g_106c6b78, g_10545660);
 // END FUNCTION
+
+// FUNCTION: 0x10069be0 size=0xa
+#include "SendTable.h"
+SendTable g_106c6b78;
+// END FUNCTION
