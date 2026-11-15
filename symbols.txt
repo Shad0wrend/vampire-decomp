@@ -15141,6 +15141,7 @@
 0x100146d2 func   ?sub_1036fce0@@YAXXZ sub_1036fce0
 0x100146d7 func   ?sub_102e0730@CUnknown102e0730@@QAEXXZ CUnknown102e0730::sub_102e0730
 0x100146dc func   ?sub_10210cb0@@YAHXZ sub_10210cb0
+0x100146e1 func   ?vfunc259@CAI_BaseNPCTroika@@UAEXPAUanimevent_t@@@Z CAI_BaseNPCTroika::vfunc259
 0x100146e6 func   ?sub_1024a310@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_1024a310
 0x100146eb func   ?vfunc0@CTEShatterSurface@@UAEPAUServerClass@@XZ CTEShatterSurface::vfunc0
 0x100146f0 func   ?sub_100da230@@YAXXZ sub_100da230

@@ -3122,6 +3122,210 @@ bool CAI_BaseNPCTroika::sub_1029b180(void *pOtherArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029b290 size=0x724
+#include "CAI_BaseNPCTroika.h"
+#include "animevent_t.h"
+#include "CBaseCombatWeapon.h"
+#include "CBaseCombatCharacter.h"
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "CEntitySoundOriginView.h"
+#include "engineserver.h"
+#include "engineiface.h"
+#include "globalvars.h"
+#include "Tier1.h"
+#include "CRecipientFilter.h"
+#include "CPASAttenuationFilter.h"
+#include "CVDmg_t.h"
+#include "CVStatList_t.h"
+#include <stdio.h>
+
+struct CAnimEdictView
+{
+	char m_pad0000[0x2e0];
+	int m_pEdict2e0;
+	char m_pad02e4[0x6f0 - 0x2e4];
+	int m_n6f0;
+	char m_pad06f4[4];
+	float m_f6f8;
+};
+
+struct CAnimCharCall
+{
+	void sub_10106580(const char *psz, int a, float b, float c, float d, float e);
+	char sub_10336920();	// IsMale
+};
+
+struct CHEInfo
+{
+	char m_data[0x4c];
+	void sub_101c26d0(void *pA, void *pB, float f, int a, int b, void *pDmg, int c);
+	void sub_101c2a90(int a);
+};
+
+struct CHEFileSystem
+{
+	virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void f4();
+	virtual void f5(); virtual void f6(); virtual void f7(); virtual void f8();
+	virtual bool FileExists(const char *pszName, const char *pszPathID);	// slot 9
+};
+extern CHEFileSystem *g_1070b238;
+
+#define HV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define HV100(p) HV10(p##0) HV10(p##1) HV10(p##2) HV10(p##3) HV10(p##4) HV10(p##5) HV10(p##6) HV10(p##7) HV10(p##8) HV10(p##9)
+
+struct CHESlots
+{
+	HV100(a) HV100(b) HV100(c) HV100(d)
+	virtual void e0(); virtual void e1(); virtual void e2();
+	virtual void vfunc403();
+};
+
+const char *sub_101d3730(const char *pszFormat, ...);
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+extern CVStatList_t g_109f0b40;
+void __cdecl sub_10012a8a();
+__forceinline CVStatList_t *FindStatList(CVStatListSet *pSet, int type)
+{
+	for (int i = 0; i < pSet->m_nLists; i++) {
+		if (pSet->m_pLists[i]->m_field10 == type)
+			return pSet->m_pLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		g_109f0b40.CVStatList_t::CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+static inline const float *HEVecPtr(const Vector &v) { return &v.x; }
+
+void CAI_BaseNPCTroika::vfunc259(animevent_t *pEvent)
+{
+	int *pTask = sub_1028a150();
+	switch (pEvent->event)
+	{
+	case 0x7e5:
+		sub_10293d70();
+		return;
+	case 0x7f8:
+	{
+		CBaseCombatWeapon *pWeapon = dynamic_cast<CBaseCombatWeapon *>((CBaseEntity *)EHandle_Get(*(unsigned int *)((char *)this + 0x5ce4)));
+		if (pWeapon)
+		{
+			if (pWeapon->sub_102521f0())
+			{
+				vfunc448((int)"Weapon in use by someone else");
+				return;
+			}
+			if (!vfunc382(pWeapon))
+			{
+				vfunc448((int)"Can't use this weapon type");
+				return;
+			}
+			vfunc383(pWeapon, 0);
+			sub_10273e80(0);
+			return;
+		}
+		vfunc448((int)"Weapon stolen by someone else");
+		return;
+	}
+	case 0x7d5:
+	{
+		const char *pszSample = pEvent->options;
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		int ed = ((CAnimEdictView *)this)->m_pEdict2e0;
+		int entindex = engine->vfunc35(ed);
+		enginesound->vfunc2(&filter, entindex, 0, pszSample, 1.0f, 0x42, 0, 100,
+			(const float *)&((CEntitySoundOriginView *)this)->GetSoundEmissionOrigin(), 0, 1, 0);
+		return;
+	}
+	case 0x1038:
+	case 0x1039:
+	{
+		if (!pTask || *pTask != 0xb4)
+			return;
+		int nChannel = (pEvent->event == 0x1038) ? 4 : 2;
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		int ed = ((CAnimEdictView *)this)->m_pEdict2e0;
+		int entindex = engine->vfunc35(ed);
+		enginesound->vfunc11(&filter, entindex, nChannel, 0, 0, 0x24, 100,
+			(const float *)&((CEntitySoundOriginView *)this)->GetSoundEmissionOrigin(), 0, 1, 0);
+		return;
+	}
+	case 0x1036:
+	case 0x1037:
+	case 0x103a:
+	case 0x103b:
+	{
+		if (!pTask || *pTask != 0xb4)
+			return;
+		const char *pszGender = ((CAnimCharCall *)this)->sub_10336920() ? "male" : "female";
+		const char *pszSample;
+		if (g_1070b238->FileExists(sub_101d3730("sound/Interesting_places/%s/%s.wav", pszGender, pEvent->options), 0))
+			pszSample = sub_101d3730("Interesting_places/%s/%s.wav", pszGender, pEvent->options);
+		else
+			pszSample = sub_101d3730("Interesting_places/%s.wav", pEvent->options);
+		int nChannel = (pEvent->event == 0x1036 || pEvent->event == 0x103a) ? 4 : 2;
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+		int ed = ((CAnimEdictView *)this)->m_pEdict2e0;
+		int entindex = engine->vfunc35(ed);
+		enginesound->vfunc2(&filter, entindex, nChannel, pszSample, 1.0f, 0x42, 0x180, 100,
+			(const float *)&((CEntitySoundOriginView *)this)->GetSoundEmissionOrigin(), 0, 1, 0);
+		return;
+	}
+	case 0x7d6:
+	{
+		CVDmg_t dmg;
+		dmg.sub_101fa960((CVDmgSource_t *)this);
+		dmg.m_field04 = 1;
+		dmg.m_field0c = 1;
+		CHEInfo info;
+		info.sub_101c26d0(0, EHandle_Get(*(unsigned int *)((char *)this + 0x628c)), 1.0f, 0, 0, &dmg, -1);
+		info.sub_101c2a90(1);
+		FindStatList(CVStatListSet::Of(this), 0)->sub_10200a70(0xf, 0x11);
+		vfunc144((int)&info);
+		((CHESlots *)this)->vfunc403();
+		dmg.sub_101fa680();
+		return;
+	}
+	case 0x80c:
+	{
+		float fRate = 1.0f, fMin = 0.2f, fMax = 0.2f, fExtra;
+		char szName[0x40];
+		if (sscanf(pEvent->options, "%s %f %f %f", szName, &fRate, &fMin, &fMax) <= 1)
+			return;
+		if (!(fRate > 0.0f))
+			return;
+		if (fMin + fMax > fRate)
+		{
+			float t = fRate / (fMin + fMax);
+			fMin *= t;
+			fMax *= t;
+		}
+		float x = fRate - (fMin + fMax);
+		if (x > 0.0f)
+			fExtra = x;
+		else
+			fExtra = 0.0f;
+		((CAnimCharCall *)this)->sub_10106580(szName, 0, fMin, fExtra, fMax, 1.0f);
+		return;
+	}
+	case 0x80d:
+	{
+		if (pEvent->options == 0 || pEvent->options[0] == 0)
+			return;
+		CAnimEdictView *pView = (CAnimEdictView *)this;
+		float fDur = sub_10091080(pView->m_n6f0) * pView->m_f6f8 + 0.1;
+		((CAnimCharCall *)this)->sub_10106580(pEvent->options, 0, 0, fDur, 0, 1.0f);
+		return;
+	}
+	}
+	CAI_BaseNPC::vfunc259(pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029c010 size=0x39d
 #include "CAI_BaseNPCTroika.h"
 #include "CAI_BaseNPC.h"
