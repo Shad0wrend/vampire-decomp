@@ -20,3 +20,8 @@ int g_1090fdb4 = pcd_initial_1090fdb4();
 #include "ConVar.h"
 ConVar g_109201a8("sk_npc_head", "2", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10264c40 size=0xa
+#include "ConVar.h"
+ConVar g_1090fe70("sk_npc_chest", "1", 0);
+// END FUNCTION
