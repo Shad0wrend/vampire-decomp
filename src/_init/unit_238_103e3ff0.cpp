@@ -100,3 +100,8 @@ extern SendTable g_10940e28;
 extern char g_10669d18[];
 ServerClassReg g_10942560("CWeaponMelee_Claws_Protean4", &g_10940e28, g_10669d18);
 // END FUNCTION
+
+// FUNCTION: 0x103e4f60 size=0xa
+#include "SendTable.h"
+SendTable g_10940e28;
+// END FUNCTION
