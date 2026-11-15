@@ -13,3 +13,8 @@ ServerClassReg g_1072cc90("CTEParticleSystem", &g_1072cc74, g_1059cb80);
 #include "SendTable.h"
 SendTable g_1072cc74;
 // END FUNCTION
+
+// FUNCTION: 0x101c3080 size=0x5
+int sub_101c30c0(void);
+int g_1072cc70 = ((int (*)(int))sub_101c30c0)(0);
+// END FUNCTION
