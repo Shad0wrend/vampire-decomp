@@ -13,3 +13,8 @@ ServerClassReg g_1070a7d4("CFunc_LOD", &g_1070a7f0, g_105702d8);
 #include "SendTable.h"
 SendTable g_1070a7f0;
 // END FUNCTION
+
+// FUNCTION: 0x101147e0 size=0x5
+int sub_10114820(void);
+int g_1070a7ec = ((int (*)(int))sub_10114820)(0);
+// END FUNCTION
