@@ -5,3 +5,8 @@
 inline int pcd_initial_1093a528() { return 0x450; }
 int g_1093a528 = pcd_initial_1093a528();
 // END FUNCTION
+
+// FUNCTION: 0x10360260 size=0xa
+#include "ConVar.h"
+ConVar g_1093a590("asianvamp_force_jump_up", "0", 0);
+// END FUNCTION
