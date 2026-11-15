@@ -18,3 +18,8 @@ extern SendTable g_1089a4f8;
 extern char g_105c5bb8[];
 ServerClassReg g_1088ae94("CBaseCombatWeapon", &g_1089a4f8, g_105c5bb8);
 // END FUNCTION
+
+// FUNCTION: 0x10256770 size=0x5
+int * sub_102567b0(void);
+int * g_1089a518 = ((int * (*)(int))sub_102567b0)(0);
+// END FUNCTION
