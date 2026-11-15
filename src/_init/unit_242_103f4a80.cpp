@@ -507,3 +507,8 @@ extern SendTable g_10945714;
 extern char g_1067f46c[];
 ServerClassReg g_10947180("COccultFrenzy", &g_10945714, g_1067f46c);
 // END FUNCTION
+
+// FUNCTION: 0x103f9a10 size=0xa
+#include "SendTable.h"
+SendTable g_10945714;
+// END FUNCTION
