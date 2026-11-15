@@ -140,3 +140,9 @@ ConCommand g_106e7708("blood", sub_100d51b0, "Sets the local player's blood pool
 void sub_100d5360(void);
 ConCommand g_106e79f0("faith", sub_100d5360, "Sets the local player's faith points", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d5620 size=0xa
+#include "ConCommand.h"
+void sub_100d5510(void);
+ConCommand g_106e7520("vfeats", sub_100d5510, "Lists the local player's Vampire Feat Values", 0, 0);
+// END FUNCTION
