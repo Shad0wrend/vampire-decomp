@@ -330,3 +330,11 @@ ConVar g_10939270("sk_npc_dmg_grenade", "0", 0);
 #include "ConVar.h"
 ConVar g_109388f0("sk_max_grenade", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10355b00 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10939058;
+extern char g_1062772c[];
+ServerClassReg g_10938a9c("CCorpse", &g_10939058, g_1062772c);
+// END FUNCTION
