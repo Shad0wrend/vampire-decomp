@@ -288,3 +288,8 @@ extern SendTable g_10924338;
 extern char g_105d174c[];
 ServerClassReg g_109248d4("CAI_BaseNPCTroika", &g_10924338, g_105d174c);
 // END FUNCTION
+
+// FUNCTION: 0x102c58b0 size=0xa
+#include "SendTable.h"
+SendTable g_10924338;
+// END FUNCTION
