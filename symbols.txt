@@ -155,6 +155,7 @@
 0x10001316 func   ?vfunc72@CPhysicsCannister@@QAE_NH@Z CPhysicsCannister::vfunc72
 0x1000131b func   ?sub_100eb870@CUnknown100eb870@@QAEXPBD@Z CUnknown100eb870::sub_100eb870
 0x10001320 func   ?vfunc79@CSprite@@UAEHXZ CSprite::vfunc79
+0x10001325 func   ?sub_1026b580@CAI_BaseNPC@@QAEXHPAVVector@@@Z CAI_BaseNPC::sub_1026b580
 0x1000132a func   ?Links@?$CUtlRBTree@UCRBTree12Entry_10194f30@@G@@QBEABULinks_t@1@G@Z CUtlRBTree<CRBTree12Entry_10194f30,unsigned short>::Links
 0x10001334 func   ?vfunc82@CEnvBeam@@UAEPAUdatamap_t@@XZ CEnvBeam::vfunc82
 0x10001339 func   ?sub_1034d050@CNPCMakerUnit1034d050@@QAEXAAUCInputData1034d050@@@Z CNPCMakerUnit1034d050::sub_1034d050

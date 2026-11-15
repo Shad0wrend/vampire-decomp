@@ -200880,6 +200880,38 @@ CSound *CEarView1026aeb0::sub_1026aeb0(int iType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026b580 size=0x1b0
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CAI_BaseNPC.h"
+#include "CBaseCombatCharacter.h"
+#include "QAngle.h"
+
+void sub_10139970(const Vector &v, QAngle &a);
+void sub_10139550(const QAngle &a, Vector *out);
+
+// TARGET: CAI_BaseNPC::sub_1026b580
+void CAI_BaseNPC::sub_1026b580(int nDir, Vector *pOut)
+{
+	Vector vA, vB;
+	((CBaseCombatCharacter *)this)->sub_10331da0(&vA, &vB);
+	QAngle ang;
+	Vector v = *(Vector *)g_1070d9d0;
+	sub_10139970(vB, ang);
+	if (nDir == 1) { v.x = v.x + 20.0f; v.y = v.y + 20.0f; v.z = *(volatile float *)&v.z; }
+	else if (nDir == 2) { v.x = v.x + 20.0f; v.y = *(volatile float *)&v.y; v.z = *(volatile float *)&v.z; }
+	else if (nDir == 3) { v.x = v.x + 20.0f; v.y = v.y - 20.0f; v.z = *(volatile float *)&v.z; }
+	else if (nDir == 4) { v.x = *(volatile float *)&v.x; v.y = v.y + 20.0f; v.z = *(volatile float *)&v.z; }
+	else if (nDir == 5) { v.x = *(volatile float *)&v.x; v.y = *(volatile float *)&v.y; v.z = *(volatile float *)&v.z; }
+	else if (nDir == 6) { v.x = *(volatile float *)&v.x; v.y = v.y - 20.0f; v.z = *(volatile float *)&v.z; }
+	else if (nDir == 7) { v.x = v.x - 20.0f; v.y = v.y + 20.0f; v.z = *(volatile float *)&v.z; }
+	else if (nDir == 8) { v.x = v.x - 20.0f; v.y = *(volatile float *)&v.y; v.z = *(volatile float *)&v.z; }
+	else if (nDir == 9) { v.x = v.x - 20.0f; v.y = v.y - 20.0f; v.z = *(volatile float *)&v.z; }
+	Vector fwd;
+	sub_10139550(*(QAngle *)&v.sub_1026b7a0(*(Vector *)&ang), &fwd);
+	pOut->sub_1003e4b0(vA.sub_1011e060(fwd.sub_100a19c0(25.0f)));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026b7a0 size=0x43
 #include "Vector.h"
 Vector Vector::sub_1026b7a0(const Vector &v) const
