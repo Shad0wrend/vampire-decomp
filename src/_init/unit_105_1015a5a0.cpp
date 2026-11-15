@@ -121,3 +121,8 @@ ConVar g_10725040("rat_feed_arc", "90", 0);
 #include "ConVar.h"
 ConVar g_10725ae0("rat_feed_radius", "120", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10169840 size=0xa
+#include "ConVar.h"
+ConVar g_10725848("scarednpc_time", "180.0", 0);
+// END FUNCTION
