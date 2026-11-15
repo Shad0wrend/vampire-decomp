@@ -348,3 +348,8 @@ ServerClassReg g_10751c2c("CWeaponRanged_MingXiao_Spit", &g_1075196c, g_105bf8f8
 #include "SendTable.h"
 SendTable g_1075196c;
 // END FUNCTION
+
+// FUNCTION: 0x10237820 size=0x5
+int sub_10237860(void);
+int g_10751968 = ((int (*)(int))sub_10237860)(0);
+// END FUNCTION
