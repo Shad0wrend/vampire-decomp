@@ -1091,3 +1091,8 @@ extern SendTable g_109469e4;
 extern char g_1067f62c[];
 ServerClassReg g_10944fe4("CItemGLillyPhoto", &g_109469e4, g_1067f62c);
 // END FUNCTION
+
+// FUNCTION: 0x103fee60 size=0xa
+#include "SendTable.h"
+SendTable g_109469e4;
+// END FUNCTION
