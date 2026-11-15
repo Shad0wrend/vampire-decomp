@@ -55,3 +55,8 @@ ConVar g_1070ad10("mp_falldamage", "0", 4);
 #include "ConVar.h"
 ConVar g_1070ade8("mp_weaponstay", "0", 4);
 // END FUNCTION
+
+// FUNCTION: 0x10117d80 size=0xa
+#include "ConVar.h"
+ConVar g_1070a9f8("mp_forcerespawn", "1", 4);
+// END FUNCTION
