@@ -146,3 +146,9 @@ ConCommand g_106e79f0("faith", sub_100d5360, "Sets the local player's faith poin
 void sub_100d5510(void);
 ConCommand g_106e7520("vfeats", sub_100d5510, "Lists the local player's Vampire Feat Values", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d57d0 size=0xa
+#include "ConCommand.h"
+void sub_100d56b0(void);
+ConCommand g_106e7824("ent_vfeats", sub_100d56b0, "Lists the Entity's Vampire Feat Values", 0, 0);
+// END FUNCTION
