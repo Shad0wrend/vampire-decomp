@@ -245,3 +245,8 @@ ConVar g_10924e40("temp_cover_hint_y", "25.6", 0, "");
 #include "ConVar.h"
 ConVar g_10924550("temp_cover_npc_x", "-83.2", 0, "");
 // END FUNCTION
+
+// FUNCTION: 0x10291e10 size=0xa
+#include "ConVar.h"
+ConVar g_10924598("temp_cover_npc_y", "57.6", 0, "");
+// END FUNCTION
