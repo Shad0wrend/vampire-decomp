@@ -275,3 +275,9 @@ ConCommand g_10725b2c("teleport_player", sub_101803a0, "Teleports the player to 
 void sub_101807d0(void);
 ConCommand g_107250a4("shaky_hands", sub_101807d0, "", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10180a60 size=0xa
+#include "ConCommand.h"
+void sub_101809e0(void);
+ConCommand g_1072591c("infobar_message", sub_101809e0, "", 0, 0);
+// END FUNCTION
