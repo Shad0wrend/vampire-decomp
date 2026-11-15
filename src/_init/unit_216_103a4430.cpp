@@ -20,3 +20,8 @@ ConVar g_1093c1f0("sabbat_gunman_speed_scalar", "3.0", 0, "Determines how much f
 #include "ConVar.h"
 ConVar g_1093c100("sabbat_gunman_speed_threshold", "0.1", 0, "Determines how fast the guy needs to be going to scale the speed.");
 // END FUNCTION
+
+// FUNCTION: 0x103a4ed0 size=0xa
+#include "ConVar.h"
+ConVar g_1093c148("sabbat_gunman_speed_trails", "3", 0, "Determines what level of motion trails to use for a speedy guy.");
+// END FUNCTION
