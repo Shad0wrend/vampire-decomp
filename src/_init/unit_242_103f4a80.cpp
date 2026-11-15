@@ -499,3 +499,11 @@ int g_10948844 = ((int (*)(int))sub_103f97d0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_1094523c(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_hacking");
 // END FUNCTION
+
+// FUNCTION: 0x103f9960 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10945714;
+extern char g_1067f46c[];
+ServerClassReg g_10947180("COccultFrenzy", &g_10945714, g_1067f46c);
+// END FUNCTION
