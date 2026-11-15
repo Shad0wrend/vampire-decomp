@@ -120,3 +120,8 @@ SendTable g_109434c8;
 int sub_103f3a70(void);
 int g_109434c4 = ((int (*)(int))sub_103f3a70)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f3bb0 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_1094322c(&CPrecacheRegister::PrecacheFn_Other, "item_a_hvy_leather");
+// END FUNCTION
