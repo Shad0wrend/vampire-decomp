@@ -45,3 +45,8 @@ ConVar g_1093f738("werewolf_show_debug", "0", 0);
 #include "ConVar.h"
 ConVar g_1093f858("werewolf_fastbreak_chance", "40", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103c83c0 size=0xa
+#include "ConVar.h"
+ConVar g_1093d410("werewolf_teleport_out_time", "4.0", 0);
+// END FUNCTION
