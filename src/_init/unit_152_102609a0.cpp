@@ -25,3 +25,8 @@ ConVar g_109201a8("sk_npc_head", "2", 0);
 #include "ConVar.h"
 ConVar g_1090fe70("sk_npc_chest", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10264cd0 size=0xa
+#include "ConVar.h"
+ConVar g_109204f0("sk_npc_stomach", "1", 0);
+// END FUNCTION
