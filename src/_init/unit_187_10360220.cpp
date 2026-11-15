@@ -10,3 +10,8 @@ int g_1093a528 = pcd_initial_1093a528();
 #include "ConVar.h"
 ConVar g_1093a590("asianvamp_force_jump_up", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10360470 size=0x5
+int sub_103604b0(void);
+int g_1093a5d4 = ((int (*)(int))sub_103604b0)(0);
+// END FUNCTION
