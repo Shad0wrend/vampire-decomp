@@ -6,3 +6,9 @@
 void sub_10233ba0(void);
 ConCommand g_1075180c("wc_create", sub_10233ba0, "When in WC edit mode, creates a node where the player is looking if a node is allowed at that location for the currently selected hull size (see ai_next_hull)", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10233cd0 size=0xa
+#include "ConCommand.h"
+void sub_10233c80(void);
+ConCommand g_107518ac("wc_destroy", sub_10233c80, "When in WC edit mode, destroys the node that the player is nearest to looking at.  (The node will be highlighted by a red box).", 0, 0);
+// END FUNCTION
