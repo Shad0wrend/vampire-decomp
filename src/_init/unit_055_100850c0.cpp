@@ -292,3 +292,9 @@ ConCommand g_106c913c("sound_show_deafzone", sub_10088890, "Shows NPC deaf zones
 void sub_100889b0(void);
 ConCommand g_106c9164("sound_show_player_only", sub_100889b0, "Only show sounds if the player is the owner.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10088aa0 size=0xa
+#include "ConCommand.h"
+void sub_10088a80(void);
+ConCommand g_106c9380("npc_show_stats", sub_10088a80, "Show some stats on entity run time (especially NPCs)", 0, 0);
+// END FUNCTION
