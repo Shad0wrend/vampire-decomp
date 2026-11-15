@@ -276,3 +276,8 @@ SendTable g_10947224;
 int sub_103f7930(void);
 int g_10947220 = ((int (*)(int))sub_103f7930)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f7a70 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10947b2c(&CPrecacheRegister::PrecacheFn_Other, "item_p_research_hg_firearms");
+// END FUNCTION
