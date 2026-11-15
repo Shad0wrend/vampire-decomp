@@ -79,3 +79,9 @@ int * g_106cf17c = ((int * (*)(int))sub_100a22f0)(0);
 void sub_100ae320(void);
 ConCommand g_106ceb18("ent_name", sub_100ae320, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100ae4f0 size=0xa
+#include "ConCommand.h"
+void sub_100ae450(void);
+ConCommand g_106cf180("ent_text", sub_100ae450, "Displays text debugging information about the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
+// END FUNCTION
