@@ -55,3 +55,8 @@ ConVar g_1093d410("werewolf_teleport_out_time", "4.0", 0);
 #include "ConVar.h"
 ConVar g_1093d6f0("werewolf_teleport_in_time", "2.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103c84e0 size=0xa
+#include "ConVar.h"
+ConVar g_1093d458("werewolf_force_teleport_in_time", "25.0", 0);
+// END FUNCTION
