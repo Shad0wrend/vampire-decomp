@@ -33,3 +33,11 @@ int g_10943274 = ((int (*)(int))sub_103f2de0)(0);
 int sub_103f2f10(void);
 int g_10943224 = ((int (*)(int))sub_103f2f10)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f2f80 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10943388;
+extern char g_1067ea1c[];
+ServerClassReg g_109434a0("CWeaponIArmor_Lt_Cloth", &g_10943388, g_1067ea1c);
+// END FUNCTION
