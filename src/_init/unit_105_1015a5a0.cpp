@@ -91,3 +91,8 @@ int g_10725f6c = ((int (*)(int))sub_1015ae80)(0);
 int * sub_1015af10(void);
 int * g_10725b24 = ((int * (*)(int))sub_1015af10)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10160940 size=0xa
+#include "ConVar.h"
+ConVar g_107255e8("melee_flinch_time", "1.0", 0, "Duration of time for melee flinch viewkick.");
+// END FUNCTION
