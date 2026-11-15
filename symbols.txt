@@ -2182,6 +2182,7 @@
 0x10003ce7 func   ?vfunc363@CWeaponMelee_MingXiaoTentacle@@UAEHXZ CWeaponMelee_MingXiaoTentacle::vfunc363
 0x10003cec func   ?sub_10134c80@CMathCounter@@QAEXAAUinputdata_t@@@Z CMathCounter::sub_10134c80
 0x10003cf1 func   ?sub_10402790@@YAHXZ sub_10402790
+0x10003cf6 func   ?vfunc442@CNPC_VSabbatLeader@@QAEXPBH@Z CNPC_VSabbatLeader::vfunc442
 0x10003cfb func   ?vfunc110@CLight@@QAE_NPBD0@Z CLight::vfunc110
 0x10003d00 func   ?sub_102189b0@CUnk102189b0@@QAEXXZ CUnk102189b0::sub_102189b0
 0x10003d05 func   ?sub_101e1890@@YGHH@Z sub_101e1890
