@@ -1924,3 +1924,8 @@ ServerClassReg g_10945cd0("CItemGRingSerialKiller1", &g_10948538, g_1067f90c);
 #include "SendTable.h"
 SendTable g_10948538;
 // END FUNCTION
+
+// FUNCTION: 0x10406a80 size=0x5
+int sub_10406ac0(void);
+int g_10948534 = ((int (*)(int))sub_10406ac0)(0);
+// END FUNCTION
