@@ -135006,6 +135006,328 @@ void sub_101c31f0(unsigned char type, int *v1, int *v2, unsigned short s, int f,
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c3320 size=0x44f
+#include "CBaseEntity.h"
+#include "CFuncBrush.h"
+#include "CRecipientFilter.h"
+#include "UTIL_Trace.h"
+#include "globalvars.h"
+
+#include <math.h>
+namespace block_101c3320 {
+#pragma auto_inline(off)
+struct RayInit : Ray_t { void sub_1004f7a0(const float *pStart, const float *pEnd); };
+void RayInit::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+struct Ray_tViewH { Vector m_Start; Vector m_Delta; Vector m_StartOffset; Vector m_Extents; bool m_IsRay; bool m_IsSwept; char m_b32; char m_b33; float m_f34; };
+struct RayHull : Ray_t { void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b); };
+void RayHull::sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b)
+{
+	const Vector &end = *(const Vector *)pEnd;
+	Ray_tViewH *r = (Ray_tViewH *)this;
+	const Vector &mins = *(const Vector *)pMins;
+	const Vector &maxs = *(const Vector *)pMaxs;
+	VectorSubtract(end, start, r->m_Delta);
+	r->m_IsSwept = (r->m_Delta.LengthSqr() != 0.0f);
+	VectorSubtract(maxs, mins, r->m_Extents);
+	r->m_Extents *= 0.5f;
+	r->m_IsRay = (r->m_Extents.LengthSqr() < 1e-6);
+	VectorAdd(mins, maxs, r->m_StartOffset);
+	r->m_StartOffset *= 0.5f;
+	VectorAdd(start, r->m_StartOffset, r->m_Start);
+	r->m_StartOffset *= -1.0f;
+	r->m_b32 = b;
+	r->m_b33 = 0;
+	r->m_f34 = 0.0f;
+	if (a && !r->m_IsRay) {
+		r->m_f34 = (float)sqrt((r->m_Extents.x * r->m_Extents.x) + (r->m_Extents.y * r->m_Extents.y));
+		if (1e-6 < r->m_f34)
+			r->m_b33 = 1;
+	}
+}
+#pragma auto_inline(on)
+}
+using namespace block_101c3320;
+inline void TraceHullDCR(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr, char a = 0, char b = 0)
+{
+	Ray_t ray;
+	((RayHull *)&ray)->sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, a, b);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+inline void TraceHullDCR(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, void *pFilter, CGameTrace *ptr, char a = 0, char b = 0)
+{
+	Ray_t ray;
+	((RayHull *)&ray)->sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, a, b);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+inline void TraceHullR(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr, char a = 0, char b = 0)
+{
+	Ray_t ray;
+	((RayHull *)&ray)->sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, a, b);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+inline void TraceHullR(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, void *pFilter, CGameTrace *ptr, char a = 0, char b = 0)
+{
+	Ray_t ray;
+	((RayHull *)&ray)->sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, a, b);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+struct CShakeMsg_101c3320
+{
+	Vector m_vecOrigin;
+	Vector m_vecDir;
+	char m_b18;
+	char m_pad19[3];
+	float m_flRadius;
+	int m_n20;
+};
+struct CShakeLocal_101c3320
+{
+	CShakeLocal_101c3320() { m_nB = 0; }
+	Vector m_vecOrigin;
+	Vector m_vecDir;
+	int m_nB;
+	float m_flH;
+	int m_n20;
+};
+struct CColView_101c3320
+{
+	virtual void v0();
+	virtual const Vector *Mins();
+	virtual const Vector *Maxs();
+};
+struct CShakeEngVS_101c3320
+{
+	virtual void vs0();
+	virtual void vs1();
+	virtual void vs2();
+	virtual void vs3();
+	virtual void vs4();
+	virtual void vs5();
+	virtual void vs6();
+	virtual void vs7();
+	virtual void vs8();
+	virtual void vs9();
+	virtual void vs10();
+	virtual void vs11();
+	virtual void vs12();
+	virtual void vs13();
+	virtual void vs14();
+	virtual void vs15();
+	virtual void vs16();
+	virtual void vs17();
+	virtual void vs18();
+	virtual void vs19();
+	virtual void vs20();
+	virtual void vs21();
+	virtual void vs22();
+	virtual void vs23();
+	virtual void vs24();
+	virtual void vs25();
+	virtual void vs26();
+	virtual void vs27();
+	virtual void vs28();
+	virtual void vs29();
+	virtual void vs30();
+	virtual void vs31();
+	virtual void vs32();
+	virtual void vs33();
+	virtual void vs34();
+	virtual void vs35();
+	virtual void vs36();
+	virtual void vs37();
+	virtual void vs38();
+	virtual void vs39();
+	virtual void vs40();
+	virtual void vs41();
+	virtual void vs42();
+	virtual void vs43();
+	virtual void vs44();
+	virtual void vs45();
+	virtual void vs46();
+	virtual void vs47();
+	virtual void vs48();
+	virtual void vs49();
+	virtual void vs50();
+	virtual void vs51();
+	virtual void vs52();
+	virtual void vs53();
+	virtual void vs54();
+	virtual void vs55();
+	virtual void vs56();
+	virtual void vs57();
+	virtual void vs58();
+	virtual void vs59();
+	virtual void vs60();
+	virtual void vs61();
+	virtual void vs62();
+	virtual void vs63();
+	virtual void vs64();
+	virtual void vs65();
+	virtual void vs66();
+	virtual void vs67();
+	virtual void vs68();
+	virtual void vs69();
+	virtual void vs70();
+	virtual void vs71();
+	virtual void vs72();
+	virtual void vs73();
+	virtual void vs74();
+	virtual void vs75();
+	virtual void vs76();
+	virtual void vs77();
+	virtual void vs78();
+	virtual void vs79();
+	virtual void vs80();
+	virtual void vs81();
+	virtual void vs82();
+	virtual void vs83();
+	virtual void vs84();
+	virtual void vs85();
+	virtual void vs86();
+	virtual void vs87();
+	virtual void vs88();
+	virtual void vs89();
+	virtual void vs90();
+	virtual void vs91();
+	virtual void vs92();
+	virtual void vs93();
+	virtual void vs94();
+	virtual void vs95();
+	virtual void vs96();
+	virtual void vs97();
+	virtual void vs98();
+	virtual void vs99();
+	virtual void vs100();
+	virtual void vs101();
+	virtual void vs102();
+	virtual void vs103();
+	virtual void vs104();
+	virtual void vs105();
+	virtual void vs106();
+	virtual void vs107();
+	virtual void vs108();
+	virtual void vs109();
+	virtual void vs110();
+	virtual void vs111();
+	virtual void vs112();
+	virtual void vs113();
+	virtual void vfunc114(int type, const void *pData);
+};
+struct CShakeFilter_101c3320 : CRecipientFilter
+{
+	void sub_1019d3b0();	// MakeInitMessage
+};
+extern int g_1059cee0;
+void sub_101c31f0(int a, int *b, int *c, unsigned short d, int e, unsigned char f);
+CBaseEntity *sub_101cd9e0(int i);
+
+inline const Vector &Org_101c3320(CBaseEntity *p) { return *(const Vector *)((CFuncBrushSlots *)p)->slot220(); }
+inline CColView_101c3320 *Coll_101c3320(CBaseEntity *p) { return (CColView_101c3320 *)((char *)p + 0x270); }
+inline const Vector &Mins_101c3320(CBaseEntity *p) { return *Coll_101c3320(p)->Mins(); }
+inline const Vector &Maxs_101c3320(CBaseEntity *p) { return *Coll_101c3320(p)->Maxs(); }
+struct VPod_c3 { float x, y, z; };
+inline void RaisePod_c3(VPod_c3 &T, const Vector &o, const Vector &up) { T.x = o.x; T.y = o.y; T.z = up.z + o.z; }
+inline VPod_c3 RaiseP_c3(const Vector &o, const Vector &up) { VPod_c3 T; T.x = o.x; T.y = o.y; T.z = up.z + o.z; return T; }
+inline VPod_c3 RaiseQ_c3(const Vector &o, const Vector &up) { VPod_c3 T = *(const VPod_c3 *)&o; T.z = up.z + o.z; return T; }
+inline Vector Raise_101c3320(Vector v, const Vector &up) { v.z += up.z; return v; }
+inline int MaxCl_c3() { return *(volatile int *)&gpGlobals->maxClients; }
+inline unsigned short NH_c3(CShakeMsg_101c3320 *p) { return (int)((p->m_flRadius - 1.0f) * 65.6015f); }
+inline float Height_101c3320(unsigned short n) { return (float)n * 0.015243763f + 1.0f; }
+inline VPod_c3 Pod3_c3(float x, float y, float z) { VPod_c3 T; T.x = x; T.y = y; T.z = z; return T; }
+inline VPod_c3 Pod3b_c3(float x, float y, float z) { VPod_c3 T; T.y = y; T.z = z; T.x = x; return T; }
+inline Vector MkV_c3(float x, float y, float z) { Vector v; v.y = y; v.z = z; v.x = x; return v; }
+inline void SetV_c3(Vector &v, float x, float y, float z) { v.y = y; v.z = z; v.x = x; }
+inline void UserMessageBegin_c3(CRecipientFilter &f, int id) { engine->vfunc65(&f, id); }
+inline void MessageEnd_c3() { engine->vfunc66(); }
+inline void Send_101c3320(CRecipientFilter &f, int type, CShakeMsg_101c3320 *p, unsigned short nHeight, unsigned char b)
+{
+	UserMessageBegin_c3(f, g_1059cee0);
+	sub_101c31f0(type, (int *)p, (int *)&p->m_vecDir, nHeight, p->m_n20, b);
+	MessageEnd_c3();
+}
+
+inline float RemapVal_c3(float val, float A, float B, float C, float D) { return C + (D - C) * (val - A) / (B - A); }
+void sub_101c3320(int type, CShakeMsg_101c3320 *p)
+{
+	unsigned short nHeight = (unsigned short)RemapVal_c3(p->m_flRadius, 1, 1000, 0, 65535.9f);
+	unsigned char b = p->m_b18;
+	CRecipientFilter f1;
+	f1.AddAllPlayers();
+	Send_101c3320(f1, type, p, nHeight, b);
+	CRecipientFilter f2;
+	((CShakeFilter_101c3320 &)f2).sub_1019d3b0();
+	Send_101c3320(f2, type, p, nHeight, b);
+
+	CShakeLocal_101c3320 loc;
+	loc.m_vecOrigin = p->m_vecOrigin;
+	loc.m_flH = RemapVal_c3(nHeight, 0, 65535, 1, 1000);
+	loc.m_n20 = p->m_n20;
+	loc.m_nB = b;
+	loc.m_vecDir = p->m_vecDir;
+	float flSaved[32];
+	int nMax = (32 < gpGlobals->maxClients) ? 32 : gpGlobals->maxClients;
+	int i;
+	for (i = 0; i < nMax; i++) {
+		CBaseEntity *pl = sub_101cd9e0(i + 1);
+		if (!pl)
+			continue;
+		flSaved[i] = Org_101c3320(pl).z;
+		const Vector &mins = Mins_101c3320(pl);
+		Vector end;
+		*(VPod_c3 *)&end = RaiseP_c3(Org_101c3320(pl), Vector(0, 0, loc.m_flH + loc.m_flH));
+		const Vector &maxs = Maxs_101c3320(pl);
+		CGameTrace tr;
+		TraceHullDCR(Org_101c3320(pl), end, mins, maxs, 0x200400b, pl, 0, &tr, 1, 0);
+		pl->vfunc62(&tr.m_endpos[0]);
+	}
+	((CShakeEngVS_101c3320 *)engine)->vfunc114(type, &loc);
+	for (i = 0; i < nMax; i++) {
+		CBaseEntity *pl = sub_101cd9e0(i + 1);
+		if (!pl)
+			continue;
+		const Vector &mins = Mins_101c3320(pl);
+		float x = Org_101c3320(pl).x;
+		Vector s;
+		SetV_c3(s, x, (*(const Vector *)((CFuncBrushSlots *)pl)->slot220()).y, flSaved[i]);
+		const Vector &maxs = Maxs_101c3320(pl);
+		CGameTrace tr;
+		TraceHullR(Org_101c3320(pl), s, mins, maxs, 0x200400b, pl, 0, &tr, 1, 0);
+		pl->vfunc62(&tr.m_endpos[0]);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c3a70 size=0xf6
 #include "CUnknown101cf0a0.h"
 #include "CUnknown101d7520.h"
