@@ -4857,6 +4857,7 @@
 0x100073a6 func   ?sub_104112d0@CWeaponPhysCannon@@QAEPAVCUnknown101bc140@@XZ CWeaponPhysCannon::sub_104112d0
 0x100073ab func   ?sub_101a3c40@@YAHPAUSRDataV@@_J@Z sub_101a3c40
 0x100073b0 func   ?sub_10141b10@@YGPAVCBaseEntity@@PAV1@0@Z sub_10141b10
+0x100073b5 func   ?sub_10291f20@@YAXXZ sub_10291f20
 0x100073ba func   ?sub_10265a90@CUnk10265a90@@QAEXH@Z CUnk10265a90::sub_10265a90
 0x100073bf func   ?sub_10247b80@@YAXXZ sub_10247b80
 0x100073c4 func   ?sub_1025b5d0@@YAHI@Z sub_1025b5d0

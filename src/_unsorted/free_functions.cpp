@@ -210261,6 +210261,97 @@ void sub_10291ea0(const float *pos, const char *s, int a, int b, int c, int d, f
 }
 // END FUNCTION
 
+// FUNCTION: 0x10291f20 size=0x4a2
+#include "ConVar.h"
+#include "Vector.h"
+extern ConVar g_10924160;
+extern ConVar g_109240d0;
+extern ConVar g_10924e40;
+extern ConVar g_10924df8;
+extern ConVar g_10924598;
+extern ConVar g_10924550;
+extern float g_10924fc0;
+extern float g_105d0fac;
+
+namespace block_10291f20 {
+#pragma auto_inline(off)
+void sub_10143920(float x, float y, const char *s, int a, int b, int c, int d, float f);
+void sub_10291ea0(const float *pos, const char *s, int a, int b, int c, int d, float f)
+{
+    sub_10143920(pos[0] * 0.005f + 0.5f, pos[1] * 0.005f + 0.5f, s, a, b, c, d, f + f);
+}
+#pragma auto_inline(on)
+}
+
+// TARGET: sub_10291f20
+void sub_10291f20()
+{
+	if (gpGlobals->curtime >= g_10924fc0) {
+		g_10924fc0 = gpGlobals->curtime + g_105d0fac;
+
+		float y1 = g_10924160.GetFloat();
+		float x1 = g_109240d0.GetFloat();
+		Vector p1;
+		p1.x = x1;
+		p1.y = y1;
+		p1.z = 0;
+		float y2 = g_10924e40.GetFloat();
+		float x2 = g_10924df8.GetFloat();
+		Vector p2;
+		p2.x = x2;
+		p2.y = y2;
+		p2.z = 0;
+		float y3 = g_10924598.GetFloat();
+		float x3 = g_10924550.GetFloat();
+		Vector p3;
+		p3.x = x3;
+		p3.y = y3;
+		p3.z = 0;
+
+		Vector q;
+		q.x = x1 - x2;
+		q.y = y1 - y2;
+		q.z = 0;
+		Vector dir;
+		dir.x = x1 - x3;
+		dir.y = y1 - y3;
+		dir.z = 0;
+		Vector v;
+		v.x = x2 - x3;
+		v.y = y2 - y3;
+		v.z = 0;
+
+		float len = dir.Length2D();
+		float len2 = len * len;
+		float dot = (dir.y * v.y) + (dir.x * v.x);
+
+		Vector qn = q;
+		Vector dn = dir;
+		Vector vn = v;
+		VectorNormalize(qn);
+		VectorNormalize(dn);
+		VectorNormalize(vn);
+
+		{
+		Vector a1 = dir * 0.25f + p3;
+		Vector a2 = dir * -0.75f + p3;
+
+		block_10291f20::sub_10291ea0(&p1.x, "E", 0xff, 0x80, 0x80, 0x80, g_105d0fac);
+		block_10291f20::sub_10291ea0(&p2.x, "H", 0xff, 0x80, 0x80, 0x80, g_105d0fac);
+		block_10291f20::sub_10291ea0(&p3.x, "N", 0xff, 0x80, 0x80, 0x80, g_105d0fac);
+		block_10291f20::sub_10291ea0(&a1.x, "1", 0xff, 0x80, 0x80, 0x80, g_105d0fac);
+		block_10291f20::sub_10291ea0(&a2.x, "2", 0xff, 0x80, 0x80, 0x80, g_105d0fac);
+		}
+
+		Vector res = p3.sub_1011e060(dn * (dot / len));
+		if (!(dot > len2 * 0.25f) && !(dot < len2 * -0.75f))
+			block_10291f20::sub_10291ea0(&res.x, "*", 0x80, 0xff, 0x80, 0x80, g_105d0fac);
+		else
+			block_10291f20::sub_10291ea0(&res.x, "*", 0xff, 0x80, 0x80, 0x80, g_105d0fac);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10292500 size=0x6f6
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
