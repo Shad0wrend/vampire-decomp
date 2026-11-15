@@ -2113,6 +2113,396 @@ int CBasePlayer::sub_101647a0(int act)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164870 size=0x888
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "CNPC_VTzimisce.h"
+#include "CBasePlayer.h"
+#include "CDevFlagObj.h"
+#include "globalvars.h"
+#include <string.h>
+#include <stdio.h>
+#include <math.h>
+
+// TARGET: CBasePlayer::vfunc417
+
+extern CDevFlagObj *g_10937034;
+extern const char g_106b8540[];
+extern float g_104454c4;
+
+float sub_101d2c70(const Vector &v);
+float sub_1013d580(float a, float b);
+float sub_1013d450(float a, float b, float c);
+
+#define PV(n) virtual void pv##n();
+#define PV10(p) PV(p##0) PV(p##1) PV(p##2) PV(p##3) PV(p##4) PV(p##5) PV(p##6) PV(p##7) PV(p##8) PV(p##9)
+#define PV100(p) PV10(p##0) PV10(p##1) PV10(p##2) PV10(p##3) PV10(p##4) PV10(p##5) PV10(p##6) PV10(p##7) PV10(p##8) PV10(p##9)
+
+struct CPlayerAnimSlots
+{
+	PV100(0) PV100(1) PV100(2) PV10(30) PV10(31) PV10(32) PV10(33)
+	PV(340) PV(341) PV(342) PV(343) PV(344)
+	virtual float SetPoseParameterByName(const char *pszName, float flValue, int a);	// 345
+	virtual float SetPoseParameter(int iParam, float flValue, int a);	// 346
+	PV(347) PV(348) PV(349) PV10(35)
+	virtual unsigned int WeaponFlags();	// 360
+	PV(361) PV(362) PV(363) PV(364) PV(365) PV(366) PV(367) PV(368) PV(369)
+	PV10(37) PV10(38) PV10(39) PV10(40)
+	virtual void slot410();
+	virtual char slot411();
+};
+
+struct CWeaponSlots281
+{
+	PV100(0) PV100(1) PV10(20) PV10(21) PV10(22) PV10(23) PV10(24) PV10(25) PV10(26) PV10(27)
+	PV(280)
+	virtual char slot281();
+};
+
+struct CEntSlots33
+{
+	PV10(0) PV10(1) PV10(2) PV(30) PV(31) PV(32)
+	virtual int slot33();
+};
+
+struct CBP417 : CBasePlayer
+{
+	char sub_1033b7c0();
+	int sub_101815e0();
+	void sub_103221b0(const char *msg);
+	int sub_10092270(const char *name);
+	float sub_10092190(int iParam);
+	char sub_100b3700();
+};
+
+inline float anglemod(float a)
+{
+	a = (360.f / 65536) * ((int)(a * (65536.f / 360.0f)) & 65535);
+	return a;
+}
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+#define m_f6F4 (*(float *)((char *)this + 0x6f4))
+#define m_f19EC (*(float *)((char *)this + 0x19ec))
+#define m_f2458 (*(float *)((char *)this + 0x2458))
+#define m_hUseEnt1040X (*(EHANDLE *)&m_hUseEnt1040)
+namespace block_10164040 {
+#pragma auto_inline(off)
+
+class SDisciplineTable
+{
+public:
+	int sub_101e12f0(const char *pszName);
+};
+extern SDisciplineTable g_10739a4c;
+
+struct SPlayerPurgeView
+{
+	char pad0[0x65c];
+	char b65c;
+	char pad1[0xff0 - 0x65d];
+	int nActivity;
+	char pad2[0x14a0 - 0xff4];
+	int nBloodPool;
+	char pad3[0x1cb0 - 0x14a4];
+	char b1cb0;
+	char b1cb1;
+	char pad4[2];
+	int n1cb4;
+};
+
+struct V : CBasePlayer { void sub_10164040(int type, int *pActivity, int *pOut); };
+void V::sub_10164040(int type, int *pActivity, int *pOut)
+{
+	SPlayerPurgeView *v = (SPlayerPurgeView *)this;
+	int act;
+	if (type != 0xc)
+		return;
+	act = v->nActivity;
+	if (v->b65c) {
+		if (act == 0x1065) {
+			act = 0x1066;
+			goto done;
+		}
+		if (act == 0x1066) {
+			if (v->b1cb1) {
+				act = 0x1067;
+				goto done;
+			}
+			int nPool = v->nBloodPool;
+			if (nPool > 0) {
+				int nDrain = 2;
+				if (nPool < 2)
+					nDrain = 1;
+				v->nBloodPool = nPool - nDrain;
+				while (nDrain > 0) {
+					sub_10338df0(1);
+					nDrain--;
+				}
+			}
+			if (v->nBloodPool <= 0) {
+				static int s_iPurge = g_10739a4c.sub_101e12f0("Thaumaturgy_Purge");
+				if (!sub_1033d2f0(s_iPurge))
+					v->b1cb1 = 1;
+			}
+			act = 0x1066;
+			goto done;
+		}
+		if (act == 0x1067) {
+			act = 1;
+			v->b1cb0 = 0;
+			v->nActivity = act;
+			goto done;
+		}
+	} else {
+		if (v->n1cb4 == 0xc)
+			goto setflag;
+	}
+	act = 0x1065;
+	v->b1cb1 = 0;
+	v->nActivity = act;
+setflag:
+	v->b1cb0 = 1;
+done:
+	if (pActivity)
+		*pActivity = act;
+	if (pOut)
+		*pOut = 0;
+}
+#pragma auto_inline(on)
+}
+void CBasePlayer::vfunc417(int playerAnim, int b)
+{
+	CBP417 *self = (CBP417 *)this;
+	CPlayerAnimSlots *slots = (CPlayerAnimSlots *)this;
+
+	if (m_hPlaceholder1da4.Get())
+	{
+		sub_10329560();
+		CBaseEntity *pWeapon = m_hEnt0EA8.Get();
+		if (pWeapon)
+		{
+			vfunc388(pWeapon, 0);
+		}
+		else
+		{
+			CBaseEntity *pFists = (CBaseEntity *)sub_10335950("item_w_fists");
+			if (pFists)
+				vfunc388(pFists, 0);
+		}
+	}
+
+	m_b1DF4 = 0;
+	float speed = m_vec03D4.Length2D();
+	{
+		float flYaw = anglemod(vfunc219()[1]);
+
+		if (playerAnim == 5 && sub_1032e7b0())
+			slots->slot410();
+
+		if (speed > g_104454c4)
+		{
+			int iMoveYaw = self->sub_10092270("move_yaw");
+			float flVel = sub_101d2c70(m_vec03D4);
+			float flDiff = sub_1013d580(flYaw, flVel);
+			if (gpGlobals->curtime - 0.3f > *(volatile float *)&m_f2458)
+				slots->SetPoseParameter(iMoveYaw, flDiff, 0);
+			else
+			{
+				float flCurrent = self->sub_10092190(iMoveYaw);
+				float flRate = gpGlobals->frametime * 4.0f;
+				flRate *= 180.0f;
+				float flNew = sub_1013d450(flDiff, flCurrent, flRate);
+				slots->SetPoseParameter(iMoveYaw, flNew, 0);
+			}
+			m_f2458 = gpGlobals->curtime;
+		}
+
+		slots->SetPoseParameterByName("aim_yaw", 0, 0);
+		slots->SetPoseParameterByName("aim_pitch", m_vec206c.x < 180.0f ? m_vec206c.x : m_vec206c.x - 360.0f, 0);
+	}
+
+	int idealActivity = 1;
+	int iSeq = -1;
+
+	CBaseEntity *pActive = (CBaseEntity *)sub_1032e7b0();
+	if (pActive && _strcmpi(STRINGR(*(const char **)((char *)pActive + 0x11c)), "item_w_unarmed") && slots->slot411() && !m_b1EDC)
+		idealActivity = 5;
+
+	if (speed > 5.0f)
+	{
+		if ((sub_100b3700() & 2) == 2)
+		{
+			idealActivity = 0x12;
+		}
+		else
+		{
+			float flWalk = m_flWalkForwardSpeeds[4] + 1.0f;
+			if (speed > flWalk || *(volatile float *)&m_f19EC > flWalk)
+			{
+				idealActivity = 0x13;
+				if (sub_1032e7b0() && !slots->slot411())
+					idealActivity = 0x17;
+			}
+			else
+			{
+				idealActivity = 9;
+				if (sub_1032e7b0() && !slots->slot411())
+					idealActivity = 0x16;
+			}
+		}
+	}
+	else
+	{
+		if (sub_100b3700() & 2)
+			idealActivity = 0x3f;
+	}
+
+	if (playerAnim == 0xb)
+	{
+		idealActivity = (m_vec03D4.z < -40.0f) ? 0x34 : 0x33;
+		if (m_vec03D4.z > -40.0f && m_vec03D4.z < 40.0f)
+			m_f6F4 = 0;
+		else
+			m_f6F4 = m_flSpeedScale1488;
+	}
+	else if (playerAnim == 2)
+	{
+		switch (m_nSpeedScaleState1DB4)
+		{
+		case 1: idealActivity = 0x2c; break;
+		case 2: idealActivity = 0x28; break;
+		case 3: idealActivity = 0x29; break;
+		case 4: idealActivity = 0x2a; break;
+		case 5: idealActivity = 0x2d; break;
+		case 6: idealActivity = 0x2e; break;
+		case 7: idealActivity = 0x2f; break;
+		case 8:
+		case 9:
+			if (idealActivity != 9 && idealActivity != 0x13 && idealActivity != 0x16 && idealActivity != 0x17)
+			{
+				if (sub_100b3700() & 2)
+					idealActivity = 0x31;
+				else
+					idealActivity = 0x30;
+			}
+			break;
+		case 10:
+		case 11:
+			idealActivity = 0x32;
+			break;
+		}
+	}
+	else if (playerAnim == 9)
+	{
+		if ((speed > 25.0f && m_n03E0 >= 3 && fabs(m_vec03D4.x) > 20.0) ||
+			(speed > 75.0f && !(sub_100b3700() & 1) && fabs(m_vec03D4.x) > 20.0))
+			idealActivity = 0x25;
+		else
+			idealActivity = 0x26;
+	}
+	else if (playerAnim == 5)
+	{
+		if (sub_1032e7b0())
+		{
+			if (((CPlayerAnimSlots *)sub_1032e7b0())->WeaponFlags() & 0x18000)
+			{
+				idealActivity = (self->sub_100b3700() & 1) ? 0x4b : 0x4c;
+				iSeq = -1;
+			}
+			else if (((CPlayerAnimSlots *)sub_1032e7b0())->WeaponFlags() & 0x6000)
+				iSeq = 0x1a;
+			else if (((CWeaponSlots281 *)sub_1032e7b0())->slot281())
+				iSeq = 0x1a;
+		}
+	}
+	else if (playerAnim == 0xe)
+	{
+		if (sub_1032e7b0())
+			iSeq = 0x56;
+	}
+	else if (playerAnim == 0xa)
+	{
+		if (m_hUseEnt1040X.Get() && ((CEntSlots33 *)m_hUseEnt1040X.Get())->slot33() != -1)
+		{
+			idealActivity = ((CEntSlots33 *)m_hUseEnt1040X.Get())->slot33();
+			iSeq = -1;
+		}
+	}
+	else if (playerAnim == 7)
+	{
+		int n = m_nFF0;
+		iSeq = 0;
+		if (m_b65c)
+		{
+			if (n == 0x131)
+				idealActivity = 0x132;
+			else if (n == 0x132)
+			{
+				if (!m_b14A8)
+				{
+					((CEntityVSlots *)this)->slot358();
+					idealActivity = 0x133;
+				}
+				else
+					idealActivity = 0x132;
+			}
+			else if (n == 0x133)
+				idealActivity = 1;
+			else
+			{
+				((CEntityVSlots *)this)->slot356();
+				idealActivity = 0x131;
+			}
+		}
+		else
+		{
+			if (!self->sub_1033b7c0())
+			{
+				((CEntityVSlots *)this)->slot356();
+				idealActivity = 0x131;
+			}
+			else
+				idealActivity = m_nFF0;
+		}
+	}
+	else if (playerAnim == 0xc)
+	{
+		((block_10164040::V *)this)->sub_10164040(0xc, &idealActivity, &iSeq);
+	}
+	else if (playerAnim == 8)
+	{
+		if (!g_10937034->vfunc1() && g_10937034->m_n2c)
+		{
+			char szBuf[256];
+			sprintf(szBuf, "%s SetNormalAnimation %s", sub_100ab4f0(), (self->sub_101815e0() & 2) ? "Grapple Release" : "Seductive Release");
+			self->sub_103221b0(szBuf);
+		}
+		iSeq = 0;
+		if (self->sub_101815e0() & 2)
+			idealActivity = 0xfa3;
+		else if (self->sub_101815e0() & 4)
+			idealActivity = 0xfc9;
+	}
+	else if (playerAnim == 0xd)
+	{
+		idealActivity = 0x1154;
+		Vector vec = m_vec03D4;
+		vec.x = 0;
+		vec.y = 0;
+		sub_100b2e30(&vec);
+	}
+
+	if ((idealActivity == 5 || idealActivity == 1) && m_nFF0 == 0x4b && !m_b65c)
+		return;
+
+	sub_101815b0(6);
+	sub_101644f0(idealActivity, iSeq, b);
+	m_aLastplayerAnim = playerAnim;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10165330 size=0x145
 #include "CBasePlayer.h"
 #include "CEntityVSlots.h"
