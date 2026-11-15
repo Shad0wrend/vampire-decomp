@@ -80,3 +80,8 @@ ConVar g_10939568("sk_max_ithica_m37_round", "0", 0);
 #include "ConVar.h"
 ConVar g_10939640("sk_plr_dmg_mac10_round", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10353b20 size=0xa
+#include "ConVar.h"
+ConVar g_10938b48("sk_npc_dmg_mac10_round", "0", 0);
+// END FUNCTION
