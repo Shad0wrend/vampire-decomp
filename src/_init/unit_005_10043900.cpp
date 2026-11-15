@@ -5,3 +5,8 @@
 int sub_10043940(void);
 int g_106bdb00 = ((int (*)(int))sub_10043940)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10043970 size=0x5
+int sub_100439b0(void);
+int g_106bda58 = ((int (*)(int))sub_100439b0)(0);
+// END FUNCTION
