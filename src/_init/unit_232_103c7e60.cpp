@@ -35,3 +35,8 @@ ConVar g_1093f7c8("werewolf_draw_nearest_hint", "0", 0);
 #include "ConVar.h"
 ConVar g_1093d5b8("werewolf_print_haspath", "20", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103c82a0 size=0xa
+#include "ConVar.h"
+ConVar g_1093f738("werewolf_show_debug", "0", 0);
+// END FUNCTION
