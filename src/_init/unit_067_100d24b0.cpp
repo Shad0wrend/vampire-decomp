@@ -225,3 +225,9 @@ ConCommand g_106e7d28("vclans", sub_100d6680, "Lists the available Vampire Clans
 void sub_100d6820(void);
 ConCommand g_106e7a18("dialogpick", sub_100d6820, "Activates (picks) a dialog line.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d69c0 size=0xa
+#include "ConCommand.h"
+void sub_100d6930(void);
+ConCommand g_106e754c("vtrait_effects", sub_100d6930, "Lists the available Vampire Trait Effects", 0, 0);
+// END FUNCTION
