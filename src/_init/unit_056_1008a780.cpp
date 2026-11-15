@@ -15,3 +15,11 @@ SendTable g_106cceec;
 int sub_1008a8b0(void);
 int g_106ccee8 = ((int (*)(int))sub_1008a8b0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1008a980 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_106c9954;
+extern char g_1054d51c[];
+ServerClassReg g_106ccf4c("CBaseAnimating", &g_106c9954, g_1054d51c);
+// END FUNCTION
