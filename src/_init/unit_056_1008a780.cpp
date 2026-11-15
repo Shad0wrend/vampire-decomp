@@ -23,3 +23,8 @@ extern SendTable g_106c9954;
 extern char g_1054d51c[];
 ServerClassReg g_106ccf4c("CBaseAnimating", &g_106c9954, g_1054d51c);
 // END FUNCTION
+
+// FUNCTION: 0x1008aa30 size=0xa
+#include "SendTable.h"
+SendTable g_106c9954;
+// END FUNCTION
