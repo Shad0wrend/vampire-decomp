@@ -12,3 +12,9 @@ ConCommand g_106e7e68("drawline", sub_100d23a0, "Draws line between two 3D Point
 void sub_100d2540(void);
 ConCommand g_106e7ae0("drawcross", sub_100d2540, "Draws a cross at the given location\n\tArugments: x y z", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d27f0 size=0xa
+#include "ConCommand.h"
+void sub_100d27b0(void);
+ConCommand g_106e74d0("kill", sub_100d27b0, "kills the player", 0, 0);
+// END FUNCTION
