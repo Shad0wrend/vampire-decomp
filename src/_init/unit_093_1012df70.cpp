@@ -18,3 +18,8 @@ ServerClassReg g_1070bfa4("CHudCounter", &g_1070bfc8, g_105744e8);
 #include "SendTable.h"
 SendTable g_1070bfc8;
 // END FUNCTION
+
+// FUNCTION: 0x1012e110 size=0x5
+int sub_1012e150(void);
+int g_1070bfc4 = ((int (*)(int))sub_1012e150)(0);
+// END FUNCTION
