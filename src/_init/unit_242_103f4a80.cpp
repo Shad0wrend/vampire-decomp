@@ -1690,3 +1690,8 @@ ServerClassReg g_10948430("CItemGWarrLedger2", &g_10944904, g_1067f83c);
 #include "SendTable.h"
 SendTable g_10944904;
 // END FUNCTION
+
+// FUNCTION: 0x10404790 size=0x5
+int sub_104047d0(void);
+int g_10944900 = ((int (*)(int))sub_104047d0)(0);
+// END FUNCTION
