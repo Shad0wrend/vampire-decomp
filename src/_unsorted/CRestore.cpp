@@ -307,6 +307,166 @@ void CRestore::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1b70 size=0x22f
+#include "CRestore.h"
+#include "datamap.h"
+#include <string.h>
+#include <stdlib.h>
+
+struct CSaveRestoreSegment_101a1b70;
+
+extern void (*g_109f3628)(const char *pszFormat, ...);	// Msg
+extern void (*g_109f362c)(const char *pszFormat, ...);	// Warning
+
+struct CUnknown101a1780Arg;
+class CUnknown101a1780View
+{
+public:
+	bool sub_101a1780(CUnknown101a1780Arg *pField);
+};
+
+struct SaveRestoreRecordHeader_View
+{
+	unsigned short size;
+	unsigned short token;
+};
+
+struct CRestoreFieldView
+{
+	int m_pad00[2];
+	int fieldOffset;
+};
+
+struct CSaveRestoreSegment_101a1b70
+{
+	char *pBaseData;
+	char *pCurrentData;
+	int size;
+	int bufferSize;
+	int tokenCount;
+	char **pTokens;
+
+	static unsigned int HashString(const char *pszToken)
+	{
+		unsigned int hash = 0;
+		while (*pszToken)
+			hash = _rotr(hash, 4) ^ *pszToken++;
+		return hash;
+	}
+
+	unsigned short FindCreateSymbol(const char *pszToken)
+	{
+		unsigned short hash = (unsigned short)(HashString(pszToken) % (unsigned)tokenCount);
+		for (int i = 0; i < tokenCount; i++)
+		{
+			int index = hash + i;
+			if (index >= tokenCount)
+				index -= tokenCount;
+			if (!pTokens[index] || strcmp(pszToken, pTokens[index]) == 0)
+			{
+				pTokens[index] = (char *)pszToken;
+				return index;
+			}
+		}
+		g_109f362c("CSaveRestoreBuffer::TokenHash() is COMPLETELY FULL!");
+		return 0;
+	}
+
+	const char *StringFromSymbol(int token)
+	{
+		if (token >= 0 && token < tokenCount)
+			return pTokens[token];
+		return "<<illegal>>";
+	}
+
+	void MoveCurPos(int nBytes)
+	{
+		pCurrentData += nBytes;
+		size += nBytes;
+	}
+
+	void Rewind(int nBytes)
+	{
+		if (size < nBytes)
+			nBytes = size;
+		MoveCurPos(-nBytes);
+	}
+};
+
+struct SaveRestoreRecordHeader_t
+{
+	unsigned short size;
+	unsigned short symbol;
+	char *pData;
+};
+
+struct TypeDescV_101a1b70
+{
+	int fieldType;
+	const char *fieldName;
+	int fieldOffset[1];
+};
+
+namespace block_101a1b70 {
+#pragma auto_inline(off)
+struct C1780Arg { char m_pad0000[0x12]; unsigned short m_wFlags12; };
+struct C1780Unit { char m_pad0000[0x20]; int m_n20; bool sub_101a1780(C1780Arg *p); };
+bool C1780Unit::sub_101a1780(C1780Arg *p)
+{
+    unsigned short f = p->m_wFlags12;
+    if ((f & 2) == 0) {
+        return false;
+    }
+    if (m_n20 != 0 && (f & 1) != 0) {
+        return false;
+    }
+    return true;
+}
+#pragma auto_inline(on)
+}
+using namespace block_101a1b70;
+#define SEG_101a1b70 ((CSaveRestoreSegment_101a1b70 *)m_pData)
+
+int CRestore::vfunc3(int a, int b, int c, int d, int e)
+{
+	const char *pname = (const char *)a;
+	vfunc13();
+	short curSym = vfunc13();
+	if (curSym != SEG_101a1b70->FindCreateSymbol(pname))
+	{
+		g_109f3628("Expected %s found %s!\n", pname, sub_101a1f70());
+		SEG_101a1b70->Rewind(2 * sizeof(short));
+		return 0;
+	}
+	vfunc4((void *)b, (typedescription_t *)d, e);
+
+	SaveRestoreRecordHeader_t header;
+	int nFieldsSaved = vfunc14();
+	{
+	int searchCookie = 0;
+	int i;
+
+	for (i = 0; i < nFieldsSaved; i++)
+	{
+		vfunc9((unsigned short *)&header);
+
+		TypeDescV_101a1b70 *pField;
+		pField = (TypeDescV_101a1b70 *)sub_101a17c0(SEG_101a1b70->StringFromSymbol(header.symbol), (CRestoreField *)d, e, &searchCookie);
+		if (pField && ((C1780Unit *)this)->sub_101a1780((C1780Arg *)pField))
+		{
+			sub_101a1750((const char *)&header, ((char *)b + pField->fieldOffset[0]), (void *)c, (typedescription_t *)pField);
+		}
+		else
+		{
+			sub_1000910b(header.size);
+		}
+	}
+
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1e30 size=0x30
 #include "CRestore.h"
 void CRestore::vfunc9(unsigned short *pValue)
