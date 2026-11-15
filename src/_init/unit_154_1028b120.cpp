@@ -45,3 +45,8 @@ ConVar g_10923e80("debug_turning_speed", "90", 0, "Toggles turn animations.");
 #include "ConVar.h"
 ConVar g_10924890("debug_circle_dist_override", "0", 0, "Overrides the distance guys want to be outside the melee combat.");
 // END FUNCTION
+
+// FUNCTION: 0x1028b8a0 size=0xa
+#include "ConVar.h"
+ConVar g_10924798("debug_vision_line", "0", 0, "Set this to 1 to show a line from NPCs to player when they can see the player through an object.");
+// END FUNCTION
