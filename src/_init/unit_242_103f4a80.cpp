@@ -530,3 +530,8 @@ extern SendTable g_109480d8;
 extern char g_1067f47c[];
 ServerClassReg g_10943840("COccultLockpicking", &g_109480d8, g_1067f47c);
 // END FUNCTION
+
+// FUNCTION: 0x103f9d10 size=0xa
+#include "SendTable.h"
+SendTable g_109480d8;
+// END FUNCTION
