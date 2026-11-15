@@ -23,3 +23,8 @@ ServerClassReg g_106eb41c("CEntityFlame", &g_106eb3fc, g_10565c34);
 #include "SendTable.h"
 SendTable g_106eb3fc;
 // END FUNCTION
+
+// FUNCTION: 0x100f52a0 size=0x5
+int sub_100f52e0(void);
+int g_106eb3f8 = ((int (*)(int))sub_100f52e0)(0);
+// END FUNCTION
