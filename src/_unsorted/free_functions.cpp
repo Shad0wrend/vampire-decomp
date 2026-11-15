@@ -262848,6 +262848,90 @@ bool __stdcall sub_10344da0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10344f80 size=0x1c5
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "CStatDefault3List.h"
+#include "CUnknown10344c80.h"
+
+extern CStatDefault3List g_10738d10;
+bool sub_1013d900(int nSide, int nStrength, int nHeight, int *pSequences);
+float sub_101d2c70(const Vector *pDirection);
+
+#define SV1(p) virtual void p();
+#define SV10(p) SV1(p##0) SV1(p##1) SV1(p##2) SV1(p##3) SV1(p##4) SV1(p##5) SV1(p##6) SV1(p##7) SV1(p##8) SV1(p##9)
+#define SV100(p) SV10(p##0) SV10(p##1) SV10(p##2) SV10(p##3) SV10(p##4) SV10(p##5) SV10(p##6) SV10(p##7) SV10(p##8) SV10(p##9)
+
+struct SKnockbackView
+{
+	SV100(sa) SV100(sb) SV10(sc0) SV1(sc10) SV1(sc11) SV1(sc12) SV1(sc13) SV1(sc14) SV1(sc15) SV1(sc16) SV1(sc17)
+	virtual void vfunc218(const QAngle &angles);
+	virtual const QAngle &vfunc219();
+	SV100(sd)
+	virtual void vfunc320(int a, int nActivity);
+	SV1(se0) SV1(se1) SV1(se2)
+	SV10(sf0) SV10(sf1) SV10(sf2) SV10(sf3) SV10(sf4) SV10(sf5) SV10(sf6) SV1(sg0) SV1(sg1) SV1(sg2) SV1(sg3) SV1(sg4) SV1(sg5)
+	virtual char vfunc400();
+};
+
+namespace block_10344f80 {
+#pragma auto_inline(off)
+struct CBCCUnit : CBaseCombatCharacter { char sub_10344da0(int a); };
+char CBCCUnit::sub_10344da0(int a)
+{
+	if (a >= 0x8b && a <= 0x93)
+		return true;
+	return false;
+}
+#pragma auto_inline(on)
+}
+using namespace block_10344f80;
+inline float anglemod(float a)
+{
+	a = (360.0f / 65536) * ((int)(a * (65536 / 360.0f)) & 65535);
+	return a;
+}
+
+void CBaseCombatCharacter::sub_10344f80(const Vector *pDirection, int nHeight, int nStrength)
+{
+	SKnockbackView *pThis = (SKnockbackView *)this;
+	if (pThis->vfunc400() || (!g_10738d10.sub_101d5f10(this)->m_98[6] && !CVStatListSet::Of(this)->Find(0)->sub_102017b0(0xf, 0x11))) {
+		int nSide = vfunc323(pDirection);
+		int nSeq[4];
+		if (sub_1013d900(nSide, nStrength, nHeight, nSeq)) {
+			int nActivity = ((CBaseAnimating *)this)->sub_1008f6c0(nSeq[0]);
+			if (m_pA8) {
+				nActivity = ((CUnknown10344c80 *)this)->sub_10344c80(nActivity);
+			}
+			char bOwn;
+			bOwn = ((CBCCUnit *)this)->sub_10344da0(nActivity);
+			if (bOwn) nSide = 0;
+			if (!m_pA8) {
+				float flYaw = sub_101d2c70(pDirection);
+				switch (nSide) {
+				case 0:
+					flYaw += 180.0f;
+					break;
+				case 1:
+					flYaw += 270.0f;
+					break;
+				case 3:
+					flYaw += 90.0f;
+					break;
+				}
+				QAngle angles = pThis->vfunc219();
+				angles.y = anglemod(flYaw);
+				pThis->vfunc218(angles);
+			}
+			pThis->vfunc320(0, nActivity);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103451d0 size=0x10b
 #include "CNPC_VTzimisce.h"
 #include "CUnknown101d7520.h"

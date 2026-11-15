@@ -7370,6 +7370,7 @@
 0x1000a704 func   ?sub_1030bc20@CUnknown1030bc20@@QAEHXZ CUnknown1030bc20::sub_1030bc20
 0x1000a709 func   ?vfunc8@CBreakModelsPrecached@@UAEPAXI@Z CBreakModelsPrecached::vfunc8
 0x1000a70e func   ?vfunc266@CSceneEntity@@UAEXHPBD@Z CSceneEntity::vfunc266
+0x1000a713 func   ?sub_10344f80@CBaseCombatCharacter@@QAEXPBVVector@@HH@Z CBaseCombatCharacter::sub_10344f80
 0x1000a718 func   ?sub_1011a620@@YAXXZ sub_1011a620
 0x1000a71d func   ?vfunc2@CBaseEntity@@UAEPADXZ CBaseEntity::vfunc2
 0x1000a722 func   ?sub_10397410@CNPC_VMingXiao@@QAEPAXH@Z CNPC_VMingXiao::sub_10397410
