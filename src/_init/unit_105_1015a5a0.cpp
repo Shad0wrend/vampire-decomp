@@ -263,3 +263,9 @@ ConCommand g_10725a8c("player_mobilize", sub_10180220, "", 0, 0);
 void sub_101802e0(void);
 ConCommand g_10725f44("player_immobilize", sub_101802e0, "", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10180740 size=0xa
+#include "ConCommand.h"
+void sub_101803a0(void);
+ConCommand g_10725b2c("teleport_player", sub_101803a0, "Teleports the player to a named entity, or to an X Y Z coordinate", 0, 0);
+// END FUNCTION
