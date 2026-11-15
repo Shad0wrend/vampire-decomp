@@ -15,3 +15,8 @@ ConVar g_10924430("defense_bonus_max_time", "3.0", 0);
 #include "ConVar.h"
 ConVar g_10923f10("sk_basenpctroika_health", "10", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1028b530 size=0xa
+#include "ConVar.h"
+ConVar g_10924db0("debug_test_schedule", "0", 0, "Forces the AI into test schedules.", true, 0.0f, true, 4.0f);
+// END FUNCTION
