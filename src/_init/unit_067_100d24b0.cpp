@@ -425,3 +425,9 @@ ConCommand g_106e7b84("vsetmove", sub_100daec0, "Lock/Unlock player movement", 0
 void sub_100dafa0(void);
 ConCommand g_106e7d00("vsndinfo", sub_100dafa0, "Describes Sound Table Information", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100db1c0 size=0xa
+#include "ConCommand.h"
+void sub_100db0b0(void);
+ConCommand g_106e77d4("vdebug_dumpanimseqlist", sub_100db0b0, "Dumps the animation sequence list for an entity's model", 0, 0);
+// END FUNCTION
