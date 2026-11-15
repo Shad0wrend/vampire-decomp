@@ -98,3 +98,8 @@ ConVar g_109371c0("gib_xz_vel", "200.0", 0, "Gib Vel");
 #include "ConVar.h"
 ConVar g_10936fb8("debug_force_scale", "3", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1032b200 size=0xa
+#include "ConVar.h"
+ConVar g_10936f28("debug_upward_hit_force", ".1", 0);
+// END FUNCTION
