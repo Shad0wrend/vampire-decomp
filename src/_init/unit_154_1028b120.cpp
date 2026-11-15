@@ -235,3 +235,8 @@ ConVar g_10924160("temp_cover_enemy_y", "32.6", 0, "");
 #include "ConVar.h"
 ConVar g_10924df8("temp_cover_hint_x", "-59.2", 0, "");
 // END FUNCTION
+
+// FUNCTION: 0x10291cf0 size=0xa
+#include "ConVar.h"
+ConVar g_10924e40("temp_cover_hint_y", "25.6", 0, "");
+// END FUNCTION
