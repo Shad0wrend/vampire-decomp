@@ -18,3 +18,8 @@ SendTable g_10739a2c;
 int sub_101d9bd0(void);
 int g_10739a28 = ((int (*)(int))sub_101d9bd0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101d9d40 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10739408(&CPrecacheRegister::PrecacheFn_Other, "vdisciplineprojectile");
+// END FUNCTION
