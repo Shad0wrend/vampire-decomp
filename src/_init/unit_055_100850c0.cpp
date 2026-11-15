@@ -142,3 +142,9 @@ ConCommand g_106c8c98("npc_create_aimed", sub_10086910, "Creates an NPC aimed aw
 void sub_10086e50(void);
 ConCommand g_106c9330("npc_destroy_unselected", sub_10086e50, "Removes all NPCs from the universe that aren't currently selected", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100870e0 size=0xa
+#include "ConCommand.h"
+void sub_10086fb0(void);
+ConCommand g_106c9420("npc_freeze", sub_10086fb0, "Selected NPC(s) will freeze in place (or unfreeze). If there are no selected NPCs, uses the NPC under the crosshair.\n\tArguments:\t-none-", 0, 0);
+// END FUNCTION
