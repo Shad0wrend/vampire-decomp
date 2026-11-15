@@ -400,3 +400,9 @@ ConCommand g_106c8ba8("npc_show_relationships", sub_10089e50, "Show the relation
 void sub_10089fc0(void);
 ConCommand g_106c8fd4("npc_relationship_table", sub_10089fc0, "Dumps a table of all NPC relationships to a file.\n\tArguments:   \t{filename}", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x1008a490 size=0xa
+#include "ConCommand.h"
+void sub_1008a520(void);
+ConCommand g_106c9498("npc_set_free_knowledge_duration", sub_1008a520, "Sets the NPC's free knowledge duration.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at.", 0, 0);
+// END FUNCTION
