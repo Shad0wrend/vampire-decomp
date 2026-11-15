@@ -18,3 +18,8 @@ ServerClassReg g_1072af84("CPointCamera", &g_1072adc0, g_1058bf54);
 #include "SendTable.h"
 SendTable g_1072adc0;
 // END FUNCTION
+
+// FUNCTION: 0x1018c960 size=0x5
+int sub_1018c9a0(void);
+int g_1072adbc = ((int (*)(int))sub_1018c9a0)(0);
+// END FUNCTION
