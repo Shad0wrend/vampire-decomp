@@ -115,3 +115,8 @@ SendTable g_109471d0;
 int sub_103f5ff0(void);
 int g_109471cc = ((int (*)(int))sub_103f5ff0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f6130 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10947150(&CPrecacheRegister::PrecacheFn_Other, "item_m_money_envelope");
+// END FUNCTION
