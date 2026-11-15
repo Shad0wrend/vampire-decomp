@@ -182,3 +182,9 @@ ConCommand g_106e7188("ent_inven_list", sub_100d5ae0, "Lists the local player's 
 void sub_100d5be0(void);
 ConCommand g_106e763c("inven_wield", sub_100d5be0, "Wields an item from the local player's Inventory\n\tArguments:\t{inven_slot #}", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d5da0 size=0xa
+#include "ConCommand.h"
+void sub_100d5d10(void);
+ConCommand g_106e7690("inven_drop", sub_100d5d10, "Drops an item from the local player's Inventory\n\tArguments:\t{inven_slot #}", 0, 0);
+// END FUNCTION
