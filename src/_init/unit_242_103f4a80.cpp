@@ -1739,3 +1739,8 @@ extern SendTable g_1094439c;
 extern char g_1067f86c[];
 ServerClassReg g_10948448("CItemGJunkyardBusinesscard", &g_1094439c, g_1067f86c);
 // END FUNCTION
+
+// FUNCTION: 0x10404f20 size=0xa
+#include "SendTable.h"
+SendTable g_1094439c;
+// END FUNCTION
