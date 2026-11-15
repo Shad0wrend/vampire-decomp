@@ -1101,3 +1101,11 @@ SendTable g_109469e4;
 int sub_103fef20(void);
 int g_109469e0 = ((int (*)(int))sub_103fef20)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103ff060 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10944b84;
+extern char g_1067f63c[];
+ServerClassReg g_10945b44("CItemGLillyDiary", &g_10944b84, g_1067f63c);
+// END FUNCTION
