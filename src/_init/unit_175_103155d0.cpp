@@ -83,3 +83,8 @@ int g_10936dbc = ((int (*)(int))sub_10322180)(0);
 #include "ConVar.h"
 ConVar g_10936e50("sv_draw_eye_orientation", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10326150 size=0xa
+#include "ConVar.h"
+ConVar g_10936f70("debug_view_cone_2d3d", "3", 0, "Set the view cone tests to be in 2d or 3d.", true, 2.0f, true, 3.0f);
+// END FUNCTION
