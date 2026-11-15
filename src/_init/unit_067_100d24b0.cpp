@@ -55,3 +55,9 @@ ConCommand g_106e7458("fov", sub_100d2d80, "Change players FOV", 0, 0);
 void sub_100d2eb0(void);
 ConCommand g_106e77fc("setmodel", sub_100d2eb0, "Changes's player's model", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d30d0 size=0xa
+#include "ConCommand.h"
+void sub_100d30a0(void);
+ConCommand g_106e76b8("lastinv", sub_100d30a0, 0, 0, 0);
+// END FUNCTION
