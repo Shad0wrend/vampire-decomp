@@ -862,3 +862,8 @@ SendTable g_10947c0c;
 int sub_103fcbe0(void);
 int g_10947c08 = ((int (*)(int))sub_103fcbe0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103fcd20 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_1094779c(&CPrecacheRegister::PrecacheFn_Other, "item_g_eldervitaepack");
+// END FUNCTION
