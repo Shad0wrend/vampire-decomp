@@ -119,3 +119,8 @@ ConCommand g_106c918c("npc_enemies", sub_10086150, "Shows memory of NPC.  Draws 
 void sub_10086220(void);
 ConCommand g_106c8e44("npc_focus", sub_10086220, "Displays red line to NPC's enemy (if has one) and blue line to NPC's target entity (if has one)\n\tArguments:   \t{npc_name} / {npc class_name} / no argument picks what player is looking at", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100862f0 size=0xa
+#include "ConVar.h"
+ConVar g_106c8d38("npc_create_equipment", "", 0);
+// END FUNCTION
