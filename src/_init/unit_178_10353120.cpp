@@ -20,3 +20,8 @@ ConVar g_109398c8("sk_max_anaconda_round", "0", 0);
 #include "ConVar.h"
 ConVar g_10938ef0("sk_plr_dmg_crossbow_bolt", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10353460 size=0xa
+#include "ConVar.h"
+ConVar g_10939838("sk_npc_dmg_crossbow_bolt", "0", 0);
+// END FUNCTION
