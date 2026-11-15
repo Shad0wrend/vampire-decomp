@@ -8,3 +8,8 @@ extern SendTable g_1070a7f0;
 extern char g_105702d8[];
 ServerClassReg g_1070a7d4("CFunc_LOD", &g_1070a7f0, g_105702d8);
 // END FUNCTION
+
+// FUNCTION: 0x10114760 size=0xa
+#include "SendTable.h"
+SendTable g_1070a7f0;
+// END FUNCTION
