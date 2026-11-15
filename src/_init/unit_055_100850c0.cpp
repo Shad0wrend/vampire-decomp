@@ -17,3 +17,9 @@ ConCommand g_106c8cc0("ai_disable", sub_10085180, "Bi-passes all AI logic routin
 void sub_10085260(void);
 ConCommand g_106c9024("ai_show_hints", sub_10085260, "Displays all hints as small boxes\n\tBlue\t\t- hint is available for use\n\tRed\t\t- hint is currently being used by an NPC\n\tOrange\t\t- hint not being used by timed out\n\tGrey\t\t- hint has been disabled", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10085360 size=0xa
+#include "ConCommand.h"
+void sub_10085260(void);
+ConCommand g_106c9448("ai_hints", sub_10085260, "Displays all hints as small boxes\n\tBlue\t\t- hint is available for use\n\tRed\t\t- hint is currently being used by an NPC\n\tOrange\t\t- hint not being used by timed out\n\tGrey\t\t- hint has been disabled", 0, 0);
+// END FUNCTION
