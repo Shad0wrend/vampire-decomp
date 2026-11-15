@@ -75,3 +75,8 @@ int g_1074f118 = ((int (*)(int))sub_10212500)(0);
 int * sub_102130a0(void);
 int * g_1074f0a4 = ((int * (*)(int))sub_102130a0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10214270 size=0xa
+#include "ConVar.h"
+ConVar g_1074f0c0("haunted_break_speed", "150", 0);
+// END FUNCTION
