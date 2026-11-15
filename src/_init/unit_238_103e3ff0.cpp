@@ -23,3 +23,8 @@ SendTable g_10941664;
 int sub_103e4290(void);
 int g_10941660 = ((int (*)(int))sub_103e4290)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103e4480 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_109424f0(&CPrecacheRegister::PrecacheFn_Other, "item_w_baseball_bat");
+// END FUNCTION
