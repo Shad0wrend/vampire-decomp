@@ -25,3 +25,8 @@ ConVar g_1093c100("sabbat_gunman_speed_threshold", "0.1", 0, "Determines how fas
 #include "ConVar.h"
 ConVar g_1093c148("sabbat_gunman_speed_trails", "3", 0, "Determines what level of motion trails to use for a speedy guy.");
 // END FUNCTION
+
+// FUNCTION: 0x103a4f80 size=0x5
+int sub_103a4fc0(void);
+int g_1093c18c = ((int (*)(int))sub_103a4fc0)(0);
+// END FUNCTION
