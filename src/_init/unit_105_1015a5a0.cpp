@@ -66,3 +66,8 @@ ConVar g_10725990("sk_player_leg", "1", 0);
 int sub_1015acc0(void);
 int g_107239c4 = ((int (*)(int))sub_1015acc0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1015acf0 size=0x5
+int sub_1015ad30(void);
+int g_10725b28 = ((int (*)(int))sub_1015ad30)(0);
+// END FUNCTION
