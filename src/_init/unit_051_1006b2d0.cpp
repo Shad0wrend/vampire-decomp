@@ -8,3 +8,8 @@ extern SendTable g_106c753c;
 extern char g_10545dc8[];
 ServerClassReg g_106c7500("CTEWorldDecal", &g_106c753c, g_10545dc8);
 // END FUNCTION
+
+// FUNCTION: 0x1006b380 size=0xa
+#include "SendTable.h"
+SendTable g_106c753c;
+// END FUNCTION
