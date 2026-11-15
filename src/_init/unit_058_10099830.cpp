@@ -199,3 +199,9 @@ ConCommand g_106ceb44("ent_pivot", sub_100b05f0, "Displays the pivot for the giv
 void sub_100b0720(void);
 ConCommand g_106cf3f4("ent_step", sub_100b0720, "When 'ent_pause' is set this will step through one waiting input / output message at a time.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100b08f0 size=0xa
+#include "ConCommand.h"
+void sub_100b0850(void);
+ConCommand g_106ceb94("ent_vstats", sub_100b0850, "Displays the Vampire Stats for the given entity(ies) on top of the entity (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
+// END FUNCTION
