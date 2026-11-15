@@ -1379,3 +1379,8 @@ extern SendTable g_10944034;
 extern char g_1067f72c[];
 ServerClassReg g_10945248("CItemGGiovanniInvitationVictor", &g_10944034, g_1067f72c);
 // END FUNCTION
+
+// FUNCTION: 0x10401960 size=0xa
+#include "SendTable.h"
+SendTable g_10944034;
+// END FUNCTION
