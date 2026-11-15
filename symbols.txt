@@ -9148,6 +9148,7 @@
 0x1000cb94 func   ?vfunc180@CBaseEntity@@QAEXXZ CBaseEntity::vfunc180
 0x1000cb99 func   ?sub_10227910@CUnknown10227910@@QAEXPAVCBaseEntity@@@Z CUnknown10227910::sub_10227910
 0x1000cb9e func   ?sub_103f7330@@YAHXZ sub_103f7330
+0x1000cba8 func   ?sub_1033a9e0@CFeedSelf@@QAEXXZ CFeedSelf::sub_1033a9e0
 0x1000cbad func   ?vfunc138@CNPC_VRat@@QAEHXZ CNPC_VRat::vfunc138
 0x1000cbb2 func   ?sub_10325cb0@CBaseCombatCharacter@@QAEXPAXH@Z CBaseCombatCharacter::sub_10325cb0
 0x1000cbb7 func   ?vfunc180@CAI_StandoffGoal@@QAEXXZ CAI_StandoffGoal::vfunc180
