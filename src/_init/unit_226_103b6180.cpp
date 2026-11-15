@@ -25,3 +25,8 @@ ConVar g_1093cce0("tzimisce_pounce", "1", 0, "Set to 1 to allow Tzimisce creatio
 #include "ConVar.h"
 ConVar g_1093cf00("tzimisce_act_override", "0", 0, "Set this var to override the activities with a set thingy stuff stuff.");
 // END FUNCTION
+
+// FUNCTION: 0x103b6400 size=0xa
+#include "ConVar.h"
+ConVar g_1093ca88("tzimisce_throw_power", ".007", 0, "Set this var to override the throw power.");
+// END FUNCTION
