@@ -15,3 +15,8 @@ int g_10926d78 = ((int (*)(int))sub_102d89f0)(0);
 #include "CAI_InterestingPlaceMarkersSaveRestoreOps.h"
 CAI_InterestingPlaceMarkersSaveRestoreOps g_10927184;
 // END FUNCTION
+
+// FUNCTION: 0x102d9520 size=0x5
+int * sub_102d9560(void);
+int * g_10927188 = ((int * (*)(int))sub_102d9560)(0);
+// END FUNCTION
