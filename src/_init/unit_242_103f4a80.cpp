@@ -880,3 +880,8 @@ ServerClassReg g_10945220("CItemGCarStereo", &g_10946248, g_1067f56c);
 #include "SendTable.h"
 SendTable g_10946248;
 // END FUNCTION
+
+// FUNCTION: 0x103fcea0 size=0x5
+int sub_103fcee0(void);
+int g_10946244 = ((int (*)(int))sub_103fcee0)(0);
+// END FUNCTION
