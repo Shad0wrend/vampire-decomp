@@ -10,3 +10,8 @@ ConVar g_1093a280("sk_generic_npc_bathack_health", "10", 0);
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_1093a2c8(false);
 // END FUNCTION
+
+// FUNCTION: 0x1035aca0 size=0x5
+#include "CAI_LocalIdSpace.h"
+CAI_LocalIdSpace g_1093a314(false);
+// END FUNCTION
