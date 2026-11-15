@@ -5,3 +5,8 @@
 #include "ConVar.h"
 ConVar g_1070b5a0("dispcoll_drawplane", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1011d7c0 size=0xa
+#include "ConVar.h"
+ConVar g_1070b2d0("footstep_pc_vol", "0.5", 8576, "PC Step sound volume");
+// END FUNCTION
