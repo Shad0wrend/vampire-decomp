@@ -10,3 +10,8 @@ int g_1093c518 = pcd_initial_1093c518();
 #include "ConVar.h"
 ConVar g_1093c588("sheriff_force_teleport", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103adac0 size=0x5
+int * sub_103adb00(void);
+int * g_1093c5d0 = ((int * (*)(int))sub_103adb00)(0);
+// END FUNCTION
