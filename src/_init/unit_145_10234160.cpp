@@ -59,3 +59,8 @@ ServerClassReg g_10752890("CWeaponRanged_Rifle_Crossbow", &g_10751f28, g_105b782
 #include "SendTable.h"
 SendTable g_10751f28;
 // END FUNCTION
+
+// FUNCTION: 0x102349a0 size=0x5
+int sub_102349e0(void);
+int g_10751f24 = ((int (*)(int))sub_102349e0)(0);
+// END FUNCTION
