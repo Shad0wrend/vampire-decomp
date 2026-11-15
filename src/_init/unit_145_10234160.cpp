@@ -110,3 +110,8 @@ SendTable g_1075226c;
 int sub_10235060(void);
 int g_10752268 = ((int (*)(int))sub_10235060)(0);
 // END FUNCTION
+
+// FUNCTION: 0x102351e0 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10752650(&CPrecacheRegister::PrecacheFn_Other, "item_w_glock_17c");
+// END FUNCTION
