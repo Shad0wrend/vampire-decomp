@@ -100,3 +100,8 @@ ConVar g_10939760("sk_plr_dmg_remington_round", "0", 0);
 #include "ConVar.h"
 ConVar g_10938cb0("sk_npc_dmg_remington_round", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10353d60 size=0xa
+#include "ConVar.h"
+ConVar g_10939108("sk_max_remington_round", "0", 0);
+// END FUNCTION
