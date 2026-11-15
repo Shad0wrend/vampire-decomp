@@ -294,3 +294,8 @@ ServerClassReg g_109475b4("CResearchBook_MG_BRAWL", &g_10949218, g_1067f340);
 #include "SendTable.h"
 SendTable g_10949218;
 // END FUNCTION
+
+// FUNCTION: 0x103f7bf0 size=0x5
+int sub_103f7c30(void);
+int g_10949214 = ((int (*)(int))sub_103f7c30)(0);
+// END FUNCTION
