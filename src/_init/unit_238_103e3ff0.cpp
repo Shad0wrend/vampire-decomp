@@ -215,3 +215,8 @@ ServerClassReg g_10941b0c("CWeaponMelee_Katana", &g_109424d4, g_1066d724);
 #include "SendTable.h"
 SendTable g_109424d4;
 // END FUNCTION
+
+// FUNCTION: 0x103e6180 size=0x5
+int sub_103e61c0(void);
+int g_109424d0 = ((int (*)(int))sub_103e61c0)(0);
+// END FUNCTION
