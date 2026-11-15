@@ -210,3 +210,8 @@ ConVar g_10725948("pl_criminal_level", "-1", 0, "Sets the player's criminal leve
 #include "ConVar.h"
 ConVar g_107250d0("pl_investigate_level", "-1", 0, "Sets the player's investigate level for testing.", true, -1.0f, true, 5.0f);
 // END FUNCTION
+
+// FUNCTION: 0x1017dcf0 size=0xa
+#include "ConVar.h"
+ConVar g_10725eb8("pl_min_act_timer", "5", 0, "Controls the minimum amount of time a player is flagged for commiting a criminal or supernatural act.");
+// END FUNCTION
