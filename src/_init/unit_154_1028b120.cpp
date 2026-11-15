@@ -270,3 +270,8 @@ ConVar g_10923de8("debug_npc_map_xscale", "16384", 0, "Set this to scale the ove
 #include "ConVar.h"
 ConVar g_10923e38("debug_npc_map_yscale", "16384", 0, "Set this to scale the overlay map up or down");
 // END FUNCTION
+
+// FUNCTION: 0x1029fe30 size=0xa
+#include "ConVar.h"
+ConVar g_109245e0("npc_hit_buildup_amount", "2", 0);
+// END FUNCTION
