@@ -1865,3 +1865,8 @@ extern SendTable g_10947bec;
 extern char g_1067f8dc[];
 ServerClassReg g_109473d8("CItemGGarysPhoto", &g_10947bec, g_1067f8dc);
 // END FUNCTION
+
+// FUNCTION: 0x104061f0 size=0xa
+#include "SendTable.h"
+SendTable g_10947bec;
+// END FUNCTION
