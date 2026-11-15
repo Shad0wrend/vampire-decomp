@@ -68,3 +68,8 @@ CThinkContextsSaveDataOps g_106cf254;
 int sub_100a2260(void);
 int g_106ceb40 = ((int (*)(int))sub_100a2260)(0);
 // END FUNCTION
+
+// FUNCTION: 0x100a22b0 size=0x5
+int * sub_100a22f0(void);
+int * g_106cf17c = ((int * (*)(int))sub_100a22f0)(0);
+// END FUNCTION
