@@ -250,3 +250,9 @@ ConCommand g_106c9074("npc_perception", sub_10087fb0, "Sets an NPC's perception 
 void sub_100881c0(void);
 ConCommand g_106c8b80("npc_view_distance", sub_100881c0, "Sets an NPC's view distance.\n\tArguments:   \t{perception}  {entity_name} / {class_name} / no argument picks what player is looking at.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100884b0 size=0xa
+#include "ConCommand.h"
+void sub_10088380(void);
+ConCommand g_106c94e8("npc_hearing_sensitivity", sub_10088380, "Sets an NPC's hearing sensitivity.\n\tArguments:   \t{perception}  {entity_name} / {class_name} / no argument picks what player is looking at.", 0, 0);
+// END FUNCTION
