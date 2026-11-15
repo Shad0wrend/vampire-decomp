@@ -760,3 +760,8 @@ extern SendTable g_109485c8;
 extern char g_1067f51c[];
 ServerClassReg g_109471ec("COccultHealRate", &g_109485c8, g_1067f51c);
 // END FUNCTION
+
+// FUNCTION: 0x103fbb10 size=0xa
+#include "SendTable.h"
+SendTable g_109485c8;
+// END FUNCTION
