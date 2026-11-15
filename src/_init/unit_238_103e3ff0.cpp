@@ -248,3 +248,11 @@ int g_10942520 = ((int (*)(int))sub_103e6500)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10941a50(&CPrecacheRegister::PrecacheFn_Other, "item_w_knife");
 // END FUNCTION
+
+// FUNCTION: 0x103e66f0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109418cc;
+extern char g_1066f150[];
+ServerClassReg g_109418b0("CWeaponMelee_OccultBlade", &g_109418cc, g_1066f150);
+// END FUNCTION
