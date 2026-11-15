@@ -50,3 +50,8 @@ ConVar g_1093cad0("tzimisce_throw_pos_y", "-80", 0, "Set this var to override th
 #include "ConVar.h"
 ConVar g_1093cc38("tzimisce_claw_left_x", "0", 0, "Set this var to override the claw reach around attack pos.");
 // END FUNCTION
+
+// FUNCTION: 0x103b66d0 size=0xa
+#include "ConVar.h"
+ConVar g_1093cbf0("tzimisce_claw_left_y", "25", 0, "Set this var to override the claw reach around attack pos.");
+// END FUNCTION
