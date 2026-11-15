@@ -5,3 +5,11 @@
 int * sub_1012d0a0(void);
 int * g_1070bb68 = ((int * (*)(int))sub_1012d0a0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1012d120 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1070bcc4;
+extern char g_1070bcfc[];
+ServerClassReg g_1070bce4("CHudTimer", &g_1070bcc4, g_1070bcfc);
+// END FUNCTION
