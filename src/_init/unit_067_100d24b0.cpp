@@ -371,3 +371,9 @@ void sub_100d9b80(void);
 void sub_100d9c50(void);
 ConCommand g_106e7924("vdiscipline_info", sub_100d9b80, "Lists information about the targeted disciplines.", 0, sub_100d9c50);
 // END FUNCTION
+
+// FUNCTION: 0x100d9d80 size=0xa
+#include "ConCommand.h"
+void sub_100d9d60(void);
+ConCommand g_106e7730("vquotes", sub_100d9d60, "Lists quotes made by the development team during development\n\tArguments:\t{speaker name} / no arguments lists all quotes", 0, 0);
+// END FUNCTION
