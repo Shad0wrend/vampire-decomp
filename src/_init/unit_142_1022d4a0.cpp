@@ -16,3 +16,11 @@ ConCommand g_10751078("debug_change_masquerade_level", sub_1022e9d0, "Change the
 int sub_10231260(void);
 int g_107511a4 = ((int (*)(int))sub_10231260)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10231800 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10751464;
+extern char g_105b5c30[];
+ServerClassReg g_10751480("CVGuiScreen", &g_10751464, g_105b5c30);
+// END FUNCTION
