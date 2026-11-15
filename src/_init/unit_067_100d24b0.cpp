@@ -437,3 +437,9 @@ ConCommand g_106e77d4("vdebug_dumpanimseqlist", sub_100db0b0, "Dumps the animati
 void sub_100db250(void);
 ConCommand g_106e7784("vdiscipline_endall", sub_100db250, "Turns off all active disciplines on the player.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100db360 size=0xa
+#include "ConCommand.h"
+void sub_100db320(void);
+ConCommand g_106e7160("debug_stealth_toggle", sub_100db320, "Turns off all active disciplines on the player.", 0, 0);
+// END FUNCTION
