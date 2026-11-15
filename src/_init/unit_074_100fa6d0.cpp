@@ -33,3 +33,11 @@ ConVar g_107083d8("particle_scale", "1.0", 384);
 int sub_100fbfc0(void);
 int g_10708dec = ((int (*)(int))sub_100fbfc0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x100fc630 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10708dfc;
+extern char g_10566edc[];
+ServerClassReg g_1070871c("CFuncParticle", &g_10708dfc, g_10566edc);
+// END FUNCTION
