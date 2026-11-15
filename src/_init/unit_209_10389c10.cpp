@@ -20,3 +20,8 @@ CAI_LocalIdSpace g_1093b89c(false);
 int sub_1038ace0(void);
 int g_1093b8b4 = ((int (*)(int))sub_1038ace0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1038ad10 size=0xa
+#include "ConVar.h"
+ConVar g_1093b7c8("manbat_delta", "600.0", 0);
+// END FUNCTION
