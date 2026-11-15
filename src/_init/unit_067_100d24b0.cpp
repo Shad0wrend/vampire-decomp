@@ -213,3 +213,9 @@ void sub_100d6210(void);
 void sub_100d6560(void);
 ConCommand g_106e7250("vclan", sub_100d6210, "Lists or changes the local player's Vampire Clan\n\tArguments:\t{clan #} / {clan_name} / no arguments lists the current clan.", 0, sub_100d6560);
 // END FUNCTION
+
+// FUNCTION: 0x100d6790 size=0xa
+#include "ConCommand.h"
+void sub_100d6680(void);
+ConCommand g_106e7d28("vclans", sub_100d6680, "Lists the available Vampire Clans", 0, 0);
+// END FUNCTION
