@@ -30,3 +30,8 @@ int g_1093b234 = ((int (*)(int))sub_1037e550)(0);
 #include "ConVar.h"
 ConVar g_1093b2e0("hengeyokai_stun", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1037e930 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_1093b328(false);
+// END FUNCTION
