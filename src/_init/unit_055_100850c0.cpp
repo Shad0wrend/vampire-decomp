@@ -388,3 +388,9 @@ ConCommand g_106c93a8("npc_motion_trail", sub_10089ac0, "Sets the motion trail v
 void sub_10089c60(void);
 ConCommand g_106c8ee4("npc_ground_speed_scalar", sub_10089c60, "Sets the ground speed scalar for an NPC\n\tArguments:   \t{value}  {entity_name} / {class_name} / no argument picks what player is looking at.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10089dc0 size=0xa
+#include "ConCommand.h"
+void sub_10089e50(void);
+ConCommand g_106c8ba8("npc_show_relationships", sub_10089e50, "Show the relationships with all combat characters in the world.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at.", 0, 0);
+// END FUNCTION
