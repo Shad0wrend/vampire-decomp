@@ -15,3 +15,8 @@ ConVar g_1070b2d0("footstep_pc_vol", "0.5", 8576, "PC Step sound volume");
 #include "ConVar.h"
 ConVar g_1070b750("force_unstick", "0", 8192);
 // END FUNCTION
+
+// FUNCTION: 0x10125d20 size=0xa
+#include "ConVar.h"
+ConVar g_1070b708("fall_threshold", "200", 8192);
+// END FUNCTION
