@@ -1649,3 +1649,8 @@ extern SendTable g_10944e70;
 extern char g_1067f81c[];
 ServerClassReg g_10945018("CItemGWarrClipboard", &g_10944e70, g_1067f81c);
 // END FUNCTION
+
+// FUNCTION: 0x104041b0 size=0xa
+#include "SendTable.h"
+SendTable g_10944e70;
+// END FUNCTION
