@@ -95,3 +95,8 @@ ConVar g_1093cf90("tzimisce_voice_pitch", "100", 0, "Set this var to override th
 int sub_103b6bc0(void);
 int g_1093cb5c = ((int (*)(int))sub_103b6bc0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103b6fc0 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_1093ce70(false);
+// END FUNCTION
