@@ -43,3 +43,8 @@ extern SendTable g_106cec14;
 extern char g_106cff58[];
 ServerClassReg g_106cfe10("CBaseEntity", &g_106cec14, g_106cff58);
 // END FUNCTION
+
+// FUNCTION: 0x1009a6a0 size=0xa
+#include "SendTable.h"
+SendTable g_106cec14;
+// END FUNCTION
