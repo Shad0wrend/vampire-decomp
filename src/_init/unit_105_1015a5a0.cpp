@@ -36,3 +36,8 @@ ConVar g_10725ca0("physicsshadowupdate_render", "0", 0);
 #include "ConVar.h"
 ConVar g_10725e70("sv_aim", "0", 384, "Autoaim state");
 // END FUNCTION
+
+// FUNCTION: 0x1015a9b0 size=0xa
+#include "ConVar.h"
+ConVar g_10725e28("sk_player_head", "2", 0);
+// END FUNCTION
