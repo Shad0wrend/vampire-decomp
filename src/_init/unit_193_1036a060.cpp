@@ -35,3 +35,8 @@ ConVar g_1093a980("changbros_force_teleport", "0", 0);
 #include "ConVar.h"
 ConVar g_1093a9c8("changbros_force_ledge_attack", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1036eb50 size=0x5
+int sub_1036eb90(void);
+int g_1093a8d4 = ((int (*)(int))sub_1036eb90)(0);
+// END FUNCTION
