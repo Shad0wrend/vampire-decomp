@@ -190,3 +190,9 @@ ConCommand g_106c9510("npc_route", sub_100877a0, "Displays the current route of 
 void sub_10087870(void);
 ConCommand g_106c93f8("npc_select", sub_10087870, "Select or deselects the given NPC(s) for later manipulation.  Selected NPC's are shown surrounded by a red translucent box\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10087980 size=0xa
+#include "ConCommand.h"
+void sub_10087940(void);
+ConCommand g_106c9588("npc_combat", sub_10087940, "Displays text debugging information about the squad and enemy of the selected NPC  (See Overlay Text)\n\tArguments:   \t{npc_name} / {npc class_name} / no argument picks what player is looking at", 0, 0);
+// END FUNCTION
