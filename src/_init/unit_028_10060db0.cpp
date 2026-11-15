@@ -13,3 +13,8 @@ ServerClassReg g_106c23b4("CTEDynamicLight", &g_106c2398, g_105429b8);
 #include "SendTable.h"
 SendTable g_106c2398;
 // END FUNCTION
+
+// FUNCTION: 0x10060ee0 size=0x5
+int sub_10060f20(void);
+int g_106c2394 = ((int (*)(int))sub_10060f20)(0);
+// END FUNCTION
