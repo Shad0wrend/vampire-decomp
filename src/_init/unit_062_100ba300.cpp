@@ -8,3 +8,8 @@ extern SendTable g_106d15b4;
 extern char g_1055a968[];
 ServerClassReg g_106d16f0("CBeam", &g_106d15b4, g_1055a968);
 // END FUNCTION
+
+// FUNCTION: 0x100ba3b0 size=0xa
+#include "SendTable.h"
+SendTable g_106d16d4;
+// END FUNCTION
