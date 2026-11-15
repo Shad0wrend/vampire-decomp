@@ -40,3 +40,8 @@ ConVar g_1093bb58("ming_xiao_charge", "1", 0, "Set this to 1 to allow ming xiao 
 int sub_10390e40(void);
 int g_1093b910 = ((int (*)(int))sub_10390e40)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10391260 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_1093b918(false);
+// END FUNCTION
