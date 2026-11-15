@@ -174,3 +174,8 @@ ServerClassReg g_107524c4("CWeaponRanged_Smg_Mac10", &g_10752758, g_105bb1fc);
 #include "SendTable.h"
 SendTable g_10752758;
 // END FUNCTION
+
+// FUNCTION: 0x102359e0 size=0x5
+int sub_10235a20(void);
+int g_10752754 = ((int (*)(int))sub_10235a20)(0);
+// END FUNCTION
