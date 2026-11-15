@@ -33,3 +33,9 @@ SendTable g_10752e68;
 int sub_1023b0b0(void);
 int g_10752e64 = ((int (*)(int))sub_1023b0b0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1023b300 size=0xa
+#include "ConVar.h"
+void sub_1023b3a0(ConVar *, const char *);
+ConVar g_10752e20("debug_area_type", "0", 0, "Set this var to true to have the area act as a safe are for NPCs.", sub_1023b3a0);
+// END FUNCTION
