@@ -10,3 +10,8 @@ int g_106e860c = ((int (*)(int))sub_100de690)(0);
 #include "CDebugSaveRestoreOps.h"
 CDebugSaveRestoreOps g_106e8610;
 // END FUNCTION
+
+// FUNCTION: 0x100dedd0 size=0xa
+#include "ConVar.h"
+ConVar g_106e8680("dialog_start", "0", 0);
+// END FUNCTION
