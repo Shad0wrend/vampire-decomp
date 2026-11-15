@@ -131,3 +131,8 @@ ConVar g_10725848("scarednpc_time", "180.0", 0);
 #include "ConVar.h"
 ConVar g_10725160("scarednpc_count", "3", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1016d140 size=0xa
+#include "ConVar.h"
+ConVar g_10725bc8("default_clan", "player_brujah", 128);
+// END FUNCTION
