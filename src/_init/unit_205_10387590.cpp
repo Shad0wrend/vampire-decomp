@@ -15,3 +15,8 @@ int g_1093b530 = ((int (*)(int))sub_10387630)(0);
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_1093b538(false);
 // END FUNCTION
+
+// FUNCTION: 0x10387870 size=0x5
+#include "CAI_LocalIdSpace.h"
+CAI_LocalIdSpace g_1093b580(false);
+// END FUNCTION
