@@ -20,3 +20,9 @@ ConVar g_10750f28("soundscheme_randomness", "1000", 0);
 int sub_1022bc00(void);
 int g_10750fe4 = ((int (*)(int))sub_1022bc00)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1022cf00 size=0xa
+#include "ConCommand.h"
+void sub_1022ce80(void);
+ConCommand g_10750fbc("soundscheme_toggledebug", sub_1022ce80, "Shows what sound schemes are playing.", 0, 0);
+// END FUNCTION
