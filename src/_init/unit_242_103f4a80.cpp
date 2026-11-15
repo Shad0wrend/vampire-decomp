@@ -1281,3 +1281,11 @@ SendTable g_10944bc4;
 int sub_10400a00(void);
 int g_10944bc0 = ((int (*)(int))sub_10400a00)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10400b40 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10943948;
+extern char g_1067f6dc[];
+ServerClassReg g_1094880c("CItemGBachJournal", &g_10943948, g_1067f6dc);
+// END FUNCTION
