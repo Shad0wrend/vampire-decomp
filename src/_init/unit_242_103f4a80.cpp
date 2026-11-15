@@ -1623,3 +1623,11 @@ SendTable g_10947160;
 int sub_10403d10(void);
 int g_1094715c = ((int (*)(int))sub_10403d10)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10403e50 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10948f64;
+extern char g_1067f80c[];
+ServerClassReg g_10945034("CItemGStake", &g_10948f64, g_1067f80c);
+// END FUNCTION
