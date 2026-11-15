@@ -145,3 +145,8 @@ ConVar g_10923d90("ent_trace_nav", "0", 0, "When ent_trace is on, this will dump
 #include "ConVar.h"
 ConVar g_10924078("ent_trace_patrolpath", "0", 0, "When ent_trace is on, this will dump info about patrol paths.");
 // END FUNCTION
+
+// FUNCTION: 0x1028c3f0 size=0xa
+#include "ConVar.h"
+ConVar g_109241f8("dialog_facial_debug", "0", 0, "Turns on debug text for the NPC you are talking to.");
+// END FUNCTION
