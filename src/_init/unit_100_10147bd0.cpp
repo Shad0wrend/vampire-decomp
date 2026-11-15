@@ -5,3 +5,8 @@
 int * sub_10147c10(void);
 int * g_1071a320 = ((int * (*)(int))sub_10147c10)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10147ff0 size=0xa
+#include "ConVar.h"
+ConVar g_1071a328("vdebug_physicshand_mode", "2", 0, "");
+// END FUNCTION
