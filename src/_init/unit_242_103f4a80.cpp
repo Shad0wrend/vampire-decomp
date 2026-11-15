@@ -1199,3 +1199,8 @@ extern SendTable g_10944134;
 extern char g_1067f68c[];
 ServerClassReg g_10944d1c("CItemGJumblesFlyer", &g_10944134, g_1067f68c);
 // END FUNCTION
+
+// FUNCTION: 0x103ffe80 size=0xa
+#include "SendTable.h"
+SendTable g_10944134;
+// END FUNCTION
