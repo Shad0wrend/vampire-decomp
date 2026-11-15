@@ -1469,3 +1469,8 @@ extern SendTable g_10948324;
 extern char g_1067f77c[];
 ServerClassReg g_10944e54("CItemGPishaBook", &g_10948324, g_1067f77c);
 // END FUNCTION
+
+// FUNCTION: 0x104026d0 size=0xa
+#include "SendTable.h"
+SendTable g_10948324;
+// END FUNCTION
