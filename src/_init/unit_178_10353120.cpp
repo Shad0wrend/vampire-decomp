@@ -325,3 +325,8 @@ ConVar g_10938d40("sk_plr_dmg_grenade", "0", 0);
 #include "ConVar.h"
 ConVar g_10939270("sk_npc_dmg_grenade", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103556b0 size=0xa
+#include "ConVar.h"
+ConVar g_109388f0("sk_max_grenade", "0", 0);
+// END FUNCTION
