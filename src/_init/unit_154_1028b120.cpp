@@ -160,3 +160,8 @@ ConVar g_10924f20("debug_show_body_targets", "0", 0, "Turns on display of body t
 #include "ConVar.h"
 ConVar g_109248f0("debug_allow_dodge", "0", 0, "Allows or disallows NPC dodging when no cover nodes are found.", true, 0.0f, true, 1.0f);
 // END FUNCTION
+
+// FUNCTION: 0x1028c5c0 size=0xa
+#include "ConVar.h"
+ConVar g_10923d38("debug_allow_fake_reload", "1", 0, "Allows or disallows faked NPC reloading.", true, 0.0f, true, 1.0f);
+// END FUNCTION
