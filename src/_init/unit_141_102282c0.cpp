@@ -15,3 +15,8 @@ int g_10750fb8 = ((int (*)(int))sub_1022a0c0)(0);
 #include "ConVar.h"
 ConVar g_10750f28("soundscheme_randomness", "1000", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1022bbc0 size=0x5
+int sub_1022bc00(void);
+int g_10750fe4 = ((int (*)(int))sub_1022bc00)(0);
+// END FUNCTION
