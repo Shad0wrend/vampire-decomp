@@ -139,3 +139,9 @@ ConVar g_10936cc8("melee_swing_completion_percent", "0.8", 0);
 #include "ConVar.h"
 ConVar g_109370d0("melee_swish_sound_time_offset", "-0.1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10348690 size=0xa
+#include "ConCommand.h"
+void sub_10348560(void);
+ConCommand g_10937acc("player_sequence", sub_10348560, "tells the local player to play a sequence", 0, 0);
+// END FUNCTION
