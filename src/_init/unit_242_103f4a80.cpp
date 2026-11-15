@@ -1163,3 +1163,8 @@ extern SendTable g_10945ec4;
 extern char g_1067f66c[];
 ServerClassReg g_10947ad8("CItemGDriversLicenseGimble", &g_10945ec4, g_1067f66c);
 // END FUNCTION
+
+// FUNCTION: 0x103ff920 size=0xa
+#include "SendTable.h"
+SendTable g_10945ec4;
+// END FUNCTION
