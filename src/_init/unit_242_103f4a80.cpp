@@ -120,3 +120,11 @@ int g_109471cc = ((int (*)(int))sub_103f5ff0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10947150(&CPrecacheRegister::PrecacheFn_Other, "item_m_money_envelope");
 // END FUNCTION
+
+// FUNCTION: 0x103f6180 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10946d74;
+extern char g_1067f254[];
+ServerClassReg g_10945b28("CWeaponWallet", &g_10946d74, g_1067f254);
+// END FUNCTION
