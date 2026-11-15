@@ -25,3 +25,8 @@ ConVar g_1071a378("debug_physics_drag_dist", "64", 0, "");
 #include "ConVar.h"
 ConVar g_1071a4a0("debug_physics_throw_velocity", "20", 0, "");
 // END FUNCTION
+
+// FUNCTION: 0x10148230 size=0xa
+#include "ConVar.h"
+ConVar g_1071a448("debug_physics_hand", "0", 0, "Turns on/off physics hand debugging info");
+// END FUNCTION
