@@ -13,3 +13,8 @@ ServerClassReg g_106c816c("CBaseCineCam", &g_106c7f68, g_106c8184);
 #include "SendTable.h"
 SendTable g_106c7f68;
 // END FUNCTION
+
+// FUNCTION: 0x1006d2b0 size=0x5
+int sub_1006d2f0(void);
+int g_106c7f64 = ((int (*)(int))sub_1006d2f0)(0);
+// END FUNCTION
