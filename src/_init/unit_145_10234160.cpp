@@ -202,3 +202,8 @@ SendTable g_10751b5c;
 int sub_10235ea0(void);
 int g_10751b58 = ((int (*)(int))sub_10235ea0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10236020 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10752668(&CPrecacheRegister::PrecacheFn_Other, "item_w_remington_m_700");
+// END FUNCTION
