@@ -364,3 +364,10 @@ ConCommand g_106e7574("vlastdiscipline_next", sub_100d9820, "Cycles to the next 
 void sub_100d99e0(void);
 ConCommand g_106e77ac("vlastdiscipline_prev", sub_100d99e0, "Cycles to the previous lastDiscipline", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d9bf0 size=0xa
+#include "ConCommand.h"
+void sub_100d9b80(void);
+void sub_100d9c50(void);
+ConCommand g_106e7924("vdiscipline_info", sub_100d9b80, "Lists information about the targeted disciplines.", 0, sub_100d9c50);
+// END FUNCTION
