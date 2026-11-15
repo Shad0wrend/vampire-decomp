@@ -20,3 +20,8 @@ ConVar g_1093c348("andrei_force_awaken", "0", 0);
 #include "ConVar.h"
 ConVar g_1093c390("andrei_force_jump_attack", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103a5a50 size=0xa
+#include "ConVar.h"
+ConVar g_1093c2b0("andrei_force_player_collision", "0", 0);
+// END FUNCTION
