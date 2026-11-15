@@ -37,3 +37,8 @@ ConCommand g_10709150("shake", sub_10103370, 0, 0, 0);
 void sub_101034f0(void);
 ConCommand g_10709124("seasick", sub_101034f0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10103700 size=0x5
+int sub_10103740(void);
+int g_1070914c = ((int (*)(int))sub_10103740)(0);
+// END FUNCTION
