@@ -302,3 +302,8 @@ ServerClassReg g_109424b4("CWeaponMelee_Sledgehammer", &g_10941c3c, g_10670644);
 #include "SendTable.h"
 SendTable g_10941c3c;
 // END FUNCTION
+
+// FUNCTION: 0x103e6e50 size=0x5
+int sub_103e6e90(void);
+int g_10941c38 = ((int (*)(int))sub_103e6e90)(0);
+// END FUNCTION
