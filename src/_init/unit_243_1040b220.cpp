@@ -60,3 +60,8 @@ ConVar g_1094a988("physcannon_cone", "0.97", 0);
 #include "ConVar.h"
 ConVar g_1094ac80("physcannon_ball_cone", "0.997", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1040bbb0 size=0xa
+#include "ConVar.h"
+ConVar g_1094aa78("physcannon_lob_maxweight", "5", 0);
+// END FUNCTION
