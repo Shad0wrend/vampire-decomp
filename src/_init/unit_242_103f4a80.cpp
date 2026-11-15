@@ -1325,3 +1325,8 @@ extern SendTable g_10945dd8;
 extern char g_1067f6fc[];
 ServerClassReg g_10947204("CItemGPishaFetish", &g_10945dd8, g_1067f6fc);
 // END FUNCTION
+
+// FUNCTION: 0x10401150 size=0xa
+#include "SendTable.h"
+SendTable g_10945dd8;
+// END FUNCTION
