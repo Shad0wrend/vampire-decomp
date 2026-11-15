@@ -10,3 +10,8 @@ ConVar g_1093a368("sk_sabbat_npc_health", "10", 0);
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_1093a3b0(false);
 // END FUNCTION
+
+// FUNCTION: 0x1035b4b0 size=0x5
+#include "CAI_LocalIdSpace.h"
+CAI_LocalIdSpace g_1093a350(false);
+// END FUNCTION
