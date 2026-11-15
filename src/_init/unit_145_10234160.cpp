@@ -358,3 +358,9 @@ int g_10751968 = ((int (*)(int))sub_10237860)(0);
 #include "ConVar.h"
 ConVar g_107520a0("vdebug_wpn_anims_cycle", "0", 4, "Set this to true to get extra info.");
 // END FUNCTION
+
+// FUNCTION: 0x10237c50 size=0xa
+#include "ConCommand.h"
+void sub_10237c30(void);
+ConCommand g_10752864("vdebug_wpn_anims_cycle_clear", sub_10237c30, "Cycles a weapon through its animations.", 0, 0);
+// END FUNCTION
