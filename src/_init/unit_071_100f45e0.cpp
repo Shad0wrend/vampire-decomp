@@ -18,3 +18,8 @@ extern SendTable g_106eb3fc;
 extern char g_10565c34[];
 ServerClassReg g_106eb41c("CEntityFlame", &g_106eb3fc, g_10565c34);
 // END FUNCTION
+
+// FUNCTION: 0x100f5220 size=0xa
+#include "SendTable.h"
+SendTable g_106eb3fc;
+// END FUNCTION
