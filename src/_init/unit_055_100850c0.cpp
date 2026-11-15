@@ -208,3 +208,9 @@ ConCommand g_106c8f34("npc_squads", sub_10087940, "Obsolete.  Replaced by npc_co
 void sub_10087aa0(void);
 ConCommand g_106c8e94("npc_tasks", sub_10087aa0, "Displays detailed text debugging information about the all the tasks of the selected NPC current schedule (See Overlay Text)\n\tArguments:   \t{npc_name} / {npc class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10087bb0 size=0xa
+#include "ConCommand.h"
+void sub_10087b70(void);
+ConCommand g_106c8dcc("npc_task_text", sub_10087b70, "Outputs text debugging information to the console about the all the tasks + break conditions of the selected NPC current schedule\n\tArguments:   \t{npc_name} / {npc class_name} / no argument picks what player is looking at ", 0, 0);
+// END FUNCTION
