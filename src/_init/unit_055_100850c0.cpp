@@ -340,3 +340,9 @@ ConCommand g_106c8c48("npc_steering_all", sub_10088fc0, "Displays the steering o
 void sub_100891c0(void);
 ConCommand g_106c95b0("ai_clear_bad_links", sub_100891c0, "Clears bits set on nav links indicating link is unusable ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10089250 size=0xa
+#include "ConCommand.h"
+void sub_100892e0(void);
+ConCommand g_106c8ce8("npc_removeall", sub_100892e0, "finds and removes every NPC entity on the map", 0, 0);
+// END FUNCTION
