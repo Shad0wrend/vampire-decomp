@@ -60,3 +60,8 @@ ConVar g_1093cbf0("tzimisce_claw_left_y", "25", 0, "Set this var to override the
 #include "ConVar.h"
 ConVar g_1093cba8("tzimisce_claw_left_z", "40", 0, "Set this var to override the claw reach around attack pos.");
 // END FUNCTION
+
+// FUNCTION: 0x103b67f0 size=0xa
+#include "ConVar.h"
+ConVar g_1093cd28("tzimisce_obstruction_lookahead", "24", 0, "Set this var to override the lookahead for obstructing physics objects.");
+// END FUNCTION
