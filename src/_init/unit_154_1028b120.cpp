@@ -293,3 +293,8 @@ ServerClassReg g_109248d4("CAI_BaseNPCTroika", &g_10924338, g_105d174c);
 #include "SendTable.h"
 SendTable g_10924338;
 // END FUNCTION
+
+// FUNCTION: 0x102c5930 size=0x5
+int sub_102c5970(void);
+int g_10924334 = ((int (*)(int))sub_102c5970)(0);
+// END FUNCTION
