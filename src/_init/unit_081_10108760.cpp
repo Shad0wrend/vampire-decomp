@@ -5,3 +5,8 @@
 #include "ConVar.h"
 ConVar g_10709470("fire_maxabsorb", "50", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101087f0 size=0xa
+#include "ConVar.h"
+ConVar g_107094b8("fire_absorbrate", "3", 0);
+// END FUNCTION
