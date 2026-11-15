@@ -102,3 +102,11 @@ int g_10943468 = ((int (*)(int))sub_103f3770)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_109434e4(&CPrecacheRegister::PrecacheFn_Other, "item_a_lt_leather");
 // END FUNCTION
+
+// FUNCTION: 0x103f3900 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109434c8;
+extern char g_1067ea64[];
+ServerClassReg g_10943488("CWeaponIArmor_Hvy_Leather", &g_109434c8, g_1067ea64);
+// END FUNCTION
