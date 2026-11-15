@@ -322,3 +322,9 @@ ConCommand g_106e73e0("vbotchtypes", sub_100d7e00, "Lists the available Vampire 
 void sub_100d7f20(void);
 ConCommand g_106e789c("vbotchtables", sub_100d7f20, "Lists the available Vampire Botch Tables", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d8090 size=0xa
+#include "ConCommand.h"
+void sub_100d8040(void);
+ConCommand g_106e7df0("vstatinfo", sub_100d8040, "Lists the available Vampire System Stats & their sub-values", 0, 0);
+// END FUNCTION
