@@ -311,3 +311,9 @@ ConCommand g_107259d8("remove_discipline_effects", sub_10181040, "", 0, 0);
 void sub_101812f0(void);
 ConCommand g_107251ec("dump_activity_lists", sub_101812f0, "", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10183420 size=0xa
+#include "ConCommand.h"
+void sub_10183470(void);
+ConCommand g_107255b4("credits", sub_10183470, 0, 0, 0);
+// END FUNCTION
