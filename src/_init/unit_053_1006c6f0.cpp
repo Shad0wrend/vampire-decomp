@@ -46,3 +46,8 @@ ServerClassReg g_106c7f88("CCameraAnimated", &g_106c7c54, g_10546930);
 #include "SendTable.h"
 SendTable g_106c7c54;
 // END FUNCTION
+
+// FUNCTION: 0x100710c0 size=0x5
+int sub_10071100(void);
+int g_106c7c50 = ((int (*)(int))sub_10071100)(0);
+// END FUNCTION
