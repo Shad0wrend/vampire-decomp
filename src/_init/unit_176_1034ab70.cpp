@@ -40,3 +40,8 @@ ConVar g_10938490("speed_walk", "100", 0);
 #include "ConVar.h"
 ConVar g_10938138("speed_runbase", "225", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1034f150 size=0xa
+#include "ConVar.h"
+ConVar g_10938400("speed_runbonusathletics", "5", 0);
+// END FUNCTION
