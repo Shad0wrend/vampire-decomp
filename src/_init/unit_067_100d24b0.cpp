@@ -73,3 +73,9 @@ ConCommand g_106e7318("phys_swap", sub_100d3160, 0, 0, 0);
 void sub_100d3270(void);
 ConCommand g_106e7ab8("worldmap_transition", sub_100d3270, "Transition to map\t\nArguments: <map_name>", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d3560 size=0xa
+#include "ConCommand.h"
+void sub_100d3510(void);
+ConCommand g_106e76e0("use", sub_100d3510, "Use a particular weapon\t\nArguments: <weapon_name>", 0, 0);
+// END FUNCTION
