@@ -30,3 +30,8 @@ ConVar g_1093c148("sabbat_gunman_speed_trails", "3", 0, "Determines what level o
 int sub_103a4fc0(void);
 int g_1093c18c = ((int (*)(int))sub_103a4fc0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103a5110 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_1093c190(false);
+// END FUNCTION
