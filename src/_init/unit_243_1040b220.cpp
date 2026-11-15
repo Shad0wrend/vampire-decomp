@@ -108,3 +108,8 @@ ServerClassReg g_1094aa5c("CWeaponPhysCannon", &g_1094aea8, g_10683a68);
 #include "SendTable.h"
 SendTable g_1094aea8;
 // END FUNCTION
+
+// FUNCTION: 0x1040d650 size=0x5
+int sub_1040d690(void);
+int g_1094aea4 = ((int (*)(int))sub_1040d690)(0);
+// END FUNCTION
