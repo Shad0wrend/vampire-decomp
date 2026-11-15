@@ -54,3 +54,8 @@ extern SendTable g_10751f28;
 extern char g_105b782c[];
 ServerClassReg g_10752890("CWeaponRanged_Rifle_Crossbow", &g_10751f28, g_105b782c);
 // END FUNCTION
+
+// FUNCTION: 0x10234920 size=0xa
+#include "SendTable.h"
+SendTable g_10751f28;
+// END FUNCTION
