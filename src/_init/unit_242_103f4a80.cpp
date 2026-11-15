@@ -975,3 +975,11 @@ SendTable g_10946cf4;
 int sub_103fdc50(void);
 int g_10946cf0 = ((int (*)(int))sub_103fdc50)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103fdd90 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109477e4;
+extern char g_1067f5cc[];
+ServerClassReg g_10947af0("CItemGGhostPendant", &g_109477e4, g_1067f5cc);
+// END FUNCTION
