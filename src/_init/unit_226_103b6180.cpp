@@ -75,3 +75,8 @@ ConVar g_1093cb60("tzimisce_obstruction_z", "75", 0, "Set this var to override t
 #include "ConVar.h"
 ConVar g_1093cb18("tzimisce_obstruction_scalar", "5", 0, "Set this var to override the forward push for obstructing physics objects.");
 // END FUNCTION
+
+// FUNCTION: 0x103b69a0 size=0xa
+#include "ConVar.h"
+ConVar g_1093ceb8("tzimisce_voice_volume", "1", 0, "Set this var to override the voice volume (1 = normal).", true, 0.0f, true, 1.0f);
+// END FUNCTION
