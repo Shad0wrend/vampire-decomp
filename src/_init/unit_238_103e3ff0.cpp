@@ -458,3 +458,8 @@ ServerClassReg g_1094181c("CWeaponMelee_SabbatLeaderAttack", &g_10940f60, g_1067
 #include "SendTable.h"
 SendTable g_10940f60;
 // END FUNCTION
+
+// FUNCTION: 0x103e8ef0 size=0x5
+int sub_103e8f30(void);
+int g_10940f5c = ((int (*)(int))sub_103e8f30)(0);
+// END FUNCTION
