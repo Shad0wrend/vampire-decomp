@@ -335,3 +335,8 @@ extern SendTable g_10944e1c;
 extern char g_1067f360[];
 ServerClassReg g_10946f8c("CResearchBook_HG_MELEE", &g_10944e1c, g_1067f360);
 // END FUNCTION
+
+// FUNCTION: 0x103f8170 size=0xa
+#include "SendTable.h"
+SendTable g_10944e1c;
+// END FUNCTION
