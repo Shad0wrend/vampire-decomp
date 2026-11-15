@@ -228283,6 +228283,439 @@ void * CUnknown102e4f20::sub_102e4f20(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e4f50 size=0xae7
+#include "CBaseEntity.h"
+#include "CAI_MoveProbe.h"
+#include "engineserver.h"
+#include <math.h>
+
+class Vector2D
+{
+public:
+	float x, y;
+	Vector2D() {}
+	Vector2D operator-(const Vector2D &v) const;
+	float Length() const;
+};
+inline void Vector2DSubtract(const Vector2D &a, const Vector2D &b, Vector2D &c) { c.x = a.x - b.x; c.y = a.y - b.y; }
+inline float Vector2DLength(const Vector2D &v) { return (float)FastSqrt(v.x * v.x + v.y * v.y); }
+inline Vector2D Vector2D::operator-(const Vector2D &v) const { Vector2D res; Vector2DSubtract(*this, v, res); return res; }
+inline float Vector2D::Length() const { return Vector2DLength(*this); }
+inline const Vector2D &AsV2DF(const Vector &v) { return *(const Vector2D *)&v; }
+namespace block_vp {
+class CCycleCount
+{
+public:
+	CCycleCount() { Init(); }
+	void Init() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm
+		{
+			mov		ecx, pSample
+			rdtsc
+			mov		[ecx],     eax
+			mov		[ecx+4],   edx
+		}
+	}
+	CCycleCount &operator+=(CCycleCount const &other) { m_Int64 += other.m_Int64; return *this; }
+	__int64 m_Int64;
+};
+
+class CFastTimer
+{
+public:
+	void Start() { m_Duration.Sample(); }
+	void End()
+	{
+		CCycleCount cnt;
+		cnt.Sample();
+		m_Duration.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+	}
+	const CCycleCount &GetDuration() const { return m_Duration; }
+	CCycleCount m_Duration;
+};
+}
+using namespace block_vp;
+
+class CVProfile;
+extern CVProfile *g_109f3648;
+
+class __declspec(dllimport) CVProfNode
+{
+public:
+	bool ExitScope();
+	bool ExitScopeI();
+	bool ExitScopeII();
+	CVProfNode *GetParent() { return m_pParent; }
+
+	const char *m_pszName;	// 0x00
+	int m_pad04;
+	CFastTimer m_Timer;	// 0x08
+	int m_nRecursions;	// 0x10
+	unsigned m_nCurFrameCalls;	// 0x14
+	CCycleCount m_CurFrameTime;	// 0x18
+	char m_pad20[0x48 - 0x20];
+	CVProfNode *m_pParent;	// 0x48
+	CVProfNode *m_pChild;
+	CVProfNode *m_pSibling;
+	int m_BudgetGroupID;	// 0x54
+};
+
+__declspec(dllimport) void vtune(bool bEnable);
+
+class __declspec(dllimport) CVProfile
+{
+public:
+	void EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted);
+	void ExitScope();
+	void PopGroup();
+	void PopGroupI();
+	void ExitScopeI();
+	void ExitScopeII();
+	void ExitScopeIII();
+
+	char m_bVTuneGroupsEnabled;	// 0x0000
+	char m_pad0001[3];
+	int m_nVTuneGroupID;	// 0x0004
+	int m_GroupIDStack[1024];	// 0x0008
+	int m_nGroupStackDepth;	// 0x1008
+	int m_enabled;	// 0x100c
+	bool m_fAtRoot;	// 0x1010
+	char m_pad1011[3];
+	CVProfNode *m_pCurNode;	// 0x1014
+	CVProfNode *m_pRoot;	// 0x1018
+};
+
+// node ExitScope inlined, timer End inlined, PopGroup imported
+inline bool CVProfNode::ExitScopeI()
+{
+	if (--m_nRecursions == 0 && m_nCurFrameCalls != 0)
+	{
+		m_Timer.End();
+		m_CurFrameTime += m_Timer.GetDuration();
+		g_109f3648->PopGroup();
+	}
+	return (m_nRecursions == 0);
+}
+
+// node ExitScope inlined, timer End inlined, PopGroup inlined
+inline bool CVProfNode::ExitScopeII()
+{
+	if (--m_nRecursions == 0 && m_nCurFrameCalls != 0)
+	{
+		m_Timer.End();
+		m_CurFrameTime += m_Timer.GetDuration();
+		g_109f3648->PopGroupI();
+	}
+	return (m_nRecursions == 0);
+}
+
+inline void CVProfile::PopGroupI()
+{
+	--m_nGroupStackDepth;
+	int nNew = m_GroupIDStack[m_nGroupStackDepth];
+	int nOld = m_GroupIDStack[m_nGroupStackDepth + 1];
+	if (nNew != nOld && m_bVTuneGroupsEnabled && nOld == m_nVTuneGroupID)
+		vtune(false);
+}
+
+// node ExitScope imported
+inline void CVProfile::ExitScopeI()
+{
+	if (!m_fAtRoot || m_enabled != 0)
+	{
+		if (m_pCurNode->ExitScope())
+			m_pCurNode = m_pCurNode->GetParent();
+		m_fAtRoot = (m_pCurNode == m_pRoot);
+	}
+}
+
+// node inline, PopGroup imported
+inline void CVProfile::ExitScopeII()
+{
+	if (!m_fAtRoot || m_enabled != 0)
+	{
+		if (m_pCurNode->ExitScopeI())
+			m_pCurNode = m_pCurNode->GetParent();
+		m_fAtRoot = (m_pCurNode == m_pRoot);
+	}
+}
+
+// all inline
+inline void CVProfile::ExitScopeIII()
+{
+	if (!m_fAtRoot || m_enabled != 0)
+	{
+		if (m_pCurNode->ExitScopeII())
+			m_pCurNode = m_pCurNode->GetParent();
+		m_fAtRoot = (m_pCurNode == m_pRoot);
+	}
+}
+
+extern Vector g_1070d1b0;	// vec3_origin
+
+float sub_102e5d00(float *v);	// Vector2DNormalize
+int sub_102e2d70(CBaseEntity *pBlocker);	// AIComputeBlockerMoveResult
+float sub_102d61b0(int hull);	// NAI_Hull::Width
+float sub_102d61e0(int hull);	// NAI_Hull::Height
+void sub_10143d80(const Vector &pos, float size, int r, int g, int b, int noDepthTest, float duration);	// Cross3D
+void sub_10142aa0(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float duration);	// Box
+void sub_10142e90(const Vector *pStart, const Vector *pEnd, int r, int g, int b, unsigned char noDepthTest, float duration);	// Line
+void sub_10143b70(const Vector *pOrigin, const Vector *pMins, const Vector *pMaxs, int r, int g, int b, int a, float duration);	// Box
+
+struct IServerUnknown4
+{
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual CBaseEntity *vfunc4();
+};
+
+struct EdictView4
+{
+	char m_pad[0x40];
+	IServerUnknown4 *m_pUnknown;
+};
+
+struct ICollideable4
+{
+	virtual void vfunc0();
+	virtual const Vector &vfunc1();	// WorldAlignMins
+	virtual const Vector &vfunc2();	// WorldAlignMaxs
+};
+
+struct COuter4
+{
+	char m_pad0000[0x224];
+	int m_debugOverlays;	// 0x224
+	char m_pad0228[0x270 - 0x228];
+	ICollideable4 m_Collision;	// 0x270
+};
+
+struct CheckStepArgs_t
+{
+	Vector vecStart;
+	Vector vecStepDir;
+	float stepSize;
+	float stepHeight;
+	float stepDownMultiplier;
+	float minStepLanding;
+	unsigned collisionMask;
+	int groundTest;
+	bool bFlag;
+	int a8;
+};
+
+struct CheckStepResult_t
+{
+	Vector endPoint;
+	Vector hitNormal;
+	CBaseEntity *pBlocker;
+};
+
+struct CAI_MoveProbeV : CAI_MoveProbe
+{
+	float sub_102e7e00();	// StepHeight
+	float sub_102e7e20();	// GetStepDownMultiplier
+	char sub_102e4160(const CheckStepArgs_t &args, CheckStepResult_t *pResult);	// CheckStep
+	COuter4 *GetOuter() const { return (COuter4 *)m_pOuter; }
+	const Vector &WorldAlignMins() const { return GetOuter()->m_Collision.vfunc1(); }
+	const Vector &WorldAlignMaxs() const { return GetOuter()->m_Collision.vfunc2(); }
+	int GetHullType() const { return m_pad08; }
+	float GetHullWidth() const { return sub_102d61b0(GetHullType()); }
+	float GetHullHeight() const { return sub_102d61e0(GetHullType()); }
+	bool CheckStandPosition(const Vector &v, unsigned mask, int a8) { return sub_102e7270(&v.x, mask, 0, 0, 0, a8) != 0; }
+};
+
+inline Vector MulV(const Vector &a, float b) { Vector r; r.x = a[0] * b; r.y = a[1] * b; r.z = a[2] * b; return r; }
+#define LOCAL_STEP_SIZE 16.0
+#define min(a,b) (((a) < (b)) ? (a) : (b))
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+
+char CAI_MoveProbe::sub_102e4f50(const float *pStart, const float *pEnd, int collisionMask, float pctToCheckStandPositions, int flags, AIMoveTrace_t *pMoveTrace, int bStop, int a8)
+{
+	CAI_MoveProbeV *pThis = (CAI_MoveProbeV *)this;
+	const Vector &vecActualStart = *(const Vector *)pStart;
+	const Vector &vecDesiredEnd = *(const Vector *)pEnd;
+
+	g_109f3648->EnterScope("CAI_MoveProbe_TestGroundMove", 0, "Unaccounted", false);
+
+	AIMoveTrace_t ignored;
+	if (!pMoveTrace)
+		pMoveTrace = &ignored;
+
+	pMoveTrace->m_fields.f24 = 0.0f;
+	pMoveTrace->m_fields.nHit = 0;
+	*(Vector *)&pMoveTrace->m_fields.n0 = g_1070d1b0;
+	pMoveTrace->fStatus = 0;
+	*(Vector *)&pMoveTrace->m_fields.e0 = vecActualStart;
+	pMoveTrace->m_fields.fDist = 0;
+
+	Vector vecMoveDir;
+	vecMoveDir.x = vecDesiredEnd.x - vecActualStart.x;
+	vecMoveDir.y = vecDesiredEnd.y - vecActualStart.y;
+	vecMoveDir.z = vecDesiredEnd.z - vecActualStart.z;
+	vecMoveDir.z = 0.0f;
+	pMoveTrace->m_fields.f20 = sub_102e5d00(&vecMoveDir.x);
+	if (pMoveTrace->m_fields.f20 == 0.0f)
+	{
+		g_109f3648->ExitScope();
+		return true;
+	}
+
+	if ((char)bStop)
+	{
+		*(Vector *)&pMoveTrace->m_fields.e0 = vecDesiredEnd;
+		g_109f3648->ExitScope();
+		return true;
+	}
+
+	int groundTest;
+	if ((flags & 1) || pctToCheckStandPositions < 0.001)
+	{
+		groundTest = 0;
+		pctToCheckStandPositions = 0;
+	}
+	else
+	{
+		if (pctToCheckStandPositions > 99.999)
+			pctToCheckStandPositions = 100;
+
+		if ((flags & 2) || pThis->CheckStandPosition(vecActualStart, collisionMask, a8))
+			groundTest = 1;
+		else
+			groundTest = 2;
+	}
+
+	if ((flags & 8) && !pThis->CheckStandPosition(vecActualStart, collisionMask, a8))
+	{
+		sub_10143d80(vecActualStart, 16, 128, 0, 0, true, 2.0);
+	}
+
+	float distClear = 0;
+
+	CheckStepArgs_t checkStepArgs;
+	CheckStepResult_t checkStepResult;
+
+	checkStepArgs.vecStart = vecActualStart;
+	checkStepArgs.vecStepDir = vecMoveDir;
+	checkStepArgs.stepSize = 0;
+	checkStepArgs.stepHeight = pThis->sub_102e7e00();
+	checkStepArgs.stepDownMultiplier = pThis->sub_102e7e20();
+	checkStepArgs.minStepLanding = pThis->GetHullWidth() * 0.3333333;
+	checkStepArgs.collisionMask = collisionMask;
+	checkStepArgs.groundTest = groundTest;
+	checkStepArgs.a8 = a8;
+	checkStepArgs.bFlag = false;
+
+	checkStepResult.endPoint.x = vecActualStart.x;
+	checkStepResult.endPoint.y = vecActualStart.y;
+	checkStepResult.endPoint.z = vecActualStart.z;
+	checkStepResult.hitNormal.x = g_1070d1b0.x;
+	checkStepResult.hitNormal.y = g_1070d1b0.y;
+	checkStepResult.hitNormal.z = g_1070d1b0.z;
+	checkStepResult.pBlocker = 0;
+
+	float distStartToIgnoreGround = (pctToCheckStandPositions == 100) ? pMoveTrace->m_fields.f20 : pMoveTrace->m_fields.f20 * (pctToCheckStandPositions * 0.01);
+
+	for (;;)
+	{
+		float flStepSize = min(LOCAL_STEP_SIZE, pMoveTrace->m_fields.f20 - distClear);
+		if (flStepSize < 0.001)
+			break;
+
+		checkStepArgs.stepSize = flStepSize;
+		if (distClear - distStartToIgnoreGround > 0.001)
+			checkStepArgs.groundTest = 0;
+
+		pThis->sub_102e4160(checkStepArgs, &checkStepResult);
+
+		if (flags & 8)
+		{
+			if (!pThis->CheckStandPosition(checkStepResult.endPoint, collisionMask, a8))
+			{
+				sub_10142aa0(checkStepResult.endPoint, pThis->WorldAlignMins(), pThis->WorldAlignMaxs(), 255, 0, 0, 0, 0.1);
+				sub_10143d80(checkStepResult.endPoint, 16, 255, 0, 0, true, 0.1);
+			}
+			else
+			{
+				sub_10142aa0(checkStepResult.endPoint, pThis->WorldAlignMins(), pThis->WorldAlignMaxs(), 0, 255, 0, 0, 0.1);
+				sub_10143d80(checkStepResult.endPoint, 16, 0, 255, 0, true, 0.1);
+			}
+		}
+
+		if (checkStepResult.pBlocker)
+		{
+			distClear += (checkStepResult.endPoint - checkStepArgs.vecStart).Length2D();
+			break;
+		}
+
+		float dz = checkStepResult.endPoint.z - checkStepArgs.vecStart.z;
+		if (dz < 0)
+		{
+			dz = 0;
+		}
+
+		pMoveTrace->m_fields.fDist += dz;
+		distClear += flStepSize;
+		checkStepArgs.vecStart = checkStepResult.endPoint;
+	}
+
+	*(Vector *)&pMoveTrace->m_fields.e0 = checkStepResult.endPoint;
+
+	if (checkStepResult.pBlocker)
+	{
+		pMoveTrace->m_fields.nHit = (int)checkStepResult.pBlocker;
+		*(Vector *)&pMoveTrace->m_fields.n0 = checkStepResult.hitNormal;
+		pMoveTrace->fStatus = sub_102e2d70(checkStepResult.pBlocker);
+		pMoveTrace->m_fields.f24 = pMoveTrace->m_fields.f20 - distClear;
+
+		if (pThis->GetOuter()->m_debugOverlays & 0x800000)
+		{
+			sub_10142e90(&vecActualStart, &(vecActualStart + MulV(vecMoveDir, distClear)), 255, 128, 128, 1, 3.0);
+			sub_10143b70(&(vecActualStart + MulV(vecMoveDir, distClear)), &Vector(-2, -2, -2), &Vector(2, 2, 2), 255, 128, 128, 1, 3.0);
+		}
+
+		if (flags & 8)
+		{
+			sub_10142aa0(checkStepResult.endPoint, pThis->WorldAlignMins(), pThis->WorldAlignMaxs(), 255, 0, 0, 0, 0.5);
+		}
+
+		g_109f3648->ExitScopeI();
+		return false;
+	}
+
+	if (!(flags & 4))
+	{
+		float threshold = max(0.5f * pThis->GetHullHeight(), pThis->sub_102e7e00() + 0.1);
+		if (fabs(pMoveTrace->m_fields.e2 - vecDesiredEnd.z) > threshold)
+		{
+			EdictView4 *pEdict = (EdictView4 *)engine->vfunc38(0);
+			pMoveTrace->m_fields.nHit = (int)((pEdict != 0 && pEdict->m_pUnknown != 0) ? pEdict->m_pUnknown->vfunc4() : 0);
+			*(Vector *)&pMoveTrace->m_fields.n0 = g_1070d1b0;
+			pMoveTrace->fStatus = -2;
+			pMoveTrace->m_fields.f24 = (AsV2DF(vecDesiredEnd) - AsV2DF(*(Vector *)&pMoveTrace->m_fields.e0)).Length();
+
+			if (pThis->GetOuter()->m_debugOverlays & 0x800000)
+			{
+				float d = pMoveTrace->m_fields.f20 - pMoveTrace->m_fields.f24;
+				sub_10142e90(&vecActualStart, &(vecActualStart + MulV(vecMoveDir, d)), 255, 128, 128, 1, 3.0);
+				sub_10143b70(&(vecActualStart + MulV(vecMoveDir, d)), &Vector(-2, -2, -2), &Vector(2, 2, 2), 255, 128, 128, 1, 3.0);
+			}
+
+			g_109f3648->ExitScopeII();
+			return false;
+		}
+	}
+
+	g_109f3648->ExitScopeIII();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e5d00 size=0x57
 #include "Vector.h"
 float sub_102e5d00(float *v)
