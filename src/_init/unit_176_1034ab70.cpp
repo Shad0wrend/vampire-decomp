@@ -55,3 +55,11 @@ CPrecacheRegister g_109380b0(&CPrecacheRegister::PrecacheFn_Other, "player");
 int sub_1034f300(void);
 int g_1093830c = ((int (*)(int))sub_1034f300)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1034f580 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10938108;
+extern char g_10626910[];
+ServerClassReg g_109383e4("CHL2_Player", &g_10938108, g_10626910);
+// END FUNCTION
