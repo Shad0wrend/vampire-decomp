@@ -157,3 +157,8 @@ ConVar g_10725de0("sv_suppress_viewpunch", "0", 8192);
 int sub_10179000(void);
 int g_10725214 = ((int (*)(int))sub_10179000)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101791b0 size=0xa
+#include "SendTable.h"
+SendTable g_10725d78;
+// END FUNCTION
