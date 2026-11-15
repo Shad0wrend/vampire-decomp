@@ -18,3 +18,11 @@ SendTable g_106c4258;
 int sub_10064560(void);
 int g_106c4254 = ((int (*)(int))sub_10064560)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10064b30 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_106c4238;
+extern char g_10543b30[];
+ServerClassReg g_106c41c8("CTEExplosiveGunshotDecal", &g_106c4238, g_10543b30);
+// END FUNCTION
