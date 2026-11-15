@@ -1492,3 +1492,8 @@ ServerClassReg g_10948b78("CItemGBadluckTalisman", &g_10949068, g_1067f78c);
 #include "SendTable.h"
 SendTable g_10949068;
 // END FUNCTION
+
+// FUNCTION: 0x10402a00 size=0x5
+int sub_10402a40(void);
+int g_10949064 = ((int (*)(int))sub_10402a40)(0);
+// END FUNCTION
