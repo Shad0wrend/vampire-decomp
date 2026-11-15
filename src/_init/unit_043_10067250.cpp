@@ -8,3 +8,8 @@ extern SendTable g_106c5388;
 extern char g_10544a40[];
 ServerClassReg g_106c53a4("CTESmoke", &g_106c5388, g_10544a40);
 // END FUNCTION
+
+// FUNCTION: 0x10067300 size=0xa
+#include "SendTable.h"
+SendTable g_106c5388;
+// END FUNCTION
