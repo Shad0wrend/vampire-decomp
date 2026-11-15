@@ -105,3 +105,8 @@ ConVar g_1093f780("werewolf_teleport_ignore_viewcone", "1", 0);
 #include "ConVar.h"
 ConVar g_1093fa38("werewolf_teleport_full_path_check", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103d8af0 size=0xa
+#include "ConVar.h"
+ConVar g_1093f8a0("werewolf_footstep_sounds", "0", 0);
+// END FUNCTION
