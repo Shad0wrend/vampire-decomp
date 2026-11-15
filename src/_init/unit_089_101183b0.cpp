@@ -5,3 +5,8 @@
 int * sub_101183f0(void);
 int * g_1070b068 = ((int * (*)(int))sub_101183f0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10119300 size=0xa
+#include "ConVar.h"
+ConVar g_1070b180("sv_showhitboxes", "-1", 256, "Send server-side hitboxes for specified entity to client (NOTE:  this uses lots of bandwidth, use on listen server only).");
+// END FUNCTION
