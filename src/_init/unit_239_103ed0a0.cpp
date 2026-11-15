@@ -51,3 +51,8 @@ int g_10942d40 = ((int (*)(int))sub_103ef070)(0);
 #include "ConVar.h"
 ConVar g_10942f00("grenade_lighttime", "3", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103ef1d0 size=0xa
+#include "ConVar.h"
+ConVar g_10942f48("grenade_lightdecay", "2000", 0);
+// END FUNCTION
