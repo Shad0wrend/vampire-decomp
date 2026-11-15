@@ -1425,3 +1425,11 @@ SendTable g_109475d0;
 int sub_10401f80(void);
 int g_109475cc = ((int (*)(int))sub_10401f80)(0);
 // END FUNCTION
+
+// FUNCTION: 0x104020c0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10947598;
+extern char g_1067f75c[];
+ServerClassReg g_10943dbc("CItemGBrotherhoodFlyer", &g_10947598, g_1067f75c);
+// END FUNCTION
