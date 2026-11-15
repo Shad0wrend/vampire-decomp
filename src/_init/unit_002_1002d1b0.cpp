@@ -45,3 +45,9 @@ ConVar g_106b88a8("collision_shake_freq", "0.5", 0);
 #include "ConVar.h"
 ConVar g_106b8978("collision_shake_time", "0.5", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10032990 size=0xa
+#include "ConCommand.h"
+void sub_10032880(void);
+ConCommand g_106b894c("air_density", sub_10032880, "Changes the density of air for drag computations.", 0, 0);
+// END FUNCTION
