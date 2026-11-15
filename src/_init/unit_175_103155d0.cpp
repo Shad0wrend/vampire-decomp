@@ -25,3 +25,8 @@ ConVar g_10936d10("debug_show_melee_attack_boxes", "0", 0, "Show some attack box
 #include "ConVar.h"
 ConVar g_10937c88("debug_show_melee_attack_boxes_obstructed", "0", 0, "Show some attack boxes.", true, 0.0f, true, 1.0f);
 // END FUNCTION
+
+// FUNCTION: 0x1031a430 size=0xa
+#include "ConVar.h"
+ConVar g_10936e98("debug_show_melee_attack_boxes_missed", "0", 0, "Show some attack boxes.", true, 0.0f, true, 1.0f);
+// END FUNCTION
