@@ -15493,6 +15493,7 @@
 0x10014dd0 func   ?sub_10167320@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10167320
 0x10014dd5 func   _item_w_remington_m_700 item_w_remington_m_700
 0x10014dda func   ?sub_10139150@@YAHHH@Z sub_10139150
+0x10014ddf func   ?sub_102fa630@CAI_Node@@QAEXXZ CAI_Node::sub_102fa630
 0x10014de4 func   ?sub_1038fa50@CUnknown1038fa50@@QAEXH@Z CUnknown1038fa50::sub_1038fa50
 0x10014de9 func   ?vfunc234@CDisciplineProjectile@@QAE?AUCGameTrace@@PBVVector@@@Z CDisciplineProjectile::vfunc234
 0x10014dee func   ?sub_10304020@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@HPBMHHHHHHHH@Z CAI_Pathfinder::sub_10304020

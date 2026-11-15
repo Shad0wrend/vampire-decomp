@@ -238966,6 +238966,123 @@ void CAI_Node::sub_102fa510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fa630 size=0x493
+#include "CAI_Node.h"
+#include "CAI_NodeGraph.h"
+#include "CBitString.h"
+#include "UTIL_Trace.h"
+
+void sub_101006e0(const Vector *pStart, const Vector *pEnd, unsigned int mask, int a, int b, CGameTrace *ptr);
+
+struct CUnknown1004f860
+{
+	void *sub_1004f860();
+};
+
+inline void NodeTraceA(const Vector &vecStart, const Vector &vecEnd, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((CUnknown1004f860 *)&ray)->sub_1004f860();
+	ray.sub_1004f7a0(&vecStart.x, &vecEnd.x);
+	CTraceFilterSimple traceFilter(0, 0);
+	g_1070b254->vfunc4(&ray, 0x2000b, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+inline void NodeTraceB(const Vector &vecStart, const Vector &vecEnd, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((CUnknown1004f860 *)&ray)->sub_1004f860();
+	ray.sub_1004f7a0(&vecStart.x, &vecEnd.x);
+	CTraceFilterSimple traceFilter(0, 0);
+	g_1070b254->vfunc4(&ray, 0x2000b, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+inline Vector NodeRaise(const Vector &v)
+{
+	Vector r;
+	r.x = v.x;
+	r.y = v.y;
+	r.z = v.z + 70.0f;
+	return r;
+}
+
+inline CAI_Node *NodeAt(CAI_NodeGraph *pGraph, int i)
+{
+	if (i >= 0 && i < pGraph->m_nNodes)
+		return pGraph->m_ppNodes[i];
+	g_106c994c++;
+	return 0;
+}
+
+static inline int LdV(const int *b, int i) { return b[i]; }
+static inline int LdR(const int &r) { return r; }
+struct V74 { unsigned int lo : 28; unsigned int hi : 4; };
+void CAI_Node::sub_102fa630()
+{
+	if (m_nType == 1)
+		return; else { Vector vecA;
+	sub_102fb0d0(&vecA.x, 2);
+	for (int i = 0; i < m_pGraph98->m_nNodes; i += 1)
+	{
+		CAI_Node *pNode = NodeAt(m_pGraph98, i);
+		if (m_nIndex == i)
+		{
+			m_pBits->m_pData[pNode->m_nIndex >> 5] |= 1 << (pNode->m_nIndex & 0x1f);
+			continue;
+		}
+			if (m_x == pNode->m_x && m_y == pNode->m_y && m_z == pNode->m_z && pNode->m_nType != 4)
+			{
+				pNode->m_nType = 1;
+				continue;
+			}
+			if (pNode->m_nType == 1)
+				continue;
+			if ((unsigned char)((unsigned)m_n74 >> 28) & 1)
+			{
+				float dx = pNode->m_x - m_x;
+				float dy = pNode->m_y - m_y;
+				float dz = pNode->m_z - m_z;
+				float t0 = dz * dz; float d = dx * dx + dy * dy + t0;
+				if (pNode->m_nType == 3)
+				{
+					if (d > 4194304.0f)
+						continue;
+				}
+				else if (d > 640000.0f)
+					continue;
+			}
+			Vector vecB;
+			NodeAt(m_pGraph98, i)->sub_102fb0d0(&vecB.x, 2);
+			CGameTrace tr;
+			tr.m_pEnt = 0;
+			NodeTraceA(vecA, vecB, &tr);
+			if (tr.m_startsolid || tr.m_fraction != 1.0)
+			{
+				Vector vecB2 = NodeRaise(vecB);
+				Vector vecA2 = NodeRaise(vecA);
+				NodeTraceB(vecA2, vecB2, &tr);
+				if (tr.m_startsolid || tr.m_fraction != 1.0)
+				{
+					Vector vecA3 = NodeRaise(vecA);
+					NodeTraceB(vecA3, vecB, &tr);
+					if (tr.m_startsolid || tr.m_fraction != 1.0)
+					{
+						Vector vecB3 = NodeRaise(vecB);
+						sub_101006e0(&vecA, &vecB3, 0x2000b, 0, 0, &tr);
+						if (tr.m_startsolid || tr.m_fraction != 1.0)
+							continue;
+					}
+				}
+			}
+		m_pBits->m_pData[pNode->m_nIndex >> 5] |= 1 << (pNode->m_nIndex & 0x1f);
+	} }
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fac00 size=0x3c1
 #include "CAI_NodeGraph.h"
 #include "CAI_Node.h"
