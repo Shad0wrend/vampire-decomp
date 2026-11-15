@@ -110,3 +110,8 @@ extern SendTable g_109434c8;
 extern char g_1067ea64[];
 ServerClassReg g_10943488("CWeaponIArmor_Hvy_Leather", &g_109434c8, g_1067ea64);
 // END FUNCTION
+
+// FUNCTION: 0x103f39b0 size=0xa
+#include "SendTable.h"
+SendTable g_109434c8;
+// END FUNCTION
