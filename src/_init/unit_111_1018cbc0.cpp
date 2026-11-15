@@ -38,3 +38,8 @@ extern SendTable g_1072b094;
 extern char g_1058d74c[];
 ServerClassReg g_1072b040("CDynamicProp", &g_1072b094, g_1058d74c);
 // END FUNCTION
+
+// FUNCTION: 0x10190380 size=0xa
+#include "SendTable.h"
+SendTable g_1072b094;
+// END FUNCTION
