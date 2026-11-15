@@ -1528,3 +1528,8 @@ ServerClassReg g_10943d8c("CItemGWirelessCamera1", &g_10946440, g_1067f7ac);
 #include "SendTable.h"
 SendTable g_10946440;
 // END FUNCTION
+
+// FUNCTION: 0x10402f60 size=0x5
+int sub_10402fa0(void);
+int g_1094643c = ((int (*)(int))sub_10402fa0)(0);
+// END FUNCTION
