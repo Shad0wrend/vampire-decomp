@@ -18,3 +18,8 @@ extern SendTable g_109ee748;
 extern char g_106acf50[];
 ServerClassReg g_109ee728("CBaseGrenade", &g_109ee748, g_106acf50);
 // END FUNCTION
+
+// FUNCTION: 0x104293a0 size=0xa
+#include "SendTable.h"
+SendTable g_109ee748;
+// END FUNCTION
