@@ -353,3 +353,8 @@ SendTable g_1075196c;
 int sub_10237860(void);
 int g_10751968 = ((int (*)(int))sub_10237860)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10237ba0 size=0xa
+#include "ConVar.h"
+ConVar g_107520a0("vdebug_wpn_anims_cycle", "0", 4, "Set this to true to get extra info.");
+// END FUNCTION
