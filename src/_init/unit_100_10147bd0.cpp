@@ -40,3 +40,9 @@ CPrecacheRegister g_1071a48c(&CPrecacheRegister::PrecacheFn_Other, "gravity_pell
 int * sub_10148560(void);
 int * g_1071a498 = ((int * (*)(int))sub_10148560)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1014ea70 size=0xa
+#include "ConCommand.h"
+void sub_1014e520(void);
+ConCommand g_1071a3c4("collision_test", sub_1014e520, "Tests collision system", 0, 0);
+// END FUNCTION
