@@ -33550,6 +33550,176 @@ void sub_10086380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10086910 size=0x3b8
+#include "engineserver.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+#include "CUnknown10738960.h"
+#include "CTraceFilterSimple.h"
+#include "CGameTrace.h"
+#include "Ray_t.h"
+#include "ConVar.h"
+#include "CEntityVSlots.h"
+#include "CBaseEntity.h"
+#include "Tier1.h"
+#include "UTIL_Trace.h"
+
+#include <math.h>
+namespace block_10086910 {
+#pragma auto_inline(off)
+struct RayInit : Ray_t { void sub_1004f7a0(const float *pStart, const float *pEnd); };
+void RayInit::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+struct Ray_tViewH { Vector m_Start; Vector m_Delta; Vector m_StartOffset; Vector m_Extents; bool m_IsRay; bool m_IsSwept; char m_b32; char m_b33; float m_f34; };
+struct RayHull : Ray_t { void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b); };
+void RayHull::sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b)
+{
+	const Vector &end = *(const Vector *)pEnd;
+	Ray_tViewH *r = (Ray_tViewH *)this;
+	const Vector &mins = *(const Vector *)pMins;
+	const Vector &maxs = *(const Vector *)pMaxs;
+	VectorSubtract(end, start, r->m_Delta);
+	r->m_IsSwept = (r->m_Delta.LengthSqr() != 0.0f);
+	VectorSubtract(maxs, mins, r->m_Extents);
+	r->m_Extents *= 0.5f;
+	r->m_IsRay = (r->m_Extents.LengthSqr() < 1e-6);
+	VectorAdd(mins, maxs, r->m_StartOffset);
+	r->m_StartOffset *= 0.5f;
+	VectorAdd(start, r->m_StartOffset, r->m_Start);
+	r->m_StartOffset *= -1.0f;
+	r->m_b32 = b;
+	r->m_b33 = 0;
+	r->m_f34 = 0.0f;
+	if (a && !r->m_IsRay) {
+		r->m_f34 = (float)sqrt((r->m_Extents.x * r->m_Extents.x) + (r->m_Extents.y * r->m_Extents.y));
+		if (1e-6 < r->m_f34)
+			r->m_b33 = 1;
+	}
+}
+#pragma auto_inline(on)
+}
+using namespace block_10086910;
+inline void TraceLineCallsR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+inline void TraceLineCallsR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, void *pFilter, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+extern char g_106b8540[];
+extern CGlobalEntityList g_106eb5d8;
+CBaseEntity *sub_10136580(const char *pszName);
+CBaseEntity *sub_101193b0();
+void sub_10139610(const QAngle *angles, Vector *fwd, Vector *right, Vector *up);
+void sub_101cd250(CBaseEntity *pEnt, int mask, int a);
+void sub_10142aa0(const Vector *pOrigin, const float *pMins, const float *pMaxs, int r, int g, int b, int a, int d);
+const float *sub_102d6100(int hull);
+const float *sub_102d6120(int hull);
+void __fastcall sub_101c0b10(CBaseEntity *pEnt);
+
+struct ConVarS : ConVar
+{
+	const char *GetStringS() const
+	{
+		if (m_pParent->vfunc1())
+		{
+			return g_106b8540;
+		}
+		if (m_nFlags & 0x1000)
+		{
+			return "FCVAR_NEVER_AS_STRING";
+		}
+		ConVar *var = (ConVar *)m_pParent;
+		return (var->m_pszString) ? var->m_pszString : g_106b8540;
+	}
+};
+struct P3 { int a, b, c; };
+inline const char *ConVarString(ConVar &cv)
+{
+	if (cv.m_pParent->vfunc1())
+		return g_106b8540;
+	if (cv.m_nFlags & 0x1000)
+		return "FCVAR_NEVER_AS_STRING";
+	const char *p = cv.m_pParent->m_pszString;
+	return p ? p : g_106b8540;
+}
+
+struct CEyeV_b6 { EVS10(0) EVS10(1) EVS10(2) EVS10(3) EVS10(4) EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9) EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15) EVS10(16) EVS10(17) EVS10(18) EVS(190) EVS(191) EVS(192) virtual Vector EyePosition(); };
+inline Vector AddV_b6(const Vector &a, const Vector &b) { return Vector(a.x + b.x, a.y + b.y, a.z + b.z); }
+inline Vector AddR_b6(const Vector &a, const Vector &b) { Vector r; r.x = a.x + b.x; r.y = a.y + b.y; r.z = a.z + b.z; return r; }
+inline Vector MulV_b6(const Vector &a, float s) { return Vector(a.x * s, a.y * s, a.z * s); }
+inline Vector MulR_b6(const Vector &a, float s) { Vector r; r.x = a.x * s; r.y = a.y * s; r.z = a.z * s; return r; }
+void sub_10086910()
+{
+	if (!g_106eb5d8.sub_100f7380(0, engine->vfunc84(1))) {
+		g_109f3630("Can't create %s.  Not precached!\n", engine->vfunc84(1));
+		return;
+	}
+	CBaseEntity *pBase = sub_10136580(engine->vfunc84(1));
+	if (pBase) {
+		CEntityVSlots *pEnt = (CEntityVSlots *)pBase;
+		CEntityVSlots *pPlayer = (CEntityVSlots *)sub_101193b0();
+		CGameTrace tr;
+		Vector forward;
+		sub_10139610((QAngle *)((char *)pPlayer + 0x206c), &forward, 0, 0);
+		TraceLineCallsR(((CEyeV_b6 *)pPlayer)->EyePosition(), ((CEyeV_b6 *)pPlayer)->EyePosition() + forward * 56755.84f, 0x202400b, pPlayer, 0, &tr);
+		if (tr.m_fraction != 1.0) {
+			pEnt->slot110("additionalequipment", ((ConVarS *)&g_106c8d38)->GetStringS());
+			QAngle angles = *(QAngle *)pPlayer->slot221();
+			angles.x = 0;
+			angles.z = 0;
+			pEnt->slot64((const float *)&angles);
+			((Vector *)tr.m_endpos)->z += 12.0f;
+			pEnt->slot62((const float *)tr.m_endpos);
+			pEnt->slot103();
+			pBase->sub_100aaf30();
+			sub_101cd250(pBase, 0x202400b, 0);
+			const P3 *pc = (const P3 *)pEnt->slot217(); int a = pc->a; int b = pc->b; int c = pc->c; int hull = *(int *)((char *)pBase + 0x1568); Vector up; P3 *pd = (P3 *)&up; pd->c = c; pd->a = a; pd->b = b; up.z += 1.0f; 
+			UTIL_TraceHull(*pEnt->slot217(), up, *(Vector *)sub_102d6100(hull), *(Vector *)sub_102d6120(hull), 0x202400b, pBase, 0, &tr, 1, 0);
+			if (tr.m_startsolid || tr.m_fraction < 1.0) {
+				sub_101c0b10(pBase);
+				g_109f3630("Can't create %s.  Bad Position!\n", engine->vfunc84(1));
+				int hull2 = *(int *)((char *)pBase + 0x1568);
+				sub_10142aa0(pEnt->slot217(), sub_102d6100(hull2), sub_102d6120(hull2), 0xff, 0, 0, 0, 0);
+				return;
+			}
+			else {
+				pBase->sub_100b3b00();
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086e50 size=0x9b
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
