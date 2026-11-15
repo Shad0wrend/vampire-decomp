@@ -1929,3 +1929,11 @@ SendTable g_10948538;
 int sub_10406ac0(void);
 int g_10948534 = ((int (*)(int))sub_10406ac0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10406c00 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10943d4c;
+extern char g_1067f91c[];
+ServerClassReg g_10943da4("CItemGGargoyleBook", &g_10943d4c, g_1067f91c);
+// END FUNCTION
