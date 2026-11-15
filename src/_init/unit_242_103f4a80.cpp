@@ -811,3 +811,8 @@ ServerClassReg g_10944490("CBloodPack", &g_10943b9c, g_1067f53c);
 #include "SendTable.h"
 SendTable g_10943b9c;
 // END FUNCTION
+
+// FUNCTION: 0x103fc310 size=0x5
+int sub_103fc350(void);
+int g_10943b98 = ((int (*)(int))sub_103fc350)(0);
+// END FUNCTION
