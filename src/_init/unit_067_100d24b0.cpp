@@ -383,3 +383,9 @@ ConCommand g_106e7730("vquotes", sub_100d9d60, "Lists quotes made by the develop
 void sub_100d9e10(void);
 ConCommand g_106e7614("jump", sub_100d9e10, "Sets the jumping feat to given value by setting underlying stats.\n\tArguments:\t{value} / no arguments lists current feat value", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d9fb0 size=0xa
+#include "ConCommand.h"
+void sub_100d9ec0(void);
+ConCommand g_106e7b58("vdmg", sub_100d9ec0, "Applies amount of damage to player.\n\tArguments:\t{dmg value}", 0, 0);
+// END FUNCTION
