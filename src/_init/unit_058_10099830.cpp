@@ -229,3 +229,9 @@ ConCommand g_106cf258("ent_trace_buffer", sub_100b0c00, "Turns tracing on to all
 void sub_100b0df0(void);
 ConCommand g_106cf1f0("ent_trace_dump_buffer", sub_100b0df0, "Dumps the trace buffer to the debug window.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100b1000 size=0xa
+#include "ConCommand.h"
+void sub_100b0f60(void);
+ConCommand g_106cebe4("ent_condition", sub_100b0f60, "Displays condition info (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
+// END FUNCTION
