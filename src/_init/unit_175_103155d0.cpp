@@ -88,3 +88,8 @@ ConVar g_10936e50("sv_draw_eye_orientation", "0", 0);
 #include "ConVar.h"
 ConVar g_10936f70("debug_view_cone_2d3d", "3", 0, "Set the view cone tests to be in 2d or 3d.", true, 2.0f, true, 3.0f);
 // END FUNCTION
+
+// FUNCTION: 0x10327a00 size=0xa
+#include "ConVar.h"
+ConVar g_109371c0("gib_xz_vel", "200.0", 0, "Gib Vel");
+// END FUNCTION
