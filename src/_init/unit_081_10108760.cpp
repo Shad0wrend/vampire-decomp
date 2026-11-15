@@ -50,3 +50,8 @@ ConVar g_10709348("fire_growthrate", "1.0", 0);
 #include "ConVar.h"
 ConVar g_10709300("fire_dmginterval", "3.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10108d00 size=0xa
+#include "ConVar.h"
+ConVar g_10709500("fire_showvolume", "0", 0);
+// END FUNCTION
