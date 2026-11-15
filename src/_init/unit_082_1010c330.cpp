@@ -13,3 +13,8 @@ extern SendTable g_107098c8;
 extern char g_1056e150[];
 ServerClassReg g_107096ac("CFuncAreaPortalWindow", &g_107098c8, g_1056e150);
 // END FUNCTION
+
+// FUNCTION: 0x1010cd70 size=0xa
+#include "SendTable.h"
+SendTable g_107098c8;
+// END FUNCTION
