@@ -770,3 +770,8 @@ SendTable g_109485c8;
 int sub_103fbbd0(void);
 int g_109485c4 = ((int (*)(int))sub_103fbbd0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103fbd10 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_109477d4(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_heal_rate");
+// END FUNCTION
