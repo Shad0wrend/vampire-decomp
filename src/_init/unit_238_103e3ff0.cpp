@@ -261,3 +261,8 @@ ServerClassReg g_109418b0("CWeaponMelee_OccultBlade", &g_109418cc, g_1066f150);
 #include "SendTable.h"
 SendTable g_109418cc;
 // END FUNCTION
+
+// FUNCTION: 0x103e6820 size=0x5
+int sub_103e6860(void);
+int g_109418c8 = ((int (*)(int))sub_103e6860)(0);
+// END FUNCTION
