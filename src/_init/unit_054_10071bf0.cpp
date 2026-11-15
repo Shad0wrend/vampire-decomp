@@ -15,3 +15,8 @@ int g_106c8614 = pcd_initial_106c8614();
 #include "ConVar.h"
 ConVar g_106c85d0("scene_print", "0", 0, "When playing back a scene, print timing and event info to console.");
 // END FUNCTION
+
+// FUNCTION: 0x100803e0 size=0x5
+int * sub_10080420(void);
+int * g_106c8a3c = ((int * (*)(int))sub_10080420)(0);
+// END FUNCTION
