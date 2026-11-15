@@ -447,3 +447,9 @@ CPrecacheRegister g_109443c4(&CPrecacheRegister::PrecacheFn_Other, "item_p_resea
 int sub_103f90c0(void);
 int g_10946334 = ((int (*)(int))sub_103f90c0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f9280 size=0xa
+#include "ConCommand.h"
+void sub_103f9240(void);
+ConCommand g_10948598("occult_regen_trigger", sub_103f9240, "Triggers Occult Regen action", 0, 0);
+// END FUNCTION
