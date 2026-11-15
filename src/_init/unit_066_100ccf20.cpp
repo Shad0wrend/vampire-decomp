@@ -26,3 +26,8 @@ ConCommand g_106e70b0("debug_dump_eventqueue", sub_100cf680, "Dumps a list of th
 #include "CEQ_SaveRestoreBlockHandler.h"
 CEQ_SaveRestoreBlockHandler g_106e70a8;
 // END FUNCTION
+
+// FUNCTION: 0x100cffc0 size=0x5
+#include "CPyObjStrSaveRestoreDataOps.h"
+CPyObjStrSaveRestoreDataOps g_106e6ffc;
+// END FUNCTION
