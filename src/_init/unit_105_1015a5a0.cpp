@@ -230,3 +230,8 @@ ConVar g_107257b8("debug_response_timer_min", "5.0", 0, "Sets the minimum amount
 #include "ConVar.h"
 ConVar g_10725890("debug_response_timer_max", "7.5", 0, "Sets the maximum amount of time we will wait after an offense to send WC outputs and spawn cops.");
 // END FUNCTION
+
+// FUNCTION: 0x1017eb80 size=0xa
+#include "ConVar.h"
+ConVar g_10725f70("debug_heightened_alert_expire_time", "40.0", 0, "Determines how long NPC's stay in heightened alert mode.");
+// END FUNCTION
