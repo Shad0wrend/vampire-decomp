@@ -1587,3 +1587,11 @@ SendTable g_10946314;
 int sub_104037b0(void);
 int g_10946310 = ((int (*)(int))sub_104037b0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x104038f0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10945050;
+extern char g_1067f7ec[];
+ServerClassReg g_10945ee4("CItemGEyes", &g_10945050, g_1067f7ec);
+// END FUNCTION
