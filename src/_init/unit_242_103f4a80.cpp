@@ -1222,3 +1222,8 @@ ServerClassReg g_10944000("CItemGLarryBriefcase", &g_10947b10, g_1067f69c);
 #include "SendTable.h"
 SendTable g_10947b10;
 // END FUNCTION
+
+// FUNCTION: 0x104001b0 size=0x5
+int sub_104001f0(void);
+int g_10947b0c = ((int (*)(int))sub_104001f0)(0);
+// END FUNCTION
