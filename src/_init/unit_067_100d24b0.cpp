@@ -30,3 +30,9 @@ ConCommand g_106e78fc("buddha", sub_100d2880, "Toggle.  Player takes damage but 
 void sub_100d2990(void);
 ConCommand g_106e75ec("say", sub_100d2990, "Display player message", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d2aa0 size=0xa
+#include "ConCommand.h"
+void sub_100d2a60(void);
+ConCommand g_106e7390("say_team", sub_100d2a60, "Display player message to team", 0, 0);
+// END FUNCTION
