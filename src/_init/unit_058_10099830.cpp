@@ -163,3 +163,9 @@ ConCommand g_106cf22c("ent_fire", sub_100afb90, "Usage:\n   ent_fire <target> [a
 void sub_100afe70(void);
 ConCommand g_106cf1a8("ent_break", sub_100afe70, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100b01f0 size=0xa
+#include "ConCommand.h"
+void sub_100aff90(void);
+ConCommand g_106cfe28("ent_info", sub_100aff90, "Usage:\n   ent_info <class name>\n", 0, 0);
+// END FUNCTION
