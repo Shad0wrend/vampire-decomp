@@ -294,3 +294,11 @@ int g_10752774 = ((int (*)(int))sub_10236d70)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10751d50(&CPrecacheRegister::PrecacheFn_Other, "item_w_uzi");
 // END FUNCTION
+
+// FUNCTION: 0x10236f40 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10751b3c;
+extern char g_105bed50[];
+ServerClassReg g_10751a58("CWeaponRanged_Pistol_Thirtyeight", &g_10751b3c, g_105bed50);
+// END FUNCTION
