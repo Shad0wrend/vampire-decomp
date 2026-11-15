@@ -13,3 +13,8 @@ extern SendTable g_1074f6ec;
 extern char g_105af258[];
 ServerClassReg g_1074f380("CBaseTerminal", &g_1074f6ec, g_105af258);
 // END FUNCTION
+
+// FUNCTION: 0x10217320 size=0xa
+#include "SendTable.h"
+SendTable g_1074f6ec;
+// END FUNCTION
