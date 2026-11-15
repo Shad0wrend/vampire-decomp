@@ -30,3 +30,8 @@ ConVar g_1093ba88("ming_xiao_pickup", "1", 0, "Set this to 1 to allow ming xiao 
 #include "ConVar.h"
 ConVar g_1093b9b0("ming_xiao_grub_death", "1", 0, "Set this to 1 to kill ming xiao's grubs when she dies.");
 // END FUNCTION
+
+// FUNCTION: 0x10390c50 size=0xa
+#include "ConVar.h"
+ConVar g_1093bb58("ming_xiao_charge", "1", 0, "Set this to 1 to allow ming xiao to do a charge attack when cornered.");
+// END FUNCTION
