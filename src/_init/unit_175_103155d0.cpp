@@ -63,3 +63,8 @@ extern SendTable g_10936dc4;
 extern char g_10619d4c[];
 ServerClassReg g_10936d54("CBaseCombatCharacter", &g_10936dc4, g_10619d4c);
 // END FUNCTION
+
+// FUNCTION: 0x103219a0 size=0xa
+#include "SendTable.h"
+SendTable g_10936dc4;
+// END FUNCTION
