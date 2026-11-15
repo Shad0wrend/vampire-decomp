@@ -650,3 +650,8 @@ ServerClassReg g_1094769c("COccultExperience", &g_10944ac0, g_1067f4cc);
 #include "SendTable.h"
 SendTable g_10944ac0;
 // END FUNCTION
+
+// FUNCTION: 0x103fac90 size=0x5
+int sub_103facd0(void);
+int g_10944abc = ((int (*)(int))sub_103facd0)(0);
+// END FUNCTION
