@@ -13,3 +13,8 @@ ServerClassReg g_106c2a40("CTEExplosion", &g_106c2a5c, g_10542de0);
 #include "SendTable.h"
 SendTable g_106c2a5c;
 // END FUNCTION
+
+// FUNCTION: 0x10061bc0 size=0x5
+int sub_10061c00(void);
+int g_106c2a58 = ((int (*)(int))sub_10061c00)(0);
+// END FUNCTION
