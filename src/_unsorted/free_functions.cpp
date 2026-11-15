@@ -307086,6 +307086,111 @@ void __stdcall sub_1040dde0(CBaseEntity *pEnt, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040de20 size=0x2de
+#include "CWeaponPhysCannon.h"
+#include "CBaseEntity.h"
+#include "engineiface.h"
+#include "CEntityVSlots.h"
+#include "IPhysicsObject.h"
+#include "QAngle.h"
+
+struct DmgInfoRaw
+{
+	int w[19];
+};
+
+struct CPhysCannonOwner
+{
+	char m_pad0000[0xa8];
+	CBaseEntity *m_pPlayer;
+};
+
+struct CPCEntSlots
+{
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS10(1) EVS10(2) EVS10(3)
+	EVS(40) virtual void slot41(const Vector *pVec, int a); EVS(42) EVS(43) EVS(44) EVS(45) EVS(46) EVS(47) EVS(48) EVS(49)
+	EVS10(5) EVS10(6) EVS10(7) EVS10(8) EVS10(9) EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15)
+	EVS(160) EVS(161) EVS(162) EVS(163) EVS(164) EVS(165) EVS(166) EVS(167) EVS(168)
+	virtual void slot169(const QAngle &angPunch);
+};
+
+struct ConVarView9d4 { virtual void v0(); virtual bool vfunc1(); char m_pad[0x24]; float m_fValue; };
+extern ConVarView9d4 *g_1094a9d4;
+
+extern void __fastcall sub_101c2690(DmgInfoRaw *);
+extern void sub_101c2c60();
+extern char sub_101896f0(CBaseEntity *pEnt, void *pPlayer, int a);
+extern char sub_10189a10(CBaseEntity *pEnt);
+
+#pragma auto_inline(off)
+namespace block_1040de20 {
+char sub_1040d930()
+{
+	return 0;
+}
+}
+#pragma auto_inline(on)
+using namespace block_1040de20;
+
+void CWeaponPhysCannon::sub_1040de20(CBaseEntity *pEnt, const float *pDir, void *pTrace)
+{
+	DmgInfoRaw info;
+	sub_101c2690(&info);
+	Vector vecDir = *(const Vector *)pDir;
+	info.w[11] = (int)sub_102521f0();
+	info.w[10] = (int)this;
+	*(float *)&info.w[12] = 0.0f;
+	info.w[14] = 0x20000000;
+	pEnt->sub_100a7d00((int)&info, (int)&vecDir, (int)pTrace);
+	sub_101c2c60();
+	CPhysCannonOwner *pOwner = (CPhysCannonOwner *)sub_102521f0();
+	CPCEntSlots *pPlayer;
+	if (!pOwner)
+		pPlayer = 0;
+	else
+		pPlayer = (CPCEntSlots *)pOwner->m_pPlayer;
+	if (sub_101896f0(pEnt, pPlayer, 1))
+	{
+		sub_1040dde0(pEnt, pPlayer, 1);
+		IPhysicsObject *pPhys = (IPhysicsObject *)pEnt->m_obj36c;
+		if (!pPhys)
+		{
+			vfunc291();
+			return;
+		}
+		if (vecDir.z < 0.0f)
+			vecDir.z *= -0.65f;
+		if (!sub_1040d930() && !sub_10189a10(pEnt))
+		{
+			{
+				Vector vImp = vecDir * 15000.0f;
+				pPhys->vfunc30(&vImp);
+			}
+			float mass = pPhys->vfunc12();
+			if (!(mass < 250.0f))
+				mass = 250.0f;
+			{
+				Vector vForce = vecDir * mass * 600.0f;
+				pPhys->vfunc31(&vForce, (const Vector *)((char *)pTrace + 0xc));
+			}
+		}
+		else
+		{
+			float flScale = g_1094a9d4->vfunc1() ? 0.0f : g_1094a9d4->m_fValue;
+			sub_1040e1c0(pEnt, (const Vector *)pDir, flScale);
+		}
+	}
+	QAngle recoil = QAngle(enginerandom->vfunc1(1.0f, 2.0f), enginerandom->vfunc1(-1.0f, 1.0f), 0);
+	pPlayer->slot169(recoil);
+	vfunc307(0xc0);
+	m_flElementDebounce = gpGlobals->curtime + 0.5f;
+	*(float *)&m_n918 = gpGlobals->curtime + 0.25f;
+	m_flTimes730[1] = m_flTimes730[0] = gpGlobals->curtime + 0.5f;
+	(void)pPlayer;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040e1c0 size=0xd5
 #include "CBaseEntity.h"
 #include "IPhysicsObject.h"
