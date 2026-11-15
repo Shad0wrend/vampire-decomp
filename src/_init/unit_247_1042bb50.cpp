@@ -13,3 +13,8 @@ ServerClassReg g_109ee958("CBaseViewModel", &g_109ee974, g_106ad6c8);
 #include "SendTable.h"
 SendTable g_109ee974;
 // END FUNCTION
+
+// FUNCTION: 0x1042bc80 size=0x5
+int sub_1042bcc0(void);
+int g_109ee970 = ((int (*)(int))sub_1042bcc0)(0);
+// END FUNCTION
