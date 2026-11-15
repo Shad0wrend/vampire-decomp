@@ -65,3 +65,8 @@ ConVar g_1093d458("werewolf_force_teleport_in_time", "25.0", 0);
 #include "ConVar.h"
 ConVar g_1093f9a0("werewolf_force_teleport", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103c8600 size=0xa
+#include "ConVar.h"
+ConVar g_1093d570("werewolf_pursuit_distance", "800", 0);
+// END FUNCTION
