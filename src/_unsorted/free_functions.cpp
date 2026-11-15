@@ -189630,6 +189630,196 @@ int sub_10242420(Vector *p1, Vector *d1, float s1, Vector *p2, float s2, Vector 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10242950 size=0x6d2
+#define inline __forceinline
+#include "Vector.h"
+#undef inline
+#include <math.h>
+
+struct Vector2D
+{
+	float x, y;
+	float &operator[](int i) { return ((float *)this)[i]; }
+	float operator[](int i) const { return ((float *)this)[i]; }
+};
+struct SegT2 { float t1, t2; };
+
+int __cdecl sub_10242420(Vector *p0, Vector *a, float la, Vector *b, float lb, Vector *p4, SegT2 &out);
+void __cdecl sub_1011e010(Vector *a, Vector *b, Vector *pOut);
+namespace block_10242950 {
+#pragma auto_inline(off)
+void sub_1011e010(Vector *a, Vector *b, Vector *out)
+{
+	out->x = a->y * b->z - a->z * b->y;
+	out->y = a->z * b->x - a->x * b->z;
+	out->z = a->x * b->y - a->y * b->x;
+}
+void sub_10242390(const float *v, float *out)
+{
+    out[0] = 0;
+    out[1] = 1.0f;
+    float ax = fabsf(v[0]);
+    float ay = fabsf(v[1]);
+    if (ax > ay) {
+        if (ax > fabsf(v[2])) {
+            out[0] = 1.0f;
+            out[1] = 2.0f;
+        }
+    } else if (fabsf(v[2]) < ay) {
+        out[0] = 0;
+        out[1] = 2.0f;
+    }
+}
+void __cdecl sub_10242640(double tPlus, double tMinus, Vector axisU0, Vector axisU1, Vector axisV0, Vector axisV1, Vector axisOrigin, Vector pt, int projU, double &s, double &t)
+{
+	double sDenomPlus = ( axisU0[projU] * ( 1 - tPlus ) ) + ( axisU1[projU] * tPlus );
+	double sDenomMinus = ( axisU0[projU] * ( 1 - tMinus ) ) + ( axisU1[projU] * tMinus );
+	double sPlus = -99999.0, sMinus = -99999.0;
+	if( fabs( sDenomPlus ) >= 1e-5 )
+		sPlus = ( pt[projU] - axisOrigin[projU] - ( axisV0[projU] * tPlus ) ) / sDenomPlus; 
+	if( fabs( sDenomMinus ) >= 1e-5 )
+		sMinus = ( pt[projU] - axisOrigin[projU] - ( axisV0[projU] * tMinus ) ) / sDenomMinus; 
+	if( ( tPlus >= 0.0 ) && ( tPlus <= 1.0 ) && ( sPlus >= 0.0 ) && ( sPlus <= 1.0 ) ) { s = sPlus; t = tPlus; return; }
+	if( ( tMinus >= 0.0 ) && ( tMinus <= 1.0 ) && ( sMinus >= 0.0 ) && ( sMinus <= 1.0 ) ) { s = sMinus; t = tMinus; return; }
+	double s0, t0, s1, t1;
+	s0 = sPlus; t0 = tPlus;
+	if( s0 >= 1.0 ) { s0 -= 1.0; }
+	if( t0 >= 1.0 ) { t0 -= 1.0; }
+	s1 = sMinus; t1 = tMinus;
+	if( s1 >= 1.0 ) { s1 -= 1.0; }
+	if( t1 >= 1.0 ) { t1 -= 1.0; }
+	s0 = fabs( s0 ); t0 = fabs( t0 ); s1 = fabs( s1 ); t1 = fabs( t1 );
+	double max0, max1;
+	max0 = s0; if( t0 > max0 ) { max0 = t0; }
+	max1 = s1; if( t1 > max1 ) { max1 = t1; }
+	if( max0 > max1 ) { s = sMinus; t = tMinus; } else { s = sPlus; t = tPlus; }
+}
+#pragma auto_inline(on)
+}
+__forceinline Vector CrossV(const Vector &a, const Vector &b) { Vector res; block_10242950::sub_1011e010((Vector *)&a, (Vector *)&b, &res); return res; }
+//X
+void __cdecl sub_10242390(const float *v, float *axis);
+void __cdecl sub_10242640(double t, double s, Vector v0, Vector v1, Vector v2, Vector v3, Vector v4, Vector v5, int index, double &pA, double &pB);
+
+#define FloatMakePositive(f) ((float)fabs(f))
+#define QuadWithParallelEdges(a,b,c,d,e,f,g) sub_10242420((Vector *)&(a), (Vector *)&(b), c, (Vector *)&(d), e, (Vector *)&(f), (SegT2 &)(g))
+
+int __cdecl sub_10242950(const Vector &v1, const Vector &v2, const Vector &v3, const Vector &v4, const Vector &point, Vector2D &uv)
+{
+#define PIQ_TEXTURE_EPSILON		0.001
+#define PIQ_PLANE_EPSILON		0.1
+#define PIQ_DOT_EPSILON			0.99f
+
+	Vector axisU[2], axisV[2];
+	Vector axisUNorm[2], axisVNorm[2];
+	axisU[0] = axisUNorm[0] = v2 - v1;
+	axisU[1] = axisUNorm[1] = v3 - v4;
+	axisV[0] = axisVNorm[0] = v4 - v1;
+	axisV[1] = axisVNorm[1] = v3 - v2;
+
+	float lengthU[2], lengthV[2];
+	lengthU[0] = VectorNormalize( axisUNorm[0] );
+	lengthU[1] = VectorNormalize( axisUNorm[1] );
+	lengthV[0] = VectorNormalize( axisVNorm[0] );
+	lengthV[1] = VectorNormalize( axisVNorm[1] );
+
+	if( DotProduct( axisUNorm[0], axisUNorm[1] ) > PIQ_DOT_EPSILON )
+	{
+		if( FloatMakePositive( lengthU[0] - lengthU[1] ) < PIQ_PLANE_EPSILON )
+		{
+			return QuadWithParallelEdges( v1, axisUNorm[0], lengthU[0], axisVNorm[0], lengthV[0], point, uv );
+		}
+	}
+
+	bool bFlipped = false;
+	if( DotProduct( axisVNorm[0], axisVNorm[1] ) > PIQ_DOT_EPSILON )
+	{
+		Vector tmp[2];
+		tmp[0] = axisV[0];
+		tmp[1] = axisV[1];
+		axisV[0] = axisU[0];
+		axisV[1] = axisU[1];
+		axisU[0] = tmp[0];
+		axisU[1] = tmp[1];
+		bFlipped = true;
+	}
+
+	Vector2D projAxes;
+	Vector vNormal = CrossV( axisU[0], axisV[0] );
+	block_10242950::sub_10242390( (const float *)&vNormal, (float *)&projAxes );
+
+	if( FloatMakePositive( axisU[0][projAxes[0]] ) < FloatMakePositive( axisU[0][projAxes[1]] ) )
+	{
+		int tmp = projAxes[0];
+		projAxes[0] = projAxes[1];
+		projAxes[1] = tmp;
+	}
+
+	double s = 0.0, t = 0.0;
+	double A, negB, C;
+
+	A = ( axisU[0][projAxes[1]] * axisV[0][projAxes[0]] ) - 
+		( axisU[0][projAxes[0]] * axisV[0][projAxes[1]] ) - 
+		( axisU[1][projAxes[1]] * axisV[0][projAxes[0]] ) + 
+		( axisU[1][projAxes[0]] * axisV[0][projAxes[1]] );
+	C = ( point[projAxes[0]] * axisU[0][projAxes[1]] ) + 
+		(( v1[projAxes[1]] * axisU[0][projAxes[0]] ) - 
+		( point[projAxes[1]] * axisU[0][projAxes[0]] ) - 
+		( v1[projAxes[0]] * axisU[0][projAxes[1]] ));
+	negB = C - 
+		  ( v1[projAxes[1]] * axisU[1][projAxes[0]] ) + 
+		  ( point[projAxes[1]] * axisU[1][projAxes[0]] ) + 
+		  ( v1[projAxes[0]] * axisU[1][projAxes[1]] ) - 
+		  ( point[projAxes[0]] * axisU[1][projAxes[1]] ) + 
+		  ( axisU[0][projAxes[1]] * axisV[0][projAxes[0]] ) - 
+		  ( axisU[0][projAxes[0]] * axisV[0][projAxes[1]] );
+
+	if( ( A > -PIQ_PLANE_EPSILON ) && ( A < PIQ_PLANE_EPSILON ) )
+	{
+		Vector vecUAvg, vecVAvg;
+		vecUAvg = ( axisUNorm[0] + axisUNorm[1] ) * 0.5f;
+		vecVAvg = ( axisVNorm[0] + axisVNorm[1] ) * 0.5f;
+		
+		float fLengthUAvg = ( lengthU[0] + lengthU[1] ) * 0.5f;
+		float fLengthVAvg = ( lengthV[0] + lengthV[1] ) * 0.5f;
+
+		return QuadWithParallelEdges( v1, vecUAvg, fLengthUAvg, vecVAvg, fLengthVAvg, point, uv );
+	}
+	else
+	{
+		double discriminant = (negB*negB) - (4.0f * A * C);
+		if( discriminant < 0.0f )
+		{
+			uv[0] = -99999.0f;
+			uv[1] = -99999.0f;
+			return 2;
+		}
+
+		double quad = sqrt( discriminant );
+		double QPlus = ( negB + quad ) / ( 2.0f * A );
+		double QMinus = ( negB - quad ) / ( 2.0f * A );
+
+		block_10242950::sub_10242640( QPlus, QMinus, axisU[0], axisU[1], axisV[0], axisV[1], v1, point, projAxes[0], s, t );
+	}
+
+	if( !bFlipped )
+	{
+		uv[0] = ( float )s;
+		uv[1] = ( float )t;
+	}
+	else
+	{
+		uv[0] = ( float )t;
+		uv[1] = ( float )s;
+	}
+
+	if( ( uv[0] < 0.0f ) || ( uv[0] > 1.0f ) || ( uv[1] < 0.0f ) || ( uv[1] > 1.0f ) )
+		return 0;
+	
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102431f0 size=0xb7
 #include "Vector.h"
 struct S2D { float x, y; };

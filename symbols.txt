@@ -8385,6 +8385,7 @@
 0x1000bbc2 func   ?vfunc2@CCollisionProperty@@UAEPAMXZ CCollisionProperty::vfunc2
 0x1000bbc7 func   __firesmoke _firesmoke
 0x1000bbcc func   ?vfunc5@CItemGVVPhoto@@QAEPAV1@I@Z CItemGVVPhoto::vfunc5
+0x1000bbd1 func   ?sub_10242950@@YAHABVVector@@0000AAUVector2D@@@Z sub_10242950
 0x1000bbd6 func   ?sub_1013dc60@Pool@@QAEPAII@Z Pool::sub_1013dc60
 0x1000bbdb func   ?sub_101a7230@CCineNPC@@QAEXH@Z CCineNPC::sub_101a7230
 0x1000bbe0 func   ?sub_1032e890@@YAHXZ sub_1032e890
