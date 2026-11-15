@@ -170,3 +170,8 @@ ConVar g_10923d38("debug_allow_fake_reload", "1", 0, "Allows or disallows faked 
 #include "ConVar.h"
 ConVar g_10924af8("debug_allow_non_idle_auto_sk", "1", 0, "Allows or disallows automatic stealth kills when target is not in idle state.", true, 0.0f, true, 1.0f);
 // END FUNCTION
+
+// FUNCTION: 0x1028c700 size=0xa
+#include "ConVar.h"
+ConVar g_10924f70("debug_allow_move_facing", "1", 0, "If this is on, NPCs will move facing the NPC when they run for cover.");
+// END FUNCTION
