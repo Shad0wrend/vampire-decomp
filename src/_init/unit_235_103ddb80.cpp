@@ -5,3 +5,8 @@
 inline int pcd_initial_10940390() { return 0x450; }
 int g_10940390 = pcd_initial_10940390();
 // END FUNCTION
+
+// FUNCTION: 0x103ddbc0 size=0xa
+#include "ConVar.h"
+ConVar g_10940448("zombie_headshot_mod", "10.0", 0);
+// END FUNCTION
