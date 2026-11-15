@@ -15,3 +15,8 @@ ConVar g_1094aac0("g_debug_physcannon", "0", 0);
 #include "ConVar.h"
 ConVar g_1094aa18("physcannon_minforce", "700", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1040b6a0 size=0xa
+#include "ConVar.h"
+ConVar g_1094a9d0("physcannon_maxforce", "1500", 0);
+// END FUNCTION
