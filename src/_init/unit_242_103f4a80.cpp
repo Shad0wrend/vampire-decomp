@@ -1289,3 +1289,8 @@ extern SendTable g_10943948;
 extern char g_1067f6dc[];
 ServerClassReg g_1094880c("CItemGBachJournal", &g_10943948, g_1067f6dc);
 // END FUNCTION
+
+// FUNCTION: 0x10400bf0 size=0xa
+#include "SendTable.h"
+SendTable g_10943948;
+// END FUNCTION
