@@ -8,3 +8,8 @@ extern SendTable g_107234b4;
 extern char g_1057d598[];
 ServerClassReg g_10723498("CRagdollProp", &g_107234b4, g_1057d598);
 // END FUNCTION
+
+// FUNCTION: 0x10152340 size=0xa
+#include "SendTable.h"
+SendTable g_107234b4;
+// END FUNCTION
