@@ -40,3 +40,8 @@ ConVar g_1090fdc0("sk_npc_arm", "1", 0);
 #include "ConVar.h"
 ConVar g_10920238("sk_npc_leg", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10264e80 size=0xa
+#include "ConVar.h"
+ConVar g_1090feb8("debug_forced_bullet_damage", "-1", 0);
+// END FUNCTION
