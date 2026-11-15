@@ -25,3 +25,9 @@ int g_10709178 = ((int (*)(int))sub_10102a70)(0);
 int sub_10102c50(void);
 int g_10709120 = ((int (*)(int))sub_10102c50)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10103460 size=0xa
+#include "ConCommand.h"
+void sub_10103370(void);
+ConCommand g_10709150("shake", sub_10103370, 0, 0, 0);
+// END FUNCTION
