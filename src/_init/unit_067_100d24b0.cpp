@@ -18,3 +18,9 @@ ConCommand g_106e7ae0("drawcross", sub_100d2540, "Draws a cross at the given loc
 void sub_100d27b0(void);
 ConCommand g_106e74d0("kill", sub_100d27b0, "kills the player", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d2900 size=0xa
+#include "ConCommand.h"
+void sub_100d2880(void);
+ConCommand g_106e78fc("buddha", sub_100d2880, "Toggle.  Player takes damage but won't die. (Shows red cross when health is zero)", 0, 0);
+// END FUNCTION
