@@ -335,3 +335,8 @@ int g_10941220 = ((int (*)(int))sub_103e7200)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10942514(&CPrecacheRegister::PrecacheFn_Other, "item_w_torch");
 // END FUNCTION
+
+// FUNCTION: 0x103e7430 size=0x5
+int sub_103e7470(void);
+int g_10940de0 = ((int (*)(int))sub_103e7470)(0);
+// END FUNCTION
