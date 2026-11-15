@@ -13,3 +13,8 @@ ServerClassReg g_106c59cc("CTESprite", &g_106c59b0, g_10544e10);
 #include "SendTable.h"
 SendTable g_106c59b0;
 // END FUNCTION
+
+// FUNCTION: 0x100680d0 size=0x5
+int sub_10068110(void);
+int g_106c59ac = ((int (*)(int))sub_10068110)(0);
+// END FUNCTION
