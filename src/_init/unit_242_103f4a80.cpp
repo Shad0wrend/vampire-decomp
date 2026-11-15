@@ -604,3 +604,8 @@ ServerClassReg g_10948400("COccultDexterity", &g_10946d14, g_1067f4ac);
 #include "SendTable.h"
 SendTable g_10946d14;
 // END FUNCTION
+
+// FUNCTION: 0x103fa690 size=0x5
+int sub_103fa6d0(void);
+int g_10946d10 = ((int (*)(int))sub_103fa6d0)(0);
+// END FUNCTION
