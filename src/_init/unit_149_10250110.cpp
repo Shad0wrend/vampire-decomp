@@ -38,3 +38,8 @@ int g_1089a51c = ((int (*)(int))sub_10256a70)(0);
 #include "SendTable.h"
 SendTable g_1088aeb0;
 // END FUNCTION
+
+// FUNCTION: 0x10256be0 size=0x5
+int sub_10256c20(void);
+int g_1088aeac = ((int (*)(int))sub_10256c20)(0);
+// END FUNCTION
