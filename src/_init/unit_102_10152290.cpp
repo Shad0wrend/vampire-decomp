@@ -13,3 +13,8 @@ ServerClassReg g_10723498("CRagdollProp", &g_107234b4, g_1057d598);
 #include "SendTable.h"
 SendTable g_107234b4;
 // END FUNCTION
+
+// FUNCTION: 0x101523c0 size=0x5
+int sub_10152400(void);
+int g_107234b0 = ((int (*)(int))sub_10152400)(0);
+// END FUNCTION
