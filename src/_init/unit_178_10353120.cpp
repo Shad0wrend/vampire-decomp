@@ -310,3 +310,8 @@ ConVar g_10938740("sk_plr_dmg_sniper_round", "0", 0);
 #include "ConVar.h"
 ConVar g_10938bd8("sk_npc_dmg_sniper_round", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10355500 size=0xa
+#include "ConVar.h"
+ConVar g_10939010("sk_max_sniper_round", "0", 0);
+// END FUNCTION
