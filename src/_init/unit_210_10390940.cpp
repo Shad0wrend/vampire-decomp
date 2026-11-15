@@ -35,3 +35,8 @@ ConVar g_1093b9b0("ming_xiao_grub_death", "1", 0, "Set this to 1 to kill ming xi
 #include "ConVar.h"
 ConVar g_1093bb58("ming_xiao_charge", "1", 0, "Set this to 1 to allow ming xiao to do a charge attack when cornered.");
 // END FUNCTION
+
+// FUNCTION: 0x10390e00 size=0x5
+int sub_10390e40(void);
+int g_1093b910 = ((int (*)(int))sub_10390e40)(0);
+// END FUNCTION
