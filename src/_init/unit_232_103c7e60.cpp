@@ -120,3 +120,8 @@ ConVar g_1093d648("werewolf_footstep_shakes", "0", 0);
 #include "ConVar.h"
 ConVar g_1093d528("werewolf_translated_enemy_position_tolerance", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103da3a0 size=0x5
+inline int pcd_initial_1093f80c() { return 0xffffffff; }
+int g_1093f80c = pcd_initial_1093f80c();
+// END FUNCTION
