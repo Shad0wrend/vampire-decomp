@@ -377,3 +377,9 @@ ConCommand g_106e7924("vdiscipline_info", sub_100d9b80, "Lists information about
 void sub_100d9d60(void);
 ConCommand g_106e7730("vquotes", sub_100d9d60, "Lists quotes made by the development team during development\n\tArguments:\t{speaker name} / no arguments lists all quotes", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d9e30 size=0xa
+#include "ConCommand.h"
+void sub_100d9e10(void);
+ConCommand g_106e7614("jump", sub_100d9e10, "Sets the jumping feat to given value by setting underlying stats.\n\tArguments:\t{value} / no arguments lists current feat value", 0, 0);
+// END FUNCTION
