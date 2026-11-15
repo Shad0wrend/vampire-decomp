@@ -95,3 +95,8 @@ ConVar g_10924298("ent_trace_doors", "0", 0, "When ent_trace is on, this will du
 #include "ConVar.h"
 ConVar g_10924a68("ent_trace_conditions", "1", 0, "When ent_trace is on, this will dump info about conditions also.");
 // END FUNCTION
+
+// FUNCTION: 0x1028be50 size=0xa
+#include "ConVar.h"
+ConVar g_10924938("ent_trace_hints", "0", 0, "When ent_trace is on, this will dump info about hints also.");
+// END FUNCTION
