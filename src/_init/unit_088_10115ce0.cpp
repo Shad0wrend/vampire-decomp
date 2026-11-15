@@ -95,3 +95,8 @@ ConVar g_1070af08("mp_defaultteam", "0", 0);
 #include "ConVar.h"
 ConVar g_1070ab60("mp_allowNPCs", "1", 4);
 // END FUNCTION
+
+// FUNCTION: 0x10118200 size=0xa
+#include "ConVar.h"
+ConVar g_1070ac80("suitvolume", "0.25", 128);
+// END FUNCTION
