@@ -69,3 +69,8 @@ SendTable g_10941f04;
 int sub_103e49b0(void);
 int g_10941f00 = ((int (*)(int))sub_103e49b0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103e4b50 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10941fe0(&CPrecacheRegister::PrecacheFn_Other, "item_w_claws");
+// END FUNCTION
