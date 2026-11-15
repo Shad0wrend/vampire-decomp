@@ -85,3 +85,8 @@ ConVar g_1093ceb8("tzimisce_voice_volume", "1", 0, "Set this var to override the
 #include "ConVar.h"
 ConVar g_1093cfd8("tzimisce_voice_attn", "65", 0, "Set this var to override the voice attenuation (75 decibels = normal).");
 // END FUNCTION
+
+// FUNCTION: 0x103b6ad0 size=0xa
+#include "ConVar.h"
+ConVar g_1093cf90("tzimisce_voice_pitch", "100", 0, "Set this var to override the voice pitch (100 = normal, 120 = high).");
+// END FUNCTION
