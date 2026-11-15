@@ -100,3 +100,8 @@ extern SendTable g_1075226c;
 extern char g_105b8f4c[];
 ServerClassReg g_10751a30("CWeaponRanged_Pistol_Glock", &g_1075226c, g_105b8f4c);
 // END FUNCTION
+
+// FUNCTION: 0x10234fa0 size=0xa
+#include "SendTable.h"
+SendTable g_1075226c;
+// END FUNCTION
