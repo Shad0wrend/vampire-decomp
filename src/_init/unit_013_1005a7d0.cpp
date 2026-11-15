@@ -8,3 +8,8 @@ extern SendTable g_106bed08;
 extern char g_106bf214[];
 ServerClassReg g_106becec("CTEBaseBeam", &g_106bed08, g_106bf214);
 // END FUNCTION
+
+// FUNCTION: 0x1005a880 size=0xa
+#include "SendTable.h"
+SendTable g_106bed08;
+// END FUNCTION
