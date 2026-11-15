@@ -23,3 +23,8 @@ int g_106c7f64 = ((int (*)(int))sub_1006d2f0)(0);
 int sub_1006d560(void);
 int g_106c7f84 = ((int (*)(int))sub_1006d560)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1006d590 size=0xa
+#include "ConVar.h"
+ConVar g_106c7fa0("camera_showdebug", "0", 0);
+// END FUNCTION
