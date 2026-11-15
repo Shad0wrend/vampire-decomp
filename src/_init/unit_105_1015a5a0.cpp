@@ -111,3 +111,8 @@ ConVar g_10725ce8("player_use_arc", "30", 0);
 #include "ConVar.h"
 ConVar g_10725a00("debug_ratfeed_drawcone", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10168f90 size=0xa
+#include "ConVar.h"
+ConVar g_10725040("rat_feed_arc", "90", 0);
+// END FUNCTION
