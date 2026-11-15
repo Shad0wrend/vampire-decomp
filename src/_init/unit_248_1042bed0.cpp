@@ -35,3 +35,8 @@ ConVar g_109ef288("sv_accelerate", "10", 8448);
 #include "ConVar.h"
 ConVar g_109ef1f8("sv_deccelerate", "5", 8448);
 // END FUNCTION
+
+// FUNCTION: 0x1042cbe0 size=0xa
+#include "ConVar.h"
+ConVar g_109ef360("sv_airaccelerate", "10", 8448);
+// END FUNCTION
