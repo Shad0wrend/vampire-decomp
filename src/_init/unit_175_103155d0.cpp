@@ -145,3 +145,9 @@ ConVar g_109370d0("melee_swish_sound_time_offset", "-0.1", 0);
 void sub_10348560(void);
 ConCommand g_10937acc("player_sequence", sub_10348560, "tells the local player to play a sequence", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10348800 size=0xa
+#include "ConCommand.h"
+void sub_10348720(void);
+ConCommand g_10937004("burn_hitboxes", sub_10348720, "burns the char's hitboxes", 0, 0);
+// END FUNCTION
