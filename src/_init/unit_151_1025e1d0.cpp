@@ -15,3 +15,8 @@ ConVar g_1090fc08("flex_minplayertime", "5", 0);
 #include "ConVar.h"
 ConVar g_1090fc98("flex_maxplayertime", "7", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1025e330 size=0xa
+#include "ConVar.h"
+ConVar g_1090fce0("flex_minawaytime", "0.5", 0);
+// END FUNCTION
