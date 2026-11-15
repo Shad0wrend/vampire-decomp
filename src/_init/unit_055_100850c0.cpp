@@ -280,3 +280,9 @@ ConCommand g_106c9650("sound_show_cylinders", sub_10088730, "Toggles between cyl
 void sub_10088730(void);
 ConCommand g_106c90ec("sound_show_spheres", sub_10088730, "Toggles between cylinders and spheres for sound_show display.  Does not change the way sounds are heard, just the debug representation.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10088920 size=0xa
+#include "ConCommand.h"
+void sub_10088890(void);
+ConCommand g_106c913c("sound_show_deafzone", sub_10088890, "Shows NPC deaf zones when sound events are fired", 0, 0);
+// END FUNCTION
