@@ -33652,14 +33652,14 @@ struct ConVarS : ConVar
 	{
 		if (m_pParent->vfunc1())
 		{
-			return g_106b8540;
+			return "";
 		}
 		if (m_nFlags & 0x1000)
 		{
 			return "FCVAR_NEVER_AS_STRING";
 		}
 		ConVar *var = (ConVar *)m_pParent;
-		return (var->m_pszString) ? var->m_pszString : g_106b8540;
+		return (var->m_pszString) ? var->m_pszString : "";
 	}
 };
 struct P3 { int a, b, c; };
