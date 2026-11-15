@@ -50,3 +50,8 @@ ConVar g_1070aba8("mp_friendlyfire", "0", 4);
 #include "ConVar.h"
 ConVar g_1070ad10("mp_falldamage", "0", 4);
 // END FUNCTION
+
+// FUNCTION: 0x10117cf0 size=0xa
+#include "ConVar.h"
+ConVar g_1070ade8("mp_weaponstay", "0", 4);
+// END FUNCTION
