@@ -59,3 +59,8 @@ extern SendTable g_10947134;
 extern char g_1067f224[];
 ServerClassReg g_1094622c("CItemMWallet", &g_10947134, g_1067f224);
 // END FUNCTION
+
+// FUNCTION: 0x103f5930 size=0xa
+#include "SendTable.h"
+SendTable g_10947134;
+// END FUNCTION
