@@ -1456,3 +1456,8 @@ ServerClassReg g_109489a8("CItemGMilligansBuisnesscard", &g_109459b8, g_1067f76c
 #include "SendTable.h"
 SendTable g_109459b8;
 // END FUNCTION
+
+// FUNCTION: 0x104024a0 size=0x5
+int sub_104024e0(void);
+int g_109459b4 = ((int (*)(int))sub_104024e0)(0);
+// END FUNCTION
