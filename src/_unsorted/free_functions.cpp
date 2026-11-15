@@ -59404,6 +59404,155 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8830 size=0x7eb
+// TARGET: sub_100d8830
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include <stdio.h>
+#include "CVStatInfoList_t.h"
+#include "CUnknown101e0f00.h"
+#include "CList_t.h"
+#include "CUnknown100ce630.h"
+#include "CUnknown101f9c70.h"
+#include "StatOwner2.h"
+#include "CUnk10230f00.h"
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+struct CUnk100ce600 { bool sub_100ce600(int *pOut); };
+struct CListV { bool sub_100ce450(void *a, int *b); void sub_100ce4e0(void *a, void *b); };
+extern char g_10937cf2;
+extern char g_106b8540[];
+extern CVStatInfoList_t g_1074e098;
+extern CVStatInfoList_t g_1074e5f8;
+extern CUnknown101e0f00 g_10739a4c;
+extern CList_t g_106e7050;
+extern StatOwner2 g_1074e968;
+bool sub_100d9220(CBaseCombatCharacter *p, int nStat, int nDiff, int nCur);
+void sub_101cebc0(void *p, int a, int b);
+void sub_101cecf0(void *p, int a, const char *s);
+void *sub_1023bd00();
+__declspec(dllimport) void DevMsg(int, const char *, ...);
+extern unsigned char g_109f0b2a;
+extern CVStatList_t g_109f0b40;
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+void __cdecl sub_10012a8a();
+inline CVStatList_t *FindStatList(CVStatListSet *pSet, int type)
+{
+	for (int i = 0; i < pSet->m_nLists; i++) {
+		if (pSet->m_pLists[i]->m_field10 == type)
+			return pSet->m_pLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		g_109f0b40.CVStatList_t::CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+extern unsigned char g_106e7b80;
+extern int g_106e794c;
+extern float g_104454c4;
+
+void sub_100d8830(CBaseCombatCharacter *pPlayer, int nStat, int nAmount)
+{
+	int diff;
+	char buf[0x80];
+	int amt = nAmount;
+	CBasePlayer *pOwner = (CBasePlayer *)pPlayer->m_pA8;
+	if (!pOwner->vfunc334(nStat, amt)) {
+		if (g_10937cf2) {
+			sub_101cebc0(pOwner, 0x48, 0);
+			return;
+		}
+		if (sub_1023bd00() && *(int *)((char *)sub_1023bd00() + 0x49c) == 2) {
+			sub_101cebc0(pOwner, 0x3e, 0);
+			return;
+		}
+		return;
+	}
+	bool bFlag = (g_1074e098.sub_10200370(nStat)->m_flags >> 1) & 1;
+	if (!bFlag) {
+		g_10739a4c.sub_101e2da0(pPlayer, nStat, amt);
+		return;
+	}
+	int cur = FindStatList(CVStatListSet::Of(pPlayer), 3)->sub_102012d0(nStat);
+	int max = FindStatList(CVStatListSet::Of(pPlayer), 2)->sub_102012d0(nStat);
+	diff = 1;
+	if (g_1074e098.sub_10200370(nStat)->sub_101fec30() && cur > 0) {
+		CUnk10230f00 blk;
+		blk.sub_10230f00(3, nStat);
+		((CListV *)&g_106e7050)->sub_100ce4e0(pPlayer, &blk);
+		FindStatList(CVStatListSet::Of(pPlayer), 3)->sub_10201100(nStat, cur);
+		if (!(g_106e7b80 & 1)) {
+			g_106e7b80 |= 1;
+			g_106e794c = g_1074e968.sub_10203020("UI_Discipline_Feedback");
+		}
+		const char *fmt = g_1074e968.sub_10203190(g_106e794c)->sub_10202a10(0);
+		CVStatList_t *pl = FindStatList(CVStatListSet::Of(pPlayer), 3);
+		const char *const *pn = &g_1074e098.sub_10200370(nStat)->m_pszTitle;
+		const char *name = *pn ? *pn : g_106b8540;
+		sprintf(buf, fmt, name, pl->sub_102012d0(nStat));
+		sub_101cecf0(pOwner, 0x3a, buf);
+		return;
+	}
+	if (g_1074e098.sub_10200370(nStat)->sub_101fead0())
+		diff = max - cur;
+	if (diff > 0) {
+	if (FindStatList(CVStatListSet::Of(pPlayer), 3)->sub_10200fc0(nStat, diff)) {
+		if (!sub_100d9220(pPlayer, nStat, diff, cur))
+			return;
+		CVStatList_t *pl = FindStatList(CVStatListSet::Of(pPlayer), 3);
+		const char *const *pn = &g_1074e098.sub_10200370(nStat)->m_pszTitle;
+		const char *name = *pn ? *pn : g_106b8540;
+		sprintf(buf, "%s ( %d )\n", name, pl->sub_102012d0(nStat));
+		sub_101cecf0(pOwner, 0x39, buf);
+		return;
+	}
+	if (nStat == 8 && FindStatList(CVStatListSet::Of(pOwner), 0)->sub_102012d0(0xc) >= 2)
+		return;
+	sub_101cebc0(pOwner, 0x38, 0);
+	return;
+	}
+	if (max > 0) {
+		CUnk10230f00 blk;
+		blk.sub_10230f00(3, nStat);
+		int n = 1;
+		if (nStat == 4) n = 3;
+		if (FindStatList(CVStatListSet::Of(pPlayer), 0)->sub_102012d0(0xc) < n)
+			return;
+		for (int i = 0; i < n; i++) {
+			if (!FindStatList(CVStatListSet::Of(pPlayer), 0)->sub_10200ea0(0xc))
+				return;
+		}
+		float t;
+		float one;
+		if (((CListV *)&g_106e7050)->sub_100ce450(pPlayer, (int *)&blk) && ((CUnk100ce600 *)&g_106e7050)->sub_100ce600((int *)&t)) {
+			one = 1.0f;
+			int lvl = g_1074e5f8.sub_10200370(nStat)->sub_101fee50(cur);
+			float f = (float)lvl;
+			lvl = 100;
+			((CUnknown101f9c70 *)((char *)pPlayer + 0x13dc))->sub_101f9ff0(10, 2, nStat, (int)&lvl);
+			float scaled;
+			if (lvl != 100)
+				scaled = lvl * f * 0.01;
+			else
+				scaled = f;
+			t = scaled / (*(float *)((char *)pOwner + 0x1488) > g_104454c4 ? *(float *)((char *)pOwner + 0x1488) : one) - gpGlobals->curtime + t;
+			if (((CUnknown100ce630 *)&g_106e7050)->sub_100ce630(t)) {
+				if (((CUnk100ce600 *)&g_106e7050)->sub_100ce600((int *)&one)) {
+					*(float *)((char *)pOwner + 0x1adc + nStat * 4) = one - engine->vfunc119(0);
+					*(float *)((char *)pOwner + 0x1b20 + nStat * 4) = engine->vfunc119(0);
+					return;
+				}
+				DevMsg(1, "ERROR: Failed to find inserted discipline stat event!\n");
+				return;
+			}
+		}
+		DevMsg(2, "ERROR: Failed to match Discipline Event in the EventQueue!\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9220 size=0x1f4
 // TARGET: sub_100d9220
 #include "CBaseCombatCharacter.h"
