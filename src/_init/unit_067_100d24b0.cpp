@@ -261,3 +261,9 @@ ConCommand g_106e7978("sethotkeys", sub_100d7210, "Sets hotkeys, argsx10 {type}{
 void sub_100d7340(void);
 ConCommand g_106e72c8("init_hotkeys", sub_100d7340, "Sets hotkeys to initial state.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d7490 size=0xa
+#include "ConCommand.h"
+void sub_100d7400(void);
+ConCommand g_106e7b30("vreactionlist", sub_100d7400, "Lists the available Vampire Reactions", 0, 0);
+// END FUNCTION
