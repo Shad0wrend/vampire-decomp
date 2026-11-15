@@ -136,3 +136,9 @@ ConCommand g_106c8f5c("npc_create", sub_10086380, "Creates an NPC of the given t
 void sub_10086910(void);
 ConCommand g_106c8c98("npc_create_aimed", sub_10086910, "Creates an NPC aimed away from the player of the given type where the player is looking (if the given NPC can actually stand at that location).  Note that this only works for npc classes that are already in the world.  You can not create an entity that doesn't have an instance in the level.\n\tArguments:\t{npc_class_name}", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10086f20 size=0xa
+#include "ConCommand.h"
+void sub_10086e50(void);
+ConCommand g_106c9330("npc_destroy_unselected", sub_10086e50, "Removes all NPCs from the universe that aren't currently selected", 0, 0);
+// END FUNCTION
