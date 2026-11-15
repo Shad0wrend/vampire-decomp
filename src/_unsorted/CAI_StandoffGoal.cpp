@@ -169,6 +169,180 @@ void CAI_StandoffGoal::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102cd740 size=0x347
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CEHandleGet.h"
+#include "CAI_StandoffGoal.h"
+#include "CGlobalEntityList.h"
+#include "CUtlRBTree12.h"
+#include "CUtlMemory12.h"
+
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+
+#define S10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define S100(q) S10(q##0) S10(q##1) S10(q##2) S10(q##3) S10(q##4) S10(q##5) S10(q##6) S10(q##7) S10(q##8) S10(q##9)
+struct CGoalSlotView
+{
+	S100(a) S100(b) S10(c0) S10(c1) S10(c2) S10(c3)
+	virtual void n0(); virtual void n1(); virtual void n2(); virtual void n3();
+	virtual void vfunc244(CBaseEntity *pActor);
+	virtual void vfunc245(CBaseEntity *pActor);
+};
+
+extern CGlobalEntityList *g_10566458;
+bool sub_102ce100(const void *a, const void *b);
+
+struct CActorTree : CUtlRBTree12
+{
+	CActorTree()
+	{
+		m_LessFunc = 0;
+		((CUtlMemory12 *)&m_pElements)->sub_102ce7a0(0, 0);
+		m_Root = InvalidIndex();
+		m_NumElements = 0;
+		m_FirstFree = InvalidIndex();
+		m_TotalElements = 0;
+	}
+	~CActorTree()
+	{
+		if (m_unkC != -1 && m_pElements)
+			Plat_Free(m_pElements);
+	}
+	void sub_102ce130(bool (*func)(const void *, const void *));
+	unsigned short sub_102ce150(unsigned short parent, bool leftchild);
+	const Links_t &sub_102cea60(unsigned short i) const;
+	void sub_102ceae0(unsigned short elem);
+
+	CBaseEntity *&Element(unsigned short i) { return *(CBaseEntity **)m_pElements[i].m_Data; }
+	CBaseEntity *const &Element(unsigned short i) const { return *(CBaseEntity *const *)m_pElements[i].m_Data; }
+	unsigned short LeftChild(unsigned short i) const { return sub_102cea60(i).m_Left; }
+	unsigned short RightChild(unsigned short i) const { return sub_102cea60(i).m_Right; }
+	unsigned short Parent(unsigned short i) const { return sub_102cea60(i).m_Parent; }
+	bool IsRightChild(unsigned short i) const
+	{
+		unsigned short parent = Parent(i);
+		return RightChild(parent) == i;
+	}
+	unsigned short Insert(CBaseEntity *const &insert)
+	{
+		unsigned short parent;
+		bool leftchild;
+		sub_102ce640(&insert, parent, leftchild);
+		unsigned short newNode = sub_102ce150(parent, leftchild);
+		CBaseEntity **p = &Element(newNode);
+		if (p)
+			*p = insert;
+		return newNode;
+	}
+	unsigned short Find(CBaseEntity *const &search) const
+	{
+		unsigned short current = m_Root;
+		while (current != InvalidIndex())
+		{
+			if (m_LessFunc(&search, &Element(current)))
+				current = LeftChild(current);
+			else if (m_LessFunc(&Element(current), &search))
+				current = RightChild(current);
+			else
+				break;
+		}
+		return current;
+	}
+	void RemoveAt(unsigned short elem)
+	{
+		if (elem != InvalidIndex())
+		{
+			sub_102ceae0(elem);
+			sub_102cea20(elem);
+			--m_NumElements;
+		}
+	}
+	bool Remove(CBaseEntity *const &search)
+	{
+		unsigned short node = sub_102cdd10(&search);
+		if (node != InvalidIndex())
+		{
+			RemoveAt(node);
+			return true;
+		}
+		return false;
+	}
+	unsigned short FirstInorder() const
+	{
+		unsigned short i = m_Root;
+		while (LeftChild(i) != InvalidIndex())
+			i = LeftChild(i);
+		return i;
+	}
+	unsigned short NextInorder(unsigned short i) const
+	{
+		if (RightChild(i) != InvalidIndex())
+		{
+			i = RightChild(i);
+			while (LeftChild(i) != InvalidIndex())
+				i = LeftChild(i);
+			return i;
+		}
+		unsigned short parent = Parent(i);
+		while (IsRightChild(i))
+		{
+			i = parent;
+			if (i == InvalidIndex())
+				break;
+			parent = Parent(i);
+		}
+		return parent;
+	}
+};
+
+static inline CBaseEntity *LkP(const unsigned int *p) { return g_10566458->sub_100290c0(p); }
+static inline CBaseEntity *LkR(const unsigned int &h) { return g_10566458->sub_100290c0(&h); }
+static inline CBaseEntity *LkJ(unsigned int *arr, int i) { return g_10566458->sub_100290c0(&arr[i]); }
+// TARGET: CAI_StandoffGoal::vfunc242
+void CAI_StandoffGoal::vfunc242(int a)
+{
+	int i;
+	CActorTree prevActors;
+	unsigned short index;
+
+	prevActors.sub_102ce130(sub_102ce100);
+
+	sub_102cd3b0();
+
+	for (i = 0; i < m_nActors; i++)
+	{
+		prevActors.Insert(LkJ(m_pActors, i));
+	}
+
+	sub_102cd4a0();
+
+	for (int j = 0; j < m_nActors; j++)
+	{
+		index = prevActors.Find(LkJ(m_pActors, j));
+		if (index == prevActors.InvalidIndex())
+		{
+			((CGoalSlotView *)this)->vfunc244(LkJ(m_pActors, j));
+		}
+		else
+			prevActors.Remove((CBaseEntity *)EHandle_Get(m_pActors[j]));
+	}
+
+	for (index = prevActors.FirstInorder(); index != prevActors.InvalidIndex(); index = prevActors.NextInorder(index))
+	{
+		if ((int)j == -1) { ((CGoalSlotView *)this)->vfunc245(prevActors.Element(index)); } else { ((CGoalSlotView *)this)->vfunc245(prevActors.Element(index)); }
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102cdc50 size=0x3c
 #include "CAI_StandoffGoal.h"
 #include "inputdata_t.h"

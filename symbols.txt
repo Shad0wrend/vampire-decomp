@@ -11695,6 +11695,7 @@
 0x10010037 func   _math_counter math_counter
 0x1001003c func   ?vfunc82@CEnvGlobal@@UAEPAUdatamap_t@@XZ CEnvGlobal::vfunc82
 0x10010046 func   ?sub_10082520@@YADPAVCBaseEntity@@PAUCSceneView82520@@@Z sub_10082520
+0x1001004b func   ?vfunc242@CAI_StandoffGoal@@QAEXH@Z CAI_StandoffGoal::vfunc242
 0x10010055 func   ?sub_10332240@@YIMPAD@Z sub_10332240
 0x1001005f func   ?sub_1026dc30@CUnk1026dc30@@QAEII@Z CUnk1026dc30::sub_1026dc30
 0x10010064 func   ?vfunc625@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc625
