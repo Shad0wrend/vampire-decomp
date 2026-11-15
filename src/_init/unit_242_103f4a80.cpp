@@ -696,3 +696,8 @@ ServerClassReg g_10947784("COccultDodge", &g_1094896c, g_1067f4ec);
 #include "SendTable.h"
 SendTable g_1094896c;
 // END FUNCTION
+
+// FUNCTION: 0x103fb290 size=0x5
+int sub_103fb2d0(void);
+int g_10948968 = ((int (*)(int))sub_103fb2d0)(0);
+// END FUNCTION
