@@ -1937,3 +1937,8 @@ extern SendTable g_10943d4c;
 extern char g_1067f91c[];
 ServerClassReg g_10943da4("CItemGGargoyleBook", &g_10943d4c, g_1067f91c);
 // END FUNCTION
+
+// FUNCTION: 0x10406cb0 size=0xa
+#include "SendTable.h"
+SendTable g_10943d4c;
+// END FUNCTION
