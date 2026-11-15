@@ -304,3 +304,9 @@ ConCommand g_106c9380("npc_show_stats", sub_10088a80, "Show some stats on entity
 void sub_10088b30(void);
 ConCommand g_106c9114("npc_dump_stats", sub_10088b30, "Dump some stats on entity run time (especially NPCs)", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10088c50 size=0xa
+#include "ConCommand.h"
+void sub_10088be0(void);
+ConCommand g_106c9628("npc_ignore_player", sub_10088be0, "NPCs will not hear or see the player", 0, 0);
+// END FUNCTION
