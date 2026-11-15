@@ -101,3 +101,8 @@ ConVar g_107255e8("melee_flinch_time", "1.0", 0, "Duration of time for melee fli
 #include "ConVar.h"
 ConVar g_10725630("melee_flinch_big_time", "5.0", 0, "Duration of time for melee super flinch viewkick.");
 // END FUNCTION
+
+// FUNCTION: 0x101673e0 size=0xa
+#include "ConVar.h"
+ConVar g_10725ce8("player_use_arc", "30", 0);
+// END FUNCTION
