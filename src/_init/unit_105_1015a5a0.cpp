@@ -305,3 +305,9 @@ ConCommand g_10724ec8("remove_entities_by_name", sub_10180e70, "Deletes all enti
 void sub_10181040(void);
 ConCommand g_107259d8("remove_discipline_effects", sub_10181040, "", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x101814f0 size=0xa
+#include "ConCommand.h"
+void sub_101812f0(void);
+ConCommand g_107251ec("dump_activity_lists", sub_101812f0, "", 0, 0);
+// END FUNCTION
