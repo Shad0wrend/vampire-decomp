@@ -2024,3 +2024,8 @@ ServerClassReg g_10944be0("CItemGKeyring", &g_10946210, g_1067fa70);
 #include "SendTable.h"
 SendTable g_10946210;
 // END FUNCTION
+
+// FUNCTION: 0x10407960 size=0x5
+int sub_104079a0(void);
+int g_1094620c = ((int (*)(int))sub_104079a0)(0);
+// END FUNCTION
