@@ -69,3 +69,11 @@ int g_10751f24 = ((int (*)(int))sub_102349e0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10751a48(&CPrecacheRegister::PrecacheFn_Other, "item_w_crossbow");
 // END FUNCTION
+
+// FUNCTION: 0x10234bb0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10752634;
+extern char g_105b83bc[];
+ServerClassReg g_10752338("CWeaponRanged_Rifle_Crossbow_Flaming", &g_10752634, g_105b83bc);
+// END FUNCTION
