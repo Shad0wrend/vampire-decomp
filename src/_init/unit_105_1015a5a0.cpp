@@ -245,3 +245,9 @@ ConVar g_10723980("debug_masquerade_timer", "300", 0, "Determines how long of a 
 #include "ConVar.h"
 ConVar g_10725800("debug_supernatural_cop_spawn", "0", 0, "Enable this if you want supernatural acts to spawn cops.");
 // END FUNCTION
+
+// FUNCTION: 0x10180190 size=0xa
+#include "ConCommand.h"
+void sub_10180150(void);
+ConCommand g_1072578c("log_character", sub_10180150, "", 0, 0);
+// END FUNCTION
