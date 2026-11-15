@@ -36,3 +36,8 @@ extern SendTable g_10940dc4;
 extern char g_10667844[];
 ServerClassReg g_109424fc("CWeaponMelee_BushHook", &g_10940dc4, g_10667844);
 // END FUNCTION
+
+// FUNCTION: 0x103e4580 size=0xa
+#include "SendTable.h"
+SendTable g_10940dc4;
+// END FUNCTION
