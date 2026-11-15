@@ -279,3 +279,9 @@ ConCommand g_106e7bac("vreactions", sub_100d7520, "Lists all Vampire Reactions b
 void sub_100d75e0(void);
 ConCommand g_106e7668("vtables", sub_100d75e0, "Lists the available Vampire Tables used internally by Stats", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d76d0 size=0xa
+#include "ConCommand.h"
+void sub_100d76a0(void);
+ConCommand g_106e759c("vstrings", sub_100d76a0, "Lists the available Vampire Strings used internally by the Game System", 0, 0);
+// END FUNCTION
