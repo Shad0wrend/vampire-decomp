@@ -15,3 +15,8 @@ ConVar g_1093b238("hengeyokai_obstruction_lookahead", "24", 0, "Set this var to 
 #include "ConVar.h"
 ConVar g_1093b1f0("hengeyokai_obstruction_z", "75", 0, "Set this var to override the z push for obstructing physics objects.");
 // END FUNCTION
+
+// FUNCTION: 0x1037e460 size=0xa
+#include "ConVar.h"
+ConVar g_1093b298("hengeyokai_obstruction_scalar", "5", 0, "Set this var to override the forward push for obstructing physics objects.");
+// END FUNCTION
