@@ -217,3 +217,9 @@ ConCommand g_106cfeb8("ent_takedamageself", sub_100b0980, "Damages the entity", 
 void sub_100b0ad0(void);
 ConCommand g_106cf0a8("ent_trace", sub_100b0ad0, "Writes the overlay text to the debug window (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100b0d60 size=0xa
+#include "ConCommand.h"
+void sub_100b0c00(void);
+ConCommand g_106cf258("ent_trace_buffer", sub_100b0c00, "Turns tracing on to all NPC's trace buffers.\n\tArguments:      {verbose}", 0, 0);
+// END FUNCTION
