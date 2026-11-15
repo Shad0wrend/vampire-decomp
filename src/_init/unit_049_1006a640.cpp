@@ -13,3 +13,8 @@ ServerClassReg g_106c7138("CTETracer", &g_106c7118, g_105459c8);
 #include "SendTable.h"
 SendTable g_106c7118;
 // END FUNCTION
+
+// FUNCTION: 0x1006a770 size=0x5
+int sub_1006a7b0(void);
+int g_106c7114 = ((int (*)(int))sub_1006a7b0)(0);
+// END FUNCTION
