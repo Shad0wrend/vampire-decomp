@@ -90,3 +90,8 @@ CAI_ClassScheduleIdSpace g_1093f9e8(false);
 #include "CAI_LocalIdSpace.h"
 CAI_LocalIdSpace g_1093d6d4(false);
 // END FUNCTION
+
+// FUNCTION: 0x103cb420 size=0xa
+#include "ConVar.h"
+ConVar g_1093f958("werewolf_draw_hints", "0", 0);
+// END FUNCTION
