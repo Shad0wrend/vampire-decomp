@@ -3366,6 +3366,7 @@
 0x10005506 func   ?sub_101a69e0@@YAXXZ sub_101a69e0
 0x1000550b func   ?sub_101aa820@CPayphoneUnit101aa820@@QAEHH@Z CPayphoneUnit101aa820::sub_101aa820
 0x10005515 func   ?sub_102c7e10@@YIXPAH@Z sub_102c7e10
+0x1000551a func   ??1SendTable@@QAE@XZ SendTable::~SendTable
 0x1000551a func   ?sub_10247220@@YAXXZ sub_10247220
 0x1000551f func   _item_g_idol_cat item_g_idol_cat
 0x10005524 func   ?sub_101351b0@@YAPAHXZ sub_101351b0
