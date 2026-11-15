@@ -118,3 +118,8 @@ int g_1094aea4 = ((int (*)(int))sub_1040d690)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_1094ad54(&CPrecacheRegister::PrecacheFn_Other, "weapon_physcannon");
 // END FUNCTION
+
+// FUNCTION: 0x1040d870 size=0x5
+int * sub_1040d8b0(void);
+int * g_1094ab9c = ((int * (*)(int))sub_1040d8b0)(0);
+// END FUNCTION
