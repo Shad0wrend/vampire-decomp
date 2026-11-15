@@ -28,3 +28,8 @@ CPrecacheRegister g_1073a6c4(&CPrecacheRegister::PrecacheFn_Other, "vampireproje
 int sub_101ee2b0(void);
 int g_1073a45c = ((int (*)(int))sub_101ee2b0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101efbd0 size=0xa
+#include "ConVar.h"
+ConVar g_1073a6d8("projectile_lighttime", "3", 0);
+// END FUNCTION
