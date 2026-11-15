@@ -36,3 +36,8 @@ ServerClassReg g_1070a4f4("CTEDust", &g_1070a4d4, g_1056fd14);
 #include "SendTable.h"
 SendTable g_1070a4d4;
 // END FUNCTION
+
+// FUNCTION: 0x10114220 size=0x5
+int sub_10114260(void);
+int g_1070a4d0 = ((int (*)(int))sub_10114260)(0);
+// END FUNCTION
