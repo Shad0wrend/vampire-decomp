@@ -1433,3 +1433,8 @@ extern SendTable g_10947598;
 extern char g_1067f75c[];
 ServerClassReg g_10943dbc("CItemGBrotherhoodFlyer", &g_10947598, g_1067f75c);
 // END FUNCTION
+
+// FUNCTION: 0x10402170 size=0xa
+#include "SendTable.h"
+SendTable g_10947598;
+// END FUNCTION
