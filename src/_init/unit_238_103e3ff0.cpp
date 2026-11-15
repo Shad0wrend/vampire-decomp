@@ -46,3 +46,8 @@ SendTable g_10940dc4;
 int sub_103e4640(void);
 int g_10940dc0 = ((int (*)(int))sub_103e4640)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103e47f0 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10940d58(&CPrecacheRegister::PrecacheFn_Other, "item_w_bush_hook");
+// END FUNCTION
