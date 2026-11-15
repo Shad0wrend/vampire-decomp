@@ -10,3 +10,8 @@ int g_1093b678 = pcd_initial_1093b678();
 int sub_10388d00(void);
 int g_1093b67c = ((int (*)(int))sub_10388d00)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10388e50 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_1093b698(false);
+// END FUNCTION
