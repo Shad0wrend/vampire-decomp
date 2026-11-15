@@ -36,3 +36,10 @@ ConCommand g_106e75ec("say", sub_100d2990, "Display player message", 0, 0);
 void sub_100d2a60(void);
 ConCommand g_106e7390("say_team", sub_100d2a60, "Display player message to team", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d2bd0 size=0xa
+#include "ConCommand.h"
+void sub_100d2b30(void);
+void sub_100d2c30(void);
+ConCommand g_106e7e40("give", sub_100d2b30, "Give item to player.\n\tArguments: <item_name>", 0, sub_100d2c30);
+// END FUNCTION
