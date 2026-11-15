@@ -219,3 +219,9 @@ ConCommand g_106e7250("vclan", sub_100d6210, "Lists or changes the local player'
 void sub_100d6680(void);
 ConCommand g_106e7d28("vclans", sub_100d6680, "Lists the available Vampire Clans", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d68a0 size=0xa
+#include "ConCommand.h"
+void sub_100d6820(void);
+ConCommand g_106e7a18("dialogpick", sub_100d6820, "Activates (picks) a dialog line.", 0, 0);
+// END FUNCTION
