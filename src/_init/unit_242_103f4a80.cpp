@@ -453,3 +453,11 @@ int g_10946334 = ((int (*)(int))sub_103f90c0)(0);
 void sub_103f9240(void);
 ConCommand g_10948598("occult_regen_trigger", sub_103f9240, "Triggers Occult Regen action", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x103f9310 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1094857c;
+extern char g_1067f44c[];
+ServerClassReg g_10945730("COccultRegen", &g_1094857c, g_1067f44c);
+// END FUNCTION
