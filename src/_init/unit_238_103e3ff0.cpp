@@ -256,3 +256,8 @@ extern SendTable g_109418cc;
 extern char g_1066f150[];
 ServerClassReg g_109418b0("CWeaponMelee_OccultBlade", &g_109418cc, g_1066f150);
 // END FUNCTION
+
+// FUNCTION: 0x103e67a0 size=0xa
+#include "SendTable.h"
+SendTable g_109418cc;
+// END FUNCTION
