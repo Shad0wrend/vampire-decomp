@@ -70,3 +70,8 @@ CAI_LocalIdSpace g_10920484(true);
 #include "ConVar.h"
 ConVar g_10920440("footstep_normal_vol", "0.5", 128);
 // END FUNCTION
+
+// FUNCTION: 0x1026d220 size=0xa
+#include "ConVar.h"
+ConVar g_10920280("footstep_normal_dist", "256", 128);
+// END FUNCTION
