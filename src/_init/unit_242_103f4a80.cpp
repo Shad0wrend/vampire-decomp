@@ -857,3 +857,8 @@ ServerClassReg g_1094506c("CElderVitaePack", &g_10947c0c, g_1067f55c);
 #include "SendTable.h"
 SendTable g_10947c0c;
 // END FUNCTION
+
+// FUNCTION: 0x103fcba0 size=0x5
+int sub_103fcbe0(void);
+int g_10947c08 = ((int (*)(int))sub_103fcbe0)(0);
+// END FUNCTION
