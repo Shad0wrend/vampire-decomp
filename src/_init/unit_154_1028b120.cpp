@@ -250,3 +250,8 @@ ConVar g_10924550("temp_cover_npc_x", "-83.2", 0, "");
 #include "ConVar.h"
 ConVar g_10924598("temp_cover_npc_y", "57.6", 0, "");
 // END FUNCTION
+
+// FUNCTION: 0x10297c50 size=0xa
+#include "ConVar.h"
+ConVar g_10924c90("debug_turn_scalar", ".15", 0, "Set this var to override turn animation speed.");
+// END FUNCTION
