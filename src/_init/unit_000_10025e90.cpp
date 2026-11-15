@@ -30,3 +30,8 @@ int g_106b854c = ((int (*)(int))sub_100283c0)(0);
 int * sub_10028720(void);
 int * g_106b855c = ((int * (*)(int))sub_10028720)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10029290 size=0x5
+int * sub_100292d0(void);
+int * g_106b8550 = ((int * (*)(int))sub_100292d0)(0);
+// END FUNCTION
