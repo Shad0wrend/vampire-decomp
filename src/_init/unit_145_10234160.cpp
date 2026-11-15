@@ -335,3 +335,11 @@ SendTable g_1075228c;
 int sub_102373f0(void);
 int g_10752288 = ((int (*)(int))sub_102373f0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x102376f0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1075196c;
+extern char g_105bf8f8[];
+ServerClassReg g_10751c2c("CWeaponRanged_MingXiao_Spit", &g_1075196c, g_105bf8f8);
+// END FUNCTION
