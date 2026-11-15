@@ -61,3 +61,8 @@ ConVar g_10942f48("grenade_lightdecay", "2000", 0);
 int sub_103ef640(void);
 int g_10942efc = ((int (*)(int))sub_103ef640)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f0700 size=0x5
+int sub_103f0740(void);
+int g_10942ee0 = ((int (*)(int))sub_103f0740)(0);
+// END FUNCTION
