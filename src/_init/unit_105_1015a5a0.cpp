@@ -31,3 +31,8 @@ ConVar g_10725fb8("pl_autopickup_wpns", "0", 0, "Determines whether players are 
 #include "ConVar.h"
 ConVar g_10725ca0("physicsshadowupdate_render", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1015a920 size=0xa
+#include "ConVar.h"
+ConVar g_10725e70("sv_aim", "0", 384, "Autoaim state");
+// END FUNCTION
