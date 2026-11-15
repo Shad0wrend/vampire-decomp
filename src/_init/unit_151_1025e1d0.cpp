@@ -10,3 +10,8 @@ int g_1090fc00 = pcd_initial_1090fc00();
 #include "ConVar.h"
 ConVar g_1090fc08("flex_minplayertime", "5", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1025e2a0 size=0xa
+#include "ConVar.h"
+ConVar g_1090fc98("flex_maxplayertime", "7", 0);
+// END FUNCTION
