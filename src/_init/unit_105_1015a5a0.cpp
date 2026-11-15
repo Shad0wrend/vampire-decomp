@@ -152,3 +152,8 @@ ConCommand g_10725a44("reset_character_collide", sub_1016e0c0, "", 0, 0);
 #include "ConVar.h"
 ConVar g_10725de0("sv_suppress_viewpunch", "0", 8192);
 // END FUNCTION
+
+// FUNCTION: 0x10178fc0 size=0x5
+int sub_10179000(void);
+int g_10725214 = ((int (*)(int))sub_10179000)(0);
+// END FUNCTION
