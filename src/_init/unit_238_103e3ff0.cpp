@@ -41,3 +41,8 @@ ServerClassReg g_109424fc("CWeaponMelee_BushHook", &g_10940dc4, g_10667844);
 #include "SendTable.h"
 SendTable g_10940dc4;
 // END FUNCTION
+
+// FUNCTION: 0x103e4600 size=0x5
+int sub_103e4640(void);
+int g_10940dc0 = ((int (*)(int))sub_103e4640)(0);
+// END FUNCTION
