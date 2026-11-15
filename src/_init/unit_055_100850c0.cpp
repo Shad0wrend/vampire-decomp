@@ -77,3 +77,9 @@ ConCommand g_106c90c4("ai_named_hull", sub_10085a80, "Switches to the name of th
 void sub_10085bd0(void);
 ConCommand g_106c904c("ai_nodes", sub_10085bd0, "Toggles node display.  First call displays the nodes for the given network as green objects.  Second call  displays the nodes and their IDs.  Nodes are color coded as follows:\n\tGreen\t\t- ground node\n\tCyan\t\t- air node\n\tMagenta\t- climb node\n\tGrey\t\t- node not available for selected hull size\n\tOrange \t- node currently locked", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10085d70 size=0xa
+#include "ConCommand.h"
+void sub_10085d00(void);
+ConCommand g_106c95d8("ai_show_visibility", sub_10085d00, "Toggles visibility display for the node that the player is looking at.  Nodes that are visible from the selected node will be drawn in red with yellow lines connecting to the selected node.  Nodes that are not visible from the selected node will be drawn in blue.", 0, 0);
+// END FUNCTION
