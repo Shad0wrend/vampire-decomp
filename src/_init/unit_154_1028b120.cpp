@@ -5,3 +5,8 @@
 inline int pcd_initial_10923dd8() { return 0x450; }
 int g_10923dd8 = pcd_initial_10923dd8();
 // END FUNCTION
+
+// FUNCTION: 0x1028b270 size=0xa
+#include "ConVar.h"
+ConVar g_10924430("defense_bonus_max_time", "3.0", 0);
+// END FUNCTION
