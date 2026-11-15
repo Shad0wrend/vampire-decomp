@@ -35,3 +35,8 @@ ConVar g_109380c0("sv_autojump", "0", 0);
 #include "ConVar.h"
 ConVar g_10938490("speed_walk", "100", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1034f0c0 size=0xa
+#include "ConVar.h"
+ConVar g_10938138("speed_runbase", "225", 0);
+// END FUNCTION
