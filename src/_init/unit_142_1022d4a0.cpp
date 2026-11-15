@@ -34,3 +34,8 @@ SendTable g_10751464;
 int sub_10231970(void);
 int g_10751460 = ((int (*)(int))sub_10231970)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10231bc0 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_107511a8(&CPrecacheRegister::PrecacheFn_Other, "vgui_screen");
+// END FUNCTION
