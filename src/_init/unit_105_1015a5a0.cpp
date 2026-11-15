@@ -5,3 +5,9 @@
 #include "ConVar.h"
 ConVar g_107258d8("debug_show_cs_acts", "0", 0, "Set to true to display criminal and supernatural act info.");
 // END FUNCTION
+
+// FUNCTION: 0x1015a630 size=0xa
+#include "ConVar.h"
+void sub_101622d0(ConVar *, const char *);
+ConVar g_10725f00("debug_show_alert_states", "0", 0, "Set to true to display info about cops & hunter alert states.", sub_101622d0);
+// END FUNCTION
