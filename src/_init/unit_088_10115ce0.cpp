@@ -60,3 +60,8 @@ ConVar g_1070ade8("mp_weaponstay", "0", 4);
 #include "ConVar.h"
 ConVar g_1070a9f8("mp_forcerespawn", "1", 4);
 // END FUNCTION
+
+// FUNCTION: 0x10117e10 size=0xa
+#include "ConVar.h"
+ConVar g_1070aec0("mp_footsteps", "1", 4);
+// END FUNCTION
