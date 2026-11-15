@@ -668,3 +668,8 @@ extern SendTable g_10946f6c;
 extern char g_1067f4dc[];
 ServerClassReg g_10944bfc("COccultBloodBuff", &g_10946f6c, g_1067f4dc);
 // END FUNCTION
+
+// FUNCTION: 0x103faf10 size=0xa
+#include "SendTable.h"
+SendTable g_10946f6c;
+// END FUNCTION
