@@ -13,3 +13,8 @@ ServerClassReg g_109ee828("CBaseParticleEntity", &g_109ee80c, g_106ad4d8);
 #include "SendTable.h"
 SendTable g_109ee80c;
 // END FUNCTION
+
+// FUNCTION: 0x1042b430 size=0x5
+int sub_1042b470(void);
+int g_109ee808 = ((int (*)(int))sub_1042b470)(0);
+// END FUNCTION
