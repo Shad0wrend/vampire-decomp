@@ -200,3 +200,8 @@ ConVar g_10923ec8("debug_view_cone", "0", 0, "Set to 1 to turn show the complex 
 #include "ConVar.h"
 ConVar g_10923f58("debug_alert_aggressive", "0", 0, "Set to true to have alert states use the aggressive animations.");
 // END FUNCTION
+
+// FUNCTION: 0x1028ca60 size=0xa
+#include "ConVar.h"
+ConVar g_10924030("debug_hunting_aggressive", "1", 0, "Set to true to have hunting states use the aggressive animations.");
+// END FUNCTION
