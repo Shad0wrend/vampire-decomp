@@ -116,3 +116,9 @@ ConCommand g_106e7a40("vstats", sub_100d4240, "Lists or changes the local player
 void sub_100d4b40(void);
 ConCommand g_106e7e18("ent_vstats_spew", sub_100d4b40, "Lists the target Entity's Vampire Stats\n\tArguments:\t{Buy | Sell} {stat_name} / no arguments lists all stats.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d4f70 size=0xa
+#include "ConCommand.h"
+void sub_100d4e50(void);
+ConCommand g_106e74f8("ent_vfeats_spew", sub_100d4e50, "Lists the target Entity's Vampire Feats\n", 0, 0);
+// END FUNCTION
