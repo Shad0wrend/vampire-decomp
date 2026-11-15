@@ -8,3 +8,8 @@ extern SendTable g_106bfa34;
 extern char g_10541058[];
 ServerClassReg g_106bfa50("CTEBeamLaser", &g_106bfa34, g_10541058);
 // END FUNCTION
+
+// FUNCTION: 0x1005bbe0 size=0xa
+#include "SendTable.h"
+SendTable g_106bfa34;
+// END FUNCTION
