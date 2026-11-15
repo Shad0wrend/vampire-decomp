@@ -68,3 +68,8 @@ ServerClassReg g_109383e4("CHL2_Player", &g_10938108, g_10626910);
 #include "SendTable.h"
 SendTable g_10938108;
 // END FUNCTION
+
+// FUNCTION: 0x1034f6b0 size=0x5
+int sub_1034f6f0(void);
+int g_10938104 = ((int (*)(int))sub_1034f6f0)(0);
+// END FUNCTION
