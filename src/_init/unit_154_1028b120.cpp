@@ -165,3 +165,8 @@ ConVar g_109248f0("debug_allow_dodge", "0", 0, "Allows or disallows NPC dodging 
 #include "ConVar.h"
 ConVar g_10923d38("debug_allow_fake_reload", "1", 0, "Allows or disallows faked NPC reloading.", true, 0.0f, true, 1.0f);
 // END FUNCTION
+
+// FUNCTION: 0x1028c660 size=0xa
+#include "ConVar.h"
+ConVar g_10924af8("debug_allow_non_idle_auto_sk", "1", 0, "Allows or disallows automatic stealth kills when target is not in idle state.", true, 0.0f, true, 1.0f);
+// END FUNCTION
