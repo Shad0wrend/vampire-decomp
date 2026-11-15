@@ -150,3 +150,8 @@ ConVar g_10924078("ent_trace_patrolpath", "0", 0, "When ent_trace is on, this wi
 #include "ConVar.h"
 ConVar g_109241f8("dialog_facial_debug", "0", 0, "Turns on debug text for the NPC you are talking to.");
 // END FUNCTION
+
+// FUNCTION: 0x1028c480 size=0xa
+#include "ConVar.h"
+ConVar g_10924f20("debug_show_body_targets", "0", 0, "Turns on display of body targets for selected NPCs.", true, 0.0f, true, 1.0f);
+// END FUNCTION
