@@ -8,3 +8,8 @@ extern SendTable g_106c0444;
 extern char g_106c0464[];
 ServerClassReg g_106c0428("CTEBeamSpline", &g_106c0444, g_106c0464);
 // END FUNCTION
+
+// FUNCTION: 0x1005d5d0 size=0xa
+#include "SendTable.h"
+SendTable g_106c0444;
+// END FUNCTION
