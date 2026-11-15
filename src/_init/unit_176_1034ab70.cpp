@@ -73,3 +73,8 @@ SendTable g_10938108;
 int sub_1034f6f0(void);
 int g_10938104 = ((int (*)(int))sub_1034f6f0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10351320 size=0x5
+#include "CPhysicsPlayerCallback.h"
+CPhysicsPlayerCallback g_1093827c;
+// END FUNCTION
