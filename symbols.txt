@@ -12713,6 +12713,7 @@
 0x100114b9 func   ?sub_10185450@UtlMem@@QAEXXZ UtlMem::sub_10185450
 0x100114be func   ?sub_1006e0e0@@YIXPAD@Z sub_1006e0e0
 0x100114c3 func   ?sub_102fcab0@CAI_Pathfinder@@QAEHPAPAUCAI_PathfinderNode@@HH@Z CAI_Pathfinder::sub_102fcab0
+0x100114c8 func   ?sub_101fc9e0@CVStatAction_t@@QAE_NPAX@Z CVStatAction_t::sub_101fc9e0
 0x100114cd func   ?sub_101d6890@CPartListUnit3@@QAEXXZ CPartListUnit3::sub_101d6890
 0x100114d2 func   ?vfunc337@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc337
 0x100114d7 func   ?vfunc223@CFuncBrush@@QAE_NXZ CFuncBrush::vfunc223

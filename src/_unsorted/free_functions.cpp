@@ -162436,6 +162436,163 @@ void TStat::sub_101fc950(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101fc9e0 size=0x3ce
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CVStatAction_t.h"
+#include <string.h>
+#include <stdlib.h>
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+__declspec(dllimport) void Msg(const char *, ...);
+struct IKVView {
+	virtual void v0();
+	virtual void v1();
+	virtual IKVView *FindKey(const char *name);
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual int GetInt(const char *name, int def);
+	virtual void v11(); virtual void v12();
+	virtual const char *GetString(const char *name, const char *def);
+};
+struct CHeadView { virtual void v0(); virtual void SetText(const char *s); };
+struct CNamedList83a0 { void *sub_101f83a0(const char *); };
+extern CNamedList83a0 g_1074df78;
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+extern int sub_102027a0(const char *);
+extern const char *sub_10203d60(const char *);
+typedef void (*StatActionFunc)(CVStatAction_t *, const char *);
+
+namespace block_101fc9e0 {
+struct CVStatActionLoad : CVStatAction_t
+{
+	void SetEffect(const char *effect)
+	{
+		m_pad0004 = 1;
+		m_pData = g_1074df78.sub_101f83a0(sub_10203d60(effect));
+	}
+};
+}
+using namespace block_101fc9e0;
+
+bool CVStatAction_t::sub_101fc9e0(void *pKeyValues)
+{
+	ScopeTrace scope("CVStatAction_t::Load", g_106b8540, g_106b8540);
+	IKVView *kv = (IKVView *)pKeyValues;
+	if (kv)
+	{
+		const char *trig = kv->GetString("Triggers", g_106b8540);
+		if (*trig)
+		{
+			if (!_strcmpi(trig, "Inc"))
+				if ((int)this == -1) { m_pad0000 |= 2; } else { m_pad0000 |= 2; }
+			else if (!_strcmpi(trig, "Dec"))
+				m_pad0000 |= 1;
+			else if (!_strcmpi(trig, "Set"))
+				m_pad0000 |= 4;
+			if (!_strcmpi(trig, "Enter"))
+				m_pad0000 |= 0x10;
+			else if (!_strcmpi(trig, "Exit"))
+				m_pad0000 |= 8;
+		}
+
+		char buf[64];
+		strcpy(buf, kv->GetString("Value", g_106b8540));
+		if (buf[0] == '>')
+		{
+			if (buf[1] == '=')
+				m_nMin = atoi(buf + 2);
+			else
+				m_nMin = atoi(buf + 1) + 1;
+		}
+		else if (buf[0] == '<')
+		{
+			if (buf[1] == '=')
+				m_nMax = atoi(buf + 2);
+			else
+				m_nMax = atoi(buf + 1) - 1;
+		}
+		else
+		{
+			char *dash = strchr(buf, '-');
+			if (dash)
+			{
+				m_nMin = atoi(buf);
+				m_nMax = atoi(dash + 1);
+			}
+			else
+			{
+				m_nMax = m_nMin = atoi(buf);
+			}
+		}
+
+		const char *pre = kv->GetString("Predependency", g_106b8540);
+		((CHeadView *)&m_head)->SetText(pre);
+
+		const char *effect = kv->GetString("Effect", g_106b8540);
+		if (*effect)
+			((CVStatActionLoad *)this)->SetEffect(effect);
+		else
+		{
+			const char *stat = kv->GetString("Stat", g_106b8540);
+			if (*stat)
+			{
+				m_pad0004 = 2;
+				char *s = (char *)sub_10203d60(stat);
+				m_block40.sub_10204570(strtok(s, " "));
+				const char *tok = strtok(0, " ");
+				if (tok)
+					m_pData = (void *)atoi(tok);
+				else
+				{
+					m_pData = 0;
+					Msg("Unable to read StatAction modifier: %s!\n", stat);
+				}
+			}
+			else
+			{
+				const char *func = kv->GetString("Function", g_106b8540);
+				if (*func && g_1074e7c4)
+					((StatActionFunc)g_1074e7c4)(this, func);
+				else
+				{
+					effect = kv->GetString("Effect", g_106b8540);
+					if (*effect)
+						((CVStatActionLoad *)this)->SetEffect(effect);
+					else
+					{
+						IKVView *part = kv->FindKey("Particle");
+						if (part)
+						{
+							m_pad0004 = 4;
+							CVStatActionRecord4 *r = (CVStatActionRecord4 *)operator new(0x108);
+							memset(r, 0, 0x108);
+							Q_strncpy(r->m_szName, part->GetString("Definition", "grenade_frag_emitter"), 0x80);
+							Q_strncpy(r->m_szAttach84, part->GetString("Bone", "Bip01"), 0x80);
+							r->m_nAttachment80 = sub_102027a0(part->GetString("AttachType", "origin"));
+							r->m_bViewModel104 = part->GetInt("Viewmodel", 0) != 0;
+							m_pData = r;
+						}
+						else
+						{
+							m_pData = 0;
+							Msg("Unable to read StatAction modifier: %s!\n", effect);
+						}
+					}
+				}
+			}
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101fceb0 size=0x7e
 #include "CVStatAction_t.h"
 struct TraceEnt { const char *a; const char *b; const char *c; };
