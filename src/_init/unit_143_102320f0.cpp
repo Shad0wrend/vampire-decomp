@@ -15,3 +15,8 @@ int g_107516c8 = pcd_initial_107516c8();
 #include "ConVar.h"
 ConVar g_10751600("voice_serverdebug", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x102322f0 size=0xa
+#include "ConVar.h"
+ConVar g_107515b8("sv_alltalk", "0", 0);
+// END FUNCTION
