@@ -91,3 +91,9 @@ ConCommand g_106cf180("ent_text", sub_100ae450, "Displays text debugging informa
 void sub_100ae580(void);
 ConCommand g_106cf080("ent_bbox", sub_100ae580, "Displays the movement bounding box for the given entity(ies) in orange.  Some entites will also display entity specific overlays.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100ae750 size=0xa
+#include "ConCommand.h"
+void sub_100ae6b0(void);
+ConCommand g_106cfd18("ent_absbox", sub_100ae6b0, "Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
+// END FUNCTION
