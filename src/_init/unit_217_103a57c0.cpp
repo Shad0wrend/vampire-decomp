@@ -30,3 +30,8 @@ ConVar g_1093c2b0("andrei_force_player_collision", "0", 0);
 int sub_103a5bb0(void);
 int g_1093c2a8 = ((int (*)(int))sub_103a5bb0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103a5d20 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_1093c3f0(false);
+// END FUNCTION
