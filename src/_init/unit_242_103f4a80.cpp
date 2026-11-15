@@ -1415,3 +1415,8 @@ extern SendTable g_109475d0;
 extern char g_1067f74c[];
 ServerClassReg g_109453f0("CItemGGuyMagazine", &g_109475d0, g_1067f74c);
 // END FUNCTION
+
+// FUNCTION: 0x10401ec0 size=0xa
+#include "SendTable.h"
+SendTable g_109475d0;
+// END FUNCTION
