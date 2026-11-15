@@ -40,3 +40,8 @@ ConVar g_10937a88("debug_viewcone_back_dist", "40", 0, "Change the distance we b
 #include "CRelationshipSaveDataOps.h"
 CRelationshipSaveDataOps g_10937a84;
 // END FUNCTION
+
+// FUNCTION: 0x1031a5c0 size=0x5
+int * sub_1031a600(void);
+int * g_10936edc = ((int * (*)(int))sub_1031a600)(0);
+// END FUNCTION
