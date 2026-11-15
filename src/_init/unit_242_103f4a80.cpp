@@ -1191,3 +1191,11 @@ SendTable g_10946ea0;
 int sub_103ffc90(void);
 int g_10946e9c = ((int (*)(int))sub_103ffc90)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103ffdd0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10944134;
+extern char g_1067f68c[];
+ServerClassReg g_10944d1c("CItemGJumblesFlyer", &g_10944134, g_1067f68c);
+// END FUNCTION
