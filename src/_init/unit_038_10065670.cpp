@@ -8,3 +8,8 @@ extern SendTable g_106c480c;
 extern char g_10544020[];
 ServerClassReg g_106c4744("CTEInspectionFX", &g_106c480c, g_10544020);
 // END FUNCTION
+
+// FUNCTION: 0x10065720 size=0xa
+#include "SendTable.h"
+SendTable g_106c480c;
+// END FUNCTION
