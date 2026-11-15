@@ -1731,3 +1731,11 @@ SendTable g_10943d6c;
 int sub_10404d30(void);
 int g_10943d68 = ((int (*)(int))sub_10404d30)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10404e70 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1094439c;
+extern char g_1067f86c[];
+ServerClassReg g_10948448("CItemGJunkyardBusinesscard", &g_1094439c, g_1067f86c);
+// END FUNCTION
