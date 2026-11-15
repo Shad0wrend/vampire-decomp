@@ -312,3 +312,8 @@ extern SendTable g_10948828;
 extern char g_1067f350[];
 ServerClassReg g_10944c14("CResearchBook_LG_DODGE", &g_10948828, g_1067f350);
 // END FUNCTION
+
+// FUNCTION: 0x103f7e70 size=0xa
+#include "SendTable.h"
+SendTable g_10948828;
+// END FUNCTION
