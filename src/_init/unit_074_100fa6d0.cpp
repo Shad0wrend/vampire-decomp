@@ -41,3 +41,8 @@ extern SendTable g_10708dfc;
 extern char g_10566edc[];
 ServerClassReg g_1070871c("CFuncParticle", &g_10708dfc, g_10566edc);
 // END FUNCTION
+
+// FUNCTION: 0x100fc6e0 size=0xa
+#include "SendTable.h"
+SendTable g_10708dfc;
+// END FUNCTION
