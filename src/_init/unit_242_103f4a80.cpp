@@ -903,3 +903,11 @@ SendTable g_10944964;
 int sub_103fd190(void);
 int g_10944960 = ((int (*)(int))sub_103fd190)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103fd2d0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109492e4;
+extern char g_1067f58c[];
+ServerClassReg g_10943fe8("CItemGDrugsDrugBox", &g_109492e4, g_1067f58c);
+// END FUNCTION
