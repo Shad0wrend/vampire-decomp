@@ -10,3 +10,8 @@ int g_10923dd8 = pcd_initial_10923dd8();
 #include "ConVar.h"
 ConVar g_10924430("defense_bonus_max_time", "3.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1028b4a0 size=0xa
+#include "ConVar.h"
+ConVar g_10923f10("sk_basenpctroika_health", "10", 0);
+// END FUNCTION
