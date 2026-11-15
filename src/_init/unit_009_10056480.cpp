@@ -13,3 +13,8 @@ extern SendTable g_106bdddc;
 extern char g_1053f330[];
 ServerClassReg g_106be148("CDynamicLight", &g_106bdddc, g_1053f330);
 // END FUNCTION
+
+// FUNCTION: 0x100565a0 size=0xa
+#include "SendTable.h"
+SendTable g_106bdddc;
+// END FUNCTION
