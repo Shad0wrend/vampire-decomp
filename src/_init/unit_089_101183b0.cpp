@@ -25,3 +25,8 @@ ConVar g_1070b078("sneak_debug_stats", "0", 0);
 #include "ConVar.h"
 ConVar g_1070b0f0("movement_debug_stats", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10119590 size=0xa
+#include "ConVar.h"
+ConVar g_1070b138("combat_debug_stats", "0", 0);
+// END FUNCTION
