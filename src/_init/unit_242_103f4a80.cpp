@@ -806,3 +806,8 @@ extern SendTable g_10943b9c;
 extern char g_1067f53c[];
 ServerClassReg g_10944490("CBloodPack", &g_10943b9c, g_1067f53c);
 // END FUNCTION
+
+// FUNCTION: 0x103fc290 size=0xa
+#include "SendTable.h"
+SendTable g_10943b9c;
+// END FUNCTION
