@@ -1605,3 +1605,11 @@ SendTable g_10945050;
 int sub_10403a60(void);
 int g_1094504c = ((int (*)(int))sub_10403a60)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10403ba0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10947160;
+extern char g_1067f7fc[];
+ServerClassReg g_1094757c("CItemGHattersScreenplay", &g_10947160, g_1067f7fc);
+// END FUNCTION
