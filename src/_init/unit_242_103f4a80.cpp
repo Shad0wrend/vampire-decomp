@@ -540,3 +540,8 @@ SendTable g_109480d8;
 int sub_103f9dd0(void);
 int g_109480d4 = ((int (*)(int))sub_103f9dd0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f9f10 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_109485e4(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_lockpicking");
+// END FUNCTION
