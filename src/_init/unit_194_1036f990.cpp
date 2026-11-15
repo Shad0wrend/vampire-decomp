@@ -5,3 +5,8 @@
 inline int pcd_initial_1093ab60() { return 0x450; }
 int g_1093ab60 = pcd_initial_1093ab60();
 // END FUNCTION
+
+// FUNCTION: 0x1036f9d0 size=0xa
+#include "ConVar.h"
+ConVar g_1093abc8("sk_vcombatman_health", "10", 0);
+// END FUNCTION
