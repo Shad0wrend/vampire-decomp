@@ -41,3 +41,8 @@ ConVar g_10725e70("sv_aim", "0", 384, "Autoaim state");
 #include "ConVar.h"
 ConVar g_10725e28("sk_player_head", "2", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1015aa40 size=0xa
+#include "ConVar.h"
+ConVar g_10725c10("sk_player_chest", "1", 0);
+// END FUNCTION
