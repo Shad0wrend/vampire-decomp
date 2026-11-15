@@ -358,3 +358,9 @@ ConCommand g_106c9560("npc_play_dialog_file", sub_10089430, "Tells the NPC you a
 void sub_10089550(void);
 ConCommand g_106c9470("npc_disposition", sub_10089550, "Tells the NPC to set himself to the dispostion specified", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10089630 size=0xa
+#include "ConCommand.h"
+void sub_100896c0(void);
+ConCommand g_106c8e1c("npc_changestance", sub_100896c0, "Tells the NPC to set himself to the dispostion specified", 0, 0);
+// END FUNCTION
