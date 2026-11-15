@@ -237,3 +237,9 @@ ConCommand g_106e754c("vtrait_effects", sub_100d6930, "Lists the available Vampi
 void sub_100d6a50(void);
 ConCommand g_106e7200("vhistories", sub_100d6a50, "Lists the available Vampire Histories", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d6fb0 size=0xa
+#include "ConCommand.h"
+void sub_100d6d40(void);
+ConCommand g_106e79c8("vhistory", sub_100d6d40, "Lists or changes the local player's Vampire History\n\tArguments:\t{history #} / {history_name} / no arguments lists the current history", 0, 0);
+// END FUNCTION
