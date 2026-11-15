@@ -13,3 +13,8 @@ ServerClassReg g_106c17cc("CTEBubbles", &g_106c17e8, g_10542390);
 #include "SendTable.h"
 SendTable g_106c17e8;
 // END FUNCTION
+
+// FUNCTION: 0x1005f960 size=0x5
+int sub_1005f9a0(void);
+int g_106c17e4 = ((int (*)(int))sub_1005f9a0)(0);
+// END FUNCTION
