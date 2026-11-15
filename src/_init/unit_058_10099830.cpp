@@ -53,3 +53,8 @@ SendTable g_106cec14;
 int sub_1009a760(void);
 int g_106cec10 = ((int (*)(int))sub_1009a760)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1009e3a0 size=0xa
+#include "ConVar.h"
+ConVar g_106cf420("ent_debugkeys", "", 0);
+// END FUNCTION
