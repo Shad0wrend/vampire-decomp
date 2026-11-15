@@ -287,3 +287,9 @@ ConCommand g_1072591c("infobar_message", sub_101809e0, "", 0, 0);
 void sub_10180af0(void);
 ConCommand g_10725ab4("remove_extraneous_entities", sub_10180af0, "", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10180de0 size=0xa
+#include "ConCommand.h"
+void sub_10180d10(void);
+ConCommand g_10725b9c("remove_entities_by_class", sub_10180d10, "deletes all entities of the give classname (i.e. 'env_sprite' )", 0, 0);
+// END FUNCTION
