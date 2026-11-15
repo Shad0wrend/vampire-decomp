@@ -30,3 +30,9 @@ ConCommand g_107518d4("wc_air_node_edit", sub_10233e20, "When in WC edit mode, t
 void sub_10233ee0(void);
 ConCommand g_1075185c("wc_air_edit_further", sub_10233ee0, "When in WC edit mode and editing air nodes,  moves position of air node crosshair and placement location further away from player", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10233ff0 size=0xa
+#include "ConCommand.h"
+void sub_10233fb0(void);
+ConCommand g_10751884("wc_air_edit_nearer", sub_10233fb0, "When in WC edit mode and editing air nodes,  moves position of air node crosshair and placement location nearer to from player", 0, 0);
+// END FUNCTION
