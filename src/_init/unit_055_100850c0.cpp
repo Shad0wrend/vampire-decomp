@@ -226,3 +226,9 @@ ConCommand g_106c8ffc("npc_conditions", sub_10087c40, "Displays all the current 
 void sub_10087d10(void);
 ConCommand g_106c8f0c("npc_viewcone", sub_10087d10, "Displays the viewcone of the NPC (where they are currently looking and what the extents of there vision is)\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10087e50 size=0xa
+#include "ConCommand.h"
+void sub_10087de0(void);
+ConCommand g_106c8bd0("npc_camera_viewcone", sub_10087de0, "Displays the viewcone of all NPC cameras on a map.", 0, 0);
+// END FUNCTION
