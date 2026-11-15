@@ -36,3 +36,8 @@ extern SendTable g_10942d44;
 extern char g_1067ccc0[];
 ServerClassReg g_10942e0c("CWeaponThrown_Grenade_Frag", &g_10942d44, g_1067ccc0);
 // END FUNCTION
+
+// FUNCTION: 0x103eefb0 size=0xa
+#include "SendTable.h"
+SendTable g_10942d44;
+// END FUNCTION
