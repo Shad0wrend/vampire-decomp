@@ -166,3 +166,9 @@ ConCommand g_106c96c8("npc_go_random", sub_100874a0, "Sends all selected NPC(s) 
 void sub_10087550(void);
 ConCommand g_106c8b58("npc_reset", sub_10087550, "Reloads schedules for all NPC's from their script files\n\tArguments:\t-none-", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10087640 size=0xa
+#include "ConCommand.h"
+void sub_10087600(void);
+ConCommand g_106c8f84("npc_nearest", sub_10087600, "Draw's a while box around the NPC(s) nearest node\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at  ", 0, 0);
+// END FUNCTION
