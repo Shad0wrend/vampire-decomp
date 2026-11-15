@@ -115,3 +115,8 @@ ServerClassReg g_10943488("CWeaponIArmor_Hvy_Leather", &g_109434c8, g_1067ea64);
 #include "SendTable.h"
 SendTable g_109434c8;
 // END FUNCTION
+
+// FUNCTION: 0x103f3a30 size=0x5
+int sub_103f3a70(void);
+int g_109434c4 = ((int (*)(int))sub_103f3a70)(0);
+// END FUNCTION
