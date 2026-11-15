@@ -678,3 +678,8 @@ SendTable g_10946f6c;
 int sub_103fafd0(void);
 int g_10946f68 = ((int (*)(int))sub_103fafd0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103fb110 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_109493d4(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_blood_buff");
+// END FUNCTION
