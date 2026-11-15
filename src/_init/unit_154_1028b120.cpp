@@ -80,3 +80,8 @@ ConVar g_10924a18("debug_melee_advance_combatmove_dist", "100", 0, "How close a 
 #include "ConVar.h"
 ConVar g_10924508("debug_player_on_head", "3", 0, "What should I do if the player is on my head?  0 - run only : 1 - allow dive : 2 - allow fall.", true, 0.0f, true, 3.0f);
 // END FUNCTION
+
+// FUNCTION: 0x1028bca0 size=0xa
+#include "ConVar.h"
+ConVar g_10924d20("debug_track_under_ground", "0", 0, "Tracks guys falling underground");
+// END FUNCTION
