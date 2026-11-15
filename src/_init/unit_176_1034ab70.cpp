@@ -78,3 +78,8 @@ int g_10938104 = ((int (*)(int))sub_1034f6f0)(0);
 #include "CPhysicsPlayerCallback.h"
 CPhysicsPlayerCallback g_1093827c;
 // END FUNCTION
+
+// FUNCTION: 0x10351580 size=0xa
+#include "ConVar.h"
+ConVar g_109384d8("debug_stealth_light", "-1", 0, "Overrides the light on the player for stealth calculations (-1 = off, 0 = min light, 10 = max light).", true, -1.0f, true, 10.0f);
+// END FUNCTION
