@@ -8,3 +8,8 @@ extern SendTable g_10708dcc;
 extern char g_105669c8[];
 ServerClassReg g_10708e20("CEnvParticle", &g_10708dcc, g_105669c8);
 // END FUNCTION
+
+// FUNCTION: 0x100fa780 size=0xa
+#include "SendTable.h"
+SendTable g_10708dcc;
+// END FUNCTION
