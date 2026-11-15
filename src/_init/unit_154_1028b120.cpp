@@ -130,3 +130,8 @@ ConVar g_10924ab0("ent_trace_moveshoot", "0", 0, "When ent_trace is on, this wil
 #include "ConVar.h"
 ConVar g_10923fa0("ent_trace_status", "0", 0, "When ent_trace is on, this will dump info about status also.");
 // END FUNCTION
+
+// FUNCTION: 0x1028c240 size=0xa
+#include "ConVar.h"
+ConVar g_109243a0("ent_trace_idealact", "0", 0, "When ent_trace is on, this will dump info about the ideal activity being changed also.");
+// END FUNCTION
