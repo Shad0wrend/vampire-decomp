@@ -128,3 +128,9 @@ ConCommand g_106e74f8("ent_vfeats_spew", sub_100d4e50, "Lists the target Entity'
 void sub_100d5000(void);
 ConCommand g_106e7138("barterend", sub_100d5000, "Ends bartering/looting", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d52d0 size=0xa
+#include "ConCommand.h"
+void sub_100d51b0(void);
+ConCommand g_106e7708("blood", sub_100d51b0, "Sets the local player's blood pool", 0, 0);
+// END FUNCTION
