@@ -25,3 +25,8 @@ ConVar g_10940498("zombie_gib_amt", "100", 0);
 int * sub_103dde40(void);
 int * g_1094048c = ((int * (*)(int))sub_103dde40)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103de3a0 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_10940398(false);
+// END FUNCTION
