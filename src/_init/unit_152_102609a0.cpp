@@ -100,3 +100,8 @@ ConVar g_109202c8("debug_sound_occlusion", "1", 0, "Set this to 1 to allow certa
 #include "ConVar.h"
 ConVar g_10920340("ai_report_task_timings_on_limit", "0", 128);
 // END FUNCTION
+
+// FUNCTION: 0x10277d00 size=0xa
+#include "ConVar.h"
+ConVar g_1090fd70("ai_think_limit_label", "0", 128);
+// END FUNCTION
