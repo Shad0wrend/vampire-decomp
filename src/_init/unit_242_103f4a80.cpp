@@ -535,3 +535,8 @@ ServerClassReg g_10943840("COccultLockpicking", &g_109480d8, g_1067f47c);
 #include "SendTable.h"
 SendTable g_109480d8;
 // END FUNCTION
+
+// FUNCTION: 0x103f9d90 size=0x5
+int sub_103f9dd0(void);
+int g_109480d4 = ((int (*)(int))sub_103f9dd0)(0);
+// END FUNCTION
