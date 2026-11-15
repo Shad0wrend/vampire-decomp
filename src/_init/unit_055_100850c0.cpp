@@ -23,3 +23,9 @@ ConCommand g_106c9024("ai_show_hints", sub_10085260, "Displays all hints as smal
 void sub_10085260(void);
 ConCommand g_106c9448("ai_hints", sub_10085260, "Displays all hints as small boxes\n\tBlue\t\t- hint is available for use\n\tRed\t\t- hint is currently being used by an NPC\n\tOrange\t\t- hint not being used by timed out\n\tGrey\t\t- hint has been disabled", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100853f0 size=0xa
+#include "ConCommand.h"
+void sub_10085480(void);
+ConCommand g_106c8b30("ai_hint_focus_npc", sub_10085480, "Use this command to focus on an NPC for hints.  When that NPC tries to find a hint, he will mark them with failure messages saying why he couldn't use it.", 0, 0);
+// END FUNCTION
