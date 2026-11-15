@@ -364,3 +364,9 @@ ConCommand g_106c9470("npc_disposition", sub_10089550, "Tells the NPC to set him
 void sub_100896c0(void);
 ConCommand g_106c8e1c("npc_changestance", sub_100896c0, "Tells the NPC to set himself to the dispostion specified", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100897d0 size=0xa
+#include "ConCommand.h"
+void sub_10089860(void);
+ConCommand g_106c8da4("npc_addexpression", sub_10089860, "Tells the NPC to set himself to add the expression layer for 10 seconds", 0, 0);
+// END FUNCTION
