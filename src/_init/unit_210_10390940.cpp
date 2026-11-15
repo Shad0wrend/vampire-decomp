@@ -15,3 +15,8 @@ ConVar g_1093bc10("ming_xiao_throw_base", "150.0", 0, "Set this var to override 
 #include "ConVar.h"
 ConVar g_1093bbc8("ming_xiao_throw_power", ".0040", 0, "Set this var to override the throw power.");
 // END FUNCTION
+
+// FUNCTION: 0x10390aa0 size=0xa
+#include "ConVar.h"
+ConVar g_1093b9f8("ming_xiao_throw_hds", ".0005", 0, "Set this var to override the throw height to distance scalar.");
+// END FUNCTION
