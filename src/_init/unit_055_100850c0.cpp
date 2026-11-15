@@ -113,3 +113,9 @@ ConCommand g_106c8ebc("npc_destroy", sub_10086080, "Removes the given NPC(s) fro
 void sub_10086150(void);
 ConCommand g_106c918c("npc_enemies", sub_10086150, "Shows memory of NPC.  Draws an X on top of each memory.\n\tEluded entities drawn in blue (don't know where it went)\n\tUnreachable entities drawn in green (can't get to it)\n\tCurrent enemy drawn in red\n\tCurrent target entity drawn in magenta\n\tAll other entities drawn in pink\n\tArguments:   \t{npc_name} / {npc class_name} / no argument picks what player is looking at", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10086260 size=0xa
+#include "ConCommand.h"
+void sub_10086220(void);
+ConCommand g_106c8e44("npc_focus", sub_10086220, "Displays red line to NPC's enemy (if has one) and blue line to NPC's target entity (if has one)\n\tArguments:   \t{npc_name} / {npc class_name} / no argument picks what player is looking at", 0, 0);
+// END FUNCTION
