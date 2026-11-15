@@ -90,3 +90,8 @@ int * g_1074f120 = ((int * (*)(int))sub_10214e30)(0);
 int * sub_10215ca0(void);
 int * g_1074f12c = ((int * (*)(int))sub_10215ca0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10216be0 size=0x5
+int * sub_10216c20(void);
+int * g_1074f128 = ((int * (*)(int))sub_10216c20)(0);
+// END FUNCTION
