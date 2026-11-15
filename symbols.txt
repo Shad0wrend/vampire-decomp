@@ -4649,6 +4649,7 @@
 0x10006f55 func   ?vfunc80@CResearchBook_MG_BRAWL@@QAEHXZ CResearchBook_MG_BRAWL::vfunc80
 0x10006f5a func   _item_w_torch item_w_torch
 0x10006f5f func   ?vfunc123@CNPC_VMingXiao@@UAEXXZ CNPC_VMingXiao::vfunc123
+0x10006f64 func   ?sub_1029d4e0@CAI_BaseNPCTroikaDbg@@QAEHXZ CAI_BaseNPCTroikaDbg::sub_1029d4e0
 0x10006f69 func   ?vfunc482@CNPC_VMingXiao@@QAEHDH@Z CNPC_VMingXiao::vfunc482
 0x10006f6e func   ?sub_101e8250@COwner@@QAEIH@Z COwner::sub_101e8250
 0x10006f73 func   ?sub_100544f0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_100544f0

@@ -4392,6 +4392,370 @@ skipHint:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029d4e0 size=0xec0
+#include "string_t.h"
+#include "CBaseEntity.h"
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_TroikaLink.h"
+#include "CAI_BaseNPCTroika.h"
+#include <string.h>
+#include "Tier1.h"
+#include "ehandle.h"
+#include "globalvars.h"
+#include "engineserver.h"
+
+// TARGET: ?sub_1029d4e0@CAI_BaseNPCTroikaDbg@@QAEHXZ
+extern char g_106b8540[];
+__declspec(dllimport) int Q_snprintf(char *pDest, int destLen, const char *pFormat, ...);
+void sub_101434b0(int ent, int text_offset, const char *text, int duration, int r, int g, int b, int a);	// NDebugOverlay::EntityText
+char *sub_101d3730(const char *pFmt, ...);	// UTIL_VarArgs
+extern "C" int __cdecl _toupper_lk(int c);
+extern "C" int sprintf(char *pDest, const char *pFmt, ...);
+
+#define FLD(T, o) (*(T *)((char *)this + (o)))
+
+struct CDbgDispTable { const char *sub_100ec410(int n); };
+extern CDbgDispTable g_10924980;
+
+struct CDbgHB { int sub_101c2a30(); };
+struct CDbgAnim { float sub_100920d0(const char *pName); };
+
+struct CDbgDoorAI
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad4[0x2c - 4];
+	int m_n2c;	// 0x2c
+};
+extern CDbgDoorAI *g_1092429c;
+
+struct CDbgChoreo { float sub_1007dfa0(); };
+
+struct CDbgScene
+{
+	char m_pad0[0x450];
+	const char *m_iszSceneFile;	// 0x450
+	char m_pad454[0x4bc - 0x454];
+	CDbgChoreo *m_pScene;	// 0x4bc
+};
+
+struct CDbgVec { float x, y, z; };
+
+struct CDbgSlots
+{
+	virtual void v0();
+	#define DV(n) virtual void v##n();
+	#define DV10(p) DV(p##0) DV(p##1) DV(p##2) DV(p##3) DV(p##4) DV(p##5) DV(p##6) DV(p##7) DV(p##8) DV(p##9)
+	DV(1) DV(2) DV(3) DV(4) DV(5) DV(6) DV(7) DV(8) DV(9)
+	DV10(1) DV10(2) DV10(3) DV10(4) DV10(5) DV10(6) DV10(7) DV10(8) DV10(9)
+	DV10(10) DV10(11) DV10(12) DV10(13) DV10(14) DV10(15) DV10(16) DV10(17) DV10(18) DV10(19) DV10(20)
+	DV(210) DV(211) DV(212) DV(213) DV(214) DV(215) DV(216)
+	virtual const CDbgVec &slot217();
+	DV(218)
+	virtual const CDbgVec &slot219();
+};
+
+struct CDbgBits
+{
+	int m_Ints[6];
+	CDbgBits() { if (GetInts()) memset(GetInts(), 0, 6 * sizeof(int)); }
+	int *GetInts() { return m_Ints; }
+	const int *GetInts() const { return m_Ints; }
+	void Copy(CDbgBits *out) const
+	{
+		int *pDest = out->GetInts();
+		const int *pInts = GetInts();
+		pDest[0] = pInts[0];
+		pDest[1] = pInts[1];
+		pDest[2] = pInts[2];
+		pDest[3] = pInts[3];
+		pDest[4] = pInts[4];
+		pDest[5] = pInts[5];
+	}
+	bool IsBitSet(int bit) const { return (m_Ints[bit >> 5] & (1 << (bit & 31))) != 0; }
+};
+
+struct CDbgFields
+{
+	float GetDoorTime() { return *(float *)((char *)this + 0x6450) - gpGlobals->curtime; }
+	char m_pad0[0x5c74];
+	CDbgBits m_Conditions;	// 0x5c74
+	CDbgBits m_CustomInterruptConditions;	// 0x5c8c
+	char m_pad5ca4[0x6554 - 0x5ca4];
+	CHandle<CDbgScene> m_hScene;	// 0x6554
+};
+
+struct CDbgFloats
+{
+	char m_pad0[0x654];
+	float m_flGroundSpeed;	// 0x654
+	char m_pad658[0x6f8 - 0x658];
+	float m_flCycle;	// 0x6f8
+	char m_pad6fc[0x6264 - 0x6fc];
+	float m_flDistToPlayer;	// 0x6264
+};
+struct CDbgNVF { float m_Value; operator const float &() const { return m_Value; } };
+struct CDbgFloats2
+{
+	char m_pad0[0x654];
+	float m_flGroundSpeed;	// 0x654
+	char m_pad658[0x6f8 - 0x658];
+	CDbgNVF m_flCycle;	// 0x6f8
+	char m_pad6fc[0x6264 - 0x6fc];
+	float m_flDistToPlayer;	// 0x6264
+};
+#define FF ((CDbgFloats *)this)
+#define FF2 ((CDbgFloats2 *)this)
+#define SLOTS ((CDbgSlots *)this)
+#define DF ((CDbgFields *)this)
+
+struct CAI_BaseNPCTroikaDbg : public CAI_BaseNPCTroika
+{
+	int sub_1029d4e0();
+};
+
+int CAI_BaseNPCTroikaDbg::sub_1029d4e0()
+{
+	int text_offset = CAI_BaseNPC::sub_102767d0();
+
+	if (FLD(unsigned char, 0x224) & 1)
+	{
+		char tempstr[512];
+		g_109f3890(tempstr, "Seq: ", sizeof(tempstr));
+		void *pStudioHdr = sub_100952d0(-1);
+		int *pSeqDesc = (int *)sub_1008d990(FLD(int, 0x6f0));
+		if (!pSeqDesc)
+		{
+			g_109f3884(tempstr, "(INVALID)", sizeof(tempstr), -1);
+		}
+		else
+		{
+			g_109f3884(tempstr, (char *)pSeqDesc + pSeqDesc[0], sizeof(tempstr), -1);
+			g_109f3884(tempstr, " / ", sizeof(tempstr), -1);
+			g_109f3884(tempstr, (char *)pSeqDesc + pSeqDesc[1], sizeof(tempstr), -1);
+		}
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		Q_snprintf(tempstr, sizeof(tempstr), "Cycle: %.2f", FF->m_flCycle);
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		if (pStudioHdr)
+		{
+			Q_snprintf(tempstr, sizeof(tempstr), "move_yaw: %.3f", ((CDbgAnim *)this)->sub_100920d0("move_yaw"));
+			sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+			text_offset++;
+
+			Q_snprintf(tempstr, sizeof(tempstr), "aim_pitch: %.3f", ((CDbgAnim *)this)->sub_100920d0("aim_pitch"));
+			sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+			text_offset++;
+
+			Q_snprintf(tempstr, sizeof(tempstr), "aim_yaw: %.3", ((CDbgAnim *)this)->sub_100920d0("aim_yaw"));
+			sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+			text_offset++;
+		}
+
+		Q_snprintf(tempstr, sizeof(tempstr), "ground speed: %.3f", FF->m_flGroundSpeed);
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		Q_snprintf(tempstr, sizeof(tempstr), "dist to player: %.3f", FF->m_flDistToPlayer);
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		Q_snprintf(tempstr, sizeof(tempstr), "Disposition: %s", g_10924980.sub_100ec410(FLD(int, 0x64d4)));
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		Q_snprintf(tempstr, sizeof(tempstr), "pos: %5.1f, %5.1f, %5.1f", SLOTS->slot217().x, SLOTS->slot217().y, SLOTS->slot217().z);
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		Q_snprintf(tempstr, sizeof(tempstr), "dir: %5.1f, %5.1f, %5.1f", SLOTS->slot219().x, SLOTS->slot219().y, SLOTS->slot219().z);
+		sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		if ((FLD(unsigned int, 0x224) & 0x10000000) && FLD(int, 0x5c38))
+		{
+			int conds[] = { 0x40, 0x46, 1, 0x47, 0x48, 0x49, 0x4c, 0x4f, 0x51, 8, 0x5f, 0x60, 9,
+				0x54, 0x56, 0x57, 0x58, 0x59, 0x63, 0x6d, 0x6f, 0x70, 0xa, 0xb, 0xc, 0xd };
+			sub_101434b0(entindexDbg(), text_offset, "INT COND\n", 0, 0xff, 0xff, 0xff, 0xff);
+			text_offset++;
+			char *p = tempstr;
+			CDbgBits conditions;
+			CDbgBits interrupts;
+			int count = 0;
+			DF->m_Conditions.Copy(&conditions);
+			DF->m_CustomInterruptConditions.Copy(&interrupts);
+			int i;
+			int len;
+			const char *pName;
+			char buf[8];
+			int j;
+			for (i = 0; i < 0x77; i++)
+			{
+				bool bInt = interrupts.IsBitSet(i);
+				if (conditions.IsBitSet(i))
+				{
+					count++;
+					len = 0;
+					if (sub_10269aa0(i))
+						len = 10;
+					len = len * 4 / 10;
+					pName = vfunc408(i);
+					for (j = 0; j < 3; j++)
+					{
+						if (j < len)
+							buf[j] = _toupper_lk(pName[j]);
+						else
+							buf[j] = pName[j];
+					}
+					buf[j] = 0;
+					p += sprintf(p, "%s  ", buf);
+					if (!(count & 7))
+					{
+						sprintf(p, "\n");
+						sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+						text_offset++;
+						p = tempstr;
+					}
+				}
+				if (bInt)
+				{
+					count++;
+					len = 0;
+					if (!sub_10269aa0(i))
+						len = 10;
+					len = len * 4 / 10;
+					pName = vfunc408(i);
+					for (j = 0; j < 3; j++)
+					{
+						if (j < len)
+							buf[j] = _toupper_lk(pName[j]);
+						else
+							buf[j] = pName[j];
+					}
+					buf[j] = 0;
+					p += sprintf(p, "!%s ", buf);
+					if (!(count & 7))
+					{
+						sprintf(p, "\n");
+						sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+						text_offset++;
+						p = tempstr;
+					}
+				}
+			}
+			int rem = count & 7;
+			if (rem)
+			{
+				sprintf(p, "\n");
+				sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+				text_offset++;
+			}
+			sub_101434b0(entindexDbg(), text_offset, "COND\n", 0, 0xff, 0xff, 0xff, 0xff);
+			text_offset++;
+			p = tempstr;
+			for (i = 0; i < 26; i++)
+			{
+				int cond = conds[i];
+				len = 0;
+				if (sub_10269aa0(cond))
+					len = 10;
+				len = len * 4 / 10;
+				pName = vfunc408(cond);
+				for (j = 0; j < 3; j++)
+				{
+					if (j < len)
+						buf[j] = _toupper_lk(pName[j]);
+					else
+						buf[j] = pName[j];
+				}
+				buf[j] = 0;
+				p += sprintf(p, "%s ", buf);
+				if ((i & 7) == 7)
+				{
+					sprintf(p, "\n");
+					sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+					text_offset++;
+					p = tempstr;
+				}
+			}
+			if (rem != 7)
+			{
+				sprintf(p, "\n");
+				sub_101434b0(entindexDbg(), text_offset, tempstr, 0, 0xff, 0xff, 0xff, 0xff);
+				text_offset++;
+			}
+		}
+		else if (sub_10269aa0(0x55))
+		{
+			sub_101434b0(entindexDbg(), text_offset, "Enemy too far to attack", 0, 0xff, 0xff, 0xff, 0xff);
+			text_offset++;
+		}
+
+		int nHG = FLD(int, 0x1594);
+		sub_101434b0(entindexDbg(), text_offset, sub_101d3730("HG - %d : HB - %d", nHG, ((CDbgHB *)((char *)this + 0x660c))->sub_101c2a30()), 0, 0xff, 0xff, 0xff, 0xff);
+		text_offset++;
+
+		if (!g_1092429c->vfunc1() && g_1092429c->m_n2c)
+		{
+			char buf[100];
+			switch (FLD(int, 0x644c))
+			{
+			default:
+				goto noai;
+			case 1:
+				sprintf(buf, "EALTAI_OPEN_DOOR              - %f", DF->GetDoorTime());
+				break;
+			case 2:
+				sprintf(buf, "EALTAI_WAIT_DOOR              - %f", DF->GetDoorTime());
+				break;
+			case 3:
+				sprintf(buf, "EALTAI_BLOCKED_DOOR           - %f", DF->GetDoorTime());
+				break;
+			case 4:
+				sprintf(buf, "EALTAI_SCRIPT_STOPPED_AT_DOOR - %f", DF->GetDoorTime());
+				break;
+			case 0:
+				goto noai;
+			}
+			sub_101434b0(entindexDbg(), text_offset, buf, 0, 0xff, 0xff, 0xff, 0xff);
+			text_offset++;
+		}
+noai:
+
+		if (DF->m_hScene)
+		{
+			CDbgScene *pScene = DF->m_hScene;
+			CDbgChoreo *pChoreo = DF->m_hScene->m_pScene;
+			if (pChoreo && pScene)
+			{
+				const char *pszName = pScene->m_iszSceneFile ? pScene->m_iszSceneFile : g_106b8540;
+				sub_101434b0(entindexDbg(), text_offset, sub_101d3730("Scene: %s time: %.2f", pszName, pChoreo->sub_1007dfa0()), 0, 0xff, 0xff, 0xff, 0xff);
+				text_offset++;
+			}
+			else if (pScene)
+			{
+				const char *pszName = pScene->m_iszSceneFile ? pScene->m_iszSceneFile : g_106b8540;
+				sub_101434b0(entindexDbg(), text_offset, sub_101d3730("Scene: %s", pszName), 0, 0xff, 0xff, 0xff, 0xff);
+				text_offset++;
+			}
+			else
+			{
+				sub_101434b0(entindexDbg(), text_offset, "??? scene", 0, 0xff, 0xff, 0xff, 0xff);
+				text_offset++;
+			}
+		}
+	}
+	return text_offset;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f800 size=0x32
 #include "CAI_BaseNPCTroika.h"
 #include "CDevFlagObj.h"
