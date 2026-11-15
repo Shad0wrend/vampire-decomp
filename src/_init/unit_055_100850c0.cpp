@@ -244,3 +244,9 @@ ConCommand g_106c91dc("npc_attack_range", sub_10087ee0, "Show NPC's current atta
 void sub_10087fb0(void);
 ConCommand g_106c9074("npc_perception", sub_10087fb0, "Sets an NPC's perception and reinitializes the view and hearing distances.\n\tArguments:   \t{perception}  {entity_name} / {class_name} / no argument picks what player is looking at.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100882f0 size=0xa
+#include "ConCommand.h"
+void sub_100881c0(void);
+ConCommand g_106c8b80("npc_view_distance", sub_100881c0, "Sets an NPC's view distance.\n\tArguments:   \t{perception}  {entity_name} / {class_name} / no argument picks what player is looking at.", 0, 0);
+// END FUNCTION
