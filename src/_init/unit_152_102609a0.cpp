@@ -65,3 +65,8 @@ CAI_ClassScheduleIdSpace g_1090ff08(true);
 #include "CAI_LocalIdSpace.h"
 CAI_LocalIdSpace g_10920484(true);
 // END FUNCTION
+
+// FUNCTION: 0x1026d190 size=0xa
+#include "ConVar.h"
+ConVar g_10920440("footstep_normal_vol", "0.5", 128);
+// END FUNCTION
