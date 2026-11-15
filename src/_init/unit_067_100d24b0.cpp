@@ -79,3 +79,9 @@ ConCommand g_106e7ab8("worldmap_transition", sub_100d3270, "Transition to map\t\
 void sub_100d3510(void);
 ConCommand g_106e76e0("use", sub_100d3510, "Use a particular weapon\t\nArguments: <weapon_name>", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d39b0 size=0xa
+#include "ConCommand.h"
+void sub_100d35f0(void);
+ConCommand g_106e7b08("noclip", sub_100d35f0, "Toggle. Player becomes non-solid and flies.", 16384, 0);
+// END FUNCTION
