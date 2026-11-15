@@ -11127,6 +11127,7 @@
 0x1000f443 func   ?sub_102f6a50@CAI_NetworkManager@@QAEXXZ CAI_NetworkManager::sub_102f6a50
 0x1000f448 func   ?vfunc362@CWeaponIArmor_Lt_Cloth@@UAEPAUCWeaponActivityRecord@@XZ CWeaponIArmor_Lt_Cloth::vfunc362
 0x1000f44d func   ?sub_1013a8c0@@YAMMM@Z sub_1013a8c0
+0x1000f452 func   ?sub_1026d460@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_1026d460
 0x1000f457 func   ?sub_1007ed10@CUnknown1007ed10@@QAEDXZ CUnknown1007ed10::sub_1007ed10
 0x1000f45c func   ?vfunc5@CCameraAnimated@@QAEPAV1@E@Z CCameraAnimated::vfunc5
 0x1000f461 func   ?sub_1025d800@@YAXXZ sub_1025d800

@@ -135,6 +135,98 @@ void SNpcView5bb0::sub_1026d050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026d460 size=0x29c
+#include "utlrbtree.h"
+#include "CAI_BaseNPC.h"
+#include "CEntitySoundOriginView.h"
+#include "CPASAttenuationFilter.h"
+#include "CUnknown1017d630.h"
+#include "CUnknown1017d680.h"
+#include "ConVar.h"
+#include "engineserver.h"
+#include "engineiface.h"
+
+struct SurfData { char pad[0x24]; float f24; float f28; float f2c; float f30; };
+struct SurfLookup { SurfData *sub_10207c40(void *pNpc); };
+struct SndRec { char pad[0x2c]; unsigned short s2c; unsigned short s2e; };
+struct SndTable { virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual const char *vfunc6(int idx); };
+struct NpcView : public CEntitySoundOriginView {
+	char pad1[0x2e0 - 4];
+	int m_pEdict2e0;
+	char pad2[0x5b90 - 0x2e4];
+	SndRec *m_pSnd5b90;
+};
+
+extern void *sub_101cda50();
+extern int __fastcall sub_1017cf90(void *p);
+extern SurfLookup g_1074f028;
+extern ConVar g_109203f8;
+extern ConVar g_10920160;
+extern ConVar g_109204a8;
+extern ConVar g_10920440;
+extern ConVar g_10920280;
+extern SndTable *g_10723944;
+extern int sub_10228350(float a);
+
+static inline int CvI(ConVar &c) { if (c.m_pParent->vfunc1()) return 0; ConVar *p = c.m_pParent; int v = p->m_nValue; if (*(short *)&p == -1) return v; return v; }
+
+void CAI_BaseNPC::sub_1026d460(int nSide)
+{
+	NpcView *self = (NpcView *)this;
+	void *pPlayer = sub_101cda50();
+	if (pPlayer) {
+		if (((CUnknown1017d630 *)pPlayer)->sub_1017d630() || ((CUnknown1017d680 *)pPlayer)->sub_1017d680() || sub_1017cf90(pPlayer))
+			return;
+	}
+	SurfData *pData = g_1074f028.sub_10207c40(this);
+	if (0) ((CUtlMemory<int> *)0)->Purge();
+	if (0) ((CUtlMemory<int> *)0)->Purge();
+	float flVolume;
+	float flLevel;
+	if (CvI(g_109203f8) != 0) {
+		switch (nSide) {
+		case 0:
+			flVolume = pData->f24;
+			flLevel = pData->f28;
+			break;
+		case 1:
+			flVolume = pData->f2c;
+			flLevel = pData->f30;
+			break;
+		default:
+			__assume(0);
+		}
+	} else {
+		switch (nSide) {
+		case 0:
+			flVolume = g_10920440.GetFloat();
+			flLevel = g_10920280.GetFloat();
+			break;
+		case 1:
+			flVolume = g_10920160.GetFloat();
+			flLevel = g_109204a8.GetFloat();
+			break;
+		default:
+			__assume(0);
+		}
+	}
+	if (g_10723944 && self->m_pSnd5b90) {
+		int nLevel = sub_10228350(flLevel);
+		CPASAttenuationFilter filter(self, (soundlevel_t)nLevel);
+		int nIndex;
+		if (enginerandom->vfunc2(0, 1))
+			nIndex = self->m_pSnd5b90->s2c;
+		else
+			nIndex = self->m_pSnd5b90->s2e;
+		const char *pszName = g_10723944->vfunc6(nIndex);
+		if (pszName && *pszName) {
+			int edict = self->m_pEdict2e0;
+			enginesound->vfunc2(&filter, engine->vfunc35(edict), 4, pszName, flVolume, nLevel, 0, 100, 0, 0, 1, 0);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026d7b0 size=0x21
 namespace lifted {
 extern char g_105cb988;
