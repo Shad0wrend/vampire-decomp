@@ -13,3 +13,8 @@ ServerClassReg g_106bfa50("CTEBeamLaser", &g_106bfa34, g_10541058);
 #include "SendTable.h"
 SendTable g_106bfa34;
 // END FUNCTION
+
+// FUNCTION: 0x1005bc60 size=0x5
+int sub_1005bca0(void);
+int g_106bfa30 = ((int (*)(int))sub_1005bca0)(0);
+// END FUNCTION
