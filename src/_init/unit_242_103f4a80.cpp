@@ -673,3 +673,8 @@ ServerClassReg g_10944bfc("COccultBloodBuff", &g_10946f6c, g_1067f4dc);
 #include "SendTable.h"
 SendTable g_10946f6c;
 // END FUNCTION
+
+// FUNCTION: 0x103faf90 size=0x5
+int sub_103fafd0(void);
+int g_10946f68 = ((int (*)(int))sub_103fafd0)(0);
+// END FUNCTION
