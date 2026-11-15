@@ -13,3 +13,8 @@ ServerClassReg g_106beaa8("CTEMetalSparks", &g_106beb2c, g_106bec64);
 #include "SendTable.h"
 SendTable g_106beb2c;
 // END FUNCTION
+
+// FUNCTION: 0x1005a160 size=0x5
+int sub_1005a1a0(void);
+int g_106beb28 = ((int (*)(int))sub_1005a1a0)(0);
+// END FUNCTION
