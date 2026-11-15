@@ -295,6 +295,360 @@ void CWeaponRanged::vfunc372()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102387b0 size=0x7b0
+#include "CWeaponRanged.h"
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+#include "CVDmg_t.h"
+#include "CGameTrace.h"
+#include "UTIL_Trace.h"
+#include "CEntityVSlots.h"
+#include "CUnknown1003ff80.h"
+#include "ConVar.h"
+#include "CSoundEnt.h"
+#include "Tier1.h"
+
+extern int g_1088aee4;
+extern ConVar g_1088aef0;
+extern ConVar g_1074f048;
+extern int g_1072bc40;
+extern char g_1072bcb0;
+extern const Vector g_1070d1b0;
+
+struct CSoundFlagArg
+{
+	char b;
+	__forceinline CSoundFlagArg(char c) { b = c; }
+};
+
+struct CSoundEntView
+{
+	static void sub_101bac90(int iType, const Vector *pOrigin, int iVolume, float flDuration, CSoundFlagArg bFlag, CBaseEntity *pOwner);
+};
+
+struct CWeaponRollRecord
+{
+	int m_nIndex;	// 0x00
+	int m_pad004[(0x10c - 4) / 4];
+	int m_nAmmoIndex;	// 0x10c
+	int m_nShotsPerFire;	// 0x110
+	int m_n114;	// 0x114
+	int m_pad118[(0x3ac - 0x118) / 4];
+	Vector m_vecSpread;	// 0x3ac
+};
+
+struct CWeaponOwnerList
+{
+	char m_pad0[0x4fe84];
+	int m_nCount;	// 0x4fe84
+	char m_pad4fe88[0x4fed8 - 0x4fe88];
+	int m_n4fed8;
+	int m_n4fedc;
+	char m_pad4fee0[0x4feec - 0x4fee0];
+	int m_n4feec;
+	char m_sz4fef0[0x80];
+	char m_sz4ff70[0x80];
+	char m_sz4fff0[0x80];
+	char m_sz50070[0x80];
+	char m_sz500f0[0x80];
+	char m_b50170;
+};
+
+struct CWeaponRangedData
+{
+	char m_pad0[0x730];
+	float m_flNextShot[4];	// 0x730
+	int m_n740;	// 0x740
+	int m_nAmmoType[2];	// 0x744
+	int m_nClip[12];	// 0x74c
+	CVDmg_t m_Damage[3];	// 0x77c
+	int m_n848;
+	char m_pad84c[0x86c - 0x84c];
+	int m_n86c;
+	char m_pad870[0x914 - 0x870];
+	int m_n914;
+	int m_nShots;	// 0x918
+};
+
+struct CVBulletTrace : CUnknown1003ff80
+{
+	int m_n[0x54 / 4];
+	CVBulletTrace() { sub_1003ff80(); }
+};
+
+struct CVBulletInfo
+{
+	int m_n00;
+	int m_n04;
+	Vector m_vecSrc;	// 0x08
+	Vector m_vecDir;	// 0x14
+	Vector m_v20;	// 0x20
+	Vector m_v2c;	// 0x2c
+	Vector m_vecSpread;	// 0x38
+	float m_flDistance;	// 0x44
+	CVDmg_t m_Damage;	// 0x48
+	int m_iAmmoType;	// 0x8c
+	int m_iTracerFreq;	// 0x90
+	int m_n94;
+	CBaseEntity *m_pAttacker;	// 0x98
+	int m_n9c;
+	int m_nFlags;	// 0xa0
+	int m_na4;
+	const char *m_psz[5];	// 0xa8
+	int m_nbc;
+	int m_nc0;
+	CVBulletTrace m_c4;
+
+	void InitVecs()
+	{
+		((float *)&m_vecSrc)[0] = ((const volatile float *)&g_1070d1b0)[0]; ((float *)&m_vecSrc)[1] = ((const volatile float *)&g_1070d1b0)[1]; ((float *)&m_vecSrc)[2] = ((const volatile float *)&g_1070d1b0)[2];
+		((float *)&m_v2c)[0] = ((const volatile float *)&g_1070d1b0)[0]; ((float *)&m_v2c)[1] = ((const volatile float *)&g_1070d1b0)[1]; ((float *)&m_v2c)[2] = ((const volatile float *)&g_1070d1b0)[2];
+		((float *)&m_vecDir)[0] = ((const volatile float *)&g_1070d1b0)[0]; ((float *)&m_vecDir)[1] = ((const volatile float *)&g_1070d1b0)[1]; ((float *)&m_vecDir)[2] = ((const volatile float *)&g_1070d1b0)[2];
+		((float *)&m_vecSpread)[0] = ((const volatile float *)&g_1070d1b0)[0]; ((float *)&m_vecSpread)[1] = ((const volatile float *)&g_1070d1b0)[1]; ((float *)&m_vecSpread)[2] = ((const volatile float *)&g_1070d1b0)[2];
+	}
+	CVBulletInfo()
+	{
+		m_n04 = 1;
+		m_iTracerFreq = 4;
+		m_iAmmoType = -1;
+		InitVecs();
+		m_flDistance = 56755.84f;
+		m_n94 = 0;
+		m_pAttacker = 0;
+		m_n9c = 0;
+		m_nFlags = 0;
+		m_na4 = 0;
+		m_psz[0] = 0;
+		m_psz[1] = 0;
+		m_psz[2] = 0;
+		m_psz[3] = 0;
+		m_psz[4] = 0;
+		m_nbc = 0;
+		m_nc0 = 0;
+		m_n00 = 1;
+	}
+	~CVBulletInfo() { m_Damage.sub_101fa680(); }
+};
+
+struct CVDmgLocal : CVDmg_t
+{
+	CVDmgLocal(const CVDmg_t &o) : CVDmg_t(o) {}
+	~CVDmgLocal() { sub_101fa680(); }
+};
+
+struct Ray_tYX : Ray_t
+{
+	__forceinline void InitYX(const Vector &start, const Vector &end)
+	{
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = ((m_Delta[1] * m_Delta[1] + m_Delta[0] * m_Delta[0]) + m_Delta[2] * m_Delta[2]) != g_104454c4;
+		m_StartOffset[0] = m_StartOffset[1] = m_StartOffset[2] = 0.0f;
+		m_IsRay = true;
+		m_Extents[0] = m_Extents[1] = m_Extents[2] = 0.0f;
+		m_Start[0] = start.x;
+		m_Start[1] = start.y;
+		m_Start[2] = start.z;
+		m_b32 = 0;
+		m_n34 = 0;
+		m_b33 = 0;
+	}
+};
+
+inline void UTIL_TraceLine_DebugCallYX(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_tYX ray;
+	ray.InitYX(vecAbsStart, vecAbsEnd);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+struct CEntityVSlotsW
+{
+	EVS(0) EVS(1) EVS(2) EVS(3) EVS(4) EVS(5) EVS(6) EVS(7) EVS(8) EVS(9)
+	EVS(10) EVS(11) EVS(12) EVS(13) EVS(14) EVS(15) EVS(16) EVS(17) EVS(18) EVS(19)
+	EVS(20) EVS(21) EVS(22) EVS(23) EVS(24) EVS(25) EVS(26) EVS(27) EVS(28) EVS(29)
+	EVS(30) EVS(31) EVS(32) EVS(33) EVS(34) EVS(35) EVS(36) EVS(37) EVS(38) EVS(39)
+	EVS(40) EVS(41) EVS(42) EVS(43) EVS(44) EVS(45) EVS(46) EVS(47) EVS(48) EVS(49)
+	EVS(50) EVS(51) EVS(52) EVS(53) EVS(54) EVS(55) EVS(56) EVS(57) EVS(58) EVS(59)
+	EVS(60) EVS(61) EVS(62) EVS(63) EVS(64) EVS(65) EVS(66) EVS(67) EVS(68) EVS(69)
+	EVS(70) EVS(71) EVS(72) EVS(73) EVS(74) EVS(75) EVS(76) EVS(77) EVS(78) EVS(79)
+	EVS(80) EVS(81) EVS(82) EVS(83) EVS(84) EVS(85) EVS(86) EVS(87) EVS(88) EVS(89)
+	EVS(90) EVS(91) EVS(92) EVS(93) EVS(94) EVS(95) EVS(96) EVS(97) EVS(98) EVS(99)
+	EVS(100) EVS(101) EVS(102) EVS(103) EVS(104) EVS(105) EVS(106) EVS(107) EVS(108) EVS(109)
+	EVS(110) EVS(111) EVS(112) EVS(113) EVS(114) EVS(115) EVS(116) EVS(117) EVS(118) EVS(119)
+	EVS(120) EVS(121) EVS(122) EVS(123) EVS(124) EVS(125) EVS(126) EVS(127) EVS(128) EVS(129)
+	EVS(130) EVS(131) EVS(132) EVS(133) EVS(134) EVS(135) EVS(136) EVS(137) EVS(138) EVS(139)
+	EVS(140) EVS(141) EVS(142) EVS(143) EVS(144) EVS(145) EVS(146) EVS(147) EVS(148) EVS(149)
+	EVS(150) EVS(151) EVS(152) EVS(153) EVS(154) EVS(155) EVS(156) EVS(157) EVS(158) EVS(159)
+	EVS(160) EVS(161) EVS(162) EVS(163) EVS(164) EVS(165) EVS(166) EVS(167) EVS(168) EVS(169)
+	EVS(170) EVS(171) EVS(172) EVS(173) EVS(174) EVS(175) EVS(176) EVS(177) EVS(178) EVS(179)
+	EVS(180) EVS(181) EVS(182) EVS(183) EVS(184) virtual void slot185(void *pBulletInfo); EVS(186) EVS(187) EVS(188) EVS(189)
+	EVS(190) EVS(191) EVS(192) EVS(193) EVS(194) EVS(195) EVS(196) EVS(197) EVS(198) EVS(199)
+	EVS(200) EVS(201) EVS(202) EVS(203) EVS(204) EVS(205) EVS(206) EVS(207) EVS(208) EVS(209)
+	EVS(210) EVS(211) EVS(212) EVS(213) EVS(214) EVS(215) EVS(216) EVS(217) EVS(218) EVS(219)
+	virtual Vector *slot220(); EVS(221) EVS(222) EVS(223) EVS(224) EVS(225) EVS(226) EVS(227) EVS(228) EVS(229)
+	EVS(230) EVS(231) EVS(232) EVS(233) EVS(234) EVS(235) EVS(236) EVS(237) EVS(238) EVS(239)
+	EVS(240) EVS(241) EVS(242) EVS(243) EVS(244) EVS(245) EVS(246) EVS(247) EVS(248) EVS(249)
+	EVS(250) EVS(251) EVS(252) EVS(253) EVS(254) EVS(255) EVS(256) EVS(257) EVS(258) EVS(259)
+	EVS(260) EVS(261) EVS(262) EVS(263) EVS(264) EVS(265) EVS(266) EVS(267) EVS(268) EVS(269)
+	EVS(270) EVS(271) EVS(272) EVS(273) EVS(274) EVS(275) EVS(276) EVS(277) EVS(278) EVS(279)
+	EVS(280) EVS(281) EVS(282) EVS(283) EVS(284) EVS(285) EVS(286) EVS(287) EVS(288) EVS(289)
+	EVS(290) EVS(291) EVS(292) EVS(293) EVS(294) EVS(295) EVS(296) EVS(297) EVS(298) EVS(299)
+	EVS(300) EVS(301) EVS(302) EVS(303) EVS(304) EVS(305) EVS(306) EVS(307) EVS(308) EVS(309)
+	EVS(310) EVS(311) EVS(312) EVS(313) EVS(314) EVS(315) EVS(316) EVS(317) EVS(318) EVS(319)
+	EVS(320) EVS(321) EVS(322) EVS(323) EVS(324) EVS(325) EVS(326) EVS(327) EVS(328) EVS(329)
+	EVS(330) EVS(331) virtual float slot332(); virtual void slot333(int a, int b, int c, int d, int e, int f); EVS(334) EVS(335) EVS(336) EVS(337) EVS(338) virtual void slot339();
+	EVS(340) EVS(341) EVS(342) EVS(343) EVS(344) EVS(345) EVS(346) EVS(347) EVS(348) EVS(349)
+	EVS(350) EVS(351) EVS(352) EVS(353) EVS(354) EVS(355) EVS(356) EVS(357) EVS(358) EVS(359)
+	EVS(360) EVS(361) EVS(362) EVS(363) EVS(364) EVS(365) EVS(366) EVS(367) EVS(368) EVS(369)
+	EVS(370) EVS(371) EVS(372) EVS(373) EVS(374) EVS(375) EVS(376) EVS(377) EVS(378) EVS(379)
+	EVS(380) EVS(381) EVS(382) EVS(383) EVS(384) EVS(385) EVS(386) EVS(387) EVS(388) virtual Vector slot389(const Vector &vecSrc);
+	EVS(390) EVS(391) EVS(392) EVS(393) EVS(394) EVS(395) EVS(396) EVS(397) EVS(398) EVS(399)
+	EVS(400) EVS(401) EVS(402) EVS(403) EVS(404) EVS(405) EVS(406) EVS(407) EVS(408) EVS(409)
+	EVS(410) EVS(411) EVS(412) EVS(413) EVS(414) EVS(415) EVS(416) EVS(417) EVS(418) EVS(419)
+	EVS(420) EVS(421) EVS(422) EVS(423) EVS(424) EVS(425) EVS(426) EVS(427) EVS(428) EVS(429)
+	EVS(430) EVS(431) EVS(432) EVS(433) EVS(434) EVS(435) EVS(436) EVS(437) EVS(438) EVS(439)
+	EVS(440) EVS(441) EVS(442) EVS(443) EVS(444) EVS(445) EVS(446) EVS(447) EVS(448) EVS(449)
+	EVS(450) EVS(451) EVS(452) EVS(453) EVS(454) EVS(455) EVS(456) EVS(457) EVS(458) EVS(459)
+	EVS(460) EVS(461) EVS(462) EVS(463) EVS(464) EVS(465) EVS(466) EVS(467) EVS(468) EVS(469)
+	EVS(470) EVS(471) EVS(472) EVS(473) EVS(474) EVS(475) EVS(476) EVS(477) EVS(478) EVS(479)
+	EVS(480) EVS(481) EVS(482) EVS(483) EVS(484) EVS(485) EVS(486) EVS(487) EVS(488) EVS(489)
+	EVS(490) EVS(491) EVS(492) EVS(493) EVS(494) EVS(495) EVS(496) EVS(497) EVS(498) EVS(499)
+	EVS(500) EVS(501) EVS(502) EVS(503) EVS(504) EVS(505) EVS(506) EVS(507) EVS(508) EVS(509)
+	EVS(510) EVS(511) EVS(512) EVS(513) EVS(514) EVS(515) EVS(516) EVS(517) EVS(518) EVS(519)
+	EVS(520) EVS(521) EVS(522) EVS(523) EVS(524) EVS(525) EVS(526) EVS(527) EVS(528) EVS(529)
+	EVS(530) EVS(531) EVS(532) EVS(533) EVS(534) EVS(535) EVS(536) EVS(537) EVS(538) EVS(539)
+	EVS(540) EVS(541) EVS(542) EVS(543) EVS(544) EVS(545) EVS(546) EVS(547) EVS(548) EVS(549)
+	EVS(550) EVS(551) EVS(552) EVS(553) EVS(554) EVS(555) EVS(556) EVS(557) EVS(558) EVS(559)
+	EVS(560) EVS(561) EVS(562) EVS(563) EVS(564) EVS(565) EVS(566) EVS(567) EVS(568) EVS(569)
+	EVS(570) EVS(571) EVS(572) EVS(573) virtual Vector slot574(const Vector &vecSrc, int a, int b);
+};
+#define W(p) ((CEntityVSlotsW *)(p))
+
+void CWeaponRanged::vfunc373()
+{
+	CWeaponRangedData *self = (CWeaponRangedData *)this;
+	CWeaponRollRecord *roll = (CWeaponRollRecord *)sub_102517e0();
+	if (((CWeaponOwnerList *)sub_102517b0())->m_nCount > 0 && self->m_n914 > 0)
+	{
+		int save = self->m_n848;
+		self->m_n848 = 2;
+		roll = (CWeaponRollRecord *)sub_102517e0();
+		self->m_n848 = save;
+	}
+
+	CBaseCombatCharacter *pOwner = (CBaseCombatCharacter *)sub_10252240();
+	if (!pOwner)
+		return;
+
+	pOwner->sub_1033c6b0(0x200000);
+
+	void *p = sub_102521f0();
+	CBasePlayer *pPlayer = !p ? 0 : *(CBasePlayer **)((char *)p + 0xa8);
+	CEntityVSlots *pNPC = *(CEntityVSlots **)((char *)pOwner + 0x94);
+
+	if (pPlayer)
+		((CEntityVSlotsW *)this)->slot333(1, 1, 0, 0, 0, 0);
+	else
+	{
+		if (!pNPC)
+			return;
+		((CEntityVSlotsW *)this)->slot333(6, 1, 0, 0, 0, 0);
+	}
+
+	if (((CWeaponOwnerList *)sub_102517b0())->m_b50170)
+		*(unsigned int *)((char *)pOwner + 0x19c) |= 2;
+
+	Vector vecSrc = ((CEntityVSlotsW *)pOwner)->slot389(*((CEntityVSlotsW *)pOwner)->slot220());
+	Vector vecDir;
+	if (pPlayer)
+		vecDir = *pPlayer->sub_10176520(&Vector(), 0.08715574274766f);
+	else
+		vecDir = ((CEntityVSlotsW *)pNPC)->slot574(vecSrc, 1, 0);
+
+	if (pNPC)
+	{
+		self->m_nShots = 0;
+		float flInterval = ((CEntityVSlotsW *)this)->slot332();
+		int idx = g_1088aee4;
+		float flNow = gpGlobals->curtime - gpGlobals->frametime;
+		if (flNow >= self->m_flNextShot[idx])
+			self->m_flNextShot[g_1088aee4] = flNow;
+		for (; self->m_flNextShot[g_1088aee4] <= gpGlobals->curtime; self->m_nShots++)
+		{
+			if (self->m_n86c == 0)
+				self->m_flNextShot[g_1088aee4] += flInterval;
+			else
+				self->m_flNextShot[g_1088aee4] += ((CEntityVSlotsW *)this)->slot332();
+		}
+	}
+
+	int nShots = self->m_nShots * roll->m_nShotsPerFire;
+	if (nShots > 0 && nShots > self->m_nClip[roll->m_nAmmoIndex])
+	{
+		self->m_nShots = self->m_nClip[roll->m_nAmmoIndex] / roll->m_nShotsPerFire;
+		nShots = self->m_nClip[roll->m_nAmmoIndex];
+	}
+
+	if (pPlayer && g_1088aef0.GetInt() < 2)
+		self->m_nClip[roll->m_nAmmoIndex] -= nShots;
+
+	CGameTrace tr;
+	UTIL_TraceLine_DebugCallYX(vecSrc, vecSrc + vecDir * 56755.84f, 0x46004003, (CBaseEntity *)this, 0, &tr);
+	if (tr.m_fraction != 1.0 && tr.m_pEnt)
+		tr.m_pEnt->sub_100b3700();
+
+	if (g_1074f048.GetInt() > 1)
+	{
+		int nBonus = pOwner->sub_10323210();
+		int nPenalty = pOwner->sub_103232b0();
+		if (nBonus || nPenalty)
+			g_109f3630("Presence bonus: %d   penalty: %d \n", nBonus, nPenalty);
+	}
+
+	CVDmgLocal dmg(self->m_Damage[roll->m_nIndex]);
+	CVBulletInfo info;
+	info.m_n04 = roll->m_n114;
+	info.m_iAmmoType = self->m_nAmmoType[roll->m_nAmmoIndex];
+	info.m_Damage = dmg;
+	info.m_vecSrc = vecSrc;
+	info.m_vecDir = vecDir;
+	info.m_vecSpread = roll->m_vecSpread;
+	info.m_flDistance = 56755.84f;
+	info.m_n9c = self->m_n740;
+	info.m_iTracerFreq = 1;
+	info.m_pAttacker = (CBaseEntity *)this;
+	info.m_na4 = ((CWeaponOwnerList *)sub_102517b0())->m_n4feec;
+	info.m_psz[0] = ((CWeaponOwnerList *)sub_102517b0())->m_sz4fef0;
+	info.m_psz[1] = ((CWeaponOwnerList *)sub_102517b0())->m_sz4ff70;
+	info.m_psz[2] = ((CWeaponOwnerList *)sub_102517b0())->m_sz4fff0;
+	info.m_psz[3] = ((CWeaponOwnerList *)sub_102517b0())->m_sz50070;
+	info.m_psz[4] = ((CWeaponOwnerList *)sub_102517b0())->m_sz500f0;
+
+	for (int i = 0; i < self->m_nShots; i++)
+	{
+		int nFlags = 0;
+		if (((CWeaponOwnerList *)sub_102517b0())->m_n4fed8)
+			nFlags |= 1;
+		if (((CWeaponOwnerList *)sub_102517b0())->m_n4fedc)
+			nFlags |= 2;
+		info.m_nFlags = nFlags;
+		((CEntityVSlotsW *)pOwner)->slot185(&info);
+	}
+
+	int nVolume = g_1072bc40;
+	CSoundEntView::sub_101bac90(1, ((CEntityVSlotsW *)this)->slot220(), nVolume, 0.2f, CSoundFlagArg(g_1072bcb0), (CBaseEntity *)pOwner);
+
+	if (pPlayer)
+		((CEntityVSlotsW *)this)->slot339();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10239210 size=0x2c
 #include "CWeaponRanged.h"
 
