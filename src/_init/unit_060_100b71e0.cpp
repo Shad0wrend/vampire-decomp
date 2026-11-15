@@ -13,3 +13,8 @@ extern SendTable g_106d0694;
 extern char g_106d070c[];
 ServerClassReg g_106d0678("CBaseNetworkable", &g_106d0694, g_106d070c);
 // END FUNCTION
+
+// FUNCTION: 0x100b77c0 size=0xa
+#include "SendTable.h"
+SendTable g_106d0694;
+// END FUNCTION
