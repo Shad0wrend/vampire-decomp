@@ -45,3 +45,8 @@ ConVar g_10938138("speed_runbase", "225", 0);
 #include "ConVar.h"
 ConVar g_10938400("speed_runbonusathletics", "5", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1034f250 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_109380b0(&CPrecacheRegister::PrecacheFn_Other, "player");
+// END FUNCTION
