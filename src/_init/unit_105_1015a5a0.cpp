@@ -205,3 +205,8 @@ ConVar g_10724ff8("pl_supernatural_level", "-1", 0, "Sets the player's supernatu
 #include "ConVar.h"
 ConVar g_10725948("pl_criminal_level", "-1", 0, "Sets the player's criminal level for testing.", true, -1.0f, true, 5.0f);
 // END FUNCTION
+
+// FUNCTION: 0x1017dc50 size=0xa
+#include "ConVar.h"
+ConVar g_107250d0("pl_investigate_level", "-1", 0, "Sets the player's investigate level for testing.", true, -1.0f, true, 5.0f);
+// END FUNCTION
