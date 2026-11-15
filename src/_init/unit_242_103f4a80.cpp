@@ -2019,3 +2019,8 @@ extern SendTable g_10946210;
 extern char g_1067fa70[];
 ServerClassReg g_10944be0("CItemGKeyring", &g_10946210, g_1067fa70);
 // END FUNCTION
+
+// FUNCTION: 0x104078e0 size=0xa
+#include "SendTable.h"
+SendTable g_10946210;
+// END FUNCTION
