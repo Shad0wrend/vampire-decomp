@@ -15,3 +15,8 @@ ConVar g_10739c68("debug_defense_level", "0", 0, "Set > 0 to override dice rolle
 #include "ConVar.h"
 ConVar g_1073a100("debug_brawl_level", "0", 0, "Set > 0 to override dice rolled for all brawl checks.");
 // END FUNCTION
+
+// FUNCTION: 0x101e4c50 size=0xa
+#include "ConVar.h"
+ConVar g_10739bd8("debug_melee_combat_level", "0", 0, "Set > 0 to override dice rolled for all melee combat checks.");
+// END FUNCTION
