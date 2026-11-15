@@ -15418,6 +15418,7 @@
 0x10014c81 func   ?sub_10137e40@@YAXPAM00@Z sub_10137e40
 0x10014c86 func   ?sub_100b7b70@CBaseNetworkable@@QAEXPAUCBaseNetworkableEdict_t@@@Z CBaseNetworkable::sub_100b7b70
 0x10014c8b func   ?sub_10388da0@@YIPAXPAD@Z sub_10388da0
+0x10014c90 func   ?sub_103805d0@CHengeyokaiView_103805d0@@QAEXPAH@Z CHengeyokaiView_103805d0::sub_103805d0
 0x10014c95 func   ?sub_101f0740@@YIXPAUHolder@@HPBD@Z sub_101f0740
 0x10014c9a func   ?vfunc259@CNPC_VAnimal@@UAEXPAH@Z CNPC_VAnimal::vfunc259
 0x10014c9f func   ?sub_10143920@@YAXMMPBDHHHHM@Z sub_10143920
