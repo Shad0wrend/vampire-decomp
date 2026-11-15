@@ -1821,3 +1821,11 @@ SendTable g_10944b64;
 int sub_10405aa0(void);
 int g_10944b60 = ((int (*)(int))sub_10405aa0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10405be0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10946e60;
+extern char g_1067f8bc[];
+ServerClassReg g_10948864("CItemGGarysCD", &g_10946e60, g_1067f8bc);
+// END FUNCTION
