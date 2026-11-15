@@ -55,3 +55,11 @@ SendTable g_10937c6c;
 int sub_103217d0(void);
 int g_10937c68 = ((int (*)(int))sub_103217d0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103218f0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10936dc4;
+extern char g_10619d4c[];
+ServerClassReg g_10936d54("CBaseCombatCharacter", &g_10936dc4, g_10619d4c);
+// END FUNCTION
