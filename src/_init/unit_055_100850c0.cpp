@@ -376,3 +376,9 @@ ConCommand g_106c8da4("npc_addexpression", sub_10089860, "Tells the NPC to set h
 void sub_100899b0(void);
 ConCommand g_106c8c20("npc_dump_disposition_sequences", sub_100899b0, "Gets a list of all the disposition sequences for a give NPC", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10089a30 size=0xa
+#include "ConCommand.h"
+void sub_10089ac0(void);
+ConCommand g_106c93a8("npc_motion_trail", sub_10089ac0, "Sets the motion trail value for an NPC\n\tArguments:   \t{value}  {entity_name} / {class_name} / no argument picks what player is looking at.", 0, 0);
+// END FUNCTION
