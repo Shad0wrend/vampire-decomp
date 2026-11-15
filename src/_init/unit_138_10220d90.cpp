@@ -1,0 +1,8 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "vampire.h"
+
+// FUNCTION: 0x10222b60 size=0xa
+#include "ConCommand.h"
+void sub_10222ad0(void);
+ConCommand g_1074f8a8("dump_experience_table", sub_10222ad0, "", 0, 0);
+// END FUNCTION
