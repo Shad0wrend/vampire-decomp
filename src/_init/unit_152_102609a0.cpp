@@ -5,3 +5,8 @@
 inline int pcd_initial_1090fd60() { return 0x450; }
 int g_1090fd60 = pcd_initial_1090fd60();
 // END FUNCTION
+
+// FUNCTION: 0x10264410 size=0x5
+inline int pcd_initial_1090fd64() { return 0x450; }
+int g_1090fd64 = pcd_initial_1090fd64();
+// END FUNCTION
