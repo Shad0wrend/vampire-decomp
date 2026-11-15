@@ -136,3 +136,8 @@ ConVar g_10725160("scarednpc_count", "3", 0);
 #include "ConVar.h"
 ConVar g_10725bc8("default_clan", "player_brujah", 128);
 // END FUNCTION
+
+// FUNCTION: 0x1016d1d0 size=0xa
+#include "ConVar.h"
+ConVar g_10725d98("default_gender", "1", 128);
+// END FUNCTION
