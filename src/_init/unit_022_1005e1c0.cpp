@@ -13,3 +13,8 @@ ServerClassReg g_106c0cfc("CTEBloodStream", &g_106c0d18, g_10541cc0);
 #include "SendTable.h"
 SendTable g_106c0d18;
 // END FUNCTION
+
+// FUNCTION: 0x1005e2f0 size=0x5
+int sub_1005e330(void);
+int g_106c0d14 = ((int (*)(int))sub_1005e330)(0);
+// END FUNCTION
