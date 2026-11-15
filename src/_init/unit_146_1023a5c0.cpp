@@ -55,3 +55,8 @@ int * g_107532e4 = ((int * (*)(int))sub_1023d050)(0);
 #include "ConVar.h"
 ConVar g_10752dd8("damage_floaters", "1", 128, "Turns damage floaters above NPC's heads on(1) and off(0).");
 // END FUNCTION
+
+// FUNCTION: 0x1023e420 size=0xa
+#include "ConVar.h"
+ConVar g_10752c98("damage_floaters_queue_time", ".2", 0, "Minimum amount of time between the release of a damage floater on a particular NPC.");
+// END FUNCTION
