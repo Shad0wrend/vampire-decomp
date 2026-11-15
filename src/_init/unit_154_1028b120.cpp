@@ -275,3 +275,8 @@ ConVar g_10923e38("debug_npc_map_yscale", "16384", 0, "Set this to scale the ove
 #include "ConVar.h"
 ConVar g_109245e0("npc_hit_buildup_amount", "2", 0);
 // END FUNCTION
+
+// FUNCTION: 0x102b9720 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_10924248(false);
+// END FUNCTION
