@@ -203,6 +203,94 @@ void CWeaponGravityGun::vfunc326()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e180 size=0x1e8
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CWeaponGravityGun.h"
+#include "CPhysFixed.h"
+#include "IPhysicsEnvironment.h"
+#include "globalvars.h"
+#include "CEHandleGet.h"
+
+static int g_shift1014e180 = 13;
+namespace block_1014e180 {
+#pragma auto_inline(off)
+struct LEView : EHandleEntityList
+{
+	unsigned int sub_100290c0(unsigned int *ph);
+};
+unsigned int LEView::sub_100290c0(unsigned int *ph)
+{
+	unsigned int h = *ph;
+	if (h == 0xffffffff)
+		return 0;
+	EHandleEntInfo *p = &m_EntPtrArray[h & 0x1fff];
+	if (p->m_SerialNumber == (int)(h >> g_shift1014e180))
+		return (unsigned int)p->m_pEntity;
+	return 0;
+}
+#pragma auto_inline(on)
+}
+struct CGunConstraint { virtual void v0(); virtual void v1(); virtual void v2(); virtual void SetGameData(void *pData); };
+struct CGravityPelletV
+{
+	char m_pad000[0x1a0];
+	unsigned char m_r1a0, m_g1a1, m_b1a2;
+	char m_pad1a3[0x730 - 0x1a3];
+	CGunConstraint *m_pConstraint;
+	bool m_isInert;
+	CBaseEntity *GetMoveParent() { return (CBaseEntity *)((block_1014e180::LEView *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)&((CBaseEntity *)this)->m_hMoveParent); }
+	void SetRenderColor(unsigned char r, unsigned char g, unsigned char b) { m_r1a0 = r; m_g1a1 = g; m_b1a2 = b; }
+	void MakeInert() { SetRenderColor(64, 64, 128); m_isInert = true; }
+	bool MakeConstraint(CBaseEntity *pObject);
+};
+struct CWeaponGravityGunUnit : CWeaponGravityGun { void sub_1014c110(); };
+extern void *g_10723938;
+extern IPhysicsEnvironment *g_10723940;
+void sub_1014e3f0(void *pRef, void *pAtt, matrix3x4_t *pXform);
+
+inline bool CGravityPelletV::MakeConstraint(CBaseEntity *pObject)
+{
+	void *pReference = g_10723938;
+	if (GetMoveParent())
+		pReference = (void *)GetMoveParent()->m_obj36c;
+	void *pAttached = (void *)pObject->m_obj36c;
+	if (!pReference || !pAttached)
+		return false;
+	CPhysFixedParams fixed;
+	sub_1014e3f0(pReference, pAttached, &fixed.attachedRefXform);
+	fixed.constraint.Defaults();
+	m_pConstraint = (CGunConstraint *)g_10723940->vfunc14(pReference, pAttached, 0, &fixed);
+	m_pConstraint->SetGameData(this);
+	MakeInert();
+	return true;
+}
+
+// TARGET: CWeaponGravityGun::vfunc321
+void CWeaponGravityGun::vfunc321()
+{
+	if (!vfunc309())
+		return;
+	vfunc307(0xb6);
+	if (!m_n910)
+		return;
+	CBaseEntity *pObject = m_hHeld918.Get();
+	if (pObject && m_bB24) {
+		CGravityPelletV *pPellet = (CGravityPelletV *)m_slots9d0[m_hB1c].m_hA.Get();
+		if (pPellet->MakeConstraint(pObject)) {
+			m_flTimes730[0] = gpGlobals->curtime + 0.75;
+			((CGravityPelletV *)m_slots9d0[m_hB18].m_hA.Get())->MakeInert();
+		}
+	}
+	sub_1014d110();
+	((CWeaponGravityGunUnit *)this)->sub_1014c110();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e470 size=0x69
 #include "CWeaponGravityGun.h"
 
