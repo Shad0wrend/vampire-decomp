@@ -215,3 +215,8 @@ ConVar g_10924d68("debug_force_anim", "0", 0, "Set to 1 to force walk anims to u
 #include "CAI_NPCPatrolPathSaveRestoreOps.h"
 CAI_NPCPatrolPathSaveRestoreOps g_10924a5c;
 // END FUNCTION
+
+// FUNCTION: 0x1028cd30 size=0x5
+int * sub_1028cd70(void);
+int * g_10924628 = ((int * (*)(int))sub_1028cd70)(0);
+// END FUNCTION
