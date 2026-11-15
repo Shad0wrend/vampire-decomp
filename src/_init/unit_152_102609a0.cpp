@@ -95,3 +95,8 @@ ConVar g_109203f8("footstep_npc_use_templates", "1", 0);
 #include "ConVar.h"
 ConVar g_109202c8("debug_sound_occlusion", "1", 0, "Set this to 1 to allow certain objects & the world to occlude sounds.");
 // END FUNCTION
+
+// FUNCTION: 0x10277c70 size=0xa
+#include "ConVar.h"
+ConVar g_10920340("ai_report_task_timings_on_limit", "0", 128);
+// END FUNCTION
