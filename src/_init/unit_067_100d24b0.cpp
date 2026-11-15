@@ -91,3 +91,9 @@ ConCommand g_106e7b08("noclip", sub_100d35f0, "Toggle. Player becomes non-solid 
 void sub_100d3a50(void);
 ConCommand g_106e7430("god", sub_100d3a50, "Toggle. Player becomes invulnerable.", 16384, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d3c80 size=0xa
+#include "ConCommand.h"
+void sub_100d3bc0(void);
+ConCommand g_106e7d50("notarget", sub_100d3bc0, "Toggle. Player becomes hidden to NPCs.", 16384, 0);
+// END FUNCTION
