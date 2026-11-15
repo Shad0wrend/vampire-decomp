@@ -5,3 +5,8 @@
 #include "ConVar.h"
 ConVar g_109ef2d0("sv_gravity", "800", 8448, "World gravity.");
 // END FUNCTION
+
+// FUNCTION: 0x1042c880 size=0xa
+#include "ConVar.h"
+ConVar g_109ef168("sv_stopspeed", "16", 8448, "Minimum stopping speed when on ground.");
+// END FUNCTION
