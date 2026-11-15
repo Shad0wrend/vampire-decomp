@@ -35,3 +35,9 @@ ConCommand g_106c8b30("ai_hint_focus_npc", sub_10085480, "Use this command to fo
 void sub_100855f0(void);
 ConCommand g_106c9308("ai_show_hull", sub_100855f0, "Displays the allowed hulls between each node for the currently selected hull type.  Hulls are color code as follows:\n\tGreen\t\t- ground movement \n\tBlue\t\t- jumping movement\n\tCyan\t\t- flying movement\n\tMagenta\t- climbing movement\n\tArguments: \t-none-", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100856e0 size=0xa
+#include "ConCommand.h"
+void sub_100856b0(void);
+ConCommand g_106c8d10("ai_show_connect", sub_100856b0, "Displays the allowed connections between each node for the currently selected hull type.  Hulls are color code as follows:\n\tGreen\t\t- ground movement \n\tBlue\t\t- jumping movement\n\tCyan\t\t- flying movement\n\tMagenta\t- climbing movement\n\tYellow\t- no pedestrians\n\tRed\t\t- connection disabled", 0, 0);
+// END FUNCTION
