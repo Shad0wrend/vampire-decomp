@@ -752,3 +752,11 @@ int g_10947c28 = ((int (*)(int))sub_103fb8d0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10947db8(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_passive_durations");
 // END FUNCTION
+
+// FUNCTION: 0x103fba60 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109485c8;
+extern char g_1067f51c[];
+ServerClassReg g_109471ec("COccultHealRate", &g_109485c8, g_1067f51c);
+// END FUNCTION
