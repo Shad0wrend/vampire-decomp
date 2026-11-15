@@ -240,3 +240,8 @@ ConVar g_10725f70("debug_heightened_alert_expire_time", "40.0", 0, "Determines h
 #include "ConVar.h"
 ConVar g_10723980("debug_masquerade_timer", "300", 0, "Determines how long of a grace period the player has after violating the masquerade, so that you don't wipe yourself after a single spree.");
 // END FUNCTION
+
+// FUNCTION: 0x1017f410 size=0xa
+#include "ConVar.h"
+ConVar g_10725800("debug_supernatural_cop_spawn", "0", 0, "Enable this if you want supernatural acts to spawn cops.");
+// END FUNCTION
