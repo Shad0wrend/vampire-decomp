@@ -70,3 +70,8 @@ ConVar g_109244c0("debug_weapon_shoot_pos", "0", 0, "Set this to 1 to show the w
 #include "ConVar.h"
 ConVar g_10924358("debug_show_npc_skeletons", "0", 0, "Set this to 1 to show the server-side skeletons for the NPCs.");
 // END FUNCTION
+
+// FUNCTION: 0x1028bb70 size=0xa
+#include "ConVar.h"
+ConVar g_10924a18("debug_melee_advance_combatmove_dist", "100", 0, "How close a melee combatant needs to be to player in order to do the combat move.  Outside of this distance they will run to close the distance.");
+// END FUNCTION
