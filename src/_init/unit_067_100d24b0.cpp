@@ -389,3 +389,9 @@ ConCommand g_106e7614("jump", sub_100d9e10, "Sets the jumping feat to given valu
 void sub_100d9ec0(void);
 ConCommand g_106e7b58("vdmg", sub_100d9ec0, "Applies amount of damage to player.\n\tArguments:\t{dmg value}", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100da1a0 size=0xa
+#include "ConCommand.h"
+void sub_100da040(void);
+ConCommand g_106e7da0("vgender_int", sub_100da040, "Changes the gender of a player.", 0, 0);
+// END FUNCTION
