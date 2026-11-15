@@ -13,3 +13,8 @@ extern SendTable g_1070bcc4;
 extern char g_1070bcfc[];
 ServerClassReg g_1070bce4("CHudTimer", &g_1070bcc4, g_1070bcfc);
 // END FUNCTION
+
+// FUNCTION: 0x1012d1d0 size=0xa
+#include "SendTable.h"
+SendTable g_1070bcc4;
+// END FUNCTION
