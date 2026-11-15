@@ -1618,3 +1618,8 @@ ServerClassReg g_1094757c("CItemGHattersScreenplay", &g_10947160, g_1067f7fc);
 #include "SendTable.h"
 SendTable g_10947160;
 // END FUNCTION
+
+// FUNCTION: 0x10403cd0 size=0x5
+int sub_10403d10(void);
+int g_1094715c = ((int (*)(int))sub_10403d10)(0);
+// END FUNCTION
