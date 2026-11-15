@@ -2039,3 +2039,11 @@ CPrecacheRegister g_10944ab0(&CPrecacheRegister::PrecacheFn_Other, "item_g_keyri
 int * sub_104083e0(void);
 int * g_10946e94 = ((int * (*)(int))sub_104083e0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10408660 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1094508c;
+extern char g_1067faf0[];
+ServerClassReg g_10947f40("CItemKeyGeneric", &g_1094508c, g_1067faf0);
+// END FUNCTION
