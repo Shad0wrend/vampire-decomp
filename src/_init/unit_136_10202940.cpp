@@ -20,3 +20,8 @@ ConVar g_1074f048("v_printrolls", "0", 0);
 int * sub_1020a7d0(void);
 int * g_1074f114 = ((int * (*)(int))sub_1020a7d0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1020b400 size=0x5
+int * sub_1020b440(void);
+int * g_1074f0b4 = ((int * (*)(int))sub_1020b440)(0);
+// END FUNCTION
