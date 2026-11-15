@@ -1474,3 +1474,8 @@ ServerClassReg g_10944e54("CItemGPishaBook", &g_10948324, g_1067f77c);
 #include "SendTable.h"
 SendTable g_10948324;
 // END FUNCTION
+
+// FUNCTION: 0x10402750 size=0x5
+int sub_10402790(void);
+int g_10948320 = ((int (*)(int))sub_10402790)(0);
+// END FUNCTION
