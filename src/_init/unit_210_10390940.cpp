@@ -50,3 +50,8 @@ CAI_ClassScheduleIdSpace g_1093b918(false);
 #include "CAI_LocalIdSpace.h"
 CAI_LocalIdSpace g_1093bacc(false);
 // END FUNCTION
+
+// FUNCTION: 0x10398770 size=0xa
+#include "ConVar.h"
+ConVar g_1093bb10("debug_tentacle_mask", "-1", 0);
+// END FUNCTION
