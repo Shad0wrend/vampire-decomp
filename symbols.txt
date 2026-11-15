@@ -5101,6 +5101,7 @@
 0x10007874 func   ?vfunc103@CParamsExplosion@@UAEXXZ CParamsExplosion::vfunc103
 0x10007879 func   ?vfunc11@CAI_Motor@@UAEMH@Z CAI_Motor::vfunc11
 0x1000787e func   ?sub_10190fa0@COrnamentProp@@QAEXXZ COrnamentProp::sub_10190fa0
+0x10007883 func   ?vfunc1@CPlayerMove@@UAEXPAVCBasePlayer@@PAVCUserCmd@@PAX2@Z CPlayerMove::vfunc1
 0x10007888 func   ?vfunc527@CAI_BaseNPC@@UAE_NPAUCAI_NavProvider@@@Z CAI_BaseNPC::vfunc527
 0x1000788d func   ?sub_1018a730@@YAHXZ sub_1018a730
 0x10007892 func   ?vfunc328@CWeaponIThrown@@QAEHXZ CWeaponIThrown::vfunc328
