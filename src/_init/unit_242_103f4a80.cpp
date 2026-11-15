@@ -1029,3 +1029,11 @@ SendTable g_109444ac;
 int sub_103fe460(void);
 int g_109444a8 = ((int (*)(int))sub_103fe460)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103fe5a0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1094898c;
+extern char g_1067f5fc[];
+ServerClassReg g_10945748("CItemGRingGold", &g_1094898c, g_1067f5fc);
+// END FUNCTION
