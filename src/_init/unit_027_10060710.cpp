@@ -13,3 +13,8 @@ ServerClassReg g_106c1c58("CTEDecal", &g_106c1c78, g_105427a0);
 #include "SendTable.h"
 SendTable g_106c1c78;
 // END FUNCTION
+
+// FUNCTION: 0x10060840 size=0x5
+int sub_10060880(void);
+int g_106c1c74 = ((int (*)(int))sub_10060880)(0);
+// END FUNCTION
