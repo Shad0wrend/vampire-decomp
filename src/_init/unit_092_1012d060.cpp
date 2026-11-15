@@ -18,3 +18,8 @@ ServerClassReg g_1070bce4("CHudTimer", &g_1070bcc4, g_1070bcfc);
 #include "SendTable.h"
 SendTable g_1070bcc4;
 // END FUNCTION
+
+// FUNCTION: 0x1012d250 size=0x5
+int sub_1012d290(void);
+int g_1070bcc0 = ((int (*)(int))sub_1012d290)(0);
+// END FUNCTION
