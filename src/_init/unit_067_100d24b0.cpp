@@ -49,3 +49,9 @@ ConCommand g_106e7e40("give", sub_100d2b30, "Give item to player.\n\tArguments: 
 void sub_100d2d80(void);
 ConCommand g_106e7458("fov", sub_100d2d80, "Change players FOV", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d3010 size=0xa
+#include "ConCommand.h"
+void sub_100d2eb0(void);
+ConCommand g_106e77fc("setmodel", sub_100d2eb0, "Changes's player's model", 0, 0);
+// END FUNCTION
