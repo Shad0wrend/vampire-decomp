@@ -5,3 +5,8 @@
 inline int pcd_initial_1090fc00() { return 0x450; }
 int g_1090fc00 = pcd_initial_1090fc00();
 // END FUNCTION
+
+// FUNCTION: 0x1025e210 size=0xa
+#include "ConVar.h"
+ConVar g_1090fc08("flex_minplayertime", "5", 0);
+// END FUNCTION
