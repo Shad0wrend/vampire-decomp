@@ -328,3 +328,9 @@ ConCommand g_106c91b4("npc_set_expression", sub_10088de0, "Sets the npc's expres
 void sub_10088ef0(void);
 ConCommand g_106c93d0("npc_steering", sub_10088ef0, "Displays the steering obstructions of the NPC (used to perform local avoidance)\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100890a0 size=0xa
+#include "ConCommand.h"
+void sub_10088fc0(void);
+ConCommand g_106c8c48("npc_steering_all", sub_10088fc0, "Displays the steering obstructions of all NPCs (used to perform local avoidance)\n", 0, 0);
+// END FUNCTION
