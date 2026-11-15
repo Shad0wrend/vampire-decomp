@@ -983,3 +983,8 @@ extern SendTable g_109477e4;
 extern char g_1067f5cc[];
 ServerClassReg g_10947af0("CItemGGhostPendant", &g_109477e4, g_1067f5cc);
 // END FUNCTION
+
+// FUNCTION: 0x103fde40 size=0xa
+#include "SendTable.h"
+SendTable g_109477e4;
+// END FUNCTION
