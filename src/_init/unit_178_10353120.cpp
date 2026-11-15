@@ -200,3 +200,8 @@ ConVar g_10939718("sk_max_bloodpack_round", "0", 0);
 #include "ConVar.h"
 ConVar g_10939958("sk_plr_dmg_bluebloodpack_round", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103548a0 size=0xa
+#include "ConVar.h"
+ConVar g_10938f80("sk_npc_dmg_bluebloodpack_round", "0", 0);
+// END FUNCTION
