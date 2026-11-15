@@ -170,3 +170,9 @@ ConCommand g_106e7dc8("quest_log_close", sub_100d5920, "Called upon quest log cl
 void sub_100d5a20(void);
 ConCommand g_106e7874("inven_list", sub_100d5a20, "Lists the local player's Inventory", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d5b50 size=0xa
+#include "ConCommand.h"
+void sub_100d5ae0(void);
+ConCommand g_106e7188("ent_inven_list", sub_100d5ae0, "Lists the local player's Inventory", 0, 0);
+// END FUNCTION
