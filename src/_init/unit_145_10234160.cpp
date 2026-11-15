@@ -161,3 +161,11 @@ int g_10751f04 = ((int (*)(int))sub_102356e0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10751c20(&CPrecacheRegister::PrecacheFn_Other, "item_w_ithaca_m_37");
 // END FUNCTION
+
+// FUNCTION: 0x102358b0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10752758;
+extern char g_105bb1fc[];
+ServerClassReg g_107524c4("CWeaponRanged_Smg_Mac10", &g_10752758, g_105bb1fc);
+// END FUNCTION
