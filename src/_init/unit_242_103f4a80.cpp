@@ -1883,3 +1883,8 @@ extern SendTable g_109485f4;
 extern char g_1067f8ec[];
 ServerClassReg g_1094392c("CItemGGarysTape", &g_109485f4, g_1067f8ec);
 // END FUNCTION
+
+// FUNCTION: 0x104064a0 size=0xa
+#include "SendTable.h"
+SendTable g_109485f4;
+// END FUNCTION
