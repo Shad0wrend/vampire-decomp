@@ -60,3 +60,8 @@ ConVar g_10939520("sk_npc_dmg_glock_17c_round", "0", 0);
 #include "ConVar.h"
 ConVar g_10938dd0("sk_max_glock_17c_round", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103538e0 size=0xa
+#include "ConVar.h"
+ConVar g_109395b0("sk_plr_dmg_ithica_m37_round", "0", 0);
+// END FUNCTION
