@@ -33,3 +33,11 @@ ConVar g_106c7fa0("camera_showdebug", "0", 0);
 int * sub_10070ae0(void);
 int * g_106c7fe8 = ((int * (*)(int))sub_10070ae0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10070f90 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_106c7c54;
+extern char g_10546930[];
+ServerClassReg g_106c7f88("CCameraAnimated", &g_106c7c54, g_10546930);
+// END FUNCTION
