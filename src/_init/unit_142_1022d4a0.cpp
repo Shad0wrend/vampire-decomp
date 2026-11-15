@@ -29,3 +29,8 @@ ServerClassReg g_10751480("CVGuiScreen", &g_10751464, g_105b5c30);
 #include "SendTable.h"
 SendTable g_10751464;
 // END FUNCTION
+
+// FUNCTION: 0x10231930 size=0x5
+int sub_10231970(void);
+int g_10751460 = ((int (*)(int))sub_10231970)(0);
+// END FUNCTION
