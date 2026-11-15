@@ -13,3 +13,8 @@ ServerClassReg g_106c128c("CTEBSPDecal", &g_106c1470, g_10542190);
 #include "SendTable.h"
 SendTable g_106c1470;
 // END FUNCTION
+
+// FUNCTION: 0x1005f340 size=0x5
+int sub_1005f380(void);
+int g_106c146c = ((int (*)(int))sub_1005f380)(0);
+// END FUNCTION
