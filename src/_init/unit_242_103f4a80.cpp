@@ -18,3 +18,8 @@ SendTable g_1094800c;
 int sub_103f4bf0(void);
 int g_10948008 = ((int (*)(int))sub_103f4bf0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f4d90 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_109477a8(&CPrecacheRegister::PrecacheFn_Other, "item_g_lockpick");
+// END FUNCTION
