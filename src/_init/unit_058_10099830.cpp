@@ -181,3 +181,9 @@ ConCommand g_106cf0d0("ent_messages", sub_100b0280, "Toggles input/output messag
 void sub_100b03b0(void);
 ConCommand g_106cf464("ent_pause", sub_100b03b0, "Toggles pausing of input/output message processing for entities.  When turned on processing of all message will stop.  Any messages displayed with 'ent_messages' will stop fading and be displayed indefinitely. To step through the messages one by one use 'ent_step'.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100b0560 size=0xa
+#include "ConCommand.h"
+void sub_100b04d0(void);
+ConCommand g_106cf2a8("picker", sub_100b04d0, "Toggles 'picker' mode.  When picker is on, the bounding box, pivot and debugging text is displayed for whatever entity the player is looking at.\n\tArguments:\t-none-", 0, 0);
+// END FUNCTION
