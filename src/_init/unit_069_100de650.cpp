@@ -20,3 +20,8 @@ ConVar g_106e8680("dialog_start", "0", 0);
 #include "ConVar.h"
 ConVar g_106e8618("dialog_line_numbers", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100deef0 size=0xa
+#include "ConVar.h"
+ConVar g_106e9510("dialog_report_dependency_tests", "0", 0);
+// END FUNCTION
