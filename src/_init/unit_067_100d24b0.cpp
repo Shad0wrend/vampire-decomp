@@ -249,3 +249,9 @@ ConCommand g_106e79c8("vhistory", sub_100d6d40, "Lists or changes the local play
 void sub_100d7040(void);
 ConCommand g_106e73b8("vroll", sub_100d7040, "Processes a Vampire Dice Roll\n\tArguments:\t{trait_name}{difficulty #} / no arguments rolls based on last settings (default Close-Combat Brawl vs. difficulty 6)", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d72b0 size=0xa
+#include "ConCommand.h"
+void sub_100d7210(void);
+ConCommand g_106e7978("sethotkeys", sub_100d7210, "Sets hotkeys, argsx10 {type}{data}", 0, 0);
+// END FUNCTION
