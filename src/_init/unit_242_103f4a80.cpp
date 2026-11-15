@@ -1276,3 +1276,8 @@ ServerClassReg g_10945260("CItemGOHDiary", &g_10944bc4, g_1067f6cc);
 #include "SendTable.h"
 SendTable g_10944bc4;
 // END FUNCTION
+
+// FUNCTION: 0x104009c0 size=0x5
+int sub_10400a00(void);
+int g_10944bc0 = ((int (*)(int))sub_10400a00)(0);
+// END FUNCTION
