@@ -1721,3 +1721,8 @@ extern SendTable g_10943d6c;
 extern char g_1067f85c[];
 ServerClassReg g_1094398c("CItemGHannahsApptBook", &g_10943d6c, g_1067f85c);
 // END FUNCTION
+
+// FUNCTION: 0x10404c70 size=0xa
+#include "SendTable.h"
+SendTable g_10943d6c;
+// END FUNCTION
