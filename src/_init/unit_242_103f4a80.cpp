@@ -1613,3 +1613,8 @@ extern SendTable g_10947160;
 extern char g_1067f7fc[];
 ServerClassReg g_1094757c("CItemGHattersScreenplay", &g_10947160, g_1067f7fc);
 // END FUNCTION
+
+// FUNCTION: 0x10403c50 size=0xa
+#include "SendTable.h"
+SendTable g_10947160;
+// END FUNCTION
