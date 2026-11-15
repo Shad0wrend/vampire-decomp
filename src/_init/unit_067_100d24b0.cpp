@@ -61,3 +61,9 @@ ConCommand g_106e77fc("setmodel", sub_100d2eb0, "Changes's player's model", 0, 0
 void sub_100d30a0(void);
 ConCommand g_106e76b8("lastinv", sub_100d30a0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d31e0 size=0xa
+#include "ConCommand.h"
+void sub_100d3160(void);
+ConCommand g_106e7318("phys_swap", sub_100d3160, 0, 0, 0);
+// END FUNCTION
