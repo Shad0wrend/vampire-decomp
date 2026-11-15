@@ -1875,3 +1875,11 @@ SendTable g_10947bec;
 int sub_104062b0(void);
 int g_10947be8 = ((int (*)(int))sub_104062b0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x104063f0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109485f4;
+extern char g_1067f8ec[];
+ServerClassReg g_1094392c("CItemGGarysTape", &g_109485f4, g_1067f8ec);
+// END FUNCTION
