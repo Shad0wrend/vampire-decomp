@@ -453,3 +453,8 @@ extern SendTable g_10940f60;
 extern char g_10674b40[];
 ServerClassReg g_1094181c("CWeaponMelee_SabbatLeaderAttack", &g_10940f60, g_10674b40);
 // END FUNCTION
+
+// FUNCTION: 0x103e8e70 size=0xa
+#include "SendTable.h"
+SendTable g_10940f60;
+// END FUNCTION
