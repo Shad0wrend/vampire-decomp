@@ -70,3 +70,8 @@ ConVar g_1070aec0("mp_footsteps", "1", 4);
 #include "ConVar.h"
 ConVar g_1070ada0("mp_autocrosshair", "1", 4);
 // END FUNCTION
+
+// FUNCTION: 0x10117f30 size=0xa
+#include "ConVar.h"
+ConVar g_1070ae30("decalfrequency", "30", 4);
+// END FUNCTION
