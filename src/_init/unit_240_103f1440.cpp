@@ -8,3 +8,8 @@ extern SendTable g_109430d4;
 extern char g_1067e1b8[];
 ServerClassReg g_109430b8("CVampireProjectile_MingXiaoSpit", &g_109430d4, g_1067e1b8);
 // END FUNCTION
+
+// FUNCTION: 0x103f14f0 size=0xa
+#include "SendTable.h"
+SendTable g_109430d4;
+// END FUNCTION
