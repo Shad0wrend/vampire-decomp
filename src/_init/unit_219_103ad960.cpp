@@ -15,3 +15,8 @@ ConVar g_1093c588("sheriff_force_teleport", "0", 0);
 int * sub_103adb00(void);
 int * g_1093c5d0 = ((int * (*)(int))sub_103adb00)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103adb80 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_1093c520(false);
+// END FUNCTION
