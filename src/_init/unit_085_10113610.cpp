@@ -23,3 +23,11 @@ int g_10709da8 = ((int (*)(int))sub_10113780)(0);
 int sub_10113b00(void);
 int g_1070a320 = ((int (*)(int))sub_10113b00)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101140f0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1070a4d4;
+extern char g_1056fd14[];
+ServerClassReg g_1070a4f4("CTEDust", &g_1070a4d4, g_1056fd14);
+// END FUNCTION
