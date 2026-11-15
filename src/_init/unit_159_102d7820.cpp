@@ -10,3 +10,8 @@ int g_10926a30 = ((int (*)(int))sub_102d7860)(0);
 int sub_102d89f0(void);
 int g_10926d78 = ((int (*)(int))sub_102d89f0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x102d9200 size=0x5
+#include "CAI_InterestingPlaceMarkersSaveRestoreOps.h"
+CAI_InterestingPlaceMarkersSaveRestoreOps g_10927184;
+// END FUNCTION
