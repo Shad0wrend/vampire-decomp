@@ -18,3 +18,8 @@ ServerClassReg g_106bdba8("CPhysBox", &g_106bdb8c, g_1053cf20);
 #include "SendTable.h"
 SendTable g_106bdb8c;
 // END FUNCTION
+
+// FUNCTION: 0x1004dcb0 size=0x5
+int sub_1004dcf0(void);
+int g_106bdb88 = ((int (*)(int))sub_1004dcf0)(0);
+// END FUNCTION
