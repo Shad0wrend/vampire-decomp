@@ -151,3 +151,9 @@ ConCommand g_106cf48c("ent_dump", sub_100af840, "Usage:\n   ent_dump <entity nam
 void sub_100afa60(void);
 ConCommand g_106cf280("firetarget", sub_100afa60, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100afde0 size=0xa
+#include "ConCommand.h"
+void sub_100afb90(void);
+ConCommand g_106cf22c("ent_fire", sub_100afb90, "Usage:\n   ent_fire <target> [action] [value] [delay]\n", 0, 0);
+// END FUNCTION
