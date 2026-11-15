@@ -160,3 +160,9 @@ ConCommand g_106c9600("npc_go", sub_10087170, "Selected NPC(s) will go to the lo
 void sub_100874a0(void);
 ConCommand g_106c96c8("npc_go_random", sub_100874a0, "Sends all selected NPC(s) to a random node.\n\tArguments:   \t-none-", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10087570 size=0xa
+#include "ConCommand.h"
+void sub_10087550(void);
+ConCommand g_106c8b58("npc_reset", sub_10087550, "Reloads schedules for all NPC's from their script files\n\tArguments:\t-none-", 0, 0);
+// END FUNCTION
