@@ -175,3 +175,8 @@ ConVar g_10924af8("debug_allow_non_idle_auto_sk", "1", 0, "Allows or disallows a
 #include "ConVar.h"
 ConVar g_10924f70("debug_allow_move_facing", "1", 0, "If this is on, NPCs will move facing the NPC when they run for cover.");
 // END FUNCTION
+
+// FUNCTION: 0x1028c790 size=0xa
+#include "ConVar.h"
+ConVar g_10923cf0("debug_allow_mf_turn", "0", 0, "If this is on, NPCs will turn to look behind them periodically when they run for cover.");
+// END FUNCTION
