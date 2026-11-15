@@ -279,3 +279,8 @@ extern SendTable g_10752778;
 extern char g_105be6c4[];
 ServerClassReg g_107522f8("CWeaponRanged_Smg_Uzi", &g_10752778, g_105be6c4);
 // END FUNCTION
+
+// FUNCTION: 0x10236cb0 size=0xa
+#include "SendTable.h"
+SendTable g_10752778;
+// END FUNCTION
