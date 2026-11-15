@@ -140,3 +140,8 @@ ConVar g_10938ab8("sk_max_supershotgun_round", "0", 0);
 #include "ConVar.h"
 ConVar g_10939a30("sk_plr_dmg_uzi_round", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103541e0 size=0xa
+#include "ConVar.h"
+ConVar g_10938f38("sk_npc_dmg_uzi_round", "0", 0);
+// END FUNCTION
