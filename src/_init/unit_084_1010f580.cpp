@@ -23,3 +23,8 @@ ServerClassReg g_1070998c("CBreakableSurface", &g_1070996c, g_1056f488);
 #include "SendTable.h"
 SendTable g_1070996c;
 // END FUNCTION
+
+// FUNCTION: 0x1010fc40 size=0x5
+int sub_1010fc80(void);
+int g_10709968 = ((int (*)(int))sub_1010fc80)(0);
+// END FUNCTION
