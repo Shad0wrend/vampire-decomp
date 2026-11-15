@@ -40,3 +40,8 @@ ConVar g_109247e8("debug_turning", "0", 0, "Toggles turn animations.");
 #include "ConVar.h"
 ConVar g_10923e80("debug_turning_speed", "90", 0, "Toggles turn animations.");
 // END FUNCTION
+
+// FUNCTION: 0x1028b810 size=0xa
+#include "ConVar.h"
+ConVar g_10924890("debug_circle_dist_override", "0", 0, "Overrides the distance guys want to be outside the melee combat.");
+// END FUNCTION
