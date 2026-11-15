@@ -275,3 +275,8 @@ ConVar g_10939078("sk_max_medium_round", "0", 0);
 #include "ConVar.h"
 ConVar g_109388a8("sk_plr_dmg_large_round", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10355110 size=0xa
+#include "ConVar.h"
+ConVar g_10938a10("sk_npc_dmg_large_round", "0", 0);
+// END FUNCTION
