@@ -169,3 +169,9 @@ ConCommand g_106cf1a8("ent_break", sub_100afe70, 0, 0, 0);
 void sub_100aff90(void);
 ConCommand g_106cfe28("ent_info", sub_100aff90, "Usage:\n   ent_info <class name>\n", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100b0320 size=0xa
+#include "ConCommand.h"
+void sub_100b0280(void);
+ConCommand g_106cf0d0("ent_messages", sub_100b0280, "Toggles input/output message display for the selected entity(ies).  The name of the entity will be displayed as well as any messages that it sends or receives.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at", 0, 0);
+// END FUNCTION
