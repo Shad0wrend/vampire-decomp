@@ -343,3 +343,8 @@ ServerClassReg g_10938a9c("CCorpse", &g_10939058, g_1062772c);
 #include "SendTable.h"
 SendTable g_10939058;
 // END FUNCTION
+
+// FUNCTION: 0x10355c30 size=0x5
+int sub_10355c70(void);
+int g_10939054 = ((int (*)(int))sub_10355c70)(0);
+// END FUNCTION
