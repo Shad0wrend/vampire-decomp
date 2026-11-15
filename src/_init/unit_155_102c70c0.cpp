@@ -5,3 +5,8 @@
 inline int pcd_initial_1092538c() { return 0x450; }
 int g_1092538c = pcd_initial_1092538c();
 // END FUNCTION
+
+// FUNCTION: 0x102c7e30 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_10925398(false);
+// END FUNCTION
