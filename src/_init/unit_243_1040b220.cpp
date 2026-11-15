@@ -70,3 +70,8 @@ ConVar g_1094aa78("physcannon_lob_maxweight", "5", 0);
 #include "ConVar.h"
 ConVar g_1094ab10("physcannon_lob_maxforce", "650", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1040bcd0 size=0xa
+#include "ConVar.h"
+ConVar g_1094a940("physcannon_launch_multiplier", ".01", 0);
+// END FUNCTION
