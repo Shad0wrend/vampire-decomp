@@ -215,3 +215,8 @@ ConVar g_107250d0("pl_investigate_level", "-1", 0, "Sets the player's investigat
 #include "ConVar.h"
 ConVar g_10725eb8("pl_min_act_timer", "5", 0, "Controls the minimum amount of time a player is flagged for commiting a criminal or supernatural act.");
 // END FUNCTION
+
+// FUNCTION: 0x1017e9d0 size=0xa
+#include "ConVar.h"
+ConVar g_10725c58("debug_cop_grace_time", "30", 0, "Set the time after a player's initial criminal act where additional acts are ignore");
+// END FUNCTION
