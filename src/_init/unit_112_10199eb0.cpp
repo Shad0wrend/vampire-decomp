@@ -17,3 +17,8 @@ ConCommand g_1072b2f4("gcleardialog", sub_1019ab40, "Resets all dialog state fla
 #include "CPython_SaveRestoreBlockHandler.h"
 CPython_SaveRestoreBlockHandler g_1072b354;
 // END FUNCTION
+
+// FUNCTION: 0x1019b4e0 size=0xa
+#include "ConVar.h"
+ConVar g_1072b2b0("show_python_variable_changes", "1", 0, "Display assignments to the G script variable.");
+// END FUNCTION
