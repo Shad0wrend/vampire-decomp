@@ -581,3 +581,8 @@ ServerClassReg g_10948dd4("COccultObfuscate", &g_109448e4, g_1067f49c);
 #include "SendTable.h"
 SendTable g_109448e4;
 // END FUNCTION
+
+// FUNCTION: 0x103fa390 size=0x5
+int sub_103fa3d0(void);
+int g_109448e0 = ((int (*)(int))sub_103fa3d0)(0);
+// END FUNCTION
