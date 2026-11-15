@@ -13,3 +13,8 @@ ServerClassReg g_106bfaec("CTEBeamPoints", &g_106bfacc, g_10541248);
 #include "SendTable.h"
 SendTable g_106bfacc;
 // END FUNCTION
+
+// FUNCTION: 0x1005c2d0 size=0x5
+int sub_1005c310(void);
+int g_106bfac8 = ((int (*)(int))sub_1005c310)(0);
+// END FUNCTION
