@@ -40,3 +40,8 @@ ConVar g_1093ca40("tzimisce_throw_hds", ".0008", 0, "Set this var to override th
 #include "ConVar.h"
 ConVar g_1093c9f8("tzimisce_turn_scalar", ".15", 0, "Set this var to override turn animation speed.");
 // END FUNCTION
+
+// FUNCTION: 0x103b65b0 size=0xa
+#include "ConVar.h"
+ConVar g_1093cad0("tzimisce_throw_pos_y", "-80", 0, "Set this var to override the throw position for LOS checks.");
+// END FUNCTION
