@@ -13,3 +13,8 @@ ServerClassReg g_106c7500("CTEWorldDecal", &g_106c753c, g_10545dc8);
 #include "SendTable.h"
 SendTable g_106c753c;
 // END FUNCTION
+
+// FUNCTION: 0x1006b400 size=0x5
+int sub_1006b440(void);
+int g_106c7538 = ((int (*)(int))sub_1006b440)(0);
+// END FUNCTION
