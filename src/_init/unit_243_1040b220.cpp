@@ -30,3 +30,8 @@ ConVar g_1094acc8("physcannon_maxmass", "250", 0);
 #include "ConVar.h"
 ConVar g_1094ad10("physcannon_tracelength", "80", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1040b850 size=0xa
+#include "ConVar.h"
+ConVar g_1094ac38("physcannon_mega_tracelength", "750", 0);
+// END FUNCTION
