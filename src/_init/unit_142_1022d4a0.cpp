@@ -39,3 +39,8 @@ int g_10751460 = ((int (*)(int))sub_10231970)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_107511a8(&CPrecacheRegister::PrecacheFn_Other, "vgui_screen");
 // END FUNCTION
+
+// FUNCTION: 0x10231c30 size=0x5
+int sub_10231c70(void);
+int g_107511b8 = ((int (*)(int))sub_10231c70)(0);
+// END FUNCTION
