@@ -220,3 +220,9 @@ ConCommand g_106c8dcc("npc_task_text", sub_10087b70, "Outputs text debugging inf
 void sub_10087c40(void);
 ConCommand g_106c8ffc("npc_conditions", sub_10087c40, "Displays all the current AI conditions that an NPC has in the overlay text.\n\tArguments:   \t{npc_name} / {npc class_name} / no argument picks what player is looking at", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10087d50 size=0xa
+#include "ConCommand.h"
+void sub_10087d10(void);
+ConCommand g_106c8f0c("npc_viewcone", sub_10087d10, "Displays the viewcone of the NPC (where they are currently looking and what the extents of there vision is)\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at", 0, 0);
+// END FUNCTION
