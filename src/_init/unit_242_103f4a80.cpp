@@ -128,3 +128,8 @@ extern SendTable g_10946d74;
 extern char g_1067f254[];
 ServerClassReg g_10945b28("CWeaponWallet", &g_10946d74, g_1067f254);
 // END FUNCTION
+
+// FUNCTION: 0x103f6230 size=0xa
+#include "SendTable.h"
+SendTable g_10946d74;
+// END FUNCTION
