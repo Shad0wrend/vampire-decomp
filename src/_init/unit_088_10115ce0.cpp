@@ -90,3 +90,8 @@ ConVar g_1070ad58("mp_teamoverride", "1", 0);
 #include "ConVar.h"
 ConVar g_1070af08("mp_defaultteam", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10118170 size=0xa
+#include "ConVar.h"
+ConVar g_1070ab60("mp_allowNPCs", "1", 4);
+// END FUNCTION
