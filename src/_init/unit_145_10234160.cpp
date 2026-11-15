@@ -41,3 +41,8 @@ SendTable g_10751d60;
 int sub_102345e0(void);
 int g_10751d5c = ((int (*)(int))sub_102345e0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10234820 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_1075195c(&CPrecacheRegister::PrecacheFn_Other, "item_w_colt_anaconda");
+// END FUNCTION
