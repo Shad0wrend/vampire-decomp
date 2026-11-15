@@ -46,3 +46,8 @@ SendTable g_10942d44;
 int sub_103ef070(void);
 int g_10942d40 = ((int (*)(int))sub_103ef070)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103ef140 size=0xa
+#include "ConVar.h"
+ConVar g_10942f00("grenade_lighttime", "3", 0);
+// END FUNCTION
