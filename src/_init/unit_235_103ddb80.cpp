@@ -10,3 +10,8 @@ int g_10940390 = pcd_initial_10940390();
 #include "ConVar.h"
 ConVar g_10940448("zombie_headshot_mod", "10.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103ddc50 size=0xa
+#include "ConVar.h"
+ConVar g_10940400("zombie_melee_mod", "1.0", 0);
+// END FUNCTION
