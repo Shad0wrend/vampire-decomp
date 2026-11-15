@@ -134,3 +134,9 @@ ConCommand g_106e7138("barterend", sub_100d5000, "Ends bartering/looting", 0, 0)
 void sub_100d51b0(void);
 ConCommand g_106e7708("blood", sub_100d51b0, "Sets the local player's blood pool", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d5480 size=0xa
+#include "ConCommand.h"
+void sub_100d5360(void);
+ConCommand g_106e79f0("faith", sub_100d5360, "Sets the local player's faith points", 0, 0);
+// END FUNCTION
