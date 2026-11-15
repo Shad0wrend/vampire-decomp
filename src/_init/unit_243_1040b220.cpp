@@ -90,3 +90,8 @@ int g_1094ab08 = ((int (*)(int))sub_1040be30)(0);
 int sub_1040bea0(void);
 int g_1094ab04 = ((int (*)(int))sub_1040bea0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1040ceb0 size=0x5
+int * sub_1040cef0(void);
+int * g_1094ad0c = ((int * (*)(int))sub_1040cef0)(0);
+// END FUNCTION
