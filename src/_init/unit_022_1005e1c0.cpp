@@ -8,3 +8,8 @@ extern SendTable g_106c0d18;
 extern char g_10541cc0[];
 ServerClassReg g_106c0cfc("CTEBloodStream", &g_106c0d18, g_10541cc0);
 // END FUNCTION
+
+// FUNCTION: 0x1005e270 size=0xa
+#include "SendTable.h"
+SendTable g_106c0d18;
+// END FUNCTION
