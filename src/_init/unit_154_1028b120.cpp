@@ -35,3 +35,8 @@ ConVar g_10924630("debug_test_switch2", "0", 0, "Toggles stuff for the test task
 #include "ConVar.h"
 ConVar g_109247e8("debug_turning", "0", 0, "Toggles turn animations.");
 // END FUNCTION
+
+// FUNCTION: 0x1028b780 size=0xa
+#include "ConVar.h"
+ConVar g_10923e80("debug_turning_speed", "90", 0, "Toggles turn animations.");
+// END FUNCTION
