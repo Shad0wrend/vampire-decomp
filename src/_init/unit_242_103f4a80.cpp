@@ -627,3 +627,8 @@ ServerClassReg g_10944478("COccultStrength", &g_10944114, g_1067f4bc);
 #include "SendTable.h"
 SendTable g_10944114;
 // END FUNCTION
+
+// FUNCTION: 0x103fa990 size=0x5
+int sub_103fa9d0(void);
+int g_10944110 = ((int (*)(int))sub_103fa9d0)(0);
+// END FUNCTION
