@@ -180,3 +180,8 @@ ConVar g_10924f70("debug_allow_move_facing", "1", 0, "If this is on, NPCs will m
 #include "ConVar.h"
 ConVar g_10923cf0("debug_allow_mf_turn", "0", 0, "If this is on, NPCs will turn to look behind them periodically when they run for cover.");
 // END FUNCTION
+
+// FUNCTION: 0x1028c820 size=0xa
+#include "ConVar.h"
+ConVar g_10924478("debug_allow_npc_hunting", "0", 0, "Set this to 1 to allow NPCs to do their 'scouring the area' hunting state.");
+// END FUNCTION
