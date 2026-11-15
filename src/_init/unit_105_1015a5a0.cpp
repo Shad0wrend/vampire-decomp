@@ -26,3 +26,8 @@ ConVar g_107251a8("player_damage_kick_knockback_scalar", "10.0", 0, "Intensity o
 #include "ConVar.h"
 ConVar g_10725fb8("pl_autopickup_wpns", "0", 0, "Determines whether players are allowed to auto-pickup weapons.", true, 0.0f, true, 1.0f);
 // END FUNCTION
+
+// FUNCTION: 0x1015a890 size=0xa
+#include "ConVar.h"
+ConVar g_10725ca0("physicsshadowupdate_render", "0", 0);
+// END FUNCTION
