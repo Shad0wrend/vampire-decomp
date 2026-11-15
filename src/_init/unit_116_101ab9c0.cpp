@@ -15,3 +15,8 @@ int g_1072bbe0 = ((int (*)(int))sub_101aba70)(0);
 int sub_101abae0(void);
 int g_1072bbec = ((int (*)(int))sub_101abae0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101abb10 size=0x5
+int sub_101abb50(void);
+int g_1072bbe4 = ((int (*)(int))sub_101abb50)(0);
+// END FUNCTION
