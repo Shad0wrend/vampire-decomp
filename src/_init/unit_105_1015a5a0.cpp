@@ -56,3 +56,8 @@ ConVar g_10725d30("sk_player_stomach", "1", 0);
 #include "ConVar.h"
 ConVar g_10725b58("sk_player_arm", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1015abf0 size=0xa
+#include "ConVar.h"
+ConVar g_10725990("sk_player_leg", "1", 0);
+// END FUNCTION
