@@ -40,3 +40,8 @@ int g_1074f0ac = ((int (*)(int))sub_1020e260)(0);
 int * sub_1020e8d0(void);
 int * g_1074f10c = ((int * (*)(int))sub_1020e8d0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1020f870 size=0x5
+int * sub_1020f8b0(void);
+int * g_1074f0b0 = ((int * (*)(int))sub_1020f8b0)(0);
+// END FUNCTION
