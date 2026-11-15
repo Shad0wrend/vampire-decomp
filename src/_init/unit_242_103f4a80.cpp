@@ -1973,3 +1973,8 @@ extern SendTable g_1094652c;
 extern char g_1067f93c[];
 ServerClassReg g_10946d38("CItemKSarcophagusKey", &g_1094652c, g_1067f93c);
 // END FUNCTION
+
+// FUNCTION: 0x10407210 size=0xa
+#include "SendTable.h"
+SendTable g_1094652c;
+// END FUNCTION
