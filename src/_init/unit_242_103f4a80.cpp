@@ -765,3 +765,8 @@ ServerClassReg g_109471ec("COccultHealRate", &g_109485c8, g_1067f51c);
 #include "SendTable.h"
 SendTable g_109485c8;
 // END FUNCTION
+
+// FUNCTION: 0x103fbb90 size=0x5
+int sub_103fbbd0(void);
+int g_109485c4 = ((int (*)(int))sub_103fbbd0)(0);
+// END FUNCTION
