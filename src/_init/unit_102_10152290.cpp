@@ -46,3 +46,8 @@ int g_10723254 = ((int (*)(int))sub_10156810)(0);
 int * sub_10156a00(void);
 int * g_10723494 = ((int * (*)(int))sub_10156a00)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101575d0 size=0x5
+int sub_10157610(void);
+int g_10723250 = ((int (*)(int))sub_10157610)(0);
+// END FUNCTION
