@@ -12,3 +12,9 @@ ConCommand g_1075180c("wc_create", sub_10233ba0, "When in WC edit mode, creates 
 void sub_10233c80(void);
 ConCommand g_107518ac("wc_destroy", sub_10233c80, "When in WC edit mode, destroys the node that the player is nearest to looking at.  (The node will be highlighted by a red box).", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10233d90 size=0xa
+#include "ConCommand.h"
+void sub_10233d60(void);
+ConCommand g_107517e4("wc_destroy_undo", sub_10233d60, "When in WC edit mode restores the last deleted node", 0, 0);
+// END FUNCTION
