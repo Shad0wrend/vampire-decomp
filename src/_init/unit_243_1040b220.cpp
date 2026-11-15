@@ -103,3 +103,8 @@ extern SendTable g_1094aea8;
 extern char g_10683a68[];
 ServerClassReg g_1094aa5c("CWeaponPhysCannon", &g_1094aea8, g_10683a68);
 // END FUNCTION
+
+// FUNCTION: 0x1040d5d0 size=0xa
+#include "SendTable.h"
+SendTable g_1094aea8;
+// END FUNCTION
