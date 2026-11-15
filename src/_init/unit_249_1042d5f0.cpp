@@ -13,3 +13,8 @@ extern SendTable g_109f028c;
 extern char g_106af054[];
 ServerClassReg g_109f02a8("CSprite", &g_109f028c, g_106af054);
 // END FUNCTION
+
+// FUNCTION: 0x1042e250 size=0xa
+#include "SendTable.h"
+SendTable g_109f028c;
+// END FUNCTION
