@@ -1083,3 +1083,11 @@ SendTable g_10944ae0;
 int sub_103fec70(void);
 int g_10944adc = ((int (*)(int))sub_103fec70)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103fedb0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109469e4;
+extern char g_1067f62c[];
+ServerClassReg g_10944fe4("CItemGLillyPhoto", &g_109469e4, g_1067f62c);
+// END FUNCTION
