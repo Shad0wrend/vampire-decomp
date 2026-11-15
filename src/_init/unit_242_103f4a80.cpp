@@ -839,3 +839,8 @@ SendTable g_10944ba4;
 int sub_103fc7b0(void);
 int g_10944ba0 = ((int (*)(int))sub_103fc7b0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103fc8f0 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10946e50(&CPrecacheRegister::PrecacheFn_Other, "item_g_bluebloodpack");
+// END FUNCTION
