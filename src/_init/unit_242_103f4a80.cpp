@@ -1312,3 +1312,8 @@ ServerClassReg g_10946424("CItemGVampyrApocrypha", &g_1094527c, g_1067f6ec);
 #include "SendTable.h"
 SendTable g_1094527c;
 // END FUNCTION
+
+// FUNCTION: 0x10400f20 size=0x5
+int sub_10400f60(void);
+int g_10945278 = ((int (*)(int))sub_10400f60)(0);
+// END FUNCTION
