@@ -50,3 +50,8 @@ ConVar g_10924890("debug_circle_dist_override", "0", 0, "Overrides the distance 
 #include "ConVar.h"
 ConVar g_10924798("debug_vision_line", "0", 0, "Set this to 1 to show a line from NPCs to player when they can see the player through an object.");
 // END FUNCTION
+
+// FUNCTION: 0x1028b930 size=0xa
+#include "ConVar.h"
+ConVar g_10924cd8("debug_hint_los", "0", 0, "Set this to 1 to show a line from any hints the NPCs try to use to their target when they do a LOS check.");
+// END FUNCTION
