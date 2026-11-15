@@ -95,3 +95,9 @@ ConCommand g_106c8bf8("ai_show_graph_connect", sub_10085e00, "Toggles graph conn
 void sub_10085f00(void);
 ConCommand g_106c94c0("ai_show_interesting", sub_10085f00, "Draws the interesting places.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10085ff0 size=0xa
+#include "ConCommand.h"
+void sub_10085fb0(void);
+ConCommand g_106c9678("npc_bypass", sub_10085fb0, "Displays the local movement attempts by the given NPC(s) (triangulation detours).  Failed bypass routes are displayed in red, successful bypasses are shown in green.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at.", 0, 0);
+// END FUNCTION
