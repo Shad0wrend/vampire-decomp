@@ -8,3 +8,8 @@ extern SendTable g_1072c81c;
 extern char g_1072ca84[];
 ServerClassReg g_1072c7fc("CSun", &g_1072c81c, g_1072ca84);
 // END FUNCTION
+
+// FUNCTION: 0x101c2140 size=0xa
+#include "SendTable.h"
+SendTable g_1072c81c;
+// END FUNCTION
