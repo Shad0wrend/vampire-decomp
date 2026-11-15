@@ -122,3 +122,9 @@ ConCommand g_106e7e18("ent_vstats_spew", sub_100d4b40, "Lists the target Entity'
 void sub_100d4e50(void);
 ConCommand g_106e74f8("ent_vfeats_spew", sub_100d4e50, "Lists the target Entity's Vampire Feats\n", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d5120 size=0xa
+#include "ConCommand.h"
+void sub_100d5000(void);
+ConCommand g_106e7138("barterend", sub_100d5000, "Ends bartering/looting", 0, 0);
+// END FUNCTION
