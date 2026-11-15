@@ -13,3 +13,8 @@ ServerClassReg g_106c4744("CTEInspectionFX", &g_106c480c, g_10544020);
 #include "SendTable.h"
 SendTable g_106c480c;
 // END FUNCTION
+
+// FUNCTION: 0x100657a0 size=0x5
+int sub_100657e0(void);
+int g_106c4808 = ((int (*)(int))sub_100657e0)(0);
+// END FUNCTION
