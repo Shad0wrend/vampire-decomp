@@ -286,3 +286,9 @@ ConCommand g_106c90ec("sound_show_spheres", sub_10088730, "Toggles between cylin
 void sub_10088890(void);
 ConCommand g_106c913c("sound_show_deafzone", sub_10088890, "Shows NPC deaf zones when sound events are fired", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100889f0 size=0xa
+#include "ConCommand.h"
+void sub_100889b0(void);
+ConCommand g_106c9164("sound_show_player_only", sub_100889b0, "Only show sounds if the player is the owner.", 0, 0);
+// END FUNCTION
