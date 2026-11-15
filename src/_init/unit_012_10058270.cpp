@@ -26,3 +26,8 @@ extern SendTable g_106beb4c;
 extern char g_10540730[];
 ServerClassReg g_106beac4("CTEArmorRicochet", &g_106beb4c, g_10540730);
 // END FUNCTION
+
+// FUNCTION: 0x1005a450 size=0xa
+#include "SendTable.h"
+SendTable g_106beb4c;
+// END FUNCTION
