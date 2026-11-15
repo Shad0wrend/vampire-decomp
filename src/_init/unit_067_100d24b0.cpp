@@ -334,3 +334,9 @@ ConCommand g_106e7df0("vstatinfo", sub_100d8040, "Lists the available Vampire Sy
 void sub_100d8120(void);
 ConCommand g_106e7368("vplayername", sub_100d8120, "Sets the player name", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d8400 size=0xa
+#include "ConCommand.h"
+void sub_100d8220(void);
+ConCommand g_106e7278("vhotkey_int", sub_100d8220, "Activates a given hotkey\n\tArguments:\t{hotkey #}", 0, 0);
+// END FUNCTION
