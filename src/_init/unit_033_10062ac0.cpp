@@ -8,3 +8,8 @@ extern SendTable g_106c2fe0;
 extern char g_10543408[];
 ServerClassReg g_106c2ffc("CTEFootprintDecal", &g_106c2fe0, g_10543408);
 // END FUNCTION
+
+// FUNCTION: 0x10062b70 size=0xa
+#include "SendTable.h"
+SendTable g_106c2fe0;
+// END FUNCTION
