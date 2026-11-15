@@ -133,3 +133,8 @@ SendTable g_10751d0c;
 int sub_102353a0(void);
 int g_10751d08 = ((int (*)(int))sub_102353a0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10235520 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10751e28(&CPrecacheRegister::PrecacheFn_Other, "item_w_deserteagle");
+// END FUNCTION
