@@ -7,6 +7,7 @@ class ConCommand : public ConCommandCtorBase
 {
 public:
 	ConCommand(const char *pszName, void (*pCallback)(), const char *pszHelp, int nFlags, void (*pCompletion)());
+	~ConCommand();	// function 0x10245920 (stub 0x100104f6): stores the vftable, then ~ConCommandBase; a global command's atexit destroy jumps to it
 	virtual ConCommand *vfunc0(unsigned int flags);
 	virtual bool vfunc1();
 	virtual void vfunc2();
