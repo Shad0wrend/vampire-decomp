@@ -25,3 +25,8 @@ ConVar g_1094a9d0("physcannon_maxforce", "1500", 0);
 #include "ConVar.h"
 ConVar g_1094acc8("physcannon_maxmass", "250", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1040b7c0 size=0xa
+#include "ConVar.h"
+ConVar g_1094ad10("physcannon_tracelength", "80", 0);
+// END FUNCTION
