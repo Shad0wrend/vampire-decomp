@@ -25,3 +25,8 @@ ConVar g_10924db0("debug_test_schedule", "0", 0, "Forces the AI into test schedu
 #include "ConVar.h"
 ConVar g_10924678("debug_test_switch1", "0", 0, "Toggles stuff for the test task.");
 // END FUNCTION
+
+// FUNCTION: 0x1028b660 size=0xa
+#include "ConVar.h"
+ConVar g_10924630("debug_test_switch2", "0", 0, "Toggles stuff for the test task.");
+// END FUNCTION
