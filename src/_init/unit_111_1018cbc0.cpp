@@ -30,3 +30,11 @@ int * g_1072b058 = ((int * (*)(int))sub_1018f000)(0);
 int * sub_101900a0(void);
 int * g_1072b084 = ((int * (*)(int))sub_101900a0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101902d0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1072b094;
+extern char g_1058d74c[];
+ServerClassReg g_1072b040("CDynamicProp", &g_1072b094, g_1058d74c);
+// END FUNCTION
