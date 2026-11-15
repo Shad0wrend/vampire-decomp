@@ -18,3 +18,8 @@ SendTable g_106d16d4;
 int sub_100ba470(void);
 int g_106d16d0 = ((int (*)(int))sub_100ba470)(0);
 // END FUNCTION
+
+// FUNCTION: 0x100ba560 size=0xa
+#include "SendTable.h"
+SendTable g_106d15b4;
+// END FUNCTION
