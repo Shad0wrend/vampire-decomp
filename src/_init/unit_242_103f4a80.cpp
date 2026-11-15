@@ -691,3 +691,8 @@ extern SendTable g_1094896c;
 extern char g_1067f4ec[];
 ServerClassReg g_10947784("COccultDodge", &g_1094896c, g_1067f4ec);
 // END FUNCTION
+
+// FUNCTION: 0x103fb210 size=0xa
+#include "SendTable.h"
+SendTable g_1094896c;
+// END FUNCTION
