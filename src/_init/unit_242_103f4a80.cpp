@@ -471,3 +471,8 @@ SendTable g_1094857c;
 int sub_103f9480(void);
 int g_10948578 = ((int (*)(int))sub_103f9480)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f9610 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10948b90(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_regen");
+// END FUNCTION
