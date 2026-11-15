@@ -64,3 +64,8 @@ ServerClassReg g_1094622c("CItemMWallet", &g_10947134, g_1067f224);
 #include "SendTable.h"
 SendTable g_10947134;
 // END FUNCTION
+
+// FUNCTION: 0x103f59b0 size=0x5
+int sub_103f59f0(void);
+int g_10947130 = ((int (*)(int))sub_103f59f0)(0);
+// END FUNCTION
