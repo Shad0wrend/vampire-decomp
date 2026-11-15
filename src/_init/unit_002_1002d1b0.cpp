@@ -5,3 +5,8 @@
 #include "ConVar.h"
 ConVar g_106b8650("phys_pushscale", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1002d240 size=0xa
+#include "ConVar.h"
+ConVar g_106b85c0("phys_timescale", "1", 0);
+// END FUNCTION
