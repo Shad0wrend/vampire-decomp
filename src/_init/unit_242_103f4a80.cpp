@@ -1955,3 +1955,8 @@ extern SendTable g_109461f0;
 extern char g_1067f92c[];
 ServerClassReg g_109449b8("CItemGVVPhoto", &g_109461f0, g_1067f92c);
 // END FUNCTION
+
+// FUNCTION: 0x10406f60 size=0xa
+#include "SendTable.h"
+SendTable g_109461f0;
+// END FUNCTION
