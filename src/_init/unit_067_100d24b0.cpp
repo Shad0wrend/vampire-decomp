@@ -255,3 +255,9 @@ ConCommand g_106e73b8("vroll", sub_100d7040, "Processes a Vampire Dice Roll\n\tA
 void sub_100d7210(void);
 ConCommand g_106e7978("sethotkeys", sub_100d7210, "Sets hotkeys, argsx10 {type}{data}", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d7370 size=0xa
+#include "ConCommand.h"
+void sub_100d7340(void);
+ConCommand g_106e72c8("init_hotkeys", sub_100d7340, "Sets hotkeys to initial state.", 0, 0);
+// END FUNCTION
