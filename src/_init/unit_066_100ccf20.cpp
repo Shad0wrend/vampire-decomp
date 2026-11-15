@@ -10,3 +10,8 @@ int g_106e6ff4 = ((int (*)(int))sub_100ccf60)(0);
 int * sub_100cd760(void);
 int * g_106e6f98 = ((int * (*)(int))sub_100cd760)(0);
 // END FUNCTION
+
+// FUNCTION: 0x100cd9a0 size=0x5
+#include "CEventsSaveDataOps.h"
+CEventsSaveDataOps g_106e70d8;
+// END FUNCTION
