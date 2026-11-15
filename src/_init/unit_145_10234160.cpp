@@ -370,3 +370,9 @@ ConCommand g_10752864("vdebug_wpn_anims_cycle_clear", sub_10237c30, "Cycles a we
 void sub_10237ce0(void);
 ConCommand g_107525c0("vdebug_wpn_anims_cycle_reset", sub_10237ce0, "Cycles a weapon through its animations.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10237f00 size=0xa
+#include "ConCommand.h"
+void sub_10237e90(void);
+ConCommand g_107525e8("vdebug_wpn_anims_cycle_add", sub_10237e90, "Cycles a weapon through its animations.", 0, 0);
+// END FUNCTION
