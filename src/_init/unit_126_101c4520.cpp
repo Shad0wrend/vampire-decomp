@@ -70,3 +70,8 @@ int g_1072cf9c = ((int (*)(int))sub_101ca950)(0);
 int * sub_101cb130(void);
 int * g_1072d018 = ((int * (*)(int))sub_101cb130)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101cb670 size=0x5
+int * sub_101cb6b0(void);
+int * g_1072cfbc = ((int * (*)(int))sub_101cb6b0)(0);
+// END FUNCTION
