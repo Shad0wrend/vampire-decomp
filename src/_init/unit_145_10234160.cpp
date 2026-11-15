@@ -243,3 +243,8 @@ SendTable g_107520e8;
 int sub_102366f0(void);
 int g_107520e4 = ((int (*)(int))sub_102366f0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10236870 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_1075265c(&CPrecacheRegister::PrecacheFn_Other, "item_w_steyr_aug");
+// END FUNCTION
