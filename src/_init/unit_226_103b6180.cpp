@@ -90,3 +90,8 @@ ConVar g_1093cfd8("tzimisce_voice_attn", "65", 0, "Set this var to override the 
 #include "ConVar.h"
 ConVar g_1093cf90("tzimisce_voice_pitch", "100", 0, "Set this var to override the voice pitch (100 = normal, 120 = high).");
 // END FUNCTION
+
+// FUNCTION: 0x103b6b80 size=0x5
+int sub_103b6bc0(void);
+int g_1093cb5c = ((int (*)(int))sub_103b6bc0)(0);
+// END FUNCTION
