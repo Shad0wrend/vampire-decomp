@@ -189630,6 +189630,87 @@ int sub_10242420(Vector *p1, Vector *d1, float s1, Vector *p2, float s2, Vector 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10242640 size=0x269
+#include "Vector.h"
+#include <math.h>
+
+inline float FloatMakePositive( vec_t f )
+{
+	return fabs( f );
+}
+
+// TARGET: sub_10242640
+void __cdecl sub_10242640( double tPlus, double tMinus,
+					   const Vector axisU0, const Vector axisU1,
+					   const Vector axisV0, const Vector axisV1,
+					   const Vector axisOrigin, const Vector pt,
+					   int projU, double &s, double &t )
+{
+	// calculate the sPlus, sMinus pair(s)
+	double sDenomPlus = ( axisU0[projU] * ( 1 - tPlus ) ) + ( axisU1[projU] * tPlus );
+	double sDenomMinus = ( axisU0[projU] * ( 1 - tMinus ) ) + ( axisU1[projU] * tMinus );
+
+	double sPlus = -99999.0, sMinus = -99999.0;
+	if( FloatMakePositive( sDenomPlus ) >= 1e-5 )
+	{
+		sPlus = ( pt[projU] - axisOrigin[projU] - ( axisV0[projU] * tPlus ) ) / sDenomPlus; 
+	}
+
+	if( FloatMakePositive( sDenomMinus ) >= 1e-5 )
+	{
+		sMinus = ( pt[projU] - axisOrigin[projU] - ( axisV0[projU] * tMinus ) ) / sDenomMinus; 
+	}
+	
+	if( ( tPlus >= 0.0 ) && ( tPlus <= 1.0 ) && ( sPlus >= 0.0 ) && ( sPlus <= 1.0 ) )
+	{
+		s = sPlus;
+		t = tPlus;
+		return;
+	}
+
+	if( ( tMinus >= 0.0 ) && ( tMinus <= 1.0 ) && ( sMinus >= 0.0 ) && ( sMinus <= 1.0 ) )
+	{
+		s = sMinus;
+		t = tMinus;
+		return;
+	}
+
+	double s0, t0, s1, t1;
+
+	s0 = sPlus;
+	t0 = tPlus;
+	if( s0 >= 1.0 ) { s0 -= 1.0; }
+	if( t0 >= 1.0 ) { t0 -= 1.0; }
+
+	s1 = sMinus;
+	t1 = tMinus;
+	if( s1 >= 1.0 ) { s1 -= 1.0; }
+	if( t1 >= 1.0 ) { t1 -= 1.0; }
+
+	s0 = FloatMakePositive( s0 );
+	t0 = FloatMakePositive( t0 );
+	s1 = FloatMakePositive( s1 );
+	t1 = FloatMakePositive( t1 );
+
+	double max0, max1;
+	max0 = s0;
+	if( t0 > max0 ) { max0 = t0; }
+	max1 = s1;
+	if( t1 > max1 ) { max1 = t1; }
+
+	if( max0 > max1 )
+	{
+		s = sMinus;
+		t = tMinus;
+	}
+	else
+	{
+		s = sPlus;
+		t = tPlus;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10242950 size=0x6d2
 #define inline __forceinline
 #include "Vector.h"
