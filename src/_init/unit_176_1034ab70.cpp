@@ -63,3 +63,8 @@ extern SendTable g_10938108;
 extern char g_10626910[];
 ServerClassReg g_109383e4("CHL2_Player", &g_10938108, g_10626910);
 // END FUNCTION
+
+// FUNCTION: 0x1034f630 size=0xa
+#include "SendTable.h"
+SendTable g_10938108;
+// END FUNCTION
