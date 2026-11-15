@@ -8,3 +8,8 @@ extern SendTable g_106c39f8;
 extern char g_10543918[];
 ServerClassReg g_106c3c8c("CTEGlowSprite", &g_106c39f8, g_10543918);
 // END FUNCTION
+
+// FUNCTION: 0x10063cb0 size=0xa
+#include "SendTable.h"
+SendTable g_106c39f8;
+// END FUNCTION
