@@ -13,3 +13,8 @@ ServerClassReg g_1072c7fc("CSun", &g_1072c81c, g_1072ca84);
 #include "SendTable.h"
 SendTable g_1072c81c;
 // END FUNCTION
+
+// FUNCTION: 0x101c21c0 size=0x5
+int sub_101c2200(void);
+int g_1072c818 = ((int (*)(int))sub_101c2200)(0);
+// END FUNCTION
