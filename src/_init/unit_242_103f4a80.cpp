@@ -1204,3 +1204,8 @@ ServerClassReg g_10944d1c("CItemGJumblesFlyer", &g_10944134, g_1067f68c);
 #include "SendTable.h"
 SendTable g_10944134;
 // END FUNCTION
+
+// FUNCTION: 0x103fff00 size=0x5
+int sub_103fff40(void);
+int g_10944130 = ((int (*)(int))sub_103fff40)(0);
+// END FUNCTION
