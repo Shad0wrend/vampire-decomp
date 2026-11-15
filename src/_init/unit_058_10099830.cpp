@@ -175,3 +175,9 @@ ConCommand g_106cfe28("ent_info", sub_100aff90, "Usage:\n   ent_info <class name
 void sub_100b0280(void);
 ConCommand g_106cf0d0("ent_messages", sub_100b0280, "Toggles input/output message display for the selected entity(ies).  The name of the entity will be displayed as well as any messages that it sends or receives.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100b0440 size=0xa
+#include "ConCommand.h"
+void sub_100b03b0(void);
+ConCommand g_106cf464("ent_pause", sub_100b03b0, "Toggles pausing of input/output message processing for entities.  When turned on processing of all message will stop.  Any messages displayed with 'ent_messages' will stop fading and be displayed indefinitely. To step through the messages one by one use 'ent_step'.", 0, 0);
+// END FUNCTION
