@@ -279,3 +279,8 @@ extern SendTable g_10941e8c;
 extern char g_106700fc[];
 ServerClassReg g_10940d20("CWeaponMelee_Sheriff_Sword", &g_10941e8c, g_106700fc);
 // END FUNCTION
+
+// FUNCTION: 0x103e6ae0 size=0xa
+#include "SendTable.h"
+SendTable g_10941e8c;
+// END FUNCTION
