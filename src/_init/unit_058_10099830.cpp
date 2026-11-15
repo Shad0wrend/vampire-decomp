@@ -139,3 +139,9 @@ ConCommand g_106cfd40("ent_remove", sub_100aeda0, "Removes the given entity(s)\n
 void sub_100af010(void);
 ConCommand g_106ceb6c("ent_setname", sub_100af010, "Sets the targetname of the given entity(s)\n\tArguments:   \t{new entity name} {entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100af9d0 size=0xa
+#include "ConCommand.h"
+void sub_100af840(void);
+ConCommand g_106cf48c("ent_dump", sub_100af840, "Usage:\n   ent_dump <entity name>\n", 0, 0);
+// END FUNCTION
