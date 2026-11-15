@@ -1839,3 +1839,11 @@ SendTable g_10946e60;
 int sub_10405d50(void);
 int g_10946e5c = ((int (*)(int))sub_10405d50)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10405e90 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10946c24;
+extern char g_1067f8cc[];
+ServerClassReg g_10947c48("CItemGGarysFilm", &g_10946c24, g_1067f8cc);
+// END FUNCTION
