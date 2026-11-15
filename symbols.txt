@@ -8869,6 +8869,7 @@
 0x1000c5e0 func   ?sub_102f28e0@CAI_Navigator@@QAEXXZ CAI_Navigator::sub_102f28e0
 0x1000c5e5 func   ?vfunc82@CPlayerEvents@@UAEPAUdatamap_t@@XZ CPlayerEvents::vfunc82
 0x1000c5ea func   ?sub_1023c430@@YAMXZ sub_1023c430
+0x1000c5ef func   ?sub_103eeaa0@SSlot372View@@QAE_NXZ SSlot372View::sub_103eeaa0
 0x1000c5f4 func   ?vfunc8@CLagCompensationManager@@UAEPAV1@I@Z CLagCompensationManager::vfunc8
 0x1000c5f9 func   ?vfunc23@CGameMovement@@UAEMXZ CGameMovement::vfunc23
 0x1000c5fe func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@UMAP_ACCESS@@V?$CUtlMemory@UMAP_ACCESS@@@@@@$08@@UAE_NPAX@Z CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,9>::vfunc2

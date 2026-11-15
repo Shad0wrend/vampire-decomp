@@ -297668,6 +297668,46 @@ fail:
 }
 // END FUNCTION
 
+// FUNCTION: 0x103eeaa0 size=0x112
+#include "Vector.h"
+#include "CAI_BaseNPC.h"
+#include "engineiface.h"
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct SSlot372View
+{
+	V100(a) V100(b) V100(c) V10(d0) V10(d1) V10(d2) V10(d3) V10(d4) V10(d5) V10(d6)
+	virtual void d70(); virtual void d71();
+	virtual int slot372(Vector a, Vector b, Vector c, Vector d);
+	bool sub_103eeaa0();
+};
+
+struct SEnt10014fab
+{
+	char m_pad[0xa8];
+	CAI_BaseNPC *m_pNpc;
+};
+
+extern Vector g_1070d1b0;
+SEnt10014fab *__fastcall sub_10014fab(SSlot372View *self);
+
+// TARGET: sub_103eeaa0
+bool SSlot372View::sub_103eeaa0()
+{
+	SEnt10014fab *pEnt = sub_10014fab(this);
+	if (pEnt) {
+		CAI_BaseNPC *pNpc = pEnt->m_pNpc;
+		if (pNpc) {
+			Vector rnd(enginerandom->vfunc2(-30, 30), enginerandom->vfunc2(-30, 30), enginerandom->vfunc2(-30, 30));
+			return slot372(pNpc->vfunc192(), g_1070d1b0, g_1070d1b0, rnd) != 0;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103eec60 size=0xd
 #include "CUnknown103eec60.h"
 void CUnknown103eec60::sub_103eec60(char value)
