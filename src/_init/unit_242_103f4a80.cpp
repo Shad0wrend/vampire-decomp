@@ -1240,3 +1240,8 @@ ServerClassReg g_10944c50("CItemGHorrorTape_1", &g_10944b2c, g_1067f6ac);
 #include "SendTable.h"
 SendTable g_10944b2c;
 // END FUNCTION
+
+// FUNCTION: 0x10400460 size=0x5
+int sub_104004a0(void);
+int g_10944b28 = ((int (*)(int))sub_104004a0)(0);
+// END FUNCTION
