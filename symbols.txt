@@ -15918,6 +15918,7 @@
 0x100155d2 func   ?sub_10185180@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_10185180
 0x100155d7 func   ?sub_1026c3d0@@YI_NPAVCAI_BaseNPC@@@Z sub_1026c3d0
 0x100155dc func   ?sub_10221d60@QuestJournal@@QAEPADHH@Z QuestJournal::sub_10221d60
+0x100155e1 func   ?PrecacheFn_Other@CPrecacheRegister@@SAXPAX@Z CPrecacheRegister::PrecacheFn_Other
 0x100155e6 func   ?vfunc25@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc25
 0x100155eb func   ?sub_10250080@CUnknown10250080@@QAEXXZ CUnknown10250080::sub_10250080
 0x100155f0 func   ?sub_1024a230@CUnknown1024a230@@QAEPAV1@XZ CUnknown1024a230::sub_1024a230
