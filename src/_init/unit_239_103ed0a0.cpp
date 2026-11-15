@@ -41,3 +41,8 @@ ServerClassReg g_10942e0c("CWeaponThrown_Grenade_Frag", &g_10942d44, g_1067ccc0)
 #include "SendTable.h"
 SendTable g_10942d44;
 // END FUNCTION
+
+// FUNCTION: 0x103ef030 size=0x5
+int sub_103ef070(void);
+int g_10942d40 = ((int (*)(int))sub_103ef070)(0);
+// END FUNCTION
