@@ -50,3 +50,8 @@ ConVar g_10938400("speed_runbonusathletics", "5", 0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_109380b0(&CPrecacheRegister::PrecacheFn_Other, "player");
 // END FUNCTION
+
+// FUNCTION: 0x1034f2c0 size=0x5
+int sub_1034f300(void);
+int g_1093830c = ((int (*)(int))sub_1034f300)(0);
+// END FUNCTION
