@@ -259410,6 +259410,109 @@ char CBaseCombatCharacter::sub_10339cd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033b100 size=0x328
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
+#include "CDevFlagObj.h"
+#include "CUnknown1073dc28.h"
+#include "engineiface.h"
+#include "engineserver.h"
+#include "CVSoundActivityTable_t.h"
+
+#define V4(n) virtual void n##a(); virtual void n##b(); virtual void n##c(); virtual void n##d();
+#define V16(n) V4(n##a) V4(n##b) V4(n##c) V4(n##d)
+struct GrappleObj { V16(a) V16(b) V16(c) V16(d) V16(e) V16(f) V16(g) V16(h) V16(i) V16(j) V16(k) V16(l) V16(m) V4(o) V4(p) V4(q) virtual int *vfunc220(); };
+
+struct ByteBox { char c; };
+struct Box4 { char c; char pad[3]; };
+union UBox { char c; int i; };
+extern CDevFlagObj *g_10937034;
+extern CUnknown1073dc28 g_1073dc28;
+extern int g_1072bc38;
+extern ByteBox g_1072bcae;
+void sub_101bac90(int type, int *origin, int vol, float dur, int flag, CBaseEntity *pEnt);
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" int _strcmpi(const char *, const char *);
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+static inline int FindGrappleId(const char *name)
+{
+	for (int i = 0; i < g_1073dc28.m_nRecords; i++) {
+		if (!_strcmpi(g_1073dc28.m_ppRecords[i]->m_Name.Get(), name))
+			return g_1073dc28.m_ppRecords[i]->m_nId;
+	}
+	return -1;
+}
+
+void CBaseCombatCharacter::sub_1033b100(int cmd)
+{
+	ScopeTrace t("CBaseCombatCharacter::GrappleSoundCmd", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	if (!g_10937034->vfunc1() && g_10937034->m_n2c) {
+		char buf[256];
+		sprintf(buf, "%s GrappleSoundCmd %d", sub_100ab4f0(), cmd);
+		sub_103221b0(buf);
+	}
+	CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
+	bool bLoop = true;
+	const char *name = 0;
+	switch (cmd) {
+	case 8: {
+		int edict = m_pEdict2e0;
+		enginesound->vfunc3(&filter, engine->vfunc35(edict), 0, "Interface/heartbeat_loop.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
+		break;
+	}
+	case 9: {
+		int edict = m_pEdict2e0;
+		enginesound->vfunc7(engine->vfunc35(edict), 0, "Interface/heartbeat_loop.wav");
+		break;
+	}
+	case 4:
+	case 5:
+		bLoop = cmd == 4;
+		name = "Fed_Upon_Loop";
+		break;
+	case 6:
+	case 7:
+		bLoop = cmd == 6;
+		name = "Feed_On_Loop";
+		break;
+	case 0: {
+		name = "Fed_Upon_Start";
+		GrappleObj *pObj = (GrappleObj *)m_pNPC98;
+		if (pObj) {
+			int vol = g_1072bc38;
+			int flag;
+			*(char *)&flag = g_1072bcae.c;
+			sub_101bac90(8, pObj->vfunc220(), vol, 0.2f, flag, (CBaseEntity *)pObj);
+		}
+		break;
+	}
+	case 1: name = "Fed_Upon_End"; break;
+	case 2: name = "Feed_On_Start"; break;
+	case 3: name = "Feed_On_End"; break;
+	default:
+		DevMsg("Unrecognized grapple sound!\n");
+		break;
+	}
+	if (name) {
+		int id = FindGrappleId(name);
+		if (bLoop)
+			((CVActivitySound *)&g_1073dc28)->sub_101f5950((int)this, id, 2, 1.0f, 1.25f);
+		else
+			((CVActivitySound *)&g_1073dc28)->sub_101f5b60((int)this, id, 2);
+	}
+
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033b7c0 size=0x94
 #include "CBaseCombatCharacter.h"
 
