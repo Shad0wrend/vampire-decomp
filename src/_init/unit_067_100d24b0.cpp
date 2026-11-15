@@ -194,3 +194,9 @@ ConCommand g_106e7690("inven_drop", sub_100d5d10, "Drops an item from the local 
 void sub_100d5e30(void);
 ConCommand g_106e7950("inven_drop_curr", sub_100d5e30, "Drops the currently equipted weapon.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d6030 size=0xa
+#include "ConCommand.h"
+void sub_100d5f10(void);
+ConCommand g_106e7bd4("inven_holster", sub_100d5f10, "holsters the currently equipted weapon.", 0, 0);
+// END FUNCTION
