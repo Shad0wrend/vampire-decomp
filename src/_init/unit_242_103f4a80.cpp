@@ -1631,3 +1631,8 @@ extern SendTable g_10948f64;
 extern char g_1067f80c[];
 ServerClassReg g_10945034("CItemGStake", &g_10948f64, g_1067f80c);
 // END FUNCTION
+
+// FUNCTION: 0x10403f00 size=0xa
+#include "SendTable.h"
+SendTable g_10948f64;
+// END FUNCTION
