@@ -13,3 +13,8 @@ ServerClassReg g_106bdca0("CBaseTempEntity", &g_106bdcc0, g_106bdd34);
 #include "SendTable.h"
 SendTable g_106bdcc0;
 // END FUNCTION
+
+// FUNCTION: 0x100506e0 size=0x5
+int sub_10050720(void);
+int g_106bdcbc = ((int (*)(int))sub_10050720)(0);
+// END FUNCTION
