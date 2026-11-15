@@ -13,3 +13,8 @@ extern SendTable g_1072adc0;
 extern char g_1058bf54[];
 ServerClassReg g_1072af84("CPointCamera", &g_1072adc0, g_1058bf54);
 // END FUNCTION
+
+// FUNCTION: 0x1018c8e0 size=0xa
+#include "SendTable.h"
+SendTable g_1072adc0;
+// END FUNCTION
