@@ -5,3 +5,8 @@
 #include "ConVar.h"
 ConVar g_1070b9c8("debug_explosion_trace", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10129800 size=0x5
+int sub_10129840(void);
+int g_1070ba20 = ((int (*)(int))sub_10129840)(0);
+// END FUNCTION
