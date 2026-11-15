@@ -125,3 +125,8 @@ ConVar g_1093d528("werewolf_translated_enemy_position_tolerance", "0", 0);
 inline int pcd_initial_1093f80c() { return 0xffffffff; }
 int g_1093f80c = pcd_initial_1093f80c();
 // END FUNCTION
+
+// FUNCTION: 0x103da400 size=0x5
+int sub_103da440(void);
+int g_1093d640 = ((int (*)(int))sub_103da440)(0);
+// END FUNCTION
