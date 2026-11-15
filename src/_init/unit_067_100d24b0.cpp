@@ -443,3 +443,9 @@ ConCommand g_106e7784("vdiscipline_endall", sub_100db250, "Turns off all active 
 void sub_100db320(void);
 ConCommand g_106e7160("debug_stealth_toggle", sub_100db320, "Turns off all active disciplines on the player.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100db410 size=0xa
+#include "ConCommand.h"
+void sub_100db3f0(void);
+ConCommand g_106e784c("vskip_intro", sub_100db3f0, "Skips the Intro Scene", 0, 0);
+// END FUNCTION
