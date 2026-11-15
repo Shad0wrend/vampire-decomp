@@ -200508,6 +200508,70 @@ void sub_10266d40(Vector vecStart, Vector vecDir, int nIgnoreEdict)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10266ef0 size=0x1f6
+#include "CTriggerTraceEnum.h"
+#include "CUnknown1070b254.h"
+#include "CVDmg_t.h"
+
+struct CTriggerDmgInfo {
+	CVDmg_t *m_pDmg;
+	char pad4[0x28];
+	void *m_n2c;
+	float m_f30;
+	int m_n34;
+	unsigned int m_n38;
+};
+extern char g_104994f8[];
+struct TTE2 {
+	void *m_vptr;
+	void *m_pAttacker;
+	int m_nDamage;
+	Vector m_vecDir;
+	int m_nDamageType;
+	unsigned int m_fMask;
+	Ray_t m_Ray;
+	TTE2(void *pAttacker, int nDamage, const Vector &dir, unsigned int nType, const Ray_t &ray) : m_pAttacker(pAttacker), m_nDamage(nDamage), m_vecDir(dir), m_nDamageType(nType), m_fMask(0x46004003)
+	{
+		m_vptr = g_104994f8;
+		m_Ray.m_Start[0] = ray.m_Start[0];
+		m_Ray.m_Start[1] = ray.m_Start[1];
+		m_Ray.m_Start[2] = ray.m_Start[2];
+		m_Ray.m_Delta[0] = ray.m_Delta[0];
+		m_Ray.m_Delta[1] = ray.m_Delta[1];
+		m_Ray.m_Delta[2] = ray.m_Delta[2];
+		m_Ray.m_Extents[0] = ray.m_Extents[0];
+		m_Ray.m_Extents[1] = ray.m_Extents[1];
+		m_Ray.m_Extents[2] = ray.m_Extents[2];
+		m_Ray.m_StartOffset[0] = ray.m_StartOffset[0];
+		m_Ray.m_StartOffset[1] = ray.m_StartOffset[1];
+		m_Ray.m_StartOffset[2] = ray.m_StartOffset[2];
+		m_Ray.m_IsRay = ray.m_IsRay;
+		m_Ray.m_IsSwept = ray.m_IsSwept;
+		m_Ray.m_b32 = ray.m_b32;
+		m_Ray.m_b33 = ray.m_b33;
+		m_Ray.m_n34 = ray.m_n34;
+	}
+};
+
+void __stdcall sub_10266ef0(CTriggerDmgInfo *pInfo, const Vector *pStart, const Vector *pEnd, const Vector *pDir)
+{
+	Ray_t ray;
+	ray.Init(*pStart, *pEnd);
+	unsigned int mask;
+	if (pInfo->m_pDmg)
+		mask = pInfo->m_pDmg->m_field10 | pInfo->m_n38;
+	else
+		mask = pInfo->m_n38;
+	float dmg;
+	if (pInfo->m_pDmg)
+		dmg = (float)pInfo->m_pDmg->sub_101faa70();
+	else
+		dmg = pInfo->m_f30;
+	TTE2 e(pInfo->m_n2c, (int)dmg, *pDir, mask, ray);
+	g_1070b254->vfunc7(&ray, 1, (CTriggerTraceEnum *)&e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10267350 size=0xd
 extern int g_10920544;
 extern int g_10920548;
