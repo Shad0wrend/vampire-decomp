@@ -67,3 +67,9 @@ ConCommand g_106e76b8("lastinv", sub_100d30a0, 0, 0, 0);
 void sub_100d3160(void);
 ConCommand g_106e7318("phys_swap", sub_100d3160, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d3480 size=0xa
+#include "ConCommand.h"
+void sub_100d3270(void);
+ConCommand g_106e7ab8("worldmap_transition", sub_100d3270, "Transition to map\t\nArguments: <map_name>", 0, 0);
+// END FUNCTION
