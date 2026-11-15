@@ -53,3 +53,11 @@ int g_1072b090 = ((int (*)(int))sub_10190440)(0);
 int sub_10190be0(void);
 int g_1072b160 = ((int (*)(int))sub_10190be0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10190c10 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1072b214;
+extern char g_1058d854[];
+ServerClassReg g_1072b068("COrnamentProp", &g_1072b214, g_1058d854);
+// END FUNCTION
