@@ -8,3 +8,8 @@ extern SendTable g_106c4258;
 extern char g_10543b20[];
 ServerClassReg g_106c4274("CTEGunshotDecal", &g_106c4258, g_10543b20);
 // END FUNCTION
+
+// FUNCTION: 0x100644a0 size=0xa
+#include "SendTable.h"
+SendTable g_106c4258;
+// END FUNCTION
