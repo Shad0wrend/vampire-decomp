@@ -31,3 +31,8 @@ ServerClassReg g_106c6798("CTETParticleAttached", &g_106c6b78, g_10545660);
 #include "SendTable.h"
 SendTable g_106c6b78;
 // END FUNCTION
+
+// FUNCTION: 0x10069c60 size=0x5
+int sub_10069ca0(void);
+int g_106c6b74 = ((int (*)(int))sub_10069ca0)(0);
+// END FUNCTION
