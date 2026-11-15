@@ -51,3 +51,11 @@ CPrecacheRegister g_10943bb8(&CPrecacheRegister::PrecacheFn_Other, "item_w_unarm
 int sub_103f5750(void);
 int g_10948318 = ((int (*)(int))sub_103f5750)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f5880 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10947134;
+extern char g_1067f224[];
+ServerClassReg g_1094622c("CItemMWallet", &g_10947134, g_1067f224);
+// END FUNCTION
