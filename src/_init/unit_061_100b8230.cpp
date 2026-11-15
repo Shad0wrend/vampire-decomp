@@ -23,3 +23,8 @@ ServerClassReg g_106d091c("CBatSwarm", &g_106d0874, g_1055a5a8);
 #include "SendTable.h"
 SendTable g_106d0874;
 // END FUNCTION
+
+// FUNCTION: 0x100b84e0 size=0x5
+int sub_100b8520(void);
+int g_106d0870 = ((int (*)(int))sub_100b8520)(0);
+// END FUNCTION
