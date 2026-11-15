@@ -129,3 +129,8 @@ ConVar g_10937208("raw_attack_value_forced", "-1.0", 0);
 #include "ConVar.h"
 ConVar g_10937078("defense_bonus_cap", "10", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10346bb0 size=0xa
+#include "ConVar.h"
+ConVar g_10936cc8("melee_swing_completion_percent", "0.8", 0);
+// END FUNCTION
