@@ -31,3 +31,8 @@ extern SendTable g_109473a0;
 extern char g_1067ef88[];
 ServerClassReg g_10948c64("CWeaponUnarmed", &g_109473a0, g_1067ef88);
 // END FUNCTION
+
+// FUNCTION: 0x103f5160 size=0xa
+#include "SendTable.h"
+SendTable g_109473a0;
+// END FUNCTION
