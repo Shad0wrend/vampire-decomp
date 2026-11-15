@@ -10,3 +10,8 @@ int g_1093ab60 = pcd_initial_1093ab60();
 #include "ConVar.h"
 ConVar g_1093abc8("sk_vcombatman_health", "10", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1036fb80 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_1093ab68(false);
+// END FUNCTION
