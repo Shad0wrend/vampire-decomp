@@ -23,3 +23,8 @@ SendTable g_10942d24;
 int sub_103ee100(void);
 int g_10942d20 = ((int (*)(int))sub_103ee100)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103ee1f0 size=0x5
+int sub_103ee230(void);
+int g_10942e08 = ((int (*)(int))sub_103ee230)(0);
+// END FUNCTION
