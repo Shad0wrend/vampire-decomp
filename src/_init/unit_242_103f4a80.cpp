@@ -110,3 +110,8 @@ ServerClassReg g_109455a4("CItemMMoneyEnvelope", &g_109471d0, g_1067f244);
 #include "SendTable.h"
 SendTable g_109471d0;
 // END FUNCTION
+
+// FUNCTION: 0x103f5fb0 size=0x5
+int sub_103f5ff0(void);
+int g_109471cc = ((int (*)(int))sub_103f5ff0)(0);
+// END FUNCTION
