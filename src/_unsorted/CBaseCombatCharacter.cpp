@@ -583,6 +583,221 @@ void CBaseCombatCharacter::vfunc292(int unused1, const Vector *pDirection, int u
 }
 // END FUNCTION
 
+// FUNCTION: 0x10322b40 size=0x567
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+#include "CUnknown101e0f00.h"
+#include "CUnknown101e3af0.h"
+#include "CEntityVSlots.h"
+#include "CBCCSlotViews.h"
+#include "utlvector.h"
+#include "ehandle.h"
+#include "globalvars.h"
+#include "engineiface.h"
+#include "Tier1.h"
+
+struct CNamedList1006cf30
+{
+	int sub_1006cf30(const char *pszName);
+};
+
+struct SCurve6caa0
+{
+	float sub_1006caa0(int level);
+	int sub_1006cb60(int index);
+};
+
+struct StatOwner
+{
+	SCurve6caa0 *sub_1006cff0(int id);
+};
+
+extern CNamedList1006cf30 g_106c7c34;
+extern CUnknown101e0f00 g_10739a4c;
+extern CUtlVector<EHANDLE> g_109370bc;
+extern float g_104454c4;
+
+struct CBCCView
+{
+	char m_pad[0x10b0];
+	short m_team;
+	bool sub_10323930(CBCCView *pOther);
+};
+
+struct CC169View
+{
+	VIEW_SLOT100(0)
+	VIEW_SLOT10(10) VIEW_SLOT10(11) VIEW_SLOT10(12) VIEW_SLOT10(13) VIEW_SLOT10(14) VIEW_SLOT10(15)
+	VIEW_SLOT(160) VIEW_SLOT(161) VIEW_SLOT(162) VIEW_SLOT(163) VIEW_SLOT(164) VIEW_SLOT(165) VIEW_SLOT(166) VIEW_SLOT(167) VIEW_SLOT(168)
+	virtual void vfunc169(Vector *pVelocity);
+};
+
+struct CC343View
+{
+	VIEW_SLOT100(0) VIEW_SLOT100(1) VIEW_SLOT100(2)
+	VIEW_SLOT10(30) VIEW_SLOT10(31) VIEW_SLOT10(32) VIEW_SLOT10(33)
+	VIEW_SLOT(340) VIEW_SLOT(341) VIEW_SLOT(342)
+	virtual void vfunc343(float flDuration, float flIntensity, int nIndex);
+};
+
+void sub_101cdba0(const Vector *pOrigin, float a, float b, float c, float d, int e, bool f);
+
+extern CVStatList_t g_109f0b40;
+void __cdecl sub_10012a8a();
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+inline CVStatList_t *FindA(CVStatListSet *pSet, int type)
+{
+	for (int i = 0; i < pSet->m_nLists; i++) {
+		if (pSet->m_pLists[i]->m_field10 == type)
+			return pSet->m_pLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		g_109f0b40.CVStatList_t::CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+struct EHVecView { EHANDLE *m_pMemory; int m_nAlloc; int m_nGrow; int m_Size; };
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+inline float LengthZXY(const Vector &v)
+{
+	return FastSqrt(v.y * v.y + (v[2] * v.z + v.x * v.x));
+}
+
+// TARGET: CBaseCombatCharacter::vfunc313
+void CBaseCombatCharacter::vfunc313()
+{
+	ScopeTrace scope("CBaseCombatCharacter::UpdatePresenceEffect",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	if (gpGlobals->curtime < m_flNextPresenceCheckTime)
+		return;
+
+	m_flNextPresenceCheckTime = enginerandom->vfunc1(0.2f, 0.4f) + gpGlobals->curtime;
+
+	if (g_109370bc.Count() <= 0)
+	{
+		((CUnknown101e3af0 *)&g_10739a4c)->sub_101e3ff0(this);
+		m_iFriendPresenceEffect = 0;
+		m_iEnemyPresenceEffect = 0;
+		m_flEnemeyPresencePercent = 0;
+		return;
+	} else { SCurve6caa0 *pRadiusCurve = ((StatOwner *)&g_106c7c34)->sub_1006cff0(g_106c7c34.sub_1006cf30("Presence_Effect_Radius"));
+
+	int iFriend = 0;
+	int iEnemy; iEnemy = 0;
+	float flPercent = 0.0f;
+	float flBestEffect; flBestEffect = 0.0f;
+
+	for (long i = 0; i < g_109370bc.Count(); )
+	{
+		CBaseEntity *p = g_109370bc[i].Get();
+		if (!p)
+		{
+			int nMove = ((EHVecView *)&g_109370bc)->m_Size - i - 1;
+			if (nMove > 0) memmove(&g_109370bc[i], &(*(EHANDLE * volatile *)&g_109370bc)[i + 1], nMove * sizeof(EHANDLE));
+			--((EHVecView *)&g_109370bc)->m_Size;
+			continue;
+		}
+
+		int statValue; statValue = FindA(CVStatListSet::Of(p), 3)->sub_102012d0(10);
+
+		if (p != this && p != this->vfunc97())
+		{
+			if (statValue > 0)
+			{
+				g_10739a4c.sub_101e34c0(p, this, 10, statValue - 1);
+
+				float flRadius = pRadiusCurve->sub_1006caa0(pcd_stage(statValue));
+
+				Vector *pOtherOrigin = pcd_stage(((CEntityVSlots *)p)->slot220());
+				Vector *pThisOrigin = ((CEntityVSlots *)this)->slot220();
+				float flDist = LengthZXY(*pThisOrigin - *pOtherOrigin);
+
+				if (flDist <= flRadius)
+				{
+					float flEffect = (((flRadius - flDist))) / flRadius;
+					if (flEffect > flBestEffect)
+						flBestEffect = flEffect;
+
+					int nRelation = ((CEntityVSlots *)p)->slot404(this);
+					if (!(((CBCCView *)this)->sub_10323930(pcd_stage((CBCCView *)p)) || nRelation == 3)) {
+						if (flEffect > flPercent)
+							flPercent = flEffect;
+						if (pcd_stage(statValue) > iEnemy)
+							iEnemy = statValue;
+					} else {
+						SCurve6caa0 *pCombatRanges = ((StatOwner *)&g_106c7c34)->sub_1006cff0(g_106c7c34.sub_1006cf30("Presence_Combat_Ranges"));
+						float flRange = flRadius / pCombatRanges->sub_1006caa0(0);
+						int nDist; nDist = (int)flDist;
+						float flCombat;
+						if ((char)nDist == -1) flCombat = nDist / flRange; else flCombat = pcd_stage(nDist) / pcd_stage(flRange);
+						if (1.0f > flCombat)
+							flCombat = 1.0f;
+						int nCombat = (int)flCombat;
+						if (nCombat > iFriend)
+							iFriend = nCombat;
+					}
+				}
+			}
+			else
+			{
+				g_109f364c("CombatCharacter in presence list that has no active presence: %s.\n", p->sub_100ab4f0());
+			}
+			i++;
+		}
+		else
+			i++;
+	}
+
+	m_iFriendPresenceEffect = iFriend;
+	if (iFriend > 0)
+	{
+		SCurve6caa0 *pBenefit = pcd_stage(((StatOwner *)&g_106c7c34)->sub_1006cff0(g_106c7c34.sub_1006cf30("Presence_Combat_Benefit")));
+		m_iFriendPresenceEffect = pBenefit->sub_1006cb60(m_iFriendPresenceEffect);
+	}
+
+	m_flEnemeyPresencePercent = flPercent;
+	if (flPercent > 0.0f)
+	{
+		if (!m_hTarget1538.Get() || m_nTarget153c == -1)
+		{
+			SCurve6caa0 *pScalar = ((StatOwner *)&g_106c7c34)->sub_1006cff0(g_106c7c34.sub_1006cf30("Presence_Jitter_Scalar"));
+			float flScalar = pScalar->sub_1006caa0(0) * m_flEnemeyPresencePercent;
+
+			SCurve6caa0 *pSpeed = ((StatOwner *)&g_106c7c34)->sub_1006cff0(g_106c7c34.sub_1006cf30("Presence_Jitter_Speed"));
+			float flSpeed = m_flEnemeyPresencePercent * pSpeed->sub_1006caa0(0);
+
+			sub_101cdba0(&((CEntityVSlots *)this)->slot192(), flScalar, flSpeed, 1.0, 1.0f, 0, true);
+
+			(pcd_stage((StatOwner *)&g_106c7c34))->sub_1006cff0(g_106c7c34.sub_1006cf30("Presence_Jitter_Hand"));
+			flScalar = (m_flEnemeyPresencePercent * pSpeed->sub_1006caa0(0)) * 0.1;
+
+			((CC343View *)this)->vfunc343(0.4f, m_flEnemeyPresencePercent, 0);
+
+			float flRand1; flRand1 = pcd_stage(enginerandom->vfunc1(-flScalar, flScalar));
+			Vector vecJitter(enginerandom->vfunc1(-flScalar, flScalar), flRand1, 0.0f);
+			((CC169View *)this)->vfunc169(&vecJitter);
+
+			m_iEnemyPresenceEffect = iEnemy;
+		}
+	} }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10323a90 size=0x96
 #include "CBaseCombatCharacter.h"
 #include "CBaseAnimating.h"

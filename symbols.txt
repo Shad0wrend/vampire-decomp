@@ -14647,6 +14647,7 @@
 0x10013ca0 func   ?sub_102becb0@CUnknown102becb0@@QAEXXZ CUnknown102becb0::sub_102becb0
 0x10013ca5 func   ?vfunc1@CTEBeamRingPoint@@UAEHXZ CTEBeamRingPoint::vfunc1
 0x10013caa func   ?sub_101912d0@CPhysicsProp@@QAEEXZ CPhysicsProp::sub_101912d0
+0x10013caf func   ?vfunc313@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc313
 0x10013cb4 func   ?sub_102d99d0@CAI_InterestingPlace@@QAEPAV1@XZ CAI_InterestingPlace::sub_102d99d0
 0x10013cb9 func   ?sub_101fe6a0@CVStatInfo_t@@QAEXPAUCVStatKV@@PAX@Z CVStatInfo_t::sub_101fe6a0
 0x10013cbe func   ?sub_10187e60@CLagCompensationManager@@QAEXPAUCPlayerView10187e60@@@Z CLagCompensationManager::sub_10187e60
