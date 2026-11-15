@@ -2047,3 +2047,8 @@ extern SendTable g_1094508c;
 extern char g_1067faf0[];
 ServerClassReg g_10947f40("CItemKeyGeneric", &g_1094508c, g_1067faf0);
 // END FUNCTION
+
+// FUNCTION: 0x10408710 size=0xa
+#include "SendTable.h"
+SendTable g_1094508c;
+// END FUNCTION
