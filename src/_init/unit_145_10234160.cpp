@@ -169,3 +169,8 @@ extern SendTable g_10752758;
 extern char g_105bb1fc[];
 ServerClassReg g_107524c4("CWeaponRanged_Smg_Mac10", &g_10752758, g_105bb1fc);
 // END FUNCTION
+
+// FUNCTION: 0x10235960 size=0xa
+#include "SendTable.h"
+SendTable g_10752758;
+// END FUNCTION
