@@ -346,3 +346,9 @@ ConCommand g_106e7278("vhotkey_int", sub_100d8220, "Activates a given hotkey\n\t
 void sub_100d8490(void);
 ConCommand g_106e7a68("vdiscipline_int", sub_100d8490, "Activates a given Vampire Discipline or Kine Numina one level\n\tArguments:\t{trait_name}{difficulty #} / no arguments utilizes the last-activated discipline (defaults to the highest one available to the player)", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d9790 size=0xa
+#include "ConCommand.h"
+void sub_100d9750(void);
+ConCommand g_106e79a0("vdiscipline_last", sub_100d9750, "Activates the last activated Vampire Discipline or Kine Numina one level\n\tArguments:\t{trait_name}{difficulty #} / no arguments utilizes the last-activated discipline", 0, 0);
+// END FUNCTION
