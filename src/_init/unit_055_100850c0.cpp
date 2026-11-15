@@ -184,3 +184,9 @@ ConCommand g_106c9538("npc_fail_route", sub_100876d0, "Displays failed routes of
 void sub_100877a0(void);
 ConCommand g_106c9510("npc_route", sub_100877a0, "Displays the current route of the given NPC as a line on the screen.  Waypoints along the route are drawn as small cyan rectangles.  Line is color coded in the following manner:\n\tBlue\t- path to a node\n\tCyan\t- detour around an object (triangulation)\n\tRed\t- jump\n\tMaroon - path to final target position\n\tArguments:   \t{npc_name} / {npc_class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100878b0 size=0xa
+#include "ConCommand.h"
+void sub_10087870(void);
+ConCommand g_106c93f8("npc_select", sub_10087870, "Select or deselects the given NPC(s) for later manipulation.  Selected NPC's are shown surrounded by a red translucent box\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
+// END FUNCTION
