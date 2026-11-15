@@ -232636,6 +232636,208 @@ Vector __stdcall sub_102e7060(const Vector &startPos, const Vector &endPos, floa
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e7270 size=0x4c5
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CVProfile.h"
+#include "CGameTrace.h"
+#include "Vector.h"
+#include "CAI_MoveProbe.h"
+#include "ScopeTrace.h"
+#include "Ray_t.h"
+#include <math.h>
+struct HullTrace { Vector startpos; Vector endpos; char rest[0x54 - 0x18]; };
+struct IHullTrace { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void TraceRay(const Ray_t &ray, unsigned mask, void *filter, HullTrace *tr); };
+struct IHullClient { virtual void v0(); virtual bool v1(); char pad[0x28]; void *m2c; };
+extern IHullTrace *g_1070b254;
+extern IHullClient *g_10738964;
+void sub_10146570(void *, void *, int, int, int, int, float);
+namespace block_102e7270 {
+#pragma auto_inline(off)
+struct HullRay : Ray_t
+{
+	void InitHull(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs)
+	{
+		Vector &offset = *(Vector *)m_Extents;
+		Vector &extents = *(Vector *)m_StartOffset;
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != 0;
+		VectorSubtract(maxs, mins, extents);
+		extents *= 0.5f;
+		m_IsRay = (extents.z * extents.z + extents.y * extents.y + extents.x * extents.x) < 1e-6;
+		VectorAdd(mins, maxs, offset);
+		offset *= 0.5f;
+		m_Start[0] = offset.x + start.x;
+		m_Start[1] = offset.y + start.y;
+		m_Start[2] = offset.z + start.z;
+		offset *= -1.0f;
+		m_b32 = 0;
+		m_b33 = 0;
+		m_n34 = 0;
+	}
+};
+void sub_1026e940(const Vector &vecStart, const Vector &vecEnd, const Vector &hullMin, const Vector &hullMax, unsigned mask, void *filter, HullTrace *ptr, char bTraceOffset)
+{
+	ScopeTrace trace("UTIL_TraceHull", g_106b8540, g_106b8540);
+	HullRay ray;
+	ray.InitHull(vecStart, vecEnd, hullMin, hullMax);
+	if (bTraceOffset && !ray.m_IsRay) {
+		float f = sqrt(ray.m_StartOffset[1] * ray.m_StartOffset[1] + ray.m_StartOffset[0] * ray.m_StartOffset[0]);
+		*(float *)&ray.m_n34 = f;
+		if (f > 1e-6)
+			ray.m_b33 = 1;
+	}
+	g_1070b254->TraceRay(ray, mask, filter, ptr);
+	if (!g_10738964->v1() && g_10738964->m2c)
+		sub_10146570(ptr, (char *)ptr + 0xc, 0xff, 0xff, 0, 1, -1.0f);
+}
+#pragma auto_inline(on)
+}
+using namespace block_102e7270;
+
+struct CTraceFilterNavGround102e3290 {
+	char m_pad[0x14];
+	CTraceFilterNavGround102e3290 *sub_102e3290(int a, int b);
+};
+struct CColl102e7270 {
+	virtual void v0();
+	virtual const Vector *OBBMins();
+	virtual const Vector *OBBMaxs();
+};
+struct COuter102e7270 {
+	char m_pad0000[0x224];
+	unsigned int m_fFlags224;
+	char m_pad0228[0x270 - 0x228];
+	CColl102e7270 m_Coll;
+	char m_pad0274[0x368 - 0x274];
+	int m_nGroup368;
+};
+struct CSurfaceProps102e7270 {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual int GetData(int index);
+};
+extern CSurfaceProps102e7270 *g_10723944;
+struct CStepHeight102e7270 { float sub_102e7e20(); };
+void sub_10142aa0(const Vector *origin, const Vector *mins, const Vector *maxs, int r, int g, int b, int a, float flDuration);
+
+typedef void (CVProfile::*EnterFn102e7270)(const char *, int, const char *, bool);
+extern EnterFn102e7270 g_109f3660;
+typedef void (CVProfile::*ExitFn102e7270)();
+extern ExitFn102e7270 g_109f365c;
+struct CCycleCount102e7270 {
+	unsigned __int64 m_Int64;
+	CCycleCount102e7270() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	void End()
+	{
+		CCycleCount102e7270 cnt;
+		cnt.Sample();
+		m_Int64 = cnt.m_Int64 - m_Int64;
+	}
+};
+
+inline void ExitScope102e7270()
+{
+	CVProfile *pProf = g_109f3648;
+	if (!pProf->m_bAtRoot || pProf->m_enabled) {
+		CVProfNode *n = pProf->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			CCycleCount102e7270 *pc = (CCycleCount102e7270 *)&n->m_CurFrameTime;
+			pc->End();
+			n->m_TotalTime += pc->m_Int64;
+			g_109f3648->PopGroup();
+		}
+		if (n->m_nRecursions == 0)
+			pProf->m_pCurNode = pProf->m_pCurNode->m_pParent;
+		pProf->m_bAtRoot = (pProf->m_pCurNode == pProf->m_pRoot);
+	}
+}
+
+inline void Box102e7270(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float flDuration)
+{
+	sub_10142aa0(&origin, &mins, &maxs, r, g, b, a, flDuration);
+}
+
+#define HULLMINS (a3 ? *(const Vector *)a3 : *((COuter102e7270 *)m_pOuter)->m_Coll.OBBMins())
+#define HULLMAXS (a4 ? *(const Vector *)a4 : *((COuter102e7270 *)m_pOuter)->m_Coll.OBBMaxs())
+
+char CAI_MoveProbe::sub_102e7270(const float *pPos, unsigned int collisionMask, int a3, int a4, int a5, int a6)
+{
+	(g_109f3648->*g_109f3660)("CAI_MoveProbe_CheckStandPosition", 0, "Unaccounted", false);
+	const Vector &vecStart = *(const Vector *)pPos;
+
+	Vector vecUp(vecStart.x, vecStart.y, vecStart.z + 0.1);
+	float flDownZ = vecStart.z - ((CStepHeight102e7270 *)this)->sub_102e7e20();
+	Vector contactMin, contactMax;
+	CGameTrace tr;
+	{
+		Vector vecDown(vecStart.x, vecStart.y, flDownZ);
+
+		const Vector &vHullMins = HULLMINS;
+		const Vector &vHullMaxs = HULLMAXS;
+		contactMin.x = vHullMins.x * 0.75 + vHullMaxs.x * 0.25;
+		contactMax.x = vHullMins.x * 0.25 + vHullMaxs.x * 0.75;
+		contactMin.y = vHullMins.y * 0.75 + vHullMaxs.y * 0.25;
+		contactMax.y = vHullMins.y * 0.25 + vHullMaxs.y * 0.75;
+		contactMin.z = vHullMins.z;
+		contactMax.z = vHullMins.z;
+
+		(g_109f3648->*g_109f3660)("CAI_Motor_CheckStandPosition_Trace1", 0, "Unaccounted", false);
+		(g_109f3648->*g_109f3660)("CAI_MoveProbe_TraceHull", 0, "Unaccounted", false);
+		CTraceFilterNavGround102e3290 filter;
+		filter.sub_102e3290((int)m_pOuter, ((COuter102e7270 *)m_pOuter)->m_nGroup368);
+		sub_1026e940(vecUp, vecDown, contactMin, contactMax, collisionMask, &filter, (HullTrace *)&tr, 1);
+		(g_109f3648->*g_109f365c)();
+		if (*(short *)&vecUp.y == -1) (g_109f3648->*g_109f365c)(); else (g_109f3648->*g_109f365c)();
+	}
+
+	if (tr.m_fraction != 1.0 && sub_102e7e40(tr.m_pEnt)) {
+		if (a6)
+			*(int *)a6 = g_10723944->GetData(tr.m_surfaceProps);
+		ExitScope102e7270();
+		return 1;
+	}
+
+	if ((((COuter102e7270 *)m_pOuter)->m_fFlags224 & 0x800000) == 0x800000) {
+		Vector vecMins = HULLMINS;
+		Vector vecMaxs = HULLMAXS;
+		{
+			vecMins.z = flDownZ - vecUp.z;
+			vecMaxs.z = 0;
+			Box102e7270(vecUp, vecMins, vecMaxs, 255, 128, 128, 0, 3.0f);
+		}
+		{
+			vecMins.x = contactMin.x;
+			vecMins.y = contactMin.y;
+			vecMins.z = contactMin.z - contactMax.z;
+			vecMaxs.x = contactMax.x;
+			vecMaxs.y = contactMax.y;
+			vecMaxs.z = 0;
+			Box102e7270(vecUp + contactMax, vecMins, vecMaxs, 128, 64, 64, 0, 3.0f);
+		}
+	}
+	ExitScope102e7270();
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e7880 size=0x276
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

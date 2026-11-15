@@ -7908,6 +7908,7 @@
 0x1000b1d6 func   ?sub_10279260@@YIXPAVCBaseEntity@@@Z sub_10279260
 0x1000b1db func   ?vfunc5@CPlayerEvents@@QAEPAV1@I@Z CPlayerEvents::vfunc5
 0x1000b1e0 func   ?sub_102ecd00@CUnknown102ecd00@@QAEXH@Z CUnknown102ecd00::sub_102ecd00
+0x1000b1e5 func   ?sub_102e7270@CAI_MoveProbe@@QAEDPBMIHHHH@Z CAI_MoveProbe::sub_102e7270
 0x1000b1ea func   ?sub_10122190@CGameMovement@@QAEXXZ CGameMovement::sub_10122190
 0x1000b1ef func   ?sub_100809f0@CSceneEntity@@QAEXXZ CSceneEntity::sub_100809f0
 0x1000b1f4 func   ?sub_1032a490@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_1032a490
