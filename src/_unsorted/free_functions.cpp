@@ -97022,6 +97022,148 @@ void CUnk1014d110::sub_1014d110()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d140 size=0x524
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1014ca10.h"
+#include "CUnknown100a8340.h"
+#include "CVStatList_t.h"
+#include "CWeaponGravityGun.h"
+#include "CEHandleGet.h"
+#include "globalvars.h"
+
+#define TV(n) virtual void v##n();
+#define TV10(p) TV(p##0) TV(p##1) TV(p##2) TV(p##3) TV(p##4) TV(p##5) TV(p##6) TV(p##7) TV(p##8) TV(p##9)
+struct CRelEnt
+{
+	TV(0) TV(1) TV(2) TV(3) TV(4) TV(5) TV(6) TV(7) TV(8) TV(9)
+	TV10(1) TV10(2) TV10(3) TV10(4) TV10(5) TV10(6) TV10(7) TV10(8) TV10(9)
+	TV10(10) TV10(11) TV10(12) TV10(13) TV10(14) TV10(15) TV10(16) TV10(17) TV10(18) TV10(19) TV10(20)
+	TV(210) TV(211) TV(212) TV(213) TV(214) TV(215) TV(216)
+	virtual Vector *vfunc217();
+	TV(218) TV(219) TV(220) TV(221) TV(222) TV(223) TV(224) TV(225) TV(226) TV(227) TV(228) TV(229)
+	TV(230) TV(231) TV(232) TV(233) TV(234) TV(235)
+	virtual void vfunc236(void *pPlayer, int a);
+	char m_pad4[0xa8 - 4];
+	void *m_pa8;
+	char m_padac[0x36c - 0xac];
+	IPhysicsObject *m_p36c;
+	IPhysicsObject *VPhysicsGetObject() const { return m_p36c; }
+	const char *sub_100ab4f0();
+};
+
+struct CRelPlayer
+{
+	TV(0) TV(1) TV(2) TV(3) TV(4) TV(5) TV(6) TV(7) TV(8) TV(9)
+	TV10(1) TV10(2) TV10(3) TV10(4) TV10(5)
+	TV(60) TV(61) TV(62) TV(63) TV(64) TV(65) TV(66) TV(67)
+	virtual char vfunc68(CRelEnt *p);
+	void sub_1008bc50(CRelEnt *p);
+	void sub_1017e150(int a, float b, const char *c);
+};
+
+struct CRelVis { virtual void v0(); virtual char vfunc1(); char m_pad[0x28 - 4]; float m_f28; int m_n2c; };
+extern CRelVis *g_1071a4a4;
+extern CRelVis *g_1071a44c;
+extern const char *sub_101d3730(const char *, ...);
+extern CVStatList_t g_109f0b40;
+extern int atexit(void (*)(void));
+void sub_10012a8a();
+__declspec(dllimport) void DevMsg(const char *, ...);
+inline void *operator new(unsigned int, void *p) { return p; }
+
+inline CVStatList_t *RelFind0(CVStatListSet *pSet)
+{
+	for (int i = 0; i < pSet->m_nLists; i++) {
+		if (pSet->m_pLists[i]->m_field10 == 0)
+			return pSet->m_pLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		new (&g_109f0b40) CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+
+inline float RelLength(const Vector &v)
+{
+	return FastSqrt(v.x * v.x + (v.y * v.y + v.z * v.z));
+}
+
+inline IPhysicsObject *RelHeldPhys(CGlobalEntityList *pEnts, const unsigned int *ph)
+{
+	IPhysicsObject *pPhys = 0;
+	if (pEnts->sub_100290c0(ph))
+		pPhys = ((CRelEnt *)pEnts->sub_100290c0(ph))->m_p36c;
+	return pPhys;
+}
+
+// TARGET: CWeaponGravityGun::sub_1014d140
+void CWeaponGravityGun::sub_1014d140()
+{
+	m_hB18 = -1;
+	m_hB1c = -1;
+	m_bB24 = 0;
+	((CUnknown1014ca10 *)this)->sub_1014ca10(0xff, 0, 0);
+	m_nB14 = 0;
+	const unsigned int *ph = (const unsigned int *)&m_hHeld918;
+	CGlobalEntityList *pEnts = g_10566458;
+	if (pEnts->sub_100290c0(ph))
+	{
+		IPhysicsObject *pPhys = pEnts->sub_100290c0(ph) ? ((CRelEnt *)pEnts->sub_100290c0(ph))->VPhysicsGetObject() : 0;
+		if (pPhys)
+		{
+			float flMass = pPhys->vfunc12();
+			CBaseEntity *pOwner = (CBaseEntity *)sub_102521f0();
+			void *pPlayer;
+			if (pOwner && (pPlayer = *(void **)((char *)pOwner + 0xa8)))
+			{
+				((CUnknown100a8340 *)m_hHeld918.Get())->sub_100a8340((CBaseEntity *)pPlayer, 10.0f);
+				RelFind0(CVStatListSet::Of(pPlayer))->sub_10201100(0x1a, flMass);
+				Vector vecVelocity, vecAngVel;
+				pPhys->vfunc40((float *)&vecVelocity, (float *)&vecAngVel);
+				float flSpeed = RelLength(vecVelocity) * 0.055555556f;
+				if ((g_1071a4a4->vfunc1() ? 0.0f : g_1071a4a4->m_f28) <= flSpeed && 0 < m_nB28)
+				{
+					if (!g_1071a44c->vfunc1() && g_1071a44c->m_n2c)
+					{
+						CRelEnt *pHeld = (CRelEnt *)m_hHeld918.Get();
+						float flD1 = 0, flD2 = 0;
+						pPhys->vfunc18((const Vector *)&flD1, (Vector *)&flD2);
+						DevMsg("Physics object momentum throw triggering criminal act (%d).  mass: %.2f lbs (%.2f kg) damping: %.2f %.2f (%.2f) pos: (%f, %f, %f)\n", m_nB28, flMass * 2.2f, flMass, flD1, flD2, m_controller93c.m_vec5c.x, pHeld->vfunc217()->x, pHeld->vfunc217()->y, pHeld->vfunc217()->z);
+					}
+					((CRelPlayer *)pPlayer)->sub_1017e150(m_nB28, -1.0f, sub_101d3730("PhysicsMomentumThrow %s", m_hHeld918.Get() ? ((CRelEnt *)m_hHeld918.Get())->sub_100ab4f0() : "UNKNOWN"));
+				}
+			}
+			if (!g_1071a44c->vfunc1() && g_1071a44c->m_n2c)
+			{
+				CRelEnt *pHeld = (CRelEnt *)m_hHeld918.Get();
+				float flD1 = 0, flD2 = 0;
+				pPhys->vfunc18((const Vector *)&flD1, (Vector *)&flD2);
+				DevMsg("Dropping physics object.  mass: %.2f lbs (%.2f kg) damping: %.2f %.2f (%.2f) pos: (%f, %f, %f)\n", flMass * 2.2f, flMass, flD1, flD2, m_controller93c.m_vec5c.x, pHeld->vfunc217()->x, pHeld->vfunc217()->y, pHeld->vfunc217()->z);
+			}
+		}
+		CRelPlayer *pPl;
+		CBaseEntity *pOwner2 = (CBaseEntity *)sub_102521f0();
+		if (pOwner2 && (pPl = *(CRelPlayer **)((char *)pOwner2 + 0xa8)))
+		{
+			((CRelEnt *)m_hHeld918.Get())->vfunc236(pPl, 0);
+			if (pPl->vfunc68((CRelEnt *)m_hHeld918.Get()))
+				pPl->sub_1008bc50((CRelEnt *)m_hHeld918.Get());
+		}
+		m_controller93c.sub_10148a20();
+		*(unsigned int *)&m_hHeld918 = 0xffffffff;
+	}
+	m_bB25 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014dd50 size=0x33b
 #include "CSoundControllerImp.h"
 #include "CTriggerProximity.h"
