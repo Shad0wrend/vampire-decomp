@@ -109,3 +109,8 @@ ConVar g_10936f28("debug_upward_hit_force", ".1", 0);
 void sub_1033e960(void);
 ConCommand g_10936e24("frenzyplayer", sub_1033e960, "yeah, kick player into frenzy", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10342f00 size=0xa
+#include "ConVar.h"
+ConVar g_10936d78("meleedebug", "0", 0);
+// END FUNCTION
