@@ -1173,3 +1173,11 @@ SendTable g_10945ec4;
 int sub_103ff9e0(void);
 int g_10945ec0 = ((int (*)(int))sub_103ff9e0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103ffb20 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10946ea0;
+extern char g_1067f67c[];
+ServerClassReg g_10946fa4("CItemGWerewolfBlood", &g_10946ea0, g_1067f67c);
+// END FUNCTION
