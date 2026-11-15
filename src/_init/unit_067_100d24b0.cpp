@@ -267,3 +267,9 @@ ConCommand g_106e72c8("init_hotkeys", sub_100d7340, "Sets hotkeys to initial sta
 void sub_100d7400(void);
 ConCommand g_106e7b30("vreactionlist", sub_100d7400, "Lists the available Vampire Reactions", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d7550 size=0xa
+#include "ConCommand.h"
+void sub_100d7520(void);
+ConCommand g_106e7bac("vreactions", sub_100d7520, "Lists all Vampire Reactions being applied to the local player.", 0, 0);
+// END FUNCTION
