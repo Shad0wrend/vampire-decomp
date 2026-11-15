@@ -97313,6 +97313,141 @@ void CWeaponGravityGun::sub_1014d140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d7c0 size=0x3f4
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CWeaponGravityGun.h"
+#include "CVStatList_t.h"
+#include "globalvars.h"
+#include "CEHandleGet.h"
+
+#define TV(n) virtual void v##n();
+#define TV10(p) TV(p##0) TV(p##1) TV(p##2) TV(p##3) TV(p##4) TV(p##5) TV(p##6) TV(p##7) TV(p##8) TV(p##9)
+struct CPickPhys
+{
+	virtual void v0(); virtual void v1(); virtual void vfunc2();
+	TV(3) TV(4) TV(5) TV(6) TV(7) TV(8) TV(9) TV(10) TV(11)
+	virtual float vfunc12();
+	TV(13) TV(14) TV(15) TV(16) TV(17)
+	virtual void vfunc18(float *a, float *b);
+};
+struct CPickEnt
+{
+	TV(0)
+	virtual unsigned int *vfunc1();
+	TV(2) TV(3) TV(4) TV(5) TV(6) TV(7) TV(8) TV(9)
+	TV10(1) TV10(2) TV10(3) TV10(4) TV10(5) TV10(6) TV10(7) TV10(8) TV10(9)
+	TV10(10) TV10(11) TV10(12) TV10(13) TV10(14) TV10(15) TV10(16) TV10(17) TV10(18)
+	TV(190) TV(191)
+	virtual Vector *vfunc192(Vector *pOut);
+	TV(193) TV(194) TV(195) TV(196) TV(197) TV(198) TV(199)
+	TV10(20)
+	TV(210) TV(211) TV(212) TV(213) TV(214) TV(215) TV(216)
+	virtual Vector *vfunc217();
+	TV(218) TV(219)
+	virtual Vector *vfunc220();
+	TV(221) TV(222) TV(223) TV(224) TV(225) TV(226) TV(227) TV(228) TV(229)
+	TV(230) TV(231) TV(232) TV(233) TV(234)
+	virtual void vfunc235(void *p);
+	char m_pad4[0xa8 - 4];
+	void *m_pa8;
+	char m_padac[0x36c - 0xac];
+	CPickPhys *m_p36c;
+	CPickPhys *GetObj() { return m_p36c; }
+};
+inline CPickPhys *ObjOf(CPickEnt *p) { return p ? p->GetObj() : 0; }
+struct CPickRec { int sub_1006cb60(int level); };
+struct CPickTable { CPickRec *sub_1006cff0(int h); int sub_1006cf30(const char *name); };
+extern CPickTable g_106c7c34;
+#define StatLevel(h, level) (g_106c7c34.sub_1006cff0(h)->sub_1006cb60(level))
+struct CPickFlag { virtual void v0(); virtual char vfunc1(); char m_pad[0x2c - 4]; int m_n2c; };
+extern CPickFlag *g_1071a44c;
+extern unsigned char g_1071a3ec;
+extern int g_1071a3bc;
+extern int g_1071a444;
+extern int g_1071a4e4;
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+// TARGET: CWeaponGravityGun::sub_1014d7c0
+void CWeaponGravityGun::sub_1014d7c0(CBaseEntity *pPick, const Vector *a2, const Vector *a3, CBaseEntity *a4)
+{
+	CPickEnt *pEnt = (CPickEnt *)pPick;
+	m_hHeld918 = pPick;
+	m_b914 = 0;
+	CPickPhys *pPhys = ObjOf(pEnt);
+	if (pPhys) {
+		*(CBaseEntity **)&m_fl91c = a4;
+		CPickEnt *pOwner = (CPickEnt *)sub_10252240();
+		if (pOwner) {
+			Vector vecCenter;
+			m_controller93c.sub_101487a0((CBaseEntity *)pEnt, (IPhysicsObject *)pPhys, pEnt->vfunc192(&vecCenter), (CBaseEntity *)pOwner);
+			float flMass = pPhys->vfunc12();
+			void *pPl = pOwner->m_pa8;
+			if (pPl) {
+				float flLimit = flMass * 2.2f; float flL2; if ((int)pPl == -1) flL2 = flLimit; else flL2 = flLimit;
+				if (!(g_1071a3ec & 1)) {
+					g_1071a3ec |= 1;
+					g_1071a3bc = g_106c7c34.sub_1006cf30("Physics_Throw_Criminal_Value");
+				}
+				if (!(g_1071a3ec & 2)) {
+					g_1071a3ec |= 2;
+					g_1071a444 = g_106c7c34.sub_1006cf30("Physics_Lift_Supernatural_Value");
+				}
+				if (!(g_1071a3ec & 4)) {
+					g_1071a3ec |= 4;
+					g_1071a4e4 = g_106c7c34.sub_1006cf30("Physics_Drag_Supernatural_Value");
+				}
+				m_nB28 = 5;
+				do {
+					if ((float)StatLevel(g_1071a3bc, m_nB28) <= flL2)
+						break;
+				} while (--m_nB28 > 0);
+				m_nB2c = 5;
+				do {
+					if ((float)StatLevel(g_1071a444, m_nB2c) <= flL2)
+						break;
+				} while (--m_nB2c > 0);
+				m_nB30 = 5;
+				do {
+					if ((float)StatLevel(g_1071a4e4, m_nB30) <= flL2)
+						break;
+				} while (--m_nB30 > 0);
+			}
+			m_flB34 = 50000.0f;
+			m_controller93c.m_vec5c.y = vfunc278();
+			if (!g_1071a44c->vfunc1() && g_1071a44c->m_n2c) {
+				float flSpeedDamp = 0, flRotDamp = 0;
+				pPhys->vfunc18(&flSpeedDamp, &flRotDamp);
+				DevMsg("Picking up physics object.  mass: %.2f lbs (%.2f kg) damping: %.2f %.2f (%.2f) pos: (%f, %f, %f)\n", flMass * 2.2f, flMass, flSpeedDamp, flRotDamp, m_controller93c.m_vec5c.x, pEnt->vfunc217()->x, pEnt->vfunc217()->y, pEnt->vfunc217()->z);
+			}
+			Vector *pv = pEnt->vfunc220();
+			m_fl930 = pv->x;
+			m_fl934 = pv->y;
+			m_fl938 = pv->z;
+			m_hB1c = -1;
+			m_hB18 = -1;
+			pPhys->vfunc2();
+			sub_1014c880((CBaseEntity *)pEnt);
+			CPickEnt *pWeaponOwner = (CPickEnt *)sub_102521f0();
+			void *pPlayer;
+			if (!pWeaponOwner)
+				pPlayer = 0;
+			else {
+				pPlayer = pWeaponOwner->m_pa8;
+				if (pPlayer)
+					pEnt->vfunc235(pPlayer);
+			}
+			m_bB25 = 1;
+			if (pPlayer)
+				CVStatListSet::Of(pPlayer)->Find(0)->sub_10200fc0(0x1a, (int)flMass);
+		}
+	} else {
+		m_hHeld918 = (CBaseEntity *)0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014dd50 size=0x33b
 #include "CSoundControllerImp.h"
 #include "CTriggerProximity.h"
