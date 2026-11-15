@@ -105,3 +105,8 @@ ConVar g_10924938("ent_trace_hints", "0", 0, "When ent_trace is on, this will du
 #include "ConVar.h"
 ConVar g_10924ed8("ent_trace_melee", "0", 0, "When ent_trace is on, this will dump info about melee also.");
 // END FUNCTION
+
+// FUNCTION: 0x1028bf70 size=0xa
+#include "ConVar.h"
+ConVar g_109243e8("ent_trace_sound", "0", 0, "When ent_trace is on, this will dump info about sounds also.");
+// END FUNCTION
