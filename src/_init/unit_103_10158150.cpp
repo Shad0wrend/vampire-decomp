@@ -5,3 +5,8 @@
 #include "CSolidSetDefaults.h"
 CSolidSetDefaults g_107238e0;
 // END FUNCTION
+
+// FUNCTION: 0x10158190 size=0xa
+#include "ConVar.h"
+ConVar g_107238f0("phys_rolling_drag", "1", 8192);
+// END FUNCTION
