@@ -133,3 +133,8 @@ ServerClassReg g_10945b28("CWeaponWallet", &g_10946d74, g_1067f254);
 #include "SendTable.h"
 SendTable g_10946d74;
 // END FUNCTION
+
+// FUNCTION: 0x103f62b0 size=0x5
+int sub_103f62f0(void);
+int g_10946d70 = ((int (*)(int))sub_103f62f0)(0);
+// END FUNCTION
