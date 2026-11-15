@@ -18,3 +18,8 @@ ServerClassReg g_1074f380("CBaseTerminal", &g_1074f6ec, g_105af258);
 #include "SendTable.h"
 SendTable g_1074f6ec;
 // END FUNCTION
+
+// FUNCTION: 0x102173a0 size=0x5
+int sub_102173e0(void);
+int g_1074f6e8 = ((int (*)(int))sub_102173e0)(0);
+// END FUNCTION
