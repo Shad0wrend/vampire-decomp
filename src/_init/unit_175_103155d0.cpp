@@ -35,3 +35,8 @@ ConVar g_10936e98("debug_show_melee_attack_boxes_missed", "0", 0, "Show some att
 #include "ConVar.h"
 ConVar g_10937a88("debug_viewcone_back_dist", "40", 0, "Change the distance we bump back the view cone.");
 // END FUNCTION
+
+// FUNCTION: 0x1031a560 size=0x5
+#include "CRelationshipSaveDataOps.h"
+CRelationshipSaveDataOps g_10937a84;
+// END FUNCTION
