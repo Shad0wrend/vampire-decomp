@@ -13,3 +13,8 @@ ServerClassReg g_106c53a4("CTESmoke", &g_106c5388, g_10544a40);
 #include "SendTable.h"
 SendTable g_106c5388;
 // END FUNCTION
+
+// FUNCTION: 0x10067380 size=0x5
+int sub_100673c0(void);
+int g_106c5384 = ((int (*)(int))sub_100673c0)(0);
+// END FUNCTION
