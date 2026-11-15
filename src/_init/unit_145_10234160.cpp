@@ -36,3 +36,8 @@ ServerClassReg g_107523fc("CWeaponRanged_Pistol_Anaconda", &g_10751d60, g_105b6c
 #include "SendTable.h"
 SendTable g_10751d60;
 // END FUNCTION
+
+// FUNCTION: 0x102345a0 size=0x5
+int sub_102345e0(void);
+int g_10751d5c = ((int (*)(int))sub_102345e0)(0);
+// END FUNCTION
