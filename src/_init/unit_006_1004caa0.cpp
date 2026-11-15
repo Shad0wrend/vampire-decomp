@@ -13,3 +13,8 @@ extern SendTable g_106bdb8c;
 extern char g_1053cf20[];
 ServerClassReg g_106bdba8("CPhysBox", &g_106bdb8c, g_1053cf20);
 // END FUNCTION
+
+// FUNCTION: 0x1004dc30 size=0xa
+#include "SendTable.h"
+SendTable g_106bdb8c;
+// END FUNCTION
