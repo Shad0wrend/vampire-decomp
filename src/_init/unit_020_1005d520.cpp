@@ -13,3 +13,8 @@ ServerClassReg g_106c0428("CTEBeamSpline", &g_106c0444, g_106c0464);
 #include "SendTable.h"
 SendTable g_106c0444;
 // END FUNCTION
+
+// FUNCTION: 0x1005d650 size=0x5
+int sub_1005d690(void);
+int g_106c0440 = ((int (*)(int))sub_1005d690)(0);
+// END FUNCTION
