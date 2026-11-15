@@ -28,3 +28,8 @@ ServerClassReg g_106ccf4c("CBaseAnimating", &g_106c9954, g_1054d51c);
 #include "SendTable.h"
 SendTable g_106c9954;
 // END FUNCTION
+
+// FUNCTION: 0x1008aab0 size=0x5
+int sub_1008aaf0(void);
+int g_106c9950 = ((int (*)(int))sub_1008aaf0)(0);
+// END FUNCTION
