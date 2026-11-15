@@ -36,3 +36,8 @@ CPyObjStrSaveRestoreDataOps g_106e6ffc;
 #include "CVTSDependencySaveRestoreDataOps.h"
 CVTSDependencySaveRestoreDataOps g_106e6ff8;
 // END FUNCTION
+
+// FUNCTION: 0x100d0c50 size=0x5
+#include "CVariantSaveDataOps.h"
+CVariantSaveDataOps g_106e70dc;
+// END FUNCTION
