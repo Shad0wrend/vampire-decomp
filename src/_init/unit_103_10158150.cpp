@@ -10,3 +10,8 @@ CSolidSetDefaults g_107238e0;
 #include "ConVar.h"
 ConVar g_107238f0("phys_rolling_drag", "1", 8192);
 // END FUNCTION
+
+// FUNCTION: 0x101589a0 size=0x5
+#include "CPhysicsGameTrace.h"
+CPhysicsGameTrace g_107238e8;
+// END FUNCTION
