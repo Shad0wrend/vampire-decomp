@@ -1991,3 +1991,8 @@ extern SendTable g_10947dc8;
 extern char g_1067f94c[];
 ServerClassReg g_1094914c("CItemGSewerBook1", &g_10947dc8, g_1067f94c);
 // END FUNCTION
+
+// FUNCTION: 0x104074c0 size=0xa
+#include "SendTable.h"
+SendTable g_10947dc8;
+// END FUNCTION
