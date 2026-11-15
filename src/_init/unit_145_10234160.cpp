@@ -64,3 +64,8 @@ SendTable g_10751f28;
 int sub_102349e0(void);
 int g_10751f24 = ((int (*)(int))sub_102349e0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10234b60 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10751a48(&CPrecacheRegister::PrecacheFn_Other, "item_w_crossbow");
+// END FUNCTION
