@@ -110166,6 +110166,94 @@ int CBasePlayerUnit10182210::sub_10182210(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10182260 size=0x154
+#include "CBasePlayer.h"
+#include "CUtlVector64.h"
+#include "QuestJournal.h"
+
+__declspec(dllimport) int Q_strnicmp(const char *a, const char *b, int n);
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int n);
+
+struct CQuestRecord
+{
+	char m_szName[0x30];
+	int m_a;
+	int m_b;
+	int m_c;
+	char m_bFlag;
+};
+
+struct CQuestVec : CUtlVector64
+{
+	void sub_10185260(int elem, int num);	// ShiftElementsRight (stub 0x100046ec)
+};
+
+struct CQuestPlayerView
+{
+	char m_pad0000[0x1d68];
+	CQuestRecord *m_pRecords;	// 0x1d68
+	int m_nAlloc;	// 0x1d6c
+	int m_nGrow;	// 0x1d70
+	int m_nRecords;	// 0x1d74
+	CQuestRecord *m_pElems;	// 0x1d78
+	char m_pad1d7c[0x1dac - 0x1d7c];
+	int m_n1dac;	// 0x1dac
+
+	CQuestRecord &Rec(int i) { return m_pRecords[i]; }
+	CQuestVec *Vec() { return (CQuestVec *)&m_pRecords; }
+	void sub_10182260(const char *name, int a, int b, int c);
+};
+
+void sub_101cebc0(CBasePlayer *pPlayer, int a, int b);	// stub 0x100138c2
+extern QuestJournal g_1074f8f8;
+struct QuestJournalV { void *sub_10221b10(int a); };
+
+inline int FindQuestRecord(CQuestPlayerView *p, const char *name)
+{
+    for (int i = 0; i < p->m_nRecords; i++) {
+        if (Q_strnicmp(p->Rec(i).m_szName, name, 0x30) == 0)
+            return i;
+    }
+    return -1;
+}
+
+// TARGET: sub_10182260
+void CQuestPlayerView::sub_10182260(const char *name, int a, int b, int c)
+{
+    CQuestPlayerView *p = this;
+    CBasePlayer *self = (CBasePlayer *)this;
+    unsigned int idx = FindQuestRecord(p, name);
+    if (idx == -1) {
+        CQuestRecord rec;
+        Q_strncpy(rec.m_szName, name, 0x30);
+        rec.m_a = a;
+        rec.m_b = b;
+        rec.m_c = c;
+        rec.m_bFlag = 1;
+        int elem = p->m_nRecords;
+        CQuestVec *v = p->Vec();
+        v->sub_101851a0(1);
+        v->sub_10185260(elem, 1);
+        CQuestRecord *q = &p->Rec(elem);
+        if (q)
+            *q = rec;
+        sub_101cebc0(self, 8, 0);
+        p->m_n1dac = *(int *)((char *)g_1074f8f8.sub_10221b10(a) + 8);
+        return;
+    }
+    if (p->m_pRecords[idx].m_a != a || p->m_pRecords[idx].m_b != b || p->m_pRecords[idx].m_c != c) {
+        p->m_pRecords[idx].m_a = a;
+        p->m_pRecords[idx].m_b = b;
+        p->m_pRecords[idx].m_c = c;
+        p->m_pRecords[idx].m_bFlag = 1;
+        sub_101cebc0(self, 8, 0);
+        void *pq;
+        if (idx == -1) pq = g_1074f8f8.sub_10221b10(a); else pq = g_1074f8f8.sub_10221b10(a);
+        p->m_n1dac = *(int *)((char *)pq + 8);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10182420 size=0x78
 #include "utlrbtree.h"
 #include "CUnknown10182420.h"

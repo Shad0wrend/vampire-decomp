@@ -7880,6 +7880,7 @@
 0x1000b186 func   ?sub_100b3350@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100b3350
 0x1000b18b func   ?sub_102b7f40@CAI_BaseNPCTroika@@QAE_NXZ CAI_BaseNPCTroika::sub_102b7f40
 0x1000b190 func   ?vfunc113@CWorld@@UAEXXZ CWorld::vfunc113
+0x1000b195 func   ?sub_10182260@CQuestPlayerView@@QAEXPBDHHH@Z CQuestPlayerView::sub_10182260
 0x1000b19a func   ?vfunc322@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc322
 0x1000b19f func   ?sub_100b7a00@CUnknown100b7a00@@QAEPADXZ CUnknown100b7a00::sub_100b7a00
 0x1000b1a4 func   ??0CTEBaseBeam@@QAE@PBD@Z CTEBaseBeam::CTEBaseBeam
