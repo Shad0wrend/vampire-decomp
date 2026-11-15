@@ -1942,3 +1942,8 @@ ServerClassReg g_10943da4("CItemGGargoyleBook", &g_10943d4c, g_1067f91c);
 #include "SendTable.h"
 SendTable g_10943d4c;
 // END FUNCTION
+
+// FUNCTION: 0x10406d30 size=0x5
+int sub_10406d70(void);
+int g_10943d48 = ((int (*)(int))sub_10406d70)(0);
+// END FUNCTION
