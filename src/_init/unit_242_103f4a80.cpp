@@ -1659,3 +1659,11 @@ SendTable g_10944e70;
 int sub_10404270(void);
 int g_10944e6c = ((int (*)(int))sub_10404270)(0);
 // END FUNCTION
+
+// FUNCTION: 0x104043b0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109448c4;
+extern char g_1067f82c[];
+ServerClassReg g_10946510("CItemGWarrLedger1", &g_109448c4, g_1067f82c);
+// END FUNCTION
