@@ -154,3 +154,9 @@ ConCommand g_106c9420("npc_freeze", sub_10086fb0, "Selected NPC(s) will freeze i
 void sub_10087170(void);
 ConCommand g_106c9600("npc_go", sub_10087170, "Selected NPC(s) will go to the location that the player is looking (shown with a purple box)\n\tArguments:\t-none-", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100874c0 size=0xa
+#include "ConCommand.h"
+void sub_100874a0(void);
+ConCommand g_106c96c8("npc_go_random", sub_100874a0, "Sends all selected NPC(s) to a random node.\n\tArguments:   \t-none-", 0, 0);
+// END FUNCTION
