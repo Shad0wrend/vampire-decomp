@@ -189751,14 +189751,18 @@ void sub_10242390(const float *v, float *out)
         out[1] = 2.0f;
     }
 }
+inline float FloatMakePositive( vec_t f )
+{
+	return fabs( f );
+}
 void __cdecl sub_10242640(double tPlus, double tMinus, Vector axisU0, Vector axisU1, Vector axisV0, Vector axisV1, Vector axisOrigin, Vector pt, int projU, double &s, double &t)
 {
 	double sDenomPlus = ( axisU0[projU] * ( 1 - tPlus ) ) + ( axisU1[projU] * tPlus );
 	double sDenomMinus = ( axisU0[projU] * ( 1 - tMinus ) ) + ( axisU1[projU] * tMinus );
 	double sPlus = -99999.0, sMinus = -99999.0;
-	if( fabs( sDenomPlus ) >= 1e-5 )
+	if( FloatMakePositive( sDenomPlus ) >= 1e-5 )
 		sPlus = ( pt[projU] - axisOrigin[projU] - ( axisV0[projU] * tPlus ) ) / sDenomPlus; 
-	if( fabs( sDenomMinus ) >= 1e-5 )
+	if( FloatMakePositive( sDenomMinus ) >= 1e-5 )
 		sMinus = ( pt[projU] - axisOrigin[projU] - ( axisV0[projU] * tMinus ) ) / sDenomMinus; 
 	if( ( tPlus >= 0.0 ) && ( tPlus <= 1.0 ) && ( sPlus >= 0.0 ) && ( sPlus <= 1.0 ) ) { s = sPlus; t = tPlus; return; }
 	if( ( tMinus >= 0.0 ) && ( tMinus <= 1.0 ) && ( sMinus >= 0.0 ) && ( sMinus <= 1.0 ) ) { s = sMinus; t = tMinus; return; }
