@@ -12479,6 +12479,7 @@
 0x10010fb9 func   ?sub_101bb760@@YIXPAXHM@Z sub_101bb760
 0x10010fbe func   ?sub_1017fd60@CUnknown1017fd60@@QAEXHPAVCBaseEntity@@@Z CUnknown1017fd60::sub_1017fd60
 0x10010fc3 func   ?vfunc2@CBaseTempEntity@@UAEPAV1@I@Z CBaseTempEntity::vfunc2
+0x10010fc8 func   ?sub_10300140@CPfView@@QAEDPAUCAI_PathfinderOuter@@PBVVector@@1MPAV3@@Z CPfView::sub_10300140
 0x10010fcd func   ?vfunc438@CNPC_VTaxiDriver@@QAEHXZ CNPC_VTaxiDriver::vfunc438
 0x10010fd2 func   ?vfunc5@CPhysForce@@QAEPAV1@I@Z CPhysForce::vfunc5
 0x10010fd7 func   ?sub_103c6df0@CNPC_VVampireBoss@@QAEXHPBD@Z CNPC_VVampireBoss::sub_103c6df0

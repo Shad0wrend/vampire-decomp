@@ -242279,6 +242279,124 @@ void __stdcall sub_103000a0(const Vector &a, const Vector &b, float num, float d
 }
 // END FUNCTION
 
+// FUNCTION: 0x10300140 size=0x3b7
+#include "CAI_Pathfinder.h"
+#include "CAI_BaseNPC.h"
+#include "CBitString.h"
+#include "CPairFields102dda40.h"
+
+// The pathfinder's own helpers (called with this in ecx, ignored).
+struct CAI_PathfinderX : CAI_Pathfinder
+{
+	float sub_10300010(const Vector &vecFrom, const Vector &vecTo, const Vector &vecDir);
+	void sub_103000a0(const Vector &a, const Vector &b, float num, float den, Vector &out);
+};
+
+struct NpcView : CAI_PathfinderOuter
+{
+	CAI_Pathfinder *GetNav() { return m_pPathfinder; }
+};
+
+struct CPfView : CAI_Pathfinder
+{
+	char sub_10300140(CAI_PathfinderOuter *pNPC, const Vector *pStart, const Vector *pDir, float flDist, Vector *pOut);
+};
+
+// TARGET: CPfView::sub_10300140
+char CPfView::sub_10300140(CAI_PathfinderOuter *pNPC, const Vector *pStart, const Vector *pDir, float flDist, Vector *pOut)
+{
+	CAI_PathfinderX *pThis = (CAI_PathfinderX *)this;
+
+	CAI_PathfinderNetwork *pNet = pNPC->m_pPathfinder->m_pNetwork;
+	int nNodes = pNet->m_nNodes;
+	if (nNodes) {
+		int cur = pNet->sub_102f3c10(pNPC, &pStart->x);
+		if (cur == -1) {
+			*pOut = *pStart;
+			return 0;
+		}
+		float flRemaining = pDir->Length();
+		if (flRemaining < 0.01f) {
+			*pOut = *pStart;
+			return 1;
+		}
+		flRemaining *= flDist;
+
+		CBitString visited;
+		visited.sub_102fe9a0(nNodes);
+		sub_10307890(&visited);
+
+		CAI_PathfinderNode **ppNodes = ((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder->m_pNetwork->m_ppNodes;
+		int hull = *(int *)((char *)pNPC + 0x1568);
+		float flCost;
+		Vector vecPos;
+		{
+			float flDot = pThis->sub_10300010(*pStart, *(Vector *)ppNodes[cur]->sub_102fb0d0(&vecPos.x, hull), *pDir);
+			if (flDot < 0) {
+				flCost = ((NpcView *)pNPC)->GetNav()->sub_102f1860(1, &pStart->x, ppNodes[cur]->sub_102fb0d0(&vecPos.x, hull));
+				flRemaining = flCost + flCost + flRemaining;
+			} else {
+				flCost = ((NpcView *)pNPC)->GetNav()->sub_102f1860(1, &pStart->x, ppNodes[cur]->sub_102fb0d0(&vecPos.x, hull));
+				if (flCost >= flRemaining) {
+					pThis->sub_103000a0(*pStart, *(Vector *)ppNodes[cur]->sub_102fb0d0(&vecPos.x, hull), flRemaining, flCost, *pOut);
+					visited.sub_100bf6a0();
+					return 1;
+				}
+				flRemaining -= flCost;
+			}
+		}
+		for (;;) {
+			visited.m_pData[cur >> 5] |= 1 << (cur & 0x1f);
+			int best = -1;
+			float flBest = 0;
+			CAI_PathfinderNode *pNode = ppNodes[cur];
+			unsigned int mask = 0;
+			int nLinks = *(int *)((char *)pNode + 0x78);
+			CPairFields102dda40 **ppLinks = *(CPairFields102dda40 ***)((char *)pNode + 0x7c);
+			for (int i = 0; i < nLinks; i++) {
+				CPairFields102dda40 *pLink = ppLinks[i];
+				if (!sub_102ff960(pLink, cur))
+					continue;
+				int other = pLink->sub_102dda40(cur);
+				if (visited.m_pData[other >> 5] & (1 << (other & 0x1f)))
+					continue;
+				float flDot = pThis->sub_10300010(*pStart, *(Vector *)ppNodes[other]->sub_102fb0d0(&vecPos.x, hull), *pDir);
+				if (flDot > flBest) {
+					best = other;
+					flBest = flDot;
+					mask = ((CAI_BaseNPC *)pNPC)->vfunc513() & pLink->m_iAcceptedMoveTypes[hull];
+				}
+			}
+			if (best == -1) {
+				Vector vecEnd;
+				*pOut = *(Vector *)pNode->sub_102fb0d0(&vecEnd.x, hull);
+				visited.sub_100bf6a0();
+				return 1;
+			}
+			CAI_Pathfinder *pNav = pNPC->m_pPathfinder;
+			{
+			Vector vecA;
+			float flCost2;
+			{
+				Vector vecB;
+				flCost2 = pNav->sub_102f1860(mask, pNode->sub_102fb0d0(&vecB.x, hull), ppNodes[best]->sub_102fb0d0(&vecA.x, hull));
+			}
+			if (flCost2 >= flRemaining) {
+				Vector vecC;
+				pThis->sub_103000a0(*(Vector *)pNode->sub_102fb0d0(&vecA.x, hull), *(Vector *)ppNodes[best]->sub_102fb0d0(&vecC.x, hull), flRemaining, flCost2, *pOut);
+				visited.sub_100bf6a0();
+				return 1;
+			}
+			flRemaining -= flCost2;
+			}
+			cur = best;
+		}
+	}
+	*pOut = *pStart;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103005f0 size=0xc1
 #include "CAI_BaseNPC.h"
 #include "CAI_Waypoint.h"
