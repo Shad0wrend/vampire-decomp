@@ -165,3 +165,8 @@ ConVar g_10938818("sk_npc_dmg_flamethrower_round", "0", 0);
 #include "ConVar.h"
 ConVar g_109387d0("sk_max_flamethrower_round", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103544b0 size=0xa
+#include "ConVar.h"
+ConVar g_10939198("sk_plr_dmg_thirtyeight_round", "0", 0);
+// END FUNCTION
