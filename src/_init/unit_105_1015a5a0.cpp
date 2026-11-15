@@ -61,3 +61,8 @@ ConVar g_10725b58("sk_player_arm", "1", 0);
 #include "ConVar.h"
 ConVar g_10725990("sk_player_leg", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1015ac80 size=0x5
+int sub_1015acc0(void);
+int g_107239c4 = ((int (*)(int))sub_1015acc0)(0);
+// END FUNCTION
