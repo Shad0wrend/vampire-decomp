@@ -45,3 +45,8 @@ CRelationshipSaveDataOps g_10937a84;
 int * sub_1031a600(void);
 int * g_10936edc = ((int * (*)(int))sub_1031a600)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10321710 size=0xa
+#include "SendTable.h"
+SendTable g_10937c6c;
+// END FUNCTION
