@@ -28,3 +28,11 @@ int g_10941660 = ((int (*)(int))sub_103e4290)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_109424f0(&CPrecacheRegister::PrecacheFn_Other, "item_w_baseball_bat");
 // END FUNCTION
+
+// FUNCTION: 0x103e44d0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10940dc4;
+extern char g_10667844[];
+ServerClassReg g_109424fc("CWeaponMelee_BushHook", &g_10940dc4, g_10667844);
+// END FUNCTION
