@@ -340,3 +340,11 @@ CPrecacheRegister g_10942514(&CPrecacheRegister::PrecacheFn_Other, "item_w_torch
 int sub_103e7470(void);
 int g_10940de0 = ((int (*)(int))sub_103e7470)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103e79a0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10940d00;
+extern char g_1067210c[];
+ServerClassReg g_10942438("CWeaponMelee_SeveredArm", &g_10940d00, g_1067210c);
+// END FUNCTION
