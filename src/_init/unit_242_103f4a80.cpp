@@ -1127,3 +1127,8 @@ extern SendTable g_10949030;
 extern char g_1067f64c[];
 ServerClassReg g_109449a0("CItemGLillyPurse", &g_10949030, g_1067f64c);
 // END FUNCTION
+
+// FUNCTION: 0x103ff3c0 size=0xa
+#include "SendTable.h"
+SendTable g_10949030;
+// END FUNCTION
