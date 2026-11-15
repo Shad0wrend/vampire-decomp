@@ -65,3 +65,9 @@ ConCommand g_106c9358("ai_resume", sub_10085900, "If NPC is stepping through tas
 void sub_100859c0(void);
 ConCommand g_106c8fac("ai_next_hull", sub_100859c0, "Cycles through the various hull sizes.  Currently selected hull size is written to the screen.  Controls which connections are shown when ai_show_hull or ai_show_connect commands are used\n\tArguments:\t-none-", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10085b40 size=0xa
+#include "ConCommand.h"
+void sub_10085a80(void);
+ConCommand g_106c90c4("ai_named_hull", sub_10085a80, "Switches to the name of the given hull", 0, 0);
+// END FUNCTION
