@@ -30,3 +30,8 @@ ConVar g_1090fe70("sk_npc_chest", "1", 0);
 #include "ConVar.h"
 ConVar g_109204f0("sk_npc_stomach", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10264d60 size=0xa
+#include "ConVar.h"
+ConVar g_1090fdc0("sk_npc_arm", "1", 0);
+// END FUNCTION
