@@ -161,3 +161,8 @@ SendTable g_10948880;
 int sub_103f6630(void);
 int g_1094887c = ((int (*)(int))sub_103f6630)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f6780 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_1094557c(&CPrecacheRegister::PrecacheFn_Other, "item_g_astrolite");
+// END FUNCTION
