@@ -13,3 +13,8 @@ ServerClassReg g_106c4274("CTEGunshotDecal", &g_106c4258, g_10543b20);
 #include "SendTable.h"
 SendTable g_106c4258;
 // END FUNCTION
+
+// FUNCTION: 0x10064520 size=0x5
+int sub_10064560(void);
+int g_106c4254 = ((int (*)(int))sub_10064560)(0);
+// END FUNCTION
