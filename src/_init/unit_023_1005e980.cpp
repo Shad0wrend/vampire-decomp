@@ -13,3 +13,8 @@ ServerClassReg g_106c1144("CTEBreakModel", &g_106c1160, g_10541f38);
 #include "SendTable.h"
 SendTable g_106c1160;
 // END FUNCTION
+
+// FUNCTION: 0x1005eab0 size=0x5
+int sub_1005eaf0(void);
+int g_106c115c = ((int (*)(int))sub_1005eaf0)(0);
+// END FUNCTION
