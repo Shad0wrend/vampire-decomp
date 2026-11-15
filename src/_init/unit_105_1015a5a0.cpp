@@ -195,3 +195,8 @@ SendTable g_10725a70;
 int sub_10179840(void);
 int g_10725a6c = ((int (*)(int))sub_10179840)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1017db10 size=0xa
+#include "ConVar.h"
+ConVar g_10724ff8("pl_supernatural_level", "-1", 0, "Sets the player's supernatural level for testing.", true, -1.0f, true, 5.0f);
+// END FUNCTION
