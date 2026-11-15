@@ -775,3 +775,11 @@ int g_109485c4 = ((int (*)(int))sub_103fbbd0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_109477d4(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_heal_rate");
 // END FUNCTION
+
+// FUNCTION: 0x103fbd60 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10944dfc;
+extern char g_1067f52c[];
+ServerClassReg g_10943964("CGargoyleTalisman", &g_10944dfc, g_1067f52c);
+// END FUNCTION
