@@ -85,3 +85,8 @@ ConVar g_10924508("debug_player_on_head", "3", 0, "What should I do if the playe
 #include "ConVar.h"
 ConVar g_10924d20("debug_track_under_ground", "0", 0, "Tracks guys falling underground");
 // END FUNCTION
+
+// FUNCTION: 0x1028bd30 size=0xa
+#include "ConVar.h"
+ConVar g_10924298("ent_trace_doors", "0", 0, "When ent_trace is on, this will dump info about doors also.");
+// END FUNCTION
