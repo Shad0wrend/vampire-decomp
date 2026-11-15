@@ -1803,3 +1803,11 @@ SendTable g_10945204;
 int sub_104057f0(void);
 int g_10945200 = ((int (*)(int))sub_104057f0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10405930 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10944b64;
+extern char g_1067f8ac[];
+ServerClassReg g_10947760("CItemGIdolElephant", &g_10944b64, g_1067f8ac);
+// END FUNCTION
