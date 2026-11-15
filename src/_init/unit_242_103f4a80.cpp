@@ -1096,3 +1096,8 @@ ServerClassReg g_10944fe4("CItemGLillyPhoto", &g_109469e4, g_1067f62c);
 #include "SendTable.h"
 SendTable g_109469e4;
 // END FUNCTION
+
+// FUNCTION: 0x103feee0 size=0x5
+int sub_103fef20(void);
+int g_109469e0 = ((int (*)(int))sub_103fef20)(0);
+// END FUNCTION
