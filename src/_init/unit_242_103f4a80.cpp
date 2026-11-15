@@ -1767,3 +1767,11 @@ SendTable g_10948e9c;
 int sub_10405290(void);
 int g_10948e98 = ((int (*)(int))sub_10405290)(0);
 // END FUNCTION
+
+// FUNCTION: 0x104053d0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1094894c;
+extern char g_1067f88c[];
+ServerClassReg g_10946980("CItemGIdolCrane", &g_1094894c, g_1067f88c);
+// END FUNCTION
