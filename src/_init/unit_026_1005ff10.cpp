@@ -13,3 +13,8 @@ ServerClassReg g_106c1ba0("CTEBubbleTrail", &g_106c18e0, g_105425a8);
 #include "SendTable.h"
 SendTable g_106c18e0;
 // END FUNCTION
+
+// FUNCTION: 0x10060040 size=0x5
+int sub_10060080(void);
+int g_106c18dc = ((int (*)(int))sub_10060080)(0);
+// END FUNCTION
