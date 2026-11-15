@@ -225,3 +225,8 @@ ConVar g_10725c58("debug_cop_grace_time", "30", 0, "Set the time after a player'
 #include "ConVar.h"
 ConVar g_107257b8("debug_response_timer_min", "5.0", 0, "Sets the minimum amount of time we will wait after an offense to send WC outputs and spawn cops.");
 // END FUNCTION
+
+// FUNCTION: 0x1017eaf0 size=0xa
+#include "ConVar.h"
+ConVar g_10725890("debug_response_timer_max", "7.5", 0, "Sets the maximum amount of time we will wait after an offense to send WC outputs and spawn cops.");
+// END FUNCTION
