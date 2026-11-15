@@ -35,3 +35,8 @@ ConVar g_1093b2e0("hengeyokai_stun", "0", 0);
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_1093b328(false);
 // END FUNCTION
+
+// FUNCTION: 0x1037ea20 size=0x5
+#include "CAI_LocalIdSpace.h"
+CAI_LocalIdSpace g_1093b27c(false);
+// END FUNCTION
