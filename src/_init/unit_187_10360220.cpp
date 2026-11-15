@@ -15,3 +15,8 @@ ConVar g_1093a590("asianvamp_force_jump_up", "0", 0);
 int sub_103604b0(void);
 int g_1093a5d4 = ((int (*)(int))sub_103604b0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103604e0 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_1093a530(false);
+// END FUNCTION
