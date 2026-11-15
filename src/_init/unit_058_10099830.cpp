@@ -157,3 +157,9 @@ ConCommand g_106cf280("firetarget", sub_100afa60, 0, 0, 0);
 void sub_100afb90(void);
 ConCommand g_106cf22c("ent_fire", sub_100afb90, "Usage:\n   ent_fire <target> [action] [value] [delay]\n", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100aff00 size=0xa
+#include "ConCommand.h"
+void sub_100afe70(void);
+ConCommand g_106cf1a8("ent_break", sub_100afe70, 0, 0, 0);
+// END FUNCTION
