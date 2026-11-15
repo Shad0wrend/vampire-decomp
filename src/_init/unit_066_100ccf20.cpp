@@ -21,3 +21,8 @@ CEventsSaveDataOps g_106e70d8;
 void sub_100cf680(void);
 ConCommand g_106e70b0("debug_dump_eventqueue", sub_100cf680, "Dumps a list of the current event queue.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100cfe80 size=0x5
+#include "CEQ_SaveRestoreBlockHandler.h"
+CEQ_SaveRestoreBlockHandler g_106e70a8;
+// END FUNCTION
