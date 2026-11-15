@@ -120,3 +120,8 @@ int g_109204ec = ((int (*)(int))sub_1027ba80)(0);
 int sub_1027baf0(void);
 int g_109201ec = ((int (*)(int))sub_1027baf0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1027bbf0 size=0x5
+int sub_1027bc30(void);
+int g_109201a4 = ((int (*)(int))sub_1027bc30)(0);
+// END FUNCTION
