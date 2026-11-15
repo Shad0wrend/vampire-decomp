@@ -15,3 +15,9 @@ int * g_106e6f98 = ((int * (*)(int))sub_100cd760)(0);
 #include "CEventsSaveDataOps.h"
 CEventsSaveDataOps g_106e70d8;
 // END FUNCTION
+
+// FUNCTION: 0x100cf6a0 size=0xa
+#include "ConCommand.h"
+void sub_100cf680(void);
+ConCommand g_106e70b0("debug_dump_eventqueue", sub_100cf680, "Dumps a list of the current event queue.", 0, 0);
+// END FUNCTION
