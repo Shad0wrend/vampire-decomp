@@ -35,3 +35,8 @@ ConVar g_10709428("fire_incomingheatscale", "0.1", 0);
 #include "ConVar.h"
 ConVar g_107093e0("fire_dmgscale", "0.1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10108b50 size=0xa
+#include "ConVar.h"
+ConVar g_107092b8("fire_dmgbase", "1", 0);
+// END FUNCTION
