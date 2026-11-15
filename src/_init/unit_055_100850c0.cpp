@@ -71,3 +71,9 @@ ConCommand g_106c8fac("ai_next_hull", sub_100859c0, "Cycles through the various 
 void sub_10085a80(void);
 ConCommand g_106c90c4("ai_named_hull", sub_10085a80, "Switches to the name of the given hull", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10085c70 size=0xa
+#include "ConCommand.h"
+void sub_10085bd0(void);
+ConCommand g_106c904c("ai_nodes", sub_10085bd0, "Toggles node display.  First call displays the nodes for the given network as green objects.  Second call  displays the nodes and their IDs.  Nodes are color coded as follows:\n\tGreen\t\t- ground node\n\tCyan\t\t- air node\n\tMagenta\t- climb node\n\tGrey\t\t- node not available for selected hull size\n\tOrange \t- node currently locked", 0, 0);
+// END FUNCTION
