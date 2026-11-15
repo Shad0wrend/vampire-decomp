@@ -1798,3 +1798,8 @@ ServerClassReg g_1094962c("CItemGIdolDragon", &g_10945204, g_1067f89c);
 #include "SendTable.h"
 SendTable g_10945204;
 // END FUNCTION
+
+// FUNCTION: 0x104057b0 size=0x5
+int sub_104057f0(void);
+int g_10945200 = ((int (*)(int))sub_104057f0)(0);
+// END FUNCTION
