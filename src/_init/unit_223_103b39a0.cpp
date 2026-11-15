@@ -5,3 +5,8 @@
 inline int pcd_initial_1093c828() { return 0x450; }
 int g_1093c828 = pcd_initial_1093c828();
 // END FUNCTION
+
+// FUNCTION: 0x103b39e0 size=0xa
+#include "ConVar.h"
+ConVar g_1093c878("sk_vtest_health", "10", 0);
+// END FUNCTION
