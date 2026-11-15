@@ -55,3 +55,8 @@ ConVar g_10709300("fire_dmginterval", "3.0", 0);
 #include "ConVar.h"
 ConVar g_10709500("fire_showvolume", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10109800 size=0x5
+int * sub_10109840(void);
+int * g_10709590 = ((int * (*)(int))sub_10109840)(0);
+// END FUNCTION
