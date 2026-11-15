@@ -90,3 +90,8 @@ ConVar g_10924d20("debug_track_under_ground", "0", 0, "Tracks guys falling under
 #include "ConVar.h"
 ConVar g_10924298("ent_trace_doors", "0", 0, "When ent_trace is on, this will dump info about doors also.");
 // END FUNCTION
+
+// FUNCTION: 0x1028bdc0 size=0xa
+#include "ConVar.h"
+ConVar g_10924a68("ent_trace_conditions", "1", 0, "When ent_trace is on, this will dump info about conditions also.");
+// END FUNCTION
