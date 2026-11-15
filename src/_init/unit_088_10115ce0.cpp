@@ -35,3 +35,8 @@ ConVar g_1070ac38("mp_teamplay", "0", 4);
 #include "ConVar.h"
 ConVar g_1070aa88("mp_fraglimit", "0", 4);
 // END FUNCTION
+
+// FUNCTION: 0x10117b40 size=0xa
+#include "ConVar.h"
+ConVar g_1070ae78("mp_timelimit", "0", 4);
+// END FUNCTION
