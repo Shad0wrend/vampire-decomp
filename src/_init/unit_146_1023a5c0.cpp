@@ -23,3 +23,8 @@ extern SendTable g_10752e68;
 extern char g_105c2a40[];
 ServerClassReg g_10752d44("CWorld", &g_10752e68, g_105c2a40);
 // END FUNCTION
+
+// FUNCTION: 0x1023aff0 size=0xa
+#include "SendTable.h"
+SendTable g_10752e68;
+// END FUNCTION
