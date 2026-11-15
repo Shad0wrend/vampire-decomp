@@ -8,3 +8,8 @@ extern SendTable g_106be544;
 extern char g_1053ff28[];
 ServerClassReg g_106be568("CSteamJet", &g_106be544, g_1053ff28);
 // END FUNCTION
+
+// FUNCTION: 0x10057c30 size=0xa
+#include "SendTable.h"
+SendTable g_106be544;
+// END FUNCTION
