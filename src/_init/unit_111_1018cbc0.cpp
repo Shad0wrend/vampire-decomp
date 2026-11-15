@@ -43,3 +43,8 @@ ServerClassReg g_1072b040("CDynamicProp", &g_1072b094, g_1058d74c);
 #include "SendTable.h"
 SendTable g_1072b094;
 // END FUNCTION
+
+// FUNCTION: 0x10190400 size=0x5
+int sub_10190440(void);
+int g_1072b090 = ((int (*)(int))sub_10190440)(0);
+// END FUNCTION
