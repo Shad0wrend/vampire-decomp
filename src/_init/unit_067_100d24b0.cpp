@@ -85,3 +85,9 @@ ConCommand g_106e76e0("use", sub_100d3510, "Use a particular weapon\t\nArguments
 void sub_100d35f0(void);
 ConCommand g_106e7b08("noclip", sub_100d35f0, "Toggle. Player becomes non-solid and flies.", 16384, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d3b20 size=0xa
+#include "ConCommand.h"
+void sub_100d3a50(void);
+ConCommand g_106e7430("god", sub_100d3a50, "Toggle. Player becomes invulnerable.", 16384, 0);
+// END FUNCTION
