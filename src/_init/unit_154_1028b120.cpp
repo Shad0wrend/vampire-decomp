@@ -55,3 +55,8 @@ ConVar g_10924798("debug_vision_line", "0", 0, "Set this to 1 to show a line fro
 #include "ConVar.h"
 ConVar g_10924cd8("debug_hint_los", "0", 0, "Set this to 1 to show a line from any hints the NPCs try to use to their target when they do a LOS check.");
 // END FUNCTION
+
+// FUNCTION: 0x1028b9c0 size=0xa
+#include "ConVar.h"
+ConVar g_109241a8("debug_cs_los", "0", 0, "Set this to 1 to show a line from NPCs to static Crimina & Supernatural acts they are testing vision on.");
+// END FUNCTION
