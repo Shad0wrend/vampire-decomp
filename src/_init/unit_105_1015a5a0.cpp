@@ -185,3 +185,8 @@ extern SendTable g_10725a70;
 extern char g_10583860[];
 ServerClassReg g_10725674("CBasePlayer", &g_10725a70, g_10583860);
 // END FUNCTION
+
+// FUNCTION: 0x10179780 size=0xa
+#include "SendTable.h"
+SendTable g_10725a70;
+// END FUNCTION
