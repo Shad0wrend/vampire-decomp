@@ -125,3 +125,8 @@ ConVar g_10939688("sk_max_steyr_round", "0", 0);
 #include "ConVar.h"
 ConVar g_10938b00("sk_plr_dmg_supershotgun_round", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10354030 size=0xa
+#include "ConVar.h"
+ConVar g_10939300("sk_npc_dmg_supershotgun_round", "0", 0);
+// END FUNCTION
