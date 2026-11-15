@@ -1407,3 +1407,11 @@ SendTable g_10946fc0;
 int sub_10401cd0(void);
 int g_10946fbc = ((int (*)(int))sub_10401cd0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10401e10 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109475d0;
+extern char g_1067f74c[];
+ServerClassReg g_109453f0("CItemGGuyMagazine", &g_109475d0, g_1067f74c);
+// END FUNCTION
