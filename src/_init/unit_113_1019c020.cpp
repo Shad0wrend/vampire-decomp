@@ -13,3 +13,8 @@ extern SendTable g_1072b968;
 extern char g_1072b99c[];
 ServerClassReg g_1072b984("CRopeKeyframe", &g_1072b968, g_1072b99c);
 // END FUNCTION
+
+// FUNCTION: 0x1019d810 size=0xa
+#include "SendTable.h"
+SendTable g_1072b968;
+// END FUNCTION
