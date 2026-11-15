@@ -28,3 +28,8 @@ int g_10708df4 = ((int (*)(int))sub_100fad20)(0);
 #include "ConVar.h"
 ConVar g_107083d8("particle_scale", "1.0", 384);
 // END FUNCTION
+
+// FUNCTION: 0x100fbf80 size=0x5
+int sub_100fbfc0(void);
+int g_10708dec = ((int (*)(int))sub_100fbfc0)(0);
+// END FUNCTION
