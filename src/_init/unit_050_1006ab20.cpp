@@ -13,3 +13,8 @@ ServerClassReg g_106c720c("CTEUserTracer", &g_106c71f0, g_10545bb8);
 #include "SendTable.h"
 SendTable g_106c71f0;
 // END FUNCTION
+
+// FUNCTION: 0x1006ac50 size=0x5
+int sub_1006ac90(void);
+int g_106c71ec = ((int (*)(int))sub_1006ac90)(0);
+// END FUNCTION
