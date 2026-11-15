@@ -3423,6 +3423,259 @@ void CAI_BaseNPCTroika::sub_1029c010()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1029ca50 size=0x864
+#include "CNPC_VTzimisce.h"
+#include "CAI_BaseNPCTroika.h"
+#include "DebugOverlay.h"
+#include "ConVar.h"
+#include "CEntityVSlots.h"
+#include "CGlobalEntityList.h"
+
+extern ConVar g_10924f20;
+extern CGlobalEntityList g_106eb5d8;
+extern Vector g_1070d1b0;
+
+void sub_10144cd0(const Vector *pOrg, const Vector *pAng, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, int dur);
+void sub_10142b80(const Vector &org, const Vector &mins, const Vector &maxs, const Vector &ang, int r, int g, int b, int a, float dur);
+void sub_10142aa0(const Vector *pOrg, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float dur);
+void sub_10142af0(const Vector &org, const Vector &mins, const Vector &maxs, const Vector &dir, int r, int g, int b, int a, float dur);
+void sub_10144a30(const Vector *pOrg, const Vector &dir, float flRadius, float flHeight, int r, int g, int b, int a, int dur);
+void sub_101d2f40(Vector *pOut, float flYaw);
+const Vector *sub_102d6100(int hull);
+const Vector *sub_102d6120(int hull);
+
+struct ICollView
+{
+	virtual void s0();
+	virtual const Vector &WorldAlignMins();
+	virtual const Vector &WorldAlignMaxs();
+};
+
+struct CSlot29View
+{
+	EVS10(0) EVS10(1)
+	EVS(20) EVS(21) EVS(22) EVS(23) EVS(24) EVS(25) EVS(26) EVS(27) EVS(28)
+	virtual float slot29();
+};
+
+#define V100(q) EVS10(q##0) EVS10(q##1) EVS10(q##2) EVS10(q##3) EVS10(q##4) EVS10(q##5) EVS10(q##6) EVS10(q##7) EVS10(q##8) EVS10(q##9)
+struct CDbgSlots
+{
+	V100(0)
+	EVS10(10) EVS10(11) EVS10(12) EVS10(13) EVS10(14) EVS10(15)
+	EVS(160) EVS(161) EVS(162) EVS(163) EVS(164) EVS(165) EVS(166)
+	virtual CBaseEntity *slot167();
+	EVS(168) EVS(169)
+	EVS10(17) EVS10(18)
+	EVS(190) EVS(191)
+	virtual Vector slot192();
+	EVS(193) EVS(194) EVS(195) EVS(196)
+	virtual Vector slot197(const Vector &posSrc, char bNoisy, int c);
+	EVS(198) EVS(199)
+	EVS10(20) EVS10(21)
+	virtual const Vector *slot220();
+	EVS(221) EVS(222) EVS(223) EVS(224) EVS(225) EVS(226) EVS(227) EVS(228) EVS(229)
+	EVS10(23) EVS10(24) EVS10(25) EVS10(26) EVS10(27) EVS10(28) EVS10(29)
+	V100(3)
+	EVS(400) EVS(401) EVS(402) EVS(403)
+	virtual int slot404(CBaseEntity *pEnt);
+	virtual int slot405(CBaseEntity *pEnt);
+};
+
+struct CHintView
+{
+	float sub_102d12e0();
+};
+
+struct CDbgFields
+{
+	char m_pad0[0x50];
+	Vector m_vecOrigin;	// 0x50
+	char m_pad5c[0x224 - 0x5c];
+	int m_debugOverlays;	// 0x224
+	char m_pad228[0x1568 - 0x228];
+	int m_n1568;
+	int m_n156c;
+	int m_n1570;
+	float m_f1574;
+	char m_pad1578[0x5d60 - 0x1578];
+	Vector m_v5d60;
+	char m_pad5d6c[0x5ddc - 0x5d6c];
+	CHintView *m_pHint;	// 0x5ddc
+	char m_pad5de0[0x6290 - 0x5de0];
+	Vector m_v6290;
+	char m_pad629c[0x63fd - 0x629c];
+	char m_b63fd;
+	char m_pad63fe[0x6658 - 0x63fe];
+	char m_b6658;
+};
+
+struct CHintFields
+{
+	char m_pad0[0x454];
+	float m_flYaw;
+	char m_pad458[0x5dc - 0x458];
+	int m_nType;
+};
+
+struct CBaseNPCView
+{
+	void sub_10275760();
+};
+
+#define W(off) (*(float *)((char *)sub_1032e7b0() + (off)))
+
+namespace block_1029ca50 {
+#pragma auto_inline(off)
+struct CTroikaDbgUnit : CAI_BaseNPCTroika
+{
+	float sub_1029c9f0(float f, CBaseEntity *p);
+	float sub_1029ca30(float f);
+};
+float CTroikaDbgUnit::sub_1029c9f0(float f, CBaseEntity *p)
+{
+	float r = f * *(float *)((char *)p + 0x1c70);
+	if (r < 0.0f)
+		r = 0.0f;
+	return r;
+}
+float CTroikaDbgUnit::sub_1029ca30(float f)
+{
+	return f * 0.7f;
+}
+#pragma auto_inline(on)
+}
+using namespace block_1029ca50;
+
+#define MAXF(a, b) (((a) > (b)) ? (a) : (b))
+#define MINF(a, b) (((a) < (b)) ? (a) : (b))
+
+inline CBaseEntity *NextNPCInSphere(CBaseEntity *pStart, Vector *pCenter)
+{
+	CBaseEntity *pEnt = g_106eb5d8.sub_100f8490(pStart, 0x820, pCenter, 4096.0f);
+	return pEnt ? (CBaseEntity *)pEnt->m_p9c : 0;
+}
+__forceinline void AddIn(const Vector &a, const Vector &b, Vector &r) { r.x = a[0] + b.x; r.y = a.y + b.y; r.z = a.z + b.z; }
+struct VecAddM : Vector { Vector Add(const Vector &v) const { Vector res; AddIn(*this, v, res); return res; } };
+inline void HullMinsTo(int h, Vector &v) { v = *sub_102d6100(h); }
+inline void HullMaxsTo(int h, Vector &v) { v = *sub_102d6120(h); }
+// TARGET: CAI_BaseNPCTroika::vfunc123
+void CAI_BaseNPCTroika::vfunc123()
+{
+	CTroikaDbgUnit *pUnit = (CTroikaDbgUnit *)this;
+	CDbgSlots *pSlots = (CDbgSlots *)this;
+	CDbgFields *pF = (CDbgFields *)this;
+	float fA, fMin, fYMax;
+	if (pF->m_debugOverlays & 0x400000) {
+		float flRange = sub_1029c970();
+		float flCos = pF->m_f1574;
+		sub_1029c4a0(flRange, flCos, 0, 0x40, 0xc0, 0x40, 0x32, 1);
+		CBaseEntity *pTarget = m_h628c.Get();
+		if (pTarget) {
+			flRange = pUnit->sub_1029c9f0(flRange, pTarget);
+			flCos = pF->m_f1574 / ((CSlot29View *)pTarget)->slot29();
+			sub_1029c4a0(flRange, flCos, 2.0f, 0xc0, 0x40, 0, 0x64, 0);
+		}
+		sub_1029c4a0(pUnit->sub_1029ca30(flRange), flCos, 4.0f, 0xff, 0, 0x80, 0x96, 0);
+	}
+	if (pF->m_debugOverlays & 0x1000) {
+		ICollView *pColl = (ICollView *)((char *)this + 0x270);
+		Vector vecMins = pColl->WorldAlignMins();
+		Vector vecMaxs = pColl->WorldAlignMaxs();
+		if (vecMaxs != vecMins)
+			sub_10144cd0((const Vector *)vfunc217(), &pF->m_v6290, vecMins, vecMaxs, 0x80, 0, 0, 0x28, 0);
+		Vector vecBone;
+		Vector angBone;
+		((CBaseAnimating *)this)->sub_10092610((int)"Bip01", (int)&vecBone, (int)&angBone);
+		sub_10142b80(vecBone, Vector(-10, -10, -10), Vector(10, 10, 10), angBone, 0x80, 0, 0, 0x28, 0);
+		if (pF->m_vecOrigin != g_1070d1b0) {
+			vecMins -= pF->m_vecOrigin;
+			vecMaxs += pF->m_vecOrigin;
+			sub_10142aa0((const Vector *)vfunc217(), vecMins, vecMaxs, 0xff, 0x80, 0, 0x14, 0);
+		}
+		if (pF->m_n1568 != pF->m_n156c) {
+			HullMinsTo(pF->m_n156c, vecMins);
+			HullMaxsTo(pF->m_n156c, vecMaxs);
+			sub_10142aa0((const Vector *)vfunc217(), vecMins, vecMaxs, 0xff, 0xff, 0x40, 10, 0);
+		}
+	}
+	if (pF->m_debugOverlays & 0x20000000) {
+		if (sub_1032e7b0()) {
+			fA = MAXF(W(0x8c0), W(0x8c4));
+			fMin = MINF(W(0x8b8), W(0x8bc));
+		} else {
+			fA = 2000.0f;
+			fMin = 0;
+		}
+		sub_10144a30(pSlots->slot220(), Vector(1, 0, 0), fMin, 32.0f, 0xff, 0xff, 0x20, 0x80, 0);
+		sub_10144a30(pSlots->slot220(), Vector(1, 0, 0), fA, 32.0f, 0x80, 0x80, 0x10, 0x80, 0);
+	}
+	if (g_10924f20.GetInt()) {
+		CBaseEntity *pEnemy = pSlots->slot167();
+		if (pEnemy) {
+			Vector vecSrc;
+			for (int i = 0; i < 5; i++) {
+				Vector vecPos = ((CDbgSlots *)pEnemy)->slot197(vecSrc, 1, 0);
+				sub_10143b70(&vecPos, &Vector(-2, -2, -2), &Vector(2, 2, 2), 0xff, 0x20, 0x20, 1, 0.1f);
+			}
+		}
+	}
+	if (pF->m_pHint) {
+		switch (((CHintFields *)pF->m_pHint)->m_nType) {
+		case 0x27d8:
+			if (pF->m_b63fd) {
+				fA = 43.0f;
+				fYMax = ((CHintFields *)pF->m_pHint)->m_flYaw;
+				break;
+			}
+			fYMax = -43.0f;
+			goto negmin;
+		case 100:
+		case 0x283d:
+			fYMax = ((CHintFields *)pF->m_pHint)->m_flYaw;
+			goto negmin;
+		case 101:
+		case 0x283c:
+			fYMax = ((CHintFields *)pF->m_pHint)->m_flYaw;
+		negmin:
+			fA = -((CHintFields *)pF->m_pHint)->m_flYaw;
+			break;
+		default:
+			goto skipHint;
+		}
+		{
+			Vector vec1, vec2;
+			sub_101d2f40(&vec1, pF->m_pHint->sub_102d12e0() + fA);
+			sub_101d2f40(&vec2, pF->m_pHint->sub_102d12e0() + fYMax);
+			Vector vecOrg = ((const VecAddM &)pF->m_v5d60).Add(*((CEntityVSlots *)pF->m_pHint)->slot217());
+			sub_10142af0(vecOrg, Vector(0, 0, -10), Vector(200, 0, 10), vec1, 0xff, 0, 0, 0x32, 0);
+			sub_10142af0(vecOrg, Vector(0, 0, -10), Vector(200, 0, 10), vec2, 0xff, 0, 0, 0x32, 0);
+		}
+	}
+skipHint:
+	if (pF->m_b6658) {
+		Vector vecCenter = pSlots->slot192();
+		CBaseEntity *pOther;
+		for (pOther = NextNPCInSphere(0, &vecCenter); pOther; pOther = NextNPCInSphere(pOther, &vecCenter)) {
+			if (pOther != (CBaseEntity *)this) {
+				int r, g, b;
+				switch (pSlots->slot404(pOther)) {
+				case 1: r = 4; g = 1; b = 1; break;
+				case 2: r = 4; g = 4; b = 1; break;
+				case 3: r = 1; g = 4; b = 1; break;
+				case 4: r = 1; g = 1; b = 4; break;
+				default: r = 4; g = 0; b = 0; break;
+				}
+				int n = (pSlots->slot405(pOther) + 2) * 6;
+				n = n > 63 ? 63 : (n < 0 ? 0 : n);
+				sub_10142e90(&vecCenter, &((CDbgSlots *)pOther)->slot192(), n * r, n * g, n * b, 1, 0);
+			}
+		}
+	}
+	if (*(short *)&fA == -1) ((CBaseNPCView *)this)->sub_10275760(); else ((CBaseNPCView *)this)->sub_10275760();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1029f800 size=0x32
 #include "CAI_BaseNPCTroika.h"
 #include "CDevFlagObj.h"

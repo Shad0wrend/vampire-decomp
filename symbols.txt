@@ -5962,6 +5962,7 @@
 0x10008a30 func   ?vfunc290@CWeaponThrown_Grenade_Frag@@UAEHXZ CWeaponThrown_Grenade_Frag::vfunc290
 0x10008a35 func   ?sub_10328380@CBaseCombatCharacter@@QAEHHHPAV1@H@Z CBaseCombatCharacter::sub_10328380
 0x10008a3a func   ?sub_1021b410@CPropHacking@@QAEXXZ CPropHacking::sub_1021b410
+0x10008a3f func   ?vfunc123@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc123
 0x10008a44 func   ?sub_1017c6a0@CUnk1017c6a0@@QAEDXZ CUnk1017c6a0::sub_1017c6a0
 0x10008a49 func   ?sub_10078dd0@CUtlVector140@@QAEXH@Z CUtlVector140::sub_10078dd0
 0x10008a4e func   ?sub_10077f10@CTableFields10077ac0@@QAEMM@Z CTableFields10077ac0::sub_10077f10
