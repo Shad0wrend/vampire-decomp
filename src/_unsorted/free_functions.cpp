@@ -234945,6 +234945,298 @@ found:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102f2330 size=0x44c
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CAI_Navigator.h"
+#include "CVProfile.h"
+#include "CAI_Waypoint.h"
+#include "CEHandleGet.h"
+#include "CGlobalEntityList.h"
+
+#define V1(n) virtual void n();
+#define V10(n) V1(n##0) V1(n##1) V1(n##2) V1(n##3) V1(n##4) V1(n##5) V1(n##6) V1(n##7) V1(n##8) V1(n##9)
+#define V100(n) V10(n##0) V10(n##1) V10(n##2) V10(n##3) V10(n##4) V10(n##5) V10(n##6) V10(n##7) V10(n##8) V10(n##9)
+
+struct VectorOp : Vector
+{
+	VectorOp &sub_1003e4b0(const Vector &v);
+};
+
+struct NavHandle { unsigned int m_Index; };
+
+struct NavEnt;
+struct NavEnemiesView { void sub_102dfed0(Vector *pOut, NavEnt *pEnt); };
+struct NavEnt
+{
+	V100(a) V10(b0) V10(b1) V10(b2) V10(b3) V10(b4) V10(b5) V10(b6) V1(c0) V1(c1)
+	virtual NavEnt *vfunc172();
+	V10(d0) V10(d1) V10(d2) V10(d3) V1(d4) V1(d5) V1(d6) V1(d7)
+	virtual Vector *vfunc217();
+	V1(e0) V1(e1)
+	virtual const float *vfunc220();
+	V100(f0) V100(f1) V100(f2) V10(f30) V10(f31)
+	virtual NavEnemiesView *vfunc541();
+	V10(g0) V10(g1) V1(g2)
+	virtual void vfunc563(NavEnt *pEnt, Vector *pVec, float *pA, float *pB);
+	V10(h0) V10(h1) V1(h2) V1(h3)
+	virtual EHANDLE vfunc586();
+	char m_pad[0x98 - 4];
+	NavEnt *m98;
+	char m_pad9c[0x164 - 0x9c];
+	float m_flSpeed;	// 0x164
+};
+struct NavOuter : NavEnt
+{
+	char m_pad168[0x5de8 - 0x168];
+	NavEnt *m_pGoalEnt;	// 0x5de8
+};
+struct NavRouteView
+{
+	char m_b00;
+	char m_b01;
+	char m_pad02[0x1e];
+	float m_f20;
+	CAI_NavWaypointPtr m_pWaypoint;	// 0x24
+	float m_f28;
+	char m_pad2c[4];
+	EHANDLE m_h30;
+	char m_pad34[0x44 - 0x34];
+	int m_iLastNode;	// 0x44
+	float F20() const { return m_f20; }
+	float F28() const { return m_f28; }
+	void SetF20(float f) { m_f20 = f; }
+	void SetF28(float f) { m_f28 = f; }
+	void ClearWaypoints() { m_pWaypoint.sub_10319ee0(); m_iLastNode = -1; }
+	int sub_1030ba70();
+	void sub_1030b4d0(CAI_Waypoint *pWp, int a);
+	void sub_1030b8a0(void *p);
+	void sub_1030b950(void *p);
+};
+struct NavWaypoint : CAI_Waypoint
+{
+	const Vector &GetPos() const { return *(const Vector *)m_vecPos; }
+	void SetPos(const Vector &v) { ((VectorOp *)m_vecPos)->sub_1003e4b0(v); }
+};
+struct NavCycleCount
+{
+	unsigned __int64 m_Int64;
+	NavCycleCount() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+	NavCycleCount &operator+=(const NavCycleCount &o) { m_Int64 += o.m_Int64; return *this; }
+};
+struct NavFastTimer
+{
+	NavCycleCount m_Duration;
+	void End()
+	{
+		NavCycleCount cnt;
+		cnt.Sample();
+		m_Duration.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+	}
+	const NavCycleCount &GetDuration() const { return m_Duration; }
+};
+struct NavProfile : CVProfile
+{
+	void PopGroup()
+	{
+		--m_nGroupStackDepth;
+		if (m_GroupIDStack[m_nGroupStackDepth] != m_GroupIDStack[m_nGroupStackDepth + 1] && m_bVTuneGroupsEnabled && m_GroupIDStack[m_nGroupStackDepth + 1] == m_nVTuneGroupID)
+			vtune(false);
+	}
+};
+struct NavProfNode
+{
+	const char *m_pszName;
+	int m_pad04;
+	NavFastTimer m_Timer;	// 0x08
+	int m_nRecursions;	// 0x10
+	int m_nCurFrameCalls;	// 0x14
+	NavCycleCount m_CurFrameTime;	// 0x18
+	char m_pad20[0x48 - 0x20];
+	NavProfNode *m_pParent;	// 0x48
+
+	bool ExitScope()
+	{
+		if (--m_nRecursions == 0 && m_nCurFrameCalls != 0)
+		{
+			m_Timer.End();
+			m_CurFrameTime += m_Timer.GetDuration();
+			((NavProfile *)g_109f3648)->PopGroup();
+		}
+		return m_nRecursions == 0;
+	}
+};
+
+inline void NavExitScope()
+{
+	CVProfile *prof = g_109f3648;
+	if (!prof->m_bAtRoot || prof->m_enabled)
+	{
+		if (((NavProfNode *)prof->m_pCurNode)->ExitScope())
+			prof->m_pCurNode = prof->m_pCurNode->m_pParent;
+		prof->m_bAtRoot = (prof->m_pCurNode == prof->m_pRoot);
+	}
+}
+
+struct NavProfScope
+{
+	NavProfScope(const char *pszName, int detailLevel, const char *pszBudgetGroup, bool bAssertAccounted)
+	{
+		g_109f3648->EnterScope(pszName, detailLevel, pszBudgetGroup, bAssertAccounted);
+	}
+	~NavProfScope() { NavExitScope(); }
+};
+
+struct NavSelf : CAI_Navigator
+{
+	void sub_102ecd00(float flSpeed);
+	NavRouteView *GetPath() { return (NavRouteView *)m_p30; }
+	NavOuter *GetOuter() { return (NavOuter *)m_pOuter; }
+	void SetGoalFromTarget(NavEnt *pOwner, NavEnt *pEnt, Vector &vecPos)
+	{
+		float f28 = GetPath()->F28();
+		float f20 = GetPath()->F20();
+		pOwner->vfunc563(pEnt, &vecPos, &f28, &f20);
+		GetPath()->sub_1030b950(&vecPos);
+		GetPath()->SetF28(f28);
+		GetPath()->SetF20(f20);
+	}
+};
+
+#define GetPath() (((NavSelf *)this)->GetPath())
+#define GetOuter() (((NavSelf *)this)->GetOuter())
+
+// TARGET: CAI_Navigator::sub_102f2330
+bool CAI_Navigator::sub_102f2330(int b)
+{
+	NavProfScope scope("CAI_Navigator_DoFindPath", 0, "Unaccounted", false);
+	GetPath()->ClearWaypoints();
+	bool returnCode;
+	returnCode = false;
+	switch (GetPath()->sub_1030ba70()) {
+	case 3:
+	{
+		NavEnt *pPathCorner = GetOuter()->m_pGoalEnt;
+		if (pPathCorner != 0)
+		{
+			if (pPathCorner->m_flSpeed != 0)
+				((NavSelf *)this)->sub_102ecd00(pPathCorner->m_flSpeed);
+			CAI_Waypoint *lastWaypoint = 0;
+			int count;
+			for (count = 0; count < 0x80 && pPathCorner; count++, pPathCorner = pPathCorner->vfunc172())
+			{
+				CAI_Waypoint *curWaypoint = new CAI_Waypoint(pPathCorner->vfunc220(), 0, pcd_stage(m_i18), 2, -1);
+				Vector waypointPos = ((NavWaypoint *)curWaypoint)->GetPos();
+				float tolerance = GetPath()->F28();
+				float f20 = GetPath()->F20();
+				GetOuter()->vfunc563(pPathCorner, &waypointPos, &tolerance, &f20);
+				((NavWaypoint *)curWaypoint)->SetPos(waypointPos);
+				GetPath()->SetF28(tolerance);
+				GetPath()->SetF20(f20);
+				((CBaseHandle *)&curWaypoint->m_hEnt20)->operator=((IHandleEntity *)pPathCorner);
+				if (!lastWaypoint)
+					GetPath()->sub_1030b4d0(curWaypoint, 0);
+				else
+					lastWaypoint->SetNext(curWaypoint);
+				lastWaypoint = curWaypoint;
+			}
+			if (lastWaypoint)
+			{
+				lastWaypoint->SetNext(0);
+				if (count < 0x80)
+				{
+					lastWaypoint->m_fWaypointFlags |= 8;
+					GetPath()->sub_1030b8a0(lastWaypoint);
+				}
+			}
+			returnCode = true;
+		}
+		else
+		{
+			returnCode = false;
+		}
+	}
+	break;
+	case 2:
+	{
+		NavEnt *pEnemy = (NavEnt *)g_10566458->sub_100290c0((const unsigned int *)&((NavRouteView *)m_p30)->m_h30);
+		if (pEnemy)
+		{
+			Vector newPos;
+			GetOuter()->vfunc541()->sub_102dfed0(&newPos, pEnemy);
+			float tolerance = GetPath()->F28();
+			float f20 = GetPath()->F20();
+			GetOuter()->vfunc563(pEnemy, &newPos, &tolerance, &f20);
+			GetPath()->sub_1030b950(&newPos);
+			GetPath()->SetF28(tolerance);
+			GetPath()->SetF20(f20);
+			returnCode = sub_102f2060(0);
+		}
+	}
+	break;
+	case 7:
+	{
+		NavEnt *pTarget = GetOuter()->m98;
+		if (pTarget)
+		{
+			NavEnt *pEnt = (NavEnt *)pTarget->vfunc586().Get();
+			GetPath()->sub_1030b8a0(pEnt->vfunc217());
+			GetPath()->m_b00 = 1;
+			Vector initPos = *pEnt->vfunc217();
+			float tolerance = GetPath()->F28();
+			float f20 = GetPath()->F20();
+			pTarget->vfunc563(pEnt, &initPos, &tolerance, &f20);
+			GetPath()->sub_1030b950(&initPos);
+			GetPath()->SetF28(tolerance);
+			GetPath()->SetF20(f20);
+			returnCode = sub_102f2060(0);
+		}
+		else
+		{
+			returnCode = false;
+		}
+	}
+	break;
+	case 8:
+		GetPath()->m_b01 = 1;
+		returnCode = sub_102f2060(0);
+		break;
+	case 1:
+	{
+		NavEnt *pTarget = (NavEnt *)GetPath()->m_h30.Get();
+		if (pTarget)
+		{
+			GetPath()->sub_1030b950(pTarget->vfunc217());
+			returnCode = sub_102f2060(0);
+		}
+	}
+	break;
+	case 4:
+	case 5:
+	case 6:
+	case 9:
+		returnCode = sub_102f2060(0);
+		break;
+	}
+	return returnCode;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102f28a0 size=0x28
 #include "CUnknown102ee270.h"
 #include "CAI_NavRoute.h"

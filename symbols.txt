@@ -687,6 +687,7 @@
 0x10001e3d func   ?vfunc82@CSteamJet@@UAEPAUdatamap_t@@XZ CSteamJet::vfunc82
 0x10001e47 func   ?sub_104292c0@@YAHXZ sub_104292c0
 0x10001e4c func   ??0CPlayerEvents@@QAE@XZ CPlayerEvents::CPlayerEvents
+0x10001e51 func   ?sub_102f2330@CAI_Navigator@@QAE_NH@Z CAI_Navigator::sub_102f2330
 0x10001e56 func   ?sub_1038f430@CNPC_VManBat@@QAE_NPAVCBaseAnimating@@H@Z CNPC_VManBat::sub_1038f430
 0x10001e5b func   _info_node_sabbat_bottom info_node_sabbat_bottom
 0x10001e60 func   ?sub_1021ac30@CPropHacking@@QAEXXZ CPropHacking::sub_1021ac30
