@@ -55,3 +55,8 @@ ConVar g_109ef0d8("sv_waterfriction", "1", 8448);
 #include "ConVar.h"
 ConVar g_109ef3f0("sv_edgefriction", "2", 8448);
 // END FUNCTION
+
+// FUNCTION: 0x1042ce20 size=0xa
+#include "ConVar.h"
+ConVar g_109eed78("sv_wateramp", "0", 8448);
+// END FUNCTION
