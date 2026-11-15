@@ -543,3 +543,8 @@ extern SendTable g_10942680;
 extern char g_10677ff0[];
 ServerClassReg g_1094188c("CWeaponMelee_Tzimisce2Claw", &g_10942680, g_10677ff0);
 // END FUNCTION
+
+// FUNCTION: 0x103eb300 size=0xa
+#include "SendTable.h"
+SendTable g_10942680;
+// END FUNCTION
