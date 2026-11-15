@@ -599,3 +599,8 @@ extern SendTable g_10946d14;
 extern char g_1067f4ac[];
 ServerClassReg g_10948400("COccultDexterity", &g_10946d14, g_1067f4ac);
 // END FUNCTION
+
+// FUNCTION: 0x103fa610 size=0xa
+#include "SendTable.h"
+SendTable g_10946d14;
+// END FUNCTION
