@@ -1487,3 +1487,8 @@ extern SendTable g_10949068;
 extern char g_1067f78c[];
 ServerClassReg g_10948b78("CItemGBadluckTalisman", &g_10949068, g_1067f78c);
 // END FUNCTION
+
+// FUNCTION: 0x10402980 size=0xa
+#include "SendTable.h"
+SendTable g_10949068;
+// END FUNCTION
