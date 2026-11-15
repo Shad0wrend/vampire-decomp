@@ -65,3 +65,8 @@ int g_1070c5e4 = ((int (*)(int))sub_101345f0)(0);
 int * sub_10134a80(void);
 int * g_1070c5d0 = ((int * (*)(int))sub_10134a80)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10134ed0 size=0x5
+int * sub_10134f10(void);
+int * g_1070c600 = ((int * (*)(int))sub_10134f10)(0);
+// END FUNCTION
