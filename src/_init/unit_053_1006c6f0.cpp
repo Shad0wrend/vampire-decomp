@@ -51,3 +51,9 @@ SendTable g_106c7c54;
 int sub_10071100(void);
 int g_106c7c50 = ((int (*)(int))sub_10071100)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10071a50 size=0xa
+#include "ConCommand.h"
+void sub_10071970(void);
+ConCommand g_106c8144("camera_kill", sub_10071970, "Kills all cinematic cameras", 0, 0);
+// END FUNCTION
