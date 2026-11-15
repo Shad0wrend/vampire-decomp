@@ -23,3 +23,8 @@ ServerClassReg g_1070c08c("CHudEntity", &g_1070c06c, g_10574b60);
 #include "SendTable.h"
 SendTable g_1070c06c;
 // END FUNCTION
+
+// FUNCTION: 0x1012e8f0 size=0x5
+int sub_1012e930(void);
+int g_1070c068 = ((int (*)(int))sub_1012e930)(0);
+// END FUNCTION
