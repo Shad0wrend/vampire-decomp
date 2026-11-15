@@ -334,3 +334,9 @@ ConCommand g_106c93d0("npc_steering", sub_10088ef0, "Displays the steering obstr
 void sub_10088fc0(void);
 ConCommand g_106c8c48("npc_steering_all", sub_10088fc0, "Displays the steering obstructions of all NPCs (used to perform local avoidance)\n", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10089130 size=0xa
+#include "ConCommand.h"
+void sub_100891c0(void);
+ConCommand g_106c95b0("ai_clear_bad_links", sub_100891c0, "Clears bits set on nav links indicating link is unusable ", 0, 0);
+// END FUNCTION
