@@ -1919,3 +1919,8 @@ extern SendTable g_10948538;
 extern char g_1067f90c[];
 ServerClassReg g_10945cd0("CItemGRingSerialKiller1", &g_10948538, g_1067f90c);
 // END FUNCTION
+
+// FUNCTION: 0x10406a00 size=0xa
+#include "SendTable.h"
+SendTable g_10948538;
+// END FUNCTION
