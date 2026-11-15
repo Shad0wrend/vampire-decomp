@@ -23,3 +23,8 @@ int g_1073a3f8 = ((int (*)(int))sub_101edfe0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_1073a6c4(&CPrecacheRegister::PrecacheFn_Other, "vampireprojectile");
 // END FUNCTION
+
+// FUNCTION: 0x101ee270 size=0x5
+int sub_101ee2b0(void);
+int g_1073a45c = ((int (*)(int))sub_101ee2b0)(0);
+// END FUNCTION
