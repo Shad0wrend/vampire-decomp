@@ -1667,3 +1667,8 @@ extern SendTable g_109448c4;
 extern char g_1067f82c[];
 ServerClassReg g_10946510("CItemGWarrLedger1", &g_109448c4, g_1067f82c);
 // END FUNCTION
+
+// FUNCTION: 0x10404460 size=0xa
+#include "SendTable.h"
+SendTable g_109448c4;
+// END FUNCTION
