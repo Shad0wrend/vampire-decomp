@@ -13,3 +13,8 @@ ServerClassReg g_106c4c54("CTEMuzzleFlash", &g_106c4c0c, g_10544458);
 #include "SendTable.h"
 SendTable g_106c4c0c;
 // END FUNCTION
+
+// FUNCTION: 0x10066060 size=0x5
+int sub_100660a0(void);
+int g_106c4c08 = ((int (*)(int))sub_100660a0)(0);
+// END FUNCTION
