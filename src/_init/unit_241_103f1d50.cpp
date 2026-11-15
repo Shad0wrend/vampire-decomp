@@ -5,3 +5,8 @@
 int sub_103f1d90(void);
 int g_10943134 = ((int (*)(int))sub_103f1d90)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f2a70 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10943138(&CPrecacheRegister::PrecacheFn_Other, "item_d_holy_light");
+// END FUNCTION
