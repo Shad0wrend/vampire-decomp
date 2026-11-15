@@ -45,3 +45,8 @@ ConVar g_1094ab58("physcannon_chargetime", "2", 0);
 #include "ConVar.h"
 ConVar g_1094ad60("physcannon_pullforce", "4000", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1040ba00 size=0xa
+#include "ConVar.h"
+ConVar g_1094abf0("physcannon_mega_pullforce", "8000", 0);
+// END FUNCTION
