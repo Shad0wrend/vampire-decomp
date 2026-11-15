@@ -1330,3 +1330,8 @@ ServerClassReg g_10947204("CItemGPishaFetish", &g_10945dd8, g_1067f6fc);
 #include "SendTable.h"
 SendTable g_10945dd8;
 // END FUNCTION
+
+// FUNCTION: 0x104011d0 size=0x5
+int sub_10401210(void);
+int g_10945dd4 = ((int (*)(int))sub_10401210)(0);
+// END FUNCTION
