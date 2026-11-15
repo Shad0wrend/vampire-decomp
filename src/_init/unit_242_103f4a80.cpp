@@ -724,3 +724,8 @@ SendTable g_10946d54;
 int sub_103fb5d0(void);
 int g_10946d50 = ((int (*)(int))sub_103fb5d0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103fb710 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10947390(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_thaum_damage");
+// END FUNCTION
