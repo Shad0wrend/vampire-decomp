@@ -21,3 +21,8 @@ ConVar g_10725118("knockback_no_attack_time", "1.0", 0, "Duration of time that t
 #include "ConVar.h"
 ConVar g_107251a8("player_damage_kick_knockback_scalar", "10.0", 0, "Intensity of view kick when hit into knockback");
 // END FUNCTION
+
+// FUNCTION: 0x1015a7f0 size=0xa
+#include "ConVar.h"
+ConVar g_10725fb8("pl_autopickup_wpns", "0", 0, "Determines whether players are allowed to auto-pickup weapons.", true, 0.0f, true, 1.0f);
+// END FUNCTION
