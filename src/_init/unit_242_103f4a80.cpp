@@ -1965,3 +1965,11 @@ SendTable g_109461f0;
 int sub_10407020(void);
 int g_109461ec = ((int (*)(int))sub_10407020)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10407160 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1094652c;
+extern char g_1067f93c[];
+ServerClassReg g_10946d38("CItemKSarcophagusKey", &g_1094652c, g_1067f93c);
+// END FUNCTION
