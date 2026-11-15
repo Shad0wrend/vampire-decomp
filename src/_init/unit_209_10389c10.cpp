@@ -30,3 +30,8 @@ ConVar g_1093b7c8("manbat_delta", "600.0", 0);
 #include "ConVar.h"
 ConVar g_1093b810("manbat_screech_always", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1038ae30 size=0xa
+#include "ConVar.h"
+ConVar g_1093b858("manbat_stun", "0", 0);
+// END FUNCTION
