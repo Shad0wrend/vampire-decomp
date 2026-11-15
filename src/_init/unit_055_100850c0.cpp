@@ -101,3 +101,9 @@ ConCommand g_106c94c0("ai_show_interesting", sub_10085f00, "Draws the interestin
 void sub_10085fb0(void);
 ConCommand g_106c9678("npc_bypass", sub_10085fb0, "Displays the local movement attempts by the given NPC(s) (triangulation detours).  Failed bypass routes are displayed in red, successful bypasses are shown in green.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100860c0 size=0xa
+#include "ConCommand.h"
+void sub_10086080(void);
+ConCommand g_106c8ebc("npc_destroy", sub_10086080, "Removes the given NPC(s) from the universe\nArguments:   \t{npc_name} / {npc_class_name} / no argument picks what player is looking at", 0, 0);
+// END FUNCTION
