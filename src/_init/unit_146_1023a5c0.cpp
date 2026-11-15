@@ -45,3 +45,8 @@ ConVar g_10752e20("debug_area_type", "0", 0, "Set this var to true to have the a
 void sub_1023b500(ConVar *, const char *);
 ConVar g_10752ea0("debug_cop_wait_area", "0", 0, "Set this var to true to have the area act as a safe zone for NPCs.", sub_1023b500);
 // END FUNCTION
+
+// FUNCTION: 0x1023d010 size=0x5
+int * sub_1023d050(void);
+int * g_107532e4 = ((int * (*)(int))sub_1023d050)(0);
+// END FUNCTION
