@@ -788,3 +788,8 @@ ServerClassReg g_10943964("CGargoyleTalisman", &g_10944dfc, g_1067f52c);
 #include "SendTable.h"
 SendTable g_10944dfc;
 // END FUNCTION
+
+// FUNCTION: 0x103fbe90 size=0x5
+int sub_103fbed0(void);
+int g_10944df8 = ((int (*)(int))sub_103fbed0)(0);
+// END FUNCTION
