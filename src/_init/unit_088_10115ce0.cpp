@@ -30,3 +30,8 @@ ConVar g_1070abf0("lservercfgfile", "listenserver.cfg", 0);
 #include "ConVar.h"
 ConVar g_1070ac38("mp_teamplay", "0", 4);
 // END FUNCTION
+
+// FUNCTION: 0x10117ab0 size=0xa
+#include "ConVar.h"
+ConVar g_1070aa88("mp_fraglimit", "0", 4);
+// END FUNCTION
