@@ -10,3 +10,8 @@ ConVar g_10753298("host_speeds", "0", 0);
 int sub_1023a6b0(void);
 int g_10752ee4 = ((int (*)(int))sub_1023a6b0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1023aed0 size=0x5
+int sub_1023af10(void);
+int g_107532e0 = ((int (*)(int))sub_1023af10)(0);
+// END FUNCTION
