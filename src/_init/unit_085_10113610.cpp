@@ -31,3 +31,8 @@ extern SendTable g_1070a4d4;
 extern char g_1056fd14[];
 ServerClassReg g_1070a4f4("CTEDust", &g_1070a4d4, g_1056fd14);
 // END FUNCTION
+
+// FUNCTION: 0x101141a0 size=0xa
+#include "SendTable.h"
+SendTable g_1070a4d4;
+// END FUNCTION
