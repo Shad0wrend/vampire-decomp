@@ -15,3 +15,8 @@ ConVar g_1093c2f8("andrei_force_charge_attack", "0", 0);
 #include "ConVar.h"
 ConVar g_1093c348("andrei_force_awaken", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103a59c0 size=0xa
+#include "ConVar.h"
+ConVar g_1093c390("andrei_force_jump_attack", "0", 0);
+// END FUNCTION
