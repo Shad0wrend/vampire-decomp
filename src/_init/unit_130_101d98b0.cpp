@@ -13,3 +13,8 @@ ServerClassReg g_10739a0c("CDisciplineProjectile", &g_10739a2c, g_105a1b2c);
 #include "SendTable.h"
 SendTable g_10739a2c;
 // END FUNCTION
+
+// FUNCTION: 0x101d9b90 size=0x5
+int sub_101d9bd0(void);
+int g_10739a28 = ((int (*)(int))sub_101d9bd0)(0);
+// END FUNCTION
