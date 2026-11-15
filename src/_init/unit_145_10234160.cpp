@@ -220,3 +220,8 @@ ServerClassReg g_10751938("CWeaponRanged_Rifle_RemingtonBach", &g_10752614, g_10
 #include "SendTable.h"
 SendTable g_10752614;
 // END FUNCTION
+
+// FUNCTION: 0x102363c0 size=0x5
+int sub_10236400(void);
+int g_10752610 = ((int (*)(int))sub_10236400)(0);
+// END FUNCTION
