@@ -2052,3 +2052,8 @@ ServerClassReg g_10947f40("CItemKeyGeneric", &g_1094508c, g_1067faf0);
 #include "SendTable.h"
 SendTable g_1094508c;
 // END FUNCTION
+
+// FUNCTION: 0x10408790 size=0x5
+int sub_104087d0(void);
+int g_10945088 = ((int (*)(int))sub_104087d0)(0);
+// END FUNCTION
