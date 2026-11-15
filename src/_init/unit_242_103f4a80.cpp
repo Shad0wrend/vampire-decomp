@@ -522,3 +522,11 @@ int g_10945710 = ((int (*)(int))sub_103f9ad0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10945808(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_frenzy");
 // END FUNCTION
+
+// FUNCTION: 0x103f9c60 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109480d8;
+extern char g_1067f47c[];
+ServerClassReg g_10943840("COccultLockpicking", &g_109480d8, g_1067f47c);
+// END FUNCTION
