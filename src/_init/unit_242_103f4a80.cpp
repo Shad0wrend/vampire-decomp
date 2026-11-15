@@ -1132,3 +1132,8 @@ ServerClassReg g_109449a0("CItemGLillyPurse", &g_10949030, g_1067f64c);
 #include "SendTable.h"
 SendTable g_10949030;
 // END FUNCTION
+
+// FUNCTION: 0x103ff440 size=0x5
+int sub_103ff480(void);
+int g_1094902c = ((int (*)(int))sub_103ff480)(0);
+// END FUNCTION
