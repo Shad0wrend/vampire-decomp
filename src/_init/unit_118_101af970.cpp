@@ -17,3 +17,10 @@ ConCommand g_1072bdc4("sv_soundemitter_flush", sub_101b04a0, "Flushes the sounds
 void sub_101b0670(void);
 ConCommand g_1072bd9c("sv_soundemitter_filecheck", sub_101b0670, "Report missing .wav files for sounds and game_sounds files.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x101b0a50 size=0xa
+#include "ConCommand.h"
+void sub_101b06a0(void);
+void sub_101b0ab0(void);
+ConCommand g_1072bdec("playgamesound", sub_101b06a0, "Play a sound from the game sounds txt file", 0, sub_101b0ab0);
+// END FUNCTION
