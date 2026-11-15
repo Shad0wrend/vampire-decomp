@@ -23,3 +23,11 @@ int g_107234b0 = ((int (*)(int))sub_10152400)(0);
 int * sub_10152640(void);
 int * g_10723490 = ((int * (*)(int))sub_10152640)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101566a0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10723258;
+extern char g_1057e850[];
+ServerClassReg g_10723278("CRagdollPropAttached", &g_10723258, g_1057e850);
+// END FUNCTION
