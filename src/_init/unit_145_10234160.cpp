@@ -179,3 +179,8 @@ SendTable g_10752758;
 int sub_10235a20(void);
 int g_10752754 = ((int (*)(int))sub_10235a20)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10235ba0 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10752108(&CPrecacheRegister::PrecacheFn_Other, "item_w_mac_10");
+// END FUNCTION
