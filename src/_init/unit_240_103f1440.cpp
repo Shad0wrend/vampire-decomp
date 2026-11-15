@@ -13,3 +13,8 @@ ServerClassReg g_109430b8("CVampireProjectile_MingXiaoSpit", &g_109430d4, g_1067
 #include "SendTable.h"
 SendTable g_109430d4;
 // END FUNCTION
+
+// FUNCTION: 0x103f1570 size=0x5
+int sub_103f15b0(void);
+int g_109430d0 = ((int (*)(int))sub_103f15b0)(0);
+// END FUNCTION
