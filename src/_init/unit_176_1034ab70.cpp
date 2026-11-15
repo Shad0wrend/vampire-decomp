@@ -25,3 +25,8 @@ int * g_10938050 = ((int * (*)(int))sub_1034d490)(0);
 int sub_1034e4f0(void);
 int g_1093805c = ((int (*)(int))sub_1034e4f0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1034efa0 size=0xa
+#include "ConVar.h"
+ConVar g_109380c0("sv_autojump", "0", 0);
+// END FUNCTION
