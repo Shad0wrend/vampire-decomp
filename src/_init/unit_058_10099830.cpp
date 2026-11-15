@@ -121,3 +121,9 @@ ConCommand g_106cebbc("ent_showhitboxes", sub_100ae910, "Shows an entity's hit b
 void sub_100aeb50(void);
 ConCommand g_106cf154("ent_toggledebugstats", sub_100aeb50, " ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100aed10 size=0xa
+#include "ConCommand.h"
+void sub_100aec70(void);
+ConCommand g_106cf0f8("ent_rbox", sub_100aec70, "Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
+// END FUNCTION
