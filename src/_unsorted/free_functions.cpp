@@ -117075,6 +117075,139 @@ int *sub_101953d0(PyObj *self, void *args)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10195510 size=0x345
+struct _typeobject;
+typedef struct _object { int ob_refcnt; struct _typeobject *ob_type; } PyObject;
+typedef void (*destructor)(PyObject *);
+struct _typeobject { int ob_refcnt; struct _typeobject *ob_type; int ob_size; const char *tp_name; int tp_basicsize; int tp_itemsize; destructor tp_dealloc; };
+typedef struct { int ob_refcnt; struct _typeobject *ob_type; int ob_size; PyObject *ob_item[1]; } PyTupleObject;
+struct PyMethodDef;
+
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObject *, char *, ...);
+__declspec(dllimport) PyObject *PyErr_Occurred(void);
+__declspec(dllimport) void PyErr_SetString(PyObject *, const char *);
+__declspec(dllimport) PyObject *PyExc_AttributeError;
+__declspec(dllimport) PyObject *PyString_FromString(const char *);
+__declspec(dllimport) PyObject *PyFloat_FromDouble(double);
+__declspec(dllimport) PyObject *PyInt_FromLong(long);
+__declspec(dllimport) PyObject *PyTuple_New(int);
+__declspec(dllimport) PyObject *PyCObject_FromVoidPtrAndDesc(void *, void *, void (*)(void *, void *));
+__declspec(dllimport) PyObject *PyCFunction_New(PyMethodDef *, PyObject *);
+__declspec(dllimport) PyObject _Py_TrueStruct;
+__declspec(dllimport) PyObject _Py_ZeroStruct;
+__declspec(dllimport) PyObject _Py_NoneStruct;
+}
+#define Py_None (&_Py_NoneStruct)
+#define Py_True (&_Py_TrueStruct)
+#define Py_False (&_Py_ZeroStruct)
+#define Py_INCREF(op) ((op)->ob_refcnt++)
+#define Py_DECREF(op) if (--(op)->ob_refcnt != 0) ; else ((op)->ob_type->tp_dealloc)((PyObject *)(op))
+#define PyTuple_SET_ITEM(op, i, v) (((PyTupleObject *)(op))->ob_item[i] = v)
+
+struct EntAttrRec { int type; int m4[6]; void *fn; };
+struct CEntAttrObj { virtual void f0(); virtual void f1(); virtual void f2(); virtual void f3(); virtual void *f4(); };
+struct EntAttrColor { unsigned char r, g, b, a; };
+
+extern PyMethodDef g_1058f658;
+extern char g_106b8540[];
+
+void *sub_10196780(PyObject *pEntity);
+char sub_10195940(void *pEntity, const char *pszName, EntAttrRec **ppRec, void **ppVal);
+PyObject *sub_101966a0(void *p);
+extern "C" void (*g_109f37b4)(PyObject *, const char *);
+
+PyObject *sub_10195510(PyObject *self, PyObject *args)
+{
+	PyObject *pEntity = 0;
+	char *pszName = 0;
+	EntAttrRec *pRec;
+	void *ent;
+
+	if (PyArg_ParseTuple(args, "Os", &pEntity, &pszName) && pEntity && pszName) {
+		ent = sub_10196780(pEntity);
+		if (!ent) {
+			if (!PyErr_Occurred())
+				PyErr_SetString(PyExc_AttributeError, "game entity has been deleted");
+			return 0;
+		}
+		if (!sub_10195940(ent, pszName, &pRec, (void **)&args)) {
+			PyErr_SetString(PyExc_AttributeError, pszName);
+			return 0;
+		}
+		if (pRec->fn != 0) {
+			PyObject *pCObj = PyCObject_FromVoidPtrAndDesc(ent, pRec, 0);
+			if (pCObj == 0)
+				return 0;
+			PyObject *pFunc = PyCFunction_New(&g_1058f658, pCObj);
+			if (pFunc != 0)
+				Py_DECREF(pCObj);
+			return pFunc;
+		}
+		switch (pRec->type) {
+		case 2:
+		case 0x10:
+		case 0x11: {
+			const char *psz = *(const char **)args;
+			if (psz == 0)
+				psz = g_106b8540;
+			return PyString_FromString(psz);
+		}
+		case 1:
+		case 0xf:
+			return PyFloat_FromDouble(*(float *)args);
+		case 5: {
+			PyObject *p = *(bool *)args ? Py_True : Py_False;
+			Py_INCREF(p);
+			return p;
+		}
+		case 4:
+			return PyInt_FromLong(*(long *)args);
+		case 3:
+		case 0xe: {
+			float *v = (float *)args;
+			PyObject *t = PyTuple_New(3);
+			if (t == 0)
+				return 0;
+			PyTuple_SET_ITEM(t, 0, PyFloat_FromDouble(v[0]));
+			PyTuple_SET_ITEM(t, 1, PyFloat_FromDouble(v[1]));
+			PyTuple_SET_ITEM(t, 2, PyFloat_FromDouble(v[2]));
+			return t;
+		}
+		case 0xc:
+			{ EHANDLE *ph = *(EHANDLE *volatile *)&args; return sub_101966a0(ph->Get()); }
+		case 0xd: {
+			CEntAttrObj **pp = *(CEntAttrObj ***)args;
+			if (pp != 0)
+				return sub_101966a0(pp[16] ? pp[16]->f4() : 0);
+			Py_INCREF(Py_None);
+			return Py_None;
+		}
+		case 0xb: {
+			void *p = *(void **)args;
+			return sub_101966a0(p);
+		}
+		case 8: {
+			EntAttrColor c = *(EntAttrColor *)args;
+			PyObject *t = PyTuple_New(4);
+			if (t == 0)
+				return 0;
+			PyTuple_SET_ITEM(t, 0, PyInt_FromLong(c.r));
+			PyTuple_SET_ITEM(t, 1, PyInt_FromLong(c.g));
+			PyTuple_SET_ITEM(t, 2, PyInt_FromLong(c.b));
+			PyTuple_SET_ITEM(t, 3, PyInt_FromLong(c.a));
+			return t;
+		}
+		default:
+			PyErr_SetString(PyExc_AttributeError, pszName);
+			return 0;
+		}
+	}
+	g_109f37b4(PyExc_AttributeError, "bad args to entity_get_attr");
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10195940 size=0x9e
 #include <string.h>
 

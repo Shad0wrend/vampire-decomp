@@ -7234,6 +7234,7 @@
 0x1000a434 func   ?vfunc81@CItemGHannahsApptBook@@QAEHXZ CItemGHannahsApptBook::vfunc81
 0x1000a439 func   ?sub_103604b0@@YAHXZ sub_103604b0
 0x1000a43e func   ?sub_10178400@CUnitP2@@QAEXXZ CUnitP2::sub_10178400
+0x1000a443 func   ?sub_10195510@@YAPAU_object@@PAU1@0@Z sub_10195510
 0x1000a448 func   ?sub_100e4bd0@CDialog@@QAEXH@Z CDialog::sub_100e4bd0
 0x1000a452 func   ?RemoveNode@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QAEXH@Z CUtlRBTree<CSoundEmitterRecord,int>::RemoveNode
 0x1000a457 func   _func_rotating func_rotating
