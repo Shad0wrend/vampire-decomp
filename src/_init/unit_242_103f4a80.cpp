@@ -1181,3 +1181,8 @@ extern SendTable g_10946ea0;
 extern char g_1067f67c[];
 ServerClassReg g_10946fa4("CItemGWerewolfBlood", &g_10946ea0, g_1067f67c);
 // END FUNCTION
+
+// FUNCTION: 0x103ffbd0 size=0xa
+#include "SendTable.h"
+SendTable g_10946ea0;
+// END FUNCTION
