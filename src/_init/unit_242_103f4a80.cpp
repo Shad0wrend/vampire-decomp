@@ -87,3 +87,8 @@ ServerClassReg g_109483e8("CItemMMoneyClip", &g_10943d2c, g_1067f234);
 #include "SendTable.h"
 SendTable g_10943d2c;
 // END FUNCTION
+
+// FUNCTION: 0x103f5cb0 size=0x5
+int sub_103f5cf0(void);
+int g_10943d28 = ((int (*)(int))sub_103f5cf0)(0);
+// END FUNCTION
