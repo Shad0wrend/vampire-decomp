@@ -15,3 +15,8 @@ ConVar g_1093cc80("sk_vtzimisce_health", "10", 0);
 #include "ConVar.h"
 ConVar g_1093cf48("tzimisce_pickup", "1", 0, "Set to 1 to allow Tzimisce creation to pickup and throw bodies.");
 // END FUNCTION
+
+// FUNCTION: 0x103b62e0 size=0xa
+#include "ConVar.h"
+ConVar g_1093cce0("tzimisce_pounce", "1", 0, "Set to 1 to allow Tzimisce creation to do pounce attack.");
+// END FUNCTION
