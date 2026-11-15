@@ -15416,6 +15416,7 @@
 0x10014c04 func   ?sub_1038fc80@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038fc80
 0x10014c09 func   ?sub_1023db70@CWorldEvents@@QAEXXZ CWorldEvents::sub_1023db70
 0x10014c0e func   ?vfunc506@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc506
+0x10014c13 func   ?sub_10207c70@StatOwner@@QAEXPAVCBaseCombatCharacter@@D@Z StatOwner::sub_10207c70
 0x10014c18 func   ?sub_101bb620@@YAHXZ sub_101bb620
 0x10014c1d func   ?sub_100ce810@@YGEPAUEv_t@@PAXPAH@Z sub_100ce810
 0x10014c22 func   ?sub_103c6a00@@YIXPAX@Z sub_103c6a00

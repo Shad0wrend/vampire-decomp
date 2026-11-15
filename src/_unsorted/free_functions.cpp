@@ -169089,6 +169089,52 @@ StatDefault3 * __stdcall sub_10207c40(CBaseCombatCharacter *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10207c70 size=0x10e
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CBaseCombatCharacter.h"
+#include "CStatDefault3List.h"
+#include "StatDefault3.h"
+#include "CVStatList_t.h"
+
+extern CStatDefault3List g_10738d10;
+struct COwnerObj {
+	void sub_10181680(int a, int b);
+	void sub_10182e00(int a);
+};
+int __fastcall sub_1032e7b0(void *p);
+
+struct StatOwner { void sub_10207c70(CBaseCombatCharacter *pChar, char bFlag); };
+
+// TARGET: StatOwner::sub_10207c70
+void StatOwner::sub_10207c70(CBaseCombatCharacter *pChar, char bFlag)
+{
+	if (pChar->m_n168 == 0x1f || pChar->m_n168 == 0x1e || *(int *)((char *)pChar + 0x10d8) == 5)
+		return;
+	StatDefault3 *pItem = g_10738d10.sub_101d5f10(pChar);
+	if (pChar->m_pA8)
+	{
+		int nStat = CVStatListSet::Of(pChar)->Find(0)->sub_102012d0(0x13);
+		const char *psz;
+		if (pChar->sub_10336920())
+		{
+			const char *pszName = *pItem->sub_101d4e70(&psz, nStat);
+			pChar->vfunc105(pszName ? pszName : "");
+		}
+		else
+		{
+			const char *pszName = *pItem->sub_101d4eb0(&psz, nStat);
+			pChar->vfunc105(pszName ? pszName : "");
+		}
+		COwnerObj *pOwner = (COwnerObj *)pChar->m_pA8;
+		pOwner->sub_10181680(0, 1);
+		if (bFlag)
+			pOwner->sub_10182e00(sub_1032e7b0(pOwner));
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10207dd0 size=0xd
 void sub_10207c70(int a, float b);
 
