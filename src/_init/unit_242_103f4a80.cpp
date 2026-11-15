@@ -8,3 +8,8 @@ extern SendTable g_1094800c;
 extern char g_1067eea0[];
 ServerClassReg g_10947564("CWeaponLockpick", &g_1094800c, g_1067eea0);
 // END FUNCTION
+
+// FUNCTION: 0x103f4b30 size=0xa
+#include "SendTable.h"
+SendTable g_1094800c;
+// END FUNCTION
