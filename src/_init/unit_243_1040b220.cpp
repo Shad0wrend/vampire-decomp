@@ -80,3 +80,8 @@ ConVar g_1094a940("physcannon_launch_multiplier", ".01", 0);
 #include "ConVar.h"
 ConVar g_1094aba8("player_throwforce", "1000", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1040bdf0 size=0x5
+int sub_1040be30(void);
+int g_1094ab08 = ((int (*)(int))sub_1040be30)(0);
+// END FUNCTION
