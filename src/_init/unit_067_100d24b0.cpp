@@ -461,3 +461,9 @@ ConCommand g_106e75c4("vhelp", sub_100db4a0, "Lists the available Vampire System
 void sub_100db5c0(void);
 ConCommand g_106e7408("unlockpcangles", sub_100db5c0, "unlock a player's angles after a grapple", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100db710 size=0xa
+#include "ConCommand.h"
+void sub_100db6c0(void);
+ConCommand g_106e74a8("burnpeel", sub_100db6c0, "burn effect on the player", 0, 0);
+// END FUNCTION
