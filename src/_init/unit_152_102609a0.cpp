@@ -90,3 +90,8 @@ ConVar g_109204a8("footstep_heavy_dist", "512", 128);
 #include "ConVar.h"
 ConVar g_109203f8("footstep_npc_use_templates", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10270360 size=0xa
+#include "ConVar.h"
+ConVar g_109202c8("debug_sound_occlusion", "1", 0, "Set this to 1 to allow certain objects & the world to occlude sounds.");
+// END FUNCTION
