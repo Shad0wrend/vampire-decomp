@@ -83,3 +83,8 @@ CPhysicsPlayerCallback g_1093827c;
 #include "ConVar.h"
 ConVar g_109384d8("debug_stealth_light", "-1", 0, "Overrides the light on the player for stealth calculations (-1 = off, 0 = min light, 10 = max light).", true, -1.0f, true, 10.0f);
 // END FUNCTION
+
+// FUNCTION: 0x10351620 size=0xa
+#include "ConVar.h"
+ConVar g_109383a0("debug_stealth_show_light", "0", 0, "Shows the light on the player.", true, 0.0f, true, 1.0f);
+// END FUNCTION
