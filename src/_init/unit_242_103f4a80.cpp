@@ -1420,3 +1420,8 @@ ServerClassReg g_109453f0("CItemGGuyMagazine", &g_109475d0, g_1067f74c);
 #include "SendTable.h"
 SendTable g_109475d0;
 // END FUNCTION
+
+// FUNCTION: 0x10401f40 size=0x5
+int sub_10401f80(void);
+int g_109475cc = ((int (*)(int))sub_10401f80)(0);
+// END FUNCTION
