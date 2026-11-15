@@ -134920,6 +134920,202 @@ int sub_101c7fa0(void *pObj)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7ff0 size=0x640
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "CBaseEntity.h"
+#include "levellist.h"
+#include "CSave.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include "globalvars.h"
+#include "CBaseCombatWeapon.h"
+#include "CUnknown100a8220.h"
+#include "utlvector.h"
+extern CGlobalEntityList g_106eb5d8;
+extern char g_1055ef50[];
+extern char g_10538764[];
+extern "C" void *__cdecl __RTDynamicCast(void *p, long off, void *src, void *dst, int bThrow);
+extern "C" int __cdecl _strcmpi(const char *a, const char *b);
+__declspec(dllimport) char *Q_strncpy(char *dst, const char *src, int n);
+__declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+__declspec(dllimport) void Warning(const char *fmt, ...);
+extern void (*g_109f366c)(const char *fmt, ...);
+int sub_101c7690(const char *pName, CBaseEntity *pTrigger);
+int sub_101c7e00(levellist_t *pList, int count, const char *pMap, const char *pLandmark, void *pEdict);
+int sub_101c7fa0(CBaseEntity *pEnt, const char *pLandmark);
+CBaseEntity *sub_100ab250(void *pEdict);
+
+struct CNameObj2 { virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual const char *GetName(); };
+struct CNameObj { virtual void s0(); virtual void s1(); virtual void s2(); virtual CNameObj2 *GetObj(); };
+struct CEdictNameView { char pad[0x40]; CNameObj *m_pUnknown; };
+inline const char *GetClassname(CBaseEntity *e)
+{
+	CEdictNameView *ed = (CEdictNameView *)e->m_pEdict2e0;
+	if (!ed->m_pUnknown)
+		return g_106b8540;
+	return ed->m_pUnknown->GetObj()->GetName();
+}
+inline CBaseEntity *InstanceE(void *pent)
+{
+	ScopeTrace scope("CBaseEntity::Instance", g_106b8540);
+	if (!pent)
+		pent = (void *)engine->vfunc38(0);
+	return sub_100ab250(pent);
+}
+inline CBaseEntity *InstanceI(int iEnt)
+{
+	return InstanceE((void *)engine->vfunc38(iEnt));
+}
+__forceinline CBaseEntity *HGet(const EHANDLE &h)
+{
+	const EHandleEntInfo *pInfo;
+	if (h.m_Index == 0xffffffff)
+		return 0;
+	pInfo = &EHandleDetail::g_10566458->m_EntPtrArray[h.GetEntryIndex()];
+	if (pInfo->m_SerialNumber == h.GetSerialNumber())
+		return (CBaseEntity *)pInfo->m_pEntity;
+	return 0;
+}
+struct CChangeLevelView : CBaseEntity
+{
+	char pad[0x598 - sizeof(CBaseEntity)];
+	char m_szMapName[32];
+	char m_szLandmarkName[32];
+};
+struct CPartyView
+{
+	char pad[0x14c0];
+	CUtlVector<EHANDLE> m_Party;
+	char pad2[0x1c64 - 0x14d4];
+	EHANDLE m_hLeader;
+};
+inline CPartyView *Pv_c7(CBaseEntity *p) { return (CPartyView *)p->m_pA8; }
+struct CSaveDataView { char pad[0x1330]; int m_n1330; };
+struct CGlobalsView { char pad[0x20]; void *pSaveData; };
+typedef CUtlVector<int> CSaveIntVec;
+
+// TARGET: sub_101c7ff0
+int sub_101c7ff0(levellist_t *pLevelList, int maxList, const char *pMapName, const char *pLandmarkName)
+{
+	CBaseEntity *pChange, *pLandmark;
+	int i, count;
+	count = 0;
+	pChange = g_106eb5d8.sub_100f7380(0, "trigger_changelevel");
+	if (!pChange)
+		return 0;
+	while (pChange) {
+		CChangeLevelView *pTrigger = (CChangeLevelView *)__RTDynamicCast(pChange, 0, g_10538764, g_1055ef50, 0);
+		if (pTrigger) {
+			pLandmark = (CBaseEntity *)sub_101c7690(pTrigger->m_szLandmarkName, pTrigger);
+			if (pLandmark) {
+				if (pLandmarkName) {
+					if (!_strcmpi(pLandmarkName, "taxi_landmark") && !_strcmpi(pTrigger->m_szLandmarkName, "taxi_landmark") && pMapName)
+						Q_strncpy(pTrigger->m_szMapName, pMapName, 0x20);
+					if (!_strcmpi(pLandmarkName, "sewer_map_landmark") && !_strcmpi(pTrigger->m_szLandmarkName, "sewer_map_landmark") && pMapName)
+						Q_strncpy(pTrigger->m_szMapName, pMapName, 0x20);
+				}
+				void *pev = (void *)pLandmark->m_pEdict2e0;
+				if (sub_101c7e00(pLevelList, count, pTrigger->m_szMapName, pTrigger->m_szLandmarkName, pev)) {
+					count++;
+					if (count >= maxList) {
+						g_109f366c("Too many level transitions on this map, possible corruption.");
+						break;
+					}
+				}
+			}
+		}
+		pChange = g_106eb5d8.sub_100f7380(pChange, "trigger_changelevel");
+	}
+
+	if (((CGlobalsView *)gpGlobals)->pSaveData && ((CSaveDataView *)((CGlobalsView *)gpGlobals)->pSaveData)->m_n1330) {
+		CSave saveHelper((CSaveDataView *)((CGlobalsView *)gpGlobals)->pSaveData);
+		__int64 flags;
+		for (i = 0; i < count; i++) {
+			int j, iEntity = 0;
+			CBaseEntity *pEntList[0x200];
+			__int64 entityFlags[0x200];
+			CBaseEntity *pEntity = 0;
+			CBaseEntity *pLandmarkEntity = InstanceE(pLevelList[i].pentLandmark);
+			while ((pEntity = g_106eb5d8.sub_100f7060(pEntity)) != 0) {
+				DevMsg(3, "Trying %s\n", GetClassname(pEntity));
+				int caps = pEntity->vfunc117();
+				if (!(caps & 0x80000000)) {
+					flags = 0;
+					bool bMove = false;
+					if (caps & 2) {
+						bool bWeapon = false;
+						if (pEntity->m_n00a0) {
+							CBaseEntity *pw = (CBaseEntity *)((CBaseCombatWeapon *)pEntity->m_n00a0)->sub_10252290();
+							if (pw && pw->m_pA8)
+								bWeapon = true;
+						}
+						if (pEntity->m_pA8 || bWeapon)
+							bMove = true;
+						else {
+							CBaseEntity *pPlayer = InstanceI(1);
+							CPartyView *pView = pPlayer ? Pv_c7(pPlayer) : 0;
+							if (pView) {
+								if (HGet(pView->m_hLeader) == pEntity)
+									bMove = true;
+								else {
+									for (int k = 0; k < pView->m_Party.Count(); k++) {
+										if (HGet(pView->m_Party[k]) == pEntity) {
+											bMove = true;
+											break;
+										}
+									}
+								}
+							}
+						}
+					if (bMove)
+						flags = 0x2000000000000000i64;
+					}
+					if (*(int *)((char *)pEntity + 0x120) && !((CUnknown100a8220 *)pEntity)->sub_100a8220())
+						flags |= 0x1000000000000000i64;
+					if (flags) {
+						if (iEntity >= 0x200) {
+							Warning("Too many entities across a transition!");
+							break;
+						}
+						entityFlags[iEntity] = flags;
+						pEntList[iEntity] = pEntity;
+						iEntity++;
+						DevMsg(1, "Saving %s\n", GetClassname(pEntity));
+					} else
+						DevMsg(3, "Failed %s\n", GetClassname(pEntity));
+				} else
+					DevMsg(3, "DON'T SAVE %s\n", GetClassname(pEntity));
+			}
+			for (j = 0; j < iEntity; j++) {
+				if (entityFlags[j] && sub_101c7fa0(pEntList[j], pLevelList[i].landmarkName)) {
+					int index = saveHelper.sub_101a08f0(pEntList[j]);
+					saveHelper.sub_101a0980(index, entityFlags[j] | (1 << i));
+				} else
+					DevMsg(1, "Screened out %s\n", GetClassname(pEntList[j]));
+			}
+		}
+		((CSaveIntVec *)&saveHelper.m_pSections)->~CSaveIntVec();
+	}
+	return count;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c8820 size=0x1a
 namespace lifted {
 extern int g_1059de58;

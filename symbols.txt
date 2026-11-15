@@ -6842,6 +6842,7 @@
 0x10009c41 func   ?vfunc139@CNPCMaker@@QAEXPAVCBaseEntity@@@Z CNPCMaker::vfunc139
 0x10009c46 func   ?sub_10193c30@CPDV@@QAEXPAUS10193c30@@@Z CPDV::sub_10193c30
 0x10009c4b func   ?sub_101953d0@@YAPAHPAUPyObj@@PAX@Z sub_101953d0
+0x10009c50 func   ?sub_101c7ff0@@YAHPAUlevellist_t@@HPBD1@Z sub_101c7ff0
 0x10009c55 func   ?sub_1029c9f0@@YGMMPAUCUnk1029c9f0@@@Z sub_1029c9f0
 0x10009c5a func   ?vfunc5@CEnvBeam@@QAEPAV1@I@Z CEnvBeam::vfunc5
 0x10009c5f func   ?vfunc18@CCollisionProperty@@UAEHXZ CCollisionProperty::vfunc18
