@@ -40,3 +40,8 @@ ConVar g_1093d5b8("werewolf_print_haspath", "20", 0);
 #include "ConVar.h"
 ConVar g_1093f738("werewolf_show_debug", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103c8330 size=0xa
+#include "ConVar.h"
+ConVar g_1093f858("werewolf_fastbreak_chance", "40", 0);
+// END FUNCTION
