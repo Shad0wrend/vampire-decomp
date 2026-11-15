@@ -4292,6 +4292,378 @@ void CBasePlayer::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016d260 size=0x947
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CBasePlayer.h"
+#include "CVStatList_t.h"
+#include "ScopeTrace.h"
+#include <new.h>
+#include <string.h>
+struct CVarV { virtual void v0(); virtual char vfunc1(); int pad4[7]; int m20; int m24; float m28; int m2c; };
+struct CRulesV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+ virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+ virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+ virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void vfunc35(void *p); virtual void v36(); virtual void v37(); virtual void v38(); virtual void vfunc39(void *p);
+ virtual void v40(); virtual void v41(); virtual void v42(); virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47(); virtual void v48(); virtual void v49();
+ virtual void v50(); virtual void v51(); virtual void v52(); virtual void v53(); virtual void v54(); virtual void v55(); virtual void v56(); virtual void v57(); virtual void v58(); virtual void v59();
+ virtual void v60(); virtual void v61(); virtual void v62(); virtual void v63(); virtual void v64(); virtual void v65(); virtual void v66(); virtual void v67(); virtual void v68(); virtual void v69();
+ virtual void vfunc70(void *p); };
+struct CGV { float a; float b; float c; float curtime; };
+struct CFlagsV { char pad[0x44]; unsigned short m44; void sub_100dc580(int f); void sub_100dc480(int f); };
+struct CNamedListV { int sub_101d5bd0(const char *p); };
+struct CUnk10206 { void sub_10206c70(int a, void *b); };
+extern CVarV *g_109eee0c;
+extern CVarV *g_10725d9c;
+extern CVarV *g_10725bcc;
+extern int g_10725be0;
+extern CRulesV *g_1070ba0c;
+extern CGV *g_1070b228;
+extern float g_1070d1b0, g_1070d1b4, g_1070d1b8;
+extern int g_1070ba28;
+extern CNamedListV g_10738d10;
+extern CUnk10206 g_1074f028;
+extern float g_104454c4;
+extern CVStatList_t g_109f0b40;
+void sub_10012a8a();
+int atexit(void (__cdecl *)());
+int sub_10184260(int);
+struct PCol { unsigned char r, g, b, a; };
+void sub_101ce290(void *, PCol *, int, int, int);
+#define SCR(x) ((((((x) & 0x8a66e35) ^ 0x85f3db1) + 0x8b10412) & 0x175991ca) ^ (x) ^ 0x783682a9)
+struct SecLoc { char a, b; unsigned int v; };
+struct SecV { char a, b; unsigned int v;
+ void operator=(const SecLoc &p) { b = p.b; a = p.a; v = p.v; }
+ __forceinline void Set(unsigned int x) { SecLoc loc; unsigned int r = sub_10184260(x); loc.v = SCR(r); *this = loc; }
+};
+void sub_101cf600(void *);
+extern void (__cdecl *g_109f3628)(const char *, ...);
+inline CVStatList_t *FindStat0(CVStatListSet *s)
+{
+ int n = s->m_nLists;
+ int i = 0;
+ if (n > 0) {
+  CVStatList_t **p = s->m_pLists;
+  CVStatList_t **q = p;
+  do {
+   if ((*q)->m_field10 == 0) return p[i];
+   i++; q++;
+  } while (i < n);
+ }
+ if (!(g_109f0b2a & 1)) {
+  g_109f0b2a |= 1;
+  new (&g_109f0b40) CVStatList_t(-1);
+  atexit(sub_10012a8a);
+ }
+ return &g_109f0b40;
+}
+struct SV : CBasePlayer {
+ int sub_100b3700(); void sub_100b37a0(); void sub_100b3580(int f);
+ void sub_100ac4e0(int a, int b, int c); void sub_100adf10(const Vector &a, const Vector &b); void sub_100aaa40(int a);
+ int sub_1008dc40(int a, int b); void sub_1016fed0(); void sub_10177b50(); void sub_101816c0(const char *p);
+ void sub_103239a0(const char *p); void sub_103373e0(); int sub_10337860(); void sub_1033df80();
+ void sub_1017faa0();
+ void sub_1016d260(); 
+};
+struct XM { int x; };
+typedef void (XM::*PM1)(const char *);
+typedef void (XM::*PM2)(int, int);
+struct Five { int a[5]; Five() { a[0] = 0; a[1] = 0; a[2] = 0; a[3] = 0; a[4] = 0; } };
+struct SpawnV {
+ char pad0[0x168];
+ int f168;
+ char pad16c[0x18];
+ Vector v184;
+ char pad190[0xc];
+ int f19c;
+ char pad1a0[0x5c];
+ int f1fc;
+ int f200;
+ char pad204[0x4];
+ int f208;
+ char pad20c[0x4];
+ int f210;
+ char pad214[0x58];
+ char* f26c;
+ CFlagsV fl270;
+ char pad2b6[0x13a];
+ float f3f0;
+ char pad3f4[0x2fc];
+ int f6f0;
+ char pad6f4[0x7a4];
+ int fe98;
+ char pade9c[0x1a4];
+ EHANDLE f1040;
+ char pad1044[0x388];
+ int f13cc;
+ char pad13d0[0xa5];
+ char f1475;
+ char pad1476[0x2];
+ int f1478;
+ char pad147c[0x20];
+ EHANDLE f149c;
+ char pad14a0[0x8];
+ char f14a8;
+ char pad14a9[0x1];
+ char f14aa;
+ char pad14ab[0x1];
+ EHANDLE f14ac;
+ int f14b0;
+ int f14b4;
+ char pad14b8[0xac];
+ float f1564;
+ char pad1568[0x8];
+ int f1570;
+ float f1574;
+ Vector v1578;
+ char pad1584[0x6e4];
+ float f1c68;
+ char pad1c6c[0x34];
+ char f1ca0;
+ char pad1ca1[0x3];
+ int f1ca4;
+ int f1ca8;
+ int f1cac;
+ char f1cb0;
+ char f1cb1;
+ char pad1cb2[0x6];
+ EHANDLE f1cb8;
+ EHANDLE f1cbc;
+ EHANDLE f1cc0;
+ int f1cc4;
+ int f1cc8;
+ int f1ccc;
+ char pad1cd0[0x4];
+ char f1cd4;
+ char f1cd5;
+ char pad1cd6[0x2];
+ unsigned int f1cd8;
+ int f1cdc;
+ float f1ce0;
+ float f1ce4;
+ int f1ce8;
+ int f1cec;
+ int f1cf0;
+ int f1cf4;
+ int f1cf8;
+ char pad1cfc[0x14];
+ int f1d10;
+ int f1d14;
+ char f1d18;
+ char pad1d19[0x3];
+ int f1d1c;
+ int f1d20;
+ char pad1d24[0x4];
+ char a1d28[20];
+ char pad1d3c[0x6c];
+ int f1da8;
+ int f1dac;
+ char pad1db0[0xc];
+ float f1dbc;
+ char f1dc0;
+ char pad1dc1[0x3];
+ int f1dc4;
+ char f1dc8;
+ char pad1dc9[0x3];
+ int f1dcc;
+ int f1dd0;
+ int f1dd4;
+ int f1dd8;
+ char pad1ddc[0x24];
+ char f1e00;
+ char pad1e01[0x77];
+ int f1e78;
+ int f1e7c;
+ char pad1e80[0xc];
+ char f1e8c;
+ char pad1e8d[0x5b];
+ int f1ee8;
+ char pad1eec[0x28];
+ char f1f14;
+ char pad1f15[0xf];
+ float f1f24;
+ char f1f28;
+ char pad1f29[0x13f];
+ int f2068;
+ char pad206c[0x64];
+ float f20d0;
+ float f20d4;
+ float f20d8;
+ float f20dc;
+ float f20e0;
+ float f20e4;
+ char pad20e8[0x8];
+ int f20f0;
+ char pad20f4[0x28];
+ float f211c;
+ float f2120;
+ float f2124;
+ char pad2128[0x4];
+ int f212c;
+ char pad2130[0x1c];
+ int f214c;
+ char pad2150[0x12c];
+ int f227c;
+ char pad2280[0x14];
+ int f2294;
+ char f2298;
+ char f2299;
+ char f229a;
+ char pad229b[0x5];
+ char f22a0;
+ char pad22a1[0x13];
+ int f22b4;
+ int f22b8;
+ char pad22bc[0xc];
+ int f22c8;
+ char pad22cc[0x18];
+ int f22e4;
+ char pad22e8[0xc];
+ int f22f4;
+ int f22f8;
+ float f22fc;
+ char pad2300[0x4];
+ int f2304;
+ char pad2308[0x8];
+ int f2310;
+ char pad2314[0x30];
+ int f2344;
+};
+#define F ((SpawnV *)this)
+#define NM (F->f26c ? F->f26c : g_106b8540)
+void SV::sub_1016d260()
+{
+ typedef void (__fastcall *F1)(void *, int, const char *);
+ typedef void (__fastcall *F0)(void *);
+ F->f1e00 = 1;
+ (((XM *)this)->**(PM1 *)(*(int*)this + 0x1e8))("player");
+ F->f1f14 = 1;
+ F->f2068 = 0;
+ F->f1f24 = g_109eee0c->vfunc1() ? g_104454c4 : g_109eee0c->m28;
+ F->f210 = 100;
+ F->f1f28 = 1;
+ F->f22e4 = 0;
+ F->f1fc = 2;
+ F->f208 = F->f210;
+ F->f2310 = 0;
+ memset(m_flRunForwardSpeeds, 0, 32);
+ memset(m_flRunSideSpeeds, 0, 32);
+ memset(m_flWalkForwardSpeeds, 0, 32);
+ memset(m_flWalkSideSpeeds, 0, 32);
+ memset(m_flSneakForwardSpeeds, 0, 32);
+ memset(m_flSneakSideSpeeds, 0, 32);
+ F->f1ca0 = 0;
+ if (sub_100b3700() & 0x100) { sub_100b37a0(); sub_100b3580(0x180); } else { sub_100b37a0(); sub_100b3580(0x80); }
+ sub_100b3580(0x10000);
+ F->f3f0 = 1.0f;
+ F->f22fc = g_1070b228->curtime + 12.0f;
+ F->f2344 = 2;
+ F->f200 = 0;
+ F->f19c = F->f19c & 0x20;
+ F->f22f4 = 0;
+ F->f22f8 = 0;
+ F->f2294 = -1;
+ F->fe98 = 0;
+ F->f20f0 = 0;
+ F->f1e78 = 0;
+ F->f1e7c = 0;
+ F->f168 = 0;
+ F->f22c8 = 0;
+ F->f214c = 0;
+ F->f227c = 0;
+ F->f1574 = 0.5f;
+ F->f1570 = 0xf7;
+ F->f1564 = g_1070b228->curtime;
+ F->f20d0 = g_1070d1b0; F->f20d4 = g_1070d1b4; F->f20d8 = g_1070d1b8;
+ F->f20dc = g_1070d1b0; F->f20e0 = g_1070d1b4; F->f20e4 = g_1070d1b8;
+ F->f1ee8 = 0;
+ if (!F->f2299) g_1070ba0c->vfunc70(this);
+ if (F->f13cc < 0) {
+  F->f13cc = g_10725d9c->vfunc1() ? 0 : g_10725d9c->m2c;
+ }
+ FindStat0(CVStatListSet::Of(this))->sub_102008e0(0xb, F->f13cc);
+ F->f13cc = FindStat0(CVStatListSet::Of(this))->sub_102012d0(0xb);
+ g_1070ba0c->vfunc39(this);
+ { Vector v(0, 0, 64); F->v184 = v; }
+ (*(F0*)(*(int*)this + 0x1a0))(this);
+ F->v1578 = Vector(0, 32, 0);
+ if (F->f212c == -1) g_109f3628("Couldn't alloc player sound slot!\n");
+ F->f22a0 = 0;
+ sub_100ac4e0(0, 0, 0);
+ F->f2298 = 1;
+ F->f229a = 0;
+ F->f22b8 = 0; F->f22b4 = 0;
+ if (F->f2304) { F->f2304 = 0; sub_10177b50(); }
+ PCol col; col.r = 0; col.g = 0; col.b = 0; col.a = 0; sub_101ce290(this, &col, 0, 0, 2);
+ int idx = sub_10337860();
+ if (idx <= 0) {
+  const char *nm;
+  if (g_10725bcc->vfunc1()) nm = g_106b8540;
+  else if (g_10725be0 & 0x1000) nm = "FCVAR_NEVER_AS_STRING";
+  else {
+   nm = (const char *)g_10725bcc->m20;
+   if (nm == 0) nm = g_106b8540;
+  }
+  idx = g_10738d10.sub_101d5bd0(nm);
+  if (idx <= 0) idx = g_10738d10.sub_101d5bd0("Player_Malkavian");
+ }
+ F->f1040 = (CBaseEntity *)0; F->f14ac = (CBaseEntity *)0; F->f149c = (CBaseEntity *)0;
+ F->f14a8 = 0; F->f1475 = 0; F->f1478 = 0; F->f14aa = 0;
+ F->f1cb8 = (CBaseEntity *)0; F->f1cbc = (CBaseEntity *)0;
+ CGV *g = *(CGV *volatile *)&g_1070b228; F->f1c68 = g->curtime; F->f1ccc = 0;
+ ((SecV *)&F->f1cd4)->Set(0);
+ F->f1ce0 = -1.0f; F->f1ce4 = -1.0f;
+ F->f1cdc = 0; F->f1ce8 = 0; F->f1cec = 0;
+ F->f1cc0 = (CBaseEntity *)0; F->f1cc4 = 0x47c34ff3; F->f1cc8 = 0;
+ F->f1cf0 = 0; F->f1cf4 = 0; F->f1cf8 = 0x7f7fffff;
+ F->f1d10 = 0; F->f1d14 = 0; F->f1d1c = 0; F->f1d18 = 0; F->f1d20 = 0;
+ F->f14b0 = -1; F->f14b4 = -1;
+ F->f1ca4 = 0; F->f1ca8 = 0; F->f1cac = 0;
+ g_1074f028.sub_10206c70(idx, this);
+ int ig = (*(int (__fastcall **)(void *))(*(int*)this + 0x20))(this);
+ g_1070ba28 = ig;
+ F->f6f0 = sub_1008dc40(1, -1);
+ g_1070ba0c->vfunc35(this);
+ F->f211c = g_1070d1b0; F->f2120 = g_1070d1b4; F->f2124 = g_1070d1b8;
+ sub_103373e0();
+ g_1070ba0c->vfunc39(this);
+ ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc103();
+ sub_101816c0("item_w_unarmed");
+ sub_1033df80();
+ F->f1dac = 0;
+ F->f1dbc = g_1070b228->curtime;
+ F->f1dc0 = 0; F->f1dc4 = 0; F->f1dc8 = 0; F->f1dcc = 0; F->f1dd0 = 0; F->f1dd4 = 0; F->f1dd8 = 0; F->f1da8 = 0;
+ F->f1e8c = 1;
+ memset(F->a1d28, 0, 20);
+ CFlagsV *fl;
+ { ScopeTrace s("CBaseEntity::SetSolidFlags", NM); fl = &F->fl270; fl->sub_100dc580(0); }
+ { ScopeTrace s("CBaseEntity::AddSolidFlags", NM); fl->sub_100dc580(fl->m44 | 1); }
+ { ScopeTrace s("CBaseEntity::AddSolidFlags", NM); fl->sub_100dc580(fl->m44 | 0x10); }
+ { ScopeTrace s("CBaseEntity::AddSolidFlags", NM); fl->sub_100dc580(fl->m44 | 0x40); }
+ { ScopeTrace s("CBaseEntity::SetSolid", NM); fl->sub_100dc480(2); }
+ sub_100aaa40(3);
+ (((XM *)this)->**(PM2 *)(*(int*)this + 0x174))(3, 0);
+ if (sub_100b3700() & 2)
+  sub_100adf10(Vector(-16, -16, 0), Vector(16, 16, 36));
+ else
+  sub_100adf10(Vector(-16, -16, 0), Vector(16, 16, 72));
+ sub_101cf600(this);
+ F->f1cb0 = 0; F->f1cb1 = 0;
+ sub_103239a0("player");
+ (*(F0*)(*(int*)this + 0x750))(this);
+ F->f1e00 = 0;
+ sub_1016fed0();
+ sub_1017faa0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016de10 size=0x21e
 #include "CBasePlayer.h"
 #include "utlrbtree.h"
