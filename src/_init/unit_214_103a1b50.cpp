@@ -5,3 +5,8 @@
 inline int pcd_initial_1093bf60() { return 0x450; }
 int g_1093bf60 = pcd_initial_1093bf60();
 // END FUNCTION
+
+// FUNCTION: 0x103a1b90 size=0xa
+#include "ConVar.h"
+ConVar g_1093bf68("sk_vpedestrian_health", "10", 0);
+// END FUNCTION
