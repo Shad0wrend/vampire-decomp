@@ -1145,3 +1145,8 @@ extern SendTable g_109469c4;
 extern char g_1067f65c[];
 ServerClassReg g_109449ec("CItemGBailbondReceipt", &g_109469c4, g_1067f65c);
 // END FUNCTION
+
+// FUNCTION: 0x103ff670 size=0xa
+#include "SendTable.h"
+SendTable g_109469c4;
+// END FUNCTION
