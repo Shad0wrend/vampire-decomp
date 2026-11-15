@@ -20,3 +20,8 @@ ConVar g_10721a18("debug_physics_lift_height", "20", 0, "");
 #include "ConVar.h"
 ConVar g_1071a378("debug_physics_drag_dist", "64", 0, "");
 // END FUNCTION
+
+// FUNCTION: 0x101481a0 size=0xa
+#include "ConVar.h"
+ConVar g_1071a4a0("debug_physics_throw_velocity", "20", 0, "");
+// END FUNCTION
