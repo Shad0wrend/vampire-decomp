@@ -13,3 +13,8 @@ ServerClassReg g_106c2494("CTEEnergySplash", &g_106c24b0, g_106c2648);
 #include "SendTable.h"
 SendTable g_106c24b0;
 // END FUNCTION
+
+// FUNCTION: 0x100615a0 size=0x5
+int sub_100615e0(void);
+int g_106c24ac = ((int (*)(int))sub_100615e0)(0);
+// END FUNCTION
