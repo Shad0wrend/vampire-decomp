@@ -35,3 +35,8 @@ ConVar g_106b8860("physics_impact_sound_min", "0.1", 0, "For physics impact soun
 #include "ConVar.h"
 ConVar g_106b8908("collision_shake_amp", "0.2", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10032060 size=0xa
+#include "ConVar.h"
+ConVar g_106b88a8("collision_shake_freq", "0.5", 0);
+// END FUNCTION
