@@ -10,3 +10,8 @@ int g_10751530 = pcd_initial_10751530();
 inline int pcd_initial_107516c8() { return 0x0; }
 int g_107516c8 = pcd_initial_107516c8();
 // END FUNCTION
+
+// FUNCTION: 0x10232260 size=0xa
+#include "ConVar.h"
+ConVar g_10751600("voice_serverdebug", "0", 0);
+// END FUNCTION
