@@ -30,3 +30,8 @@ ConVar g_1071a4a0("debug_physics_throw_velocity", "20", 0, "");
 #include "ConVar.h"
 ConVar g_1071a448("debug_physics_hand", "0", 0, "Turns on/off physics hand debugging info");
 // END FUNCTION
+
+// FUNCTION: 0x101484b0 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_1071a48c(&CPrecacheRegister::PrecacheFn_Other, "gravity_pellet");
+// END FUNCTION
