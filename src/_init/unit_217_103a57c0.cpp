@@ -10,3 +10,8 @@ int g_1093c2ac = pcd_initial_1093c2ac();
 #include "ConVar.h"
 ConVar g_1093c2f8("andrei_force_charge_attack", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103a5930 size=0xa
+#include "ConVar.h"
+ConVar g_1093c348("andrei_force_awaken", "0", 0);
+// END FUNCTION
