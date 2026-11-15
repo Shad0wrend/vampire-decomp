@@ -206,3 +206,10 @@ ConCommand g_106e7bd4("inven_holster", sub_100d5f10, "holsters the currently equ
 void sub_100d60c0(void);
 ConCommand g_106e71b0("force_sniper_third_person", sub_100d60c0, "called when the sniper rifle is forced into third person.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d6500 size=0xa
+#include "ConCommand.h"
+void sub_100d6210(void);
+void sub_100d6560(void);
+ConCommand g_106e7250("vclan", sub_100d6210, "Lists or changes the local player's Vampire Clan\n\tArguments:\t{clan #} / {clan_name} / no arguments lists the current clan.", 0, sub_100d6560);
+// END FUNCTION
