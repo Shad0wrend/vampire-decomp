@@ -13,3 +13,8 @@ ServerClassReg g_106becec("CTEBaseBeam", &g_106bed08, g_106bf214);
 #include "SendTable.h"
 SendTable g_106bed08;
 // END FUNCTION
+
+// FUNCTION: 0x1005a900 size=0x5
+int sub_1005a940(void);
+int g_106bed04 = ((int (*)(int))sub_1005a940)(0);
+// END FUNCTION
