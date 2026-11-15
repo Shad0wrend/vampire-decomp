@@ -30,3 +30,8 @@ int g_1093805c = ((int (*)(int))sub_1034e4f0)(0);
 #include "ConVar.h"
 ConVar g_109380c0("sv_autojump", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1034f030 size=0xa
+#include "ConVar.h"
+ConVar g_10938490("speed_walk", "100", 0);
+// END FUNCTION
