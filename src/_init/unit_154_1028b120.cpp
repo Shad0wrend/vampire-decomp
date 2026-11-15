@@ -260,3 +260,8 @@ ConVar g_10924c90("debug_turn_scalar", ".15", 0, "Set this var to override turn 
 #include "ConVar.h"
 ConVar g_10923fe8("debug_npc_map", "0", 0, "Set this to true and an overlay map of all NPCs will be drawn");
 // END FUNCTION
+
+// FUNCTION: 0x1029bc20 size=0xa
+#include "ConVar.h"
+ConVar g_10923de8("debug_npc_map_xscale", "16384", 0, "Set this to scale the overlay map up or down");
+// END FUNCTION
