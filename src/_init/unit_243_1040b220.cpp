@@ -35,3 +35,8 @@ ConVar g_1094ad10("physcannon_tracelength", "80", 0);
 #include "ConVar.h"
 ConVar g_1094ac38("physcannon_mega_tracelength", "750", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1040b8e0 size=0xa
+#include "ConVar.h"
+ConVar g_1094ab58("physcannon_chargetime", "2", 0);
+// END FUNCTION
