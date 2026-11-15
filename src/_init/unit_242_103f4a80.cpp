@@ -1438,3 +1438,8 @@ ServerClassReg g_10943dbc("CItemGBrotherhoodFlyer", &g_10947598, g_1067f75c);
 #include "SendTable.h"
 SendTable g_10947598;
 // END FUNCTION
+
+// FUNCTION: 0x104021f0 size=0x5
+int sub_10402230(void);
+int g_10947594 = ((int (*)(int))sub_10402230)(0);
+// END FUNCTION
