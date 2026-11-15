@@ -35,3 +35,8 @@ ConVar g_10938860("sk_max_crossbow_bolt", "0", 0);
 #include "ConVar.h"
 ConVar g_109399a0("sk_plr_dmg_deserteagle_round", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10353610 size=0xa
+#include "ConVar.h"
+ConVar g_109397a8("sk_npc_dmg_deserteagle_round", "0", 0);
+// END FUNCTION
