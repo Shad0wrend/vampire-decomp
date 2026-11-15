@@ -352,3 +352,9 @@ ConCommand g_106c8ce8("npc_removeall", sub_100892e0, "finds and removes every NP
 void sub_10089430(void);
 ConCommand g_106c9560("npc_play_dialog_file", sub_10089430, "Tells the NPC you are looking at to play a WAV or .VCD file.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100894c0 size=0xa
+#include "ConCommand.h"
+void sub_10089550(void);
+ConCommand g_106c9470("npc_disposition", sub_10089550, "Tells the NPC to set himself to the dispostion specified", 0, 0);
+// END FUNCTION
