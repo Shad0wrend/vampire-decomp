@@ -1641,3 +1641,11 @@ SendTable g_10948f64;
 int sub_10403fc0(void);
 int g_10948f60 = ((int (*)(int))sub_10403fc0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10404100 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10944e70;
+extern char g_1067f81c[];
+ServerClassReg g_10945018("CItemGWarrClipboard", &g_10944e70, g_1067f81c);
+// END FUNCTION
