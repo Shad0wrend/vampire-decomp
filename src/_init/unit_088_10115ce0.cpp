@@ -80,3 +80,8 @@ ConVar g_1070ae30("decalfrequency", "30", 4);
 #include "ConVar.h"
 ConVar g_1070ab18("mp_teamlist", "hgrunt;scientist", 4);
 // END FUNCTION
+
+// FUNCTION: 0x10118050 size=0xa
+#include "ConVar.h"
+ConVar g_1070ad58("mp_teamoverride", "1", 0);
+// END FUNCTION
