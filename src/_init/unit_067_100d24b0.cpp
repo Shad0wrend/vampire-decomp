@@ -243,3 +243,9 @@ ConCommand g_106e7200("vhistories", sub_100d6a50, "Lists the available Vampire H
 void sub_100d6d40(void);
 ConCommand g_106e79c8("vhistory", sub_100d6d40, "Lists or changes the local player's Vampire History\n\tArguments:\t{history #} / {history_name} / no arguments lists the current history", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d7180 size=0xa
+#include "ConCommand.h"
+void sub_100d7040(void);
+ConCommand g_106e73b8("vroll", sub_100d7040, "Processes a Vampire Dice Roll\n\tArguments:\t{trait_name}{difficulty #} / no arguments rolls based on last settings (default Close-Combat Brawl vs. difficulty 6)", 0, 0);
+// END FUNCTION
