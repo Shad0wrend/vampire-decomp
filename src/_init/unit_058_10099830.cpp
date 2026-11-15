@@ -63,3 +63,8 @@ ConVar g_106cf420("ent_debugkeys", "", 0);
 #include "CThinkContextsSaveDataOps.h"
 CThinkContextsSaveDataOps g_106cf254;
 // END FUNCTION
+
+// FUNCTION: 0x100a2220 size=0x5
+int sub_100a2260(void);
+int g_106ceb40 = ((int (*)(int))sub_100a2260)(0);
+// END FUNCTION
