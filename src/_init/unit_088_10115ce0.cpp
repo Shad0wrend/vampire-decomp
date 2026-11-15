@@ -100,3 +100,8 @@ ConVar g_1070ab60("mp_allowNPCs", "1", 4);
 #include "ConVar.h"
 ConVar g_1070ac80("suitvolume", "0.25", 128);
 // END FUNCTION
+
+// FUNCTION: 0x10118290 size=0x5
+#include "CGameDLL_ConVarAccessor.h"
+CGameDLL_ConVarAccessor g_1070aba4;
+// END FUNCTION
