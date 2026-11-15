@@ -18,3 +18,8 @@ ServerClassReg g_10942ee4("CWeaponIThrownGrenade", &g_10942d24, g_1067cadc);
 #include "SendTable.h"
 SendTable g_10942d24;
 // END FUNCTION
+
+// FUNCTION: 0x103ee0c0 size=0x5
+int sub_103ee100(void);
+int g_10942d20 = ((int (*)(int))sub_103ee100)(0);
+// END FUNCTION
