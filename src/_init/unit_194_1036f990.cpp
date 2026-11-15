@@ -15,3 +15,8 @@ ConVar g_1093abc8("sk_vcombatman_health", "10", 0);
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_1093ab68(false);
 // END FUNCTION
+
+// FUNCTION: 0x1036fc70 size=0x5
+#include "CAI_LocalIdSpace.h"
+CAI_LocalIdSpace g_1093abb0(false);
+// END FUNCTION
