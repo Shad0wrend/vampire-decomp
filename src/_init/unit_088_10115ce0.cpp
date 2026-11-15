@@ -75,3 +75,8 @@ ConVar g_1070ada0("mp_autocrosshair", "1", 4);
 #include "ConVar.h"
 ConVar g_1070ae30("decalfrequency", "30", 4);
 // END FUNCTION
+
+// FUNCTION: 0x10117fc0 size=0xa
+#include "ConVar.h"
+ConVar g_1070ab18("mp_teamlist", "hgrunt;scientist", 4);
+// END FUNCTION
