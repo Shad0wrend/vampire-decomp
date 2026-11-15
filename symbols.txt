@@ -2744,6 +2744,7 @@
 0x1000485e func   ?vfunc434@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc434
 0x10004868 func   ?vfunc5@CLogicPythonCheck@@QAEPAV1@I@Z CLogicPythonCheck::vfunc5
 0x1000486d func   ?vfunc81@CResearchBook_LG_DODGE@@QAEHXZ CResearchBook_LG_DODGE::vfunc81
+0x10004872 func   ??0CPrecacheRegister@@QAE@P6AXPAX@ZPBX@Z CPrecacheRegister::CPrecacheRegister
 0x10004872 func   ?sub_1042d570@CUnknown1042d570@@QAEPAXHH@Z CUnknown1042d570::sub_1042d570
 0x10004877 func   ?sub_1032cbe0@CBaseCombatCharacter@@QAE_NPAVCBaseCombatWeapon@@@Z CBaseCombatCharacter::sub_1032cbe0
 0x1000487c func   ?vfunc627@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc627
