@@ -13,3 +13,8 @@ ServerClassReg g_106d16f0("CBeam", &g_106d15b4, g_1055a968);
 #include "SendTable.h"
 SendTable g_106d16d4;
 // END FUNCTION
+
+// FUNCTION: 0x100ba430 size=0x5
+int sub_100ba470(void);
+int g_106d16d0 = ((int (*)(int))sub_100ba470)(0);
+// END FUNCTION
