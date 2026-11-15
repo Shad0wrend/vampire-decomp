@@ -220249,7 +220249,7 @@ inline Vector VAdd(const Vector &a, const Vector &b)
 	return r;
 }
 
-inline Vector MulV(const Vector &a, float b) { Vector r; r.x = a[0] * b; r.y = a[1] * b; r.z = a[2] * b; return r; }
+inline Vector MulV(const Vector &a, float b) { Vector r; r.x = a.x * b; r.y = a[1] * b; r.z = a[2] * b; return r; }
 namespace block_10146150 {
 #pragma auto_inline(off)
 
