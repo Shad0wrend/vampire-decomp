@@ -898,3 +898,8 @@ ServerClassReg g_109469a8("CItemGCashBox", &g_10944964, g_1067f57c);
 #include "SendTable.h"
 SendTable g_10944964;
 // END FUNCTION
+
+// FUNCTION: 0x103fd150 size=0x5
+int sub_103fd190(void);
+int g_10944960 = ((int (*)(int))sub_103fd190)(0);
+// END FUNCTION
