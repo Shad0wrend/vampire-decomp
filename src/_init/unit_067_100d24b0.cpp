@@ -188,3 +188,9 @@ ConCommand g_106e763c("inven_wield", sub_100d5be0, "Wields an item from the loca
 void sub_100d5d10(void);
 ConCommand g_106e7690("inven_drop", sub_100d5d10, "Drops an item from the local player's Inventory\n\tArguments:\t{inven_slot #}", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d5e80 size=0xa
+#include "ConCommand.h"
+void sub_100d5e30(void);
+ConCommand g_106e7950("inven_drop_curr", sub_100d5e30, "Drops the currently equipted weapon.", 0, 0);
+// END FUNCTION
