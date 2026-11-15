@@ -1888,3 +1888,8 @@ ServerClassReg g_1094392c("CItemGGarysTape", &g_109485f4, g_1067f8ec);
 #include "SendTable.h"
 SendTable g_109485f4;
 // END FUNCTION
+
+// FUNCTION: 0x10406520 size=0x5
+int sub_10406560(void);
+int g_109485f0 = ((int (*)(int))sub_10406560)(0);
+// END FUNCTION
