@@ -1,0 +1,10 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "vampire.h"
+
+// FUNCTION: 0x10057b80 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_106be544;
+extern char g_1053ff28[];
+ServerClassReg g_106be568("CSteamJet", &g_106be544, g_1053ff28);
+// END FUNCTION
