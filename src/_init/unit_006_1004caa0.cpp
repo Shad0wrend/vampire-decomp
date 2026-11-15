@@ -5,3 +5,11 @@
 int * sub_1004cae0(void);
 int * g_106bdb70 = ((int * (*)(int))sub_1004cae0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1004db80 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_106bdb8c;
+extern char g_1053cf20[];
+ServerClassReg g_106bdba8("CPhysBox", &g_106bdb8c, g_1053cf20);
+// END FUNCTION
