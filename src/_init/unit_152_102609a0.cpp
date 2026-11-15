@@ -80,3 +80,8 @@ ConVar g_10920280("footstep_normal_dist", "256", 128);
 #include "ConVar.h"
 ConVar g_10920160("footstep_heavy_vol", "0.85", 128);
 // END FUNCTION
+
+// FUNCTION: 0x1026d340 size=0xa
+#include "ConVar.h"
+ConVar g_109204a8("footstep_heavy_dist", "512", 128);
+// END FUNCTION
