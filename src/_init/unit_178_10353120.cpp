@@ -230,3 +230,8 @@ ConVar g_109397f0("sk_max_eldervitaepack_round", "0", 0);
 #include "ConVar.h"
 ConVar g_10939490("sk_plr_dmg_throwing_star", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10354c00 size=0xa
+#include "ConVar.h"
+ConVar g_10938a58("sk_npc_dmg_throwing_star", "0", 0);
+// END FUNCTION
