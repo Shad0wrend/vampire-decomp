@@ -340,3 +340,9 @@ ConCommand g_106e7368("vplayername", sub_100d8120, "Sets the player name", 0, 0)
 void sub_100d8220(void);
 ConCommand g_106e7278("vhotkey_int", sub_100d8220, "Activates a given hotkey\n\tArguments:\t{hotkey #}", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d87a0 size=0xa
+#include "ConCommand.h"
+void sub_100d8490(void);
+ConCommand g_106e7a68("vdiscipline_int", sub_100d8490, "Activates a given Vampire Discipline or Kine Numina one level\n\tArguments:\t{trait_name}{difficulty #} / no arguments utilizes the last-activated discipline (defaults to the highest one available to the player)", 0, 0);
+// END FUNCTION
