@@ -417,3 +417,8 @@ extern SendTable g_10941eac;
 extern char g_106745b0[];
 ServerClassReg g_10941c20("CWeaponMelee_WerewolfAttacks", &g_10941eac, g_106745b0);
 // END FUNCTION
+
+// FUNCTION: 0x103e84b0 size=0xa
+#include "SendTable.h"
+SendTable g_10941eac;
+// END FUNCTION
