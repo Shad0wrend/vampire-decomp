@@ -1901,3 +1901,8 @@ extern SendTable g_109468b8;
 extern char g_1067f8fc[];
 ServerClassReg g_10945f00("CItemGBertramsCD", &g_109468b8, g_1067f8fc);
 // END FUNCTION
+
+// FUNCTION: 0x10406750 size=0xa
+#include "SendTable.h"
+SendTable g_109468b8;
+// END FUNCTION
