@@ -1852,3 +1852,8 @@ ServerClassReg g_10947c48("CItemGGarysFilm", &g_10946c24, g_1067f8cc);
 #include "SendTable.h"
 SendTable g_10946c24;
 // END FUNCTION
+
+// FUNCTION: 0x10405fc0 size=0x5
+int sub_10406000(void);
+int g_10946c20 = ((int (*)(int))sub_10406000)(0);
+// END FUNCTION
