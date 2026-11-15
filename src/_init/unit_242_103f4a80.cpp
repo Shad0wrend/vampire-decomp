@@ -266,3 +266,8 @@ extern SendTable g_10947224;
 extern char g_1067f330[];
 ServerClassReg g_10948560("CResearchBook_HG_FIRE", &g_10947224, g_1067f330);
 // END FUNCTION
+
+// FUNCTION: 0x103f7870 size=0xa
+#include "SendTable.h"
+SendTable g_10947224;
+// END FUNCTION
