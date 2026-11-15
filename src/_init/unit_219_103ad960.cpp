@@ -5,3 +5,8 @@
 inline int pcd_initial_1093c518() { return 0x450; }
 int g_1093c518 = pcd_initial_1093c518();
 // END FUNCTION
+
+// FUNCTION: 0x103ad9a0 size=0xa
+#include "ConVar.h"
+ConVar g_1093c588("sheriff_force_teleport", "0", 0);
+// END FUNCTION
