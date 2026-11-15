@@ -235,3 +235,11 @@ int g_109478a8 = ((int (*)(int))sub_103f7330)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10946998(&CPrecacheRegister::PrecacheFn_Other, "item_p_research_mg_security");
 // END FUNCTION
+
+// FUNCTION: 0x103f74c0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10948b5c;
+extern char g_1067f320[];
+ServerClassReg g_10948a98("CResearchBook_MG_FIN", &g_10948b5c, g_1067f320);
+// END FUNCTION
