@@ -484,3 +484,8 @@ extern SendTable g_10948848;
 extern char g_1067f45c[];
 ServerClassReg g_10946e38("COccultHacking", &g_10948848, g_1067f45c);
 // END FUNCTION
+
+// FUNCTION: 0x103f9710 size=0xa
+#include "SendTable.h"
+SendTable g_10948848;
+// END FUNCTION
