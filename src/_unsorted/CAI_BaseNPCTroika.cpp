@@ -2789,6 +2789,71 @@ void CAI_BaseNPCTroika::vfunc572()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10297ce0 size=0x297
+#include "CAI_BaseNPCTroika.h"
+#include "ConVar.h"
+#include <math.h>
+
+inline bool IsBitSet(unsigned int x, int bit) { return (x >> bit) & 1; }
+// TARGET: CAI_BaseNPCTroika::vfunc516
+
+extern ConVar g_10924c90;
+extern ConVar g_109247e8;
+extern ConVar g_10923e80;
+
+float CAI_BaseNPCTroika::vfunc516()
+{
+	if ( m_flags5d8c & 0x2000 )
+	{
+		typedef float (__fastcall *CVFunc242)(void *);
+		float f = ((CVFunc242)((*(void ***)this)[242]))(this);
+		float r = fabs(f) * g_10924c90.GetFloat();
+		if ( r > 1.0f )
+			return r;
+		return 1.0f;
+	}
+
+	if ( m_flags14b8 & 0x08000000 )
+		return 45.0f;
+
+	switch ( m_nState0fec )
+	{
+	case 1:
+	case 5:
+				if ( IsBitSet(*(int *)((char *)this + 0x5b64), 7) )
+				{
+					if ( g_109247e8.GetBool() )
+						return 30.0f;
+					return g_10923e80.GetFloat();
+				}
+				{
+					static ConVar debug_slow_idle_yaw_speed("debug_slow_idle_yaw_speed", "20", 0);
+					return debug_slow_idle_yaw_speed.GetFloat();
+				}
+	case 9:
+				if ( IsBitSet(*(int *)((char *)this + 0x5b64), 7) )
+					return 45.0f;
+				{
+					static ConVar debug_slow_walk_yaw_speed("debug_slow_walk_yaw_speed", "25", 0);
+					return debug_slow_walk_yaw_speed.GetFloat();
+				}
+	case 0x13:
+	case 0x1093:
+	case 0x1094:
+		return 160.0f;
+	case 0x1095:
+	case 0x1096:
+		return 160.0f;
+	case 0x3b:
+	case 0x3c:
+	case 0x1121:
+		return 30.0f;
+	default:
+		return 45.0f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10298070 size=0x23e
 #include "CEHandleGet.h"
 #include "CSoundControllerImp.h"
