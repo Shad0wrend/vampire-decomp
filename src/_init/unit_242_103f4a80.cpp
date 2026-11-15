@@ -1155,3 +1155,11 @@ SendTable g_109469c4;
 int sub_103ff730(void);
 int g_109469c0 = ((int (*)(int))sub_103ff730)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103ff870 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10945ec4;
+extern char g_1067f66c[];
+ServerClassReg g_10947ad8("CItemGDriversLicenseGimble", &g_10945ec4, g_1067f66c);
+// END FUNCTION
