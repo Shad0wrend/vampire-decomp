@@ -21,3 +21,9 @@ int * g_107090c8 = ((int * (*)(int))sub_10100ef0)(0);
 void sub_101010c0(void);
 ConCommand g_107090a0("fadeout", sub_101010c0, "fadeout {time r g b}: Fades the screen to black or to the specified color over the given number of seconds.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10101270 size=0xa
+#include "ConCommand.h"
+void sub_101012c0(void);
+ConCommand g_107090cc("fadein", sub_101012c0, "fadein {time r g b}: Fades the screen in from black or from the specified color over the given number of seconds.", 0, 0);
+// END FUNCTION
