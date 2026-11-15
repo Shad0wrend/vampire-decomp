@@ -11,3 +11,9 @@ ConVar g_1072bd58("sv_soundemitter_trace", "0", 8192, "Show all EmitSound calls 
 void sub_101b04a0(void);
 ConCommand g_1072bdc4("sv_soundemitter_flush", sub_101b04a0, "Flushes the sounds.txt system (server only)", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x101b05e0 size=0xa
+#include "ConCommand.h"
+void sub_101b0670(void);
+ConCommand g_1072bd9c("sv_soundemitter_filecheck", sub_101b0670, "Report missing .wav files for sounds and game_sounds files.", 0, 0);
+// END FUNCTION
