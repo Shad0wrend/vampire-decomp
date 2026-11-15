@@ -1065,3 +1065,11 @@ SendTable g_10945d9c;
 int sub_103fe9c0(void);
 int g_10945d98 = ((int (*)(int))sub_103fe9c0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103feb00 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10944ae0;
+extern char g_1067f61c[];
+ServerClassReg g_10944e3c("CItemGWatchFancy", &g_10944ae0, g_1067f61c);
+// END FUNCTION
