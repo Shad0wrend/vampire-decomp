@@ -1055,3 +1055,8 @@ extern SendTable g_10945d9c;
 extern char g_1067f60c[];
 ServerClassReg g_10943e80("CItemGWatchNormal", &g_10945d9c, g_1067f60c);
 // END FUNCTION
+
+// FUNCTION: 0x103fe900 size=0xa
+#include "SendTable.h"
+SendTable g_10945d9c;
+// END FUNCTION
