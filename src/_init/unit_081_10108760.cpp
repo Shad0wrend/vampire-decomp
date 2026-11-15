@@ -60,3 +60,8 @@ ConVar g_10709500("fire_showvolume", "0", 0);
 int * sub_10109840(void);
 int * g_10709590 = ((int * (*)(int))sub_10109840)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1010bb70 size=0x5
+int sub_1010bbb0(void);
+int g_107093d4 = ((int (*)(int))sub_1010bbb0)(0);
+// END FUNCTION
