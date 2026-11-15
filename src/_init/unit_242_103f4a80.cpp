@@ -46,3 +46,8 @@ int g_1094739c = ((int (*)(int))sub_103f5220)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10943bb8(&CPrecacheRegister::PrecacheFn_Other, "item_w_unarmed");
 // END FUNCTION
+
+// FUNCTION: 0x103f5710 size=0x5
+int sub_103f5750(void);
+int g_10948318 = ((int (*)(int))sub_103f5750)(0);
+// END FUNCTION
