@@ -280,3 +280,11 @@ ConVar g_109245e0("npc_hit_buildup_amount", "2", 0);
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_10924248(false);
 // END FUNCTION
+
+// FUNCTION: 0x102c5800 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10924338;
+extern char g_105d174c[];
+ServerClassReg g_109248d4("CAI_BaseNPCTroika", &g_10924338, g_105d174c);
+// END FUNCTION
