@@ -783,3 +783,8 @@ extern SendTable g_10944dfc;
 extern char g_1067f52c[];
 ServerClassReg g_10943964("CGargoyleTalisman", &g_10944dfc, g_1067f52c);
 // END FUNCTION
+
+// FUNCTION: 0x103fbe10 size=0xa
+#include "SendTable.h"
+SendTable g_10944dfc;
+// END FUNCTION
