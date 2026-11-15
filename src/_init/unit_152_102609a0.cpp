@@ -110,3 +110,8 @@ ConVar g_1090fd70("ai_think_limit_label", "0", 128);
 int * sub_1027a820(void);
 int * g_1090ff50 = ((int * (*)(int))sub_1027a820)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1027ba40 size=0x5
+int sub_1027ba80(void);
+int g_109204ec = ((int (*)(int))sub_1027ba80)(0);
+// END FUNCTION
