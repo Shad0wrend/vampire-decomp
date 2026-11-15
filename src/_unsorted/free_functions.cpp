@@ -122383,6 +122383,348 @@ SaveData *sub_101a3b20(int size)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3c40 size=0x8ad
+#include "utlrbtree.h"
+#include "utlmemory.h"
+#include "utlvector.h"
+#include "CBaseEntity.h"
+#include "globalvars.h"
+#include "engineserver.h"
+#include "ehandle.h"
+#include "UtlMem.h"
+#include "CRestore.h"
+#include "CUtlVector4.h"
+
+extern "C" __declspec(dllimport) void Warning(const char *, ...);
+extern "C" __declspec(dllimport) void DevMsg(int, const char *, ...);
+CBaseEntity *sub_10136580(const char *);
+CBaseEntity *sub_1015d790(const char *, void *);
+void sub_1011a580(CBaseEntity *);
+void sub_101cd970(CBaseEntity *);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+inline const char *STR(const char *const &s) { return s ? s : ""; }
+
+extern char g_104626bc[];
+struct IntVecV
+{
+	UtlMem m_Memory;
+	int m_Size;
+	int *m_pElements;
+	void sub_100b4790();	// CUtlVector<int>::Purge
+};
+inline void SR_MemPurge(UtlMem *m)
+{
+	if (m->m_growSize != -1)
+	{
+		if (m->m_pMemory)
+		{
+			Plat_Free((void *)m->m_pMemory);
+			m->m_pMemory = 0;
+		}
+		m->m_allocationCount = 0;
+	}
+}
+struct CRestoreL
+{
+	void *m_vt;
+	IntVecV m_vec;
+	void *m_pData;
+	char *m_pData2;
+	int m_field20;
+	bool m_bField24;
+	CRestoreL(void *pData) { ((CRestore *)this)->CRestore::CRestore(pData); }
+	void EndOut()
+	{
+		m_vec.sub_100b4790();
+		m_vec.m_Memory.sub_1002cbd0();
+		m_vt = (void *)g_104626bc;
+	}
+	void EndIn()
+	{
+		m_vec.m_Size = 0;
+		m_vec.m_Memory.sub_1002cbd0();
+		m_vec.m_pElements = m_vec.m_Memory.m_pMemory;
+		SR_MemPurge(&m_vec.m_Memory);
+		m_vt = (void *)g_104626bc;
+	}
+};
+
+struct EntInfoV
+{
+	int id;
+	int edictindex;
+	int saveentityindex;
+	int restoreentityindex;
+	EHANDLE hEnt;
+	int location;
+	int size;
+	int pad1c;
+	__int64 flags;
+	const char *classname;
+	const char *globalname;
+};
+
+struct SRDataV
+{
+	char *pBaseData;
+	char *pCurrentData;
+	int size;
+	int bufferSize;
+	char pad0[0x1324 - 0x10];
+	Vector modelSpaceOffset;
+	int m_nEntities;
+	EntInfoV *m_pEntities;
+
+	bool Seek(int absPosition)
+	{
+		if (absPosition < 0 || absPosition >= bufferSize)
+			return false;
+		size = absPosition;
+		pCurrentData = pBaseData + size;
+		return true;
+	}
+	int NumEntities() { return m_nEntities; }
+	EntInfoV *GetEntityInfo(int i) { return &m_pEntities[i]; }
+};
+
+#define FENTTABLE_PLAYER 0x8000000000000000ui64
+#define FENTTABLE_REMOVED 0x4000000000000000ui64
+#define FENTTABLE_GLOBAL 0x1000000000000000ui64
+
+struct CEdictView { char pad[0x4c]; char free; };
+struct GlobalEntry { char pad[0x40]; char levelName[0x20]; int state; };
+struct str_t { const char *pszValue; };
+struct GlobalEnts { GlobalEntry *sub_10057800(str_t); void sub_10057740(str_t, str_t, int); };
+extern GlobalEnts g_106be530;
+struct CGlobalEntityListV { void sub_100f6ce0(); };
+extern CGlobalEntityListV g_106eb5d8;
+struct EntListView { CBaseEntity *sub_100290c0(void *); };
+extern EntListView *g_10566458;
+
+struct SREnt
+{
+	char pad[0x11c]; str_t m_iClassname; str_t m_iGlobalname; char pad2[0x2e0 - 0x124]; int m_pEdict;
+	int edict() { return m_pEdict; }
+	int entindex() { return engine->vfunc35(edict()); }
+	void sub_100a8060();
+	CBaseEntity *sub_10335950(const char *);
+};
+struct SRPlayer
+{
+	char pad[0x14c0]; CUtlVector<EHANDLE> m_hList; char pad6[0x1c64 - 0x14d4]; EHANDLE m_hOwner;
+	CBaseEntity *sub_10335950(const char *);
+};
+
+struct CSRBlockView_101a3c40
+{
+	bool sub_101a3380(CBaseEntity *, CRestoreL *);
+	int sub_101a3470(CBaseEntity *, SRDataV *, EntInfoV *);
+	int RestoreEntity(CBaseEntity *pEntity, CRestoreL *pRestore, EntInfoV *pEntInfo)
+	{
+		if (!sub_101a3380(pEntity, pRestore))
+			return 0;
+		SREnt *p = (SREnt *)pEntity;
+		if (p->m_iGlobalname.pszValue != 0)
+		{
+			GlobalEntry *pGlobal = g_106be530.sub_10057800(p->m_iGlobalname);
+			if (pGlobal)
+			{
+				if (pGlobal->state == 2)
+					return -1;
+				else if (_strcmpi(STR(gpGlobals->mapname), pGlobal->levelName) != 0)
+				{
+					p->sub_100a8060();
+				}
+			}
+			else
+			{
+				Warning("Global Entity %s (%s) not in table!!!\n", STR(p->m_iGlobalname.pszValue), STR(p->m_iClassname.pszValue));
+				g_106be530.sub_10057740(p->m_iGlobalname, *(str_t *)&gpGlobals->mapname, 1);
+			}
+		}
+		return 0;
+	}
+};
+extern CSRBlockView_101a3c40 g_1072bb44;
+
+struct PlayersV
+{
+	UtlMem m_Memory;
+	int m_Size;
+	CBaseEntity **m_pElements;
+	int Count() { return m_Size; }
+	CBaseEntity *&operator[](int i) { return ((CBaseEntity **)m_Memory.m_pMemory)[i]; }
+	void AddToTail(CBaseEntity *const &src) { ((CUtlVector4 *)this)->sub_101a55a0(m_Size, (const int *)&src); }
+};
+
+int sub_101a3c40(SRDataV *pSaveData, __int64 levelMask)
+{
+	int movedCount, active;
+	CBaseEntity *pent;
+	EntInfoV *pEntInfo;
+	CBaseEntity *pPlayer;
+	PlayersV players;
+	players.m_Memory.sub_101a5680(0, 0);
+	players.m_pElements = *(CBaseEntity **volatile *)&players.m_Memory.m_pMemory;
+	players.m_Size = 0;
+
+	movedCount = 0;
+
+	int i;
+	for (i = 0; i < pSaveData->NumEntities(); i++)
+	{
+		pent = 0;
+		pEntInfo = pSaveData->GetEntityInfo(i);
+		if (pEntInfo->size && pEntInfo->edictindex != 0)
+		{
+			if (pEntInfo->classname != 0)
+			{
+				active = (pEntInfo->flags & levelMask) ? 1 : 0;
+
+				if ((pEntInfo->edictindex > 0) && (pEntInfo->edictindex < gpGlobals->maxClients + 1))
+				{
+					CEdictView *ed = (CEdictView *)engine->vfunc38(pEntInfo->edictindex);
+
+					if (active && ed && !ed->free)
+					{
+						if (!(pEntInfo->flags & FENTTABLE_PLAYER))
+						{
+							Warning("ENTITY IS NOT A PLAYER: %d\n", i);
+						}
+
+						pPlayer = sub_1015d790(STR(pEntInfo->classname), ed);
+						pent = pPlayer;
+						players.AddToTail(pPlayer);
+					}
+				}
+				else if (active)
+				{
+					pent = sub_10136580(STR(pEntInfo->classname));
+				}
+			}
+			else
+			{
+				Warning("Entity with data saved, but with no classname\n");
+			}
+		}
+
+		pEntInfo->hEnt = pent;
+	}
+
+	for (i = 0; i < pSaveData->NumEntities(); i++)
+	{
+		pEntInfo = pSaveData->GetEntityInfo(i);
+		pent = g_10566458->sub_100290c0(&pEntInfo->hEnt);
+		pSaveData->Seek(pEntInfo->location);
+
+		pSaveData->modelSpaceOffset.Init();
+
+		if (pent && (pEntInfo->flags & levelMask))
+		{
+			if (pEntInfo->flags & FENTTABLE_PLAYER)
+			{
+				DevMsg(2, "Transferring %s (%d)\n", STR(pEntInfo->classname), ((SREnt *)pent)->edict() ? ((SREnt *)pent)->entindex() : -1);
+				CRestoreL restoreHelper(pSaveData);
+				if (g_1072bb44.RestoreEntity(pent, &restoreHelper, pEntInfo) < 0)
+				{
+					sub_101cd970(pent);
+				}
+				else
+				{
+					pEntInfo->flags = FENTTABLE_REMOVED;
+					movedCount++;
+					pEntInfo->restoreentityindex = ((SREnt *)pent)->entindex();
+					sub_1011a580(pent);
+				}
+				restoreHelper.EndOut();
+			}
+			g_106eb5d8.sub_100f6ce0();
+		}
+	}
+
+	for (i = 0; i < pSaveData->NumEntities(); i++)
+	{
+		pEntInfo = pSaveData->GetEntityInfo(i);
+		pent = g_10566458->sub_100290c0(&pEntInfo->hEnt);
+		pSaveData->Seek(pEntInfo->location);
+
+		pSaveData->modelSpaceOffset.Init();
+
+		if (pent && (pEntInfo->flags & levelMask) && !(pEntInfo->flags & FENTTABLE_PLAYER))
+		{
+			if (pEntInfo->flags & FENTTABLE_GLOBAL)
+			{
+				DevMsg(2, "Merging changes for global: %s\n", STR(pEntInfo->classname));
+				if (g_1072bb44.sub_101a3470(pent, pSaveData, pEntInfo) > 0)
+				{
+					movedCount++;
+					pEntInfo->restoreentityindex = ((SREnt *)g_10566458->sub_100290c0(&pEntInfo->hEnt))->entindex();
+					sub_1011a580(g_10566458->sub_100290c0(&pEntInfo->hEnt));
+				}
+			}
+			else
+			{
+				DevMsg(2, "Transferring %s (%d)\n", STR(pEntInfo->classname), ((SREnt *)pent)->edict() ? ((SREnt *)pent)->entindex() : -1);
+				CRestoreL restoreHelper(pSaveData);
+				if (g_1072bb44.RestoreEntity(pent, &restoreHelper, pEntInfo) < 0)
+				{
+					sub_101cd970(pent);
+				}
+				else
+				{
+					bool found = false;
+					for (int j = 0; j < players.Count(); j++)
+					{
+						pPlayer = players[j];
+						if (!pPlayer)
+							continue;
+						if (pEntInfo->hEnt == ((SRPlayer *)pPlayer)->sub_10335950(STR(pEntInfo->classname)))
+						{
+							found = true;
+							break;
+						}
+						if (pEntInfo->hEnt == ((SRPlayer *)pPlayer)->m_hOwner.Get())
+						{
+							found = true;
+							break;
+						}
+						for (int k = 0; k < ((SRPlayer *)pPlayer)->m_hList.Count(); k++)
+						{
+							if (((SRPlayer *)pPlayer)->m_hList[k] == pEntInfo->hEnt.Get())
+							{
+								found = true;
+								break;
+							}
+						}
+					}
+					if (!found)
+					{
+						DevMsg(2, "Suppressing %s\n", STR(pEntInfo->classname));
+						sub_101cd970(pent);
+					}
+					else
+					{
+						pEntInfo->flags = FENTTABLE_REMOVED;
+						movedCount++;
+						DevMsg(1, "Transferred %s (%d)\n", STR(pEntInfo->classname), ((SREnt *)pent)->edict() ? ((SREnt *)pent)->entindex() : -1);
+					}
+				}
+				restoreHelper.EndIn();
+			}
+			g_106eb5d8.sub_100f6ce0();
+		}
+		pSaveData->Seek(pEntInfo->size + pEntInfo->location);
+	}
+
+	players.m_Size = 0;
+	SR_MemPurge(&players.m_Memory);
+	players.m_pElements = (CBaseEntity **)players.m_Memory.m_pMemory;
+	SR_MemPurge(&players.m_Memory);
+	return movedCount;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a4760 size=0x1a
 namespace lifted {
 extern int g_10592ce8;
