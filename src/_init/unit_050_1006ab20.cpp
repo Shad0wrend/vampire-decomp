@@ -8,3 +8,8 @@ extern SendTable g_106c71f0;
 extern char g_10545bb8[];
 ServerClassReg g_106c720c("CTEUserTracer", &g_106c71f0, g_10545bb8);
 // END FUNCTION
+
+// FUNCTION: 0x1006abd0 size=0xa
+#include "SendTable.h"
+SendTable g_106c71f0;
+// END FUNCTION
