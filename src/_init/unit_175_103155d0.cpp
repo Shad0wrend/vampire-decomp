@@ -103,3 +103,9 @@ ConVar g_10936fb8("debug_force_scale", "3", 0);
 #include "ConVar.h"
 ConVar g_10936f28("debug_upward_hit_force", ".1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1033ea00 size=0xa
+#include "ConCommand.h"
+void sub_1033e960(void);
+ConCommand g_10936e24("frenzyplayer", sub_1033e960, "yeah, kick player into frenzy", 0, 0);
+// END FUNCTION
