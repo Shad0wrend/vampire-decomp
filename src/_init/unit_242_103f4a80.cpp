@@ -1505,3 +1505,8 @@ extern SendTable g_109481a4;
 extern char g_1067f79c[];
 ServerClassReg g_10949130("CItemGWarrens4Passkey", &g_109481a4, g_1067f79c);
 // END FUNCTION
+
+// FUNCTION: 0x10402c30 size=0xa
+#include "SendTable.h"
+SendTable g_109481a4;
+// END FUNCTION
