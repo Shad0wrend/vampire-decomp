@@ -268,3 +268,9 @@ ConCommand g_106c8e6c("sound_show", sub_10088540, "Shows all sounds made as blue
 void sub_10088620(void);
 ConCommand g_106c909c("sound_show_ent", sub_10088620, "Shows all sounds made as purple spheres centered around the NPCs.  Turns off sound_show.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10088770 size=0xa
+#include "ConCommand.h"
+void sub_10088730(void);
+ConCommand g_106c9650("sound_show_cylinders", sub_10088730, "Toggles between cylinders and spheres for sound_show display.  Does not change the way sounds are heard, just the debug representation.", 0, 0);
+// END FUNCTION
