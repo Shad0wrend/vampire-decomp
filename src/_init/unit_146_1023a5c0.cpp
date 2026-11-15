@@ -28,3 +28,8 @@ ServerClassReg g_10752d44("CWorld", &g_10752e68, g_105c2a40);
 #include "SendTable.h"
 SendTable g_10752e68;
 // END FUNCTION
+
+// FUNCTION: 0x1023b070 size=0x5
+int sub_1023b0b0(void);
+int g_10752e64 = ((int (*)(int))sub_1023b0b0)(0);
+// END FUNCTION
