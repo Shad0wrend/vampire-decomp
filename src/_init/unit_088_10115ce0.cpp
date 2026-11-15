@@ -15,3 +15,8 @@ ConVar g_1070acc8("displaysoundlist", "0", 0);
 #include "ConVar.h"
 ConVar g_1070aad0("mapcyclefile", "mapcycle.txt", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10117900 size=0xa
+#include "ConVar.h"
+ConVar g_1070aa40("servercfgfile", "server.cfg", 0);
+// END FUNCTION
