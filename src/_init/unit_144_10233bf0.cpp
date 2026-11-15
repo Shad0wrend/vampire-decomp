@@ -18,3 +18,9 @@ ConCommand g_107518ac("wc_destroy", sub_10233c80, "When in WC edit mode, destroy
 void sub_10233d60(void);
 ConCommand g_107517e4("wc_destroy_undo", sub_10233d60, "When in WC edit mode restores the last deleted node", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10233e50 size=0xa
+#include "ConCommand.h"
+void sub_10233e20(void);
+ConCommand g_107518d4("wc_air_node_edit", sub_10233e20, "When in WC edit mode, toggles laying down or air nodes instead of ground nodes", 0, 0);
+// END FUNCTION
