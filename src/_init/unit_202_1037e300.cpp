@@ -5,3 +5,8 @@
 inline int pcd_initial_1093b1e8() { return 0x450; }
 int g_1093b1e8 = pcd_initial_1093b1e8();
 // END FUNCTION
+
+// FUNCTION: 0x1037e340 size=0xa
+#include "ConVar.h"
+ConVar g_1093b238("hengeyokai_obstruction_lookahead", "24", 0, "Set this var to override the lookahead for obstructing physics objects.");
+// END FUNCTION
