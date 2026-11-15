@@ -85,3 +85,8 @@ ConVar g_1094aba8("player_throwforce", "1000", 0);
 int sub_1040be30(void);
 int g_1094ab08 = ((int (*)(int))sub_1040be30)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1040be60 size=0x5
+int sub_1040bea0(void);
+int g_1094ab04 = ((int (*)(int))sub_1040bea0)(0);
+// END FUNCTION
