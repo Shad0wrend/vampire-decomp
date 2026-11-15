@@ -45,3 +45,8 @@ ConVar g_10920238("sk_npc_leg", "1", 0);
 #include "ConVar.h"
 ConVar g_1090feb8("debug_forced_bullet_damage", "-1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10264f10 size=0xa
+#include "ConVar.h"
+ConVar g_109201f0("debug_assert_on_missing_act", "0", 0, "Turn this on to assert on missing activities. By default they are just dumped to a file.");
+// END FUNCTION
