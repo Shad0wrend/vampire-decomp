@@ -15285,6 +15285,7 @@
 0x100148df func   ?vfunc23@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc23
 0x100148e4 func   ?vfunc371@CNPC_VRat@@QAEHH@Z CNPC_VRat::vfunc371
 0x100148e9 func   ?vfunc372@CWeaponMelee@@UAEDHHH@Z CWeaponMelee::vfunc372
+0x100148f3 func   ??0SendTable@@QAE@XZ SendTable::SendTable
 0x100148f3 func   ?sub_102471f0@@YIPAXPAX@Z sub_102471f0
 0x100148fd func   ?vfunc5@CWeaponRanged_Pistol_Thirtyeight@@UAEPAVCWeaponRanged@@I@Z CWeaponRanged_Pistol_Thirtyeight::vfunc5
 0x10014902 func   ?vfunc126@CSoundEnt@@UAEHH@Z CSoundEnt::vfunc126
