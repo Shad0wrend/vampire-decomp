@@ -156,3 +156,8 @@ ServerClassReg g_10945588("CItemGAstrolite", &g_10948880, g_1067f2e0);
 #include "SendTable.h"
 SendTable g_10948880;
 // END FUNCTION
+
+// FUNCTION: 0x103f65f0 size=0x5
+int sub_103f6630(void);
+int g_1094887c = ((int (*)(int))sub_103f6630)(0);
+// END FUNCTION
