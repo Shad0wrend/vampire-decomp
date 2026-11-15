@@ -15,3 +15,8 @@ ConVar g_1093bf68("sk_vpedestrian_health", "10", 0);
 int sub_103a1c80(void);
 int g_1093bff8 = ((int (*)(int))sub_103a1c80)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103a1e70 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_1093bfb0(false);
+// END FUNCTION
