@@ -1793,3 +1793,8 @@ extern SendTable g_10945204;
 extern char g_1067f89c[];
 ServerClassReg g_1094962c("CItemGIdolDragon", &g_10945204, g_1067f89c);
 // END FUNCTION
+
+// FUNCTION: 0x10405730 size=0xa
+#include "SendTable.h"
+SendTable g_10945204;
+// END FUNCTION
