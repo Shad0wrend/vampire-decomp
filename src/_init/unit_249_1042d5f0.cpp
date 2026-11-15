@@ -18,3 +18,8 @@ ServerClassReg g_109f02a8("CSprite", &g_109f028c, g_106af054);
 #include "SendTable.h"
 SendTable g_109f028c;
 // END FUNCTION
+
+// FUNCTION: 0x1042e2d0 size=0x5
+int sub_1042e310(void);
+int g_109f0288 = ((int (*)(int))sub_1042e310)(0);
+// END FUNCTION
