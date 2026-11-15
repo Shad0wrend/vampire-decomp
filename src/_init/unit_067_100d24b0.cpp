@@ -43,3 +43,9 @@ void sub_100d2b30(void);
 void sub_100d2c30(void);
 ConCommand g_106e7e40("give", sub_100d2b30, "Give item to player.\n\tArguments: <item_name>", 0, sub_100d2c30);
 // END FUNCTION
+
+// FUNCTION: 0x100d2e20 size=0xa
+#include "ConCommand.h"
+void sub_100d2d80(void);
+ConCommand g_106e7458("fov", sub_100d2d80, "Change players FOV", 0, 0);
+// END FUNCTION
