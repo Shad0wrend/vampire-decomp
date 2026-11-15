@@ -198991,6 +198991,216 @@ Vector CUnknown10268170::sub_10268170(const Vector &vecSpread, const Vector &vec
 }
 // END FUNCTION
 
+// FUNCTION: 0x10268330 size=0x498
+#include "CGameTrace.h"
+#include "CBaseEntity.h"
+#include "CVDmg_t.h"
+#include "ConVar.h"
+#include "CUnknown101c26d0.h"
+#include "CUnknown101c29e0.h"
+#include "CUnknown101c2a50.h"
+#include "CUnknown101c2a90.h"
+#include "CUnknown101d8a70.h"
+#include "engineiface.h"
+
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+struct CLethalUnitView
+{
+	int sub_10258290(void *pChar);
+};
+
+#define VS(a) virtual void a##0(); virtual void a##1(); virtual void a##2(); virtual void a##3(); virtual void a##4(); \
+	virtual void a##5(); virtual void a##6(); virtual void a##7(); virtual void a##8(); virtual void a##9();
+#define VC(b) VS(b##0) VS(b##1) VS(b##2) VS(b##3) VS(b##4) VS(b##5) VS(b##6) VS(b##7) VS(b##8) VS(b##9)
+
+struct CDmgRecord;
+
+struct CTargetCharView
+{
+	virtual void s0();
+	virtual int *vfunc1();
+	virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+	VS(s1) VS(s2) VS(s3) VS(s4) VS(s5) VS(s6) VS(s7) VS(s8) VS(s9)
+	VC(t1) VC(t2)
+	VS(u0) VS(u1) VS(u2)
+	virtual void vfunc330(float flDamage, CDmgRecord *pRec);
+	char sub_10337f30();
+};
+
+struct CTargetEntView
+{
+	VC(a)
+	VS(b0) VS(b1) VS(b2) VS(b3)
+	virtual void c0();
+	virtual void vfunc141(void *pInfo, Vector *pDir, CGameTrace *pTrace);
+};
+
+struct CUnk101e8ef0View
+{
+	int sub_101e8ef0(void *p);
+};
+
+struct CDmgRecord
+{
+	int m_unk00;
+	int m_unk04;
+	int m_unk08;
+	int m_unk0c;
+	int m_unk10;
+	int m_unk14;
+	int m_unk18;
+	int m_unk1c;
+	Vector m_vec20;		// 0x20
+	int m_unk2c;
+	int m_unk30;
+	int m_unk34;
+	int m_unk38;
+	int m_unk3c;
+	int m_unk40;
+	int m_unk44;
+	CVDmg_t m_dmg;		// 0x48
+	int m_unk8c;
+	int m_unk90;
+	CVDmgSource_t *m_pSrc;	// 0x94
+	CLethalUnitView *m_pLethal;	// 0x98
+	int m_unk9c;
+	int m_unka0;
+	int m_unka4;
+	int m_unka8;
+	int m_unkac;
+	int m_unkb0;
+	int m_unkb4;
+	int m_unkb8;
+	int m_unkbc;
+	int m_nC0;		// 0xc0
+	int m_trace[0x14];	// 0xc4: a trace
+	int m_n114;		// 0x114
+};
+
+extern ConVar *g_1074f04c;
+extern ConVar *g_1090febc;
+extern CVDmg_t *g_1072cb10;
+extern float g_1072cb40;
+extern int g_1072cb5c;
+extern CUnk101e8ef0View g_10739d08;
+
+void sub_101c2c30();
+void sub_101c2c60();
+int sub_10258270();
+void sub_101cfef0(void *pTrace, int a2, int a3, void *a4, int a5);
+
+inline int EdX_e8(CBaseEntity *p) { return p->m_pEdict2e0; }
+inline int F04_e8(CVDmg_t &d) { return d.m_field04; }
+inline float Pct_e8(float f) { return f; }
+inline int F04p_e8(CVDmg_t *d) { return d->m_field04; }
+inline int pcd_id_e8(int x) { return x; }
+#define DICE_DEBUGP(pEnt) (!g_1074f04c->vfunc1() && g_1074f04c->m_nValue && engine->vfunc35((pEnt)->m_pEdict2e0))
+#define DICE_DEBUG(pEnt) (!g_1074f04c->vfunc1() && g_1074f04c->m_nValue && engine->vfunc35(EdX_e8(pEnt)))
+
+struct CInfoV : CUnknown101c26d0
+{
+	CInfoV(void *a1, void *a2, float f, int t, int a, int b, int c) { sub_101c26d0(a1, a2, f, t, a, b, c); }
+};
+inline void InitInfo(CUnknown101c26d0 &i, void *a1, void *a2, float f, int t, int a, int b, int c) { i.sub_101c26d0(a1, a2, f, t, a, b, c); }
+// TARGET: CBaseEntity::sub_10268330
+void CBaseEntity::sub_10268330(CBaseEntity *pTarget, void *pDmgV, float flPercent)
+{
+	CDmgRecord *pDmg = (CDmgRecord *)pDmgV;
+	void *pTargetData = pTarget->m_p9c;
+	void *pChar = m_p9c;
+	CVDmg_t dmg = pDmg->m_dmg;
+
+	sub_101c2c30();
+
+	if (pDmg->m_pLethal) {
+		float flBase = (float)pDmg->m_dmg.m_field04;
+		float flLeth;
+		if (pChar)
+			flLeth = (float)pDmg->m_pLethal->sub_10258290(pChar);
+		else
+			flLeth = (float)sub_10258270();
+
+		if (DICE_DEBUG(pTarget)) {
+			DevMsg("Starting Ranged Attack Damage Calculation with Base Damage (%f)\n", (double)flBase);
+			DevMsg("Total Lethality of (%f)\n", (double)flLeth);
+		}
+
+		int nLeth = (int)flLeth;
+		dmg.m_field04 = nLeth;
+
+		if (DICE_DEBUG(pTarget)) {
+			DevMsg("Total Lethality of all shots in this volley = (%i)\n", dmg.m_field04);
+			DevMsg("Percent of shots in this volley that hit target = (%f)\n", (double)flPercent);
+		}
+
+		if (dmg.m_field04 < 1)
+			dmg.m_field04 = 1;
+
+		dmg.sub_101fa960(pDmg->m_pSrc);
+		dmg.m_field40 = 0;
+		dmg.m_field0c = nLeth;
+		dmg.sub_101fb3e0(8);
+
+		CUnknown101c26d0 info;
+		info.sub_101c26d0(pDmg->m_pLethal, pDmg->m_pSrc, (float)dmg.sub_101faa70(), dmg.m_field10, pDmg->m_nC0, (int)&dmg, pDmg->m_n114);
+		CGameTrace *pTrace = (CGameTrace *)pDmg->m_trace;
+		((CUnknown101c29e0 *)&info)->sub_101c29e0((const int *)pTrace);
+		((CUnknown101c2a50 *)&info)->sub_101c2a50(*(int *)&flPercent);
+		((CTargetEntView *)pTarget)->vfunc141(&info, &pDmg->m_vec20, pTrace);
+
+		float flThrough;
+		if (g_1072cb10)
+			flThrough = (float)g_1072cb10->sub_101faa70();
+		else
+			flThrough = g_1072cb40;
+
+		CTargetCharView *pTargetChar = *(CTargetCharView *volatile *)&pTargetData;
+		if (pTargetChar && pTargetChar->sub_10337f30()) {
+			if (DICE_DEBUG(pTarget))
+				DevMsg("Supernatural Rolling Defense against Firearm\n");
+
+			int nDice = g_10739d08.sub_101e8ef0(pTargetChar);
+			CVDmgBlock16_t block(4, 0xc);
+			CUnknown101d8a70 roll;
+			roll.sub_101d8820((int)pTargetChar, 0, &block, nDice);
+			roll.sub_101d8a70(&pTargetData);
+			int nSuccess = roll.m_n04 - roll.m_n0c;
+			nSuccess = nSuccess > 0 ? nSuccess : 0;
+			flThrough -= (float)nSuccess;
+			if (flThrough < 0.0f)
+				flThrough = 0.0f;
+
+			if (DICE_DEBUG(pTarget))
+				DevMsg("Defense Roll successes = %d\n", nSuccess);
+		}
+
+		float flMult = ((CUnknown101c2a90 *)&info)->sub_101c2a70();
+		if (DICE_DEBUG(pTarget))
+			DevMsg("Final damage:  Lethality that went through (%f) * BaseDamage (%f) * Multiplier (%f) = Total (%f)\n",
+				(double)flThrough, (double)flBase, (double)flMult, (double)(flMult * flThrough * flBase));
+
+		flThrough = flMult * flThrough * flBase;
+		float flOverride = g_1090febc->vfunc1() ? 0.0f : g_1090febc->m_fValue;
+		if (flOverride >= 0.0f)
+			flThrough = flOverride;
+		g_1072cb40 = flThrough;
+
+		if (pTargetChar) {
+			g_1072cb5c = *pTargetChar->vfunc1();
+			pTargetChar->vfunc330(flThrough, pDmg);
+		}
+
+		int bDead = 0;
+		if (flThrough <= 0.0f)
+			bDead = 1;
+		sub_101cfef0(pTrace, pDmg->m_dmg.m_field10, 1, pDmg->m_pLethal, bDead);
+		sub_101c2c60();
+	}
+	dmg.sub_101fa680();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102692d0 size=0x252
 #include "CBaseEntity.h"
 #include "UTIL_Trace.h"
