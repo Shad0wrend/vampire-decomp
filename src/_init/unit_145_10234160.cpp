@@ -46,3 +46,11 @@ int g_10751d5c = ((int (*)(int))sub_102345e0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_1075195c(&CPrecacheRegister::PrecacheFn_Other, "item_w_colt_anaconda");
 // END FUNCTION
+
+// FUNCTION: 0x10234870 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10751f28;
+extern char g_105b782c[];
+ServerClassReg g_10752890("CWeaponRanged_Rifle_Crossbow", &g_10751f28, g_105b782c);
+// END FUNCTION
