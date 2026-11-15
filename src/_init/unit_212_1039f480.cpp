@@ -15,3 +15,8 @@ ConVar g_1093be20("sk_vmoleman_health", "10", 0);
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_1093bdd8(false);
 // END FUNCTION
+
+// FUNCTION: 0x1039f760 size=0x5
+#include "CAI_LocalIdSpace.h"
+CAI_LocalIdSpace g_1093bdb8(false);
+// END FUNCTION
