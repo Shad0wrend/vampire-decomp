@@ -175,3 +175,8 @@ ConVar g_10939198("sk_plr_dmg_thirtyeight_round", "0", 0);
 #include "ConVar.h"
 ConVar g_109389c8("sk_npc_dmg_thirtyeight_round", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103545d0 size=0xa
+#include "ConVar.h"
+ConVar g_109395f8("sk_max_thirtyeight_round", "0", 0);
+// END FUNCTION
