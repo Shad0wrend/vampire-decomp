@@ -38,3 +38,8 @@ int g_106bdb68 = ((int (*)(int))sub_1004eab0)(0);
 int sub_1004ef10(void);
 int g_106bdc68 = ((int (*)(int))sub_1004ef10)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10050130 size=0x5
+int * sub_10050170(void);
+int * g_106bdb78 = ((int * (*)(int))sub_10050170)(0);
+// END FUNCTION
