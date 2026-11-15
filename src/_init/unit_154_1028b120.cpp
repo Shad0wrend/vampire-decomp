@@ -190,3 +190,8 @@ ConVar g_10924478("debug_allow_npc_hunting", "0", 0, "Set this to 1 to allow NPC
 #include "ConVar.h"
 ConVar g_10924848("debug_show_npc_pos", "0", 0, "Set this to 1 to show all of the NPC's stored positions.");
 // END FUNCTION
+
+// FUNCTION: 0x1028c940 size=0xa
+#include "ConVar.h"
+ConVar g_10923ec8("debug_view_cone", "0", 0, "Set to 1 to turn show the complex viewcon in viewcone mode");
+// END FUNCTION
