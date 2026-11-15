@@ -714,3 +714,8 @@ extern SendTable g_10946d54;
 extern char g_1067f4fc[];
 ServerClassReg g_109440f8("COccultThaumDamage", &g_10946d54, g_1067f4fc);
 // END FUNCTION
+
+// FUNCTION: 0x103fb510 size=0xa
+#include "SendTable.h"
+SendTable g_10946d54;
+// END FUNCTION
