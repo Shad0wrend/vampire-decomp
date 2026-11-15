@@ -18,3 +18,8 @@ extern SendTable g_1070996c;
 extern char g_1056f488[];
 ServerClassReg g_1070998c("CBreakableSurface", &g_1070996c, g_1056f488);
 // END FUNCTION
+
+// FUNCTION: 0x1010fbc0 size=0xa
+#include "SendTable.h"
+SendTable g_1070996c;
+// END FUNCTION
