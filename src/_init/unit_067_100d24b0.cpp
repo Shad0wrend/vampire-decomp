@@ -316,3 +316,9 @@ ConCommand g_106e72a0("vmpequip", sub_100d7c40, "Sets the starting equipment for
 void sub_100d7e00(void);
 ConCommand g_106e73e0("vbotchtypes", sub_100d7e00, "Lists the available Vampire Botch Types", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d7fb0 size=0xa
+#include "ConCommand.h"
+void sub_100d7f20(void);
+ConCommand g_106e789c("vbotchtables", sub_100d7f20, "Lists the available Vampire Botch Tables", 0, 0);
+// END FUNCTION
