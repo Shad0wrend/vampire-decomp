@@ -1366,3 +1366,8 @@ ServerClassReg g_10948c48("CItemGEDaneReport", &g_109471a0, g_1067f71c);
 #include "SendTable.h"
 SendTable g_109471a0;
 // END FUNCTION
+
+// FUNCTION: 0x10401730 size=0x5
+int sub_10401770(void);
+int g_1094719c = ((int (*)(int))sub_10401770)(0);
+// END FUNCTION
