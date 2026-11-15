@@ -65,3 +65,8 @@ ConVar g_1093cba8("tzimisce_claw_left_z", "40", 0, "Set this var to override the
 #include "ConVar.h"
 ConVar g_1093cd28("tzimisce_obstruction_lookahead", "24", 0, "Set this var to override the lookahead for obstructing physics objects.");
 // END FUNCTION
+
+// FUNCTION: 0x103b6880 size=0xa
+#include "ConVar.h"
+ConVar g_1093cb60("tzimisce_obstruction_z", "75", 0, "Set this var to override the z push for obstructing physics objects.");
+// END FUNCTION
