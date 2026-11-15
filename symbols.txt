@@ -8927,6 +8927,7 @@
 0x1000c72a func   ?sub_10140710@CBaseMoveBehavior@@QAE_NXZ CBaseMoveBehavior::sub_10140710
 0x1000c734 func   ?sub_103ed830@CWeaponThrown_Grenade_Frag@@QAEXPAX@Z CWeaponThrown_Grenade_Frag::sub_103ed830
 0x1000c739 func   ?vfunc451@CNPC_VChangBrosBlade@@QAEHXZ CNPC_VChangBrosBlade::vfunc451
+0x1000c73e func   ?sub_101e2990@CUnknown101e0f00@@QAEXPAUCUnknown101e0f00Entry@@PAX1@Z CUnknown101e0f00::sub_101e2990
 0x1000c743 func   ?vfunc1@CTEShatterSurface@@UAEHXZ CTEShatterSurface::vfunc1
 0x1000c748 func   ??0CWeaponIThrown@@QAE@XZ CWeaponIThrown::CWeaponIThrown
 0x1000c74d func   ?sub_101063a0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_101063a0
