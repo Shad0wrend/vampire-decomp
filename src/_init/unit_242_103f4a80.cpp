@@ -545,3 +545,11 @@ int g_109480d4 = ((int (*)(int))sub_103f9dd0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_109485e4(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_lockpicking");
 // END FUNCTION
+
+// FUNCTION: 0x103f9f60 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10945cb4;
+extern char g_1067f48c[];
+ServerClassReg g_109442d4("COccultPresence", &g_10945cb4, g_1067f48c);
+// END FUNCTION
