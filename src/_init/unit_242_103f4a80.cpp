@@ -1911,3 +1911,11 @@ SendTable g_109468b8;
 int sub_10406810(void);
 int g_109468b4 = ((int (*)(int))sub_10406810)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10406950 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10948538;
+extern char g_1067f90c[];
+ServerClassReg g_10945cd0("CItemGRingSerialKiller1", &g_10948538, g_1067f90c);
+// END FUNCTION
