@@ -20,3 +20,8 @@ int * g_10709118 = ((int * (*)(int))sub_10102410)(0);
 int sub_10102a70(void);
 int g_10709178 = ((int (*)(int))sub_10102a70)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10102c10 size=0x5
+int sub_10102c50(void);
+int g_10709120 = ((int (*)(int))sub_10102c50)(0);
+// END FUNCTION
