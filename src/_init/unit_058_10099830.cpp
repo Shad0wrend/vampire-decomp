@@ -145,3 +145,9 @@ ConCommand g_106ceb6c("ent_setname", sub_100af010, "Sets the targetname of the g
 void sub_100af840(void);
 ConCommand g_106cf48c("ent_dump", sub_100af840, "Usage:\n   ent_dump <entity name>\n", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100afb00 size=0xa
+#include "ConCommand.h"
+void sub_100afa60(void);
+ConCommand g_106cf280("firetarget", sub_100afa60, 0, 0, 0);
+// END FUNCTION
