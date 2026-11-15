@@ -147,3 +147,8 @@ ConVar g_10725d98("default_gender", "1", 128);
 void sub_1016e0c0(void);
 ConCommand g_10725a44("reset_character_collide", sub_1016e0c0, "", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10171020 size=0xa
+#include "ConVar.h"
+ConVar g_10725de0("sv_suppress_viewpunch", "0", 8192);
+// END FUNCTION
