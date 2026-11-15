@@ -304,3 +304,11 @@ int g_10949214 = ((int (*)(int))sub_103f7c30)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10943920(&CPrecacheRegister::PrecacheFn_Other, "item_p_research_mg_brawl");
 // END FUNCTION
+
+// FUNCTION: 0x103f7dc0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10948828;
+extern char g_1067f350[];
+ServerClassReg g_10944c14("CResearchBook_LG_DODGE", &g_10948828, g_1067f350);
+// END FUNCTION
