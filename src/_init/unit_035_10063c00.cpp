@@ -13,3 +13,8 @@ ServerClassReg g_106c3c8c("CTEGlowSprite", &g_106c39f8, g_10543918);
 #include "SendTable.h"
 SendTable g_106c39f8;
 // END FUNCTION
+
+// FUNCTION: 0x10063d30 size=0x5
+int sub_10063d70(void);
+int g_106c39f4 = ((int (*)(int))sub_10063d70)(0);
+// END FUNCTION
