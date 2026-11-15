@@ -1708,3 +1708,8 @@ ServerClassReg g_10949644("CItemGMercurioJournal", &g_10945dfc, g_1067f84c);
 #include "SendTable.h"
 SendTable g_10945dfc;
 // END FUNCTION
+
+// FUNCTION: 0x10404a40 size=0x5
+int sub_10404a80(void);
+int g_10945df8 = ((int (*)(int))sub_10404a80)(0);
+// END FUNCTION
