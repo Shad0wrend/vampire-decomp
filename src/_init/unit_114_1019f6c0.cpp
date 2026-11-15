@@ -10,3 +10,8 @@ int g_1072bb40 = ((int (*)(int))sub_101a2c00)(0);
 #include "CEntitySaveRestoreBlockHandler.h"
 CEntitySaveRestoreBlockHandler g_1072bb44;
 // END FUNCTION
+
+// FUNCTION: 0x101a4720 size=0x5
+int sub_101a4760(void);
+int g_1072bb3c = ((int (*)(int))sub_101a4760)(0);
+// END FUNCTION
