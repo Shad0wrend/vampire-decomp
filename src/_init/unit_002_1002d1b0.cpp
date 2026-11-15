@@ -15,3 +15,8 @@ ConVar g_106b85c0("phys_timescale", "1", 0);
 #include "ConVar.h"
 ConVar g_106b8608("phys_speeds", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1002d520 size=0x5
+#include "CObjectEvent.h"
+CObjectEvent g_106b8694;
+// END FUNCTION
