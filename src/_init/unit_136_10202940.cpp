@@ -85,3 +85,8 @@ ConVar g_1074f0c0("haunted_break_speed", "150", 0);
 int * sub_10214e30(void);
 int * g_1074f120 = ((int * (*)(int))sub_10214e30)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10215c60 size=0x5
+int * sub_10215ca0(void);
+int * g_1074f12c = ((int * (*)(int))sub_10215ca0)(0);
+// END FUNCTION
