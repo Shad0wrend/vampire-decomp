@@ -1235,3 +1235,8 @@ extern SendTable g_10944b2c;
 extern char g_1067f6ac[];
 ServerClassReg g_10944c50("CItemGHorrorTape_1", &g_10944b2c, g_1067f6ac);
 // END FUNCTION
+
+// FUNCTION: 0x104003e0 size=0xa
+#include "SendTable.h"
+SendTable g_10944b2c;
+// END FUNCTION
