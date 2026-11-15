@@ -24,3 +24,8 @@ extern SendTable g_10751464;
 extern char g_105b5c30[];
 ServerClassReg g_10751480("CVGuiScreen", &g_10751464, g_105b5c30);
 // END FUNCTION
+
+// FUNCTION: 0x102318b0 size=0xa
+#include "SendTable.h"
+SendTable g_10751464;
+// END FUNCTION
