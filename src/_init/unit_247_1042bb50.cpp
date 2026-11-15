@@ -8,3 +8,8 @@ extern SendTable g_109ee974;
 extern char g_106ad6c8[];
 ServerClassReg g_109ee958("CBaseViewModel", &g_109ee974, g_106ad6c8);
 // END FUNCTION
+
+// FUNCTION: 0x1042bc00 size=0xa
+#include "SendTable.h"
+SendTable g_109ee974;
+// END FUNCTION
