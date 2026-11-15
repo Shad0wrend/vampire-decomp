@@ -151,3 +151,8 @@ extern SendTable g_10948880;
 extern char g_1067f2e0[];
 ServerClassReg g_10945588("CItemGAstrolite", &g_10948880, g_1067f2e0);
 // END FUNCTION
+
+// FUNCTION: 0x103f6570 size=0xa
+#include "SendTable.h"
+SendTable g_10948880;
+// END FUNCTION
