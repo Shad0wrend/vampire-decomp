@@ -2029,3 +2029,8 @@ SendTable g_10946210;
 int sub_104079a0(void);
 int g_1094620c = ((int (*)(int))sub_104079a0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10407ae0 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10944ab0(&CPrecacheRegister::PrecacheFn_Other, "item_g_keyring");
+// END FUNCTION
