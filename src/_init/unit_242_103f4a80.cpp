@@ -1073,3 +1073,8 @@ extern SendTable g_10944ae0;
 extern char g_1067f61c[];
 ServerClassReg g_10944e3c("CItemGWatchFancy", &g_10944ae0, g_1067f61c);
 // END FUNCTION
+
+// FUNCTION: 0x103febb0 size=0xa
+#include "SendTable.h"
+SendTable g_10944ae0;
+// END FUNCTION
