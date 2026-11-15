@@ -23,3 +23,8 @@ int g_10940728 = ((int (*)(int))sub_103e2840)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10940748(&CPrecacheRegister::PrecacheFn_Other, "item_w_flamethrower");
 // END FUNCTION
+
+// FUNCTION: 0x103e3870 size=0xa
+#include "ConVar.h"
+ConVar g_10940950("ft_node_dmg_radius", "12.0", 0);
+// END FUNCTION
