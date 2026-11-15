@@ -793,3 +793,8 @@ SendTable g_10944dfc;
 int sub_103fbed0(void);
 int g_10944df8 = ((int (*)(int))sub_103fbed0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103fc010 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10947778(&CPrecacheRegister::PrecacheFn_Other, "item_p_gargoyle_talisman");
+// END FUNCTION
