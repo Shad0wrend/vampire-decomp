@@ -255,3 +255,8 @@ ConVar g_10924598("temp_cover_npc_y", "57.6", 0, "");
 #include "ConVar.h"
 ConVar g_10924c90("debug_turn_scalar", ".15", 0, "Set this var to override turn animation speed.");
 // END FUNCTION
+
+// FUNCTION: 0x1029bb90 size=0xa
+#include "ConVar.h"
+ConVar g_10923fe8("debug_npc_map", "0", 0, "Set this to true and an overlay map of all NPCs will be drawn");
+// END FUNCTION
