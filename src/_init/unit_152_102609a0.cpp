@@ -60,3 +60,8 @@ ConVar g_10920388("debug_hit_by_mode", "1", 0, "Set this to 1 to use alternate h
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_1090ff08(true);
 // END FUNCTION
+
+// FUNCTION: 0x10265640 size=0x5
+#include "CAI_LocalIdSpace.h"
+CAI_LocalIdSpace g_10920484(true);
+// END FUNCTION
