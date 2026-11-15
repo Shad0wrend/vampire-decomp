@@ -10,3 +10,8 @@ int g_1093bf60 = pcd_initial_1093bf60();
 #include "ConVar.h"
 ConVar g_1093bf68("sk_vpedestrian_health", "10", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103a1c40 size=0x5
+int sub_103a1c80(void);
+int g_1093bff8 = ((int (*)(int))sub_103a1c80)(0);
+// END FUNCTION
