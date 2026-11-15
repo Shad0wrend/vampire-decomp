@@ -66,3 +66,8 @@ ServerClassReg g_1072b068("COrnamentProp", &g_1072b214, g_1058d854);
 #include "SendTable.h"
 SendTable g_1072b214;
 // END FUNCTION
+
+// FUNCTION: 0x10190d40 size=0x5
+int sub_10190d80(void);
+int g_1072b210 = ((int (*)(int))sub_10190d80)(0);
+// END FUNCTION
