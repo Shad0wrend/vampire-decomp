@@ -338,3 +338,8 @@ extern SendTable g_10939058;
 extern char g_1062772c[];
 ServerClassReg g_10938a9c("CCorpse", &g_10939058, g_1062772c);
 // END FUNCTION
+
+// FUNCTION: 0x10355bb0 size=0xa
+#include "SendTable.h"
+SendTable g_10939058;
+// END FUNCTION
