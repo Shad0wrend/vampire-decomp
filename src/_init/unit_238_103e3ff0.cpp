@@ -220,3 +220,8 @@ SendTable g_109424d4;
 int sub_103e61c0(void);
 int g_109424d0 = ((int (*)(int))sub_103e61c0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103e6340 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10940fa4(&CPrecacheRegister::PrecacheFn_Other, "item_w_katana");
+// END FUNCTION
