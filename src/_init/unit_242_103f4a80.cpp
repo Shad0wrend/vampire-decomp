@@ -742,3 +742,8 @@ ServerClassReg g_10944de0("COccultPassiveDurations", &g_10947c2c, g_1067f50c);
 #include "SendTable.h"
 SendTable g_10947c2c;
 // END FUNCTION
+
+// FUNCTION: 0x103fb890 size=0x5
+int sub_103fb8d0(void);
+int g_10947c28 = ((int (*)(int))sub_103fb8d0)(0);
+// END FUNCTION
