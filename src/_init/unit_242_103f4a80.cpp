@@ -1168,3 +1168,8 @@ ServerClassReg g_10947ad8("CItemGDriversLicenseGimble", &g_10945ec4, g_1067f66c)
 #include "SendTable.h"
 SendTable g_10945ec4;
 // END FUNCTION
+
+// FUNCTION: 0x103ff9a0 size=0x5
+int sub_103ff9e0(void);
+int g_10945ec0 = ((int (*)(int))sub_103ff9e0)(0);
+// END FUNCTION
