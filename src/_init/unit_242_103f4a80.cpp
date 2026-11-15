@@ -558,3 +558,8 @@ ServerClassReg g_109442d4("COccultPresence", &g_10945cb4, g_1067f48c);
 #include "SendTable.h"
 SendTable g_10945cb4;
 // END FUNCTION
+
+// FUNCTION: 0x103fa090 size=0x5
+int sub_103fa0d0(void);
+int g_10945cb0 = ((int (*)(int))sub_103fa0d0)(0);
+// END FUNCTION
