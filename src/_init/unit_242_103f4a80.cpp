@@ -893,3 +893,8 @@ extern SendTable g_10944964;
 extern char g_1067f57c[];
 ServerClassReg g_109469a8("CItemGCashBox", &g_10944964, g_1067f57c);
 // END FUNCTION
+
+// FUNCTION: 0x103fd0d0 size=0xa
+#include "SendTable.h"
+SendTable g_10944964;
+// END FUNCTION
