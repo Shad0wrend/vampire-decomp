@@ -432,3 +432,8 @@ ServerClassReg g_10948418("CResearchBook_LG_FIREARMS", &g_10944944, g_1067f3a0);
 #include "SendTable.h"
 SendTable g_10944944;
 // END FUNCTION
+
+// FUNCTION: 0x103f8df0 size=0x5
+int sub_103f8e30(void);
+int g_10944940 = ((int (*)(int))sub_103f8e30)(0);
+// END FUNCTION
