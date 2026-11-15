@@ -55,3 +55,9 @@ CAI_LocalIdSpace g_1093bacc(false);
 #include "ConVar.h"
 ConVar g_1093bb10("debug_tentacle_mask", "-1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1039a1c0 size=0xa
+#include "ConCommand.h"
+void sub_1039a250(void);
+ConCommand g_1093bae4("ming_xiao_particle", sub_1039a250, "Use this command force ming xiao to show one of her particles.", 0, 0);
+// END FUNCTION
