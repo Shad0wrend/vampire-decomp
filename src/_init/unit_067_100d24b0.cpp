@@ -103,3 +103,10 @@ ConCommand g_106e7d50("notarget", sub_100d3bc0, "Toggle. Player becomes hidden t
 void sub_100d3d20(void);
 ConCommand g_106e7480("giftxp", sub_100d3d20, "Free XP for all!", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d4790 size=0xa
+#include "ConCommand.h"
+void sub_100d4240(void);
+void sub_100d47f0(void);
+ConCommand g_106e7a40("vstats", sub_100d4240, "Lists or changes the local player's Vampire Stats\n\tArguments:\t{Buy | Sell} {stat_name} / no arguments lists all stats.", 0, sub_100d47f0);
+// END FUNCTION
