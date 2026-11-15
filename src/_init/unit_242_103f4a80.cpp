@@ -2011,3 +2011,11 @@ int g_10948530 = ((int (*)(int))sub_10407700)(0);
 int * sub_10407790(void);
 int * g_10946d34 = ((int * (*)(int))sub_10407790)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10407830 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10946210;
+extern char g_1067fa70[];
+ServerClassReg g_10944be0("CItemGKeyring", &g_10946210, g_1067fa70);
+// END FUNCTION
