@@ -31,3 +31,8 @@ CEQ_SaveRestoreBlockHandler g_106e70a8;
 #include "CPyObjStrSaveRestoreDataOps.h"
 CPyObjStrSaveRestoreDataOps g_106e6ffc;
 // END FUNCTION
+
+// FUNCTION: 0x100d01b0 size=0x5
+#include "CVTSDependencySaveRestoreDataOps.h"
+CVTSDependencySaveRestoreDataOps g_106e6ff8;
+// END FUNCTION
