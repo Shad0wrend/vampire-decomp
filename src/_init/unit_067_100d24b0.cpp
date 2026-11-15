@@ -304,3 +304,9 @@ void sub_100d7b30(void);
 void sub_100d2c30(void);
 ConCommand g_106e78d4("vitem", sub_100d7b30, "Lists descriptive info for a Vampire Item, accepts partial name matches", 0, sub_100d2c30);
 // END FUNCTION
+
+// FUNCTION: 0x100d7d70 size=0xa
+#include "ConCommand.h"
+void sub_100d7c40(void);
+ConCommand g_106e72a0("vmpequip", sub_100d7c40, "Sets the starting equipment for a player in a multiplayer game.", 0, 0);
+// END FUNCTION
