@@ -3370,6 +3370,427 @@ void CBasePlayer::vfunc105(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016be10 size=0x952
+#include "CAI_BaseNPC.h"
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+#include "CBaseAnimating.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseCombatWeapon.h"
+#include "CItemGKeyring.h"
+#include "CKeyringUnit.h"
+#include "CVStatList_t.h"
+#include "CEHandleGet.h"
+#include "Vector.h"
+#include "QAngle.h"
+
+struct CGlobalVars_t
+{
+	char m_pad0000[0xc];
+	float curtime;
+};
+extern CGlobalVars_t *g_1070b228;
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern "C" int __cdecl rand();
+extern "C" int __cdecl atexit(void (__cdecl *)(void));
+extern char *(__cdecl *g_109f386c)(const char *pStr, const char *pSub);
+char *sub_101d3730(const char *fmt, ...);
+void __cdecl sub_10012a8a();
+extern CVStatList_t g_109f0b40;
+struct CPTTune_1016be10 { int sub_101e8e80(); int sub_101e8ea0(); };
+extern CPTTune_1016be10 g_10739d08;
+extern bool g_1070ba2c;
+extern Vector g_1070d1b0;
+struct CPTRules_1016be10 { virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19(); virtual void s20(); virtual void vfunc21(); };
+extern CPTRules_1016be10 *g_1070ba0c;
+struct CPTDev_1016be10 { virtual void s0(); virtual void vfunc1(); };
+extern CPTDev_1016be10 *g_10924a6c;
+struct CPTWhisper_1016be10 { void sub_101f6530(CBasePlayer *p, const char *psz); };
+extern CPTWhisper_1016be10 g_1073dbfc;
+struct CPTNPC_1016be10 { void sub_10269a20(int c); };
+struct CPTBlk30 { int a[0x30]; };
+struct CPTBlk15 { int a[0x15]; };
+struct CPTV_1016be10
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19(); virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23();
+	virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29(); virtual void s30(); virtual void s31(); virtual void s32(); virtual void s33(); virtual void s34(); virtual void s35();
+	virtual void s36(); virtual void s37(); virtual void s38(); virtual void s39(); virtual void s40(); virtual void s41(); virtual void s42(); virtual void s43(); virtual void s44(); virtual void s45(); virtual void s46(); virtual void s47();
+	virtual void s48(); virtual void s49(); virtual void s50(); virtual void s51(); virtual void s52(); virtual void s53(); virtual void s54(); virtual void s55(); virtual void s56(); virtual void s57(); virtual void s58(); virtual void s59();
+	virtual void s60(); virtual void s61();
+	virtual void vfunc62(const Vector *v);
+	virtual void s63();
+	virtual void vfunc64(const QAngle *a);
+	virtual void s65(); virtual void s66(); virtual void s67(); virtual void s68(); virtual void s69(); virtual void s70(); virtual void s71(); virtual void s72(); virtual void s73(); virtual void s74(); virtual void s75(); virtual void s76();
+	virtual void s77(); virtual void s78(); virtual void s79(); virtual void s80(); virtual void s81(); virtual void s82(); virtual void s83(); virtual void s84(); virtual void s85(); virtual void s86(); virtual void s87(); virtual void s88();
+	virtual void s89(); virtual void s90(); virtual void s91(); virtual void s92(); virtual void s93(); virtual void s94(); virtual void s95(); virtual void s96(); virtual void s97(); virtual void s98(); virtual void s99(); virtual void s100();
+	virtual void s101(); virtual void s102(); virtual void s103(); virtual void s104();
+	virtual void vfunc105(const char *psz);
+	virtual void s106(); virtual void s107(); virtual void s108(); virtual void s109(); virtual void s110(); virtual void s111(); virtual void s112(); virtual void s113(); virtual void s114(); virtual void s115(); virtual void s116(); virtual void s117();
+	virtual void s118(); virtual void s119(); virtual void s120(); virtual void s121(); virtual void s122(); virtual void s123(); virtual void s124(); virtual void s125(); virtual void s126(); virtual void s127(); virtual void s128(); virtual void s129();
+	virtual void s130(); virtual void s131(); virtual void s132(); virtual void s133(); virtual void s134(); virtual void s135(); virtual void s136(); virtual void s137();
+	virtual int vfunc138();
+	virtual void s139(); virtual void s140(); virtual void s141(); virtual void s142(); virtual void s143(); virtual void s144(); virtual void s145(); virtual void s146(); virtual void s147(); virtual void s148(); virtual void s149(); virtual void s150();
+	virtual void s151(); virtual void s152(); virtual void s153(); virtual void s154(); virtual void s155(); virtual void s156(); virtual void s157();
+	virtual bool vfunc158();
+	virtual void s159(); virtual void s160(); virtual void s161(); virtual void s162(); virtual void s163(); virtual void s164(); virtual void s165(); virtual void s166(); virtual void s167(); virtual void s168(); virtual void s169(); virtual void s170();
+	virtual void s171(); virtual void s172(); virtual void s173(); virtual void s174(); virtual void s175(); virtual void s176(); virtual void s177(); virtual void s178(); virtual void s179(); virtual void s180(); virtual void s181(); virtual void s182();
+	virtual void s183(); virtual void s184(); virtual void s185(); virtual void s186(); virtual void s187(); virtual void s188(); virtual void s189(); virtual void s190(); virtual void s191(); virtual void s192(); virtual void s193(); virtual void s194();
+	virtual void s195(); virtual void s196(); virtual void s197(); virtual void s198(); virtual void s199(); virtual void s200(); virtual void s201(); virtual void s202(); virtual void s203(); virtual void s204(); virtual void s205(); virtual void s206();
+	virtual void s207(); virtual void s208();
+	virtual CPTV_1016be10 *vfunc209();
+	virtual void s210(); virtual void s211(); virtual void s212(); virtual void s213(); virtual void s214(); virtual void s215();
+	virtual void vfunc216(const Vector *v);
+	virtual const Vector *vfunc217();
+	virtual void vfunc218(const QAngle *a);
+	virtual const QAngle *vfunc219();
+	virtual void s220();
+	virtual const QAngle *vfunc221();
+	virtual void s222(); virtual void s223(); virtual void s224(); virtual void s225(); virtual void s226(); virtual void s227(); virtual void s228(); virtual void s229(); virtual void s230(); virtual void s231(); virtual void s232(); virtual void s233();
+	virtual void s234(); virtual void s235(); virtual void s236(); virtual void s237(); virtual void s238(); virtual void s239(); virtual void s240(); virtual void s241(); virtual void s242(); virtual void s243(); virtual void s244(); virtual void s245();
+	virtual void s246(); virtual void s247(); virtual void s248(); virtual void s249();
+	virtual float vfunc250(int a);
+	virtual void s251(); virtual void s252(); virtual void s253(); virtual void s254(); virtual void s255(); virtual void s256(); virtual void s257();
+	virtual void vfunc258(float f, CBasePlayer *p);
+	virtual void s259(); virtual void s260(); virtual void s261(); virtual void s262(); virtual void s263(); virtual void s264(); virtual void s265(); virtual void s266(); virtual void s267(); virtual void s268(); virtual void s269(); virtual void s270();
+	virtual void s271(); virtual void s272(); virtual void s273(); virtual void s274(); virtual void s275(); virtual void s276();
+	virtual void vfunc277(void *p);
+	virtual void *vfunc278();
+	virtual void s279(); virtual void s280(); virtual void s281(); virtual void s282(); virtual void s283(); virtual void s284(); virtual void s285(); virtual void s286(); virtual void s287(); virtual void s288(); virtual void s289(); virtual void s290();
+	virtual void s291(); virtual void s292(); virtual void s293(); virtual void s294(); virtual void s295(); virtual void s296(); virtual void s297(); virtual void s298(); virtual void s299(); virtual void s300(); virtual void s301(); virtual void s302();
+	virtual void s303(); virtual void s304(); virtual void s305(); virtual void s306(); virtual void s307(); virtual void s308(); virtual void s309();
+	virtual void vfunc310(int a);
+	virtual void vfunc311(int a, int b, int c);
+	virtual void vfunc312(float f);
+	virtual void s313(); virtual void s314(); virtual void s315(); virtual void s316(); virtual void s317(); virtual void s318(); virtual void s319(); virtual void s320(); virtual void s321(); virtual void s322(); virtual void s323(); virtual void s324();
+	virtual void s325(); virtual void s326(); virtual void s327(); virtual void s328(); virtual void s329(); virtual void s330(); virtual void s331(); virtual void s332(); virtual void s333(); virtual void s334(); virtual void s335(); virtual void s336();
+	virtual void s337(); virtual void s338(); virtual void s339(); virtual void s340(); virtual void s341(); virtual void s342(); virtual void s343(); virtual void s344(); virtual void s345(); virtual void s346(); virtual void s347(); virtual void s348();
+	virtual void s349(); virtual void s350(); virtual void s351();
+	virtual void vfunc352();
+	virtual void s353(); virtual void s354(); virtual void s355(); virtual void s356();
+	virtual void vfunc357();
+	virtual void s358(); virtual void s359(); virtual void s360();
+	virtual bool vfunc361();
+	virtual void s362(); virtual void s363(); virtual void s364(); virtual void s365(); virtual void s366(); virtual void s367(); virtual void s368(); virtual void s369(); virtual void s370(); virtual void s371(); virtual void s372(); virtual void s373();
+	virtual void s374(); virtual void s375(); virtual void s376(); virtual void s377(); virtual void s378(); virtual void s379(); virtual void s380(); virtual void s381(); virtual void s382(); virtual void s383(); virtual void s384(); virtual void s385();
+	virtual void s386(); virtual void s387(); virtual void s388(); virtual void s389(); virtual void s390(); virtual void s391(); virtual void s392(); virtual void s393(); virtual void s394(); virtual void s395(); virtual void s396(); virtual void s397();
+	virtual void s398(); virtual void s399(); virtual void s400(); virtual void s401(); virtual void s402(); virtual void s403(); virtual void s404(); virtual void s405();
+	virtual bool vfunc406();
+	virtual void s407(); virtual void s408(); virtual void s409(); virtual void s410(); virtual void s411();
+	virtual bool vfunc412();
+	virtual void s413(); virtual void s414(); virtual void s415(); virtual void s416(); virtual void s417(); virtual void s418(); virtual void s419(); virtual void s420(); virtual void s421(); virtual void s422(); virtual void s423();
+	virtual bool vfunc424(int a);
+	virtual void s425(); virtual void s426(); virtual void s427(); virtual void s428(); virtual void s429(); virtual void s430(); virtual void s431(); virtual void s432(); virtual void s433(); virtual void s434(); virtual void s435(); virtual void s436();
+	virtual void s437(); virtual void s438(); virtual void s439(); virtual void s440(); virtual void s441(); virtual void s442(); virtual void s443(); virtual void s444(); virtual void s445(); virtual void s446(); virtual void s447(); virtual void s448();
+	virtual void vfunc449(int a, int b);
+	virtual void s450(); virtual void s451(); virtual void s452(); virtual void s453(); virtual void s454(); virtual void s455(); virtual void s456(); virtual void s457();
+	virtual void vfunc458();
+	char m_pad0004[0x94];
+	CPTV_1016be10 *m_p98;
+	CBaseAnimating *m_p9c;
+	char m_pad00a0[0xc8];
+	int m_n168;
+	int m_n16c;
+	char m_pad0170[0x4];
+	int m_nSkin174;
+	char m_pad0178[0xf0];
+	unsigned int m_iEFlags268;
+	char m_pad026c[0x150];
+	Vector m_vecAbsVelocity;
+	char m_pad03c8[0x328];
+	int m_nSequence6f0;
+	float m_fl6f4;
+	float m_fl6f8;
+	char m_pad06fc[0x38];
+	CPTBlk30 m_blk734;
+	CPTBlk15 m_blk7f4;
+	char m_pad0848[0x7a8];
+	int m_nActivityFF0;
+	char m_pad0ff4[0x3b4];
+	CVStatListSet m_StatLists;
+	char m_pad13c4[0x8];
+	int m_n13cc;
+	char m_pad13d0[0x4];
+	float m_f13d4;
+	char m_pad13d8[0x94];
+	int m_n146c;
+	char m_pad1470[0x4];
+	char m_b1474;
+	char m_pad1475[0x1];
+	char m_b1476;
+	char m_pad1477[0x11];
+	float m_f1488;
+	char m_pad148c[0xd0];
+	unsigned int m_h155c;
+	float m_f1560;
+	char m_pad1564[0x48c];
+	int m_n19f0;
+	char m_pad19f4[0x274];
+	float m_f1c68;
+	char m_pad1c6c[0x38];
+	const char *m_s1ca4;
+	float m_f1ca8;
+	int m_n1cac;
+	char m_pad1cb0[0x70];
+	float m_f1d20;
+	char m_pad1d24[0x8c];
+	unsigned int m_h1db0;
+	int m_n1db4;
+	char m_pad1db8[0x104];
+	int m_n1ebc;
+	char m_pad1ec0[0x1c];
+	char m_b1edc;
+	char m_pad1edd[0xb];
+	float m_f1ee8;
+	char m_pad1eec[0x10];
+	QAngle m_ang1efc;
+	Vector m_vec1f08;
+	char m_pad1f14[0x174];
+	int m_n2088;
+	char m_pad208c[0x90];
+	Vector m_vecSmoothedVelocity;
+	char m_pad2128[0x1dc];
+	int m_n2304;
+	char m_pad2308[0x40];
+	Vector m_vecForcedOrigin;
+	char m_b2354;
+	char m_pad2355[0x7f];
+	char m_sz23d4[0x80];
+	void sub_100b1d10();
+	bool sub_10336920();
+	int sub_1008dc40(int a, int b);
+	void sub_101618e0(int a, int b);
+	void sub_1016b480();
+	int sub_100b3700();
+	void sub_1009edc0(const Vector &mins, const Vector &maxs);
+	void sub_100b2770(const Vector *v);
+	void sub_100b2e30(const Vector *v);
+	int sub_1016bb50();
+	void sub_101600a0(float f);
+	void sub_1017df50(int a, float f, const char *psz);
+	bool sub_10337f30();
+	bool sub_10337e40();
+	void sub_1016c9d0();
+	void sub_1017c300();
+	CBaseCombatWeapon *sub_10335950(const char *psz);
+	void sub_1033f4c0(int n);
+	bool sub_10338900();
+	void sub_10338920();
+	void sub_100b3b00();
+	void sub_1033f6d0();
+};
+
+inline CVStatList_t *FindStat_1016be10(CVStatListSet *pSet, int type)
+{
+	for (int i = 0; i < pSet->m_nLists; i++) {
+		if (pSet->m_pLists[i]->m_field10 == type)
+			return pSet->m_pLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		g_109f0b40.CVStatList_t::CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+
+extern float g_104454c4;
+extern char g_106b8540[];
+inline const char *STR2_1016be10(const char **p) { return *p ? *p : g_106b8540; }
+#define V ((CPTV_1016be10 *)this)
+#define HULL() \
+	if (V->sub_100b3700() & 2) \
+		V->sub_1009edc0(Vector(-16, -16, 0), Vector(16, 16, 36)); \
+	else \
+		V->sub_1009edc0(Vector(-16, -16, 0), Vector(16, 16, 72));
+
+void CBasePlayer::vfunc437()
+{
+	if (g_1070b228->curtime > V->m_f13d4 + 1.0f)
+		V->m_f13d4 = 0;
+
+	if ((unsigned char)((V->m_iEFlags268 >> 12) & 1))
+		V->sub_100b1d10();
+
+	V->m_vecSmoothedVelocity = V->m_vecSmoothedVelocity * 0.9f + V->m_vecAbsVelocity * 0.1f;
+
+	if (!g_1070ba2c && !V->m_n2304 && V->vfunc158() && !V->vfunc406())
+	{
+		if (V->m_b1edc)
+		{
+			if (V->m_n168 == 0x1e && V->m_f1560 > g_104454c4 && g_1070b228->curtime - V->m_f1560 > 2.0f)
+			{
+				const char *pszModel = 0;
+				CPTV_1016be10 *pEnt = (CPTV_1016be10 *)EHandle_Get(V->m_h155c);
+				if (pEnt && pEnt->m_p9c)
+					pszModel = (const char *)pEnt->m_p9c->sub_100952d0(-1) + 0xc;
+				int nSkin = V->m_nSkin174;
+				V->sub_101618e0(1, 1);
+				V->m_n1ebc = -1;
+				V->m_n168 = 0;
+				V->m_n16c = 0;
+				if (pszModel && !_strcmpi(pszModel, "character/monster/Animalism_Beastform/Animalism_Beastform.mdl"))
+				{
+					int nMale = V->sub_10336920();
+					V->vfunc105("models/character/monster/Animalism_Beastform/Animalism_Beastform.mdl");
+					V->vfunc310(1);
+					V->vfunc311(1, 1, V->sub_1008dc40(1, -1));
+					FindStat_1016be10(&V->m_StatLists, 0)->sub_102008e0(0xb, nMale);
+					V->m_nSkin174 = nSkin;
+					V->m_n13cc = nMale;
+					float fv = V->vfunc250(0);
+					V->vfunc258(fv, this);
+					V->vfunc312(fv);
+					V->sub_1016b480();
+					return;
+				}
+				V->m_b1edc = 0;
+				V->m_f1c68 = g_1070b228->curtime;
+				char *pszName = V->m_sz23d4;
+				char *pFound = g_109f386c(pszName, (char *)((CBaseAnimating *)this)->sub_100952d0(-1) + 0xc);
+				if (!pFound || _strcmpi((char *)((CBaseAnimating *)this)->sub_100952d0(-1) + 0xc, pFound))
+					V->vfunc105(pszName);
+			}
+			HULL()
+		}
+		else
+		{
+			HULL()
+		}
+
+		V->vfunc458();
+
+		if (V->sub_100b3700() & 1)
+		{
+			if (V->m_f1ee8 > 64.0f)
+				g_1070ba0c->vfunc21();
+			V->m_f1ee8 = 0;
+		}
+
+		if (V->vfunc158())
+		{
+			if (V->m_nActivityFF0 == 0x4b && !V->vfunc412() && !(V->m_n2088 & 0x79a))
+			{
+				V->sub_100b2770(&g_1070d1b0);
+				V->sub_100b2e30(&g_1070d1b0);
+			}
+			int nSeq = V->sub_1016bb50();
+			if (nSeq != -1)
+				V->vfunc449(nSeq, 0);
+		}
+
+		if (V->m_nSequence6f0 == -1)
+			V->m_nSequence6f0 = 0;
+
+		float flTime = V->vfunc250(0);
+		V->sub_101600a0(flTime * V->m_f1488);
+		V->vfunc258(flTime, this);
+		if (V->m_n1db4 == 0xb)
+			V->sub_1017df50(3, -1.0f, sub_101d3730("Jump_LandedExtremelyHard"));
+		V->vfunc312(flTime);
+		V->sub_1016b480();
+
+		if (V->sub_10337f30())
+			V->vfunc352();
+		else if (V->sub_10337e40())
+			V->vfunc357();
+
+		if (V->m_b2354)
+		{
+			V->vfunc62(&V->m_vecForcedOrigin);
+			V->vfunc216(&V->m_vecForcedOrigin);
+			QAngle ang;
+			ang.x = rand() * 0.0015259255f - 25.0f;
+			ang.y = rand() * 0.0015259255f - 25.0f;
+			ang.z = rand() * 0.0015259255f - 25.0f;
+			V->m_ang1efc = ang;
+			V->vfunc64(&V->m_ang1efc);
+			V->vfunc218(V->vfunc221());
+			V->m_vec1f08.Init();
+		}
+		V->sub_1016c9d0();
+	}
+
+	V->sub_1017c300();
+
+	if (V->m_n19f0 != 0)
+	{
+		if (--V->m_n19f0 == 0)
+		{
+			CItemGKeyring *pKeyring = dynamic_cast<CItemGKeyring *>(V->sub_10335950("item_g_keyring"));
+			if (pKeyring)
+				((CKeyringUnit *)pKeyring)->sub_104081e0();
+		}
+	}
+
+	if (V->vfunc361())
+	{
+		int nHave = FindStat_1016be10(&V->m_StatLists, 0)->sub_102012d0(0xc);
+		if (nHave < g_10739d08.sub_101e8e80())
+			V->sub_1033f4c0(g_10739d08.sub_101e8ea0() - nHave);
+	}
+
+	if (V->sub_10338900())
+		V->sub_10338920();
+
+	CPTV_1016be10 *pUse = (CPTV_1016be10 *)EHandle_Get(V->m_h1db0);
+	if (pUse)
+	{
+		CPTV_1016be10 *pOther = pUse->m_p98;
+		if (pOther)
+		{
+			if (V->m_b1edc)
+			{
+				pOther->vfunc64(V->vfunc219());
+				if ((unsigned char)((V->m_iEFlags268 >> 12) & 1))
+					V->sub_100b1d10();
+				pOther->sub_100b2770(&V->m_vecAbsVelocity);
+				pOther->vfunc62(V->vfunc217());
+			}
+			else
+			{
+				V->m_nSequence6f0 = pOther->m_nSequence6f0;
+				V->m_nSkin174 = pOther->m_nSkin174;
+				V->m_fl6f8 = pOther->m_fl6f8;
+				V->m_fl6f4 = pOther->m_fl6f4;
+				V->m_blk734 = pOther->m_blk734;
+				V->m_blk7f4 = pOther->m_blk7f4;
+				V->vfunc64(pOther->vfunc219());
+				if ((unsigned char)((pOther->m_iEFlags268 >> 12) & 1))
+					pOther->sub_100b1d10();
+				V->sub_100b2770(&pOther->m_vecAbsVelocity);
+				V->vfunc62(pOther->vfunc217());
+				V->vfunc277(pOther->vfunc278());
+			}
+			V->sub_100b3b00();
+			if (pOther->vfunc138() == 3 && V->m_n146c > 0 && V->m_b1474 && V->vfunc424(1))
+			{
+				V->m_b1476 = 1;
+				V->sub_1033f6d0();
+			}
+		}
+	}
+
+	if ((V->m_n1cac & 1) && V->m_f1ca8 <= g_1070b228->curtime)
+	{
+		V->m_n1cac &= ~1;
+		g_1073dbfc.sub_101f6530(this, STR2_1016be10(&V->m_s1ca4));
+	}
+
+	CPTV_1016be10 *pGround = V->vfunc209();
+	if (pGround)
+	{
+		CPTNPC_1016be10 *pNPC = (CPTNPC_1016be10 *)pGround->m_p98;
+		if (pNPC && g_1070b228->curtime >= V->m_f1d20)
+		{
+			V->m_f1d20 = g_1070b228->curtime + 2.0f;
+			g_10924a6c->vfunc1();
+			pNPC->sub_10269a20(0x3b);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016cd20 size=0x151
 template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CUnknown101d7520.h"
