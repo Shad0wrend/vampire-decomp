@@ -138,3 +138,11 @@ int g_10751d08 = ((int (*)(int))sub_102353a0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10751e28(&CPrecacheRegister::PrecacheFn_Other, "item_w_deserteagle");
 // END FUNCTION
+
+// FUNCTION: 0x10235570 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10751f08;
+extern char g_105ba66c[];
+ServerClassReg g_10752588("CWeaponRanged_Rifle_M37", &g_10751f08, g_105ba66c);
+// END FUNCTION
