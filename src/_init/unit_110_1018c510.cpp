@@ -5,3 +5,11 @@
 int sub_1018c800(void);
 int g_1072ada0 = ((int (*)(int))sub_1018c800)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1018c830 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1072adc0;
+extern char g_1058bf54[];
+ServerClassReg g_1072af84("CPointCamera", &g_1072adc0, g_1058bf54);
+// END FUNCTION
