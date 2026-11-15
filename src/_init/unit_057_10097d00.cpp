@@ -23,3 +23,8 @@ extern SendTable g_106ce7fc;
 extern char g_10551660[];
 ServerClassReg g_106ce634("CBaseAnimatingOverlay", &g_106ce7fc, g_10551660);
 // END FUNCTION
+
+// FUNCTION: 0x10098060 size=0xa
+#include "SendTable.h"
+SendTable g_106ce7fc;
+// END FUNCTION
