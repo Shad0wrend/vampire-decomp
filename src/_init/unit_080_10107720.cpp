@@ -30,3 +30,8 @@ int g_10709290 = ((int (*)(int))sub_10108060)(0);
 int sub_101082a0(void);
 int g_1070928c = ((int (*)(int))sub_101082a0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101084c0 size=0x5
+int sub_10108500(void);
+int g_10709298 = ((int (*)(int))sub_10108500)(0);
+// END FUNCTION
