@@ -148,3 +148,9 @@ ConCommand g_106c9330("npc_destroy_unselected", sub_10086e50, "Removes all NPCs 
 void sub_10086fb0(void);
 ConCommand g_106c9420("npc_freeze", sub_10086fb0, "Selected NPC(s) will freeze in place (or unfreeze). If there are no selected NPCs, uses the NPC under the crosshair.\n\tArguments:\t-none-", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10087410 size=0xa
+#include "ConCommand.h"
+void sub_10087170(void);
+ConCommand g_106c9600("npc_go", sub_10087170, "Selected NPC(s) will go to the location that the player is looking (shown with a purple box)\n\tArguments:\t-none-", 0, 0);
+// END FUNCTION
