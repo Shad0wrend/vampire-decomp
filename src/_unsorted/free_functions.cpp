@@ -291980,6 +291980,107 @@ void CHintData_WW::sub_103ca390(int hint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ca4b0 size=0x180
+#include "ScopeTrace.h"
+#include "CNPC_VWerewolf.h"
+extern char g_106618d8[];
+extern char g_106b8540[];
+extern CNPC_VWerewolfVec3 g_1070d1b0;
+extern const int vt_104bd2cc, vt_104bd2a0, vt_104cf4d4, vt_104cf4a4;
+
+template <class T> inline T LdR(const T &x) { return x; }
+template <class T> inline T LdV(T x) { return x; }
+struct WW103ca4b0Troika {
+	const int *m_vptr;
+	char pad4[0x26c - 4];
+	const char *m_name26c;
+	char pad270[0x10e4 - 0x270];
+	char *m_p10e4;
+	char pad10e8[0x1568 - 0x10e8];
+	int m_n1568;
+	int m_n156c;
+	char pad1570[0x19b0 - 0x1570];
+	const int *m_vptr19b0;
+	char pad19b4[0x665c - 0x19b4];
+	WW103ca4b0Troika() { sub_1028d230(); }
+	void sub_1028d230();
+};
+struct WW103ca4b0Vec8 {
+	int m[5];
+	WW103ca4b0Vec8() { sub_103dbeb0(0, 0); }
+	int sub_103dbeb0(int a, int b);
+};
+struct WW103ca4b0VecA {
+	int m_mem, m_alloc, m_grow, m_size, m_elems;
+	WW103ca4b0VecA() { sub_103dc040(0, 0); m_size = 0; m_elems = m_mem; }
+	void sub_103dc040(int a, int b);
+};
+struct WW103ca4b0VecB {
+	int m_mem, m_alloc, m_grow, m_size, m_elems;
+	WW103ca4b0VecB() { sub_103dc180(0, 0); m_size = 0; m_elems = m_mem; }
+	void sub_103dc180(int a, int b);
+};
+struct WW103ca4b0Handle {
+	int m_h;
+	WW103ca4b0Handle() { m_h = -1; }
+};
+struct WW103ca4b0Output {
+	int m[6];
+	WW103ca4b0Output() { sub_100cd2a0(); }
+	void sub_100cd2a0();
+};
+struct WW103ca4b0Obj {
+	int m0;
+	WW103ca4b0Obj() { sub_103c8e00(); }
+	void sub_103c8e00();
+};
+struct WW103ca4b0Boss : WW103ca4b0Troika {
+	WW103ca4b0Vec8 m_v665c;
+	char pad6670[0x6684 - 0x6670];
+	WW103ca4b0Boss() { m_vptr = &vt_104bd2cc; m_vptr19b0 = &vt_104bd2a0; }
+};
+struct WW103ca4b0 : WW103ca4b0Boss {
+	WW103ca4b0Handle m_hDoor[2];
+	WW103ca4b0VecA m_v668c;
+	char m_b66a0;
+	char pad66a1[0x66dc - 0x66a1];
+	CNPC_VWerewolfVec3 m_v66dc;
+	int m_n66e8;
+	int m_n66ec;
+	char pad66f0[0x6710 - 0x66f0];
+	char m_b6710;
+	char pad6711[3];
+	WW103ca4b0VecB m_v6714;
+	WW103ca4b0Output m_o6728;
+	WW103ca4b0Output m_o6740;
+	WW103ca4b0Output m_o6758;
+	WW103ca4b0Output m_o6770;
+	WW103ca4b0Output m_o6788;
+	WW103ca4b0Obj m_67a0;
+	WW103ca4b0()
+	{
+		m_vptr = &vt_104cf4d4;
+		m_vptr19b0 = &vt_104cf4a4;
+		ScopeTrace scope("CNPC_VWerewolf::CNPC_VWerewolf", m_name26c ? m_name26c : g_106b8540);
+		m_n1568 = 0xc;
+		m_n156c = 0xc;
+		m_n66ec = 0;
+		m_v66dc.x = g_1070d1b0.x;
+		m_v66dc.y = g_1070d1b0.y;
+		m_v66dc.z = g_1070d1b0.z;
+		m_p10e4 = g_106618d8[0] ? g_106618d8 : 0;
+		m_b66a0 = 0;
+		m_b6710 = 0;
+	}
+};
+
+CNPC_VWerewolf *CNPC_VWerewolf::sub_103ca4b0()
+{
+	((WW103ca4b0 *)this)->WW103ca4b0::WW103ca4b0();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ca7c0 size=0x1e4
 #include "utlmemory.h"
 #include "utlrbtree.h"
