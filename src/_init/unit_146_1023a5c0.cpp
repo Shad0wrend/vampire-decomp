@@ -15,3 +15,11 @@ int g_10752ee4 = ((int (*)(int))sub_1023a6b0)(0);
 int sub_1023af10(void);
 int g_107532e0 = ((int (*)(int))sub_1023af10)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1023af40 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10752e68;
+extern char g_105c2a40[];
+ServerClassReg g_10752d44("CWorld", &g_10752e68, g_105c2a40);
+// END FUNCTION
