@@ -8,3 +8,8 @@ extern SendTable g_106beb2c;
 extern char g_106bec64[];
 ServerClassReg g_106beaa8("CTEMetalSparks", &g_106beb2c, g_106bec64);
 // END FUNCTION
+
+// FUNCTION: 0x1005a0e0 size=0xa
+#include "SendTable.h"
+SendTable g_106beb2c;
+// END FUNCTION
