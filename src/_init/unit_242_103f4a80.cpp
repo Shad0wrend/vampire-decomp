@@ -1451,3 +1451,8 @@ extern SendTable g_109459b8;
 extern char g_1067f76c[];
 ServerClassReg g_109489a8("CItemGMilligansBuisnesscard", &g_109459b8, g_1067f76c);
 // END FUNCTION
+
+// FUNCTION: 0x10402420 size=0xa
+#include "SendTable.h"
+SendTable g_109459b8;
+// END FUNCTION
