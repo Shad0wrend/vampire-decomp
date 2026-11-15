@@ -885,3 +885,11 @@ SendTable g_10946248;
 int sub_103fcee0(void);
 int g_10946244 = ((int (*)(int))sub_103fcee0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103fd020 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10944964;
+extern char g_1067f57c[];
+ServerClassReg g_109469a8("CItemGCashBox", &g_10944964, g_1067f57c);
+// END FUNCTION
