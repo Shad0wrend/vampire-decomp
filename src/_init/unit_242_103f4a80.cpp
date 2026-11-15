@@ -1299,3 +1299,11 @@ SendTable g_10943948;
 int sub_10400cb0(void);
 int g_10943944 = ((int (*)(int))sub_10400cb0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10400df0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1094527c;
+extern char g_1067f6ec[];
+ServerClassReg g_10946424("CItemGVampyrApocrypha", &g_1094527c, g_1067f6ec);
+// END FUNCTION
