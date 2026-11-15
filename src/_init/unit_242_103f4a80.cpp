@@ -1847,3 +1847,8 @@ extern SendTable g_10946c24;
 extern char g_1067f8cc[];
 ServerClassReg g_10947c48("CItemGGarysFilm", &g_10946c24, g_1067f8cc);
 // END FUNCTION
+
+// FUNCTION: 0x10405f40 size=0xa
+#include "SendTable.h"
+SendTable g_10946c24;
+// END FUNCTION
