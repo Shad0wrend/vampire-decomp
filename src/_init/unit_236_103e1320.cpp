@@ -1,0 +1,7 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "vampire.h"
+
+// FUNCTION: 0x103e1320 size=0xa
+#include "ConVar.h"
+ConVar g_10940640("ft_link_velocity", "800", 8192, "The initial velocity of a flamethrower link");
+// END FUNCTION
