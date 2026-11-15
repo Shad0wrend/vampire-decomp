@@ -10,3 +10,8 @@ int g_1093d454 = pcd_initial_1093d454();
 #include "ConVar.h"
 ConVar g_1093d690("werewolf_disregard_player_vision", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103c7fd0 size=0xa
+#include "ConVar.h"
+ConVar g_1093f810("werewolf_draw_nodes", "0", 0);
+// END FUNCTION
