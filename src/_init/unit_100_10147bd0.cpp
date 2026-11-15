@@ -35,3 +35,8 @@ ConVar g_1071a448("debug_physics_hand", "0", 0, "Turns on/off physics hand debug
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_1071a48c(&CPrecacheRegister::PrecacheFn_Other, "gravity_pellet");
 // END FUNCTION
+
+// FUNCTION: 0x10148520 size=0x5
+int * sub_10148560(void);
+int * g_1071a498 = ((int * (*)(int))sub_10148560)(0);
+// END FUNCTION
