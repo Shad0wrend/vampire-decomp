@@ -852,3 +852,8 @@ extern SendTable g_10947c0c;
 extern char g_1067f55c[];
 ServerClassReg g_1094506c("CElderVitaePack", &g_10947c0c, g_1067f55c);
 // END FUNCTION
+
+// FUNCTION: 0x103fcb20 size=0xa
+#include "SendTable.h"
+SendTable g_10947c0c;
+// END FUNCTION
