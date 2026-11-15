@@ -166,3 +166,11 @@ int g_1094887c = ((int (*)(int))sub_103f6630)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_1094557c(&CPrecacheRegister::PrecacheFn_Other, "item_g_astrolite");
 // END FUNCTION
+
+// FUNCTION: 0x103f6bc0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10945560;
+extern char g_1067f2f0[];
+ServerClassReg g_10946e7c("CResearchBook_LG_COMP", &g_10945560, g_1067f2f0);
+// END FUNCTION
