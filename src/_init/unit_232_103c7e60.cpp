@@ -130,3 +130,9 @@ int g_1093f80c = pcd_initial_1093f80c();
 int sub_103da440(void);
 int g_1093d640 = ((int (*)(int))sub_103da440)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103dbde0 size=0xa
+#include "ConCommand.h"
+void sub_103dbd50(void);
+ConCommand g_1093f92c("werewolf_dump_schedules", sub_103dbd50, "werewolf_dump_schedules", 0, 0);
+// END FUNCTION
