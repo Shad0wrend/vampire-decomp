@@ -798,3 +798,11 @@ int g_10944df8 = ((int (*)(int))sub_103fbed0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_10947778(&CPrecacheRegister::PrecacheFn_Other, "item_p_gargoyle_talisman");
 // END FUNCTION
+
+// FUNCTION: 0x103fc1e0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10943b9c;
+extern char g_1067f53c[];
+ServerClassReg g_10944490("CBloodPack", &g_10943b9c, g_1067f53c);
+// END FUNCTION
