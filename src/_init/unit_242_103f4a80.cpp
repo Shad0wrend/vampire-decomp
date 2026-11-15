@@ -1497,3 +1497,11 @@ SendTable g_10949068;
 int sub_10402a40(void);
 int g_10949064 = ((int (*)(int))sub_10402a40)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10402b80 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109481a4;
+extern char g_1067f79c[];
+ServerClassReg g_10949130("CItemGWarrens4Passkey", &g_109481a4, g_1067f79c);
+// END FUNCTION
