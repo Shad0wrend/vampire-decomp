@@ -25,3 +25,8 @@ CObjectEvent g_106b8694;
 #include "ConVar.h"
 ConVar g_106b8818("physics_impact_sound_max", "1.0", 0, "For physics impact sounds, max volume.");
 // END FUNCTION
+
+// FUNCTION: 0x10031af0 size=0xa
+#include "ConVar.h"
+ConVar g_106b8860("physics_impact_sound_min", "0.1", 0, "For physics impact sounds, min volume, anything less than this is not played.");
+// END FUNCTION
