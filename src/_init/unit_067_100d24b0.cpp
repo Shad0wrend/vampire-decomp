@@ -310,3 +310,9 @@ ConCommand g_106e78d4("vitem", sub_100d7b30, "Lists descriptive info for a Vampi
 void sub_100d7c40(void);
 ConCommand g_106e72a0("vmpequip", sub_100d7c40, "Sets the starting equipment for a player in a multiplayer game.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d7e90 size=0xa
+#include "ConCommand.h"
+void sub_100d7e00(void);
+ConCommand g_106e73e0("vbotchtypes", sub_100d7e00, "Lists the available Vampire Botch Types", 0, 0);
+// END FUNCTION
