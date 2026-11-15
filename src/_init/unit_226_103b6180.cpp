@@ -45,3 +45,8 @@ ConVar g_1093c9f8("tzimisce_turn_scalar", ".15", 0, "Set this var to override tu
 #include "ConVar.h"
 ConVar g_1093cad0("tzimisce_throw_pos_y", "-80", 0, "Set this var to override the throw position for LOS checks.");
 // END FUNCTION
+
+// FUNCTION: 0x103b6640 size=0xa
+#include "ConVar.h"
+ConVar g_1093cc38("tzimisce_claw_left_x", "0", 0, "Set this var to override the claw reach around attack pos.");
+// END FUNCTION
