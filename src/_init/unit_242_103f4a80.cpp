@@ -1703,3 +1703,8 @@ extern SendTable g_10945dfc;
 extern char g_1067f84c[];
 ServerClassReg g_10949644("CItemGMercurioJournal", &g_10945dfc, g_1067f84c);
 // END FUNCTION
+
+// FUNCTION: 0x104049c0 size=0xa
+#include "SendTable.h"
+SendTable g_10945dfc;
+// END FUNCTION
