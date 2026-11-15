@@ -419,3 +419,9 @@ ConCommand g_106e7d78("powerupability", sub_100dad50, "PoweringUp", 0, 0);
 void sub_100daec0(void);
 ConCommand g_106e7b84("vsetmove", sub_100daec0, "Lock/Unlock player movement", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100db020 size=0xa
+#include "ConCommand.h"
+void sub_100dafa0(void);
+ConCommand g_106e7d00("vsndinfo", sub_100dafa0, "Describes Sound Table Information", 0, 0);
+// END FUNCTION
