@@ -1757,3 +1757,8 @@ extern SendTable g_10948e9c;
 extern char g_1067f87c[];
 ServerClassReg g_109449d4("CItemGIdolCat", &g_10948e9c, g_1067f87c);
 // END FUNCTION
+
+// FUNCTION: 0x104051d0 size=0xa
+#include "SendTable.h"
+SendTable g_10948e9c;
+// END FUNCTION
