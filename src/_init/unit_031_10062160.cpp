@@ -13,3 +13,8 @@ ServerClassReg g_106c2b40("CTEFizz", &g_106c2d00, g_10543018);
 #include "SendTable.h"
 SendTable g_106c2d00;
 // END FUNCTION
+
+// FUNCTION: 0x10062290 size=0x5
+int sub_100622d0(void);
+int g_106c2cfc = ((int (*)(int))sub_100622d0)(0);
+// END FUNCTION
