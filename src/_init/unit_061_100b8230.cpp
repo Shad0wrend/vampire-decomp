@@ -18,3 +18,8 @@ extern SendTable g_106d0874;
 extern char g_1055a5a8[];
 ServerClassReg g_106d091c("CBatSwarm", &g_106d0874, g_1055a5a8);
 // END FUNCTION
+
+// FUNCTION: 0x100b8460 size=0xa
+#include "SendTable.h"
+SendTable g_106d0874;
+// END FUNCTION
