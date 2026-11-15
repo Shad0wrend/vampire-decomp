@@ -25,3 +25,8 @@ CAI_LocalIdSpace g_1093aa70(false);
 #include "ConVar.h"
 ConVar g_1093aa28("changbros_force_united_attack", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1036ad40 size=0xa
+#include "ConVar.h"
+ConVar g_1093a980("changbros_force_teleport", "0", 0);
+// END FUNCTION
