@@ -127,3 +127,9 @@ ConCommand g_106cf154("ent_toggledebugstats", sub_100aeb50, " ", 0, 0);
 void sub_100aec70(void);
 ConCommand g_106cf0f8("ent_rbox", sub_100aec70, "Displays the total bounding box for the given entity(s) in green.  Some entites will also display entity specific overlays.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100aef80 size=0xa
+#include "ConCommand.h"
+void sub_100aeda0(void);
+ConCommand g_106cfd40("ent_remove", sub_100aeda0, "Removes the given entity(s)\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
+// END FUNCTION
