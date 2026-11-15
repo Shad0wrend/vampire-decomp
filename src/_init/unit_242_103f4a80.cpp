@@ -553,3 +553,8 @@ extern SendTable g_10945cb4;
 extern char g_1067f48c[];
 ServerClassReg g_109442d4("COccultPresence", &g_10945cb4, g_1067f48c);
 // END FUNCTION
+
+// FUNCTION: 0x103fa010 size=0xa
+#include "SendTable.h"
+SendTable g_10945cb4;
+// END FUNCTION
