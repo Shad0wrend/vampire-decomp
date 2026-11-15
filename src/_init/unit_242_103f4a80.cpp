@@ -1713,3 +1713,11 @@ SendTable g_10945dfc;
 int sub_10404a80(void);
 int g_10945df8 = ((int (*)(int))sub_10404a80)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10404bc0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10943d6c;
+extern char g_1067f85c[];
+ServerClassReg g_1094398c("CItemGHannahsApptBook", &g_10943d6c, g_1067f85c);
+// END FUNCTION
