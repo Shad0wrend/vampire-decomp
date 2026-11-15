@@ -330,3 +330,8 @@ ServerClassReg g_1075273c("CWeaponRanged_Tzimisce2Head", &g_1075228c, g_105bf8dc
 #include "SendTable.h"
 SendTable g_1075228c;
 // END FUNCTION
+
+// FUNCTION: 0x102373b0 size=0x5
+int sub_102373f0(void);
+int g_10752288 = ((int (*)(int))sub_102373f0)(0);
+// END FUNCTION
