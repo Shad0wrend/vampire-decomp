@@ -395,3 +395,9 @@ ConCommand g_106e7b58("vdmg", sub_100d9ec0, "Applies amount of damage to player.
 void sub_100da040(void);
 ConCommand g_106e7da0("vgender_int", sub_100da040, "Changes the gender of a player.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100dab90 size=0xa
+#include "ConCommand.h"
+void sub_100da230(void);
+ConCommand g_106e72f0("vbarter", sub_100da230, "Bartering", 0, 0);
+// END FUNCTION
