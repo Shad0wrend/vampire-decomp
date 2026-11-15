@@ -512,3 +512,8 @@ ServerClassReg g_10947180("COccultFrenzy", &g_10945714, g_1067f46c);
 #include "SendTable.h"
 SendTable g_10945714;
 // END FUNCTION
+
+// FUNCTION: 0x103f9a90 size=0x5
+int sub_103f9ad0(void);
+int g_10945710 = ((int (*)(int))sub_103f9ad0)(0);
+// END FUNCTION
