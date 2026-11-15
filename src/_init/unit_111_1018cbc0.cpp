@@ -10,3 +10,8 @@ int * g_1072b008 = ((int * (*)(int))sub_1018cc00)(0);
 int sub_1018d430(void);
 int g_1072b010 = ((int (*)(int))sub_1018d430)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1018d9d0 size=0x5
+int sub_1018da10(void);
+int g_1072b014 = ((int (*)(int))sub_1018da10)(0);
+// END FUNCTION
