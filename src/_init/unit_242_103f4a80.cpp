@@ -1186,3 +1186,8 @@ ServerClassReg g_10946fa4("CItemGWerewolfBlood", &g_10946ea0, g_1067f67c);
 #include "SendTable.h"
 SendTable g_10946ea0;
 // END FUNCTION
+
+// FUNCTION: 0x103ffc50 size=0x5
+int sub_103ffc90(void);
+int g_10946e9c = ((int (*)(int))sub_103ffc90)(0);
+// END FUNCTION
