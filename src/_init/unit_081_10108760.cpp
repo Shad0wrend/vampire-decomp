@@ -25,3 +25,8 @@ ConVar g_10709548("fire_extabsorb", "5", 0);
 #include "ConVar.h"
 ConVar g_10709598("fire_heatscale", "1.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10108a30 size=0xa
+#include "ConVar.h"
+ConVar g_10709428("fire_incomingheatscale", "0.1", 0);
+// END FUNCTION
