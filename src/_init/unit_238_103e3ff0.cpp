@@ -409,3 +409,11 @@ int g_10942540 = ((int (*)(int))sub_103e8210)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_109418f4(&CPrecacheRegister::PrecacheFn_Other, "item_w_baton");
 // END FUNCTION
+
+// FUNCTION: 0x103e8400 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10941eac;
+extern char g_106745b0[];
+ServerClassReg g_10941c20("CWeaponMelee_WerewolfAttacks", &g_10941eac, g_106745b0);
+// END FUNCTION
