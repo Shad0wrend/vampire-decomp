@@ -98,3 +98,8 @@ ConVar g_10938358("worldlight_max", "1.0", 0);
 #include "ConVar.h"
 ConVar g_10938310("worldlight_min", "0.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10352ac0 size=0xa
+#include "ConVar.h"
+ConVar g_109382c8("player_damage_kick_scalar", "0.15", 0);
+// END FUNCTION
