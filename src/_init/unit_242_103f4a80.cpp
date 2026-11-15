@@ -1343,3 +1343,8 @@ extern SendTable g_10944924;
 extern char g_1067f70c[];
 ServerClassReg g_109473bc("CItemGEDanePrintReport", &g_10944924, g_1067f70c);
 // END FUNCTION
+
+// FUNCTION: 0x10401400 size=0xa
+#include "SendTable.h"
+SendTable g_10944924;
+// END FUNCTION
