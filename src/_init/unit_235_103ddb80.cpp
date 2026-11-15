@@ -15,3 +15,8 @@ ConVar g_10940448("zombie_headshot_mod", "10.0", 0);
 #include "ConVar.h"
 ConVar g_10940400("zombie_melee_mod", "1.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103ddce0 size=0xa
+#include "ConVar.h"
+ConVar g_10940498("zombie_gib_amt", "100", 0);
+// END FUNCTION
