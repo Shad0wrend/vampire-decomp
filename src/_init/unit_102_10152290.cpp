@@ -31,3 +31,8 @@ extern SendTable g_10723258;
 extern char g_1057e850[];
 ServerClassReg g_10723278("CRagdollPropAttached", &g_10723258, g_1057e850);
 // END FUNCTION
+
+// FUNCTION: 0x10156750 size=0xa
+#include "SendTable.h"
+SendTable g_10723258;
+// END FUNCTION
