@@ -442,3 +442,8 @@ int g_10944940 = ((int (*)(int))sub_103f8e30)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_109443c4(&CPrecacheRegister::PrecacheFn_Other, "item_p_research_lg_firearms");
 // END FUNCTION
+
+// FUNCTION: 0x103f9080 size=0x5
+int sub_103f90c0(void);
+int g_10946334 = ((int (*)(int))sub_103f90c0)(0);
+// END FUNCTION
