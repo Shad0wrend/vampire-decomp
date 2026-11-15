@@ -911,3 +911,8 @@ extern SendTable g_109492e4;
 extern char g_1067f58c[];
 ServerClassReg g_10943fe8("CItemGDrugsDrugBox", &g_109492e4, g_1067f58c);
 // END FUNCTION
+
+// FUNCTION: 0x103fd380 size=0xa
+#include "SendTable.h"
+SendTable g_109492e4;
+// END FUNCTION
