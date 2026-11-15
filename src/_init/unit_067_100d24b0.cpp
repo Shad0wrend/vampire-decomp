@@ -449,3 +449,9 @@ ConCommand g_106e7160("debug_stealth_toggle", sub_100db320, "Turns off all activ
 void sub_100db3f0(void);
 ConCommand g_106e784c("vskip_intro", sub_100db3f0, "Skips the Intro Scene", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100db530 size=0xa
+#include "ConCommand.h"
+void sub_100db4a0(void);
+ConCommand g_106e75c4("vhelp", sub_100db4a0, "Lists the available Vampire System console commands", 0, 0);
+// END FUNCTION
