@@ -13,3 +13,8 @@ ServerClassReg g_106c0178("CTEBeamRingPoint", &g_106bff5c, g_10541628);
 #include "SendTable.h"
 SendTable g_106bff5c;
 // END FUNCTION
+
+// FUNCTION: 0x1005cef0 size=0x5
+int sub_1005cf30(void);
+int g_106bff58 = ((int (*)(int))sub_1005cf30)(0);
+// END FUNCTION
