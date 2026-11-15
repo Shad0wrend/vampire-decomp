@@ -1,0 +1,7 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "vampire.h"
+
+// FUNCTION: 0x1042f180 size=0x5
+#include "CSafeDiscSaveRestoreOps_0.h"
+CSafeDiscSaveRestoreOps_0 g_109f0374;
+// END FUNCTION
