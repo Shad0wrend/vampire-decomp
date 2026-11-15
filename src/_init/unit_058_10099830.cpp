@@ -193,3 +193,9 @@ ConCommand g_106cf2a8("picker", sub_100b04d0, "Toggles 'picker' mode.  When pick
 void sub_100b05f0(void);
 ConCommand g_106ceb44("ent_pivot", sub_100b05f0, "Displays the pivot for the given entity(ies).\n\t(y=up=green, z=forward=blue, x=left=red). \n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100b07c0 size=0xa
+#include "ConCommand.h"
+void sub_100b0720(void);
+ConCommand g_106cf3f4("ent_step", sub_100b0720, "When 'ent_pause' is set this will step through one waiting input / output message at a time.", 0, 0);
+// END FUNCTION
