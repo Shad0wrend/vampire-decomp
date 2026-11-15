@@ -5,3 +5,11 @@
 #include "ConVar.h"
 ConVar g_1072b3a8("debug_total_mass_divisor", "4", 8192);
 // END FUNCTION
+
+// FUNCTION: 0x1019d760 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_1072b968;
+extern char g_1072b99c[];
+ServerClassReg g_1072b984("CRopeKeyframe", &g_1072b968, g_1072b99c);
+// END FUNCTION
