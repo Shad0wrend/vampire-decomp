@@ -13,3 +13,8 @@ ServerClassReg g_10708e20("CEnvParticle", &g_10708dcc, g_105669c8);
 #include "SendTable.h"
 SendTable g_10708dcc;
 // END FUNCTION
+
+// FUNCTION: 0x100fa800 size=0x5
+int sub_100fa840(void);
+int g_10708dc8 = ((int (*)(int))sub_100fa840)(0);
+// END FUNCTION
