@@ -307,3 +307,8 @@ ServerClassReg g_10751a58("CWeaponRanged_Pistol_Thirtyeight", &g_10751b3c, g_105
 #include "SendTable.h"
 SendTable g_10751b3c;
 // END FUNCTION
+
+// FUNCTION: 0x10237070 size=0x5
+int sub_102370b0(void);
+int g_10751b38 = ((int (*)(int))sub_102370b0)(0);
+// END FUNCTION
