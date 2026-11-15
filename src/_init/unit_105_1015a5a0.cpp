@@ -76,3 +76,8 @@ int g_10725b28 = ((int (*)(int))sub_1015ad30)(0);
 int sub_1015ada0(void);
 int g_10723978 = ((int (*)(int))sub_1015ada0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1015add0 size=0x5
+int sub_1015ae10(void);
+int g_107255dc = ((int (*)(int))sub_1015ae10)(0);
+// END FUNCTION
