@@ -291,3 +291,9 @@ ConCommand g_106e759c("vstrings", sub_100d76a0, "Lists the available Vampire Str
 void sub_100d7760(void);
 ConCommand g_106e7a90("viteminfo", sub_100d7760, "Lists the available Vampire Item Information", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d7aa0 size=0xa
+#include "ConCommand.h"
+void sub_100d7a70(void);
+ConCommand g_106e7228("vitems", sub_100d7a70, "Lists the available Vampire Items", 0, 0);
+// END FUNCTION
