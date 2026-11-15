@@ -75,3 +75,8 @@ ConVar g_10924358("debug_show_npc_skeletons", "0", 0, "Set this to 1 to show the
 #include "ConVar.h"
 ConVar g_10924a18("debug_melee_advance_combatmove_dist", "100", 0, "How close a melee combatant needs to be to player in order to do the combat move.  Outside of this distance they will run to close the distance.");
 // END FUNCTION
+
+// FUNCTION: 0x1028bc00 size=0xa
+#include "ConVar.h"
+ConVar g_10924508("debug_player_on_head", "3", 0, "What should I do if the player is on my head?  0 - run only : 1 - allow dive : 2 - allow fall.", true, 0.0f, true, 3.0f);
+// END FUNCTION
