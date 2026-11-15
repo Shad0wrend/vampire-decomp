@@ -33,3 +33,8 @@ SendTable g_106c9954;
 int sub_1008aaf0(void);
 int g_106c9950 = ((int (*)(int))sub_1008aaf0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1008cf30 size=0xa
+#include "ConVar.h"
+ConVar g_106ccf08("ent_trace_anim_event", "0", 256, "Set this to false if you don't care about anim events being traced.");
+// END FUNCTION
