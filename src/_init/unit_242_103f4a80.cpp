@@ -1906,3 +1906,8 @@ ServerClassReg g_10945f00("CItemGBertramsCD", &g_109468b8, g_1067f8fc);
 #include "SendTable.h"
 SendTable g_109468b8;
 // END FUNCTION
+
+// FUNCTION: 0x104067d0 size=0x5
+int sub_10406810(void);
+int g_109468b4 = ((int (*)(int))sub_10406810)(0);
+// END FUNCTION
