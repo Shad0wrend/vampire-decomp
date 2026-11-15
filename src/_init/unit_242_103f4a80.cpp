@@ -1636,3 +1636,8 @@ ServerClassReg g_10945034("CItemGStake", &g_10948f64, g_1067f80c);
 #include "SendTable.h"
 SendTable g_10948f64;
 // END FUNCTION
+
+// FUNCTION: 0x10403f80 size=0x5
+int sub_10403fc0(void);
+int g_10948f60 = ((int (*)(int))sub_10403fc0)(0);
+// END FUNCTION
