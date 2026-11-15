@@ -382,3 +382,9 @@ ConCommand g_107525e8("vdebug_wpn_anims_cycle_add", sub_10237e90, "Cycles a weap
 void sub_10237f90(void);
 ConCommand g_10752310("vdebug_wpn_anims_cycle_list", sub_10237f90, "Cycles a weapon through its animations.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10239960 size=0xa
+#include "ConCommand.h"
+void sub_102399b0(void);
+ConCommand g_107522cc("viewkick", sub_102399b0, "viewkick [pitch [yaw [roll [time] ] ] ]", 0, 0);
+// END FUNCTION
