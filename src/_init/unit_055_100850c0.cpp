@@ -214,3 +214,9 @@ ConCommand g_106c8e94("npc_tasks", sub_10087aa0, "Displays detailed text debuggi
 void sub_10087b70(void);
 ConCommand g_106c8dcc("npc_task_text", sub_10087b70, "Outputs text debugging information to the console about the all the tasks + break conditions of the selected NPC current schedule\n\tArguments:   \t{npc_name} / {npc class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10087c80 size=0xa
+#include "ConCommand.h"
+void sub_10087c40(void);
+ConCommand g_106c8ffc("npc_conditions", sub_10087c40, "Displays all the current AI conditions that an NPC has in the overlay text.\n\tArguments:   \t{npc_name} / {npc class_name} / no argument picks what player is looking at", 0, 0);
+// END FUNCTION
