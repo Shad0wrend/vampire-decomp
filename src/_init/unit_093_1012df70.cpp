@@ -13,3 +13,8 @@ extern SendTable g_1070bfc8;
 extern char g_105744e8[];
 ServerClassReg g_1070bfa4("CHudCounter", &g_1070bfc8, g_105744e8);
 // END FUNCTION
+
+// FUNCTION: 0x1012e090 size=0xa
+#include "SendTable.h"
+SendTable g_1070bfc8;
+// END FUNCTION
