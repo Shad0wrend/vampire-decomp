@@ -316,3 +316,9 @@ ConCommand g_106c9628("npc_ignore_player", sub_10088be0, "NPCs will not hear or 
 void sub_10088ce0(void);
 ConCommand g_106c96a0("npc_ignore_senses", sub_10088ce0, "NPCs will not hear or see anything", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10088e60 size=0xa
+#include "ConCommand.h"
+void sub_10088de0(void);
+ConCommand g_106c91b4("npc_set_expression", sub_10088de0, "Sets the npc's expression.  Targets entity in viewcone.", 0, 0);
+// END FUNCTION
