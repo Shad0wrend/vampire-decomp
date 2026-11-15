@@ -1978,3 +1978,8 @@ ServerClassReg g_10946d38("CItemKSarcophagusKey", &g_1094652c, g_1067f93c);
 #include "SendTable.h"
 SendTable g_1094652c;
 // END FUNCTION
+
+// FUNCTION: 0x10407290 size=0x5
+int sub_104072d0(void);
+int g_10946528 = ((int (*)(int))sub_104072d0)(0);
+// END FUNCTION
