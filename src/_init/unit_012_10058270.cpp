@@ -18,3 +18,11 @@ SendTable g_106beb2c;
 int sub_1005a1a0(void);
 int g_106beb28 = ((int (*)(int))sub_1005a1a0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1005a3a0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_106beb4c;
+extern char g_10540730[];
+ServerClassReg g_106beac4("CTEArmorRicochet", &g_106beb4c, g_10540730);
+// END FUNCTION
