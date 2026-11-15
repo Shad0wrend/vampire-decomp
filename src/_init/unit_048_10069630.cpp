@@ -49,3 +49,8 @@ ServerClassReg g_106c6760("CTETParticleHUD", &g_106c6d98, g_10545670);
 #include "SendTable.h"
 SendTable g_106c6d98;
 // END FUNCTION
+
+// FUNCTION: 0x1006a150 size=0x5
+int sub_1006a190(void);
+int g_106c6d94 = ((int (*)(int))sub_1006a190)(0);
+// END FUNCTION
