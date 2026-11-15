@@ -114,3 +114,8 @@ ConCommand g_10936e24("frenzyplayer", sub_1033e960, "yeah, kick player into fren
 #include "ConVar.h"
 ConVar g_10936d78("meleedebug", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10342f90 size=0xa
+#include "ConVar.h"
+ConVar g_10936ee0("debug_allow_melee_ff", "0", 0);
+// END FUNCTION
