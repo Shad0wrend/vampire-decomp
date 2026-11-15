@@ -1317,3 +1317,11 @@ SendTable g_1094527c;
 int sub_10400f60(void);
 int g_10945278 = ((int (*)(int))sub_10400f60)(0);
 // END FUNCTION
+
+// FUNCTION: 0x104010a0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10945dd8;
+extern char g_1067f6fc[];
+ServerClassReg g_10947204("CItemGPishaFetish", &g_10945dd8, g_1067f6fc);
+// END FUNCTION
