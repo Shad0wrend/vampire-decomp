@@ -30354,6 +30354,237 @@ bool sub_1007d5a0(EntryView *a, EntryView *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d7f0 size=0x618
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlsortvector.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CUtlVector4.h"
+#include "UtlVec8.h"
+#include "CUtlMemory24.h"
+
+class CChoreoEventV;
+struct CRBEntry24;
+static inline void *LdP(void *const *b, int i) { return b[i]; }
+static inline CRBEntry24 *LdS(CRBEntry24 *p) { return p; }
+static inline float LdF(float f) { return f; }
+
+struct CRBEntry24
+{
+	int pt;
+	CChoreoEventV *e;
+};
+
+void sub_1007f3d0(CRBEntry24 *dst, const CRBEntry24 *src);
+void sub_1007f510(CChoreoEventV **dst, CChoreoEventV *const *src);
+bool sub_1007d5a0(const CRBEntry24 &a, const CRBEntry24 &b);
+
+template <>
+inline void CopyConstruct(CRBEntry24 *pMemory, CRBEntry24 const &src)
+{
+	sub_1007f3d0(pMemory, &src);
+}
+
+template <>
+inline CUtlRBTree<CRBEntry24, int>::~CUtlRBTree()
+{
+}
+
+class CChoreoEventV
+{
+public:
+	char sub_10077750();	// IsProcessing
+	float sub_10075e70();	// GetStartTime
+	void sub_10077770(void *cb, void *scene, float t);	// StartProcessing
+	void sub_100777b0(void *cb, void *scene, float t);	// ContinueProcessing
+	void sub_100777e0(void *cb, void *scene, float t);	// StopProcessing
+};
+
+struct CEventVec
+{
+	CChoreoEventV **m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_Size;
+	CChoreoEventV **m_pElements;
+
+	int AddToTail(CChoreoEventV *const &src)
+	{
+		int elem = m_Size;
+		((CUtlVector4 *)this)->sub_1007f400(1);
+		((UtlVec8 *)this)->sub_1007f4c0(elem, 1);
+		sub_1007f510(&m_pMemory[elem], &src);
+		return elem;
+	}
+};
+
+struct StopsView : CUtlRBTree<CRBEntry24, int>
+{
+	CRBEntry24 *P(int i) { CRBEntry24 *r = &Element(i); return r; }
+	const Links_t &sub_1007fc70(int i) const;
+	int sub_1007ef00(int parent, bool leftchild);
+	__forceinline void FindPos(CRBEntry24 const &insert, int &parent, bool &leftchild)
+	{
+		int current = m_Root;
+		parent = -1;
+		leftchild = false;
+		while (current != -1)
+		{
+			parent = current;
+			if (m_LessFunc(insert, Element(current)))
+			{
+				leftchild = true;
+				current = sub_1007fc70(current).m_Left;
+			}
+			else
+			{
+				leftchild = false;
+				current = sub_1007fc70(current).m_Right;
+			}
+		}
+	}
+	__forceinline int InsertS(CRBEntry24 const &insert)
+	{
+		int parent;
+		bool leftchild;
+		FindPos(insert, parent, leftchild);
+		int newNode = sub_1007ef00(parent, leftchild);
+		CopyConstruct(&Element(newNode), insert);
+		return newNode;
+	}
+};
+
+class CChoreoSceneV
+{
+public:
+	CUtlVector<CChoreoEventV *> m_Events;	// 0x00
+	char m_pad14[0x50 - 0x14];
+	CEventVec m_ActiveResumeConditions;	// 0x50
+	char m_pad64[0x78 - 0x64];
+	float m_flPauseTime;	// 0x78
+	float m_flCurrentTime;	// 0x7c
+	char m_pad80[0x94 - 0x80];
+	int m_nActiveEvents;	// 0x94
+	int m_n98;
+	float m_flLastActiveTime;	// 0x9c
+	int m_nA0;
+	void *m_pIChoreoEventCallback;	// 0xa4
+
+	int sub_1007d300(CChoreoEventV *e, float frame_start_time, float frame_end_time, bool playing_forward, int &disposition);
+	void sub_1007d7f0(float curtime);
+	void sub_100039f9(float curtime);
+};
+
+// TARGET: CChoreoSceneV::sub_1007d7f0
+void CChoreoSceneV::sub_1007d7f0(float curtime)
+{
+	CChoreoEventV *e;
+
+	float dt = curtime - m_flCurrentTime;
+
+	bool playing_forward = (dt >= 0.0f) ? true : false;
+
+	m_nActiveEvents = 0;
+
+	CUtlRBTree<CRBEntry24, int> pending(0, 0, sub_1007d5a0);
+
+	int i;
+	for (i = 0; i < m_Events.Size(); i++)
+	{
+		e = m_Events[i];
+		if (!e)
+			continue;
+
+		int disposition;
+		m_nActiveEvents += sub_1007d300(e, m_flCurrentTime, curtime, playing_forward, disposition);
+
+		if (disposition != 0)
+		{
+			CRBEntry24 entry;
+
+			entry.pt = disposition;
+			entry.e = e;
+
+			pending.Insert(entry);
+		}
+	}
+
+	i = pending.FirstInorder();
+	while (i != pending.InvalidIndex())
+	{
+		CRBEntry24 *entry = &pending[i];
+
+		switch (entry->pt)
+		{
+		default:
+		case 0:
+			break;
+		case 1:
+		case 2:
+			entry->e->sub_10077770(m_pIChoreoEventCallback, this, m_flCurrentTime);
+			if (entry->pt == 2)
+			{
+				m_ActiveResumeConditions.AddToTail(entry->e);
+			}
+			break;
+		case 3:
+			entry->e->sub_100777b0(m_pIChoreoEventCallback, this, m_flCurrentTime);
+			break;
+		case 4:
+			entry->e->sub_100777e0(m_pIChoreoEventCallback, this, m_flCurrentTime);
+			break;
+		}
+
+		if (m_flPauseTime >= 0.0f)
+		{
+			if (playing_forward)
+			{
+				CUtlRBTree<CRBEntry24, int> stops(0, 0, sub_1007d5a0);
+				for (int j = 0; j < m_Events.Size(); j++)
+				{
+					if (m_Events[j] != entry->e && m_Events[j]->sub_10077750() && m_Events[j]->sub_10075e70() >= m_flPauseTime)
+					{
+					CRBEntry24 stop;
+					stop.e = m_Events[j];
+					stop.pt = 4;
+					((StopsView *)&stops)->InsertS(stop);
+					}
+				}
+				for (j = stops.FirstInorder(); j != stops.InvalidIndex(); j = stops.NextInorder(j))
+				{
+					CRBEntry24 *s = ((StopsView *)&stops)->P(j);
+					s->e->sub_100777e0(m_pIChoreoEventCallback, this, entry->e->sub_10075e70());
+				}
+			}
+			curtime = curtime - entry->e->sub_10075e70() + m_flPauseTime;
+			float t = m_flPauseTime;
+			m_flPauseTime = -1.0f;
+			m_flCurrentTime = m_flLastActiveTime = t;
+			if (playing_forward)
+				sub_100039f9(curtime);
+			return;
+		}
+
+		i = pending.NextInorder(i);
+	}
+
+	m_flCurrentTime = curtime;
+
+	// Still processing?
+	if (m_nActiveEvents)
+	{
+		m_flLastActiveTime = m_flCurrentTime;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dfa0 size=0x4
 struct CUnknown1007dfa0 { float sub_1007dfa0(); };
 float CUnknown1007dfa0::sub_1007dfa0()
