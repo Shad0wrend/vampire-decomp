@@ -5,3 +5,8 @@
 #include "ConVar.h"
 ConVar g_106c8518("ent_trace_choreo_event", "0", 256, "Set this to false if you don't care about choreo events being traced.");
 // END FUNCTION
+
+// FUNCTION: 0x10080210 size=0x5
+inline int pcd_initial_106c8614() { return 0x450; }
+int g_106c8614 = pcd_initial_106c8614();
+// END FUNCTION
