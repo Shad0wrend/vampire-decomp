@@ -343,3 +343,8 @@ extern SendTable g_1075196c;
 extern char g_105bf8f8[];
 ServerClassReg g_10751c2c("CWeaponRanged_MingXiao_Spit", &g_1075196c, g_105bf8f8);
 // END FUNCTION
+
+// FUNCTION: 0x102377a0 size=0xa
+#include "SendTable.h"
+SendTable g_1075196c;
+// END FUNCTION
