@@ -13,3 +13,8 @@ ServerClassReg g_106c3858("CTEShatterSurface", &g_106c383c, g_10543610);
 #include "SendTable.h"
 SendTable g_106c383c;
 // END FUNCTION
+
+// FUNCTION: 0x100634c0 size=0x5
+int sub_10063500(void);
+int g_106c3838 = ((int (*)(int))sub_10063500)(0);
+// END FUNCTION
