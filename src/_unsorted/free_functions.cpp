@@ -220125,6 +220125,203 @@ void CNPC_VTzimisce::sub_102c36d0(Vector vecOrigin, void *pEntity, float flTime,
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c3b50 size=0x50a
+#include "CAI_Pathfinder.h"
+#include "Vector.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CCollisionProperty.h"
+#include "CTraceFilterWorldOnly.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+
+#include <math.h>
+namespace block_102c3b50 {
+#pragma auto_inline(off)
+struct RayInit : Ray_t { void sub_1004f7a0(const float *pStart, const float *pEnd); };
+void RayInit::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+struct Ray_tViewH { Vector m_Start; Vector m_Delta; Vector m_StartOffset; Vector m_Extents; bool m_IsRay; bool m_IsSwept; char m_b32; char m_b33; float m_f34; };
+struct RayHull : Ray_t { void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b); };
+void RayHull::sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b)
+{
+	const Vector &end = *(const Vector *)pEnd;
+	Ray_tViewH *r = (Ray_tViewH *)this;
+	const Vector &mins = *(const Vector *)pMins;
+	const Vector &maxs = *(const Vector *)pMaxs;
+	VectorSubtract(end, start, r->m_Delta);
+	r->m_IsSwept = (r->m_Delta.LengthSqr() != 0.0f);
+	VectorSubtract(maxs, mins, r->m_Extents);
+	r->m_Extents *= 0.5f;
+	r->m_IsRay = (r->m_Extents.LengthSqr() < 1e-6);
+	VectorAdd(mins, maxs, r->m_StartOffset);
+	r->m_StartOffset *= 0.5f;
+	VectorAdd(start, r->m_StartOffset, r->m_Start);
+	r->m_StartOffset *= -1.0f;
+	r->m_b32 = b;
+	r->m_b33 = 0;
+	r->m_f34 = 0.0f;
+	if (a && !r->m_IsRay) {
+		r->m_f34 = (float)sqrt((r->m_Extents.x * r->m_Extents.x) + (r->m_Extents.y * r->m_Extents.y));
+		if (1e-6 < r->m_f34)
+			r->m_b33 = 1;
+	}
+}
+#pragma auto_inline(on)
+}
+using namespace block_102c3b50;
+inline void TraceLineCallsR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+inline void TraceLineCallsR(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, void *pFilter, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+inline void TraceHullDCR(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, const void *ignore, int collisionGroup, CGameTrace *ptr, char a = 0, char b = 0)
+{
+	Ray_t ray;
+	((RayHull *)&ray)->sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, a, b);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+inline void TraceHullDCR(const Vector &vecAbsStart, const Vector &vecAbsEnd, const Vector &hullMin,
+	const Vector &hullMax, unsigned int mask, void *pFilter, CGameTrace *ptr, char a = 0, char b = 0)
+{
+	Ray_t ray;
+	((RayHull *)&ray)->sub_1006dec0(vecAbsStart, &vecAbsEnd.x, &hullMin.x, &hullMax.x, a, b);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)pFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0xff, 0, 1, -1.0f);
+}
+float sub_10146150(Vector *v);
+extern float g_104454c4;
+
+struct P3 { int a, b, c; };
+struct ST3
+{
+	void sub_10037300(const char *a, const char *b, const char *c);
+	~ST3() { (*g_109f3680)--; }
+};
+
+inline Vector VAdd(const Vector &a, const Vector &b)
+{
+	Vector r;
+	r.x = a.x + b.x;
+	r.y = a.y + b.y;
+	r.z = a.z + b.z;
+	return r;
+}
+
+inline Vector MulV(const Vector &a, float b) { Vector r; r.x = a[0] * b; r.y = a[1] * b; r.z = a[2] * b; return r; }
+namespace block_10146150 {
+#pragma auto_inline(off)
+
+float sub_10146150(const Vector *v) {
+    return FastSqrt(v->z * v->z + v->y * v->y + v->x * v->x);
+}
+
+#pragma auto_inline(on)
+}
+void CAI_BaseNPCTroika::sub_102c3b50(CBaseEntity *pOther, Vector vecPos, Vector *pOut, int *pUnused)
+{
+	Vector start(vecPos.x, vecPos.y, vecPos.z + 16.0);
+	CTraceFilterWorldOnly filter;
+	CGameTrace tr;
+	CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
+	float *mins = pCol->vfunc1();
+	float *maxs = pCol->vfunc2();
+	{
+		ST3 scope;
+		scope.sub_10037300("UTIL_TraceHull", g_106b8540, g_106b8540);
+		TraceHullDCR(start, start, *(Vector *)mins, *(Vector *)maxs, 0x202400b, &filter, &tr, 1, 0);
+	}
+	if (tr.m_startsolid)
+	{
+		int nCount = 0;
+		Vector flat;
+		*(P3 *)&flat = *(const P3 *)pCol->vfunc2();
+		flat.z = 0;
+		float d = block_10146150::sub_10146150(&flat);
+		float e = d * 0.581;
+		Vector off[7] = {
+			Vector(d, 0, 0), Vector(e, d, 0), Vector(-e, d, 0), Vector(-d, 0, 0),
+			Vector(-e, -d, 0), Vector(e, -d, 0), Vector(0, 0, 1.0f) };
+		Vector dir[6] = {
+			Vector(-1.0f, 0, 0), Vector(-0.5f, -0.866f, 0), Vector(0.5f, -0.866f, 0),
+			Vector(1.0f, 0, 0), Vector(0.5f, 0.866f, 0), Vector(-0.5f, 0.866f, 0) };
+		Vector sum;
+		sum.Init(0, 0, 0);
+		Vector *pd = dir;
+		Vector *po = off;
+		do
+		{
+			Vector end;
+			end = VAdd(start, *po);
+			TraceLineCallsR(start, end, 0x202400b, &filter, &tr);
+			if (tr.m_fraction != 1.0)
+			{
+				sum = VAdd(sum, *pd);
+				nCount++;
+			}
+			po++;
+			pd++;
+		} while (po->z == g_104454c4);
+		if (nCount)
+		{
+			if (nCount > 1)
+			{
+				if (sum.x == g_104454c4 && sum.y == g_104454c4 && sum.z == g_104454c4)
+					return;
+				VectorNormalize(sum);
+			}
+			CCollisionProperty *pOtherCol = (CCollisionProperty *)((char *)pOther + 0x270);
+			float *p1 = pCol->vfunc2();
+			float *p2 = pOtherCol->vfunc2();
+			flat = Vector(p1[0] - p2[0], p1[1] - p2[1], 0);
+			float d2 = block_10146150::sub_10146150(&flat);
+			pOut->sub_1003e4b0(MulV(sum, d2) + vecPos);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c41b0 size=0xd
 #include "CAI_BaseNPCTroika.h"
 #include "Vector.h"
