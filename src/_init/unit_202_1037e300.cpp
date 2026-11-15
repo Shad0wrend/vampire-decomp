@@ -25,3 +25,8 @@ ConVar g_1093b298("hengeyokai_obstruction_scalar", "5", 0, "Set this var to over
 int sub_1037e550(void);
 int g_1093b234 = ((int (*)(int))sub_1037e550)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1037e580 size=0xa
+#include "ConVar.h"
+ConVar g_1093b2e0("hengeyokai_stun", "0", 0);
+// END FUNCTION
