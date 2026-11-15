@@ -23,3 +23,8 @@ ServerClassReg g_109ee728("CBaseGrenade", &g_109ee748, g_106acf50);
 #include "SendTable.h"
 SendTable g_109ee748;
 // END FUNCTION
+
+// FUNCTION: 0x10429420 size=0x5
+int sub_10429460(void);
+int g_109ee744 = ((int (*)(int))sub_10429460)(0);
+// END FUNCTION
