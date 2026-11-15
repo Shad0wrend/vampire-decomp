@@ -11,3 +11,9 @@ int g_106c8b28 = ((int (*)(int))sub_10085100)(0);
 void sub_10085180(void);
 ConCommand g_106c8cc0("ai_disable", sub_10085180, "Bi-passes all AI logic routines and puts all NPCs into their idle animations.  Can be used to get NPCs out of your way and to test effect of AI logic routines on frame rate", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100852d0 size=0xa
+#include "ConCommand.h"
+void sub_10085260(void);
+ConCommand g_106c9024("ai_show_hints", sub_10085260, "Displays all hints as small boxes\n\tBlue\t\t- hint is available for use\n\tRed\t\t- hint is currently being used by an NPC\n\tOrange\t\t- hint not being used by timed out\n\tGrey\t\t- hint has been disabled", 0, 0);
+// END FUNCTION
