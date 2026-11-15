@@ -119,3 +119,8 @@ ConVar g_10936d78("meleedebug", "0", 0);
 #include "ConVar.h"
 ConVar g_10936ee0("debug_allow_melee_ff", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10345fe0 size=0xa
+#include "ConVar.h"
+ConVar g_10937208("raw_attack_value_forced", "-1.0", 0);
+// END FUNCTION
