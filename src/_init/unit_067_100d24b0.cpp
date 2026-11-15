@@ -431,3 +431,9 @@ ConCommand g_106e7d00("vsndinfo", sub_100dafa0, "Describes Sound Table Informati
 void sub_100db0b0(void);
 ConCommand g_106e77d4("vdebug_dumpanimseqlist", sub_100db0b0, "Dumps the animation sequence list for an entity's model", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100db290 size=0xa
+#include "ConCommand.h"
+void sub_100db250(void);
+ConCommand g_106e7784("vdiscipline_endall", sub_100db250, "Turns off all active disciplines on the player.", 0, 0);
+// END FUNCTION
