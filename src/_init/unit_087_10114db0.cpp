@@ -8,3 +8,8 @@ extern SendTable g_1070a988;
 extern char g_10570570[];
 ServerClassReg g_1070a854("CFuncMonitor", &g_1070a988, g_10570570);
 // END FUNCTION
+
+// FUNCTION: 0x10114e60 size=0xa
+#include "SendTable.h"
+SendTable g_1070a988;
+// END FUNCTION
