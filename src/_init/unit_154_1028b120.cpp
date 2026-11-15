@@ -60,3 +60,8 @@ ConVar g_10924cd8("debug_hint_los", "0", 0, "Set this to 1 to show a line from a
 #include "ConVar.h"
 ConVar g_109241a8("debug_cs_los", "0", 0, "Set this to 1 to show a line from NPCs to static Crimina & Supernatural acts they are testing vision on.");
 // END FUNCTION
+
+// FUNCTION: 0x1028ba50 size=0xa
+#include "ConVar.h"
+ConVar g_109244c0("debug_weapon_shoot_pos", "0", 0, "Set this to 1 to show the weapon shoot positions for the NPCs.");
+// END FUNCTION
