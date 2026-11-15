@@ -40,3 +40,8 @@ ConVar g_1093a9c8("changbros_force_ledge_attack", "0", 0);
 int sub_1036eb90(void);
 int g_1093a8d4 = ((int (*)(int))sub_1036eb90)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1036ebc0 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_1093a8f0(false);
+// END FUNCTION
