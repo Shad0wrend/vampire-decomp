@@ -59,3 +59,9 @@ ConCommand g_106c8df4("ai_step", sub_10085830, "NPCs will freeze after completin
 void sub_10085900(void);
 ConCommand g_106c9358("ai_resume", sub_10085900, "If NPC is stepping through tasks (see ai_step ) will resume normal processing.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100859f0 size=0xa
+#include "ConCommand.h"
+void sub_100859c0(void);
+ConCommand g_106c8fac("ai_next_hull", sub_100859c0, "Cycles through the various hull sizes.  Currently selected hull size is written to the screen.  Controls which connections are shown when ai_show_hull or ai_show_connect commands are used\n\tArguments:\t-none-", 0, 0);
+// END FUNCTION
