@@ -28,3 +28,11 @@ int g_10942d20 = ((int (*)(int))sub_103ee100)(0);
 int sub_103ee230(void);
 int g_10942e08 = ((int (*)(int))sub_103ee230)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103eef00 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10942d44;
+extern char g_1067ccc0[];
+ServerClassReg g_10942e0c("CWeaponThrown_Grenade_Frag", &g_10942d44, g_1067ccc0);
+// END FUNCTION
