@@ -5,3 +5,8 @@
 #include "CSafeDiscSaveRestoreOps_0.h"
 CSafeDiscSaveRestoreOps_0 g_109f0374;
 // END FUNCTION
+
+// FUNCTION: 0x1042f2b0 size=0x5
+#include "CSafeDiscSaveRestoreOps_1.h"
+CSafeDiscSaveRestoreOps_1 g_109f0380;
+// END FUNCTION
