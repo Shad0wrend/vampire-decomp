@@ -105,3 +105,8 @@ extern SendTable g_109471d0;
 extern char g_1067f244[];
 ServerClassReg g_109455a4("CItemMMoneyEnvelope", &g_109471d0, g_1067f244);
 // END FUNCTION
+
+// FUNCTION: 0x103f5f30 size=0xa
+#include "SendTable.h"
+SendTable g_109471d0;
+// END FUNCTION
