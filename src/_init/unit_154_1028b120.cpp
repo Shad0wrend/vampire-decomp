@@ -195,3 +195,8 @@ ConVar g_10924848("debug_show_npc_pos", "0", 0, "Set this to 1 to show all of th
 #include "ConVar.h"
 ConVar g_10923ec8("debug_view_cone", "0", 0, "Set to 1 to turn show the complex viewcon in viewcone mode");
 // END FUNCTION
+
+// FUNCTION: 0x1028c9d0 size=0xa
+#include "ConVar.h"
+ConVar g_10923f58("debug_alert_aggressive", "0", 0, "Set to true to have alert states use the aggressive animations.");
+// END FUNCTION
