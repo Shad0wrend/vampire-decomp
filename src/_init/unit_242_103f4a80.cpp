@@ -1510,3 +1510,8 @@ ServerClassReg g_10949130("CItemGWarrens4Passkey", &g_109481a4, g_1067f79c);
 #include "SendTable.h"
 SendTable g_109481a4;
 // END FUNCTION
+
+// FUNCTION: 0x10402cb0 size=0x5
+int sub_10402cf0(void);
+int g_109481a0 = ((int (*)(int))sub_10402cf0)(0);
+// END FUNCTION
