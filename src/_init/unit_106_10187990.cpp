@@ -15,3 +15,8 @@ ConVar g_107278c0("sv_maxunlag", "0.5", 0);
 #include "ConVar.h"
 ConVar g_107268b8("sv_unlagpush", "0.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10187b40 size=0xa
+#include "ConVar.h"
+ConVar g_10726948("sv_unlagsamples", "1", 0);
+// END FUNCTION
