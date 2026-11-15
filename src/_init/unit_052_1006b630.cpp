@@ -13,3 +13,8 @@ ServerClassReg g_106c7af0("CTestTraceline", &g_106c7b10, g_106c7b2c);
 #include "SendTable.h"
 SendTable g_106c7b10;
 // END FUNCTION
+
+// FUNCTION: 0x1006b760 size=0x5
+int sub_1006b7a0(void);
+int g_106c7b0c = ((int (*)(int))sub_1006b7a0)(0);
+// END FUNCTION
