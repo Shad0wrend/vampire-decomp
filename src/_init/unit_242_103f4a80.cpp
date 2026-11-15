@@ -2006,3 +2006,8 @@ int g_10947dc4 = ((int (*)(int))sub_10407580)(0);
 int sub_10407700(void);
 int g_10948530 = ((int (*)(int))sub_10407700)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10407750 size=0x5
+int * sub_10407790(void);
+int * g_10946d34 = ((int * (*)(int))sub_10407790)(0);
+// END FUNCTION
