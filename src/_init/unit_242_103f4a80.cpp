@@ -1996,3 +1996,8 @@ ServerClassReg g_1094914c("CItemGSewerBook1", &g_10947dc8, g_1067f94c);
 #include "SendTable.h"
 SendTable g_10947dc8;
 // END FUNCTION
+
+// FUNCTION: 0x10407540 size=0x5
+int sub_10407580(void);
+int g_10947dc4 = ((int (*)(int))sub_10407580)(0);
+// END FUNCTION
