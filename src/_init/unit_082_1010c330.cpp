@@ -18,3 +18,8 @@ ServerClassReg g_107096ac("CFuncAreaPortalWindow", &g_107098c8, g_1056e150);
 #include "SendTable.h"
 SendTable g_107098c8;
 // END FUNCTION
+
+// FUNCTION: 0x1010cdf0 size=0x5
+int sub_1010ce30(void);
+int g_107098c4 = ((int (*)(int))sub_1010ce30)(0);
+// END FUNCTION
