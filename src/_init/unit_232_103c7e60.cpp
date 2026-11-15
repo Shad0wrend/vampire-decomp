@@ -115,3 +115,8 @@ ConVar g_1093f8a0("werewolf_footstep_sounds", "0", 0);
 #include "ConVar.h"
 ConVar g_1093d648("werewolf_footstep_shakes", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103d9d70 size=0xa
+#include "ConVar.h"
+ConVar g_1093d528("werewolf_translated_enemy_position_tolerance", "0", 0);
+// END FUNCTION
