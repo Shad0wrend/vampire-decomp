@@ -1983,3 +1983,11 @@ SendTable g_1094652c;
 int sub_104072d0(void);
 int g_10946528 = ((int (*)(int))sub_104072d0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10407410 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10947dc8;
+extern char g_1067f94c[];
+ServerClassReg g_1094914c("CItemGSewerBook1", &g_10947dc8, g_1067f94c);
+// END FUNCTION
