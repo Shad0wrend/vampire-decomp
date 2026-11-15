@@ -875,3 +875,8 @@ extern SendTable g_10946248;
 extern char g_1067f56c[];
 ServerClassReg g_10945220("CItemGCarStereo", &g_10946248, g_1067f56c);
 // END FUNCTION
+
+// FUNCTION: 0x103fce20 size=0xa
+#include "SendTable.h"
+SendTable g_10946248;
+// END FUNCTION
