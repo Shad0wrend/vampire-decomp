@@ -97,3 +97,9 @@ ConCommand g_106e7430("god", sub_100d3a50, "Toggle. Player becomes invulnerable.
 void sub_100d3bc0(void);
 ConCommand g_106e7d50("notarget", sub_100d3bc0, "Toggle. Player becomes hidden to NPCs.", 16384, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d3e00 size=0xa
+#include "ConCommand.h"
+void sub_100d3d20(void);
+ConCommand g_106e7480("giftxp", sub_100d3d20, "Free XP for all!", 0, 0);
+// END FUNCTION
