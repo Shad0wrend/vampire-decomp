@@ -15,3 +15,8 @@ CAI_ClassScheduleIdSpace g_1093acd8(false);
 #include "CAI_LocalIdSpace.h"
 CAI_LocalIdSpace g_1093ad64(false);
 // END FUNCTION
+
+// FUNCTION: 0x103740a0 size=0xa
+#include "ConVar.h"
+ConVar g_1093ad20("debug_dog_turn_scalar", ".15", 0, "Set this var to override turn animation speed.");
+// END FUNCTION
