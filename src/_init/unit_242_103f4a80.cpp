@@ -345,3 +345,8 @@ SendTable g_10944e1c;
 int sub_103f8230(void);
 int g_10944e18 = ((int (*)(int))sub_103f8230)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103f8370 size=0x5
+#include "CPrecacheRegister.h"
+CPrecacheRegister g_10948a88(&CPrecacheRegister::PrecacheFn_Other, "item_p_research_hg_melee");
+// END FUNCTION
