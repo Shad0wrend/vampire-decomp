@@ -407,3 +407,9 @@ ConCommand g_106e72f0("vbarter", sub_100da230, "Bartering", 0, 0);
 void sub_100dac20(void);
 ConCommand g_106e7340("hackcmd", sub_100dac20, "Command to current hacking console", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100dae30 size=0xa
+#include "ConCommand.h"
+void sub_100dad50(void);
+ConCommand g_106e7d78("powerupability", sub_100dad50, "PoweringUp", 0, 0);
+// END FUNCTION
