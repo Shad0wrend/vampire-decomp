@@ -61,3 +61,8 @@ extern SendTable g_1072b214;
 extern char g_1058d854[];
 ServerClassReg g_1072b068("COrnamentProp", &g_1072b214, g_1058d854);
 // END FUNCTION
+
+// FUNCTION: 0x10190cc0 size=0xa
+#include "SendTable.h"
+SendTable g_1072b214;
+// END FUNCTION
