@@ -152,3 +152,9 @@ ConCommand g_106e7520("vfeats", sub_100d5510, "Lists the local player's Vampire 
 void sub_100d56b0(void);
 ConCommand g_106e7824("ent_vfeats", sub_100d56b0, "Lists the Entity's Vampire Feat Values", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d5890 size=0xa
+#include "ConCommand.h"
+void sub_100d5860(void);
+ConCommand g_106e71d8("quest_refresh", sub_100d5860, "Refreshes client quest info", 0, 0);
+// END FUNCTION
