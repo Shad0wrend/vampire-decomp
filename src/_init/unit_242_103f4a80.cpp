@@ -1600,3 +1600,8 @@ ServerClassReg g_10945ee4("CItemGEyes", &g_10945050, g_1067f7ec);
 #include "SendTable.h"
 SendTable g_10945050;
 // END FUNCTION
+
+// FUNCTION: 0x10403a20 size=0x5
+int sub_10403a60(void);
+int g_1094504c = ((int (*)(int))sub_10403a60)(0);
+// END FUNCTION
