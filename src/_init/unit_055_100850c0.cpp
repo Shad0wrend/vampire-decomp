@@ -53,3 +53,9 @@ ConCommand g_106c8d7c("ai_show_grid", sub_10085770, "Draw a grid on the floor wh
 void sub_10085830(void);
 ConCommand g_106c8df4("ai_step", sub_10085830, "NPCs will freeze after completing their current task.  To complete the next task, use 'ai_step' again.  To resume processing normally use 'ai_resume'", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10085930 size=0xa
+#include "ConCommand.h"
+void sub_10085900(void);
+ConCommand g_106c9358("ai_resume", sub_10085900, "If NPC is stepping through tasks (see ai_step ) will resume normal processing.", 0, 0);
+// END FUNCTION
