@@ -30,3 +30,8 @@ ConVar g_1070b0f0("movement_debug_stats", "0", 0);
 #include "ConVar.h"
 ConVar g_1070b138("combat_debug_stats", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10119620 size=0x5
+inline int pcd_initial_1070b070() { return 0xffffffff; }
+int g_1070b070 = pcd_initial_1070b070();
+// END FUNCTION
