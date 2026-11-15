@@ -143,3 +143,11 @@ int g_10946d70 = ((int (*)(int))sub_103f62f0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_109493c8(&CPrecacheRegister::PrecacheFn_Other, "item_g_wallet");
 // END FUNCTION
+
+// FUNCTION: 0x103f64c0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10948880;
+extern char g_1067f2e0[];
+ServerClassReg g_10945588("CItemGAstrolite", &g_10948880, g_1067f2e0);
+// END FUNCTION
