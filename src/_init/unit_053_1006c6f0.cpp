@@ -41,3 +41,8 @@ extern SendTable g_106c7c54;
 extern char g_10546930[];
 ServerClassReg g_106c7f88("CCameraAnimated", &g_106c7c54, g_10546930);
 // END FUNCTION
+
+// FUNCTION: 0x10071040 size=0xa
+#include "SendTable.h"
+SendTable g_106c7c54;
+// END FUNCTION
