@@ -358,3 +358,9 @@ ConCommand g_106e79a0("vdiscipline_last", sub_100d9750, "Activates the last acti
 void sub_100d9820(void);
 ConCommand g_106e7574("vlastdiscipline_next", sub_100d9820, "Cycles to the next lastDiscipline", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d9af0 size=0xa
+#include "ConCommand.h"
+void sub_100d99e0(void);
+ConCommand g_106e77ac("vlastdiscipline_prev", sub_100d99e0, "Cycles to the previous lastDiscipline", 0, 0);
+// END FUNCTION
