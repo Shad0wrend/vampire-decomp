@@ -15,3 +15,8 @@ ConVar g_1070b180("sv_showhitboxes", "-1", 256, "Send server-side hitboxes for s
 #include "ConVar.h"
 ConVar g_1070b1d8("entity_debug_stats", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10119470 size=0xa
+#include "ConVar.h"
+ConVar g_1070b078("sneak_debug_stats", "0", 0);
+// END FUNCTION
