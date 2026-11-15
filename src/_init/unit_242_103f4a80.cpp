@@ -591,3 +591,11 @@ int g_109448e0 = ((int (*)(int))sub_103fa3d0)(0);
 #include "CPrecacheRegister.h"
 CPrecacheRegister g_1094397c(&CPrecacheRegister::PrecacheFn_Other, "item_p_occult_obfuscate");
 // END FUNCTION
+
+// FUNCTION: 0x103fa560 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10946d14;
+extern char g_1067f4ac[];
+ServerClassReg g_10948400("COccultDexterity", &g_10946d14, g_1067f4ac);
+// END FUNCTION
