@@ -31,3 +31,8 @@ extern SendTable g_10751d60;
 extern char g_105b6c9c[];
 ServerClassReg g_107523fc("CWeaponRanged_Pistol_Anaconda", &g_10751d60, g_105b6c9c);
 // END FUNCTION
+
+// FUNCTION: 0x10234520 size=0xa
+#include "SendTable.h"
+SendTable g_10751d60;
+// END FUNCTION
