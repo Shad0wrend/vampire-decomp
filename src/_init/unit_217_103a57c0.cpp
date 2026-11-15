@@ -25,3 +25,8 @@ ConVar g_1093c390("andrei_force_jump_attack", "0", 0);
 #include "ConVar.h"
 ConVar g_1093c2b0("andrei_force_player_collision", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x103a5b70 size=0x5
+int sub_103a5bb0(void);
+int g_1093c2a8 = ((int (*)(int))sub_103a5bb0)(0);
+// END FUNCTION
