@@ -29,3 +29,9 @@ ConCommand g_106c9448("ai_hints", sub_10085260, "Displays all hints as small box
 void sub_10085480(void);
 ConCommand g_106c8b30("ai_hint_focus_npc", sub_10085480, "Use this command to focus on an NPC for hints.  When that NPC tries to find a hint, he will mark them with failure messages saying why he couldn't use it.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10085620 size=0xa
+#include "ConCommand.h"
+void sub_100855f0(void);
+ConCommand g_106c9308("ai_show_hull", sub_100855f0, "Displays the allowed hulls between each node for the currently selected hull type.  Hulls are color code as follows:\n\tGreen\t\t- ground movement \n\tBlue\t\t- jumping movement\n\tCyan\t\t- flying movement\n\tMagenta\t- climbing movement\n\tArguments: \t-none-", 0, 0);
+// END FUNCTION
