@@ -388,3 +388,9 @@ ConCommand g_10752310("vdebug_wpn_anims_cycle_list", sub_10237f90, "Cycles a wea
 void sub_102399b0(void);
 ConCommand g_107522cc("viewkick", sub_102399b0, "viewkick [pitch [yaw [roll [time] ] ] ]", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10239b10 size=0xa
+#include "ConCommand.h"
+void sub_10239b60(void);
+ConCommand g_10751d28("screenshake", sub_10239b60, "screenshake [amplitude [frequency [duration [command] ] ] ]", 0, 0);
+// END FUNCTION
