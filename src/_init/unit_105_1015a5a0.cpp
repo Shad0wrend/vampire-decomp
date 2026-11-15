@@ -172,3 +172,8 @@ int g_10725d74 = ((int (*)(int))sub_10179270)(0);
 #include "SendTable.h"
 SendTable g_10725088;
 // END FUNCTION
+
+// FUNCTION: 0x101793f0 size=0x5
+int sub_10179430(void);
+int g_10725084 = ((int (*)(int))sub_10179430)(0);
+// END FUNCTION
