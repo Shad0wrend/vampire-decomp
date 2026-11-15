@@ -177,3 +177,11 @@ SendTable g_10725088;
 int sub_10179430(void);
 int g_10725084 = ((int (*)(int))sub_10179430)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101796d0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10725a70;
+extern char g_10583860[];
+ServerClassReg g_10725674("CBasePlayer", &g_10725a70, g_10583860);
+// END FUNCTION
