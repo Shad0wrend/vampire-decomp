@@ -9,6 +9,426 @@ int CNPC_VMingXiaoTentacle::vfunc337()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039c4c0 size=0xed0
+struct CTentTask
+{
+	int m_id;
+	float m_flData;
+};
+#define vfunc442() vfunc442(CTentTask *pTask)
+#include "CNPC_VMingXiaoTentacle.h"
+#undef vfunc442
+#include "CBaseEntity.h"
+#include "CAI_Motor.h"
+#include "CUnknown102e0150.h"
+#include "globalvars.h"
+#include "engineiface.h"
+#include "CCineNPCSlots.h"
+#include <math.h>
+
+extern CBaseEntity *g_1093bd30;
+extern Vector g_10934060;
+extern float g_104bde70;
+
+CBaseEntity *__fastcall sub_1032e7b0(CBaseEntity *pThis);
+char *sub_102d6100(int hull);
+int sub_101cf600(int a);
+void __fastcall sub_1039ef60(void *pThis);
+void __fastcall sub_1039ea60(void *pThis);
+
+extern CBaseEntity *g_1093bd30x;
+struct CTentNavGoal
+{
+	CTentNavGoal(int type, const Vector &dest, int activity = 0x13, float tolerance = g_104bde70, unsigned flags = 0, CBaseEntity *pTarget = g_1093bd30);
+	int type;
+	Vector dest;
+	int destNode;
+	int activity;
+	int arrivalActivity;
+	int arrivalSequence;
+	float tolerance;
+	unsigned flags;
+	CBaseEntity *pTarget;
+	Vector m_vec2c;
+	float m_i38;
+	int m_i3c;
+};
+
+inline CTentNavGoal::CTentNavGoal(int type, const Vector &dest, int activity, float tolerance, unsigned flags, CBaseEntity *pTarget)
+ :	type(type),
+	dest(dest),
+	destNode(-1),
+	activity(activity),
+	tolerance(tolerance),
+	flags(flags),
+	pTarget(pTarget),
+	arrivalActivity(-1),
+	arrivalSequence(-1),
+	m_vec2c(g_10934060),
+	m_i38(0.0f),
+	m_i3c(0)
+{
+}
+
+struct CTentNavigator
+{
+	bool sub_102ecd20(const CTentNavGoal &goal, int flags);
+	bool sub_102edae0(const Vector *pPos, float flDist, float flMax, Vector *pOut);
+};
+
+struct CTentNavigatorR
+{
+	bool sub_102edae0(const Vector &pos, float flDist, float flMax, Vector *pOut);
+};
+struct CTentHelper
+{
+	void sub_102ee1c0(float f);
+};
+
+struct CTentPlayerView
+{
+	CBaseEntity *sub_1039ede0();
+};
+
+struct CTentCalls
+{
+	void sub_102c41d0(const char *pszName, const Vector *pPos, int a, int b);
+	void sub_10273070(int a);
+	void sub_102a1910(CTentTask *pTask);
+};
+
+struct CTentStr
+{
+	const char *pszValue;
+};
+inline CTentStr MAKE_STR(const char *psz)
+{
+	CTentStr s;
+	s.pszValue = (psz && *psz) ? psz : 0;
+	return s;
+}
+
+struct CTentSlots
+{
+	CCS_V(s0) CCS_V(s1) CCS_V(s2) CCS_V(s3) CCS_V(s4) CCS_V(s5) CCS_V(s6) CCS_V(s7) CCS_V(s8) CCS_V(s9)
+	virtual void slot10(int nModelIndex);
+	CCS_V(s11) CCS_V(s12) CCS_V(s13) CCS_V(s14)
+	virtual void slot15(const Vector *pV);
+	CCS_V(s16) CCS_V(s17) CCS_V(s18) CCS_V(s19) CCS_V(s20) CCS_V(s21) CCS_V(s22) CCS_V(s23) CCS_V(s24) CCS_V(s25)
+	CCS_V(s26) CCS_V(s27) CCS_V(s28) CCS_V(s29) CCS_V(s30) CCS_V(s31) CCS_V(s32) CCS_V(s33) CCS_V(s34) CCS_V(s35)
+	CCS_V(s36) CCS_V(s37) CCS_V(s38) CCS_V(s39) CCS_V(s40) CCS_V(s41) CCS_V(s42) CCS_V(s43) CCS_V(s44) CCS_V(s45)
+	CCS_V(s46) CCS_V(s47) CCS_V(s48) CCS_V(s49) CCS_V(s50) CCS_V(s51) CCS_V(s52) CCS_V(s53) CCS_V(s54) CCS_V(s55)
+	CCS_V(s56) CCS_V(s57) CCS_V(s58) CCS_V(s59) CCS_V(s60) CCS_V(s61) CCS_V(s62) CCS_V(s63) CCS_V(s64) CCS_V(s65)
+	CCS_V(s66) CCS_V(s67) CCS_V(s68) CCS_V(s69) CCS_V(s70) CCS_V(s71) CCS_V(s72) CCS_V(s73) CCS_V(s74) CCS_V(s75)
+	CCS_V(s76) CCS_V(s77) CCS_V(s78) CCS_V(s79) CCS_V(s80) CCS_V(s81) CCS_V(s82) CCS_V(s83) CCS_V(s84) CCS_V(s85)
+	CCS_V(s86) CCS_V(s87) CCS_V(s88) CCS_V(s89) CCS_V(s90) CCS_V(s91) CCS_V(s92) CCS_V(s93) CCS_V(s94) CCS_V(s95)
+	CCS_V(s96) CCS_V(s97) CCS_V(s98) CCS_V(s99) CCS_V(s100) CCS_V(s101) CCS_V(s102) CCS_V(s103) CCS_V(s104)
+	virtual void slot105(const char *pszModel);
+	CCS_V(s106) CCS_V(s107) CCS_V(s108) CCS_V(s109) CCS_V(s110) CCS_V(s111) CCS_V(s112) CCS_V(s113) CCS_V(s114) CCS_V(s115)
+	CCS_V(s116) CCS_V(s117) CCS_V(s118) CCS_V(s119) CCS_V(s120) CCS_V(s121) CCS_V(s122) CCS_V(s123) CCS_V(s124) CCS_V(s125)
+	CCS_V(s126) CCS_V(s127) CCS_V(s128) CCS_V(s129) CCS_V(s130) CCS_V(s131) CCS_V(s132) CCS_V(s133) CCS_V(s134) CCS_V(s135)
+	CCS_V(s136) CCS_V(s137) CCS_V(s138) CCS_V(s139) CCS_V(s140) CCS_V(s141) CCS_V(s142) CCS_V(s143) CCS_V(s144) CCS_V(s145)
+	CCS_V(s146) CCS_V(s147) CCS_V(s148) CCS_V(s149) CCS_V(s150) CCS_V(s151) CCS_V(s152) CCS_V(s153) CCS_V(s154) CCS_V(s155)
+	CCS_V(s156) CCS_V(s157) CCS_V(s158) CCS_V(s159) CCS_V(s160) CCS_V(s161) CCS_V(s162) CCS_V(s163) CCS_V(s164) CCS_V(s165)
+	CCS_V(s166) CCS_V(s167) CCS_V(s168) CCS_V(s169) CCS_V(s170) CCS_V(s171) CCS_V(s172) CCS_V(s173) CCS_V(s174) CCS_V(s175)
+	CCS_V(s176) CCS_V(s177) CCS_V(s178) CCS_V(s179) CCS_V(s180) CCS_V(s181) CCS_V(s182) CCS_V(s183) CCS_V(s184) CCS_V(s185)
+	CCS_V(s186) CCS_V(s187) CCS_V(s188) CCS_V(s189) CCS_V(s190) CCS_V(s191) CCS_V(s192) CCS_V(s193) CCS_V(s194) CCS_V(s195)
+	CCS_V(s196) CCS_V(s197) CCS_V(s198) CCS_V(s199) CCS_V(s200) CCS_V(s201) CCS_V(s202) CCS_V(s203) CCS_V(s204) CCS_V(s205)
+	CCS_V(s206) CCS_V(s207) CCS_V(s208) CCS_V(s209) CCS_V(s210) CCS_V(s211)
+	virtual void slot212(CTentStr s);
+	CCS_V(s213) CCS_V(s214) CCS_V(s215) CCS_V(s216) CCS_V(s217) CCS_V(s218) CCS_V(s219) CCS_V(s220) CCS_V(s221) CCS_V(s222)
+	CCS_V(s223) CCS_V(s224) CCS_V(s225) CCS_V(s226) CCS_V(s227) CCS_V(s228) CCS_V(s229) CCS_V(s230) CCS_V(s231) CCS_V(s232)
+	CCS_V(s233) CCS_V(s234) CCS_V(s235) CCS_V(s236) CCS_V(s237) CCS_V(s238) CCS_V(s239) CCS_V(s240) CCS_V(s241) CCS_V(s242)
+	CCS_V(s243) CCS_V(s244) CCS_V(s245) CCS_V(s246) CCS_V(s247) CCS_V(s248) CCS_V(s249) CCS_V(s250) CCS_V(s251) CCS_V(s252)
+	CCS_V(s253) CCS_V(s254) CCS_V(s255) CCS_V(s256) CCS_V(s257) CCS_V(s258) CCS_V(s259) CCS_V(s260) CCS_V(s261) CCS_V(s262)
+	CCS_V(s263) CCS_V(s264) CCS_V(s265) CCS_V(s266) CCS_V(s267) CCS_V(s268) CCS_V(s269) CCS_V(s270) CCS_V(s271) CCS_V(s272)
+	CCS_V(s273) CCS_V(s274) CCS_V(s275) CCS_V(s276) CCS_V(s277) CCS_V(s278) CCS_V(s279) CCS_V(s280) CCS_V(s281) CCS_V(s282)
+	CCS_V(s283) CCS_V(s284) CCS_V(s285) CCS_V(s286) CCS_V(s287) CCS_V(s288) CCS_V(s289) CCS_V(s290) CCS_V(s291) CCS_V(s292)
+	CCS_V(s293) CCS_V(s294) CCS_V(s295) CCS_V(s296) CCS_V(s297) CCS_V(s298) CCS_V(s299) CCS_V(s300) CCS_V(s301) CCS_V(s302)
+	CCS_V(s303) CCS_V(s304) CCS_V(s305) CCS_V(s306) CCS_V(s307) CCS_V(s308) CCS_V(s309) CCS_V(s310) CCS_V(s311) CCS_V(s312)
+	CCS_V(s313) CCS_V(s314) CCS_V(s315) CCS_V(s316) CCS_V(s317) CCS_V(s318) CCS_V(s319) CCS_V(s320) CCS_V(s321) CCS_V(s322)
+	CCS_V(s323) CCS_V(s324) CCS_V(s325) CCS_V(s326) CCS_V(s327) CCS_V(s328) CCS_V(s329) CCS_V(s330) CCS_V(s331) CCS_V(s332)
+	CCS_V(s333) CCS_V(s334) CCS_V(s335) CCS_V(s336) CCS_V(s337) CCS_V(s338) CCS_V(s339) CCS_V(s340) CCS_V(s341) CCS_V(s342)
+	CCS_V(s343) CCS_V(s344) CCS_V(s345) CCS_V(s346) CCS_V(s347) CCS_V(s348) CCS_V(s349) CCS_V(s350) CCS_V(s351) CCS_V(s352)
+	CCS_V(s353) CCS_V(s354) CCS_V(s355) CCS_V(s356) CCS_V(s357) CCS_V(s358) CCS_V(s359) CCS_V(s360) CCS_V(s361) CCS_V(s362)
+	CCS_V(s363) CCS_V(s364) CCS_V(s365) CCS_V(s366) CCS_V(s367) CCS_V(s368) CCS_V(s369) CCS_V(s370) CCS_V(s371) CCS_V(s372)
+	CCS_V(s373) CCS_V(s374) CCS_V(s375) CCS_V(s376) CCS_V(s377) CCS_V(s378) CCS_V(s379) CCS_V(s380) CCS_V(s381) CCS_V(s382)
+	CCS_V(s383) CCS_V(s384) CCS_V(s385) CCS_V(s386) CCS_V(s387) CCS_V(s388) CCS_V(s389) CCS_V(s390) CCS_V(s391) CCS_V(s392)
+	CCS_V(s393) CCS_V(s394) CCS_V(s395) CCS_V(s396) CCS_V(s397) CCS_V(s398) CCS_V(s399) CCS_V(s400) CCS_V(s401) CCS_V(s402)
+	CCS_V(s403) CCS_V(s404) CCS_V(s405) CCS_V(s406) CCS_V(s407) CCS_V(s408) CCS_V(s409) CCS_V(s410) CCS_V(s411) CCS_V(s412)
+	CCS_V(s413) CCS_V(s414) CCS_V(s415) CCS_V(s416) CCS_V(s417) CCS_V(s418) CCS_V(s419) CCS_V(s420) CCS_V(s421) CCS_V(s422)
+	CCS_V(s423) CCS_V(s424) CCS_V(s425) CCS_V(s426) CCS_V(s427) CCS_V(s428) CCS_V(s429) CCS_V(s430) CCS_V(s431) CCS_V(s432)
+	CCS_V(s433) CCS_V(s434) CCS_V(s435) CCS_V(s436) CCS_V(s437) CCS_V(s438) CCS_V(s439) CCS_V(s440) CCS_V(s441) CCS_V(s442)
+	CCS_V(s443) CCS_V(s444) CCS_V(s445) CCS_V(s446) CCS_V(s447)
+	virtual void slot448(int code);
+};
+
+
+template <int O, class T> struct At { char pad[O]; T v; };
+#define FLD(T, o) (((At<o, T > *)this)->v)
+#define EFLD(p, T, o) (((At<o, T > *)(p))->v)
+#define SL ((CTentSlots *)this)
+#define TASKFAIL(code, line) { FLD(const char *, 0x1b44) = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiaoTentacle.cpp"; FLD(int, 0x1b48) = line; SL->slot448(code); }
+#define RANDF(lo, hi) enginerandom->vfunc1(lo, hi)
+
+
+struct CTentNavView
+{
+	char m_pad[0x5d34];
+	CTentNavigator *m_pNav;
+	CTentNavigator *GetNavigator() { return m_pNav; }
+};
+#define NAV (((CTentNavView *)this)->GetNavigator())
+
+void CNPC_VMingXiaoTentacle::vfunc442(CTentTask *pTask)
+{
+	CTentCalls *self = (CTentCalls *)this;
+	switch (pTask->m_id) {
+	case 0x9f:
+		if (sub_1032e7b0((CBaseEntity *)this)) {
+			CBaseEntity *pEnemy = vfunc167();
+			int hull;
+			if (pEnemy && EFLD(pEnemy, CBaseEntity *, 0x9c))
+				hull = EFLD(EFLD(pEnemy, CBaseEntity *, 0x9c), int, 0x1568);
+			else
+				hull = 0;
+			CTentHelper *pHelper = (CTentHelper *)m_p5d34;
+			float *a = (float *)sub_102d6100(FLD(int, 0x1568));
+			float *b = (float *)sub_102d6100(hull);
+			pHelper->sub_102ee1c0(*(float *)((char *)sub_1032e7b0((CBaseEntity *)this) + 0x8c0) * pTask->m_flData + (*a + *b));
+			sub_10273e80(0);
+		} else {
+			TASKFAIL(3, 0x181);
+		}
+		break;
+	case 0x8b: {
+		CBaseEntity *pEnemy = vfunc167();
+		if (pEnemy && EFLD(pEnemy, int, 0x9c)) {
+			sub_102e0b40((float *)m_pMotor5d44);
+			Vector vec;
+			((CUnknown102e0150 *)vfunc541())->sub_102dfed0(&vec, vfunc167());
+			m_pMotor5d44->sub_102e2020(&vec.x, 0);
+		}
+		sub_10289ee0(0x51);
+		break;
+	}
+	case 0x8e:
+		sub_10289ee0(0x52);
+		break;
+	case 0x14a: {
+		int n = (int)pTask->m_flData;
+		if (n != m_n6670) {
+			sub_1039f310();
+			switch (n) {
+			case 1:
+				m_n6670 = 1;
+				m_b63d8 = 1;
+				m_n6674 = 0;
+				break;
+			case 2:
+				m_n6670 = 2;
+				m_b63d8 = 0;
+				m_n6674 = 0;
+				break;
+			case 3:
+				m_n6670 = 3;
+				m_b63d8 = 1;
+				m_n6674 = 0;
+				break;
+			case 0:
+				m_n6670 = 0;
+				m_b63d8 = 1;
+				m_n6674 = 0;
+				break;
+			default:
+				m_n6670 = 0;
+				m_b63d8 = 1;
+				m_n6674 = 0;
+				break;
+			}
+		}
+		sub_10273e80(0);
+		break;
+	}
+	case 0x14b: {
+		int n = (int)pTask->m_flData;
+		Vector pos = *(Vector *)vfunc217();
+		switch (n) {
+		case 2:
+			SL->slot212(MAKE_STR("models/character/monster/MingXiao/MingXiao_baby/MingXiao_baby.mdl"));
+			SL->slot10(m_nModelIndex6668);
+			SL->slot105("models/character/monster/MingXiao/MingXiao_baby/MingXiao_baby.mdl");
+			FLD(int, 0x1568) = 0x11;
+			FLD(int, 0x156c) = 0x11;
+			SL->slot15(&Vector(0, 0, 0));
+			break;
+		case 3:
+			SL->slot212(MAKE_STR("models/character/monster/MingXiao/MingXiao_transformation.mdl"));
+			SL->slot10(m_nModelIndex666c);
+			SL->slot105("models/character/monster/MingXiao/MingXiao_transformation.mdl");
+			FLD(int, 0x1568) = 0xf;
+			FLD(int, 0x156c) = 0xf;
+			SL->slot15(&Vector(64, 64, 32));
+			self->sub_102c41d0("Ming_xiao_baby_transform_emitter", &pos, 0, 0);
+			break;
+		case 0:
+		case 1:
+			;
+		default:
+			SL->slot212(MAKE_STR("models/character/monster/MingXiao/MingXiao_baby/MingXiao_baby.mdl"));
+			SL->slot10(m_nModelIndex6664);
+			SL->slot105("models/character/monster/MingXiao/MingXiao_baby/MingXiao_baby.mdl");
+			FLD(int, 0x1568) = 0x11;
+			FLD(int, 0x156c) = 0x11;
+			SL->slot15(&Vector(0, 0, 0));
+			self->sub_102c41d0("Ming_xiao_tentacle_transform_emitter", &pos, 0, 0);
+			break;
+		}
+		self->sub_10273070(1);
+		sub_101cf600((int)this);
+		sub_10273e80(0);
+		break;
+	}
+	case 0x14c:
+		vfunc416(1);
+		break;
+	case 0x14e:
+		sub_1039ef10();
+		sub_10273e80(0);
+		break;
+	case 0x14f: {
+		if (!vfunc167()) {
+			TASKFAIL(6, 0x200);
+			break;
+		}
+		Vector vecEnemy = *(Vector *)((CNPC_VMingXiaoTentacle *)vfunc167())->vfunc217();
+		Vector vecGoal;
+		if (!NAV->sub_102edae0(&vecEnemy, 512.0f, 30000.0f, &vecGoal)) {
+			TASKFAIL(7, 0x20b);
+			break;
+		}
+		Vector vecDelta;
+		vecDelta = vecEnemy - vecGoal;
+		float dx = vecDelta.x;
+		float dy = vecDelta.y;
+		float xmin, xmax, ymin, ymax;
+		if (fabs(dx) > fabs(dy)) {
+			if (dx > 0.0f) {
+				xmin = 0.0f;
+				xmax = 60.0f;
+			} else {
+				xmax = 0.0f;
+				xmin = -60.0f;
+			}
+			ymin = -80.0f;
+			ymax = 80.0f;
+		} else {
+			if (dy > 0.0f) {
+				ymin = 0.0f;
+				ymax = 60.0f;
+			} else {
+				ymax = 0.0f;
+				ymin = -60.0f;
+			}
+			xmin = -80.0f;
+			xmax = 80.0f;
+		}
+		{ Vector vecTest = vecGoal;
+		int i = 0;
+		bool bOk;
+		do {
+			vecTest.Init(vecGoal.x + RANDF(xmin, xmax), vecGoal.y + RANDF(ymin, ymax), vecGoal.z + vfunc522() * 0.5f);
+			bOk = sub_102a0fb0(&vecTest, 0x202400b, 0, 0);
+			i++;
+		} while (i < 5 && !bOk);
+		if (bOk)
+			vecGoal = vecTest; }
+		if (NAV->sub_102ecd20(CTentNavGoal(4, vecGoal), 0)) {
+			FLD(float, 0x667c) = RANDF(1.0f, 2.0f) + gpGlobals->curtime;
+			sub_10273e80(0);
+		} else {
+			TASKFAIL(0xc, 0x26b);
+		}
+		break;
+	}
+	case 0x14d:
+		sub_10273e80(0);
+		break;
+	case 0x151: {
+		CBaseEntity *pPlayer = ((CTentPlayerView *)this)->sub_1039ede0();
+		CBaseEntity *pEnemy = vfunc167();
+		if (pPlayer && pEnemy) {
+			Vector vecPlayer = *(Vector *)((CNPC_VMingXiaoTentacle *)pPlayer)->vfunc217();
+			Vector dir = vecPlayer - *(Vector *)((CNPC_VMingXiaoTentacle *)pEnemy)->vfunc217();
+			VectorNormalize(dir);
+			Vector vecTest = vecPlayer + dir * 200.0f + Vector(RANDF(-20.0f, 20.0f), RANDF(-20.0f, 20.0f), RANDF(-20.0f, 20.0f));
+			if (sub_102a0fb0(&vecTest, 0x202400b, 0, 0)) {
+				if (NAV->sub_102ecd20(CTentNavGoal(4, vecTest), 0)) {
+					FLD(float, 0x667c) = gpGlobals->curtime + 600.0f;
+					m_n6680 = RANDF(5.0f, 15.0f) + gpGlobals->curtime;
+					sub_10273e80(0);
+				} else {
+					TASKFAIL(0xc, 0x294);
+				}
+			} else {
+				TASKFAIL(0x1a, 0x29a);
+			}
+		} else {
+			TASKFAIL(1, 0x2a0);
+		}
+		break;
+	}
+	case 0x152: {
+		Vector vecGoal;
+		bool bFound = false;
+		if (vfunc167()) {
+			Vector vecEnemy = *(Vector *)((CNPC_VMingXiaoTentacle *)vfunc167())->vfunc217();
+			if ((vecEnemy - *(Vector *)vfunc217()).LengthSqr() < 262144.0f) {
+				Vector vecMid;
+				vecMid = (vecEnemy * 3.0f + m_vecScatterCenter) * 0.25f;
+				bFound = NAV->sub_102edae0(&vecMid, 512.0f, 30000.0f, &vecGoal);
+			}
+		}
+		if (!bFound)
+			bFound = NAV->sub_102edae0(&m_vecScatterCenter, 512.0f, 30000.0f, &vecGoal);
+		if (!bFound) {
+			TASKFAIL(7, 0x2c6);
+			break;
+		}
+		if (NAV->sub_102ecd20(CTentNavGoal(4, vecGoal), 0)) {
+			FLD(float, 0x667c) = gpGlobals->curtime + 600.0f;
+			sub_10273e80(0);
+		} else {
+			TASKFAIL(0xc, 0x2d4);
+		}
+		break;
+	}
+	case 0x153:
+		::sub_1039ef60(this);
+		sub_10273e80(0);
+		break;
+	case 0x154:
+		sub_10289ee0(0x49);
+		break;
+	case 0x155: {
+		Vector pos = *(Vector *)vfunc217();
+		self->sub_102c41d0("Ming_xiao_baby_death_emitter", &pos, 0, 0);
+		sub_10273e80(0);
+		break;
+	}
+	case 0x156:
+		::sub_1039ea60(this);
+		sub_10273e80(0);
+		break;
+	case 0x150:
+		break;
+	default:
+		self->sub_102a1910(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039de20 size=0x3bc
 // TARGET: CNPC_VMingXiaoTentacle::vfunc438
 #include "CNPC_VMingXiaoTentacle.h"
