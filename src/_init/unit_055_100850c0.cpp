@@ -262,3 +262,9 @@ ConCommand g_106c94e8("npc_hearing_sensitivity", sub_10088380, "Sets an NPC's he
 void sub_10088540(void);
 ConCommand g_106c8e6c("sound_show", sub_10088540, "Shows all sounds made as blue spheres centered around the sound's source.  Turns off sound_show_ent.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100886a0 size=0xa
+#include "ConCommand.h"
+void sub_10088620(void);
+ConCommand g_106c909c("sound_show_ent", sub_10088620, "Shows all sounds made as purple spheres centered around the NPCs.  Turns off sound_show.", 0, 0);
+// END FUNCTION
