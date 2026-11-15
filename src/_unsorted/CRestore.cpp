@@ -397,7 +397,6 @@ struct SaveRestoreRecordHeader_t
 {
 	unsigned short size;
 	unsigned short symbol;
-	char *pData;
 };
 
 struct TypeDescV_101a1b70
