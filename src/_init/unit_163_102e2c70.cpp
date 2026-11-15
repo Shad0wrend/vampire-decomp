@@ -15,3 +15,8 @@ int g_10933e84 = ((int (*)(int))sub_102e2d40)(0);
 #include "ConVar.h"
 ConVar g_10933ed0("npc_fail_route_hull", "0", 4, "Set this to true if you want to get a detailed look at where a hull trace failed.");
 // END FUNCTION
+
+// FUNCTION: 0x102e39d0 size=0xa
+#include "ConVar.h"
+ConVar g_10933e08("npc_fail_route_hull_granularity", "4", 4, "The number of lines per axis for this test (note, the number of line tests done is this number cubed).");
+// END FUNCTION
