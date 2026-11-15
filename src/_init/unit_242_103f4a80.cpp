@@ -1078,3 +1078,8 @@ ServerClassReg g_10944e3c("CItemGWatchFancy", &g_10944ae0, g_1067f61c);
 #include "SendTable.h"
 SendTable g_10944ae0;
 // END FUNCTION
+
+// FUNCTION: 0x103fec30 size=0x5
+int sub_103fec70(void);
+int g_10944adc = ((int (*)(int))sub_103fec70)(0);
+// END FUNCTION
