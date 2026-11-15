@@ -78,3 +78,8 @@ int g_10936dc0 = ((int (*)(int))sub_10321a60)(0);
 int sub_10322180(void);
 int g_10936dbc = ((int (*)(int))sub_10322180)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10324640 size=0xa
+#include "ConVar.h"
+ConVar g_10936e50("sv_draw_eye_orientation", "0", 0);
+// END FUNCTION
