@@ -719,3 +719,8 @@ ServerClassReg g_109440f8("COccultThaumDamage", &g_10946d54, g_1067f4fc);
 #include "SendTable.h"
 SendTable g_10946d54;
 // END FUNCTION
+
+// FUNCTION: 0x103fb590 size=0x5
+int sub_103fb5d0(void);
+int g_10946d50 = ((int (*)(int))sub_103fb5d0)(0);
+// END FUNCTION
