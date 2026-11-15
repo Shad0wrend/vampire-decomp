@@ -115,3 +115,9 @@ ConCommand g_106cfcec("ent_hitboxes", sub_100ae910, "Shows an entity's hit boxes
 void sub_100ae910(void);
 ConCommand g_106cebbc("ent_showhitboxes", sub_100ae910, "Shows an entity's hit boxes.\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100aebe0 size=0xa
+#include "ConCommand.h"
+void sub_100aeb50(void);
+ConCommand g_106cf154("ent_toggledebugstats", sub_100aeb50, " ", 0, 0);
+// END FUNCTION
