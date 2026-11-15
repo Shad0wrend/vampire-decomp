@@ -1811,3 +1811,8 @@ extern SendTable g_10944b64;
 extern char g_1067f8ac[];
 ServerClassReg g_10947760("CItemGIdolElephant", &g_10944b64, g_1067f8ac);
 // END FUNCTION
+
+// FUNCTION: 0x104059e0 size=0xa
+#include "SendTable.h"
+SendTable g_10944b64;
+// END FUNCTION
