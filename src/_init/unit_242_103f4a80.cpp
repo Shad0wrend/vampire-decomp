@@ -1515,3 +1515,11 @@ SendTable g_109481a4;
 int sub_10402cf0(void);
 int g_109481a0 = ((int (*)(int))sub_10402cf0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10402e30 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_10946440;
+extern char g_1067f7ac[];
+ServerClassReg g_10943d8c("CItemGWirelessCamera1", &g_10946440, g_1067f7ac);
+// END FUNCTION
