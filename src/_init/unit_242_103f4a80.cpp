@@ -1037,3 +1037,8 @@ extern SendTable g_1094898c;
 extern char g_1067f5fc[];
 ServerClassReg g_10945748("CItemGRingGold", &g_1094898c, g_1067f5fc);
 // END FUNCTION
+
+// FUNCTION: 0x103fe650 size=0xa
+#include "SendTable.h"
+SendTable g_1094898c;
+// END FUNCTION
