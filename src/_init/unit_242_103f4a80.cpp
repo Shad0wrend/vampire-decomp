@@ -36,3 +36,8 @@ ServerClassReg g_10948c64("CWeaponUnarmed", &g_109473a0, g_1067ef88);
 #include "SendTable.h"
 SendTable g_109473a0;
 // END FUNCTION
+
+// FUNCTION: 0x103f51e0 size=0x5
+int sub_103f5220(void);
+int g_1094739c = ((int (*)(int))sub_103f5220)(0);
+// END FUNCTION
