@@ -8,5 +8,7 @@
 class SendTable
 {
 public:
+	SendTable();	// function 0x102471f0: Construct(NULL, 0, NULL)
+	~SendTable();	// function 0x10247220: empty
 	void sub_10247240(SendProp *pProps, int nProps, const char *pNetTableName);	// stub 0x1000e8fe: SendTable::Construct
 };
