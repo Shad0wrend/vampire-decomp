@@ -1217,3 +1217,8 @@ extern SendTable g_10947b10;
 extern char g_1067f69c[];
 ServerClassReg g_10944000("CItemGLarryBriefcase", &g_10947b10, g_1067f69c);
 // END FUNCTION
+
+// FUNCTION: 0x10400130 size=0xa
+#include "SendTable.h"
+SendTable g_10947b10;
+// END FUNCTION
