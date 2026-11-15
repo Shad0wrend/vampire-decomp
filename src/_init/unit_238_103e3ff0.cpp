@@ -612,3 +612,11 @@ SendTable g_10940de8;
 int sub_103ebe20(void);
 int g_10940de4 = ((int (*)(int))sub_103ebe20)(0);
 // END FUNCTION
+
+// FUNCTION: 0x103ebfc0 size=0x5
+#include "ServerClassReg.h"
+#include "SendTable.h"
+extern SendTable g_109422ac;
+extern char g_106780d8[];
+ServerClassReg g_10941e70("CWeaponMelee_MingXiaoMelee", &g_109422ac, g_106780d8);
+// END FUNCTION
