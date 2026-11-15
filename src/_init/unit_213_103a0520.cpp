@@ -10,3 +10,8 @@ ConVar g_1093be88("newscaster_debug", "0", 0);
 inline int pcd_initial_1093bee0() { return 0x450; }
 int g_1093bee0 = pcd_initial_1093bee0();
 // END FUNCTION
+
+// FUNCTION: 0x103a1510 size=0x5
+#include "CAI_ClassScheduleIdSpace.h"
+CAI_ClassScheduleIdSpace g_1093bee8(false);
+// END FUNCTION
