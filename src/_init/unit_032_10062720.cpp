@@ -13,3 +13,8 @@ ServerClassReg g_106c2dc4("CTEFogRipple", &g_106c2f34, g_10543218);
 #include "SendTable.h"
 SendTable g_106c2f34;
 // END FUNCTION
+
+// FUNCTION: 0x10062850 size=0x5
+int sub_10062890(void);
+int g_106c2f30 = ((int (*)(int))sub_10062890)(0);
+// END FUNCTION
