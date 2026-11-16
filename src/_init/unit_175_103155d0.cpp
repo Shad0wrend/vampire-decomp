@@ -120,6 +120,12 @@ ConVar g_10936d78("meleedebug", "0", 0);
 ConVar g_10936ee0("debug_allow_melee_ff", "0", 0);
 // END FUNCTION
 
+// FUNCTION: 0x10345500 size=0x5
+extern const float g_1049e044;
+extern const float g_10457f5c;
+float g_10937b10 = g_10457f5c + g_1049e044;
+// END FUNCTION
+
 // FUNCTION: 0x10345fe0 size=0xa
 #include "ConVar.h"
 ConVar g_10937208("raw_attack_value_forced", "-1.0", 0);
