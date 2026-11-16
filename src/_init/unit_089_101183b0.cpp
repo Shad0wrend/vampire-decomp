@@ -59,3 +59,10 @@ CUtlVector<int> g_1070b0d0;
 void * sub_1011bde0(void);
 InterfaceReg g_1070b0e4(sub_1011bde0, "ServerGameEnts001");
 // END FUNCTION
+
+// FUNCTION: 0x1011bfb0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1011c000(void);
+InterfaceReg g_1070b21c(sub_1011c000, "ServerGameClients002");
+// END FUNCTION
