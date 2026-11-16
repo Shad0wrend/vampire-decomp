@@ -16040,6 +16040,7 @@
 0x100157df func   ?sub_1028d230@CAI_BaseNPCTroika@@QAEPAV1@XZ CAI_BaseNPCTroika::sub_1028d230
 0x100157e4 func   ?vfunc79@CBaseFlex@@UAEHXZ CBaseFlex::vfunc79
 0x100157e9 func   ?sub_1021a3d0@CPropHacking@@QAEXPAVCSave@@@Z CPropHacking::sub_1021a3d0
+0x100157ee func   ??1CTEBubbleTrail@@QAE@XZ CTEBubbleTrail::~CTEBubbleTrail
 0x100157ee func   ?sub_1005fd20@CUnknown1005fd20@@QAEHXZ CUnknown1005fd20::sub_1005fd20
 0x100157f3 func   _item_w_deserteagle item_w_deserteagle
 0x100157f8 func   ?Grow@?$CUtlMemory@UCNotifyList_Elem@@@@QAEXH@Z CUtlMemory<CNotifyList_Elem>::Grow
