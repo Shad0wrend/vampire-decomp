@@ -42,6 +42,12 @@ int sub_10114260(void);
 int g_1070a4d0 = ((int (*)(int))sub_10114260)(0);
 // END FUNCTION
 
+// FUNCTION: 0x101143c0 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEDust.h"
+CTEDust g_1070a50c("Dust");
+// END FUNCTION
+
 // FUNCTION: 0x10114560 size=0x5
 int sub_101145a0(void);
 int g_1070a4cc = ((int (*)(int))sub_101145a0)(0);
