@@ -18,3 +18,9 @@ SendTable g_106c753c;
 int sub_1006b440(void);
 int g_106c7538 = ((int (*)(int))sub_1006b440)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1006b560 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEWorldDecal.h"
+CTEWorldDecal g_106c751c("World Decal");
+// END FUNCTION
