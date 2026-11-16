@@ -20,3 +20,9 @@ int g_1072c514 = ((int (*)(int))sub_101bb960)(0);
 int sub_101bc4d0(void);
 int g_1072c510 = ((int (*)(int))sub_101bc4d0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101bd890 size=0xa
+#define PCD_INITIALIZERS
+#include "CSoundControllerImp.h"
+CSoundControllerImp g_1072c474;
+// END FUNCTION
