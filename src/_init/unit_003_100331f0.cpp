@@ -6,6 +6,12 @@
 ConVar g_106bbaa0("npc_vphysics", "0", 0);
 // END FUNCTION
 
+// FUNCTION: 0x10033280 size=0x5
+#define PCD_INITIALIZERS
+#include "CPhysicsMovedEntities.h"
+CPhysicsMovedEntities g_106b8a98;
+// END FUNCTION
+
 // FUNCTION: 0x1003a580 size=0xa
 #include "ConVar.h"
 ConVar g_106bbb10("sv_teststepsimulation", "1", 0);
