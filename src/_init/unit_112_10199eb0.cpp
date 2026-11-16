@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10199eb0 size=0xa
+#define PCD_INITIALIZERS
+#include "PyServerSystem.h"
+PyServerSystem g_1072b320;
+// END FUNCTION
+
 // FUNCTION: 0x1019aab0 size=0xa
 #include "ConCommand.h"
 void sub_1019a980(void);
