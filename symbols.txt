@@ -9971,6 +9971,7 @@
 0x1000da12 func   ?sub_101c7870@@YGHHHHH@Z sub_101c7870
 0x1000da17 func   ?vfunc341@CBaseCombatWeapon@@UAEXPAVCBaseEntity@@@Z CBaseCombatWeapon::vfunc341
 0x1000da1c func   ?sub_103a0d50@CNPC_VNewscaster@@QAEXXZ CNPC_VNewscaster::sub_103a0d50
+0x1000da21 func   ??0CUtlSymbolTable@@QAE@HH_N@Z CUtlSymbolTable::CUtlSymbolTable
 0x1000da21 func   ?sub_1024b2d0@CUnknown1024b2d0@@QAEPAV1@HHD@Z CUnknown1024b2d0::sub_1024b2d0
 0x1000da26 func   ?sub_10205240@CUnknown10205030@@QAEHPAVCBaseCombatCharacter@@@Z CUnknown10205030::sub_10205240
 0x1000da2b func   ?sub_101bf6a0@CUtlRBTree12@@QAEHH@Z CUtlRBTree12::sub_101bf6a0
