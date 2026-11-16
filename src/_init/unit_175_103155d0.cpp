@@ -126,6 +126,12 @@ extern const float g_10457f5c;
 float g_10937b10 = g_10457f5c + g_1049e044;
 // END FUNCTION
 
+// FUNCTION: 0x10345550 size=0x5
+extern const float g_1049e044;
+extern const float g_1049e8a8;
+float g_1093715c = g_1049e8a8 + g_1049e044;
+// END FUNCTION
+
 // FUNCTION: 0x10345fe0 size=0xa
 #include "ConVar.h"
 ConVar g_10937208("raw_attack_value_forced", "-1.0", 0);
