@@ -151,3 +151,9 @@ ConCommand g_10937acc("player_sequence", sub_10348560, "tells the local player t
 void sub_10348720(void);
 ConCommand g_10937004("burn_hitboxes", sub_10348720, "burns the char's hitboxes", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10348c10 size=0x5
+extern float g_1049e050;
+extern float g_1049e058;
+float g_10936f6c = (240.0f - g_1049e050) / g_1049e058;
+// END FUNCTION
