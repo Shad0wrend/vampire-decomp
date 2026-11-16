@@ -3841,6 +3841,7 @@
 0x10005e5c func   ?sub_1023aa30@CDecal@@QAEXXZ CDecal::sub_1023aa30
 0x10005e61 func   ?vfunc1@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc1
 0x10005e66 func   ?sub_103f97d0@@YAHXZ sub_103f97d0
+0x10005e6b func   ??0CTETParticle@@QAE@PBD@Z CTETParticle::CTETParticle
 0x10005e6b func   ?sub_10069430@CTETParticle@@QAEPAV1@H@Z CTETParticle::sub_10069430
 0x10005e70 func   ?vfunc72@CNPC_VTaxiDriver@@QAE_NH@Z CNPC_VTaxiDriver::vfunc72
 0x10005e75 func   ?sub_103285a0@CBaseCombatCharacter@@QAE_NPAV1@HH@Z CBaseCombatCharacter::sub_103285a0
