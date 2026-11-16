@@ -20,3 +20,9 @@ ConVar g_10751600("voice_serverdebug", "0", 0);
 #include "ConVar.h"
 ConVar g_107515b8("sv_alltalk", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10232380 size=0xa
+#define PCD_INITIALIZERS
+#include "CUnknown10232420.h"
+CUnknown10232420 g_10751750;
+// END FUNCTION
