@@ -5,6 +5,9 @@
 class CTEArmorRicochet : public CTEMetalSparks
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer units: the SDK constructor (te_armorricochet.cpp), inline in the global's initializer
+	CTEArmorRicochet(const char *name) : CTEMetalSparks(name) {}
+#endif
 	virtual ServerClass *vfunc0();
 	virtual int vfunc1();
 	virtual CTEMetalSparks *vfunc2(unsigned int flags);	// scalar deleting destructor
