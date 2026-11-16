@@ -17370,6 +17370,7 @@
 0x1047bd24 vtable ??_7CCopyRecipientFilter@@6B@ CCopyRecipientFilter::vftable
 0x1047bd54 vtable ??_7CSoundControllerImp@@6BCAutoGameSystem@@@ CSoundControllerImp::vftable
 0x1047bd84 vtable ??_7CSoundControllerImp@@6B@ CSoundControllerImp::vftable
+0x1047bd84 data   ??_7CSoundControllerImp@@6BCSoundEnvelopeController@@@ ??_7CSoundControllerImp@@6BCSoundEnvelopeController@@@
 0x1047bde4 vtable ??_7CSoundEnvelopeController@@6B@ CSoundEnvelopeController::vftable
 0x1047be44 vtable ??_7CNullEntity@@6B@ CNullEntity::vftable
 0x1047c2d4 vtable ??_7CBaseDMStart@@6B@ CBaseDMStart::vftable
