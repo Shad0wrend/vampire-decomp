@@ -175,3 +175,8 @@ extern float g_1049e05c;
 extern float g_1049e064;
 float g_10937b0c = (100.0f - g_1049e05c) / g_1049e064;
 // END FUNCTION
+
+// FUNCTION: 0x10348cb0 size=0x5
+extern const float g_1049e068;	// 8.0f in .rdata: VC6 does not fold it
+float g_10936d70 = 6.283185307179586 / g_1049e068;
+// END FUNCTION
