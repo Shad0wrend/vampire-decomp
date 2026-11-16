@@ -11426,6 +11426,7 @@
 0x1000f7fe func   ?vfunc117@CCineNPC@@UAEDXZ CCineNPC::vfunc117
 0x1000f803 func   ?sub_1018b680@@YAHXZ sub_1018b680
 0x1000f808 func   ?sub_10060f20@@YAHXZ sub_10060f20
+0x1000f80d func   ??0CDerived101c2b90@@QAE@XZ CDerived101c2b90::CDerived101c2b90
 0x1000f80d func   ?sub_101c2b90@@YIHPAUCDerived101c2b90@@@Z sub_101c2b90
 0x1000f812 func   ?vfunc99@CRagdollProp@@UAE_NHHH@Z CRagdollProp::vfunc99
 0x1000f817 func   ?sub_10136e50@CUnknown10136e50@@QAEHHH@Z CUnknown10136e50::sub_10136e50
