@@ -18,3 +18,9 @@ SendTable g_106c2398;
 int sub_10060f20(void);
 int g_106c2394 = ((int (*)(int))sub_10060f20)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10061130 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEDynamicLight.h"
+CTEDynamicLight g_106c2010("Dynamic Light");
+// END FUNCTION
