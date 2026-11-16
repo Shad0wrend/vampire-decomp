@@ -1987,6 +1987,7 @@
 0x10003896 func   ?vfunc82@CEnvParticle@@QAEPAUdatamap_t@@XZ CEnvParticle::vfunc82
 0x1000389b func   ?sub_100fbc90@@YAPAVCEntityVSlots@@PBDPBM1M@Z sub_100fbc90
 0x100038a0 func   ?sub_103eb3c0@@YAHXZ sub_103eb3c0
+0x100038a5 func   ??0CTEWorldDecal@@QAE@PBD@Z CTEWorldDecal::CTEWorldDecal
 0x100038a5 func   ?sub_1006af40@CTEWorldDecal@@QAEPAV1@H@Z CTEWorldDecal::sub_1006af40
 0x100038aa func   ?sub_1019d340@@YIHPAVCRecipientFilter@@@Z sub_1019d340
 0x100038af func   ?sub_101b2b10@@YAHXZ sub_101b2b10
