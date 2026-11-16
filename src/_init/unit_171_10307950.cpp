@@ -5,3 +5,9 @@
 int sub_10307990(void);
 int g_10934154 = ((int (*)(int))sub_10307990)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10307c70 size=0x5
+#define PCD_INITIALIZERS
+#include "CUnknown10307d00.h"
+CUnknown10307d00 g_109363fc;
+// END FUNCTION
