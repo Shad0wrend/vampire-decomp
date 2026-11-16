@@ -7829,6 +7829,7 @@
 0x1000afa6 func   ??0CSAct@@QAE@XZ CSAct::CSAct
 0x1000afa6 func   ?sub_102c9d20@@YIPAHPAH@Z sub_102c9d20
 0x1000afab func   ?sub_100fa470@CUtlLinkedList6@@QAEG_N@Z CUtlLinkedList6::sub_100fa470
+0x1000afb0 func   ??1CTEKillPlayerAttachments@@QAE@XZ CTEKillPlayerAttachments::~CTEKillPlayerAttachments
 0x1000afb0 func   ?sub_100659e0@CUnknown100659e0@@QAEHXZ CUnknown100659e0::sub_100659e0
 0x1000afb5 func   ?vfunc23@CGameRules@@UAE_NXZ CGameRules::vfunc23
 0x1000afba func   ?vfunc373@CWeaponMelee_Claws_Protean5@@UAEHXZ CWeaponMelee_Claws_Protean5::vfunc373
