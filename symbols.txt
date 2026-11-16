@@ -11599,6 +11599,7 @@
 0x1000fc68 func   ?vfunc331@CBaseCombatWeapon@@UAEABVVector@@XZ CBaseCombatWeapon::vfunc331
 0x1000fc6d func   ?sub_100d1250@@YIXPAUSListOwner_t@@@Z sub_100d1250
 0x1000fc72 func   ?sub_102ae810@CAI_BaseNPCTroika@@QAEXPAX@Z CAI_BaseNPCTroika::sub_102ae810
+0x1000fc77 func   ??0CVStatInfoList_t@@QAE@PBDHH@Z CVStatInfoList_t::CVStatInfoList_t
 0x1000fc77 func   ?sub_101ff300@CVStatInfoList_t@@QAEPAV1@PBDHH@Z CVStatInfoList_t::sub_101ff300
 0x1000fc7c func   ?sub_101dcc10@CRecListUnit@@QAEXPBU1@@Z CRecListUnit::sub_101dcc10
 0x1000fc81 func   ?sub_100cdda0@CEventQueue@@QAEXXZ CEventQueue::sub_100cdda0
