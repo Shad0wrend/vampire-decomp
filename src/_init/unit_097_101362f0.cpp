@@ -15,3 +15,8 @@ Vector g_1070d1b0(0.0f, 0.0f, 0.0f);
 #include "Vector.h"
 Vector g_1070d9d0(0.0f, 0.0f, 0.0f);
 // END FUNCTION
+
+// FUNCTION: 0x10137130 size=0x5
+#include "Vector.h"
+Vector g_1070d5c0(0.0f, 0.0f, 0.0f);
+// END FUNCTION
