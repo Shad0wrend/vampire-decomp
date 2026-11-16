@@ -16,3 +16,10 @@ CUnknown10936b68 g_10936b68;
 #include "ConVar.h"
 ConVar g_10936ba0("debug_dump_schedules", "1", 0, "Turn this off to disable debug dump on missing schedule.");
 // END FUNCTION
+
+// FUNCTION: 0x1030f550 size=0xa
+#define PCD_INITIALIZERS
+#include "CUtlSymbolTable.h"
+#include "PcdGuarded.h"
+template <> CUtlSymbolTable PcdGuarded<0x10936b74, CUtlSymbolTable>::s_object(0, 32, false);
+// END FUNCTION
