@@ -14,6 +14,15 @@ public:
 	~CWeaponListPurger();
 };
 
+#ifdef PCD_INITIALIZERS	// the initializer units: the list is Source's CUtlLinkedList of 4-byte elements
+#include "utllinkedlist.h"
+
+class CWeaponList : public CAutoGameSystem
+{
+public:
+	CUtlLinkedList<int, unsigned short> m_list;	// +8
+};
+#else
 class CWeaponList : public PCD_GAMESYSTEM8	// the 8-byte game-system root (CAnchorList.h)
 {
 public:
@@ -31,7 +40,9 @@ public:
 	char *m_pFirst;		// +0x20
 	CWeaponListPurger m_purger;
 };
+#endif
 
+#ifndef PCD_INITIALIZERS
 inline CWeaponListPurger::~CWeaponListPurger()
 {
 	CWeaponList *p = (CWeaponList *)((char *)this - 0x24);
@@ -55,3 +66,4 @@ inline CWeaponListPurger::~CWeaponListPurger()
 		p->m_nAlloc = 0;
 	}
 }
+#endif
