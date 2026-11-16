@@ -31,6 +31,12 @@ ConVar g_106b8818("physics_impact_sound_max", "1.0", 0, "For physics impact soun
 ConVar g_106b8860("physics_impact_sound_min", "0.1", 0, "For physics impact sounds, min volume, anything less than this is not played.");
 // END FUNCTION
 
+// FUNCTION: 0x10031b80 size=0x5
+#define PCD_INITIALIZERS
+#include "SoundTracker_t.h"
+SoundTracker_t g_106b8698[8];
+// END FUNCTION
+
 // FUNCTION: 0x10031fd0 size=0xa
 #include "ConVar.h"
 ConVar g_106b8908("collision_shake_amp", "0.2", 0);
