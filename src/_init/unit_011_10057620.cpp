@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10057620 size=0x5
+#define PCD_INITIALIZERS
+#include "CUnknown10057680.h"
+CUnknown10057680 g_106be530;
+// END FUNCTION
+
 // FUNCTION: 0x10057b80 size=0x5
 #include "ServerClassReg.h"
 #include "SendTable.h"
