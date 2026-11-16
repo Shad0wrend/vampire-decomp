@@ -18,3 +18,9 @@ SendTable g_106bf7f4;
 int sub_1005b6c0(void);
 int g_106bf7f0 = ((int (*)(int))sub_1005b6c0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1005b7d0 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEBeamEnts.h"
+CTEBeamEnts g_106bf7a0("BeamEnts");
+// END FUNCTION
