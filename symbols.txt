@@ -2276,6 +2276,7 @@
 0x10003e6d func   ?sub_101d8250@@YIXPAH@Z sub_101d8250
 0x10003e72 func   ?sub_100a68f0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a68f0
 0x10003e77 func   ?sub_101f10e0@CUnknown101f10e0@@QAE_NPAX@Z CUnknown101f10e0::sub_101f10e0
+0x10003e81 func   ??1CVDataRecord_1073a2c8@@QAE@XZ CVDataRecord_1073a2c8::~CVDataRecord_1073a2c8
 0x10003e81 func   ?sub_101eabb0@@YAXXZ sub_101eabb0
 0x10003e86 func   ?sub_10099320@CBaseAnimatingOverlay@@QAEXHMH@Z CBaseAnimatingOverlay::sub_10099320
 0x10003e8b func   ?vfunc255@CSceneEntity@@UAEXHPAUCSceneEventActorEnt@@PAUCSceneEvent@@@Z CSceneEntity::vfunc255
