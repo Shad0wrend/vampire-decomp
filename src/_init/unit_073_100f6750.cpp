@@ -12,6 +12,12 @@ CUtlVector<int> g_10703668;
 CAimTargetManager g_10703650;
 // END FUNCTION
 
+// FUNCTION: 0x100f8b70 size=0xa
+#define PCD_INITIALIZERS
+#include "CNotifyList.h"
+CNotifyList g_10703634;
+// END FUNCTION
+
 // FUNCTION: 0x100f8c70 size=0xa
 #define PCD_INITIALIZERS
 #include "CEntityTouchManager.h"
