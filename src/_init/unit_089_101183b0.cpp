@@ -41,6 +41,13 @@ int g_1070b070 = pcd_initial_1070b070();
 CUtlVector<int> g_1070b0bc;
 // END FUNCTION
 
+// FUNCTION: 0x1011a050 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1011a0a0(void);
+InterfaceReg g_1070b1c8(sub_1011a0a0, "ServerGameDLL002");
+// END FUNCTION
+
 // FUNCTION: 0x1011a450 size=0xa
 #include "utlvector.h"
 CUtlVector<int> g_1070b0d0;
