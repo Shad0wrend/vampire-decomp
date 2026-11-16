@@ -21,6 +21,13 @@ int * sub_10080420(void);
 int * g_106c8a3c = ((int * (*)(int))sub_10080420)(0);
 // END FUNCTION
 
+// FUNCTION: 0x10082410 size=0xa
+#define PCD_INITIALIZERS
+#include "utlvector.h"
+#include "PcdGuarded.h"
+template <> CUtlVector<int> PcdGuarded<0x106c8a28, CUtlVector<int> >::s_object(0, 0);
+// END FUNCTION
+
 // FUNCTION: 0x10083980 size=0x5
 #define PCD_INITIALIZERS
 #include "CSceneTokenProcessor.h"
