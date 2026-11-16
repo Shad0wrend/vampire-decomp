@@ -8,6 +8,18 @@
 
 struct CLagCompensationPlayerRecord	// 0x3c bytes, one per player slot (32); built by the constructor stub 0x100159b0 (CUnknown10188280::sub_10188280)
 {
+#ifdef PCD_INITIALIZERS	// the initializer units: Troika's LagRecord constructor (the manager's restore arrays)
+	CLagCompensationPlayerRecord()
+	{
+		m_nEdictIndex = 0;
+		m_nFlags = 0;
+		m_vecOrigin.Init();
+		m_angAngles.Init();
+		m_vecMins.Init();
+		m_vecMaxs.Init();
+		m_bValid = 0;
+	}
+#endif
 	unsigned char m_bValid;	// 0x00: set to 1 when the player slot holds an entity
 	char m_pad01[3];
 	int m_nEdictIndex;	// 0x04: engine slot 35 of the entity's edict (+0x2e0)
@@ -24,6 +36,29 @@ struct CLagCompensationRecord	// 0x784 bytes: the element of the manager's vecto
 	CLagCompensationPlayerRecord m_aPlayers[32];	// 0x0004
 };
 
+#ifdef PCD_INITIALIZERS	// the initializer units: Source's class (dlls/player_lagcompensation.cpp, 2003 form)
+#include "GameSystemRoot.h"
+#include "utlvector.h"
+
+class CBasePlayer;
+class CUserCmd;
+
+class ILagCompensationManager	// vtable 0x10471748 in the manager (+8)
+{
+public:
+	virtual void StartLagCompensation(CBasePlayer *player, CUserCmd *cmd);
+	virtual void FinishLagCompensation(CBasePlayer *player);
+};
+
+class CLagCompensationManager : public CAutoGameSystem, public ILagCompensationManager
+{
+public:
+	CUtlVector<CLagCompensationRecord> m_Data;	// 0x0c
+	unsigned int restorebits;	// 0x20
+	bool m_bNeedToRestore;	// 0x24
+	CLagCompensationPlayerRecord restoreData[2][32];	// 0x28 (RESTORE_RECORD, CHANGE_RECORD)
+};
+#else
 class CLagCompensationManager
 {
 public:
@@ -50,3 +85,4 @@ public:
 	void sub_10187ef0();
 	void sub_10187e60(struct CPlayerView10187e60 *pPlayer);	// drops the records older than one second (walking backwards, memmove'ing the tail down)
 };
+#endif
