@@ -12461,6 +12461,7 @@
 0x10010e06 func   ?sub_1027fa50@CUtlVector20@@QAEXHH@Z CUtlVector20::sub_1027fa50
 0x10010e0b func   _npc_bullseye npc_bullseye
 0x10010e10 func   ?sub_102564b0@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_102564b0
+0x10010e15 func   ??1CTETextMessage@@QAE@XZ CTETextMessage::~CTETextMessage
 0x10010e15 func   ?sub_10068c00@CUnknown10068c00@@QAEHXZ CUnknown10068c00::sub_10068c00
 0x10010e1a func   ?sub_101a68e0@@YAXXZ sub_101a68e0
 0x10010e1f func   ?sub_101978b0@@YAPAUPyObject@@PAU1@0@Z sub_101978b0
