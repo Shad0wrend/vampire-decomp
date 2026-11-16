@@ -20,3 +20,9 @@ CEntitySaveRestoreBlockHandler g_1072bb44;
 int sub_101a4760(void);
 int g_1072bb3c = ((int (*)(int))sub_101a4760)(0);
 // END FUNCTION
+
+// FUNCTION: 0x101a4790 size=0xa
+#define PCD_INITIALIZERS
+#include "CSaveRestoreBlockSet.h"
+CSaveRestoreBlockSet g_1072bae8("Game");
+// END FUNCTION
