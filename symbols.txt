@@ -13840,6 +13840,7 @@
 0x1001287d func   ?vfunc80@CItemGIdolElephant@@QAEHXZ CItemGIdolElephant::vfunc80
 0x10012882 func   ?sub_101854b0@CUtlVector72@@QAEXH@Z CUtlVector72::sub_101854b0
 0x10012887 func   ?sub_100b39c0@@YIHPAD@Z sub_100b39c0
+0x1001288c func   ??0?$CUtlRBTree@UNode_t@?$CUtlMap@PBVCPhysCollide@@UBBox_t@@G@@G@@QAE@HHP6A_NABUNode_t@?$CUtlMap@PBVCPhysCollide@@UBBox_t@@G@@0@Z@Z CUtlRBTree<CUtlMap<CPhysCollide const *,BBox_t,unsigned short>::Node_t,unsigned short>::CUtlRBTree
 0x1001288c func   ?sub_100468b0@S100468b0@@QAEPAU1@HHH@Z S100468b0::sub_100468b0
 0x10012891 func   ?sub_100b7ad0@CNetSub@@QAEXXZ CNetSub::sub_100b7ad0
 0x10012896 func   ?vfunc601@CNPC_VYukie@@QAEXH@Z CNPC_VYukie::vfunc601
