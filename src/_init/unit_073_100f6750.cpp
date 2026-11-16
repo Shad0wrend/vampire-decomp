@@ -6,6 +6,12 @@
 CUtlVector<int> g_10703668;
 // END FUNCTION
 
+// FUNCTION: 0x100f8c70 size=0xa
+#define PCD_INITIALIZERS
+#include "CEntityTouchManager.h"
+CEntityTouchManager g_107036b0;
+// END FUNCTION
+
 // FUNCTION: 0x100f91f0 size=0xa
 #include "ConCommand.h"
 void sub_100f9280(void);
