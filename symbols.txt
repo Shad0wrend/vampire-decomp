@@ -789,6 +789,7 @@
 0x10002054 func   ?sub_100bee40@bf_read@@QAEXAAVVector@@@Z bf_read::sub_100bee40
 0x10002059 func   ?vfunc286@CAI_BaseNPCTroika@@QAEXHPAX@Z CAI_BaseNPCTroika::vfunc286
 0x1000205e func   ?sub_100cdc80@@YAHH@Z sub_100cdc80
+0x10002063 func   ??0CTEShowLine@@QAE@PBD@Z CTEShowLine::CTEShowLine
 0x10002063 func   ?sub_10066a70@CTEShowLine@@QAEPAV1@PBD@Z CTEShowLine::sub_10066a70
 0x10002068 func   ?sub_101dd620@CUnknown101dd910@@QAEXPAX0HHH@Z CUnknown101dd910::sub_101dd620
 0x1000206d func   ?sub_10133950@CMathCounterView@@QAEXPAXM@Z CMathCounterView::sub_10133950
