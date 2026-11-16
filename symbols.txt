@@ -15468,6 +15468,7 @@
 0x10014afb func   ?sub_1028e980@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_1028e980
 0x10014b05 func   ?sub_101cf2f0@@YAXPAMH@Z sub_101cf2f0
 0x10014b0a func   ??1CUnknown10206400@@QAE@XZ CUnknown10206400::~CUnknown10206400
+0x10014b0a func   ??1CVDataRecord_1074f004@@QAE@XZ CVDataRecord_1074f004::~CVDataRecord_1074f004
 0x10014b0a func   ?sub_10206430@CPtrArray10206430@@QAEXXZ CPtrArray10206430::sub_10206430
 0x10014b0f func   ?vfunc180@CPropHaunted@@QAEXXZ CPropHaunted::vfunc180
 0x10014b14 func   ?sub_1017b880@@YGXH@Z sub_1017b880
