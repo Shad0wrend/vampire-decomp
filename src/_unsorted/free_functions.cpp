@@ -234495,6 +234495,160 @@ void CUnknown102e83e0::sub_102e84a0(char flag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e8560 size=0x3dd
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CUnknown102e83e0.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CEntityVSlots.h"
+#include "CBaseAnimatingOverlay.h"
+#include <math.h>
+
+struct CUnknown102ee140 { Vector *sub_102ee140(); };
+struct CUnk102ee6a0 { char sub_102ee6a0(); };
+struct CNpcCondUnit : CAI_BaseNPC { char sub_10269b30(int cond, int a); };
+struct CDevFlagA { virtual void v0(); virtual void slot1(); };
+struct CDevFlagB { virtual void v0(); virtual char slot1(); char pad[0x28]; int m_n2c; };
+struct CEngRand { virtual void v0(); virtual float slot1(int lo, int hi); virtual int slot2(int lo, int hi); };
+struct CNavP { char pad[0x30]; Vector *m_p30; };
+struct CNavQ { char pad[0x24]; CNavP *m_p24; };
+extern CDevFlagA *g_10924a6c;
+extern CDevFlagA *g_10924ab4;
+extern CDevFlagB *g_10923cf4;
+extern CEngRand *g_1070b244;
+extern float g_104454c4;
+__declspec(dllimport) void DevMsg(int level, const char *fmt, ...);
+
+#define NV(a) virtual void v##a();
+#define NV10(a) NV(a##0) NV(a##1) NV(a##2) NV(a##3) NV(a##4) NV(a##5) NV(a##6) NV(a##7) NV(a##8) NV(a##9)
+#define NV100(a) NV10(a##0) NV10(a##1) NV10(a##2) NV10(a##3) NV10(a##4) NV10(a##5) NV10(a##6) NV10(a##7) NV10(a##8) NV10(a##9)
+
+struct MoveShootNPCView
+{
+	NV100(0) NV100(1) NV100(2) NV100(3) NV100(4)
+	NV(500) NV(501) NV(502) NV(503) NV(504) NV(505) NV(506) NV(507) NV(508) NV(509)
+	NV(510) NV(511) NV(512) NV(513) NV(514) NV(515) NV(516)
+	virtual void v517(CBaseEntity *pTarget, const Vector &vecPos, float flImportance, float flDuration, float flRamp);
+};
+
+static inline void SetLastAttackTime(float *pTime, float flTime) { *pTime = flTime; }
+static inline float DotProduct2D(const Vector &a, const Vector &b) { return a.x * b.x + a.y * b.y; }
+
+struct WP71 { Vector vecLocation; char pad[0x24]; WP71 *pNext; WP71 *GetNext() { return pNext; } const Vector &GetPos() const { return vecLocation; } };
+struct Path71 { char pad[0x24]; WP71 *m_pCur; WP71 *GetCurWaypoint() { return m_pCur; } };
+struct Nav71 { char pad[0x30]; Path71 *m_pPath; Path71 *GetPath() { return m_pPath; } Vector *sub_102ee140(); };
+static inline int LdV(const int *b, int i) { return b[i]; }
+// TARGET: CUnknown102e83e0::sub_102e8560
+void CUnknown102e83e0::sub_102e8560()
+{
+	if (m_f18 == 3.402823466e+38F)
+		return;
+
+	CAI_BaseNPC *npc = m_pOuter;
+	if (!npc->vfunc167() || !((CAI_BaseNPC *)npc->vfunc167())->vfunc158())
+	{
+		CBaseEntity *h = npc->vfunc478();
+		if (h)
+		{
+			g_10924a6c->slot1();
+			npc->sub_10269a20(0x54);
+			npc->sub_10279a50((int)h);
+			npc->sub_1026e340(2);
+		}
+		else
+		{
+			npc->vfunc560();
+		}
+	}
+
+	if (!m_pOuter->vfunc167() || !(*(CUnk102ee6a0 **)((char *)npc + 0x5d34))->sub_102ee6a0())
+	{
+		g_10924ab4->slot1();
+		return;
+	}
+
+	char bShoot = sub_102e83e0();
+	sub_102e84a0(bShoot);
+	if (bShoot)
+	{
+		if (!g_10923cf4->slot1() && g_10923cf4->m_n2c)
+		{
+			CAI_BaseNPCTroika *pNpc = ((CBaseEntity *)npc)->m_pNPC98;
+			if (pNpc)
+			{
+				float ay = fabs(((CBaseAnimating *)pNpc)->sub_100920d0("move_yaw"));
+				if (ay > 90.0)
+				{
+					if (g_1070b244->slot2(0, (int)((190.0 - ay) * 0.25)) < 5)
+					{
+						int a = npc->sub_10271ff0(0x47, 0);
+						int b = npc->sub_10271ff0(0x48, 0);
+						if (a != -1 && b != -1 && !npc->vfunc270(a) && !npc->vfunc270(b))
+						{
+							Nav71 *pNav = *(Nav71 **)((char *)pNpc + 0x5d34);
+							Vector goal;
+							if (pNav->GetPath()->GetCurWaypoint() && pNav->GetPath()->GetCurWaypoint()->GetNext())
+								goal = pNav->GetPath()->GetCurWaypoint()->GetNext()->GetPos();
+							else
+								goal = *((CUnknown102ee140 *)pNav)->sub_102ee140();
+							Vector vecDelta = goal - *((CEntityVSlots *)pNpc)->slot217();
+							if (DotProduct2D(pNpc->m_vecRight, vecDelta) > g_104454c4)
+								((CBaseAnimatingOverlay *)npc)->sub_100991b0(a, 1);
+							else
+								((CBaseAnimatingOverlay *)npc)->sub_100991b0(b, 1);
+						}
+					}
+				}
+			}
+		}
+		if (((CNpcCondUnit *)npc)->sub_10269b30(0x4f, 0) && gpGlobals->curtime >= m_f18)
+		{
+			if (!m_b10 && !m_pOuter->vfunc557())
+				goto tail;
+			m_b10 = 1;
+			int act = npc->sub_10271ff0(0x1a, 0);
+			if (--m_n14 >= 0)
+			{
+				if (npc->vfunc270(act))
+				{
+					DevMsg(1, "WARNING:  The attack layer for the weapon '%s' lasts longer than the fire rate.\n", ((CBaseEntity *)npc->sub_10007e19())->sub_100ab4f0());
+					DevMsg(1, "          The animation needs to be shortened or the fire rate made slower.\n");
+				}
+				SetLastAttackTime((float *)((char *)npc + 0x5d9c), gpGlobals->curtime);
+				((CBaseAnimatingOverlay *)npc)->sub_100991b0(act, 1);
+				((CBaseCombatCharacter *)npc)->sub_1032a910(npc->vfunc381(0x19), 0);
+				m_f18 = ((CEntityVSlots *)npc->sub_10007e19())->slot332() + gpGlobals->curtime - 0.1;
+				g_10924ab4->slot1();
+				goto tail;
+			}
+			else
+			{
+				m_n14 = g_1070b244->slot2(m_n1c, m_n20);
+				m_f18 = g_1070b244->slot1(m_n24, m_n28) + gpGlobals->curtime;
+				m_b10 = 0;
+				m_pOuter->vfunc558();
+				g_10924ab4->slot1();
+				goto tail;
+			}
+		}
+		g_10924ab4->slot1();
+	tail:
+		Vector vecEnemyLKP;
+		npc->sub_10279bb0(&vecEnemyLKP);
+		MoveShootNPCView *pView = (MoveShootNPCView *)npc;
+		pView->v517((CBaseEntity *)npc->vfunc167(), vecEnemyLKP, 1.0f, 0.8f, 0);
+	}
+	else
+	{
+		if (m_b10)
+		{
+			g_10924ab4->slot1();
+			m_b10 = 0;
+			m_pOuter->vfunc558();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e8a40 size=0x27
 #include "CAI_BaseNPC.h"
 

@@ -13585,6 +13585,7 @@
 0x100122e2 func   _trigger_inventory_check trigger_inventory_check
 0x100122e7 func   ?vfunc2@CServerNetworkProperty@@UAEXXZ CServerNetworkProperty::vfunc2
 0x100122ec func   ?vfunc444@CBasePlayer@@UAEXXZ CBasePlayer::vfunc444
+0x100122f1 func   ?sub_102e8560@CUnknown102e83e0@@QAEXXZ CUnknown102e83e0::sub_102e8560
 0x100122f6 func   ?sub_10214780@CPropHaunted@@QAEXXZ CPropHaunted::sub_10214780
 0x100122fb func   ?ShiftElementsLeft@?$CUtlVector@UCFlameRecord@@V?$CUtlMemory@UCFlameRecord@@@@@@QAEXHH@Z CUtlVector<CFlameRecord,CUtlMemory<CFlameRecord> >::ShiftElementsLeft
 0x100122fb func   ?sub_103e3e40@SElemVec1c@@QAEXHH@Z SElemVec1c::sub_103e3e40
