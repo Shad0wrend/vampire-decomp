@@ -18,3 +18,9 @@ CVDataTable<CVDataRecord_1073a31c> g_1073a31c;
 #include "CEntryX.h"
 CVDataTable<CEntryX> g_1073a2ac;
 // END FUNCTION
+
+// FUNCTION: 0x101ea4a0 size=0xa
+#include "VDataTable.h"
+#include "VDataRecords.h"
+CVDataTable<CVDataRecord_1073a2e4> g_1073a2e4;
+// END FUNCTION
