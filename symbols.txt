@@ -16005,6 +16005,7 @@
 0x100155e1 func   ?PrecacheFn_Other@CPrecacheRegister@@SAXPAX@Z CPrecacheRegister::PrecacheFn_Other
 0x100155e6 func   ?vfunc25@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEDH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc25
 0x100155eb func   ?sub_10250080@CUnknown10250080@@QAEXXZ CUnknown10250080::sub_10250080
+0x100155f0 func   ??0CUnknown1024a230@@QAE@XZ CUnknown1024a230::CUnknown1024a230
 0x100155f0 func   ?sub_1024a230@CUnknown1024a230@@QAEPAV1@XZ CUnknown1024a230::sub_1024a230
 0x100155f5 func   ?sub_1035b0e0@@YGXH@Z sub_1035b0e0
 0x100155fa func   ?sub_101fbfc0@CUnit101fbfc0@@QAE_NHHHHH@Z CUnit101fbfc0::sub_101fbfc0
