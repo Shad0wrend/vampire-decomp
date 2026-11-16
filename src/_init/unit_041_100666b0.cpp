@@ -18,3 +18,9 @@ SendTable g_106c4cec;
 int sub_10066820(void);
 int g_106c4ce8 = ((int (*)(int))sub_10066820)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10066980 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEPlayerDecal.h"
+CTEPlayerDecal g_106c4d08("Player Decal");
+// END FUNCTION
