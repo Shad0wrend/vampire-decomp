@@ -354,6 +354,11 @@ int sub_10237860(void);
 int g_10751968 = ((int (*)(int))sub_10237860)(0);
 // END FUNCTION
 
+// FUNCTION: 0x10237b60 size=0x5
+extern int g_105bf968;
+int g_10751a54 = g_105bf968;
+// END FUNCTION
+
 // FUNCTION: 0x10237ba0 size=0xa
 #include "ConVar.h"
 ConVar g_107520a0("vdebug_wpn_anims_cycle", "0", 4, "Set this to true to get extra info.");
