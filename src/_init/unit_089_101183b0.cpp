@@ -35,3 +35,8 @@ ConVar g_1070b138("combat_debug_stats", "0", 0);
 inline int pcd_initial_1070b070() { return 0xffffffff; }
 int g_1070b070 = pcd_initial_1070b070();
 // END FUNCTION
+
+// FUNCTION: 0x10119660 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_1070b0bc;
+// END FUNCTION
