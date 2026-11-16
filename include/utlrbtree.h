@@ -123,7 +123,7 @@ inline CUtlRBTree<T, I>::CUtlRBTree(int growSize, int initSize, LessFunc_t lessf
 template <class T, class I>
 inline CUtlRBTree<T, I>::~CUtlRBTree()
 {
-	Purge();
+	// empty as in the 2003 and 2004 SDK: the nodes' memory goes with m_Elements' own destructor
 }
 
 template <class T, class I>

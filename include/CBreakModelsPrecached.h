@@ -4,6 +4,20 @@
 
 #include "CUtlRBTree12.h"
 
+#ifdef PCD_INITIALIZERS	// the initializer units: Source's CAutoGameSystem base and the CUtlRBTree of model names
+#include "GameSystemRoot.h"
+#include "utlrbtree.h"
+
+bool sub_101918e0(char **a, char **b);	// the tree's less function (stub-less, matched)
+
+class CBreakModelsPrecached : public CAutoGameSystem
+{
+public:
+	CBreakModelsPrecached() { m_modelList.SetLessFunc((CUtlRBTree<char *, unsigned short>::LessFunc_t)sub_101918e0); }
+
+	CUtlRBTree<char *, unsigned short> m_modelList;	// 0x08
+};
+#else
 class CBreakModelsPrecached
 {
 public:
@@ -14,3 +28,4 @@ public:
 	int m_pad0004;
 	CUtlRBTree12 m_Tree;	// 0x0008
 };
+#endif
