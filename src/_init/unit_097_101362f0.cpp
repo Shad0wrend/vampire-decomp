@@ -20,3 +20,8 @@ Vector g_1070d9d0(0.0f, 0.0f, 0.0f);
 #include "Vector.h"
 Vector g_1070d5c0(0.0f, 0.0f, 0.0f);
 // END FUNCTION
+
+// FUNCTION: 0x10137180 size=0x5
+#include "Vector.h"
+Vector g_10713de0(3.4028235e+38f, 3.4028235e+38f, 3.4028235e+38f);
+// END FUNCTION
