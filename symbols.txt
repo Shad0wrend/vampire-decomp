@@ -14853,6 +14853,7 @@
 0x10013ed5 func   ?vfunc433@CNPC_VWerewolf@@UAEXXZ CNPC_VWerewolf::vfunc433
 0x10013eda func   ?sub_10231790@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::sub_10231790
 0x10013edf func   ?sub_10194330@CUtlRBTree12@@QBEGPBX@Z CUtlRBTree12::sub_10194330
+0x10013ee4 func   ??1CTESprite@@QAE@XZ CTESprite::~CTESprite
 0x10013ee4 func   ?sub_10067cb0@CUnknown10067cb0@@QAEHXZ CUnknown10067cb0::sub_10067cb0
 0x10013ee9 func   ?sub_100fc1e0@CInspectionNode@@QAEXH@Z CInspectionNode::sub_100fc1e0
 0x10013ef8 func   ?sub_100bdd00@@YGHH@Z sub_100bdd00
