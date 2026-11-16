@@ -18,3 +18,9 @@ SendTable g_106c0d18;
 int sub_1005e330(void);
 int g_106c0d14 = ((int (*)(int))sub_1005e330)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1005e540 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEBloodStream.h"
+CTEBloodStream g_106c0cc4("Blood Stream");
+// END FUNCTION
