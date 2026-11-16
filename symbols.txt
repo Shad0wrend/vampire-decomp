@@ -6787,6 +6787,7 @@
 0x10009967 func   ?sub_101c1a70@CBaseEntity@@QAEXXZ CBaseEntity::sub_101c1a70
 0x1000996c func   ?vfunc363@CWeaponMelee_TireIron@@QAEHXZ CWeaponMelee_TireIron::vfunc363
 0x10009971 func   ?sub_10235a20@@YAHXZ sub_10235a20
+0x10009976 func   ??1CUnknown10232420@@QAE@XZ CUnknown10232420::~CUnknown10232420
 0x10009976 func   ?sub_10232480@CUnknown10232480@@QAEXXZ CUnknown10232480::sub_10232480
 0x1000997b func   ?sub_10280360@CAI_BaseNPC@@QAE_NXZ CAI_BaseNPC::sub_10280360
 0x10009980 func   ?sub_102e0b40@@YIXPAM@Z sub_102e0b40
