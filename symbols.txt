@@ -58,6 +58,7 @@
 0x10001122 func   ?sub_100945e0@CBaseAnimating@@QAEHH@Z CBaseAnimating::sub_100945e0
 0x10001127 func   ?vfunc370@CWeaponMelee_MingXiaoMelee@@UAEXPAHPAVCBaseCombatWeapon@@@Z CWeaponMelee_MingXiaoMelee::vfunc370
 0x1000112c func   ?sub_103dc180@CUtlMemory72@@QAEPAU1@HH@Z CUtlMemory72::sub_103dc180
+0x10001136 func   ??0CUnknown102dd700@@QAE@XZ CUnknown102dd700::CUnknown102dd700
 0x10001136 func   ?sub_102dd700@@YIPAXPAX@Z sub_102dd700
 0x1000113b func   ?sub_10129840@@YAHXZ sub_10129840
 0x10001140 func   ?vfunc388@CBasePlayer@@UAEDPAVCBaseEntity@@H@Z CBasePlayer::vfunc388
