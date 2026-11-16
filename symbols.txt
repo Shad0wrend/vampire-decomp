@@ -3938,6 +3938,7 @@
 0x10005ffb func   ?sub_100bf030@CUnknown100bf030@@QAE_NPBXH@Z CUnknown100bf030::sub_100bf030
 0x10006005 func   ?vfunc5@CNPC_VToreador@@QAEPAV1@I@Z CNPC_VToreador::vfunc5
 0x1000600a func   ?sub_10337230@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10337230
+0x1000600f func   ??1CUnknown101e0be0@@QAE@XZ CUnknown101e0be0::~CUnknown101e0be0
 0x10006014 func   ?sub_10230240@@YAHH@Z sub_10230240
 0x10006019 func   ?vfunc123@CNPC_VCop@@UAEXXZ CNPC_VCop::vfunc123
 0x1000601e func   ?sub_102b4520@@YIHH@Z sub_102b4520
