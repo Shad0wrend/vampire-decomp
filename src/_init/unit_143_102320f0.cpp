@@ -18,6 +18,12 @@ CPlayerBitVec g_10751538[32];
 CPlayerBitVec g_10751648[32];
 // END FUNCTION
 
+// FUNCTION: 0x102321d0 size=0x5
+#define PCD_INITIALIZERS
+#include "CPlayerBitVec.h"
+CPlayerBitVec g_107516d0[32];
+// END FUNCTION
+
 // FUNCTION: 0x10232220 size=0x5
 inline int pcd_initial_107516c8() { return 0x0; }
 int g_107516c8 = pcd_initial_107516c8();
