@@ -2534,6 +2534,7 @@
 0x100043c7 func   ?sub_10120f30@CGameMovement@@QAEXXZ CGameMovement::sub_10120f30
 0x100043cc func   ?sub_101cf5c0@@YAXPAVCBaseEntity@@HH@Z sub_101cf5c0
 0x100043d1 func   ?vfunc366@CNPC_VAnimal@@UAE_NHHH@Z CNPC_VAnimal::vfunc366
+0x100043d6 func   ??1CTEInspectionFX@@QAE@XZ CTEInspectionFX::~CTEInspectionFX
 0x100043d6 func   ?sub_100654d0@CUnknown100654d0@@QAEHXZ CUnknown100654d0::sub_100654d0
 0x100043db func   ?AddRecipientsByPVS@CRecipientFilter@@QAEXABVVector@@@Z CRecipientFilter::AddRecipientsByPVS
 0x100043e0 func   ?sub_10125200@CGameMovement@@QAEHABVVector@@@Z CGameMovement::sub_10125200
