@@ -10,3 +10,9 @@ Vector g_1072d488[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.408248
 #include "ConVar.h"
 ConVar g_107318b8("py_tattle", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101d1710 size=0xa
+#define PCD_INITIALIZERS
+#include "CCheckClient.h"
+CCheckClient g_10731910;
+// END FUNCTION
