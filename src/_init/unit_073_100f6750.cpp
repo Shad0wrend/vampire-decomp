@@ -6,6 +6,12 @@
 CUtlVector<int> g_10703668;
 // END FUNCTION
 
+// FUNCTION: 0x100f6840 size=0xa
+#define PCD_INITIALIZERS
+#include "CGlobalEntityList.h"
+CGlobalEntityList g_106eb5d8;
+// END FUNCTION
+
 // FUNCTION: 0x100f6930 size=0xa
 #define PCD_INITIALIZERS
 #include "CAimTargetManager.h"
