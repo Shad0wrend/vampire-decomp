@@ -2642,6 +2642,7 @@
 0x100045bb func   ?sub_10227280@@YGXH@Z sub_10227280
 0x100045c0 func   ?sub_102c6510@CUnknown102c6510@@QAEXXZ CUnknown102c6510::sub_102c6510
 0x100045c5 func   ?vfunc1@CBaseTempEntity@@UAEHXZ CBaseTempEntity::vfunc1
+0x100045ca func   ??0S4@@QAE@XZ S4::S4
 0x100045ca func   ?sub_10202c40@S4@@QAEPAU1@XZ S4::sub_10202c40
 0x100045cf func   ?sub_101e1720@CDiscTable_101e1720@@QAEHH@Z CDiscTable_101e1720::sub_101e1720
 0x100045d4 func   ??4CBaseHandle@@QAEAAV0@PAVIHandleEntity@@@Z ??4CBaseHandle@@QAEAAV0@PAVIHandleEntity@@@Z
