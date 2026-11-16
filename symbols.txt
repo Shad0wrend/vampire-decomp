@@ -6175,6 +6175,7 @@
 0x10008d14 func   _info_landmark info_landmark
 0x10008d19 func   ?sub_10249400@CUnknown10249400@@QAEMXZ CUnknown10249400::sub_10249400
 0x10008d1e func   ?sub_101e1990@@YGHHH@Z sub_101e1990
+0x10008d23 func   ??0CUnknown101d91c0@@QAE@XZ CUnknown101d91c0::CUnknown101d91c0
 0x10008d23 func   ?sub_101d91c0@CUnknown101d91c0@@QAEPAXXZ CUnknown101d91c0::sub_101d91c0
 0x10008d28 func   ?sub_1033f3f0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033f3f0
 0x10008d2d func   ?vfunc241@CEnvParticle@@QAEXXZ CEnvParticle::vfunc241
