@@ -18,3 +18,9 @@ SendTable g_106c17e8;
 int sub_1005f9a0(void);
 int g_106c17e4 = ((int (*)(int))sub_1005f9a0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1005fb80 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEBubbles.h"
+CTEBubbles g_106c1798("Bubbles");
+// END FUNCTION
