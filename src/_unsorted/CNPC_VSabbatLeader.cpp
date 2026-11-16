@@ -1023,3 +1023,70 @@ void CNPC_VSabbatLeader::sub_103ab4a0(void *pVictim)
     (*g_109f3680)--;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103ab580 size=0x360
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CEHandleGet.h"
+#include "CNPC_VSabbatLeader.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include <math.h>
+
+// TARGET: CNPC_VSabbatLeader::CheckStuck
+void CNPC_VSabbatLeader::CheckStuck()
+{
+	ScopeTrace st("CNPC_VSabbatLeader::CheckStuck", g_106b8540);
+	CEntityVSlots *pPlayer = (CEntityVSlots *)g_10566458->sub_100290c0(&m_hPlayer);
+	if (!pPlayer)
+		return;
+	CCollisionProperty *pcp = (CCollisionProperty *)((char *)pPlayer + 0x270);
+	Vector *pMins = (Vector *)pcp->vfunc1();
+	Vector *pMaxs = (Vector *)pcp->vfunc2();
+	float dx = pMaxs->x - pMins->x;
+	float dy = pMaxs->y - pMins->y;
+	float rP = (float)sqrt(dx * dx + dy * dy) * 0.5f;
+	float zTopP = ((Vector *)pPlayer->slot217())->z + pMaxs->z;
+	float zBotP = ((Vector *)pPlayer->slot217())->z + pMins->z;
+	CCollisionProperty *tcp = (CCollisionProperty *)((char *)this + 0x270);
+
+	Vector tP; tP.x = (*pMins).x + (*pMaxs).x; tP.y = (*pMaxs).y + ((const Vector &)(*pMins))[1]; tP.z = (*pMins).z + (*pMaxs).z; Vector ctrP = tP * 0.5 + *(Vector *)pPlayer->slot217();
+	Vector *tMins = (Vector *)tcp->vfunc1();
+	Vector *tMaxs = (Vector *)tcp->vfunc2();
+	dx = tMaxs->x - tMins->x;
+	dy = tMaxs->y - tMins->y;
+	float rT = (float)sqrt(dy * dy + dx * dx) * 0.5f;
+	CEntityVSlots *me = (CEntityVSlots *)this;
+	float zTopT = ((Vector *)me->slot217())->z + pMaxs->z;
+	float zBotT = ((Vector *)me->slot217())->z + pcd_stage(pMins)->z;
+	Vector ctrT = *(Vector *)me->slot217() + (0.5f * Vector(((const Vector &)(*tMins))[0] + (*tMaxs).x, (*tMins).y + ((const Vector &)(*tMaxs))[1], (*tMins).z + (*tMaxs).z));
+
+	if (!(!(zTopP < zBotT) && !(zBotP > zTopT))) return; Vector delta = ctrT - ctrP;
+		delta.z = 0;
+		float len = VectorNormalize(delta);
+		if (len < rT + rP) {
+			if (len < 1e-6f)
+				delta.x = 1.0;
+			Vector vecNew = delta * (rT + rP + 1.0f);
+			vecNew += ctrP;
+			vecNew.z = vecNew.z + 5.0f;
+			if (vecNew.z < zBotT)
+				vecNew.z = zBotT;
+			me->slot216(&vecNew);
+		}
+}
+// END FUNCTION
