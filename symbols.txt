@@ -8853,6 +8853,7 @@
 0x1000c374 func   ?sub_10430440@@YAXXZ sub_10430440
 0x1000c379 func   ?sub_103c9fc0@CHintData_WW@@QAEXXZ CHintData_WW::sub_103c9fc0
 0x1000c37e func   ?sub_10253b70@CBaseCombatWeapon@@QAE_NHHHH@Z CBaseCombatWeapon::sub_10253b70
+0x1000c383 func   ??1CBaseEntityList@@QAE@XZ CBaseEntityList::~CBaseEntityList
 0x1000c383 func   ?sub_100f9c40@CBaseEntityList@@QAEXXZ CBaseEntityList::sub_100f9c40
 0x1000c388 func   ?vfunc414@CBasePlayer@@UAEXPAVCBaseEntity@@@Z CBasePlayer::vfunc414
 0x1000c392 func   ?sub_102c42a0@CAI_BaseNPCTroika@@QAEXHPAVCBaseAnimating@@HH@Z CAI_BaseNPCTroika::sub_102c42a0
