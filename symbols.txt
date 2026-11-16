@@ -5433,6 +5433,7 @@
 0x10007e46 func   ?sub_101afff0@CSoundSysIface@@QAEXXZ CSoundSysIface::sub_101afff0
 0x10007e4b func   ?sub_1006cb10@CUnk_1006cb10@@QAEXH@Z CUnk_1006cb10::sub_1006cb10
 0x10007e50 func   ?sub_102bf770@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_102bf770
+0x10007e55 func   ??0CUnknown100eb490@@QAE@XZ CUnknown100eb490::CUnknown100eb490
 0x10007e55 func   ?sub_100eb440@@YIPAUCZeroedView@@PAU1@@Z sub_100eb440
 0x10007e5a func   ?sub_102ae310@@YIXPAUHolder@@@Z sub_102ae310
 0x10007e5f func   ?vfunc104@CPropRadio@@UAEXXZ CPropRadio::vfunc104
