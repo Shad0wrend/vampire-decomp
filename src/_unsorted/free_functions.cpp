@@ -235018,6 +235018,79 @@ void __stdcall sub_102ea600(CRBTree12Entry_102ec4a0 search)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102eacf0 size=0x385
+#include "CRBTree12Entry_102ec4a0.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "utlrbtree.h"
+
+typedef CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> Tree;
+extern Tree g_10934014;
+
+inline void RemoveAt_X(Tree &t, unsigned short e)
+{
+	if (e != t.InvalidIndex())
+	{
+		t.RemoveNode(e);
+		t.FreeNode(e);
+		--t.m_NumElements;
+	}
+}
+
+
+struct LinksS_102eacf0 { unsigned short m_Left, m_Right, m_Parent, m_Tag; };
+extern LinksS_102eacf0 g_10934040;
+extern unsigned char g_109f0771;
+
+inline const LinksS_102eacf0 &RLinks_X(Tree &t, unsigned short i)
+{
+	if (!(g_109f0771 & 1)) {
+		g_109f0771 |= 1;
+		g_10934040.m_Left = t.InvalidIndex();
+		g_10934040.m_Right = t.InvalidIndex();
+		g_10934040.m_Parent = t.InvalidIndex();
+		g_10934040.m_Tag = 1;
+	}
+	return (i != t.InvalidIndex()) ? *(LinksS_102eacf0 *)&t.m_Elements[i] : g_10934040;
+}
+
+// Second compare reads the element straight from m_pMemory (see sub_102ea600): no Base() return temp, so the load is
+// a scratch pick, not a colour candidate.
+inline CRBTree12Entry_102ec4a0 &Elem_X(Tree &t, unsigned short i)
+{
+	return t.m_Elements.m_pMemory[i].m_Data;
+}
+
+inline unsigned short Find_X(Tree &t, CRBTree12Entry_102ec4a0 const &search)
+{
+	unsigned short current = t.m_Root;
+	while (current != t.InvalidIndex()) {
+		if (t.m_LessFunc(search, t.Element(current)))
+			current = t.LeftChild(current);
+		else if (t.m_LessFunc(Elem_X(t, current), search))
+			current = RLinks_X(t, current).m_Right;
+		else
+			break;
+	}
+	return current;
+}
+
+inline bool Remove_X(Tree &t, CRBTree12Entry_102ec4a0 const &search)
+{
+	unsigned short node = Find_X(t, search);
+	if (node == t.InvalidIndex())
+		return false;
+	RemoveAt_X(t, node);
+	return true;
+}
+
+// TARGET: sub_102eacf0
+void sub_102eacf0(CRBTree12Entry_102ec4a0 search)
+{
+	Remove_X(g_10934014, search);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eb170 size=0x107
 #include "utlrbtree.h"
 #include "CRBTree12Entry_102ec4a0.h"

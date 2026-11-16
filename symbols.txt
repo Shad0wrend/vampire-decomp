@@ -2678,6 +2678,7 @@
 0x10004647 func   ?vfunc142@CAI_BaseNPCTroika@@UAEHH@Z CAI_BaseNPCTroika::vfunc142
 0x1000464c func   ?sub_10086fb0@@YAXXZ sub_10086fb0
 0x10004651 func   ?vfunc259@CNPC_VWerewolf@@QAEXPAH@Z CNPC_VWerewolf::vfunc259
+0x10004656 func   ?sub_102eacf0@@YAXUCRBTree12Entry_102ec4a0@@@Z sub_102eacf0
 0x1000465b func   ?sub_10139b00@@YAXPBVVector@@H@Z sub_10139b00
 0x10004660 func   ?vfunc113@CFuncParticle@@QAEXXZ CFuncParticle::vfunc113
 0x10004665 func   ?sub_1033f270@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033f270
