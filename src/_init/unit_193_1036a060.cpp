@@ -41,6 +41,11 @@ extern const float g_104ada64;
 float g_1093aa88 = g_104ada64 * g_104ada64;
 // END FUNCTION
 
+// FUNCTION: 0x1036e530 size=0x5
+extern const float g_104ada68;
+float g_1093aa0c = g_104ada68 * g_104ada68;
+// END FUNCTION
+
 // FUNCTION: 0x1036eb50 size=0x5
 int sub_1036eb90(void);
 int g_1093a8d4 = ((int (*)(int))sub_1036eb90)(0);
