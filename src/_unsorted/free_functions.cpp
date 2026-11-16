@@ -234961,6 +234961,63 @@ void __stdcall sub_102ea5e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102ea600 size=0x389
+#include "CRBTree12Entry_102ec4a0.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "utlrbtree.h"
+
+typedef CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> Tree_102ea600;
+extern Tree_102ea600 g_10934014;
+
+inline void RemoveAt_102ea600(Tree_102ea600 &t, unsigned short elem)
+{
+	if (elem != t.InvalidIndex()) {
+		t.RemoveNode(elem);
+		t.FreeNode(elem);
+		--t.m_NumElements;
+	}
+}
+
+// The game's Find reads the element of the second compare straight from m_pMemory (no CUtlMemory::Base() return
+// temp): through Base() that load becomes a colour candidate and lands in eax; as a plain tree temp it is a scratch
+// pick (ecx) and the eax/ecx/edx rotation lines up with the game.
+inline CRBTree12Entry_102ec4a0 &Elem_102ea600(Tree_102ea600 &t, unsigned short i)
+{
+	return t.m_Elements.m_pMemory[i].m_Data;
+}
+
+inline unsigned short Find_102ea600(Tree_102ea600 &t, CRBTree12Entry_102ec4a0 const &search)
+{
+	unsigned short current = t.m_Root;
+	while (current != t.InvalidIndex()) {
+		if (t.m_LessFunc(search, t.Element(current)))
+			current = t.LeftChild(current);
+		else if (t.m_LessFunc(Elem_102ea600(t, current), search))
+			current = t.RightChild(current);
+		else
+			break;
+	}
+	return current;
+}
+
+inline bool Remove_102ea600(Tree_102ea600 &t, CRBTree12Entry_102ec4a0 const &search)
+{
+	unsigned short node = Find_102ea600(t, search);
+	if (node != t.InvalidIndex()) {
+		RemoveAt_102ea600(t, node);
+		return true;
+	}
+	return false;
+}
+
+// TARGET: sub_102ea600
+void __stdcall sub_102ea600(CRBTree12Entry_102ec4a0 search)
+{
+	Remove_102ea600(g_10934014, search);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eb170 size=0x107
 #include "utlrbtree.h"
 #include "CRBTree12Entry_102ec4a0.h"

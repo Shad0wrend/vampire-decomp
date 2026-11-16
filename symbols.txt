@@ -7061,6 +7061,7 @@
 0x10009ec1 func   ?sub_1012c900@@YAXPAD@Z sub_1012c900
 0x10009ec6 func   ?sub_10078540@CUnknown10078540@@QAEXH@Z CUnknown10078540::sub_10078540
 0x10009ecb func   ?vfunc78@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc78
+0x10009ed0 func   ?sub_102ea600@@YGXUCRBTree12Entry_102ec4a0@@@Z sub_102ea600
 0x10009ed5 func   ?sub_102277a0@CUnknown10750cb4@@QAEXPAVCBaseEntity@@@Z CUnknown10750cb4::sub_102277a0
 0x10009eda func   ?sub_101ead30@CUnknown101ead30@@QAE_NXZ CUnknown101ead30::sub_101ead30
 0x10009edf func   ?sub_1006c4f0@CUnit1006c4f0@@QAEXPBD@Z CUnit1006c4f0::sub_1006c4f0
