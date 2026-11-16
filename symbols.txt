@@ -13277,6 +13277,7 @@
 0x10011dba func   ?vfunc5@CNPC_VHumanCombatant@@QAEPAV1@I@Z CNPC_VHumanCombatant::vfunc5
 0x10011dbf func   ?sub_103674c0@CNPC_VBatSwarmFwd@@QAEXH@Z CNPC_VBatSwarmFwd::sub_103674c0
 0x10011dc4 func   ?vfunc516@CAI_BaseNPCTroika@@UAEMXZ CAI_BaseNPCTroika::vfunc516
+0x10011dce func   ??0CUnknown10057680@@QAE@XZ CUnknown10057680::CUnknown10057680
 0x10011dce func   ?sub_10057660@CUnknown10057680@@QAEPAV1@XZ CUnknown10057680::sub_10057660
 0x10011dd3 func   ?vfunc14@CAI_Motor@@UAEXPAVCBaseEntity@@MMM@Z CAI_Motor::vfunc14
 0x10011dd8 func   ?sub_101ceb70@@YAXH@Z sub_101ceb70
