@@ -25,3 +25,9 @@ ConVar g_10739bd8("debug_melee_combat_level", "0", 0, "Set > 0 to override dice 
 #include "ConVar.h"
 ConVar g_10739c20("debug_soak_level", "0", 0, "Set > 0 to override dice rolled for all soak checks.");
 // END FUNCTION
+
+// FUNCTION: 0x101e4d70 size=0xa
+#define PCD_INITIALIZERS
+#include "CVFeatList_t.h"
+CVFeatList_t g_10739d08;
+// END FUNCTION
