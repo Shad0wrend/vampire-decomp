@@ -7062,6 +7062,7 @@
 0x10009fd9 func   ?vfunc327@CBaseCombatWeapon@@UAEXXZ CBaseCombatWeapon::vfunc327
 0x10009fde func   _npc_VGhoulCroucher npc_VGhoulCroucher
 0x10009fe3 func   ?vfunc267@CBaseVampireSkillEntity@@QAEPAHPAHPAVCBaseEntity@@@Z CBaseVampireSkillEntity::vfunc267
+0x10009fe8 func   ??0CTESmoke@@QAE@PBD@Z CTESmoke::CTESmoke
 0x10009fe8 func   ?sub_10067010@CTESmoke@@QAEPAV1@PBD@Z CTESmoke::sub_10067010
 0x10009fed func   _info_node_sabbat_top info_node_sabbat_top
 0x10009ff2 func   ?sub_101bb370@CSoundEnt@@SAPAUCSound@@HPBVVector@@@Z CSoundEnt::sub_101bb370
