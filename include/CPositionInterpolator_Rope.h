@@ -1,5 +1,6 @@
 // CPositionInterpolator_Rope (RTTI .?AVCPositionInterpolator_Rope@@): rope position interpolator, base IPositionInterpolator.
 #pragma once
+#include "PcdVirtual.h"	// PCD_PURE: the interpolator globals' classes are not abstract in the initializer units
 #include "CUnknown102496a0.h"
 #include "CBaseRopePhysics.h"	// CRopeNode
 
@@ -8,11 +9,11 @@ class CRopeDelegate;
 class IPositionInterpolator
 {
 public:
-	virtual void vfunc0() = 0;
-	virtual void vfunc1() = 0;
-	virtual void vfunc2(int index, const Vector *pPos) = 0;	// stores the end point (0 or 1)
-	virtual void vfunc3(float t, Vector *pOut) = 0;	// the position at t (0..1) along the rope
-	virtual char vfunc4(const char *pKey, const char *pValue) = 0;
+	virtual void vfunc0() PCD_PURE;
+	virtual void vfunc1() PCD_PURE;
+	virtual void vfunc2(int index, const Vector *pPos) PCD_PURE;	// stores the end point (0 or 1)
+	virtual void vfunc3(float t, Vector *pOut) PCD_PURE;	// the position at t (0..1) along the rope
+	virtual char vfunc4(const char *pKey, const char *pValue) PCD_PURE;
 	int m_unk0004;
 };
 
