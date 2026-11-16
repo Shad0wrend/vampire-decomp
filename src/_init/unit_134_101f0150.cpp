@@ -42,3 +42,9 @@ CUnknown1073dc28 g_1073dc00;
 #include "CUnknown1073dc28.h"
 CUnknown1073dc28 g_1074b330;
 // END FUNCTION
+
+// FUNCTION: 0x101f34c0 size=0xa
+#define PCD_INITIALIZERS
+#include "CUnk101f5ed0.h"
+CUnk101f5ed0 g_1073dd58;
+// END FUNCTION
