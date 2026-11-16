@@ -6538,6 +6538,7 @@
 0x10009462 func   ?sub_101d0630@@YAXPAEPBD@Z sub_101d0630
 0x10009467 func   ?sub_100b1380@@YI_NPAD@Z sub_100b1380
 0x1000946c func   ?sub_10108fd0@@YA_NHH@Z sub_10108fd0
+0x10009471 func   ??1S4@@QAE@XZ S4::~S4
 0x1000947b func   _item_g_milligans_businesscard item_g_milligans_businesscard
 0x10009480 func   ?sub_10324190@CBaseCombatCharacter@@QAE_NPAVCBaseCombatWeapon@@@Z CBaseCombatCharacter::sub_10324190
 0x10009485 func   ?sub_10030ba0@CCollisionEvent@@QAEXPAX000@Z CCollisionEvent::sub_10030ba0
