@@ -349,6 +349,7 @@
 0x1000171c func   ?vfunc103@CLogicCase@@UAEXXZ CLogicCase::vfunc103
 0x10001721 func   ?vfunc130@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc130
 0x10001726 func   _filter_activator_name filter_activator_name
+0x1000172b func   ??0CUnknown101af9b0@@QAE@XZ CUnknown101af9b0::CUnknown101af9b0
 0x1000172b func   ?sub_101af9b0@@YIPADPAD@Z sub_101af9b0
 0x10001730 func   ?vfunc601@CNPC_VGargoyle@@UAEXH@Z CNPC_VGargoyle::vfunc601
 0x10001735 func   ?sub_102a9f00@CUnknown102a9f00@@QAEPAXXZ CUnknown102a9f00::sub_102a9f00
