@@ -12902,6 +12902,7 @@
 0x10011644 func   ?sub_10265a40@@YIXPAVCBaseEntity@@@Z sub_10265a40
 0x10011649 func   ?sub_101e8bd0@CUnknown101e8bd0@@QAEMXZ CUnknown101e8bd0::sub_101e8bd0
 0x1001164e func   ?sub_1032e9f0@CBaseCombatCharacter@@QAEXHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1032e9f0
+0x10011653 func   ??1CExperienceTable@@QAE@XZ CExperienceTable::~CExperienceTable
 0x10011653 func   ?sub_10222210@CExperienceTable@@QAEXXZ CExperienceTable::sub_10222210
 0x10011658 func   ?sub_10293e80@CTroikaVFunc527@@QAE_NPAX@Z CTroikaVFunc527::sub_10293e80
 0x1001165d func   ?sub_10249340@CRopeSimBase@@QAEXH@Z CRopeSimBase::sub_10249340
