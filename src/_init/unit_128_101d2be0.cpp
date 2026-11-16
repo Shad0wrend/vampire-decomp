@@ -12,6 +12,12 @@ ConVar g_10738960("r_visualizetraces", "0", 8192);
 CUnknown101d54f0 g_10738d10;
 // END FUNCTION
 
+// FUNCTION: 0x101d5ff0 size=0xa
+#define PCD_INITIALIZERS
+#include "CUnknown101d6bd0.h"
+CUnknown101d6bd0 g_10738cf0;
+// END FUNCTION
+
 // FUNCTION: 0x101d7950 size=0xa
 #include "ConCommand.h"
 void sub_101d77d0(void);
