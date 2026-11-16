@@ -11873,6 +11873,7 @@
 0x100102f8 func   ?vfunc285@CBaseFlex@@UAEXH@Z CBaseFlex::vfunc285
 0x100102fd func   ?vfunc180@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::vfunc180
 0x10010302 func   ?sub_10182210@CBasePlayerUnit10182210@@QAEHH@Z CBasePlayerUnit10182210::sub_10182210
+0x10010307 func   ??0CTEBeamPoints@@QAE@PBD@Z CTEBeamPoints::CTEBeamPoints
 0x10010307 func   ?sub_1005bf10@CTEBeamPoints@@QAEPAV1@PBD@Z CTEBeamPoints::sub_1005bf10
 0x1001030c func   ?vfunc24@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHH@Z CTempEntsSystem::vfunc24
 0x10010311 func   _item_g_bluebloodpack item_g_bluebloodpack
