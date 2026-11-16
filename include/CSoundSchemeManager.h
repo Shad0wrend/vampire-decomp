@@ -4,6 +4,34 @@
 
 struct CSoundFadeItem;
 
+#ifdef PCD_INITIALIZERS	// the initializer units: Source's CAutoGameSystem base and the three CUtlVectors
+#include "GameSystemRoot.h"
+#include "utlvector.h"
+
+struct CSoundSchemeManager_LoopTrack	// the 0x58-byte loop-track records (+0x174)
+{
+	char m_data[0x58];
+};
+
+struct CSoundSchemeManager_RandomSound	// the 0x20-byte random-sound records (+0x188)
+{
+	char m_data[0x20];
+};
+
+struct CSoundSchemeManager_Entry19c	// the records of the vector at +0x19c (size not read yet)
+{
+	int m_data;
+};
+
+class CSoundSchemeManager : public CAutoGameSystem
+{
+public:
+	char m_pad0008[0x174 - 8];
+	CUtlVector<CSoundSchemeManager_LoopTrack> m_LoopTracks;	// 0x174
+	CUtlVector<CSoundSchemeManager_RandomSound> m_RandomSounds;	// 0x188
+	CUtlVector<CSoundSchemeManager_Entry19c> m_19c;	// 0x19c
+};
+#else
 class CSoundSchemeManager
 {
 public:
@@ -42,3 +70,4 @@ public:
 	int m_nRandomCount;	// 0x0194: number of random sounds
 	void *m_pElements;	// 0x0198
 };
+#endif
