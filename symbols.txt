@@ -15013,6 +15013,7 @@
 0x10014015 func   ?vfunc27@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEHH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc27
 0x1001401a func   ?vfunc12@CServerGameClients@@UAEPAXPAX@Z CServerGameClients::vfunc12
 0x10014024 func   ?sub_101e7e80@CUnknown101e7e80@@QAEMXZ CUnknown101e7e80::sub_101e7e80
+0x10014029 func   ?Purge@?$CUtlMemory@UCDamageInflictor_t@@@@QAEXXZ CUtlMemory<CDamageInflictor_t>::Purge
 0x10014029 func   ?sub_10032d70@UtlMem@@QAEXXZ UtlMem::sub_10032d70
 0x1001402e func   ?sub_102ee1c0@CUnknown102ee120@@QAEXH@Z CUnknown102ee120::sub_102ee1c0
 0x10014033 func   ?sub_103edf20@@YIXPAUCHolder103edf20@@@Z sub_103edf20
