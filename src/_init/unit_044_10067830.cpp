@@ -18,3 +18,9 @@ SendTable g_106c55e0;
 int sub_100679a0(void);
 int g_106c55dc = ((int (*)(int))sub_100679a0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10067af0 size=0xa
+#define PCD_INITIALIZERS
+#include "CTESparks.h"
+CTESparks g_106c5618("Sparks");
+// END FUNCTION
