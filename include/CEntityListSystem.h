@@ -2,6 +2,10 @@
 // only what matched code needs, as plain members.
 #pragma once
 
+#ifdef PCD_INITIALIZERS
+#include "GameSystemRoot.h"	// the initializer units: Source's CAutoGameSystem root
+#endif
+
 struct CEntityListSystem_Ent
 {
 	char m_pad0000[0x26b];
@@ -10,10 +14,15 @@ struct CEntityListSystem_Ent
 };
 
 class CEntityListSystem
+#ifdef PCD_INITIALIZERS
+	: public CAutoGameSystem	// the bases the flat model leaves out
+#endif
 {
 public:
+#ifndef PCD_INITIALIZERS
 	char m_pad0000[4];
 	CEntityListSystem_Ent **m_pEntities;	// 0x04: pending entity list
+#endif
 	char m_pad0008[8];
 	int m_nEntities;	// 0x10
 

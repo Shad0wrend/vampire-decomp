@@ -2,7 +2,14 @@
 // (CAutoGameSystem -> CBaseGameSystem -> IGameSystem) are not modelled; 9 primary vtable slots.
 #pragma once
 
+#ifdef PCD_INITIALIZERS
+#include "GameSystemRoot.h"	// the initializer units: Source's CAutoGameSystem root
+#endif
+
 class PyServerSystem
+#ifdef PCD_INITIALIZERS
+	: public CAutoGameSystem	// the bases the flat model leaves out
+#endif
 {
 public:
 	virtual bool vfunc0();
