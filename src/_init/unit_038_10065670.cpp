@@ -18,3 +18,9 @@ SendTable g_106c480c;
 int sub_100657e0(void);
 int g_106c4808 = ((int (*)(int))sub_100657e0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x100658b0 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEInspectionFX.h"
+CTEInspectionFX g_106c4828("InspectionFX");
+// END FUNCTION
