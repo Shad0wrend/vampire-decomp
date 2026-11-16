@@ -7529,6 +7529,7 @@
 0x1000a9e3 func   ?sub_103a07f0@CThisView103a07f0@@QAE_NPAUNewsKV@@PAUNewsEntry@@@Z CThisView103a07f0::sub_103a07f0
 0x1000a9e8 func   ?vfunc0@CPhysConstraintEvents@@UAEXPAVIPhysicsConstraint@@@Z CPhysConstraintEvents::vfunc0
 0x1000a9f7 func   ?sub_10197510@@YAPAHHH@Z sub_10197510
+0x1000a9fc func   ??1CTEBeamPoints@@QAE@XZ CTEBeamPoints::~CTEBeamPoints
 0x1000a9fc func   ?sub_1005bf80@CUnknown1005bf80@@QAEHXZ CUnknown1005bf80::sub_1005bf80
 0x1000aa01 func   ?sub_102c4310@CAI_BaseNPCTroika@@QAEXHHHHH@Z CAI_BaseNPCTroika::sub_102c4310
 0x1000aa06 func   ?sub_1011e8f0@@YAXPAURay_t@@IPAXHPAUCGameTrace@@@Z sub_1011e8f0
