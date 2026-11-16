@@ -18,3 +18,9 @@ SendTable g_106c383c;
 int sub_10063500(void);
 int g_106c3838 = ((int (*)(int))sub_10063500)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10063800 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEShatterSurface.h"
+CTEShatterSurface g_106c3870("Surface Shatter");
+// END FUNCTION
