@@ -3660,6 +3660,7 @@
 0x10005aec func   ?sub_10197280@@YAPAUPyObj@@PAU1@0@Z sub_10197280
 0x10005af1 func   ?sub_10389650@@YADXZ sub_10389650
 0x10005af6 func   ?sub_100c4160@@YAMPAXHMPAM@Z sub_100c4160
+0x10005afb func   ??0CTEFizz@@QAE@PBD@Z CTEFizz::CTEFizz
 0x10005afb func   ?sub_10061f70@CTEFizz@@QAEPAV1@H@Z CTEFizz::sub_10061f70
 0x10005b00 func   ?vfunc80@CEntityFlame@@UAEHXZ CEntityFlame::vfunc80
 0x10005b05 func   ?sub_101d6730@@YAXXZ sub_101d6730
