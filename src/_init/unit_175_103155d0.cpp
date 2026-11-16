@@ -88,6 +88,14 @@ int sub_10321a60(void);
 int g_10936dc0 = ((int (*)(int))sub_10321a60)(0);
 // END FUNCTION
 
+// FUNCTION: 0x10321ee0 size=0xa
+#define PCD_INITIALIZERS
+#include "utlvector.h"
+#include "PcdGuarded.h"
+template <> CUtlVector<int> PcdGuarded<0x109370bc, CUtlVector<int> >::s_object(8, 8);
+template <> CUtlVector<int> PcdGuarded<0x10937af4, CUtlVector<int> >::s_object(8, 8);
+// END FUNCTION
+
 // FUNCTION: 0x10322140 size=0x5
 int sub_10322180(void);
 int g_10936dbc = ((int (*)(int))sub_10322180)(0);
