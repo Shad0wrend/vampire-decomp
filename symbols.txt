@@ -4742,6 +4742,7 @@
 0x10007031 func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<SaveRestoreBlockHeader_t,CUtlMemory<SaveRestoreBlockHeader_t> >,9>::vfunc0
 0x10007036 func   _item_g_stake item_g_stake
 0x1000703b func   ?sub_1017a290@@YAXXZ sub_1017a290
+0x10007040 func   ??0CUnknown102dcf50@@QAE@XZ CUnknown102dcf50::CUnknown102dcf50
 0x10007040 func   ?sub_102dcf50@CUnknown102dcf50@@QAEPAXXZ CUnknown102dcf50::sub_102dcf50
 0x10007045 func   ?vfunc5@CAI_BaseNPCTroika@@UAEPAVCAI_BaseNPC@@I@Z CAI_BaseNPCTroika::vfunc5
 0x1000704a func   ?sub_100ecdf0@SHolder@@QAEMH_N@Z SHolder::sub_100ecdf0
