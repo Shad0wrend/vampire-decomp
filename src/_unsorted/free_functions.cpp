@@ -85161,6 +85161,71 @@ void sub_10129dc0(CBaseEntity *pEntity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a1d0 size=0x352
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CGib.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+
+extern Vector g_1070ba40;
+extern float g_1070d1b0[3];
+
+struct GibCollView { char m_pad[0x270]; CCollisionProperty m_Collision; };
+#define COLL(p) (((GibCollView *)(p))->m_Collision)
+
+// TARGET: CGib::sub_1012a1d0
+void CGib::sub_1012a1d0(CBaseEntity *pOwner, float flSpeedMin, float flSpeedMax)
+{
+	if (pOwner) {
+		CEntityVSlots *po = (CEntityVSlots *)pOwner;
+		Vector mins, maxs;
+		COLL(pOwner).vfunc15(&mins, &maxs);
+		{
+			Vector *pSize;
+			Vector spot(mins.x + (enginerandom->vfunc1(0, 1.0f)) * (pSize = po->slot214())->x,
+				enginerandom->vfunc1(0, 1.0f) * po->slot214()->y + mins.y,
+				(mins.z + (enginerandom->vfunc1(0, 1.0f) * po->slot214()->z)) + 1.0f);
+			vfunc62(&spot.x);
+		}
+		Vector dir = g_1070ba40 * -1.0f;
+		dir.x += enginerandom->vfunc1(-0.25f, 0.25f);
+		dir.y += enginerandom->vfunc1(-0.25f, 0.25f);
+		dir.z += enginerandom->vfunc1(-0.25f, 0.25f);
+		dir = enginerandom->vfunc1(flSpeedMax, flSpeedMin) * dir;
+		Vector ang = *(Vector *)g_1070d9d0;
+		ang.x = enginerandom->vfunc1(100.0f, 200.0f);
+		ang.y = enginerandom->vfunc1(100.0f, 300.0f);
+		m_n730 = po->slot145();
+		int health = pOwner->m_iHealth;
+		if (-50 < health)
+			dir = 0.7f * dir;
+		else if (health > -200)
+			dir = dir + dir;
+		else
+			dir = 4.0f * dir;
+		sub_100b2e30(&dir.x);
+		sub_100b2f50(&ang.x);
+		sub_100aaa40(1);
+		{
+			ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
+			COLL(this).sub_100dc480(2);
+		}
+		sub_1009edc0(g_1070d1b0, g_1070d1b0);
+	}
+	sub_100b3b00();
+	sub_10129870();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a610 size=0x99
 #include "CGib.h"
 
