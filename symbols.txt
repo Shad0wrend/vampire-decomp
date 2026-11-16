@@ -17317,6 +17317,7 @@
 0x10471730 vtable ??_7CPlayerMove@@6B@ CPlayerMove::vftable
 0x10471748 vtable ??_7CLagCompensationManager@@6BILagCompensationManager@@@ CLagCompensationManager::vftable
 0x10471758 vtable ??_7CLagCompensationManager@@6B@ CLagCompensationManager::vftable
+0x10471758 data   ??_7CLagCompensationManager@@6BCAutoGameSystem@@@ ??_7CLagCompensationManager@@6BCAutoGameSystem@@@
 0x1047178c vtable ??_7CPlayerResource@@6B@ CPlayerResource::vftable
 0x10471c20 vtable ??_7CSkyList@@6B@ CSkyList::vftable
 0x10471c54 vtable ??_7CSkyCamera@@6B@ CSkyCamera::vftable
