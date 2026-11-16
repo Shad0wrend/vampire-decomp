@@ -42,3 +42,9 @@ SendTable g_106c4238;
 int sub_10064ca0(void);
 int g_106c4234 = ((int (*)(int))sub_10064ca0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10064d70 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEExplosiveGunshotDecal.h"
+CTEExplosiveGunshotDecal g_106c41e8("Explosive Gunshot Decal");
+// END FUNCTION
