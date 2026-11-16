@@ -14851,6 +14851,7 @@
 0x10013e1c func   ?sub_10165790@CBasePlayer@@QAEHPAVCBaseEntity@@@Z CBasePlayer::sub_10165790
 0x10013e21 func   ?vfunc173@CLight@@QAEXHHHH@Z CLight::vfunc173
 0x10013e26 func   ?vfunc5@CItemGKeyring@@QAEPAV1@I@Z CItemGKeyring::vfunc5
+0x10013e2b func   ??1CUnknown1006ccc0@@QAE@XZ CUnknown1006ccc0::~CUnknown1006ccc0
 0x10013e30 func   ?sub_104114d0@@YA_NPAVCBaseEntity@@PAX@Z sub_104114d0
 0x10013e35 func   ??0StatDefault3@@QAE@H@Z StatDefault3::StatDefault3
 0x10013e3a func   ?sub_101d8a70@CUnknown101d8a70@@QAEPAXPAX@Z CUnknown101d8a70::sub_101d8a70
