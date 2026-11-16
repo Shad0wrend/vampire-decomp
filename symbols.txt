@@ -10012,6 +10012,7 @@
 0x1000dbfc func   ?sub_1002e3a0@@YAPAXPAVCBaseEntity@@HPBM1PAUSSolid@@@Z sub_1002e3a0
 0x1000dc01 func   ?sub_1007ceb0@CUnknown1007ce20@@QAEMXZ CUnknown1007ce20::sub_1007ceb0
 0x1000dc06 func   ?sub_1042fe90@@YAII@Z sub_1042fe90
+0x1000dc10 func   ??1CTESparks@@QAE@XZ CTESparks::~CTESparks
 0x1000dc10 func   ?sub_10067690@CUnknown10067690@@QAEHXZ CUnknown10067690::sub_10067690
 0x1000dc15 func   ?sub_102e9fb0@CTreeUnit102e9fb0@@QAEXXZ CTreeUnit102e9fb0::sub_102e9fb0
 0x1000dc1a func   ?sub_100cfda0@CEventQueue@@QAEHPAVIEQRestore@@@Z CEventQueue::sub_100cfda0
