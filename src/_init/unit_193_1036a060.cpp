@@ -36,6 +36,11 @@ ConVar g_1093a980("changbros_force_teleport", "0", 0);
 ConVar g_1093a9c8("changbros_force_ledge_attack", "0", 0);
 // END FUNCTION
 
+// FUNCTION: 0x1036e4e0 size=0x5
+extern const float g_104ada64;
+float g_1093aa88 = g_104ada64 * g_104ada64;
+// END FUNCTION
+
 // FUNCTION: 0x1036eb50 size=0x5
 int sub_1036eb90(void);
 int g_1093a8d4 = ((int (*)(int))sub_1036eb90)(0);
