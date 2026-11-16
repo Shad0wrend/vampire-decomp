@@ -11101,6 +11101,7 @@
 0x1000f222 func   ?sub_100f0f30@@YIXPAUCSlots@@@Z sub_100f0f30
 0x1000f227 func   ?sub_10362670@CNPC_VAsianVampire@@QAE_NXZ CNPC_VAsianVampire::sub_10362670
 0x1000f231 func   ?sub_101bbcb0@CUnknown101bbcb0@@QAEMXZ CUnknown101bbcb0::sub_101bbcb0
+0x1000f236 func   ??1CTETracer@@QAE@XZ CTETracer::~CTETracer
 0x1000f236 func   ?sub_1006a470@CUnknown1006a470@@QAEHXZ CUnknown1006a470::sub_1006a470
 0x1000f23b func   ?vfunc29@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HH@Z CTempEntsSystem::vfunc29
 0x1000f240 func   ?sub_1030bc00@@YIHPAD@Z sub_1030bc00
