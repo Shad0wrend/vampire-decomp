@@ -12484,6 +12484,7 @@
 0x10010efb func   ?sub_1010be40@@YAPAHXZ sub_1010be40
 0x10010f00 func   ?vfunc4@CPhysSaveRestoreBlockHandler@@QAEXXZ CPhysSaveRestoreBlockHandler::vfunc4
 0x10010f05 func   ?sub_10111ba0@CBreakableSurface@@QAEXHPBVVector@@@Z CBreakableSurface::sub_10111ba0
+0x10010f0a func   ??1CTEExplosiveGunshotDecal@@QAE@XZ CTEExplosiveGunshotDecal::~CTEExplosiveGunshotDecal
 0x10010f0a func   ?sub_10064aa0@CUnknown10064aa0@@QAEHXZ CUnknown10064aa0::sub_10064aa0
 0x10010f0f func   ?vfunc614@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::vfunc614
 0x10010f14 func   _beam beam
