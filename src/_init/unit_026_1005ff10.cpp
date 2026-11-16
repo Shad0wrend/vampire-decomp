@@ -18,3 +18,9 @@ SendTable g_106c18e0;
 int sub_10060080(void);
 int g_106c18dc = ((int (*)(int))sub_10060080)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10060260 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEBubbleTrail.h"
+CTEBubbleTrail g_106c18a8("Bubble Trail");
+// END FUNCTION
