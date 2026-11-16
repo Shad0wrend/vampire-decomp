@@ -10319,6 +10319,7 @@
 0x1000e2b9 func   ?sub_10382b30@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::sub_10382b30
 0x1000e2be func   ?vfunc418@CAI_BaseNPC@@UAEMM@Z CAI_BaseNPC::vfunc418
 0x1000e2c3 func   ?vfunc103@CCineAISchedule@@QAEXXZ CCineAISchedule::vfunc103
+0x1000e2c8 func   ??1CTEBubbles@@QAE@XZ CTEBubbles::~CTEBubbles
 0x1000e2c8 func   ?sub_1005f640@CUnknown1005f640@@QAEHXZ CUnknown1005f640::sub_1005f640
 0x1000e2cd func   ?sub_103c49b0@@YIPAXPAX@Z sub_103c49b0
 0x1000e2d2 func   ?sub_100ddc00@CCollisionProperty@@QAEXXZ CCollisionProperty::sub_100ddc00
