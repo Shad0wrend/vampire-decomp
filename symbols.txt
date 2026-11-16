@@ -15080,6 +15080,7 @@
 0x100142ef func   ?vfunc362@CWeaponMelee_GargoyleFist@@UAEPAUCWeaponActivityRecord@@XZ CWeaponMelee_GargoyleFist::vfunc362
 0x100142f4 func   ?sub_100c3600@@YAXPAUStudioHdr@@PBM111HPAUmatrix3x4_t@@PAUStudioBoneMask@@@Z sub_100c3600
 0x100142f9 func   ?vfunc546@CNPC_VLasombra@@QAEHH@Z CNPC_VLasombra::vfunc546
+0x100142fe func   ?Purge@?$CUtlMemory@UCSoundSchemeManager_LoopTrack@@@@QAEXXZ CUtlMemory<CSoundSchemeManager_LoopTrack>::Purge
 0x100142fe func   ?sub_1022d010@UtlMem@@QAEXXZ UtlMem::sub_1022d010
 0x10014303 func   ?sub_10388130@@YIPAXPAX@Z sub_10388130
 0x10014308 func   ?sub_101c4dd0@CBaseTrigger@@QAEXXZ CBaseTrigger::sub_101c4dd0
