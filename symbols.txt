@@ -4703,6 +4703,7 @@
 0x10006f78 func   ?sub_103f2de0@@YAHXZ sub_103f2de0
 0x10006f7d func   ?vfunc103@CSmallHullTrigger@@UAEXXZ CSmallHullTrigger::vfunc103
 0x10006f82 func   ?sub_100fb850@S100fb850@@QAEXAAUinputdata_t@@@Z S100fb850::sub_100fb850
+0x10006f87 func   ??1CUnknown101f7910@@QAE@XZ CUnknown101f7910::~CUnknown101f7910
 0x10006f8c func   ?sub_100fa5d0@@YAXPAGPBG@Z sub_100fa5d0
 0x10006f91 func   ?vfunc80@CItemGLillyPurse@@QAEHXZ CItemGLillyPurse::vfunc80
 0x10006f96 func   ?sub_10335ea0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10335ea0
