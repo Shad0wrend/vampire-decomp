@@ -17598,6 +17598,7 @@
 0x1049d8d0 vtable ??_7CTraceFilterNavGround@@6B@ CTraceFilterNavGround::vftable
 0x1049d940 vtable ??_7CNavPropertyDatabase@@6BIEntityListener@@@ CNavPropertyDatabase::vftable
 0x1049d950 vtable ??_7CNavPropertyDatabase@@6B@ CNavPropertyDatabase::vftable
+0x1049d950 data   ??_7CNavPropertyDatabase@@6BCAutoGameSystem@@@ ??_7CNavPropertyDatabase@@6BCAutoGameSystem@@@
 0x1049d994 vtable ??_7CAI_Navigator@@6BCAI_DefMovementSink@@@ CAI_Navigator::vftable
 0x1049d9c4 vtable ??_7CAI_Navigator@@6B@ CAI_Navigator::vftable
 0x1049d9c4 data   ??_7CAI_Navigator@@6BCAI_NavComponentData@@@ ??_7CAI_Navigator@@6BCAI_NavComponentData@@@
