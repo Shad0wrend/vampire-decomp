@@ -126,6 +126,60 @@ struct CTimeEvent_t	// (key, time)
 	int m_key;
 	float m_flTime;
 };
+// The game's destroy keeps some of the vectors' Purge / RemoveAll calls out of line and opens others in place: VC6's
+// per-unit inline budget, which a unit holding only this global spends differently (no element type or order changes
+// it). For these element types only, the vectors' destructors spell the game's sequence: the out-of-line pieces are
+// called through __fastcall declarations of the game's functions by placeholder name (ecx = the object, as the member call), the memory's
+// own destructor is empty, and the in-place purge is written out.
+void __fastcall sub_10032f50(CUtlMemory<CTimeEvent_t> *pMemory);	// CUtlMemory<CTimeEvent_t>::Purge 0x10032f50
+void __fastcall sub_10032ec0(CUtlMemory<CPenetrateEvent_t> *pMemory);	// 0x10032ec0
+void __fastcall sub_10032d70(CUtlMemory<CDamageInflictor_t> *pMemory);	// 0x10032d70
+void __fastcall sub_10032c20(CUtlMemory<CDamageEvent_t> *pMemory);	// 0x10032c20
+void __fastcall sub_10032b70(CUtlMemory<CTouchEvent_t> *pMemory);	// 0x10032b70
+void __fastcall sub_10032a40(CUtlVector<CDamageEvent_t> *pVector);	// CUtlVector<CDamageEvent_t>::RemoveAll 0x10032a40
+void __fastcall sub_10032a20(CUtlVector<CTouchEvent_t> *pVector);	// 0x10032a20
+#define PCD_PURGE_IN_PLACE 	if (m_Memory.m_nGrowSize != -1) { 		if (m_Memory.m_pMemory) { 			Plat_Free((void *)m_Memory.m_pMemory); 			m_Memory.m_pMemory = 0; 		} 		m_Memory.m_nAllocationCount = 0; 	}
+template <> __forceinline CUtlMemory<CTimeEvent_t>::~CUtlMemory() {}
+template <> __forceinline CUtlMemory<CPenetrateEvent_t>::~CUtlMemory() {}
+template <> __forceinline CUtlMemory<CDamageInflictor_t>::~CUtlMemory() {}
+template <> __forceinline CUtlMemory<CDamageEvent_t>::~CUtlMemory() {}
+template <> __forceinline CUtlMemory<CTouchEvent_t>::~CUtlMemory() {}
+template <> __forceinline CUtlVector<CTimeEvent_t>::~CUtlVector()
+{
+	m_Size = 0;
+	sub_10032f50(&m_Memory);
+	m_pElements = m_Memory.m_pMemory;
+	sub_10032f50(&m_Memory);
+}
+template <> __forceinline CUtlVector<CPenetrateEvent_t>::~CUtlVector()
+{
+	m_Size = 0;
+	sub_10032ec0(&m_Memory);
+	m_pElements = m_Memory.m_pMemory;
+	sub_10032ec0(&m_Memory);
+}
+template <> __forceinline CUtlVector<CDamageInflictor_t>::~CUtlVector()
+{
+	m_Size = 0;
+	sub_10032d70(&m_Memory);
+	m_pElements = m_Memory.m_pMemory;
+	PCD_PURGE_IN_PLACE
+}
+template <> __forceinline CUtlVector<CDamageEvent_t>::~CUtlVector()
+{
+	sub_10032a40(this);
+	sub_10032c20(&m_Memory);
+	m_pElements = m_Memory.m_pMemory;
+	PCD_PURGE_IN_PLACE
+}
+template <> __forceinline CUtlVector<CTouchEvent_t>::~CUtlVector()
+{
+	sub_10032a20(this);
+	sub_10032b70(&m_Memory);
+	m_pElements = m_Memory.m_pMemory;
+	PCD_PURGE_IN_PLACE
+}
+#undef PCD_PURGE_IN_PLACE
 #endif
 
 class CCollisionEvent;
