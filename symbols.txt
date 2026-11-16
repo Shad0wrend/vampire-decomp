@@ -5678,6 +5678,7 @@
 0x100083f5 func   ?vfunc0@CTriggerTraceEnum@@UAE_NPAVCBaseEntity@@@Z CTriggerTraceEnum::vfunc0
 0x100083fa func   ?vfunc134@CInfoIntermission@@UAEXXZ CInfoIntermission::vfunc134
 0x100083ff func   ?vfunc615@CNPC_VHengeyokai@@UAE_NXZ CNPC_VHengeyokai::vfunc615
+0x10008404 func   ??1CTEBeamRingPoint@@QAE@XZ CTEBeamRingPoint::~CTEBeamRingPoint
 0x10008404 func   ?sub_1005cc30@CUnknown1005cc30@@QAEHXZ CUnknown1005cc30::sub_1005cc30
 0x1000840e func   ?sub_103f3d70@@YAHXZ sub_103f3d70
 0x10008413 func   ?vfunc404@CNPC_VPlayerController@@QAEHPAX@Z CNPC_VPlayerController::vfunc404
