@@ -18,6 +18,9 @@ struct CAI_ScheduleNode	// one schedule of the manager's list; only the id and t
 class CUnknown10936b68
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer units: the global 0x10936b68 is built by this
+	CUnknown10936b68() { m_pFirst = 0; m_n0000 = 0; }
+#endif
 	int m_n0000;	// 0x00
 	CAI_ScheduleNode *m_pFirst;	// 0x04: the first schedule
 
