@@ -18,3 +18,9 @@ SendTable g_106c1c78;
 int sub_10060880(void);
 int g_106c1c74 = ((int (*)(int))sub_10060880)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10060a40 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEDecal.h"
+CTEDecal g_106c1f38("Entity Decal");
+// END FUNCTION
