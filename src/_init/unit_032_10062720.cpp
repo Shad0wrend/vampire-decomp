@@ -18,3 +18,9 @@ SendTable g_106c2f34;
 int sub_10062890(void);
 int g_106c2f30 = ((int (*)(int))sub_10062890)(0);
 // END FUNCTION
+
+// FUNCTION: 0x100629d0 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEFogRipple.h"
+CTEFogRipple g_106c2da0("FogRipple");
+// END FUNCTION
