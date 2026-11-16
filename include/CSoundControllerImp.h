@@ -57,6 +57,29 @@ public:
 	virtual void vfunc15(int *pValue, int nCount, int nMaxBytes);	// slot 15 (+0x3c): reads nCount integers (here the number of pending commands)
 };
 
+#ifdef PCD_INITIALIZERS	// the initializer units: Source's class (game_shared/soundenvelope.cpp, 2004 SDK)
+#include "CSoundEnvelopeController.h"
+#include "GameSystemRoot.h"
+#include "utlpriorityqueue.h"
+
+struct SoundCommand_t;
+class CSoundPatch;
+
+int sub_101bc500(char **a, char **b);	// SoundCommandLessFunc (matched under this name)
+
+class CSoundControllerImp : public CSoundEnvelopeController, public CAutoGameSystem
+{
+public:
+	CSoundControllerImp()
+	{
+		m_commandList.SetLessFunc((CUtlPriorityQueue<SoundCommand_t *>::LessFunc_t)sub_101bc500);
+	}
+
+	CUtlVector<CSoundPatch *> m_soundList;	// 0x0c
+	CUtlPriorityQueue<SoundCommand_t *> m_commandList;	// 0x20
+	float m_flLastTime;	// 0x38
+};
+#else
 class CSoundControllerImp
 {
 public:
@@ -90,3 +113,4 @@ public:
 	float m_flLastTime;
 	CUtlVector4 m_DummyEnd;	// 0x20: second vector (memory +0x20, alloc +0x24, grow +0x28, size +0x2c, elements +0x30); 0x101bd980 tears it down via UtlMem::sub_101bde70 at obj+0x20 (this+0x1c of the CAutoGameSystem subobject)
 };
+#endif
