@@ -10777,6 +10777,7 @@
 0x1000eac0 func   ?sub_10031d50@@YAXPAVCBaseEntity@@HHHHMM@Z sub_10031d50
 0x1000eac5 func   ?sub_103f0590@CWeaponThrown_Chang_Energy_Ball@@QAEXXZ CWeaponThrown_Chang_Energy_Ball::sub_103f0590
 0x1000eacf func   ?vfunc373@CWeaponMelee_ZombieFists@@QAEHXZ CWeaponMelee_ZombieFists::vfunc373
+0x1000ead4 func   ??0CUnk101f5ed0@@QAE@XZ CUnk101f5ed0::CUnk101f5ed0
 0x1000ead4 func   ?sub_101f5e20@CUnk101f5ed0@@QAEPAU1@XZ CUnk101f5ed0::sub_101f5e20
 0x1000ead9 func   ?vfunc267@CRagdollProp@@UAE_NXZ CRagdollProp::vfunc267
 0x1000eade func   _logic_branch logic_branch
