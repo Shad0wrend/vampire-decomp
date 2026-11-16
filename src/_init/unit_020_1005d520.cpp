@@ -18,3 +18,9 @@ SendTable g_106c0444;
 int sub_1005d690(void);
 int g_106c0440 = ((int (*)(int))sub_1005d690)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1005d7b0 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEBeamSpline.h"
+CTEBeamSpline g_106c0358("BeamSpline");
+// END FUNCTION
