@@ -1964,6 +1964,7 @@
 0x1000380f func   ?sub_103c3cb0@@YAHXZ sub_103c3cb0
 0x10003814 func   ?sub_10239d80@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_10239d80
 0x10003819 func   ?sub_1021da40@CPropKeypad@@QAEXXZ CPropKeypad::sub_1021da40
+0x1000381e func   ??1CUnknown101f0e50@@QAE@XZ CUnknown101f0e50::~CUnknown101f0e50
 0x10003823 func   ?sub_100ac360@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100ac360
 0x10003828 func   ?sub_10097cb0@CUnknown10097cb0@@QAEXXZ CUnknown10097cb0::sub_10097cb0
 0x1000382d func   ?vfunc341@CItemKeyGeneric@@QAEXPAVCBaseCombatCharacter@@@Z CItemKeyGeneric::vfunc341
