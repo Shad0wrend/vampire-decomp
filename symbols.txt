@@ -15087,6 +15087,7 @@
 0x10014321 func   ?RotateLeft@?$CUtlRBTree@UCRBTree12Entry_102cfaf0@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_102cfaf0,unsigned short>::RotateLeft
 0x10014326 func   ?sub_101a7540@CUnit101a7540@@QAEHXZ CUnit101a7540::sub_101a7540
 0x1001432b func   ?vfunc438@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc438
+0x10014330 func   ??1CVDataRecord_1073a370@@QAE@XZ CVDataRecord_1073a370::~CVDataRecord_1073a370
 0x10014330 func   ?sub_101eda00@@YAXXZ sub_101eda00
 0x10014335 func   ?sub_101e8b10@CUnknown101e8b10@@QAEMXZ CUnknown101e8b10::sub_101e8b10
 0x1001433a func   ?vfunc365@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc365
