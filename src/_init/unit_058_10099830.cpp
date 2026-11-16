@@ -240,3 +240,8 @@ ConCommand g_106cf1f0("ent_trace_dump_buffer", sub_100b0df0, "Dumps the trace bu
 void sub_100b0f60(void);
 ConCommand g_106cebe4("ent_condition", sub_100b0f60, "Displays condition info (See Overlay Text)\n\tArguments:   \t{entity_name} / {class_name} / no argument picks what player is looking at ", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100b4190 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_106cf120;
+// END FUNCTION
