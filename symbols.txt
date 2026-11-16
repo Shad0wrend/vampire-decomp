@@ -4351,6 +4351,7 @@
 0x10006906 func   ?sub_101f25a0@@YIHPAD@Z sub_101f25a0
 0x1000690b func   ?sub_103c8f00@@YAXXZ sub_103c8f00
 0x10006910 func   ?sub_100eb030@CUnknown100eb030@@QAEPAXH@Z CUnknown100eb030::sub_100eb030
+0x10006915 func   ??0CTEBubbleTrail@@QAE@PBD@Z CTEBubbleTrail::CTEBubbleTrail
 0x10006915 func   ?sub_1005fca0@CTEBubbleTrail@@QAEPAV1@PBD@Z CTEBubbleTrail::sub_1005fca0
 0x1000691a func   ?vfunc438@CNPC_VCop@@QAEHXZ CNPC_VCop::vfunc438
 0x10006924 func   ?vfunc113@CPathKeyFrame@@QAEXXZ CPathKeyFrame::vfunc113
