@@ -6,6 +6,12 @@
 CTraitDependencyDataDescSaveDataOps g_1074eec0;
 // END FUNCTION
 
+// FUNCTION: 0x102061e0 size=0xa
+#include "VDataTable.h"
+#include "VDataRecords.h"
+CVDataTable<CVDataRecord_1074f004> g_1074f004;
+// END FUNCTION
+
 // FUNCTION: 0x10207f40 size=0x5
 int * sub_10207f80(void);
 int * g_1074f030 = ((int * (*)(int))sub_10207f80)(0);
