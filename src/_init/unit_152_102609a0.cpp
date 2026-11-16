@@ -98,6 +98,12 @@ CFastTimer g_10920338;
 SLogEntry g_1090ff60[128];
 // END FUNCTION
 
+// FUNCTION: 0x102654c0 size=0x5
+#define PCD_INITIALIZERS
+#include "SDbgSink.h"
+SDbgSink *g_109203f0 = new SDbgSink;
+// END FUNCTION
+
 // FUNCTION: 0x10265520 size=0x5
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_1090ff08(true);
