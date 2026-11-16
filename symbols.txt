@@ -10026,6 +10026,7 @@
 0x1000dce7 func   ?sub_100c6520@@YAHPAUCSeqHdr100c6520@@PBD@Z sub_100c6520
 0x1000dcf1 func   ?sub_101d9640@CUnknown101d9640@@QAEHH@Z CUnknown101d9640::sub_101d9640
 0x1000dcf6 func   ?sub_100c2bd0@@YAXHHHHHHHM@Z sub_100c2bd0
+0x1000dcfb func   ??1CTEBeamEnts@@QAE@XZ CTEBeamEnts::~CTEBeamEnts
 0x1000dcfb func   ?sub_1005b3d0@CUnknown1005b3d0@@QAEHXZ CUnknown1005b3d0::sub_1005b3d0
 0x1000dd05 func   ?vfunc136@CAI_BaseNPC@@UAEDXZ CAI_BaseNPC::vfunc136
 0x1000dd0a func   ?vfunc99@CPropDoorknob@@UAE_NHHH@Z CPropDoorknob::vfunc99
