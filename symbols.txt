@@ -997,6 +997,7 @@
 0x1000245f func   ?vfunc105@CBaseCombatCharacter@@UAEXPBD@Z CBaseCombatCharacter::vfunc105
 0x10002464 func   ?vfunc48@CBaseEntity@@UAEMXZ CBaseEntity::vfunc48
 0x10002469 func   ?vfunc81@COccultStrength@@QAEHXZ COccultStrength::vfunc81
+0x1000246e func   ?Purge@?$CUtlMemory@UCSoundScriptFile@CSoundEmitterSystemBase@@@@QAEXXZ CUtlMemory<CSoundEmitterSystemBase::CSoundScriptFile>::Purge
 0x1000246e func   ?sub_101b2070@UtlMem@@QAEXXZ UtlMem::sub_101b2070
 0x10002473 func   ?vfunc444@CNPC_VWerewolf@@UAEXPAUCNPC_VWerewolfTask@@@Z CNPC_VWerewolf::vfunc444
 0x10002478 func   ?sub_102968f0@CAI_BaseNPCTroika@@QAE_NPAVCAI_Hint@@PAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_102968f0
