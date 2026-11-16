@@ -4,7 +4,14 @@
 
 typedef void *(__cdecl *CreateInterfaceFn)(const char *pName, int *pReturnCode);
 
+#ifdef PCD_INITIALIZERS
+#include "IServerGameDLL.h"
+#endif
+
 class CServerGameDLL
+#ifdef PCD_INITIALIZERS
+	: public IServerGameDLL	// the base the matched code does not model
+#endif
 {
 public:
 	virtual void vfunc0();

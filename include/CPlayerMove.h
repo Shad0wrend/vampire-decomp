@@ -6,6 +6,9 @@ class CUserCmd;
 class CPlayerMove {
 public:
 	CPlayerMove();
+#ifdef PCD_INITIALIZERS	// the initializer units: the inline destructor the CHLPlayerMove global's destroy runs
+	virtual ~CPlayerMove() {}
+#endif
 	virtual void vfunc0();
 	virtual void vfunc1(CBasePlayer *pPlayer, CUserCmd *pCmd, void *pHelper, void *pMoveData);
 	virtual void vfunc2(CBasePlayer *pPlayer, CUserCmd *pCmd, void *pMoveData);

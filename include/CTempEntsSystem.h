@@ -3,13 +3,22 @@
 #pragma once
 #include "CUnknown1019d130.h"
 
+#ifdef PCD_INITIALIZERS
+#include "IPredictionSystem.h"
+#endif
+
 class CTempEntsSystem
+#ifdef PCD_INITIALIZERS
+	: public IPredictionSystem	// the base the matched code does not model
+#endif
 {
 public:
+#ifndef PCD_INITIALIZERS
 	char m_pad0000[0xc];
 	void *vfunc0(unsigned int flags);	// slot 0 (the deleting-destructor-shaped body at 0x10059de0)
 	CBaseEntity *m_pSuppressHost;	// 0x000c
 	int m_nSuppressCount;			// 0x0010
+#endif
 
 	void vfunc2(CUnknown1019d130 *filter, int a, int b, int c, int d);	// slot 2
 	void vfunc29(CUnknown1019d130 *filter, int a, int b);	// slot 29

@@ -10,7 +10,14 @@ struct CServerGameClients_Edict	// the engine's edict: the entity's unknown at +
 	char m_bFlag;	// 0x44
 };
 
+#ifdef PCD_INITIALIZERS
+#include "IServerGameClients.h"
+#endif
+
 class CServerGameClients
+#ifdef PCD_INITIALIZERS
+	: public IServerGameClients	// the base the matched code does not model
+#endif
 {
 public:
 	virtual void vfunc0();

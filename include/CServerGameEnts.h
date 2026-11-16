@@ -10,7 +10,14 @@ struct CServerGameEntsEdict	// an edict as the engine sees it: only the pointer 
 	struct CServerGameEntsUnknown *m_pUnk;	// 0x40
 };
 
+#ifdef PCD_INITIALIZERS
+#include "IServerGameEnts.h"
+#endif
+
 class CServerGameEnts
+#ifdef PCD_INITIALIZERS
+	: public IServerGameEnts	// the base the matched code does not model
+#endif
 {
 public:
 	virtual void vfunc0();
