@@ -23,6 +23,13 @@ int sub_101bb960(void);
 int g_1072c514 = ((int (*)(int))sub_101bb960)(0);
 // END FUNCTION
 
+// FUNCTION: 0x101bc3f0 size=0xa
+#define PCD_INITIALIZERS
+#include "Pool.h"
+#include "PcdGuarded.h"
+template <> Pool PcdGuarded<0x1072c4b0, Pool>::s_object(24, 32, 1);
+// END FUNCTION
+
 // FUNCTION: 0x101bc490 size=0x5
 int sub_101bc4d0(void);
 int g_1072c510 = ((int (*)(int))sub_101bc4d0)(0);
