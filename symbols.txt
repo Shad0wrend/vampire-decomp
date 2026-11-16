@@ -4573,6 +4573,7 @@
 0x10006ce4 func   ?sub_10095be0@CBaseAnimating@@QAEXXZ CBaseAnimating::sub_10095be0
 0x10006ce9 func   ?vfunc488@CGenericSabbat_NPC@@UAEXXZ CGenericSabbat_NPC::vfunc488
 0x10006cf3 func   ?sub_103771b0@@YADXZ sub_103771b0
+0x10006cf8 func   ??1CUnknown101d6bd0@@QAE@XZ CUnknown101d6bd0::~CUnknown101d6bd0
 0x10006d02 func   ?sub_101dc260@CElemList@@QAEPAU1@ABU1@@Z CElemList::sub_101dc260
 0x10006d07 func   ?vfunc4@CBaseEntity@@UAEPAXXZ CBaseEntity::vfunc4
 0x10006d0c func   ?vfunc440@CNPC_VDog@@QAEHH@Z CNPC_VDog::vfunc440
