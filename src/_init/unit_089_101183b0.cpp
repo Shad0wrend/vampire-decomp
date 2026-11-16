@@ -40,3 +40,8 @@ int g_1070b070 = pcd_initial_1070b070();
 #include "utlvector.h"
 CUtlVector<int> g_1070b0bc;
 // END FUNCTION
+
+// FUNCTION: 0x1011a450 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_1070b0d0;
+// END FUNCTION
