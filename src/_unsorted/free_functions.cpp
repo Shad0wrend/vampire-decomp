@@ -104030,6 +104030,81 @@ void CBasePlayer::sub_10167d70(CBaseEntity *pEnt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10167e00 size=0x167
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CNPC_VTzimisce.h"
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+#include "CCollisionProperty.h"
+#include <math.h>
+#include <string.h>
+
+#define PV_SLOTS \
+	CBP_V100(a) CBP_V10(b0) CBP_V10(b1) CBP_V10(b2) CBP_V10(b3) CBP_V10(b4) CBP_V10(b5) CBP_V10(b6) CBP_V10(b7) CBP_V10(b8) \
+	CBP_V1(c0) CBP_V1(c1) CBP_V1(c2)
+
+struct CPlayerEyeView	// the player's virtual table up to slot 193
+{
+	PV_SLOTS
+	virtual Vector vfunc193();
+};
+
+struct CUseEntView	// the used entity's virtual table up to slot 43
+{
+	CBP_V10(a0) CBP_V10(a1) CBP_V10(a2) CBP_V1(a30) CBP_V1(a31) CBP_V1(a32) CBP_V1(a33) CBP_V1(a34) CBP_V1(a35)
+	virtual const char *vfunc36();
+	virtual float vfunc37();
+	CBP_V1(a38) CBP_V1(a39)
+	virtual void vfunc40(CBasePlayer *pPlayer);
+	virtual void vfunc41(CBasePlayer *pPlayer);
+	CBP_V1(a42)
+	virtual void vfunc43(CBasePlayer *pPlayer);
+};
+
+void sub_1013c8c0(const Vector &mins, const Vector &maxs, const Vector &point, Vector &out);
+
+static inline int StrCmp(const char *a, const char *b)
+{
+	return _stricmp(a, b);
+}
+
+inline float ManhattanXY(const Vector &a, const Vector &b)
+{
+	float dx = a.x - b.x;
+	float dy = a.y - b.y;
+	return fabs(dx) + fabs(dy);
+}
+
+// TARGET: CBasePlayer::sub_10167e00
+void CBasePlayer::sub_10167e00()
+{
+	CUseEntView *pUse = (CUseEntView *)EHandle_Get(*(unsigned int *)((char *)this + 0x1040));
+	if (pUse) {
+		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pUse + 0x270);
+		Vector vecClosest, vecMins, vecMaxs;
+		pCol->sub_100dcd90(&pCol->m_vecMins.x, &pCol->m_vecMaxs.x, &vecMins.x, &vecMaxs.x);
+		sub_1013c8c0(vecMins, vecMaxs, ((CPlayerEyeView *)this)->vfunc193(), vecClosest);
+		CBaseEntity *pWeapon;
+		if (ManhattanXY(((CPlayerEyeView *)this)->vfunc193(), vecClosest) < pUse->vfunc37()) {
+			const char *pszName;
+			if ((pszName = pUse->vfunc36()) != 0) {
+				pWeapon = (CBaseEntity *)sub_1032e7b0();
+				if (pWeapon && !StrCmp(pWeapon->sub_1009f200(), pUse->vfunc36())) {
+					pUse->vfunc41(this);
+				} else if (sub_10335950(pUse->vfunc36())) {
+					vfunc457(pUse->vfunc36(), 0);
+					pUse->vfunc40(this);
+				}
+			} else {
+				pUse->vfunc41(this);
+			}
+		} else {
+			pUse->vfunc43(this);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10167fd0 size=0x16a
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
