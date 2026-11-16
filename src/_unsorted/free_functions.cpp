@@ -158003,6 +158003,111 @@ void E101f2140::sub_101f2140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2180 size=0x180
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "utlvector.h"
+#include <string.h>
+
+struct CVFile
+{
+	virtual void *Open(const char *pszName, const char *pszMode, int a);
+	virtual void Close(void *hFile);
+	virtual int Read(void *pBuf, int nSize, void *hFile);
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual int Size(void *hFile);
+};
+
+struct CVNodeLink
+{
+	void sub_101f2cd0(void *pNext);
+};
+
+struct CVNode : CVNodeLink
+{
+	CVNode *sub_101f1f50(const char *pszName, int a);
+	void sub_101f2c60();
+	void sub_101f2090(const char *pszName);
+	void sub_101f2360(const char **ppBuf, CVFile *pFile);
+	bool sub_101f2180(const char *pszFile, CVFile *pFile);
+};
+
+struct CVPool
+{
+	void *sub_1013dc60(int nSize);
+};
+
+extern CVPool g_1073d280;
+const char *sub_101f2f30(const char **ppBuf, CVFile *pFile, bool *pQuoted);
+void *sub_101f2fe0(int nSize);
+void sub_101f2fc0(void *p);
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+
+// TARGET: CVNode::sub_101f2180
+bool CVNode::sub_101f2180(const char *pszFile, CVFile *pFile)
+{
+	bool retOK = false;
+	const char *pBuffer = 0;
+	char *buffer = 0;
+	void *f = pFile->Open(pszFile, "rb", 0);
+	if (f)
+	{
+		int fileSize = pFile->Size(f);
+		buffer = (char *)sub_101f2fe0(fileSize + 1);
+		void *volatile pMem = buffer;
+		if (buffer)
+		{
+			pFile->Read(buffer, fileSize, f);
+			pFile->Close(f);
+			if ((char)(int)buffer == -1)
+				buffer[fileSize] = 0;
+			else
+				buffer[fileSize] = 0;
+			pBuffer = buffer;
+			CVNode *pPreviousKey = 0;
+			CVNode *pCurrentKey = this;
+			do
+			{
+				const char *s = sub_101f2f30(&pBuffer, pFile, 0);
+				if (!pBuffer)
+					break;
+				if (!pCurrentKey)
+				{
+					void *p = g_1073d280.sub_1013dc60(0x38);
+					pCurrentKey = p ? ((CVNode *)p)->sub_101f1f50(s, 1) : 0;
+					if (pPreviousKey)
+						pPreviousKey->sub_101f2cd0(pCurrentKey);
+				}
+				else
+				{
+					pCurrentKey->sub_101f2c60();
+					pCurrentKey->sub_101f2090(s);
+				}
+				s = sub_101f2f30(&pBuffer, pFile, 0);
+				if (!pBuffer)
+					break;
+				if (s && !strcmp(s, "{"))
+				{
+					pCurrentKey->sub_101f2360(&pBuffer, pFile);
+					pPreviousKey = pCurrentKey;
+					pCurrentKey = 0;
+				}
+				else
+				{
+					DevMsg("ERROR: parsing KeyValue in file %s, expecting {, got %s\n", pszFile, !s ? "(NULL)" : "{");
+				}
+			} while (1);
+			sub_101f2fc0(pMem);
+			retOK = true;
+		}
+		else
+			retOK = false;
+	}
+	return retOK;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f2360 size=0x106
 #include "CUnknown101f2360.h"
 #include <string.h>

@@ -625,6 +625,7 @@
 0x10001ccb func   ?vfunc104@CBaseGrenade@@UAEXXZ CBaseGrenade::vfunc104
 0x10001cd5 func   ?vfunc613@CPayphone@@UAE_NXZ CPayphone::vfunc613
 0x10001cda func   ?sub_101dba50@@YAPBDH@Z sub_101dba50
+0x10001cdf func   ?sub_101f2180@CVNode@@QAE_NPBDPAUCVFile@@@Z CVNode::sub_101f2180
 0x10001ce4 func   ?sub_1023cde0@@YAXPAUSWorldInfo@@@Z sub_1023cde0
 0x10001ce9 func   ?sub_101486c0@CFooUnit_101486c0@@QAEXH@Z CFooUnit_101486c0::sub_101486c0
 0x10001cee func   ?vfunc457@CBasePlayer@@UAEXPBDH@Z CBasePlayer::vfunc457
