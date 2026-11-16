@@ -6,6 +6,11 @@ inline int pcd_initial_1093d454() { return 0x450; }
 int g_1093d454 = pcd_initial_1093d454();
 // END FUNCTION
 
+// FUNCTION: 0x103c7ea0 size=0x5
+#include "Vector.h"
+Vector g_1093d608[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.40824834f, 0.70710677f, 0.57735026f), Vector(-0.40824822f, -0.7071068f, 0.57735026f) };
+// END FUNCTION
+
 // FUNCTION: 0x103c7f40 size=0xa
 #include "ConVar.h"
 ConVar g_1093d690("werewolf_disregard_player_vision", "0", 0);
