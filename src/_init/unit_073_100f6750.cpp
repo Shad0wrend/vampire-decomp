@@ -1,6 +1,11 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x100f6750 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_10703668;
+// END FUNCTION
+
 // FUNCTION: 0x100f91f0 size=0xa
 #include "ConCommand.h"
 void sub_100f9280(void);
