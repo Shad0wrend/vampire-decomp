@@ -4430,6 +4430,7 @@
 0x10006a4b func   ?sub_1008de20@CBaseAnimating@@QAEHHH@Z CBaseAnimating::sub_1008de20
 0x10006a50 func   ?vfunc113@CPointCamera@@UAEXXZ CPointCamera::vfunc113
 0x10006a55 func   ?vfunc117@CBaseButton@@UAEHXZ CBaseButton::vfunc117
+0x10006a5a func   ??1CTETParticleHUD@@QAE@XZ CTETParticleHUD::~CTETParticleHUD
 0x10006a5a func   ?sub_10069f70@CUnknown10069f70@@QAEHXZ CUnknown10069f70::sub_10069f70
 0x10006a5f func   ?sub_100b2f50@CBaseEntity@@QAEXPBM@Z CBaseEntity::sub_100b2f50
 0x10006a64 func   ?vfunc300@CNPC_VPlayerController@@QAEXPAUCPlayerCtrlEnt@@HH@Z CNPC_VPlayerController::vfunc300
