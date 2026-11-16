@@ -6,6 +6,9 @@
 class CTEShatterSurface : public CBaseTempEntityHead
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer units: the destructor (identical code folded with 0x10050840: the base's vtable store)
+	~CTEShatterSurface();
+#endif
 	CTEShatterSurface(const char *name);	// 0x10062fd0
 
 	virtual CTEShatterSurface *vfunc2(unsigned int flags);	// scalar deleting destructor
