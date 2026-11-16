@@ -14826,6 +14826,7 @@
 0x10013c2d func   ?sub_10033630@CPhysicsMovedEntities@@QAEPAV1@XZ CPhysicsMovedEntities::sub_10033630
 0x10013c32 func   ?sub_10266b10@CAI_BaseNPC@@QAEDHHM@Z CAI_BaseNPC::sub_10266b10
 0x10013c37 func   ?sub_103a1ed0@@YIPAXPAX@Z sub_103a1ed0
+0x10013c3c func   ?sub_10195a10@@YAPAUPyObj@@PAU1@0@Z sub_10195a10
 0x10013c41 func   ?vfunc77@CHalfLife2@@QAEXXZ CHalfLife2::vfunc77
 0x10013c46 func   ?vfunc0@CTEWorldDecal@@UAEPAUServerClass@@XZ CTEWorldDecal::vfunc0
 0x10013c4b func   ?sub_101f2520@CUnk101f2520@@QAEPAUCVBaseB@@PAX@Z CUnk101f2520::sub_101f2520

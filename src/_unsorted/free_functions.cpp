@@ -117808,6 +117808,228 @@ bool sub_10195940(DMEntity *pEnt, const char *name, typedescription_t **pDesc, i
 }
 // END FUNCTION
 
+// FUNCTION: 0x10195a10 size=0x579
+#include "vampire.h"
+extern "C" int strcmp(const char *, const char *);
+#pragma intrinsic(strcmp)
+#include "Vector.h"
+struct PyObj { int ob_refcnt; PyObj *ob_type; int ob_size; PyObj *ob_item[1]; };
+struct PyTD { int fieldType; const char *fieldName; int fieldOffset[2]; unsigned short fieldSize; short flags; const char *externalName; };
+struct PyEnt { virtual int vfunc0(); virtual int *vfunc1(); char pad[0x2e0 - 4]; int m_n2e0; };
+struct PyColor32 { unsigned char r, g, b, a; };
+
+extern "C" {
+__declspec(dllimport) int PyArg_ParseTuple(PyObj *, const char *, ...);
+__declspec(dllimport) void PyErr_SetString(PyObj *, const char *);
+__declspec(dllimport) PyObj *PyErr_Format(PyObj *, const char *, ...);
+__declspec(dllimport) PyObj *PyErr_Occurred();
+__declspec(dllimport) int PyDict_SetItemString(PyObj *, const char *, PyObj *);
+__declspec(dllimport) PyObj *PyExc_AttributeError;
+__declspec(dllimport) PyObj *PyExc_TypeError;
+__declspec(dllimport) PyObj _Py_NoneStruct;
+__declspec(dllimport) PyObj PyString_Type;
+__declspec(dllimport) PyObj PyFloat_Type;
+__declspec(dllimport) PyObj PyInt_Type;
+__declspec(dllimport) PyObj PyLong_Type;
+__declspec(dllimport) PyObj PyTuple_Type;
+__declspec(dllimport) char *PyString_AsString(PyObj *);
+__declspec(dllimport) double PyFloat_AsDouble(PyObj *);
+__declspec(dllimport) long PyInt_AsLong(PyObj *);
+__declspec(dllimport) double PyLong_AsDouble(PyObj *);
+__declspec(dllimport) long PyLong_AsLong(PyObj *);
+__declspec(dllimport) int PyObject_IsTrue(PyObj *);
+}
+#define Py_None (&_Py_NoneStruct)
+#define Py_INCREF(o) ((o)->ob_refcnt++)
+
+extern char *g_1058f654;
+struct PyStr
+{
+	bool operator!() const { return pszValue == 0; }
+	bool operator==(const PyStr &rhs) const { return pszValue == rhs.pszValue; }
+	bool operator!=(const PyStr &rhs) const { return pszValue != rhs.pszValue; }
+	PyStr() {}
+protected:
+	const char *pszValue;
+};
+struct PyCStr : PyStr
+{
+	PyCStr() { pszValue = 0; }
+};
+PyStr sub_1042bff0(const char *);
+PyEnt *sub_10196780(PyObj *);
+char sub_10195940(PyEnt *, const char *, PyTD **, void **);
+
+// TARGET: sub_10195a10
+PyObj *sub_10195a10(PyObj *self, PyObj *args)
+{
+	PyObj *obj = 0;
+	char *name = 0;
+	PyObj *value = 0;
+	PyTD *field;
+	void *pData;
+	PyEnt *ent;
+	int r;
+
+	if (!PyArg_ParseTuple(args, "OsO", &obj, &name, &value) || !obj || !name) {
+		PyErr_SetString(PyExc_AttributeError, "bad args to entity_set_attr");
+		return 0;
+	}
+	ent = sub_10196780(obj);
+	if (!ent && !PyErr_Occurred()) {
+		PyErr_SetString(PyExc_AttributeError, "game entity has been deleted");
+		return 0;
+	}
+	if (!strcmp(name, g_1058f654)) {
+		PyErr_Format(PyExc_AttributeError, "%s is read-only", name);
+		return 0;
+	}
+	{
+	PyTD *td;
+	if (!sub_10195940(ent, name, &td, &pData)) {
+		if (PyDict_SetItemString(obj->ob_item[0], name, value))
+			return 0;
+		Py_INCREF(Py_None);
+		return Py_None;
+	}
+	if (!(td->flags & 8)) {
+		PyErr_Format(PyExc_AttributeError, "%s is read-only", name);
+		return 0;
+	}
+	field = td;
+	}
+	switch (field->fieldType) {
+	case 2:
+	case 16:
+	case 17:
+		if (value->ob_type != &PyString_Type)
+			goto typeerror;
+		*(int *)pData = sub_1042bff0(PyString_AsString(value)) != PyCStr();
+	inc:
+		Py_INCREF(Py_None);
+		return Py_None;
+	case 1:
+	case 15:
+		if (value->ob_type == &PyFloat_Type)
+			*(float *)pData = PyFloat_AsDouble(value);
+		else if (value->ob_type == &PyInt_Type)
+			*(float *)pData = PyInt_AsLong(value);
+		else if (value->ob_type == &PyLong_Type)
+			*(float *)pData = PyLong_AsDouble(value);
+		else
+			goto typeerror;
+		Py_INCREF(Py_None);
+		return Py_None;
+	case 5:
+		*(bool *)pData = PyObject_IsTrue(value) != 0;
+		Py_INCREF(Py_None);
+		return Py_None;
+	case 4:
+		if (value->ob_type == &PyFloat_Type)
+			*(int *)pData = PyFloat_AsDouble(value);
+		else if (value->ob_type == &PyInt_Type) {
+			*(int *)pData = PyInt_AsLong(value);
+			goto inc;
+		}
+		else if (value->ob_type == &PyLong_Type)
+			*(int *)pData = PyLong_AsLong(value);
+		else
+			goto typeerror;
+		Py_INCREF(Py_None);
+		return Py_None;
+	case 3:
+	case 14:
+		if (value->ob_type != &PyTuple_Type || value->ob_size != 3)
+			goto typeerror;
+		{
+			float v[3];
+			PyObj **pItem;
+			int i;
+			for (i = 0, pItem = value->ob_item; i < 3; i++, pItem++) {
+				PyObj *item = *pItem;
+				if (!item)
+					goto typeerror;
+				if (item->ob_type == &PyFloat_Type)
+					v[i] = PyFloat_AsDouble(item);
+				else if (item->ob_type == &PyInt_Type)
+					v[i] = PyInt_AsLong(item);
+				else if (item->ob_type == &PyLong_Type)
+					v[i] = PyLong_AsDouble(item);
+				else
+					goto typeerror;
+			}
+			float x = (float)(v[0] * 1.0);
+			float *pVec = (float *)pData;
+			pVec[0] = x;
+			pVec[1] = v[1];
+			pVec[2] = v[2];
+		}
+		Py_INCREF(Py_None);
+		return Py_None;
+	case 8:
+		if (value->ob_type != &PyTuple_Type || value->ob_size != 4)
+			goto typeerror;
+		{
+			int c[4];
+			PyObj **pItem;
+			int i;
+			for (i = 0, pItem = value->ob_item; i < 4; i++, pItem++) {
+				PyObj *item = *pItem;
+				if (!item)
+					goto typeerror;
+				if (item->ob_type == &PyFloat_Type)
+					c[i] = PyFloat_AsDouble(item);
+				else if (item->ob_type == &PyInt_Type)
+					c[i] = PyInt_AsLong(item);
+				else if (item->ob_type == &PyLong_Type)
+					c[i] = PyLong_AsLong(item);
+				else
+					goto typeerror;
+			}
+			PyColor32 *pColor = (PyColor32 *)pData;
+			pColor->r = c[0];
+			pColor->g = c[1];
+			pColor->b = c[2];
+			pColor->a = c[3];
+		}
+		Py_INCREF(Py_None);
+		return Py_None;
+	case 12:
+		{
+			PyEnt *pEnt = sub_10196780(value);
+			if (pEnt) {
+				*(int *)pData = *pEnt->vfunc1();
+				Py_INCREF(Py_None);
+				return Py_None;
+			}
+			*(int *)pData = -1;
+			Py_INCREF(Py_None);
+			return Py_None;
+		}
+	case 13:
+		{
+			PyEnt *pEnt = sub_10196780(value);
+			*(int *)pData = pEnt ? pEnt->m_n2e0 : 0;
+			Py_INCREF(Py_None);
+			return Py_None;
+		}
+	case 11:
+		*(int *)pData = (int)sub_10196780(value);
+		Py_INCREF(Py_None);
+		return Py_None;
+	default:
+		if (0) goto typeerror; PyErr_Format(PyExc_TypeError, "%s (%s) has unhandled type %d", field->externalName, field->fieldName, field->fieldType);
+		return 0;
+	}
+	*(int *)pData = r;
+	Py_INCREF(Py_None);
+	return Py_None;
+typeerror:
+	PyErr_SetString(PyExc_TypeError, name);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101960f0 size=0xf4
 #include "Vector.h"
 
