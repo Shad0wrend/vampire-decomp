@@ -2,10 +2,22 @@
 // Only what decompiled code needs is declared.
 #pragma once
 #include "CDirtySpatialPartitionEntityList.h"
+#ifdef PCD_INITIALIZERS
+#include "ScopeTrace.h"
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(memset)
+#endif
 
 class CDataObjectAccessSystem : public CAutoGameSystem
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer unit: the global 0x106bd930 is built inline (the destroy is the implicit destructor)
+	CDataObjectAccessSystem()
+	{
+		ScopeTrace trace("CDataObjectAccessSystem::CDataObjectAccessSystem", g_106b8540, g_106b8540);
+		memset(m_data, 0, sizeof(m_data));
+	}
+#endif
 	virtual bool vfunc0();	// "CDataObjectAccessSystem::Init": registers the touchlink / groundlink / step simulation / model width scale accessors
 	virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7();
