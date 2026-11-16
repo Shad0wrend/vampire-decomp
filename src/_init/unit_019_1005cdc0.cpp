@@ -18,3 +18,9 @@ SendTable g_106bff5c;
 int sub_1005cf30(void);
 int g_106bff58 = ((int (*)(int))sub_1005cf30)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1005d090 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEBeamRingPoint.h"
+CTEBeamRingPoint g_106c0120("BeamRingPoint");
+// END FUNCTION
