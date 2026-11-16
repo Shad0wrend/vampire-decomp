@@ -8173,6 +8173,7 @@
 0x1000b5aa func   ?sub_102e0a80@CAI_Motor@@QAEMM@Z CAI_Motor::sub_102e0a80
 0x1000b5af func   ?vfunc5@CTETParticleAttached@@UAEXXZ CTETParticleAttached::vfunc5
 0x1000b5b9 func   ?sub_10131880@@YGHH@Z sub_10131880
+0x1000b5be func   ??0CUnknown10307d00@@QAE@XZ CUnknown10307d00::CUnknown10307d00
 0x1000b5be func   ?sub_10307d00@@YIPAXPAX@Z sub_10307d00
 0x1000b5c3 func   ?ShiftElementsRight@?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@QAEXHH@Z CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >::ShiftElementsRight
 0x1000b5c8 func   ?sub_100de800@CUnknown100de930@@QAEXPAUCUnknown100de930Owner@@@Z CUnknown100de930::sub_100de800
