@@ -933,6 +933,7 @@
 0x10002338 func   ?vfunc35@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc35
 0x1000233d func   ?sub_101402f0@CBaseMoveBehavior@@QAEHH@Z CBaseMoveBehavior::sub_101402f0
 0x10002342 func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<thinkfunc_t,CUtlMemory<thinkfunc_t> >,9>::vfunc1
+0x10002347 func   ??1CVDataRecord_1073a338@@QAE@XZ CVDataRecord_1073a338::~CVDataRecord_1073a338
 0x10002347 func   ??1StatDefault2@@QAE@XZ StatDefault2::~StatDefault2
 0x10002347 func   ?sub_101ed170@CUnknown101ed170@@QAEXXZ CUnknown101ed170::sub_101ed170
 0x1000234c func   ?sub_101b1120@@YAXPBVCRecipientFilter@@HHPBDMMHHPBMHPAM@Z sub_101b1120
