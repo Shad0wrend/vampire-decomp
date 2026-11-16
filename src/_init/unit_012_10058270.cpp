@@ -48,3 +48,9 @@ SendTable g_106beb4c;
 int sub_1005a510(void);
 int g_106beb48 = ((int (*)(int))sub_1005a510)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1005a5e0 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEArmorRicochet.h"
+CTEArmorRicochet g_106beb04("Armor Ricochet");
+// END FUNCTION
