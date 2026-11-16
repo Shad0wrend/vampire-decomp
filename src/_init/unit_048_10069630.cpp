@@ -66,3 +66,9 @@ SendTable g_106c6d98;
 int sub_1006a190(void);
 int g_106c6d94 = ((int (*)(int))sub_1006a190)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1006a2f0 size=0xa
+#define PCD_INITIALIZERS
+#include "CTETParticleHUD.h"
+CTETParticleHUD g_106c6b58("TParticleHUD");
+// END FUNCTION
