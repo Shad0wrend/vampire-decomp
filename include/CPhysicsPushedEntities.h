@@ -4,6 +4,9 @@
 // Only what decompiled code needs.
 #pragma once
 #include "Vector.h"
+#ifdef PCD_INITIALIZERS
+#include "utlvector.h"
+#endif
 
 class CBaseEntity;
 
@@ -58,8 +61,13 @@ struct CMovedVec
 class CPhysicsPushedEntities
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer unit: the global 0x106bbae4 is destroyed through the vectors' inline destructors
+	CUtlVector<PusherInfo_t> m_rgPusher;	// 0x00
+	CUtlVector<MovedEntity_t> m_rgMoved;	// 0x14
+#else
 	CPusherVec m_rgPusher;	// 0x00
 	CMovedVec m_rgMoved;	// 0x14
+#endif
 	int m_nBlockingIndex;	// 0x28: the moved entity that was blocked
 
 	CPhysicsPushedEntities();	// scope trace; both vectors preallocated (8 pusher records, 32 moved records)
