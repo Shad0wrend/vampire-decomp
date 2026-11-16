@@ -15542,6 +15542,7 @@
 0x10014cbd func   ?sub_102c0520@CAI_BaseNPCTroika@@QAEXPBDHH@Z CAI_BaseNPCTroika::sub_102c0520
 0x10014cc2 func   ?sub_10316fa0@@YAHH@Z sub_10316fa0
 0x10014cc7 func   ?sub_10290040@CUnknown10290040@@QAE_NH@Z CUnknown10290040::sub_10290040
+0x10014ccc func   ??1CVStatInfoList_t@@QAE@XZ CVStatInfoList_t::~CVStatInfoList_t
 0x10014ccc func   ?sub_101ff3e0@CVStatInfoList_t@@QAEXXZ CVStatInfoList_t::sub_101ff3e0
 0x10014cd1 func   ?sub_10299ce0@@YAHPAUCObj10299ce0@@@Z sub_10299ce0
 0x10014cd6 func   ?vfunc5@CPropHacking@@QAEPAV1@I@Z CPropHacking::vfunc5
