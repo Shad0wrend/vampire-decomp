@@ -20,3 +20,8 @@ ai_hull_t g_10925708(4, "SMALL_CENTERED_HULL", Vector(-20.0, -20.0, -20.0), Vect
 #include "ai_hull_t.h"
 ai_hull_t g_109256d0(8, "WIDE_HUMAN_HULL", Vector(-15.0, -15.0, 0.0), Vector(20.0, 15.0, 72.0), Vector(-10.0, -10.0, 0.0), Vector(10.0, 10.0, 72.0));
 // END FUNCTION
+
+// FUNCTION: 0x102d4960 size=0x5
+#include "ai_hull_t.h"
+ai_hull_t g_10925580(16, "TINY_HULL", Vector(-12.0, -12.0, 0.0), Vector(12.0, 12.0, 24.0), Vector(-12.0, -12.0, 0.0), Vector(12.0, 12.0, 24.0));
+// END FUNCTION
