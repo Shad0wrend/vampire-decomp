@@ -14762,6 +14762,7 @@
 0x10013c1e func   ?vfunc1@CTEFizz@@UAEHXZ CTEFizz::vfunc1
 0x10013c23 func   ?sub_101c2890@CTakeDamageInfo@@QAEXPAX0MHHH@Z CTakeDamageInfo::sub_101c2890
 0x10013c28 func   ?sub_100fa690@@YIXPAUCSlots@@HH@Z sub_100fa690
+0x10013c2d func   ??0CPhysicsMovedEntities@@QAE@XZ CPhysicsMovedEntities::CPhysicsMovedEntities
 0x10013c2d func   ?sub_10033630@CPhysicsMovedEntities@@QAEPAV1@XZ CPhysicsMovedEntities::sub_10033630
 0x10013c32 func   ?sub_10266b10@CAI_BaseNPC@@QAEDHHM@Z CAI_BaseNPC::sub_10266b10
 0x10013c37 func   ?sub_103a1ed0@@YIPAXPAX@Z sub_103a1ed0
