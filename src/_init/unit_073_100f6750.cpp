@@ -6,6 +6,12 @@
 CUtlVector<int> g_10703668;
 // END FUNCTION
 
+// FUNCTION: 0x100f6930 size=0xa
+#define PCD_INITIALIZERS
+#include "CAimTargetManager.h"
+CAimTargetManager g_10703650;
+// END FUNCTION
+
 // FUNCTION: 0x100f8c70 size=0xa
 #define PCD_INITIALIZERS
 #include "CEntityTouchManager.h"
