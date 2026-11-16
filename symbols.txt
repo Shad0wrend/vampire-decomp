@@ -865,6 +865,7 @@
 0x100021da func   ??0CAI_Waypoint@@QAE@PBMHHHH@Z CAI_Waypoint::CAI_Waypoint
 0x100021df func   ?sub_101fb7a0@CVStatSubCost_t@@QAEPAU1@XZ CVStatSubCost_t::sub_101fb7a0
 0x100021e4 func   ?vfunc407@CBasePlayer@@UAEXXZ CBasePlayer::vfunc407
+0x100021e9 func   ??1CTETParticleAttached@@QAE@XZ CTETParticleAttached::~CTETParticleAttached
 0x100021e9 func   ?sub_10069a80@CUnknown10069a80@@QAEHXZ CUnknown10069a80::sub_10069a80
 0x100021ee func   ?vfunc32@CPropSign@@UAE_NPAX@Z CPropSign::vfunc32
 0x100021f3 func   ?vfunc81@COrnamentProp@@UAEHXZ COrnamentProp::vfunc81
