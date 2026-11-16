@@ -3263,6 +3263,7 @@
 0x10005254 func   ?sub_1033df80@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033df80
 0x10005259 func   ?vfunc82@CTimerEntity@@QAEPAUdatamap_t@@XZ CTimerEntity::vfunc82
 0x1000525e func   ?vfunc452@CNPC_VHumanCombatant@@QAEDXZ CNPC_VHumanCombatant::vfunc452
+0x10005263 func   ??1CUtlSymbolTable@@QAE@XZ CUtlSymbolTable::~CUtlSymbolTable
 0x10005263 func   ?sub_1024b370@CUnknown1024b370@@QAEXXZ CUnknown1024b370::sub_1024b370
 0x10005268 func   ?sub_100dc220@CCollisionProperty@@QAEXH@Z CCollisionProperty::sub_100dc220
 0x1000526d func   ?vfunc566@CNPC_VBach@@UAE_NPAVCBaseEntity@@@Z CNPC_VBach::vfunc566
