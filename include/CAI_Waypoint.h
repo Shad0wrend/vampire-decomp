@@ -11,6 +11,15 @@ class CAI_Waypoint
 {
 public:
 	CAI_Waypoint(const float *pPosition, int a, int b, int c, int d);	// 0x10319df0 (stub 0x100021da)
+#ifdef PCD_INITIALIZERS	// the initializer units: the global 0x10936afc unlinks itself when destroyed (the SDK's inline destructor)
+	~CAI_Waypoint()
+	{
+		if (m_pNext)
+			m_pNext->m_pPrev = m_pPrev;
+		if (m_pPrev)
+			m_pPrev->m_pNext = m_pNext;
+	}
+#endif
 
 	static void *operator new(unsigned int nSize) { return g_10936c84.sub_1013dc60(nSize); }
 
