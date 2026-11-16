@@ -3062,6 +3062,7 @@
 0x10004e62 func   ?vfunc141@CNPC_VWerewolf@@QAEXPAUCUnknown101c2a50@@HH@Z CNPC_VWerewolf::vfunc141
 0x10004e67 func   ?sub_10047190@S47190@@QAEAAU1@ABU1@@Z S47190::sub_10047190
 0x10004e6c func   ?vfunc103@CBaseViewModel@@UAEXXZ CBaseViewModel::vfunc103
+0x10004e71 func   ??0CAutoGameSystem@@QAE@XZ CAutoGameSystem::CAutoGameSystem
 0x10004e71 func   ?sub_1042c260@CUnknown1042c260@@QAEPAXXZ CUnknown1042c260::sub_1042c260
 0x10004e76 func   ?vfunc362@CWeaponMelee_Claws_Protean4@@UAEPAUCWeaponActivityRecord@@XZ CWeaponMelee_Claws_Protean4::vfunc362
 0x10004e7b func   ?sub_100c6370@@YAHPAUS100c6370@@PBD@Z sub_100c6370
