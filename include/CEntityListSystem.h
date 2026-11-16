@@ -31,7 +31,9 @@ public:
 	void sub_100f8ec0();	// takes a copy of the pending list, empties it and calls sub_100085a8 on each entity whose flag bit 0 is set
 	void vfunc5();	// slot 5: hands the two global pending lists (0x107036b0, 0x10703650) to the global entity list, then empties and frees both vectors
 	void vfunc2();	// slot 2: sub_100f8960 on the global object at 0x10703634, then like slot 5 but through the (deduplicating) sub_100f6d80
+#ifndef PCD_INITIALIZERS	// the root's slots 4 and 7 return void there: these int forms would not override them
 public:
 	int vfunc4();
 	int vfunc7();
+#endif
 };
