@@ -17422,6 +17422,7 @@
 0x1047aeec vtable ??_7CSpeaker@@6B@ CSpeaker::vftable
 0x1047b378 vtable ??_7CSoundEmitterSystem@@6BCAutoGameSystem@@@ CSoundEmitterSystem::vftable
 0x1047b3a8 vtable ??_7CSoundEmitterSystem@@6B@ CSoundEmitterSystem::vftable
+0x1047b3a8 data   ??_7CSoundEmitterSystem@@6BCSoundEmitterSystemBase@@@ ??_7CSoundEmitterSystem@@6BCSoundEmitterSystemBase@@@
 0x1047b3c0 vtable ??_7CSoundEmitterSystemBase@@6B@ CSoundEmitterSystemBase::vftable
 0x1047b3dc vtable ??_7CSoundEnt@@6B@ CSoundEnt::vftable
 0x1047b87c vtable ??_7CAISound@@6B@ CAISound::vftable
