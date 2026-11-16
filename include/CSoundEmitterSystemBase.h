@@ -136,6 +136,46 @@ struct CSoundRecordFull
 	CSoundParamsFull m_params;
 };
 
+#ifdef PCD_INITIALIZERS	// the initializer unit: the global 0x1072be18 (CSoundEmitterSystem g_SoundEmitterSystem)
+#include "CUtlSymbolTable.h"
+#include "utlvector.h"
+// The 2003 SDK's CUtlDict (utldict.h): a tree of (name, element) records over an int index, then the symbol table of
+// the names. Its destructor is the members': the symbol table's, then the tree's memory.
+template <class T, class I> class CUtlDict
+{
+public:
+	struct DictElement_t
+	{
+		const char *m_Name;
+		T m_Data;
+	};
+	CUtlRBTree<DictElement_t, I> m_Elements;	// 0x00 (0x20 bytes with an int index)
+	CUtlSymbolTable m_SymbolTable;	// 0x20
+};
+
+// The SDK's layout (SoundEmitterSystemBase.h) with a second dict: built by the out-of-line constructor, destroyed by
+// the inline destructor (stores the vtable, then the members last to first).
+class CSoundEmitterSystemBase
+{
+public:
+	struct CSoundScriptFile
+	{
+		bool dirty;
+		bool precachealways;
+		char filename[128];
+	};
+
+	CSoundEmitterSystemBase();	// function 0x101b26c0
+	virtual ~CSoundEmitterSystemBase() {}
+	virtual bool BaseInit();
+	virtual void LogMessage(const char *pszFormat, ...);
+
+	CUtlDict<CSoundEmitterRecord, int> m_Sounds;	// 0x04
+	CUtlDict<CSoundEmitterRecord, int> m_SavedOverrides;	// 0x50
+	CUtlVector<CSoundScriptFile> m_SoundKeyValues;	// 0x9c
+	CUtlSymbolTable m_Waves;	// 0xb0
+};
+#else
 class CSoundEmitterSystemBase
 {
 public:
@@ -197,3 +237,4 @@ public:
 };
 
 extern CSoundEmitterSystemBase g_1072be18;	// the sound emitter system object (at 0x1072be18, an object not a pointer; used by the "play" command 0x101b06a0 and 9 matched readers)
+#endif
