@@ -20,3 +20,9 @@ ConVar g_107268b8("sv_unlagpush", "0.0", 0);
 #include "ConVar.h"
 ConVar g_10726948("sv_unlagsamples", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10187bd0 size=0xa
+#define PCD_INITIALIZERS
+#include "CLagCompensationManager.h"
+CLagCompensationManager g_10726990;
+// END FUNCTION
