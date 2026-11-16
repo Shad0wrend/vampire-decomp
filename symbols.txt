@@ -2373,6 +2373,7 @@
 0x1000403e func   ?sub_1023df30@CUnknown1023df30@@QAEXPAUinputdata_t@@@Z CUnknown1023df30::sub_1023df30
 0x10004043 func   ?sub_101f5120@CUnk101f5120@@QAEXH@Z CUnk101f5120::sub_101f5120
 0x10004048 func   ?vfunc250@CAI_BaseHumanoid@@QAEMM@Z CAI_BaseHumanoid::vfunc250
+0x1000404d func   ??0CUnknown101f7910@@QAE@XZ CUnknown101f7910::CUnknown101f7910
 0x1000404d func   ?sub_101f7910@CUnknown101f7910@@QAEPAXXZ CUnknown101f7910::sub_101f7910
 0x10004052 func   ?sub_1029f890@CUnknown1029f890@@QAEXH@Z CUnknown1029f890::sub_1029f890
 0x10004057 func   ?vfunc488@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc488
