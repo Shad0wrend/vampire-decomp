@@ -109,6 +109,20 @@ SDbgSink *g_109203f0 = new SDbgSink;
 CAI_ClassScheduleIdSpace g_1090ff08(true);
 // END FUNCTION
 
+// FUNCTION: 0x10265580 size=0xa
+#define PCD_INITIALIZERS
+#include "CNewedOwner.h"
+#include "PcdGuarded.h"
+// three owners built in order and destroyed in reverse behind one guard bit: one specialized member holding them
+struct CNewedOwner3
+{
+	CNewedOwner m_a;
+	CNewedOwner m_b;
+	CNewedOwner m_c;
+};
+template <> CNewedOwner3 PcdGuarded<0x109203cc, CNewedOwner3>::s_object;
+// END FUNCTION
+
 // FUNCTION: 0x10265640 size=0x5
 #include "CAI_LocalIdSpace.h"
 CAI_LocalIdSpace g_10920484(true);
