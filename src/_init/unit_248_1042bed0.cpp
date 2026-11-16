@@ -13,6 +13,11 @@ CGameStringPool g_109eed28;
 CHLSharedGameRules g_109eed4c;
 // END FUNCTION
 
+// FUNCTION: 0x1042c150 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_109eed50(0, 4);
+// END FUNCTION
+
 // FUNCTION: 0x1042c7f0 size=0xa
 #include "ConVar.h"
 ConVar g_109ef2d0("sv_gravity", "800", 8448, "World gravity.");
