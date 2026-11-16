@@ -182033,6 +182033,111 @@ void CListZ::sub_102298e0(Vector vecOrigin, int nIndex, int iEdict, void *pEntry
 }
 // END FUNCTION
 
+// FUNCTION: 0x10229c50 size=0x2d8
+#include "CVTraitEffect_t.h"
+#include "CBaseEntity.h"
+#include "CSoundSchemeManager.h"
+#include "DebugOverlay.h"
+#include "Tier1.h"
+#include "CEntityVSlots.h"
+#include "utlvector.h"
+
+struct SoundLoopTrackView
+{
+	char m_szName[0x40];
+	float m_fl40;
+	float m_fl44;
+	float m_fl48;
+	float m_fl4c;
+	int m_n50;
+	int m_n54;
+};
+
+struct SoundEntryView
+{
+	char m_szName[0x40];
+	float m_fl40;
+	int m_n44;
+	float m_fl48;
+};
+
+struct SoundRandomTrackView
+{
+	Vector m_vecPos;
+	SoundEntryView *m_pSound;
+	int m_n10;
+	int m_n14;
+	int m_n18;
+	int m_n1c;
+};
+
+void sub_10143710(const Vector &origin, const char *text, ...);
+
+static inline float LenGrouped(Vector v)
+{
+	return FastSqrt(v.z * v.z + v.y * v.y + v.x * v.x);
+}
+
+#define RANDOMS (*(CUtlVector<SoundRandomTrackView> *)&m_pMemory)
+
+// TARGET: CSoundSchemeManager::sub_10229c50
+void CSoundSchemeManager::sub_10229c50()
+{
+	CBaseEntity *pPlayer = sub_101cd9e0(1);
+	if (!m_b08 || !pPlayer)
+		return;
+
+	char szBuf[0x80];
+	int iLine = 0;
+	int i;
+
+	for (i = 0; i < 4; i++)
+	{
+		g_109f388c(szBuf, 0x80, "Loop Track %d: %s  vol:%.2f  chan:%d (%.2f/%.2f)",
+			i, ((SoundLoopTrackView *)m_buf14)[i].m_szName,
+			(double)((SoundLoopTrackView *)m_buf14)[i].m_fl44,
+			((SoundLoopTrackView *)m_buf14)[i].m_n50,
+			(double)((SoundLoopTrackView *)m_buf14)[i].m_fl40,
+			(double)((SoundLoopTrackView *)m_buf14)[i].m_fl4c);
+		sub_101434b0(0, iLine++, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
+	}
+
+	for (i = 0; i < m_nLoopCount; i++)
+	{
+		g_109f388c(szBuf, 0x80, "Loop Track %d: %s  vol:%.2f  chan:%d (%.2f/%.2f)",
+			i, ((SoundLoopTrackView *)m_pLoopTracks)[i].m_szName,
+			(double)((SoundLoopTrackView *)m_pLoopTracks)[i].m_fl44,
+			((SoundLoopTrackView *)m_pLoopTracks)[i].m_n50,
+			(double)((SoundLoopTrackView *)m_pLoopTracks)[i].m_fl40,
+			(double)((SoundLoopTrackView *)m_pLoopTracks)[i].m_fl4c);
+		sub_101434b0(0, iLine++, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
+	}
+
+	g_109f388c(szBuf, 0x80, "Random Tracks: %d\t------------", m_nRandomCount);
+	sub_101434b0(0, iLine, szBuf, 0, 0xff, 0xff, 0xff, 0xff);
+
+	Vector vecOrigin;
+	((CEntityVSlots *)pPlayer)->slot196(&vecOrigin);
+
+	for (i = 0; i < m_nRandomCount; i++)
+	{
+		sub_10142e90(&vecOrigin, &RANDOMS[i].m_vecPos, 0xff, 100, 100, 1, 0.0f);
+		Vector vecMaxs(8.0f, 8.0f, 8.0f);
+		Vector vecMins(-8.0f, -8.0f, -8.0f);
+		sub_10143b70(&RANDOMS[i].m_vecPos, &vecMins, &vecMaxs, 0xff, 100, 100, 1, 0);
+		SoundRandomTrackView &rec = RANDOMS[i];
+		float flDist = LenGrouped(RANDOMS[i].m_vecPos - vecOrigin);
+		g_109f388c(szBuf, 0x80, "Random Sound: %s Vol: %.2f Radius: %.1f DistToPlayer: %.1f Length:%.2f",
+			RANDOMS[i].m_pSound->m_szName,
+			(double)RANDOMS[i].m_pSound->m_fl40,
+			(double)RANDOMS[i].m_pSound->m_fl48,
+			(double)flDist,
+			(double)EngineGlobals::g_1070b248->vfunc12(rec.m_pSound->m_szName));
+		sub_10143710(RANDOMS[i].m_vecPos, szBuf, 0, 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10229ff0 size=0x43
 #include "CSoundScheme.h"
 void *sub_100aa720(int size);
