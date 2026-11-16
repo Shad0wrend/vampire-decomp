@@ -18,3 +18,9 @@ SendTable g_106c2d00;
 int sub_100622d0(void);
 int g_106c2cfc = ((int (*)(int))sub_100622d0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10062410 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEFizz.h"
+CTEFizz g_106c2d1c("Fizz");
+// END FUNCTION
