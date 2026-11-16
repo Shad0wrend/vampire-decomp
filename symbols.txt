@@ -6460,6 +6460,7 @@
 0x1000928c func   ?sub_100d9750@@YAXXZ sub_100d9750
 0x10009291 func   ?sub_102ede30@CAI_Navigator@@QAE_NHH@Z CAI_Navigator::sub_102ede30
 0x10009296 func   ?sub_1011b040@@YGXH@Z sub_1011b040
+0x1000929b func   ?LessFunc@?$CDefOps@PBVCPhysCollide@@@@SA_NABQBVCPhysCollide@@0@Z CDefOps<CPhysCollide const *>::LessFunc
 0x1000929b func   ?sub_10046b70@@YA_NPBI0@Z sub_10046b70
 0x100092a0 func   ?sub_103d1d60@CNPC_VWerewolf@@QAE_NPBD_N@Z CNPC_VWerewolf::sub_103d1d60
 0x100092a5 func   ?sub_1035c2a0@@YAPAXXZ sub_1035c2a0
