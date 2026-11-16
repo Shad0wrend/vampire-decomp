@@ -18,3 +18,9 @@ SendTable g_106c4c0c;
 int sub_100660a0(void);
 int g_106c4c08 = ((int (*)(int))sub_100660a0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10066210 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEMuzzleFlash.h"
+CTEMuzzleFlash g_106c4c28("MuzzleFlash");
+// END FUNCTION
