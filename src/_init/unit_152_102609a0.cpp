@@ -56,6 +56,12 @@ ConVar g_109201f0("debug_assert_on_missing_act", "0", 0, "Turn this on to assert
 ConVar g_10920388("debug_hit_by_mode", "1", 0, "Set this to 1 to use alternate hit by door code.");
 // END FUNCTION
 
+// FUNCTION: 0x10265030 size=0x5
+#define PCD_INITIALIZERS
+#include "CCycleCount.h"
+CCycleCount g_109203e8;
+// END FUNCTION
+
 // FUNCTION: 0x10265520 size=0x5
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_1090ff08(true);
