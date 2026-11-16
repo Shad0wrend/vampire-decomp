@@ -5681,6 +5681,7 @@
 0x10008300 func   ?sub_101c2a50@CUnknown101c2a50@@QAEXH@Z CUnknown101c2a50::sub_101c2a50
 0x10008305 func   ?vfunc5@CItemGGarysFilm@@QAEPAV1@I@Z CItemGGarysFilm::vfunc5
 0x1000830a func   ?vfunc251@CTriggerCheckVolume@@UAEXH@Z CTriggerCheckVolume::vfunc251
+0x1000830f func   ??1CNewedOwner@@QAE@XZ CNewedOwner::~CNewedOwner
 0x1000830f func   ?sub_102e9f40@@YIXPAH@Z sub_102e9f40
 0x10008314 func   ?ShiftElementsLeft@?$CUtlVector@UCHumanoidRec@@V?$CUtlMemory@UCHumanoidRec@@@@@@QAEXHH@Z CUtlVector<CHumanoidRec,CUtlMemory<CHumanoidRec> >::ShiftElementsLeft
 0x10008314 func   ?sub_10260820@@YIXPAUCUnknownVector10260820@@PAXHH@Z sub_10260820
