@@ -14666,6 +14666,7 @@
 0x100139f8 func   ?sub_100c8990@CBaseButton@@QAE_NH@Z CBaseButton::sub_100c8990
 0x100139fd func   ?vfunc5@CNPC_VSheriffSwarm@@QAEPAV1@I@Z CNPC_VSheriffSwarm::vfunc5
 0x10013a02 func   ?sub_1022ee50@@YAXPAUSAction@@HHHH@Z sub_1022ee50
+0x10013a07 func   ??1CUnknown101d7c10@@QAE@XZ CUnknown101d7c10::~CUnknown101d7c10
 0x10013a0c func   ?sub_101a1400@SRestore@@QAEPAU1@E@Z SRestore::sub_101a1400
 0x10013a11 func   ?vfunc82@CPhysThruster@@UAEPAUdatamap_t@@XZ CPhysThruster::vfunc82
 0x10013a16 func   ?sub_10062490@@YAXAAVCRecipientFilter@@MPAVCBaseEntity@@HH@Z sub_10062490
