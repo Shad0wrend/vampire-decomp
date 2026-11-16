@@ -23,3 +23,8 @@ int g_1070a984 = ((int (*)(int))sub_10114f20)(0);
 int sub_10115080(void);
 int g_1070a86c = ((int (*)(int))sub_10115080)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10115570 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_1070a870;
+// END FUNCTION
