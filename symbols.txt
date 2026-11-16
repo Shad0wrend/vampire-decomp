@@ -8700,6 +8700,7 @@
 0x1000c199 func   ?sub_10197b00@@YAPAUPyObj@@PAX0@Z sub_10197b00
 0x1000c19e func   ?sub_1019d2f0@CUnknown1019d2f0@@QAEHH@Z CUnknown1019d2f0::sub_1019d2f0
 0x1000c1a3 func   ?sub_100732f0@UtlMem5@@QAEXH@Z UtlMem5::sub_100732f0
+0x1000c1a8 func   ??1CTEImpact@@QAE@XZ CTEImpact::~CTEImpact
 0x1000c1a8 func   ?sub_10065030@CUnknown10065030@@QAEHXZ CUnknown10065030::sub_10065030
 0x1000c1ad func   ?vfunc1@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc1
 0x1000c1b2 func   ?sub_101316e0@CTimerEntity@@QAEXXZ CTimerEntity::sub_101316e0
