@@ -13,6 +13,13 @@ CVDataTable<CVDataRecord_1073a7c0> g_1073a7c0;
 CUnknown101f0e50 g_1073a9a0;
 // END FUNCTION
 
+// FUNCTION: 0x101f1eb0 size=0xa
+#define PCD_INITIALIZERS
+#include "Pool.h"
+#include "PcdGuarded.h"
+template <> Pool PcdGuarded<0x1073d280, Pool>::s_object(56, 30, 2);
+// END FUNCTION
+
 // FUNCTION: 0x101f3240 size=0xa
 #define PCD_INITIALIZERS
 #include "CUnknown1073dc28.h"
