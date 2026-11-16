@@ -10283,6 +10283,7 @@
 0x1000e0f7 func   ?CalcNextUpdateThink@CAI_BaseNPCTroika@@QAE_NPAM@Z CAI_BaseNPCTroika::CalcNextUpdateThink
 0x1000e0fc func   ?sub_10338920@CUnk10338920@@QAEXXZ CUnk10338920::sub_10338920
 0x1000e101 func   ?vfunc442@CNPC_VCop@@QAEXPAH@Z CNPC_VCop::vfunc442
+0x1000e106 func   ??0CUnknown101d54f0@@QAE@XZ CUnknown101d54f0::CUnknown101d54f0
 0x1000e106 func   ?sub_101d54f0@CUnknown101d54f0@@QAEPAV1@XZ CUnknown101d54f0::sub_101d54f0
 0x1000e10b func   ?vfunc32@CTriggerElectricBugaloo@@QAE_NPAX@Z CTriggerElectricBugaloo::vfunc32
 0x1000e110 func   ?sub_102273e0@CUnknown102273e0@@QAEXH@Z CUnknown102273e0::sub_102273e0
