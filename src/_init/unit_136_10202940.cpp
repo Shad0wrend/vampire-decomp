@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10202940 size=0xa
+#define PCD_INITIALIZERS
+#include "S4.h"
+S4 g_1074e968;
+// END FUNCTION
+
 // FUNCTION: 0x10203e50 size=0xa
 #define PCD_INITIALIZERS
 #include "CGameStringPool.h"
