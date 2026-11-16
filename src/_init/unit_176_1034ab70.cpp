@@ -56,6 +56,12 @@ int sub_1034f300(void);
 int g_1093830c = ((int (*)(int))sub_1034f300)(0);
 // END FUNCTION
 
+// FUNCTION: 0x1034f4e0 size=0x5
+#define PCD_INITIALIZERS
+#include "CUnknown10938124.h"
+CUnknown10938124 g_10938124(1, 12.5f);
+// END FUNCTION
+
 // FUNCTION: 0x1034f580 size=0x5
 #include "ServerClassReg.h"
 #include "SendTable.h"
