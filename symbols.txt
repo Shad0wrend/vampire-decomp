@@ -4104,6 +4104,7 @@
 0x10006325 func   ?sub_101f11f0@CUnknown101f0e50@@QAE_NPAX@Z CUnknown101f0e50::sub_101f11f0
 0x1000632a func   ?sub_102b6890@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_102b6890
 0x1000632f func   ?sub_1007a340@@YGHH@Z sub_1007a340
+0x10006334 func   ??0CUnknown10307c50@@QAE@XZ CUnknown10307c50::CUnknown10307c50
 0x10006334 func   ?sub_10307c50@CUnknown10307c50@@QAEPAU1@XZ CUnknown10307c50::sub_10307c50
 0x10006339 func   ?vfunc367@CBaseCombatCharacter@@QAE?AVQAngle@@XZ CBaseCombatCharacter::vfunc367
 0x1000633e func   ?sub_102d1af0@@YAPAVCAI_Hint@@PAVCBaseEntity@@HIMPAVVector@@PAM@Z sub_102d1af0
