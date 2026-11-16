@@ -316,6 +316,7 @@
 0x10001677 func   ?vfunc5@CPhysMotor@@UAEPAV1@I@Z CPhysMotor::vfunc5
 0x1000167c func   ?sub_100da040@@YAXXZ sub_100da040
 0x10001681 func   ?sub_100779b0@CUnknown100779b0@@QAEXH@Z CUnknown100779b0::sub_100779b0
+0x1000168b func   ??1CEffectsServer@@QAE@XZ CEffectsServer::~CEffectsServer
 0x1000168b func   ?sub_100f5c60@CUnknown100f5c60@@QAEXXZ CUnknown100f5c60::sub_100f5c60
 0x10001690 func   ?sub_10057570@CFireSmoke@@QAEXXZ CFireSmoke::sub_10057570
 0x10001695 func   ?vfunc580@CNPC_VSabbatGunman@@UAEHXZ CNPC_VSabbatGunman::vfunc580
