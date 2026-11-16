@@ -67,6 +67,9 @@ public:
 	int m_field40;
 
 	CVDmg_t();	// "CVDmg_t::CVDmg_t": constructs the two blocks, scope trace, then sets the fields to their defaults
+#ifdef PCD_INITIALIZERS	// the initializer units: the array 0x108c1288 destroys its elements with it (body 0x101fa680)
+	~CVDmg_t();
+#endif
 	int sub_101faa70();	// "CVDmg_t::GetDmg"
 	int sub_101fb200(int a, int b);	// "CVDmg_t::Apply": forwards to the global apply callback
 	bool sub_101fb340(int target);	// "CVDmg_t::EvadeCheck": forwards to the global evade callback
