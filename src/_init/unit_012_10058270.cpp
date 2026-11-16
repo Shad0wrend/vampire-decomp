@@ -19,6 +19,12 @@ int sub_1005a1a0(void);
 int g_106beb28 = ((int (*)(int))sub_1005a1a0)(0);
 // END FUNCTION
 
+// FUNCTION: 0x1005a2b0 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEMetalSparks.h"
+CTEMetalSparks g_106beadc("Metal Sparks");
+// END FUNCTION
+
 // FUNCTION: 0x1005a3a0 size=0x5
 #include "ServerClassReg.h"
 #include "SendTable.h"
