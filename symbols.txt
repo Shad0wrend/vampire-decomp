@@ -14248,6 +14248,7 @@
 0x100131b5 func   ?sub_100a8e00@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100a8e00
 0x100131ba func   ??0CTEBloodSprite@@QAE@PBD@Z CTEBloodSprite::CTEBloodSprite
 0x100131bf func   ?vfunc459@CCineNPC@@QAEXXZ CCineNPC::vfunc459
+0x100131c4 func   ??0QuestJournal@@QAE@XZ QuestJournal::QuestJournal
 0x100131c4 func   ?sub_10220e10@QuestJournal@@QAEPAV1@XZ QuestJournal::sub_10220e10
 0x100131c9 func   ?vfunc110@CFunc_LOD@@UAE_NPBD0@Z CFunc_LOD::vfunc110
 0x100131d3 func   ?sub_10190e50@@YAPAVCOrnamentProp@@PBDPAVCBaseEntity@@@Z sub_10190e50
