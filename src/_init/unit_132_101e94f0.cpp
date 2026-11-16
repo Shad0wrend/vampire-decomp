@@ -30,3 +30,9 @@ CVDataTable<CVDataRecord_1073a2e4> g_1073a2e4;
 #include "CUnknown101ec4f0.h"
 CVDataTable<CUnknown101ec4f0> g_1073a354;
 // END FUNCTION
+
+// FUNCTION: 0x101ea6e0 size=0xa
+#include "VDataTable.h"
+#include "CUnknown109f08c0.h"
+CVDataTable<CUnknown109f08c0> g_1073a300;
+// END FUNCTION
