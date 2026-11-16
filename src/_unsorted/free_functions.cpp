@@ -130057,6 +130057,144 @@ int CUnk101b5840::sub_101b5840(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b5870 size=0x258
+#include "vampire.h"
+#include "CSoundEmitterSystemBase.h"
+#include "CUnknown101b6320.h"
+#include "CUnknown101b4680.h"
+#include "CUnknown101b45b0.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUnknown101b7370.h"
+#include "UtlMem.h"
+
+__declspec(dllimport) void DevMsg(const char *pMsg, ...);
+
+namespace block_101b5870a {
+#pragma auto_inline(off)
+struct SesV : CSoundEmitterSystemBase { char sub_101b31a0(int index); };
+char SesV::sub_101b31a0(int index)
+{
+	if (index >= 0 && index < m_i64)
+	{
+		return 1;
+	}
+	return 0;
+}
+#pragma auto_inline(on)
+}
+
+struct SndVec8
+{
+	void *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	int m_Size;
+	void *m_pElements;
+
+	void sub_101b6120();
+	__forceinline ~SndVec8()
+	{
+		sub_101b6a30((int *)this);
+		((UtlMem *)this)->sub_101b6b90();
+		m_pElements = m_pMemory;
+		if (m_nGrowSize != -1)
+		{
+			if (m_pMemory)
+			{
+				Plat_Free(m_pMemory);
+				m_pMemory = 0;
+			}
+			m_nAllocationCount = 0;
+		}
+	}
+};
+
+struct SndEntry
+{
+	char m_b0;
+	char m_b1;
+	char m_pad02[2];
+	int m_nScript;
+	int m_params[8];
+	SndVec8 m_vecA;
+	SndVec8 m_vecB;
+	char m_rest[0xd4 - 0x50];
+
+	SndEntry(const SndEntry &o) : m_b0(o.m_b0), m_b1(o.m_b1), m_nScript(o.m_nScript)
+	{
+		((CUnknown101b6320Params *)m_params)->sub_101b5b70(*(const CUnknown101b6320Params *)o.m_params);
+	}
+};
+
+struct SndDict
+{
+	CUtlRBTree232 m_tree;
+	CUnknown1024b2d0 m_strings;
+
+	unsigned short Symbol(const char *pszName)
+	{
+		CUnknown1024b2d0Id id;
+		return m_strings.sub_1024b5e0(&id, pszName)->m_id;
+	}
+};
+
+void sub_101b6ea0(void *pDst, const void *pSrc);
+
+typedef CUtlRBTree<CSoundEmitterRecord, int> SndTree;
+
+// TARGET: CSoundEmitterSystemBase::sub_101b5870
+void CSoundEmitterSystemBase::sub_101b5870(const char *pszOld, const char *pszNew)
+{
+	if (!_strcmpi(pszOld, pszNew))
+		return;
+
+	int idx = sub_101b2f60(pszOld);
+	if (!((block_101b5870a::SesV *)this)->sub_101b31a0(idx))
+	{
+		{ { if ((int)this == -1) DevMsg("Can't rename %s, no such sound\n", pszOld); else DevMsg("Can't rename %s, no such sound\n", pszOld); } }
+		return;
+	}
+	if (((block_101b5870a::SesV *)this)->sub_101b31a0(sub_101b2f60(pszNew)))
+	{
+		DevMsg("Can't rename %s to %s, new name already in list\n", pszOld, pszNew);
+		return;
+	}
+
+	SndEntry entry(*(SndEntry *)((char *)m_i54 + 0x14 + idx * 0xe8));
+	SndDict *pDict = (SndDict *)&m_pfn50;
+	CSoundEmitterRecord node;
+	node.m_w0 = pDict->Symbol(pszOld);
+	int i = ((CUtlRBTreeFind232 *)pDict)->sub_101b68f0(&node);
+	((CUnknown101b4680 *)&node.m_tail)->~CUnknown101b4680();
+	if (i != -1)
+	{
+		void (SndTree::*pfnRemoveNode)(int) = &SndTree::RemoveNode;
+		(((SndTree *)pDict)->*pfnRemoveNode)(i);
+		((CUnknown101b7370 *)pDict)->sub_101b7370(i);
+		pDict->m_tree.m_NumElements--;
+	}
+
+	node.m_w0 = 0xffff;
+	{ { if (*(short *)&pszNew == -1) ((CUnknown101b45b0 *)&node.m_b4)->sub_101b45b0(); else ((CUnknown101b45b0 *)&node.m_b4)->sub_101b45b0(); } }
+	SndDict *pDict2 = (SndDict *)&m_pfn50;
+	node.m_w0 = pDict2->Symbol(pszNew);
+	int n;
+	{
+		struct { bool leftchild; int parent; } ins;
+		pDict2->m_tree.sub_101b6d60(&node, &ins.parent, &ins.leftchild);
+		n = pDict2->m_tree.sub_101b6bd0(ins.parent, ins.leftchild);
+	}
+	int ofs = n * 0xe8;
+	sub_101b6ea0(ofs + (char *)pDict2->m_tree.m_pElements + 0x10, &node);
+	((CUnknown101b6320 *)(ofs + (char *)pDict2->m_tree.m_pElements + 0x14))->sub_101b6320(*(CUnknown101b6320 *)&entry);
+	((SndVec8 *)((char *)&node + 0x40))->sub_101b6120();
+	((SndVec8 *)((char *)&node + 0x2c))->sub_101b6120();
+
+	((char *)m_i9c)[entry.m_nScript * 0x82] = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b5b70 size=0x1d1
 #include "Vector.h"
 #include "utlmemory.h"

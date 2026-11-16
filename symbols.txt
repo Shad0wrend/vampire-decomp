@@ -15450,6 +15450,7 @@
 0x100148c1 func   ?vfunc5@CItemGMercurioJournal@@QAEPAV1@I@Z CItemGMercurioJournal::vfunc5
 0x100148c6 func   ?vfunc600@CNPC_VYukie@@QAEDH@Z CNPC_VYukie::vfunc600
 0x100148cb func   ?sub_103f5480@@YAXXZ sub_103f5480
+0x100148d5 func   ?sub_101b5870@CSoundEmitterSystemBase@@QAEXPBD0@Z CSoundEmitterSystemBase::sub_101b5870
 0x100148da func   ?sub_100746e0@CFlexAnimationTrack@@QAEXMMH@Z CFlexAnimationTrack::sub_100746e0
 0x100148df func   ?vfunc23@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc23
 0x100148e4 func   ?vfunc371@CNPC_VRat@@QAEHH@Z CNPC_VRat::vfunc371
