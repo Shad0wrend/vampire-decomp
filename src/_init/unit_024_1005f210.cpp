@@ -18,3 +18,9 @@ SendTable g_106c1470;
 int sub_1005f380(void);
 int g_106c146c = ((int (*)(int))sub_1005f380)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1005f4d0 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEBSPDecal.h"
+CTEBSPDecal g_106c144c("BSP Decal");
+// END FUNCTION
