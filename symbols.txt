@@ -6277,6 +6277,7 @@
 0x10009025 func   ?vfunc103@CNPC_VScurrying@@UAEXXZ CNPC_VScurrying::vfunc103
 0x1000902a func   ?sub_1034ca80@CNPCMaker_Zombie@@QAEPAV1@XZ CNPCMaker_Zombie::sub_1034ca80
 0x1000902f func   ?sub_101e8b50@CUnknown101e8b50@@QAEMXZ CUnknown101e8b50::sub_101e8b50
+0x10009039 func   ??0CTEBeamRingPoint@@QAE@PBD@Z CTEBeamRingPoint::CTEBeamRingPoint
 0x10009039 func   ?sub_1005cbc0@CTEBeamRingPoint@@QAEPAV1@H@Z CTEBeamRingPoint::sub_1005cbc0
 0x1000903e func   ?vfunc237@CBaseEntity@@QAEHXZ CBaseEntity::vfunc237
 0x10009043 func   ?vfunc26@CAI_StandoffBehavior@@UAEXHH@Z CAI_StandoffBehavior::vfunc26
