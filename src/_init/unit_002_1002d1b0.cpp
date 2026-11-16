@@ -16,6 +16,12 @@ ConVar g_106b85c0("phys_timescale", "1", 0);
 ConVar g_106b8608("phys_speeds", "0", 0);
 // END FUNCTION
 
+// FUNCTION: 0x1002d360 size=0xa
+#define PCD_INITIALIZERS
+#include "CCollisionEvent.h"
+CCollisionEvent g_106b86d8;
+// END FUNCTION
+
 // FUNCTION: 0x1002d520 size=0x5
 #include "CObjectEvent.h"
 CObjectEvent g_106b8694;
