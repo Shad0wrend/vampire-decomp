@@ -1049,6 +1049,7 @@
 0x1000259a func   ?sub_103343f0@CBaseCombatCharacter@@QAEHHPBD@Z CBaseCombatCharacter::sub_103343f0
 0x100025a4 func   ?sub_10239170@CBaseCombatWeapon@@QAE_NXZ CBaseCombatWeapon::sub_10239170
 0x100025a9 func   ?sub_102f6d80@@YAPAVCAI_Node@@PBVVector@@0MH@Z sub_102f6d80
+0x100025ae func   ??0CTETParticleAttached@@QAE@PBD@Z CTETParticleAttached::CTETParticleAttached
 0x100025ae func   ?sub_10069a10@CTETParticleAttached@@QAEPAV1@H@Z CTETParticleAttached::sub_10069a10
 0x100025b3 func   ?sub_1006c180@CUnknown1006c180@@QAE_NH@Z CUnknown1006c180::sub_1006c180
 0x100025b8 func   ?sub_101d7780@@YIHPAUCUnknownList101d7780@@PAXH@Z sub_101d7780
