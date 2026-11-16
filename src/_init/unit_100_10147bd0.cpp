@@ -41,6 +41,15 @@ int * sub_10148560(void);
 int * g_1071a498 = ((int * (*)(int))sub_10148560)(0);
 // END FUNCTION
 
+// FUNCTION: 0x1014a170 size=0x5
+// an empty inline constructor: the game's construct is a bare `ret`, no code names the global
+struct CEmpty1014a170
+{
+	CEmpty1014a170() {}
+};
+CEmpty1014a170 g_empty_1014a170;
+// END FUNCTION
+
 // FUNCTION: 0x1014ea70 size=0xa
 #include "ConCommand.h"
 void sub_1014e520(void);
