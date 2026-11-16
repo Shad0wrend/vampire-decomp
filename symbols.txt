@@ -734,6 +734,7 @@
 0x10001f28 func   ?vfunc103@CGameSign@@UAEXXZ CGameSign::vfunc103
 0x10001f2d func   ?vfunc452@CNPC_VNosferatu@@UAEDXZ CNPC_VNosferatu::vfunc452
 0x10001f32 func   ?sub_10131680@@YIXPAX@Z sub_10131680
+0x10001f37 func   ??0CTEMuzzleFlash@@QAE@PBD@Z CTEMuzzleFlash::CTEMuzzleFlash
 0x10001f37 func   ?sub_10065e20@CTEMuzzleFlash@@QAEPAV1@PBD@Z CTEMuzzleFlash::sub_10065e20
 0x10001f3c func   ?sub_100feea0@CFieldHolder@@QAEXH@Z CFieldHolder::sub_100feea0
 0x10001f41 func   ?sub_10077770@CUnknown10077770@@QAEXPAUCUnknownSlot0Obj@@HH@Z CUnknown10077770::sub_10077770
