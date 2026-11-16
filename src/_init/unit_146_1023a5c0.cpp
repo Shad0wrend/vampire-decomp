@@ -60,3 +60,8 @@ ConVar g_10752dd8("damage_floaters", "1", 128, "Turns damage floaters above NPC'
 #include "ConVar.h"
 ConVar g_10752c98("damage_floaters_queue_time", ".2", 0, "Minimum amount of time between the release of a damage floater on a particular NPC.");
 // END FUNCTION
+
+// FUNCTION: 0x1023eb30 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_10752e88;
+// END FUNCTION
