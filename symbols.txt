@@ -9629,6 +9629,7 @@
 0x1000d4a9 func   ?vfunc363@CWeaponMelee_Tzimisce3Claw@@QAEHXZ CWeaponMelee_Tzimisce3Claw::vfunc363
 0x1000d4ae func   ?vfunc513@CAI_BaseNPC@@UAEIXZ CAI_BaseNPC::vfunc513
 0x1000d4b3 func   ?vfunc0@CTEBloodStream@@UAEPAUServerClass@@XZ CTEBloodStream::vfunc0
+0x1000d4b8 func   ??1CTEBloodSprite@@QAE@XZ CTEBloodSprite::~CTEBloodSprite
 0x1000d4b8 func   ?sub_1005d970@CUnknown1005d970@@QAEHXZ CUnknown1005d970::sub_1005d970
 0x1000d4bd func   ?sub_1019cf70@@YIDPAVCRecipientFilter@@@Z sub_1019cf70
 0x1000d4c2 func   ?sub_101d9df0@@YAHXZ sub_101d9df0
