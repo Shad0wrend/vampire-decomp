@@ -17173,6 +17173,7 @@
 0x10455e90 vtable ??_7CGlobalEntityList@@6B@ CGlobalEntityList::vftable
 0x10455ea0 vtable ??_7CNotifyList@@6BIEntityListener@@@ CNotifyList::vftable
 0x10455eb0 vtable ??_7CNotifyList@@6B@ CNotifyList::vftable
+0x10455eb0 data   ??_7CNotifyList@@6BINotify@@@ ??_7CNotifyList@@6BINotify@@@
 0x10455ecc vtable ??_7CEntityTouchManager@@6B@ CEntityTouchManager::vftable
 0x10455edc vtable ??_7CEntityListSystem@@6B@ CEntityListSystem::vftable
 0x10455f0c vtable ??_7CBaseEntityList@@6B@ CBaseEntityList::vftable
