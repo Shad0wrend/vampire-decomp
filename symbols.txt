@@ -4033,6 +4033,7 @@
 0x10006203 func   ?sub_104275a0@CTbl@@QAEHH@Z CTbl::sub_104275a0
 0x10006208 func   ?vfunc244@CNPC_VTzimisce@@UAEHXZ CNPC_VTzimisce::vfunc244
 0x1000620d func   ?sub_1013b280@@YAXABVQuaternion@@AAVVector@@AAM@Z sub_1013b280
+0x10006212 func   ??0CUnknown1006ccc0@@QAE@XZ CUnknown1006ccc0::CUnknown1006ccc0
 0x10006212 func   ?sub_1006ccc0@CUnknown1006ccc0@@QAEPAV1@XZ CUnknown1006ccc0::sub_1006ccc0
 0x10006217 func   ?sub_10270180@CAI_BaseNPC@@QAEXPAXD@Z CAI_BaseNPC::sub_10270180
 0x1000621c func   ?sub_10370b00@@YAXXZ sub_10370b00
