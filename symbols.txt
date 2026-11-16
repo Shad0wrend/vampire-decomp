@@ -15573,6 +15573,7 @@
 0x10014bd2 func   ?sub_1026af30@@YIPAXPAUCUnknown1026af30View@@@Z sub_1026af30
 0x10014bd7 func   ?sub_101857b0@UtlMem@@QAEXXZ UtlMem::sub_101857b0
 0x10014bdc func   ?sub_10240250@@YA_NABVVector@@000@Z sub_10240250
+0x10014be1 func   ??0?$CUtlRBTree@UNode_t@?$CUtlMap@PAVIPhysicsObject@@HG@@G@@QAE@HHP6A_NABUNode_t@?$CUtlMap@PAVIPhysicsObject@@HG@@0@Z@Z CUtlRBTree<CUtlMap<IPhysicsObject *,int,unsigned short>::Node_t,unsigned short>::CUtlRBTree
 0x10014be1 func   ?sub_100464f0@S100464f0@@QAEPAU1@HHH@Z S100464f0::sub_100464f0
 0x10014be6 func   ?sub_101aa980@@YIXPAD@Z sub_101aa980
 0x10014beb func   ?vfunc266@CSecCamera@@QAEXPBM@Z CSecCamera::vfunc266
