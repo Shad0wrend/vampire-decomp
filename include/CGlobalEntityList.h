@@ -42,6 +42,25 @@ public:
 	virtual void OnEntityDeleted(CBaseEntity *pEntity);
 };
 
+#ifdef PCD_INITIALIZERS	// the initializer unit: the global 0x106eb5d8 (the SDK's CGlobalEntityList gEntList)
+#include "CBaseEntityList.h"
+#include "utlvector.h"
+// Built by the out-of-line constructor; the implicit destructor destroys the listener vector inline, then jumps to
+// the base's destructor.
+class CGlobalEntityList : public CBaseEntityList
+{
+public:
+	CGlobalEntityList();	// function 0x100f6b40
+	// The slot table is the base's (+0x04); the headers' inline code spells it m_Slots. A static declaration keeps that
+	// code compiling here (no initializer unit calls it, so it is never emitted).
+	static CGlobalEntityList_Slot m_Slots[0x2000];
+
+	int m_n1803c;	// 0x1803c
+	int m_iNumEnts;	// 0x18040
+	char m_b18044;	// 0x18044
+	CUtlVector<class IEntityListener *> m_entityListeners;	// 0x18048
+};
+#else
 class CGlobalEntityList
 {
 public:
@@ -95,3 +114,4 @@ public:
 	CBaseHandle sub_100f9df0(CGlobalEntityList_Ent *pEnt, int index, int forcedSerial);	// "CBaseEntityList::AddNetworkableEntity" (stub 0x10014d08): sub_100f9fc0(pEnt, index, forcedSerial)
 	int sub_100f6d60();	// takes the global pending-delete value (0x10703674) and clears it (stub 0x10003d1e); does not use this
 };
+#endif

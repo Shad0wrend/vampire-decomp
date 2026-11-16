@@ -63,5 +63,8 @@ public:
 
 	CBaseEntityList();	// 0x100f9a60: clears the slot table, sets up both linked lists, fills the second list with the indices 0x800..0x1fff, then clears the slot table again
 	void sub_100fa0f0(unsigned int element);	// releases the entity of a live list node (stub 0x1000a362)
+#ifdef PCD_INITIALIZERS	// the initializer unit: CGlobalEntityList g_EntityList's destroy jumps to it
+	~CBaseEntityList();	// function 0x100f9c40
+#endif
 	void sub_100f9c40();	// destructor body: stores the vtable, releases every live node, then RemoveAll + Purge of both linked lists
 };
