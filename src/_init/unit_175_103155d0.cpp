@@ -6,6 +6,13 @@ int * sub_10315610(void);
 int * g_10936c60 = ((int * (*)(int))sub_10315610)(0);
 // END FUNCTION
 
+// FUNCTION: 0x10316dd0 size=0xa
+#define PCD_INITIALIZERS
+#include "CNewedOwner.h"
+#include "PcdGuarded.h"
+template <> CNewedOwner PcdGuarded<0x10936c74, CNewedOwner>::s_object;
+// END FUNCTION
+
 // FUNCTION: 0x10319d50 size=0xa
 #define PCD_INITIALIZERS
 #include "Pool.h"
