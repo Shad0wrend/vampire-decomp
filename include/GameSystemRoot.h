@@ -4,6 +4,7 @@
 // Only units that define PCD_INITIALIZERS include it: elsewhere slot 8 stays the plain vfunc8 matched code calls
 // (a real destructor would rename them) and CAnchorList.h's 8-byte CBaseGameSystem stands.
 #pragma once
+#ifdef PCD_INITIALIZERS	// guarded as a whole: the link audit compiles every header in one unit without the define
 
 class CBaseGameSystem
 {
@@ -28,3 +29,4 @@ public:
 
 	CAutoGameSystem *m_pNext;	// 0x04
 };
+#endif
