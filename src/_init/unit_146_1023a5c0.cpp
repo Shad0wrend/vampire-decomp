@@ -51,6 +51,11 @@ int * sub_1023d050(void);
 int * g_107532e4 = ((int * (*)(int))sub_1023d050)(0);
 // END FUNCTION
 
+// FUNCTION: 0x1023e340 size=0x5
+#include "CBaseHandle.h"
+CBaseHandle g_10753230[25];
+// END FUNCTION
+
 // FUNCTION: 0x1023e390 size=0xa
 #include "ConVar.h"
 ConVar g_10752dd8("damage_floaters", "1", 128, "Turns damage floaters above NPC's heads on(1) and off(0).");
