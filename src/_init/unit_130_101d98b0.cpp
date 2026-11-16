@@ -8,6 +8,13 @@
 CUnknown101e0be0 g_10739a4c;
 // END FUNCTION
 
+// FUNCTION: 0x101d9930 size=0xa
+#define PCD_INITIALIZERS
+#include "utlvector.h"
+#include "PcdGuarded.h"
+template <> CUtlVector<int> PcdGuarded<0x107399f4, CUtlVector<int> >::s_object(8, 8);
+// END FUNCTION
+
 // FUNCTION: 0x101d9a60 size=0x5
 #include "ServerClassReg.h"
 #include "SendTable.h"
