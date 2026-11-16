@@ -2812,6 +2812,7 @@
 0x1000494e func   ?vfunc373@CWeaponMelee_ChangClaw@@QAEHXZ CWeaponMelee_ChangClaw::vfunc373
 0x10004953 func   ?vfunc420@CNPC_VPedestrian@@UAEXXZ CNPC_VPedestrian::vfunc420
 0x1000495d func   ?sub_10031070@CCollisionEvent@@QAEXHPAXHD00@Z CCollisionEvent::sub_10031070
+0x10004962 func   ??0CUnknown101c4560@@QAE@XZ CUnknown101c4560::CUnknown101c4560
 0x10004962 func   ?sub_101c4560@CUnknown101c4560@@QAEPAXXZ CUnknown101c4560::sub_101c4560
 0x10004967 func   ?vfunc103@CPhysMotor@@UAEXXZ CPhysMotor::vfunc103
 0x1000496c func   ?sub_1030be50@CBaseCineCam@@QAEPAMPAM@Z CBaseCineCam::sub_1030be50
