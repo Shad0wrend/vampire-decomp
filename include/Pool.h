@@ -18,6 +18,11 @@ struct Pool
 	int m_nPeak;	// 0x24: the most items in use at once
 	unsigned short m_nBlocks;	// 0x28: blocks allocated so far
 
+#ifdef PCD_INITIALIZERS	// only the initializer units: a constructor here would take the implicit default one from
+				// every class holding a Pool
+	Pool(unsigned int cbItem, unsigned int nItemsPerBlock, unsigned int nMode);	// function 0x1013da90 (stub 0x1000723e)
+	~Pool();	// function 0x1013dae0 (stub 0x10005da3): frees the blocks (sub_1013db80 when items are in use), then sub_1013db40
+#endif
 	Pool *sub_1013da90(unsigned int cbItem, unsigned int nItemsPerBlock, unsigned int nMode);	// constructor body (stub-called by the pool owners): m_cbItem = max(cbItem, 4), the other two stored, m_nPeak = 0, sub_1013db10() (empty the block list), then sub_1013dbb0 (make the first block); returns this
 	void sub_1013db10();	// stub 0x100101d1: empties the block list (sentinel points to itself), no blocks, no free items, no items in use
 	unsigned int *sub_1013dc60(unsigned int cb);	// allocate an item of at most m_cbItem bytes (null when too big or the pool is exhausted), updating the use counts
