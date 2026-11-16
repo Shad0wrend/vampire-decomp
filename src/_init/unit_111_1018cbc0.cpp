@@ -77,6 +77,12 @@ int sub_10191420(void);
 int g_1072b230 = ((int (*)(int))sub_10191420)(0);
 // END FUNCTION
 
+// FUNCTION: 0x10191850 size=0xa
+#define PCD_INITIALIZERS
+#include "CBreakModelsPrecached.h"
+CBreakModelsPrecached g_1072b018;
+// END FUNCTION
+
 // FUNCTION: 0x101929f0 size=0x5
 int * sub_10192a30(void);
 int * g_1072b038 = ((int * (*)(int))sub_10192a30)(0);
