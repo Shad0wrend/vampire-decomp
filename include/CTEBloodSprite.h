@@ -8,6 +8,9 @@ class CRecipientFilter;
 class CTEBloodSprite : public CBaseTempEntityHead
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEBloodSprite();	// function 0x1005d970: the vtable, then the base's destructor body
+#endif
 	CTEBloodSprite(const char *name);	// 0x1005d8f0
 
 	virtual CTEBloodSprite *vfunc2(unsigned int flags);	// scalar deleting destructor

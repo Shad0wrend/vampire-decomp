@@ -10,6 +10,11 @@ class CRecipientFilter;
 class CTEBubbleTrail : public CBaseTempEntity
 {
 public:
+	CTEBubbleTrail(const char *name);	// function 0x1005fca0
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEBubbleTrail();	// function 0x1005fd20: the vtable, then the base's destructor body
+#endif
+
 	virtual ServerClass *vfunc0();
 	virtual int vfunc1();
 	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor

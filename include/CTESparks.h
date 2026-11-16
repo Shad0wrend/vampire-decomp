@@ -9,6 +9,9 @@ class CRecipientFilter;
 class CTESparks : public CTEParticleSystemHead
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTESparks();	// function 0x10067690: the vtable, then the base's destructor body
+#endif
 	CTESparks(const char *name);	// 0x10067620: the particle head (base constructor, origin zeroed), then the vtable
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();

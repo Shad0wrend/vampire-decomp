@@ -7,6 +7,9 @@
 class CTEKillPlayerAttachments : public CBaseTempEntityHead
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEKillPlayerAttachments();	// function 0x100659e0: the vtable, then the base's destructor body
+#endif
 	CTEKillPlayerAttachments(const char *name);  // 0x10065980
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();

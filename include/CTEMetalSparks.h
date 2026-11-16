@@ -8,6 +8,9 @@ class CRecipientFilter;
 class CTEMetalSparks : public CBaseTempEntityHead
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEMetalSparks();	// function 0x10059e80: the vtable, then the base's destructor body
+#endif
 	CTEMetalSparks(const char *name);	// 0x10059e10
 
 	virtual CTEMetalSparks *vfunc2(unsigned int flags);	// scalar deleting destructor

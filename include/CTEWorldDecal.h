@@ -7,6 +7,11 @@
 class CTEWorldDecal
 {
 public:
+	CTEWorldDecal(const char *name);	// function 0x1006af40
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEWorldDecal();	// function 0x1006afb0: the vtable, then the base's destructor body
+#endif
+
 	virtual ServerClass * vfunc0();
 	virtual int vfunc1();
 	virtual CTEWorldDecal *vfunc2(unsigned int flags);	// scalar deleting destructor

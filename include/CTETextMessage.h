@@ -8,6 +8,9 @@ class CRecipientFilter;
 class CTETextMessage : public CBaseTempEntityHead
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTETextMessage();	// function 0x10068c00: the vtable, then the base's destructor body
+#endif
 	CTETextMessage(const char *name);	// 0x10068b50
 
 	virtual CTETextMessage *vfunc2(unsigned int flags);	// scalar deleting destructor

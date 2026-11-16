@@ -8,6 +8,9 @@
 class CTEBloodStream : public CBaseTempEntityHead
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEBloodStream();	// function 0x1005dfe0: the vtable, then the base's destructor body
+#endif
 	CTEBloodStream(const char *name);	// constructor: the base head with the name, then the zeroed fields (sub_1005df60)
 	CTEBloodStream *sub_1005df60(const char *name);	// the same constructor body as a member: the base head with the name (sub_10015334), the vtable, then the zeroed fields (0x1005df60)
 	virtual CTEBloodStream *vfunc2(unsigned int flags);	// scalar deleting destructor

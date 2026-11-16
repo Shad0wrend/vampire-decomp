@@ -10,6 +10,11 @@ class CRecipientFilter;
 class CTEBubbles : public CBaseTempEntity
 {
 public:
+	CTEBubbles(const char *name);	// function 0x1005f5c0
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEBubbles();	// function 0x1005f640: the vtable, then the base's destructor body
+#endif
+
 	virtual ServerClass *vfunc0();
 	virtual int vfunc1();
 	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor

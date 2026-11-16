@@ -8,6 +8,11 @@ class CRecipientFilter;
 class CTEFogRipple
 {
 public:
+	CTEFogRipple(const char *name);	// function 0x10062500
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEFogRipple();	// function 0x10062570: the vtable, then the base's destructor body
+#endif
+
 	virtual int vfunc0();
 	virtual int vfunc1();
 	virtual CTEFogRipple *vfunc2(unsigned int flags);	// scalar deleting destructor

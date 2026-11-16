@@ -6,6 +6,9 @@
 class CTEDust : public CBaseTempEntityHead
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEDust();	// function 0x10114080: the vtable, then the base's destructor body
+#endif
 	CTEDust(const char *name);
 	CTEDust *vfunc2(unsigned int flags);
 	void sub_100058d5();

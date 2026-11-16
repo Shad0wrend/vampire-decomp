@@ -13,6 +13,11 @@ struct CTEFootprintVec3
 class CTEFootprintDecal : public CBaseTempEntity
 {
 public:
+	CTEFootprintDecal(const char *name);	// function 0x10062e50
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEFootprintDecal();	// function 0x10062ec0: the vtable, then the base's destructor body
+#endif
+
 	virtual ServerClass * vfunc0();
 	virtual int vfunc1();
 	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor

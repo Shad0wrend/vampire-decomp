@@ -6,6 +6,11 @@
 class CTETracer
 {
 public:
+	CTETracer(const char *name);	// function 0x1006a400
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTETracer();	// function 0x1006a470: the vtable, then the base's destructor body
+#endif
+
 	virtual int vfunc0();
 	virtual int vfunc1();
 	virtual CTETracer *vfunc2(unsigned int flags);	// scalar deleting destructor

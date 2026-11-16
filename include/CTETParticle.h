@@ -5,6 +5,11 @@
 class CTETParticle
 {
 public:
+	CTETParticle(const char *name);	// function 0x10069430
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTETParticle();	// function 0x100694a0: the vtable, then the base's destructor body
+#endif
+
 	CTETParticle *sub_10069430(int a);	// constructor (0x10069430): the temp entity base constructor (sub_10015334), then the vtable and the zeroed fields and the flag byte at +0x24
 
 	virtual ServerClass * vfunc0();

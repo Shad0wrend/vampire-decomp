@@ -8,6 +8,9 @@ class CRecipientFilter;
 class CTEBeamEnts : public CTEBaseBeam
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEBeamEnts();	// function 0x1005b3d0: the vtable, then the base's destructor body
+#endif
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();
 	virtual CTEBaseBeam *vfunc2(unsigned int flags);	// scalar deleting destructor

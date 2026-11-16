@@ -6,6 +6,9 @@
 class CTESprite : public CBaseTempEntityHead
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTESprite();	// function 0x10067cb0: the vtable, then the base's destructor body
+#endif
 	CTESprite(const char *name);	// constructor: the base head with the name, then the zeroed fields (sub_10067c30)
 	virtual CTESprite *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a gunsmoke sprite at the origin (raised by 24, then 50 units along the flat direction of the angles and 25 against the right vector), created for everybody

@@ -8,6 +8,9 @@ class CRecipientFilter;
 class CTEInspectionFX : public CTEParticleSystemHead
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEInspectionFX();	// function 0x100654d0: the vtable, then the base's destructor body
+#endif
 	CTEInspectionFX(const char *name);	// 0x10065460: the particle head (base constructor, origin zeroed), then the vtable
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();

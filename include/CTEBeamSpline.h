@@ -5,6 +5,9 @@
 class CTEBeamSpline
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEBeamSpline();	// function 0x1005d2a0: the vtable, then the base's destructor body
+#endif
 	CTEBeamSpline(const char *name);	// 0x1005d220: the CBaseTempEntityHead constructor with the name, the vtable, the 16 points zeroed, no points
 	CTEBeamSpline *sub_1005d220(const char *name);	// the same constructor body written without the class's base (manual base call + vtable store)
 	virtual int vfunc0();

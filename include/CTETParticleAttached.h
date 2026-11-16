@@ -6,6 +6,11 @@ class CTETParticleAttached
 {
 public:
 
+	CTETParticleAttached(const char *name);	// function 0x10069a10
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTETParticleAttached();	// function 0x10069a80: the vtable, then the base's destructor body
+#endif
+
 	void sub_100021e9();	// destructor body
 	CTETParticleAttached *sub_10069a10(int a);	// constructor: base temp entity ctor, vtable, fields
 	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)

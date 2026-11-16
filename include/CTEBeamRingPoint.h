@@ -5,6 +5,11 @@
 class CTEBeamRingPoint
 {
 public:
+	CTEBeamRingPoint(const char *name);	// function 0x1005cbc0
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEBeamRingPoint();	// function 0x1005cc30: the vtable, then the base's destructor body
+#endif
+
 	virtual ServerClass * vfunc0();
 	virtual int vfunc1();
 	virtual CTEBeamRingPoint *vfunc2(unsigned int flags);	// scalar deleting destructor

@@ -7,6 +7,9 @@
 class CTEGunshotDecal : public CBaseTempEntityHead
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEGunshotDecal();	// function 0x100640b0: the vtable, then the base's destructor body
+#endif
 	virtual ServerClass * vfunc0();
 	virtual int vfunc1();
 	virtual CTEGunshotDecal *vfunc2(unsigned int flags);	// scalar deleting destructor

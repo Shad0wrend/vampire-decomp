@@ -7,6 +7,9 @@
 class CTEExplosiveGunshotDecal : public CTEGunshotDecal
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEExplosiveGunshotDecal();	// function 0x10064aa0: the vtable, then the base's destructor body
+#endif
 	CTEExplosiveGunshotDecal(const char *name);	// 0x10064a40: the CTEGunshotDecal constructor, then the vtable
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();

@@ -8,6 +8,11 @@ class CRecipientFilter;
 class CTEEnergySplash
 {
 public:
+	CTEEnergySplash(const char *name);	// function 0x10061250
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEEnergySplash();	// function 0x100612c0: the vtable, then the base's destructor body
+#endif
+
 	virtual int vfunc0();
 	virtual int vfunc1();
 	virtual CTEEnergySplash *vfunc2(unsigned int flags);	// scalar deleting destructor

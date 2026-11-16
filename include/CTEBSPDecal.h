@@ -7,6 +7,11 @@
 class CTEBSPDecal
 {
 public:
+	CTEBSPDecal(const char *name);	// function 0x1005ee50
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEBSPDecal();	// function 0x1005eec0: the vtable, then the base's destructor body
+#endif
+
 	virtual ServerClass * vfunc0();
 	virtual int vfunc1();
 	virtual CTEBSPDecal *vfunc2(unsigned int flags);	// scalar deleting destructor

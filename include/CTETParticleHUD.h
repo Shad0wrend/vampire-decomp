@@ -6,6 +6,11 @@ class CTETParticleHUD
 {
 public:
 
+	CTETParticleHUD(const char *name);	// function 0x10069f00
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTETParticleHUD();	// function 0x10069f70: the vtable, then the base's destructor body
+#endif
+
 	void sub_10006a5a();	// destructor body
 	CTETParticleHUD *sub_10069f00(int a);	// 0x10069f00: the base temp entity's constructor (0x10015334), then the vtable and the zeroed fields at +0xc, +0x10, +0x14, +0x18
 	void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)

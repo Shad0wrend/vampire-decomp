@@ -9,6 +9,9 @@
 class CTEExplosion : public CTEParticleSystemHead
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEExplosion();	// function 0x100618c0: the vtable, then the base's destructor body
+#endif
 	CTEExplosion(const char *pName);	// 0x10061820
 	virtual ServerClass *vfunc0();
 	virtual int vfunc1();

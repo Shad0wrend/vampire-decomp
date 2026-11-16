@@ -6,6 +6,11 @@
 class CTEBeamEntPoint : public CBaseTempEntityHead
 {
 public:
+	CTEBeamEntPoint(const char *name);	// function 0x1005ac10
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEBeamEntPoint();	// function 0x1005ac90: the vtable, then the base's destructor body
+#endif
+
 	virtual CTEBeamEntPoint *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a beam from entity 1 to a point (the origin raised by 24, then 50 units along the flat direction of the angles), created for everybody
 	virtual void vfunc4(int a, int b);	// "Create" (filter pointer, delay bits)

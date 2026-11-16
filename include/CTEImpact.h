@@ -5,6 +5,11 @@
 class CTEImpact
 {
 public:
+	CTEImpact(const char *name);	// function 0x10064fc0
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEImpact();	// function 0x10065030: the vtable, then the base's destructor body
+#endif
+
 	virtual ServerClass * vfunc0();
 	virtual int vfunc1();
 	virtual CTEImpact *vfunc2(unsigned int flags);	// scalar deleting destructor

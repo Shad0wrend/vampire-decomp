@@ -7,6 +7,9 @@
 class CTEBeamLaser : public CTEBaseBeam
 {
 public:
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEBeamLaser();	// function 0x1005b9b0: the vtable, then the base's destructor body
+#endif
 	CTEBeamLaser(const char *name);	// 0x1005b940: base CTEBaseBeam constructor call, vtable, +0x44/+0x48 cleared
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();

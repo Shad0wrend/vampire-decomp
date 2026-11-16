@@ -10,6 +10,11 @@ class CRecipientFilter;
 class CTEGlowSprite : public CBaseTempEntity
 {
 public:
+	CTEGlowSprite(const char *name);	// function 0x100639b0
+#ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
+	~CTEGlowSprite();	// function 0x10063a20: the vtable, then the base's destructor body
+#endif
+
 	CTEGlowSprite *sub_100639b0(int a);	// constructor (0x100639b0): the temp entity base constructor (sub_10015334), then the vtable and the zeroed fields
 	virtual ServerClass *vfunc0();
 	virtual int vfunc1();
