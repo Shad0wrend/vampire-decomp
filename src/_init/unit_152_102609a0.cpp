@@ -102,6 +102,11 @@ extern float g_104994ac;
 float g_1090fe40 = g_104994ac + g_1090fe0c;
 // END FUNCTION
 
+// FUNCTION: 0x10267640 size=0x5
+extern float g_104994b4;
+float g_1090fe08 = 0.11f - g_104994b4;
+// END FUNCTION
+
 // FUNCTION: 0x1026d190 size=0xa
 #include "ConVar.h"
 ConVar g_10920440("footstep_normal_vol", "0.5", 128);
