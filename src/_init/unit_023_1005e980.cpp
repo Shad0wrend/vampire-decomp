@@ -18,3 +18,9 @@ SendTable g_106c1160;
 int sub_1005eaf0(void);
 int g_106c115c = ((int (*)(int))sub_1005eaf0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1005ed00 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEBreakModel.h"
+CTEBreakModel g_106c1180("Break Model");
+// END FUNCTION
