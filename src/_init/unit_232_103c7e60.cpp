@@ -81,6 +81,12 @@ ConVar g_1093d570("werewolf_pursuit_distance", "800", 0);
 ConVar g_1093f8e8("werewolf_pursuit_unseen_time", "3.0", 0);
 // END FUNCTION
 
+// FUNCTION: 0x103c8720 size=0x5
+#define PCD_INITIALIZERS
+#include "CCycleCount.h"
+CCycleCount g_1093d638;
+// END FUNCTION
+
 // FUNCTION: 0x103c87f0 size=0x5
 int * sub_103c8830(void);
 int * g_1093d630 = ((int * (*)(int))sub_103c8830)(0);
