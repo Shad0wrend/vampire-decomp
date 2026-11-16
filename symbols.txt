@@ -11835,6 +11835,7 @@
 0x100100f0 func   ?sub_1037e550@@YAHXZ sub_1037e550
 0x100100f5 func   ?sub_1002d070@@YAXPAUS10032fb0@@HHHHIGM@Z sub_1002d070
 0x100100fa func   ?sub_101e0a00@CUnknown101e0f00Entry@@QAEXXZ CUnknown101e0f00Entry::sub_101e0a00
+0x100100ff func   ??1CUnknown1024a230@@QAE@XZ CUnknown1024a230::~CUnknown1024a230
 0x100100ff func   ?sub_1024a1e0@@YIXPAPAUCUnknownObj1024a1e0@@@Z sub_1024a1e0
 0x10010104 func   ?sub_100cd7e0@TOutput@@QAEHPAUTSave@@@Z TOutput::sub_100cd7e0
 0x10010109 func   ?sub_10427a30@@YAPAXPAH@Z sub_10427a30
