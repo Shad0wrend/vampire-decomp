@@ -75,3 +75,8 @@ ai_hull_t g_10925698(8192, "TZIMISCERUNNER_HULL", Vector(-12.0, -12.0, 0.0), Vec
 #include "ai_hull_t.h"
 ai_hull_t g_10925548(16384, "GARGOYLE_HULL", Vector(-15.0, -15.0, 0.0), Vector(15.0, 15.0, 100.0), Vector(-10.0, -10.0, 0.0), Vector(10.0, 10.0, 70.0));
 // END FUNCTION
+
+// FUNCTION: 0x102d57d0 size=0x5
+#include "ai_hull_t.h"
+ai_hull_t g_10925900(32768, "MING_XIAO_HULL", Vector(-34.0, -34.0, 0.0), Vector(34.0, 34.0, 120.0), Vector(-34.0, -34.0, 0.0), Vector(34.0, 34.0, 100.0));
+// END FUNCTION
