@@ -7988,6 +7988,7 @@
 0x1000b2a8 func   ?sub_102bf050@@YAXXZ sub_102bf050
 0x1000b2ad func   ?vfunc373@CWeaponMelee_AVampBlade@@QAEHXZ CWeaponMelee_AVampBlade::vfunc373
 0x1000b2b2 func   ?sub_10427970@CUnk10427970@@QAEXXZ CUnk10427970::sub_10427970
+0x1000b2b7 func   ??1CTEUserTracer@@QAE@XZ CTEUserTracer::~CTEUserTracer
 0x1000b2b7 func   ?sub_1006aa90@CUnknown1006aa90@@QAEHXZ CUnknown1006aa90::sub_1006aa90
 0x1000b2bc func   ?vfunc113@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc113
 0x1000b2c1 func   ?sub_1033db30@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1033db30
