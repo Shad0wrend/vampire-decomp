@@ -18,3 +18,9 @@ SendTable g_106c4978;
 int sub_10065c80(void);
 int g_106c4974 = ((int (*)(int))sub_10065c80)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10065d70 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEKillPlayerAttachments.h"
+CTEKillPlayerAttachments g_106c4994("KillPlayerAttachments");
+// END FUNCTION
