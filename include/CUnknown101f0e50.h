@@ -17,6 +17,10 @@ public:
 class CUnknown101f0e50
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer units: the global 0x1073a9a0 is built and destroyed by these
+	CUnknown101f0e50();	// function 0x101f0e50
+	~CUnknown101f0e50();	// function 0x101f0e80
+#endif
 	int m_f00;
 	int m_f04;	// element count
 	int m_f08;

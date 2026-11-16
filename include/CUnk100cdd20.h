@@ -12,6 +12,9 @@ struct CZeroInt100cdd20
 class CUnk100cdd20
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer units: the global 0x106e7050 is built and destroyed by these
+	~CUnk100cdd20();	// function 0x100cdd60
+#endif
 	CUnk100cdd20();
 	void sub_1000f3ad();
 

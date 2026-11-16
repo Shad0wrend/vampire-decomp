@@ -7,6 +7,9 @@ class CBaseEntity;
 class CEffectsServer
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer units: the global 0x106eb584 is built and destroyed by these
+	~CEffectsServer();	// function 0x100f5c60
+#endif
 	CEffectsServer();
 	virtual CEffectsServer *vfunc0(unsigned int flags);
 	virtual void vfunc1(int a, int b, int c, int d, unsigned char e, unsigned char f, int g, unsigned char h, unsigned char i, unsigned char j, unsigned char k, unsigned char l, unsigned char m, unsigned char n, unsigned char o, unsigned char p);	// slot 1: a 16 argument effect (the bytes h, i, k become floats) broadcast to every player through slot 8 of the temp entity system (global 0x10540528), unless the prediction system's suppressed host leaves nobody

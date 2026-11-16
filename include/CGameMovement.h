@@ -8,6 +8,9 @@
 class CGameMovement
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer units: the global 0x10938628 is built and destroyed by these
+	~CGameMovement();	// function 0x1011e200
+#endif
 	CGameMovement();	// stores the vftable, sets the hull / view vectors and caches a tuning float (0x10739d08 + 0x3c8) at +0xa8
 	virtual CGameMovement *vfunc0(unsigned int flags);
 	virtual void vfunc1(void *pMove, void *pPlayer);	// slot 1 "ProcessMovement": stores the arguments at +8 / +4, picks the frame time from the global at 0x109ef04c, runs slot 5 and sub_1011f6e0, and restores the global time step (+0x10 of 0x1070b228)
