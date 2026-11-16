@@ -15257,6 +15257,7 @@
 0x100144f7 func   ?sub_1027ee00@@YAHXZ sub_1027ee00
 0x10014506 func   ?sub_101dd4c0@CUnit101dd4c0@@QAEXXZ CUnit101dd4c0::sub_101dd4c0
 0x1001450b func   ?sub_1025db50@@YIDPAH@Z sub_1025db50
+0x10014510 func   ?RemoveAll@?$CUtlVector@UCDamageEvent_t@@V?$CUtlMemory@UCDamageEvent_t@@@@@@QAEXXZ CUtlVector<CDamageEvent_t,CUtlMemory<CDamageEvent_t> >::RemoveAll
 0x10014510 func   ?sub_10032a40@@YIXPAH@Z sub_10032a40
 0x10014515 func   ?sub_10131260@CUnknown10131260@@QAEXAAUinputdata_t@@@Z CUnknown10131260::sub_10131260
 0x1001451a func   ?sub_1012e550@@YAHXZ sub_1012e550
