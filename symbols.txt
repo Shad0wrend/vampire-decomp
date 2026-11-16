@@ -9680,6 +9680,7 @@
 0x1000d4b8 func   ?sub_1005d970@CUnknown1005d970@@QAEHXZ CUnknown1005d970::sub_1005d970
 0x1000d4bd func   ?sub_1019cf70@@YIDPAVCRecipientFilter@@@Z sub_1019cf70
 0x1000d4c2 func   ?sub_101d9df0@@YAHXZ sub_101d9df0
+0x1000d4c7 func   ??1CUnknown101d54f0@@QAE@XZ CUnknown101d54f0::~CUnknown101d54f0
 0x1000d4cc func   ?sub_102c1230@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102c1230
 0x1000d4d1 func   ?sub_103656a0@CNPC_VBach@@QAEXXZ CNPC_VBach::sub_103656a0
 0x1000d4d6 func   ?sub_101c9cf0@@YAPAHXZ sub_101c9cf0
