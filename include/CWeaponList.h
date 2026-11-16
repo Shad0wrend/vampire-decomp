@@ -14,7 +14,7 @@ public:
 	~CWeaponListPurger();
 };
 
-class CWeaponList : public CBaseGameSystem
+class CWeaponList : public PCD_GAMESYSTEM8	// the 8-byte game-system root (CAnchorList.h)
 {
 public:
 	virtual void vfunc5();	// resets the weapon-name list

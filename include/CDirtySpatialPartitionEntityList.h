@@ -15,32 +15,7 @@ public:
 };
 
 #ifdef PCD_INITIALIZERS
-// The initializer units see the game-system root as it is (Source's IGameSystem / CBaseGameSystem): eight slots and the
-// virtual destructor in slot 8 (0x1024a1b0 ??1CBaseGameSystem), and CAutoGameSystem's out-of-line constructor
-// 0x1042c260. Elsewhere slot 8 stays the plain vfunc8 matched code calls (a real destructor would rename them).
-class CBaseGameSystem
-{
-public:
-	virtual bool vfunc0();
-	virtual void vfunc1();
-	virtual void vfunc2();
-	virtual void vfunc3();
-	virtual void vfunc4();
-	virtual void vfunc5();
-	virtual void vfunc6();
-	virtual void vfunc7();
-	virtual ~CBaseGameSystem();
-
-	char m_04[4];
-};
-
-class CAutoGameSystem : public CBaseGameSystem
-{
-public:
-	CAutoGameSystem();	// function 0x1042c260 (stub 0x10004e71)
-	void sub_1000cfbd();	// as in CDataObjectAccessSystem (transplant)
-	void *sub_101bd980(unsigned int flags);
-};
+#include "GameSystemRoot.h"	// the initializer units: Source's root, CAutoGameSystem's constructor
 #else
 class CAutoGameSystem
 {

@@ -8,7 +8,7 @@ struct CSoundscapeSystemMember8
 	int m_data[8];
 };
 
-class CSoundscapeSystem : public CBaseGameSystem
+class CSoundscapeSystem : public PCD_GAMESYSTEM8	// the 8-byte game-system root (CAnchorList.h)
 {
 public:
 	// Slot 8, the deleting destructor.

@@ -6,6 +6,10 @@
 
 extern void (__cdecl *g_109f3624)(void *);	// Plat_Free
 
+#ifdef PCD_INITIALIZERS
+#include "GameSystemRoot.h"	// the initializer units: Source's root (CAutoGameSystem has the same 8 bytes)
+#define PCD_GAMESYSTEM8 CAutoGameSystem
+#else
 class CBaseGameSystem
 {
 public:
@@ -21,6 +25,8 @@ public:
 
 	char m_04[4];
 };
+#define PCD_GAMESYSTEM8 CBaseGameSystem
+#endif
 
 class CAnchorListVec
 {
@@ -52,7 +58,7 @@ public:
 	int *m_pElements;		// 0x18
 };
 
-class CAnchorList : public CBaseGameSystem, public CAnchorListVec
+class CAnchorList : public PCD_GAMESYSTEM8, public CAnchorListVec
 {
 public:
 	virtual void vfunc5();

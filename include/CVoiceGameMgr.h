@@ -19,7 +19,19 @@ public:
 	int m_nMaxPlayers;	// 0x14
 };
 
+#ifdef PCD_INITIALIZERS	// the initializer units: Source's interface with Troika's inline virtual destructor
+				// (slot 0; the helper global's destroy stores its vtable 0x104a3078)
+class IVoiceGameMgrHelper
+{
+public:
+	virtual ~IVoiceGameMgrHelper() {}
+};
+#endif
+
 class CVoiceGameMgrHelper
+#ifdef PCD_INITIALIZERS
+	: public IVoiceGameMgrHelper
+#endif
 {
 public:
 	virtual bool vfunc1(int a, int b);	// slot 1 (+0x4): always true

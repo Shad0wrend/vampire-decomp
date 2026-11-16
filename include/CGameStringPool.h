@@ -3,6 +3,10 @@
 // Only what matched code needs, as plain members (same style as CSkyList.h).
 #pragma once
 
+#ifdef PCD_INITIALIZERS
+#include "GameSystemRoot.h"
+#endif
+
 class CStringPool
 {
 public:
@@ -10,9 +14,18 @@ public:
 	void sub_101bf640();	// the pool's destructor body (stub 0x1000a4b6): out-of-line CUtlRBTree RemoveAll (0x101bfb00), then CUtlMemory purge (grow at +0xc, Plat_Free of the pointer at +4)
 	char *sub_101bf860(const char *psz);	// stub 0x1000555b: find psz in the pool's tree, or _mbsdup and insert it; returns the pooled copy (ret 4). Also called on the pool at 0x1074e9a0
 	void sub_101bfb00();	// CUtlRBTree::RemoveAll (stub 0x1000c405): the tree lives at +0 of the pool
+#ifdef PCD_INITIALIZERS	// the initializer units: the real destructor the pool global's destroy runs
+	~CStringPool();	// function 0x101bf640 (stub 0x1000a4b6)
+#endif
 	char m_pad0000[0x10];	// CUtlRBTree<...> of the pooled strings; real members not recovered yet
 };
 
+#ifdef PCD_INITIALIZERS	// the initializer units: Source's gamestringpool.cpp bases; VC places the base with the
+				// vtable at +0, the pool at +4, and the destroy runs ~CBaseGameSystem before ~CStringPool
+class CGameStringPool : public CStringPool, public CBaseGameSystem
+{
+};
+#else
 class CGameStringPool
 {
 public:
@@ -24,3 +37,4 @@ public:
 public:
 	void vfunc5();
 };
+#endif
