@@ -100,3 +100,8 @@ ai_hull_t g_10925740(262144, "HENGEYOKAI_HULL", Vector(-30.0, -30.0, 0.0), Vecto
 #include "ai_hull_t.h"
 ai_hull_t g_109255f0(524288, "RAT_HULL", Vector(-6.0, -6.0, 0.0), Vector(6.0, 6.0, 10.0), Vector(-6.0, -6.0, 0.0), Vector(6.0, 6.0, 10.0));
 // END FUNCTION
+
+// FUNCTION: 0x102d5e60 size=0x5
+#include "ai_hull_t.h"
+ai_hull_t g_109258c8(1048576, "MANBAT_HULL", Vector(-40.0, -40.0, 0.0), Vector(40.0, 40.0, 160.0), Vector(-40.0, -40.0, 0.0), Vector(40.0, 40.0, 160.0));
+// END FUNCTION
