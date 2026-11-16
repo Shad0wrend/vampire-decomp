@@ -6,6 +6,12 @@
 CUtlVector<int> g_109d3010;
 // END FUNCTION
 
+// FUNCTION: 0x10411c80 size=0xa
+#define PCD_INITIALIZERS
+#include "CUnknown1024a230.h"
+CUnknown1024a230 g_1094afe0;
+// END FUNCTION
+
 // FUNCTION: 0x10411d00 size=0xa
 #include "utlvector.h"
 CUtlVector<int> g_109d306c;
