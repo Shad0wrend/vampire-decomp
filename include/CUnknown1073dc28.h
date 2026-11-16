@@ -25,6 +25,10 @@ struct CUnknown1073dc28Record
 class CUnknown1073dc28
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer units: the global 0x1073dc28 is built and destroyed by these
+	CUnknown1073dc28();	// function 0x101f4f50
+	~CUnknown1073dc28();	// function 0x101f4f80
+#endif
 	char m_pad0000[4];
 	int m_field04;	// 0x04
 	char m_pad0008[8];
