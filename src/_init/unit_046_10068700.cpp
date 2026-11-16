@@ -18,3 +18,9 @@ SendTable g_106c5d8c;
 int sub_10068870(void);
 int g_106c5d88 = ((int (*)(int))sub_10068870)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10068a30 size=0xa
+#define PCD_INITIALIZERS
+#include "CTESpriteSpray.h"
+CTESpriteSpray g_106c5da8("Sprite Spray");
+// END FUNCTION
