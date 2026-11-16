@@ -211,6 +211,11 @@ ConVar g_10924030("debug_hunting_aggressive", "1", 0, "Set to true to have hunti
 ConVar g_10924d68("debug_force_anim", "0", 0, "Set to 1 to force walk anims to use run instead, or 2 to force run to walk.");
 // END FUNCTION
 
+// FUNCTION: 0x1028cb80 size=0x5
+#include "CBaseHandle.h"
+CBaseHandle g_109247e0[2];
+// END FUNCTION
+
 // FUNCTION: 0x1028cbc0 size=0x5
 #include "CAI_NPCPatrolPathSaveRestoreOps.h"
 CAI_NPCPatrolPathSaveRestoreOps g_10924a5c;
