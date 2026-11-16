@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x101af970 size=0x5
+#define PCD_INITIALIZERS
+#include "CUnknown101af9b0.h"
+CUnknown101af9b0 g_1072bc20;
+// END FUNCTION
+
 // FUNCTION: 0x101afe30 size=0xa
 #include "ConVar.h"
 ConVar g_1072bd58("sv_soundemitter_trace", "0", 8192, "Show all EmitSound calls including their symbolic name and the actual .wav file they resolved to\n");
