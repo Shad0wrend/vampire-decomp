@@ -157,3 +157,9 @@ extern float g_1049e050;
 extern float g_1049e058;
 float g_10936f6c = (240.0f - g_1049e050) / g_1049e058;
 // END FUNCTION
+
+// FUNCTION: 0x10348c60 size=0x5
+extern float g_1049e05c;
+extern float g_1049e064;
+float g_10937b0c = (100.0f - g_1049e05c) / g_1049e064;
+// END FUNCTION
