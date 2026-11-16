@@ -5,3 +5,8 @@
 int * sub_10136330(void);
 int * g_1070c634 = ((int * (*)(int))sub_10136330)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10137090 size=0x5
+#include "Vector.h"
+Vector g_1070d1b0(0.0f, 0.0f, 0.0f);
+// END FUNCTION
