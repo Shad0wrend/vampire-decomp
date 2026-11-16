@@ -151,6 +151,7 @@
 0x100012fd func   ?sub_10356f30@@YG_NMM@Z sub_10356f30
 0x10001302 func   ??0CUnknown101e0be0@@QAE@XZ CUnknown101e0be0::CUnknown101e0be0
 0x10001302 func   ?sub_101e0be0@CUnknown101e0be0@@QAEPAXXZ CUnknown101e0be0::sub_101e0be0
+0x10001307 func   ?Purge@?$CUtlMemory@UCPenetrateEvent_t@@@@QAEXXZ CUtlMemory<CPenetrateEvent_t>::Purge
 0x10001307 func   ?sub_10032ec0@UtlMem@@QAEXXZ UtlMem::sub_10032ec0
 0x1000130c func   ?vfunc600@CNPC_VWerewolf@@UAE_NH@Z CNPC_VWerewolf::vfunc600
 0x10001311 func   ?sub_10348490@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::sub_10348490
