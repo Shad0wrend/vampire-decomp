@@ -111,6 +111,23 @@ struct CCollisionEventTimeVec
 	}
 };
 
+#ifdef PCD_INITIALIZERS	// the element types of the queues, as the initializer unit sees them
+#include "utlvector.h"
+struct CTouchEvent_t	// 0x24 byte queued touch record
+{
+	char m_data[0x24];
+};
+struct CDamageInflictor_t	// 32 byte record (inflictor first)
+{
+	char m_data[0x20];
+};
+struct CTimeEvent_t	// (key, time)
+{
+	int m_key;
+	float m_flTime;
+};
+#endif
+
 class CCollisionEvent;
 
 // The IPhysicsCollisionSolver sub-object at +4 of CCollisionEvent (its methods get this + 4 as ECX).
@@ -171,11 +188,19 @@ public:
 	float m_postVelocity[2][3];	// 0x00a0: the post velocities (slot 40 of the objects)
 	CCollisionEventRecords m_records;	// 0x00b8
 	CBaseEntity *m_pEntities[2];	// 0x00d0: the entities of the event's objects
+#ifdef PCD_INITIALIZERS	// the initializer unit: the global 0x106b86d8 is destroyed through the vectors' destructors
+	CUtlVector<CTouchEvent_t> m_touchEvents;	// 0x00d8
+	CUtlVector<CDamageEvent_t> m_damageEvents;	// 0x00ec
+	CUtlVector<CDamageInflictor_t> m_damageInflictors;	// 0x0100
+	CUtlVector<CPenetrateEvent_t> m_penetrateEvents;	// 0x0114
+	CUtlVector<CTimeEvent_t> m_timeEvents;	// 0x0128
+#else
 	CCollisionEventVec5 m_touchVec;	// 0x00d8: queued touch records of 0x24 bytes (memory +0xd8, size +0xe4)
 	CCollisionEventVec5 m_damageVec;	// 0x00ec: queued damage events (memory +0xec, size +0xf8)
 	CCollisionEventVec5 m_vec0100;	// 0x0100
 	CCollisionEventPenetrateVec m_penetrateEvents;	// 0x0114 (size at +0x120)
 	CCollisionEventTimeVec m_timeEvents;	// 0x0128
+#endif
 };
 
 // The queue fields as the matched functions name them.
