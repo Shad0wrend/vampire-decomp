@@ -16467,6 +16467,7 @@
 0x1011bde0 func   ?sub_1011bde0@@YAHXZ sub_1011bde0
 0x1011bde0 func   ?sub_1011bde0@@YAPAXXZ sub_1011bde0
 0x1011c000 func   ?sub_1011c000@@YAHXZ sub_1011c000
+0x1011c000 func   ?sub_1011c000@@YAPAXXZ sub_1011c000
 0x1011ccc0 func   ?sub_1011ccc0@@YAXPAVbf_read@@PAVCUserCmd@@1@Z sub_1011ccc0
 0x1012c6c0 func   ?sub_1012c6c0@@YAXPAUCMoveEnt@@0@Z sub_1012c6c0
 0x1012cbb0 func   ?sub_1012cbb0@@YAXPAUSMoveEnt@@PAVCUtlVector4@@@Z sub_1012cbb0
