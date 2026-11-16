@@ -85,3 +85,8 @@ ai_hull_t g_10925900(32768, "MING_XIAO_HULL", Vector(-34.0, -34.0, 0.0), Vector(
 #include "ai_hull_t.h"
 ai_hull_t g_10925510(65536, "MING_XIAO_PATHING_HULL", Vector(-80.0, -80.0, 0.0), Vector(80.0, 80.0, 120.0), Vector(-80.0, -80.0, 0.0), Vector(80.0, 80.0, 100.0));
 // END FUNCTION
+
+// FUNCTION: 0x102d5a70 size=0x5
+#include "ai_hull_t.h"
+ai_hull_t g_10925820(131072, "MING_XIAO_TENTACLE_HULL", Vector(-13.0, -13.0, 0.0), Vector(13.0, 13.0, 30.0), Vector(-13.0, -13.0, 0.0), Vector(13.0, 13.0, 30.0));
+// END FUNCTION
