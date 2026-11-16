@@ -4215,6 +4215,7 @@
 0x1000659b func   ?sub_10070ae0@@YAPAHXZ sub_10070ae0
 0x100065a0 func   ?CheckStuck@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::CheckStuck
 0x100065a5 func   ?vfunc481@CNPC_Crow@@QAEXPAVCBaseEntity@@@Z CNPC_Crow::vfunc481
+0x100065aa func   ??0CUnknown101e9880@@QAE@XZ CUnknown101e9880::CUnknown101e9880
 0x100065aa func   ?sub_101e9880@CUnknown101e9880@@QAEPAV1@XZ CUnknown101e9880::sub_101e9880
 0x100065b4 func   ?vfunc3@CTEMetalSparks@@UAEXABVVector@@ABVQAngle@@@Z CTEMetalSparks::vfunc3
 0x100065b9 func   ?sub_101d0e90@@YADPAUCUnk101d0e90Ent@@@Z sub_101d0e90
