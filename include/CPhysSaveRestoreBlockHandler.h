@@ -8,6 +8,106 @@ class CSave;
 class CRestore;
 #include "CPhysRestoreRecords.h"
 
+#ifdef PCD_INITIALIZERS	// the initializer unit: the global 0x106bda60 (the SDK's g_PhysSaveRestoreBlockHandler)
+#include "utlvector.h"
+#include "utlpriorityqueue.h"
+#include "CPhysObjSaveRestoreOps.h"
+#include "CGlobalEntityList.h"	// IEntityListener
+class CBaseEntity;
+class IPhysicsObject;
+class CPhysCollide;
+
+// The 2003 SDK's CDefOps (utlrbtree.h): the default less function of a key type.
+template <class T> class CDefOps
+{
+public:
+	static bool LessFunc(const T &lhs, const T &rhs);
+};
+
+// The 2003 SDK's CUtlMap (utlmap.h): the tree of (key, element) nodes, then the key less function.
+template <typename K, typename T, typename I = unsigned short> class CUtlMap
+{
+public:
+	typedef K KeyType_t;
+	typedef T ElemType_t;
+	typedef bool (*LessFunc_t)(const KeyType_t &, const KeyType_t &);
+	struct Node_t
+	{
+		KeyType_t key;
+		ElemType_t elem;
+	};
+	typedef CUtlRBTree<Node_t, I> CTree;
+
+	CUtlMap(int growSize = 0, int initSize = 0, LessFunc_t lessfunc = 0)
+		: m_Tree(growSize, initSize, TreeLessFunc)
+	{
+		m_pfnLess = lessfunc;
+	}
+	void SetLessFunc(LessFunc_t func) { m_pfnLess = func; }
+
+	static bool TreeLessFunc(const Node_t &left, const Node_t &right);
+
+	CTree m_Tree;
+	LessFunc_t m_pfnLess;
+};
+
+class CDefSaveRestoreBlockHandler	// ISaveRestoreBlockHandler with empty defaults
+{
+public:
+	virtual const char *GetBlockName();
+	virtual void PreSave(void *pData);
+	virtual void Save(void *pSave);
+	virtual void WriteSaveHeaders(void *pSave);
+	virtual void PostSave();
+	virtual void PreRestore();
+	virtual void ReadRestoreHeaders(void *pRestore);
+	virtual void Restore(void *pRestore, bool fCreatePlayers);
+	virtual void PostRestore();
+};
+
+class IPhysSaveRestoreManager
+{
+public:
+	virtual void NoteBBox(const Vector &mins, const Vector &maxs, CPhysCollide *pCollide);
+	virtual void AssociateModel(IPhysicsObject *pObject, int modelIndex);
+	virtual void AssociateModel(IPhysicsObject *pObject, const CPhysCollide *pModel);
+	virtual void ForgetModel(IPhysicsObject *pObject);
+	virtual void ForgetAllModels();
+};
+
+// The SDK's form (physics_saverestore.cpp): three polymorphic bases, built inline; the implicit destructor.
+class CPhysSaveRestoreBlockHandler : public CDefSaveRestoreBlockHandler, public IPhysSaveRestoreManager, public IEntityListener
+{
+public:
+	struct QueuedItem_t
+	{
+		char m_data[0x38];
+	};
+	class CEntityRestoreSet;
+
+	CPhysSaveRestoreBlockHandler()
+	{
+		m_QueuedSaves.SetLessFunc(SaveQueueFunc);
+		SetDefLessFunc(m_QueuedRestores);
+		SetDefLessFunc(m_PhysObjectModels);
+		SetDefLessFunc(m_PhysObjectCustomModels);
+		SetDefLessFunc(m_PhysCollideBBoxModels);
+	}
+	template <class MAP> static void SetDefLessFunc(MAP &map)
+	{
+		map.SetLessFunc(CDefOps<MAP::KeyType_t>::LessFunc);
+	}
+	static bool SaveQueueFunc(const QueuedItem_t &left, const QueuedItem_t &right);
+
+	CUtlPriorityQueue<QueuedItem_t> m_QueuedSaves;	// 0x0c
+	CUtlMap<CBaseEntity *, CEntityRestoreSet *> m_QueuedRestores;	// 0x24
+	bool m_fDoLoad;	// 0x40
+	CUtlMap<IPhysicsObject *, int> m_PhysObjectModels;	// 0x44
+	CUtlMap<IPhysicsObject *, const CPhysCollide *> m_PhysObjectCustomModels;	// 0x60
+	CUtlMap<const CPhysCollide *, BBox_t> m_PhysCollideBBoxModels;	// 0x7c
+	char m_blockHeader[0x10];	// 0x98
+};
+#else
 class CPhysSaveRestoreBlockHandler
 {
 public:
@@ -44,3 +144,4 @@ public:
 public:
 	int vfunc0();
 };
+#endif
