@@ -11,7 +11,13 @@ struct CVDmgBlock16_t
 	int m_a, m_b, m_c, m_d;
 	int sub_10230d00(void *pCharacter);
 
+#ifdef PCD_INITIALIZERS	// the initializer units: the out-of-line empty destructor 0x10310b70 (stub 0x100072d9) their globals'
+				// atexit destroys jump to, and the constructor from the text form 0x10310b40
+	~CVDmgBlock16_t();
+	CVDmgBlock16_t(const char *pszText);
+#else
 	~CVDmgBlock16_t() {}
+#endif
 	CVDmgBlock16_t();	// calls sub_10204270 (stub 0x10004b7e, body at 0x10205380)
 	CVDmgBlock16_t(int a, int b);	// calls sub_102042a0(a, b) (0x102053a0, stub 0x10004561)
 	void sub_10205380();	// the constructor's body (stub 0x10004b7e), called directly on a block that is a part of an int array
