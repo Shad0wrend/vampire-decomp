@@ -72,6 +72,12 @@ void * sub_1011bde0(void);
 InterfaceReg g_1070b0e4(sub_1011bde0, "ServerGameEnts001");
 // END FUNCTION
 
+// FUNCTION: 0x1011bed0 size=0xa
+#define PCD_INITIALIZERS
+#include "CServerGameClients.h"
+CServerGameClients g_1070b074;
+// END FUNCTION
+
 // FUNCTION: 0x1011bfb0 size=0x5
 #define PCD_INITIALIZERS
 #include "InterfaceReg.h"
