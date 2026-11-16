@@ -4818,6 +4818,7 @@
 0x1000722f func   ?vfunc86@CHudCounter@@QAE_NHHHHH@Z CHudCounter::vfunc86
 0x10007234 func   ?sub_10388fb0@@YAXXZ sub_10388fb0
 0x10007239 func   ?sub_102066b0@@YAXXZ sub_102066b0
+0x1000723e func   ??0Pool@@QAE@III@Z Pool::Pool
 0x1000723e func   ?sub_1013da90@Pool@@QAEPAU1@III@Z Pool::sub_1013da90
 0x10007243 func   ?sub_1023b0b0@@YAHXZ sub_1023b0b0
 0x10007248 func   ?sub_102e20b0@CAI_Motor@@QAEXPBMM@Z CAI_Motor::sub_102e20b0
