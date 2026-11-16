@@ -15748,6 +15748,7 @@
 0x10014fd8 func   ?sub_100db5c0@@YAXXZ sub_100db5c0
 0x10014fdd func   ?sub_1017cc20@CBasePlayer@@QAEXPBDH@Z CBasePlayer::sub_1017cc20
 0x10014fe2 func   ?vfunc130@CAI_Hint@@UAEXH@Z CAI_Hint::vfunc130
+0x10014fe7 func   ??0CUnknown10232420@@QAE@XZ CUnknown10232420::CUnknown10232420
 0x10014fe7 func   ?sub_10232420@CUnknown10232420@@QAEPAXXZ CUnknown10232420::sub_10232420
 0x10014fec func   ?sub_10056a00@CUnknown10056a00@@QAEDH@Z CUnknown10056a00::sub_10056a00
 0x10014ff6 func   ?sub_10298910@CAI_BaseNPCTroika@@QAEXPBD@Z CAI_BaseNPCTroika::sub_10298910
