@@ -98,6 +98,7 @@ public:
 		map.SetLessFunc(CDefOps<MAP::KeyType_t>::LessFunc);
 	}
 	static bool SaveQueueFunc(const QueuedItem_t &left, const QueuedItem_t &right);
+	virtual const char *GetBlockName();	// declared here (not inline): the vtables stay the game's, not this unit's
 
 	CUtlPriorityQueue<QueuedItem_t> m_QueuedSaves;	// 0x0c
 	CUtlMap<CBaseEntity *, CEntityRestoreSet *> m_QueuedRestores;	// 0x24
