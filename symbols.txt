@@ -9459,6 +9459,7 @@
 0x1000cfcc func   ?sub_1007e5f0@CUnknown1007ec20@@QAEXXZ CUnknown1007ec20::sub_1007e5f0
 0x1000cfd1 func   ?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@UCRBTree12Entry_101c03c0@@G@@@@QAEXH@Z CUtlMemory<CUtlRBTree<CRBTree12Entry_101c03c0,unsigned short>::Node_t>::Grow
 0x1000cfd1 func   ?sub_101c0240@S101c0240@@QAEXH@Z S101c0240::sub_101c0240
+0x1000cfd6 func   ??0CUnknown100727c0@@QAE@XZ CUnknown100727c0::CUnknown100727c0
 0x1000cfd6 func   ?sub_100727c0@@YIPAHPAH@Z sub_100727c0
 0x1000cfdb func   ?sub_10222740@CExperienceTable@@QAEXH@Z CExperienceTable::sub_10222740
 0x1000cfe0 func   ?sub_100c40e0@@YA_NPAUBase_100c40e0@@HH@Z sub_100c40e0
