@@ -13294,6 +13294,7 @@
 0x10011df6 func   ?sub_10429f80@@YIXPAVCBaseEntity@@@Z sub_10429f80
 0x10011dfb func   ?vfunc329@CWeaponIWritten@@UAEHXZ CWeaponIWritten::vfunc329
 0x10011e00 func   ?sub_10367fc0@@YAHXZ sub_10367fc0
+0x10011e05 func   ??0CUnknown101d7c10@@QAE@XZ CUnknown101d7c10::CUnknown101d7c10
 0x10011e05 func   ?sub_101d7c10@CUnknown101d7c10@@QAEPAXXZ CUnknown101d7c10::sub_101d7c10
 0x10011e0a func   ?vfunc5@CItemGAstrolite@@QAEPAV1@I@Z CItemGAstrolite::vfunc5
 0x10011e0f func   ?sub_101f6c50@CUnknown101f6c50@@QAEXPAUCTraitStatBlock@@@Z CUnknown101f6c50::sub_101f6c50
