@@ -18,3 +18,9 @@ SendTable g_106c39f8;
 int sub_10063d70(void);
 int g_106c39f4 = ((int (*)(int))sub_10063d70)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10063f10 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEGlowSprite.h"
+CTEGlowSprite g_106c3a14("GlowSprite");
+// END FUNCTION
