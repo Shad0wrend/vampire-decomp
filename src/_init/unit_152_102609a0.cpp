@@ -92,6 +92,12 @@ CCycleCount g_1090fe68;
 CFastTimer g_10920338;
 // END FUNCTION
 
+// FUNCTION: 0x102651b0 size=0xa
+#define PCD_INITIALIZERS
+#include "CUnknown102652d0.h"
+CUnknown102652d0 g_1090fe10;
+// END FUNCTION
+
 // FUNCTION: 0x10265470 size=0x5
 #define PCD_INITIALIZERS
 #include "SLogEntry.h"
