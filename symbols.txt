@@ -13664,6 +13664,7 @@
 0x1001266b func   ?sub_100ee560@CBaseDoor@@QAEXD@Z CBaseDoor::sub_100ee560
 0x10012670 func   ?sub_102cc8d0@@YAHXZ sub_102cc8d0
 0x10012675 func   ?sub_100b7a40@@YIXPAH@Z sub_100b7a40
+0x1001267a func   ??1CTETParticle@@QAE@XZ CTETParticle::~CTETParticle
 0x1001267a func   ?sub_100694a0@CUnknown100694a0@@QAEHXZ CUnknown100694a0::sub_100694a0
 0x1001267f func   ?vfunc41@CTriggerBombSite@@QAEXUCBombState@@@Z CTriggerBombSite::vfunc41
 0x10012689 func   ?sub_1012d8b0@@YAHXZ sub_1012d8b0
