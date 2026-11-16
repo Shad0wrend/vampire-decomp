@@ -47,3 +47,9 @@ CVTSDependencySaveRestoreDataOps g_106e6ff8;
 #include "CVariantSaveDataOps.h"
 CVariantSaveDataOps g_106e70dc;
 // END FUNCTION
+
+// FUNCTION: 0x100d1160 size=0xa
+#define PCD_INITIALIZERS
+#include "Pool.h"
+Pool g_106e6f9c(8, 256, 0);
+// END FUNCTION
