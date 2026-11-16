@@ -7,6 +7,9 @@ class CRestore;
 class CUnknown10057680
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer units: the global 0x106be530 is built and destroyed by these
+	CUnknown10057680();	// function 0x10057660
+#endif
 	int m_unk0;
 	int m_unk4;
 

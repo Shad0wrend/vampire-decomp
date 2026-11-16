@@ -13,6 +13,9 @@ struct CMovedEntityRecord_t
 class CPhysicsMovedEntities
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer units: the global 0x106b8a98 is built and destroyed by these
+	CPhysicsMovedEntities();	// function 0x10033630
+#endif
 	int m_nCount;	// 0x00
 	CMovedEntityRecord_t m_Records[512];	// 0x04
 
