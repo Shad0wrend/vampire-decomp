@@ -184,6 +184,7 @@
 0x100013ac func   ?vfunc356@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::vfunc356
 0x100013b1 func   ?sub_100792c0@CUnknown100792c0@@QAEXH@Z CUnknown100792c0::sub_100792c0
 0x100013b6 func   ?sub_103f00c0@CWeaponThrown_Chang_Energy_Ball@@QAEXH@Z CWeaponThrown_Chang_Energy_Ball::sub_103f00c0
+0x100013bb func   ?TreeLessFunc@?$CUtlMap@PAVIPhysicsObject@@HG@@SA_NABUNode_t@1@0@Z CUtlMap<IPhysicsObject *,int,unsigned short>::TreeLessFunc
 0x100013bb func   ?sub_10045f80@@YAXXZ sub_10045f80
 0x100013c0 func   ?sub_101b6680@@YA_NPAG0@Z sub_101b6680
 0x100013c5 func   ?vfunc17@CCollisionProperty@@UAEXXZ CCollisionProperty::vfunc17
