@@ -18,3 +18,9 @@ SendTable g_106c24b0;
 int sub_100615e0(void);
 int g_106c24ac = ((int (*)(int))sub_100615e0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10061720 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEEnergySplash.h"
+CTEEnergySplash g_106c2620("Energy Splash");
+// END FUNCTION
