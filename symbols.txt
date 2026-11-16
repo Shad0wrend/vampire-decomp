@@ -9580,6 +9580,7 @@
 0x1000d21f func   ?vfunc5@CWeaponRanged_Pistol_Anaconda@@UAEPAVCWeaponRanged@@I@Z CWeaponRanged_Pistol_Anaconda::vfunc5
 0x1000d224 func   ?vfunc197@CAI_BaseNPC@@UAE?AVVector@@ABV2@HH@Z CAI_BaseNPC::vfunc197
 0x1000d229 func   ?vfunc331@CBasePlayer@@QAE_NPAVCBaseCombatWeapon@@HHPAH@Z CBasePlayer::vfunc331
+0x1000d22e func   ??0?$CUtlRBTree@UNode_t@?$CUtlMap@PAVCBaseEntity@@PAVCEntityRestoreSet@CPhysSaveRestoreBlockHandler@@G@@G@@QAE@HHP6A_NABUNode_t@?$CUtlMap@PAVCBaseEntity@@PAVCEntityRestoreSet@CPhysSaveRestoreBlockHandler@@G@@0@Z@Z CUtlRBTree<CUtlMap<CBaseEntity *,CPhysSaveRestoreBlockHandler::CEntityRestoreSet *,unsigned short>::Node_t,unsigned short>::CUtlRBTree
 0x1000d22e func   ?sub_10046310@S10046310@@QAEPAU1@HHH@Z S10046310::sub_10046310
 0x1000d233 func   ?vfunc176@CTriggerBombSite@@QAEXPAX@Z CTriggerBombSite::vfunc176
 0x1000d238 func   ?vfunc103@CLogicLineToEntity@@UAEXXZ CLogicLineToEntity::vfunc103
