@@ -18,3 +18,9 @@ SendTable g_106c71f0;
 int sub_1006ac90(void);
 int g_106c71ec = ((int (*)(int))sub_1006ac90)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1006ae30 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEUserTracer.h"
+CTEUserTracer g_106c71b8("UserTracer");
+// END FUNCTION
