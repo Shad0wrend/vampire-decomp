@@ -7,6 +7,12 @@
 CGameStringPool g_109eed28;
 // END FUNCTION
 
+// FUNCTION: 0x1042c060 size=0x5
+#define PCD_INITIALIZERS
+#include "CHLSharedGameRules.h"
+CHLSharedGameRules g_109eed4c;
+// END FUNCTION
+
 // FUNCTION: 0x1042c7f0 size=0xa
 #include "ConVar.h"
 ConVar g_109ef2d0("sv_gravity", "800", 8448, "World gravity.");
