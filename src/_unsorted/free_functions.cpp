@@ -126061,6 +126061,183 @@ int CUnknown101ad440::sub_101ad440(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ad470 size=0x41e
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CAmbientGeneric.h"
+#include "CBaseEntity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "CEntityVSlots.h"
+#include "CEntitySoundOriginView.h"
+
+extern int g_1072bccc[];
+extern double g_1044fab0;
+__declspec(dllimport) void Warning(const char *, ...);
+void sub_101cdac0(int edict, const float *origin, const char *file, float vol, int atten, int flags, int pitch);
+void sub_101bac90(int nEvent, int pOrigin, int nLevel, float flDuration, int a, int b);
+
+namespace block_101ad470 {
+struct CAmbientGenericUnit : CAmbientGeneric
+{
+	int sub_101ac670(int flags);
+};
+int CAmbientGenericUnit::sub_101ac670(int flags)
+{
+	return m_n04e0 | flags;
+}
+}
+using namespace block_101ad470;
+
+
+inline IHandleEntity *LookV1(const CBaseHandle &handle)
+{
+	if (handle.m_Index == 0xffffffff)
+		return 0;
+	const EHandleEntInfo *pInfo = &(*(EHandleDetail::EntityList * volatile *)&EHandleDetail::g_10566458)->m_EntPtrArray[handle.GetEntryIndex()];
+	if (pInfo->m_SerialNumber == handle.GetSerialNumber())
+		return pInfo->m_pEntity;
+	else
+		return 0;
+}
+inline IHandleEntity *LookV2(const CBaseHandle &handle)
+{
+	if (handle.m_Index == 0xffffffff)
+		return 0;
+	EHandleDetail::EntityList *list = EHandleDetail::g_10566458;
+	const EHandleEntInfo *pInfo = &list->m_EntPtrArray[handle.GetEntryIndex()];
+	if (pInfo->m_SerialNumber == handle.GetSerialNumber())
+		return pInfo->m_pEntity;
+	else
+		return 0;
+}
+inline IHandleEntity *LookV3(const CBaseHandle &handle)
+{
+	if (handle.m_Index == 0xffffffff)
+		return 0;
+	const EHandleEntInfo *pInfo = &EHandleDetail::g_10566458->m_EntPtrArray[handle.GetEntryIndex()];
+	if (pInfo->m_SerialNumber == handle.GetSerialNumber())
+		return pInfo->m_pEntity;
+	else
+		return 0;
+}
+inline IHandleEntity *LookV4(const CBaseHandle &handle)
+{
+	if (handle.m_Index == 0xffffffff)
+		return 0;
+	const EHandleEntInfo *pInfo = &EHandleDetail::g_10566458->m_EntPtrArray[(*(volatile unsigned int *)&handle.m_Index) & 0x1fff];
+	if (pInfo->m_SerialNumber == handle.GetSerialNumber())
+		return pInfo->m_pEntity;
+	else
+		return 0;
+}
+inline int Clamp3(int lvl) { if (lvl > 3) lvl = 3; else if (lvl < 1) lvl = 1; return lvl; }
+void CAmbientGeneric::sub_101ad470(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value)
+{
+	const char *pName = m_pszSoundFile;
+	const char *pszName = pName ? pName : g_106b8540;
+	if (useType != 3) {
+		if ((m_b04bc && useType == 1) || (!m_b04bc && useType == 0))
+			return;
+	}
+	if (useType == 2 && m_b04bc) {
+		float fraction = value;
+		if (value > 1.0)
+			fraction = 1.0f;
+		if (fraction < g_1044fab0)
+			fraction = 0.01f;
+		m_dpv.pitch = (int)(fraction * 255.0f);
+		CBaseEntity *pSoundEnt = m_hSoundEnt.Get();
+		if (!pSoundEnt)
+			return;
+		int edict = pSoundEnt->m_pEdict2e0;
+		sub_101cdac0(edict, ((CEntitySoundOriginView *)pSoundEnt)->GetAbsOrigin(), pszName, 0, 0, ((CAmbientGenericUnit *)this)->sub_101ac670(2), m_dpv.pitch);
+		return;
+	}
+	if (m_b04bc) {
+		if (m_dpv.cspinup) {
+			if (m_dpv.cspincount > m_dpv.cspinup)
+				return;
+			int n = m_dpv.cspincount + 1;
+			m_dpv.spindown = 0;
+			m_dpv.spinup = m_dpv.spinupsav;
+			m_dpv.cspincount = n;
+			m_dpv.pitchrun = ((0xff - m_dpv.pitchstart) / m_dpv.cspinup) * n + m_dpv.pitchstart;
+			if (m_dpv.pitchrun > 0xff)
+				m_dpv.pitchrun = 0xff;
+			m_flNextThink = gpGlobals->curtime + 0.1;
+			return;
+		}
+		m_b04bc = 0;
+		m_spawnflags |= 0x10;
+		if (m_dpv.spindownsav == 0 && m_dpv.fadeoutsav == 0) {
+			CBaseEntity *pSoundEnt = m_hSoundEnt.Get();
+			if (!pSoundEnt)
+				return;
+			int edict = pSoundEnt->m_pEdict2e0;
+			sub_101cdac0(edict, ((CEntitySoundOriginView *)pSoundEnt)->GetAbsOrigin(), pszName, 0, 0, 4, 0);
+			return;
+		}
+		m_dpv.spindown = m_dpv.spindownsav;
+		m_dpv.spinup = 0;
+		m_dpv.fadeout = m_dpv.fadeoutsav;
+		m_dpv.fadein = 0;
+		m_flNextThink = gpGlobals->curtime + 0.1;
+		return;
+	} else {
+		if (m_b04bd) {
+			m_b04bc = 1;
+		} else {
+			CBaseEntity *pSoundEnt = (CBaseEntity *)LookV3(m_hSoundEnt);
+			if (pSoundEnt) {
+				int edict = pSoundEnt->m_pEdict2e0;
+				sub_101cdac0(edict, ((CEntitySoundOriginView *)pSoundEnt)->GetAbsOrigin(), pszName, 0, 0, 4, 0);
+			}
+		}
+		sub_101ad0f0();
+		CEntityVSlots *pEnt = (CEntityVSlots *)m_hSoundEnt.Get();
+		if (pEnt) {
+			int edict = *(int *)((char *)pEnt + 0x2e0);
+			sub_101cdac0(edict, (const float *)pEnt->slot217(), pszName, (float)(m_dpv.vol * 0.01), m_n0454, ((CAmbientGenericUnit *)this)->sub_101ac670(0), m_dpv.pitch);
+			if (m_nSoundEvent) {
+				int bOk = sub_101ad9a0();
+				if (!bOk && m_nSoundEvent != 0x20 && m_nSoundEvent != 0x800) {
+					Warning("%s has invalid NPC sound event parameters\n", sub_100ab4f0());
+				} else {
+					if (m_nSoundEventLevel < 1 || m_nSoundEventLevel > 3) {
+						Warning("%s has an invalid sound event level: %d\n", sub_100ab4f0(), m_nSoundEventLevel);
+						int lvl = m_nSoundEventLevel;
+						if (lvl > 3)
+							lvl = 3;
+						else if (lvl < 1)
+							lvl = 1;
+						m_nSoundEventLevel = lvl;
+					}
+					float flDuration = enginesound->vfunc12(pszName);
+					if (flDuration < 1.0)
+						flDuration = 1.0f;
+					int nRadius = g_1072bccc[m_nSoundEventLevel];
+					sub_101bac90(m_nSoundEvent, (int)pEnt->slot217(), nRadius, flDuration, 0, bOk);
+				}
+			}
+		}
+	}
+	m_flNextThink = gpGlobals->curtime + 0.1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ad9a0 size=0xae
 #include "CBaseEntity.h"
 #include "CUnknown101ad9a0.h"

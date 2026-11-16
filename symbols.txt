@@ -14310,6 +14310,7 @@
 0x100131d3 func   ?sub_10190e50@@YAPAVCOrnamentProp@@PBDPAVCBaseEntity@@@Z sub_10190e50
 0x100131d8 func   ?sub_101771f0@CUnknown101771f0@@QAEHXZ CUnknown101771f0::sub_101771f0
 0x100131dd func   ?vfunc35@CPropSign@@UAEHH@Z CPropSign::vfunc35
+0x100131e2 func   ?sub_101ad470@CAmbientGeneric@@QAEXPAVCBaseEntity@@0HM@Z CAmbientGeneric::sub_101ad470
 0x100131e7 func   ?sub_102d2840@@YAPAUSNode@@HPBD@Z sub_102d2840
 0x100131ec func   ?vfunc298@CBaseCombatWeapon@@UAEXPAVCBaseEntity@@H@Z CBaseCombatWeapon::vfunc298
 0x100131f1 func   ?vfunc473@CNPC_VTest@@UAEHXZ CNPC_VTest::vfunc473
