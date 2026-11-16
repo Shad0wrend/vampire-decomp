@@ -10829,6 +10829,7 @@
 0x1000ec78 func   ?vfunc100@CNPC_VMingXiao@@QAE_NHHH@Z CNPC_VMingXiao::vfunc100
 0x1000ec7d func   ?vfunc82@CAI_BaseHumanoid@@QAEPAUdatamap_t@@XZ CAI_BaseHumanoid::vfunc82
 0x1000ec82 func   ?vfunc259@CNPC_VTzimisceHeadClaw@@QAEXPAX@Z CNPC_VTzimisceHeadClaw::vfunc259
+0x1000ec87 func   ??0CTEUserTracer@@QAE@PBD@Z CTEUserTracer::CTEUserTracer
 0x1000ec87 func   ?sub_1006aa10@CTEUserTracer@@QAEPAV1@PBD@Z CTEUserTracer::sub_1006aa10
 0x1000ec8c func   ?vfunc291@CWeaponPhysCannon@@UAEXXZ CWeaponPhysCannon::vfunc291
 0x1000ec91 func   ?sub_1017ec10@@YGHH@Z sub_1017ec10
