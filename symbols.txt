@@ -17123,6 +17123,7 @@
 0x10449410 vtable ??_7CPhysSaveRestoreBlockHandler@@6BIEntityListener@@@ CPhysSaveRestoreBlockHandler::vftable
 0x10449420 vtable ??_7CPhysSaveRestoreBlockHandler@@6BIPhysSaveRestoreManager@@@ CPhysSaveRestoreBlockHandler::vftable
 0x1044943c vtable ??_7CPhysSaveRestoreBlockHandler@@6B@ CPhysSaveRestoreBlockHandler::vftable
+0x1044943c data   ??_7CPhysSaveRestoreBlockHandler@@6BCDefSaveRestoreBlockHandler@@@ ??_7CPhysSaveRestoreBlockHandler@@6BCDefSaveRestoreBlockHandler@@@
 0x10449470 vtable ??_7IEntityListener@@6B@ IEntityListener::vftable
 0x10449480 vtable ??_7IPhysSaveRestoreManager@@6B@ IPhysSaveRestoreManager::vftable
 0x1044949c vtable ??_7CDefSaveRestoreBlockHandler@@6B@ CDefSaveRestoreBlockHandler::vftable
