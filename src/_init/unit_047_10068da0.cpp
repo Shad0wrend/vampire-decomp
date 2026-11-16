@@ -18,3 +18,9 @@ SendTable g_106c6590;
 int sub_10068f10(void);
 int g_106c658c = ((int (*)(int))sub_10068f10)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10069290 size=0xa
+#define PCD_INITIALIZERS
+#include "CTETextMessage.h"
+CTETextMessage g_106c5e80("TextMessage");
+// END FUNCTION
