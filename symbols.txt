@@ -600,6 +600,7 @@
 0x10001c67 func   ?sub_101e1970@@YGHH@Z sub_101e1970
 0x10001c6c func   ?vfunc0@PyServerSystem@@UAE_NXZ PyServerSystem::vfunc0
 0x10001c71 func   ?sub_102d6210@@YAHH@Z sub_102d6210
+0x10001c7b func   ??1CTEEnergySplash@@QAE@XZ CTEEnergySplash::~CTEEnergySplash
 0x10001c7b func   ?sub_100612c0@CUnknown100612c0@@QAEHXZ CUnknown100612c0::sub_100612c0
 0x10001c80 func   ?sub_102f4ea0@CUnknown102f4ea0@@QAEHH@Z CUnknown102f4ea0::sub_102f4ea0
 0x10001c85 func   ?sub_101b4900@@YGMPBD@Z sub_101b4900
