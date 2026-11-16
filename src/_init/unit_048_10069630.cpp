@@ -19,6 +19,12 @@ int sub_100697a0(void);
 int g_106c6778 = ((int (*)(int))sub_100697a0)(0);
 // END FUNCTION
 
+// FUNCTION: 0x10069900 size=0xa
+#define PCD_INITIALIZERS
+#include "CTETParticle.h"
+CTETParticle g_106c6738("TParticle");
+// END FUNCTION
+
 // FUNCTION: 0x10069b30 size=0x5
 #include "ServerClassReg.h"
 #include "SendTable.h"
