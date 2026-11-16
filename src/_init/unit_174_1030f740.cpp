@@ -16,3 +16,8 @@ CVDmgBlock16_t g_10936c00("CopGenerator");
 inline int pcd_initial_10936c40() { return 0x0; }
 int g_10936c40 = pcd_initial_10936c40();
 // END FUNCTION
+
+// FUNCTION: 0x10311bc0 size=0x5
+#include <string.h>
+int g_10936c3c = strlen("scene:");
+// END FUNCTION
