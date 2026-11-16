@@ -6,6 +6,12 @@
 ConVar g_106cfe50("ent_io_messages", "0", 0, "Set to true to show input  and output messages");
 // END FUNCTION
 
+// FUNCTION: 0x100998c0 size=0xa
+#define PCD_INITIALIZERS
+#include "CPredictableList.h"
+CPredictableList g_106cfee0;
+// END FUNCTION
+
 // FUNCTION: 0x1009a150 size=0xa
 #include "SendTable.h"
 SendTable g_106cf138;
