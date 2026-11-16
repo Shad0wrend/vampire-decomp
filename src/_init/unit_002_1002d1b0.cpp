@@ -21,6 +21,12 @@ ConVar g_106b8608("phys_speeds", "0", 0);
 CObjectEvent g_106b8694;
 // END FUNCTION
 
+// FUNCTION: 0x1002d5b0 size=0xa
+#define PCD_INITIALIZERS
+#include "CPhysicsHook.h"
+CPhysicsHook g_106b88ec;
+// END FUNCTION
+
 // FUNCTION: 0x10031a60 size=0xa
 #include "ConVar.h"
 ConVar g_106b8818("physics_impact_sound_max", "1.0", 0, "For physics impact sounds, max volume.");
