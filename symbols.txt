@@ -3346,6 +3346,7 @@
 0x10005461 func   ?sub_102692d0@CBaseEntity@@QAEXHMPAUCGameTrace@@VVector@@@Z CBaseEntity::sub_102692d0
 0x10005466 func   ?vfunc591@CAI_BaseNPCTroika@@UAE_NXZ CAI_BaseNPCTroika::vfunc591
 0x1000546b func   ??1CDialog@@QAE@XZ CDialog::~CDialog
+0x10005470 func   ??0CTESpriteSpray@@QAE@PBD@Z CTESpriteSpray::CTESpriteSpray
 0x10005470 func   ?sub_10068440@CTESpriteSpray@@QAEPAV1@PBD@Z CTESpriteSpray::sub_10068440
 0x10005475 func   ?sub_100f7d50@@YGPAVCBaseEntity@@PBDABVVector@@M@Z sub_100f7d50
 0x1000547a func   ?sub_100462d0@CSix100462d0@@QAEPAU1@PAU1@@Z CSix100462d0::sub_100462d0
