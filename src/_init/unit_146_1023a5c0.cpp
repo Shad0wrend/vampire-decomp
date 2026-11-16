@@ -65,3 +65,8 @@ ConVar g_10752c98("damage_floaters_queue_time", ".2", 0, "Minimum amount of time
 #include "utlvector.h"
 CUtlVector<int> g_10752e88;
 // END FUNCTION
+
+// FUNCTION: 0x1023ec20 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_10752dc4;
+// END FUNCTION
