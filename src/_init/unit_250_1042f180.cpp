@@ -28,3 +28,9 @@ CSafeDiscSaveRestoreOps_3 g_109f0378;
 #include "CSafeDiscSaveRestoreOps_4.h"
 CSafeDiscSaveRestoreOps_4 g_109f037c;
 // END FUNCTION
+
+// FUNCTION: 0x1042f770 size=0x5
+#define PCD_INITIALIZERS
+#include "CSafeDiscSaveRestoreOps_5.h"
+CSafeDiscSaveRestoreOps_5 g_109f038c;
+// END FUNCTION
