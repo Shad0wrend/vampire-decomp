@@ -59,6 +59,12 @@ InterfaceReg g_1070b1c8(sub_1011a0a0, "ServerGameDLL002");
 CUtlVector<int> g_1070b0d0;
 // END FUNCTION
 
+// FUNCTION: 0x1011bcb0 size=0xa
+#define PCD_INITIALIZERS
+#include "CServerGameEnts.h"
+CServerGameEnts g_1070b1c4;
+// END FUNCTION
+
 // FUNCTION: 0x1011bd90 size=0x5
 #define PCD_INITIALIZERS
 #include "InterfaceReg.h"
