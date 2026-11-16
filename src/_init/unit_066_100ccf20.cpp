@@ -22,6 +22,12 @@ int * g_106e6f98 = ((int * (*)(int))sub_100cd760)(0);
 CEventsSaveDataOps g_106e70d8;
 // END FUNCTION
 
+// FUNCTION: 0x100cdca0 size=0xa
+#define PCD_INITIALIZERS
+#include "CUnk100cdd20.h"
+CUnk100cdd20 g_106e7050;
+// END FUNCTION
+
 // FUNCTION: 0x100cf6a0 size=0xa
 #include "ConCommand.h"
 void sub_100cf680(void);
