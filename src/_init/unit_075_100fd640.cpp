@@ -5,3 +5,8 @@
 int * sub_100fd680(void);
 int * g_10709064 = ((int * (*)(int))sub_100fd680)(0);
 // END FUNCTION
+
+// FUNCTION: 0x100fd760 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_1070906c;
+// END FUNCTION
