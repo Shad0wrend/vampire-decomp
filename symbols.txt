@@ -16258,6 +16258,7 @@
 0x100159b0 func   ?sub_10188280@CUnknown10188280@@QAEPAXXZ CUnknown10188280::sub_10188280
 0x100159ba func   ?vfunc44@CGameSign@@UAE_NH@Z CGameSign::vfunc44
 0x100159bf func   ?sub_1020e3c0@@YGXPAUS1020e3c0Arg@@@Z sub_1020e3c0
+0x100159c4 func   ??0CUnknown10265290@@QAE@XZ CUnknown10265290::CUnknown10265290
 0x100159c4 func   ?sub_10265290@@YIPAV?$CUtlVector@HV?$CUtlMemory@H@@@@PAV1@@Z sub_10265290
 0x100159c9 func   ?sub_100acc20@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100acc20
 0x100159ce func   ?sub_1040dbd0@CWeaponPhysCannon@@QAE_NPAVCBaseEntity@@@Z CWeaponPhysCannon::sub_1040dbd0
