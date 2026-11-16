@@ -68,6 +68,12 @@ CCycleCount g_109203e8;
 CCycleCount g_1090ff00;
 // END FUNCTION
 
+// FUNCTION: 0x102650b0 size=0x5
+#define PCD_INITIALIZERS
+#include "CCycleCount.h"
+CCycleCount g_1090ff58;
+// END FUNCTION
+
 // FUNCTION: 0x10265520 size=0x5
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_1090ff08(true);
