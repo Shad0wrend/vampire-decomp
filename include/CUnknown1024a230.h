@@ -12,6 +12,10 @@ class CUnknown1024a230
 public:
 	CUnknown1024a230Obj *m_pObj;	// 0x00
 
+#ifdef PCD_INITIALIZERS	// the initializer units: the holder's real constructor and destructor (the soundscape system's member)
+	CUnknown1024a230();	// function 0x1024a230
+	~CUnknown1024a230();	// function 0x1024a1e0: deletes the object
+#endif
 	CUnknown1024a230 *sub_1024a230();	// the constructor: allocates and builds the object (null when the allocation fails)
 	const char *sub_102ea020(int a);	// the name of the entry a (-1 gives "<<null>>"), tail calls the object's lookup sub_10249c70
 };
