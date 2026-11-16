@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10203e50 size=0xa
+#define PCD_INITIALIZERS
+#include "CGameStringPool.h"
+CStringPool g_1074e9a0;
+// END FUNCTION
+
 // FUNCTION: 0x10205470 size=0x5
 #include "CTraitDependencyDataDescSaveDataOps.h"
 CTraitDependencyDataDescSaveDataOps g_1074eec0;
