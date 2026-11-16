@@ -6214,6 +6214,7 @@
 0x10008e31 func   ?sub_101ffdf0@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffdf0
 0x10008e36 func   ?sub_100d2070@@YAPAVCBaseEntity@@HPBDPAV1@@Z sub_100d2070
 0x10008e3b func   ?sub_10203710@@YAPBDH@Z sub_10203710
+0x10008e40 func   ?Purge@?$CUtlMemory@PAUSoundCommand_t@@@@QAEXXZ CUtlMemory<SoundCommand_t *>::Purge
 0x10008e40 func   ?sub_101bde70@UtlMem@@QAEXXZ UtlMem::sub_101bde70
 0x10008e45 func   ?sub_101ffc80@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_101ffc80
 0x10008e4a func   ?vfunc434@CNPC_Crow@@QAEXXZ CNPC_Crow::vfunc434
