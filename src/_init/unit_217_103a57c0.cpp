@@ -6,6 +6,12 @@ inline int pcd_initial_1093c2ac() { return 0x450; }
 int g_1093c2ac = pcd_initial_1093c2ac();
 // END FUNCTION
 
+// FUNCTION: 0x103a5800 size=0x5
+extern const float g_104c3cf4;
+extern const float g_104c3d2c;
+float g_1093c340 = g_104c3d2c * g_104c3cf4;
+// END FUNCTION
+
 // FUNCTION: 0x103a5850 size=0x5
 extern float g_104c3cf8;
 float g_1093c33c = 33.0f / g_104c3cf8;
