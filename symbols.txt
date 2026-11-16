@@ -6079,6 +6079,7 @@
 0x10008be8 func   ?sub_1034fee0@@YAXXZ sub_1034fee0
 0x10008bed func   ?sub_101d61e0@CUnknown101d61e0@@QAEPAU1@H@Z CUnknown101d61e0::sub_101d61e0
 0x10008bf2 func   ?sub_101b3a10@CUnknown101b3a10@@QAEXPAXPBDPADH@Z CUnknown101b3a10::sub_101b3a10
+0x10008bf7 func   ??0CTEDynamicLight@@QAE@PBD@Z CTEDynamicLight::CTEDynamicLight
 0x10008bf7 func   ?sub_10060b60@CTEDynamicLight@@QAEPAV1@PBD@Z CTEDynamicLight::sub_10060b60
 0x10008bfc func   ?sub_102e12c0@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e12c0
 0x10008c01 func   ?sub_102373f0@@YAHXZ sub_102373f0
