@@ -14958,6 +14958,7 @@
 0x100141c3 func   ?sub_10362d20@@YIPAXPAX@Z sub_10362d20
 0x100141c8 func   ??_GCReliableSingleUserRecipientFilter@@UAEPAXI@Z ??_GCReliableSingleUserRecipientFilter@@UAEPAXI@Z
 0x100141cd func   ?sub_1006a7b0@@YAHXZ sub_1006a7b0
+0x100141d2 func   ??1CTEBloodStream@@QAE@XZ CTEBloodStream::~CTEBloodStream
 0x100141d2 func   ?sub_1005dfe0@CUnknown1005dfe0@@QAEHXZ CUnknown1005dfe0::sub_1005dfe0
 0x100141d7 func   ?sub_10207df0@@YG_NPAVCBaseCombatCharacter@@@Z sub_10207df0
 0x100141dc func   ?sub_10088730@@YAXXZ sub_10088730
