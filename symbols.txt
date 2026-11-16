@@ -10121,6 +10121,7 @@
 0x1000de9f func   ?sub_104081c0@@YIXPAXHM@Z sub_104081c0
 0x1000dea4 func   ?sub_101f3810@CUnknown101f3d80@@QAE_NXZ CUnknown101f3d80::sub_101f3810
 0x1000dea9 func   ?sub_101fd8c0@@YAXH@Z sub_101fd8c0
+0x1000deae func   ??0CTEEnergySplash@@QAE@PBD@Z CTEEnergySplash::CTEEnergySplash
 0x1000deae func   ?sub_10061250@CTEEnergySplash@@QAEPAV1@H@Z CTEEnergySplash::sub_10061250
 0x1000deb3 func   ?vfunc451@CNPC_VHuman@@UAEPBDXZ CNPC_VHuman::vfunc451
 0x1000deb8 func   ?sub_101764d0@@YADXZ sub_101764d0
