@@ -9655,6 +9655,7 @@
 0x1000d3fa func   ?sub_100f4460@@YAHH@Z sub_100f4460
 0x1000d3ff func   ?sub_10306280@CTriDebugOverlayV@@QAEXABVVector@@00ABUAIMoveTraceV@@1_N@Z CTriDebugOverlayV::sub_10306280
 0x1000d404 func   ?sub_1007e970@CChoreoScene1007e970@@QAEHPBDH@Z CChoreoScene1007e970::sub_1007e970
+0x1000d40e func   ??1CUnknown101d91c0@@QAE@XZ CUnknown101d91c0::~CUnknown101d91c0
 0x1000d413 func   ?sub_10382aa0@CNPC_VHengeyokai@@QAE_NH@Z CNPC_VHengeyokai::sub_10382aa0
 0x1000d418 func   _trigger_discipline_context trigger_discipline_context
 0x1000d41d func   ?vfunc82@CDisciplineParticle@@UAEPAUdatamap_t@@XZ CDisciplineParticle::vfunc82
