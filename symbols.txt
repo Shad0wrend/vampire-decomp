@@ -13065,6 +13065,7 @@
 0x10011ae0 func   ?sub_10221e50@QuestJournal@@QAEPADH@Z QuestJournal::sub_10221e50
 0x10011aea func   ?vfunc5@CItemGDriversLicenseGimble@@QAEPAV1@I@Z CItemGDriversLicenseGimble::vfunc5
 0x10011aef func   ?sub_101ddc30@CUnknown101ddc30@@QAE_NPAUCUnknown101ddc30Kv@@@Z CUnknown101ddc30::sub_101ddc30
+0x10011af4 func   ??0CTEDecal@@QAE@PBD@Z CTEDecal::CTEDecal
 0x10011af4 func   ?sub_10060380@CTEDecal@@QAEPAV1@H@Z CTEDecal::sub_10060380
 0x10011af9 func   ?sub_102e1cf0@CUnknownEmbed102e1cf0@@QAEXXZ CUnknownEmbed102e1cf0::sub_102e1cf0
 0x10011afe func   ?sub_1021e270@@YAXPAHPBH@Z sub_1021e270
