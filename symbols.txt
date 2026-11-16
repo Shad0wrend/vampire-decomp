@@ -10358,6 +10358,7 @@
 0x1000e32c func   ?sub_10179130@@YAXXZ sub_10179130
 0x1000e336 func   ?vfunc5@CMoverKeyFrame@@QAEPAV1@I@Z CMoverKeyFrame::vfunc5
 0x1000e33b func   ?sub_101bde20@UtlVec8@@QAEXHH@Z UtlVec8::sub_101bde20
+0x1000e340 func   ??1CTEMetalSparks@@QAE@XZ CTEMetalSparks::~CTEMetalSparks
 0x1000e340 func   ?sub_10059e80@CUnknown10059e80@@QAEHXZ CUnknown10059e80::sub_10059e80
 0x1000e345 func   _env_steam env_steam
 0x1000e34a func   ?sub_10027330@@YGEXZ sub_10027330
