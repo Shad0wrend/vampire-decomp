@@ -7794,6 +7794,7 @@
 0x1000ad99 func   ?sub_102c2b20@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2b20
 0x1000ad9e func   ?vfunc80@CWeaponMelee_SabbatLeaderAttack@@QAEHXZ CWeaponMelee_SabbatLeaderAttack::vfunc80
 0x1000ada3 func   ?sub_102e2630@CUnknown102e2630@@QAEHH@Z CUnknown102e2630::sub_102e2630
+0x1000ada8 func   ?vfunc265@CRagdollProp@@UAEHPBD@Z CRagdollProp::vfunc265
 0x1000adad func   ?vfunc73@CGameRules@@UAE_NPAVCBaseEntity@@@Z CGameRules::vfunc73
 0x1000adb2 func   ?sub_101d1670@@YAXPAPADH@Z sub_101d1670
 0x1000adb7 func   ?sub_1013ad40@@YAMPAM@Z sub_1013ad40

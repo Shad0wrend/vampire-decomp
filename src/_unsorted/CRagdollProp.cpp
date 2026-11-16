@@ -719,6 +719,46 @@ int CRagdollProp::vfunc124()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157390 size=0xda
+#include "vampire.h"
+#include "CRagdollProp.h"
+#include "StudioHdr.h"
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+struct StudioHdrLookup : StudioHdr
+{
+	int BoneIndexByName(const char *pName)
+	{
+		for (int i = 0; i < m_nBones; i++)
+		{
+			const char *psz = Bone(i)->Name();
+			if (!_strcmpi(psz, pName))
+				return i;
+		}
+		return -1;
+	}
+};
+
+int CRagdollProp::vfunc265(const char *pszBone)
+{
+	StudioHdrLookup *pStudioHdr = (StudioHdrLookup *)sub_100952d0(-1);
+	if (!pStudioHdr)
+		return m_Bodies[0].m_pObject;
+
+	int boneIndex = pStudioHdr->BoneIndexByName(pszBone);
+	while (boneIndex >= 0)
+	{
+		for (int i = 0; i < m_nBodies730; i++)
+		{
+			if (((int *)((char *)this + 0xa08))[i] == boneIndex)
+				return m_Bodies[i].m_pObject;
+		}
+		boneIndex = pStudioHdr->Bone(boneIndex)->m_iParent;
+	}
+	return m_Bodies[0].m_pObject;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101574b0 size=0x5d
 #include "CRagdollProp.h"
 
