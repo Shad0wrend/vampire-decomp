@@ -1080,6 +1080,7 @@
 0x1000264e func   ?sub_101f9b70@CUnknown101f9b70@@QAEHH@Z CUnknown101f9b70::sub_101f9b70
 0x10002658 func   _item_p_occult_passive_durations item_p_occult_passive_durations
 0x1000265d func   ?vfunc80@CItemGJunkyardBusinesscard@@QAEHXZ CItemGJunkyardBusinesscard::vfunc80
+0x10002667 func   ??1CTEBeamRing@@QAE@XZ CTEBeamRing::~CTEBeamRing
 0x10002667 func   ?sub_1005c660@CUnknown1005c660@@QAEHXZ CUnknown1005c660::sub_1005c660
 0x1000266c func   ?sub_1014c2d0@CWeaponGravityGun@@QAEXXZ CWeaponGravityGun::sub_1014c2d0
 0x10002671 func   ?sub_1029f060@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_1029f060
