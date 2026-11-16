@@ -1540,6 +1540,7 @@
 0x10002f95 func   ?sub_101fc950@TStat@@QAEXHH@Z TStat::sub_101fc950
 0x10002f9a func   ?vfunc82@CAI_ChangeTarget@@QAEPAUdatamap_t@@XZ CAI_ChangeTarget::vfunc82
 0x10002f9f func   ?sub_1016d260@SV@@QAEXXZ SV::sub_1016d260
+0x10002fa4 func   ??1CTESmoke@@QAE@XZ CTESmoke::~CTESmoke
 0x10002fa4 func   ?sub_10067080@CUnknown10067080@@QAEHXZ CUnknown10067080::sub_10067080
 0x10002fa9 func   ?sub_10369d50@@YAHXZ sub_10369d50
 0x10002fae func   ?sub_1021aca0@CPropHacking@@QAEXXZ CPropHacking::sub_1021aca0
