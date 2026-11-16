@@ -7515,6 +7515,7 @@
 0x1000a876 func   ?sub_101104c0@CBreakableSurface@@QAEXPAVCBaseEntity@@@Z CBreakableSurface::sub_101104c0
 0x1000a87b func   ?sub_103a5be0@CNPC_VSabbatLeaderCtor@@QAEPAVCNPC_VSabbatLeader@@XZ CNPC_VSabbatLeaderCtor::sub_103a5be0
 0x1000a880 func   ?sub_101ef3d0@CVampireProjectile@@QAEXXZ CVampireProjectile::sub_101ef3d0
+0x1000a885 func   ??0CUnknown101f6370@@QAE@XZ CUnknown101f6370::CUnknown101f6370
 0x1000a885 func   ?sub_101f6370@CUnknown101f6370@@QAEPAXXZ CUnknown101f6370::sub_101f6370
 0x1000a88a func   ?vfunc50@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::vfunc50
 0x1000a88f func   ?vfunc103@CWeaponMelee_ZombieFists@@QAEXXZ CWeaponMelee_ZombieFists::vfunc103
