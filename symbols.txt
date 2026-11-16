@@ -7088,6 +7088,7 @@
 0x1000a079 func   ?sub_10279cc0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10279cc0
 0x1000a083 func   ?vfunc363@CWeaponMelee_Baton@@UAEHXZ CWeaponMelee_Baton::vfunc363
 0x1000a088 func   _sky_camera sky_camera
+0x1000a08d func   ??1CTEFogRipple@@QAE@XZ CTEFogRipple::~CTEFogRipple
 0x1000a08d func   ?sub_10062570@CUnknown10062570@@QAEHXZ CUnknown10062570::sub_10062570
 0x1000a092 func   ?vfunc82@CEnvPlayerSurfaceTrigger@@UAEPAUdatamap_t@@XZ CEnvPlayerSurfaceTrigger::vfunc82
 0x1000a097 func   ?vfunc4@CTEWorldDecal@@QAEXHH@Z CTEWorldDecal::vfunc4
