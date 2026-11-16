@@ -74,6 +74,11 @@ int * sub_100a22f0(void);
 int * g_106cf17c = ((int * (*)(int))sub_100a22f0)(0);
 // END FUNCTION
 
+// FUNCTION: 0x100ad930 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_106cf218;
+// END FUNCTION
+
 // FUNCTION: 0x100ae3c0 size=0xa
 #include "ConCommand.h"
 void sub_100ae320(void);
