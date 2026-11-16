@@ -18,3 +18,9 @@ SendTable g_106c2fe0;
 int sub_10062c30(void);
 int g_106c2fdc = ((int (*)(int))sub_10062c30)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10062dd0 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEFootprintDecal.h"
+CTEFootprintDecal g_106c2fac("Footprint Decal");
+// END FUNCTION
