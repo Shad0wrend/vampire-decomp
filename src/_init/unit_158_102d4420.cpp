@@ -60,3 +60,8 @@ ai_hull_t g_10925628(1024, "TZIMISCE1_HULL", Vector(-35.0, -35.0, 0.0), Vector(3
 #include "ai_hull_t.h"
 ai_hull_t g_109255b8(2048, "TZIMISCE2_HULL", Vector(-25.0, -25.0, 0.0), Vector(25.0, 25.0, 100.0), Vector(-35.0, -35.0, 0.0), Vector(35.0, 35.0, 100.0));
 // END FUNCTION
+
+// FUNCTION: 0x102d53e0 size=0x5
+#include "ai_hull_t.h"
+ai_hull_t g_10925468(4096, "WEREWOLF_HULL", Vector(-40.0, -40.0, 0.0), Vector(40.0, 40.0, 110.0), Vector(-20.0, -20.0, 0.0), Vector(20.0, 20.0, 60.0));
+// END FUNCTION
