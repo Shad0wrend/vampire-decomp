@@ -20,3 +20,9 @@ ConVar g_106c85d0("scene_print", "0", 0, "When playing back a scene, print timin
 int * sub_10080420(void);
 int * g_106c8a3c = ((int * (*)(int))sub_10080420)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10083980 size=0x5
+#define PCD_INITIALIZERS
+#include "CSceneTokenProcessor.h"
+CSceneTokenProcessor g_106c8618;
+// END FUNCTION
