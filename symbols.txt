@@ -8218,6 +8218,7 @@
 0x1000b7f8 func   ?sub_10072bf0@CUnknown10072f10@@QAEPAV1@PBV1@@Z CUnknown10072f10::sub_10072bf0
 0x1000b7fd func   ?sub_1021fc90@@YAXPAUCWeaponList1021fc90@@H@Z sub_1021fc90
 0x1000b802 func   ?sub_1011adc0@@YAXXZ sub_1011adc0
+0x1000b807 func   ??0CTEBeamSpline@@QAE@PBD@Z CTEBeamSpline::CTEBeamSpline
 0x1000b807 func   ?sub_1005d220@CTEBeamSpline@@QAEPAV1@PBD@Z CTEBeamSpline::sub_1005d220
 0x1000b80c func   ?sub_10219d40@CPropHacking@@QAEPAV1@XZ CPropHacking::sub_10219d40
 0x1000b811 func   ?sub_1031a0e0@@YAXPAUCChainNodeStub@@0@Z sub_1031a0e0
