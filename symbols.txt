@@ -15077,6 +15077,7 @@
 0x10014191 func   ?sub_100dbe60@@YAHXZ sub_100dbe60
 0x100141a0 func   ?sub_102dcce0@CUnk102dcce0@@QAEXH@Z CUnk102dcce0::sub_102dcce0
 0x100141a5 func   ?vfunc74@CSingleplayRules@@UAEDXZ CSingleplayRules::vfunc74
+0x100141aa func   ?LessFunc@?$CDefOps@PAVIPhysicsObject@@@@SA_NABQAVIPhysicsObject@@0@Z CDefOps<IPhysicsObject *>::LessFunc
 0x100141aa func   ?sub_10046b40@@YA_NPBI0@Z sub_10046b40
 0x100141af func   ?vfunc14@CGameRules@@UAEXXZ CGameRules::vfunc14
 0x100141b4 func   ?NewNode@?$CUtlRBTree@UCAI_ExpresserUse@@G@@QAEGXZ CUtlRBTree<CAI_ExpresserUse,unsigned short>::NewNode
