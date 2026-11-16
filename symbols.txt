@@ -9264,6 +9264,7 @@
 0x1000cbcb func   ?vfunc81@CItemGHorrorTape_2@@QAEHXZ CItemGHorrorTape_2::vfunc81
 0x1000cbd0 func   _env_firesource env_firesource
 0x1000cbd5 func   ?vfunc368@CWeaponMelee@@UAEHHHH@Z CWeaponMelee::vfunc368
+0x1000cbda func   ?LessFunc@?$CDefOps@PAVCBaseEntity@@@@SA_NABQAVCBaseEntity@@0@Z CDefOps<CBaseEntity *>::LessFunc
 0x1000cbda func   ?sub_10046b10@@YA_NPBI0@Z sub_10046b10
 0x1000cbdf func   ?sub_101e9e20@CHistoryList@@QAEXXZ CHistoryList::sub_101e9e20
 0x1000cbe4 func   ?vfunc363@CWeaponRanged_Pistol_Glock@@QAEHXZ CWeaponRanged_Pistol_Glock::vfunc363
