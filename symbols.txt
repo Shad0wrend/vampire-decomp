@@ -17155,6 +17155,7 @@
 0x104540e8 vtable ??_7CSingleUserRecipientFilter@@6B@ CSingleUserRecipientFilter::vftable
 0x10454118 vtable ??_7CDirtySpatialPartitionEntityList@@6BIPartitionQueryCallback@@@ CDirtySpatialPartitionEntityList::vftable
 0x10454124 vtable ??_7CDirtySpatialPartitionEntityList@@6B@ CDirtySpatialPartitionEntityList::vftable
+0x10454124 data   ??_7CDirtySpatialPartitionEntityList@@6BCAutoGameSystem@@@ ??_7CDirtySpatialPartitionEntityList@@6BCAutoGameSystem@@@
 0x10454154 vtable ??_7CCollisionProperty@@6B@ CCollisionProperty::vftable
 0x104541bc vtable ??_7CTerrainMorph@@6B@ CTerrainMorph::vftable
 0x10454648 vtable ??_7CDebugSaveRestoreOps@@6B@ CDebugSaveRestoreOps::vftable
