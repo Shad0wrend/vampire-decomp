@@ -24,6 +24,12 @@ CTraitDependencyDataDescSaveDataOps g_1074eec0;
 CVDataTable<CVDataRecord_1074f004> g_1074f004;
 // END FUNCTION
 
+// FUNCTION: 0x10206a20 size=0x5
+#define PCD_INITIALIZERS
+#include "CUnknown10206a60.h"
+CUnknown10206a60 g_1074f028;
+// END FUNCTION
+
 // FUNCTION: 0x10207f40 size=0x5
 int * sub_10207f80(void);
 int * g_1074f030 = ((int * (*)(int))sub_10207f80)(0);
