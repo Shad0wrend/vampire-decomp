@@ -33,3 +33,12 @@ CBitWriteMasksInit g_BitWriteMasksInit;
 int sub_100bf980(void);
 int g_106d2d7c = ((int (*)(int))sub_100bf980)(0);
 // END FUNCTION
+
+// FUNCTION: 0x100c4540 size=0x5
+// an empty inline constructor: the game's construct is a bare `ret`, no code names the global
+struct CEmpty100c4540
+{
+	CEmpty100c4540() {}
+};
+CEmpty100c4540 g_empty_100c4540;
+// END FUNCTION
