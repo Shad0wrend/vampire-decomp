@@ -18,3 +18,9 @@ SendTable g_106bfa34;
 int sub_1005bca0(void);
 int g_106bfa30 = ((int (*)(int))sub_1005bca0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1005bdb0 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEBeamLaser.h"
+CTEBeamLaser g_106bf890("BeamLaser");
+// END FUNCTION
