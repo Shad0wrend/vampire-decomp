@@ -16456,6 +16456,7 @@
 0x100dc140 func   ?sub_100dc140@@YAXPAHH0@Z sub_100dc140
 0x100e77f0 func   ?sub_100e77f0@@YAHPBH0@Z sub_100e77f0
 0x100f5bd0 func   ?sub_100f5bd0@@YAHXZ sub_100f5bd0
+0x100f5bd0 func   ?sub_100f5bd0@@YAPAXXZ sub_100f5bd0
 0x100f9280 func   ?sub_100f9280@@YAXXZ sub_100f9280
 0x100f9530 func   ?sub_100f9530@@YAXXZ sub_100f9530
 0x101010c0 func   ?sub_101010c0@@YAXXZ sub_101010c0
