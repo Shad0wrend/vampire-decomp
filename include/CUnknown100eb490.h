@@ -11,5 +11,8 @@ public:
 	CUtlVector<int> m_vecB;	// 0x1c
 	CUtlVector<int> m_vecC;	// 0x30
 
+#ifdef PCD_INITIALIZERS	// the initializer units: the out-of-line constructor the global's initializer jumps to
+	CUnknown100eb490();	// function 0x100eb440
+#endif
 	~CUnknown100eb490();
 };

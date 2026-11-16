@@ -10,6 +10,9 @@ public:
 	char m_flag28;
 
 	QuestJournal *sub_10220e10();	// the constructor (QuestJournal::QuestJournal); returns this
+#ifdef PCD_INITIALIZERS	// the initializer units: the out-of-line constructor the global's initializer jumps to
+	QuestJournal();	// function 0x10220e10
+#endif
 	~QuestJournal();	// "QuestJournal::~QuestJournal": scope trace around PurgeQuestData, then the two utl-vector destructors (+0x14.. then +0x0..)
 	int sub_10221a00(const char *name);	// "QuestJournal::GetQuestIndex": scope trace, index of the quest record (0x68 bytes each, name pointer first) whose name is a case-insensitive prefix match of the argument's length, or a warning and -1
 	char *sub_10221b10(int index);	// "QuestJournal::GetQuest": scope trace, record `index` (0x68 bytes each) of the array whose base is m_field[5], or a warning and the base when the index is invalid
