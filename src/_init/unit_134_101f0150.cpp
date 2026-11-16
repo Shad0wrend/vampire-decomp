@@ -6,3 +6,9 @@
 #include "VDataRecords.h"
 CVDataTable<CVDataRecord_1073a7c0> g_1073a7c0;
 // END FUNCTION
+
+// FUNCTION: 0x101f0820 size=0xa
+#define PCD_INITIALIZERS
+#include "CUnknown101f0e50.h"
+CUnknown101f0e50 g_1073a9a0;
+// END FUNCTION
