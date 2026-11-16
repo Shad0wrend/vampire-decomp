@@ -5547,6 +5547,7 @@
 0x10008076 func   ?sub_101c1520@CBaseToggle@@QAEXPAVVector@@M@Z CBaseToggle::sub_101c1520
 0x1000807b func   ?sub_1042fd10@@YAXXZ sub_1042fd10
 0x10008080 func   ?sub_103b5420@@YADXZ sub_103b5420
+0x10008085 func   ??1CUnk101f5ed0@@QAE@XZ CUnk101f5ed0::~CUnk101f5ed0
 0x10008085 func   ?sub_101f5e40@@YIXPAPAX@Z sub_101f5e40
 0x1000808a func   ?sub_1042ba00@CUnknown1042ba00@@QAEXH@Z CUnknown1042ba00::sub_1042ba00
 0x1000808f func   ?sub_1009a760@@YAHXZ sub_1009a760
