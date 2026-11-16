@@ -92,6 +92,12 @@ CCycleCount g_1090fe68;
 CFastTimer g_10920338;
 // END FUNCTION
 
+// FUNCTION: 0x10265470 size=0x5
+#define PCD_INITIALIZERS
+#include "SLogEntry.h"
+SLogEntry g_1090ff60[128];
+// END FUNCTION
+
 // FUNCTION: 0x10265520 size=0x5
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_1090ff08(true);
