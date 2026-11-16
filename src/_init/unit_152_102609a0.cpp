@@ -66,6 +66,11 @@ CAI_ClassScheduleIdSpace g_1090ff08(true);
 CAI_LocalIdSpace g_10920484(true);
 // END FUNCTION
 
+// FUNCTION: 0x10267460 size=0x5
+extern float g_104994ac;
+float g_1090fe0c = 0.11f - g_104994ac;
+// END FUNCTION
+
 // FUNCTION: 0x1026d190 size=0xa
 #include "ConVar.h"
 ConVar g_10920440("footstep_normal_vol", "0.5", 128);
