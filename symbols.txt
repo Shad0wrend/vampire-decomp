@@ -9824,6 +9824,7 @@
 0x1000d8c8 func   ?sub_102e1f90@CAI_Motor@@QAEMXZ CAI_Motor::sub_102e1f90
 0x1000d8cd func   ?vfunc268@CVampireProjectile@@UAEXXZ CVampireProjectile::vfunc268
 0x1000d8d2 func   ?vfunc4@CServerGameDLL@@UAEXHHH@Z CServerGameDLL::vfunc4
+0x1000d8d7 func   ??1CTEBeamEntPoint@@QAE@XZ CTEBeamEntPoint::~CTEBeamEntPoint
 0x1000d8d7 func   ?sub_1005ac90@CUnknown1005ac90@@QAEHXZ CUnknown1005ac90::sub_1005ac90
 0x1000d8dc func   ?vfunc80@CItemMMoneyEnvelope@@QAEHXZ CItemMMoneyEnvelope::vfunc80
 0x1000d8e1 func   ?sub_101ac670@CUnknown101ac670@@QAEHH@Z CUnknown101ac670::sub_101ac670
