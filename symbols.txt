@@ -13431,6 +13431,7 @@
 0x10012125 func   ?sub_10088a80@@YAXXZ sub_10088a80
 0x1001212a func   ?sub_10099250@CBaseAnimatingOverlay@@QAEHHMH@Z CBaseAnimatingOverlay::sub_10099250
 0x1001212f func   ?sub_10076ad0@CUnknown10077730@@QAEXD@Z CUnknown10077730::sub_10076ad0
+0x10012134 func   ?Purge@?$CUtlMemory@UCSoundSchemeManager_RandomSound@@@@QAEXXZ CUtlMemory<CSoundSchemeManager_RandomSound>::Purge
 0x10012134 func   ?sub_1022d050@UtlMem@@QAEXXZ UtlMem::sub_1022d050
 0x10012139 func   ?vfunc326@CWeaponGravityGun@@UAEXXZ CWeaponGravityGun::vfunc326
 0x1001213e func   ?sub_10296820@CUnknown10296820@@QAEPAXH@Z CUnknown10296820::sub_10296820
