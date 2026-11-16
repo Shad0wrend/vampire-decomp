@@ -6,6 +6,12 @@ int sub_101ac200(void);
 int g_1072bc0c = ((int (*)(int))sub_101ac200)(0);
 // END FUNCTION
 
+// FUNCTION: 0x101ae000 size=0xa
+#define PCD_INITIALIZERS
+#include "CSoundscapeSystem.h"
+CSoundscapeSystem g_1072bbf8;
+// END FUNCTION
+
 // FUNCTION: 0x101ae350 size=0x5
 int sub_101ae390(void);
 int g_1072bbf4 = ((int (*)(int))sub_101ae390)(0);
