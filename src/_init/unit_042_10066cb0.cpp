@@ -18,3 +18,9 @@ SendTable g_106c4fc4;
 int sub_10066e20(void);
 int g_106c4fc0 = ((int (*)(int))sub_10066e20)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10066f20 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEShowLine.h"
+CTEShowLine g_106c50dc("Show Line");
+// END FUNCTION
