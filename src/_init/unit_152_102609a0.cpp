@@ -62,6 +62,12 @@ ConVar g_10920388("debug_hit_by_mode", "1", 0, "Set this to 1 to use alternate h
 CCycleCount g_109203e8;
 // END FUNCTION
 
+// FUNCTION: 0x10265070 size=0x5
+#define PCD_INITIALIZERS
+#include "CCycleCount.h"
+CCycleCount g_1090ff00;
+// END FUNCTION
+
 // FUNCTION: 0x10265520 size=0x5
 #include "CAI_ClassScheduleIdSpace.h"
 CAI_ClassScheduleIdSpace g_1090ff08(true);
