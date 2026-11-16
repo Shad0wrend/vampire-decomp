@@ -3875,6 +3875,7 @@
 0x10005f42 func   ?sub_103605b0@@YADXZ sub_103605b0
 0x10005f47 func   ?sub_10094370@CFakeEnt@@QAEHH@Z CFakeEnt::sub_10094370
 0x10005f4c func   _info_node_shoot_at info_node_shoot_at
+0x10005f51 func   ??1CTEDynamicLight@@QAE@XZ CTEDynamicLight::~CTEDynamicLight
 0x10005f51 func   ?sub_10060be0@CUnknown10060be0@@QAEHXZ CUnknown10060be0::sub_10060be0
 0x10005f56 func   ?vfunc451@CNPC_VMingXiao@@UAEHXZ CNPC_VMingXiao::vfunc451
 0x10005f5b func   ?sub_101771b0@@YIXPAXHH@Z sub_101771b0
