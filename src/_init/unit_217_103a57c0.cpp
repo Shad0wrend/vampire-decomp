@@ -6,6 +6,11 @@ inline int pcd_initial_1093c2ac() { return 0x450; }
 int g_1093c2ac = pcd_initial_1093c2ac();
 // END FUNCTION
 
+// FUNCTION: 0x103a5850 size=0x5
+extern float g_104c3cf8;
+float g_1093c33c = 33.0f / g_104c3cf8;
+// END FUNCTION
+
 // FUNCTION: 0x103a58a0 size=0xa
 #include "ConVar.h"
 ConVar g_1093c2f8("andrei_force_charge_attack", "0", 0);
