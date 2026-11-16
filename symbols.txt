@@ -16463,6 +16463,7 @@
 0x10101100 func   ?sub_10101100@@YAXPAMPAE@Z sub_10101100
 0x101012c0 func   ?sub_101012c0@@YAXXZ sub_101012c0
 0x1011a0a0 func   ?sub_1011a0a0@@YAHXZ sub_1011a0a0
+0x1011a0a0 func   ?sub_1011a0a0@@YAPAXXZ sub_1011a0a0
 0x1011bde0 func   ?sub_1011bde0@@YAHXZ sub_1011bde0
 0x1011c000 func   ?sub_1011c000@@YAHXZ sub_1011c000
 0x1011ccc0 func   ?sub_1011ccc0@@YAXPAVbf_read@@PAVCUserCmd@@1@Z sub_1011ccc0
