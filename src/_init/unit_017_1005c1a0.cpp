@@ -18,3 +18,9 @@ SendTable g_106bfacc;
 int sub_1005c310(void);
 int g_106bfac8 = ((int (*)(int))sub_1005c310)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1005c450 size=0xa
+#define PCD_INITIALIZERS
+#include "CTEBeamPoints.h"
+CTEBeamPoints g_106bfb08("BeamPoints");
+// END FUNCTION
