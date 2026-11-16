@@ -13983,6 +13983,7 @@
 0x10012b4d func   ?vfunc5@CBaseDoor@@QAEPAV1@E@Z CBaseDoor::vfunc5
 0x10012b52 func   ?sub_1003bdd0@@YAX_N@Z sub_1003bdd0
 0x10012b57 func   ?sub_101f18f0@CUnknown101f0e50@@QAE_NH@Z CUnknown101f0e50::sub_101f18f0
+0x10012b5c func   ?SaveQueueFunc@CPhysSaveRestoreBlockHandler@@SA_NABUQueuedItem_t@1@0@Z CPhysSaveRestoreBlockHandler::SaveQueueFunc
 0x10012b5c func   ?sub_100454d0@@YA_NPBUSortItem@@0@Z sub_100454d0
 0x10012b61 func   ?sub_1033c900@CBaseCombatCharacter@@QAE_NI@Z CBaseCombatCharacter::sub_1033c900
 0x10012b66 func   ?sub_1004f860@CUnknown1004f860@@QAEPAXXZ CUnknown1004f860::sub_1004f860
