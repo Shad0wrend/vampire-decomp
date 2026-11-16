@@ -17,6 +17,10 @@ public:
 	int m_field2c;	// +0x2c
 	CVStatCost_t m_cost;	// +0x30
 
+#ifdef PCD_INITIALIZERS	// only the initializer units: elsewhere a constructor or destructor changes the class
+	CVStatInfoList_t(const char *name, int a, int b);	// function 0x101ff300
+	~CVStatInfoList_t();	// function 0x101ff3e0
+#endif
 	CVStatInfoList_t *sub_101ff300(const char *name, int a, int b);	// "CVStatInfoList_t::CVStatInfoList_t": scope trace, nulls the cost, stores b at +0, zeroes the list, a at +0x2c and copies name to +0xc
 	void sub_101ff3e0();	// "CVStatInfoList_t::~CVStatInfoList_t"-like: scope trace, delete[]s the records and zeroes the count
 	void sub_101ff540();	// "CVStatInfoList_t::PreCache": scope trace, frees the records, opens "vdata\\system\\stats.txt", finds the block named like the list (+0xc), reads its display text (+0x24) and "InternalName" (+0x28), counts and allocates the records of its "Stat" keys and pre-loads each; DevMsg when the count differs from the one the list was made with (+0)
