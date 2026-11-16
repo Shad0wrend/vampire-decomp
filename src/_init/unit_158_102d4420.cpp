@@ -50,3 +50,8 @@ ai_hull_t g_10925890(256, "LARGE_HULL", Vector(-40.0, -40.0, 0.0), Vector(40.0, 
 #include "ai_hull_t.h"
 ai_hull_t g_10925660(512, "LARGE_CENTERED_HULL", Vector(-38.0, -38.0, -38.0), Vector(38.0, 38.0, 38.0), Vector(-30.0, -30.0, -30.0), Vector(30.0, 30.0, 30.0));
 // END FUNCTION
+
+// FUNCTION: 0x102d5140 size=0x5
+#include "ai_hull_t.h"
+ai_hull_t g_10925628(1024, "TZIMISCE1_HULL", Vector(-35.0, -35.0, 0.0), Vector(35.0, 35.0, 100.0), Vector(-45.0, -45.0, 0.0), Vector(45.0, 45.0, 100.0));
+// END FUNCTION
