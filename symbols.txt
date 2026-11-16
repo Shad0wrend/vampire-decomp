@@ -11943,6 +11943,7 @@
 0x100102e4 func   ?vfunc5@CSkyCamera@@UAEPAV1@I@Z CSkyCamera::vfunc5
 0x100102e9 func   ?vfunc473@CNPC_VMingXiao@@UAEHXZ CNPC_VMingXiao::vfunc473
 0x100102ee func   ?vfunc17@CSingleplayRules@@UAE_NH@Z CSingleplayRules::vfunc17
+0x100102f3 func   ??1CGameMovement@@QAE@XZ CGameMovement::~CGameMovement
 0x100102f3 func   ?sub_1011e200@CUnknown1011e200@@QAEXXZ CUnknown1011e200::sub_1011e200
 0x100102f8 func   ?vfunc285@CBaseFlex@@UAEXH@Z CBaseFlex::vfunc285
 0x100102fd func   ?vfunc180@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::vfunc180
