@@ -11,6 +11,10 @@ struct CExperienceAward
 class CExperienceTable
 {
 public:
+#ifdef PCD_INITIALIZERS	// the initializer units: the global 0x10750930 is built and destroyed by these
+	CExperienceTable();	// function 0x102221d0
+	~CExperienceTable();	// function 0x10222210
+#endif
 	CExperienceAward *m_pMemory;	// 0x00
 	int m_allocationCount;	// 0x04
 	int m_growSize;	// 0x08
