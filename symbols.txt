@@ -1001,6 +1001,7 @@
 0x10002482 func   ?sub_1005a1a0@@YAHXZ sub_1005a1a0
 0x10002487 func   ?vfunc265@CBaseAnimatingOverlay@@QAEXHMMHH@Z CBaseAnimatingOverlay::vfunc265
 0x1000248c func   _env_message env_message
+0x10002491 func   ??0CExperienceTable@@QAE@XZ CExperienceTable::CExperienceTable
 0x10002491 func   ?sub_102221d0@CUnknown102221d0@@QAEPAXXZ CUnknown102221d0::sub_102221d0
 0x10002496 func   ?sub_10274ca0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_10274ca0
 0x1000249b func   ?vfunc5@CInspectionNode@@QAEPAV1@I@Z CInspectionNode::vfunc5
