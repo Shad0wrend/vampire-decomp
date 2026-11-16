@@ -1,6 +1,12 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10220d90 size=0xa
+#define PCD_INITIALIZERS
+#include "QuestJournal.h"
+QuestJournal g_1074f8f8;
+// END FUNCTION
+
 // FUNCTION: 0x10222b60 size=0xa
 #include "ConCommand.h"
 void sub_10222ad0(void);
