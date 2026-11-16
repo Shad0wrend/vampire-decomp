@@ -12,6 +12,12 @@ int * g_1074e094 = ((int * (*)(int))sub_101fa280)(0);
 CVStatInfoList_t g_1074e658("Attributes", 0, 35);
 // END FUNCTION
 
+// FUNCTION: 0x101fa400 size=0xa
+#define PCD_INITIALIZERS
+#include "CVStatInfoList_t.h"
+CVStatInfoList_t g_1074e4f0("Abilities", 1, 13);
+// END FUNCTION
+
 // FUNCTION: 0x101fea40 size=0xa
 #include "ConVar.h"
 ConVar g_1074e6b0("vdiscipline_use_new", "1", 8448);
