@@ -14037,6 +14037,7 @@
 0x10012c74 func   ?sub_1019f500@CUnknown1019f500@@QAEXPAUCInputData100bc0f0@@@Z CUnknown1019f500::sub_1019f500
 0x10012c79 func   ?sub_1019d390@@YIDPAVCRecipientFilter@@@Z sub_1019d390
 0x10012c7e func   ?sub_10109e40@S10109e40@@QAEXAAUinputdata_t@@@Z S10109e40::sub_10109e40
+0x10012c83 func   ?TreeLessFunc@?$CUtlMap@PAVCBaseEntity@@PAVCEntityRestoreSet@CPhysSaveRestoreBlockHandler@@G@@SA_NABUNode_t@1@0@Z CUtlMap<CBaseEntity *,CPhysSaveRestoreBlockHandler::CEntityRestoreSet *,unsigned short>::TreeLessFunc
 0x10012c83 func   ?sub_10045f60@@YAXXZ sub_10045f60
 0x10012c88 func   ?sub_102c6900@CUnknown102c6900@@QAEHXZ CUnknown102c6900::sub_102c6900
 0x10012c8d func   ?vfunc241@CFuncAreaPortalBase@@QAE_NPBM@Z CFuncAreaPortalBase::vfunc241
