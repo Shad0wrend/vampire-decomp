@@ -7,6 +7,12 @@
 QuestJournal g_1074f8f8;
 // END FUNCTION
 
+// FUNCTION: 0x10222150 size=0xa
+#define PCD_INITIALIZERS
+#include "CExperienceTable.h"
+CExperienceTable g_10750930;
+// END FUNCTION
+
 // FUNCTION: 0x10222b60 size=0xa
 #include "ConCommand.h"
 void sub_10222ad0(void);
