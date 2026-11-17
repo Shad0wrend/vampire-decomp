@@ -372,7 +372,6 @@ char CNPCMaker::vfunc618(char bForce)
 // END FUNCTION
 
 // FUNCTION: 0x1034b7b0 size=0x352
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include <string.h>
 #include "CNPCMaker.h"
 #include "CEntityVSlots.h"
