@@ -83751,7 +83751,6 @@ void CGameMovement::sub_1011ffe0()
 // END FUNCTION
 
 // FUNCTION: 0x101200c0 size=0x8a4
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CTraceFilterNoCharacterCollide.h"
 #include "CGameMovement.h"
 #include "CGameMovementViews.h"
@@ -83813,10 +83812,10 @@ struct CMoveViewOffsetView
 	const Vector &GetViewOffset() const { return m_vecViewOffset; }
 };
 
-// Troika's Ray_t::Init(start, end, mins, maxs, bSwept): the SDK body plus the 2D extent length
+// Troika's Ray_t::Init(start, end, mins, maxs) as this unit inlines it
 struct RayX : Ray_t
 {
-	void InitX(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, bool bSwept)
+	void InitX(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs)
 	{
 		m_Delta[0] = end.x - start.x;
 		m_Delta[1] = end.y - start.y;
@@ -83826,11 +83825,7 @@ struct RayX : Ray_t
 		Vector &offset = *(Vector *)m_Extents;
 		VectorSubtract(maxs, mins, extents);
 		VectorScale(extents, 0.5f, extents);
-		float xx, yy;
-		if (0) xx = 0;
-		yy = extents.y * extents.y;
-		xx = extents.x * extents.x;
-		m_IsRay = (extents.z * extents.z + yy + xx < 1e-6);
+		m_IsRay = (extents.LengthSqr() < 1e-6);
 		offset.x = maxs[0] + mins.x;
 		offset.y = mins.y + maxs.y;
 		offset.z = maxs.z + mins.z;
@@ -83840,11 +83835,6 @@ struct RayX : Ray_t
 		m_b32 = 0;
 		m_b33 = 0;
 		m_n34 = 0;
-		if (bSwept && !m_IsRay) {
-			m_n34 = sqrt(yy + xx);
-			if (m_n34 > 1e-6)
-				m_b33 = 1;
-		}
 	}
 };
 
@@ -83908,7 +83898,12 @@ struct CGameMovementUnit : CGameMovement
 			bool bSwept = (((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1;
 			const Vector &maxs = *(Vector *)sub_1011e350();
 			const Vector &mins = *(Vector *)sub_1011e310();
-			ray.InitX(start, dest, mins, maxs, bSwept);
+			ray.InitX(start, dest, mins, maxs);
+			if (bSwept && !ray.m_IsRay) {
+				ray.m_n34 = sqrt(ray.m_StartOffset[1] * ray.m_StartOffset[1] + ray.m_StartOffset[0] * ray.m_StartOffset[0]);
+				if (ray.m_n34 > 1e-6)
+					ray.m_b33 = 1;
+			}
 		}
 		{
 			CTraceFilterSimple filter(((CBaseHandle *)&((CMovePlayerView *)m_pPlayer)->m_hRef)->Get(), collisionGroup);
