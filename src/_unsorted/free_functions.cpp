@@ -288937,7 +288937,6 @@ void CNPC_VMingXiao::sub_10398fd0()
 extern ConVar g_1093bbc8;
 extern ConVar g_1093bc10;
 extern ConVar g_1093b9f8;
-extern float g_104454c4;
 extern char g_1057c684[];
 extern char g_10538764[];
 extern "C" void *__cdecl __RTDynamicCast(void *p, long off, void *src, void *dst, int bThrow);
@@ -288947,12 +288946,15 @@ float sub_1013d580(float a, float b);
 Vector sub_101d2f40(float flYaw);
 Vector *sub_1032b960();
 
+// ming_xiao_throw_base / ming_xiao_throw_power / ming_xiao_throw_hds (unit_210)
+#define MINGXIAO_THROW_BASE (g_1093bc10.GetFloat())
+#define MINGXIAO_THROW_POWER (g_1093bbc8.GetFloat())
+#define MINGXIAO_THROW_HDS (g_1093b9f8.GetFloat())
+
 struct CBoundsView { char pad[0x274]; Vector mins; Vector maxs; };
 
 #define LOOK(h) ((CBaseEntity *)((CUnknown100290c0 *)g_10566458)->sub_100290c0((unsigned int *)&(h)))
 
-inline float CVarF2(ConVar &cv) { return cv.m_pParent->vfunc1() ? (double)g_104454c4 : cv.m_pParent->m_fValue; }
-inline double CVarD(ConVar &cv) { return cv.m_pParent->vfunc1() ? (double)g_104454c4 : cv.m_pParent->m_fValue; }
 
 void CNPC_VMingXiao::sub_103990c0()
 {
@@ -288964,7 +288966,7 @@ void CNPC_VMingXiao::sub_103990c0()
 	if (pEnt) {
 		Vector vecOrigin = *(Vector *)((CNPC_VMingXiao *)LOOK(m_h6718))->vfunc220_slot();
 		Vector vecTarget;
-		sub_102c36d0(vecOrigin, pEnt, CVarF2(g_1093bbc8), 0, &vecTarget);
+		sub_102c36d0(vecOrigin, pEnt, MINGXIAO_THROW_POWER, 0, &vecTarget);
 		CBoundsView *pb = (CBoundsView *)pEnt;
 		Vector *pSize = sub_1032b960();
 		VectorSubtract(pb->maxs, pb->mins, *pSize);
@@ -288985,11 +288987,11 @@ void CNPC_VMingXiao::sub_103990c0()
 		}
 		VectorNormalize(dir);
 		float flSpeed;
-		if ((float)(g_1093bc10.GetFloat() + CVarD(g_1093bbc8) * flLenSqr) > 1000.0f)
-			flSpeed = g_1093bc10.GetFloat() + g_1093bbc8.GetFloat() * flLenSqr;
+		if (MINGXIAO_THROW_BASE + MINGXIAO_THROW_POWER * flLenSqr > 1000.0f)
+			flSpeed = MINGXIAO_THROW_BASE + MINGXIAO_THROW_POWER * flLenSqr;
 		else
 			flSpeed = 1000.0f;
-		float flGrav = g_1093b9f8.GetFloat();
+		float flGrav = MINGXIAO_THROW_HDS;
 		dir = dir * flSpeed;
 		dir.z += flGrav * flLenSqr;
 		CRagdollProp *pRag = (CRagdollProp *)__RTDynamicCast(LOOK(m_h6718), 0, g_10538764, g_1057c684, 0);
