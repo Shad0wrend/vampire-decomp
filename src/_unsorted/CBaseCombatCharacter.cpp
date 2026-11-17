@@ -584,7 +584,6 @@ void CBaseCombatCharacter::vfunc292(int unused1, const Vector *pDirection, int u
 // END FUNCTION
 
 // FUNCTION: 0x10322b40 size=0x567
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
 #include "CUnknown101e56e0.h"
@@ -721,9 +720,9 @@ void CBaseCombatCharacter::vfunc313()
 			{
 				g_10739a4c.sub_101e34c0(p, this, 10, statValue - 1);
 
-				float flRadius = pRadiusCurve->sub_1006caa0(pcd_stage(statValue));
+				float flRadius = pRadiusCurve->sub_1006caa0(statValue);
 
-				Vector *pOtherOrigin = pcd_stage(((CEntityVSlots *)p)->slot220());
+				Vector *pOtherOrigin = (((CEntityVSlots *)p)->slot220());
 				Vector *pThisOrigin = ((CEntityVSlots *)this)->slot220();
 				float flDist = LengthZXY(*pThisOrigin - *pOtherOrigin);
 
@@ -734,17 +733,17 @@ void CBaseCombatCharacter::vfunc313()
 						flBestEffect = flEffect;
 
 					int nRelation = ((CEntityVSlots *)p)->slot404(this);
-					if (!(((CBCCView *)this)->sub_10323930(pcd_stage((CBCCView *)p)) || nRelation == 3)) {
+					if (!(((CBCCView *)this)->sub_10323930(((CBCCView *)p)) || nRelation == 3)) {
 						if (flEffect > flPercent)
 							flPercent = flEffect;
-						if (pcd_stage(statValue) > iEnemy)
+						if (statValue > iEnemy)
 							iEnemy = statValue;
 					} else {
 						SCurve6caa0 *pCombatRanges = ((StatOwner *)&g_106c7c34)->sub_1006cff0(g_106c7c34.sub_1006cf30("Presence_Combat_Ranges"));
 						float flRange = flRadius / pCombatRanges->sub_1006caa0(0);
 						int nDist; nDist = (int)flDist;
 						float flCombat;
-						if ((char)nDist == -1) flCombat = nDist / flRange; else flCombat = pcd_stage(nDist) / pcd_stage(flRange);
+						if ((char)nDist == -1) flCombat = nDist / flRange; else flCombat = (nDist) / flRange;
 						if (1.0f > flCombat)
 							flCombat = 1.0f;
 						int nCombat = (int)flCombat;
@@ -766,7 +765,7 @@ void CBaseCombatCharacter::vfunc313()
 	m_iFriendPresenceEffect = iFriend;
 	if (iFriend > 0)
 	{
-		SCurve6caa0 *pBenefit = pcd_stage(((StatOwner *)&g_106c7c34)->sub_1006cff0(g_106c7c34.sub_1006cf30("Presence_Combat_Benefit")));
+		SCurve6caa0 *pBenefit = (((StatOwner *)&g_106c7c34)->sub_1006cff0(g_106c7c34.sub_1006cf30("Presence_Combat_Benefit")));
 		m_iFriendPresenceEffect = pBenefit->sub_1006cb60(m_iFriendPresenceEffect);
 	}
 
@@ -783,12 +782,12 @@ void CBaseCombatCharacter::vfunc313()
 
 			sub_101cdba0(&((CEntityVSlots *)this)->slot192(), flScalar, flSpeed, 1.0, 1.0f, 0, true);
 
-			(pcd_stage((StatOwner *)&g_106c7c34))->sub_1006cff0(g_106c7c34.sub_1006cf30("Presence_Jitter_Hand"));
+			(((StatOwner *)&g_106c7c34))->sub_1006cff0(g_106c7c34.sub_1006cf30("Presence_Jitter_Hand"));
 			flScalar = (m_flEnemeyPresencePercent * pSpeed->sub_1006caa0(0)) * 0.1;
 
 			((CC343View *)this)->vfunc343(0.4f, m_flEnemeyPresencePercent, 0);
 
-			float flRand1; flRand1 = pcd_stage(enginerandom->vfunc1(-flScalar, flScalar));
+			float flRand1; flRand1 = (enginerandom->vfunc1(-flScalar, flScalar));
 			Vector vecJitter(enginerandom->vfunc1(-flScalar, flScalar), flRand1, 0.0f);
 			((CC169View *)this)->vfunc169(&vecJitter);
 
