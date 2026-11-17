@@ -732,6 +732,15 @@ void CNPC_VManBat::vfunc444(int *pTask)
 // END FUNCTION
 
 // FUNCTION: 0x1038f790 size=0x22a
+#include "CHL2_Player.h"
+#include "CAI_Pathfinder.h"
+#include "CAI_BaseNPCTroika.h"
+#include "ehandle.h"
+#include "ConVar.h"
+#include "MvsnSec0.h"
+#include "engineiface.h"
+#include "globalvars.h"
+#include "Vector.h"
 #include "CSoundControllerImp.h"
 #include "CTriggerProximity.h"
 #include "CUnknown102c63b0.h"
@@ -762,56 +771,224 @@ extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
 extern char g_10538764[];
 extern char g_1057fff0[];
 
-#pragma auto_inline(off)
+int sub_10390920(unsigned int x);
+int sub_102d1af0(void *pThis, int a, int b, float c, int d, int e);
+void sub_101cf5c0(void *pThis, const Vector *pVec, int a);
+
+extern ConVar g_1093b7c8;
+
 namespace block_1038f790 {
-struct CLookUnit : CUnknown100290c0 { unsigned int sub_100290c0(unsigned int *pHandle); };
-static int g_shift790 = 13;
-unsigned int CLookUnit::sub_100290c0(unsigned int *pHandle)
+struct ManBatPad1 { int x; };
+struct ManBatPad2 { int x; };
+
+struct CCollView
 {
-    unsigned int h = *pHandle;
-    if (h != 0xffffffff) {
-        CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
-        if (pSlot->m_Serial == (int)(h >> g_shift790)) {
-            return pSlot->m_Value;
-        }
-    }
-    return 0;
+	virtual void v0();
+	virtual const Vector &OBBMins();
+	virtual const Vector &OBBMaxs();
+};
+
+static inline CCollView *CollOf(void *p) { return (CCollView *)((char *)p + 0x270); }
+static inline const Vector &MaxsOf(void *p) { return CollOf(p)->OBBMaxs(); }
+static inline const Vector &MinsOf(void *p) { return CollOf(p)->OBBMins(); }
+
+static inline int SecDecode0(unsigned int v)
+{
+	return sub_10390920((((v & 0x710935) ^ 0x148739) + 0x4094ab & 0x18ef6ca) ^ v ^ 0x412a96ec);
+}
+
+static inline bool SecEq0(unsigned int v, unsigned int k)
+{
+	int b = sub_10390920(k);
+	return SecDecode0(v) == b;
+}
+
+static inline const Vector &ManBatAbsVelocity(CBaseEntity *p)
+{
+	if ((unsigned char)(p->m_flags268 >> 12) & 1)
+		p->sub_100b1d10();
+	return p->m_vecVelocity3bc;
+}
+
+struct ManBatPathOuter : CAI_PathfinderOuter
+{
+	CAI_Pathfinder *GetPathfinder() { return m_pPathfinder; }
+};
+
+struct ManBatNav : CAI_Pathfinder
+{
+	void SetupFit()
+	{
+		m_unk08 = ((CNPC_VManBat *)m_pOuter)->m_n156c;
+		m_unk0c = gpGlobals->framecount;
+	}
+};
+
+// 0x1038b370, the unit's first function that declines the header inline LookupEntity (all six lookups),
+// so the COMDAT is compiled before the target
+struct ManBatDive : CNPC_VManBat
+{
+	CBaseEntity *GetFlyNode() { return m_pFlyNode; }
+	Vector sub_1038b370(float flScale);
+};
+
+Vector ManBatDive::sub_1038b370(float flScale)
+{
+	static Vector s_vecLast(0.0f, 0.0f, 0.0f);
+	static float s_flTime;
+	Vector vecVelocity;
+	float flSpeed;
+	Vector vecOut;
+
+	if (GetFlyNode() == 0 && !SecEq0(m_n6670, 0xfa0b069a) && !SecEq0(m_n6670, 0xfa0b069b))
+	{
+		vecVelocity = ManBatAbsVelocity((CBaseEntity *)this);
+		vecVelocity.z = 10.0f;
+		flSpeed = sub_10146150(&vecVelocity);
+		Vector vecDir = vecVelocity;
+		VectorNormalize(vecDir);
+		if (sub_1038bec0(vecDir, flSpeed, vecOut))
+			vecVelocity = vecOut * flSpeed;
+		return vecVelocity;
+	}
+
+	if (m_nState == 0x30 || 0xb0 == m_nState || m_nState == 0x4b || m_nState == 0x1171)
+	{
+		vecVelocity.Init(0.0f, 0.0f, 0.0);
+		return vecVelocity;
+	}
+
+	Vector vecOrigin = *((CEntityVSlots *)this)->slot220();
+	if (vecOrigin == s_vecLast)
+	{
+		if (gpGlobals->curtime - s_flTime > 0.5)
+		{
+			int nOldMode = SecDecode0(m_n6670);
+			int nOldN = m_n6674;
+			((MvsnSec::CSecureInt0 *)&m_pSecure6668)->Set(2);
+			m_n6674 = enginerandom->vfunc2(1, 3);
+			CBaseEntity *pNode = (CBaseEntity *)sub_102d1af0(this, 20000, 0, 15000.0f, 0, 0);
+			((MvsnSec::CSecureInt0 *)&m_pSecure6668)->Set(nOldMode);
+			m_n6674 = nOldN;
+			if (pNode)
+			{
+				Vector vecPos = *((CEntityVSlots *)this)->slot217();
+				((CAI_BaseNPCTroika *)this)->sub_102c41b0((int)"sheriff_teleport_emitter", &vecPos, 0, 0);
+				vecPos = *((CEntityVSlots *)pNode)->slot217();
+				((CAI_BaseNPCTroika *)this)->sub_102c41b0((int)"sheriff_teleport_emitter", &vecPos, 0, 0);
+				sub_101cf5c0(this, &vecPos, 0);
+			}
+			else
+			{
+				vecVelocity.Init(0.0f, 0.0f, 0.0f);
+				return vecVelocity;
+			}
+		}
+	}
+	else
+	{
+		s_vecLast = vecOrigin;
+		s_flTime = gpGlobals->curtime;
+	}
+
+	Vector vecTarget;
+	if (SecEq0(m_n6670, 0xfa0b069a))
+	{
+		CBaseEntity *pTarget = (CBaseEntity *)((EHANDLE &)m_h628c).Get();
+		const Vector &v = *((CEntityVSlots *)pTarget)->slot220();
+		vecTarget.x = v.x;
+		vecTarget.y = v.y;
+		vecTarget.z = v.z + 150.0;
+	}
+	else if (SecEq0(m_n6670, 0xfa0b069b))
+	{
+		if (!m_hFlyByTarget.Get() || !((CEntityVSlots *)m_hFlyByTarget.Get())->slot158())
+			return ManBatAbsVelocity((CBaseEntity *)this);
+		vecTarget = *((CEntityVSlots *)m_hFlyByTarget.Get())->slot220();
+		vecTarget.z = MaxsOf(m_hFlyByTarget.Get()).z - MinsOf(m_hFlyByTarget.Get()).z + vecTarget.z + 1.0;
+		((ManBatNav *)((ManBatPathOuter *)this)->GetPathfinder())->SetupFit();
+		if (!((ManBatPathOuter *)this)->GetPathfinder()->sub_102f1a20(&vecTarget.x, 0x2400b))
+		{
+			((CEntityVSlots *)this)->slot448(0x1a);
+			return ManBatAbsVelocity((CBaseEntity *)this);
+		}
+	}
+	else
+	{
+		vecTarget = *((CEntityVSlots *)GetFlyNode())->slot220();
+	}
+
+	vecVelocity = vecTarget - vecOrigin;
+	float flLen = vecVelocity.Length();
+	flSpeed = 700.0f;
+	if (!(vecVelocity.z < -30.0f))
+		flSpeed = 500.0f;
+	VectorNormalize(vecVelocity);
+	if (sub_1038bec0(vecVelocity, flSpeed, vecOut))
+	{
+		vecVelocity = vecOut * flSpeed;
+	}
+	else
+	{
+		vecVelocity *= flSpeed;
+		Vector vecCur = *((CEntityVSlots *)this)->slot198();
+		Vector vecDiff = vecVelocity - vecCur;
+		flSpeed = g_1093b7c8.GetFloat() * flScale;
+		vecDiff.x = vecDiff.x > flSpeed ? flSpeed : vecDiff.x;
+		float flNeg = -flSpeed;
+		vecDiff.x = vecDiff.x < flNeg ? flNeg : vecDiff.x;
+		if (vecDiff.y > flSpeed) vecDiff.y = flSpeed;
+		if (vecDiff.y < flNeg) vecDiff.y = flNeg;
+		if (vecDiff.z > flSpeed) vecDiff.z = flSpeed;
+		if (vecDiff.z < -(flSpeed * 3.0)) vecDiff.z = -(flSpeed * 3.0);
+		vecVelocity = vecCur + vecDiff;
+	}
+
+	if (flScale > 0.0)
+	{
+		double t = vecVelocity.Length() * 0.2;
+		if (flLen < t)
+			m_bReachedMoveGoal = true;
+	}
+	return vecVelocity;
 }
 }
-#pragma auto_inline(on)
-#define L ((block_1038f790::CLookUnit *)g_10566458)
+
+struct CManBatPhysEnt : CBaseEntity
+{
+    PhysView *VPhysicsGetObject() { return *(PhysView **)((char *)this + 0x36c); }
+};
 
 void CNPC_VManBat::sub_1038f790()
 {
-    if (L->sub_100290c0(&m_h6690))
-        sub_101cd970((CEntRemoveView *)L->sub_100290c0(&m_h6690));
-    m_h6690 = -1;
-    CEntityVSlots *target = (CEntityVSlots *)L->sub_100290c0(&m_h628c);
-    if (target && L->sub_100290c0(&m_h668c)) {
+    if ((EHANDLE &)m_h6690)
+        sub_101cd970((CEntRemoveView *)((EHANDLE &)m_h6690).Get());
+    (EHANDLE &)m_h6690 = (CBaseEntity *)0;
+    CEntityVSlots *target = (CEntityVSlots *)((EHANDLE &)m_h628c).Get();
+    if (target && ((EHANDLE &)m_h668c).Get()) {
         Vector zero(0, 0, 0);
         Vector vec;
         const Vector *p = target->slot217();
         vec.x = p->x;
         vec.y = p->y;
         vec.z = p->z + 48.0f;
-        sub_102c4cc0(&zero, ((CEntityVSlots *)EHandle_Get(m_h668c))->slot217(), &vec);
-        CRagdollPropSpecial *r = (CRagdollPropSpecial *)__RTDynamicCast(EHandle_Get(m_h668c), 0, g_10538764, g_1057fff0, 0);
+        sub_102c4cc0(&zero, ((CEntityVSlots *)((EHANDLE &)m_h668c).Get())->slot217(), &vec);
+        CRagdollPropSpecial *r = (CRagdollPropSpecial *)__RTDynamicCast(((EHANDLE &)m_h668c).Get(), 0, g_10538764, g_1057fff0, 0);
         if (r) {
             Vector z2(0, 0, 0);
             ((RagView *)r)->s266(&zero, &z2);
             r->sub_101578d0(m_b6694);
         } else {
-            CBaseEntity *en = (CBaseEntity *)EHandle_Get(m_h668c);
-            PhysView *phys = *(PhysView **)((char *)en + 0x36c);
+            PhysView *phys = ((CManBatPhysEnt *)((EHANDLE &)m_h668c).Get())->VPhysicsGetObject();
             if (phys) {
                 Vector z2(0, 0, 0);
                 phys->s39(&zero, &z2);
             }
         }
     }
-    sub_102c4380((CBaseEntity *)EHandle_Get(m_h668c));
+    sub_102c4380((CBaseEntity *)((EHANDLE &)m_h668c).Get());
     sub_102c43b0(2.0f);
-    m_h668c = -1;
+    (EHANDLE &)m_h668c = (CBaseEntity *)0;
     sub_1038f600(0);
 }
 // END FUNCTION
