@@ -6877,6 +6877,7 @@
 0x10009acf func   ?sub_10230f30@CUnk10230f30@@QAEPAU1@H@Z CUnk10230f30::sub_10230f30
 0x10009ad9 func   ?sub_102e1d10@@YAMMMMM@Z sub_102e1d10
 0x10009ade func   ?sub_1018c170@CPlayerLocalPredictedData@@QAEPAV1@XZ CPlayerLocalPredictedData::sub_1018c170
+0x10009ae3 func   ?sub_10106050@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10106050
 0x10009ae8 func   ?sub_10027570@CBaseEntity@@QAEHXZ CBaseEntity::sub_10027570
 0x10009aed func   _env_swarm_bats env_swarm_bats
 0x10009af2 func   ?vfunc82@CPhysConstraint@@UAEPAUdatamap_t@@XZ CPhysConstraint::vfunc82

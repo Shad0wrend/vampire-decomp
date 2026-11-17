@@ -76221,6 +76221,112 @@ void CBaseCombatCharacter::sub_10105e20(float *weights, char *pExpression)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106050 size=0x293
+extern int pcd_dial_v;
+#include "utlrbtree.h"
+#include "CBaseFlexCalves.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseCombatCharacter.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CExpressionTable.h"
+#include "CUnknown10105a60.h"
+#include "UtlMem.h"
+#include "ScopeTrace.h"
+#include <string.h>
+#include "utlvector.h"
+
+struct CDevFlagObjView
+{
+	virtual void vfunc0();
+	virtual char vfunc1();
+	char m_pad0004[0x28];
+	int m_n2c;
+};
+extern CDevFlagObjView *g_107091bc;
+extern CExpressionTable g_10709200;
+
+struct CSceneEventView
+{
+	float sub_10076280(float flTime);
+};
+
+struct CExprCalcView
+{
+	float sub_10106e20(float flTime, void *pCurve);
+};
+
+struct CExprVectorView
+{
+	void *m_pMemory;
+	int m_nAlloc;
+	int m_nGrow;
+	int m_nSize;
+	void *m_pElements;
+};
+
+#define exprs (*(CUtlVector<CExpressionRecord> *)&m_pExpressions10bc)
+// TARGET: CBaseCombatCharacter::sub_10106050
+void CBaseCombatCharacter::sub_10106050(int unused)
+{
+	if (0) pcd_dial_v = pcd_dial_v * pcd_dial_v;
+	ScopeTrace trace("CBaseCombatCharacter::UpdateExpressions", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	void *pModel = sub_100952d0(-1);
+	if (m_idxDefExpression == -1 || !pModel || *(int *)((char *)pModel + 0x160) <= 0)
+		return;
+	if (!g_107091bc->vfunc1() && g_107091bc->m_n2c > 0) {
+		CExprVectorView *pVec = (CExprVectorView *)&m_pExpressions10bc;
+		pVec->m_nSize = 0;
+		((UtlMem *)pVec)->sub_10107480();
+		pVec->m_pElements = pVec->m_pMemory;
+		return;
+	}
+	float *pFlexWeights = (float *)((char *)this + 0x858);
+	float flNow = gpGlobals->curtime;
+	float flTotal = 0.0f;
+	CAI_BaseNPCTroika *pNPC = (CAI_BaseNPCTroika *)m_pNPC98;
+	int nDefault;
+	if (pNPC && pNPC->sub_102c0aa0())
+		nDefault = *(int *)((char *)pNPC + 0x64d0);
+	else
+		nDefault = m_idxDefExpression;
+	float weights[128];
+	for (int k = 0; k < 128; k++)
+		weights[k] = 0.0f;
+	for (int i = 0; i < exprs.Count(); ) {
+		if (flNow >= exprs[i].m_flFadeTime) {
+			exprs.Remove(i);
+			continue;
+		}
+		CExpressionRecord *p = &exprs[i];
+		if (flNow > p->m_flStart) {
+			float flValue;
+			if (p->m_pEvent1c && p->m_pScene18)
+				flValue = ((CSceneEventView *)p->m_pEvent1c)->sub_10076280(((CUnknown1007dfa0 *)p->m_pScene18)->sub_1007dfa0());
+			else
+				flValue = ((CExprCalcView *)this)->sub_10106e20(flNow, p);
+			flTotal = flValue + flTotal;
+			sub_10105e20(weights, (char *)g_10709200.sub_101051b0(p->m_iExpression));
+			((CUnknown10105a60 *)this)->sub_10105a60(pFlexWeights, pFlexWeights, weights, flValue, 128);
+		}
+		i++;
+	}
+	if (flTotal < 1.0) {
+		char *pExpr = (char *)g_10709200.sub_101051b0(nDefault);
+		float flBlend = m_flDefExpressionIntensity;
+		flBlend *= 1.0 - flTotal;
+		sub_10105e20(weights, pExpr);
+		((CUnknown10105a60 *)this)->sub_10105a60(pFlexWeights, pFlexWeights, weights, flBlend, 128);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101063a0 size=0xbf
 #include "CBaseCombatCharacter.h"
 #include "CLogicAuto.h"
