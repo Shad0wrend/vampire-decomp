@@ -27444,12 +27444,10 @@ struct S_Event
 
 void sub_1013bd20(const Vector &a, const Vector &b, const Vector &c, const Vector &d, float t, Vector &out);
 
-#pragma inline_depth(0)
 unsigned int CTableFields10077ac0::sub_10077ac0(int index)
 {
 	return *(unsigned int *)((char *)this + 0x2f0 + index * 0x14);
 }
-#pragma inline_depth()
 
 float CTableFields10077ac0::sub_10077f10(float x)
 {
