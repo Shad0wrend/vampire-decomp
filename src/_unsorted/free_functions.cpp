@@ -224660,7 +224660,7 @@ extern "C" __declspec(dllimport) void Error(const char *pszFormat, ...);
 bool CAI_BaseNPCTroika::sub_102c44e0(const char *pszName)
 {
 	CBaseEntity *pEnt = vfunc559(pszName);
-	volatile unsigned int *pHandle = (volatile unsigned int *)((char *)this + 0x647c);
+	volatile unsigned int *pHandle = (unsigned int *)((char *)this + 0x647c);
 	if (pEnt)
 		*pHandle = *pEnt->vfunc1();
 	else
