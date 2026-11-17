@@ -270168,7 +270168,7 @@ void CBaseCombatCharacter::sub_10340c90(inputdata_t *pInput)
 	g_109f3620[*g_109f3680].b = name;
 	g_109f3620[*g_109f3680].c = g_106b8540;
 	++*g_109f3680;
-	volatile VT *pValue = (volatile VT *)&pInput->value;
+	volatile VT *pValue = (VT *)&pInput->value;
 	if (pValue->fieldType == 4 && pValue->iValue != 0)
 		sub_10340e50(pValue->fieldType == 4 ? pValue->iValue : 0);
 	--*g_109f3680;
