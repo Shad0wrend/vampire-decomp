@@ -495,12 +495,23 @@ float sub_102d61b0(int a);
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
 namespace block_102e2580 {
+#define NPCV(n) virtual void vfunc##n();
+#define NPCV10(p) NPCV(p##0) NPCV(p##1) NPCV(p##2) NPCV(p##3) NPCV(p##4) NPCV(p##5) NPCV(p##6) NPCV(p##7) NPCV(p##8) NPCV(p##9)
+#define NPCV100(p) NPCV10(p##0) NPCV10(p##1) NPCV10(p##2) NPCV10(p##3) NPCV10(p##4) NPCV10(p##5) NPCV10(p##6) NPCV10(p##7) NPCV10(p##8) NPCV10(p##9)
+// the owning NPC's vtable as CAI_Motor::GetIdealSpeed sees it: slot 248 (+0x3e0) is CAI_BaseNPC::GetIdealSpeed
+struct CAI_OuterSpeedView {
+	NPCV100(0) NPCV100(1) NPCV10(20) NPCV10(21) NPCV10(22) NPCV10(23)
+	NPCV(240) NPCV(241) NPCV(242) NPCV(243) NPCV(244) NPCV(245) NPCV(246) NPCV(247)
+	virtual float GetIdealSpeed() const;	// slot 248
+};
 struct CAI_MotorUnit : CAI_Motor {
+	CAI_OuterSpeedView *GetOuter() { return (CAI_OuterSpeedView *)m_pOuter; }
 	float sub_102e12c0();
 };
+// CAI_Motor::GetIdealSpeed
 float CAI_MotorUnit::sub_102e12c0()
 {
-	return ((CAI_Motor *)m_pOuter)->vfunc16();
+	return GetOuter()->GetIdealSpeed();
 }
 }
 using namespace block_102e2580;
