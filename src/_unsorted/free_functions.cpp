@@ -202144,36 +202144,45 @@ unsigned short __cdecl sub_10259e20(void) { return 0xffff; }
 // END FUNCTION
 
 // FUNCTION: 0x10259e40 size=0xfa
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
 #include "utlmemory.h"
-#include "CUtlLinkedListBig.h"
+#include "CUtlRBTreeBig.h"
 #include "CVDmg_t.h"
 struct BigElem { char pad[0x198]; CVDmg_t d; char pad2[0xec84 - 0x198 - sizeof(CVDmg_t)]; ~BigElem() { d.sub_101fa680(); } };
 struct BigData { char pad0[0x238e4]; BigElem arr[3]; char tail[0x5f31c - 0x4fe70]; };
-struct BigNode { CUtlLinkedListBigLinks m_Links; BigData m_Element; };
-extern CUtlLinkedListBig g_1089d7c8;
+struct BigNode { CUtlRBTreeBig::Links_t m_Links; BigData m_Element; };
+extern CUtlRBTreeBig g_1089d7c8;
 
+// CUtlRBTree<BigData, unsigned short>::RemoveAll of the tree at 0x1089d7c8: every node is destructed (when valid) and
+// put on the free list in order (right child = the previous index, left child = itself)
 void sub_10259e40()
 {
     unsigned short prev = 0xffff;
-    int i = g_1089d7c8.m_NumAlloced;
+    int i = g_1089d7c8.m_TotalElements;
     while (--i >= 0) {
         unsigned short idx = (unsigned short)i;
-        if (g_1089d7c8.Links(idx).m_Data != idx) {
-            BigElem *e = ((BigNode *)g_1089d7c8.m_pMemory)[idx].m_Element.arr + 3;
+        if (g_1089d7c8.Links(idx).m_Left != idx) {
+            BigElem *e = ((BigNode *)g_1089d7c8.m_pElements)[idx].m_Element.arr + 3;
             int n = 3;
             do {
                 --e;
                 e->~BigElem();
             } while (--n);
         }
-        g_1089d7c8.m_pMemory[idx].m_Links.m_Next = prev;
-        g_1089d7c8.m_pMemory[idx].m_Links.m_Data = idx;
+        g_1089d7c8.m_pElements[idx].m_Links.m_Right = prev;
+        g_1089d7c8.m_pElements[idx].m_Links.m_Left = idx;
         prev = i;
     }
-    g_1089d7c8.m_Head = 0xffff;
-    g_1089d7c8.m_Tail = 0;
-    g_1089d7c8.m_FirstFree = g_1089d7c8.m_NumAlloced != 0 ? 0 : 0xffff;
+    g_1089d7c8.m_Root = 0xffff;
+    g_1089d7c8.m_NumElements = 0;
+    g_1089d7c8.m_FirstFree = g_1089d7c8.m_TotalElements != 0 ? 0 : 0xffff;
 }
 // END FUNCTION
 
