@@ -109,10 +109,22 @@ struct CSabbatEdictView
 #define SNDTHIS ((CEntitySoundOriginView *)this)
 
 #include "UtlMem.h"
-struct CFilterVecDtor { void sub_101a5290(); };
-struct CFilterVecPurge { void sub_100b4790(); };
-union CFilterStore { char c[sizeof(CPASAttenuationFilter)]; int n; };
-inline void *__cdecl operator new(unsigned int, void *p, CFilterStore *) { return p; }
+// Real inlines the original called: baseentity.h CBaseEntity::GetGravity()/SetGravity() (m_flGravity +0x3ec) and the
+// game's inline CBaseEntity::AddSolidFlags (scope trace + CollisionProp()->AddSolidFlags, as in AI_BaseNPC.cpp),
+// ai_basenpc.h CAI_BaseNPC::GetMotor() / GetHintNode().
+struct CSabbatLeaderV : CNPC_VSabbatLeader
+{
+	float GetGravity() const { return m_fl3ec; }
+	void SetGravity(float gravity) { m_fl3ec = gravity; }
+	void AddSolidFlags(int flags)
+	{
+		ScopeTrace t2("CBaseEntity::AddSolidFlags", m_pszName26c ? m_pszName26c : g_106b8540, g_106b8540);
+		((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(flags);
+	}
+	CAI_Motor *GetMotor() { return m_pMotor5d44; }
+	CNPC_VSabbatLeaderHint *GetHintNode() { return m_pHint5ddc; }
+};
+#define NPC ((CSabbatLeaderV *)this)
 inline void SetJH(float *d, float f) { *d = f; }
 // TARGET: CNPC_VSabbatLeader::vfunc442
 void CNPC_VSabbatLeader::vfunc442(const int *pTask)
@@ -134,7 +146,7 @@ void CNPC_VSabbatLeader::vfunc442(const int *pTask)
 	case 0xe5:
 		sub_102c4e80();
 		if (sub_1027d990() == 1) {
-			((CAI_Motor *)m_pMotor5d44)->vfunc8();
+			NPC->GetMotor()->vfunc8();
 			sub_1027d9b0(0);
 			m_bJumping = 0;
 		}
@@ -176,21 +188,15 @@ void CNPC_VSabbatLeader::vfunc442(const int *pTask)
 		sub_10273e80(0);
 		break;
 	case 0x157: {
-		CFilterStore st;
-		CPASAttenuationFilter &filter = *(CPASAttenuationFilter *)&st;
-		filter.CPASAttenuationFilter::CPASAttenuationFilter(SNDTHIS);
+		CPASAttenuationFilter filter(SNDTHIS);
 		g_1070b248->vfunc3(&filter, EV->entindex(), 2, "Character/Monster/Andrei_Transformed/ambient_run.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 		sub_10273e80(0);
-		((CFilterVecDtor *)&filter.m_Recipients)->sub_101a5290();
 		break;
 	}
 	case 0x158: {
-		CFilterStore st;
-		CPASAttenuationFilter &filter = *(CPASAttenuationFilter *)&st;
-		filter.CPASAttenuationFilter::CPASAttenuationFilter(SNDTHIS);
+		CPASAttenuationFilter filter(SNDTHIS);
 		g_1070b248->vfunc7((const CRecipientFilter *)EV->entindex(), 2, "Character/Monster/Andrei_Transformed/ambient_run.wav");
 		sub_10273e80(0);
-		((CFilterVecDtor *)&filter.m_Recipients)->sub_101a5290();
 		break;
 	}
 	case 0x159:
@@ -200,7 +206,7 @@ void CNPC_VSabbatLeader::vfunc442(const int *pTask)
 		m_b66e5 = 0;
 		m_nFailureCount = 0;
 		m_vJumpOrigin = *ME->slot217();
-		m_vJumpTarget = *((CEntityVSlots *)m_pHint5ddc)->slot217();
+		m_vJumpTarget = *((CEntityVSlots *)NPC->GetHintNode())->slot217();
 		SetJH(&m_fJumpHeight, g_104c3cb0);
 		m_bTrackPlayer = 0;
 		m_b66d5 = 0;
@@ -211,15 +217,11 @@ void CNPC_VSabbatLeader::vfunc442(const int *pTask)
 		CEntityVSlots *pPlayer = (CEntityVSlots *)LookupEntity(m_hPlayer);
 		if (pPlayer && !sub_103a9e70()) {
 			CALLS->sub_102c4ad0(pPlayer, g_104c3cb4, g_104c3cb8);
-			CFilterStore st;
-			CPASAttenuationFilter &filter = *(CPASAttenuationFilter *)&st;
-			filter.CPASAttenuationFilter::CPASAttenuationFilter(SNDTHIS);
+			CPASAttenuationFilter filter(SNDTHIS);
 			g_1070b248->vfunc3(&filter, EV->entindex(), 2, "Character/Monster/Andrei_Transformed/Leap_Down_Attack_1.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 			m_bTrackPlayer = 1;
 			m_b66d5 = 0;
 			sub_10273e80(0);
-			((CFilterVecPurge *)&filter.m_Recipients)->sub_100b4790();
-			((UtlMem *)&filter.m_Recipients)->sub_1002cbd0();
 		} else {
 			m_pszFile1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VSabbatLeader.cpp";
 			m_nLine1b48 = 0x28d;
@@ -229,22 +231,19 @@ void CNPC_VSabbatLeader::vfunc442(const int *pTask)
 	}
 	case 0x15c: {
 		m_b66e5 = 0;
-		m_fl3ec = 0.1f;
+		NPC->SetGravity(0.1f);
 		m_nFailureCount = 0;
 		m_bTrackPlayer = 0;
 		m_b66d5 = 1;
 		sub_10289ee0(0x113f);
 		m_nEffectFlags |= 0x20;
-		{
-			ScopeTrace t2("CBaseEntity::AddSolidFlags", m_pszName26c ? m_pszName26c : g_106b8540, g_106b8540);
-			((CCollisionProperty *)((char *)this + 0x270))->AddSolidFlags(4);
-		}
+		NPC->AddSolidFlags(4);
 		CALLS->sub_100b3b00();
 		Vector vecVel = *((CEntityVSlots *)m_pHint5ddc)->slot217() - *ME->slot217();
 		float flSpeed = VectorNormalize(vecVel) / g_1093c340;
 		vecVel = vecVel * flSpeed;
 		float flGravity = GetGravity();
-		vecVel.z = (*(volatile float *)&m_fl3ec * flGravity) * g_1093c340 * 0.5f;
+		vecVel.z = (NPC->GetGravity() * flGravity) * g_1093c340 * 0.5f;
 		CALLS->sub_100b2770(vecVel);
 		sub_1027d9b0(1);
 		m_bJumping = 1;
@@ -259,23 +258,18 @@ void CNPC_VSabbatLeader::vfunc442(const int *pTask)
 		m_nEffectFlags |= 0x10;
 		CEntityVSlots *pPlayer = (CEntityVSlots *)LookupEntity(m_hPlayer);
 		if (pPlayer) {
-			sub_102e0b40((float *)m_pMotor5d44);
-			CAI_Motor *pMotor = m_pMotor5d44;
-			pMotor->sub_102e20b0((const float *)pPlayer->slot217(), g_104c3cec);
+			sub_102e0b40((float *)NPC->GetMotor());
+			NPC->GetMotor()->sub_102e20b0((const float *)pPlayer->slot217(), g_104c3cec);
 		}
-		CFilterStore st;
-		CPASAttenuationFilter &filter = *(CPASAttenuationFilter *)&st;
-		filter.CPASAttenuationFilter::CPASAttenuationFilter(SNDTHIS);
+		CPASAttenuationFilter filter(SNDTHIS);
 		g_1070b248->vfunc3(&filter, EV->entindex(), 2, "Character/Monster/Andrei_Transformed/dive_out_splash.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
-		sub_103ab110("andrei_splash_dive_out-emitter", (CEntityVSlots *)m_pHint5ddc);
+		sub_103ab110("andrei_splash_dive_out-emitter", (CEntityVSlots *)NPC->GetHintNode());
 		sub_10289ee0(0x1140);
-		((CFilterVecPurge *)&filter.m_Recipients)->sub_100b4790();
-		((UtlMem *)&filter.m_Recipients)->sub_1002cbd0();
 		break;
 	}
 	case 0x15e: {
-		sub_102e0b40((float *)m_pMotor5d44);
-		ME->slot216(((CEntityVSlots *)m_pHint5ddc)->slot217());
+		sub_102e0b40((float *)NPC->GetMotor());
+		ME->slot216(((CEntityVSlots *)NPC->GetHintNode())->slot217());
 		Vector vec = *ME->slot220();
 		ME->slot181(&vec, 0, 0);
 		ME->slot62(&vec.x);
@@ -289,7 +283,6 @@ void CNPC_VSabbatLeader::vfunc442(const int *pTask)
 		break;
 	}
 	case 0x15f:
-		if (0) EV->edict();
 		((CSabbatFlags *)this)->m_n14bc |= 0x80000800;
 		sub_10273e80(0);
 		break;
