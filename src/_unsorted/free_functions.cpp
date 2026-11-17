@@ -136470,10 +136470,14 @@ extern float g_104454c4;
 namespace block_101bef50 {
 float sub_101beed0(float x, float lo, float hi)
 {
-	if (x > hi)
-		return (hi - lo) / (hi - lo);
-	if (x < lo)
-		return (lo - lo) / (hi - lo);
+	if (x > hi) {
+		x = hi;
+		return (x - lo) / (hi - lo);
+	}
+	if (x < lo) {
+		x = lo;
+		return (x - lo) / (hi - lo);
+	}
 	return (x - lo) / (hi - lo);
 }
 }
@@ -136482,7 +136486,7 @@ float sub_101beed0(float x, float lo, float hi)
 float CStealthKillRules::sub_101bef50(int a, float b)
 {
 	ScopeTrace trace("CStealthKillRules::ComputeMinDepth", g_106b8540);
-	float flDepth = m_flRange - ((block_101bef50::sub_101beed0((float)a, (float)m_n0a0, (float)m_n0a4) + 0.0f) - block_101bef50::sub_101beed0(b, *(float *)&m_n0a8, m_f0ac)) * m_flRange;
+	float flDepth = m_flRange - ((block_101bef50::sub_101beed0((float)a, (float)m_n0a0, (float)m_n0a4)) - block_101bef50::sub_101beed0(b, *(float *)&m_n0a8, m_f0ac)) * m_flRange;
 	if (g_104454c4 > flDepth)
 		flDepth = g_104454c4;
 	return flDepth;
