@@ -295885,14 +295885,11 @@ bool CNPC_VTzimisce::sub_103be8e0(CBaseEntity *pTarget)
 
 extern ConVar g_1093ca88;
 extern ConVar g_1093ca40;
-extern float g_104454c4;
 extern char g_1057c684[];
 extern char g_10538764[];
 extern "C" void *__cdecl __RTDynamicCast(void *p, long off, void *src, void *dst, int bThrow);
 
 #define LOOK(h) ((CUnknown100290c0 *)g_10566458)->sub_100290c0((unsigned int *)&(h))
-
-inline float CVarF2(ConVar &cv) { return cv.m_pParent->vfunc1() ? (double)g_104454c4 : cv.m_pParent->m_fValue; }
 
 void CNPC_VTzimisce::sub_103bea90(void *pObj)
 {
@@ -295903,7 +295900,7 @@ void CNPC_VTzimisce::sub_103bea90(void *pObj)
 		Vector vecOrigin;
 		vecOrigin = *((CEntityVSlots *)LOOK(m_hTarget))->slot220();
 		Vector vecTarget;
-		sub_102c36d0(vecOrigin, pObj, CVarF2(g_1093ca88), (Vector *)0, &vecTarget);
+		sub_102c36d0(vecOrigin, pObj, (g_1093ca88.GetFloat()), (Vector *)0, &vecTarget);
 		vecTarget.z += 48.0f;
 		Vector dir = vecTarget - vecOrigin;
 		float flLenSqr = dir.LengthSqr();
