@@ -2306,7 +2306,7 @@ void CBasePlayer::vfunc417(int playerAnim, int b)
 			int iMoveYaw = self->sub_10092270("move_yaw");
 			float flVel = sub_101d2c70(m_vec03D4);
 			float flDiff = sub_1013d580(flYaw, flVel);
-			if (gpGlobals->curtime - 0.3f > *(volatile float *)&m_f2458)
+			if (gpGlobals->curtime - 0.3f > *(float *)&m_f2458)
 				slots->SetPoseParameter(iMoveYaw, flDiff, 0);
 			else
 			{
@@ -2339,7 +2339,7 @@ void CBasePlayer::vfunc417(int playerAnim, int b)
 		else
 		{
 			float flWalk = m_flWalkForwardSpeeds[4] + 1.0f;
-			if (speed > flWalk || *(volatile float *)&m_f19EC > flWalk)
+			if (speed > flWalk || *(float *)&m_f19EC > flWalk)
 			{
 				idealActivity = 0x13;
 				if (sub_1032e7b0() && !slots->slot411())
