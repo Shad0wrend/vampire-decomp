@@ -302035,7 +302035,6 @@ CNPC_VWerewolfVec3 *CNPC_VWerewolf::sub_103d68d0(CNPC_VWerewolfVec3 *pOut, void 
 #include "CUnknown10202b10.h"
 #include "CUnknown10206400.h"
 #include "CUnknown1073dc28.h"
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "UTIL_Trace.h"
 #include "ScopeTrace.h"
 #include "CNPC_VWerewolf.h"
@@ -302107,7 +302106,7 @@ Vector CNPC_VWerewolfV::sub_103d6a40(Vector vOrigin)
 	ScopeTrace trace("CNPC_VWerewolf::GetGroundpoint",
 		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 
-	Vector vecMins = pcd_stage(sub_102d6140(*(int *)((char *)this + 0x1568)));
+	Vector vecMins = (sub_102d6140(*(int *)((char *)this + 0x1568)));
 	Vector vecMaxs = sub_102d6160(*(int *)((char *)this + 0x1568));
 	CGameTrace tr;
 	{
