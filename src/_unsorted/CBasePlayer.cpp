@@ -5035,7 +5035,6 @@ void CBasePlayer::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x1016ea00 size=0xd5
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CBasePlayer.h"
 struct CPlayerView_1016ea00 { char m_pad0[0x1dc4]; float f1dc4; };
 void sub_10006ee7(void *pArray, int nCount);
@@ -5052,7 +5051,7 @@ int CBasePlayer::vfunc126(int a)
 	else
 		m_bCopWaitDelayed = true;
 	m_bDebugSaved = true;
-	m_f1564 = pcd_stage(m_f1564) - gpGlobals->curtime;
+	m_f1564 = (m_f1564) - gpGlobals->curtime;
 	if (m_lBirthday == 0)
 	{
 		m_lBirthday = sub_101d1070(0, 0);
