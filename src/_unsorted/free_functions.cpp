@@ -229194,7 +229194,7 @@ next:
 		pHint = pHint->m_pNext;
 		if (!pHint && g_10925454)
 			pHint = g_10925450;
-	} while (pHint != *(CAI_Hint *volatile *)&g_10925454);
+	} while (pHint != *(CAI_Hint **)&g_10925454);
 	g_10925454 = pBest;
 	return pBest;
 }
