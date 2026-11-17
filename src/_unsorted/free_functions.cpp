@@ -190012,7 +190012,6 @@ void sub_10238380()
 // END FUNCTION
 
 // FUNCTION: 0x102383b0 size=0x170
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CWeaponRanged.h"
 #include "CUnknown10183100.h"
 #include "CEntityVSlots.h"
