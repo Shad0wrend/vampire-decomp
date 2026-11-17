@@ -185414,14 +185414,14 @@ extern char vt_1048e1c4[];
 struct CPropRadioBaseView { void sub_1008b230(); };
 CPropRadio *CPropRadio::sub_1022bc30()
 {
-	volatile int *p = (volatile int *)this;
+	volatile int *p = (int *)this;
 	((CPropRadioBaseView *)this)->sub_1008b230();
 	p[0x1ce] = 0;
 	p[0x1cf] = 0;
 	p[0x1d0] = 0;
 	p[0x1d1] = 0;
 	p[0x1d2] = 0;
-	*((volatile char *)p + 0x758) = 0;
+	*((char *)p + 0x758) = 0;
 	p[0] = (int)vt_1048e1c4;
 	p[0x1cc] = 0x2c;
 	return this;
