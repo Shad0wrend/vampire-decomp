@@ -14166,6 +14166,7 @@
 0x10012e77 func   ?sub_10258ef0@@YADPAUIKVNode@@PAUCWeaponAmmoInfo@@PBD@Z sub_10258ef0
 0x10012e7c func   ?vfunc272@CPropHacking@@QAEXXZ CPropHacking::vfunc272
 0x10012e8b func   ?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@HG@@@@QAEXH@Z CUtlMemory<CUtlRBTree<int,unsigned short>::Node_t>::Grow
+0x10012e8b func   ?Grow@?$CUtlMemory@UNode_t@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@@@QAEXH@Z CUtlMemory<CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::Node_t>::Grow
 0x10012e8b func   ?sub_102ec320@CUnknown102ec320@@QAEXH@Z CUnknown102ec320::sub_102ec320
 0x10012e90 func   ?vfunc165@CBaseEntity@@QAEXPAX@Z CBaseEntity::vfunc165
 0x10012e95 func   ?sub_100d3bc0@@YAXXZ sub_100d3bc0
