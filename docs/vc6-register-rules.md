@@ -164,6 +164,15 @@ Measured on real vtmb functions (hand-120..124, reloadstudy). Each line names th
   0x10427df0, 0x1025b930); source parentheses never matter (0x101810f0). The lever left is a statement VC6 deletes
   after register allocation (0x101e56e0: 3-4 real stores after `int nTotal = 0;` flip all four loops).
   Test candidates with scratchpad tool reload/rl.py (same code hash, order flipped) before judging.
+- **R13: a split piece with weight <= 0 is rescued only by a register preference.** The colour driver defers a
+  node whose spill weight is <= 0; on that first deferral C2 (0x4348f) checks its preference list: if a preferred
+  register is still allowed, the node is pinned to it with weight 1 and coloured at once. Otherwise it is re-queued
+  with its neighbour's (negative) priority and spilled. Preferences come from copies and from 3-address adds
+  (op 0x12) whose first operand links the piece to an already coloured result (color.c 0x7f80). 0x10427df0: the
+  signed test form builds `pInc = off + pHdr` (op 0x12), so the SR offset's loop-head piece prefers pInc's eax and
+  is carried in eax (game); the bit-test form builds `pInc = idx; += off; += pHdr` (R12 association), the piece has
+  no preference and is spilled (`mov [esp+0x20],ebp`, score 14). Tool: tmp/c2trace/poptrace.py (pops, deferrals,
+  rescues, preferences per round); details in tmp/c2trace/PRIORITY.md pass 3.
 
 ## Corrections from rule pass 2 (best score 21-100, 65 functions, 2026-11-13, 8 matched)
 - Weights are counted before VC6 simplifies the code, so source that VC6 later deletes still moves the ranking:
