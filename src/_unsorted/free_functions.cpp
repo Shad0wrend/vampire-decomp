@@ -258,7 +258,7 @@ using namespace block_10025f00;
 void CPhysForce::sub_10027960()
 {
 	sub_100a0bc0();
-	if (ResolveAttached(*(volatile unsigned int *)&m_hAttached)) {
+	if (ResolveAttached(*(unsigned int *)&m_hAttached)) {
 		CPhysObjectX *pPhysics = ResolveAttached(*(volatile unsigned int *)&m_hAttached)->m_pPhysics;
 		if (pPhysics) {
 			CPhysForceVec3 vecA;
