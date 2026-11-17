@@ -203886,28 +203886,29 @@ CAI_BaseHumanoid *CAI_BaseHumanoid::sub_10260b30()
 // END FUNCTION
 
 // FUNCTION: 0x10262590 size=0x1d0
+#include "utllinkedlist.h"
+#include "utlrbtree.h"
 #include "CAI_BaseHumanoid.h"
 #include "Vector.h"
+#include "utlvector.h"
 Vector sub_101d2f40(float ang);
 void sub_10142aa0(const Vector &pos, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float dur);
 void sub_10142e90(const Vector &a, const Vector &b, int r, int g, int bl, unsigned char nd, float dur);
-inline CAI_BaseHumanoid_Waypoint *WBase(CAI_BaseHumanoid *s) { return (CAI_BaseHumanoid_Waypoint *)s->m_Waypoints6038.m_pMemory; }
-#define WP(i) (*(WBase(self) + (i)))
+struct CWaypointVec : CUtlVector<CAI_BaseHumanoid_Waypoint> {};	// view: CUtlVector56 is the waypoint CUtlVector
+#define WP(i) (((CWaypointVec &)self->m_Waypoints6038)[i])
 
 // TARGET: sub_10262590
 void __fastcall sub_10262590(CAI_BaseHumanoid *self, int edx, int a)
 {
-	self->m_Waypoints6024.m_size = 0;
-	self->m_Waypoints6038.m_size = 0;
+	((CWaypointVec &)self->m_Waypoints6024).RemoveAll();
+	((CWaypointVec &)self->m_Waypoints6038).RemoveAll();
 	self->sub_102630b0();
 	self->sub_102627e0();
-	if (0) { Vector q = WP(1).m_vecPos - WP(0).m_vecPos; } if (0) { Vector q = WP(1).m_vecPos - WP(0).m_vecPos; } 
 	if (*(unsigned int *)((char *)self + 0x224) & 0x1000) {
 		for (int i = 1; i < self->m_Waypoints6038.m_size; i++) {
 			sub_10142e90(WP(i - 1).m_vecPos, WP(i).m_vecPos, 255, 255, 255, 1, 0.1f);
 			sub_10142aa0(WP(i).m_vecPos, Vector(-2.0f, -2.0f, -2.0f), Vector(2.0f, 2.0f, 2.0f), 255, 0, 0, 0, 0.1f);
 			Vector vecDir = sub_101d2f40(WP(i).m_flF10) * 32;
-			if (0) (void)(WP(0).m_vecPos + Vector(0, 0, 1)); 
 			sub_10142e90(WP(i).m_vecPos + Vector(0, 0, 1), WP(i).m_vecPos + Vector(0, 0, 1) + vecDir, 255, 0, 0, 1, 0.1f);
 		}
 	}
