@@ -4947,6 +4947,7 @@
 0x100073fb func   ?sub_102d09f0@@YIXPAXHH@Z sub_102d09f0
 0x10007400 func   ?vfunc0@CTEPlayerDecal@@UAEPAUServerClass@@XZ CTEPlayerDecal::vfunc0
 0x10007405 func   ?sub_100b8d50@CBatSwarm@@QAEXHM@Z CBatSwarm::sub_100b8d50
+0x1000740a func   ?sub_10343020@CMeleeSwingView@@QAEXPBVVector@@0MM@Z CMeleeSwingView::sub_10343020
 0x1000740f func   ?sub_100bd1d0@bf_write@@QAEXM@Z bf_write::sub_100bd1d0
 0x10007414 func   _phys_pulleyconstraint phys_pulleyconstraint
 0x10007419 func   ?vfunc105@CBaseCombatWeapon@@UAEXPBD@Z CBaseCombatWeapon::vfunc105

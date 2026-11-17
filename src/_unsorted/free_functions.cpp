@@ -267750,6 +267750,421 @@ int CBaseCombatCharacter::sub_10342c80(void (*pCallback)(CBaseCombatCharacter *,
 }
 // END FUNCTION
 
+// FUNCTION: 0x10343020 size=0x1464
+#include "utllinkedlist.h"
+#include "utlrbtree.h"
+#include "CNPC_VTzimisce.h"
+#include "CSprayCan.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Quaternion.h"
+#include "StudioHdr.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "ScopeTrace.h"
+#include "UTIL_Trace.h"
+#include "CUtlVector4.h"
+#include "CBaseHandle.h"
+#include "QAngle.h"
+#include <math.h>
+#include "ConVar.h"
+#include "ehandle.h"
+static int g_shift10343020 = 13;
+namespace block_10343020 {
+#pragma auto_inline(off)
+struct LEView : EHandleEntityList
+{
+	unsigned int sub_100290c0(unsigned int *ph);
+};
+unsigned int LEView::sub_100290c0(unsigned int *ph)
+{
+	unsigned int h = *ph;
+	if (h == 0xffffffff)
+		return 0;
+	EHandleEntInfo *p = &m_EntPtrArray[h & 0x1fff];
+	if (p->m_SerialNumber == (int)(h >> g_shift10343020))
+		return (unsigned int)p->m_pEntity;
+	return 0;
+}
+#pragma auto_inline(on)
+}
+extern ConVar g_10936d78;
+
+struct StudioHdr;
+struct matrix3x4_t { float m[3][4]; };
+struct CQuat16 { float q[4]; };
+class CUnknown100c81b0 { public: void sub_100c7f30(void *pHdr, int mask); char m_pad[0x30]; };	// stub 0x1000c31f
+
+struct CMeleeBox	// a hit box record of the sequence (0x44 bytes)
+{
+	float m_flStart;
+	float m_flEnd;
+	int m_iBone;
+	Vector m_vecMins;
+	Vector m_vecMaxs;
+	char m_pad24[0xbc - 0x24];
+};
+struct CMeleeSeq
+{
+	char m_pad[0x2c4];
+	int m_numboxes;	// 0x2c4
+	int m_boxindex;	// 0x2c8
+	CMeleeBox *pBox(int i) { return (CMeleeBox *)((char *)this + m_boxindex) + i; }
+};
+
+struct MeleeRay : Ray_t
+{
+	void Init(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, char a, char b)
+	{
+		m_Delta[0] = end.x - start.x;
+		m_Delta[1] = end.y - start.y;
+		m_Delta[2] = end.z - start.z;
+		m_IsSwept = (m_Delta[0] * m_Delta[0] + m_Delta[1] * m_Delta[1] + m_Delta[2] * m_Delta[2]) != g_104454c4;
+		Vector &extents = *(Vector *)m_StartOffset;
+		Vector &offset = *(Vector *)m_Extents;
+		VectorSubtract(maxs, mins, extents);
+		VectorScale(extents, 0.5f, extents);
+		m_IsRay = ((extents.x * extents.x + extents.y * extents.y + extents.z * extents.z) < 1e-6);
+		VectorAdd(mins, maxs, offset);
+		VectorScale(offset, 0.5f, offset);
+		VectorAdd(start, offset, *(Vector *)m_Start);
+		VectorScale(offset, -1.0f, offset);
+		m_b32 = a;
+		m_b33 = b;
+		m_n34 = 0;
+	}
+};
+
+struct CMeleeLastBox { Vector m_vecMin; Vector m_vecMax; };
+template <class T> inline void MeleeDestruct(T *p) { p->~T(); }
+struct CMeleeList : CUtlVector4 { int AddToTail(const int &src) { return sub_10217080(m_size, &src); } void RemoveAll() { for (int i = m_size; --i >= 0; ) MeleeDestruct(&m_pMemory[i]); m_size = 0; } };
+
+struct OOLScope
+{
+	OOLScope(const char *f, const char *name) { ((ScopeTrace *)this)->ScopeTrace::ScopeTrace(f, name, g_106b8540); }
+	~OOLScope() { (*g_109f3680)--; }
+};
+
+struct STView { void sub_10037300(const char *f, const char *name, const char *line); };
+struct OOLScope2
+{
+	OOLScope2(const char *f, const char *name) { ((STView *)this)->sub_10037300(f, name, g_106b8540); }
+	~OOLScope2() { (*g_109f3680)--; }
+};
+
+struct CMeleeChar
+{
+	virtual void v0();
+	char m_pad[0x1480 - 4];
+	char m_b1480;
+};
+
+struct CMeleeEnt
+{
+	char m_pad0[0x9c];
+	CMeleeChar *m_pChar;	// 0x9c
+	char m_pad1[0x26c - 0xa0];
+	const char *m_name26c;	// 0x26c
+	char m_pad2[0x2b0 - 0x270];
+	int m_nSolidType;	// 0x2b0
+	unsigned char m_nSolidFlags;	// 0x2b4
+	bool IsSolidFlagSet(int flag)
+	{
+		OOLScope2 trace("CBaseEntity::IsSolidFlagSet", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		return (m_nSolidFlags & flag) != 0;
+	}
+	bool IsSolid()
+	{
+		OOLScope trace("CBaseEntity::IsSolid", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+		return m_nSolidType != 0 && !(m_nSolidFlags & 4);
+	}
+};
+
+struct CBCCView { bool sub_10323930(void *p); };
+struct CUnknown100b5190 { char sub_100b5190(); };
+struct CUnknown100290c0 { unsigned int sub_100290c0(unsigned int *p); };
+extern CUnknown100290c0 *g_10566458;
+struct TEnt;
+TEnt *sub_1012c9c0(TEnt *p);
+
+struct CMV
+{
+	virtual void s0();
+	virtual unsigned int *s1();
+	virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11();
+	virtual void s12(); virtual void s13(); virtual void s14(); virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19(); virtual void s20(); virtual void s21();
+	virtual void s22(); virtual void s23(); virtual void s24(); virtual void s25(); virtual void s26(); virtual void s27(); virtual void s28(); virtual void s29(); virtual void s30(); virtual void s31();
+	virtual void s32(); virtual void s33(); virtual void s34(); virtual void s35(); virtual void s36(); virtual void s37(); virtual void s38(); virtual void s39(); virtual void s40(); virtual void s41();
+	virtual void s42(); virtual void s43(); virtual void s44(); virtual void s45(); virtual void s46(); virtual void s47(); virtual void s48(); virtual void s49(); virtual void s50(); virtual void s51();
+	virtual void s52(); virtual void s53(); virtual void s54(); virtual void s55(); virtual void s56(); virtual void s57(); virtual void s58(); virtual void s59(); virtual void s60(); virtual void s61();
+	virtual void s62(); virtual void s63(); virtual void s64(); virtual void s65(); virtual void s66(); virtual void s67(); virtual void s68(); virtual void s69(); virtual void s70(); virtual void s71();
+	virtual void s72(); virtual void s73(); virtual void s74(); virtual void s75(); virtual void s76(); virtual void s77(); virtual void s78(); virtual void s79(); virtual void s80(); virtual void s81();
+	virtual void s82(); virtual void s83(); virtual void s84(); virtual void s85(); virtual void s86(); virtual void s87(); virtual void s88(); virtual void s89(); virtual void s90(); virtual void s91();
+	virtual void s92(); virtual void s93(); virtual void s94(); virtual void s95(); virtual void s96(); virtual void s97(); virtual void s98(); virtual void s99(); virtual void s100(); virtual void s101();
+	virtual void s102(); virtual void s103(); virtual void s104(); virtual void s105(); virtual void s106(); virtual void s107(); virtual void s108(); virtual void s109(); virtual void s110(); virtual void s111();
+	virtual void s112(); virtual void s113(); virtual void s114(); virtual void s115(); virtual void s116(); virtual void s117(); virtual void s118(); virtual void s119(); virtual void s120(); virtual void s121();
+	virtual void s122(); virtual void s123(); virtual void s124(); virtual void s125(); virtual void s126(); virtual void s127(); virtual void s128(); virtual void s129(); virtual void s130(); virtual void s131();
+	virtual void s132(); virtual void s133(); virtual void s134(); virtual void s135(); virtual void s136(); virtual void s137(); virtual void s138(); virtual void s139(); virtual void s140(); virtual void s141();
+	virtual void s142(); virtual void s143(); virtual void s144(); virtual void s145(); virtual void s146(); virtual void s147(); virtual void s148(); virtual void s149(); virtual void s150(); virtual void s151();
+	virtual void s152(); virtual void s153(); virtual void s154(); virtual void s155(); virtual void s156(); virtual void s157(); virtual void s158(); virtual void s159(); virtual void s160(); virtual void s161();
+	virtual void s162(); virtual void s163(); virtual void s164(); virtual void s165(); virtual void s166(); virtual void s167(); virtual void s168(); virtual void s169(); virtual void s170(); virtual void s171();
+	virtual void s172(); virtual void s173(); virtual void s174(); virtual void s175(); virtual void s176(); virtual void s177(); virtual void s178(); virtual void s179(); virtual void s180(); virtual void s181();
+	virtual void s182(); virtual void s183(); virtual void s184(); virtual void s185(); virtual void s186(); virtual void s187(); virtual void s188(); virtual void s189(); virtual void s190(); virtual void s191();
+	virtual void s192(); virtual void s193(); virtual void s194(); virtual void s195(); virtual void s196(); virtual void s197(); virtual void s198(); virtual void s199(); virtual void s200(); virtual void s201();
+	virtual void s202(); virtual void s203(); virtual void s204(); virtual void s205(); virtual void s206(); virtual void s207(); virtual void s208(); virtual void s209(); virtual void s210(); virtual void s211();
+	virtual void s212(); virtual void s213(); virtual void s214(); virtual void s215(); virtual void s216();
+	virtual Vector *s217();
+	virtual void s218(); virtual void s219(); virtual void s220();
+	virtual QAngle *s221();
+	virtual void s222(); virtual void s223(); virtual void s224(); virtual void s225(); virtual void s226(); virtual void s227(); virtual void s228(); virtual void s229(); virtual void s230(); virtual void s231();
+	virtual void s232(); virtual void s233(); virtual void s234(); virtual void s235(); virtual void s236(); virtual void s237(); virtual void s238(); virtual void s239(); virtual void s240(); virtual void s241();
+	virtual void s242(); virtual void s243(); virtual void s244(); virtual void s245(); virtual void s246(); virtual void s247(); virtual void s248(); virtual void s249(); virtual void s250(); virtual void s251();
+	virtual void s252(); virtual void s253(); virtual void s254(); virtual void s255(); virtual void s256(); virtual void s257(); virtual void s258(); virtual void s259(); virtual void s260(); virtual void s261();
+	virtual void s262(); virtual void s263(); virtual void s264(); virtual void s265(); virtual void s266(); virtual void s267(); virtual void s268(); virtual void s269();
+	virtual void s270(CGameTrace *pTrace, void *pBox);
+	virtual void s271(); virtual void s272(); virtual void s273(); virtual void s274(); virtual void s275(); virtual void s276(); virtual void s277(); virtual void s278(); virtual void s279(); virtual void s280();
+	virtual void s281(); virtual void s282(); virtual void s283(); virtual void s284(); virtual void s285(); virtual void s286(); virtual void s287(); virtual void s288(); virtual void s289(); virtual void s290();
+	virtual void s291(); virtual void s292(); virtual void s293(); virtual void s294(); virtual void s295(); virtual void s296(); virtual void s297(); virtual void s298(); virtual void s299(); virtual void s300();
+	virtual void s301(); virtual void s302(); virtual void s303(); virtual void s304(); virtual void s305(); virtual void s306(); virtual void s307(); virtual void s308(); virtual void s309(); virtual void s310();
+	virtual void s311(); virtual void s312(); virtual void s313(); virtual void s314(); virtual void s315(); virtual void s316(); virtual void s317(); virtual void s318();
+	virtual void s319(int a, int b, int c);
+	virtual void s320(); virtual void s321(); virtual void s322(); virtual void s323(); virtual void s324(); virtual void s325(); virtual void s326(); virtual void s327();
+	virtual char s328();
+	virtual char s329();
+	virtual void s330(); virtual void s331(); virtual void s332(); virtual void s333(); virtual void s334(); virtual void s335(); virtual void s336(); virtual void s337(); virtual void s338(); virtual void s339();
+	virtual void s340(); virtual void s341(); virtual void s342(); virtual void s343(); virtual void s344(); virtual void s345(); virtual void s346(); virtual void s347(); virtual void s348(); virtual void s349();
+	virtual void s350(); virtual void s351(); virtual void s352(); virtual void s353(); virtual void s354(); virtual void s355(); virtual void s356(); virtual void s357(); virtual void s358(); virtual void s359();
+	virtual void s360(); virtual void s361(); virtual void s362(); virtual void s363(); virtual void s364(); virtual void s365(); virtual void s366(); virtual void s367(); virtual void s368(); virtual void s369();
+	virtual void s370(); virtual void s371(); virtual void s372(); virtual void s373(); virtual void s374(); virtual void s375(); virtual void s376(); virtual void s377(); virtual void s378(); virtual void s379();
+	virtual void s380(); virtual void s381(); virtual void s382(); virtual void s383(); virtual void s384(); virtual void s385(); virtual void s386(); virtual void s387(); virtual void s388(); virtual void s389();
+	virtual void s390(); virtual void s391(); virtual void s392(); virtual void s393(); virtual void s394(); virtual void s395(); virtual void s396(); virtual void s397(); virtual void s398(); virtual void s399();
+	virtual void s400(); virtual void s401(); virtual void s402(); virtual void s403();
+	virtual int s404(void *pEntity);
+};
+
+int sub_100c77d0(void *pHdr, int iSequence, int iBone);
+void sub_100c3600(void *pHdr, const float *pAngles, const float *pOrigin, const float *pPos, const float *pQ, int iBone, matrix3x4_t *pBones, CUnknown100c81b0 *pMask);
+void sub_10137fe0(const float *pIn, const float *pMatrix, float *pOut);
+void sub_10142e90(const Vector *pStart, const Vector *pEnd, int r, int g, int b, unsigned char noDepthTest, float flDuration);
+float sub_10146150(const Vector *p);
+void sub_10142aa0(const Vector *pOrigin, const Vector *pMins, const Vector *pMaxs, int r, int g, int b, int a, float flDuration);
+int sub_101cca80(CMeleeEnt **pList, int nMax, const float *pMins, const float *pMaxs, unsigned int mask, int b);
+void sub_101d2530(Ray_t *pRay, int mask, CMeleeEnt *pEnt, CGameTrace *pTrace);
+void sub_101cfef0(CGameTrace *pTrace, int a, int b, void *pWeapon, int c);
+extern float (*g_1057966c)(Vector &v);	// pfVectorNormalize
+extern float (*g_10579660)(float f);	// pfSqrt
+extern Vector g_1070d1b0;	// vec3_origin
+
+struct CMeleeCvar { virtual void v0(); virtual char vfunc1(); char m_pad[0x2c - 4]; int m_n2c; };
+extern CMeleeCvar *g_10936d7c;
+extern CFoo1005f190 g_10936ee0;
+
+extern const float g_1049e038;
+struct CMeleeSwingView : CBaseCombatCharacter {
+	void sub_10343020(const Vector *pOrigin, const Vector *pAngles, float flFrom, float flTo);
+};
+
+#define MELEE_LAST(i) (*(CMeleeLastBox *)((char *)this + 0xac0 + (i) * 0x18))
+#define MELEE_LIST(i) (*(CUtlVector4 *)((char *)this + 0xca0 + (i) * 0x14))
+
+// TARGET: CMeleeSwingView::sub_10343020
+void CMeleeSwingView::sub_10343020(const Vector *pOrigin, const Vector *pAngles, float flFrom, float flTo)
+{
+	Vector pos[350];
+	CQuat16 q[350];
+	matrix3x4_t bones[350];
+	CUnknown100c81b0 boneMask;
+	CMeleeEnt *pList[100];
+	CGameTrace tr;
+	ScopeTrace trace("CBaseCombatCharacter::MeleeSwingStep", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	void *pOwnerRaw = *(void **)((char *)this + 0x94);
+	void *pHdr = ((CBaseAnimating *)this)->sub_100952d0(-1);
+	if (!pHdr)
+		return;
+	char *pSeq = (char *)((CBaseAnimating *)this)->sub_1008d990(m_nSequence6f0);
+	if (!pSeq)
+		return;
+	int nBoxes = (*(int *)(pSeq + 0x2c4) < 20) ? *(int *)(pSeq + 0x2c4) : 20;
+	boneMask.sub_100c7f30(pHdr, 8);
+	((CBaseAnimating *)this)->sub_1008e770(pos, (Quaternion *)q, m_nSequence6f0, *(int *)&flTo, (float *)((char *)this + 0x690), &boneMask);
+	int iLastBone = -1;
+	void *pWeapon;
+	pWeapon = sub_1032e7b0();
+	int i;
+	for (i = 0; i < nBoxes; i++) {
+		int iBone = sub_100c77d0(pHdr, m_nSequence6f0, ((CMeleeSeq *)pSeq)->pBox(i)->m_iBone);
+		if (iBone < 0)
+			continue;
+		if (iLastBone != iBone) {
+			iLastBone = iBone;
+			sub_100c3600(pHdr, &pAngles->x, &pOrigin->x, &pos[0].x, q[0].q, iBone, bones, &boneMask);
+		}
+		Vector vBox[2];
+		sub_10137fe0(&((CMeleeSeq *)pSeq)->pBox(i)->m_vecMins.x, &bones[iBone].m[0][0], &vBox[0].x);
+		sub_10137fe0(&((CMeleeSeq *)pSeq)->pBox(i)->m_vecMaxs.x, &bones[iBone].m[0][0], &vBox[1].x);
+		if (g_10936d78.GetInt() == 1)
+			sub_10142e90(&vBox[0], &vBox[1], 0, 255, 255, 1, 0);
+		Vector vDelta = vBox[1] - vBox[0];
+		int nSteps = (int)ceil(sub_10146150(&vDelta) * 0.16666667f);
+		if (nSteps < 2) {
+			nSteps = 1;
+			vBox[0] = vBox[1] = (vBox[0] + vBox[1]) * 0.5f;
+		}
+		if (m_bMeleeSwingIsLive && ((CMeleeSeq *)pSeq)->pBox(i)->m_flStart <= flTo && ((CMeleeSeq *)pSeq)->pBox(i)->m_flEnd >= flFrom) {
+			int j;
+			if (g_10936d78.GetInt() == 1) {
+				for (j = 0; j < nSteps; j++) {
+					float t = (nSteps > 1) ? 1.0f - (float)j / (float)(nSteps - 1) : g_104454c4;
+					Vector a = vBox[0] + (vBox[1] - vBox[0]) * t;
+					Vector b = MELEE_LAST(i).m_vecMin + (MELEE_LAST(i).m_vecMax - MELEE_LAST(i).m_vecMin) * t;
+					sub_10142e90(&b, &a, 0, 255, 0, 0, 0.5f);
+				}
+			}
+			Vector bmin, bmax;
+			VectorMin(vBox[0], vBox[1], bmin);
+			CMeleeLastBox &last = MELEE_LAST(i);
+			bmin.x = (bmin.x < last.m_vecMin.x) ? bmin.x : last.m_vecMin.x;
+			bmin.y = (bmin.y < last.m_vecMin.y) ? bmin.y : last.m_vecMin.y;
+			bmin.z = (bmin.z < last.m_vecMin.z) ? bmin.z : last.m_vecMin.z;
+			bmin.x = (bmin.x < last.m_vecMax.x) ? bmin.x : last.m_vecMax.x;
+			bmin.y = (bmin.y < last.m_vecMax.y) ? bmin.y : last.m_vecMax.y;
+			bmin.z = (bmin.z < last.m_vecMax.z) ? bmin.z : last.m_vecMax.z;
+			VectorMax(vBox[0], vBox[1], bmax);
+			bmax.x = (bmax.x > last.m_vecMin.x) ? bmax.x : last.m_vecMin.x;
+			bmax.y = (bmax.y > last.m_vecMin.y) ? bmax.y : last.m_vecMin.y;
+			bmax.z = (bmax.z > last.m_vecMin.z) ? bmax.z : last.m_vecMin.z;
+			bmax.x = (bmax.x > last.m_vecMax.x) ? bmax.x : last.m_vecMax.x;
+			bmax.y = (bmax.y > last.m_vecMax.y) ? bmax.y : last.m_vecMax.y;
+			bmax.z = (bmax.z > last.m_vecMax.z) ? bmax.z : last.m_vecMax.z;
+			if (g_10936d78.GetInt() == 2) {
+				Vector center = (bmax + bmin) * 0.5f;
+				Vector mins = bmin - center;
+				Vector maxs = bmax - center;
+				sub_10142aa0(&center, &mins, &maxs, 0, 255, 0, 40, 0.5f);
+			}
+			int nEnts = sub_101cca80(pList, 100, &bmin.x, &bmax.x, 0x22102080, 1);
+			for (int k = 0; k < nEnts; k++) {
+				CMeleeEnt *pEnt = pList[k];
+				CMeleeChar *pChar = pEnt->m_pChar;
+				CMV *pOwner = (CMV *)pOwnerRaw;
+				if (pOwner && !g_10936ee0.sub_1005f190() && pChar && (void *)pChar != (void *)pOwner) {
+					int r = pOwner->s404(pChar);
+					if (r != 1 && r != 2)
+						continue;
+					if (((CBCCView *)pOwner)->sub_10323930(pChar))
+						continue;
+				}
+				if (!pEnt->IsSolid())
+					continue;
+				if (((CMeleeEnt *)this)->IsSolidFlagSet(4))
+					continue;
+				if (((CUnknown100b5190 *)pEnt)->sub_100b5190())
+					continue;
+				if (pChar && !pChar->m_b1480)
+					continue;
+				int n = MELEE_LIST(i).m_size;
+				while (n--) {
+					if (((block_10343020::LEView *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)&MELEE_LIST(i).m_pMemory[n]) == (unsigned int)pEnt)
+						break;
+				}
+				if (n >= 0)
+					continue;
+				if (sub_1012c9c0((TEnt *)pEnt) == (TEnt *)this) {
+					CBaseHandle h;
+					h = (IHandleEntity *)pEnt;
+					((CMeleeList *)&MELEE_LIST(i))->AddToTail(*(int *)&h);
+					continue;
+				}
+				if (pChar && !((CMV *)pChar)->s329()) {
+					for (j = 0; j < nSteps; j++) {
+						float t = (nSteps > 1) ? 1.0f - (float)j / (float)(nSteps - 1) : g_104454c4;
+						Vector cur = vBox[0] + (vBox[1] - vBox[0]) * t;
+						Vector prev = MELEE_LAST(i).m_vecMin + (MELEE_LAST(i).m_vecMax - MELEE_LAST(i).m_vecMin) * t;
+						MeleeRay ray;
+						ray.Init(prev, cur, g_1070d1b0, g_1070d1b0, 1, 0);
+						sub_101d2530(&ray, 0x200400b, pEnt, &tr);
+						if (tr.m_fraction < 1.0f || tr.m_allsolid || tr.m_startsolid) {
+							CBaseHandle h;
+							h.m_Index = *((CMV *)pEnt)->s1();
+							float flStart = ((CMeleeSeq *)pSeq)->pBox(i)->m_flStart;
+							float flEnd = ((CMeleeSeq *)pSeq)->pBox(i)->m_flEnd;
+							for (int b = 0; b < nBoxes; b++) {
+								if (flStart <= ((CMeleeSeq *)pSeq)->pBox(b)->m_flEnd && flEnd >= ((CMeleeSeq *)pSeq)->pBox(b)->m_flStart)
+									((CMeleeList *)&MELEE_LIST(b))->AddToTail(*(int *)&h);
+							}
+							if (pWeapon)
+								((CMV *)pWeapon)->s270(&tr, ((CMeleeSeq *)pSeq)->pBox(i));
+							break;
+						}
+					}
+				} else {
+					CGameTrace tr2;
+					tr2.m_pEnt = (CBaseEntity *)pEnt;
+					*(Vector *)tr2.m_endpos = *((CMV *)pEnt)->s217();
+					*(Vector *)tr2.m_startpos = *((CMV *)this)->s217();
+					tr2.m_physicsbone = 0;
+					tr2.m_hitbox = 0;
+					tr2.m_hitgroup = 0;
+					for (int b = 0; b < nBoxes; b++) {
+						CBaseHandle h;
+						h.m_Index = *((CMV *)pEnt)->s1();
+						((CMeleeList *)&MELEE_LIST(b))->AddToTail(*(int *)&h);
+					}
+					if (pWeapon)
+						((CMV *)pWeapon)->s270(&tr2, ((CMeleeSeq *)pSeq)->pBox(i));
+				}
+			}
+			if (((CMV *)this)->s328()) {
+				for (j = 0; j < nSteps; j++) {
+					float t = (nSteps > 1) ? 1.0f - (float)j / (float)(nSteps - 1) : g_104454c4;
+					Vector prev = MELEE_LAST(i).m_vecMin + (MELEE_LAST(i).m_vecMax - MELEE_LAST(i).m_vecMin) * t;
+					Vector cur = vBox[0] + (vBox[1] - vBox[0]) * t;
+					Vector delta = cur - prev;
+					CGameTrace wtr;
+					{ Vector vecStart = prev, vecEnd = cur; UTIL_TraceLine_Calls(vecStart, vecEnd, 0x400b, this, 0, &wtr); }
+					Vector end = prev + delta * wtr.m_fraction;
+					if (wtr.m_fraction < 1.0f || wtr.m_allsolid || wtr.m_startsolid) {
+						if ((*(Vector *)wtr.m_planeNormal).LengthSqr() > g_104454c4 && (float)fabs(DotProduct((*(Vector *)wtr.m_planeNormal), Vector(0, 0, 1))) < 0.3f) {
+							Vector fwd;
+							::sub_10139610(*((CMV *)this)->s221(), &fwd, 0, 0);
+							fwd.z = 0;
+							if (fwd.LengthSqr() > g_1049e038 * g_1049e038) {
+								VectorNormalize(fwd);
+								if ((float)fabs((*(Vector *)wtr.m_planeNormal).Dot(fwd)) > 0.70710677f) {
+									const Vector &o = *((CMV *)this)->s217();
+									float dx = end.x - o.x;
+									float dy = end.y - o.y;
+									if (g_10579660(dx * dx + dy * dy) < 20.0f) {
+										((CMV *)this)->s319(0, 0, 0);
+										break;
+									}
+								}
+							}
+							if (!*((char *)this + 0xaa0)) {
+								if (pWeapon)
+									sub_101cfef0(&wtr, 0x80, 1, pWeapon, 0);
+								*((char *)this + 0xaa0) = 1;
+							}
+						}
+					}
+				}
+			}
+		} else
+			((CMeleeList *)&MELEE_LIST(i))->RemoveAll();
+		MELEE_LAST(i).m_vecMin = vBox[0];
+		{ MELEE_LAST(i).m_vecMax = vBox[1]; }
+	}
+	for (; i < 20; i++)
+		((CMeleeList *)&MELEE_LIST(i))->RemoveAll();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103449b0 size=0x23c
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
