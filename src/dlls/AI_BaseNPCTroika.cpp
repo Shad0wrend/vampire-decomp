@@ -473,6 +473,2921 @@ char CAI_BaseNPCTroika::vfunc320(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a1910 size=0x6348
+#include "vampire_all.h"
+#include "Vector.h"
+#include "QAngle.h"
+#include "Ray_t.h"
+#include "CTraceFilterSimple.h"
+#include "CGameTrace.h"
+#include <math.h>
+
+#define SCHED_FILE "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp"
+#define F(T, off) (*(T *)((char *)this + (off)))
+#define FP(p, T, off) (*(T *)((char *)(p) + (off)))
+#ifndef max
+#define max(a, b) (((a) > (b)) ? (a) : (b))
+#define min(a, b) (((a) < (b)) ? (a) : (b))
+#endif
+
+struct CSTV;
+struct HintV;
+struct SoundV {
+	const Vector *sub_101b99d0();
+ int m_hOwner; int m_pad04; int m_iVolume; char m_pad0c[0x20 - 0xc]; Vector m_vecOrigin; };
+struct EnemiesV {
+	float sub_102e0150(CSTV *pEnemy);	// LastTimeSeen
+	char sub_102e0290(CSTV *pEnemy, Vector *pA, Vector *pB);
+	void sub_102dfd90(CSTV *pEnemy);
+ Vector sub_102dfed0(CSTV *pEnemy); };
+struct StrT
+{
+	const char *p;
+	bool sub_10288510(const StrT &other) const;	// operator!=
+	StrT *sub_10288540();	// NULL_STRING temporary
+	const char *sub_100cd640() const;	// ToCStr
+};
+struct Task_t { int iTask; float flTaskData; };
+
+struct EntSlot { CSTV *pEnt; int serial; int pad; };
+struct EntListV { int pad; EntSlot slots[0x2000]; CSTV *sub_100290c0(const int *pHandle); };
+extern EntListV *g_10566458;
+
+struct EHView
+{
+	bool sub_102c6460(void *p) const;
+	CSTV *sub_102c64d0() const;
+	CSTV *sub_102c6420() const;
+	bool sub_102c63b0(void *p) const;
+	CSTV *sub_102c6370() const;
+
+	unsigned int m_Index;
+	CSTV *Get() const
+	{
+		if (m_Index != 0xffffffff)
+		{
+			const EntSlot *s = &g_10566458->slots[m_Index & 0x1fff];
+			if (s->serial == (int)(m_Index >> 13))
+				return s->pEnt;
+		}
+		return 0;
+	}
+	bool IsNull() const { return Get() == 0; }
+	CSTV *sub_1028acc0() const;	// operator-> (out of line)
+	CSTV *sub_100d15d0() const;	// operator-> (out of line)
+	CSTV *sub_100d1590() const;	// operator T* (out of line)
+	void sub_1028ac80(CSTV *p);	// operator=
+	bool sub_1028ac10(CSTV *p) const;	// operator!=
+};
+
+struct HintV
+{
+	void sub_102d0910(CSTV *pNpc);
+
+	bool sub_102d1350(CSTV *pNpc);	// Lock
+	void sub_102d1420(float f);	// Unlock
+	float sub_102d12e0();	// Yaw
+	Vector sub_102d11f0();	// GetDirection
+	void sub_102d1180(CSTV *pNpc, Vector *pOut);	// GetPosition
+};
+
+struct NavGoal;
+struct NavV
+{
+	const Vector *sub_102ee140();
+	bool sub_102f2ea0();
+	bool sub_102edae0(const Vector &pos, float minDist, float maxDist, Vector *pOut);
+	bool sub_102edbb0(const Vector &pos, float minDist, float maxDist, Vector *pOut);
+	bool sub_102edd50(const Vector &threat, const Vector &eye, const Vector &avoid, float minDist, float maxDist, Vector *pOut, CSTV *pEnt);
+	bool sub_102ed9c0(const Vector &target, const Vector &eye, float minDist, float maxDist, float blockTime, const Vector *pDir, int a, Vector *pOut);
+	bool sub_102ee300(CSTV *pNpc, Vector *pA, Vector *pB, float f, Vector *pOut);
+
+	bool sub_102ee6a0();	// IsGoalActive
+	bool sub_102ee270();	// ClearGoal
+	bool sub_102ecd20(const NavGoal &goal, int flags);	// SetGoal
+	void sub_102ee410(int act);	// SetArrivalActivity
+	void sub_102ee530(const Vector &dir);	// SetArrivalDirection
+	void sub_102ee550(const QAngle &ang);	// SetArrivalDirection
+	bool sub_102edae0(const Vector &pos, int a, float dist, Vector *pOut);	// FindBackAwayPos
+	bool sub_102edc80(const Vector &threat, const Vector &eye, float minDist, float maxDist, Vector *pOut, CSTV *pEnt);	// FindCoverPos
+	bool sub_102edaa0(const Vector &target, const Vector &eye, float minDist, float maxDist, float blockTime, int a, Vector *pOut);	// FindLos
+	const Vector *sub_102ee5e0();	// GetCurWaypointPos
+	float sub_102f2fc0();
+	void sub_102f2fe0(float f);
+	void sub_102ee250(int act);	// SetMovementActivity
+	int sub_102ee620();	// GetGoalType
+	bool sub_102ee2e0();
+	void sub_102ee2c0();
+	bool sub_102ed940(float f, const Vector &v, int c);	// SetRandomGoal
+	void sub_102ee1c0(float f);	// SetGoalTolerance
+	void sub_102886f0(float f);	// SetMaxRouteRebuildTime
+	bool sub_102ed540(float minDist, float maxDist, int c);	// SetWanderGoal
+};
+
+struct MotorV
+{
+	void sub_102e1e20(int n);
+	void sub_102a99c0(char value);
+
+	char m_pad00[0x1c];
+	int m_1c;
+	char m_pad20[8];
+	char m_28;
+	char m_pad29[3];
+	float m_2c;
+	float m_30;
+	float m_34;
+	float sub_102e0a80(float yaw);
+	void sub_102e2020(const Vector &pos, int b);	// SetIdealYawToTarget
+	float sub_102e1f90();	// DeltaIdealYaw
+	void sub_10288670(float yaw);	// SetIdealYaw (out of line)
+	void SetIdealYaw(float yaw)
+	{
+		if (m_28)
+		{
+			if (yaw >= 180.0f)
+				yaw -= 180.0f;
+			else
+				yaw += 180.0f;
+		}
+		if (m_1c == 0x43340000)
+			m_34 = yaw;
+		else
+			m_34 = sub_102e0a80(yaw);
+	}
+};
+void __fastcall sub_102e0b40(MotorV *p);
+
+struct GV { char m_pad00[0xc]; float curtime; };
+extern GV *g_1070b228;
+struct RandomV { virtual void v0(); virtual float RandomFloat(float a, float b); };
+extern RandomV *g_1070b244;
+struct EngineTraceV { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void TraceRay(Ray_t *pRay, unsigned int mask, CTraceFilterSimple *pFilter, CGameTrace *pTrace); };
+extern EngineTraceV *g_1070b254;
+struct DbgCvarV {
+	int P1GetInt() { return vfunc1() ? 0 : m_n2c; }
+ virtual void v0(); virtual char vfunc1(); char m_pad04[0x28]; int m_n2c; };
+extern DbgCvarV *g_10738964;
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int bNoDepth, float flDuration);
+struct GEntListV { CSTV *sub_100f7770(CSTV *pStart, const char *pszName, CSTV *pSearching, CSTV *pActivator); };
+extern GEntListV g_106eb5d8;
+extern CSTV *g_10923a30;	// AIN_DEF_TARGET
+extern Vector g_10934060;	// vec3_invalid
+extern Vector g_1093404c;
+extern Vector g_1070d1b0;	// vec3_origin
+extern char g_106b8540[];
+extern void (__cdecl *g_109f3658)(int level, const char *fmt, ...);	// DevWarning
+extern void (__cdecl *g_109f3650)(int level, const char *fmt, ...);	// DevMsg
+extern void (__cdecl *g_109f3630)(const char *fmt, ...);	// Msg
+HintV *sub_102d1af0(CSTV *pNpc, int hintType, int flags, float radius, Vector *pOrigin, float *pDist);
+void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
+int sub_1025d760(const char *psz);
+bool sub_10288560(const char *a, const char *b);
+float sub_10288590(float a);
+CSTV *__fastcall sub_1032e7b0(CSTV *p);
+
+inline float UTIL_AngleMod(float a)
+{
+	a = (360.0f / 65536) * ((int)(a * (65536.0f / 360.0f)) & 65535);
+	return a;
+}
+
+extern float g_1049a160;
+extern float g_1049a164;
+extern float g_104454c4;
+extern float g_104454c0;
+#define AIN_DEF_TOLERANCE g_1049a160
+#define AIN_HULL_TOLERANCE g_1049a164
+
+struct NavGoal
+{
+	NavGoal(int type_ = 0, int activity_ = -1, float tolerance_ = AIN_DEF_TOLERANCE, unsigned flags_ = 0, CSTV *pTarget_ = g_10923a30)
+		: type(type_), dest(g_1093404c), destNode(-1), activity(activity_), arrivalActivity(-1), arrivalSequence(-1),
+		  tolerance(tolerance_), flags(flags_), pTarget(pTarget_), arrivalDirection(g_10934060), m38(0.0f), m3c(0) {}
+	NavGoal(const Vector &dest_, int activity_ = -1, float tolerance_ = AIN_DEF_TOLERANCE, unsigned flags_ = 0, CSTV *pTarget_ = g_10923a30)
+		: type(4), dest(dest_), destNode(-1), activity(activity_), arrivalActivity(-1), arrivalSequence(-1),
+		  tolerance(tolerance_), flags(flags_), pTarget(pTarget_), arrivalDirection(g_10934060), m38(0.0f), m3c(0) {}
+	NavGoal(int type_, const Vector &dest_, int activity_ = -1, float tolerance_ = AIN_DEF_TOLERANCE, unsigned flags_ = 0, CSTV *pTarget_ = g_10923a30)
+		: type(type_), dest(dest_), destNode(-1), activity(activity_), arrivalActivity(-1), arrivalSequence(-1),
+		  tolerance(tolerance_), flags(flags_), pTarget(pTarget_), arrivalDirection(g_10934060), m38(0.0f), m3c(0) {}
+
+	int type;
+	Vector dest;
+	int destNode;
+	int activity;
+	int arrivalActivity;
+	int arrivalSequence;
+	float tolerance;
+	unsigned flags;
+	CSTV *pTarget;
+	Vector arrivalDirection;
+	float m38;
+	int m3c;
+};
+
+
+struct Vector2D
+{
+	float x, y;
+	Vector2D &operator/=(float fl) { float oofl = g_104454c0 / fl; x *= oofl; y *= oofl; return *this; }
+	float Length() const { return (float)FastSqrt(x * x + y * y); }
+};
+inline Vector2D &AsVector2D(Vector &v) { return *(Vector2D *)&v; }
+inline const Vector2D &AsVector2D(const Vector &v) { return *(const Vector2D *)&v; }
+inline float Vector2DNormalize(Vector2D &v)
+{
+	float l = v.Length();
+	if (l != g_104454c4)
+	{
+		v /= l;
+	}
+	else
+	{
+		v.x = v.y = 0;
+	}
+	return l;
+}
+inline float DotProduct2D(const Vector2D &a, const Vector2D &b) { return a.x * b.x + a.y * b.y; }
+#define SV(n) virtual void s##n();
+
+extern float g_1049a1ac;	// AIN_DEF_TOLERANCE (this unit)
+extern float g_1049a1b0;	// AIN_HULL_TOLERANCE (this unit)
+extern CSTV *g_10923dd8;	// AIN_DEF_TARGET (this unit)
+struct P1_NavGoal : NavGoal
+{
+	P1_NavGoal(int type_ = 0, int activity_ = -1, float tolerance_ = g_1049a1ac, unsigned flags_ = 0, CSTV *pTarget_ = g_10923dd8)
+		: NavGoal(type_, activity_, tolerance_, flags_, pTarget_) {}
+	P1_NavGoal(const Vector &dest_, int activity_ = -1, float tolerance_ = g_1049a1ac, unsigned flags_ = 0, CSTV *pTarget_ = g_10923dd8)
+		: NavGoal(dest_, activity_, tolerance_, flags_, pTarget_) {}
+	P1_NavGoal(int type_, const Vector &dest_, int activity_ = -1, float tolerance_ = g_1049a1ac, unsigned flags_ = 0, CSTV *pTarget_ = g_10923dd8)
+		: NavGoal(type_, dest_, activity_, tolerance_, flags_, pTarget_) {}
+};
+struct P1_MoveTrace { int d[14]; P1_MoveTrace() { memset(this, 0, sizeof(*this)); } };
+struct P1_Probe
+{
+	bool sub_102e7880(const Vector *pPos, unsigned int fMask, float flUp, float flDown, Vector *pGround, CSTV **ppEnt);
+	bool sub_102e6d70(int navType, const Vector *pStart, const Vector *pEnd, unsigned int mask, CSTV *pTarget, float pct, unsigned char flags, P1_MoveTrace *pTrace, int a9, int a10);
+};
+struct P1_Path { bool sub_102da0d0(CSTV *pNpc, Vector *pOut, int n); };
+P1_Path *sub_102db590(CSTV *pNpc);
+#include <string.h>
+struct P1_Bits { unsigned int b0 : 1; };
+struct P1_CVar { void *vt; DbgCvarV *m_pParent; int GetInt() { return m_pParent->vfunc1() ? 0 : m_pParent->m_n2c; } };
+extern P1_CVar g_10924678;
+extern P1_CVar g_10924630;
+struct P1_CVarObj { int sub_1005f190(); };
+extern P1_CVarObj g_10738960;
+float sub_101d2c70(const Vector *pVec);
+Vector sub_101d2f40(float flYaw);
+void sub_101cd940(CSTV *p);
+void sub_10142aa0(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float flDuration);
+extern float g_1049a1ac;
+extern float g_1049a1b0;
+extern CSTV *g_10923dd8;
+extern int g_106c994c;
+extern void (__cdecl *g_109f364c)(const char *fmt, ...);
+float sub_102d61b0(int hull);
+struct P2_EH : EHView
+{
+	P2_EH(const P2_EH &o) { m_Index = o.m_Index; }
+};
+struct P2_Random { virtual void v0(); virtual float RandomFloat(float a, float b); virtual int RandomInt(int a, int b); };
+inline int P2_RandomInt(int a, int b) { return ((P2_Random *)g_1070b244)->RandomInt(a, b); }
+struct P2_Goal
+{
+	P2_Goal(int type_ = 0, int activity_ = -1, float tolerance_ = g_1049a1ac, unsigned flags_ = 0, CSTV *pTarget_ = g_10923dd8)
+		: type(type_), dest(g_1093404c), destNode(-1), activity(activity_), arrivalActivity(-1), arrivalSequence(-1),
+		  tolerance(tolerance_), flags(flags_), pTarget(pTarget_), arrivalDirection(g_10934060), m38(0.0f), m3c(0) {}
+	P2_Goal(const Vector &dest_, int activity_ = -1, float tolerance_ = g_1049a1ac, unsigned flags_ = 0, CSTV *pTarget_ = g_10923dd8)
+		: type(4), dest(dest_), destNode(-1), activity(activity_), arrivalActivity(-1), arrivalSequence(-1),
+		  tolerance(tolerance_), flags(flags_), pTarget(pTarget_), arrivalDirection(g_10934060), m38(0.0f), m3c(0) {} // 1
+	P2_Goal(int type_, const Vector &dest_, int activity_ = -1, float tolerance_ = g_1049a1ac, unsigned flags_ = 0, CSTV *pTarget_ = g_10923dd8)
+		: type(type_), dest(dest_), destNode(-1), activity(activity_), arrivalActivity(-1), arrivalSequence(-1),
+		  tolerance(tolerance_), flags(flags_), pTarget(pTarget_), arrivalDirection(g_10934060), m38(0.0f), m3c(0) {} // 2
+	int type;
+	Vector dest;
+	int destNode;
+	int activity;
+	int arrivalActivity;
+	int arrivalSequence;
+	float tolerance;
+	unsigned flags;
+	CSTV *pTarget;
+	Vector arrivalDirection;
+	float m38;
+	int m3c;
+};
+struct P2_GoalRaw
+{
+	int type; // r
+	Vector dest; // r
+	int destNode; // r
+	int activity; // r
+	int arrivalActivity; // r
+	int arrivalSequence; // r
+	float tolerance; // r
+	unsigned flags; // r
+	CSTV *pTarget; // r
+	Vector arrivalDirection; // r
+	float m38; // r
+	int m3c; // r
+};
+struct P2_Nav { bool sub_102ecd20(const P2_Goal &goal, int flags); bool sub_102ecd20(P2_GoalRaw *pGoal, int flags); void sub_102ee1c0(int f); void sub_102f2fe0(int f); };
+struct P2_Pick { char pad[0x10]; int m_iCur; int m_aNodes[1]; };
+struct P2_Node { Vector sub_102fb0d0(int hull); };
+struct P2_NodeList { int m_nCount; P2_Node **m_pp; };
+struct P2_PathFinder
+{
+	bool sub_10306700(CSTV *pEnt, const Vector *pStart, const Vector *pTarget, float flMaxDist);
+	bool sub_10306f60(CSTV *pEnt, const Vector *pStart, const Vector *pTarget, float flMaxDist, Vector *pOut);
+};
+extern "C" void *__cdecl __RTDynamicCast(void *inptr, long vfDelta, void *srcType, void *targetType, int isReference);
+extern char g_1055f710[];
+extern char g_105da324[];
+template<int O, class T> struct P3_At { char pad[O]; T v; };
+#include "CVDmg_t.h"
+#include "CUnknown101c26d0.h"
+
+#include <math.h>
+namespace block_102a1910 {
+#pragma auto_inline(off)
+struct RayInit : Ray_t { void sub_1004f7a0(const float *pStart, const float *pEnd); };
+void RayInit::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+struct Ray_tViewH { Vector m_Start; Vector m_Delta; Vector m_StartOffset; Vector m_Extents; bool m_IsRay; bool m_IsSwept; char m_b32; char m_b33; float m_f34; };
+struct RayHull : Ray_t { void sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b); };
+void RayHull::sub_1006dec0(const Vector &start, const float *pEnd, const float *pMins, const float *pMaxs, char a, char b)
+{
+	const Vector &end = *(const Vector *)pEnd;
+	Ray_tViewH *r = (Ray_tViewH *)this;
+	const Vector &mins = *(const Vector *)pMins;
+	const Vector &maxs = *(const Vector *)pMaxs;
+	VectorSubtract(end, start, r->m_Delta);
+	r->m_IsSwept = (r->m_Delta.LengthSqr() != 0.0f);
+	VectorSubtract(maxs, mins, r->m_Extents);
+	r->m_Extents *= 0.5f;
+	r->m_IsRay = (r->m_Extents.LengthSqr() < 1e-6);
+	VectorAdd(mins, maxs, r->m_StartOffset);
+	r->m_StartOffset *= 0.5f;
+	VectorAdd(start, r->m_StartOffset, r->m_Start);
+	r->m_StartOffset *= -1.0f;
+	r->m_b32 = b;
+	r->m_b33 = 0;
+	r->m_f34 = 0.0f;
+	if (a && !r->m_IsRay) {
+		r->m_f34 = (float)sqrt((r->m_Extents.x * r->m_Extents.x) + (r->m_Extents.y * r->m_Extents.y));
+		if (1e-6 < r->m_f34)
+			r->m_b33 = 1;
+	}
+}
+#pragma auto_inline(on)
+}
+using namespace block_102a1910;
+struct P3_Vec : Vector
+{
+	void *sub_1002c900();	// out-of-line Vector()
+	Vector &sub_1003e4b0(const Vector &v);	// operator=
+	Vector sub_10146190(const Vector &v) const;	// operator-
+	Vector sub_100a19c0(float f) const;	// operator*
+	Vector sub_1011e060(const Vector &v) const;	// operator+
+	float sub_102a9540(const Vector *o) const;	// Dot
+	float sub_102a9570(const Vector *o) const;	// DistTo
+	void sub_1010e530(float minVal, float maxVal);	// Random
+	P3_Vec Sub(const Vector &v) const { P3_Vec res; res.sub_1002c900(); VectorSubtract(*this, v, res); return res; }
+	float LS() const { return x * x + (y * y + z * z); }
+};
+struct P3_Ang { float sub_102a9600(int i); };
+struct P3_Rand { virtual void v0(); virtual float RandomFloat(float a, float b); virtual int RandomInt(int a, int b); };
+struct P3_Layer { float f; char pad[0x2c]; };
+struct P3_EH { unsigned int i; P3_EH(); CSTV *sub_100d1590() const; };
+struct P3_H
+{
+	unsigned int m_Index;
+	int sub_102a9620() const;	// GetSerialNumber (out of line)
+	void Set(CSTV *p);
+	CSTV *Get() const
+	{
+		if (m_Index != 0xffffffff)
+		{
+			const EntSlot *s = &g_10566458->slots[m_Index & 0x1fff];
+			if (s->serial == sub_102a9620())
+				return s->pEnt;
+		}
+		return 0;
+	}
+};
+struct P3_Dmg : CVDmg_t { void sub_102a9690(int v); };
+struct P3_Wp { P3_Wp *sub_102a9ee0(); const Vector *sub_102a9f00(); };
+struct P3_Path { P3_Wp *sub_102a9f20(); };
+struct P3_Nav { P3_Path *sub_102a9c60(); const Vector *sub_102ee140(); };
+struct P4_Trace; struct P3_Probe { char sub_102e6d70(int navType, const Vector *pStart, const Vector *pEnd, int mask, int pTarget, float pct, int flags, unsigned int *pTrace, int a4, int a5); void sub_102a99e0(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, unsigned mask, P4_Trace *pTrace, int a, int b); };
+struct P3_Cs { void sub_102ca2a0(int nType, CSTV *pSource, Vector vecPos, int nLevel, float flDuration, CSTV *pOffender, CSTV *pOwner, char bExternal); };
+extern P3_Cs *g_109253f8;
+struct P3_Tbl { int sub_102a9ea0(int i); char sub_102a9ec0(int i); };
+extern P3_Tbl g_1072bc20;
+struct P3_CvF { float sub_102a9640(); };
+extern P3_CvF g_10924a18;
+extern float g_1049a1ac;
+extern CSTV *g_10923dd8;
+extern float (__fastcall *g_1057966c)(Vector *pThis);
+unsigned int *__fastcall sub_102a9890(unsigned int *p);
+const Vector *__fastcall sub_102a96f0(CSTV *p);
+void sub_101bac90(int type, const Vector *pOrigin, int volume, float flDuration, char a, CSTV *pOwner);
+bool __fastcall sub_102a1560(CSTV *p);
+bool __fastcall sub_102a1590(CSTV *p);
+bool __fastcall sub_102a15c0(CSTV *p);
+bool __fastcall sub_102a15f0(CSTV *p);
+char *__fastcall sub_102a9c40(HintV *p);
+struct P4_Vec : Vector { P4_Vec *sub_1002c900(); float sub_102a9570(const Vector &o) const; Vector sub_100a19c0(int f) const; };
+struct P4_Ang { float x, y, z; P4_Ang *sub_102a95c0(); float *sub_102a95e0(int i); };
+struct P4_Trace { char m_pad00[0x2c]; float fraction; char m_pad30[0x54 - 0x30]; P4_Trace *sub_102a9670(); };
+struct P4_Goal { int type; Vector dest; int destNode; int activity; int arrivalActivity; int arrivalSequence; float tolerance; unsigned flags; CSTV *pTarget; Vector arrivalDirection; float m38; int m3c; P4_Goal *sub_102a9c80(int type, int act, float tol, unsigned flags, CSTV *pTarget); P4_Goal *sub_102a9d20(const Vector &dest, int act, float tol, unsigned flags, CSTV *pTarget); P4_Goal *sub_102a9dc0(int type, const Vector &dest, int act, float tol, unsigned flags, CSTV *pTarget, float f, int n); };
+struct P4_Rand { virtual void v0(); virtual float RandomFloat(float a, float b); virtual int RandomInt(int a, int b); };
+struct P4_HL { int sub_1025df40(CSTV *pNpc, CSTV *pEnemy); };
+struct P4_CvRef { float sub_102a9640(); };
+extern P4_CvRef g_10924890;
+struct P4_ActSnd { void sub_101f5950(CSTV *p, int n, int k, float a, float b); };
+extern P4_ActSnd g_1073dc28;
+typedef P3_Probe P4_Probe;
+struct P4_Out { void sub_100cd660(CSTV *pActivator, CSTV *pCaller, float flDelay); };
+struct P4_Squad { void sub_103161a0(CSTV *p); };
+struct P4_MotorVt { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void vfunc6(const Vector &v); };
+extern float g_1049a1ac;
+extern float g_1049a1b0;
+extern float g_1049a1b4;
+extern CSTV *g_10923dd8;
+bool __fastcall sub_102a1560(CSTV *p);
+bool __fastcall sub_102a1620(CSTV *p);
+const char *__fastcall sub_102a9860(const Task_t *p);
+void sub_1018e790(CSTV *p, const char *psz);
+void sub_1018e910(CSTV *p);
+void sub_1018e9d0(CSTV *p, int n);
+void sub_1018eab0(CSTV *p, bool b);
+int sub_1018eb50(CSTV *p, float f);
+void sub_1018ecf0(CSTV *p, float f);
+void sub_1018ec20(CSTV *p, float f);
+extern double g_10449280;
+extern float g_104492dc;
+struct CSTV
+{
+	SV(0)
+	virtual const unsigned int *vfunc1();
+	SV(2) SV(3) SV(4) SV(5) SV(6) SV(7) SV(8) SV(9) SV(10) SV(11)
+	SV(12) SV(13) SV(14)
+	virtual void vfunc15(const Vector &v);
+	virtual Vector vfunc16();
+	SV(17) SV(18) SV(19) SV(20) SV(21) SV(22) SV(23) SV(24) SV(25) SV(26)
+	SV(27) SV(28) SV(29) SV(30) SV(31) SV(32) SV(33) SV(34) SV(35) SV(36)
+	SV(37) SV(38) SV(39) SV(40) SV(41) SV(42) SV(43) SV(44) SV(45) SV(46)
+	SV(47) SV(48) SV(49) SV(50) SV(51) SV(52) SV(53) SV(54) SV(55) SV(56)
+	SV(57) SV(58) SV(59) SV(60) SV(61) SV(62) SV(63) SV(64) SV(65)
+	virtual void vfunc66();
+	virtual void vfunc67();
+	SV(68) SV(69) SV(70) SV(71) SV(72) SV(73) SV(74) SV(75) SV(76) SV(77)
+	SV(78) SV(79) SV(80) SV(81) SV(82) SV(83) SV(84) SV(85) SV(86) SV(87)
+	SV(88) SV(89) SV(90) SV(91) SV(92) SV(93)
+	virtual int vfunc94();
+	SV(95) SV(96) SV(97) SV(98) SV(99) SV(100) SV(101) SV(102) SV(103) SV(104)
+	SV(105) SV(106) SV(107) SV(108) SV(109) SV(110) SV(111) SV(112) SV(113) SV(114)
+	SV(115) SV(116) SV(117) SV(118) SV(119) SV(120) SV(121) SV(122) SV(123) SV(124)
+	SV(125) SV(126) SV(127) SV(128) SV(129) SV(130) SV(131) SV(132) SV(133) SV(134)
+	SV(135) SV(136) SV(137) SV(138) SV(139) SV(140) SV(141)
+	virtual void vfunc142(void *pInfo);
+	SV(143) SV(144) SV(145) SV(146) SV(147) SV(148) SV(149) SV(150) SV(151) SV(152)
+	SV(153) SV(154) SV(155) SV(156) SV(157) SV(158) SV(159) SV(160) SV(161) SV(162)
+	SV(163) SV(164) SV(165) SV(166)
+	virtual CSTV *vfunc167();
+	virtual CSTV *vfunc168();
+	SV(169) SV(170) SV(171) SV(172) SV(173) SV(174) SV(175) SV(176) SV(177) SV(178)
+	SV(179) SV(180) SV(181) SV(182) SV(183) SV(184) SV(185) SV(186) SV(187) SV(188)
+	SV(189) SV(190) SV(191)
+	virtual Vector vfunc192();
+	virtual Vector vfunc193();
+	SV(194) SV(195) SV(196) SV(197) SV(198)
+	virtual void vfunc199(Vector *pVel, void *pAng);
+	SV(200) SV(201) SV(202) SV(203) SV(204) SV(205) SV(206) SV(207)
+	virtual void vfunc208(int n);
+	SV(209) SV(210) SV(211) SV(212) SV(213) SV(214) SV(215)
+	virtual void vfunc216(Vector *pGround);
+	virtual Vector *vfunc217();
+	SV(218)
+	virtual QAngle *vfunc219();
+	virtual Vector *vfunc220();
+	virtual QAngle *vfunc221();
+	SV(222) SV(223) SV(224) SV(225) SV(226) SV(227) SV(228) SV(229) SV(230) SV(231)
+	SV(232) SV(233) SV(234) SV(235) SV(236) SV(237) SV(238) SV(239) SV(240) SV(241)
+	SV(242)
+	virtual void vfunc243(int n);
+	virtual int vfunc244(int n);
+	SV(245) SV(246) SV(247) SV(248) SV(249) SV(250)
+	virtual bool vfunc251();
+	SV(252) SV(253) SV(254) SV(255) SV(256) SV(257) SV(258) SV(259) SV(260) SV(261)
+	SV(262) SV(263) SV(264) SV(265)
+	virtual void vfunc266();
+	SV(267) SV(268) SV(269) SV(270)
+	virtual int vfunc271(int n);
+	SV(272) SV(273)
+	virtual void vfunc274(int n);
+	SV(275) SV(276) SV(277) SV(278) SV(279) SV(280) SV(281) SV(282) SV(283) SV(284)
+	SV(285) SV(286) SV(287) SV(288) SV(289) SV(290) SV(291) SV(292) SV(293) SV(294)
+	virtual bool vfunc295(CSTV *p);
+	SV(296) SV(297) SV(298) SV(299) SV(300) SV(301) SV(302) SV(303)
+	virtual void vfunc304();
+	SV(305) SV(306) SV(307) SV(308) SV(309)
+	virtual void vfunc310(int n);
+	virtual void vfunc311(int a, int b, int seq);
+	SV(312) SV(313) SV(314) SV(315) SV(316) SV(317) SV(318) SV(319) SV(320) SV(321)
+	SV(322) SV(323) SV(324) SV(325)
+	virtual void vfunc326();
+	virtual void vfunc327();
+	SV(328) SV(329) SV(330) SV(331) SV(332) SV(333) SV(334) SV(335) SV(336) SV(337)
+	SV(338) SV(339) SV(340) SV(341) SV(342) SV(343) SV(344)
+	virtual float vfunc345(const char *pszName, float flValue, int n);
+	SV(346) SV(347) SV(348) SV(349) SV(350) SV(351) SV(352) SV(353) SV(354) SV(355)
+	SV(356) SV(357) SV(358) SV(359)
+	virtual unsigned int vfunc360();
+	SV(361) SV(362) SV(363)
+	virtual bool vfunc364(const Vector &v);
+	SV(365) SV(366) SV(367)
+	virtual Vector vfunc368();
+	SV(369) SV(370) SV(371)
+	virtual void vfunc372(int a, int b, int c);
+	SV(373) SV(374) SV(375) SV(376) SV(377) SV(378) SV(379) SV(380) SV(381) SV(382)
+	SV(383) SV(384) SV(385) SV(386)
+	virtual void vfunc387();
+	SV(388) SV(389) SV(390) SV(391) SV(392) SV(393) SV(394) SV(395) SV(396) SV(397)
+	SV(398) SV(399) SV(400) SV(401) SV(402) SV(403) SV(404) SV(405) SV(406) SV(407)
+	SV(408) SV(409) SV(410) SV(411) SV(412) SV(413)
+	virtual void vfunc414(CSTV *p);
+	SV(415) SV(416) SV(417)
+	virtual float vfunc418(float f);
+	SV(419) SV(420) SV(421) SV(422) SV(423) SV(424) SV(425) SV(426) SV(427) SV(428)
+	SV(429) SV(430) SV(431) SV(432) SV(433) SV(434) SV(435) SV(436) SV(437) SV(438)
+	SV(439) SV(440) SV(441) SV(442) SV(443) SV(444) SV(445) SV(446) SV(447)
+	virtual void vfunc448(int code);
+	virtual const char *vfunc449(int task);
+	SV(450) SV(451) SV(452) SV(453) SV(454) SV(455) SV(456) SV(457) SV(458) SV(459)
+	SV(460) SV(461) SV(462) SV(463)
+	virtual int vfunc464();
+	SV(465) SV(466) SV(467) SV(468) SV(469) SV(470) SV(471) SV(472) SV(473)
+	virtual SoundV *vfunc474();
+	virtual SoundV *vfunc475();
+	SV(476) SV(477) SV(478) SV(479) SV(480) SV(481) SV(482) SV(483) SV(484) SV(485)
+	SV(486) SV(487)
+	virtual void vfunc488();
+	virtual void vfunc489();
+	virtual void vfunc490();
+	virtual void vfunc491();
+	virtual void vfunc492();
+	SV(493) SV(494) SV(495) SV(496) SV(497) SV(498) SV(499) SV(500) SV(501) SV(502)
+	SV(503) SV(504) SV(505) SV(506) SV(507)
+	virtual void vfunc508(int n);
+	SV(509) SV(510) SV(511) SV(512) SV(513) SV(514) SV(515) SV(516) SV(517) SV(518)
+	SV(519) SV(520) SV(521)
+	virtual float vfunc522();
+	SV(523) SV(524) SV(525) SV(526) SV(527)
+	virtual void vfunc528();
+	SV(529)
+	virtual bool vfunc530(CSTV *pEnt);
+	SV(531) SV(532) SV(533) SV(534) SV(535) SV(536) SV(537) SV(538) SV(539) SV(540)
+	virtual EnemiesV *vfunc541();
+	SV(542) SV(543) SV(544) SV(545) SV(546) SV(547) SV(548) SV(549)
+	virtual float vfunc550();
+	SV(551) SV(552) SV(553) SV(554) SV(555) SV(556) SV(557) SV(558) SV(559) SV(560)
+	SV(561) SV(562)
+	virtual void vfunc563(CSTV *pEnemy, Vector *pDest, float *pTol, float *pOut);
+	SV(564) SV(565) SV(566)
+	virtual int vfunc567(int hintType);
+	SV(568)
+	virtual int vfunc569(HintV *pHint);
+	SV(570) SV(571)
+	virtual void vfunc572();
+	SV(573) SV(574) SV(575) SV(576) SV(577) SV(578) SV(579) SV(580) SV(581) SV(582)
+	SV(583)
+	virtual void vfunc584(CSTV *pNpc, StrT isz, bool b);
+	SV(585)
+	virtual P2_EH vfunc586();
+	SV(587) SV(588) SV(589) SV(590) SV(591) SV(592) SV(593) SV(594) SV(595) SV(596)
+	SV(597) SV(598) SV(599) SV(600) SV(601) SV(602)
+	virtual float vfunc603(float *pDist, float *pMax);
+
+	void sub_10273e80(char b);	// TaskComplete
+	void sub_10272650(int act);	// SetIdealActivity
+	void sub_10289ee0(int act);	// ResetIdealActivity
+	void *sub_102cc1f0(int type);	// GetScheduleOfType
+	void sub_10280e50(void *pSched);	// SetSchedule
+	bool sub_102784a0(const Vector &eye, CSTV *pEnt);	// FindLateralCover
+	int sub_10289fe0();	// GetScriptCustomMoveActivity
+	int sub_1008dc40(int act, int b);	// TranslateActivity
+	int sub_1008f7b0(const char *psz);	// LookupSequence
+	void sub_10279cc0(CSTV *p);	// SetTarget
+	void sub_10274080(CSTV *p);	// RememberUnreachable
+	int sub_10265970();	// GetSmallFlinchActivity
+	int sub_1027a6c0();	// GetStoppedActivity
+	int sub_10092270(const char *psz);	// LookupPoseParameter
+	void sub_100ad320(Vector *pForward, Vector *pRight, Vector *pUp);	// GetVectors
+	bool sub_10094eb0(int seq);	// HasMovement
+	int sub_10288610();	// GetSequence
+	void sub_1027f270(int state);
+	void sub_102885d0(const Vector *pOrigin);	// SetLocalOrigin
+	MotorV *sub_10288650();	// GetMotor
+	NavV *sub_10288630();	// GetNavigator
+	const QAngle *sub_102885f0();	// GetLocalAngles
+	CSTV *sub_10333ad0(const Vector &range);	// Weapon_FindUsable
+	bool sub_10337230();
+	bool sub_10337300();
+	bool sub_10273180(char b);	// SetHullSizeSmall
+	void sub_101a8cf0(int n);	// DelayStart
+
+	MotorV *GetMotor() { return F(MotorV *, 0x5d44); }
+	NavV *GetNavigator() { return F(NavV *, 0x5d34); }
+	bool FindCoverFrom(const Vector &threat, Vector *pOut) { return GetNavigator()->sub_102edc80(threat, vfunc193(), 0, vfunc550(), pOut, this); }
+	void sub_102827f0(const Task_t *pTask);
+	void sub_102726a0();
+	P1_Probe *GetMoveProbe() { return F(P1_Probe *, 0x5d40); }
+	void sub_102bf7e0();
+	void sub_102bf770();
+	void sub_10295ab0(float flDelay);
+	void sub_1009b060(const Vector &vecExtents);
+	void sub_102b53d0(int a, const char *psz);
+	float sub_102c5730(CSTV *pWeapon);
+	float sub_10252450(int index);
+	void sub_102b6120(Vector *pVec, int a);
+	void sub_102aa640(void *pHolder);
+	void sub_102aa9e0(void *pHolder);
+	int sub_102c1400();
+	void sub_101072b0(int n);
+	void sub_10280a50();
+	int sub_10271ff0(int act, int *pOut);
+	char *sub_102517e0();
+	const char *sub_100ab4f0();
+	void sub_102a98e0(unsigned int flags);
+	void sub_10272130(int act, int *pSeq, int *pA, int *pB);
+	int sub_10099250(int activity, float flDivisor, int b);
+	void sub_102b52a0(char bClearTarget, char bDead);
+	void sub_1026d050();
+	void sub_102a9800(unsigned int flags);
+	void sub_102a97a0(unsigned int flags);
+	void sub_102a97d0(unsigned int flags);
+	void sub_102a9830(unsigned int flags);
+	void sub_10297940(const Vector *pPosition);
+	void sub_102a18a0(const Task_t *pTask);
+	void sub_1033c6b0(unsigned int flags);
+	int sub_10295460(int act, char bFlag);
+	P3_Probe *sub_102a98c0();
+	CSTV *sub_102a9960();
+	bool sub_102b6120(Vector *pPos, char bFlag);
+	void sub_102b6890(CSTV *pEnt);
+	char sub_10278c80();
+	void sub_102ae310();
+	bool sub_102a9e80();	// m_570
+	float sub_102a9e60();	// GetLocalAngles().y (out of line)
+	HintV *sub_1029f730(int *p);
+	CSTV *sub_1029f780(int *p);
+	void sub_102a9f40(CSTV *p, HintV *pHint, int n);
+	int sub_10271ff0(int act, int b);
+	int sub_102a9770(unsigned int flags);
+	bool sub_102a1650(int act, float yaw, int f);
+	void sub_102a9940(float yaw);
+	const Vector &sub_102a9710();	// CollisionProp()->OBBMins()
+	const Vector &sub_102a9730();	// CollisionProp()->OBBMaxs()
+	void sub_102a9750(int n);
+	void sub_102a96b0(const Vector &v);
+	void sub_100b2770(const Vector &v);
+	void sub_1027d9b0(int n);
+	void sub_102a99a0(char b);
+	int sub_10345480();
+	void sub_102c4e80();
+	void sub_102c41b0(const char *psz, int a, int b, int c);
+	void sub_10092610(const char *psz, Vector &pos, P4_Ang &ang);
+	void sub_1026d130();
+	void sub_1026d160();
+	P4_Squad *sub_102a9910();
+	void sub_102c4c50(Vector *pOut, int n, Vector *a, Vector *b);
+	void sub_102a1910(const Task_t *pTask);
+};
+
+#define NAV F(NavV *, 0x5d34)
+#define MOTOR GetMotor()
+#define HINT F(HintV *, 0x5ddc)
+#define CURTIME g_1070b228->curtime
+#define TASKFAIL(code, line) { F(const char *, 0x1b44) = SCHED_FILE; F(int, 0x1b48) = line; vfunc448((int)(code)); }
+#define TaskComplete() sub_10273e80(0)
+#define TARGETH F(EHView, 0x5ce4)
+#define CINEH F(EHView, 0x5d74)
+#define WEAPON(f) FP(sub_1032e7b0(this), float, f)
+
+#define SETSTATE(v, line) { F(const char *, 0x1b3c) = SCHED_FILE; F(int, 0x1b40) = line; F(int, 0x5cc4) = v; }
+#define P1_HULL g_1049a1b0
+#define P2NAV F(P2_Nav *, 0x5d34)
+#define P2RAND ((P2_Random *)g_1070b244)
+#define FM(T, off) ((P3_At<off, T> *)this)->v
+#define P3_LAYER(i) ((P3_At<0x740, P3_Layer[15]> *)this)->v[i].f
+inline void P3_H::Set(CSTV *p)
+{
+	if (p)
+		m_Index = *p->vfunc1();
+	else
+		m_Index = 0xffffffff;
+}
+
+// TARGET: CSTV::sub_102a1910
+inline Vector EyePosition(CSTV *p) { return *p->vfunc220() + FP(p, Vector, 0x184); }
+
+inline void UTIL_TraceLine_Calls(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, IHandleEntity *ignore, int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((RayInit *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter(ignore, collisionGroup);
+	g_1070b254->TraceRay(&ray, mask, &traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570(ptr->m_startpos, ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+void CSTV::sub_102a1910(const Task_t *pTask)
+{
+	switch (pTask->iTask)
+	{
+	case 167:
+		{
+			if (sub_1032e7b0(this))
+			{
+				if (g_10924678.GetInt())
+					sub_1032e7b0(this)->vfunc67();
+				else
+					sub_1032e7b0(this)->vfunc66();
+			}
+			Vector vecPos = *vfunc217();
+			vecPos.x += g_1070b244->RandomFloat(-200, 200);
+			vecPos.y += g_1070b244->RandomFloat(-200, 200);
+			sub_10142aa0(vecPos, Vector(-2, -2, -2), Vector(2, 2, 2), 0xc0, 0xff, 0xc0, 0, 2.0f);
+			sub_102e0b40(MOTOR);
+			MOTOR->sub_102e2020(vecPos, 0);
+			vfunc572();
+			break;
+		}
+	case 168:
+		switch (g_10924630.GetInt())
+		{
+		case 1:
+			sub_10289ee0(5);
+			break;
+		case 2:
+			sub_10289ee0(0x1118);
+			break;
+		case 3:
+			sub_10289ee0(0x19);
+			break;
+		case 4:
+			sub_10289ee0(0x58);
+			break;
+		default:
+			sub_10289ee0(1);
+			break;
+		}
+		TaskComplete();
+		break;
+	case 6:
+		{
+			int n;
+			F(const char *, 0x1b3c) = SCHED_FILE;
+			F(int, 0x1b40) = 0x2dff;
+			F(int, 0x5cc4) = n = (int)pTask->flTaskData;
+			if (F(P1_Bits, 0x5b84).b0 == 1)
+			{
+				switch (n)
+				{
+				case 1:
+					SETSTATE(0xb, 0x2e05);
+					break;
+				case 3:
+					SETSTATE(0xb, 0x2e06);
+					break;
+				}
+			}
+			else if (F(char, 0x65f6) && n == 3)
+			{
+				SETSTATE(1, 0x2e0e);
+			}
+			TaskComplete();
+			break;
+		}
+	case 75:
+		{
+			int act = (int)pTask->flTaskData;
+			if (act)
+				sub_10272650(act);
+			else
+				F(int, 0xfec) = 0;
+			FM(float, 0x5db4) = CURTIME + 1.0f;
+			if (vfunc464() == 4)
+				sub_102726a0();
+			break;
+		}
+	case 90:
+		{
+			float flDist = vfunc418(pTask->flTaskData);
+			Vector backPos;
+			if (!GetNavigator()->sub_102edae0(F(Vector, 0x5dd0), flDist, 64.0f, &backPos))
+				TASKFAIL(7, 0x2e3f)
+			else if (GetNavigator()->sub_102ecd20(P1_NavGoal(backPos, 0x13), 0))
+				TaskComplete();
+			else
+				TASKFAIL(0xc, 0x2e4a);
+			break;
+		}
+	case 110:
+		{
+			if (GetNavigator()->sub_102ee2e0())
+				sub_102bf7e0();
+			if (GetNavigator()->sub_102ee620() == 0)
+			{
+				F(char, 0x1a40) = 0;
+				TaskComplete();
+				GetNavigator()->sub_102ee270();
+			}
+			else if (!GetNavigator()->sub_102ee6a0())
+			{
+				F(char, 0x1a40) = 0;
+				sub_10272650(sub_1027a6c0());
+				TaskComplete();
+			}
+			else if (GetNavigator()->sub_102f2ea0())
+			{
+				F(char, 0x1a40) = 0;
+				TaskComplete();
+			}
+			else
+			{
+				F(char, 0x1a40) = 1;
+				vfunc528();
+			}
+			const float &flUntil = FM(float, 0x65dc);
+			if (CURTIME <= flUntil)
+			{
+				Vector vecGround;
+				CSTV *pGround;
+				if (GetMoveProbe()->sub_102e7880(GetNavigator()->sub_102ee140(), 0x202400b, 1.0f, -1024.0f, &vecGround, &pGround))
+				{
+					if (pGround && FP(pGround, int, 0x94) == 0)
+						vfunc216(&vecGround);
+					else
+						vfunc448(0xe);
+				}
+				else
+					vfunc448(0x1a);
+			}
+			break;
+		}
+	case 166:
+		sub_102bf770();
+		TaskComplete();
+		break;
+	case 164:
+		F(P1_Path *, 0x62ec) = sub_102db590(this);
+		if (F(P1_Path *, 0x62ec))
+		{
+			if (F(P1_Path *, 0x62ec)->sub_102da0d0(this, &F(Vector, 0x62f0), 1))
+				TaskComplete();
+			else
+			{
+				F(P1_Path *, 0x62ec) = 0;
+				TASKFAIL(0x22, 0x2eaa);
+			}
+		}
+		else
+			TASKFAIL(0x22, 0x2eaf);
+		break;
+	case 165:
+		if (F(P1_Path *, 0x62ec))
+		{
+			P1_NavGoal goal(8, F(Vector, 0x62f0));
+			if (GetNavigator()->sub_102ecd20(goal, 0))
+				TaskComplete();
+			else
+				TASKFAIL(0xc, 0x2ecb);
+		}
+		else
+			TASKFAIL(0x22, 0x2ed0);
+		break;
+	case 160:
+		{
+			CSTV *pEnemy = (vfunc167() == 0) ? this : vfunc167();
+			if (sub_102784a0(pEnemy->vfunc193(), pEnemy))
+			{
+				FM(float, 0x5cf0) = CURTIME + pTask->flTaskData;
+				TaskComplete();
+			}
+			else
+			{
+				Vector coverPos;
+				if (GetNavigator()->sub_102edc80(*pEnemy->vfunc220(), pEnemy->vfunc193(), 0, 150.0f, &coverPos, pEnemy))
+				{
+					{
+						P1_NavGoal goal(6, coverPos, 0x13, P1_HULL);
+						GetNavigator()->sub_102ecd20(goal, 0);
+					}
+					FM(float, 0x5cf0) = CURTIME + pTask->flTaskData;
+				}
+				else
+					TASKFAIL(8, 0x2ef8);
+			}
+			break;
+		}
+	case 162:
+		{
+			Vector coverPos;
+			if (GetNavigator()->sub_102edc80(F(Vector, 0x5dd0), F(Vector, 0x5dd0), 32.0f, vfunc550(), &coverPos, this))
+			{
+				P1_NavGoal goal(coverPos, 0x13, P1_HULL);
+				GetNavigator()->sub_102ecd20(goal, 0);
+				FM(float, 0x5cf0) = CURTIME + pTask->flTaskData;
+			}
+			else
+				TASKFAIL(8, 0x2f0b);
+			break;
+		}
+	case 161:
+		{
+			CSTV *pEnemy = (vfunc167() == 0) ? this : vfunc167();
+			if (sub_102784a0(pEnemy->vfunc193(), pEnemy))
+			{
+				FM(float, 0x5cf0) = CURTIME + pTask->flTaskData;
+				TaskComplete();
+			}
+			else
+			{
+				Vector coverPos;
+				if (GetNavigator()->sub_102edd50(*pEnemy->vfunc220(), pEnemy->vfunc193(), F(Vector, 0x6290), 0, vfunc550() * 0.25f, &coverPos, pEnemy))
+				{
+					{
+						P1_NavGoal goal(6, coverPos, 0x13, P1_HULL);
+						GetNavigator()->sub_102ecd20(goal, 0);
+					}
+					FM(float, 0x5cf0) = CURTIME + pTask->flTaskData;
+				}
+				else
+					TASKFAIL(8, 0x2f32);
+			}
+			break;
+		}
+	case 163:
+		{
+			if (vfunc167() == 0)
+			{
+				TASKFAIL(6, 0x2f3c);
+				return;
+			}
+			Vector vecEnemy = vfunc541()->sub_102dfed0(vfunc167());
+			float flMaxRange = 2000;
+			float flMinRange = 0;
+			if (sub_1032e7b0(this))
+			{
+				flMaxRange = max(WEAPON(0x8c0), WEAPON(0x8c4));
+				flMinRange = min(WEAPON(0x8b8), WEAPON(0x8bc));
+			}
+			const float &flTooFar = FM(float, 0x5de4);
+			if (flMaxRange > flTooFar)
+				flMaxRange = flTooFar;
+			float flLastSeen = vfunc541()->sub_102e0150(vfunc167());
+			Vector posLos;
+			bool bFound;
+			if (CURTIME - flLastSeen < 2.0f)
+			{
+				Vector vecForward;
+				sub_10139610(*vfunc167()->vfunc219(), &vecForward, 0, 0);
+				bFound = GetNavigator()->sub_102ed9c0(vecEnemy, vecEnemy + FP(vfunc167(), Vector, 0x184), flMinRange, flMaxRange, 1.0f, &vecForward, 0, &posLos);
+			}
+			else
+			{
+				bFound = GetNavigator()->sub_102edaa0(vecEnemy, vecEnemy + FP(vfunc167(), Vector, 0x184), flMinRange, flMaxRange, 1.0f, 0, &posLos);
+			}
+			if (bFound)
+			{
+				P1_NavGoal goal(posLos, 0x13, P1_HULL);
+				GetNavigator()->sub_102ecd20(goal, 2);
+				GetNavigator()->sub_102ee530(vecEnemy - goal.dest);
+			}
+			else
+				TASKFAIL(0xb, 0x2f71);
+			break;
+		}
+	case 131:
+	case 132:
+		{
+			CSTV *pEnemy = vfunc167();
+			if (!pEnemy)
+				pEnemy = this;
+			Vector coverPos;
+			float flMinDist = vfunc418(pTask->flTaskData);
+			float flMaxDist = flMinDist + 8192.0f;
+			float flMidDist = (flMaxDist + flMinDist) * 0.5f;
+			if (HINT)
+				sub_10295ab0(1.0f);
+			HINT = sub_102d1af0(this, 0x2774, 2, flMaxDist, 0, 0);
+			if (HINT)
+			{
+				if (!HINT->sub_102d1350(this))
+					HINT = 0;
+				else
+				{
+					Vector vecHint;
+					HINT->sub_102d1180(this, &vecHint);
+					if (GetNavigator()->sub_102ecd20(P1_NavGoal(vecHint, 0x13), 0))
+					{
+						F(Vector, 0x65d0) = vfunc16();
+						sub_1009b060(Vector(40, 40, 80));
+						TaskComplete();
+					}
+					else
+						sub_10295ab0(5.0f);
+				}
+			}
+			if (!HINT)
+			{
+				if (pTask->iTask == 0x84)
+					F(int, 0x14b8) |= 0x200;
+				bool bFound = GetNavigator()->sub_102edc80(*pEnemy->vfunc220(), pEnemy->vfunc193(), flMidDist, flMaxDist, &coverPos, pEnemy);
+				if (!bFound)
+					bFound = GetNavigator()->sub_102edc80(*pEnemy->vfunc220(), pEnemy->vfunc193(), flMinDist, flMaxDist, &coverPos, pEnemy);
+				if (bFound)
+					{
+						P1_NavGoal goal(6, coverPos, 0x13, P1_HULL);
+						GetNavigator()->sub_102ecd20(goal, 0);
+					}
+				else
+					TASKFAIL(0x18, 0x2fe8);
+			}
+			break;
+		}
+	case 133:
+		{
+			float flMinDist = vfunc418(pTask->flTaskData);
+			float flMaxDist = flMinDist + 8192.0f;
+			F(int, 0x14b8) |= 0x200;
+			Vector vecPos = F(Vector, 0x5dd0);
+			Vector vecEye = vecPos + F(Vector, 0x184);
+			Vector coverPos;
+			bool bFound = GetNavigator()->sub_102edc80(vecPos, vecEye, (flMaxDist + flMinDist) * 0.5f, flMaxDist, &coverPos, this);
+			if (!bFound)
+				bFound = GetNavigator()->sub_102edc80(vecPos, vecEye, flMinDist, flMaxDist, &coverPos, this);
+			if (bFound)
+			{
+				P1_NavGoal goal(6, coverPos, 0x13, P1_HULL);
+				GetNavigator()->sub_102ecd20(goal, 0);
+			}
+			else
+				TASKFAIL(0x18, 0x3023);
+			break;
+		}
+	case 134:
+		{
+			CSTV *pTarget = F(EHView, 0x647c).Get();
+			if (pTarget)
+			{
+				Vector vecTarget = *pTarget->vfunc217();
+				Vector vecMe = *vfunc217();
+				Vector vecDelta = vecMe - vecTarget;
+				float flYaw = sub_101d2c70(&vecDelta);
+				flYaw += g_1070b244->RandomFloat(-45, 45);
+				float flDist = FM(float, 0x6484);
+				Vector vecGoal = sub_101d2f40(flYaw) * flDist + vecMe;
+				P1_MoveTrace moveTrace;
+				if (GetMoveProbe()->sub_102e6d70(0, &vecMe, &vecGoal, 0x202400b, 0, 100.0f, 0, &moveTrace, 0, 0))
+					{
+						P1_NavGoal goal(vecGoal, 0x13, P1_HULL);
+						GetNavigator()->sub_102ecd20(goal, 0);
+					}
+				else
+					TASKFAIL(7, 0x304c);
+			}
+			else
+				TASKFAIL(0x29, 0x3051);
+			break;
+		}
+	case 135:
+		{
+			CSTV *pTarget = F(EHView, 0x647c).Get();
+			if (pTarget)
+			{
+				Vector vecTarget; vecTarget = *pTarget->vfunc217();
+				Vector vecPos;
+				if (GetNavigator()->sub_102edae0(vecTarget, (FM(float, 0x6488) - 10.0f), 50000.0f, &vecPos))
+					{
+						P1_NavGoal goal(vecPos, 0x13, P1_HULL);
+						GetNavigator()->sub_102ecd20(goal, 0);
+					}
+				else
+					TASKFAIL(7, 0x306a);
+			}
+			else
+				TASKFAIL(0x29, 0x306f);
+			break;
+		}
+	case 136:
+		{
+			CSTV *pTarget = F(EHView, 0x647c).Get();
+			if (pTarget)
+			{
+				Vector vecTarget = *pTarget->vfunc217();
+				Vector vecPos;
+				if (GetNavigator()->sub_102edbb0(vecTarget, (FM(float, 0x6488) - 10.0f), 50000.0f, &vecPos))
+					{
+						P1_NavGoal goal(vecPos, 0x13, P1_HULL);
+						GetNavigator()->sub_102ecd20(goal, 0);
+					}
+				else
+					TASKFAIL(7, 0x3087);
+			}
+			else
+				TASKFAIL(0x29, 0x308c);
+			break;
+		}
+	case 220:
+		{
+			CSTV *pPlayer = F(EHView, 0x628c).Get();
+			TaskComplete();
+			if (pPlayer)
+			{
+				const float &flMax = FM(float, 0x6264);
+				if (!(vfunc418(pTask->flTaskData) <= flMax))
+					break;
+				CGameTrace tr;
+				UTIL_TraceLine_Calls(EyePosition(pPlayer), EyePosition(this), 0x4091, (IHandleEntity *)this, 0, &tr);
+				if (tr.m_fraction == g_10449280)
+					break;
+			}
+			sub_102b53d0(0, "Leaving interesting place (TASK_DIE_IF_PLAYER_CANT_SEE)");
+			sub_101cd940(this);
+			break;
+		}
+	case 221:
+		F(int, 0x14b8) |= 0x440a0000;
+		sub_10289ee0(0x1050);
+		break;
+	case 222:
+		sub_10289ee0(0x1052);
+		break;
+	case 176:
+	case 177:
+		{
+			CSTV *pWeapon = sub_1032e7b0(this);
+			if (!pWeapon)
+			{
+				TaskComplete();
+				break;
+			}
+			int idx = 0;
+			if (pTask->iTask == 177)
+				idx = 1;
+			FM(float, 0x5db4) = pWeapon->sub_10252450(idx);
+			FM(float, 0x5db4) += sub_102c5730(pWeapon);
+			if (FM(float, 0x5db4) <= CURTIME)
+				TaskComplete();
+			else if (!F(int, 0x5ddc))
+				sub_10289ee0(5);
+			break;
+		}
+	case 15:
+		{
+			if (vfunc530(vfunc167()))
+			{
+				TASKFAIL(0xc, 0x3101);
+				return;
+			}
+			if (vfunc167() == 0)
+			{
+				TASKFAIL(6, 0x3109);
+				return;
+			}
+			if (P2NAV->sub_102ecd20(P2_Goal(2), 0))
+				TaskComplete();
+			else
+			{
+				g_109f3658(2, "GetPathToEnemy failed!!\n");
+				sub_10274080(vfunc167());
+				TASKFAIL(0xc, 0x311a);
+			}
+			break;
+		}
+	case 121:
+		{
+			CSTV *pEnt = vfunc586().Get();
+			if (!pEnt)
+			{
+				TASKFAIL(0x21, 0x3127);
+				return;
+			}
+			if (GetNavigator()->sub_102ecd20(P1_NavGoal(7), 0))
+				TaskComplete();
+			else
+			{
+				g_109f3658(2, "GetPathToBestUnknown failed!!\n");
+				sub_10274080(pEnt);
+				TASKFAIL(0xc, 0x3134);
+			}
+			break;
+		}
+	case 22:
+		{
+			if (!HINT)
+			{
+				TASKFAIL(4, 0x314a);
+			}
+			else
+			{
+				Vector vHintPos;
+				sub_102b6120(&vHintPos, 0);
+				P2NAV->sub_102ecd20(P2_Goal(vHintPos, 0x13), 0);
+			}
+			break;
+		}
+	case 47:
+		sub_102e0b40(MOTOR);
+		if (FP(HINT, int, 0x5dc) == 0x27d8)
+		{
+			if (F(char, 0x63fd))
+				MOTOR->SetIdealYaw(HINT->sub_102d12e0() + 45.0f);
+			else
+				MOTOR->SetIdealYaw(HINT->sub_102d12e0() - 45.0f);
+		}
+		else
+			MOTOR->SetIdealYaw(HINT->sub_102d12e0());
+		vfunc572();
+		break;
+	case 122:
+		sub_102aa640(&F(char, 0x658c));
+		break;
+	case 123:
+		sub_102aa640(&F(char, 0x6594));
+		break;
+	case 124:
+		{
+			P2_Pick *pPick = F(P2_Pick *, 0x6590);
+			if (!pPick)
+			{
+				TASKFAIL(0x1d, 0x3186);
+				return;
+			}
+			int iNode = pPick->m_aNodes[pPick->m_iCur];
+			if (iNode == -1)
+				break;
+			P2_NodeList *pList = FP(NAV, P2_NodeList *, 0x2c);
+			P2_Node *pNode;
+			if (iNode < 0 || iNode >= pList->m_nCount)
+			{
+				g_106c994c++;
+				pNode = 0;
+			}
+			else
+				pNode = pList->m_pp[iNode];
+			P2_Goal goal(pNode->sub_102fb0d0(F(int, 0x1568)));
+			if (P2NAV->sub_102ecd20(goal, 2))
+				TaskComplete();
+			else
+			{
+				g_109f3658(2, "%s can't reach patrol point\n", sub_100ab4f0());
+				TASKFAIL(0xc, 0x31a0);
+			}
+			break;
+		}
+	case 125:
+		sub_102aa9e0(&F(char, 0x658c));
+		break;
+	case 126:
+		sub_102aa9e0(&F(char, 0x6594));
+		break;
+	case 174:
+		{
+			CSTV *pTarget = vfunc168();
+			Vector *pv = 0;
+			Vector tmp;
+			if (pTarget)
+			{
+				tmp = *pTarget->vfunc217();
+				pv = &tmp;
+			}
+			P2_PathFinder *pPath = F(P2_PathFinder *, 0x5d3c);
+			if (pPath->sub_10306700(this, vfunc217(), pv, 256.0f))
+				TaskComplete();
+			else
+				TASKFAIL(0x20, 0x31cd);
+			break;
+		}
+	case 175:
+		{
+			CSTV *pTarget = vfunc168();
+			Vector *pv = 0;
+			Vector tmp;
+			if (pTarget)
+			{
+				tmp = *pTarget->vfunc217();
+				pv = &tmp;
+			}
+			P2_PathFinder *pPath = F(P2_PathFinder *, 0x5d3c);
+			if (pPath->sub_10306f60(this, vfunc217(), pv, 256.0f, &F(Vector, 0x645c)))
+				TaskComplete();
+			else
+				TASKFAIL(0x20, 0x31e8);
+			break;
+		}
+	case 196:
+		if (!(int)pTask->flTaskData)
+			F(int, 0x14b8) &= ~8;
+		else
+			F(int, 0x14b8) |= 8;
+		TaskComplete();
+		break;
+	case 127:
+	case 128:
+		{
+			CSTV *pEnemy = vfunc167();
+			if (!pEnemy)
+			{
+				TASKFAIL(6, 0x3205);
+				return;
+			}
+			float flDist = pTask->flTaskData;
+			if (pTask->iTask == 128)
+				flDist = g_1070b244->RandomFloat(flDist * 0.5f, flDist);
+			Vector vecA, vecB;
+			if (vfunc541()->sub_102e0290(pEnemy, &vecA, &vecB))
+			{
+				Vector vecDest;
+				bool bOk = GetNavigator()->sub_102ee300(this, &vecA, &vecB, flDist, &vecDest);
+				P2_Goal goal(vecDest);
+				float flOut = FM(float, 0x6320);
+				vfunc563(pEnemy, &goal.dest, &goal.tolerance, &flOut);
+				if (bOk && P2NAV->sub_102ecd20(goal, 2))
+				{
+					NAV->sub_102ee1c0(flOut);
+					NAV->sub_102f2fe0(flOut);
+					TaskComplete();
+				}
+				else
+				{
+					g_109f3658(2, "GetDirectedPathToEnemyLKP failed!!\n");
+					sub_10274080(vfunc167());
+					TASKFAIL(0xc, 0x3235);
+				}
+			}
+			else
+				TASKFAIL(6, 0x323a);
+			break;
+		}
+	case 129:
+		{
+			CSTV *pEnemy = vfunc167();
+			if (pEnemy == 0)
+			{
+				TASKFAIL(6, 0x3245);
+				return;
+			}
+			Vector vecA, vecB;
+			if (vfunc541()->sub_102e0290(pEnemy, &vecA, &vecB))
+			{
+				Vector vecEnemy;
+				if (GetNavigator()->sub_102ee300(this, &vecA, &vecB, pTask->flTaskData, &vecEnemy))
+				{
+					float flMaxRange = 2000;
+					float flMinRange = 0;
+					if (sub_1032e7b0(this))
+					{
+						flMaxRange = max(WEAPON(0x8c0), WEAPON(0x8c4));
+						flMinRange = min(WEAPON(0x8b8), WEAPON(0x8bc));
+					}
+					const float &flTooFar = FM(float, 0x5de4);
+					if (flMaxRange > flTooFar)
+						flMaxRange = flTooFar;
+					Vector posLos;
+					if (GetNavigator()->sub_102edaa0(vecEnemy, vecEnemy + FP(vfunc167(), Vector, 0x184), flMinRange, flMaxRange, 1.0f, 0, &posLos))
+					{
+						P1_NavGoal goal(posLos, 0x13, P1_HULL);
+						GetNavigator()->sub_102ecd20(goal, 2);
+					}
+				}
+				else
+					TASKFAIL(0xb, 0x3271);
+			}
+			else
+				TASKFAIL(6, 0x3276);
+			break;
+		}
+	case 78:
+		{
+			FM(float, 0x6320) = sub_102d61b0(F(int, 0x1568)) * 0.5;
+			float f = vfunc418(pTask->flTaskData) + FM(float, 0x6320);
+			FM(float, 0x6320) = f;
+			NAV->sub_102ee1c0(f);
+			NAV->sub_102f2fe0(FM(float, 0x6320));
+			TaskComplete();
+			break;
+		}
+	case 79:
+		{
+			float f = vfunc418(pTask->flTaskData);
+			FM(float, 0x6320) = f;
+			NAV->sub_102ee1c0(f);
+			NAV->sub_102f2fe0(FM(float, 0x6320));
+			TaskComplete();
+			break;
+		}
+	case 159:
+		{
+			int hull = 0;
+			CSTV *pEnemy = vfunc167();
+			if (pEnemy && FP(pEnemy, char *, 0x9c))
+				hull = FP(FP(pEnemy, char *, 0x9c), int, 0x1568);
+			if (sub_1032e7b0(this))
+			{
+				FM(float, 0x6320) = sub_102d61b0(hull) * 0.5;
+				float f = WEAPON(0x8c0) * pTask->flTaskData + FM(float, 0x6320);
+				FM(float, 0x6320) = f;
+				NAV->sub_102ee1c0(f);
+				NAV->sub_102f2fe0(FM(float, 0x6320));
+				TaskComplete();
+			}
+			else
+			{
+				FM(float, 0x6320) = sub_102d61b0(hull) * 0.5;
+				NAV->sub_102ee1c0(FM(float, 0x6320) = vfunc418(pTask->flTaskData) + FM(float, 0x6320));
+				NAV->sub_102f2fe0(FM(float, 0x6320));
+				TaskComplete();
+			}
+			break;
+		}
+	case 46:
+		{
+			Vector vecEnemyLKP;
+			if (F(EHView, 0x5ba8).Get())
+				vecEnemyLKP = *F(EHView, 0x5ba8).Get()->vfunc217();
+			else
+				vecEnemyLKP = vfunc541()->sub_102dfed0(vfunc167());
+			if (!vfunc364(vecEnemyLKP))
+			{
+				sub_102e0b40(MOTOR);
+				MOTOR->sub_102e2020(vecEnemyLKP, 0);
+				vfunc572();
+			}
+			else
+				TaskComplete();
+			break;
+		}
+	case 52:
+		if (sub_1032e7b0(this) && (~F(int, 0x14bc) & 0x8000))
+		{
+			CSTV *pWeapon = sub_1032e7b0(this);
+			F(int, 0x6490) = P2_RandomInt(FP(pWeapon->sub_102517e0(), int, 0x3a4), FP(pWeapon->sub_102517e0(), int, 0x3a8));
+		}
+		else
+			F(int, 0x6490) = 1;
+		break;
+	case 53:
+		FM(float, 0x5d9c) = CURTIME;
+		sub_10289ee0(0x1b);
+		break;
+	case 62:
+		sub_10289ee0(0x5e);
+		break;
+	case 63:
+		sub_10289ee0(0x5f);
+		break;
+	case 54:
+	case 55:
+		{
+			sub_102e0b40(MOTOR);
+			CSTV *pWeapon = sub_1032e7b0(this);
+			if (pWeapon && (pWeapon->vfunc360() & 0x18000))
+			{
+				FM(float, 0x5d9c) = CURTIME;
+				if (pTask->iTask != 0x37)
+					pWeapon->vfunc326();
+				else
+					pWeapon->vfunc327();
+			}
+			else
+				TASKFAIL(0x1f, 0x3302);
+			sub_10280a50();
+			break;
+		}
+	case 154:
+		{
+			sub_102e0b40(MOTOR);
+			CSTV *pWeapon = sub_1032e7b0(this);
+			CSTV *pMelee = (CSTV *)__RTDynamicCast(pWeapon, 0, g_1055f710, g_105da324, 0);
+			if (pWeapon && ((unsigned char)(pWeapon->vfunc360() >> 30) & 1) && pMelee)
+			{
+				FM(float, 0x5d9c) = CURTIME;
+				pMelee->vfunc372(0x53, 0, 0);
+			}
+			else
+				TASKFAIL(0x1f, 0x331d);
+			sub_10280a50();
+			break;
+		}
+	case 197:
+		if (vfunc167())
+		{
+			vfunc541()->sub_102dfd90(vfunc167());
+			TaskComplete();
+			return;
+		}
+		TASKFAIL(6, 0x3333);
+		break;
+	case 198:
+		if (TARGETH.Get())
+		{
+			vfunc541()->sub_102dfd90(TARGETH.Get());
+			TaskComplete();
+		}
+		else
+			TASKFAIL(1, 0x3341);
+		break;
+	case 199:
+		{
+			if (vfunc167() == 0)
+			{
+				TASKFAIL(6, 0x334c);
+				return;
+			}
+			P2_Goal goal(*vfunc167()->vfunc220(), -1, g_1049a1ac, 2);
+			if (P2NAV->sub_102ecd20(goal, 0))
+				TaskComplete();
+			else
+			{
+				g_109f3658(2, "GetPathToEnemy failed!!\n");
+				TASKFAIL(0xc, 0x335a);
+			}
+			break;
+		}
+	case 185:
+		{
+			int n = sub_102c1400();
+			if (n == -1)
+			{
+				TaskComplete();
+				break;
+			}
+			vfunc310(n);
+			sub_102e0b40(MOTOR);
+			MOTOR->sub_102e1e20(-1);
+			break;
+		}
+	case 186:
+	case 188:
+		FM(float, 0x5db4) = CURTIME + pTask->flTaskData;
+		break;
+	case 187:
+	case 189:
+		FM(float, 0x5db4) = g_1070b244->RandomFloat(0, pTask->flTaskData) + CURTIME;
+		break;
+	case 190:
+		{
+			int n = (int)pTask->flTaskData;
+			if (n >= 0 && n < 2)
+			{
+				sub_101072b0(n);
+				TaskComplete();
+			}
+			else
+			{
+				g_109f364c("Invalid event expression: %d\n", n);
+				TaskComplete();
+			}
+			break;
+		}
+	case 207:
+		{
+			int n = (int)vfunc418(pTask->flTaskData);
+			FM(float, 0x6324) = (float)(n * n);
+			TaskComplete();
+			break;
+		}
+	case 208:
+		{
+			int n = (int)vfunc418(pTask->flTaskData);
+			FM(float, 0x6328) = (float)(n * n);
+			TaskComplete();
+			break;
+		}
+	case 211:
+		FM(float, 0x632c) = CURTIME + pTask->flTaskData;
+		TaskComplete();
+		break;
+	case 212:
+		FM(float, 0x632c) += g_1070b244->RandomFloat(0, pTask->flTaskData);
+		TaskComplete();
+		break;
+	case 213:
+		FM(float, 0x632c) = 0;
+		TaskComplete();
+		break;
+	case 214:
+		{
+			float f = vfunc418(pTask->flTaskData);
+			int act;
+			if (FP(NAV, float, 0x14) >= f * f)
+				act = sub_10271ff0(0x13, 0);
+			if (sub_1008dc40(act, -1) == -1)
+				act = sub_10271ff0(9, 0);
+			NAV->sub_102ee250(act);
+			F(int, 0x5d8c) &= ~2;
+			TaskComplete();
+			break;
+		}
+	case 215:
+		{
+			int act;
+			if ((F(int, 0x60b4) == 1 || F(int, 0x60b4) == 16) && (act = sub_10271ff0(0x13, 0)) != -1 && sub_1008dc40(act, -1) != -1)
+				;
+			else
+				act = sub_10271ff0(9, 0);
+			NAV->sub_102ee250(act);
+			F(int, 0x5d8c) &= ~2;
+			TaskComplete();
+			break;
+		}
+	case 219:
+		FM(float, 0x6320) = 160.0f;
+		FM(float, 0x6320) += vfunc418(pTask->flTaskData);
+		NAV->sub_102ee1c0(FM(float, 0x6320) * 0.5);
+		NAV->sub_102f2fe0(FM(float, 0x6320));
+		TaskComplete();
+		break;
+	case 216:
+		{
+			F(P3_H, 0x6240).Set(F(EHView, 0x628c).Get());
+			NavGoal goal(0, -1, g_1049a1ac, 0, g_10923dd8);
+			goal.type = 4;
+			((P3_Vec &)goal.dest).sub_1003e4b0(*F(P3_H, 0x6240).Get()->vfunc220());
+			goal.pTarget = F(EHView, 0x6240).sub_100d1590();
+			sub_10288630()->sub_102ecd20(goal, 0);
+			break;
+		}
+	case 217:
+		{
+			if (F(EHView, 0x628c).sub_102c6460(0))
+			{
+				vfunc448(0x17);
+				break;
+			}
+			if (((P3_Vec *)vfunc220())->sub_102a9570(F(EHView, 0x628c).sub_102c64d0()->vfunc220()) < FM(float, 0x5bac) && sub_1008dc40(9, -1) != -1)
+			{
+				sub_10288630()->sub_102ee250(9);
+				sub_102a98e0(2);
+				TaskComplete();
+			}
+			else if (sub_1008dc40(0x13, -1) != -1)
+			{
+				sub_10288630()->sub_102ee250(0x13);
+				sub_102a98e0(2);
+				TaskComplete();
+			}
+			else
+				vfunc448(0x15);
+			break;
+		}
+	case 218:
+		{
+			CSTV *pEnt = F(EHView, 0x628c).sub_102c6420();
+			if (pEnt && vfunc295(pEnt))
+			{
+				pEnt->vfunc414(this);
+				TaskComplete();
+			}
+			else
+				TaskComplete();
+			break;
+		}
+	case 224:
+		vfunc310(0x1089);
+		break;
+	case 225:
+		{
+			int act = (int)pTask->flTaskData;
+			int iSeq, a, b;
+			sub_10272130(act, &iSeq, &a, &b);
+			if (iSeq <= 0)
+				TaskComplete();
+			else
+				vfunc310(act);
+			break;
+		}
+	case 226:
+		{
+			int iGesture = (int)pTask->flTaskData - 1;
+			int iLayer = vfunc271(iGesture);
+			float flCycle = 0;
+			if (iLayer != -1)
+			{
+				flCycle = P3_LAYER(iLayer);
+				vfunc274(iGesture);
+			}
+			int iSeq, a, b;
+			sub_10272130(iGesture + 1, &iSeq, &a, &b);
+			if (iSeq <= 0)
+			{
+				TaskComplete();
+				return;
+			}
+			else
+			{
+				vfunc310(iGesture + 1);
+				FM(float, 0x6f8) = flCycle;
+			}
+			break;
+		}
+	case 227:
+		{
+			int iGesture = (int)pTask->flTaskData - 1;
+			int iLayer = vfunc271(iGesture);
+			float flCycle = 0;
+			if (iLayer != -1)
+			{
+				flCycle = P3_LAYER(iLayer);
+				vfunc274(iGesture);
+			}
+			int iSeq, a, b;
+			sub_10272130(iGesture + 1, &iSeq, &a, &b);
+			if (iSeq <= 0)
+				TaskComplete();
+			else
+			{
+				vfunc310(iGesture + 1);
+				FM(float, 0x6f8) = flCycle;
+			}
+			break;
+		}
+	case 228:
+		{
+			int act = (int)pTask->flTaskData;
+			if (sub_1008dc40(act, -1) >= 0)
+				sub_10099250(act, 2.45f, 0);
+			TaskComplete();
+			break;
+		}
+	case 229:
+		{
+			int iDamage = (int)pTask->flTaskData;
+			if (iDamage < 0)
+				iDamage = F(int, 0xfdc);
+			P3_Dmg dmg;
+			dmg.sub_101fa960((CVDmgSource_t *)this);
+			dmg.sub_101fa8d0(1, 0x80, iDamage);
+			dmg.sub_102a9690(1);
+			CUnknown101c26d0 info;
+			info.sub_101c26d0(this, this, 1.0f, 0, 0, (int)&dmg, -1);
+			vfunc142(&info);
+			dmg.sub_101fa680();
+			TaskComplete();
+			break;
+		}
+	case 230:
+		{
+			int act = (int)pTask->flTaskData;
+			if (act == 0x1097)
+				F(int, 0x6414) = ((P3_Rand *)g_1070b244)->RandomInt(0, 2) * 3;
+			sub_10272650(F(int, 0x6414) + act);
+			break;
+		}
+	case 231:
+		{
+			int act = (int)pTask->flTaskData;
+			if (act == 0x1097)
+				F(int, 0x6414) = ((P3_Rand *)g_1070b244)->RandomInt(0, 2) * 3;
+			sub_10289ee0(F(int, 0x6414) + act);
+			break;
+		}
+	case 236:
+		{
+			int act = ((P3_Rand *)g_1070b244)->RandomInt(0, 1) * 3 + 0x106a;
+			sub_1008dc40(act, -1);
+			sub_10272650(act);
+			break;
+		}
+	case 237:
+	case 238:
+		{
+			int act = F(int, 0xfec) + 1;
+			if (act)
+				sub_10272650(act);
+			else
+				F(int, 0xfec) = 0;
+			break;
+		}
+	case 239:
+		{
+			int act = 0x108d;
+			switch (F(int, 0xfd4))
+			{
+			case 5:
+				act = 0x108d;
+				break;
+			case 6:
+				act = 0x108e;
+				break;
+			case 12:
+				act = 0x108f;
+				break;
+			}
+			sub_10272650(act);
+			break;
+		}
+	case 240:
+		{
+			int act = 0x1090;
+			switch (F(int, 0xfd4))
+			{
+			case 5:
+				act = 0x1090;
+				break;
+			case 6:
+				act = 0x1091;
+				break;
+			case 12:
+				act = 0x1092;
+				break;
+			}
+			sub_10272650(act);
+			break;
+		}
+	case 241:
+		F(int, 0x6068) = (int)pTask->flTaskData;
+		TaskComplete();
+		break;
+	case 242:
+		vfunc387();
+		TaskComplete();
+		break;
+	case 243:
+		vfunc304();
+		TaskComplete();
+		break;
+	case 244:
+		sub_102b52a0(1, 1);
+		TaskComplete();
+		break;
+	case 245:
+		sub_1026d050();
+		sub_102a9800(0x80800000);
+		TaskComplete();
+		break;
+	case 246:
+		{
+			float flDuration = pTask->flTaskData;
+			g_109253f8->sub_102ca2a0(2, this, *sub_102a96f0(this), 2, flDuration, 0, this, 0);
+			int iVolume = g_1072bc20.sub_102a9ea0(0x1b);
+			char bExternal = g_1072bc20.sub_102a9ec0(0x1b);
+			sub_101bac90(8, sub_102a96f0(this), iVolume, 10.0f, bExternal, this);
+			TaskComplete();
+			break;
+		}
+	case 247:
+		{
+			if (!sub_10288630()->sub_102ee6a0())
+			{
+				g_109f3658(2, "No route to face!\n");
+				TASKFAIL(0xc, 0x3599);
+				break;
+			}
+			P3_Wp *pWaypoint = ((P3_Nav *)sub_10288630())->sub_102a9c60()->sub_102a9f20();
+			if (pWaypoint)
+			{
+				P3_Wp *pLast = pWaypoint->sub_102a9ee0();
+				if (pLast)
+					pWaypoint = pLast;
+				sub_102e0b40(sub_10288650());
+				sub_10288650()->sub_102e2020(*pWaypoint->sub_102a9f00(), 0);
+				if (sub_10278c80())
+					TaskComplete();
+			}
+			else
+				TASKFAIL(0xc, 0x35b9);
+			break;
+		}
+	case 248:
+	case 249:
+		{
+			SoundV *pSound = vfunc474();
+			if (pSound)
+			{
+				sub_10297940(pSound->sub_101b99d0());
+				sub_102a18a0(pTask);
+			}
+			else
+				TASKFAIL(0x12, 0x35cb);
+			break;
+		}
+	case 250:
+		{
+			P3_Vec vec;
+			vec.sub_1002c900();
+			vec.sub_1010e530(-100.0f, 100.0f);
+			sub_10297940(&vec);
+			sub_102a18a0(pTask);
+			break;
+		}
+	case 251:
+		if (F(EHView, 0x628c).sub_102c6420())
+		{
+			sub_10297940(F(EHView, 0x628c).sub_102c64d0()->vfunc217());
+			sub_102a18a0(pTask);
+		}
+		else
+			TASKFAIL(0x17, 0x35e2);
+		break;
+	case 252:
+		{
+			CSTV *pEnt = vfunc586().sub_100d1590();
+			if (pEnt)
+			{
+				sub_10297940(pEnt->vfunc217());
+				sub_102a18a0(pTask);
+			}
+			else if (F(EHView, 0x608c).sub_1028ac10(0))
+			{
+				sub_10297940(&F(Vector, 0x6090));
+				sub_102a18a0(pTask);
+			}
+			else
+				TASKFAIL(0x21, 0x35f7);
+			break;
+		}
+	case 253:
+		{
+			CSTV *pEnt = F(EHView, 0x65c0).sub_100d1590();
+			if (pEnt)
+			{
+				sub_10297940(pEnt->vfunc217());
+				sub_102a18a0(pTask);
+			}
+			else
+				TASKFAIL(0x21, 0x3607);
+			break;
+		}
+	case 254:
+		{
+			switch (F(int, 0x63e4))
+			{
+			case 0:
+				sub_10272650(1);
+				break;
+			case 1:
+				sub_10272650(0x1100);
+				break;
+			case 2:
+				sub_10272650(0x1101);
+				break;
+			case 3:
+				sub_10272650(0x1102);
+				break;
+			case 4:
+				sub_10272650(0x1103);
+				break;
+			case 5:
+				sub_10272650(0x1104);
+				break;
+			case 6:
+				sub_10272650(0x1105);
+				break;
+			case 7:
+				sub_10272650(0x1106);
+				break;
+			case 8:
+				sub_10272650(0x1107);
+				break;
+			default:
+				sub_10272650(1);
+				break;
+			}
+			float flYaw = ((P3_Ang *)sub_102885f0())->sub_102a9600(1);
+			sub_102a97a0(0x8000000);
+			sub_102e0b40(sub_10288650());
+			sub_10288650()->sub_10288670(flYaw - FM(float, 0x63e8));
+			sub_102a18a0(pTask);
+			break;
+		}
+	case 255:
+		{
+			float flOffset;
+			switch (F(int, 0x63e4))
+			{
+			case 0:
+				sub_10272650(1);
+				flOffset = 0;
+				break;
+			case 1:
+				sub_10272650(0x1100);
+				flOffset = 0;
+				break;
+			case 2:
+				sub_10272650(0x1101);
+				flOffset = 45;
+				break;
+			case 3:
+				sub_10272650(0x1102);
+				flOffset = 90;
+				break;
+			case 4:
+				sub_10272650(0x1103);
+				flOffset = 135;
+				break;
+			case 5:
+				sub_10272650(0x1104);
+				flOffset = -45;
+				break;
+			case 6:
+				sub_10272650(0x1105);
+				flOffset = -90;
+				break;
+			case 7:
+				sub_10272650(0x1106);
+				flOffset = -135;
+				break;
+			case 8:
+				sub_10272650(0x1107);
+				flOffset = 180;
+				break;
+			default:
+				sub_10272650(1);
+				flOffset = 0;
+				break;
+			}
+			float flYaw = ((P3_Ang *)sub_102885f0())->sub_102a9600(1);
+			sub_102a97a0(0x8000000);
+			sub_102e0b40(sub_10288650());
+			sub_10288650()->sub_10288670(flYaw + flOffset);
+			sub_102a18a0(pTask);
+			break;
+		}
+	case 256:
+		{
+			int flags = *(const int *)&pTask->flTaskData;
+			if (!(flags & 0x80000000))
+			{
+				sub_102a97a0(flags);
+				TaskComplete();
+			}
+			else
+			{
+				sub_102a9800(flags);
+				TaskComplete();
+			}
+			break;
+		}
+	case 258:
+		sub_1033c6b0(1 << *(const int *)&pTask->flTaskData);
+		TaskComplete();
+		break;
+	case 257:
+		{
+			int flags = *(const int *)&pTask->flTaskData;
+			if (!(flags & 0x80000000))
+			{
+				sub_102a97d0(flags);
+				TaskComplete();
+			}
+			else
+			{
+				sub_102a9830(flags);
+				TaskComplete();
+			}
+			break;
+		}
+	case 259:
+		{
+			int act = sub_10271ff0(0x1093, 0);
+			if (sub_1008dc40(act, -1) == -1)
+				act = sub_10271ff0(0x13, 0);
+			sub_10288630()->sub_102ee250(act);
+			sub_102a98e0(2);
+			TaskComplete();
+			break;
+		}
+	case 260:
+		{
+			int act = 0x1115;
+			if (sub_10295460(act, 0) == -1)
+				act = 9;
+			sub_10288630()->sub_102ee250(act);
+			sub_102a98e0(2);
+			TaskComplete();
+			break;
+		}
+	case 261:
+		{
+			int act = sub_10271ff0(0x1115, 0);
+			if (sub_1008dc40(act, -1) == -1)
+				act = sub_10271ff0(9, 0);
+			sub_10288630()->sub_102ee250(act);
+			sub_102a98e0(2);
+			TaskComplete();
+			break;
+		}
+	case 294:
+		{
+			int act = sub_10271ff0(0x1121, 0);
+			if (sub_1008dc40(act, -1) == -1)
+				act = sub_10271ff0(9, 0);
+			sub_10288630()->sub_102ee250(act);
+			sub_102a98e0(2);
+			TaskComplete();
+			break;
+		}
+	case 295:
+		{
+			float flBase = g_10924a18.sub_102a9640();
+			FM(float, 0x6320) = flBase;
+			float flTolerance = g_1070b244->RandomFloat(0, vfunc418(pTask->flTaskData)) + FM(float, 0x6320);
+			FM(float, 0x6320) = flTolerance;
+			sub_10288630()->sub_102ee1c0(flTolerance);
+			sub_10288630()->sub_102f2fe0(FM(float, 0x6320));
+			TaskComplete();
+			break;
+		}
+	case 262:
+		if (pTask->flTaskData == g_104454c4)
+		{
+			sub_10288650()->sub_102a99c0(0);
+			TaskComplete();
+		}
+		else
+		{
+			sub_10288650()->sub_102a99c0(1);
+			TaskComplete();
+		}
+		break;
+	case 263:
+		{
+			Vector vecGoal = *((P3_Nav *)sub_10288630())->sub_102ee140();
+			Vector vecOrigin = *vfunc217();
+			Vector vecDelta = ((P3_Vec &)vecGoal).sub_10146190(vecOrigin);
+			float flDistSqr = (vecDelta.y * vecDelta.y) + (vecDelta.x * vecDelta.x);
+			if (flDistSqr >= 4096.0f && flDistSqr <= 12100.0f)
+			{
+				vecDelta.z = 0;
+				g_1057966c(&vecDelta);
+				float flDot = ((P3_Vec &)vecDelta).sub_102a9540(&F(Vector, 0x629c));
+				if (flDot > 0.98)
+				{
+					sub_102a97a0(0x4000);
+					sub_10272650(0x110b);
+					return;
+				}
+				if (flDot < -0.98)
+				{
+					sub_102a97a0(0x4000);
+					sub_10272650(0x110a);
+					break;
+				}
+			}
+			TaskComplete();
+			break;
+		}
+	case 264:
+		{
+			Vector vecStart = *vfunc217();
+			vecStart.z += vfunc522() * 0.5f;
+			Vector vecRight = ((P3_Vec &)vecStart).sub_1011e060(((P3_Vec &)F(Vector, 0x629c)).sub_100a19c0(60.0f));
+			Vector vecLeft = ((P3_Vec &)vecStart).sub_10146190(((P3_Vec &)F(Vector, 0x629c)).sub_100a19c0(60.0f));
+			if (sub_10295460(0x110b, 0) != -1)
+			{
+				unsigned int moveTrace[14];
+				sub_102a9890(moveTrace);
+				if (sub_102a98c0()->sub_102e6d70(0, &vecStart, &vecRight, 0x202400b, 0, 100.0f, 0, moveTrace, 0, 0))
+				{
+					sub_102a97a0(0x4000);
+					sub_10272650(0x110b);
+					return;
+				}
+			}
+			if (sub_10295460(0x110a, 0) != -1)
+			{
+				unsigned int moveTrace[14];
+				sub_102a9890(moveTrace);
+				if (sub_102a98c0()->sub_102e6d70(0, &vecStart, &vecLeft, 0x202400b, 0, 100.0f, 0, moveTrace, 0, 0))
+				{
+					sub_102a97a0(0x4000);
+					sub_10272650(0x110a);
+					return;
+				}
+			}
+			TASKFAIL(0xe, 0x3736);
+			break;
+		}
+	case 265:
+		{
+			Vector vecStart = *vfunc217();
+			vecStart.z += vfunc522() * 0.5f;
+			Vector vecEnd = ((P3_Vec &)vecStart).sub_1011e060(((P3_Vec &)F(Vector, 0x6290)).sub_100a19c0(96.0f));
+			if (sub_10295460(0xf1d, 0) != -1)
+			{
+				unsigned int moveTrace[14];
+				sub_102a9890(moveTrace);
+				if (sub_102a98c0()->sub_102e6d70(0, &vecStart, &vecEnd, 0x202400b, 0, 100.0f, 0, moveTrace, 0, 0))
+				{
+					sub_102a97a0(0x4000);
+					sub_10272650(0xf1d);
+					break;
+				}
+			}
+			TASKFAIL(0xe, 0x3759);
+			break;
+		}
+	case 266:
+		if (!sub_102a1560(this))
+			TaskComplete();
+		break;
+	case 267:
+		sub_102a1590(this);
+		TaskComplete();
+		break;
+	case 268:
+		if (!sub_102a15c0(this))
+			TaskComplete();
+		break;
+	case 269:
+		{
+			sub_102a15f0(this);
+			P3_Vec vecPos;
+			vecPos.sub_1002c900();
+			if (F(EHView, 0x5ba8).sub_1028ac10(0))
+				vecPos.sub_1003e4b0(*F(EHView, 0x5ba8).sub_100d15d0()->vfunc217());
+			else if (sub_102a9960() == vfunc167())
+				vecPos.sub_1003e4b0(vfunc541()->sub_102dfed0(vfunc167()));
+			else
+				TaskComplete();
+			if (!vfunc364(vecPos))
+			{
+				sub_102e0b40(sub_10288650());
+				sub_10288650()->sub_102e2020(vecPos, 0);
+			}
+			else
+				TaskComplete();
+			break;
+		}
+	case 270:
+		if (HINT)
+		{
+			P3_Vec vecPos;
+			vecPos.sub_1002c900();
+			sub_102b6120(&vecPos, 0);
+			sub_102885d0(&vecPos);
+			TaskComplete();
+		}
+		else
+			TASKFAIL(4, 0x37aa);
+		break;
+	case 271:
+		if (HINT)
+		{
+			sub_10289ee0(0xc84);
+			HINT->sub_102d0910(this);
+			sub_10295ab0(60.0f);
+		}
+		else
+			TASKFAIL(4, 0x37bd);
+		break;
+	case 272:
+		if (HINT)
+		{
+			sub_10289ee0(0xc84);
+			if (*sub_102a9c40(HINT) != 0)
+			{
+				F(EHView, 0x643c).sub_1028ac80(g_106eb5d8.sub_100f7770(0, sub_102a9c40(HINT), 0, 0));
+				if (F(EHView, 0x643c).sub_102c63b0(0))
+					g_109f3630("Warning: Kick hint (%s) is trying to find a physics object (%s) that is not found.\n ");
+			}
+			if (F(EHView, 0x643c).sub_1028ac10(0))
+			{
+				const Vector &vecObj = *F(EHView, 0x643c).sub_100d15d0()->vfunc217();
+				const Vector &vecMe = *vfunc217();
+				if (((const P3_Vec &)vecMe).Sub(vecObj).LS() <= 16384.0f)
+					sub_102b6890(F(EHView, 0x643c).sub_102c6370());
+				else
+					g_109f3630("Warning: Kick hint (%s) is trying to kick a physics object (%s) that is too far away.\n ");
+				F(EHView, 0x643c).sub_1028ac80(0);
+			}
+			HINT->sub_102d0910(this);
+			sub_10295ab0(60.0f);
+		}
+		else
+			TASKFAIL(4, 0x37f4);
+		break;
+	case 273:
+		{
+			EHView &h = F(EHView, 0x643c);
+			if (h.sub_1028ac10(0))
+			{
+				if (vfunc167())
+				{
+					CSTV *pTarget = h.sub_100d15d0();
+					CSTV *pEnemy = vfunc167();
+					Vector dir = pEnemy->vfunc217()->sub_10146190(*pTarget->vfunc217());
+					dir.NormalizeInPlace();
+					P4_Goal goal;
+					goal.sub_102a9c80(10, -1, g_1049a1ac, 0, g_10923dd8);
+					goal.type = 4;
+					CSTV *pTarget2 = h.sub_100d15d0();
+					goal.dest.sub_1003e4b0(pTarget2->vfunc217()->sub_10146190(dir.sub_100a19c0(64.0f)));
+					goal.pTarget = 0;
+					sub_10288630()->sub_102ecd20(*(NavGoal *)&goal, 0);
+				}
+				else
+					TASKFAIL(6, 0x380d);
+			}
+			else
+				TASKFAIL(0x25, 0x3812);
+			break;
+		}
+	case 274:
+		if (F(EHView, 0x643c).sub_1028ac10(0))
+			TaskComplete();
+		else
+			TASKFAIL(0x25, 0x381f);
+		break;
+	case 275:
+		{
+			EHView &h = F(EHView, 0x643c);
+			if (h.sub_1028ac10(0))
+			{
+				sub_10289ee0(0xc84);
+				sub_102b6890(h.sub_102c6370());
+				h.sub_1028ac80(0);
+			}
+			else
+				TASKFAIL(0x25, 0x3832);
+			break;
+		}
+	case 178:
+		if (F(CSTV *, 0x62ec))
+		{
+			sub_102ae310();
+			if (F(CSTV *, 0x62ec)->sub_102a9e80())
+			{
+				sub_102e0b40(sub_10288650());
+				sub_10288650()->sub_10288670(sub_10288590(F(CSTV *, 0x62ec)->sub_102a9e60()));
+			}
+			else
+				TaskComplete();
+		}
+		else
+			TASKFAIL(0x22, 0x3848);
+		break;
+	case 179:
+		{
+			HintV *pHint = sub_1029f730(&F(int, 0x658c));
+			CSTV *pEnt = sub_1029f780(&F(int, 0x658c));
+			if (pEnt)
+			{
+				if (pEnt->sub_102a9e80())
+				{
+					sub_102e0b40(sub_10288650());
+					sub_10288650()->sub_10288670(pHint->sub_102d12e0());
+				}
+				else
+				{
+					F(int, 0x6300) = 0;
+					F(int, 0x659c) = 0;
+					TaskComplete();
+				}
+			}
+			else
+				TaskComplete();
+			break;
+		}
+	case 180:
+		F(int, 0x6308) = -1;
+		if (F(CSTV *, 0x62ec))
+			sub_102a9f40(F(CSTV *, 0x62ec), 0, 1);
+		else
+			TASKFAIL(0x22, 0x3874);
+		break;
+	case 181:
+		{
+			HintV *pHint = sub_1029f730(&F(int, 0x658c));
+			CSTV *pEnt = sub_1029f780(&F(int, 0x658c));
+			if (pEnt)
+				sub_102a9f40(pEnt, pHint, 0);
+			else
+				TaskComplete();
+			break;
+		}
+	case 182:
+		sub_10288630()->sub_102ee250(sub_10271ff0(1, 0));
+		break;
+	case 183:
+		sub_10288630()->sub_102ee250(sub_10271ff0(9, 0));
+		break;
+	case 184:
+		if (F(int, 0x6308) != -1)
+			sub_10289ee0(F(int, 0x6308));
+		else
+		{
+			sub_102a97d0(0x20000000);
+			TaskComplete();
+		}
+		break;
+	case 276:
+		{
+			CSTV *pEnt = vfunc168();
+			if (pEnt && !vfunc530(pEnt))
+			{
+				P4_Goal goal;
+				goal.sub_102a9d20(vfunc541()->sub_102dfed0(pEnt), -1, g_1049a1ac, 0, g_10923dd8);
+				float flMax = sub_10288630()->sub_102f2fc0();
+				vfunc563(pEnt, &goal.dest, &goal.tolerance, &flMax);
+				if (sub_10288630()->sub_102ecd20(*(NavGoal *)&goal, 2))
+				{
+					sub_10288630()->sub_102f2fe0(flMax);
+					TaskComplete();
+				}
+				else
+				{
+					g_109f3658(2, "GetPathToLastEnemyLKP failed!!\n");
+					sub_10274080(pEnt);
+					TASKFAIL(0xc, 0x38d8);
+				}
+			}
+			else
+				TASKFAIL(0xc, 0x38c3);
+			break;
+		}
+	case 277:
+		{
+			CSTV *pEnemy = vfunc168();
+			if (!pEnemy)
+				pEnemy = this;
+			if (sub_102784a0(pEnemy->vfunc193(), pEnemy))
+			{
+				FM(float, 0x5cf0) = CURTIME + pTask->flTaskData;
+				TaskComplete();
+			}
+			else
+			{
+				P4_Vec coverPos;
+				coverPos.sub_1002c900();
+				if (sub_10288630()->sub_102edc80(*pEnemy->vfunc217(), pEnemy->vfunc193(), 0, vfunc550(), &coverPos, pEnemy))
+				{
+					P4_Goal goal;
+					goal.sub_102a9dc0(6, coverPos, 0x13, g_1049a1b0, 0, g_10923dd8, g_1049a1b4, 0);
+					sub_10288630()->sub_102ecd20(*(NavGoal *)&goal, 0);
+					if (HINT)
+					{
+						sub_10288630()->sub_102ee410(vfunc569(HINT));
+						sub_10288630()->sub_102ee530(HINT->sub_102d11f0());
+					}
+					FM(float, 0x5cf0) = CURTIME + pTask->flTaskData;
+				}
+				else
+					TASKFAIL(8, 0x3907);
+			}
+			break;
+		}
+	case 139:
+	case 293:
+		TaskComplete();
+		break;
+	case 278:
+		if (sub_102a9770(0x40000))
+			TaskComplete();
+		else
+			sub_10289ee0(0x55);
+		break;
+	case 279:
+		if (sub_102a9770(0x40000))
+			TaskComplete();
+		else
+			sub_102a1620(this);
+		break;
+	case 280:
+		if (sub_102a9770(0x40000))
+			TaskComplete();
+		else if (!sub_102a1560(this))
+			sub_102a1620(this);
+		break;
+	case 281:
+		FM(float, 0x6330) = pTask->flTaskData;
+		F(bool, 0x6334) = 1;
+		TaskComplete();
+		break;
+	case 282:
+		FM(float, 0x6330) += g_1070b244->RandomFloat(0, pTask->flTaskData);
+		TaskComplete();
+		break;
+	case 283:
+	case 284:
+		{
+			int act = (pTask->iTask == 284) ? 0x14 : 0x10;
+			if (sub_10295460(act, 0) == -1)
+			{
+				int act2 = (pTask->iTask == 284) ? 0x13 : 9;
+				if (sub_102a1650(act2, 180.0f, F(int, 0x6330)))
+				{
+					sub_102a9940(180.0f);
+					{ float t = CURTIME; F(float, 0x5db4) = t + F(float, 0x6330); }
+					sub_10289ee0(act2);
+				}
+				else
+					TASKFAIL(0x15, 0x396f);
+			}
+			else
+			{
+				Vector pos = *vfunc217();
+				pos.z += vfunc522() * 0.5f;
+				Vector end = pos.sub_10146190(((const P4_Vec &)F(Vector, 0x6290).sub_100a19c0(50.0f)).sub_100a19c0(F(int, 0x6330)));
+				P4_Trace tr;
+				tr.sub_102a9670();
+				sub_102a98c0()->sub_102a99e0(pos, end, sub_102a9710(), sub_102a9730(), 0x202400b, &tr, 1, 0);
+				if (tr.fraction == 1.0f)
+				{
+					{ float t = CURTIME; F(float, 0x5db4) = t + F(float, 0x6330); }
+					sub_10289ee0(act);
+				}
+				else
+					TASKFAIL(0xe, 0x3997);
+			}
+			break;
+		}
+	case 290:
+		{
+			int i = 0;
+			if (sub_10295460(0x1121, 0) == -1)
+			{
+				TASKFAIL(0x15, 0x39a7);
+				i = 1000;
+			}
+			int dir = F(P4_HL *, 0x65e8)->sub_1025df40(this, vfunc167());
+			if (dir == 0)
+				dir = ((P4_Rand *)g_1070b244)->RandomInt(0, 1) ? -1 : 1;
+			for (; i < 2; i++)
+			{
+				float yaw = g_1070b244->RandomFloat(dir * 80.0f, dir * 120.0f);
+				if (sub_102a1650(0x1121, yaw, F(int, 0x6330)))
+				{
+					sub_102a9940(yaw);
+					{ float t = CURTIME; F(float, 0x5db4) = t + F(float, 0x6330); }
+					sub_10289ee0(0x1121);
+					return;
+				}
+				dir = -dir;
+			}
+			if (i != 1000)
+				TASKFAIL(0xe, 0x39d5);
+			break;
+		}
+	case 291:
+	case 292:
+		{
+			int i = 0; int act = 0x1121;
+			float flDist = vfunc418(pTask->flTaskData);
+			CSTV *pEnt = vfunc168();
+			
+			float flEnemyDist = 0;
+			if (pEnt)
+				flEnemyDist = ((P4_Vec *)vfunc217())->sub_102a9570(*pEnt->vfunc217());
+			else
+			{
+				TASKFAIL(6, 0x39ec);
+				i = 1000;
+			}
+			if (g_10924890.sub_102a9640() > 0)
+				flDist = g_10924890.sub_102a9640();
+			if (flDist == g_104492dc && sub_1032e7b0(this))
+				flDist = WEAPON(0x8c0) * 0.75 + WEAPON(0x8b8) * 0.25f;
+			if (sub_10295460(act, 0) == -1)
+			{
+				act = 9;
+				if (sub_10295460(act, 0) == -1)
+				{
+					TASKFAIL(0x15, 0x3a06);
+					return;
+				}
+			}
+			for (; i < 2; i++)
+			{
+				float yaw = vfunc603(&flEnemyDist, &flDist);
+				if (sub_102a1650(act, yaw, F(int, 0x6330)))
+				{
+					sub_102a9940(yaw);
+					{ float t = CURTIME; F(float, 0x5db4) = t + F(float, 0x6330); }
+					sub_10289ee0(act);
+					return;
+				}
+			}
+			if (i != 1000)
+				TASKFAIL(0xe, 0x3a30);
+			break;
+		}
+	case 146:
+		vfunc266();
+		sub_10289ee0(F(int, 0x6068));
+		break;
+	case 147:
+		vfunc266();
+		sub_102a9750(F(int, 0x64b8));
+		sub_102a96b0(F(Vector, 0x6004));
+		sub_100b2770(F(Vector, 0x6004));
+		vfunc208(0);
+		sub_1027d9b0(1);
+		sub_102a99a0(1);
+		sub_10289ee0(F(int, 0x6068));
+		break;
+	case 148:
+		{
+			int seq = sub_10345480();
+			if (seq >= 0)
+				vfunc311(0x8f, 0x8f, seq);
+			else
+				sub_10289ee0(0x8f);
+			break;
+		}
+	case 150:
+		FM(float, 0x6014) = CURTIME + 0.01f;
+		break;
+	case 151:
+		sub_102c4e80();
+		sub_100b2770(F(Vector, 0x6004));
+		break;
+	case 149:
+	case 152:
+		sub_102c41b0("impact_dust_emitter", 0, 0, 0);
+		break;
+	case 153:
+		{
+			P4_Vec pos;
+			pos.sub_1002c900();
+			P4_Ang ang;
+			ang.sub_102a95c0();
+			sub_10092610("Bip01 Spine2", pos, ang);
+			FM(float, 0x6018) = CURTIME;
+			F(Vector, 0x601c).sub_1003e4b0(pos);
+			break;
+		}
+	case 156:
+		vfunc492();
+		sub_10272650(0x1082);
+		break;
+	case 157:
+		sub_10272650(0x1083);
+		break;
+	case 158:
+		sub_10272650(0x1084);
+		break;
+	case 155:
+		FM(float, 0x606c) = CURTIME;
+		TaskComplete();
+		break;
+	case 285:
+		sub_102e0b40(sub_10288650());
+		sub_10288650()->sub_10288670(sub_10288590(*F(P4_Ang, 0x5dc4).sub_102a95e0(1)));
+		break;
+	case 286:
+		g_1073dc28.sub_101f5950(this, (int)pTask->flTaskData, 2, 1.0f, 1.25f);
+		TaskComplete();
+		break;
+	case 287:
+		{
+			P4_Vec pos;
+			pos.sub_1002c900();
+			Vector eye = F(Vector, 0x5dd0).sub_1011e060(F(Vector, 0x184));
+			if (sub_10288630()->sub_102edaa0(F(Vector, 0x5dd0), eye, 0, 4096.0f, 1.0f, 1, &pos))
+				sub_10288630()->sub_102ecd20(*(NavGoal *)P4_Goal().sub_102a9d20(pos, 0x13, g_1049a1b0, 0, g_10923dd8), 0);
+			else
+				TASKFAIL(0xb, 0x3ac1);
+			break;
+		}
+	case 289:
+		if (pTask->flTaskData != g_104454c4)
+		{
+			sub_102a9800(0x80000001);
+			F(Vector, 0x65d0).sub_1003e4b0(vfunc16());
+			vfunc15(Vector().sub_100f2f90(60.0f, 60.0f, 80.0f));
+		}
+		else
+		{
+			vfunc15(F(Vector, 0x65d0));
+			F(Vector, 0x65d0).sub_1003e4b0(Vector().sub_100f2f90(-1.0f, -1.0f, -1.0f));
+			sub_102a9830(0x80000001);
+		}
+		TaskComplete();
+		break;
+	case 296:
+		{
+			FM(float, 0x5db4) = CURTIME + FM(float, 0x6330);
+			int act;
+			switch (((P4_Rand *)g_1070b244)->RandomInt(0, 1))
+			{
+			case 0:
+				act = 1;
+				break;
+			case 1:
+				act = 3;
+				break;
+			}
+			sub_10289ee0(sub_10271ff0(act, 0));
+			break;
+		}
+	case 297:
+		FM(float, 0x5bac) = vfunc418(pTask->flTaskData);
+		TaskComplete();
+		break;
+	case 298:
+		FM(float, 0x5bac) += vfunc418(pTask->flTaskData);
+		TaskComplete();
+		break;
+	case 301:
+		FM(float, 0x5bac) -= g_1070b244->RandomFloat(0, vfunc418(pTask->flTaskData));
+		TaskComplete();
+		break;
+	case 300:
+		FM(float, 0x5bac) -= vfunc418(pTask->flTaskData);
+		TaskComplete();
+		break;
+	case 299:
+		FM(float, 0x5bac) += g_1070b244->RandomFloat(0, vfunc418(pTask->flTaskData));
+		TaskComplete();
+		break;
+	case 302:
+		sub_102e0b40(sub_10288650());
+		sub_10288650()->sub_102e2020(F(Vector, 0x5dd0), 0);
+		vfunc572();
+		break;
+	case 305:
+		if (pTask->flTaskData != g_104454c4)
+		{
+			sub_102a9800(0x80001000);
+			sub_1026d130();
+			F(P4_Out, 0x5fd4).sub_100cd660(this, this, 0);
+		}
+		else
+		{
+			sub_1026d160();
+			sub_102a9830(0x80001000);
+			F(P4_Out, 0x5fec).sub_100cd660(this, this, 0);
+		}
+		TaskComplete();
+		break;
+	case 140:
+		sub_10289ee0(0x1155);
+		break;
+	case 311:
+		if (sub_10295460(F(int, 0x65e4), 1))
+			sub_10289ee0(F(int, 0x65e4));
+		else
+			vfunc448(0x15);
+		break;
+	case 312:
+		{
+			P4_Squad *pSquad = sub_102a9910();
+			if (pSquad && vfunc167())
+				pSquad->sub_103161a0(vfunc167());
+			TaskComplete();
+			break;
+		}
+	case 313:
+		sub_102e0b40(sub_10288650());
+		sub_10289ee0(0x2b);
+		break;
+	case 314:
+		{
+			P4_Vec v;
+			v.sub_1002c900();
+			sub_102a9750(F(int, 0x64b8));
+			sub_102c4c50(&v, F(int, 0x64b4), &F(Vector, 0x649c), &F(Vector, 0x64a8));
+			((P4_MotorVt *)sub_10288650())->vfunc6(v);
+			sub_1027d9b0(1);
+			sub_102a99a0(1);
+			break;
+		}
+	case 315:
+		sub_102e0b40(sub_10288650());
+		sub_10289ee0(0x30);
+		break;
+	case 316:
+		sub_102e0b40(sub_10288650());
+		sub_10289ee0(0x32);
+		break;
+	case 317:
+		F(bool, 0x63d8) = pTask->flTaskData != g_104454c4;
+		break;
+	case 318:
+		sub_1018e790(this, sub_102a9860(pTask));
+		TaskComplete();
+		break;
+	case 319:
+		sub_1018e910(this);
+		TaskComplete();
+		break;
+	case 320:
+		sub_1018e9d0(this, (int)pTask->flTaskData);
+		TaskComplete();
+		break;
+	case 321:
+		sub_1018eab0(this, pTask->flTaskData != g_104454c4);
+		TaskComplete();
+		break;
+	case 322:
+		if (sub_1018eb50(this, pTask->flTaskData))
+			TaskComplete();
+		break;
+	case 323:
+		sub_1018ecf0(this, pTask->flTaskData);
+		TaskComplete();
+		break;
+	case 324:
+		sub_1018ec20(this, pTask->flTaskData);
+		TaskComplete();
+		break;
+	case 325:
+		vfunc243(vfunc244(0));
+		TaskComplete();
+		break;
+	case 326:
+		F(Vector, 0x5db8).sub_1003e4b0(F(Vector, 0x62a8));
+		F(Vector, 0x5dc4).sub_1011d2e0(F(Vector, 0x62b4));
+		TaskComplete();
+		break;
+	case 327:
+		{
+			P4_Vec coverPos;
+			coverPos.sub_1002c900();
+			EHView &h = F(EHView, 0x5b7c);
+			if (h.sub_100d1590())
+			{
+				Vector pos = *h.sub_100d15d0()->vfunc217();
+				Vector eye = h.sub_100d15d0()->vfunc193();
+				if (sub_10288630()->sub_102edc80(pos, eye, 32.0f, vfunc550(), &coverPos, this))
+				{
+					P4_Goal goal;
+					goal.sub_102a9d20(coverPos, 0x13, g_1049a1b0, 0, g_10923dd8);
+					sub_10288630()->sub_102ecd20(*(NavGoal *)&goal, 0);
+					FM(float, 0x5cf0) = CURTIME + pTask->flTaskData;
+				}
+				else
+					TASKFAIL(8, 0x3bdb);
+			}
+			else
+				TASKFAIL(0x21, 0x3be0);
+			break;
+		}
+	case 328:
+		{
+			EHView &h = F(EHView, 0x5b7c);
+			if (h.sub_100d1590())
+			{
+				sub_10297940(h.sub_100d15d0()->vfunc217());
+				sub_102a18a0(pTask);
+			}
+			else
+				TASKFAIL(0x21, 0x3bee);
+			break;
+		}
+	case 232:
+		F(int, 0x200) = 1;
+		TaskComplete();
+		break;
+	case 329:
+		{
+			int act = (int)pTask->flTaskData;
+			if (sub_10295460(act, 0) == -1)
+			{
+				act = 0x1d;
+				if (sub_10295460(act, 0) == -1)
+					act = 1;
+			}
+			sub_10272650(act);
+			if (act == 1)
+				TaskComplete();
+			break;
+		}
+	default:
+		sub_102827f0(pTask);
+		break;
+	case 5:
+	case 234:
+	case 235:
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102aa640 size=0x1b0
 #include "CAI_Navigator.h"
 #include "CAI_BaseNPCTroika.h"
