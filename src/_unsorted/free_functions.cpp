@@ -162967,7 +162967,6 @@ bool CUnknown101f5d60::sub_101f5390(void *pKVData)
 // END FUNCTION
 
 // FUNCTION: 0x101f55a0 size=0x283
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CBaseCombatCharacter.h"
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
