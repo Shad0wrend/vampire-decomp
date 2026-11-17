@@ -173,6 +173,16 @@ Measured on real vtmb functions (hand-120..124, reloadstudy). Each line names th
   is carried in eax (game); the bit-test form builds `pInc = idx; += off; += pHdr` (R12 association), the piece has
   no preference and is spilled (`mov [esp+0x20],ebp`, score 14). Tool: tmp/c2trace/poptrace.py (pops, deferrals,
   rescues, preferences per round); details in tmp/c2trace/PRIORITY.md pass 3.
+- **R14: colour cost ties and the deleted-test candidate.** The colour pick (color.c 0x9937) costs each register
+  by the still-uncoloured neighbours: +w for each neighbour preference in that neighbour's allowed set, +100*weight
+  when a neighbour has only that register left; the node's own preferences subtract. Ties go to class order
+  (eax ecx edx esi edi ebx ebp). An all-zero tie means the game had one more preference (a copy to/from, or a
+  definition from, a register); a 1200/1200 tie means two single-register neighbours of equal weight
+  (tool tmp/c2trace/costdump.py prints both). Priority lever: `int n = <expr>; if (n <= 0 || ...) return false;
+  if (n <= 0) return false;` keeps n alive through a test VC6 deletes after counting, so n becomes a candidate in
+  its block and raises N for the block's other values. 0x102da0d0: `this` +8 over pOut gives the game's colours and
+  late nTry store (54 -> 3); the residue is a rotation pick (the expression's first load is no longer a scratch pick).
+  Deleted tests add no scratch picks. Details in tmp/c2trace/PRIORITY.md pass 4.
 
 ## Corrections from rule pass 2 (best score 21-100, 65 functions, 2026-11-13, 8 matched)
 - Weights are counted before VC6 simplifies the code, so source that VC6 later deletes still moves the ranking:
