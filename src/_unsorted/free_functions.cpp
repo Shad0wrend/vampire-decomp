@@ -237190,6 +237190,7 @@ void __stdcall sub_102ea600(CRBTree12Entry_102ec4a0 search)
 // END FUNCTION
 
 // FUNCTION: 0x102eaaf0 size=0x18a
+#include "CRBTree12Entry_102ec4a0.h"
 #include "CUtlRBTree12.h"
 #include "CUtlRBTree16.h"
 #include "CUtlRBTree232.h"
@@ -237201,9 +237202,8 @@ void __stdcall sub_102ea600(CRBTree12Entry_102ec4a0 search)
 #include "utlvector.h"
 #include "utlrbtree.h"
 
-extern CUtlRBTree<int, unsigned short> g_10934014;
-
-typedef CUtlRBTree<int, unsigned short> Tree;
+typedef CUtlRBTree<CRBTree12Entry_102ec4a0, unsigned short> Tree;
+extern Tree g_10934014;
 template <>
 inline Tree::Links_t const &Tree::Links(unsigned short i) const
 {
@@ -237237,13 +237237,14 @@ inline unsigned short MyInsertAt(Tree &t, unsigned short parent, bool leftchild)
 
 void sub_102eaaf0(int value)
 {
-	CUtlRBTree<int, unsigned short> &t = g_10934014;
+	Tree &t = g_10934014;
+	const CRBTree12Entry_102ec4a0 &v = *(const CRBTree12Entry_102ec4a0 *)&value;
 	unsigned short current = t.m_Root;
 	unsigned short parent = t.InvalidIndex();
 	bool leftchild = false;
 	while (current != t.InvalidIndex()) {
 		parent = current;
-		if (t.m_LessFunc(value, t.Element(current))) {
+		if (t.m_LessFunc(v, t.Element(current))) {
 			leftchild = true;
 			current = t.LeftChild(current);
 		} else {
@@ -237252,7 +237253,7 @@ void sub_102eaaf0(int value)
 		}
 	}
 	unsigned short i = MyInsertAt(t, parent, leftchild);
-	CopyConstruct(&t.Element(i), value);
+	CopyConstruct(&t.Element(i), v);
 }
 // END FUNCTION
 
