@@ -67730,6 +67730,93 @@ CZeroedView *__fastcall sub_100eb440(CZeroedView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eb5a0 size=0x231
+#include "CUnknown100ecee0.h"
+#include "utlvector.h"
+#include <string.h>
+
+struct CDispositionDefault
+{
+	char m_szName[0x40];
+	int m_n40;
+	char m_szName44[0x40];
+	char m_szName84[0x40];
+	float m_fC4;
+	char m_szNameC8[0x40];
+	float m_f108;
+	int m_n10c;
+	float m_f110;
+	int m_n114;
+	int m_n118;
+	char m_sz11c[0x40];
+	char m_pad15c[0x21c - 0x15c];
+	int m_n21c;
+	float m_f220;
+	float m_f224;
+	float m_f228;
+	float m_f22c;
+	float m_f230;
+	float m_f234;
+	float m_f238;
+	float m_f23c;
+	int m_n240;
+	int m_n244;
+	int m_n248;
+	int m_n24c;
+	float m_f250;
+	float m_f254;
+	float m_f258;
+	float m_f25c;
+	float m_f260;
+};
+
+extern CDispositionDefault g_106eae40;
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+
+// TARGET: CUnknown100ecee0::sub_100eb5a0
+void CUnknown100ecee0::sub_100eb5a0(CTableEntry264_t *pSrc)
+{
+	if (pSrc) {
+		g_106eae40 = *(CDispositionDefault *)pSrc;
+		return;
+	}
+	{
+		CDispositionDefault &d = g_106eae40;
+		memset(&d, 0, sizeof(d));
+		Q_strncpy(d.m_szNameC8, "neutral", 0x40);
+		Q_strncpy(d.m_szName44, "Neutral", 0x40);
+		Q_strncpy(d.m_szName84, "Neutral", 0x40);
+		Q_strncpy(d.m_szName, "Default", 0x40);
+		Q_strncpy(d.m_sz11c, "Raised Both", 0x40);
+		d.m_n40 = 1;
+		d.m_n118 = 20;
+		d.m_n10c = 20;
+		d.m_fC4 = 1.0f;
+		d.m_f234 = 1.0f;
+		d.m_f238 = 5.0f;
+		d.m_f23c = 0.95f;
+		d.m_n114 = 10;
+		d.m_f110 = 10.0f;
+		d.m_f108 = 35.0f;
+		d.m_n21c = 1;
+		d.m_f220 = 0.2f;
+		d.m_f224 = 0.2f;
+		d.m_f228 = 0.1f;
+		d.m_f22c = 1.0f;
+		d.m_f230 = 1.0f;
+		memset(&d.m_n244, -1, 3 * sizeof(int));	// the three fidget points (m_n244, m_n248, m_n24c) = -1
+		d.m_f250 = 8.0f;
+		d.m_f254 = 16.0f;
+		d.m_n240 = 0;
+		d.m_f260 = 0.5f;
+		d.m_f258 = 0.5f;
+		d.m_f25c = 2.0f;
+	}
+	CUtlVector<CTableEntry264_t> *pVec = (CUtlVector<CTableEntry264_t> *)((char *)this + 8);
+	pVec->AddToTail(*(CTableEntry264_t *)&g_106eae40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb870 size=0x133
 #include "CUnknown10248a50.h"
 #include <string.h>
