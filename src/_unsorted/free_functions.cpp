@@ -30732,15 +30732,31 @@ bool sub_1007d5a0(EntryView *a, EntryView *b)
 
 class CChoreoEventV;
 struct CRBEntry24;
-static inline void *LdP(void *const *b, int i) { return b[i]; }
-static inline CRBEntry24 *LdS(CRBEntry24 *p) { return p; }
-static inline float LdF(float f) { return f; }
 
 struct CRBEntry24
 {
 	int pt;
 	CChoreoEventV *e;
 };
+
+template <>
+inline void CUtlRBTree<CRBEntry24, int>::FindInsertionPosition(CRBEntry24 const &insert, int &parent, bool &leftchild)
+{
+	// find where the node belongs
+	int current = m_Root;
+	parent = InvalidIndex();
+	leftchild = false;
+	while (current != InvalidIndex()) {
+		parent = current;
+		if (m_LessFunc(insert, m_Elements.m_pMemory[current].m_Data)) {
+			leftchild = true;
+			current = LeftChild(current);
+		} else {
+			leftchild = false;
+			current = RightChild(current);
+		}
+	}
+}
 
 void sub_1007f3d0(CRBEntry24 *dst, const CRBEntry24 *src);
 void sub_1007f510(CChoreoEventV **dst, CChoreoEventV *const *src);
