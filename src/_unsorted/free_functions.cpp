@@ -87757,9 +87757,9 @@ CHudTimer *CHudTimer::sub_1012d3d0()
 {
 	CHudTimerView *p = (CHudTimerView *)this;
 	((CPointEntity *)this)->sub_1009d980(0);
-	*(void *volatile *)&p->m_pVtable = &g_1044b584;
+	*(void **)&p->m_pVtable = &g_1044b584;
 	p->m_Output450.sub_100cd2a0();
-	*(void *volatile *)&p->m_pVtable = &g_1046358c;
+	*(void **)&p->m_pVtable = &g_1046358c;
 	p->m_n480 = p->m_n468;
 	p->m_b470 = 1;
 	p->m_b478 = 0;
