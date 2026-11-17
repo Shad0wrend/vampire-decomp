@@ -102797,27 +102797,27 @@ bool sub_101582a0(MapKeyResult *out, IMapEnt *pEnt, MapSrc *pSrc, int filter)
 {
 	bool found = false;
 	out->MapKeyResult::MapKeyResult();
-	IMapIter *it = pcd_stage(g_1072393c)->Begin(pSrc->m8);
+	IMapIter *it = (g_1072393c)->Begin(pSrc->m8);
 	while (!it->IsDone()) {
 		if (_strcmpi(pcd_stage(it->Name()), "solid") == 0) {
 			MapKeyResult tmp;
-			pcd_stage(it)->Get(pcd_stage(&tmp), g_107238e0);
-			if (0 <= (int)pcd_stage(filter) && tmp.key != filter)
+			(it)->Get((&tmp), g_107238e0);
+			if (0 <= (int)(filter) && tmp.key != filter)
 				continue;
 			*out = tmp;
 			found = true;
 			break;
 		}
-		pcd_stage(it)->Skip();
+		(it)->Skip();
 	}
 	g_1072393c->End(it);
 	if ((char)(int)it == -1) out->tail.ent = pEnt; else out->tail.ent = pEnt;
 	out->tail.flag = 1;
 	int tmpi;
-	const char *s = pcd_stage(*pcd_stage(pEnt)->GetName(pcd_stage(&tmpi)));
+	const char *s = (*(pEnt)->GetName((&tmpi)));
 	if (!s) s = g_106b8540;
-	out->tail.name = pcd_stage(s);
-	return pcd_stage(found);
+	out->tail.name = s;
+	return found;
 }
 // END FUNCTION
 
