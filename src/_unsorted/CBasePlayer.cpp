@@ -3370,14 +3370,25 @@ void CBasePlayer::vfunc380()
 #include "CEntityVSlots.h"
 #include "ehandle.h"
 #include "utlvector.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CDevFlagObj.h"
+#include "CUnknown10738960.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "AITrace.h"
+#include "DebugOverlay.h"
+#include "UTIL_Trace.h"
+#include <math.h>
+#include "ConVar.h"
 
 struct CFireEmitter484 { char m_pad[0x484]; int m_n484; };
 struct CUnknown100fbac0 { void sub_100fbac0(float a, float b); };
 struct CScareRec { float m_flTime; EHANDLE m_hEnt; int m_n8; int m_nValue; };
-struct CCvarView { virtual void v0(); virtual char vfunc1(); char m_pad[0x24]; float m_f28; int m_n2c; };
 extern CUnknown10739d08 g_10739d08;
-extern CCvarView *g_10725164;
-extern CCvarView *g_1072584c;
+extern ConVar g_10725160;
+extern ConVar g_10725848;
 extern float g_104454c4;
 const char *sub_101d3730(const char *fmt, ...);
 struct C10739d08V_10169960 : CUnknown10739d08
@@ -3396,38 +3407,104 @@ struct CBPView_10169960 : CBasePlayer
 	void sub_1017e980();
 	void sub_1017f600();
 	void sub_10169960();
+	CBaseEntity *GrappleTarget();
 };
 
 
-static int g_shift10169960 = 13;
 namespace block_10169960 {
-#pragma auto_inline(off)
-struct LEView : EHandleEntityList
+struct CEntView9c { char pad[0x9c]; CBaseEntity *m_p9c; };
+struct CFinderView { CBaseEntity *sub_10341c30(void *cb, float a, float cs, char c, float d, int mask); };
+}
+
+extern ConVar g_10937030;
+extern ConVar g_10725040;
+extern ConVar g_10725ae0;
+extern ConVar g_10725a00;
+extern float g_1044eb08;
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+void sub_10139b90(float *angles, float *matrix);
+void sub_101381b0(const float *in, const float *matrix, float *out);
+void sub_10143b70(const float *a, const float *b, const float *c, int d, int e, int f, int g, float h);
+void sub_10168e60();
+void sub_10144790(const Vector &a, const Vector &b, float c, float d, int e, int f, int g, int h, float i);
+namespace block_10169960 {
+struct GVPlayer : CBasePlayer
 {
-	unsigned int sub_100290c0(unsigned int *ph);
+	CBaseEntity *sub_101690b0();
 };
-unsigned int LEView::sub_100290c0(unsigned int *ph)
+CBaseEntity *GVPlayer::sub_101690b0()
 {
-	unsigned int h = *ph;
-	if (h == 0xffffffff)
-		return 0;
-	EHandleEntInfo *p = &m_EntPtrArray[h & 0x1fff];
-	if (p->m_SerialNumber == (int)(h >> g_shift10169960))
-		return (unsigned int)p->m_pEntity;
-	return 0;
+	if (((CFoo1005f190 *)&g_10937030)->sub_1005f190())
+		Msg("CBasePlayer::LookForGrappleVictim.....");
+	CBaseEntity *pVictim = 0;
+	CBasePlayer *pSelf = this;
+	CEntView9c *pCtl = (CEntView9c *)m_hControllerNPC1db0.Get();
+	if (pCtl && pCtl->m_p9c)
+		pSelf = (CBasePlayer *)pCtl->m_p9c;
+	Vector eye = pSelf->vfunc193();
+	Vector off;
+	Vector end;
+	{
+		off.x = 32.0f;
+		off.y = 0.0f;
+		off.z = -32.0f;
+		float matrix[12];
+		sub_10139b90(pSelf->vfunc219(), matrix);
+		sub_101381b0(&off.x, matrix, &end.x);
+		VectorAdd(end, eye, end);
+		Vector hull[2];
+		hull[1].Init(8.0f, 8.0f, 8.0f);
+		hull[0].Init(-8.0f, -8.0f, -8.0f);
+		CGameTrace tr;
+		UTIL_TraceHull_DebugCall(eye, end, hull[0], hull[1], 0x201400b, this, 0, &tr, 1, 0);
+		if (tr.m_fraction < 1.0f && tr.m_pEnt)
+			pVictim = ((CEntView9c *)tr.m_pEnt)->m_p9c;
+	}
+	if (g_10937030.GetBool()) {
+		Vector box[2];
+		box[0].Init(2.0f, 2.0f, 2.0f);
+		box[1].Init(-2.0f, -2.0f, -2.0f);
+		sub_10143b70(&eye.x, &box[1].x, &box[0].x, 0, 0xff, 0xff, 1, 5.0f);
+		box[0].Init(2.0f, 2.0f, 2.0f);
+		box[1].Init(-2.0f, -2.0f, -2.0f);
+		sub_10143b70(&end.x, &box[1].x, &box[0].x, 0xff, 0, 0xff, 1, 5.0f);
+		if (pVictim) {
+			Msg("succeeded! (%s)\n", ((CBasePlayer *)pVictim)->sub_100ab4f0());
+			sub_10142e90(&eye, &end, 0, 0xff, 0, 1, 5.0f);
+		} else {
+			Msg("failed.  =( \n");
+			sub_10142e90(&eye, &end, 0xff, 0, 0, 1, 5.0f);
+		}
+	}
+	if (!pVictim) {
+		float flFov = g_10725040.GetFloat();
+		double dHalf = flFov * 0.5;
+		float flCos = cos(dHalf * g_1044eb08);
+		float flDist = g_10725ae0.GetFloat();
+		CBaseEntity *pFound = ((CFinderView *)this)->sub_10341c30((void *)sub_10168e60, flDist, flCos, 0, 0, 0x600400b);
+		if (g_10725a00.GetBool()) {
+			flDist = g_10725ae0.GetFloat();
+			float flHalf = g_10725040.GetFloat();
+			sub_10144790(vfunc193(), vfunc369(), flHalf * 0.5f, flDist, 0, 0x80, 0x80, 0x80, 5.0f);
+		}
+		return pFound;
+	}
+	return pVictim;
 }
-#pragma auto_inline(on)
 }
-#define LE(L, x) ((CBaseEntity *)((block_10169960::LEView *)(L))->sub_100290c0((unsigned int *)(x)))
+#define HGET(x) ((CBaseEntity *)((const CBaseHandle *)(x))->Get())
 
 #define SCARE (*(CUtlVector<CScareRec> *)((char *)this + 0x1d90))
 
-static inline bool Expired10169960(const CScareRec &r) { return (g_1072584c->vfunc1() ? g_104454c4 : g_1072584c->m_f28) + r.m_flTime < gpGlobals->curtime; }
+static inline CBaseEntity *ToNPC10169960(CBaseEntity *p) { return !p ? 0 : (CBaseEntity *)p->m_pNPC98; }
+static inline bool IsNPC10169960(CBaseEntity *p) { return p->m_pNPC98 != 0; }
+inline CBaseEntity *CBPView_10169960::GrappleTarget() { return m_n153C != -1 ? HGET(&m_h1538) : 0; }
+static inline bool Expired10169960(const CScareRec &r) { return g_10725848.GetFloat() + r.m_flTime < gpGlobals->curtime; }
 void CBPView_10169960::sub_10169960()
 {
 	EngineGlobals::CGlobalVars *pGlobals = gpGlobals;
 	if (m_b1475 || pGlobals->curtime - F1498() < 1.0) {
-		if (LE(EHandleDetail::g_10566458, &m_h1538) && m_n153C != -1 && m_n1540 == 8) {
+		if (HGET(&m_h1538) && m_n153C != -1 && m_n1540 == 8) {
 			if (m_n208C & 0x400f9b) {
 				m_f1478 -= G39D08->sub_101e8bd0();
 				pGlobals = gpGlobals;
@@ -3439,9 +3516,9 @@ void CBPView_10169960::sub_10169960()
 				sub_10175400(0);
 				sf31();
 			} else if (pGlobals->curtime >= m_f147C) {
-				m_f147C += (G39D08->sub_101e8b70() + 0.0f);
-				CBaseEntity *pB = m_n153C != -1 ? LE(EHandleDetail::g_10566458, &m_h1538) : 0;
-				CBaseEntity *pA = m_n153C != -1 ? LE(EHandleDetail::g_10566458, &m_h1538) : 0;
+				m_f147C += (G39D08->sub_101e8b70());
+				CBaseEntity *pB = GrappleTarget();
+				CBaseEntity *pA = GrappleTarget();
 				CUnknown101c26d0 info;
 				info.sub_101c26d0(pA, pB, (float)G39D08->sub_101e8b90(), 0x10000000, 0, 0, -1);
 				((CBaseEntity *)this)->sub_100a1250(&info);
@@ -3456,10 +3533,9 @@ void CBPView_10169960::sub_10169960()
 	sub_1017e980();
 	sub_1017ec40();
 	sub_1017f600();
-	EHandleEntityList *pList = EHandleDetail::g_10566458;
 	float f = 0.0f;
 	for (int i = 0; i < 18; i++) {
-		if (((CGlobalEntityList *)pList)->sub_100290c0(&HList0FF8()[i]) && ((CFireEmitter484 *)((CGlobalEntityList *)pList)->sub_100290c0(&HList0FF8()[i]))->m_n484)
+		if (HGET(&HList0FF8()[i]) && ((CFireEmitter484 *)HGET(&HList0FF8()[i]))->m_n484)
 			f += 1.0f;
 	}
 	if (f > g_104454c4) {
@@ -3469,14 +3545,14 @@ void CBPView_10169960::sub_10169960()
 		}
 	} else {
 		unsigned int *p = (unsigned int *)&H1D64();
-		if (((CGlobalEntityList *)pList)->sub_100290c0(p) && ((CFireEmitter484 *)((CGlobalEntityList *)pList)->sub_100290c0(p))->m_n484) {
-			((CUnknown100fbac0 *)pList->LookupEntity(*(CBaseHandle *)p))->sub_100fbac0(0, 0.5f);
+		if (HGET(p) && ((CFireEmitter484 *)HGET(p))->m_n484) {
+			((CUnknown100fbac0 *)HGET(p))->sub_100fbac0(0, 0.5f);
 			H1D64().Get()->sub_100fbbb0(0.6f);
 		}
 	}
 	int cnt = SCARE.Count();
 	if (cnt != 0) {
-		int limit = g_10725164->vfunc1() ? 0 : g_10725164->m_n2c;
+		int limit = g_10725160.GetInt();
 		if (cnt > limit) {
 			int best = 0;
 			for (int i = 0; i < cnt; i++) {
@@ -3486,14 +3562,14 @@ void CBPView_10169960::sub_10169960()
 			}
 			CBaseEntity *pEnt = SCARE[best].m_hEnt.Get();
 			const char *name;
-			if (pEnt && pEnt->m_pNPC98) {
+			if (pEnt && IsNPC10169960(pEnt)) {
 				CBaseEntity *p2 = SCARE[best].m_hEnt.Get();
-				name = (!p2 ? (CBaseEntity *)0 : (CBaseEntity *)p2->m_pNPC98)->sub_100ab4f0();
+				name = ToNPC10169960(p2)->sub_100ab4f0();
 			} else
 				name = "UNKNOWN";
 			sub_1017df50(SCARE[best].m_nValue, -1.0f, sub_101d3730("SupernaturalScare %s", name));
 			CBaseEntity *p3 = SCARE[best].m_hEnt.Get();
-			CBaseEntity *pOther = !p3 ? 0 : (CBaseEntity *)p3->m_pNPC98;
+			CBaseEntity *pOther = ToNPC10169960(p3);
 			sub_1017f4a0(SCARE[best].m_nValue, pOther, ((CEntityVSlots *)this)->slot217());
 			SCARE.Purge();
 		} else {
