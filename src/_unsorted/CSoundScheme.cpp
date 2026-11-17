@@ -180,7 +180,6 @@ void CSoundScheme::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x1022b690 size=0x3ac
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
 #include "CUnknown101e56e0.h"
