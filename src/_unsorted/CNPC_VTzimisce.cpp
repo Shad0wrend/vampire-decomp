@@ -1176,7 +1176,11 @@ void sub_101434b0(int, int, const char *, int, int, int, int, int);
 
 namespace block_103c08d0 {
 	struct CUnitU : CUnknown10381be0 { bool sub_103be130(); };
-	bool CUnitU::sub_103be130() { return (m_flags14b8 >> 5) & 1; }
+	bool CUnitU::sub_103be130()
+	{
+		bool r = (m_flags14b8 >> 5) & 1;
+		return r;
+	}
 }
 using namespace block_103c08d0;
 
