@@ -215,25 +215,72 @@ void CWeaponGravityGun::vfunc326()
 #include "IPhysicsEnvironment.h"
 #include "globalvars.h"
 #include "CEHandleGet.h"
-
-static int g_shift1014e180 = 13;
-namespace block_1014e180 {
-#pragma auto_inline(off)
-struct LEView : EHandleEntityList
+#include "CGravControllerPoint.h"
+#include "CEntityVSlots.h"
+struct GGStats
 {
-	unsigned int sub_100290c0(unsigned int *ph);
+	float sub_101e86e0(void *pChar);
+	float sub_101e8640(void *pChar);
 };
-unsigned int LEView::sub_100290c0(unsigned int *ph)
+extern GGStats g_10739d08;
+extern IPhysicsEnvironment *g_10723940;
+extern int g_1057b7bc;
+CBaseEntity *__fastcall sub_1032e7b0(CBaseEntity *p);
+void sub_10158c00(int a, int b);
+namespace block_1014e180 {
+#define WV1(n) virtual void w##n();
+#define WV10(p) WV1(p##0) WV1(p##1) WV1(p##2) WV1(p##3) WV1(p##4) WV1(p##5) WV1(p##6) WV1(p##7) WV1(p##8) WV1(p##9)
+struct CWeaponView278 {
+	WV10(0) WV10(1) WV10(2) WV10(3) WV10(4) WV10(5) WV10(6) WV10(7) WV10(8) WV10(9)
+	WV10(10) WV10(11) WV10(12) WV10(13) WV10(14) WV10(15) WV10(16) WV10(17) WV10(18) WV10(19)
+	WV10(20) WV10(21) WV10(22) WV10(23) WV10(24) WV10(25) WV10(26)
+	WV1(270) WV1(271) WV1(272) WV1(273) WV1(274) WV1(275) WV1(276) WV1(277)
+	virtual float slot278();
+};
+struct CMotionCtlView {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2(IPhysicsObject *pObject);
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(int n);
+};
+struct GGCtl : CGravControllerPoint
 {
-	unsigned int h = *ph;
-	if (h == 0xffffffff)
-		return 0;
-	EHandleEntInfo *p = &m_EntPtrArray[h & 0x1fff];
-	if (p->m_SerialNumber == (int)(h >> g_shift1014e180))
-		return (unsigned int)p->m_pEntity;
-	return 0;
+	void SetTargetPosition(const Vector &target)
+	{
+		m_vec10 = target;
+		if (m_hAttached78 == 0)
+			m_vec1c = target;
+		m_fl8c = gpGlobals->frametime;
+	}
+	void sub_101487a0(CBaseEntity *pEntity, IPhysicsObject *pObject, const Vector *pCenter, CBaseEntity *pOwner);
+};
+void GGCtl::sub_101487a0(CBaseEntity *pEntity, IPhysicsObject *pObject, const Vector *pCenter, CBaseEntity *pOwner)
+{
+	m_hAttached78 = pEntity;
+	m_hOther7c = pOwner;
+	pObject->vfunc27(&m_vec04, pCenter);
+	m_vec1c = *pCenter;
+	pObject->vfunc18(0, &m_vec5c);
+	float flVel = (float)g_1057b7bc;
+	pObject->vfunc17(0, (const Vector *)&flVel);
+	m_n74 = 0;
+	m_pController90 = ::g_10723940->vfunc39(this);
+	((CMotionCtlView *)m_pController90)->v2(pObject);
+	((CMotionCtlView *)m_pController90)->v8(2);
+	SetTargetPosition(*pCenter);
+	g_10739d08.sub_101e8640(pOwner);
+	m_vec5c.z = ((CWeaponView278 *)sub_1032e7b0(pOwner))->slot278();
+	m_vec80 = *(Vector *)((CEntityVSlots *)pEntity)->slot219();
+	float flMul = g_10739d08.sub_101e86e0(pOwner);
+	{
+		Vector tmp;
+		Vector *pv = pObject->vfunc15(&tmp);
+		m_vec68 = *pv * flMul;
+	}
+	int nObjA = m_hAttached78.Get()->m_obj36c;
+	sub_10158c00(m_hOther7c.Get()->m_obj36c, nObjA);
 }
-#pragma auto_inline(on)
 }
 struct CGunConstraint { virtual void v0(); virtual void v1(); virtual void v2(); virtual void SetGameData(void *pData); };
 struct CGravityPelletV
@@ -243,14 +290,13 @@ struct CGravityPelletV
 	char m_pad1a3[0x730 - 0x1a3];
 	CGunConstraint *m_pConstraint;
 	bool m_isInert;
-	CBaseEntity *GetMoveParent() { return (CBaseEntity *)((block_1014e180::LEView *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)&((CBaseEntity *)this)->m_hMoveParent); }
+	CBaseEntity *GetMoveParent() { return ((EHANDLE *)&((CBaseEntity *)this)->m_hMoveParent)->Get(); }
 	void SetRenderColor(unsigned char r, unsigned char g, unsigned char b) { m_r1a0 = r; m_g1a1 = g; m_b1a2 = b; }
 	void MakeInert() { SetRenderColor(64, 64, 128); m_isInert = true; }
 	bool MakeConstraint(CBaseEntity *pObject);
 };
 struct CWeaponGravityGunUnit : CWeaponGravityGun { void sub_1014c110(); };
 extern void *g_10723938;
-extern IPhysicsEnvironment *g_10723940;
 void sub_1014e3f0(void *pRef, void *pAtt, matrix3x4_t *pXform);
 
 inline bool CGravityPelletV::MakeConstraint(CBaseEntity *pObject)
