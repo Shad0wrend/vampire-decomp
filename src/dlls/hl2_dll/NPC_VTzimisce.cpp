@@ -210,6 +210,153 @@ void CNPC_VTzimisce::vfunc442(CTzimisceTaskArg *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bb1e0 size=0x4ae
+#include "CAI_Motor.h"
+#include "CBaseEntity.h"
+#include "CNPC_VTzimisce.h"
+#include "CUnknown102e0a60.h"
+#include "Vector.h"
+struct CTzTaskView1 { void sub_10273e80(int a); };
+#define S10(n) virtual void n##0(); virtual void n##1(); virtual void n##2(); virtual void n##3(); virtual void n##4(); virtual void n##5(); virtual void n##6(); virtual void n##7(); virtual void n##8(); virtual void n##9();
+#define S100(n) S10(n##0) S10(n##1) S10(n##2) S10(n##3) S10(n##4) S10(n##5) S10(n##6) S10(n##7) S10(n##8) S10(n##9)
+struct CTzSlot572
+{
+	S100(a) S100(b) S100(c) S100(d) S100(e) S10(f0) S10(f1) S10(f2) S10(f3) S10(f4) S10(f5) S10(f6)
+	virtual void g0(); virtual void g1();
+	virtual void vfunc572();
+};
+struct CTzV : CNPC_VTzimisce
+{
+	void sub_103bb1e0(CTzimisceTaskArg *pTask);
+	void sub_103bf560();
+	void sub_102aacf0(CTzimisceTaskArg *pTask);
+};
+#define TzFace(p) if (!((p)->m_flags5d8c & 0x2000)) ((CTzSlot572 *)(p))->vfunc572();
+// TARGET: CTzV::sub_103bb1e0
+void CTzV::sub_103bb1e0(CTzimisceTaskArg *pTask)
+{
+	int n;
+	int m;
+	Vector vec;
+	CBaseEntity *pEnemy;
+	switch (pTask->m_nId) {
+	case 0xa7:
+		vfunc541()->sub_102dfed0(&vec, (CBaseEntity *)vfunc167());
+		((CAI_Motor *)m_pMotor5d44)->sub_102e20b0(&vec.x, -1.0f);
+		TzFace(this);
+		break;
+	case 0x89:
+	case 0x8a:
+		sub_10280a50();
+		vfunc541()->sub_102dfed0(&vec, (CBaseEntity *)vfunc167());
+		((CAI_Motor *)m_pMotor5d44)->sub_102e20b0(&vec.x, -2.0f);
+		if (vfunc251() || gpGlobals->curtime - m_f5d9c > pTask->m_flArg)
+			sub_10273e80(0);
+		break;
+	case 0x8b:
+	case 0x8e:
+		sub_10280a50();
+		if (vfunc251()) {
+			((CTzTaskView1 *)this)->sub_10273e80(0);
+			return;
+		}
+		break;
+	case 0xbf:
+	case 0xc0:
+		sub_103bf560();
+		if (vfunc251()) {
+			((CUnknown102e0a60 *)m_pMotor5d44)->sub_102e0a60(0x43340000);
+			sub_10273e80(0);
+		}
+		break;
+	case 0xc1:
+		if (vfunc251())
+			((CTzTaskView1 *)this)->sub_10273e80(0);
+		break;
+	case 200:
+		TzFace(this);
+		((CAI_Motor *)m_pMotor5d44)->sub_102e1e20(-1);
+		if (sub_10278c80())
+			sub_10273e80(0);
+		break;
+	case 0xc9:
+		pEnemy = (CBaseEntity *)vfunc167();
+		vfunc541()->sub_102dfed0(&vec, pEnemy);
+		TzFace(this);
+		((CAI_Motor *)m_pMotor5d44)->sub_102e20b0(&vec.x, -1.0f);
+		if (sub_103be8e0(pEnemy)) {
+			if (sub_10269aa0(0x1b) || gpGlobals->curtime >= m_flTaskFailTimer)
+				sub_10273e80(0);
+		}
+		break;
+	case 0xca:
+		pEnemy = vfunc168();
+		vfunc541()->sub_102dfed0(&vec, pEnemy);
+		TzFace(this);
+		((CAI_Motor *)m_pMotor5d44)->sub_102e20b0(&vec.x, -1.0f);
+		if (sub_103be8e0(pEnemy))
+			sub_10273e80(0);
+		break;
+	case 0xcb:
+		sub_10280a50();
+		if (vfunc251())
+			((CTzTaskView1 *)this)->sub_10273e80(0);
+		break;
+	case 0xcc:
+		sub_10280a50();
+		vfunc541()->sub_102dfed0(&vec, (CBaseEntity *)vfunc167());
+		((CAI_Motor *)m_pMotor5d44)->sub_102e20b0(&vec.x, -2.0f);
+		if (vfunc251()) {
+			n = vfunc375(0x103);
+			n = vfunc381(n);
+			m = vfunc376(n);
+			if (m_nActivityfec == m)
+				sub_10273e80(0);
+		}
+		break;
+	case 0xcd:
+		sub_10280a50();
+		if (vfunc251()) {
+			n = vfunc375(0x104);
+			n = vfunc381(n);
+			m = vfunc376(n);
+			if (m_nActivityfec == m)
+				sub_10273e80(0);
+		}
+		break;
+	case 0xce:
+		sub_10280a50();
+		if (vfunc251()) {
+			n = vfunc375(0x105);
+			n = vfunc381(n);
+			m = vfunc376(n);
+			if (m_nActivityfec == m)
+				sub_10273e80(0);
+		}
+		break;
+	case 0xd2:
+		if (!sub_103bfc20(m_p5ddc, vfunc168())) {
+			m_psz1b44 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VTzimisce.cpp";
+			m_n1b48 = 0x911;
+			vfunc448(0x1a);
+		}
+		sub_10280a50();
+		n = vfunc375((int)pTask->m_flArg);
+		n = vfunc381(n);
+		m = vfunc376(n);
+		if (vfunc251() && m_nActivityfec == m) {
+			sub_10273e80(0);
+			return;
+		}
+		sub_10272650((int)pTask->m_flArg);
+		return;
+	default:
+		sub_102aacf0(pTask);
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bb7c0 size=0xa7c
 #include "CBaseEntity.h"
 #include "CNPC_VTzimisce.h"
