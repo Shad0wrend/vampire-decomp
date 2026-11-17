@@ -56831,7 +56831,6 @@ void __stdcall sub_100ce990(const char *pszFunction, int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x100cebb0 size=0x3cc
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CEventQueue.h"
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
