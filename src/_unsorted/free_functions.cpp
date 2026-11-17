@@ -237709,7 +237709,6 @@ char CAI_MoveProbe::sub_102e7270(const float *pPos, unsigned int collisionMask, 
 #include "CUnknown10202b10.h"
 #include "CUnknown10206400.h"
 #include "CUnknown1073dc28.h"
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CAI_MoveProbe.h"
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
@@ -237808,7 +237807,7 @@ char CAI_MoveProbe::sub_102e7880(const float *vecStart, unsigned int collisionMa
 	Vector vecMins = *(Vector *)((CCollisionProperty *)((char *)((CBaseEntity *)m_pOuter) + 0x270))->vfunc1();
 	CCollisionProperty *pCol;
 	const float *pY = (pCol = (CCollisionProperty *)((char *)((CBaseEntity *)m_pOuter) + 0x270), (CCollisionProperty *)((char *)((CBaseEntity *)m_pOuter) + 0x270))->vfunc2();
-	const float *pX = (pcd_stage((CCollisionProperty *)((char *)((CBaseEntity *)m_pOuter) + 0x270)))->vfunc2();
+	const float *pX = (((CCollisionProperty *)((char *)((CBaseEntity *)m_pOuter) + 0x270)))->vfunc2();
 	const float *pZ = pCol->vfunc1();
 	float flZ; flZ = pZ[2];
 	Vector vecMaxs(pX[0], pY[1], flZ);
@@ -237816,11 +237815,11 @@ char CAI_MoveProbe::sub_102e7880(const float *vecStart, unsigned int collisionMa
 	Vector vecUp(vecStart[0], vecStart[1], flUp + vecStart[2]);
 	CGameTrace trace;
 	{
-		Vector vecDown(vecStart[0], pcd_stage(vecStart[1]), flDown + vecStart[2]);
+		Vector vecDown(vecStart[0], (vecStart[1]), flDown + vecStart[2]);
 
-		(pcd_stage((CAI_MoveProbeUnit *)this))->TraceHull(vecUp, vecDown, vecMins, vecMaxs, collisionMask, &trace);
+		(((CAI_MoveProbeUnit *)this))->TraceHull(vecUp, vecDown, vecMins, vecMaxs, collisionMask, &trace);
 
-		if ( pcd_stage(trace.m_startsolid) )
+		if ( trace.m_startsolid )
 		{
 			vecUp.z = vecStart[2];
 			((CAI_MoveProbeUnit *)this)->TraceHull(vecUp, vecDown, vecMins, vecMaxs, collisionMask, &trace);
