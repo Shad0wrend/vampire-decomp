@@ -237199,9 +237199,8 @@ struct HullRay : Ray_t
 		m_n34 = 0;
 	}
 };
-void sub_1026e940(const Vector *pStart, const Vector *pEnd, const Vector *pMin, const Vector *pMax, unsigned mask, void *filter, void *ptr, char bTraceOffset)
+void sub_1026e940(const Vector &vecStart, const Vector &vecEnd, const Vector &hullMin, const Vector &hullMax, unsigned mask, void *filter, HullTrace102e6290 *ptr, char bTraceOffset)
 {
-	const Vector &vecStart = *pStart; const Vector &vecEnd = *pEnd; const Vector &hullMin = *pMin; const Vector &hullMax = *pMax;
 	ScopeTrace trace("UTIL_TraceHull", g_106b8540, g_106b8540);
 	HullRay ray;
 	ray.InitHull(vecStart, vecEnd, hullMin, hullMax);
@@ -237211,7 +237210,7 @@ void sub_1026e940(const Vector *pStart, const Vector *pEnd, const Vector *pMin, 
 		if (f > 1e-6)
 			ray.m_b33 = 1;
 	}
-	g_1070b254->TraceRay(ray, mask, filter, (HullTrace102e6290 *)ptr);
+	g_1070b254->TraceRay(ray, mask, filter, ptr);
 	if (!g_10738964->v1() && g_10738964->m2c)
 		sub_10146570(ptr, (char *)ptr + 0xc, 0xff, 0xff, 0, 1, -1.0f);
 }
@@ -237311,7 +237310,7 @@ struct CAI_MoveProbeJump : public CAI_MoveProbe
 		(g_109f3648->*g_109f3660)("CAI_MoveProbe_TraceHull", 0, "Unaccounted", false);
 		CTraceFilterNav filter;
 		filter.sub_102e30d0((int)GetOuter(), GetOuter()->m_CollisionGroup);
-		sub_1026e940(&vecStart, &vecEnd, &hullMin, &hullMax, mask, &filter, pResult, 1);
+		sub_1026e940(vecStart, vecEnd, hullMin, hullMax, mask, &filter, (HullTrace102e6290 *)pResult, 1);
 		(g_109f3648->*g_109f365c)();
 	}
 };
@@ -237329,7 +237328,6 @@ void CAI_MoveProbe::sub_102e6290(const float *pStart, const float *pEnd, unsigne
 	if (!self->sub_102e7e60(vecStart, vecEnd, vecEnd))
 		{ pMoveTrace->fStatus = -4; pMoveTrace->m_fields.f24 = flDist; return; }
 
-	{
 	Vector vecFrom;
 	sub_102e7ba0(&vecStart.x, collisionMask, &vecFrom.x);
 
@@ -237452,12 +237450,6 @@ void CAI_MoveProbe::sub_102e6290(const float *pStart, const float *pEnd, unsigne
 		pMoveTrace->fStatus = fStatus;
 		pMoveTrace->m_fields.f24 = flDistObstructed;
 	}
-	return;
-	}
-
-illegal:
-	pMoveTrace->fStatus = -4;
-	pMoveTrace->m_fields.f24 = flDist;
 }
 // END FUNCTION
 
