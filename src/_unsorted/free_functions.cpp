@@ -300848,11 +300848,18 @@ bool CNPC_VWerewolf::sub_103d2810(void *pHint)
 #include "CAIHintSlots.h"
 #include "CEHandleGet.h"
 #include "CGlobalEntityList.h"
+#include "CAI_Node.h"
+#include <stddef.h>
 
 #undef sub_103d2a10
 #undef sub_103d0db0
 
 extern Vector g_1070d1b0;
+
+// ai_node.h CAI_Node::GetZone() (m_zone at +0x94).
+struct CAI_NodeV : CAI_Node { int GetZone() const { return m_n94; } };
+// ai_hint.h CAI_Hint::HintType().
+struct CAI_HintV : CAI_Hint { int HintType() const { return m_n5dc; } };
 
 inline bool operator==(const CNPC_VWerewolfVec3 &a, const CNPC_VWerewolfVec3 &b) { return b.x == a.x && b.y == a.y && b.z == a.z; }
 
@@ -300913,7 +300920,7 @@ bool CNPC_VWerewolf::sub_103d2a10()
 				m_n66b8 = (int)pCur;
 				return sub_103d1d60("FindMoveHint", false);
 			}
-			int nType = pCur->m_n5dc;
+			int nType = ((CAI_HintV *)pCur)->HintType();
 			sub_103d6390(pCur);
 			CNPC_VWerewolfVec3 t1;
 			CNPC_VWerewolfVec3 t2;
@@ -300922,9 +300929,9 @@ bool CNPC_VWerewolf::sub_103d2a10()
 			Vector vd; VectorSubtract(vecOrigin, vecHint, vd); float dist = vd.Length();
 			if (dist < flBest || nType == 0x3aa5)
 			{
-				if (vecUnreachable.Find(*(CNPC_VWerewolfVec3 *)&vecEnd) == -1)
+				if (vecUnreachable.Find(*(CNPC_VWerewolfVec3 *)&vecEnd) == vecUnreachable.InvalidIndex())
 				{
-					if (vecReachable.Find(*(CNPC_VWerewolfVec3 *)&vecEnd) == -1)
+					if (vecReachable.Find(*(CNPC_VWerewolfVec3 *)&vecEnd) == vecReachable.InvalidIndex())
 					{
 						nTried++;
 						if (!sub_103d0db0(*(CNPC_VWerewolfVec3 *)&vecEnd, *(CNPC_VWerewolfVec3 *)&vecRef))
@@ -300943,13 +300950,12 @@ add:
 			vecUnreachable.AddToTail(*(CNPC_VWerewolfVec3 *)&vecEnd);
 		}
 next:
-		if (0) VectorClear(vecHint);
 		pCur = pCur->m_pNext;
 		if (!pCur && m_n66b8)
 		{
-			void *pNode = sub_103d0ad0();
-			if (pNode)
-				m_n6708 = *(int *)((char *)pNode + 0x94);
+			CAI_Node *pNode = (CAI_Node *)sub_103d0ad0();
+			if (pNode != NULL)
+				m_n6708 = ((CAI_NodeV *)pNode)->GetZone();
 			pCur = g_10925450;
 		}
 	} while (pCur != (CAI_Hint *)m_n66b8);
