@@ -109,7 +109,7 @@ CAuspexAura *CAuspexAura::vfunc5(unsigned int flags)
 	*(int **)this = vt_1044bf04;
 	{
 		ScopeTrace trace("CAuspexAura::~CAuspexAura", g_106b8540);
-		volatile unsigned int *pOwner = (volatile unsigned int *)((char *)this + 0x254);
+		volatile unsigned int *pOwner = (unsigned int *)((char *)this + 0x254);
 		if (Resolve(*pOwner) != 0)
 		{
 			char *pPlayer = *(char **)(Resolve(*pOwner) + 0x9c);
