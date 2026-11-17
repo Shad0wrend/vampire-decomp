@@ -116782,7 +116782,7 @@ void sub_1018c600()
 	if (g_1072ada4.m_size > 0) {
 		do {
 			int *pMem = g_1072ada4.m_pMemory;
-			volatile unsigned int *p = (volatile unsigned int *)&pMem[i];
+			volatile unsigned int *p = (unsigned int *)&pMem[i];
 			if (!IsLive(*p)) {
 				int toMove = g_1072ada4.m_size - i - 1;
 				if (toMove > 0)
