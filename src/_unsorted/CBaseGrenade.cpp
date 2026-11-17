@@ -432,23 +432,12 @@ struct Grenade_trace_t : public CGameTrace
 	~Grenade_trace_t() {}
 };
 
-inline void Grenade_TraceLine(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
-	int collisionGroup, CGameTrace *ptr)
-{
-	Ray_t ray;
-	ray.Init(vecAbsStart, vecAbsEnd);
-	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
-	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
-	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
-		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
-}
-
 void CBaseGrenade::vfunc407()
 {
 	Grenade_trace_t tr;
 	Vector vecSpot;
 	vecSpot = *(Vector *)vfunc220() + Vector(0, 0, 8);
-	Grenade_TraceLine(vecSpot, vecSpot - Vector(0, 0, 40), 0x400b, this, 0, &tr);
+	UTIL_TraceLine_RayCall(vecSpot, vecSpot - Vector(0, 0, 40), 0x400b, this, 0, &tr);
 	vfunc406(&tr, 0x40);
 	if (vfunc409() != 0.0f)
 		sub_101cdba0(vfunc220(), vfunc409(), 150.0f, 1.0f, vfunc410(), 0, 0);
