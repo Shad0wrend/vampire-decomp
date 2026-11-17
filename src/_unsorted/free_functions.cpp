@@ -106259,6 +106259,7 @@ void CBasePlayer::sub_10167e00()
 // END FUNCTION
 
 // FUNCTION: 0x10167fd0 size=0x16a
+#include "CNPC_VTzimisce.h"
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CBaseCombatWeapon.h"
@@ -106278,7 +106279,7 @@ struct CUseEntX {
 struct CPlayerUnit : CBasePlayer {
     CUseEntX *GetUse()
     {
-        unsigned int h = *(volatile unsigned int *)((char *)this + 0x1040);
+        unsigned int h = *(unsigned int *)((char *)this + 0x1040);
         return (CUseEntX *)EHandle_Get(h);
     }
     void sub_10167fd0();
