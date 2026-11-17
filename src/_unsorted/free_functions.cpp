@@ -11759,6 +11759,8 @@ void CUnknown10044c20::sub_10044c20(const Vector *pA, const Vector *pB, unsigned
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUtlMap16Pair { unsigned int m_key; unsigned int m_elem; };
 #include "CUtlMap16.h"
 
 extern void *g_109f0b6c;
@@ -11783,7 +11785,7 @@ struct CMapPair
 void CUtlMap16::sub_10044db0(unsigned int key, unsigned int elem)
 {
 	CUtlRBTree16Unit *tree = (CUtlRBTree16Unit *)&m_Tree;
-	const CUtlRBTree16At<0x106bdb44> *links = (const CUtlRBTree16At<0x106bdb44> *)tree;
+	const CUtlRBTree16Of<CUtlMap16Pair> *links = (const CUtlRBTree16Of<CUtlMap16Pair> *)tree;
 	CMapPair insert;
 	insert.m_key = key;
 	insert.m_elem = elem;
@@ -11829,6 +11831,8 @@ void CUtlMap16::sub_10044db0(unsigned int key, unsigned int elem)
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CRBTree16Entry8B { char m_Data[8]; };
 #include "CUtlMap16.h"
 
 extern void *g_109f0b64;
@@ -11853,7 +11857,7 @@ struct CMapPair
 void CUtlMap16::sub_10044f60(unsigned int key, unsigned int elem)
 {
 	CUtlRBTree16Unit *tree = (CUtlRBTree16Unit *)((char *)this + 0x5c);
-	const CUtlRBTree16At<0x106bdb50> *links = (const CUtlRBTree16At<0x106bdb50> *)tree;
+	const CUtlRBTree16Of<CRBTree16Entry8B> *links = (const CUtlRBTree16Of<CRBTree16Entry8B> *)tree;
 	CMapPair insert;
 	insert.m_key = key;
 	insert.m_elem = elem;
@@ -12449,11 +12453,13 @@ S100464f0 *S100464f0::sub_100464f0(int c, int count, int a)
 
 // FUNCTION: 0x10046570 size=0x108
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUtlMap16Pair { unsigned int m_key; unsigned int m_elem; };
 #include "CUtlRBTreeFind16.h"
 
 unsigned short CUtlRBTreeFind16::sub_10046570(const void *search)
 {
-	const CUtlRBTree16At<0x106bdb44> *tree = (const CUtlRBTree16At<0x106bdb44> *)this;
+	const CUtlRBTree16Of<CUtlMap16Pair> *tree = (const CUtlRBTree16Of<CUtlMap16Pair> *)this;
 	unsigned short current = m_Root;
 	while (current != InvalidIndex()) {
 		if (m_LessFunc(search, m_pElements[current].m_Data))
@@ -12495,11 +12501,13 @@ S100466d0 *S100466d0::sub_100466d0(int c, int count, int a)
 
 // FUNCTION: 0x10046750 size=0x108
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CRBTree16Entry8B { char m_Data[8]; };
 #include "CUtlRBTreeFind16.h"
 
 unsigned short CUtlRBTreeFind16::sub_10046750(const void *search)
 {
-	const CUtlRBTree16At<0x106bdb50> *tree = (const CUtlRBTree16At<0x106bdb50> *)this;
+	const CUtlRBTree16Of<CRBTree16Entry8B> *tree = (const CUtlRBTree16Of<CRBTree16Entry8B> *)this;
 	unsigned short current = m_Root;
 	while (current != InvalidIndex()) {
 		if (m_LessFunc(search, m_pElements[current].m_Data))
@@ -12851,9 +12859,11 @@ bool CUtlRBTree16::sub_100483f0(unsigned short i) const
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUtlMap16Pair { unsigned int m_key; unsigned int m_elem; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb44>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CUtlMap16Pair>
 {
     void sub_100484e0(unsigned short i, unsigned short parent, bool isLeft);
     void sub_1004bd40(unsigned short i);
@@ -12963,9 +12973,11 @@ void CUtlRBTree16Unit::sub_100484e0(unsigned short i, unsigned short parent, boo
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUtlMap16Pair { unsigned int m_key; unsigned int m_elem; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb44>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CUtlMap16Pair>
 {
     const Links_t *sub_10048960(unsigned short i) const;
 };
@@ -13097,9 +13109,11 @@ void CUtlRBTree16Unit::sub_10048e30(unsigned short i, unsigned short parent, boo
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CRBTree16Entry8B { char m_Data[8]; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb50>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CRBTree16Entry8B>
 {
     const Links_t *sub_100492b0(unsigned short i) const;
 };
@@ -13215,11 +13229,13 @@ void CUtlRBTree16Unit::sub_10049e40(unsigned short elem)
 
 // FUNCTION: 0x1004a2a0 size=0xb9
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUtlMap16Pair { unsigned int m_key; unsigned int m_elem; };
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_1004a2a0(unsigned short i) const
 {
-	const CUtlRBTree16At<0x106bdb44> *tree = (const CUtlRBTree16At<0x106bdb44> *)this;
+	const CUtlRBTree16Of<CUtlMap16Pair> *tree = (const CUtlRBTree16Of<CUtlMap16Pair> *)this;
 	return tree->Links(tree->Parent(i)).m_Left == i;
 }
 // END FUNCTION
@@ -13261,11 +13277,13 @@ void CMem16_t::sub_1004add0(int num)
 
 // FUNCTION: 0x1004ae60 size=0xb9
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CRBTree16Entry8B { char m_Data[8]; };
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_1004ae60(unsigned short i) const
 {
-	const CUtlRBTree16At<0x106bdb50> *tree = (const CUtlRBTree16At<0x106bdb50> *)this;
+	const CUtlRBTree16Of<CRBTree16Entry8B> *tree = (const CUtlRBTree16Of<CRBTree16Entry8B> *)this;
 	return tree->Links(tree->Parent(i)).m_Left == i;
 }
 // END FUNCTION
@@ -13307,11 +13325,13 @@ void CMem16b_t::sub_1004b990(int num)
 
 // FUNCTION: 0x1004ba20 size=0xbb
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUtlMap16Pair { unsigned int m_key; unsigned int m_elem; };
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_1004ba20(unsigned short i) const
 {
-	const CUtlRBTree16At<0x106bdb44> *tree = (const CUtlRBTree16At<0x106bdb44> *)this;
+	const CUtlRBTree16Of<CUtlMap16Pair> *tree = (const CUtlRBTree16Of<CUtlMap16Pair> *)this;
 	return tree->Links(tree->Parent(i)).m_Right == i;
 }
 // END FUNCTION
@@ -13325,9 +13345,11 @@ bool CUtlRBTree16::sub_1004ba20(unsigned short i) const
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUtlMap16Pair { unsigned int m_key; unsigned int m_elem; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb44>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CUtlMap16Pair>
 {
     const Links_t *sub_10048960(unsigned short i) const;
     void sub_1004bb10(unsigned short i);
@@ -13372,9 +13394,11 @@ void CUtlRBTree16Unit::sub_1004bb10(unsigned short elem)
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUtlMap16Pair { unsigned int m_key; unsigned int m_elem; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb44>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CUtlMap16Pair>
 {
     const Links_t *sub_10048960(unsigned short i) const;
     void sub_1004bd40(unsigned short i);
@@ -13412,11 +13436,13 @@ void CUtlRBTree16Unit::sub_1004bd40(unsigned short elem)
 
 // FUNCTION: 0x1004bf70 size=0xbb
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CRBTree16Entry8B { char m_Data[8]; };
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_1004bf70(unsigned short i) const
 {
-	const CUtlRBTree16At<0x106bdb50> *tree = (const CUtlRBTree16At<0x106bdb50> *)this;
+	const CUtlRBTree16Of<CRBTree16Entry8B> *tree = (const CUtlRBTree16Of<CRBTree16Entry8B> *)this;
 	return tree->Links(tree->Parent(i)).m_Right == i;
 }
 // END FUNCTION
@@ -13430,9 +13456,11 @@ bool CUtlRBTree16::sub_1004bf70(unsigned short i) const
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CRBTree16Entry8B { char m_Data[8]; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb50>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CRBTree16Entry8B>
 {
     const Links_t *sub_100492b0(unsigned short i) const;
     void sub_1004c060(unsigned short i);
@@ -13477,9 +13505,11 @@ void CUtlRBTree16Unit::sub_1004c060(unsigned short elem)
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CRBTree16Entry8B { char m_Data[8]; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x106bdb50>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CRBTree16Entry8B>
 {
     const Links_t *sub_100492b0(unsigned short i) const;
     void sub_1004c290(unsigned short i);
@@ -130854,12 +130884,14 @@ CSoundEmitterSystemBase *CSoundEmitterSystemBase::sub_101b26c0()
 
 // FUNCTION: 0x101b2790 size=0xaf
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CSoundEmitterRecord { char m_Data[216]; };
 #include "CUnknown101b2790.h"
 #include "CUtlRBTree232.h"
 
 void CUnknown101b2790::sub_101b2790()
 {
-	const CUtlRBTree232At<0x1072c414> *tree = (const CUtlRBTree232At<0x1072c414> *)((char *)this + 0x50);
+	const CUtlRBTree232Of<CSoundEmitterRecord> *tree = (const CUtlRBTree232Of<CSoundEmitterRecord> *)((char *)this + 0x50);
 	int i = tree->m_Root;
 	while (tree->Links(i).m_Left != -1)
 		i = tree->Links(i).m_Left;
@@ -130869,8 +130901,9 @@ void CUnknown101b2790::sub_101b2790()
 // FUNCTION: 0x101b2870 size=0x207
 #include "CSoundEmitterSystemBase.h"
 #include "CUtlRBTree232.h"
+#include "CUtlRBTreeOf.h"
 
-typedef CUtlRBTree232At<0x1072c414> SoundTree;
+typedef CUtlRBTree232Of<CSoundEmitterRecord> SoundTree;
 
 inline int SoundTree_NextInorder(SoundTree *tree, int i)
 {
@@ -130965,6 +130998,7 @@ void CSoundEmitterSystemBase::sub_101b2b30(const char *pszScript, UtlMem2 *pOut)
 #include "CUnknown1024b370.h"
 #include "CUtlRBTree232.h"
 #include "UtlMem.h"
+#include "CUtlRBTreeOf.h"
 
 struct S_KeyVecA
 {
@@ -130995,7 +131029,7 @@ struct S_SoundKey
 
 int CSoundEmitterSystemBase::sub_101b2f60(const char *pszName)
 {
-	CUtlRBTree232At<0x1072c414> *tree = (CUtlRBTree232At<0x1072c414> *)&m_pfn50;
+	CUtlRBTree232Of<CSoundEmitterRecord> *tree = (CUtlRBTree232Of<CSoundEmitterRecord> *)&m_pfn50;
 	int current;
 	{
 		S_SoundKey key;
@@ -132992,11 +133026,13 @@ char *CUnk101b66b0::sub_101b66b0(int index)
 
 // FUNCTION: 0x101b68f0 size=0xf3
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CSoundEmitterRecord { char m_Data[216]; };
 #include "CUtlRBTreeFind232.h"
 
 int CUtlRBTreeFind232::sub_101b68f0(const void *search)
 {
-	const CUtlRBTree232At<0x1072c414> *tree = (const CUtlRBTree232At<0x1072c414> *)this;
+	const CUtlRBTree232Of<CSoundEmitterRecord> *tree = (const CUtlRBTree232Of<CSoundEmitterRecord> *)this;
 	int current = m_Root;
 	while (current != InvalidIndex())
 	{
@@ -133171,11 +133207,13 @@ int CUtlRBTree232::sub_101b6bd0(int parent, bool leftchild)
 
 // FUNCTION: 0x101b6d60 size=0xf9
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CSoundEmitterRecord { char m_Data[216]; };
 #include "CUtlRBTree232.h"
 
 void CUtlRBTree232::sub_101b6d60(const void *pInsert, int *pParent, bool *pLeftChild)
 {
-    const CUtlRBTree232At<0x1072c414> *tree = (const CUtlRBTree232At<0x1072c414> *)this;
+    const CUtlRBTree232Of<CSoundEmitterRecord> *tree = (const CUtlRBTree232Of<CSoundEmitterRecord> *)this;
     int current = m_Root;
     *pParent = InvalidIndex();
     *pLeftChild = false;
@@ -133448,10 +133486,12 @@ int CUnknown101b7430::sub_101b7430()
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CSoundEmitterRecord { char m_Data[216]; };
 #include "CUtlRBTree232.h"
 CUtlRBTree232::Links_t &CUtlRBTree232::sub_101b78f0(int i)
 {
-	const CUtlRBTree232At<0x1072c414> *tree = (const CUtlRBTree232At<0x1072c414> *)this;
+	const CUtlRBTree232Of<CSoundEmitterRecord> *tree = (const CUtlRBTree232Of<CSoundEmitterRecord> *)this;
 	return (Links_t &)tree->Links(i);
 }
 // END FUNCTION
@@ -196876,6 +196916,8 @@ unsigned short SymMap::sub_10249980(unsigned int key, int value)
 
 // FUNCTION: 0x10249aa0 size=0x169
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUnknown10249fc0_Entry { int m_n0; int m_nKey; };
 #include "CUnknown10249aa0.h"
 
 struct SSym10249aa0
@@ -196900,7 +196942,7 @@ struct SMapTreeLeft
 	const unsigned short *sub_1024a900(unsigned short i);	// stub 0x10007d7e
 };
 
-inline unsigned short FindNode10249aa0(const CUtlRBTree16At<0x1088ae24> *tree, const SNode10249aa0 &search)
+inline unsigned short FindNode10249aa0(const CUtlRBTree16Of<CUnknown10249fc0_Entry> *tree, const SNode10249aa0 &search)
 {
 	unsigned short i = tree->m_Root;
 	while (i != 0xffff) {
@@ -196915,7 +196957,7 @@ inline unsigned short FindNode10249aa0(const CUtlRBTree16At<0x1088ae24> *tree, c
 	return i;
 }
 
-inline unsigned short Find10249aa0(const CUtlRBTree16At<0x1088ae24> *tree, unsigned int key)
+inline unsigned short Find10249aa0(const CUtlRBTree16Of<CUnknown10249fc0_Entry> *tree, unsigned int key)
 {
 	SNode10249aa0 dummy;
 	dummy.key = ((SMapKeyConv *)((char *)tree + 0x18))->sub_1024b5e0(key);
@@ -196924,9 +196966,9 @@ inline unsigned short Find10249aa0(const CUtlRBTree16At<0x1088ae24> *tree, unsig
 
 int CUnknown10249aa0::sub_10249aa0(unsigned int key)
 {
-	unsigned short i = Find10249aa0((const CUtlRBTree16At<0x1088ae24> *)m_pTree, key);
-	if (((const CUtlRBTree16At<0x1088ae24> *)m_pTree)->Links(i).m_Left != i)
-		return *(int *)(((const CUtlRBTree16At<0x1088ae24> *)m_pTree)->m_pElements[i].m_Data + 4);
+	unsigned short i = Find10249aa0((const CUtlRBTree16Of<CUnknown10249fc0_Entry> *)m_pTree, key);
+	if (((const CUtlRBTree16Of<CUnknown10249fc0_Entry> *)m_pTree)->Links(i).m_Left != i)
+		return *(int *)(((const CUtlRBTree16Of<CUnknown10249fc0_Entry> *)m_pTree)->m_pElements[i].m_Data + 4);
 	return -1;
 }
 // END FUNCTION
@@ -196934,13 +196976,9 @@ int CUnknown10249aa0::sub_10249aa0(unsigned int key)
 // FUNCTION: 0x10249c70 size=0x299
 #include "utlvector.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
 #include "CUnknown10249fc0.h"
 
-struct CUnknown10249fc0_Entry
-{
-	int m_n0;
-	int m_nKey;
-};
 
 class CSymMap
 {
@@ -197031,16 +197069,18 @@ int NodeHolder::sub_1024a080(unsigned short idx)
 
 // FUNCTION: 0x1024a120 size=0x85
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUnknown10249fc0_Entry { int m_n0; int m_nKey; };
 #include "CUtlRBTree16.h"
 
 struct CTreeHolder1024a120
 {
-	CUtlRBTree16At<0x1088ae24> *m_pTree;
+	CUtlRBTree16Of<CUnknown10249fc0_Entry> *m_pTree;
 };
 
 void __fastcall sub_1024a120(CTreeHolder1024a120 *p)
 {
-	CUtlRBTree16At<0x1088ae24> *t = p->m_pTree;
+	CUtlRBTree16Of<CUnknown10249fc0_Entry> *t = p->m_pTree;
 	unsigned short prev = 0xffff;
 	for (int i = (int)t->m_TotalElements; --i >= 0; ) {
 		unsigned short idx = (unsigned short)i;
@@ -197136,6 +197176,8 @@ int CUnknown1024a2e0::sub_1024a2e0(unsigned int a)
 // FUNCTION: 0x1024a310 size=0x116
 #include "utlmemory.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUnknown10249fc0_Entry { int m_n0; int m_nKey; };
 #include "CUtlRBTree16.h"
 extern void *(*g_109f3638)(void *, unsigned int);
 extern void *(*g_109f3634)(unsigned int);
@@ -197169,7 +197211,7 @@ struct Mem16 {
 };
 unsigned short CUtlRBTree16::sub_1024a310()
 {
-    const CUtlRBTree16At<0x1088ae24> *tree = (const CUtlRBTree16At<0x1088ae24> *)this;
+    const CUtlRBTree16Of<CUnknown10249fc0_Entry> *tree = (const CUtlRBTree16Of<CUnknown10249fc0_Entry> *)this;
     unsigned short elem;
     if (m_FirstFree == InvalidIndex()) {
         if (m_unk8 == m_TotalElements)
@@ -197307,9 +197349,11 @@ void CUtlRBTree16Unit::sub_1024a480(unsigned short i, unsigned short parent, boo
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUnknown10249fc0_Entry { int m_n0; int m_nKey; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x1088ae24>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CUnknown10249fc0_Entry>
 {
     const Links_t *sub_1024a900(unsigned short i) const;
 };
@@ -197322,11 +197366,13 @@ const CUtlRBTree16::Links_t *CUtlRBTree16Unit::sub_1024a900(unsigned short i) co
 
 // FUNCTION: 0x1024a980 size=0xb9
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUnknown10249fc0_Entry { int m_n0; int m_nKey; };
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_1024a980(unsigned short i) const
 {
-	const CUtlRBTree16At<0x1088ae24> *tree = (const CUtlRBTree16At<0x1088ae24> *)this;
+	const CUtlRBTree16Of<CUnknown10249fc0_Entry> *tree = (const CUtlRBTree16Of<CUnknown10249fc0_Entry> *)this;
 	return tree->Links(tree->Parent(i)).m_Left == i;
 }
 // END FUNCTION
@@ -197340,9 +197386,11 @@ bool CUtlRBTree16::sub_1024a980(unsigned short i) const
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUnknown10249fc0_Entry { int m_n0; int m_nKey; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x1088ae24>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CUnknown10249fc0_Entry>
 {
     const Links_t *sub_1024a900(unsigned short i) const;
     void sub_1024aa70(unsigned short i);
@@ -197387,9 +197435,11 @@ void CUtlRBTree16Unit::sub_1024aa70(unsigned short elem)
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUnknown10249fc0_Entry { int m_n0; int m_nKey; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x1088ae24>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CUnknown10249fc0_Entry>
 {
     const Links_t *sub_1024a900(unsigned short i) const;
     void sub_1024aca0(unsigned short i);
@@ -197623,6 +197673,8 @@ void CUnknown1024b370::sub_1024b370()
 // FUNCTION: 0x1024b400 size=0x139
 #include "CUnknown1024b370.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CRBTree12Entry_1024c1d0 { char data[4]; };
 #include "utlsortvector.h"
 #include "utlvector.h"
 #include "CUtlRBTree12.h"
@@ -197642,7 +197694,7 @@ struct CUtlSymbolLessCtx
 };
 extern CUtlSymbolLessCtx g_1088ae34;
 
-typedef CUtlRBTree12At<0x1088ae44> SymTree_t;
+typedef CUtlRBTree12Of<CRBTree12Entry_1024c1d0> SymTree_t;
 
 struct SymLookup_t : SymTree_t
 {
@@ -198000,9 +198052,10 @@ bool CUtlRBTree12::sub_1024c0e0(unsigned short i) const
 #include "CUtlRBTreeInsert24.h"
 #include "CUtlRBTree12.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
 struct CRBTree12Entry_1024c1d0 { char data[4]; };	// the tree of its sentinel (one T per game instance)
 
-struct CUtlRBTree12Unit : CUtlRBTree12At<0x1088ae44>
+struct CUtlRBTree12Unit : CUtlRBTree12Of<CRBTree12Entry_1024c1d0>
 {
     // the instance's sentinel is CUtlRBTree<CRBTree12Entry_1024c1d0, unsigned short>'s: one static in the game
     const Links_t &Links(unsigned short i) const { return (const Links_t &)((const CUtlRBTree<CRBTree12Entry_1024c1d0, unsigned short> *)this)->Links(i); }
@@ -258842,6 +258895,8 @@ int CUnknown10312340::sub_10312340()
 
 // FUNCTION: 0x10312360 size=0x17d
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CAI_ExpresserUse { char m_Data[8]; };
 #include "CUnknown10312580.h"
 
 struct DiscRecord { int m_0; int m_4; int m_8; int m_c; int m_10; float m_f14; int m_18; unsigned char m_b1c; };
@@ -258859,7 +258914,7 @@ bool CUnknown10312580::sub_10312360(int key)
 		RBProbe probe;
 		probe.value = -1.0f;
 		probe.key = key;
-		const CUtlRBTree16At<0x10936c54> *tree = (const CUtlRBTree16At<0x10936c54> *)&m_Tree;
+		const CUtlRBTree16Of<CAI_ExpresserUse> *tree = (const CUtlRBTree16Of<CAI_ExpresserUse> *)&m_Tree;
 		const char *name = *(const char **)((char *)tree + 0x18);
 		if (name)
 			g_109f075c = name;
@@ -258898,6 +258953,8 @@ int __stdcall sub_10312540(int a)
 
 // FUNCTION: 0x10312580 size=0x106
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CAI_ExpresserUse { char m_Data[8]; };
 #include "utlsortvector.h"
 #include "utlvector.h"
 #include "CUnknown10312580.h"
@@ -258906,7 +258963,7 @@ extern float g_104492dc;
 
 struct Pair { int key; float value; };
 
-struct FindTree : CUtlRBTree16At<0x10936c54>
+struct FindTree : CUtlRBTree16Of<CAI_ExpresserUse>
 {
 	const char *m_pName;
 
@@ -258942,6 +258999,7 @@ float CUnknown10312580::sub_10312580(int key)
 #include "CAI_Expresser.h"
 #include "CUtlRBTree16.h"
 #include "globalvars.h"
+#include "CUtlRBTreeOf.h"
 
 extern void *g_109f075c;
 
@@ -258961,7 +259019,7 @@ struct ExprPair
 
 typedef CUtlRBTree<CAI_ExpresserUse, unsigned short> ExprTree;
 
-struct ExprMap : CUtlRBTree16At<0x10936c54>
+struct ExprMap : CUtlRBTree16Of<CAI_ExpresserUse>
 {
 	void *m_pLessContext;
 
@@ -259064,6 +259122,8 @@ void CAI_Expresser::sub_103126e0(int key)
 
 // FUNCTION: 0x10312930 size=0x113
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CAI_ExpresserUse { char m_Data[8]; };
 #include "CUnknown10312580.h"
 
 extern const char *g_109f075c;
@@ -259075,7 +259135,7 @@ struct SRBSearch {
 
 void CUnknown10312580::sub_10312930(int key)
 {
-	CUtlRBTree16At<0x10936c54UL> *tree = (CUtlRBTree16At<0x10936c54UL> *)&m_Tree;
+	CUtlRBTree16Of<CAI_ExpresserUse> *tree = (CUtlRBTree16Of<CAI_ExpresserUse> *)&m_Tree;
 	SRBSearch search;
 	search.m_nKey = key;
 	const char *pszName = *(const char **)((char *)tree + 0x18);
@@ -259401,6 +259461,8 @@ void CUtlRBTree16Unit::sub_10312fb0(unsigned short i, unsigned short parent, boo
 // FUNCTION: 0x103134b0 size=0x118
 #include "utlmemory.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CAI_ExpresserUse { char m_Data[8]; };
 #include "CUtlRBTree16.h"
 extern void *(*g_109f3638)(void *, unsigned int);
 extern void *(*g_109f3634)(unsigned int);
@@ -259434,7 +259496,7 @@ struct Mem16 {
 };
 unsigned short CUtlRBTree16::sub_103134b0()
 {
-    const CUtlRBTree16At<0x10936c54> *tree = (const CUtlRBTree16At<0x10936c54> *)this;
+    const CUtlRBTree16Of<CAI_ExpresserUse> *tree = (const CUtlRBTree16Of<CAI_ExpresserUse> *)this;
     unsigned short elem;
     if (m_FirstFree == InvalidIndex()) {
         if (m_unk8 == m_TotalElements)
@@ -259460,9 +259522,11 @@ unsigned short CUtlRBTree16::sub_103134b0()
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CAI_ExpresserUse { char m_Data[8]; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x10936c54>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CAI_ExpresserUse>
 {
     const Links_t *sub_10313aa0(unsigned short i) const;
 };
@@ -259507,11 +259571,13 @@ void __fastcall sub_10313f70(Mem16 *self, int, int num)
 
 // FUNCTION: 0x10314000 size=0xb9
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CAI_ExpresserUse { char m_Data[8]; };
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_10314000(unsigned short i) const
 {
-	const CUtlRBTree16At<0x10936c54> *tree = (const CUtlRBTree16At<0x10936c54> *)this;
+	const CUtlRBTree16Of<CAI_ExpresserUse> *tree = (const CUtlRBTree16Of<CAI_ExpresserUse> *)this;
 	return tree->Links(tree->Parent(i)).m_Left == i;
 }
 // END FUNCTION
@@ -259632,11 +259698,13 @@ void CUtlRBTree16Unit::sub_10314e50(unsigned short elem)
 
 // FUNCTION: 0x10315080 size=0xbb
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CAI_ExpresserUse { char m_Data[8]; };
 #include "CUtlRBTree16.h"
 
 bool CUtlRBTree16::sub_10315080(unsigned short i) const
 {
-	const CUtlRBTree16At<0x10936c54> *tree = (const CUtlRBTree16At<0x10936c54> *)this;
+	const CUtlRBTree16Of<CAI_ExpresserUse> *tree = (const CUtlRBTree16Of<CAI_ExpresserUse> *)this;
 	return tree->Links(tree->Parent(i)).m_Right == i;
 }
 // END FUNCTION
@@ -259650,9 +259718,11 @@ bool CUtlRBTree16::sub_10315080(unsigned short i) const
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CAI_ExpresserUse { char m_Data[8]; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x10936c54>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CAI_ExpresserUse>
 {
     const Links_t *sub_10313aa0(unsigned short i) const;
     void sub_10315170(unsigned short i);
@@ -259697,9 +259767,11 @@ void CUtlRBTree16Unit::sub_10315170(unsigned short elem)
 #include "CUtlRBTreeFind232.h"
 #include "CUtlRBTreeInsert24.h"
 #include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CAI_ExpresserUse { char m_Data[8]; };
 #include "CUtlRBTree16.h"
 
-struct CUtlRBTree16Unit : CUtlRBTree16At<0x10936c54>
+struct CUtlRBTree16Unit : CUtlRBTree16Of<CAI_ExpresserUse>
 {
     const Links_t *sub_10313aa0(unsigned short i) const;
     void sub_103153a0(unsigned short i);

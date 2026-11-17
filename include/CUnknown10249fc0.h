@@ -1,8 +1,15 @@
-// CUnknown10249fc0: a handle to a CUtlRBTree16 instance (its sentinel link lives at 0x1088ae24) that keeps a second
+// CUnknown10249fc0: a handle to a CUtlRBTree16 instance (CUtlRBTree<CUnknown10249fc0_Entry, unsigned short>, its sentinel link lives at 0x1088ae24) that keeps a second
 // container at +0x18; real name not yet known.
 #pragma once
 
-#include "CUtlRBTree16.h"
+#include "CUtlRBTreeOf.h"
+
+// the tree's element (8 bytes): the key is the dword at +4
+struct CUnknown10249fc0_Entry
+{
+	int m_n0;
+	int m_nKey;
+};
 
 struct CUnknown10249fc0_Key	// a two byte value passed by value (built through a constructor)
 {
@@ -17,7 +24,7 @@ public:
 	int sub_1024b830(CUnknown10249fc0_Key key);	// stub 0x10002202
 };
 
-class CUnknown10249fc0_Tree : public CUtlRBTree16At<0x1088ae24>
+class CUnknown10249fc0_Tree : public CUtlRBTree16Of<CUnknown10249fc0_Entry>	// the CUtlRBTree<CUnknown10249fc0_Entry, unsigned short> instance (sentinel 0x1088ae24)
 {
 public:
 	CUnknown10249fc0_Sub m_sub;	// 0x18
