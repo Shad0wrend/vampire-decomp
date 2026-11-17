@@ -270347,24 +270347,69 @@ int CBaseCombatCharacter::sub_10342c80(void (*pCallback)(CBaseCombatCharacter *,
 #include <math.h>
 #include "ConVar.h"
 #include "ehandle.h"
-static int g_shift10343020 = 13;
+extern float g_104454c4;
+extern float g_104454c0;
 namespace block_10343020 {
-#pragma auto_inline(off)
-struct LEView : EHandleEntityList
-{
-	unsigned int sub_100290c0(unsigned int *ph);
+#define V4(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3();
+#define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
+#define V64(x) V16(x##a) V16(x##b) V16(x##c) V16(x##d)
+
+struct EyeTarget {
+	V64(a) V64(b) V64(c) virtual Vector vfunc192(); virtual Vector vfunc193();
+	V16(d) V4(e) virtual void f0(); virtual void f1(); virtual void f2();
+	virtual Vector *vfunc217();
 };
-unsigned int LEView::sub_100290c0(unsigned int *ph)
+struct EyeSelf {
+	V64(a) V64(b) V64(c) V64(d) V16(e) V4(f) virtual void g0();
+	virtual void vfunc277(Vector *pDir);
+	char m_pad0004[0x26c - 4];
+	const char *m_name26c;
+	char m_pad0270[0xe3c - 0x270];
+	float m_flBlend;
+	char m_pad0e40[4];
+	Vector m_vecGoal;
+	Vector m_vecDir;
+	char m_pad0e5c[0xe64 - 0xe5c];
+	unsigned int m_hTarget;
+	int m_nMode;
+
+	void sub_10331da0(Vector *pA, Vector *pB);
+	char sub_10325da0(Vector *pGoal);
+};
+
+void __fastcall sub_10325620(EyeSelf *self, int edx, float flInterval)
 {
-	unsigned int h = *ph;
-	if (h == 0xffffffff)
-		return 0;
-	EHandleEntInfo *p = &m_EntPtrArray[h & 0x1fff];
-	if (p->m_SerialNumber == (int)(h >> g_shift10343020))
-		return (unsigned int)p->m_pEntity;
-	return 0;
+	ScopeTrace trace("CBaseCombatCharacter::MaintainScriptedEyeDirection", self ? (self->m_name26c ? self->m_name26c : g_106b8540) : g_105387dc);
+	EyeTarget *pTarget = (EyeTarget *)((const CBaseHandle *)&self->m_hTarget)->Get();
+	if (!pTarget) {
+		self->m_nMode = 0;
+		return;
+	}
+	Vector vecPos, vecDir;
+	self->sub_10331da0(&vecPos, &vecDir);
+	switch (self->m_nMode) {
+	case 1:
+		self->m_vecGoal = pTarget->vfunc193();
+		break;
+	case 2:
+		self->m_vecGoal = pTarget->vfunc192();
+		break;
+	case 3:
+		self->m_vecGoal = *pTarget->vfunc217();
+		break;
+	default:
+		self->m_vecGoal = vecPos + vecDir * 300.0f;
+		break;
+	}
+	if (!self->sub_10325da0(&self->m_vecGoal))
+		self->m_vecGoal = vecPos + vecDir * 300.0f;
+	float t = flInterval;
+	while (t > g_104454c4) {
+		self->m_vecDir = self->m_vecDir * (g_104454c0 - self->m_flBlend) + self->m_vecGoal * self->m_flBlend;
+		t -= 0.1;
+	}
+	self->vfunc277(&self->m_vecDir);
 }
-#pragma auto_inline(on)
 }
 extern ConVar g_10936d78;
 
@@ -270540,9 +270585,9 @@ extern CFoo1005f190 g_10936ee0;
 extern const float g_1049e038;
 struct CMeleeSwingView : CBaseCombatCharacter {
 	void sub_10343020(const Vector *pOrigin, const Vector *pAngles, float flFrom, float flTo);
+	CMeleeLastBox &LastBox(int i) { return *(CMeleeLastBox *)((char *)this + 0xac0 + i * 0x18); }
 };
 
-#define MELEE_LAST(i) (*(CMeleeLastBox *)((char *)this + 0xac0 + (i) * 0x18))
 #define MELEE_LIST(i) (*(CUtlVector4 *)((char *)this + 0xca0 + (i) * 0x14))
 
 // TARGET: CMeleeSwingView::sub_10343020
@@ -270594,13 +270639,13 @@ void CMeleeSwingView::sub_10343020(const Vector *pOrigin, const Vector *pAngles,
 				for (j = 0; j < nSteps; j++) {
 					float t = (nSteps > 1) ? 1.0f - (float)j / (float)(nSteps - 1) : g_104454c4;
 					Vector a = vBox[0] + (vBox[1] - vBox[0]) * t;
-					Vector b = MELEE_LAST(i).m_vecMin + (MELEE_LAST(i).m_vecMax - MELEE_LAST(i).m_vecMin) * t;
+					Vector b = LastBox(i).m_vecMin + (LastBox(i).m_vecMax - LastBox(i).m_vecMin) * t;
 					sub_10142e90(&b, &a, 0, 255, 0, 0, 0.5f);
 				}
 			}
 			Vector bmin, bmax;
 			VectorMin(vBox[0], vBox[1], bmin);
-			CMeleeLastBox &last = MELEE_LAST(i);
+			CMeleeLastBox &last = LastBox(i);
 			bmin.x = (bmin.x < last.m_vecMin.x) ? bmin.x : last.m_vecMin.x;
 			bmin.y = (bmin.y < last.m_vecMin.y) ? bmin.y : last.m_vecMin.y;
 			bmin.z = (bmin.z < last.m_vecMin.z) ? bmin.z : last.m_vecMin.z;
@@ -270642,7 +270687,7 @@ void CMeleeSwingView::sub_10343020(const Vector *pOrigin, const Vector *pAngles,
 					continue;
 				int n = MELEE_LIST(i).m_size;
 				while (n--) {
-					if (((block_10343020::LEView *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)&MELEE_LIST(i).m_pMemory[n]) == (unsigned int)pEnt)
+					if (((const CBaseHandle *)&MELEE_LIST(i).m_pMemory[n])->Get() == (IHandleEntity *)pEnt)
 						break;
 				}
 				if (n >= 0)
@@ -270657,7 +270702,7 @@ void CMeleeSwingView::sub_10343020(const Vector *pOrigin, const Vector *pAngles,
 					for (j = 0; j < nSteps; j++) {
 						float t = (nSteps > 1) ? 1.0f - (float)j / (float)(nSteps - 1) : g_104454c4;
 						Vector cur = vBox[0] + (vBox[1] - vBox[0]) * t;
-						Vector prev = MELEE_LAST(i).m_vecMin + (MELEE_LAST(i).m_vecMax - MELEE_LAST(i).m_vecMin) * t;
+						Vector prev = LastBox(i).m_vecMin + (LastBox(i).m_vecMax - LastBox(i).m_vecMin) * t;
 						MeleeRay ray;
 						ray.Init(prev, cur, g_1070d1b0, g_1070d1b0, 1, 0);
 						sub_101d2530(&ray, 0x200400b, pEnt, &tr);
@@ -270695,7 +270740,7 @@ void CMeleeSwingView::sub_10343020(const Vector *pOrigin, const Vector *pAngles,
 			if (((CMV *)this)->s328()) {
 				for (j = 0; j < nSteps; j++) {
 					float t = (nSteps > 1) ? 1.0f - (float)j / (float)(nSteps - 1) : g_104454c4;
-					Vector prev = MELEE_LAST(i).m_vecMin + (MELEE_LAST(i).m_vecMax - MELEE_LAST(i).m_vecMin) * t;
+					Vector prev = LastBox(i).m_vecMin + (LastBox(i).m_vecMax - LastBox(i).m_vecMin) * t;
 					Vector cur = vBox[0] + (vBox[1] - vBox[0]) * t;
 					Vector delta = cur - prev;
 					CGameTrace wtr;
@@ -270729,8 +270774,8 @@ void CMeleeSwingView::sub_10343020(const Vector *pOrigin, const Vector *pAngles,
 			}
 		} else
 			((CMeleeList *)&MELEE_LIST(i))->RemoveAll();
-		MELEE_LAST(i).m_vecMin = vBox[0];
-		{ MELEE_LAST(i).m_vecMax = vBox[1]; }
+		LastBox(i).m_vecMin = vBox[0];
+		{ LastBox(i).m_vecMax = vBox[1]; }
 	}
 	for (; i < 20; i++)
 		((CMeleeList *)&MELEE_LIST(i))->RemoveAll();
