@@ -119478,7 +119478,7 @@ CPropDestructable *CPropDestructable::sub_10193940()
 	for (int i = 0; i < 8; i++)
 		p->m_Outputs7b4[i].sub_100cd2a0();
 	p->m_Output874.sub_100cd2a0();
-	*(void *volatile *)&p->m_pVtable = &g_10476094;
+	*(void **)&p->m_pVtable = &g_10476094;
 	p->sub_1008b490();
 	p->m_b791 = 0;
 	return this;
