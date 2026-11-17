@@ -238262,7 +238262,6 @@ void CUnknown102e83e0::sub_102e84a0(char flag)
 // END FUNCTION
 
 // FUNCTION: 0x102e8560 size=0x3dd
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CUnknown102e83e0.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"
