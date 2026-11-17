@@ -190455,26 +190455,134 @@ extern "C" CBaseEntity *infodecal()
 #include "UTIL_BloodStream.h"
 #include "CEntityVSlots.h"
 #include "CRopeKeyframe.h"
+#include "ConVar.h"
 
 void __cdecl sub_101c0b10();
 
-inline int ENTINDEX_1023a7d0(int pEdict) { return engine->vfunc35(pEdict); }
-inline int entindex_1023a7d0(CBaseEntity *pEnt) { return ENTINDEX_1023a7d0(pEnt->m_pEdict2e0); }
+// Ray_t::Init (0x1004f7a0) as the header inline (VC6 declines it here by budget: out-of-line COMDAT).
+inline void Ray_t::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+	VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+	m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+	m_StartOffset[2] = 0;
+	m_StartOffset[1] = 0;
+	m_StartOffset[0] = 0;
+	m_IsRay = true;
+	m_Extents[2] = 0;
+	m_Extents[1] = 0;
+	m_Extents[0] = 0;
+	m_Start[0] = pStart[0];
+	m_Start[1] = pStart[1];
+	m_Start[2] = pStart[2];
+	m_b32 = 0;
+	m_n34 = 0;
+	m_b33 = 0;
+}
 
-inline int pcdZ0(int x) { return x; }
-inline int pcdZ1(int x) { return pcdZ0(x); }
-inline int pcdZ2(int x) { return pcdZ1(x); }
+namespace block_1023a7d0 {
+// util.h ENTINDEX and baseentity.h CBaseEntity::entindex() (pev at +0x2e0).
+inline int ENTINDEX(int pEdict) { return engine->vfunc35(pEdict); }
+struct CBaseEntityS : CBaseEntity
+{
+	int entindex() { return ENTINDEX(m_pEdict2e0); }
+};
+// convar.h ConVar::GetInt / GetBool as the SDK writes them.
+struct ConVarV : ConVar
+{
+	int GetInt()
+	{
+		if (m_pParent->vfunc1())
+			return 0;
+		ConVar *var = m_pParent;
+		return var->m_nValue;
+	}
+	bool GetBool() { return !!GetInt(); }
+};
+#define r_visualizetraces (*(ConVarV *)&g_10738960)
+// trace_t as the SDK declares it (cmodel.h / trace.h / gametrace.h): its Vector members give it an implicit inline
+// constructor (out of line elsewhere as 0x1003ff80).
+struct cplane_t
+{
+	Vector normal;
+	float dist;
+	unsigned char type;
+	unsigned char signbits;
+	unsigned char pad[2];
+};
+struct csurface_t
+{
+	const char *name;
+	short surfaceProps;
+	unsigned short flags;
+};
+class CBaseTrace
+{
+public:
+	Vector startpos;
+	Vector endpos;
+	cplane_t plane;
+	float fraction;
+	int contents;
+	unsigned short dispFlags;
+	bool allsolid;
+	bool startsolid;
+};
+class CGameTraceS : public CBaseTrace
+{
+public:
+	float fractionleftsolid;
+	csurface_t surface;
+	int hitgroup;
+	short physicsbone;
+	CBaseEntityS *m_pEnt;
+	int hitbox;
+};
+typedef CGameTraceS trace_t;
+// Ray_t as the SDK declares it (Vector members, so an implicit inline constructor).
+struct RayS
+{
+	Vector m_Start;
+	Vector m_Delta;
+	Vector m_Extents;
+	Vector m_StartOffset;
+	bool m_IsRay;
+	bool m_IsSwept;
+	char m_b32;
+	char m_b33;
+	float m_n34;
+};
+// util_shared.h UTIL_TraceLine with the r_visualizetraces debug line.
+inline void UTIL_TraceLine(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, trace_t *ptr)
+{
+	RayS ray;
+	((Ray_t *)&ray)->sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4((Ray_t *)&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, (CGameTrace *)ptr);
+	if (r_visualizetraces.GetBool())
+		sub_10146570(&ptr->startpos, &ptr->endpos, 0xff, 0, 0, 1, -1.0f);
+}
+}
+
+
 // TARGET: CRopeKeyframe::sub_1023a7d0
+// world.cpp CDecal::TriggerDecal (the use function of an info_decal with a targetname); vtmb drops the SDK's
+// m_pEnt null test and adds 0.1 as a double.
 void CRopeKeyframe::sub_1023a7d0(int a, int b, int c, int d)
 {
-	CGameTrace tr;
-	UTIL_TraceLine_RayCall(*(Vector *)((CEntityVSlots *)this)->slot220() - Vector(5.0f, 5.0f, 5.0f), *(Vector *)((CEntityVSlots *)this)->slot220() + Vector(5.0f, 5.0f, 5.0f), 0x400b, this, 0, &tr);
-	int edict = entindex_1023a7d0(tr.m_pEnt);
-	CBroadcastRecipientFilter recip;
-	g_10540528->vfunc16(recip, 0.0f, (Vector *)((CEntityVSlots *)this)->slot220(), edict, *(int *)&m_b450);
+	block_1023a7d0::trace_t trace;
+	int entityIndex;
+
+	block_1023a7d0::UTIL_TraceLine(*(Vector *)((CEntityVSlots *)this)->slot220() - Vector(5.0f, 5.0f, 5.0f), *(Vector *)((CEntityVSlots *)this)->slot220() + Vector(5.0f, 5.0f, 5.0f), 0x400b, this, 0, &trace);
+
+	entityIndex = trace.m_pEnt->entindex();
+
+	CBroadcastRecipientFilter filter;
+
+	g_10540528->vfunc16(filter, 0.0f, (Vector *)((CEntityVSlots *)this)->slot220(), entityIndex, *(int *)&m_b450);
+
 	sub_100ac4e0((int)sub_101c0b10, 0, 0);
 	m_flNextThink = gpGlobals->curtime + 0.1;
-	if (0) recip.m_Recipients.Purge();
 }
 // END FUNCTION
 
