@@ -2855,6 +2855,7 @@ float CAI_BaseNPCTroika::vfunc516()
 // END FUNCTION
 
 // FUNCTION: 0x10298070 size=0x23e
+#include "MvsnSec0.h"
 #include "CEHandleGet.h"
 #include "CSoundControllerImp.h"
 #include "CTriggerProximity.h"
@@ -2881,24 +2882,95 @@ float CAI_BaseNPCTroika::vfunc516()
 extern char g_10924fb8;
 extern CBaseHandle g_109247e0[2];
 
+#include "CAI_BaseNPC_vfunc144.h"
+#include "CCineNPC.h"
+#include "CUnknown103158f0.h"
+#include "IPhysicsObject.h"
+#include "ConVar.h"
+
+extern ConVar g_106bbaa0;
+extern ConVar g_10924a68;
+#define FILE_144 "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp"
+
+// The game's first decliner of the header inline EHandleEntityList::LookupEntity in this unit is
+// CAI_BaseNPC::Event_Killed (0x10265ad0, judged 0 below as a same-unit copy): its LookupEntity COMDAT is compiled
+// before this function, so VC6 knows the call's side effects (not its registers) here, as in the game.
 namespace block_10298070
 {
-	struct EHandleEntityListUnit : EHandleEntityList
+struct CScriptView144
+{
+	char m_pad0000[0x204];
+	unsigned int m_spawnflags;
+	char m_pad0208[0x5f91 - 0x208];
+	char m_bPlayedSequence;
+};
+
+struct CDamageInfo144 : CAI_NPCDamageRecord
+{
+	CBaseEntity *GetAttacker() const { return m_pInflictor; }
+};
+
+struct CEventKilled144 : CAI_BaseNPCUnit144
+{
+	IPhysicsObject *VPhysicsGetObject() const { return m_pPhysObj36c; }
+	void SetIdealStateDbg(int state, const char *pszFile, int nLine) { m_pszFile1b3c = pszFile; m_nLine1b40 = nLine; m_nIdealState5cc4 = state; }
+	void SetTouchNull() { *(int *)((char *)this + 0x1ec) = 0; }
+	void SetCondition(int iCondition) { if (g_10924a68.GetBool()) {} sub_10269a20(iCondition); }
+	void sub_10265ad0(const CDamageInfo144 &info);
+};
+
+void CEventKilled144::sub_10265ad0(const CDamageInfo144 &info)
+{
+	if (m_pSchedule5c38 && (int)m_pSchedule5c38 == sub_102cc1f0(0x3a))
+		return;
+
+	if (m_nState5cc0 == 4 && m_hScript5d74.Get())
 	{
-		IHandleEntity *sub_100290c0(const CBaseHandle &handle) const;
-	};
-	IHandleEntity *EHandleEntityListUnit::sub_100290c0(const CBaseHandle &handle) const
-	{
-		IHandleEntity *pResult = 0;
-		unsigned int h = handle.m_Index;
-		const EHandleEntInfo *pInfo = &m_EntPtrArray[h & 0x1fff];
-		unsigned int serial = h >> 13;
-		if (h != 0xffffffff && (unsigned int)pInfo->m_SerialNumber == serial)
-			pResult = pInfo->m_pEntity;
-		return pResult;
+		CScriptView144 *pScript = (CScriptView144 *)m_hScript5d74.Get();
+		if (pScript->m_bPlayedSequence && (((CScriptView144 *)m_hScript5d74.Get())->m_spawnflags & 0x2080) != 0x80)
+		{
+			m_LastDamage = info;
+			return;
+		}
+		((CCineNPC *)m_hScript5d74.Get())->sub_101a8c30();
+		IPhysicsObject *pPhys;
+		if (g_106bbaa0.GetBool() && (pPhys = VPhysicsGetObject()))
+		{
+			Vector vecTmp;
+			Vector vecPos;
+			vecPos = *vfunc263(&vecTmp);
+			pPhys->vfunc39((float *)&vecPos, 0);
+		}
 	}
+
+	vfunc511();
+	if (m_n153c == -1 || !m_h1538.Get())
+		vfunc488();
+
+	sub_10265a90(info.GetAttacker());
+	if (((CBaseEntity *)this)->sub_100b3700() & 0x2000)
+	{
+		SetTouchNull();
+		sub_10265a40();
+	}
+	sub_1032b9b0((int)&info);
+	SetIdealStateDbg(7, FILE_144, 0x217);
+	SetCondition(0x4c);
+	m_hAttacker5b7c = info.GetAttacker();
+	m_b5b80 = 1;
+	sub_1028ae60();
+	if (m_pSquad5da4)
+		((CUnknown103158f0 *)m_pSquad5da4)->sub_103158f0((CBaseEntity *)this);
+	if ((char)vfunc552())
+		sub_102695d0();
+	else
+		sub_101babc0(0x20, vfunc217(), 0x180, 30.0f, 0);
+	SetIdealStateDbg(7, FILE_144, 0x241);
+	sub_1026e340(7);
 }
-using namespace block_10298070;
+}
+
+
 
 inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
 inline const char *EntName(CBaseEntity *p) { return p ? STRINGR(p->m_name26c) : g_105387dc; }
@@ -2922,7 +2994,7 @@ void CAI_BaseNPCTroika::vfunc312(int nArg)
 		CUpdateCharacterKeep keep;
 		int i;
 		for (i = 0; i < 2; i++) {
-			if (((EHandleEntityListUnit *)EHandleDetail::g_10566458)->sub_100290c0(g_109247e0[i]) && (void *)g_109247e0[i].Get() != (void *)this) {
+			if (g_109247e0[i].Get() && (void *)g_109247e0[i].Get() != (void *)this) {
 				CBaseHandle h;
 				h.Set(g_109247e0[i].Get());
 				keep.m_List.AddToTail(h);
