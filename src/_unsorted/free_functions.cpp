@@ -249490,7 +249490,6 @@ bool CUnknown10300e60::sub_10300e60(Vector vecMins, Vector vecMaxs, Vector vecPo
 // FUNCTION: 0x10301010 size=0x594
 class Vector;
 __forceinline void VectorSubtract(const Vector &a, const Vector &b, Vector &c);
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CAI_Pathfinder.h"
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
@@ -249503,11 +249502,9 @@ extern unsigned char g_1093408c;
 extern float g_104454c4;	// 0.0f
 extern void (*g_109f3658)(int nLevel, const char *pMsg, ...);
 
-inline float AStarLen(const Vector &d) { return FastSqrt((d[0] * d.x + d.z * d.z) + d.y * d.y); }
-#define MAXA(a, b) (((a) > (b)) ? (a) : (b))
-#define MAXB(a, b) (((b) < (a)) ? (a) : (b))
-#define MAXC(a, b) (((b) > (a)) ? (b) : (a))
-#define MAXV(a, b) (((a) < (b)) ? (b) : (a))
+#ifndef max
+#define max(a, b) (((a) > (b)) ? (a) : (b))
+#endif
 
 struct CAStarNode
 {
@@ -249566,7 +249563,7 @@ int CAI_Pathfinder::sub_10301010(const Vector *pPos, float flDist, int unused)
 {
 	CAStarPathfinder *pThis = (CAStarPathfinder *)this;
 
-	if (!pcd_stage(pThis->GetNetwork())->m_nNodes)
+	if (!pThis->GetNetwork()->m_nNodes)
 		return -1;
 
 	if (!g_1093408c)
@@ -249575,78 +249572,79 @@ int CAI_Pathfinder::sub_10301010(const Vector *pPos, float flDist, int unused)
 		return -1;
 	}
 
-	int iCurrent = pThis->GetNetwork()->sub_102f3c10(pcd_stage(pThis)->GetOuter(), (pcd_stage((CEntityVSlots *)pcd_stage(pThis)->GetOuter()))->slot220());
-	if ((int)iCurrent == -1)
+	int iCurrent = pThis->GetNetwork()->sub_102f3c10(pThis->GetOuter(), ((CEntityVSlots *)pThis->GetOuter())->slot220());
+	if (iCurrent == -1)
 	{
 		g_109f3658(2, "FindBackAwayNodeAStar() - %s has no nearest node (%f, %f, %f)!\n", pThis->GetEntClassname(), pThis->GetLocalOrigin().x, pThis->GetLocalOrigin().y, pThis->GetLocalOrigin().z);
 		return -1;
-	} else { CAStarNode **ppNodes = pThis->GetNetwork()->m_ppNodes;
-	int nNodes = pcd_stage(pThis)->GetNetwork()->m_nNodes;
-
-	CAStarBits openBS(nNodes);
-	CAStarBits closeBS(nNodes);
-
-	float *pCost = (float *)_alloca(nNodes * sizeof(float));
-	float *pHeur = (float *)_alloca(sizeof(float) * nNodes);
-	float *pTotal = (float *)pcd_stage(_alloca(nNodes * sizeof(float)));
-	int *pPrev = (int *)_alloca((int)nNodes * sizeof(int));
-
-	{ int i; i = 0; while (i < nNodes) { pCost[i] = 3.402823466e+38f;
-		*(pPrev + i) = -1; i++; } }
-
-	if (0) closeBS.SetBit(iCurrent); if (0) closeBS.SetBit(iCurrent); 
-	Vector vecMins, vecMaxs;
-	vecMins.x = pcd_stage(pPos)->x - 20.0f;
-	vecMins.y = pPos->y - 20.0f;
-	vecMins.z = pPos->z - 20.0f;
-	vecMaxs.x = 20.0f + pPos->x;
-	vecMaxs.y = pPos->y + 20.0f;
-	vecMaxs.z = 80.0f + pPos->z;
-
-	*(pCost + iCurrent) = 0;
-	pHeur[iCurrent] = MAXA(g_104454c4, flDist - AStarLen(*pPos - ppNodes[iCurrent]->sub_102fb0d0(pThis->GetHullType())));
-	pTotal[iCurrent] = pHeur[iCurrent] + pCost[iCurrent];
-	openBS.SetBit(iCurrent);
-	closeBS.SetBit(iCurrent);
-
-	for (;;)
+	}
+	else
 	{
-		if (!(!(!(!(openBS.IsAllClear()))))) return 0; else { iCurrent = sub_102f3270(&openBS, pTotal, nNodes);
-		openBS.ClearBit(iCurrent);
-		CAStarNode *pCurrent = *(ppNodes + iCurrent);
+		CAStarNode **ppNodes = pThis->GetNetwork()->m_ppNodes;
+		int nNodes = pThis->GetNetwork()->m_nNodes;
 
-		if (*(pCost + (int)iCurrent) >= flDist)
-			return pcd_stage(iCurrent);
+		CAStarBits openBS(nNodes);
+		CAStarBits closeBS(nNodes);
 
-		Vector vecCurrent = pCurrent->sub_102fb0d0(pcd_stage(pThis->GetHullType()));
+		float *pCost = (float *)_alloca(nNodes * sizeof(float));
+		float *pHeur = (float *)_alloca(nNodes * sizeof(float));
+		float *pTotal = (float *)_alloca(nNodes * sizeof(float));
+		int *pPrev = (int *)_alloca(nNodes * sizeof(int));
 
-		int nLinks = pCurrent->m_nLinks;
-		for (int j = 0; (int)nLinks > (int)j; j += 1)
+		for (int i = 0; i < nNodes; i++)
 		{
-			CPairFields102dda40 *pLink = pCurrent->m_ppLinks[j];
-			if (!pThis->sub_102ff960(pLink, iCurrent))
-				continue;
+			pCost[i] = 3.402823466e+38f;
+			pPrev[i] = -1;
+		}
 
-			if (0) { Vector q = *pPos - vecMins; } if (0) { Vector q = *pPos - vecMins; } 
-			long nOther = pLink->sub_102dda40(iCurrent);
-			Vector vecOther = ppNodes[nOther]->sub_102fb0d0(pcd_stage(pThis)->GetHullType());
+		if (0) closeBS.SetBit(iCurrent); if (0) closeBS.SetBit(iCurrent); if (0) closeBS.SetBit(iCurrent); if (0) closeBS.SetBit(iCurrent); if (0) closeBS.SetBit(iCurrent);	// WORKAROUND (R12 numbering): five dead SetBit inlines; with fewer the relax GetBit/SetBit address is [edi+ecx] and the Length sums reassociate
+		Vector vecMins = *pPos - Vector(20.0f, 20.0f, 20.0f);
+		Vector vecMaxs = *pPos + Vector(20.0f, 20.0f, 80.0f);
 
-			if (((CUnknown10300e60 *)pThis)->sub_10300e60(vecMins, vecMaxs, vecCurrent, vecOther))
-				continue;
+		pCost[iCurrent] = 0;
+		pHeur[iCurrent] = max(0.0f, flDist - pPos->DistTo(ppNodes[iCurrent]->sub_102fb0d0(pThis->GetHullType())));
+		pTotal[iCurrent] = pHeur[iCurrent] + pCost[iCurrent];
+		openBS.SetBit(iCurrent);
+		closeBS.SetBit(iCurrent);
 
-			float flNewCost; flNewCost = AStarLen(vecCurrent - vecOther) + pCost[iCurrent];
-			if (!closeBS.IsBitSet(nOther) || flNewCost < pCost[nOther])
+		while (!openBS.IsAllClear())
+		{
+			iCurrent = sub_102f3270(&openBS, pTotal, nNodes);
+			openBS.ClearBit(iCurrent);
+			CAStarNode *pCurrent = ppNodes[iCurrent];
+
+			if (pCost[iCurrent] >= flDist)
+				return iCurrent;
+
+			Vector vecCurrent = pCurrent->sub_102fb0d0(pThis->GetHullType());
+
+			int nLinks = pCurrent->m_nLinks;
+			for (int j = 0; j < nLinks; j++)
 			{
-				if (0) closeBS.SetBit(iCurrent); 
-				*(pPrev + (int)nOther) = iCurrent;
-				pCost[nOther] = flNewCost;
-				*(pHeur + nOther) = MAXA(g_104454c4, pcd_stage(flDist) - AStarLen(*pPos - vecOther));
-				pTotal[nOther] = pcd_stage(pHeur[nOther]) + *(pCost + nOther);
-				closeBS.SetBit(nOther);
-				openBS.SetBit(pcd_stage(nOther));
+				CPairFields102dda40 *pLink = pCurrent->m_ppLinks[j];
+				if (!pThis->sub_102ff960(pLink, iCurrent))
+					continue;
+
+				int nOther = pLink->sub_102dda40(iCurrent);
+				Vector vecOther = ppNodes[nOther]->sub_102fb0d0(pThis->GetHullType());
+
+				if (((CUnknown10300e60 *)pThis)->sub_10300e60(vecMins, vecMaxs, vecCurrent, vecOther))
+					continue;
+
+				float flNewCost = vecCurrent.DistTo(vecOther) + pCost[iCurrent];
+				if (!closeBS.IsBitSet(nOther) || flNewCost < pCost[nOther])
+				{
+					pPrev[nOther] = iCurrent;
+					pCost[nOther] = flNewCost;
+					pHeur[nOther] = max(0.0f, flDist - (*pPos - vecOther).Length());
+					pTotal[nOther] = pHeur[nOther] + pCost[nOther];
+					closeBS.SetBit(nOther);
+					openBS.SetBit(nOther);
+				}
 			}
-		} }
-	} }
+		}
+		return 0;
+	}
 }
 // END FUNCTION
 
