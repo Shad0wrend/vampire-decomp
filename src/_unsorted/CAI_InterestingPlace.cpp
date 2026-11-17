@@ -122,7 +122,7 @@ inline const char *STRING(const char *psz)
 void CAI_InterestingPlace::vfunc130(int a)
 {
 	CBaseEntity::vfunc130(a);
-	const char *volatile *ppName = (const char *volatile *)&m_pszTypeName;
+	const char *volatile *ppName = (const char **)&m_pszTypeName;
 	int iDiff = strcmp(STRING(*ppName), g_106b8540);
 	if (iDiff != 0) {
 		int pType = sub_102dd9c0(STRING(*ppName));
