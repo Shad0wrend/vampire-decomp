@@ -274738,7 +274738,6 @@ void sub_10350340()
 // END FUNCTION
 
 // FUNCTION: 0x10350620 size=0x19e
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CBaseAnimating.h"
 #include "CHL2_Player.h"
 #include "Vector.h"
@@ -274776,7 +274775,7 @@ void CHL2_Player::sub_10350620(int nActivity, float *pForward, float *pSide, flo
     for (int k = 0; k < 8; k++) {
         QAngle w;
         Vector v;
-        BoneRecView &anim = *pcd_stage(pStudio)->pRec(pSeq->anim[k][0]);
+        BoneRecView &anim = *(pStudio)->pRec(pSeq->anim[k][0]);
         if (sub_100c5b00(&anim, 0.0, 1.0f, v, w)) {
             v *= flScale * anim.fps / (anim.numframes - 1);
             pForward[k] = v.x;
