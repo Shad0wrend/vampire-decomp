@@ -238013,7 +238013,6 @@ void CUnknown102e12c0::sub_102e7e60()
 #include "CUnknown10202b10.h"
 #include "CUnknown10206400.h"
 #include "CUnknown1073dc28.h"
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CAI_Motor.h"
 #include "CBaseEntity.h"
 #include "CGameTrace.h"
@@ -238120,7 +238119,7 @@ CBaseEntity *CAI_MotorW102e7e80::sub_102e7e80(const Vector &start, const Vector 
 	CVProfScopeOuter102e7e80 VProf_("CAI_Motor_CheckWanderStep");
 
 	Vector vecStart(start.x, start.y, start.z + 0.0625f);
-	Vector vecEnd(end.x, end.y, pcd_stage(end.z) + 0.0625f);
+	Vector vecEnd(end.x, end.y, (end.z) + 0.0625f);
 	CGameTrace trace;
 	((CAI_MoveProbe102e7e80 *)this)->TraceHull(vecStart, vecEnd, collisionMask, &trace);
 
