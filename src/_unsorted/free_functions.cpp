@@ -161063,7 +161063,6 @@ void E101f2140::sub_101f2140()
 // END FUNCTION
 
 // FUNCTION: 0x101f2180 size=0x180
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "utlvector.h"
 #include <string.h>
 
