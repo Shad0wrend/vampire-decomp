@@ -14212,6 +14212,7 @@
 0x10012f85 func   ?sub_103952b0@CNPC_VMingXiao@@QAEHH@Z CNPC_VMingXiao::sub_103952b0
 0x10012f8a func   ?sub_1016cf30@CBasePlayer@@QAEXXZ CBasePlayer::sub_1016cf30
 0x10012f8f func   ?vfunc291@CWeaponIWritten@@UAEXXZ CWeaponIWritten::vfunc291
+0x10012f94 func   ?vfunc442@CNPC_VWerewolf@@UAEXPAUCNPC_VWerewolfTask@@@Z CNPC_VWerewolf::vfunc442
 0x10012f99 func   ?sub_100aff90@@YAXXZ sub_100aff90
 0x10012f9e func   ?vfunc1@CTEPlayerDecal@@UAEHXZ CTEPlayerDecal::vfunc1
 0x10012fa3 func   _item_p_occult_heal_rate item_p_occult_heal_rate

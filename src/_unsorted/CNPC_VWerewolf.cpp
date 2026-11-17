@@ -582,6 +582,445 @@ int CNPC_VWerewolf::vfunc142(CUnknown101c2a50 *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ccda0 size=0xe68
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+#include "CLogicAuto.h"
+#define vfunc442() vfunc442(CNPC_VWerewolfTask *pTask)
+#include "CNPC_VWerewolf.h"
+#undef vfunc442
+#include "ScopeTrace.h"
+#include "CAI_Motor.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+#include "CCineNPCSlots.h"
+#define WWMAX(a,b) (((a) > (b)) ? (a) : (b))
+#include <math.h>
+extern char g_106b8540[];
+extern char g_105387dc[];
+extern float g_104454c4;
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
+
+__declspec(dllimport) void DevWarning(const char *fmt, ...);
+extern "C" __declspec(dllimport) int RandomInt(int, int);
+class CAI_BaseNPCTroika;
+float __fastcall sub_10293a80(CAI_BaseNPCTroika *pThis);
+void __fastcall sub_102e0b40(float *pInner);
+
+struct CWWDevView2
+{
+	virtual void v0();
+	virtual bool v1();
+	char pad[0x24];
+	float m_28;
+};
+extern CWWDevView2 *g_1093d6f4;
+
+struct CWWNamedList
+{
+	int sub_101d5bd0(const char *pszName);
+};
+extern CWWNamedList g_10738d10;
+
+struct CWWPlayerView
+{
+	int sub_10337860();
+};
+
+struct CWWEntList
+{
+	CBaseEntity *sub_100f7770(CBaseEntity *pStart, const char *szName, CBaseEntity *pSearching, CBaseEntity *pActivator);
+};
+extern CWWEntList g_106eb5d8;
+extern char g_10538764[];
+extern char g_1060a514[];
+extern "C" void *__cdecl __RTDynamicCast(void *, long, void *, void *, int);
+
+struct CWWHelperView
+{
+	bool sub_102ee2e0();
+	void sub_102ee2c0();
+	int sub_102ee620();
+	bool sub_102ee6a0();
+	bool sub_102f2ea0();
+	void sub_102ee270();
+	void sub_102ee1c0(float f);
+	void sub_102f2fe0(int f);
+};
+
+struct CWWOutputView
+{
+	void sub_100cd660(void *pActivator, void *pCaller, int c);
+};
+
+struct CWWCollView
+{
+	char pad[0x44];
+	unsigned short m_usSolidFlags;
+	void sub_100dc580(int flags);
+	void AddSolidFlags(int flags) { sub_100dc580(m_usSolidFlags | flags); }
+};
+
+struct CWWEntView
+{
+	char pad[0x26c];
+	const char *m_name26c;
+	void AddSolidFlags(int flags)
+	{
+		ScopeTrace t2("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540, g_106b8540);
+		((CWWCollView *)((char *)this + 0x270))->AddSolidFlags(flags);
+	}
+};
+
+struct CWWHintView
+{
+	float sub_102d40e0();
+};
+
+struct CWWHandle
+{
+	int m_v;
+	CWWHandle(void *pObj);
+	CWWHandle(const CWWHandle &o);
+};
+
+struct CWWMotorView : CAI_Motor
+{
+	void SetIdealYaw(float flIdealYaw)
+	{
+		if (m_28)
+		{
+			if (flIdealYaw >= 180.0f)
+				flIdealYaw -= 180.0f;
+			else
+				flIdealYaw += 180.0f;
+		}
+		if (*(float *)&m_1c == 180.0f)
+			m_34 = flIdealYaw;
+		else
+			m_34 = sub_102e0a80(flIdealYaw);
+	}
+};
+
+struct CWWSlots
+{
+	CCS_V100(a) CCS_V100(b) CCS_V100(c)
+	CCS_V10(d0) CCS_V10(d1) CCS_V10(d2) CCS_V10(d3) CCS_V10(d4) CCS_V10(d5)
+	CCS_V(e360) CCS_V(e361) CCS_V(e362)
+	virtual char slot363(CBaseEntity *pEnt);
+	CCS_V(e364) CCS_V(e365) CCS_V(e366) CCS_V(e367) CCS_V(e368) CCS_V(e369)
+	CCS_V10(f37) CCS_V10(f38) CCS_V10(f39) CCS_V10(f40)
+	CCS_V(g410) CCS_V(g411) CCS_V(g412) CCS_V(g413) CCS_V(g414) CCS_V(g415) CCS_V(g416) CCS_V(g417)
+	virtual float slot418(float f);
+};
+
+template <int O, class T> struct At { char pad[O]; T v; };
+#define FLD(T, o) (((At<o, T > *)this)->v)
+
+struct CWWStartView : CNPC_VWerewolf
+{
+	void sub_10273e80(int a);
+	int sub_1027a6c0();
+	void sub_10272650(int a);
+	void sub_10332ca0(CBaseEntity *pEnt, int a, int b);
+	void sub_10279cc0(CBaseEntity *pEnt);
+	const char *sub_100ab4f0();
+	void sub_102a1910(CNPC_VWerewolfTask *pTask);
+	void sub_103662d0(CWWHandle h, float delay);
+	void sub_103d6650(Vector *pOut, void *pHint);
+	Vector *sub_103d6770(Vector *pOut, void *pHint);
+};
+
+struct CWWTC2
+{
+	void sub_10273e80(int a);
+};
+
+static inline bool IsCurSched(CNPC_VWerewolf *p, int type)
+{
+	return p->m_pSchedule5c38 && p->m_pSchedule5c38 == p->sub_102cc1f0(type);
+}
+
+#define TRACE_PUSH(fn, nm) { const char *n_ = nm; g_109f3620[*g_109f3680].name = fn; g_109f3620[*g_109f3680].file = n_; g_109f3620[*g_109f3680].line = g_106b8540; (*g_109f3680)++; }
+#define HOLD(p, t) self->sub_103662d0(CWWHandle(p), t)
+
+void CNPC_VWerewolf::vfunc442(CNPC_VWerewolfTask *pTask)
+{
+	CWWStartView *self = (CWWStartView *)this;
+	Vector a, b, tmp1, tmp2;
+	TRACE_PUSH("CNPC_VWerewolf::StartTask", this ? (STRINGR_F(m_name26c)) : g_105387dc);
+	vfunc449(pTask->m_id);
+	switch (pTask->m_id) {
+	case 0x100:
+		self->sub_102a1910(pTask);
+		FLD(unsigned int, 0x14b8) &= ~0x10000;
+		break;
+	case 0x4e: {
+		float f = ((CWWSlots *)this)->slot418(pTask->m_flTime) + m_f66d0 + m_f66cc + 5.0;
+		FLD(float, 0x6320) = f;
+		((CWWHelperView *)m_pHelper5d34)->sub_102ee1c0(f);
+		((CWWHelperView *)m_pHelper5d34)->sub_102f2fe0(FLD(int, 0x6320));
+		self->sub_10273e80(0);
+		break;
+	}
+	case 2:
+		if (IsCurSched(this, 0x158)) {
+			FLD(float, 0x5db4) = (g_1093d6f4->v1() ? g_104454c4 : g_1093d6f4->m_28) + gpGlobals->curtime;
+			break;
+		}
+		self->sub_102a1910(pTask);
+		break;
+	case 0x14a:
+		if (!vfunc167() || !m_n6720) {
+			sub_10293a80((CAI_BaseNPCTroika *)this);
+			if (m_h628c.Get()) {
+				CWWPlayerView *pPlayer = (CWWPlayerView *)m_h628c.Get();
+				FLD(char, 0x6710) = (pPlayer->sub_10337860() == g_10738d10.sub_101d5bd0("Player_Malkavian"));
+				self->sub_10332ca0(m_h628c.Get(), 1, 10);
+				sub_10279a50((int)m_h628c.Get());
+				self->sub_10279cc0(m_h628c.Get());
+				vfunc600((int)m_h628c.Get());
+			}
+		}
+		if (!vfunc167())
+			DevWarning("%s could not find an enemy... oh well!\n", self->sub_100ab4f0());
+		self->sub_10273e80(0);
+		break;
+	case 0x14c:
+		if (sub_10269aa0(0x77)) {
+			((CWWTC2 *)this)->sub_10273e80(0);
+			break;
+		}
+		if (((CWWHelperView *)m_pHelper5d34)->sub_102ee2e0())
+			((CWWHelperView *)m_pHelper5d34)->sub_102ee2c0();
+		if (!((CWWHelperView *)m_pHelper5d34)->sub_102ee620()) {
+			m_b1a40 = 0;
+			vfunc448_slot((int)"Did not path out of player's sight");
+			((CWWHelperView *)m_pHelper5d34)->sub_102ee270();
+			break;
+		}
+		if (!((CWWHelperView *)m_pHelper5d34)->sub_102ee6a0()) {
+			m_b1a40 = 0;
+			self->sub_10272650(self->sub_1027a6c0());
+			break;
+		}
+		if (((CWWHelperView *)m_pHelper5d34)->sub_102f2ea0()) {
+			m_b1a40 = 0;
+			vfunc448_slot((int)"Did not path out of player's sight");
+			break;
+		}
+		m_b1a40 = 1;
+		vfunc528();
+		break;
+	case 0x14b: {
+		int act = 0x100;
+		if ((m_nFlags66e8 & 1) == 1 || !((CWWSlots *)this)->slot363(vfunc167()))
+			act = RandomInt(0, 1) ? 0x124 : 0x125;
+		sub_10289ee0(act);
+		sub_102e0b40((float *)m_pMotor5d44);
+		CEntityVSlots *pEnemy = (CEntityVSlots *)vfunc167();
+		CAI_Motor *pMotor = m_pMotor5d44;
+		pMotor->sub_102e2020((const float *)pEnemy->slot217(), 0);
+		break;
+	}
+	case 0x14d:
+		break;
+	case 0x14f:
+		if (WWMAX(g_104454c4, gpGlobals->curtime - m_flTeleport66ec) < 1.0) {
+			vfunc448_slot(0x1a);
+			break;
+		}
+		sub_103d4a60();
+		self->sub_10273e80(0);
+		break;
+	case 0x14e:
+		sub_103d4d60();
+		self->sub_10273e80(0);
+		break;
+	case 0x150:
+		if (!m_pHint66b0) {
+			vfunc448_slot(4);
+			break;
+		}
+		if (m_pHint66b0->m_nType == 0x3aa9) {
+			((CWWTC2 *)this)->sub_10273e80(0);
+			break;
+		}
+		if (!sub_103d6000(m_pHint66b0)) {
+			vfunc448_slot(0x15);
+			break;
+		}
+		break;
+	case 0x151:
+		if (m_pHint66b0) {
+			HOLD(m_pHint66b0, 5.0f);
+			m_pLastUsedTeleportHint = (CBaseEntity *)m_pHint66b0;
+			m_pHint66b0->sub_102d1420(0);
+			sub_103d4760();
+			CNPC_VWerewolfHint66b0 *pHint = (CNPC_VWerewolfHint66b0 *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, STRINGR_F(*(const char **)((char *)m_pLastUsedTeleportHint + 0x468)), 0, 0), 0, g_10538764, g_1060a514, 0);
+			if (pHint)
+				sub_103d45c0(pHint);
+			if (m_pHint66b0) {
+				sub_103d9f90();
+				if (sub_103d6000(m_pHint66b0))
+					break;
+			}
+		}
+		self->sub_10273e80(0);
+		break;
+	case 0x152:
+		m_nFlags66e8 = 0;
+		if (!sub_10366400((int)m_pHint66b0))
+			HOLD(m_pHint66b0, 5.0f);
+		sub_103d4760();
+		sub_10273180(1);
+		m_flTeleport66ec = gpGlobals->curtime;
+		self->sub_10273e80(0);
+		break;
+	case 0x153: {
+		if (!m_pHint66bc) {
+			vfunc448_slot(4);
+			break;
+		}
+		sub_103ceb60(m_pHint66bc);
+		FLD(Vector, 0x5dd0) = *self->sub_103d6770(&tmp1, m_pHint66bc);
+		self->sub_10273e80(0);
+		break;
+	}
+	case 0x154: {
+		if (!m_pHint66bc) {
+			vfunc448_slot(4);
+			break;
+		}
+		sub_102e0b40((float *)m_pMotor5d44);
+		float yaw = ((CEntityVSlots *)m_pHint66bc)->slot219()->y;
+		((CWWMotorView *)m_pMotor5d44)->SetIdealYaw(yaw);
+		m_pMotor5d44->sub_102e1e20(-1);
+		break;
+	}
+	case 0x155:
+		if (!sub_103d6000(m_pHint66bc))
+			vfunc448_slot(0x15);
+		else if (m_pHint66bc->m_nType == 0x3aa0 && !sub_10366490((int)m_pHint66bc))
+			HOLD(m_pHint66bc, 15.0f);
+		break;
+	case 0x156:
+		if (m_pHint66bc) {
+			m_pHint66bc->sub_102d1420(0);
+			m_pLastUsedMoveHint = (CBaseEntity *)m_pHint66bc;
+			if (!sub_10366490((int)m_pHint66bc))
+				HOLD(m_pHint66bc, 3.0f);
+			sub_103d4690();
+			CNPC_VWerewolfHint66b0 *pHint = (CNPC_VWerewolfHint66b0 *)__RTDynamicCast(g_106eb5d8.sub_100f7770(0, STRINGR_F(*(const char **)((char *)m_pLastUsedMoveHint + 0x468)), 0, 0), 0, g_10538764, g_1060a514, 0);
+			if (pHint)
+				sub_103d44e0(pHint, m_b66c8);
+			if (m_pHint66bc) {
+				if (sub_103d6000(m_pHint66bc))
+					break;
+				vfunc448_slot(0x15);
+			}
+		}
+		self->sub_10273e80(0);
+		break;
+	case 0x157:
+		if (!sub_10366400((int)m_pHint66bc))
+			HOLD(m_pHint66bc, 3.0f);
+		m_nFlags66e8 = 0;
+		sub_103d4690();
+		sub_10273180(1);
+		self->sub_10273e80(0);
+		break;
+	case 0x158: {
+		if (sub_103d0ec0()) {
+			FLD(Vector, 0x5dd0) = *self->sub_103d6770(&tmp2, m_pHint66c4);
+			self->sub_10273e80(0);
+			break;
+		}
+		vfunc448_slot(4);
+		break;
+	}
+	case 0x159:
+		if (m_pHint66c4 && sub_103d6000(m_pHint66c4))
+			break;
+		vfunc448_slot(0x15);
+		break;
+	case 0x15a: {
+		if (!m_pHint66bc) {
+			vfunc448_slot(4);
+			break;
+		}
+		a = *(Vector *)vfunc217();
+		self->sub_103d6650(&b, m_pHint66bc);
+		float dz = b.z - a.z;
+		FLD(Vector, 0x649c) = a;
+		FLD(Vector, 0x64a8) = b;
+		float t;
+		if (dz > 0.0f)
+			t = dz + 100.0f;
+		else
+			t = ((float)fabs(a.x - b.x) + (float)fabs(a.y - b.y)) * 0.25f;
+		FLD(float, 0x64b4) = ((CWWHintView *)m_pHint66bc)->sub_102d40e0() + t;
+		FLD(float, 0x64b8) = 2.0f;
+		self->sub_10273e80(0);
+		break;
+	}
+	case 0x15b:
+		sub_103cb920(0);
+		m_nFlags66e8 = 0;
+		FLD(float, 0x64b8) = 1.0f;
+		HOLD(m_pHint66bc, 15.0f);
+		sub_103d4690();
+		m_b66a8 = 0;
+		self->sub_10273e80(0);
+		break;
+	case 0x15c:
+		sub_103d6280(m_pHint66bc);
+		sub_10289ee0(0x11c);
+		if (FLD(int, 0xff0) == 0x11c)
+			break;
+		vfunc448_slot(0x15);
+		break;
+	case 0x15d:
+		sub_10289ee0(0x11d);
+		if (FLD(int, 0xff0) == 0x11d)
+			break;
+		vfunc448_slot(0x15);
+		break;
+	case 0x15e:
+		sub_10289ee0(0x11f);
+		if (FLD(int, 0xff0) == 0x11f)
+			break;
+		vfunc448_slot(0x15);
+		break;
+	case 0x15f:
+		sub_10289ee0(0x11e);
+		if (FLD(int, 0xff0) != 0x11e) {
+			vfunc448_slot(0x15);
+			break;
+		}
+		((CWWEntView *)this)->AddSolidFlags(4);
+		((CWWOutputView *)m_Out6740)->sub_100cd660(vfunc167(), this, 0);
+		break;
+	case 0x160:
+		sub_10289ee0(0x120);
+		if (FLD(int, 0xff0) == 0x120)
+			break;
+		vfunc448_slot(0x15);
+		break;
+	case 0x161:
+		sub_10289ee0(0x121);
+		if (FLD(int, 0xff0) == 0x121)
+			break;
+		vfunc448_slot(0x15);
+		break;
+	default:
+		self->sub_102a1910(pTask);
+		break;
+	}
+	(*g_109f3680)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cdfb0 size=0x610
 #include "CLogicAuto.h"
 #include "CNPC_VWerewolf.h"
