@@ -286155,7 +286155,7 @@ struct SecType10389cc0
 		CSecureCoderBasic0 t;
 		int x = sub_10015be0(0);
 		int v = t.sub_103908c0(x);
-		char a = ((volatile CSecureCoderBasic0 &)t).a;
+		char a = ((CSecureCoderBasic0 &)t).a;
 		base.v = v;
 		char b = ((volatile CSecureCoderBasic0 &)t).b;
 		base.a = a;
