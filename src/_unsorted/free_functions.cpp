@@ -177037,7 +177037,6 @@ void CUnknown102148f0::sub_102143e0()
 // END FUNCTION
 
 // FUNCTION: 0x10214480 size=0x1c6
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CPropHaunted.h"
 #include "CPASAttenuationFilter.h"
 #include "CEntitySoundOriginView.h"
@@ -177054,10 +177053,10 @@ void CPropHaunted::sub_10214480()
 		return;
 	}
 	hsl6(0);
-	float flVolume = ((pcd_stage(gpGlobals)->curtime - m_flStart780)) / m_flDuration784;
+	float flVolume = (((gpGlobals)->curtime - m_flStart780)) / m_flDuration784;
 	flVolume = clamp(flVolume, 0.0, 1.0);
-	const char *pszSound = pcd_stage((const char *)m_iszSound7cc);
-	flVolume = 1.0 - pcd_stage(flVolume);
+	const char *pszSound = ((const char *)m_iszSound7cc);
+	flVolume = 1.0 - flVolume;
 	if (!pszSound) {
 		pszSound = (const char *)m_iszSound7cc;
 		if (!pszSound)
@@ -177071,7 +177070,7 @@ void CPropHaunted::sub_10214480()
 
 		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 		unsigned int edict = m_pEdict2e0;
-		enginesound->vfunc11(pcd_stage(&filter), engine->vfunc35(edict), 4, pcd_stage(flVolume), 0x4b, 1, 0x64, 0, 0, 1, 0);
+		enginesound->vfunc11((&filter), engine->vfunc35(edict), 4, flVolume, 0x4b, 1, 0x64, 0, 0, 1, 0);
 	}
 done:
 	m_flNextThink = gpGlobals->curtime + 0.05;
