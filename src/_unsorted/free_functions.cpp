@@ -56341,7 +56341,7 @@ void CEventQueue::sub_100ce0d0(int a, float fireDelay, int nOutputID)
 	memset(pEvent, 0, sizeof(CEQEvent));
 	pEvent->m_n34 = 1;
 	float fireTime = fireDelay + g_1070b228->curtime;
-	*(volatile int *)&pEvent->m_pszTarget = 0;
+	*(int *)&pEvent->m_pszTarget = 0;
 	*(volatile float *)&pEvent->m_flFireTime = fireTime;
 	*(volatile int *)&pEvent->m_hTarget = -1;
 	*(volatile int *)&pEvent->m_pszTargetInput = 0;
