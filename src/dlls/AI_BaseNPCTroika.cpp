@@ -3595,6 +3595,1046 @@ void CAI_BaseNPCTroika::sub_102aa9e0(void *pHolder)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102aacf0 size=0x1c9c
+#include "CNPC_VTzimisce.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CVDmg_t.h"
+#include "CVStatList_t.h"
+#include "globalvars.h"
+#include "Vector.h"
+#include "ehandle.h"
+
+extern float g_104454c4;
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+// same-unit callees compiled before this function (VC6 knows they keep ecx / edx)
+struct NT_Obj { char pad[0x5dc]; int type; };
+struct NT_N { char pad[0x5ddc]; NT_Obj *pObj; char pad2[0x63fd - 0x5ddc - 4]; char flag; };
+#pragma auto_inline(off)
+namespace block_102aacf0 {
+int __fastcall sub_102a13d0(NT_N *n)
+{
+	if (n->pObj) {
+		switch (n->pObj->type) {
+		case 100: return 0x1110;
+		case 101: return 0x110c;
+		case 0x27d8: return n->flag ? 0x111d : 0x111e;
+		}
+	}
+	return -1;
+}
+int __fastcall sub_102a1510(NT_N *p)
+{
+	if (p->pObj) {
+		switch (p->pObj->type) {
+		case 100: return 0x1111;
+		case 101: return 0x110d;
+		case 0x27d8: return 0x55;
+		}
+	}
+	return -1;
+}
+}
+#pragma auto_inline(on)
+using namespace block_102aacf0;
+bool __fastcall sub_102a1620(NT_N *p);
+bool __fastcall sub_102a15c0(NT_N *p);
+
+struct Bits204 { unsigned int a : 10; unsigned int b10 : 1; };
+struct Bits268 { unsigned int a : 12; unsigned int b12 : 1; };
+struct TaskV { int iTask; float flTaskData; };
+
+#define TV_V(n) virtual void tv##n();
+#define TV_V10(p) TV_V(p##0) TV_V(p##1) TV_V(p##2) TV_V(p##3) TV_V(p##4) TV_V(p##5) TV_V(p##6) TV_V(p##7) TV_V(p##8) TV_V(p##9)
+
+struct EntV
+{
+	TV_V10(0) TV_V10(1) TV_V10(2) TV_V10(3) TV_V10(4) TV_V10(5) TV_V10(6) TV_V10(7) TV_V10(8) TV_V10(9)
+	TV_V10(10) TV_V10(11) TV_V10(12) TV_V10(13) TV_V10(14) TV_V10(15) TV_V10(16) TV_V10(17) TV_V10(18) TV_V10(19)
+	TV_V10(20) TV_V(210) TV_V(211) TV_V(212) TV_V(213) TV_V(214) TV_V(215) TV_V(216)
+	virtual Vector *slot217();
+	TV_V(218) TV_V(219)
+	TV_V10(22) TV_V10(23) TV_V(240) TV_V(241)
+	virtual void slot242();
+	TV_V(243) TV_V(244) TV_V(245) TV_V(246) TV_V(247) TV_V(248) TV_V(249)
+	TV_V10(25) TV_V10(26) TV_V10(27) TV_V10(28) TV_V10(29) TV_V10(30)
+	TV_V(310) TV_V(311) TV_V(312) TV_V(313) TV_V(314)
+	virtual void slot315();
+	void sub_100fbbb0(float time);
+	char m_pad0004[0x484 - 4];
+	int m_484;
+};
+
+struct MotorV
+{
+	TV_V(0) TV_V(1) TV_V(2) TV_V(3) TV_V(4) TV_V(5) TV_V(6) TV_V(7)
+	virtual void slot8();
+	char m_pad0004[0x30 - 4];
+	int m_30;
+	void sub_102e20b0(const float *pPosition, float flWeight);
+	void sub_102e1e20(int yawSpeed);
+	void sub_102e1c10(float flIdealYaw, float flYawSpeed);
+};
+
+struct NavV
+{
+	int sub_102ee620();
+	char sub_102ee6a0();
+	bool sub_102f2ea0();
+	char sub_102ee270();
+	void sub_102ee250(int value);
+};
+
+struct EnemiesV
+{
+	Vector sub_102dfed0(EntV *pEnemy);
+};
+
+struct DmgElemV { char b[0x4c]; };
+struct DmgVecV { DmgElemV *m_pMemory; int m_nAlloc; int m_nGrow; int m_Size; };
+
+struct InfoV
+{
+	InfoV *sub_101c26d0(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
+	int m_0[4];
+	Vector m_vecForce;	// 0x10
+	char m_pad1c[0x4c - 0x1c];
+};
+
+struct NpcV
+{
+	bool Bit268_12() { bool b = (*(unsigned int *)((char *)this + 0x268) >> 12) & 1; return b; }
+	MotorV *GetMotor() { return *(MotorV **)((char *)this + 0x5d44); }
+	bool IsWait6014() { return gpGlobals->curtime >= *(float *)((char *)this + 0x6014); }
+	bool Bit204_10() { bool b = (*(unsigned int *)((char *)this + 0x204) >> 10) & 1; return b; }
+	bool IsWaitA() { return gpGlobals->curtime >= *(float *)((char *)this + 0x5db4); }
+	int GetSequence() { return *(int *)((char *)this + 0x6f0); }
+	bool IsActivityStarted() { return (GetSequence() == *(int *)((char *)this + 0x5ccc)); }
+	bool IsWaitB() { return !(gpGlobals->curtime < *(float *)((char *)this + 0x5db4)); }
+
+	TV_V(0) TV_V(1) TV_V(2) TV_V(3) TV_V(4) TV_V(5) TV_V(6) TV_V(7) TV_V(8) TV_V(9)
+	TV_V(10) TV_V(11) TV_V(12) TV_V(13) TV_V(14) TV_V(15) TV_V(16) TV_V(17) TV_V(18) TV_V(19)
+	TV_V(20) TV_V(21) TV_V(22) TV_V(23) TV_V(24) TV_V(25) TV_V(26) TV_V(27) TV_V(28) TV_V(29)
+	TV_V(30) TV_V(31) TV_V(32) TV_V(33) TV_V(34) TV_V(35) TV_V(36) TV_V(37) TV_V(38) TV_V(39)
+	TV_V(40) TV_V(41) TV_V(42) TV_V(43) TV_V(44) TV_V(45) TV_V(46) TV_V(47) TV_V(48) TV_V(49)
+	TV_V(50) TV_V(51) TV_V(52) TV_V(53) TV_V(54) TV_V(55) TV_V(56) TV_V(57) TV_V(58) TV_V(59)
+	TV_V(60) TV_V(61) TV_V(62) TV_V(63) TV_V(64) TV_V(65) TV_V(66) TV_V(67) TV_V(68) TV_V(69)
+	TV_V(70) TV_V(71) TV_V(72) TV_V(73) TV_V(74) TV_V(75) TV_V(76)
+	virtual void slot77();
+	TV_V(78) TV_V(79) TV_V(80) TV_V(81) TV_V(82) TV_V(83) TV_V(84) TV_V(85) TV_V(86) TV_V(87)
+	TV_V(88) TV_V(89) TV_V(90) TV_V(91) TV_V(92) TV_V(93) TV_V(94) TV_V(95) TV_V(96) TV_V(97)
+	TV_V(98) TV_V(99) TV_V(100) TV_V(101) TV_V(102) TV_V(103) TV_V(104) TV_V(105) TV_V(106) TV_V(107)
+	TV_V(108) TV_V(109) TV_V(110) TV_V(111) TV_V(112) TV_V(113) TV_V(114) TV_V(115) TV_V(116) TV_V(117)
+	TV_V(118) TV_V(119) TV_V(120) TV_V(121) TV_V(122) TV_V(123) TV_V(124) TV_V(125) TV_V(126) TV_V(127)
+	TV_V(128) TV_V(129) TV_V(130) TV_V(131) TV_V(132) TV_V(133) TV_V(134) TV_V(135) TV_V(136) TV_V(137)
+	TV_V(138) TV_V(139) TV_V(140) TV_V(141) TV_V(142) TV_V(143)
+	virtual void slot144(InfoV *pInfo);
+	TV_V(145) TV_V(146) TV_V(147) TV_V(148) TV_V(149) TV_V(150) TV_V(151) TV_V(152) TV_V(153) TV_V(154)
+	TV_V(155) TV_V(156) TV_V(157)
+	virtual char slot158();
+	TV_V(159) TV_V(160) TV_V(161) TV_V(162) TV_V(163) TV_V(164) TV_V(165) TV_V(166)
+	virtual EntV *slot167();
+	TV_V(168) TV_V(169) TV_V(170) TV_V(171) TV_V(172) TV_V(173) TV_V(174) TV_V(175) TV_V(176) TV_V(177)
+	TV_V(178) TV_V(179) TV_V(180) TV_V(181) TV_V(182) TV_V(183) TV_V(184) TV_V(185) TV_V(186) TV_V(187)
+	TV_V(188) TV_V(189) TV_V(190) TV_V(191) TV_V(192) TV_V(193) TV_V(194) TV_V(195) TV_V(196) TV_V(197)
+	virtual Vector *slot198();
+	TV_V(199) TV_V(200) TV_V(201) TV_V(202) TV_V(203) TV_V(204) TV_V(205) TV_V(206) TV_V(207) TV_V(208)
+	TV_V(209) TV_V(210) TV_V(211) TV_V(212) TV_V(213) TV_V(214) TV_V(215) TV_V(216)
+	virtual Vector *slot217();
+	virtual void slot218(Vector *pAngles);
+	virtual Vector *slot219();
+	TV_V(220) TV_V(221) TV_V(222) TV_V(223) TV_V(224) TV_V(225) TV_V(226) TV_V(227) TV_V(228) TV_V(229)
+	TV_V(230) TV_V(231) TV_V(232) TV_V(233) TV_V(234) TV_V(235) TV_V(236) TV_V(237) TV_V(238) TV_V(239)
+	TV_V(240) TV_V(241) TV_V(242) TV_V(243) TV_V(244) TV_V(245) TV_V(246) TV_V(247) TV_V(248) TV_V(249)
+	TV_V(250)
+	virtual char slot251();
+	TV_V(252) TV_V(253) TV_V(254) TV_V(255) TV_V(256) TV_V(257) TV_V(258) TV_V(259) TV_V(260) TV_V(261)
+	TV_V(262) TV_V(263) TV_V(264) TV_V(265) TV_V(266) TV_V(267) TV_V(268) TV_V(269) TV_V(270) TV_V(271)
+	TV_V(272) TV_V(273) TV_V(274) TV_V(275) TV_V(276) TV_V(277) TV_V(278) TV_V(279) TV_V(280) TV_V(281)
+	TV_V(282) TV_V(283) TV_V(284) TV_V(285) TV_V(286) TV_V(287) TV_V(288) TV_V(289) TV_V(290) TV_V(291)
+	TV_V(292) TV_V(293) TV_V(294) TV_V(295) TV_V(296) TV_V(297) TV_V(298) TV_V(299) TV_V(300) TV_V(301)
+	TV_V(302) TV_V(303) TV_V(304) TV_V(305) TV_V(306) TV_V(307) TV_V(308) TV_V(309)
+	virtual void slot310(int a);
+	virtual void slot311(int a, int b, int c);
+	TV_V(312) TV_V(313) TV_V(314) TV_V(315) TV_V(316) TV_V(317) TV_V(318) TV_V(319) TV_V(320) TV_V(321)
+	TV_V(322) TV_V(323) TV_V(324) TV_V(325) TV_V(326) TV_V(327) TV_V(328) TV_V(329) TV_V(330) TV_V(331)
+	TV_V(332) TV_V(333) TV_V(334) TV_V(335) TV_V(336) TV_V(337) TV_V(338) TV_V(339) TV_V(340) TV_V(341)
+	TV_V(342) TV_V(343) TV_V(344) TV_V(345) TV_V(346) TV_V(347) TV_V(348) TV_V(349) TV_V(350) TV_V(351)
+	TV_V(352) TV_V(353) TV_V(354) TV_V(355) TV_V(356) TV_V(357) TV_V(358) TV_V(359) TV_V(360) TV_V(361)
+	TV_V(362) TV_V(363)
+	virtual char slot364(Vector *pPos);
+	TV_V(365) TV_V(366) TV_V(367) TV_V(368) TV_V(369) TV_V(370) TV_V(371) TV_V(372) TV_V(373) TV_V(374)
+	TV_V(375) TV_V(376) TV_V(377) TV_V(378) TV_V(379) TV_V(380) TV_V(381) TV_V(382) TV_V(383) TV_V(384)
+	TV_V(385) TV_V(386) TV_V(387) TV_V(388) TV_V(389) TV_V(390) TV_V(391) TV_V(392) TV_V(393) TV_V(394)
+	TV_V(395) TV_V(396) TV_V(397) TV_V(398) TV_V(399) TV_V(400) TV_V(401)
+	virtual void slot402();
+	virtual void slot403();
+	TV_V(404) TV_V(405) TV_V(406) TV_V(407) TV_V(408) TV_V(409) TV_V(410) TV_V(411) TV_V(412) TV_V(413)
+	TV_V(414) TV_V(415) TV_V(416) TV_V(417) TV_V(418) TV_V(419) TV_V(420) TV_V(421) TV_V(422) TV_V(423)
+	TV_V(424) TV_V(425) TV_V(426) TV_V(427) TV_V(428) TV_V(429) TV_V(430) TV_V(431) TV_V(432) TV_V(433)
+	TV_V(434) TV_V(435) TV_V(436) TV_V(437) TV_V(438) TV_V(439) TV_V(440) TV_V(441) TV_V(442) TV_V(443)
+	TV_V(444) TV_V(445) TV_V(446) TV_V(447)
+	virtual void slot448(int code);
+	TV_V(449) TV_V(450) TV_V(451) TV_V(452) TV_V(453) TV_V(454) TV_V(455) TV_V(456) TV_V(457) TV_V(458)
+	TV_V(459) TV_V(460) TV_V(461) TV_V(462) TV_V(463) TV_V(464) TV_V(465) TV_V(466) TV_V(467) TV_V(468)
+	TV_V(469) TV_V(470) TV_V(471) TV_V(472) TV_V(473) TV_V(474) TV_V(475) TV_V(476) TV_V(477) TV_V(478)
+	TV_V(479) TV_V(480) TV_V(481) TV_V(482) TV_V(483) TV_V(484) TV_V(485) TV_V(486) TV_V(487) TV_V(488)
+	TV_V(489) TV_V(490) TV_V(491) TV_V(492) TV_V(493) TV_V(494) TV_V(495) TV_V(496) TV_V(497) TV_V(498)
+	TV_V(499) TV_V(500) TV_V(501) TV_V(502) TV_V(503) TV_V(504) TV_V(505) TV_V(506) TV_V(507) TV_V(508)
+	TV_V(509) TV_V(510) TV_V(511) TV_V(512) TV_V(513) TV_V(514) TV_V(515) TV_V(516) TV_V(517) TV_V(518)
+	TV_V(519) TV_V(520) TV_V(521) TV_V(522) TV_V(523) TV_V(524) TV_V(525) TV_V(526) TV_V(527)
+	virtual void slot528();
+	TV_V(529) TV_V(530) TV_V(531) TV_V(532) TV_V(533) TV_V(534) TV_V(535) TV_V(536) TV_V(537) TV_V(538)
+	TV_V(539) TV_V(540)
+	virtual EnemiesV *slot541();
+	TV_V(542) TV_V(543) TV_V(544) TV_V(545) TV_V(546) TV_V(547) TV_V(548) TV_V(549) TV_V(550) TV_V(551)
+	TV_V(552) TV_V(553) TV_V(554) TV_V(555) TV_V(556) TV_V(557) TV_V(558) TV_V(559) TV_V(560) TV_V(561)
+	TV_V(562) TV_V(563) TV_V(564) TV_V(565) TV_V(566) TV_V(567) TV_V(568) TV_V(569) TV_V(570) TV_V(571)
+	virtual void slot572();
+	TV_V(573) TV_V(574) TV_V(575) TV_V(576) TV_V(577) TV_V(578) TV_V(579) TV_V(580) TV_V(581) TV_V(582)
+	TV_V(583) TV_V(584) TV_V(585) TV_V(586) TV_V(587)
+	virtual void slot588();
+	TV_V(589) TV_V(590)
+	virtual char slot591();
+	TV_V(592) TV_V(593) TV_V(594) TV_V(595) TV_V(596) TV_V(597) TV_V(598) TV_V(599) TV_V(600) TV_V(601)
+	TV_V(602) TV_V(603) TV_V(604) TV_V(605) TV_V(606) TV_V(607) TV_V(608) TV_V(609) TV_V(610) TV_V(611)
+	TV_V(612) TV_V(613)
+	virtual void slot614();
+	TV_V(615)
+	virtual void slot616();
+
+	// direct callees (resolved by their sub_ address)
+	void sub_10273e80(char flag);
+	bool sub_10280a50();
+	void sub_10289ee0(int activity);
+	bool sub_10269aa0(int condition);
+	void sub_10269b50(int condition);
+	int sub_10271ff0(int act, int *pOut);
+	int sub_1027a6c0();
+	void sub_10272650(int act);
+	int sub_10295460(int act, char b);
+	char sub_10278c80();
+	int sub_1027d990();
+	void sub_1027d9b0(char b);
+	void sub_10288780(void *pTask);
+	char sub_102a0490(Vector *pDir);
+	void sub_102a0870();
+	char sub_102aa210(void *pInterest);
+	void sub_102aa860(void *pPath);
+	bool sub_102aaa60(void *pTask);
+	void sub_102aab70(void *pTask);
+	void *sub_1029f780(void *pPath);
+	void sub_102ae750(int a, int b);
+	void sub_102b53d0(int a, const char *pszWhy);
+	int sub_102c1400();
+	char sub_102c2430();
+	char sub_102c4eb0();
+	void sub_102c4e30();
+	int sub_100b3700();
+	void sub_100b1d10();
+	int sub_1008dc40(int a, int b);
+	char *sub_1008d990(int seq);
+	void sub_10092610(int a, int b, int c);
+	void sub_100a1250(const void *pInfo);
+	void sub_103392c0(EntV *pKiller, int a, int b);
+	void sub_103281b0(int boneName, char a, char b);
+	void sub_1033d4b0();
+	EntV *sub_1032e7b0();
+	int sub_103454c0();
+	int sub_10345480();
+	void sub_102c4e80();
+};
+
+struct HolderV { void sub_102da600(char *pObj, char bValid, char bNotify); };
+struct OutputV { void sub_100cd660(void *pActivator, void *pCaller, float flDelay); };
+
+bool sub_101d1a90(EntV *pEye, NpcV *pNpc);
+float sub_101d2c70(const Vector *v);
+int sub_10412520(char *p);
+void sub_10139970(const Vector &forward, Vector &angles);
+float sub_10252450_dummy();
+struct WeaponV { float sub_10252450(int i); };
+
+struct CVDmgD : CVDmg_t { ~CVDmgD() { sub_101fa680(); } };
+#define WD(o) (!(gpGlobals->curtime < F(float, o)))
+#define F(T, o) (*(T *)((char *)this + (o)))
+#define ME ((NpcV *)this)
+#define MOTOR F(MotorV *, 0x5d44)
+#define NAV F(NavV *, 0x5d34)
+#define TaskComplete() ME->sub_10273e80(0)
+#define IsActivityFinished() ME->slot251()
+#define FacingIdeal() ME->sub_10278c80()
+#define TaskFail(code, line) { F(const char *, 0x1b44) = "E:\\Vampire\\main\\dlls\\AI_BaseNPCTroika.cpp"; F(int, 0x1b48) = line; ME->slot448(code); }
+#define HTARGET (*(CHandle<EntV> *)&F(int, 0x5ba8))
+#define HANDLE(o) (*(CHandle<EntV> *)&F(int, o))
+#define LKP() ME->slot541()->sub_102dfed0(ME->slot167())
+
+void CAI_BaseNPCTroika::vfunc444(void *pTaskRaw)
+{
+	TaskV *pTask = (TaskV *)pTaskRaw;
+	switch (pTask->iTask)
+	{
+	case 0xdd:	// TASK_KNOCKOUT
+		if (IsActivityFinished())
+			TaskComplete();
+		return;
+	case 0x4b:	// TASK_SET_ACTIVITY
+		if (ME->IsActivityStarted())
+		{
+			TaskComplete();
+			break;
+		}
+		if (ME->IsWaitA())
+			TaskComplete();
+		break;
+	case 2: case 0x67: case 0x68:	// TASK_WAIT, TASK_WAIT_RANDOM, TASK_WAIT_INDEFINITE
+		ME->sub_102aab70(pTask);
+	default:
+		ME->sub_10288780(pTask);
+		break;
+	case 0xed:	// TASK_DO_COMFORT_LOOP
+		break;
+	case 5:	// TASK_WAIT_PVS
+		if (ME->Bit204_10() || ME->sub_102c2430())
+		{
+			TaskComplete();
+			return;
+		}
+		if (sub_101d1a90(HANDLE(0x628c).Get(), ME))
+		{
+			ME->slot614();
+			F(float, 0x178) = gpGlobals->curtime;
+			F(float, 0x6254) = gpGlobals->curtime;
+			F(float, 0x6258) = gpGlobals->curtime;
+			F(float, 0x625c) = gpGlobals->curtime;
+			F(float, 0x6260) = gpGlobals->curtime;
+			TaskComplete();
+			return;
+		}
+		break;
+	case 0x2b: case 0x31:	// TASK_FACE_IDEAL, TASK_FACE_TARGET
+		if (!(F(int, 0x5d8c) & 0x2000))
+			ME->slot572();
+		ME->sub_10288780(pTask);
+		break;
+	case 0x12e:
+		if (!(F(int, 0x5d8c) & 0x2000))
+			ME->slot572();
+		MOTOR->sub_102e1e20(-1);
+		if (FacingIdeal())
+			TaskComplete();
+		break;
+	case 0x2e:	// TASK_FACE_ENEMY
+	{
+		if (!(F(int, 0x5d8c) & 0x2000))
+			ME->slot572();
+		Vector vecTarget; if (HTARGET) vecTarget = *HTARGET->slot217(); else vecTarget = LKP();
+		MOTOR->sub_102e20b0(&vecTarget.x, -1.0f);
+		if (FacingIdeal())
+			TaskComplete();
+		break;
+	}
+	case 0x6e:	// TASK_WAIT_FOR_MOVEMENT
+	{
+		bool fTimeExpired = (pTask->flTaskData != g_104454c4 && pTask->flTaskData < gpGlobals->curtime - F(float, 0x5c4c));
+		if (!fTimeExpired && NAV->sub_102ee620())
+		{
+			if (!NAV->sub_102ee6a0())
+			{
+				F(char, 0x1a40) = 0;
+				ME->sub_10272650(ME->sub_1027a6c0());
+				TaskComplete();
+				break;
+			}
+			if (NAV->sub_102f2ea0())
+			{
+				F(char, 0x1a40) = 0;
+				TaskComplete();
+				break;
+			}
+			ME->slot528();
+			return;
+		}
+		F(char, 0x1a40) = 0;
+		TaskComplete();
+		NAV->sub_102ee270();
+		return;
+	}
+	case 0x7a:	// TASK_GET_PATH_TO_PATROL_POINT
+		ME->sub_102aa860(&F(char, 0x658c));
+		return;
+	case 0x7b:	// TASK_GET_PATH_TO_PATROL_POINT_HUNT
+		ME->sub_102aa860(&F(char, 0x6594));
+		return;
+	case 0xa7:
+		if (!(F(int, 0x5d8c) & 0x2000))
+			ME->slot572();
+		MOTOR->sub_102e1e20(-1);
+		if (FacingIdeal())
+			TaskComplete();
+		break;
+	case 0xde:	// TASK_UNKNOCKOUT
+		if (IsActivityFinished())
+		{
+			int act = F(int, 0xff0);
+			switch (act)
+			{
+			case 0x1068:
+				TaskComplete();
+				F(unsigned int, 0x14b8) &= 0xbbf5ffff;
+				return;
+			case 0x1052:
+				act = 0x1068;
+				break;
+			default:
+				act = 0x1068;
+				break;
+			}
+			ME->sub_10289ee0(act);
+			return;
+		}
+		break;
+	case 0x34:	// TASK_RANGE_ATTACK1
+	{
+		ME->sub_10280a50();
+		Vector vecTarget; if (HTARGET) vecTarget = *HTARGET->slot217(); else vecTarget = LKP();
+		MOTOR->sub_102e20b0(&vecTarget.x, -2.0f);
+		if (F(int, 0x6490) > 0)
+		{
+			WeaponV *pWeapon = (WeaponV *)ME->sub_1032e7b0();
+			if (!pWeapon)
+				TaskComplete();
+			if (gpGlobals->curtime >= pWeapon->sub_10252450(0))
+			{
+				F(int, 0x6490)--;
+				if (!ME->sub_102aaa60(pTask))
+				{
+					TaskComplete();
+					break;
+				}
+			}
+			break;
+		}
+		if (IsActivityFinished())
+			TaskComplete();
+		break;
+	}
+	case 0x35: case 0x3e: case 0x3f:	// TASK_RANGE_ATTACK2, TASK_SPECIAL_ATTACK1, TASK_SPECIAL_ATTACK2
+	{
+		ME->sub_10280a50();
+		Vector vecTarget; if (HTARGET) vecTarget = *HTARGET->slot217(); else vecTarget = LKP();
+		MOTOR->sub_102e20b0(&vecTarget.x, -2.0f);
+	}
+	case 0x93:	// TASK_MELEE_FLYING_KNOCKBACK_INTO, TASK_DO_JUMP_ACTIVITY
+		if (IsActivityFinished())
+			TaskComplete();
+		break;
+	case 0x36: case 0x37: case 0x8c: case 0x9a:	// TASK_MELEE_ATTACK1/2, TASK_MELEE_DODGE_ATTACK, TASK_MELEE_KICK
+		ME->sub_10280a50();
+		if (ME->slot167() && ME->slot591())
+		{
+			Vector vecEnemy; vecEnemy = *ME->slot167()->slot217();
+			MOTOR->sub_102e20b0(&vecEnemy.x, -2.0f);
+		}
+		if (IsActivityFinished())
+			TaskComplete();
+		break;
+	case 0xb9:	// TASK_RUN_DIALOG
+	{
+		int act = ME->sub_102c1400();
+		if (act == -1)
+		{
+			TaskComplete();
+			ME->sub_10269b50(0x6f);
+			return;
+		}
+		ME->slot310(act);
+		MOTOR->sub_102e1e20(-1);
+		return;
+	}
+	case 0xba: case 0xbb:	// TASK_RUN_DISPOSITION, TASK_RUN_DISPOSITION_RANDOM
+		ME->slot588();
+		if (ME->IsWaitA())
+			TaskComplete();
+		return;
+	case 0xbc: case 0xbd:	// TASK_SPECIAL_IDLE_ACTIVITY, TASK_SPECIAL_IDLE_ACTIVITY_RANDOM
+		if (HANDLE(0x628c).Get() && F(float, 0x6264) <= 128.0f && ME->sub_10269aa0(0x5a))
+		{
+			if (IsActivityFinished())
+			{
+				if (ME->sub_1008dc40(0x10f7, -1) == -1)
+					ME->sub_10289ee0(0x10f7);
+				else
+					ME->slot588();
+			}
+		}
+		else
+			ME->slot588();
+		if (ME->IsWaitA())
+			TaskComplete();
+		break;
+	case 0xe0:	// TASK_DO_JUMP_ACTIVITY
+		if (IsActivityFinished())
+			TaskComplete();
+		break;
+	case 0xe1:	// TASK_DO_LOOP_ACTIVITY
+	{
+		int act = (int)pTask->flTaskData;
+		if (F(char, 0xfd8) && IsActivityFinished())
+		{
+			TaskComplete();
+			break;
+		}
+		ME->slot310(act);
+		return;
+	}
+	case 0xe2: case 0x149:	// TASK_DO_BLEND_ACTIVITY, TASK_PLAY_DEATH_SEQUENCE
+		ME->sub_10280a50();
+		if (IsActivityFinished())
+			TaskComplete();
+		break;
+	case 0xe3:	// TASK_DO_BLEND_LOOP_ACTIVITY
+	{
+		int act = (int)pTask->flTaskData;
+		if (F(char, 0xfd8) && IsActivityFinished())
+		{
+			TaskComplete();
+			break;
+		}
+		ME->slot310(act);
+		return;
+	}
+	case 0xe6:
+		ME->sub_10280a50();
+		if (IsActivityFinished())
+			TaskComplete();
+		break;
+	case 0xe7:	// TASK_SET_COWER
+		if (ME->IsActivityStarted())
+			TaskComplete();
+		break;
+	case 0x54: case 0x55: case 0x56:	// TASK_PLAY_*SEQUENCE_FACE_ENEMY, TASK_PLAY_SEQUENCE_FACE_TARGET
+	{
+		Vector vecTarget;
+		if (pTask->iTask == 0x56)
+			vecTarget = *HANDLE(0x5ce4)->slot217();
+		else if (HTARGET)
+			vecTarget = *HTARGET->slot217();
+		else if (ME->slot167())
+			vecTarget = LKP();
+		else
+			goto noface;
+		ME->GetMotor()->sub_102e1c10(sub_101d2c70(&(vecTarget - *ME->slot217())), -2.0f);
+	noface:
+		ME->sub_10280a50();
+		if (IsActivityFinished())
+			TaskComplete();
+		return;
+	}
+	case 0x11d:
+		if (!(F(int, 0x5d8c) & 0x2000))
+			ME->slot572();
+		MOTOR->sub_102e1e20(-1);
+		if (FacingIdeal())
+			TaskComplete();
+		break;
+	case 0xf7:	// TASK_FACE_NEXT_NODE
+		if (!(F(int, 0x5d8c) & 0x2000))
+			ME->slot572();
+		MOTOR->sub_102e1e20(-1);
+		if (FacingIdeal())
+			TaskComplete();
+		break;
+	case 4: case 0xb0: case 0xb1:	// TASK_WAIT_FACE_ENEMY, TASK_WAIT_ATTACK_TIME1/2
+	{
+		Vector vecTarget;
+		if (HTARGET)
+			vecTarget = *HTARGET->slot217();
+		else if (ME->slot167())
+			vecTarget = LKP();
+		else
+			TaskFail(6, 0x407c);
+		if (!ME->slot364(&vecTarget))
+			MOTOR->sub_102e20b0(&vecTarget.x, -2.0f);
+		if (ME->IsWaitA())
+			TaskComplete();
+		break;
+	}
+	case 0xf8: case 0xf9: case 0xfa: case 0xfb: case 0xfc: case 0xfd: case 0xfe: case 0xff: case 0x148:	// TASK_LOOK_AT_*, TASK_UNLOOK_AT*
+		MOTOR->sub_102e1e20(-1);
+		if ((ME->IsWaitA() || IsActivityFinished()) && FacingIdeal())
+		{
+			F(unsigned int, 0x14b8) &= 0xf7ffffff;
+			TaskComplete();
+			return;
+		}
+		break;
+	case 0x107: case 0x108: case 0x109:	// TASK_ATTEMPT_DIVE*
+		if (IsActivityFinished())
+		{
+			if (F(int, 0xff0) == 0xf1d)
+			{
+				ME->sub_10272650(0x1052);
+				return;
+			}
+			F(unsigned int, 0x14b8) &= 0xffffbfff;
+			TaskComplete();
+			return;
+		}
+		break;
+	case 0x10a: case 0x10b: case 0x10c:	// TASK_PLAY_COVER_INTO/IDLE/OUTOF
+		ME->sub_102aab70(pTask);
+	case 0x92: case 0xee: case 0xef: case 0xf0: case 0x10f: case 0x110: case 0x113:
+		ME->sub_10280a50();
+		if (IsActivityFinished())
+			TaskComplete();
+		return;
+	case 0x10d:	// TASK_PLAY_COVER_AIM
+	{
+		ME->sub_10280a50();
+		Vector vecTarget;
+		if (HTARGET)
+			vecTarget = *HTARGET->slot217();
+		else if (HANDLE(0x6448).Get() == ME->slot167())
+			vecTarget = LKP();
+		else
+			TaskComplete();
+		MOTOR->sub_102e20b0(&vecTarget.x, -1.0f);
+		if (FacingIdeal())
+			TaskComplete();
+		break;
+	}
+	case 0xec:
+		ME->sub_10280a50();
+		if (IsActivityFinished())
+			TaskComplete();
+		break;
+	case 0xb2:	// TASK_FACE_INTEREST
+		if (F(void *, 0x62ec))
+		{
+			if (!(F(int, 0x5d8c) & 0x2000))
+				ME->slot572();
+			MOTOR->sub_102e1e20(-1);
+			if (FacingIdeal())
+				TaskComplete();
+			return;
+		}
+		TaskFail(0x22, 0x4105);
+		return;
+	case 0xb3:	// TASK_FACE_PATROL_INTEREST
+		if (ME->sub_1029f780(&F(char, 0x658c)))
+		{
+			if (!(F(int, 0x5d8c) & 0x2000))
+				ME->slot572();
+			MOTOR->sub_102e1e20(-1);
+			if (FacingIdeal())
+			{
+				F(int, 0x6300) = 0;
+				F(int, 0x659c) = 0;
+				TaskComplete();
+				return;
+			}
+			break;
+		}
+		TaskComplete();
+		return;
+	case 0xb4:	// TASK_DO_INTEREST_ACTIVITY
+		if (F(char *, 0x62ec))
+		{
+			if (ME->sub_102aa210(F(char *, 0x62ec)))
+			{
+				if (F(char *, 0x62ec)[0x571])
+				{
+					EntV *pWeapon = ME->sub_1032e7b0();
+					if (pWeapon)
+						pWeapon->slot315();
+				}
+				ME->sub_102b53d0(1, "Leaving interesting place (RunTask-WaitFinished)");
+				TaskComplete();
+				return;
+			}
+		}
+		else
+		{
+			TaskFail(0x23, 0x4141);
+			return;
+		}
+		break;
+	case 0xb5:	// TASK_DO_PATROL_INTEREST_ACTIVITY
+	{
+		char *pInterest = (char *)ME->sub_1029f780(&F(char, 0x658c));
+		if (pInterest)
+		{
+			if (ME->sub_102aa210(pInterest))
+			{
+				if (pInterest[0x571])
+				{
+					EntV *pWeapon = ME->sub_1032e7b0();
+					if (pWeapon)
+						pWeapon->slot315();
+				}
+				if (F(char, 0x62e8))
+					((OutputV *)&F(char, 0x5f8c))->sub_100cd660(F(void *, 0x6300), this, 0);
+				F(HolderV *, 0x6300)->sub_102da600((char *)this, 0, F(char, 0x62e8));
+				F(int, 0x6300) = 0;
+				F(int, 0x659c) = 0;
+				F(char, 0x62e8) = 0;
+				TaskComplete();
+				return;
+			}
+		}
+		else
+		{
+			TaskComplete();
+			return;
+		}
+		break;
+	}
+	case 0xb6: case 0xb7:	// TASK_DO_LOITER_ACTIVITY, TASK_DO_INTERACT_ACTIVITY
+		if (IsActivityFinished())
+		{
+			NAV->sub_102ee250(ME->sub_10271ff0(9, 0));
+			TaskComplete();
+			break;
+		}
+		break;
+	case 0xb8:	// TASK_DO_INTEREST_DEATH_ACTIVITY
+		if (IsActivityFinished())
+		{
+			F(unsigned int, 0x14b8) &= 0xdfffffff;
+			ME->sub_103281b0((int)"Bip01", 0, 1);
+			TaskComplete();
+			break;
+		}
+		break;
+	case 0xea:	// TASK_DIE_EXPLODE_GIB
+		ME->sub_1033d4b0();
+	case 0x5f: case 0xe9: case 0xeb:	// TASK_DIE, TASK_DIE_GIB, TASK_DIE_DUE_TO_PLAYER
+		if ((IsActivityFinished() && F(float, 0x6f8) >= 1.0) || F(int, 0xff0) == 1)
+		{
+			EntV *pKiller = HANDLE(0x628c).Get();
+			if (pTask->iTask == 0xe9 || pTask->iTask == 0x5f)
+				pKiller = (EntV *)this;
+			if (F(int, 0x200) == 1)
+				F(int, 0x200) = 0;
+			ME->sub_103392c0(pKiller, 0, 0);
+			if (pTask->iTask == 0xe9 || pTask->iTask == 0xea)
+				ME->slot402();
+			if (pTask->iTask == 0xeb && pTask->flTaskData != g_104454c4)
+				ME->slot77();
+		}
+		break;
+	case 0xdf:	// TASK_DIE_IMMEDIATE
+		ME->sub_103392c0(0, 0, 0);
+		return;
+	case 0x116:	// TASK_RESOLVE_BOTCH
+		if (IsActivityFinished())
+		{
+			TaskComplete();
+			F(unsigned int, 0x14b8) &= 0xfffbffff;
+			return;
+		}
+		break;
+	case 0x117:	// TASK_RESOLVE_BOTCH_IN_COVER
+		if (IsActivityFinished())
+		{
+			TaskComplete();
+			F(unsigned int, 0x14b8) &= 0xfffbffff;
+			break;
+		}
+		break;
+	case 0x118:	// TASK_RESOLVE_BOTCH_OUT_OF_COVER
+		if (IsActivityFinished())
+		{
+			int act = F(int, 0xff0);
+			if (act == sub_102a13d0((NT_N *)this))
+			{
+				sub_102a1620((NT_N *)this);
+				return;
+			}
+			if (act == sub_102a1510((NT_N *)this))
+			{
+				if (pTask->flTaskData != g_104454c4)
+				{
+					sub_102a15c0((NT_N *)this);
+					return;
+				}
+				TaskComplete();
+				F(unsigned int, 0x14b8) &= 0xfffbffff;
+				return;
+			}
+			TaskComplete();
+			F(unsigned int, 0x14b8) &= 0xfffbffff;
+			return;
+		}
+		break;
+	case 0x11b: case 0x11c: case 0x123:	// TASK_STEP_BACK, TASK_STEP_BACK_RUN, TASK_CIRCLE_ENEMY
+		ME->sub_10280a50();
+		if (ME->slot167())
+		{
+			Vector vecEnemy = *ME->slot167()->slot217();
+			MOTOR->sub_102e20b0(&vecEnemy.x, -1.0f);
+		}
+		if (ME->IsWaitA())
+		{
+			F(int, 0x63ec) = 0;
+			TaskComplete();
+			break;
+		}
+		break;
+	case 0x122: case 0x124:	// TASK_MELEE_CIRCLE_ENEMY, TASK_CIRCLE_ENEMY_FULLCYCLE
+		ME->sub_10280a50();
+		if (ME->slot167())
+		{
+			Vector vecEnemy = *ME->slot167()->slot217();
+			MOTOR->sub_102e20b0(&vecEnemy.x, -1.0f);
+		}
+		if (IsActivityFinished())
+		{
+			if (ME->IsWaitA() || ME->sub_10269aa0(0xe))
+			{
+				F(int, 0x63ec) = 0;
+				TaskComplete();
+				return;
+			}
+			int act = 0x1121;
+			if (ME->sub_10295460(act, 0) == -1)
+			{
+				act = 9;
+				if (ME->sub_10295460(act, 0) == -1)
+					TaskFail(0x15, 0x4255);
+			}
+			ME->sub_10289ee0(act);
+			return;
+		}
+		break;
+	case 0x96:	// TASK_MELEE_FLYING_KNOCKBACK_WALL_HIT
+		if (ME->IsWait6014())
+		{
+			ME->sub_102ae750(0x14f, 0);
+			return;
+		}
+		break;
+	case 0x97:	// TASK_MELEE_FLYING_KNOCKBACK_WALL_FALL
+	{
+		char *pSeqDesc = ME->sub_1008d990(F(int, 0x6f0));
+		if (pSeqDesc && sub_10412520(pSeqDesc + *(int *)(pSeqDesc + 4)) == 0x91 && IsActivityFinished())
+		{
+			int n = ME->sub_103454c0();
+			if (n >= 0)
+				ME->slot311(0x92, 0x92, n);
+			else
+				ME->sub_10289ee0(0x92);
+		}
+		if (!(ME->sub_1027d990() == 1 && (ME->sub_100b3700() & 1)))
+		{
+			MOTOR->m_30 = 0;
+			if (ME->Bit268_12())
+				ME->sub_100b1d10();
+			if (!(F(float, 0x3c4) < g_104454c4 && ME->sub_102c4eb0()))
+				break;
+		}
+		{
+			int n = ME->sub_103454c0();
+			MOTOR->slot8();
+			ME->sub_1027d9b0(0);
+			F(char, 0x6498) = 0;
+			if (n >= 0)
+				ME->slot311(0x93, 0x93, n);
+			else
+				ME->sub_10289ee0(0x93);
+			TaskComplete();
+			break;
+		}
+		break;
+	}
+	case 0x98:
+		ME->sub_10280a50();
+		if (IsActivityFinished())
+			TaskComplete();
+		break;
+	case 0x9c:	// TASK_ON_FIRE_INTO
+		if (IsActivityFinished())
+		{
+			TaskComplete();
+			return;
+		}
+		ME->sub_10280a50();
+		return;
+	case 0x9d:	// TASK_ON_FIRE_LOOP
+		if (IsActivityFinished())
+		{
+			{
+				DmgVecV &vec = F(DmgVecV, 0x65a8);
+				while (vec.m_Size)
+				{
+					ME->sub_100a1250(vec.m_pMemory);
+					if (vec.m_Size > 0)
+					{
+						memmove(vec.m_pMemory, &vec.m_pMemory[vec.m_Size - 1], sizeof(DmgElemV));
+						--vec.m_Size;
+					}
+				}
+			}
+			if (ME->slot158())
+			{
+				for (int i = 0; i < 0x12; i++)
+				{
+					CHandle<EntV> &h = ((CHandle<EntV> *)&F(int, 0xff8))[i];
+					if (h.Get() && h->m_484)
+					{
+						h->slot242();
+						h->sub_100fbbb0(2.0f);
+					}
+				}
+			}
+			ME->slot616();
+			TaskComplete();
+			return;
+		}
+		ME->sub_10280a50();
+		return;
+	case 0x9e:	// TASK_ON_FIRE_OUTOF
+		if (IsActivityFinished())
+		{
+			TaskComplete();
+			return;
+		}
+		ME->sub_10280a50();
+		return;
+	case 0x128:	// TASK_MELEE_CHEER
+	{
+		ME->sub_10280a50();
+		Vector vecTarget;
+		if (HTARGET)
+			vecTarget = *HTARGET->slot217();
+		else if (ME->slot167())
+			vecTarget = LKP();
+		else
+			TaskFail(6, 0x4304);
+		if (!ME->slot364(&vecTarget))
+			MOTOR->sub_102e20b0(&vecTarget.x, -2.0f);
+		if (ME->IsWaitA() && IsActivityFinished())
+			TaskComplete();
+		break;
+	}
+	case 0x137:	// TASK_PLAY_COMBAT_START_SEQUENCE
+		ME->sub_10280a50();
+		if (ME->slot167())
+		{
+			Vector vecEnemy = *ME->slot167()->slot217();
+			MOTOR->sub_102e20b0(&vecEnemy.x, -1.0f);
+		}
+		if (IsActivityFinished())
+			TaskComplete();
+		break;
+	case 0x99:	// TASK_MELEE_HIT_BY_FINISHING_MOVE
+	{
+		ME->sub_10280a50();
+		Vector vecPos;
+		Vector vecAng;
+		ME->sub_10092610((int)"Bip01 Spine2", (int)&vecPos, (int)&vecAng);
+		if (IsActivityFinished())
+		{
+			ME->sub_102c4e80();
+			CVDmgD dmg;
+			dmg.sub_101fa960((CVDmgSource_t *)this);
+			dmg.m_field04 = 1;
+			dmg.m_field0c = 1;
+			InfoV info;
+			info.sub_101c26d0((int)this, (int)this, 0x3f800000, 0, 0, (int)&dmg, -1);
+			Vector vecDir = F(Vector, 0x601c) - vecPos;
+			VectorNormalize(vecDir);
+			float flScale = F(float, 0x6018) - gpGlobals->curtime;
+			vecDir *= flScale;
+			vecDir *= 50000.0f;
+			info.m_vecForce = vecDir;
+			CVStatListSet::Of(this)->Find(0)->sub_10200a70(0xf, 0x11);
+			ME->slot144(&info);
+			ME->slot403();
+			TaskComplete();
+			return;
+		}
+		F(float, 0x6018) = gpGlobals->curtime;
+		F(Vector, 0x601c) = vecPos;
+		return;
+	}
+	case 0x95:
+		ME->sub_10280a50();
+		if (IsActivityFinished())
+			TaskComplete();
+		break;
+	case 0x94:	// TASK_MELEE_FLYING_KNOCKBACK_IDLE
+		if (!(ME->sub_1027d990() == 1 && (ME->sub_100b3700() & 1)))
+		{
+			ME->sub_102a0870();
+			Vector vecDir;
+			if (ME->sub_102a0490(&vecDir))
+			{
+				Vector vecAngles;
+				sub_10139970(vecDir, vecAngles);
+				int n = ME->sub_103454c0();
+				if (n >= 0)
+					ME->slot311(0x91, 0x91, n);
+				else
+					ME->sub_10289ee0(0x91);
+				Vector vecCur = *ME->slot219();
+				vecCur.y = vecAngles.y;
+				ME->sub_102c4e30();
+				ME->slot218(&vecCur);
+				F(Vector, 0x6004) = vecDir * 100.0f;
+				ME->sub_102ae750(0x14e, 0);
+			}
+			MOTOR->m_30 = 0;
+			if (ME->Bit268_12())
+				ME->sub_100b1d10();
+			if (!(F(float, 0x3c4) < g_104454c4 && ME->sub_102c4eb0()))
+				break;
+		}
+		{
+			int n = ME->sub_10345480();
+			{ MOTOR->slot8(); }
+			ME->sub_1027d9b0(0);
+			F(char, 0x6498) = 0;
+			TaskComplete();
+			if (n >= 0)
+			{
+				ME->slot311(0x90, 0x90, n);
+				return;
+			}
+			ME->sub_10289ee0(0x90);
+			return;
+		}
+	case 0x13a:	// TASK_JUMP
+		if (!(ME->sub_1027d990() == 1 && (ME->sub_100b3700() & 1)))
+		{
+			MotorV *pMotor = MOTOR;
+			Vector *pVel = ME->slot198();
+			pMotor->sub_102e1c10(sub_101d2c70(pVel), -1.0f);
+			MOTOR->m_30 = 0;
+			if (ME->Bit268_12())
+				ME->sub_100b1d10();
+			if (!(F(float, 0x3c4) < g_104454c4 && ME->sub_102c4eb0()))
+				break;
+		}
+		MOTOR->slot8();
+		ME->sub_1027d9b0(0);
+		F(char, 0x6498) = 0;
+		TaskComplete();
+		break;
+	case 0x139: case 0x13b: case 0x13c:	// TASK_PRE_JUMP, TASK_LAND, TASK_LAND_HARD
+		MOTOR->sub_102e1e20(-1);
+		if (!IsActivityFinished())
+			return;
+		TaskComplete();
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x102ad260 size=0x4c
 #include "CAI_BaseNPCTroika.h"
 // TARGET: CAI_BaseNPCTroika::sub_102ad260
