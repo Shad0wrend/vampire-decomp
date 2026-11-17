@@ -128785,7 +128785,7 @@ inline IHandleEntity *LookV1(const CBaseHandle &handle)
 {
 	if (handle.m_Index == 0xffffffff)
 		return 0;
-	const EHandleEntInfo *pInfo = &(*(EHandleDetail::EntityList * volatile *)&EHandleDetail::g_10566458)->m_EntPtrArray[handle.GetEntryIndex()];
+	const EHandleEntInfo *pInfo = &(*(EHandleDetail::EntityList * *)&EHandleDetail::g_10566458)->m_EntPtrArray[handle.GetEntryIndex()];
 	if (pInfo->m_SerialNumber == handle.GetSerialNumber())
 		return pInfo->m_pEntity;
 	else
@@ -128816,7 +128816,7 @@ inline IHandleEntity *LookV4(const CBaseHandle &handle)
 {
 	if (handle.m_Index == 0xffffffff)
 		return 0;
-	const EHandleEntInfo *pInfo = &EHandleDetail::g_10566458->m_EntPtrArray[(*(volatile unsigned int *)&handle.m_Index) & 0x1fff];
+	const EHandleEntInfo *pInfo = &EHandleDetail::g_10566458->m_EntPtrArray[(*(unsigned int *)&handle.m_Index) & 0x1fff];
 	if (pInfo->m_SerialNumber == handle.GetSerialNumber())
 		return pInfo->m_pEntity;
 	else
