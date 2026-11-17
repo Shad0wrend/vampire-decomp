@@ -264636,6 +264636,7 @@ void *CBaseCombatCharacter::sub_1032d890(const char *pszClassname, int unused)
 #include "CEHandleGet.h"
 #include "CUnknown100290c0.h"
 #include "ScopeTrace.h"
+#include "utlvector.h"
 #include <string.h>
 
 #define SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -264670,25 +264671,27 @@ int sub_1023bd00();
 struct CMsgPlayerView;
 void sub_101cebc0(CMsgPlayerView *pPlayer, int a, int b);
 
-static int g_shift1032db60 = 13;
+extern CUtlVector<EHANDLE> g_109370bc;
+extern char g_1061f05c[];
 namespace block_1032db60 {
-struct CUnknown100290c0 : EHandleEntityList
+// 0x103234a0 "CBaseCombatCharacter::RemoveFromPresenceList", the unit's first function that declines the header
+// inline LookupEntity (its FindAndRemove), so the COMDAT is compiled before the target
+void __fastcall sub_103234a0(CBaseCombatCharacter *pThis)
 {
-	unsigned int sub_100290c0(unsigned int *ph);
-};
-unsigned int CUnknown100290c0::sub_100290c0(unsigned int *ph)
-{
-	unsigned int h = *ph;
-	if (h == 0xffffffff)
-		return 0;
-	EHandleEntInfo *p = &m_EntPtrArray[h & 0x1fff];
-	if (p->m_SerialNumber == (int)(h >> g_shift1032db60))
-		return (unsigned int)p->m_pEntity;
-	return 0;
+	ScopeTrace trace(g_1061f05c, pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+	EHANDLE h = pThis;
+	g_109370bc.FindAndRemove(h);
 }
 }
-using namespace block_1032db60;
 
+inline bool ActiveCanHolster(CBaseCombatCharacter *p)
+{
+	if (p->m_hActiveWeapon19a4) {
+		if (!((SCanSwitchWeapon *)p->m_hActiveWeapon19a4.Get())->vfunc313())
+			return false;
+	}
+	return true;
+}
 bool CBaseCombatCharacter::sub_1032db60(void *pWeapon)
 {
 	ScopeTrace trace("CBaseCombatCharacter::Weapon_CanSwitchTo", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY", g_106b8540);
@@ -264699,10 +264702,8 @@ bool CBaseCombatCharacter::sub_1032db60(void *pWeapon)
 		if (!pNew->vfunc314())
 			return false;
 	}
-	if (((block_1032db60::CUnknown100290c0 *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)&m_hActiveWeapon19a4)) {
-		if (!((SCanSwitchWeapon *)m_hActiveWeapon19a4.Get())->vfunc313())
-			return false;
-	}
+	if (!ActiveCanHolster(this))
+		return false;
 	SCanSwitchPlayer *p = *(SCanSwitchPlayer **)((char *)this + 0xa8);
 	if (p && pNew && pNew->sub_102585c0()) {
 		if (EHandle_Get((const unsigned int &)p->m_h1040))
