@@ -107270,6 +107270,7 @@ extern float g_1070d1b0[];
 void sub_101cf600(CBaseEntity *pEnt);
 
 struct CUnknown10273070 { void sub_10273070(int a); };
+struct CSphere1016e0c0 : CUnknown101cccf0 { void NextEntity() { m_nIndex++; } };
 
 struct CColl1016e0c0 : CCollisionProperty
 {
@@ -107326,35 +107327,34 @@ struct CEntSolid1016e0c0 : CBaseEntity
 // TARGET: sub_1016e0c0
 void sub_1016e0c0()
 {
-	CUnknown101cccf0 sphere;
+	CSphere1016e0c0 sphere;
 	CBaseEntity *pEnt;
-	for (sphere.sub_101cccf0((int)g_1070d1b0, 0x45800000, 0, 0); (pEnt = sphere.sub_101ccd40()) != 0; sphere.m_nIndex++) {
+	for (sphere.sub_101cccf0((int)g_1070d1b0, 0x45800000, 0, 0); (pEnt = sphere.sub_101ccd40()) != 0; sphere.NextEntity()) {
 		if (!pEnt->m_pEdict2e0 || ((CUnknown100a8220 *)pEnt)->sub_100a8220())
 			continue;
 		CEntSolid1016e0c0 *pA = *(CEntSolid1016e0c0 **)((char *)pEnt + 0xa8);
 		CEntSolid1016e0c0 *pB = *(CEntSolid1016e0c0 **)((char *)pEnt + 0x98);
-		if (!pA)
-			goto doB;
-		pA->SetSolidFlagsI(0);
-		pA->AddSolidFlagsI(1);
-		pA->AddSolidFlags(0x10);
-		pA->SetSolid(2);
-		pA->sub_100aaa40(3);
-		pA->vfunc93(3, 0);
-		if (pA->sub_100b3700() & 2) {
-			Vector maxs(16.0f, 16.0f, 36.0f);
-			Vector mins(-16.0f, -16.0f, 0.0f);
-			pA->sub_100adf10(&mins.x, &maxs.x);
-		} else {
-			Vector maxs(16.0f, 16.0f, 72.0f);
-			Vector mins(-16.0f, -16.0f, 0.0f);
-			pA->sub_100adf10(&mins.x, &maxs.x);
+		if (pA) {
+			pA->SetSolidFlagsI(0);
+			pA->AddSolidFlagsI(1);
+			pA->AddSolidFlags(0x10);
+			pA->SetSolid(2);
+			pA->sub_100aaa40(3);
+			pA->vfunc93(3, 0);
+			if (pA->sub_100b3700() & 2) {
+				Vector maxs(16.0f, 16.0f, 36.0f);
+				Vector mins(-16.0f, -16.0f, 0.0f);
+				pA->sub_100adf10(&mins.x, &maxs.x);
+			} else {
+				Vector maxs(16.0f, 16.0f, 72.0f);
+				Vector mins(-16.0f, -16.0f, 0.0f);
+				pA->sub_100adf10(&mins.x, &maxs.x);
+			}
+			sub_101cf600(pA);
 		}
-		sub_101cf600(pA);
-doB:
 		if (!pB)
 			continue;
-		if (0) pB->SetSolidFlags(0);
+		if (0) pB->SetSolidFlags(0);	// WORKAROUND (inline budget, lever 51): three dead wrapper sites spend the budget so pB's ScopeTrace ctors stay calls
 		if (0) pB->SetSolidFlags(0);
 		if (0) pB->SetSolidFlags(0);
 		pB->SetSolidFlags(0);
