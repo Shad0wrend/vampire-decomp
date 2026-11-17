@@ -1451,6 +1451,7 @@
 0x10002d88 func   ?sub_1009fe40@CBaseEntity@@QAEXXZ CBaseEntity::sub_1009fe40
 0x10002d8d func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCBaseEntity@@@@V?$CUtlMemory@V?$CHandle@VCBaseEntity@@@@@@@@$0M@@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >,12>::vfunc1
 0x10002d92 func   ?sub_102ee300@CAI_Navigator@@QAEXHHHHH@Z CAI_Navigator::sub_102ee300
+0x10002d97 func   ?sub_100c25c0@@YAXPADPAUV3@@PAUQ4@@HHPAM0@Z sub_100c25c0
 0x10002d9c func   ??0CUnknown101ec4f0@@QAE@H@Z CUnknown101ec4f0::CUnknown101ec4f0
 0x10002da1 func   ?sub_101c7fa0@@YAHPAX@Z sub_101c7fa0
 0x10002da6 func   ?vfunc272@CBaseAnimatingOverlay@@QAEHXZ CBaseAnimatingOverlay::vfunc272

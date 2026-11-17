@@ -51249,6 +51249,114 @@ void sub_100c2420(CBlendStudioHdr *pStudioHdr, CBlendVec *pos, CBlendQuat *q, CB
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c25c0 size=0x4c9
+struct IStudioProv { virtual void v0(); virtual char *v1(char *h, int n); };
+struct Q4 { float x, y, z, w; };
+struct V3 { float x, y, z; };
+struct M34 { float m[3][4]; };
+struct BoneMap { short idx; char chain; char xform; short from; short to; M34 mat; };
+struct Bone { int name; int parent; char pad08[0x18]; V3 pos; Q4 quat; char pad3c[0xa0 - 0x3c]; };
+struct BoneBits { int nBits; unsigned int words[11];
+    void sub_100c80d0(char *pMask, BoneMap *pTable, char *pSource); };
+void sub_100c1f40(char *h, V3 *p, Q4 *q, int f, int a5, float *pp, char *a7);
+void sub_100c13a0(char *h, Q4 *q, V3 *p, int f, Q4 *q2, V3 *p2, float s, char *a7, int a, int b);
+void sub_10137e40(M34 *m, Q4 *q, V3 *p);
+void sub_10137fe0(V3 *a, M34 *b, V3 *c);
+void sub_10138630(M34 *a, M34 *b);
+void sub_10138df0(M34 *a, M34 *b, M34 *c);
+void sub_10139a90(M34 *a);
+void sub_1013b090(Q4 *a, V3 *b, M34 *c);
+static inline void CopyQ(Q4 &d, const Q4 &s) { d = s; }
+static inline void CopyV(V3 &d, const V3 &s) { d = s; }
+void sub_10002d97(char *hdr, V3 *outPos, Q4 *outQ, int frame, int a5, float *pp, char *a7);
+void sub_100c25c0(char *hdr, V3 *outPos, Q4 *outQ, int frame, int a5, float *pp, char *a7)
+{
+    V3 pos[350];
+    Q4 q[350];
+    float vals[24];
+    if (frame >= *(int *)(hdr + 0x110)) {
+        int i;
+        for (i = 0; i < *(int *)(hdr + 0x194); i++) {
+            char *d = hdr + *(int *)(hdr + 0x198) + i * 0x74;
+            if (*(int *)(d + 8) <= frame && *(int *)(d + 8) + *(int *)(d + 0xc) > frame && *(IStudioProv **)(d + 4)) {
+                char *sh = (*(IStudioProv **)(d + 4))->v1(hdr, i);
+                if (sh) {
+                    int k;
+                    short *pIdx;
+                    for (k = 0, pIdx = (short *)(d + 0x44); k < 24; k++, pIdx++) {
+                        int idx = *pIdx;
+                        vals[k] = idx >= 0 ? pp[idx] : 0.0f;
+                    }
+                    {
+                        BoneBits bits;
+                        bits.sub_100c80d0(a7, (BoneMap *)(d + *(int *)(d + 0x10)), sh);
+                        sub_10002d97(sh, pos, q, frame - *(int *)(d + 8), a5, vals, (char *)&bits);
+                    }
+                    {
+                        int b;
+                        for (b = 0; b < *(int *)(hdr + 0xf0); b++) {
+                            BoneMap *s = (BoneMap *)(d + *(int *)(d + 0x10)) + b;
+                            if (s->idx < 0) {
+                                Bone *bone = (Bone *)(hdr + *(int *)(hdr + 0xf4)) + b;
+                                outPos[b].x = bone->pos.x; outPos[b].y = bone->pos.y; outPos[b].z = bone->pos.z;
+                                outQ[b].x = bone->quat.x; outQ[b].y = bone->quat.y; outQ[b].z = bone->quat.z; outQ[b].w = bone->quat.w;
+                            } else if (!s->chain) {
+                                if (!s->xform)
+                                    { V3 *p = &pos[s->idx]; outPos[b].x = p->x; outPos[b].y = p->y; outPos[b].z = p->z; }
+                                else
+                                    sub_10137fe0(&pos[s->idx], &s->mat, &outPos[b]);
+                                CopyQ(outQ[b], q[s->idx]);
+                            } else {
+                                M34 mat, tmp, m1, inv, m2;
+                                V3 v;
+                                int j;
+                                sub_1013b090(&q[s->idx], &pos[s->idx], &mat);
+                                j = *(int *)(sh + *(int *)(sh + 0xf4) + s->idx * 0xa0 + 4);
+                                while (j != s->to) {
+                                    sub_1013b090(&q[j], &pos[j], &m2);
+                                    sub_10138df0(&m2, &mat, &mat);
+                                    j = *(int *)(sh + *(int *)(sh + 0xf4) + j * 0xa0 + 4);
+                                }
+                                sub_10139a90(&tmp);
+                                j = s->from;
+                                while (j != s->to) {
+                                    sub_1013b090(&q[j], &pos[j], &m1);
+                                    sub_10138630(&m1, &inv);
+                                    sub_10138df0(&tmp, &inv, &tmp);
+                                }
+                                sub_10138df0(&tmp, &mat, &mat);
+                                if (!s->xform)
+                                    sub_10137e40(&mat, &outQ[b], &outPos[b]);
+                                else {
+                                    sub_10137e40(&mat, &outQ[b], &v);
+                                    sub_10137fe0(&v, &s->mat, &outPos[b]);
+                                }
+                            }
+                        }
+                    }
+                    return;
+                }
+            }
+        }
+        frame = 0;
+    } else if (frame < 0) {
+        frame = 0;
+    }
+    sub_100c1f40(hdr, outPos, outQ, frame, a5, pp, a7);
+    {
+        int f = frame;
+        if (f < 0) f = 0;
+        char *g = hdr + *(int *)(hdr + 0x114) + f * 0x2fc;
+        int j;
+        for (j = 0; j < *(int *)(g + 0x294); j++) {
+            int e = *(int *)(g + *(int *)(g + 0x298) + j * 4);
+            sub_10002d97(hdr, pos, q, e, a5, pp, a7);
+            sub_100c13a0(hdr, outQ, outPos, e, q, pos, 1.0f, a7, 0, 0);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c2bd0 size=0xc7
 void sub_100c1f40(int a1, void *pB, void *pA, int a4, int a5, int a6, int a7);
 void sub_100c13a0(int a1, int a3, int a2, int a4, void *pA, void *pB, float flWeight, int a7, int a9, int a10);
