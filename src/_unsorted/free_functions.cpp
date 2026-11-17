@@ -138319,7 +138319,7 @@ inline void RaisePod_c3(VPod_c3 &T, const Vector &o, const Vector &up) { T.x = o
 inline VPod_c3 RaiseP_c3(const Vector &o, const Vector &up) { VPod_c3 T; T.x = o.x; T.y = o.y; T.z = up.z + o.z; return T; }
 inline VPod_c3 RaiseQ_c3(const Vector &o, const Vector &up) { VPod_c3 T = *(const VPod_c3 *)&o; T.z = up.z + o.z; return T; }
 inline Vector Raise_101c3320(Vector v, const Vector &up) { v.z += up.z; return v; }
-inline int MaxCl_c3() { return *(volatile int *)&gpGlobals->maxClients; }
+inline int MaxCl_c3() { return *(int *)&gpGlobals->maxClients; }
 inline unsigned short NH_c3(CShakeMsg_101c3320 *p) { return (int)((p->m_flRadius - 1.0f) * 65.6015f); }
 inline float Height_101c3320(unsigned short n) { return (float)n * 0.015243763f + 1.0f; }
 inline VPod_c3 Pod3_c3(float x, float y, float z) { VPod_c3 T; T.x = x; T.y = y; T.z = z; return T; }
