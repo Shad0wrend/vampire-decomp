@@ -99033,9 +99033,9 @@ struct GGCtl : CGravControllerPoint
 			m_vec1c = target;
 		m_fl8c = gpGlobals->frametime;
 	}
-	void AttachEntity(CBaseEntity *pEntity, IPhysicsObject *pObject, const Vector *pCenter, CBaseEntity *pOwner);
+	void sub_101487a0(CBaseEntity *pEntity, IPhysicsObject *pObject, const Vector *pCenter, CBaseEntity *pOwner);
 };
-void GGCtl::AttachEntity(CBaseEntity *pEntity, IPhysicsObject *pObject, const Vector *pCenter, CBaseEntity *pOwner)
+void GGCtl::sub_101487a0(CBaseEntity *pEntity, IPhysicsObject *pObject, const Vector *pCenter, CBaseEntity *pOwner)
 {
 	m_hAttached78 = pEntity;
 	m_hOther7c = pOwner;
