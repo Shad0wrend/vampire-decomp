@@ -76686,6 +76686,66 @@ void CBaseCombatCharacter::sub_10106580(const char *pszName, int d, float a, flo
 }
 // END FUNCTION
 
+// FUNCTION: 0x101067e0 size=0x1d7
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "globalvars.h"
+#include "utlvector.h"
+
+typedef void (*FnDevWarning)(int, const char *, ...);
+extern FnDevWarning g_109f3658;
+
+typedef CUtlVector<CBaseCombatCharacter::CExpressionRecord> CExpressionList;
+
+void CBaseCombatCharacter::sub_101067e0(const char *pszName, float a, float b, float c, float d, float e)
+{
+	ScopeTrace trace("CBaseCombatCharacter::AddScriptedExpression",
+		this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	if ( ((CExpressionList *)&m_pExpressions10bc)->Count() >= 10 )
+	{
+		g_109f3658(2, "NPC %s has %d expressions, max: %d", ((CExpressionList *)&m_pExpressions10bc)->Count(), 10);
+	}
+	else
+	{
+		if ( ((CExpressionList *)&m_pExpressions10bc)->Count() == 9 )
+		{
+			int idx = 0;
+			for ( int i = 0; i < ((CExpressionList *)&m_pExpressions10bc)->Count(); i++ )
+			{
+				if ( (*(CExpressionList *)&m_pExpressions10bc)[i].m_flFadeTime < 3.4028235e38f )
+					idx = i;
+			}
+			((CExpressionList *)&m_pExpressions10bc)->Remove(idx);
+		}
+
+		int nExpr = sub_10106a40(pszName);
+		if ( nExpr != -1 )
+		{
+			CExpressionRecord rec;
+			*(float *)((char *)&rec + 0x0c) = a;
+			*(float *)((char *)&rec + 0x10) = b;
+			rec.m_iExpression = nExpr;
+			rec.m_flStart = gpGlobals->curtime + d;
+			rec.m_flFadeTime = rec.m_flStart + a + b + e;
+			*(float *)((char *)&rec + 0x14) = c;
+			rec.m_pEvent1c = 0;
+			rec.m_pScene18 = 0;
+			((CExpressionList *)&m_pExpressions10bc)->AddToTail(rec);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106a40 size=0xbf
 #include "CBaseAnimating.h"
 #include "CExpressionTable.h"

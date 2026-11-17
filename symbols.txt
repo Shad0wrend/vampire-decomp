@@ -3878,6 +3878,7 @@
 0x10005e7f func   ?sub_1020e0d0@@YIXPAXHH@Z sub_1020e0d0
 0x10005e84 func   ?vfunc5@CNPC_VScurrying@@QAEPAV1@I@Z CNPC_VScurrying::vfunc5
 0x10005e89 func   ?sub_10136490@@YIXPADHH@Z sub_10136490
+0x10005e8e func   ?sub_101067e0@CBaseCombatCharacter@@QAEXPBDMMMMM@Z CBaseCombatCharacter::sub_101067e0
 0x10005e93 func   ?sub_10124630@CGameMovement@@QAEXPAX@Z CGameMovement::sub_10124630
 0x10005e98 func   ?sub_102d3040@CAI_Hint@@QAEXXZ CAI_Hint::sub_102d3040
 0x10005e9d func   ?sub_100d1cc0@SFilter@@QAEPAU1@E@Z SFilter::sub_100d1cc0
