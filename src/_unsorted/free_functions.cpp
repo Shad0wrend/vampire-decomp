@@ -15396,6 +15396,348 @@ void CBaseCombatCharacter::sub_100521e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100532b0 size=0x8fe
+#include "vampire_all.h"
+// TARGET: CBaseCombatCharacter::sub_100532b0
+#include "CBasePlayer.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CRBEntry8.h"
+#include "CBaseCombatCharacter.h"
+#include "CVStatList_t.h"
+#include "StatDefault.h"
+#include "CGlobalEntityList.h"
+#include "ScopeTrace.h"
+#include "engineserver.h"
+#include "CEHandleGet.h"
+#include <stdlib.h>
+
+extern CVStatList_t g_109f0b40;
+void __cdecl sub_10012a8a();
+bool sub_10053df0(CRBEntry8 const &a, CRBEntry8 const &b);
+extern CGlobalEntityList g_106eb5d8;
+extern int g_10937160[24];
+int __fastcall sub_100b39c0(char *pEnt);
+bool sub_101d1a90(CBaseEntity *pViewer, CBaseEntity *pEntity);
+
+struct StatOwnerA
+{
+	StatDefault *sub_1006cff0(int id);
+	int sub_1000fb46(const char *pszName);
+};
+extern StatOwnerA g_106c7c34;
+
+inline CVStatList_t *FindStatListA(CVStatListSet *pSet, int type)
+{
+	for (int i = 0; i < pSet->m_nLists; i++) {
+		if (pSet->m_pLists[i]->m_field10 == type)
+			return pSet->m_pLists[i];
+	}
+	if (!(g_109f0b2a & 1)) {
+		g_109f0b2a |= 1;
+		g_109f0b40.CVStatList_t::CVStatList_t(-1);
+		atexit(sub_10012a8a);
+	}
+	return &g_109f0b40;
+}
+
+typedef CUtlRBTree<CRBEntry8, int> CAuspexBase;
+extern unsigned char g_109f0b1d;
+extern CAuspexBase::Links_t g_106bddc4;
+
+extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(unsigned int);
+struct AuspexMem
+{
+	CAuspexBase::Node_t *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	AuspexMem(int nGrowSize, int nInit) : m_pMemory(0), m_nAllocationCount(nInit), m_nGrowSize(nGrowSize)
+	{
+		if (m_nAllocationCount)
+			m_pMemory = (CAuspexBase::Node_t *)Plat_Alloc(m_nAllocationCount * sizeof(CAuspexBase::Node_t));
+	}
+	~AuspexMem()
+	{
+		if (m_nGrowSize != -1) {
+			if (m_pMemory) {
+				Plat_Free((void *)m_pMemory);
+				m_pMemory = 0;
+			}
+			m_nAllocationCount = 0;
+		}
+	}
+	CAuspexBase::Node_t &operator[](int i) { return m_pMemory[i]; }
+	CAuspexBase::Node_t const &operator[](int i) const { return m_pMemory[i]; }
+};
+
+struct CAuspexTree
+{
+	typedef bool (*LessFunc_t)(CRBEntry8 const &, CRBEntry8 const &);
+	typedef CAuspexBase::Node_t Node_t;
+	typedef CAuspexBase::Links_t Links_t;
+
+	LessFunc_t m_LessFunc;
+	AuspexMem m_Elements;
+	int m_Root;
+	int m_NumElements;
+	int m_FirstFree;
+	int m_TotalElements;
+
+	CAuspexTree(int growSize, int initSize, LessFunc_t lessfunc)
+		: m_LessFunc(lessfunc), m_Elements(growSize, initSize), m_Root(-1), m_NumElements(0),
+		  m_FirstFree(-1), m_TotalElements(0)
+	{
+	}
+
+	void sub_10054ad0(CRBEntry8 const &insert, int &parent, bool &leftchild);	// FindInsertionPosition
+	int sub_10055050();	// NewNode
+	void sub_10055170(int i, int parent, bool isLeft);	// LinkToParent
+	void sub_10054c00(int i);	// RemoveNode
+	Links_t const &sub_10055520(int i) const;	// Links
+
+	const CAuspexBase *B() const { return (const CAuspexBase *)this; }
+	CRBEntry8 &Element(int i) { return m_Elements[i].m_Data; }
+	CRBEntry8 const &Element(int i) const { return m_Elements[i].m_Data; }
+	Links_t const &LinksC(int i) const { return B()->Links(i); }
+	bool IsValidIndex(int i) const { return LinksC(i).m_Left != i; }
+
+	int InsertAt(int parent, bool leftchild)
+	{
+		int i = sub_10055050();
+		sub_10055170(i, parent, leftchild);
+		++m_NumElements;
+		return i;
+	}
+	int Insert(CRBEntry8 const &insert)
+	{
+		int parent;
+		bool leftchild;
+		sub_10054ad0(insert, parent, leftchild);
+		int newNode = InsertAt(parent, leftchild);
+		CopyConstruct(&Element(newNode), insert);
+		return newNode;
+	}
+	int Find(CRBEntry8 const &search) const
+	{
+		int current = m_Root;
+		while (current != -1) {
+			if (m_LessFunc(search, Element(current)))
+				current = sub_10055520(current).m_Left;
+			else if (m_LessFunc(Element(current), search))
+				current = LinksC(current).m_Right;
+			else
+				break;
+		}
+		return current;
+	}
+	Links_t &LinksW(int i) { return *(Links_t *)(i * sizeof(Node_t) + (char *)m_Elements.m_pMemory); }
+	void FreeNode(int i)
+	{
+		LinksW(i).m_Left = i;
+		LinksW(i).m_Right = m_FirstFree;
+		m_FirstFree = i;
+	}
+	void RemoveAt(int elem)
+	{
+		if (elem != -1) {
+			sub_10054c00(elem);
+			FreeNode(elem);
+			--m_NumElements;
+		}
+	}
+};
+
+#define AV1(p) virtual void p();
+#define AV10(p) AV1(p##0) AV1(p##1) AV1(p##2) AV1(p##3) AV1(p##4) AV1(p##5) AV1(p##6) AV1(p##7) AV1(p##8) AV1(p##9)
+#define AV100(p) AV10(p##0) AV10(p##1) AV10(p##2) AV10(p##3) AV10(p##4) AV10(p##5) AV10(p##6) AV10(p##7) AV10(p##8) AV10(p##9)
+
+struct AuspexParticle
+{
+	AV100(a) AV100(b) AV10(c0) AV10(c1) AV10(c2) AV10(c3) AV1(d0) AV1(d1)
+	virtual void vfunc242();
+
+	char m_pad004[0x454 - 4];
+	int m_nModelIndex;	// 0x454
+	char m_pad458[0x464 - 0x458];
+	float m_f464;
+	float m_f468;
+	float m_f46c;
+	float m_f470;
+	float m_f474;
+	float m_f478;
+	float m_f47c;
+	float m_f480;
+	char m_pad484[0x4c4 - 0x484];
+	char m_b4c4;
+
+	void sub_10051810();	// RemoveFromUser
+	static AuspexParticle *sub_10050e70(const char *pszClassname, CBaseEntity *pUser, int type, float a4, float a5,
+		float a6, int modelIndex, int a8, const char *pszAttach, CBaseEntity *pEnt, int a11, int a12);	// Create
+};
+
+struct AuspexOther
+{
+	char m_pad000[0xa8];
+	CBasePlayer *m_pa8;	// 0xa8
+	char m_pad0ac[0x19c - 0xac];
+	int m_flags19c;	// 0x19c
+	char m_pad1a0[0x1480 - 0x1a0];
+	char m_b1480;	// 0x1480
+
+	void *sub_100952d0(int a);
+	char sub_10337f30();
+};
+
+
+
+void CBaseCombatCharacter::sub_100532b0()
+{
+	ScopeTrace t("CBaseCombatCharacter::UpdateAuspex", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CAuspexTree tree(0, *(int *)((char *)this + 0x14cc), sub_10053df0);
+	CBaseEntity *ex[2];
+	ex[0] = 0;
+	ex[1] = 0;
+	CBasePlayer *owner = *(CBasePlayer **)((char *)this + 0xa8);
+	if (owner) {
+		ex[0] = owner->sub_1015d680(0);
+		ex[1] = owner->sub_1015d680(1);
+	}
+	CUtlVector<EHANDLE> &l = *(CUtlVector<EHANDLE> *)((char *)this + 0x14c0);
+	for (int i = 0; i < l.Count(); i++) {
+		CBaseEntity *e = l[i].Get();
+		if (e) {
+			int ty = *(int *)((char *)e + 0x4a4);
+			if (ty != 1 && ty != 0xe && ty != 0xb)
+				continue;
+			
+			if (((EHANDLE *)((char *)e + 0x254))->Get() == (CBaseEntity *)this)
+				continue;
+			if (ex[0] != 0 && ((EHANDLE *)((char *)e + 0x254))->Get() == ex[0])
+				continue;
+			if (ex[1] != 0 && ((EHANDLE *)((char *)e + 0x254))->Get() == ex[1])
+				continue;
+			CRBEntry8 en;
+			en.m_pFirst = ((EHANDLE *)((char *)e + 0x254))->Get();
+			en.m_pSecond = e;
+			tree.Insert(en);
+		}
+	}
+
+	float radius = 1e7f;
+	int s1 = FindStatListA(CVStatListSet::Of(this), 3)->sub_102012d0(1);
+	int s2 = FindStatListA(CVStatListSet::Of(this), 3)->sub_102012d0(0xe);
+	int s3 = FindStatListA(CVStatListSet::Of(this), 3)->sub_102012d0(0xb);
+	int best = s1;
+	int type = 1;
+	bool bUse = true;
+	bool bLOS = false;
+	if (s2 > best) {
+		best = s2;
+		type = 0xe;
+		bUse = true;
+		bLOS = false;
+	}
+	if (s3 > best) {
+		best = s3;
+		type = 0xb;
+		bUse = false;
+		bLOS = true;
+	}
+	if (best > 0 && bUse)
+	{
+		StatDefault *pS = g_106c7c34.sub_1006cff0(g_106c7c34.sub_1000fb46("Auspex_Radius"));
+		radius = pS->sub_1006caa0(best);
+	}
+
+	CBaseEntity *pEnt = 0;
+	Vector origin = ((CBasePlayer *)this)->vfunc193();
+	while ((pEnt = bUse ? g_106eb5d8.sub_100f79b0(pEnt, &origin.x, radius) : g_106eb5d8.sub_100f7060(pEnt)) != 0) {
+		AuspexOther *pOther = *(AuspexOther **)((char *)pEnt + 0x9c);
+		if (!pOther || pOther == (AuspexOther *)this)
+			continue;
+		if (pOther->m_flags19c & 0x40)
+			continue;
+		if (!pOther->sub_100952d0(-1))
+			continue;
+		if (!((CBasePlayer *)pOther)->vfunc158())
+			continue;
+		if (sub_100b39c0((char *)pOther) & 0x10)
+			continue;
+		if (pOther->m_pa8 && pOther->m_pa8->vfunc406())
+			continue;
+		if (!pOther->m_b1480)
+			continue;
+		if (bLOS && !sub_101d1a90(this, pEnt))
+			continue;
+
+		int iEmitter;
+		if (type == 0xb) {
+			iEmitter = engine->vfunc17("D_Protean_HeatEmitter", 1);
+		} else {
+			int rel = ((CBaseCombatCharacter *)pOther)->vfunc359((int)this);
+			if (type == 0xe && !pOther->m_pa8)
+				rel = pOther->sub_10337f30() ? 1 : 5;
+			int row = 0;
+			if (pOther->sub_10337f30())
+				row = 2;
+			if (rel >= 0)
+				iEmitter = g_10937160[rel + row * 8];
+			else
+				iEmitter = -1;
+		}
+
+		CRBEntry8 key;
+		key.m_pFirst = pOther;
+		key.m_pSecond = 0;
+		int idx = tree.Find(key);
+		if (tree.IsValidIndex(idx)) {
+			AuspexParticle *p = (AuspexParticle *)tree.Element(idx).m_pSecond;
+			tree.RemoveAt(idx);
+			if (p->m_nModelIndex == iEmitter)
+				continue;
+			p->vfunc242();
+			p->sub_10051810();
+		}
+		if (iEmitter < 0)
+			continue;
+
+		AuspexParticle *p;
+		if (type == 0xb) {
+			p = AuspexParticle::sub_10050e70("disc_particle", this, 0xb, 1.0f, 1.0f, 1.0f, iEmitter, 0x12, g_106b8540, pEnt, 0, 0);
+			if (p) {
+				p->m_b4c4 = 0;
+				char bK = pOther->sub_10337f30();
+				p->m_f47c = 0;
+				if (bK) {
+					p->m_f464 = 1.0f;
+					p->m_f468 = 0;
+					p->m_f46c = 0.5f;
+					p->m_f478 = 0;
+					p->m_f480 = 0.75f;
+				} else {
+					p->m_f464 = 0.5f;
+					p->m_f468 = 1.0f;
+					p->m_f46c = 0;
+					p->m_f478 = 1.0f;
+					p->m_f480 = 0;
+				}
+			}
+		} else {
+			p = AuspexParticle::sub_10050e70("auspex_aura", this, type, 1.0f, 0.3f, 0.7f, iEmitter, 1, g_106b8540, pEnt, 0, 0);
+		}
+		if (!p)
+			continue;
+	}
+
+	while (tree.IsValidIndex(tree.m_Root)) {
+		CRBEntry8 e = tree.Element(tree.m_Root);
+		tree.RemoveAt(tree.m_Root);
+		((AuspexParticle *)e.m_pSecond)->sub_10051810();
+		((AuspexParticle *)e.m_pSecond)->vfunc242();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10053df0 size=0x13
 bool sub_10053df0(const unsigned int *a, const unsigned int *b)
 {
