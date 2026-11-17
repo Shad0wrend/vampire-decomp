@@ -80,15 +80,15 @@ struct CSecureCoderBasic0
 	int sub_103908c0(int x);
 };
 
-#define SEC(x) { CSecureCoderBasic0 t; int v = t.sub_103908c0(x); char a = ((volatile CSecureCoderBasic0 &)t).a; m_n6670 = v; char b = ((volatile CSecureCoderBasic0 &)t).b; m_bSecure666c = a; m_bSecure666d = b; }
-#define SEC(x) { CSecureCoderBasic0 t; int v = t.sub_103908c0(x); char a = ((volatile CSecureCoderBasic0 &)t).a; m_n6670 = v; char b = ((volatile CSecureCoderBasic0 &)t).b; m_bSecure666d = b; m_bSecure666c = a; }
-#define SEC(x) { CSecureCoderBasic0 t; int v = t.sub_103908c0(x); char b = ((volatile CSecureCoderBasic0 &)t).b; char a = ((volatile CSecureCoderBasic0 &)t).a; m_n6670 = v; m_bSecure666d = b; m_bSecure666c = a; }
+#define SEC(x) { CSecureCoderBasic0 t; int v = t.sub_103908c0(x); char a = ((CSecureCoderBasic0 &)t).a; m_n6670 = v; char b = ((CSecureCoderBasic0 &)t).b; m_bSecure666c = a; m_bSecure666d = b; }
+#define SEC(x) { CSecureCoderBasic0 t; int v = t.sub_103908c0(x); char a = ((CSecureCoderBasic0 &)t).a; m_n6670 = v; char b = ((CSecureCoderBasic0 &)t).b; m_bSecure666d = b; m_bSecure666c = a; }
+#define SEC(x) { CSecureCoderBasic0 t; int v = t.sub_103908c0(x); char b = ((CSecureCoderBasic0 &)t).b; char a = ((CSecureCoderBasic0 &)t).a; m_n6670 = v; m_bSecure666d = b; m_bSecure666c = a; }
 struct SecV
 {
 	char a, b;
 	unsigned int v;
 	unsigned int sub_103908c0(unsigned int x);
-	void Copy(const SecV *p) { v = p->v; b = ((volatile SecV *)p)->b; a = ((volatile SecV *)p)->a; }
+	void Copy(const SecV *p) { v = p->v; b = ((volatile SecV *)p)->b; a = ((SecV *)p)->a; }
 };
 #define SEC(x) { SecV t; t.v = t.sub_103908c0(x); ((SecV *)&m_bSecure666c)->Copy(&t); }
 #define SEC2(x) { SecV t; unsigned int r = t.sub_103908c0(x); t.v = r; ((SecV *)&m_bSecure666c)->Copy(&t); }
