@@ -252,7 +252,6 @@ int CAI_Motor::vfunc19(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x102e1760 size=0x1fa
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CBaseEntity.h"
 // TARGET: CAI_Motor::vfunc20
 #include "CAI_Motor.h"
@@ -318,7 +317,7 @@ int CAI_Motor::vfunc20(int a, int b, int c)
 	CMoveTraceView moveTrace;
 	((CAI_MoveProbe *)m_68)->sub_102e6d70(2, (const float *)&vecStart, (const float *)&vecEnd, 0x202400b, 0, 100.0, 0, (AIMoveTrace_t *)&moveTrace, c, 0);
 	int pObstruction;
-	if ((char)a == -1) pObstruction = *(volatile int *)&moveTrace.pObstruction; else pObstruction = *(volatile int *)&moveTrace.pObstruction;
+	if ((char)a == -1) pObstruction = *(int *)&moveTrace.pObstruction; else pObstruction = *(volatile int *)&moveTrace.pObstruction;
 	if (pTraceResult) {
 		pTraceResult->fStatus = moveTrace.fStatus;
 		pTraceResult->vEndPosition = moveTrace.vEndPosition;
