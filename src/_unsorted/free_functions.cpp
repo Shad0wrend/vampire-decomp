@@ -165156,7 +165156,6 @@ void CUnknown101f0e50::sub_101f8e20(CTraitOwnerX *pOwner, int index)
 
 // FUNCTION: 0x101f8f30 size=0x4e0
 #include "CBaseCombatCharacter.h"
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CNPC_VTzimisce.h"
 #include "utlrbtree.h"
 #include "utlsortvector.h"
