@@ -106185,7 +106185,6 @@ void CBasePlayer::sub_10167d70(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10167e00 size=0x167
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CNPC_VTzimisce.h"
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
