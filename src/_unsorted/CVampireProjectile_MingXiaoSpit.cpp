@@ -189,7 +189,7 @@ void CVampireProjectile_MingXiaoSpit::vfunc134()
 // TARGET: vfunc272
 void CVampireProjectile_MingXiaoSpit::vfunc272(const Vector *a1, const Vector *a2, CBaseEntity *a3, int a4, float a5, const char *a6, const char *a7)
 {
-    int t = *(volatile int *)&a5;
+    int t = *(int *)&a5;
     *(int *)&a5 = t;
     ((CVampireProjectile *)this)->CVampireProjectile::vfunc272(a1, a2, a3, a4, a5, a6, a7);
 }
