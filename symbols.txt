@@ -4167,6 +4167,7 @@
 0x1000641a func   ?vfunc620@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc620
 0x1000641f func   ?sub_101cbcc0@@YAHXZ sub_101cbcc0
 0x10006424 func   ?vfunc201@CNPC_VZombie@@QAE_NPAVCBaseCombatCharacter@@HHH@Z CNPC_VZombie::vfunc201
+0x10006429 func   ?sub_101962a0@@YAPAUPyObject@@PAU1@0@Z sub_101962a0
 0x1000642e func   ?vfunc9@CCollisionEvent@@UAEXPAX0@Z CCollisionEvent::vfunc9
 0x10006433 func   ?sub_10170c80@CUnk10170c80@@QAEXPBD@Z CUnk10170c80::sub_10170c80
 0x10006438 func   ?sub_102a9ea0@CUnknown102a9ea0@@QAEHH@Z CUnknown102a9ea0::sub_102a9ea0

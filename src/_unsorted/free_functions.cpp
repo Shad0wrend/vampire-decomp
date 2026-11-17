@@ -119203,6 +119203,137 @@ PyObj *sub_10196230(float x, float y, float z)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101962a0 size=0x32a
+#include "exception.h"
+#include "CVariantCopy.h"
+#include "CBaseEntity.h"
+
+struct PyHead { int ob_refcnt; void *ob_type; int ob_size; };
+struct PyEntityDesc { int type; const char *name; int pad8[3]; const char *field; int pad18; void *gate; };
+struct PyObject;
+
+extern void *g_109f37a4;
+extern void *(*g_109f37ac)(PyObject *obj);
+extern PyEntityDesc *(*g_109f37a8)(PyObject *obj);
+extern PyObject **g_109f37b0;
+extern void (*g_109f37d4)(PyObject *exception, const char *fmt, ...);
+extern void (*g_109f37b4)(PyObject *exception, const char *msg);
+extern int (*g_109f37a0)(PyObject *args, const char *fmt, ...);
+extern PyObject *(*g_109f377c)();
+extern int (*g_109f3770)(PyObject *obj);
+extern int *g_109f3748;
+int *sub_1042bff0(void *pTmp, PyObject *pStr);
+CBaseEntity *sub_10196780(PyObject *pObj);
+
+static inline void VSetFloat(CVariantCopy &v, float f) { v.flVal = f; v.m_fieldType = 1; }
+static inline void VSetVec(CVariantCopy &v, float x, float y, float z) { v.vecVal[0] = x; v.vecVal[1] = y; v.vecVal[2] = z; v.m_fieldType = 3; }
+
+#define SEND { pEnt->vfunc118(pDesc->field, 0, 0, v, 0); ++*g_109f3748; return (PyObject *)g_109f3748; }
+
+// TARGET: sub_101962a0
+PyObject *sub_101962a0(PyObject *self, PyObject *args)
+{
+	if (((PyHead *)self)->ob_type != g_109f37a4) {
+		g_109f37b4(*g_109f37b0, "call_entity_function didn't get a pycobject");
+		return 0;
+	}
+	CBaseEntity *pEnt = (CBaseEntity *)g_109f37ac(self);
+	PyEntityDesc *pDesc = g_109f37a8(self);
+	if (pEnt == 0 || pDesc == 0 || pDesc->gate == 0) {
+		g_109f37d4(*g_109f37b0, "call_entity_function got null entity or type");
+		return 0;
+	}
+	CVariantCopy v;
+	int ok = 0;
+	float x, y, z;
+	switch (pDesc->type) {
+	case 0:
+		if (((PyHead *)args)->ob_size == 0) {
+			v.sub_1000b320(0, 0);
+			ok = 1; break;
+		}
+		break;
+	case 2:
+	case 0x10:
+	case 0x11:
+		{
+		PyObject *p = 0;
+		if (g_109f37a0(args, "s", &p) && p) {
+			int tmp;
+			int val = *sub_1042bff0(&tmp, p);
+			v.m_fieldType = 2;
+			v.m_value = val;
+			ok = 1; break;
+		}
+		}
+		break;
+	case 1:
+	case 0xf:
+		{
+		float f = 0;
+		if (g_109f37a0(args, "f", &f)) {
+			VSetFloat(v, f);
+			ok = 1; break;
+		}
+		}
+		break;
+	case 5:
+		{
+		PyObject *p = 0;
+		if (g_109f37a0(args, "O", &p)) {
+			int val = (p && g_109f3770(p)) ? 1 : 0;
+			v.m_fieldType = 4;
+			v.m_value = val;
+			ok = 1; break;
+		}
+		}
+		break;
+	case 4:
+		{
+		int i = 0;
+		if (g_109f37a0(args, "i", &i)) {
+			v.m_value = i;
+			v.m_fieldType = 4;
+			ok = 1; break;
+		}
+		}
+		break;
+	case 3:
+	case 0xe:
+		{
+		if (g_109f37a0(args, "(fff)", &x, &y, &z)) {
+			VSetVec(v, x, y, z);
+			ok = 1; break;
+		}
+		}
+		break;
+	case 0xb:
+	case 0xc:
+	case 0xd:
+		{
+		PyObject *p = 0;
+		if (g_109f37a0(args, "O", &p)) {
+			((EHANDLE &)v.m_hEntity) = sub_10196780(p);
+			v.m_fieldType = 0xc;
+			ok = 1; break;
+		}
+		}
+		break;
+	default:
+		g_109f37d4(*g_109f37b0, "%s (%s) has unhandled type %d", pDesc->field, pDesc->name, pDesc->type);
+		return 0;
+	}
+	if (!ok) {
+		if (!g_109f377c())
+			g_109f37d4(*g_109f37b0, "%s (%s) requires type %d", pDesc->field, pDesc->name, pDesc->type);
+		return 0;
+	}
+	pEnt->vfunc118(pDesc->field, 0, 0, v, 0);
+	++*g_109f3748;
+	return (PyObject *)g_109f3748;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101966a0 size=0xad
 struct PyType { int a, b, c, d, e, f; void (*dealloc)(struct PyObj *); };
 struct PyObj { int refcnt; PyType *type; int c; PyObj *item; };
