@@ -317959,13 +317959,20 @@ __forceinline void VectorSubtract(const Vector &a, const Vector &b, Vector &c);
 #include "CUnknown1003ff80.h"
 #include <math.h>
 
+// mathlib.h matrix3x4_t with the SDK's empty inline constructor (one free inline site per local, lever 51).
+struct matrix3x4_t
+{
+	matrix3x4_t() {}
+	float m_flMatVal[3][4];
+};
+
 float sub_1013d600(float next, float cur);
 void sub_10139610(const Vector *ang, Vector *fwd, Vector *right, Vector *up);
-void sub_10139b90(const Vector *angles, float *matrix);
-void sub_101381b0(const float *in, const float *matrix, Vector *out);
-void sub_10410500(CEntityVSlots *pPlayer, float *matrix);
+void sub_10139b90(const Vector &angles, matrix3x4_t &matrix);	// AngleMatrix
+void sub_101381b0(const Vector &in, const matrix3x4_t &matrix, Vector &out);	// VectorRotate
+void sub_10410500(CEntityVSlots *pPlayer, matrix3x4_t &matrix);	// ComputePlayerMatrix
 bool sub_10410490(CEntityVSlots *pEntity, CEntityVSlots *pPlayer);
-Vector *sub_10138580(Vector *pOut, const Vector *pAngles, const float *matrix);
+Vector sub_10138580(const Vector &angles, const matrix3x4_t &matrix);	// TransformAnglesToWorldSpace (QAngle by value)
 Vector &sub_1032b960();
 void sub_10410370(const Vector &a, const Vector &b, float t, Vector &out);
 void sub_1013ca00(const Vector &P, const Vector &A, const Vector &B, Vector &nearest, float *t);
@@ -317978,7 +317985,10 @@ struct PhysCollideV { V10(a) V1(b0) V1(b1) V1(b2) V1(b3) V1(b4) V1(b5) V1(b6) vi
 extern PhysCollideV *g_1072393c;
 struct EngineTraceV { V1(a0) V1(a1) V1(a2) V1(a3) virtual void TraceRay(const Ray_t &ray, unsigned int fMask, void *pTraceFilter, void *pTrace); };
 extern EngineTraceV *g_1070b254;
-extern CFoo1005f190 g_1094aac0;
+// g_debug_physcannon: convar.h's inline ConVar::GetBool() { return !!GetInt(); }; GetInt is the out-of-line
+// copy 0x1005f190 here (VC6 declined it).
+struct ConVarV : CFoo1005f190 { bool GetBool() { return !!sub_1005f190(); } };
+extern ConVarV g_1094aac0;
 extern Vector g_1070d1b0;
 extern float g_1070d9d0[];
 struct EntListV { CEntityVSlots *sub_100290c0(const void *h); };
@@ -318017,16 +318027,20 @@ struct CGrabV : CGrabController
 	void SetTargetPosition(const Vector &target, const Vector &targetOrientation) { ((CUnknown1040cb60 *)this)->sub_1040bfc0(&target.x, &targetOrientation.x); }
 };
 
-inline vec_t DotR(const Vector &a, const Vector &b) { return a.x * b.x + (a.y * b.y + a.z * b.z); }
-#define PHYS(e) (*(PhysObjV **)((char *)(e) + 0x36c))
-#define COLL(e) ((CollPropV *)((char *)(e) + 0x270))
+// baseentity.h inline accessors (m_pPhysicsObject at +0x36c, m_Collision at +0x270).
+struct CEntV : CEntityVSlots
+{
+	PhysObjV *VPhysicsGetObject() const { return *(PhysObjV **)((char *)this + 0x36c); }
+	CollPropV *CollisionProp() { return (CollPropV *)((char *)this + 0x270); }
+};
+#define ENT(e) ((CEntV *)(e))
 #define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
 
 // TARGET: CGrabController::sub_1040f940
 bool CGrabController::sub_1040f940(CEntityVSlots *pPlayer, float flError)
 {
 	CEntityVSlots *pEntity = ((CGrabV *)this)->GetAttached();
-	if (!pEntity || ((CGrabV *)this)->ComputeError() > flError || pPlayer->slot209() == pEntity || !PHYS(pEntity))
+	if (!pEntity || ((CGrabV *)this)->ComputeError() > flError || pPlayer->slot209() == pEntity || !ENT(pEntity)->VPhysicsGetObject())
 	{
 		return false;
 	}
@@ -318037,13 +318051,10 @@ bool CGrabController::sub_1040f940(CEntityVSlots *pPlayer, float flError)
 	playerAngles.x = clamp(pitch, -75, 75);
 	sub_10139610(&playerAngles, &forward, &right, &up);
 
-	if (0) { Vector q = -right; }
-	if (0) { Vector q = -right; }
-	if (0) { Vector q = -right; }
-	Vector radial = g_1072393c->CollideGetExtent(PHYS(pEntity)->GetCollide(), g_1070d1b0, *pEntity->slot219(), -forward);
-	Vector player2d = *COLL(pPlayer)->OBBMaxs();
+	Vector radial = g_1072393c->CollideGetExtent(ENT(pEntity)->VPhysicsGetObject()->GetCollide(), g_1070d1b0, *pEntity->slot219(), -forward);
+	Vector player2d = *ENT(pPlayer)->CollisionProp()->OBBMaxs();
 	float playerRadius = player2d.Length2D();
-	float radius = playerRadius + fabs(DotR(forward, radial));
+	float radius = playerRadius + fabs(DotProduct(forward, radial));
 
 	float distance = 24 + (radius * 2.0f);
 
@@ -318066,8 +318077,8 @@ bool CGrabController::sub_1040f940(CEntityVSlots *pPlayer, float flError)
 		end = start + forward * (distance - radius);
 	}
 	Vector playerMins, playerMaxs, nearest;
-	COLL(pPlayer)->WorldSpaceAABB(&playerMins, &playerMaxs);
-	Vector playerLine = COLL(pPlayer)->WorldSpaceCenter();
+	ENT(pPlayer)->CollisionProp()->WorldSpaceAABB(&playerMins, &playerMaxs);
+	Vector playerLine = ENT(pPlayer)->CollisionProp()->WorldSpaceCenter();
 	sub_1013ca00(end, playerLine + Vector(0, 0, playerMins.z), playerLine + Vector(0, 0, playerMaxs.z), nearest, 0);
 
 	Vector delta = end - nearest;
@@ -318077,12 +318088,12 @@ bool CGrabController::sub_1040f940(CEntityVSlots *pPlayer, float flError)
 		end = nearest + radius * delta;
 	}
 
-	if (g_1094aac0.sub_1005f190())
+	if (g_1094aac0.GetBool())
 	{
-		sub_10142aa0(end, Vector(-2, -2, -2), Vector(2, 2, 2), 0, 255, 0, true, 0);
+		sub_10142aa0(end, -Vector(2, 2, 2), Vector(2, 2, 2), 0, 255, 0, true, 0);
 
 		sub_10142aa0(*((CGrabV *)this)->GetAttached()->slot215(),
-			Vector(-radius, -radius, -radius),
+			-Vector(radius, radius, radius),
 			Vector(radius, radius, radius),
 			255, 0, 0,
 			true,
@@ -318094,24 +318105,22 @@ bool CGrabController::sub_1040f940(CEntityVSlots *pPlayer, float flError)
 
 	if (sub_10410490(pEntity, pPlayer))
 	{
-		float tmp[12];
+		matrix3x4_t tmp;
 		sub_10410500(pPlayer, tmp);
-		Vector r;
-		angles = *sub_10138580(&r, (const Vector *)g_1070d9d0, tmp);
+		angles = sub_10138580(*(const Vector *)g_1070d9d0, tmp);
 	}
 
 	if (m_b15c)
 	{
-		float tmp[12];
+		matrix3x4_t tmp;
 		sub_10410500(pPlayer, tmp);
-		Vector r;
-		angles = *sub_10138580(&r, (const Vector *)m_v150, tmp);
+		angles = sub_10138580(*(const Vector *)m_v150, tmp);
 	}
 
-	float attachedToWorld[12];
+	matrix3x4_t attachedToWorld;
 	Vector offset;
-	sub_10139b90(&angles, attachedToWorld);
-	sub_101381b0(m_v16c, attachedToWorld, &offset);
+	sub_10139b90(angles, attachedToWorld);
+	sub_101381b0(*(const Vector *)m_v16c, attachedToWorld, offset);
 
 	((CGrabV *)this)->SetTargetPosition(end - offset, angles);
 
