@@ -8964,6 +8964,7 @@
 0x1000c545 func   ?sub_100765d0@CUnknown100765d0@@QAEXM@Z CUnknown100765d0::sub_100765d0
 0x1000c54a func   ?vfunc5@CTEFizz@@QAEXXZ CTEFizz::vfunc5
 0x1000c54f func   ?sub_1040d930@@YADXZ sub_1040d930
+0x1000c554 func   ?sub_102eaaf0@@YAXH@Z sub_102eaaf0
 0x1000c559 func   ?sub_10353000@@YAXPAPAUCUnk10353000@@@Z sub_10353000
 0x1000c55e func   ?vfunc489@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc489
 0x1000c563 func   ?sub_102c0f70@CAI_BaseNPCTroika@@QAEXPBDH@Z CAI_BaseNPCTroika::sub_102c0f70

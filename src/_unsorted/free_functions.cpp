@@ -237131,6 +237131,73 @@ void __stdcall sub_102ea600(CRBTree12Entry_102ec4a0 search)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102eaaf0 size=0x18a
+#include "CUtlRBTree12.h"
+#include "CUtlRBTree16.h"
+#include "CUtlRBTree232.h"
+#include "CUtlRBTree24.h"
+#include "CUtlRBTree36.h"
+#include "CUtlRBTreeBig.h"
+#include "CUtlRBTreeFind232.h"
+#include "CUtlRBTreeInsert24.h"
+#include "utlvector.h"
+#include "utlrbtree.h"
+
+extern CUtlRBTree<int, unsigned short> g_10934014;
+
+typedef CUtlRBTree<int, unsigned short> Tree;
+template <>
+inline Tree::Links_t const &Tree::Links(unsigned short i) const
+{
+	// sentinel node, makes life easier
+	static Links_t s_Sentinel = { InvalidIndex(), InvalidIndex(), InvalidIndex(), Tree::BLACK };
+	const Links_t *p = (const Links_t *)&m_Elements[i];
+	if (i == InvalidIndex())
+		p = &s_Sentinel;
+	return *p;
+}
+inline unsigned short MyNewNode(Tree &t)
+{
+	unsigned short newElem;
+	if (t.m_FirstFree == t.InvalidIndex()) {
+		if (t.m_Elements.NumAllocated() == t.m_TotalElements)
+			t.m_Elements.Grow();
+		newElem = t.m_TotalElements++;
+	} else {
+		newElem = t.m_FirstFree;
+		t.m_FirstFree = ((const Tree &)t).Links(t.m_FirstFree).m_Right;
+	}
+	return newElem;
+}
+inline unsigned short MyInsertAt(Tree &t, unsigned short parent, bool leftchild)
+{
+	unsigned short i = MyNewNode(t);
+	t.LinkToParent(i, parent, leftchild);
+	++t.m_NumElements;
+	return i;
+}
+
+void sub_102eaaf0(int value)
+{
+	CUtlRBTree<int, unsigned short> &t = g_10934014;
+	unsigned short current = t.m_Root;
+	unsigned short parent = t.InvalidIndex();
+	bool leftchild = false;
+	while (current != t.InvalidIndex()) {
+		parent = current;
+		if (t.m_LessFunc(value, t.Element(current))) {
+			leftchild = true;
+			current = t.LeftChild(current);
+		} else {
+			leftchild = false;
+			current = t.RightChild(current);
+		}
+	}
+	unsigned short i = MyInsertAt(t, parent, leftchild);
+	CopyConstruct(&t.Element(i), value);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102eacf0 size=0x385
 #include "CRBTree12Entry_102ec4a0.h"
 #include "utlsortvector.h"
