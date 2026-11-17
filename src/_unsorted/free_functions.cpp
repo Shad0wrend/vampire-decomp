@@ -117389,7 +117389,6 @@ void CUnknown1018e2a0::sub_1018e2a0(CBaseEntity *pTarget)
 // END FUNCTION
 
 // FUNCTION: 0x1018e330 size=0x37c
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "vampire.h"
 #include "CActivityCopyProp.h"
 #include "CBaseAnimating.h"
@@ -117448,13 +117447,13 @@ void CActivityCopyProp::sub_1018e330()
 			if (step < 5)
 			{
 				CActivityCopyClrView *c = (CActivityCopyClrView *)this;
-				float flStep = pcd_stage(m_f740) * 0.25f;
+				float flStep = (m_f740) * 0.25f;
 				float flRate = 1.0f / flStep;
 				int toR = g_1058d1ac[4 + step];
 				int toG = g_1058d1ac[0xc + step];
 				int toB = g_1058d1ac[0x14 + step];
 				int dR = abs(g_1058d1ac[3 + step] - toR);
-				int dG = abs(g_1058d1ac[0xb + step] - pcd_stage(toG));
+				int dG = abs(g_1058d1ac[0xb + step] - toG);
 				int dB = abs(g_1058d1ac[0x13 + step] - toB);
 				float stR = (float)dR * flRate;
 				float stG = (float)dG * flRate;
