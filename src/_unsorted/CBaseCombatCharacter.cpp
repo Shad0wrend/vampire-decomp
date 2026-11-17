@@ -1766,6 +1766,231 @@ int CBaseCombatCharacter::vfunc376(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10328df0 size=0x5e8
+#include "CNPC_VTzimisce.h"
+#include "CUnknown100c81b0.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "Quaternion.h"
+#include "CBaseCombatCharacter.h"
+#include "CBaseAnimating.h"
+#include "CEntityVSlots.h"
+#include "ScopeTrace.h"
+#include "CDevFlagObj.h"
+#include "CUnknown100c7f30.h"
+
+#include "ConVar.h"
+extern ConVar g_10937030;
+extern void (*g_109f362c)(const char *fmt, ...);
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" double fabs(double);
+#pragma intrinsic(fabs)
+float sub_101d2c70(const Vector &vec);	// UTIL_VecToYaw
+float sub_1013d580(float a, float b);	// UTIL_AngleDiff
+const char *sub_101d3730(const char *pszFormat, ...);
+
+struct CPlayerGrappleView
+{
+	void sub_10161d20();
+	void sub_1017e150(int a, float b, const char *c);
+};
+
+struct CBCCGrappleView
+{
+	bool sub_103285a0(CBaseCombatCharacter *pTarget, int nType, int nSide);
+	void sub_1032a100(int a);
+};
+
+#define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
+	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct CGrappleSlots
+{
+	V100(a) V100(b) V100(c)
+	V10(d0) V10(d1) V10(d2)
+	virtual void d30(); virtual void d31(); virtual void d32();
+	virtual void slot333(int a, int b, int c, int d, int e, int f);
+	virtual void d34(); virtual void d35(); virtual void d36(); virtual void d37(); virtual void d38(); virtual void d39();
+	V10(d4) V10(d5) V10(d6)
+	virtual void d70(); virtual void d71(); virtual void d72(); virtual void d73(); virtual void d74();
+	virtual void d75(); virtual void d76(); virtual void d77(); virtual void d78();
+	virtual char slot379(CBaseEntity *pTarget, int nRole, int nType, int nSide, Vector *pPos, float flYaw, bool b);
+	virtual void slot380();
+	virtual int slot381(int a);
+};
+
+inline float AngleModX(float a)
+{
+	a = (360.0f / 65536) * ((int)(a * (65536.0f / 360.0f)) & 65535);
+	return a;
+}
+
+inline void SinCos(float radians, float *sine, float *cosine)
+{
+	__asm
+	{
+		fld DWORD PTR [radians]
+		fsincos
+		mov edx, DWORD PTR [cosine]
+		mov eax, DWORD PTR [sine]
+		fstp DWORD PTR [edx]
+		fstp DWORD PTR [eax]
+	}
+}
+
+inline void InitBits(CUnknown100c7f30 *b, CUnknown100c7f30Hdr *h, unsigned int m) { b->sub_100c7f30(h, m); }
+inline void InitBits2(CUnknown100c7f30 *b, CBaseAnimating *p, unsigned int m) { b->sub_100c7f30((CUnknown100c7f30Hdr *)p->sub_100952d0(-1), m); }
+inline int TranslateAct(CGrappleSlots *p, int a) { return p->slot381(a); }
+#define DEG2RAD(x) ((float)(x) * (float)(3.14159265358979323846f / 180.f))
+
+bool CBaseCombatCharacter::StartGrappleAttack(CBaseCombatCharacter *pTarget, int nType)
+{
+	ScopeTrace trace("CBaseCombatCharacter::StartGrappleAttack", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	if (g_10937030.GetInt())
+	{
+		char text[256];
+		sprintf(text, "%s StartGrappleAttack with %s (type=%d)", sub_1000b5cd(), pTarget->sub_1000b5cd(), nType);
+		sub_103221b0(text);
+	}
+
+	Vector vecDelta = *((CEntityVSlots *)pTarget)->slot217() - *((CEntityVSlots *)this)->slot217();
+	Vector vecOrigin = *((CEntityVSlots *)pTarget)->slot217();
+
+	float flYaw;
+	if (nType != 5)
+		flYaw = sub_101d2c70(vecDelta);
+	else
+		flYaw = AngleModX(((CEntityVSlots *)pTarget)->slot219()->y + 180.0f);
+
+	const Vector *pAng = ((CEntityVSlots *)pTarget)->slot219();
+	float flTargetYaw = pAng->y;
+	int nSide = (fabs(sub_1013d580(flYaw, flTargetYaw)) > 90.0) ? 0 : 1;
+
+	bool b1, b2;
+	switch (nType)
+	{
+	case 3:
+		b1 = false;
+		b2 = true;
+		break;
+	case 4:
+	case 7:
+		b1 = false;
+		b2 = false;
+		break;
+	default:
+		b1 = true;
+		b2 = true;
+		break;
+	}
+
+	if (!((CBCCGrappleView *)this)->sub_103285a0(pTarget, nType, nSide))
+		return false;
+
+	if (*(CPlayerGrappleView **)((char *)this + 0xa8))
+		(*(CPlayerGrappleView **)((char *)this + 0xa8))->sub_10161d20();
+
+	nSide = sub_10328af0(pTarget, nType, nSide);
+	int nAnim = sub_10328c80(nType);
+	int nAct = pTarget->sub_10328380(nAnim, 1, this, nSide);
+	nAct = ((CGrappleSlots *)this)->slot381(nAct);
+	int nSequence = ((CBaseAnimating *)pTarget)->sub_1008dd30(nAct, -1);
+
+	CPlayerGrappleView *pPlayer = *(CPlayerGrappleView **)((char *)this + 0xa8);
+	if (pPlayer && pTarget->m_bIsAlive && nType != 8 && nType != 2)
+	{
+		const char *pszName = pTarget->sub_1000b5cd();
+		const char *psz = sub_101d3730("StartGrappleAttack %s", pszName);
+		pPlayer->sub_1017e150(1, 2.0f, psz);
+	}
+
+	if (nSequence < 0 || nAnim == -1 || nSide == -1)
+	{
+		g_109f362c("StartGrappleAttack failing after CheckAndTranslateGrapplePosition!\n");
+		return false;
+	}
+
+	float flTargetGrappleYaw;
+	if (nSide == 0)
+		flTargetGrappleYaw = AngleModX(flYaw + 180.0f);
+	else
+		flTargetGrappleYaw = flYaw;
+	if (nType == 5)
+		flYaw = AngleModX(flYaw + 180.0f);
+
+	Vector vecOffset(0, 0, 0);
+	int iBone = ((CBaseAnimating *)pTarget)->sub_10092550((int)"Bip01");
+	if (iBone >= 0)
+	{
+		Vector pos[350];
+		char q[0x15e0];
+		char bits[0x30];
+		InitBits((CUnknown100c7f30 *)bits, (CUnknown100c7f30Hdr *)((CBaseAnimating *)pTarget)->sub_100952d0(-1), 4);
+		((CBaseAnimating *)pTarget)->sub_1008e770(pos, (class Quaternion *)q, nSequence, 0,
+			(float *)((char *)pTarget + 0x690), (class CUnknown100c81b0 *)bits);
+		float bx = pos[iBone].x;
+		float by = pos[iBone].y;
+		float s, c;
+		SinCos(DEG2RAD(flTargetGrappleYaw), &s, &c);
+		SinCos(DEG2RAD(flYaw), &s, &c);
+		vecOffset.x = c * bx - s * by;
+		vecOffset.y = c * by + s * bx;
+	}
+
+	m_iBloodStolen = 0;
+	{
+		Vector vecPos = vecOrigin - vecOffset;
+		if (!((CGrappleSlots *)this)->slot379(pTarget, 0, nType, nSide, &vecPos, flYaw, b1))
+			goto fail;
+	}
+	{
+		Vector vecPos = vecOrigin - Vector(0, 0, vecOffset.z);
+		if (!((CGrappleSlots *)pTarget)->slot379(this, 1, nType, nSide, &vecPos, flTargetGrappleYaw, b2))
+		{
+			((CGrappleSlots *)this)->slot380();
+			goto fail;
+		}
+	}
+
+	((CBCCGrappleView *)this)->sub_1032a100(nAnim);
+	CGrappleSlots *pObj;
+	pObj = (CGrappleSlots *)sub_1032e7b0();
+	switch (nType)
+	{
+	case 3:
+		if (pObj)
+		{
+			pObj->slot333(0x17, 1, 0, 0, 0, 0);
+			return true;
+		}
+		break;
+	case 4:
+		if (pObj)
+		{
+			pObj->slot333(0x18, 1, 0, 0, 0, 0);
+			return true;
+		}
+		break;
+	case 0:
+	case 1:
+		sub_1033b100(2);
+		pTarget->sub_1033b100(0);
+		break;
+	}
+	return true;
+fail:
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10329760 size=0x270
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
