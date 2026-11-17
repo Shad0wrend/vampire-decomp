@@ -11594,6 +11594,7 @@
 0x1000face func   ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z CBaseEntity::sub_100ab450
 0x1000fad3 func   ?sub_102a9570@@YIMPAVVector@@H0@Z sub_102a9570
 0x1000fad8 func   ?sub_1036a420@@YAXXZ sub_1036a420
+0x1000fadd func   ?sub_102d31c0@@YAXM@Z sub_102d31c0
 0x1000fae2 func   ?sub_102ee430@CAI_Navigator@@QAEHXZ CAI_Navigator::sub_102ee430
 0x1000fae7 func   ?sub_1008d0f0@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_1008d0f0
 0x1000faec func   ??_GIPredictionSystem@@UAEPAXI@Z ??_GIPredictionSystem@@UAEPAXI@Z

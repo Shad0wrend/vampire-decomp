@@ -227324,6 +227324,239 @@ void CAI_Hint::sub_102d3040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d31c0 size=0xa09
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CBaseEntity.h"
+#include "CEntityVSlots.h"
+#include "globalvars.h"
+#include "ehandle.h"
+#include "CEHandleGet.h"
+#include "CUnknown100290c0.h"
+#include "Vector.h"
+
+struct HintNodeV { Vector sub_102fb0d0(int hull); };
+struct HintNetV { int m_iNumNodes; HintNodeV **m_pAInode; };
+extern HintNetV *g_1093407c;
+extern int g_106c994c;
+extern int g_109340d8;
+extern int g_10925458;
+
+struct HintV
+{
+	char pad0[0x454];
+	float m_flYawOffset;	// 0x454
+	char pad458[0x478 - 0x458];
+	char m_szDebug[0x4f8 - 0x478];
+	float m_flDebugTime;	// 0x4f8
+	char pad4fc[0x5d8 - 0x4fc];
+	HintV *m_pNextHint;	// 0x5d8
+	int m_nHintType;	// 0x5dc
+	unsigned int m_hHintOwner;	// 0x5e0
+	int m_nNodeID;	// 0x5e4
+	int m_iDisabled;	// 0x5e8
+	char sub_102d14c0();	// IsLocked
+	float sub_102d12e0();	// Yaw
+	void sub_102d0b20();
+};
+extern HintV *g_10925450;
+extern HintV *g_1092545c;
+
+void sub_10142af0(const Vector &origin, const Vector &mins, const Vector &maxs, const Vector &dir, int r, int g, int b, int a, float flDuration);
+void sub_10142aa0(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float flDuration);
+void sub_10143710(const Vector &origin, const char *text, int bViewCheck, float flDuration);
+void sub_10142e90(const Vector &origin, const Vector &target, int r, int g, int b, int noDepthTest, float flDuration);
+Vector sub_101d2f40(float yaw);	// UTIL_YawToVector
+extern int (*g_109f3890)(char *, const char *, int);	// Q_strncpy
+
+inline HintNodeV *GetNode(int id)
+{
+	if (id >= 0 && id < g_1093407c->m_iNumNodes)
+		return g_1093407c->m_pAInode[id];
+	g_106c994c++;
+	return 0;
+}
+
+void sub_102d31c0(float flDrawDuration)
+{
+	if (!g_10925450)
+		return;
+	flDrawDuration = (float)(g_10925458 >> 4) * 0.1f;
+
+	HintV *pHint = g_1092545c;
+	if (!pHint)
+		pHint = g_10925450;
+
+	for (int count = 16; count; count--)
+	{
+		int r = 0;
+		int g = 0;
+		int b = 127;
+		int a = 0;
+		Vector vHintPos;
+
+		if (pHint->m_nNodeID != -1)
+			vHintPos = GetNode(pHint->m_nNodeID)->sub_102fb0d0(g_109340d8);
+		else
+			vHintPos = *((CEntityVSlots *)pHint)->slot217();
+
+		switch (pHint->m_nHintType)
+		{
+		case 10200:
+			g = 127;
+			break;
+		case 100:
+			g = 127;
+			break;
+		case 101:
+			g = 127;
+			break;
+		case 10000:
+			r = 220;
+			g = 32;
+			b = 220;
+			break;
+		case 10300:
+			r = 220;
+			g = 32;
+			b = 32;
+			break;
+		case 10301:
+			r = 220;
+			g = 32;
+			b = 32;
+			break;
+		case 10400:
+			r = 220;
+			g = 32;
+			b = 32;
+			break;
+		}
+
+		if (pHint->m_iDisabled)
+		{
+			r >>= 1;
+			g >>= 1;
+			b >>= 1;
+		}
+		else if (((CUnknown100290c0 *)g_10566458)->sub_100290c0(&pHint->m_hHintOwner))
+		{
+			a = 64;
+			CBaseEntity *pOwner = (CBaseEntity *)((CUnknown100290c0 *)g_10566458)->sub_100290c0(&pHint->m_hHintOwner);
+			if (pOwner)
+			{
+				char owner[255];
+				g_109f3890(owner, pOwner->sub_1000b5cd(), sizeof(owner));
+				Vector loc = vHintPos;
+				loc.x += 6;
+				loc.y += 6;
+				loc.z += 6;
+				sub_10143710(loc, owner, 1, flDrawDuration);
+			}
+		}
+		else if (pHint->sub_102d14c0())
+		{
+			a = 64;
+		}
+
+		bool bDrawCone = false;
+		float flAng1 = 0, flAng2 = 0;
+		bool bDrawCone2 = false;
+		float flAng3 = 0, flAng4 = 0;
+		Vector vecOffset(0, 0, 0);
+		Vector vecDir = sub_101d2f40(pHint->sub_102d12e0());
+
+		switch (pHint->m_nHintType)
+		{
+		case 10200:
+			sub_10142af0(vHintPos, Vector(-15, -15, 0), Vector(15, 15, 70), vecDir, r, g, b, a, flDrawDuration);
+			vecOffset = Vector(0, 0, 70);
+			flAng3 = -pHint->m_flYawOffset;
+			flAng1 = 43;
+			flAng2 = pHint->m_flYawOffset;
+			bDrawCone2 = true;
+			flAng4 = -43;
+			bDrawCone = true;
+			break;
+		case 100:
+			sub_10142af0(vHintPos, Vector(-15, -15, 0), Vector(15, 15, 54), vecDir, r, g, b, a, flDrawDuration);
+			vecOffset = Vector(0, 0, 54);
+			flAng2 = pHint->m_flYawOffset;
+			flAng1 = -pHint->m_flYawOffset;
+			bDrawCone = true;
+			break;
+		case 101:
+			sub_10142af0(vHintPos, Vector(-15, -15, 0), Vector(15, 25, 37), vecDir, r, g, b, a, flDrawDuration);
+			vecOffset = Vector(0, 0, 37);
+			flAng2 = pHint->m_flYawOffset;
+			flAng1 = -pHint->m_flYawOffset;
+			bDrawCone = true;
+			break;
+		case 10300:
+			sub_10142af0(vHintPos, Vector(-15, -15, 0), Vector(15, 15, 15), vecDir, r, g, b, a, flDrawDuration);
+			vecOffset = Vector(0, 0, 15);
+			flAng2 = pHint->m_flYawOffset;
+			flAng1 = -pHint->m_flYawOffset;
+			bDrawCone = true;
+			break;
+		case 10301:
+			sub_10142af0(vHintPos, Vector(-15, -15, 0), Vector(15, 15, 15), vecDir, r, g, b, a, flDrawDuration);
+			vecOffset = Vector(0, 0, 15);
+			flAng2 = pHint->m_flYawOffset;
+			flAng1 = -pHint->m_flYawOffset;
+			bDrawCone = true;
+			break;
+		default:
+			sub_10142aa0(vHintPos, Vector(-3, -3, -3), Vector(3, 3, 3), r, g, b, a, flDrawDuration);
+			break;
+		}
+
+		if (pHint->m_flDebugTime > 0)
+		{
+			if (gpGlobals->curtime >= pHint->m_flDebugTime)
+				pHint->sub_102d0b20();
+			else
+			{
+				Vector vecText;
+				vecText.x = vHintPos.x;
+				vecText.y = vHintPos.y;
+				vecText.z = vHintPos.z + 16;
+				sub_10143710(vecText, pHint->m_szDebug, 0, flDrawDuration);
+			}
+		}
+
+		if (bDrawCone)
+		{
+			Vector vecLeft = sub_101d2f40(pHint->sub_102d12e0() + flAng1);
+			Vector vecRight = sub_101d2f40(pHint->sub_102d12e0() + flAng2);
+			Vector vecStart = vecOffset + vHintPos;
+			sub_10142af0(vecStart, Vector(0, 0, -10), Vector(32, 0, 10), vecLeft, 255, 0, 0, 50, flDrawDuration);
+			sub_10142af0(vecStart, Vector(0, 0, -10), Vector(32, 0, 10), vecRight, 255, 0, 0, 50, flDrawDuration);
+		}
+		if (bDrawCone2)
+		{
+			Vector vecLeft = sub_101d2f40(pHint->sub_102d12e0() + flAng3);
+			Vector vecRight = sub_101d2f40(pHint->sub_102d12e0() + flAng4);
+			Vector vecStart = vHintPos + vecOffset;
+			sub_10142af0(vecStart, Vector(0, 0, -10), Vector(32, 0, 10), vecLeft, 255, 0, 0, 50, flDrawDuration);
+			sub_10142af0(vecStart, Vector(0, 0, -10), Vector(32, 0, 10), vecRight, 255, 0, 0, 50, flDrawDuration);
+		}
+
+		vecDir = vecDir * 12.0f;
+		sub_10142e90(vHintPos, vHintPos + vecDir, r, g, b, 0, flDrawDuration);
+
+		pHint = pHint->m_pNextHint;
+		if (!pHint)
+			pHint = g_10925450;
+	}
+	g_1092545c = pHint;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d3e60 size=0x29
 extern int g_106c994c;
 
