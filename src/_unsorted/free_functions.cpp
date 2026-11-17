@@ -283367,9 +283367,9 @@ struct SecType1037e680
 		vt = &vt_104b73dc;
 		MvsnSec::CSecureResult t;
 		t.m_Value = MvsnSec::CSecureInt4::Scramble(sub_10383e90(x));
-		base.b = ((volatile MvsnSec::CSecureResult &)t).m_b1;
-		((volatile int &)base.v) = t.m_Value;
-		base.a = ((volatile MvsnSec::CSecureResult &)t).m_b0;
+		base.b = ((MvsnSec::CSecureResult &)t).m_b1;
+		((int &)base.v) = t.m_Value;
+		base.a = ((MvsnSec::CSecureResult &)t).m_b0;
 	}
 };
 struct H1037e680 { unsigned int m_Index; H1037e680() : m_Index(0xffffffff) {} };
