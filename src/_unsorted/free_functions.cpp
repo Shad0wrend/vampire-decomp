@@ -14255,7 +14255,7 @@ void CPhysImpact::sub_1004f030(inputdata_t *pData)
 #include "Ray_t.h"
 
 // TARGET: Ray_t::sub_1004f7a0
-void Ray_t::sub_1004f7a0(const float *pStart, const float *pEnd)
+inline void Ray_t::sub_1004f7a0(const float *pStart, const float *pEnd)
 {
     VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
     m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
@@ -14273,6 +14273,7 @@ void Ray_t::sub_1004f7a0(const float *pStart, const float *pEnd)
     m_n34 = 0;
     m_b33 = 0;
 }
+static void (Ray_t::*s_sub_1004f7a0)(const float *, const float *) = &Ray_t::sub_1004f7a0;
 // END FUNCTION
 
 // FUNCTION: 0x1004f860 size=0x3
