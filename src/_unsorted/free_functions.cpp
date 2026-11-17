@@ -325649,8 +325649,8 @@ CBaseGrenade *CBaseGrenade::sub_1042b2b0()
 	*(volatile int *)((char *)this + 0x19b0) = -1;
 	*(void * volatile *)this = vt_10515ac4;
 	*(volatile int *)((char *)this + 0x19b0) = -1;
-	*(volatile char *)((char *)this + 0x19b5) = 0;
-	*(volatile int *)((char *)this + 0x19bc) = 0;
+	*(char *)((char *)this + 0x19b5) = 0;
+	*(int *)((char *)this + 0x19bc) = 0;
 	*(volatile float *)((char *)this + 0x19b8) = 100.0f;
 	return this;
 }
