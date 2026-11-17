@@ -72,13 +72,12 @@ int CPropDoorknob::vfunc33()
 namespace block_10224d40 {
 struct CItemContainerLockUnit : CItemContainerLock
 {
-	bool IsLockedUnit() { return m_unk780 >= 3; }
+	bool IsLocked() const { if (m_unk780 >= 3) return true; return false; }
 	bool sub_10224100();
 };
 bool CItemContainerLockUnit::sub_10224100()
 {
-	int n = m_unk780;
-	return (bool)(((unsigned)n >> 31) | ((unsigned)(n - 3) >> 31));
+	return !IsLocked();
 }
 }
 using namespace block_10224d40;
