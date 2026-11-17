@@ -246572,6 +246572,492 @@ void sub_102fb470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102fb4e0 size=0xbea
+#include "CAI_Node.h"
+#include "CAI_NodeGraph.h"
+#include "CBitString.h"
+#include "CBaseEntity.h"
+#include "CAI_MoveProbe.h"
+#include "CAI_Pathfinder.h"
+#include "CUnknown102f46d0.h"
+#include "CUnknown102f95d0.h"
+#include "CPairFields102dda40.h"
+#include "UTIL_Trace.h"
+#include "globalvars.h"
+
+struct CAINodeView {
+	int m_pad0;
+	int m_iID;	// 0x04
+	char m_pad8[0x78 - 8];
+	int m_nLinks;	// 0x78
+	CPairFields102dda40 **m_ppLinks;	// 0x7c
+	CPairFields102dda40 *sub_102f96e0(int destID);
+};
+
+struct CUnk102d7730
+{
+	char pad[0x1568];
+	int m_1568;
+	int m_156c;
+	void sub_10273070(int a);
+	void sub_102d7730(int a);
+};
+
+struct CEnt5f44;
+CEnt5f44 *sub_102d74c0();
+void sub_102d7640();
+void sub_102fc540(int a, int b, const char *fmt, ...);
+int sub_102d6230(int i);
+int sub_102d6210(int i);
+namespace lifted {
+extern int g_10610be8;
+}
+#pragma auto_inline(off)
+namespace block_102fb4e0 {
+int sub_102f9950()
+{
+    return lifted::g_10610be8;
+}
+}
+#pragma auto_inline(on)
+using namespace block_102fb4e0;
+char *sub_102d6100(int i);
+char *sub_102d6120(int i);
+Vector sub_101d2f40(float yaw);
+bool sub_102fc3d0(const Vector *a1, const Vector *a2, const Vector *a3, const Vector *a4);
+int *__fastcall sub_102dda70(int *pThis);
+extern void (*g_109f3658)(int level, const char *fmt, ...);	// DevWarning
+extern void (*g_109f3630)(const char *pMsg, ...);
+
+#define V1(n) virtual void v##n();
+#define V10(p) V1(p##0) V1(p##1) V1(p##2) V1(p##3) V1(p##4) V1(p##5) V1(p##6) V1(p##7) V1(p##8) V1(p##9)
+#define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
+
+struct CompV
+{
+	void *m_vt;
+	char *m_pOuter;	// 0x04
+	int m_n08;	// 0x08
+	int m_n0c;	// 0x0c
+	char m_pad10[0x2c - 0x10];
+	void *m_pNetwork;	// 0x2c
+};
+
+struct MoveProbeV : CAI_MoveProbe
+{
+	CBaseEntity *sub_102e7e80(const Vector &start, const Vector &end, unsigned int collisionMask);
+};
+
+class HullV
+{
+public:
+	V100(0) V100(1) V100(2) V100(3) V100(4)
+	V10(50) V10(51) V1(520)
+	virtual bool vfunc521(const Vector &a, const Vector &b, const Vector &c);
+};
+
+#define HULL_F(h, T, off) (*(T *)((char *)(h) + (off)))
+
+class TestHullV : public HullV
+{
+public:
+	char m_pad4[0x3ec - 4];
+	float m_flGravity;	// 0x3ec
+	char m_pad3f0[0x5d34 - 0x3f0];
+	CompV *m_pNavigator;	// 0x5d34
+	char m_pad5d38[8];
+	CAI_MoveProbe *m_pMoveProbe;	// 0x5d40
+	CompV *GetNavigator() { return m_pNavigator; }
+	CAI_MoveProbe *GetMoveProbe() { return m_pMoveProbe; }
+	void SetGravity(float f) { m_flGravity = f; }
+	void SetHullType(int h) { ((CUnk102d7730 *)this)->sub_102d7730(h); }
+	int GetFlags() { return ((CBaseEntity *)this)->sub_100b3700(); }
+	void AddFlag(int f) { ((CBaseEntity *)this)->sub_100b3580(f); }
+	bool IsJumpLegal(const Vector &a, const Vector &b, const Vector &c) { return vfunc521(a, b, c); }
+};
+
+struct LinkV
+{
+	int m_h;
+	int m_iSrcID;	// 0x04
+	int m_iDestID;	// 0x08
+	int m_iAcceptedMoveTypes[22];	// 0x0c
+	int m_LinkInfo;	// 0x64
+	float m_timeStale;	// 0x68
+};
+
+__declspec(dllimport) void vtune(bool bEnable);
+
+class CCycleCount
+{
+public:
+	CCycleCount() { Init(); }
+	void Init() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm
+		{
+			mov		ecx, pSample
+			rdtsc
+			mov		[ecx],     eax
+			mov		[ecx+4],   edx
+		}
+	}
+	CCycleCount &operator+=(CCycleCount const &other) { m_Int64 += other.m_Int64; return *this; }
+	unsigned __int64 m_Int64;
+};
+
+class CFastTimer
+{
+public:
+	void Start() { m_Duration.Sample(); }
+	void sub_100335e0()	// CFastTimer::End
+	{
+		CCycleCount cnt;
+		cnt.Sample();
+		m_Duration.m_Int64 = cnt.m_Int64 - m_Duration.m_Int64;
+	}
+	const CCycleCount &GetDuration() const { return m_Duration; }
+	CCycleCount m_Duration;
+};
+
+class __declspec(dllimport) CVProfNode
+{
+public:
+	CVProfNode *GetSubNode(const char *pszName, int detailLevel, const char *pBudgetGroupName);
+	void EnterScope();
+	bool ExitScope();
+	const char *GetName() { return m_pszName; }
+	CVProfNode *GetParent() { return m_pParent; }
+	int GetBudgetGroupID() { return m_BudgetGroupID; }
+
+	const char *m_pszName;	// 0x00
+	CFastTimer m_Timer;	// 0x08
+	int m_nRecursions;	// 0x10
+	unsigned m_nCurFrameCalls;	// 0x14
+	CCycleCount m_CurFrameTime;	// 0x18
+	char m_pad20[0x48 - 0x20];
+	CVProfNode *m_pParent;	// 0x48
+	CVProfNode *m_pChild;
+	CVProfNode *m_pSibling;
+	int m_BudgetGroupID;	// 0x54
+};
+
+class __declspec(dllimport) CVProfile
+{
+public:
+	void EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted);
+	void ExitScope();
+	void PushGroup(int nGroupID);
+	void PopGroup();
+	bool VTuneGroupEnabled() { return m_bVTuneGroupsEnabled; }
+	int VTuneGroupID() { return m_nVTuneGroupID; }
+
+	bool m_bVTuneGroupsEnabled;	// 0x0000
+	char m_pad0001[3];
+	int m_nVTuneGroupID;	// 0x0004
+	int m_GroupIDStack[1024];	// 0x0008
+	int m_GroupIDStackDepth;	// 0x1008
+	int m_enabled;	// 0x100c
+	bool m_fAtRoot;	// 0x1010
+	char m_pad1011[3];
+	CVProfNode *m_pCurNode;	// 0x1014
+	CVProfNode *m_pRoot;	// 0x1018
+};
+
+extern "C" __declspec(dllimport) CVProfile g_VProfCurrentProfile;
+
+inline void CVProfile::PushGroup(int nGroupID)
+{
+	m_GroupIDStack[m_GroupIDStackDepth] = nGroupID;
+	m_GroupIDStackDepth++;
+	if (m_GroupIDStack[m_GroupIDStackDepth - 2] != nGroupID && VTuneGroupEnabled() && nGroupID == VTuneGroupID())
+		vtune(true);
+}
+
+inline void CVProfile::PopGroup()
+{
+	m_GroupIDStackDepth--;
+	if (m_GroupIDStack[m_GroupIDStackDepth] != m_GroupIDStack[m_GroupIDStackDepth + 1] && VTuneGroupEnabled() && m_GroupIDStack[m_GroupIDStackDepth + 1] == VTuneGroupID())
+		vtune(false);
+}
+
+inline void CVProfNode::EnterScope()
+{
+	m_nCurFrameCalls++;
+	if (m_nRecursions++ == 0)
+	{
+		m_Timer.Start();
+		g_VProfCurrentProfile.PushGroup(m_BudgetGroupID);
+	}
+}
+
+inline bool CVProfNode::ExitScope()
+{
+	if (--m_nRecursions == 0 && m_nCurFrameCalls != 0)
+	{
+		m_Timer.sub_100335e0();
+		m_CurFrameTime += m_Timer.GetDuration();
+		g_VProfCurrentProfile.PopGroup();
+	}
+	return (m_nRecursions == 0);
+}
+
+inline void CVProfile::EnterScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted)
+{
+	if (m_enabled != 0 || !m_fAtRoot)
+	{
+		if (pszName != m_pCurNode->GetName())
+		{
+			m_pCurNode = m_pCurNode->GetSubNode(pszName, detailLevel, pBudgetGroupName);
+		}
+		m_pCurNode->EnterScope();
+		m_fAtRoot = false;
+	}
+}
+
+inline void CVProfile::ExitScope()
+{
+	if (!m_fAtRoot || m_enabled != 0)
+	{
+		if (m_pCurNode->ExitScope())
+		{
+			m_pCurNode = m_pCurNode->GetParent();
+		}
+		m_fAtRoot = (m_pCurNode == m_pRoot);
+	}
+}
+
+class CVProfScope
+{
+public:
+	CVProfScope(const char *pszName, int detailLevel, const char *pBudgetGroupName, bool bAssertAccounted)
+	{
+		g_VProfCurrentProfile.EnterScope(pszName, detailLevel, pBudgetGroupName, bAssertAccounted);
+	}
+	~CVProfScope()
+	{
+		g_VProfCurrentProfile.ExitScope();
+	}
+};
+#define VPROF(name) CVProfScope VProf_(name, 0, "Unaccounted", false)
+#define AI_PROFILE_SCOPE(tag) VPROF(#tag)
+
+class CAI_NodeL : public CAI_Node
+{
+public:
+	int GetType() { return m_nType; }
+	const Vector &GetOrigin() { return *(Vector *)&m_x; }
+};
+
+class CAI_MoveProbeL : public CAI_MoveProbe
+{
+public:
+	bool MoveLimit(int navType, const Vector &vecStart, const Vector &vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, AIMoveTrace_t *pMove)
+	{
+		return sub_102e6d70(navType, &vecStart.x, &vecEnd.x, collisionMask, pTarget, 100.0f, 0, pMove, 0, 0);
+	}
+};
+
+inline bool IsMoveBlocked(const AIMoveTrace_t &moveTrace)
+{
+	return (moveTrace.fStatus < 0);
+}
+
+void CAI_Node::sub_102fb4e0()
+{
+	AI_PROFILE_SCOPE(CAI_Node_InitLinks);
+	TestHullV *pTestHull = (TestHullV *)sub_102d74c0();
+	pTestHull->GetNavigator()->m_pNetwork = m_pGraph98;
+	{
+		CompV *p = pTestHull->GetNavigator();
+		p->m_n08 = *(int *)(p->m_pOuter + 0x156c);
+		p->m_n0c = gpGlobals->framecount;
+	}
+	{
+		CompV *p = ((CompV *)pTestHull->GetMoveProbe());
+		p->m_n08 = *(int *)(p->m_pOuter + 0x156c);
+		p->m_n0c = gpGlobals->framecount;
+	}
+	for (int i = 0; i < m_pGraph98->m_nNodes; i++)
+	{
+		sub_102fc540(m_nIndex, i, "Testing connection between %d and %d:\n", m_nIndex, i);
+		if (((CAINodeView *)this)->sub_102f96e0(i))
+		{
+			sub_102fc540(m_nIndex, i, "   Nodes already connected\n");
+			continue;
+		}
+		CAI_NodeL *pDestNode = (CAI_NodeL *)m_pGraph98->NodeAt(i);
+		CPairFields102dda40 *pOldLink = ((CAINodeView *)pDestNode)->sub_102f96e0(m_nIndex);
+		if (pOldLink)
+		{
+			sub_102fc540(m_nIndex, i, "   Sharing previously establish connection\n");
+			((CUnknown102f95d0 *)this)->sub_102f95d0((int)pOldLink);
+			continue;
+		}
+		pDestNode = (CAI_NodeL *)m_pGraph98->NodeAt(i);
+		if (m_pBits->m_pData[pDestNode->m_nIndex >> 5] & (1 << (pDestNode->m_nIndex & 0x1f)))
+		{
+			int acceptedMotions[22];
+			bool bAllFailed = true;
+			bool bStairs = false;
+			if ((m_nIndex == g_10610bec && i == g_10610bf0) || (m_nIndex == g_10610bf0 && i == g_10610bec))
+				g_109f3630("");
+			for (int hull = 0; hull < 22; hull++)
+			{
+				sub_102fc540(m_nIndex, i, "   Testing for hull %s\n", sub_102d6230(hull));
+				acceptedMotions[hull] = 0;
+				if (!(sub_102d6210(hull) & sub_102f9950()))
+				{
+					sub_102fc540(m_nIndex, i, "   Skipping hull %s because no entities are using it\n", sub_102d6230(hull));
+					continue;
+				}
+				CGameTrace tr;
+				pTestHull->SetHullType(hull);
+				if (!(pTestHull->GetFlags() & 1))
+					g_109f3658(2, "OFFGROUND!\n");
+				pTestHull->AddFlag(1);
+				if (!((CAI_Pathfinder *)pTestHull->GetNavigator())->sub_102f1900(m_nIndex, 0x2000b))
+				{
+					sub_102fc540(m_nIndex, i, "      Cannot fit at node %d\n", m_nIndex);
+					continue;
+				}
+				if (!((CAI_Pathfinder *)pTestHull->GetNavigator())->sub_102f1900(pDestNode->m_nIndex, 0x2000b))
+				{
+					sub_102fc540(m_nIndex, i, "      Cannot fit at node %d\n", i);
+					continue;
+				}
+				if (m_nType == 3 || pDestNode->GetType() == 3)
+				{
+					if (m_nType == 3 && pDestNode->GetType() == 3)
+					{
+						UTIL_TraceHull(*(Vector *)&m_x, pDestNode->GetOrigin(), *(Vector *)sub_102d6100(hull), *(Vector *)sub_102d6120(hull), 0x2000b, pTestHull, 0, &tr, 1, 0);
+						if (!tr.m_startsolid && tr.m_fraction == 1.0)
+						{
+							acceptedMotions[hull] = 4;
+							bAllFailed = false;
+							sub_102fc540(m_nIndex, i, "      Connect by flying\n");
+						}
+					}
+				}
+				else if (m_nType == 4 && pDestNode->GetType() == 4)
+				{
+					Vector srcPos = ((CUnknown102f46d0Elem *)this)->sub_102fb0d0(hull);
+					Vector destPos = ((CUnknown102f46d0Elem *)pDestNode)->sub_102fb0d0(hull);
+					if (*(Vector *)&m_x == pDestNode->GetOrigin())
+					{
+						UTIL_TraceHull(srcPos, destPos, *(Vector *)sub_102d6100(hull), *(Vector *)sub_102d6120(hull), 0x2000b, pTestHull, 0, &tr, 1, 0);
+						if (!tr.m_startsolid && tr.m_fraction == 1.0)
+						{
+							acceptedMotions[hull] = 8;
+							bAllFailed = false;
+							sub_102fc540(m_nIndex, i, "      Connect by climbing\n");
+						}
+					}
+					else
+					{
+						if (!sub_102fc3d0(&srcPos, &sub_101d2f40(*(float *)&m_n6c), &destPos, &sub_101d2f40(*(float *)&pDestNode->m_n6c)))
+						{
+							sub_102fc540(m_nIndex, i, "      Not lined up for proper climbing\n");
+							continue;
+						}
+						UTIL_TraceHull(srcPos, destPos, *(Vector *)sub_102d6100(hull), *(Vector *)sub_102d6120(hull), 0x2000b, pTestHull, 0, &tr, 1, 0);
+						if (!tr.m_startsolid && tr.m_fraction == 1.0)
+						{
+							acceptedMotions[hull] = 8;
+							bAllFailed = false;
+							sub_102fc540(m_nIndex, i, "      Connect by climbing\n");
+						}
+					}
+				}
+				else if (m_nType == 2 || pDestNode->GetType() == 2)
+				{
+					bool fStandFailed = false;
+					bool fWalkFailed = false;
+					{
+						AI_PROFILE_SCOPE(CAI_Node_InitLinks_Ground);
+						Vector srcPos = ((CUnknown102f46d0Elem *)this)->sub_102fb0d0(hull);
+						Vector destPos = ((CUnknown102f46d0Elem *)pDestNode)->sub_102fb0d0(hull);
+						if (!pTestHull->GetMoveProbe()->sub_102e7270(&srcPos.x, 0x2000b, 0, 0, 0, 0))
+						{
+							sub_102fc540(m_nIndex, i, "      Failed to stand at %d\n", m_nIndex);
+							fStandFailed = true;
+						}
+						if (!pTestHull->GetMoveProbe()->sub_102e7270(&destPos.x, 0x2000b, 0, 0, 0, 0))
+						{
+							sub_102fc540(m_nIndex, i, "      Failed to stand at %d\n", i);
+							fStandFailed = true;
+						}
+						if (!fStandFailed)
+						{
+							fWalkFailed = !pTestHull->GetMoveProbe()->sub_102e4f50(&srcPos.x, &destPos.x, 0x2000b, 2.0f, 0, 0, 0, 0);
+							if (fWalkFailed)
+								sub_102fc540(m_nIndex, i, "      Failed to walk between nodes\n");
+							else if (hull == 0 && ((MoveProbeV *)pTestHull->GetMoveProbe())->sub_102e7e80(srcPos, destPos, 0x2000))
+								bStairs = true;
+							if (!fWalkFailed)
+							{
+								acceptedMotions[hull] = 1;
+								bAllFailed = false;
+								sub_102fc540(m_nIndex, i, "      Nodes connect for ground movement\n");
+							}
+						}
+					}
+					if (!fStandFailed && fWalkFailed && m_nType == 2 && pDestNode->GetType() == 2)
+					{
+						Vector srcPos = ((CUnknown102f46d0Elem *)this)->sub_102fb0d0(hull);
+						Vector destPos = ((CUnknown102f46d0Elem *)pDestNode)->sub_102fb0d0(hull);
+						bool canDestJump = pTestHull->IsJumpLegal(srcPos, destPos, destPos);
+						bool canSrcJump = pTestHull->IsJumpLegal(destPos, srcPos, srcPos);
+						if (canDestJump || canSrcJump)
+						{
+							CAI_MoveProbeL *pMoveProbe = (CAI_MoveProbeL *)pTestHull->GetMoveProbe();
+							bool fJumpLegal = false;
+							pTestHull->SetGravity(1.0f);
+							AIMoveTrace_t moveTrace;
+							pMoveProbe->MoveLimit(1, srcPos, destPos, 0x2000b, 0, &moveTrace);
+							if (!IsMoveBlocked(moveTrace))
+								fJumpLegal = true;
+							pMoveProbe->MoveLimit(1, destPos, srcPos, 0x2000b, 0, &moveTrace);
+							if (!IsMoveBlocked(moveTrace))
+								fJumpLegal = true;
+							if (fJumpLegal)
+							{
+								acceptedMotions[hull] |= 2;
+								bAllFailed = false;
+								sub_102fc540(m_nIndex, i, "      Nodes connect for jumping\n");
+							}
+						}
+					}
+				}
+			}
+			if (!bAllFailed)
+			{
+				int *pMem = (int *)operator new(0x6c);
+				LinkV *pLink = (LinkV *)(pMem ? sub_102dda70(pMem) : 0);
+				pLink->m_iSrcID = m_nIndex;
+				pLink->m_iDestID = pDestNode->m_nIndex;
+				if (bStairs)
+					pLink->m_LinkInfo |= 0x2000;
+				memcpy(pLink->m_iAcceptedMoveTypes, acceptedMotions, sizeof(acceptedMotions));
+				((CUnknown102f95d0 *)this)->sub_102f95d0((int)pLink);
+				((CUnknown102f95d0 *)pDestNode)->sub_102f95d0((int)pLink);
+				sub_102fc540(m_nIndex, i, "   Added link\n");
+			}
+			else
+			{
+				m_pBits->m_pData[pDestNode->m_nIndex >> 5] &= ~(1 << (pDestNode->m_nIndex & 0x1f));
+				sub_102fc540(m_nIndex, i, "   NO LINK\n");
+			}
+		}
+		else
+			sub_102fc540(m_nIndex, i, "   NO LINK (not neighbors)\n");
+	}
+	sub_102d7640();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102fc3d0 size=0x11d
 #include "CAI_Node.h"
 #include "Vector.h"
