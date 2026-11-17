@@ -104532,9 +104532,9 @@ void CBasePlayer::sub_10160520()
 {
 	*(volatile float *)&m_f1DDC = g_1046fb0c;
 	float fA = *(volatile float *)&m_vec1EFC.x;
-	fA += *(volatile float *)&m_vec206c.x;
-	float fB = *(volatile float *)&m_vec1EFC.y;
-	fB += *(volatile float *)&m_vec206c.y;
+	fA += *(float *)&m_vec206c.x;
+	float fB = *(float *)&m_vec1EFC.y;
+	fB += *(float *)&m_vec206c.y;
 	SetPair10160520(&m_f1DE4, fB, fA);
 }
 // END FUNCTION
