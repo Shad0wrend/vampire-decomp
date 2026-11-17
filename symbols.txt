@@ -14978,6 +14978,7 @@
 0x10013ee4 func   ??1CTESprite@@QAE@XZ CTESprite::~CTESprite
 0x10013ee4 func   ?sub_10067cb0@CUnknown10067cb0@@QAEHXZ CUnknown10067cb0::sub_10067cb0
 0x10013ee9 func   ?sub_100fc1e0@CInspectionNode@@QAEXH@Z CInspectionNode::sub_100fc1e0
+0x10013ef3 func   ?sub_102827f0@CSTV@@QAEXPBUTask_t@@@Z CSTV::sub_102827f0
 0x10013ef8 func   ?sub_100bdd00@@YGHH@Z sub_100bdd00
 0x10013efd func   ?sub_102e2820@CUnknown102e2820@@QAEHXZ CUnknown102e2820::sub_102e2820
 0x10013f02 func   ?sub_1035fc90@CUnk1035fc90@@QAEXH@Z CUnk1035fc90::sub_1035fc90
