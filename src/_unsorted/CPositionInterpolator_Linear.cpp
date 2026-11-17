@@ -55,6 +55,6 @@ void CPositionInterpolator_Linear::vfunc3(float flT, Vector *pOut)
 	const Vector &a = *(const Vector *)g_1057519c;
 	pOut->x = ((pcd_stage(b.x) - a.x) * flT) + a.x;
 	pOut->y = a.y + (flT * (b.y - a.y));
-	pOut->z = ((pcd_stage(b.z) - a.z) * flT) + a.z;
+	pOut->z = (((b.z) - a.z) * flT) + a.z;
 }
 // END FUNCTION
