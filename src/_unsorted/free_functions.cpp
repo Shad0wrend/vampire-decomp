@@ -238701,12 +238701,34 @@ void CUtlVector280::sub_102e8b80(Vector *pPos)
 // END FUNCTION
 
 // FUNCTION: 0x102e91b0 size=0x3ad
-template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CHumanoidRec.h"
 #include "Vector.h"
 #include "utlrbtree.h"
 #include "CUtlVectorElem118.h"
 #include "utlvector.h"
 #include <stdlib.h>
+
+struct Mem;
+void __fastcall sub_102e9e50(Mem *, int, int);	// CUtlMemory<Elem118>::Grow
+
+template <>
+inline int CUtlVector<Elem118>::InsertMultipleBefore(int elem, int num, const Elem118 *pToInsert)
+{
+	if (num == 0)
+		return elem;
+	if (m_Size + num > m_Memory.NumAllocated())
+		sub_102e9e50((Mem *)&m_Memory, m_Size + num, m_Size + num - m_Memory.NumAllocated());
+	m_Size += num;
+	ResetDbgInfo();
+	ShiftElementsRight(elem, num);
+	for (int i = 0; i < num; ++i)
+		Construct(&Element(elem + i));
+	if (pToInsert) {
+		for (int i = 0; i < num; i++)
+			Element(elem + i) = pToInsert[i];
+	}
+	return elem;
+}
 
 struct CBucket118 { float m_flSum; float m_flBest; Elem118 *m_pBest; };
 
@@ -238728,9 +238750,10 @@ bool CUtlVectorElem118::sub_102e91b0(Elem118 *pElems, int nCount, float *pOut)
 	for (int n = 0; n < temp.Count(); n++) {
 		Elem118 *e = &temp[n];
 		float h = *(float *)&e->m_d * 0.5;
-		int t0 = (float)(120.0f * h) * 0.0027777778f + 0.5; int nHalf = (int)(float)(int)(t0);
+		float flHalf = (int)((float)(120.0f * h) * 0.0027777778f + 0.5);
+		int nHalf = (int)flHalf;
 		int nFull = (int)((float)(*(float *)&e->m_d * 120.0f) * 0.0027777778f);
-		float start = pcd_stage(*(float *)&e->m_c) - h;
+		float start = *(float *)&temp[n].m_c - h;
 		if (start < 0.0)
 			start += 360.0f;
 		int nStart = (int)((float)(start * 120.0f) * 0.0027777778f);
