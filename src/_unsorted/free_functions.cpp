@@ -84503,7 +84503,9 @@ struct CGameMovementUnit : CGameMovement
 float *CGameMovementUnit::sub_1011e350()
 {
 	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
-	if ((pMove->m_fFlags >> 5) & 1)
+	unsigned int nFlags = pMove->m_fFlags;
+	unsigned char bStance = (unsigned char)(nFlags >> 5);
+	if (bStance & 1)
 		return &m_vecObsHullMax.x;
 	return pMove->m_bDucked ? &m_vecDuckHullMax.x : &m_vecHullMax.x;
 }
@@ -84511,7 +84513,9 @@ float *CGameMovementUnit::sub_1011e350()
 float *CGameMovementUnit::sub_1011e310()
 {
 	CMoveFlagsView *pMove = (CMoveFlagsView *)m_pMove;
-	if ((pMove->m_fFlags >> 5) & 1)
+	unsigned int nFlags = pMove->m_fFlags;
+	unsigned char bStance = (unsigned char)(nFlags >> 5);
+	if (bStance & 1)
 		return &m_vecObsHullMin.x;
 	return pMove->m_bDucked ? &m_vecDuckHullMin.x : &m_vecHullMin.x;
 }
