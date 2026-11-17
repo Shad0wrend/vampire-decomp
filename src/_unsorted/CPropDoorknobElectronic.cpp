@@ -57,9 +57,18 @@ CPropDoorknobElectronic *CPropDoorknobElectronic::vfunc5(unsigned int flags)
 // FUNCTION: 0x102262f0 size=0x32
 #include "CPropDoorknob.h"
 #include "CPropDoorknobElectronic.h"
-char CPropDoorknobElectronic::sub_10224100()
+#include "CItemContainerLock.h"
+
+namespace block_102262f0 {
+struct CItemContainerLockUnit : CItemContainerLock
 {
-	return *(int *)((char *)this + 0x780) < 3;
+	bool IsLocked() const { if (m_unk780 >= 3) return true; return false; }
+	bool sub_10224100();
+};
+bool CItemContainerLockUnit::sub_10224100()
+{
+	return !IsLocked();
+}
 }
 
 // TARGET: CPropDoorknobElectronic::vfunc103
@@ -67,7 +76,7 @@ void CPropDoorknobElectronic::vfunc103()
 {
 	CPropDoorknob::vfunc103();
 	m_b815 = 1;
-	if (sub_10224100())
+	if (((block_102262f0::CItemContainerLockUnit *)this)->sub_10224100())
 		m_unk670 = 0;
 	else
 		m_unk670 = 1;
