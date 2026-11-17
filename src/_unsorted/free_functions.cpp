@@ -234324,6 +234324,386 @@ void CBoxGridDrawer::sub_102e3b00(Vector a, Vector b, int mask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102e4160 size=0xafb
+#include "CBaseEntity.h"
+#include "CAI_MoveProbe.h"
+#include "CVProfile.h"
+#include "CGameTrace.h"
+#include "CUnknown100353c0.h"
+#include "engineserver.h"
+#include "Vector.h"
+extern "C" __declspec(dllimport) CVProfile g_VProfCurrentProfile;
+#define g_109f3648 (&g_VProfCurrentProfile)
+typedef void (CVProfile::*EnterFn4160)(const char *, int, const char *, bool);
+extern EnterFn4160 g_109f3660;
+typedef void (CVProfile::*ExitFn4160)();
+extern ExitFn4160 g_109f365c;
+typedef void (CVProfile::*PopFn4160)();
+extern PopFn4160 g_109f363c;
+typedef void (CVProfile::*PushFn4160)(int);
+extern PushFn4160 g_109f3668;
+typedef CVProfNode *(CVProfNode::*SubFn4160)(const char *, int, const char *);
+extern SubFn4160 g_109f3644;
+typedef bool (CVProfNode::*NodeExitFn4160)();
+extern NodeExitFn4160 g_109f3654;
+struct CVProfL4160 : CVProfile
+{
+	void ExitScopeL()
+	{
+		if (!m_bAtRoot || m_enabled) {
+			if ((m_pCurNode->*g_109f3654)())
+				m_pCurNode = m_pCurNode->m_pParent;
+			m_bAtRoot = (m_pCurNode == m_pRoot);
+		}
+	}
+	void ExitScopeInlinedL()
+	{
+		if (!m_bAtRoot || m_enabled) {
+			CVProfNode *n = m_pCurNode;
+			if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+				sub_100335e0(&n->m_CurFrameTime);
+				n->m_TotalTime += n->m_CurFrameTime.m_Int64;
+				(g_109f3648->*g_109f363c)();
+			}
+			if (n->m_nRecursions == 0)
+				m_pCurNode = m_pCurNode->m_pParent;
+			m_bAtRoot = (m_pCurNode == m_pRoot);
+		}
+	}
+};
+
+
+struct CheckStepArgs_t
+{
+	Vector vecStart;	// 0x00
+	Vector vecStepDir;	// 0x0c
+	float stepSize;	// 0x18
+	float stepHeight;	// 0x1c
+	float stepDownMultiplier;	// 0x20
+	float minStepLanding;	// 0x24
+	unsigned int collisionMask;	// 0x28
+	int groundTest;	// 0x2c
+	bool b30;	// 0x30
+	char m_pad31[3];
+	int n34;	// 0x34
+};
+
+struct CheckStepResult_t
+{
+	Vector endPoint;	// 0x00
+	Vector hitNormal;	// 0x0c
+	CBaseEntity *pBlocker;	// 0x18
+};
+
+struct CStepEntView
+{
+	char m_pad0000[0x4c];
+	unsigned int m_flags4c;
+	char m_pad0050[0x224 - 0x50];
+	unsigned int m_debugOverlays;	// 0x224
+	char m_pad0228[0x270 - 0x228];
+	struct CCollisionView { virtual void v0(); virtual const Vector &WorldAlignMins(); virtual const Vector &WorldAlignMaxs(); } m_Collision;	// 0x270
+	void sub_1009f4e0();
+};
+
+struct CStepEdictView
+{
+	char m_pad0000[0x40];
+	struct IUnkView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CBaseEntity *GetBaseEntity(); } *m_pUnk;
+};
+
+struct CStepProbeView : CAI_MoveProbe
+{
+	char sub_102e7270(const float *vecPosition, unsigned int collisionMask, int a3, int a4, bool a5, int a6);	// CheckStandPosition
+};
+
+struct CCycleCountX
+{
+	unsigned __int64 m_Int64;
+	CCycleCountX() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm
+		{
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx+4], edx
+		}
+	}
+};
+
+// a VPROF scope's end as a destructor (the game's exits are scope objects)
+struct CStepScopeExit
+{
+	~CStepScopeExit() { ((CVProfL4160 *)g_109f3648)->ExitScopeL(); }
+};
+
+extern Vector g_1070d1b0;	// vec3_origin
+void sub_10139500(const Vector &start, float scale, const Vector &dir, Vector &dest);	// VectorMA
+void sub_10142aa0(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float flDuration);	// NDebugOverlay::Box
+
+struct CVector2DX
+{
+	float x, y;
+	void sub_102e4f20(const CVector2DX &other);	// Vector2D copy constructor
+	float LengthSqr() const { return x * x + y * y; }
+};
+
+inline float StepDeltaLengthSqr(const Vector &a, const Vector &b)
+{
+	CVector2DX res;
+	res.x = a.x - b.x;
+	res.y = a.y - b.y;
+	CVector2DX ret;
+	ret.sub_102e4f20(res);
+	return ret.LengthSqr();
+}
+
+struct CStepTrace
+{
+	Vector m_startpos;	// 0x00
+	Vector m_endpos;	// 0x0c
+	Vector m_planeNormal;	// 0x18
+	float m_planeDist;	// 0x24
+	char m_planeType;	// 0x28
+	char m_planeSignbits;	// 0x29
+	short m_pad2a;
+	float m_fraction;	// 0x2c
+	int m_contents;	// 0x30
+	short m_dispFlags;	// 0x34
+	bool m_allsolid;	// 0x36
+	bool m_startsolid;	// 0x37
+	float m_fractionleftsolid;	// 0x38
+	const char *m_surfaceName;	// 0x3c
+	short m_surfaceProps;	// 0x40
+	unsigned short m_surfaceFlags;	// 0x42
+	int m_hitgroup;	// 0x44
+	short m_physicsbone;	// 0x48
+	CBaseEntity *m_pEnt;	// 0x4c
+	int m_hitbox;	// 0x50
+};
+
+struct CSurfaceX { int a, b; };
+
+inline void CopyTrace(CStepTrace &dst, const CStepTrace &src)
+{
+	((CUnknown100353c0 *)&dst)->sub_100353c0((const CUnknown100353c0 *)&src);
+	dst.m_fractionleftsolid = src.m_fractionleftsolid;
+	*(CSurfaceX *)&dst.m_surfaceName = *(const CSurfaceX *)&src.m_surfaceName;
+	dst.m_hitgroup = src.m_hitgroup;
+	dst.m_physicsbone = src.m_physicsbone;
+	dst.m_pEnt = src.m_pEnt;
+	dst.m_hitbox = src.m_hitbox;
+}
+
+inline void ExitScopeEndInline(CVProfile *p)
+{
+	if (!p->m_bAtRoot || p->m_enabled)
+	{
+		CVProfNode *n = p->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0)
+		{
+			CUnknownCycle100335e0 *pc = &n->m_CurFrameTime;
+			CCycleCountX cnt;
+			cnt.Sample();
+			pc->m_Int64 = cnt.m_Int64 - pc->m_Int64;
+			n->m_TotalTime += pc->m_Int64;
+			(g_109f3648->*g_109f363c)();
+		}
+		if (n->m_nRecursions == 0)
+			p->m_pCurNode = p->m_pCurNode->m_pParent;
+		p->m_bAtRoot = (p->m_pCurNode == p->m_pRoot);
+	}
+}
+
+char CAI_MoveProbe::sub_102e4160(float *pArgs, float *pResultIn)
+{
+	const CheckStepArgs_t &args = *(const CheckStepArgs_t *)pArgs;
+	CheckStepResult_t *pResult = (CheckStepResult_t *)pResultIn;
+
+	g_VProfCurrentProfile.EnterScope("CAI_MoveProbe_CheckStep", 0, "Unaccounted", false);
+
+	Vector vecEnd;
+	unsigned int collisionMask = args.collisionMask;
+	sub_10139500(args.vecStart, args.stepSize, args.vecStepDir, vecEnd);
+
+	pResult->endPoint = args.vecStart;
+	pResult->hitNormal = g_1070d1b0;
+	pResult->pBlocker = 0;
+
+	Vector stepStart(args.vecStart.x, args.vecStart.y, args.vecStart.z + 0.0625f);
+	Vector stepEnd(vecEnd.x, vecEnd.y, args.vecStart.z + 0.0625f);
+	CStepTrace trace;
+
+	g_VProfCurrentProfile.EnterScope("CAI_Motor_CheckStep_Forward", 0, "Unaccounted", false);
+	g_VProfCurrentProfile.EnterScope("CAI_Motor_CheckStep_Trace1", 0, "Unaccounted", false);
+	sub_102e3450(stepStart, &stepEnd.x, collisionMask, (CGameTrace *)&trace, 0);
+	g_VProfCurrentProfile.ExitScopeCall();
+
+	if (trace.m_startsolid)
+	{
+		CStepEntView *pBlocker = (CStepEntView *)trace.m_pEnt;
+		if (pBlocker && (pBlocker->m_flags4c & 0x824))
+		{
+			sub_102e3450(stepStart, &stepEnd.x, collisionMask & ~0x02000000, (CGameTrace *)&trace, 0);
+			if (trace.m_startsolid)
+			{
+				if (((CStepEntView *)m_pOuter)->m_debugOverlays & 0x800000)
+				{
+					pBlocker->m_debugOverlays |= 0x1000;
+					pBlocker->sub_1009f4e0();
+				}
+			}
+		}
+	}
+
+	if (trace.m_startsolid || trace.m_fraction < 1.0f)
+	{
+		g_VProfCurrentProfile.EnterScope("CAI_Motor_CheckStep_TraceHit", 0, "Unaccounted", false);
+		CStepTrace trace2;
+		if (!trace.m_startsolid)
+		{
+			stepStart = trace.m_endpos;
+			Vector upEnd = stepStart;
+			upEnd.z = trace.m_endpos.z + args.stepHeight;
+			sub_102e3450(stepStart, &upEnd.x, collisionMask, (CGameTrace *)&trace2, 1);
+			stepStart.x = trace2.m_endpos.x;
+			stepStart.y = trace2.m_endpos.y;
+			stepStart.z = trace2.m_endpos.z;
+		}
+		else
+		{
+			stepStart.z += args.stepHeight;
+		}
+		stepEnd.z = stepStart.z;
+
+		sub_102e3450(stepStart, &stepEnd.x, collisionMask, (CGameTrace *)&trace2, 0);
+		if (!trace2.m_startsolid)
+		{
+			bool bCopy = true;
+			if (trace2.m_fraction < 1.0f)
+			{
+				if (trace2.m_fraction <= 0.01)
+					bCopy = false;
+				else if (args.groundTest == 1)
+				{
+					if (StepDeltaLengthSqr(stepEnd, stepStart) < args.minStepLanding * args.minStepLanding)
+					{
+						Vector vecFinal;
+						sub_10139500(stepStart, args.minStepLanding, args.vecStepDir, vecFinal);
+						CStepTrace trace3;
+						sub_102e3450(stepStart, &stepEnd.x, collisionMask, (CGameTrace *)&trace3, 0);
+						if (trace3.m_fraction < 1.0f)
+							bCopy = false;
+					}
+				}
+			}
+			if (bCopy)
+				CopyTrace(trace, trace2);
+		}
+
+		if (trace.m_fraction < 1.0)
+		{
+			pResult->pBlocker = trace.m_pEnt;
+			pResult->hitNormal = trace.m_planeNormal;
+		}
+
+		stepEnd = trace.m_endpos;
+		g_VProfCurrentProfile.ExitScopeCall();
+	}
+	g_VProfCurrentProfile.ExitScopeCall();
+
+	bool bFallingStep = false;
+	do {
+	g_VProfCurrentProfile.EnterScope("CAI_Motor_CheckStep_Down", 0, "Unaccounted", false);
+	stepStart = stepEnd;
+	stepEnd.z = args.vecStart.z - args.stepDownMultiplier - 0.0625f;
+	sub_102e3450(stepStart, &stepEnd.x, collisionMask, (CGameTrace *)&trace, 1);
+	if (trace.m_fraction == 1.0f)
+	{
+		CStepTrace trace2;
+		stepEnd.z = args.vecStart.z - args.stepDownMultiplier * 4.0f - 0.0625f;
+		sub_102e3450(stepStart, &stepEnd.x, collisionMask, (CGameTrace *)&trace2, 1);
+		if (trace2.m_fraction != 1.0f)
+		{
+			trace.m_pEnt = trace2.m_pEnt;
+			trace.m_endpos.x = stepStart.x;
+			trace.m_endpos.y = stepStart.y;
+			trace.m_endpos.z = stepStart.z - 0.0625f;
+			bFallingStep = true;
+		}
+		else
+		{
+			CStepScopeExit checkStepScope;
+			CStepScopeExit downScope;
+			if (((CStepEntView *)m_pOuter)->m_debugOverlays & 0x800000)
+			{
+				Vector mins = ((CStepEntView *)m_pOuter)->m_Collision.WorldAlignMins();
+				Vector maxs = ((CStepEntView *)m_pOuter)->m_Collision.WorldAlignMaxs();
+				mins.z = stepEnd.z - stepStart.z;
+				maxs.z = 0;
+				sub_10142aa0(stepStart, mins, maxs, 255, 128, 128, 0, 3.0f);
+			}
+			CStepEdictView *pEdict = (CStepEdictView *)engine->vfunc38(0);
+			pResult->pBlocker = (pEdict && pEdict->m_pUnk) ? pEdict->m_pUnk->GetBaseEntity() : 0;
+			return false;
+		}
+	}
+	((CVProfL4160 *)g_109f3648)->ExitScopeL();
+	} while (0);
+
+	CBaseEntity *pFloor = trace.m_pEnt;
+	if (!sub_102e7e40(pFloor))
+	{
+		pResult->pBlocker = pFloor;
+		((CVProfL4160 *)g_109f3648)->ExitScopeInlinedL();
+		return false;
+	}
+
+	if (args.groundTest != 0 && !bFallingStep && !(((CStepEntView *)pFloor)->m_flags4c & 0x16))
+	{
+		CVProfile *p = g_109f3648;
+		if (p->m_enabled || !p->m_bAtRoot)
+		{
+			if (p->m_pCurNode->m_pszName != "CAI_Motor_CheckStep_Stand")
+				p->m_pCurNode = p->m_pCurNode->GetSubNode("CAI_Motor_CheckStep_Stand", 0, "Unaccounted");
+			CVProfNode *n = p->m_pCurNode;
+			n->m_nCurFrameCalls++;
+			if (n->m_nRecursions++ == 0)
+			{
+				CCycleCountX *pc = (CCycleCountX *)&n->m_CurFrameTime;
+				pc->Sample();
+				g_VProfCurrentProfile.PushGroup(n->m_nBudgetGroupID);
+			}
+			p->m_bAtRoot = false;
+		}
+		char bOk = ((CStepProbeView *)this)->sub_102e7270(&trace.m_endpos.x, collisionMask, 0, 0, args.b30, args.n34);
+		if (args.groundTest != 2 && !bOk)
+		{
+			pResult->pBlocker = pFloor;
+			((CVProfL4160 *)g_109f3648)->ExitScopeInlinedL();
+			goto fail;
+		}
+		((CVProfL4160 *)g_109f3648)->ExitScopeInlinedL();
+	}
+
+	pResult->endPoint.x = trace.m_endpos.x;
+	pResult->endPoint.y = trace.m_endpos.y;
+	pResult->endPoint.z = trace.m_endpos.z + 0.0625f;
+	{
+		bool bResult = (pResult->pBlocker == 0);
+		ExitScopeEndInline(g_109f3648);
+		return bResult;
+	}
+
+fail:
+	((CVProfL4160 *)g_109f3648)->ExitScopeInlinedL();
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102e4f20 size=0x13
 struct CUnknown102e4f20 { void * sub_102e4f20(int); };
 void * CUnknown102e4f20::sub_102e4f20(int a0)
