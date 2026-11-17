@@ -64430,6 +64430,141 @@ const char *CDialog::sub_100e1ad0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1c40 size=0xb9c
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "Tier1.h"
+#include "CDialog.h"
+#include "ScopeTrace.h"
+#include "FileSystemViews.h"
+#include <string.h>
+#include <stdlib.h>
+
+__declspec(dllimport) void Q_strcat(char *pDest, const char *pSrc);
+__declspec(dllimport) int Q_snprintf(char *pDest, int destLen, const char *pFormat, ...);
+__declspec(dllimport) char *Q_stristr(char *pStr, const char *pSearch);
+extern char g_106eae3c[];
+char sub_100df070(CDialogEntry_t *pEntry);
+char *sub_101d3730(const char *fmt, ...);
+
+#define DUMP_CLAN(vec, name) \
+	if (vec.Count()) \
+	{ \
+		memset(szBuf, 0, sizeof(szBuf)); \
+		Q_strcat(szBuf, sub_101d3730("There are %d " name " lines:\n", vec.Count())); \
+		for (int i = 0; i < vec.Count(); i++) \
+		{ \
+			if (vec[i] > 0) \
+				Q_strcat(szBuf, sub_101d3730(">=%d, ", vec[i])); \
+			else \
+				Q_strcat(szBuf, sub_101d3730("<%d, ", abs(vec[i]))); \
+		} \
+		Q_strcat(szBuf, "\n"); \
+		g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile); \
+	} \
+	else \
+	{ \
+		Q_snprintf(szBuf, 0x100, "There are no " name " lines.\n"); \
+		g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile); \
+	}
+
+// TARGET: CDialog::sub_100e1c40
+void CDialog::sub_100e1c40(int hFile)
+{
+	ScopeTrace trace("CDialog::dump_script_stats", g_106b8540, g_106b8540);
+	char szBuf[256];
+	char szName[0x40];
+	char *pszName = sub_100e7310();
+	CBaseEntity *pEnt = (CBaseEntity *)g_10566458->sub_100290c0(&m_hSpeaker);
+	const char *pszEntName = pEnt->m_name26c;
+	if (!pszEntName)
+		pszEntName = g_106b8540;
+	Q_snprintf(szName, 0x40, "\"%s\"", pszEntName);
+
+	memset(szBuf, 0, sizeof(szBuf));
+	Q_strcat(szBuf, "FACEPOSER_SOUNDDIR : ");
+	Q_strcat(szBuf, sub_101d3730("sound/character/%s", sub_100e7310()));
+	char *p = Q_stristr(szBuf, ".dlg");
+	if (p)
+		strcpy(p, g_106eae3c);
+	Q_strcat(szBuf, "\n");
+	g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+
+	memset(szBuf, 0, sizeof(szBuf));
+	Q_strcat(szBuf, "Put this NPC's dialog speech files in: ");
+	Q_strcat(szBuf, sub_101d3730("sound/character/%s", sub_100e7310()));
+	p = Q_stristr(szBuf, ".dlg");
+	if (p)
+		strcpy(p, "/");
+	Q_strcat(szBuf, ".\n");
+	g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+
+	Q_snprintf(szBuf, 0x100, "\n\n\n**********************************************************\n");
+	g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+
+	Q_snprintf(szBuf, 0x100, "Character description for %s.\n", szName);
+	g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+
+	for (int i = 0; i < m_pTable->m_nEntries; i++)
+	{
+		if (sub_100df070(&m_pTable->m_pEntries[i]))
+		{
+			char *pszText = (char *)m_pTable->m_pEntries[i].m_data[1];
+			g_1070b238->vfunc3(pszText, strlen(pszText), hFile);
+		}
+	}
+
+	Q_snprintf(szBuf, 0x100, "\n\n\n**********************************************************\n");
+	g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+
+	Q_snprintf(szBuf, 0x100, "Gameplay stats for %s:\n", pszName);
+	g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+
+	m_vec330c.Purge();
+	m_vec3320.Purge();
+	m_vec3334.Purge();
+	m_vec3348.Purge();
+	m_vec335c.Purge();
+	m_vec3370.Purge();
+	m_vec3384.Purge();
+	m_nLines3398 = 0;
+	m_n339c = 0;
+	m_n33a0 = 0;
+	m_n33a4 = 0;
+	m_n33a8 = 0;
+	sub_100e2ad0();
+
+	Q_snprintf(szBuf, 0x100, "There are %d total nodes, with %d NPC lines, and _approximately_ %d NPC words.\n\n", m_pTable->m_nEntries, m_n339c, m_nLines3398);
+	g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+
+	Q_snprintf(szBuf, 0x100, "There are %d python depedencies, and %d event scripts.\n", m_n33a4, m_n33a0);
+	g_1070b238->vfunc3(szBuf, strlen(szBuf), hFile);
+
+	DUMP_CLAN(m_vec330c, "Dementation")
+	DUMP_CLAN(m_vec3320, "Dominate")
+	DUMP_CLAN(m_vec3334, "Frenzy")
+	DUMP_CLAN(m_vec3348, "Haggle")
+	DUMP_CLAN(m_vec335c, "Intimidation")
+	DUMP_CLAN(m_vec3370, "Seduction")
+	DUMP_CLAN(m_vec3384, "Persuasion")
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e2ad0 size=0x4ee
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

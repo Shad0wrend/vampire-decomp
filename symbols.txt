@@ -392,6 +392,7 @@
 0x100017e9 func   _npc_crow npc_crow
 0x100017ee func   ?vfunc1@CTraceFilterNoCharacterCollide@@UAEHXZ CTraceFilterNoCharacterCollide::vfunc1
 0x100017f3 func   ?sub_1020e4f0@CUnknown1020e4f0@@QAEXPAUinputdata_t@@@Z CUnknown1020e4f0::sub_1020e4f0
+0x100017f8 func   ?sub_100e1c40@CDialog@@QAEXH@Z CDialog::sub_100e1c40
 0x100017fd func   ?sub_1009c5f0@CBaseEntity@@QAEXHPBDPBHH@Z CBaseEntity::sub_1009c5f0
 0x10001802 func   ?sub_10398000@CNPC_VMingXiao@@QAEDH@Z CNPC_VMingXiao::sub_10398000
 0x10001807 func   ?sub_101f3080@@YIPAHPAHHE@Z sub_101f3080
