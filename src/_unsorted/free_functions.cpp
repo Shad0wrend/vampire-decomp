@@ -175087,7 +175087,7 @@ struct CGameTextUnitFwd {
 // TARGET: sub_1020e3a0
 void CGameTextUnitFwd::sub_1020e3a0(int a)
 {
-    this->sub_1020e6b0((*(volatile int *)a));
+    this->sub_1020e6b0((*(int *)a));
 }
 // END FUNCTION
 
