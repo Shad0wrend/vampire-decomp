@@ -14541,6 +14541,7 @@
 0x10013638 func   ?vfunc307@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::vfunc307
 0x1001363d func   _infodecal infodecal
 0x10013642 func   ?vfunc81@CItemGGiovanniInvitationVictor@@QAEHXZ CItemGGiovanniInvitationVictor::vfunc81
+0x10013647 func   ?sub_102a0290@CAI_BaseNPCTroika@@QAEXHH@Z CAI_BaseNPCTroika::sub_102a0290
 0x1001364c func   _keyframe_track keyframe_track
 0x10013651 func   ?sub_1014c880@CUnknown1014ca10@@QAEXPAX@Z CUnknown1014ca10::sub_1014c880
 0x10013656 func   ?sub_10266660@@YG_NMM@Z sub_10266660

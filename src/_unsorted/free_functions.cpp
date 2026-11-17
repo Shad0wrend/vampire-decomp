@@ -215327,6 +215327,88 @@ void CAI_BaseNPCTroika::sub_1029ff40(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102a0290 size=0x190
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseEntity.h"
+
+void sub_10139550(const Vector *pAngles, Vector *pForward);
+
+extern float g_1049a1d8;
+extern float g_1049a1dc;
+extern float g_1049a1e0;
+extern float g_1049a1e4;
+
+struct SpeedEntView
+{
+	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
+	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	CAI_NPC_V10(1) CAI_NPC_V10(2) CAI_NPC_V10(3) CAI_NPC_V10(4) CAI_NPC_V10(5) CAI_NPC_V10(6) CAI_NPC_V10(7) CAI_NPC_V10(8) CAI_NPC_V10(9)
+	CAI_NPC_V10(10) CAI_NPC_V10(11) CAI_NPC_V10(12) CAI_NPC_V10(13) CAI_NPC_V10(14) CAI_NPC_V10(15) CAI_NPC_V10(16) CAI_NPC_V10(17) CAI_NPC_V10(18)
+	CAI_NPC_V10(19) CAI_NPC_V10(20)
+	CAI_NPC_V(210) CAI_NPC_V(211) CAI_NPC_V(212) CAI_NPC_V(213) CAI_NPC_V(214) CAI_NPC_V(215) CAI_NPC_V(216)
+	virtual const Vector &GetAbsOrigin();
+	virtual void vfunc218();
+	virtual const Vector &GetAbsAngles();
+
+	float sub_10346070();
+	char m_pad0004[0x268 - 4];
+	unsigned int m_iEFlags;	// 0x268
+	char m_pad026c[0x3bc - 0x26c];
+	Vector m_vecAbsVelocity;	// 0x3bc
+	char m_pad03c8[0xfec - 0x3c8];
+	int m_nActivity;	// 0xfec
+	char m_pad0ff0[0x6004 - 0xff0];
+	Vector m_vecMoveDir;	// 0x6004
+
+	int IsEFlagSet(int bit) const { return (m_iEFlags >> bit) & 1; }
+	const Vector &GetAbsVelocity()
+	{
+		if ((bool)((m_iEFlags >> 12) & 1))
+			((CBaseEntity *)this)->sub_100b1d10();
+		return m_vecAbsVelocity;
+	}
+};
+
+// TARGET: CAI_BaseNPCTroika::sub_102a0290
+void CAI_BaseNPCTroika::sub_102a0290(int a, int b)
+{
+	SpeedEntView *pTarget = (SpeedEntView *)a;
+	SpeedEntView *pThis = (SpeedEntView *)this;
+	float flScale = 5.0f;
+	char bMoving = 0;
+	if (pTarget)
+	{
+		flScale = pTarget->sub_10346070();
+		int act = pTarget->m_nActivity;
+		bMoving = sub_10344da0(act);
+	}
+	if (!pTarget)
+	{
+		Vector vecAngles = pThis->GetAbsAngles();
+		sub_10139550(&vecAngles, &pThis->m_vecMoveDir);
+		pThis->m_vecMoveDir = -pThis->m_vecMoveDir;
+	}
+	else if (bMoving)
+	{
+		flScale = 1.0f;
+		pThis->m_vecMoveDir = pTarget->GetAbsVelocity();
+	}
+	else
+	{
+		pThis->m_vecMoveDir = pThis->GetAbsOrigin() - pTarget->GetAbsOrigin();
+	}
+	pThis->m_vecMoveDir.z = 0;
+	VectorNormalize(pThis->m_vecMoveDir);
+	float f = 1.0f;
+	if (pTarget)
+		f = flScale * 0.1f;
+	float flSpeed = (g_1049a1dc - g_1049a1d8) * f + g_1049a1d8;
+	float flZ = (g_1049a1e4 - g_1049a1e0) * f + g_1049a1e0;
+	pThis->m_vecMoveDir = pThis->m_vecMoveDir * flSpeed;
+	pThis->m_vecMoveDir.z = flZ;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102a0490 size=0x302
 #include "CAI_BaseNPCTroika.h"
 #include "UTIL_Trace.h"
