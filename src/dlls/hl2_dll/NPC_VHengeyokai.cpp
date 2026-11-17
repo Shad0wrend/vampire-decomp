@@ -231,7 +231,7 @@ void CHengeyokaiView_103805d0::sub_103805d0(int *pTask)
 		sub_10273e80(0);
 		return;
 	case 0x14e:
-		m_n14bc = *(volatile unsigned int *)&m_n14bc | 0x80000800;
+		m_n14bc = *(unsigned int *)&m_n14bc | 0x80000800;
 		sub_10273e80(0);
 		return;
 	case 0x14b:
