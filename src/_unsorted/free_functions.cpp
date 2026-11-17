@@ -16730,8 +16730,8 @@ struct CGlobalEntRecord
 
 static __inline void AddGlobalState(CUnknown10057680 *pThis, CGlobalEntRecord *pRec)
 {
-	const char *pszMap = *(volatile char *)pRec->m_value ? pRec->m_value : 0;
-	const char *pszName = *(volatile char *)pRec->m_name ? pRec->m_name : 0;
+	const char *pszMap = *(char *)pRec->m_value ? pRec->m_value : 0;
+	const char *pszName = *(char *)pRec->m_name ? pRec->m_name : 0;
 	pThis->sub_10057740(pszName, pszMap, *(volatile int *)&pRec->m_state);
 }
 
