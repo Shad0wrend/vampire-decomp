@@ -277209,15 +277209,15 @@ extern "C" int *npc_VAsianVampire()
 		*(int *)(c + 0x66b0) = -1;
 		sub_103c51a0(c + 0x66b4);
 		*raw = (int)&vt_104a7b94;
-		*(volatile int *)(c + 0x19b0) = (int)&vt_104a7b68;
+		*(int *)(c + 0x19b0) = (int)&vt_104a7b68;
 		sub_10360540(c + 0x66e9);
-		*(volatile int *)raw = (int)&vt_104a935c;
-		*(volatile int *)(c + 0x19b0) = (int)&vt_104a9330;
+		*(int *)raw = (int)&vt_104a935c;
+		*(int *)(c + 0x19b0) = (int)&vt_104a9330;
 		p = raw;
 	} else {
 		p = 0;
 	}
-	int vt = *(volatile int *)p;
+	int vt = *(int *)p;
 	((void (__fastcall *)(void *, int, const char *))(((int *)vt)[0x1a8 / 4]))(p, vt, "npc_VAsianVampire");
 	return p;
 }
