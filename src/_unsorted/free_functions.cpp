@@ -250008,6 +250008,1072 @@ void sub_103021b0(const Vector &start, const Vector &end, unsigned int fMask, CT
 }
 // END FUNCTION
 
+// FUNCTION: 0x10302320 size=0x8f0
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CAI_Pathfinder.h"
+#include "CBaseEntity.h"
+#include "CBitString.h"
+#include "UtlVec8.h"
+#include "utlvector.h"
+#include "CUnknown102f8f10.h"
+#include "CPairFields102dda40.h"
+#include "CTraceFilterSimpleTwoEnt.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CGameTrace.h"
+#include "globalvars.h"
+#include <malloc.h>
+
+extern char g_1093408c;
+extern int g_106c994c;
+extern int g_10934144;
+extern float g_104454c4;
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *fmt, ...);
+bool __cdecl sub_102f3770(const UtlVec8Elem &, const UtlVec8Elem &);
+
+struct CoverHintV { bool sub_102d1450(int); bool sub_102d1350(CBaseEntity *pEnt); };
+
+struct CoverNodeV
+{
+	char m_pad0000[0x70];
+	int m_eNodeType;	// 0x70
+	char m_pad0074[0x78 - 0x74];
+	int m_nLinks;	// 0x78
+	CPairFields102dda40 **m_ppLinks;	// 0x7c
+	char m_pad0080[0x9c - 0x80];
+	float m_flNextUseTime;	// 0x9c
+	CoverHintV *m_pHint;	// 0xa0
+	Vector sub_102fb0d0(int nHull);
+	int GetType() const { return m_eNodeType; }
+	CoverHintV *GetHint() { return m_pHint; }
+	int NumLinks() const { return m_nLinks; }
+	CPairFields102dda40 *GetLinkByIndex(int i) { return m_ppLinks[i]; }
+	void Lock(float flDuration) { m_flNextUseTime = gpGlobals->curtime + flDuration; }
+	bool IsLocked() const { return (m_flNextUseTime > gpGlobals->curtime); }
+};
+
+struct CoverNetworkV
+{
+	int m_nNodes;
+	CoverNodeV **m_ppNodes;
+	int sub_102f3c10(void *pNPC, const Vector *pPosition);
+	int NumNodes() const { return m_nNodes; }
+	CoverNodeV *GetNode(int id)
+	{
+		if (id >= 0 && id < m_nNodes)
+			return m_ppNodes[id];
+		g_106c994c++;
+		return 0;
+	}
+};
+
+struct CoverNavV { char m_pad0000[0x2c]; CoverNetworkV *m_pNetwork; };
+struct CoverCollV { virtual void s0(); virtual const Vector &OBBMins(); virtual const Vector &OBBMaxs(); };
+
+struct CoverOuterV
+{
+	virtual void v0();
+	virtual void v1();
+	virtual void v2();
+	virtual void v3();
+	virtual void v4();
+	virtual void v5();
+	virtual void v6();
+	virtual void v7();
+	virtual void v8();
+	virtual void v9();
+	virtual void v10();
+	virtual void v11();
+	virtual void v12();
+	virtual void v13();
+	virtual void v14();
+	virtual void v15();
+	virtual void v16();
+	virtual void v17();
+	virtual void v18();
+	virtual void v19();
+	virtual void v20();
+	virtual void v21();
+	virtual void v22();
+	virtual void v23();
+	virtual void v24();
+	virtual void v25();
+	virtual void v26();
+	virtual void v27();
+	virtual void v28();
+	virtual void v29();
+	virtual void v30();
+	virtual void v31();
+	virtual void v32();
+	virtual void v33();
+	virtual void v34();
+	virtual void v35();
+	virtual void v36();
+	virtual void v37();
+	virtual void v38();
+	virtual void v39();
+	virtual void v40();
+	virtual void v41();
+	virtual void v42();
+	virtual void v43();
+	virtual void v44();
+	virtual void v45();
+	virtual void v46();
+	virtual void v47();
+	virtual void v48();
+	virtual void v49();
+	virtual void v50();
+	virtual void v51();
+	virtual void v52();
+	virtual void v53();
+	virtual void v54();
+	virtual void v55();
+	virtual void v56();
+	virtual void v57();
+	virtual void v58();
+	virtual void v59();
+	virtual void v60();
+	virtual void v61();
+	virtual void v62();
+	virtual void v63();
+	virtual void v64();
+	virtual void v65();
+	virtual void v66();
+	virtual void v67();
+	virtual void v68();
+	virtual void v69();
+	virtual void v70();
+	virtual void v71();
+	virtual void v72();
+	virtual void v73();
+	virtual void v74();
+	virtual void v75();
+	virtual void v76();
+	virtual void v77();
+	virtual void v78();
+	virtual void v79();
+	virtual void v80();
+	virtual void v81();
+	virtual void v82();
+	virtual void v83();
+	virtual void v84();
+	virtual void v85();
+	virtual void v86();
+	virtual void v87();
+	virtual void v88();
+	virtual void v89();
+	virtual void v90();
+	virtual void v91();
+	virtual void v92();
+	virtual void v93();
+	virtual void v94();
+	virtual void v95();
+	virtual void v96();
+	virtual void v97();
+	virtual void v98();
+	virtual void v99();
+	virtual void v100();
+	virtual void v101();
+	virtual void v102();
+	virtual void v103();
+	virtual void v104();
+	virtual void v105();
+	virtual void v106();
+	virtual void v107();
+	virtual void v108();
+	virtual void v109();
+	virtual void v110();
+	virtual void v111();
+	virtual void v112();
+	virtual void v113();
+	virtual void v114();
+	virtual void v115();
+	virtual void v116();
+	virtual void v117();
+	virtual void v118();
+	virtual void v119();
+	virtual void v120();
+	virtual void v121();
+	virtual void v122();
+	virtual void v123();
+	virtual void v124();
+	virtual void v125();
+	virtual void v126();
+	virtual void v127();
+	virtual void v128();
+	virtual void v129();
+	virtual void v130();
+	virtual void v131();
+	virtual void v132();
+	virtual void v133();
+	virtual void v134();
+	virtual void v135();
+	virtual void v136();
+	virtual void v137();
+	virtual void v138();
+	virtual void v139();
+	virtual void v140();
+	virtual void v141();
+	virtual void v142();
+	virtual void v143();
+	virtual void v144();
+	virtual void v145();
+	virtual void v146();
+	virtual void v147();
+	virtual void v148();
+	virtual void v149();
+	virtual void v150();
+	virtual void v151();
+	virtual void v152();
+	virtual void v153();
+	virtual void v154();
+	virtual void v155();
+	virtual void v156();
+	virtual void v157();
+	virtual void v158();
+	virtual void v159();
+	virtual void v160();
+	virtual void v161();
+	virtual void v162();
+	virtual void v163();
+	virtual void v164();
+	virtual void v165();
+	virtual void v166();
+	virtual void v167();
+	virtual void v168();
+	virtual void v169();
+	virtual void v170();
+	virtual void v171();
+	virtual void v172();
+	virtual void v173();
+	virtual void v174();
+	virtual void v175();
+	virtual void v176();
+	virtual void v177();
+	virtual void v178();
+	virtual void v179();
+	virtual void v180();
+	virtual void v181();
+	virtual void v182();
+	virtual void v183();
+	virtual void v184();
+	virtual void v185();
+	virtual void v186();
+	virtual void v187();
+	virtual void v188();
+	virtual void v189();
+	virtual void v190();
+	virtual void v191();
+	virtual void v192();
+	virtual void v193();
+	virtual void v194();
+	virtual void v195();
+	virtual void v196();
+	virtual void v197();
+	virtual void v198();
+	virtual void v199();
+	virtual void v200();
+	virtual void v201();
+	virtual void v202();
+	virtual void v203();
+	virtual void v204();
+	virtual void v205();
+	virtual void v206();
+	virtual void v207();
+	virtual void v208();
+	virtual void v209();
+	virtual void v210();
+	virtual void v211();
+	virtual void v212();
+	virtual void v213();
+	virtual void v214();
+	virtual void v215();
+	virtual void v216();
+	virtual void v217();
+	virtual void v218();
+	virtual void v219();
+	virtual const Vector &GetLocalOrigin();
+	virtual void v221();
+	virtual void v222();
+	virtual void v223();
+	virtual void v224();
+	virtual void v225();
+	virtual void v226();
+	virtual void v227();
+	virtual void v228();
+	virtual void v229();
+	virtual void v230();
+	virtual void v231();
+	virtual void v232();
+	virtual void v233();
+	virtual void v234();
+	virtual void v235();
+	virtual void v236();
+	virtual void v237();
+	virtual void v238();
+	virtual void v239();
+	virtual void v240();
+	virtual void v241();
+	virtual void v242();
+	virtual void v243();
+	virtual void v244();
+	virtual void v245();
+	virtual void v246();
+	virtual void v247();
+	virtual void v248();
+	virtual void v249();
+	virtual void v250();
+	virtual void v251();
+	virtual void v252();
+	virtual void v253();
+	virtual void v254();
+	virtual void v255();
+	virtual void v256();
+	virtual void v257();
+	virtual void v258();
+	virtual void v259();
+	virtual void v260();
+	virtual void v261();
+	virtual void v262();
+	virtual void v263();
+	virtual void v264();
+	virtual void v265();
+	virtual void v266();
+	virtual void v267();
+	virtual void v268();
+	virtual void v269();
+	virtual void v270();
+	virtual void v271();
+	virtual void v272();
+	virtual void v273();
+	virtual void v274();
+	virtual void v275();
+	virtual void v276();
+	virtual void v277();
+	virtual void v278();
+	virtual void v279();
+	virtual void v280();
+	virtual void v281();
+	virtual void v282();
+	virtual void v283();
+	virtual void v284();
+	virtual void v285();
+	virtual void v286();
+	virtual void v287();
+	virtual void v288();
+	virtual void v289();
+	virtual void v290();
+	virtual void v291();
+	virtual void v292();
+	virtual void v293();
+	virtual void v294();
+	virtual void v295();
+	virtual void v296();
+	virtual void v297();
+	virtual void v298();
+	virtual void v299();
+	virtual void v300();
+	virtual void v301();
+	virtual void v302();
+	virtual void v303();
+	virtual void v304();
+	virtual void v305();
+	virtual void v306();
+	virtual void v307();
+	virtual void v308();
+	virtual void v309();
+	virtual void v310();
+	virtual void v311();
+	virtual void v312();
+	virtual void v313();
+	virtual void v314();
+	virtual void v315();
+	virtual void v316();
+	virtual void v317();
+	virtual void v318();
+	virtual void v319();
+	virtual void v320();
+	virtual void v321();
+	virtual void v322();
+	virtual void v323();
+	virtual void v324();
+	virtual void v325();
+	virtual void v326();
+	virtual void v327();
+	virtual void v328();
+	virtual void v329();
+	virtual void v330();
+	virtual void v331();
+	virtual void v332();
+	virtual void v333();
+	virtual void v334();
+	virtual void v335();
+	virtual void v336();
+	virtual void v337();
+	virtual void v338();
+	virtual void v339();
+	virtual void v340();
+	virtual void v341();
+	virtual void v342();
+	virtual void v343();
+	virtual void v344();
+	virtual void v345();
+	virtual void v346();
+	virtual void v347();
+	virtual void v348();
+	virtual void v349();
+	virtual void v350();
+	virtual void v351();
+	virtual void v352();
+	virtual void v353();
+	virtual void v354();
+	virtual void v355();
+	virtual void v356();
+	virtual void v357();
+	virtual void v358();
+	virtual void v359();
+	virtual void v360();
+	virtual void v361();
+	virtual void v362();
+	virtual void v363();
+	virtual void v364();
+	virtual void v365();
+	virtual void v366();
+	virtual void v367();
+	virtual void v368();
+	virtual void v369();
+	virtual void v370();
+	virtual void v371();
+	virtual void v372();
+	virtual void v373();
+	virtual void v374();
+	virtual void v375();
+	virtual void v376();
+	virtual void v377();
+	virtual void v378();
+	virtual void v379();
+	virtual void v380();
+	virtual void v381();
+	virtual void v382();
+	virtual void v383();
+	virtual void v384();
+	virtual void v385();
+	virtual void v386();
+	virtual void v387();
+	virtual void v388();
+	virtual void v389();
+	virtual void v390();
+	virtual void v391();
+	virtual void v392();
+	virtual void v393();
+	virtual void v394();
+	virtual void v395();
+	virtual void v396();
+	virtual void v397();
+	virtual void v398();
+	virtual void v399();
+	virtual void v400();
+	virtual void v401();
+	virtual void v402();
+	virtual void v403();
+	virtual void v404();
+	virtual void v405();
+	virtual void v406();
+	virtual void v407();
+	virtual void v408();
+	virtual void v409();
+	virtual void v410();
+	virtual void v411();
+	virtual void v412();
+	virtual void v413();
+	virtual void v414();
+	virtual void v415();
+	virtual void v416();
+	virtual void v417();
+	virtual void v418();
+	virtual void v419();
+	virtual void v420();
+	virtual void v421();
+	virtual void v422();
+	virtual void v423();
+	virtual void v424();
+	virtual void v425();
+	virtual void v426();
+	virtual void v427();
+	virtual void v428();
+	virtual void v429();
+	virtual void v430();
+	virtual void v431();
+	virtual void v432();
+	virtual void v433();
+	virtual void v434();
+	virtual void v435();
+	virtual void v436();
+	virtual void v437();
+	virtual void v438();
+	virtual void v439();
+	virtual void v440();
+	virtual void v441();
+	virtual void v442();
+	virtual void v443();
+	virtual void v444();
+	virtual void v445();
+	virtual void v446();
+	virtual void v447();
+	virtual void v448();
+	virtual void v449();
+	virtual void v450();
+	virtual void v451();
+	virtual void v452();
+	virtual void v453();
+	virtual void v454();
+	virtual void v455();
+	virtual void v456();
+	virtual void v457();
+	virtual void v458();
+	virtual void v459();
+	virtual void v460();
+	virtual void v461();
+	virtual void v462();
+	virtual void v463();
+	virtual void v464();
+	virtual void v465();
+	virtual void v466();
+	virtual void v467();
+	virtual void v468();
+	virtual void v469();
+	virtual void v470();
+	virtual void v471();
+	virtual void v472();
+	virtual void v473();
+	virtual void v474();
+	virtual void v475();
+	virtual void v476();
+	virtual void v477();
+	virtual void v478();
+	virtual void v479();
+	virtual void v480();
+	virtual void v481();
+	virtual void v482();
+	virtual void v483();
+	virtual void v484();
+	virtual void v485();
+	virtual void v486();
+	virtual void v487();
+	virtual void v488();
+	virtual void v489();
+	virtual void v490();
+	virtual void v491();
+	virtual void v492();
+	virtual void v493();
+	virtual void v494();
+	virtual void v495();
+	virtual void v496();
+	virtual void v497();
+	virtual void v498();
+	virtual void v499();
+	virtual void v500();
+	virtual void v501();
+	virtual void v502();
+	virtual void v503();
+	virtual void v504();
+	virtual void v505();
+	virtual void v506();
+	virtual void v507();
+	virtual void v508();
+	virtual void v509();
+	virtual void v510();
+	virtual void v511();
+	virtual void v512();
+	virtual int CapabilitiesGet();
+	virtual void v514();
+	virtual void v515();
+	virtual void v516();
+	virtual void v517();
+	virtual void v518();
+	virtual void v519();
+	virtual void v520();
+	virtual void v521();
+	virtual void v522();
+	virtual void v523();
+	virtual void v524();
+	virtual void v525();
+	virtual void v526();
+	virtual void v527();
+	virtual void v528();
+	virtual void v529();
+	virtual void v530();
+	virtual void v531();
+	virtual void v532();
+	virtual Vector EyeOffset(int nActivity, int nActivity2);
+	virtual void v534();
+	virtual void v535();
+	virtual void v536();
+	virtual void v537();
+	virtual void v538();
+	virtual void v539();
+	virtual void v540();
+	virtual void v541();
+	virtual void v542();
+	virtual void v543();
+	virtual void v544();
+	virtual void v545();
+	virtual void v546();
+	virtual void v547();
+	virtual bool IsValidCover(const Vector &vLocation, void *pHint);
+	virtual void v549();
+	virtual void v550();
+	virtual void v551();
+	virtual void v552();
+	virtual void v553();
+	virtual void v554();
+	virtual void v555();
+	virtual void v556();
+	virtual void v557();
+	virtual void v558();
+	virtual void v559();
+	virtual void v560();
+	virtual void v561();
+	virtual void v562();
+	virtual void v563();
+	virtual void v564();
+	virtual void v565();
+	virtual void v566();
+	virtual void v567();
+	virtual void v568();
+	virtual int GetCoverActivity(void *pHint);
+	char m_pad0004[0x270 - 4];
+	CoverCollV m_Collision;	// 0x270
+	char m_pad0274[0x5d34 - 0x274];
+	CoverNavV *m_pNavigator;	// 0x5d34
+	char m_pad5d38[0x5ddc - 0x5d38];
+	CoverHintV *m_pHintNode;	// 0x5ddc
+	CoverCollV *CollisionProp() { return &m_Collision; }
+	const char *GetEntClassname() { return ((CBaseEntity *)this)->sub_1009f200(); }
+};
+
+struct CoverBits : CBitString
+{
+	const int *GetInts() const { return m_pData; }
+	int *GetInts() { return m_pData; }
+	bool GetBit(int bitNum) const
+	{
+		const int *pInt = GetInts() + (bitNum >> 5);
+		return ((*pInt & (1 << (bitNum & 31))) != 0);
+	}
+	void SetBit(int bitNum)
+	{
+		int *pInt = GetInts() + (bitNum >> 5);
+		*pInt |= (1 << (bitNum & 31));
+	}
+};
+
+
+typedef CUtlMemory<UtlVec8Elem> CoverMem;
+typedef bool (__cdecl *CoverLess)(const UtlVec8Elem &, const UtlVec8Elem &);
+
+struct CoverVecView : CUtlVector<UtlVec8Elem>
+{
+	int sub_102f90e0(int elem);	// InsertBefore, out of line
+	void sub_102f9000(int elem);	// FastRemove, out of line
+};
+
+struct CoverNearNode
+{
+	CoverNearNode(int index, float nodedist) { dist = nodedist; nodeIndex = index; }
+	float dist;
+	int nodeIndex;
+};
+
+struct CoverQueueView
+{
+	CoverVecView m_heap;
+	CoverLess m_LessFunc;
+
+	void sub_102f9090(int index1, int index2);	// Swap, out of line
+	void sub_103078d0();	// the destructor, out of line
+	int Count() const { return m_heap.Count(); }
+	UtlVec8Elem const &ElementAtHead() const { return m_heap.Element(0); }
+	void Swap(int index1, int index2)
+	{
+		UtlVec8Elem tmp = m_heap[index1];
+		m_heap[index1] = m_heap[index2];
+		m_heap[index2] = tmp;
+	}
+	void RemoveAtHead()
+	{
+		m_heap.sub_102f9000(0);
+		int index = 0;
+		int count = Count();
+		if (!count)
+			return;
+		int half = count / 2;
+		int larger = index;
+		while (index < half)
+		{
+			int child = ((index + 1) * 2) - 1;
+			if (child < count)
+			{
+				if (m_LessFunc(m_heap[index], m_heap[child]))
+					larger = child;
+			}
+			child++;
+			if (child < count)
+			{
+				if (m_LessFunc(m_heap[larger], m_heap[child]))
+					larger = child;
+			}
+			if (larger == index)
+				break;
+			sub_102f9090(index, larger);
+			index = larger;
+		}
+	}
+	void InsertCall(UtlVec8Elem const &element)
+	{
+		int index = m_heap.sub_102f90e0(m_heap.Count());
+		m_heap[index] = element;
+		while (index != 0)
+		{
+			int parent = ((index + 1) / 2) - 1;
+			if (m_LessFunc(m_heap[index], m_heap[parent]))
+				break;
+			sub_102f9090(parent, index);
+			index = parent;
+		}
+	}
+	void Insert(UtlVec8Elem const &element)
+	{
+		int index = m_heap.sub_102f90e0(m_heap.Count());
+		m_heap[index] = element;
+		while (index != 0)
+		{
+			int parent = ((index + 1) / 2) - 1;
+			if (m_LessFunc(m_heap[index], m_heap[parent]))
+				break;
+			Swap(parent, index);
+			index = parent;
+		}
+	}
+	void Destroy()
+	{
+		m_heap.m_Size = 0;
+		m_heap.m_Memory.Purge();
+		m_heap.ResetDbgInfo();
+		m_heap.m_Memory.~CoverMem();
+	}
+};
+
+struct CoverPathfinder : CAI_Pathfinder
+{
+	CoverOuterV *GetOuter() { return (CoverOuterV *)m_pOuter; }
+	CoverNetworkV *GetNetwork() { return GetOuter()->m_pNavigator->m_pNetwork; }
+	int GetHullType() { return m_unk08; }
+	bool IsCoverNode(const Vector &nodeOrigin, CoverHintV *pHint, const Vector *pThreatEyePos, CBaseEntity *pThreatEnt, float flMinDistSqr, float flMaxDistSqr, float flMinsX, float flMaxsX, float flMinsY, float flMaxsY);
+};
+#define GetOuter() ((CoverPathfinder *)this)->GetOuter()
+#define GetNetwork() ((CoverPathfinder *)this)->GetNetwork()
+#define GetHullType() ((CoverPathfinder *)this)->GetHullType()
+
+#include "Ray_t.h"
+#include "CUnknown1070b254.h"
+#include "CUnknown10738964.h"
+extern CUnknown1070b254 *g_1070b254;
+extern CUnknown10738964 *g_10738964;
+void sub_10146570(const float *pStart, const float *pEnd, int r, int g, int b, int bNoDepthTest, float flDuration);
+// Source SDK inlines (mathlib/vector.h, util.h) that VC6 declines inside IsCoverNode: the nested inline budget
+// share there is about 40 tuples, so they stay out-of-line COMDAT calls (named by the game's copies). LengthSqr is
+// FORCEINLINE in the SDK and is inlined; CHECK_VALID(v) expands to 0 in release builds.
+namespace block_10302320 {
+struct CoverVec : Vector
+{
+	__forceinline vec_t LengthSqr(void) const { 0; return (x * x + y * y + z * z); }
+	inline Vector sub_10146190(const Vector &v) const { Vector res; VectorSubtract(*this, v, res); return res; }	// operator-
+	inline Vector sub_1011e060(const Vector &v) const { Vector res; VectorAdd(*this, v, res); return res; }	// operator+
+	inline void sub_1002c920(vec_t X, vec_t Y, vec_t Z) { x = X; y = Y; z = Z; 0; }	// Vector(X, Y, Z)
+};
+// UTIL_TraceLine
+inline void sub_103021b0(const Vector &start, const Vector &end, unsigned int fMask, CTraceFilterNoCharacterCollide *pFilter, CGameTrace *pTrace)
+{
+	Ray_t ray;
+	VectorSubtract(end, start, *(Vector *)ray.m_Delta);
+	int bSwept = ((Vector *)ray.m_Delta)->LengthSqr() != 0.0f;
+	*(char *)&ray.m_IsSwept = bSwept;
+	VectorClear(*(Vector *)ray.m_StartOffset);
+	ray.m_IsRay = true;
+	VectorClear(*(Vector *)ray.m_Extents);
+	VectorCopy(start, *(Vector *)ray.m_Start);
+	ray.m_b32 = 0;
+	ray.m_n34 = 0;
+	ray.m_b33 = 0;
+	g_1070b254->vfunc4(&ray, fMask, pFilter, pTrace);
+	if (!g_10738964->vfunc1() && g_10738964->m_n2c)
+		sub_10146570((float *)pTrace, (float *)pTrace + 3, 0xff, 0, 0, 1, -1.0f);
+}
+}
+
+inline void SetOfs(float &ox, float &oy, float x, float y) { ox = x; oy = y; }
+inline bool CoverPathfinder::IsCoverNode(const Vector &nodeOrigin, CoverHintV *pHint, const Vector *pThreatEyePos, CBaseEntity *pThreatEnt, float flMinDistSqr, float flMaxDistSqr, float flMinsX, float flMaxsX, float flMinsY, float flMaxsY)
+{
+	float dist = ((const block_10302320::CoverVec &)((const block_10302320::CoverVec &)GetOuter()->GetLocalOrigin()).sub_10146190(nodeOrigin)).LengthSqr();
+	if (dist >= flMinDistSqr && dist < flMaxDistSqr)
+	{
+		int nCoverActivity = GetOuter()->GetCoverActivity(pHint);
+		Vector vEyePos = ((const block_10302320::CoverVec &)nodeOrigin).sub_1011e060(GetOuter()->EyeOffset(nCoverActivity, nCoverActivity));
+		CTraceFilterSimpleTwoEnt filter(GetOuter(), pThreatEnt, 0);
+		CGameTrace tr;
+		block_10302320::sub_103021b0(*pThreatEyePos, vEyePos, 0x2804091, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+		if (tr.m_fraction != 1.0)
+		{
+			float flOfsX, flOfsY;
+			if (vEyePos.x > pThreatEyePos->x)
+			{
+				if (vEyePos.y > pThreatEyePos->y)
+					SetOfs(flOfsX, flOfsY, flMaxsX, flMinsY);
+				else
+					SetOfs(flOfsX, flOfsY, flMaxsX, flMaxsY);
+			}
+			else
+			{
+				if (vEyePos.y > pThreatEyePos->y)
+					SetOfs(flOfsX, flOfsY, flMinsX, flMinsY);
+				else
+					SetOfs(flOfsX, flOfsY, flMinsX, flMaxsY);
+			}
+			Vector vCorner1;
+			((block_10302320::CoverVec *)&vCorner1)->sub_1002c920(nodeOrigin.x + flOfsX, nodeOrigin.y + flOfsY, vEyePos.z);
+			Vector vCorner2;
+			((block_10302320::CoverVec *)&vCorner2)->sub_1002c920(nodeOrigin.x - flOfsX, nodeOrigin.y - flOfsY, vEyePos.z);
+			block_10302320::sub_103021b0(*pThreatEyePos, vCorner1, 0x2804091, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+			if (tr.m_fraction != 1.0)
+			{
+				block_10302320::sub_103021b0(*pThreatEyePos, vCorner2, 0x2804091, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+				if (tr.m_fraction != 1.0)
+				{
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
+// FindCover 0x10301720, the sibling that the game's unit compiles just before this function (the out-of-line
+// UTIL_TraceLine COMDAT 0x103021b0 sits between them). Its IsCoverNode call declines the same nested inlines, so
+// their COMDATs (Vector(x, y, z), operator-, operator+, UTIL_TraceLine) are compiled before sub_10302320 and VC6
+// knows their side effects there.
+extern int g_10934140;
+namespace block_10302320 {
+struct CoverFind : CoverPathfinder
+{
+	int sub_10301720(const Vector *pThreatPos, const Vector *pThreatEyePos, float flMinDist, float flMaxDist, CBaseEntity *pThreatEnt);
+};
+int CoverFind::sub_10301720(const Vector *pThreatPos, const Vector *pThreatEyePos, float flMinDist, float flMaxDist, CBaseEntity *pThreatEnt)
+{
+	if (!g_1093408c)
+		return -1;
+
+	int iMyNode = GetNetwork()->sub_102f3c10(GetOuter(), &GetOuter()->GetLocalOrigin());
+
+	if (iMyNode == -1)
+	{
+		DevWarning(2, "FindCover() - %s has no nearest node (%f, %f, %f)!\n", GetOuter()->GetEntClassname(), GetOuter()->GetLocalOrigin().x, GetOuter()->GetLocalOrigin().y, GetOuter()->GetLocalOrigin().z);
+		return -1;
+	}
+
+	if (flMaxDist == g_104454c4)
+	{
+		flMaxDist = 784;
+	}
+
+	if (flMinDist > 0.5 * flMaxDist)
+	{
+		flMinDist = 0.5 * flMaxDist;
+	}
+
+	CUnknown102f8f10 listStore((int)_alloca(sizeof(UtlVec8Elem) * GetNetwork()->NumNodes()), GetNetwork()->NumNodes(), (int)sub_102f3770);
+	CoverQueueView &list = *(CoverQueueView *)&listStore;
+	CBitString wasVisitedStore;
+	CoverBits &wasVisited = *(CoverBits *)&wasVisitedStore;
+	wasVisitedStore.sub_102fc910(GetNetwork()->NumNodes());
+
+	list.InsertCall((const UtlVec8Elem &)CoverNearNode(iMyNode, 0));
+	wasVisited.SetBit(iMyNode);
+	float flMinDistSqr = flMinDist * flMinDist;
+	float flMaxDistSqr = flMaxDist * flMaxDist;
+
+	float flMinsX = GetOuter()->CollisionProp()->OBBMins().x * 1.4f;
+	float flMaxsX = GetOuter()->CollisionProp()->OBBMaxs().x * 1.4f;
+	float flMinsY = GetOuter()->CollisionProp()->OBBMins().y * 1.4f;
+	float flMaxsY = GetOuter()->CollisionProp()->OBBMaxs().y * 1.4f;
+
+	if (list.Count())
+	do
+	{
+		int nodeIndex = list.ElementAtHead().b;
+		list.RemoveAtHead();
+
+		CoverNodeV *pNode = GetNetwork()->GetNode(nodeIndex);
+
+		Vector nodeOrigin = pNode->sub_102fb0d0(GetHullType());
+		CoverHintV *pHint = pNode->GetHint();
+		if ((!pHint || pHint->sub_102d1450(0)) && ((CoverPathfinder *)this)->IsCoverNode(nodeOrigin, pHint, pThreatEyePos, pThreatEnt, flMinDistSqr, flMaxDistSqr, flMinsX, flMaxsX, flMinsY, flMaxsY) && GetOuter()->IsValidCover(nodeOrigin, pHint))
+		{
+			pNode->Lock(1.0f);
+			CoverHintV *pNodeHint = pNode->GetHint();
+			if (pNodeHint)
+			{
+				GetOuter()->m_pHintNode = pNodeHint;
+				pNodeHint->sub_102d1350((CBaseEntity *)GetOuter());
+			}
+			g_10934140 = nodeIndex;
+			wasVisitedStore.sub_100bf6a0();
+			list.sub_103078d0();
+			return nodeIndex;
+		}
+
+		for (int link = 0; link < pNode->NumLinks(); link++)
+		{
+			int index = (link + g_10934140) % pNode->NumLinks();
+			CPairFields102dda40 *nodeLink = pNode->GetLinkByIndex(index);
+
+			if (nodeLink->m_LinkInfo & 0x1000)
+				continue;
+			if (!(nodeLink->m_iAcceptedMoveTypes[GetHullType()] & GetOuter()->CapabilitiesGet()))
+				continue;
+
+			int newID = nodeLink->sub_102dda40(nodeIndex);
+
+			if (!wasVisited.GetBit(newID))
+			{
+				if (GetNetwork()->GetNode(newID)->GetType() != 4 && !GetNetwork()->GetNode(newID)->IsLocked())
+				{
+					nodeOrigin = GetNetwork()->GetNode(newID)->sub_102fb0d0(GetHullType());
+					float dist = (GetOuter()->GetLocalOrigin() - nodeOrigin).LengthSqr();
+					float threatDist = (*pThreatPos - nodeOrigin).LengthSqr();
+					if (dist < threatDist * 1.5)
+					{
+						list.Insert((const UtlVec8Elem &)CoverNearNode(newID, dist));
+					}
+				}
+				wasVisited.SetBit(newID);
+			}
+		}
+	} while (list.Count());
+
+	GetOuter()->m_pHintNode = 0;
+	wasVisitedStore.sub_100bf6a0();
+	list.Destroy();
+	return -1;
+}
+}
+
+int CAI_Pathfinder::sub_10302320(const Vector *pThreatPos, const Vector *pThreatEyePos, const Vector *pThreatDir, float flMinDist, float flMaxDist, CBaseEntity *pThreatEnt)
+{
+	if (!g_1093408c)
+		return -1;
+
+	int iMyNode = GetNetwork()->sub_102f3c10(GetOuter(), &GetOuter()->GetLocalOrigin());
+
+	if (iMyNode == -1)
+	{
+		DevWarning(2, "FindCover() - %s has no nearest node (%f, %f, %f)!\n", GetOuter()->GetEntClassname(), GetOuter()->GetLocalOrigin().x, GetOuter()->GetLocalOrigin().y, GetOuter()->GetLocalOrigin().z);
+		return -1;
+	}
+
+	if (flMaxDist == g_104454c4)
+	{
+		flMaxDist = 784;
+	}
+
+	if (flMinDist > 0.5 * flMaxDist)
+	{
+		flMinDist = 0.5 * flMaxDist;
+	}
+
+	CUnknown102f8f10 listStore((int)_alloca(sizeof(UtlVec8Elem) * GetNetwork()->NumNodes()), GetNetwork()->NumNodes(), (int)sub_102f3770);
+	CoverQueueView &list = *(CoverQueueView *)&listStore;
+	CBitString wasVisitedStore;
+	CoverBits &wasVisited = *(CoverBits *)&wasVisitedStore;
+	wasVisitedStore.sub_102fc910(GetNetwork()->NumNodes());
+
+	list.InsertCall((const UtlVec8Elem &)CoverNearNode(iMyNode, 0));
+	wasVisited.SetBit(iMyNode);
+	float flMinDistSqr = flMinDist * flMinDist;
+	float flMaxDistSqr = flMaxDist * flMaxDist;
+
+	float flMinsX = GetOuter()->CollisionProp()->OBBMins().x * 1.4f;
+	float flMaxsX = GetOuter()->CollisionProp()->OBBMaxs().x * 1.4f;
+	float flMinsY = GetOuter()->CollisionProp()->OBBMins().y * 1.4f;
+	float flMaxsY = GetOuter()->CollisionProp()->OBBMaxs().y * 1.4f;
+	Vector vThreatDir = *pThreatDir;
+	VectorNormalize(vThreatDir);
+
+	if (list.Count())
+	do
+	{
+		int nodeIndex = list.ElementAtHead().b;
+		list.RemoveAtHead();
+
+		CoverNodeV *pNode = GetNetwork()->GetNode(nodeIndex);
+
+		Vector nodeOrigin = pNode->sub_102fb0d0(GetHullType());
+		CoverHintV *pHint = pNode->GetHint();
+		if ((!pHint || pHint->sub_102d1450(0)) && ((CoverPathfinder *)this)->IsCoverNode(nodeOrigin, pHint, pThreatEyePos, pThreatEnt, flMinDistSqr, flMaxDistSqr, flMinsX, flMaxsX, flMinsY, flMaxsY) && GetOuter()->IsValidCover(nodeOrigin, pHint))
+		{
+			pNode->Lock(1.0f);
+			CoverHintV *pNodeHint = pNode->GetHint();
+			if (pNodeHint)
+			{
+				GetOuter()->m_pHintNode = pNodeHint;
+				pNodeHint->sub_102d1350((CBaseEntity *)GetOuter());
+			}
+			g_10934144 = nodeIndex;
+			wasVisitedStore.sub_100bf6a0();
+			list.sub_103078d0();
+			return nodeIndex;
+		}
+
+		for (int link = 0; link < pNode->NumLinks(); link++)
+		{
+			int index = (link + g_10934144) % pNode->NumLinks();
+			CPairFields102dda40 *nodeLink = pNode->GetLinkByIndex(index);
+
+			if (nodeLink->m_LinkInfo & 0x1000)
+				continue;
+			if (!(nodeLink->m_iAcceptedMoveTypes[GetHullType()] & GetOuter()->CapabilitiesGet()))
+				continue;
+
+			int newID = nodeLink->sub_102dda40(nodeIndex);
+
+			if (!wasVisited.GetBit(newID))
+			{
+				if (GetNetwork()->GetNode(newID)->GetType() != 4 && !GetNetwork()->GetNode(newID)->IsLocked())
+				{
+					nodeOrigin = GetNetwork()->GetNode(newID)->sub_102fb0d0(GetHullType());
+					Vector vDelta = GetOuter()->GetLocalOrigin() - nodeOrigin;
+					float dist = vDelta.LengthSqr();
+					float threatDist = (*pThreatPos - nodeOrigin).LengthSqr();
+					if (dist < threatDist * 1.5)
+					{
+						VectorNormalize(vDelta);
+						if (DotProduct(vDelta, vThreatDir) > g_104454c4)
+						{
+							list.Insert((const UtlVec8Elem &)CoverNearNode(newID, dist));
+						}
+					}
+				}
+				wasVisited.SetBit(newID);
+			}
+		}
+	} while (list.Count());
+
+	GetOuter()->m_pHintNode = 0;
+	wasVisitedStore.sub_100bf6a0();
+	list.Destroy();
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10302e50 size=0x720
 #include "utlmemory.h"
 #include "utlrbtree.h"

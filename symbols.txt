@@ -6572,6 +6572,7 @@
 0x10009494 func   ?sub_100bee80@@YAHXZ sub_100bee80
 0x10009499 func   ?sub_1015a3c0@CFuncPlat@@QAEXABVVector@@M@Z CFuncPlat::sub_1015a3c0
 0x1000949e func   ?sub_10139a90@@YAXPAM@Z sub_10139a90
+0x100094a3 func   ?sub_10302320@CAI_Pathfinder@@QAEHPBVVector@@00MMPAVCBaseEntity@@@Z CAI_Pathfinder::sub_10302320
 0x100094a8 func   ?vfunc278@CBaseFlex@@UAEPADXZ CBaseFlex::vfunc278
 0x100094ad func   ?sub_102db650@@YAXXZ sub_102db650
 0x100094b2 func   _item_w_tire_iron item_w_tire_iron
