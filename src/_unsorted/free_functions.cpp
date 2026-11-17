@@ -153034,10 +153034,10 @@ char CUnknown101e0f00::sub_101e1a60(CUnknown101e0f00Entry *pEntry, void *pSource
 		Vector half, start, end, center, t3, t4;
 		{
 			Vector t0;
-			half = (*c->slot193(pcd_stage(&t0)) - *c->slot192(&center)) * 0.5f;
+			half = (*c->slot193((&t0)) - *c->slot192(&center)) * 0.5f;
 		}
 		start = *c->slot193(&t3) - half;
-		half = (*pcd_stage(t)->slot193(&t3) - *t->slot192(&center)) * 0.5f;
+		half = (*(t)->slot193(&t3) - *t->slot192(&center)) * 0.5f;
 		end = *t->slot193(&t4) - half;
 		{
 			Ray_t ray;
