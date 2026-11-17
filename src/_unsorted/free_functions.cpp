@@ -279213,6 +279213,117 @@ void CNPC_VHengeyokai::sub_10382400(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10382670 size=0x1be
+#include "CBaseAnimating.h"
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CNPC_VHengeyokai.h"
+#include "CBaseEntity.h"
+#include "CRagdollPropSpecial.h"
+#include "CPhysicsAnimlink.h"
+#include "CUnknown101578b0.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_10538764[];
+extern char g_1057fff0[];
+extern float g_1070d1b0[];
+CPhysicsAnimlink *sub_100a9ab0(const char *pszName, const float *pA, const float *pB, void *pC);
+int sub_10430130(unsigned int v);
+
+struct CHengeyokaiAnimView
+{
+	char m_pad0[0xf0];
+	int m_nBones;
+	int m_nOffset;
+};
+
+#define HV(n) virtual void vfunc##n();
+#define HV10(p) HV(p##0) HV(p##1) HV(p##2) HV(p##3) HV(p##4) HV(p##5) HV(p##6) HV(p##7) HV(p##8) HV(p##9)
+struct CHengeyokaiRagView
+{
+	HV(0) HV(1) HV(2) HV(3) HV(4) HV(5) HV(6) HV(7) HV(8) HV(9)
+	HV10(1) HV10(2) HV10(3) HV10(4) HV10(5) HV10(6) HV10(7) HV10(8) HV10(9)
+	HV10(10) HV10(11) HV10(12) HV10(13) HV10(14) HV10(15) HV10(16) HV10(17) HV10(18)
+	HV(190)
+	virtual void vfunc191(float value);
+	HV(192) HV(193) HV(194) HV(195) HV(196) HV(197) HV(198) HV(199)
+	HV10(20) HV10(21) HV10(22) HV10(23) HV10(24) HV10(25)
+	HV(260) HV(261) HV(262) HV(263) HV(264)
+	virtual void *vfunc265(int value);
+};
+
+namespace block_10382670 {
+struct CHengeyokaiUnit : CNPC_VHengeyokai
+{
+	void sub_10381ba0(char b);
+};
+void CHengeyokaiUnit::sub_10381ba0(char b)
+{
+	if (b)
+		m_flags14b8 |= 0x10;
+	else
+		m_flags14b8 &= ~0x10;
+}
+}
+using namespace block_10382670;
+
+namespace block_10157890 {
+#pragma auto_inline(off)
+
+struct V : CUnknown101578b0 { void sub_10157890(char value); };
+void V::sub_10157890(char value)
+{
+	m_bFlag103c = value;
+}
+
+#pragma auto_inline(on)
+}
+#define HASH(x) (((((((x) & 0x3f3c1135) ^ 0x544222df) + 0x4ba5398d) & 0xc0c3eeca) ^ (x)) ^ 0x151a77f8)
+// TARGET: CNPC_VHengeyokai::sub_10382670
+bool CNPC_VHengeyokai::sub_10382670(void *pEnt, const char *pszBone)
+{
+	if (!pEnt)
+		return false;
+	CPhysicsAnimlink *pLink = sub_100a9ab0("phys_animlink", g_1070d1b0, g_1070d9d0, 0);
+	if (!pLink)
+		return false;
+	CHengeyokaiAnimView *pAnim = sub_100952d0(-1);
+	int iBone;
+	for (int i = 0; i < pAnim->m_nBones; i++)
+	{
+		int *p = (int *)(pAnim->m_nOffset + (char *)pAnim + i * 0xa0);
+		const char *pszName = (char *)p + *p;
+		if (!_strcmpi("Bip01 R Hand", pszName))
+		{
+			iBone = i;
+			break;
+		}
+	}
+	if (0 > iBone)
+		return false;
+	void *pPhys = *(void **)((char *)pEnt + 0x36c);
+	if (!pPhys)
+		return false;
+	CHengeyokaiRagView *pRagdoll = (CHengeyokaiRagView *)__RTDynamicCast(pEnt, 0, g_10538764, g_1057fff0, 0);
+	if (pRagdoll)
+	{
+		((block_10157890::V *)(((CUnknown101578b0 *)pRagdoll)))->sub_10157890(1);
+		int h = HASH(m_Secure6698.m_Value);
+		int n = sub_10430130(h);
+		pRagdoll->vfunc191(n);
+		pPhys = pRagdoll->vfunc265((int)pszBone);
+		if (!pPhys)
+			return false;
+	}
+	Vector vecA(0, 0, 0);
+	Vector vecB(0, 0, 0);
+	pLink->sub_1014f210((CBaseAnimating *)this, iBone, pPhys, (int)&vecA, (int)&vecB);
+	m_h6690 = *pLink->vfunc1();
+	((CHengeyokaiUnit *)this)->sub_10381ba0(0);
+	sub_10381c00(1);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x103828a0 size=0x9c
 #include "CBaseEntity.h"
 #include "CGlobalEntityList.h"
