@@ -298086,6 +298086,201 @@ bool CBaseEntity::sub_103d3a40(const char *pszNameOrWildcard)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103d3c20 size=0x6ff
+#define vfunc617_slot(a, b, c, d) vfunc617_slot(a, bool, c, d)
+#include "CEHandleGet.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CVTraitEffect_t.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include "engineserver.h"
+#include "globalvars.h"
+#include "Vector.h"
+#include "CAIHintSlots.h"
+#include "Tier1.h"
+#include "CGlobalEntityList.h"
+#undef vfunc617_slot
+
+struct CWWDevValue
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	int m_n04;
+	int m_n08;
+	int m_n0c;
+	int m_n10;
+	int m_n14;
+	int m_n18;
+	int m_n1c;
+	int m_n20;
+	int m_n24;
+	float m_fl28;
+	int m_n2c;
+};
+
+struct CWWCallView
+{
+	bool sub_103d0db0(CNPC_VWerewolfVec3 a, CNPC_VWerewolfVec3 b);
+};
+
+extern CWWDevValue *g_1093d45c;
+extern CWWDevValue *g_1093f784;
+extern CWWDevValue *g_1093fa3c;
+extern Vector g_1070d1b0;
+extern float g_104454c4;
+#include "ConVar.h"
+extern ConVar g_1093d458, g_1093fa38, g_1093f780;
+
+#include "CUnknown100290c0.h"
+#pragma auto_inline(off)
+namespace block_103d3c20 {
+struct CLookUnit : CUnknown100290c0 { unsigned int sub_100290c0(const unsigned int *pHandle); };
+unsigned int CLookUnit::sub_100290c0(const unsigned int *pHandle)
+{
+    unsigned int h = *pHandle;
+    if (h != 0xffffffff) {
+        CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (int)(h >> 13)) {
+            return pSlot->m_Value;
+        }
+    }
+    return 0;
+}
+}
+#pragma auto_inline(on)
+inline const char *WWEntName(CNPC_VWerewolf *p) { if (p) { if (p->m_name26c) return p->m_name26c; return g_106b8540; } return g_105387dc; }
+
+inline bool operator==(const CNPC_VWerewolfVec3 &a, const CNPC_VWerewolfVec3 &b)
+{
+	return b.x == a.x && b.y == a.y && b.z == a.z;
+}
+
+// TARGET: CNPC_VWerewolf::sub_103d3c20
+bool CNPC_VWerewolf::sub_103d3c20()
+{
+	ScopeTrace trace("CNPC_VWerewolf::FindTeleportHint", WWEntName(this));
+
+	sub_103d1ca0();
+
+	if (m_nTick66d4 == engine->vfunc120())
+		return false;
+	if (m_fl66d8 + 0.15f > gpGlobals->curtime)
+		return false;
+	if (m_pHint66b0)
+		return true;
+
+	m_nTick66d4 = engine->vfunc120();
+	m_fl66d8 = gpGlobals->curtime;
+
+	if (!g_10925450)
+		return false;
+	if (!((block_103d3c20::CLookUnit *)g_10566458)->sub_100290c0((const unsigned int *)&m_h628c))
+		return false;
+
+	CNPC_VWerewolfHint66b0 *pHint;
+	if (!m_n66ac || !(pHint = ((CNPC_VWerewolfHint66b0 *)m_n66ac)->m_pNext))
+		pHint = (CNPC_VWerewolfHint66b0 *)g_10925450;
+
+	CNPC_VWerewolfHint66b0 *pBest = 0;
+	int nBestPriority = 0;
+	float flBestDist = 3.402823466e+38f;
+	CNPC_VWerewolfVec3 vecStart3 = sub_103d9c90();
+	Vector &vecStart = *(Vector *)&vecStart3;
+	int nSearches = 0;
+	char bFlag = false;
+	Vector vecGround = g_1070d1b0;
+	Vector vecTarget = g_1070d1b0;
+	
+	
+	CUtlVector<CNPC_VWerewolfVec3> tried;
+	CUtlVector<CNPC_VWerewolfVec3> good;
+
+	if ((m_nFlags66e8 & 2) == 2 && m_pHint66c4)
+	{
+		CNPC_VWerewolfVec3 tmp;
+		vecStart3 = *sub_103d6770(&tmp, m_pHint66c4);
+	}
+
+	do {
+		if (sub_103d3360(pHint)) {
+			pBest = pHint;
+			break;
+		}
+		if (sub_103d8300((void *)pHint)) {
+			if (nSearches >= 10) {
+				if (pBest)
+					break;
+				m_n66ac = (int)pHint;
+				g_109f364c("Werewolf giving up after %d teleport searches!\n", nSearches);
+				bool bRet = sub_103d1d60("FindTeleportHint", false);
+				return bRet;
+			}
+			CNPC_VWerewolfVec3 t1;
+			CNPC_VWerewolfVec3 t2;
+			vecGround = *(Vector *)sub_103d6770(&t1, pHint);
+			sub_103d6390(pHint);
+			vecTarget = *(Vector *)sub_103d68d0(&t2, pHint);
+			float flDist = (vecTarget - vecStart).Length();
+			bFlag = false;
+			int nPriority = sub_103d3220(pHint);
+			if (tried.Find(*(CNPC_VWerewolfVec3 *)&vecTarget) == -1 && flDist < flBestDist && nBestPriority < nPriority) {
+				if (good.Find(*(CNPC_VWerewolfVec3 *)&vecTarget) != -1)
+					bFlag = true;
+				if (g_1093d458.GetFloat() + m_flTime66f0 < gpGlobals->curtime) {
+					bFlag = true;
+				} else if (!bFlag) {
+					if (g_1093fa38.GetBool()) {
+						nSearches++;
+						bFlag = ((CWWCallView *)this)->sub_103d0db0(*(CNPC_VWerewolfVec3 *)&vecTarget, vecStart3);
+					} else {
+						bFlag = sub_103d0e70(pHint);
+					}
+					if (bFlag)
+						good.AddToTail(*(CNPC_VWerewolfVec3 *)&vecTarget);
+				}
+				if (bFlag) {
+					nSearches++;
+					if (!vfunc617_slot(*(CNPC_VWerewolfVec3 *)&vecGround, g_1093f780.GetBool(), 0, *(CNPC_VWerewolfVec3 *)&g_1070d1b0)) {
+						pBest = pHint;
+						flBestDist = flDist;
+						nBestPriority = nPriority;
+					}
+				}
+			}
+		}
+		if (!bFlag)
+			tried.AddToTail(*(CNPC_VWerewolfVec3 *)&vecTarget);
+		pHint = pHint->m_pNext;
+		if (!pHint && m_n66ac)
+			pHint = (CNPC_VWerewolfHint66b0 *)g_10925450;
+	} while (pHint != (CNPC_VWerewolfHint66b0 *)m_n66ac);
+
+	m_n66ac = (int)pBest;
+	bool bFound = false;
+	if (pBest) {
+		bFound = true;
+		sub_103d45c0(pBest);
+	}
+	return sub_103d1d60("FindTeleportHint", bFound);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d44e0 size=0xae
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
