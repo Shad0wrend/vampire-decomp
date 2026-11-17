@@ -170847,27 +170847,19 @@ int sub_10203540(const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x102035c0 size=0x76
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
 #include "CUnknown109f08c0.h"
 
 extern char g_106b8540[];
-extern int g_1073a314;
-extern CUnknown109f08c0 **g_1073a318;
+extern CUnknown109f08c0Set g_1073a300;	// the record table (count 0x1073a314, entries 0x1073a318)
 
+// the name of record id (the table's Find inline: its default record is the one function-local static), "" when none
 const char *sub_102035c0(int id)
 {
-	if (id >= 0 && id < g_1073a314) {
-		CUnknown109f08c0 *pRec;
-		for (int i = 0; i < g_1073a314; i++) {
-			if (g_1073a318[i]->m_id == id) {
-				pRec = g_1073a318[i];
-				goto found;
-			}
-		}
-		{
-			static CUnknown109f08c0 s_default(-1);
-			pRec = &s_default;
-		}
-found:
+	if (id >= 0 && id < g_1073a300.m_nCount) {
+		CUnknown109f08c0 *pRec = g_1073a300.Find(id);
 		if (pRec->m_pszName)
 			return pRec->m_pszName;
 	}
