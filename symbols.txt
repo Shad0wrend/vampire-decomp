@@ -8603,6 +8603,7 @@
 0x1000be10 func   ?vfunc420@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc420
 0x1000be15 func   ?sub_102f8ec0@CUnk102f8ec0@@QAEXXZ CUnk102f8ec0::sub_102f8ec0
 0x1000be1a func   _vampire_skill vampire_skill
+0x1000be1f func   ?vfunc19@CGameMovement@@QAEHPAVVector@@PAUCGameTrace@@@Z CGameMovement::vfunc19
 0x1000be24 func   ?sub_10226700@@YAPAHXZ sub_10226700
 0x1000be29 func   ?vfunc113@CFuncAreaPortalWindow@@UAEXXZ CFuncAreaPortalWindow::vfunc113
 0x1000be2e func   ?vfunc125@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc125
