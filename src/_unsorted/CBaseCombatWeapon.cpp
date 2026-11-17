@@ -1825,7 +1825,7 @@ char CBaseCombatWeapon::vfunc316(int a)
 			unsigned int h = *(unsigned int *)(ai + 0x1c64);
 			EntSlot *s;
 			if (h != 0xffffffff && (s = (EntSlot *)(g_10566458 + 4) + (h & 0x1fff), s->serial == (int)(h >> 13)) && s->ent && sub_10256220()) {
-				int seq = *(int *)((char *)ResolveHandle(*(volatile unsigned int *)(ai + 0x1c64)) + 0x6f0);
+				int seq = *(int *)((char *)ResolveHandle(*(unsigned int *)(ai + 0x1c64)) + 0x6f0);
 				CBaseAnimating *ba = (CBaseAnimating *)ResolveHandle(*(volatile unsigned int *)(ai + 0x1c64));
 				t = ba->sub_10091080(seq) + gpGlobals->curtime;
 			} else {
