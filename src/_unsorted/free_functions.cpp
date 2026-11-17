@@ -85405,7 +85405,6 @@ void CGameMovement::sub_101256d0(void *pNewGround)
 // END FUNCTION
 
 // FUNCTION: 0x10125db0 size=0x495
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include <math.h>
 #include "CGameMovement.h"
 #include "CGameMovementViews.h"
