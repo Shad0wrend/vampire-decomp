@@ -58060,7 +58060,7 @@ static inline bool FindNameMatches(CBaseEntity *pEnt, const char *pszName, const
 	int len = strlen(pszName);
 	int r;
 	if (len == 0)
-		r = (int)*(const char *volatile *)&pEnt->m_name26c;
+		r = (int)*(const char **)&pEnt->m_name26c;
 	else if (pszName[len - 1] != '*')
 	{
 		p = *ppszRaw;
@@ -58089,9 +58089,9 @@ CBaseEntity *sub_100d2070(int a1, const char *pszName, CBaseEntity *pStart)
 	{
 		for (CBaseEntity *pEnt = g_106eb5d8.sub_100f7060(pStart); pEnt; pEnt = g_106eb5d8.sub_100f7060(pEnt))
 		{
-			if (FindNameMatches(pEnt, pszName, (const char *volatile *)&pEnt->m_name26c))
+			if (FindNameMatches(pEnt, pszName, (const char **)&pEnt->m_name26c))
 				return pEnt;
-			if (FindNameMatches(pEnt, pszName, (const char *volatile *)&pEnt->m_classname11c))
+			if (FindNameMatches(pEnt, pszName, (const char **)&pEnt->m_classname11c))
 				return pEnt;
 			CFindEdict *pEdict = (CFindEdict *)pEnt->m_pEdict2e0;
 			if (!pEdict->m_p40 || pEdict->m_p40->vfunc3()->vfunc5())
