@@ -80615,11 +80615,9 @@ struct CBreakableSurfaceUnit : CBreakableSurface
 };
 bool CBreakableSurfaceUnit::sub_101123b0(int nCol, int nRow)
 {
-	if ( nCol < 0 || nCol >= m_nCols49c || nRow < 0 || nRow >= m_nRows4a0 )
-		return true;
-	if ( m_aflPanes[nCol][nRow] == -1.0f )
-		return 1;
-	return 0;
+	if (nCol >= 0 && nCol < m_nCols49c && nRow >= 0 && nRow < m_nRows4a0)
+		return m_aflPanes[nCol][nRow] == -1.0f;
+	return true;
 }
 }
 using namespace block_10112650;
