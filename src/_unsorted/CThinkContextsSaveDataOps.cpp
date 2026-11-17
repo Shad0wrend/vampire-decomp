@@ -15,6 +15,7 @@
 #include "utlvector.h"
 #include "CThinkContextsSaveDataOps.h"
 #include "CUtlVectorDataOps.h"
+#include "saverestore_utlvector.h"
 #include "CThinkSaveViews.h"
 #include "ScopeTrace.h"
 
@@ -22,17 +23,6 @@
 #define TV10(n) TV1(n##0) TV1(n##1) TV1(n##2) TV1(n##3) TV1(n##4) TV1(n##5) TV1(n##6) TV1(n##7) TV1(n##8) TV1(n##9)
 struct ISaveView12 { TV10(0) TV10(1) TV10(2) TV1(30) virtual void WriteFunction(void *pMap, const char *pname, int *data, int count); };
 struct COwnerView12 { TV10(0) TV10(1) TV10(2) TV10(3) TV10(4) TV10(5) TV10(6) TV10(7) TV1(80) TV1(81) virtual void *GetDataDescMap(); };
-
-template <class UTLVECTOR, int FIELD_TYPE>
-class CUtlVectorDataopsInstantiator
-{
-public:
-	static CUtlVectorDataOps<UTLVECTOR, FIELD_TYPE> *GetDataOps(UTLVECTOR *)
-	{
-		static CUtlVectorDataOps<UTLVECTOR, FIELD_TYPE> ops;
-		return &ops;
-	}
-};
 
 void CThinkContextsSaveDataOps::vfunc0(void *pFieldInfo, void *pSave)
 {
@@ -67,6 +57,7 @@ void CThinkContextsSaveDataOps::vfunc0(void *pFieldInfo, void *pSave)
 #include "utlvector.h"
 #include "CThinkContextsSaveDataOps.h"
 #include "CUtlVectorDataOps.h"
+#include "saverestore_utlvector.h"
 #include "CThinkSaveViews.h"
 #include "ScopeTrace.h"
 
@@ -104,8 +95,7 @@ void CThinkContextsSaveDataOps::vfunc1(void *pFieldInfo, void *pRestoreIn)
 	ScopeTrace trace("CThinkContextsSaveDataOps::Restore", g_106b8540);
 	CThinkRestoreFieldInfo *pInfo = (CThinkRestoreFieldInfo *)pFieldInfo;
 	CThinkVec *pUtlVector = pInfo->pField;
-	static CThinkVecOps s_ops;
-	CThinkVecOps *pOps = (CThinkVecOps *)&s_ops;
+	CThinkVecOps *pOps = CUtlVectorDataopsInstantiator<CUtlVector<thinkfunc_t, CUtlMemory<thinkfunc_t> >, 9>::GetDataOps((CUtlVector<thinkfunc_t, CUtlMemory<thinkfunc_t> > *)pUtlVector);
 	SaveRestoreFieldInfoView vectorFieldInfo = { pUtlVector, 0, 0 };
 	pOps->vfunc1(&vectorFieldInfo, pRestoreIn);
 	CThinkRestoreOwnerView *pOwner = pInfo->pOwner;

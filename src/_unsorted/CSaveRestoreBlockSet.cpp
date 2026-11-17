@@ -56,6 +56,7 @@ void CSaveRestoreBlockSet::vfunc2(void *pSave)
 #include "utlrbtree.h"
 #include "utlvector.h"
 #include "CUtlVectorDataOps.h"
+#include "saverestore_utlvector.h"
 #include "SaveRestoreFieldInfo_t.h"
 #include "CUtlMemory40.h"
 #include <string.h>
@@ -77,12 +78,6 @@ struct SBHandler
 
 typedef CUtlVector<SaveRestoreBlockHeader_t> HeaderVec;
 typedef CUtlVectorDataOps<HeaderVec, 9> HeaderOps;
-
-inline HeaderOps *HeaderOpsOf()
-{
-	static HeaderOps s_ops;
-	return &s_ops;
-}
 
 struct LocalHeaders
 {
@@ -121,7 +116,7 @@ void CSaveRestoreBlockSet::vfunc3(void *pSaveArg)
 	pSave->WriteInt(&nTemp, 1);
 	pSave->WriteInt(&nTemp, 1);
 	SaveRestoreFieldInfo_t info;
-	HeaderOps *ops = HeaderOpsOf();
+	HeaderOps *ops = CUtlVectorDataopsInstantiator<HeaderVec, 9>::GetDataOps((HeaderVec *)&headers);
 	info.pField = &headers;
 	info.pOwner = 0;
 	info.pTypeDesc = 0;
@@ -135,7 +130,7 @@ void CSaveRestoreBlockSet::vfunc3(void *pSaveArg)
 	pSave->Seek(start);
 	pSave->WriteInt(&pad38I, 1);
 	pSave->WriteInt(&m_nSize, 1);
-	ops = HeaderOpsOf();
+	ops = CUtlVectorDataopsInstantiator<HeaderVec, 9>::GetDataOps(&BlockHeaders());
 	info.pField = &BlockHeaders();
 	info.pOwner = 0;
 	info.pTypeDesc = 0;
@@ -197,6 +192,7 @@ void CSaveRestoreBlockSet::vfunc5()
 // FUNCTION: 0x101a4cb0 size=0x15b
 #include "CSaveRestoreBlockSet.h"
 #include "CUtlVectorDataOps.h"
+#include "saverestore_utlvector.h"
 
 extern "C" int __cdecl strcmp(const char *, const char *);
 #pragma intrinsic(strcmp)
@@ -241,8 +237,7 @@ void BlockSetView::sub_101a4cb0(SaveView *pSave)
     int *pVersion = (int *)pad38;
     pSave->vfunc15(pVersion, 1, 0);
     pSave->vfunc15(&m_nSize, 1, 0);
-    static HeaderOps s_ops;
-    HeaderOps *pOps = &s_ops;
+    HeaderOps *pOps = CUtlVectorDataopsInstantiator<CUtlVector<SaveRestoreBlockHeader_t, CUtlMemory<SaveRestoreBlockHeader_t> >, 9>::GetDataOps((CUtlVector<SaveRestoreBlockHeader_t, CUtlMemory<SaveRestoreBlockHeader_t> > *)&m_pEntries);
     FieldInfoView info;
     info.m_pField = &m_pEntries;
     info.m_pOwner = 0;

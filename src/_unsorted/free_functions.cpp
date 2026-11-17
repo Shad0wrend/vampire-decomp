@@ -135142,6 +135142,7 @@ void __fastcall sub_101bb760(void *pSelf, int unused, float scale)
 #include "utlmemory.h"
 #include "utlvector.h"
 #include "CUtlVectorDataOps.h"
+#include "saverestore_utlvector.h"
 struct ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
@@ -135158,17 +135159,12 @@ struct typedescription_t {
     int unk;
 };
 extern int g_1059a714[2];
-static inline ISaveRestoreOps *GetVecOps()
-{
-    static CUtlVectorDataOps<CUtlVector<int, CUtlMemory<int> >, 4> ops;
-    return (ISaveRestoreOps *)&ops;
-}
 int *sub_101bb7e0()
 {
     static typedescription_t dataDesc[] = {
         { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
         { 4, "m_Flags", {4, 0}, 1, 2 },
-        { 10, "m_Recipients", {8, 0}, 1, 2, 0, GetVecOps(), 0 },
+        { 10, "m_Recipients", {8, 0}, 1, 2, 0, (ISaveRestoreOps *)CUtlVectorDataopsInstantiator<CUtlVector<int, CUtlMemory<int> >, 4>::GetDataOps((CUtlVector<int, CUtlMemory<int> > *)0), 0 },
     };
     g_1059a714[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
     g_1059a714[0] = (int)&dataDesc[1];
@@ -178523,11 +178519,7 @@ extern ISaveRestoreOps *g_1055dc70;
 template <class T> class CHandle;
 void sub_10014b82();
 #include "CUtlVectorDataOps.h"
-inline ISaveRestoreOps *Ops_109f09f4()
-{
-	static CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4> ops;
-	return (ISaveRestoreOps *)&ops;
-}
+#include "saverestore_utlvector.h"
 extern int g_105af464[2];
 int *sub_10219770()
 {
@@ -178538,7 +178530,7 @@ int *sub_10219770()
         { 5, "m_bSubdirUnlocked", {0x986, 0}, 5, 2, 0, 0, 0 },
         { 4, "m_EmailFlags", {0xa28, 0}, 128, 2, 0, 0, 0 },
         { 5, "m_bEmailUnlocked", {0xc2c, 0}, 1, 2, 0, 0, 0 },
-        { 0xa, "m_SubDirAttempts", {0x98c, 0}, 1, 2, 0, Ops_109f09f4(), 0 },
+        { 0xa, "m_SubDirAttempts", {0x98c, 0}, 1, 2, 0, (ISaveRestoreOps *)CUtlVectorDataopsInstantiator<CUtlVector<int, CUtlMemory<int> >, 4>::GetDataOps((CUtlVector<int, CUtlMemory<int> > *)0), 0 },
         { 4, "m_nEmailAttempts", {0xc28, 0}, 1, 2, 0, 0, 0 },
         { 1, "m_flSS_Delay", {0x9e4, 0}, 1, 6, "ss_delay", 0, 0 },
         { 1, "m_flSS_Start", {0x9e8, 0}, 1, 6, "ss_start", 0, 0 },
@@ -261472,12 +261464,7 @@ inline ISaveRestoreOps *Ops_109f0748()
 	static CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9> ops;
 	return (ISaveRestoreOps *)&ops;
 }
-#include "CUtlVectorDataOps.h"
-inline ISaveRestoreOps *Ops_109f09dc()
-{
-	static CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >,12> ops;
-	return (ISaveRestoreOps *)&ops;
-}
+#include "CHandleVectorOps.h"
 extern int g_1061664c[2];
 int *sub_1031a600()
 {
@@ -261738,7 +261725,7 @@ int *sub_1031a600()
         { 0, "InputClearActiveDisciplines", {0, 0}, 1, 8, "ClearActiveDisciplines", 0, (void *)sub_1000cdba },
         { 4, "m_aCurWpnActivity", {0x14b0, 0}, 1, 2, 0, 0, 0 },
         { 4, "m_aNextWpnActivity", {0x14b4, 0}, 1, 2, 0, 0, 0 },
-        { 0xa, "m_disciplineVisuals", {0x14c0, 0}, 1, 2, 0, Ops_109f09dc(), 0 },
+        { 0xa, "m_disciplineVisuals", {0x14c0, 0}, 1, 2, 0, (ISaveRestoreOps *)GetHandleVectorOps(), 0 },
         { 4, "m_nLastObfuscateLevel", {0x14d4, 0}, 1, 2, 0, 0, 0 },
         { 4, "m_bitsObfuscateRules", {0x14d8, 0}, 1, 2, 0, 0, 0 },
         { 5, "m_bMeetsObfuscateRules", {0x14dc, 0}, 1, 2, 0, 0, 0 },
