@@ -250729,7 +250729,12 @@ struct CoverPathfinder : CAI_Pathfinder
 	CoverOuterV *GetOuter() { return (CoverOuterV *)m_pOuter; }
 	CoverNetworkV *GetNetwork() { return GetOuter()->m_pNavigator->m_pNetwork; }
 	int GetHullType() { return m_unk08; }
+	// CAI_Component::GetLocalOrigin / GetEntClassname (ai_basenpc.h inlines), used by FindCover
+	const Vector &GetLocalOrigin() { CoverOuterV *pOuter = GetOuter(); return pOuter->GetLocalOrigin(); }
+	const char *GetEntClassname() { return GetOuter()->GetEntClassname(); }
 	bool IsCoverNode(const Vector &nodeOrigin, CoverHintV *pHint, const Vector *pThreatEyePos, CBaseEntity *pThreatEnt, float flMinDistSqr, float flMaxDistSqr, float flMinsX, float flMaxsX, float flMinsY, float flMaxsY);
+	// FindCover's cover test (IsCoverNode with a constructed trace_t)
+	bool IsCoverNodeT(const Vector &nodeOrigin, CoverHintV *pHint, const Vector *pThreatEyePos, CBaseEntity *pThreatEnt, float flMinDistSqr, float flMaxDistSqr, float flMinsX, float flMaxsX, float flMinsY, float flMaxsY);
 };
 #define GetOuter() ((CoverPathfinder *)this)->GetOuter()
 #define GetNetwork() ((CoverPathfinder *)this)->GetNetwork()
@@ -250817,8 +250822,56 @@ inline bool CoverPathfinder::IsCoverNode(const Vector &nodeOrigin, CoverHintV *p
 	}
 	return false;
 }
+#include "CUnknown1003ff80.h"
+// trace_t as FindCover builds it: inside the cover test VC6 declines its (base) constructor by the nested inline
+// budget, so it is the out-of-line COMDAT 0x1003ff80 (sub_10302320's cover test has no such call).
+struct CoverTrace : CGameTrace { CoverTrace() { ((CUnknown1003ff80 *)this)->sub_1003ff80(); } };
+inline bool CoverPathfinder::IsCoverNodeT(const Vector &nodeOrigin, CoverHintV *pHint, const Vector *pThreatEyePos, CBaseEntity *pThreatEnt, float flMinDistSqr, float flMaxDistSqr, float flMinsX, float flMaxsX, float flMinsY, float flMaxsY)
+{
+	float dist = ((const block_10302320::CoverVec &)((const block_10302320::CoverVec &)GetOuter()->GetLocalOrigin()).sub_10146190(nodeOrigin)).LengthSqr();
+	if (dist >= flMinDistSqr && dist < flMaxDistSqr)
+	{
+		int nCoverActivity = GetOuter()->GetCoverActivity(pHint);
+		Vector vEyePos = ((const block_10302320::CoverVec &)nodeOrigin).sub_1011e060(GetOuter()->EyeOffset(nCoverActivity, nCoverActivity));
+		CTraceFilterSimpleTwoEnt filter(GetOuter(), pThreatEnt, 0);
+		CoverTrace tr;
+		block_10302320::sub_103021b0(*pThreatEyePos, vEyePos, 0x2804091, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+		if (tr.m_fraction != 1.0)
+		{
+			float flOfsX, flOfsY;
+			if (vEyePos.x > pThreatEyePos->x)
+			{
+				if (vEyePos.y > pThreatEyePos->y)
+					SetOfs(flOfsX, flOfsY, flMaxsX, flMinsY);
+				else
+					SetOfs(flOfsX, flOfsY, flMaxsX, flMaxsY);
+			}
+			else
+			{
+				if (vEyePos.y > pThreatEyePos->y)
+					SetOfs(flOfsX, flOfsY, flMinsX, flMinsY);
+				else
+					SetOfs(flOfsX, flOfsY, flMinsX, flMaxsY);
+			}
+			Vector vCorner1;
+			((block_10302320::CoverVec *)&vCorner1)->sub_1002c920(nodeOrigin.x + flOfsX, nodeOrigin.y + flOfsY, vEyePos.z);
+			Vector vCorner2;
+			((block_10302320::CoverVec *)&vCorner2)->sub_1002c920(nodeOrigin.x - flOfsX, nodeOrigin.y - flOfsY, vEyePos.z);
+			block_10302320::sub_103021b0(*pThreatEyePos, vCorner1, 0x2804091, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+			if (tr.m_fraction != 1.0)
+			{
+				block_10302320::sub_103021b0(*pThreatEyePos, vCorner2, 0x2804091, (CTraceFilterNoCharacterCollide *)&filter, &tr);
+				if (tr.m_fraction != 1.0)
+				{
+					return true;
+				}
+			}
+		}
+	}
+	return false;
+}
 // FindCover 0x10301720, the sibling that the game's unit compiles just before this function (the out-of-line
-// UTIL_TraceLine COMDAT 0x103021b0 sits between them). Its IsCoverNode call declines the same nested inlines, so
+// UTIL_TraceLine COMDAT 0x103021b0 sits between them). Its cover test declines the same nested inlines, so
 // their COMDATs (Vector(x, y, z), operator-, operator+, UTIL_TraceLine) are compiled before sub_10302320 and VC6
 // knows their side effects there.
 extern int g_10934140;
@@ -250832,11 +250885,11 @@ int CoverFind::sub_10301720(const Vector *pThreatPos, const Vector *pThreatEyePo
 	if (!g_1093408c)
 		return -1;
 
-	int iMyNode = GetNetwork()->sub_102f3c10(GetOuter(), &GetOuter()->GetLocalOrigin());
+	int iMyNode = GetNetwork()->sub_102f3c10(GetOuter(), &((CoverPathfinder *)this)->GetLocalOrigin());
 
 	if (iMyNode == -1)
 	{
-		DevWarning(2, "FindCover() - %s has no nearest node (%f, %f, %f)!\n", GetOuter()->GetEntClassname(), GetOuter()->GetLocalOrigin().x, GetOuter()->GetLocalOrigin().y, GetOuter()->GetLocalOrigin().z);
+		DevWarning(2, "FindCover() - %s has no nearest node (%f, %f, %f)!\n", ((CoverPathfinder *)this)->GetEntClassname(), ((CoverPathfinder *)this)->GetLocalOrigin().x, ((CoverPathfinder *)this)->GetLocalOrigin().y, ((CoverPathfinder *)this)->GetLocalOrigin().z);
 		return -1;
 	}
 
@@ -250876,7 +250929,7 @@ int CoverFind::sub_10301720(const Vector *pThreatPos, const Vector *pThreatEyePo
 
 		Vector nodeOrigin = pNode->sub_102fb0d0(GetHullType());
 		CoverHintV *pHint = pNode->GetHint();
-		if ((!pHint || pHint->sub_102d1450(0)) && ((CoverPathfinder *)this)->IsCoverNode(nodeOrigin, pHint, pThreatEyePos, pThreatEnt, flMinDistSqr, flMaxDistSqr, flMinsX, flMaxsX, flMinsY, flMaxsY) && GetOuter()->IsValidCover(nodeOrigin, pHint))
+		if ((!pHint || pHint->sub_102d1450(0)) && ((CoverPathfinder *)this)->IsCoverNodeT(nodeOrigin, pHint, pThreatEyePos, pThreatEnt, flMinDistSqr, flMaxDistSqr, flMinsX, flMaxsX, flMinsY, flMaxsY) && GetOuter()->IsValidCover(nodeOrigin, pHint))
 		{
 			pNode->Lock(1.0f);
 			CoverHintV *pNodeHint = pNode->GetHint();
