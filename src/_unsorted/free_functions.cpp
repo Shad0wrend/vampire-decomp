@@ -69350,7 +69350,7 @@ void CBaseDoor::sub_100ee810()
 	data.value.iValue = 0;
 	data.value.eVal = 0xffffffff;
 	data.value.fieldType = 0;
-	volatile unsigned int *ph1 = (volatile unsigned int *)((char *)this + 0x628);
+	volatile unsigned int *ph1 = (unsigned int *)((char *)this + 0x628);
 	unsigned int h = *ph1;
 	if (h != 0xffffffff) {
 		EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
@@ -69365,7 +69365,7 @@ void CBaseDoor::sub_100ee810()
 			pEnt->sub_10224170(&data);
 		}
 	}
-	volatile unsigned int *ph2 = (volatile unsigned int *)((char *)this + 0x62c);
+	volatile unsigned int *ph2 = (unsigned int *)((char *)this + 0x62c);
 	h = *ph2;
 	if (h != 0xffffffff) {
 		EntInfo *e = (EntInfo *)(g_10566458 + 4) + (h & 0x1fff);
