@@ -188738,6 +188738,80 @@ void sub_10238380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102383b0 size=0x170
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CWeaponRanged.h"
+#include "CUnknown10183100.h"
+#include "CEntityVSlots.h"
+
+extern int g_1088aee4;
+
+struct CWeaponRangedUnit : CWeaponRanged
+{
+	void sub_102383b0(char bFlag);
+	void SetTimes(float t) { *(float *)((char *)this + 0x734) = *(float *)((char *)this + 0x730) = t; }
+	void ClearOwner(CUnknown10183100 *pOwner, unsigned int mask) { if (pOwner) *(unsigned int *)((char *)pOwner + 0x2088) &= ~mask; }
+};
+
+typedef void (__fastcall *PFN_THIS)(void *pThis);
+#define CALLV(n) ((PFN_THIS)(*(void ***)this)[n])(this)
+#define SLOTS ((CEntityVSlots *)this)
+
+// TARGET: CWeaponRangedUnit::sub_102383b0
+void CWeaponRangedUnit::sub_102383b0(char bFlag)
+{
+	CUnknown10183100 *pOwner = (CUnknown10183100 *)sub_10252290();
+	*(int *)((char *)this + 0x848) = *(int *)((char *)this + 0x84c + g_1088aee4 * 4);
+	unsigned int mask;
+	switch (g_1088aee4) {
+	case 0:
+		mask = 1;
+		break;
+	case 1:
+		mask = 0x800;
+		break;
+	default:
+		return;
+	}
+	float t;
+	bool bClear = true;
+	switch (*(int *)((char *)sub_102517e0() + 0x108)) {
+	case 1:
+	case 2:
+		if (!bFlag)
+			CALLV(372);
+		else
+			CALLV(373);
+		return;
+	case 3:
+		sub_10239d80();
+		if (pOwner)
+			pOwner->sub_10183100(8);
+		t = SLOTS->slot332() + gpGlobals->curtime;
+		SetTimes(t);
+		break;
+	case 4:
+		if (!*(char *)((char *)this + 0x898))
+			SLOTS->slot374();
+		SetTimes(SLOTS->slot332() + gpGlobals->curtime);
+		g_1088aee4 = 0;
+		*(int *)((char *)this + 0x848) = *(int *)((char *)this + 0x84c);
+		break;
+	case 6:
+		sub_10239e70();
+		t = SLOTS->slot332() + gpGlobals->curtime;
+		SetTimes(t);
+		break;
+	default:
+		SetTimes(SLOTS->slot332() + *(float *)((char *)this + 0x730));
+		bClear = false;
+		break;
+	}
+	if (bClear)
+		ClearOwner(pOwner, mask);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10239170 size=0x36
 // TARGET: CBaseCombatWeapon::sub_10239170
 #include "CBaseCombatWeapon.h"

@@ -12395,6 +12395,7 @@
 0x10010aaa func   ?sub_100b7130@@YIXPAUMem4@@HH@Z sub_100b7130
 0x10010aaf func   _tectonic tectonic
 0x10010ab4 func   ?sub_100d5000@@YAXXZ sub_100d5000
+0x10010ab9 func   ?sub_102383b0@CWeaponRangedUnit@@QAEXD@Z CWeaponRangedUnit::sub_102383b0
 0x10010abe func   ?vfunc81@CResearchBook_MG_BRAWL@@QAEHXZ CResearchBook_MG_BRAWL::vfunc81
 0x10010ac3 func   ?vfunc268@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z CBaseVampireSkillEntity::vfunc268
 0x10010ac8 func   ?sub_10168e60@@YA_NPAXPAUEntX@@@Z sub_10168e60
