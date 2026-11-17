@@ -5582,6 +5582,8 @@ void CAI_BaseNPCTroika::vfunc433()
 // END FUNCTION
 
 // FUNCTION: 0x102b35b0 size=0x25d
+#include "CAI_Motor.h"
+#include "CAI_Navigator.h"
 #include "CEHandleGet.h"
 #include "CSoundControllerImp.h"
 #include "CTriggerProximity.h"
@@ -5614,48 +5616,127 @@ struct CSoundView
 	Vector m_vecOrigin;	// +0x20
 };
 
-// The game's out-of-line copy of the entity list's LookupEntity (0x100290c0) was compiled before this function in
-// its unit: VC6 then knows the call writes no memory and keeps g_pEntityList in esi across it. The body here only
-// has to make VC6 see ecx as clobbered (as the game's caller does); the judge links the call to 0x100290c0.
-namespace block_102b35b0 {
-struct CEntListUnit
-{
-	void *m_vtable;
-	EHandleEntInfo m_EntPtrArray[0x2000];
-	unsigned int sub_100290c0(unsigned int *pHandle);
-};
-unsigned int CEntListUnit::sub_100290c0(unsigned int *pHandle)
-{
-	unsigned int h = *pHandle;
-	if (h != 0xffffffff) {
-		EHandleEntInfo *pInfo = &m_EntPtrArray[h & 0x1fff];
-		if (pInfo->m_SerialNumber == (int)(h >> (pHandle[1] & 31)))
-			return (unsigned int)pInfo->m_pEntity;
-	}
-	return 0;
-}
-}
-using namespace block_102b35b0;
+// The game's first decliner of the header inline EHandleEntityList::LookupEntity in this unit is
+// CAI_BaseNPCTroika::OnScheduleChange (vfunc435, 0x102a0940, judged 0 below as a same-unit copy): its LookupEntity
+// COMDAT is compiled before this function, so VC6 knows the call's side effects (not its registers) here.
+#include "CUnknown1027d990.h"
+#include "CUnknown102ee270.h"
+#include "CUnknown102e0a60.h"
+#include "CUnknown101e3af0.h"
 
-inline CBaseEntity *LookupOwner(const CBaseHandle *h)
+extern unsigned char g_10739a64;
+extern CUnknown101e3af0 g_10739a4c;
+void sub_1018e910(void *pThis);
+
+namespace block_102b35b0
 {
-	return (CBaseEntity *)((CEntListUnit *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)h);
+struct CUnk1026d160X
+{
+	void sub_1026d160();
+};
+
+struct CSetAttackExtentsSlot
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(const float *pExtents);
+};
+
+struct CScheduleChange435 : CAI_BaseNPCTroika
+{
+	CAI_Motor *GetMotor() { return m_pMotor5d44; }
+	CAI_Navigator *GetNavigator() { return m_p5d34; }
+	void AddNpcFlags(unsigned int f) { m_flags14bc |= f; }
+	unsigned int HasNpcFlags(unsigned int f) const { return m_flags14bc & f; }
+	void RemoveNpcFlags(unsigned int f) { m_flags14bc &= ~f; }
+	void RemoveTroikaFlags(unsigned int f) { m_flags14b8 &= ~f; }
+	unsigned int HasNavFlags(unsigned int f) const { return m_flags5d8c & f; }
+	void RemoveNavFlags(unsigned int f) { m_flags5d8c &= ~f; }
+	void sub_102a0940(void *pSchedule);
+};
+
+void CScheduleChange435::sub_102a0940(void *pSchedule)
+{
+	CAI_BaseNPC::vfunc435(pSchedule);
+	AddNpcFlags(0x80000004);
+
+	if ((~m_flags14b8 & 8) != 0) {
+		if (((CUnknown1027d990 *)this)->sub_1027d990() != 3
+			&& ((CUnknown1027d990 *)this)->sub_1027d990() != 1)
+			((CUnknown102ee270 *)GetNavigator())->sub_102ee270();
+
+		sub_102b53d0(1, "Leaving interesting place (OnScheduleChange)");
+		m_n6300 = 0;
+		m_n659c = 0;
+		((CUnknown102e0a60 *)GetMotor())->sub_102e0a60(0x43340000);
+		m_b1a40 = 0;
+		m_flGoalTolerance = 0;
+		m_flInsideInterruptDistanceSqr = 0;
+		m_flOutsideInterruptDistanceSqr = 0;
+		m_flInterruptTime = 0;
+		((CBaseHandle &)m_hMoveTargetEnt) = (IHandleEntity *)0;
+
+		if (((const CBaseHandle *)&m_h5d24)->Get())
+			((CEntityVSlots *)this)->slot532(8);
+
+		RemoveTroikaFlags(0x440b4681);
+		RemoveNpcFlags(0x88000eb0);
+		if (HasNpcFlags(0x1000)) {
+			RemoveNpcFlags(0x80001000);
+			((CUnk1026d160X *)this)->sub_1026d160();
+		}
+
+		if ((m_flags14bc & 1) == 1) {
+			float *pExtents = (float *)((char *)this + 0x65d0);
+			((CSetAttackExtentsSlot *)this)->v15(pExtents);
+			pExtents[0] = -1.0f;
+			pExtents[1] = -1.0f;
+			pExtents[2] = -1.0f;
+			RemoveNpcFlags(0x80000001);
+		}
+
+		*((char *)GetMotor() + 0x28) = 0;
+		m_flDesiredMoveYaw = 0;
+		m_bWaitFinishedSet = 0;
+	}
+
+	if (HasNpcFlags(0x40000000)) {
+		if (g_10739a64)
+			g_10739a4c.sub_101e3c80((CBaseCombatCharacter *)this, 1);
+		sub_1018e910(this);
+		m_b63d8 = 0;
+	}
+
+	RemoveNpcFlags(0xc0000000);
+	RemoveTroikaFlags(0x28000000);
+	if (HasNavFlags(0x2000))
+		RemoveNavFlags(0x2000);
 }
+}
+
+
+struct CSoundView467 : CSoundView
+{
+	int SoundType() const { return m_iType; }
+	const Vector &GetSoundOrigin() { return m_vecOrigin; }
+};
 
 // TARGET: ?vfunc467@CAI_BaseNPCTroika@@QAE_NPAH@Z
 bool CAI_BaseNPCTroika::vfunc467(int *pOther)
 {
-	CSoundView *pSound = (CSoundView *)pOther;
+	CSoundView467 *pSound = (CSoundView467 *)pOther;
 
 	if (!pSound)
 		return false;
 	if (g_10924fba)
 		return false;
-	if (g_10924fb9 && LookupOwner(&pSound->m_hOwner) && LookupOwner(&pSound->m_hOwner)->m_pA8)
+	if (g_10924fb9 && pSound->m_hOwner.Get() && pSound->m_hOwner->m_pA8)
 		return false;
 	if ((*(unsigned int *)((char *)this + 0x5b84) & 0x800) == 0x800) {
-		CBaseEntity *pFriend = LookupOwner((CBaseHandle *)((char *)this + 0x60ac));
-		if (LookupOwner(&pSound->m_hOwner) == pFriend)
+		CBaseEntity *pFriend = m_hFriendPlayer.Get();
+		if (pSound->m_hOwner.Get() == pFriend)
 			return false;
 	}
 	if (pSound->m_hOwner.Get() == (CBaseEntity *)this)
@@ -5665,14 +5746,14 @@ bool CAI_BaseNPCTroika::vfunc467(int *pOther)
 		if (!pBCC || !pBCC->sub_10146b20((CBaseCombatCharacter *)this))
 			return false;
 	}
-	if (pSound->m_iType == 4) {
+	if (pSound->SoundType() == 4) {
 		CBaseEntity *pEnt = pSound->m_hOwner.Get();
 		if (pEnt && pEnt->m_pA8 && g_1072c540.sub_101be710((CBaseEntity *)pEnt->m_pA8, (CBaseEntity *)this))
 			return false;
 	}
 	if ((*(unsigned int *)((char *)this + 0x14b8) & 0x20400) != 0) {
 		Vector v;
-		float flDist = (pSound->m_vecOrigin - *((CEntityVSlots *)this)->slot196(&v)).Length();
+		float flDist = (pSound->GetSoundOrigin() - *((CEntityVSlots *)this)->slot196(&v)).Length();
 		float f = ((CNpcVFunc476SlotView *)this)->vfunc476() * pSound->m_iVolume * 0.25f;
 		if (pSound->m_hOwner.Get() != 0)
 			pSound->m_hOwner->sub_1009d850(pOther, &f);
