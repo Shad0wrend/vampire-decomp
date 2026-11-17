@@ -203886,11 +203886,11 @@ void __fastcall sub_1027c300(void *pThis);
 
 struct CVec36
 {
-	volatile char *m_pMemory;
-	volatile int m_allocationCount;
-	volatile int m_growSize;
-	volatile int m_size;
-	volatile char *m_pElements;
+	char *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	char *m_pElements;
 };
 
 struct CHumanoidHandle5f84
@@ -203907,12 +203907,12 @@ struct CAIHumanoidCtorView
 	char pad2[0x5f44 - 0x19b4];
 	void * volatile vptr5f44;
 	volatile int i5f48;
-	volatile int i5f4c;
+	int i5f4c;
 	Vector v5f50;
 	Vector v5f5c;
 	Vector v5f68;
 	char pad3[0x5f80 - 0x5f74];
-	volatile int i5f80;
+	int i5f80;
 	CHumanoidHandle5f84 h5f84;
 	CVec36 vec;
 	volatile int i5f9c;
