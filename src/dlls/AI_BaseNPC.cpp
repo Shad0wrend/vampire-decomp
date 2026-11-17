@@ -855,32 +855,99 @@ bool CAI_BaseNPC::sub_1027d0a0()
 #include "CEntityVSlots.h"
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
+#include "CAI_BaseNPC_vfunc144.h"
+#include "CCineNPC.h"
+#include "CUnknown103158f0.h"
+#include "IPhysicsObject.h"
 
-struct CDevFlagObj { virtual void vfunc0(); virtual void vfunc1(); };
-extern CDevFlagObj *g_10924a6c;
+#include "ConVar.h"
+
+// The game's first decliner of the header inline EHandleEntityList::LookupEntity in this unit is
+// CAI_BaseNPC::Event_Killed (0x10265ad0, judged 0 below as a same-unit copy): its LookupEntity COMDAT is compiled
+// before CineCleanup, so VC6 knows the call's side effects (not its registers) there, as in the game.
+extern ConVar g_106bbaa0;
+extern ConVar g_10924a68;
+#define FILE_144 "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp"
 
 void __cdecl sub_101cf390(CAI_BaseNPC *pEnt, const Vector &mins, const Vector &maxs);
 float __cdecl sub_102d61e0(int hull);
 int __cdecl sub_101cd250(CAI_BaseNPC *pEnt, int mask, CBaseEntity *pIgnore);
 
-#pragma auto_inline(off)
-struct CEntListLookup1027d170
+
+namespace block_1027d170
 {
-	void *m_vtable;
-	EHandleEntInfo m_EntPtrArray[0x2000];
-	IHandleEntity *sub_100290c0(const CBaseHandle &handle);
+struct CScriptView144
+{
+	char m_pad0000[0x204];
+	unsigned int m_spawnflags;
+	char m_pad0208[0x5f91 - 0x208];
+	char m_bPlayedSequence;
 };
-IHandleEntity *CEntListLookup1027d170::sub_100290c0(const CBaseHandle &handle)
+
+struct CDamageInfo144 : CAI_NPCDamageRecord
 {
-	unsigned int i = handle.m_Index;
-	if (i == 0xffffffff)
-		return 0;
-	const EHandleEntInfo *pInfo = &m_EntPtrArray[i & 0x1fff];
-	if (pInfo->m_SerialNumber == (int)(i >> (i & 31)))
-		return pInfo->m_pEntity;
-	return 0;
+	CBaseEntity *GetAttacker() const { return m_pInflictor; }
+};
+
+struct CEventKilled144 : CAI_BaseNPCUnit144
+{
+	IPhysicsObject *VPhysicsGetObject() const { return m_pPhysObj36c; }
+	void SetIdealStateDbg(int state, const char *pszFile, int nLine) { m_pszFile1b3c = pszFile; m_nLine1b40 = nLine; m_nIdealState5cc4 = state; }
+	void SetTouchNull() { *(int *)((char *)this + 0x1ec) = 0; }
+	void SetCondition(int iCondition) { if (g_10924a68.GetBool()) {} sub_10269a20(iCondition); }
+	void sub_10265ad0(const CDamageInfo144 &info);
+};
+
+void CEventKilled144::sub_10265ad0(const CDamageInfo144 &info)
+{
+	if (m_pSchedule5c38 && (int)m_pSchedule5c38 == sub_102cc1f0(0x3a))
+		return;
+
+	if (m_nState5cc0 == 4 && m_hScript5d74.Get())
+	{
+		CScriptView144 *pScript = (CScriptView144 *)m_hScript5d74.Get();
+		if (pScript->m_bPlayedSequence && (((CScriptView144 *)m_hScript5d74.Get())->m_spawnflags & 0x2080) != 0x80)
+		{
+			m_LastDamage = info;
+			return;
+		}
+		((CCineNPC *)m_hScript5d74.Get())->sub_101a8c30();
+		IPhysicsObject *pPhys;
+		if (g_106bbaa0.GetBool() && (pPhys = VPhysicsGetObject()))
+		{
+			Vector vecTmp;
+			Vector vecPos;
+			vecPos = *vfunc263(&vecTmp);
+			pPhys->vfunc39((float *)&vecPos, 0);
+		}
+	}
+
+	vfunc511();
+	if (m_n153c == -1 || !m_h1538.Get())
+		vfunc488();
+
+	sub_10265a90(info.GetAttacker());
+	if (((CBaseEntity *)this)->sub_100b3700() & 0x2000)
+	{
+		SetTouchNull();
+		sub_10265a40();
+	}
+	sub_1032b9b0((int)&info);
+	SetIdealStateDbg(7, FILE_144, 0x217);
+	SetCondition(0x4c);
+	m_hAttacker5b7c = info.GetAttacker();
+	m_b5b80 = 1;
+	sub_1028ae60();
+	if (m_pSquad5da4)
+		((CUnknown103158f0 *)m_pSquad5da4)->sub_103158f0((CBaseEntity *)this);
+	if ((char)vfunc552())
+		sub_102695d0();
+	else
+		sub_101babc0(0x20, vfunc217(), 0x180, 30.0f, 0);
+	SetIdealStateDbg(7, FILE_144, 0x241);
+	sub_1026e340(7);
 }
-#pragma auto_inline(on)
+}
 
 struct CCineCleanupScript
 {
@@ -906,8 +973,7 @@ struct CCineHandle : CBaseHandle
 {
 	CCineCleanupScript *Get() const
 	{
-		CEntListLookup1027d170 *pList = (CEntListLookup1027d170 *)EHandleDetail::g_10566458;
-		return (CCineCleanupScript *)pList->sub_100290c0(*this);
+		return (CCineCleanupScript *)CBaseHandle::Get();
 	}
 	CCineCleanupScript *operator->() const { return Get(); }
 };
@@ -992,6 +1058,7 @@ struct CAI_CineCleanupNPC : public CAI_BaseNPC
 	const Vector &GetLocalOrigin() { return *(Vector *)vfunc220(); }
 	void SetLocalOrigin(const Vector &v) { ((CEntityVSlots *)this)->slot62((float *)&v.x); }
 	void SetMoveType(int a, int b) { ((CEntityVSlots *)this)->slot93(a, b); }
+	void SetCondition(int iCondition) { if (g_10924a68.GetBool()) {} sub_10269a20(iCondition); }
 };
 
 // TARGET: CAI_CineCleanupNPC::sub_1027d170
@@ -1113,8 +1180,7 @@ bool CAI_CineCleanupNPC::sub_1027d170()
 	{
 		p->m_nLine = 0x2b22;
 		p->m_IdealState = 7;
-		g_10924a6c->vfunc1();
-		sub_10269a20(0x4c);
+		p->SetCondition(0x4c);
 	}
 	p->m_spawnflags &= ~0x80;
 	return true;
