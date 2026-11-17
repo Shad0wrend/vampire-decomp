@@ -191856,7 +191856,7 @@ void sub_1023ea20()
 				g_10752ce0[i] = pNode->m_pNext;
 				unsigned int h = pNode->m_hEnt;
 				if (h != 0xffffffff) {
-					volatile CQueueHandleEntry *e = (volatile CQueueHandleEntry *)(g_10566458 + (h & 0x1fff) * 12 + 4);
+					volatile CQueueHandleEntry *e = (CQueueHandleEntry *)(g_10566458 + (h & 0x1fff) * 12 + 4);
 					if (e->m_serial == (h >> 13) && e->m_pEnt != 0) {
 						void *pEnt;
 						if (e->m_serial == (h >> 13))
