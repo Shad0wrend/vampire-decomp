@@ -179058,7 +179058,7 @@ static inline HackEnt *HackLookup(unsigned int h)
 // TARGET: CPropHacking::sub_1021b410
 void CPropHacking::sub_1021b410()
 {
-	volatile unsigned int &hUser = *(volatile unsigned int *)((char *)this + 0x8c);
+	volatile unsigned int &hUser = *(unsigned int *)((char *)this + 0x8c);
 	if (HackLookup(hUser)) {
 		HackEnt *pE = HackLookup(hUser);
 		HackUser *pUser = (pE == 0) ? 0 : pE->m_pUser;
