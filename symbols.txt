@@ -2733,6 +2733,7 @@
 0x10004778 func   ?sub_103aaf50@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::sub_103aaf50
 0x1000477d func   ?sub_102652f0@CUnknown102652f0@@QAEHXZ CUnknown102652f0::sub_102652f0
 0x10004782 func   ?vfunc71@CBaseTerminal@@QAEXXZ CBaseTerminal::vfunc71
+0x10004787 func   ?vfunc352@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc352
 0x1000478c func   ?vfunc1@CCopyRecipientFilter@@UAEIXZ CCopyRecipientFilter::vfunc1
 0x10004791 func   ?sub_102cdd10@CUtlRBTree12@@QBEGPBX@Z CUtlRBTree12::sub_102cdd10
 0x10004796 func   ?sub_1025df20@CUnknown1025df20@@QAEHXZ CUnknown1025df20::sub_1025df20

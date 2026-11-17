@@ -4376,6 +4376,126 @@ void CBaseCombatCharacter::vfunc351(CBaseCombatCharacter *pTarget)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1033a400 size=0x4ad
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CBaseCombatCharacter.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CGlobalEntityList.h"
+#include <stdio.h>
+struct CUnknownA8 { void sub_1017df50(int a, float b, const char *c); void sub_1017e150(int a, float b, const char *c); };
+struct CFeedDbg { virtual char vfunc0(); virtual char vfunc1(); char m_pad[0x28]; int m_n2c; };
+extern CFeedDbg *g_10937034;
+struct CBloodAmt { int sub_101e9290(void *pEnt, int n); };
+extern CBloodAmt g_10739d08;
+struct CFeedFlagsView { unsigned int sub_1033c9c0(); };
+void __fastcall sub_10293e20(void *, float);
+const char *sub_101d3730(const char *fmt, ...);
+
+
+namespace block_1033a400 {
+struct CUnknown100290c0 : EHandleEntityList
+{
+	IHandleEntity *sub_100290c0(const CBaseHandle &handle) const;
+};
+IHandleEntity *CUnknown100290c0::sub_100290c0(const CBaseHandle &handle) const
+{
+	unsigned int i = handle.m_Index;
+	if (i == 0xffffffff)
+		return 0;
+	const EHandleEntInfo *pInfo = &m_EntPtrArray[i & 0x1fff];
+	if ((unsigned int)pInfo->m_SerialNumber == (i >> (m_EntPtrArray[0].m_pad & 31)))
+		return pInfo->m_pEntity;
+	else
+		return 0;
+}
+}
+using namespace block_1033a400;
+inline CBaseCombatCharacter *LK(const CBaseHandle &h) { return (CBaseCombatCharacter *)((CUnknown100290c0 *)EHandleDetail::g_10566458)->sub_100290c0(h); }
+
+// TARGET: CBaseCombatCharacter::vfunc352
+void CBaseCombatCharacter::vfunc352()
+{
+	ScopeTrace trace("CBaseCombatCharacter::Feed", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	EHANDLE *pVictim = &m_h149c;
+	if (!LK(*pVictim))
+		return;
+	EHANDLE *pTarget = &m_hTarget1538;
+	if (!((LK(*pTarget) && m_nTarget153c != -1 && m_nTargetMode1540 == 0)
+		|| (LK(*pTarget) && m_nTarget153c != -1 && m_nTargetMode1540 == 2)
+		|| (LK(*pTarget) && m_nTarget153c != -1 && m_nTargetMode1540 == 6)))
+		return;
+	if (m_flNextFeed1490 > gpGlobals->curtime)
+		return;
+	if (!g_10937034->vfunc1() && g_10937034->m_n2c) {
+		char buf[256];
+		sprintf(buf, "%s Feed with %s", sub_100ab4f0(), pVictim->Get()->sub_100ab4f0());
+		sub_103221b0(buf);
+	}
+	if (sub_103395f0()) {
+		int n = 1;
+		bool bA = (((CFeedFlagsView *)this)->sub_1033c9c0() & 0x8000) == 0x8000 && pTarget->Get() && m_nTarget153c != -1 && m_nTargetMode1540 == 6;
+		bool bB = (((CFeedFlagsView *)this)->sub_1033c9c0() & 0x10000) == 0x10000 && pTarget->Get() && m_nTarget153c != -1 && m_nTargetMode1540 == 6;
+		if (bA) {
+			n = 3;
+			if (m_iCurBloodStolenMod < 0)
+				m_iCurBloodStolenMod = 0;
+		}
+		do {
+			n--;
+			int mod = m_iCurBloodStolenMod;
+			if (mod != 0) {
+				if (mod < 0) {
+					m_iCurBloodStolenMod = mod + 1;
+					continue;
+				}
+				n += mod;
+				m_iCurBloodStolenMod = 0;
+			}
+			if (bB) {
+				if ((int)pTarget != 6) { m_iBloodStolen++; goto L2; }
+				m_iBloodStolen++;
+			L1:
+			L2:
+				;
+			} else {
+				if (sub_10338cb0())
+					m_iBloodStolen++;
+				sub_1033c340(g_10739d08.sub_101e9290(m_h149c.Get(), 1));
+			}
+		} while (n > 0);
+		((CBaseCombatCharacter *)m_h149c.Get())->sub_10338df0(0);
+		if (!(pTarget->Get() && m_nTarget153c != -1 && m_nTargetMode1540 == 2)) {
+			void *pNpc = m_h149c.Get()->m_pNPC98;
+			if (pNpc)
+				sub_10293e20(pNpc, 3.0f);
+			CUnknownA8 *p = (CUnknownA8 *)m_pA8;
+			if (p) {
+				p->sub_1017df50(2, 2.0f, sub_101d3730("Feed %s", m_h149c.Get()->sub_100ab4f0()));
+				p->sub_1017e150(3, 2.0f, sub_101d3730("Feed %s", m_h149c.Get()->sub_100ab4f0()));
+			}
+		}
+	}
+	if (m_flFeedInterval1494 > 0.3)
+		m_flFeedInterval1494 = m_flFeedInterval1494 - 0.15;
+	m_flNextFeed1490 = gpGlobals->curtime + m_flFeedInterval1494;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1033b500 size=0xbf
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
