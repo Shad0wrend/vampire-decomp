@@ -27976,7 +27976,9 @@ float CUnit::sub_10075f10()
 
 bool CUnit::sub_10075f30()
 {
-	return m_flEndTime != -1.0f;
+	if (m_flEndTime != -1.0f)
+		return true;
+	return false;
 }
 
 float CUnit::sub_10076b30()
