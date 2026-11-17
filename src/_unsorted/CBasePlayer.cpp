@@ -3353,6 +3353,162 @@ void CBasePlayer::vfunc380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10169960 size=0x56e
+#include "CBaseEntity.h"
+#include "CLogicAuto.h"
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "utlrbtree.h"
+#include "CBasePlayer.h"
+#include "CEHandleGet.h"
+#include "CUnknown10739d08.h"
+#include "CUnknown101c26d0.h"
+#include "CEntityVSlots.h"
+#include "ehandle.h"
+#include "utlvector.h"
+
+struct CFireEmitter484 { char m_pad[0x484]; int m_n484; };
+struct CUnknown100fbac0 { void sub_100fbac0(float a, float b); };
+struct CScareRec { float m_flTime; EHANDLE m_hEnt; int m_n8; int m_nValue; };
+struct CCvarView { virtual void v0(); virtual char vfunc1(); char m_pad[0x24]; float m_f28; int m_n2c; };
+extern CUnknown10739d08 g_10739d08;
+extern CCvarView *g_10725164;
+extern CCvarView *g_1072584c;
+extern float g_104454c4;
+const char *sub_101d3730(const char *fmt, ...);
+struct C10739d08V_10169960 : CUnknown10739d08
+{
+	float sub_101e8bd0();
+	float sub_101e8b70();
+	int sub_101e8b90();
+};
+#define G39D08 ((C10739d08V_10169960 *)&g_10739d08)
+
+struct CBPView_10169960 : CBasePlayer
+{
+	float &F1498() { return *(float *)((char *)this + 0x1498); }
+	unsigned int *HList0FF8() { return (unsigned int *)((char *)this + 0xff8); }
+	EHANDLE &H1D64() { return *(EHANDLE *)((char *)this + 0x1d64); }
+	void sub_1017e980();
+	void sub_1017f600();
+	void sub_10169960();
+};
+
+
+static int g_shift10169960 = 13;
+namespace block_10169960 {
+#pragma auto_inline(off)
+struct LEView : EHandleEntityList
+{
+	unsigned int sub_100290c0(unsigned int *ph);
+};
+unsigned int LEView::sub_100290c0(unsigned int *ph)
+{
+	unsigned int h = *ph;
+	if (h == 0xffffffff)
+		return 0;
+	EHandleEntInfo *p = &m_EntPtrArray[h & 0x1fff];
+	if (p->m_SerialNumber == (int)(h >> g_shift10169960))
+		return (unsigned int)p->m_pEntity;
+	return 0;
+}
+#pragma auto_inline(on)
+}
+#define LE(L, x) ((CBaseEntity *)((block_10169960::LEView *)(L))->sub_100290c0((unsigned int *)(x)))
+
+#define SCARE (*(CUtlVector<CScareRec> *)((char *)this + 0x1d90))
+
+static inline bool Expired10169960(const CScareRec &r) { return (g_1072584c->vfunc1() ? g_104454c4 : g_1072584c->m_f28) + r.m_flTime < gpGlobals->curtime; }
+void CBPView_10169960::sub_10169960()
+{
+	EngineGlobals::CGlobalVars *pGlobals = gpGlobals;
+	if (m_b1475 || pGlobals->curtime - F1498() < 1.0) {
+		if (LE(EHandleDetail::g_10566458, &m_h1538) && m_n153C != -1 && m_n1540 == 8) {
+			if (m_n208C & 0x400f9b) {
+				m_f1478 -= G39D08->sub_101e8bd0();
+				pGlobals = gpGlobals;
+			}
+			if (pGlobals->curtime >= m_f1478) {
+				m_b14A8 = 0;
+				m_b1475 = 0;
+				m_f1478 = 0;
+				sub_10175400(0);
+				sf31();
+			} else if (pGlobals->curtime >= m_f147C) {
+				m_f147C += (G39D08->sub_101e8b70() + 0.0f);
+				CBaseEntity *pB = m_n153C != -1 ? LE(EHandleDetail::g_10566458, &m_h1538) : 0;
+				CBaseEntity *pA = m_n153C != -1 ? LE(EHandleDetail::g_10566458, &m_h1538) : 0;
+				CUnknown101c26d0 info;
+				info.sub_101c26d0(pA, pB, (float)G39D08->sub_101e8b90(), 0x10000000, 0, 0, -1);
+				((CBaseEntity *)this)->sub_100a1250(&info);
+			}
+		}
+	} else if (m_b14A8 && (m_n208C & 0x400f9b)) {
+		m_b14A8 = 0;
+		sf31();
+	}
+	sub_10181780();
+	sub_10181be0();
+	sub_1017e980();
+	sub_1017ec40();
+	sub_1017f600();
+	EHandleEntityList *pList = EHandleDetail::g_10566458;
+	float f = 0.0f;
+	for (int i = 0; i < 18; i++) {
+		if (((CGlobalEntityList *)pList)->sub_100290c0(&HList0FF8()[i]) && ((CFireEmitter484 *)((CGlobalEntityList *)pList)->sub_100290c0(&HList0FF8()[i]))->m_n484)
+			f += 1.0f;
+	}
+	if (f > g_104454c4) {
+		CBaseEntity *e = sub_10163f70();
+		if (e) {
+			((CUnknown100fbac0 *)e)->sub_100fbac0(f * 0.055555556f > 1.0 ? 1.0 : (f * 0.055555556f < 0.5 ? 0.5 : f * 0.055555556f), 0);
+		}
+	} else {
+		unsigned int *p = (unsigned int *)&H1D64();
+		if (((CGlobalEntityList *)pList)->sub_100290c0(p) && ((CFireEmitter484 *)((CGlobalEntityList *)pList)->sub_100290c0(p))->m_n484) {
+			((CUnknown100fbac0 *)pList->LookupEntity(*(CBaseHandle *)p))->sub_100fbac0(0, 0.5f);
+			H1D64().Get()->sub_100fbbb0(0.6f);
+		}
+	}
+	int cnt = SCARE.Count();
+	if (cnt != 0) {
+		int limit = g_10725164->vfunc1() ? 0 : g_10725164->m_n2c;
+		if (cnt > limit) {
+			int best = 0;
+			for (int i = 0; i < cnt; i++) {
+				if (SCARE[i].m_flTime > SCARE[best].m_flTime) {
+					best = i;
+				}
+			}
+			CBaseEntity *pEnt = SCARE[best].m_hEnt.Get();
+			const char *name;
+			if (pEnt && pEnt->m_pNPC98) {
+				CBaseEntity *p2 = SCARE[best].m_hEnt.Get();
+				name = (!p2 ? (CBaseEntity *)0 : (CBaseEntity *)p2->m_pNPC98)->sub_100ab4f0();
+			} else
+				name = "UNKNOWN";
+			sub_1017df50(SCARE[best].m_nValue, -1.0f, sub_101d3730("SupernaturalScare %s", name));
+			CBaseEntity *p3 = SCARE[best].m_hEnt.Get();
+			CBaseEntity *pOther = !p3 ? 0 : (CBaseEntity *)p3->m_pNPC98;
+			sub_1017f4a0(SCARE[best].m_nValue, pOther, ((CEntityVSlots *)this)->slot217());
+			SCARE.Purge();
+		} else {
+			int i = 0;
+			while (i < SCARE.Count()) {
+				if (Expired10169960(SCARE[i]))
+					SCARE.Remove(i);
+				else
+					i++;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a640 size=0x1
 // TARGET: sub_1016a640
 void __fastcall sub_1016a640(void *pThis)

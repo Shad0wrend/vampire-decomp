@@ -16482,6 +16482,7 @@
 0x10015d5c func   ?sub_1042fd80@@YAII@Z sub_1042fd80
 0x10015d66 func   ?sub_101dd3c0@CUnknown101e0f00Src@@QAEXPBD@Z CUnknown101e0f00Src::sub_101dd3c0
 0x10015d6b func   ?sub_10093d70@CBaseAnimating@@QAEHPBD@Z CBaseAnimating::sub_10093d70
+0x10015d70 func   ?sub_10169960@CBPView_10169960@@QAEXXZ CBPView_10169960::sub_10169960
 0x10015d75 func   ?sub_1010c520@CUnit1010c520@@QAEXHHHH@Z CUnit1010c520::sub_1010c520
 0x10015d7a func   ?sub_103d5590@CNPC_VWerewolf@@QAEXPAX@Z CNPC_VWerewolf::sub_103d5590
 0x10015d7f func   ?vfunc320@CBasePlayer@@UAE_NHH@Z CBasePlayer::vfunc320
