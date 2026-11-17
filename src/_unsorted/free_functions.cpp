@@ -9581,11 +9581,7 @@ struct CWaterView
 
 void CBaseEntity::sub_1003f4d0()
 {
-	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc;
-	g_109f3620[*g_109f3680].name = "CBaseEntity::PhysicsCheckWaterTransition";
-	g_109f3620[*g_109f3680].file = name;
-	g_109f3620[*g_109f3680].line = g_106b8540;
-	(*g_109f3680)++;
+	ScopeTrace trace("CBaseEntity::PhysicsCheckWaterTransition", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 	CWaterView *pView = (CWaterView *)this;
 	Vector point;
 	Vector vecMins, vecMaxs;
@@ -9597,14 +9593,12 @@ void CBaseEntity::sub_1003f4d0()
 	if (pView->GetWaterType() == 0) {
 		pView->m_nWaterType = cont;
 		pView->m_nWaterLevel = 0;
-		(*g_109f3680)--;
 		return;
 	} else if (cont & CONTENTS_WATERMASK) {
 		pView->m_nWaterType = cont;
 		pView->m_nWaterLevel = 1;
 		if (vecMins[2] == vecMaxs[2]) {
 			pView->m_nWaterLevel = 3;
-			(*g_109f3680)--;
 			return;
 		}
 		point[2] = (vecMaxs[2] + vecMins[2]) * 0.5;
@@ -9615,11 +9609,9 @@ void CBaseEntity::sub_1003f4d0()
 			cont = g_1070b254->vfunc0(&point.x, 0);
 			if (cont & CONTENTS_WATERMASK) {
 				pView->m_nWaterLevel = 3;
-				(*g_109f3680)--;
 				return;
 			}
 		}
-		(*g_109f3680)--;
 		return;
 	} else {
 		{
@@ -9630,8 +9622,6 @@ void CBaseEntity::sub_1003f4d0()
 		pView->m_nWaterType = 0;
 	}
 	pView->m_nWaterLevel = 0;
-	if (0) pView->GetWaterType();	// WORKAROUND: spends inline budget so the first CUtlMemory<int>::Purge of the filter teardown stays a call (0x1002cbd0)
-	(*g_109f3680)--;
 }
 // END FUNCTION
 
