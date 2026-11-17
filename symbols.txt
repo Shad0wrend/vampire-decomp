@@ -15435,6 +15435,7 @@
 0x100147ea func   ?sub_101b66b0@CUnk101b66b0@@QAEPADH@Z CUnk101b66b0::sub_101b66b0
 0x100147ef func   ?sub_1042daa0@CUnknown1042d9a0@@QAEDPAV1@@Z CUnknown1042d9a0::sub_1042daa0
 0x100147f4 func   ?NewNode@?$CUtlRBTree@UCRBEntry8@@H@@QAEHXZ CUtlRBTree<CRBEntry8,int>::NewNode
+0x100147f9 func   ?sub_102da0d0@CUnknown102d9ed0V@@QAE_NPAVCAI_BaseNPCTroika@@PAVVector@@_N@Z CUnknown102d9ed0V::sub_102da0d0
 0x100147fe func   ?vfunc103@CPhysicsAnimlink@@UAEXXZ CPhysicsAnimlink::vfunc103
 0x10014803 func   ?sub_10026e30@@YG_NH@Z sub_10026e30
 0x10014808 func   ?vfunc4@CAI_ProxyMovementSink@@QAE_NHHH@Z CAI_ProxyMovementSink::vfunc4

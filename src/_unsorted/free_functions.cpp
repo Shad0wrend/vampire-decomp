@@ -230175,6 +230175,68 @@ Vector CUnknown102d9ed0::sub_102d9fa0(bool bFlat, const float *pMinOffset, const
 }
 // END FUNCTION
 
+// FUNCTION: 0x102da0d0 size=0x414
+#include "CUnknown102d9ed0.h"
+#include "CCollisionProperty.h"
+#include "CAI_BaseNPCTroika.h"
+extern void (*g_109f3630)(const char *pMsg, ...);
+struct TView : CAI_BaseNPCTroika {
+	bool sub_102a0fb0(Vector *pos, int mask, const Vector *mins, const Vector *maxs);
+	const char *sub_100ab4f0();
+	Vector Org() { return *(Vector *)vfunc220(); }
+};
+namespace block_102da0d0 {
+inline Vector ShrinkXY(const Vector &v) { Vector r; r.x = v.x - 1.0f; r.y = v.y - 1.0f; r.z = v.z; return r; }
+inline Vector GrowXY(const Vector &v) { Vector r; r.x = v.x + 1.0f; r.y = v.y + 1.0f; r.z = v.z; return r; }
+}
+using namespace block_102da0d0;
+struct IPFields { char pad[0x57c]; bool m_b57c; char pad2[0x58c - 0x57d]; int m_n58c; };
+#define F ((IPFields *)this)
+struct CUnknown102d9ed0V : CUnknown102d9ed0
+{
+	bool sub_102da0d0(CAI_BaseNPCTroika *pEnt, Vector *pOut, bool nFilter);
+};
+bool CUnknown102d9ed0V::sub_102da0d0(CAI_BaseNPCTroika *pEnt, Vector *pOut, bool nFilter)
+{
+	int nTry;
+	if (m_nPlacesAlloc - m_nPlaces - F->m_n58c <= 0 || !F->m_b57c)
+		return false;
+	ICollideable *pCol = (ICollideable *)((char *)pEnt + 0x270);
+	Vector mins = ShrinkXY(*(Vector *)pCol->vfunc1());
+	Vector maxs = GrowXY(*(Vector *)pCol->vfunc2());
+	nTry = 0;
+	int nIter = 0;
+	bool ok;
+	do {
+		*pOut = sub_102d9fa0(nFilter, &mins.x, &maxs.x);
+		while (sub_102da9e0(pOut, &mins, &maxs)) {
+			*pOut = sub_102d9fa0(nFilter, &mins.x, &maxs.x);
+			if (++nIter > 8) {
+				g_109f3630("Trouble choosing an unoccupied location inside Interesting Place at (%d, %d, %d)\n", (int)((TView *)this)->Org().x, (int)((TView *)this)->Org().y, (int)((TView *)this)->Org().z);
+				if (nIter != (int)this) { F->m_n58c++; goto trouble2; }
+				F->m_n58c++;
+			trouble:
+			trouble2:
+				return false;
+			}
+		}
+		ok = ((TView *)pEnt)->sub_102a0fb0(pOut, 0x202400b, &mins, &maxs);
+		if (!ok) {
+			g_109f3630("INFORMATION: %s failed hull test at Interesting Place at (%d, %d, %d).\n", ((TView *)pEnt)->sub_100ab4f0(), (int)((TView *)this)->Org().x, (int)((TView *)this)->Org().y, (int)((TView *)this)->Org().z);
+			Vector e = maxs + *pOut;
+			Vector s = mins + *pOut;
+			this->sub_102d9ed0(&s, &e);
+		}
+		nTry++;
+	} while (!ok && nTry < 2);
+	if (nTry >= 2) {
+		g_109f3630("Interesting Place at (%d, %d, %d) is crowded with non-affiliated NPCs.  Might get stuck.\n", (int)((TView *)this)->Org().x, (int)((TView *)this)->Org().y, (int)((TView *)this)->Org().z);
+	}
+	this->sub_102da860((CBaseEntity *)pEnt, pOut, &mins, &maxs);
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x102da600 size=0x151
 struct CTriple
 {
