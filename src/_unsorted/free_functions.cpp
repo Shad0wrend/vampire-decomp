@@ -295841,18 +295841,13 @@ extern ConVar g_1093ca88;
 float sub_101d2c70(Vector *pVec);
 float sub_1013d580(float a, float b);
 
-inline float ConVarFloat(ConVar &cv)
-{
-	return cv.m_pParent->vfunc1() ? (double)g_104454c4 : cv.m_pParent->m_fValue;
-}
-
 bool CNPC_VTzimisce::sub_103be8e0(CBaseEntity *pTarget)
 {
 	if (pTarget) {
 		CGlobalEntityList_Ent *pEnt = EHandle_Get(m_hTarget);
 		Vector vecTarget = *(Vector *)((CSlot220View *)pEnt)->vfunc220();
 		Vector vecResult;
-		sub_102c36d0(vecTarget, pTarget, ConVarFloat(g_1093ca88), 0, &vecResult);
+		sub_102c36d0(vecTarget, pTarget, (g_1093ca88.GetFloat()), 0, &vecResult);
 		Vector vecDelta = vecResult - *(Vector *)((CSlot220View *)this)->vfunc220();
 		float flYaw = sub_101d2c70(&vecDelta);
 		float flCur = ((CSlot220View *)this)->vfunc221()[1];
