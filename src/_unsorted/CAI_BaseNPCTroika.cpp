@@ -4242,6 +4242,11 @@ struct CBaseNPCView
 #define W(off) (*(float *)((char *)sub_1032e7b0() + (off)))
 
 namespace block_1029ca50 {
+struct CUnk1029c9f0
+{
+	char pad0000[0x1c70];
+	float m_1c70;
+};
 #pragma auto_inline(off)
 struct CTroikaDbgUnit : CAI_BaseNPCTroika
 {
@@ -4250,8 +4255,8 @@ struct CTroikaDbgUnit : CAI_BaseNPCTroika
 };
 float CTroikaDbgUnit::sub_1029c9f0(float f, CBaseEntity *p)
 {
-	float r = f * *(float *)((char *)p + 0x1c70);
-	if (r < 0.0f)
+	float r = f * ((CUnk1029c9f0 *)p)->m_1c70;
+	if (0.0f > r)
 		r = 0.0f;
 	return r;
 }
