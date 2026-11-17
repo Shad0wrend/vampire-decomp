@@ -295828,6 +295828,128 @@ bool CNPC_VWerewolf::sub_103cf5f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cfc50 size=0x507
+#include "utlsortvector.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+// TARGET: CNPC_VWerewolf::sub_103cfc50
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include "engineserver.h"
+#include "globalvars.h"
+#include "Tier1.h"
+
+inline bool operator==(const CNPC_VWerewolfVec3 &a, const CNPC_VWerewolfVec3 &v) { return (v.x == a.x) && (v.y == a.y) && (v.z == a.z); }
+struct CWWView : CNPC_VWerewolf { bool sub_103d0db0(CNPC_VWerewolfVec3 a, CNPC_VWerewolfVec3 b); };
+struct CWWHintView : CNPC_VWerewolf { CNPC_VWerewolfVec3 sub_103d68d0(void *pHint); CNPC_VWerewolfVec3 sub_103d6770(void *pHint); };
+#define HV ((CWWHintView *)this)
+
+extern CAI_Hint *g_10925450;
+
+struct WWTimerCvar
+{
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad04[0x24];
+	float m_f28;
+	float GetFloat() { return vfunc1() ? 0.0f : m_f28; }
+};
+extern WWTimerCvar *g_1093d574;
+
+struct CWWIdSpace { int ScheduleGlobalToLocal(int id) const; };
+struct CWWNpcView : CNPC_VWerewolf { CWWIdSpace *GetClassScheduleIdSpace(); };
+struct CWWScheduleV { char m_pad[0x1c]; int m_iScheduleId; int GetId() const { return m_iScheduleId; } };
+inline bool WW_IsCurSchedule(CNPC_VWerewolf *p, int schedId, bool fTranslate = true)
+{
+	return (p->m_pSchedule5c38 &&
+	        ((fTranslate && p->m_pSchedule5c38 == (CNPC_VWerewolfSchedule *)p->sub_102cc1f0(schedId)) ||
+	         (!fTranslate && ((CWWNpcView *)p)->GetClassScheduleIdSpace()->ScheduleGlobalToLocal(((CWWScheduleV *)p->m_pSchedule5c38)->m_iScheduleId) == schedId)));
+}
+
+char CNPC_VWerewolf::sub_103cfc50()
+{
+	ScopeTrace scope("CNPC_VWerewolf::CheckAllMoveHints",
+	                 this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+
+	if (WW_IsCurSchedule(this, 0x15f) || WW_IsCurSchedule(this, 0x15b)
+	    || WW_IsCurSchedule(this, 0x15a) || WW_IsCurSchedule(this, 0x160))
+		return true;
+
+	CNPC_VWerewolfVec3 hintPos;
+	if (!sub_103cf5f0())
+		return false; else { if (m_pHint66bc)
+	{
+		CNPC_VWerewolfVec3 vHint = HV->sub_103d68d0(m_pHint66bc);
+		CNPC_VWerewolfVec3 vTarget = sub_103d9c90();
+		if (((CWWView *)this)->sub_103d0db0(vHint, vTarget))
+			return true;
+	}
+
+	sub_103d1ca0();
+	m_nTick66d4 = engine->vfunc120();
+	m_fl66d8 = gpGlobals->curtime;
+	m_n66b8 = 0;
+
+	CAI_Hint *pHint = g_10925450;
+	Vector vOrigin = *(Vector *)((CNPC_VWerewolf *)(void *)this)->vfunc217();
+	CNPC_VWerewolfVec3 vTarget = sub_103d9c90();
+	float flLimit1 = g_1093d574->vfunc1() ? 0.0f : g_1093d574->m_f28;
+	float flLimit2 = g_1093d574->vfunc1() ? 0.0f : g_1093d574->m_f28;
+
+	CUtlVector<CNPC_VWerewolfVec3> vecPositions;
+
+	while (pHint)
+	{
+		if (sub_103d2070(pHint))
+		{
+			goto found1;
+		}
+
+		if (sub_103d8060(pHint))
+		{
+			hintPos = HV->sub_103d68d0(pHint);
+
+			if (vecPositions.Find(hintPos) == -1)
+			{
+				if ((vOrigin - *(Vector *)((CNPC_VWerewolf *)(void *)pHint)->vfunc217()).Length() < flLimit2
+				    && (*(Vector *)&hintPos - *(Vector *)&vTarget).Length() < flLimit1
+				    && ((CWWView *)this)->sub_103d0db0(hintPos, vTarget))
+				{
+					if (((CWWView *)this)->sub_103d0db0(*(CNPC_VWerewolfVec3 *)&vOrigin, HV->sub_103d6770(pHint)))
+					{
+						goto found2;
+					}
+				}
+			}
+		}
+
+		vecPositions.AddToTail(hintPos);
+		pHint = pHint->m_pNext;
+	}
+	g_109f364c("CNPC_VWerewolf::CheckAllMoveHints FAILED.\n");
+	return sub_103d1d60("CheckAllMoveHints", false);
+found1:
+	sub_103d4690();
+	sub_103d44e0((CNPC_VWerewolfHint66b0 *)pHint, 0);
+	return sub_103d1d60("CheckAllMoveHints", true);
+found2:
+	sub_103d4690();
+	sub_103d44e0((CNPC_VWerewolfHint66b0 *)pHint, 0);
+	return sub_103d1d60("CheckAllMoveHints", true);
+
+
+}
+}
+// END FUNCTION
+
 // FUNCTION: 0x103d0ad0 size=0xd5
 #include "CNPC_VWerewolf.h"
 #include "CEntityVSlots.h"

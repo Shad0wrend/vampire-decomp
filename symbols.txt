@@ -12780,6 +12780,7 @@
 0x1001129d func   ?sub_1012f640@@YA?AUSFloatPair@@PBD@Z sub_1012f640
 0x100112a2 func   ?vfunc70@CNPC_VTzimisceRunner@@UAE_NXZ CNPC_VTzimisceRunner::vfunc70
 0x100112a7 func   ?vfunc81@CFunc_Dust@@QAEHXZ CFunc_Dust::vfunc81
+0x100112ac func   ?sub_103cfc50@CNPC_VWerewolf@@QAEDXZ CNPC_VWerewolf::sub_103cfc50
 0x100112b1 func   ?sub_101f8f30@CUnknown101f0e50@@QAEXPAVCTraitOwnerX@@H@Z CUnknown101f0e50::sub_101f8f30
 0x100112b6 func   ?vfunc593@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc593
 0x100112bb func   ?vfunc443@CBasePlayer@@UAEXH@Z CBasePlayer::vfunc443
