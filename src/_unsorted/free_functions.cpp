@@ -63897,6 +63897,181 @@ const char *CDialog::sub_100e1ad0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2ad0 size=0x4ee
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CDialog.h"
+#include "CBaseEntity.h"
+#include "CEHandleGet.h"
+#include "ScopeTrace.h"
+#include "UtlMem2.h"
+#include "CUtlVector4.h"
+#include "UtlVec8.h"
+#include <string.h>
+
+char sub_100df030(CDialogEntry_t *pEntry);
+
+#pragma auto_inline(off)
+namespace block_100e2ad0 {
+struct S100df010 { int a, b, c, d; };
+bool sub_100df010(S100df010 *p)
+{
+	return p->d == -1;
+}
+}
+#pragma auto_inline(on)
+using namespace block_100e2ad0;
+
+struct DlgVecV
+{
+	int *m_pMemory;
+	int m_allocationCount;
+	int m_growSize;
+	int m_size;
+	int *m_pElements;
+	void GrowCall(int num) { ((CUtlVector4 *)this)->sub_10071ae0(num); }
+	void GrowInline(int num)
+	{
+		if (m_size + num > m_allocationCount)
+			((UtlMem2 *)this)->sub_100eb280(m_size + num - m_allocationCount);
+		m_size += num;
+		m_pElements = m_pMemory;
+	}
+	void Shift(int elem, int num) { ((UtlVec8 *)this)->sub_10071ba0(elem, num); }
+	void AddA(const int &src)
+	{
+		int elem = m_size;
+		GrowCall(1);
+		Shift(elem, 1);
+		int *p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+	}
+	void AddB(const int &src)
+	{
+		int elem = m_size;
+		GrowInline(1);
+		Shift(elem, 1);
+		int *p = &m_pMemory[elem];
+		if (p)
+			*p = src;
+	}
+};
+
+// TARGET: CDialog::sub_100e2ad0
+void CDialog::sub_100e2ad0()
+{
+	ScopeTrace trace("CDialog::accumulate_stats", g_106b8540, g_106b8540);
+	for (int i = 0; i < m_pTable->m_nEntries; i++)
+	{
+		if (sub_100df010((S100df010 *)&m_pTable->m_pEntries[i]))
+		{
+			m_n339c++;
+			for (int k = 0; k < (int)strlen((char *)m_pTable->m_pEntries[i].m_data[1]); k++)
+			{
+				if (((char *)m_pTable->m_pEntries[i].m_data[1])[k] == ' ')
+					m_nLines3398++;
+			}
+			m_nLines3398++;
+			if (sub_100df030(&m_pTable->m_pEntries[i]))
+			{
+				m_n339c++;
+				for (int k = 0; k < (int)strlen((char *)m_pTable->m_pEntries[i].m_data[2]); k++)
+				{
+					if (((char *)m_pTable->m_pEntries[i].m_data[2])[k] == ' ')
+						m_nLines3398++;
+				}
+				m_nLines3398++;
+			}
+			for (int j = 0; j < 7; j++)
+			{
+				char *psz = (char *)m_pTable->m_pEntries[i].m_data[6 + j];
+				if (psz && strlen(psz))
+				{
+					m_n339c++;
+					for (int k = 0; k < (int)strlen((char *)m_pTable->m_pEntries[i].m_data[6 + j]); k++)
+					{
+						if (((char *)m_pTable->m_pEntries[i].m_data[6 + j])[k] == ' ')
+							m_nLines3398++;
+					}
+					m_nLines3398++;
+				}
+			}
+		}
+		else if (strlen((char *)m_pTable->m_pEntries[i].m_data[1]))
+		{
+			m_n33a8++;
+			CDialogDependency dep;
+			dep.sub_100e8fc0((int)this, (int)EHandle_Get(m_hNPC), (char *)m_pTable->m_pEntries[i].m_data[4], (char *)m_pTable->m_pEntries[i].m_data[5], 0, 0);
+			if ((int)strlen((char *)dep.m_a1c) > 0)
+				m_n33a4++;
+			if ((int)strlen((char *)dep.m_a11c) > 0)
+				m_n33a0++;
+			if (dep.m_nType == 4)
+			{
+				switch (dep.m_nArg)
+				{
+				case 0x16:
+					if (dep.m_bNoFlags0c)
+						((DlgVecV *)&m_vec3334)->AddA(-dep.m_n14);
+					else
+						((DlgVecV *)&m_vec3334)->AddA(dep.m_n14);
+					break;
+				case 5:
+					if (dep.m_bNoFlags0c)
+						((DlgVecV *)&m_vec3348)->AddA(-dep.m_n14);
+					else
+						((DlgVecV *)&m_vec3348)->AddA(dep.m_n14);
+					break;
+				case 6:
+					if (dep.m_bNoFlags0c)
+						((DlgVecV *)&m_vec335c)->AddA(-dep.m_n14);
+					else
+						((DlgVecV *)&m_vec335c)->AddA(dep.m_n14);
+					break;
+				case 7:
+					if (dep.m_bNoFlags0c)
+						((DlgVecV *)&m_vec3384)->AddA(-dep.m_n14);
+					else
+						((DlgVecV *)&m_vec3384)->AddA(dep.m_n14);
+					break;
+				case 8:
+					if (dep.m_bNoFlags0c)
+						((DlgVecV *)&m_vec3370)->AddA(-dep.m_n14);
+					else
+						((DlgVecV *)&m_vec3370)->AddA(dep.m_n14);
+					break;
+				}
+			}
+			else if (dep.m_nType == 2)
+			{
+				switch (dep.m_nArg)
+				{
+				case 5:
+					if (dep.m_bNoFlags0c)
+						((DlgVecV *)&m_vec330c)->AddB(-dep.m_n14);
+					else
+						((DlgVecV *)&m_vec330c)->AddB(dep.m_n14);
+					break;
+				case 6:
+					if (dep.m_bNoFlags0c)
+						((DlgVecV *)&m_vec3320)->AddB(-dep.m_n14);
+					else
+						((DlgVecV *)&m_vec3320)->AddB(dep.m_n14);
+					break;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e3100 size=0x53
 extern "C" unsigned int strlen(const char *);
 struct IFileSysView3 {

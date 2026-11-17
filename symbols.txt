@@ -7665,6 +7665,7 @@
 0x1000aaf6 func   ?sub_103eeec0@@YAXXZ sub_103eeec0
 0x1000aafb func   ?sub_101e9f90@CUnknown101e9f10@@QAEDHH@Z CUnknown101e9f10::sub_101e9f90
 0x1000ab00 func   ?sub_1023e180@@YGXPAD@Z sub_1023e180
+0x1000ab05 func   ?sub_100e2ad0@CDialog@@QAEXXZ CDialog::sub_100e2ad0
 0x1000ab0a func   ??0CWeaponRanged@@QAE@XZ CWeaponRanged::CWeaponRanged
 0x1000ab0f func   ?vfunc6@CMoveHelperServer@@UAEXHHHHHHHHHHHH@Z CMoveHelperServer::vfunc6
 0x1000ab14 func   ?vfunc0@CTEInspectionFX@@UAEPAUServerClass@@XZ CTEInspectionFX::vfunc0
