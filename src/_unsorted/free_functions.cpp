@@ -173685,7 +173685,7 @@ struct CItemContainerFwd {
 // TARGET: sub_10209b00
 void CItemContainerFwd::sub_10209b00(int a)
 {
-    this->sub_10209b20((*(volatile int *)a));
+    this->sub_10209b20((*(int *)a));
 }
 // END FUNCTION
 
