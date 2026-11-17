@@ -296920,10 +296920,10 @@ CNPC_VTzimisceHeadClaw *CNPC_VTzimisceHeadClaw::sub_103c1220()
 	*(void ***)(p + 0x19b0) = vt_104bd2a0;
 	sub_10013f7a(p + 0x6670);
 	*(volatile int *)(p + 0x6674) = -1;
-	*(volatile int *)(p + 0x667c) = -1;
-	*(volatile int *)(p + 0x6680) = -1;
+	*(int *)(p + 0x667c) = -1;
+	*(int *)(p + 0x6680) = -1;
 	*(volatile int *)(p + 0x1568) = 0xb;
-	*(volatile int *)(p + 0x156c) = 0xb;
+	*(int *)(p + 0x156c) = 0xb;
 	*(void ** volatile *)p = vt_104cc564;
 	*(void ** volatile *)(p + 0x19b0) = vt_104cc538;
 	return this;
