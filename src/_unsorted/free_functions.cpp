@@ -254903,7 +254903,7 @@ void CUnknown1030a6e0::sub_1030a6e0(const Vector &vPos, float flRadius, CBaseEnt
 // END FUNCTION
 
 // FUNCTION: 0x1030a7f0 size=0x548
-template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "utllinkedlist.h"
 #include "CHL2_Player.h"
 #include "MvsnSec0.h"
 #include "utlrbtree.h"
@@ -255005,7 +255005,7 @@ bool CAI_PlaneSolverCircle::sub_1030a7f0(float probeDist)
 	Vector mins, maxs;
 	Vector npcLoc = pNpc->vfunc192();
 
-	((CCollisionProperty *)(pcd_stage((char *)m_owner) + 0x270))->vfunc15(pcd_stage(&mins), &maxs);
+	((CCollisionProperty *)(((char *)m_owner) + 0x270))->vfunc15((&mins), &maxs);
 	float radiusNpc;
 	{
 		float size[2];
@@ -255038,7 +255038,7 @@ bool CAI_PlaneSolverCircle::sub_1030a7f0(float probeDist)
 				float oneOverDistToObstacleSq = 1 / distToObstacleSq;
 
 				vecTangent.x = oneOverDistToObstacleSq * (-distToTangent * vecToNpc.x + radius * vecToNpc.y);
-				vecTangent.y = (-distToTangent * vecToNpc.y - pcd_stage(radius) * vecToNpc.x) * oneOverDistToObstacleSq;
+				vecTangent.y = (-distToTangent * vecToNpc.y - (radius) * vecToNpc.x) * oneOverDistToObstacleSq;
 				vecTangent.z = 0;
 
 				arc = RAD2DEG(acosf(vecToObstacle.Dot(vecTangent))) * 2.0;
@@ -255057,7 +255057,7 @@ bool CAI_PlaneSolverCircle::sub_1030a7f0(float probeDist)
 
 			if ((i)[m_Obstacles.Base()].hEntity != 0)
 			{
-				weight = (pcd_stage((CNavView *)pcd_stage(this)))->sub_103082b0((CNPCView *)(i)[m_Obstacles.Base()].hEntity.Get(), weight);
+				weight = (((CNavView *)(this)))->sub_103082b0((CNPCView *)(i)[m_Obstacles.Base()].hEntity.Get(), weight);
 			}
 
 			Elem280_t suggestion((i)[m_Obstacles.Base()].type, weight, sub_101d2c70(&vecToObstacle), arc);
@@ -255066,7 +255066,7 @@ bool CAI_PlaneSolverCircle::sub_1030a7f0(float probeDist)
 			case 0: Q_snprintf(suggestion.name, 0x100, "CI_MOVE"); break;
 			case 1: Q_snprintf(suggestion.name, 0x100, "CI_DANGER"); break;
 			case 2: Q_snprintf(suggestion.name, 0x100, "CI_OBJECT"); break;
-			case 3: Q_snprintf(pcd_stage(suggestion.name), 0x100, "CI_NPC"); break;
+			case 3: Q_snprintf(suggestion.name, 0x100, "CI_NPC"); break;
 			case 4: Q_snprintf(suggestion.name, 0x100, "CI_WORLD"); break;
 			case 5: Q_snprintf(suggestion.name, 0x100, "CI_NOKNOW"); break;
 			case 6: Q_snprintf(suggestion.name, 0x100, "CI_OSCILL"); break;
