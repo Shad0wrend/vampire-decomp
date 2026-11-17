@@ -41476,51 +41476,13 @@ void CBaseEntity::sub_1009f3c0(const char *msg, int duration)
 
 void sub_10142e20(CBaseEntity *pEntity, int a, int b, int c, int d, int e);
 void sub_10142aa0(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, int a, float duration);
-#include "CSingleUserRecipientFilter.h"
-struct CEdictUnknown10144a30 { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CBaseEntity *vfunc4(); };
-struct CEdict10144a30 { char m_pad[0x40]; CEdictUnknown10144a30 *m_pUnk40; };
-#define V10_(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
-	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
-struct CEntView10144a30
-{
-	V10_(a0) V10_(a1) V10_(a2) V10_(a3) V10_(a4) V10_(a5) V10_(a6) V10_(a7) V10_(a8) V10_(a9)
-	V10_(b0) V10_(b1) V10_(b2) V10_(b3) V10_(b4) V10_(b5) V10_(b6) V10_(b7) V10_(b8) V10_(b9)
-	V10_(c0) V10_(c1)
-	virtual Vector *vfunc220();
-};
+void sub_10144a30(const Vector *pvA, const Vector *pvB, float f3, float f4, int i5, int i6, int i7, int i8, float f9);
 namespace block_1009f4e0 {
-#pragma auto_inline(off)
-void sub_10144a30(const Vector *pvA, const Vector *pvB, float f3, float f4, int i5, int i6, int i7, int i8, float f9)
+// the centre of the box's bottom face: x/y of the centre, z of the mins
+inline Vector BottomCenter(const Vector &vecCenter, const Vector &vecMins)
 {
-	CEdict10144a30 *pEdict = (CEdict10144a30 *)engine->vfunc38(1);
-	CBaseEntity *pEnt;
-	{
-		ScopeTrace trace("CBaseEntity::Instance", g_106b8540, g_106b8540);
-		if (!pEdict)
-			pEdict = (CEdict10144a30 *)engine->vfunc38(0);
-		if (pEdict && pEdict->m_pUnk40)
-			pEnt = pEdict->m_pUnk40->vfunc4();
-		else
-			pEnt = 0;
-	}
-	if (!pEnt)
-		return;
-	if ((*((CEntView10144a30 *)pEnt)->vfunc220() - *pvA).LengthSqr() > 9e7f)
-		return;
-	CSingleUserRecipientFilter filter(pEnt);
-	engine->vfunc65(&filter, 0x3a);
-	engine->vfunc75((int)pvA);
-	engine->vfunc75(*(int *)pvB);
-	engine->vfunc72(f3);
-	engine->vfunc72(f4);
-	engine->vfunc69(i5);
-	engine->vfunc69(i6);
-	engine->vfunc69(i7);
-	engine->vfunc69(i8);
-	engine->vfunc72(f9);
-	engine->vfunc66();
+	return Vector(vecCenter.x, vecCenter.y, vecMins.z);
 }
-#pragma auto_inline(on)
 }
 using namespace block_1009f4e0;
 
@@ -41546,15 +41508,9 @@ void CBaseEntity::sub_1009f4e0()
 		{
 			CCollisionProperty *pCollide = (CCollisionProperty *)((char *)this + 0x270);
 			Vector center = 0.5f * (*(Vector *)pCollide->vfunc2() + *(Vector *)pCollide->vfunc1());
-			const Vector &maxs = *(Vector *)pCollide->vfunc2();
-			Vector extents;
-			extents.x = maxs.x - center.x;
-			Vector vecDir(1.0f, 0.0f, 0.0f);
-			extents.y = maxs.y - center.y;
-			const float *pMins = pCollide->vfunc1();
-			Vector vecOrigin(center.x, center.y, pMins[2]);
-			Vector vecPos = vecOrigin + *((CEntityVSlots *)this)->slot217();
-			sub_10144a30(&vecPos, &vecDir, (float)sqrt(extents.x * extents.x + extents.y * extents.y), 1.0f, 0xff, 0xff, 0, 0x14, 0);
+			Vector extents = *(Vector *)pCollide->vfunc2() - center;
+			sub_10144a30(&(BottomCenter(center, *(Vector *)pCollide->vfunc1()) + *((CEntityVSlots *)this)->slot217()),
+			             &Vector(1.0f, 0.0f, 0.0f), (float)sqrt(extents.x * extents.x + extents.y * extents.y), 1.0f, 0xff, 0xff, 0, 0x14, 0);
 		}
 	}
 }
