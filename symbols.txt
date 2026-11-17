@@ -3143,6 +3143,7 @@
 0x10004fb1 func   ?sub_10063a20@CUnknown10063a20@@QAEHXZ CUnknown10063a20::sub_10063a20
 0x10004fb6 func   ?vfunc81@CWeaponMelee_ZombieFists@@QAEHXZ CWeaponMelee_ZombieFists::vfunc81
 0x10004fbb func   ?sub_10191170@COrnamentProp@@QAEXPAVCBaseEntity@@@Z COrnamentProp::sub_10191170
+0x10004fc0 func   ?sub_103cf770@CNPC_VWerewolf@@QAE_NXZ CNPC_VWerewolf::sub_103cf770
 0x10004fc5 func   ?sub_102f67a0@@YA_NPBD@Z sub_102f67a0
 0x10004fca func   ?sub_10113cf0@CUnknown10113cf0@@QAEHXZ CUnknown10113cf0::sub_10113cf0
 0x10004fcf func   ?vfunc259@CAI_BaseNPC@@UAEXPAUanimevent_t@@@Z CAI_BaseNPC::vfunc259

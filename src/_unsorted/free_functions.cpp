@@ -296879,6 +296879,95 @@ bool CNPC_VWerewolf::sub_103cf5f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103cf770 size=0x3da
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "CNPC_VWerewolf.h"
+#include "ScopeTrace.h"
+#include "utlvector.h"
+#include "engineserver.h"
+#include "globalvars.h"
+#include "CAIHintSlots.h"
+#include "CEntityVSlots.h"
+
+inline bool operator==(const CNPC_VWerewolfVec3 &a, const CNPC_VWerewolfVec3 &b)
+{
+	return b.x == a.x && b.y == a.y && b.z == a.z;
+}
+
+
+inline int AddTailV(CUtlVector<CNPC_VWerewolfVec3> &v, const CNPC_VWerewolfVec3 &src)
+{
+	return v.InsertBefore(*(volatile int *)&v.m_Size, src);
+}
+static inline void WWStamp(CNPC_VWerewolf *p)
+{
+	p->m_nTick66d4 = engine->vfunc120();
+	p->m_fl66d8 = gpGlobals->curtime;
+	p->m_n66b8 = 0;
+}
+
+bool CNPC_VWerewolf::sub_103cf770()
+{
+	ScopeTrace trace("CNPC_VWerewolf::CheckAllRandomMoveHints", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CNPC_VWerewolfVec3 vecOrigin;
+	if (m_pHint66bc) {
+		CNPC_VWerewolfVec3 vecStart = *(CNPC_VWerewolfVec3 *)vfunc217();
+		CNPC_VWerewolfVec3 vecHint;
+		sub_103d68d0(&vecHint, m_pHint66bc);
+		if ((char)sub_103d0db0(vecStart, vecHint))
+			return true;
+		sub_103d4690();
+	}
+	sub_103d1ca0();
+	WWStamp(this);
+	CNPC_VWerewolfHint66b0 *pHint = (CNPC_VWerewolfHint66b0 *)g_10925450;
+	vecOrigin = *(CNPC_VWerewolfVec3 *)vfunc217();
+	CUtlVector<CNPC_VWerewolfVec3> tried;
+	while (pHint) {
+		char c = sub_103d2810(pHint);
+		if (c) {
+			sub_103d4690();
+			sub_103d44e0(pHint, 1);
+			return sub_103d1d60("CheckAllRandomMoveHints", true);
+		}
+		CNPC_VWerewolfVec3 vecGround;
+		bool b;
+		if ((char)(int)pHint != c) { b = sub_103d7dc0(pHint); goto L2; }
+		b = sub_103d7dc0(pHint);
+	L1:
+	L2:
+		if (b) {
+			CNPC_VWerewolfVec3 tmp;
+			vecGround = *sub_103d68d0(&tmp, pHint);
+			if (tried.Find(vecGround) == -1) {
+				Vector d;
+				VectorSubtract(*(Vector *)&vecOrigin, *((CEntityVSlots *)pHint)->slot217(), d);
+				if (d.Length() < 1500.0f) {
+					CNPC_VWerewolfVec3 tmp2;
+					if ((char)sub_103d0db0(vecOrigin, *sub_103d6770(&tmp2, pHint))) {
+						sub_103d4690();
+						sub_103d44e0(pHint, 1);
+						return sub_103d1d60("CheckAllRandomMoveHints", true);
+					}
+				}
+			}
+		}
+		AddTailV(tried, vecGround);
+		pHint = pHint->m_pNext;
+	}
+	return sub_103d1d60("CheckAllRandomMoveHints", false);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103cfc50 size=0x507
 #include "utlsortvector.h"
 #include "CUnknown101d7520.h"
