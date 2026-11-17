@@ -36322,7 +36322,7 @@ void CBaseAnimating::sub_1008e630(CBaseEntity *pOther)
         ent = g_105387dc;
     }
     ScopeTrace trace("CBaseAnimating::RemoveWind", ent, g_106b8540);
-    volatile unsigned int *ph = (volatile unsigned int *)((char *)this + 0x63c);
+    volatile unsigned int *ph = (unsigned int *)((char *)this + 0x63c);
     unsigned int h = *ph;
     CBaseEntity *cur;
     if (h != 0xffffffff) {
