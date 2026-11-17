@@ -17867,7 +17867,7 @@ struct CBaseTempEntityHeadPlaceholder {
 CTEBloodStream *CTEBloodStream::sub_1005df60(const char *name)
 {
 	((CBaseTempEntityHeadPlaceholder *)this)->sub_10015334(name);
-	volatile int *p = (volatile int *)this;
+	volatile int *p = (int *)this;
 	p[3] = 0;
 	p[4] = 0;
 	p[5] = 0;
