@@ -280203,15 +280203,15 @@ extern "C" int *npc_VChangBrosBlade()
 		sub_1036a320(c + 0x66f8);
 		char *d = c + 0x66fc;
 		*raw = (int)&vt_104adabc;
-		*(volatile int *)(c + 0x19b0) = (int)&vt_104ada90;
+		*(int *)(c + 0x19b0) = (int)&vt_104ada90;
 		sub_1036ec20(d);
-		*(volatile int *)raw = (int)&vt_104ae68c;
+		*(int *)raw = (int)&vt_104ae68c;
 		p = raw;
-		*(volatile int *)(c + 0x19b0) = (int)&vt_104ae660;
+		*(int *)(c + 0x19b0) = (int)&vt_104ae660;
 	} else {
 		p = 0;
 	}
-	int vt = *(volatile int *)p;
+	int vt = *(int *)p;
 	((void (__fastcall *)(void *, int, const char *))(*(((int *)vt) + 0x1a8 / 4)))(p, vt, "npc_VChangBrosBlade");
 	return p;
 }
