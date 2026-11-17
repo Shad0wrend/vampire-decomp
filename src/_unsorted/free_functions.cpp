@@ -228772,7 +228772,7 @@ static inline bool HandleIsValid(unsigned int h)
 
 bool CAI_BaseNPC::sub_102d1350(CBaseEntity *pEnt)
 {
-	volatile unsigned int *ph = (volatile unsigned int *)((char *)this + 0x5e0);
+	volatile unsigned int *ph = (unsigned int *)((char *)this + 0x5e0);
 	if (HandleGet(*ph) != pEnt && HandleIsValid(*ph))
 		return false;
 	if (pEnt)
