@@ -70939,7 +70939,7 @@ extern char vt_10455e90[];
 struct CBaseEntityListView { void sub_100f9a60(); };
 CGlobalEntityList *CGlobalEntityList::sub_100f6b40()
 {
-	volatile int *p = (volatile int *)this;
+	volatile int *p = (int *)this;
 	((CBaseEntityListView *)this)->sub_100f9a60();
 	p[0x6012] = 0;
 	p[0x6013] = 0;
@@ -70948,7 +70948,7 @@ CGlobalEntityList *CGlobalEntityList::sub_100f6b40()
 	p[0x6016] = 0;
 	p[0x6010] = 0;
 	p[0x600f] = 0;
-	*((volatile char *)p + 0x18044) = 0;
+	*((char *)p + 0x18044) = 0;
 	p[0] = (int)vt_10455e90;
 	return this;
 }
