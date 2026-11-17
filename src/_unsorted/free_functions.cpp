@@ -98490,6 +98490,126 @@ void CUnknown1014cad0::sub_1014cad0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014cbf0 size=0x3aa
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CWeaponGravityGun.h"
+#include "CUnknown101d1460.h"
+#include "globalvars.h"
+#include "CEHandleGet.h"
+#include "CEntityVSlots.h"
+
+float __cdecl sub_10146150(const Vector *v);
+#include "CUnknown100290c0.h"
+#pragma auto_inline(off)
+namespace block_1014cbf0 {
+struct CLookUnit : CUnknown100290c0 { unsigned int sub_100290c0(const unsigned int *pHandle); };
+unsigned int CLookUnit::sub_100290c0(const unsigned int *pHandle)
+{
+    unsigned int h = *pHandle;
+    if (h != 0xffffffff) {
+        CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (int)(h >> 13)) {
+            return pSlot->m_Value;
+        }
+    }
+    return 0;
+}
+}
+#pragma auto_inline(on)
+
+#define LK(h) ((CEntityVSlots *)((block_1014cbf0::CLookUnit *)g_10566458)->sub_100290c0((const unsigned int *)&(h)))
+
+inline float VecLen1014cbf0(Vector v) { return sub_10146150(&v); }
+
+void CWeaponGravityGun::sub_1014cbf0(float flRadius, CBaseEntity *pHeld)
+{
+	int objectIndex = -1;
+	int worldIndex = -1;
+	float minDist = flRadius * flRadius;
+
+	if (m_hB1c >= 0)
+	{
+		Vector attract, held;
+		attract = *LK(m_slots9d0[m_hB1c].m_hA)->slot217();
+		held.sub_1003e4b0(*LK(m_slots9d0[m_hB18].m_hA)->slot217());
+		float dist = VecLen1014cbf0(attract - held);
+		if (dist < flRadius * 2)
+		{
+			objectIndex = m_hB1c;
+			worldIndex = m_hB18;
+			minDist = dist * dist;
+		}
+	}
+
+	if (objectIndex < 0)
+	{
+		for (int i = 0; i < m_nB14; i++)
+		{
+			CEntityVSlots *pPellet = LK(m_slots9d0[i].m_hA);
+			if (!pPellet)
+				continue;
+			for (int j = m_nB14; j < m_nB10; j++)
+			{
+				CEntityVSlots *pTest = LK(m_slots9d0[j].m_hA);
+				if (!pTest)
+					continue;
+				if (*((char *)pTest + 0x734))
+					continue;
+				float distSqr = (*pTest->slot217() - *pPellet->slot217()).LengthSqr();
+				if (distSqr < minDist)
+				{
+					Vector worldPos = *LK(m_slots9d0[j].m_hA)->slot217();
+					Vector worldNormal;
+					CGlobalEntityList *pList = g_10566458;
+					if (pList->sub_100290c0((const unsigned int *)&m_slots9d0[j].m_hB))
+					{
+						CUnknown101d1460 tmp;
+						tmp.sub_101d1460(*(int *)((char *)pList->sub_100290c0((const unsigned int *)&m_slots9d0[j].m_hB) + 0x2e0));
+						Vector vX;
+						tmp.sub_10028060(&vX.x, &m_slots9d0[j].m_vec.x);
+						worldNormal.sub_1003e4b0(vX);
+					}
+					else
+					{
+						worldNormal.sub_1003e4b0(m_slots9d0[j].m_vec);
+					}
+					float d = worldNormal.x * worldPos.x + worldPos.y * worldNormal.y + worldPos.z * worldNormal.z;
+					if (m_hB1c == j || DotProduct(worldNormal, *pPellet->slot217()) - d >= 0.0f)
+					{
+						minDist = distSqr;
+						objectIndex = j;
+						worldIndex = i;
+					}
+				}
+			}
+		}
+	}
+
+	m_bB24 = 0;
+	if (objectIndex >= 0 && worldIndex >= 0)
+	{
+		if (objectIndex != m_hB1c || worldIndex != m_hB18)
+		{
+			m_flB20 = gpGlobals->curtime;
+			m_hB1c = objectIndex;
+			m_hB18 = worldIndex;
+		}
+		if (minDist < 9.0f)
+			m_bB24 = 1;
+	}
+	else
+	{
+		m_hB1c = -1;
+		m_hB18 = -1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d090 size=0x52
 #include "CBaseEntity.h"
 extern int g_10723938;

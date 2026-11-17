@@ -9384,6 +9384,7 @@
 0x1000cdba func   ?sub_1033d8a0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_1033d8a0
 0x1000cdbf func   ?vfunc283@CBaseCombatWeapon@@UAE_NPAVCBaseEntity@@@Z CBaseCombatWeapon::vfunc283
 0x1000cdc4 func   ?sub_100bb030@CBeam@@QAEXPAVCBaseEntity@@@Z CBeam::sub_100bb030
+0x1000cdc9 func   ?sub_1014cbf0@CWeaponGravityGun@@QAEXMPAVCBaseEntity@@@Z CWeaponGravityGun::sub_1014cbf0
 0x1000cdce func   ?sub_100b7a70@@YAHXZ sub_100b7a70
 0x1000cdd3 func   ?vfunc0@CTEDecal@@UAEPAUServerClass@@XZ CTEDecal::vfunc0
 0x1000cdd8 func   ?vfunc81@CPhysBox@@UAEHXZ CPhysBox::vfunc81
