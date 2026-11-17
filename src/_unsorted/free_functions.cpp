@@ -219042,6 +219042,7 @@ void CAI_BaseNPCTroika::sub_102aab70(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x102ae310 size=0x130
+#include "CNPC_VTzimisce.h"
 #include "CBaseEntity.h"
 #include "CBasePlayer.h"
 #include "CAI_BaseNPC.h"
@@ -219076,7 +219077,7 @@ void __fastcall sub_102ae310(Holder *p)
             bHolster = true;
         else if (pNPC->vfunc464() == 1 || pNPC->vfunc464() == 4 || pNPC->vfunc464() == 0xc || pNPC->vfunc464() == 0xd) {
             if (EHandle_Get(p->m_h628c)) {
-                unsigned int h2 = *(volatile unsigned int *)&p->m_h628c;
+                unsigned int h2 = *(unsigned int *)&p->m_h628c;
                 if (pNPC->vfunc404((CBaseEntity *)EHandle_Get(h2)) != 1)
                     bHolster = true;
             }
