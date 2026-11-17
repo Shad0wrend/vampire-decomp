@@ -229855,7 +229855,7 @@ int sub_10431447(const char *);
 
 int __fastcall sub_102d40a0(char *p)
 {
-    if (*(char * volatile *)(p + 0x5d4) == 0) {
+    if (*(char * *)(p + 0x5d4) == 0) {
         return 0;
     }
     char *s = *(char * volatile *)(p + 0x5d4);
