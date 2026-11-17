@@ -107885,7 +107885,7 @@ char CBasePlayer::sub_10170340()
 		name = *++pp;
 	} while (name);
 	const char *fists[] = { "item_w_fists", "item_w_claws_protean4", "item_w_claws_protean5", 0 };
-	volatile bool bNone = true;
+	bool bNone = true;
 	const char **pf = fists;
 	name = fists[0];
 	do {
