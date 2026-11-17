@@ -279133,13 +279133,13 @@ extern "C" int *npc_VChangBros()
 		*(volatile int *)(c + 0x19b0) = (int)&vt_104a7b68;
 		*(volatile int *)(c + 0x66f4) = -1;
 		sub_1036a320(c + 0x66f8);
-		*(volatile int *)raw = (int)&vt_104adabc;
-		*(volatile int *)(c + 0x19b0) = (int)&vt_104ada90;
+		*(int *)raw = (int)&vt_104adabc;
+		*(int *)(c + 0x19b0) = (int)&vt_104ada90;
 		p = raw;
 	} else {
 		p = 0;
 	}
-	int vt = *(volatile int *)p;
+	int vt = *(int *)p;
 	((void (__fastcall *)(void *, int, const char *))(((int *)vt)[0x1a8 / 4]))(p, vt, "npc_VChangBros");
 	return p;
 }
