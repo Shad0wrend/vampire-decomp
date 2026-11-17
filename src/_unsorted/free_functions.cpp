@@ -56143,6 +56143,181 @@ void __stdcall sub_100ce990(const char *pszFunction, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cebb0 size=0x3cc
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include "CEventQueue.h"
+#include "CBaseEntity.h"
+#include "CGlobalEntityList.h"
+#include "CUnknown10738964.h"
+#include "CUnknown100cd640.h"
+#include "CBaseHandle.h"
+#include "Tier1.h"
+
+extern char g_106cff51;
+extern int g_10552814;
+extern CGlobalEntityList *g_10566458;
+extern CGlobalEntityList g_106eb5d8;
+extern CUnknown10738964 *g_106cfe54;
+extern char g_106b8540[];
+extern char *(*g_109f36cc)(void *);
+
+struct CPyTypeView { char m_pad[0x18]; void (*tp_dealloc)(void *); };
+struct CPyObjectView { int ob_refcnt; CPyTypeView *ob_type; };
+
+struct CEventStatBlock { int m_a, m_b, m_c, m_d; };
+struct CEventStatBlockOps
+{
+	void sub_10230ed0();
+	void sub_10230f90(const CEventStatBlock *pOther);
+};
+struct CEventQueuePyOps
+{
+	void sub_100ce8a0(const char *psz);
+	void sub_100ce990(const char *psz, CBaseEntity *pA, CBaseEntity *pB, CBaseEntity *pC);
+};
+void sub_10230910(CEventStatBlock *pBlock, CBaseEntity *pEntity, int nValue, int nFlag);
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+
+struct CEQEventView
+{
+	float m_flFireTime;
+	const char *m_iTarget;
+	const char *m_iTargetInput;
+	EHANDLE m_pActivator;
+	EHANDLE m_pCaller;
+	int m_iOutputID;
+	EHANDLE m_pEntTarget;
+	CPyObjectView *m_pPy;
+	int m_n20;
+	int m_n24, m_n28, m_n2c;
+	int m_n30;
+	int m_nKind;
+	CEQEventView *m_pNext;
+	const char *m_iTarget2;
+	CEventStatBlock m_block;
+};
+
+void CEventQueue::sub_100cebb0()
+{
+	if (g_106cff51 && g_10552814 <= 0)
+		return;
+
+	while (m_pHead && m_pHead->m_flFireTime <= gpGlobals->curtime)
+	{
+		CEQEventView *pe = (CEQEventView *)m_pHead;
+		m_n54 = 0;
+		int nKind = pe->m_nKind;
+		CBaseEntity *target = 0;
+		bool targetFound = false;
+
+		if (nKind == 0)
+		{
+			if (pe->m_iTarget)
+			{
+				for (;;)
+				{
+					CBaseEntity *pActivator = (CBaseEntity *)g_10566458->sub_100290c0((const unsigned int *)&pe->m_pActivator);
+					target = g_106eb5d8.sub_100f7770(target, pe->m_iTarget ? pe->m_iTarget : g_106b8540, pActivator, 0);
+					if (!target)
+						break;
+					target->vfunc118(
+						((CUnknown100cd640 *)&pe->m_iTargetInput)->sub_100cd640(),
+						(CBaseEntity *)((CBaseHandle *)&pe->m_pActivator)->sub_100d1590(),
+						(CBaseEntity *)((CBaseHandle *)&pe->m_pCaller)->sub_100d1590(),
+						*(CVariantCopy *)&pe->m_n20,
+						pe->m_iOutputID);
+					targetFound = true;
+				}
+			}
+			if (pe->m_iTarget2)
+			{
+				CBaseEntity *pActivator = (CBaseEntity *)g_10566458->sub_100290c0((const unsigned int *)&pe->m_pActivator);
+				const char *pszTarget2 = STRINGR(pe->m_iTarget2);
+				((CEventQueuePyOps *)this)->sub_100ce990(pszTarget2, target, pActivator,
+					(CBaseEntity *)g_10566458->sub_100290c0((const unsigned int *)&pe->m_pCaller));
+			}
+			if (pe->m_pEntTarget)
+			{
+				CBaseEntity *pTarget = (CBaseEntity *)((CBaseHandle *)&pe->m_pEntTarget)->sub_100d15d0();
+				pTarget->vfunc118(
+					((CUnknown100cd640 *)&pe->m_iTargetInput)->sub_100cd640(),
+					(CBaseEntity *)((CBaseHandle *)&pe->m_pActivator)->sub_100d1590(),
+					(CBaseEntity *)((CBaseHandle *)&pe->m_pCaller)->sub_100d1590(),
+					*(CVariantCopy *)&pe->m_n20,
+					pe->m_iOutputID);
+				targetFound = true;
+			}
+			if (!targetFound)
+			{
+				const char *pClass = g_106b8540;
+				const char *pName = pClass;
+				if (pe->m_pCaller)
+				{
+					pClass = STRINGR(pe->m_pCaller->m_classname11c);
+					pName = STRINGR(pe->m_pCaller->m_name26c);
+				}
+				if (!g_106cfe54->vfunc1() && g_106cfe54->m_n2c)
+				{
+					const char *pTg = pe->m_iTarget ? pe->m_iTarget : g_106b8540;
+					const char *pIn = pe->m_iTargetInput ? pe->m_iTargetInput : g_106b8540;
+					if (pName < pClass || pClass < pName || pName < pIn) g_109f3630("unhandled input: (%s) -> (%s), from (%s,%s)\n", pIn, pTg, pClass, pName);
+					else g_109f3630("unhandled input: (%s) -> (%s), from (%s,%s)\n", pIn, pTg, pClass, pName);
+				}
+			}
+		}
+		else if (nKind == 1)
+		{
+			const char *psz = 0;
+			if (pe->m_pPy)
+				psz = g_109f36cc(pe->m_pPy);
+			if (psz)
+				((CEventQueuePyOps *)this)->sub_100ce8a0(psz);
+			else
+				g_109f364c("Invalid python entry in the event queue.\n");
+		}
+		else if (2 == nKind)
+		{
+			CEventStatBlock block;
+			((CEventStatBlockOps *)&block)->sub_10230ed0();
+			((CEventStatBlockOps *)&block)->sub_10230f90(&pe->m_block);
+			int nValue = (pe->m_n30 == 4) ? pe->m_n20 : 0;
+			sub_10230910(&block, pe->m_pEntTarget, nValue, 1);
+		}
+		else
+		{
+			if (!g_106cfe54->vfunc1() && g_106cfe54->m_n2c)
+				g_109f3630("unhandled input: Unknown Event Type: (%d)\n", pe->m_nKind);
+		}
+
+		CEQEventView *pPrev = (CEQEventView *)this;
+		while (pPrev)
+		{
+			if (pPrev->m_pNext == pe)
+			{
+				pPrev->m_pNext = pe->m_pNext;
+				if (pe->m_pPy)
+				{
+					if (0 == --pe->m_pPy->ob_refcnt)
+						pe->m_pPy->ob_type->tp_dealloc(pe->m_pPy);
+					pe->m_pPy = 0;
+				}
+				delete pe;
+			}
+			pPrev = pPrev->m_pNext;
+		}
+
+		if (g_106cff51)
+		{
+			if (g_10552814 <= 0)
+				return;
+			if (--g_10552814 <= 0)
+				return;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cf080 size=0xb0
 #include "CBaseEntity.h"
 #include "CEventQueue.h"

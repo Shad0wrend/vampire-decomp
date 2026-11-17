@@ -15268,6 +15268,7 @@
 0x100144ed func   ?sub_102801e0@CAI_BaseNPC@@QAEXHPAVCBaseEntity@@H@Z CAI_BaseNPC::sub_102801e0
 0x100144f2 func   ?vfunc223@CDynamicProp@@QAE_NXZ CDynamicProp::vfunc223
 0x100144f7 func   ?sub_1027ee00@@YAHXZ sub_1027ee00
+0x100144fc func   ?sub_100cebb0@CEventQueue@@QAEXXZ CEventQueue::sub_100cebb0
 0x10014506 func   ?sub_101dd4c0@CUnit101dd4c0@@QAEXXZ CUnit101dd4c0::sub_101dd4c0
 0x1001450b func   ?sub_1025db50@@YIDPAH@Z sub_1025db50
 0x10014510 func   ?RemoveAll@?$CUtlVector@UCDamageEvent_t@@V?$CUtlMemory@UCDamageEvent_t@@@@@@QAEXXZ CUtlVector<CDamageEvent_t,CUtlMemory<CDamageEvent_t> >::RemoveAll
