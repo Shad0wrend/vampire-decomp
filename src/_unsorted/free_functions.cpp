@@ -247689,6 +247689,7 @@ void sub_102fcfe0(CAI_Node **pNodesA, int *pNodesB, CNodeInfoBits *pNodesC, int 
 // END FUNCTION
 
 // FUNCTION: 0x102fd240 size=0x859
+#include "utlvector.h"
 #include "CAI_Node.h"
 #include "MvsnSec0.h"
 // TARGET: CAI_Pathfinder::sub_102fd240
@@ -247709,31 +247710,55 @@ struct CNodeInfoBits
 };
 void sub_102fcfe0(CAI_Node **pNodesA, int *pNodesB, CNodeInfoBits *pNodesC, int i4, int i5, int hull, int nA, int nB, int nC);
 
+#define LOG2_BITS_PER_INT	5
+#define BITS_PER_INT		32
+inline unsigned GetEndMask(int numBits) { return g_1055b298[numBits % BITS_PER_INT]; }
+#define BitString_Bit(bitNum) (1 << ((bitNum) & (BITS_PER_INT - 1)))
+#define BitString_Int(bitNum) ((bitNum) >> LOG2_BITS_PER_INT)
+
 struct CBitVecH83 : public CBitString
 {
 	CBitVecH83(int nBits) { sub_102fc910(nBits); }
 	~CBitVecH83() { sub_100bf6a0(); }
 
-	unsigned int GetEndMask() const { return ~g_1055b298[m_nBits % 32]; }
-	bool IsAllClear()
+	int Size() const { return m_nBits; }
+	int GetNumInts() const { return m_nDwords; }
+	int *GetInts() { return m_pData; }
+	const int *GetInts() const { return m_pData; }
+	unsigned GetEndMask() const { return ::GetEndMask(Size()); }
+
+	bool IsAllClear() const
 	{
-		m_pData[m_nDwords - 1] &= GetEndMask();
-		for (int i = m_nDwords - 1; i >= 0; i--)
+		(const_cast<CBitVecH83 *>(this))->GetInts()[GetNumInts() - 1] &= ~GetEndMask();
+		for (int i = GetNumInts() - 1; i >= 0; --i)
 		{
-			if (m_pData[i] != 0)
+			if (GetInts()[i] != 0)
+			{
 				return false;
+			}
 		}
 		return true;
 	}
 	bool IsBitSet(int bitNum) const
 	{
-		int mask = 1 << (bitNum & 31);
-		int iInt = bitNum >> 5;
-		return (m_pData[iInt] & mask) != 0;
+		const int *pInt = GetInts() + BitString_Int(bitNum);
+		return ((*pInt & BitString_Bit(bitNum)) != 0);
 	}
-	void Set(int bitNum) { m_pData[bitNum >> 5] |= 1 << (bitNum & 31); }
-	void Clear(int bitNum) { m_pData[bitNum >> 5] &= ~(1 << (bitNum & 31)); }
-	void ClearAll() { if (m_pData) memset(m_pData, 0, m_nDwords * 4); }
+	void Set(int bitNum)
+	{
+		int *pInt = GetInts() + BitString_Int(bitNum);
+		*pInt |= BitString_Bit(bitNum);
+	}
+	void Clear(int bitNum)
+	{
+		int *pInt = GetInts() + BitString_Int(bitNum);
+		*pInt &= ~BitString_Bit(bitNum);
+	}
+	void ClearAll()
+	{
+		if (GetInts())
+			memset(GetInts(), 0, GetNumInts() * sizeof(int));
+	}
 };
 
 struct CAI_NodeH83
@@ -247746,7 +247771,19 @@ struct CAI_NavigatorH83
 	float sub_102f1860(int moveType, const Vector &r1, const Vector &r2);	// MovementCost
 };
 
-inline int HullH83(CAI_Pathfinder *p) { return p->m_unk08; }
+struct CAI_LinkNodeH83 : CAI_NavProvider
+{
+	int NumLinks() { return m_nEntries; }
+	CPairFields102dda40 *GetLinkByIndex(int i) { return (CPairFields102dda40 *)m_ppEntries[i]; }
+};
+
+struct CAI_PathfinderH83 : CAI_Pathfinder
+{
+	int GetHullType() { return m_unk08; }
+	CAI_BaseNPC *GetOuter() { return (CAI_BaseNPC *)m_pOuter; }
+	int CapabilitiesGet() { return ((CAI_BaseNPC *)m_pOuter)->vfunc513(); }
+};
+
 
 CAI_Waypoint *CAI_Pathfinder::sub_102fd240(int startID, int endID)
 {
@@ -247774,7 +247811,7 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fd240(int startID, int endID)
 	nodeG[startID] = 0;
 
 	int hull = m_unk08;
-	if (0) (void)(pAInode[0]->sub_102fb0d0(hull) - pAInode[0]->sub_102fb0d0(hull));
+	if (0) (void)(pAInode[0]->sub_102fb0d0(hull) - pAInode[0]->sub_102fb0d0(hull));	// WORKAROUND (R12 numbering): with the SDK bitstring inlines these two dead mentions are what is left
 	if (0) (void)(pAInode[0]->sub_102fb0d0(hull) - pAInode[0]->sub_102fb0d0(hull));
 	nodeH[startID] = 0.1 * (pAInode[startID]->sub_102fb0d0(hull) - pAInode[endID]->sub_102fb0d0(hull)).Length();
 	nodeF[startID] = nodeG[startID] + nodeH[startID];
@@ -247788,21 +247825,24 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fd240(int startID, int endID)
 
 		openBS.Clear(smallestID);
 
-		CAI_NavProvider *pSmallestNode = (CAI_NavProvider *)pAInode[smallestID];
+		CAI_LinkNodeH83 *pSmallestNode = (CAI_LinkNodeH83 *)pAInode[smallestID];
 
 		if (smallestID == endID)
-			return sub_102fcbd0(&nodeP[0], endID);
+		{
+			CAI_Waypoint *route = sub_102fcbd0(&nodeP[0], endID);
+			return route;
+		}
 
-		int nLinks = pSmallestNode->m_nEntries;
+		int nLinks = pSmallestNode->NumLinks();
 		for (int link = 0; link < nLinks; link++)
 		{
-			CPairFields102dda40 *nodeLink = (CPairFields102dda40 *)pSmallestNode->m_ppEntries[link];
+			CPairFields102dda40 *nodeLink = pSmallestNode->GetLinkByIndex(link);
 
 			if (!sub_102ff960(nodeLink, smallestID))
 				continue;
 
 			hull = m_unk08;
-			int moveType = nodeLink->m_iAcceptedMoveTypes[hull] & ((CAI_BaseNPC *)m_pOuter)->vfunc513();
+			int moveType = nodeLink->m_iAcceptedMoveTypes[hull] & ((CAI_PathfinderH83 *)this)->CapabilitiesGet();
 			int testID = nodeLink->sub_102dda40(smallestID);
 
 			hull = m_unk08;
@@ -247846,7 +247886,7 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fd240(int startID, int endID)
 		openBS.Set(startID);
 		closeBS.Set(startID);
 
-		sub_102fcfe0((CAI_Node **)pAInode, nodeP, nodeInfo, endID, endID, HullH83(this), 0x40, 0xff, 0x40);
+		sub_102fcfe0((CAI_Node **)pAInode, nodeP, nodeInfo, endID, endID, ((CAI_PathfinderH83 *)this)->GetHullType(), 0x40, 0xff, 0x40);
 
 		while (!openBS.IsAllClear())
 		{
@@ -247854,34 +247894,35 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fd240(int startID, int endID)
 
 			openBS.Clear(smallestID);
 
-			CAI_NavProvider *pSmallestNode = (CAI_NavProvider *)pAInode[smallestID];
+			CAI_LinkNodeH83 *pSmallestNode = (CAI_LinkNodeH83 *)pAInode[smallestID];
 
-			if (((CAI_BaseNPC *)m_pOuter)->vfunc527(pSmallestNode))
+			if (((CAI_PathfinderH83 *)this)->GetOuter()->vfunc527(pSmallestNode))
 			{
-				sub_102fcfe0((CAI_Node **)pAInode, nodeP, nodeInfo, smallestID, endID, HullH83(this), 0xff, 0x40, 0x40);
+				sub_102fcfe0((CAI_Node **)pAInode, nodeP, nodeInfo, smallestID, endID, ((CAI_PathfinderH83 *)this)->GetHullType(), 0xff, 0x40, 0x40);
 				continue;
 			}
 
 			if (smallestID == endID)
 			{
-				sub_102fcfe0((CAI_Node **)pAInode, nodeP, nodeInfo, smallestID, endID, HullH83(this), 0x40, 0xff, 0x40);
-				return sub_102fcbd0(&nodeP[0], endID);
+				sub_102fcfe0((CAI_Node **)pAInode, nodeP, nodeInfo, smallestID, endID, ((CAI_PathfinderH83 *)this)->GetHullType(), 0x40, 0xff, 0x40);
+				CAI_Waypoint *route = sub_102fcbd0(&nodeP[0], endID);
+				return route;
 			}
 
-			sub_102fcfe0((CAI_Node **)pAInode, nodeP, nodeInfo, smallestID, endID, HullH83(this), 0xff, 0xff, 0xff);
+			sub_102fcfe0((CAI_Node **)pAInode, nodeP, nodeInfo, smallestID, endID, ((CAI_PathfinderH83 *)this)->GetHullType(), 0xff, 0xff, 0xff);
 
-			for (int link = 0; link < pSmallestNode->m_nEntries; link++)
+			for (int link = 0; link < pSmallestNode->NumLinks(); link++)
 			{
-				CPairFields102dda40 *nodeLink = (CPairFields102dda40 *)pSmallestNode->m_ppEntries[link];
+				CPairFields102dda40 *nodeLink = pSmallestNode->GetLinkByIndex(link);
 
 				if (!sub_102ff960(nodeLink, smallestID))
 				{
-					sub_102fcfe0((CAI_Node **)pAInode, nodeP, nodeInfo, nodeLink->sub_102dda40(smallestID), endID, HullH83(this), 0xff, 0x40, 0x40);
+					sub_102fcfe0((CAI_Node **)pAInode, nodeP, nodeInfo, nodeLink->sub_102dda40(smallestID), endID, ((CAI_PathfinderH83 *)this)->GetHullType(), 0xff, 0x40, 0x40);
 					continue;
 				}
 
 				hull = m_unk08;
-				int moveType = nodeLink->m_iAcceptedMoveTypes[hull] & ((CAI_BaseNPC *)m_pOuter)->vfunc513();
+				int moveType = nodeLink->m_iAcceptedMoveTypes[hull] & ((CAI_PathfinderH83 *)this)->CapabilitiesGet();
 				int testID = nodeLink->sub_102dda40(smallestID);
 
 				hull = m_unk08;
@@ -247895,8 +247936,6 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fd240(int startID, int endID)
 					nodeP[testID] = smallestID;
 					nodeG[testID] = new_g;
 					hull = m_unk08;
-					if (0) (void)(pAInode[0]->sub_102fb0d0(hull) - pAInode[0]->sub_102fb0d0(hull));
-					Vector vD2020;
 					nodeH[testID] = (pAInode[testID]->sub_102fb0d0(hull) - pAInode[endID]->sub_102fb0d0(hull)).Length();
 					nodeF[testID] = nodeG[testID] + nodeH[testID];
 
