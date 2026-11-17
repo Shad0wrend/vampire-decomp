@@ -2406,7 +2406,6 @@ void CBaseCombatWeapon::vfunc333(int a, int b, int c, int d, int e, int f)
 // END FUNCTION
 
 // FUNCTION: 0x10254990 size=0x11a
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CBaseCombatWeapon.h"
 struct CBCWOwnerV { char pad[0x2e0]; int m_edict; int entindex() { return engine->vfunc35(m_edict); } };
 struct CBCWV : CBaseCombatWeapon
