@@ -93892,7 +93892,6 @@ double sub_1013a940(float x)
 // END FUNCTION
 
 // FUNCTION: 0x1013a970 size=0x5f
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include <math.h>
 float sub_1013a870(float, float);
 
@@ -93916,7 +93915,7 @@ float sub_1013a970(float x, float flPeakPos, float flPeakSharpness)
 {
 	float flMappedX;
 	if (!(!(x < flPeakPos))) flMappedX = (0.5f / flPeakPos) * x; else flMappedX = 0.5 + ((0.5 * (x - flPeakPos)) / (1.0f - flPeakPos));
-	return sub_1013a940(pcd_stage(sub_1013a8c0(flMappedX, flPeakSharpness)));
+	return sub_1013a940((sub_1013a8c0(flMappedX, flPeakSharpness)));
 }
 // END FUNCTION
 
