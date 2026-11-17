@@ -265353,7 +265353,7 @@ void CUnknown103323d0::sub_103323d0(inputdata_t *pInput)
 {
 	CScopeTrace trace("CBaseCombatCharacter::InputFadeHeadAsCameraTarget", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
 	inputdata_t *pIn = pInput;
-	volatile int *pSlot = (volatile int *)&pInput;
+	volatile int *pSlot = (int *)&pInput;
 	if (pIn->value.fieldType == 1)
 		*pSlot = pIn->value.iValue;
 	else
