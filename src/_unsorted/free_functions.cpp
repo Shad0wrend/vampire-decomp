@@ -297455,7 +297455,7 @@ extern "C" void *npc_VVampireBoss()
 	}
 	else
 		p = 0;
-	int vt = *(volatile int *)p;
+	int vt = *(int *)p;
 	((void (__fastcall *)(void *, int, const char *))(((int *)vt)[0x1a8 / 4]))(p, vt, "npc_VVampireBoss");
 	return p;
 }
