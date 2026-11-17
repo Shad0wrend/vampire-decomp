@@ -2324,6 +2324,123 @@ void CAI_BaseNPC::vfunc477()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1026ec30 size=0x3db
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CAI_BaseNPC.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CAIPendingCondList.h"
+#include "CUnknown102dfaa0.h"
+#include "CVProfile.h"
+#include "ScopeTrace.h"
+#include "ehandle.h"
+
+struct CCycleSampler433
+{
+	unsigned __int64 m_Int64;
+	void Sample() { __asm { mov ecx, this
+		rdtsc
+		mov [ecx], eax
+		mov [ecx+4], edx } }
+};
+extern CCycleSampler433 g_109204a0;
+struct CCondHookView_433 { virtual void v0(); virtual void v1(); };
+extern CCondHookView_433 *g_10924a6c;
+int __cdecl sub_101d1800(int edict);
+
+struct CGatherSched433 { char pad[0x1c]; int m_n1c; int GetId() const { return m_n1c; } };
+struct CGatherView433
+{
+	char p0[0x98];
+	CAI_BaseNPCTroika *m_pObj98;
+	char p1[0x204 - 0x9c];
+	unsigned m_f204;
+	bool IsFlag10() const { return (m_f204 >> 10) & 1; }
+	char p2[0x26c - 0x208];
+	const char *m_name26c;
+	char p3[0x2e0 - 0x270];
+	int m_edict;
+	int edict() const { return m_edict; }
+	char p4[0x14bc - 0x2e4];
+	unsigned m_f14bc;
+	char p5[0x5b64 - 0x14c0];
+	unsigned m_f5b64;
+	bool IsFlag5b64_0() const { return m_f5b64 & 1; }
+	bool IsFlag5b64_1() const { return (m_f5b64 >> 1) & 1; }
+	char p5b[0x5c38 - 0x5b68];
+	CGatherSched433 *m_pSched;
+	char p6[0x5ca4 - 0x5c3c];
+	bool m_b5ca4;
+	char p7[0x5cc0 - 0x5ca5];
+	int m_state;
+	char p8[0x5ce4 - 0x5cc4];
+	EHANDLE m_h5ce4;
+};
+
+// the Troika NPC part keeps its move target as a handle and hands it out by value, like slot 586
+struct CTroikaView433 : CAI_BaseNPCTroika { EHANDLE GetMoveTargetEnt() const { return m_hMoveTargetEnt; } };
+
+// TARGET: CAI_BaseNPC::vfunc433
+void CAI_BaseNPC::vfunc433()
+{
+	CGatherView433 *v = (CGatherView433 *)this;
+	ScopeTrace trace("CAI_BaseNPC::GatherConditions", this ? (v->m_name26c ? v->m_name26c : g_106b8540) : g_105387dc);
+	v->m_b5ca4 = true;
+	CCycleSampler433 *pg = &g_109204a0;
+	pg->Sample();
+	((CAIPendingCondList *)((char *)this + 0x1a9c))->sub_102cc760((CAI_BaseNPCCondTarget *)this);
+	if (v->m_state != 0 && 7 != v->m_state) {
+		if (v->IsFlag10() || sub_101d1800(v->edict()) || v->IsFlag5b64_0()) {
+			sub_1026e5e0();
+			if (vfunc509()) {
+				g_109f3648->EnterScope("CAI_BaseNPC_IdleSound", 0, "Unaccounted", false);
+				if (v->IsFlag5b64_1())
+					vfunc499();
+				else if ((v->m_f14bc & 0x10000) == 0x10000)
+					vfunc504();
+				else if (v->m_pSched && vfunc447(v->m_pSched->GetId()) == 0x12f)
+					vfunc503();
+				else
+					vfunc490();
+				g_109f3648->ExitScope();
+			}
+			sub_1026e4f0();
+			((CUnknown102dfaa0 *)vfunc541())->sub_102df320();
+			sub_10279dd0();
+			if (sub_1026fb40()) {
+				g_10924a6c->v1();
+				sub_10269a20(0x67);
+			}
+		} else
+			vfunc477();
+		if (vfunc167())
+			vfunc481(vfunc167());
+		if (v->m_h5ce4.Get())
+			sub_10271d10(v->m_h5ce4.Get());
+		CAI_BaseNPCTroika *pObj = v->m_pObj98;
+		if (pObj) {
+			unsigned int tmp;
+			if (((EHANDLE *)pObj->vfunc586((int)&tmp))->Get())
+				pObj->sub_1028e480(((EHANDLE *)pObj->vfunc586((int)&tmp))->Get());
+			if (((CTroikaView433 *)pObj)->GetMoveTargetEnt().Get())
+				pObj->sub_1028e980(((CTroikaView433 *)pObj)->GetMoveTargetEnt().Get());
+			pObj->sub_1028e790();
+		}
+		vfunc565();
+	}
+	CCycleSampler433 end;
+	end.m_Int64 = 0;
+	end.Sample();
+	g_109204a0.m_Int64 = end.m_Int64 - g_109204a0.m_Int64;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1026f110 size=0x2f4
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
