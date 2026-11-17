@@ -95910,6 +95910,23 @@ void sub_10144a30(const Vector *pvA, const Vector *pvB, float f3, float f4, int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144cd0 size=0xa2
+#include "Vector.h"
+#include <math.h>
+
+void sub_10144a30(const Vector *pMid, void *pOther, float dist, float dz, int n5, int n6, int n7, int n8, float n9);
+
+void sub_10144cd0(Vector *pOrig, void *pOther, const Vector *a, const Vector *b, int n5, int n6, int n7, int n8, float n9)
+{
+	float dx = (b->x - a->x) * 0.5f;
+	float dy = (b->y - a->y) * 0.5f;
+	float dz = (b->z - a->z);
+	float hz = dz * 0.5f;
+	Vector mid = *pOrig + Vector(0, 0, hz);
+	sub_10144a30(&mid, pOther, (float)sqrt((dx * dx) + (dy * dy)), dz, n5, n6, n7, n8, n9);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144db0 size=0x219
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
