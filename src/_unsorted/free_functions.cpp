@@ -63519,7 +63519,7 @@ static inline CGlobalEntityList_Ent *Resolve100de930(unsigned int h)
 
 void CUnknown100de930::sub_100de930()
 {
-    if (Resolve100de930(*(volatile unsigned int *)&m_hOwner) != 0) {
+    if (Resolve100de930(*(unsigned int *)&m_hOwner) != 0) {
         CUnknown100de930Owner *owner = (CUnknown100de930Owner *)Resolve100de930(*(volatile unsigned int *)&m_hOwner);
         ((List100de930 *)&owner->m_List)->FindAndRemove(this);
         m_hOwner = 0xffffffff;
