@@ -76472,7 +76472,7 @@ void CBaseCombatCharacter::sub_10105e20(float *weights, char *pExpression)
 // END FUNCTION
 
 // FUNCTION: 0x10106050 size=0x293
-extern int pcd_dial_v;
+#include "utllinkedlist.h"
 #include "utlrbtree.h"
 #include "CBaseFlexCalves.h"
 #include "CUnknown101d7520.h"
@@ -76525,16 +76525,14 @@ struct CExprVectorView
 // TARGET: CBaseCombatCharacter::sub_10106050
 void CBaseCombatCharacter::sub_10106050(int unused)
 {
-	if (0) pcd_dial_v = pcd_dial_v * pcd_dial_v;
 	ScopeTrace trace("CBaseCombatCharacter::UpdateExpressions", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 	void *pModel = sub_100952d0(-1);
 	if (m_idxDefExpression == -1 || !pModel || *(int *)((char *)pModel + 0x160) <= 0)
 		return;
 	if (!g_107091bc->vfunc1() && g_107091bc->m_n2c > 0) {
-		CExprVectorView *pVec = (CExprVectorView *)&m_pExpressions10bc;
-		pVec->m_nSize = 0;
-		((UtlMem *)pVec)->sub_10107480();
-		pVec->m_pElements = pVec->m_pMemory;
+		exprs.RemoveAll();
+		((UtlMem *)&exprs.m_Memory)->sub_10107480();
+		exprs.ResetDbgInfo();
 		return;
 	}
 	float *pFlexWeights = (float *)((char *)this + 0x858);
