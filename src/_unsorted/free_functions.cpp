@@ -204219,44 +204219,53 @@ struct AI_Movementscript_t
 
 struct CScriptVec
 {
-	AI_Movementscript_t *m_pMemory;
-	int m_nAllocationCount;
-	int m_nGrowSize;
+	CUtlMemory<AI_Movementscript_t> m_Memory;
 	int m_Size;
 	AI_Movementscript_t *m_pElements;
 
-	int Count() const { return m_Size; }
-	AI_Movementscript_t &operator[](int i) { return m_pMemory[i]; }
+	AI_Movementscript_t *Base() { return m_Memory.Base(); }
+	int NumAllocated() const { return m_Memory.NumAllocated(); }
+	AI_Movementscript_t &Element(int i) { return Base()[i]; }
+	void ResetDbgInfo() { m_pElements = Base(); }
 	int AddToTail(const AI_Movementscript_t &src) { return ((CUtlVector56 *)this)->sub_10264000(m_Size, &src); }
-	void Remove(int elem) { ((SElemVec *)this)->sub_10264130(elem, 1); --m_Size; }
+	void Remove(int elem)
+	{
+		Destruct(&Element(elem));
+		((SElemVec *)this)->sub_10264130(elem, 1);
+		--m_Size;
+	}
 	int InsertBefore(int elem, const AI_Movementscript_t &src)
 	{
 		((CUtlVector56 *)this)->sub_102641b0(1);
 		((SElemVec *)this)->sub_10264280(elem, 1);
-		sub_10264300((CBlock4k *)&m_pMemory[elem], (const CBlock4k *)&src);
+		sub_10264300((CBlock4k *)&Element(elem), (const CBlock4k *)&src);
 		return elem;
 	}
 	int InsertAfter(int elem, const AI_Movementscript_t &src) { return InsertBefore(elem + 1, src); }
-	void GrowVectorI(int num)
+	void GrowVectorI(int num = 1)
 	{
-		if (m_Size + num > m_nAllocationCount)
-			((Mem38 *)this)->sub_10264370(m_Size + num - m_nAllocationCount);
+		if (m_Size + num > NumAllocated())
+			((Mem38 *)this)->sub_10264370(m_Size + num - NumAllocated());
 		m_Size += num;
-		m_pElements = m_pMemory;
+		ResetDbgInfo();
 	}
-	int InsertAfterI(int elem, const AI_Movementscript_t &src)
+	int InsertBeforeI(int elem, const AI_Movementscript_t &src)
 	{
-		elem++;
-		GrowVectorI(1);
+		GrowVectorI();
 		((SElemVec *)this)->sub_10264280(elem, 1);
-		sub_10264300((CBlock4k *)&m_pMemory[elem], (const CBlock4k *)&src);
+		sub_10264300((CBlock4k *)&Element(elem), (const CBlock4k *)&src);
 		return elem;
+	}
+	int InsertAfterI(int elem, const AI_Movementscript_t &src) { return InsertBeforeI(elem + 1, src); }
+	void ShiftElementsLeftI(int elem, int num = 1)
+	{
+		int numToMove = m_Size - elem - num;
+		if ((numToMove > 0) && (num > 0))
+			memmove(&Element(elem), &Element(elem + num), numToMove * sizeof(AI_Movementscript_t));
 	}
 	void RemoveI(int elem)
 	{
-		int numToMove = m_Size - elem - 1;
-		if (numToMove > 0)
-			memmove(&m_pMemory[elem], &m_pMemory[elem + 1], numToMove * sizeof(AI_Movementscript_t));
+		ShiftElementsLeftI(elem);
 		--m_Size;
 	}
 };
@@ -204280,6 +204289,16 @@ struct CMotorView
 	float GetCurSpeed() { return sub_10146150(&m_vecVelocity); }
 };
 
+struct CNPCView
+{
+	char m_pad[0x5d34];
+	CNavView *m_pNavigator;
+	char m_pad5d38[0x5d44 - 0x5d38];
+	CMotorView *m_pMotor;
+	CNavView *GetNavigator() { return m_pNavigator; }
+	CMotorView *GetMotor() { return m_pMotor; }
+};
+
 #define HV(n) virtual void v##n();
 #define HV10(p) HV(p##0) HV(p##1) HV(p##2) HV(p##3) HV(p##4) HV(p##5) HV(p##6) HV(p##7) HV(p##8) HV(p##9)
 struct CHumanoidV
@@ -204299,8 +204318,8 @@ struct CHumanoidV
 #define HS ((CHumanoidV *)this)
 #define m_scriptMove (*(CUtlVector<AI_Movementscript_t> *)&m_Waypoints6024)
 #define MSV (*(CScriptVec *)&m_Waypoints6024)
-#define GetNavigator() (*(CNavView **)((char *)this + 0x5d34))
-#define GetMotor() (*(CMotorView **)((char *)this + 0x5d44))
+#define GetNavigator() (((CNPCView *)this)->GetNavigator())
+#define GetMotor() (((CNPCView *)this)->GetMotor())
 
 #define clamp(val, min, max) (((val) > (max)) ? (max) : (((val) < (min)) ? (min) : (val)))
 
@@ -204318,9 +204337,8 @@ void CAI_BaseHumanoid::sub_102630b0()
 	float idealAccel = idealVelocity / 1.0 + 50;
 
 	AI_Movementscript_t script;
-	if (0) VSub(script.vecLocation, script.vecLocation);
-	if (0) VSub(script.vecLocation, script.vecLocation);
 
+	if (0) VSub(script.vecLocation, script.vecLocation); 
 	script.vecLocation = HS->GetAbsOrigin();
 	script.flYaw = HS->GetAbsAngles().y;
 	script.flMaxVelocity = GetMotor()->GetCurSpeed();
@@ -204348,7 +204366,7 @@ void CAI_BaseHumanoid::sub_102630b0()
 			VectorNormalize(d2);
 
 			float dot = (DotProduct(d1, d2) + 0.2);
-			if (dot > g_104454c4)
+			if (dot > 0)
 			{
 				if (dot > 1.0f) dot = 1.0f;
 				script.flMaxVelocity = idealVelocity * dot;
@@ -204404,7 +204422,6 @@ void CAI_BaseHumanoid::sub_102630b0()
 		}
 	}
 
-	if (0) VSub(script.vecLocation, script.vecLocation);
 	for (i = m_scriptMove.Count() - 1; i > 0; i--)
 	{
 		float dv = m_scriptMove[i].flMaxVelocity - m_scriptMove[i - 1].flMaxVelocity;
@@ -204486,14 +204503,12 @@ void CAI_BaseHumanoid::sub_102630b0()
 		}
 	}
 
-	if (0) VSub(script.vecLocation, script.vecLocation);
-	if (0) VSub(script.vecLocation, script.vecLocation);
 	m_scriptMove[0].flElapsedTime = 0;
 	for (i = 0; i < m_scriptMove.Count() - 1; )
 	{
 		m_scriptMove[i].flDist = (m_scriptMove[i + 1].vecLocation - m_scriptMove[i].vecLocation).Length();
 
-		if (m_scriptMove[i].flMaxVelocity > g_104454c4 || m_scriptMove[i + 1].flMaxVelocity > g_104454c4)
+		if (m_scriptMove[i].flMaxVelocity > 0 || m_scriptMove[i + 1].flMaxVelocity > 0)
 		{
 			float t = m_scriptMove[i].flDist / (0.5 * (m_scriptMove[i].flMaxVelocity + m_scriptMove[i + 1].flMaxVelocity));
 			m_scriptMove[i].flTime = t;
@@ -204505,7 +204520,7 @@ void CAI_BaseHumanoid::sub_102630b0()
 
 		if (m_scriptMove[i].flDist < 0.01 || m_scriptMove[i].flTime < 0.01)
 		{
-			MSV.RemoveI(i + 1);
+			m_scriptMove.Remove(i + 1);
 			continue;
 		}
 
