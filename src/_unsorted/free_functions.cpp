@@ -209229,7 +209229,7 @@ void CAI_BaseNPC::sub_10279a50(int a)
 {
     CGlobalEntityList_Ent *pEnt = (CGlobalEntityList_Ent *)a;
     unsigned int *pHandle = (unsigned int *)((char *)this + 0x5ce0);
-    if (Resolve(*(volatile unsigned int *)pHandle) != pEnt) {
+    if (Resolve(*(unsigned int *)pHandle) != pEnt) {
         unsigned int h = *(volatile unsigned int *)pHandle;
         if (h != -1) {
             CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
