@@ -343,7 +343,7 @@ void CSave::vfunc6()
 {
     CUtlVector<int> &stack = *(CUtlVector<int> *)((char *)this + 4);
     int pos = vfunc0();
-    int start = (*(int *volatile *)&m_pSections)[stack.Count() - 1];
+    int start = (*(int **)&m_pSections)[stack.Count() - 1];
     int size = pos - start;
     stack.Remove(stack.Count() - 1);
     vfunc1(start - 4);
