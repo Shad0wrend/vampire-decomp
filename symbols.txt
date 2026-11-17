@@ -10276,6 +10276,7 @@
 0x1000df8a func   ?sub_1040d0a0@CPlayerPickupController@@QAEXD@Z CPlayerPickupController::sub_1040d0a0
 0x1000df8f func   ?sub_100280e0@CUnknown101d1460@@QAEXPAMPBM@Z CUnknown101d1460::sub_100280e0
 0x1000df94 func   ?sub_102ee1a0@CUnknown102ee1a0@@QAEMXZ CUnknown102ee1a0::sub_102ee1a0
+0x1000df99 func   ?StartGrappleAttack@CBaseCombatCharacter@@QAE_NPAV1@H@Z CBaseCombatCharacter::StartGrappleAttack
 0x1000df9e func   ?sub_10128400@CGameRules@@QAEPAXXZ CGameRules::sub_10128400
 0x1000dfa3 func   ?Filter@CPASAttenuationFilter@@QAEXABVVector@@M@Z CPASAttenuationFilter::Filter
 0x1000dfa8 func   _item_k_netcafe_office_key item_k_netcafe_office_key
