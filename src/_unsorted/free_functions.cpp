@@ -83098,7 +83098,7 @@ extern CSurfaceHolder *g_1071a278;
 namespace block_1011e560 {
 struct RayHull : Ray_t
 {
-	__forceinline void InitHull(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, bool bSwept, char b32)
+	__forceinline void InitHull(const Vector &start, const Vector &end, const Vector &mins, const Vector &maxs, char b32)
 	{
 		Vector &delta = *(Vector *)m_Delta;
 		Vector &extents = *(Vector *)m_StartOffset;
@@ -83108,11 +83108,7 @@ struct RayHull : Ray_t
 		m_IsSwept = (delta.LengthSqr() != 0.0f);
 		VectorSubtract(maxs, mins, extents);
 		extents *= 0.5f;
-		float flX2;
-		if (0) flX2 = 0.0f;
-		float flY2 = extents.y * extents.y;
-		flX2 = extents.x * extents.x;
-		m_IsRay = (extents.z * extents.z + flY2 + flX2 < 1e-6);
+		m_IsRay = (extents.LengthSqr() < 1e-6);
 		offset.x = mins.x + maxs[0];
 		offset.y = mins.y + maxs.y;
 		offset.z = mins.z + maxs.z;
@@ -83122,12 +83118,6 @@ struct RayHull : Ray_t
 		m_b32 = b32;
 		m_b33 = 0;
 		m_n34 = 0;
-		if (bSwept && !m_IsRay)
-		{
-			m_n34 = sqrt(flY2 + flX2);
-			if (m_n34 > 1e-6)
-				m_b33 = 1;
-		}
 	}
 };
 
@@ -83145,8 +83135,14 @@ struct CGameMovementUnit : CGameMovement
 	{
 		g_109f3648->EnterScope("CGameMovement::TracePlayerBBox", 0, "Unaccounted", false);
 		RayHull ray;
-		ray.InitHull(start, end, *(Vector *)sub_1011e310(), *(Vector *)sub_1011e350(),
-			(((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1, 0);
+		bool bSwept = (((CMoveDataView *)m_pMove)->vfunc211() >> 6) & 1;
+		ray.InitHull(start, end, *(Vector *)sub_1011e310(), *(Vector *)sub_1011e350(), 0);
+		if (bSwept && !ray.m_IsRay)
+		{
+			ray.m_n34 = sqrt(ray.m_StartOffset[1] * ray.m_StartOffset[1] + ray.m_StartOffset[0] * ray.m_StartOffset[0]);
+			if (ray.m_n34 > 1e-6)
+				ray.m_b33 = 1;
+		}
 		sub_1011e8f0(&ray, fMask, ((CPlayerHandleRef *)&PLAYER->m_hRef)->Get(), collisionGroup, &pm);
 		g_109f3648->ExitScopeCall();
 	}
