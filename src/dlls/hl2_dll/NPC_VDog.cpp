@@ -10,7 +10,7 @@
 extern CDevFlagObj *g_10924a6c;
 
 #define VDOG_INT(off) (*(int *)((char *)this + (off)))
-#define VDOG_IDEAL (*(volatile int *)((char *)this + 0x5cc4))
+#define VDOG_IDEAL (*(int *)((char *)this + 0x5cc4))
 #define VDOG_FILE "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VDog.cpp"
 #define VDOG_STAMP(line) { VDOG_INT(0x1b3c) = (int)VDOG_FILE; VDOG_INT(0x1b40) = (line); }
 static inline int SetIdeal(volatile int *p, int s) { *p = s; return *p; }
