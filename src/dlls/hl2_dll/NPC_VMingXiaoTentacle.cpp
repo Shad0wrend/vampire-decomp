@@ -630,6 +630,149 @@ int CNPC_VMingXiaoTentacle::vfunc461()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039e3d0 size=0x334
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CAI_Navigator.h"
+#include "CBCCSlotViews.h"
+#include "ScopeTrace.h"
+#include "CVProfile.h"
+#include "globalvars.h"
+#include "engineiface.h"
+
+struct CTentSlotView
+{
+	VIEW_SLOT100(0) VIEW_SLOT10(10) VIEW_SLOT10(11) VIEW_SLOT10(12) VIEW_SLOT10(13) VIEW_SLOT10(14) VIEW_SLOT10(15)
+	VIEW_SLOT(160) VIEW_SLOT(161) VIEW_SLOT(162) VIEW_SLOT(163) VIEW_SLOT(164) VIEW_SLOT(165) VIEW_SLOT(166)
+	virtual CEntityOriginSlotView *vfunc167();
+	VIEW_SLOT(168) VIEW_SLOT(169)
+	VIEW_SLOT10(17) VIEW_SLOT10(18) VIEW_SLOT10(19)
+	VIEW_SLOT(200) VIEW_SLOT(201) VIEW_SLOT(202) VIEW_SLOT(203) VIEW_SLOT(204) VIEW_SLOT(205) VIEW_SLOT(206) VIEW_SLOT(207) VIEW_SLOT(208)
+	virtual int vfunc209();
+	VIEW_SLOT10(21) VIEW_SLOT10(22) VIEW_SLOT10(23) VIEW_SLOT10(24) VIEW_SLOT10(25) VIEW_SLOT10(26) VIEW_SLOT10(27) VIEW_SLOT10(28) VIEW_SLOT10(29)
+	VIEW_SLOT10(30) VIEW_SLOT10(31) VIEW_SLOT10(32) VIEW_SLOT10(33) VIEW_SLOT10(34) VIEW_SLOT10(35) VIEW_SLOT10(36) VIEW_SLOT10(37) VIEW_SLOT10(38) VIEW_SLOT10(39)
+	VIEW_SLOT10(40) VIEW_SLOT10(41) VIEW_SLOT10(42) VIEW_SLOT10(43)
+	VIEW_SLOT(440) VIEW_SLOT(441) VIEW_SLOT(442) VIEW_SLOT(443) VIEW_SLOT(444) VIEW_SLOT(445) VIEW_SLOT(446) VIEW_SLOT(447)
+	virtual void vfunc448(int task);
+};
+
+struct CNav102edae0 : CAI_Navigator
+{
+	bool sub_102edae0(const float *pPosition, float flDistance, float flMax, float *pOut);
+	bool sub_102ee220(const float *pPosition);
+};
+
+struct CCycleCountRunAI
+{
+	unsigned __int64 m_Int64;
+	CCycleCountRunAI() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+struct TentF
+{
+	char p0[0x26c];
+	const char *m_pszName26c;
+	char p1[0x1b44 - 0x270];
+	const char * m_pszFile1b44;
+	 int m_nLine1b48;
+	char p2[0x5d34 - 0x1b4c];
+	CAI_Navigator *m_pNavigator5d34;
+	char p3[0x667c - 0x5d38];
+	float m_n667c;
+};
+#define F ((TentF *)this)
+
+struct TentVtbl { char pad[0x700]; void (CTentSlotView::*f448)(int); };
+#define TFILE "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiaoTentacle.cpp"
+inline void (CTentSlotView::*GetF448(void *p))(int) { ((TentF *)p)->m_pszFile1b44 = TFILE; return (*(TentVtbl **)p)->f448; }
+inline CNav102edae0 *GetNavT(void *p) { return (CNav102edae0 *)((TentF *)p)->m_pNavigator5d34; }
+// TARGET: CNPC_VMingXiaoTentacle::vfunc432
+void CNPC_VMingXiaoTentacle::vfunc432(int a)
+{
+	ScopeTrace trace("CNPC_VMingXiaoTentacle::RunAI", this ? (F->m_pszName26c ? F->m_pszName26c : g_106b8540) : g_105387dc, g_106b8540);
+	CVProfile *pv = g_109f3648;
+	if (pv->m_enabled || !pv->m_bAtRoot) {
+		if (pv->m_pCurNode->m_pszName != "CNPC_VMingXiaoTentacle_RunAI")
+			pv->m_pCurNode = pv->m_pCurNode->GetSubNode("CNPC_VMingXiaoTentacle_RunAI", 0, "Unaccounted");
+		pv->m_pCurNode->EnterScope();
+		pv->m_bAtRoot = false;
+	}
+	if (gpGlobals->curtime > F->m_n667c) {
+		F->m_n667c = enginerandom->vfunc1(1.0f, 2.0f) + gpGlobals->curtime;
+		if (GetNavT(this)->sub_102ee6a0() && GetNavT(this)->sub_102ee620() == 4) {
+			CTentSlotView *v = (CTentSlotView *)this;
+			if (!v->vfunc167()) {
+				F->m_nLine1b48 = 0x4ba;
+				(v->*(GetF448(this)))(6);
+			} else {
+				if (!(m_f6268 <= 256.0f))
+					goto done;
+				float vecPos[3];
+				CEntityOriginSlotView *pT = v->vfunc167();
+				CNav102edae0 *pNav = GetNavT(this);
+				if (!pNav->sub_102edae0(pT->vfunc217(), 512.0f, 30000.0f, vecPos)) {
+					F->m_nLine1b48 = 0x4c6;
+					(v->*(GetF448(this)))(7);
+				} else {
+					if (GetNavT(this)->sub_102ee220(vecPos))
+						goto done;
+					F->m_nLine1b48 = 0x4d0;
+					(v->*(GetF448(this)))(12);
+				}
+			}
+		}
+	}
+done:
+	if (m_b6688 && gpGlobals->curtime >= m_flTimer6684) {
+		m_b6688 = 0;
+		if (!sub_102a0fb0(vfunc217(), 0x202400b, 0, 0))
+		{
+			m_flTimer6684 = gpGlobals->curtime + 1.0f;
+			m_b6688 = 1;
+		}
+	}
+	if (!m_b6698 && ((CTentSlotView *)this)->vfunc209()) {
+		sub_1039f030();
+		sub_1039f1a0();
+		m_b6698 = 1;
+	}
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc432(a);
+	pv = g_109f3648;
+	if (!pv->m_bAtRoot || pv->m_enabled) {
+		CVProfNode *n = pv->m_pCurNode;
+		if (--n->m_nRecursions == 0 && n->m_nCurFrameCalls != 0) {
+			CCycleCountRunAI cnt;
+			cnt.Sample();
+			unsigned __int64 *pc = &n->m_CurFrameTime.m_Int64;
+			*pc = cnt.m_Int64 - *pc;
+			n->m_TotalTime += *pc;
+			g_109f3648->PopGroup();
+		}
+		if (n->m_nRecursions == 0)
+			pv->m_pCurNode = pv->m_pCurNode->m_pParent;
+		pv->m_bAtRoot = pv->m_pCurNode == pv->m_pRoot;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039e890 size=0x3d
 #include "vampire.h"
 #include "CAI_BaseNPCTroika.h"

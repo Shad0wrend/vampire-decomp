@@ -9934,6 +9934,7 @@
 0x1000d8e1 func   ?sub_101ac670@CUnknown101ac670@@QAEHH@Z CUnknown101ac670::sub_101ac670
 0x1000d8e6 func   ?sub_101456e0@@YAMPBVVector@@@Z sub_101456e0
 0x1000d8eb func   ?vfunc438@CNPC_VWolfMorph@@QAEHXZ CNPC_VWolfMorph::vfunc438
+0x1000d8f0 func   ?vfunc432@CNPC_VMingXiaoTentacle@@UAEXH@Z CNPC_VMingXiaoTentacle::vfunc432
 0x1000d8f5 func   ?vfunc72@CNPC_VPlayerController@@QAE_NH@Z CNPC_VPlayerController::vfunc72
 0x1000d8fa func   ?sub_102ce130@CUnknown102ce130@@QAEXH@Z CUnknown102ce130::sub_102ce130
 0x1000d8ff func   ?vfunc103@CHudCounter@@UAEXXZ CHudCounter::vfunc103
