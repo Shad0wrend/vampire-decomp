@@ -284,27 +284,7 @@ void CRotDoor::vfunc156(int bFirst)
 #include "CEntityVSlots.h"
 #include "CBaseCombatCharacter.h"
 #include "inputdata_t.h"
-
-namespace block_100f26b0 {
-struct EntListUnit : EHandleEntityList
-{
-	IHandleEntity *sub_100290c0(const CBaseHandle &handle) const;
-};
-#pragma auto_inline(off)
-IHandleEntity *EntListUnit::sub_100290c0(const CBaseHandle &handle) const
-{
-	unsigned int i = handle.m_Index;
-	if (i == 0xffffffff)
-		return 0;
-	const EHandleEntInfo *pInfo = &m_EntPtrArray[i & 0x1fff];
-	if ((unsigned int)pInfo->m_SerialNumber == (i >> m_EntPtrArray[0].m_pad))
-		return pInfo->m_pEntity;
-	else
-		return 0;
-}
-#pragma auto_inline(on)
-}
-using namespace block_100f26b0;
+#include <math.h>
 
 class CUnknown1017f770
 {
@@ -323,12 +303,60 @@ struct SDoorActivator
 	CBaseCombatCharacter *m_pPlayer;	// 0xa8
 };
 
+// The real earlier unit function CBaseDoor::sub_100ee950 (the doorknob closer to the target, 0x100ee950), a same-unit
+// copy: its first three knob lookups decline the header inline LookupEntity (VC6 inline budget), so the COMDAT is
+// compiled before the target.
+namespace block_100f26b0 {
+static inline float KnobDist(const Vector &a, const Vector &b)
+{
+	return fabs(a.y - b.y) + fabs(a.z - b.z) + fabs(a.x - b.x);
+}
+struct DoorUnit : CBaseDoor
+{
+	CBaseEntity *sub_100ee950(CBaseEntity *pTarget);
+};
+#define KNOB_GET(h) ((EHANDLE *)&(h))->Get()
+CBaseEntity *DoorUnit::sub_100ee950(CBaseEntity *pTarget)
+{
+	if (!pTarget)
+		return 0;
+	if (KNOB_GET(m_hDoorknob0) && KNOB_GET(m_hDoorknob1))
+	{
+		Vector vTarget;
+		((CEntityVSlots *)pTarget)->slot193(&vTarget);
+		Vector vTmp;
+		const Vector *p0 = ((CEntityVSlots *)KNOB_GET(m_hDoorknob0))->slot193(&vTmp);
+		float d0 = KnobDist(vTarget, *p0);
+		const Vector *p1 = ((CEntityVSlots *)KNOB_GET(m_hDoorknob1))->slot193(&vTmp);
+		float d1 = KnobDist(vTarget, *p1);
+		if (d1 > d0)
+			return KNOB_GET(m_hDoorknob0);
+		return KNOB_GET(m_hDoorknob1);
+	}
+	if (KNOB_GET(m_hDoorknob0) || KNOB_GET(m_hDoorknob1))
+	{
+		if (KNOB_GET(m_hDoorknob0))
+			return KNOB_GET(m_hDoorknob0);
+		if (KNOB_GET(m_hDoorknob1))
+			return KNOB_GET(m_hDoorknob1);
+	}
+	return 0;
+}
+#undef KNOB_GET
+}
+
+// m_toggle_state read through the CBaseToggle accessor
+struct CDoorToggleView : CBaseDoor
+{
+	int GetToggleState() const { return m_nState4f8; }
+};
+
 // TARGET: ?vfunc242@CRotDoor@@UAEHXZ
 int CRotDoor::vfunc242()
 {
 	ScopeTrace trace("CRotDoor::DoorActivate", g_106b8540);
 	CBaseDoor *pDoor = (CBaseDoor *)this;
-	SDoorActivator *pActivator = (SDoorActivator *)((EntListUnit *)EHandleDetail::g_10566458)->sub_100290c0(pDoor->m_hActivator53c);
+	SDoorActivator *pActivator = (SDoorActivator *)pDoor->m_hActivator53c.Get();
 	CBaseCombatCharacter *pPlayer;
 	if (!pActivator)
 		pPlayer = (CBaseCombatCharacter *)pActivator;
@@ -338,9 +366,10 @@ int CRotDoor::vfunc242()
 		if (pPlayer && pDoor->m_bNoOpenWanted && ((CUnknown1017f770 *)pPlayer)->sub_1017f770() > 0)
 			return 0;
 	}
-	if (pDoor->m_nState4f8 == 2 || pDoor->m_nState4f8 == 0)
+	const CDoorToggleView *pToggle = (const CDoorToggleView *)pDoor;
+	if (pToggle->GetToggleState() == 2 || pToggle->GetToggleState() == 0)
 		pDoor->vfunc244(1);
-	else if (pDoor->m_nState4f8 == 1 || pDoor->m_nState4f8 == 3)
+	else if (pToggle->GetToggleState() == 1 || pToggle->GetToggleState() == 3)
 		pDoor->vfunc243(1, 1);
 	inputdata_t input;
 	input.value.iValue = 0;
