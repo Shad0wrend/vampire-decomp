@@ -99793,7 +99793,6 @@ void CUnk1014d110::sub_1014d110()
 // END FUNCTION
 
 // FUNCTION: 0x1014d140 size=0x524
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CSoundControllerImp.h"
 #include "CTriggerProximity.h"
 #include "CUnknown102c63b0.h"
