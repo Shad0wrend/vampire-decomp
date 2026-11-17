@@ -50853,7 +50853,6 @@ void CFloatPair3f4::sub_100c0c80(float flUnused)
 // END FUNCTION
 
 // FUNCTION: 0x100c0e50 size=0x1a2
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "Quaternion.h"
 union CBlendAnimValue
 {
@@ -50928,7 +50927,7 @@ void sub_100c0e50(void *pHdr, int frame, float s, CBlendBone *pbone, CBlendAnim 
 				q1[j] = panimvalue[panimvalue->num.valid].value;
 				if (!(panimvalue->num.total > (1 + k))) q2[j] = panimvalue[panimvalue->num.valid + 2].value; else q2[j] = q1[j];
 			}
-			q1[j] *= pcd_stage(pbone->scale[j]);
+			q1[j] *= (pbone->scale[j]);
 			q2[j] = q2[j] * pbone->scale[j];
 		} ++j; }
 	int *pa1 = (int *)&q1;
