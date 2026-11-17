@@ -207801,6 +207801,109 @@ CUnknown102718e0 *CUnknown102718e0::sub_102718e0(const CUnknown102718e0 *other)
 #include "ehandle.h"
 #include "CGlobalEntityList.h"
 #include <math.h>
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "CEntityVSlots.h"
+#include "CCollisionProperty.h"
+#include "ScopeTrace.h"
+#include "CAI_BaseNPC_vfunc144.h"
+#include "CCineNPC.h"
+#include "CUnknown103158f0.h"
+#include "IPhysicsObject.h"
+#include "ConVar.h"
+
+// The game's first decliner of the header inline EHandleEntityList::LookupEntity in this unit is
+// CAI_BaseNPC::Event_Killed (0x10265ad0, judged 0 below as a same-unit copy): its LookupEntity COMDAT is compiled
+// before CineCleanup, so VC6 knows the call's side effects (not its registers) there, as in the game.
+extern ConVar g_106bbaa0;
+extern ConVar g_10924a68;
+#define FILE_144 "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp"
+
+void __cdecl sub_101cf390(CAI_BaseNPC *pEnt, const Vector &mins, const Vector &maxs);
+float __cdecl sub_102d61e0(int hull);
+int __cdecl sub_101cd250(CAI_BaseNPC *pEnt, int mask, CBaseEntity *pIgnore);
+
+
+namespace block_10271900
+{
+struct CScriptView144
+{
+	char m_pad0000[0x204];
+	unsigned int m_spawnflags;
+	char m_pad0208[0x5f91 - 0x208];
+	char m_bPlayedSequence;
+};
+
+struct CDamageInfo144 : CAI_NPCDamageRecord
+{
+	CBaseEntity *GetAttacker() const { return m_pInflictor; }
+};
+
+struct CEventKilled144 : CAI_BaseNPCUnit144
+{
+	IPhysicsObject *VPhysicsGetObject() const { return m_pPhysObj36c; }
+	void SetIdealStateDbg(int state, const char *pszFile, int nLine) { m_pszFile1b3c = pszFile; m_nLine1b40 = nLine; m_nIdealState5cc4 = state; }
+	void SetTouchNull() { *(int *)((char *)this + 0x1ec) = 0; }
+	void SetCondition(int iCondition) { if (g_10924a68.GetBool()) {} sub_10269a20(iCondition); }
+	void sub_10265ad0(const CDamageInfo144 &info);
+};
+
+void CEventKilled144::sub_10265ad0(const CDamageInfo144 &info)
+{
+	if (m_pSchedule5c38 && (int)m_pSchedule5c38 == sub_102cc1f0(0x3a))
+		return;
+
+	if (m_nState5cc0 == 4 && m_hScript5d74.Get())
+	{
+		CScriptView144 *pScript = (CScriptView144 *)m_hScript5d74.Get();
+		if (pScript->m_bPlayedSequence && (((CScriptView144 *)m_hScript5d74.Get())->m_spawnflags & 0x2080) != 0x80)
+		{
+			m_LastDamage = info;
+			return;
+		}
+		((CCineNPC *)m_hScript5d74.Get())->sub_101a8c30();
+		IPhysicsObject *pPhys;
+		if (g_106bbaa0.GetBool() && (pPhys = VPhysicsGetObject()))
+		{
+			Vector vecTmp;
+			Vector vecPos;
+			vecPos = *vfunc263(&vecTmp);
+			pPhys->vfunc39((float *)&vecPos, 0);
+		}
+	}
+
+	vfunc511();
+	if (m_n153c == -1 || !m_h1538.Get())
+		vfunc488();
+
+	sub_10265a90(info.GetAttacker());
+	if (((CBaseEntity *)this)->sub_100b3700() & 0x2000)
+	{
+		SetTouchNull();
+		sub_10265a40();
+	}
+	sub_1032b9b0((int)&info);
+	SetIdealStateDbg(7, FILE_144, 0x217);
+	SetCondition(0x4c);
+	m_hAttacker5b7c = info.GetAttacker();
+	m_b5b80 = 1;
+	sub_1028ae60();
+	if (m_pSquad5da4)
+		((CUnknown103158f0 *)m_pSquad5da4)->sub_103158f0((CBaseEntity *)this);
+	if ((char)vfunc552())
+		sub_102695d0();
+	else
+		sub_101babc0(0x20, vfunc217(), 0x180, 30.0f, 0);
+	SetIdealStateDbg(7, FILE_144, 0x241);
+	sub_1026e340(7);
+}
+}
 
 extern Vector g_1070d1b0;
 
@@ -207810,54 +207913,31 @@ struct CAI_BaseNPCView : CAI_BaseNPC
 	EHANDLE m_h5ce0;
 	char m_pad5ce4[0x5d34 - 0x5ce4];
 	CAI_Navigator *m_pNav;
+
+	CAI_Navigator *GetNavigator() { return m_pNav; }
 };
 
-#include "CUnknown100290c0.h"
-#pragma auto_inline(off)
-namespace block_10271900 {
-struct CLookUnit : CUnknown100290c0 { unsigned int sub_100290c0(unsigned int *pHandle); };
-static int g_shift71 = 13;
-unsigned int CLookUnit::sub_100290c0(unsigned int *pHandle)
-{
-    unsigned int h = *pHandle;
-    if (h != 0xffffffff) {
-        CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
-        if (pSlot->m_Serial == (int)(h >> g_shift71)) {
-            return pSlot->m_Value;
-        }
-    }
-    return 0;
-}
-}
-#pragma auto_inline(on)
-struct HV271 : CBaseHandle
-{
-	bool operator!=(CBaseEntity *v) const { return (CBaseEntity *)((block_10271900::CLookUnit *)EHandleDetail::g_10566458)->sub_100290c0((unsigned int *)this) != v; }
-};
 void CAI_BaseNPC::sub_10271900()
 {
 	CAI_BaseNPCView *p = (CAI_BaseNPCView *)this;
-	if (p->m_pNav->m_i18 != 3 && p->m_pNav->m_i18 != 1 && p->m_pNav->sub_102ee620() == 2)
+	if (p->GetNavigator()->m_i18 != 3 && p->GetNavigator()->m_i18 != 1 && p->GetNavigator()->sub_102ee620() == 2)
 	{
-		if (*(HV271 *)&p->m_h5ce0 != p->m_pNav->sub_102ee160())
+		if (p->m_h5ce0 != p->GetNavigator()->sub_102ee160())
 		{
-			p->m_pNav->sub_102ed310((CBaseEntity *)p->m_h5ce0.Get(), &g_1070d1b0);
+			p->GetNavigator()->sub_102ed310((CBaseEntity *)p->m_h5ce0.Get(), &g_1070d1b0);
 			return;
 		}
 		Vector vecGoal;
 		vfunc541()->sub_102dfed0(&vecGoal, (CBaseEntity *)vfunc167());
-		float flA = ((CUnknown102ee1a0 *)p->m_pNav)->sub_102ee1a0();
-		float flB = ((CUnknown102f2fc0 *)p->m_pNav)->sub_102f2fc0();
+		float flA = ((CUnknown102ee1a0 *)p->GetNavigator())->sub_102ee1a0();
+		float flB = ((CUnknown102f2fc0 *)p->GetNavigator())->sub_102f2fc0();
 		vfunc563((CBaseEntity *)vfunc167(), &vecGoal, &flA, &flB);
-		const Vector *pDest = p->m_pNav->sub_102ee140();
-		float dx = pDest->x - vecGoal.x;
-		float dy = pDest->y - vecGoal.y;
-		float dz = pDest->z - vecGoal.z;
-		if (FastSqrt(dx * dx + (dy * dy + dz * dz)) > 80.0f || fabs(flB - ((CUnknown102f2fc0 *)p->m_pNav)->sub_102f2fc0()) > 12.0)
+		const Vector *pDest = p->GetNavigator()->sub_102ee140();
+		if (pDest->DistTo(vecGoal) > 80.0f || fabs(flB - ((CUnknown102f2fc0 *)p->GetNavigator())->sub_102f2fc0()) > 12.0)
 		{
-			((CUnknown102ee120 *)p->m_pNav)->sub_102ee1c0(*(int *)&flA);
-			((CUnknown102ee120 *)p->m_pNav)->sub_102f2fe0(*(int *)&flB);
-			p->m_pNav->sub_102ee200();
+			((CUnknown102ee120 *)p->GetNavigator())->sub_102ee1c0(*(int *)&flA);
+			((CUnknown102ee120 *)p->GetNavigator())->sub_102f2fe0(*(int *)&flB);
+			p->GetNavigator()->sub_102ee200();
 		}
 	}
 }
