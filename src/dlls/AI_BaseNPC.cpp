@@ -170,19 +170,8 @@ extern int sub_10228350(float a);
 
 static inline int CvI(ConVar &c) { if (c.m_pParent->vfunc1()) return 0; ConVar *p = c.m_pParent; int v = p->m_nValue; if (*(short *)&p == -1) return v; return v; }
 
-void CAI_BaseNPC::sub_1026d460(int nSide)
+static inline void GetStepSoundParams(SurfData *pData, int nSide, float &flVolume, float &flLevel)
 {
-	NpcView *self = (NpcView *)this;
-	void *pPlayer = sub_101cda50();
-	if (pPlayer) {
-		if (((CUnknown1017d630 *)pPlayer)->sub_1017d630() || ((CUnknown1017d680 *)pPlayer)->sub_1017d680() || sub_1017cf90(pPlayer))
-			return;
-	}
-	SurfData *pData = g_1074f028.sub_10207c40(this);
-	if (0) ((CUtlMemory<int> *)0)->Purge();
-	if (0) ((CUtlMemory<int> *)0)->Purge();
-	float flVolume;
-	float flLevel;
 	if (CvI(g_109203f8) != 0) {
 		switch (nSide) {
 		case 0:
@@ -210,6 +199,20 @@ void CAI_BaseNPC::sub_1026d460(int nSide)
 			__assume(0);
 		}
 	}
+}
+
+void CAI_BaseNPC::sub_1026d460(int nSide)
+{
+	NpcView *self = (NpcView *)this;
+	void *pPlayer = sub_101cda50();
+	if (pPlayer) {
+		if (((CUnknown1017d630 *)pPlayer)->sub_1017d630() || ((CUnknown1017d680 *)pPlayer)->sub_1017d680() || sub_1017cf90(pPlayer))
+			return;
+	}
+	SurfData *pData = g_1074f028.sub_10207c40(this);
+	float flVolume;
+	float flLevel;
+	GetStepSoundParams(pData, nSide, flVolume, flLevel);
 	if (g_10723944 && self->m_pSnd5b90) {
 		int nLevel = sub_10228350(flLevel);
 		CPASAttenuationFilter filter(self, (soundlevel_t)nLevel);
