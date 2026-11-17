@@ -279190,7 +279190,6 @@ char sub_1036a340()
 // END FUNCTION
 
 // FUNCTION: 0x1036a420 size=0x6c1
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "UtlMem.h"
 #include "UtlVec8.h"
 #include "CUtlVector4.h"
