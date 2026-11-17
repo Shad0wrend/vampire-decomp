@@ -197147,7 +197147,7 @@ struct Mem16 {
     {
         if (m_nGrowSize == -1)
             return;
-        int a = *(volatile int *)&m_nAllocationCount;
+        int a = *(int *)&m_nAllocationCount;
         int nAllocationRequested = a + num;
         if (a < nAllocationRequested) {
             do {
