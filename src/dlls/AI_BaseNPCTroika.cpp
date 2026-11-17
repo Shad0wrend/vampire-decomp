@@ -6426,6 +6426,8 @@ int CAI_BaseNPCTroika::sub_102b8c40()
 // END FUNCTION
 
 // FUNCTION: 0x102b8d20 size=0x287
+#include "CAI_Motor.h"
+#include "CAI_Navigator.h"
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseEntity.h"
 #include "CSoundControllerImp.h"
@@ -6440,43 +6442,129 @@ int CAI_BaseNPCTroika::sub_102b8c40()
 #include "globalvars.h"
 
 void sub_10139610(const Vector &angles, Vector *fwd, Vector *right, Vector *up);
-static int g_shiftTest = 13;  // the game's shr 0xd; the same-unit copy must read it for VC6 to compile the caller as the game
 
-namespace block_102b8d20 {
-struct CUnknown100290c0 : EHandleEntityList
+// The game's first decliner of the header inline EHandleEntityList::LookupEntity in this unit is
+// CAI_BaseNPCTroika::OnScheduleChange (vfunc435, 0x102a0940, judged 0 below as a same-unit copy): its LookupEntity
+// COMDAT is compiled before this function, so VC6 knows the call's side effects (not its registers) here.
+#include "CUnknown1027d990.h"
+#include "CUnknown102ee270.h"
+#include "CUnknown102e0a60.h"
+#include "CUnknown101e3af0.h"
+
+extern unsigned char g_10739a64;
+extern CUnknown101e3af0 g_10739a4c;
+void sub_1018e910(void *pThis);
+
+namespace block_102b8d20
 {
-	unsigned int sub_100290c0(unsigned int *ph);
+struct CUnk1026d160X
+{
+	void sub_1026d160();
 };
-unsigned int CUnknown100290c0::sub_100290c0(unsigned int *ph)
-{
-	unsigned int h = *ph;
-	if (h == 0xffffffff)
-		return 0;
-	EHandleEntInfo *p = &m_EntPtrArray[h & 0x1fff];
-	if (p->m_SerialNumber == (int)(h >> g_shiftTest))
-		return (unsigned int)p->m_pEntity;
-	return 0;
-}
-}
-using namespace block_102b8d20;
 
-#define LIST ((CUnknown100290c0 *)EHandleDetail::g_10566458)
-#define H5B78 (*(CHandle<CEntityVSlots> *)((char *)this + 0x5b78))
+struct CSetAttackExtentsSlot
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+	virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(const float *pExtents);
+};
+
+struct CScheduleChange435 : CAI_BaseNPCTroika
+{
+	CAI_Motor *GetMotor() { return m_pMotor5d44; }
+	CAI_Navigator *GetNavigator() { return m_p5d34; }
+	void AddNpcFlags(unsigned int f) { m_flags14bc |= f; }
+	unsigned int HasNpcFlags(unsigned int f) const { return m_flags14bc & f; }
+	void RemoveNpcFlags(unsigned int f) { m_flags14bc &= ~f; }
+	void RemoveTroikaFlags(unsigned int f) { m_flags14b8 &= ~f; }
+	unsigned int HasNavFlags(unsigned int f) const { return m_flags5d8c & f; }
+	void RemoveNavFlags(unsigned int f) { m_flags5d8c &= ~f; }
+	void sub_102a0940(void *pSchedule);
+};
+
+void CScheduleChange435::sub_102a0940(void *pSchedule)
+{
+	CAI_BaseNPC::vfunc435(pSchedule);
+	AddNpcFlags(0x80000004);
+
+	if ((~m_flags14b8 & 8) != 0) {
+		if (((CUnknown1027d990 *)this)->sub_1027d990() != 3
+			&& ((CUnknown1027d990 *)this)->sub_1027d990() != 1)
+			((CUnknown102ee270 *)GetNavigator())->sub_102ee270();
+
+		sub_102b53d0(1, "Leaving interesting place (OnScheduleChange)");
+		m_n6300 = 0;
+		m_n659c = 0;
+		((CUnknown102e0a60 *)GetMotor())->sub_102e0a60(0x43340000);
+		m_b1a40 = 0;
+		m_flGoalTolerance = 0;
+		m_flInsideInterruptDistanceSqr = 0;
+		m_flOutsideInterruptDistanceSqr = 0;
+		m_flInterruptTime = 0;
+		((CBaseHandle &)m_hMoveTargetEnt) = (IHandleEntity *)0;
+
+		if (((const CBaseHandle *)&m_h5d24)->Get())
+			((CEntityVSlots *)this)->slot532(8);
+
+		RemoveTroikaFlags(0x440b4681);
+		RemoveNpcFlags(0x88000eb0);
+		if (HasNpcFlags(0x1000)) {
+			RemoveNpcFlags(0x80001000);
+			((CUnk1026d160X *)this)->sub_1026d160();
+		}
+
+		if ((m_flags14bc & 1) == 1) {
+			float *pExtents = (float *)((char *)this + 0x65d0);
+			((CSetAttackExtentsSlot *)this)->v15(pExtents);
+			pExtents[0] = -1.0f;
+			pExtents[1] = -1.0f;
+			pExtents[2] = -1.0f;
+			RemoveNpcFlags(0x80000001);
+		}
+
+		*((char *)GetMotor() + 0x28) = 0;
+		m_flDesiredMoveYaw = 0;
+		m_bWaitFinishedSet = 0;
+	}
+
+	if (HasNpcFlags(0x40000000)) {
+		if (g_10739a64)
+			g_10739a4c.sub_101e3c80((CBaseCombatCharacter *)this, 1);
+		sub_1018e910(this);
+		m_b63d8 = 0;
+	}
+
+	RemoveNpcFlags(0xc0000000);
+	RemoveTroikaFlags(0x28000000);
+	if (HasNavFlags(0x2000))
+		RemoveNavFlags(0x2000);
+}
+}
+
+struct CEntityNPC94 : CEntityVSlots
+{
+	char m_pad0004[0x94 - 4];
+	CEntityVSlots *m_pNPC94;	// 0x94
+	CEntityVSlots *GetNPC() { return m_pNPC94; }
+};
+
+#define H5B78 (*(CHandle<CEntityNPC94> *)((char *)this + 0x5b78))
 #define H6160 (*(CHandle<CEntityVSlots> *)((char *)this + 0x6160))
 #define H618C (*(CHandle<CEntityVSlots> *)((char *)this + 0x618c))
 #define TVEC (*(Vector *)((char *)this + 0x5dd0))
 
 int CAI_BaseNPCTroika::sub_102b8d20(int a, int b)
 {
-	unsigned int *ph = (unsigned int *)((char *)this + 0x5b78);
-	if (LIST->sub_100290c0(ph))
+	if (H5B78.Get())
 	{
-		CBaseEntity *pEnemy = (CBaseEntity *)((CEntityVSlots *)LIST->sub_100290c0(ph))->slot167();
+		CBaseEntity *pEnemy = (CBaseEntity *)H5B78.Get()->slot167();
 		if (pEnemy)
 		{
 			if (vfunc404(pEnemy) == 1)
 			{
-				CEntityVSlots *pAI = *(CEntityVSlots **)(LIST->sub_100290c0(ph) + 0x94);
+				CEntityVSlots *pAI = H5B78->GetNPC();
 				if (pAI)
 				{
 					if (pAI == H6160.Get() || pAI == H618C.Get())
