@@ -70279,6 +70279,7 @@ float __stdcall sub_100f3ea0(float a, float b, float c)
 #include "CCollisionProperty.h"
 #include "ScopeTrace.h"
 
+extern float g_104546c4;
 namespace block_100f3f20 {
 struct CRotDoorCalc : CRotDoor
 {
@@ -70286,10 +70287,12 @@ struct CRotDoorCalc : CRotDoor
 };
 float CRotDoorCalc::sub_100f3ea0(float a, float b, float c)
 {
-	float d = (float)fabs(a - c) - (float)fabs(a - b);
-	if (d > 4.0f)
+	float dc = (float)fabs(a - c);
+	float db = (float)fabs(a - b);
+	float d = dc - db;
+	if (d > g_104546c4)
 		return c;
-	if (d < -4.0f)
+	if (d < -g_104546c4)
 		return b;
 	return a;
 }
