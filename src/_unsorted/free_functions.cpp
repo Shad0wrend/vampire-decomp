@@ -262142,78 +262142,42 @@ void __fastcall sub_10323630(CBaseCombatCharacter *self)
 
 // FUNCTION: 0x10323770 size=0x15b
 #include "ScopeTrace.h"
-#include "CGlobalEntityList.h"
-#include "CUtlVector4.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
 #include "CBaseCombatCharacter.h"
+#include "ehandle.h"
+#include "utlvector.h"
 extern char g_106b8540[];
 static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
 
-extern CGlobalEntityList *g_10566458;
+extern CUtlVector<EHANDLE> g_109370bc;
+extern CUtlVector<EHANDLE> g_10937af4;
+extern char g_1061f05c[];
 
-#pragma auto_inline(off)
-struct CEntListLookup10323770
+namespace block_10323770 {
+// 0x103234a0 "CBaseCombatCharacter::RemoveFromPresenceList", the unit's earlier function: its FindAndRemove declines
+// the header inline LookupEntity, so the COMDAT is compiled before the target
+void __fastcall sub_103234a0(CBaseCombatCharacter *pThis)
 {
-	void *m_vtable;
-	CGlobalEntityList_Slot m_Slots[0x2000];
-	CBaseEntity *sub_100290c0(const unsigned int *pHandle);
-};
-CBaseEntity *CEntListLookup10323770::sub_100290c0(const unsigned int *pHandle)
-{
-	unsigned int h = *pHandle;
-	if (h != 0xffffffff) {
-		CGlobalEntityList_Slot *s = &m_Slots[h & 0x1fff];
-		unsigned int c = h; if (s->m_Serial == (int)(h >> (c >> 27)))
-			return (CBaseEntity *)s->m_pEntity;
-	}
-	return 0;
+	ScopeTrace trace(g_1061f05c, pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+	EHANDLE h = pThis;
+	g_109370bc.FindAndRemove(h);
 }
-#pragma auto_inline(on)
-
-inline CBaseEntity *GetEntity(CGlobalEntityList *pList, unsigned int h)
-{
-	if (h != 0xffffffff) {
-		CGlobalEntityList_Slot *s = &pList->m_Slots[h & 0x1fff];
-		if (s->m_Serial == (int)(h >> 13))
-			return (CBaseEntity *)s->m_pEntity;
-	}
-	return 0;
 }
-
-struct ComfortList : CUtlVector4
-{
-	inline int Find(const unsigned int *pHandle) const
-	{
-		int i = 0;
-		if (m_size > 0) {
-			do {
-				CBaseEntity *search = ((CEntListLookup10323770 *)g_10566458)->sub_100290c0(pHandle);
-				if (GetEntity(g_10566458, m_pMemory[i]) == search)
-					return i;
-				i++;
-			} while (i < m_size);
-		}
-		return -1;
-	}
-	inline void Remove(int elem)
-	{
-		int n = m_size - elem - 1;
-		if (n > 0)
-			memmove(m_pMemory + elem, m_pMemory + elem + 1, n * 4);
-		m_size--;
-	}
-};
-extern ComfortList g_10937af4;
 
 // TARGET: CBaseCombatCharacter::sub_10323770
 void CBaseCombatCharacter::sub_10323770()
 {
 	ScopeTrace trace("CBaseCombatCharacter::RemoveFromComfortList", this ? (STRINGR_F(m_name26c)) : g_105387dc);
-	unsigned int h = this ? *vfunc1() : 0xffffffff;
-	ComfortList *pList = &g_10937af4;
-	int elem = pList->Find(&h);
-	if (elem != -1)
-		pList->Remove(elem);
-	*(int *)((char *)this + 0xe94) = 0;
+	EHANDLE h = this;
+	g_10937af4.FindAndRemove(h);
+	m_iComfortingCount = 0;
 }
 // END FUNCTION
 
