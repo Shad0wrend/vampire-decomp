@@ -544,7 +544,6 @@ void CMultiplayRules::vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo)
 // END FUNCTION
 
 // FUNCTION: 0x10141c80 size=0x2c6
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CNPC_VTzimisce.h"
 #include "CMultiplayRules.h"
 #include "CBaseCombatCharacter.h"
@@ -601,11 +600,11 @@ void CMultiplayRules::vfunc45(CBaseEntity *pVictim, CMPDamageInfo *pInfo)
 		if (pScorer)
 			killer_index = ENTINDEX(((CMPPlayerView *)pScorer)->m_pEdict);
 	} else {
-		if (pcd_stage(pScorer)) {
+		if (pScorer) {
 			killer_index = ENTINDEX(((CMPPlayerView *)pScorer)->m_pEdict);
 			if (pInflictor) {
 				if (pInflictor == pScorer) {
-					if ((pcd_stage((CBaseCombatCharacter *)pScorer))->sub_1032e7b0())
+					if ((((CBaseCombatCharacter *)pScorer))->sub_1032e7b0())
 						killer_weapon_name = ((CMPWeaponView *)((CBaseCombatCharacter *)pScorer)->sub_1032e7b0())->GetDeathNoticeName();
 				} else {
 					killer_weapon_name = STRINGV(((CMPPlayerView *)pInflictor)->m_pszClassname);
@@ -630,17 +629,17 @@ void CMultiplayRules::vfunc45(CBaseEntity *pVictim, CMPDamageInfo *pInfo)
 	engine->vfunc66();
 
 	int nVictimEdict; nVictimEdict = ((CMPPlayerView *)pVictim)->m_pEdict;
-	if (pVictim == pcd_stage(pScorer)) {
+	if (pVictim == pScorer) {
 		pVictim = (CBaseEntity *)STRINGV(((CMPPlayerView *)pVictim)->m_pszNetname);
 		sub_101d10e0("\"%s<%i>\" killed self with %s\n", (const char *)pVictim, engine->vfunc34(nVictimEdict), killer_weapon_name);
-	} else if (pcd_stage(pScorer)) {
+	} else if (pScorer) {
 		const char *pszVictimName = STRINGV(((CMPPlayerView *)pVictim)->m_pszNetname);
 		int nScorerEdict; nScorerEdict = ((CMPPlayerView *)pScorer)->m_pEdict;
 		const char *pszName = STRINGV(((CMPPlayerView *)pScorer)->m_pszNetname);
 		sub_101d10e0("\"%s<%i>\" killed \"%s<%i>\" with %s\n", pszName, engine->vfunc34(nScorerEdict), pszVictimName, engine->vfunc34(nVictimEdict), killer_weapon_name);
 	} else {
 		pVictim = (CBaseEntity *)STRINGV(((CMPPlayerView *)pVictim)->m_pszNetname);
-		sub_101d10e0("\"%s<%i>\" killed by world with %s\n", (const char *)pVictim, engine->vfunc34(nVictimEdict), pcd_stage(killer_weapon_name));
+		sub_101d10e0("\"%s<%i>\" killed by world with %s\n", (const char *)pVictim, engine->vfunc34(nVictimEdict), killer_weapon_name);
 	}
 }
 // END FUNCTION
