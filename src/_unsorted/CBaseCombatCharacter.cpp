@@ -4621,10 +4621,12 @@ template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 #include "CGlobalEntityList.h"
+#include "ehandle.h"
+#include "Vector.h"
 #include <stdio.h>
 struct CUnknownA8 { void sub_1017df50(int a, float b, const char *c); void sub_1017e150(int a, float b, const char *c); };
-struct CFeedDbg { virtual char vfunc0(); virtual char vfunc1(); char m_pad[0x28]; int m_n2c; };
-extern CFeedDbg *g_10937034;
+#include "ConVar.h"
+extern ConVar g_10937030;
 struct CBloodAmt { int sub_101e9290(void *pEnt, int n); };
 extern CBloodAmt g_10739d08;
 struct CFeedFlagsView { unsigned int sub_1033c9c0(); };
@@ -4632,49 +4634,96 @@ void __fastcall sub_10293e20(void *, float);
 const char *sub_101d3730(const char *fmt, ...);
 
 
+extern float g_104454c4;
+extern float g_104454c0;
 namespace block_1033a400 {
-struct CUnknown100290c0 : EHandleEntityList
-{
-	IHandleEntity *sub_100290c0(const CBaseHandle &handle) const;
-};
-IHandleEntity *CUnknown100290c0::sub_100290c0(const CBaseHandle &handle) const
-{
-	unsigned int i = handle.m_Index;
-	if (i == 0xffffffff)
-		return 0;
-	const EHandleEntInfo *pInfo = &m_EntPtrArray[i & 0x1fff];
-	if ((unsigned int)pInfo->m_SerialNumber == (i >> (m_EntPtrArray[0].m_pad & 31)))
-		return pInfo->m_pEntity;
-	else
-		return 0;
-}
-}
-using namespace block_1033a400;
-inline CBaseCombatCharacter *LK(const CBaseHandle &h) { return (CBaseCombatCharacter *)((CUnknown100290c0 *)EHandleDetail::g_10566458)->sub_100290c0(h); }
+#define V4(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3();
+#define V16(x) V4(x##a) V4(x##b) V4(x##c) V4(x##d)
+#define V64(x) V16(x##a) V16(x##b) V16(x##c) V16(x##d)
 
+struct EyeTarget {
+	V64(a) V64(b) V64(c) virtual Vector vfunc192(); virtual Vector vfunc193();
+	V16(d) V4(e) virtual void f0(); virtual void f1(); virtual void f2();
+	virtual Vector *vfunc217();
+};
+struct EyeSelf {
+	V64(a) V64(b) V64(c) V64(d) V16(e) V4(f) virtual void g0();
+	virtual void vfunc277(Vector *pDir);
+	char m_pad0004[0x26c - 4];
+	const char *m_name26c;
+	char m_pad0270[0xe3c - 0x270];
+	float m_flBlend;
+	char m_pad0e40[4];
+	Vector m_vecGoal;
+	Vector m_vecDir;
+	char m_pad0e5c[0xe64 - 0xe5c];
+	unsigned int m_hTarget;
+	int m_nMode;
+
+	void sub_10331da0(Vector *pA, Vector *pB);
+	char sub_10325da0(Vector *pGoal);
+};
+
+void __fastcall sub_10325620(EyeSelf *self, int edx, float flInterval)
+{
+	ScopeTrace trace("CBaseCombatCharacter::MaintainScriptedEyeDirection", self ? (self->m_name26c ? self->m_name26c : g_106b8540) : g_105387dc);
+	EyeTarget *pTarget = (EyeTarget *)((const CBaseHandle *)&self->m_hTarget)->Get();
+	if (!pTarget) {
+		self->m_nMode = 0;
+		return;
+	}
+	Vector vecPos, vecDir;
+	self->sub_10331da0(&vecPos, &vecDir);
+	switch (self->m_nMode) {
+	case 1:
+		self->m_vecGoal = pTarget->vfunc193();
+		break;
+	case 2:
+		self->m_vecGoal = pTarget->vfunc192();
+		break;
+	case 3:
+		self->m_vecGoal = *pTarget->vfunc217();
+		break;
+	default:
+		self->m_vecGoal = vecPos + vecDir * 300.0f;
+		break;
+	}
+	if (!self->sub_10325da0(&self->m_vecGoal))
+		self->m_vecGoal = vecPos + vecDir * 300.0f;
+	float t = flInterval;
+	while (t > g_104454c4) {
+		self->m_vecDir = self->m_vecDir * (g_104454c0 - self->m_flBlend) + self->m_vecGoal * self->m_flBlend;
+		t -= 0.1;
+	}
+	self->vfunc277(&self->m_vecDir);
+}
+}
+
+static inline bool IsGrappleMode1033a400(const CBaseCombatCharacter *p, int mode)
+{ return p->m_hTarget1538.Get() && p->m_nTarget153c != -1 && p->m_nTargetMode1540 == mode; }
 // TARGET: CBaseCombatCharacter::vfunc352
 void CBaseCombatCharacter::vfunc352()
 {
 	ScopeTrace trace("CBaseCombatCharacter::Feed", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 	EHANDLE *pVictim = &m_h149c;
-	if (!LK(*pVictim))
+	if (!pVictim->Get())
 		return;
 	EHANDLE *pTarget = &m_hTarget1538;
-	if (!((LK(*pTarget) && m_nTarget153c != -1 && m_nTargetMode1540 == 0)
-		|| (LK(*pTarget) && m_nTarget153c != -1 && m_nTargetMode1540 == 2)
-		|| (LK(*pTarget) && m_nTarget153c != -1 && m_nTargetMode1540 == 6)))
+	if (!(IsGrappleMode1033a400(this, 0)
+		|| IsGrappleMode1033a400(this, 2)
+		|| IsGrappleMode1033a400(this, 6)))
 		return;
 	if (m_flNextFeed1490 > gpGlobals->curtime)
 		return;
-	if (!g_10937034->vfunc1() && g_10937034->m_n2c) {
+	if (g_10937030.GetBool()) {
 		char buf[256];
 		sprintf(buf, "%s Feed with %s", sub_100ab4f0(), pVictim->Get()->sub_100ab4f0());
 		sub_103221b0(buf);
 	}
 	if (sub_103395f0()) {
 		int n = 1;
-		bool bA = (((CFeedFlagsView *)this)->sub_1033c9c0() & 0x8000) == 0x8000 && pTarget->Get() && m_nTarget153c != -1 && m_nTargetMode1540 == 6;
-		bool bB = (((CFeedFlagsView *)this)->sub_1033c9c0() & 0x10000) == 0x10000 && pTarget->Get() && m_nTarget153c != -1 && m_nTargetMode1540 == 6;
+		bool bA = (((CFeedFlagsView *)this)->sub_1033c9c0() & 0x8000) == 0x8000 && IsGrappleMode1033a400(this, 6);
+		bool bB = (((CFeedFlagsView *)this)->sub_1033c9c0() & 0x10000) == 0x10000 && IsGrappleMode1033a400(this, 6);
 		if (bA) {
 			n = 3;
 			if (m_iCurBloodStolenMod < 0)
@@ -4704,7 +4753,7 @@ void CBaseCombatCharacter::vfunc352()
 			}
 		} while (n > 0);
 		((CBaseCombatCharacter *)m_h149c.Get())->sub_10338df0(0);
-		if (!(pTarget->Get() && m_nTarget153c != -1 && m_nTargetMode1540 == 2)) {
+		if (!IsGrappleMode1033a400(this, 2)) {
 			void *pNpc = m_h149c.Get()->m_pNPC98;
 			if (pNpc)
 				sub_10293e20(pNpc, 3.0f);
