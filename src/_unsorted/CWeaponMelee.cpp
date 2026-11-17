@@ -199,16 +199,10 @@ struct CMeleeFOVView
 };
 
 extern float g_104d347c[];
-extern float g_104454c4;
 extern ConVar g_10937a88;
 extern ConVar g_10940d68;
 extern ConVar g_1074f048;
 extern const char g_106b8540[];
-
-static inline float MeleeCvFloat(ConVar &cv)
-{
-	return cv.m_pParent->vfunc1() ? g_104454c4 : cv.m_pParent->m_fValue;
-}
 
 char sub_103ea4d0(CBaseEntity *pSelf, CBaseEntity *pOther);
 
@@ -268,9 +262,7 @@ char CWeaponMelee::vfunc372(int a, int b, int c)
 		pFound = (CBaseEntity *)((CEntityVSlots *)pOwner->m_pNPC98)->slot167();
 	else
 	{
-		float flZ = g_10937a88.m_pParent->vfunc1() ? (double)g_104454c4 : g_10937a88.m_pParent->m_fValue;
-		double flCos = cos(0.5235987755982988);
-		pFound = ((CMeleeFOVView *)pOwner)->sub_10341c30((void *)sub_103ea4d0, flReach, flCos, 1, flZ, 0x46004003);
+		pFound = ((CMeleeFOVView *)pOwner)->sub_10341c30((void *)sub_103ea4d0, flReach, cos(0.5235987755982988), 1, (g_10937a88.GetFloat()), 0x46004003);
 	}
 	CBaseEntity *pTarget = 0;
 	if (pFound && (pTarget = (CBaseEntity *)((CBaseEntity *)pFound)->m_p9c) != 0)
@@ -284,11 +276,9 @@ char CWeaponMelee::vfunc372(int a, int b, int c)
 	{
 		if (pPlayer)
 			pPlayer->m_hMeleeOpponent.m_Index = 0xffffffff;
-		if (act != 0x4d || (char)b)
-			goto attack;
-		return 0;
+		if (act == 0x4d && !(char)b)
+			return 0;
 	}
-attack:
 	if (pPlayer)
 		((CEntityVSlots *)pPlayer)->slot410();
 
@@ -309,7 +299,7 @@ attack:
 
 	((CEntityVSlots *)pOwner)->slot311(a, act, nOut);
 
-	pOwner->m_flPlaybackRate6f4 = ((pOwner->m_pNPC98 && (pOwner->m_pNPC98->m_flags5b84 & 0x4000) == 0x4000) ? max(MeleeCvFloat(g_10940d68), pOwner->m_flFrenzyRate) : pOwner->m_flFrenzyRate) * flScale;
+	pOwner->m_flPlaybackRate6f4 = ((pOwner->m_pNPC98 && (pOwner->m_pNPC98->m_flags5b84 & 0x4000) == 0x4000) ? max(g_10940d68.GetFloat(), pOwner->m_flFrenzyRate) : pOwner->m_flFrenzyRate) * flScale;
 
 	float f = ((CBaseAnimating *)pOwner)->sub_10091080(nOut);
 	if (!pPlayer && !(((CEntityVSlots *)this)->slot332() < f))
