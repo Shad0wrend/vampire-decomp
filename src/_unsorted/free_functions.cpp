@@ -124714,6 +124714,8 @@ void CUnk1019f230::sub_1019f230()
 // END FUNCTION
 
 // FUNCTION: 0x1019f260 size=0x32
+#include "CHL2_Player.h"
+#include "MvsnSec0.h"
 struct CFlagHolder_1019f260;
 struct CFlagVar_1019f260 {
     unsigned int m_Value;
@@ -124741,7 +124743,7 @@ void CFlagHolder_1019f260::sub_1019f260(bool bClear)
     if ((m_flags454.m_Value & 0x20) != want)
     {
         m_flags454.m_Value |= want;
-        volatile bool *pb = &m_b1b1;
+        bool *pb = &m_b1b1;
         *pb = true;
     }
 }
