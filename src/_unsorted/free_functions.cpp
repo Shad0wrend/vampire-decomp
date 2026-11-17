@@ -244818,7 +244818,6 @@ Vector sub_102f7130(const Vector &vecA, const Vector &vecB, const Vector &vecP)
 
 // FUNCTION: 0x102f72c0 size=0x526
 // TARGET: sub_102f72c0
-#pragma inline_depth(255)
 #include <math.h>
 #include "CAI_NodeGraph.h"
 #include "CPairFields102dda40.h"
