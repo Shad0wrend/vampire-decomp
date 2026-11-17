@@ -109477,7 +109477,7 @@ void CBasePlayer::sub_10177120()
 {
 	if (m_f22A8 || m_f22AC) {
 		*(volatile int *)&m_f22A8 = 0;
-		*(volatile int *)&m_f22AC = 0;
+		*(int *)&m_f22AC = 0;
 		*(volatile int *)&m_f22B0 = 0;
 		g_1070b22c->vfunc88(*(volatile int *)&m_n02E0, 0, 0);
 	}
