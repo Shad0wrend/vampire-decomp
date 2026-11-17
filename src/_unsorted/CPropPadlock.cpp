@@ -126,7 +126,7 @@ static __forceinline CUnknown100ee750 *HandleGet(unsigned int h)
 
 void CPropPadlock::vfunc274()
 {
-	volatile unsigned int *ph = (volatile unsigned int *)((char *)this + 0x80c);
+	volatile unsigned int *ph = (unsigned int *)((char *)this + 0x80c);
 	if (HandleGet(*ph))
 		HandleGet(*ph)->sub_100ee750(this);
 	sub_100a0b20();
