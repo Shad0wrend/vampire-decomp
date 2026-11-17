@@ -182594,7 +182594,7 @@ CFuncKeyframedMover *CFuncKeyframedMover::sub_10223330()
 	((CKeyframedMoverSub *)(p + 0x5e8))->sub_10002ddd();
 	*(void * volatile *)this = (void *)vt_1048ba44;
 	*(volatile char *)((char *)this + 0x564) = 0;
-	*(volatile int *)((char *)this + 0x56c) = -1;
+	*(int *)((char *)this + 0x56c) = -1;
 	*(volatile int *)((char *)this + 0x568) = -1;
 	return this;
 }
