@@ -315,25 +315,19 @@ const char *sub_101d3730(const char *fmt, ...);
 struct CFeedFwd { void sub_10293e20(float); };
 struct CFeedA8 { void sub_1017e150(int, float, const char *); };
 
+#include "ehandle.h"
+extern CUtlVector<EHANDLE> g_109370bc;
+extern char g_1061f05c[];
 namespace block_1033a9e0 {
-struct CUnknown100290c0 : EHandleEntityList
+// 0x103234a0 "CBaseCombatCharacter::RemoveFromPresenceList", the unit's first function that declines the header
+// inline LookupEntity (its FindAndRemove), so the COMDAT is compiled before the target
+void __fastcall sub_103234a0(CBaseCombatCharacter *pThis)
 {
-	IHandleEntity *sub_100290c0(const CBaseHandle &handle) const;
-};
-IHandleEntity *CUnknown100290c0::sub_100290c0(const CBaseHandle &handle) const
-{
-	unsigned int i = handle.m_Index;
-	if (i == 0xffffffff)
-		return 0;
-	const EHandleEntInfo *pInfo = &m_EntPtrArray[i & 0x1fff];
-	if ((unsigned int)pInfo->m_SerialNumber == (i >> (m_EntPtrArray[0].m_pad & 31)))
-		return pInfo->m_pEntity;
-	else
-		return 0;
+	ScopeTrace trace(g_1061f05c, pThis ? (pThis->m_name26c ? pThis->m_name26c : g_106b8540) : g_105387dc);
+	EHANDLE h = pThis;
+	g_109370bc.FindAndRemove(h);
 }
 }
-using namespace block_1033a9e0;
-inline CBaseCombatCharacter *LK(const CBaseHandle &h) { return (CBaseCombatCharacter *)((CUnknown100290c0 *)EHandleDetail::g_10566458)->sub_100290c0(h); }
 
 #define V10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define V100(p) V10(p##0) V10(p##1) V10(p##2) V10(p##3) V10(p##4) V10(p##5) V10(p##6) V10(p##7) V10(p##8) V10(p##9)
@@ -354,8 +348,8 @@ struct CFeedChar : CBaseCombatCharacter
 	char sub_10337f30();
 	void sub_103394a0(int a, bool b, bool c);
 	void sub_103392c0(CBaseCombatCharacter *p, bool b, bool c);
-	CBaseCombatCharacter *GetGrappleTarget() { if (m_nTarget153c != -1) return (CBaseCombatCharacter *)m_hTarget1538.Get(); return 0; }
-	bool IsGrappling(int mode) { return m_hTarget1538.Get() && m_nTarget153c != -1 && m_nTargetMode1540 == mode; }
+	CBaseCombatCharacter *GetGrappleTarget() { return m_nTarget153c != -1 ? (CBaseCombatCharacter *)m_hTarget1538.Get() : 0; }
+	int GetGrappleType() { return (m_hTarget1538.Get() && m_nTarget153c != -1) ? m_nTargetMode1540 : -1; }
 };
 
 extern CVStatList_t g_109f0b40;
@@ -382,7 +376,7 @@ void CFeedSelf::sub_1033a9e0()
 	ScopeTrace trace("CBaseCombatCharacter::FeedInterrupt", this ? STRINGR_F(m_name26c) : g_105387dc);
 	if (g_10937030.sub_1005f190()) {
 		char buf[256];
-		sprintf(buf, "%s FeedInterrupt with %s", (const char *)sub_100ab4f0(), LK(m_h149c) ? (const char *)LK(m_h149c)->sub_100ab4f0() : "**NULL**");
+		sprintf(buf, "%s FeedInterrupt with %s", (const char *)sub_100ab4f0(), m_h149c.Get() ? (const char *)((CBaseCombatCharacter *)m_h149c.Get())->sub_100ab4f0() : "**NULL**");
 		sub_103221b0(buf);
 	}
 	if (m_b14a9)
@@ -393,13 +387,13 @@ void CFeedSelf::sub_1033a9e0()
 	m_bIsFrenzyGrapple = 0;
 	m_flBreakGrappleTimer = 0;
 	EHANDLE *pFeed = &m_h149c;
-	if (LK(*pFeed)) {
-		EHANDLE *pGrab = &m_hTarget1538;
-		if (!(LK(*pGrab) && m_nTarget153c != -1 && m_nTargetMode1540 == 8)) {
+	if (pFeed->Get()) {
+		CFeedChar *self = (CFeedChar *)this;
+		if (self->GetGrappleType() != 8) {
 			sub_1033b100(7);
 			sub_1033b100(3);
-			if (FindStatList(CVStatListSet::Of(LK(*pFeed)), 0)->sub_102012d0(0xc) > 0) {
-				CFeedNpc *pNpc = *(CFeedNpc **)((char *)LK(*pFeed) + 0x98);
+			if (FindStatList(CVStatListSet::Of(pFeed->Get()), 0)->sub_102012d0(0xc) > 0) {
+				CFeedNpc *pNpc = (CFeedNpc *)pFeed->Get()->m_pNPC98;
 				if (pNpc && pNpc->slot404(this) != 1) {
 					pNpc->slot614();
 					pNpc->m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\BaseCombatCharacter.cpp";
@@ -410,10 +404,9 @@ void CFeedSelf::sub_1033a9e0()
 				bool a = false;
 				bool b = false;
 				CBaseEntity *pPl = sub_1023bd00();
-				if (pPl && *(int *)((char *)pPl + 0x49c) == 2 && LK(*pGrab) && m_nTarget153c != -1) {
-					int m = m_nTargetMode1540;
-					if (m == 2) a = true;
-					if (m == 2) b = true;
+				if (pPl && *(int *)((char *)pPl + 0x49c) == 2 && self->GetGrappleType() == 2) {
+					a = true;
+					b = true;
 				}
 				if (((CFeedChar *)pFeed->Get())->sub_10337f30())
 					((CFeedChar *)pFeed->Get())->sub_103394a0(1, a, b);
@@ -427,11 +420,11 @@ void CFeedSelf::sub_1033a9e0()
 		}
 		((CBaseCombatCharacter *)pFeed->Get())->c355();
 		*pFeed = 0;
-		if (*(int *)((char *)this + 0xa8) && !sub_10265800())
+		if (m_pA8 && !sub_10265800())
 			sub_10265680(1);
 	} else {
 		CFeedChar *self = (CFeedChar *)this;
-		if (self->GetGrappleTarget() && !self->IsGrappling(8) && !self->IsGrappling(2)) {
+		if (self->GetGrappleTarget() && self->GetGrappleType() != 8 && self->GetGrappleType() != 2) {
 			CFeedA8 *pA8 = *(CFeedA8 **)((char *)this + 0xa8);
 			if (pA8) {
 				CFeedFwd *pF = *(CFeedFwd **)((char *)self->GetGrappleTarget() + 0x98);
