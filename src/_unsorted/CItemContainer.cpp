@@ -427,7 +427,7 @@ void CItemContainer::vfunc103()
 	sub_101cf600(p);
 	p->m_bChanged1b1 = 1;
 	int *ph = &p->m_iHealth;
-	if (*(volatile int *)ph > 0) {
+	if (*(int *)ph > 0) {
 		*(int *)((char *)p + 0x1570) = -1;
 		p->m_field200 = 0;
 		p->m_nTakeDamage = 2;
