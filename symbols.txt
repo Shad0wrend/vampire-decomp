@@ -15111,6 +15111,7 @@
 0x10014132 func   ?sub_10256e80@@YAHXZ sub_10256e80
 0x10014137 func   ?sub_101e01e0@CUnknown101e01e0@@QAEPAUS101df260@@XZ CUnknown101e01e0::sub_101e01e0
 0x1001413c func   ?sub_10101940@@YIXPAXHH@Z sub_10101940
+0x10014141 func   ?sub_1014abe0@CWeaponGravityGun@@QAEXXZ CWeaponGravityGun::sub_1014abe0
 0x10014146 func   ?vfunc0@CFireSphere@@UAEHPAVCBaseEntity@@@Z CFireSphere::vfunc0
 0x10014150 func   ?sub_101eb820@CUnknown101eb820@@QAEXXZ CUnknown101eb820::sub_101eb820
 0x1001415a func   ?sub_10137c70@@YAHPAVVector@@0@Z sub_10137c70

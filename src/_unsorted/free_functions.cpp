@@ -98708,6 +98708,570 @@ CBaseEntity *sub_1014a4f0(CBaseEntity *pIgnore, CBasePlayer *pPlayer)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014abe0 size=0x10cf
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
+#include "CBasePlayer.h"
+#include "CGameTrace.h"
+#include "QAngle.h"
+#include "Ray_t.h"
+#include "CWeaponGravityGun.h"
+#include "UTIL_Trace.h"
+#include "engineserver.h"
+#include "globalvars.h"
+#include "IPhysicsObject.h"
+#include "CEHandleGet.h"
+#include "CGlobalEntityList.h"
+#include "CGravControllerPoint.h"
+#include "IPhysicsEnvironment.h"
+#include "CEntityVSlots.h"
+#include "CUnknown101cccf0.h"
+#include "CCollisionProperty.h"
+
+struct matrix3x4_t { float m[3][4]; };
+void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
+void sub_10139b90(const QAngle &angles, matrix3x4_t &matrix);
+void sub_10138df0(const matrix3x4_t &in1, const matrix3x4_t &in2, matrix3x4_t &out);
+void sub_10137ed0(const matrix3x4_t &m, QAngle &ang);
+float sub_1013d400(float flTarget, float flValue, float flStep);
+void sub_101cebc0(void *pPlayer, int a, int b);
+char *sub_101d3730(const char *fmt, ...);
+__declspec(dllimport) void DevMsg(const char *, ...);
+
+#define GV(n) virtual void v##n();
+#define GV10(p) GV(p##0) GV(p##1) GV(p##2) GV(p##3) GV(p##4) GV(p##5) GV(p##6) GV(p##7) GV(p##8) GV(p##9)
+
+struct GGPhys
+{
+	GV(0) GV(1) GV(2) GV(3) GV(4) GV(5) GV(6) GV(7) GV(8) GV(9) GV(10) GV(11)
+	virtual float GetMass();	// 12
+	GV(13) GV(14) GV(15) GV(16) GV(17)
+	virtual void GetDamping(float *speed, float *rot);	// 18
+};
+
+struct GGCollision
+{
+	GV(0)
+	virtual const Vector &OBBMins();
+	virtual const Vector &OBBMaxs();
+};
+
+struct GGEnt
+{
+	GV10(0) GV10(1) GV10(2) GV10(3) GV10(4) GV10(5)
+	GV(60) GV(61) GV(62) GV(63)
+	virtual void SetLocalAngles(const QAngle &a);	// 64
+	GV(65) GV(66) GV(67) GV(68) GV(69)
+	GV10(7) GV10(8) GV10(9) GV10(10) GV10(11) GV10(12) GV10(13) GV10(14) GV10(15) GV10(16) GV10(17) GV10(18) GV10(19)
+	GV10(20)
+	GV(210) GV(211) GV(212) GV(213) GV(214) GV(215) GV(216)
+	virtual const Vector &GetAbsOrigin();	// 217
+	virtual void SetAbsAngles(const QAngle &a);	// 218
+	virtual const QAngle &GetAbsAngles();	// 219
+	virtual const Vector &GetLocalOrigin();	// 220
+	virtual const QAngle &GetLocalAngles();	// 221
+	char m_pad4[0x270 - 4];
+	GGCollision m_Collision;	// 0x270
+	char m_pad274[0x2e0 - 0x274];
+	int m_pEdict2e0;
+	char m_pad2e4[0x36c - 0x2e4];
+	GGPhys *m_pPhys;	// 0x36c
+	const char *sub_100ab4f0();
+	int sub_100a1250(const void *pInfo);
+	GGPhys *VPhysicsGetObject() { return m_pPhys; }
+	int edict() { return m_pEdict2e0; }
+};
+
+struct GGPlayer
+{
+	GV10(0) GV10(1) GV10(2) GV10(3) GV10(4) GV10(5) GV10(6) GV10(7) GV10(8) GV10(9)
+	GV10(10) GV10(11) GV10(12) GV10(13) GV10(14) GV10(15) GV10(16) GV10(17) GV10(18) GV10(19)
+	GV(200) GV(201) GV(202) GV(203) GV(204) GV(205) GV(206) GV(207) GV(208)
+	virtual GGEnt *GetGroundEntity();	// 209 (0x344)
+
+	GV(210) GV(211) GV(212) GV(213) GV(214) GV(215) GV(216) GV(217) GV(218)
+	virtual const QAngle &GetAbsAngles();	// 219
+	virtual const Vector &GetLocalOrigin();	// 220
+	GV(221) GV(222) GV(223) GV(224) GV(225) GV(226) GV(227) GV(228) GV(229)
+	GV10(23) GV10(24) GV10(25) GV10(26) GV10(27) GV10(28) GV10(29) GV10(30) GV10(31) GV10(32) GV10(33) GV10(34) GV10(35) GV10(36) GV10(37)
+	GV(380) GV(381) GV(382) GV(383) GV(384) GV(385) GV(386) GV(387) GV(388)
+	virtual Vector Weapon_ShootPosition(const Vector &src);	// 389
+	char m_pad4[0x2e0 - 4];
+	int m_pEdict2e0;
+	char m_pad2e4[0x206c - 0x2e4];
+	QAngle m_angEye;	// 0x206c
+	char m_pad2078[0x2088 - 0x2078];
+	unsigned int m_nButtons;	// 0x2088
+	GGEnt *sub_1015d680(int index);
+	void sub_1017df50(int level, float time, const char *pszReason);
+	const QAngle &EyeAngles() { return m_angEye; }
+	int edict() { return m_pEdict2e0; }
+};
+
+struct GGInfo
+{
+	char m_pad[0x4c];
+	GGInfo *sub_101c26d0(void *pInflictor, void *pAttacker, int flDamage, int bitsDamageType, int a5, int a6, int a7);
+};
+
+struct GGStats
+{
+	float sub_101e8480(GGPlayer *pChar);
+	float sub_101e8780(void *pChar);
+	float sub_101e86e0(void *pChar);
+	float sub_101e8640(void *pChar);
+};
+extern GGStats g_10739d08;
+
+struct GGVar
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad[0x28 - 4];
+	float m_f28;
+	int m_n2c;
+};
+extern GGVar *g_10721a1c;
+extern GGVar *g_1071a37c;
+extern GGVar *g_1071a44c;
+extern float g_104454c4;
+extern int g_1057b7b4;
+extern int g_1057b7b8;
+
+#define GF(g) ((g)->vfunc1() ? 0.0f : (g)->m_f28)
+struct GGMatrix
+{
+	float m[16];
+	GGMatrix() {}
+	void sub_101d1460(int edict);
+	void sub_10028060(float *pOut, const float *pIn);
+};
+
+struct GGPellet
+{
+	Vector localNormal;
+	EHANDLE pellet;
+	EHANDLE parent;
+};
+
+struct GGView
+{
+	char m_pad[0x918];
+	EHANDLE m_hObject;	// 0x918
+	float m_distance;	// 0x91c
+	float m_movementLength;	// 0x920
+	float m_lastYaw;	// 0x924
+	int m_soundState;	// 0x928
+	int m_viewModelIndex;	// 0x92c
+	Vector m_vec930;	// 0x930
+	void *m_gravVtable;	// 0x93c
+	Vector m_localPosition;	// 0x940
+	Vector m_targetPosition;	// 0x94c
+	Vector m_worldPosition;	// 0x958
+	Vector m_localAlignNormal;	// 0x964
+	Vector m_localAlignPosition;	// 0x970
+	Vector m_targetAlignNormal;	// 0x97c
+	Vector m_targetAlignPosition;	// 0x988
+	bool m_align;	// 0x994
+	float m_saveDamping;	// 0x998
+	float m_maxVel;	// 0x99c
+	char m_pad9a0[0x9b4 - 0x9a0];
+	EHANDLE m_attachedEntity;	// 0x9b4
+	char m_pad9b8[4];
+	QAngle m_targetRotation;	// 0x9bc
+	float m_timeToArrive;	// 0x9c8
+	void *m_controller;	// 0x9cc
+	GGPellet m_activePellets[16];	// 0x9d0
+	int m_nB10;
+	int m_nB14;
+	int m_pelletHeld;	// 0xb18
+	int m_pelletAttract;	// 0xb1c
+	float m_glueTime;	// 0xb20
+	char m_bB24;
+	char m_bB25;
+	char m_padB26[2];
+	int m_nB28;
+	int m_nLift;	// 0xb2c
+	int m_nDrag;	// 0xb30
+	float m_flLowZ;	// 0xb34
+	void SetAutoAlign(const Vector &localDir, const Vector &localPos, const Vector &worldAlignDir, const Vector &worldAlignPos)
+	{
+		m_align = true;
+		m_localAlignNormal = -localDir;
+		m_localAlignPosition = localPos;
+		m_targetAlignNormal = worldAlignDir;
+		m_targetAlignPosition = worldAlignPos;
+	}
+	void ClearAutoAlign()
+	{
+		m_align = false;
+	}
+};
+
+struct GGGun : CWeaponGravityGun
+{
+	void sub_1014d7c0(GGEnt *pObject, const Vector &start, const Vector &end, float distance);
+	void sub_1014cbf0(float flRadius, GGEnt *pObject);
+	void sub_1014d140();
+	void SetTargetPosition(const Vector &target)
+	{
+		GGView *v = (GGView *)this;
+		v->m_targetPosition = target;
+		if (v->m_attachedEntity == 0)
+			v->m_worldPosition = target;
+		v->m_timeToArrive = gpGlobals->frametime;
+	}
+	void GetPelletWorldCoords(int pelletIndex, Vector *worldPos, Vector *worldNormal)
+	{
+		GGView *v = (GGView *)this;
+		if (worldPos)
+			*worldPos = ((GGEnt *)v->m_activePellets[pelletIndex].pellet.Get())->GetAbsOrigin();
+		if (worldNormal) {
+			if (v->m_activePellets[pelletIndex].parent.Get()) {
+				GGMatrix tmp;
+				tmp.sub_101d1460(((GGEnt *)v->m_activePellets[pelletIndex].parent.Get())->m_pEdict2e0);
+				Vector vX;
+				tmp.sub_10028060(&vX.x, &v->m_activePellets[pelletIndex].localNormal.x);
+				*worldNormal = vX;
+			} else {
+				*worldNormal = v->m_activePellets[pelletIndex].localNormal;
+			}
+		}
+	}
+	void EffectUpdate();
+};
+
+
+inline void Ray_t::sub_1004f7a0(const float *pStart, const float *pEnd)
+{
+	VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+	m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+	m_StartOffset[2] = 0;
+	m_StartOffset[1] = 0;
+	m_StartOffset[0] = 0;
+	m_IsRay = true;
+	m_Extents[2] = 0;
+	m_Extents[1] = 0;
+	m_Extents[0] = 0;
+	m_Start[0] = pStart[0];
+	m_Start[1] = pStart[1];
+	m_Start[2] = pStart[2];
+	m_b32 = 0;
+	m_n34 = 0;
+	m_b33 = 0;
+}
+extern IPhysicsEnvironment *g_10723940;
+extern int g_1057b7bc;
+CBaseEntity *__fastcall sub_1032e7b0(CBaseEntity *p);
+void sub_10158c00(int a, int b);
+namespace block_1014abe0 {
+#define WV1(n) virtual void w##n();
+#define WV10(p) WV1(p##0) WV1(p##1) WV1(p##2) WV1(p##3) WV1(p##4) WV1(p##5) WV1(p##6) WV1(p##7) WV1(p##8) WV1(p##9)
+struct CWeaponView278 {
+	WV10(0) WV10(1) WV10(2) WV10(3) WV10(4) WV10(5) WV10(6) WV10(7) WV10(8) WV10(9)
+	WV10(10) WV10(11) WV10(12) WV10(13) WV10(14) WV10(15) WV10(16) WV10(17) WV10(18) WV10(19)
+	WV10(20) WV10(21) WV10(22) WV10(23) WV10(24) WV10(25) WV10(26)
+	WV1(270) WV1(271) WV1(272) WV1(273) WV1(274) WV1(275) WV1(276) WV1(277)
+	virtual float slot278();
+};
+struct CMotionCtlView {
+	virtual void v0();
+	virtual void v1();
+	virtual void v2(IPhysicsObject *pObject);
+	virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7();
+	virtual void v8(int n);
+};
+struct GGCtl : CGravControllerPoint
+{
+	void SetTargetPosition(const Vector &target)
+	{
+		m_vec10 = target;
+		if (m_hAttached78 == 0)
+			m_vec1c = target;
+		m_fl8c = gpGlobals->frametime;
+	}
+	void AttachEntity(CBaseEntity *pEntity, IPhysicsObject *pObject, const Vector *pCenter, CBaseEntity *pOwner);
+};
+void GGCtl::AttachEntity(CBaseEntity *pEntity, IPhysicsObject *pObject, const Vector *pCenter, CBaseEntity *pOwner)
+{
+	m_hAttached78 = pEntity;
+	m_hOther7c = pOwner;
+	pObject->vfunc27(&m_vec04, pCenter);
+	m_vec1c = *pCenter;
+	pObject->vfunc18(0, &m_vec5c);
+	float flVel = (float)g_1057b7bc;
+	pObject->vfunc17(0, (const Vector *)&flVel);
+	m_n74 = 0;
+	m_pController90 = ::g_10723940->vfunc39(this);
+	((CMotionCtlView *)m_pController90)->v2(pObject);
+	((CMotionCtlView *)m_pController90)->v8(2);
+	SetTargetPosition(*pCenter);
+	g_10739d08.sub_101e8640(pOwner);
+	m_vec5c.z = ((CWeaponView278 *)sub_1032e7b0(pOwner))->slot278();
+	m_vec80 = *(Vector *)((CEntityVSlots *)pEntity)->slot219();
+	float flMul = g_10739d08.sub_101e86e0(pOwner);
+	{
+		Vector tmp;
+		Vector *pv = pObject->vfunc15(&tmp);
+		m_vec68 = *pv * flMul;
+	}
+	int nObjA = m_hAttached78.Get()->m_obj36c;
+	sub_10158c00(m_hOther7c.Get()->m_obj36c, nObjA);
+}
+}
+extern int g_1057b7b0;
+extern float g_1071a41c;
+extern CUnknown10738964 *g_1071a32c;
+void sub_1013c8c0(const Vector *a, const Vector *b, const Vector *c, Vector *out);
+namespace block_1014abe0 {
+struct CUnknown1004f860 { void *sub_1004f860(); };
+struct CEntView1014a4a0
+{
+	char m_pad0000[0x4c];
+	unsigned char m_flags4c;
+	char m_pad004d[0xa0 - 0x4d];
+	int m_n0a0;
+};
+
+char sub_1014a4a0(CEntView1014a4a0 *p)
+{
+	if (p && (p->m_flags4c & 0x1e) && !((float)g_1057b7b4 * g_1071a41c < (float)g_1057b7b0))
+		return p->m_n0a0 == 0;
+	return 0;
+}
+
+inline void TraceLineCtorCalls(const Vector &vecAbsStart, const Vector &vecAbsEnd, unsigned int mask, const void *ignore,
+	int collisionGroup, CGameTrace *ptr)
+{
+	Ray_t ray;
+	((CUnknown1004f860 *)&ray)->sub_1004f860();
+	ray.sub_1004f7a0(&vecAbsStart.x, &vecAbsEnd.x);
+	CTraceFilterSimple traceFilter((void *)ignore, collisionGroup);
+	g_1070b254->vfunc4(&ray, mask, (CTraceFilterNoCharacterCollide *)&traceFilter, ptr);
+	if (g_10738960.sub_1005f190())
+		sub_10146570((const Vector *)&ptr->m_startpos, (const Vector *)&ptr->m_endpos, 0xff, 0, 0, 1, -1.0f);
+}
+
+CBaseEntity *sub_1014a4f0(CBaseEntity *pIgnore, CBasePlayer *pPlayer)
+{
+	Vector forward;
+	sub_10139610(*(const QAngle *)((char *)pPlayer + 0x206c), &forward, 0, 0);
+	float flRange = (float)g_1057b7b4;
+	Vector eye = pPlayer->vfunc193();
+	Vector vecEnd = eye + forward * flRange;
+	{
+		CGameTrace tr;
+		TraceLineCtorCalls(eye, vecEnd, 0x200400b, pIgnore, 0, &tr);
+		if (sub_1014a4a0((CEntView1014a4a0 *)tr.m_pEnt))
+			return (CBaseEntity *)tr.m_pEnt;
+	}
+	Vector searchCenter = eye;
+	float nearestDot = 0.707f;
+	CBaseEntity *pNearest = 0;
+	CBaseEntity *pGround = (CBaseEntity *)((CEntityVSlots *)pPlayer)->slot209();
+	if (pGround && sub_1014a4a0((CEntView1014a4a0 *)pGround))
+	{
+		pNearest = pGround;
+		nearestDot = 0.707f;
+	}
+	CUnknown101cccf0 sphere;
+	CBaseEntity *pObject;
+	for (sphere.sub_101cccf0((int)&searchCenter, *(int *)&flRange, 0, 0); (pObject = sphere.sub_101ccd40()) != 0; ++sphere.m_nIndex)
+	{
+		if (pObject->m_pEdict2e0 && sub_1014a4a0((CEntView1014a4a0 *)pObject))
+		{
+			Vector mins, maxs, point;
+			((CCollisionProperty *)((char *)pObject + 0x270))->vfunc15(&mins, &maxs);
+			sub_1013c8c0(&mins, &maxs, &searchCenter, &point);
+			Vector dir = point - searchCenter;
+			VectorNormalize(dir);
+			float dot = DotProduct(dir, forward);
+			if (dot > nearestDot)
+			{
+				if (!g_1071a32c->vfunc1() && g_1071a32c->m_n2c >= 2)
+				{
+					CGameTrace trCheck;
+					vecEnd = *((CEntityVSlots *)pObject)->slot217();
+					UTIL_TraceLine(eye, vecEnd, 0x200400b, pIgnore, 0, &trCheck);
+					if ((CBaseEntity *)trCheck.m_pEnt != pObject)
+						continue;
+				}
+				pNearest = pObject;
+				nearestDot = dot;
+			}
+		}
+	}
+	return pNearest;
+}
+}
+inline float GGApproach(float t, float val, float spd) { return sub_1013d400(t, val, spd); }
+void CWeaponGravityGun::sub_1014abe0()
+{
+	GGView *v = (GGView *)this;
+	GGGun *g = (GGGun *)this;
+	Vector start, forward, right;
+	CGameTrace tr;
+
+	CBaseEntity *pOwnerEnt = (CBaseEntity *)sub_102521f0();
+	if (!pOwnerEnt)
+		return;
+	GGPlayer *pOwner = (GGPlayer *)pOwnerEnt->m_pA8;
+	if (!pOwner)
+		return;
+
+	v->m_viewModelIndex = engine->vfunc35(pOwner->edict());
+	GGEnt *vm = pOwner->sub_1015d680(0);
+	if (vm)
+		v->m_viewModelIndex = engine->vfunc35(vm->edict());
+
+	sub_10139610(pOwner->EyeAngles(), &forward, &right, 0);
+
+	start = pOwner->Weapon_ShootPosition(pOwner->GetLocalOrigin());
+	Vector end = start + forward * g_1057b7b4;
+
+	UTIL_TraceLine_Calls(start, end, 0x46004003, pOwner, 0, &tr);
+	end = *(Vector *)tr.m_endpos;
+	float distance = tr.m_fraction * g_1057b7b4;
+
+	GGEnt *pPick = (GGEnt *)vfunc285();
+	if (v->m_hObject.Get() == 0 && pPick) {
+		if (pOwner->GetGroundEntity() == pPick) {
+			sub_101cebc0(pOwner, 0x30, 0);
+		} else {
+			GGPhys *pPhys = pPick->VPhysicsGetObject();
+			float mass = pPhys ? pPhys->GetMass() : 0;
+			if (g_10739d08.sub_101e8480(pOwner) > mass)
+				g->sub_1014d7c0(pPick, start, *(Vector *)tr.m_endpos, distance);
+			else
+				sub_101cebc0(pOwner, 0x2f, 0);
+		}
+	}
+
+	if (v->m_hObject.Get()) {
+		GGEnt *pHeld = (GGEnt *)v->m_hObject.Get();
+		Vector objForward, objRight, objUp;
+		sub_10139610(pHeld->GetLocalAngles(), &objForward, &objRight, &objUp);
+		Vector dir = start - ((GGEnt *)v->m_hObject.Get())->GetLocalOrigin();
+		VectorNormalize(dir);
+		float a = (objForward.x * dir.x + dir.y * objForward.y + dir.z * objForward.z);
+		float b = (objRight.x * dir.x + objRight.y * dir.y + objRight.z * dir.z);
+		float c = (objUp.x * dir.x + objUp.y * dir.y + objUp.z * dir.z);
+		Vector pos = ((GGEnt *)v->m_hObject.Get())->GetLocalOrigin();
+		Vector mins = ((GGEnt *)v->m_hObject.Get())->m_Collision.OBBMins();
+		Vector maxs = ((GGEnt *)v->m_hObject.Get())->m_Collision.OBBMaxs();
+		if (a <= 0)
+			pos -= objForward * a * mins.x;
+		else
+			pos += objForward * a * maxs.x;
+		if (b <= 0)
+			pos -= objRight * b * mins.y;
+		else
+			pos += objRight * b * maxs.y;
+		if (c <= 0)
+			pos -= objUp * c * mins.z;
+		else
+			pos += objUp * c * maxs.z;
+		Vector delta;
+		const float *ps = &start.x, *pp = &pos.x;
+		delta.x = ps[0] - pp[0];
+		delta.y = ps[1] - pp[1];
+		delta.z = ps[2] - pp[2];
+		if (delta.LengthSqr() > g_1057b7b8 * g_1057b7b8) {
+			g->sub_1014d140();
+			return;
+		}
+		pPick->SetAbsAngles(pOwner->GetAbsAngles());
+		pPick->SetLocalAngles(pOwner->GetAbsAngles());
+	}
+
+	matrix3x4_t curMatrix, incMatrix, nextMatrix;
+	{
+	sub_10139b90(v->m_targetRotation, curMatrix);
+	sub_10139b90(QAngle(0, pOwner->EyeAngles().y - v->m_lastYaw, 0), incMatrix);
+	sub_10138df0(incMatrix, curMatrix, nextMatrix);
+	sub_10137ed0(nextMatrix, v->m_targetRotation);
+	v->m_lastYaw = pOwner->EyeAngles().y;
+	}
+
+	GGEnt *pObject = (GGEnt *)EHandle_Get(*(const unsigned int *)&v->m_hObject);
+	if (pObject) {
+		if (pOwner->m_nButtons & 0x80000)
+			v->m_distance = GGApproach(1024, v->m_distance, v->m_distance * 0.1);
+		if (pOwner->m_nButtons & 0x100000)
+			v->m_distance = GGApproach(40, v->m_distance, v->m_distance * 0.1);
+
+		pObject->sub_100a1250(GGInfo().sub_101c26d0(this, pOwner, 0, 0x20000000, 0, 0, -1));
+		Vector newPosition = start + forward * v->m_distance;
+		Vector awayfromPlayer = start + forward * 24;
+		UTIL_TraceLine_Calls(start, awayfromPlayer, 0x200400b, pOwner, 0, &tr);
+		if (tr.m_fraction == 1) {
+			UTIL_TraceLine_Calls(awayfromPlayer, newPosition, 0x200400b, pObject, 0, &tr);
+			Vector dir = *(Vector *)tr.m_endpos - newPosition;
+			float dist = VectorNormalize(dir);
+			float maxDist = v->m_maxVel * gpGlobals->frametime;
+			if (dist > maxDist)
+				newPosition += dir * maxDist;
+			else
+				newPosition = *(Vector *)tr.m_endpos;
+		} else {
+			newPosition = *(Vector *)tr.m_endpos;
+		}
+
+		CBaseEntity *pOwner2 = (CBaseEntity *)sub_10252240();
+		if (!pOwner2)
+			return;
+		float flRadius = g_10739d08.sub_101e8780(pOwner2);
+		g->sub_1014cbf0(flRadius, pObject);
+
+		g->SetTargetPosition(newPosition);
+		Vector dir = newPosition - pObject->GetLocalOrigin();
+		v->m_movementLength = dir.Length();
+
+		if (newPosition.z < v->m_flLowZ) {
+			v->m_flLowZ = newPosition.z;
+		} else if (GF(g_10721a1c) + v->m_flLowZ < newPosition.z && v->m_nLift > 0) {
+			if (!g_1071a44c->vfunc1() && g_1071a44c->m_n2c) {
+				GGPhys *pPhys = pObject->VPhysicsGetObject();
+				float mass = pPhys ? pPhys->GetMass() : 0;
+				float speed = 0, rot = 0;
+				if (pPhys)
+					pPhys->GetDamping(&speed, &rot);
+				DevMsg("Physics object lift triggering supernatural act (%d).  mass: %.2f lbs (%.2f kg) damping: %.2f %.2f (%.2f) pos: (%f, %f, %f)\n",
+					v->m_nLift, mass * 2.2f, mass, speed, rot, v->m_saveDamping, pObject->GetAbsOrigin().x, pObject->GetAbsOrigin().y, pObject->GetAbsOrigin().z);
+			}
+			pOwner->sub_1017df50(v->m_nLift, -1.0f, sub_101d3730("PhysicsLift %s", pObject->sub_100ab4f0()));
+		}
+
+		Vector d2 = newPosition - v->m_vec930;
+		float distSqr = d2.Length2DSqr();
+		if ((float)(GF(g_1071a37c) * (double)GF(g_1071a37c)) < distSqr && v->m_nDrag > 0) {
+			if (!g_1071a44c->vfunc1() && g_1071a44c->m_n2c) {
+				GGPhys *pPhys = pObject->VPhysicsGetObject();
+				float mass = pPhys ? pPhys->GetMass() : 0;
+				float speed = 0, rot = 0;
+				DevMsg("Physics object drag triggering supernatural act (%d).  mass: %.2f lbs (%.2f kg) damping: %.2f %.2f (%.2f) pos: (%f, %f, %f)\n",
+					v->m_nDrag, mass * 2.2f, mass, speed, rot, v->m_saveDamping, pObject->GetAbsOrigin().x, pObject->GetAbsOrigin().y, pObject->GetAbsOrigin().z);
+			}
+			pOwner->sub_1017df50(v->m_nDrag, -1.0f, sub_101d3730("PhysicsDrag %s", pObject->sub_100ab4f0()));
+		}
+	} else {
+		g->SetTargetPosition(end);
+	}
+
+	if (v->m_pelletHeld >= 0 && gpGlobals->curtime > v->m_glueTime) {
+		Vector worldNormal, worldPos;
+		g->GetPelletWorldCoords(v->m_pelletAttract, &worldPos, &worldNormal);
+		v->SetAutoAlign(v->m_activePellets[v->m_pelletHeld].localNormal, ((GGEnt *)v->m_activePellets[v->m_pelletHeld].pellet.Get())->GetLocalOrigin(), worldNormal, worldPos);
+	} else {
+		v->ClearAutoAlign();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014c0f0 size=0xf
 namespace lifted {
 int sub_10002392();
