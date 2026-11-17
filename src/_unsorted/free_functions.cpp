@@ -276288,13 +276288,13 @@ extern "C" int *npc_VAndreiBlood()
 		*(volatile int *)(c + 0x66e0) = -1;
 		*(volatile int *)(c + 0x66e4) = -1;
 		sub_1035c390(c + 0x66e8);
-		*(volatile int *)raw = (int)&vt_104a6fc4;
-		*(volatile int *)(c + 0x19b0) = (int)&vt_104a6f94;
+		*(int *)raw = (int)&vt_104a6fc4;
+		*(int *)(c + 0x19b0) = (int)&vt_104a6f94;
 		p = raw;
 	} else {
 		p = 0;
 	}
-	int vt = *(volatile int *)p;
+	int vt = *(int *)p;
 	((void (__fastcall *)(void *, int, const char *))(((int *)vt)[0x1a8 / 4]))(p, vt, "npc_VAndreiBlood");
 	return p;
 }
