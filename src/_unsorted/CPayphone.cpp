@@ -169,7 +169,6 @@ void CPayphone::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x101aab90 size=0x2c
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CPayphone.h"
 
 struct PhoneSub { char pad[0x80]; bool m_b80; };
@@ -192,7 +191,7 @@ void CPayphone::vfunc420()
 {
     ((CPayphoneBase420 *)this)->sub_1000c531();
     char one = 1;
-    PhoneView2 *v = pcd_stage((PhoneView2 *)this);
+    PhoneView2 *v = ((PhoneView2 *)this);
     char zero = 0;
     v->m_b1480 = one;
     v->m_b1481 = zero;
