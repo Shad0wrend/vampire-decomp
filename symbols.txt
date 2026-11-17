@@ -11560,6 +11560,7 @@
 0x1000fa24 func   ?sub_1019c0b0@@YA_NPAUCRagdoll@@PAUCRagdollParams@@PAVCPhysCollideIface@@PAVCPhysEnvIface@@PAVCPhysSurfacePropsIface@@@Z sub_1019c0b0
 0x1000fa29 func   ?sub_100ea6d0@@YAXXZ sub_100ea6d0
 0x1000fa2e func   ?sub_10373670@@YAEXZ sub_10373670
+0x1000fa33 func   ?sub_1017e150@CBasePlayer@@QAEXHMPBD@Z CBasePlayer::sub_1017e150
 0x1000fa38 func   ?vfunc5@CNPCMaker@@QAEPAV1@I@Z CNPCMaker::vfunc5
 0x1000fa3d func   ?sub_103f0740@@YAHXZ sub_103f0740
 0x1000fa42 func   ?vfunc432@CNPC_VZombie@@QAEXH@Z CNPC_VZombie::vfunc432

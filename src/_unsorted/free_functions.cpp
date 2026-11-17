@@ -109571,6 +109571,102 @@ void CBasePlayer::sub_1017df50(int level, float time, const char *pszReason)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017e150 size=0x33b
+#include "CBasePlayer.h"
+#include "globalvars.h"
+#include "Tier1.h"
+
+struct CConVarLike {
+	virtual void vfunc0();
+	virtual bool vfunc1();
+	char m_pad04[0x28];
+	int m_n2c;
+};
+struct CConVarSetter { void sub_10246160(int); };
+extern CConVarLike *g_107258dc;
+extern CConVarSetter g_10725948;
+extern char g_106b8540[];
+extern char g_1058824c[];
+extern char g_10588200[];
+extern char g_105881a8[];
+int sub_10184280(unsigned int);
+int sub_1042fd40(unsigned int);
+unsigned int sub_10184260(int);
+
+inline int DecodeCrime1(unsigned int v) { return sub_10184280((((v & 0x8a66e35) ^ 0x793f90) + 0x8b10412 & 0x175991ca) ^ v ^ 0x783682a9); }
+inline int DecodeCrime2(unsigned int v) { return sub_1042fd40(v ^ ((((v & 0x8a66e35) ^ 0x793f90) + 0x8b10412 & 0x175991ca) ^ 0x783682a9)); }
+
+// MvsnSec CSecureInt1 as the game lays it out: vptr + {b0, b1, value}
+struct SecRec1 {
+	char m_b0;
+	char m_b1;
+	unsigned int m_Value;
+	unsigned int sub_10184220(unsigned int);
+	void sub_101841f0(const SecRec1 *src);	// out-of-line copy (value, b1, b0)
+	__forceinline void Copy(const SecRec1 &o) { m_Value = o.m_Value; m_b1 = o.m_b1; m_b0 = o.m_b0; }
+};
+extern void *g_10470484[];	// MvsnSec::CSecureInt1 vftable
+struct SecRecZ : SecRec1 {
+	__forceinline SecRecZ() { m_Value = 0; }
+};
+struct SecInt1 {
+	void **m_vptr;
+	SecRecZ m_rec;
+	__forceinline void Set(int v) { SecRec1 loc; loc.m_Value = loc.sub_10184220(sub_10184260(v)); m_rec.sub_101841f0(&loc); }
+	__forceinline SecInt1() {}
+	__forceinline SecInt1(int v) { m_vptr = g_10470484; Set(v); }
+	__forceinline SecInt1 &operator=(const SecInt1 &o) { m_rec.Copy(o.m_rec); return *this; }
+};
+struct SecInt1x : SecInt1 {	// the raise path: the scramble inline
+	__forceinline SecInt1x(int v) { m_vptr = g_10470484; SecRec1 loc; unsigned int x = sub_10184260(v); loc.m_Value = 0x783682a9 ^ ((((0x8a66e35 & x) ^ 0x85f3db1) + 0x8b10412 & 0x175991ca) ^ x); m_rec.sub_101841f0(&loc); }
+};
+struct CBasePlayerCrime : CBasePlayer {
+	float sub_1017deb0(int level, float time);
+};
+#define m_CriminalLevel (*(SecInt1 *)m_pad1cd0)
+#define HASH2(x) ((x) ^ (((((x) & 0x8a66e35) ^ 0x793f90) + 0x8b10412 & 0x175991ca) ^ 0x783682a9))
+
+void CBasePlayer::sub_1017e150(int level, float time, const char *pszReason)
+{
+	CBasePlayerCrime *p = (CBasePlayerCrime *)this;
+	if (!pszReason)
+		pszReason = g_106b8540;
+	g_10725948.sub_10246160(-1);
+	if (level == 0)
+	{
+		if (!g_107258dc->vfunc1() && g_107258dc->m_n2c)
+			g_109f3630(g_1058824c, (double)gpGlobals->curtime, DecodeCrime1(m_nCriminalLevelEnc), pszReason);
+		m_CriminalLevel = SecInt1(0);
+		m_f1CE0 = -1.0f;
+	}
+	else
+	{
+		float f;
+		if (level > DecodeCrime1(m_nCriminalLevelEnc))
+		{
+			f = p->sub_1017deb0(DecodeCrime1(m_nCriminalLevelEnc), time);
+			if (!g_107258dc->vfunc1() && g_107258dc->m_n2c)
+				g_109f3630(g_10588200, (double)gpGlobals->curtime, DecodeCrime1(m_nCriminalLevelEnc), level, (double)f, pszReason);
+			m_CriminalLevel = SecInt1x((int)level);
+		}
+		else
+		{
+			int h = HASH2(m_nCriminalLevelEnc);
+			int n = sub_1042fd40(h);
+			f = p->sub_1017deb0(n, time);
+			if (!g_107258dc->vfunc1() && g_107258dc->m_n2c)
+			{
+				int h2 = HASH2(m_nCriminalLevelEnc);
+				int nCur = sub_1042fd40(h2);
+				g_109f3630(g_105881a8, (double)gpGlobals->curtime, nCur, level, (double)f, pszReason);
+			}
+		}
+		m_f1CE0 = f + gpGlobals->curtime;
+		m_iCriminalActCount = m_iCriminalActCount + 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017e560 size=0x68
 #include "CBasePlayer.h"
 #include "inputdata_t.h"
