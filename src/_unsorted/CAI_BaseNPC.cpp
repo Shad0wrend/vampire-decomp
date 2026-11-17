@@ -3399,7 +3399,6 @@ void CAI_BaseNPC::vfunc448(int code)
 // END FUNCTION
 
 // FUNCTION: 0x102741e0 size=0x177
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CAI_BaseNPC.h"
 #include "CBaseEntity.h"
 #include "CLogicAuto.h"
@@ -3441,7 +3440,7 @@ bool CAI_BaseNPC::vfunc530(CBaseEntity *pEnt)
 			continue;
 		}
 		if (pEnt == pView->m_Recs.Element(i).m_hEnt.Get()) {
-			if (!(pcd_stage(gpGlobals->curtime) > pView->m_Recs.Element(i).m_flTime)) {
+			if (!((gpGlobals->curtime) > pView->m_Recs.Element(i).m_flTime)) {
 				Vector delta;
 				VectorSubtract(*(Vector *)((CAI_BaseNPC *)pEnt)->vfunc217(), pView->m_Recs.Element(i).m_vecPos, delta);
 				if (!(delta.LengthSqr() > 14400.0f))
