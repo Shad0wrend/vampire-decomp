@@ -53152,6 +53152,256 @@ void sub_100c65f0(CRecordHolder *pHolder, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c67b0 size=0x98f
+#include "utlrbtree.h"
+#include <math.h>
+#include "StudioHdr.h"
+#include "StudioBones.h"
+#include "matrix3x4_t.h"
+#include "utlvector.h"
+
+extern "C" __declspec(dllimport) void DevWarning(int level, const char *pMsg, ...);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+
+#define M_PI_F ((float)(3.14159265358979323846))
+#define RAD2DEG(x) ((float)(x) * (float)(180.f / M_PI_F))
+
+struct StudioAttachment14
+{
+	int m_szNameIndex;
+	int m_unk04;
+	int m_unk08;
+	int m_unk0c;
+	int m_unk10;
+	const char *Name() { return (const char *)this + m_szNameIndex; }
+};
+
+struct StudioBoneInfo38
+{
+	short m_nBone;
+	unsigned char m_bDiff;
+	unsigned char m_bPosDiff;
+	short m_nParent;
+	short m_nCommonParent;
+	matrix3x4_t m_matrix;
+};
+
+inline StudioBoneInfo38 *BoneInfo(StudioIncludeModel *pModel, int i)
+{
+	char *p = (char *)pModel + i * sizeof(StudioBoneInfo38);
+	return (StudioBoneInfo38 *)(p + pModel->m_nBoneInfoIndex);
+}
+
+inline StudioAttachment14 *Attachment(StudioHdr *pHdr, int i)
+{
+	return (StudioAttachment14 *)((char *)pHdr + pHdr->m_nAttachmentIndex) + i;
+}
+
+inline unsigned int &BoneFlags(StudioBone *pBone)
+{
+	return *(unsigned int *)&pBone->m_bFlags88;
+}
+
+void sub_10139a90(float *pMatrix);
+void sub_10138760(int *pVector, int nColumn, int *pMatrix);
+void sub_1013b300(const Vector &vecAxis, float flAngle, Quaternion &q);
+void sub_1013b090(int pQuat, int *pPos, char *pMatrix);
+
+inline void CrossProductG(const Vector &a, const Vector &b, Vector &result)
+{
+	result.x = a.y * b.z - b.y * a.z;
+	result.y = a.z * b.x - a.x * b.z;
+	result.z = a.x * b.y - a.y * b.x;
+}
+inline float DotG(const Vector &o, const Vector &c) { return o[0]*c.x + c[1]*o.y + o[2]*c.z; }
+int sub_100c67b0(StudioHdr *pStudioHdr, StudioVirtualModel *(*pfnGetIncludeModel)(StudioHdr *, int), CUtlVector<const char *> *pNameList)
+{
+	int i, j, k;
+
+	if (!pStudioHdr)
+		return 0;
+
+	int nSequenceBase = pStudioHdr->m_nLocalSeq;
+
+	for (i = 0; i < pStudioHdr->m_nAttachments; i++)
+	{
+		const char *pName = Attachment(pStudioHdr, i)->Name();
+		pNameList->AddToTail(pName);
+	}
+
+	for (i = 0; i < pStudioHdr->m_nIncludeModels; i++)
+	{
+		StudioIncludeModel *pModel = pStudioHdr->IncludeModel(i);
+
+		pModel->m_nBase = nSequenceBase;
+		pModel->m_nCount = 0;
+
+		for (j = 0; j < pStudioHdr->m_nBones; j++)
+		{
+			BoneInfo(pModel, j)->m_nBone = -1;
+			BoneInfo(pModel, j)->m_bDiff = 0;
+			BoneInfo(pModel, j)->m_nParent = -1;
+			BoneInfo(pModel, j)->m_nCommonParent = -1;
+		}
+		for (j = 0; j < 24; j++)
+		{
+			pModel->m_aBoneRemap14[j] = -1;
+			pModel->m_aPoseParamRemap[j] = -1;
+		}
+
+		pModel->m_pVirtual = pfnGetIncludeModel(pStudioHdr, i);
+		StudioHdr *pChained;
+		if (!pModel->m_pVirtual || !(pChained = pModel->m_pVirtual->vfunc1(pStudioHdr, i)))
+		{
+			pModel->m_pVirtual = 0;
+			continue;
+		}
+
+		CUtlVector<const char *> chainedNames;
+		int nCount = sub_100c67b0(pChained, pfnGetIncludeModel, &chainedNames);
+		pModel->m_nCount = nCount;
+		nSequenceBase += nCount;
+
+		for (j = 0; j < pStudioHdr->m_nBones; j++)
+		{
+			const char *pBoneName;
+			StudioBoneInfo38 *pInfo;
+			StudioBone *pBone = pStudioHdr->Bone(j);
+			pBoneName = pBone->Name();
+			pInfo = BoneInfo(pModel, j);
+			for (k = 0; k < pChained->m_nBones; k++)
+			{
+				StudioBone *pChainedBone = pChained->Bone(k);
+				const char *pszChainedName = pChainedBone->Name();
+				if (!_strcmpi(pBoneName, pszChainedName))
+				{
+					pInfo->m_nBone = k;
+					BoneFlags(pBone) |= BoneFlags(pChainedBone) & 0xfffc;
+					break;
+				}
+			}
+		}
+
+		for (j = 0; j < pChained->m_nBones; j++)
+		{
+			for (k = 0; k < pStudioHdr->m_nBones; k++)
+			{
+				if (BoneInfo(pModel, k)->m_nBone == j)
+					break;
+			}
+			if (k == pStudioHdr->m_nBones)
+			{
+				DevWarning(1, "chained model %s has a bone %s that isn't in chaining model %s\n", pChained->m_name, pChained->Bone(j)->Name(), pStudioHdr->m_name);
+			}
+		}
+
+		for (j = 0; j < pStudioHdr->m_nBones; j++)
+		{
+			StudioBoneInfo38 *pInfo = BoneInfo(pModel, j);
+			if (pInfo->m_nBone < 0)
+				continue;
+			int nParent = pStudioHdr->Bone(j)->m_iParent;
+			int nChainedParent = (nParent >= 0) ? BoneInfo(pModel, nParent)->m_nBone : -1;
+			int nChainedBone = pInfo->m_nBone;
+			if (pChained->Bone(nChainedBone)->m_iParent != nChainedParent && !(nChainedParent < 0 && nParent >= 0))
+			{
+				pInfo->m_bDiff = 1;
+				pInfo->m_nParent = nChainedParent;
+				for (int n = nChainedBone; n >= 0; n = pChained->Bone(n)->m_iParent)
+				{
+					for (int m = nChainedParent; m >= 0; m = pChained->Bone(m)->m_iParent)
+					{
+						if (m == n)
+						{
+							pInfo->m_nCommonParent = n;
+							goto next_bone;
+						}
+					}
+				}
+			}
+		next_bone:;
+		}
+
+		for (j = 0; j < pStudioHdr->m_nBones; j++)
+		{
+			StudioBoneInfo38 *pInfo = BoneInfo(pModel, j);
+			short nBone = pInfo->m_nBone;
+			if (nBone < 0)
+				continue;
+			Vector vecChained(pChained->Bone(nBone)->m_pos.x, pChained->Bone(nBone)->m_pos.y, pChained->Bone(nBone)->m_pos.z);
+			float *pMat = pInfo->m_matrix.m_flMatVal[0];
+			Vector vecOwner(pStudioHdr->Bone(j)->m_pos.x, pStudioHdr->Bone(j)->m_pos.y, pStudioHdr->Bone(j)->m_pos.z);
+			pInfo->m_bPosDiff = 0;
+			{ sub_10139a90(pMat); }
+			Vector vecD = vecChained - vecOwner;
+			if (vecD.LengthSqr() > 0.01f)
+			{
+				pInfo->m_bPosDiff = 1;
+				if (vecChained.LengthSqr() > 0.01f)
+				{
+					if (vecOwner.LengthSqr() > 0.01f)
+					{
+						Vector vecChainedDir = vecChained;
+						float flChainedLen = VectorNormalize(vecChainedDir);
+						Vector vecOwnerDir = vecOwner;
+						float flOwnerLen = VectorNormalize(vecOwnerDir);
+						Vector vecAxis;
+						CrossProductG(vecChainedDir, vecOwnerDir, vecAxis);
+						float flAxisLen = VectorNormalize(vecAxis);
+						Quaternion q;
+						sub_1013b300(vecAxis, RAD2DEG(atan2(flAxisLen, DotG(vecOwnerDir, vecChainedDir))), q);
+						Vector vecZero(0, 0, 0);
+						sub_1013b090((int)&q, (int *)&vecZero, (char *)pMat);
+						Vector vecTemp;
+						sub_10137fe0(vecChainedDir.Base(), pMat, vecTemp.Base());
+						float flScale = flOwnerLen / flChainedLen;
+						for (int r = 0; r < 3; r++)
+							for (int c = 0; c < 3; c++)
+								pInfo->m_matrix.m_flMatVal[r][c] *= flScale;
+					}
+					else
+					{
+						Vector vecDelta = vecOwner - vecChained;
+						sub_10138760((int *)vecDelta.Base(), 3, (int *)pMat);
+					}
+				}
+				else if (vecOwner.LengthSqr() > 0.01f)
+				{
+					Vector vecDelta = vecOwner - vecChained;
+					sub_10138760((int *)vecDelta.Base(), 3, (int *)pMat);
+				}
+			}
+		}
+
+		for (j = 0; j < chainedNames.Count(); j++)
+		{
+			for (k = 0; k < pNameList->Count(); k++)
+			{
+				if (!_strcmpi(pNameList->Element(k), chainedNames[j]))
+					break;
+			}
+			if (k >= pNameList->Count())
+				k = pNameList->AddToTail(chainedNames[j]);
+			if (k < 24)
+			{
+				pModel->m_aPoseParamRemap[j] = k;
+				pModel->m_aBoneRemap14[k] = j;
+			}
+		}
+	}
+
+	for (i = 0; i < pStudioHdr->m_nBones; i++)
+	{
+		StudioBone *pBone = pStudioHdr->Bone(i);
+		unsigned int nFlags = BoneFlags(pBone) & 0xfffc;
+		for (j = pBone->m_iParent; j >= 0; j = pStudioHdr->Bone(j)->m_iParent)
+			BoneFlags(pStudioHdr->Bone(j)) |= nFlags;
+	}
+
+	return nSequenceBase;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c73b0 size=0x9f
 struct SPoseHdr;
 

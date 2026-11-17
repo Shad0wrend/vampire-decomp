@@ -16567,6 +16567,7 @@
 0x100c4980 func   ?sub_100c4980@@YAXPAUCUnknownFreeList100c4980@@@Z sub_100c4980
 0x100c49d0 func   ?sub_100c49d0@@YAXXZ sub_100c49d0
 0x100c5020 func   ?sub_100c5020@@YAHPBURay_t@@PBUStudioHitbox@@PBUmatrix3x4_t@@PAUCGameTrace@@@Z sub_100c5020
+0x100c67b0 func   ?sub_100c67b0@@YAHPAUStudioHdr@@P6APAUStudioVirtualModel@@0H@ZPAV?$CUtlVector@PBDV?$CUtlMemory@PBD@@@@@Z sub_100c67b0
 0x100cce10 func   ?sub_100cce10@@YAMM@Z sub_100cce10
 0x100d2c30 func   ?sub_100d2c30@@YAHPBDPAD@Z sub_100d2c30
 0x100d3860 func   ?sub_100d3860@@YAHPAUCOriginEnt@@@Z sub_100d3860
