@@ -4616,7 +4616,6 @@ void CBaseCombatCharacter::vfunc351(CBaseCombatCharacter *pTarget)
 #include "CUnknown102ca630.h"
 #include "CUnknown102dc2c0.h"
 #include "CUnknown1073dc28.h"
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CBaseCombatCharacter.h"
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
@@ -4699,19 +4698,21 @@ void __fastcall sub_10325620(EyeSelf *self, int edx, float flInterval)
 }
 }
 
-static inline bool IsGrappleMode1033a400(const CBaseCombatCharacter *p, int mode)
-{ return p->m_hTarget1538.Get() && p->m_nTarget153c != -1 && p->m_nTargetMode1540 == mode; }
+struct CGrappleView1033a400 : CBaseCombatCharacter
+{
+	int GetGrappleType() { if (m_hTarget1538.Get() && m_nTarget153c != -1) return m_nTargetMode1540; return -1; }
+};
 // TARGET: CBaseCombatCharacter::vfunc352
 void CBaseCombatCharacter::vfunc352()
 {
 	ScopeTrace trace("CBaseCombatCharacter::Feed", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
+	CGrappleView1033a400 *self = (CGrappleView1033a400 *)this;
 	EHANDLE *pVictim = &m_h149c;
 	if (!pVictim->Get())
 		return;
-	EHANDLE *pTarget = &m_hTarget1538;
-	if (!(IsGrappleMode1033a400(this, 0)
-		|| IsGrappleMode1033a400(this, 2)
-		|| IsGrappleMode1033a400(this, 6)))
+	if (!(self->GetGrappleType() == 0
+		|| self->GetGrappleType() == 2
+		|| self->GetGrappleType() == 6))
 		return;
 	if (m_flNextFeed1490 > gpGlobals->curtime)
 		return;
@@ -4722,8 +4723,8 @@ void CBaseCombatCharacter::vfunc352()
 	}
 	if (sub_103395f0()) {
 		int n = 1;
-		bool bA = (((CFeedFlagsView *)this)->sub_1033c9c0() & 0x8000) == 0x8000 && IsGrappleMode1033a400(this, 6);
-		bool bB = (((CFeedFlagsView *)this)->sub_1033c9c0() & 0x10000) == 0x10000 && IsGrappleMode1033a400(this, 6);
+		bool bA = (((CFeedFlagsView *)this)->sub_1033c9c0() & 0x8000) == 0x8000 && self->GetGrappleType() == 6;
+		bool bB = (((CFeedFlagsView *)this)->sub_1033c9c0() & 0x10000) == 0x10000 && self->GetGrappleType() == 6;
 		if (bA) {
 			n = 3;
 			if (m_iCurBloodStolenMod < 0)
@@ -4741,11 +4742,7 @@ void CBaseCombatCharacter::vfunc352()
 				m_iCurBloodStolenMod = 0;
 			}
 			if (bB) {
-				if ((int)pTarget != 6) { m_iBloodStolen++; goto L2; }
 				m_iBloodStolen++;
-			L1:
-			L2:
-				;
 			} else {
 				if (sub_10338cb0())
 					m_iBloodStolen++;
@@ -4753,7 +4750,7 @@ void CBaseCombatCharacter::vfunc352()
 			}
 		} while (n > 0);
 		((CBaseCombatCharacter *)m_h149c.Get())->sub_10338df0(0);
-		if (!IsGrappleMode1033a400(this, 2)) {
+		if (self->GetGrappleType() != 2) {
 			void *pNpc = m_h149c.Get()->m_pNPC98;
 			if (pNpc)
 				sub_10293e20(pNpc, 3.0f);
