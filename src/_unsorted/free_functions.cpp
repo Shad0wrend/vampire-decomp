@@ -139206,7 +139206,7 @@ bool CBaseTrigger::sub_101c5460(CBaseEntity *pOther)
 		|| ((m_flags204 & 2) && (pOther->sub_100b3700() & 0x2000))
 		|| ((m_flags204 & 4) && sub_101c53d0(pOther))
 		|| ((m_flags204 & 8) && sub_101c5420(pOther))) {
-		if (!ResolveFilter(*(volatile unsigned int *)&m_i564))
+		if (!ResolveFilter(*(unsigned int *)&m_i564))
 			return true;
 		return ResolveFilter(*(volatile unsigned int *)&m_i564)->s241(pOther);
 	}
