@@ -1025,7 +1025,6 @@ void CNPC_VSabbatLeader::sub_103ab4a0(void *pVictim)
 // END FUNCTION
 
 // FUNCTION: 0x103ab580 size=0x360
-template <class T> __forceinline T pcd_stage(T x) { return x; }
 #include "CSoundControllerImp.h"
 #include "CTriggerProximity.h"
 #include "CUnknown101d7520.h"
@@ -1072,7 +1071,7 @@ void CNPC_VSabbatLeader::CheckStuck()
 	float rT = (float)sqrt(dy * dy + dx * dx) * 0.5f;
 	CEntityVSlots *me = (CEntityVSlots *)this;
 	float zTopT = ((Vector *)me->slot217())->z + pMaxs->z;
-	float zBotT = ((Vector *)me->slot217())->z + pcd_stage(pMins)->z;
+	float zBotT = ((Vector *)me->slot217())->z + (pMins)->z;
 	Vector ctrT = *(Vector *)me->slot217() + (0.5f * Vector(((const Vector &)(*tMins))[0] + (*tMaxs).x, (*tMins).y + ((const Vector &)(*tMaxs))[1], (*tMins).z + (*tMaxs).z));
 
 	if (!(!(zTopP < zBotT) && !(zBotP > zTopT))) return; Vector delta = ctrT - ctrP;
