@@ -1706,7 +1706,13 @@ struct RTSelf
 	bool sub_10279420();
 };
 
-struct RTHint { const char *sub_100ab4f0(); };
+struct RTHint
+{
+	char m_pad[0x5e0];
+	EHANDLE m_hHintOwner;	// 0x5e0
+	const char *sub_100ab4f0();
+	CBaseEntity *User() const { return m_hHintOwner; }
+};
 
 struct RTEntList
 {
@@ -1753,7 +1759,7 @@ struct RTFields
 	char m_pad5d78[0x5db4 - 0x5d78];
 	float m_flWaitFinished;	// 0x5db4
 	char m_pad5db8[0x5ddc - 0x5db8];
-	char *m_pHintNode;	// 0x5ddc
+	RTHint *m_pHintNode;	// 0x5ddc
 
 	CAI_Motor *GetMotor() { return m_pMotor; }
 	int edict() { return m_edict; }
@@ -1795,8 +1801,6 @@ void CAI_BaseNPC::vfunc444(void *pv)
 	if (0) (void)(*ME->slot198() - *ME->slot198());
 	if (0) (void)(*ME->slot198() - *ME->slot198());
 	if (0) (void)(*ME->slot198() - *ME->slot198());
-	if (0) (void)(*ME->slot198() - *ME->slot198());
-	if (0) (void)(*ME->slot198() - *ME->slot198());
 	switch (pTask->iTask)
 	{
 	case 31:
@@ -1813,7 +1817,7 @@ void CAI_BaseNPC::vfunc444(void *pv)
 		{
 			RTEnt *pTarget;
 			if (pTask->iTask == 86)
-				pTarget = g_10566458->sub_100290c0(&F->m_hTargetEnt);
+				pTarget = F->m_hTargetEnt;
 			else
 				pTarget = ME->slot167();
 			if (pTarget)
@@ -1831,9 +1835,9 @@ void CAI_BaseNPC::vfunc444(void *pv)
 		{
 			if (!F->m_pHintNode)
 				TASKFAIL(4, 0xb5c);
-			char *pHint = F->m_pHintNode;
-			if ((void *)g_10566458->sub_100290c0((EHANDLE *)(pHint + 0x5e0)) != this)
-				g_109f3630("Hint node (%s) being used by non-owner!\n", ((RTHint *)pHint)->sub_100ab4f0());
+			RTHint *pHint = F->m_pHintNode;
+			if ((void *)pHint->User() != this)
+				g_109f3630("Hint node (%s) being used by non-owner!\n", pHint->sub_100ab4f0());
 			if (ME->slot251())
 				sub_10273e80(0);
 			break;
