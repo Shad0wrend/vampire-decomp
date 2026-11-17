@@ -175709,38 +175709,95 @@ void CUnit10210250::sub_1020fad0()
 // END FUNCTION
 
 // FUNCTION: 0x1020fe70 size=0x26b
+#include "CSoundControllerImp.h"
+#include "CTriggerProximity.h"
+#include "CUnknown102c63b0.h"
+#include "CUnknown102c6460.h"
+#include "CUnknown102ca630.h"
+#include "CUnknown102dc2c0.h"
 #include "utlrbtree.h"
 #include "CBaseEntity.h"
 #include "CUnit10210250.h"
 #include "globalvars.h"
 #include "Tier1.h"
 
-inline bool HV1(const EHANDLE &h) { return h.Get() != 0; }
-inline bool HV2(const EHANDLE &h) { return HV1(h); }
-inline bool HV3(const EHANDLE &h) { return HV2(h); }
-inline bool HV4(const EHANDLE &h) { return HV3(h); }
-inline bool HV5(const EHANDLE &h) { return HV4(h); }
-inline bool HV6(const EHANDLE &h) { return HV5(h); }
-
 inline CBaseEntity *Owner9c(CBaseEntity *pEnt) { return (CBaseEntity *)pEnt->m_p9c; }
+
+#include "CGlobalEntityList.h"
+#include "CEHandleGet.h"
+#include "CUtlVector4.h"
+extern CGlobalEntityList g_106eb5d8;
+CBaseEntity *sub_101cd9e0(int);
+void sub_101cd940(CUnit10210250 *);
+extern "C" char *strstr(const char *, const char *);
+extern const char g_106b8540[];
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
+#define LOOKUP(h) ((CBaseEntity *)g_10566458->sub_100290c0((const unsigned int *)&(h)))
+
+struct CBaseHandleVec10217080 : CUtlVector4
+{
+	int AddToTail(const CBaseHandle &src) { return sub_10217080(m_size, (const int *)&src); }
+};
 
 namespace block_1020fe70
 {
-	bool sub_1020fe6f(const EHANDLE &h) { return HV6(h); }
+struct CUnitView : CUnit10210250
+{
+	void sub_1020fad0();
+};
+
+void CUnitView::sub_1020fad0()
+{
+	if (m_bResolved4b5)
+		return;
+	m_bResolved4b5 = true;
+	m_bAllValid4b4 = true;
+	CBaseHandle h;
+	if (strstr(STRINGR(m_pszNameA454), "!player")) {
+		h = (IHandleEntity *)sub_101cd9e0(1);
+		((CBaseHandleVec10217080 *)&m_ListA)->AddToTail(h);
+	} else {
+		h = (IHandleEntity *)g_106eb5d8.sub_100f7770(0, STRINGR(m_pszNameA454), 0, 0);
+		while ((CBaseEntity *)h.Get()) {
+			if (!((CBaseEntity *)h.Get())->m_p9c)
+				m_bAllValid4b4 = false;
+			((CBaseHandleVec10217080 *)&m_ListA)->AddToTail(h);
+			CBaseEntity *pStart = (CBaseEntity *)h.Get();
+			h = (IHandleEntity *)g_106eb5d8.sub_100f7770(pStart, STRINGR(m_pszNameA454), 0, 0);
+		}
+	}
+	EHANDLE &hB = (EHANDLE &)h;
+	if (strstr(STRINGR(m_pszNameB450), "!player")) {
+		hB = sub_101cd9e0(1);
+		m_ListB.AddToTail(hB);
+	} else {
+		hB = g_106eb5d8.sub_100f7770(0, STRINGR(m_pszNameB450), 0, 0);
+		while (LOOKUP(hB)) {
+			if (!LOOKUP(hB)->m_p9c)
+				m_bAllValid4b4 = false;
+			m_ListB.AddToTail(hB);
+			CBaseEntity *pStart = hB.Get();
+			hB = g_106eb5d8.sub_100f7770(pStart, STRINGR(m_pszNameB450), 0, 0);
+		}
+	}
+	if (!m_ListA.Count() || !m_ListB.Count())
+		sub_101cd940(this);
+}
 }
 
 // TARGET: CUnit10210250::sub_1020fe70
 void CUnit10210250::sub_1020fe70(void *pInputData)
 {
 	float flStart = gpGlobals->curtime;
-	sub_1020fad0();
+	((block_1020fe70::CUnitView *)this)->sub_1020fad0();
 	int nB = m_ListB.Count();
 	int nA = m_ListA.Count();
 	for (int i = 0; i < nB; i++)
 	{
 		for (int j = 0; j < nA; j++)
 		{
-			if (HV6(m_ListA[j]) && m_ListB[i])
+			if (m_ListA[j] && m_ListB[i])
 			{
 				if (m_bAllValid4b4)
 				{
