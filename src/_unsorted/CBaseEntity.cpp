@@ -1723,7 +1723,7 @@ void CBaseEntity::vfunc66()
 	g_109f3620[*g_109f3680].c = g_106b8540;
 	(*g_109f3680)++;
 	if (*((char *)this + 0xf4)) {
-		volatile unsigned int *pFlags = (volatile unsigned int *)((char *)this + 0xf8);
+		volatile unsigned int *pFlags = (unsigned int *)((char *)this + 0xf8);
 		unsigned int flags = *pFlags;
 		flags |= 0x40;
 		*pFlags = flags;
@@ -1731,7 +1731,7 @@ void CBaseEntity::vfunc66()
 		(*g_109f3680)--;
 		return;
 	}
-	volatile unsigned int *pFlags = (volatile unsigned int *)((char *)this + 0x19c);
+	volatile unsigned int *pFlags = (unsigned int *)((char *)this + 0x19c);
 	unsigned int flags = *pFlags;
 	flags |= 0x40;
 	*pFlags = flags;
