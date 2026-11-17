@@ -15073,8 +15073,8 @@ extern "C" CBaseEntity *auspex_aura()
 	if (pMem) {
 		pEnt = (CAuspexAura *)pMem;
 		pEnt->sub_1000a9d4();
-		volatile unsigned int *h1 = &pEnt->m_hTarget4b8;
-		volatile unsigned int *h2 = &pEnt->m_hTransmitEnt;
+		unsigned int *h1 = &pEnt->m_hTarget4b8;
+		unsigned int *h2 = &pEnt->m_hTransmitEnt;
 		*h1 = 0xffffffff;
 		*h2 = 0xffffffff;
 		*(void ***)pEnt = vt_1044bf04;
