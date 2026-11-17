@@ -98771,6 +98771,7 @@ CBaseEntity *sub_1014a4f0(CBaseEntity *pIgnore, CBasePlayer *pPlayer)
 #include "CEntityVSlots.h"
 #include "CUnknown101cccf0.h"
 #include "CCollisionProperty.h"
+#include "ConVar.h"
 
 struct matrix3x4_t { float m[3][4]; };
 void sub_10139610(const QAngle &angles, Vector *pForward, Vector *pRight, Vector *pUp);
@@ -98883,6 +98884,8 @@ extern int g_1057b7b4;
 extern int g_1057b7b8;
 
 #define GF(g) ((g)->vfunc1() ? 0.0f : (g)->m_f28)
+#define SQR(x) ((x) * (x))
+extern ConVar g_1071a378;	// "debug_physics_drag_dist"
 struct GGMatrix
 {
 	float m[16];
@@ -99281,20 +99284,21 @@ void CWeaponGravityGun::sub_1014abe0()
 				if (pPhys)
 					pPhys->GetDamping(&speed, &rot);
 				DevMsg("Physics object lift triggering supernatural act (%d).  mass: %.2f lbs (%.2f kg) damping: %.2f %.2f (%.2f) pos: (%f, %f, %f)\n",
-					v->m_nLift, mass * 2.2f, mass, speed, rot, v->m_saveDamping, pObject->GetAbsOrigin().x, pObject->GetAbsOrigin().y, pObject->GetAbsOrigin().z);
+					v->m_nLift, (mass * 2.2f), mass, speed, rot, v->m_saveDamping, pObject->GetAbsOrigin().x, pObject->GetAbsOrigin().y, pObject->GetAbsOrigin().z);
 			}
 			pOwner->sub_1017df50(v->m_nLift, -1.0f, sub_101d3730("PhysicsLift %s", pObject->sub_100ab4f0()));
 		}
 
 		Vector d2 = newPosition - v->m_vec930;
 		float distSqr = d2.Length2DSqr();
-		if ((float)(GF(g_1071a37c) * (double)GF(g_1071a37c)) < distSqr && v->m_nDrag > 0) {
+		float flDragDistSqr = SQR(g_1071a378.GetFloat());
+		if (distSqr > flDragDistSqr && v->m_nDrag > 0) {
 			if (!g_1071a44c->vfunc1() && g_1071a44c->m_n2c) {
 				GGPhys *pPhys = pObject->VPhysicsGetObject();
 				float mass = pPhys ? pPhys->GetMass() : 0;
 				float speed = 0, rot = 0;
 				DevMsg("Physics object drag triggering supernatural act (%d).  mass: %.2f lbs (%.2f kg) damping: %.2f %.2f (%.2f) pos: (%f, %f, %f)\n",
-					v->m_nDrag, mass * 2.2f, mass, speed, rot, v->m_saveDamping, pObject->GetAbsOrigin().x, pObject->GetAbsOrigin().y, pObject->GetAbsOrigin().z);
+					v->m_nDrag, (mass * 2.2f), mass, speed, rot, v->m_saveDamping, pObject->GetAbsOrigin().x, pObject->GetAbsOrigin().y, pObject->GetAbsOrigin().z);
 			}
 			pOwner->sub_1017df50(v->m_nDrag, -1.0f, sub_101d3730("PhysicsDrag %s", pObject->sub_100ab4f0()));
 		}
