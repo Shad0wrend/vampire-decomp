@@ -229388,7 +229388,7 @@ CAI_Hint *sub_102d2980(CBaseEntity *pNpc, unsigned int flags, unsigned int moveM
 		h = h->m_pNext;
 		if (!h && g_10925454)
 			h = g_10925450;
-		CAI_Hint *volatile *pCur = (CAI_Hint *volatile *)&g_10925454;
+		CAI_Hint *volatile *pCur = (CAI_Hint **)&g_10925454;
 		if (h == *pCur)
 			break;
 	} while (1);
