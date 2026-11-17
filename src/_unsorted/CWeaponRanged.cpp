@@ -401,10 +401,10 @@ struct CVBulletInfo
 
 	void InitVecs()
 	{
-		((float *)&m_vecSrc)[0] = ((const volatile float *)&g_1070d1b0)[0]; ((float *)&m_vecSrc)[1] = ((const volatile float *)&g_1070d1b0)[1]; ((float *)&m_vecSrc)[2] = ((const volatile float *)&g_1070d1b0)[2];
-		((float *)&m_v2c)[0] = ((const volatile float *)&g_1070d1b0)[0]; ((float *)&m_v2c)[1] = ((const volatile float *)&g_1070d1b0)[1]; ((float *)&m_v2c)[2] = ((const volatile float *)&g_1070d1b0)[2];
-		((float *)&m_vecDir)[0] = ((const volatile float *)&g_1070d1b0)[0]; ((float *)&m_vecDir)[1] = ((const volatile float *)&g_1070d1b0)[1]; ((float *)&m_vecDir)[2] = ((const volatile float *)&g_1070d1b0)[2];
-		((float *)&m_vecSpread)[0] = ((const volatile float *)&g_1070d1b0)[0]; ((float *)&m_vecSpread)[1] = ((const volatile float *)&g_1070d1b0)[1]; ((float *)&m_vecSpread)[2] = ((const volatile float *)&g_1070d1b0)[2];
+		((float *)&m_vecSrc)[0] = ((const float *)&g_1070d1b0)[0]; ((float *)&m_vecSrc)[1] = ((const float *)&g_1070d1b0)[1]; ((float *)&m_vecSrc)[2] = ((const float *)&g_1070d1b0)[2];
+		((float *)&m_v2c)[0] = ((const float *)&g_1070d1b0)[0]; ((float *)&m_v2c)[1] = ((const float *)&g_1070d1b0)[1]; ((float *)&m_v2c)[2] = ((const float *)&g_1070d1b0)[2];
+		((float *)&m_vecDir)[0] = ((const float *)&g_1070d1b0)[0]; ((float *)&m_vecDir)[1] = ((const float *)&g_1070d1b0)[1]; ((float *)&m_vecDir)[2] = ((const float *)&g_1070d1b0)[2];
+		((float *)&m_vecSpread)[0] = ((const float *)&g_1070d1b0)[0]; ((float *)&m_vecSpread)[1] = ((const float *)&g_1070d1b0)[1]; ((float *)&m_vecSpread)[2] = ((const float *)&g_1070d1b0)[2];
 	}
 	CVBulletInfo()
 	{
