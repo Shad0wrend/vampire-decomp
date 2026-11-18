@@ -1894,6 +1894,7 @@
 0x10003602 func   ?vfunc1@?$CBitStringSaveRestoreOps@VCBitString@@@@UAEXPAPAVCBitString@@PAVCRestore@@@Z CBitStringSaveRestoreOps<CBitString>::vfunc1
 0x10003607 func   ?vfunc103@CPropPadlock@@UAEXXZ CPropPadlock::vfunc103
 0x1000360c func   ?sub_10047160@@YAXPAUE8@@PBU1@@Z sub_10047160
+0x10003611 func   ?vfunc390@CNPC_VTest@@QAEHPAUCTakeDamageInfo@@@Z CNPC_VTest::vfunc390
 0x10003616 func   ?sub_103162d0@@YAXXZ sub_103162d0
 0x1000361b func   ?sub_10081890@CBasePlayer@@QAEPAVCBaseEntity@@XZ CBasePlayer::sub_10081890
 0x10003620 func   ?sub_100b3580@CBaseEntity@@QAEXI@Z CBaseEntity::sub_100b3580
