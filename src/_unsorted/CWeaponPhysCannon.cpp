@@ -77,6 +77,18 @@ CBaseCombatWeapon *CWeaponPhysCannon::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040dae0 size=0x5
+#include "CWeaponPhysCannon.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponPhysCannon::vfunc104
+// the game's 0x1040dae0: a tail call (jmp) of CBaseCombatWeapon::vfunc104
+void CWeaponPhysCannon::vfunc104()
+{
+	CBaseCombatWeapon::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040db00 size=0x19
 #include "CWeaponPhysCannon.h"
 
