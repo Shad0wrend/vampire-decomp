@@ -36,6 +36,17 @@ int CTeamManager::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230840 size=0x5
+#include "CTeamManager.h"
+struct CUnknown102308f0 { int sub_102308f0(); };
+// TARGET: CTeamManager::vfunc3
+// the game's 0x10230840: a tail call (jmp) of CUnknown102308f0::sub_102308f0
+int CTeamManager::vfunc3()
+{
+	return ((CUnknown102308f0 *)this)->CUnknown102308f0::sub_102308f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10230860 size=0x8
 #include "CTeamManager.h"
 namespace lifted {

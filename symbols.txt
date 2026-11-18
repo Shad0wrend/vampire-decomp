@@ -7138,6 +7138,7 @@
 0x10009d4f func   ?sub_100dc9f0@CUnknown100dc9f0@@QAEPAMPBMPAM@Z CUnknown100dc9f0::sub_100dc9f0
 0x10009d54 func   ?sub_1024c6f0@@YAXAAVVMatrix@@ABVVector@@@Z sub_1024c6f0
 0x10009d59 func   ?sub_10112470@SSmoothGrid@@QAEMHH@Z SSmoothGrid::sub_10112470
+0x10009d5e func   ?vfunc3@CTeamManager@@QAEHXZ CTeamManager::vfunc3
 0x10009d63 func   ?sub_101b9a50@CSound@@QAEXH@Z CSound::sub_101b9a50
 0x10009d6d func   ?vfunc133@CBaseEntity@@UAEXXZ CBaseEntity::vfunc133
 0x10009d72 func   ?vfunc5@CPropClockHand@@QAEPAV1@I@Z CPropClockHand::vfunc5
