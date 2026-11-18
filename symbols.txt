@@ -5335,6 +5335,7 @@
 0x10007adb func   ?sub_1040dde0@@YGXPAVCBaseEntity@@HH@Z sub_1040dde0
 0x10007ae0 func   ?sub_1023c760@CWorld@@QAEXMPBD0@Z CWorld::sub_1023c760
 0x10007ae5 func   ?vfunc601@CNPC_VTzimisceRunner@@QAEXH@Z CNPC_VTzimisceRunner::vfunc601
+0x10007aea func   ?vfunc366@CNPC_VTest@@QAE_NHHH@Z CNPC_VTest::vfunc366
 0x10007aef func   ?sub_101e7fb0@CUnknown101e7fb0@@QAEHPAVCBaseCombatCharacter@@0@Z CUnknown101e7fb0::sub_101e7fb0
 0x10007af4 func   ?sub_1019c9f0@@YAHPAHH0@Z sub_1019c9f0
 0x10007af9 func   ?sub_103dc980@@YAXXZ sub_103dc980
