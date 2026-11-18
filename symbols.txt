@@ -10463,6 +10463,7 @@
 0x1000e29b func   ?vfunc370@CNPCMaker_Fleshpile@@UAEHH@Z CNPCMaker_Fleshpile::vfunc370
 0x1000e2a0 func   ?sub_1002bb90@CPhysBallSocketV@@QAEPAUCPhysConstraintObj@@PAVCPhysConstraintSystem@@PAUCPhysConstraintPair@@@Z CPhysBallSocketV::sub_1002bb90
 0x1000e2a5 func   ?sub_1006e770@CBaseCineCam@@QAEXXZ CBaseCineCam::sub_1006e770
+0x1000e2aa func   ?vfunc104@CNPC_Bullseye@@UAEXXZ CNPC_Bullseye::vfunc104
 0x1000e2af func   ?sub_1015ff40@CBasePlayer@@QAE_NXZ CBasePlayer::sub_1015ff40
 0x1000e2b4 func   ?vfunc128@CFuncMoveLinear@@UAE_NXZ CFuncMoveLinear::vfunc128
 0x1000e2b9 func   ?sub_10382b30@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::sub_10382b30

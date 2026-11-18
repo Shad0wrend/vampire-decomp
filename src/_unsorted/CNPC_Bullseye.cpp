@@ -27,6 +27,18 @@ CNPC_Bullseye *CNPC_Bullseye::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103567c0 size=0x5
+#include "CNPC_Bullseye.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CNPC_Bullseye::vfunc104
+// the game's 0x103567c0: a tail call (jmp) of CAI_BaseNPC::vfunc104
+void CNPC_Bullseye::vfunc104()
+{
+	((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103567e0 size=0x296
 #include "CBaseCombatCharacter.h"
 #include "CUnknown101d7520.h"
