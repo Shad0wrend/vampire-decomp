@@ -95,6 +95,18 @@ void CBreakableProp::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f3e0 size=0x5
+#include "CBreakableProp.h"
+#include "CBaseEntity.h"
+
+// TARGET: CBreakableProp::vfunc113
+// the game's 0x1018f3e0: a tail call (jmp) of CBaseEntity::vfunc113
+void CBreakableProp::vfunc113()
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc113();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018f400 size=0x12e
 #include "CBreakableProp.h"
 #include "CBaseEntity.h"
