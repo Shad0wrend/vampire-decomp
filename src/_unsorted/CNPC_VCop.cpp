@@ -311,6 +311,18 @@ int CNPC_VCop::vfunc375(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103723d0 size=0x5
+#include "CNPC_VCop.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VCop::vfunc433
+// the game's 0x103723d0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc433
+void CNPC_VCop::vfunc433()
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc433();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372aa0 size=0xd
 struct CNPC_VHumanCombatantFwd;
 struct CNPC_VCopFwd {
