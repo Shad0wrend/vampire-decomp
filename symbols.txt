@@ -9567,6 +9567,7 @@
 0x1000d0bc func   ?sub_100e1880@CDialog@@QAEPADH@Z CDialog::sub_100e1880
 0x1000d0c1 func   ?vfunc491@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc491
 0x1000d0c6 func   ?vfunc81@CWeaponRanged_Pistol_Anaconda@@UAEHXZ CWeaponRanged_Pistol_Anaconda::vfunc81
+0x1000d0d0 func   ?vfunc127@CWorld@@UAEHH@Z CWorld::vfunc127
 0x1000d0d5 func   ?vfunc5@CTEBreakModel@@QAEXXZ CTEBreakModel::vfunc5
 0x1000d0da func   ?vfunc337@CNPC_VCamera@@UAEHXZ CNPC_VCamera::vfunc337
 0x1000d0df func   ?sub_1010c490@CUnknown1010c490@@QAEHH@Z CUnknown1010c490::sub_1010c490

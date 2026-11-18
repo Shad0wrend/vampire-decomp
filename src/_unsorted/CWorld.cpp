@@ -44,6 +44,18 @@ int CWorld::vfunc126(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1023b600 size=0x5
+#include "CWorld.h"
+#include "CBaseEntity.h"
+
+// TARGET: CWorld::vfunc127
+// the game's 0x1023b600: a tail call (jmp) of CBaseEntity::vfunc127
+int CWorld::vfunc127(int a0)
+{
+	return CBaseEntity::vfunc127(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1023b620 size=0xd
 #include "CBaseEntity.h"
 #include "CWorld.h"
