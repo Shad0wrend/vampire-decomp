@@ -6733,6 +6733,7 @@
 0x100096c4 func   ?vfunc5@CConstraintAnchor@@UAEPAVCConstraintAnchorBase@@I@Z CConstraintAnchor::vfunc5
 0x100096ce func   ?sub_102cc9f0@@YAXXZ sub_102cc9f0
 0x100096d3 func   ?sub_10042780@UtlMem@@QAEXXZ UtlMem::sub_10042780
+0x100096d8 func   ?vfunc433@CNPC_VTaxiDriver@@QAEXXZ CNPC_VTaxiDriver::vfunc433
 0x100096dd func   ?sub_10075c20@S10075c20@@QAEXPBD@Z S10075c20::sub_10075c20
 0x100096e2 func   ?vfunc478@CNPC_VFrenzyShadow@@UAEPAVCBaseEntity@@XZ CNPC_VFrenzyShadow::vfunc478
 0x100096e7 func   ?vfunc409@CItemContainer@@QAE_NXZ CItemContainer::vfunc409

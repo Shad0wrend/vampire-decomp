@@ -122,6 +122,18 @@ int CNPC_VTaxiDriver::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b3690 size=0x5
+#include "CNPC_VTaxiDriver.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VTaxiDriver::vfunc433
+// the game's 0x103b3690: a tail call (jmp) of CAI_BaseNPCTroika::vfunc433
+void CNPC_VTaxiDriver::vfunc433()
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc433();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b36d0 size=0x167
 #include "CNPC_VTaxiDriver.h"
 #include "CNPC_VHuman.h"
