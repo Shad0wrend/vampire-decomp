@@ -198,6 +198,18 @@ int CAI_Hint::vfunc124()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102d2ec0 size=0x5
+#include "CAI_Hint.h"
+#include "CBaseEntity.h"
+
+// TARGET: CAI_Hint::vfunc219
+// the game's 0x102d2ec0: a tail call (jmp) of CBaseEntity::vfunc219
+float * CAI_Hint::vfunc219()
+{
+	return ((CBaseEntity *)this)->CBaseEntity::vfunc219();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102d2ee0 size=0x8
 #include "CBaseEntity.h"
 #include "CAI_Hint.h"

@@ -10383,6 +10383,7 @@
 0x1000e106 func   ?sub_101d54f0@CUnknown101d54f0@@QAEPAV1@XZ CUnknown101d54f0::sub_101d54f0
 0x1000e10b func   ?vfunc32@CTriggerElectricBugaloo@@QAE_NPAX@Z CTriggerElectricBugaloo::vfunc32
 0x1000e110 func   ?sub_102273e0@CUnknown102273e0@@QAEXH@Z CUnknown102273e0::sub_102273e0
+0x1000e115 func   ?vfunc219@CAI_Hint@@QAEPAMXZ CAI_Hint::vfunc219
 0x1000e11f func   ?vfunc89@CBaseEntity@@UAEXXZ CBaseEntity::vfunc89
 0x1000e124 func   ?sub_101e0310@S101e0310@@QAEXXZ S101e0310::sub_101e0310
 0x1000e129 func   ?vfunc103@CSimplePhysicsBrush@@QAEXXZ CSimplePhysicsBrush::vfunc103
