@@ -327,6 +327,18 @@ void CNPC_VBach::vfunc144(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10363d90 size=0x5
+#include "CNPC_VBach.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CNPC_VBach::vfunc309
+// the game's 0x10363d90: a tail call (jmp) of CBaseCombatCharacter::vfunc309
+void * CNPC_VBach::vfunc309()
+{
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc309();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10363db0 size=0x23d
 #include "CNPC_VBach.h"
 #include "CPASAttenuationFilter.h"

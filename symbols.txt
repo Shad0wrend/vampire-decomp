@@ -15726,6 +15726,7 @@
 0x10014c5e func   ?sub_100fb1f0@CEnvParticle@@QAEXPAVCBaseEntity@@HH@Z CEnvParticle::sub_100fb1f0
 0x10014c63 func   ?sub_10381ba0@CUnknown10381ba0@@QAEXD@Z CUnknown10381ba0::sub_10381ba0
 0x10014c68 func   ?sub_101b6ea0@@YAXPAUCB6EA0Obj@@PBU1@@Z sub_101b6ea0
+0x10014c6d func   ?vfunc309@CNPC_VBach@@UAEPAXXZ CNPC_VBach::vfunc309
 0x10014c72 func   ??1CVFeat_t@@QAE@XZ CVFeat_t::~CVFeat_t
 0x10014c77 func   ?sub_1032db60@CBaseCombatCharacter@@QAE_NPAX@Z CBaseCombatCharacter::sub_1032db60
 0x10014c7c func   ?sub_101d2b40@@YA?AVVector@@ABUmatrix3x4_t@@ABV1@M@Z sub_101d2b40
