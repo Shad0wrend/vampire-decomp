@@ -13085,6 +13085,7 @@
 0x10011617 func   ?sub_10085070@@YAXPAHPBH@Z sub_10085070
 0x1001161c func   ?vfunc73@CPushable@@UAE_NH@Z CPushable::vfunc73
 0x10011621 func   ?sub_1013d450@@YAMMMM@Z sub_1013d450
+0x10011626 func   ?vfunc103@CNPC_VWolfMorph@@UAEXXZ CNPC_VWolfMorph::vfunc103
 0x1001162b func   ?sub_10260670@CAI_BaseHumanoid@@QAEXPBD@Z CAI_BaseHumanoid::sub_10260670
 0x10011630 func   ?sub_10130170@@YADHPAPBDPAH1@Z sub_10130170
 0x10011635 func   ?sub_1042ea40@@YAPAVCSprite@@PBDABVVector@@_N@Z sub_1042ea40

@@ -61,6 +61,18 @@ int CNPC_VWolfMorph::vfunc546(int x)
 int CNPC_VWolfMorph::vfunc375(int unused) { return 0x1145; }
 // END FUNCTION
 
+// FUNCTION: 0x103dcde0 size=0x5
+#include "CNPC_VWolfMorph.h"
+#include "CNPC_VPlayerController.h"
+
+// TARGET: CNPC_VWolfMorph::vfunc103
+// the game's 0x103dcde0: a tail call (jmp) of CNPC_VPlayerController::vfunc103
+void CNPC_VWolfMorph::vfunc103()
+{
+	((CNPC_VPlayerController *)this)->CNPC_VPlayerController::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dce50 size=0x6
 #include "CNPC_VWolfMorph.h"
 int CNPC_VWolfMorph::vfunc138()
