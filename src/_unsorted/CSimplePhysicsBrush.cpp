@@ -44,6 +44,17 @@ int CSimplePhysicsBrush::vfunc226()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fa30 size=0x5
+#include "CSimplePhysicsBrush.h"
+int __cdecl sub_102587f0();
+// TARGET: CSimplePhysicsBrush::vfunc36
+// the game's 0x1004fa30: a tail call (jmp) of sub_102587f0
+int CSimplePhysicsBrush::vfunc36()
+{
+	return sub_102587f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004fa50 size=0x1f
 #include "CSimplePhysicsBrush.h"
 #include "CBaseEntity.h"

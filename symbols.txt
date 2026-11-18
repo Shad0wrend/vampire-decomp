@@ -14583,6 +14583,7 @@
 0x100131c4 func   ??0QuestJournal@@QAE@XZ QuestJournal::QuestJournal
 0x100131c4 func   ?sub_10220e10@QuestJournal@@QAEPAV1@XZ QuestJournal::sub_10220e10
 0x100131c9 func   ?vfunc110@CFunc_LOD@@UAE_NPBD0@Z CFunc_LOD::vfunc110
+0x100131ce func   ?vfunc36@CSimplePhysicsBrush@@QAEHXZ CSimplePhysicsBrush::vfunc36
 0x100131d3 func   ?sub_10190e50@@YAPAVCOrnamentProp@@PBDPAVCBaseEntity@@@Z sub_10190e50
 0x100131d8 func   ?sub_101771f0@CUnknown101771f0@@QAEHXZ CUnknown101771f0::sub_101771f0
 0x100131dd func   ?vfunc35@CPropSign@@UAEHH@Z CPropSign::vfunc35
