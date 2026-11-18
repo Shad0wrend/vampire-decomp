@@ -377,6 +377,19 @@ void CNPC_VCop::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10372ae0 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CNPC_VCop.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VCop::vfunc390
+// the game's 0x10372ae0: a tail call (jmp) of CNPC_VHuman::vfunc390
+int CNPC_VCop::vfunc390(CTakeDamageInfo *a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372b00 size=0x11
 #include "CNPC_VCop.h"
 
