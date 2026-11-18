@@ -194,6 +194,18 @@ int CNPC_VHuman::vfunc482(char bDisregardState, int interruptLevel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103851c0 size=0x5
+#include "CNPC_VHuman.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VHuman::vfunc440
+// the game's 0x103851c0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc440
+int CNPC_VHuman::vfunc440(int a0)
+{
+	return CAI_BaseNPCTroika::vfunc440(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103854f0 size=0x2fa
 #include "CNPC_VHuman.h"
 struct CVH375Obj { virtual bool vfunc0(); virtual bool vfunc1(); char m_pad[0x28]; int m_n2c; };
