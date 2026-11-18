@@ -15745,6 +15745,7 @@
 0x10014b9b func   ?sub_1023bb60@@YAHXZ sub_1023bb60
 0x10014ba0 func   ?vfunc347@CBaseCombatCharacter@@QAE_NHPADPAM111@Z CBaseCombatCharacter::vfunc347
 0x10014ba5 func   ?sub_101eccd0@CUnknown101eccd0@@QAEXXZ CUnknown101eccd0::sub_101eccd0
+0x10014baa func   ?vfunc434@CNPC_VPedestrian@@UAEXXZ CNPC_VPedestrian::vfunc434
 0x10014baf func   ?vfunc0@CTraceFilterNearestNode@@UAE_NPAXH@Z CTraceFilterNearestNode::vfunc0
 0x10014bb4 func   ?sub_103f5cf0@@YAHXZ sub_103f5cf0
 0x10014bb9 func   ?vfunc80@CWeaponMelee_Claws_Ghoul@@UAEPAXXZ CWeaponMelee_Claws_Ghoul::vfunc80
