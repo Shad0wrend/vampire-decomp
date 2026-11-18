@@ -8327,6 +8327,7 @@
 0x1000b591 func   ?sub_10205920@CUnknown10205920@@QAEHH@Z CUnknown10205920::sub_10205920
 0x1000b596 func   ?sub_100e13d0@CDialog@@QAEXE@Z CDialog::sub_100e13d0
 0x1000b59b func   ?vfunc82@CNPC_VLasombra@@UAEPAUdatamap_t@@XZ CNPC_VLasombra::vfunc82
+0x1000b5a0 func   ?vfunc390@CNPC_VHunter@@UAEHPAUCTakeDamageInfo@@@Z CNPC_VHunter::vfunc390
 0x1000b5a5 func   ?sub_1030bea0@CUnknown1030bea0@@QAEXXZ CUnknown1030bea0::sub_1030bea0
 0x1000b5aa func   ?sub_102e0a80@CAI_Motor@@QAEMM@Z CAI_Motor::sub_102e0a80
 0x1000b5af func   ?vfunc5@CTETParticleAttached@@UAEXXZ CTETParticleAttached::vfunc5

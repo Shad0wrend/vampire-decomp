@@ -318,6 +318,19 @@ void CNPC_VHunter::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388b10 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CNPC_VHunter.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VHunter::vfunc390
+// the game's 0x10388b10: a tail call (jmp) of CNPC_VHuman::vfunc390
+int CNPC_VHunter::vfunc390(CTakeDamageInfo *a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388b30 size=0x27
 // TARGET: CNPC_VHunter::vfunc420
 #include "CNPC_VHunter.h"
