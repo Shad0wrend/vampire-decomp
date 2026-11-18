@@ -81,6 +81,18 @@ int CNPC_VPedestrian::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a2520 size=0x5
+#include "CNPC_VPedestrian.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VPedestrian::vfunc104
+// the game's 0x103a2520: a tail call (jmp) of CNPC_VHuman::vfunc104
+void CNPC_VPedestrian::vfunc104()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a2540 size=0x15
 #include "CNPC_VPedestrian.h"
 
