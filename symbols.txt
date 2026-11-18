@@ -6879,6 +6879,7 @@
 0x10009863 func   ?sub_101cd110@@YAXPAUCEntityCollideableView@@PBM1IPAUCGameTrace@@@Z sub_101cd110
 0x10009868 func   ?sub_1006e8e0@CBaseCineCam@@QAEXXZ CBaseCineCam::sub_1006e8e0
 0x1000986d func   ?sub_1002b4c0@CPhysConstraint@@QAE_NXZ CPhysConstraint::sub_1002b4c0
+0x10009872 func   ?vfunc375@CNPC_VAnimal@@QAEHH@Z CNPC_VAnimal::vfunc375
 0x10009877 func   ?sub_100ff310@CEnvBeam@@QAEXXZ CEnvBeam::sub_100ff310
 0x1000987c func   ?vfunc80@CWeaponMelee_HengeyokaiFist@@UAEPAXXZ CWeaponMelee_HengeyokaiFist::vfunc80
 0x10009881 func   ?vfunc3@?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@UAEHPAX@Z CUtlVectorDataOps<CUtlVector<EXPERIENCE_ENTRY,CUtlMemory<EXPERIENCE_ENTRY> >,9>::vfunc3
