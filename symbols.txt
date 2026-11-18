@@ -6293,6 +6293,7 @@
 0x10008e59 func   ?sub_103bca20@CNPC_VTzimisce@@QAEHH@Z CNPC_VTzimisce::sub_103bca20
 0x10008e5e func   ?sub_102b8d20@CAI_BaseNPCTroika@@QAEHHH@Z CAI_BaseNPCTroika::sub_102b8d20
 0x10008e63 func   ?vfunc35@CPropSwitch@@UAEHH@Z CPropSwitch::vfunc35
+0x10008e68 func   ?vfunc434@CNPC_VCombatman@@QAEXXZ CNPC_VCombatman::vfunc434
 0x10008e6d func   ?vfunc104@CBreakableSurface@@UAEXXZ CBreakableSurface::vfunc104
 0x10008e72 func   ?sub_10109840@@YAPAHXZ sub_10109840
 0x10008e77 func   ?sub_1016fa90@CBasePlayer@@QAEXXZ CBasePlayer::sub_1016fa90

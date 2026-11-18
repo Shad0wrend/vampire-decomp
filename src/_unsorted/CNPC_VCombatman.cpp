@@ -150,3 +150,15 @@ void sub_10370340(float a)
 	sub_10385a10(a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10370360 size=0x5
+#include "CNPC_VCombatman.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VCombatman::vfunc434
+// the game's 0x10370360: a tail call (jmp) of CNPC_VHuman::vfunc434
+void CNPC_VCombatman::vfunc434()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc434();
+}
+// END FUNCTION
