@@ -3600,13 +3600,17 @@ int CBaseCombatCharacter::sub_103302e0(CTakeDamageInfo *pInfo)
 // END FUNCTION
 
 // FUNCTION: 0x103315e0 size=0x79
+#include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
 
-int __fastcall sub_103315e0(char *self, int, int a)
+// TARGET: CBaseCombatCharacter::vfunc391
+// slot 391 "CBaseCombatCharacter::OnTakeDamage_Dying" (its scope name)
+int CBaseCombatCharacter::vfunc391(int a)
 {
+    char *self = (char *)this;
     const char *name = self ? (*(const char **)(self + 0x26c) ? *(const char **)(self + 0x26c) : g_106b8540) : "NULL ENTITY";
     g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::OnTakeDamage_Dying";
     g_109f3620[*g_109f3680].b = name;
