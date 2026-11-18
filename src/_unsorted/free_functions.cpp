@@ -195756,6 +195756,16 @@ void sub_102473e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10247430 size=0x5
+char * __cdecl sub_10247280(char *, char *, char *);
+// TARGET: sub_10247430
+// the game's 0x10247430: a tail call (jmp) of sub_10247280
+char * __cdecl sub_10247430(char *a0, char *a1, char *a2)
+{
+	return sub_10247280(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10247450 size=0x98
 extern "C" __declspec(dllimport) int RandomInt(int, int);
 extern char g_105c4f00[];

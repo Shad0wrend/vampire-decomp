@@ -2515,6 +2515,7 @@
 0x10004264 func   ?sub_1038f2c0@CNPC_VManBat@@QAE_NPBDHH0@Z CNPC_VManBat::sub_1038f2c0
 0x10004269 func   _params_particle params_particle
 0x1000426e func   ?vfunc339@CWeaponMelee@@UAEXXZ CWeaponMelee::vfunc339
+0x10004273 func   ?sub_10247430@@YAPADPAD00@Z sub_10247430
 0x10004278 func   ?sub_102c7e90@@YIPAXPAX@Z sub_102c7e90
 0x1000427d func   ?sub_100b4280@@YIXPAVCBaseEntity@@HH@Z sub_100b4280
 0x10004282 func   ?vfunc103@CTriggerTeleport@@UAEXXZ CTriggerTeleport::vfunc103
