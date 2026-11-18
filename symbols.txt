@@ -9627,6 +9627,7 @@
 0x1000d1cf func   ?sub_10324ba0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10324ba0
 0x1000d1d4 func   ?vfunc241@CWorld@@QAEXPAXHHH@Z CWorld::vfunc241
 0x1000d1d9 func   ?vfunc82@CLogicCaseToggle@@QAEPAUdatamap_t@@XZ CLogicCaseToggle::vfunc82
+0x1000d1de func   ?vfunc438@CGenericSabbat_NPC@@UAEHXZ CGenericSabbat_NPC::vfunc438
 0x1000d1e3 func   ?sub_10293a80@@YIMPAVCAI_BaseNPCTroika@@@Z sub_10293a80
 0x1000d1e8 func   ?sub_1027c7c0@Helper@@QAEPAXE@Z Helper::sub_1027c7c0
 0x1000d1ed func   ?sub_1008ed50@CBaseAnimating@@QAEHHPAH@Z CBaseAnimating::sub_1008ed50
