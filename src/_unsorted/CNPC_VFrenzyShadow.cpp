@@ -13,6 +13,18 @@ char CNPC_VFrenzyShadow::vfunc362(float const *a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10375200 size=0x5
+#include "CNPC_VFrenzyShadow.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CNPC_VFrenzyShadow::vfunc365
+// the game's 0x10375200: a tail call (jmp) of CBaseCombatCharacter::vfunc365
+int CNPC_VFrenzyShadow::vfunc365(CBaseEntity *a0)
+{
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc365(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10375240 size=0x6
 #include "CNPC_VFrenzyShadow.h"
 namespace lifted {

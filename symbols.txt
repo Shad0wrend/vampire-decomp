@@ -15210,6 +15210,7 @@
 0x10014187 func   _logic_npc_condition logic_npc_condition
 0x1001418c func   ?sub_101841f0@CUnknown101841f0@@QAEPAXH@Z CUnknown101841f0::sub_101841f0
 0x10014191 func   ?sub_100dbe60@@YAHXZ sub_100dbe60
+0x1001419b func   ?vfunc365@CNPC_VFrenzyShadow@@UAEHPAVCBaseEntity@@@Z CNPC_VFrenzyShadow::vfunc365
 0x100141a0 func   ?sub_102dcce0@CUnk102dcce0@@QAEXH@Z CUnk102dcce0::sub_102dcce0
 0x100141a5 func   ?vfunc74@CSingleplayRules@@UAEDXZ CSingleplayRules::vfunc74
 0x100141aa func   ?LessFunc@?$CDefOps@PAVIPhysicsObject@@@@SA_NABQAVIPhysicsObject@@0@Z CDefOps<IPhysicsObject *>::LessFunc
