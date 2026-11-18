@@ -206,6 +206,17 @@ int CEntitySaveRestoreBlockHandler::vfunc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a37a0 size=0x5
+#include "CUnknown101a2c30.h"
+#include "CEntitySaveRestoreBlockHandler.h"
+// TARGET: CEntitySaveRestoreBlockHandler::vfunc1
+// the game's 0x101a37a0: a tail call (jmp) of CEntitySaveRestoreBlockHandler::sub_101a2c30
+bool CEntitySaveRestoreBlockHandler::vfunc1(class CUnknown101a2c30 *a0)
+{
+	return ((CEntitySaveRestoreBlockHandler *)this)->CEntitySaveRestoreBlockHandler::sub_101a2c30(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a37c0 size=0x123
 #include "CSave.h"
 #include "CEntitySaveRestoreBlockHandler.h"

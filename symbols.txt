@@ -16197,6 +16197,7 @@
 0x10015195 func   ?sub_10335950@CBaseCombatCharacter@@QAEPAXPBD@Z CBaseCombatCharacter::sub_10335950
 0x1001519a func   ?vfunc0@CSafeDiscSaveRestoreOps_2@@QAEXPAPAHPAUCSafeDiscWriter@@@Z CSafeDiscSaveRestoreOps_2::vfunc0
 0x1001519f func   ?vfunc249@CBaseAnimating@@QAEMXZ CBaseAnimating::vfunc249
+0x100151a4 func   ?vfunc1@CEntitySaveRestoreBlockHandler@@UAE_NPAVCUnknown101a2c30@@@Z CEntitySaveRestoreBlockHandler::vfunc1
 0x100151a9 func   ?vfunc478@CHL2_Player@@UAEXPAI@Z CHL2_Player::vfunc478
 0x100151ae func   ?sub_102bf7e0@CUnknown102bf7e0@@QAEXXZ CUnknown102bf7e0::sub_102bf7e0
 0x100151b3 func   ?sub_1014a0e0@@YAXPAUCUnk1014a0e0@@@Z sub_1014a0e0
