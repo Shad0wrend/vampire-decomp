@@ -305,6 +305,19 @@ int sub_1035a850(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035a8a0 size=0x5
+#include "animevent_t.h"
+#include "CGeneric_NPC.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CGeneric_NPC::vfunc259
+// the game's 0x1035a8a0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc259
+void CGeneric_NPC::vfunc259(animevent_t *a0)
+{
+	CAI_BaseNPCTroika::vfunc259(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a900 size=0xd
 void sub_1028fcc0(float a);
 

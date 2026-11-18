@@ -13182,6 +13182,7 @@
 0x10011978 func   ?sub_100e9760@CDialogDependency@@QAEDPAVCBaseEntity@@0@Z CDialogDependency::sub_100e9760
 0x1001197d func   ?sub_10202a50@CUnknown10202a50@@QAEHPBD@Z CUnknown10202a50::sub_10202a50
 0x10011982 func   ?sub_103be3d0@CTargetNPC@@QAE_NPAVCBaseEntity@@@Z CTargetNPC::sub_103be3d0
+0x10011987 func   ?vfunc259@CGeneric_NPC@@UAEXPAUanimevent_t@@@Z CGeneric_NPC::vfunc259
 0x1001198c func   ?vfunc0@ConCommand@@UAEPAV1@I@Z ConCommand::vfunc0
 0x10011991 func   ?sub_10183910@StatOwner2@@QAEPAUStatDefault2@@H@Z StatOwner2::sub_10183910
 0x10011996 func   ?sub_10138760@@YAXPAHH0@Z sub_10138760
