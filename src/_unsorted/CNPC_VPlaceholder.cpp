@@ -214,6 +214,18 @@ void CNPC_VPlaceholder::vfunc444(void *a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a43d0 size=0x5
+#include "CNPC_VPlaceholder.h"
+#include "CBaseEntity.h"
+
+// TARGET: CNPC_VPlaceholder::vfunc91
+// the game's 0x103a43d0: a tail call (jmp) of CBaseEntity::vfunc91
+char CNPC_VPlaceholder::vfunc91(void *a0, int a1)
+{
+	return CBaseEntity::vfunc91(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a43f0 size=0x10
 #include "CNPC_VPlaceholder.h"
 int CNPC_VPlaceholder::vfunc437()
