@@ -7274,6 +7274,7 @@
 0x1000a0e2 func   ?sub_100e7230@@YGHPBDH@Z sub_100e7230
 0x1000a0e7 func   ?vfunc581@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::vfunc581
 0x1000a0ec func   ?sub_100bdee0@CUnknown100bdee0@@QAEPAXXZ CUnknown100bdee0::sub_100bdee0
+0x1000a0f1 func   ?vfunc434@CNPC_VZombie@@UAEXXZ CNPC_VZombie::vfunc434
 0x1000a0f6 func   ?sub_10428ed0@@YAXPADHPBM@Z sub_10428ed0
 0x1000a0fb func   ?sub_100d7210@@YAXXZ sub_100d7210
 0x1000a100 func   ?vfunc144@CHL2_Player@@UAEXH@Z CHL2_Player::vfunc144

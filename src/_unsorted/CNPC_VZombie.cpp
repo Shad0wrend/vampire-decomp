@@ -264,6 +264,17 @@ void CNPC_VZombie::vfunc431()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dfb30 size=0x5
+#include "CNPC_VZombie.h"
+void __cdecl sub_10360180();
+// TARGET: CNPC_VZombie::vfunc434
+// the game's 0x103dfb30: a tail call (jmp) of sub_10360180
+void CNPC_VZombie::vfunc434()
+{
+	sub_10360180();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dfb50 size=0x5
 #include "CNPC_VZombie.h"
 #include "CNPC_VAnimal.h"
