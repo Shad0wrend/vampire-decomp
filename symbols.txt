@@ -6436,6 +6436,7 @@
 0x1000916a func   ?sub_102283a0@@YAMMMMM@Z sub_102283a0
 0x1000916f func   ?sub_1013c940@@YAMABVVector@@00AAV1@@Z sub_1013c940
 0x10009174 func   ?sub_102a99c0@CUnknown102a99c0@@QAEXD@Z CUnknown102a99c0::sub_102a99c0
+0x10009179 func   ?vfunc3@ConVar@@UAEXXZ ConVar::vfunc3
 0x1000917e func   ?sub_100ee2b0@CBaseDoor@@QAEPAV1@XZ CBaseDoor::sub_100ee2b0
 0x10009188 func   ?sub_100f71c0@@YGXPAUEntSlots_t@@II@Z sub_100f71c0
 0x1000918d func   ?sub_101363f0@CLogicRelay@@QAEEXZ CLogicRelay::sub_101363f0

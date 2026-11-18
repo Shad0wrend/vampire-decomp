@@ -74,6 +74,18 @@ char ConVar::vfunc1()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10245cd0 size=0x5
+#include "ConVar.h"
+#include "ConCommandBase.h"
+
+// TARGET: ConVar::vfunc3
+// the game's 0x10245cd0: a tail call (jmp) of ConCommandBase::vfunc3
+void ConVar::vfunc3()
+{
+	ConCommandBase::vfunc3();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10245cf0 size=0x6e
 #include "ConVar.h"
 extern "C" double atof(const char *);
