@@ -8005,6 +8005,7 @@
 0x1000b04b func   ?vfunc338@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc338
 0x1000b050 func   ?sub_10182d70@@YIXPAXHH@Z sub_10182d70
 0x1000b055 func   ?vfunc0@CSafeDiscSaveRestoreOps_7@@QAEXPAPAHPAUCSafeDiscWriter@@@Z CSafeDiscSaveRestoreOps_7::vfunc0
+0x1000b05a func   ?vfunc444@CNPC_VSheriffSwarm@@UAEXPAX@Z CNPC_VSheriffSwarm::vfunc444
 0x1000b05f func   ?sub_101f95d0@@YAXH@Z sub_101f95d0
 0x1000b064 func   ?sub_101af2d0@@YADPAD@Z sub_101af2d0
 0x1000b069 func   ?sub_101852f0@@YIXPAH@Z sub_101852f0
