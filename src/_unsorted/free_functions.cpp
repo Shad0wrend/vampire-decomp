@@ -132965,6 +132965,16 @@ char const * __cdecl sub_101b60e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6100 size=0x5
+int __cdecl sub_101b24d0(char const *);
+// TARGET: sub_101b6100
+// the game's 0x101b6100: a tail call (jmp) of sub_101b24d0
+int __cdecl sub_101b6100(char const *a0)
+{
+	return sub_101b24d0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6120 size=0x59
 struct CUnknown101b6120 {
     void *m_pMemory;

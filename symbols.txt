@@ -16265,6 +16265,7 @@
 0x100154ab func   ?sub_10137300@@YAMPBM@Z sub_10137300
 0x100154b0 func   ?sub_100784b0@CUnknown10077730@@QAEXM@Z CUnknown10077730::sub_100784b0
 0x100154b5 func   ?sub_102fe9a0@CBitString@@QAEPAV1@H@Z CBitString::sub_102fe9a0
+0x100154ba func   ?sub_101b6100@@YAHPBD@Z sub_101b6100
 0x100154bf func   ?sub_1010d0b0@CUnknown1010d0b0@@QAEHXZ CUnknown1010d0b0::sub_1010d0b0
 0x100154c9 func   ?vfunc103@CWeaponMelee_Fists@@QAEXXZ CWeaponMelee_Fists::vfunc103
 0x100154ce func   ?sub_1023ddd0@CUnknown1023ddd0@@QAEXPAUinputdata_t@@@Z CUnknown1023ddd0::sub_1023ddd0
