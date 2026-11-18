@@ -149,6 +149,17 @@ bool CPhysicsPropContested::vfunc32(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101930e0 size=0x5
+#include "CPhysicsPropContested.h"
+int __cdecl sub_102587f0();
+// TARGET: CPhysicsPropContested::vfunc36
+// the game's 0x101930e0: a tail call (jmp) of sub_102587f0
+int CPhysicsPropContested::vfunc36()
+{
+	return sub_102587f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10193100 size=0x12
 struct CContestedFields10193100 {
     char pad0[0x7ac];

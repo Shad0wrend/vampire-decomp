@@ -9593,6 +9593,7 @@
 0x1000cea0 func   ?sub_102f4520@CUnknown102f45f0@@QAEHPBUCachedPos_t@@@Z CUnknown102f45f0::sub_102f4520
 0x1000cea5 func   ?vfunc379@CBasePlayer@@QAEDHHHHHHH@Z CBasePlayer::vfunc379
 0x1000ceaa func   ?sub_102800c0@CAI_BaseNPC@@QAEDHPAVCBaseEntity@@H@Z CAI_BaseNPC::sub_102800c0
+0x1000ceaf func   ?vfunc36@CPhysicsPropContested@@UAEHXZ CPhysicsPropContested::vfunc36
 0x1000ceb4 func   ?vfunc1@CBaseNetworkable@@UAEPADXZ CBaseNetworkable::vfunc1
 0x1000ceb9 func   ?sub_101e06a0@CUnknown101e0f00Entry@@QAE_NPAUCVFeatKV@@PAVCUnknown101e0f00@@@Z CUnknown101e0f00Entry::sub_101e06a0
 0x1000cebe func   ?vfunc80@CItemGWarrens4Passkey@@QAEHXZ CItemGWarrens4Passkey::vfunc80
