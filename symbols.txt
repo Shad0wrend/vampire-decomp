@@ -16615,6 +16615,7 @@
 0x10015cad func   ?sub_100be060@bf_readX@@QAEIH@Z bf_readX::sub_100be060
 0x10015cb2 func   ?sub_103a3b80@@YIPAXPAX@Z sub_103a3b80
 0x10015cb7 func   ?vfunc41@CPhysicsProp@@QAEXH@Z CPhysicsProp::vfunc41
+0x10015cbc func   ?vfunc440@CNPC_VSheriffSwarm@@UAEHH@Z CNPC_VSheriffSwarm::vfunc440
 0x10015cc1 func   ?vfunc394@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::vfunc394
 0x10015cc6 func   ?sub_102b6120@CAI_BaseNPCTroikaUnit6120@@QAE_NPAVVector@@D@Z CAI_BaseNPCTroikaUnit6120::sub_102b6120
 0x10015ccb func   ?vfunc267@CWeaponGravityGun@@UAEDXZ CWeaponGravityGun::vfunc267
