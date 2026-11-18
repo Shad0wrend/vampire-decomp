@@ -3491,6 +3491,7 @@
 0x10005687 func   ?sub_10308540@CAI_PlaneSolver@@QAEXPAUCAI_PlaneSolverObj@@PAUCAI_PlaneSolverTrace@@MMM@Z CAI_PlaneSolver::sub_10308540
 0x1000568c func   ?sub_102e0090@CUnknown102e0090@@QAEHPAX@Z CUnknown102e0090::sub_102e0090
 0x10005691 func   ?vfunc486@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc486
+0x10005696 func   ?n4@CBaseNetworkable@@UAEXXZ CBaseNetworkable::n4
 0x10005696 func   ?sub_100b7c80@CUnknown100b7c80@@QAEHXZ CUnknown100b7c80::sub_100b7c80
 0x1000569b func   ?vfunc619@CNPCMaker@@UAEXH@Z CNPCMaker::vfunc619
 0x100056a0 func   ??0VKeyValues@@QAE@PBD@Z VKeyValues::VKeyValues
