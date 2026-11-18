@@ -302,6 +302,17 @@ void CNPC_VDog::vfunc432(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103748c0 size=0x5
+#include "CNPC_VDog.h"
+void __cdecl sub_10360180();
+// TARGET: CNPC_VDog::vfunc434
+// the game's 0x103748c0: a tail call (jmp) of sub_10360180
+void CNPC_VDog::vfunc434()
+{
+	sub_10360180();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103748e0 size=0x5
 #include "CNPC_VDog.h"
 #include "CNPC_VAnimal.h"

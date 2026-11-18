@@ -1278,6 +1278,7 @@
 0x100029a5 func   ?sub_10065df0@@YAHHHH@Z sub_10065df0
 0x100029aa func   ?vfunc34@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc34
 0x100029af func   ?vfunc438@CNPC_VMingXiao@@UAEHXZ CNPC_VMingXiao::vfunc438
+0x100029b4 func   ?vfunc434@CNPC_VDog@@QAEXXZ CNPC_VDog::vfunc434
 0x100029b9 func   ?vfunc174@CPropHaunted@@QAEXPAVCBaseEntity@@@Z CPropHaunted::vfunc174
 0x100029be func   ?sub_1003dc70@CBaseEntityTouch@@QAEPAUCTouchLink@@PAVCBaseEntity@@@Z CBaseEntityTouch::sub_1003dc70
 0x100029c3 func   ?vfunc280@CBaseCombatWeapon@@UAE_NH@Z CBaseCombatWeapon::vfunc280
