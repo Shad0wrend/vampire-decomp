@@ -173,6 +173,19 @@ void CUnknown103639b0::sub_103639b0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103639f0 size=0x5
+#include "animevent_t.h"
+#include "CNPC_VBach.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VBach::vfunc259
+// the game's 0x103639f0: a tail call (jmp) of CNPC_VHuman::vfunc259
+void CNPC_VBach::vfunc259(animevent_t *a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc259(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10363a10 size=0xf
 #include "CNPC_VBach.h"
 namespace lifted {
