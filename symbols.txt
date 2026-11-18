@@ -2848,6 +2848,7 @@
 0x100049b2 func   ?sub_10084b40@@YAMPAVCBaseEntity@@PBDPAI@Z sub_10084b40
 0x100049b7 func   ?sub_102f2fc0@CUnknown102f2fc0@@QAEMXZ CUnknown102f2fc0::sub_102f2fc0
 0x100049bc func   ?vfunc82@CBreakable@@QAEPAUdatamap_t@@XZ CBreakable::vfunc82
+0x100049c1 func   ?n10@CBaseNetworkable@@UAEXXZ CBaseNetworkable::n10
 0x100049c1 func   ?sub_100b7c00@@YAHXZ sub_100b7c00
 0x100049c6 func   ?vfunc4@CTESmoke@@UAEXPAXH@Z CTESmoke::vfunc4
 0x100049cb func   ?sub_1038b1a0@CNPC_VManBat@@QAEXM@Z CNPC_VManBat::sub_1038b1a0
