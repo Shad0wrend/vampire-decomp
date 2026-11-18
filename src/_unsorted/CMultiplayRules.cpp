@@ -803,6 +803,19 @@ int CMultiplayRules::vfunc62(int)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101422c0 size=0x5
+#include "CBaseEntity.h"
+#include "CMultiplayRules.h"
+#include "CGameRules.h"
+
+// TARGET: CMultiplayRules::vfunc39
+// the game's 0x101422c0: a tail call (jmp) of CGameRules::vfunc39
+CBaseEntity * CMultiplayRules::vfunc39(CBaseEntity *a0)
+{
+	return CGameRules::vfunc39(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101422e0 size=0x1b
 #include "CMultiplayRules.h"
 
