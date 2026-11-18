@@ -529,6 +529,18 @@ void CItemContainer::vfunc71()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209990 size=0x5
+#include "CItemContainer.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CItemContainer::vfunc86
+// the game's 0x10209990: a tail call (jmp) of CBaseCombatCharacter::vfunc86
+char CItemContainer::vfunc86(int a0, int a1, int a2, int a3, int a4)
+{
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc86(a0, a1, a2, a3, a4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102099b0 size=0xd
 #include "CItemContainer.h"
 
