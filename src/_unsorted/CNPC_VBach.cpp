@@ -259,6 +259,18 @@ void CNPC_VBach::vfunc432(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10363c50 size=0x5
+#include "CNPC_VBach.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VBach::vfunc434
+// the game's 0x10363c50: a tail call (jmp) of CNPC_VHuman::vfunc434
+void CNPC_VBach::vfunc434()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc434();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10363c70 size=0xa5
 #include "CNPC_VBach.h"
 #include "CNPC_VHuman.h"

@@ -5849,6 +5849,7 @@
 0x10008594 func   ?vfunc81@CFunc_LOD@@UAEHXZ CFunc_LOD::vfunc81
 0x10008599 func   ?vfunc4@CEntityListSystem@@QAEHXZ CEntityListSystem::vfunc4
 0x1000859e func   ?sub_103e1280@CNPC_VZombieX@@QAEXH@Z CNPC_VZombieX::sub_103e1280
+0x100085a3 func   ?vfunc434@CNPC_VBach@@UAEXXZ CNPC_VBach::vfunc434
 0x100085a8 func   ?sub_1003d490@CBaseEntity@@QAEXXZ CBaseEntity::sub_1003d490
 0x100085ad func   _game_sign game_sign
 0x100085b2 func   ?vfunc28@CRestore@@UAEHPAPAVCBaseEntity@@HH@Z CRestore::vfunc28
