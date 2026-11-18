@@ -215140,56 +215140,142 @@ struct CTargetView
 };
 
 
+// VC6 must know the side effects (not the registers) of the LookupEntity COMDAT when it reaches the first door check,
+// so an earlier real decliner of the header inline EHandleEntityList::LookupEntity is compiled first:
+// CAI_BaseNPC::Event_Killed (0x10265ad0, the same copy as block_1027d170, judged 0). (The game's own first decliner in
+// AI_BaseNPCTroika.cpp is 0x1028efc0; la_07.cpp has that copy, also judged 0, but its matched body still spells
+// SetCondition's ent_trace_conditions check as a bare g_10924a6c->v1() call.)
+#include "CAI_BaseNPC_vfunc144.h"
+#include "CCineNPC.h"
+#include "CUnknown103158f0.h"
+#include "IPhysicsObject.h"
+#include "ConVar.h"
+
+extern ConVar g_106bbaa0;
+extern ConVar g_10924a68;
+#define FILE_144 "E:\\Vampire\\main\\dlls\\AI_BaseNPC.cpp"
+
 namespace block_10290040
 {
-	struct CUnknown100290c0Unit : CUnknown100290c0
+struct CScriptView144
+{
+	char m_pad0000[0x204];
+	unsigned int m_spawnflags;
+	char m_pad0208[0x5f91 - 0x208];
+	char m_bPlayedSequence;
+};
+
+struct CDamageInfo144 : CAI_NPCDamageRecord
+{
+	CBaseEntity *GetAttacker() const { return m_pInflictor; }
+};
+
+struct CEventKilled144 : CAI_BaseNPCUnit144
+{
+	IPhysicsObject *VPhysicsGetObject() const { return m_pPhysObj36c; }
+	void SetIdealStateDbg(int state, const char *pszFile, int nLine) { m_pszFile1b3c = pszFile; m_nLine1b40 = nLine; m_nIdealState5cc4 = state; }
+	void SetTouchNull() { *(int *)((char *)this + 0x1ec) = 0; }
+	void SetCondition(int iCondition) { if (g_10924a68.GetBool()) {} sub_10269a20(iCondition); }
+	void sub_10265ad0(const CDamageInfo144 &info);
+};
+
+void CEventKilled144::sub_10265ad0(const CDamageInfo144 &info)
+{
+	if (m_pSchedule5c38 && (int)m_pSchedule5c38 == sub_102cc1f0(0x3a))
+		return;
+
+	if (m_nState5cc0 == 4 && m_hScript5d74.Get())
 	{
-		unsigned int sub_100290c0(unsigned int *pHandle);
-	};
-	unsigned int CUnknown100290c0Unit::sub_100290c0(unsigned int *pHandle)
-	{
-		unsigned int h = *pHandle;
-		if (h != 0xffffffff)
+		CScriptView144 *pScript = (CScriptView144 *)m_hScript5d74.Get();
+		if (pScript->m_bPlayedSequence && (((CScriptView144 *)m_hScript5d74.Get())->m_spawnflags & 0x2080) != 0x80)
 		{
-			int s = (int)pHandle[1];
-			CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
-			if (pSlot->m_Serial == (int)(h >> s))
-				return pSlot->m_Value;
+			m_LastDamage = info;
+			return;
 		}
-		return 0;
+		((CCineNPC *)m_hScript5d74.Get())->sub_101a8c30();
+		IPhysicsObject *pPhys;
+		if (g_106bbaa0.GetBool() && (pPhys = VPhysicsGetObject()))
+		{
+			Vector vecTmp;
+			Vector vecPos;
+			vecPos = *vfunc263(&vecTmp);
+			pPhys->vfunc39((float *)&vecPos, 0);
+		}
 	}
+
+	vfunc511();
+	if (m_n153c == -1 || !m_h1538.Get())
+		vfunc488();
+
+	sub_10265a90(info.GetAttacker());
+	if (((CBaseEntity *)this)->sub_100b3700() & 0x2000)
+	{
+		SetTouchNull();
+		sub_10265a40();
+	}
+	sub_1032b9b0((int)&info);
+	SetIdealStateDbg(7, FILE_144, 0x217);
+	SetCondition(0x4c);
+	m_hAttacker5b7c = info.GetAttacker();
+	m_b5b80 = 1;
+	sub_1028ae60();
+	if (m_pSquad5da4)
+		((CUnknown103158f0 *)m_pSquad5da4)->sub_103158f0((CBaseEntity *)this);
+	if ((char)vfunc552())
+		sub_102695d0();
+	else
+		sub_101babc0(0x20, vfunc217(), 0x180, 30.0f, 0);
+	SetIdealStateDbg(7, FILE_144, 0x241);
+	sub_1026e340(7);
 }
+}
+
+
+
+namespace block_10290040
+{
+// the NPC's door-opening state (CAI_BaseNPC::m_hOpeningDoor at +0x5d24, the door-opening state at +0x644c and its time
+// at +0x6450) seen from the state handlers. With these accessors the first m_hOpeningDoor check (operator!) is one of
+// 13 top-level inline sites still to come: its LookupEntity share is 1000/13 = 76 < 86 tuples and it is declined
+// (call 0x100290c0, list kept in ebx), while the later two get 1000/9 = 111 and 914/3 = 304 and inline, as in the game.
+struct CDoorOpenNPC : CUnknown10290040
+{
+	const CHandle<CTargetView> &OpeningDoor() const { return *(const CHandle<CTargetView> *)&m_hTarget5d24; }
+	CAI_Motor *GetMotor() { return m_pMotor5d44; }
+	void SetDoorState(int nState) { m_nState644c = nState; }
+	void DelayDoorState(float flDelay) { m_flTime6450 = gpGlobals->curtime + flDelay; }
+};
+}
+
 using namespace block_10290040;
 
 bool CUnknown10290040::sub_10290040(int a)
 {
-	unsigned int *ph = &m_hTarget5d24;
-	if (!((CUnknown100290c0Unit *)EHandleDetail::g_10566458)->sub_100290c0(ph))
+	CDoorOpenNPC *pThis = (CDoorOpenNPC *)this;
+	if (!pThis->OpeningDoor())
 	{
-		m_nState644c = 0;
+		pThis->SetDoorState(0);
 		return false;
 	}
-	CTargetView *pTarget = (CTargetView *)((const CBaseHandle *)ph)->Get();
 	CTargetAnswer answer;
-	pTarget->vfunc246(this, &answer, m_bFlag5d30);
+	pThis->OpeningDoor()->vfunc246(this, &answer, m_bFlag5d30);
 	if (answer.m_nNode == -1)
 		return false;
-	sub_102e0b40((float *)m_pMotor5d44);
+	sub_102e0b40((float *)pThis->GetMotor());
 	float flYaw = sub_101d2c70(answer.m_vecDir);
-	m_pMotor5d44->sub_102e1c10(flYaw, -1.0f);
+	pThis->GetMotor()->sub_102e1c10(flYaw, -1.0f);
 	if (sub_10278c80())
 	{
 		if (m_bFlag5d30)
 		{
-			m_nState644c = 2;
-			m_flTime6450 = gpGlobals->curtime + 1.0f;
+			pThis->SetDoorState(2);
+			pThis->DelayDoorState(1.0f);
 			return true;
 		}
-		CBaseEntity *pEnt = (CBaseEntity *)EHandle_Get(*ph);
-		if (sub_10298840(pEnt))
+		if (sub_10298840((CBaseEntity *)(CTargetView *)pThis->OpeningDoor()))
 		{
-			m_nState644c = 2;
-			m_flTime6450 = gpGlobals->curtime + 5.0f;
+			pThis->SetDoorState(2);
+			pThis->DelayDoorState(5.0f);
 		}
 	}
 	return true;
