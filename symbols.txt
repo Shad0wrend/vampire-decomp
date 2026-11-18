@@ -12149,6 +12149,7 @@
 0x10010118 func   ?sub_103f9dd0@@YAHXZ sub_103f9dd0
 0x1001011d func   ?vfunc5@CPhysConstraintSystem@@UAEPAV1@I@Z CPhysConstraintSystem::vfunc5
 0x10010122 func   ?vfunc241@CGibShooter@@QAEPAVCGib@@XZ CGibShooter::vfunc241
+0x1001012c func   ?vfunc103@CNPC_VTremere@@UAEXXZ CNPC_VTremere::vfunc103
 0x10010131 func   ?sub_103a1670@@YAXXZ sub_103a1670
 0x10010136 func   ?sub_1029f210@CUnknown1029f210View@@QAEXH@Z CUnknown1029f210View::sub_1029f210
 0x1001013b func   ??0CUtlPriorityQueue8@@QAE@HHP6A_NABUUtlVec8Elem@@0@Z@Z CUtlPriorityQueue8::CUtlPriorityQueue8
