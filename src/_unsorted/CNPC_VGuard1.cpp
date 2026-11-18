@@ -270,6 +270,18 @@ void CNPC_VGuard1Fwd::sub_1037e1e0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037e200 size=0x5
+#include "CNPC_VGuard1.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VGuard1::vfunc434
+// the game's 0x1037e200: a tail call (jmp) of CNPC_VHuman::vfunc434
+void CNPC_VGuard1::vfunc434()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc434();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037e240 size=0x3c
 #include "CAI_BaseNPC.h"
 #include "CNPC_VGuard1.h"

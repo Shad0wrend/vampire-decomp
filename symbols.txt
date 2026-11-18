@@ -2417,6 +2417,7 @@
 0x100040bb func   ?vfunc82@CFuncRotating@@UAEPAUdatamap_t@@XZ CFuncRotating::vfunc82
 0x100040c0 func   ?sub_10291610@CAI_BaseNPCTroika@@QAEXXZ CAI_BaseNPCTroika::sub_10291610
 0x100040c5 func   ?vfunc363@CWeaponMelee_OccultBlade@@UAEHXZ CWeaponMelee_OccultBlade::vfunc363
+0x100040ca func   ?vfunc434@CNPC_VGuard1@@UAEXXZ CNPC_VGuard1::vfunc434
 0x100040cf func   ?vfunc4@CSaveRestoreBlockSet@@QAEXXZ CSaveRestoreBlockSet::vfunc4
 0x100040d9 func   ?sub_10337860@CBaseCombatCharacter@@QAEHXZ CBaseCombatCharacter::sub_10337860
 0x100040de func   ?vfunc363@CWeaponMelee_ManBatClaw@@UAEHXZ CWeaponMelee_ManBatClaw::vfunc363
