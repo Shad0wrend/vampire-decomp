@@ -7691,6 +7691,7 @@
 0x1000a8da func   ?sub_1009be00@CBaseEntity@@QAEXHHMMM@Z CBaseEntity::sub_1009be00
 0x1000a8df func   ?sub_1014a110@@YAHH@Z sub_1014a110
 0x1000a8e4 func   ?vfunc5@CRotDoor@@QAEPAV1@E@Z CRotDoor::vfunc5
+0x1000a8e9 func   ?vfunc463@CNPC_VHengeyokai@@UAEXHH@Z CNPC_VHengeyokai::vfunc463
 0x1000a8ee func   ?sub_102c9d50@@YAXXZ sub_102c9d50
 0x1000a8f3 func   ?sub_104278d0@CUnknown10427700@@QAEXPBDHHHHH@Z CUnknown10427700::sub_104278d0
 0x1000a8f8 func   ?vfunc103@CLogicCaseToggle@@QAEXXZ CLogicCaseToggle::vfunc103

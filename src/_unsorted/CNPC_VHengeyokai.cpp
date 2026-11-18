@@ -172,6 +172,18 @@ int CNPC_VHengeyokai::vfunc337()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037fb40 size=0x5
+#include "CNPC_VHengeyokai.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VHengeyokai::vfunc463
+// the game's 0x1037fb40: a tail call (jmp) of CNPC_VHuman::vfunc463
+void CNPC_VHengeyokai::vfunc463(int a0, int a1)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc463(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037fb60 size=0xf3
 #include "CNPC_VHengeyokai.h"
 #include "CEHandleGet.h"
