@@ -34270,6 +34270,16 @@ void sub_10087170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100874a0 size=0x5
+void __cdecl sub_1027ffe0();
+// TARGET: sub_100874a0
+// the game's 0x100874a0: a tail call (jmp) of sub_1027ffe0
+void __cdecl sub_100874a0()
+{
+	sub_1027ffe0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087550 size=0xf
 namespace lifted {
 extern char g_10936b68;

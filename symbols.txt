@@ -13277,6 +13277,7 @@
 0x10011950 func   ?sub_1004bd40@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004bd40
 0x10011955 func   ??0SDbgSink@@QAE@XZ SDbgSink::SDbgSink
 0x10011955 func   ?sub_102e06f0@@YIPAHPAH@Z sub_102e06f0
+0x1001195a func   ?sub_100874a0@@YAXXZ sub_100874a0
 0x1001195f func   ?vfunc56@CHalfLife2@@UAEXXZ CHalfLife2::vfunc56
 0x10011964 func   ?sub_100282e0@CPhysTorque@@QAEXPAVCPhysObjSlots@@AAVVector@@1@Z CPhysTorque::sub_100282e0
 0x10011969 func   ?vfunc144@CNPC_VTzimisce@@UAEXH@Z CNPC_VTzimisce::vfunc144
