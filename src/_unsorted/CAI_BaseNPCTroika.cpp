@@ -1428,6 +1428,19 @@ void CTroikaView_10292de0::sub_10292de0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10293a60 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CAI_BaseNPCTroika::vfunc301
+// the game's 0x10293a60: a tail call (jmp) of CBaseCombatCharacter::vfunc301
+void CAI_BaseNPCTroika::vfunc301(Vector const *a0, CTakeDamageInfo *a1)
+{
+	((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc301(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293e50 size=0x1d
 #include "CAI_BaseNPCTroika.h"
 

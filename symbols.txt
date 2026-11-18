@@ -3831,6 +3831,7 @@
 0x10005c81 func   ?sub_1021e1e0@CUtlMemory60@@QAEPAU1@HH@Z CUtlMemory60::sub_1021e1e0
 0x10005c86 func   ?vfunc80@CWeaponRanged_Rifle_RemingtonBach@@UAEHXZ CWeaponRanged_Rifle_RemingtonBach::vfunc80
 0x10005c8b func   _npc_VGargoyle npc_VGargoyle
+0x10005c90 func   ?vfunc301@CAI_BaseNPCTroika@@QAEXPBVVector@@PAUCTakeDamageInfo@@@Z CAI_BaseNPCTroika::vfunc301
 0x10005c95 func   ?sub_1024b5e0@CUnknown1024b370@@QAE?AUCUnknown1024b370Symbol@@PBD@Z CUnknown1024b370::sub_1024b5e0
 0x10005c9f func   ?sub_101f6e20@CVTraitEffect_t@@QAEXPAVCVModInfo_t@@PAH@Z CVTraitEffect_t::sub_101f6e20
 0x10005ca4 func   ?vfunc34@IRestore@@QAEPAXE@Z IRestore::vfunc34
