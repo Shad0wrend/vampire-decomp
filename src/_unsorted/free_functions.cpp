@@ -153198,6 +153198,17 @@ const char *CUnknown101e19b0::sub_101e19b0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e1a00 size=0x5
+#include "CNamedListX.h"
+struct CWrap101e1a00 { int sub_101e1a00(char const *); };
+// TARGET: sub_101e1a00
+// the game's 0x101e1a00: a tail call (jmp) of CNamedListX::sub_101e12f0
+int CWrap101e1a00::sub_101e1a00(char const *a0)
+{
+	return ((CNamedListX *)this)->CNamedListX::sub_101e12f0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e1a20 size=0x5
 int __stdcall sub_101e1a20(int a0)
 {

@@ -9842,6 +9842,7 @@
 0x1000d46d func   ?sub_103a5da0@@YADXZ sub_103a5da0
 0x1000d472 func   ?vfunc82@CNPC_VFrenzyShadow@@UAEPAUdatamap_t@@XZ CNPC_VFrenzyShadow::vfunc82
 0x1000d477 func   ?vfunc442@CNPC_VSheriffSwarm@@UAEXPBH@Z CNPC_VSheriffSwarm::vfunc442
+0x1000d47c func   ?sub_101e1a00@CWrap101e1a00@@QAEHPBD@Z CWrap101e1a00::sub_101e1a00
 0x1000d481 func   ?vfunc461@CBasePlayer@@UAEXPAVCUserCmd@@HHHD@Z CBasePlayer::vfunc461
 0x1000d486 func   ?sub_100b1d10@CBaseEntity@@QAEXXZ CBaseEntity::sub_100b1d10
 0x1000d48b func   ?sub_1034b490@CNPCMaker@@QAEXXZ CNPCMaker::sub_1034b490
