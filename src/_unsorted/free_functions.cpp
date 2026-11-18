@@ -288391,6 +288391,17 @@ unsigned int __stdcall sub_103908c0(unsigned int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10390900 size=0x5
+#include "MvsnSec0.h"
+unsigned int __cdecl sub_1042fb50(unsigned int);
+// TARGET: sub_10390900
+// the game's 0x10390900: a tail call (jmp) of sub_1042fb50
+unsigned int __cdecl sub_10390900(unsigned int a0)
+{
+	return sub_1042fb50(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10390e40 size=0x1a
 namespace lifted {
 extern int g_10642e88;
