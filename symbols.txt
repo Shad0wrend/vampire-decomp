@@ -7468,6 +7468,7 @@
 0x1000a547 func   ?sub_102c71a0@CUnknown102c71a0@@QAEPAXH@Z CUnknown102c71a0::sub_102c71a0
 0x1000a54c func   ?sub_1021d890@CPropKeypad@@QAEPAV1@XZ CPropKeypad::sub_1021d890
 0x1000a551 func   ?sub_102017b0@CVStatList_t@@QAE_NHH@Z CVStatList_t::sub_102017b0
+0x1000a556 func   ?vfunc370@CWeaponThrown_Grenade_Frag@@QAEXPAHPAVCBaseCombatWeapon@@@Z CWeaponThrown_Grenade_Frag::vfunc370
 0x1000a55b func   ?sub_1030be20@CUnknown1030be20@@QAEXPBH@Z CUnknown1030be20::sub_1030be20
 0x1000a560 func   ?vfunc123@CBaseCineCam@@UAEXXZ CBaseCineCam::vfunc123
 0x1000a565 func   ?vfunc420@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::vfunc420

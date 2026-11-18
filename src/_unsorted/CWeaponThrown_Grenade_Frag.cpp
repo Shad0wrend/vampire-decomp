@@ -60,6 +60,18 @@ void CWeaponThrown_Grenade_Frag::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee320 size=0x5
+#include "CWeaponThrown_Grenade_Frag.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponThrown_Grenade_Frag::vfunc370
+// the game's 0x103ee320: a tail call (jmp) of CBaseCombatWeapon::vfunc370
+void CWeaponThrown_Grenade_Frag::vfunc370(int *a0, CBaseCombatWeapon *a1)
+{
+	((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc370(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee340 size=0x98
 #include "CWeaponThrown_Grenade_Frag.h"
 #include "CBaseCombatCharacter.h"
