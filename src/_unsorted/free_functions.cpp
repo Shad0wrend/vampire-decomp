@@ -140901,6 +140901,17 @@ extern "C" GP *trigger_autosave()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9850 size=0x5
+#include "CBaseTrigger.h"
+struct CWrap101c9850 { void sub_101c9850(); };
+// TARGET: sub_101c9850
+// the game's 0x101c9850: a tail call (jmp) of CBaseTrigger::sub_101c5080
+void CWrap101c9850::sub_101c9850()
+{
+	((CBaseTrigger *)this)->CBaseTrigger::sub_101c5080();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c9870 size=0x1d
 struct CUnknown101c9870 {
 	void sub_101c9870(CUnknown101c9870 *pOther);
