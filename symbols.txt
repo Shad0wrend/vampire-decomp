@@ -2706,6 +2706,7 @@
 0x1000461f func   ?sub_101d7e90@CUnknown101d7e90@@QAEDH@Z CUnknown101d7e90::sub_101d7e90
 0x10004624 func   ?CrossProduct@@YAXABVVector@@0AAV1@@Z CrossProduct
 0x10004624 func   ?sub_1011e010@@YAXPAVVector@@00@Z sub_1011e010
+0x10004629 func   ?vfunc259@CNPC_VCop@@UAEXPAUanimevent_t@@@Z CNPC_VCop::vfunc259
 0x1000462e func   ?sub_10342c80@CBaseCombatCharacter@@QAEHP6AXPAV1@HH@ZH_NVVector@@M@Z CBaseCombatCharacter::sub_10342c80
 0x10004633 func   ?vfunc82@CTriggerBrush@@UAEPAUdatamap_t@@XZ CTriggerBrush::vfunc82
 0x10004638 func   ?sub_10136a30@@YA_NPBD0PAD@Z sub_10136a30

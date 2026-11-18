@@ -261,6 +261,19 @@ void CNPC_VCop::vfunc463(int a, int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10371ec0 size=0x5
+#include "animevent_t.h"
+#include "CNPC_VCop.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VCop::vfunc259
+// the game's 0x10371ec0: a tail call (jmp) of CNPC_VHuman::vfunc259
+void CNPC_VCop::vfunc259(animevent_t *a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc259(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372150 size=0x1d9
 #include "CNPC_VCop.h"
 
