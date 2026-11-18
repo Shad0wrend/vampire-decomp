@@ -197,6 +197,7 @@
 0x100013de func   ?vfunc113@CPropKeypad@@QAEXXZ CPropKeypad::vfunc113
 0x100013e3 func   ?sub_101918e0@@YA_NPAPAD0@Z sub_101918e0
 0x100013e8 func   ?vfunc86@CPointCamera@@QAE_NHHHHH@Z CPointCamera::vfunc86
+0x100013ed func   ?vfunc103@CNPC_VToreador@@UAEXXZ CNPC_VToreador::vfunc103
 0x100013f2 func   ?sub_10389f80@@YAXXZ sub_10389f80
 0x100013f7 func   ?vfunc104@CNPC_VHuman@@UAEXXZ CNPC_VHuman::vfunc104
 0x100013fc func   ?sub_1016a660@@YA_NPAUCEntitySizeView@@MM@Z sub_1016a660
