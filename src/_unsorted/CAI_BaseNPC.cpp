@@ -798,6 +798,18 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x102664a0 size=0x5
+#include "CAI_BaseNPC.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CAI_BaseNPC::vfunc391
+// the game's 0x102664a0: a tail call (jmp) of CBaseCombatCharacter::vfunc391
+int CAI_BaseNPC::vfunc391(int a0)
+{
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc391(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102664c0 size=0x11a
 #include "CAI_BaseNPC.h"
 #include "CTakeDamageInfo.h"
