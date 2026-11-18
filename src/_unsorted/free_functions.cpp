@@ -123062,6 +123062,18 @@ void sub_1019b380(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019b3b0 size=0x6
+extern "C" __declspec(dllimport) void _PyObject_Del(void *op);
+
+// TARGET: sub_1019b3b0
+// the tp_dealloc of the Python type object at 0x1058fa08 (its slot +0x18 points here): PyObject_Del(self), a tail call
+// (jmp [__imp___PyObject_Del])
+void sub_1019b3b0(void *self)
+{
+	_PyObject_Del(self);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019b3d0 size=0x9c
 extern "C" int _strcmpi(const char *, const char *);
 extern "C" __declspec(dllimport) int *PyInt_FromLong(long);
