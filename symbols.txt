@@ -5461,6 +5461,7 @@
 0x10007df6 func   ?sub_101a1f70@CUnknown101a1f70@@QAEHXZ CUnknown101a1f70::sub_101a1f70
 0x10007dfb func   ?vfunc451@CNPC_VHumanCombatPatrol@@UAEHXZ CNPC_VHumanCombatPatrol::vfunc451
 0x10007e00 func   ?vfunc130@CPropDoorknob@@UAEXH@Z CPropDoorknob::vfunc130
+0x10007e05 func   ?vfunc113@CBreakable@@QAEXXZ CBreakable::vfunc113
 0x10007e0a func   ?sub_1023d050@@YAPAHXZ sub_1023d050
 0x10007e0f func   ?sub_101e7d70@CUnknown101e7d70@@QAEMXZ CUnknown101e7d70::sub_101e7d70
 0x10007e14 func   _npc_maker_fleshpile npc_maker_fleshpile

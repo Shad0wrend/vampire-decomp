@@ -109,6 +109,18 @@ bool CBreakable::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010d8a0 size=0x5
+#include "CBreakable.h"
+#include "CBaseEntity.h"
+
+// TARGET: CBreakable::vfunc113
+// the game's 0x1010d8a0: a tail call (jmp) of CBaseEntity::vfunc113
+void CBreakable::vfunc113()
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc113();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010d8c0 size=0xa0
 #include "CBreakable.h"
 
