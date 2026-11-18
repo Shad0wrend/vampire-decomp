@@ -408,6 +408,18 @@ void CNPC_VGhoulCroucher::vfunc444(void *pTask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037bb00 size=0x5
+#include "CNPC_VGhoulCroucher.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VGhoulCroucher::vfunc375
+// the game's 0x1037bb00: a tail call (jmp) of CNPC_VHuman::vfunc375
+int CNPC_VGhoulCroucher::vfunc375(int a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc375(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037bbc0 size=0x9a
 #include "CNPC_VGhoulCroucher.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };

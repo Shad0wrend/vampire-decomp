@@ -7671,6 +7671,7 @@
 0x1000aa01 func   ?sub_102c4310@CAI_BaseNPCTroika@@QAEXHHHHH@Z CAI_BaseNPCTroika::sub_102c4310
 0x1000aa06 func   ?sub_1011e8f0@@YAXPAURay_t@@IPAXHPAUCGameTrace@@@Z sub_1011e8f0
 0x1000aa0b func   ?sub_1023bd00@@YAHXZ sub_1023bd00
+0x1000aa10 func   ?vfunc375@CNPC_VGhoulCroucher@@UAEHH@Z CNPC_VGhoulCroucher::vfunc375
 0x1000aa15 func   ?sub_101a69c0@@YAXXZ sub_101a69c0
 0x1000aa1a func   ?vfunc81@CItemGGarysPhoto@@QAEHXZ CItemGGarysPhoto::vfunc81
 0x1000aa1f func   ?sub_10219120@CUnknown10219120@@QAEXXZ CUnknown10219120::sub_10219120
