@@ -3413,6 +3413,18 @@ void __fastcall sub_102583e0(CBaseEntity *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10258420 size=0x5
+#include "CBaseCombatWeapon.h"
+#include "CBaseEntity.h"
+
+// TARGET: CBaseCombatWeapon::vfunc127
+// the game's 0x10258420: a tail call (jmp) of CBaseEntity::vfunc127
+int CBaseCombatWeapon::vfunc127(int a0)
+{
+	return ((CBaseEntity *)this)->CBaseEntity::vfunc127(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10258440 size=0x5a
 #include "CBaseCombatWeapon.h"
 #include "Ent.h"

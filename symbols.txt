@@ -5634,6 +5634,7 @@
 0x10008062 func   ?sub_1012cf10@CUnknown1012cf10@@QAEPAV1@XZ CUnknown1012cf10::sub_1012cf10
 0x10008067 func   ?sub_102dd0a0@CUnk102dd0a0@@QAE_NPAX@Z CUnk102dd0a0::sub_102dd0a0
 0x1000806c func   ?Insert@?$CUtlRBTree@UCSoundEmitterRecord@@H@@QAEHABUCSoundEmitterRecord@@@Z CUtlRBTree<CSoundEmitterRecord,int>::Insert
+0x10008071 func   ?vfunc127@CBaseCombatWeapon@@UAEHH@Z CBaseCombatWeapon::vfunc127
 0x10008076 func   ?sub_101c1520@CBaseToggle@@QAEXPAVVector@@M@Z CBaseToggle::sub_101c1520
 0x1000807b func   ?sub_1042fd10@@YAXXZ sub_1042fd10
 0x10008080 func   ?sub_103b5420@@YADXZ sub_103b5420
