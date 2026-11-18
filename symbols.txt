@@ -773,6 +773,7 @@
 0x10001f7d func   ?sub_101989b0@@YAPAUPyObject@@PAU1@0@Z sub_101989b0
 0x10001f82 func   ?vfunc350@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::vfunc350
 0x10001f8c func   ?RotateLeft@?$CUtlRBTree@UCRBTree12Entry_1024c1d0@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_1024c1d0,unsigned short>::RotateLeft
+0x10001f91 func   ?vfunc10@CServerGameDLL@@UAEPBDXZ CServerGameDLL::vfunc10
 0x10001f96 func   ?vfunc82@CEnvDustPuff@@UAEPAUdatamap_t@@XZ CEnvDustPuff::vfunc82
 0x10001f9b func   _item_k_leopold_int_key item_k_leopold_int_key
 0x10001fa0 func   ?sub_10150e80@CPhysicsCannister@@QAEXXZ CPhysicsCannister::sub_10150e80

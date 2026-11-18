@@ -413,6 +413,17 @@ int CServerGameDLL::vfunc9()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ae30 size=0x5
+#include "CServerGameDLL.h"
+char const * __cdecl sub_10352df0();
+// TARGET: CServerGameDLL::vfunc10
+// the game's 0x1011ae30: a tail call (jmp) of sub_10352df0
+char const * CServerGameDLL::vfunc10()
+{
+	return sub_10352df0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ae50 size=0x3e
 #include "CServerGameDLL.h"
 
