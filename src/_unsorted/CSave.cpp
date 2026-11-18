@@ -123,6 +123,17 @@ bool CSave::vfunc14(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fb00 size=0x5
+#include "CSave.h"
+
+// TARGET: CSave::vfunc16
+// the game's 0x1019fb00: a tail call (jmp) of sub_1000643d (WriteData)
+void CSave::vfunc16(const void *pData, int nBytes)
+{
+	sub_1000643d(pData, nBytes);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fb20 size=0x21
 #include <string.h>
 #pragma intrinsic(strlen)
