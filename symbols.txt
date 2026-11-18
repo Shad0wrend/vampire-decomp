@@ -15318,6 +15318,7 @@
 0x10014475 func   ?sub_10124120@CGameMovement@@QAEHAAVVector@@00M@Z CGameMovement::sub_10124120
 0x1001447a func   ?sub_100a9120@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100a9120
 0x1001447f func   ?vfunc103@CVampireProjectile_MingXiaoSpit@@UAEXXZ CVampireProjectile_MingXiaoSpit::vfunc103
+0x10014484 func   ?vfunc381@CAI_BaseNPCTroika@@UAEHH@Z CAI_BaseNPCTroika::vfunc381
 0x10014489 func   ?sub_1022eab0@@YAXPAUCUnknown1022eab0@@@Z sub_1022eab0
 0x1001448e func   ?sub_1021b330@CUnknown10217f50@@QAEXPBDH@Z CUnknown10217f50::sub_1021b330
 0x10014493 func   ?vfunc441@CBasePlayer@@UAEXXZ CBasePlayer::vfunc441

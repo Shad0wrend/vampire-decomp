@@ -2431,6 +2431,18 @@ int CAI_BaseNPCTroika::vfunc570(CBaseEntity *pHint)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10295570 size=0x5
+#include "CAI_BaseNPCTroika.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CAI_BaseNPCTroika::vfunc381
+// the game's 0x10295570: a tail call (jmp) of CBaseCombatCharacter::vfunc381
+int CAI_BaseNPCTroika::vfunc381(int a0)
+{
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc381(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10295590 size=0x127
 #include "CAI_BaseNPCTroika.h"
 
