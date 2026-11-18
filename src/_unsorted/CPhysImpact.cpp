@@ -24,6 +24,18 @@ datamap_t *CPhysImpact::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ef40 size=0x5
+#include "CPhysImpact.h"
+#include "CBaseEntity.h"
+
+// TARGET: CPhysImpact::vfunc113
+// the game's 0x1004ef40: a tail call (jmp) of CBaseEntity::vfunc113
+void CPhysImpact::vfunc113()
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc113();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004ef60 size=0x91
 #include "CEntityVSlots.h"
 #include "CPhysImpact.h"

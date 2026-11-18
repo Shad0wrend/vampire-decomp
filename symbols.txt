@@ -6869,6 +6869,7 @@
 0x10009a43 func   ?sub_10170ad0@CUnk10170ad0@@QAEXPAD@Z CUnk10170ad0::sub_10170ad0
 0x10009a48 func   ?sub_1012ad20@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::sub_1012ad20
 0x10009a4d func   ?sub_101578d0@CUnknown101578d0@@QAEXD@Z CUnknown101578d0::sub_101578d0
+0x10009a52 func   ?vfunc113@CPhysImpact@@QAEXXZ CPhysImpact::vfunc113
 0x10009a57 func   ?sub_102c4cc0@CAI_BaseNPCTroika@@QAEXPAUCAI_ArcRecord@@HH@Z CAI_BaseNPCTroika::sub_102c4cc0
 0x10009a5c func   ?vfunc437@CAI_BaseNPC@@UAEHXZ CAI_BaseNPC::vfunc437
 0x10009a61 func   _hud_timer hud_timer
