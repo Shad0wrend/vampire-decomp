@@ -132955,6 +132955,16 @@ void CSoundEmitterSystemBase::sub_101b5dd0(const char *pszName, const CSoundPara
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b60e0 size=0x5
+char const * __cdecl sub_101b2200(int);
+// TARGET: sub_101b60e0
+// the game's 0x101b60e0: a tail call (jmp) of sub_101b2200
+char const * __cdecl sub_101b60e0(int a0)
+{
+	return sub_101b2200(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b6120 size=0x59
 struct CUnknown101b6120 {
     void *m_pMemory;
