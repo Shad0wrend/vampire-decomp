@@ -16422,6 +16422,7 @@
 0x1001596f func   ?sub_1028e700@CAI_BaseNPC@@QAEXHPAM@Z CAI_BaseNPC::sub_1028e700
 0x10015974 func   ?vfunc438@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc438
 0x10015979 func   ??0CUnknown106b89bc@@QAE@XZ CUnknown106b89bc::CUnknown106b89bc
+0x1001597e func   ?vfunc434@CNPC_VHengeyokai@@UAEXXZ CNPC_VHengeyokai::vfunc434
 0x10015983 func   ?sub_10149e40@@YA_NXZ sub_10149e40
 0x10015988 func   ?sub_1017d6d0@CBasePlayer@@QAEXM@Z CBasePlayer::sub_1017d6d0
 0x1001598d func   ?vfunc138@CNPC_VGuard1@@UAEHXZ CNPC_VGuard1::vfunc138

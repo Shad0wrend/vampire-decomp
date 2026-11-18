@@ -364,6 +364,18 @@ void CNPC_VHengeyokai::vfunc432(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103801b0 size=0x5
+#include "CNPC_VHengeyokai.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VHengeyokai::vfunc434
+// the game's 0x103801b0: a tail call (jmp) of CNPC_VHuman::vfunc434
+void CNPC_VHengeyokai::vfunc434()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc434();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103801d0 size=0x9a
 #include "CNPC_VHengeyokai.h"
 extern "C" unsigned int __cdecl strlen(const char *);
