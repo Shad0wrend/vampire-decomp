@@ -26,6 +26,10 @@ struct CSoundSchemeManager_Entry19c	// the records of the vector at +0x19c (size
 class CSoundSchemeManager : public CAutoGameSystem
 {
 public:
+	virtual void vfunc2();	// 0x10228700
+	virtual void vfunc5();	// 0x102287a0
+	virtual void vfunc7();	// 0x10228d00: per-frame update
+
 	char m_pad0008[0x174 - 8];
 	CUtlVector<CSoundSchemeManager_LoopTrack> m_LoopTracks;	// 0x174
 	CUtlVector<CSoundSchemeManager_RandomSound> m_RandomSounds;	// 0x188

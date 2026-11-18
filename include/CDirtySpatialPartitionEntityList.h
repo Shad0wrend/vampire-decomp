@@ -45,7 +45,9 @@ public:
 	virtual bool vfunc0();
 	virtual void vfunc1();
 	virtual void vfunc5();
+#ifndef PCD_INITIALIZERS	// there slot 8 is the destructor (??_E): this would be a tenth slot
 	virtual CAutoGameSystem *vfunc8(unsigned int flags);
+#endif
 
 #ifdef PCD_INITIALIZERS	// the dirty entity handles (SDK: CUtlVector<CBaseHandle>)
 	CUtlVector<unsigned int> m_DirtyEntities;	// 0x0c

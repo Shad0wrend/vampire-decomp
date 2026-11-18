@@ -20,6 +20,8 @@ public:
 	virtual void vfunc5();
 	virtual void vfunc6();
 	virtual void vfunc7();
+#ifndef PCD_INITIALIZERS	// there slot 8 is the destructor (??_E): this would be a tenth slot
 	virtual PyServerSystem *vfunc8(unsigned int flags);
+#endif
 	void sub_1000cfbd();	// as in CDataObjectAccessSystem (transplant)
 };

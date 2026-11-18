@@ -20,6 +20,8 @@ public:
 class CWeaponList : public CAutoGameSystem
 {
 public:
+	virtual void vfunc5();	// 0x102501b0: resets the weapon-name list
+
 	CUtlLinkedList<int, unsigned short> m_list;	// +8
 };
 #else

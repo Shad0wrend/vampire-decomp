@@ -21,7 +21,9 @@ public:
 	virtual bool vfunc0();	// "CDataObjectAccessSystem::Init": registers the touchlink / groundlink / step simulation / model width scale accessors
 	virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
 	virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7();
+#ifndef PCD_INITIALIZERS	// there slot 8 is the destructor (??_E): this would be a tenth slot
 	virtual CAutoGameSystem *vfunc8(unsigned int flags);	// scalar deleting destructor
+#endif
 
 	void *m_data[32];
 

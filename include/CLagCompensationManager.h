@@ -53,6 +53,9 @@ public:
 class CLagCompensationManager : public CAutoGameSystem, public ILagCompensationManager
 {
 public:
+	virtual void vfunc5();	// 0x10187d00
+	virtual void vfunc7();	// 0x10187fb0
+
 	CUtlVector<CLagCompensationRecord> m_Data;	// 0x0c
 	unsigned int restorebits;	// 0x20
 	bool m_bNeedToRestore;	// 0x24

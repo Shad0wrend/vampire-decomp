@@ -13,6 +13,8 @@ bool sub_101918e0(char **a, char **b);	// the tree's less function (stub-less, m
 class CBreakModelsPrecached : public CAutoGameSystem
 {
 public:
+	virtual void vfunc5();	// 0x10191920: resets the tree
+
 	CBreakModelsPrecached() { m_modelList.SetLessFunc((CUtlRBTree<char *, unsigned short>::LessFunc_t)sub_101918e0); }
 
 	CUtlRBTree<char *, unsigned short> m_modelList;	// 0x08
