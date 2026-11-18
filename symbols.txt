@@ -10200,6 +10200,7 @@
 0x1000dcdd func   ?vfunc82@CPhysSlideConstraint@@UAEPAUdatamap_t@@XZ CPhysSlideConstraint::vfunc82
 0x1000dce2 func   ?sub_100df070@@YA_NPAUCUnknown100df070@@@Z sub_100df070
 0x1000dce7 func   ?sub_100c6520@@YAHPAUCSeqHdr100c6520@@PBD@Z sub_100c6520
+0x1000dcec func   ?vfunc480@CNPC_VFrenzyShadow@@UAE_NXZ CNPC_VFrenzyShadow::vfunc480
 0x1000dcf1 func   ?sub_101d9640@CUnknown101d9640@@QAEHH@Z CUnknown101d9640::sub_101d9640
 0x1000dcf6 func   ?sub_100c2bd0@@YAXHHHHHHHM@Z sub_100c2bd0
 0x1000dcfb func   ??1CTEBeamEnts@@QAE@XZ CTEBeamEnts::~CTEBeamEnts

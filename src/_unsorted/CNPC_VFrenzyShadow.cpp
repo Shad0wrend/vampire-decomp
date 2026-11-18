@@ -273,6 +273,18 @@ CBaseEntity *CNPC_VFrenzyShadow::vfunc478()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10376ac0 size=0x5
+#include "CNPC_VFrenzyShadow.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CNPC_VFrenzyShadow::vfunc480
+// the game's 0x10376ac0: a tail call (jmp) of CAI_BaseNPC::vfunc480
+bool CNPC_VFrenzyShadow::vfunc480()
+{
+	return ((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc480();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10376ae0 size=0x20
 #include "CNPC_VFrenzyShadow.h"
 #define P10(x) virtual void x##0(); virtual void x##1(); virtual void x##2(); virtual void x##3(); virtual void x##4(); virtual void x##5(); virtual void x##6(); virtual void x##7(); virtual void x##8(); virtual void x##9();
