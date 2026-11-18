@@ -130,6 +130,20 @@ void CNPC_VAnimal::vfunc463(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035f5a0 size=0x5
+#include "animevent_t.h"
+#include "CNPC_VAnimal.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VAnimal::vfunc259
+// the game's 0x1035f5a0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc259 (HandleAnimEvent); the animal view keeps the
+// event as int * (CNPC_VDog::vfunc259 passes it on that way)
+void CNPC_VAnimal::vfunc259(int *pEvent)
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc259((animevent_t *)pEvent);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035f5c0 size=0x64
 #include "CEntityVSlots.h"
 struct CUnknown1027d990 { int sub_1027d990(); };
