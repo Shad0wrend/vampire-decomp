@@ -12423,6 +12423,7 @@
 0x10010ac3 func   ?vfunc268@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z CBaseVampireSkillEntity::vfunc268
 0x10010ac8 func   ?sub_10168e60@@YA_NPAXPAUEntX@@@Z sub_10168e60
 0x10010acd func   ?sub_101be1f0@CStealthKillRulesUnit@@QAEHPAUSKChar@@@Z CStealthKillRulesUnit::sub_101be1f0
+0x10010ad2 func   ?vfunc39@CMultiplayRules@@UAEPAVCBaseEntity@@PAV2@@Z CMultiplayRules::vfunc39
 0x10010ad7 func   ?sub_102c47e0@CAI_BaseNPCTroika@@QAEHPBD0@Z CAI_BaseNPCTroika::sub_102c47e0
 0x10010adc func   ?sub_10407e90@CItemGKeyring@@QAEXPAVCBaseEntity@@@Z CItemGKeyring::sub_10407e90
 0x10010ae1 func   ?sub_102c9cf0@@YAHXZ sub_102c9cf0
