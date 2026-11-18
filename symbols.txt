@@ -4508,6 +4508,7 @@
 0x100069b0 func   ?sub_10269df0@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_10269df0
 0x100069ba func   ?vfunc254@CBaseCombatCharacter@@UAEHHHH@Z CBaseCombatCharacter::vfunc254
 0x100069bf func   ?vfunc80@CWeaponIArmor_Body_Armor@@UAEPAXXZ CWeaponIArmor_Body_Armor::vfunc80
+0x100069c4 func   ?vfunc259@CNPC_VTest@@QAEXPAUanimevent_t@@@Z CNPC_VTest::vfunc259
 0x100069c9 func   ?sub_1023f080@@YAXPAII@Z sub_1023f080
 0x100069ce func   ?vfunc5@CNPC_VWolfMorph@@QAEPAV1@I@Z CNPC_VWolfMorph::vfunc5
 0x100069d3 func   ?sub_10258880@@YAXPBD@Z sub_10258880

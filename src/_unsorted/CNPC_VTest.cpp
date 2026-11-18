@@ -359,6 +359,19 @@ void CNPC_VTest::vfunc463(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b4f10 size=0x5
+#include "animevent_t.h"
+#include "CNPC_VTest.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VTest::vfunc259
+// the game's 0x103b4f10: a tail call (jmp) of CNPC_VHuman::vfunc259
+void CNPC_VTest::vfunc259(animevent_t *a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc259(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b4f30 size=0x77
 #include "CNPC_VTest.h"
 struct CNPC_VTestUnit : CNPC_VTest {
