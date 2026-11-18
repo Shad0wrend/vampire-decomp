@@ -149,6 +149,18 @@ int CNPC_VYukie::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd740 size=0x5
+#include "CNPC_VYukie.h"
+#include "CNPC_VHumanCombatant.h"
+
+// TARGET: CNPC_VYukie::vfunc440
+// the game's 0x103dd740: a tail call (jmp) of CNPC_VHumanCombatant::vfunc440
+int CNPC_VYukie::vfunc440(int a0)
+{
+	return ((CNPC_VHumanCombatant *)this)->CNPC_VHumanCombatant::vfunc440(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd780 size=0xf
 #include "CNPC_VYukie.h"
 #include "CNPC_VHumanCombatant.h"
