@@ -739,6 +739,18 @@ void CHL2_Player::vfunc468()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10351530 size=0x5
+#include "CHL2_Player.h"
+#include "CBasePlayer.h"
+
+// TARGET: CHL2_Player::vfunc451
+// the game's 0x10351530: a tail call (jmp) of CBasePlayer::vfunc451
+void CHL2_Player::vfunc451(int a0)
+{
+	((CBasePlayer *)this)->CBasePlayer::vfunc451(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10351550 size=0x1c
 #include "CHL2_Player.h"
 #include "CBaseCombatCharacter.h"

@@ -10063,6 +10063,7 @@
 0x1000da8f func   ?vfunc451@CNPC_VTaxiDriver@@QAEHXZ CNPC_VTaxiDriver::vfunc451
 0x1000da94 func   ?sub_100f0ec0@CUnit100f0ec0@@QAE_NI@Z CUnit100f0ec0::sub_100f0ec0
 0x1000da99 func   ?sub_101b4b20@@YGPBDM@Z sub_101b4b20
+0x1000da9e func   ?vfunc451@CHL2_Player@@UAEXH@Z CHL2_Player::vfunc451
 0x1000daa8 func   ?vfunc7@CSoundSchemeManager@@UAEXXZ CSoundSchemeManager::vfunc7
 0x1000dab2 func   ?sub_101c17e0@CBaseToggle@@QAEXPAVVector@@H@Z CBaseToggle::sub_101c17e0
 0x1000dab7 func   ?sub_103e9b70@@YG_NHPAM@Z sub_103e9b70
