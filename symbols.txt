@@ -13517,6 +13517,7 @@
 0x10011bf3 func   ?vfunc4@CTETParticleAttached@@QAEXHH@Z CTETParticleAttached::vfunc4
 0x10011bf8 func   ?vfunc5@CItemGHorrorTape_1@@QAEPAV1@I@Z CItemGHorrorTape_1::vfunc5
 0x10011bfd func   ?vfunc363@CWeaponMelee_MingXiaoMelee@@UAEHXZ CWeaponMelee_MingXiaoMelee::vfunc363
+0x10011c02 func   ?vfunc144@CNPC_VZombie@@UAEXH@Z CNPC_VZombie::vfunc144
 0x10011c07 func   ?sub_101eac50@CUnknown101eac50@@QAEXXZ CUnknown101eac50::sub_101eac50
 0x10011c0c func   ?vfunc600@CNPC_VHuman@@UAEDH@Z CNPC_VHuman::vfunc600
 0x10011c11 func   ?sub_10246240@@YIDPAXHPAH@Z sub_10246240
