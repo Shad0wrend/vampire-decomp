@@ -5285,6 +5285,7 @@
 0x1000795f func   ?sub_103e9270@@YAHXZ sub_103e9270
 0x10007964 func   ?sub_10214700@@YGHH@Z sub_10214700
 0x10007969 func   ?vfunc103@CItemContainerOneItemFiltered@@UAEXXZ CItemContainerOneItemFiltered::vfunc103
+0x1000796e func   ?vfunc103@CEnvLight@@QAEXXZ CEnvLight::vfunc103
 0x10007973 func   ?vfunc82@CNPC_Bullseye@@UAEPAUdatamap_t@@XZ CNPC_Bullseye::vfunc82
 0x10007978 func   ?sub_101d3080@@YA_NPAUHandleEntLike@@H@Z sub_101d3080
 0x1000797d func   ?sub_1019e590@@YIXPAD@Z sub_1019e590

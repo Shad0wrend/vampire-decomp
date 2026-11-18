@@ -17,6 +17,18 @@ bool CEnvLight::vfunc110(const char *szKeyName, const char *szValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130b40 size=0x5
+#include "CEnvLight.h"
+#include "CLight.h"
+
+// TARGET: CEnvLight::vfunc103
+// the game's 0x10130b40: a tail call (jmp) of CLight::vfunc103
+void CEnvLight::vfunc103()
+{
+	CLight::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130b60 size=0x1e
 #include "CEnvLight.h"
 
