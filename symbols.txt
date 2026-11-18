@@ -11239,6 +11239,7 @@
 0x1000f0c9 func   ?vfunc4@CPositionInterpolator_Linear@@QAE_NHH@Z CPositionInterpolator_Linear::vfunc4
 0x1000f0ce func   _item_p_occult_lockpicking item_p_occult_lockpicking
 0x1000f0d8 func   ?sub_10042d90@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_10042d90
+0x1000f0dd func   ?vfunc433@CNPC_VZombie@@UAEXXZ CNPC_VZombie::vfunc433
 0x1000f0e2 func   ?sub_1030a6e0@CUnknown1030a6e0@@QAEXABVVector@@MPAVCBaseEntity@@H@Z CUnknown1030a6e0::sub_1030a6e0
 0x1000f0e7 func   ?sub_10210b00@CTriggerDisciplineContext@@QAEXPAX@Z CTriggerDisciplineContext::sub_10210b00
 0x1000f0ec func   ?sub_100f4730@CGibShooter@@QAEXHHHH@Z CGibShooter::sub_100f4730

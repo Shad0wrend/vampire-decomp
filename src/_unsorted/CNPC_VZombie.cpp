@@ -536,6 +536,18 @@ bool CNPC_VZombie::vfunc566(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e03f0 size=0x5
+#include "CNPC_VZombie.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VZombie::vfunc433
+// the game's 0x103e03f0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc433
+void CNPC_VZombie::vfunc433()
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc433();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e0430 size=0xc3
 #include "CNPC_VZombie.h"
 #include "CUnknown101c2a50.h"
