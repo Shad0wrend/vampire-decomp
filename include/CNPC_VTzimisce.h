@@ -337,4 +337,6 @@ public:
 	char m_pad66bd[0x66c0 - 0x66bd];
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	int vfunc390(CTakeDamageInfo *);	// slot 390 (0x103bdf80): a tail call of CAI_BaseNPCTroika::vfunc390 (no such slot in this view: plain)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	bool vfunc366(int, int, int);	// slot 366 (0x103bdfa0): a tail call of CBaseCombatCharacter::vfunc366 (no such slot in this view: plain)
 };

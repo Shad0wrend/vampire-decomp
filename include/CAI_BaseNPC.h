@@ -96,7 +96,8 @@ public:
 	CAI_NPC_V(360) CAI_NPC_V(361) CAI_NPC_V(362)
 	virtual char vfunc363(CBaseEntity *pEnt);	// slot 363: asked about an entity (a boolean answer in al; the alarmed check of sub_102bf5d0 passes the entity)
 	virtual bool vfunc364(const float *pPosition);	// asked about a look position (true accepts it; the "FInViewCone"-like test)
-	CAI_NPC_V(365) CAI_NPC_V(366) CAI_NPC_V(367) virtual Vector vfunc368(); CAI_NPC_V(369)
+	CAI_NPC_V(365) virtual bool vfunc366(int a, int b, int c);	// slot 366 "HandleInteraction" (CBaseCombatCharacter::vfunc366, 0x10326d40)
+	 CAI_NPC_V(367) virtual Vector vfunc368(); CAI_NPC_V(369)
 	virtual void vfunc370(int a); CAI_NPC_V(371) virtual int vfunc372(int a); CAI_NPC_V(373) CAI_NPC_V(374)
 	virtual int vfunc375(int act);	// TranslateActivity step 1: the activity the NPC wants for act
 	virtual int vfunc376(int act);	// the next activity of the fallback chain
@@ -108,7 +109,8 @@ public:
 	virtual void vfunc383(void *pWeapon, int a);	// "Weapon_Equip"-like: equips the given weapon (the Spawn of the NPCs equips the weapon named by the field at +0x5dec)
 	CAI_NPC_V(384) virtual void vfunc385(void *a, int b, int c); CAI_NPC_V(386) CAI_NPC_V(387) CAI_NPC_V(388) virtual void vfunc389(Vector *pOut, const Vector *pIn);
 	virtual int vfunc390(struct CTakeDamageInfo *pInfo);	// slot 390 (ret 4, answers in eax; 0x10265ed0 = CAI_BaseNPC, 0x103302e0 = CBaseCombatCharacter): the take-damage reaction, true when the character takes the hit; the Troika override (0x102beda0) first stores a copy of the record at +0x660c
-	CAI_NPC_V(391) virtual int vfunc392(struct CTakeDamageInfo *pInfo); CAI_NPC_V(393) virtual char vfunc394(); CAI_NPC_V(395) CAI_NPC_V(396) CAI_NPC_V(397) virtual char vfunc398(); CAI_NPC_V(399)
+	virtual int vfunc391(int a);	// slot 391 "OnTakeDamage_Dying" (CBaseCombatCharacter::vfunc391, 0x103315e0)
+	 virtual int vfunc392(struct CTakeDamageInfo *pInfo); CAI_NPC_V(393) virtual char vfunc394(); CAI_NPC_V(395) CAI_NPC_V(396) CAI_NPC_V(397) virtual char vfunc398(); CAI_NPC_V(399)
 	CAI_NPC_V(400) CAI_NPC_V(401) virtual char vfunc402();	// slot 402: asks slot 394; when it holds either removes the NPC (slot 398 false: sub_101cd940) or, with slot 398 true, hands the field at +0xfd0 to sub_100544f0, runs slot 77 and slot 395; without it only slot 395; returns the answer of slot 394
 	CAI_NPC_V(403)
 	virtual int vfunc404(CBaseEntity *pEnt);	// classification of pEnt (vfunc468 treats 1 and 2 as true)

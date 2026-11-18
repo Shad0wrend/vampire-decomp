@@ -418,7 +418,7 @@ public:
 	virtual int vfunc360();
 	virtual void vfunc361();
 	virtual char vfunc362(float const *);
-	virtual void vfunc363();
+	virtual char vfunc363(CBaseEntity *);
 	virtual bool vfunc364(Vector const *);
 	virtual int vfunc365(CBaseEntity *);
 	virtual void vfunc366();

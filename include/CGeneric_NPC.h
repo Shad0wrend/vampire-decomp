@@ -38,4 +38,6 @@ public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11
 	virtual int vfunc390(CTakeDamageInfo *);	// slot 390 (0x1035a940): a tail call of CAI_BaseNPCTroika::vfunc390
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	int vfunc440(int);	// slot 440 (0x1035a8e0): a tail call of CAI_BaseNPCTroika::vfunc440 (a base declares it plain vfunc440: this one hides it)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual bool vfunc366(int, int, int);	// slot 366 (0x1035a960): a tail call of CBaseCombatCharacter::vfunc366
 };
