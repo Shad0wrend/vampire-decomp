@@ -11395,6 +11395,7 @@
 0x1000f52e func   ?ShiftElementsRight@?$CUtlVector@UCNPC_VWerewolfVec3@@V?$CUtlMemory@UCNPC_VWerewolfVec3@@@@@@QAEXHH@Z CUtlVector<CNPC_VWerewolfVec3,CUtlMemory<CNPC_VWerewolfVec3> >::ShiftElementsRight
 0x1000f52e func   ?ShiftElementsRight@?$CUtlVector@VVector@@V?$CUtlMemory@VVector@@@@@@QAEXHH@Z CUtlVector<Vector,CUtlMemory<Vector> >::ShiftElementsRight
 0x1000f52e func   ?sub_103dc340@UtlVec12@@QAEXHH@Z UtlVec12::sub_103dc340
+0x1000f533 func   ?vfunc144@CNPC_VCamera@@UAEXH@Z CNPC_VCamera::vfunc144
 0x1000f538 func   ?sub_10306700@CAI_Pathfinder@@QAE_NPAVCBaseEntity@@PBVVector@@1M@Z CAI_Pathfinder::sub_10306700
 0x1000f53d func   ??1CTEBreakModel@@QAE@XZ CTEBreakModel::~CTEBreakModel
 0x1000f53d func   ?sub_1005e700@CUnknown1005e700@@QAEHXZ CUnknown1005e700::sub_1005e700

@@ -550,6 +550,18 @@ bool CNPC_VCamera::vfunc366(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10369280 size=0x5
+#include "CNPC_VCamera.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VCamera::vfunc144
+// the game's 0x10369280: a tail call (jmp) of CAI_BaseNPCTroika::vfunc144
+void CNPC_VCamera::vfunc144(int a0)
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc144(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103692a0 size=0x3
 #include "CNPC_VCamera.h"
 int CNPC_VCamera::vfunc473()
