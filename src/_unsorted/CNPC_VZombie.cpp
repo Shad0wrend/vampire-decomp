@@ -276,6 +276,18 @@ void CNPC_VZombie::vfunc390(CVAnimalArg *a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dfb70 size=0x5
+#include "CNPC_VZombie.h"
+#include "CNPC_VAnimal.h"
+
+// TARGET: CNPC_VZombie::vfunc366
+// the game's 0x103dfb70: a tail call (jmp) of CNPC_VAnimal::vfunc366
+bool CNPC_VZombie::vfunc366(int a0, int a1, int a2)
+{
+	return ((CNPC_VAnimal *)this)->CNPC_VAnimal::vfunc366(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dfd80 size=0x364
 #include "CNPC_VZombie.h"
 #include "CAI_Navigator.h"

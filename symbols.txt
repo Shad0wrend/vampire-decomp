@@ -14305,6 +14305,7 @@
 0x10012e22 func   _info_node_air_hint info_node_air_hint
 0x10012e27 func   ?sub_103c78a0@@YADXZ sub_103c78a0
 0x10012e2c func   ?vfunc82@CBeam@@UAEPAUdatamap_t@@XZ CBeam::vfunc82
+0x10012e31 func   ?vfunc366@CNPC_VZombie@@UAE_NHHH@Z CNPC_VZombie::vfunc366
 0x10012e36 func   ?sub_1017d280@CBasePlayer@@QAEXPAVCBaseEntity@@M@Z CBasePlayer::sub_1017d280
 0x10012e3b func   ?vfunc3@CTEGunshotDecal@@UAEXABVVector@@ABVQAngle@@@Z CTEGunshotDecal::vfunc3
 0x10012e40 func   ?sub_101e9b60@CHistoryList@@QAE_NPBD@Z CHistoryList::sub_101e9b60
