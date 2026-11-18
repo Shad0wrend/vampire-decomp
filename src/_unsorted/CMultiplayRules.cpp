@@ -106,6 +106,18 @@ CGameRules *CMultiplayRules::vfunc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141130 size=0x5
+#include "CMultiplayRules.h"
+#include "CGameRules.h"
+
+// TARGET: CMultiplayRules::vfunc15
+// the game's 0x10141130: a tail call (jmp) of CGameRules::vfunc15
+void CMultiplayRules::vfunc15()
+{
+	CGameRules::vfunc15();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141150 size=0x13a
 #include "CMultiplayRules.h"
 #include "ConVar.h"
