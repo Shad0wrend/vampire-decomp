@@ -250,3 +250,15 @@ void CGeneric_NPC_bathack::vfunc434()
 {
 }
 // END FUNCTION
+
+// FUNCTION: 0x1035b1e0 size=0x5
+#include "CGeneric_NPC_bathack.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CGeneric_NPC_bathack::vfunc366
+// the game's 0x1035b1e0: a tail call (jmp) of CBaseCombatCharacter::vfunc366
+bool CGeneric_NPC_bathack::vfunc366(int a0, int a1, int a2)
+{
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc366(a0, a1, a2);
+}
+// END FUNCTION
