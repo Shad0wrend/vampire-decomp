@@ -214,6 +214,18 @@ bool CNPC_VMoleman::vfunc366(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039feb0 size=0x5
+#include "CNPC_VMoleman.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VMoleman::vfunc144
+// the game's 0x1039feb0: a tail call (jmp) of CNPC_VHuman::vfunc144
+void CNPC_VMoleman::vfunc144(int a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc144(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039fed0 size=0x5
 #include "CNPC_VMoleman.h"
 #include "CNPC_VHuman.h"
