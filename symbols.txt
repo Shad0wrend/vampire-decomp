@@ -2029,6 +2029,7 @@
 0x100038be func   ?sub_1006cff0@StatOwner@@QAEPAUStatDefault@@H@Z StatOwner::sub_1006cff0
 0x100038c3 func   ?RemoveAll@?$CUtlVector@UElem118@@V?$CUtlMemory@UElem118@@@@@@QAEXXZ CUtlVector<Elem118,CUtlMemory<Elem118> >::RemoveAll
 0x100038c3 func   ?sub_102deea0@@YIXPAH@Z sub_102deea0
+0x100038c8 func   ?vfunc433@CNPC_VYukie@@QAEXXZ CNPC_VYukie::vfunc433
 0x100038cd func   ?vfunc0@CTEBaseBeam@@UAEPAUServerClass@@XZ CTEBaseBeam::vfunc0
 0x100038d2 func   ?vfunc37@CMultiplayRules@@UAE_NH@Z CMultiplayRules::vfunc37
 0x100038d7 func   ?FindInsertionPosition@?$CUtlRBTree@UCRBEntry24@@H@@QAEXABUCRBEntry24@@AAHAA_N@Z CUtlRBTree<CRBEntry24,int>::FindInsertionPosition

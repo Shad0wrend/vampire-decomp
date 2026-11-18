@@ -161,6 +161,18 @@ int CNPC_VYukie::vfunc440(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd760 size=0x5
+#include "CNPC_VYukie.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VYukie::vfunc433
+// the game's 0x103dd760: a tail call (jmp) of CAI_BaseNPCTroika::vfunc433
+void CNPC_VYukie::vfunc433()
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc433();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd780 size=0xf
 #include "CNPC_VYukie.h"
 #include "CNPC_VHumanCombatant.h"
