@@ -98357,6 +98357,16 @@ int sub_101482c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101482e0 size=0x5
+void * __cdecl sub_1014a140(struct CUnk1014a140 *);
+// TARGET: sub_101482e0
+// the game's 0x101482e0: a tail call (jmp) of sub_1014a140
+void * __cdecl sub_101482e0(struct CUnk1014a140 *a0)
+{
+	return sub_1014a140(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148300 size=0x49
 void *sub_1000db89(int);
 struct GP;

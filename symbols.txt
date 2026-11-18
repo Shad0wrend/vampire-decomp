@@ -3011,6 +3011,7 @@
 0x10004c5f func   ?Grow@?$CUtlMemory@PBD@@QAEXH@Z CUtlMemory<char const *>::Grow
 0x10004c5f func   ?sub_100c83a0@CMem4c_t@@QAEXH@Z CMem4c_t::sub_100c83a0
 0x10004c64 func   ?sub_103c0b30@@YAHXZ sub_103c0b30
+0x10004c69 func   ?sub_101482e0@@YAPAXPAUCUnk1014a140@@@Z sub_101482e0
 0x10004c6e func   ?sub_101f0990@CUnknown101f0990@@QAEXPBD@Z CUnknown101f0990::sub_101f0990
 0x10004c73 func   ?vfunc0@CTraceFilterSimpleList@@UAE_NPAXH@Z CTraceFilterSimpleList::vfunc0
 0x10004c78 func   ?sub_1012d5c0@CUnknown1012d5c0@@QAEHXZ CUnknown1012d5c0::sub_1012d5c0
