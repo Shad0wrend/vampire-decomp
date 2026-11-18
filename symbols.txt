@@ -4997,6 +4997,7 @@
 0x10007347 func   ?sub_102a9540@CVector2Dot@@QAEMPBU1@@Z CVector2Dot::sub_102a9540
 0x1000734c func   ?sub_101c49e0@@YAPAHXZ sub_101c49e0
 0x10007351 func   ?sub_100cf7b0@CEventQueue@@QAEXPAUCEQEvent@@@Z CEventQueue::sub_100cf7b0
+0x10007356 func   ?vfunc103@CNPC_VMalkavian@@UAEXXZ CNPC_VMalkavian::vfunc103
 0x1000735b func   ?sub_101f3d00@CUnknown101f3d80@@QAEXHH@Z CUnknown101f3d80::sub_101f3d00
 0x10007360 func   ?sub_1025d790@@YAXXZ sub_1025d790
 0x10007365 func   ?vfunc104@CSpeaker@@QAEXXZ CSpeaker::vfunc104
