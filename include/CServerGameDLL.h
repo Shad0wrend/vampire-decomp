@@ -14,7 +14,9 @@ class CServerGameDLL
 #endif
 {
 public:
+#ifndef PCD_INITIALIZERS	// there slot 0 is the interface's virtual destructor (the game's slot 0 is the deleting destructor)
 	virtual void vfunc0();
+#endif
 	virtual bool vfunc1(CreateInterfaceFn engineFactory, CreateInterfaceFn physicsFactory, CreateInterfaceFn fileSystemFactory, void *pGlobals);	// DLLInit: fetches the engine interfaces (g_1070b22c .. g_1070b254) from the factories, publishes the globals, registers five save/restore handlers with the block set at 0x10592db0
  virtual bool vfunc2(); virtual bool vfunc3(const char *pMapName, const char *pMapEntities, const char *pOldLevel, const char *pLandmarkName, char loadGame);
 	virtual void vfunc4(int a, int b, int c);	// the level shutdown/frame step with three (unused) stack arguments: warns when the delete queue is not empty, runs slot 113 on every entity whose flag bit 1 (+0x268) is clear, clears the game's pending lists and, unless the cheat convar allows it, resets the convar at 0x106bd868 to 0

@@ -20,7 +20,9 @@ class CServerGameClients
 #endif
 {
 public:
+#ifndef PCD_INITIALIZERS	// there slot 0 is the interface's virtual destructor (the game's slot 0 is the deleting destructor)
 	virtual void vfunc0();
+#endif
 	virtual void vfunc1();
 	virtual void vfunc2(int);
 	virtual void vfunc3(void *pEdict);	// "CServerGameClients::ClientDisconnect": scope trace, the player entity of the edict (CBaseEntity::Instance; edict 0 resolved through the engine) is announced (\"- %s has left the game\" text message to everybody) unless the global byte 0x1070ba2c is set, then made non-solid-ish (flags), removed from the global list at 0x1070ba0c and torn down

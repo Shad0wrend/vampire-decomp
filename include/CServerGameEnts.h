@@ -20,7 +20,9 @@ class CServerGameEnts
 #endif
 {
 public:
+#ifndef PCD_INITIALIZERS	// there slot 0 is the interface's virtual destructor (the game's slot 0 is the deleting destructor)
 	virtual void vfunc0();
+#endif
 	virtual void vfunc1();
 	virtual void vfunc2(CServerGameEntsEdict *pFirst, CServerGameEntsEdict *pSecond);	// resolves both edicts to their entities and hands them, with a freshly cleared 0x54 byte record, to CBaseEntity::sub_1003e2e0
 	virtual int vfunc3(int);

@@ -8,8 +8,9 @@ public:
 	CPlayerMove();
 #ifdef PCD_INITIALIZERS	// the initializer units: the inline destructor the CHLPlayerMove global's destroy runs
 	virtual ~CPlayerMove() {}
-#endif
+#else	// slot 0: the deleting destructor (the initializer units declare the real one)
 	virtual void vfunc0();
+#endif
 	virtual void vfunc1(CBasePlayer *pPlayer, CUserCmd *pCmd, void *pHelper, void *pMoveData);
 	virtual void vfunc2(CBasePlayer *pPlayer, CUserCmd *pCmd, void *pMoveData);
 	void sub_10186f00(CBasePlayer *pPlayer);
