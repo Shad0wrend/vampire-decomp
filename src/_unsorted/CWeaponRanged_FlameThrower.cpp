@@ -75,6 +75,18 @@ CWeaponRanged *CWeaponRanged_FlameThrower::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e2c50 size=0x5
+#include "CWeaponRanged_FlameThrower.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponRanged_FlameThrower::vfunc103
+// the game's 0x103e2c50: a tail call (jmp) of CBaseCombatWeapon::vfunc103
+void CWeaponRanged_FlameThrower::vfunc103()
+{
+	((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e2c70 size=0x7a
 #include "CWeaponRanged_FlameThrower.h"
 

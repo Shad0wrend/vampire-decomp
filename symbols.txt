@@ -3415,6 +3415,7 @@
 0x10005484 func   ?sub_102c0010@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_102c0010
 0x10005489 func   ?vfunc5@CGameStringPool@@QAEXXZ CGameStringPool::vfunc5
 0x1000548e func   ?sub_10398680@@YGPBDH@Z sub_10398680
+0x10005493 func   ?vfunc103@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc103
 0x10005498 func   ?vfunc331@CWeaponIGeneric@@UAEABVVector@@XZ CWeaponIGeneric::vfunc331
 0x1000549d func   ?sub_1022ea60@@YAXXZ sub_1022ea60
 0x100054a2 func   ?vfunc5@CFunc_Dust@@QAEPAV1@I@Z CFunc_Dust::vfunc5
