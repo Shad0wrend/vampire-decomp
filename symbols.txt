@@ -12853,6 +12853,7 @@
 0x1001122a func   ?Grow@?$CUtlMemory@V?$CHandle@VCSoundScheme@@@@@@QAEXH@Z CUtlMemory<CHandle<CSoundScheme> >::Grow
 0x1001122a func   ?sub_1022d380@@YIXPAUMem4@@HH@Z sub_1022d380
 0x1001122f func   ?sub_102457d0@CUnknown102457d0@@QAEXH@Z CUnknown102457d0::sub_102457d0
+0x10011234 func   ?vfunc463@CNPC_VHuman@@UAEXHH@Z CNPC_VHuman::vfunc463
 0x10011239 func   ?sub_102db760@CUnknown102db760@@QAEHXZ CUnknown102db760::sub_102db760
 0x1001123e func   ?sub_100fdcc0@@YIXPADHH@Z sub_100fdcc0
 0x10011243 func   ?sub_100ae090@CBaseEntity@@QAEHPBD@Z CBaseEntity::sub_100ae090

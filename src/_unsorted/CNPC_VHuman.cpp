@@ -115,6 +115,18 @@ int CNPC_VHuman::sub_10384700()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10384720 size=0x5
+#include "CNPC_VHuman.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VHuman::vfunc463
+// the game's 0x10384720: a tail call (jmp) of CAI_BaseNPCTroika::vfunc463
+void CNPC_VHuman::vfunc463(int a0, int a1)
+{
+	CAI_BaseNPCTroika::vfunc463(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10384760 size=0x64
 #include "CNPC_VHuman.h"
 struct CUnknown1027d990 { int sub_1027d990(); };
