@@ -109,6 +109,18 @@ void CNPC_Bullseye::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10356b30 size=0x5
+#include "CNPC_Bullseye.h"
+#include "CBaseEntity.h"
+
+// TARGET: CNPC_Bullseye::vfunc113
+// the game's 0x10356b30: a tail call (jmp) of CBaseEntity::vfunc113
+void CNPC_Bullseye::vfunc113()
+{
+	CBaseEntity::vfunc113();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10356b50 size=0xa9
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
