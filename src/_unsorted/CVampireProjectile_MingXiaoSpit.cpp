@@ -70,6 +70,18 @@ CVampireProjectile_MingXiaoSpit::~CVampireProjectile_MingXiaoSpit()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f18c0 size=0x5
+#include "CVampireProjectile_MingXiaoSpit.h"
+#include "CVampireProjectile.h"
+
+// TARGET: CVampireProjectile_MingXiaoSpit::vfunc104
+// the game's 0x103f18c0: a tail call (jmp) of CVampireProjectile::vfunc104
+void CVampireProjectile_MingXiaoSpit::vfunc104()
+{
+	CVampireProjectile::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f18e0 size=0x19
 #include "CVampireProjectile_MingXiaoSpit.h"
 namespace lifted {
