@@ -11010,6 +11010,7 @@
 0x1000ea8e func   ?sub_10398db0@CNPC_VMingXiao@@QAE_NXZ CNPC_VMingXiao::sub_10398db0
 0x1000ea93 func   ?vfunc223@CPhysBox@@QAE_NXZ CPhysBox::vfunc223
 0x1000ea98 func   ?sub_1024d2c0@@YIXPAXHH@Z sub_1024d2c0
+0x1000ea9d func   ?vfunc36@CPhysicsProp@@UAEHXZ CPhysicsProp::vfunc36
 0x1000eaa2 func   ?sub_103fd190@@YAHXZ sub_103fd190
 0x1000eaa7 func   ?vfunc5@CGib@@QAEPAV1@I@Z CGib::vfunc5
 0x1000eaac func   ?sub_103455a0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@PAXPAVVector@@@Z CBaseCombatCharacter::sub_103455a0

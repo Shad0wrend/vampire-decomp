@@ -178,6 +178,17 @@ bool CPhysicsProp::vfunc73(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101917a0 size=0x5
+#include "CPhysicsProp.h"
+int __cdecl sub_102587f0();
+// TARGET: CPhysicsProp::vfunc36
+// the game's 0x101917a0: a tail call (jmp) of sub_102587f0
+int CPhysicsProp::vfunc36()
+{
+	return sub_102587f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101917c0 size=0x1f
 #include "CPhysicsProp.h"
 
