@@ -18,5 +18,5 @@ public:
 	unsigned int m_hTarget;	// 0x0470
 public:
     virtual datamap_t * vfunc82();
-    CLogicLineToEntity *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 };

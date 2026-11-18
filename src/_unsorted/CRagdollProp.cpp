@@ -215,7 +215,7 @@ char CRagdollProp::vfunc276()
 void sub_100aa7b0(void *p);
 
 // TARGET: CRagdollProp::vfunc5
-CRagdollProp *CRagdollProp::vfunc5(unsigned int flags)
+CBaseEntity *CRagdollProp::vfunc5(unsigned int flags)
 {
 	sub_10014317();
 	if (flags & 1)

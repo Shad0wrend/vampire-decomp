@@ -38,7 +38,7 @@ struct CBaseEntityDtor
 
 void sub_100aa7b0(void *p);
 
-CPhysicsProp *CPhysicsProp::vfunc5(unsigned int flags)
+CBaseEntity *CPhysicsProp::vfunc5(unsigned int flags)
 {
 	((CUnknownMember10015708 *)((char *)this + 0x748))->sub_10015708();
 	((CUnknownMember10015708 *)((char *)this + 0x730))->sub_10015708();

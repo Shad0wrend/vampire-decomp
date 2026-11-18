@@ -25,7 +25,7 @@ CPlayerEvents::CPlayerEvents() : CBaseEntity(0)
 
 void sub_100aa7b0(void *p);
 
-CPlayerEvents *CPlayerEvents::vfunc5(unsigned int flags)
+CBaseEntity *CPlayerEvents::vfunc5(unsigned int flags)
 {
 	COutputEvent *p = m_Outputs + 23;
 	int n = 23;

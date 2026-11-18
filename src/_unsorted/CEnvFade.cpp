@@ -34,7 +34,7 @@ struct CGargoyleBaseUnit {
 void __cdecl sub_10009fc5(void *p);
 
 // TARGET: CEnvFade::vfunc5
-CEnvFade *CEnvFade::vfunc5(unsigned int flags)
+CBaseEntity *CEnvFade::vfunc5(unsigned int flags)
 {
 	((CGargoyleMemberUnit *)((char *)this + 0x458))->sub_10015708();
 	((CGargoyleBaseUnit *)this)->sub_1000cb8a();

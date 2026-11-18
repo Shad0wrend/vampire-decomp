@@ -8,7 +8,7 @@
 class CBatSwarm_Teleport : public CBatSwarm
 {
 public:
-	CBatSwarm_Teleport *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10004c3c();
 	CBatSwarm_Teleport *sub_103b1ad0();	// as in CKeepUpright (transplant)
 public:

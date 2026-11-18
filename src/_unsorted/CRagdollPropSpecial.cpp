@@ -135,7 +135,7 @@ void CRagdollPropSpecial::vfunc230(int index, void *pEvent)
 void sub_100aa7b0(void *p);
 
 // TARGET: CRagdollPropSpecial::vfunc5
-CRagdollPropSpecial *CRagdollPropSpecial::vfunc5(unsigned int flags)
+CBaseEntity *CRagdollPropSpecial::vfunc5(unsigned int flags)
 {
 	sub_10014317();
 	if (flags & 1)

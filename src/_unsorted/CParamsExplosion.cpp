@@ -18,7 +18,7 @@ datamap_t * CParamsExplosion::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CParamsExplosion::vfunc5
-CParamsExplosion *CParamsExplosion::vfunc5(unsigned int flags)
+CBaseEntity *CParamsExplosion::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

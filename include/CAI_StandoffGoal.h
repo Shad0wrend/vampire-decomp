@@ -27,6 +27,6 @@ public:
 	void sub_102c8280(inputdata_t *pInput);	// input "SetAggressiveness": takes the integer of the input (0 unless it is one), clamps it like vfunc241, refreshes the actors like CAI_GoalEntity::vfunc241 and hands every actor's standoff behaviour the parameter block
 public:
     virtual datamap_t * vfunc82();
-    CAI_StandoffGoal *vfunc5(unsigned int flags);	// as in CNPC_VMingXiao (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CNPC_VMingXiao (transplant)
     void sub_1009df20();	// as in CNPC_VMingXiao (transplant)
 };

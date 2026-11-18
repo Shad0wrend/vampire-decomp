@@ -14,5 +14,5 @@ public:
 	void vfunc175(CBaseEntity *pOther);	// slot 175 (0x101c92c0, vtable stub 0x1000c239): the teleport touch; a plain member like CBaseEntity's, which declares its virtuals up to slot 133 only
 public:
     virtual datamap_t * vfunc82();
-    void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
 };

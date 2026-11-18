@@ -6,7 +6,7 @@
 class CWeaponRanged_Rifle_Remington : public CBaseEntity
 {
 public:
-	CWeaponRanged_Rifle_Remington *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	CWeaponRanged_Rifle_Remington *sub_10236070();	// as in CKeepUpright (transplant); really the constructor (0x10236070): CWeaponRanged ctor (0x1000ab0a), the two records zeroed, vptr 0x104921fc, m_flStamp91c = gpGlobals->curtime
 	void sub_10238070();	// CWeaponRanged::CWeaponRanged (0x10238070, stub 0x1000ab0a), the base constructor body the constructor calls first

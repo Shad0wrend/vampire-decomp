@@ -25,7 +25,7 @@ char *sub_10367890(void)
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VBrujah::vfunc5
-CNPC_VBrujah *CNPC_VBrujah::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VBrujah::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

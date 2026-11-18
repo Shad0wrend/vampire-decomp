@@ -45,7 +45,7 @@ int CDebugEntity::vfunc124()
 
 void sub_100aa7b0(void *pEntity);
 
-CDebugEntity *CDebugEntity::vfunc5(unsigned int flags)
+CBaseEntity *CDebugEntity::vfunc5(unsigned int flags)
 {
 	((CUtlVector<int> *)((char *)this + 0x450))->~CUtlVector<int>();
 	sub_1009df20();

@@ -7,7 +7,7 @@
 class CEntityFlame : public CBaseEntity
 {
 public:
-	CEntityFlame *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	CEntityFlame *sub_100f5450();	// as in CKeepUpright (transplant)
 public:

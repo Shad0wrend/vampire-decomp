@@ -40,7 +40,7 @@ int CNPC_VSabbatGunman::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VSabbatGunman::vfunc5
-CNPC_VSabbatGunman *CNPC_VSabbatGunman::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VSabbatGunman::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

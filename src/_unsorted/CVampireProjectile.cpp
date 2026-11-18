@@ -240,7 +240,7 @@ datamap_t * CVampireProjectile::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CVampireProjectile::vfunc5
-CVampireProjectile *CVampireProjectile::vfunc5(unsigned int flags)
+CBaseEntity *CVampireProjectile::vfunc5(unsigned int flags)
 {
 	sub_100085d5();
 	if (flags & 1)

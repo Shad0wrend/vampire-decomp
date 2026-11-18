@@ -51,7 +51,7 @@ int CNPC_VPedestrian::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VPedestrian::vfunc5
-CNPC_VPedestrian *CNPC_VPedestrian::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VPedestrian::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

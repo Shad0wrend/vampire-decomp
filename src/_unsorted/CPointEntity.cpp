@@ -7,7 +7,7 @@
 void sub_100aa7b0(void *p);
 
 // TARGET: CPointEntity::vfunc5
-CPointEntity *CPointEntity::vfunc5(unsigned int flags)
+CBaseEntity *CPointEntity::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

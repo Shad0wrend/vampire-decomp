@@ -26,5 +26,5 @@ public:
 	COutputFloat m_SoundLevel;	// 0x464
 public:
     virtual datamap_t * vfunc82();
-    CPointEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (VC6 has no covariant returns)	// as in CNPC_VGargoyle (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (VC6 has no covariant returns)	// as in CNPC_VGargoyle (transplant)
 };

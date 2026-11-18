@@ -38,7 +38,7 @@ datamap_t * CVampireProjectile_MingXiaoSpit::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CVampireProjectile_MingXiaoSpit::vfunc5
-CVampireProjectile_MingXiaoSpit *CVampireProjectile_MingXiaoSpit::vfunc5(unsigned int flags)
+CBaseEntity *CVampireProjectile_MingXiaoSpit::vfunc5(unsigned int flags)
 {
 	sub_1000a21d();
 	if (flags & 1)

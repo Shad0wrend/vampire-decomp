@@ -191,7 +191,7 @@ int CContestedFields10193130::sub_10193130(int a)
 
 void sub_100aa7b0(void *p);
 
-CPhysicsProp *CPhysicsPropContested::vfunc5(unsigned int flags)
+CBaseEntity *CPhysicsPropContested::vfunc5(unsigned int flags)
 {
 	((COutputEvent *)((char *)this + 0x790))->sub_100cd2d0();
 	((COutputEvent *)((char *)this + 0x748))->sub_100cd2d0();
@@ -199,6 +199,6 @@ CPhysicsProp *CPhysicsPropContested::vfunc5(unsigned int flags)
 	((CBaseAnimating *)this)->sub_10004c3c();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity *)(this);
 }
 // END FUNCTION

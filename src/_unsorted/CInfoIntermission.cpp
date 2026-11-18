@@ -71,7 +71,7 @@ void CInfoIntermission::vfunc134()
 void sub_100aa7b0(void *p);
 
 // TARGET: CInfoIntermission::vfunc5
-CInfoIntermission *CInfoIntermission::vfunc5(unsigned int flags)
+CBaseEntity *CInfoIntermission::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

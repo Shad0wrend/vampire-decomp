@@ -126,7 +126,7 @@ void CNPCMaker::vfunc620(int a0)
 struct CGargoyleBaseUnit { void sub_100123af(); };
 void sub_100aa7b0(void *p);
 
-CNPCMaker *CNPCMaker::vfunc5(unsigned int flags)
+CBaseEntity *CNPCMaker::vfunc5(unsigned int flags)
 {
 	((COutputEvent *)((char *)this + 0x6698))->sub_100cd2d0();
 	((COutputEvent *)((char *)this + 0x6680))->sub_100cd2d0();

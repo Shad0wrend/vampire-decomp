@@ -58,7 +58,7 @@ bool CGameText::vfunc110(const char *szKeyName, const char *szValue)
 void sub_100aa7b0(void *p);
 
 // TARGET: CGameText::vfunc5
-CGameText *CGameText::vfunc5(unsigned int flags)
+CBaseEntity *CGameText::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

@@ -240,7 +240,7 @@ int CFuncRotating::vfunc124()
 void sub_100aa7b0(void *p);
 
 // TARGET: CFuncRotating::vfunc5
-CFuncRotating *CFuncRotating::vfunc5(unsigned int flags)
+CBaseEntity *CFuncRotating::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

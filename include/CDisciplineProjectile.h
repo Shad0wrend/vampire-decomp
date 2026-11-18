@@ -10,7 +10,7 @@
 class CDisciplineProjectile : public CVampireProjectile
 {
 public:
-	CDisciplineProjectile *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000d800();
 	CDisciplineProjectile *sub_101d9e20();	// as in CKeepUpright (transplant)
 	void vfunc266(CBaseEntity *pOther);	// slot 266 "Touch": ignores other projectiles; for a solid-less touch hands the owner (+0x9c) of pOther to the effect manager (Hit) and ends the projectile

@@ -117,7 +117,7 @@ struct CGargoyleBaseUnit {
 void __cdecl sub_10009fc5(void *p);
 
 // TARGET: CPlayerPickupController::vfunc5
-CPlayerPickupController *CPlayerPickupController::vfunc5(unsigned int flags)
+CBaseEntity *CPlayerPickupController::vfunc5(unsigned int flags)
 {
 	((CGargoyleMemberUnit *)((char *)this + 0x450))->sub_10011a77();
 	((CGargoyleBaseUnit *)this)->sub_1000cb8a();

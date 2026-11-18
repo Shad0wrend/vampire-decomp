@@ -17,7 +17,7 @@ public:
 class CNPC_VHumanCombatant : public CBaseEntity
 {
 public:
-	CNPC_VHumanCombatant *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void vfunc103();	// as in CNPC_VAndreiBlood (transplant)

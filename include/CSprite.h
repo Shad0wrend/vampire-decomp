@@ -7,7 +7,7 @@
 class CSprite : public CBaseEntity
 {
 public:
-	CSprite *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	virtual void vfunc105(const char *pModelName);	// slot 105: warns when the model is not a sprite, then sets it (sub_101cf4a0)
 	void sub_1000cb8a();
 	virtual void vfunc173(int a, int b, int nUseType, int d);	// slot 173: when the state update (sub_100a98f0 with the use type and whether the sprite is not at frame 0x40) says so, turns the sprite off (sub_1042ef40) or updates its on/off state (sub_1042ef70)

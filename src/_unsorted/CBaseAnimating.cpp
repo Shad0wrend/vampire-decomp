@@ -57,7 +57,7 @@ int CBaseAnimating::vfunc81()
 void sub_100aa7b0(void *p);
 
 // TARGET: CBaseAnimating::vfunc5
-CBaseAnimating *CBaseAnimating::vfunc5(unsigned int flags)
+CBaseEntity *CBaseAnimating::vfunc5(unsigned int flags)
 {
 	sub_10004c3c();
 	if (flags & 1)

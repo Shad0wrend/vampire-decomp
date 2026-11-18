@@ -66,7 +66,7 @@ bool CGameSign::vfunc44(int a0)
 void sub_100aa7b0(void *p);
 
 // TARGET: CGameSign::vfunc5
-CGameSign *CGameSign::vfunc5(unsigned int flags)
+CBaseEntity *CGameSign::vfunc5(unsigned int flags)
 {
 	sub_1000726b();
 	if (flags & 1)

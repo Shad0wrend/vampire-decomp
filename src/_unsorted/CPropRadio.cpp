@@ -23,7 +23,7 @@ struct CPropRadioRecord {
 };
 void sub_100aa7b0(void *pEntity);
 
-CPropRadio *CPropRadio::vfunc5(unsigned int flags)
+CBaseEntity *CPropRadio::vfunc5(unsigned int flags)
 {
 	((CUtlVector<CPropRadioRecord> *)&m_pRadioData)->~CUtlVector<CPropRadioRecord>();
 	((CBaseAnimating *)this)->sub_10004c3c();

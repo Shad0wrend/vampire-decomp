@@ -11,7 +11,7 @@ public:
 
 	const char *m_pszItem;	// 0x598: classname of the item
 	COutputEvent m_out59c;	// 0x59c
-	void *vfunc5(unsigned int flags);	// slot 5: scalar deleting destructor (output events at +0x4a4 / +0x4bc / +0x568 / +0x580 / +0x59c, then 0x1009df20)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// slot 5: scalar deleting destructor (output events at +0x4a4 / +0x4bc / +0x568 / +0x580 / +0x59c, then 0x1009df20)
 public:
     virtual datamap_t * vfunc82();
     void sub_101c5080();	// as in CTriggerPlayerActivityLevel (transplant)

@@ -18,7 +18,7 @@ datamap_t * CBatSwarm_Teleport::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CBatSwarm_Teleport::vfunc5
-CBatSwarm_Teleport *CBatSwarm_Teleport::vfunc5(unsigned int flags)
+CBaseEntity *CBatSwarm_Teleport::vfunc5(unsigned int flags)
 {
 	sub_10004c3c();
 	if (flags & 1)

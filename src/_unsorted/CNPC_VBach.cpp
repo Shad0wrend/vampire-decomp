@@ -29,7 +29,7 @@ int CNPC_VBach::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VBach::vfunc5
-CNPC_VBach *CNPC_VBach::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VBach::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

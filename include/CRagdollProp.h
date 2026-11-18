@@ -74,7 +74,7 @@ public:
     virtual char vfunc276();
     bool vfunc32(int a);	// slot 32 override (CBaseEntity::vfunc32): false when the flags at +0x204 have bit 5, else whether this is the entity sub_104115b0(a, 0) returns
     void *sub_100952d0(int a);	// CBaseAnimating::sub_100952d0 (GetModelPtr-like), called directly
-    CRagdollProp *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
     void sub_10014317();	// as in CPhysForce (transplant)
     char m_pad03e0[0x730 - 0x3e0];
     int m_nBodies730;	// 0x730: the number of ragdoll bodies

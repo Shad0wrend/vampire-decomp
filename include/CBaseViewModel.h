@@ -21,7 +21,7 @@ class CBaseViewModel : public CBaseEntity
 public:
 	bool vfunc86(int a, int b, int c, int d, int e);	// slot 86 (ShouldTransmit-like): false with bit 6 of +0x19c; true when the owner entity's player (+0xa8) has the edict b
 
-	CBaseViewModel *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10007126();
 	CBaseEntity *vfunc267();	// as in CBasePlayer (transplant)
 	CBaseViewModel *sub_1042b760();	// as in CKeepUpright (transplant)

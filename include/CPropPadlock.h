@@ -6,7 +6,7 @@
 class CPropPadlock : public CBaseEntity
 {
 public:
-	CPropPadlock *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	CPropPadlock *sub_10225c70();	// as in CKeepUpright (transplant)
 	void vfunc103();	// "CPropPadlock::Spawn": the base spawn, +0x19c = 0xa0, removes flag 0x40000, solid 2 (SOLID_VPHYSICS), solid flags 8, then sub_100b3b00()
 	void vfunc113();	// slot 113: the base worker at 0x10003e63, the attached door's name (+0x124) through CBaseVampireSkillEntity::sub_102256f0, then +0x1fc = 2 when +0x210 is set, else 1

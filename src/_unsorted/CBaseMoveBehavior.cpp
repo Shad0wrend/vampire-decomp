@@ -393,7 +393,7 @@ float CBaseMoveBehavior::vfunc135(float flFrameTime)
 void sub_100aa7b0(void *p);
 
 // TARGET: CBaseMoveBehavior::vfunc5
-CBaseMoveBehavior *CBaseMoveBehavior::vfunc5(unsigned int flags)
+CBaseEntity *CBaseMoveBehavior::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

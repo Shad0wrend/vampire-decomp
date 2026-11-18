@@ -6,7 +6,7 @@
 class CFuncAreaPortalBase : public CBaseEntity
 {
 public:
-	CFuncAreaPortalBase *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100156b8();
 	void sub_1010c930();	// destructor body (stub 0x100156b8): sets the vtable, releases the portal's slot (m_nPortalSlot) in the global areaportal linked list at 0x10709680, then runs CBaseEntity's destructor body
 	void sub_1000cb8a();	// CBaseEntity destructor body, tail called

@@ -16,7 +16,7 @@ public:
 	void *operator new(unsigned int size) { return sub_100aa720(size); }
 	void vfunc103();	// slot 103 override: the game's 0x101c0820
 	int vfunc117();	// slot 117 override: the game's 0x100b4340
-	CPointEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (hides the base slot; VC6 has no covariant returns)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (hides the base slot; VC6 has no covariant returns)
 
 	// slots 134..240 are CBaseEntity's in the game; our CBaseEntity.h has them as plain members, so they start here
 	virtual void vfunc134();

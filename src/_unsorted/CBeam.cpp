@@ -73,7 +73,7 @@ Vector *CBeam::vfunc215()
 void sub_100aa7b0(void *p);
 
 // TARGET: CBeam::vfunc5
-CBeam *CBeam::vfunc5(unsigned int flags)
+CBaseEntity *CBeam::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

@@ -15,7 +15,7 @@ class CNPC_VCombatman : public CBaseEntity
 {
 public:
 	void vfunc103();	// slot 103: the 0x200000 condition-mask bit, CNPC_VHuman::vfunc103, then GetModelPtr(-1)
-	CNPC_VCombatman *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VCombatman *sub_1036fad0();	// as in CKeepUpright (transplant)

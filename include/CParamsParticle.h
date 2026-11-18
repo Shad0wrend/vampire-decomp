@@ -8,7 +8,7 @@ struct datamap_t;
 class CParamsParticle : public CPointEntity
 {
 public:
-	CParamsParticle *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void vfunc103();	// slot 103 (plain member here): CPointEntity::sub_101c0820(this), then the virtual slot 104
 	void vfunc104();	// slot 104 (plain member here): copies the particle name and precaches it with the engine
 	void sub_1000cb8a();

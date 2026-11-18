@@ -36,7 +36,7 @@ struct CaseToggleView
 void sub_100aa7b0(void *p);
 
 // TARGET: CLogicCase::vfunc5
-CLogicCase *CLogicCase::vfunc5(unsigned int flags)
+CBaseEntity *CLogicCase::vfunc5(unsigned int flags)
 {
 	((CaseToggleView *)this)->~CaseToggleView();
 	((CLogicalEntity *)this)->sub_1000cb8a();

@@ -6,7 +6,7 @@
 class CNPC_VTremere : public CBaseEntity
 {
 public:
-	CNPC_VTremere *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VTremere *sub_103b5a90();	// as in CKeepUpright (transplant)

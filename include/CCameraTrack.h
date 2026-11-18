@@ -21,7 +21,7 @@ class CCameraTrack : public CCameraKeyFrame
 {
 public:
 	CCameraTrack();	// 0x100cbe60
-	CCameraTrack *vfunc5(unsigned int flags);	// scalar deleting destructor
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor
 
 	void vfunc46();	// slot 46: like vfunc47 for the first timer: stores the engine time (slot 119 of the global at 0x1070b22c) at +0x4bc, the entity's handle at +0x4c0 and 1 at +0x4c4, sets up the member at +0x480, then SetNextThink(engine time) and ThinkSet(0x10014d58)
 

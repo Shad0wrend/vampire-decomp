@@ -18,7 +18,7 @@ datamap_t * CNPC_VCameraSecurity::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VCameraSecurity::vfunc5
-CNPC_VCameraSecurity *CNPC_VCameraSecurity::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VCameraSecurity::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

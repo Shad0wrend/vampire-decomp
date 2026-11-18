@@ -65,7 +65,7 @@ void CMathCounter::vfunc103()
 
 void sub_100aa7b0(void *p);
 
-CLogicalEntity *CMathCounter::vfunc5(unsigned int flags)
+CBaseEntity *CMathCounter::vfunc5(unsigned int flags)
 {
 	((COutputEvent *)((char *)this + 0x48c))->sub_100cd2d0();
 	((COutputEvent *)((char *)this + 0x474))->sub_100cd2d0();
@@ -73,6 +73,6 @@ CLogicalEntity *CMathCounter::vfunc5(unsigned int flags)
 	((CLogicalEntity *)this)->sub_1000cb8a();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity *)(this);
 }
 // END FUNCTION

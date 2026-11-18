@@ -40,7 +40,7 @@ int CNPC_VHumanCombatPatrol::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VHumanCombatPatrol::vfunc5
-CNPC_VHumanCombatPatrol *CNPC_VHumanCombatPatrol::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VHumanCombatPatrol::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

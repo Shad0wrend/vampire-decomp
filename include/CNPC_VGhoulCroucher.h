@@ -10,7 +10,7 @@ class CNPC_VGhoulCroucher : public CBaseEntity
 {
 public:
 	int vfunc546(int arg);
-	CNPC_VGhoulCroucher *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
 	CNPC_VGhoulCroucher *sub_1037aea0();	// constructor: the CNPC_VHumanCombatant constructor body, the item objects at +0x6674 / +0x668c and the object at +0x66a4, both vtable pointers (+0 and +0x19b0), scope trace, the variant bytes cleared
 	void sub_10386aa0();	// CNPC_VHumanCombatant constructor body (stub 0x100037f6), called directly
 	char vfunc615();	// slot 615 "CNPC_VGhoulCroucher::CanBeSetOnFire": scope trace (entity name), false when the byte at +0x6665 is set, else CAI_BaseNPCTroika::vfunc615

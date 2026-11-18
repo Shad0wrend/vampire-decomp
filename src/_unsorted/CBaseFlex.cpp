@@ -49,7 +49,7 @@ int CBaseFlex::vfunc79()
 void sub_100aa7b0(void *p);
 
 // TARGET: CBaseFlex::vfunc5
-CBaseFlex *CBaseFlex::vfunc5(unsigned int flags)
+CBaseEntity *CBaseFlex::vfunc5(unsigned int flags)
 {
 	sub_100152ad();
 	if (flags & 1)

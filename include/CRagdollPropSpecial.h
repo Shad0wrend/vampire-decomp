@@ -39,7 +39,7 @@ public:
 	float m_f1040;
 	float m_f1044;
 	float m_f1048;
-	CRagdollPropSpecial *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	bool vfunc73(CBaseEntity *pOther);	// slot 73 (the base slot is vfunc73()): false when pOther has a value at +0x9c and this entity's byte at +0x103c is set, else true
 	void sub_10014317();	// as in CPhysForce (transplant)
 	void sub_10157ca0(CBaseEntity *pOwner);	// when bit 4 of the spawn flags (+0x204) is set: stores pOwner's handle at +0x1050 (-1 for null), arms the think function sub_10015424 (SetThink), clears +0x1fc, sets +0x200 to 1 and schedules the next think at curtime + 0.001

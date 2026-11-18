@@ -25,7 +25,7 @@ struct CPropHackingScreenRecord	// 0x2c0 byte element of the array at +0xa14
 class CPropHacking : public CBaseEntity
 {
 public:
-	CPropHacking *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000befb();
 	CPropHacking *sub_10219d40();	// as in CKeepUpright (transplant)
 	virtual void vfunc113();	// slot 113 "CPropHacking::vfunc113": CBreakableProp::vfunc113, a new screen page (sub_1021b140(0)), the think function sub_1021a740 and its first think after a random second; the line delay at +0x9e4 is at least 2.0f

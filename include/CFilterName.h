@@ -7,7 +7,7 @@ class CFilterName : public CBaseFilter
 {
 public:
 	CFilterName() {}
-	CFilterName *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	bool vfunc241(CBaseEntity *pEnt);	// "CFilterName::PassesFilterImpl": the entity's name matches the filter name at +0x484 (case-insensitive; a trailing '*' makes it a prefix match)
 public:
 	datamap_t *vfunc82();

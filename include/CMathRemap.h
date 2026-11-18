@@ -22,5 +22,5 @@ public:
 public:
     virtual datamap_t * vfunc82();
     virtual void vfunc103();
-    CMathRemap *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 };

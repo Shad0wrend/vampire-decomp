@@ -73,7 +73,7 @@ bool CFuncKeyframedMover::vfunc223()
 #include "CFuncKeyframedMover.h"
 void sub_100aa7b0(void *p);
 
-CBaseKeyframedMover *CFuncKeyframedMover::vfunc5(unsigned int flags)
+CBaseEntity *CFuncKeyframedMover::vfunc5(unsigned int flags)
 {
 	m_Output5e8.sub_100cd2d0();
 	m_Output5d0.sub_100cd2d0();
@@ -86,6 +86,6 @@ CBaseKeyframedMover *CFuncKeyframedMover::vfunc5(unsigned int flags)
 	sub_1000cb8a();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity *)(this);
 }
 // END FUNCTION

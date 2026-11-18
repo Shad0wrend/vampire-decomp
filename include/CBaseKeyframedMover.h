@@ -17,7 +17,7 @@ class CBaseKeyframedMover : public CBaseToggle
 {
 public:
 	virtual void vfunc113();	// slot 113: CBaseEntity::vfunc113, then picks a keyframe by the direction at +0x560 and sets the move type (slot 93)
-	virtual CBaseKeyframedMover *vfunc5(unsigned int flags);	// scalar deleting destructor: the eight outputs (last to first), then the base body
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor: the eight outputs (last to first), then the base body
 	void sub_1000cb8a();	// destructor body (the CBaseToggle/CBaseEntity part)
 	void sub_10010c35();	// stub of 0x10223470
 	CKeyframeX *sub_10015217();	// stub of 0x10223700

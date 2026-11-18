@@ -29,7 +29,7 @@ const char *CNPC_VMoleman::sub_1039f620()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VMoleman::vfunc5
-CNPC_VMoleman *CNPC_VMoleman::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VMoleman::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

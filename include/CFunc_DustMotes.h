@@ -6,7 +6,7 @@
 class CFunc_DustMotes : public CBaseEntity
 {
 public:
-	CFunc_DustMotes *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10004fca();
 	CFunc_DustMotes *sub_10113c30();	// as in CKeepUpright (transplant)
 	char m_pad03e0[0x478 - 0x3e0];

@@ -217,7 +217,7 @@ void CSprite::vfunc173(int a, int b, int nUseType, int d)
 void sub_100aa7b0(void *p);
 
 // TARGET: CSprite::vfunc5
-CSprite *CSprite::vfunc5(unsigned int flags)
+CBaseEntity *CSprite::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

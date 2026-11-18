@@ -50,7 +50,7 @@ void CFuncIllusionary::vfunc103()
 void sub_100aa7b0(void *p);
 
 // TARGET: CFuncIllusionary::vfunc5
-CFuncIllusionary *CFuncIllusionary::vfunc5(unsigned int flags)
+CBaseEntity *CFuncIllusionary::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

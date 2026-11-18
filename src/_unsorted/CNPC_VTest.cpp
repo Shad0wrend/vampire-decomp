@@ -31,7 +31,7 @@ const char *CNPC_VTest::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VTest::vfunc5
-CNPC_VTest *CNPC_VTest::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VTest::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

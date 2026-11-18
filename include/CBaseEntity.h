@@ -40,7 +40,7 @@ public:
 	virtual char * vfunc2();
 	virtual char * vfunc3();
 	virtual void * vfunc4();
-	virtual void vfunc5(int a);	// slot 5: called with 1 by the entity removal (UTIL_Remove)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// slot 5: the scalar deleting destructor (called with 1 by the entity removal, UTIL_Remove)
 	virtual void vfunc6(bool check);	// "CBaseEntity::SetCheckUntouch": scope trace (entity name); when check is set increments the dword at +0x1ac and, unless bit 0 of the byte at +0x26b is set, sets bit 24 of +0x268 and calls sub_100f8e20(this); else clears bit 24 of +0x268
 	virtual void vfunc7();
 	virtual int vfunc8();

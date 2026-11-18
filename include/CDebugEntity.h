@@ -17,7 +17,7 @@ struct CDebugEntityRecord	// 0x90 byte element of the debug record list at +0x45
 class CDebugEntity : public CPointEntity
 {
 public:
-	CDebugEntity *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1009df20();
 public:
 	void vfunc104();

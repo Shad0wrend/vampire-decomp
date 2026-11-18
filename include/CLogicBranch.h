@@ -10,7 +10,7 @@ struct datamap_t;
 class CLogicBranch : public CLogicalEntity
 {
 public:
-	CLogicBranch *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	virtual datamap_t * vfunc82();
 
 	bool m_bInValue;	// 0x0450

@@ -40,7 +40,7 @@ int CNPC_VGuard1::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VGuard1::vfunc5
-CNPC_VGuard1 *CNPC_VGuard1::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VGuard1::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

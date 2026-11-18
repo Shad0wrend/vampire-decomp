@@ -71,7 +71,7 @@ CBaseEntity *CBaseViewModel::vfunc267()
 void sub_100aa7b0(void *p);
 
 // TARGET: CBaseViewModel::vfunc5
-CBaseViewModel *CBaseViewModel::vfunc5(unsigned int flags)
+CBaseEntity *CBaseViewModel::vfunc5(unsigned int flags)
 {
 	sub_10007126();
 	if (flags & 1)

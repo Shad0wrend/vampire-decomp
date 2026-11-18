@@ -40,7 +40,7 @@ int CNPC_VHunter::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VHunter::vfunc5
-CNPC_VHunter *CNPC_VHunter::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VHunter::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

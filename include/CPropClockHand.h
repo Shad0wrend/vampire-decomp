@@ -8,7 +8,7 @@
 class CPropClockHand : public CBaseEntity
 {
 public:
-	CPropClockHand *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10004c3c();
 	void sub_1012dbd0();	// updates the hand's angle once per engine tick: the time (since spawn, or the two floats of the source entity at +0x750), scaled by the mode, makes the angle of the axis, wrapped to 0..360, and SetAbsAngles (slot 218)
 	CPropClockHand *sub_1012d950();	// as in CKeepUpright (transplant)

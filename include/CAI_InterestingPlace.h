@@ -23,7 +23,7 @@ class CAI_InterestingPlace : public CBaseEntity
 {
 public:
 	virtual ~CAI_InterestingPlace();
-	CAI_InterestingPlace *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	virtual void vfunc103();	// Spawn-like: looks up the place type by the name at +0x544 (removes the entity with a warning when unknown), allocates the slot records (+0x580, count +0x584), turns the number at +0x574 (1..32) into a bit mask, clamps the value at +0x578 to 0..5
 	virtual void vfunc130(int a);	// the base implementation (CBaseEntity::vfunc130), then, when a type name is set, looks the place type up (removing the entity with a warning when unknown), then sub_102d9eb0
 	void sub_1000a25e();

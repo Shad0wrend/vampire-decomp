@@ -19,7 +19,7 @@ class CEnvPlayerSurfaceTrigger : public CPointEntity
 {
 public:
 	CEnvPlayerSurfaceTrigger() {}
-	CPointEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (VC6 has no covariant returns)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (VC6 has no covariant returns)
 	void sub_100108ed();
 	~CEnvPlayerSurfaceTrigger();	// the destructor body (stub 0x100108ed, 0x100fd850): sets the vtable, removes this entity's handle from the global handle list at 0x1070906c, destroys the two outputs, then sub_1009df20
 	void sub_1009df20();	// the base destructor body (stub 0x1000cb8a)

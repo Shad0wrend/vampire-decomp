@@ -43,7 +43,7 @@ public:
     virtual int vfunc80();
     virtual int vfunc117();
     virtual int vfunc42(int);
-    void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
 	char m_pad0468[0x4c8 - 0x468];
 	bool m_bSimulating;	// 0x04c8
 	char m_pad04c9[0x4cc - 0x4c9];

@@ -40,6 +40,6 @@ public:
 	virtual void vfunc134();	// slot 134 (0x103e20c0): ages the burn list at +0x450 (each record's float +0x18 -= curtime - m_n480), drops the expired ones, unions the live record positions into a bbox, sets the entity bounds/abs origin and flags slot 62, then burns every entity inside the box within 24 units through sub_103e2000; when nothing is alive triggers the owner handle (+0x488) and re-schedules +0x17c = curtime + 0.5	// slot 123: debug overlay, one box and text line per flame record of the list at +0x450 (count +0x45c, 0x1c byte records, the flame strength float at +0x18)
 	void vfunc103();	// as in CPhysConstraint (transplant)
 	void vfunc104();	// as in CPhysConstraint (transplant)
-	CFlameCluster *vfunc5(unsigned int flags);	// as in CNPC_VMingXiao (transplant)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CNPC_VMingXiao (transplant)
 	void sub_1009df20();	// as in CNPC_VMingXiao (transplant)
 };

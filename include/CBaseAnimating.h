@@ -129,7 +129,7 @@ public:
 	int vfunc253(int a, int b, int c);	// "CBaseAnimating::SelectHeaviestSequenceForStat": scope trace, then sub_1008dd30(a, -1)
 	int vfunc254(int a, int b, int c);	// "CBaseAnimating::SelectSameSequenceForStat": scope trace, then sub_1008de20(a, -1)
 	bool vfunc68(CBaseEntity *pOther);	// slot 68 "CBaseAnimating::ShouldIgnoreCollision": scope trace (entity name), returns the result of sub_10158b90(this, pOther); declared as a plain member
-	CBaseAnimating *vfunc5(unsigned int flags);	// as in CSimplePhysicsProp (transplant)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CSimplePhysicsProp (transplant)
 	void sub_10004c3c();	// as in CSimplePhysicsProp (transplant)
 	void sub_10091f10(const char *name, float value);	// slot 261 "CBaseAnimating::SetPoseParameter01": scope trace (entity name), then slot 260(LookupPoseParameter(name), value)
 	void vfunc241(char *pszOut, int *pEvent);	// slot 241 "CBaseAnimating::GetEventName" (0x1008c170, ret 8, plain member): scope trace (entity name or "NULL ENTITY"), then a switch on *pEvent (SPECIFIC 0, SCRIPTED 0x3e8, SHARED 0x7d0, NPC_*, WEAPON_*, CL_EVENT_* ...) that strcpy's the event's name into pszOut (an inline strcpy loop per case); the default case at 0x1008cb69 is not read yet

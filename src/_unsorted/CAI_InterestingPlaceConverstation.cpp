@@ -29,7 +29,7 @@ CAI_InterestingPlaceConverstation::CAI_InterestingPlaceConverstation()
 void __fastcall sub_102dce10(int *pVec);
 void __cdecl sub_100aa7b0(void *p);
 
-CPointEntity *CAI_InterestingPlaceConverstation::vfunc5(unsigned int flags)
+CBaseEntity *CAI_InterestingPlaceConverstation::vfunc5(unsigned int flags)
 {
 	CAI_IPVec *pVec = &m_vec518;
 	sub_102dce10((int *)pVec);
@@ -45,7 +45,7 @@ CPointEntity *CAI_InterestingPlaceConverstation::vfunc5(unsigned int flags)
 	sub_1000cb8a();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity *)(this);
 }
 // END FUNCTION
 

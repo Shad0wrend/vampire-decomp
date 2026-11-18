@@ -22,7 +22,7 @@ struct animevent_t;	// a tail-call override's parameter
 class CNPC_VHunter : public CNPC_VHumanCombatant
 {
 public:
-	CNPC_VHunter *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void vfunc103();	// slot 103: sub_1026dc00(0x200d00), then CNPC_VHumanCombatant::vfunc103

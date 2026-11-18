@@ -18,7 +18,7 @@ datamap_t * CNPC_Bullseye::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_Bullseye::vfunc5
-CNPC_Bullseye *CNPC_Bullseye::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_Bullseye::vfunc5(unsigned int flags)
 {
 	sub_10006c26();
 	if (flags & 1)

@@ -80,7 +80,7 @@ struct CGargoyleBaseUnit {
 void __cdecl sub_10009fc5(void *p);
 
 // TARGET: CLogicAuto::vfunc5
-CLogicAuto *CLogicAuto::vfunc5(unsigned int flags)
+CBaseEntity *CLogicAuto::vfunc5(unsigned int flags)
 {
 	((CGargoyleMemberUnit *)((char *)this + 0x450))->sub_10015708();
 	((CGargoyleBaseUnit *)this)->sub_1000cb8a();

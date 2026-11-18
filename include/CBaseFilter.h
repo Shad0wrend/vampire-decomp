@@ -11,7 +11,7 @@ class CBaseFilter : public CLogicalEntity
 {
 public:
 	CBaseFilter() {}
-	CBaseFilter *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10107860(inputdata_t *pInput);	// "InputTestActivator" input handler: slot 241 (PassesFilterImpl) of the input's activator, inverted by m_bNegated, fires m_OnPass or m_OnFail (activator = the input's activator, caller = this)
 
 	char m_bNegated;	// 0x450

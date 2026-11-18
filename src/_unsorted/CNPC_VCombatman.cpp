@@ -25,7 +25,7 @@ char *sub_1036fb30(void)
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VCombatman::vfunc5
-CNPC_VCombatman *CNPC_VCombatman::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VCombatman::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

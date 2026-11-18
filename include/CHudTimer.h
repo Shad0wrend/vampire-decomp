@@ -15,7 +15,7 @@ public:
 public:
     virtual int vfunc81();
     virtual int vfunc80();
-    CHudTimer *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 	char m_pad0450[0x46c - 0x450];
 	int m_nCountType;	// 0x046c
 	bool m_bIsPaused;	// 0x0470

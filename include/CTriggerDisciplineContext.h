@@ -19,7 +19,7 @@ public:
     virtual datamap_t * vfunc82();
     void sub_101c5080();	// as in CTriggerPlayerActivityLevel (transplant)
     void vfunc103();	// as in CTriggerPlayerActivityLevel (transplant)
-    void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
 };
 
 #define m_bDisabled55c m_bDisabled	// the byte at +0x55c is CBaseTrigger::m_bDisabled; the old name stays until the matched sources use the new one

@@ -55,7 +55,7 @@ void CPlatTrigger::vfunc175(CBaseEntity *pOther)
 void sub_100aa7b0(void *p);
 
 // TARGET: CPlatTrigger::vfunc5
-CPlatTrigger *CPlatTrigger::vfunc5(unsigned int flags)
+CBaseEntity *CPlatTrigger::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

@@ -14,7 +14,7 @@ int CFuncAreaPortalBase::vfunc117() { return (int)(((CBaseEntity *)this)->CBaseE
 void sub_100aa7b0(void *p);
 
 // TARGET: CFuncAreaPortalBase::vfunc5
-CFuncAreaPortalBase *CFuncAreaPortalBase::vfunc5(unsigned int flags)
+CBaseEntity *CFuncAreaPortalBase::vfunc5(unsigned int flags)
 {
 	sub_100156b8();
 	if (flags & 1)

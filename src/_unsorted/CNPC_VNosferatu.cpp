@@ -30,7 +30,7 @@ const char *CNPC_VNosferatu::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VNosferatu::vfunc5
-CNPC_VNosferatu *CNPC_VNosferatu::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VNosferatu::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

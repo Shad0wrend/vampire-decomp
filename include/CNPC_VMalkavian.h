@@ -7,7 +7,7 @@
 class CNPC_VMalkavian : public CNPC_VVampire
 {
 public:
-	CNPC_VMalkavian *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VMalkavian *sub_10389520();	// as in CKeepUpright (transplant)

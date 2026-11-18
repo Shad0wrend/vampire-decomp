@@ -51,7 +51,7 @@ CSun::CSun() : CBaseEntity(0)
 void sub_100aa7b0(void *p);
 
 // TARGET: CSun::vfunc5
-CSun *CSun::vfunc5(unsigned int flags)
+CBaseEntity *CSun::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

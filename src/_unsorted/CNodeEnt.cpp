@@ -170,7 +170,7 @@ void CNodeEnt::vfunc103()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNodeEnt::vfunc5
-CNodeEnt *CNodeEnt::vfunc5(unsigned int flags)
+CBaseEntity *CNodeEnt::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

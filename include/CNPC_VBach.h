@@ -11,7 +11,7 @@ struct animevent_t;	// a tail-call override's parameter
 class CNPC_VBach : public CBaseEntity
 {
 public:
-	CNPC_VBach *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	virtual void vfunc103();	// slot 103 "Spawn"
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)

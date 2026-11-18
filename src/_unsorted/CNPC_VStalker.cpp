@@ -40,7 +40,7 @@ int CNPC_VStalker::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VStalker::vfunc5
-CNPC_VStalker *CNPC_VStalker::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VStalker::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

@@ -10,7 +10,7 @@ struct inputdata_t;
 class CEnvShake : public CBaseEntity
 {
 public:
-	CEnvShake *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100117f2();
 	void sub_10102c80();	// 0x10102c80: vtable store, DestroySpring of the controller at +0x478 (env slot 40), then the CBaseEntity destructor body (stub 0x1000cb8a)
 	void vfunc103();	// "CBaseEntity::SetSolid"-style scope trace (entity name) around the collision property's SetSolid(0), then SetMoveType(0, 0) (slot 93); clears the dword at +0x45c when bit 0 of the byte at +0x204 is set

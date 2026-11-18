@@ -40,7 +40,7 @@ int CNPC_VCop::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VCop::vfunc5
-CNPC_VCop *CNPC_VCop::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VCop::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

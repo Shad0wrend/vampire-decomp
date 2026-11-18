@@ -7,7 +7,7 @@
 void sub_100aa7b0(void *p);
 
 // TARGET: CLogicalEntity::vfunc5
-CLogicalEntity *CLogicalEntity::vfunc5(unsigned int flags)
+CBaseEntity *CLogicalEntity::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

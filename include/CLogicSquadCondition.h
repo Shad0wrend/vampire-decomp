@@ -11,7 +11,7 @@ struct datamap_t;
 class CLogicSquadCondition : public CLogicalEntity
 {
 public:
-	CLogicSquadCondition *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 
 	const char *m_name450;	// +0x450: name of the condition
 	const char *m_name454;	// +0x454: name of the squad

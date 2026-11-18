@@ -19,7 +19,7 @@ datamap_t * CEnvShake::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CEnvShake::vfunc5
-CEnvShake *CEnvShake::vfunc5(unsigned int flags)
+CBaseEntity *CEnvShake::vfunc5(unsigned int flags)
 {
 	sub_100117f2();
 	if (flags & 1)

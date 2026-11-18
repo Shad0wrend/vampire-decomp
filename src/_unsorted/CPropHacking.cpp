@@ -30,7 +30,7 @@ unsigned char CPropHacking::sub_10219ec0()
 void sub_100aa7b0(void *p);
 
 // TARGET: CPropHacking::vfunc5
-CPropHacking *CPropHacking::vfunc5(unsigned int flags)
+CBaseEntity *CPropHacking::vfunc5(unsigned int flags)
 {
 	sub_1000befb();
 	if (flags & 1)

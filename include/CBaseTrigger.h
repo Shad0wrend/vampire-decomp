@@ -41,5 +41,5 @@ public:
     virtual datamap_t * vfunc82();
 public:
     virtual int vfunc117();
-    void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
 };

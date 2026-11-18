@@ -8,7 +8,7 @@
 class CNPC_Bullseye : public CBaseEntity
 {
 public:
-	CNPC_Bullseye *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	virtual void vfunc103();	// slot 103 (Spawn): precache, size +-16, solid / flags / think setup
 	void sub_10006c26();
 	CNPC_Bullseye *sub_103566a0();	// as in CKeepUpright (transplant)

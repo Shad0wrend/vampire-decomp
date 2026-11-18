@@ -7,7 +7,7 @@
 void sub_100aa7b0(void *p);
 
 // TARGET: CRagGib::vfunc5
-CRagGib *CRagGib::vfunc5(unsigned int flags)
+CBaseEntity *CRagGib::vfunc5(unsigned int flags)
 {
 	sub_10004c3c();
 	if (flags & 1)

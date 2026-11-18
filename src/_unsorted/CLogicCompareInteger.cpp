@@ -22,7 +22,7 @@ struct CListHolder100cdb50;
 void __fastcall sub_100cdb50(CListHolder100cdb50 *p);
 void sub_100aa7b0(void *p);
 
-CLogicalEntity *CLogicCompareInteger::vfunc5(unsigned int flags)
+CBaseEntity *CLogicCompareInteger::vfunc5(unsigned int flags)
 {
 	sub_100cdb50((CListHolder100cdb50 *)((char *)this + 0x488));
 	((COutputEvent *)((char *)this + 0x468))->sub_100cd2d0();
@@ -30,6 +30,6 @@ CLogicalEntity *CLogicCompareInteger::vfunc5(unsigned int flags)
 	((CLogicalEntity *)this)->sub_1000cb8a();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity *)(this);
 }
 // END FUNCTION

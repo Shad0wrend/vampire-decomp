@@ -22,7 +22,7 @@ public:
 	int vfunc142(CPropSlashableDamageInfo *pInfo);	// slot 142 (declared as a plain member) "CPropSlashable::OnTakeDamage": only a hit by an attacker wielding the knife (class name "item_w_knife") counts: subtracts the damage from the health (+0x210); at zero or below stores the broken state (+0x730) at +0x670, fires the output at +0x734 and returns 1, else 0
 public:
     virtual datamap_t * vfunc82();
-    CPropSlashable *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 	char m_pad03e0[0x730 - 0x3e0];
 	int m_nDamagedSkin;	// 0x0730
 	char m_pad0734[0x74c - 0x734];

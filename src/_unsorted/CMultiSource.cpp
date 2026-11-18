@@ -178,7 +178,7 @@ struct CGargoyleBaseUnit {
 void __cdecl sub_10009fc5(void *p);
 
 // TARGET: CMultiSource::vfunc5
-CMultiSource *CMultiSource::vfunc5(unsigned int flags)
+CBaseEntity *CMultiSource::vfunc5(unsigned int flags)
 {
 	((CGargoyleMemberUnit *)((char *)this + 0x550))->sub_10015708();
 	((CGargoyleBaseUnit *)this)->sub_1000cb8a();

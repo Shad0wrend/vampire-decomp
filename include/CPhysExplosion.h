@@ -19,7 +19,7 @@ public:
 	datamap_t *vfunc82();	// slot 82 override: the game's 0x1004ea50
 	CBaseEntity *sub_1004ebb0(CBaseEntity *pStart, float flRadius);	// the next entity in the sphere / by name
 	void sub_1004ec60(float flRadius);	// damages the entities around this one
-	CPhysExplosion *vfunc5(unsigned int flags);	// scalar deleting destructor (hides the base slot: VC6 has no covariant returns); the game's 0x10050550
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (hides the base slot: VC6 has no covariant returns); the game's 0x10050550
 	float m_damage;	// 0x0450
 	float m_radius;	// 0x0454
 	string_t m_targetEntityName;	// 0x0458

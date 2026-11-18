@@ -19,7 +19,7 @@ datamap_t *CAISound::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CAISound::vfunc5
-CAISound *CAISound::vfunc5(unsigned int flags)
+CBaseEntity *CAISound::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

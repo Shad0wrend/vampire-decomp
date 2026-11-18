@@ -86,7 +86,7 @@ void CItemGAstrolite::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, in
 void sub_100aa7b0(void *p);
 
 // TARGET: CItemGAstrolite::vfunc5
-CItemGAstrolite *CItemGAstrolite::vfunc5(unsigned int flags)
+CBaseEntity *CItemGAstrolite::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

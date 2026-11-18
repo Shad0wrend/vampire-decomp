@@ -130,7 +130,7 @@ void CBloodSplat::vfunc134()
 void sub_100aa7b0(void *p);
 
 // TARGET: CBloodSplat::vfunc5
-CBloodSplat *CBloodSplat::vfunc5(unsigned int flags)
+CBaseEntity *CBloodSplat::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

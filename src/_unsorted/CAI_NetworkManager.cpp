@@ -18,7 +18,7 @@ datamap_t * CAI_NetworkManager::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CAI_NetworkManager::vfunc5
-CAI_NetworkManager *CAI_NetworkManager::vfunc5(unsigned int flags)
+CBaseEntity *CAI_NetworkManager::vfunc5(unsigned int flags)
 {
 	sub_100107a3();
 	if (flags & 1)

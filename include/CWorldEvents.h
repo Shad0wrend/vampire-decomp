@@ -9,7 +9,7 @@
 class CWorldEvents : public CBaseEntity
 {
 public:
-	CWorldEvents *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10014c09();
 	CWorldEvents *sub_1023d930();	// the constructor below under its provisional name (called by the entity factories)
 	CWorldEvents();	// 0x1023d930: the base constructor, the 21 outputs, the vftable, SetSolid(0) and SetMoveType(0, 0), and the one-per-map check

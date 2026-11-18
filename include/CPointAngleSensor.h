@@ -13,7 +13,7 @@ public:
 	virtual void vfunc113();	// slot 113 "CPointAngleSensor::Activate": CBaseEntity::vfunc113, then resolves the target entity (name at +0x20c, handle at +0x454) and the look-at entity (name at +0x450, handle at +0x458) by name when their handles do not resolve
 	virtual void vfunc103();	// slot 103: re-arms the next think with the current time
 	virtual void vfunc134();	// slot 134 "CPointAngleSensor::Think": with both entities live, tests whether the target faces the look-at entity; once it has done so for the duration (+0x45c, counted from the stamp at +0x464) fires OnFacingLookat once (flag +0x468); stops facing: clears the flag and the stamp; always re-arms the next think (+0x17c) with the current time
-	CPointAngleSensor *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
 	void sub_1018d210(inputdata_t *pInput);	// "CPointAngleSensor::InputTest": fires OnFacingLookat or OnNotFacingLookat with the input's activator, by whether the target (handle at +0x454) faces the look-at entity (handle at +0x458) within the dot tolerance at +0x460
 	bool sub_1018cf20(CBaseEntity *pTarget, CBaseEntity *pLookAt, float flDotTolerance);	// whether pTarget faces pLookAt (stub 0x100062da)
 

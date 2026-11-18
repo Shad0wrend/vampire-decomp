@@ -65,7 +65,7 @@ public:
 	bool m_bList4f0Valid;	// 0x5ae: the +0x4f0 list parsed
 	bool m_bList538Valid;	// 0x5af: the +0x538 list parsed
 
-	CSoundScheme *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void vfunc113();	// slot 113: locks the global at 0x10750d78 with this (0x100115f9); then when the byte at +0x454 is set calls sub_1022b590(2.0), else CBaseEntity::sub_100ac4e0(0, 0.0, 0) (0x10007fe5)
 	void sub_1000bccb();
 	void sub_1000cb8a();

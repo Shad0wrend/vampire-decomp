@@ -11,7 +11,7 @@ public:
 
 	void sub_100a53d0(int a);
 	unsigned char sub_100fe6e0();	// CEnvWind::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)
-	CEnvWind *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 public:
     virtual datamap_t * vfunc82();

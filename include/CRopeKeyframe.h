@@ -7,7 +7,7 @@
 class CRopeKeyframe : public CBaseEntity
 {
 public:
-	CRopeKeyframe *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	virtual void vfunc77();	// slot 77 (0x1019e550): clears the rope flag bit 3 (+0x454) unless sub_100b5190 holds, then CBaseEntity::vfunc77
 	virtual void vfunc78();	// slot 78 (0x1019e590): sets the rope flag bit 3 when sub_100b5190 holds, then CBaseEntity::vfunc78
 	virtual void vfunc103();	// slot 103 (0x1019f540): CBaseEntity::vfunc103, then Precache (slot 104)

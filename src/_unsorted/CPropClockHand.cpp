@@ -18,7 +18,7 @@ datamap_t * CPropClockHand::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CPropClockHand::vfunc5
-CPropClockHand *CPropClockHand::vfunc5(unsigned int flags)
+CBaseEntity *CPropClockHand::vfunc5(unsigned int flags)
 {
 	sub_10004c3c();
 	if (flags & 1)

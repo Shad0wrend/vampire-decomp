@@ -7,7 +7,7 @@
 class CNPC_VCameraSecurity : public CBaseEntity
 {
 public:
-	CNPC_VCameraSecurity *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	CNPC_VCameraSecurity *sub_10369df0();	// as in CKeepUpright (transplant)
 	CBaseEntity *sub_10369e70();	// finds the camera entity named by m_pCameraName (cached as a handle, looked up again once stale), returns it or null

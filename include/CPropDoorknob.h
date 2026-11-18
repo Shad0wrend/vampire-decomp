@@ -7,7 +7,7 @@
 class CPropDoorknob : public CBaseEntity
 {
 public:
-	CPropDoorknob *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void vfunc273();	// slot 273 (declared as a plain member): plays the handle_locked / handle_unlocked sequence by sub_10224100, restarting the animation when the sequence (+0x6f0) changes, clearing it when there is none
 	char sub_10224100();
 	int sub_100056aa();	// CItemContainerLock::vfunc117 (stub 0x100056aa), called directly

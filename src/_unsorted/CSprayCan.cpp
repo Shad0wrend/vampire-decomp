@@ -61,7 +61,7 @@ int CSprayCan::vfunc117()
 void sub_100aa7b0(void *p);
 
 // TARGET: CSprayCan::vfunc5
-CSprayCan *CSprayCan::vfunc5(unsigned int flags)
+CBaseEntity *CSprayCan::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

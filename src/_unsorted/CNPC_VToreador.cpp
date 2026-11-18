@@ -31,7 +31,7 @@ const char *CNPC_VToreador::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VToreador::vfunc5
-CNPC_VToreador *CNPC_VToreador::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VToreador::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

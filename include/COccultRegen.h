@@ -7,7 +7,7 @@
 class COccultRegen : public CBaseEntity
 {
 public:
-	COccultRegen *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	COccultRegen *sub_103f90f0();	// as in CKeepUpright (transplant)
 	void sub_103f91d0();	// the owner (sub_10252240) heals as many times as the level at +0x918 says, counting it down

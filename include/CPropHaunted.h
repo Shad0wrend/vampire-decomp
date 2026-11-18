@@ -34,7 +34,7 @@ public:
 	virtual void vfunc266(CBaseEntity *pOther);	// slot 266: reacts to the entity that hit the prop
 	virtual void vfunc103();	// slot 103: CBreakableProp::vfunc103, then the physics setup (slot 225, SetMoveType, VPhysicsInitNormal, wakes the object)
 	void sub_1018f340();	// CBreakableProp::vfunc103 (stub 0x10012eef), called directly
-	CPropHaunted *vfunc5(unsigned int flags);	// slot 5: scalar deleting destructor (output events at +0x730 / +0x748 / +0x7d4 / +0x7ec / +0x804, then CBaseAnimating::sub_1008b3c0)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// slot 5: scalar deleting destructor (output events at +0x730 / +0x748 / +0x7d4 / +0x7ec / +0x804, then CBaseAnimating::sub_1008b3c0)
 	void sub_1008b3c0();	// CBaseAnimating::sub_1008b3c0 (stub 0x10004c3c), called directly
 	CPropHaunted *sub_102139f0();
 	char vfunc68(int a);	// slot 68: 1 while the state at +0x200 is 2, else CBaseAnimating::vfunc68

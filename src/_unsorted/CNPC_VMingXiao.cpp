@@ -62,7 +62,7 @@ int CNPC_VMingXiao::vfunc451()
 
 void sub_100aa7b0(void *pEntity);
 
-CNPC_VMingXiao *CNPC_VMingXiao::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VMingXiao::vfunc5(unsigned int flags)
 {
 	((CUtlVector<int> *)((char *)this + 0x665c))->~CUtlVector<int>();
 	sub_1028d610();

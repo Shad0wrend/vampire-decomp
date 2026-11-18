@@ -31,7 +31,7 @@ class CSoundEnt : public CPointEntity
 {
 public:
 	CSoundEnt() {}
-	CPointEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (VC6 has no covariant returns)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (VC6 has no covariant returns)
 	void sub_1000cb8a();
 	int sub_101bab50();	// "CSoundEnt::IAllocSound": pops the first sound of the free list (+0x450) onto the active list (+0x454) and returns its index; -1 with a message when the free list is empty
 	void sub_101baf80();	// "CSoundEnt::Initialize" (stub 0x10004985)

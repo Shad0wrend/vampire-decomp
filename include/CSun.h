@@ -8,7 +8,7 @@
 class CSun : public CBaseEntity
 {
 public:
-	CSun *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	CSun();	// the constructor (0x101c24b0)
 	CSun *sub_101c24b0();	// as in CKeepUpright (transplant)

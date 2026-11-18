@@ -15,7 +15,7 @@ int CWeaponIWritten::vfunc360()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponIWritten::vfunc5
-CWeaponIWritten *CWeaponIWritten::vfunc5(unsigned int flags)
+CBaseEntity *CWeaponIWritten::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

@@ -27,7 +27,7 @@ struct CGargoyleBaseUnit {
 void __cdecl sub_10009fc5(void *p);
 
 // TARGET: CEnvSpark::vfunc5
-CEnvSpark *CEnvSpark::vfunc5(unsigned int flags)
+CBaseEntity *CEnvSpark::vfunc5(unsigned int flags)
 {
 	((CGargoyleMemberUnit *)((char *)this + 0x460))->sub_10015708();
 	((CGargoyleBaseUnit *)this)->sub_1000cb8a();

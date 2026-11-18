@@ -22,5 +22,5 @@ public:
 	COutputEvent m_OnShowMessage464;	// 0x464
 public:
     virtual datamap_t * vfunc82();
-    CMessage *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 };

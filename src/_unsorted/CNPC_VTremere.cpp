@@ -31,7 +31,7 @@ const char *CNPC_VTremere::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VTremere::vfunc5
-CNPC_VTremere *CNPC_VTremere::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VTremere::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

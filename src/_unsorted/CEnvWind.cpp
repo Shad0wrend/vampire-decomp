@@ -134,7 +134,7 @@ void CUnknown100fea60::sub_100fea60(CBaseEntity *pOther)
 void sub_100aa7b0(void *p);
 
 // TARGET: CEnvWind::vfunc5
-CEnvWind *CEnvWind::vfunc5(unsigned int flags)
+CBaseEntity *CEnvWind::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

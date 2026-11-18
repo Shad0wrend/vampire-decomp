@@ -633,7 +633,7 @@ void CBaseGrenade::vfunc412(int value)
 void sub_100aa7b0(void *p);
 
 // TARGET: CBaseGrenade::vfunc5
-CBaseGrenade *CBaseGrenade::vfunc5(unsigned int flags)
+CBaseEntity *CBaseGrenade::vfunc5(unsigned int flags)
 {
 	sub_1000a67d();
 	if (flags & 1)

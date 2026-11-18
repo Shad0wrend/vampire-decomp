@@ -236,7 +236,7 @@ void CWorld::vfunc231(int a0, int a1, int a2, int a3)
 void sub_100aa7b0(void *p);
 
 // TARGET: CWorld::vfunc5
-CWorld *CWorld::vfunc5(unsigned int flags)
+CBaseEntity *CWorld::vfunc5(unsigned int flags)
 {
 	sub_1000fe98();
 	if (flags & 1)

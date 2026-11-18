@@ -48,7 +48,7 @@ struct CGargoyleBaseUnit {
 void __cdecl sub_10009fc5(void *p);
 
 // TARGET: CNPC_VZombie::vfunc5
-CNPC_VZombie *CNPC_VZombie::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VZombie::vfunc5(unsigned int flags)
 {
 	((CGargoyleMemberUnit *)((char *)this + 0x66e8))->sub_10015708();
 	((CGargoyleBaseUnit *)this)->sub_100123af();

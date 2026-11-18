@@ -8,7 +8,7 @@ struct Task_t;	// a tail-call override's parameter
 class CNPC_VPlaceholder : public CBaseEntity
 {
 public:
-	CNPC_VPlaceholder *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VPlaceholder *sub_103a40c0();	// as in CKeepUpright (transplant)

@@ -46,7 +46,7 @@ int CWeaponUnarmed::sub_103f5310()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponUnarmed::vfunc5
-CWeaponUnarmed *CWeaponUnarmed::vfunc5(unsigned int flags)
+CBaseEntity *CWeaponUnarmed::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

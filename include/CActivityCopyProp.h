@@ -7,7 +7,7 @@
 class CActivityCopyProp : public CBaseEntity
 {
 public:
-	CActivityCopyProp *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10004c3c();
 	CActivityCopyProp *sub_1018e1c0();	// as in CKeepUpright (transplant)
 	void vfunc103();	// slot 103 (plain member): the virtual slot 66 of this, then CBaseProp::vfunc103

@@ -115,7 +115,7 @@ struct CGargoyleBaseUnit {
 void __cdecl sub_10009fc5(void *p);
 
 // TARGET: CPropSlashable::vfunc5
-CPropSlashable *CPropSlashable::vfunc5(unsigned int flags)
+CBaseEntity *CPropSlashable::vfunc5(unsigned int flags)
 {
 	((CGargoyleMemberUnit *)((char *)this + 0x734))->sub_10015708();
 	((CGargoyleBaseUnit *)this)->sub_10004c3c();

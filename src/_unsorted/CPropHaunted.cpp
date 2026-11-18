@@ -19,7 +19,7 @@ datamap_t * CPropHaunted::vfunc82()
 
 void sub_100aa7b0(void *);
 
-CPropHaunted *CPropHaunted::vfunc5(unsigned int flags)
+CBaseEntity *CPropHaunted::vfunc5(unsigned int flags)
 {
 	((COutputEvent *)((char *)this + 0x804))->sub_100cd2d0();
 	((COutputEvent *)((char *)this + 0x7ec))->sub_100cd2d0();

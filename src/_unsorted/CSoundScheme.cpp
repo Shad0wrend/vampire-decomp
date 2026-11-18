@@ -18,7 +18,7 @@ datamap_t * CSoundScheme::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CSoundScheme::vfunc5
-CSoundScheme *CSoundScheme::vfunc5(unsigned int flags)
+CBaseEntity *CSoundScheme::vfunc5(unsigned int flags)
 {
 	sub_1000bccb();
 	if (flags & 1)

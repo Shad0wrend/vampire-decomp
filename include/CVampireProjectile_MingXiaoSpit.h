@@ -7,7 +7,7 @@
 class CVampireProjectile_MingXiaoSpit : public CVampireProjectile
 {
 public:
-	CVampireProjectile_MingXiaoSpit *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000a21d();
 	~CVampireProjectile_MingXiaoSpit();	// 0x103f1840: ends the slow effect on the target's character and drops the handle
 	CVampireProjectile_MingXiaoSpit *sub_103f17d0();	// as in CKeepUpright (transplant)

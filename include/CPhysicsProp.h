@@ -11,7 +11,7 @@ public:
 	virtual bool vfunc73(CBaseEntity *pOther);	// slot 73: (m_flags204 & 2) == 2
 	void vfunc103();	// slot 103 (declared as a plain member: the base slot has no argument here): stub 0x10013782, called directly by CPhysicsPropContested::vfunc103
 	void vfunc226(int a);	// slot 226 override: base implementation, then sets the byte at +0x1b1
-	CPhysicsProp *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CBaseCineCam (transplant)
 	virtual bool vfunc68(void *pOther);	// slot 68 override: true for a pOther with an owner object (+0x9c) when bit 2 of +0x204 is set, or with a player object (+0xa8) when sub_100b39c0 holds, else CBaseAnimating::vfunc68
 	bool sub_1008bfe0(void *pOther);	// CBaseAnimating::vfunc68 (stub 0x10003c1a), called directly
 	char sub_100b39c0();

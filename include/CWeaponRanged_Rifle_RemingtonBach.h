@@ -6,7 +6,7 @@
 class CWeaponRanged_Rifle_RemingtonBach : public CWeaponRanged_Rifle_Remington
 {
 public:
-	CWeaponRanged_Rifle_RemingtonBach *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10013a57();
 public:
 	int vfunc80();

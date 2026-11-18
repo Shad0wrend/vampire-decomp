@@ -8,7 +8,7 @@
 class CPointCamera : public CBaseEntity
 {
 public:
-	CPointCamera *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	CPointCamera *sub_1018c220();	// as in CKeepUpright (transplant)
 	void sub_1018c2b0();	// called directly (stub 0x1000a47f), refreshes the byte at +0x458

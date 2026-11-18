@@ -31,7 +31,7 @@ int CBaseDMStart::vfunc147(int a)
 void sub_100aa7b0(void *p);
 
 // TARGET: CBaseDMStart::vfunc5
-CBaseDMStart *CBaseDMStart::vfunc5(unsigned int flags)
+CBaseEntity *CBaseDMStart::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

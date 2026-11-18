@@ -420,7 +420,7 @@ bool CPayphone::vfunc45(CBaseEntity *pOther, int a, int b, int c, int d, int e, 
 void sub_100aa7b0(void *p);
 
 // TARGET: CPayphone::vfunc5
-CPayphone *CPayphone::vfunc5(unsigned int flags)
+CBaseEntity *CPayphone::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

@@ -8,7 +8,7 @@
 class CParamsExplosion : public CPointEntity
 {
 public:
-	CParamsExplosion *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	CParamsExplosion *sub_10104320();	// as in CKeepUpright (transplant)
 	void vfunc104();	// slot 104 "CParamsExplosion::Precache": expands the model name (+0x454) and copies it to the 0x80 byte buffer at +0x491, the sound name (+0x458) to the buffer at +0x511, builds the flag word at +0x47c from the three bytes at +0x450..+0x452, copies the dword at +0x204 to +0x45c, then precaches the sound (sound system) and the model (engine slot 17) when their buffers are not empty

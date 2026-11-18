@@ -12,7 +12,7 @@ class CGameSign : public CBaseEntity
 {
 public:
 	CGameSign();	// 0x10212530
-	CGameSign *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10212650();	// destructor body: vptr = CGameSign::vftable (0x10488d7c), operator delete(m_pszFile450), tail call to the CBaseEntity destructor body 0x1009df20
 	void sub_1000726b();
 	CGameSign *sub_10212530();	// as in CKeepUpright (transplant)

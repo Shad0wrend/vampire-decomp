@@ -22,7 +22,7 @@ class CPhysicsAnimlink : public CBaseEntity
 public:
 	void sub_1014f3f0();	// the think set by Attach (0x1014f3f0)
 	void vfunc103();	// slot 103 \"CPhysicsAnimlink::Activate\": finds the animating entity (m_psz450) and the bone (m_psz454), then the physics object (the entity m_psz458, or the ragdoll body named m_psz45c), and attaches them (sub_1014f210)
-	CPhysicsAnimlink *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000144c();
 	CPhysicsAnimlink *sub_1014eef0();	// as in CKeepUpright (transplant)
 	void sub_1014f210(CBaseAnimating *pAnimating, int nBone, void *pPhysObject, int a, int b);	// "CPhysicsAnimlink::Attach": the animating entity ignores collisions with the physics object's game entity, the link remembers the animating handle (+0x478), the bone (+0x47c), the physics object (+0x4c4), a shadow controller (+0x4c0, max speeds 1e8) and the 4x4 matrix (+0x480) made from (b, a); thinks right away

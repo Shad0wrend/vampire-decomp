@@ -15,5 +15,5 @@ public:
     virtual datamap_t * vfunc82();
     void sub_101c5080();	// as in CTriggerPlayerActivityLevel (transplant)
     void vfunc103();	// as in CTriggerPlayerActivityLevel (transplant)
-    void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
 };

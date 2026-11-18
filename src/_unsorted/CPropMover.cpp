@@ -18,7 +18,7 @@ int CPropMover::vfunc117()
 void sub_100aa7b0(void *p);
 
 // TARGET: CPropMover::vfunc5
-CPropMover *CPropMover::vfunc5(unsigned int flags)
+CBaseEntity *CPropMover::vfunc5(unsigned int flags)
 {
 	sub_10004c3c();
 	if (flags & 1)

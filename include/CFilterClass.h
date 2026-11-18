@@ -7,7 +7,7 @@ class CFilterClass : public CBaseFilter
 {
 public:
 	CFilterClass() {}
-	CFilterClass *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	bool vfunc241(CBaseEntity *pEntity);
 public:
 	datamap_t *vfunc82();

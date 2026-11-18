@@ -7,7 +7,7 @@ class CLogicVisible : public CBaseEntity
 {
 public:
 	CLogicVisible *sub_1020f990();
-	CLogicVisible *vfunc5(unsigned int flags);	// scalar deleting destructor, declared as a plain member
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor, declared as a plain member
 	void sub_1000cb8a();	// destructor body of the base class
 public:
     virtual datamap_t * vfunc82();

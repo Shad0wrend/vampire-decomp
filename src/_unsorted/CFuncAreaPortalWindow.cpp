@@ -37,7 +37,7 @@ datamap_t * CFuncAreaPortalWindow::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CFuncAreaPortalWindow::vfunc5
-CFuncAreaPortalWindow *CFuncAreaPortalWindow::vfunc5(unsigned int flags)
+CBaseEntity *CFuncAreaPortalWindow::vfunc5(unsigned int flags)
 {
 	sub_100154bf();
 	if (flags & 1)

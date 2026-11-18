@@ -27,7 +27,7 @@ int CPhysicsAnimlink::vfunc117()
 void sub_100aa7b0(void *p);
 
 // TARGET: CPhysicsAnimlink::vfunc5
-CPhysicsAnimlink *CPhysicsAnimlink::vfunc5(unsigned int flags)
+CBaseEntity *CPhysicsAnimlink::vfunc5(unsigned int flags)
 {
 	sub_1000144c();
 	if (flags & 1)

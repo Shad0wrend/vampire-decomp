@@ -34,7 +34,7 @@ CBaseEntity *CPropDestructable::vfunc5(unsigned int flags)
 	sub_1008b3c0();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity *)(this);
 }
 // END FUNCTION
 

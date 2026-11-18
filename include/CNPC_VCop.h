@@ -23,7 +23,7 @@ struct animevent_t;	// a tail-call override's parameter
 class CNPC_VCop : public CNPC_VHumanCombatant
 {
 public:
-	CNPC_VCop *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	void vfunc103();	// slot 103: clears the target at +0x6668, calls CNPC_VHumanCombatant::vfunc103, counts the global 0x1093acac and sets the flags at +0x6671 / +0x6672

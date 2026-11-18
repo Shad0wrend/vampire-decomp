@@ -19,7 +19,7 @@ datamap_t * CKeepUpright::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CKeepUpright::vfunc5
-CKeepUpright *CKeepUpright::vfunc5(unsigned int flags)
+CBaseEntity *CKeepUpright::vfunc5(unsigned int flags)
 {
 	sub_100057c2();
 	if (flags & 1)

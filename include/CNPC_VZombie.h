@@ -571,6 +571,6 @@ public:
 	virtual void vfunc578();
 	virtual void vfunc579();
 	virtual int vfunc580();
-	CNPC_VZombie *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 	char m_pad66e8[0x6700 - 0x66e8];
 };

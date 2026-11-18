@@ -19,7 +19,7 @@ class CPhysForce : public CBaseEntity
 {
 public:
 	CPhysForce();	// 0x100264e0: CBaseEntity(0), handle -1 (+0x460), the motion record's vftable (+0x464), own vftable, controller null
-	CPhysForce *vfunc5(unsigned int flags);	// scalar deleting destructor
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor
 	void vfunc130(int a);	// slot 130: CBaseEntity::vfunc130(a), then the controller's slot 1 with the motion record
 
 	void sub_10027b60(float flScale);	// input handler body (called by the inputdata_t wrapper 0x10027890 with the float value): attaches the force when there is no controller, scales the motion record (+0x464) by flScale and runs the controller's slot 7

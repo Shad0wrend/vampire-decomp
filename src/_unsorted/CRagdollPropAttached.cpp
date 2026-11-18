@@ -9,7 +9,7 @@ struct SPhysEnv { virtual void v0(); virtual void v1(); virtual void v2(); virtu
 extern SPhysEnv *g_10723940;
 extern char vt_1046e23c[];
 void sub_100aa7b0(void *p);
-CRagdollProp *CRagdollPropAttached::vfunc5(unsigned int flags)
+CBaseEntity *CRagdollPropAttached::vfunc5(unsigned int flags)
 {
     *(int *)this = (int)vt_1046e23c;
     g_10723940->v23(m_pPhysObj1060);
@@ -17,7 +17,7 @@ CRagdollProp *CRagdollPropAttached::vfunc5(unsigned int flags)
     sub_10014317();
     if (flags & 1)
         sub_100aa7b0(this);
-    return this;
+    return (CBaseEntity *)(this);
 }
 // END FUNCTION
 

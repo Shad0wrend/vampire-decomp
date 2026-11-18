@@ -12,7 +12,7 @@ class CBeam : public CBaseEntity
 {
 public:
 	CBeam();	// 0x100bac50: base constructor (0), the ten beam entity handles at +0x468 and the one at +0x4e4 set to -1
-	CBeam *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	int vfunc117();	// slot 117 override: the game's 0x100bac90
 	virtual void vfunc87(void *pCheckTransmitInfo);	// "CBeam::SetTransmit"-like: unless the info's bit for this edict is set, base SetTransmit, then the same call on each of the ten attached entities (handles from +0x468)
 	virtual void vfunc103();	// slot 103: move type none (slot 93(0, 0)), scope-traced SetSolid(0) on the collision property at +0x270, the dword at +0x16c = 2, then slot 104

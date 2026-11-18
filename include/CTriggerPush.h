@@ -14,7 +14,7 @@ public:
 	void sub_1000350d();	// CBaseEntity::vfunc103 (stub 0x1000350d), called directly
 public:
     virtual datamap_t * vfunc82();
-    void *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CTriggerElectricBugaloo (transplant)
 	char m_pad0598[0x59c - 0x598];
 	float m_flTargetSpeed;	// 0x059c
 	char m_pad05a0[0x5a4 - 0x5a0];

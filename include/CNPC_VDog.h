@@ -10,7 +10,7 @@ struct CVAnimalArg;	// a tail-call override's parameter
 class CNPC_VDog : public CNPC_VAnimal
 {
 public:
-	CNPC_VDog *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	void vfunc433();	// slot 433 "RunTask"-like dog check (scope: none)
 	void sub_102b27f0();	// CAI_BaseNPCTroika::vfunc433 (stub 0x10013f2f), called directly

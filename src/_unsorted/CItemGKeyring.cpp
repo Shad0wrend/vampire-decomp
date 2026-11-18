@@ -57,7 +57,7 @@ CItemGKeyring *CItemGKeyring::sub_10407b30()
 
 void sub_100aa7b0(void *pEntity);
 
-CItemGKeyring *CItemGKeyring::vfunc5(unsigned int flags)
+CBaseEntity *CItemGKeyring::vfunc5(unsigned int flags)
 {
 	((CUtlVector<int> *)((char *)this + 0x914))->~CUtlVector<int>();
 	((CBaseCombatWeapon *)this)->sub_10250c50();

@@ -48,12 +48,12 @@ CEnvPlayerSurfaceTrigger::~CEnvPlayerSurfaceTrigger()
 void sub_100aa7b0(void *p);
 
 // TARGET: CEnvPlayerSurfaceTrigger::vfunc5
-CPointEntity *CEnvPlayerSurfaceTrigger::vfunc5(unsigned int flags)
+CBaseEntity *CEnvPlayerSurfaceTrigger::vfunc5(unsigned int flags)
 {
 	sub_100108ed();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity *)(this);
 }
 // END FUNCTION
 

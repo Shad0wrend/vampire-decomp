@@ -68,7 +68,7 @@ struct CBaseEntityDtor
 
 void sub_100aa7b0(void *p);
 
-CCameraKeyFrame *CCameraKeyFrame::vfunc5(unsigned int flags)
+CBaseEntity *CCameraKeyFrame::vfunc5(unsigned int flags)
 {
 	((CUnknownMember10015708 *)((char *)this + 0x498))->sub_10015708();
 	((CUnknownMember10015708 *)((char *)this + 0x480))->sub_10015708();

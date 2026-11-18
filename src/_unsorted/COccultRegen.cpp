@@ -18,7 +18,7 @@ datamap_t * COccultRegen::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: COccultRegen::vfunc5
-COccultRegen *COccultRegen::vfunc5(unsigned int flags)
+CBaseEntity *COccultRegen::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)

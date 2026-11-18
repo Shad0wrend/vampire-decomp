@@ -1413,7 +1413,7 @@ bool CBaseCombatCharacter::vfunc366(int a, int b, int c)
 void sub_100aa7b0(void *p);
 
 // TARGET: CBaseCombatCharacter::vfunc5
-CBaseCombatCharacter *CBaseCombatCharacter::vfunc5(unsigned int flags)
+CBaseEntity *CBaseCombatCharacter::vfunc5(unsigned int flags)
 {
 	sub_100078c4();
 	if (flags & 1)

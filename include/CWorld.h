@@ -25,7 +25,7 @@ public:
     virtual void vfunc104();    // slot 104: its own (0x1023c020)
     virtual int vfunc126(int a);    // slot 126: its own (0x1023b5e0)
     virtual int vfunc127(int a);    // slot 127: its own (0x1023b600)
-    CWorld *vfunc5(unsigned int flags);    // as in CPhysForce (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);    // as in CPhysForce (transplant)
     void sub_1000fe98();    // as in CPhysForce (transplant)
     CWorld *sub_1023b840();    // as in CKeepUpright (transplant)
     virtual bool vfunc110(const char *key, const char *value);    // "CWorld::KeyValue": skyname / sounds / WaveHeight / newunit / world_mins / world_maxs, else CBaseEntity::KeyValue

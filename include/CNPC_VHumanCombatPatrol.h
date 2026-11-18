@@ -9,7 +9,7 @@ class CEntityVSlots;
 class CNPC_VHumanCombatPatrol : public CBaseEntity
 {
 public:
-	CNPC_VHumanCombatPatrol *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VHumanCombatPatrol *sub_103876d0();	// as in CKeepUpright (transplant)

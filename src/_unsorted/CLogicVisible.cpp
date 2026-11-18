@@ -26,7 +26,7 @@ struct CLogicVisibleItem {
     void sub_10015708();
 };
 
-CLogicVisible *CLogicVisible::vfunc5(unsigned int flags)
+CBaseEntity *CLogicVisible::vfunc5(unsigned int flags)
 {
     CLogicVisibleVec *pVec = (CLogicVisibleVec *)((char *)this + 0x4a0);
     pVec->m_Size = 0;

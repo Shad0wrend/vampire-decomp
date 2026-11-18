@@ -74,7 +74,7 @@ void CPointTeleport::vfunc113()
 void sub_100aa7b0(void *p);
 
 // TARGET: CPointTeleport::vfunc5
-CPointTeleport *CPointTeleport::vfunc5(unsigned int flags)
+CBaseEntity *CPointTeleport::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

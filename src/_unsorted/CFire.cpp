@@ -98,7 +98,7 @@ struct CBaseEntityDtor
 
 void sub_100aa7b0(void *p);
 
-CFire *CFire::vfunc5(unsigned int flags)
+CBaseEntity *CFire::vfunc5(unsigned int flags)
 {
 	((CUnknownMember10015708 *)((char *)this + 0x4ac))->sub_10015708();
 	((CUnknownMember10015708 *)((char *)this + 0x494))->sub_10015708();

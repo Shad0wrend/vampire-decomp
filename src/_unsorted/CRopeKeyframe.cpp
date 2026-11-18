@@ -95,7 +95,7 @@ unsigned char CRopeKeyframe::sub_1019dd70()
 void sub_100aa7b0(void *p);
 
 // TARGET: CRopeKeyframe::vfunc5
-CRopeKeyframe *CRopeKeyframe::vfunc5(unsigned int flags)
+CBaseEntity *CRopeKeyframe::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

@@ -49,7 +49,7 @@ void CParamsParticle::vfunc104()
 void sub_100aa7b0(void *p);
 
 // TARGET: CParamsParticle::vfunc5
-CParamsParticle *CParamsParticle::vfunc5(unsigned int flags)
+CBaseEntity *CParamsParticle::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

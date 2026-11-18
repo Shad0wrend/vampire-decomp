@@ -58,7 +58,7 @@ float __fastcall sub_100cbf70(void *pSelf)
 
 void sub_100aa7b0(void *p);
 
-CCameraTrack *CCameraTrack::vfunc5(unsigned int flags)
+CBaseEntity *CCameraTrack::vfunc5(unsigned int flags)
 {
 	((CCameraTrackMember *)((char *)this + 0x4f4))->sub_10015708();
 	((CCameraTrackMember *)((char *)this + 0x498))->sub_10015708();

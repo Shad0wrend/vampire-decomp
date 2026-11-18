@@ -30,7 +30,7 @@ int CGib::vfunc117()
 void sub_100aa7b0(void *p);
 
 // TARGET: CGib::vfunc5
-CGib *CGib::vfunc5(unsigned int flags)
+CBaseEntity *CGib::vfunc5(unsigned int flags)
 {
 	sub_10004c3c();
 	if (flags & 1)

@@ -6,7 +6,7 @@
 class CNPC_VToreador : public CBaseEntity
 {
 public:
-	CNPC_VToreador *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	CNPC_VToreador *sub_103b52f0();	// as in CKeepUpright (transplant)

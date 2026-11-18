@@ -10,7 +10,7 @@ struct animevent_t;	// a tail-call override's parameter
 class CNPC_VYukie : public CBaseEntity
 {
 public:
-	CNPC_VYukie *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)
 	int vfunc404(CBaseEntity *pEnt);	// slot 404: 0 for null, else CAI_BaseNPCTroika::vfunc404

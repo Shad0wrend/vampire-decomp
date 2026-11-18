@@ -17,7 +17,7 @@ datamap_t * CBaseKeyframedMover::vfunc82()
 #include "CBaseKeyframedMover.h"
 void sub_100aa7b0(void *p);
 
-CBaseKeyframedMover *CBaseKeyframedMover::vfunc5(unsigned int flags)
+CBaseEntity *CBaseKeyframedMover::vfunc5(unsigned int flags)
 {
 	m_Output5e8.sub_100cd2d0();
 	m_Output5d0.sub_100cd2d0();

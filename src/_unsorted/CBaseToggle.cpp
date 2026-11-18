@@ -61,7 +61,7 @@ struct CBaseEntityDtor
 
 void sub_100aa7b0(void *p);
 
-CBaseToggle *CBaseToggle::vfunc5(unsigned int flags)
+CBaseEntity *CBaseToggle::vfunc5(unsigned int flags)
 {
 	((CUnknownMember10015708 *)((char *)this + 0x4bc))->sub_10015708();
 	((CUnknownMember10015708 *)((char *)this + 0x4a4))->sub_10015708();

@@ -7,7 +7,7 @@ class CFilterMass : public CBaseFilter
 {
 public:
 	CFilterMass() {}
-	CFilterMass *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	bool vfunc241(CBaseEntity *pEntity);	// passes when the physics object (+0x36c) of pEntity is heavier than m_flMass; warns when it has none
 
 	float m_flMass;	// 0x484

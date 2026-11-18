@@ -13,7 +13,7 @@ class CLogicNPCCondition : public CLogicalEntity
 {
 public:
 	CLogicNPCCondition() : m_hEntity488(0xffffffff) {}
-	CLogicalEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (VC6 has no covariant returns)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor (VC6 has no covariant returns)
 
 	const char *m_name450;	// +0x450: name of the condition
 	const char *m_name454;	// +0x454: name of the entity to look up

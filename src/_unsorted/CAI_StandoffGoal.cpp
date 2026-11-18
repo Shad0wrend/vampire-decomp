@@ -134,7 +134,7 @@ void CAI_StandoffGoal::vfunc243(int a)
 
 void sub_100aa7b0(void *pEntity);
 
-CAI_StandoffGoal *CAI_StandoffGoal::vfunc5(unsigned int flags)
+CBaseEntity *CAI_StandoffGoal::vfunc5(unsigned int flags)
 {
 	((CUtlVector<int> *)((char *)this + 0x468))->~CUtlVector<int>();
 	sub_1009df20();

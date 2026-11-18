@@ -36,7 +36,7 @@ void CPhysForce::vfunc242()
 void sub_100aa7b0(void *p);
 
 // TARGET: CPhysForce::vfunc5
-CPhysForce *CPhysForce::vfunc5(unsigned int flags)
+CBaseEntity *CPhysForce::vfunc5(unsigned int flags)
 {
 	sub_10014470();
 	if (flags & 1)

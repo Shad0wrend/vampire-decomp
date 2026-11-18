@@ -19,7 +19,7 @@ datamap_t *CTerrainMorph::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CTerrainMorph::vfunc5
-CTerrainMorph *CTerrainMorph::vfunc5(unsigned int flags)
+CBaseEntity *CTerrainMorph::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

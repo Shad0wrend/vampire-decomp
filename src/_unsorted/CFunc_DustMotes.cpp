@@ -7,7 +7,7 @@
 void sub_100aa7b0(void *p);
 
 // TARGET: CFunc_DustMotes::vfunc5
-CFunc_DustMotes *CFunc_DustMotes::vfunc5(unsigned int flags)
+CBaseEntity *CFunc_DustMotes::vfunc5(unsigned int flags)
 {
 	sub_10004fca();
 	if (flags & 1)

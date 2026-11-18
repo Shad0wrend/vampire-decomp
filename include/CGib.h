@@ -7,7 +7,7 @@
 class CGib : public CBaseEntity
 {
 public:
-	CGib *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10004c3c();
 	void sub_10129870();
 	void sub_1012a800();	// "WaitTillLand" think: removes the gib outside the world; once its velocity is zero makes it opaque, non-solid, still, and fades it out after its life time (+0x73c); else thinks again in 0.5s

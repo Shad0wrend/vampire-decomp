@@ -104,7 +104,7 @@ __forceinline char *Resolve(unsigned int h)
 }
 
 // TARGET: CAuspexAura::vfunc5
-CAuspexAura *CAuspexAura::vfunc5(unsigned int flags)
+CBaseEntity *CAuspexAura::vfunc5(unsigned int flags)
 {
 	*(int **)this = vt_1044bf04;
 	{

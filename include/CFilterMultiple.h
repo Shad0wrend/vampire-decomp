@@ -7,7 +7,7 @@ class CFilterMultiple : public CBaseFilter
 {
 public:
 	CFilterMultiple() {}
-	CFilterMultiple *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 
 	void vfunc113();	// slot 113: resolves the five filter names (+0x488) to the handles of the entities of those names (+0x49c, -1 when none)
 	bool sub_10107aa0(CBaseEntity *pEntity);	// slot 241 "CFilterMultiple::PassesFilterImpl": filter type 0 = all of the five filter handles must pass, else any one

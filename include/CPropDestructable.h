@@ -54,7 +54,7 @@ public:
     COutputEvent m_Outputs7b4[8];    // 0x7b4: one output per stage
     COutputEvent m_Output874;    // 0x874: fired when the last stage is reached
 
-    CBaseEntity *vfunc5(unsigned int flags);    // the scalar deleting destructor: destroys the outputs, the base destructor body (sub_1008b3c0), then frees when bit 0 of flags is set
+    virtual CBaseEntity *vfunc5(unsigned int flags);    // the scalar deleting destructor: destroys the outputs, the base destructor body (sub_1008b3c0), then frees when bit 0 of flags is set
     void sub_1008b3c0();    // CBaseAnimating destructor body (stub 0x10004c3c), called directly
 public:
     virtual datamap_t * vfunc82();

@@ -14,7 +14,7 @@ class CPayphone : public CBaseEntity
 {
 public:
 	int vfunc611();	// slot 611: the sequence selected for the followed NPC's activity (+0xff0), or for activity 1 without one; 0 when none
-	CPayphone *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	bool vfunc45(CBaseEntity *pOther, int a, int b, int c, int d, int e, int f, int g); // slot 45: true when pOther is within the Manhattan distance of the position (slot 193) and the collision bounds (+0x270) of both are equal
 	virtual int vfunc35(int a);	// slot 35: 0x2f when slot 295(a) holds, else 0
 	void sub_100123af();

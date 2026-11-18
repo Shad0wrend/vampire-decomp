@@ -14,7 +14,7 @@ void CNullEntity::vfunc103() { sub_101cd940(this); }
 void sub_100aa7b0(void *p);
 
 // TARGET: CNullEntity::vfunc5
-CNullEntity *CNullEntity::vfunc5(unsigned int flags)
+CBaseEntity *CNullEntity::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

@@ -58,7 +58,7 @@ int CGeneric_NPC_bathack::vfunc451()
 void sub_100aa7b0(void *p);
 
 // TARGET: CGeneric_NPC_bathack::vfunc5
-CGeneric_NPC_bathack *CGeneric_NPC_bathack::vfunc5(unsigned int flags)
+CBaseEntity *CGeneric_NPC_bathack::vfunc5(unsigned int flags)
 {
 	sub_1000c9cd();
 	if (flags & 1)

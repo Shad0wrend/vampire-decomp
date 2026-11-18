@@ -8,7 +8,7 @@
 class CPhysicsPropContested : public CPhysicsProp
 {
 public:
-    CPhysicsProp *vfunc5(unsigned int flags);
+    virtual CBaseEntity *vfunc5(unsigned int flags);
     virtual bool vfunc32(int a);    // slot 32 override: the base implementation unless the byte at +0x7ac is clear (then true)
     void vfunc39(CBaseEntity *pOther);    // slot 39 (declared as a plain member: the base slot has no argument here): the base implementation while the byte at +0x7ac is set; else, for a character (move type not 7) whose stat list 0 value 1 reaches the dword at +0x78c, the base worker sub_10192b50 and the base implementation run and the time is stamped at +0x7b0; otherwise the player view message 0x2f is sent
     void vfunc41(CBaseEntity *pOther);    // slot 41 (declared as a plain member: the base slot has no argument here): the base implementation while the byte at +0x7ac is set; else, for a character whose stat list 0 value 1 is below the dword at +0x78c, the character's player object (+0xa8) is told (slot 306) and the player view message 0x2f is sent, otherwise the base worker sub_10192b50 runs

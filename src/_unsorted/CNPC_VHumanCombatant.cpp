@@ -40,7 +40,7 @@ const char *CNPC_VHumanCombatant::sub_10386b00()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VHumanCombatant::vfunc5
-CNPC_VHumanCombatant *CNPC_VHumanCombatant::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VHumanCombatant::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

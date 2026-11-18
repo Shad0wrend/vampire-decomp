@@ -442,7 +442,7 @@ public:
 	EHANDLE m_hMyWeapons[224];	// 0x1624
 	EHANDLE m_hActiveWeapon19a4;	// 0x19a4: the active weapon
 	Vector vfunc389(const Vector &vecSrc);	// "CBaseCombatCharacter::Weapon_ShootPosition": scope trace (entity name), the active weapon's "muzzleflash" attachment, else vecSrc plus the gun position offsets (+0x157c forward, +0x1578 right, +0x1580 up) along the angles of slot 221; returned by value
-	CBaseCombatCharacter *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100078c4();	// as in CPhysForce (transplant)
 public:
     virtual datamap_t * vfunc82();

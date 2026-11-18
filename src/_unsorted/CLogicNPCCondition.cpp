@@ -58,13 +58,13 @@ struct CBaseEntityDtor
 
 void sub_100aa7b0(void *p);
 
-CLogicalEntity *CLogicNPCCondition::vfunc5(unsigned int flags)
+CBaseEntity *CLogicNPCCondition::vfunc5(unsigned int flags)
 {
 	((CUnknownMember10015708 *)((char *)this + 0x470))->sub_10015708();
 	((CUnknownMember10015708 *)((char *)this + 0x458))->sub_10015708();
 	((CBaseEntityDtor *)this)->sub_1009df20();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity *)(this);
 }
 // END FUNCTION

@@ -41,7 +41,7 @@ datamap_t * CNPC_VVampire::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VVampire::vfunc5
-CNPC_VVampire *CNPC_VVampire::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VVampire::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

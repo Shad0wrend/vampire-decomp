@@ -14,7 +14,7 @@ struct CRevertSavedFade	// fade duration and hold time, handed by value to the s
 class CRevertSaved : public CPointEntity
 {
 public:
-	CRevertSaved *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	virtual datamap_t *vfunc82();	// slot 82: this class's datamap (0x105836dc)
 	void sub_1000cb8a();
 	void vfunc173(int a, int b, int c, int d);	// slot 173 "CRevertSaved::InputReload"-like: fades the screen of every player (colour at +0x1a0, duration +0x45c, hold +0x460, flags 2), then thinks at +0x454 after now

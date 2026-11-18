@@ -196,7 +196,7 @@ int CScriptedTarget::vfunc127(int a)
 
 void sub_100aa7b0(void *p);
 
-CScriptedTarget *CScriptedTarget::vfunc5(unsigned int flags)
+CBaseEntity *CScriptedTarget::vfunc5(unsigned int flags)
 {
 	((COutputEvent *)((char *)this + 0x5f9c))->sub_100cd2d0();
 	((COutputEvent *)((char *)this + 0x5f84))->sub_100cd2d0();

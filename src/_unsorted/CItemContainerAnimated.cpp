@@ -7,7 +7,7 @@
 void sub_100aa7b0(void *p);
 
 // TARGET: CItemContainerAnimated::vfunc5
-CItemContainerAnimated *CItemContainerAnimated::vfunc5(unsigned int flags)
+CBaseEntity *CItemContainerAnimated::vfunc5(unsigned int flags)
 {
 	sub_10005718();
 	if (flags & 1)

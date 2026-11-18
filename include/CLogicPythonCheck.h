@@ -10,7 +10,7 @@ struct datamap_t;
 class CLogicPythonCheck : public CLogicalEntity
 {
 public:
-	CLogicPythonCheck *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	bool sub_10135290();	// runs the Python snippet at +0x450 in __main__ (logging it when the developer cvar is set) and returns whether the result is a non-zero int
 	virtual datamap_t * vfunc82();
 

@@ -19,7 +19,7 @@ CFlameCluster::CFlameCluster() : CBaseEntity(0)
 
 void sub_100aa7b0(void *pEntity);
 
-CFlameCluster *CFlameCluster::vfunc5(unsigned int flags)
+CBaseEntity *CFlameCluster::vfunc5(unsigned int flags)
 {
 	((CUtlVector<int> *)((char *)this + 0x450))->~CUtlVector<int>();
 	sub_1009df20();

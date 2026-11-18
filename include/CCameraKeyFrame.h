@@ -14,7 +14,7 @@ class CCameraKeyFrame : public CLogicalEntity
 {
 public:
 	CCameraKeyFrame() {}
-	CCameraKeyFrame *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void vfunc113();	// slot 113: base vfunc113, then makes sure the field of view at +0x460 is 18.0 .. 2000.0 (else 8.95 / sin(18.75)), runs the value at +0x45c through the mathlib helper, finds the next key frame named by the string at +0x450 (dynamic_cast, stored at +0x454) and makes it point back at this one (+0x458); a key frame with a positive delay (+0x46c >= 0.05) and the flag at +0x464 folds that delay into the next frame's (+0x470) or its own, zeroes it and sets the byte at +0x47c on both
 	void sub_100a0bc0();	// CBaseEntity::vfunc113 (stub 0x10001226)
 

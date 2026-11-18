@@ -6,7 +6,7 @@
 class CCorpse : public CBaseAnimating
 {
 public:
-	CCorpse *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10004c3c();
 public:
 	int vfunc80();

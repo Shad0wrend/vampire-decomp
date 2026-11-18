@@ -7,7 +7,7 @@
 class CScriptedTarget : public CBaseEntity
 {
 public:
-	CScriptedTarget *vfunc5(unsigned int flags);	// slot 5: scalar deleting destructor (the three outputs at +0x5f9c / +0x5f84 / +0x5f6c, then the base)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// slot 5: scalar deleting destructor (the three outputs at +0x5f9c / +0x5f84 / +0x5f6c, then the base)
 	virtual void vfunc103();	// slot 103 (Spawn): looks the global at 0x10938054 up once, SetSolid(0) (inlined scope trace), sub_100b3b00(), remembers the origin (slot 217) at +0x5f44, runs sub_1034d5b0() when the field at +0x5f50 is not set, then AddFlag2(0x10)
 	void sub_1034d5b0();
 	CScriptedTarget *sub_1034d800();

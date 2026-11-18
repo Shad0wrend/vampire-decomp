@@ -7,7 +7,7 @@
 class CPointTeleport : public CBaseEntity
 {
 public:
-	CPointTeleport *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	void sub_1018dc00(int);
 	virtual void vfunc113();	// "CPointTeleport::Activate": saves origin / angles (+0x450 / +0x45c), warns on a parented or missing target

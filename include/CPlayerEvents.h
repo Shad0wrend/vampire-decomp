@@ -9,7 +9,7 @@ class CPlayerEvents : public CBaseEntity
 public:
 	CPlayerEvents();	// 0x102270b0: base constructor (0), then the 23 outputs at +0x454
 	CPlayerEvents *sub_102270b0();
-	CPlayerEvents *vfunc5(unsigned int flags);	// slot 5 (0x102270f0), scalar deleting destructor, declared as a plain member like CRagdollProp::vfunc5: the 23 outputs at +0x454 destroyed last to first (COutputEvent::sub_100cd2d0), the CBaseEntity destructor body (sub_1000cb8a), and sub_100aa7b0(this) (delete) when bit 0 of flags is set
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// slot 5 (0x102270f0), scalar deleting destructor, declared as a plain member like CRagdollProp::vfunc5: the 23 outputs at +0x454 destroyed last to first (COutputEvent::sub_100cd2d0), the CBaseEntity destructor body (sub_1000cb8a), and sub_100aa7b0(this) (delete) when bit 0 of flags is set
 	void sub_1000cb8a();	// CBaseEntity destructor body (stub 0x1000cb8a -> 0x1009df20)
 public:
     virtual datamap_t * vfunc82();

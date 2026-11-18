@@ -18,5 +18,5 @@ public:
 	COutputEvent m_Output;	// 0x45c
 public:
     virtual datamap_t * vfunc82();
-    CMoverKeyFrame *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 };

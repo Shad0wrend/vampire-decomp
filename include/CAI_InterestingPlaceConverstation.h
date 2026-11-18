@@ -62,7 +62,7 @@ public:
 	void vfunc103();	// slot 103 override: the game's 0x102dbc80
 	int vfunc126(int a);	// slot 126 override: the game's 0x102dbd50
 	int vfunc127(int a);	// slot 127 override: the game's 0x102dbda0
-	CPointEntity *vfunc5(unsigned int flags);	// slot 5 (CPointEntity's override; VC6 has no covariant returns), scalar deleting destructor: tears down the vector at +0x518 and the six items at +0x46c, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// slot 5 (CPointEntity's override; VC6 has no covariant returns), scalar deleting destructor: tears down the vector at +0x518 and the six items at +0x46c, the base destructor body (sub_1000cb8a), and frees the object when bit 0 of flags is set
 	void sub_1000cb8a();	// base class destructor body (stub 0x1000cb8a)
 public:
 #ifndef CPOINTENTITY_BASED

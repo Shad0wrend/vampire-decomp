@@ -34,7 +34,7 @@ int CCorpse::vfunc117()
 void sub_100aa7b0(void *p);
 
 // TARGET: CCorpse::vfunc5
-CCorpse *CCorpse::vfunc5(unsigned int flags)
+CBaseEntity *CCorpse::vfunc5(unsigned int flags)
 {
 	sub_10004c3c();
 	if (flags & 1)

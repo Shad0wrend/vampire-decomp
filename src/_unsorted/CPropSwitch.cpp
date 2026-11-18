@@ -18,7 +18,7 @@ void __fastcall sub_100cd2d0(void *p);
 void __fastcall sub_1008b3c0(void *p);
 void sub_100aa7b0(void *p);
 // TARGET: CPropSwitch::vfunc5
-void *CPropSwitch::vfunc5(unsigned int flags)
+CBaseEntity *CPropSwitch::vfunc5(unsigned int flags)
 {
 	sub_100cd2d0((char *)this + 0x78c);
 	sub_100cd2d0((char *)this + 0x774);
@@ -27,7 +27,7 @@ void *CPropSwitch::vfunc5(unsigned int flags)
 	sub_1008b3c0(this);
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity *)(this);
 }
 // END FUNCTION
 

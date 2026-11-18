@@ -46,7 +46,7 @@ char *sub_1035ec30(void)
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_VAnimal::vfunc5
-CNPC_VAnimal *CNPC_VAnimal::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_VAnimal::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

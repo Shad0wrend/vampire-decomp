@@ -52,7 +52,7 @@ struct CTriggerHurtVec	// the CUtlVector<int> of the damaged entities at +0x5f4,
 	}
 };
 
-CTriggerHurt *CTriggerHurt::vfunc5(unsigned int flags)
+CBaseEntity *CTriggerHurt::vfunc5(unsigned int flags)
 {
 	((CTriggerHurtVec *)&m_hurtEntities)->Destruct();
 	m_out5dc.sub_100cd2d0();

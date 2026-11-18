@@ -99,7 +99,7 @@ int CFogController::vfunc124()
 void sub_100aa7b0(void *p);
 
 // TARGET: CFogController::vfunc5
-CFogController *CFogController::vfunc5(unsigned int flags)
+CBaseEntity *CFogController::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

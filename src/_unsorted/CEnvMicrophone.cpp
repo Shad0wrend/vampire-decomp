@@ -131,12 +131,12 @@ struct CGargoyleBaseUnit {
 void __cdecl sub_10009fc5(void *p);
 
 // TARGET: CEnvMicrophone::vfunc5
-CPointEntity *CEnvMicrophone::vfunc5(unsigned int flags)
+CBaseEntity *CEnvMicrophone::vfunc5(unsigned int flags)
 {
 	((CGargoyleMemberUnit *)((char *)this + 0x464))->sub_10015708();
 	((CGargoyleBaseUnit *)this)->sub_1000cb8a();
 	if (flags & 1)
 		sub_10009fc5(this);
-	return this;
+	return (CBaseEntity *)(this);
 }
 // END FUNCTION

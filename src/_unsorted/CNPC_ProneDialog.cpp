@@ -46,7 +46,7 @@ bool CNPC_ProneDialog::vfunc45(int unused, Vector vecStart, Vector vecEnd, unsig
 void sub_100aa7b0(void *p);
 
 // TARGET: CNPC_ProneDialog::vfunc5
-CNPC_ProneDialog *CNPC_ProneDialog::vfunc5(unsigned int flags)
+CBaseEntity *CNPC_ProneDialog::vfunc5(unsigned int flags)
 {
 	sub_100123af();
 	if (flags & 1)

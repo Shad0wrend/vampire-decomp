@@ -65,7 +65,7 @@ public:
 	virtual void vfunc400(); virtual void vfunc401(); virtual void vfunc402(); virtual void vfunc403(); virtual void vfunc404();
 	virtual void vfunc405(); virtual void vfunc406(struct CGameTrace *pTrace, int bitsDamageType); virtual void vfunc407(); virtual void vfunc408(); virtual float vfunc409();
 	virtual float vfunc410(); virtual float vfunc411(); virtual void vfunc412(int value);
-	CBaseGrenade *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_1000a67d();	// as in CPhysForce (transplant)
 	CBaseGrenade *sub_1042b2b0();	// as in CKeepUpright (transplant)
 	void sub_1042ab80(CBaseEntity *pEnt);	// not in this class's vtable (the class is not known): unless pEnt is the entity behind the handle at +0x19b0, a grenade with flag bit 0 gets its velocity (+0x3bc) scaled by 0.95f (sub_100b2e30) with the bit-12 position refresh around it, any other calls slot 408

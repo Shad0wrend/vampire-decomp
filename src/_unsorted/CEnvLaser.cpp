@@ -26,7 +26,7 @@ CEnvLaser::CEnvLaser()
 void sub_100aa7b0(void *p);
 
 // TARGET: CEnvLaser::vfunc5
-CEnvLaser *CEnvLaser::vfunc5(unsigned int flags)
+CBaseEntity *CEnvLaser::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

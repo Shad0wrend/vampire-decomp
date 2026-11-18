@@ -7,7 +7,7 @@
 class CRagdollPropAttached : public CRagdollProp
 {
 public:
-    CRagdollProp *vfunc5(unsigned int flags);	// scalar deleting destructor: releases the physics object at +0x1060
+    virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor: releases the physics object at +0x1060
     char m_pad_attached[0x103c - sizeof(CRagdollProp)];
     int m_boneIndexAttached;	// 0x103c: set from argument 9 of sub_10156e10
     int m_ragdollAttachedObjectIndex;	// 0x1040: the ragdoll body that is attached (the model's table entry for the bone argument, 0 when it is not > 0)

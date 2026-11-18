@@ -35,7 +35,7 @@ struct CAnimationLayer28	// 0x1c byte overlay record (array at +0x7f4, used by v
 class CBaseAnimatingOverlay : public CBaseAnimating
 {
 public:
-	CBaseAnimatingOverlay *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10004c3c();
 	void vfunc268(int index, int a, int sequence, char flag);	// slot 268: initialises the 0x30 byte animation overlay record [index] (array at +0x738) with the sequence, the weights and fade times; clears the fade weights again when the sequence's flag bit 1 is set
 	void vfunc273(int a, char bAdd, int b);	// slot 273 (plain member): the layer slot 271(a) finds gets its dword at +8 cleared; with none and bAdd set, AddGesture(a, b)

@@ -7,7 +7,7 @@
 class CVGuiScreen : public CBaseEntity
 {
 public:
-	CVGuiScreen *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	virtual void vfunc103();
 	virtual bool vfunc110(const char *key, const char *value);	// slot 110 "CVGuiScreen::KeyValue": "panelname" creates the panel, anything else goes to the base

@@ -122,7 +122,7 @@ void CTriggerBrush::vfunc173(CBaseEntity *a, CBaseEntity *b, int c, int d)
 
 void sub_100aa7b0(void *p);
 
-CTriggerBrush *CTriggerBrush::vfunc5(unsigned int flags)
+CBaseEntity *CTriggerBrush::vfunc5(unsigned int flags)
 {
 	((COutputEvent *)((char *)this + 0x480))->sub_100cd2d0();
 	((COutputEvent *)((char *)this + 0x468))->sub_100cd2d0();

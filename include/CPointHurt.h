@@ -6,7 +6,7 @@
 class CPointHurt : public CBaseEntity
 {
 public:
-	CPointHurt *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	virtual void vfunc103();	// "CPointHurt::Spawn": clears the think and use functions, arms the think for the "start on" spawnflag, defaults the damage (2), the radius (128.0f) and the delay (0.1f), then slot 104
 

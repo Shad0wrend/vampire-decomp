@@ -8,7 +8,7 @@ struct datamap_t;
 class CEnvFloatingCamera : public CPointEntity
 {
 public:
-	CEnvFloatingCamera *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 public:
 	datamap_t * vfunc82();

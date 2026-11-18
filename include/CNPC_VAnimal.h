@@ -8,7 +8,7 @@ struct animevent_t;	// a tail-call override's parameter
 class CNPC_VAnimal : public CBaseEntity
 {
 public:
-	CNPC_VAnimal *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_100123af();
 	void vfunc390(struct CVAnimalArg *pArg);	// slot 390 (plain member): flags +0x6660 when the argument's inner object (+0x2c) value at +0xa8 equals sub_101cda50(), then CAI_BaseNPCTroika::vfunc390
 	int vfunc546(int arg);	// as in CNPC_Crow (transplant)

@@ -19,7 +19,7 @@ datamap_t *CPointExplosion::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CPointExplosion::vfunc5
-CPointExplosion *CPointExplosion::vfunc5(unsigned int flags)
+CBaseEntity *CPointExplosion::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

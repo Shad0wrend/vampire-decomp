@@ -47,7 +47,7 @@ CWorldEvents::CWorldEvents() : CBaseEntity(0)
 void sub_100aa7b0(void *p);
 
 // TARGET: CWorldEvents::vfunc5
-CWorldEvents *CWorldEvents::vfunc5(unsigned int flags)
+CBaseEntity *CWorldEvents::vfunc5(unsigned int flags)
 {
 	sub_10014c09();
 	if (flags & 1)

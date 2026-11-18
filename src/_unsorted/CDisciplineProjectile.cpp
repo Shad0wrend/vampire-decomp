@@ -37,7 +37,7 @@ datamap_t * CDisciplineProjectile::vfunc82()
 void sub_100aa7b0(void *p);
 
 // TARGET: CDisciplineProjectile::vfunc5
-CDisciplineProjectile *CDisciplineProjectile::vfunc5(unsigned int flags)
+CBaseEntity *CDisciplineProjectile::vfunc5(unsigned int flags)
 {
 	sub_1000d800();
 	if (flags & 1)

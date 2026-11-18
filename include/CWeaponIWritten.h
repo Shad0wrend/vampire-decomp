@@ -9,7 +9,7 @@ class CBaseCombatWeapon;	// a tail-call override's parameter
 class CWeaponIWritten : public CBaseEntity
 {
 public:
-	CWeaponIWritten *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	CWeaponIWritten *sub_1040b270();	// as in CKeepUpright (transplant)
 	void sub_1040b4f0();	// slot 339: kicks the owner's target with a random vector
