@@ -261787,6 +261787,17 @@ void *CUnk1031a000::sub_1031a000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1031a030 size=0x5
+struct CUnk1031a000 { void * sub_1031a000(); };
+struct CWrap1031a030 { void * sub_1031a030(); };
+// TARGET: sub_1031a030
+// the game's 0x1031a030: a tail call (jmp) of CUnk1031a000::sub_1031a000
+void * CWrap1031a030::sub_1031a030()
+{
+	return ((CUnk1031a000 *)this)->CUnk1031a000::sub_1031a000();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1031a050 size=0x3b
 #include "CUnknown10936c84.h"
 

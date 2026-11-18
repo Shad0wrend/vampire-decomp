@@ -8757,6 +8757,7 @@
 0x1000bed8 func   ?sub_1008b490@@YIXPAD@Z sub_1008b490
 0x1000bedd func   ?vfunc1@?$CEntityDataInstantiator@UModelWidthScale@@@@UAEHI@Z CEntityDataInstantiator<ModelWidthScale>::vfunc1
 0x1000bee2 func   ?vfunc580@CNPC_VCop@@UAEHXZ CNPC_VCop::vfunc580
+0x1000bee7 func   ?sub_1031a030@CWrap1031a030@@QAEPAXXZ CWrap1031a030::sub_1031a030
 0x1000beec func   ?sub_1011b060@@YGXH@Z sub_1011b060
 0x1000bef1 func   ?sub_100e34d0@CDialog@@QAEXXZ CDialog::sub_100e34d0
 0x1000bef6 func   ?GrowVector@?$CUtlVector@UCHumanoidRec@@V?$CUtlMemory@UCHumanoidRec@@@@@@QAEXH@Z CUtlVector<CHumanoidRec,CUtlMemory<CHumanoidRec> >::GrowVector
