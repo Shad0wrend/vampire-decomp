@@ -9030,6 +9030,7 @@
 0x1000c63a func   ?sub_101e0f00@CUnknown101e0f00@@QAEXXZ CUnknown101e0f00::sub_101e0f00
 0x1000c63f func   ??1StatDefault3@@QAE@XZ StatDefault3::~StatDefault3
 0x1000c644 func   _info_node_patrol_point info_node_patrol_point
+0x1000c649 func   ?n8@CBaseNetworkable@@UAEXXZ CBaseNetworkable::n8
 0x1000c649 func   ?sub_100b7cc0@CVirtList_100b7cc0@@QAEXPAH@Z CVirtList_100b7cc0::sub_100b7cc0
 0x1000c64e func   ?sub_100e7f70@@YA_NPADHPBD1@Z sub_100e7f70
 0x1000c653 func   ?sub_103e6ba0@@YAHXZ sub_103e6ba0
