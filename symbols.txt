@@ -7920,6 +7920,7 @@
 0x1000ae8e func   ?sub_10310b90@CVDmgBlock16_t@@QAEXPBD@Z CVDmgBlock16_t::sub_10310b90
 0x1000ae93 func   ?vfunc362@CCineNPC@@QAE_NH@Z CCineNPC::vfunc362
 0x1000ae98 func   ?vfunc124@CMomentaryRotButton@@UAEHXZ CMomentaryRotButton::vfunc124
+0x1000ae9d func   ?vfunc440@CNPC_VTest@@QAEHH@Z CNPC_VTest::vfunc440
 0x1000aea2 func   ?vfunc144@CBasePlayer@@UAEXPBX@Z CBasePlayer::vfunc144
 0x1000aea7 func   ?vfunc5@CFuncPlat@@UAEPAV1@I@Z CFuncPlat::vfunc5
 0x1000aeac func   ?vfunc144@CNPC_VFrenzyShadow@@UAEXH@Z CNPC_VFrenzyShadow::vfunc144
