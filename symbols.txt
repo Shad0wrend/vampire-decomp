@@ -10994,6 +10994,7 @@
 0x1000ecfa func   ?sub_10253b40@CBaseCombatWeapon@@QAE_NH@Z CBaseCombatWeapon::sub_10253b40
 0x1000ecff func   ?vfunc0@CThinkContextsSaveDataOps@@UAEXPAX0@Z CThinkContextsSaveDataOps::vfunc0
 0x1000ed04 func   ?vfunc496@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc496
+0x1000ed09 func   ?vfunc366@CNPC_VBatSwarm@@UAE_NHHH@Z CNPC_VBatSwarm::vfunc366
 0x1000ed0e func   ?vfunc5@CPhysPulley@@UAEPAV1@I@Z CPhysPulley::vfunc5
 0x1000ed13 func   ?vfunc431@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::vfunc431
 0x1000ed18 func   ?sub_100c5ee0@@YA_NPBXHMPBMAAVVector@@@Z sub_100c5ee0
