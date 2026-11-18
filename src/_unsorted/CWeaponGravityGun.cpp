@@ -39,6 +39,18 @@ void CWeaponGravityGun::vfunc298(CBaseEntity *pOwner, float unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149f30 size=0x5
+#include "CWeaponGravityGun.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponGravityGun::vfunc300
+// the game's 0x10149f30: a tail call (jmp) of CBaseCombatWeapon::vfunc300
+void CWeaponGravityGun::vfunc300()
+{
+	CBaseCombatWeapon::vfunc300();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149f50 size=0x16
 #include "CWeaponGravityGun.h"
 
