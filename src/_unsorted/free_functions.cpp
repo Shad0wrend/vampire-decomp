@@ -162153,6 +162153,17 @@ void __cdecl sub_101f2fc0(void *a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f2fe0 size=0x5
+extern "C" void *malloc(unsigned);
+
+// TARGET: sub_101f2fe0
+// the game's 0x101f2fe0: a tail call (jmp) of the CRT's malloc (an allocator wrapper; 0x101f2fc0 / 0x101f3030 pass free on the same way)
+void *sub_101f2fe0(unsigned size)
+{
+	return malloc(size);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f3000 size=0x14
 #include <stdlib.h>
 
