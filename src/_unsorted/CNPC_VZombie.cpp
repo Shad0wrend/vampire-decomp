@@ -571,6 +571,16 @@ void CNPC_VZombie::vfunc433()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e0410 size=0x5
+#include "CNPC_VZombie.h"
+// TARGET: CNPC_VZombie::vfunc301
+// the game's 0x103e0410: a tail call (jmp) of CNPC_VZombie::sub_103dfbb0
+void CNPC_VZombie::vfunc301(int *a0, int *a1)
+{
+	((CNPC_VZombie *)this)->CNPC_VZombie::sub_103dfbb0(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e0430 size=0xc3
 #include "CNPC_VZombie.h"
 #include "CUnknown101c2a50.h"

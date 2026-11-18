@@ -4985,6 +4985,7 @@
 0x100072f2 func   ?sub_1007eeb0@CUtlVector16@@QAEXXZ CUtlVector16::sub_1007eeb0
 0x100072f7 func   ?sub_103228c0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_103228c0
 0x100072fc func   ?sub_1008f8f0@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_1008f8f0
+0x10007306 func   ?vfunc301@CNPC_VZombie@@UAEXPAH0@Z CNPC_VZombie::vfunc301
 0x1000730b func   ?sub_101bf550@@YA_NPAPBD0@Z sub_101bf550
 0x10007310 func   ?vfunc380@CBasePlayer@@QAEXXZ CBasePlayer::vfunc380
 0x10007315 func   ?sub_103e16b0@@YAMXZ sub_103e16b0
