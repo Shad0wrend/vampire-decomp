@@ -229,6 +229,7 @@
 0x10001488 func   ?sub_1004ee90@@YAEXZ sub_1004ee90
 0x1000148d func   ?sub_10041bc0@@YAHH@Z sub_10041bc0
 0x10001492 func   ?vfunc546@CNPC_VHumanCombatPatrol@@QAEHH@Z CNPC_VHumanCombatPatrol::vfunc546
+0x1000149c func   ?vfunc566@CNPC_VBatSwarm@@UAE_NPAVCBaseEntity@@@Z CNPC_VBatSwarm::vfunc566
 0x100014a1 func   ?sub_10228020@CUnknown10228020@@QAEDXZ CUnknown10228020::sub_10228020
 0x100014a6 func   ?sub_100d3160@@YAXXZ sub_100d3160
 0x100014ab func   ?vfunc492@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc492
