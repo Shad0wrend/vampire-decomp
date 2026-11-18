@@ -15,3 +15,14 @@ StatDefault::StatDefault(int id)
 	pBlock->sub_10204270();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1006c7b0 size=0x5
+#include "StatDefault.h"
+struct CUnknown1006c7d0 { void sub_1006c7d0(); };
+// TARGET: StatDefault::~StatDefault
+// the game's 0x1006c7b0: a tail call (jmp) of CUnknown1006c7d0::sub_1006c7d0
+StatDefault::~StatDefault()
+{
+	((CUnknown1006c7d0 *)this)->CUnknown1006c7d0::sub_1006c7d0();
+}
+// END FUNCTION
