@@ -225701,6 +225701,16 @@ unsigned int __stdcall sub_102c62f0(unsigned int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6330 size=0x5
+unsigned int __cdecl sub_1042fde0(unsigned int);
+// TARGET: sub_102c6330
+// the game's 0x102c6330: a tail call (jmp) of sub_1042fde0
+unsigned int __cdecl sub_102c6330(unsigned int a0)
+{
+	return sub_1042fde0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6370 size=0x29
 #include "ehandle.h"
 
