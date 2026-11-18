@@ -135,6 +135,19 @@ void CNPC_VBatSwarm::vfunc463(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10367440 size=0x5
+#include "animevent_t.h"
+#include "CNPC_VBatSwarm.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VBatSwarm::vfunc259
+// the game's 0x10367440: a tail call (jmp) of CNPC_VHuman::vfunc259
+void CNPC_VBatSwarm::vfunc259(animevent_t *a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc259(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367460 size=0xf
 #include "CNPC_VBatSwarm.h"
 namespace lifted {
