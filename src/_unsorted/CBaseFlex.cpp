@@ -58,6 +58,18 @@ CBaseFlex *CBaseFlex::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b5a90 size=0x5
+#include "CBaseFlex.h"
+#include "CBaseAnimatingOverlay.h"
+
+// TARGET: CBaseFlex::vfunc31
+// the game's 0x100b5a90: a tail call (jmp) of CBaseAnimatingOverlay::vfunc31
+void CBaseFlex::vfunc31(int a0)
+{
+	((CBaseAnimatingOverlay *)this)->CBaseAnimatingOverlay::vfunc31(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b5ab0 size=0x39
 #include "CBaseFlex.h"
 #include "CBaseAnimating.h"

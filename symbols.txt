@@ -224,6 +224,7 @@
 0x10001474 func   ?sub_101e50b0@CVFeat_t@@QAEXPAUCVFeatKV@@H@Z CVFeat_t::sub_101e50b0
 0x10001479 func   ?sub_1012d3d0@CHudTimer@@QAEPAV1@XZ CHudTimer::sub_1012d3d0
 0x1000147e func   ?sub_1010b9d0@CFire@@QAE_NXZ CFire::sub_1010b9d0
+0x10001483 func   ?vfunc31@CBaseFlex@@UAEXH@Z CBaseFlex::vfunc31
 0x10001488 func   ?sub_1004ee90@@YAEXZ sub_1004ee90
 0x1000148d func   ?sub_10041bc0@@YAHH@Z sub_10041bc0
 0x10001492 func   ?vfunc546@CNPC_VHumanCombatPatrol@@QAEHH@Z CNPC_VHumanCombatPatrol::vfunc546
