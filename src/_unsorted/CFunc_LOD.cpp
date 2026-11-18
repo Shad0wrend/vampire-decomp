@@ -124,6 +124,18 @@ bool CFunc_LOD::vfunc223()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114bd0 size=0x5
+#include "CFunc_LOD.h"
+#include "CBaseEntity.h"
+
+// TARGET: CFunc_LOD::vfunc113
+// the game's 0x10114bd0: a tail call (jmp) of CBaseEntity::vfunc113
+void CFunc_LOD::vfunc113()
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc113();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10114bf0 size=0xcd
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

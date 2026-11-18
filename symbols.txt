@@ -12700,6 +12700,7 @@
 0x1001101d func   ?sub_1015acc0@@YAHXZ sub_1015acc0
 0x10011022 func   ?sub_10102700@CUnknown10102700@@QAEXH@Z CUnknown10102700::sub_10102700
 0x10011027 func   ?sub_103387a0@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_103387a0
+0x10011031 func   ?vfunc113@CFunc_LOD@@UAEXXZ CFunc_LOD::vfunc113
 0x10011036 func   ?sub_10045360@CUnknown10045360@@QAEXXZ CUnknown10045360::sub_10045360
 0x1001103b func   _item_w_hengeyokai_fist item_w_hengeyokai_fist
 0x10011040 func   ?sub_103b30c0@@YADXZ sub_103b30c0
