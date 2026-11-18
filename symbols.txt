@@ -5235,6 +5235,7 @@
 0x10007973 func   ?vfunc82@CNPC_Bullseye@@UAEPAUdatamap_t@@XZ CNPC_Bullseye::vfunc82
 0x10007978 func   ?sub_101d3080@@YA_NPAUHandleEntLike@@H@Z sub_101d3080
 0x1000797d func   ?sub_1019e590@@YIXPAD@Z sub_1019e590
+0x1000797d func   ?vfunc78@CRopeKeyframe@@UAEXXZ CRopeKeyframe::vfunc78
 0x10007982 func   ?sub_10158c40@@YAHXZ sub_10158c40
 0x10007987 func   ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z CBaseEntity::vfunc146
 0x1000798c func   ?sub_101450e0@@YAXPBVVector@@0DD@Z sub_101450e0
