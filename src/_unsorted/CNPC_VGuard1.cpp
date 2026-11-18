@@ -197,6 +197,19 @@ void CNPC_VGuard1::vfunc463(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037d110 size=0x5
+#include "animevent_t.h"
+#include "CNPC_VGuard1.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VGuard1::vfunc259
+// the game's 0x1037d110: a tail call (jmp) of CNPC_VHuman::vfunc259
+void CNPC_VGuard1::vfunc259(animevent_t *a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc259(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037d130 size=0xcb
 #include "CNPC_VGuard1.h"
 #include "CGlobalEntityList.h"
