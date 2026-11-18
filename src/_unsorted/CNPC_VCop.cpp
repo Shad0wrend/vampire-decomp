@@ -340,6 +340,18 @@ void CNPC_VCopFwd::sub_10372aa0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10372ac0 size=0x5
+#include "CNPC_VCop.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VCop::vfunc434
+// the game's 0x10372ac0: a tail call (jmp) of CNPC_VHuman::vfunc434
+void CNPC_VCop::vfunc434()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc434();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372b00 size=0x11
 #include "CNPC_VCop.h"
 

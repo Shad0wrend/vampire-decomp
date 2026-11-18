@@ -14293,6 +14293,7 @@
 0x10012f2b func   _info_node_tzimisce info_node_tzimisce
 0x10012f30 func   ?sub_1013a4c0@@YAMM@Z sub_1013a4c0
 0x10012f35 func   ?sub_100ce450@CList_t@@QAE_NPAXPAH@Z CList_t::sub_100ce450
+0x10012f3a func   ?vfunc434@CNPC_VCop@@UAEXXZ CNPC_VCop::vfunc434
 0x10012f3f func   ?sub_1029a930@CAI_BaseNPCTroika@@QAEXPBD@Z CAI_BaseNPCTroika::sub_1029a930
 0x10012f44 func   ?sub_103fec70@@YAHXZ sub_103fec70
 0x10012f49 func   ?sub_101273e0@@YAPBDH@Z sub_101273e0
