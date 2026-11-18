@@ -96,3 +96,15 @@ int CNPC_VVampire::vfunc138()
     return 0xf;
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c4f40 size=0x5
+#include "CNPC_VVampire.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VVampire::vfunc144
+// the game's 0x103c4f40: a tail call (jmp) of CNPC_VHuman::vfunc144
+void CNPC_VVampire::vfunc144(int a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc144(a0);
+}
+// END FUNCTION
