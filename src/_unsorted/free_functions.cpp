@@ -31150,6 +31150,18 @@ void CChoreoScene1007e220::sub_1007e290(CChoreoSceneChannel1007e970 *pChannel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007e300 size=0x5
+#include "CUnknown10075aa0.h"
+struct CUnknown1007ce20Unit { void sub_1007e500(class CUnknown10075aa0 *); };
+struct CWrap1007e300 { void sub_1007e300(class CUnknown10075aa0 *); };
+// TARGET: sub_1007e300
+// the game's 0x1007e300: a tail call (jmp) of CUnknown1007ce20Unit::sub_1007e500
+void CWrap1007e300::sub_1007e300(class CUnknown10075aa0 *a0)
+{
+	((CUnknown1007ce20Unit *)this)->CUnknown1007ce20Unit::sub_1007e500(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007e320 size=0xbe
 #include "utlrbtree.h"
 #include "CUnknown1007e320.h"

@@ -13895,6 +13895,7 @@
 0x10012594 func   ?sub_102e2770@CUnknown102e2770@@QAEXHM@Z CUnknown102e2770::sub_102e2770
 0x10012599 func   ?vfunc6@CAI_Navigator@@UAEXXZ CAI_Navigator::vfunc6
 0x1001259e func   ?vfunc395@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc395
+0x100125a3 func   ?sub_1007e300@CWrap1007e300@@QAEXPAVCUnknown10075aa0@@@Z CWrap1007e300::sub_1007e300
 0x100125a8 func   ?sub_10303f80@CUnknown10303f80@@QAEHHHHHHHHHH@Z CUnknown10303f80::sub_10303f80
 0x100125b2 func   ?sub_10225c70@CPropPadlock@@QAEPAV1@XZ CPropPadlock::sub_10225c70
 0x100125b7 func   ?sub_102212b0@QuestJournal@@QAEXPBDH@Z QuestJournal::sub_102212b0
