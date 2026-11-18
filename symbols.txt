@@ -389,6 +389,7 @@
 0x100017d5 func   ?sub_1015df00@CBasePlayer@@QAEXXZ CBasePlayer::sub_1015df00
 0x100017da func   _npc_VRat npc_VRat
 0x100017df func   ?sub_102a9800@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_102a9800
+0x100017e4 func   ?n1@CBaseNetworkable@@UAEXXZ CBaseNetworkable::n1
 0x100017e4 func   ?sub_100b7780@@YAHXZ sub_100b7780
 0x100017e9 func   _npc_crow npc_crow
 0x100017ee func   ?vfunc1@CTraceFilterNoCharacterCollide@@UAEHXZ CTraceFilterNoCharacterCollide::vfunc1
