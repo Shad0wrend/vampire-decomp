@@ -1973,6 +1973,7 @@
 0x100037fb func   ?vfunc33@CPropSign@@UAEHXZ CPropSign::vfunc33
 0x10003800 func   ?vfunc5@CBeam@@QAEPAV1@I@Z CBeam::vfunc5
 0x10003805 func   ?sub_1019e550@@YIXPAD@Z sub_1019e550
+0x10003805 func   ?vfunc77@CRopeKeyframe@@UAEXXZ CRopeKeyframe::vfunc77
 0x1000380a func   ?sub_102dcd30@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_102dcd30
 0x1000380f func   ?sub_103c3cb0@@YAHXZ sub_103c3cb0
 0x10003814 func   ?sub_10239d80@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_10239d80
