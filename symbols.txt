@@ -14627,6 +14627,7 @@
 0x10013746 func   ?vfunc23@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHHHHH@Z CTempEntsSystem::vfunc23
 0x1001374b func   ?vfunc103@CBaseCombatCharacter@@UAEXXZ CBaseCombatCharacter::vfunc103
 0x10013750 func   ?sub_1014c130@CWeaponGravityGun@@QAEXXZ CWeaponGravityGun::sub_1014c130
+0x10013755 func   ?n12@CBaseNetworkable@@UAEXXZ CBaseNetworkable::n12
 0x10013755 func   ?sub_100b7d80@CUnknown100b7d80@@QAEPADXZ CUnknown100b7d80::sub_100b7d80
 0x1001375a func   ?vfunc546@CNPC_VTzimisceHeadClaw@@QAEHH@Z CNPC_VTzimisceHeadClaw::vfunc546
 0x1001375f func   ?vfunc611@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::vfunc611
