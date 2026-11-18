@@ -465,6 +465,7 @@
 0x10001942 func   ?vfunc6@CGameMovement@@UAEMABVQAngle@@ABVVector@@MM@Z CGameMovement::vfunc6
 0x10001947 func   ?sub_100d4160@@YAXPAXPAVCVStatList_t@@HH@Z sub_100d4160
 0x1000194c func   ?sub_103a9760@CNPC_VSabbatLeader@@QAEPAUCNPC_VSabbatLeaderHint@@XZ CNPC_VSabbatLeader::sub_103a9760
+0x10001951 func   ?vfunc440@CNPC_VMoleman@@QAEHH@Z CNPC_VMoleman::vfunc440
 0x10001956 func   ?vfunc520@CAI_BaseNPC@@UAEMH@Z CAI_BaseNPC::vfunc520
 0x1000195b func   ?sub_101855c0@UtlMem@@QAEXXZ UtlMem::sub_101855c0
 0x10001960 func   ?sub_101f1bb0@CUnk101f1bb0@@QAEXXZ CUnk101f1bb0::sub_101f1bb0
