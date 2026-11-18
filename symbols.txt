@@ -13546,6 +13546,7 @@
 0x10011e23 func   ?sub_101f4eb0@CDumpThing@@QAEXXZ CDumpThing::sub_101f4eb0
 0x10011e28 func   ?sub_100bf060@bf_readX@block_100bf060@@QAEHPADH_NPAH@Z block_100bf060::bf_readX::sub_100bf060
 0x10011e2d func   ?sub_1002f900@CCollisionEvent@@QAEPAUCPenetrateEvent_t@@PAVCBaseEntity@@0@Z CCollisionEvent::sub_1002f900
+0x10011e32 func   ?sub_103505e0@@YAXXZ sub_103505e0
 0x10011e37 func   ?sub_100a9290@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100a9290
 0x10011e3c func   ?vfunc523@CAI_TestHull@@QAEMXZ CAI_TestHull::vfunc523
 0x10011e41 func   ?sub_10206c30@CUnknown10206c70@@QAEXPBDPAVCBaseCombatCharacter@@@Z CUnknown10206c70::sub_10206c30

@@ -275330,6 +275330,16 @@ void sub_10350340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103505e0 size=0x5
+void __cdecl sub_10350340();
+// TARGET: sub_103505e0
+// the game's 0x103505e0: a tail call (jmp) of sub_10350340
+void __cdecl sub_103505e0()
+{
+	sub_10350340();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10350620 size=0x19e
 #include "CBaseAnimating.h"
 #include "CHL2_Player.h"
