@@ -3812,6 +3812,7 @@
 0x10005cdb func   ?sub_101bbc70@CUnknown101bc140@@QAEXM@Z CUnknown101bc140::sub_101bbc70
 0x10005ce0 func   ?UsePredictionRules@CRecipientFilter@@QAEXXZ CRecipientFilter::UsePredictionRules
 0x10005ce5 func   ?vfunc81@COccultRegen@@UAEHXZ COccultRegen::vfunc81
+0x10005cea func   ?vfunc440@CGeneric_NPC_bathack@@UAEHH@Z CGeneric_NPC_bathack::vfunc440
 0x10005cef func   ?Grow@?$CUtlMemory@UCUnknown1017fd60Rec@@@@QAEXH@Z CUtlMemory<CUnknown1017fd60Rec>::Grow
 0x10005cef func   ?sub_10185910@@YIXPAUMem16@@HH@Z sub_10185910
 0x10005cf4 func   ?sub_10224440@CPropDoorknob@@QAEXPAVCBaseEntity@@@Z CPropDoorknob::sub_10224440
