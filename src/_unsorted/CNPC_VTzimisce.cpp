@@ -1064,6 +1064,18 @@ int CNPC_VTzimisce::vfunc390(CTakeDamageInfo *a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bdfa0 size=0x5
+#include "CNPC_VTzimisce.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CNPC_VTzimisce::vfunc366
+// the game's 0x103bdfa0: a tail call (jmp) of CBaseCombatCharacter::vfunc366
+bool CNPC_VTzimisce::vfunc366(int a0, int a1, int a2)
+{
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc366(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be010 size=0x2a
 #include "CNPC_VTzimisce.h"
 #include "CUnknown10381be0.h"
