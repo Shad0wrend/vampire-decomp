@@ -11503,6 +11503,7 @@
 0x1000f4e3 func   ?sub_10041fe0@UtlHash8@@QAEIPAX@Z UtlHash8::sub_10041fe0
 0x1000f4e8 func   ?sub_1027fc40@CUnknown1027fc40@@QAEXXZ CUnknown1027fc40::sub_1027fc40
 0x1000f4ed func   ?vfunc191@CBaseGrenade@@UAEXH@Z CBaseGrenade::vfunc191
+0x1000f4f2 func   ?vfunc259@CNPC_VMoleman@@QAEXPAUanimevent_t@@@Z CNPC_VMoleman::vfunc259
 0x1000f4f7 func   ?sub_1024cdb0@VMatrix@@QBE?AUVPlane@@ABU2@@Z VMatrix::sub_1024cdb0
 0x1000f4fc func   ?vfunc131@CWorld@@UAEHXZ CWorld::vfunc131
 0x1000f501 func   ?sub_10258870@CUnknown10258870@@QAEXXZ CUnknown10258870::sub_10258870
