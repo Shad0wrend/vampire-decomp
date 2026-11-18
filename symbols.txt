@@ -9261,6 +9261,7 @@
 0x1000c7ca func   ?vfunc490@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc490
 0x1000c7cf func   _instanced_scripted_scene instanced_scripted_scene
 0x1000c7d4 func   ?sub_10314e50@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_10314e50
+0x1000c7d9 func   ?vfunc103@CNPC_VGangrel@@UAEXXZ CNPC_VGangrel::vfunc103
 0x1000c7de func   ?sub_10265970@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_10265970
 0x1000c7e3 func   ??1CUnknown101dff00@@QAE@XZ CUnknown101dff00::~CUnknown101dff00
 0x1000c7e3 func   ?sub_101df2f0@CUnknown101df2f0@@QAEXXZ CUnknown101df2f0::sub_101df2f0
