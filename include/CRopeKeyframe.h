@@ -8,6 +8,9 @@ class CRopeKeyframe : public CBaseEntity
 {
 public:
 	CRopeKeyframe *vfunc5(unsigned int flags);
+	virtual void vfunc77();	// slot 77 (0x1019e550): clears the rope flag bit 3 (+0x454) unless sub_100b5190 holds, then CBaseEntity::vfunc77
+	virtual void vfunc78();	// slot 78 (0x1019e590): sets the rope flag bit 3 when sub_100b5190 holds, then CBaseEntity::vfunc78
+	virtual void vfunc103();	// slot 103 (0x1019f540): CBaseEntity::vfunc103, then Precache (slot 104)
 	void sub_1000cb8a();
 	void sub_1023a7d0(int a, int b, int c, int d);
 	char vfunc86(int a, int b, int c, int d, int e);	// slot 86: sets +0x450 when clear, else CBaseEntity::vfunc86
@@ -63,7 +66,6 @@ public:
 	short m_iEndAttachment;	// 0x049a
 public:
     virtual datamap_t * vfunc82();
-    void vfunc103();	// as in CFlameCluster (transplant)
 public:
     virtual int vfunc81();
     virtual int vfunc80();

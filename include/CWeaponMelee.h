@@ -21,7 +21,7 @@ public:
 	void vfunc326();	// slot 326: its own (0x103eaca0): picks the swing activity (0x4b, 0x4c or 0x53) and tries it through slot 372 in a few ways, then tells the owner's player (slot 429) when one of them worked
 	void vfunc327();	// slot 327: its own (0x103eae00)
 	void vfunc339();	// slot 339: kicks the owner player's view with a random (x, y) punch from the weapon's roll record (+0x384..+0x398), scaled down by the owner's stat 1 of its type 0 list
-	void vfunc367(int a, int b, int c);	// forwards to sub_103ea7e0 with the constant 0x4b
+	virtual int vfunc367(int a, float b, float c);	// slot 367: sub_103ea7e0 with the constant 0x4b (b / c passed on as bit patterns)
 	int vfunc368(int a, int b, int c);	// slot 368: the swing's result code, sub_100131fb(0x4e, a, b, c) mapped to 0x52 when it is 0x51, else 0x100 (stub 0x103eac60, its own)
 	void vfunc370(int *event, CBaseCombatWeapon *other);	// animation events: 0xbb9 / 0xbd6..0xbe7 run slot 326 unless other has its dword at +0xa8 set, 0xfa1 / 0xfa2 set a bodygroup from the event's string, the rest go to the base class
 	virtual char vfunc372(int a, int b, int c);	// slot 372 (stub 0x100148e9): starts the swing activity a; the first slot beyond CBaseCombatWeapon's 372

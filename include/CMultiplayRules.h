@@ -14,6 +14,7 @@ class CMultiplayRules : public CGameRules
 {
 public:
 	virtual CGameRules *vfunc0(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc15();	// slot 15 (0x10141130): CGameRules::vfunc15, a tail call
 	virtual void vfunc16();	// "CMultiplayRules::Think"-like: the base think, then: with the flag byte at 0x1070ba2c set, once the time at +0x8 has passed (and the byte at +0xc is set or 120 more seconds passed) slot 79; otherwise the time limit (60 times the value of the cvar at 0x1070ae7c) or the frag limit (the cvar at 0x1070aa8c, compared with the frags at +0x22bc of every player) ends the game through slot 80
 	virtual char vfunc19(CBaseEntity *pPlayer, CBaseEntity *pWeapon);	// "FShouldSwitchWeapon": the player can switch to the weapon (CanSwitchTo, team test) and it outweighs the active weapon (slot 345), true without an active weapon
 	virtual void vfunc45(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "DeathNotice" (CHalfLifeMultiplay::DeathNotice): the user message 0x10726034 (killer id, victim index, weapon name) to everybody and a log line
@@ -25,6 +26,7 @@ public:
 	virtual void vfunc35(CBaseEntity *pPlayer);	// "EquipPlayer": every game_player_equip entity equips the player (slot 175); without one gives weapon_crowbar, weapon_9mmhandgun and 0x44 SmallRound
 	virtual void vfunc36(void *pOwner);	// clears the dwords +0x208c, +0x2088 and +0x2090 of pOwner when the flag byte at 0x1070ba2c is set, and sets this's byte at +0xc when one of the bits 0x440827 of +0x208c was set
 	virtual float vfunc38(int a);
+	virtual CBaseEntity *vfunc39(CBaseEntity *pPlayer);	// slot 39 "GetPlayerSpawnSpot" (0x101422c0): CGameRules::vfunc39, a tail call
 	virtual bool vfunc40();	// slot 40: false when the global object at 0x1070ada4 answers slot 1 true, else whether its int at +0x2c is non-zero
 	virtual int vfunc43(int a, int b);
 	virtual void vfunc44(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "PlayerKilled": DeathNotice (slot 45), counts the death and fires game_playerdie; credits the scorer (sub_10141b10) with the points of slot 43 and fires game_playerkill, or takes a point off a suicide
@@ -67,5 +69,5 @@ public:
     virtual float vfunc59();
     virtual float vfunc60();
     virtual bool vfunc26(int, int, int, int);
-    virtual int vfunc48(CBaseEntity *pPlayer);	// slot 48: 1, or 2 when the entity's flags at +0x204 carry 0x40000000 (declared last to keep the other slots' indices)
+    virtual int vfunc48(CBaseEntity *pPlayer);	// slot 48 "WeaponShouldRespawn": 1, or 2 when the entity's flags at +0x204 carry 0x40000000 (SF_NORESPAWN)
 };

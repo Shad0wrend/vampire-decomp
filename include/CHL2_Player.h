@@ -22,46 +22,7 @@ struct __declspec(novtable) CHL2_PlayerBase
 	virtual void pa00();
 };
 
-struct CSecureCodedLocal
-{
-	int m_n0;
-	int m_n4;
-	int sub_10184220(unsigned int v);
-};
-
-struct CUnknown101841f0
-{
-	int m_n0;
-	CUnknown101841f0 *sub_101841f0(CSecureCodedLocal *p);
-};
-
-unsigned int sub_10184260(unsigned int v);
-
-namespace MvsnSec {
-struct CPfnTraits1;
-template<class Tr, class T> struct CSecureCoderPfn;
-template<class Tr, class T> struct CSecureCoderBasic;
-
-struct CSecureValueStorage
-{
-	CUnknown101841f0 m_coded;
-	unsigned int m_value;
-	CSecureValueStorage() { m_value = 0; }
-};
-
-template<class Tr, class T, class C1, class C2>
-struct CSecureTypeBase : CSecureValueStorage
-{
-	virtual void vfunc0();
-	__forceinline void Set(unsigned int v)
-	{
-		CSecureCodedLocal loc;
-		loc.m_n4 = loc.sub_10184220(sub_10184260(v));
-		m_coded.sub_101841f0(&loc);
-	}
-	__forceinline CSecureTypeBase() { Set(0); }
-};
-}
+#include "MvsnSec1.h"
 
 // The member at +0x2464, constructed by CUnknown1012cf10::sub_1012cf10.
 struct CHL2_PlayerMember2464 : public CUnknown1012cf10

@@ -398,9 +398,9 @@ bool CWeaponMelee::vfunc283(CBaseEntity *pTarget)
 // FUNCTION: 0x103eac30 size=0x19
 #include "CWeaponMelee_TzimisceMelee.h"
 
-void CWeaponMelee::vfunc367(int a, int b, int c)
+int CWeaponMelee::vfunc367(int a, float b, float c)
 {
-	sub_103ea7e0(0x4b, a, b, c);
+	return sub_103ea7e0(0x4b, a, *(int *)&b, *(int *)&c);
 }
 // END FUNCTION
 

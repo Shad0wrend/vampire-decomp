@@ -72,7 +72,7 @@ public:
 	virtual void vfunc45(CBaseEntity *pVictim, CMPDamageInfo *pInfo);	// "DeathNotice"
 	virtual int vfunc46(int);
 	virtual char vfunc47(CBaseEntity *pPlayer, CBaseEntity *pItem);	// "CanHavePlayerItem"
-	virtual int vfunc48(int index);
+	virtual int vfunc48(CBaseEntity *pWeapon);	// slot 48 "WeaponShouldRespawn": 1 (respawn) or 2 (no); CBaseCombatWeapon::sub_102500d0 asks it with itself
 	virtual float vfunc49(CBaseEntity *pWeapon);
 	virtual float vfunc50(CBaseEntity *pWeapon);
 	virtual Vector vfunc51(CBaseEntity *pEnt);	// returns a copy of the entity's origin

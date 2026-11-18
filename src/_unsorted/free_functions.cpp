@@ -107612,16 +107612,29 @@ void CBasePlayer::sub_1016f2a0(const char *pszFile)
 // END FUNCTION
 
 // FUNCTION: 0x1016fa90 size=0x35b
-#include "vampire_all.h"
+#include "CBasePlayer.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
+#include "CUnknown1073dc28.h"
+#include "ScopeTrace.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
 #include "vampire.h"
 #include <string.h>
 // identifier-count dial (link audit 2026-11-18): VC6 orders this function's tied stack slots by symbol numbers mod 64,
-// so 40 declarations here keep the game's slot order with the current headers (window 34..47).
+// so 48 declarations here keep the game's slot order with these headers (window 42..55).
 typedef int pcd_dial0; typedef int pcd_dial1; typedef int pcd_dial2; typedef int pcd_dial3; typedef int pcd_dial4; typedef int pcd_dial5; typedef int pcd_dial6; typedef int pcd_dial7;
 typedef int pcd_dial8; typedef int pcd_dial9; typedef int pcd_dial10; typedef int pcd_dial11; typedef int pcd_dial12; typedef int pcd_dial13; typedef int pcd_dial14; typedef int pcd_dial15;
 typedef int pcd_dial16; typedef int pcd_dial17; typedef int pcd_dial18; typedef int pcd_dial19; typedef int pcd_dial20; typedef int pcd_dial21; typedef int pcd_dial22; typedef int pcd_dial23;
 typedef int pcd_dial24; typedef int pcd_dial25; typedef int pcd_dial26; typedef int pcd_dial27; typedef int pcd_dial28; typedef int pcd_dial29; typedef int pcd_dial30; typedef int pcd_dial31;
 typedef int pcd_dial32; typedef int pcd_dial33; typedef int pcd_dial34; typedef int pcd_dial35; typedef int pcd_dial36; typedef int pcd_dial37; typedef int pcd_dial38; typedef int pcd_dial39;
+typedef int pcd_dial40; typedef int pcd_dial41; typedef int pcd_dial42; typedef int pcd_dial43; typedef int pcd_dial44; typedef int pcd_dial45; typedef int pcd_dial46; typedef int pcd_dial47;
 
 class ICommandLine
 {
@@ -199812,7 +199825,7 @@ extern CGameRules *g_1070ba0c;
 // TARGET: CBaseCombatWeapon::sub_102500d0
 void CBaseCombatWeapon::sub_102500d0()
 {
-	if (g_1070ba0c->vfunc48((int)this) - 1 == 0)
+	if (g_1070ba0c->vfunc48((CBaseEntity *)this) - 1 == 0)
 		vfunc187();
 }
 // END FUNCTION
@@ -246360,7 +246373,6 @@ float sub_102f9ca0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x102f9cd0 size=0x3af
-#include "vampire_all.h"
 #include "CTraceFilterNoCharacterCollide.h"
 #include "CAI_Node.h"
 #include "Ray_t.h"
@@ -246374,9 +246386,9 @@ float sub_102f9ca0(int a)
 #include <math.h>
 #include <stdlib.h>
 // identifier-count dial (link audit 2026-11-18): VC6 orders this function's tied stack slots by symbol numbers mod 64,
-// so 15 declarations here keep the game's slot order with the current headers (window 12..19).
+// so 13 declarations here keep the game's slot order with these headers (window 10..17).
 typedef int pcd_dial0; typedef int pcd_dial1; typedef int pcd_dial2; typedef int pcd_dial3; typedef int pcd_dial4; typedef int pcd_dial5; typedef int pcd_dial6; typedef int pcd_dial7;
-typedef int pcd_dial8; typedef int pcd_dial9; typedef int pcd_dial10; typedef int pcd_dial11; typedef int pcd_dial12; typedef int pcd_dial13; typedef int pcd_dial14;
+typedef int pcd_dial8; typedef int pcd_dial9; typedef int pcd_dial10; typedef int pcd_dial11; typedef int pcd_dial12;
 
 extern char g_1093408c;
 char *sub_102d6120(int);

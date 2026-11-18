@@ -3,6 +3,7 @@
 
 // FUNCTION: 0x101839a0 size=0x660
 #include "MvsnSec.h"
+#include "MvsnSec1.h"
 unsigned int sub_10184260(unsigned int x);
 unsigned int sub_10184280(unsigned int x);
 
@@ -19,7 +20,6 @@ struct CSecVal1
 	__forceinline void Copy(const CSecVal1 &o) { m_Value = o.m_Value; m_b1 = o.m_b1; m_b0 = o.m_b0; }	// the inline form of 0x101841f0
 };
 
-struct CUnknown101841f0 { void sub_101841f0(const CSecVal1 *p); };
 struct CUnknown101841c0 { void sub_101841c0(const CSecVal1 *p); };
 
 namespace MvsnSec {
@@ -41,7 +41,7 @@ CSecureResult *CSecureInt1::vfunc0(CSecureResult *pOut, int *pOp, CSecureInt1 *p
 	case 0x707dca09: res.Copy(CSecVal1((unsigned int)a->Get() | (unsigned int)b->Get())); break;
 	case 0x707dca0a: res.Copy(CSecVal1((unsigned int)a->Get() ^ (unsigned int)b->Get())); break;
 	default:
-		((CUnknown101841f0 *)&res)->sub_101841f0(&CSecVal1(b->Get()));
+		((CUnknown101841f0 *)&res)->sub_101841f0((CSecureCodedLocal *)&CSecVal1(b->Get()));
 		break;
 	}
 	((CUnknown101841c0 *)pOut)->sub_101841c0(&res);

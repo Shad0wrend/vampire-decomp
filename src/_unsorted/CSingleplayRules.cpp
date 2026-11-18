@@ -236,7 +236,7 @@ Vector CSingleplayRules::vfunc51(CBaseEntity *pEnt)
 // FUNCTION: 0x101ac000 size=0x8
 #include "CSingleplayRules.h"
 // TARGET: CSingleplayRules::vfunc48
-int CSingleplayRules::vfunc48(int index)
+int CSingleplayRules::vfunc48(CBaseEntity *pWeapon)
 {
 	return 2;
 }

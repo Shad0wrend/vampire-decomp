@@ -15,8 +15,11 @@ struct CSecureCoderPfn {};
 template <class Traits, class T>
 struct CSecureCoderBasic {};
 
-template <class Traits, class T, class Coder, class Basic>
-struct CSecureTypeBase
+template <class Traits, class T, class Coder, class Basic> struct CSecureTypeBase;	// the primary template: MvsnSec1.h
+
+// the Traits3 instance (CDialog's clan / discipline numbers, vftable 0x1045467c): the value at +0x04
+template <>
+struct CSecureTypeBase<CPfnTraits3, int, CSecureCoderPfn<CPfnTraits3, int>, CSecureCoderBasic<CPfnTraits3, int> >
 {
 	virtual void vfunc0();	// slot 0 (0x10003869)
 
@@ -56,20 +59,12 @@ typedef CSecureTypeBase<CPfnTraits4, int, CSecureCoderPfn<CPfnTraits4, int>, CSe
 
 typedef CSecureTypeBase<CPfnTraits3, int, CSecureCoderPfn<CPfnTraits3, int>, CSecureCoderBasic<CPfnTraits3, int> > CSecureInt3;
 
-struct CPfnTraits1 {};
+struct CPfnTraits1;	// its instance is the primary template (MvsnSec1.h)
 
 struct CSecureResult
 {
 	char m_b0;
 	char m_b1;
-	int m_Value;
-};
-
-template <>
-struct CSecureTypeBase<CPfnTraits1, int, CSecureCoderPfn<CPfnTraits1, int>, CSecureCoderBasic<CPfnTraits1, int> >
-{
-	virtual CSecureResult *vfunc0(CSecureResult *pOut, int *pOp, CSecureTypeBase *pA, CSecureTypeBase *pB);
-
 	int m_Value;
 };
 

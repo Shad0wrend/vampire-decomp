@@ -13,7 +13,7 @@ public:
 	virtual CBaseEntity *vfunc20(CBaseEntity *pPlayer, CBaseEntity *pCurrentWeapon);	// "GetNextBestWeapon": over the player's 0xe0 weapon slots, the usable owned weapon with the highest weight (pCurrentWeapon is not looked at), null when there is none
 	virtual float vfunc38(int a);
 	virtual int vfunc43(int a, int b);
-	virtual int vfunc48(int index);
+	virtual int vfunc48(CBaseEntity *pWeapon);	// slot 48 "WeaponShouldRespawn": 2, never
 	virtual float vfunc49(CBaseEntity *pWeapon);
 	virtual float vfunc50(CBaseEntity *pWeapon);
 	virtual int vfunc61(int index);
