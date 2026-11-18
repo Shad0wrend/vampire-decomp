@@ -12693,6 +12693,7 @@
 0x10010df2 func   ?vfunc104@CRagdollProp@@UAEXXZ CRagdollProp::vfunc104
 0x10010df7 func   ?sub_100e0a40@CDialog@@QAEXPBD@Z CDialog::sub_100e0a40
 0x10010dfc func   ?sub_10130150@@YAHXZ sub_10130150
+0x10010e01 func   ?vfunc104@CWeaponHolyLight@@QAEXXZ CWeaponHolyLight::vfunc104
 0x10010e06 func   ?sub_1027fa50@CUtlVector20@@QAEXHH@Z CUtlVector20::sub_1027fa50
 0x10010e0b func   _npc_bullseye npc_bullseye
 0x10010e10 func   ?sub_102564b0@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_102564b0

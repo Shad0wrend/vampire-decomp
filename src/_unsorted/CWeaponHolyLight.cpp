@@ -35,6 +35,18 @@ CWeaponHolyLight *CWeaponHolyLight::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f2ac0 size=0x5
+#include "CWeaponHolyLight.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponHolyLight::vfunc104
+// the game's 0x103f2ac0: a tail call (jmp) of CBaseCombatWeapon::vfunc104
+void CWeaponHolyLight::vfunc104()
+{
+	((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f2ae0 size=0x120
 #include "utlrbtree.h"
 #include "utlsortvector.h"
