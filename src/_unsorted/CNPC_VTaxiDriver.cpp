@@ -73,6 +73,18 @@ int CNPC_VTaxiDriver::vfunc375(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b35a0 size=0x5
+#include "CNPC_VTaxiDriver.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VTaxiDriver::vfunc103
+// the game's 0x103b35a0: a tail call (jmp) of CNPC_VHuman::vfunc103
+void CNPC_VTaxiDriver::vfunc103()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b3630 size=0x6
 #include "CNPC_VTaxiDriver.h"
 int CNPC_VTaxiDriver::vfunc138()

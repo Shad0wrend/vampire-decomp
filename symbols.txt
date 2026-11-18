@@ -235,6 +235,7 @@
 0x100014ab func   ?vfunc492@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc492
 0x100014b0 func   ?sub_1029b180@CAI_BaseNPCTroika@@QAE_NPAX@Z CAI_BaseNPCTroika::sub_1029b180
 0x100014b5 func   ?vfunc4@CTESpriteSpray@@UAEXPAVCRecipientFilter@@M@Z CTESpriteSpray::vfunc4
+0x100014ba func   ?vfunc103@CNPC_VTaxiDriver@@QAEXXZ CNPC_VTaxiDriver::vfunc103
 0x100014bf func   ?vfunc2@CPositionInterpolator_Rope@@UAEXHPBVVector@@@Z CPositionInterpolator_Rope::vfunc2
 0x100014c9 func   ?vfunc509@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc509
 0x100014d3 func   ?sub_102ef6d0@CUnknown102ef350Iface@@QAE_NHPAUCUnknown102ef3e0Arg@@HPAH@Z CUnknown102ef350Iface::sub_102ef6d0
