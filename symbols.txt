@@ -2737,6 +2737,7 @@
 0x100046e2 func   ?sub_103c4840@@YAHXZ sub_103c4840
 0x100046e7 func   ?vfunc124@CTriggerImpact@@QAEHXZ CTriggerImpact::vfunc124
 0x100046ec func   ?sub_10185260@UtlVec64@@QAEXHH@Z UtlVec64::sub_10185260
+0x100046f1 func   ?sub_10248090@CWrap10248090@@QAEXXZ CWrap10248090::sub_10248090
 0x100046f6 func   ?vfunc291@CWeaponRanged_FlameThrower@@UAEXXZ CWeaponRanged_FlameThrower::vfunc291
 0x100046fb func   ?sub_1018c4d0@CUnknown1018c4d0@@QAEXD@Z CUnknown1018c4d0::sub_1018c4d0
 0x10004700 func   ?sub_101ef540@CVampireProjectile@@QAEXPBVVector@@0HHPAVCBaseEntity@@0MHHH1H1PBDH@Z CVampireProjectile::sub_101ef540

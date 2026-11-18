@@ -196210,6 +196210,17 @@ CUnk10248060 *CUnk10248060::sub_10248060(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10248090 size=0x5
+#include "CUnknown10248a50.h"
+struct CWrap10248090 { void sub_10248090(); };
+// TARGET: sub_10248090
+// the game's 0x10248090: a tail call (jmp) of CUnknown10248a50::~CUnknown10248a50
+void CWrap10248090::sub_10248090()
+{
+	((CUnknown10248a50 *)this)->CUnknown10248a50::~CUnknown10248a50();
+}
+// END FUNCTION
+
 // FUNCTION: 0x102480b0 size=0x3
 struct CUnknown102480b0 { int sub_102480b0(); };
 int CUnknown102480b0::sub_102480b0()
