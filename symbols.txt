@@ -15046,6 +15046,7 @@
 0x10013cbe func   ?sub_10187e60@CLagCompensationManager@@QAEXPAUCPlayerView10187e60@@@Z CLagCompensationManager::sub_10187e60
 0x10013cc3 func   ?sub_100ec3d0@CIndexedTableView@@QAEMH@Z CIndexedTableView::sub_100ec3d0
 0x10013cc8 func   ?sub_10204900@CUnknown10204e90@@QAEHPAX@Z CUnknown10204e90::sub_10204900
+0x10013ccd func   ?sub_1006cb60@CWrap1006cb60@@QAEHH@Z CWrap1006cb60::sub_1006cb60
 0x10013cd2 func   ?vfunc3@CTEBubbleTrail@@UAEXABVVector@@ABVQAngle@@@Z CTEBubbleTrail::vfunc3
 0x10013cd7 func   ?sub_100d5be0@@YAXXZ sub_100d5be0
 0x10013cdc func   ?sub_102477e0@CUnknown102477e0@@QAEHXZ CUnknown102477e0::sub_102477e0

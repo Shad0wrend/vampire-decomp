@@ -21601,6 +21601,17 @@ void CUnk_1006cb10::sub_1006cb10(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006cb60 size=0x5
+struct CFloatTable1006c9d0 { int sub_1006c9d0(int); };
+struct CWrap1006cb60 { int sub_1006cb60(int); };
+// TARGET: sub_1006cb60
+// the game's 0x1006cb60: a tail call (jmp) of CFloatTable1006c9d0::sub_1006c9d0
+int CWrap1006cb60::sub_1006cb60(int a0)
+{
+	return ((CFloatTable1006c9d0 *)this)->CFloatTable1006c9d0::sub_1006c9d0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cba0 size=0x30
 #include "StatDefault.h"
 int StatDefault::sub_1006cba0(int arg)
