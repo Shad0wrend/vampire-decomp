@@ -10279,6 +10279,7 @@
 0x1000de2c func   ?sub_10201100@CVStatList_t@@QAEDHH@Z CVStatList_t::sub_10201100
 0x1000de31 func   ?vfunc0@CTraceFilterFVisible@@UAE_NPAXH@Z CTraceFilterFVisible::vfunc0
 0x1000de36 func   ?sub_10113c90@CFunc_Dust@@QAEPAV1@XZ CFunc_Dust::sub_10113c90
+0x1000de3b func   ?vfunc366@CNPC_VMoleman@@QAE_NHHH@Z CNPC_VMoleman::vfunc366
 0x1000de40 func   ?vfunc489@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc489
 0x1000de45 func   ??0CDmgRecord1025b1f0@@QAE@XZ CDmgRecord1025b1f0::CDmgRecord1025b1f0
 0x1000de4a func   ?sub_10057440@@YAHXZ sub_10057440
