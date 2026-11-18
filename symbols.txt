@@ -5111,6 +5111,7 @@
 0x100076ad func   ?sub_10026a90@@YGDH@Z sub_10026a90
 0x100076b2 func   ?vfunc104@CBaseDoor@@UAEXXZ CBaseDoor::vfunc104
 0x100076b7 func   ?vfunc78@CEnvParticle@@QAEXXZ CEnvParticle::vfunc78
+0x100076bc func   ?vfunc259@CNPC_VHuman@@UAEXPAUanimevent_t@@@Z CNPC_VHuman::vfunc259
 0x100076c1 func   ?sub_1042d6d0@CUnknown1042d6d0@@QAEXH@Z CUnknown1042d6d0::sub_1042d6d0
 0x100076c6 func   ?vfunc70@CNPC_VTzimisceHeadClaw@@UAE_NXZ CNPC_VTzimisceHeadClaw::vfunc70
 0x100076cb func   ?sub_102f72c0@@YAHPBVVector@@0M@Z sub_102f72c0
