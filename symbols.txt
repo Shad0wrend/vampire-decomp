@@ -15184,6 +15184,7 @@
 0x10013ebc func   _item_k_museum_basement_key item_k_museum_basement_key
 0x10013ec1 func   ?vfunc103@CTempEntTester@@UAEXXZ CTempEntTester::vfunc103
 0x10013ec6 func   ?sub_1006c470@@YAXPAUCUnit1006c470@@HH@Z sub_1006c470
+0x10013ecb func   ?sub_10383eb0@@YAII@Z sub_10383eb0
 0x10013ed0 func   ?vfunc104@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc104
 0x10013ed5 func   ?vfunc433@CNPC_VWerewolf@@UAEXXZ CNPC_VWerewolf::vfunc433
 0x10013eda func   ?sub_10231790@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::sub_10231790
