@@ -183,6 +183,18 @@ void CNPC_VCop::vfunc442(int *pEvent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10371c00 size=0x5
+#include "CNPC_VCop.h"
+#include "CNPC_VHumanCombatant.h"
+
+// TARGET: CNPC_VCop::vfunc453
+// the game's 0x10371c00: a tail call (jmp) of CNPC_VHumanCombatant::vfunc453
+void CNPC_VCop::vfunc453()
+{
+	CNPC_VHumanCombatant::vfunc453();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10371c20 size=0x208
 #include "CNPC_VCop.h"
 #include "CBasePlayer.h"
