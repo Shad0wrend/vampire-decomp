@@ -3874,6 +3874,7 @@
 0x10005d2b func   ?vfunc18@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHH@Z CTempEntsSystem::vfunc18
 0x10005d30 func   ?sub_10257640@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_10257640
 0x10005d35 func   ?sub_10249fc0@CUnknown10249fc0@@QAEHG@Z CUnknown10249fc0::sub_10249fc0
+0x10005d3a func   ?vfunc390@CNPC_VMoleman@@QAEHPAUCTakeDamageInfo@@@Z CNPC_VMoleman::vfunc390
 0x10005d3f func   ?vfunc442@CBasePlayer@@UAEXH@Z CBasePlayer::vfunc442
 0x10005d44 func   ?sub_102e7880@CAI_MoveProbe@@QAEDPBMIMMPAMPAX@Z CAI_MoveProbe::sub_102e7880
 0x10005d49 func   ?sub_10262590@@YIXPAVCAI_BaseHumanoid@@HH@Z sub_10262590

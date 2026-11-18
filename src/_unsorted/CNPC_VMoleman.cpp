@@ -189,6 +189,19 @@ void CNPC_VMoleman::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039fe70 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CNPC_VMoleman.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VMoleman::vfunc390
+// the game's 0x1039fe70: a tail call (jmp) of CNPC_VHuman::vfunc390
+int CNPC_VMoleman::vfunc390(CTakeDamageInfo *a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039fe90 size=0x5
 #include "CNPC_VMoleman.h"
 #include "CNPC_VHuman.h"
