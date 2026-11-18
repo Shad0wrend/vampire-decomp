@@ -59,6 +59,7 @@
 	void sub_10289ee0(int activity);	// stub 0x10014524: starts the activity
 	int sub_102b9060();	// stub 0x10007d56: the second schedule pick of the "SelectSchedule" of the animal NPCs (called after sub_102b8a60 found none)
 	virtual int vfunc438();	// slot 438 "SelectSchedule" (0x102af660; its block declared it with a macro until now)
+	virtual char vfunc363(CBaseEntity *pEnt);	// slot 363 (0x102b4540): asked about an entity (CAI_BaseNPC::vfunc363 overridden)
 	int sub_102af660();	// CAI_BaseNPCTroika::vfunc438 (stub 0x10015596), called directly (tail jump) by the animal NPCs' schedule selection
 	virtual void vfunc453();	// slot 453 override: CAI_BaseNPC::vfunc453, then, unless the flags (+0x14b8 / +0x14bc) say the NPC is busy, sets the conditions 0x1e, 0x1f, 0x21 (no hint of type 0x2774), 0x72 / 0x20 / 0x22 (bits 4 / 5 of +0x5b64, without a slot 167 value) and 0x27 (bit 10 of +0x14b8 clear), and the task 0x31 when bit 6 of +0x14bc is set
 	void sub_10280fb0();	// CAI_BaseNPC::vfunc453 (stub 0x1000611d), called directly by vfunc453

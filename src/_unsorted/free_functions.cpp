@@ -107809,14 +107809,43 @@ void CBasePlayer::sub_1016f2a0(const char *pszFile)
 #include "utlvector.h"
 #include "vampire.h"
 #include <string.h>
-// identifier-count dial (link audit 2026-11-18): VC6 orders this function's tied stack slots by symbol numbers mod 64,
-// so 48 declarations here keep the game's slot order with these headers (window 42..55).
-typedef int pcd_dial0; typedef int pcd_dial1; typedef int pcd_dial2; typedef int pcd_dial3; typedef int pcd_dial4; typedef int pcd_dial5; typedef int pcd_dial6; typedef int pcd_dial7;
-typedef int pcd_dial8; typedef int pcd_dial9; typedef int pcd_dial10; typedef int pcd_dial11; typedef int pcd_dial12; typedef int pcd_dial13; typedef int pcd_dial14; typedef int pcd_dial15;
-typedef int pcd_dial16; typedef int pcd_dial17; typedef int pcd_dial18; typedef int pcd_dial19; typedef int pcd_dial20; typedef int pcd_dial21; typedef int pcd_dial22; typedef int pcd_dial23;
-typedef int pcd_dial24; typedef int pcd_dial25; typedef int pcd_dial26; typedef int pcd_dial27; typedef int pcd_dial28; typedef int pcd_dial29; typedef int pcd_dial30; typedef int pcd_dial31;
-typedef int pcd_dial32; typedef int pcd_dial33; typedef int pcd_dial34; typedef int pcd_dial35; typedef int pcd_dial36; typedef int pcd_dial37; typedef int pcd_dial38; typedef int pcd_dial39;
-typedef int pcd_dial40; typedef int pcd_dial41; typedef int pcd_dial42; typedef int pcd_dial43; typedef int pcd_dial44; typedef int pcd_dial45; typedef int pcd_dial46; typedef int pcd_dial47;
+typedef int pcd_dial0;
+typedef int pcd_dial1;
+typedef int pcd_dial2;
+typedef int pcd_dial3;
+typedef int pcd_dial4;
+typedef int pcd_dial5;
+typedef int pcd_dial6;
+typedef int pcd_dial7;
+typedef int pcd_dial8;
+typedef int pcd_dial9;
+typedef int pcd_dial10;
+typedef int pcd_dial11;
+typedef int pcd_dial12;
+typedef int pcd_dial13;
+typedef int pcd_dial14;
+typedef int pcd_dial15;
+typedef int pcd_dial16;
+typedef int pcd_dial17;
+typedef int pcd_dial18;
+typedef int pcd_dial19;
+typedef int pcd_dial20;
+typedef int pcd_dial21;
+typedef int pcd_dial22;
+typedef int pcd_dial23;
+typedef int pcd_dial24;
+typedef int pcd_dial25;
+typedef int pcd_dial26;
+typedef int pcd_dial27;
+typedef int pcd_dial28;
+typedef int pcd_dial29;
+typedef int pcd_dial30;
+typedef int pcd_dial31;
+typedef int pcd_dial32;
+typedef int pcd_dial33;
+typedef int pcd_dial34;
+typedef int pcd_dial35;
+typedef int pcd_dial36;
 
 class ICommandLine
 {
@@ -132896,28 +132925,33 @@ CUnknown101b6320Params *CUnknown101b6320Params::sub_101b5b70(const CUnknown101b6
 // END FUNCTION
 
 // FUNCTION: 0x101b5dd0 size=0x261
-#include "vampire_all.h"
 #include "CSoundEmitterSystemBase.h"
 #include "Tier1.h"
-typedef int pcd_t0;
-typedef int pcd_t1;
-typedef int pcd_t2;
-typedef int pcd_t3;
-typedef int pcd_t4;
-typedef int pcd_t5;
-typedef int pcd_t6;
-typedef int pcd_t7;
-typedef int pcd_t8;
-typedef int pcd_t9;
-typedef int pcd_t10;
-typedef int pcd_t11;
-typedef int pcd_t12;
-typedef int pcd_t13;
-typedef int pcd_t14;
-typedef int pcd_t15;
-typedef int pcd_t16;
-typedef int pcd_t17;
-typedef int pcd_t18;
+typedef int pcd_dial0;
+typedef int pcd_dial1;
+typedef int pcd_dial2;
+typedef int pcd_dial3;
+typedef int pcd_dial4;
+typedef int pcd_dial5;
+typedef int pcd_dial6;
+typedef int pcd_dial7;
+typedef int pcd_dial8;
+typedef int pcd_dial9;
+typedef int pcd_dial10;
+typedef int pcd_dial11;
+typedef int pcd_dial12;
+typedef int pcd_dial13;
+typedef int pcd_dial14;
+typedef int pcd_dial15;
+typedef int pcd_dial16;
+typedef int pcd_dial17;
+typedef int pcd_dial18;
+typedef int pcd_dial19;
+typedef int pcd_dial20;
+typedef int pcd_dial21;
+typedef int pcd_dial22;
+typedef int pcd_dial23;
+typedef int pcd_dial24;
 
 namespace block_101b5dd0 {
 struct CSoundEmitterSystemBaseUnit : CSoundEmitterSystemBase

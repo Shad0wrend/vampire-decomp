@@ -456,4 +456,6 @@ public:
 	void sub_10348d00();
 	void sub_10336390(int hFile);	// "CBaseCombatCharacter::Inventory_Debug_Log": writes the inventory to the open file handle
 	int sub_103449b0(CBaseEntity *pAttacker, CBaseEntity *pOther, void *pInfo);	// 0x10348d00: grapple-release helper called by vfunc380 (searches for a free spot around the entity using the OBB at +0x270 and traces, then SetAbsOrigin / slot 216)
+	bool vfunc366(int a, int b, int c);	// slot 366 "HandleInteraction" (0x10326d40; plain in this view)
+	int vfunc391(int a);	// slot 391 "OnTakeDamage_Dying" (0x103315e0; plain in this view)
 };
