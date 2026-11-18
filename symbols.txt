@@ -15225,6 +15225,7 @@
 0x1001410f func   ?vfunc83@CBaseEntity@@UAEHXZ CBaseEntity::vfunc83
 0x10014114 func   ?vfunc530@CNPC_VChangBros@@UAE_NPAVCBaseEntity@@@Z CNPC_VChangBros::vfunc530
 0x10014119 func   ?vfunc131@CBaseEntity@@UAEHXZ CBaseEntity::vfunc131
+0x1001411e func   ?vfunc366@CNPC_VSheriffSwarm@@UAE_NHHH@Z CNPC_VSheriffSwarm::vfunc366
 0x10014123 func   ?vfunc0@CAI_CsActList@@UAEXPAUCsActSaveIface@@@Z CAI_CsActList::vfunc0
 0x10014128 func   ?sub_1007d190@CUnknown1007d190@@QAEXXZ CUnknown1007d190::sub_1007d190
 0x1001412d func   ?vfunc473@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc473

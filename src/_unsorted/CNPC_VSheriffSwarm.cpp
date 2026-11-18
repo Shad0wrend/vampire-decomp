@@ -197,6 +197,18 @@ void CNPC_VSheriffSwarm::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b24d0 size=0x5
+#include "CNPC_VSheriffSwarm.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VSheriffSwarm::vfunc366
+// the game's 0x103b24d0: a tail call (jmp) of CNPC_VHuman::vfunc366
+bool CNPC_VSheriffSwarm::vfunc366(int a0, int a1, int a2)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc366(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b2590 size=0x15
 #include "CNPC_VSheriffSwarm.h"
 
