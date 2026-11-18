@@ -1386,13 +1386,17 @@ bool CBaseCombatCharacter::vfunc364(const Vector *pTarget)
 // END FUNCTION
 
 // FUNCTION: 0x10326d40 size=0x76
+#include "CBaseCombatCharacter.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
 
-bool __fastcall sub_10326d40(char *self, int, int a, int b, int c)
+// TARGET: CBaseCombatCharacter::vfunc366
+// slot 366 "CBaseCombatCharacter::HandleInteraction" (its scope name)
+bool CBaseCombatCharacter::vfunc366(int a, int b, int c)
 {
+    char *self = (char *)this;
     const char *name = self ? (*(const char **)(self + 0x26c) ? *(const char **)(self + 0x26c) : g_106b8540) : "NULL ENTITY";
     g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::HandleInteraction";
     g_109f3620[*g_109f3680].b = name;
