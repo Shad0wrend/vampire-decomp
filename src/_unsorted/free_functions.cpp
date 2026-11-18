@@ -215783,6 +215783,17 @@ void CAI_BaseNPCTroika::sub_10292500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10292dc0 size=0x5
+void __fastcall sub_1029bd40(struct CView *);
+struct CWrap10292dc0 { void sub_10292dc0(); };
+// TARGET: sub_10292dc0
+// the game's 0x10292dc0: a tail call (jmp) of sub_1029bd40, this in ecx
+void CWrap10292dc0::sub_10292dc0()
+{
+	sub_1029bd40((struct CView *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10293a80 size=0x24c
 #include "CAI_BaseNPCTroika.h"
 #include "CVProfile.h"

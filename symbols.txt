@@ -10081,6 +10081,7 @@
 0x1000d913 func   ?sub_10211870@CUnknown10211870@@QAEHHH@Z CUnknown10211870::sub_10211870
 0x1000d918 func   ?sub_101f5050@CUnknown101f5050@@QAEXXZ CUnknown101f5050::sub_101f5050
 0x1000d91d func   ?sub_10181680@CBasePlayer@@QAEXHH@Z CBasePlayer::sub_10181680
+0x1000d922 func   ?sub_10292dc0@CWrap10292dc0@@QAEXXZ CWrap10292dc0::sub_10292dc0
 0x1000d927 func   ?vfunc174@CTriggerImpact@@QAEXPAVCBaseEntity@@@Z CTriggerImpact::vfunc174
 0x1000d92c func   ?vfunc363@CWeaponMelee_Torch@@QAEHXZ CWeaponMelee_Torch::vfunc363
 0x1000d931 func   ?sub_1020f3f0@CFuncElevator@@QAEXPAUinputdata_t@@@Z CFuncElevator::sub_1020f3f0
