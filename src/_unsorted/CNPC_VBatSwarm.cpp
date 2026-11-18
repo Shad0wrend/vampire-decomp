@@ -246,6 +246,18 @@ int CNPC_VBatSwarm::vfunc606(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103675c0 size=0x5
+#include "CNPC_VBatSwarm.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VBatSwarm::vfunc605
+// the game's 0x103675c0: a tail call (jmp) of CNPC_VHuman::vfunc605
+int CNPC_VBatSwarm::vfunc605(int a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc605(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103675e0 size=0x15
 #include "CNPC_VBatSwarm.h"
 

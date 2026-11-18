@@ -6406,6 +6406,7 @@
 0x100090b6 func   ?sub_10370850@@YAHPAUCPrecacheView@@@Z sub_10370850
 0x100090bb func   ?sub_1014f850@@YA_NXZ sub_1014f850
 0x100090c0 func   ?sub_10137350@@YAMM@Z sub_10137350
+0x100090c5 func   ?vfunc605@CNPC_VBatSwarm@@QAEHH@Z CNPC_VBatSwarm::vfunc605
 0x100090ca func   ?sub_101d8470@CCheckList@@QAE_NPAVCBaseCombatCharacter@@@Z CCheckList::sub_101d8470
 0x100090cf func   _logic_relay logic_relay
 0x100090d4 func   ?vfunc5@CWeaponMelee_FireAxe@@QAEPAV1@I@Z CWeaponMelee_FireAxe::vfunc5
