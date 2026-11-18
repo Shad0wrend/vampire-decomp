@@ -11991,6 +11991,7 @@
 0x1000ffb5 func   ?vfunc440@CNPC_VBach@@QAEHH@Z CNPC_VBach::vfunc440
 0x1000ffba func   ?vfunc412@CBaseGrenade@@UAEXH@Z CBaseGrenade::vfunc412
 0x1000ffbf func   ?sub_101ca0c0@CTriggerProximity@@QAEXXZ CTriggerProximity::sub_101ca0c0
+0x1000ffc4 func   ?sub_100eb0c0@@YAII@Z sub_100eb0c0
 0x1000ffc9 func   ?sub_10428f90@@YAPADPADH@Z sub_10428f90
 0x1000ffce func   ?vfunc5@CItemGIdolCrane@@QAEPAV1@I@Z CItemGIdolCrane::vfunc5
 0x1000ffd3 func   ?sub_100b1750@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100b1750

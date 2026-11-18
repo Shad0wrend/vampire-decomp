@@ -67979,6 +67979,16 @@ unsigned int __cdecl sub_100eb0a0(unsigned int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eb0c0 size=0x5
+unsigned int __cdecl sub_1042ffe0(unsigned int);
+// TARGET: sub_100eb0c0
+// the game's 0x100eb0c0: a tail call (jmp) of sub_1042ffe0
+unsigned int __cdecl sub_100eb0c0(unsigned int a0)
+{
+	return sub_1042ffe0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb0e0 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_109f3634)(int);
