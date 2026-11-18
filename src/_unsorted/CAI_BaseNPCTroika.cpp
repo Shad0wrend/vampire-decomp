@@ -6012,8 +6012,11 @@ static inline CBaseEntity *ResolveHandle(unsigned int h)
 }
 
 // CAI_BaseNPCTroika::vfunc363 as a fastcall function: ecx = this, edx unused
-char __fastcall sub_102b4540(CAI_BaseNPCTroika *self, int unused, SOtherEntity *pOther)
+// TARGET: CAI_BaseNPCTroika::vfunc363
+char CAI_BaseNPCTroika::vfunc363(CBaseEntity *pEnt)
 {
+	CAI_BaseNPCTroika *self = this;
+	SOtherEntity *pOther = (SOtherEntity *)pEnt;
 	if (!pOther)
 		return false;
 	if (g_10924fba)
