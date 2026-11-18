@@ -10119,6 +10119,7 @@
 0x1000d891 func   ?sub_101facf0@@YAPADH@Z sub_101facf0
 0x1000d896 func   ?sub_10231c70@@YAHXZ sub_10231c70
 0x1000d89b func   ?sub_1019e710@@YIXPAX@Z sub_1019e710
+0x1000d8a0 func   ?vfunc15@CSave@@UAEXHHH@Z CSave::vfunc15
 0x1000d8a5 func   ?sub_10027b60@CPhysForce@@QAEXM@Z CPhysForce::sub_10027b60
 0x1000d8aa func   ?sub_10203240@CUnknown10203240@@QAEPAVCUnknown102029c0@@PBD@Z CUnknown10203240::sub_10203240
 0x1000d8af func   ?vfunc523@CNPC_VTzimisce@@UAEMXZ CNPC_VTzimisce::vfunc523

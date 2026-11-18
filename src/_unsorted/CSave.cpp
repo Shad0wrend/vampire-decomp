@@ -195,6 +195,17 @@ void __fastcall sub_1019fbd0(void *pThis, int, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fc00 size=0x5
+#include "CSave.h"
+
+// TARGET: CSave::vfunc15
+// the game's 0x1019fc00: a tail call (jmp) of sub_101a05b0 with the same three arguments
+void CSave::vfunc15(int a, int b, int c)
+{
+	sub_101a05b0(a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fc20 size=0x1a
 #include "CSave.h"
 
