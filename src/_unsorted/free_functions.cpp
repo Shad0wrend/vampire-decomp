@@ -225711,6 +225711,16 @@ unsigned int __cdecl sub_102c6330(unsigned int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c6350 size=0x5
+unsigned int __cdecl sub_1042fe90(unsigned int);
+// TARGET: sub_102c6350
+// the game's 0x102c6350: a tail call (jmp) of sub_1042fe90
+unsigned int __cdecl sub_102c6350(unsigned int a0)
+{
+	return sub_1042fe90(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c6370 size=0x29
 #include "ehandle.h"
 

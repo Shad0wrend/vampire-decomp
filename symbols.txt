@@ -6461,6 +6461,7 @@
 0x100090e3 func   ?ShiftElementsRight@?$CUtlVector@UCHumanoidRec@@V?$CUtlMemory@UCHumanoidRec@@@@@@QAEXHH@Z CUtlVector<CHumanoidRec,CUtlMemory<CHumanoidRec> >::ShiftElementsRight
 0x100090e8 func   ?sub_103da730@CTriggerWWZone@@QAEXXZ CTriggerWWZone::sub_103da730
 0x100090ed func   ?vfunc37@CSave@@UAEXPBDPAXH@Z CSave::vfunc37
+0x100090f2 func   ?sub_102c6350@@YAII@Z sub_102c6350
 0x100090f7 func   ?sub_1019d8d0@@YAHXZ sub_1019d8d0
 0x100090fc func   ??0CAmbientGenericBase@@QAE@D@Z CAmbientGenericBase::CAmbientGenericBase
 0x100090fc func   ??0CBaseEntity@@QAE@D@Z CBaseEntity::CBaseEntity
