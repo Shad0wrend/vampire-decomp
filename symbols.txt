@@ -13899,6 +13899,7 @@
 0x10012701 func   ?vfunc142@CFire@@UAEHH@Z CFire::vfunc142
 0x10012706 func   ?sub_1014f730@@YG_NH@Z sub_1014f730
 0x10012710 func   ?vfunc81@CBloodPack@@QAEHXZ CBloodPack::vfunc81
+0x10012715 func   ?vfunc24@CNPC_VHengeyokai@@UAEXH@Z CNPC_VHengeyokai::vfunc24
 0x1001271a func   ?vfunc16@CMultiplayRules@@UAEXXZ CMultiplayRules::vfunc16
 0x1001271f func   ?vfunc81@CWeaponMelee_SabbatLeaderAttack@@QAEHXZ CWeaponMelee_SabbatLeaderAttack::vfunc81
 0x10012724 func   ?sub_100542e0@@YAHXZ sub_100542e0

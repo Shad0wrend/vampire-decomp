@@ -760,6 +760,18 @@ void CNPC_VHengeyokai::vfunc175(CBaseEntity *a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10381af0 size=0x5
+#include "CNPC_VHengeyokai.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VHengeyokai::vfunc24
+// the game's 0x10381af0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc24
+void CNPC_VHengeyokai::vfunc24(int a0)
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc24(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10381b10 size=0x24
 extern char g_10739a4c[];
 
