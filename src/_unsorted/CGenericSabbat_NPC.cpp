@@ -325,6 +325,18 @@ int CGenericSabbat_NPC::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035bf50 size=0x5
+#include "CGenericSabbat_NPC.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CGenericSabbat_NPC::vfunc440
+// the game's 0x1035bf50: a tail call (jmp) of CAI_BaseNPC::vfunc440
+int CGenericSabbat_NPC::vfunc440(int a0)
+{
+	return CAI_BaseNPC::vfunc440(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035bf70 size=0xd
 void __fastcall sub_1000a529(void *pThis, int dummy, float a);
 

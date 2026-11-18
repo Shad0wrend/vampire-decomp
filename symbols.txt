@@ -10393,6 +10393,7 @@
 0x1000df0d func   ?vfunc12@CRestore@@UAEIHHH@Z CRestore::vfunc12
 0x1000df12 func   ??1CTEMuzzleFlash@@QAE@XZ CTEMuzzleFlash::~CTEMuzzleFlash
 0x1000df12 func   ?sub_10065ea0@CUnknown10065ea0@@QAEHXZ CUnknown10065ea0::sub_10065ea0
+0x1000df17 func   ?vfunc440@CGenericSabbat_NPC@@QAEHH@Z CGenericSabbat_NPC::vfunc440
 0x1000df1c func   ?sub_102d0910@CUnk102d0910@@QAEXH@Z CUnk102d0910::sub_102d0910
 0x1000df21 func   ?sub_10076da0@CUnknown10076da0@@QAEXPBD@Z CUnknown10076da0::sub_10076da0
 0x1000df26 func   ?sub_101af0a0@@YAXH@Z sub_101af0a0
