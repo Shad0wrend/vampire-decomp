@@ -12525,6 +12525,7 @@
 0x10010b2c func   ?vfunc473@CNPC_VBatSwarm@@UAEHXZ CNPC_VBatSwarm::vfunc473
 0x10010b31 func   ?sub_101c2200@@YAHXZ sub_101c2200
 0x10010b36 func   ?vfunc0@CEntitySaveRestoreBlockHandler@@UAEHXZ CEntitySaveRestoreBlockHandler::vfunc0
+0x10010b3b func   ?vfunc366@CNPC_VPedestrian@@UAE_NHHH@Z CNPC_VPedestrian::vfunc366
 0x10010b40 func   ?sub_10207680@CThisView10207680@@QAEXHPAVCBaseCombatCharacter@@@Z CThisView10207680::sub_10207680
 0x10010b45 func   ?sub_10356550@@YAPAHXZ sub_10356550
 0x10010b4a func   ?vfunc245@CAI_StandoffGoal@@QAEXPAVCAI_BaseNPC@@@Z CAI_StandoffGoal::vfunc245
