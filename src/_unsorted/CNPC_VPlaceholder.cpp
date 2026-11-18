@@ -202,6 +202,18 @@ void CNPC_VPlaceholder::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a43b0 size=0x5
+#include "CNPC_VPlaceholder.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VPlaceholder::vfunc444
+// the game's 0x103a43b0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc444
+void CNPC_VPlaceholder::vfunc444(void *a0)
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc444(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a43f0 size=0x10
 #include "CNPC_VPlaceholder.h"
 int CNPC_VPlaceholder::vfunc437()

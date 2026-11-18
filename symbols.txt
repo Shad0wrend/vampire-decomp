@@ -376,6 +376,7 @@
 0x1000177b func   ?sub_10376ba0@CNPC_VFrenzyShadow@@QAE_NH@Z CNPC_VFrenzyShadow::sub_10376ba0
 0x10001780 func   ?sub_101b4170@CSoundEmitterSystemBase@@QAEHPBD@Z CSoundEmitterSystemBase::sub_101b4170
 0x10001785 func   ?vfunc5@CBaseFire@@UAEPAV1@I@Z CBaseFire::vfunc5
+0x1000178a func   ?vfunc444@CNPC_VPlaceholder@@UAEXPAX@Z CNPC_VPlaceholder::vfunc444
 0x1000178f func   _npc_VDog npc_VDog
 0x10001794 func   ?sub_101a7390@CCineNPC@@QAEXH@Z CCineNPC::sub_101a7390
 0x10001799 func   ?sub_100c81b0@CUnknown100c81b0@@QAEXPBUCBitVecWords@@HPBUCBoneRecord@@PBUCStudioBoneCount@@@Z CUnknown100c81b0::sub_100c81b0
