@@ -76,6 +76,18 @@ int CNPC_VAnimal::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035f4f0 size=0x5
+#include "CNPC_VAnimal.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VAnimal::vfunc104
+// the game's 0x1035f4f0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc104
+void CNPC_VAnimal::vfunc104()
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035f510 size=0x15
 #include "CNPC_VAnimal.h"
 

@@ -8571,6 +8571,7 @@
 0x1000bca8 func   ?sub_101bac90@CSoundEnt@@SAXHPBVVector@@HMDPAVCBaseEntity@@@Z CSoundEnt::sub_101bac90
 0x1000bcad func   ?vfunc431@CNPC_VGhoulCroucher@@QAEXXZ CNPC_VGhoulCroucher::vfunc431
 0x1000bcb2 func   ?vfunc434@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc434
+0x1000bcb7 func   ?vfunc104@CNPC_VAnimal@@UAEXXZ CNPC_VAnimal::vfunc104
 0x1000bcbc func   ?vfunc349@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::vfunc349
 0x1000bcc1 func   ?sub_10164040@CBasePlayer@@QAEXHPAH0@Z CBasePlayer::sub_10164040
 0x1000bccb func   ?sub_1022a200@CSoundScheme@@QAEXXZ CSoundScheme::sub_1022a200
