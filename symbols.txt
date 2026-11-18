@@ -4608,6 +4608,7 @@
 0x10006bfe func   ?sub_10336170@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10336170
 0x10006c03 func   ?sub_100b0850@@YAXXZ sub_100b0850
 0x10006c08 func   ?sub_100a8d30@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::sub_100a8d30
+0x10006c0d func   ?vfunc390@CNPC_VBatSwarm@@UAEHPAUCTakeDamageInfo@@@Z CNPC_VBatSwarm::vfunc390
 0x10006c12 func   ?sub_10129dc0@@YAXPAVCBaseEntity@@@Z sub_10129dc0
 0x10006c17 func   ?vfunc104@CNPC_VChangBros@@UAEXXZ CNPC_VChangBros::vfunc104
 0x10006c1c func   ?sub_102c6420@CBaseHandle@@QAEPAVIHandleEntity@@XZ CBaseHandle::sub_102c6420
