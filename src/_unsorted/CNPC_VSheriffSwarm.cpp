@@ -132,6 +132,18 @@ int CNPC_VSheriffSwarm::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b23d0 size=0x5
+#include "CNPC_VSheriffSwarm.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VSheriffSwarm::vfunc463
+// the game's 0x103b23d0: a tail call (jmp) of CNPC_VHuman::vfunc463
+void CNPC_VSheriffSwarm::vfunc463(int a0, int a1)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc463(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b2410 size=0xf
 #include "CNPC_VSheriffSwarm.h"
 namespace lifted {
