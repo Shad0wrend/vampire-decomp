@@ -24,6 +24,18 @@ CWeaponIWritten *CWeaponIWritten::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040b330 size=0x5
+#include "CWeaponIWritten.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponIWritten::vfunc104
+// the game's 0x1040b330: a tail call (jmp) of CBaseCombatWeapon::vfunc104
+void CWeaponIWritten::vfunc104()
+{
+	((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b370 size=0x1
 #include "CWeaponIWritten.h"
 void CWeaponIWritten::vfunc291()

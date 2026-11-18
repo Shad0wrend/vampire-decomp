@@ -3693,6 +3693,7 @@
 0x10005a15 func   ?sub_10204e90@CUnknown10204e90@@QAEHH@Z CUnknown10204e90::sub_10204e90
 0x10005a1a func   ?vfunc103@CPointAngleSensor@@UAEXXZ CPointAngleSensor::vfunc103
 0x10005a1f func   ?sub_10388eb0@@YIPAXPAX@Z sub_10388eb0
+0x10005a29 func   ?vfunc104@CWeaponIWritten@@UAEXXZ CWeaponIWritten::vfunc104
 0x10005a2e func   ?sub_10135070@CUnknown10135070@@QAEXHD@Z CUnknown10135070::sub_10135070
 0x10005a33 func   ?sub_103f30f0@@YAHXZ sub_103f30f0
 0x10005a38 func   ?vfunc82@CNPC_VHengeyokai@@UAEPAUdatamap_t@@XZ CNPC_VHengeyokai::vfunc82
