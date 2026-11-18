@@ -16694,6 +16694,17 @@ void __stdcall sub_100577d0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057800 size=0x5
+struct CNamedHeadC_100576a0 { char * sub_100576a0(char const *); };
+struct CWrap10057800 { char * sub_10057800(char const *); };
+// TARGET: sub_10057800
+// the game's 0x10057800: a tail call (jmp) of CNamedHeadC_100576a0::sub_100576a0
+char * CWrap10057800::sub_10057800(char const *a0)
+{
+	return ((CNamedHeadC_100576a0 *)this)->CNamedHeadC_100576a0::sub_100576a0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057820 size=0x19
 struct CNamedHeadC_100576a0;
 int __stdcall sub_100576a0(int a);

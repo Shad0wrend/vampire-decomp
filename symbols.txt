@@ -6640,6 +6640,7 @@
 0x100094ad func   ?sub_102db650@@YAXXZ sub_102db650
 0x100094b2 func   _item_w_tire_iron item_w_tire_iron
 0x100094b7 func   ?vfunc523@CNPC_VMingXiao@@UAEMXZ CNPC_VMingXiao::vfunc523
+0x100094bc func   ?sub_10057800@CWrap10057800@@QAEPADPBD@Z CWrap10057800::sub_10057800
 0x100094c1 func   ?sub_102e9910@CView102e9910@@QAEXPAUS102e9910Rec@@0@Z CView102e9910::sub_102e9910
 0x100094c6 func   ?sub_102a9f40@CAI_BaseNPCTroika@@QAEXPAVCAI_InterestingPlace@@PAVCAI_Hint@@D@Z CAI_BaseNPCTroika::sub_102a9f40
 0x100094cb func   ?vfunc5@CVampireProjectile@@QAEPAV1@I@Z CVampireProjectile::vfunc5
