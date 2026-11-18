@@ -214,6 +214,18 @@ int CNPC_VHumanCombatant::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10387360 size=0x5
+#include "CNPC_VHumanCombatant.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VHumanCombatant::vfunc440
+// the game's 0x10387360: a tail call (jmp) of CNPC_VHuman::vfunc440
+int CNPC_VHumanCombatant::vfunc440(int a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc440(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10387500 size=0xd
 void sub_10385a10(float a);
 
