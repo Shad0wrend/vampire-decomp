@@ -7531,6 +7531,7 @@
 0x1000a691 func   ?sub_101600a0@CBasePlayer@@QAEXM@Z CBasePlayer::sub_101600a0
 0x1000a696 func   ?sub_100f83b0@CFinder@@QAEPAUCEnt@@PAU2@H@Z CFinder::sub_100f83b0
 0x1000a69b func   ?sub_100f7890@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@PBD@Z CGlobalEntityList::sub_100f7890
+0x1000a6a0 func   ?vfunc104@CWeaponIArmor@@UAEXXZ CWeaponIArmor::vfunc104
 0x1000a6a5 func   ?sub_10161380@@YIDPAD@Z sub_10161380
 0x1000a6aa func   ?sub_100bf740@CFuncIllusionary@@QAEEXZ CFuncIllusionary::sub_100bf740
 0x1000a6b4 func   ?sub_1035fcc0@CUnk1035fcc0@@QAEXH@Z CUnk1035fcc0::sub_1035fcc0
