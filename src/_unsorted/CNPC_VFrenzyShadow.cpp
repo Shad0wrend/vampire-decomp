@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103751e0 size=0x5
+#include "CNPC_VFrenzyShadow.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CNPC_VFrenzyShadow::vfunc362
+// the game's 0x103751e0: a tail call (jmp) of CBaseCombatCharacter::vfunc362
+char CNPC_VFrenzyShadow::vfunc362(float const *a0)
+{
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc362(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10375240 size=0x6
 #include "CNPC_VFrenzyShadow.h"
 namespace lifted {

@@ -14462,6 +14462,7 @@
 0x10013296 func   ?vfunc279@CBaseFlex@@UAEXHM@Z CBaseFlex::vfunc279
 0x1001329b func   ??0CFlexAnimationTrack@@QAE@PAVCUnknown10075aa0@@@Z CFlexAnimationTrack::CFlexAnimationTrack
 0x100132a0 func   ?vfunc238@CBaseEntity@@QAEXHHHH@Z CBaseEntity::vfunc238
+0x100132aa func   ?vfunc362@CNPC_VFrenzyShadow@@UAEDPBM@Z CNPC_VFrenzyShadow::vfunc362
 0x100132af func   ?sub_102066d0@CVendorTable@@QAE_NXZ CVendorTable::sub_102066d0
 0x100132b4 func   ?sub_10036fb0@CPhysicsPushedEntities@@QAEXXZ CPhysicsPushedEntities::sub_10036fb0
 0x100132b9 func   ?sub_10304130@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@PBM0HHHIH_N@Z CAI_Pathfinder::sub_10304130
