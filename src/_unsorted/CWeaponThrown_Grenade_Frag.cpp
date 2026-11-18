@@ -261,6 +261,16 @@ void __fastcall sub_103ee630(CUnkGrenade103ee630 *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ee970 size=0x5
+#include "CWeaponThrown_Grenade_Frag.h"
+// TARGET: CWeaponThrown_Grenade_Frag::vfunc271
+// the game's 0x103ee970: a tail call (jmp) of CWeaponThrown_Grenade_Frag::sub_103ee8f0
+char CWeaponThrown_Grenade_Frag::vfunc271()
+{
+	return ((CWeaponThrown_Grenade_Frag *)this)->CWeaponThrown_Grenade_Frag::sub_103ee8f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ee990 size=0xb4
 #include "vampire_all.h"
 #include "CWeaponThrown_Grenade_Frag.h"

@@ -1149,6 +1149,7 @@
 0x10002702 func   ?sub_101b7120@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_101b7120
 0x10002707 func   ?sub_100c0970@CFloatPair3f4@@QAEXM@Z CFloatPair3f4::sub_100c0970
 0x1000270c func   ??0ConCommand@@QAE@PBDP6AXXZ0H1@Z ConCommand::ConCommand
+0x10002711 func   ?vfunc271@CWeaponThrown_Grenade_Frag@@UAEDXZ CWeaponThrown_Grenade_Frag::vfunc271
 0x10002716 func   ?sub_100df010@@YA_NPAUS100df010@@@Z sub_100df010
 0x1000271b func   ?sub_102ee680@@YI_NPAD@Z sub_102ee680
 0x10002720 func   ?vfunc593@CAI_BaseNPCTroika@@UAEHXZ CAI_BaseNPCTroika::vfunc593
