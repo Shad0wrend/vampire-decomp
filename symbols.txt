@@ -5781,6 +5781,7 @@
 0x10008288 func   ?sub_103822a0@CNPC_VHengeyokai@@QAE_NPAVCBaseEntity@@@Z CNPC_VHengeyokai::sub_103822a0
 0x1000828d func   ?sub_10311500@CExpresserEntryTree@@QAEXXZ CExpresserEntryTree::sub_10311500
 0x10008292 func   ?vfunc5@CAI_InterestingPlace@@QAEPAV1@I@Z CAI_InterestingPlace::vfunc5
+0x10008297 func   ?vfunc366@CGeneric_NPC@@UAE_NHHH@Z CGeneric_NPC::vfunc366
 0x1000829c func   ?sub_102a9600@CUnknown102a9600@@QAEMH@Z CUnknown102a9600::sub_102a9600
 0x100082a1 func   ?sub_101f1e20@CUnknown101f1e20@@QAEXXZ CUnknown101f1e20::sub_101f1e20
 0x100082a6 func   ?sub_101b4a80@@YGPBDH@Z sub_101b4a80
