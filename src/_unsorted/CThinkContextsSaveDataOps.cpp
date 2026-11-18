@@ -15,7 +15,6 @@
 #include "utlvector.h"
 #include "CThinkContextsSaveDataOps.h"
 #include "CUtlVectorDataOps.h"
-#include "saverestore_utlvector.h"
 #include "CThinkSaveViews.h"
 #include "ScopeTrace.h"
 
@@ -30,7 +29,7 @@ void CThinkContextsSaveDataOps::vfunc0(void *pFieldInfo, void *pSave)
 	SaveRestoreFieldInfoView &fieldInfo = *(SaveRestoreFieldInfoView *)pFieldInfo;
 	CUtlVector<thinkfunc_t> *pUtlVector = (CUtlVector<thinkfunc_t> *)fieldInfo.m_pField;
 	{
-		CThinkVecOps *pOps = CUtlVectorDataopsInstantiator<CUtlVector<thinkfunc_t, CUtlMemory<thinkfunc_t> >, 9>::GetDataOps(pUtlVector);
+		CThinkVecOps *pOps = GetThinkVecOps();
 		SaveRestoreFieldInfoView info = { (CThinkVec *)pUtlVector, 0, 0 };
 		pOps->vfunc0(&info, pSave);
 	}
@@ -57,7 +56,6 @@ void CThinkContextsSaveDataOps::vfunc0(void *pFieldInfo, void *pSave)
 #include "utlvector.h"
 #include "CThinkContextsSaveDataOps.h"
 #include "CUtlVectorDataOps.h"
-#include "saverestore_utlvector.h"
 #include "CThinkSaveViews.h"
 #include "ScopeTrace.h"
 
@@ -95,7 +93,7 @@ void CThinkContextsSaveDataOps::vfunc1(void *pFieldInfo, void *pRestoreIn)
 	ScopeTrace trace("CThinkContextsSaveDataOps::Restore", g_106b8540);
 	CThinkRestoreFieldInfo *pInfo = (CThinkRestoreFieldInfo *)pFieldInfo;
 	CThinkVec *pUtlVector = pInfo->pField;
-	CThinkVecOps *pOps = CUtlVectorDataopsInstantiator<CUtlVector<thinkfunc_t, CUtlMemory<thinkfunc_t> >, 9>::GetDataOps((CUtlVector<thinkfunc_t, CUtlMemory<thinkfunc_t> > *)pUtlVector);
+	CThinkVecOps *pOps = GetThinkVecOps();
 	SaveRestoreFieldInfoView vectorFieldInfo = { pUtlVector, 0, 0 };
 	pOps->vfunc1(&vectorFieldInfo, pRestoreIn);
 	CThinkRestoreOwnerView *pOwner = pInfo->pOwner;

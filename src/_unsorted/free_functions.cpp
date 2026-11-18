@@ -139251,6 +139251,7 @@ void sub_101c5900(CUnk101c5900 *p, int a, float c)
 
 // FUNCTION: 0x101c59b0 size=0x1f5
 #include "CHandleVectorOps.h"
+#include "saverestore_utlvector.h"
 
 struct ISaveRestoreOps;
 struct datamap_t;
@@ -139287,7 +139288,7 @@ int *sub_101c59b0()
         { 4, "m_nDamageVelDir", {0x5c0, 0}, 1, 6, "damagevelocitydir" },
         { 15, "m_flLastDmgTime", {0x59c, 0}, 1, 2 },
         { 3, "m_vecDamageVelVect", {0x5b4, 0}, 1, 2 },
-        { 10, "m_hurtEntities", {0x5f4, 0}, 1, 2, 0, (ISaveRestoreOps *)GetHandleVectorOps(), 0 },
+        { 10, "m_hurtEntities", {0x5f4, 0}, 1, 2, 0, (ISaveRestoreOps *)CUtlVectorDataopsInstantiator<CUtlVector<CHandle<CBaseEntity>, CUtlMemory<CHandle<CBaseEntity> > >, 12>::GetDataOps((CUtlVector<CHandle<CBaseEntity>, CUtlMemory<CHandle<CBaseEntity> > > *)0), 0 },
         { 0, "InputHurtNow", {0, 0}, 1, 8, "HurtNow", 0, (void *)sub_10009557 },
         { 1, "m_flDamage", {0x598, 0}, 1, 0xe, "SetDamage", 0, 0 },
         { 10, "m_OnHurt", {0x5c4, 0}, 1, 0x16, "OnHurt", g_1055dc70 },
@@ -261507,6 +261508,7 @@ inline ISaveRestoreOps *Ops_109f0748()
 	return (ISaveRestoreOps *)&ops;
 }
 #include "CHandleVectorOps.h"
+#include "saverestore_utlvector.h"
 extern int g_1061664c[2];
 int *sub_1031a600()
 {
@@ -261767,7 +261769,7 @@ int *sub_1031a600()
         { 0, "InputClearActiveDisciplines", {0, 0}, 1, 8, "ClearActiveDisciplines", 0, (void *)sub_1000cdba },
         { 4, "m_aCurWpnActivity", {0x14b0, 0}, 1, 2, 0, 0, 0 },
         { 4, "m_aNextWpnActivity", {0x14b4, 0}, 1, 2, 0, 0, 0 },
-        { 0xa, "m_disciplineVisuals", {0x14c0, 0}, 1, 2, 0, (ISaveRestoreOps *)GetHandleVectorOps(), 0 },
+        { 0xa, "m_disciplineVisuals", {0x14c0, 0}, 1, 2, 0, (ISaveRestoreOps *)CUtlVectorDataopsInstantiator<CUtlVector<CHandle<CBaseEntity>, CUtlMemory<CHandle<CBaseEntity> > >, 12>::GetDataOps((CUtlVector<CHandle<CBaseEntity>, CUtlMemory<CHandle<CBaseEntity> > > *)0), 0 },
         { 4, "m_nLastObfuscateLevel", {0x14d4, 0}, 1, 2, 0, 0, 0 },
         { 4, "m_bitsObfuscateRules", {0x14d8, 0}, 1, 2, 0, 0, 0 },
         { 5, "m_bMeetsObfuscateRules", {0x14dc, 0}, 1, 2, 0, 0, 0 },
