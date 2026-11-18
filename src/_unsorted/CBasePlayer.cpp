@@ -1208,6 +1208,17 @@ int CBasePlayer::vfunc124()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161fa0 size=0x5
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+// TARGET: CBasePlayer::vfunc428
+// the game's 0x10161fa0: a tail call (jmp) of CBaseEntity::vfunc91
+char CBasePlayer::vfunc428(void *a0, int a1)
+{
+	return ((CBaseEntity *)this)->CBaseEntity::vfunc91(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161fc0 size=0x10b
 #include "CBasePlayer.h"
 #include "CEHandleGet.h"
