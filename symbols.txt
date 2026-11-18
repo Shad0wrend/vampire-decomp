@@ -9971,6 +9971,7 @@
 0x1000d57b func   ?vfunc333@CNPC_VRat@@QAEXH@Z CNPC_VRat::vfunc333
 0x1000d580 func   ?vfunc81@CResearchBook_HG_FIRE@@QAEHXZ CResearchBook_HG_FIRE::vfunc81
 0x1000d585 func   ?sub_103a9540@CNPC_VSabbatLeader@@QAEPAUCNPC_VSabbatLeaderHint@@XZ CNPC_VSabbatLeader::sub_103a9540
+0x1000d58a func   ?vfunc363@CNPC_VFrenzyShadow@@UAEDPAVCBaseEntity@@@Z CNPC_VFrenzyShadow::vfunc363
 0x1000d58f func   ?sub_10064df0@@YAXPAXHPAH1HHHHDHHH@Z sub_10064df0
 0x1000d594 func   ?sub_103c8e20@@YADXZ sub_103c8e20
 0x1000d599 func   _npc_VGuard1 npc_VGuard1

@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x103751c0 size=0x5
+#include "CNPC_VFrenzyShadow.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VFrenzyShadow::vfunc363
+// the game's 0x103751c0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc363
+char CNPC_VFrenzyShadow::vfunc363(CBaseEntity *a0)
+{
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc363(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103751e0 size=0x5
 #include "CNPC_VFrenzyShadow.h"
 #include "CBaseCombatCharacter.h"
