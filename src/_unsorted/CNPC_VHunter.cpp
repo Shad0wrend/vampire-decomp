@@ -224,6 +224,19 @@ void CNPC_VHunter::vfunc463(int nOld, int nNew)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388a00 size=0x5
+#include "animevent_t.h"
+#include "CNPC_VHunter.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VHunter::vfunc259
+// the game's 0x10388a00: a tail call (jmp) of CNPC_VHuman::vfunc259
+void CNPC_VHunter::vfunc259(animevent_t *a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc259(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388a20 size=0xf
 #include "CNPC_VHunter.h"
 

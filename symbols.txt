@@ -4270,6 +4270,7 @@
 0x100064f1 func   ?sub_1009a030@@YAXPAUTEnt@@HPAH@Z sub_1009a030
 0x100064f6 func   ?vfunc5@CTriggerDisciplineContext@@QAEPAXI@Z CTriggerDisciplineContext::vfunc5
 0x100064fb func   ?sub_1030cbd0@@YAHPBD@Z sub_1030cbd0
+0x10006500 func   ?vfunc259@CNPC_VHunter@@UAEXPAUanimevent_t@@@Z CNPC_VHunter::vfunc259
 0x10006505 func   _item_g_larry_briefcase item_g_larry_briefcase
 0x1000650a func   ?vfunc451@CNPC_VGhoulCroucher@@UAEHXZ CNPC_VGhoulCroucher::vfunc451
 0x1000650f func   ?sub_1013d650@@YAMM@Z sub_1013d650
