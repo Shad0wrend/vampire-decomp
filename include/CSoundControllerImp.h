@@ -70,6 +70,22 @@ int sub_101bc500(char **a, char **b);	// SoundCommandLessFunc (matched under thi
 class CSoundControllerImp : public CSoundEnvelopeController, public CAutoGameSystem
 {
 public:
+	// the overrides its vtable holds (typed as in the flat view below; slots 0 and 1 would also override CAutoGameSystem's, 12 and 16 left out)
+	virtual void vfunc2(CUnknown101bc140 *pSound, float flVolume, float flPitch);
+	virtual void vfunc3(void *pSound, float executeDeltaTime, int command, float duration, float amplitude);
+	virtual void vfunc4(void *pSound);
+	virtual void vfunc5(void *pSound);
+	virtual CUnknown101bc140 *vfunc6(void *pFilter, unsigned int nEntIndex, int nChannel, const char *pszSample, int nSoundLevel);
+	virtual CUnknown101bc140 *vfunc7(void *pFilter, unsigned int nEntIndex, int nChannel, const char *pszSample, float flAttenuation);
+	virtual CUnknown101bc140 *vfunc8(void *pFilter, unsigned int nEntIndex, const char *pszSample);
+	virtual void vfunc9(void *pSound);
+	virtual int vfunc10(int, int, int);
+	virtual int vfunc11(int, int, int);
+	virtual int vfunc13(int);
+	virtual int vfunc14(int);
+	virtual void vfunc15(void *pSound, int command, int *pPoints);
+	virtual void vfunc17(int a);
+
 	CSoundControllerImp()
 	{
 		m_commandList.SetLessFunc((CUtlPriorityQueue<SoundCommand_t *>::LessFunc_t)sub_101bc500);
