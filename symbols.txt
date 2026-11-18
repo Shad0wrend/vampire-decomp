@@ -3583,6 +3583,7 @@
 0x10005731 func   ?sub_10266ef0@@YGXPAUCTriggerDmgInfo@@PBVVector@@11@Z sub_10266ef0
 0x10005736 func   ?sub_1002a430@@YAPAHXZ sub_1002a430
 0x1000573b func   ?vfunc327@CBaseCombatCharacter@@UAE_NXZ CBaseCombatCharacter::vfunc327
+0x10005740 func   ?vfunc438@CGeneric_NPC@@UAEHXZ CGeneric_NPC::vfunc438
 0x10005745 func   ?sub_10311f50@CAI_Expresser@@QAEHPBDMMHH@Z CAI_Expresser::sub_10311f50
 0x1000574a func   ?sub_101f9590@@YAXH@Z sub_101f9590
 0x1000574f func   ?vfunc463@CNPC_VTzimisce@@UAEXHH@Z CNPC_VTzimisce::vfunc463
