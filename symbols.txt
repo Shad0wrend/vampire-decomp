@@ -9979,6 +9979,7 @@
 0x1000d5b7 func   ?sub_103a1d90@@YIPAXPAD@Z sub_103a1d90
 0x1000d5bc func   _physics_prop physics_prop
 0x1000d5c1 func   ?sub_1019f260@CFlagHolder_1019f260@@QAEX_N@Z CFlagHolder_1019f260::sub_1019f260
+0x1000d5c6 func   ?vfunc25@CAI_StandoffBehavior@@UAEDH@Z CAI_StandoffBehavior::vfunc25
 0x1000d5cb func   ?sub_1022ea40@@YAXXZ sub_1022ea40
 0x1000d5d0 func   ?vfunc5@CNPC_VRat@@QAEPAV1@I@Z CNPC_VRat::vfunc5
 0x1000d5d5 func   ?sub_1029eb30@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_1029eb30

@@ -398,6 +398,18 @@ int CAI_StandoffBehavior::vfunc22(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c7bb0 size=0x5
+#include "CAI_StandoffBehavior.h"
+#include "CAI_Behavior.h"
+
+// TARGET: CAI_StandoffBehavior::vfunc25
+// the game's 0x102c7bb0: a tail call (jmp) of CAI_Behavior<CAI_BaseNPC, 100000>::vfunc25
+char CAI_StandoffBehavior::vfunc25(int a)
+{
+	return ((CAI_Behavior<CAI_BaseNPC, 100000> *)this)->CAI_Behavior<CAI_BaseNPC, 100000>::vfunc25(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c7dd0 size=0x29
 #include "CAI_StandoffBehavior.h"
 
