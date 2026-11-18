@@ -316,6 +316,18 @@ void CVampireProjectile::vfunc268()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee730 size=0x5
+#include "CVampireProjectile.h"
+#include "CBaseEntity.h"
+
+// TARGET: CVampireProjectile::vfunc113
+// the game's 0x101ee730: a tail call (jmp) of CBaseEntity::vfunc113
+void CVampireProjectile::vfunc113()
+{
+	CBaseEntity::vfunc113();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ee750 size=0xb
 #include "CVampireProjectile.h"
 struct S168 { char pad[0x168]; int v; };
