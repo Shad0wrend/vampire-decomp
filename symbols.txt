@@ -11759,6 +11759,7 @@
 0x1000fc90 func   ?vfunc143@CBaseCombatCharacter@@UAEHMH@Z CBaseCombatCharacter::vfunc143
 0x1000fc95 func   ?sub_1011bf80@CUnk1011bf80@@QAEPAXE@Z CUnk1011bf80::sub_1011bf80
 0x1000fc9a func   ??_GIKeyValues@@UAEPAXI@Z ??_GIKeyValues@@UAEPAXI@Z
+0x1000fc9f func   ?vfunc440@CNPC_VCombatman@@QAEHH@Z CNPC_VCombatman::vfunc440
 0x1000fca4 func   ?Purge@?$CUtlMemory@UUtlVec8Elem@@@@QAEXXZ CUtlMemory<UtlVec8Elem>::Purge
 0x1000fca4 func   ?sub_102f91b0@UtlMem@@QAEXXZ UtlMem::sub_102f91b0
 0x1000fca9 func   ?sub_100c9190@CUnknown100c9190@@QAEXXZ CUnknown100c9190::sub_100c9190

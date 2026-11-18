@@ -119,6 +119,18 @@ int CNPC_VCombatman::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10370300 size=0x5
+#include "CNPC_VCombatman.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VCombatman::vfunc440
+// the game's 0x10370300: a tail call (jmp) of CNPC_VHuman::vfunc440
+int CNPC_VCombatman::vfunc440(int a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc440(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10370320 size=0xf
 #include "CNPC_VCombatman.h"
 #include "CNPC_VHuman.h"
