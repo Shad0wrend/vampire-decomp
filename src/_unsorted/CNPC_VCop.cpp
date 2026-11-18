@@ -413,6 +413,18 @@ bool CNPC_VCop::vfunc366(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10372b50 size=0x5
+#include "CNPC_VCop.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VCop::vfunc144
+// the game's 0x10372b50: a tail call (jmp) of CNPC_VHuman::vfunc144
+void CNPC_VCop::vfunc144(int a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc144(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372b70 size=0xaa
 #include "CGlobalEntityList.h"
 #include "CNPC_VCop.h"
