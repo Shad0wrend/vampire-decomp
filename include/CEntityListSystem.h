@@ -35,5 +35,9 @@ public:
 public:
 	int vfunc4();
 	int vfunc7();
+#else
+	// own slots the game's vtable holds (matched under another name)
+	virtual void vfunc4();	// 0x100f9080
+	virtual void vfunc7();	// 0x100f9160
 #endif
 };

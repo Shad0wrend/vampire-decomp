@@ -24,6 +24,9 @@ public:
 				// vtable at +0, the pool at +4, and the destroy runs ~CBaseGameSystem before ~CStringPool
 class CGameStringPool : public CStringPool, public CBaseGameSystem
 {
+public:
+	// own slots the game's vtable holds (matched under another name)
+	virtual void vfunc5();	// 0x1042bf20
 };
 #else
 class CGameStringPool

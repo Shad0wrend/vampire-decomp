@@ -16,6 +16,10 @@ public:
 	CTeamManager *vfunc8(unsigned int flags);
 public:
 #ifdef PCD_INITIALIZERS
+	// own slots the game's vtable holds (matched under another name)
+	virtual void vfunc2();	// 0x10230820
+	virtual void vfunc3();	// 0x10230840
+	virtual void vfunc5();	// 0x10230860
 	CUtlSymbolTable m_symbols;	// 0x08: the team names
 #else	// the root's slots 2 and 5 return void there: these int forms would not override them
 	int vfunc2();

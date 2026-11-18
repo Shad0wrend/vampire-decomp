@@ -8,4 +8,5 @@ class CSkyList : public CAutoGameSystem
 public:
 	CAutoGameSystem *vfunc8(unsigned int flags);
 	void sub_1000cfbd();
+	virtual void vfunc5();	// slot 5: 0x1018a450 (matched as a free function)
 };

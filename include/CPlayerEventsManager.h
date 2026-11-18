@@ -26,4 +26,5 @@ public:
 #endif
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	virtual void vfunc4();	// slot 4 (0x10227710): a tail call of sub_100828d0::vfunc4
+	virtual void vfunc3();	// slot 3: 0x102276f0 (matched as a free function)
 };

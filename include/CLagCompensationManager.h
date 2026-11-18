@@ -53,6 +53,7 @@ public:
 class CLagCompensationManager : public CAutoGameSystem, public ILagCompensationManager
 {
 public:
+	virtual void vfunc1();	// 0x10187c90
 	virtual void vfunc5();	// 0x10187d00
 	virtual void vfunc7();	// 0x10187fb0
 
