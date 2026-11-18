@@ -8309,6 +8309,7 @@
 0x1000b744 func   ?vfunc81@CResearchBook_LG_COMP@@QAEHXZ CResearchBook_LG_COMP::vfunc81
 0x1000b749 func   _npc_VMingXiao npc_VMingXiao
 0x1000b74e func   ?sub_10376c10@CNPC_VFrenzyShadow@@QAEXXZ CNPC_VFrenzyShadow::sub_10376c10
+0x1000b753 func   ?vfunc104@CNPC_VBatSwarm@@UAEXXZ CNPC_VBatSwarm::vfunc104
 0x1000b758 func   ?sub_101a6cc0@@YGXH@Z sub_101a6cc0
 0x1000b75d func   ?sub_1042c4c0@@YAHXZ sub_1042c4c0
 0x1000b762 func   _item_g_watch_normal item_g_watch_normal

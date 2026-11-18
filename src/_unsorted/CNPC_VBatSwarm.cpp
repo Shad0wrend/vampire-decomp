@@ -67,6 +67,18 @@ datamap_t * CNPC_VBatSwarm::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10367360 size=0x5
+#include "CNPC_VBatSwarm.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VBatSwarm::vfunc104
+// the game's 0x10367360: a tail call (jmp) of CNPC_VHuman::vfunc104
+void CNPC_VBatSwarm::vfunc104()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367380 size=0x15
 #include "CNPC_VBatSwarm.h"
 
