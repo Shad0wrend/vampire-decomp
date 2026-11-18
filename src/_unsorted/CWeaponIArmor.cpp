@@ -80,6 +80,18 @@ void CWeaponIArmor::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f3fa0 size=0x5
+#include "CWeaponIArmor.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponIArmor::vfunc370
+// the game's 0x103f3fa0: a tail call (jmp) of CBaseCombatWeapon::vfunc370
+void CWeaponIArmor::vfunc370(int *a0, CBaseCombatWeapon *a1)
+{
+	CBaseCombatWeapon::vfunc370(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f3fc0 size=0x1
 #include "CWeaponIArmor.h"
 void CWeaponIArmor::vfunc291()

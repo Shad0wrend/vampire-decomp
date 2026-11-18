@@ -5043,6 +5043,7 @@
 0x100074fa func   ?vfunc3@CGameRules@@UAEXH@Z CGameRules::vfunc3
 0x100074ff func   ?sub_10026db0@@YG_NH@Z sub_10026db0
 0x10007504 func   ?sub_10227c90@CUnknown10227c90@@QAEXH@Z CUnknown10227c90::sub_10227c90
+0x10007509 func   ?vfunc370@CWeaponIArmor@@UAEXPAHPAVCBaseCombatWeapon@@@Z CWeaponIArmor::vfunc370
 0x1000750e func   ?sub_103ed920@CWeaponUnit@@QAEXXZ CWeaponUnit::sub_103ed920
 0x10007513 func   ?InsertBefore@?$CUtlVector@VCBaseHandle@@V?$CUtlMemory@VCBaseHandle@@@@@@QAEHHABVCBaseHandle@@@Z CUtlVector<CBaseHandle,CUtlMemory<CBaseHandle> >::InsertBefore
 0x10007513 func   ?sub_10217080@CUtlVector4@@QAEHHPBH@Z CUtlVector4::sub_10217080
