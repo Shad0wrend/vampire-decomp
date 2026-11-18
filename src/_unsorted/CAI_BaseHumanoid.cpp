@@ -1051,6 +1051,17 @@ float CAI_BaseHumanoid::vfunc516()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10262550 size=0x5
+#include "CAI_BaseHumanoid.h"
+struct CSTV { void sub_102827f0(struct Task_t const *); };
+// TARGET: CAI_BaseHumanoid::vfunc442
+// the game's 0x10262550: a tail call (jmp) of CSTV::sub_102827f0
+void CAI_BaseHumanoid::vfunc442(struct Task_t const *a0)
+{
+	((CSTV *)this)->CSTV::sub_102827f0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10262570 size=0x5
 #include "CAI_BaseHumanoid.h"
 #include "CAI_BaseNPC.h"
