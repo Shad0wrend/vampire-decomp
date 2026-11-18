@@ -14152,6 +14152,7 @@
 0x10012b8e func   ?sub_10227bb0@CUnknown10227bb0@@QAEPAXXZ CUnknown10227bb0::sub_10227bb0
 0x10012b93 func   ?vfunc35@CTriggerBombSite@@QAEHPAVCBasePlayer@@@Z CTriggerBombSite::vfunc35
 0x10012b9d func   ?sub_10248a50@CUnknown10248a50@@QAEXH@Z CUnknown10248a50::sub_10248a50
+0x10012ba2 func   ?vfunc434@CNPC_VSheriffSwarm@@UAEXXZ CNPC_VSheriffSwarm::vfunc434
 0x10012ba7 func   ?sub_103126e0@CAI_Expresser@@QAEXH@Z CAI_Expresser::sub_103126e0
 0x10012bac func   ?sub_102cd3b0@CAI_GoalEntity@@QAEXXZ CAI_GoalEntity::sub_102cd3b0
 0x10012bb1 func   ?vfunc1@CTEBloodSprite@@UAEHXZ CTEBloodSprite::vfunc1
