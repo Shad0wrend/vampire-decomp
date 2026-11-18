@@ -56334,6 +56334,17 @@ int sub_100cdc80(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdd80 size=0x5
+#include "CEventQueue.h"
+struct CWrap100cdd80 { void sub_100cdd80(); };
+// TARGET: sub_100cdd80
+// the game's 0x100cdd80: a tail call (jmp) of CEventQueue::sub_100cdda0
+void CWrap100cdd80::sub_100cdd80()
+{
+	((CEventQueue *)this)->CEventQueue::sub_100cdda0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdda0 size=0x38
 // TARGET: CEventQueue::sub_100cdda0
 #include "CEventQueue.h"
