@@ -162152,6 +162152,16 @@ void *sub_101f3000(int nCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101f3030 size=0x5
+void __cdecl free(void *);
+// TARGET: sub_101f3030
+// the game's 0x101f3030: a tail call (jmp) of free
+void __cdecl sub_101f3030(void *a0)
+{
+	free(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101f3060 size=0x8
 void __fastcall sub_1000be01(char *p);
 void __fastcall sub_101f3060(char *p) { sub_1000be01(p - *(int *)(p - 4)); }
