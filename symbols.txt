@@ -10404,6 +10404,7 @@
 0x1000e12e func   ?vfunc482@CHL2_Player@@UAEMXZ CHL2_Player::vfunc482
 0x1000e133 func   ?sub_1017f600@CUnk_1017f600@@QAEXXZ CUnk_1017f600::sub_1017f600
 0x1000e138 func   ?vfunc103@CTriggerBrush@@UAEXXZ CTriggerBrush::vfunc103
+0x1000e13d func   ?vfunc440@CNPC_VBatSwarm@@UAEHH@Z CNPC_VBatSwarm::vfunc440
 0x1000e142 func   ?sub_1010db90@CBreakable@@QAEXPAUinputdata_t@@@Z CBreakable::sub_1010db90
 0x1000e147 func   ?sub_101d4f40@CUnknown101d4f20@@QAEXPAUCUnknown101d4f20_Value@@@Z CUnknown101d4f20::sub_101d4f40
 0x1000e14c func   ?sub_10182530@@YAXHM@Z sub_10182530
