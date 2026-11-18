@@ -110724,85 +110724,183 @@ void CBasePlayer::sub_1017c1d0(CBaseEntity *pEnt)
 #include "ScopeTrace.h"
 #include "CEHandleGet.h"
 #include "CUtlVector4.h"
+#include "CLogicAuto.h"
+#include "utlrbtree.h"
+#include "CUnknown10739d08.h"
+#include "CUnknown101c26d0.h"
+#include "CEntityVSlots.h"
+#include "ehandle.h"
+#include "utlvector.h"
+#include "CTraceFilterNoCharacterCollide.h"
+#include "CDevFlagObj.h"
+#include "CUnknown10738960.h"
+#include "Ray_t.h"
+#include "CGameTrace.h"
+#include "CTraceFilterSimple.h"
+#include "CUnknown1070b254.h"
+#include "AITrace.h"
+#include "DebugOverlay.h"
+#include "UTIL_Trace.h"
+#include <math.h>
+#include "ConVar.h"
 
-#include "CUnknown100290c0.h"
-#pragma auto_inline(off)
 namespace block_1017c300 {
-struct CLookUnit : CUnknown100290c0 { unsigned int sub_100290c0(const unsigned int *pHandle); };
-static int g_shift71 = 13;
-unsigned int CLookUnit::sub_100290c0(const unsigned int *pHandle)
-{
-    unsigned int h = *pHandle;
-    if (h != 0xffffffff) {
-        CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
-        if (pSlot->m_Serial == (int)(h >> g_shift71)) {
-            return pSlot->m_Value;
-        }
-    }
-    return 0;
+struct CEntView9c { char pad[0x9c]; CBaseEntity *m_p9c; };
+struct CFinderView { CBaseEntity *sub_10341c30(void *cb, float a, float cs, char c, float d, int mask); };
 }
-}
-#pragma auto_inline(on)
-#define LK(g, p) ((CBaseEntity *)((block_1017c300::CLookUnit *)(g))->sub_100290c0(p))
-struct CSimVec17c300 : CUtlVector4
+
+extern ConVar g_10937030;
+extern ConVar g_10725040;
+extern ConVar g_10725ae0;
+extern ConVar g_10725a00;
+extern float g_1044eb08;
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+void sub_10139b90(float *angles, float *matrix);
+void sub_101381b0(const float *in, const float *matrix, float *out);
+void sub_10143b70(const float *a, const float *b, const float *c, int d, int e, int f, int g, float h);
+void sub_10168e60();
+void sub_10144790(const Vector &a, const Vector &b, float c, float d, int e, int f, int g, int h, float i);
+using namespace block_1017c300;
+CBaseEntity *CBasePlayer::LookForGrappleVictim()
 {
-	void sub_101850b0(int elem, int num);
-	int FindH(const unsigned int &h)
+	if (((CFoo1005f190 *)&g_10937030)->sub_1005f190())
+		Msg("CBasePlayer::LookForGrappleVictim.....");
+	CBaseEntity *pVictim = 0;
+	CBasePlayer *pSelf = this;
+	CEntView9c *pCtl = (CEntView9c *)m_hControllerNPC1db0.Get();
+	if (pCtl && pCtl->m_p9c)
+		pSelf = (CBasePlayer *)pCtl->m_p9c;
+	Vector eye = pSelf->vfunc193();
+	Vector off;
+	Vector end;
 	{
-		int n = m_size;
-		int j = 0;
-		if (j < n) {
-			unsigned int *p = (unsigned int *)m_pMemory;
-			do {
-				if (g_10566458->sub_100290c0(p) == LK(g_10566458, &h))
-					return j;
-				j++; p++;
-			} while (j < n);
+		off.x = 32.0f;
+		off.y = 0.0f;
+		off.z = -32.0f;
+		float matrix[12];
+		sub_10139b90(pSelf->vfunc219(), matrix);
+		sub_101381b0(&off.x, matrix, &end.x);
+		VectorAdd(end, eye, end);
+		Vector hull[2];
+		hull[1].Init(8.0f, 8.0f, 8.0f);
+		hull[0].Init(-8.0f, -8.0f, -8.0f);
+		CGameTrace tr;
+		UTIL_TraceHull_DebugCall(eye, end, hull[0], hull[1], 0x201400b, this, 0, &tr, 1, 0);
+		if (tr.m_fraction < 1.0f && tr.m_pEnt)
+			pVictim = ((CEntView9c *)tr.m_pEnt)->m_p9c;
+	}
+	if (g_10937030.GetBool()) {
+		Vector box[2];
+		box[0].Init(2.0f, 2.0f, 2.0f);
+		box[1].Init(-2.0f, -2.0f, -2.0f);
+		sub_10143b70(&eye.x, &box[1].x, &box[0].x, 0, 0xff, 0xff, 1, 5.0f);
+		box[0].Init(2.0f, 2.0f, 2.0f);
+		box[1].Init(-2.0f, -2.0f, -2.0f);
+		sub_10143b70(&end.x, &box[1].x, &box[0].x, 0xff, 0, 0xff, 1, 5.0f);
+		if (pVictim) {
+			Msg("succeeded! (%s)\n", ((CBasePlayer *)pVictim)->sub_100ab4f0());
+			sub_10142e90(&eye, &end, 0, 0xff, 0, 1, 5.0f);
+		} else {
+			Msg("failed.  =( \n");
+			sub_10142e90(&eye, &end, 0xff, 0, 0, 1, 5.0f);
+		}
+	}
+	if (!pVictim) {
+		float flFov = g_10725040.GetFloat();
+		double dHalf = flFov * 0.5;
+		float flCos = cos(dHalf * g_1044eb08);
+		float flDist = g_10725ae0.GetFloat();
+		CBaseEntity *pFound = ((CFinderView *)this)->sub_10341c30((void *)sub_10168e60, flDist, flCos, 0, 0, 0x600400b);
+		if (g_10725a00.GetBool()) {
+			flDist = g_10725ae0.GetFloat();
+			float flHalf = g_10725040.GetFloat();
+			sub_10144790(vfunc193(), vfunc369(), flHalf * 0.5f, flDist, 0, 0x80, 0x80, 0x80, 5.0f);
+		}
+		return pFound;
+	}
+	return pVictim;
+}
+
+// m_SimulatedByThisPlayer: a CUtlVector<EHANDLE> with the game's out-of-line Find / ShiftElementsLeft copies
+struct CSimVec17c300 : CUtlVector<EHANDLE>
+{
+	int sub_101842a0(const EHANDLE *pHandle) const;	// Find (out-of-line copy)
+	void sub_101850b0(int elem, int num);	// ShiftElementsLeft (out-of-line copy)
+	int FindH(const EHANDLE &src) const
+	{
+		for (int i = 0; i < Count(); ++i) {
+			if (Element(i) == src)
+				return i;
 		}
 		return -1;
 	}
-	void FindAndRemoveH(const unsigned int &h)
+	void RemoveH(int elem)
 	{
-		int j = FindH(h);
-		if (j != -1) {
-			sub_101850b0(j, 1);
-			m_size--;
-		}
+		sub_101850b0(elem, 1);
+		--m_Size;
+	}
+	void FindAndRemoveH(const EHANDLE &src)
+	{
+		int elem = FindH(src);
+		if (elem != -1)
+			RemoveH(elem);
 	}
 };
 #define PV ((CSimVec17c300 *)&m_SimulationList)
+
+// CBaseEntity::m_iEFlags (+0x268) accessors
+struct CEntEFlagsView : CBaseEntity
+{
+	bool IsEFlagSet(int nEFlagMask) const { return (*(const int *)((const char *)this + 0x268) & nEFlagMask) != 0; }
+	bool GetCheckUntouch() const { return IsEFlagSet(0x1000000); }	// EFL_CHECK_UNTOUCH
+};
 
 void CBasePlayer::sub_1017c300()
 {
 	ScopeTrace scope1("CBasePlayer::SimulatePlayerSimulatedEntities", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 	int i;
-	for (i = PV->m_size - 1; i >= 0; i--) {
+	for (i = PV->Count() - 1; i >= 0; i--) {
 		CSimVec17c300 *pv = PV;
-		unsigned int h = -1;
-		h = pv->m_pMemory[i];
-		CBaseEntity *e = g_10566458->sub_100290c0(&h);
+		EHANDLE h;
+		h = pv->Element(i);
+		CBaseEntity *e = h;
 		if (!e) {
 			int idx = pv->sub_101842a0(&h);
-			if (idx != -1) {
-				pv->sub_101850b0(idx, 1);
-				pv->m_size--;
-			}
+			if (idx != -1)
+				pv->RemoveH(idx);
 		} else {
 			e->sub_10040390();
 		}
 	}
 	ScopeTrace scope2("CBasePlayer::SimulatePlayerSimulatedEntities-untouch", m_name26c ? m_name26c : g_106b8540);
-	for (i = m_SimulationList.m_Size - 1; i >= 0; i--) {
-		EHANDLE h = *(EHANDLE *)&PV->m_pMemory[i];
-		CBaseEntity *e = h.Get();
+	int c = PV->Count();
+	for (i = c - 1; i >= 0; i--) {
+		EHANDLE h = PV->Element(i);
+		CBaseEntity *e = h;
 		if (!e) {
-			PV->FindAndRemoveH(*(unsigned int *)&h);
+			PV->FindAndRemoveH(h);
 			continue;
 		}
-		if (!(*((unsigned char *)e + 0x26b) & 1))
+		if (!((CEntEFlagsView *)e)->GetCheckUntouch())
 			continue;
 		e->sub_1003d490();
 	}
+	// NUMBERING DIAL (a workaround, not the game's code): VC6's C2 orders the two LookupEntity results of the
+	// inline Find above by a hash of this function's temp numbers (rewriter 0x1fef0 -> 0x24175); the game's order
+	// (the handle's lookup first) needs the induction temp's key at 0x17d20..0x17fe0, which these 12 dead blocks
+	// give (11 or 12 work). They compile to nothing; the typedef dials do not move the key. 2026-11-18.
+	{ int d0 = c * 3 + 1; }
+	{ int d1 = c * 4 + 1; }
+	{ int d2 = c * 5 + 1; }
+	{ int d3 = c * 6 + 1; }
+	{ int d4 = c * 7 + 1; }
+	{ int d5 = c * 8 + 1; }
+	{ int d6 = c * 9 + 1; }
+	{ int d7 = c * 10 + 1; }
+	{ int d8 = c * 11 + 1; }
+	{ int d9 = c * 12 + 1; }
+	{ int d10 = c * 13 + 1; }
+	{ int d11 = c * 14 + 1; }
 }
 // END FUNCTION
 
