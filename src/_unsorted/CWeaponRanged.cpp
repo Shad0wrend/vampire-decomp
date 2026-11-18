@@ -130,6 +130,18 @@ CWeaponRanged *CWeaponRanged::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10238140 size=0x5
+#include "CWeaponRanged.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponRanged::vfunc104
+// the game's 0x10238140: a tail call (jmp) of CBaseCombatWeapon::vfunc104
+void CWeaponRanged::vfunc104()
+{
+	((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10238160 size=0x99
 #include "CWeaponRanged.h"
 
