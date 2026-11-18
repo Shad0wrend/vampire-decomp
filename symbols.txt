@@ -6082,6 +6082,7 @@
 0x10008a76 func   ?vfunc5@COccultLockpicking@@QAEPAV1@I@Z COccultLockpicking::vfunc5
 0x10008a80 func   ?vfunc242@CEnvParticle@@QAEXXZ CEnvParticle::vfunc242
 0x10008a85 func   _item_g_eyes item_g_eyes
+0x10008a8a func   ?vfunc4@CBaseNetworkable@@W3AEHXZ CBaseNetworkable::vfunc4
 0x10008a8f func   ?sub_100843d0@CSceneEntity@@QAEXPAX@Z CSceneEntity::sub_100843d0
 0x10008a94 func   ?sub_102c4380@CUnk102c4380@@QAEXPBD@Z CUnk102c4380::sub_102c4380
 0x10008a99 func   ?sub_10072d90@CUnknown10072d90@@QAEPADXZ CUnknown10072d90::sub_10072d90
