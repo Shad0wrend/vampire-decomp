@@ -300,6 +300,18 @@ void CNPC_VHunter::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388b70 size=0x5
+#include "CNPC_VHunter.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VHunter::vfunc366
+// the game's 0x10388b70: a tail call (jmp) of CNPC_VHuman::vfunc366
+bool CNPC_VHunter::vfunc366(int a0, int a1, int a2)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc366(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388bb0 size=0x6d
 #include "CNPC_VHunter.h"
 #include "CGlobalEntityList.h"

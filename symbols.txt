@@ -9288,6 +9288,7 @@
 0x1000ca77 func   ?sub_1022ce80@@YAXXZ sub_1022ce80
 0x1000ca7c func   ?sub_10200260@CVStatInfoList_t@@QAEPAUCVDmgBlock16_t@@PBD@Z CVStatInfoList_t::sub_10200260
 0x1000ca81 func   ?sub_101f9c70@CUnknown101f9c70@@QAEHHHH@Z CUnknown101f9c70::sub_101f9c70
+0x1000ca86 func   ?vfunc366@CNPC_VHunter@@UAE_NHHH@Z CNPC_VHunter::vfunc366
 0x1000ca8b func   _npc_VNosferatu npc_VNosferatu
 0x1000ca95 func   ?sub_101cc240@Helper@@QAEPAXI@Z Helper::sub_101cc240
 0x1000ca9a func   ?sub_101b1880@@YAXHHPBD@Z sub_101b1880
