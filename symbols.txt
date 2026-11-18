@@ -15818,6 +15818,7 @@
 0x10014c2c func   ?sub_1038c390@CManBatV@@QAEXPAH@Z CManBatV::sub_1038c390
 0x10014c31 func   ?sub_10211f10@CPropSign@@QAEXPAVCBaseEntity@@@Z CPropSign::sub_10211f10
 0x10014c36 func   ?sub_1010b840@CFire@@QAEXM@Z CFire::sub_1010b840
+0x10014c3b func   ?vfunc104@CWeaponIGeneric@@QAEXXZ CWeaponIGeneric::vfunc104
 0x10014c40 func   ?vfunc103@CMessage@@UAEXXZ CMessage::vfunc103
 0x10014c4a func   ?vfunc82@CAI_InterestingPlace@@UAEPAUdatamap_t@@XZ CAI_InterestingPlace::vfunc82
 0x10014c4f func   ?vfunc43@CMultiplayRules@@UAEHHH@Z CMultiplayRules::vfunc43

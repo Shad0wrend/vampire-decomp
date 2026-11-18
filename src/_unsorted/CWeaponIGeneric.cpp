@@ -51,6 +51,18 @@ void CWeaponIGeneric::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f4450 size=0x5
+#include "CWeaponIGeneric.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponIGeneric::vfunc104
+// the game's 0x103f4450: a tail call (jmp) of CBaseCombatWeapon::vfunc104
+void CWeaponIGeneric::vfunc104()
+{
+	((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f4470 size=0x20
 #include "CWeaponIGeneric.h"
 #include "CBaseCombatWeapon.h"
