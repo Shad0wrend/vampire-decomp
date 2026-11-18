@@ -16192,6 +16192,7 @@
 0x100152df func   ?vfunc334@CBaseCombatWeapon@@UAEXHH@Z CBaseCombatWeapon::vfunc334
 0x100152e4 func   ?sub_100bd620@bf_write@@QAEXABVVector@@@Z bf_write::sub_100bd620
 0x100152e9 func   ?sub_1009b440@CBaseEntity@@QAEXPBD@Z CBaseEntity::sub_1009b440
+0x100152ee func   ?sub_10390920@@YAII@Z sub_10390920
 0x100152f3 func   ?sub_10027890@S10027890@@QAEXAAUinputdata_t@@@Z S10027890::sub_10027890
 0x100152f8 func   ?sub_1023fa90@@YAHABVVector@@00PBMPAM@Z sub_1023fa90
 0x100152fd func   ?vfunc5@CBreakableSurface@@QAEPAV1@I@Z CBreakableSurface::vfunc5
