@@ -3684,6 +3684,7 @@
 0x10005998 func   ?sub_10349e60@UtlMem@@QAEXXZ UtlMem::sub_10349e60
 0x1000599d func   ?vfunc1@CTraceFilterHintLOS@@UAEHXZ CTraceFilterHintLOS::vfunc1
 0x100059a2 func   ?vfunc4@ConCommand@@UAEHHH@Z ConCommand::vfunc4
+0x100059a7 func   ?vfunc104@CNPC_VCop@@UAEXXZ CNPC_VCop::vfunc104
 0x100059ac func   ?sub_1007bd70@CUnknown1007b7b0@@QAE_NPAVCUnknown1007bb30Reader@@@Z CUnknown1007b7b0::sub_1007bd70
 0x100059b1 func   ?sub_10091fe0@@YIMPAVCBaseAnimating@@HHM@Z sub_10091fe0
 0x100059b6 func   ?sub_102087e0@CItemContainer@@QAEPAV1@XZ CItemContainer::sub_102087e0

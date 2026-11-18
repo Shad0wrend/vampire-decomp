@@ -84,6 +84,18 @@ void CNPC_VCop::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10371a70 size=0x5
+#include "CNPC_VCop.h"
+#include "CNPC_VHumanCombatant.h"
+
+// TARGET: CNPC_VCop::vfunc104
+// the game's 0x10371a70: a tail call (jmp) of CNPC_VHumanCombatant::vfunc104
+void CNPC_VCop::vfunc104()
+{
+	CNPC_VHumanCombatant::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10371a90 size=0x33
 #include "CAI_BaseNPCTroika.h"
 #include "CNPC_VCop.h"
