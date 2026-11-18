@@ -3203,6 +3203,7 @@
 0x10004fe3 func   ?RemoveAll@?$CUtlVector@UCTouchEvent_t@@V?$CUtlMemory@UCTouchEvent_t@@@@@@QAEXXZ CUtlVector<CTouchEvent_t,CUtlMemory<CTouchEvent_t> >::RemoveAll
 0x10004fe3 func   ?sub_10032a20@@YIXPAH@Z sub_10032a20
 0x10004fe8 func   ?vfunc5@CWeaponMelee_Tzimisce3Claw@@QAEPAV1@I@Z CWeaponMelee_Tzimisce3Claw::vfunc5
+0x10004fed func   ?vfunc390@CNPC_VSheriffSwarm@@UAEHPAUCTakeDamageInfo@@@Z CNPC_VSheriffSwarm::vfunc390
 0x10004ff2 func   ?sub_10076fe0@CUnknown10075aa0@@QAEXXZ CUnknown10075aa0::sub_10076fe0
 0x10004ff7 func   ?sub_100c5bf0@@YAMPAUSegTable@@M@Z sub_100c5bf0
 0x10004ffc func   ?sub_101e1910@@YGDH@Z sub_101e1910

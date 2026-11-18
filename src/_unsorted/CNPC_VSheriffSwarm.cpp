@@ -222,6 +222,19 @@ void CNPC_VSheriffSwarm::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b24b0 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CNPC_VSheriffSwarm.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VSheriffSwarm::vfunc390
+// the game's 0x103b24b0: a tail call (jmp) of CNPC_VHuman::vfunc390
+int CNPC_VSheriffSwarm::vfunc390(CTakeDamageInfo *a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b24d0 size=0x5
 #include "CNPC_VSheriffSwarm.h"
 #include "CNPC_VHuman.h"
