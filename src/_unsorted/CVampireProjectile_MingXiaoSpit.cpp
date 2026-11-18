@@ -175,6 +175,18 @@ void CVampireProjectile_MingXiaoSpit::vfunc266(CBaseEntity *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f1b20 size=0x5
+#include "CVampireProjectile_MingXiaoSpit.h"
+#include "CVampireProjectile.h"
+
+// TARGET: CVampireProjectile_MingXiaoSpit::vfunc91
+// the game's 0x103f1b20: a tail call (jmp) of CVampireProjectile::vfunc91
+char CVampireProjectile_MingXiaoSpit::vfunc91(void *a0, int a1)
+{
+	return CVampireProjectile::vfunc91(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f1b60 size=0xec
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
