@@ -338,6 +338,18 @@ bool CVampireProjectile::vfunc265()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ee770 size=0x5
+#include "CVampireProjectile.h"
+#include "CBaseEntity.h"
+
+// TARGET: CVampireProjectile::vfunc126
+// the game's 0x101ee770: a tail call (jmp) of CBaseEntity::vfunc126
+int CVampireProjectile::vfunc126(int a0)
+{
+	return CBaseEntity::vfunc126(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101ee7b0 size=0xd
 #include "CBaseAnimating.h"
 #include "CVampireProjectile.h"
