@@ -29,6 +29,18 @@ void CItemContainerAnimated::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10209dd0 size=0x5
+#include "CItemContainerAnimated.h"
+#include "CBaseEntity.h"
+
+// TARGET: CItemContainerAnimated::vfunc113
+// the game's 0x10209dd0: a tail call (jmp) of CBaseEntity::vfunc113
+void CItemContainerAnimated::vfunc113()
+{
+	CBaseEntity::vfunc113();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10209df0 size=0xb
 #include "CItemContainerAnimated.h"
 
