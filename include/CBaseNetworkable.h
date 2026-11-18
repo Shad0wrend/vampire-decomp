@@ -39,14 +39,16 @@ public:
 	virtual int vfunc4() = 0;
 };
 
-class IServerNetworkable	// RTTI .?AVIServerNetworkable@@, 15 slots (slot 14 is the only one with a body)
+class IServerNetworkable	// RTTI .?AVIServerNetworkable@@, 15 slots (slot 14, the destructor, is the only one with a body)
 {
 public:
 	virtual class CGlobalEntityList_Ent *n0() = 0;	// GetEntityHandle
 	virtual void n1() = 0; virtual void n2() = 0; virtual void n3() = 0; virtual void n4() = 0;
 	virtual void n5() = 0; virtual void n6() = 0; virtual void n7() = 0; virtual void n8() = 0; virtual void n9() = 0;
-	virtual void n10() = 0; virtual void n11() = 0; virtual void n12() = 0; virtual void n13() = 0; virtual void n14() = 0;
-	void *vfunc14(char flags);	// the scalar deleting destructor (vftable store, operator delete when bit 0, returns this)
+	virtual void n10() = 0; virtual void n11() = 0; virtual void n12() = 0;
+	virtual int vfunc4() = 0;	// slot 13: GetBaseEntity, IServerUnknown's slot 4 too: CBaseNetworkable's one override fills both (the game's slot 13 is its adjustor thunk 0x100b7e30, sub ecx,4; jmp vfunc4)
+	virtual ~IServerNetworkable() {}	// slot 14: the scalar deleting destructor 0x100b7970 (vftable store, operator delete when bit 0)
+	void *vfunc14(char flags);	// 0x100b7970 under its provisional name (that block writes the destructor out)
 };
 
 class CBaseNetworkable : public IServerUnknown, public IServerNetworkable
@@ -60,6 +62,22 @@ public:
 	virtual int vfunc4();
 	virtual int vfunc5();
 	virtual void vfunc6(CBaseNetworkableBits_t *pBits);	// sets the bit of this edict's index
+	// IServerNetworkable's slots (`this` = the +4 subobject). The bodies are matched under provisional names
+	// (0x100b7a00 .. 0x100b7d80); the symbol map knows these names for them.
+	virtual CGlobalEntityList_Ent *n0();	// 0x100b7a00: this - 4
+	virtual void n1();	// 0x100b7780: its ServerClass
+	virtual void n2();	// 0x100b7c40
+	virtual void n3();	// 0x100b7c60
+	virtual void n4();	// 0x100b7c80: the edict
+	virtual void n5();	// 0x100b7a20
+	virtual void n6();	// 0x100b7a40: Release, `delete this` through slot 14
+	virtual void n7();	// 0x100b7a70
+	virtual void n8();	// 0x100b7cc0
+	virtual void n9();	// 0x100b7ca0
+	virtual void n10();	// 0x100b7c00
+	virtual void n11();	// 0x100b7c20
+	virtual void n12();	// 0x100b7d80
+	virtual ~CBaseNetworkable();	// IServerNetworkable's slot 14: body 0x100b7ad0 (CNetSub::sub_100b7ad0), scalar deleting destructor 0x100b7a90
 	CBaseNetworkableEdict_t *m_pEdict;	// 0x8
 	int m_n0c;	// 0xc: -1 after the constructor
 	int m_n10;	// 0x10

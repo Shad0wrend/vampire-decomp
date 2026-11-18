@@ -34,6 +34,12 @@ CFlexAnimationTrack *CFlexAnimationTrack::vfunc0(unsigned int flags)
 
 // FUNCTION: 0x10073c20 size=0x1c6
 #include "vampire_all.h"
+// identifier-count dial (link audit 2026-11-18): VC6 orders this function's tied stack slots by symbol numbers mod 64,
+// so 31 declarations here keep the game's slot order with the current headers (window 25..36).
+typedef int pcd_dial0; typedef int pcd_dial1; typedef int pcd_dial2; typedef int pcd_dial3; typedef int pcd_dial4; typedef int pcd_dial5; typedef int pcd_dial6; typedef int pcd_dial7;
+typedef int pcd_dial8; typedef int pcd_dial9; typedef int pcd_dial10; typedef int pcd_dial11; typedef int pcd_dial12; typedef int pcd_dial13; typedef int pcd_dial14; typedef int pcd_dial15;
+typedef int pcd_dial16; typedef int pcd_dial17; typedef int pcd_dial18; typedef int pcd_dial19; typedef int pcd_dial20; typedef int pcd_dial21; typedef int pcd_dial22; typedef int pcd_dial23;
+typedef int pcd_dial24; typedef int pcd_dial25; typedef int pcd_dial26; typedef int pcd_dial27; typedef int pcd_dial28; typedef int pcd_dial29; typedef int pcd_dial30;
 #include "utlvector.h"
 #include "CFlexAnimationTrack.h"
 // TARGET: CFlexAnimationTrack::CFlexAnimationTrack

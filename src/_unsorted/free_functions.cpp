@@ -107615,17 +107615,13 @@ void CBasePlayer::sub_1016f2a0(const char *pszFile)
 #include "vampire_all.h"
 #include "vampire.h"
 #include <string.h>
-typedef int pcd_t0;
-typedef int pcd_t1;
-typedef int pcd_t2;
-typedef int pcd_t3;
-typedef int pcd_t4;
-typedef int pcd_t5;
-typedef int pcd_t6;
-typedef int pcd_t7;
-typedef int pcd_t8;
-typedef int pcd_t9;
-typedef int pcd_t10;
+// identifier-count dial (link audit 2026-11-18): VC6 orders this function's tied stack slots by symbol numbers mod 64,
+// so 40 declarations here keep the game's slot order with the current headers (window 34..47).
+typedef int pcd_dial0; typedef int pcd_dial1; typedef int pcd_dial2; typedef int pcd_dial3; typedef int pcd_dial4; typedef int pcd_dial5; typedef int pcd_dial6; typedef int pcd_dial7;
+typedef int pcd_dial8; typedef int pcd_dial9; typedef int pcd_dial10; typedef int pcd_dial11; typedef int pcd_dial12; typedef int pcd_dial13; typedef int pcd_dial14; typedef int pcd_dial15;
+typedef int pcd_dial16; typedef int pcd_dial17; typedef int pcd_dial18; typedef int pcd_dial19; typedef int pcd_dial20; typedef int pcd_dial21; typedef int pcd_dial22; typedef int pcd_dial23;
+typedef int pcd_dial24; typedef int pcd_dial25; typedef int pcd_dial26; typedef int pcd_dial27; typedef int pcd_dial28; typedef int pcd_dial29; typedef int pcd_dial30; typedef int pcd_dial31;
+typedef int pcd_dial32; typedef int pcd_dial33; typedef int pcd_dial34; typedef int pcd_dial35; typedef int pcd_dial36; typedef int pcd_dial37; typedef int pcd_dial38; typedef int pcd_dial39;
 
 class ICommandLine
 {
@@ -246376,11 +246372,10 @@ float sub_102f9ca0(int a)
 #include "Vector.h"
 #include <math.h>
 #include <stdlib.h>
-struct pcd_s0 { int x; };
-struct pcd_s1 { int x; };
-struct pcd_s2 { int x; };
-struct pcd_s3 { int x; };
-struct pcd_s4 { int x; };
+// identifier-count dial (link audit 2026-11-18): VC6 orders this function's tied stack slots by symbol numbers mod 64,
+// so 15 declarations here keep the game's slot order with the current headers (window 12..19).
+typedef int pcd_dial0; typedef int pcd_dial1; typedef int pcd_dial2; typedef int pcd_dial3; typedef int pcd_dial4; typedef int pcd_dial5; typedef int pcd_dial6; typedef int pcd_dial7;
+typedef int pcd_dial8; typedef int pcd_dial9; typedef int pcd_dial10; typedef int pcd_dial11; typedef int pcd_dial12; typedef int pcd_dial13; typedef int pcd_dial14;
 
 extern char g_1093408c;
 char *sub_102d6120(int);
