@@ -262,6 +262,19 @@ void CNPC_VPedestrian::vfunc463(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a29d0 size=0x5
+#include "animevent_t.h"
+#include "CNPC_VPedestrian.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VPedestrian::vfunc259
+// the game's 0x103a29d0: a tail call (jmp) of CNPC_VHuman::vfunc259
+void CNPC_VPedestrian::vfunc259(animevent_t *a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc259(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a2c10 size=0x5
 #include "CNPC_VPedestrian.h"
 #include "CNPC_VHuman.h"

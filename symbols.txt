@@ -12446,6 +12446,7 @@
 0x1001079e func   ?sub_101f5150@CUnknown101f5150@@QAE_NPBD@Z CUnknown101f5150::sub_101f5150
 0x100107a3 func   ?sub_102f5090@@YIXPAH@Z sub_102f5090
 0x100107a8 func   ?sub_100d5360@@YAXXZ sub_100d5360
+0x100107ad func   ?vfunc259@CNPC_VPedestrian@@UAEXPAUanimevent_t@@@Z CNPC_VPedestrian::vfunc259
 0x100107b2 func   ?vfunc605@CNPC_VHuman@@UAEHH@Z CNPC_VHuman::vfunc605
 0x100107b7 func   _info_node_crosswalk info_node_crosswalk
 0x100107bc func   ?sub_10352f70@@YAPAXXZ sub_10352f70
