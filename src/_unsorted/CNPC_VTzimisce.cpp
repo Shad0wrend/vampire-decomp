@@ -1009,6 +1009,18 @@ int CNPC_VTzimisce::sub_103bde40(int activity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bded0 size=0x5
+#include "CNPC_VTzimisce.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VTzimisce::vfunc376
+// the game's 0x103bded0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc376
+int CNPC_VTzimisce::vfunc376(int a0)
+{
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc376(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103bdef0 size=0x50
 #include "CNPC_VTzimisce.h"
 void CNPC_VTzimisce::vfunc432(int a)
