@@ -3850,6 +3850,7 @@
 0x10005c8b func   _npc_VGargoyle npc_VGargoyle
 0x10005c90 func   ?vfunc301@CAI_BaseNPCTroika@@QAEXPBVVector@@PAUCTakeDamageInfo@@@Z CAI_BaseNPCTroika::vfunc301
 0x10005c95 func   ?sub_1024b5e0@CUnknown1024b370@@QAE?AUCUnknown1024b370Symbol@@PBD@Z CUnknown1024b370::sub_1024b5e0
+0x10005c9a func   ?vfunc103@CNPC_VNosferatu@@UAEXXZ CNPC_VNosferatu::vfunc103
 0x10005c9f func   ?sub_101f6e20@CVTraitEffect_t@@QAEXPAVCVModInfo_t@@PAH@Z CVTraitEffect_t::sub_101f6e20
 0x10005ca4 func   ?vfunc34@IRestore@@QAEPAXE@Z IRestore::vfunc34
 0x10005ca9 func   ?sub_1038f660@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038f660
