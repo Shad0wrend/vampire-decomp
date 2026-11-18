@@ -11663,6 +11663,7 @@
 0x1000f812 func   ?vfunc99@CRagdollProp@@UAE_NHHH@Z CRagdollProp::vfunc99
 0x1000f817 func   ?sub_10136e50@CUnknown10136e50@@QAEHHH@Z CUnknown10136e50::sub_10136e50
 0x1000f81c func   ?sub_10027350@@YG_NHHHHH@Z sub_10027350
+0x1000f821 func   ?vfunc463@CNPC_VMoleman@@QAEXHH@Z CNPC_VMoleman::vfunc463
 0x1000f826 func   ?sub_102dad60@CUnknown102db470Node@@QAE_NPAVCUnknown102db470@@PAM1@Z CUnknown102db470Node::sub_102dad60
 0x1000f82b func   ?vfunc7@CAI_LocalNavigator@@QAE_NPAUCAI_LocalNavigatorStopState@@MPAHH@Z CAI_LocalNavigator::vfunc7
 0x1000f830 func   ?sub_10308150@CUnknown10308150@@QAEHHHHH@Z CUnknown10308150::sub_10308150
