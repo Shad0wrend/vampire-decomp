@@ -13736,6 +13736,7 @@
 0x1001205d func   ?sub_10381c80@@YIEPAD@Z sub_10381c80
 0x10012062 func   ?vfunc5@CFuncMonitor@@QAEPAV1@I@Z CFuncMonitor::vfunc5
 0x10012067 func   ?sub_10091d10@CBaseAnimating@@QAEXPAVCBaseEntity@@@Z CBaseAnimating::sub_10091d10
+0x1001206c func   ?vfunc134@CBaseParticleEntity@@QAEXXZ CBaseParticleEntity::vfunc134
 0x10012071 func   ?vfunc363@CWeaponMelee_GargoyleFist@@UAEHXZ CWeaponMelee_GargoyleFist::vfunc363
 0x1001207b func   ?sub_1010c1e0@@YGHH@Z sub_1010c1e0
 0x10012080 func   ?sub_1008d230@CBaseAnimating@@QAEXM@Z CBaseAnimating::sub_1008d230

@@ -126,3 +126,14 @@ void CBaseParticleEntity::vfunc113()
 	((CBaseEntity *)this)->CBaseEntity::vfunc113();
 }
 // END FUNCTION
+
+// FUNCTION: 0x1042b6b0 size=0x5
+#include "CBaseParticleEntity.h"
+#include "CBaseEntity.h"
+// TARGET: CBaseParticleEntity::vfunc134
+// the game's 0x1042b6b0: a tail call (jmp) of CBaseEntity::sub_100ae150
+void CBaseParticleEntity::vfunc134()
+{
+	((CBaseEntity *)this)->CBaseEntity::sub_100ae150();
+}
+// END FUNCTION
