@@ -16146,6 +16146,7 @@
 0x100150b9 func   ?vfunc141@CBatSwarm@@QAEXPAHHPAX@Z CBatSwarm::vfunc141
 0x100150c3 func   ?sub_1020cc60@CSecCamera@@QAE_NPAVCBaseEntity@@@Z CSecCamera::sub_1020cc60
 0x100150c8 func   ?sub_102edbb0@CAI_Navigator@@QAE_NPBVVector@@MHPAV2@@Z CAI_Navigator::sub_102edbb0
+0x100150cd func   ?vfunc36@CSimplePhysicsProp@@QAEHXZ CSimplePhysicsProp::vfunc36
 0x100150d7 func   ?sub_100b2aa0@CBaseEntity@@QAEXABVVector@@@Z CBaseEntity::sub_100b2aa0
 0x100150dc func   ?sub_103c4a20@@YAEXZ sub_103c4a20
 0x100150e1 func   ?sub_10269bd0@CAI_BaseNPC@@QAEXPAHH@Z CAI_BaseNPC::sub_10269bd0

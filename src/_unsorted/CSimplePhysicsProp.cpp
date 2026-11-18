@@ -42,6 +42,17 @@ int CSimplePhysicsProp::vfunc226()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004fdb0 size=0x5
+#include "CSimplePhysicsProp.h"
+int __cdecl sub_102587f0();
+// TARGET: CSimplePhysicsProp::vfunc36
+// the game's 0x1004fdb0: a tail call (jmp) of sub_102587f0
+int CSimplePhysicsProp::vfunc36()
+{
+	return sub_102587f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004fdd0 size=0x1f
 #include "CSimplePhysicsProp.h"
 #include "CBaseEntity.h"
