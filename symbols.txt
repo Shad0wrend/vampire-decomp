@@ -9550,6 +9550,7 @@
 0x1000cf3b func   ?Grow@?$CUtlMemory@UCListZItem@@@@QAEXH@Z CUtlMemory<CListZItem>::Grow
 0x1000cf3b func   ?sub_1022d2f0@CMem32_t@@QAEXH@Z CMem32_t::sub_1022d2f0
 0x1000cf40 func   ?sub_100561a0@CUtlRBTree24@@QAEXH@Z CUtlRBTree24::sub_100561a0
+0x1000cf45 func   ?vfunc366@CNPC_VYukie@@QAE_NHHH@Z CNPC_VYukie::vfunc366
 0x1000cf4a func   ?sub_101e85a0@S@@QAEXPAUP@@@Z S::sub_101e85a0
 0x1000cf4f func   ?sub_101d88b0@CUnknown101d88b0@@QAEXPAUCVDmgSource_t@@0PBUCVDmgBlock16_t@@HHH@Z CUnknown101d88b0::sub_101d88b0
 0x1000cf54 func   ?vfunc82@CNPC_VSheriffSwarm@@UAEPAUdatamap_t@@XZ CNPC_VSheriffSwarm::vfunc82
