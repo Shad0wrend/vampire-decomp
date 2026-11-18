@@ -105,6 +105,19 @@ void CNPC_VCombatman::vfunc463(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10370210 size=0x5
+#include "animevent_t.h"
+#include "CNPC_VCombatman.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VCombatman::vfunc259
+// the game's 0x10370210: a tail call (jmp) of CNPC_VHuman::vfunc259
+void CNPC_VCombatman::vfunc259(animevent_t *a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc259(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10370230 size=0x9d
 #include "CNPC_VCombatman.h"
 #define F(T, off) (*(T *)((char *)this + off))
