@@ -299,6 +299,18 @@ int CNPC_VCop::vfunc440(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103723b0 size=0x5
+#include "CNPC_VCop.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VCop::vfunc375
+// the game's 0x103723b0: a tail call (jmp) of CNPC_VHuman::vfunc375
+int CNPC_VCop::vfunc375(int a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc375(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10372aa0 size=0xd
 struct CNPC_VHumanCombatantFwd;
 struct CNPC_VCopFwd {
