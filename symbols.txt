@@ -6066,6 +6066,7 @@
 0x10008954 func   ?sub_10232570@@YGXH@Z sub_10232570
 0x10008959 func   ?sub_1012e650@CEdictHolder1012e650@@QAEXPAUCEdictSrc1012e650@@@Z CEdictHolder1012e650::sub_1012e650
 0x1000895e func   ?sub_100738a0@CUnknown100738a0@@QAEPAXXZ CUnknown100738a0::sub_100738a0
+0x10008963 func   ?vfunc390@CNPC_VTzimisce@@QAEHPAUCTakeDamageInfo@@@Z CNPC_VTzimisce::vfunc390
 0x10008968 func   ?sub_101874a0@CPlayerMove@@QAEXPAVCBasePlayer@@PAVCUserCmd@@PAX@Z CPlayerMove::sub_101874a0
 0x1000896d func   ?vfunc483@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc483
 0x10008972 func   ?sub_1024cc50@@YA?AVVMatrix@@ABVVector@@ABVQAngle@@@Z sub_1024cc50

@@ -1051,6 +1051,19 @@ void CNPC_VTzimisce::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103bdf80 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CNPC_VTzimisce.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VTzimisce::vfunc390
+// the game's 0x103bdf80: a tail call (jmp) of CAI_BaseNPCTroika::vfunc390
+int CNPC_VTzimisce::vfunc390(CTakeDamageInfo *a0)
+{
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103be010 size=0x2a
 #include "CNPC_VTzimisce.h"
 #include "CUnknown10381be0.h"
