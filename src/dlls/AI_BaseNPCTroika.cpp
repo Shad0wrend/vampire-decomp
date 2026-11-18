@@ -5178,9 +5178,7 @@ int CAI_BaseNPCTroika::vfunc437()
 // END FUNCTION
 
 // FUNCTION: 0x102af660 size=0x15e0
-#define sub_102af660() sub_102af660(); virtual int vfunc438()
 #include "CAI_BaseNPCTroika.h"
-#undef sub_102af660
 #include "CEHandleGet.h"
 #include "CSoundEnt.h"
 
