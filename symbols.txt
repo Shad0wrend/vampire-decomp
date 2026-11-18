@@ -7199,6 +7199,7 @@
 0x10009ff2 func   ?sub_101bb370@CSoundEnt@@SAPAUCSound@@HPBVVector@@@Z CSoundEnt::sub_101bb370
 0x10009ff7 func   ?sub_10181be0@CBasePlayer@@QAEXXZ CBasePlayer::sub_10181be0
 0x10009ffc func   ?sub_10144510@@YAXPBVVector@@HHHHHHM@Z sub_10144510
+0x1000a001 func   ?vfunc442@CNPC_VWolfMorph@@UAEXPBH@Z CNPC_VWolfMorph::vfunc442
 0x1000a006 func   ?sub_102fef30@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@HHPAH@Z CAI_Pathfinder::sub_102fef30
 0x1000a00b func   ?sub_1005c310@@YAHXZ sub_1005c310
 0x1000a010 func   ?vfunc86@CAuspexAura@@UAE_NHHHHH@Z CAuspexAura::vfunc86
