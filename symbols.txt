@@ -4488,6 +4488,7 @@
 0x10006915 func   ??0CTEBubbleTrail@@QAE@PBD@Z CTEBubbleTrail::CTEBubbleTrail
 0x10006915 func   ?sub_1005fca0@CTEBubbleTrail@@QAEPAV1@PBD@Z CTEBubbleTrail::sub_1005fca0
 0x1000691a func   ?vfunc438@CNPC_VCop@@QAEHXZ CNPC_VCop::vfunc438
+0x1000691f func   ?vfunc366@CGenericSabbat_NPC@@UAE_NHHH@Z CGenericSabbat_NPC::vfunc366
 0x10006924 func   ?vfunc113@CPathKeyFrame@@QAEXXZ CPathKeyFrame::vfunc113
 0x10006929 func   ?vfunc485@CHL2_Player@@UAE_NH@Z CHL2_Player::vfunc485
 0x10006933 func   ?vfunc362@CWeaponThrown_Chang_Energy_Ball@@UAEPAUCWeaponActivityRecord@@XZ CWeaponThrown_Chang_Energy_Ball::vfunc362

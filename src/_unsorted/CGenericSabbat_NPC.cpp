@@ -367,6 +367,18 @@ int CGenericSabbat_NPC::vfunc390(CTakeDamageInfo *a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035bff0 size=0x5
+#include "CGenericSabbat_NPC.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CGenericSabbat_NPC::vfunc366
+// the game's 0x1035bff0: a tail call (jmp) of CBaseCombatCharacter::vfunc366
+bool CGenericSabbat_NPC::vfunc366(int a0, int a1, int a2)
+{
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc366(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035c010 size=0x1a
 #include "CGenericSabbat_NPC.h"
 
