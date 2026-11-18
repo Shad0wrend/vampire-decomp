@@ -149239,6 +149239,17 @@ void CUnknown101daf60::sub_101daf80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101db0b0 size=0x5
+#include "CUnknown101db210.h"
+struct CWrap101db0b0 { void sub_101db0b0(); };
+// TARGET: sub_101db0b0
+// the game's 0x101db0b0: a tail call (jmp) of CUnknown101db210::sub_101db350
+void CWrap101db0b0::sub_101db0b0()
+{
+	((CUnknown101db210 *)this)->CUnknown101db210::sub_101db350();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101db0d0 size=0xf6
 #include "CUnknown101db210.h"
 #include "CUnknown101db5f0.h"

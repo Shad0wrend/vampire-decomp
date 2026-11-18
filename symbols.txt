@@ -13825,6 +13825,7 @@
 0x100123e1 func   ?sub_1012b750@@YA_NPAVCBasePlayer@@0PAVVector@@M@Z sub_1012b750
 0x100123e6 func   ?vfunc42@CFuncMonitor@@QAEXPAX@Z CFuncMonitor::vfunc42
 0x100123eb func   ?vfunc80@CItemGVampyrApocrypha@@QAEHXZ CItemGVampyrApocrypha::vfunc80
+0x100123f0 func   ?sub_101db0b0@CWrap101db0b0@@QAEXXZ CWrap101db0b0::sub_101db0b0
 0x100123f5 func   ?sub_10269eb0@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_10269eb0
 0x100123fa func   ?sub_100afa60@@YAXXZ sub_100afa60
 0x100123ff func   ?GrowVector@?$CUtlVector@V?$CHandle@VCAI_BaseNPC@@@@V?$CUtlMemory@V?$CHandle@VCAI_BaseNPC@@@@@@@@QAEXH@Z CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >::GrowVector
