@@ -4762,6 +4762,7 @@
 0x10006e88 func   ?vfunc141@CNPC_VZombie@@QAEXPAUCUnknown101c2a50@@HPAD@Z CNPC_VZombie::vfunc141
 0x10006e8d func   ?sub_10185600@@YIXPAH@Z sub_10185600
 0x10006e92 func   ?sub_10166cc0@CHL2_Player@@QAEXXZ CHL2_Player::sub_10166cc0
+0x10006e9c func   ?vfunc17@CAI_StandoffBehavior@@UAEXXZ CAI_StandoffBehavior::vfunc17
 0x10006ea1 func   ?vfunc40@CPropDoorknob@@UAEXH@Z CPropDoorknob::vfunc40
 0x10006ea6 func   ??0CTEBSPDecal@@QAE@PBD@Z CTEBSPDecal::CTEBSPDecal
 0x10006ea6 func   ?sub_1005ee50@CTEBSPDecal@@QAEPAV1@H@Z CTEBSPDecal::sub_1005ee50

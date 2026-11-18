@@ -296,6 +296,20 @@ int __fastcall sub_102c7600(CStandoffSelf *self)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102c7940 size=0x5
+#include "CAI_StandoffBehavior.h"
+#include "CAI_Behavior.h"
+
+void __fastcall sub_102c6e90(CAI_Behavior<CAI_BaseNPC, 100000> *behavior);
+
+// TARGET: CAI_StandoffBehavior::vfunc17
+// the game's 0x102c7940: a tail call (jmp) of the base behaviour's slot 17, 0x102c6e90 (a free fastcall in our view: the behaviour in ecx)
+void CAI_StandoffBehavior::vfunc17()
+{
+	sub_102c6e90((CAI_Behavior<CAI_BaseNPC, 100000> *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102c7960 size=0x2f
 // TARGET: CAI_StandoffBehavior::vfunc20
 #include "CAI_StandoffBehavior.h"
