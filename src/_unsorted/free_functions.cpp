@@ -99460,6 +99460,17 @@ int CUnknown1014c0f0::sub_1014c0f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014c110 size=0x5
+#include "CWeaponGravityGun.h"
+struct CWrap1014c110 { void sub_1014c110(); };
+// TARGET: sub_1014c110
+// the game's 0x1014c110: a tail call (jmp) of CWeaponGravityGun::sub_1014c130
+void CWrap1014c110::sub_1014c110()
+{
+	((CWeaponGravityGun *)this)->CWeaponGravityGun::sub_1014c130();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014c130 size=0x121
 #include "CWeaponGravityGun.h"
 #include "CBaseEntity.h"

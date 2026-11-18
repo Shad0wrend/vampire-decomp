@@ -15021,6 +15021,7 @@
 0x10013c00 func   ?sub_100aaa40@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100aaa40
 0x10013c05 func   ?vfunc81@CWeaponMelee_Fists@@QAEHXZ CWeaponMelee_Fists::vfunc81
 0x10013c0f func   ?sub_10189870@@YADPAVCBaseEntity@@H@Z sub_10189870
+0x10013c14 func   ?sub_1014c110@CWrap1014c110@@QAEXXZ CWrap1014c110::sub_1014c110
 0x10013c19 func   ?sub_1027dd10@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_1027dd10
 0x10013c1e func   ?vfunc1@CTEFizz@@UAEHXZ CTEFizz::vfunc1
 0x10013c23 func   ?sub_101c2890@CTakeDamageInfo@@QAEXPAX0MHHH@Z CTakeDamageInfo::sub_101c2890
