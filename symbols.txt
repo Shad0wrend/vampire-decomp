@@ -16169,6 +16169,7 @@
 0x10015302 func   ?sub_10045fa0@@YAXXZ sub_10045fa0
 0x10015307 func   ?sub_103e4290@@YAHXZ sub_103e4290
 0x1001530c func   ?sub_10203150@CUnknown10203150@@QAE_NH@Z CUnknown10203150::sub_10203150
+0x10015311 func   ?sub_1009d960@@YAXPAMH@Z sub_1009d960
 0x10015316 func   ?RotateRight@?$CUtlRBTree@UCRBTree16Entry8B@@G@@QAEXG@Z CUtlRBTree<CRBTree16Entry8B,unsigned short>::RotateRight
 0x10015316 func   ?sub_1004c290@CUtlRBTree16Unit@@QAEXG@Z CUtlRBTree16Unit::sub_1004c290
 0x1001531b func   ?AddRecipient@CRecipientFilter@@QAEXPAVCBasePlayer@@@Z CRecipientFilter::AddRecipient

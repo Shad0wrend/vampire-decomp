@@ -41342,6 +41342,16 @@ void __cdecl sub_1009d940(float *a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d960 size=0x5
+void __cdecl sub_101cf2f0(float *, int);
+// TARGET: sub_1009d960
+// the game's 0x1009d960: a tail call (jmp) of sub_101cf2f0
+void __cdecl sub_1009d960(float *a0, int a1)
+{
+	sub_101cf2f0(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009edc0 size=0x89
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"
