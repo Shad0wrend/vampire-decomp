@@ -12046,6 +12046,7 @@
 0x10010032 func   ?vfunc24@CGameMovement@@QAEXXZ CGameMovement::vfunc24
 0x10010037 func   _math_counter math_counter
 0x1001003c func   ?vfunc82@CEnvGlobal@@UAEPAUdatamap_t@@XZ CEnvGlobal::vfunc82
+0x10010041 func   ?vfunc144@CNPC_VAnimal@@QAEXH@Z CNPC_VAnimal::vfunc144
 0x10010046 func   ?sub_10082520@@YADPAVCBaseEntity@@PAUCSceneView82520@@@Z sub_10082520
 0x1001004b func   ?vfunc242@CAI_StandoffGoal@@QAEXH@Z CAI_StandoffGoal::vfunc242
 0x10010055 func   ?sub_10332240@@YIMPAD@Z sub_10332240

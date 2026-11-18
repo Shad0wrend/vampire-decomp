@@ -331,3 +331,15 @@ bool CNPC_VAnimal::vfunc366(int a, int b, int c)
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10360200 size=0x5
+#include "CNPC_VAnimal.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VAnimal::vfunc144
+// the game's 0x10360200: a tail call (jmp) of CAI_BaseNPCTroika::vfunc144
+void CNPC_VAnimal::vfunc144(int a0)
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc144(a0);
+}
+// END FUNCTION
