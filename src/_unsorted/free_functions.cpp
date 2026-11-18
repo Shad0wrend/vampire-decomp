@@ -190508,6 +190508,17 @@ void CWeaponRangedUnit::sub_102383b0(char bFlag)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10239150 size=0x5
+#include "CBaseCombatWeapon.h"
+struct CWrap10239150 { void * sub_10239150(); };
+// TARGET: sub_10239150
+// the game's 0x10239150: a tail call (jmp) of CBaseCombatWeapon::sub_102521f0
+void * CWrap10239150::sub_10239150()
+{
+	return ((CBaseCombatWeapon *)this)->CBaseCombatWeapon::sub_102521f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10239170 size=0x36
 // TARGET: CBaseCombatWeapon::sub_10239170
 #include "CBaseCombatWeapon.h"

@@ -14703,6 +14703,7 @@
 0x10013570 func   ?sub_101b2e30@CSoundEmitterSystemBaseV@@QAEXXZ CSoundEmitterSystemBaseV::sub_101b2e30
 0x10013575 func   _light_spot light_spot
 0x1001357a func   ?vfunc81@CWeaponPhysCannon@@UAEHXZ CWeaponPhysCannon::vfunc81
+0x1001357f func   ?sub_10239150@CWrap10239150@@QAEPAXXZ CWrap10239150::sub_10239150
 0x10013589 func   ?sub_1018f720@CFoo1018f720@@QAEXH@Z CFoo1018f720::sub_1018f720
 0x1001358e func   ?sub_101bb990@CUnknown101bc140@@QAEXPAXPAVCBaseEntity@@HPBDH@Z CUnknown101bc140::sub_101bb990
 0x10013593 func   ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z CBaseCombatWeapon::vfunc130
