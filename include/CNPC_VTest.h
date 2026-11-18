@@ -3,6 +3,8 @@
 #pragma once
 #include "CBaseEntity.h"
 
+struct CTakeDamageInfo;	// a tail-call override's parameter
+struct animevent_t;	// a tail-call override's parameter
 class CNPC_VTest : public CBaseEntity
 {
 public:
@@ -36,4 +38,8 @@ public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11
 	int vfunc440(int);	// slot 440 (0x103b4fd0): a tail call of CNPC_VHuman::vfunc440 (no such slot in this view: plain)
 	void vfunc434();	// slot 434 (0x103b51c0): a tail call of CNPC_VHuman::vfunc434 (no such slot in this view: plain)
 	bool vfunc366(int, int, int);	// slot 366 (0x103b5200): a tail call of CNPC_VHuman::vfunc366 (no such slot in this view: plain)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc463(int, int);	// slot 463 (0x103b4ef0): a tail call of CNPC_VHuman::vfunc463 (no such slot in this view: plain)
+	void vfunc259(animevent_t *);	// slot 259 (0x103b4f10): a tail call of CNPC_VHuman::vfunc259 (no such slot in this view: plain)
+	int vfunc390(CTakeDamageInfo *);	// slot 390 (0x103b51e0): a tail call of CNPC_VHuman::vfunc390 (no such slot in this view: plain)
 };

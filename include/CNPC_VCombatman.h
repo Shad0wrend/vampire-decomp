@@ -9,6 +9,8 @@ public:
 	int sub_100037e2();	// returns a state code (8 = ready)
 };
 
+struct CTakeDamageInfo;	// a tail-call override's parameter
+struct animevent_t;	// a tail-call override's parameter
 class CNPC_VCombatman : public CBaseEntity
 {
 public:
@@ -33,4 +35,8 @@ public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11
 	int vfunc440(int);	// slot 440 (0x10370300): a tail call of CNPC_VHuman::vfunc440 (no such slot in this view: plain)
 	void vfunc434();	// slot 434 (0x10370360): a tail call of CNPC_VHuman::vfunc434 (no such slot in this view: plain)
 	bool vfunc366(int, int, int);	// slot 366 (0x103703a0): a tail call of CNPC_VHuman::vfunc366 (no such slot in this view: plain)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc463(int, int);	// slot 463 (0x103701f0): a tail call of CNPC_VHuman::vfunc463 (no such slot in this view: plain)
+	void vfunc259(animevent_t *);	// slot 259 (0x10370210): a tail call of CNPC_VHuman::vfunc259 (no such slot in this view: plain)
+	int vfunc390(CTakeDamageInfo *);	// slot 390 (0x10370380): a tail call of CNPC_VHuman::vfunc390 (no such slot in this view: plain)
 };

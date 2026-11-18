@@ -44,4 +44,6 @@ public:
 	int vfunc33();
 	datamap_t * vfunc82();
 	void vfunc113();
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc277();	// slot 277 (0x1021dda0): a tail call of CPropKeypad::vfunc277 (no such slot in this view: plain)
 };

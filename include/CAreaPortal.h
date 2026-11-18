@@ -114,7 +114,7 @@ public:
 	virtual void vfunc101();
 	virtual void vfunc102();
 	virtual void vfunc103();
-	virtual void vfunc104();
+	virtual bool vfunc104();
 	virtual void vfunc105();
 	virtual void vfunc106();
 	virtual void vfunc107();

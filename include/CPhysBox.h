@@ -47,4 +47,6 @@ public:
 	char m_pad0468[0x4c8 - 0x468];
 	bool m_bSimulating;	// 0x04c8
 	char m_pad04c9[0x4cc - 0x4c9];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual int vfunc36();	// slot 36 (0x1004e1a0): a tail call of sub_102587f0::vfunc36
 };

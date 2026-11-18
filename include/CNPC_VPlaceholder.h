@@ -4,6 +4,7 @@
 #include "CBaseEntity.h"
 #include "datamap.h"
 
+struct Task_t;	// a tail-call override's parameter
 class CNPC_VPlaceholder : public CBaseEntity
 {
 public:
@@ -325,7 +326,7 @@ public:
 	virtual void vfunc439();
 	virtual void vfunc440();
 	virtual void vfunc441();
-	virtual void vfunc442();
+	virtual void vfunc442(Task_t const *);
 	virtual void vfunc443();
 	virtual void vfunc444(void *);
 	virtual void vfunc445();

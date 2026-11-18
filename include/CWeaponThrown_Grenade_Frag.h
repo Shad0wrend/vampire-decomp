@@ -351,7 +351,7 @@ public:
 	virtual void vfunc268();
 	virtual void vfunc269();
 	virtual void vfunc270();
-	virtual void vfunc271();
+	virtual char vfunc271();
 	virtual void vfunc272();
 	virtual void vfunc273();
 	virtual void vfunc274();

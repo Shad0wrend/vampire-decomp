@@ -24,4 +24,6 @@ public:
 	virtual int vfunc80();
 	int vfunc81();
 	void vfunc113();	// slot 113 (plain member): sub_10008c5b(this), then CBaseEntity::vfunc113
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc134();	// slot 134 (0x1042b6b0): a tail call of CBaseEntity::vfunc134 (no such slot in this view: plain)
 };

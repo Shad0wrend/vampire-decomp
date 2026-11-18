@@ -7,6 +7,7 @@
 class CAI_Motor;
 class CUnknown102e0150;
 
+struct animevent_t;	// a tail-call override's parameter
 class CNPC_VBach : public CBaseEntity
 {
 public:
@@ -216,7 +217,7 @@ public:
 	virtual void vfunc256();
 	virtual void vfunc257();
 	virtual void vfunc258();
-	virtual void vfunc259();
+	virtual void vfunc259(animevent_t *);
 	virtual void vfunc260();
 	virtual void vfunc261();
 	virtual void vfunc262();

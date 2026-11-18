@@ -5,6 +5,8 @@
 
 #include "CAI_Navigator.h"
 
+struct CTakeDamageInfo;	// a tail-call override's parameter
+struct animevent_t;	// a tail-call override's parameter
 class CNPC_VMoleman : public CBaseEntity
 {
 public:
@@ -45,4 +47,8 @@ public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11
 	void vfunc434();	// slot 434 (0x1039fe50): a tail call of CNPC_VHuman::vfunc434 (no such slot in this view: plain)
 	bool vfunc366(int, int, int);	// slot 366 (0x1039fe90): a tail call of CNPC_VHuman::vfunc366 (no such slot in this view: plain)
 	void vfunc442(int const *);	// slot 442 (0x1039fed0): a tail call of CNPC_VHuman::vfunc442 (no such slot in this view: plain)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc463(int, int);	// slot 463 (0x1039fce0): a tail call of CNPC_VHuman::vfunc463 (no such slot in this view: plain)
+	void vfunc259(animevent_t *);	// slot 259 (0x1039fd00): a tail call of CNPC_VHuman::vfunc259 (no such slot in this view: plain)
+	int vfunc390(CTakeDamageInfo *);	// slot 390 (0x1039fe70): a tail call of CNPC_VHuman::vfunc390 (no such slot in this view: plain)
 };

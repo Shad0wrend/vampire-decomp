@@ -4,6 +4,8 @@
 #include "CBaseEntity.h"
 #include "datamap.h"
 
+struct CTakeDamageInfo;	// a tail-call override's parameter
+struct animevent_t;	// a tail-call override's parameter
 class CNPC_VBatSwarm : public CBaseEntity
 {
 public:
@@ -154,7 +156,7 @@ public:
 	virtual void vfunc256();
 	virtual void vfunc257();
 	virtual void vfunc258();
-	virtual void vfunc259();
+	virtual void vfunc259(animevent_t *);
 	virtual void vfunc260();
 	virtual void vfunc261();
 	virtual void vfunc262();
@@ -285,7 +287,7 @@ public:
 	virtual void vfunc387();
 	virtual void vfunc388();
 	virtual void vfunc389();
-	virtual void vfunc390();
+	virtual int vfunc390(CTakeDamageInfo *);
 	virtual void vfunc391();
 	virtual void vfunc392();
 	virtual void vfunc393();
@@ -358,7 +360,7 @@ public:
 	virtual void vfunc460();
 	virtual int vfunc461();
 	virtual void vfunc462();
-	virtual void vfunc463();
+	virtual void vfunc463(int, int);
 	virtual void vfunc464();
 	virtual void vfunc465();
 	virtual void vfunc466();

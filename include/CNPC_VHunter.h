@@ -17,6 +17,8 @@ struct CHunterMate	// the active weapon object (CNPC_VHumanCombatant::sub_1032e7
 	virtual void vfunc67();
 };
 
+struct CTakeDamageInfo;	// a tail-call override's parameter
+struct animevent_t;	// a tail-call override's parameter
 class CNPC_VHunter : public CNPC_VHumanCombatant
 {
 public:
@@ -52,7 +54,7 @@ public:
 	virtual void vfunc141();
 	virtual void vfunc142();
 	virtual void vfunc143_slot();
-	virtual void vfunc144();
+	virtual void vfunc144(int);
 	virtual void vfunc145();
 	virtual void vfunc146();
 	virtual void vfunc147();
@@ -167,7 +169,7 @@ public:
 	virtual void vfunc256();
 	virtual void vfunc257();
 	virtual void vfunc258();
-	virtual void vfunc259();
+	virtual void vfunc259(animevent_t *);
 	virtual void vfunc260();
 	virtual void vfunc261();
 	virtual void vfunc262();
@@ -298,7 +300,7 @@ public:
 	virtual void vfunc387();
 	virtual void vfunc388();
 	virtual void vfunc389();
-	virtual void vfunc390();
+	virtual int vfunc390(CTakeDamageInfo *);
 	virtual void vfunc391();
 	virtual void vfunc392();
 	virtual void vfunc393();
@@ -350,7 +352,7 @@ public:
 	virtual void vfunc439();
 	virtual void vfunc440_slot();
 	virtual void vfunc441();
-	virtual void vfunc442();
+	virtual void vfunc442(int const *);
 	virtual void vfunc443();
 	virtual void vfunc444();
 	virtual void vfunc445();
@@ -490,4 +492,6 @@ public:
 	virtual void vfunc579();
 	virtual int vfunc580();
 	char m_pad6668[0x666c - 0x6668];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc104();	// slot 104 (0x10388780): a tail call of CNPC_VHumanCombatant::vfunc104
 };

@@ -24,4 +24,6 @@ public:
 	int m_Size;	// 0x14
 	void *m_pElements;	// 0x18
 #endif
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc4();	// slot 4 (0x10227710): a tail call of sub_100828d0::vfunc4
 };

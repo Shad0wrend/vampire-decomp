@@ -291,7 +291,7 @@ public:
 	virtual void vfunc298();
 	virtual void vfunc299();
 	virtual void vfunc300();
-	virtual void vfunc301();
+	virtual void vfunc301(int *, int *);
 	virtual void vfunc302();
 	virtual void vfunc303();
 	virtual void vfunc304();
@@ -453,7 +453,7 @@ public:
 	virtual int vfunc460();
 	virtual int vfunc461();	// slot 461 "CNPC_VZombie::SelectIdealState": by the state (+0x5cc0) 1 or 3 picks the ideal state from the conditions, else CNPC_VAnimal::vfunc461
 	virtual void vfunc462();
-	virtual void vfunc463();
+	virtual void vfunc463(int, int);
 	virtual void vfunc464();
 	virtual void vfunc465();
 	virtual void vfunc466();

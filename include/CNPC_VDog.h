@@ -50,4 +50,7 @@ public:
 	char m_pad03e0[0x6694 - 0x3e0];
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	virtual bool vfunc366(int, int, int);	// slot 366 (0x10374900): a tail call of CNPC_VAnimal::vfunc366
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc104();	// slot 104 (0x10373fe0): a tail call of CNPC_VAnimal::vfunc104
+	void vfunc434();	// slot 434 (0x103748c0): a tail call of sub_10360180::vfunc434 (no such slot in this view: plain)
 };

@@ -18,4 +18,6 @@ public:
 	virtual void vfunc137();
 	virtual int vfunc138();
 	char m_pad6664[0x6668 - 0x6664];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc103();	// slot 103 (0x103776e0): a tail call of CNPC_VVampireCall_103c4ef0::vfunc103
 };

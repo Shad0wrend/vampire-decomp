@@ -636,7 +636,7 @@ public:
 	virtual void vfunc460();
 	virtual int vfunc461();
 	virtual void vfunc462();
-	virtual void vfunc463();
+	virtual void vfunc463(int, int);
 	virtual void vfunc464();
 	virtual void vfunc465();
 	virtual void vfunc466();

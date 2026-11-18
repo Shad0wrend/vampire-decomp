@@ -28,4 +28,6 @@ public:
 	void sub_101318e0(inputdata_t *pInput);	// input handler: sets the interval from a float variant (at least 0.01f), re-arming when it changed
 public:
 	datamap_t * vfunc82();
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc134();	// slot 134 (0x101316c0): a tail call of CToggleRelayUnit::vfunc134 (no such slot in this view: plain)
 };

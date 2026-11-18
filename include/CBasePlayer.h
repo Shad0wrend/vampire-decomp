@@ -713,4 +713,6 @@ void sub_1016c9d0();
 #include "CBasePlayer_ext.h"
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	void vfunc114();	// slot 114 (0x10174dd0): a tail call of CBaseEntity::vfunc114 (no such slot in this view: plain)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	char vfunc428(void *, int);	// slot 428 (0x10161fa0): a tail call of CBaseEntity::vfunc428 (no such slot in this view: plain)
 };

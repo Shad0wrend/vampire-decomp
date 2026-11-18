@@ -37,4 +37,6 @@ public:
 	virtual int vfunc41(int);
 	virtual int vfunc42(int);
 	char m_pad0004[0x730 - 0x4];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	int vfunc36();	// slot 36 (0x1004fdb0): a tail call of sub_102587f0::vfunc36 (no such slot in this view: plain)
 };

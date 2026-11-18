@@ -18,6 +18,8 @@ struct CNPC_VCopTarget	// an entity as vfunc404 sees it
 };
 
 class CBaseEntity;	// a tail-call override's parameter
+struct CTakeDamageInfo;	// a tail-call override's parameter
+struct animevent_t;	// a tail-call override's parameter
 class CNPC_VCop : public CNPC_VHumanCombatant
 {
 public:
@@ -93,7 +95,7 @@ public:
 	virtual void vfunc141();
 	virtual void vfunc142();
 	virtual void vfunc143_slot();
-	virtual void vfunc144();
+	virtual void vfunc144(int);
 	virtual void vfunc145();
 	virtual void vfunc146();
 	virtual void vfunc147();
@@ -208,7 +210,7 @@ public:
 	virtual void vfunc256();
 	virtual void vfunc257();
 	virtual void vfunc258();
-	virtual void vfunc259();
+	virtual void vfunc259(animevent_t *);
 	virtual void vfunc260();
 	virtual void vfunc261();
 	virtual void vfunc262();
@@ -339,7 +341,7 @@ public:
 	virtual void vfunc387();
 	virtual void vfunc388();
 	virtual void vfunc389();
-	virtual void vfunc390();
+	virtual int vfunc390(CTakeDamageInfo *);
 	virtual void vfunc391();
 	virtual void vfunc392();
 	virtual void vfunc393();
@@ -532,6 +534,8 @@ public:
 	virtual int vfunc580();
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	bool vfunc594(CBaseEntity *, int, int *, int);	// slot 594 (0x10371b30): a tail call of CAI_BaseNPCTroika::vfunc594 (no such slot in this view: plain)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc104();	// slot 104 (0x10371a70): a tail call of CNPC_VHumanCombatant::vfunc104
 };
 
 // The virtual slots past the end of CNPC_VCop's list that vfunc463 calls (the plain members vfunc597 / vfunc598

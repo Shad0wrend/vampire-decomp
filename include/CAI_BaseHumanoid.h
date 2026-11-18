@@ -27,6 +27,7 @@ struct CAI_BaseHumanoid_Waypoint
 	Vector m_vecPos;	// 0x2c .. 0x37
 };
 
+struct Task_t;	// a tail-call override's parameter
 class CAI_BaseHumanoid
 {
 public:
@@ -96,4 +97,6 @@ public:
 	char m_pad604c[0x6058 - 0x604c];
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	void vfunc444(void *);	// slot 444 (0x10262570): a tail call of CAI_BaseNPC::vfunc444 (no such slot in this view: plain)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc442(Task_t const *);	// slot 442 (0x10262550): a tail call of CSTV::vfunc442 (no such slot in this view: plain)
 };

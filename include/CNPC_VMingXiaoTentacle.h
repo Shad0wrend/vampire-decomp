@@ -633,7 +633,7 @@ public:
 	virtual void vfunc524();
 	virtual void vfunc525();
 	virtual void vfunc526();
-	virtual void vfunc527();
+	virtual bool vfunc527(void *);
 	virtual void vfunc528();
 	virtual void vfunc529();
 	virtual void vfunc530();
