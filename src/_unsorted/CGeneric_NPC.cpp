@@ -334,6 +334,19 @@ void CGeneric_NPC::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035a940 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CGeneric_NPC.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CGeneric_NPC::vfunc390
+// the game's 0x1035a940: a tail call (jmp) of CAI_BaseNPCTroika::vfunc390
+int CGeneric_NPC::vfunc390(CTakeDamageInfo *a0)
+{
+	return CAI_BaseNPCTroika::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a980 size=0x68
 #include "CGeneric_NPC.h"
 #include "Vector.h"
