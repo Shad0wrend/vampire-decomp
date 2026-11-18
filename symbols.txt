@@ -9791,6 +9791,7 @@
 0x1000d427 func   ?vfunc117@CFuncBrush@@QAEDXZ CFuncBrush::vfunc117
 0x1000d42c func   ?vfunc379@CPayphone@@UAE_NPAVCBaseEntity@@HHHHHH@Z CPayphone::vfunc379
 0x1000d431 func   ?sub_1033b980@CUnknown1033b980@@QAEMXZ CUnknown1033b980::sub_1033b980
+0x1000d436 func   ?vfunc309@CNPC_VSheriffSwarm@@UAEPAXXZ CNPC_VSheriffSwarm::vfunc309
 0x1000d43b func   ?vfunc81@CBaseTerminal@@QAEHXZ CBaseTerminal::vfunc81
 0x1000d440 func   ?sub_102573a0@CWeaponRanged@@QAEHPAX0H@Z CWeaponRanged::sub_102573a0
 0x1000d445 func   _item_w_avamp_blade item_w_avamp_blade

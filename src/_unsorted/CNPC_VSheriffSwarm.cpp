@@ -221,6 +221,18 @@ void CNPC_VSheriffSwarm::vfunc144(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b2510 size=0x5
+#include "CNPC_VSheriffSwarm.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CNPC_VSheriffSwarm::vfunc309
+// the game's 0x103b2510: a tail call (jmp) of CBaseCombatCharacter::vfunc309
+void * CNPC_VSheriffSwarm::vfunc309()
+{
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc309();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b2590 size=0x15
 #include "CNPC_VSheriffSwarm.h"
 
