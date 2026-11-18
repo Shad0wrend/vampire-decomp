@@ -92,6 +92,18 @@ int CNPC_VFrenzyShadow::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10375c30 size=0x5
+#include "CNPC_VFrenzyShadow.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VFrenzyShadow::vfunc375
+// the game's 0x10375c30: a tail call (jmp) of CNPC_VHuman::vfunc375
+int CNPC_VFrenzyShadow::vfunc375(int a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc375(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10375c50 size=0x15
 #include "CNPC_VFrenzyShadow.h"
 #include "CNPC_VPlayerController.h"

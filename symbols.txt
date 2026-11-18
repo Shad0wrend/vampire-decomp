@@ -3955,6 +3955,7 @@
 0x10005f92 func   ?sub_101bb960@@YAHXZ sub_101bb960
 0x10005f97 func   ?vfunc510@CAI_BaseNPC@@UAE_NXZ CAI_BaseNPC::vfunc510
 0x10005f9c func   ?vfunc82@CPointHurt@@UAEPAUdatamap_t@@XZ CPointHurt::vfunc82
+0x10005fa1 func   ?vfunc375@CNPC_VFrenzyShadow@@UAEHH@Z CNPC_VFrenzyShadow::vfunc375
 0x10005fa6 func   ?vfunc8@CAutoGameSystem@@UAEPAV1@I@Z CAutoGameSystem::vfunc8
 0x10005fb0 func   ?sub_100611b0@@YAXHHPAHHHHHHHH@Z sub_100611b0
 0x10005fb5 func   ?sub_103c2230@CNPC_VTzimisceHeadClaw@@QAEXD@Z CNPC_VTzimisceHeadClaw::sub_103c2230
