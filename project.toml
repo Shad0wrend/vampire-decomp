@@ -8,7 +8,7 @@ cl = "G:\\decomp\\tools\\vc6\\VC98\\BIN\\CL.EXE"
 vcvars = "G:\\decomp\\tools\\vc6\\vcvars32.bat"
 prelude = "vampire.h"
 prelude_core = ["ehandle.h", "globalvars.h", "engineserver.h", "engineiface.h"]
-flags = ["/O2"]
+flags = ["/O2", "/GR"]
 timeout_s = 30
 
 [agents]
