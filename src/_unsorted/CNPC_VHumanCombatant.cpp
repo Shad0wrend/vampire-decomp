@@ -72,6 +72,18 @@ int CNPC_VHumanCombatant::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103870f0 size=0x5
+#include "CNPC_VHumanCombatant.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VHumanCombatant::vfunc104
+// the game's 0x103870f0: a tail call (jmp) of CNPC_VHuman::vfunc104
+void CNPC_VHumanCombatant::vfunc104()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10387110 size=0x13
 #include "CNPC_VHumanCombatant.h"
 void CNPC_VHumanCombatant::vfunc103()

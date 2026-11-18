@@ -7066,6 +7066,7 @@
 0x10009dae func   ?vfunc80@CWeaponIArmor_Lt_Cloth@@UAEPAXXZ CWeaponIArmor_Lt_Cloth::vfunc80
 0x10009db3 func   ?sub_1038c250@CNPC_VManBat@@QAEXPAVCBaseEntity@@@Z CNPC_VManBat::sub_1038c250
 0x10009db8 func   ?sub_1013c620@@YAXABUmatrix3x4_t@@ABVVector@@1AAV2@2@Z sub_1013c620
+0x10009dbd func   ?vfunc104@CNPC_VHumanCombatant@@UAEXXZ CNPC_VHumanCombatant::vfunc104
 0x10009dc2 func   ?vfunc434@CBasePlayer@@QAEXXZ CBasePlayer::vfunc434
 0x10009dc7 func   ?vfunc82@CLogicAuto@@UAEPAUdatamap_t@@XZ CLogicAuto::vfunc82
 0x10009dcc func   ?vfunc1@CTEBloodStream@@UAEHXZ CTEBloodStream::vfunc1
