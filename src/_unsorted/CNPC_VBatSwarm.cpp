@@ -312,6 +312,18 @@ bool CNPC_VBatSwarm::vfunc566(CBaseEntity *a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10367720 size=0x5
+#include "CNPC_VBatSwarm.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VBatSwarm::vfunc433
+// the game's 0x10367720: a tail call (jmp) of CAI_BaseNPCTroika::vfunc433
+void CNPC_VBatSwarm::vfunc433()
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc433();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367740 size=0x2c
 #include "CAI_BaseNPCTroika.h"
 #include "CNPC_VBatSwarm.h"

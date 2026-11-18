@@ -6976,6 +6976,7 @@
 0x10009c0f func   ?sub_10027100@@YGEXZ sub_10027100
 0x10009c14 func   ?sub_10295460@CUnknownTroika10295460@block_10295460@@QAEHHD@Z block_10295460::CUnknownTroika10295460::sub_10295460
 0x10009c19 func   ?sub_10373420@@YIXPAH@Z sub_10373420
+0x10009c1e func   ?vfunc433@CNPC_VBatSwarm@@UAEXXZ CNPC_VBatSwarm::vfunc433
 0x10009c23 func   ?sub_102ee2e0@CUnknown102ee2e0@@QAEDXZ CUnknown102ee2e0::sub_102ee2e0
 0x10009c28 func   ?sub_1012dbd0@CPropClockHand@@QAEXXZ CPropClockHand::sub_1012dbd0
 0x10009c2d func   ?sub_1021a530@CUnk1021a530@@QAEXH@Z CUnk1021a530::sub_1021a530
