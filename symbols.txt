@@ -15076,6 +15076,7 @@
 0x10013b83 func   ?vfunc0@CSafeDiscSaveRestoreOps_5@@QAEXPAPAHPAUCSafeDiscWriter@@@Z CSafeDiscSaveRestoreOps_5::vfunc0
 0x10013b88 func   ??0CSoundEmitterSystemBase@@QAE@XZ CSoundEmitterSystemBase::CSoundEmitterSystemBase
 0x10013b88 func   ?sub_101b26c0@CSoundEmitterSystemBase@@QAEPAV1@XZ CSoundEmitterSystemBase::sub_101b26c0
+0x10013b8d func   ?vfunc104@CAreaPortal@@UAE_NXZ CAreaPortal::vfunc104
 0x10013b92 func   ?sub_10068110@@YAHXZ sub_10068110
 0x10013b97 func   ?sub_10273180@CAI_BaseNPC@@QAE_ND@Z CAI_BaseNPC::sub_10273180
 0x10013b9c func   ?sub_100e3100@@YA_NPBDH@Z sub_100e3100

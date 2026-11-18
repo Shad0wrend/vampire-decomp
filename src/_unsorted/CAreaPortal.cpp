@@ -37,6 +37,17 @@ void CAreaPortal::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c440 size=0x5
+#include "CAreaPortal.h"
+struct CUnknown1010c5d0 { bool sub_1010c5d0(); };
+// TARGET: CAreaPortal::vfunc104
+// the game's 0x1010c440: a tail call (jmp) of CUnknown1010c5d0::sub_1010c5d0
+bool CAreaPortal::vfunc104()
+{
+	return ((CUnknown1010c5d0 *)this)->CUnknown1010c5d0::sub_1010c5d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c4f0 size=0x20
 #include "CAreaPortal.h"
 #include "CFuncAreaPortalBase.h"
