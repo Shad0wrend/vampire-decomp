@@ -103,6 +103,18 @@ void CFunc_Dust::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10113e50 size=0x5
+#include "CFunc_Dust.h"
+#include "CBaseEntity.h"
+
+// TARGET: CFunc_Dust::vfunc113
+// the game's 0x10113e50: a tail call (jmp) of CBaseEntity::vfunc113
+void CFunc_Dust::vfunc113()
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc113();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10113e70 size=0xca
 #include "CFunc_Dust.h"
 
