@@ -295,6 +295,19 @@ void CNPC_VGuard1::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037e220 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CNPC_VGuard1.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VGuard1::vfunc390
+// the game's 0x1037e220: a tail call (jmp) of CNPC_VHuman::vfunc390
+int CNPC_VGuard1::vfunc390(CTakeDamageInfo *a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037e240 size=0x3c
 #include "CAI_BaseNPC.h"
 #include "CNPC_VGuard1.h"

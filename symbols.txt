@@ -8598,6 +8598,7 @@
 0x1000bb36 func   ?vfunc448@CAI_BaseNPC@@UAEXH@Z CAI_BaseNPC::vfunc448
 0x1000bb3b func   ?vfunc103@CRotDoor@@UAEXXZ CRotDoor::vfunc103
 0x1000bb40 func   ?sub_100778b0@CUnknown100778b0@@QAEHXZ CUnknown100778b0::sub_100778b0
+0x1000bb45 func   ?vfunc390@CNPC_VGuard1@@UAEHPAUCTakeDamageInfo@@@Z CNPC_VGuard1::vfunc390
 0x1000bb4a func   ?sub_10112650@CBreakableSurface@@QAEXXZ CBreakableSurface::sub_10112650
 0x1000bb4f func   ?sub_100584a0@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::sub_100584a0
 0x1000bb54 func   ?sub_101d1120@@YAMPBM00@Z sub_101d1120
