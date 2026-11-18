@@ -187586,6 +187586,16 @@ int CUnknown102305d0::sub_102305d0(int id, void *pCharacter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230690 size=0x5
+int __stdcall sub_102304b0(int, int);
+// TARGET: sub_10230690
+// the game's 0x10230690: a tail call (jmp) of sub_102304b0
+int __stdcall sub_10230690(int a0, int a1)
+{
+	return sub_102304b0(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102306d0 size=0x1e
 namespace lifted {
 extern char g_106c7c34;
