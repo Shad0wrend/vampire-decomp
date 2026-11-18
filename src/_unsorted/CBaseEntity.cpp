@@ -2630,17 +2630,11 @@ float CBaseEntity::vfunc204()
 #include "CGameTrace.h"
 #include "CEntityVSlots.h"
 #include "ScopeTrace.h"
+#include "ConVar.h"
 
 class CUnknown1004f860 { public: void *sub_1004f860(); };
 class CVDmg_t { public: int sub_101faa70(); };
 
-struct CTimerView
-{
-	virtual void v0();
-	virtual bool vfunc1();
-	char m_pad[0x28 - 4];
-	float m_f28;
-};
 struct CPhysObjView
 {
 	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
@@ -2649,7 +2643,7 @@ struct CPhysObjView
 	virtual void ApplyForceCenter(const Vector *pForce);
 	virtual void ApplyForceOffset(const Vector *pForce, const Vector *pPos);
 };
-extern CTimerView *g_106b8654;
+extern ConVar g_106b8650;	// phys_pushscale
 void sub_10146570(const Vector *, const Vector *, int, int, int, int, float);
 
 inline unsigned int DmgFlags(CTakeDamageInfo *p)
@@ -2689,11 +2683,7 @@ int CBaseEntity::vfunc227(CTakeDamageInfo *pInfo)
 				{
 					if (DmgFlags(pInfo) & 0x2000000)
 						flDamage *= 100.0f;
-					float flScale;
-					if (g_106b8654->vfunc1())
-						flScale = 0;
-					else
-						flScale = g_106b8654->m_f28;
+					float flScale = g_106b8650.GetFloat();
 					Vector vecForce = ((Vector *)tr.m_planeNormal)->sub_100a19c0(-flDamage);
 					Vector vecScaled = vecForce * flScale;
 					((CPhysObjView *)m_obj36c)->ApplyForceOffset(&vecScaled, (Vector *)tr.m_endpos);
@@ -2709,11 +2699,7 @@ int CBaseEntity::vfunc227(CTakeDamageInfo *pInfo)
 				Vector *pOrg = ((CEntityVSlots *)this)->slot217();
 				Vector vecDir = *pOrg - *pAtt;
 				VectorNormalize(vecDir);
-				float flScale;
-				if (g_106b8654->vfunc1())
-					flScale = g_104454c4;
-				else
-					flScale = g_106b8654->m_f28;
+				float flScale = g_106b8650.GetFloat();
 				vecDir = vecDir * flDamage * flScale;
 				pPhys->ApplyForceCenter(&vecDir);
 			}

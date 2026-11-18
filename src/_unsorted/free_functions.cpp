@@ -3862,6 +3862,7 @@ bool sub_10031c70(CBaseEntity *pEnt)
 #include "CUnknown1073dc28.h"
 #include "CBaseEntity.h"
 #include "ScopeTrace.h"
+#include "ConVar.h"
 #include "CUnknown101d7520.h"
 #include "CSoundEnt.h"
 
@@ -3880,16 +3881,8 @@ struct CPhysSoundParams
 extern CPhysSoundParams g_1072bc98;
 extern float g_104454c4;
 
-struct CVarObj
-{
-	virtual void v0();
-	virtual char v1();
-	char m_pad[0x24];
-	float m_f28;
-};
-
-extern CVarObj *g_106b8864;
-extern CVarObj *g_106b881c;
+extern ConVar g_106b8860;	// physics_impact_sound_min
+extern ConVar g_106b8818;	// physics_impact_sound_max
 
 #define VT10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 #define VT100(p) VT10(p##0) VT10(p##1) VT10(p##2) VT10(p##3) VT10(p##4) VT10(p##5) VT10(p##6) VT10(p##7) VT10(p##8) VT10(p##9)
@@ -3933,14 +3926,11 @@ void sub_10031d50(CBaseEntity *pEntity, int a2, int a3, int a4, int a5, float a6
 			}
 
 			a7 = a7 * a7 * 9.765625e-6f;
-			float f = g_106b8864->v1() ? g_104454c4 : g_106b8864->m_f28;
+			float f = g_106b8860.GetFloat();
 			if (!(a7 < f)) {
-				float f2 = g_106b881c->v1() ? g_104454c4 : g_106b881c->m_f28;
+				float f2 = g_106b8818.GetFloat();
 				if (a7 > f2) {
-					if (g_106b881c->v1())
-						a7 = 0.0f;
-					else
-						a7 = g_106b881c->m_f28;
+					a7 = g_106b8818.GetFloat();
 				}
 				sub_10031990(pEntity, a2, a3, a4, a5, a7);
 			}
@@ -3979,9 +3969,9 @@ struct ImpactEvent_t {
 	PhysPoint_t *pPoint;
 };
 
-extern ConVar *g_106b890c;
-extern ConVar *g_106b897c;
-extern ConVar *g_106b88ac;
+extern ConVar g_106b8908;	// collision_shake_amp
+extern ConVar g_106b8978;	// collision_shake_time
+extern ConVar g_106b88a8;	// collision_shake_freq
 extern float g_104454c4;
 extern float g_1044913c;
 void sub_1000c1b7(Vector *pCenter, float flAmplitude, float flFrequency, float flDuration, float flRadius, int command, int airShake);
@@ -4001,9 +3991,9 @@ void sub_10032180(ImpactEvent_t *pEvent, int index)
 			Vector vecPos;
 			pEvent->pPoint->GetPosition(&vecPos);
 			flMass = flMass * pEvent->flSpeed;
-			float flAmplitude = (g_106b890c->vfunc1() ? g_104454c4 : g_106b890c->m_fValue) / (g_1044913c * 30.0f) * flMass;
-			float flDuration = g_106b897c->vfunc1() ? 0.0f : g_106b897c->m_fValue;
-			float flFrequency = g_106b88ac->vfunc1() ? 0.0f : g_106b88ac->m_fValue;
+			float flAmplitude = g_106b8908.GetFloat() / (g_1044913c * 30.0f) * flMass;
+			float flDuration = g_106b8978.GetFloat();
+			float flFrequency = g_106b88a8.GetFloat();
 			sub_1000c1b7(&vecPos, flAmplitude, flFrequency, flDuration, flAmplitude * 60.0f, 0, 0);
 		}
 	}
@@ -14153,6 +14143,7 @@ int sub_1004ef10()
 #include "CGlobalEntityList.h"
 #include "UTIL_Trace.h"
 #include "CGameTrace.h"
+#include "ConVar.h"
 
 extern CGlobalEntityList g_106eb5d8;
 
@@ -14164,7 +14155,7 @@ struct PhysImpactConVar
 	char m_pad[0x24];
 	float m_fValue;
 };
-extern PhysImpactConVar *g_106b8654;
+extern ConVar g_106b8650;	// phys_pushscale (GetFloat written out: the inline would take the Vector operators' inline budget)
 extern PhysImpactConVar *g_1070b9cc;
 extern float g_104454c4;
 extern char g_106b8540[];
@@ -14253,12 +14244,12 @@ void CPhysImpact::sub_1004f030(inputdata_t *pData)
 			flForce = phys->vfunc12() * flForce;
 		if (bDirect)
 		{
-			Vector force = dir * -flForce * (g_106b8654->vfunc1() ? g_104454c4 : g_106b8654->m_fValue);
+			Vector force = dir * -flForce * (g_106b8650.m_pParent->vfunc1() ? g_104454c4 : g_106b8650.m_pParent->m_fValue);
 			phys->vfunc31(force, pTarget->slot192());
 		}
 		else
 		{
-			Vector force = *(Vector *)tr.m_planeNormal * -flForce * (g_106b8654->vfunc1() ? g_104454c4 : g_106b8654->m_fValue);
+			Vector force = *(Vector *)tr.m_planeNormal * -flForce * (g_106b8650.m_pParent->vfunc1() ? g_104454c4 : g_106b8650.m_pParent->m_fValue);
 			phys->vfunc31(force, *(Vector *)tr.m_endpos);
 		}
 	}
