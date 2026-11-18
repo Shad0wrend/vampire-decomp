@@ -327993,6 +327993,17 @@ void CUnk1042f0c0::sub_1042f0c0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1042f0f0 size=0x5
+struct CUnk1042f0c0 { void sub_1042f0c0(int); };
+struct CWrap1042f0f0 { void sub_1042f0f0(int); };
+// TARGET: sub_1042f0f0
+// the game's 0x1042f0f0: a tail call (jmp) of CUnk1042f0c0::sub_1042f0c0
+void CWrap1042f0f0::sub_1042f0f0(int a0)
+{
+	((CUnk1042f0c0 *)this)->CUnk1042f0c0::sub_1042f0c0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1042f110 size=0x8
 namespace lifted {
 int sub_1000c3ce();
