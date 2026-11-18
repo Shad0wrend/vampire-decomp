@@ -15451,6 +15451,7 @@
 0x1001445c func   ?vfunc0@?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08@@UAEXPAX0@Z CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc0
 0x10014461 func   ?sub_1018a210@@YIXPAX@Z sub_1018a210
 0x10014466 func   ?vfunc82@CFogController@@UAEPAUdatamap_t@@XZ CFogController::vfunc82
+0x1001446b func   ?sub_10184260@@YAII@Z sub_10184260
 0x10014470 func   ?sub_100276c0@CPhysForce@@QAEXXZ CPhysForce::sub_100276c0
 0x10014475 func   ?sub_10124120@CGameMovement@@QAEHAAVVector@@00M@Z CGameMovement::sub_10124120
 0x1001447a func   ?sub_100a9120@CBaseEntity@@QAEXPAUinputdata_t@@@Z CBaseEntity::sub_100a9120
