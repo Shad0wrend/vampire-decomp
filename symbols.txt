@@ -283,6 +283,7 @@
 0x100015c3 func   ?vfunc174@CTriggerElectricBugaloo@@QAEXPAX@Z CTriggerElectricBugaloo::vfunc174
 0x100015c8 func   ?sub_100745d0@CUnknown10074a30@@QAEMM@Z CUnknown10074a30::sub_100745d0
 0x100015cd func   ?sub_1017cef0@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::sub_1017cef0
+0x100015d2 func   ?n5@CBaseNetworkable@@UAEXXZ CBaseNetworkable::n5
 0x100015d2 func   ?sub_100b7a20@@YAHXZ sub_100b7a20
 0x100015d7 func   ?vfunc117@CBeam@@UAEHXZ CBeam::vfunc117
 0x100015dc func   ?sub_10090180@CBaseAnimating@@QAE_NPBVVector@@H_N@Z CBaseAnimating::sub_10090180
