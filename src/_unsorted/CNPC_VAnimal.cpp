@@ -244,6 +244,18 @@ int CNPC_VAnimal::vfunc482(char bDisregardState, int interruptLevel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035fe60 size=0x5
+#include "CNPC_VAnimal.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VAnimal::vfunc440
+// the game's 0x1035fe60: a tail call (jmp) of CAI_BaseNPCTroika::vfunc440
+int CNPC_VAnimal::vfunc440(int a0)
+{
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc440(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10360160 size=0xd
 #include "CNPC_VAnimal.h"
 

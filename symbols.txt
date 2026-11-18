@@ -13643,6 +13643,7 @@
 0x10012274 func   ?sub_101b1d60@@YAPADPADH@Z sub_101b1d60
 0x10012279 func   ?sub_100c1330@@YAXABVQuaternion@@M0AAV1@@Z sub_100c1330
 0x1001227e func   ?vfunc82@CNPC_VSabbatGunman@@UAEPAUdatamap_t@@XZ CNPC_VSabbatGunman::vfunc82
+0x10012283 func   ?vfunc440@CNPC_VAnimal@@QAEHH@Z CNPC_VAnimal::vfunc440
 0x10012288 func   ?vfunc103@CFuncPlatRot@@QAEXXZ CFuncPlatRot::vfunc103
 0x1001228d func   ?sub_10310480@@YGHPAH@Z sub_10310480
 0x10012292 func   ?vfunc568@CAI_BaseNPC@@UAEMH@Z CAI_BaseNPC::vfunc568
