@@ -11159,6 +11159,7 @@
 0x1000ef57 func   ?sub_103fc5f0@CBlueBloodPack@@QAEXXZ CBlueBloodPack::sub_103fc5f0
 0x1000ef5c func   ?sub_103cb4b0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cb4b0
 0x1000ef61 func   ?sub_10390e40@@YAHXZ sub_10390e40
+0x1000ef66 func   ?vfunc375@CNPC_VTaxiDriver@@QAEHH@Z CNPC_VTaxiDriver::vfunc375
 0x1000ef70 func   ?vfunc617@CNPCMaker_Fleshpile@@UAEPAVCBaseEntity@@D@Z CNPCMaker_Fleshpile::vfunc617
 0x1000ef75 func   ?sub_101e17e0@@YGHH@Z sub_101e17e0
 0x1000ef7a func   _item_g_warrens4_passkey item_g_warrens4_passkey
