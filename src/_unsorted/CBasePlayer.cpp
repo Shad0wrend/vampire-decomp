@@ -5745,6 +5745,18 @@ void CBasePlayer::vfunc458()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174dd0 size=0x5
+#include "CBasePlayer.h"
+#include "CBaseEntity.h"
+
+// TARGET: CBasePlayer::vfunc114
+// the game's 0x10174dd0: a tail call (jmp) of CBaseEntity::vfunc114
+void CBasePlayer::vfunc114()
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc114();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174e20 size=0x21
 #include "CBasePlayer.h"
 

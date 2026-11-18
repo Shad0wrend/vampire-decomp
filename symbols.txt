@@ -8239,6 +8239,7 @@
 0x1000b604 func   ?sub_101b0dc0@@YAXPBVCRecipientFilter@@HPBDPBMHPAM@Z sub_101b0dc0
 0x1000b609 func   ?sub_100d94a0@@YA_NPAVCBaseCombatCharacter@@H@Z sub_100d94a0
 0x1000b60e func   ?sub_101ddf80@CUnk101ddf80@@QAEXXZ CUnk101ddf80::sub_101ddf80
+0x1000b613 func   ?vfunc114@CBasePlayer@@QAEXXZ CBasePlayer::vfunc114
 0x1000b618 func   ?vfunc280@CBaseFlex@@UAEXHM@Z CBaseFlex::vfunc280
 0x1000b61d func   ?sub_10357be0@CNPC_Crow@@QAEXM@Z CNPC_Crow::sub_10357be0
 0x1000b622 func   ?vfunc430@CHL2_Player@@QAEXHH@Z CHL2_Player::vfunc430
