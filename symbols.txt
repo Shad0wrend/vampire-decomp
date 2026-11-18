@@ -7767,6 +7767,7 @@
 0x1000ab87 func   ?sub_102e7e60@CUnknown102e12c0@@QAEXXZ CUnknown102e12c0::sub_102e7e60
 0x1000ab8c func   ?sub_10090bc0@CBaseAnimating@@QAEXI@Z CBaseAnimating::sub_10090bc0
 0x1000ab91 func   ?sub_103d7620@CNPC_VWerewolf@@QAEPAXH@Z CNPC_VWerewolf::sub_103d7620
+0x1000ab96 func   ?vfunc144@CNPC_VSheriffSwarm@@UAEXH@Z CNPC_VSheriffSwarm::vfunc144
 0x1000ab9b func   ?vfunc597@CNPC_VCop@@QAEXPAVCBaseEntity@@H@Z CNPC_VCop::vfunc597
 0x1000aba0 func   ?sub_1006d0a0@@YIXPAUCDumpTable1006d0a0@@@Z sub_1006d0a0
 0x1000aba5 func   ?sub_1040f940@CGrabController@@QAE_NPAVCEntityVSlots@@M@Z CGrabController::sub_1040f940
