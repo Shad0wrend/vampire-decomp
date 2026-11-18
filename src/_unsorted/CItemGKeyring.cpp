@@ -76,3 +76,15 @@ void __fastcall sub_104081c0(void *pThis, int dummy, float a)
 	sub_10013593(pThis, dummy, a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10408380 size=0x5
+#include "CItemGKeyring.h"
+#include "CBaseEntity.h"
+
+// TARGET: CItemGKeyring::vfunc180
+// the game's 0x10408380: a tail call (jmp) of CBaseEntity::vfunc180
+void CItemGKeyring::vfunc180()
+{
+	CBaseEntity::vfunc180();
+}
+// END FUNCTION

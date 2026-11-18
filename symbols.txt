@@ -11030,6 +11030,7 @@
 0x1000eb10 func   ?sub_10264130@SElemVec@@QAEXHH@Z SElemVec::sub_10264130
 0x1000eb15 func   ?sub_1033cb00@@YAHPBD@Z sub_1033cb00
 0x1000eb1a func   ?sub_100ae150@CBaseEntity@@QAEXXZ CBaseEntity::sub_100ae150
+0x1000eb1f func   ?vfunc180@CItemGKeyring@@QAEXXZ CItemGKeyring::vfunc180
 0x1000eb24 func   ?vfunc546@CNPC_VHengeyokai@@QAEHH@Z CNPC_VHengeyokai::vfunc546
 0x1000eb29 func   ?sub_10427dc0@@YAXPAD@Z sub_10427dc0
 0x1000eb2e func   ?vfunc473@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc473
