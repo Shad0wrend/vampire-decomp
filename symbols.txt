@@ -1955,6 +1955,7 @@
 0x1000375b func   ?sub_10143b70@@YAXABVVector@@00HHH_NM@Z sub_10143b70
 0x10003760 func   ?sub_10027000@@YAHXZ sub_10027000
 0x10003765 func   ?sub_103de470@@YAEXZ sub_103de470
+0x1000376a func   ?vfunc440@CNPC_VWolfMorph@@UAEHH@Z CNPC_VWolfMorph::vfunc440
 0x1000376f func   ?sub_101cbae0@@YAHXZ sub_101cbae0
 0x10003774 func   ?vfunc376@CNPC_VTzimisce@@UAEHH@Z CNPC_VTzimisce::vfunc376
 0x10003779 func   ?sub_10397c70@CNPC_VMingXiao@@QAEPAVCNPC_VMingXiaoTentacle@@PAV2@@Z CNPC_VMingXiao::sub_10397c70
