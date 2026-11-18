@@ -11362,6 +11362,7 @@
 0x1000f37b func   ??0CBaseButton@@QAE@XZ CBaseButton::CBaseButton
 0x1000f380 func   ?sub_102dcc20@CUnk102dcc20@@QAEHXZ CUnk102dcc20::sub_102dcc20
 0x1000f385 func   ?sub_100742b0@CUnknown10074070@@QAEMMH@Z CUnknown10074070::sub_100742b0
+0x1000f38a func   ?vfunc434@CNPC_VTest@@QAEXXZ CNPC_VTest::vfunc434
 0x1000f38f func   ?sub_100e4240@CDialog@@QAEXH@Z CDialog::sub_100e4240
 0x1000f394 func   ?vfunc285@CBaseCombatWeapon@@UAEPAXXZ CBaseCombatWeapon::vfunc285
 0x1000f399 func   ?vfunc81@CWeaponMelee_BushHook@@QAEHXZ CWeaponMelee_BushHook::vfunc81
