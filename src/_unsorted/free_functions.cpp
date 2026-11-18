@@ -15418,6 +15418,7 @@ void CBaseCombatCharacter::sub_100521e0()
 
 // FUNCTION: 0x100532b0 size=0x8fe
 #include "vampire_all.h"
+struct PcdUnitPad100532b0 { int x; };	// WORKAROUND: VC6 orders one `or ebx, -1` / `mov ebp, 1` pair of this function by a unit-wide count of names (variant_t::NullHandle in inputdata_t.h flipped it, 2026-11-18)
 // TARGET: CBaseCombatCharacter::sub_100532b0
 #include "CBasePlayer.h"
 #include "utlrbtree.h"
@@ -44953,13 +44954,7 @@ void sub_100af340(void *pPlayer, CBaseEntity *pEntity)
 				case 12:
 					if (var.m_fieldType != 12)
 					{
-						if (!(g_109f0afc & 1))
-						{
-							g_109f0afc |= 1;
-							g_109f0b08 = 0xffffffff;
-							atexit(sub_100031f7);
-						}
-						g_109f0b08 = 0xffffffff;
+						variant_t::NullHandle();
 					}
 					else
 					{
@@ -213106,14 +213101,11 @@ struct AITaskTimings817
 };
 extern AITaskTimings817 g_10923a38[10];	// g_AITaskTimings
 extern int g_10923c70;	// g_nAITasksRun
-extern unsigned char g_10923a34;	// guard of the static timeLimit
-extern CCycleCount g_10923c68;	// static timeLimit
 extern bool g_10923c74;	// static fInitializedTimeLimit
 extern CFastTimer g_10920338;	// g_AIMaintainScheduleTimer
 extern unsigned int g_1092053c;	// CAI_BaseNPC::m_nDebugBits
 extern int g_105c9798;	// CAI_BaseNPC::m_nDebugPauseIndex
 extern void (__cdecl *g_109f3630)(const char *fmt, ...);	// Msg
-void __cdecl sub_102827d0();	// the static timeLimit's atexit destructor
 struct GV817 { char m_pad00[0xc]; float curtime; };
 extern GV817 *g_1070b228;
 struct EList817 { char *sub_100290c0(int *pHandle); };
@@ -213222,16 +213214,11 @@ void CMaintainScheduleView::sub_102817c0(char bOnce)
 
 	g_10923c70 = 0;
 
-	if (!(g_10923a34 & 1))
-	{
-		g_10923a34 |= 1;
-		g_10923c68.Init();
-		atexit(sub_102827d0);
-	}
+	static CCycleCount timeLimit;	// VC6 makes its guard and its (empty) atexit destroy
 
 	if (!g_10923c74)
 	{
-		g_10923c68.Init(8.0);
+		timeLimit.Init(8.0);
 		g_10923c74 = true;
 	}
 
@@ -213391,7 +213378,7 @@ void CMaintainScheduleView::sub_102817c0(char bOnce)
 			}
 		}
 
-		if (g_10923c68.IsLessThan(taskTime.GetDurationInProgress()))
+		if (timeLimit.IsLessThan(taskTime.GetDurationInProgress()))
 			break;
 	}
 
