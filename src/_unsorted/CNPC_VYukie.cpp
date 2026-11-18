@@ -230,6 +230,19 @@ void CNPC_VYukie::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd7e0 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CNPC_VYukie.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VYukie::vfunc390
+// the game's 0x103dd7e0: a tail call (jmp) of CNPC_VHuman::vfunc390
+int CNPC_VYukie::vfunc390(CTakeDamageInfo *a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd800 size=0x27
 #include "CEntityVSlots.h"
 #include "CNPC_VYukie.h"

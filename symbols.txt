@@ -6003,6 +6003,7 @@
 0x10008724 func   ?sub_100fca30@@YAHXZ sub_100fca30
 0x10008729 func   ?sub_10086910@@YAXXZ sub_10086910
 0x1000872e func   ?vfunc256@CSceneEntity@@UAEXHPAUCSceneEventActorEnt@@PAUCSceneEvent@@@Z CSceneEntity::vfunc256
+0x10008733 func   ?vfunc390@CNPC_VYukie@@QAEHPAUCTakeDamageInfo@@@Z CNPC_VYukie::vfunc390
 0x10008738 func   ?sub_10279c50@CNpcView10279c50@@QAEXH@Z CNpcView10279c50::sub_10279c50
 0x1000873d func   ?vfunc71@CPropSwitch@@UAEXXZ CPropSwitch::vfunc71
 0x10008742 func   ?vfunc281@CBaseFlex@@UAEMH@Z CBaseFlex::vfunc281
