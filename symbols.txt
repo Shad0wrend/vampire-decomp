@@ -13883,6 +13883,7 @@
 0x10012481 func   ?sub_10202ba0@CUnknown10202ba0@@QAEXXZ CUnknown10202ba0::sub_10202ba0
 0x10012486 func   ?sub_101e86e0@S@@QAEXPAUP@@@Z S::sub_101e86e0
 0x1001248b func   ?vfunc4@CPositionInterpolator_Rope@@UAEDPBD0@Z CPositionInterpolator_Rope::vfunc4
+0x10012490 func   ?vfunc463@CNPC_VBatSwarm@@UAEXHH@Z CNPC_VBatSwarm::vfunc463
 0x1001249a func   ?vfunc33@CPropKeypad@@QAEHXZ CPropKeypad::vfunc33
 0x1001249f func   ?sub_102189e0@CPropHacking@@QAEXPBD@Z CPropHacking::sub_102189e0
 0x100124a4 func   _point_camera point_camera
