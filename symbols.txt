@@ -1163,6 +1163,7 @@
 0x1000276b func   ?vfunc431@CNPC_VFrenzyShadow@@UAEXXZ CNPC_VFrenzyShadow::vfunc431
 0x10002770 func   ?sub_1018f750@CBreakableProp@@QAEXPAUinputdata_t@@@Z CBreakableProp::sub_1018f750
 0x10002775 func   ?sub_1013c460@@YAXABUmatrix3x4_t@@ABVVector@@1AAV2@2@Z sub_1013c460
+0x1000277a func   ?sub_101c46f0@CWrap101c46f0@@QAEXXZ CWrap101c46f0::sub_101c46f0
 0x1000277f func   ?sub_10045d10@@YGXPAUSPhysObjBuf_t@@@Z sub_10045d10
 0x10002784 func   ?sub_101030e0@CUnknown101030e0@@QAEXH@Z CUnknown101030e0::sub_101030e0
 0x10002789 func   _npc_VAsianVampire npc_VAsianVampire

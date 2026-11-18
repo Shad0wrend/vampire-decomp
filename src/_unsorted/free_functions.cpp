@@ -138997,6 +138997,17 @@ CUnk101c4710 *CUnk101c4710::sub_101c46b0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c46f0 size=0x5
+struct CUnk101c4760 { void sub_101c4760(); };
+struct CWrap101c46f0 { void sub_101c46f0(); };
+// TARGET: sub_101c46f0
+// the game's 0x101c46f0: a tail call (jmp) of CUnk101c4760::sub_101c4760
+void CWrap101c46f0::sub_101c46f0()
+{
+	((CUnk101c4760 *)this)->CUnk101c4760::sub_101c4760();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c4710 size=0x3a
 struct CUnk101c4760 { void sub_101c4760(); };
 void *sub_101c47b0();
