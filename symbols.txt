@@ -3143,6 +3143,7 @@
 0x10004f6b func   ?vfunc104@CSkyCamera@@UAEXXZ CSkyCamera::vfunc104
 0x10004f70 func   ?sub_101a1f00@CRestore@@QAEHHHPAUCRestoreDesc@@@Z CRestore::sub_101a1f00
 0x10004f75 func   ?sub_100cd300@COutputEvent@@QAEXUCVariantCopy@@PAX1M@Z COutputEvent::sub_100cd300
+0x10004f7a func   ?vfunc104@CNPC_VCombatman@@UAEXXZ CNPC_VCombatman::vfunc104
 0x10004f7f func   ?sub_1033d190@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_1033d190
 0x10004f89 func   ?vfunc0@CTETracer@@UAEHXZ CTETracer::vfunc0
 0x10004f8e func   ?sub_101c4660@@YIXPADHPBD@Z sub_101c4660
