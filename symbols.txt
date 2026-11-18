@@ -8577,6 +8577,7 @@
 0x1000ba3c func   ?sub_101348a0@CLogicCaseToggle@@QAEXPAUinputdata_t@@@Z CLogicCaseToggle::sub_101348a0
 0x1000ba41 func   ?sub_10152060@@YAXHHHHH@Z sub_10152060
 0x1000ba46 func   ?sub_10043750@S10043750@@QAEXH@Z S10043750::sub_10043750
+0x1000ba4b func   ?vfunc375@CNPC_VMingXiao@@UAEHH@Z CNPC_VMingXiao::vfunc375
 0x1000ba50 func   ?sub_1012f800@@YAMM@Z sub_1012f800
 0x1000ba55 func   ?sub_1017aa40@CStatLoadout@@QAEXPAVCBaseEntity@@@Z CStatLoadout::sub_1017aa40
 0x1000ba5a func   ?sub_100575e0@CBaseFire@@QAEXH@Z CBaseFire::sub_100575e0

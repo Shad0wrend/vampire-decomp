@@ -533,6 +533,17 @@ int CNPC_VMingXiao::vfunc440(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10394670 size=0x5
+#include "CNPC_VMingXiao.h"
+#include "CAI_BaseNPCTroika.h"
+// TARGET: CNPC_VMingXiao::vfunc375
+// the game's 0x10394670: a tail call (jmp) of CAI_BaseNPCTroika::sub_10295590
+int CNPC_VMingXiao::vfunc375(int a0)
+{
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::sub_10295590(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10394690 size=0xe0
 #include "CNPC_VMingXiao.h"
 int CNPC_VMingXiao::vfunc376(int act)
