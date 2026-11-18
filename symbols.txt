@@ -12565,6 +12565,7 @@
 0x10010988 func   ?sub_102c5570@CAI_BaseNPCTroika@@QAEMPAUCAI_RangeRec@@M@Z CAI_BaseNPCTroika::sub_102c5570
 0x1001098d func   ?sub_10210ac0@CTriggerDisciplineContext@@QAEXPAX@Z CTriggerDisciplineContext::sub_10210ac0
 0x10010992 func   ?vfunc4@CTEBubbleTrail@@UAEXAAVCRecipientFilter@@M@Z CTEBubbleTrail::vfunc4
+0x10010997 func   ?vfunc4@CPlayerEventsManager@@UAEXXZ CPlayerEventsManager::vfunc4
 0x100109a6 func   ?vfunc16@CSingleplayRules@@UAEXXZ CSingleplayRules::vfunc16
 0x100109ab func   ?vfunc203@CBaseEntity@@QAEMXZ CBaseEntity::vfunc203
 0x100109b0 func   ?sub_102c6bf0@UtlMem@@QAEXXZ UtlMem::sub_102c6bf0

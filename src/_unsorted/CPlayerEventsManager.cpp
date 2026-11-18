@@ -40,6 +40,17 @@ void sub_102276f0() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x10227710 size=0x5
+#include "CPlayerEventsManager.h"
+void __cdecl sub_100828d0();
+// TARGET: CPlayerEventsManager::vfunc4
+// the game's 0x10227710: a tail call (jmp) of sub_100828d0
+void CPlayerEventsManager::vfunc4()
+{
+	sub_100828d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10227730 size=0x41
 #include "CPlayerEventsManager.h"
 
