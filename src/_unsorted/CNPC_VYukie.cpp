@@ -92,6 +92,18 @@ int CNPC_VYukie::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd670 size=0x5
+#include "CNPC_VYukie.h"
+#include "CNPC_VHumanCombatant.h"
+
+// TARGET: CNPC_VYukie::vfunc463
+// the game's 0x103dd670: a tail call (jmp) of CNPC_VHumanCombatant::vfunc463
+void CNPC_VYukie::vfunc463(int a0, int a1)
+{
+	((CNPC_VHumanCombatant *)this)->CNPC_VHumanCombatant::vfunc463(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd6b0 size=0x67
 #include "CBaseEntity.h"
 #include "CEntityVSlots.h"
