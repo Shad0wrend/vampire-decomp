@@ -15994,6 +15994,7 @@
 0x10014f33 func   ?sub_1018c9a0@@YAHXZ sub_1018c9a0
 0x10014f3d func   ?sub_101bc000@@YIXPAH@Z sub_101bc000
 0x10014f42 func   ?sub_103dd000@CNPC_VYukie@@QAEPAV1@XZ CNPC_VYukie::sub_103dd000
+0x10014f47 func   ?sub_101e0060@CWrap101e0060@@QAEXXZ CWrap101e0060::sub_101e0060
 0x10014f4c func   ??0CBaseVampireSkillEntity@@QAE@XZ CBaseVampireSkillEntity::CBaseVampireSkillEntity
 0x10014f4c func   ?sub_1020aa70@CBaseVampireSkillEntity@@QAEPAV1@XZ CBaseVampireSkillEntity::sub_1020aa70
 0x10014f51 func   ?sub_101b2570@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_101b2570

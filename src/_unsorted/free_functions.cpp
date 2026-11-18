@@ -152059,6 +152059,17 @@ CUnknown101e0040* CUnknown101e0040::sub_101e0040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101e0060 size=0x5
+struct S101e0310 { void sub_101e0310(); };
+struct CWrap101e0060 { void sub_101e0060(); };
+// TARGET: sub_101e0060
+// the game's 0x101e0060: a tail call (jmp) of S101e0310::sub_101e0310
+void CWrap101e0060::sub_101e0060()
+{
+	((S101e0310 *)this)->S101e0310::sub_101e0310();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101e0080 size=0x105
 #include "CUnknown101e01e0.h"
 #include "S101df260.h"
