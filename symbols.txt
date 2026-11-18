@@ -1162,6 +1162,7 @@
 0x10002752 func   ?vfunc265@CPropModelState@@QAEXPAX0HM@Z CPropModelState::vfunc265
 0x10002757 func   ?sub_103c2990@@YIPAXPAX@Z sub_103c2990
 0x1000275c func   _scripted_sequence scripted_sequence
+0x10002761 func   ?vfunc259@CNPC_VSheriffSwarm@@UAEXPAUanimevent_t@@@Z CNPC_VSheriffSwarm::vfunc259
 0x10002766 func   ?vfunc566@CNPC_VManBat@@QAE_NPAVCBaseEntity@@@Z CNPC_VManBat::vfunc566
 0x1000276b func   ?vfunc431@CNPC_VFrenzyShadow@@UAEXXZ CNPC_VFrenzyShadow::vfunc431
 0x10002770 func   ?sub_1018f750@CBreakableProp@@QAEXPAUinputdata_t@@@Z CBreakableProp::sub_1018f750
