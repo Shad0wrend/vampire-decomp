@@ -16242,6 +16242,7 @@
 0x100156ef func   ?vfunc554@CAI_BaseNPC@@UAEHMM@Z CAI_BaseNPC::vfunc554
 0x100156f4 func   ?vfunc2@CTETParticleAttached@@UAEPAV1@I@Z CTETParticleAttached::vfunc2
 0x100156f9 func   ?vfunc5@CWeaponMelee_Fists@@QAEPAV1@I@Z CWeaponMelee_Fists::vfunc5
+0x100156fe func   ?vfunc438@CGeneric_NPC_bathack@@UAEHXZ CGeneric_NPC_bathack::vfunc438
 0x10015703 func   ?vfunc104@CBaseButton@@UAEXXZ CBaseButton::vfunc104
 0x10015708 func   ??1COutputEvent@@QAE@XZ COutputEvent::~COutputEvent
 0x10015708 func   ?sub_100cd2d0@@YIXPAD@Z sub_100cd2d0

@@ -210,6 +210,18 @@ void CGeneric_NPC_bathack::vfunc259(animevent_t *a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035b120 size=0x5
+#include "CGeneric_NPC_bathack.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CGeneric_NPC_bathack::vfunc438
+// the game's 0x1035b120: a tail call (jmp) of CAI_BaseNPC::vfunc438
+int CGeneric_NPC_bathack::vfunc438()
+{
+	return ((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc438();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035b160 size=0xd
 void __fastcall sub_1000a529(void *pThis, int dummy, float a);
 
