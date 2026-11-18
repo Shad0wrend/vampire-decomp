@@ -21612,6 +21612,17 @@ int CWrap1006cb60::sub_1006cb60(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006cb80 size=0x5
+struct CUnk_1006ca50 { void sub_1006ca50(int); };
+struct CWrap1006cb80 { void sub_1006cb80(int); };
+// TARGET: sub_1006cb80
+// the game's 0x1006cb80: a tail call (jmp) of CUnk_1006ca50::sub_1006ca50
+void CWrap1006cb80::sub_1006cb80(int a0)
+{
+	((CUnk_1006ca50 *)this)->CUnk_1006ca50::sub_1006ca50(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006cba0 size=0x30
 #include "StatDefault.h"
 int StatDefault::sub_1006cba0(int arg)
