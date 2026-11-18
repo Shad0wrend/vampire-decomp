@@ -8275,6 +8275,7 @@
 0x1000b695 func   ?sub_102c65b0@CUnknown102c65b0@@QAEHXZ CUnknown102c65b0::sub_102c65b0
 0x1000b6a4 func   _env_sprite env_sprite
 0x1000b6a9 func   ?sub_1022dea0@@YAXPAUCMasqChar@@H@Z sub_1022dea0
+0x1000b6ae func   ?vfunc366@CNPC_VBach@@UAE_NHHH@Z CNPC_VBach::vfunc366
 0x1000b6b3 func   ?sub_1033d9d0@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_1033d9d0
 0x1000b6b8 func   ?sub_101fb3e0@CVDmg_t@@QAEXI@Z CVDmg_t::sub_101fb3e0
 0x1000b6bd func   ?vfunc5@CPhysConstraint@@UAEPAV1@I@Z CPhysConstraint::vfunc5

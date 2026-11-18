@@ -303,6 +303,18 @@ int CNPC_VBach::sub_10363c70(void *pInfo)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10363d50 size=0x5
+#include "CNPC_VBach.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VBach::vfunc366
+// the game's 0x10363d50: a tail call (jmp) of CNPC_VHuman::vfunc366
+bool CNPC_VBach::vfunc366(int a0, int a1, int a2)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc366(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10363db0 size=0x23d
 #include "CNPC_VBach.h"
 #include "CPASAttenuationFilter.h"
