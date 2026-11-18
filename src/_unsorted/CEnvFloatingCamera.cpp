@@ -13,6 +13,18 @@ datamap_t *CEnvFloatingCamera::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10103770 size=0x5
+#include "CEnvFloatingCamera.h"
+#include "CBaseEntity.h"
+
+// TARGET: CEnvFloatingCamera::vfunc113
+// the game's 0x10103770: a tail call (jmp) of CBaseEntity::vfunc113
+void CEnvFloatingCamera::vfunc113()
+{
+	CBaseEntity::vfunc113();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10103900 size=0x1e
 #include "CEnvFloatingCamera.h"
 

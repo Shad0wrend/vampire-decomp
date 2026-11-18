@@ -12508,6 +12508,7 @@
 0x10010c49 func   ?vfunc82@CFilterMultiple@@UAEPAUdatamap_t@@XZ CFilterMultiple::vfunc82
 0x10010c4e func   ?sub_10204550@@YAXH@Z sub_10204550
 0x10010c53 func   ?vfunc488@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc488
+0x10010c58 func   ?vfunc113@CEnvFloatingCamera@@UAEXXZ CEnvFloatingCamera::vfunc113
 0x10010c5d func   ?sub_10042140@UtlHash8@@QAEIPAX@Z UtlHash8::sub_10042140
 0x10010c62 func   ?sub_10031c70@@YA_NPAVCBaseEntity@@@Z sub_10031c70
 0x10010c67 func   ?vfunc29@CMultiplayRules@@UAEXPAX@Z CMultiplayRules::vfunc29
