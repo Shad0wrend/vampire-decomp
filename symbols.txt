@@ -14468,6 +14468,7 @@
 0x10013309 func   ?vfunc103@CPropDestructable@@UAEXXZ CPropDestructable::vfunc103
 0x1001330e func   ?sub_1042c7d0@@YIXPAX@Z sub_1042c7d0
 0x10013313 func   ?vfunc103@CNPC_VTzimisceRunner@@QAEXXZ CNPC_VTzimisceRunner::vfunc103
+0x10013318 func   ?vfunc444@CNPC_VBatSwarm@@UAEXPAX@Z CNPC_VBatSwarm::vfunc444
 0x1001331d func   ?sub_101e3d70@CUnknown101e3d70@@QAEXPAUCUnknown101e3cfObj@@@Z CUnknown101e3d70::sub_101e3d70
 0x10013322 func   ?sub_10195390@@YAHXZ sub_10195390
 0x10013327 func   ?vfunc5@CResearchBook_LG_COMP@@QAEPAV1@I@Z CResearchBook_LG_COMP::vfunc5

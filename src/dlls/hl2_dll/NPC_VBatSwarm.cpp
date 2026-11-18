@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10367660 size=0x5
+#include "CNPC_VBatSwarm.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VBatSwarm::vfunc444
+// the game's 0x10367660: a tail call (jmp) of CNPC_VHuman::vfunc444
+void CNPC_VBatSwarm::vfunc444(void *a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc444(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367680 size=0x5c
 #include "CNPC_VBatSwarm.h"
 
