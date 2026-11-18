@@ -1050,3 +1050,15 @@ float CAI_BaseHumanoid::vfunc516()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10262570 size=0x5
+#include "CAI_BaseHumanoid.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CAI_BaseHumanoid::vfunc444
+// the game's 0x10262570: a tail call (jmp) of CAI_BaseNPC::vfunc444
+void CAI_BaseHumanoid::vfunc444(void *a0)
+{
+	((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc444(a0);
+}
+// END FUNCTION

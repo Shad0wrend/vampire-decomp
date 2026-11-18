@@ -15726,6 +15726,7 @@
 0x10014ccc func   ?sub_101ff3e0@CVStatInfoList_t@@QAEXXZ CVStatInfoList_t::sub_101ff3e0
 0x10014cd1 func   ?sub_10299ce0@@YAHPAUCObj10299ce0@@@Z sub_10299ce0
 0x10014cd6 func   ?vfunc5@CPropHacking@@QAEPAV1@I@Z CPropHacking::vfunc5
+0x10014cdb func   ?vfunc444@CAI_BaseHumanoid@@QAEXPAX@Z CAI_BaseHumanoid::vfunc444
 0x10014ce0 func   ?sub_100ca610@@YAXXZ sub_100ca610
 0x10014ce5 func   ?sub_10265820@@YAXXZ sub_10265820
 0x10014cea func   ?vfunc3@CSoundEmitterSystem@@QAAXPBDZZ CSoundEmitterSystem::vfunc3
