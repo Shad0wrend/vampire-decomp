@@ -188,6 +188,18 @@ int CNPC_VGargoyle::vfunc337()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103786a0 size=0x5
+#include "CNPC_VGargoyle.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VGargoyle::vfunc463
+// the game's 0x103786a0: a tail call (jmp) of CNPC_VHuman::vfunc463
+void CNPC_VGargoyle::vfunc463(int a0, int a1)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc463(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103786c0 size=0x195
 #include "CNPC_VGargoyle.h"
 #include "CEntityVSlots.h"
