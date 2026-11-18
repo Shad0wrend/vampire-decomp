@@ -107,6 +107,18 @@ bool CVampireProjectile_MingXiaoSpit::vfunc265()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f1930 size=0x5
+#include "CVampireProjectile_MingXiaoSpit.h"
+#include "CVampireProjectile.h"
+
+// TARGET: CVampireProjectile_MingXiaoSpit::vfunc113
+// the game's 0x103f1930: a tail call (jmp) of CVampireProjectile::vfunc113
+void CVampireProjectile_MingXiaoSpit::vfunc113()
+{
+	CVampireProjectile::vfunc113();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f1950 size=0x163
 #include "CVampireProjectile_MingXiaoSpit.h"
 #include "CBaseCombatCharacter.h"
