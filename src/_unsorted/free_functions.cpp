@@ -183484,6 +183484,17 @@ void CItemContainerLock::sub_102241f0(inputdata_t *pInput)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102243a0 size=0x5
+#include "CBreakableProp.h"
+struct CWrap102243a0 { void sub_102243a0(); };
+// TARGET: sub_102243a0
+// the game's 0x102243a0: a tail call (jmp) of CBreakableProp::vfunc113
+void CWrap102243a0::sub_102243a0()
+{
+	((CBreakableProp *)this)->CBreakableProp::vfunc113();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10224440 size=0x3c6
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"

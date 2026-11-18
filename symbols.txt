@@ -2312,6 +2312,7 @@
 0x10003e54 func   ?sub_100a47b0@CUnk100a47b0@@QAEXXZ CUnk100a47b0::sub_100a47b0
 0x10003e59 func   ?sub_100792a0@CUnknown100792a0@@QAEHXZ CUnknown100792a0::sub_100792a0
 0x10003e5e func   ?sub_1021eac0@@YGHH@Z sub_1021eac0
+0x10003e63 func   ?sub_102243a0@CWrap102243a0@@QAEXXZ CWrap102243a0::sub_102243a0
 0x10003e68 func   ?vfunc91@CVampireProjectile@@UAEDPAXH@Z CVampireProjectile::vfunc91
 0x10003e6d func   ?sub_101d8250@@YIXPAH@Z sub_101d8250
 0x10003e72 func   ?sub_100a68f0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a68f0
