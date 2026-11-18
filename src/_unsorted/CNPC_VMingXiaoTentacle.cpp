@@ -183,6 +183,19 @@ int CNPC_VMingXiaoTentacle::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039c4a0 size=0x5
+#include "animevent_t.h"
+#include "CNPC_VMingXiaoTentacle.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VMingXiaoTentacle::vfunc259
+// the game's 0x1039c4a0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc259
+void CNPC_VMingXiaoTentacle::vfunc259(animevent_t *a0)
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc259(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039d750 size=0x54a
 #include "CNPC_VMingXiaoTentacle.h"
 #include "CBaseEntity.h"
