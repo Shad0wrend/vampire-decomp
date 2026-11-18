@@ -42,6 +42,17 @@ void *CTriggerTeleport::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c92a0 size=0x5
+#include "CTriggerTeleport.h"
+#include "CBaseTrigger.h"
+// TARGET: CTriggerTeleport::vfunc103
+// the game's 0x101c92a0: a tail call (jmp) of CBaseTrigger::sub_101c5080
+void CTriggerTeleport::vfunc103()
+{
+	((CBaseTrigger *)this)->CBaseTrigger::sub_101c5080();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c92c0 size=0x33f
 #include "CLogicAuto.h"
 #include "CTriggerTeleport.h"
