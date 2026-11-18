@@ -16977,6 +16977,7 @@
 0x1019b790 func   ?sub_1019b790@@YAXH@Z sub_1019b790
 0x1019b7b0 func   ?sub_1019b7b0@@YAPAXXZ sub_1019b7b0
 0x1019b7e0 func   ?sub_1019b7e0@@YAPAXXZ sub_1019b7e0
+0x1019ba10 func   ?sub_1019ba10@@YAXPAX@Z sub_1019ba10
 0x1019ba30 func   ?sub_1019ba30@@YAPAXPAXPAD@Z sub_1019ba30
 0x1019ba60 func   ?sub_1019ba60@@YAPAUSPyObj@@PAUSPySelf@@PAX@Z sub_1019ba60
 0x1019bae0 func   ?sub_1019bae0@@YAHPAUCUnknown1019bae0@@@Z sub_1019bae0
