@@ -748,6 +748,18 @@ void CNPC_VHengeyokai::vfunc618()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10381ad0 size=0x5
+#include "CNPC_VHengeyokai.h"
+#include "CBaseEntity.h"
+
+// TARGET: CNPC_VHengeyokai::vfunc175
+// the game's 0x10381ad0: a tail call (jmp) of CBaseEntity::vfunc175
+void CNPC_VHengeyokai::vfunc175(CBaseEntity *a0)
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc175(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10381b10 size=0x24
 extern char g_10739a4c[];
 

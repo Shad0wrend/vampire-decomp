@@ -13134,6 +13134,7 @@
 0x100117c5 func   ?sub_103b0630@CNPC_VSheriffMan@@QAEPAVCEntityVSlots@@XZ CNPC_VSheriffMan::sub_103b0630
 0x100117ca func   ?vfunc103@CNPC_VAnimal@@UAEXXZ CNPC_VAnimal::vfunc103
 0x100117cf func   ?sub_100eb250@@YAXPAUCBlock4k@@PBU1@@Z sub_100eb250
+0x100117d4 func   ?vfunc175@CNPC_VHengeyokai@@UAEXPAVCBaseEntity@@@Z CNPC_VHengeyokai::vfunc175
 0x100117d9 func   ?sub_100b5110@CBaseEntity@@QAE_NXZ CBaseEntity::sub_100b5110
 0x100117de func   ?sub_100ca9d0@CMomentaryRotButton@@QAEXXZ CMomentaryRotButton::sub_100ca9d0
 0x100117e3 func   ?sub_1007a2c0@CUnknown1007a2c0@@QAEPAXH@Z CUnknown1007a2c0::sub_1007a2c0
