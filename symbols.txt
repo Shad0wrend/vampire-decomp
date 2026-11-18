@@ -3216,6 +3216,7 @@
 0x100050ba func   ?sub_1040bea0@@YAHXZ sub_1040bea0
 0x100050bf func   ?sub_10390ff0@@YAXXZ sub_10390ff0
 0x100050c4 func   ?sub_101cfe10@@YAXPAXHH@Z sub_101cfe10
+0x100050c9 func   ?vfunc605@CNPC_VSheriffSwarm@@QAEHH@Z CNPC_VSheriffSwarm::vfunc605
 0x100050ce func   ?vfunc441@CAI_BaseNPC@@QAEHH@Z CAI_BaseNPC::vfunc441
 0x100050d3 func   ?sub_1026d130@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1026d130
 0x100050d8 func   ?vfunc1@CTempEntsSystem@@QAEXHHH@Z CTempEntsSystem::vfunc1
