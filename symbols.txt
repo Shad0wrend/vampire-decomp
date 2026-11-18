@@ -7581,6 +7581,7 @@
 0x1000a75e func   _item_g_brotherhood_flyer item_g_brotherhood_flyer
 0x1000a763 func   ?vfunc546@CNPC_VAndreiBlood@@QAEHH@Z CNPC_VAndreiBlood::vfunc546
 0x1000a768 func   ?vfunc31@CBaseToggle@@UAEXH@Z CBaseToggle::vfunc31
+0x1000a76d func   ?sub_100eb0a0@@YAII@Z sub_100eb0a0
 0x1000a772 func   ?sub_10215b40@CPropButtonX@@QAEHPAX@Z CPropButtonX::sub_10215b40
 0x1000a777 func   ?vfunc74@CPushable@@UAE_NH@Z CPushable::vfunc74
 0x1000a77c func   ?sub_10389520@@YIPAXPAD@Z sub_10389520
