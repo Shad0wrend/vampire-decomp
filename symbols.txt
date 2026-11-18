@@ -2955,6 +2955,7 @@
 0x10004b47 func   ?vfunc362@CWeaponThrown_Grenade_Frag@@UAEHXZ CWeaponThrown_Grenade_Frag::vfunc362
 0x10004b4c func   ?sub_102cccb0@CUnk102cccb0@@QAEXH@Z CUnk102cccb0::sub_102cccb0
 0x10004b51 func   ?sub_1013e400@@YGHH@Z sub_1013e400
+0x10004b56 func   ?sub_10085f00@@YAXXZ sub_10085f00
 0x10004b5b func   ?vfunc50@CBaseEntity@@UAEXPAVVector@@@Z CBaseEntity::vfunc50
 0x10004b60 func   ?vfunc274@CPropHacking@@QAEPAXXZ CPropHacking::vfunc274
 0x10004b65 func   ?vfunc3@CRestore@@UAEHHHHHH@Z CRestore::vfunc3

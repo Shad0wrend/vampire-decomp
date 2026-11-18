@@ -33852,6 +33852,16 @@ void sub_10085e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10085f00 size=0x5
+void __cdecl sub_102db650();
+// TARGET: sub_10085f00
+// the game's 0x10085f00: a tail call (jmp) of sub_102db650
+void __cdecl sub_10085f00()
+{
+	sub_102db650();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10085fb0 size=0x25
 #define V10(p) virtual int p##0(); virtual int p##1(); virtual int p##2(); virtual int p##3(); virtual int p##4(); virtual int p##5(); virtual int p##6(); virtual int p##7(); virtual int p##8(); virtual int p##9();
 // the engine's slots 0..83 are placeholders; slot 84 is the zero-argument call the game makes
