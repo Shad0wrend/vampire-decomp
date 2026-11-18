@@ -16609,6 +16609,7 @@
 0x10015d1b func   ?sub_1042fce0@@YAII@Z sub_1042fce0
 0x10015d20 func   ?vfunc5@CGenericNPC@@UAEPAVCAI_BaseNPC@@I@Z CGenericNPC::vfunc5
 0x10015d25 func   ?sub_10312260@@YIXPADHHHHHHHHH@Z sub_10312260
+0x10015d2a func   ?vfunc366@CNPC_VHengeyokai@@UAE_NHHH@Z CNPC_VHengeyokai::vfunc366
 0x10015d2f func   ?sub_104072d0@@YAHXZ sub_104072d0
 0x10015d34 func   ?sub_1013add0@@YAXPBMMPAM@Z sub_1013add0
 0x10015d39 func   ?sub_101c30c0@@YAHXZ sub_101c30c0

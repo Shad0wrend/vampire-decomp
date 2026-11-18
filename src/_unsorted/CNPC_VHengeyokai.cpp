@@ -471,6 +471,18 @@ char CNPC_VHengeyokai::vfunc320(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10380370 size=0x5
+#include "CNPC_VHengeyokai.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VHengeyokai::vfunc366
+// the game's 0x10380370: a tail call (jmp) of CNPC_VHuman::vfunc366
+bool CNPC_VHengeyokai::vfunc366(int a0, int a1, int a2)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc366(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10380390 size=0x23
 #include "CNPC_VHengeyokai.h"
 #include "CNPC_VVampire.h"
