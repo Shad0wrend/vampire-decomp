@@ -389,6 +389,18 @@ void CHL2_Player::vfunc333(int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10350600 size=0x5
+#include "CHL2_Player.h"
+#include "CBasePlayer.h"
+
+// TARGET: CHL2_Player::vfunc104
+// the game's 0x10350600: a tail call (jmp) of CBasePlayer::vfunc104
+void CHL2_Player::vfunc104()
+{
+	((CBasePlayer *)this)->CBasePlayer::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10350830 size=0x623
 #include "CEntityVSlots.h"
 #include "CNPC_VTzimisce.h"

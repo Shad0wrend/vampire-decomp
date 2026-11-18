@@ -577,6 +577,7 @@
 0x10001b9f func   ?sub_101a5800@CUnknown101a5800@@QAEHHHPBUCVecElem40_t@@@Z CUnknown101a5800::sub_101a5800
 0x10001ba9 func   ?sub_103ef780@CWeaponThrown_Grenade_Frag@@QAEXXZ CWeaponThrown_Grenade_Frag::sub_103ef780
 0x10001bae func   ?vfunc546@CNPC_VTaxiDriver@@QAEHH@Z CNPC_VTaxiDriver::vfunc546
+0x10001bb3 func   ?vfunc104@CHL2_Player@@QAEXXZ CHL2_Player::vfunc104
 0x10001bb8 func   ?sub_10093b10@CBaseAnimating@@QAEXHH@Z CBaseAnimating::sub_10093b10
 0x10001bbd func   ?vfunc315@CWeaponMelee@@UAE_NXZ CWeaponMelee::vfunc315
 0x10001bc2 func   ?vfunc442@CNPC_VGargoyle@@UAEXPAH@Z CNPC_VGargoyle::vfunc442
