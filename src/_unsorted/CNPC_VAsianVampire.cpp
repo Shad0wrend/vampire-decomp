@@ -226,6 +226,18 @@ int CNPC_VAsianVampire::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103610f0 size=0x5
+#include "CNPC_VAsianVampire.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VAsianVampire::vfunc433
+// the game's 0x103610f0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc433
+void CNPC_VAsianVampire::vfunc433()
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc433();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10361110 size=0x6f
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
