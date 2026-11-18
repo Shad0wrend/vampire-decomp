@@ -395,6 +395,19 @@ void CNPC_VPedestrian::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a37f0 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CNPC_VPedestrian.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VPedestrian::vfunc390
+// the game's 0x103a37f0: a tail call (jmp) of CNPC_VHuman::vfunc390
+int CNPC_VPedestrian::vfunc390(CTakeDamageInfo *a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a3810 size=0x5
 #include "CNPC_VPedestrian.h"
 #include "CNPC_VHuman.h"
