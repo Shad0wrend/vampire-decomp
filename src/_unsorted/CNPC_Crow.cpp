@@ -450,6 +450,19 @@ int CNPC_Crow::vfunc567(short nHintType)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10358cc0 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CNPC_Crow.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CNPC_Crow::vfunc390
+// the game's 0x10358cc0: a tail call (jmp) of CAI_BaseNPC::vfunc390
+int CNPC_Crow::vfunc390(CTakeDamageInfo *a0)
+{
+	return ((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10358ce0 size=0x17a
 #include "CNPC_Crow.h"
 #include "CUnknown1070b244.h"
