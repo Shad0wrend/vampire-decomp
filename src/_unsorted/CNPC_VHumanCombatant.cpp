@@ -151,6 +151,18 @@ void CNPC_VHumanCombatant::vfunc463(int a, int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10387290 size=0x5
+#include "CNPC_VHumanCombatant.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VHumanCombatant::vfunc442
+// the game's 0x10387290: a tail call (jmp) of CNPC_VHuman::vfunc442
+void CNPC_VHumanCombatant::vfunc442(int const *a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc442(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103872d0 size=0x67
 #include "CBaseEntity.h"
 #include "CNPC_VHumanCombatant.h"

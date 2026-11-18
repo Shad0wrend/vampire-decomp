@@ -7220,6 +7220,7 @@
 0x1000a0ba func   _logic_squad_condition logic_squad_condition
 0x1000a0bf func   ?sub_102434d0@@YAXABVVector@@0000000HH@Z sub_102434d0
 0x1000a0c4 func   ?vfunc1@CHangRope@@UAEXPAUCRopeNode@@H@Z CHangRope::vfunc1
+0x1000a0c9 func   ?vfunc442@CNPC_VHumanCombatant@@QAEXPBH@Z CNPC_VHumanCombatant::vfunc442
 0x1000a0d3 func   ?sub_10312320@CUnknown10312320@@QAEXXZ CUnknown10312320::sub_10312320
 0x1000a0d8 func   ?sub_1008ff50@CBaseAnimating@@QAEPBDH@Z CBaseAnimating::sub_1008ff50
 0x1000a0dd func   ?sub_10319eb0@CNode10319eb0@@QAEPAU1@XZ CNode10319eb0::sub_10319eb0
