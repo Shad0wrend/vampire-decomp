@@ -178,6 +178,18 @@ void CEnvParticle::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100fb600 size=0x5
+#include "CEnvParticle.h"
+#include "CBaseEntity.h"
+
+// TARGET: CEnvParticle::vfunc127
+// the game's 0x100fb600: a tail call (jmp) of CBaseEntity::vfunc127
+int CEnvParticle::vfunc127(int a0)
+{
+	return ((CBaseEntity *)this)->CBaseEntity::vfunc127(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100fb7a0 size=0x19
 #include "CEnvParticle.h"
 #include "globalvars.h"

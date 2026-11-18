@@ -2595,6 +2595,7 @@
 0x1000446c func   ?vfunc563@CAI_BaseNPC@@UAEXPAVCBaseEntity@@PBX11@Z CAI_BaseNPC::vfunc563
 0x10004471 func   ?sub_10093a40@CBaseAnimating@@QAEMH@Z CBaseAnimating::sub_10093a40
 0x10004476 func   ??0CAI_InterestingPlaceConverstation@@QAE@XZ CAI_InterestingPlaceConverstation::CAI_InterestingPlaceConverstation
+0x1000447b func   ?vfunc127@CEnvParticle@@QAEHH@Z CEnvParticle::vfunc127
 0x10004480 func   ?sub_101b19e0@@YAHH@Z sub_101b19e0
 0x10004485 func   ?sub_10272ab0@CAI_BaseNPC@@QAEMPBVVector@@0MM00HPAV2@PAH@Z CAI_BaseNPC::sub_10272ab0
 0x1000448f func   ?sub_1028abe0@@YIHPAXHHHH@Z sub_1028abe0
