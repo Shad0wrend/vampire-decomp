@@ -176,6 +176,18 @@ void CNPC_VBatSwarmFwd::sub_103674c0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103674e0 size=0x5
+#include "CNPC_VBatSwarm.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VBatSwarm::vfunc434
+// the game's 0x103674e0: a tail call (jmp) of CNPC_VHuman::vfunc434
+void CNPC_VBatSwarm::vfunc434()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc434();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367580 size=0xd
 void __fastcall sub_1000ca4f(void *pThis, int dummy, int a, float b);
 

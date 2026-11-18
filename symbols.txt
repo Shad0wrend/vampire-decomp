@@ -6273,6 +6273,7 @@
 0x10008e09 func   ?sub_10202880@@YAPBDH@Z sub_10202880
 0x10008e0e func   ?sub_10258500@@YAPBDH@Z sub_10258500
 0x10008e13 func   ??0CTraceFilterEntity@@QAE@PAXH@Z CTraceFilterEntity::CTraceFilterEntity
+0x10008e18 func   ?vfunc434@CNPC_VBatSwarm@@UAEXXZ CNPC_VBatSwarm::vfunc434
 0x10008e1d func   ?vfunc473@CGeneric_NPC@@UAEHXZ CGeneric_NPC::vfunc473
 0x10008e22 func   _item_a_hvy_leather item_a_hvy_leather
 0x10008e27 func   ?sub_1024cc10@@YA?AVVMatrix@@H@Z sub_1024cc10
