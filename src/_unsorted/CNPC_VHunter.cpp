@@ -113,6 +113,18 @@ int CNPC_VHunter::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388860 size=0x5
+#include "CNPC_VHunter.h"
+#include "CNPC_VHumanCombatant.h"
+
+// TARGET: CNPC_VHunter::vfunc453
+// the game's 0x10388860: a tail call (jmp) of CNPC_VHumanCombatant::vfunc453
+void CNPC_VHunter::vfunc453()
+{
+	CNPC_VHumanCombatant::vfunc453();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388880 size=0x123
 #include "CNPC_VHunter.h"
 #include "CGlobalEntityList.h"

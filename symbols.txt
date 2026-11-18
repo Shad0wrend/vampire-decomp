@@ -11108,6 +11108,7 @@
 0x1000eec6 func   ?vfunc22@CMultiplayRules@@UAE_NXZ CMultiplayRules::vfunc22
 0x1000eecb func   ?sub_10185f90@@YGXPAVCBasePlayer@@N@Z sub_10185f90
 0x1000eed0 func   ?sub_1007dfc0@CUnknown1007dfc0@@QAEXH@Z CUnknown1007dfc0::sub_1007dfc0
+0x1000eed5 func   ?vfunc453@CNPC_VHunter@@UAEXXZ CNPC_VHunter::vfunc453
 0x1000eeda func   ?vfunc124@CBaseCombatCharacter@@UAEHXZ CBaseCombatCharacter::vfunc124
 0x1000eedf func   ?sub_10102c50@@YAHXZ sub_10102c50
 0x1000eee4 func   ?vfunc304@CBaseCombatWeapon@@UAEDXZ CBaseCombatWeapon::vfunc304
