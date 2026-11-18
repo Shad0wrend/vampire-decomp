@@ -5617,6 +5617,7 @@
 0x100080cb func   ?sub_101e83f0@@YGXPAHHH@Z sub_101e83f0
 0x100080d0 func   ?vfunc81@CEntityFlame@@UAEHXZ CEntityFlame::vfunc81
 0x100080d5 func   ?vfunc103@CGenericNPC@@UAEXXZ CGenericNPC::vfunc103
+0x100080da func   ?vfunc444@CNPC_VHumanCombatant@@QAEXPAX@Z CNPC_VHumanCombatant::vfunc444
 0x100080df func   ?sub_100f0e90@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_100f0e90
 0x100080e4 func   ?vfunc42@CBaseTerminal@@QAEXPAX@Z CBaseTerminal::vfunc42
 0x100080e9 func   ?vfunc566@CNPC_VChangBros@@UAE_NH@Z CNPC_VChangBros::vfunc566
