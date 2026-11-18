@@ -11589,6 +11589,7 @@
 0x1000f5e2 func   ?sub_10249960@@YIIPAPAD@Z sub_10249960
 0x1000f5e7 func   ?vfunc10@CServerGameClients@@UAEXXZ CServerGameClients::vfunc10
 0x1000f5ec func   ?sub_100c0b10@CUnk100c0b10@@QAEXH@Z CUnk100c0b10::sub_100c0b10
+0x1000f5f1 func   ?vfunc103@CNPC_VVentrue@@UAEXXZ CNPC_VVentrue::vfunc103
 0x1000f5f6 func   ?vfunc359@CPayphone@@UAEHH@Z CPayphone::vfunc359
 0x1000f5fb func   ?sub_10205960@CParsedValue@@QAEXPAUCVStatKV@@PBD@Z CParsedValue::sub_10205960
 0x1000f600 func   ?sub_10130760@@YGHH@Z sub_10130760

@@ -64,6 +64,17 @@ int CNPC_VVentrue::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103c7e20 size=0x5
+#include "CNPC_VVentrue.h"
+struct CNPC_VVampireCall_103c4ef0 { void sub_103c4ef0(); };
+// TARGET: CNPC_VVentrue::vfunc103
+// the game's 0x103c7e20: a tail call (jmp) of CNPC_VVampireCall_103c4ef0::sub_103c4ef0
+void CNPC_VVentrue::vfunc103()
+{
+	((CNPC_VVampireCall_103c4ef0 *)this)->CNPC_VVampireCall_103c4ef0::sub_103c4ef0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103c7e40 size=0x6
 #include "CNPC_VVentrue.h"
 int CNPC_VVentrue::vfunc138()
