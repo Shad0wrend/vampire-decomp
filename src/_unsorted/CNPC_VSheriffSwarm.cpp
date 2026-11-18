@@ -233,6 +233,18 @@ void * CNPC_VSheriffSwarm::vfunc309()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b2550 size=0x5
+#include "CNPC_VSheriffSwarm.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VSheriffSwarm::vfunc606
+// the game's 0x103b2550: a tail call (jmp) of CAI_BaseNPCTroika::vfunc606
+int CNPC_VSheriffSwarm::vfunc606(int a0)
+{
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc606(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b2590 size=0x15
 #include "CNPC_VSheriffSwarm.h"
 
