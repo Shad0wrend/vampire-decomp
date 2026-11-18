@@ -3680,6 +3680,7 @@
 0x10005a01 func   ?sub_102c2a30@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2a30
 0x10005a06 func   ?vfunc73@CWorld@@UAE_NPAVCBaseEntity@@@Z CWorld::vfunc73
 0x10005a0b func   ?vfunc433@CNPC_VAndreiBlood@@UAEXXZ CNPC_VAndreiBlood::vfunc433
+0x10005a10 func   ?vfunc104@CNPC_VSheriffSwarm@@UAEXXZ CNPC_VSheriffSwarm::vfunc104
 0x10005a15 func   ?sub_10204e90@CUnknown10204e90@@QAEHH@Z CUnknown10204e90::sub_10204e90
 0x10005a1a func   ?vfunc103@CPointAngleSensor@@UAEXXZ CPointAngleSensor::vfunc103
 0x10005a1f func   ?sub_10388eb0@@YIPAXPAX@Z sub_10388eb0

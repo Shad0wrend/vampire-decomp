@@ -70,6 +70,18 @@ datamap_t * CNPC_VSheriffSwarm::vfunc82()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b2310 size=0x5
+#include "CNPC_VSheriffSwarm.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VSheriffSwarm::vfunc104
+// the game's 0x103b2310: a tail call (jmp) of CNPC_VHuman::vfunc104
+void CNPC_VSheriffSwarm::vfunc104()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b2330 size=0x15
 #include "CNPC_VSheriffSwarm.h"
 
