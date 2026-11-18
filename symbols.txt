@@ -10644,6 +10644,7 @@
 0x1000e624 func   ?sub_102767d0@CAI_BaseNPC@@QAEHXZ CAI_BaseNPC::sub_102767d0
 0x1000e629 func   _env_spark env_spark
 0x1000e62e func   ?sub_1008e630@CBaseAnimating@@QAEXPAVCBaseEntity@@@Z CBaseAnimating::sub_1008e630
+0x1000e633 func   ?vfunc376@CNPC_VAnimal@@QAEHH@Z CNPC_VAnimal::vfunc376
 0x1000e638 func   ?sub_10066820@@YAHXZ sub_10066820
 0x1000e63d func   ?sub_10061c00@@YAHXZ sub_10061c00
 0x1000e642 func   ?vfunc618@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc618
