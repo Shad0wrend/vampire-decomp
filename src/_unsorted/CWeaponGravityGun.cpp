@@ -215,6 +215,16 @@ void CWeaponGravityGun::vfunc326()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e160 size=0x5
+#include "CWeaponGravityGun.h"
+// TARGET: CWeaponGravityGun::vfunc327
+// the game's 0x1014e160: a tail call (jmp) of CWeaponGravityGun::sub_1014dd50
+void CWeaponGravityGun::vfunc327()
+{
+	((CWeaponGravityGun *)this)->CWeaponGravityGun::sub_1014dd50();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e180 size=0x1e8
 #include "CSoundControllerImp.h"
 #include "CTriggerProximity.h"
