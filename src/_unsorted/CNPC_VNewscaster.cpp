@@ -183,6 +183,18 @@ void __fastcall sub_103a03a0(void *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a03c0 size=0x5
+#include "CNPC_VNewscaster.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VNewscaster::vfunc103
+// the game's 0x103a03c0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc103
+void CNPC_VNewscaster::vfunc103()
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a03e0 size=0x2f
 // TARGET: CNPC_VNewscaster::vfunc104
 #include "CNPC_VNewscaster.h"

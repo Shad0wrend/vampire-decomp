@@ -1315,6 +1315,7 @@
 0x10002a8b func   ?vfunc6@CAI_Motor@@UAEXPAVVector@@@Z CAI_Motor::vfunc6
 0x10002a90 func   ?sub_1017f170@CBasePlayer@@QAEXPAX@Z CBasePlayer::sub_1017f170
 0x10002a95 func   ?vfunc481@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::vfunc481
+0x10002a9a func   ?vfunc103@CNPC_VNewscaster@@UAEXXZ CNPC_VNewscaster::vfunc103
 0x10002a9f func   ?vfunc82@CMathCounter@@UAEPAUdatamap_t@@XZ CMathCounter::vfunc82
 0x10002aa4 func   ?vfunc81@CWeaponRanged_Pistol_Glock@@UAEHXZ CWeaponRanged_Pistol_Glock::vfunc81
 0x10002aa9 func   ?vfunc223@CPhysicsProp@@QAE_NXZ CPhysicsProp::vfunc223
