@@ -697,6 +697,17 @@ int CNPC_VMingXiaoTentacle::vfunc127(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1039efe0 size=0x5
+#include "CNPC_VMingXiaoTentacle.h"
+struct CTroikaVFunc527 { bool sub_10293e80(void *); };
+// TARGET: CNPC_VMingXiaoTentacle::vfunc527
+// the game's 0x1039efe0: a tail call (jmp) of CTroikaVFunc527::sub_10293e80
+bool CNPC_VMingXiaoTentacle::vfunc527(void *a0)
+{
+	return ((CTroikaVFunc527 *)this)->CTroikaVFunc527::sub_10293e80(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1039f000 size=0x17
 #include "CNPC_VMingXiaoTentacle.h"
 extern int g_1093bd34;

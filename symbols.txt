@@ -12022,6 +12022,7 @@
 0x1000fec0 func   ?sub_102480b0@CUnknown102480b0@@QAEHXZ CUnknown102480b0::sub_102480b0
 0x1000fec5 func   ?vfunc103@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc103
 0x1000feca func   ?sub_103d6650@CNPC_VWerewolf@@QAE?AUCNPC_VWerewolfVec3@@PAX@Z CNPC_VWerewolf::sub_103d6650
+0x1000fecf func   ?vfunc527@CNPC_VMingXiaoTentacle@@UAE_NPAX@Z CNPC_VMingXiaoTentacle::vfunc527
 0x1000fed4 func   ?sub_1010ce30@@YAHXZ sub_1010ce30
 0x1000fed9 func   ?sub_1006c1c0@CUnknown1006c1c0@@QAEXHH@Z CUnknown1006c1c0::sub_1006c1c0
 0x1000fede func   ?sub_102f5bd0@CAI_NetworkManager@@QAEXXZ CAI_NetworkManager::sub_102f5bd0
