@@ -200,6 +200,18 @@ bool CNPC_VBatSwarm::vfunc366(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10367540 size=0x5
+#include "CNPC_VBatSwarm.h"
+#include "CNPC_VVampire.h"
+
+// TARGET: CNPC_VBatSwarm::vfunc144
+// the game's 0x10367540: a tail call (jmp) of CNPC_VVampire::vfunc144
+void CNPC_VBatSwarm::vfunc144(int a0)
+{
+	((CNPC_VVampire *)this)->CNPC_VVampire::vfunc144(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367580 size=0xd
 void __fastcall sub_1000ca4f(void *pThis, int dummy, int a, float b);
 
