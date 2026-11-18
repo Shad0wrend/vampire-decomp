@@ -789,6 +789,17 @@ void CRagdollProp::vfunc266(int a, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158060 size=0x5
+#include "CRagdollProp.h"
+int __cdecl sub_102587f0();
+// TARGET: CRagdollProp::vfunc36
+// the game's 0x10158060: a tail call (jmp) of sub_102587f0
+int CRagdollProp::vfunc36()
+{
+	return sub_102587f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158080 size=0x2e
 #include "CRagdollProp.h"
 // TARGET: CRagdollProp::vfunc32
