@@ -64,6 +64,17 @@ void *CPhysBox::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e1a0 size=0x5
+#include "CPhysBox.h"
+int __cdecl sub_102587f0();
+// TARGET: CPhysBox::vfunc36
+// the game's 0x1004e1a0: a tail call (jmp) of sub_102587f0
+int CPhysBox::vfunc36()
+{
+	return sub_102587f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e1c0 size=0x1f
 #include "CPhysBox.h"
 
