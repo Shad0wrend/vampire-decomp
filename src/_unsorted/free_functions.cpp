@@ -289189,6 +289189,17 @@ int CNPC_VMingXiao::sub_10395650(int a, void *pWeapon)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10395730 size=0x5
+#include "CNPC_VMingXiao.h"
+struct CWrap10395730 { int sub_10395730(int, void *); };
+// TARGET: sub_10395730
+// the game's 0x10395730: a tail call (jmp) of CNPC_VMingXiao::sub_10395650
+int CWrap10395730::sub_10395730(int a0, void *a1)
+{
+	return ((CNPC_VMingXiao *)this)->CNPC_VMingXiao::sub_10395650(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10395ce0 size=0x10
 #include "CNPC_VMingXiao.h"
 
