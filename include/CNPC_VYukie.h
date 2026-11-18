@@ -50,4 +50,6 @@ public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11
 	virtual void vfunc104();	// slot 104 (0x103dd600): a tail call of CNPC_VHumanCombatant::vfunc104
 	void vfunc259(animevent_t *);	// slot 259 (0x103dd690): a tail call of CNPC_VHuman::vfunc259 (no such slot in this view: plain)
 	int vfunc390(CTakeDamageInfo *);	// slot 390 (0x103dd7e0): a tail call of CNPC_VHuman::vfunc390 (no such slot in this view: plain)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc144(int);	// slot 144 (0x103dd860): a tail call of CNPC_VHuman::vfunc144 (a base declares another vfunc144: this one hides it)
 };

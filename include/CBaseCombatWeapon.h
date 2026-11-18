@@ -57,7 +57,7 @@ public:
 	CBCW_V(110) CBCW_V(111) CBCW_V(112) CBCW_V(113) CBCW_V(114) CBCW_V(115) CBCW_V(116) virtual unsigned int vfunc117(); CBCW_V(118) CBCW_V(119)
 	CBCW_V(120) CBCW_V(121) CBCW_V(122) CBCW_V(123)
 	virtual int vfunc124();	// slot 124 \"CBaseCombatWeapon::DrawDebugTextOverlays\" (function 0x10255dd0): CBaseEntity's lines (sub_100a02b0), then with bit 0 of +0x224 the lines \"Type: %s\", \"Worth: %d\" and, per active attack record of the owner, \"AttackRate: %.2f\", \"Damage: %s\", \"BotchTable: %s\"; returns the next free line
-	CBCW_V(125) CBCW_V(126) CBCW_V(127) CBCW_V(128) CBCW_V(129)
+	CBCW_V(125) CBCW_V(126) virtual int vfunc127(int); CBCW_V(128) CBCW_V(129)
 	virtual void vfunc130(void *pArg); CBCW_V(131) CBCW_V(132) CBCW_V(133) CBCW_V(134) CBCW_V(135) CBCW_V(136) CBCW_V(137) CBCW_V(138) CBCW_V(139) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16)
 	virtual void vfunc170(const Vector *pVec);	// asked by vfunc269 with the scaled direction
 	CBCW_V(171) CBCW_V(172) virtual void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value); CBCW_V(174) CBCW_V(175) CBCW_V(176) CBCW_V(177) CBCW_V(178) CBCW_V(179)

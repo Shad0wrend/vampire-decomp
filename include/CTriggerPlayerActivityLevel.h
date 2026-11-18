@@ -3,6 +3,7 @@
 #pragma once
 #include "CBaseTrigger.h"
 
+class CBaseEntity;	// a tail-call override's parameter
 class CTriggerPlayerActivityLevel : public CBaseTrigger
 {
 public:
@@ -20,4 +21,6 @@ public:
 public:
     virtual datamap_t * vfunc82();
     virtual void vfunc103();    // slot 103: its own (0x102108a0)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc174(CBaseEntity *);	// slot 174 (0x102108c0): a tail call of CBaseTrigger::vfunc174 (a base declares it plain vfunc174: this one hides it)
 };

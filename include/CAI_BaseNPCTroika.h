@@ -45,6 +45,7 @@ struct CAI_NamedThing	// one of the three global objects an NPC can be bound to 
 	void sub_1025ddd0(CAI_BaseNPCTroika *pNPC);	// stub 0x10013d31, run by slot 601 for the bound named thing
 };
 
+class Vector;	// a tail-call override's parameter
 class CAI_BaseNPCTroika : public CAI_BaseNPC
 {
 public:
@@ -620,4 +621,6 @@ public:
 	// +0x65e0 (const char *, name for sub_1029f340, empty string 0x106b8540 when null) and +0x65e4 (int result) are not declared: derived classes' members start at +0x65c0
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	virtual int vfunc381(int);	// slot 381 (0x10295570): a tail call of CBaseCombatCharacter::vfunc381
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc301(Vector const *, CTakeDamageInfo *);	// slot 301 (0x10293a60): a tail call of CBaseCombatCharacter::vfunc301 (a base declares another vfunc301: this one hides it)
 };

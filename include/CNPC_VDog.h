@@ -6,6 +6,7 @@
 
 class CEntityVSlots;
 
+struct CVAnimalArg;	// a tail-call override's parameter
 class CNPC_VDog : public CNPC_VAnimal
 {
 public:
@@ -53,4 +54,7 @@ public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	virtual void vfunc104();	// slot 104 (0x10373fe0): a tail call of CNPC_VAnimal::vfunc104
 	void vfunc434();	// slot 434 (0x103748c0): a tail call of sub_10360180::vfunc434 (no such slot in this view: plain)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc463(int, int);	// slot 463 (0x10374260): a tail call of CNPC_VAnimal::vfunc463 (a base declares it plain vfunc463: this one hides it)
+	void vfunc390(CVAnimalArg *);	// slot 390 (0x103748e0): a tail call of CNPC_VAnimal::vfunc390 (a base declares it plain vfunc390: this one hides it)
 };

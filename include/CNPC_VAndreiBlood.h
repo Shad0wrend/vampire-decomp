@@ -71,4 +71,6 @@ public:
 public:
 	virtual bool vfunc566(int);
 	char m_pad66e8[0x66ec - 0x66e8];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	int vfunc440(int);	// slot 440 (0x1035d130): a tail call of CNPC_VHuman::vfunc440 (a base declares it plain vfunc440: this one hides it)
 };
