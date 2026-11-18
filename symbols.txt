@@ -13423,6 +13423,7 @@
 0x10011ecd func   ?sub_10367680@CNPC_VBatSwarm@@QAE_NHH@Z CNPC_VBatSwarm::sub_10367680
 0x10011ed2 func   ?vfunc5@CItemGWirelessCamera3@@QAEPAV1@I@Z CItemGWirelessCamera3::vfunc5
 0x10011ed7 func   ?sub_101c4690@CUnknown101c4690@@QAEPAXXZ CUnknown101c4690::sub_101c4690
+0x10011edc func   ??_GCBaseNetworkable@@UAEPAXI@Z ??_GCBaseNetworkable@@UAEPAXI@Z
 0x10011edc func   ?sub_100b7a90@CUnknown100b7a90@@QAEPAXI@Z CUnknown100b7a90::sub_100b7a90
 0x10011ee1 func   ?sub_103d0ec0@CNPC_VWerewolf@@QAE_NXZ CNPC_VWerewolf::sub_103d0ec0
 0x10011ee6 func   ?sub_102dce10@@YIXPAH@Z sub_102dce10
