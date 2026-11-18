@@ -2591,6 +2591,7 @@
 0x100043d6 func   ?sub_100654d0@CUnknown100654d0@@QAEHXZ CUnknown100654d0::sub_100654d0
 0x100043db func   ?AddRecipientsByPVS@CRecipientFilter@@QAEXABVVector@@@Z CRecipientFilter::AddRecipientsByPVS
 0x100043e0 func   ?sub_10125200@CGameMovement@@QAEHABVVector@@@Z CGameMovement::sub_10125200
+0x100043e5 func   ?sub_10383e90@@YAII@Z sub_10383e90
 0x100043ea func   ?vfunc103@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc103
 0x100043ef func   ?sub_100a9800@@YIDPAVCBaseEntity@@@Z sub_100a9800
 0x100043f4 func   ?sub_1020db00@@YIXPAXHPAH@Z sub_1020db00

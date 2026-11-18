@@ -285410,6 +285410,16 @@ unsigned int __stdcall sub_10383e50(unsigned int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10383e90 size=0x5
+unsigned int __cdecl sub_10430080(unsigned int);
+// TARGET: sub_10383e90
+// the game's 0x10383e90: a tail call (jmp) of sub_10430080
+unsigned int __cdecl sub_10383e90(unsigned int a0)
+{
+	return sub_10430080(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10383f70 size=0x1a
 namespace lifted {
 extern int g_1063f610;
