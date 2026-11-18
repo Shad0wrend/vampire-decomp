@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "vampire.h"
 
+// FUNCTION: 0x10366270 size=0x5
+#include "CNPC_VBaseBoss.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CNPC_VBaseBoss::vfunc420
+// the game's 0x10366270: a tail call (jmp) of CAI_BaseNPC::vfunc420
+void CNPC_VBaseBoss::vfunc420()
+{
+	((CAI_BaseNPC *)this)->CAI_BaseNPC::vfunc420();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10366290 size=0x24
 void sub_10119750(const char *pszFormat, double value);
 void __fastcall sub_10006e0b(void *pSelf);
