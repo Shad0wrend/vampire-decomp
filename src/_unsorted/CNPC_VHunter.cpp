@@ -70,6 +70,18 @@ int CNPC_VHunter::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388780 size=0x5
+#include "CNPC_VHunter.h"
+#include "CNPC_VHumanCombatant.h"
+
+// TARGET: CNPC_VHunter::vfunc104
+// the game's 0x10388780: a tail call (jmp) of CNPC_VHumanCombatant::vfunc104
+void CNPC_VHunter::vfunc104()
+{
+	CNPC_VHumanCombatant::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103887a0 size=0x15
 #include "CNPC_VHunter.h"
 
