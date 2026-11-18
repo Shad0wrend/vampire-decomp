@@ -347,6 +347,18 @@ bool CNPC_VHuman::vfunc366(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10385a90 size=0x5
+#include "CNPC_VHuman.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VHuman::vfunc144
+// the game's 0x10385a90: a tail call (jmp) of CAI_BaseNPCTroika::vfunc144
+void CNPC_VHuman::vfunc144(int a0)
+{
+	CAI_BaseNPCTroika::vfunc144(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10385ab0 size=0x12c
 #include "CNPC_VHuman.h"
 #include "CUnknown1025ddd0.h"
