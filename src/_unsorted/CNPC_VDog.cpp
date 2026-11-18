@@ -146,6 +146,18 @@ l30:
 }
 // END FUNCTION
 
+// FUNCTION: 0x10374260 size=0x5
+#include "CNPC_VDog.h"
+#include "CNPC_VAnimal.h"
+
+// TARGET: CNPC_VDog::vfunc463
+// the game's 0x10374260: a tail call (jmp) of CNPC_VAnimal::vfunc463
+void CNPC_VDog::vfunc463(int a0, int a1)
+{
+	CNPC_VAnimal::vfunc463(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10374280 size=0x3f
 #include "vampire.h"
 #include "CNPC_VDog.h"

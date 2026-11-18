@@ -4947,6 +4947,7 @@
 0x10007293 func   ?vfunc25@CRestore@@UAEHPAVVector@@HH@Z CRestore::vfunc25
 0x10007298 func   ?sub_100f42f0@@YAXPBDHH@Z sub_100f42f0
 0x1000729d func   ?sub_101f4950@CUnknown101f4370@@QAEPBDHH@Z CUnknown101f4370::sub_101f4950
+0x100072a2 func   ?vfunc463@CNPC_VDog@@QAEXHH@Z CNPC_VDog::vfunc463
 0x100072a7 func   ?sub_103264d0@CBaseCombatCharacter@@QAEDVVector@@MH@Z CBaseCombatCharacter::sub_103264d0
 0x100072ac func   ?sub_1039f310@CNPC_VMingXiaoTentacle@@QAEXXZ CNPC_VMingXiaoTentacle::sub_1039f310
 0x100072b1 func   ?sub_102457b0@CUnknown102457b0@@QAEHXZ CUnknown102457b0::sub_102457b0
