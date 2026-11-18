@@ -132,6 +132,17 @@ void CNPC_VGargoyle::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103785d0 size=0x5
+#include "CNPC_VGargoyle.h"
+struct CNPC_VVampireCall_103c4ef0 { void sub_103c4ef0(); };
+// TARGET: CNPC_VGargoyle::vfunc103
+// the game's 0x103785d0: a tail call (jmp) of CNPC_VVampireCall_103c4ef0::sub_103c4ef0
+void CNPC_VGargoyle::vfunc103()
+{
+	((CNPC_VVampireCall_103c4ef0 *)this)->CNPC_VVampireCall_103c4ef0::sub_103c4ef0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103785f0 size=0x32
 #include "CNPC_VGargoyle.h"
 

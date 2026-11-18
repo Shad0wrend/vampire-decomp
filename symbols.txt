@@ -4670,6 +4670,7 @@
 0x10006d48 func   ?vfunc74@CPropDoorknob@@UAE_NH@Z CPropDoorknob::vfunc74
 0x10006d4d func   ?sub_1014f950@@YA_NXZ sub_1014f950
 0x10006d52 func   ?sub_100838d0@CSceneTokenProcessorX@@QAE_NXZ CSceneTokenProcessorX::sub_100838d0
+0x10006d57 func   ?vfunc103@CNPC_VGargoyle@@UAEXXZ CNPC_VGargoyle::vfunc103
 0x10006d5c func   ?vfunc2@CChoreoEventCallback@@UAEXMHH@Z CChoreoEventCallback::vfunc2
 0x10006d61 func   ?vfunc230@CBaseEntity@@QAEXHPAX@Z CBaseEntity::vfunc230
 0x10006d66 func   ?sub_103b6c60@CNPC_VTzimisce@@QAEPAV1@XZ CNPC_VTzimisce::sub_103b6c60
