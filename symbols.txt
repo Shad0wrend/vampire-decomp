@@ -4856,6 +4856,7 @@
 0x10007149 func   ?sub_1013ca00@@YAXABVVector@@00AAV1@PAM@Z sub_1013ca00
 0x1000714e func   ?sub_10377160@@YADXZ sub_10377160
 0x10007153 func   ?sub_100b0f60@@YAXXZ sub_100b0f60
+0x10007158 func   ?vfunc370@CWeaponIWritten@@QAEXPAHPAVCBaseCombatWeapon@@@Z CWeaponIWritten::vfunc370
 0x1000715d func   ?sub_100dec20@CUnknown100dec20@@QAEXH@Z CUnknown100dec20::sub_100dec20
 0x10007162 func   ?sub_1009b030@CBaseEntity@@QAEPAMPAM@Z CBaseEntity::sub_1009b030
 0x10007167 func   ?vfunc373@CWeaponMelee_MingXiaoTentacle@@UAEHXZ CWeaponMelee_MingXiaoTentacle::vfunc373

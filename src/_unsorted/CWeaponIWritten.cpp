@@ -36,6 +36,18 @@ void CWeaponIWritten::vfunc104()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040b350 size=0x5
+#include "CWeaponIWritten.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponIWritten::vfunc370
+// the game's 0x1040b350: a tail call (jmp) of CBaseCombatWeapon::vfunc370
+void CWeaponIWritten::vfunc370(int *a0, CBaseCombatWeapon *a1)
+{
+	((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc370(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040b370 size=0x1
 #include "CWeaponIWritten.h"
 void CWeaponIWritten::vfunc291()
