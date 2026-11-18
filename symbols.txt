@@ -8409,6 +8409,7 @@
 0x1000b89d func   ?vfunc5@CPhysicsSpring@@UAEPAV1@I@Z CPhysicsSpring::vfunc5
 0x1000b8a2 func   ?vfunc144@CNPC_VVampire@@QAEXH@Z CNPC_VVampire::vfunc144
 0x1000b8a7 func   ?sub_10099140@CBaseAnimatingOverlay@@QAEHHMH@Z CBaseAnimatingOverlay::sub_10099140
+0x1000b8b1 func   ?vfunc104@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc104
 0x1000b8b6 func   ?sub_1030c800@@YGIPBD@Z sub_1030c800
 0x1000b8bb func   ?vfunc0@ConCommandBase@@UAEPAV1@I@Z ConCommandBase::vfunc0
 0x1000b8c0 func   ?sub_10175360@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10175360

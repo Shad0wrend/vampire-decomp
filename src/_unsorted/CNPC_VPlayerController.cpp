@@ -56,6 +56,18 @@ CNPC_VPlayerController *CNPC_VPlayerController::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a44f0 size=0x5
+#include "CNPC_VPlayerController.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VPlayerController::vfunc104
+// the game's 0x103a44f0: a tail call (jmp) of CNPC_VHuman::vfunc104
+void CNPC_VPlayerController::vfunc104()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a4510 size=0x45
 #include "CNPC_VPlayerController.h"
 
