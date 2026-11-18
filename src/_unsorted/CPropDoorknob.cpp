@@ -99,6 +99,17 @@ int CPropDoorknob::vfunc35(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10225100 size=0x5
+#include "CPropDoorknob.h"
+
+// TARGET: CPropDoorknob::vfunc43
+// the game's 0x10225100: a tail call (jmp) of sub_10224440 (the lockpick spot for the entity)
+void CPropDoorknob::vfunc43(int a)
+{
+	sub_10224440((CBaseEntity *)a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102258a0 size=0x48
 #include "CPropDoorknob.h"
 #include "CBaseVampireSkillEntity.h"
