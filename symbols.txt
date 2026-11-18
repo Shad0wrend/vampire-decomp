@@ -4973,6 +4973,7 @@
 0x100072c0 func   ?sub_103315e0@@YIHPADHH@Z sub_103315e0
 0x100072c5 func   ?sub_102d40a0@@YIHPAD@Z sub_102d40a0
 0x100072ca func   ?vfunc81@CWeaponRanged_Pistol_DesertEagle@@UAEHXZ CWeaponRanged_Pistol_DesertEagle::vfunc81
+0x100072cf func   ?vfunc442@CNPC_VPlaceholder@@UAEXPBUTask_t@@@Z CNPC_VPlaceholder::vfunc442
 0x100072d4 func   ?sub_1005c4d0@@YAXHHPAH0HHHHHHHHHHHHHH@Z sub_1005c4d0
 0x100072d9 func   ??1CVDmgBlock16_t@@QAE@XZ CVDmgBlock16_t::~CVDmgBlock16_t
 0x100072d9 func   ?sub_10310b70@@YAXXZ sub_10310b70

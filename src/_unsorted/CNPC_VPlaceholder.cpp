@@ -202,6 +202,17 @@ void CNPC_VPlaceholder::vfunc420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a4390 size=0x5
+#include "CNPC_VPlaceholder.h"
+struct CSTV { void sub_102a1910(struct Task_t const *); };
+// TARGET: CNPC_VPlaceholder::vfunc442
+// the game's 0x103a4390: a tail call (jmp) of CSTV::sub_102a1910
+void CNPC_VPlaceholder::vfunc442(struct Task_t const *a0)
+{
+	((CSTV *)this)->CSTV::sub_102a1910(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a43b0 size=0x5
 #include "CNPC_VPlaceholder.h"
 #include "CAI_BaseNPCTroika.h"
