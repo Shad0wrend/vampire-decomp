@@ -99,6 +99,22 @@ public:
 	}
 	static bool SaveQueueFunc(const QueuedItem_t &left, const QueuedItem_t &right);
 	virtual const char *GetBlockName();	// declared here (not inline): the vtables stay the game's, not this unit's
+	// the overrides the game's vtables hold (its functions are matched under the flat view's names below)
+	virtual void PreSave(void *pData);
+	virtual void Save(void *pSave);
+	virtual void WriteSaveHeaders(void *pSave);
+	virtual void PostSave();
+	virtual void PreRestore();
+	virtual void ReadRestoreHeaders(void *pRestore);
+	virtual void Restore(void *pRestore, bool fCreatePlayers);
+	virtual void PostRestore();
+	virtual void NoteBBox(const Vector &mins, const Vector &maxs, CPhysCollide *pCollide);
+	virtual void AssociateModel(IPhysicsObject *pObject, int modelIndex);
+	virtual void AssociateModel(IPhysicsObject *pObject, const CPhysCollide *pModel);
+	virtual void ForgetModel(IPhysicsObject *pObject);
+	virtual void ForgetAllModels();
+	virtual void OnEntityCreated(CBaseEntity *pEntity);
+	virtual void OnEntityDeleted(CBaseEntity *pEntity);
 
 	CUtlPriorityQueue<QueuedItem_t> m_QueuedSaves;	// 0x0c
 	CUtlMap<CBaseEntity *, CEntityRestoreSet *> m_QueuedRestores;	// 0x24
