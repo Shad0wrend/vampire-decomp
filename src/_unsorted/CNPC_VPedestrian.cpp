@@ -250,6 +250,18 @@ void CNPC_VPedestrian::vfunc453()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103a2c10 size=0x5
+#include "CNPC_VPedestrian.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VPedestrian::vfunc440
+// the game's 0x103a2c10: a tail call (jmp) of CNPC_VHuman::vfunc440
+int CNPC_VPedestrian::vfunc440(int a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc440(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103a2c30 size=0x18f
 #include "CNPC_VPedestrian.h"
 #include "CAI_BaseNPCTroika.h"

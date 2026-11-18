@@ -2105,6 +2105,7 @@
 0x10003a58 func   ?vfunc433@CNPC_VCop@@UAEXXZ CNPC_VCop::vfunc433
 0x10003a5d func   ?sub_102b5b70@Helper@@QAEXXZ Helper::sub_102b5b70
 0x10003a62 func   ?vfunc45@CPayphone@@QAE_NPAVCBaseEntity@@HHHHHHH@Z CPayphone::vfunc45
+0x10003a67 func   ?vfunc440@CNPC_VPedestrian@@UAEHH@Z CNPC_VPedestrian::vfunc440
 0x10003a6c func   ?sub_1023e270@@YGHH@Z sub_1023e270
 0x10003a71 func   ?sub_1022b300@CSoundScheme@@QAEXXZ CSoundScheme::sub_1022b300
 0x10003a76 func   ?vfunc241@CFuncAreaPortalWindow@@QAE_NPBM@Z CFuncAreaPortalWindow::vfunc241
