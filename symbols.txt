@@ -9929,6 +9929,7 @@
 0x1000d4cc func   ?sub_102c1230@CAI_BaseNPCTroika@@QAEHXZ CAI_BaseNPCTroika::sub_102c1230
 0x1000d4d1 func   ?sub_103656a0@CNPC_VBach@@QAEXXZ CNPC_VBach::sub_103656a0
 0x1000d4d6 func   ?sub_101c9cf0@@YAPAHXZ sub_101c9cf0
+0x1000d4db func   ?vfunc12@CSave@@UAEXPBXH@Z CSave::vfunc12
 0x1000d4e0 func   ?vfunc375@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc375
 0x1000d4e5 func   ?vfunc9@CSave@@UAEXPBDPAXH@Z CSave::vfunc9
 0x1000d4ea func   ?sub_100a91f0@@YI_NPAD@Z sub_100a91f0

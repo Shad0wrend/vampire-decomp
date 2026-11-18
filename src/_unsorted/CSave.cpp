@@ -103,6 +103,17 @@ bool CSave::vfunc10(const void *pData, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019fab0 size=0x5
+#include "CSave.h"
+
+// TARGET: CSave::vfunc12
+// the game's 0x1019fab0: a tail call (jmp) of sub_1000643d (WriteData); the slot returns void here, the bool stays in eax
+void CSave::vfunc12(const void *pData, int count)
+{
+	sub_1000643d(pData, count);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019fad0 size=0x14
 #include "CSave.h"
 
