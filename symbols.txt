@@ -2201,6 +2201,7 @@
 0x10003c79 func   ?vfunc41@CRagdollProp@@QAEXH@Z CRagdollProp::vfunc41
 0x10003c7e func   ?sub_10180150@@YAXXZ sub_10180150
 0x10003c83 func   _item_k_edane_key item_k_edane_key
+0x10003c88 func   ?vfunc259@CGeneric_NPC_bathack@@UAEXPAUanimevent_t@@@Z CGeneric_NPC_bathack::vfunc259
 0x10003c8d func   ?sub_10246210@@YIDPAXHPAH@Z sub_10246210
 0x10003c92 func   ?vfunc6@CAI_StandoffBehavior@@UAEHXZ CAI_StandoffBehavior::vfunc6
 0x10003c97 func   ?vfunc5@CEnvFade@@QAEPAV1@I@Z CEnvFade::vfunc5
