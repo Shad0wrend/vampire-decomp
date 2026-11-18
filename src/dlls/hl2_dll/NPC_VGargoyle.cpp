@@ -62,6 +62,18 @@ int CNPC_VGargoyle::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378d80 size=0x5
+#include "CNPC_VGargoyle.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VGargoyle::vfunc366
+// the game's 0x10378d80: a tail call (jmp) of CNPC_VHuman::vfunc366
+bool CNPC_VGargoyle::vfunc366(int a0, int a1, int a2)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc366(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10378da0 size=0x32
 // TARGET: CNPC_VGargoyle::vfunc144
 #include "CNPC_VGargoyle.h"

@@ -7514,6 +7514,7 @@
 0x1000a6dc func   ?sub_101e3cf0@CUnknown101e3cf0@@QAEXPAUCUnknown101e3cfObj@@@Z CUnknown101e3cf0::sub_101e3cf0
 0x1000a6e1 func   ?sub_1013dc40@CUnknown1013dc40@@QAEHXZ CUnknown1013dc40::sub_1013dc40
 0x1000a6e6 func   ?sub_1021a4b0@CUnknown1021a4b0@@QAE_NH@Z CUnknown1021a4b0::sub_1021a4b0
+0x1000a6eb func   ?vfunc366@CNPC_VGargoyle@@UAE_NHHH@Z CNPC_VGargoyle::vfunc366
 0x1000a6f0 func   ?sub_1035e950@CNPC_VAndreiBlood@@QAEXXZ CNPC_VAndreiBlood::sub_1035e950
 0x1000a6f5 func   ?sub_102f2060@CAI_Navigator@@QAE_NH@Z CAI_Navigator::sub_102f2060
 0x1000a6fa func   ?sub_10175180@@YI_NPAUHolder@@@Z sub_10175180
