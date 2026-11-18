@@ -118,6 +118,18 @@ int sub_1035f560(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035f580 size=0x5
+#include "CNPC_VAnimal.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VAnimal::vfunc463
+// the game's 0x1035f580: a tail call (jmp) of CAI_BaseNPCTroika::vfunc463
+void CNPC_VAnimal::vfunc463(int a0, int a1)
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc463(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035f5c0 size=0x64
 #include "CEntityVSlots.h"
 struct CUnknown1027d990 { int sub_1027d990(); };
