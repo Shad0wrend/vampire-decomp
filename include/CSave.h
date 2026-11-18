@@ -44,7 +44,7 @@ public:
 	virtual void vfunc12(const void *pData, int count);
 	virtual void vfunc13(const char *pszName, void *pData, int count);
 	virtual bool vfunc14(const void *pData, int nBytes);
-	virtual void vfunc15();
+	virtual void vfunc15(int a, int b, int c);	// 0x1019fc00: a tail call of sub_101a05b0
 	virtual void vfunc16(const void *pData, int nBytes);	// slot 16: writes the float at pData (a 4-byte value), called by vfunc25 with the difference of two floats
 	virtual void vfunc17(const char *pszName, void *pData, int count);	// slot used by WriteField for field types 0x10 / 0x11
 	virtual void vfunc18(int a, const char *psz);

@@ -134,7 +134,7 @@ public:
 	virtual void vfunc141_slot();
 	virtual void vfunc142_slot();
 	virtual void vfunc143_slot();
-	virtual void vfunc144();
+	virtual void vfunc144(int);
 	virtual void vfunc145();
 	virtual void vfunc146();
 	virtual void vfunc147();
@@ -365,7 +365,7 @@ public:
 	virtual void vfunc372();
 	virtual void vfunc373();
 	virtual void vfunc374();
-	virtual void vfunc375();
+	virtual int vfunc375(int);
 	virtual void vfunc376();
 	virtual void vfunc377();
 	virtual void vfunc378();

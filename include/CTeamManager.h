@@ -20,5 +20,6 @@ public:
 #else	// the root's slots 2 and 5 return void there: these int forms would not override them
 	int vfunc2();
 	int vfunc5();
+	int vfunc3();	// slot 3 (0x10230840): a tail call of sub_102308f0
 #endif
 };

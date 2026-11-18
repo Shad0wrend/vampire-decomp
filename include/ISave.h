@@ -21,7 +21,7 @@ public:
 	virtual void vfunc12(const void *pData, int count) = 0;
 	virtual void vfunc13(const char *pszName, void *pData, int count) = 0;
 	virtual bool vfunc14(const void *pData, int nBytes) = 0;
-	virtual void vfunc15() = 0;
+	virtual void vfunc15(int a, int b, int c) = 0;
 	virtual void vfunc16(const void *pData, int nBytes) = 0;
 	virtual void vfunc17(const char *pszName, void *pData, int count) = 0;
 	virtual void vfunc18(int a, const char *psz) = 0;
