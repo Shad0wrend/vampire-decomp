@@ -46,4 +46,6 @@ public:
 	datamap_t * vfunc82();
 	char vfunc117();
 	bool vfunc223();
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc113();	// slot 113 (0x1010d8a0): a tail call of CBaseEntity::vfunc113 (no such slot in this view: plain)
 };

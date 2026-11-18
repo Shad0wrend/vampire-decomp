@@ -48,4 +48,6 @@ public:
 	virtual bool vfunc452();
 	char sub_10374aa0(CBaseEntity *pHint);	// slot 566 (plain member): whether the hint's type at +0x5dc is 12000 (0x2ee0)
 	char m_pad03e0[0x6694 - 0x3e0];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual bool vfunc366(int, int, int);	// slot 366 (0x10374900): a tail call of CNPC_VAnimal::vfunc366
 };

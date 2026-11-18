@@ -29,4 +29,6 @@ public:
 	char m_b918;	// 0x918
 	void vfunc374();	// slot 374: flips the state at +0x86c
 	unsigned int vfunc360();	// slot 360 (a plain member: the header's base has 1 virtual slot, so a virtual one became slot 1): the weapon's type flags (0x2000)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc319();	// slot 319 (0x103ed1e0): a tail call of CBaseCombatWeapon::vfunc319 (no such slot in this view: plain)
 };

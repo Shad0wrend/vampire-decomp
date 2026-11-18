@@ -39,4 +39,10 @@ public:
 	char *vfunc580();
 	const char *sub_1039f620();
 	char m_pad62f0[0x6664 - 0x62f0];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc104();	// slot 104 (0x1039fc70): a tail call of CNPC_VHuman::vfunc104
+	int vfunc440(int);	// slot 440 (0x1039fdf0): a tail call of CNPC_VHuman::vfunc440 (no such slot in this view: plain)
+	void vfunc434();	// slot 434 (0x1039fe50): a tail call of CNPC_VHuman::vfunc434 (no such slot in this view: plain)
+	bool vfunc366(int, int, int);	// slot 366 (0x1039fe90): a tail call of CNPC_VHuman::vfunc366 (no such slot in this view: plain)
+	void vfunc442(int const *);	// slot 442 (0x1039fed0): a tail call of CNPC_VHuman::vfunc442 (no such slot in this view: plain)
 };

@@ -107,4 +107,6 @@ public:
 	int vfunc370(int a);	// as in CNPCMaker (transplant)
 	int vfunc371(int a);	// as in CNPCMaker (transplant)
 	int m_UseIcon;	// 0x1a34
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	char vfunc86(int, int, int, int, int);	// slot 86 (0x10209990): a tail call of CBaseCombatCharacter::vfunc86 (no such slot in this view: plain)
 };

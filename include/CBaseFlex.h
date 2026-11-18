@@ -266,4 +266,6 @@ public:
 	virtual void vfunc289(CBaseFlexItem *pItem);
 	virtual void vfunc290(CFlexRequest *pRequest);
 	virtual void vfunc291(CFlexRequest *pRequest);	// sets the track's position from the time since the request started and applies the source's weight
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc31(int);	// slot 31 (0x100b5a90): a tail call of CBaseAnimatingOverlay::vfunc31
 };

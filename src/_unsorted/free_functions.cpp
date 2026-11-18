@@ -160553,7 +160553,6 @@ bool CUnknown101f10e0::sub_101f13c0(const char *pszFile)
 // END FUNCTION
 
 // FUNCTION: 0x101f14a0 size=0x212
-#include "vampire_all.h"
 #include "CReactionData.h"
 #include "CUnknown101f10e0.h"
 #include "IFileSystemFind.h"

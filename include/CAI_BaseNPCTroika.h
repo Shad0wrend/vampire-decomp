@@ -618,4 +618,6 @@ public:
 	void vfunc58(int);	// slot 58: empty override (ret 4)
 	virtual CAI_BaseNPC *vfunc5(unsigned int flags);	// deleting destructor (same return type as the base slot)
 	// +0x65e0 (const char *, name for sub_1029f340, empty string 0x106b8540 when null) and +0x65e4 (int result) are not declared: derived classes' members start at +0x65c0
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual int vfunc381(int);	// slot 381 (0x10295570): a tail call of CBaseCombatCharacter::vfunc381
 };

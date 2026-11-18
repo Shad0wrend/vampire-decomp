@@ -462,9 +462,9 @@ public:
 	virtual void vfunc437();
 	virtual void vfunc438_slot();
 	virtual void vfunc439();
-	virtual void vfunc440();
+	virtual int vfunc440(int);
 	virtual void vfunc441();
-	virtual void vfunc442();
+	virtual void vfunc442(int const *);
 	virtual void vfunc443();
 	virtual void vfunc444();
 	virtual void vfunc445();

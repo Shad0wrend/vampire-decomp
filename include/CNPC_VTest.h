@@ -32,4 +32,8 @@ public:
 	virtual char vfunc452();	// slot 452
 	virtual int vfunc473();	// slot 473: 0x17
 	char m_pad03e0[0x6668 - 0x3e0];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	int vfunc440(int);	// slot 440 (0x103b4fd0): a tail call of CNPC_VHuman::vfunc440 (no such slot in this view: plain)
+	void vfunc434();	// slot 434 (0x103b51c0): a tail call of CNPC_VHuman::vfunc434 (no such slot in this view: plain)
+	bool vfunc366(int, int, int);	// slot 366 (0x103b5200): a tail call of CNPC_VHuman::vfunc366 (no such slot in this view: plain)
 };

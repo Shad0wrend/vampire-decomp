@@ -6,6 +6,8 @@
 
 struct datamap_t;
 
+class CBaseEntity;	// a tail-call override's parameter
+class Vector;	// a tail-call override's parameter
 class CNPC_VFrenzyShadow
 {
 public:
@@ -415,10 +417,10 @@ public:
 	virtual void vfunc359();
 	virtual int vfunc360();
 	virtual void vfunc361();
-	virtual void vfunc362();
+	virtual char vfunc362(float const *);
 	virtual void vfunc363();
-	virtual void vfunc364();
-	virtual void vfunc365();
+	virtual bool vfunc364(Vector const *);
+	virtual int vfunc365(CBaseEntity *);
 	virtual void vfunc366();
 	virtual void vfunc367();
 	virtual void vfunc368();
@@ -428,7 +430,7 @@ public:
 	virtual void vfunc372(int a, int b, int c);
 	virtual void vfunc373();
 	virtual void vfunc374();
-	virtual void vfunc375();
+	virtual int vfunc375(int);
 	virtual void vfunc376();
 	virtual void vfunc377();
 	virtual void vfunc378();
@@ -533,7 +535,7 @@ public:
 	virtual void vfunc477();
 	virtual CBaseEntity *vfunc478();	// slot 478 "CNPC_VFrenzyShadow::..." (0x103766d0, returns a CBaseEntity*): the shadow's target picker (see the function note)
 	virtual char vfunc479(CBaseEntity *pEnt);	// slot 479 (0x77c): one stack arg, boolean in al (vfunc478's distance tie-breaker)
-	virtual void vfunc480();
+	virtual bool vfunc480();
 	virtual void vfunc481();
 	virtual void vfunc482();
 	virtual void vfunc483();

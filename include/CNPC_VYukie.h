@@ -38,4 +38,10 @@ public:
 	void vfunc432(float x);	// slot 432: forwards to sub_10387500
 	void sub_10387500(float x);	// forwarder target
 	char m_pad03e0[0x666c - 0x3e0];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc463(int, int);	// slot 463 (0x103dd670): a tail call of CNPC_VHumanCombatant::vfunc463 (no such slot in this view: plain)
+	int vfunc440(int);	// slot 440 (0x103dd740): a tail call of CNPC_VHumanCombatant::vfunc440 (no such slot in this view: plain)
+	void vfunc433();	// slot 433 (0x103dd760): a tail call of CAI_BaseNPCTroika::vfunc433 (no such slot in this view: plain)
+	void vfunc434();	// slot 434 (0x103dd7c0): a tail call of CNPC_VHuman::vfunc434 (no such slot in this view: plain)
+	bool vfunc366(int, int, int);	// slot 366 (0x103dd840): a tail call of CNPC_VHuman::vfunc366 (no such slot in this view: plain)
 };

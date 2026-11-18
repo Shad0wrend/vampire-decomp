@@ -114,7 +114,7 @@ public:
 	virtual int vfunc22(int a);	// picks the activity to use for the requested one (weapon activity translation of the standoff states)
 	virtual void vfunc23();
 	virtual void vfunc24();
-	virtual void vfunc25();
+	virtual char vfunc25(int);
 	virtual void vfunc26(int a, int b);	// the standoff's start: with the int at +0x20 above 0 the parameter block's range is set (-1.0f at +0x58, 5.0f at +0x5c, 0 at +0x60); then flag byte +0x4c is set when the int at +0x20 is 2
 	virtual void vfunc27();
 	virtual bool vfunc28();

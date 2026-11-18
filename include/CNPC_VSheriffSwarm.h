@@ -38,7 +38,7 @@ public:
 	virtual void vfunc141();
 	virtual void vfunc142();
 	virtual void vfunc143_slot();
-	virtual void vfunc144();
+	virtual void vfunc144(int);
 	virtual void vfunc145();
 	virtual void vfunc146();
 	virtual void vfunc147();
@@ -203,7 +203,7 @@ public:
 	virtual void vfunc306();
 	virtual void vfunc307();
 	virtual void vfunc308();
-	virtual void vfunc309();
+	virtual void * vfunc309();
 	virtual void vfunc310();
 	virtual void vfunc311();
 	virtual void vfunc312();
@@ -260,7 +260,7 @@ public:
 	virtual void vfunc363();
 	virtual void vfunc364();
 	virtual void vfunc365();
-	virtual void vfunc366();
+	virtual bool vfunc366(int, int, int);
 	virtual void vfunc367();
 	virtual void vfunc368();
 	virtual void vfunc369();
@@ -334,11 +334,11 @@ public:
 	virtual void vfunc437();
 	virtual int vfunc438();
 	virtual void vfunc439();
-	virtual void vfunc440();
+	virtual int vfunc440(int);
 	virtual void vfunc441();
-	virtual void vfunc442();
+	virtual void vfunc442(int const *);
 	virtual void vfunc443();
-	virtual void vfunc444();
+	virtual void vfunc444(void *);
 	virtual void vfunc445();
 	virtual void vfunc446();
 	virtual void vfunc447();
@@ -460,7 +460,7 @@ public:
 	virtual void vfunc563();
 	virtual void vfunc564();
 	virtual void vfunc565();
-	virtual void vfunc566();
+	virtual bool vfunc566(CBaseEntity *);
 	virtual void vfunc567();
 	virtual void vfunc568();
 	virtual void vfunc569();
@@ -476,4 +476,8 @@ public:
 	virtual void vfunc579();
 	virtual int vfunc580();
 	char m_pad6448[0x6668 - 0x6448];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc104();	// slot 104 (0x103b2310): a tail call of CNPC_VHuman::vfunc104
+	int vfunc606(int);	// slot 606 (0x103b2550): a tail call of CAI_BaseNPCTroika::vfunc606 (no such slot in this view: plain)
+	int vfunc605(int);	// slot 605 (0x103b2570): a tail call of CNPC_VHuman::vfunc605 (no such slot in this view: plain)
 };

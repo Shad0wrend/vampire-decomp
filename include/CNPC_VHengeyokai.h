@@ -196,7 +196,7 @@ public:
 	virtual void vfunc21();
 	virtual void vfunc22();
 	virtual void vfunc23();
-	virtual void vfunc24();
+	virtual void vfunc24(int);
 	virtual void vfunc25();
 	virtual void vfunc26();
 	virtual void vfunc27();
@@ -347,7 +347,7 @@ public:
 	virtual void vfunc172();
 	virtual void vfunc173();
 	virtual void vfunc174();
-	virtual void vfunc175();
+	virtual void vfunc175(CBaseEntity *);
 	virtual void vfunc176();
 	virtual void vfunc177();
 	virtual void vfunc178();
@@ -538,7 +538,7 @@ public:
 	virtual void vfunc363();
 	virtual void vfunc364();
 	virtual void vfunc365();
-	virtual void vfunc366();
+	virtual bool vfunc366(int, int, int);
 	virtual void vfunc367();
 	virtual void vfunc368();
 	virtual void vfunc369();

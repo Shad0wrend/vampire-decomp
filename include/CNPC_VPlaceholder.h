@@ -327,7 +327,7 @@ public:
 	virtual void vfunc441();
 	virtual void vfunc442();
 	virtual void vfunc443();
-	virtual void vfunc444();
+	virtual void vfunc444(void *);
 	virtual void vfunc445();
 	virtual void vfunc446();
 	virtual void vfunc447();
@@ -475,4 +475,6 @@ public:
 	virtual void vfunc589();
 	virtual bool vfunc590();
 	char m_pad03e0[0x6660 - 0x3e0];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual char vfunc91(void *, int);	// slot 91 (0x103a43d0): a tail call of CBaseEntity::vfunc91
 };

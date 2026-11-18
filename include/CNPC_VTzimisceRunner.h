@@ -528,7 +528,7 @@ public:
 	virtual void vfunc432();
 	virtual void vfunc433();
 	virtual void vfunc434();
-	virtual void vfunc435();
+	virtual void vfunc435(void *);
 	virtual void vfunc436();
 	virtual void vfunc437();
 	virtual int vfunc438();

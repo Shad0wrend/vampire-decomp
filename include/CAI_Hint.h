@@ -279,6 +279,8 @@ public:
 	void sub_102d1420(float delay);	// "Unlock" (stub 0x10013d68)
 	char *sub_102d3e60();
 	unsigned char sub_102d2ee0();	// CAI_Hint::vfunc117 body (CBaseEntity::vfunc117 & 0xfd)	// the node record this hint belongs to (stub 0x10007cca); its position is at +8 and its owner at +0xa0
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	float * vfunc219();	// slot 219 (0x102d2ec0): a tail call of CBaseEntity::vfunc219 (no such slot in this view: plain)
 };
 
 // The view of a hint's node position (the object is a CAI_Hint passed as this).

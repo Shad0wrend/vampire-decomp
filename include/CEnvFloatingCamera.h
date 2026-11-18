@@ -17,4 +17,6 @@ public:
 	float m_flDuration;	// 0x0458
 	bool m_bEnabled;	// 0x045c
 	char m_pad045d[0x460 - 0x45d];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc113();	// slot 113 (0x10103770): a tail call of CBaseEntity::vfunc113
 };

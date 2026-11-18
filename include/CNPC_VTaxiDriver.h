@@ -41,4 +41,9 @@ public:
 	int vfunc451();
 	bool vfunc452();
 	int vfunc580();
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	int vfunc375(int);	// slot 375 (0x103b3580): a tail call of CNPC_VHuman::vfunc375 (no such slot in this view: plain)
+	void vfunc103();	// slot 103 (0x103b35a0): a tail call of CNPC_VHuman::vfunc103 (no such slot in this view: plain)
+	void vfunc433();	// slot 433 (0x103b3690): a tail call of CAI_BaseNPCTroika::vfunc433 (no such slot in this view: plain)
+	int vfunc440(int);	// slot 440 (0x103b36b0): a tail call of CNPC_VHuman::vfunc440 (no such slot in this view: plain)
 };

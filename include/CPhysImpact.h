@@ -48,4 +48,6 @@ public:
 	float m_damage;	// 0x0450
 	string_t m_directionEntityName;	// 0x0454
 	Vector m_vecTarget;	// 0x0458
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc113();	// slot 113 (0x1004ef40): a tail call of CBaseEntity::vfunc113 (no such slot in this view: plain)
 };

@@ -111,4 +111,6 @@ public:
 	virtual void vfunc80();
 	virtual void vfunc81();
 	virtual datamap_t * vfunc82();
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc180();	// slot 180 (0x1010f3b0): a tail call of CBaseEntity::vfunc180 (no such slot in this view: plain)
 };

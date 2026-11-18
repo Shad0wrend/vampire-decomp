@@ -293,7 +293,7 @@ public:
 	virtual void vfunc363();
 	virtual void vfunc364();
 	virtual void vfunc365();
-	virtual void vfunc366();
+	virtual bool vfunc366(int, int, int);
 	virtual void vfunc367();
 	virtual void vfunc368();
 	virtual void vfunc369();
@@ -545,4 +545,6 @@ public:
 	virtual void vfunc614();
 	virtual void vfunc615();
 	virtual void vfunc616();
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc104();	// slot 104 (0x1037cd80): a tail call of CNPC_VHuman::vfunc104
 };

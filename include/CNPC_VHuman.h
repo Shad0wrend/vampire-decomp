@@ -6,6 +6,8 @@
 #include "CAI_BaseNPCTroika.h"
 #include "CEntityVSlots.h"
 
+struct CTakeDamageInfo;	// a tail-call override's parameter
+struct animevent_t;	// a tail-call override's parameter
 class CNPC_VHuman : public CAI_BaseNPCTroika
 {
 public:
@@ -57,4 +59,9 @@ public:
     int vfunc546(int arg);
 	int sub_10384700();
 	virtual bool vfunc366(int a, int b, int c);	// slot 366	// as in CNPC_Crow (transplant)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc463(int, int);	// slot 463 (0x10384720): a tail call of CAI_BaseNPCTroika::vfunc463
+	virtual void vfunc259(animevent_t *);	// slot 259 (0x10384740): a tail call of CAI_BaseNPCTroika::vfunc259
+	virtual int vfunc390(CTakeDamageInfo *);	// slot 390 (0x10385a50): a tail call of CAI_BaseNPCTroika::vfunc390
+	virtual void vfunc144(int);	// slot 144 (0x10385a90): a tail call of CAI_BaseNPCTroika::vfunc144
 };

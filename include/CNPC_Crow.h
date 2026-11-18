@@ -8,6 +8,7 @@ struct datamap_t;
 class CBaseEntity;
 class CAI_Motor;
 
+struct CTakeDamageInfo;	// a tail-call override's parameter
 class CNPC_Crow
 {
 public:
@@ -110,4 +111,6 @@ public:
 	void vfunc259(int *pTask);	// slot 259 (0x10357820): the crow's anim-event / input task handler (switch on pTask[0]: 2 -> sub_103581b0(m_pTarget5ddc), 3 -> slot 310(0x22), 4 -> the hop, default -> CAI_BaseNPC::vfunc259)
 	void sub_10288780(void *pTask);
 	void sub_10274e30(int *pTask);	// CAI_BaseNPC::vfunc259 body at 0x10274e30, called directly by the default branch (this in ecx)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	int vfunc390(CTakeDamageInfo *);	// slot 390 (0x10358cc0): a tail call of CAI_BaseNPC::vfunc390 (no such slot in this view: plain)
 };

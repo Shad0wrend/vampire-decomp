@@ -94,7 +94,7 @@ public:
 	void sub_10350620(int nActivity, float *pForward, float *pSide, float *pMaxSpeed, float flScale);	// stub 0x1000c8ab (ret 20): fills one speed table from the model's movement data of the activity, raising *pMaxSpeed
 	virtual void vfunc440(); virtual void vfunc441(); virtual void vfunc442(); virtual void vfunc443(); virtual void vfunc444();
 	virtual int vfunc445(); virtual void vfunc446(); virtual void vfunc447(); virtual void vfunc448(); virtual void vfunc449();
-	virtual void vfunc450(); virtual void vfunc451(); virtual void vfunc452();
+	virtual void vfunc450(); virtual void vfunc451(int); virtual void vfunc452();
 	virtual CBaseEntity *vfunc453();	// "GetPlayerSpawnSpot"-like: picks the next info_player_coop / info_player_start entity after the last spawn (global 0x107260ac), else the entity named like the map; warns when none
 	virtual void vfunc454();
 	virtual void vfunc455(); virtual void vfunc456(); virtual void vfunc457(); virtual void vfunc458(); virtual void vfunc459();
@@ -160,4 +160,6 @@ public:
 	float m_flTargetFindTime;	// 0x2540
 	bool m_bForceWalk;	// 0x2544
 	char m_pad2545[0x2548 - 0x2545];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc104();	// slot 104 (0x10350600): a tail call of CBasePlayer::vfunc104 (no such slot in this view: plain)
 };

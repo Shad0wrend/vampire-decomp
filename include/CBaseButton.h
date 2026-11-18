@@ -198,7 +198,7 @@ public:
 	virtual void vfunc107();
 	virtual void vfunc108();
 	virtual void vfunc109();
-	virtual void vfunc110();
+	virtual bool vfunc110(char const *, char const *);
 	virtual void vfunc111();
 	virtual void vfunc112();
 	virtual void vfunc113();

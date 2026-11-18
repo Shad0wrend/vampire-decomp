@@ -328,7 +328,7 @@ public:
 	virtual void vfunc363();
 	virtual void vfunc364();
 	virtual void vfunc365();
-	virtual void vfunc366();
+	virtual bool vfunc366(int, int, int);
 	virtual void vfunc367();
 	virtual void vfunc368();
 	virtual void vfunc369();
@@ -402,7 +402,7 @@ public:
 	virtual void vfunc437();
 	virtual void vfunc438_slot();
 	virtual void vfunc439();
-	virtual void vfunc440();
+	virtual int vfunc440(int);
 	virtual void vfunc441();
 	virtual void vfunc442();
 	virtual void vfunc443();
@@ -562,6 +562,8 @@ public:
 	char m_pad6679[0x667c - 0x6679];
 	int m_eLevelResetType;	// 0x667c
 	char m_pad6680[0x6684 - 0x6680];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc104();	// slot 104 (0x103a2520): a tail call of CNPC_VHuman::vfunc104
 };
 
 // Callees of CNPC_VPedestrian::vfunc130 (free functions, saved symbols).

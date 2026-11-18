@@ -28,6 +28,7 @@ public:
 	virtual void vfunc20(CRecipientFilter *pFilter, int delay, const Vector *pOrigin, int flags, int magnitude, int radius, int sound, float flDamage, float flScale, float flExtra);	// slot 20 (+0x50): the explosion temp entity
 };
 
+class CBaseCombatWeapon;	// a tail-call override's parameter
 class CWeaponThrown_Grenade_Frag
 {
 public:
@@ -455,4 +456,6 @@ public:
 	virtual void vfunc373_slot(void *pChar);
 	virtual void vfunc374_slot();
 	virtual void vfunc375();	// slot 375 (+0x5dc): the frag grenade explosion effect (target 0x103ef260)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc370(int *, CBaseCombatWeapon *);	// slot 370 (0x103ee320): a tail call of CBaseCombatWeapon::vfunc370 (no such slot in this view: plain)
 };

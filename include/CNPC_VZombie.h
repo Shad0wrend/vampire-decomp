@@ -10,6 +10,7 @@
 struct CUnknown101c2a50;
 class CBaseCombatCharacter;
 
+struct CVAnimalArg;	// a tail-call override's parameter
 class CNPC_VZombie : public CBaseEntity
 {
 public:
@@ -248,7 +249,7 @@ public:
 	virtual void vfunc256();
 	virtual void vfunc257();
 	virtual void vfunc258();
-	virtual void vfunc259();
+	virtual void vfunc259(int *);
 	virtual void vfunc260();
 	virtual void vfunc261();
 	virtual void vfunc262();
@@ -355,7 +356,7 @@ public:
 	virtual void vfunc363();
 	virtual void vfunc364();
 	virtual void vfunc365();
-	virtual void vfunc366();
+	virtual bool vfunc366(int, int, int);
 	virtual void vfunc367();
 	virtual void vfunc368();
 	virtual void vfunc369();
@@ -379,7 +380,7 @@ public:
 	virtual void vfunc387();
 	virtual void vfunc388();
 	virtual void vfunc389();
-	virtual void vfunc390();
+	virtual void vfunc390(CVAnimalArg *);
 	virtual void vfunc391();
 	virtual void vfunc392();
 	virtual void vfunc393();
@@ -449,7 +450,7 @@ public:
 	virtual void vfunc457();
 	virtual void vfunc458();
 	virtual void vfunc459();
-	virtual void vfunc460();
+	virtual int vfunc460();
 	virtual int vfunc461();	// slot 461 "CNPC_VZombie::SelectIdealState": by the state (+0x5cc0) 1 or 3 picks the ideal state from the conditions, else CNPC_VAnimal::vfunc461
 	virtual void vfunc462();
 	virtual void vfunc463();

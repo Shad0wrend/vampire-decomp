@@ -45,4 +45,7 @@ public:
 	virtual void *vfunc80();	// slot 80: the class's datamap
 	virtual void *vfunc82();	// slot 82: the class's datamap
 	int sub_103f4020();
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc104();	// slot 104 (0x103f3f80): a tail call of CBaseCombatWeapon::vfunc104
+	virtual void vfunc370(int *, CBaseCombatWeapon *);	// slot 370 (0x103f3fa0): a tail call of CBaseCombatWeapon::vfunc370
 };

@@ -338,7 +338,7 @@ public:
 	virtual void vfunc372();
 	virtual void vfunc373();
 	virtual void vfunc374();
-	virtual void vfunc375();
+	virtual int vfunc375(int);
 	virtual void vfunc376();
 	virtual void vfunc377();
 	virtual void vfunc378();

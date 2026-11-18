@@ -55,6 +55,7 @@ struct CTzimisceTaskArg
 	float m_flArg;
 };
 
+struct CTakeDamageInfo;	// a tail-call override's parameter
 class CNPC_VTzimisce
 {
 public:
@@ -334,4 +335,6 @@ public:
 	unsigned short sub_103b9160();	// slot 337 override: CAI_BaseNPCTroika::vfunc337 with bit 0x400 set
 	bool m_bJustFoundBody;	// 0x66bc
 	char m_pad66bd[0x66c0 - 0x66bd];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	int vfunc390(CTakeDamageInfo *);	// slot 390 (0x103bdf80): a tail call of CAI_BaseNPCTroika::vfunc390 (no such slot in this view: plain)
 };

@@ -5,6 +5,7 @@
 
 #include "CWeaponIArmor.h"	// CWeaponIArmorOwner / CWeaponIArmorTarget
 
+class CBaseCombatWeapon;	// a tail-call override's parameter
 class CWeaponIWritten : public CBaseEntity
 {
 public:
@@ -242,4 +243,7 @@ public:
 	virtual void vfunc359();
 	virtual int vfunc360();
 	char m_pad03e0[0x914 - 0x3e0];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc104();	// slot 104 (0x1040b330): a tail call of CBaseCombatWeapon::vfunc104
+	void vfunc370(int *, CBaseCombatWeapon *);	// slot 370 (0x1040b350): a tail call of CBaseCombatWeapon::vfunc370 (no such slot in this view: plain)
 };

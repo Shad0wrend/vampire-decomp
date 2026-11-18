@@ -30,4 +30,7 @@ public:
 	char m_pad03e0[0x5f44 - 0x3e0];
 	EHANDLE m_hPainPartner;	// 0x5f44
 	char m_pad5f48[0x5f78 - 0x5f48];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc104();	// slot 104 (0x103567c0): a tail call of CAI_BaseNPC::vfunc104
+	virtual void vfunc113();	// slot 113 (0x10356b30): a tail call of CBaseEntity::vfunc113
 };

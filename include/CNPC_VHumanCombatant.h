@@ -45,4 +45,7 @@ public:
     virtual datamap_t * vfunc82();
 	const char *sub_10386b00();
 	int sub_10387180();
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc442(int const *);	// slot 442 (0x10387290): a tail call of CNPC_VHuman::vfunc442 (no such slot in this view: plain)
+	void vfunc444(void *);	// slot 444 (0x103872b0): a tail call of CNPC_VHuman::vfunc444 (no such slot in this view: plain)
 };

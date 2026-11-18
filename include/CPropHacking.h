@@ -144,4 +144,6 @@ public:
     virtual int vfunc33();
     virtual int vfunc117();
     void vfunc277();	// as in CAI_Hint (transplant)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc103();	// slot 103 (0x1021a1a0): a tail call of CBaseTerminal::vfunc103
 };

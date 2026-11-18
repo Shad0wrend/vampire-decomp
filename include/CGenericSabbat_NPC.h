@@ -3,6 +3,8 @@
 
 #include "CAI_BaseNPC.h"
 
+struct CTakeDamageInfo;	// a tail-call override's parameter
+struct animevent_t;	// a tail-call override's parameter
 class CGenericSabbat_NPC : public CAI_BaseNPC
 {
 public:
@@ -30,4 +32,8 @@ public:
 public:
 	virtual int vfunc432(int);
 	char m_pad0004[0x5f48 - 0x4];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc259(animevent_t *);	// slot 259 (0x1035bf10): a tail call of CAI_BaseNPC::vfunc259
+	virtual int vfunc438();	// slot 438 (0x1035bf30): a tail call of CAI_BaseNPC::vfunc438
+	virtual int vfunc390(CTakeDamageInfo *);	// slot 390 (0x1035bfd0): a tail call of CAI_BaseNPC::vfunc390
 };

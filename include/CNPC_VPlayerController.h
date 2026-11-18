@@ -40,4 +40,6 @@ public:
 	void vfunc496();
 	void vfunc497();
 	char m_pad0000[0x6664 - 0x0];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc104();	// slot 104 (0x103a44f0): a tail call of CNPC_VHuman::vfunc104 (no such slot in this view: plain)
 };

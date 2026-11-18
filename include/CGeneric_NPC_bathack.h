@@ -3,6 +3,7 @@
 #pragma once
 #include "CBaseEntity.h"
 
+struct animevent_t;	// a tail-call override's parameter
 class CGeneric_NPC_bathack : public CBaseEntity
 {
 public:
@@ -142,7 +143,7 @@ public:
 	virtual void vfunc256();
 	virtual void vfunc257();
 	virtual void vfunc258();
-	virtual void vfunc259();
+	virtual void vfunc259(animevent_t *);
 	virtual void vfunc260();
 	virtual void vfunc261();
 	virtual void vfunc262();
@@ -321,9 +322,9 @@ public:
 	virtual void vfunc435();
 	virtual void vfunc436();
 	virtual void vfunc437();
-	virtual void vfunc438();
+	virtual int vfunc438();
 	virtual void vfunc439();
-	virtual void vfunc440();
+	virtual int vfunc440(int);
 	virtual void vfunc441();
 	virtual void vfunc442();
 	virtual void vfunc443();

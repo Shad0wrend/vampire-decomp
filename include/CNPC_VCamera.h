@@ -232,7 +232,7 @@ public:
 	virtual void vfunc141();
 	virtual void vfunc142();
 	virtual void vfunc143();
-	virtual void vfunc144();
+	virtual void vfunc144(int);
 	virtual void vfunc145();
 	virtual void vfunc146();
 	virtual void vfunc147();

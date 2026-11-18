@@ -33,4 +33,8 @@ public:
     virtual datamap_t * vfunc82();
     virtual bool vfunc587(int a);
     virtual bool vfunc366(int a, int b, int c);
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	virtual void vfunc104();	// slot 104 (0x1035f4f0): a tail call of CAI_BaseNPCTroika::vfunc104
+	void vfunc463(int, int);	// slot 463 (0x1035f580): a tail call of CAI_BaseNPCTroika::vfunc463 (no such slot in this view: plain)
+	int vfunc376(int);	// slot 376 (0x10360140): a tail call of CAI_BaseNPCTroika::vfunc376 (no such slot in this view: plain)
 };

@@ -105,4 +105,6 @@ public:
 	CNPC_VAsianVampire *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)
 	bool m_bSuppressRanged;	// 0x66e8
 	char m_pad66e9[0x66ec - 0x66e9];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc433();	// slot 433 (0x103610f0): a tail call of CAI_BaseNPCTroika::vfunc433 (no such slot in this view: plain)
 };

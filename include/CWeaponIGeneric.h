@@ -64,4 +64,6 @@ public:
 	virtual int vfunc329();
 	virtual int vfunc360();
 	void vfunc370(int *pEvent, CBaseCombatWeapon *pWeapon);	// slot 370: skips the events 0xbc6 / 0xc80, else CBaseCombatWeapon::vfunc370 (the "Unhandled animation event" warning)
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc104();	// slot 104 (0x103f4450): a tail call of CBaseCombatWeapon::vfunc104 (no such slot in this view: plain)
 };

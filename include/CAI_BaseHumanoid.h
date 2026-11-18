@@ -94,4 +94,6 @@ public:
 public:
 	datamap_t * vfunc82();
 	char m_pad604c[0x6058 - 0x604c];
+public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
+	void vfunc444(void *);	// slot 444 (0x10262570): a tail call of CAI_BaseNPC::vfunc444 (no such slot in this view: plain)
 };
