@@ -4210,6 +4210,7 @@
 0x100064bf func   ?vfunc11@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHMHMHHHHH@Z CTempEntsSystem::vfunc11
 0x100064c9 func   ?sub_10133750@CUnknownTimer10133750@@QAEXPAUCInputData10133750@@@Z CUnknownTimer10133750::sub_10133750
 0x100064ce func   ?sub_100bc5c0@CUnknown100bc5c0@@QAEXH@Z CUnknown100bc5c0::sub_100bc5c0
+0x100064d3 func   ?vfunc180@CPushable@@QAEXXZ CPushable::vfunc180
 0x100064d8 func   ?vfunc103@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::vfunc103
 0x100064e2 func   ?vfunc4@CTEBeamLaser@@UAEXHH@Z CTEBeamLaser::vfunc4
 0x100064e7 func   ?vfunc438@CNPC_VHengeyokai@@UAEHXZ CNPC_VHengeyokai::vfunc438

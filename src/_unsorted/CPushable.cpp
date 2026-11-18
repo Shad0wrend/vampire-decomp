@@ -96,6 +96,18 @@ void CPushable::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f3b0 size=0x5
+#include "CPushable.h"
+#include "CBaseEntity.h"
+
+// TARGET: CPushable::vfunc180
+// the game's 0x1010f3b0: a tail call (jmp) of CBaseEntity::vfunc180
+void CPushable::vfunc180()
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc180();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f3d0 size=0x43
 #include "CPushable.h"
 #include "CBaseEntity.h"
