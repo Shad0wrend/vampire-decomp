@@ -15046,6 +15046,7 @@
 0x10013bba func   ?vfunc104@CPropHaunted@@UAEXXZ CPropHaunted::vfunc104
 0x10013bbf func   ?sub_100f79b0@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@PBMM@Z CGlobalEntityList::sub_100f79b0
 0x10013bc4 func   ?sub_100ad8f0@@YGXPAX000@Z sub_100ad8f0
+0x10013bc9 func   ?vfunc463@CNPC_VCombatman@@QAEXHH@Z CNPC_VCombatman::vfunc463
 0x10013bce func   ?sub_101d10e0@@YAXPBDZZ sub_101d10e0
 0x10013bd3 func   ?vfunc488@CGeneric_NPC_bathack@@UAEXXZ CGeneric_NPC_bathack::vfunc488
 0x10013bd8 func   ?sub_1033bb60@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033bb60
