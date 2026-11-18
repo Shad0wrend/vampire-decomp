@@ -1376,6 +1376,7 @@ void CPhysConstraint::sub_1002b130()
 
 // FUNCTION: 0x1002b1e0 size=0x12d
 #include "CGlobalEntityList.h"
+#include "CAnchorList.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 extern CGlobalEntityList *g_10566458;
 extern char g_106b8540[];
@@ -1385,8 +1386,7 @@ struct NamedPos {
     unsigned int m_handle;
     const char *m_name;
 };
-extern NamedPos *g_106b858c;
-extern int g_106b8598;
+extern CAnchorList g_106b8584;	// g_AnchorList (physconstraint.cpp): m_list at +8, its elements are NamedPos
 struct Vec3I { int x, y, z; };
 extern Vec3I g_1070d1b0;
 struct NamedPosOut {
@@ -1408,15 +1408,15 @@ static inline NamedPosEnt *GetNamedEnt(unsigned int h)
 
 void sub_1002b1e0(const char *name, NamedPosOut *pOut, int idx)
 {
-    for (int i = g_106b8598 - 1; i >= 0; i--) {
+    for (int i = g_106b8584.m_Size - 1; i >= 0; i--) {
         const char *key = name;
         if (key == 0)
             key = g_106b8540;
-        const char *rec = g_106b858c[i].m_name;
+        const char *rec = ((NamedPos *)g_106b8584.m_pMemory)[i].m_name;
         if (rec == 0)
             rec = g_106b8540;
         if (_strcmpi(rec, key) == 0) {
-            NamedPos *r = &g_106b858c[i];
+            NamedPos *r = &((NamedPos *)g_106b8584.m_pMemory)[i];
             unsigned int h;
             CGlobalEntityList_Slot *s;
             if (r != 0 && (h = r->m_handle) != 0xffffffff && (s = &g_10566458->m_Slots[h & 0x1fff])->m_Serial == (int)(h >> 13) && s->m_pEntity != 0) {
@@ -3758,16 +3758,17 @@ void CCollisionEvent::sub_10031520()
 #include "CUnknown10206400.h"
 #include "CUnknown1073dc28.h"
 #include "ScopeTrace.h"
+#include "CPhysicsHook.h"
 
 struct S10032fb0;
-extern S10032fb0 g_106b88f0;
+extern CPhysicsHook g_106b88ec;	// g_PhysicsHook (physics.cpp): sub_1002d070 works on its member at +4
 void sub_1002d070(S10032fb0 *, int, int, int, int, unsigned int, unsigned short, float);
 
 void sub_10031990(CBaseEntity *ent, int a2, int a3, unsigned int a4, unsigned short a5, float a6)
 {
     ScopeTrace scope("PhysicsImpactSound", g_106b8540);
     int edict = ent->m_pEdict2e0;
-    sub_1002d070(&g_106b88f0, (int)ent, engine->vfunc35(edict), a3, a2, a4, a5, a6);
+    sub_1002d070((S10032fb0 *)g_106b88ec.m_04, (int)ent, engine->vfunc35(edict), a3, a2, a4, a5, a6);
 }
 // END FUNCTION
 
@@ -47439,7 +47440,6 @@ extern CListObj g_106eb5d8;
 extern void *vt_104514cc[];
 extern void *vt_10451518[];
 extern void *vt_10451544[];
-extern int *(__fastcall *g_1045151c)(void *);
 void __fastcall sub_100b7da0(void *p);
 
 struct CNetBase { void **vptr; };
@@ -47454,7 +47454,7 @@ void CNetSub::sub_100b7ad0()
     vptr = vt_104514cc;
     void **full = (void **)((char *)this - 4);
     *full = vt_10451518;
-    HArg h = *(HArg *)g_1045151c(full);
+    HArg h = *(HArg *)((int *(__fastcall *)(void *))vt_10451518[1])(full);	// slot 1 (GetRefEHandle) of the vtable just stored
     g_106eb5d8.sub_100f9f90(h);
     sub_100b7da0(full);
     CNetBase *p = (CNetFull2 *)((char *)this - 4);

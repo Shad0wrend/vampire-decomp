@@ -19,12 +19,12 @@ datamap_t *CEnvPlayerSurfaceTrigger::vfunc82()
 #include "CUtlVector4.h"
 extern CGlobalEntityList *g_10566458;
 extern CUtlVector4 g_1070906c;
-extern unsigned int *(__fastcall *g_10457ad0)(CEnvPlayerSurfaceTrigger *);
+extern void *vt_10457acc[];	// ??_7CEnvPlayerSurfaceTrigger@@6B@
 // TARGET: CEnvPlayerSurfaceTrigger::~CEnvPlayerSurfaceTrigger
 CEnvPlayerSurfaceTrigger::~CEnvPlayerSurfaceTrigger()
 {
 	unsigned int hThis = 0xffffffff;
-	hThis = *g_10457ad0(this);
+	hThis = *((unsigned int *(__fastcall *)(CEnvPlayerSurfaceTrigger *))vt_10457acc[1])(this);	// slot 1 (GetRefEHandle) of this class's vtable: the game calls it through the slot
 	for (int i = 0; i < g_1070906c.m_size; i++) {
 		unsigned int *pElem = (unsigned int *)&g_1070906c.m_pMemory[i];
 		CBaseEntity *pThis = g_10566458->sub_100290c0(&hThis);

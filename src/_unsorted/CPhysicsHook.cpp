@@ -83,6 +83,7 @@ bool CPhysicsHook::vfunc0()
 #include "CPhysicsHook.h"
 #include "CUnknown106b89bc.h"
 #include "ScopeTrace.h"
+#include "CCollisionEvent.h"
 
 extern char g_10539aa8[];
 #define PV10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
@@ -128,8 +129,7 @@ extern int g_10723948;
 extern int g_10723938;
 extern S109ef2d4 *g_109ef2d4;
 extern CUnknown106b89bc *g_106b89bc;
-extern char g_106b86dc[];
-extern char g_106b86d8[];
+extern CCollisionEvent g_106b86d8;	// g_Collisions (physics.cpp): its IPhysicsCollisionSolver part sits at +4
 extern char g_106b8694[];
 extern void *g_10539010;
 extern int g_106b85b8;
@@ -148,8 +148,8 @@ void CPhysicsHook::vfunc2()
 	sub_1000fdc1(nSettings);
 	g_10723940->vfunc1(nSettings[0]);
 	g_10723940->v47(1);
-	g_10723940->v25(g_106b86dc);
-	g_10723940->v32(g_106b86d8);
+	g_10723940->v25(static_cast<IPhysicsCollisionSolver *>(&g_106b86d8));
+	g_10723940->v32(&g_106b86d8);
 	g_10723940->v34(g_10539010);
 	g_10723940->v33(g_106b8694);
 	g_10723940->v29(0.015f);

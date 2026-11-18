@@ -9,9 +9,11 @@
 #include "CBaseEntitySlots.h"
 #include "CGlobalEntityList.h"
 #include "Vector.h"
+#include "CAnchorList.h"
 
 extern CGlobalEntityList *g_10566458;
-extern CUtlVector20 g_106b858c;
+extern CAnchorList g_106b8584;	// g_AnchorList (physconstraint.cpp): m_list, a CUtlVector of 20-byte anchors, at +8
+#define ANCHOR_LIST (*(CUtlVector20 *)static_cast<CAnchorListVec *>(&g_106b8584))
 void sub_101cd940(CConstraintAnchor *pEntity);
 
 struct CAnchorSlots
@@ -82,16 +84,16 @@ void CConstraintAnchor::vfunc103()
 		CBaseEntitySlots *pParentEnt = self->m_hParent.Get();
 		const char *pszName = self->m_pszName;
 		Vector *pOrigin = ((CAnchorSlots *)this)->slot220();
-		int index = g_106b858c.m_size;
-		if ((g_106b858c.m_size + 1) > g_106b858c.m_allocationCount)
-			((CUtlMemory20 *)&g_106b858c)->sub_1002ccc0(g_106b858c.m_size - g_106b858c.m_allocationCount + 1);
-		g_106b858c.m_size++;
-		g_106b858c.m_pElements = g_106b858c.m_pMemory;
-		g_106b858c.sub_1002cc10(index, 1);
-		CAnchorRecord *pRecord = (CAnchorRecord *)(g_106b858c.m_pMemory + index * 20);
+		int index = ANCHOR_LIST.m_size;
+		if ((ANCHOR_LIST.m_size + 1) > ANCHOR_LIST.m_allocationCount)
+			((CUtlMemory20 *)&ANCHOR_LIST)->sub_1002ccc0(ANCHOR_LIST.m_size - ANCHOR_LIST.m_allocationCount + 1);
+		ANCHOR_LIST.m_size++;
+		ANCHOR_LIST.m_pElements = ANCHOR_LIST.m_pMemory;
+		ANCHOR_LIST.sub_1002cc10(index, 1);
+		CAnchorRecord *pRecord = (CAnchorRecord *)(ANCHOR_LIST.m_pMemory + index * 20);
 		if (pRecord)
 			pRecord->sub_1002cc60();
-		pRecord = (CAnchorRecord *)(g_106b858c.m_pMemory + index * 20);
+		pRecord = (CAnchorRecord *)(ANCHOR_LIST.m_pMemory + index * 20);
 		if (pParentEnt)
 			pRecord->m_hParent = *pParentEnt->slot1();
 		else
