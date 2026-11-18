@@ -6889,6 +6889,7 @@
 0x10009999 func   ?IsLeftChild@?$CUtlRBTree@UCRBTree36Entry_1004c5b0@@G@@QBE_NG@Z CUtlRBTree<CRBTree36Entry_1004c5b0,unsigned short>::IsLeftChild
 0x10009999 func   ?sub_1004c4c0@CUtlRBTree36@@QBE_NG@Z CUtlRBTree36::sub_1004c4c0
 0x1000999e func   ?sub_103d6280@CNPC_VWerewolf@@QAEXPAX@Z CNPC_VWerewolf::sub_103d6280
+0x100099a3 func   ?sub_1006f850@CWrap1006f850@@QAE_NXZ CWrap1006f850::sub_1006f850
 0x100099a8 func   ?sub_10430280@@YAII@Z sub_10430280
 0x100099ad func   ?sub_1042ab80@CBaseGrenade@@QAEXPAVCBaseEntity@@@Z CBaseGrenade::sub_1042ab80
 0x100099b2 func   ?vfunc113@CLogicSquadCondition@@UAEXXZ CLogicSquadCondition::vfunc113

@@ -22853,6 +22853,17 @@ bool CEnt1006f7d0::sub_1006f7d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1006f850 size=0x5
+struct CEnt1006f7d0 { bool sub_1006f7d0(); };
+struct CWrap1006f850 { bool sub_1006f850(); };
+// TARGET: sub_1006f850
+// the game's 0x1006f850: a tail call (jmp) of CEnt1006f7d0::sub_1006f7d0
+bool CWrap1006f850::sub_1006f850()
+{
+	return ((CEnt1006f7d0 *)this)->CEnt1006f7d0::sub_1006f7d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1006f870 size=0x59
 struct CEnt1006f7d0 { bool sub_1006f7d0(); };
 struct CUnknown1006ede0 { int sub_1006ede0(); };
