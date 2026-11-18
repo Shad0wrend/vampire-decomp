@@ -193,6 +193,18 @@ void CNPC_VYukie::vfunc432(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd7c0 size=0x5
+#include "CNPC_VYukie.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VYukie::vfunc434
+// the game's 0x103dd7c0: a tail call (jmp) of CNPC_VHuman::vfunc434
+void CNPC_VYukie::vfunc434()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc434();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd800 size=0x27
 #include "CEntityVSlots.h"
 #include "CNPC_VYukie.h"

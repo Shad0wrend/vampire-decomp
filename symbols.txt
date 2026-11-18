@@ -14880,6 +14880,7 @@
 0x100139bc func   ?sub_1019e740@@YG_NPAUEntVt@@HPAM@Z sub_1019e740
 0x100139c1 func   ?vfunc274@CBaseAnimatingOverlay@@QAEXH@Z CBaseAnimatingOverlay::vfunc274
 0x100139c6 func   ?vfunc265@CBaseViewModel@@UAEXH@Z CBaseViewModel::vfunc265
+0x100139cb func   ?vfunc434@CNPC_VYukie@@QAEXXZ CNPC_VYukie::vfunc434
 0x100139d0 func   ?sub_10100ef0@@YAPAHXZ sub_10100ef0
 0x100139d5 func   ?sub_1024aed0@@YAXXZ sub_1024aed0
 0x100139da func   ?vfunc273@CPropKeypad@@QAEXPAVCBasePlayer@@PBD@Z CPropKeypad::vfunc273
