@@ -59,6 +59,18 @@ int CNPC_VDog::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10373fe0 size=0x5
+#include "CNPC_VDog.h"
+#include "CNPC_VAnimal.h"
+
+// TARGET: CNPC_VDog::vfunc104
+// the game's 0x10373fe0: a tail call (jmp) of CNPC_VAnimal::vfunc104
+void CNPC_VDog::vfunc104()
+{
+	CNPC_VAnimal::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10374000 size=0x5a
 #include "CBaseEntity.h"
 #include "CNPC_VDog.h"

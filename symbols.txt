@@ -5408,6 +5408,7 @@
 0x10007b99 func   ?sub_102f4be0@CAI_NodeGraph@@QAEXXZ CAI_NodeGraph::sub_102f4be0
 0x10007b9e func   ?vfunc432@CNPC_VTzimisce@@UAEXH@Z CNPC_VTzimisce::vfunc432
 0x10007ba3 func   ?vfunc82@CBaseVampireSkillEntity@@QAEPAUdatamap_t@@XZ CBaseVampireSkillEntity::vfunc82
+0x10007ba8 func   ?vfunc104@CNPC_VDog@@UAEXXZ CNPC_VDog::vfunc104
 0x10007bad func   ?vfunc82@CStealthModifier@@UAEPAUdatamap_t@@XZ CStealthModifier::vfunc82
 0x10007bb2 func   ?vfunc103@CBaseMoveBehavior@@UAEXXZ CBaseMoveBehavior::vfunc103
 0x10007bb7 func   ?vfunc80@CItemGBrotherhoodFlyer@@QAEHXZ CItemGBrotherhoodFlyer::vfunc80
