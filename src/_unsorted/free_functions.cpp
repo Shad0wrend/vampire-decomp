@@ -123410,6 +123410,18 @@ CPyObjWrap *sub_1019bb10(CPyObjVirt *p, int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019bb50 size=0x6
+extern "C" __declspec(dllimport) void _PyObject_Del(void *op);
+
+// TARGET: sub_1019bb50
+// the tp_dealloc of the Python type object at 0x1058fae8 (its slot +0x18 points here): PyObject_Del(self), a tail call
+// (jmp [__imp___PyObject_Del])
+void sub_1019bb50(void *self)
+{
+	_PyObject_Del(self);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019bb70 size=0x19
 extern int g_1058f620[];
 extern void *(__cdecl *g_109f3724)(void *, void *, char *);

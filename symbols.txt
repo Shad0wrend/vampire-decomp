@@ -16981,6 +16981,7 @@
 0x1019ba30 func   ?sub_1019ba30@@YAPAXPAXPAD@Z sub_1019ba30
 0x1019ba60 func   ?sub_1019ba60@@YAPAUSPyObj@@PAUSPySelf@@PAX@Z sub_1019ba60
 0x1019bae0 func   ?sub_1019bae0@@YAHPAUCUnknown1019bae0@@@Z sub_1019bae0
+0x1019bb50 func   ?sub_1019bb50@@YAXPAX@Z sub_1019bb50
 0x1019bb70 func   ?sub_1019bb70@@YAPAXPAXPAD@Z sub_1019bb70
 0x1019bba0 func   ?sub_1019bba0@@YAPAUPyString@@PAUPyIRestoreObj@@PAX@Z sub_1019bba0
 0x1019bc80 func   ?sub_1019bc80@@YAPAXPAUSPyReader@@@Z sub_1019bc80
