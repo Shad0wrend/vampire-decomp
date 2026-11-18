@@ -143,6 +143,18 @@ void CWeaponPhysCannon::vfunc180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1040db90 size=0x5
+#include "CWeaponPhysCannon.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponPhysCannon::vfunc315
+// the game's 0x1040db90: a tail call (jmp) of CBaseCombatWeapon::vfunc315
+bool CWeaponPhysCannon::vfunc315()
+{
+	return CBaseCombatWeapon::vfunc315();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1040dc40 size=0x18
 #include "CWeaponPhysCannon.h"
 
