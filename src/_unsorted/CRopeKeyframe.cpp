@@ -138,16 +138,15 @@ void CRopeKeyframe::vfunc113()
 // END FUNCTION
 
 // FUNCTION: 0x1019e550 size=0x22
-char __fastcall sub_10014da8(void *p);
-void __fastcall sub_100011cc(void *p);
+#include "CRopeKeyframe.h"
+struct CUnknown100b5190 { char sub_100b5190(); };	// a CBaseEntity test (stub 0x10014da8)
 
-// TARGET: sub_1019e550
-void __fastcall sub_1019e550(char *pThis)
+// TARGET: CRopeKeyframe::vfunc77
+void CRopeKeyframe::vfunc77()
 {
-    if (!sub_10014da8(pThis)) {
-        *(unsigned int *)(pThis + 0x454) &= ~0x8u;
-    }
-    sub_100011cc(pThis);
+	if (!((CUnknown100b5190 *)this)->sub_100b5190())
+		m_nRopeFlags &= ~0x8u;
+	CBaseEntity::vfunc77();
 }
 // END FUNCTION
 
