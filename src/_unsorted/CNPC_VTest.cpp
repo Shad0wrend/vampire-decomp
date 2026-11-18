@@ -347,6 +347,18 @@ int CNPC_VTest::vfunc138()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103b4ef0 size=0x5
+#include "CNPC_VTest.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VTest::vfunc463
+// the game's 0x103b4ef0: a tail call (jmp) of CNPC_VHuman::vfunc463
+void CNPC_VTest::vfunc463(int a0, int a1)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc463(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103b4f30 size=0x77
 #include "CNPC_VTest.h"
 struct CNPC_VTestUnit : CNPC_VTest {

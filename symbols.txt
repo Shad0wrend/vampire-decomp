@@ -6084,6 +6084,7 @@
 0x100088cd func   ?vfunc5@CTriggerElectricBugaloo@@QAEPAXI@Z CTriggerElectricBugaloo::vfunc5
 0x100088d2 func   ?sub_100766d0@CUnknown100766d0@@QAEHXZ CUnknown100766d0::sub_100766d0
 0x100088d7 func   ?vfunc82@CWeaponMelee_Torch@@QAEPAUdatamap_t@@XZ CWeaponMelee_Torch::vfunc82
+0x100088dc func   ?vfunc463@CNPC_VTest@@QAEXHH@Z CNPC_VTest::vfunc463
 0x100088e1 func   ?vfunc38@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHH@Z CTempEntsSystem::vfunc38
 0x100088e6 func   ?vfunc438@CNPC_VBatSwarm@@UAEHXZ CNPC_VBatSwarm::vfunc438
 0x100088eb func   ?sub_103fc190@CBloodPack@@QAEXXZ CBloodPack::sub_103fc190
