@@ -778,6 +778,7 @@
 0x10001fa0 func   ?sub_10150e80@CPhysicsCannister@@QAEXXZ CPhysicsCannister::sub_10150e80
 0x10001faa func   ?vfunc5@CWindowPane@@QAEPAV1@I@Z CWindowPane::vfunc5
 0x10001faf func   ?sub_10212500@@YAHXZ sub_10212500
+0x10001fb4 func   ?vfunc442@CNPC_VHunter@@UAEXPBH@Z CNPC_VHunter::vfunc442
 0x10001fb9 func   ?sub_102ff3e0@CAI_Navigator@@QAEPAVCAI_Waypoint@@HMPAVVector@@@Z CAI_Navigator::sub_102ff3e0
 0x10001fbe func   ?sub_1013abc0@@YAXABVQuaternion@@0MAAV1@@Z sub_1013abc0
 0x10001fc3 func   ?sub_1037c830@@YAXXZ sub_1037c830
