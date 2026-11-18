@@ -45,6 +45,17 @@ void __fastcall sub_10131680(void *pSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101316c0 size=0x5
+#include "CTimerEntity.h"
+struct CToggleRelayUnit { void sub_101317d0(); };
+// TARGET: CTimerEntity::vfunc134
+// the game's 0x101316c0: a tail call (jmp) of CToggleRelayUnit::sub_101317d0
+void CTimerEntity::vfunc134()
+{
+	((CToggleRelayUnit *)this)->CToggleRelayUnit::sub_101317d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135dc0 size=0x41
 #include "CTimerEntity.h"
 #include "COutputEvent.h"

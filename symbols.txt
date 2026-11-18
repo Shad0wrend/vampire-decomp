@@ -10638,6 +10638,7 @@
 0x1000e322 func   ?sub_102a9670@CUnknown102a9670@@QAEPAXXZ CUnknown102a9670::sub_102a9670
 0x1000e327 func   ?vfunc504@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc504
 0x1000e32c func   ?sub_10179130@@YAXXZ sub_10179130
+0x1000e331 func   ?vfunc134@CTimerEntity@@QAEXXZ CTimerEntity::vfunc134
 0x1000e336 func   ?vfunc5@CMoverKeyFrame@@QAEPAV1@I@Z CMoverKeyFrame::vfunc5
 0x1000e33b func   ?sub_101bde20@UtlVec8@@QAEXHH@Z UtlVec8::sub_101bde20
 0x1000e340 func   ??1CTEMetalSparks@@QAE@XZ CTEMetalSparks::~CTEMetalSparks
