@@ -274,6 +274,18 @@ void CNPC_VGargoyle::vfunc432(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10378bf0 size=0x5
+#include "CNPC_VGargoyle.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VGargoyle::vfunc434
+// the game's 0x10378bf0: a tail call (jmp) of CNPC_VHuman::vfunc434
+void CNPC_VGargoyle::vfunc434()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc434();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10378c10 size=0x7c
 #include "CBaseEntity.h"
 #include "CNPC_VGargoyle.h"

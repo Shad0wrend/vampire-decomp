@@ -7455,6 +7455,7 @@
 0x1000a5a6 func   ?vfunc373@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::vfunc373
 0x1000a5ab func   ?sub_100d6820@@YAXXZ sub_100d6820
 0x1000a5b0 func   ?vfunc3@CTEBloodStream@@UAEXABVVector@@ABVQAngle@@@Z CTEBloodStream::vfunc3
+0x1000a5b5 func   ?vfunc434@CNPC_VGargoyle@@UAEXXZ CNPC_VGargoyle::vfunc434
 0x1000a5ba func   ?sub_1007e5c0@CUnknown1007e5c0@@QAEXPAH0@Z CUnknown1007e5c0::sub_1007e5c0
 0x1000a5c4 func   ?sub_1007bff0@CChoreoSaverView@@QAE_NPBD@Z CChoreoSaverView::sub_1007bff0
 0x1000a5c9 func   ?vfunc7@CEntitySaveRestoreBlockHandler@@UAEXPAXDH@Z CEntitySaveRestoreBlockHandler::vfunc7
