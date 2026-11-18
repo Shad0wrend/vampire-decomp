@@ -13978,6 +13978,7 @@
 0x10012698 func   ?sub_10190440@@YAHXZ sub_10190440
 0x1001269d func   ?sub_100e5d00@CDialog@@QAEXHPAD@Z CDialog::sub_100e5d00
 0x100126a2 func   ?sub_10427700@CUnknown10427700@@QAE_NPBDHH@Z CUnknown10427700::sub_10427700
+0x100126a7 func   ?vfunc174@CTriggerPlayerActivityLevel@@QAEXPAVCBaseEntity@@@Z CTriggerPlayerActivityLevel::vfunc174
 0x100126ac func   ?sub_10316400@@YGDHH@Z sub_10316400
 0x100126b1 func   ?vfunc452@CBasePlayer@@UAE_NPBD@Z CBasePlayer::vfunc452
 0x100126b6 func   ?vfunc5@CWeaponIArmor@@QAEPAV1@H@Z CWeaponIArmor::vfunc5

@@ -55,6 +55,18 @@ void CTriggerPlayerActivityLevel::vfunc103()
 }
 // END FUNCTION
 
+// FUNCTION: 0x102108c0 size=0x5
+#include "CTriggerPlayerActivityLevel.h"
+#include "CBaseTrigger.h"
+
+// TARGET: CTriggerPlayerActivityLevel::vfunc174
+// the game's 0x102108c0: a tail call (jmp) of CBaseTrigger::vfunc174
+void CTriggerPlayerActivityLevel::vfunc174(CBaseEntity *a0)
+{
+	CBaseTrigger::vfunc174(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102108e0 size=0x9a
 #include "CBasePlayer.h"
 #include "CTriggerPlayerActivityLevel.h"
