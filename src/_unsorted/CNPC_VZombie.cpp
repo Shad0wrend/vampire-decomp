@@ -619,6 +619,18 @@ void CNPC_VZombie::vfunc105(const char *pszModel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103e0940 size=0x5
+#include "CNPC_VZombie.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VZombie::vfunc460
+// the game's 0x103e0940: a tail call (jmp) of CAI_BaseNPCTroika::vfunc460
+int CNPC_VZombie::vfunc460()
+{
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc460();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103e0bc0 size=0xca
 #include "CNPC_VZombie.h"
 #include "CBaseCombatCharacter.h"

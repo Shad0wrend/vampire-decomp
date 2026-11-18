@@ -10574,6 +10574,7 @@
 0x1000e359 func   ?sub_10391330@@YAEXZ sub_10391330
 0x1000e35e func   ?sub_1036cce0@CNPC_VChangBros@@QAEPAVCBaseEntity@@XZ CNPC_VChangBros::sub_1036cce0
 0x1000e363 func   ??0CUnknown10248a50@@QAE@PBD@Z CUnknown10248a50::CUnknown10248a50
+0x1000e368 func   ?vfunc460@CNPC_VZombie@@UAEHXZ CNPC_VZombie::vfunc460
 0x1000e36d func   ?vfunc319@CNPC_VRat@@QAE_NHHH@Z CNPC_VRat::vfunc319
 0x1000e372 func   ?sub_101cc1c0@Helper@@QAEPAXI@Z Helper::sub_101cc1c0
 0x1000e37c func   ?sub_101ca450@@YAPAXXZ sub_101ca450
