@@ -8378,6 +8378,7 @@
 0x1000b90b func   ?vfunc246@CBaseTrigger@@QAEXH@Z CBaseTrigger::vfunc246
 0x1000b910 func   ?sub_10373600@@YIPAXPAX@Z sub_10373600
 0x1000b915 func   ?sub_10259e20@@YAGXZ sub_10259e20
+0x1000b91a func   ?vfunc238@CVampireProjectile_MingXiaoSpit@@UAEXPAVVector@@0HH@Z CVampireProjectile_MingXiaoSpit::vfunc238
 0x1000b91f func   ?sub_10372aa0@CNPC_VCopFwd@@QAEXH@Z CNPC_VCopFwd::sub_10372aa0
 0x1000b924 func   ?sub_1042c7b0@@YIXPAX@Z sub_1042c7b0
 0x1000b929 func   ?sub_103b1790@CNPC_VSheriffMan@@QAEXMPAH@Z CNPC_VSheriffMan::sub_103b1790
