@@ -101299,6 +101299,17 @@ void CPhysicsCannister::sub_101510c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151130 size=0x5
+#include "CPhysicsCannister.h"
+struct CWrap10151130 { void sub_10151130(); };
+// TARGET: sub_10151130
+// the game's 0x10151130: a tail call (jmp) of CPhysicsCannister::sub_10150e80
+void CWrap10151130::sub_10151130()
+{
+	((CPhysicsCannister *)this)->CPhysicsCannister::sub_10150e80();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151150 size=0x7a0
 #define inline __forceinline
 #include "Vector.h"

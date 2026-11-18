@@ -11589,6 +11589,7 @@
 0x1000f786 func   ?sub_103499a0@CUnknown103499a0@@QAE_NXZ CUnknown103499a0::sub_103499a0
 0x1000f790 func   ?vfunc460@CAI_BaseNPC@@UAEHXZ CAI_BaseNPC::vfunc460
 0x1000f795 func   ?vfunc463@CNPC_VCamera@@UAEXHH@Z CNPC_VCamera::vfunc463
+0x1000f79a func   ?sub_10151130@CWrap10151130@@QAEXXZ CWrap10151130::sub_10151130
 0x1000f79f func   ?sub_103f5ff0@@YAHXZ sub_103f5ff0
 0x1000f7a4 func   ?sub_10210bc0@@YAXXZ sub_10210bc0
 0x1000f7a9 func   ?vfunc540@CAI_BaseNPC@@QAEXPBD@Z CAI_BaseNPC::vfunc540
