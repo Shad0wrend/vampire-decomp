@@ -70,6 +70,18 @@ int CNPC_VGuard1::vfunc546(int x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1037cd80 size=0x5
+#include "CNPC_VGuard1.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VGuard1::vfunc104
+// the game's 0x1037cd80: a tail call (jmp) of CNPC_VHuman::vfunc104
+void CNPC_VGuard1::vfunc104()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc104();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1037cda0 size=0x1c
 #include "CNPC_VGuard1.h"
 

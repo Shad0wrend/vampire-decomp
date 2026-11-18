@@ -5733,6 +5733,7 @@
 0x10008323 func   ?vfunc420@CBasePlayer@@QAEDH@Z CBasePlayer::vfunc420
 0x10008328 func   _item_a_body_armor item_a_body_armor
 0x1000832d func   ?sub_10295ab0@CAI_BaseNPCTroika@@QAEXM@Z CAI_BaseNPCTroika::sub_10295ab0
+0x10008332 func   ?vfunc104@CNPC_VGuard1@@UAEXXZ CNPC_VGuard1::vfunc104
 0x10008337 func   ?sub_10248060@CUnk10248060@@QAEPAU1@H@Z CUnk10248060::sub_10248060
 0x1000833c func   _bodyque bodyque
 0x10008341 func   ?sub_10252410@CUnk10252410@@QAE_NI@Z CUnk10252410::sub_10252410
