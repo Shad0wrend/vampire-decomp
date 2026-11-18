@@ -318,6 +318,18 @@ void CGeneric_NPC::vfunc259(animevent_t *a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035a8e0 size=0x5
+#include "CGeneric_NPC.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CGeneric_NPC::vfunc440
+// the game's 0x1035a8e0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc440
+int CGeneric_NPC::vfunc440(int a0)
+{
+	return CAI_BaseNPCTroika::vfunc440(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035a900 size=0xd
 void sub_1028fcc0(float a);
 

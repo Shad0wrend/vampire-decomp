@@ -3656,6 +3656,7 @@
 0x10005911 func   ?sub_103d2070@CNPC_VWerewolf@@QAE_NPAX@Z CNPC_VWerewolf::sub_103d2070
 0x10005916 func   ?sub_101c2a10@CUnknown101c2a10@@QAEXH@Z CUnknown101c2a10::sub_101c2a10
 0x1000591b func   ?sub_1028ebc0@CUnknown1028ebc0@@QAE_NPAX@Z CUnknown1028ebc0::sub_1028ebc0
+0x10005920 func   ?vfunc440@CGeneric_NPC@@QAEHH@Z CGeneric_NPC::vfunc440
 0x10005925 func   ?vfunc117@CPropModelState@@UAEHXZ CPropModelState::vfunc117
 0x1000592a func   ?sub_10127b00@CGameMovement@@QAEXPAVVector@@0@Z CGameMovement::sub_10127b00
 0x10005934 func   ?vfunc124@CFuncMoveLinear@@UAEHXZ CFuncMoveLinear::vfunc124
