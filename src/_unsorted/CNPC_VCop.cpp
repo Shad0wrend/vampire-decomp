@@ -121,6 +121,18 @@ void CNPC_VCop::vfunc472(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10371b30 size=0x5
+#include "CNPC_VCop.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VCop::vfunc594
+// the game's 0x10371b30: a tail call (jmp) of CAI_BaseNPCTroika::vfunc594
+bool CNPC_VCop::vfunc594(CBaseEntity *a0, int a1, int *a2, int a3)
+{
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc594(a0, a1, a2, a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10371b50 size=0x6
 #include "CNPC_VCop.h"
 int CNPC_VCop::vfunc138()
