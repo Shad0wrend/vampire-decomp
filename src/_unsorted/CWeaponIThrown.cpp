@@ -61,6 +61,18 @@ int CWeaponIThrown::vfunc328()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103ed1e0 size=0x5
+#include "CWeaponIThrown.h"
+#include "CBaseCombatWeapon.h"
+
+// TARGET: CWeaponIThrown::vfunc319
+// the game's 0x103ed1e0: a tail call (jmp) of CBaseCombatWeapon::vfunc319
+void CWeaponIThrown::vfunc319()
+{
+	((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc319();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103ed8c0 size=0x14
 #include "CWeaponIThrown.h"
 
