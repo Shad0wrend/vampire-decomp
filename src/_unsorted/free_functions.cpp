@@ -41332,6 +41332,16 @@ float CBaseEntity::sub_1009d850(void *pListener, float *pDist)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d940 size=0x5
+void __cdecl sub_101cf250(float *, int);
+// TARGET: sub_1009d940
+// the game's 0x1009d940: a tail call (jmp) of sub_101cf250
+void __cdecl sub_1009d940(float *a0, int a1)
+{
+	sub_101cf250(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009edc0 size=0x89
 #include "CBaseEntity.h"
 #include "CCollisionProperty.h"

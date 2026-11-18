@@ -4735,6 +4735,7 @@
 0x10006ed8 func   ?vfunc5@CAI_ChangeHintGroup@@QAEPAV1@I@Z CAI_ChangeHintGroup::vfunc5
 0x10006edd func   ?sub_103ca1a0@CHintData_WW@@QAEXH@Z CHintData_WW::sub_103ca1a0
 0x10006ee2 func   ?sub_101d8690@CUnk101d8690@@QAEPAU1@XZ CUnk101d8690::sub_101d8690
+0x10006ee7 func   ?sub_1009d940@@YAXPAMH@Z sub_1009d940
 0x10006eec func   ?vfunc285@CWeaponGravityGun@@UAEPAXXZ CWeaponGravityGun::vfunc285
 0x10006ef1 func   ?vfunc103@CEnvGlobal@@UAEXXZ CEnvGlobal::vfunc103
 0x10006ef6 func   ?sub_10429d00@CBaseGrenade@@QAEXXZ CBaseGrenade::sub_10429d00
