@@ -110705,6 +110705,8 @@ void CBasePlayer::sub_1017c1d0(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x1017c300 size=0x1f6
+// The game compiled LookForGrappleVictim (0x101690b0) earlier in this unit: its declined header inline
+// LookupEntity makes VC6 know the COMDAT 0x100290c0 here. A same-unit copy of block 0x101690b0, text for text.
 #include "CSoundControllerImp.h"
 #include "CTriggerProximity.h"
 #include "CUnknown101d7520.h"
@@ -110744,7 +110746,7 @@ void CBasePlayer::sub_1017c1d0(CBaseEntity *pEnt)
 #include <math.h>
 #include "ConVar.h"
 
-namespace block_1017c300 {
+namespace block_101690b0 {
 struct CEntView9c { char pad[0x9c]; CBaseEntity *m_p9c; };
 struct CFinderView { CBaseEntity *sub_10341c30(void *cb, float a, float cs, char c, float d, int mask); };
 }
@@ -110760,7 +110762,7 @@ void sub_101381b0(const float *in, const float *matrix, float *out);
 void sub_10143b70(const float *a, const float *b, const float *c, int d, int e, int f, int g, float h);
 void sub_10168e60();
 void sub_10144790(const Vector &a, const Vector &b, float c, float d, int e, int f, int g, int h, float i);
-using namespace block_1017c300;
+using namespace block_101690b0;
 CBaseEntity *CBasePlayer::LookForGrappleVictim()
 {
 	if (((CFoo1005f190 *)&g_10937030)->sub_1005f190())
