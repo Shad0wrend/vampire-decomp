@@ -2467,6 +2467,7 @@
 0x1000416a func   ?vfunc82@CTriggerEnvAudio@@UAEPAUdatamap_t@@XZ CTriggerEnvAudio::vfunc82
 0x10004174 func   ?sub_103cc9b0@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::sub_103cc9b0
 0x10004179 func   ?sub_103b2a80@@YAXXZ sub_103b2a80
+0x1000417e func   ?vfunc390@CNPC_VCombatman@@QAEHPAUCTakeDamageInfo@@@Z CNPC_VCombatman::vfunc390
 0x10004183 func   ?vfunc9@CGameRules@@UAEXHH@Z CGameRules::vfunc9
 0x10004188 func   ?sub_102b4540@@YIDPAVCAI_BaseNPCTroika@@HPAUSOtherEntity@@@Z sub_102b4540
 0x1000418d func   ?sub_101e1590@CList101e1590@@QAEHPBD@Z CList101e1590::sub_101e1590

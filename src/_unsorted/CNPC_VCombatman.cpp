@@ -188,6 +188,19 @@ void CNPC_VCombatman::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10370380 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CNPC_VCombatman.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VCombatman::vfunc390
+// the game's 0x10370380: a tail call (jmp) of CNPC_VHuman::vfunc390
+int CNPC_VCombatman::vfunc390(CTakeDamageInfo *a0)
+{
+	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103703a0 size=0x5
 #include "CNPC_VCombatman.h"
 #include "CNPC_VHuman.h"
