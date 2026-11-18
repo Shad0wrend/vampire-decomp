@@ -187568,6 +187568,17 @@ void sub_10230320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10230490 size=0x6
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+// TARGET: sub_10230490
+// a tail call of the engine's DevMsg (jmp [__imp_?DevMsg@@YAXPBDZZ]); nothing in the game calls it
+void sub_10230490(const char *msg)
+{
+	DevMsg(msg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102304b0 size=0x1e
 namespace lifted {
 extern char g_106c7c34;
