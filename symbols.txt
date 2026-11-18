@@ -3266,6 +3266,7 @@
 0x10005119 func   ?sub_102478f0@@YAXXZ sub_102478f0
 0x1000511e func   ?sub_10330220@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10330220
 0x10005123 func   ?vfunc619@CNPC_VChangBros@@QAEXH@Z CNPC_VChangBros::vfunc619
+0x10005128 func   ?vfunc104@CNPC_VYukie@@UAEXXZ CNPC_VYukie::vfunc104
 0x1000512d func   ?vfunc509@CNPC_VTzimisce@@UAE_NXZ CNPC_VTzimisce::vfunc509
 0x10005132 func   ?sub_103835f0@CSecureInt4View@@QAEPAUCSecureResult@MvsnSec@@PAU23@PAHPAU1@2@Z CSecureInt4View::sub_103835f0
 0x10005137 func   ?vfunc31@CHL2_Player@@UAEXH@Z CHL2_Player::vfunc31
