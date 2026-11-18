@@ -10158,6 +10158,7 @@
 0x1000dc97 func   ?vfunc438@CNPC_VManBat@@QAEHXZ CNPC_VManBat::vfunc438
 0x1000dc9c func   ?vfunc43@CSingleplayRules@@UAEHHH@Z CSingleplayRules::vfunc43
 0x1000dca1 func   ?vfunc421@CNPC_VWerewolf@@QAEXXZ CNPC_VWerewolf::vfunc421
+0x1000dca6 func   ?vfunc103@CPropHacking@@UAEXXZ CPropHacking::vfunc103
 0x1000dcab func   ?sub_1013c7e0@@YAMABVVector@@00@Z sub_1013c7e0
 0x1000dcb0 func   ?sub_10073b40@CUnknown10073b40@@QAEHXZ CUnknown10073b40::sub_10073b40
 0x1000dcb5 func   ?sub_103a46b0@@YIHPAD@Z sub_103a46b0

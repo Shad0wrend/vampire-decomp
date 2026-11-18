@@ -39,6 +39,18 @@ CPropHacking *CPropHacking::vfunc5(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021a1a0 size=0x5
+#include "CPropHacking.h"
+#include "CBaseTerminal.h"
+
+// TARGET: CPropHacking::vfunc103
+// the game's 0x1021a1a0: a tail call (jmp) of CBaseTerminal::vfunc103
+void CPropHacking::vfunc103()
+{
+	((CBaseTerminal *)this)->CBaseTerminal::vfunc103();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021a200 size=0x4c
 struct V1021a200 {
 	char m_pad[0x784];
