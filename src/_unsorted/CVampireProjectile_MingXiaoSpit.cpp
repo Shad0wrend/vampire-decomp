@@ -187,6 +187,18 @@ char CVampireProjectile_MingXiaoSpit::vfunc91(void *a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103f1b40 size=0x5
+#include "CVampireProjectile_MingXiaoSpit.h"
+#include "CVampireProjectile.h"
+
+// TARGET: CVampireProjectile_MingXiaoSpit::vfunc238
+// the game's 0x103f1b40: a tail call (jmp) of CVampireProjectile::vfunc238
+void CVampireProjectile_MingXiaoSpit::vfunc238(Vector *a0, Vector *a1, int a2, int a3)
+{
+	CVampireProjectile::vfunc238(a0, a1, a2, a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103f1b60 size=0xec
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
