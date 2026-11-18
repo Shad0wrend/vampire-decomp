@@ -13508,6 +13508,7 @@
 0x10011e82 func   ?sub_1023ca30@CWorld@@QAEXXZ CWorld::sub_1023ca30
 0x10011e87 func   ?sub_10086080@@YAXXZ sub_10086080
 0x10011e8c func   ?sub_101dc810@CUnknown101dc810@@QAEXH@Z CUnknown101dc810::sub_101dc810
+0x10011e91 func   ?vfunc433@CNPC_VSheriffSwarm@@UAEXXZ CNPC_VSheriffSwarm::vfunc433
 0x10011e96 func   ?vfunc1@CTEUserTracer@@UAEHXZ CTEUserTracer::vfunc1
 0x10011e9b func   ?vfunc80@COccultPassiveDurations@@QAEHXZ COccultPassiveDurations::vfunc80
 0x10011ea0 func   ?sub_1009fa60@CBaseEntity@@QAEXXZ CBaseEntity::sub_1009fa60
