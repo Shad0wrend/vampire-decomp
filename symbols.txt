@@ -2305,6 +2305,7 @@
 0x10003e2c func   ?sub_101784c0@CBasePlayer@@QAEXPAVCBaseEntity@@@Z CBasePlayer::sub_101784c0
 0x10003e31 func   ?vfunc82@CFuncPlatRot@@QAEPAUdatamap_t@@XZ CFuncPlatRot::vfunc82
 0x10003e36 func   ?sub_10132b50@CUnit10132b50@@QAEXH@Z CUnit10132b50::sub_10132b50
+0x10003e3b func   ?sub_103990a0@CWrap103990a0@@QAEXXZ CWrap103990a0::sub_103990a0
 0x10003e40 func   ?vfunc230@CPropHaunted@@QAEXHPAX@Z CPropHaunted::vfunc230
 0x10003e45 func   ?vfunc445@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc445
 0x10003e4a func   ?sub_100be100@bf_read@@QAE_NPAXH@Z bf_read::sub_100be100

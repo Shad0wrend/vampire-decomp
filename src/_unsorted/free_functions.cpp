@@ -290040,6 +290040,17 @@ void CNPC_VMingXiao::sub_10398fd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x103990a0 size=0x5
+#include "CNPC_VMingXiao.h"
+struct CWrap103990a0 { void sub_103990a0(); };
+// TARGET: sub_103990a0
+// the game's 0x103990a0: a tail call (jmp) of CNPC_VMingXiao::sub_10398fd0
+void CWrap103990a0::sub_103990a0()
+{
+	((CNPC_VMingXiao *)this)->CNPC_VMingXiao::sub_10398fd0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x103990c0 size=0x432
 #include "CEHandleGet.h"
 #include "CSoundControllerImp.h"
