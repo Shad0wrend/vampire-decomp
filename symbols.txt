@@ -15969,6 +15969,7 @@
 0x10014e93 func   ?sub_101cf7c0@@YAXPBDPADH@Z sub_101cf7c0
 0x10014e9d func   ?sub_10026770@@YGXH@Z sub_10026770
 0x10014ea2 func   ?sub_103ed0e0@@YAHXZ sub_103ed0e0
+0x10014ea7 func   ?sub_102306b0@CWrap102306b0@@QAEHHPAX@Z CWrap102306b0::sub_102306b0
 0x10014eac func   ?sub_102bfe10@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_102bfe10
 0x10014eb1 func   ?sub_102033e0@@YAPADH@Z sub_102033e0
 0x10014eb6 func   ?sub_10331da0@CBaseCombatCharacter@@QAEDPAVVector@@0@Z CBaseCombatCharacter::sub_10331da0

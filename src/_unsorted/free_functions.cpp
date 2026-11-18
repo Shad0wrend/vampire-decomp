@@ -187596,6 +187596,17 @@ int __stdcall sub_10230690(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x102306b0 size=0x5
+#include "CUnknown102304e0.h"
+struct CWrap102306b0 { int sub_102306b0(int, void *); };
+// TARGET: sub_102306b0
+// the game's 0x102306b0: a tail call (jmp) of CUnknown102304e0::sub_102304e0
+int CWrap102306b0::sub_102306b0(int a0, void *a1)
+{
+	return ((CUnknown102304e0 *)this)->CUnknown102304e0::sub_102304e0(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x102306d0 size=0x1e
 namespace lifted {
 extern char g_106c7c34;
