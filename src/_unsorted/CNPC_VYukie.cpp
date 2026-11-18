@@ -275,6 +275,18 @@ bool CNPC_VYukie::vfunc366(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103dd860 size=0x5
+#include "CNPC_VYukie.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VYukie::vfunc144
+// the game's 0x103dd860: a tail call (jmp) of CNPC_VHuman::vfunc144
+void CNPC_VYukie::vfunc144(int a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc144(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103dd880 size=0x14
 #include "CNPC_VYukie.h"
 #include "CAI_BaseNPCTroika.h"
