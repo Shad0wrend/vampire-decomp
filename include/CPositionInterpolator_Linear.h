@@ -11,6 +11,6 @@ public:
 	void vfunc3(float flT, Vector *pOut);	// Lerp between the two positions of the global interpolator state (slot 3)
 public:
 	void vfunc0();
-	int vfunc1(int, int, int);
-	bool vfunc4(int, int);
+	void vfunc1(char **outName, int *outMinKeyReq, int *outMaxKeyReq);	// GetDetails
+	bool vfunc4(const char *pName, const char *pValue);	// ProcessKey
 };

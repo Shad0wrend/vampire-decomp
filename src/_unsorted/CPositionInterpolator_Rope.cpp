@@ -92,7 +92,7 @@ double atof(const char *);
 int atoi(const char *);
 }
 
-char CPositionInterpolator_Rope::vfunc4(const char *pKey, const char *pValue)
+bool CPositionInterpolator_Rope::vfunc4(const char *pKey, const char *pValue)
 {
 	if (!_strcmpi(pKey, "Slack")) {
 		float t0 = atof(pValue) - 100.0;

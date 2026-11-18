@@ -9,5 +9,5 @@ class CSingleUserRecipientFilter : public CRecipientFilter
 {
 public:
 	CSingleUserRecipientFilter(void *player) { AddRecipient((CBasePlayer *)player); }
-	CSingleUserRecipientFilter();	// not in the game: declared for the matched source of ??_GCReliableSingleUserRecipientFilter (0x100e1140)
+	CSingleUserRecipientFilter() {}	// not Source's: only the matched source of ??_GCReliableSingleUserRecipientFilter (0x100e1140) calls it; inline, so no out-of-line copy is needed
 };

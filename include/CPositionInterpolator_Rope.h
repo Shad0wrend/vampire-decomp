@@ -10,10 +10,10 @@ class IPositionInterpolator
 {
 public:
 	virtual void vfunc0() PCD_PURE;
-	virtual void vfunc1() PCD_PURE;
+	virtual void vfunc1(char **outName, int *outMinKeyReq, int *outMaxKeyReq) PCD_PURE;	// Source's GetDetails: the interpolator's name and how many keys it needs
 	virtual void vfunc2(int index, const Vector *pPos) PCD_PURE;	// stores the end point (0 or 1)
 	virtual void vfunc3(float t, Vector *pOut) PCD_PURE;	// the position at t (0..1) along the rope
-	virtual char vfunc4(const char *pKey, const char *pValue) PCD_PURE;
+	virtual bool vfunc4(const char *pName, const char *pValue) PCD_PURE;	// Source's ProcessKey: true when the key was handled
 	int m_unk0004;
 };
 
@@ -80,10 +80,10 @@ class CPositionInterpolator_Rope : public IPositionInterpolator
 public:
 	CPositionInterpolator_Rope();
 	virtual void vfunc0();
-	virtual void vfunc1();
+	virtual void vfunc1(char **outName, int *outMinKeyReq, int *outMaxKeyReq);	// GetDetails
 	virtual void vfunc2(int index, const Vector *pPos);	// stores the end point (0 or 1) and flags the rope as changed when it moved
 	virtual void vfunc3(float t, Vector *pOut);	// when the rope changed: re-links it for the type, puts every node at the first end point, sizes the segments from the end point distance plus the slack; then the lerp of the two nodes around t
-	virtual char vfunc4(const char *pKey, const char *pValue);	// KeyValue: "Slack" (value - 100) and "Type" (0 -> 10, 1 -> 4, else 2); returns 1 when handled
+	virtual bool vfunc4(const char *pKey, const char *pValue);	// KeyValue: "Slack" (value - 100) and "Type" (0 -> 10, 1 -> 4, else 2); returns 1 when handled
 
 	CRopePhysics<10> m_rope;	// 0x08
 	CRopeDelegate m_delegate;	// 0x1f0

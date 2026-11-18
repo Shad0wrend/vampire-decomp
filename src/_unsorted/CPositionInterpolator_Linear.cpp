@@ -3,9 +3,10 @@
 
 // FUNCTION: 0x1012f950 size=0x5
 #include "CPositionInterpolator_Linear.h"
-bool CPositionInterpolator_Linear::vfunc4(int a0, int a1)
+
+bool CPositionInterpolator_Linear::vfunc4(const char *pName, const char *pValue)
 {
-    return 0;
+	return false;
 }
 // END FUNCTION
 
@@ -18,15 +19,12 @@ void CPositionInterpolator_Linear::vfunc0()
 
 // FUNCTION: 0x1012f9b0 size=0x21
 #include "CPositionInterpolator_Linear.h"
-namespace lifted {
-extern char g_10575214;
-}
-int CPositionInterpolator_Linear::vfunc1(int a0, int a1, int a2)
+
+void CPositionInterpolator_Linear::vfunc1(char **outName, int *outMinKeyReq, int *outMaxKeyReq)
 {
-    *(int *)((char *)a0) = (int)&lifted::g_10575214;
-    *(int *)((char *)a1) = 0;
-    *(int *)((char *)a2) = 1;
-    return a0;
+	*outName = "Linear";
+	*outMinKeyReq = 0;
+	*outMaxKeyReq = 1;
 }
 // END FUNCTION
 

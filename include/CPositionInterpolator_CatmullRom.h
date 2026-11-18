@@ -11,6 +11,6 @@ public:
 	void vfunc3(int nIndex, int flTime);	// slot 3: the Catmull-Rom spline over the four state records around the global pointer at 0x1057519c (the record and the three before / after it, 0x1c bytes apart), for the time argument
 public:
 	void vfunc0();
-	int vfunc1(int, int, int);
-	int vfunc4(const char *pszName, int unused);
+	void vfunc1(char **outName, int *outMinKeyReq, int *outMaxKeyReq);	// GetDetails
+	bool vfunc4(const char *pName, const char *pValue);	// ProcessKey
 };

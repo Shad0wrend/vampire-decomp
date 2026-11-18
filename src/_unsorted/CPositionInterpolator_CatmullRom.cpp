@@ -6,9 +6,9 @@
 
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 
-int CPositionInterpolator_CatmullRom::vfunc4(const char *pszName, int unused)
+bool CPositionInterpolator_CatmullRom::vfunc4(const char *pName, const char *pValue)
 {
-	return !_strcmpi(pszName, "Corner");
+	return !_strcmpi(pName, "Corner");
 }
 // END FUNCTION
 
@@ -21,15 +21,12 @@ void CPositionInterpolator_CatmullRom::vfunc0()
 
 // FUNCTION: 0x1012fb30 size=0x21
 #include "CPositionInterpolator_CatmullRom.h"
-namespace lifted {
-extern char g_105752b4;
-}
-int CPositionInterpolator_CatmullRom::vfunc1(int a0, int a1, int a2)
+
+void CPositionInterpolator_CatmullRom::vfunc1(char **outName, int *outMinKeyReq, int *outMaxKeyReq)
 {
-    *(int *)((char *)a0) = (int)&lifted::g_105752b4;
-    *(int *)((char *)a1) = -1;
-    *(int *)((char *)a2) = 2;
-    return a0;
+	*outName = "Catmull-Rom Spline";
+	*outMinKeyReq = -1;
+	*outMaxKeyReq = 2;
 }
 // END FUNCTION
 
