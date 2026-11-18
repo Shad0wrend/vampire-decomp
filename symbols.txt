@@ -10510,6 +10510,7 @@
 0x1000e3d6 func   ?vfunc124@CHudCounter@@UAEHXZ CHudCounter::vfunc124
 0x1000e3db func   _simple_physics_brush simple_physics_brush
 0x1000e3e0 func   ?sub_101db210@CUnknown101db210@@QAEPAUS6@@XZ CUnknown101db210::sub_101db210
+0x1000e3e5 func   ?vfunc110@CBaseButton@@UAE_NPBD0@Z CBaseButton::vfunc110
 0x1000e3ea func   ?RemoveAll@?$CUtlVector@UCNPC_VWerewolfVec3@@V?$CUtlMemory@UCNPC_VWerewolfVec3@@@@@@QAEXXZ CUtlVector<CNPC_VWerewolfVec3,CUtlMemory<CNPC_VWerewolfVec3> >::RemoveAll
 0x1000e3ea func   ?RemoveAll@?$CUtlVector@VVector@@V?$CUtlMemory@VVector@@@@@@QAEXXZ CUtlVector<Vector,CUtlMemory<Vector> >::RemoveAll
 0x1000e3ea func   ?sub_103dc260@@YIXPAH@Z sub_103dc260

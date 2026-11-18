@@ -132,6 +132,18 @@ bool CBaseButton::sub_100c8990(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c89c0 size=0x5
+#include "CBaseButton.h"
+#include "CBaseToggle.h"
+
+// TARGET: CBaseButton::vfunc110
+// the game's 0x100c89c0: a tail call (jmp) of CBaseToggle::vfunc110
+bool CBaseButton::vfunc110(char const *a0, char const *a1)
+{
+	return ((CBaseToggle *)this)->CBaseToggle::vfunc110(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c8b80 size=0x175
 #include "CBaseButton.h"
 #include "CEHandleGet.h"
