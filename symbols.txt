@@ -4726,6 +4726,7 @@
 0x10006f05 func   ?vfunc110@CFuncRotating@@UAE_NPBD0@Z CFuncRotating::vfunc110
 0x10006f0a func   ?sub_104079a0@@YAHXZ sub_104079a0
 0x10006f0f func   ?sub_101e7d90@CUnknown101e7d90@@QAEMXZ CUnknown101e7d90::sub_101e7d90
+0x10006f19 func   ?vfunc442@CNPC_VMoleman@@QAEXPBH@Z CNPC_VMoleman::vfunc442
 0x10006f1e func   ?vfunc81@CWeaponMelee_HengeyokaiFist@@UAEHXZ CWeaponMelee_HengeyokaiFist::vfunc81
 0x10006f23 func   ?vfunc618@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc618
 0x10006f28 func   ?n3@CBaseNetworkable@@UAEXXZ CBaseNetworkable::n3
