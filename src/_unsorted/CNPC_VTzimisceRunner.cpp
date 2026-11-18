@@ -636,3 +636,15 @@ char CNPC_VTzimisceRunner::vfunc320(int a, int b)
     return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc320(a, 0x79);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103c4410 size=0x5
+#include "CNPC_VTzimisceRunner.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VTzimisceRunner::vfunc435
+// the game's 0x103c4410: a tail call (jmp) of CAI_BaseNPCTroika::vfunc435
+void CNPC_VTzimisceRunner::vfunc435(void *a0)
+{
+	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc435(a0);
+}
+// END FUNCTION

@@ -1545,6 +1545,7 @@
 0x10002f18 func   ?sub_10342470@@YA_NPAUUserEntity@@PAUUsedEntity@@@Z sub_10342470
 0x10002f1d func   ?sub_101ccd40@@YIHPAH@Z sub_101ccd40
 0x10002f22 func   ?vfunc0@CAI_RatLocalNavigator@@QAEPAV1@I@Z CAI_RatLocalNavigator::vfunc0
+0x10002f27 func   ?vfunc435@CNPC_VTzimisceRunner@@UAEXPAX@Z CNPC_VTzimisceRunner::vfunc435
 0x10002f2c func   ?sub_102ae780@CAI_BaseNPCTroika@@QAEXHD@Z CAI_BaseNPCTroika::sub_102ae780
 0x10002f31 func   ?sub_101bc750@CUnknown101bc750@@QAEXH@Z CUnknown101bc750::sub_101bc750
 0x10002f36 func   ?sub_1012f100@@YAXPAX@Z sub_1012f100
