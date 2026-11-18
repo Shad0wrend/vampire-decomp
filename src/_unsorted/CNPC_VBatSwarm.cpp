@@ -288,6 +288,18 @@ int CNPC_VBatSwarm::vfunc554(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10367640 size=0x5
+#include "CNPC_VBatSwarm.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VBatSwarm::vfunc442
+// the game's 0x10367640: a tail call (jmp) of CNPC_VHuman::vfunc442
+void CNPC_VBatSwarm::vfunc442(int const *a0)
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc442(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367740 size=0x2c
 #include "CAI_BaseNPCTroika.h"
 #include "CNPC_VBatSwarm.h"

@@ -5837,6 +5837,7 @@
 0x1000854e func   ?vfunc81@CItemGRing03@@QAEHXZ CItemGRing03::vfunc81
 0x10008553 func   ?sub_103d0e70@@YG_NPAX@Z sub_103d0e70
 0x10008558 func   _npc_VHumanCombatPatrol npc_VHumanCombatPatrol
+0x1000855d func   ?vfunc442@CNPC_VBatSwarm@@UAEXPBH@Z CNPC_VBatSwarm::vfunc442
 0x10008562 func   ?sub_101815b0@CAI_BaseNPCTroika@@QAEXI@Z CAI_BaseNPCTroika::sub_101815b0
 0x10008567 func   ?vfunc80@CItemGGarysTape@@QAEHXZ CItemGGarysTape::vfunc80
 0x1000856c func   ?sub_102ef3e0@CUnknown102ef3e0@@QAE_NPAUCUnknown102ef3e0Arg@@@Z CUnknown102ef3e0::sub_102ef3e0
