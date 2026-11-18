@@ -4871,6 +4871,7 @@
 0x100070d1 func   ?vfunc80@CBloodPack@@QAEHXZ CBloodPack::vfunc80
 0x100070d6 func   _raggib raggib
 0x100070db func   ?sub_100ce4e0@CList_t@@QAE_NPAXPAH@Z CList_t::sub_100ce4e0
+0x100070e0 func   ?vfunc277@CPropKeypad@@QAEXXZ CPropKeypad::vfunc277
 0x100070e5 func   ?vfunc134@CSoundEnt@@UAEXXZ CSoundEnt::vfunc134
 0x100070ea func   ?vfunc5@CPropMover@@QAEPAV1@I@Z CPropMover::vfunc5
 0x100070f4 func   ?sub_104057f0@@YAHXZ sub_104057f0

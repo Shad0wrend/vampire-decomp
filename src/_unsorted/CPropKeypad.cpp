@@ -141,6 +141,16 @@ void CPropKeypad::vfunc276()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021dda0 size=0x5
+#include "CPropKeypad.h"
+// TARGET: CPropKeypad::vfunc277
+// the game's 0x1021dda0: a tail call (jmp) of CPropKeypad::sub_1021df90
+void CPropKeypad::vfunc277()
+{
+	((CPropKeypad *)this)->CPropKeypad::sub_1021df90();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021ddc0 size=0x14
 #include "CPropKeypad.h"
 #include "CBaseTerminal.h"
