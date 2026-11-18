@@ -16915,6 +16915,7 @@
 0x100d38d0 func   ?sub_100d38d0@@YAHPAUCOriginEnt@@PBUVec3@@MPAU2@@Z sub_100d38d0
 0x100d46c0 func   ?sub_100d46c0@@YAXPAVCVStatList_t@@HH@Z sub_100d46c0
 0x100d47f0 func   ?sub_100d47f0@@YAHPBDQAY0EA@D@Z sub_100d47f0
+0x100d4ae0 func   ?sub_100d4ae0@@YAHPBD0@Z sub_100d4ae0
 0x100d6560 func   ?sub_100d6560@@YAHPBDPAD@Z sub_100d6560
 0x100d9c50 func   ?sub_100d9c50@@YAHPBDPAD@Z sub_100d9c50
 0x100db920 func   ?sub_100db920@@YAPAVCBaseEntity@@HPBD@Z sub_100db920

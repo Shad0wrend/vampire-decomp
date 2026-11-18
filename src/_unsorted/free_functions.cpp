@@ -59187,6 +59187,17 @@ int sub_100d47f0(const char *partial, char commands[][64])
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d4ae0 size=0x5
+extern "C" int _strcmpi(const char *, const char *);
+
+// TARGET: sub_100d4ae0
+// the game's 0x100d4ae0: a tail call (jmp) of the CRT's _strcmpi (a case-insensitive compare wrapper)
+int sub_100d4ae0(const char *a, const char *b)
+{
+	return _strcmpi(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d4b40 size=0x1fc
 #include "CBaseEntity.h"
 #include "utlrbtree.h"
