@@ -1908,6 +1908,7 @@
 0x10003661 func   ?vfunc113@CAmbientGeneric@@QAEXXZ CAmbientGeneric::vfunc113
 0x10003666 func   ?sub_102f31f0@SPtrList@@QAEXXZ SPtrList::sub_102f31f0
 0x1000366b func   ?sub_102e0290@CUnknown102e0150@@QAEDPAVCBaseEntity@@PAVVector@@1@Z CUnknown102e0150::sub_102e0290
+0x10003670 func   ?sub_10202fb0@CWrap10202fb0@@QAE_NH@Z CWrap10202fb0::sub_10202fb0
 0x10003675 func   ?vfunc51@CBaseEntity@@UAEXHPAVVector@@@Z CBaseEntity::vfunc51
 0x1000367a func   ?vfunc82@CPointCamera@@UAEPAUdatamap_t@@XZ CPointCamera::vfunc82
 0x1000367f func   ?sub_1013d380@@YADXZ sub_1013d380

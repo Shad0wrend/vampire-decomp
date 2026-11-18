@@ -170818,6 +170818,17 @@ bool CUnknown10202d10::sub_10202ef0(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10202fb0 size=0x5
+#include "CUnknown10202d10.h"
+struct CWrap10202fb0 { bool sub_10202fb0(int); };
+// TARGET: sub_10202fb0
+// the game's 0x10202fb0: a tail call (jmp) of CUnknown10202d10::sub_10202ef0
+bool CWrap10202fb0::sub_10202fb0(int a0)
+{
+	return ((CUnknown10202d10 *)this)->CUnknown10202d10::sub_10202ef0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10202fd0 size=0x3f
 struct CSlotIter
 {
