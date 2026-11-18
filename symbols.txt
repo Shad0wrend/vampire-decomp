@@ -9260,6 +9260,7 @@
 0x1000c8fb func   ?vfunc82@CParamsExplosion@@UAEPAUdatamap_t@@XZ CParamsExplosion::vfunc82
 0x1000c90a func   ?vfunc438@CNPC_VMoleman@@QAEHXZ CNPC_VMoleman::vfunc438
 0x1000c90f func   ?sub_10316890@CUnknown10316890@@QAEXHVVector@@0@Z CUnknown10316890::sub_10316890
+0x1000c914 func   ?sub_10184280@@YAII@Z sub_10184280
 0x1000c919 func   ?sub_10063880@@YAXHHPBM000MMMHEEEEEE@Z sub_10063880
 0x1000c91e func   _item_p_occult_dodge item_p_occult_dodge
 0x1000c923 func   ?vfunc130@CWeaponMelee_Torch@@QAEXPAX@Z CWeaponMelee_Torch::vfunc130

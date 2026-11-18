@@ -114047,6 +114047,16 @@ unsigned int __cdecl sub_10184260(unsigned int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10184280 size=0x5
+unsigned int __cdecl sub_1042fd40(unsigned int);
+// TARGET: sub_10184280
+// the game's 0x10184280: a tail call (jmp) of sub_1042fd40
+unsigned int __cdecl sub_10184280(unsigned int a0)
+{
+	return sub_1042fd40(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101842a0 size=0x88
 #include "CUtlVector4.h"
 #include "CEHandleGet.h"
