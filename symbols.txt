@@ -7059,6 +7059,7 @@
 0x10009ddb func   ?sub_102f3900@CUnknown102f3900@@QAEXPAUCUnknown102f3900Ent@@VVector@@1H@Z CUnknown102f3900::sub_102f3900
 0x10009de0 func   ?vfunc5@CBaseKeyframedMover@@UAEPAV1@I@Z CBaseKeyframedMover::vfunc5
 0x10009de5 func   ?sub_10041b70@@YAHH@Z sub_10041b70
+0x10009dea func   ?vfunc606@CNPC_VBatSwarm@@QAEHH@Z CNPC_VBatSwarm::vfunc606
 0x10009def func   ?LinkToParent@?$CUtlRBTree@HG@@QAEXGG_N@Z CUtlRBTree<int,unsigned short>::LinkToParent
 0x10009def func   ?LinkToParent@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@QAEXGG_N@Z CUtlRBTree<CRBTree12Entry_102ec4a0,unsigned short>::LinkToParent
 0x10009df4 func   ?sub_102f7970@CUnknown102f7970@@QAEXXZ CUnknown102f7970::sub_102f7970

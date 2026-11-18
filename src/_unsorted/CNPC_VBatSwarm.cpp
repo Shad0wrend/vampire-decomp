@@ -234,6 +234,18 @@ void __fastcall sub_10367580(void *pThis, int dummy, int a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x103675a0 size=0x5
+#include "CNPC_VBatSwarm.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VBatSwarm::vfunc606
+// the game's 0x103675a0: a tail call (jmp) of CAI_BaseNPCTroika::vfunc606
+int CNPC_VBatSwarm::vfunc606(int a0)
+{
+	return ((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc606(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x103675e0 size=0x15
 #include "CNPC_VBatSwarm.h"
 
