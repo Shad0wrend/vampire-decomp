@@ -300,6 +300,19 @@ int sub_1035bec0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035bf10 size=0x5
+#include "animevent_t.h"
+#include "CGenericSabbat_NPC.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CGenericSabbat_NPC::vfunc259
+// the game's 0x1035bf10: a tail call (jmp) of CAI_BaseNPC::vfunc259
+void CGenericSabbat_NPC::vfunc259(animevent_t *a0)
+{
+	CAI_BaseNPC::vfunc259(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035bf70 size=0xd
 void __fastcall sub_1000a529(void *pThis, int dummy, float a);
 

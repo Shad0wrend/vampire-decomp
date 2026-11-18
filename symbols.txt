@@ -7230,6 +7230,7 @@
 0x1000a16e func   ?sub_10030910@CCollisionEvent@@QAEXXZ CCollisionEvent::sub_10030910
 0x1000a173 func   ?sub_10231e80@CUnk10231e80@block_10231e80@@QAEXD@Z block_10231e80::CUnk10231e80::sub_10231e80
 0x1000a178 func   ?sub_101e0040@CUnknown101e0040@@QAEPAV1@XZ CUnknown101e0040::sub_101e0040
+0x1000a17d func   ?vfunc259@CGenericSabbat_NPC@@UAEXPAUanimevent_t@@@Z CGenericSabbat_NPC::vfunc259
 0x1000a182 func   ?vfunc0@CTETParticleHUD@@UAEPAUServerClass@@XZ CTETParticleHUD::vfunc0
 0x1000a187 func   ?sub_10368480@@YIPAXPAX@Z sub_10368480
 0x1000a18c func   ?vfunc413@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc413
