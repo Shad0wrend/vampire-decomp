@@ -53427,6 +53427,17 @@ int sub_100c6280(char *pHdr, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c6350 size=0x5
+#include "StudioHdr.h"
+int __cdecl sub_100c6280(char *, char const *);
+// TARGET: sub_100c6350
+// the game's 0x100c6350: a tail call (jmp) of sub_100c6280
+int __cdecl sub_100c6350(char *a0, char const *a1)
+{
+	return sub_100c6280(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c6370 size=0x148
 #include "utlrbtree.h"
 #include "utlvector.h"

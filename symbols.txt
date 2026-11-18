@@ -2851,6 +2851,7 @@
 0x10004949 func   ?sub_10193ea0@CPropDestructable@@QAEXPAUinputdata_t@@@Z CPropDestructable::sub_10193ea0
 0x1000494e func   ?vfunc373@CWeaponMelee_ChangClaw@@QAEHXZ CWeaponMelee_ChangClaw::vfunc373
 0x10004953 func   ?vfunc420@CNPC_VPedestrian@@UAEXXZ CNPC_VPedestrian::vfunc420
+0x10004958 func   ?sub_100c6350@@YAHPADPBD@Z sub_100c6350
 0x1000495d func   ?sub_10031070@CCollisionEvent@@QAEXHPAXHD00@Z CCollisionEvent::sub_10031070
 0x10004962 func   ??0CUnknown101c4560@@QAE@XZ CUnknown101c4560::CUnknown101c4560
 0x10004962 func   ?sub_101c4560@CUnknown101c4560@@QAEPAXXZ CUnknown101c4560::sub_101c4560
