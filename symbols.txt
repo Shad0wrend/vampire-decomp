@@ -2481,6 +2481,7 @@
 0x1000417e func   ?vfunc390@CNPC_VCombatman@@QAEHPAUCTakeDamageInfo@@@Z CNPC_VCombatman::vfunc390
 0x10004183 func   ?vfunc9@CGameRules@@UAEXHH@Z CGameRules::vfunc9
 0x10004188 func   ?sub_102b4540@@YIDPAVCAI_BaseNPCTroika@@HPAUSOtherEntity@@@Z sub_102b4540
+0x10004188 func   ?vfunc363@CAI_BaseNPCTroika@@UAEDPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc363
 0x1000418d func   ?sub_101e1590@CList101e1590@@QAEHPBD@Z CList101e1590::sub_101e1590
 0x10004192 func   ?sub_1013af20@@YAMPAM0@Z sub_1013af20
 0x10004197 func   ?vfunc4@CTEExplosiveGunshotDecal@@QAEXPAXH@Z CTEExplosiveGunshotDecal::vfunc4
