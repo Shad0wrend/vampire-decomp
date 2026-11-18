@@ -212,6 +212,18 @@ void CNPC_VBatSwarm::vfunc144(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10367560 size=0x5
+#include "CNPC_VBatSwarm.h"
+#include "CBaseCombatCharacter.h"
+
+// TARGET: CNPC_VBatSwarm::vfunc309
+// the game's 0x10367560: a tail call (jmp) of CBaseCombatCharacter::vfunc309
+void * CNPC_VBatSwarm::vfunc309()
+{
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc309();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10367580 size=0xd
 void __fastcall sub_1000ca4f(void *pThis, int dummy, int a, float b);
 
