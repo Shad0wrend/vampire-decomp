@@ -180853,6 +180853,16 @@ int CUnknown1021e8e0::sub_1021e9c0(const char *pszName, int nStart)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1021eaa0 size=0x5
+int __cdecl sub_1025b5b0();
+// TARGET: sub_1021eaa0
+// the game's 0x1021eaa0: a tail call (jmp) of sub_1025b5b0
+int __cdecl sub_1021eaa0()
+{
+	return sub_1025b5b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1021eac0 size=0x1c
 int __cdecl sub_1025b5d0(int a);
 

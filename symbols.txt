@@ -16396,6 +16396,7 @@
 0x10015712 func   ?sub_1034b560@CUnknown1034b560@@QAEXH@Z CUnknown1034b560::sub_1034b560
 0x10015717 func   ?vfunc615@CNPC_VGhoulCroucher@@QAEDXZ CNPC_VGhoulCroucher::vfunc615
 0x1001571c func   ?sub_10315bb0@CSquadNearest@@QAEPAVCBaseEntity@@PAVCAI_BaseNPCTroika@@@Z CSquadNearest::sub_10315bb0
+0x10015721 func   ?sub_1021eaa0@@YAHXZ sub_1021eaa0
 0x10015726 func   _item_w_claws_ghoul item_w_claws_ghoul
 0x1001572b func   ?sub_10116fb0@CUnknown10116fb0@@QAEXPAUCInputData100bc0f0@@@Z CUnknown10116fb0::sub_10116fb0
 0x10015730 func   ?sub_10312fb0@CUtlRBTree16Unit@@QAEXGG_N@Z CUtlRBTree16Unit::sub_10312fb0
