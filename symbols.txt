@@ -2784,6 +2784,7 @@
 0x100047c8 func   ?sub_101ad440@CUnknown101ad440@@QAEHH@Z CUnknown101ad440::sub_101ad440
 0x100047cd func   ?vfunc485@CAI_BaseNPC@@UAEXPBDHMHHH@Z CAI_BaseNPC::vfunc485
 0x100047d2 func   ?vfunc5@CNPC_VChangBros@@UAEPAVCAI_BaseNPC@@I@Z CNPC_VChangBros::vfunc5
+0x100047d7 func   ?vfunc440@CNPC_VAndreiBlood@@QAEHH@Z CNPC_VAndreiBlood::vfunc440
 0x100047dc func   ?sub_101d20a0@@YAXPAUEntV@@0@Z sub_101d20a0
 0x100047e6 func   ?vfunc141@CPhysicsCannister@@QAEXPAUCCannisterTakeInfo@@PBVVector@@PAUCGameTrace@@@Z CPhysicsCannister::vfunc141
 0x100047eb func   ?vfunc81@CWeaponWallet@@QAEHXZ CWeaponWallet::vfunc81

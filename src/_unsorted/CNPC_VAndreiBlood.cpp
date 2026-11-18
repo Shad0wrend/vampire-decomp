@@ -189,6 +189,18 @@ int CNPC_VAndreiBlood::vfunc438()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035d130 size=0x5
+#include "CNPC_VAndreiBlood.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VAndreiBlood::vfunc440
+// the game's 0x1035d130: a tail call (jmp) of CNPC_VHuman::vfunc440
+int CNPC_VAndreiBlood::vfunc440(int a0)
+{
+	return CNPC_VHuman::vfunc440(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035d150 size=0x19
 #include "CNPC_VAndreiBlood.h"
 
