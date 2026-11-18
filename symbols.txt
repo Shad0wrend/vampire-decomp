@@ -1788,6 +1788,7 @@
 0x100033fa func   ?sub_10113050@CBreakableSurface@@QAEXPBVVector@@PBM00MMH@Z CBreakableSurface::sub_10113050
 0x10003404 func   ?sub_101ab310@@YAHHHHH@Z sub_101ab310
 0x10003409 func   ?sub_100330d0@@YIXPAUMem@@HH@Z sub_100330d0
+0x1000340e func   ?vfunc440@CNPC_VTaxiDriver@@QAEHH@Z CNPC_VTaxiDriver::vfunc440
 0x10003418 func   ?sub_102dd0f0@CPatrolPlaceView@@QAE_NPAVCKeyValuesX@@@Z CPatrolPlaceView::sub_102dd0f0
 0x1000341d func   ?vfunc580@CAI_BaseNPCTroika@@UAEPAUCAI_CondOwner@@XZ CAI_BaseNPCTroika::vfunc580
 0x10003422 func   ?sub_10279c20@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_10279c20
