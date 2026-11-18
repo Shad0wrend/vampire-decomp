@@ -281,3 +281,15 @@ char CEnvParticle::vfunc86(int a, int b, int c, int d, int e)
 	return sub_100ab020(a, b, c, d, e);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100fbed0 size=0x5
+#include "CEnvParticle.h"
+#include "CBaseEntity.h"
+
+// TARGET: CEnvParticle::vfunc129
+// the game's 0x100fbed0: a tail call (jmp) of CBaseEntity::vfunc129
+void CEnvParticle::vfunc129()
+{
+	((CBaseEntity *)this)->CBaseEntity::vfunc129();
+}
+// END FUNCTION

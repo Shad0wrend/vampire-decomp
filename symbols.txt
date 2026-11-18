@@ -11013,6 +11013,7 @@
 0x1000edf9 func   ?sub_1013b090@@YAXHPAHPAD@Z sub_1013b090
 0x1000edfe func   ?sub_1006c810@CUnknown1006c810@@QAE_NPAUCVTraitKV@@PBUCVTraitDependency@@@Z CUnknown1006c810::sub_1006c810
 0x1000ee03 func   ?sub_1036a320@@YIPAXPAX@Z sub_1036a320
+0x1000ee08 func   ?vfunc129@CEnvParticle@@QAEXXZ CEnvParticle::vfunc129
 0x1000ee0d func   ?vfunc0@CSingleplayRules@@UAEPAVCGameRules@@I@Z CSingleplayRules::vfunc0
 0x1000ee12 func   ?sub_101323e0@@YAPAHXZ sub_101323e0
 0x1000ee17 func   ?sub_101bab50@CSoundEnt@@QAEHXZ CSoundEnt::sub_101bab50
