@@ -14924,6 +14924,7 @@
 0x10013890 func   ?sub_1015eee0@@YIXPAD@Z sub_1015eee0
 0x10013895 func   ?sub_103e2840@@YAHXZ sub_103e2840
 0x1001389a func   _info_node info_node
+0x1001389f func   ?vfunc7@CServerGameDLL@@UAEXXZ CServerGameDLL::vfunc7
 0x100138a4 func   ?vfunc113@CRopeKeyframe@@UAEXXZ CRopeKeyframe::vfunc113
 0x100138a9 func   ?vfunc432@CNPC_VSabbatLeader@@QAEXH@Z CNPC_VSabbatLeader::vfunc432
 0x100138ae func   ?sub_101a1780@CUnknown101a1780View@@QAE_NPAUCUnknown101a1780Arg@@@Z CUnknown101a1780View::sub_101a1780

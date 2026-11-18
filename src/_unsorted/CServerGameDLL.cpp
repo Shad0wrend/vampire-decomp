@@ -143,6 +143,17 @@ bool CServerGameDLL::vfunc2()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011a410 size=0x5
+#include "CServerGameDLL.h"
+void __cdecl sub_10057b50();
+// TARGET: CServerGameDLL::vfunc7
+// the game's 0x1011a410: a tail call (jmp) of sub_10057b50
+void CServerGameDLL::vfunc7()
+{
+	sub_10057b50();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011a7a0 size=0x2a0
 #include "CServerGameDLL.h"
 #include "CVProfile.h"
