@@ -3184,38 +3184,54 @@ bool CBasePlayer::sub_10168e10()
 // END FUNCTION
 
 // FUNCTION: 0x101690b0 size=0x42a
-#include "CBaseEntity.h"
-#include "CBasePlayer.h"
 #include "CSoundControllerImp.h"
-#include "CTraceFilterNoCharacterCollide.h"
 #include "CTriggerProximity.h"
+#include "CUnknown101d7520.h"
+#include "CUnknown101daec0.h"
+#include "CUnknown101e56e0.h"
+#include "CUnknown101e7c50.h"
+#include "CUnknown101f4c80.h"
+#include "CUnknown10202b10.h"
+#include "CUnknown10206400.h"
 #include "CUnknown102c63b0.h"
 #include "CUnknown102c6460.h"
 #include "CUnknown102ca630.h"
 #include "CUnknown102dc2c0.h"
+#include "CUnknown1073dc28.h"
+#include "CBaseEntity.h"
+#include "CBasePlayer.h"
+#include "ScopeTrace.h"
+#include "CEHandleGet.h"
+#include "CUtlVector4.h"
+#include "CLogicAuto.h"
+#include "utlrbtree.h"
+#include "CUnknown10739d08.h"
+#include "CUnknown101c26d0.h"
+#include "CEntityVSlots.h"
+#include "ehandle.h"
+#include "utlvector.h"
+#include "CTraceFilterNoCharacterCollide.h"
 #include "CDevFlagObj.h"
 #include "CUnknown10738960.h"
 #include "Ray_t.h"
 #include "CGameTrace.h"
 #include "CTraceFilterSimple.h"
 #include "CUnknown1070b254.h"
-#include "ehandle.h"
-#include "CEHandleGet.h"
 #include "AITrace.h"
 #include "DebugOverlay.h"
 #include "UTIL_Trace.h"
 #include <math.h>
+#include "ConVar.h"
 
-struct CEntListView { int sub_100290c0(unsigned int *pHandle); };
+namespace block_101690b0 {
 struct CEntView9c { char pad[0x9c]; CBaseEntity *m_p9c; };
-struct CConVarViewG { virtual void v0(); virtual char vfunc1(); char pad[0x24]; float m_f28; int m_n2c; };
 struct CFinderView { CBaseEntity *sub_10341c30(void *cb, float a, float cs, char c, float d, int mask); };
+}
 
-extern CFoo1005f190 g_10937030;
-extern CDevFlagObj *g_10937034;
-extern CConVarViewG *g_10725044;
-extern CConVarViewG *g_10725ae4;
-extern CConVarViewG *g_10725a04;
+extern ConVar g_10937030;
+extern ConVar g_10725040;
+extern ConVar g_10725ae0;
+extern ConVar g_10725a00;
 extern float g_1044eb08;
 extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
 void sub_10139b90(float *angles, float *matrix);
@@ -3223,16 +3239,15 @@ void sub_101381b0(const float *in, const float *matrix, float *out);
 void sub_10143b70(const float *a, const float *b, const float *c, int d, int e, int f, int g, float h);
 void sub_10168e60();
 void sub_10144790(const Vector &a, const Vector &b, float c, float d, int e, int f, int g, int h, float i);
-
+using namespace block_101690b0;
 // TARGET: CBasePlayer::LookForGrappleVictim
 CBaseEntity *CBasePlayer::LookForGrappleVictim()
 {
-	if (g_10937030.sub_1005f190())
+	if (((CFoo1005f190 *)&g_10937030)->sub_1005f190())
 		Msg("CBasePlayer::LookForGrappleVictim.....");
 	CBaseEntity *pVictim = 0;
 	CBasePlayer *pSelf = this;
-	CEntListView *pList = (CEntListView *)EHandleDetail::g_10566458;
-	CEntView9c *pCtl = (CEntView9c *)pList->sub_100290c0((unsigned int *)&m_hControllerNPC1db0);
+	CEntView9c *pCtl = (CEntView9c *)m_hControllerNPC1db0.Get();
 	if (pCtl && pCtl->m_p9c)
 		pSelf = (CBasePlayer *)pCtl->m_p9c;
 	Vector eye = pSelf->vfunc193();
@@ -3254,7 +3269,7 @@ CBaseEntity *CBasePlayer::LookForGrappleVictim()
 		if (tr.m_fraction < 1.0f && tr.m_pEnt)
 			pVictim = ((CEntView9c *)tr.m_pEnt)->m_p9c;
 	}
-	if (!g_10937034->vfunc1() && g_10937034->m_n2c) {
+	if (g_10937030.GetBool()) {
 		Vector box[2];
 		box[0].Init(2.0f, 2.0f, 2.0f);
 		box[1].Init(-2.0f, -2.0f, -2.0f);
@@ -3271,29 +3286,14 @@ CBaseEntity *CBasePlayer::LookForGrappleVictim()
 		}
 	}
 	if (!pVictim) {
-		float flFov;
-		if (g_10725044->vfunc1())
-			flFov = g_104454c4;
-		else
-			flFov = g_10725044->m_f28;
+		float flFov = g_10725040.GetFloat();
 		double dHalf = flFov * 0.5;
 		float flCos = cos(dHalf * g_1044eb08);
-		float flDist;
-		if (g_10725ae4->vfunc1())
-			flDist = 0;
-		else
-			flDist = g_10725ae4->m_f28;
+		float flDist = g_10725ae0.GetFloat();
 		CBaseEntity *pFound = ((CFinderView *)this)->sub_10341c30((void *)sub_10168e60, flDist, flCos, 0, 0, 0x600400b);
-		if (!g_10725a04->vfunc1() && g_10725a04->m_n2c) {
-			if (g_10725ae4->vfunc1())
-				flDist = 0;
-			else
-				flDist = g_10725ae4->m_f28;
-			float flHalf;
-			if (g_10725044->vfunc1())
-				flHalf = g_104454c4;
-			else
-				flHalf = g_10725044->m_f28;
+		if (g_10725a00.GetBool()) {
+			flDist = g_10725ae0.GetFloat();
+			float flHalf = g_10725040.GetFloat();
 			sub_10144790(vfunc193(), vfunc369(), flHalf * 0.5f, flDist, 0, 0x80, 0x80, 0x80, 5.0f);
 		}
 		return pFound;
