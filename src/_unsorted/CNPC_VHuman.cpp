@@ -324,6 +324,19 @@ void CNPC_VHuman::vfunc434() {
 }
 // END FUNCTION
 
+// FUNCTION: 0x10385a50 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CNPC_VHuman.h"
+#include "CAI_BaseNPCTroika.h"
+
+// TARGET: CNPC_VHuman::vfunc390
+// the game's 0x10385a50: a tail call (jmp) of CAI_BaseNPCTroika::vfunc390
+int CNPC_VHuman::vfunc390(CTakeDamageInfo *a0)
+{
+	return CAI_BaseNPCTroika::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10385a70 size=0x5
 #include "CNPC_VHuman.h"
 
