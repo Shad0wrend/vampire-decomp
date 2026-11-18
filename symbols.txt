@@ -9952,6 +9952,7 @@
 0x1000d7a1 func   ?vfunc585@CAI_BaseNPCTroika@@QAEXPBD0@Z CAI_BaseNPCTroika::vfunc585
 0x1000d7a6 func   ?vfunc472@CAI_BaseNPCTroika@@UAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc472
 0x1000d7ab func   _item_w_gargoyle_fist item_w_gargoyle_fist
+0x1000d7b0 func   ?vfunc434@CNPC_VHunter@@UAEXXZ CNPC_VHunter::vfunc434
 0x1000d7b5 func   ?vfunc505@CNPC_VCamera@@UAEXXZ CNPC_VCamera::vfunc505
 0x1000d7ba func   ?vfunc306@CBaseCombatCharacter@@QAEXPAV1@D@Z CBaseCombatCharacter::vfunc306
 0x1000d7bf func   ?sub_1027cef0@@YIPAVCAI_MoveProbe@@PAX@Z sub_1027cef0

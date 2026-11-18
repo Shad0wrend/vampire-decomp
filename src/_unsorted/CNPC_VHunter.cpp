@@ -269,6 +269,18 @@ void CNPC_VHunterFwd::sub_10388ad0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10388af0 size=0x5
+#include "CNPC_VHunter.h"
+#include "CNPC_VHuman.h"
+
+// TARGET: CNPC_VHunter::vfunc434
+// the game's 0x10388af0: a tail call (jmp) of CNPC_VHuman::vfunc434
+void CNPC_VHunter::vfunc434()
+{
+	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc434();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10388b30 size=0x27
 // TARGET: CNPC_VHunter::vfunc420
 #include "CNPC_VHunter.h"
