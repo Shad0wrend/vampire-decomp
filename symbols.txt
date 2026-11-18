@@ -11468,6 +11468,7 @@
 0x1000f682 func   ?vfunc63@CMultiplayRules@@UAEPBDH@Z CMultiplayRules::vfunc63
 0x1000f687 func   ?sub_100fdf40@CUnknown100fde30@@QAEXXZ CUnknown100fde30::sub_100fdf40
 0x1000f68c func   ?sub_1006fde0@@YAXXZ sub_1006fde0
+0x1000f691 func   ?vfunc366@CNPC_VCop@@UAE_NHHH@Z CNPC_VCop::vfunc366
 0x1000f696 func   ?sub_102fcbd0@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@PAHH@Z CAI_Pathfinder::sub_102fcbd0
 0x1000f69b func   ?vfunc41@CPropKeypad@@QAEXPAX@Z CPropKeypad::vfunc41
 0x1000f6a0 func   ?vfunc1@CCollisionProperty@@UAEPAMXZ CCollisionProperty::vfunc1
