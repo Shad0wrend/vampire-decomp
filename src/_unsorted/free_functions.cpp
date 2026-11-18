@@ -140430,6 +140430,17 @@ int sub_101c7e00(SEntry101c7e00 *table, int count, const char *name, const char 
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c7f80 size=0x5
+#include "levellist.h"
+int __cdecl sub_101c7ff0(struct levellist_t *, int, char const *, char const *);
+// TARGET: sub_101c7f80
+// the game's 0x101c7f80: a tail call (jmp) of sub_101c7ff0
+int __cdecl sub_101c7f80(struct levellist_t *a0, int a1, char const *a2, char const *a3)
+{
+	return sub_101c7ff0(a0, a1, a2, a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c7fa0 size=0x3c
 typedef unsigned int (__fastcall *FlagSlotFn)(void *);
 typedef int (__fastcall *IntSlotFn)(void *);
