@@ -11347,6 +11347,7 @@
 0x1000f182 func   _info_player_deathmatch info_player_deathmatch
 0x1000f187 func   ?sub_101a8c30@CCineNPC@@QAEXXZ CCineNPC::sub_101a8c30
 0x1000f18c func   ?vfunc82@CPhysicsCannister@@QAEPAUdatamap_t@@XZ CPhysicsCannister::vfunc82
+0x1000f191 func   ?vfunc144@CNPC_VTest@@QAEXH@Z CNPC_VTest::vfunc144
 0x1000f196 func   ?sub_10219240@CUnk10219240@@QAEXXZ CUnk10219240::sub_10219240
 0x1000f19b func   ?sub_101d23f0@@YAXHPBD@Z sub_101d23f0
 0x1000f1a0 func   ?vfunc113@CNPC_Bullseye@@UAEXXZ CNPC_Bullseye::vfunc113

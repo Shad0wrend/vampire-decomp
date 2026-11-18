@@ -453,3 +453,15 @@ bool CNPC_VTest::vfunc366(int a0, int a1, int a2)
 	return ((CNPC_VHuman *)this)->CNPC_VHuman::vfunc366(a0, a1, a2);
 }
 // END FUNCTION
+
+// FUNCTION: 0x103b5220 size=0x5
+#include "CNPC_VTest.h"
+#include "CNPC_VVampire.h"
+
+// TARGET: CNPC_VTest::vfunc144
+// the game's 0x103b5220: a tail call (jmp) of CNPC_VVampire::vfunc144
+void CNPC_VTest::vfunc144(int a0)
+{
+	((CNPC_VVampire *)this)->CNPC_VVampire::vfunc144(a0);
+}
+// END FUNCTION
