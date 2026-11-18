@@ -15024,6 +15024,7 @@
 0x10013e67 func   ?sub_1030f7b0@CUnknown1030f940@@QAEDPAUCUnknown1030f940Rec@@@Z CUnknown1030f940::sub_1030f7b0
 0x10013e6c func   ?sub_1022eb60@@YAXPAUTStat@@PBD@Z sub_1022eb60
 0x10013e71 func   ?vfunc301@CBaseCombatCharacter@@QAEXPBVVector@@PAUCTakeDamageInfo@@@Z CBaseCombatCharacter::vfunc301
+0x10013e76 func   ?vfunc390@CGenericSabbat_NPC@@UAEHPAUCTakeDamageInfo@@@Z CGenericSabbat_NPC::vfunc390
 0x10013e7b func   ?sub_103fd440@@YAHXZ sub_103fd440
 0x10013e80 func   ?sub_10307bf0@CUnknown10307bf0@@QAEXH@Z CUnknown10307bf0::sub_10307bf0
 0x10013e85 func   ?vfunc420@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::vfunc420

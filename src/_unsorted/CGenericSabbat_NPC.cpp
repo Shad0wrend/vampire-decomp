@@ -342,6 +342,19 @@ void CGenericSabbat_NPC::vfunc434()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1035bfd0 size=0x5
+#include "CTakeDamageInfo.h"
+#include "CGenericSabbat_NPC.h"
+#include "CAI_BaseNPC.h"
+
+// TARGET: CGenericSabbat_NPC::vfunc390
+// the game's 0x1035bfd0: a tail call (jmp) of CAI_BaseNPC::vfunc390
+int CGenericSabbat_NPC::vfunc390(CTakeDamageInfo *a0)
+{
+	return CAI_BaseNPC::vfunc390(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1035c010 size=0x1a
 #include "CGenericSabbat_NPC.h"
 
