@@ -5,5 +5,8 @@
 #include "CRelieableBroadcastRecipientFilter.h"
 
 // TARGET: ??_GCRelieableBroadcastRecipientFilter@@UAEPAXI@Z
-CRelieableBroadcastRecipientFilter::CRelieableBroadcastRecipientFilter() {}
+CRelieableBroadcastRecipientFilter *CRelieableBroadcastRecipientFilter_Emit()	// the inline constructor emits the
+{	// vtable, and with it this scalar deleting destructor
+	return new CRelieableBroadcastRecipientFilter;
+}
 // END FUNCTION

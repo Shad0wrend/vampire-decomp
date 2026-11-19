@@ -1,12 +1,7 @@
-// CReliableBroadcastFilter: the stack-built CRelieableBroadcastRecipientFilter (vtable 0x10462828, the symbol map
-// names it for both). `CReliableBroadcastFilter filter;` is the CBroadcastRecipientFilter construction (CRecipientFilter
-// constructor call, its vptr, AddAllPlayers), then this vptr and MakeReliable (0x1019cf50, stub 0x1001186f).
+// CReliableBroadcastFilter: the name matched sources use for the stack-built CRelieableBroadcastRecipientFilter
+// (vtable 0x10462828). A typedef, not a class of its own: the filter's vtable and RTTI are the game's class's.
 #pragma once
 
-#include "CBroadcastRecipientFilter.h"
+#include "CRelieableBroadcastRecipientFilter.h"
 
-class CReliableBroadcastFilter : public CBroadcastRecipientFilter
-{
-public:
-	CReliableBroadcastFilter() { MakeReliable(); }
-};
+typedef CRelieableBroadcastRecipientFilter CReliableBroadcastFilter;
