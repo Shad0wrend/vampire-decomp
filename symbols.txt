@@ -10747,6 +10747,7 @@
 0x1000e47b func   ?sub_100b7c40@CUnknown100b7c40@@QAEHXZ CUnknown100b7c40::sub_100b7c40
 0x1000e480 func   ?sub_1002b060@CPhysConstraint@@QAEPAV1@XZ CPhysConstraint::sub_1002b060
 0x1000e485 func   ?vfunc319@CWeaponIThrown@@QAEXXZ CWeaponIThrown::vfunc319
+0x1000e485 func   ?vfunc319@CWeaponIThrown@@UAEXXZ CWeaponIThrown::vfunc319
 0x1000e48a func   ?vfunc5@CWeaponMelee_Katana@@UAEPAVCBaseEntity@@I@Z CWeaponMelee_Katana::vfunc5
 0x1000e48f func   ?sub_1017ec40@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017ec40
 0x1000e494 func   ?vfunc326@CBaseCombatCharacter@@QAE_NHH@Z CBaseCombatCharacter::vfunc326
