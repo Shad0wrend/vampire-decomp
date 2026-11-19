@@ -11746,6 +11746,7 @@
 0x1000f899 func   ?vfunc5@COccultHacking@@QAEPAV1@I@Z COccultHacking::vfunc5
 0x1000f89e func   ?sub_1030b990@@YIPAVVector@@PAUSDelta@@@Z sub_1030b990
 0x1000f8a8 func   ?vfunc5@CBaseCombatWeapon@@UAEPAV1@I@Z CBaseCombatWeapon::vfunc5
+0x1000f8a8 func   ?vfunc5@CBaseCombatWeapon@@UAEPAVCBaseEntity@@I@Z CBaseCombatWeapon::vfunc5
 0x1000f8ad func   ?vfunc5@CNPC_VPlaceholder@@UAEPAVCBaseEntity@@I@Z CNPC_VPlaceholder::vfunc5
 0x1000f8b2 func   ?sub_1024c050@@YIXPAUMem4@@HH@Z sub_1024c050
 0x1000f8b7 func   ?vfunc81@CWeaponRanged_Rifle_Crossbow_Flaming@@UAEHXZ CWeaponRanged_Rifle_Crossbow_Flaming::vfunc81
