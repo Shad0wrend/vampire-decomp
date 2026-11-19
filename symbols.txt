@@ -399,6 +399,7 @@
 0x100017e4 func   ?n1@CBaseNetworkable@@UAEXXZ CBaseNetworkable::n1
 0x100017e4 func   ?sub_100b7780@@YAHXZ sub_100b7780
 0x100017e9 func   _npc_crow npc_crow
+0x100017ee func   ?vfunc1@CTraceFilter@@UAEHXZ CTraceFilter::vfunc1
 0x100017ee func   ?vfunc1@CTraceFilterNoCharacterCollide@@UAEHXZ CTraceFilterNoCharacterCollide::vfunc1
 0x100017f3 func   ?sub_1020e4f0@CUnknown1020e4f0@@QAEXPAUinputdata_t@@@Z CUnknown1020e4f0::sub_1020e4f0
 0x100017f8 func   ?sub_100e1c40@CDialog@@QAEXH@Z CDialog::sub_100e1c40
