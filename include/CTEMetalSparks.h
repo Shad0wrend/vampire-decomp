@@ -5,7 +5,7 @@
 
 class CRecipientFilter;
 
-class CTEMetalSparks : public CBaseTempEntityHead
+class CTEMetalSparks : public CBaseTempEntity
 {
 public:
 #ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
@@ -13,14 +13,14 @@ public:
 #endif
 	CTEMetalSparks(const char *name);	// 0x10059e10
 
-	virtual CTEMetalSparks *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": the origin (raised, then 100 units along the flat direction of the angles) and the direction, created for everybody
 	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "Create" (the stub 0x10004fa7 calls sub_10059fe0)
 
 	void sub_1000e340();	// destructor body
 	void sub_10059fe0(int a, int b);	// "CTEMetalSparks::Create" (called through the stub at 0x10004fa7)
 
-	char m_pad0004[8];
+	char m_pad0008[0xc - 0x8];
 	int m_pos[3];	// 0x000c
 	int m_dir[3];	// 0x0018
 public:

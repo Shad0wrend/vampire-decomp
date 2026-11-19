@@ -5,7 +5,7 @@
 #include "CTEDust.h"
 
 // TARGET: CTEDust::CTEDust
-CTEDust::CTEDust(const char *name) : CBaseTempEntityHead(name), m_n000c(0), m_n0010(0), m_n0014(0)
+CTEDust::CTEDust(const char *name) : CBaseTempEntity(name), m_n000c(0), m_n0010(0), m_n0014(0)
 {
 	m_fl0018 = 1.0f;
 	m_fl001c = 1.0f;
@@ -15,7 +15,7 @@ CTEDust::CTEDust(const char *name) : CBaseTempEntityHead(name), m_n000c(0), m_n0
 
 // FUNCTION: 0x10114030 size=0x3
 #include "CTEDust.h"
-void CTEDust::vfunc3(int a0, int a1)
+void CTEDust::vfunc3(const Vector &a0, const QAngle &a1)
 {
 }
 // END FUNCTION
@@ -24,7 +24,7 @@ void CTEDust::vfunc3(int a0, int a1)
 #include "CTEDust.h"
 
 // TARGET: CTEDust::vfunc2
-CTEDust *CTEDust::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEDust::vfunc2(unsigned int flags)
 {
 	sub_100058d5();
 	if (flags & 1)

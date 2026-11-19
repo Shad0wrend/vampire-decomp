@@ -3,17 +3,17 @@
 #pragma once
 #include "CBaseTempEntity.h"
 
-class CTEDust : public CBaseTempEntityHead
+class CTEDust : public CBaseTempEntity
 {
 public:
 #ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
 	~CTEDust();	// function 0x10114080: the vtable, then the base's destructor body
 #endif
 	CTEDust(const char *name);
-	CTEDust *vfunc2(unsigned int flags);
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);
 	void sub_100058d5();
 
-	char m_pad0004[8];
+	char m_pad0008[0xc - 0x8];
 	int m_n000c;
 	int m_n0010;
 	int m_n0014;
@@ -26,6 +26,5 @@ public:
 public:
     virtual int vfunc1();
 public:
-	virtual void vfunc2_slot();
-	virtual void vfunc3(int, int);
+	virtual void vfunc3(const Vector &origin, const QAngle &angles);
 };

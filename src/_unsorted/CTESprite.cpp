@@ -5,7 +5,7 @@
 #include "CTESprite.h"
 
 // TARGET: CTESprite::CTESprite
-CTESprite::CTESprite(const char *name) : CBaseTempEntityHead(name)
+CTESprite::CTESprite(const char *name) : CBaseTempEntity(name)
 {
     m_c[0] = 0;
     m_c[1] = 0;
@@ -25,7 +25,7 @@ CTESprite::CTESprite(const char *name) : CBaseTempEntityHead(name)
 #include "CTESprite.h"
 
 // TARGET: CTESprite::vfunc2
-CTESprite *CTESprite::vfunc2(unsigned int flags)
+CBaseTempEntity *CTESprite::vfunc2(unsigned int flags)
 {
 	sub_10013ee4();
 	if (flags & 1)
@@ -77,7 +77,7 @@ void CTESprite::vfunc3(const Vector &origin, const QAngle &angles)
 	sub_10139500(Origin(), 50.0f, forward, Origin());
 	sub_10139500(Origin(), -25.0f, right, Origin());
 	CBroadcastRecipientFilter filter;
-	vfunc4((int)&filter, 0);
+	vfunc4(filter, 0);
 }
 // END FUNCTION
 
@@ -87,9 +87,13 @@ void CTESprite::vfunc3(const Vector &origin, const QAngle &angles)
 #include "IVEngineServerFull.h"
 
 
-void CTESprite::vfunc4(int a, int b)
+void CTESprite::vfunc4(CRecipientFilter &a, float b)
 {
+#define a ((int)&a)
+#define b (*(int *)&b)
 	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+#undef b
+#undef a
 }
 // END FUNCTION
 

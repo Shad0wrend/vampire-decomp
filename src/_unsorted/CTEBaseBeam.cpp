@@ -4,7 +4,7 @@
 // FUNCTION: 0x1005a710 size=0x45
 #include "CTEBaseBeam.h"
 // TARGET: CTEBaseBeam::CTEBaseBeam
-CTEBaseBeam::CTEBaseBeam(const char *name) : CBaseTempEntityHead(name)
+CTEBaseBeam::CTEBaseBeam(const char *name) : CBaseTempEntity(name)
 {
 	m_n0c = 0;
 	m_n10 = 0;
@@ -27,7 +27,7 @@ CTEBaseBeam::CTEBaseBeam(const char *name) : CBaseTempEntityHead(name)
 #include "CTEBaseBeam.h"
 
 // TARGET: CTEBaseBeam::vfunc2
-CTEBaseBeam *CTEBaseBeam::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEBaseBeam::vfunc2(unsigned int flags)
 {
 	sub_1000d08f();
 	if (flags & 1)

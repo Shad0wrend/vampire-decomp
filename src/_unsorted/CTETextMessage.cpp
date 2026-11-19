@@ -4,7 +4,7 @@
 // FUNCTION: 0x10068b50 size=0x57
 #include <string.h>
 #include "CTETextMessage.h"
-CTETextMessage::CTETextMessage(const char *name) : CBaseTempEntityHead(name)
+CTETextMessage::CTETextMessage(const char *name) : CBaseTempEntity(name)
 {
 	m_n0c = 0;
 	m_f10 = 0;
@@ -30,7 +30,7 @@ CTETextMessage::CTETextMessage(const char *name) : CBaseTempEntityHead(name)
 #include "CTETextMessage.h"
 
 // TARGET: CTETextMessage::vfunc2
-CTETextMessage *CTETextMessage::vfunc2(unsigned int flags)
+CBaseTempEntity *CTETextMessage::vfunc2(unsigned int flags)
 {
 	sub_10010e15();
 	if (flags & 1)
@@ -45,7 +45,7 @@ CTETextMessage *CTETextMessage::vfunc2(unsigned int flags)
 
 extern "C" __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
 
-void CTETextMessage::vfunc3(const float *pOrigin, const float *pAngles)
+void CTETextMessage::vfunc3(const Vector &pOrigin, const QAngle &pAngles)
 {
     m_n0c = 0;
     m_f10 = 0.2f;
@@ -65,7 +65,7 @@ void CTETextMessage::vfunc3(const float *pOrigin, const float *pAngles)
     m_f48 = 2.0f;
     Q_strncpy(m_szText, "Testing CTETextMessage", 0x80);
     CBroadcastRecipientFilter filter;
-    vfunc4(&filter, 0);
+    vfunc4(filter, 0);
 }
 // END FUNCTION
 
@@ -74,9 +74,11 @@ void CTETextMessage::vfunc3(const float *pOrigin, const float *pAngles)
 #include "CTETextMessage.h"
 #include "IVEngineServerFull.h"
 
-void CTETextMessage::vfunc4(CRecipientFilter *pFilter, float flDelay)
+void CTETextMessage::vfunc4(CRecipientFilter &pFilter, float flDelay)
 {
+#define pFilter ((CRecipientFilter *)&pFilter)
 	engine->vfunc103((int)pFilter, *(int *)&flDelay, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+#undef pFilter
 }
 // END FUNCTION
 

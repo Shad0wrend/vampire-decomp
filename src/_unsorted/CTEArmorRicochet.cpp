@@ -24,11 +24,11 @@ int CTEArmorRicochet::vfunc1()
 #include "CTEArmorRicochet.h"
 
 // TARGET: CTEArmorRicochet::vfunc2
-CTEMetalSparks *CTEArmorRicochet::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEArmorRicochet::vfunc2(unsigned int flags)
 {
 	sub_1000e340();
 	if (flags & 1)
 		operator delete(this);
-	return this;
+	return (CBaseTempEntity *)(this);
 }
 // END FUNCTION

@@ -15,12 +15,12 @@ CTEBeamEnts::CTEBeamEnts(const char *name) : CTEBaseBeam(name)
 #include "CTEBeamEnts.h"
 
 // TARGET: CTEBeamEnts::vfunc2
-CTEBaseBeam *CTEBeamEnts::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEBeamEnts::vfunc2(unsigned int flags)
 {
 	sub_1000dcfb();
 	if (flags & 1)
 		operator delete(this);
-	return this;
+	return (CBaseTempEntity *)(this);
 }
 // END FUNCTION
 
@@ -30,7 +30,7 @@ CTEBaseBeam *CTEBeamEnts::vfunc2(unsigned int flags)
 
 extern short g_1088ae52;
 
-void CTEBeamEnts::vfunc3(const float *pOrigin, const float *pAngles)
+void CTEBeamEnts::vfunc3(const Vector &pOrigin, const QAngle &pAngles)
 {
     m_n44 = 1;
     m_n48 = 0;
@@ -46,7 +46,7 @@ void CTEBeamEnts::vfunc3(const float *pOrigin, const float *pAngles)
     m_n40 = 1;
     m_n3c = 150;
     CBroadcastRecipientFilter filter;
-    vfunc4(&filter, 0);
+    vfunc4(filter, 0);
 }
 // END FUNCTION
 
@@ -56,9 +56,11 @@ void CTEBeamEnts::vfunc3(const float *pOrigin, const float *pAngles)
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"
 
-void CTEBeamEnts::vfunc4(CRecipientFilter *pFilter, float flDelay)
+void CTEBeamEnts::vfunc4(CRecipientFilter &pFilter, float flDelay)
 {
+#define pFilter ((CRecipientFilter *)&pFilter)
 	engine->vfunc103((int)pFilter, *(int *)&flDelay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+#undef pFilter
 }
 // END FUNCTION
 

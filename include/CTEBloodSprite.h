@@ -5,7 +5,7 @@
 
 class CRecipientFilter;
 
-class CTEBloodSprite : public CBaseTempEntityHead
+class CTEBloodSprite : public CBaseTempEntity
 {
 public:
 #ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
@@ -13,13 +13,13 @@ public:
 #endif
 	CTEBloodSprite(const char *name);	// 0x1005d8f0
 
-	virtual CTEBloodSprite *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": a blood sprite at the origin (raised by 24, then 50 units along the flat direction of the angles), created for everybody
-	virtual void vfunc4(int a, int b);	// "Create" (filter pointer, delay bits), as in CTEMetalSparks (transplant)
+	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "Create" (filter pointer, delay bits), as in CTEMetalSparks (transplant)
 
 	void sub_1000d4b8();	// destructor body
 
-	char m_pad0004[8];
+	char m_pad0008[0xc - 0x8];
 	int m_c[3];	// 0x000c: the origin
 	char m_pad0018[12];
 	int m_24[7];	// 0x0024

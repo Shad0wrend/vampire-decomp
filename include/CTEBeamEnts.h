@@ -13,9 +13,9 @@ public:
 #endif
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();
-	virtual CTEBaseBeam *vfunc2(unsigned int flags);	// scalar deleting destructor
-	virtual void vfunc3(const float *pOrigin, const float *pAngles);	// "Test": sets up default beam values, then sends it to everybody through slot 4
-	virtual void vfunc4(CRecipientFilter *pFilter, float flDelay);	// sends the message
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": sets up default beam values, then sends it to everybody through slot 4
+	virtual void vfunc4(CRecipientFilter &filter, float delay);	// sends the message
 
 	void sub_1000dcfb();	// destructor body
 	CTEBeamEnts(const char *name);	// 0x1005b360: the CTEBaseBeam constructor, then the vtable, then +0x44 / +0x48 cleared

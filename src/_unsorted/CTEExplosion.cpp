@@ -5,7 +5,7 @@
 #include "CTEExplosion.h"
 
 // TARGET: CTEExplosion::CTEExplosion
-CTEExplosion::CTEExplosion(const char *pName) : CTEParticleSystemHead(pName)
+CTEExplosion::CTEExplosion(const char *pName) : CTEParticleSystem(pName)
 {
 	m_nField18 = 0;
 	m_nField1c = 0;
@@ -22,7 +22,7 @@ CTEExplosion::CTEExplosion(const char *pName) : CTEParticleSystemHead(pName)
 #include "CTEExplosion.h"
 
 // TARGET: CTEExplosion::vfunc2
-CTEExplosion *CTEExplosion::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEExplosion::vfunc2(unsigned int flags)
 {
 	sub_1000e90d();
 	if (flags & 1)
@@ -49,8 +49,10 @@ struct CTEExplosionSlots
 };
 
 // TARGET: CTEExplosion::vfunc3
-void CTEExplosion::vfunc3(const Vector *pOrigin, const Vector *pAngles)
+void CTEExplosion::vfunc3(const Vector &pOrigin, const QAngle &pAngles)
 {
+#define pOrigin ((const Vector *)&pOrigin)
+#define pAngles ((const Vector *)&pAngles)
 	m_nField18 = g_1088ae7c;
 	m_nField1c = 0x3f000000;
 	m_nField20 = 0xf;
@@ -64,6 +66,8 @@ void CTEExplosion::vfunc3(const Vector *pOrigin, const Vector *pAngles)
 	sub_10139500(&m_vecOrigin, 50.0f, &vecForward, &m_vecOrigin);
 	CBroadcastRecipientFilter filter;
 	((CTEExplosionSlots *)this)->v4(&filter, 0.0f);
+#undef pAngles
+#undef pOrigin
 }
 // END FUNCTION
 

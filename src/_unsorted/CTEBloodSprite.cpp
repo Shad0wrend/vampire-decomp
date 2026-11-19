@@ -4,7 +4,7 @@
 // FUNCTION: 0x1005d8f0 size=0x39
 #include "CBaseTempEntity.h"
 #include "CTEBloodSprite.h"
-CTEBloodSprite::CTEBloodSprite(const char *name) : CBaseTempEntityHead(name)
+CTEBloodSprite::CTEBloodSprite(const char *name) : CBaseTempEntity(name)
 {
 	m_c[0] = 0; m_c[1] = 0; m_c[2] = 0;
 	m_24[0] = 0; m_24[1] = 0; m_24[2] = 0; m_24[3] = 0; m_24[4] = 0; m_24[5] = 0; m_24[6] = 0;
@@ -15,7 +15,7 @@ CTEBloodSprite::CTEBloodSprite(const char *name) : CBaseTempEntityHead(name)
 #include "CTEBloodSprite.h"
 
 // TARGET: CTEBloodSprite::vfunc2
-CTEBloodSprite *CTEBloodSprite::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEBloodSprite::vfunc2(unsigned int flags)
 {
 	sub_1000d4b8();
 	if (flags & 1)
@@ -51,7 +51,7 @@ void CTEBloodSprite::vfunc3(const Vector &origin, const QAngle &angles)
 	VectorNormalize(forward);
 	sub_10139500(Origin(), 50.0f, forward, Origin());
 	CBroadcastRecipientFilter filter;
-	vfunc4((int)&filter, 0);
+	vfunc4(filter, 0);
 }
 // END FUNCTION
 
@@ -60,9 +60,13 @@ void CTEBloodSprite::vfunc3(const Vector &origin, const QAngle &angles)
 #include "IVEngineServerFull.h"
 
 
-void CTEBloodSprite::vfunc4(int a, int b)
+void CTEBloodSprite::vfunc4(CRecipientFilter &a, float b)
 {
+#define a ((int)&a)
+#define b (*(int *)&b)
 	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+#undef b
+#undef a
 }
 // END FUNCTION
 

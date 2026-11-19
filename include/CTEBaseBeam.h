@@ -1,19 +1,21 @@
-// CTEBaseBeam: base beam temp entity (CBaseTempEntity head at +0x0).
+// CTEBaseBeam: base beam temp entity, derived from CBaseTempEntity (RTTI); slots 3 and 4 are pure in the game.
 #pragma once
 
 #include "CBaseTempEntity.h"
 
-class CTEBaseBeam : public CBaseTempEntityHead
+class CTEBaseBeam : public CBaseTempEntity
 {
 public:
 	CTEBaseBeam(const char *name);	// 0x1005a710: base constructor, vtable, fields 0x0c..0x40 cleared
 	virtual ServerClass *vfunc0();
 	virtual int vfunc1();
-	virtual CTEBaseBeam *vfunc2(unsigned int flags);	// scalar deleting destructor: VC6 has no covariant returns, so every derived beam returns this type
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3(const Vector &origin, const QAngle &angles) = 0;	// __purecall in the game's vtable
+	virtual void vfunc4(CRecipientFilter &filter, float delay) = 0;	// __purecall in the game's vtable
 
 	void sub_1000d08f();	// destructor body
 
-	char m_pad0004[8];
+	char m_pad0008[0xc - 0x8];
 	// 0x0c..0x40: the beam fields every derived beam fills. Each offset carries its placeholder names and the
 	// Source name (dlls/te_basebeam.h) the derived beams use; the constructor clears them all.
 	union { int m_n0c; int m_nModelIndex; };	// 0x0c

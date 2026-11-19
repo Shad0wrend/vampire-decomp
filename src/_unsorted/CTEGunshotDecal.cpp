@@ -3,7 +3,7 @@
 
 // FUNCTION: 0x10064010 size=0x48
 #include "CTEGunshotDecal.h"
-CTEGunshotDecal::CTEGunshotDecal(const char *name) : CBaseTempEntityHead(name)
+CTEGunshotDecal::CTEGunshotDecal(const char *name) : CBaseTempEntity(name)
 {
     m_vecOrigin.x = 0;
     m_vecOrigin.y = 0;
@@ -24,7 +24,7 @@ CTEGunshotDecal::CTEGunshotDecal(const char *name) : CBaseTempEntityHead(name)
 #include "CTEGunshotDecal.h"
 
 // TARGET: CTEGunshotDecal::vfunc2
-CTEGunshotDecal *CTEGunshotDecal::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEGunshotDecal::vfunc2(unsigned int flags)
 {
 	sub_1001520d();
 	if (flags & 1)

@@ -13,12 +13,12 @@ CTEExplosiveGunshotDecal::CTEExplosiveGunshotDecal(const char *name) : CTEGunsho
 #include "CTEExplosiveGunshotDecal.h"
 
 // TARGET: CTEExplosiveGunshotDecal::vfunc2
-CTEGunshotDecal *CTEExplosiveGunshotDecal::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEExplosiveGunshotDecal::vfunc2(unsigned int flags)
 {
 	sub_10010f0a();
 	if (flags & 1)
 		operator delete(this);
-	return this;
+	return (CBaseTempEntity *)(this);
 }
 // END FUNCTION
 

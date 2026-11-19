@@ -15,12 +15,12 @@ CTEBeamLaser::CTEBeamLaser(const char *name) : CTEBaseBeam(name)
 #include "CTEBeamLaser.h"
 
 // TARGET: CTEBeamLaser::vfunc2
-CTEBaseBeam *CTEBeamLaser::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEBeamLaser::vfunc2(unsigned int flags)
 {
 	sub_100051c8();
 	if (flags & 1)
 		operator delete(this);
-	return this;
+	return (CBaseTempEntity *)(this);
 }
 // END FUNCTION
 
@@ -30,7 +30,7 @@ CTEBaseBeam *CTEBeamLaser::vfunc2(unsigned int flags)
 
 extern short g_1088ae52;
 
-void CTEBeamLaser::vfunc3(int a, int b)
+void CTEBeamLaser::vfunc3(const Vector &a, const QAngle &b)
 {
 	m_n44 = 1;
 	m_n48 = 0;
@@ -46,7 +46,7 @@ void CTEBeamLaser::vfunc3(int a, int b)
 	m_n3c = 0x96;
 	m_n40 = 1;
 	CBroadcastRecipientFilter filter;
-	vfunc4((int)&filter, 0);
+	vfunc4(filter, 0);
 }
 // END FUNCTION
 
@@ -55,9 +55,13 @@ void CTEBeamLaser::vfunc3(int a, int b)
 #include "IVEngineServerFull.h"
 
 
-void CTEBeamLaser::vfunc4(int a, int b)
+void CTEBeamLaser::vfunc4(CRecipientFilter &a, float b)
 {
+#define a ((int)&a)
+#define b (*(int *)&b)
 	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+#undef b
+#undef a
 }
 // END FUNCTION
 

@@ -6,7 +6,7 @@
 #include "CBaseTempEntity.h"
 #include "CTEParticleSystem.h"
 
-class CTEExplosion : public CTEParticleSystemHead
+class CTEExplosion : public CTEParticleSystem
 {
 public:
 #ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
@@ -15,8 +15,8 @@ public:
 	CTEExplosion(const char *pName);	// 0x10061820
 	virtual ServerClass *vfunc0();
 	virtual int vfunc1();
-	virtual CTEExplosion *vfunc2(unsigned int flags);	// scalar deleting destructor
-	virtual void vfunc3(const Vector *pOrigin, const Vector *pAngles);	// slot 3 "Test": the fireball model, scale 0.5, frame rate 15, no flags; the position is the origin raised by a constant and moved 50 units forward (flattened direction); then the effect is created for every player (slot 4)
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// slot 3 "Test": the fireball model, scale 0.5, frame rate 15, no flags; the position is the origin raised by a constant and moved 50 units forward (flattened direction); then the effect is created for every player (slot 4)
 
 	int m_nField18;	// 0x18
 	int m_nField1c;	// 0x1c

@@ -4,7 +4,7 @@
 // FUNCTION: 0x10065980 size=0x20
 #include "CTEKillPlayerAttachments.h"
 
-CTEKillPlayerAttachments::CTEKillPlayerAttachments(const char *name) : CBaseTempEntityHead(name)
+CTEKillPlayerAttachments::CTEKillPlayerAttachments(const char *name) : CBaseTempEntity(name)
 {
 	m_nField0c = 0;
 }
@@ -14,7 +14,7 @@ CTEKillPlayerAttachments::CTEKillPlayerAttachments(const char *name) : CBaseTemp
 #include "CTEKillPlayerAttachments.h"
 
 // TARGET: CTEKillPlayerAttachments::vfunc2
-CTEKillPlayerAttachments *CTEKillPlayerAttachments::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEKillPlayerAttachments::vfunc2(unsigned int flags)
 {
 	sub_1000afb0();
 	if (flags & 1)
@@ -40,7 +40,7 @@ struct CBroadcastFilterTmp
 };
 
 // TARGET: CTEKillPlayerAttachments::vfunc3
-void CTEKillPlayerAttachments::vfunc3(const float *pos, const float *ang)
+void CTEKillPlayerAttachments::vfunc3(const Vector &pos, const QAngle &ang)
 {
 	char buf[sizeof(CBroadcastFilterTmp)];
 	CBroadcastFilterTmp *pFilter = (CBroadcastFilterTmp *)buf;
@@ -48,7 +48,7 @@ void CTEKillPlayerAttachments::vfunc3(const float *pos, const float *ang)
 	sub_100035d5(pFilter);
 	pFilter->m_pVtbl = vt_1044ba34;
 	sub_1000d9f9(pFilter);
-	vfunc4(pFilter, 0);
+	vfunc4(*(CRecipientFilter *)pFilter, 0);
 	pFilter->m_vec.~CRestoreVec();
 }
 // END FUNCTION
@@ -58,9 +58,13 @@ void CTEKillPlayerAttachments::vfunc3(const float *pos, const float *ang)
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"
 
-void CTEKillPlayerAttachments::vfunc4(void *pFilter, int delay)
+void CTEKillPlayerAttachments::vfunc4(CRecipientFilter &pFilter, float delay)
 {
+#define pFilter ((void *)&pFilter)
+#define delay (*(int *)&delay)
 	engine->vfunc103((int)pFilter, delay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+#undef delay
+#undef pFilter
 }
 // END FUNCTION
 

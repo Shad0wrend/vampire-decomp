@@ -13,7 +13,7 @@ public:
 	CTEExplosiveGunshotDecal(const char *name);	// 0x10064a40: the CTEGunshotDecal constructor, then the vtable
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();
-	virtual CTEGunshotDecal *vfunc2(unsigned int flags);	// scalar deleting destructor: the base's type (VC6 has no covariant returns)
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor: the base's type (VC6 has no covariant returns)
 	virtual void vfunc4(CRecipientFilter &filter, float delay);	// slot 4 "Create" (stub 0x10004197); slot 3 is the base's
 	void vfunc4(void *pFilter, int delay);	// the same slot 4 function, called directly (stub 0x10004197)
 	virtual void vfunc5();

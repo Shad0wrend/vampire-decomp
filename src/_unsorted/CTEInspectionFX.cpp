@@ -4,7 +4,7 @@
 // FUNCTION: 0x10065460 size=0x24
 #include "CTEInspectionFX.h"
 
-CTEInspectionFX::CTEInspectionFX(const char *name) : CTEParticleSystemHead(name)
+CTEInspectionFX::CTEInspectionFX(const char *name) : CTEParticleSystem(name)
 {
 }
 // END FUNCTION
@@ -13,7 +13,7 @@ CTEInspectionFX::CTEInspectionFX(const char *name) : CTEParticleSystemHead(name)
 #include "CTEInspectionFX.h"
 
 // TARGET: CTEInspectionFX::vfunc2
-CTEInspectionFX *CTEInspectionFX::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEInspectionFX::vfunc2(unsigned int flags)
 {
 	sub_100043d6();
 	if (flags & 1)
@@ -29,8 +29,10 @@ CTEInspectionFX *CTEInspectionFX::vfunc2(unsigned int flags)
 void sub_10139610(const float *pAngles, float *pForward, float *pRight, float *pUp);
 void sub_10139500(const float *pStart, float flScale, const float *pDirection, float *pDest);
 
-void CTEInspectionFX::vfunc3(const float *pOrigin, const float *pAngles)
+void CTEInspectionFX::vfunc3(const Vector &pOrigin, const QAngle &pAngles)
 {
+#define pOrigin ((const float *)&pOrigin)
+#define pAngles ((const float *)&pAngles)
 	m_vecOrigin = *(const Vector *)pOrigin;
 	m_vecOrigin.z += 24.0f;
 	Vector vecForward;
@@ -39,7 +41,9 @@ void CTEInspectionFX::vfunc3(const float *pOrigin, const float *pAngles)
 	VectorNormalize(vecForward);
 	sub_10139500(&m_vecOrigin.x, 100.0f, &vecForward.x, &m_vecOrigin.x);
 	CBroadcastRecipientFilter filter;
-	vfunc4(&filter, 0);
+	vfunc4(filter, 0);
+#undef pAngles
+#undef pOrigin
 }
 // END FUNCTION
 
@@ -49,9 +53,11 @@ void CTEInspectionFX::vfunc3(const float *pOrigin, const float *pAngles)
 #include "CTEMetalSparks.h"
 #include "IVEngineServerFull.h"
 
-void CTEInspectionFX::vfunc4(CRecipientFilter *pFilter, float flDelay)
+void CTEInspectionFX::vfunc4(CRecipientFilter &pFilter, float flDelay)
 {
+#define pFilter ((CRecipientFilter *)&pFilter)
 	engine->vfunc103((int)pFilter, *(int *)&flDelay, this, ((CTEMetalSparks *)this)->vfunc0()->m_pTable, ((CTEMetalSparks *)this)->vfunc0()->m_ClassID);
+#undef pFilter
 }
 // END FUNCTION
 

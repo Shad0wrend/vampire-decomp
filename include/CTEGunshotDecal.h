@@ -4,7 +4,7 @@
 #include "Vector.h"
 #include "CBaseTempEntity.h"
 
-class CTEGunshotDecal : public CBaseTempEntityHead
+class CTEGunshotDecal : public CBaseTempEntity
 {
 public:
 #ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
@@ -12,7 +12,7 @@ public:
 #endif
 	virtual ServerClass * vfunc0();
 	virtual int vfunc1();
-	virtual CTEGunshotDecal *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);
 	virtual void vfunc4(CRecipientFilter &filter, float delay);
 	void vfunc4(int a, int b);	// slot 4 (jump stub 0x100022de): called directly on the global object
@@ -21,7 +21,7 @@ public:
 
 	void sub_1001520d();	// destructor body
 
-	char m_pad0004[8];
+	char m_pad0008[0xc - 0x8];
 	Vector m_vecOrigin;	// 0x0c
 	Vector m_vecStart;	// 0x18
 	int m_f24;

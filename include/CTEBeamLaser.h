@@ -13,9 +13,9 @@ public:
 	CTEBeamLaser(const char *name);	// 0x1005b940: base CTEBaseBeam constructor call, vtable, +0x44/+0x48 cleared
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();
-	virtual CTEBaseBeam *vfunc2(unsigned int flags);	// scalar deleting destructor
-	virtual void vfunc3(int a, int b);	// "CTEBeamLaser::Test": fills the fields with test values and fires it to a broadcast recipient filter (the two stack arguments are unused)
-	virtual void vfunc4(int pFilter, int delay);	// "CTEBeamLaser::Create": fires the temp entity with the fields below to the recipient filter
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "CTEBeamLaser::Test": fills the fields with test values and fires it to a broadcast recipient filter (the two stack arguments are unused)
+	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "CTEBeamLaser::Create": fires the temp entity with the fields below to the recipient filter
 
 	void sub_100051c8();	// destructor body
 

@@ -4,7 +4,7 @@
 // FUNCTION: 0x1005e660 size=0x45
 #include "CTEBreakModel.h"
 // TARGET: CTEBreakModel::CTEBreakModel
-CTEBreakModel::CTEBreakModel(const char *name) : CBaseTempEntityHead(name)
+CTEBreakModel::CTEBreakModel(const char *name) : CBaseTempEntity(name)
 {
 	m_vecOrigin[0] = 0;
 	m_vecOrigin[1] = 0;
@@ -27,7 +27,7 @@ CTEBreakModel::CTEBreakModel(const char *name) : CBaseTempEntityHead(name)
 #include "CTEBreakModel.h"
 
 // TARGET: CTEBreakModel::vfunc2
-CTEBreakModel *CTEBreakModel::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEBreakModel::vfunc2(unsigned int flags)
 {
 	sub_1000f53d();
 	if (flags & 1)
@@ -77,7 +77,7 @@ void CTEBreakModel::vfunc3(const Vector &origin, const QAngle &angles)
 	sub_10005ab5(Origin(), 50.0f, forward, Origin());
 	sub_10005ab5(Origin(), 25.0f, right, Origin());
 	CBroadcastRecipientFilter filter;
-	slot4(&filter, 0);
+	vfunc4(filter, 0);
 }
 // END FUNCTION
 

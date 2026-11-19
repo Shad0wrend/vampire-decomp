@@ -1,22 +1,19 @@
-// CTEParticleSystem: the part of the game's CTEParticleSystem (between CBaseTempEntity and the particle temp
-// entities: CTEExplosion, CTESparks, CTEInspectionFX) that they share: the origin, zeroed by its inline
-// constructor, so the derived vptr store comes after the zeros. No slot 2: VC6 has no covariant returns.
+// CTEParticleSystem: the game's class between CBaseTempEntity and the particle temp entities (CTEExplosion,
+// CTESparks, CTEInspectionFX; RTTI): the origin, zeroed by its inline constructor, so the derived vptr store comes
+// after the zeros. It declares no slot of its own (no vtable of it is known in the game).
 #pragma once
 
 #include "Vector.h"
 #include "CBaseTempEntity.h"
 
-class CTEParticleSystemHead : public CBaseTempEntityHead
+class CTEParticleSystem : public CBaseTempEntity
 {
 public:
-	CTEParticleSystemHead(const char *pName) : CBaseTempEntityHead(pName)
+	CTEParticleSystem(const char *pName) : CBaseTempEntity(pName)
 	{
 		m_vecOrigin.Init();
 	}
 
-	virtual ServerClass *vfunc0();
-	virtual int vfunc1();
-
-	char m_pad0004[8];
+	char m_pad0008[0xc - 0x8];
 	Vector m_vecOrigin;	// 0x0c
 };

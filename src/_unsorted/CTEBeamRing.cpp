@@ -15,12 +15,12 @@ CTEBeamRing::CTEBeamRing(const char *name) : CTEBaseBeam(name)
 #include "CTEBeamRing.h"
 
 // TARGET: CTEBeamRing::vfunc2
-CTEBaseBeam *CTEBeamRing::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEBeamRing::vfunc2(unsigned int flags)
 {
 	sub_10002667();
 	if (flags & 1)
 		operator delete(this);
-	return this;
+	return (CBaseTempEntity *)(this);
 }
 // END FUNCTION
 
@@ -29,7 +29,7 @@ CTEBaseBeam *CTEBeamRing::vfunc2(unsigned int flags)
 #include "CBroadcastRecipientFilter.h"
 extern short g_1088ae52;
 
-void CTEBeamRing::vfunc3(int a, int b)
+void CTEBeamRing::vfunc3(const Vector &a, const QAngle &b)
 {
 	m_nStartEnt = 1;
 	m_nEndEnt = 0;
@@ -45,7 +45,7 @@ void CTEBeamRing::vfunc3(int a, int b)
 	m_nA = 127;
 	m_nSpeed = 5;
 	CBroadcastRecipientFilter filter;
-	vfunc4((int)&filter, 0);
+	vfunc4(filter, 0);
 }
 // END FUNCTION
 
@@ -54,9 +54,13 @@ void CTEBeamRing::vfunc3(int a, int b)
 #include "IVEngineServerFull.h"
 
 
-void CTEBeamRing::vfunc4(int a, int b)
+void CTEBeamRing::vfunc4(CRecipientFilter &a, float b)
 {
+#define a ((int)&a)
+#define b (*(int *)&b)
 	engine->vfunc103(a, b, this, vfunc0()->m_pTable, vfunc0()->m_ClassID);
+#undef b
+#undef a
 }
 // END FUNCTION
 

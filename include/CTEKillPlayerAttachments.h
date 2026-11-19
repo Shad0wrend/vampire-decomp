@@ -4,7 +4,7 @@
 
 #include "CBaseTempEntity.h"
 
-class CTEKillPlayerAttachments : public CBaseTempEntityHead
+class CTEKillPlayerAttachments : public CBaseTempEntity
 {
 public:
 #ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
@@ -13,12 +13,12 @@ public:
 	CTEKillPlayerAttachments(const char *name);  // 0x10065980
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();
-	virtual CTEKillPlayerAttachments *vfunc2(unsigned int flags);  // scalar deleting destructor
-	virtual void vfunc3(const float *pos, const float *ang);  // "Test": broadcasts the effect to every client (sets the flag at +0xc, then slot 4)
-	virtual void vfunc4(void *pFilter, int delay);  // "Create": sends the effect to the recipients of pFilter
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);  // scalar deleting destructor
+	virtual void vfunc3(const Vector &origin, const QAngle &angles);  // "Test": broadcasts the effect to every client (sets the flag at +0xc, then slot 4)
+	virtual void vfunc4(CRecipientFilter &filter, float delay);  // "Create": sends the effect to the recipients of pFilter
 
 	void sub_1000afb0();  // destructor body
 
-	int m_pad0004[2];
+	int m_pad0008[1];
 	int m_nField0c;  // 0x0c
 };

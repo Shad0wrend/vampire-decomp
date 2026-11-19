@@ -5,7 +5,7 @@
 
 class CRecipientFilter;
 
-class CTETextMessage : public CBaseTempEntityHead
+class CTETextMessage : public CBaseTempEntity
 {
 public:
 #ifdef PCD_INITIALIZERS	// only the initializer units declare it: elsewhere it moves registers (0x102f9cd0)
@@ -13,14 +13,14 @@ public:
 #endif
 	CTETextMessage(const char *name);	// 0x10068b50
 
-	virtual CTETextMessage *vfunc2(unsigned int flags);	// scalar deleting destructor
-	virtual void vfunc3(const float *pOrigin, const float *pAngles);	// "Test": fills in default message fields and the text "Testing CTETextMessage", then sends it to everybody through slot 4
-	virtual void vfunc4(CRecipientFilter *pFilter, float flDelay);	// sends the message
+	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
+	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "Test": fills in default message fields and the text "Testing CTETextMessage", then sends it to everybody through slot 4
+	virtual void vfunc4(CRecipientFilter &filter, float delay);	// sends the message
 
 	void sub_10010e15();	// destructor body
 	void sub_10068d50(int a, int b);	// slot 4 (stub 0x1000ab6e): sends the message; called directly on the global instance at 0x106c5e80 (message fields at +0xc.., text at +0x4c) with the recipient filter and a second argument
 
-	char m_pad0004[0xc - 4];
+	char m_pad0008[0xc - 0x8];
 	int m_n0c;
 	float m_f10;
 	float m_f14;
