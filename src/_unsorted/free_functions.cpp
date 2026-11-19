@@ -107795,43 +107795,6 @@ void CBasePlayer::sub_1016f2a0(const char *pszFile)
 #include "utlvector.h"
 #include "vampire.h"
 #include <string.h>
-typedef int pcd_dial0;
-typedef int pcd_dial1;
-typedef int pcd_dial2;
-typedef int pcd_dial3;
-typedef int pcd_dial4;
-typedef int pcd_dial5;
-typedef int pcd_dial6;
-typedef int pcd_dial7;
-typedef int pcd_dial8;
-typedef int pcd_dial9;
-typedef int pcd_dial10;
-typedef int pcd_dial11;
-typedef int pcd_dial12;
-typedef int pcd_dial13;
-typedef int pcd_dial14;
-typedef int pcd_dial15;
-typedef int pcd_dial16;
-typedef int pcd_dial17;
-typedef int pcd_dial18;
-typedef int pcd_dial19;
-typedef int pcd_dial20;
-typedef int pcd_dial21;
-typedef int pcd_dial22;
-typedef int pcd_dial23;
-typedef int pcd_dial24;
-typedef int pcd_dial25;
-typedef int pcd_dial26;
-typedef int pcd_dial27;
-typedef int pcd_dial28;
-typedef int pcd_dial29;
-typedef int pcd_dial30;
-typedef int pcd_dial31;
-typedef int pcd_dial32;
-typedef int pcd_dial33;
-typedef int pcd_dial34;
-typedef int pcd_dial35;
-typedef int pcd_dial36;
 
 class ICommandLine
 {
@@ -237707,7 +237670,7 @@ void CAI_MoveProbe::sub_102e5d80(const float *vecStart, const float *vecEnd, uns
 
 		void *pEdict = engine->vfunc38(0);
 		pTrace->m_fields.nHit = (pEdict != 0 && ((EdictView2 *)pEdict)->m_pUnknown != 0)
-			? ((EdictView2 *)pEdict)->m_pUnknown->vfunc4() : 0;
+			? (int)((EdictView2 *)pEdict)->m_pUnknown->vfunc4() : 0;
 
 		pTrace->m_fields.n0 = g_1070d1b0.x;
 		pTrace->m_fields.n1 = g_1070d1b0.y;

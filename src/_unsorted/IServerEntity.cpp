@@ -6,11 +6,11 @@
 
 extern char g_10450a10[];
 
-void *IServerEntity::vfunc5(char flags)
+CBaseEntity *IServerEntity::vfunc5(unsigned int flags)
 {
 	*(void **)this = g_10450a10;
 	if (flags & 1)
 		::operator delete(this);
-	return this;
+	return (CBaseEntity *)(void *)this;
 }
 // END FUNCTION

@@ -4,6 +4,7 @@
 #pragma once
 
 #include "engineserver.h"
+#include "CBaseHandle.h"	// IHandleEntity
 
 // The bit vector handed to vfunc6: its bytes at +0x10.
 struct CBaseNetworkableBits_t
@@ -29,14 +30,12 @@ struct CBaseNetworkableSub14
 	void *sub_10146640();
 };
 
-class IServerUnknown	// RTTI .?AVIServerUnknown@@ (its IHandleEntity base is not modelled: the game's constructor stores no IHandleEntity vptr)
+class IServerUnknown : public IHandleEntity	// RTTI .?AVIServerUnknown@@, 5 slots (0-1 IHandleEntity's)
 {
 public:
-	virtual void vfunc0() = 0;
-	virtual char * vfunc1() = 0;
-	virtual int vfunc2() = 0;
-	virtual void vfunc3() = 0;
-	virtual int vfunc4() = 0;
+	virtual char * vfunc2() = 0;	// slot 2: GetCollideable
+	virtual char * vfunc3() = 0;	// slot 3: GetNetworkable
+	virtual void * vfunc4() = 0;	// slot 4: GetBaseEntity
 };
 
 class IServerNetworkable	// RTTI .?AVIServerNetworkable@@, 15 slots (slot 14, the destructor, is the only one with a body)
@@ -46,7 +45,7 @@ public:
 	virtual void n1() = 0; virtual void n2() = 0; virtual void n3() = 0; virtual void n4() = 0;
 	virtual void n5() = 0; virtual void n6() = 0; virtual void n7() = 0; virtual void n8() = 0; virtual void n9() = 0;
 	virtual void n10() = 0; virtual void n11() = 0; virtual void n12() = 0;
-	virtual int vfunc4() = 0;	// slot 13: GetBaseEntity, IServerUnknown's slot 4 too: CBaseNetworkable's one override fills both (the game's slot 13 is its adjustor thunk 0x100b7e30, sub ecx,4; jmp vfunc4)
+	virtual void * vfunc4() = 0;	// slot 13: GetBaseEntity, IServerUnknown's slot 4 too: CBaseNetworkable's one override fills both (the game's slot 13 is its adjustor thunk 0x100b7e30, sub ecx,4; jmp vfunc4)
 	virtual ~IServerNetworkable() {}	// slot 14: the scalar deleting destructor 0x100b7970 (vftable store, operator delete when bit 0)
 	void *vfunc14(char flags);	// 0x100b7970 under its provisional name (that block writes the destructor out)
 };
@@ -55,11 +54,11 @@ class CBaseNetworkable : public IServerUnknown, public IServerNetworkable
 {
 public:
 	CBaseNetworkable();	// 0x100b7920
-	virtual void vfunc0();
-	virtual char * vfunc1();
-	virtual int vfunc2();
-	virtual void vfunc3();
-	virtual int vfunc4();
+	virtual int vfunc0(int a0);
+	virtual unsigned int * vfunc1();
+	virtual char * vfunc2();
+	virtual char * vfunc3();
+	virtual void * vfunc4();
 	virtual int vfunc5();
 	virtual void vfunc6(CBaseNetworkableBits_t *pBits);	// sets the bit of this edict's index
 	// IServerNetworkable's slots (`this` = the +4 subobject). The bodies are matched under provisional names

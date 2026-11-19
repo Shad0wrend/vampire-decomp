@@ -23,7 +23,7 @@ CBaseNetworkable::CBaseNetworkable()
 
 // FUNCTION: 0x100b79a0 size=0x3
 #include "CBaseNetworkable.h"
-int CBaseNetworkable::vfunc2()
+char * CBaseNetworkable::vfunc2()
 {
     return 0;
 }
@@ -38,7 +38,7 @@ char * __fastcall sub_100b79c0(char *self)
 
 // FUNCTION: 0x100b79e0 size=0x3
 #include "CBaseNetworkable.h"
-int CBaseNetworkable::vfunc4()
+void * CBaseNetworkable::vfunc4()
 {
     return 0;
 }
@@ -53,9 +53,9 @@ void __fastcall sub_100b7bc0(int *self, int, int *src)
 
 // FUNCTION: 0x100b7be0 size=0x4
 #include "CBaseNetworkable.h"
-char * CBaseNetworkable::vfunc1()
+unsigned int * CBaseNetworkable::vfunc1()
 {
-    return (char *)this + 0xc;
+    return (unsigned int *)((char *)this + 0xc);
 }
 // END FUNCTION
 

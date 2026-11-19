@@ -2,11 +2,11 @@
 // Get() and Set() are defined in ehandle.h (they need the entity list); include ehandle.h to use them.
 #pragma once
 
-class IHandleEntity
-{
+class IHandleEntity	// RTTI .?AVIHandleEntity@@: Source's 2003 interface (two slots, no destructor). The game has no vtable
+{	// of its own: VC6 drops its vptr store, which the next class's store overwrites at once
 public:
-	virtual void vfunc0();
-	virtual unsigned int *vfunc1();	// GetRefEHandle: the entity's handle
+	virtual int vfunc0(int a0) = 0;	// slot 0: SetRefEHandle (stores the handle a0 points at)
+	virtual unsigned int *vfunc1() = 0;	// slot 1: GetRefEHandle: the entity's handle
 };
 
 class CBaseHandle

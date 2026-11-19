@@ -3503,7 +3503,7 @@ CBaseEntity *GVPlayer::sub_101690b0()
 	return pVictim;
 }
 }
-#define HGET(x) ((CBaseEntity *)((const CBaseHandle *)(x))->Get())
+#define HGET(x) ((CBaseEntity *)(void *)((const CBaseHandle *)(x))->Get())
 
 #define SCARE (*(CUtlVector<CScareRec> *)((char *)this + 0x1d90))
 

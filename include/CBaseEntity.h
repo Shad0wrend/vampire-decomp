@@ -5,6 +5,7 @@
 // workers do not overwrite each other's edits of this large file.
 #pragma once
 #include "string_t.h"
+#include "IServerEntity.h"	// the base: IServerEntity : IServerUnknown : IHandleEntity
 
 #include "Vector.h"
 
@@ -28,7 +29,7 @@ struct CBaseEntityThinkContext	// 16 byte element of the think context vector at
 	int m_c;
 };
 
-class CBaseEntity
+class CBaseEntity : public IServerEntity
 {
 public:
 	CBaseEntity(char bAddAsDefault);	// "CBaseEntity::CBaseEntity" (0x1009d980, stub 0x100090fc): the entity base constructor; a derived constructor calls it first and stores its vftable afterwards
