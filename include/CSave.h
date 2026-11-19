@@ -9,24 +9,7 @@
 struct typedescription_t;
 struct CSaveEdict;
 
-// the data of CSave after the vtable pointer, built by the game before CSave's own vtable store: the CUtlVector<int>
-// section stack at +4 (without its destructor: the game's code tears it down by hand), the buffer and the entity block
-struct CSaveSections
-{
-	CSaveSections(void *pData)
-		: m_pSections(0), m_nAlloc(0), m_nGrow(0), m_nSections(0), m_pElements(0), m_pData(pData),
-		  m_pEntityBlock(pData ? (char *)pData + 0x18 : 0) {}
-
-	int *m_pSections;	// +0x04
-	int m_nAlloc;	// +0x08
-	int m_nGrow;	// +0x0c
-	int m_nSections;	// +0x10
-	int *m_pElements;	// +0x14
-	void *m_pData;	// +0x18
-	void *m_pEntityBlock;	// +0x1c: block holding the entity table (count at +0x1318, entries at +0x131c)
-};
-
-class CSave : public ISave, public CSaveSections
+class CSave : public ISave
 {
 public:
 	virtual int vfunc0();	// current position
@@ -70,6 +53,16 @@ public:
 	virtual int vfunc38();
 
 	CSave(void *pData);	// stub 0x10009bf6
+
+	// the section stack at +4 (a CUtlVector<int> without its destructor: the game's code tears it down by hand), the
+	// buffer and the entity block; initialised by the constructor's initialiser list, before CSave's vptr store
+	int *m_pSections;	// +0x04
+	int m_nAlloc;	// +0x08
+	int m_nGrow;	// +0x0c
+	int m_nSections;	// +0x10
+	int *m_pElements;	// +0x14
+	void *m_pData;	// +0x18
+	void *m_pEntityBlock;	// +0x1c: block holding the entity table (count at +0x1318, entries at +0x131c)
 
 	int sub_101a0320(int a, int b, struct CSaveDesc *p);	// walks the chain of descriptions (p->m_pParent at +0xc, parents first) and calls slot 3 with the five dwords of each; stub 0x10008d4b
 	int sub_10008d4b(int a, int b, struct CSaveDesc *p);	// the jump stub of sub_101a0320, used by its recursive call

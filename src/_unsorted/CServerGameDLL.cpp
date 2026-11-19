@@ -593,7 +593,7 @@ int CServerGameDLL::vfunc18(void *pSaveData)
 	CVProfScopeX scope("CServerGameDLL::Save", 0, "Unaccounted");
 	CSave save(pSaveData);
 	g_10592db0->Save(&save);
-	((CSaveVecX *)(CSaveSections *)&save)->Destroy();
+	((CSaveVecX *)&save.m_pSections)->Destroy();
 	return 1;
 }
 // END FUNCTION

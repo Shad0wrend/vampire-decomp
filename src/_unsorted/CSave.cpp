@@ -5,7 +5,9 @@
 #include "CSave.h"
 
 // TARGET: ??0CSave@@QAE@PAX@Z
-CSave::CSave(void *pData) : CSaveSections(pData)
+CSave::CSave(void *pData)
+	: m_pSections(0), m_nAlloc(0), m_nGrow(0), m_nSections(0), m_pElements(0), m_pData(pData),
+	  m_pEntityBlock(pData ? (char *)pData + 0x18 : 0)
 {
 	((CUtlVector<int> *)&m_pSections)->EnsureCapacity(0x20);
 }
