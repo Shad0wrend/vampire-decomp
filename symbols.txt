@@ -9514,6 +9514,7 @@
 0x1000cc8e func   ?sub_10070750@CBaseCineCam@@QAEXH@Z CBaseCineCam::sub_10070750
 0x1000cc93 func   ?sub_10161a70@CBasePlayer@@QAEPAXPBD@Z CBasePlayer::sub_10161a70
 0x1000cc98 func   ?vfunc2@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc2
+0x1000cc98 func   ?vfunc2@CDefSaveRestoreOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z CDefSaveRestoreOps::vfunc2
 0x1000cc9d func   ?sub_1025cbf0@CUtlRBTreeBig@@QAEXG@Z CUtlRBTreeBig::sub_1025cbf0
 0x1000cca2 func   ?sub_10247860@CAccum64View@@QAEXPB_J@Z CAccum64View::sub_10247860
 0x1000cca7 func   ?sub_103aa960@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::sub_103aa960
