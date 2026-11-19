@@ -1,13 +1,12 @@
-// CHudCounter: declared by pcdecomp transplant for 0x1012e4c0 from CLogicalEntity (0x1002b100);
-// only what matched code needs, as plain members.
+// CHudCounter (RTTI CHudCounter : CBaseHudEntity, vtable 0x10463f24, 241 slots).
 #pragma once
 
-#include "CBaseEntity.h"
+#include "CBaseHudEntity.h"
 
-class CHudCounter : public CBaseEntity
+class CHudCounter : public CBaseHudEntity
 {
 public:
-	CHudCounter() : CBaseEntity(0) {}
+	CHudCounter() {}
 	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	virtual void vfunc103();	// "CBaseEntity::Spawn"-like override: slot 104, SetSolid(0) with a scope trace, slot 93(0, 0), stores -1 at +0x450, then sub_100b3b00()
@@ -18,7 +17,7 @@ public:
 public:
     virtual int vfunc81();
     virtual int vfunc80();
-	char m_pad03e0[0x454 - 0x3e0];
+	char m_pad0450[0x454 - 0x450];	// +0x450: the edict index vfunc86 compares (vfunc103 sets it to -1)
 	int m_nValue;	// 0x0454
 	float m_flXPos;	// 0x0458
 	float m_flYPos;	// 0x045c
