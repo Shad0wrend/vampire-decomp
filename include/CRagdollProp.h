@@ -1,6 +1,7 @@
 // class CRagdollProp; modelled as a direct CBaseEntity subclass (the real bases are not declared).
 // Slots 134..269 are placeholders that keep the slot number of vfunc270 right.
 #pragma once
+#include "CBaseAnimating.h"
 
 #include "CBaseEntity.h"
 #include "Ray_t.h"
@@ -21,7 +22,7 @@ struct CRagdollPropSlot	// 0x18 byte element of the body array at +0x744
     char m_pad0c[0xc];
 };
 
-class CRagdollProp : public CBaseEntity
+class CRagdollProp : public CBaseAnimating
 {
 public:
     virtual bool vfunc99(int pRay, int fMask, int pTrace);	// slot 99 (ret 0xc), same signature as CBaseEntity::vfunc99 (matched 0x100aa900 pins it to three ints), real types (const Ray_t *pRay, unsigned int fMask, CGameTrace *pTrace): "ClipRayToEntity"-like: a ray with Ray_t::m_IsRay (+0x30) set goes to the base (CBaseAnimating::vfunc99, stub 0x1000dd0a, called directly as sub_100956e0); else false without GetModelPtr(-1) (sub_100952d0); otherwise for every body i < m_nBodies730 the collision global g_1072393c slot 21 (+0x54) traces the ray against body i (handle from the model-info global g_1070b250 slot 18 (+0x48) of this's slot 8) at the transform +0xa80 + 0xc*i (+0x168 further on) into a local CGameTrace; a nearer hit (fraction < pTrace->m_fraction) is copied whole into *pTrace (0x54 bytes). Returns (pTrace->m_fraction < 1.0f). Use (int)(const Ray_t *) casts, or a local CRagdollPropUnit : CRagdollProp view with the typed method

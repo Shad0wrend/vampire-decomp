@@ -1,5 +1,6 @@
 // CPushBlockerEnum (RTTI .?AVCPushBlockerEnum@@): partition enumerator that collects the entities blocking a push.
 #pragma once
+#include "CFireSphere.h"
 
 class CBaseEntity;
 
@@ -16,10 +17,10 @@ struct CPushBlockerList
 	int m_nCount;
 };
 
-class CPushBlockerEnum
+class CPushBlockerEnum : public IPartitionEnumerator
 {
 public:
-	virtual int vfunc0(void *pHandleEntity);	// "CPushBlockerEnum::EnumElement"
+	virtual int vfunc0(CBaseEntity *pHandleEntity);	// "CPushBlockerEnum::EnumElement"
 
 	CPushBlockerList *m_pList;
 	CBaseEntity *m_pPusher;	// 0x08

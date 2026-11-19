@@ -3,12 +3,12 @@
 
 #include "ConCommandBase.h"
 struct ConCommandCtorBase { ConCommandCtorBase() { ((ConCommandBase *)((char *)this - 4))->ConCommandBase::ConCommandBase(); } };
-class ConCommand : public ConCommandCtorBase
+class ConCommand : public ConCommandBase
 {
 public:
 	ConCommand(const char *pszName, void (*pCallback)(), const char *pszHelp, int nFlags, void (*pCompletion)());
 	~ConCommand();	// function 0x10245920 (stub 0x100104f6): stores the vftable, then ~ConCommandBase; a global command's atexit destroy jumps to it
-	virtual ConCommand *vfunc0(unsigned int flags);
+	virtual ConCommandBase *vfunc0(unsigned int flags);
 	virtual bool vfunc1();
 	virtual void vfunc2();
 	virtual void vfunc3();

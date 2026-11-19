@@ -2,8 +2,9 @@
 // answers false for the entities in its list (a data pointer at +4, the element count at +0x10). Only what decompiled
 // code needs; the base ITraceFilter is not modelled yet (its vptr is at +0).
 #pragma once
+#include "ITraceFilter.h"
 
-class CTraceFilterAgainstEntityList
+class CTraceFilterAgainstEntityList : public ITraceFilter
 {
 public:
 	virtual bool vfunc0(void *pEntity, int contentsMask);	// ShouldHitEntity: true when pEntity is one of the list's entries (searched from the last one back), false otherwise

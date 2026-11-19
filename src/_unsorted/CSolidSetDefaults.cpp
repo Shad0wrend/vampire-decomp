@@ -7,7 +7,7 @@
 #include <string.h>
 #include "CSolidSetDefaults.h"
 
-void CSolidSetDefaults::vfunc0(int unused, const char *pszKey, const char *pszValue) {
+void CSolidSetDefaults::vfunc0(void *unused, const char *pszKey, const char *pszValue) {
     if (_strcmpi(pszKey, "contents") == 0) {
         m_nContents = atoi(pszValue);
     }

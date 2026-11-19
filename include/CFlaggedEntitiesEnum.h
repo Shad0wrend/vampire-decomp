@@ -1,10 +1,11 @@
 // CFlaggedEntitiesEnum (RTTI .?AVCFlaggedEntitiesEnum@@): base IPartitionEnumerator at +0x0; collects the entities
 // of a spatial query whose flags (GetFlags) match a mask into a fixed-size list.
 #pragma once
+#include "CFireSphere.h"
 
 class CBaseEntity;
 
-class CFlaggedEntitiesEnum
+class CFlaggedEntitiesEnum : public IPartitionEnumerator
 {
 public:
 	virtual int vfunc0(CBaseEntity *pHandleEntity);	// "EnumElement": resolves the entity behind the handle, skips it unless it has one of the mask's flags, adds it to the list; 1 (continue) unless it was skipped or the list is full

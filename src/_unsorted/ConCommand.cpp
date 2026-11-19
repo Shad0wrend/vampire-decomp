@@ -14,7 +14,7 @@ ConCommand::ConCommand(const char *pszName, void (*pCallback)(), const char *psz
 #include "ConCommand.h"
 
 // TARGET: ConCommand::vfunc0
-ConCommand *ConCommand::vfunc0(unsigned int flags)
+ConCommandBase *ConCommand::vfunc0(unsigned int flags)
 {
 	sub_100104f6();
 	if (flags & 1)

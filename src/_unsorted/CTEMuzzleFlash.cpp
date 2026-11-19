@@ -5,7 +5,7 @@
 #include "CTEMuzzleFlash.h"
 
 // TARGET: CTEMuzzleFlash::vfunc2
-CTEMuzzleFlash *CTEMuzzleFlash::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEMuzzleFlash::vfunc2(unsigned int flags)
 {
 	sub_1000df12();
 	if (flags & 1)
@@ -16,7 +16,7 @@ CTEMuzzleFlash *CTEMuzzleFlash::vfunc2(unsigned int flags)
 
 // FUNCTION: 0x10065ec0 size=0x3
 #include "CTEMuzzleFlash.h"
-void CTEMuzzleFlash::vfunc3(int a0, int a1)
+void CTEMuzzleFlash::vfunc3(const Vector &a0, const QAngle &a1)
 {
 }
 // END FUNCTION

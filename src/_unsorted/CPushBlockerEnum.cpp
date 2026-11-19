@@ -73,7 +73,7 @@ struct CPushBlockerEnumImpl : CPushBlockerEnum
 	}
 };
 
-int CPushBlockerEnum::vfunc0(void *pHandleEntity)
+int CPushBlockerEnum::vfunc0(CBaseEntity *pHandleEntity)
 {
 	ScopeTrace scope("CPushBlockerEnum::EnumElement", g_106b8540);
 	CBaseEntity *pCheck = ((CPushBlockerEnumImpl *)this)->GetPushableEntity((SPushHandleEntity *)pHandleEntity);

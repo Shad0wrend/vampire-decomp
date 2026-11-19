@@ -12,7 +12,7 @@ struct HandleEntL {
 };
 extern CGlobalEntityList g_106eb5d8;
 
-int CEdtEntitiesEnum::vfunc0(void *pHandleEntity)
+int CEdtEntitiesEnum::vfunc0(CBaseEntity *pHandleEntity)
 {
     unsigned int h = *((HandleEntL *)pHandleEntity)->v1();
     if (h != 0xffffffff) {

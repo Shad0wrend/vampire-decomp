@@ -1,5 +1,6 @@
 // CBaseDoor: door entity family. Only slots that decompiled code needs are declared, as plain members.
 #pragma once
+#include "CBaseToggle.h"
 #include "CBaseEntity.h"
 #include "Vector.h"
 #include "datamap.h"
@@ -12,7 +13,7 @@ struct inputdata_t;
 #define DOOR_SLOTS10(p) virtual void p##0(); virtual void p##1(); virtual void p##2(); virtual void p##3(); virtual void p##4(); \
 	virtual void p##5(); virtual void p##6(); virtual void p##7(); virtual void p##8(); virtual void p##9();
 
-class CBaseDoor : public CBaseEntity
+class CBaseDoor : public CBaseToggle
 {
 public:
 	DOOR_SLOTS10(dsa) DOOR_SLOTS10(dsb)
@@ -76,7 +77,6 @@ public:
 	void sub_100f09d0();	// retry think: while sub_100f0c00(1) holds installs the think stub 0x1000abf0 and tries again in 0.5 s, else clears the think and runs slot 244(1)
 	char sub_100f0c00(char bCheckLinked);	// "CBaseDoor::IsCloseBlocked": scope trace (empty names), the door's open-position bounds (slot 245) against the linked door's (handle at +0x630, asked without the linked check), else against the bounds of every solid pushable entity (flags bit 7 or 13, slot 158) of the world; a blocker with an AI object (+0x94) gets this door marked (sub_100f0e90(0x80), sub_1027dfb0)
 
-	char m_pad03e0[0x4a4 - 0x3e0];
 	CDoorEventList m_items4a4[2];	// +0x4a4, +0x4bc
 	char m_pad04d4[0x4f8 - 0x4d4];
 	int m_nState4f8;	// +0x4f8: door state (0 closed at rest, 1 open at rest, 2 / 3 moving)

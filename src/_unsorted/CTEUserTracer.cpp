@@ -5,7 +5,7 @@
 #include "CTEUserTracer.h"
 
 // TARGET: CTEUserTracer::vfunc2
-CTEUserTracer *CTEUserTracer::vfunc2(unsigned int flags)
+CBaseTempEntity *CTEUserTracer::vfunc2(unsigned int flags)
 {
 	sub_1000b2b7();
 	if (flags & 1)
@@ -16,7 +16,7 @@ CTEUserTracer *CTEUserTracer::vfunc2(unsigned int flags)
 
 // FUNCTION: 0x1006aab0 size=0x3
 #include "CTEUserTracer.h"
-void CTEUserTracer::vfunc3(int a0, int a1)
+void CTEUserTracer::vfunc3(const Vector &a0, const QAngle &a1)
 {
 }
 // END FUNCTION

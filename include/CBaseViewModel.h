@@ -1,6 +1,7 @@
 // CBaseViewModel: declared by pcdecomp transplant for 0x1042b830 from CPhysForce (0x10027690);
 // only what matched code needs, as plain members.
 #pragma once
+#include "CBaseAnimating.h"
 #include "CBaseEntity.h"
 #include "datamap.h"
 
@@ -16,7 +17,7 @@ struct CViewModelOwner	// the viewmodel's owner entity, as far as the transmit t
 	CViewModelPlayer *m_pPlayer;	// 0xa8
 };
 
-class CBaseViewModel : public CBaseEntity
+class CBaseViewModel : public CBaseAnimating
 {
 public:
 	bool vfunc86(int a, int b, int c, int d, int e);	// slot 86 (ShouldTransmit-like): false with bit 6 of +0x19c; true when the owner entity's player (+0xa8) has the edict b

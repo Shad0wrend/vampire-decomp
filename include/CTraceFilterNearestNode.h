@@ -1,7 +1,8 @@
 // CTraceFilterNearestNode: trace filter used when looking for the nearest AI node (ITraceFilter at +0, two vtable slots).
 #pragma once
+#include "ITraceFilter.h"
 
-class CTraceFilterNearestNode
+class CTraceFilterNearestNode : public ITraceFilter
 {
 public:
 	virtual bool vfunc0(void *pEntity, int contentsMask);	// ShouldHitEntity
