@@ -6,8 +6,8 @@
 #include "CBaseTempEntity.h"
 extern char g_1044ba10;
 extern void *g_106bdd3c;
-// TARGET: CBaseTempEntityHead::CBaseTempEntityHead
-CBaseTempEntityHead::CBaseTempEntityHead(const char *name)
+// TARGET: CBaseTempEntity::CBaseTempEntity
+CBaseTempEntity::CBaseTempEntity(const char *name)
 {
     *(void **)this = &g_1044ba10;
     *(const char **)((char *)this + 4) = name;

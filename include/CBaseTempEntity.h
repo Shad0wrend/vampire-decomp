@@ -1,4 +1,5 @@
-// CBaseTempEntity: base of temp entities. Declared flat (bases not recovered); only the vtable head is modelled.
+// CBaseTempEntity: base of temp entities (RTTI). The name at +4; the derived classes pad +8 (Source's m_pNext,
+// the list of all temp entities the constructor links the entity into).
 #pragma once
 
 #include "ServerClass.h"
@@ -7,12 +8,12 @@
 
 class CRecipientFilter;
 
-// The part of CBaseTempEntity (slots 0-1 and the constructor) that derived temp entities share, without the
-// slot-2 destructor: VC6 cannot express the derived classes' covariant slot-2 return type against it.
+// Slots 0-1 of CBaseTempEntity, for the temp entities whose constructor is not matched yet (the game's RTTI has
+// no such class: move them to CBaseTempEntity). Its constructor is CBaseTempEntity's, it has no definition.
 class CBaseTempEntityHead
 {
 public:
-	CBaseTempEntityHead(const char *name);	// 0x100507e0
+	CBaseTempEntityHead(const char *name);
 
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();
@@ -21,6 +22,8 @@ public:
 class CBaseTempEntity
 {
 public:
+	CBaseTempEntity(const char *name);	// 0x100507e0: the name, then the entity is linked in front of the list
+
 	virtual ServerClass *vfunc0();	// GetServerClass
 	virtual int vfunc1();
 	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor

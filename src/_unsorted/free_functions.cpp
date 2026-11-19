@@ -17437,6 +17437,7 @@ int sub_1005bca0()
 #include "CTEBeamLaser.h"
 
 extern CTEBeamLaser g_106bf890;
+struct CTEBeamLaserCreateStub { void sub_100064e2(int pFilter, int delay); };	// slot 4 through its jump stub
 
 void sub_1005be30(int pFilter, int delay, int nStartEntity, int nEndEntity, int nModelIndex, int nHaloIndex, int nStartFrame, int nFrameRate, int life, int width, int endWidth, int fadeLength, int amplitude, int r, int g, int b, int a, int speed)
 {
@@ -17456,7 +17457,7 @@ void sub_1005be30(int pFilter, int delay, int nStartEntity, int nEndEntity, int 
 	g_106bf890.m_n34 = g;
 	g_106bf890.m_n38 = b;
 	g_106bf890.m_n3c = a;
-	g_106bf890.vfunc4(pFilter, delay);
+	((CTEBeamLaserCreateStub *)&g_106bf890)->sub_100064e2(pFilter, delay);
 }
 // END FUNCTION
 
@@ -17619,6 +17620,7 @@ int sub_1005c950()
 // FUNCTION: 0x1005cae0 size=0xad
 #include "CTEBeamRing.h"
 extern CTEBeamRing g_106bfd20;
+struct CTEBeamRingCreateStub { void sub_10015433(int filter, int delay); };	// slot 4 through its jump stub
 
 void sub_1005cae0(int filter, int delay, int start, int end, int modelindex, int haloindex, int startframe, int framerate, int life, int width, int spread, int amplitude, int r, int g, int b, int a, int speed)
 {
@@ -17638,7 +17640,7 @@ void sub_1005cae0(int filter, int delay, int start, int end, int modelindex, int
 	g_106bfd20.m_nG = g;
 	g_106bfd20.m_nB = b;
 	g_106bfd20.m_nA = a;
-	g_106bfd20.vfunc4(filter, delay);
+	((CTEBeamRingCreateStub *)&g_106bfd20)->sub_10015433(filter, delay);
 }
 // END FUNCTION
 
