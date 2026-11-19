@@ -1,5 +1,5 @@
 // CAI_PlaneSolver (RTTI .?AVCAI_PlaneSolver@@): steering plane solver of the local navigator; one virtual slot.
-// The data lives in a non-polymorphic base (its constructor runs before CAI_PlaneSolver stores its vtable pointer).
+// The data is initialised by the constructor's initialiser list, before CAI_PlaneSolver stores its vtable pointer.
 #pragma once
 
 #include "Vector.h"
@@ -26,10 +26,9 @@ struct CAI_PlaneSolverTimer
 	float m_interval;
 };
 
-class CAI_PlaneSolverBase
+struct CAI_PlaneSolverLists	// +0x3c: two vectors (the second one's 0x8c0 byte buffer allocated here)
 {
-public:
-	CAI_PlaneSolverBase(int owner) : m_owner(owner), m_f08(3.402823466e+38F), m_f0c(3.402823466e+38F), m_f10(3.402823466e+38F), m_b14(0), m_i18(0), m_f28(3.402823466e+38F), m_f2c(3.402823466e+38F), m_b30(0), m_timer(g_1049df80 - g_10445e08)
+	CAI_PlaneSolverLists()
 	{
 		m_p3c = 0;
 		m_p40 = 0;
@@ -45,6 +44,21 @@ public:
 		m_pBuf60 = m_pBuf50;
 	}
 
+	void *m_p3c;
+	void *m_p40;
+	void *m_p44;
+	void *m_p48;
+	void *m_p4c;
+	void *m_pBuf50;			// 0x50: 0x8c0 byte buffer
+	int m_i54;
+	int m_i58;
+	int m_i5c;
+	void *m_pBuf60;
+};
+
+class CAI_PlaneSolver
+{
+public:
 	int m_owner;			// 0x04
 	float m_f08;
 	float m_f0c;
@@ -58,21 +72,8 @@ public:
 	char m_b30;
 	char m_pad31[3];
 	CAI_PlaneSolverTimer m_timer;
-	void *m_p3c;
-	void *m_p40;
-	void *m_p44;
-	void *m_p48;
-	void *m_p4c;
-	void *m_pBuf50;			// 0x50: 0x8c0 byte buffer
-	int m_i54;
-	int m_i58;
-	int m_i5c;
-	void *m_pBuf60;
-};
+	CAI_PlaneSolverLists m_lists;	// 0x3c
 
-class CAI_PlaneSolver : public CAI_PlaneSolverBase
-{
-public:
 	CAI_PlaneSolver(int owner);
 	virtual int vfunc0(float *pVec, int *pEnt, float a, float b, float c, int d);	// ret 0x18 (6 stack args), answers in eax
 	int sub_103097c0(float *pVec, int *pEnt, float a, float b, float c, int d);	// the vfunc0 body at 0x103097c0 (still todo): call it by placeholder name from overrides

@@ -255285,7 +255285,7 @@ struct CAI_PlaneSolver280 : CAI_PlaneSolver
 	float sub_103084c0(const AIMoveTrace280_t &trace, float pctBlocked);
 };
 
-#define suggestions (*(CUtlVector<Elem280_t> *)&m_pBuf50)
+#define suggestions (*(CUtlVector<Elem280_t> *)&m_lists.m_pBuf50)
 
 // TARGET: CAI_PlaneSolver::sub_10308540
 void CAI_PlaneSolver::sub_10308540(CAI_PlaneSolverObj *pObj, CAI_PlaneSolverTrace *pTrace, float probeDist, float arcCenter, float arcSpan)
@@ -255314,7 +255314,7 @@ void CAI_PlaneSolver::sub_10308540(CAI_PlaneSolverObj *pObj, CAI_PlaneSolverTrac
 		SetHandle280(suggestion.hObstacleEntity, directTrace.pObstruction);
 		suggestion.m_14 = 0;
 		suggestion.arc.Set(arcCenter, arcSpan);
-		CUtlVector280 *v = (CUtlVector280 *)&m_pBuf50;
+		CUtlVector280 *v = (CUtlVector280 *)&m_lists.m_pBuf50;
 		int elem = v->m_size;
 		v->sub_1030b100(1);
 		v->sub_1030b1d0(elem, 1);
@@ -255869,8 +255869,8 @@ struct CAI_PlaneSolverCircle : CAI_PlaneSolver
 	bool sub_1030a7f0(float probeDist);
 };
 
-#define m_Obstacles (*(CUtlVector<CircleObstacles_t> *)&m_p3c)
-#define m_Suggestions (*(CUtlVector<Elem280_t> *)&m_pBuf50)
+#define m_Obstacles (*(CUtlVector<CircleObstacles_t> *)&m_lists.m_p3c)
+#define m_Suggestions (*(CUtlVector<Elem280_t> *)&m_lists.m_pBuf50)
 #define min(a, b) (((a) < (b)) ? (a) : (b))
 #define sq(x) ((x) * (x))
 #define RAD2DEG(x) ((float)(x) * (float)(180.f / 3.14159265358979323846))
@@ -294167,8 +294167,8 @@ extern int vt_104c54dc;
 void CAI_RatPlaneSolver::sub_103ad1b0()
 {
 	*(int **)this = &vt_104c54dc;
-	((CUtlVector<int> *)&m_pBuf50)->~CUtlVector<int>();
-	((CUtlVector<int> *)&m_p3c)->~CUtlVector<int>();
+	((CUtlVector<int> *)&m_lists.m_pBuf50)->~CUtlVector<int>();
+	((CUtlVector<int> *)&m_lists.m_p3c)->~CUtlVector<int>();
 }
 // END FUNCTION
 

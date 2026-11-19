@@ -4,7 +4,7 @@
 // FUNCTION: 0x10307e30 size=0x81
 #include "CAI_PlaneSolver.h"
 
-CAI_PlaneSolver::CAI_PlaneSolver(int owner) : CAI_PlaneSolverBase(owner)
+CAI_PlaneSolver::CAI_PlaneSolver(int owner) : m_owner(owner), m_f08(3.402823466e+38F), m_f0c(3.402823466e+38F), m_f10(3.402823466e+38F), m_b14(0), m_i18(0), m_f28(3.402823466e+38F), m_f2c(3.402823466e+38F), m_b30(0), m_timer(g_1049df80 - g_10445e08)
 {
 }
 // END FUNCTION
@@ -36,7 +36,7 @@ struct PlaneTraceV	// AIMoveTrace_t: fStatus first, the distance at +0x24
 
 struct CAI_PlaneSolverV : CAI_PlaneSolver
 {
-	CUtlVector<Elem280_t> &Suggestions() { return *(CUtlVector<Elem280_t> *)&m_pBuf50; }
+	CUtlVector<Elem280_t> &Suggestions() { return *(CUtlVector<Elem280_t> *)&m_lists.m_pBuf50; }
 	void sub_10309230(const PlaneGoalV &goal, float probeDist);
 	char sub_1030a7f0(float probeDist);
 	int sub_10309650(const PlaneGoalV &goal, float yaw, float probeDist, float step, int i);
