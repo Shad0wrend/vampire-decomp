@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CBaseEntity.h"
+#include "CBaseToggle.h"
 #include "inputdata_t.h"
 
 // View of the client-ragdoll bookkeeping of CBaseAnimating (offsets from the entity start). It is kept out of
@@ -19,7 +20,7 @@ struct CBaseAnimatingRagdoll
 	Vector m_vecForce664;		// 0x664: the recorded force
 };
 
-class CBaseAnimating : public CBaseEntity
+class CBaseAnimating : public CBaseToggle
 {
 public:
 	bool ComputeHitboxSurroundingBox(Vector *pVecWorldMins, Vector *pVecWorldMaxs);	// "CBaseAnimating::ComputeHitboxSurroundingBox" (0x10096c40, linker name now set): scope trace (entity name); the studio header of GetModel() (engine modelinfo slot 20); false with the zero vector in both outputs when there is no header or the name is "error/missing.mdl"; the hitbox set at +0x680, its first hitbox's bone map from the studio bone cache (sub_100c46c0, building it into a 0x41a0 byte matrix3x4_t buffer with vfunc257 when the cache misses) and each hitbox's bone-space box through sub_1013c0e0 (TransformAABB) into the union of world mins (start +FLT_MAX) / maxs (start -FLT_MAX); true

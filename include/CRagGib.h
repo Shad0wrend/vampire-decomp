@@ -9,5 +9,5 @@ public:
 	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10004c3c();
 	void sub_10015c17(int a, int b, int c);	// stub 0x10015c17, called on the "raggib" entity by CRagGib creation (0x1012b320)
-	char m_pad03e0[0x730 - 0x3e0];
+	char m_pad04a4[0x730 - 0x4a4];
 };

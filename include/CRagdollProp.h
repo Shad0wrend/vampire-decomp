@@ -77,7 +77,7 @@ public:
     void *sub_100952d0(int a);	// CBaseAnimating::sub_100952d0 (GetModelPtr-like), called directly
     virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
     void sub_10014317();	// as in CPhysForce (transplant)
-    char m_pad03e0[0x730 - 0x3e0];
+    char m_pad04a4[0x730 - 0x4a4];
     int m_nBodies730;	// 0x730: the number of ragdoll bodies
     char m_pad0734[0x738 - 0x734];
     int m_n738, m_n73c, m_n740;	// 0x738: cleared with the body array

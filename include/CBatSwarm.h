@@ -23,7 +23,7 @@ struct CBatSwarmPathNode	// one of the ten path nodes at +0x744 (0x28 bytes each
 class CBatSwarm : public CBaseAnimating
 {
 public:
-	char m_pad03e0[0x350];
+	char m_pad04a4[0x730 - 0x4a4];
 	unsigned int m_mask730;
 	unsigned int m_mask734;
 	float m_flSpeed738;

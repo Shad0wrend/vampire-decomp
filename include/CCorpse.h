@@ -12,5 +12,5 @@ public:
 	int vfunc80();
 	int vfunc81();
 	int vfunc117();
-	char m_pad03e0[0x734 - 0x3e0];
+	char m_pad04a4[0x734 - 0x4a4];
 };
