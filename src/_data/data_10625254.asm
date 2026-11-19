@@ -1009,14 +1009,7 @@ $rtti_tail_10626bee LABEL BYTE
   DB 000h,000h,000h,000h,000h
   DB "sv_walkscale"
   DB 000h,000h,000h,000h
-; 0x10626f68 +52: ??_R0?AVIPhysicsPlayerControllerEvent@@@8
-PUBLIC ??_R0?AVIPhysicsPlayerControllerEvent@@@8
-??_R0?AVIPhysicsPlayerControllerEvent@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVIPhysicsPlayerControllerEvent@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h
-  DB 5 DUP (0)
+  DB 9 DUP (0)
 ; 0x10626fc1 +327: $rtti_tail_10626fc1
 PUBLIC $rtti_tail_10626fc1
 $rtti_tail_10626fc1 LABEL BYTE

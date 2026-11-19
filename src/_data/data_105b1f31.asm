@@ -1307,9 +1307,9 @@ PUBLIC ?g_105b4a5c@@3PADA
   DD OFFSET ?g_10537530@@3PAHA + 1704
   DD OFFSET ?g_10537530@@3PAHA + 1676
   DD OFFSET ?g_106b8540@@3DA
-; 0x105b4cd8 +72: ?g_105b4cd8@@3PAUISaveRestoreOps@@A
-PUBLIC ?g_105b4cd8@@3PAUISaveRestoreOps@@A
-?g_105b4cd8@@3PAUISaveRestoreOps@@A LABEL BYTE
+; 0x105b4cd8 +72: ?g_105b4cd8@@3PAVISaveRestoreOps@@A
+PUBLIC ?g_105b4cd8@@3PAVISaveRestoreOps@@A
+?g_105b4cd8@@3PAVISaveRestoreOps@@A LABEL BYTE
   DD OFFSET ?g_10751074@@3VCTraitEffectsListSaveDataOps@@A
   DB 68 DUP (0)
   DB 11 DUP (0)

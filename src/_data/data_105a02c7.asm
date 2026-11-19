@@ -3975,9 +3975,9 @@ PUBLIC ?g_105a8be0@@3QBDB
 PUBLIC ?g_105a8d88@@3HA
 ?g_105a8d88@@3HA LABEL BYTE
   DB 0FFh,0FFh,0FFh,0FFh
-; 0x105a8d8c +124: ?g_105a8d8c@@3PAUISaveRestoreOps@@A
-PUBLIC ?g_105a8d8c@@3PAUISaveRestoreOps@@A
-?g_105a8d8c@@3PAUISaveRestoreOps@@A LABEL BYTE
+; 0x105a8d8c +124: ?g_105a8d8c@@3PAVISaveRestoreOps@@A
+PUBLIC ?g_105a8d8c@@3PAVISaveRestoreOps@@A
+?g_105a8d8c@@3PAVISaveRestoreOps@@A LABEL BYTE
   DD OFFSET ?g_1074eec0@@3VCTraitDependencyDataDescSaveDataOps@@A
   DB 68 DUP (0)
   DB "<None>"

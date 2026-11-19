@@ -147,14 +147,7 @@ $rtti_tail_106adb62 LABEL BYTE
   DD OFFSET ?g_10537530@@3PAHA + 1676
   DD OFFSET ?g_106b8540@@3DA
   DB 68 DUP (0)
-; 0x106adcf4 +40: ??_R0?AVISharedGameRules@@@8
-PUBLIC ??_R0?AVISharedGameRules@@@8
-??_R0?AVISharedGameRules@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVISharedGameRules@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
-  DB 9 DUP (0)
+  DB 1 DUP (0)
 ; 0x106add65 +2671: $rtti_tail_106add65
 PUBLIC $rtti_tail_106add65
 $rtti_tail_106add65 LABEL BYTE

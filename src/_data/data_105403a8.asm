@@ -9394,9 +9394,9 @@ PUBLIC ?g_10552d34@lifted@@3DA
   DB 01Dh,000h,000h,000h
   DD OFFSET ?g_10552e18@@3PAHA + 6668
   DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
-; 0x10552d4c +4: ?g_10552d4c@@3PAUISaveRestoreOps@@A
-PUBLIC ?g_10552d4c@@3PAUISaveRestoreOps@@A
-?g_10552d4c@@3PAUISaveRestoreOps@@A LABEL BYTE
+; 0x10552d4c +4: ?g_10552d4c@@3PAVISaveRestoreOps@@A
+PUBLIC ?g_10552d4c@@3PAVISaveRestoreOps@@A
+?g_10552d4c@@3PAVISaveRestoreOps@@A LABEL BYTE
   DD OFFSET ?g_106cf254@@3VCThinkContextsSaveDataOps@@A
 ; 0x10552d50 +4: ?g_10552d50@@3USRDataMap@@A ?g_10552d50@lifted@@3HA
 PUBLIC ?g_10552d50@@3USRDataMap@@A
@@ -9657,13 +9657,6 @@ PUBLIC ?g_10552e18@lifted@@3DA
   DB "ent_io_messages"
   DB 000h,000h,000h,000h,000h
   DB "Set to true to show input  and output messages"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
-; 0x10554abc +40: ??_R0?AVIPredictableList@@@8
-PUBLIC ??_R0?AVIPredictableList@@@8
-??_R0?AVIPredictableList@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVIPredictableList@@"
   DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
 _DATA ENDS
 END

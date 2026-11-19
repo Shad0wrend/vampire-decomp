@@ -493,23 +493,7 @@ PUBLIC ??_R0?AVCConstantForceController@@@8
   DB 000h,000h,000h,000h
   DB ".?AVCConstantForceController@@"
   DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
-; 0x105386f8 +36: ??_R0?AVIHandleEntity@@@8 ?g_105386f8@@3PADA
-PUBLIC ??_R0?AVIHandleEntity@@@8
-??_R0?AVIHandleEntity@@@8 LABEL BYTE
-PUBLIC ?g_105386f8@@3PADA
-?g_105386f8@@3PADA LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVIHandleEntity@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h
-  DB 4 DUP (0)
-; 0x10538740 +36: ??_R0?AVIServerEntity@@@8
-PUBLIC ??_R0?AVIServerEntity@@@8
-??_R0?AVIServerEntity@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVIServerEntity@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h
+  DB 12 DUP (0)
 ; 0x105387c4 +24: ?g_105387c4@@3PADA
 PUBLIC ?g_105387c4@@3PADA
 ?g_105387c4@@3PADA LABEL BYTE
@@ -1074,14 +1058,7 @@ $rtti_tail_105397cc LABEL BYTE
   DB 000h,000h,000h,000h,000h,000h
   DB "phys_speeds"
   DB 000h,000h,000h,000h,000h,030h,000h,000h,000h
-; 0x105399a4 +40: ??_R0?AVIPhysicsObjectEvent@@@8
-PUBLIC ??_R0?AVIPhysicsObjectEvent@@@8
-??_R0?AVIPhysicsObjectEvent@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVIPhysicsObjectEvent@@"
-  DB 000h,000h,000h,000h,000h,000h,000h
-  DB 11 DUP (0)
+  DB 3 DUP (0)
 ; 0x10539a07 +161: $rtti_tail_10539a07
 PUBLIC $rtti_tail_10539a07
 $rtti_tail_10539a07 LABEL BYTE
@@ -1471,13 +1448,7 @@ PUBLIC ?g_1053aa9c@@3PADA
   DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
   DB "CPhysicsPushedEntities::RestoreEntities"
   DB 000h,000h,000h,000h,000h,000h,000h,000h,000h
-; 0x1053af3c +44: ??_R0?AVIPartitionEnumerator@@@8
-PUBLIC ??_R0?AVIPartitionEnumerator@@@8
-??_R0?AVIPartitionEnumerator@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVIPartitionEnumerator@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
+  DB 12 DUP (0)
 ; 0x1053af68 +316: ??_R0?AVCPushBlockerEnum@@@8
 PUBLIC ??_R0?AVCPushBlockerEnum@@@8
 ??_R0?AVCPushBlockerEnum@@@8 LABEL BYTE
@@ -1497,13 +1468,6 @@ PUBLIC ??_R0?AVCPushBlockerEnum@@@8
   DB 000h,000h,000h,000h,000h,000h,000h,000h
   DB "CPushBlockerEnum::IntersectsPushers"
   DB 000h,000h,000h,000h,000h,000h,000h,000h,000h
-; 0x1053b0a4 +32: ??_R0?AVITraceFilter@@@8
-PUBLIC ??_R0?AVITraceFilter@@@8
-??_R0?AVITraceFilter@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVITraceFilter@@"
-  DB 000h,000h,000h,000h,000h,000h
 ; 0x1053b0c4 +1760: ??_R0?AVCTraceFilterAgainstEntityList@@@8
 PUBLIC ??_R0?AVCTraceFilterAgainstEntityList@@@8
 ??_R0?AVCTraceFilterAgainstEntityList@@@8 LABEL BYTE
@@ -2078,21 +2042,7 @@ $rtti_tail_1053c947 LABEL BYTE
   DB 25 DUP (0)
   DB "Failed to restore physics object"
   DB 00Ah,000h,000h,000h,000h,000h,000h,000h
-; 0x1053ca84 +36: ??_R0?AVISaveRestoreOps@@@8
-PUBLIC ??_R0?AVISaveRestoreOps@@@8
-??_R0?AVISaveRestoreOps@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVISaveRestoreOps@@"
-  DB 000h,000h,000h,000h,000h,000h,000h
-; 0x1053caa8 +40: ??_R0?AVCDefSaveRestoreOps@@@8
-PUBLIC ??_R0?AVCDefSaveRestoreOps@@@8
-??_R0?AVCDefSaveRestoreOps@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVCDefSaveRestoreOps@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB 5 DUP (0)
+  DB 1 DUP (0)
 ; 0x1053caf5 +427: $rtti_tail_1053caf5
 PUBLIC $rtti_tail_1053caf5
 $rtti_tail_1053caf5 LABEL BYTE

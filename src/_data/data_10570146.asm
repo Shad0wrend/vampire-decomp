@@ -810,13 +810,6 @@ PUBLIC ?g_10570e78@@3PADA
   DB 000h,000h,000h,000h,000h,000h
   DB "0.25"
   DB 000h,000h,000h,000h
-; 0x105712f8 +48: ??_R0?AVIConCommandBaseAccessor@@@8
-PUBLIC ??_R0?AVIConCommandBaseAccessor@@@8
-??_R0?AVIConCommandBaseAccessor@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVIConCommandBaseAccessor@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
   DB 6 DUP (0)
 ; 0x1057134e +354: $rtti_tail_1057134e
 PUBLIC $rtti_tail_1057134e

@@ -541,7 +541,7 @@ EXTERN ?vfunc5@CRotButton@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CRotDoor@@QAEPAV1@E@Z:BYTE
 EXTERN ?vfunc5@CTerrainMorph@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CWindowPane@@UAEPAVCBaseEntity@@I@Z:BYTE
-EXTERN ?vfunc5@IServerEntity@@QAEPAXD@Z:BYTE
+EXTERN ?vfunc5@IServerEntity@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc60@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc61@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc62@CBaseEntity@@UAEXPBM@Z:BYTE
@@ -674,7 +674,7 @@ PUBLIC ?vt_10450a10@@3PAPAXA
   DD OFFSET __purecall
   DD OFFSET __purecall
   DD OFFSET __purecall
-  DD OFFSET ?vfunc5@IServerEntity@@QAEPAXD@Z
+  DD OFFSET ?vfunc5@IServerEntity@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET __purecall
   DD OFFSET __purecall
   DD OFFSET __purecall

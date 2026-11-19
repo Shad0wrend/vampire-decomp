@@ -6098,21 +6098,5 @@ PUBLIC ??_R0?AVCTraceFilterNearestNode@@@8
   DB 000h,000h,000h,000h
   DB ".?AVCTraceFilterNearestNode@@"
   DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
-; 0x10610430 +36: ??_R0?AVINodeListFilter@@@8
-PUBLIC ??_R0?AVINodeListFilter@@@8
-??_R0?AVINodeListFilter@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVINodeListFilter@@"
-  DB 000h,000h,000h,000h,000h,000h,000h
-; 0x10610454 +80: ??_R0?AVCNodeNPCFilter@@@8
-PUBLIC ??_R0?AVCNodeNPCFilter@@@8
-??_R0?AVCNodeNPCFilter@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVCNodeNPCFilter@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB "CAI_Network_NearestNodeToNPCAtPoint"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h
 _DATA ENDS
 END

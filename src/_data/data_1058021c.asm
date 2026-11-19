@@ -14,7 +14,7 @@ EXTERN ?g_1054d51c@@3PADA:BYTE
 EXTERN ?g_10552e18@@3PAHA:BYTE
 EXTERN ?g_10555390@@3PADA:BYTE
 EXTERN ?g_1055b504@lifted@@3DA:BYTE
-EXTERN ?g_1055e01c@@3PAUISaveRestoreOps@@A:BYTE
+EXTERN ?g_1055e01c@@3PAVISaveRestoreOps@@A:BYTE
 EXTERN ?g_10560c64@lifted@@3DA:BYTE
 EXTERN ?g_105612d4@lifted@@3DA:BYTE
 EXTERN ?g_10568c10@@3PAHA:BYTE
@@ -151,13 +151,7 @@ $rtti_tail_1058021c LABEL BYTE
   DB 000h,000h,000h
   DB "staticsolid"
   DB 000h,000h,000h,000h,000h
-; 0x1058027c +40: ??_R0?AVIPhysicsGameTrace@@@8
-PUBLIC ??_R0?AVIPhysicsGameTrace@@@8
-??_R0?AVIPhysicsGameTrace@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVIPhysicsGameTrace@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h
+  DB 8 DUP (0)
 ; 0x105802c4 +340: $rtti_tail_105802c4
 PUBLIC $rtti_tail_105802c4
 $rtti_tail_105802c4 LABEL BYTE
@@ -4668,7 +4662,7 @@ PUBLIC ?g_1058c734@lifted@@3DA
   DD OFFSET ?g_1058c734@lifted@@3DA + 788
   DB 20 DUP (0)
   DB 001h,000h,000h,000h
-  DD OFFSET ?g_1055e01c@@3PAUISaveRestoreOps@@A + 580
+  DD OFFSET ?g_1055e01c@@3PAVISaveRestoreOps@@A + 580
   DB 05Ch,004h,000h,000h,000h,000h,000h,000h,001h,000h,006h,000h
   DD OFFSET ?g_1058c734@lifted@@3DA + 772
   DB 20 DUP (0)
@@ -4711,7 +4705,7 @@ PUBLIC ?g_1058c734@lifted@@3DA
   DB 000h,000h,000h,000h
   DD OFFSET ?sub_1018d8c0@CUnknown1018d8c0@@QAEXPAUinputdata_t@@@Z
   DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,00Ch,000h,000h,000h
-  DD OFFSET ?g_1055e01c@@3PAUISaveRestoreOps@@A + 476
+  DD OFFSET ?g_1055e01c@@3PAVISaveRestoreOps@@A + 476
   DB 064h,004h,000h,000h,000h,000h,000h,000h,001h,000h,002h
   DB 201 DUP (0)
   DB "Hurt"
