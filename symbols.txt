@@ -5481,6 +5481,7 @@
 0x10007c7f func   ?vfunc103@CCameraAnimated@@QAEXXZ CCameraAnimated::vfunc103
 0x10007c84 func   ?vfunc5@CSimplePhysicsBrush@@UAEPAV1@I@Z CSimplePhysicsBrush::vfunc5
 0x10007c89 func   ?sub_102df210@@YG_NPAPAH@Z sub_102df210
+0x10007c89 func   ?vfunc2@CAI_MemoryListSaveRestoreOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z CAI_MemoryListSaveRestoreOps::vfunc2
 0x10007c8e func   ?vfunc600@CNPC_VTzimisceRunner@@QAE_NPAX@Z CNPC_VTzimisceRunner::vfunc600
 0x10007c93 func   ?vfunc74@CNPC_VGargoyle@@UAE_NH@Z CNPC_VGargoyle::vfunc74
 0x10007c98 func   ?vfunc103@CPropSign@@QAEXXZ CPropSign::vfunc103
