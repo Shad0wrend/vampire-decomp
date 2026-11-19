@@ -1414,6 +1414,7 @@
 0x10002c39 func   ?sub_10312f30@@YAXXZ sub_10312f30
 0x10002c3e func   ?sub_101ee2b0@@YAHXZ sub_101ee2b0
 0x10002c43 func   ?sub_10114a70@@YIPAXPAXHI@Z sub_10114a70
+0x10002c43 func   ?vfunc5@CFunc_LOD@@UAEPAVCBaseEntity@@I@Z CFunc_LOD::vfunc5
 0x10002c48 func   ?sub_101bb500@@YAHXZ sub_101bb500
 0x10002c4d func   ?vfunc80@CWeaponRanged_Pistol_Anaconda@@UAEHXZ CWeaponRanged_Pistol_Anaconda::vfunc80
 0x10002c52 func   ?vfunc472@CHL2_Player@@UAEXXZ CHL2_Player::vfunc472
