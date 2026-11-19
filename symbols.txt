@@ -1677,6 +1677,7 @@
 0x10003175 func   ?sub_10091740@CBaseAnimating@@QAEMXZ CBaseAnimating::sub_10091740
 0x1000317a func   ?sub_1024fe00@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_1024fe00
 0x1000317f func   ?vfunc42@CGameSign@@QAEXPAX@Z CGameSign::vfunc42
+0x1000317f func   ?vfunc42@CGameSign@@UAEHH@Z CGameSign::vfunc42
 0x10003184 func   ?vfunc1@CTESparks@@UAEHXZ CTESparks::vfunc1
 0x10003189 func   ?sub_102f1d90@@YIMPAVCAI_Navigator@@@Z sub_102f1d90
 0x1000318e func   ?vfunc5@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc5
