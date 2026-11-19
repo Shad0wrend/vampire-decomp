@@ -14125,6 +14125,7 @@
 0x100127ba func   ?sub_10360bc0@CNPC_VAsianVampire@@QAEXXZ CNPC_VAsianVampire::sub_10360bc0
 0x100127c4 func   ?sub_100295f0@CUnknown100295d0@@QAEXH@Z CUnknown100295d0::sub_100295f0
 0x100127c9 func   ?sub_100d1100@@YG_NPAUCVSDOps@@@Z sub_100d1100
+0x100127c9 func   ?vfunc2@CVariantSaveDataOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z CVariantSaveDataOps::vfunc2
 0x100127ce func   ?vfunc26@CSingleplayRules@@UAE_NHHHH@Z CSingleplayRules::vfunc26
 0x100127d3 func   ?vfunc33@CPropHacking@@UAEHXZ CPropHacking::vfunc33
 0x100127d8 func   ?sub_102507b0@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_102507b0
