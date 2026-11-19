@@ -17,6 +17,7 @@
 0x1000105a func   ?sub_10109e90@CFire@@QAEXXZ CFire::sub_10109e90
 0x1000105f func   ?sub_1017fa70@CUnknown1017fa70@@QAEXXZ CUnknown1017fa70::sub_1017fa70
 0x10001064 func   ?vfunc241@CEnvShooter@@QAEPAVCGib@@XZ CEnvShooter::vfunc241
+0x10001069 func   ?vfunc316@CWeaponRanged@@UAEDH@Z CWeaponRanged::vfunc316
 0x10001069 func   ?vfunc316@CWeaponRanged@@UAEXH@Z CWeaponRanged::vfunc316
 0x1000106e func   ?sub_10131490@@YAPAHXZ sub_10131490
 0x10001073 func   ?vfunc104@CBasePlayer@@QAEXXZ CBasePlayer::vfunc104
