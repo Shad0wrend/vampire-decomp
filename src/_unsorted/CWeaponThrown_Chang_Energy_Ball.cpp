@@ -7,9 +7,9 @@
 namespace lifted {
 extern char g_1067d234;
 }
-void *CWeaponThrown_Chang_Energy_Ball::vfunc82()
+datamap_t *CWeaponThrown_Chang_Energy_Ball::vfunc82()
 {
-    return (void *)((datamap_t *)&lifted::g_1067d234);
+    return (datamap_t *)&lifted::g_1067d234;
 }
 // END FUNCTION
 
@@ -154,11 +154,11 @@ int CWeaponThrown_Chang_Energy_Ball::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponThrown_Chang_Energy_Ball::vfunc5
-CBaseCombatWeapon *CWeaponThrown_Chang_Energy_Ball::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponThrown_Chang_Energy_Ball::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION

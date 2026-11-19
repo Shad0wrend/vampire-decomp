@@ -23,6 +23,7 @@ struct CBaseAnimatingRagdoll
 class CBaseAnimating : public CBaseToggle
 {
 public:
+	CBaseAnimating();	// 0x1008b230 (stub 0x100103fc)
 	bool ComputeHitboxSurroundingBox(Vector *pVecWorldMins, Vector *pVecWorldMaxs);	// "CBaseAnimating::ComputeHitboxSurroundingBox" (0x10096c40, linker name now set): scope trace (entity name); the studio header of GetModel() (engine modelinfo slot 20); false with the zero vector in both outputs when there is no header or the name is "error/missing.mdl"; the hitbox set at +0x680, its first hitbox's bone map from the studio bone cache (sub_100c46c0, building it into a 0x41a0 byte matrix3x4_t buffer with vfunc257 when the cache misses) and each hitbox's bone-space box through sub_1013c0e0 (TransformAABB) into the union of world mins (start +FLT_MAX) / maxs (start -FLT_MAX); true
 	void *sub_100952d0(int a);	// GetModelPtr-like, returns the studio header
 	int sub_1008ed50(int sequence, int *pLocalSequence);	// "CBaseAnimating::LookupExtraAnimationModelIndexForSequence": scope trace (entity name), over the models -1, 0, 1 finds the one whose sequence range [sum of the earlier models' counts, + its count) holds sequence; stores the sequence relative to that model in *pLocalSequence and returns the model index; DevWarning and (0, -1) when none

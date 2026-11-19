@@ -7,9 +7,9 @@
 extern int g_109433a8;
 
 // TARGET: CWeaponIArmor::vfunc80
-void *CWeaponIArmor::vfunc80()
+int CWeaponIArmor::vfunc80()
 {
-	return &g_109433a8;
+	return (int)&g_109433a8;
 }
 // END FUNCTION
 
@@ -28,9 +28,9 @@ int CWeaponIArmor::vfunc81()
 extern int g_1067e9f8;
 
 // TARGET: CWeaponIArmor::vfunc82
-void *CWeaponIArmor::vfunc82()
+datamap_t *CWeaponIArmor::vfunc82()
 {
-	return &g_1067e9f8;
+	return (datamap_t *)&g_1067e9f8;
 }
 // END FUNCTION
 
@@ -59,12 +59,14 @@ int CWeaponIArmor::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponIArmor::vfunc5
-CWeaponIArmor *CWeaponIArmor::vfunc5(int flags)
+CBaseEntity  *CWeaponIArmor::vfunc5(unsigned int flags)
 {
+#define flags ((int)flags)
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
+#undef flags
 }
 // END FUNCTION
 

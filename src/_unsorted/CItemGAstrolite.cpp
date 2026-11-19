@@ -39,7 +39,7 @@ int CItemGAstrolite::vfunc35(CBaseEntity *pOther)
 {
 	if (m_b914)
 		return 0;
-	return ((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc35(pOther);
+	return ((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc35((int)pOther);
 }
 // END FUNCTION
 
@@ -51,7 +51,7 @@ int CItemGAstrolite::vfunc34(CBaseEntity *pOther)
 {
 	if (m_b914)
 		return 0;
-	return ((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc34(pOther);
+	return ((CBaseCombatWeapon *)this)->CBaseCombatWeapon::vfunc34((int)pOther);
 }
 // END FUNCTION
 

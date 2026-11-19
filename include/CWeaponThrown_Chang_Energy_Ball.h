@@ -21,7 +21,7 @@ class CWeaponThrown_Chang_Energy_Ball : public CBaseCombatWeapon
 public:
 	CWeaponThrown_Chang_Energy_Ball() {}
 	void *operator new(unsigned int size) { return sub_100aa720(size); }
-	CBaseCombatWeapon *vfunc5(unsigned int flags);
+	CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10013a57();
 	void sub_103efdd0(CBaseEntity *pEnt);
 	void vfunc103();	// slot 103 "...::Restore-like": CBaseCombatWeapon::vfunc103 (stub 0x100047be), then the energy ball's timers and sound fields at +0x910 / +0x91c / +0x928 / +0x938 / +0x93c from the global at 0x1070b228
@@ -50,7 +50,7 @@ public:
 	float m_flStart938;	// 0x938: curtime of the throw (set by vfunc103; steering only for 0.65s after)
 	float m_flLastThink93c;	// 0x93c: curtime at the last steering step (frame time = curtime - this; the think does nothing when it is not positive)
 public:
-	void *vfunc82();
+	datamap_t *vfunc82();
 	int vfunc142(int);
 	CWeaponActivityRecord *vfunc362();
 	int vfunc363();

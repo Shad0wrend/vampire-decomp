@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10940c38;
 }
-void *CWeaponMelee_HengeyokaiFist::vfunc80()
+int CWeaponMelee_HengeyokaiFist::vfunc80()
 {
-    return (void *)((int)&lifted::g_10940c38);
+    return (int)&lifted::g_10940c38;
 }
 // END FUNCTION
 
@@ -53,11 +53,11 @@ int CWeaponMelee_HengeyokaiFist::vfunc373()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee_HengeyokaiFist::vfunc5
-CBaseCombatWeapon *CWeaponMelee_HengeyokaiFist::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponMelee_HengeyokaiFist::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION

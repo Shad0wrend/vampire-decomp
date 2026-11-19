@@ -183,10 +183,11 @@ struct CWpnPlayer { char pad[0x1eb8]; int m_nUseEdictIndex; };
 struct CWpnEnt { char pad[0xa8]; CWpnEnt *m_pControl; char pad2[0x2e0 - 0xac]; void *m_pEdict; };
 struct CWpnEdict { char pad[0x40]; CWpnEnt *m_pUnk; char m_bValid; };
 
-bool CBaseCombatWeapon::vfunc86(int a, void *pEdict, int c, int d, int e)
+char CBaseCombatWeapon::vfunc86(int a, int pEdict, int c, int d, int e)
 {
+#define pEdict ((void *)pEdict)
 	if (*(float *)((char *)this + 0x90) > gpGlobals->curtime)
-		return true;
+		return (char)(true);
 	CWpnEnt *pOwner = (CWpnEnt *)sub_102521f0();
 	if (pOwner) {
 		CWpnEnt *pControl = pOwner->m_pControl;
@@ -198,16 +199,17 @@ bool CBaseCombatWeapon::vfunc86(int a, void *pEdict, int c, int d, int e)
 		else
 			pPlayer = (CWpnPlayer *)pUnk->m_pControl;
 		if (pPlayer->m_nUseEdictIndex == engine->vfunc35(pcd_stage((int)pOwner->m_pEdict)))
-			return true;
+			return (char)(true);
 		if (pControl) {
 			if (pControl->m_pEdict == pEdict)
-				return true;
+				return (char)(true);
 			int nState = *(int *)((char *)this + 0x8b0);
 			if (nState == 1 || nState == 0)
-				return false;
+				return (char)(false);
 		}
 	}
-	return sub_100ab020(a, pEdict, c, d, e);
+	return (char)(sub_100ab020(a, pEdict, c, d, e));
+#undef pEdict
 }
 // END FUNCTION
 
@@ -628,12 +630,12 @@ CBaseCombatWeapon::CBaseCombatWeapon()
 void sub_100aa7b0(void *p);
 
 // TARGET: CBaseCombatWeapon::vfunc5
-CBaseCombatWeapon *CBaseCombatWeapon::vfunc5(unsigned int flags)
+CBaseEntity  *CBaseCombatWeapon::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION
 
@@ -3064,13 +3066,15 @@ struct CPlayerView382 {
 	CBCW_V(380) CBCW_V(381)
 	virtual bool vfunc382(CBaseCombatWeapon *pWeapon);
 };
-int CBaseCombatWeapon::vfunc35(CBaseEntity *pOther)
+int CBaseCombatWeapon::vfunc35(int pOther)
 {
+#define pOther ((CBaseEntity *)pOther)
 	if (!EHandle_Get(m_hOwner)) {
 		if (((CPlayerView382 *)pOther)->vfunc382(this))
 			return 0x49;
 	}
 	return 0;
+#undef pOther
 }
 // END FUNCTION
 
@@ -3089,11 +3093,13 @@ struct CSlot382View {
     virtual char vfunc382(CBaseCombatWeapon *pWeapon);
 };
 
-int CBaseCombatWeapon::vfunc34(CBaseEntity *pOther)
+int CBaseCombatWeapon::vfunc34(int pOther)
 {
+#define pOther ((CBaseEntity *)pOther)
     if (!EHandle_Get(m_hOwner) && ((CSlot382View *)pOther)->vfunc382(this))
         return 7;
     return 0;
+#undef pOther
 }
 // END FUNCTION
 
@@ -3103,11 +3109,11 @@ int CBaseCombatWeapon::vfunc34(CBaseEntity *pOther)
 unsigned int __fastcall sub_10006703(CBaseCombatWeapon *p);
 
 // TARGET: CBaseCombatWeapon::vfunc117
-unsigned int CBaseCombatWeapon::vfunc117()
+int CBaseCombatWeapon::vfunc117()
 {
 	if (!EHandle_Get(m_hOwner))
-		return sub_10006703(this) | 8;
-	return sub_10006703(this);
+		return (int)(sub_10006703(this) | 8);
+	return (int)(sub_10006703(this));
 }
 // END FUNCTION
 
@@ -3435,8 +3441,9 @@ struct COwnerView10258440 : Ent
 	int m_n98;
 };
 
-void CBaseCombatWeapon::vfunc130(void *pArg)
+void CBaseCombatWeapon::vfunc130(int pArg)
 {
+#define pArg ((void *)pArg)
 	sub_1008df10(pArg);
 	COwnerView10258440 *pOwner = (COwnerView10258440 *)sub_102521f0();
 	if (pOwner && pOwner->m_n98) {
@@ -3445,6 +3452,7 @@ void CBaseCombatWeapon::vfunc130(void *pArg)
 		else
 			vfunc105(vfunc273());
 	}
+#undef pArg
 }
 // END FUNCTION
 

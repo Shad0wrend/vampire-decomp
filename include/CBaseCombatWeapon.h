@@ -7,7 +7,7 @@
 #pragma once
 
 #include "Vector.h"
-#include "CWeaponAnimBase.h"
+#include "CBaseAnimating.h"
 
 struct CBaseCombatWeaponMembers	// stands for the construction of CBaseCombatWeapon's members with constructors (CVDmg_t[3] at +0x77c, handles at +0x874 / +0x878 / +0x88c, COutputEvent at +0x8e0 / +0x8f8) until the class is modelled past 0x898; its constructor is defined inline in the CBaseCombatWeapon constructor's source
 {
@@ -37,28 +37,32 @@ struct CWeaponRollValue	// a roll result value; has a constructor, so functions 
 #define CBCW_V(n) virtual void vfunc##n();
 #define CBCW_V10(p) CBCW_V(p##0) CBCW_V(p##1) CBCW_V(p##2) CBCW_V(p##3) CBCW_V(p##4) CBCW_V(p##5) CBCW_V(p##6) CBCW_V(p##7) CBCW_V(p##8) CBCW_V(p##9)
 
-class CBaseCombatWeapon : public CWeaponAnimBase
+class CBaseCombatWeapon : public CBaseAnimating
 {
 public:
-	// slots 0..9
-	virtual void vfunc0(); virtual void vfunc1(); virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4();
-	virtual CBaseCombatWeapon *vfunc5(unsigned int flags); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
-	// slots 10..279
-	CBCW_V10(1) CBCW_V10(2) CBCW_V(30) CBCW_V(31) CBCW_V(32) CBCW_V(33) virtual int vfunc34(CBaseEntity *pOther); virtual int vfunc35(CBaseEntity *pOther); CBCW_V(36) CBCW_V(37) CBCW_V(38) CBCW_V(39) CBCW_V10(4) CBCW_V10(5) CBCW_V10(6) CBCW_V10(7)
-	virtual void *vfunc80(); virtual int vfunc81(); virtual void *vfunc82(); CBCW_V(83) CBCW_V(84) CBCW_V(85)
-	virtual bool vfunc86(int a, void *pEdict, int c, int d, int e);	// "ShouldTransmit"-like (CBaseEntity::vfunc86 for a weapon): true while the force-transmit time at +0x90 is in the future or the viewer is the owner's player / the player using the owner; false for a transmit decision on the owner's team states 0 / 1 (+0x8b0); else the entity version
-	CBCW_V(87) CBCW_V(88) CBCW_V(89)
-	CBCW_V(90) CBCW_V(91) CBCW_V(92) CBCW_V(93) CBCW_V(94) CBCW_V(95) CBCW_V(96)
-	virtual CBaseEntity *vfunc97();	// "GetOwnerEntity"
-	CBCW_V(98) CBCW_V(99)
-	CBCW_V(100) CBCW_V(101) CBCW_V(102) CBCW_V(103) CBCW_V(104)
+	// slots 0..133 come from CBaseAnimating (CBaseToggle, CBaseEntity); declared here are the ones the game's weapon
+	// vtable fills with the weapon's own function, with the chain's signature (VC6 overrides keep it exactly)
+	virtual CBaseEntity *vfunc5(unsigned int flags);
+	virtual int vfunc34(int pOther);
+	virtual int vfunc35(int pOther);
+	virtual void vfunc77();
+	virtual void vfunc78();
+	virtual int vfunc79();
+	virtual int vfunc80();
+	virtual int vfunc81();
+	virtual datamap_t *vfunc82();
+	virtual char vfunc86(int a, int pEdict, int c, int d, int e);	// "ShouldTransmit"-like (CBaseEntity::vfunc86 for a weapon): true while the force-transmit time at +0x90 is in the future or the viewer is the owner's player / the player using the owner; false for a transmit decision on the owner's team states 0 / 1 (+0x8b0); else the entity version
+	virtual void vfunc103();
+	virtual void vfunc104();
 	virtual void vfunc105(const char *pszName);
-	CBCW_V(106) CBCW_V(107) CBCW_V(108) CBCW_V(109)
-	CBCW_V(110) CBCW_V(111) CBCW_V(112) CBCW_V(113) CBCW_V(114) CBCW_V(115) CBCW_V(116) virtual unsigned int vfunc117(); CBCW_V(118) CBCW_V(119)
-	CBCW_V(120) CBCW_V(121) CBCW_V(122) CBCW_V(123)
+	virtual int vfunc117();
+	virtual void vfunc119();
 	virtual int vfunc124();	// slot 124 \"CBaseCombatWeapon::DrawDebugTextOverlays\" (function 0x10255dd0): CBaseEntity's lines (sub_100a02b0), then with bit 0 of +0x224 the lines \"Type: %s\", \"Worth: %d\" and, per active attack record of the owner, \"AttackRate: %.2f\", \"Damage: %s\", \"BotchTable: %s\"; returns the next free line
-	CBCW_V(125) CBCW_V(126) virtual int vfunc127(int); CBCW_V(128) CBCW_V(129)
-	virtual void vfunc130(void *pArg); CBCW_V(131) CBCW_V(132) CBCW_V(133) CBCW_V(134) CBCW_V(135) CBCW_V(136) CBCW_V(137) CBCW_V(138) CBCW_V(139) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16)
+	virtual int vfunc126(int a);
+	virtual int vfunc127(int);
+	virtual void vfunc130(int pArg);
+	// slots 134..371
+	CBCW_V(134) CBCW_V(135) CBCW_V(136) CBCW_V(137) CBCW_V(138) CBCW_V(139) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16)
 	virtual void vfunc170(const Vector *pVec);	// asked by vfunc269 with the scaled direction
 	CBCW_V(171) CBCW_V(172) virtual void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value); CBCW_V(174) CBCW_V(175) CBCW_V(176) CBCW_V(177) CBCW_V(178) CBCW_V(179)
 	CBCW_V(180) CBCW_V(181) CBCW_V(182) CBCW_V(183) CBCW_V(184) CBCW_V(185) CBCW_V(186)
@@ -164,15 +168,7 @@ public:
 
 #include "CBaseCombatWeapon_ext.h"
 
-	char m_pad_004_[0x17c - 4];
-	float m_flNextThink;	// 0x17c (CBaseEntity's): the next think time (curtime + 0.1 for the drop sound check)
-	char m_pad_180_[0x19c - 0x180];
-	unsigned int m_nEffectFlags;	// 0x19c (CBaseEntity's): bit 6 (0x40) = the "fresh" flag sub_1024fe00 plays the charge sound for and clears (sets bit 1)
-	union { char m_pad_1a0_[0x26c - 0x1a0]; struct { char m_pad_1a0b_[0x224 - 0x1a0]; unsigned int m_fDebugOverlays224; }; };	// 0x224: the debug overlay flags (bit 0 = the weapon text overlay of vfunc124)
-	const char *m_name26c;	// 0x26c (CBaseEntity's): the entity name (null when empty; g_106b8540 stands in for the scope trace)
-	char m_pad_270_[0x2e0 - 0x270];	// 0x270: the embedded CCollisionProperty (view with (CCollisionProperty *)((char *)this + 0x270))
-	int m_pEdict2e0;	// 0x2e0 (CBaseEntity's): the edict; the weapon's code reads it as a CWeaponHolder_t *
-	char m_pad_2e4_[0x65c - 0x2e4];
+	char m_pad4a4[0x65c - 0x4a4];	// 0x4a4: the weapon's part after CBaseAnimating (the edict at +0x2e0, m_pEdict2e0, is read as a CWeaponHolder_t *)
 	char m_b65c;
 	char m_b65d;
 	char m_pad65e[0x6f0 - 0x65e];

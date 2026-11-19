@@ -55,12 +55,12 @@ void CWeaponGravityGun::vfunc300()
 #include "CWeaponGravityGun.h"
 
 // TARGET: CWeaponGravityGun::vfunc117
-unsigned int CWeaponGravityGun::vfunc117()
+int CWeaponGravityGun::vfunc117()
 {
 	unsigned int result = CBaseCombatWeapon::vfunc117();
 	if (m_n910)
 		result |= 0x40;
-	return result;
+	return (int)(result);
 }
 // END FUNCTION
 
@@ -92,13 +92,13 @@ struct CGargoyleBaseUnit {
 void __cdecl sub_10009fc5(void *p);
 
 // TARGET: CWeaponGravityGun::vfunc5
-CBaseCombatWeapon *CWeaponGravityGun::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponGravityGun::vfunc5(unsigned int flags)
 {
 	((CGargoyleMemberUnit *)((char *)this + 0x93c))->sub_1000a123();
 	((CGargoyleBaseUnit *)this)->sub_10013a57();
 	if (flags & 1)
 		sub_10009fc5(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION
 

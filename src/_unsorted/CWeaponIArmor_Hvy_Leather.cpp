@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10943488;
 }
-void *CWeaponIArmor_Hvy_Leather::vfunc80()
+int CWeaponIArmor_Hvy_Leather::vfunc80()
 {
-    return (void *)((int)&lifted::g_10943488);
+    return (int)&lifted::g_10943488;
 }
 // END FUNCTION
 
@@ -26,11 +26,11 @@ int CWeaponIArmor_Hvy_Leather::vfunc81()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponIArmor_Hvy_Leather::vfunc5
-CBaseCombatWeapon *CWeaponIArmor_Hvy_Leather::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponIArmor_Hvy_Leather::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION

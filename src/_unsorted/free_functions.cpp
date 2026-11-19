@@ -15410,7 +15410,6 @@ void CBaseCombatCharacter::sub_100521e0()
 
 // FUNCTION: 0x100532b0 size=0x8fe
 #include "vampire_all.h"
-struct PcdUnitPad100532b0 { int x; };	// WORKAROUND: VC6 orders one `or ebx, -1` / `mov ebp, 1` pair of this function by a unit-wide count of names (variant_t::NullHandle in inputdata_t.h flipped it, 2026-11-18)
 // TARGET: CBaseCombatCharacter::sub_100532b0
 #include "CBasePlayer.h"
 #include "utlrbtree.h"
@@ -107780,8 +107779,8 @@ void CBasePlayer::sub_1016f2a0(const char *pszFile)
 // END FUNCTION
 
 // FUNCTION: 0x1016fa90 size=0x35b
+// (no CUnknown101d7520.h here: VC6 orders two frame slots of this function by the unit's count of names; the weapon base change of 2026-11-19 flipped them with it)
 #include "CBasePlayer.h"
-#include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
 #include "CUnknown101e56e0.h"
 #include "CUnknown101e7c50.h"

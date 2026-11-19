@@ -24,7 +24,7 @@ struct CWeaponIArmorOwner
 class CWeaponIArmor : public CBaseCombatWeapon
 {
 public:
-	CWeaponIArmor *vfunc5(int flags);	// slot 5 (plain overload of the base slot; VC6 has no covariant returns): sub_10013a57 (destructor body inherited from CBaseCombatWeapon), then sub_100aa7b0(this) when flags & 1; returns this
+	CBaseEntity *vfunc5(unsigned int flags);	// slot 5 (plain overload of the base slot; VC6 has no covariant returns): sub_10013a57 (destructor body inherited from CBaseCombatWeapon), then sub_100aa7b0(this) when flags & 1; returns this
 	virtual int vfunc81();	// slot 81 override: returns 0
 	virtual bool vfunc315();	// slot 315: names the weapon's model (the name at +0x754, "" when null), then CBaseCombatWeapon::sub_10253b70 with the results of slots 342, 343 (the cost chain) and 0xb4, 344
 	virtual bool vfunc325();	// slot 325 override: returns false
@@ -42,8 +42,8 @@ public:
 	void vfunc307(int arg);	// as in CWeaponIWritten (transplant)
 	bool vfunc309();	// as in CWeaponIWritten (transplant)
 	void vfunc321();	// as in CWeaponIWritten (transplant)
-	virtual void *vfunc80();	// slot 80: the class's datamap
-	virtual void *vfunc82();	// slot 82: the class's datamap
+	virtual int vfunc80();	// slot 80: the class's datamap
+	virtual datamap_t *vfunc82();	// slot 82: the class's datamap
 	int sub_103f4020();
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	virtual void vfunc104();	// slot 104 (0x103f3f80): a tail call of CBaseCombatWeapon::vfunc104

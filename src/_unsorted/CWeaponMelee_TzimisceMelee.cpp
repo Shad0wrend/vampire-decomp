@@ -7,9 +7,9 @@
 extern int g_10941680;
 
 // TARGET: CWeaponMelee_TzimisceMelee::vfunc80
-void *CWeaponMelee_TzimisceMelee::vfunc80()
+int CWeaponMelee_TzimisceMelee::vfunc80()
 {
-	return &g_10941680;
+	return (int)&g_10941680;
 }
 // END FUNCTION
 
@@ -67,12 +67,12 @@ int CWeaponMelee_TzimisceMelee::vfunc373()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee_TzimisceMelee::vfunc5
-CBaseCombatWeapon *CWeaponMelee_TzimisceMelee::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponMelee_TzimisceMelee::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION
 

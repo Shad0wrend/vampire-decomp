@@ -11,7 +11,7 @@ class CWeaponPhysCannon : public CBaseCombatWeapon
 {
 public:
 	virtual int vfunc81();	// slot 81 override: returns 0
-	virtual void vfunc130(void *pArg);	// slot 130: 0x1040db30 in the game's CWeaponPhysCannon vtable (link audit)
+	virtual void vfunc130(int pArg);	// slot 130: 0x1040db30 in the game's CWeaponPhysCannon vtable (link audit)
 	virtual void vfunc291();
 	virtual void vfunc307(int a);	// slot 307: the view model / sound call with a sequence-style code (0xc2, 0xb6, 0xbc, 0xc0 passed by the grab code)
 	virtual bool vfunc309();	// slot 309: true when the owner's state allows the grab (a boolean query, tested by slot 321)
@@ -57,7 +57,7 @@ public:
 	CUnknown1040cb60 m_grab;	// 0x96c: the grab controller, its entity handle is at +0xab8
 public:
     virtual char vfunc312();
-    virtual CBaseCombatWeapon *vfunc5(unsigned int flags);    // its own (0x1040daa0)
+    virtual CBaseEntity *vfunc5(unsigned int flags);    // its own (0x1040daa0)
     virtual void vfunc103();    // its own (0x1040db00)
     virtual void vfunc104();    // its own (0x1040dae0)
     virtual void vfunc299(const float *pVelocity);    // its own (0x1040dc40)

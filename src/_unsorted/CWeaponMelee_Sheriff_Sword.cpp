@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_10940d20;
 }
-void *CWeaponMelee_Sheriff_Sword::vfunc80()
+int CWeaponMelee_Sheriff_Sword::vfunc80()
 {
-    return (void *)((int)&lifted::g_10940d20);
+    return (int)&lifted::g_10940d20;
 }
 // END FUNCTION
 
@@ -45,11 +45,11 @@ int CWeaponMelee_Sheriff_Sword::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee_Sheriff_Sword::vfunc5
-CBaseCombatWeapon *CWeaponMelee_Sheriff_Sword::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponMelee_Sheriff_Sword::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION

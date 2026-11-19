@@ -6998,17 +6998,12 @@ int CAI_BaseNPCTroika::vfunc35(int a)
 #include "CAI_BaseNPCTroika.h"
 #include "CBaseCombatCharacter.h"
 
-struct CCombatCharacterShouldTransmit	// CBaseCombatCharacter::vfunc86 (0x103407b0) called directly
-{
-	char sub_103407b0(int a, int b, int c, int d, int e);
-};
-
 // TARGET: CAI_BaseNPCTroika::vfunc86
 char CAI_BaseNPCTroika::vfunc86(int a, int b, int c, int d, int e)
 {
 	if (sub_102c1170())
 		return 1;
-	return ((CCombatCharacterShouldTransmit *)this)->sub_103407b0(a, b, c, d, e);
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc86(a, b, c, d, e);
 }
 // END FUNCTION
 

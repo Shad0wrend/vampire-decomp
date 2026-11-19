@@ -6,10 +6,10 @@
 class CWeaponMelee_Claws : public CWeaponMelee
 {
 public:
-	CBaseCombatWeapon *vfunc5(unsigned int flags);
+	CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10013a57();
 public:
-	void *vfunc80();
+	int vfunc80();
 	int vfunc81();
 	CWeaponActivityRecord *vfunc362();
 	int vfunc363();

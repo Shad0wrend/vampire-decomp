@@ -755,16 +755,11 @@ void CHL2_Player::vfunc451(int a0)
 #include "CHL2_Player.h"
 #include "CBaseCombatCharacter.h"
 
-struct CCombatCharacterShouldTransmit	// CBaseCombatCharacter::vfunc86 (0x103407b0) called directly
-{
-	char sub_103407b0(int a, int b, int c, int d, int e);
-};
-
 char CHL2_Player::vfunc86(int a, int b, int c, int d, int e)
 {
 	if (b == *(int *)((char *)this + 0x2e0))
 		return 1;
-	return ((CCombatCharacterShouldTransmit *)this)->sub_103407b0(a, b, c, d, e);
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc86(a, b, c, d, e);
 }
 // END FUNCTION
 

@@ -67,13 +67,13 @@ struct CGargoyleBaseUnit {
 void __cdecl sub_10009fc5(void *p);
 
 // TARGET: CWeaponPhysCannon::vfunc5
-CBaseCombatWeapon *CWeaponPhysCannon::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponPhysCannon::vfunc5(unsigned int flags)
 {
 	((CGargoyleMemberUnit *)((char *)this + 0x96c))->sub_10011a77();
 	((CGargoyleBaseUnit *)this)->sub_10013a57();
 	if (flags & 1)
 		sub_10009fc5(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION
 
@@ -112,7 +112,7 @@ struct CUnit1040bf90
 };
 
 // TARGET: CWeaponPhysCannon::vfunc130
-void CWeaponPhysCannon::vfunc130(void *pArg)
+void CWeaponPhysCannon::vfunc130(int pArg)
 {
 	CBaseCombatWeapon::vfunc130(pArg);
 	((CUnit1040bf90 *)((char *)this + 0x96c))->sub_1040bf90();

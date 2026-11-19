@@ -6,9 +6,9 @@
 namespace lifted {
 extern char g_109418b0;
 }
-void *CWeaponMelee_OccultBlade::vfunc80()
+int CWeaponMelee_OccultBlade::vfunc80()
 {
-    return (void *)((int)&lifted::g_109418b0);
+    return (int)&lifted::g_109418b0;
 }
 // END FUNCTION
 
@@ -45,11 +45,11 @@ int CWeaponMelee_OccultBlade::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponMelee_OccultBlade::vfunc5
-CBaseCombatWeapon *CWeaponMelee_OccultBlade::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponMelee_OccultBlade::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION

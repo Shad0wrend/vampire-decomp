@@ -6,10 +6,10 @@
 class CWeaponIArmor_Body_Armor : public CWeaponIArmor
 {
 public:
-	CBaseCombatWeapon *vfunc5(unsigned int flags);
+	CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10013a57();
 public:
-	void *vfunc80();
+	int vfunc80();
 	int vfunc81();
 	char m_pad0898[0x910 - 0x898];
 };

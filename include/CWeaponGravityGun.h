@@ -15,8 +15,8 @@ public:
 
 	virtual void vfunc326();
 	virtual char vfunc267();
-	CBaseCombatWeapon *vfunc5(unsigned int flags);	// slot 5 override: the game's 0x10149fc0 (scalar deleting destructor)
-	unsigned int vfunc117();	// slot 117 override: the game's 0x10149f50
+	CBaseEntity *vfunc5(unsigned int flags);	// slot 5 override: the game's 0x10149fc0 (scalar deleting destructor)
+	int vfunc117();	// slot 117 override: the game's 0x10149f50
 	void vfunc300();	// slot 300 override: the game's 0x10149f30
 	void vfunc327();	// slot 327 override: the game's 0x1014e160
 	virtual void vfunc321();	// slot 321 (0x1014e180, plain this-call, no arguments): when slot 309 holds: slot 307(0xb6); with a held object (handle m_hHeld918 resolving, m_n910 set, m_bB24 set) and the entity of the handle m_slots9d0[m_hB1c].m_hA: the physics object of the weapon owner side (CUnknown100290c0::sub_100290c0 on EHandleEntityList *g_10566458 with entity+0x25c, its +0x36c, the default g_10723938 when absent) and that of the held entity (+0x36c) are handed to sub_1014e3f0(objA, objB, &params[0x30 bytes]) (cdecl) and to slot 14 of the physics environment g_10723940 (objA, objB, 0, &params) -> a controller stored at held->+0x730 whose slot 3 gets the held entity; both entities' colour bytes +0x1a0/+0x1a1/+0x1a2 = 0x40/0x40/0x80 and the byte +0x734 = 1; m_flTimes730[0] = curtime + 0.75 (a double constant); then (also without a held object) sub_1014d110() and sub_1014c130() = StopLoopingSounds (stub 0x10013c14 -> 0x1014c110 ... see the asm)
