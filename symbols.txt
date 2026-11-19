@@ -6445,6 +6445,7 @@
 0x10008f62 func   ?sub_101f9830@CUnknown101f9c70@@QAEXPAVCTraitOwnerX@@H@Z CUnknown101f9c70::sub_101f9830
 0x10008f67 func   _info_node_climb info_node_climb
 0x10008f6c func   ?sub_1004fae0@@YAEXZ sub_1004fae0
+0x10008f6c func   ?vfunc117@CSimplePhysicsBrush@@UAEHXZ CSimplePhysicsBrush::vfunc117
 0x10008f71 func   ?vfunc5@CWeaponMelee_ZombieFists@@QAEPAV1@I@Z CWeaponMelee_ZombieFists::vfunc5
 0x10008f76 func   ?sub_102a9710@CThunkOwnerTroika@@QAEHXZ CThunkOwnerTroika::sub_102a9710
 0x10008f7b func   ?vfunc492@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc492
