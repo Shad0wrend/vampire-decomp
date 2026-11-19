@@ -8363,6 +8363,7 @@
 0x1000b564 func   ?sub_102ccb80@@YAXXZ sub_102ccb80
 0x1000b569 func   ?sub_101aa5f0@@YIMH@Z sub_101aa5f0
 0x1000b56e func   ?sub_1013eee0@@YGPBDI@Z sub_1013eee0
+0x1000b56e func   ?vfunc0@CMoveHelperServer@@UBEPBDI@Z CMoveHelperServer::vfunc0
 0x1000b573 func   ?sub_103aca80@@YIHPAD@Z sub_103aca80
 0x1000b578 func   ?sub_10212790@CUnknown102126c0@@QAEXPAUinputdata_t@@@Z CUnknown102126c0::sub_10212790
 0x1000b57d func   ?sub_101bedb0@CStealthKillRules@@QAEXPAUCSKRKeyValues@@PBDPAM@Z CStealthKillRules::sub_101bedb0
