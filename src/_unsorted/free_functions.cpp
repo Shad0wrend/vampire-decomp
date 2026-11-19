@@ -247029,7 +247029,8 @@ float sub_102f9ca0(int a)
 #include <math.h>
 #include <stdlib.h>
 // identifier-count dial (link audit 2026-11-18): VC6 orders this function's tied stack slots by symbol numbers mod 64,
-// so 13 declarations here keep the game's slot order with these headers (window 10..17).
+// so 49 declarations here keep the game's slot order with these headers (re-swept 2026-11-19 after the trace
+// filter bases; 0..48 give score 2).
 typedef int pcd_dial0;
 typedef int pcd_dial1;
 typedef int pcd_dial2;
