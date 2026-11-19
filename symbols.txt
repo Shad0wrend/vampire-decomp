@@ -10301,6 +10301,7 @@
 0x1000dba2 func   ?sub_101e3560@CUnknown101e0f00@@QAEXHPAVCBaseCombatCharacter@@@Z CUnknown101e0f00::sub_101e3560
 0x1000dba7 func   ?sub_10109550@@YA_NPAVVector@@MHHIPAUCFireHandleSrc@@H@Z sub_10109550
 0x1000dbac func   ?vfunc41@CGameSign@@QAEXPAX@Z CGameSign::vfunc41
+0x1000dbac func   ?vfunc41@CGameSign@@UAEXXZ CGameSign::vfunc41
 0x1000dbb1 func   ?sub_100b0c00@@YAXXZ sub_100b0c00
 0x1000dbb6 func   ?vfunc82@CBaseAnimatingOverlay@@UAEPAUdatamap_t@@XZ CBaseAnimatingOverlay::vfunc82
 0x1000dbbb func   ?sub_102c3690@CAI_BaseNPCTroika@@QAEPBDH@Z CAI_BaseNPCTroika::sub_102c3690
