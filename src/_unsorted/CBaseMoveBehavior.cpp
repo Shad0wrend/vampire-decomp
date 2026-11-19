@@ -50,7 +50,7 @@ void CBaseMoveBehavior::vfunc103()
 	Vector *pAngles = ((SlotMover *)this)->v221();
 	*(Vector *)((char *)this + 0x45c) = *pAngles;
 	sub_100b3b00();
-	((CPathKeyFrame *)this)->vfunc103();
+	CPathKeyFrame::vfunc103();
 }
 // END FUNCTION
 
@@ -91,7 +91,7 @@ void CBaseMoveBehavior::vfunc113()
 
 // FUNCTION: 0x10140750 size=0xe
 #include "CBaseMoveBehavior.h"
-bool CBaseMoveBehavior::vfunc153()
+int CBaseMoveBehavior::vfunc153()
 {
 	return m_unk4b4 != 0;
 }

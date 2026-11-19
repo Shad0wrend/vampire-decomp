@@ -96220,9 +96220,9 @@ void CPathKeyFrame::sub_10140270(Vector angles)
 int CBaseMoveBehavior::sub_101402b0(int nIndex)
 {
 	if (nIndex == 1)
-		return m_unk480;
+		return (int)m_pNext;
 	if (nIndex == -1)
-		return m_unk484;
+		return (int)m_pPrev;
 	return (int)this;
 }
 // END FUNCTION
@@ -96234,9 +96234,9 @@ int CBaseMoveBehavior::sub_101402b0(int nIndex)
 int CBaseMoveBehavior::sub_101402f0(int nIndex)
 {
 	if (nIndex == 1)
-		return m_unk484;
+		return (int)m_pPrev;
 	if (nIndex == -1)
-		return m_unk480;
+		return (int)m_pNext;
 	return (int)this;
 }
 // END FUNCTION
@@ -96299,7 +96299,7 @@ extern const char g_1057a8f0[];
 extern "C" CBaseMoveBehavior *move_keyframed()
 {
 	void *mem = sub_100aa720(0x4b8);
-	CBaseMoveBehavior *p = mem ? new(mem) CBaseMoveBehavior : 0;
+	CBaseMoveBehavior *p = mem ? ::new(mem) CBaseMoveBehavior : 0;
 	p->vfunc106(g_1057a8f0);
 	return p;
 }
@@ -96332,9 +96332,9 @@ namespace block_10140690 {
 	int CMoveUnit::sub_101402f0(int nIndex)
 	{
 		if (nIndex == 1)
-			return m_unk484;
+			return (int)m_pPrev;
 		if (nIndex == -1)
-			return m_unk480;
+			return (int)m_pNext;
 		return (int)this;
 	}
 }
@@ -96362,9 +96362,9 @@ namespace block_10140710 {
 	int CBaseMoveBehaviorUnit::sub_101402b0(int nIndex)
 	{
 		if (nIndex == 1)
-			return m_unk480;
+			return (int)m_pNext;
 		if (nIndex == -1)
-			return m_unk484;
+			return (int)m_pPrev;
 		return (int)this;
 	}
 }

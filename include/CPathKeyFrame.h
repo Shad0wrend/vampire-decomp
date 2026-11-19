@@ -1,17 +1,18 @@
-// CPathKeyFrame: declared by pcdecomp transplant for 0x10140f00 from CLogicalEntity (0x1002b100);
-// only what matched code needs, as plain members (the vtable pointer at +0 is not modelled).
+// CPathKeyFrame (RTTI CPathKeyFrame : CLogicalEntity, vtable 0x1046b00c, 241 slots): a key frame of a keyframed
+// move. Its own slots (5, 82, 103, 113) are CBaseEntity's; the plain ones override with the base slot's signature.
 #pragma once
 
 struct datamap_t;
 
 #include "Vector.h"
+#include "CLogicalEntity.h"
 
 void sub_1013fdf0(float *pAngles);	// stub 0x10003710 (free, cdecl): normalises a vector of three angles into -180..180
 
-class CPathKeyFrame
+class CPathKeyFrame : public CLogicalEntity
 {
 public:
-	CPathKeyFrame *vfunc5(unsigned int flags);
+	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_1000cb8a();
 	void vfunc103();	// slot 103: caches the absolute origin (slot 220) at +0x450 and the absolute angles (slot 221) at +0x45c, then hands the angles to sub_10140270
 	void sub_10140270(Vector angles);
@@ -20,7 +21,6 @@ public:
 	void sub_10140070();	// "CPathKeyFrame::CalculateNextTime"-like (stub of 0x10140070): with a next key frame and a positive speed (+0x488) the time to reach it (+0x47c) = the distance between the origins / speed, or, for two key frames at the same place, the largest angle difference (whole degrees) / speed
 	void vfunc113();	// slot 113: CBaseEntity::vfunc113, sub_10140200(), then sub_10140070()
 
-	char m_pad0000[0x450];
 	Vector m_vOrigin;	// 0x450
 	Vector m_vAngles;	// 0x45c
 	char m_pad0468[0x478 - 0x468];

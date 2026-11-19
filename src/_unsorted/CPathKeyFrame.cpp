@@ -49,7 +49,7 @@ void CPathKeyFrame::vfunc113()
 void sub_100aa7b0(void *p);
 
 // TARGET: CPathKeyFrame::vfunc5
-CPathKeyFrame *CPathKeyFrame::vfunc5(unsigned int flags)
+CBaseEntity *CPathKeyFrame::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)
