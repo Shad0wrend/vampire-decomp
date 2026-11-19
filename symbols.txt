@@ -10648,6 +10648,7 @@
 0x1000e282 func   ?sub_10041c30@@YA_NPAH0@Z sub_10041c30
 0x1000e287 func   ?vfunc241@CNPC_VTzimisce@@UAEXPADPAH@Z CNPC_VTzimisce::vfunc241
 0x1000e28c func   ?vfunc360@CWeaponIThrown@@QAEIXZ CWeaponIThrown::vfunc360
+0x1000e28c func   ?vfunc360@CWeaponIThrown@@UAEIXZ CWeaponIThrown::vfunc360
 0x1000e291 func   ?vfunc5@CItemGJumblesFlyer@@QAEPAV1@I@Z CItemGJumblesFlyer::vfunc5
 0x1000e296 func   _func_physbox func_physbox
 0x1000e29b func   ?vfunc370@CNPCMaker_Fleshpile@@UAEHH@Z CNPCMaker_Fleshpile::vfunc370
