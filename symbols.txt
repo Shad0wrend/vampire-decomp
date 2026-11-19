@@ -8576,6 +8576,7 @@
 0x1000b98d func   ?sub_102480d0@CUnknown102480d0@@QAEHXZ CUnknown102480d0::sub_102480d0
 0x1000b992 func   ?vfunc563@CAI_BaseNPCTroika@@UAEXPAVCBaseEntity@@PBX11@Z CAI_BaseNPCTroika::vfunc563
 0x1000b997 func   ?vfunc135@CBaseMoveBehavior@@QAEMM@Z CBaseMoveBehavior::vfunc135
+0x1000b997 func   ?vfunc135@CBaseMoveBehavior@@UAEXXZ CBaseMoveBehavior::vfunc135
 0x1000b9a1 func   ?sub_1007dfa0@CUnknown1007dfa0@@QAEMXZ CUnknown1007dfa0::sub_1007dfa0
 0x1000b9a6 func   ?sub_102e2d40@@YAHXZ sub_102e2d40
 0x1000b9ab func   ?sub_100fa840@@YAHXZ sub_100fa840
