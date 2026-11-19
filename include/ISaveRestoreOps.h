@@ -1,5 +1,7 @@
 // ISaveRestoreOps / CDefSaveRestoreOps: the save/restore ops interface (Source's datamap.h) and its defaults. Kept out
 // of datamap.h so that the data description tables, which spell their own typedescription_t, can read it.
+// A class, also where it is only declared (`class ISaveRestoreOps;`): with `struct` VC6 spells the type .?AU
+// in that unit's RTTI and decorated names, the game spells .?AV.
 #pragma once
 
 struct SaveRestoreFieldInfo_t;

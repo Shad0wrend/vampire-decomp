@@ -58,7 +58,7 @@ void CPhysForceMotion::sub_10025f80(float flScale)
 // END FUNCTION
 
 // FUNCTION: 0x100260a0 size=0x35e
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -476,7 +476,7 @@ int sub_100283c0()
 // END FUNCTION
 
 // FUNCTION: 0x10028720 size=0x227
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -747,7 +747,7 @@ extern "C" CBaseEntity *phys_keepupright()
 // END FUNCTION
 
 // FUNCTION: 0x100292d0 size=0x260
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -1073,7 +1073,7 @@ void sub_1002a210(EntView *pSelf, PhysObjView *pObj1, PhysObjView *pObj2, const 
 // END FUNCTION
 
 // FUNCTION: 0x1002a430 size=0x414
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -13571,7 +13571,7 @@ extern "C" CBaseEntity *phys_spring()
 // END FUNCTION
 
 // FUNCTION: 0x1004cae0 size=0x45c
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -13865,7 +13865,7 @@ extern "C" CBaseEntity *func_physbox()
 // END FUNCTION
 
 // FUNCTION: 0x1004dee0 size=0x160
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -14487,7 +14487,7 @@ extern "C" CBaseEntity *phys_convert()
 // END FUNCTION
 
 // FUNCTION: 0x10050170 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -23292,7 +23292,7 @@ extern "C" CBaseEntity *camera_animated()
 // END FUNCTION
 
 // FUNCTION: 0x10070ae0 size=0x3b8
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -32119,7 +32119,7 @@ extern "C" CBaseEntity *scripted_scene()
 // END FUNCTION
 
 // FUNCTION: 0x10080420 size=0x269
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -47287,7 +47287,7 @@ void __fastcall sub_100b7130(Mem4 *self, int, int num)
 // END FUNCTION
 
 // FUNCTION: 0x100b7220 size=0x2be
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -54533,7 +54533,7 @@ void CMem4c_t::sub_100c83a0(int num)
 // END FUNCTION
 
 // FUNCTION: 0x100c8490 size=0x16f
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -54933,7 +54933,7 @@ extern "C" GP *func_rot_button()
 // END FUNCTION
 
 // FUNCTION: 0x100c9e10 size=0x1bf
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -55298,7 +55298,7 @@ extern "C" CBaseEntity *camera_keyframe()
 // END FUNCTION
 
 // FUNCTION: 0x100cb670 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -55359,7 +55359,7 @@ extern "C" CBaseEntity *camera_track()
 // END FUNCTION
 
 // FUNCTION: 0x100cb9e0 size=0x390
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -56092,7 +56092,7 @@ void CUnknown100cd6d0::sub_100cd6d0(void *pOwner)
 // END FUNCTION
 
 // FUNCTION: 0x100cd760 size=0x56
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -69205,7 +69205,7 @@ int sub_100ed5a0()
 // END FUNCTION
 
 // FUNCTION: 0x100ed780 size=0x881
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -74017,7 +74017,7 @@ extern "C" CBaseEntity *env_player_surface_trigger()
 // END FUNCTION
 
 // FUNCTION: 0x100fd680 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -75151,7 +75151,7 @@ extern "C" CBaseEntity *env_fade()
 // END FUNCTION
 
 // FUNCTION: 0x10100ef0 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -75490,7 +75490,7 @@ extern "C" CBaseEntity *env_message()
 // END FUNCTION
 
 // FUNCTION: 0x10101e30 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -75593,7 +75593,7 @@ extern "C" CBaseEntity *env_microphone()
 // END FUNCTION
 
 // FUNCTION: 0x10102410 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -76244,7 +76244,7 @@ void sub_10103930(CBaseEntity *ent, const Vector &location, int nMagnitude, int 
 // END FUNCTION
 
 // FUNCTION: 0x10103c80 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -77863,7 +77863,7 @@ extern "C" CBaseEntity *filter_base()
 // END FUNCTION
 
 // FUNCTION: 0x10107760 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -78322,7 +78322,7 @@ void sub_10109770(float *pOrigin, float flRadius, float flHeat)
 // END FUNCTION
 
 // FUNCTION: 0x10109840 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -79181,7 +79181,7 @@ int __stdcall sub_1010bdc0(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1010be40 size=0xaf
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -79699,7 +79699,7 @@ extern "C" CBaseEntity *func_breakable()
 // END FUNCTION
 
 // FUNCTION: 0x1010d4b0 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -81768,7 +81768,7 @@ extern "C" CBaseEntity *momentary_door()
 // END FUNCTION
 
 // FUNCTION: 0x10115d20 size=0x264
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -82117,7 +82117,7 @@ void sub_10118350(void)
 // END FUNCTION
 
 // FUNCTION: 0x101183f0 size=0x4bc
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -87794,7 +87794,7 @@ extern "C" CBaseEntity *hud_timer()
 // END FUNCTION
 
 // FUNCTION: 0x1012d0a0 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -89147,7 +89147,7 @@ extern "C" CBaseEntity *logic_auto()
 // END FUNCTION
 
 // FUNCTION: 0x10130c90 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -89208,7 +89208,7 @@ extern "C" void *logic_multicompare()
 // END FUNCTION
 
 // FUNCTION: 0x10130f50 size=0x268
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -89343,7 +89343,7 @@ extern "C" GP *logic_timer()
 // END FUNCTION
 
 // FUNCTION: 0x10131490 size=0x116
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -89578,7 +89578,7 @@ extern "C" CBaseEntity *logic_lineto()
 // END FUNCTION
 
 // FUNCTION: 0x10131a40 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -89622,7 +89622,7 @@ extern "C" CBaseEntity *math_remap()
 // END FUNCTION
 
 // FUNCTION: 0x10131f50 size=0x1a6
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -89698,7 +89698,7 @@ extern "C" CBaseEntity *math_colorblend()
 // END FUNCTION
 
 // FUNCTION: 0x101323e0 size=0x1af
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -89886,7 +89886,7 @@ void CUnit10132b50::sub_10132b50(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x10132db0 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -90037,7 +90037,7 @@ extern "C" GP *math_counter()
 // END FUNCTION
 
 // FUNCTION: 0x10133450 size=0x116
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -90281,7 +90281,7 @@ extern "C" GP *logic_case()
 // END FUNCTION
 
 // FUNCTION: 0x10133bc0 size=0x5bb
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -90592,7 +90592,7 @@ extern "C" CBaseEntity *logic_compare()
 // END FUNCTION
 
 // FUNCTION: 0x10134a80 size=0x160
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -90752,7 +90752,7 @@ extern "C" CBaseEntity *logic_branch()
 // END FUNCTION
 
 // FUNCTION: 0x10134f10 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -90858,7 +90858,7 @@ extern "C" CBaseEntity *logic_pythoncheck()
 // END FUNCTION
 
 // FUNCTION: 0x101351b0 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -90999,7 +90999,7 @@ extern "C" CBaseEntity *logic_npc_condition()
 // END FUNCTION
 
 // FUNCTION: 0x10135570 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -91148,7 +91148,7 @@ extern "C" CBaseEntity *logic_squad_condition()
 // END FUNCTION
 
 // FUNCTION: 0x10135a20 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -91278,7 +91278,7 @@ extern "C" CBaseEntity *logic_relay()
 // END FUNCTION
 
 // FUNCTION: 0x10136330 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -95888,7 +95888,7 @@ extern "C" CBaseEntity *trigger_brush()
 // END FUNCTION
 
 // FUNCTION: 0x1013e590 size=0x1c1
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -98275,7 +98275,7 @@ extern "C" CBaseEntity *path_corner_crash()
 // END FUNCTION
 
 // FUNCTION: 0x10147c10 size=0xa6
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -98392,7 +98392,7 @@ extern "C" GP *gravity_pellet()
 // END FUNCTION
 
 // FUNCTION: 0x10148560 size=0x106
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -100570,7 +100570,7 @@ extern "C" CBaseEntity *phys_animlink()
 // END FUNCTION
 
 // FUNCTION: 0x1014ee10 size=0xab
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -100866,7 +100866,7 @@ extern "C" GP *physics_cannister()
 // END FUNCTION
 
 // FUNCTION: 0x1014fc10 size=0x5e8
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -102249,7 +102249,7 @@ int sub_10156810()
 // END FUNCTION
 
 // FUNCTION: 0x10156a00 size=0x58
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -117239,7 +117239,7 @@ extern "C" CBaseEntity *point_anglesensor()
 // END FUNCTION
 
 // FUNCTION: 0x1018cc00 size=0x108
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -118118,7 +118118,7 @@ extern "C" CBaseEntity *activity_copy_prop()
 // END FUNCTION
 
 // FUNCTION: 0x1018f000 size=0x157
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -118509,7 +118509,7 @@ extern "C" CBaseEntity *prop_dynamic()
 // END FUNCTION
 
 // FUNCTION: 0x101900a0 size=0x1b7
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -119514,7 +119514,7 @@ extern "C" CBaseEntity *prop_physics_contested()
 // END FUNCTION
 
 // FUNCTION: 0x10192a30 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -119613,7 +119613,7 @@ void CPhysicsPropContested::sub_10192b50(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x101931c0 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -119676,7 +119676,7 @@ extern "C" GP *prop_slashable()
 // END FUNCTION
 
 // FUNCTION: 0x101934e0 size=0x313
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -125372,7 +125372,7 @@ bool CSave::sub_101a01c0(const char *pszName, void *pData, void *pRootMap, typed
 // FUNCTION: 0x101a01f0 size=0x4c
 #include "CSave.h"
 
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
 	int fieldType;
@@ -127050,7 +127050,7 @@ bool sub_101a5a80(void *pObject, typedescription_t *pFields, int iNumFields, con
 // END FUNCTION
 
 // FUNCTION: 0x101a5e10 size=0x368
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -127932,7 +127932,7 @@ void __fastcall sub_101a9b30(char *self, int dummy, int arg)
 // END FUNCTION
 
 // FUNCTION: 0x101a9bd0 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -135457,7 +135457,7 @@ void __fastcall sub_101bb760(void *pSelf, int unused, float scale)
 #include "utlvector.h"
 #include "CUtlVectorDataOps.h"
 #include "saverestore_utlvector.h"
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -137346,7 +137346,7 @@ void sub_101c0b80(const char *pszTarget, CBaseEntity *pActivator, CBaseEntity *p
 // END FUNCTION
 
 // FUNCTION: 0x101c0cc0 size=0x103
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -139264,7 +139264,7 @@ void * CUnknown101c48c0::sub_101c48c0(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x101c49e0 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -139619,7 +139619,7 @@ void sub_101c5900(CUnk101c5900 *p, int a, float c)
 #include "CHandleVectorOps.h"
 #include "saverestore_utlvector.h"
 
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -139869,7 +139869,7 @@ extern "C" GP *trigger_multiple()
 // END FUNCTION
 
 // FUNCTION: 0x101c67e0 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -140113,7 +140113,7 @@ extern "C" GP *trigger_changelevel()
 // END FUNCTION
 
 // FUNCTION: 0x101c72f0 size=0xa6
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -141229,7 +141229,7 @@ void CSquadSetter::sub_101c9b60(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x101c9cf0 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -141665,7 +141665,7 @@ extern "C" CBaseEntity *trigger_impact()
 // END FUNCTION
 
 // FUNCTION: 0x101cb130 size=0xa1
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -141752,7 +141752,7 @@ void CUnknown101cb550::sub_101cb550(CInputData100bc0f0 *data)
 // END FUNCTION
 
 // FUNCTION: 0x101cb6b0 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -173801,7 +173801,7 @@ extern "C" CBaseEntity *item_container()
 // END FUNCTION
 
 // FUNCTION: 0x10207f80 size=0x6a3
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -174482,7 +174482,7 @@ void sub_1020a5c0(ArgX *p)
 // END FUNCTION
 
 // FUNCTION: 0x1020a7d0 size=0x1bf
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -174675,7 +174675,7 @@ extern "C" CBaseEntity *security_camera()
 // END FUNCTION
 
 // FUNCTION: 0x1020b440 size=0x888
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -175210,7 +175210,7 @@ extern "C" CBaseEntity *prop_switch()
 // END FUNCTION
 
 // FUNCTION: 0x1020d1b0 size=0x35c
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -175695,7 +175695,7 @@ extern "C" CBaseEntity *func_elevator()
 // END FUNCTION
 
 // FUNCTION: 0x1020e8d0 size=0x76e
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -176002,7 +176002,7 @@ extern "C" CBaseEntity *logic_visibility_test()
 // END FUNCTION
 
 // FUNCTION: 0x1020f8b0 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -176614,7 +176614,7 @@ extern "C" CBaseEntity *trigger_bomb_site()
 // END FUNCTION
 
 // FUNCTION: 0x10210fe0 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -176787,7 +176787,7 @@ extern "C" CBaseEntity *prop_sign()
 // END FUNCTION
 
 // FUNCTION: 0x10211970 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -177346,7 +177346,7 @@ extern "C" CBaseEntity *prop_haunted()
 
 // FUNCTION: 0x102130a0 size=0x766
 #include "QAngle.h"
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -177878,7 +177878,7 @@ extern "C" CBaseEntity *prop_button()
 // END FUNCTION
 
 // FUNCTION: 0x10214e30 size=0x55f
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -178069,7 +178069,7 @@ extern "C" CBaseEntity *prop_model_state()
 // END FUNCTION
 
 // FUNCTION: 0x10215ca0 size=0x55f
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -178270,7 +178270,7 @@ void CPropModelState::sub_10216aa0(int index, void *pActivator)
 // END FUNCTION
 
 // FUNCTION: 0x10216c20 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -180438,7 +180438,7 @@ extern "C" CPropKeypad *prop_keypad()
 // END FUNCTION
 
 // FUNCTION: 0x1021d730 size=0x103
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -183003,7 +183003,7 @@ extern "C" CBaseEntity *mover_keyframe()
 // END FUNCTION
 
 // FUNCTION: 0x10223030 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -183046,7 +183046,7 @@ int CUnknown10223130::sub_10223130(int a0, int a1)
 // END FUNCTION
 
 // FUNCTION: 0x102231c0 size=0x116
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -184046,7 +184046,7 @@ extern "C" CBaseEntity *events_player()
 // END FUNCTION
 
 // FUNCTION: 0x10226700 size=0x7b9
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -191872,7 +191872,7 @@ extern "C" CBaseEntity *events_world()
 // END FUNCTION
 
 // FUNCTION: 0x1023d050 size=0x70f
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -201484,7 +201484,7 @@ void sub_102564f0()
 // END FUNCTION
 
 // FUNCTION: 0x102567b0 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -213861,7 +213861,7 @@ CUnit1028b460Entry *CUnit1028b460::sub_1028b460(int key)
 // END FUNCTION
 
 // FUNCTION: 0x1028cd70 size=0x35f
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -229235,7 +229235,7 @@ extern "C" CAI_Hint *ai_hint()
 // END FUNCTION
 
 // FUNCTION: 0x102d03d0 size=0x368
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -232430,7 +232430,7 @@ extern "C" CBaseEntity *intersting_place()
 // END FUNCTION
 
 // FUNCTION: 0x102d9560 size=0x368
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -233325,7 +233325,7 @@ extern "C" CBaseEntity *intersting_place_conversation()
 // END FUNCTION
 
 // FUNCTION: 0x102db850 size=0x214
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -235547,7 +235547,7 @@ CNode102e0770 * __fastcall sub_102e0770(CList102e0770 *list, int edx, CBaseEntit
 #include "CAI_InterestTarget.h"
 #include "CUtlVectorDataOps.h"
 struct CAI_InterestTarget;
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -260638,7 +260638,7 @@ void CUtlRBTree16Unit::sub_103153a0(unsigned short elem)
 // FUNCTION: 0x10315610 size=0x12f
 #include "CBitStringSaveRestoreOps.h"
 
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -274195,7 +274195,7 @@ extern "C" CBaseEntity *npc_maker()
 // END FUNCTION
 
 // FUNCTION: 0x1034abb0 size=0x162
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -274729,7 +274729,7 @@ extern "C" CBaseEntity *scripted_target()
 // END FUNCTION
 
 // FUNCTION: 0x1034d490 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -276121,7 +276121,7 @@ void sub_10356430(int a, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x10356550 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -282957,7 +282957,7 @@ tail:
 // END FUNCTION
 
 // FUNCTION: 0x10377970 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -283551,7 +283551,7 @@ extern "C" CBaseEntity *npc_VGhoulCroucher()
 // END FUNCTION
 
 // FUNCTION: 0x1037a740 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -294266,7 +294266,7 @@ extern "C" CNPC_VSheriffMan *npc_VSheriffMan()
 // END FUNCTION
 
 // FUNCTION: 0x103adb00 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -298748,7 +298748,7 @@ extern "C" void *npc_VVampireBoss()
 // END FUNCTION
 
 // FUNCTION: 0x103c50c0 size=0x52
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -299762,7 +299762,7 @@ extern "C" CNPC_VWerewolf *npc_VWerewolf()
 // END FUNCTION
 
 // FUNCTION: 0x103c8830 size=0x444
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -305553,7 +305553,7 @@ extern "C" CBaseEntity *npc_VZombie()
 // END FUNCTION
 
 // FUNCTION: 0x103dde40 size=0x301
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -316428,7 +316428,7 @@ int sub_10407700()
 #include "utlmemory.h"
 #include "utlvector.h"
 struct datamap_t;
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct typedescription_t {
     int fieldType;
     const char *fieldName;
@@ -316750,7 +316750,7 @@ void CUnknown10408220::sub_10408220(CUtlMemory192 *pOut)
 #include "utlmemory.h"
 #include "utlvector.h"
 struct datamap_t;
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct typedescription_t {
     int fieldType;
     const char *fieldName;
@@ -318399,7 +318399,7 @@ extern "C" CBaseEntity *player_pickup()
 // END FUNCTION
 
 // FUNCTION: 0x1040cef0 size=0xb0
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -318595,7 +318595,7 @@ extern "C" CWeaponPhysCannon *weapon_physcannon()
 // END FUNCTION
 
 // FUNCTION: 0x1040d8b0 size=0x58
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
