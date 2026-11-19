@@ -10393,6 +10393,7 @@
 0x1000dd7d func   ?vfunc39@CSimplePhysicsProp@@UAEXPAVCBaseEntity@@@Z CSimplePhysicsProp::vfunc39
 0x1000dd87 func   ?sub_101b5dd0@CSoundEmitterSystemBase@@QAEXPBDABUCSoundParamsFull@@@Z CSoundEmitterSystemBase::sub_101b5dd0
 0x1000dd8c func   ?vfunc374@CWeaponIThrown@@QAEXXZ CWeaponIThrown::vfunc374
+0x1000dd8c func   ?vfunc374@CWeaponIThrown@@UAEXXZ CWeaponIThrown::vfunc374
 0x1000dd91 func   ?sub_100bb720@@YAPAVCBaseEntity@@PBDHH0HPAV1@@Z sub_100bb720
 0x1000dd96 func   ?sub_10029e10@CAnchorList@@QAEPAXI@Z CAnchorList::sub_10029e10
 0x1000dd9b func   ?vfunc244@CSceneEntity@@UAEXXZ CSceneEntity::vfunc244
