@@ -1453,6 +1453,7 @@
 0x10002cfc func   ?sub_10084260@CSceneEntity@@QAEXPAX@Z CSceneEntity::sub_10084260
 0x10002d01 func   ?vfunc147@CMultiSource@@QAEEPAVCBaseEntity@@@Z CMultiSource::vfunc147
 0x10002d06 func   ?vfunc374@CWeaponRanged@@QAEXXZ CWeaponRanged::vfunc374
+0x10002d06 func   ?vfunc374@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc374
 0x10002d0b func   ?vfunc582@CAI_BaseNPC@@QAEXM@Z CAI_BaseNPC::vfunc582
 0x10002d10 func   ??1StatDefault@@QAE@XZ StatDefault::~StatDefault
 0x10002d15 func   ?vfunc25@CTempEntsSystem@@QAEXPAVCUnknown1019d130@@HHHHHHHHHHHH@Z CTempEntsSystem::vfunc25
