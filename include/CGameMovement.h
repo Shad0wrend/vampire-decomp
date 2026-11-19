@@ -1,18 +1,19 @@
-// CGameMovement (RTTI .?AVCGameMovement@@): player movement. Declared flat; only the vtable head is modelled.
+// CGameMovement (RTTI CGameMovement : IGameMovement): player movement.
 #pragma once
 #include "QAngle.h"
+#include "IGameMovement.h"
 
 #include "Vector.h"
 #include "CGameTrace.h"
 
-class CGameMovement
+class CGameMovement : public IGameMovement
 {
 public:
 #ifdef PCD_INITIALIZERS	// the initializer units: the global 0x10938628 is built and destroyed by these
 	~CGameMovement();	// function 0x1011e200
 #endif
 	CGameMovement();	// stores the vftable, sets the hull / view vectors and caches a tuning float (0x10739d08 + 0x3c8) at +0xa8
-	virtual CGameMovement *vfunc0(unsigned int flags);
+	CGameMovement *vfunc0(unsigned int flags);	// slot 0, the scalar deleting destructor (0x1011e1d0), matched under this name
 	virtual void vfunc1(void *pMove, void *pPlayer);	// slot 1 "ProcessMovement": stores the arguments at +8 / +4, picks the frame time from the global at 0x109ef04c, runs slot 5 and sub_1011f6e0, and restores the global time step (+0x10 of 0x1070b228)
 	virtual float *vfunc2(char flag, int unused);	// returns the sub-object at +0x2c when flag is set, else the one at +0x14
 	virtual float *slot3(char bDucked, char b1edc);	// slot 3 (+0xc): the hull maxs view (0x101200c0 calls it with the two flag bytes at +0x1edd / +0x1edc of the move data)

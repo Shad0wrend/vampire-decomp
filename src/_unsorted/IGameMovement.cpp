@@ -6,10 +6,10 @@
 
 struct DummyMovement : IGameMovement
 {
-	void vfunc1() {}
-	void vfunc2() {}
-	void vfunc3() {}
-	void vfunc4() {}
+	void vfunc1(void *, void *) {}
+	float *vfunc2(char, int) { return 0; }
+	float *slot3(char, char) { return 0; }
+	float *slot4(int, char) { return 0; }
 };
 
 DummyMovement g_dummyMovement;
