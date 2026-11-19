@@ -31,7 +31,7 @@ int sub_10025ed0()
 
 // FUNCTION: 0x10025f00 size=0x51
 #include "CPhysForce.h"
-void CPhysForceMotion::sub_10025f00(const CPhysForceVec3 *pStart, const CPhysForceVec3 *pEnd)
+void CConstantForceController::sub_10025f00(const CPhysForceVec3 *pStart, const CPhysForceVec3 *pEnd)
 {
 	m_vStart.x = pStart->x;
 	m_vStart.y = pStart->y;
@@ -50,7 +50,7 @@ void CPhysForceMotion::sub_10025f00(const CPhysForceVec3 *pStart, const CPhysFor
 
 // FUNCTION: 0x10025f80 size=0x59
 #include "CPhysForce.h"
-void CPhysForceMotion::sub_10025f80(float flScale)
+void CConstantForceController::sub_10025f80(float flScale)
 {
 	m_vStart = m_vStart2 * flScale;
 	m_vEnd = m_vEnd2 * flScale;
@@ -236,7 +236,7 @@ static inline CAttachedEntX *ResolveAttached(unsigned int h)
 }
 
 namespace block_10025f00 {
-struct CPhysForceMotionUnit : CPhysForceMotion { void sub_10025f00(const CPhysForceVec3 *pStart, const CPhysForceVec3 *pEnd); };
+struct CPhysForceMotionUnit : CConstantForceController { void sub_10025f00(const CPhysForceVec3 *pStart, const CPhysForceVec3 *pEnd); };
 void CPhysForceMotionUnit::sub_10025f00(const CPhysForceVec3 *pStart, const CPhysForceVec3 *pEnd)
 {
 	m_vStart.x = pStart->x;

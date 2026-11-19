@@ -5,14 +5,14 @@
 
 class IPhysicsObject;
 
-#include "CConstantForceController.h"	// CPhysForceVec3, CPhysForceMotion and the record's real class
+#include "CConstantForceController.h"	// CPhysForceVec3 and the motion record's class
 
 // The controller object whose pointer sits at +0x450 of CPhysForce (class not known): its slot 1 takes the motion record.
 class CPhysForceController
 {
 public:
 	virtual void vfunc0();
-	virtual void vfunc1(CPhysForceMotion *pMotion);
+	virtual void vfunc1(CConstantForceController *pMotion);
 	virtual void vfunc2(); virtual void vfunc3(); virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6();
 	virtual void vfunc7();	// slot 7: run after the motion record has been rescaled by the input handler 0x10027b60
 };
