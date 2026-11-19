@@ -16645,6 +16645,7 @@
 0x10015929 func   ?Init@Ray_t@@QAEXABVVector@@0@Z Ray_t::Init
 0x10015929 func   ?sub_1004f7a0@Ray_t@@QAEXPBM0@Z Ray_t::sub_1004f7a0
 0x1001592e func   ?sub_10278650@CAI_BaseNPC@@QAE?AVVector@@ABV2@HH@Z CAI_BaseNPC::sub_10278650
+0x10015933 func   ?vfunc117@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc117
 0x10015933 func   ?vfunc117@CBaseCombatWeapon@@UAEIXZ CBaseCombatWeapon::vfunc117
 0x10015938 func   ?vfunc241@CFire@@UAEXM@Z CFire::vfunc241
 0x1001593d func   ?sub_101006e0@@YAXPBM0IPAXHPAUCGameTrace@@@Z sub_101006e0
