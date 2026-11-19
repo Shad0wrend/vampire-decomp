@@ -15,7 +15,7 @@ public:
 	virtual int vfunc1();
 	virtual CBaseTempEntity *vfunc2(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc3(const Vector &origin, const QAngle &angles);	// "CTEBeamLaser::Test": fills the fields with test values and fires it to a broadcast recipient filter (the two stack arguments are unused)
-	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "CTEBeamLaser::Create": fires the temp entity with the fields below to the recipient filter
+	virtual void vfunc4(CRecipientFilter &filter, float delay);	// "CTEBeamLaser::Create": fires the temp entity with the fields below to the recipient filter; TE_BeamLaser (0x1005be30) calls it directly on the global
 
 	void sub_100051c8();	// destructor body
 
