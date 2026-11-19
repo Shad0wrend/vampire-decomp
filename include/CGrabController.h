@@ -1,6 +1,7 @@
-// CGrabController (RTTI .?AVCGrabController@@): base IMotionEvent at +0x0 is not modelled;
-// primary vtable 0x10514edc has 1 slot.
+// CGrabController (RTTI .?AVCGrabController@@): an IMotionEvent (its one slot, Simulate); vtable 0x10514edc.
 #pragma once
+
+#include "IMotionEvent.h"
 
 class CEntityVSlots;
 class Vector;
@@ -11,12 +12,12 @@ struct CGrabHandle
 	CGrabHandle() { m_Index = -1; }
 };
 
-class CGrabController
+class CGrabController : public IMotionEvent
 {
 public:
 	CGrabController();
 
-	virtual int vfunc0(void *pController, class IPhysicsObject *pObject, float flDeltaTime, float *pLinear, float *pAngular);	// IMotionEvent::Simulate
+	virtual int vfunc0(void *pController, int pObject, float deltaTime, Vector &linear, Vector &angular);	// IMotionEvent::Simulate
 
 	char m_pad0004[0x18];		// 0x0004 .. 0x001B
 	float m_f1c;

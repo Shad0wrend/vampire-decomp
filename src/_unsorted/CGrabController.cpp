@@ -27,8 +27,11 @@ CGrabController::CGrabController()
 #include "CGrabController.h"
 #include "IPhysicsObject.h"
 // TARGET: CGrabController::vfunc0
-int CGrabController::vfunc0(void *pController, IPhysicsObject *pObject, float flDeltaTime, float *pLinear, float *pAngular)
+int CGrabController::vfunc0(void *pController, int pObject, float flDeltaTime, Vector &pLinear, Vector &pAngular)
 {
+#define pObject ((IPhysicsObject *)pObject)
+#define pLinear ((float *)&pLinear)
+#define pAngular ((float *)&pAngular)
 	m_f34 = pObject->vfunc53(&m_pad0004, m_f34, flDeltaTime);
 	pLinear[0] = 0;
 	pLinear[1] = 0;
@@ -38,5 +41,8 @@ int CGrabController::vfunc0(void *pController, IPhysicsObject *pObject, float fl
 	pAngular[2] = 0;
 	m_f38 = flDeltaTime + m_f38;
 	return 1;
+#undef pAngular
+#undef pLinear
+#undef pObject
 }
 // END FUNCTION
