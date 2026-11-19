@@ -14060,6 +14060,7 @@
 0x1001262a func   ?vfunc3@CTEUserTracer@@UAEXABVVector@@ABVQAngle@@@Z CTEUserTracer::vfunc3
 0x1001262f func   ?sub_102aab70@CAI_BaseNPCTroika@@QAEXH@Z CAI_BaseNPCTroika::sub_102aab70
 0x10012634 func   ?sub_10114a50@CFunc_LOD@@QAEEXZ CFunc_LOD::sub_10114a50
+0x10012634 func   ?vfunc117@CFunc_LOD@@UAEHXZ CFunc_LOD::vfunc117
 0x10012639 func   ?sub_102f9400@CAI_NavProvider@@QAEPAUCAI_NavEntry@@H@Z CAI_NavProvider::sub_102f9400
 0x1001263e func   ?vfunc5@CItemGDrugsPerscriptionBottle@@QAEPAV1@I@Z CItemGDrugsPerscriptionBottle::vfunc5
 0x10012643 func   ?sub_10279040@@YAHXZ sub_10279040
