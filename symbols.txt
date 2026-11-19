@@ -16884,6 +16884,7 @@
 0x10015dde func   ?sub_1037e990@@YIPAXPAX@Z sub_1037e990
 0x10015de3 func   ?sub_101bd650@@YGXPAUS@@H@Z sub_101bd650
 0x10015de8 func   ?vfunc431@CNPC_VMingXiao@@UAEXXZ CNPC_VMingXiao::vfunc431
+0x10015ded func   ?vfunc35@CBaseCombatWeapon@@UAEHH@Z CBaseCombatWeapon::vfunc35
 0x10015ded func   ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z CBaseCombatWeapon::vfunc35
 0x10015df2 func   ?sub_10146570@@YAXPAUV3@@0HHHHH@Z sub_10146570
 0x10015df7 func   ?sub_10335b80@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10335b80
