@@ -15842,6 +15842,7 @@
 0x100149d9 func   ?sub_101bb730@CUnk101bb730@@QAEEXZ CUnk101bb730::sub_101bb730
 0x100149de func   ?sub_10182160@@YAMPBM@Z sub_10182160
 0x100149e3 func   ?sub_101da760@@YAHXZ sub_101da760
+0x100149e3 func   ?vfunc1@CDisciplineProjectileTraceFilter@@UAEHXZ CDisciplineProjectileTraceFilter::vfunc1
 0x100149e8 func   ?vfunc300@CWeaponGravityGun@@UAEXXZ CWeaponGravityGun::vfunc300
 0x100149ed func   ?vfunc82@CBasePlayer@@UAEPAXXZ CBasePlayer::vfunc82
 0x100149f2 func   ?vfunc4@CTETracer@@UAEXPAXH@Z CTETracer::vfunc4
