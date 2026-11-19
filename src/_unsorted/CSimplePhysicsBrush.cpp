@@ -115,7 +115,7 @@ unsigned char sub_1004fae0()
 void sub_100aa7b0(void *p);
 
 // TARGET: CSimplePhysicsBrush::vfunc5
-CSimplePhysicsBrush *CSimplePhysicsBrush::vfunc5(unsigned int flags)
+CBaseEntity *CSimplePhysicsBrush::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)
