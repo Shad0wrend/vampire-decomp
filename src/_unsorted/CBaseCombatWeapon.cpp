@@ -249,8 +249,8 @@ extern "C" __declspec(dllimport) void DevWarning(int level, const char *fmt, ...
 // TARGET: CBaseCombatWeapon::vfunc370
 void CBaseCombatWeapon::vfunc370(int *event, CBaseCombatWeapon *other)
 {
-	const char *a = m_pHolder->GetName();
-	const char *b = other->m_pHolder->GetName();
+	const char *a = ((CWeaponHolder_t *)m_pEdict2e0)->GetName();
+	const char *b = ((CWeaponHolder_t *)other->m_pEdict2e0)->GetName();
 	DevWarning(2, g_105c55d0, *event, b, a);
 }
 // END FUNCTION
@@ -299,7 +299,7 @@ void sub_100155eb();
 
 CBaseEntity *CBaseCombatWeapon::vfunc187()
 {
-	const char *name = ((CHolderLike *)m_pHolder)->ClassnameStr();
+	const char *name = ((CHolderLike *)m_pEdict2e0)->ClassnameStr();
 	CBaseEntity *pNew = sub_100a99d0(name, (const float *)&g_1070ba0c->vfunc51((CBaseEntity *)this), vfunc221(), vfunc97());
 	if (pNew) {
 		*(unsigned int *)((char *)pNew + 0x19c) |= 0x40;
@@ -308,7 +308,7 @@ CBaseEntity *CBaseCombatWeapon::vfunc187()
 		sub_101cd250(this, 0x200400b, 0);
 		*(float *)((char *)pNew + 0x17c) = g_1070ba0c->vfunc49((CBaseEntity *)this);
 	} else {
-		g_109f362c("Respawn failed to create %s!\n", ((CHolderLike *)m_pHolder)->ClassnameStr());
+		g_109f362c("Respawn failed to create %s!\n", ((CHolderLike *)m_pEdict2e0)->ClassnameStr());
 	}
 	return pNew;
 }
@@ -1464,12 +1464,12 @@ void CBaseCombatWeapon::vfunc298(CBaseEntity *pOwner, int unused)
 {
 	((CEntityVSlots *)this)->slot93(0xb, 0);
 	{
-		ScopeTrace trace("CBaseEntity::RemoveSolidFlags", m_pszName26c ? m_pszName26c : g_106b8540);
+		ScopeTrace trace("CBaseEntity::RemoveSolidFlags", m_name26c ? m_name26c : g_106b8540);
 		CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
 		pCollision->sub_100dc580(pCollision->m_usSolidFlags & ~8);
 	}
 	{
-		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_pszName26c ? m_pszName26c : g_106b8540);
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
 		CCollisionProperty *pCollision = (CCollisionProperty *)((char *)this + 0x270);
 		pCollision->AddSolidFlags(4);
 	}
@@ -2399,7 +2399,7 @@ void CBaseCombatWeapon::vfunc333(int a, int b, int c, int d, int e, int f)
 		CPASAttenuationFilter filter((CEntitySoundOriginView *)this, atten);
 		if (((CWeaponSoundVS333 *)this)->vfunc295())
 			filter.UsePredictionRules();
-		enginesound->vfunc3(&filter, WpnEntIdx((int)m_pHolder), b, (const char *)rec, flVolume, atten, x, d, 0, 0, 1, 0);
+		enginesound->vfunc3(&filter, WpnEntIdx(m_pEdict2e0), b, (const char *)rec, flVolume, atten, x, d, 0, 0, 1, 0);
 		
 	}
 }
@@ -2927,11 +2927,11 @@ int CBaseCombatWeapon::vfunc124()
 		} else {
 			strcpy(szText, "Type: <ERROR>");
 		}
-		int e = (int)m_pHolder;
+		int e = m_pEdict2e0;
 		sub_101434b0(engine->vfunc35(e), nLine, szText, 0, 255, 255, 255, 255);
 		nLine++;
 		sprintf(szText, "Worth: %d", sub_102517b0()->m_nWorth2558);
-		e = (int)m_pHolder;
+		e = m_pEdict2e0;
 		sub_101434b0(engine->vfunc35(e), nLine, szText, 0, 255, 255, 255, 255);
 		nLine++;
 		for (int i = 0; i < 3; i++) {
@@ -2939,19 +2939,19 @@ int CBaseCombatWeapon::vfunc124()
 			CWeaponAttackSlot *pAtk = &sub_102517b0()->m_Attacks[i];
 			if (pAtk->m_bActive04) {
 				sprintf(szText, "AttackRate: %.2f", pAtk->m_flAttackRate260);
-				e = (int)m_pHolder;
+				e = m_pEdict2e0;
 				sub_101434b0(engine->vfunc35(e), nLine, szText, 0, 255, 255, 255, 255);
 				nLine++;
 				if (*(int *)pDmg != -1) {
 					sprintf(szText, "Damage: %s", pDmg->sub_101fb470());
-					e = (int)m_pHolder;
+					e = m_pEdict2e0;
 					sub_101434b0(engine->vfunc35(e), nLine, szText, 0, 255, 255, 255, 255);
 					nLine++;
 				}
 				if (pAtk->m_nBotchKey25c != -1) {
 					const char *pName = g_1073a2e4.Find(pAtk->m_nBotchKey25c)->m_pszName;
 					sprintf(szText, "BotchTable: %s", pName ? pName : g_106b8540);
-					e = (int)m_pHolder;
+					e = m_pEdict2e0;
 					sub_101434b0(engine->vfunc35(e), nLine, szText, 0, 255, 255, 255, 255);
 					nLine++;
 				}

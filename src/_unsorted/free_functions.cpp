@@ -108928,7 +108928,7 @@ char CBasePlayer::sub_10173f90(CBaseCombatWeapon *pWeapon, int a, int b, int c)
 			sub_101cd940((CBaseCombatWeapon *)pMoney);
 			return 0;
 		}
-		CHolderView *pHolder = (CHolderView *)pWeapon->m_pHolder;
+		CHolderView *pHolder = (CHolderView *)pWeapon->m_pEdict2e0;
 		const char *pszName;
 		if (!pHolder->m_pName)
 			pszName = g_106b8540;
@@ -200184,11 +200184,11 @@ void CBaseCombatWeapon::sub_1024f840()
 	{
 		((CEntityVSlots *)this)->slot93(6, 0);
 		{
-			ScopeTrace trace("CBaseEntity::AddSolidFlags", m_pszName26c ? m_pszName26c : g_106b8540);
+			ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
 			pCol->AddSolidFlags(8);
 		}
 		{
-			ScopeTrace trace("CBaseEntity::SetSolid", m_pszName26c ? m_pszName26c : g_106b8540);
+			ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
 			pCol->sub_100dc480(2);
 		}
 		((CBaseEntity *)this)->sub_100b3b00();
@@ -200226,7 +200226,7 @@ void CBaseCombatWeapon::sub_1024f840()
 	pCol->sub_100dc8d0(1, 0x41c00000);
 	vfunc305();
 	sub_100ac4e0((int)sub_1024fc20, 0, 0);
-	m_flNextThink17c = gpGlobals->curtime + 0.1;
+	m_flNextThink = gpGlobals->curtime + 0.1;
 }
 // END FUNCTION
 
@@ -200287,12 +200287,12 @@ struct CWeaponSolidView : CBaseCombatWeapon
 	CCollisionProperty *CollisionProp() { return (CCollisionProperty *)((char *)this + 0x270); }
 	void SetSolid(int val)
 	{
-		ScopeTrace trace("CBaseEntity::SetSolid", m_pszName26c ? m_pszName26c : g_106b8540);
+		ScopeTrace trace("CBaseEntity::SetSolid", m_name26c ? m_name26c : g_106b8540);
 		CollisionProp()->sub_100dc480(val);
 	}
 	void AddSolidFlags(int flags)
 	{
-		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_pszName26c ? m_pszName26c : g_106b8540);
+		ScopeTrace trace("CBaseEntity::AddSolidFlags", m_name26c ? m_name26c : g_106b8540);
 		CollisionProp()->AddSolidFlags(flags);
 	}
 };
@@ -200300,11 +200300,11 @@ struct CWeaponSolidView : CBaseCombatWeapon
 // TARGET: CBaseCombatWeapon::sub_1024fe00
 void CBaseCombatWeapon::sub_1024fe00()
 {
-	if (m_nEffectFlags19c & 0x40) {
+	if (m_nEffectFlags & 0x40) {
 		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
-		int edict = (int)m_pHolder;
+		int edict = m_pEdict2e0;
 		enginesound->vfunc3(&filter, engine->vfunc35(edict), 1, "items/suitchargeok1.wav", 1.0f, 0.8f, 0, 0x96, 0, 0, 1, 0);
-		m_nEffectFlags19c = (m_nEffectFlags19c & ~0x40) | 2;
+		m_nEffectFlags = (m_nEffectFlags & ~0x40) | 2;
 	}
 	((CWeaponSolidView *)this)->SetSolid(2);
 	((CWeaponSolidView *)this)->AddSolidFlags(8);
@@ -267153,7 +267153,7 @@ bool CBaseCombatCharacter::sub_10334c20(CBaseCombatWeapon *pWeapon)
 		int nBase = 0;
 		for (int i = 0; i < nSection; i++)
 			nBase += vfunc298(i);
-		CInvEdictView *pEdict = (CInvEdictView *)pWeapon->m_pHolder;
+		CInvEdictView *pEdict = (CInvEdictView *)pWeapon->m_pEdict2e0;
 		const char *pszClass;
 		if (!pEdict->m_pUnknown)
 			pszClass = g_106b8540;
@@ -309992,7 +309992,7 @@ void CWeaponThrown_Chang_Energy_Ball::sub_103efa30()
 			}
 		}
 		pPhys->vfunc39(&vecVel.x, &vecAng.x);
-		m_flNextThink17c = gpGlobals->curtime + 0.1f;
+		m_flNextThink = gpGlobals->curtime + 0.1f;
 	}
 }
 // END FUNCTION
@@ -319768,7 +319768,7 @@ void CWeaponMelee::sub_10410830()
 {
 	if (*(float *)((char *)this + 0x918) > gpGlobals->curtime)
 		return;
-	if (IsFlagBitSet(m_nEffectFlags19c, 6))
+	if (IsFlagBitSet(m_nEffectFlags, 6))
 		return;
 	CBaseEntity *pOwner = (CBaseEntity *)((CBaseCombatWeapon *)this)->sub_102521f0();
 	if (!pOwner)
