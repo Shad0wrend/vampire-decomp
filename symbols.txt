@@ -568,6 +568,7 @@
 0x10001b40 func   ?sub_103321a0@@YIMPAD@Z sub_103321a0
 0x10001b45 func   ?vfunc390@CNPC_VHuman@@UAEHPAUCTakeDamageInfo@@@Z CNPC_VHuman::vfunc390
 0x10001b4a func   ?sub_10045770@@YG_NHH@Z sub_10045770
+0x10001b4a func   ?vfunc4@CDefSaveRestoreOps@@UAE_NPAUSaveRestoreFieldInfo_t@@PBD@Z CDefSaveRestoreOps::vfunc4
 0x10001b4f func   ?sub_10045d90@@YAPAHH@Z sub_10045d90
 0x10001b54 func   ?vfunc5@CWeaponThrown_Chang_Energy_Ball@@UAEPAVCBaseCombatWeapon@@I@Z CWeaponThrown_Chang_Energy_Ball::vfunc5
 0x10001b59 func   ?sub_101fb8f0@CVStatSubCost_t@@QAE_NXZ CVStatSubCost_t::sub_101fb8f0
