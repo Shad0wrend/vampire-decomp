@@ -7014,6 +7014,7 @@
 0x10009a70 func   ?sub_1035ece0@@YIPAXPAX@Z sub_1035ece0
 0x10009a75 func   ?sub_102a15c0@@YI_NPAUN@@@Z sub_102a15c0
 0x10009a7a func   ?sub_10235f70@@YAPAXXZ sub_10235f70
+0x10009a7a func   ?vfunc362@CWeaponRanged_Rifle_Remington@@UAEPAUCWeaponActivityRecord@@XZ CWeaponRanged_Rifle_Remington::vfunc362
 0x10009a7f func   ?sub_1004e910@CPhysBox@@QAEXH@Z CPhysBox::sub_1004e910
 0x10009a84 func   ?sub_10028260@CPhysTorque@@QAEXXZ CPhysTorque::sub_10028260
 0x10009a89 func   ?vfunc420@CNPC_VChangBrosBlade@@QAEXXZ CNPC_VChangBrosBlade::vfunc420
