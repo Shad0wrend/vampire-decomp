@@ -16073,6 +16073,7 @@
 0x10014e25 func   ?sub_1018f620@CBreakableProp@@QAEXXZ CBreakableProp::sub_1018f620
 0x10014e2a func   ?sub_10260770@@YIPADPAD@Z sub_10260770
 0x10014e2f func   ?vfunc5@CWeaponRanged@@UAEPAV1@I@Z CWeaponRanged::vfunc5
+0x10014e2f func   ?vfunc5@CWeaponRanged@@UAEPAVCBaseEntity@@I@Z CWeaponRanged::vfunc5
 0x10014e34 func   ?sub_101931c0@@YAPAHXZ sub_101931c0
 0x10014e39 func   ?sub_102525e0@CBaseCombatWeapon@@QAEDPAVCBaseCombatCharacter@@@Z CBaseCombatWeapon::sub_102525e0
 0x10014e3e func   ?sub_10068ab0@@YAXHHPBH0HHHH@Z sub_10068ab0
