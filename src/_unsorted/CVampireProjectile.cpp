@@ -258,7 +258,7 @@ void __fastcall sub_1008b3c0(CVampireProjectile *self);
 CVampireProjectile::~CVampireProjectile()
 {
 	sub_101fa680((char *)this + 0x834);
-	sub_1008b3c0(this);
+	::sub_1008b3c0(this);
 }
 // END FUNCTION
 

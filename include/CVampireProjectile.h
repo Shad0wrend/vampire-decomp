@@ -1,13 +1,13 @@
-// class CVampireProjectile (RTTI .?AVCVampireProjectile@@), primary vtable 0x1048357c, 273 slots.
-// Modelled as a direct CBaseEntity subclass (the real bases CBaseAnimating, CBaseToggle are not declared);
-// slots 117..264 are placeholders that keep slot 265 right.
+// class CVampireProjectile (RTTI CVampireProjectile : CBaseAnimating), primary vtable 0x1048357c, 273 slots.
+// Our CBaseAnimating declares virtuals up to slot 133 only, so slots 134..264 are new virtuals here that keep slot
+// 265 right.
 // slots 118, 120-122 are CBaseEntity's (not declared here: a placeholder with other parameters is a new virtual); 126 / 127 are the class's own 0x101ee770 / 0x101ee790.
 #pragma once
 #include "QAngle.h"
 
-#include "CBaseEntity.h"
+#include "CBaseAnimating.h"
 
-class CVampireProjectile : public CBaseEntity
+class CVampireProjectile : public CBaseAnimating
 {
 public:
 	virtual char vfunc91(void *pPassEnt, int contentsMask);
@@ -71,12 +71,12 @@ public:
 	virtual bool vfunc110(const char *, const char *);	// slot 110: 0x101c1480 in the game's CVampireProjectile vtable (link audit, CVampireProjectile_MingXiaoSpit)
 	virtual int vfunc124();	// slot 124: 0x10096100 in the game's CVampireProjectile vtable (link audit, CVampireProjectile_MingXiaoSpit)
 
-	// Data members (the class derives from the 0x3e0-byte CBaseEntity model). The 8 bytes at +0x8b4 are left to
+	// Data members (after the rest of CBaseAnimating, 0x730 bytes in the game). The 8 bytes at +0x8b4 are left to
 	// the derived padding in CVampireProjectile_MingXiaoSpit so that the class size stays positive with VC6.
 	// vfunc238 (slot 238 "PerformCustomPhysics" override) uses +0x730..+0x8b0;
 	// vfunc272 stores +0x878/+0x87c/+0x880/+0x888/+0x894/+0x8a0; vfunc103 +0x884/+0x87c;
 	// vfunc91 +0x758/+0x8a4; vfunc268/vfunc269 +0x778/+0x888/+0x8a8.
-	char m_pad03e0[0x730 - 0x3e0];
+	char m_pad04a4[0x730 - 0x4a4];	// the rest of CBaseAnimating
 	EHANDLE m_h730;	// 0x730: the entity the projectile retargets to / follows (resolved through the entity list)
 	int m_n734;	// 0x734: -1 when there is no such entity
 	float m_fl738;	// 0x738: the projectile's expiry / despawn time (0 = none)
