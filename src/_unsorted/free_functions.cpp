@@ -128663,7 +128663,7 @@ int sub_101ac200()
 #include "CAmbientGeneric.h"
 unsigned int CAmbientGeneric::sub_101ac2f0()
 {
-	return m_spawnflags & 1;
+	return m_flags204 & 1;
 }
 // END FUNCTION
 
@@ -129194,7 +129194,7 @@ void CAmbientGeneric::sub_101ad470(CBaseEntity *pActivator, CBaseEntity *pCaller
 			return;
 		}
 		m_b04bc = 0;
-		m_spawnflags |= 0x10;
+		m_flags204 |= 0x10;
 		if (m_dpv.spindownsav == 0 && m_dpv.fadeoutsav == 0) {
 			CBaseEntity *pSoundEnt = m_hSoundEnt.Get();
 			if (!pSoundEnt)

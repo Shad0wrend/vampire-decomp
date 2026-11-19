@@ -22,7 +22,7 @@ datamap_t * CGameSign::vfunc82()
 #include "CGameSign.h"
 extern Vector g_1070d1b0;
 // TARGET: CGameSign::CGameSign
-CGameSign::CGameSign() : CBaseEntity(0)
+CGameSign::CGameSign()
 {
     m_f458 = 0.5f;
     m_f45c = 0.5f;

@@ -17,7 +17,7 @@ datamap_t * CPhysForce::vfunc82()
 #include "CPhysForce.h"
 
 // TARGET: CPhysForce::CPhysForce
-CPhysForce::CPhysForce() : CBaseEntity(0), m_hAttached(-1)
+CPhysForce::CPhysForce() : m_hAttached(-1)
 {
 	m_pController = 0;
 }

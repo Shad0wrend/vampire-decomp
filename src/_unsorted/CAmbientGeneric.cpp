@@ -17,7 +17,7 @@ datamap_t *CAmbientGeneric::vfunc82()
 #include "CAmbientGeneric.h"
 
 // TARGET: CAmbientGeneric::CAmbientGeneric
-CAmbientGeneric::CAmbientGeneric() : CAmbientGenericBase(0)
+CAmbientGeneric::CAmbientGeneric()
 {
 	m_b04dc = 0;
 	m_b04dd = 0;
@@ -41,7 +41,7 @@ bool CAmbientGeneric::vfunc136()
 void sub_100aa7b0(void *p);
 
 // TARGET: CAmbientGeneric::vfunc5
-CAmbientGeneric *CAmbientGeneric::vfunc5(unsigned int flags)
+CBaseEntity *CAmbientGeneric::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)
@@ -92,9 +92,9 @@ void CAmbientGeneric::vfunc103()
 		((CEntityVSlots *)this)->slot93(0, 0);
 		((CBaseEntity *)this)->sub_100ac4e0((int)sub_1000969c, 0, 0);
 		m_flNextThink = 0;
-		m_pfnUse1f0 = (int)sub_100131e2;
+		m_pfnUse = static_cast<void (CBaseEntity::*)(CBaseEntity *, CBaseEntity *, int, float)>(&CAmbientGeneric::sub_101ad470);	// SetUse(ToggleUse)
 		m_b04bc = 0;
-		if (!m_b04df && (m_spawnflags & 0x20))
+		if (!m_b04df && (m_flags204 & 0x20))
 			m_b04bd = 0;
 		else
 			m_b04bd = 1;
@@ -162,7 +162,7 @@ void CAmbientGeneric::vfunc104()
             g_1070b248->Precache(pszName, 0);
     }
     sub_101ad0f0();
-    if (!(m_spawnflags & 0x10) && m_b04bd)
+    if (!(m_flags204 & 0x10) && m_b04bd)
         m_b04bc = 1;
 }
 // END FUNCTION

@@ -21,7 +21,7 @@ public:
 	// slots 134..240 are CBaseEntity's in the game; our CBaseEntity.h has them as plain members, so they start here
 	virtual void vfunc134();
 	virtual void vfunc135();
-	virtual void vfunc136();
+	virtual bool vfunc136();	// CBaseEntity's (0x10026d30) returns false
 	virtual void vfunc137();
 	virtual void vfunc138();
 	virtual void vfunc139();

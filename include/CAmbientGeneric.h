@@ -1,7 +1,7 @@
-// CAmbientGeneric: only the members that decompiled code needs are declared.
-// Layout is declared flat (vptr and base members are padding) until the bases are recovered.
+// CAmbientGeneric (RTTI CAmbientGeneric : CPointEntity, vtable 0x1047a58c): ambient_generic.
 #pragma once
 #include "string_t.h"
+#include "CPointEntity.h"
 
 struct datamap_t;
 
@@ -18,8 +18,8 @@ struct dynpitchvol_t
 
 class CAmbientGeneric;
 
-// The entity base chain (CPointEntity: CBaseEntity), modelled as in CPointEntityBase / CConstraintAnchorBase: its constructor
-// (CBaseEntity::CBaseEntity body, stub 0x100090fc, arg = bAddAsDefault) is out of line and runs before the vtable store.
+// The name the entity base constructor (CBaseEntity::CBaseEntity body 0x1009d980, stub 0x100090fc, arg = bAddAsDefault)
+// is matched under: a view, no class's base.
 class CAmbientGenericBase
 {
 public:
@@ -32,22 +32,11 @@ public:
 	virtual CAmbientGeneric *vfunc5(unsigned int flags);	// scalar deleting destructor (0x100141ff); VC6 has no covariant returns, so the base declares the same type
 };
 
-class CAmbientGeneric : public CAmbientGenericBase
+class CAmbientGeneric : public CPointEntity
 {
 public:
 	CAmbientGeneric *sub_101ac230();	// constructor as a plain member (0x101ac230)
-	CAmbientGeneric();	// 0x101ac230 (called by the ambient_generic factory 0x101ac130; define it as `CAmbientGeneric::CAmbientGeneric() : CAmbientGenericBase(0) { ... }`): base constructor, -1 at +0x4c8 / +0x4d8, vtable 0x1047a58c, bytes +0x4dc..+0x4df and dword +0x4e0 = 0
-	char pad0[0x17c - 4];
-	float m_flNextThink;	// 0x17c
-	char pad180[0x1f0 - 0x180];
-	int m_pfnUse1f0;	// 0x1f0: the use function (a stub address)
-	char pad1f4[0x204 - 0x1f4];
-	unsigned int m_spawnflags;
-	char pad208[0x210 - 0x208];
-	int m_iHealth;	// 0x210
-	char pad214[0x26c - 0x214];
-	const char *m_name26c;	// 0x26c: the entity name
-	char pad270[0x450 - 0x270];
+	CAmbientGeneric();	// 0x101ac230 (called by the ambient_generic factory 0x101ac130): base constructor, -1 at +0x4c8 / +0x4d8, vtable 0x1047a58c, bytes +0x4dc..+0x4df and dword +0x4e0 = 0
 	float m_flVolume0450;	// 0x450
 	int m_n0454;
 	dynpitchvol_t m_dpv;	// 0x458: the pitch / volume modulation state (0x64 bytes)
@@ -68,7 +57,7 @@ public:
 	int m_n04e0;
 
 	unsigned int sub_101ac2f0();
-	CAmbientGeneric *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 	bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 KeyValue
 	void vfunc103();	// slot 103 "CAmbientGeneric::Spawn": the sound index from the volume and a flag (sub_101ac570); with a sound file of at least one character: SetSolid(0) (inlined scope trace), move type (0, 0), think function sub_1000969c, no next think, use function 0x100131e2, the 0x4bc / 0x4bd flags, the spawn flag bits into +0x4e0 from the bytes 0x4dc..0x4df, no attached entity, then slot 104; else warns "EMPTY AMBIENT AT" and removes the entity
