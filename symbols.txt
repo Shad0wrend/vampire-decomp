@@ -666,6 +666,7 @@
 0x10001d4d func   ?vfunc363@CNPC_VPlayerController@@QAE_NH@Z CNPC_VPlayerController::vfunc363
 0x10001d52 func   ?vfunc276@CPropHacking@@QAEXXZ CPropHacking::vfunc276
 0x10001d57 func   ?vfunc438@CAI_BaseNPC@@UAEHXZ CAI_BaseNPC::vfunc438
+0x10001d5c func   ?vfunc34@CBaseCombatWeapon@@UAEHH@Z CBaseCombatWeapon::vfunc34
 0x10001d5c func   ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z CBaseCombatWeapon::vfunc34
 0x10001d61 func   ?sub_10201980@CVStatList_t@@QAEHXZ CVStatList_t::sub_10201980
 0x10001d66 func   ?sub_101aedc0@@YAHPAUSPlayEdict@@PBDMHHHHH@Z sub_101aedc0
