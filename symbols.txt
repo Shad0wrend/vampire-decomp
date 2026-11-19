@@ -13002,6 +13002,7 @@
 0x1001118a func   ?sub_101a6ca0@@YAXXZ sub_101a6ca0
 0x1001118f func   ?vfunc461@CNPC_VChangBros@@UAEHXZ CNPC_VChangBros::vfunc461
 0x10011194 func   ?vfunc370@CNPCMaker_Zombie@@UAEHH@Z CNPCMaker_Zombie::vfunc370
+0x10011199 func   ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z CBaseCombatWeapon::vfunc86
 0x10011199 func   ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z CBaseCombatWeapon::vfunc86
 0x1001119e func   ?sub_10087170@@YAXXZ sub_10087170
 0x100111a3 func   ?sub_10238380@@YAXXZ sub_10238380
