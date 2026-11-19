@@ -12349,6 +12349,7 @@
 0x10010465 func   ?sub_10085fb0@@YAXXZ sub_10085fb0
 0x1001046a func   ?sub_101cecf0@@YAXPAUCMsgPlayerView@@HH@Z sub_101cecf0
 0x1001046f func   ?sub_1004faa0@@YGXH@Z sub_1004faa0
+0x1001046f func   ?vfunc41@CSimplePhysicsBrush@@UAEXXZ CSimplePhysicsBrush::vfunc41
 0x10010474 func   ?sub_100ee3b0@CBaseDoor@@QAEDXZ CBaseDoor::sub_100ee3b0
 0x10010479 func   ?sub_100ce600@CUnk100ce600@@QAE_NPAH@Z CUnk100ce600::sub_100ce600
 0x1001047e func   ?vfunc580@CNPC_VMoleman@@QAEPADXZ CNPC_VMoleman::vfunc580
