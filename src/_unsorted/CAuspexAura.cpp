@@ -14,7 +14,7 @@
 #include "ScopeTrace.h"
 
 
-bool CAuspexAura::vfunc86(int a, int pEdict, int c, int d, int e)
+char CAuspexAura::vfunc86(int a, int pEdict, int c, int d, int e)
 {
 	ScopeTrace trace("CAuspexAura::ShouldTransmit", g_106b8540, g_106b8540);
 	EHANDLE &hTransmit = *(EHANDLE *)&m_hTransmitEnt;

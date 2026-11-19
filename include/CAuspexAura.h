@@ -7,7 +7,7 @@ class CAuspexAura : public CBaseEntity
 {
 public:
 	// slot 86 "CAuspexAura::ShouldTransmit" (five stack arguments, the second one is the viewing client's edict)
-	virtual bool vfunc86(int a, int pEdict, int c, int d, int e);	// scope trace; resolves the entity of the handle at +0x4c8 (re-resolved from the handle at +0x4b8 when stale, which then refreshes +0x4c8, or -1 when that is gone too), true when its edict at +0x2e0 is the given one
+	virtual char vfunc86(int a, int pEdict, int c, int d, int e);	// scope trace; resolves the entity of the handle at +0x4c8 (re-resolved from the handle at +0x4b8 when stale, which then refreshes +0x4c8, or -1 when that is gone too), true when its edict at +0x2e0 is the given one
 
 	// slot 243 "CAuspexAura::AttachToEntity", declared as a plain member
 	void vfunc243(CBaseEntity *pEnt, int a, int b);	// scope trace, CEnvParticle::vfunc243(pEnt, a, b), then when pEnt is set and the entity of the handle at +0x4b8 has a player object (+0xa8) bumps the counter byte [engine index - 1] (below 0x20) of the table at pEnt+0x9c + 0x14e4

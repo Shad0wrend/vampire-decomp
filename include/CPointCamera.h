@@ -12,7 +12,7 @@ public:
 	void sub_1000cb8a();
 	CPointCamera *sub_1018c220();	// as in CKeepUpright (transplant)
 	void sub_1018c2b0();	// called directly (stub 0x1000a47f), refreshes the byte at +0x458
-	bool vfunc86(int a, int b, int c, int d, int e);	// slot 86 (ShouldTransmit-like): true when the byte at +0x458 changed (copied to +0x459); else asks the engine (slot 105) whether e is visible from the camera's object and, if so, forwards (b, c, d, e) to the object at +0x2d4
+	virtual char vfunc86(int a, int b, int c, int d, int e);	// slot 86 (ShouldTransmit-like): true when the byte at +0x458 changed (copied to +0x459); else asks the engine (slot 105) whether e is visible from the camera's object and, if so, forwards (b, c, d, e) to the object at +0x2d4
 public:
     virtual datamap_t * vfunc82();
     virtual void vfunc113();

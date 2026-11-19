@@ -216,10 +216,11 @@ void CServerNetworkProperty::vfunc8(const int *pBox)
 // END FUNCTION
 
 // FUNCTION: 0x101ab7e0 size=0xb
-#include "CBaseEntity.h"
+#include "CBaseEntitySlots.h"
 #include "CServerNetworkProperty.h"
 void CServerNetworkProperty::vfunc9()
 {
-	((CBaseEntity *)m_pOuter)->vfunc86();
+	// the outer entity's slot 86 with no arguments of its own (the game jumps to it: its caller's arguments)
+	((CBaseEntitySlots *)m_pOuter)->slot86();
 }
 // END FUNCTION

@@ -4,7 +4,7 @@
 // FUNCTION: 0x1012df00 size=0x34
 #include "CHudCounter.h"
 // TARGET: CHudCounter::vfunc86
-bool CHudCounter::vfunc86(int unused, int edict, int c, int d, int e)
+char CHudCounter::vfunc86(int unused, int edict, int c, int d, int e)
 {
 	if (*(int *)((char *)this + 0x450) >= 0) {
 		if (engine->vfunc35(edict) == *(int *)((char *)this + 0x450))

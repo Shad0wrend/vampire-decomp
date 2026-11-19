@@ -20,7 +20,7 @@ struct CViewModelOwner	// the viewmodel's owner entity, as far as the transmit t
 class CBaseViewModel : public CBaseAnimating
 {
 public:
-	bool vfunc86(int a, int b, int c, int d, int e);	// slot 86 (ShouldTransmit-like): false with bit 6 of +0x19c; true when the owner entity's player (+0xa8) has the edict b
+	virtual char vfunc86(int a, int b, int c, int d, int e);	// slot 86 (ShouldTransmit-like): false with bit 6 of +0x19c; true when the owner entity's player (+0xa8) has the edict b
 
 	virtual CBaseEntity *vfunc5(unsigned int flags);
 	void sub_10007126();

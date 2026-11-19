@@ -35,7 +35,7 @@ struct IPCamQ { virtual void v0(); virtual void v1(); virtual void v2(); virtual
 struct IPCamP { virtual void v0(); virtual void v1(); virtual void v2(); virtual IPCamQ *vfunc3(); };
 struct PCamEdict { char m_pad[0x40]; IPCamP *m_pObj; };
 
-bool CPointCamera::vfunc86(int a, int b, int c, int d, int e)
+char CPointCamera::vfunc86(int a, int b, int c, int d, int e)
 {
 	sub_1018c2b0();
 	char cur = *((char *)this + 0x458);

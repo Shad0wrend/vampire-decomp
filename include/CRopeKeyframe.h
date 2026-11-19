@@ -13,7 +13,7 @@ public:
 	virtual void vfunc103();	// slot 103 (0x1019f540): CBaseEntity::vfunc103, then Precache (slot 104)
 	void sub_1000cb8a();
 	void sub_1023a7d0(int a, int b, int c, int d);
-	char vfunc86(int a, int b, int c, int d, int e);	// slot 86: sets +0x450 when clear, else CBaseEntity::vfunc86
+	virtual char vfunc86(int a, int b, int c, int d, int e);	// slot 86: sets +0x450 when clear, else CBaseEntity::vfunc86
 	char sub_100ab020(int a, int b, int c, int d, int e);	// CBaseEntity::vfunc86 (stub 0x1000e002), called directly
 	CRopeKeyframe *sub_1019dc80();	// as in CKeepUpright (transplant)
 	virtual bool vfunc110(const char *szKeyName, const char *szValue);	// slot 110 "CRopeKeyframe::KeyValue": the Breakable / Collide / Barbed keys set the rope flag bits 0x10 / 4 / 2 for a value of 1, Dangling 1 clears bit 1 of +0x478 (and answers true), Type picks the segment count (0 -> 10, 1 -> 4, else 2), RopeShader the cable material; everything else (and the flag keys) go on to CBaseEntity::KeyValue

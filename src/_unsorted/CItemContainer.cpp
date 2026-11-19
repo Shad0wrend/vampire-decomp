@@ -533,11 +533,16 @@ void CItemContainer::vfunc71()
 #include "CItemContainer.h"
 #include "CBaseCombatCharacter.h"
 
+struct CCombatCharacterShouldTransmit	// CBaseCombatCharacter::vfunc86 (0x103407b0) called directly
+{
+	char sub_103407b0(int a, int b, int c, int d, int e);
+};
+
 // TARGET: CItemContainer::vfunc86
 // the game's 0x10209990: a tail call (jmp) of CBaseCombatCharacter::vfunc86
 char CItemContainer::vfunc86(int a0, int a1, int a2, int a3, int a4)
 {
-	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc86(a0, a1, a2, a3, a4);
+	return ((CCombatCharacterShouldTransmit *)this)->sub_103407b0(a0, a1, a2, a3, a4);
 }
 // END FUNCTION
 

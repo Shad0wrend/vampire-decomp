@@ -99,7 +99,7 @@ bool CNPCMaker::vfunc72(int a0)
 #include "CNPCMaker.h"
 
 // TARGET: CNPCMaker::vfunc86
-bool CNPCMaker::vfunc86(int a, void *pEdict, int c, int d, int e)
+char CNPCMaker::vfunc86(int a, int b, int c, int d, int e)
 {
 	return false;
 }

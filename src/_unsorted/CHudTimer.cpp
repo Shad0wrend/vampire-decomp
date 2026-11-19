@@ -72,7 +72,7 @@ void CHudTimer::sub_1012d720()
 extern int *g_1070b228;
 
 // TARGET: CHudTimer::vfunc86
-bool CHudTimer::vfunc86(int a, int b, int c, int d, int e)
+char CHudTimer::vfunc86(int a, int b, int c, int d, int e)
 {
     if (*((char *)this + 0x470) != 0)
     {
