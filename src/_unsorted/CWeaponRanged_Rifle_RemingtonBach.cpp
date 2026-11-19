@@ -25,9 +25,9 @@ int CWeaponRanged_Rifle_RemingtonBach::vfunc81()
 namespace lifted {
 extern char g_105bc428;
 }
-int CWeaponRanged_Rifle_RemingtonBach::vfunc362()
+CWeaponActivityRecord *CWeaponRanged_Rifle_RemingtonBach::vfunc362()
 {
-    return (int)&lifted::g_105bc428;
+    return (CWeaponActivityRecord *)&lifted::g_105bc428;
 }
 // END FUNCTION
 

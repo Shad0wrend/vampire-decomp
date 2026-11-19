@@ -25,9 +25,9 @@ int CWeaponRanged_Smg_Mac10::vfunc81()
 namespace lifted {
 extern char g_105bb210;
 }
-int CWeaponRanged_Smg_Mac10::vfunc362()
+CWeaponActivityRecord *CWeaponRanged_Smg_Mac10::vfunc362()
 {
-    return (int)&lifted::g_105bb210;
+    return (CWeaponActivityRecord *)&lifted::g_105bb210;
 }
 // END FUNCTION
 
@@ -45,11 +45,11 @@ int CWeaponRanged_Smg_Mac10::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponRanged_Smg_Mac10::vfunc5
-CWeaponRanged *CWeaponRanged_Smg_Mac10::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponRanged_Smg_Mac10::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION

@@ -25,9 +25,9 @@ int CWeaponRanged_Pistol_Glock::vfunc81()
 namespace lifted {
 extern char g_105b8f60;
 }
-int CWeaponRanged_Pistol_Glock::vfunc362()
+CWeaponActivityRecord *CWeaponRanged_Pistol_Glock::vfunc362()
 {
-    return (int)&lifted::g_105b8f60;
+    return (CWeaponActivityRecord *)&lifted::g_105b8f60;
 }
 // END FUNCTION
 
@@ -45,11 +45,11 @@ int CWeaponRanged_Pistol_Glock::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponRanged_Pistol_Glock::vfunc5
-CWeaponRanged *CWeaponRanged_Pistol_Glock::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponRanged_Pistol_Glock::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION

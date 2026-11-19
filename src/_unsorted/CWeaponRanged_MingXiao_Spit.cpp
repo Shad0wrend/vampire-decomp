@@ -25,9 +25,9 @@ int CWeaponRanged_MingXiao_Spit::vfunc81()
 namespace lifted {
 extern char g_105bf908;
 }
-int CWeaponRanged_MingXiao_Spit::vfunc362()
+CWeaponActivityRecord *CWeaponRanged_MingXiao_Spit::vfunc362()
 {
-    return (int)&lifted::g_105bf908;
+    return (CWeaponActivityRecord *)&lifted::g_105bf908;
 }
 // END FUNCTION
 
@@ -58,11 +58,11 @@ void __fastcall sub_102379e0(void *pThis)
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponRanged_MingXiao_Spit::vfunc5
-CWeaponRanged *CWeaponRanged_MingXiao_Spit::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponRanged_MingXiao_Spit::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION

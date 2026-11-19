@@ -29,7 +29,7 @@ class CWeaponRanged_FlameThrower : public CWeaponRanged
 public:
 	CWeaponRanged_FlameThrower();	// the constructor (0x103e2ad0), called by the item_w_flamethrower factory
 
-	virtual CWeaponRanged *vfunc5(unsigned int flags);	// slot 5: its own (0x103e2b90); VC6 has no covariant returns
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// slot 5: its own (0x103e2b90); VC6 has no covariant returns
 	virtual void vfunc104();
 	int vfunc80();	// slot 80 override: the game's 0x103e2740
 	int vfunc81();	// slot 81 override: the game's 0x103e2760
@@ -49,9 +49,7 @@ public:
 	void sub_103e3570(CBaseEntity *pEnt, Vector vecPos);	// stub 0x1001020d: sets pEnt alight (damage record, burning list entry at +0x1554)
 	void sub_103e3930();	// stub 0x1000397c: the burn scan over the particles' bounds (calls sub_103e3570 for the entities it finds)
 
-	char m_pad0004[0x74c - 4];
-	int m_n74c;	// 0x74c: the clip
-	char m_pad0750[0x89a - 0x750];
+	char m_pad898[0x89a - 0x898];	// (the clip at 0x74c is CBaseCombatWeapon's m_n74c)
 	char m_b89a;
 	char m_pad089b[0x91c - 0x89b];
 	int m_aBuf[0x2ee];	// 0x91c, zeroed by the constructor
@@ -83,48 +81,9 @@ public:
 	int m_n1560;
 	int m_n1564;
 public:
-	virtual void vfunc330();
 	virtual const Vector &vfunc331();
-	virtual void vfunc332();
-	virtual void vfunc333();
-	virtual void vfunc334();
-	virtual void vfunc335();
-	virtual void vfunc336();
-	virtual void vfunc337();
-	virtual void vfunc338();
-	virtual void vfunc339();
-	virtual void vfunc340();
-	virtual void vfunc341();
-	virtual void vfunc342();
-	virtual void vfunc343();
-	virtual void vfunc344();
-	virtual void vfunc345();
-	virtual void vfunc346();
-	virtual void vfunc347();
-	virtual void vfunc348();
-	virtual void vfunc349();
-	virtual void vfunc350();
-	virtual void vfunc351();
-	virtual void vfunc352();
-	virtual void vfunc353();
-	virtual void vfunc354();
-	virtual void vfunc355();
-	virtual void vfunc356();
-	virtual void vfunc357();
-	virtual void vfunc358();
-	virtual void vfunc359();
-	virtual void vfunc360();
-	virtual void vfunc361();
-	virtual int vfunc362();
+	virtual CWeaponActivityRecord *vfunc362();
 	virtual int vfunc363();
-	virtual void vfunc364();
-	virtual void vfunc365();
-	virtual void vfunc366();
-	virtual void vfunc367();
-	virtual void vfunc368();
-	virtual void vfunc369();
-	virtual void vfunc370();
-	virtual void vfunc371();
 	virtual void vfunc372();	// slot 372: the per-shot update (0x103e2f30): the base step, then the flame particle spawn
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	virtual void vfunc103();	// slot 103 (0x103e2c50): a tail call of CBaseCombatWeapon::vfunc103

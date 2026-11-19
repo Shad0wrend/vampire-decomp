@@ -25,9 +25,9 @@ int CWeaponRanged_FlameThrower::vfunc81()
 namespace lifted {
 extern char g_10665e00;
 }
-int CWeaponRanged_FlameThrower::vfunc362()
+CWeaponActivityRecord *CWeaponRanged_FlameThrower::vfunc362()
 {
-    return (int)&lifted::g_10665e00;
+    return (CWeaponActivityRecord *)&lifted::g_10665e00;
 }
 // END FUNCTION
 
@@ -65,13 +65,13 @@ CWeaponRanged_FlameThrower::CWeaponRanged_FlameThrower() : m_n1530(-1), m_n1554(
 
 void sub_100aa7b0(void *pEntity);
 
-CWeaponRanged *CWeaponRanged_FlameThrower::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponRanged_FlameThrower::vfunc5(unsigned int flags)
 {
 	((CUtlVector<int> *)&m_n1554)->~CUtlVector<int>();
 	((CBaseCombatWeapon *)this)->sub_10250c50();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION
 

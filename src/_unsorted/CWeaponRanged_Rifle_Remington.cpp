@@ -62,6 +62,6 @@ void __fastcall sub_10253ea0(void *pThis);
 void CWeaponRanged_Rifle_Remington::vfunc319()
 {
 	sub_1001245e(this);
-	sub_10253ea0(this);
+	::sub_10253ea0(this);
 }
 // END FUNCTION

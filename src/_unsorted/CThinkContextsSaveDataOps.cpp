@@ -43,14 +43,8 @@ void CThinkContextsSaveDataOps::vfunc0(SaveRestoreFieldInfo_t *pFieldInfo, ISave
 // END FUNCTION
 
 // FUNCTION: 0x100a1f90 size=0x125
-#include "CUnknown101d7520.h"
-#include "CUnknown101daec0.h"
-#include "CUnknown101e56e0.h"
-#include "CUnknown101e7c50.h"
-#include "CUnknown101f4c80.h"
-#include "CUnknown10202b10.h"
-#include "CUnknown10206400.h"
-#include "CUnknown1073dc28.h"
+// (none of the CUnknown*.h headers here: unused, and VC6 places one stack load of this function by the unit's
+// count of names; the ranged weapon base change of 2026-11-19 moved it)
 #include "datamap.h"
 #include "utlmemory.h"
 #include "utlvector.h"

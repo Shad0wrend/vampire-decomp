@@ -306683,7 +306683,7 @@ bool CWeaponRanged_FlameThrower::sub_103e3490(CBaseEntity *pEnt)
 		return false;
 	if (*(unsigned char *)((char *)pEnt + 0x19c) & 0x40)
 		return false;
-	if (sub_100a52a0(pEnt))
+	if (::sub_100a52a0(pEnt))
 		return false;
 	int i = 0;
 	while (i < *(int *)((char *)this + 0x1560)) {

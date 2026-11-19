@@ -25,9 +25,9 @@ int CWeaponRanged_Rifle_SteyrAug::vfunc81()
 namespace lifted {
 extern char g_105bcfb8;
 }
-int CWeaponRanged_Rifle_SteyrAug::vfunc362()
+CWeaponActivityRecord *CWeaponRanged_Rifle_SteyrAug::vfunc362()
 {
-    return (int)&lifted::g_105bcfb8;
+    return (CWeaponActivityRecord *)&lifted::g_105bcfb8;
 }
 // END FUNCTION
 

@@ -1,66 +1,50 @@
-// class CWeaponRanged (RTTI .?AVCWeaponRanged@@).
-// Its bases (CBaseCombatWeapon and below, all at offset +0x0) are not modelled yet, so
-// every slot of the primary vtable up to the ones we need is declared here as a
-// placeholder to keep the slot numbers right. CWeaponRangedBase stands for the whole
-// base chain: its constructor (CBaseCombatWeapon's, 0x10250ac0) is called out of line.
+// class CWeaponRanged (RTTI .?AVCWeaponRanged@@): the guns, derived from CBaseCombatWeapon (game RTTI).
 #pragma once
 #include "Vector.h"
+#include "CBaseCombatWeapon.h"
 
+// slot placeholders for local views of other classes (CWeaponRanged.cpp)
 #define CWR_V(n) virtual void vfunc##n();
 #define CWR_V10(p) CWR_V(p##0) CWR_V(p##1) CWR_V(p##2) CWR_V(p##3) CWR_V(p##4) CWR_V(p##5) CWR_V(p##6) CWR_V(p##7) CWR_V(p##8) CWR_V(p##9)
 
-class CWeaponRangedBase
-{
-public:
-    CWeaponRangedBase();
-    virtual void vfunc0();
-};
-
-class CWeaponRanged : public CWeaponRangedBase
+class CWeaponRanged : public CBaseCombatWeapon
 {
 public:
     CWeaponRanged();
-    virtual void vfunc0();
-    virtual void vfunc1();
-    virtual void vfunc2();
-    virtual void vfunc3();
-    virtual void vfunc4();
-    virtual CWeaponRanged *vfunc5(unsigned int flags);
-    CWR_V(6) CWR_V(7) CWR_V(8) CWR_V(9)
-    CWR_V10(1) CWR_V10(2) CWR_V10(3) CWR_V10(4) CWR_V10(5) CWR_V10(6) CWR_V10(7)
-    virtual int vfunc80();  // slot 80: int result (CWeaponRanged_MingXiao_Spit 0x1023...)
+    // slots 0..371 come from CBaseCombatWeapon; declared here are the ones the game's CWeaponRanged vtable fills
+    // with its own function, with the chain's signature (VC6 overrides keep it exactly)
+    virtual CBaseEntity *vfunc5(unsigned int flags);
+    virtual int vfunc80();    // slot 80: int result (CWeaponRanged_MingXiao_Spit 0x1023...)
     virtual int vfunc81();
-    CWR_V(82) CWR_V(83) CWR_V(84) CWR_V(85) CWR_V(86) CWR_V(87) CWR_V(88) CWR_V(89)
-    CWR_V10(9)
-    CWR_V(100) CWR_V(101) CWR_V(102) CWR_V(103) CWR_V(104) CWR_V(105)
-    virtual void vfunc106(const char *pszClassname);    // slot 106: the factories (item_w_*) call it with their classname right after construction
-    CWR_V(107) CWR_V(108) CWR_V(109)
-    CWR_V10(11) CWR_V10(12) CWR_V10(13) CWR_V10(14) CWR_V10(15) CWR_V10(16) CWR_V10(17) CWR_V10(18) CWR_V10(19)
-    CWR_V10(20) CWR_V10(21) CWR_V10(22) CWR_V10(23) CWR_V10(24) CWR_V10(25) CWR_V10(26)
-    CWR_V(270) CWR_V(271) CWR_V(272) CWR_V(273) CWR_V(274) virtual int vfunc275(int a);    // slot 275: returns the roll slot's activity/sequence id (-1 = none)
-    CWR_V(276) CWR_V(277) CWR_V(278) CWR_V(279)
-    CWR_V10(28) CWR_V(290) CWR_V(291) CWR_V(292) virtual void sub_placeholder293(); CWR_V(294) CWR_V(295) CWR_V(296) CWR_V(297) CWR_V(298) CWR_V(299)
-    void *vfunc293();    // slot 293 (0x10239f70): the ranged line-of-fire trace; the placeholder sub_placeholder293 holds the slot, this plain member is the real body (a virtual declaration changes the vtable signature and breaks the matched thunks)
-    CWR_V(300) CWR_V(301) CWR_V(302) CWR_V(303) CWR_V(304) CWR_V(305) CWR_V(306)
-    virtual void vfunc307(int value);   // CBaseCombatWeapon slot 307 (called with a sound / activity id)
-    CWR_V(308) CWR_V(309)
-    CWR_V(310) CWR_V(311) CWR_V(312) CWR_V(313) CWR_V(314)
+    virtual datamap_t *vfunc82();    // 0x102343a0 (matched as sub_102343a0)
+    virtual void vfunc104();
+    virtual bool vfunc282();    // 0x10234800 (matched as sub_10234800: returns false)
+    virtual void vfunc291();
+    virtual int vfunc293();    // slot 293 (0x10239f70): the ranged line-of-fire trace
+    virtual void vfunc294();
     virtual bool vfunc315();    // slot 315: sets the owner's model name (male / female variant), then asks slots 344 / 343 / 342 for the shot parameters and starts the shot; true when it started
-    virtual void vfunc316(int a);   // 0x10239d10: when the owner's character is set and the counter at +0x914 is not negative, clears its flag (sub_10174550(1)) and its +0x1e78 and resets the counter to -1, then CBaseCombatWeapon::vfunc316
-    void sub_10253ca0(int a);       // CBaseCombatWeapon::vfunc316, called directly (stub 0x1001428b)
-    CWR_V(317) CWR_V(318) CWR_V(319)
-    CWR_V(320) CWR_V(321) CWR_V(322) CWR_V(323) CWR_V(324) CWR_V(325) CWR_V(326) CWR_V(327)
-    virtual int vfunc328();     // 0x10239210: 0xe0 or 0xbc plus a 0x1f / 0xfc mask on sub_102391c0 (the caller's flag), the 0xe0 form when the state at +0x86c is 1
-    CWR_V(329) CWR_V(330)
+    virtual char vfunc316(int a);    // 0x10239d10: when the owner's character is set and the counter at +0x914 is not negative, clears its flag (sub_10174550(1)) and its +0x1e78 and resets the counter to -1, then CBaseCombatWeapon::vfunc316
+    virtual void vfunc319();
+    virtual void vfunc320();
+    virtual void vfunc321();
+    virtual bool vfunc325();
+    virtual void vfunc326();
+    virtual void vfunc327();
+    virtual int vfunc328();    // 0x10239210: 0xe0 or 0xbc plus a 0x1f / 0xfc mask on sub_102391c0 (the caller's flag), the 0xe0 form when the state at +0x86c is 1
+    virtual void vfunc329();
     virtual const Vector &vfunc331();    // slot 331: a vector inside the current roll slot record
+    virtual void vfunc339();    // slot 339 (0x102397b0): recoil spread kick, a vector handed to the owner character's slot 169
+    virtual unsigned int vfunc360();    // 0x102347c0 (matched as sub_102347c0: 0x2000)
+    virtual CWeaponActivityRecord *vfunc362();    // 0x10234430 (matched as sub_10234430): the activity table
+    virtual int vfunc363();    // 0x10234450 (matched as sub_10234450: 1)
+    virtual void vfunc370(int *event, CBaseCombatWeapon *other);    // events 0xfa1 / 0xfa2 set a bodygroup from the event's string, 0xbd6..0xbe4 run sub_10238380 (when the global at 0x1088aee4 and the dword at other+0xa8 are set) or sub_10238320, the rest go to CBaseCombatWeapon::vfunc370
+    char sub_10253ca0(int a);       // CBaseCombatWeapon::vfunc316, called directly (stub 0x1001428b)
+    // slots 372..374: CWeaponRanged's own new virtuals, in slot order
+    virtual void vfunc372();    // slot 372 (0x10238580): ranged-weapon fire step; roll slot sub_102517e0, owner sub_10252290, shot interval loop
+    virtual void vfunc373();    // slot 373 (0x102387b0; this in ecx, no stack args, plain ret): the NPC / player fire step: roll slot sub_102517e0 (ammo slot 2 forced while the owner's list +0x4fe84 and +0x914 are positive), owner sub_10252240, misc flag 0x200000, slot 333(1 or 6, 1, 0,0,0,0), aim via owner slot 389 / sub_10176520 (autoaim) or the NPC's slot 574, shot-count loop on +0x730[g_1088aee4] with slot 332 interval (count +0x918), UTIL_TraceLine_DebugCall (mask 0x46004003, CTraceFilterSimple(this, 0)), DevMsg "Presence bonus", a 0x44 byte CVDmg_t-like record copied from +0x77c + roll*0x44 (rep movsd) into a bullet-info struct (0x4a dwords, CVDmg_t ctor 0x101fa5b0, CGameTrace ctor 0x1003ff80) handed to the owner's slot 185 once per shot, CSoundEnt::sub_101bac90(1, origin, ...), slot 339
+    virtual void vfunc374();    // slot 374 "CWeaponRanged::ToggleZoom"-like: flips the state at +0x86c (slot 307 with 0xe7 / 0xe6, slot 333 with 8 or 3), mirrors it into +0x84c and the global at 0x1088aee4, then tells the owner (sub_101cebc0 with 0x1a and the new state)
     void sub_10013a57();    // as in CPhysForce (transplant)
-    void vfunc339();    // slot 339 (0x102397b0, plain member): recoil spread kick, a vector handed to the owner character's slot 169
 
-    // Slot 370 (animation events), declared as a plain member for now: the slots between 32x and 370 are not modelled.
-    void vfunc373();    // slot 373 (0x102387b0, plain member like 372 / 374; this in ecx, no stack args, plain ret): the NPC / player fire step: roll slot sub_102517e0 (ammo slot 2 forced while the owner's list +0x4fe84 and +0x914 are positive), owner sub_10252240, misc flag 0x200000, slot 333(1 or 6, 1, 0,0,0,0), aim via owner slot 389 / sub_10176520 (autoaim) or the NPC's slot 574, shot-count loop on +0x730[g_1088aee4] with slot 332 interval (count +0x918), UTIL_TraceLine_DebugCall (mask 0x46004003, CTraceFilterSimple(this, 0)), DevMsg "Presence bonus", a 0x44 byte CVDmg_t-like record copied from +0x77c + roll*0x44 (rep movsd) into a bullet-info struct (0x4a dwords, CVDmg_t ctor 0x101fa5b0, CGameTrace ctor 0x1003ff80) handed to the owner's slot 185 once per shot, CSoundEnt::sub_101bac90(1, origin, ...), slot 339
-    void vfunc372();    // slot 372 (0x10238580, plain member): ranged-weapon fire step; roll slot sub_102517e0, owner sub_10252290, shot interval loop
-    void vfunc370(int *event, void *other);     // events 0xfa1 / 0xfa2 set a bodygroup from the event's string, 0xbd6..0xbe4 run sub_10238380 (when the global at 0x1088aee4 and the dword at other+0xa8 are set) or sub_10238320, the rest go to CBaseCombatWeapon::vfunc370
-    void vfunc374();    // slot 374 "CWeaponRanged::ToggleZoom"-like (declared as a plain member): flips the state at +0x86c (slot 307 with 0xe7 / 0xe6, slot 333 with 8 or 3), mirrors it into +0x84c and the global at 0x1088aee4, then tells the owner (sub_101cebc0 with 0x1a and the new state)
     void sub_10238380();    // worker of events 0xbd6..0xbe4
     void sub_10238320();    // worker of events 0xbd6..0xbe4 (stub 0x100049ad)
     void sub_10093b10(int group, int value);    // CBaseAnimating::SetBodygroup, called directly (stub 0x10001bb8)

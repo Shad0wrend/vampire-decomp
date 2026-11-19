@@ -25,9 +25,9 @@ int CWeaponRanged_Tzimisce2Head::vfunc81()
 namespace lifted {
 extern char g_105bf8ec;
 }
-int CWeaponRanged_Tzimisce2Head::vfunc362()
+CWeaponActivityRecord *CWeaponRanged_Tzimisce2Head::vfunc362()
 {
-    return (int)&lifted::g_105bf8ec;
+    return (CWeaponActivityRecord *)&lifted::g_105bf8ec;
 }
 // END FUNCTION
 
@@ -45,11 +45,11 @@ int CWeaponRanged_Tzimisce2Head::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponRanged_Tzimisce2Head::vfunc5
-CWeaponRanged *CWeaponRanged_Tzimisce2Head::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponRanged_Tzimisce2Head::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION

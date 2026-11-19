@@ -25,9 +25,9 @@ int CWeaponRanged_Rifle_Crossbow_Flaming::vfunc81()
 namespace lifted {
 extern char g_105b83d0;
 }
-int CWeaponRanged_Rifle_Crossbow_Flaming::vfunc362()
+CWeaponActivityRecord *CWeaponRanged_Rifle_Crossbow_Flaming::vfunc362()
 {
-    return (int)&lifted::g_105b83d0;
+    return (CWeaponActivityRecord *)&lifted::g_105b83d0;
 }
 // END FUNCTION
 
@@ -45,11 +45,11 @@ int CWeaponRanged_Rifle_Crossbow_Flaming::vfunc363()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponRanged_Rifle_Crossbow_Flaming::vfunc5
-CWeaponRanged *CWeaponRanged_Rifle_Crossbow_Flaming::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponRanged_Rifle_Crossbow_Flaming::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity  *)(this);
 }
 // END FUNCTION

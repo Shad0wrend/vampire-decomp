@@ -11,6 +11,6 @@ public:
 public:
 	int vfunc80();
 	int vfunc81();
-	int vfunc362();
+	CWeaponActivityRecord *vfunc362();
 	int vfunc363();
 };

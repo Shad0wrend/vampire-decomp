@@ -121,7 +121,7 @@ CWeaponRanged::CWeaponRanged()
 void sub_100aa7b0(void *p);
 
 // TARGET: CWeaponRanged::vfunc5
-CWeaponRanged *CWeaponRanged::vfunc5(unsigned int flags)
+CBaseEntity  *CWeaponRanged::vfunc5(unsigned int flags)
 {
 	sub_10013a57();
 	if (flags & 1)
@@ -149,7 +149,7 @@ extern "C" int atoi(const char *);
 extern int g_1088aee4;
 
 // TARGET: CWeaponRanged::vfunc370
-void CWeaponRanged::vfunc370(int *event, void *other)
+void CWeaponRanged::vfunc370(int  *event, CBaseCombatWeapon  *other)
 {
 	switch (event[0])
 	{
@@ -282,7 +282,7 @@ void CWeaponRanged::vfunc372()
 		if (owner) {
 			owner->vfunc429();
 			if (pSlot[0x3c4 / 4] > 0) {
-				owner->sub_1017e150(pSlot[0x3c4 / 4], -1.0f, sub_101d3730("CWeaponRanged::Attack %s", sub_100ab4f0(this)));
+				owner->sub_1017e150(pSlot[0x3c4 / 4], -1.0f, sub_101d3730("CWeaponRanged::Attack %s", ::sub_100ab4f0(this)));
 			}
 			if (g_1088aee4 == 0)
 				tv->vfunc307(tv->vfunc328());
@@ -819,7 +819,7 @@ void CWeaponRanged::vfunc321()
 	}
 	else
 	{
-		sub_10253110(pWeapon);
+		::sub_10253110(pWeapon);
 		pWeapon->vfunc307(pView->m_nPending854);
 		pView->m_nPending854 = -1;
 		void *pOwner = pWeapon->sub_102521f0();
@@ -844,19 +844,18 @@ struct CWeaponRangedView
 	char m_pad089a[0x8c8 - 0x89a];
 	char m_b08c8;	// +0x8c8
 
-	void sub_10254b00(int a);	// CBaseCombatWeapon::sub_10254b00 (stub 0x10007784), called directly
+	bool sub_10254b00(int a);	// CBaseCombatWeapon::sub_10254b00 (stub 0x10007784), called directly
 };
 
 // TARGET: CWeaponRanged::vfunc325
-void CWeaponRanged::vfunc325()
+bool CWeaponRanged::vfunc325()
 {
 	CWeaponRangedView *pView = (CWeaponRangedView *)this;
 	if (!pView->m_b0898 && pView->m_b08c8) {
 		pView->m_b0899 = 0;
-		pView->sub_10254b00(0xc1);
-		return;
+		return pView->sub_10254b00(0xc1);
 	}
-	pView->sub_10254b00(pView->m_n086c ? 0xe3 : 0xc2);
+	return pView->sub_10254b00(pView->m_n086c ? 0xe3 : 0xc2);
 }
 // END FUNCTION
 
@@ -1093,7 +1092,7 @@ void CWeaponRanged::vfunc339()
 #include "CFlagSet10174550.h"
 struct CRangedCharView : CFlagSet10174550 { char m_pad[0x1e78 - 1]; int m_n1e78; };
 struct CRangedOwnerView { char m_pad[0xa8]; CRangedCharView *m_pChar; };
-void CWeaponRanged::vfunc316(int a)
+char CWeaponRanged::vfunc316(int a)
 {
 	CRangedOwnerView *pOwner = (CRangedOwnerView *)sub_102521f0();
 	if (pOwner) {
@@ -1104,7 +1103,7 @@ void CWeaponRanged::vfunc316(int a)
 			*(int *)((char *)this + 0x914) = -1;
 		}
 	}
-	sub_10253ca0(a);
+	return sub_10253ca0(a);
 }
 // END FUNCTION
 
@@ -1134,14 +1133,14 @@ void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vecto
 extern char g_10538764[];
 extern char g_1058edc8[];
 
-void *CWeaponRanged::vfunc293()
+int CWeaponRanged::vfunc293()
 {
 	void *pOwner = sub_102521f0();
 	if (!pOwner)
-		return 0;
+		return (int)(0);
 	CBasePlayer *pChar = (CBasePlayer *)((CBaseEntity *)pOwner)->m_pA8;
 	if (!pChar)
-		return 0;
+		return (int)(0);
 
 	Vector vecForward;
 	Vector vecRight;
@@ -1156,8 +1155,8 @@ void *CWeaponRanged::vfunc293()
 	if (tr.m_fraction < 1.0f && tr.m_pEnt != 0 &&
 	    ((unsigned char)((pEntity = tr.m_pEnt)->m_flags204 >> 13) & 1) != 0 && pEntity->m_p9c == 0 &&
 	    __RTDynamicCast(pEntity, 0, g_10538764, g_1058edc8, 0) != 0)
-		return pEntity;
-	return 0;
+		return (int)(pEntity);
+	return (int)(0);
 }
 // END FUNCTION
 
