@@ -8143,6 +8143,7 @@
 0x1000b0f5 func   ?sub_10306520@CUnk10306520@@QAEXXZ CUnk10306520::sub_10306520
 0x1000b0fa func   ?sub_101a01c0@CSave@@QAE_NPBDPAX1PAUtypedescription_t@@@Z CSave::sub_101a01c0
 0x1000b0ff func   ?vfunc585@CCineNPC@@UAE_NXZ CCineNPC::vfunc585
+0x1000b104 func   ??_GCMoveHelperServer@@UAEPAXI@Z ??_GCMoveHelperServer@@UAEPAXI@Z
 0x1000b104 func   ?vfunc14@CMoveHelperServer@@UAEPAV1@I@Z CMoveHelperServer::vfunc14
 0x1000b109 func   ?sub_100e58b0@CUnk100e58b0@@QAE_NXZ CUnk100e58b0::sub_100e58b0
 0x1000b10e func   ?vfunc438@CNPC_VHumanCombatant@@QAEHXZ CNPC_VHumanCombatant::vfunc438
