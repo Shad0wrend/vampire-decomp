@@ -8474,6 +8474,7 @@
 0x1000b78f func   ??0CBeamHead@@QAE@XZ CBeamHead::CBeamHead
 0x1000b794 func   ?vfunc2@CTEImpact@@UAEPAV1@I@Z CTEImpact::vfunc2
 0x1000b799 func   ?sub_10235f90@@YAHXZ sub_10235f90
+0x1000b799 func   ?vfunc363@CWeaponRanged_Rifle_Remington@@UAEHXZ CWeaponRanged_Rifle_Remington::vfunc363
 0x1000b79e func   ?sub_1021e7e0@CUnknown1021e7e0@@QAEXHPAVCBaseEntity@@@Z CUnknown1021e7e0::sub_1021e7e0
 0x1000b7a3 func   ?vfunc11@CBaseEntity@@UAEXPBD@Z CBaseEntity::vfunc11
 0x1000b7a8 func   ?vfunc168@CBaseEntity@@QAEXXZ CBaseEntity::vfunc168
