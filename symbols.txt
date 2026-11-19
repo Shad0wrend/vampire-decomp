@@ -15545,6 +15545,7 @@
 0x10014349 func   ?vfunc424@CBasePlayer@@UAEDD@Z CBasePlayer::vfunc424
 0x1001434e func   ?sub_100657e0@@YAHXZ sub_100657e0
 0x10014353 func   ?vfunc226@CSimplePhysicsBrush@@UAEHXZ CSimplePhysicsBrush::vfunc226
+0x10014353 func   ?vfunc226@CSimplePhysicsBrush@@UAEXH@Z CSimplePhysicsBrush::vfunc226
 0x10014358 func   ?vfunc563@CNPC_VCamera@@UAEXHHHH@Z CNPC_VCamera::vfunc563
 0x1001435d func   ?sub_100c5400@@YAXPAUStudioHdr@@HPBMPAPAXPAM@Z sub_100c5400
 0x10014362 func   ?sub_101ab800@CUnknown101ab800@@QAE_NHPBEH@Z CUnknown101ab800::sub_101ab800
