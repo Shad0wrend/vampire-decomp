@@ -5805,6 +5805,7 @@
 0x100082c9 func   ?sub_1004d650@@YAHPBD@Z sub_1004d650
 0x100082ce func   ?sub_10110430@TFilterX@@QAEPAU1@E@Z TFilterX::sub_10110430
 0x100082d3 func   ?vfunc339@CWeaponRanged@@QAEXXZ CWeaponRanged::vfunc339
+0x100082d3 func   ?vfunc339@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc339
 0x100082d8 func   ?vfunc364@CBaseCombatWeapon@@UAEXHHH@Z CBaseCombatWeapon::vfunc364
 0x100082dd func   ?sub_101fc350@CVStatCost_t@@QAEHH_N@Z CVStatCost_t::sub_101fc350
 0x100082e2 func   ?vfunc180@CRagdollProp@@UAEXXZ CRagdollProp::vfunc180
