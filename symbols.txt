@@ -12998,6 +12998,7 @@
 0x10011144 func   ?sub_1003b850@Vector@@QBE_NABV1@@Z Vector::sub_1003b850
 0x10011149 func   ?sub_10079d40@SDumpOutput@@QAEXHPAUCDumpActor10079d40@@@Z SDumpOutput::sub_10079d40
 0x1001114e func   ?sub_1004fac0@@YGXH@Z sub_1004fac0
+0x1001114e func   ?vfunc42@CSimplePhysicsBrush@@UAEHH@Z CSimplePhysicsBrush::vfunc42
 0x10011153 func   ?sub_10247e40@CUnknown10248a50@@QAEXPBV1@@Z CUnknown10248a50::sub_10247e40
 0x10011158 func   ?sub_103de220@CNPC_VZombie@@QAEPAV1@XZ CNPC_VZombie::sub_103de220
 0x10011162 func   ?sub_103b1ad0@@YIPAHPAD@Z sub_103b1ad0
