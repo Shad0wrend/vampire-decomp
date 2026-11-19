@@ -422,6 +422,7 @@
 0x1000184d func   ?vfunc81@CSteamJet@@UAEHXZ CSteamJet::vfunc81
 0x10001852 func   ?sub_10340180@@YAXXZ sub_10340180
 0x10001857 func   ??_GCAI_Senses@@UAEPAXI@Z ??_GCAI_Senses@@UAEPAXI@Z
+0x1000185c func   ??1CMoveHelperServer@@UAE@XZ CMoveHelperServer::~CMoveHelperServer
 0x1000185c func   ?sub_1000185c@CMoveHelperServer@@QAEXXZ CMoveHelperServer::sub_1000185c
 0x10001861 func   _item_p_research_lg_dodge item_p_research_lg_dodge
 0x10001866 func   ??0CTraceFilterSimpleList@@QAE@H@Z CTraceFilterSimpleList::CTraceFilterSimpleList
