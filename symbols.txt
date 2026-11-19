@@ -3665,6 +3665,7 @@
 0x100058c6 func   ?sub_1018d5f0@CPointHurt@@QAEXXZ CPointHurt::sub_1018d5f0
 0x100058cb func   ?vfunc580@CNPC_VBach@@UAEHXZ CNPC_VBach::vfunc580
 0x100058d0 func   ?sub_1013eec0@CMoveHelperServer@@QAEXPAVCBaseEntity@@@Z CMoveHelperServer::sub_1013eec0
+0x100058d0 func   ?vfunc15@CMoveHelperServer@@UAEXPAVCBaseEntity@@@Z CMoveHelperServer::vfunc15
 0x100058d5 func   ??1CTEDust@@QAE@XZ CTEDust::~CTEDust
 0x100058d5 func   ?sub_10114080@CUnknown10114080@@QAEHXZ CUnknown10114080::sub_10114080
 0x100058da func   ?sub_103b3650@CNPC_VTaxiDriverFwd@@QAEXH@Z CNPC_VTaxiDriverFwd::sub_103b3650
