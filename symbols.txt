@@ -14423,6 +14423,7 @@
 0x10012da5 func   ?vfunc104@CNPCMaker_Fleshpile@@UAEXXZ CNPCMaker_Fleshpile::vfunc104
 0x10012daa func   ?sub_10121ca0@@YIHPAD@Z sub_10121ca0
 0x10012daf func   ?sub_100d0000@CPySave@@QAEXPAUField@@PAUSaveIf@@@Z CPySave::sub_100d0000
+0x10012daf func   ?vfunc0@CPyObjStrSaveRestoreDataOps@@UAEXPAUSaveRestoreFieldInfo_t@@PAVISave@@@Z CPyObjStrSaveRestoreDataOps::vfunc0
 0x10012db4 func   ?sub_10106f90@CBaseCombatCharacter@@QAE_NH@Z CBaseCombatCharacter::sub_10106f90
 0x10012db9 func   ?vfunc133@CBaseKeyframedMover@@UAEXXZ CBaseKeyframedMover::vfunc133
 0x10012dbe func   ?vfunc4@CRelationshipSaveDataOps@@UAE_NPAUSaveRestoreFieldInfo_t@@PBD@Z CRelationshipSaveDataOps::vfunc4
