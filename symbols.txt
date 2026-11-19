@@ -15634,6 +15634,7 @@
 0x10014538 func   ?sub_100ea5e0@CDialogDependency@@QAEPBDXZ CDialogDependency::sub_100ea5e0
 0x1001453d func   ?sub_1023e0b0@CUnknown1023e0b0@@QAEXPAUinputdata_t@@@Z CUnknown1023e0b0::sub_1023e0b0
 0x10014542 func   ?sub_102347c0@@YAHXZ sub_102347c0
+0x10014542 func   ?vfunc360@CWeaponRanged@@UAEIXZ CWeaponRanged::vfunc360
 0x10014547 func   ?sub_10428880@@YAXPAXH@Z sub_10428880
 0x1001454c func   ?sub_101db430@CUnknown101db210@@QAEHHH@Z CUnknown101db210::sub_101db430
 0x10014551 func   ?sub_1039aca0@CNPC_VMingXiao@@QAEXXZ CNPC_VMingXiao::sub_1039aca0
