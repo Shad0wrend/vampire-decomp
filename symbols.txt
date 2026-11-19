@@ -7294,6 +7294,7 @@
 0x1000a038 func   ?vfunc14@CRestore@@UAEHXZ CRestore::vfunc14
 0x1000a03d func   ?vfunc82@CChangeLevel@@UAEPAUdatamap_t@@XZ CChangeLevel::vfunc82
 0x1000a042 func   ?sub_100a2110@S100a2110@@QAE_NPAPAUSVec@@@Z S100a2110::sub_100a2110
+0x1000a042 func   ?vfunc2@CThinkContextsSaveDataOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z CThinkContextsSaveDataOps::vfunc2
 0x1000a047 func   ?sub_1020e8d0@@YAPAHXZ sub_1020e8d0
 0x1000a04c func   ?vfunc81@CWeaponMelee_MingXiaoTentacle@@UAEHXZ CWeaponMelee_MingXiaoTentacle::vfunc81
 0x1000a051 func   ?vfunc103@CBatSwarm@@UAEXXZ CBatSwarm::vfunc103
