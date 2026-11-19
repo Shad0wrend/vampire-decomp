@@ -12314,6 +12314,7 @@
 0x100103ed func   ?sub_100424a0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_100424a0
 0x100103f2 func   ?vfunc619@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc619
 0x100103f7 func   ?sub_100ecc60@EntryTable@@QAEHHH@Z EntryTable::sub_100ecc60
+0x100103fc func   ??0CBaseAnimating@@QAE@XZ CBaseAnimating::CBaseAnimating
 0x100103fc func   ??0CWeaponAnimBase@@QAE@XZ CWeaponAnimBase::CWeaponAnimBase
 0x100103fc func   ?sub_1008b230@CBaseAnimating@@QAEPAV1@XZ CBaseAnimating::sub_1008b230
 0x10010401 func   ?sub_1032ec90@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::sub_1032ec90
