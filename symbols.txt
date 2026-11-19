@@ -14990,6 +14990,7 @@
 0x100138d1 func   ?vfunc442@CNPC_VAndreiBlood@@UAEXPBH@Z CNPC_VAndreiBlood::vfunc442
 0x100138d6 func   ?sub_10334860@CBaseCombatCharacter@@QAEDPAX@Z CBaseCombatCharacter::sub_10334860
 0x100138db func   ?vfunc293@CWeaponRanged@@QAEPAXXZ CWeaponRanged::vfunc293
+0x100138db func   ?vfunc293@CWeaponRanged@@UAEHXZ CWeaponRanged::vfunc293
 0x100138e0 func   ?vfunc5@CTriggerImpact@@QAEPAV1@I@Z CTriggerImpact::vfunc5
 0x100138e5 func   ?vfunc124@CPhysicsSpring@@QAEHXZ CPhysicsSpring::vfunc124
 0x100138ea func   ?sub_1036e2f0@CNPC_VChangBros@@QAEPAV1@XZ CNPC_VChangBros::sub_1036e2f0
