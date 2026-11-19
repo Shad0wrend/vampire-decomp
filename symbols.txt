@@ -5316,6 +5316,7 @@
 0x1000791e func   ?sub_1012e150@@YAHXZ sub_1012e150
 0x10007923 func   ?vfunc8@CEntityListSystem@@QAEPAV1@I@Z CEntityListSystem::vfunc8
 0x10007928 func   ?vfunc373@CWeaponRanged@@QAEXXZ CWeaponRanged::vfunc373
+0x10007928 func   ?vfunc373@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc373
 0x1000792d func   ?sub_100f41e0@@YAXHMMMH@Z sub_100f41e0
 0x10007932 func   ?sub_103dad80@@YAPAXXZ sub_103dad80
 0x10007937 func   ?sub_10149de0@@YA_NXZ sub_10149de0
