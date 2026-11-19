@@ -5,7 +5,7 @@
 #include "CTEDust.h"
 
 // TARGET: CTEDust::CTEDust
-CTEDust::CTEDust(const char *name) : CBaseTempEntity(name), m_n000c(0), m_n0010(0), m_n0014(0)
+CTEDust::CTEDust(const char *name) : CTEParticleSystem(name)
 {
 	m_fl0018 = 1.0f;
 	m_fl001c = 1.0f;
