@@ -14825,6 +14825,7 @@
 0x1001357f func   ?sub_10239150@CWrap10239150@@QAEPAXXZ CWrap10239150::sub_10239150
 0x10013589 func   ?sub_1018f720@CFoo1018f720@@QAEXH@Z CFoo1018f720::sub_1018f720
 0x1001358e func   ?sub_101bb990@CUnknown101bc140@@QAEXPAXPAVCBaseEntity@@HPBDH@Z CUnknown101bc140::sub_101bb990
+0x10013593 func   ?vfunc130@CBaseCombatWeapon@@UAEXH@Z CBaseCombatWeapon::vfunc130
 0x10013593 func   ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z CBaseCombatWeapon::vfunc130
 0x10013598 func   ?ShiftElementsRight@?$CUtlVector@V?$CHandle@VCAI_BaseNPC@@@@V?$CUtlMemory@V?$CHandle@VCAI_BaseNPC@@@@@@@@QAEXHH@Z CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >::ShiftElementsRight
 0x10013598 func   ?sub_102ce9a0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102ce9a0
