@@ -12447,6 +12447,7 @@
 0x1001064f func   ?sub_100df7b0@@YA_NXZ sub_100df7b0
 0x10010654 func   ?sub_1037c580@@YAHXZ sub_1037c580
 0x10010659 func   ?vfunc372@CWeaponRanged@@QAEXXZ CWeaponRanged::vfunc372
+0x10010659 func   ?vfunc372@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc372
 0x1001065e func   ?sub_102d0270@CUnknown102d0270@@QAE_NPBM@Z CUnknown102d0270::sub_102d0270
 0x10010663 func   ?sub_10237ce0@@YAXXZ sub_10237ce0
 0x1001066d func   ?sub_101ff190@CVStatInfo_t@@QAEHH@Z CVStatInfo_t::sub_101ff190
