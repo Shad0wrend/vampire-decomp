@@ -1549,6 +1549,7 @@
 0x10002ee6 func   ?sub_102bf560@CAI_BaseNPCTroika@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_102bf560
 0x10002eeb func   ?vfunc2@CServerGameClients@@UAEXH@Z CServerGameClients::vfunc2
 0x10002ef0 func   ?vfunc325@CWeaponRanged@@UAEXXZ CWeaponRanged::vfunc325
+0x10002ef0 func   ?vfunc325@CWeaponRanged@@UAE_NXZ CWeaponRanged::vfunc325
 0x10002ef5 func   ?sub_101c67e0@@YAPAHXZ sub_101c67e0
 0x10002efa func   ?vfunc599@CNPC_VYukie@@QAEDH@Z CNPC_VYukie::vfunc599
 0x10002eff func   ?sub_101a6560@@YIXPAX@Z sub_101a6560
