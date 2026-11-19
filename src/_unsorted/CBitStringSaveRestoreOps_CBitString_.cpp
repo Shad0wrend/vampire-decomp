@@ -13,12 +13,16 @@ bool __stdcall sub_10045770(int a, int b)
 #include "CBitStringSaveRestoreOps.h"
 #include "CSave.h"
 // TARGET: CBitStringSaveRestoreOps<CBitString>::vfunc0
-void CBitStringSaveRestoreOps<CBitString>::vfunc0(CBitString **ppBits, CSave *pSave)
+void CBitStringSaveRestoreOps<CBitString>::vfunc0(SaveRestoreFieldInfo_t *ppBits, ISave *pSave)
 {
+#define ppBits ((CBitString **)ppBits)
+#define pSave ((CSave *)pSave)
 	CBitString *pBits = *ppBits;
 	int nBits = pBits->m_nBits;
 	pSave->vfunc10(&nBits, 1);
 	pSave->vfunc10(pBits->m_pData, pBits->m_nDwords);
+#undef pSave
+#undef ppBits
 }
 // END FUNCTION
 
@@ -27,11 +31,15 @@ void CBitStringSaveRestoreOps<CBitString>::vfunc0(CBitString **ppBits, CSave *pS
 #include "CRestore.h"
 
 // TARGET: CBitStringSaveRestoreOps<CBitString>::vfunc1
-void CBitStringSaveRestoreOps<CBitString>::vfunc1(CBitString **ppBits, CRestore *pRestore)
+void CBitStringSaveRestoreOps<CBitString>::vfunc1(SaveRestoreFieldInfo_t *ppBits, IRestore *pRestore)
 {
+#define ppBits ((CBitString **)ppBits)
+#define pRestore ((CRestore *)pRestore)
 	CBitString *pBits = *ppBits;
 	pBits->sub_100bf480(pRestore->vfunc14());
 	pRestore->vfunc15(pBits->m_pData, pBits->m_nDwords, 0);
+#undef pRestore
+#undef ppBits
 }
 // END FUNCTION
 
@@ -39,11 +47,13 @@ void CBitStringSaveRestoreOps<CBitString>::vfunc1(CBitString **ppBits, CRestore 
 #include "CBitStringSaveRestoreOps.h"
 
 // TARGET: CBitStringSaveRestoreOps<CBitString>::vfunc3
-void CBitStringSaveRestoreOps<CBitString>::vfunc3(CBitString **ppBits)
+void CBitStringSaveRestoreOps<CBitString>::vfunc3(SaveRestoreFieldInfo_t *ppBits)
 {
+#define ppBits ((CBitString **)ppBits)
 	CBitString *p = *ppBits;
 	if (p->m_pData)
 		memset(p->m_pData, 0, p->m_nDwords * 4);
+#undef ppBits
 }
 // END FUNCTION
 
@@ -52,8 +62,9 @@ void CBitStringSaveRestoreOps<CBitString>::vfunc3(CBitString **ppBits)
 
 extern unsigned int g_1055b298[32];
 
-bool CBitStringSaveRestoreOps<CBitString>::vfunc2(CBitString **ppBits)
+bool CBitStringSaveRestoreOps<CBitString>::vfunc2(SaveRestoreFieldInfo_t *ppBits)
 {
+#define ppBits ((CBitString **)ppBits)
 	CBitString *p = *ppBits;
 	p->m_pData[p->m_nDwords - 1] &= ~g_1055b298[p->m_nBits % 32];
 	for (int i = p->m_nDwords - 1; i >= 0; i--)
@@ -62,5 +73,6 @@ bool CBitStringSaveRestoreOps<CBitString>::vfunc2(CBitString **ppBits)
 			return false;
 	}
 	return true;
+#undef ppBits
 }
 // END FUNCTION

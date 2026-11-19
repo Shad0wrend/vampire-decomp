@@ -44,7 +44,7 @@ extern SRDataMap g_10580d74;
 typedef CUtlVector<MAP_ACCESS, CUtlMemory<MAP_ACCESS> > MapAccessVec;
 
 template <>
-void CUtlVectorDataOps<MapAccessVec, 9>::vfunc0(void *fieldInfo, void *pSave)
+void CUtlVectorDataOps<MapAccessVec, 9>::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave)
 {
 	SRTypeDesc desc = { 9, g_10559048, {0, 0}, 1, 2, 0, 0, 0, &g_10580d74 };
 	SRDataMap dm = { &desc, 1, g_10559044, 0, false, false, 0 };
@@ -103,7 +103,7 @@ extern SRDataMap g_10580d74;
 typedef CUtlVector<MAP_ACCESS, CUtlMemory<MAP_ACCESS> > MapAccessVec;
 
 template <>
-void CUtlVectorDataOps<MapAccessVec, 9>::vfunc1(void *fieldInfo, void *pRestore)
+void CUtlVectorDataOps<MapAccessVec, 9>::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore)
 {
 	SRTypeDesc desc = { 9, g_10559048, {0, 0}, 1, 2, 0, 0, 0, &g_10580d74 };
 	SRDataMap dm = { &desc, 1, g_10559044, 0, false, false, 0 };
@@ -131,11 +131,9 @@ struct thinkfunc_t;
 struct VecHead { int m_a, m_b, m_c, m_size; };
 
 // TARGET: CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,9>::vfunc3
-template<> int CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,9>::vfunc3(void *pFieldData)
+template<> void CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,9>::vfunc3(SaveRestoreFieldInfo_t *pFieldData)
 {
-	VecHead *pVec = *(VecHead **)pFieldData;
-	pVec->m_size = 0;
-	return (int)pVec;
+	((CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> > *)*(void **)pFieldData)->RemoveAll();
 }
 // END FUNCTION
 
@@ -147,7 +145,7 @@ template<> int CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,
 
 // TARGET: CUtlVectorDataOps<CUtlVector<MAP_ACCESS,CUtlMemory<MAP_ACCESS> >,9>::vfunc2
 template <class VEC, int N>
-bool CUtlVectorDataOps<VEC, N>::vfunc2(void *pFieldData)
+bool CUtlVectorDataOps<VEC, N>::vfunc2(SaveRestoreFieldInfo_t *pFieldData)
 {
 	return *(int *)(*(char **)pFieldData + 0xc) == 0;
 }

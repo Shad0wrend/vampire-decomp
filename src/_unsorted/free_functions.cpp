@@ -127031,7 +127031,7 @@ bool sub_101a5a80(void *pObject, typedescription_t *pFields, int iNumFields, con
 			case 10:
 			{
 				SaveRestoreFieldInfo_t fieldInfo = { (char *)pObject + fieldOffset, pObject, pField };
-				pField->pSaveRestoreOps->Parse(fieldInfo, szValue);
+				pField->pSaveRestoreOps->vfunc4((SaveRestoreFieldInfo_t *)&fieldInfo, szValue);
 				return true;
 			}
 			default:

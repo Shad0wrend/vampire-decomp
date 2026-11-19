@@ -44,7 +44,7 @@ extern SRDataMap g_10619d5c;
 typedef CUtlVector<DisciplineSrc, CUtlMemory<DisciplineSrc> > DisciplineVec;
 
 template <>
-void CUtlVectorDataOps<DisciplineVec, 9>::vfunc0(void *fieldInfo, void *pSave)
+void CUtlVectorDataOps<DisciplineVec, 9>::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave)
 {
 	SRTypeDesc desc = { 9, g_10559048, {0, 0}, 1, 2, 0, 0, 0, &g_10619d5c };
 	SRDataMap dm = { &desc, 1, g_10559044, 0, false, false, 0 };
@@ -110,7 +110,7 @@ struct RestoreSlots
 
 extern char g_10619d5c[];
 
-template<> void CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc1(void *fieldInfo, void *pRestore)
+template<> void CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore)
 {
 	TypeDesc desc = { 9, "elems", { 0, 0 }, 1, 2, 0, 0, 0, g_10619d5c };
 	DataMap map = { &desc, 1, "uv", 0, false, false, 0 };
@@ -139,11 +139,9 @@ struct thinkfunc_t;
 struct VecHead { int m_a, m_b, m_c, m_size; };
 
 // TARGET: CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc3
-template<> int CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc3(void *pFieldData)
+template<> void CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc3(SaveRestoreFieldInfo_t *pFieldData)
 {
-	VecHead *pVec = *(VecHead **)pFieldData;
-	pVec->m_size = 0;
-	return (int)pVec;
+	((CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> > *)*(void **)pFieldData)->RemoveAll();
 }
 // END FUNCTION
 
@@ -154,7 +152,7 @@ template<> int CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineS
 #include "DisciplineSrc.h"
 
 template <>
-bool CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc2(void *pFieldData)
+bool CUtlVectorDataOps<CUtlVector<DisciplineSrc,CUtlMemory<DisciplineSrc> >,9>::vfunc2(SaveRestoreFieldInfo_t *pFieldData)
 {
 	return *(int *)(*(char **)pFieldData + 0xc) == 0;
 }

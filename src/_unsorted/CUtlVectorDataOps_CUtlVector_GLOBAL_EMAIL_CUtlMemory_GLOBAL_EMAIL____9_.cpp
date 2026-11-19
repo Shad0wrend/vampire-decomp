@@ -44,7 +44,7 @@ extern SRDataMap g_10580e40;
 typedef CUtlVector<GLOBAL_EMAIL, CUtlMemory<GLOBAL_EMAIL> > EmailVec;
 
 template <>
-void CUtlVectorDataOps<EmailVec, 9>::vfunc0(void *fieldInfo, void *pSave)
+void CUtlVectorDataOps<EmailVec, 9>::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave)
 {
 	SRTypeDesc desc = { 9, g_10559048, {0, 0}, 1, 2, 0, 0, 0, &g_10580e40 };
 	SRDataMap dm = { &desc, 1, g_10559044, 0, false, false, 0 };
@@ -110,7 +110,7 @@ extern SRDataMap g_10580e40;
 typedef CUtlVector<GLOBAL_EMAIL, CUtlMemory<GLOBAL_EMAIL> > EmailVec;
 
 template <>
-void CUtlVectorDataOps<EmailVec, 9>::vfunc1(void *fieldInfo, void *pRestore)
+void CUtlVectorDataOps<EmailVec, 9>::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore)
 {
 	SRTypeDesc desc = { 9, g_10559048, {0, 0}, 1, 2, 0, 0, 0, &g_10580e40 };
 	SRDataMap dm = { &desc, 1, g_10559044, 0, false, false, 0 };
@@ -138,11 +138,9 @@ struct thinkfunc_t;
 struct VecHead { int m_a, m_b, m_c, m_size; };
 
 // TARGET: CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>::vfunc3
-template<> int CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>::vfunc3(void *pFieldData)
+template<> void CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>::vfunc3(SaveRestoreFieldInfo_t *pFieldData)
 {
-	VecHead *pVec = *(VecHead **)pFieldData;
-	pVec->m_size = 0;
-	return (int)pVec;
+	((CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> > *)*(void **)pFieldData)->RemoveAll();
 }
 // END FUNCTION
 
@@ -156,7 +154,7 @@ struct GLOBAL_EMAIL;
 
 // TARGET: CUtlVectorDataOps<CUtlVector<GLOBAL_EMAIL,CUtlMemory<GLOBAL_EMAIL> >,9>::vfunc2
 template <class VEC, int N>
-bool CUtlVectorDataOps<VEC, N>::vfunc2(void *pFieldData)
+bool CUtlVectorDataOps<VEC, N>::vfunc2(SaveRestoreFieldInfo_t *pFieldData)
 {
 	return *(int *)(*(char **)pFieldData + 0xc) == 0;
 }

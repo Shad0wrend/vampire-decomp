@@ -52,7 +52,7 @@ struct Elem24 {
 };
 
 template <>
-void CUtlVectorDataOps<CAI_InterestTarget, 9>::vfunc0(void *fieldInfo, void *pSave)
+void CUtlVectorDataOps<CAI_InterestTarget, 9>::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave)
 {
 	SRTypeDesc desc = { 9, g_10559048, {0, 0}, 1, 2, 0, 0, 0, &g_1060ba18 };
 	SRDataMap dm = { &desc, 1, g_10559044, 0, false, false, 0 };
@@ -113,7 +113,7 @@ struct CInterestTargetVec : CUtlVector36 {
 };
 
 // TARGET: CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc1
-void CUtlVectorDataOps<CAI_InterestTarget, 9>::vfunc1(void *fieldInfo, void *pRestore)
+void CUtlVectorDataOps<CAI_InterestTarget, 9>::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore)
 {
 	typedescription_t dataDesc = { 9, "elems", {0, 0}, 1, 2, 0, 0, 0, &g_1060ba18 };
 	datamapFull_t dataMap = { &dataDesc, 1, "uv", 0, false, false, 0 };
@@ -126,6 +126,8 @@ void CUtlVectorDataOps<CAI_InterestTarget, 9>::vfunc1(void *fieldInfo, void *pRe
 // END FUNCTION
 
 // FUNCTION: 0x102e2ac0 size=0x10
+#include "utlmemory.h"
+#include "utlvector.h"
 #include "CAI_InterestTarget.h"
 #include "CUtlVectorDataOps.h"
 struct thinkfunc_t;
@@ -133,11 +135,9 @@ struct thinkfunc_t;
 struct VecHead { int m_a, m_b, m_c, m_size; };
 
 // TARGET: CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc3
-template<> int CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc3(void *pFieldData)
+template<> void CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc3(SaveRestoreFieldInfo_t *pFieldData)
 {
-	VecHead *pVec = *(VecHead **)pFieldData;
-	pVec->m_size = 0;
-	return (int)pVec;
+	((CUtlVector<CAI_InterestTarget, CUtlMemory<CAI_InterestTarget> > *)*(void **)pFieldData)->RemoveAll();
 }
 // END FUNCTION
 
@@ -146,7 +146,7 @@ template<> int CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc3(void *pFieldData)
 #include "CAI_InterestTarget.h"
 
 template <>
-bool CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc2(void *pFieldData)
+bool CUtlVectorDataOps<CAI_InterestTarget,9>::vfunc2(SaveRestoreFieldInfo_t *pFieldData)
 {
 	return *(int *)(*(char **)pFieldData + 0xc) == 0;
 }

@@ -10,7 +10,7 @@
 #include "CEntityVSlots.h"
 #include "IPhysicsObject.h"
 
-struct ISaveRestoreOps;
+class ISaveRestoreOps;
 class CBaseEntity;
 
 void __fastcall sub_102e0b40(float *pInner);	// 0x102e0b40: stores -1.0f at +0x2c of the object in ecx (the motor's last yaw update)

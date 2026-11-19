@@ -44,7 +44,7 @@ extern SRDataMap g_105cab08;
 typedef CUtlVector<UnreachableEnt_t, CUtlMemory<UnreachableEnt_t> > UnreachableVec;
 
 template <>
-void CUtlVectorDataOps<UnreachableVec, 9>::vfunc0(void *fieldInfo, void *pSave)
+void CUtlVectorDataOps<UnreachableVec, 9>::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave)
 {
 	SRTypeDesc desc = { 9, g_10559048, {0, 0}, 1, 2, 0, 0, 0, &g_105cab08 };
 	SRDataMap dm = { &desc, 1, g_10559044, 0, false, false, 0 };
@@ -108,7 +108,7 @@ struct CUnreachableVec : CUtlVector20 {
 };
 
 // TARGET: CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc1
-void CUtlVectorDataOps<CUtlVector<UnreachableEnt_t, CUtlMemory<UnreachableEnt_t> >, 9>::vfunc1(void *fieldInfo, void *pRestore)
+void CUtlVectorDataOps<CUtlVector<UnreachableEnt_t, CUtlMemory<UnreachableEnt_t> >, 9>::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore)
 {
 	typedescription_t dataDesc = { 9, "elems", {0, 0}, 1, 2, 0, 0, 0, &g_105cab08 };
 	datamapFull_t dataMap = { &dataDesc, 1, "uv", 0, false, false, 0 };
@@ -131,11 +131,9 @@ struct thinkfunc_t;
 struct VecHead { int m_a, m_b, m_c, m_size; };
 
 // TARGET: CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc3
-template<> int CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc3(void *pFieldData)
+template<> void CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc3(SaveRestoreFieldInfo_t *pFieldData)
 {
-	VecHead *pVec = *(VecHead **)pFieldData;
-	pVec->m_size = 0;
-	return (int)pVec;
+	((CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> > *)*(void **)pFieldData)->RemoveAll();
 }
 // END FUNCTION
 
@@ -149,7 +147,7 @@ struct UnreachableEnt_t;
 
 // TARGET: CUtlVectorDataOps<CUtlVector<UnreachableEnt_t,CUtlMemory<UnreachableEnt_t> >,9>::vfunc2
 template <class VEC, int N>
-bool CUtlVectorDataOps<VEC, N>::vfunc2(void *pFieldData)
+bool CUtlVectorDataOps<VEC, N>::vfunc2(SaveRestoreFieldInfo_t *pFieldData)
 {
 	return *(int *)(*(char **)pFieldData + 0xc) == 0;
 }

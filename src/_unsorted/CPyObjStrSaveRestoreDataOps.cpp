@@ -51,8 +51,10 @@ struct IRestoreLike {
 extern void *(*g_109f37c8)(char *);
 extern "C" void *malloc(unsigned);
 extern "C" void free(void *);
-void CPyObjStrSaveRestoreDataOps::vfunc1(void **field, IRestoreLike *restore)
+void CPyObjStrSaveRestoreDataOps::vfunc1(SaveRestoreFieldInfo_t *field, IRestore *restore)
 {
+#define field ((void **)field)
+#define restore ((IRestoreLike *)restore)
     void **dest = (void **)*field;
     bool has = false;
     restore->v17(&has, 1, 1);
@@ -64,6 +66,8 @@ void CPyObjStrSaveRestoreDataOps::vfunc1(void **field, IRestoreLike *restore)
         free(buf);
     } else
         *dest = 0;
+#undef restore
+#undef field
 }
 // END FUNCTION
 
@@ -73,33 +77,27 @@ void CPyObjStrSaveRestoreDataOps::vfunc1(void **field, IRestoreLike *restore)
 extern void *g_109f37d0;
 
 // TARGET: CPyObjStrSaveRestoreDataOps::vfunc2
-int CPyObjStrSaveRestoreDataOps::vfunc2(void ***ppField)
+bool CPyObjStrSaveRestoreDataOps::vfunc2(SaveRestoreFieldInfo_t *ppField)
 {
-	void **pObj = *ppField;
-	if (pObj) {
-		void *pyObj = *pObj;
-		if (pyObj) {
-			void *type = *(void **)((char *)pyObj + 4);
-			if (type == g_109f37d0)
-				return 0;
-		}
-	}
-	return 1;
+	void **pObj = *(void ***)ppField;	// the field holds the Python object pointer's address
+	return !(pObj && *pObj && *(void **)((char *)*pObj + 4) == g_109f37d0);	// empty unless a Python string
 }
 // END FUNCTION
 
 // FUNCTION: 0x100d0170 size=0xf
 #include "CPyObjStrSaveRestoreDataOps.h"
-int CPyObjStrSaveRestoreDataOps::vfunc3(int a0)
+void CPyObjStrSaveRestoreDataOps::vfunc3(SaveRestoreFieldInfo_t *a0)
 {
+#define a0 ((int)a0)
     *(int *)((char *)(*(int *)((char *)a0))) = 0;
-    return a0;
+    a0;
+#undef a0
 }
 // END FUNCTION
 
 // FUNCTION: 0x100d0190 size=0x5
 #include "CPyObjStrSaveRestoreDataOps.h"
-bool CPyObjStrSaveRestoreDataOps::vfunc4(int a0, int a1)
+bool CPyObjStrSaveRestoreDataOps::vfunc4(SaveRestoreFieldInfo_t *a0, const char *a1)
 {
     return 0;
 }

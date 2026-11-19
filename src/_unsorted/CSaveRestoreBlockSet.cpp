@@ -126,7 +126,7 @@ void CSaveRestoreBlockSet::vfunc3(void *pSaveArg)
 	info.pField = &headers;
 	info.pOwner = 0;
 	info.pTypeDesc = 0;
-	ops->vfunc0(&info, pSave);
+	ops->vfunc0((SaveRestoreFieldInfo_t *)&info, (ISave *)pSave);
 	for (int i = 0; i < m_nHandlers; i++) {
 		BlockHeaders()[i].m_nLocHeader = pSave->Tell() - start;
 		((SBHandler *)m_pHandlers[i])->Save(pSave);
@@ -140,7 +140,7 @@ void CSaveRestoreBlockSet::vfunc3(void *pSaveArg)
 	info.pField = &BlockHeaders();
 	info.pOwner = 0;
 	info.pTypeDesc = 0;
-	ops->vfunc0(&info, pSave);
+	ops->vfunc0((SaveRestoreFieldInfo_t *)&info, (ISave *)pSave);
 	pSave->Seek(end);
 }
 // END FUNCTION
@@ -254,7 +254,7 @@ void BlockSetView::sub_101a4cb0(SaveView *pSave)
     info.m_pField = &m_pEntries;
     info.m_pOwner = 0;
     info.m_pTypeDesc = 0;
-    pOps->vfunc1(&info, pSave);
+    pOps->vfunc1((SaveRestoreFieldInfo_t *)&info, (IRestore *)pSave);
     for (int i = 0; i < m_nHandlers; i++) {
         const char *pName = ((HandlerView *)m_pHandlers[i])->vfunc0();
         for (int j = 0; j < m_nEntries; j++) {

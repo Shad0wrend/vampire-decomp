@@ -47,7 +47,7 @@ struct FieldInfoStub {
 
 typedef CUtlVector<CHandle<CAI_BaseNPC> > NpcHandleVec;
 
-void CUtlVectorDataOps<NpcHandleVec, 12>::vfunc0(void *fieldInfo, void *pSave)
+void CUtlVectorDataOps<NpcHandleVec, 12>::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave)
 {
 	typedescription_t td = { 12, "elems", {0, 0}, 1, 2, 0, 0, 0, 0 };
 	datamap_t map = { &td, 1, "uv", 0, false, false, 0 };
@@ -76,7 +76,7 @@ typedef CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > > CUtl
 inline LocalDataMap *DeduceArrayTypeDatamap_Handles() { return 0; }
 
 // TARGET: CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc1
-void CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc1(void *fieldInfo, void *pRestoreV)
+void CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestoreV)
 {
 	LocalDataMap *pArrayTypeDatamap = DeduceArrayTypeDatamap_Handles();
 	LocalFieldDesc dataDesc = { 12, "elems", {0, 0}, 1, 2, 0, 0, 0, pArrayTypeDatamap };
@@ -107,11 +107,9 @@ struct thinkfunc_t;
 struct VecHead { int m_a, m_b, m_c, m_size; };
 
 // TARGET: CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc3
-template<> int CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc3(void *pFieldData)
+template<> void CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc3(SaveRestoreFieldInfo_t *pFieldData)
 {
-	VecHead *pVec = *(VecHead **)pFieldData;
-	pVec->m_size = 0;
-	return (int)pVec;
+	((CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > > *)*(void **)pFieldData)->RemoveAll();
 }
 // END FUNCTION
 
@@ -125,7 +123,7 @@ template<> int CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHan
 class CAI_BaseNPC;
 
 template <>
-bool CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc2(void *pFieldData)
+bool CUtlVectorDataOps<CUtlVector<CHandle<CAI_BaseNPC>,CUtlMemory<CHandle<CAI_BaseNPC> > >,12>::vfunc2(SaveRestoreFieldInfo_t *pFieldData)
 {
 	return *(int *)(*(char **)pFieldData + 0xc) == 0;
 }

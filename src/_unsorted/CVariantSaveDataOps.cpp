@@ -17,8 +17,9 @@ extern int g_1055dff0[];
 extern CVariantSaveV3 g_1070d1b0;
 __declspec(dllimport) void Warning(const char *fmt, ...);
 
-void CVariantSaveDataOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, CSave *pSave)
+void CVariantSaveDataOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave)
 {
+#define pSave ((CSave *)pSave)
 	CVariantCopy *pVar = (CVariantCopy *)fieldInfo->pField;
 	int type = pVar->m_fieldType;
 	pSave->vfunc10(&type, 1);
@@ -63,6 +64,7 @@ void CVariantSaveDataOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, CSave *pSave
 		Warning("Bad type %d in saved variant_t\n", pVar->m_fieldType);
 		break;
 	}
+#undef pSave
 }
 // END FUNCTION
 
@@ -82,8 +84,9 @@ extern int g_1055dff0[];
 #define RD(desc, dst) pRestore->vfunc3(*(int *)((char *)fieldInfo->pTypeDesc + 4), (int)(dst), 0, (int)(desc), 1)
 
 // TARGET: CVariantSaveDataOps::vfunc1
-void CVariantSaveDataOps::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, CRestore *pRestore)
+void CVariantSaveDataOps::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore)
 {
+#define pRestore ((CRestore *)pRestore)
 	CVariantCopy *pVariant = (CVariantCopy *)fieldInfo->pField;
 	CVariantCopy var;
 	Vector vec;
@@ -123,6 +126,7 @@ void CVariantSaveDataOps::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, CRestore *pR
 		break;
 	}
 	pVariant->sub_1000b320(type, &var);
+#undef pRestore
 }
 // END FUNCTION
 
@@ -147,7 +151,7 @@ bool __stdcall sub_100d1100(CVSDOps *p)
 
 // FUNCTION: 0x100d1140 size=0x3
 #include "CVariantSaveDataOps.h"
-void CVariantSaveDataOps::vfunc3(int a0)
+void CVariantSaveDataOps::vfunc3(SaveRestoreFieldInfo_t *a0)
 {
 }
 // END FUNCTION

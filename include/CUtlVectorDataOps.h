@@ -1,18 +1,18 @@
 // CUtlVectorDataOps<VEC,N>: save/restore ops used by DEFINE_UTLVECTOR fields (bases CDefSaveRestoreOps -> ISaveRestoreOps
 // are not modelled). Only the 5 vtable slots are declared; slot 0 is Save, slot 1 Restore.
 #pragma once
+#include "ISaveRestoreOps.h"
 
 template <class T> class CUtlMemory;
 template <class T, class M> class CUtlVector;
 
 template <class VEC, int N>
-class CUtlVectorDataOps
+class CUtlVectorDataOps : public CDefSaveRestoreOps
 {
 public:
 	CUtlVectorDataOps() {}
-	virtual void vfunc0(void *fieldInfo, void *pSave);	// Save(SaveRestoreFieldInfo_t &, ISave *)
-	virtual void vfunc1(void *fieldInfo, void *pRestore);	// Restore(SaveRestoreFieldInfo_t &, IRestore *)
-	virtual bool vfunc2(void *pFieldData);	// IsEmpty: the size (+0xc) of the vector the field points to is zero
-	virtual int vfunc3(void *pFieldData);	// MakeEmpty: zeroes the size (+0xc) of the vector the field points to
-	virtual void vfunc4();
+	virtual void vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave);	// Save(SaveRestoreFieldInfo_t &, ISave *)
+	virtual void vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore);	// Restore(SaveRestoreFieldInfo_t &, IRestore *)
+	virtual bool vfunc2(SaveRestoreFieldInfo_t *fieldInfo);	// IsEmpty: the size (+0xc) of the vector the field points to is zero
+	virtual void vfunc3(SaveRestoreFieldInfo_t *fieldInfo);	// MakeEmpty: zeroes the size (+0xc) of the vector the field points to
 };

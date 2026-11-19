@@ -17,7 +17,7 @@ struct ISaveX {
     virtual void Write36(const void *pData, int count);
 };
 struct FieldInfoX { int **pField; int *pOwner; };
-void CRelationshipSaveDataOps::vfunc0(void *fieldInfo, void *pSave)
+void CRelationshipSaveDataOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave)
 {
     g_109f3620[*g_109f3680].a = g_106241f8;
     g_109f3620[*g_109f3680].b = g_106b8540;
@@ -72,7 +72,7 @@ struct Owner { char pad[0x1598]; Rec **m_pRecs; int m_alloc; int m_count; };
 struct FieldInfo { int x; Owner *owner; };
 
 // TARGET: CRelationshipSaveDataOps::vfunc1
-void CRelationshipSaveDataOps::vfunc1(void *fieldInfo, void *pRestoreArg)
+void CRelationshipSaveDataOps::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestoreArg)
 {
 	RestoreIf *pRestore = (RestoreIf *)pRestoreArg;
 	g_109f3620[*g_109f3680].a = "CRelationshipSaveDataOps::Restore";
@@ -140,7 +140,7 @@ struct ScopeTraceEntry_t
 extern ScopeTraceEntry_t *g_109f3620;
 extern int *g_109f3680;
 
-void CRelationshipSaveDataOps::vfunc3(void *pField)
+void CRelationshipSaveDataOps::vfunc3(SaveRestoreFieldInfo_t *pField)
 {
 	g_109f3620[*g_109f3680].m_pszFunc = "CRelationshipSaveDataOps::MakeEmpty";
 	g_109f3620[*g_109f3680].m_pszName = "";
@@ -163,7 +163,7 @@ void CRelationshipSaveDataOps::vfunc3(void *pField)
 #include "ScopeTrace.h"
 
 // TARGET: CRelationshipSaveDataOps::vfunc4
-bool CRelationshipSaveDataOps::vfunc4(void *fieldInfo, void *pRestore)
+bool CRelationshipSaveDataOps::vfunc4(SaveRestoreFieldInfo_t *fieldInfo, const char *pRestore)
 {
 	ScopeTrace trace("CRelationshipSaveDataOps::Parse", g_106b8540);
 	return false;

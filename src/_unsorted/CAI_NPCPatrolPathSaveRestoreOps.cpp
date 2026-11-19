@@ -12,8 +12,9 @@ extern void (__cdecl *g_109f366c)(const char *fmt, ...);
 extern int g_106117c0;
 extern int g_106117c4;
 
-void CAI_NPCPatrolPathSaveRestoreOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, CSave *pSave)
+void CAI_NPCPatrolPathSaveRestoreOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave)
 {
+#define pSave ((CSave *)pSave)
 	CPatrolPathField *pField = (CPatrolPathField *)fieldInfo->pField;
 	pSave->vfunc12(pField, 1);
 	if (pField->m_bValid)
@@ -23,6 +24,7 @@ void CAI_NPCPatrolPathSaveRestoreOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, 
 		else
 			g_109f366c("Invalid game state while trying to save NPC.\n");
 	}
+#undef pSave
 }
 // END FUNCTION
 
@@ -48,8 +50,9 @@ struct CRestoreIntSlot3 {
 	virtual void s14(); virtual void s15();
 	virtual char vfunc16();
 };
-void CAI_NPCPatrolPathSaveRestoreOps::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, CRestore *pRestore)
+void CAI_NPCPatrolPathSaveRestoreOps::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore)
 {
+#define pRestore ((CRestore *)pRestore)
 	SNPCTroikaRef_t *pPath = (SNPCTroikaRef_t *)fieldInfo->pField;
 	CPatrolOwnerView *pOwner = (CPatrolOwnerView *)fieldInfo->pOwner;
 	CRestoreIntSlot3 *pR = (CRestoreIntSlot3 *)pRestore;
@@ -63,5 +66,6 @@ void CAI_NPCPatrolPathSaveRestoreOps::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, 
 			g_109f366c("Error restoring PatrolPath for NPC.\n");
 		}
 	}
+#undef pRestore
 }
 // END FUNCTION

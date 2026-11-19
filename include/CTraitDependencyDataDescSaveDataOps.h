@@ -1,5 +1,6 @@
 // CTraitDependencyDataDescSaveDataOps: save/restore ops for a trait dependency description (5 vtable slots).
 #pragma once
+#include "ISaveRestoreOps.h"
 
 class CSave;
 
@@ -16,12 +17,12 @@ struct CTraitDependencyField
 	CTraitDependencyData *m_pData;
 };
 
-class CTraitDependencyDataDescSaveDataOps
+class CTraitDependencyDataDescSaveDataOps : public ISaveRestoreOps
 {
 public:
-	virtual void vfunc0(CTraitDependencyField *pField, CSave *pSave);	// saves the description
-	virtual void vfunc1(CTraitDependencyField *pField, void *pRestore);	// restores the description
-	virtual bool vfunc2(int);
-	virtual void vfunc3(int);
-	virtual bool vfunc4(int, int);
+	virtual void vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave);	// saves the description
+	virtual void vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore);	// restores the description
+	virtual bool vfunc2(SaveRestoreFieldInfo_t *fieldInfo);
+	virtual void vfunc3(SaveRestoreFieldInfo_t *fieldInfo);
+	virtual bool vfunc4(SaveRestoreFieldInfo_t *fieldInfo, const char *szValue);
 };

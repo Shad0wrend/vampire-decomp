@@ -22,8 +22,10 @@ static inline const char *NameOf(const char *const *p)
 	return *p ? *p : g_106b8540;
 }
 
-void CTraitEffectsListSaveDataOps::vfunc0(CTraitEffectsListField *pField, CSave *pSave)
+void CTraitEffectsListSaveDataOps::vfunc0(SaveRestoreFieldInfo_t *pField, ISave *pSave)
 {
+#define pField ((CTraitEffectsListField *)pField)
+#define pSave ((CSave *)pSave)
 	int *pList = pField->m_pList;
 	pSave->vfunc10(pList, 1);
 	for (int i = 0; i < *pList; i++) {
@@ -32,6 +34,8 @@ void CTraitEffectsListSaveDataOps::vfunc0(CTraitEffectsListField *pField, CSave 
 		pSave->vfunc10(&len, 1);
 		pSave->vfunc20(name);
 	}
+#undef pSave
+#undef pField
 }
 // END FUNCTION
 
@@ -44,8 +48,10 @@ extern STraitLookup g_1074df78;
 extern char g_106b8540[];
 
 // TARGET: CTraitEffectsListSaveDataOps::vfunc1
-void CTraitEffectsListSaveDataOps::vfunc1(CTraitEffectsListField *pField, CRestore *pRestore)
+void CTraitEffectsListSaveDataOps::vfunc1(SaveRestoreFieldInfo_t *pField, IRestore *pRestore)
 {
+#define pField ((CTraitEffectsListField *)pField)
+#define pRestore ((CRestore *)pRestore)
 	int *pList = pField->m_pList;
 	pList[0] = pRestore->vfunc14();
 	for (int i = 0; i < pList[0]; i++)
@@ -55,12 +61,14 @@ void CTraitEffectsListSaveDataOps::vfunc1(CTraitEffectsListField *pField, CResto
 		pRestore->vfunc20((int *)&name, 1, nBytes);
 		pList[i + 1] = g_1074df78.sub_101f83a0(name ? name : g_106b8540);
 	}
+#undef pRestore
+#undef pField
 }
 // END FUNCTION
 
 // FUNCTION: 0x1022d630 size=0x5
 #include "CTraitEffectsListSaveDataOps.h"
-bool CTraitEffectsListSaveDataOps::vfunc2(int a0)
+bool CTraitEffectsListSaveDataOps::vfunc2(SaveRestoreFieldInfo_t *a0)
 {
     return 0;
 }
@@ -68,14 +76,14 @@ bool CTraitEffectsListSaveDataOps::vfunc2(int a0)
 
 // FUNCTION: 0x1022d650 size=0x3
 #include "CTraitEffectsListSaveDataOps.h"
-void CTraitEffectsListSaveDataOps::vfunc3(int a0)
+void CTraitEffectsListSaveDataOps::vfunc3(SaveRestoreFieldInfo_t *a0)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x1022d670 size=0x5
 #include "CTraitEffectsListSaveDataOps.h"
-bool CTraitEffectsListSaveDataOps::vfunc4(int a0, int a1)
+bool CTraitEffectsListSaveDataOps::vfunc4(SaveRestoreFieldInfo_t *a0, const char *a1)
 {
     return 1;
 }

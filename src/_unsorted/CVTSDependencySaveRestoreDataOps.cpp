@@ -4,8 +4,10 @@
 // FUNCTION: 0x100d01f0 size=0x71
 #include "CVTSDependencySaveRestoreDataOps.h"
 #include <string.h>
-void CVTSDependencySaveRestoreDataOps::vfunc0(CVTSDependencyField *pField, CSave *pSave)
+void CVTSDependencySaveRestoreDataOps::vfunc0(SaveRestoreFieldInfo_t *pField, ISave *pSave)
 {
+#define pField ((CVTSDependencyField *)pField)
+#define pSave ((CSave *)pSave)
 	CVTSDependencyRecord *pRecord = pField->m_pRecord;
 	bool bHas = pRecord && !pRecord->sub_10204250();
 	pSave->vfunc12(&bHas, 1);
@@ -15,6 +17,8 @@ void CVTSDependencySaveRestoreDataOps::vfunc0(CVTSDependencyField *pField, CSave
 		pSave->vfunc10(&len, 1);
 		pSave->vfunc20(psz);
 	}
+#undef pSave
+#undef pField
 }
 // END FUNCTION
 
@@ -23,8 +27,10 @@ void CVTSDependencySaveRestoreDataOps::vfunc0(CVTSDependencyField *pField, CSave
 extern "C" void *malloc(unsigned int);
 extern "C" void free(void *);
 
-void CVTSDependencySaveRestoreDataOps::vfunc1(CVTSDependencyField *pField, CVTSDependencyRestore *pRestore)
+void CVTSDependencySaveRestoreDataOps::vfunc1(SaveRestoreFieldInfo_t *pField, IRestore *pRestore)
 {
+#define pField ((CVTSDependencyField *)pField)
+#define pRestore ((CVTSDependencyRestore *)pRestore)
     CVTSDependencyRecord *pRecord = pField->m_pRecord;
     char bPresent = 0;
     pRestore->vfunc17(&bPresent, 1, 1);
@@ -37,6 +43,8 @@ void CVTSDependencySaveRestoreDataOps::vfunc1(CVTSDependencyField *pField, CVTSD
     } else {
         pRecord->sub_10204270();
     }
+#undef pRestore
+#undef pField
 }
 // END FUNCTION
 
@@ -60,15 +68,17 @@ int __stdcall sub_100d0320(void **p)
 namespace lifted {
 struct C10010573 { int sub_10010573(); };
 }
-int CVTSDependencySaveRestoreDataOps::vfunc3(int a0)
+void CVTSDependencySaveRestoreDataOps::vfunc3(SaveRestoreFieldInfo_t *a0)
 {
-    return ((lifted::C10010573 *)(*(int *)((char *)a0)))->sub_10010573();
+#define a0 ((int)a0)
+    ((lifted::C10010573 *)(*(int *)((char *)a0)))->sub_10010573();
+#undef a0
 }
 // END FUNCTION
 
 // FUNCTION: 0x100d0370 size=0x5
 #include "CVTSDependencySaveRestoreDataOps.h"
-bool CVTSDependencySaveRestoreDataOps::vfunc4(int a0, int a1)
+bool CVTSDependencySaveRestoreDataOps::vfunc4(SaveRestoreFieldInfo_t *a0, const char *a1)
 {
     return 0;
 }

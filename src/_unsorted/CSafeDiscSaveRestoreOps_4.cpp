@@ -9,11 +9,11 @@ int sub_10430130(unsigned int h);
 #define HASH(x) (((((((x) & 0x3f3c1135) ^ 0x544222df) + 0x4ba5398d) & 0xc0c3eeca) ^ (x)) ^ 0x151a77f8)
 
 // TARGET: CSafeDiscSaveRestoreOps_4::vfunc0
-void CSafeDiscSaveRestoreOps_4::vfunc0(int **ppObject, CSafeDiscWriter *pSave)
+void CSafeDiscSaveRestoreOps_4::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave)
 {
-	int v = HASH((*ppObject)[2]);
-	ppObject = (int **)sub_10430130(v);
-	pSave->vfunc10((int *)&ppObject, 1);
+	int v = HASH((*(int **)fieldInfo)[2]);
+	fieldInfo = (SaveRestoreFieldInfo_t *)sub_10430130(v);
+	((CSafeDiscWriter *)pSave)->vfunc10((int *)&fieldInfo, 1);
 }
 // END FUNCTION
 
@@ -22,8 +22,10 @@ void CSafeDiscSaveRestoreOps_4::vfunc0(int **ppObject, CSafeDiscWriter *pSave)
 unsigned int sub_10430080(int);
 struct R { char a; char b; int c; };
 struct O { int x; char a; char b; int c; };
-void CSafeDiscSaveRestoreOps_4::vfunc1(int **ppObject, CSafeDiscReader *pRestore)
+void CSafeDiscSaveRestoreOps_4::vfunc1(SaveRestoreFieldInfo_t *ppObject, IRestore *pRestore)
 {
+#define ppObject ((int **)ppObject)
+#define pRestore ((CSafeDiscReader *)pRestore)
 	R s;
 	O *p = (O *)*ppObject;
 	unsigned int v = sub_10430080(pRestore->vfunc14());
@@ -31,5 +33,7 @@ void CSafeDiscSaveRestoreOps_4::vfunc1(int **ppObject, CSafeDiscReader *pRestore
 	p->b = s.b;
 	p->c = s.c;
 	p->a = s.a;
+#undef pRestore
+#undef ppObject
 }
 // END FUNCTION

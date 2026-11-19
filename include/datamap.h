@@ -15,14 +15,7 @@ struct datamap_t
 
 #include "SaveRestoreFieldInfo_t.h"
 
-struct ISaveRestoreOps
-{
-	virtual void v0();
-	virtual void v1();
-	virtual void v2();
-	virtual void v3();
-	virtual void Parse(SaveRestoreFieldInfo_t &fieldInfo, const char *szValue);	// slot 4 (+0x10)
-};
+#include "ISaveRestoreOps.h"
 
 struct typedescription_t
 {

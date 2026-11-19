@@ -9,8 +9,9 @@ struct TOutput { int sub_100cd7e0(TSave *pSave); };
 struct CListNode100cd940;
 int __fastcall sub_100cd940(CListNode100cd940 *p);
 struct CEventsList100cd9e0 { char *m_pElements; int m_n4; short *m_pCount; };
-void CEventsSaveDataOps::vfunc0(void *pEvents, CSave *pSave)
+void CEventsSaveDataOps::vfunc0(SaveRestoreFieldInfo_t *pEvents, ISave *pSave)
 {
+#define pSave ((CSave *)pSave)
 	CEventsList100cd9e0 *pList = (CEventsList100cd9e0 *)pEvents;
 	TOutput *pOutput = (TOutput *)pList->m_pElements;
 	for (int i = 0; i < ((short *)pList->m_pCount)[8]; i++, pOutput = (TOutput *)((char *)pOutput + 0x18)) {
@@ -18,6 +19,7 @@ void CEventsSaveDataOps::vfunc0(void *pEvents, CSave *pSave)
 		pSave->vfunc10(&nActions, 1);
 		pOutput->sub_100cd7e0((TSave *)pSave);
 	}
+#undef pSave
 }
 // END FUNCTION
 
@@ -38,8 +40,9 @@ struct CUnknownEvents100cda60 {
 };
 
 // TARGET: CEventsSaveDataOps::vfunc1
-void CEventsSaveDataOps::vfunc1(void *pData, CRestore *pRestore)
+void CEventsSaveDataOps::vfunc1(SaveRestoreFieldInfo_t *pData, IRestore *pRestore)
 {
+#define pRestore ((CRestore *)pRestore)
     CUnknownEvents100cda60 *pEvents = (CUnknownEvents100cda60 *)pData;
     int i = 0;
     COutputEvent *pOutput = pEvents->pEvents;
@@ -51,6 +54,7 @@ void CEventsSaveDataOps::vfunc1(void *pData, CRestore *pRestore)
             pOutput++;
         } while (i < pEvents->pCount->nCount);
     }
+#undef pRestore
 }
 // END FUNCTION
 
@@ -74,7 +78,7 @@ struct CEvArg { CListNode100cd940 *m_pEntries; int m_n4; CEvList *m_pList; };
 using namespace block_100cdab0;
 
 // TARGET: CEventsSaveDataOps::vfunc2
-bool CEventsSaveDataOps::vfunc2(void *pEvents)
+bool CEventsSaveDataOps::vfunc2(SaveRestoreFieldInfo_t *pEvents)
 {
 	CEvArg *a = (CEvArg *)pEvents;
 	CListNode100cd940 *e = a->m_pEntries;
@@ -91,7 +95,7 @@ bool CEventsSaveDataOps::vfunc2(void *pEvents)
 
 // FUNCTION: 0x100cdb00 size=0x3
 #include "CEventsSaveDataOps.h"
-void CEventsSaveDataOps::vfunc3(int a0)
+void CEventsSaveDataOps::vfunc3(SaveRestoreFieldInfo_t *a0)
 {
 }
 // END FUNCTION
@@ -101,9 +105,13 @@ void CEventsSaveDataOps::vfunc3(int a0)
 namespace lifted {
 struct C10003e18 { int sub_10003e18(int); };
 }
-bool CEventsSaveDataOps::vfunc4(int a0, int a1)
+bool CEventsSaveDataOps::vfunc4(SaveRestoreFieldInfo_t *a0, const char *a1)
 {
+#define a0 ((int)a0)
+#define a1 ((int)a1)
     ((lifted::C10003e18 *)(*(int *)((char *)a0)))->sub_10003e18(a1);
     return 1;
+#undef a1
+#undef a0
 }
 // END FUNCTION

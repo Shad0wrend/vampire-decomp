@@ -1,11 +1,9 @@
 #pragma once
+#include "ISaveRestoreOps.h"
 
-class CDebugSaveRestoreOps {
+class CDebugSaveRestoreOps : public CDefSaveRestoreOps {
 public:
 	CDebugSaveRestoreOps();
-	virtual void vfunc0(int, int);
-	virtual void vfunc1(int, int);
-	virtual void vfunc2();
-	virtual void vfunc3();
-	virtual void vfunc4();
+	virtual void vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave);
+	virtual void vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore);
 };

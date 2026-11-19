@@ -1,6 +1,7 @@
 // CVTSDependencySaveRestoreDataOps: save/restore ops for a dependency record (RTTI .?AVCVTSDependencySaveRestoreDataOps@@,
 // vtable 0x104540b0, 5 slots). The base ISaveRestoreOps is not modelled.
 #pragma once
+#include "ISaveRestoreOps.h"
 
 #include "CSave.h"
 
@@ -31,12 +32,12 @@ public:
 	virtual void vfunc21(char *pBuffer, int a, int b);	// reads a string
 };
 
-class CVTSDependencySaveRestoreDataOps
+class CVTSDependencySaveRestoreDataOps : public ISaveRestoreOps
 {
 public:
-	virtual void vfunc0(CVTSDependencyField *pField, CSave *pSave);	// "Save": a flag byte, then the record's string length and string
-	virtual void vfunc1(CVTSDependencyField *pField, CVTSDependencyRestore *pRestore);	// "Restore": a flag byte, then the record's string (or the reset record when the flag is clear)
-	virtual void vfunc2();
-	virtual int vfunc3(int);
-	virtual bool vfunc4(int, int);
+	virtual void vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave);	// "Save": a flag byte, then the record's string length and string
+	virtual void vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore);	// "Restore": a flag byte, then the record's string (or the reset record when the flag is clear)
+	virtual bool vfunc2(SaveRestoreFieldInfo_t *fieldInfo);
+	virtual void vfunc3(SaveRestoreFieldInfo_t *fieldInfo);
+	virtual bool vfunc4(SaveRestoreFieldInfo_t *fieldInfo, const char *szValue);
 };

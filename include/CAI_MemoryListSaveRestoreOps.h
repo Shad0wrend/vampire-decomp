@@ -1,5 +1,6 @@
 // CAI_MemoryListSaveRestoreOps (RTTI .?AVCAI_MemoryListSaveRestoreOps@@, vtable 0x1049d7ec, 5 slots).
 #pragma once
+#include "ISaveRestoreOps.h"
 
 #include "CRestore.h"
 
@@ -22,12 +23,11 @@ struct CAI_MemoryNode
 	CAI_MemoryNode *m_pNext;	// 0x38
 };
 
-class CAI_MemoryListSaveRestoreOps
+class CAI_MemoryListSaveRestoreOps : public CDefSaveRestoreOps
 {
 public:
-	virtual void vfunc0(SaveRestoreFieldInfo_t *fieldInfo, CSave *pSave);	// save: writes the node count, then each node of the list the field points to
-	virtual void vfunc1(SaveRestoreFieldInfo_t *fieldInfo, CRestore *pRestore);	// restore: reads the count and each node into the list the field points to, dropping the nodes whose entity is gone
-	virtual void vfunc2();
-	virtual void vfunc3(CAI_MemoryNode **ppHead);	// destructor: frees every node of the list the field points to (sub_102df1b0 each), clearing the head
-	virtual void vfunc4();
+	virtual void vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave);	// save: writes the node count, then each node of the list the field points to
+	virtual void vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore);	// restore: reads the count and each node into the list the field points to, dropping the nodes whose entity is gone
+	virtual bool vfunc2(SaveRestoreFieldInfo_t *fieldInfo);
+	virtual void vfunc3(SaveRestoreFieldInfo_t *fieldInfo);	// destructor: frees every node of the list the field points to (sub_102df1b0 each), clearing the head
 };

@@ -3,7 +3,7 @@
 
 // FUNCTION: 0x100ded50 size=0x5
 #include "CAI_InterestingPlaceMarkersSaveRestoreOps.h"
-bool CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc2(int a0)
+bool CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc2(SaveRestoreFieldInfo_t *a0)
 {
     return 0;
 }
@@ -11,7 +11,7 @@ bool CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc2(int a0)
 
 // FUNCTION: 0x100ded70 size=0x3
 #include "CAI_InterestingPlaceMarkersSaveRestoreOps.h"
-void CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc3(int a0)
+void CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc3(SaveRestoreFieldInfo_t *a0)
 {
 }
 // END FUNCTION
@@ -46,8 +46,9 @@ struct EHandle_t {
 	}
 };
 
-void CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, CSave *pSave)
+void CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave)
 {
+#define pSave ((CSave *)pSave)
 	MarkerOwner_t *pOwner = (MarkerOwner_t *)fieldInfo->pOwner;
 	pSave->vfunc10(&pOwner->m_nAllocated, 1);
 	pSave->vfunc10(&pOwner->m_nCount, 1);
@@ -58,6 +59,7 @@ void CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc0(SaveRestoreFieldInfo_t *f
 		pSave->vfunc23(pOwner->m_pMarkers[i].m_vecA, 1);
 		pSave->vfunc23(pOwner->m_pMarkers[i].m_vecB, 1);
 	}
+#undef pSave
 }
 // END FUNCTION
 
@@ -86,7 +88,7 @@ void *sub_104312d5(unsigned int);
 struct Marker { void *hEnt; char v1[12]; char v2[12]; };
 
 // TARGET: CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc1
-void CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, void *pRestoreV)
+void CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestoreV)
 {
 	IRestoreX *pRestore = (IRestoreX *)pRestoreV;
 	char *owner = (char *)fieldInfo->pOwner;

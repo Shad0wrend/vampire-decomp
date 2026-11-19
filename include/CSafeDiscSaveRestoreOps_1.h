@@ -1,14 +1,12 @@
 // CSafeDiscSaveRestoreOps_1: SafeDisc-obfuscated save/restore ops (same layout as CSafeDiscSaveRestoreOps_0).
 #pragma once
+#include "ISaveRestoreOps.h"
 
 #include "CSafeDiscSaveRestoreOps_0.h"
 
-class CSafeDiscSaveRestoreOps_1
+class CSafeDiscSaveRestoreOps_1 : public CDefSaveRestoreOps
 {
 public:
-	virtual void vfunc0(int **ppObject, CSafeDiscWriter *pSave);
-	virtual void vfunc1(int **ppObject, CSafeDiscReader *pRestore);
-	virtual void vfunc2();
-	virtual void vfunc3();
-	virtual void vfunc4();
+	virtual void vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave);
+	virtual void vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestore);
 };

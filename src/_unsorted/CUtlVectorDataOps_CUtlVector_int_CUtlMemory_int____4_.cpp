@@ -45,7 +45,7 @@ struct FieldInfoStub {
 };
 
 // TARGET: CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc0
-void CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >, 4>::vfunc0(void *fieldInfo, void *pSave)
+void CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >, 4>::vfunc0(SaveRestoreFieldInfo_t *fieldInfo, ISave *pSave)
 {
 	typedescription_t td = { 4, "elems", {0, 0}, 1, 2, 0, 0, 0, 0 };
 	datamap_t map = { &td, 1, "uv", 0, false, false, 0 };
@@ -99,7 +99,7 @@ struct IRestoreView {
 };
 
 template <>
-void CUtlVectorDataOps<CUtlVector<int, CUtlMemory<int> >, 4>::vfunc1(void *fieldInfo, void *pRestoreV)
+void CUtlVectorDataOps<CUtlVector<int, CUtlMemory<int> >, 4>::vfunc1(SaveRestoreFieldInfo_t *fieldInfo, IRestore *pRestoreV)
 {
     IRestoreView *pRestore = (IRestoreView *)pRestoreV;
     UVTypeDesc dataDesc = { 4, "elems", { 0, 0 }, 1, 2, 0, 0, 0, 0 };
@@ -125,11 +125,9 @@ struct thinkfunc_t;
 struct VecHead { int m_a, m_b, m_c, m_size; };
 
 // TARGET: CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc3
-template<> int CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc3(void *pFieldData)
+template<> void CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc3(SaveRestoreFieldInfo_t *pFieldData)
 {
-	VecHead *pVec = *(VecHead **)pFieldData;
-	pVec->m_size = 0;
-	return (int)pVec;
+	((CUtlVector<int,CUtlMemory<int> > *)*(void **)pFieldData)->RemoveAll();
 }
 // END FUNCTION
 
@@ -140,7 +138,7 @@ template<> int CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc3(voi
 
 // TARGET: CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc2
 template <class VEC, int N>
-bool CUtlVectorDataOps<VEC, N>::vfunc2(void *pFieldData)
+bool CUtlVectorDataOps<VEC, N>::vfunc2(SaveRestoreFieldInfo_t *pFieldData)
 {
 	return *(int *)(*(char **)pFieldData + 0xc) == 0;
 }

@@ -187,11 +187,13 @@ inline void QueueSave(CBaseEntity *pOwner, TypeDescView *pTypeDesc, void **ppPhy
 	g_106bda6c.sub_10046050(&item);
 }
 
-void CPhysObjSaveRestoreOps::vfunc0(CPhysObjSaveRestoreOps_Arg *pArg, int unused)
+void CPhysObjSaveRestoreOps::vfunc0(SaveRestoreFieldInfo_t *pArg, ISave *unused)
 {
+#define pArg ((CPhysObjSaveRestoreOps_Arg *)pArg)
 	if (!m_pObject04)
 		return;
 	QueueSave(pArg->m_pEntity, (TypeDescView *)pArg->m_pCount, (void **)pArg->m_pEntries, (int)m_pObject04);
+#undef pArg
 }
 // END FUNCTION
 
@@ -227,8 +229,9 @@ extern int *sub_1042bff0(void *, void *);
 void sub_10047160(void *dst, void *src);
 
 // TARGET: CPhysObjSaveRestoreOps::vfunc1
-void CPhysObjSaveRestoreOps::vfunc1(CPhysObjSaveRestoreOps_Arg *pArg, int unused)
+void CPhysObjSaveRestoreOps::vfunc1(SaveRestoreFieldInfo_t *pArg, IRestore *unused)
 {
+#define pArg ((CPhysObjSaveRestoreOps_Arg *)pArg)
 	void *pOwner = m_pObject04;
 	if (!pOwner)
 		return;
@@ -286,6 +289,7 @@ void CPhysObjSaveRestoreOps::vfunc1(CPhysObjSaveRestoreOps_Arg *pArg, int unused
 		*(int *)(pElem + 8) = *sub_1042bff0(&tmp, *(void **)(pInfo + 4));
 	}
 	memset(pDst, 0, *(short *)(pInfo + 0x10) * 4);
+#undef pArg
 }
 // END FUNCTION
 
@@ -314,8 +318,9 @@ void __stdcall sub_10045d10(SPhysObjBuf_t *pBuf)
 // FUNCTION: 0x10045d50 size=0x28
 #include "CPhysObjSaveRestoreOps.h"
 // TARGET: CPhysObjSaveRestoreOps::vfunc2
-bool CPhysObjSaveRestoreOps::vfunc2(CPhysObjSaveRestoreOps_Arg *pArg)
+bool CPhysObjSaveRestoreOps::vfunc2(SaveRestoreFieldInfo_t *pArg)
 {
+#define pArg ((CPhysObjSaveRestoreOps_Arg *)pArg)
     int *pEntries = pArg->m_pEntries;
     int nCount = *(short *)(pArg->m_pCount + 0x10);
     for (int i = 0; i < nCount; i++)
@@ -324,5 +329,6 @@ bool CPhysObjSaveRestoreOps::vfunc2(CPhysObjSaveRestoreOps_Arg *pArg)
             return false;
     }
     return true;
+#undef pArg
 }
 // END FUNCTION

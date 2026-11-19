@@ -23,7 +23,7 @@
 struct ISaveView12 { TV10(0) TV10(1) TV10(2) TV1(30) virtual void WriteFunction(void *pMap, const char *pname, int *data, int count); };
 struct COwnerView12 { TV10(0) TV10(1) TV10(2) TV10(3) TV10(4) TV10(5) TV10(6) TV10(7) TV1(80) TV1(81) virtual void *GetDataDescMap(); };
 
-void CThinkContextsSaveDataOps::vfunc0(void *pFieldInfo, void *pSave)
+void CThinkContextsSaveDataOps::vfunc0(SaveRestoreFieldInfo_t *pFieldInfo, ISave *pSave)
 {
 	ScopeTrace trace("CThinkContextsSaveDataOps::Save", g_106b8540);
 	SaveRestoreFieldInfoView &fieldInfo = *(SaveRestoreFieldInfoView *)pFieldInfo;
@@ -31,7 +31,7 @@ void CThinkContextsSaveDataOps::vfunc0(void *pFieldInfo, void *pSave)
 	{
 		CThinkVecOps *pOps = GetThinkVecOps();
 		SaveRestoreFieldInfoView info = { (CThinkVec *)pUtlVector, 0, 0 };
-		pOps->vfunc0(&info, pSave);
+		pOps->vfunc0((SaveRestoreFieldInfo_t *)&info, (ISave *)pSave);
 	}
 	COwnerView12 *pOwner = (COwnerView12 *)fieldInfo.m_pOwner;
 	for (int i = 0; i < pUtlVector->Size(); i++)
@@ -88,14 +88,14 @@ struct CThinkRestoreView
 	virtual int ReadFunction(datamap_t *pMap, void **ppValue, int count, int nBytesAvailable);
 };
 
-void CThinkContextsSaveDataOps::vfunc1(void *pFieldInfo, void *pRestoreIn)
+void CThinkContextsSaveDataOps::vfunc1(SaveRestoreFieldInfo_t *pFieldInfo, IRestore *pRestoreIn)
 {
 	ScopeTrace trace("CThinkContextsSaveDataOps::Restore", g_106b8540);
 	CThinkRestoreFieldInfo *pInfo = (CThinkRestoreFieldInfo *)pFieldInfo;
 	CThinkVec *pUtlVector = pInfo->pField;
 	CThinkVecOps *pOps = GetThinkVecOps();
 	SaveRestoreFieldInfoView vectorFieldInfo = { pUtlVector, 0, 0 };
-	pOps->vfunc1(&vectorFieldInfo, pRestoreIn);
+	pOps->vfunc1((SaveRestoreFieldInfo_t *)&vectorFieldInfo, (IRestore *)pRestoreIn);
 	CThinkRestoreOwnerView *pOwner = pInfo->pOwner;
 	for (int i = 0; i < pUtlVector->m_nSize; i++)
 	{
@@ -140,7 +140,7 @@ struct ScopeTraceEntry_t
 extern ScopeTraceEntry_t *g_109f3620;
 extern int *g_109f3680;
 
-void CThinkContextsSaveDataOps::vfunc3(void *pField)
+void CThinkContextsSaveDataOps::vfunc3(SaveRestoreFieldInfo_t *pField)
 {
 	g_109f3620[*g_109f3680].m_pszFunc = "CThinkContextsSaveDataOps::MakeEmpty";
 	g_109f3620[*g_109f3680].m_pszName = "";
