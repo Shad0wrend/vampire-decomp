@@ -95989,21 +95989,21 @@ void CMoveHelperServer::sub_1000185c()
 {
     *(void ***)this = vt_1046af0c;
     g_1071a278 = 0;
-    m_nTouchCount = 0;
-    if (m_n10 != -1) {
-        if (m_pTouchList) {
-            Plat_Free(m_pTouchList);
-            m_pTouchList = 0;
+    m_TouchList.m_Size = 0;
+    if (m_TouchList.m_Memory.m_nGrowSize != -1) {
+        if (m_TouchList.m_Memory.m_pMemory) {
+            Plat_Free(m_TouchList.m_Memory.m_pMemory);
+            m_TouchList.m_Memory.m_pMemory = 0;
         }
-        m_nTouchAlloc = 0;
+        m_TouchList.m_Memory.m_nAllocationCount = 0;
     }
-    m_pTouchListDbg = m_pTouchList;
-    if (m_n10 != -1) {
-        if (m_pTouchList) {
-            Plat_Free(m_pTouchList);
-            m_pTouchList = 0;
+    m_TouchList.m_pElements = m_TouchList.m_Memory.m_pMemory;
+    if (m_TouchList.m_Memory.m_nGrowSize != -1) {
+        if (m_TouchList.m_Memory.m_pMemory) {
+            Plat_Free(m_TouchList.m_Memory.m_pMemory);
+            m_TouchList.m_Memory.m_pMemory = 0;
         }
-        m_nTouchAlloc = 0;
+        m_TouchList.m_Memory.m_nAllocationCount = 0;
     }
     *(void ***)this = vt_1046afbc;
 }

@@ -1,15 +1,14 @@
-// IMoveHelperServer: the interface base of CMoveHelperServer (RTTI chain CMoveHelperServer -> IMoveHelperServer
-// -> IMoveHelper). Only slot 0 is modelled, so that the class has its own vtable pointer; CMoveHelperServer
-// redeclares every slot.
+// IMoveHelperServer: the server's move helper interface (RTTI .?AVIMoveHelperServer@@, base IMoveHelper; vtable
+// 0x1046af64): the SDK's dlls/movehelper_server.h. Slot 15, SetHost, is _purecall in the game's vtable; slot 14 holds
+// its own scalar deleting destructor (0x1013ede0).
 #pragma once
+
+#include "IMoveHelper.h"
 
 class CBaseEntity;
 
-class IMoveHelperServer
+class IMoveHelperServer : public IMoveHelper
 {
 public:
-	IMoveHelperServer() {}
-	virtual void vfunc0() {}
-
-	CBaseEntity *m_pHost; // 0x04 (CMoveHelperServer's host)
+	virtual void vfunc15(CBaseEntity *pHost) = 0;	// SetHost
 };

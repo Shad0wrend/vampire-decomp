@@ -6,7 +6,7 @@
 
 extern CMoveHelperServer *g_1071a278;
 
-CMoveHelperServer::CMoveHelperServer()
+CMoveHelperServer::CMoveHelperServer() : m_TouchList(0, 128)
 {
 	m_pHost = 0;
 	g_1071a278 = this;
@@ -103,7 +103,7 @@ const char *__stdcall sub_1013eee0(unsigned int handle)
 
 void CMoveHelperServer::vfunc1()
 {
-	m_nTouchCount = 0;
+	m_TouchList.RemoveAll();
 }
 // END FUNCTION
 
@@ -287,9 +287,9 @@ void CMoveHelperServer::vfunc3()
 	CBaseEntity *pHost = m_pHost;
 	if (IsDirty(pHost))
 		pHost->sub_100b1d10();
-	CTouchEntry *&list = *(CTouchEntry **)&m_pTouchList;
+	CTouchEntry *&list = *(CTouchEntry **)&m_TouchList.m_Memory.m_pMemory;
 	Vector vel = pHost->m_vecVelocity3bc;
-	for (int i = 0; i < m_nTouchCount; i++) {
+	for (int i = 0; i < m_TouchList.m_Size; i++) {
 		HandleV entindex = *(HandleV *)list[i].m_pEnt->vfunc1();
 		CEdictUnkView *u = GetEdict(entindex);
 		if (!u || !u->m_pNet)
