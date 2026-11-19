@@ -3918,6 +3918,7 @@
 0x10005dbc func   ?sub_10336f20@CBaseCombatCharacter@@QAEPAXXZ CBaseCombatCharacter::sub_10336f20
 0x10005dc1 func   ?sub_10264300@@YAXPAUCBlock4k@@PBU1@@Z sub_10264300
 0x10005dc6 func   ?vfunc3@CAI_InterestingPlaceMarkersSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@@Z CAI_InterestingPlaceMarkersSaveRestoreOps::vfunc3
+0x10005dc6 func   ?vfunc3@CDefSaveRestoreOps@@UAEXPAUSaveRestoreFieldInfo_t@@@Z CDefSaveRestoreOps::vfunc3
 0x10005dcb func   ?vfunc80@CWeaponWallet@@QAEHXZ CWeaponWallet::vfunc80
 0x10005dd0 func   ?sub_102b7690@CAI_BaseNPCTroika@@QAEHDDDD@Z CAI_BaseNPCTroika::sub_102b7690
 0x10005dd5 func   ?sub_10333ad0@CBaseCombatCharacter@@QAEPAVCBaseCombatWeapon@@ABVVector@@@Z CBaseCombatCharacter::sub_10333ad0
