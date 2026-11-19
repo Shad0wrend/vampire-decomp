@@ -962,7 +962,7 @@ extern const char g_1053938c[];
 extern "C" CConstraintAnchor *info_constraint_anchor()
 {
 	void *mem = sub_100aa720(0x450);
-	CConstraintAnchor *p = mem ? new(mem) CConstraintAnchor : 0;
+	CConstraintAnchor *p = mem ? ::new(mem) CConstraintAnchor : 0;
 	p->vfunc106(g_1053938c);
 	return p;
 }

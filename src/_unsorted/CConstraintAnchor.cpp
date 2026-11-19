@@ -53,9 +53,9 @@ struct CAnchorHandle
 	}
 };
 
-struct CAnchorView : CConstraintAnchor
+struct CAnchorView
 {
-	char pad[0x254 - sizeof(CConstraintAnchor)];
+	char pad[0x254];
 	CAnchorHandle m_hParent;
 	char pad2[0x26c - 0x258];
 	const char *m_pszName;
@@ -113,7 +113,7 @@ void CConstraintAnchor::vfunc103()
 void sub_100aa7b0(void *p);
 
 // TARGET: CConstraintAnchor::vfunc5
-CConstraintAnchorBase *CConstraintAnchor::vfunc5(unsigned int flags)
+CBaseEntity *CConstraintAnchor::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)

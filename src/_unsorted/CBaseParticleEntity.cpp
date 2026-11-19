@@ -35,7 +35,7 @@ int CBaseParticleEntity::vfunc79()
 #include "vampire_all.h"
 #include "CBaseParticleEntity.h"
 
-CBaseParticleEntity::CBaseParticleEntity() : CConstraintAnchorBase(0)
+CBaseParticleEntity::CBaseParticleEntity() : CBaseEntity(0)
 {
 }
 // END FUNCTION
@@ -46,7 +46,7 @@ CBaseParticleEntity::CBaseParticleEntity() : CConstraintAnchorBase(0)
 void sub_100aa7b0(void *p);
 
 // TARGET: CBaseParticleEntity::vfunc5
-CConstraintAnchorBase *CBaseParticleEntity::vfunc5(unsigned int flags)
+CBaseEntity *CBaseParticleEntity::vfunc5(unsigned int flags)
 {
 	sub_1000cb8a();
 	if (flags & 1)
@@ -105,9 +105,9 @@ char sub_101d1a90(int a, CBaseParticleEntity *pEnt);
 
 bool CBaseParticleEntity::vfunc241(int a, CParticleTransmitInfo_t *pInfo, int c, int d)
 {
-	if (m_flags19c & 0x40)
+	if (m_nEffectFlags & 0x40)
 		return false;
-	if (!g_1070b22c->vfunc105(d, m_pEdict2e0->GetValue()))
+	if (!g_1070b22c->vfunc105(d, ((CParticleEdict_t *)m_pEdict2e0)->GetValue()))
 		return false;
 	bool bResult = sub_101d1a90(pInfo->m_b44 ? pInfo->m_n40 : 0, this) == 0;
 	return bResult;

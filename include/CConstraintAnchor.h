@@ -1,6 +1,9 @@
-// CConstraintAnchor: constraint anchor entity. Declared flat (bases not recovered); the stub base below only
-// models the entity base constructor (0x1009d980, takes one int) and the vtable slots up to 106.
+// CConstraintAnchor (RTTI CConstraintAnchor : CPointEntity, vtable 0x10446794): constraint anchor entity.
+// CConstraintAnchorBase below is a view of the entity base the matched factories use (they run the entity base
+// constructor 0x1009d980 through it); it is no class's base.
 #pragma once
+
+#include "CPointEntity.h"
 
 class CConstraintAnchor;
 struct datamap_t;
@@ -42,16 +45,11 @@ public:
 	virtual void vfunc106(const char *classname);
 };
 
-class CConstraintAnchor : public CConstraintAnchorBase
+class CConstraintAnchor : public CPointEntity
 {
 public:
-	CConstraintAnchor() : CConstraintAnchorBase(0) {}
-	virtual void vfunc0();
-	virtual void vfunc1();
-	virtual void vfunc2();
-	virtual void vfunc3();
-	virtual void vfunc4();
-	virtual CConstraintAnchorBase *vfunc5(unsigned int flags);	// scalar deleting destructor
+	CConstraintAnchor() {}
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// scalar deleting destructor
 	virtual void vfunc103();	// slot 103 (Activate): when the parent (handle at +0x254) resolves, records (its origin, its handle or -1, the name at +0x26c) in the global anchor list and removes this entity
 
 	void sub_1000cb8a();	// destructor body

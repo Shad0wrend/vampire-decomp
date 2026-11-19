@@ -35,7 +35,7 @@ datamap_t * CFunc_LOD::vfunc82()
 // FUNCTION: 0x10114a20 size=0x14
 #include "CFunc_LOD.h"
 
-CFunc_LOD::CFunc_LOD() : CConstraintAnchorBase(0)
+CFunc_LOD::CFunc_LOD() : CBaseEntity(0)
 {
 }
 // END FUNCTION
