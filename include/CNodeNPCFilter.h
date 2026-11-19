@@ -8,7 +8,14 @@ struct CNodeNPCFilterNode	// the node a filter looks at; real name not yet known
 	Vector *sub_102fb0d0(Vector *pOut, int nHull);	// the node's position for a hull (stub 0x1000d99a)
 };
 
-class CNodePosFilter
+class INodeListFilter	// RTTI .?AVINodeListFilter@@, the interface of CNodePosFilter, CNodeNPCFilter (Source's dlls/ai_network.cpp, 2 slots)
+{
+public:
+	virtual bool vfunc0(void *pEnt) = 0;	// slot 0
+	virtual float vfunc1(CNodeNPCFilterNode *pNode) = 0;	// slot 1
+};
+
+class CNodePosFilter : public INodeListFilter
 {
 public:
     CNodePosFilter(const Vector *p) : m_pPos4(p) {}
@@ -17,7 +24,7 @@ public:
     const Vector *m_pPos4;
 };
 
-class CNodeNPCFilter
+class CNodeNPCFilter : public INodeListFilter
 {
 public:
     virtual bool vfunc0(void *pEnt);    // slot 0: false for an entity of kind 3 without flag 4 in the flags byte at +0xc, or kind 2 without flag 1; else the object at +8 answers its slot 527 for the entity

@@ -11,7 +11,13 @@ struct CConVarArgView {
 	virtual void vfunc6(void *p);
 };
 
-class CGameDLL_ConVarAccessor
+class IConCommandBaseAccessor	// RTTI .?AVIConCommandBaseAccessor@@, the interface CGameDLL_ConVarAccessor implements (Source's public/convar.h, 1 slot)
+{
+public:
+	virtual bool vfunc0(CConVarArgView *pCommand) = 0;	// slot 0
+};
+
+class CGameDLL_ConVarAccessor : public IConCommandBaseAccessor
 {
 public:
 	virtual bool vfunc0(CConVarArgView *pCommand);

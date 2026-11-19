@@ -4,7 +4,14 @@
 
 class IPhysicsObject;
 
-class CObjectEvent
+class IPhysicsObjectEvent	// RTTI .?AVIPhysicsObjectEvent@@, the interface CObjectEvent implements (Source's public/vphysics_interface.h, 2 slots)
+{
+public:
+	virtual void vfunc0(IPhysicsObject *pObject) = 0;	// slot 0
+	virtual void vfunc1(IPhysicsObject *pObject) = 0;	// slot 1
+};
+
+class CObjectEvent : public IPhysicsObjectEvent
 {
 public:
 	virtual void vfunc0(IPhysicsObject *pObject);	// slot 0 (0x1002d560, only its address is known)

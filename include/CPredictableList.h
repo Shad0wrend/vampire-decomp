@@ -6,7 +6,14 @@
 
 #include "CGlobalEntityList.h"
 
-class CPredictableList
+class IPredictableList	// RTTI .?AVIPredictableList@@, the interface CPredictableList implements (Source's game_shared/predictable_entity.h, 2 slots)
+{
+public:
+	virtual CGlobalEntityList_Ent *vfunc0(int index) = 0;	// slot 0
+	virtual int vfunc1() = 0;	// slot 1
+};
+
+class CPredictableList : public IPredictableList
 {
 public:
 	virtual CGlobalEntityList_Ent *vfunc0(int index);	// slot 0: the entity of the handle at element index (null when it does not resolve)

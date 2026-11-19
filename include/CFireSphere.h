@@ -7,7 +7,13 @@
 
 class CBaseEntity;
 
-class CFireSphere
+class IPartitionEnumerator	// RTTI .?AVIPartitionEnumerator@@, the interface CFireSphere implements (Source's public/ispatialpartition.h, 1 slot)
+{
+public:
+	virtual int vfunc0(CBaseEntity *pHandleEntity) = 0;	// slot 0
+};
+
+class CFireSphere : public IPartitionEnumerator
 {
 public:
 	CFireSphere(int *pList, int nCapacity, char bCheckVisible, const Vector *pCenter, float flRadius);	// 0x10108d90

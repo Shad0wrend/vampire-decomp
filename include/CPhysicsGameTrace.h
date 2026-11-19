@@ -5,7 +5,15 @@
 struct Ray_t;
 struct CGameTrace;
 
-class CPhysicsGameTrace
+class IPhysicsGameTrace	// RTTI .?AVIPhysicsGameTrace@@, the interface CPhysicsGameTrace implements (Source's public/vphysics_interface.h, 3 slots)
+{
+public:
+	virtual void vfunc0(Ray_t *pRay, void *pPassEnt, CGameTrace *pTrace) = 0;	// slot 0
+	virtual void vfunc1(Ray_t *pRay, void *pPassEnt, CGameTrace *pTrace) = 0;	// slot 1
+	virtual bool vfunc2(void *pPassEnt) = 0;	// slot 2
+};
+
+class CPhysicsGameTrace : public IPhysicsGameTrace
 {
 public:
 	virtual void vfunc0(Ray_t *pRay, void *pPassEnt, CGameTrace *pTrace);	// slot 0: builds a CTraceFilterSimple(pPassEnt, 0) and hands it with mask 0x200400b to the engine trace object's vfunc4 (TraceRay)
