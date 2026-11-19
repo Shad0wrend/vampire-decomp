@@ -4148,6 +4148,7 @@
 0x1000623f func   ?sub_10323630@@YIXPAVCBaseCombatCharacter@@@Z sub_10323630
 0x10006244 func   ?sub_101cc3d0@V101cc3d0@@QAEPAXI@Z V101cc3d0::sub_101cc3d0
 0x10006249 func   ?sub_10349400@TOps@@QAE_NPAPAH@Z TOps::sub_10349400
+0x10006249 func   ?vfunc2@CRelationshipSaveDataOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z CRelationshipSaveDataOps::vfunc2
 0x1000624e func   ?sub_10170b00@CUnknown10170b00@@QAEXXZ CUnknown10170b00::sub_10170b00
 0x10006253 func   ?sub_101ec480@CUnk101ec480@@QAEPADH@Z CUnk101ec480::sub_101ec480
 0x10006258 func   ?vfunc110@CAmbientGeneric@@QAE_NPBD0@Z CAmbientGeneric::vfunc110
