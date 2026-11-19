@@ -9,9 +9,8 @@
 class CGameMovement : public IGameMovement
 {
 public:
-#ifdef PCD_INITIALIZERS	// the initializer units: the global 0x10938628 is built and destroyed by these
-	~CGameMovement();	// function 0x1011e200
-#endif
+	virtual ~CGameMovement();	// 0x1011e200 (stub 0x100102f3, matched as CUnknown1011e200::sub_1011e200): out of line, the
+				// scalar deleting destructor and the initializer unit's destroy of the global 0x10938628 call it
 	CGameMovement();	// stores the vftable, sets the hull / view vectors and caches a tuning float (0x10739d08 + 0x3c8) at +0xa8
 	CGameMovement *vfunc0(unsigned int flags);	// slot 0, the scalar deleting destructor (0x1011e1d0), matched under this name
 	virtual void vfunc1(void *pMove, void *pPlayer);	// slot 1 "ProcessMovement": stores the arguments at +8 / +4, picks the frame time from the global at 0x109ef04c, runs slot 5 and sub_1011f6e0, and restores the global time step (+0x10 of 0x1070b228)
