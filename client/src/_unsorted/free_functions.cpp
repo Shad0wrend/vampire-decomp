@@ -2338,6 +2338,35 @@ void CUnknown101dcdb0::sub_10147b80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147be0 size=0xac
+#include "CUnknown101dce30.h"
+
+bool CUnknown101dce30::sub_10147be0(CUnknown101dc5a0Keys *pKeys, const char *pszName)
+{
+	if (pKeys) {
+		CUnknown101dc5a0Keys *pBlock = pKeys->vfunc2(pszName);
+		if (pBlock) {
+			CUnknown101dc5a0Keys *p;
+			for (p = pBlock->vfunc2("Particle_ThirdPerson"); p; p = p->vfunc3()) {
+				CUnknown101dcc80Record *pRecord = m_particles.sub_10147a90();
+				pRecord->m_nSlot = 0;
+				if (!sub_10147c90(p, pRecord))
+					return false;
+			}
+			for (p = pBlock->vfunc2("Particle_FirstPerson"); p; p = p->vfunc3()) {
+				CUnknown101dcc80Record *pRecord = m_particles.sub_10147a90();
+				pRecord->m_nSlot = 1;
+				if (!sub_10147c90(p, pRecord))
+					return false;
+			}
+			m_sounds.sub_101475e0(pBlock);
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101482a0 size=0x8a
 #include "S101df260.h"
 
