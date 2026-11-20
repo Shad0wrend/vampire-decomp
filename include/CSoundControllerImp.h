@@ -70,7 +70,13 @@ int sub_101bc500(char **a, char **b);	// SoundCommandLessFunc (matched under thi
 class CSoundControllerImp : public CSoundEnvelopeController, public CAutoGameSystem
 {
 public:
-	// the overrides its vtable holds (typed as in the flat view below; slots 0 and 1 would also override CAutoGameSystem's, 12 and 16 left out)
+	// the overrides its vtables hold (typed as in the flat view below). The envelope controller's slots 0, 1, 12,
+	// 16 and the game system's slots 4, 7 are defined under other names (the plain vfunc0 / vfunc1 / vfunc16 of
+	// the flat view, the views sub_101bd650 / sub_101bd960 / sub_101bd940): declared only, the standalone link
+	// takes the game's words
+	virtual void SystemReset(); virtual void SystemUpdate(); virtual void vfunc12();
+	virtual void vfunc16(void *pSound, int command, void *points, int numPoints);
+	virtual void vfunc4(); virtual void vfunc7();	// CAutoGameSystem's
 	virtual void vfunc2(CUnknown101bc140 *pSound, float flVolume, float flPitch);
 	virtual void vfunc3(void *pSound, float executeDeltaTime, int command, float duration, float amplitude);
 	virtual void vfunc4(void *pSound);

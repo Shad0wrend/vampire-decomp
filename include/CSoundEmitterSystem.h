@@ -12,6 +12,9 @@ class CSoundEmitterSystem : public CSoundEmitterSystemBase, public CAutoGameSyst
 public:
 	CSoundEmitterSystem() {}
 	virtual void LogMessage(const char *pszFormat, ...);
+	// CAutoGameSystem's slots 0..2: the game's words 0x101aff20, 0x101aff40, 0x101afff0 are matched under view
+	// names; declared only, the standalone link takes the game's words
+	virtual bool vfunc0(); virtual void vfunc1(); virtual void vfunc2();
 };
 #else
 // The flat model keeps CSoundEmitterSystemBase's vtable pointer as a plain member, so the game-system part at +0xdc

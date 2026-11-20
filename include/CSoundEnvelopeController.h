@@ -8,8 +8,8 @@ class CUnknown101bc140;
 class CSoundEnvelopeController
 {
 public:
-	virtual void vfunc0() PCD_PURE;
-	virtual void vfunc1() PCD_PURE;
+	virtual void SystemReset() PCD_PURE;	// slots 0 and 1 by Source's names: CSoundControllerImp's other base,
+	virtual void SystemUpdate() PCD_PURE;	// CAutoGameSystem, has its own vfunc0 / vfunc1
 	virtual void vfunc2(CUnknown101bc140 *pSound, float flVolume, float flPitch) PCD_PURE;
 	virtual void vfunc3(void *pSound, float executeDeltaTime, int command, float duration, float amplitude) PCD_PURE;
 	virtual void vfunc4(void *pSound) PCD_PURE;
