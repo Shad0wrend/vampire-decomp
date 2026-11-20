@@ -5376,6 +5376,7 @@
 0x10007955 func   ?Purge@?$CUtlVector@PAVIHandleEntity@@V?$CUtlMemory@PAVIHandleEntity@@@@@@QAEXXZ CUtlVector<IHandleEntity *,CUtlMemory<IHandleEntity *> >::Purge
 0x10007955 func   ?sub_10366b30@CUtlVector16@@QAEXXZ CUtlVector16::sub_10366b30
 0x1000795a func   ?vfunc230@CWeaponThrown_Chang_Energy_Ball@@QAEXHPAUCEnergyBallThrowInfo@@@Z CWeaponThrown_Chang_Energy_Ball::vfunc230
+0x1000795a func   ?vfunc230@CWeaponThrown_Chang_Energy_Ball@@UAEXHPAX@Z CWeaponThrown_Chang_Energy_Ball::vfunc230
 0x1000795f func   ?sub_103e9270@@YAHXZ sub_103e9270
 0x10007964 func   ?sub_10214700@@YGHH@Z sub_10214700
 0x10007969 func   ?vfunc103@CItemContainerOneItemFiltered@@UAEXXZ CItemContainerOneItemFiltered::vfunc103
