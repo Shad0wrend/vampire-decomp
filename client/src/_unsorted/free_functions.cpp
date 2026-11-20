@@ -2148,3 +2148,26 @@ S101ddec0 *S101ddec0::sub_101482a0()
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10148330 size=0x1f
+struct CUnk101ddf80Sub94
+{
+    void sub_10147300();
+};
+struct CUnk101ddf80Sub78
+{
+    void sub_101479b0();
+};
+struct CUnk101ddf80
+{
+    char pad[0x5c];
+    CUnk101ddf80Sub78 m_5c;
+    void sub_10148330();
+};
+void CUnk101ddf80::sub_10148330()
+{
+    ((CUnk101ddf80Sub94 *)((char *)this + 0x94))->sub_10147300();
+    ((CUnk101ddf80Sub78 *)((char *)this + 0x78))->sub_101479b0();
+    ((CUnk101ddf80Sub78 *)((char *)this + 0x5c))->sub_101479b0();
+}
+// END FUNCTION
