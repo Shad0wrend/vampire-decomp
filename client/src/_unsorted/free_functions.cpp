@@ -221,3 +221,22 @@ Vector Vector::sub_10049f40(const Vector &v) const
 	return res;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10079a40 size=0x47
+int sub_10079a40(int n, int *values, int *weights)
+{
+	if (n < 1)
+		return -1;
+	if (n == 1)
+		return *values;
+	int best = 0;
+	int bestVal = 0x80000000;
+	for (int i = 0; i < n; i++) {
+		if (weights[i] > bestVal) {
+			bestVal = weights[i];
+			best = i;
+		}
+	}
+	return values[best];
+}
+// END FUNCTION

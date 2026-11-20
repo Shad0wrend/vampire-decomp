@@ -9,6 +9,7 @@
 0x10045630 func   ?sub_10045630@@YAXPAVVector@@00@Z sub_10045630
 0x10049f20 func   ?sub_10049f20@CUnknown100f2f90@@QAEPAXHHH@Z CUnknown100f2f90::sub_10049f20
 0x10049f40 func   ?sub_10049f40@Vector@@QBE?AV1@ABV1@@Z Vector::sub_10049f40
+0x10079a40 func   ?sub_10079a40@@YAHHPAH0@Z sub_10079a40
 0x10106c60 func   _CreateInterface CreateInterface
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
