@@ -1219,3 +1219,26 @@ void CUtlLinkedList8::sub_10117c70(unsigned short elem)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10119d90 size=0x6b
+#include "matrix3x4_t.h"
+#include <math.h>
+
+void sub_10108510(const matrix3x4_t &mat, int iCol, Vector &out);
+
+int sub_10119d90(const matrix3x4_t &mat, const Vector &dir)
+{
+	int iBest = 0;
+	float flBest = -1.0f;
+	for (int i = 0; i < 3; i++) {
+		Vector axis;
+		sub_10108510(mat, i, axis);
+		float flDot = fabs(DotProduct(axis, dir));
+		if (flDot > flBest) {
+			flBest = flDot;
+			iBest = i;
+		}
+	}
+	return iBest;
+}
+// END FUNCTION
