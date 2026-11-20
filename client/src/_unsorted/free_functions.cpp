@@ -1197,3 +1197,25 @@ void CUtlLinkedList8::sub_10117ba0(unsigned short elem)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10117c70 size=0x8d
+#include "CUtlLinkedList8.h"
+
+void CUtlLinkedList8::sub_10117c70(unsigned short elem)
+{
+	if (elem < m_NumAlloced && m_pMemory[elem].m_Previous != elem) {
+		CUtlLinkedList8Node *pList = m_pMemory;
+		CUtlLinkedList8Node *pElem = &pList[elem];
+		if (pElem->m_Previous != 0xffff)
+			pList[pElem->m_Previous].m_Next = pElem->m_Next;
+		else
+			m_Head = pElem->m_Next;
+		if (pElem->m_Next != 0xffff)
+			pList[pElem->m_Next].m_Previous = pElem->m_Previous;
+		else
+			m_Tail = pElem->m_Previous;
+		pElem->m_Previous = pElem->m_Next = elem;
+		--m_ElementCount;
+	}
+}
+// END FUNCTION
