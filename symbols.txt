@@ -20,6 +20,7 @@
 0x10001069 func   ?vfunc316@CWeaponRanged@@UAEDH@Z CWeaponRanged::vfunc316
 0x1000106e func   ?sub_10131490@@YAPAHXZ sub_10131490
 0x10001073 func   ?vfunc104@CBasePlayer@@QAEXXZ CBasePlayer::vfunc104
+0x10001073 func   ?vfunc104@CBasePlayer@@UAEXXZ CBasePlayer::vfunc104
 0x10001078 func   ?sub_101be1d0@CStealthKillRules@@QAEMPAVCBaseEntity@@@Z CStealthKillRules::sub_101be1d0
 0x1000107d func   ?vfunc80@CItemGGiovanniInvitationMaria@@QAEHXZ CItemGGiovanniInvitationMaria::vfunc80
 0x10001082 func   _trigger_brush trigger_brush
