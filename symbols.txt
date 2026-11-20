@@ -12985,6 +12985,7 @@
 0x10010e4c func   ?vfunc5@CWeaponThrown_Chang_Ghost@@QAEPAV1@I@Z CWeaponThrown_Chang_Ghost::vfunc5
 0x10010e51 func   ?sub_101b3b70@@YAXXZ sub_101b3b70
 0x10010e56 func   ?vfunc180@CNPC_VCop@@QAEXXZ CNPC_VCop::vfunc180
+0x10010e56 func   ?vfunc180@CNPC_VCop@@UAEXXZ CNPC_VCop::vfunc180
 0x10010e60 func   ?vfunc42@CBaseEntity@@QAEXPAX@Z CBaseEntity::vfunc42
 0x10010e65 func   ?sub_101d1240@@YAXPBDZZ sub_101d1240
 0x10010e6a func   ?sub_100d9d60@@YAXXZ sub_100d9d60
