@@ -12332,6 +12332,7 @@
 0x10010168 func   ?sub_100f7380@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@PBD@Z CGlobalEntityList::sub_100f7380
 0x1001016d func   ?sub_10428e80@@YAHHH@Z sub_10428e80
 0x10010172 func   ?vfunc176@CTriggerWWZone@@QAEXPAVCBaseEntity@@@Z CTriggerWWZone::vfunc176
+0x10010172 func   ?vfunc176@CTriggerWWZone@@UAEXPAVCBaseEntity@@@Z CTriggerWWZone::vfunc176
 0x10010177 func   ?sub_103048d0@CAI_Pathfinder@@QAE_NHPBM0@Z CAI_Pathfinder::sub_103048d0
 0x1001017c func   ?vfunc2@CServerGameEnts@@UAEXPAUCServerGameEntsEdict@@0@Z CServerGameEnts::vfunc2
 0x10010181 func   ?sub_100fb620@CEnvParticleUnit@@QAEXPBD@Z CEnvParticleUnit::sub_100fb620
