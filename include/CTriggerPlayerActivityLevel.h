@@ -9,6 +9,7 @@ class CTriggerPlayerActivityLevel : public CBaseTrigger
 public:
 	CTriggerPlayerActivityLevel();	// 0x102107c0: the base trigger constructor (inlined), the three levels = -1
 	CTriggerPlayerActivityLevel *sub_102107c0();	// the constructor above, as the allocating caller calls it
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// slot 5: the scalar deleting destructor (0x10210830)
 	void vfunc175(CBaseEntity *pOther);	// slot 175 "Touch": unless the byte at +0x55c is set and when pOther has a player object (+0xa8), resets that player's three levels (+0x598 / +0x59c / +0x5a0) that are not negative, the first two with time -1.0f and a text naming this trigger
 	void vfunc176(CBaseEntity *pOther);	// slot 176 "EndTouch" (plain member): with a player object at pOther+0xa8, when the trigger flag 0x20 at +0x204 is set resets the player's levels A and B (+0x598 / +0x59c) that are not negative and equal the player's current ones (time -1.0f, the text "CTriggerPlayerActivityLevel::EndTouch %s" with this entity's name); level C (+0x5a0) is reset likewise; then CBaseTrigger::vfunc176
 	const char *sub_100ab4f0();	// CBaseEntity::sub_100ab4f0 (stub 0x1000b5cd): the entity's debug name

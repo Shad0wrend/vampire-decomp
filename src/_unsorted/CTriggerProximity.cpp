@@ -84,17 +84,13 @@ void CTriggerProximity::vfunc176(CBaseEntity *pOther)
 
 // FUNCTION: 0x101cc140 size=0x57
 #include "CCineNPC.h"
+#include "CTriggerProximity.h"
 
 void sub_100aa7b0(void *);
 void __fastcall sub_1009df20(void *self);
 
-struct Helper
-{
-	void *sub_101cc140(unsigned int flags);
-};
-
-// TARGET: Helper::sub_101cc140
-void *Helper::sub_101cc140(unsigned int flags)
+// TARGET: CTriggerProximity::vfunc5
+CBaseEntity *CTriggerProximity::vfunc5(unsigned int flags)
 {
 	((CCineNPCSlot *)((char *)this + 0x5a8))->sub_10015708();
 	((CCineNPCSlot *)((char *)this + 0x580))->sub_10015708();
@@ -104,6 +100,6 @@ void *Helper::sub_101cc140(unsigned int flags)
 	sub_1009df20(this);
 	if (flags & 1)
 		sub_100aa7b0(this);
-	return this;
+	return (CBaseEntity *)(this);
 }
 // END FUNCTION

@@ -48,6 +48,7 @@ public:
 	COutputEvent m_out05a8;	// 0x5a8
 
 	CTriggerProximity() {}
+	virtual CBaseEntity *vfunc5(unsigned int flags);	// slot 5: the scalar deleting destructor (0x101cc140)
 	void *operator new(unsigned int size)	// the game's entity allocator (stub 0x1000db89)
 	{
 		extern void *sub_100aa720(int size);
