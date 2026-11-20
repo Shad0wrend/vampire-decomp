@@ -2562,6 +2562,7 @@
 0x100042af func   ?sub_10079450@Obj@@QAEPAU1@H@Z Obj::sub_10079450
 0x100042b4 func   ?sub_102f0fe0@CAI_Navigator@@QAE_NPAD@Z CAI_Navigator::sub_102f0fe0
 0x100042b9 func   ?vfunc174@CTriggerBrush@@QAEXPAVCBaseEntity@@@Z CTriggerBrush::vfunc174
+0x100042b9 func   ?vfunc174@CTriggerBrush@@UAEXPAVCBaseEntity@@@Z CTriggerBrush::vfunc174
 0x100042be func   ?vfunc408@CNPC_VWerewolf@@QAEPBDH@Z CNPC_VWerewolf::vfunc408
 0x100042c3 func   ?sub_102471d0@SendProp@@QBEHXZ SendProp::sub_102471d0
 0x100042c8 func   ?sub_1030fb60@CUnknown1030fb60@@QAEHH@Z CUnknown1030fb60::sub_1030fb60
