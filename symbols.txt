@@ -1740,6 +1740,7 @@
 0x10003288 func   ?vfunc0@CTraceFilterNav@@QAE_NPAXH@Z CTraceFilterNav::vfunc0
 0x1000328d func   ?sub_101dfe50@CUnknown101dfe50@@QAEHHHH@Z CUnknown101dfe50::sub_101dfe50
 0x10003292 func   ?vfunc220@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc220
+0x10003292 func   ?vfunc220@CBaseEntity@@UAEPAMXZ CBaseEntity::vfunc220
 0x10003297 func   ?sub_101aa0e0@@YIXPAUCThinkOwnerView@@@Z sub_101aa0e0
 0x1000329c func   ?sub_102c33f0@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c33f0
 0x100032a1 func   ?vfunc315@CWeaponThrown_Grenade_Frag@@UAEHXZ CWeaponThrown_Grenade_Frag::vfunc315
