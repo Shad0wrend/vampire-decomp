@@ -11541,6 +11541,7 @@
 0x1000f3bc func   ?sub_103c8830@@YAPAHXZ sub_103c8830
 0x1000f3c1 func   ?vfunc2@CTEBeamEntPoint@@UAEPAV1@I@Z CTEBeamEntPoint::vfunc2
 0x1000f3c6 func   ?vfunc175@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc175
+0x1000f3c6 func   ?vfunc175@CBaseEntity@@UAEXPAV1@@Z CBaseEntity::vfunc175
 0x1000f3cb func   ?sub_1007e580@@YIXPAH@Z sub_1007e580
 0x1000f3d0 func   ?sub_10147960@CBaseCombatCharacter@@QAEXHH@Z CBaseCombatCharacter::sub_10147960
 0x1000f3d5 func   ?sub_1040c5d0@CUnknown1040cb60@@QAEXPAVCBaseEntity@@0H@Z CUnknown1040cb60::sub_1040c5d0
