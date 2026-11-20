@@ -4415,6 +4415,23 @@ void CPtrList101d6400::sub_10144770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145d40 size=0x1c
+struct CUnk101d9190 {
+	int m_00[3];
+	int m_0c[100];
+	int sub_10145d40(int index);
+};
+
+// TARGET: CUnk101d9190::sub_10145d40
+int CUnk101d9190::sub_10145d40(int index)
+{
+	if (index >= 0 && index < 100) {
+		return m_0c[index];
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146a90 size=0xf1
 #include "CUnknown101db210.h"
 
