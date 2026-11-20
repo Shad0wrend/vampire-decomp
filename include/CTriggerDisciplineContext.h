@@ -10,6 +10,7 @@ public:
 	CTriggerDisciplineContext *sub_10210ce0();	// the same constructor under its address name, as the allocating function 0x10210be0 calls it
 	void sub_10210b00(void *pInputData);	// like sub_10210ac0, for the index at +0x59c
 	void sub_10210ac0(void *pInputData);	// input function: the variant (type at +0x18, int at +0x8) of the input data names the discipline index at +0x598 (kept when above 5; 0 for a variant of another type)
+	virtual void vfunc175(CBaseEntity *pOther);	// slot 175 (CBaseEntity's Touch): empty here (ret 4), 0x10210e30
 	void vfunc176(CBaseEntity *pEnt);	// slot 176 (EndTouch): drops this trigger's discipline bit (index at +0x598) from the flag word at +0xeac of the object at pEnt+0x9c, then CBaseTrigger::vfunc176
 	void sub_101c55d0(CBaseEntity *pEnt);	// CBaseTrigger::vfunc176 (stub 0x1001346c), called directly
 	void sub_101c5590(CBaseEntity *pEnt);	// CBaseTrigger::vfunc174 (stub 0x10008ef4), called directly

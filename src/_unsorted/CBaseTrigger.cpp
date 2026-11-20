@@ -34,8 +34,10 @@ void CBaseTrigger::vfunc250(int a, int b, int c, int d, int e)
 // END FUNCTION
 
 // FUNCTION: 0x101c4b90 size=0x3
-// TARGET: sub_101c4b90
-void __stdcall sub_101c4b90(int a, int b, int c) {
+#include "CBaseTrigger.h"
+
+void CBaseTrigger::vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace)
+{
 }
 // END FUNCTION
 

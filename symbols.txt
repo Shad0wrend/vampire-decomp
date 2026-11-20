@@ -13092,7 +13092,6 @@
 0x100112d9 func   ?sub_10334c20@CBaseCombatCharacter@@QAE_NPAVCBaseCombatWeapon@@@Z CBaseCombatCharacter::sub_10334c20
 0x100112de func   ?sub_10355e70@@YAPAUCRagdollCopyUnit@@PAU1@HH@Z sub_10355e70
 0x100112e3 func   ?sub_102673f0@@YAHHH@Z sub_102673f0
-0x100112e8 func   ?sub_10210e30@@YGXH@Z sub_10210e30
 0x100112e8 func   ?vfunc175@CTriggerDisciplineContext@@UAEXPAVCBaseEntity@@@Z CTriggerDisciplineContext::vfunc175
 0x100112ed func   ?vfunc77@CNPC_VGhoulCroucher@@UAEXXZ CNPC_VGhoulCroucher::vfunc77
 0x100112f2 func   ?vfunc103@CNPCMaker@@UAEXXZ CNPCMaker::vfunc103
@@ -16652,7 +16651,6 @@
 0x100158b6 func   ?vfunc311@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc311
 0x100158bb func   ?sub_102ca630@CUnknown102ca630@@QAEXPAVCBaseEntity@@@Z CUnknown102ca630::sub_102ca630
 0x100158c0 func   ?vfunc80@CWeaponMelee_GargoyleFist@@UAEHXZ CWeaponMelee_GargoyleFist::vfunc80
-0x100158c5 func   ?sub_101c4b90@@YGXHHH@Z sub_101c4b90
 0x100158c5 func   ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z CBaseTrigger::vfunc141
 0x100158ca func   ?InsertBefore@?$CUtlVector@UUtlVec8Elem@@V?$CUtlMemory@UUtlVec8Elem@@@@@@QAEHH@Z CUtlVector<UtlVec8Elem,CUtlMemory<UtlVec8Elem> >::InsertBefore
 0x100158ca func   ?sub_102f90e0@UtlVec8@@QAEHH@Z UtlVec8::sub_102f90e0

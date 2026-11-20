@@ -21,6 +21,7 @@ public:
 	virtual void vfunc250(int a, int b, int c, int d, int e);	// slot 250: empty (ret 0x14)
 	virtual void vfunc113();	// slot 113 (Activate): looks the filter entity (name at +0x560) up and keeps its handle at +0x564 (-1 when not found), then CBaseEntity::vfunc113
 	virtual int vfunc124();	// slot 124 (debug text overlays): adds the line "State: Enabled" / "State: Disabled" when the debug bit 0 of the byte at +0x224 is set; returns the next free line
+	virtual void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace);	// slot 141 (CBaseEntity's TraceAttack): empty here (ret 0xc), 0x101c4b90
 	void vfunc174(CBaseEntity *pOther);	// slot 174 "CBaseTrigger::StartTouch"-like: when PassesTriggerFilters(pOther) the output at +0x568 fires (activator pOther) through stub 0x10010794
 	void vfunc176(CBaseEntity *pOther);	// "CBaseTrigger::EndTouch" (the base's slot 176, called directly by the trigger classes): the entity's EndTouch
 	void sub_101c4dd0();	// disables the trigger: scope traces "CBaseEntity::IsSolidFlagSet" / "CBaseEntity::RemoveSolidFlags" (entity name); when bit 3 of the solid flags (collision property at +0x270, flags at +0x2b4) is set removes it (SetSolidFlags) and calls PhysicsTouchTriggers(0); then sets the disabled byte at +0x55c

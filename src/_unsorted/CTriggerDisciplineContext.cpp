@@ -67,8 +67,10 @@ void CTriggerDisciplineContext::vfunc174(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10210e30 size=0x3
-// TARGET: sub_10210e30
-void __stdcall sub_10210e30(int a) {
+#include "CTriggerDisciplineContext.h"
+
+void CTriggerDisciplineContext::vfunc175(CBaseEntity *pOther)
+{
 }
 // END FUNCTION
 
