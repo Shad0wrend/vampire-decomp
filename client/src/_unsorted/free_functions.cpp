@@ -1987,6 +1987,16 @@ void sub_10108080(const float *in1, const float in2[3][4], float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108510 size=0x22
+// TARGET: sub_10108510
+void __cdecl sub_10108510(int *pArr, int index, int *pOut)
+{
+    pOut[0] = pArr[index];
+    pOut[1] = pArr[index + 4];
+    pOut[2] = pArr[index + 8];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109010 size=0x8a
 #include "Vector.h"
 #include "QAngle.h"
