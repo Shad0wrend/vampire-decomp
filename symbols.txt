@@ -6242,6 +6242,7 @@
 0x10008a03 func   ?sub_1010b5c0@CFire@@QAEXMD@Z CFire::sub_1010b5c0
 0x10008a08 func   ?sub_102c2890@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2890
 0x10008a0d func   ?vfunc142@CWeaponThrown_Chang_Energy_Ball@@QAEHH@Z CWeaponThrown_Chang_Energy_Ball::vfunc142
+0x10008a0d func   ?vfunc142@CWeaponThrown_Chang_Energy_Ball@@UAEHPAUCTakeDamageInfo@@@Z CWeaponThrown_Chang_Energy_Ball::vfunc142
 0x10008a12 func   ?sub_103b2470@CNPC_VSheriffSwarmFwd@@QAEXH@Z CNPC_VSheriffSwarmFwd::sub_103b2470
 0x10008a17 func   ?vfunc138@CGenericNPC@@UAEHXZ CGenericNPC::vfunc138
 0x10008a1c func   ?vfunc142@CBreakableProp@@UAEHPAUCTakeDamageInfo@@@Z CBreakableProp::vfunc142
