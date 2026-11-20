@@ -15957,6 +15957,7 @@
 0x10014853 func   ?vfunc5@CAI_ExpressiveNPC@@QAEPAV1@I@Z CAI_ExpressiveNPC::vfunc5
 0x10014858 func   ?sub_100e82d0@CDialog@@QAEHPAH@Z CDialog::sub_100e82d0
 0x10014862 func   ?vfunc144@CNPC_VBatSwarm@@UAEXH@Z CNPC_VBatSwarm::vfunc144
+0x10014862 func   ?vfunc144@CNPC_VBatSwarm@@UAEXPAX@Z CNPC_VBatSwarm::vfunc144
 0x10014867 func   ?vfunc420@CNPC_VChangBros@@UAEXXZ CNPC_VChangBros::vfunc420
 0x1001486c func   ?sub_104126e0@@YAXXZ sub_104126e0
 0x10014876 func   ?sub_103c4ef0@CNPC_VVampireCall_103c4ef0@@QAEXXZ CNPC_VVampireCall_103c4ef0::sub_103c4ef0
