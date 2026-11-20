@@ -6246,6 +6246,7 @@
 0x10008b02 func   ?sub_101e9470@@YIHPAXH0@Z sub_101e9470
 0x10008b07 func   ?sub_1021e620@CUnknown1021e620@@QAEXH@Z CUnknown1021e620::sub_1021e620
 0x10008b0c func   ?vfunc202@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc202
+0x10008b0c func   ?vfunc202@CBaseEntity@@UAEXPAV1@@Z CBaseEntity::vfunc202
 0x10008b11 func   ?sub_103160c0@CUnknown103160c0@@QAEPAVCBaseEntity@@H@Z CUnknown103160c0::sub_103160c0
 0x10008b16 func   ?sub_10199e20@@YAXXZ sub_10199e20
 0x10008b1b func   ?sub_10312aa0@CAI_Expresser@@QAEXPBDPAVCGlobalEntityList_Ent@@@Z CAI_Expresser::sub_10312aa0
