@@ -1947,6 +1947,7 @@
 0x100036ca func   ?vfunc16@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEXH@Z CAI_Behavior<CAI_BaseNPC,100000>::vfunc16
 0x100036cf func   ?sub_102961a0@CAI_BaseNPCTroika@@QAE_NPAVCBaseEntity@@@Z CAI_BaseNPCTroika::sub_102961a0
 0x100036d4 func   ?vfunc197@CBaseEntity@@QAEHHHHH@Z CBaseEntity::vfunc197
+0x100036d4 func   ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z CBaseEntity::vfunc197
 0x100036d9 func   _trigger_look trigger_look
 0x100036de func   ?vfunc82@CFilterInventory@@UAEPAUdatamap_t@@XZ CFilterInventory::vfunc82
 0x100036e3 func   ?vfunc86@CBaseViewModel@@UAEDHHHHH@Z CBaseViewModel::vfunc86
