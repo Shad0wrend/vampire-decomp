@@ -2207,6 +2207,14 @@ float sub_1010a2b0(float *q)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a420 size=0x25
+// TARGET: sub_1010a420
+float sub_1010a420(float *a, float *b)
+{
+    return a[0] * b[0] + a[1] * b[1] + a[2] * b[2] + a[3] * b[3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a540 size=0x2a
 void sub_1010a570(int a, void *p);
 
