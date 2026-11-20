@@ -2268,6 +2268,25 @@ void sub_1010a650(const QAngle &angles, float *pQuat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a690 size=0x25
+#include "QAngle.h"
+#include "matrix3x4_t.h"
+struct Q;
+struct matrix3x4_t;
+class QAngle;
+
+void sub_1010a570(const Q &q, float *out);
+void sub_10107eb0(const matrix3x4_t &m, QAngle &ang);
+
+// TARGET: sub_1010a690
+void sub_1010a690(const Q &q, QAngle &ang)
+{
+    float m[12];
+    sub_1010a570(q, m);
+    sub_10107eb0(reinterpret_cast<const matrix3x4_t &>(m), ang);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a930 size=0x4c
 void sub_1010a570(const float *q, float *mat);
 void sub_10107eb0(const float *mat, float *angles);
