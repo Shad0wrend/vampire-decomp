@@ -10920,6 +10920,7 @@
 0x1000e6ba func   ?sub_101e8de0@CUnknown101e8de0@@QAEHXZ CUnknown101e8de0::sub_101e8de0
 0x1000e6bf func   ?sub_1012ee10@@YAXPBH@Z sub_1012ee10
 0x1000e6c4 func   ?vfunc141@CBreakableSurface@@UAEXPAUCTakeDamageInfo@@PBVVector@@PAUCGameTrace@@@Z CBreakableSurface::vfunc141
+0x1000e6c4 func   ?vfunc141@CBreakableSurface@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z CBreakableSurface::vfunc141
 0x1000e6c9 func   ?sub_100dbf50@@YAHXZ sub_100dbf50
 0x1000e6ce func   ?vfunc327@CDisciplineWeapon@@UAEXXZ CDisciplineWeapon::vfunc327
 0x1000e6d3 func   ?vfunc130@CVampireProjectile@@UAEXH@Z CVampireProjectile::vfunc130
