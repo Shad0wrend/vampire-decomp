@@ -8014,6 +8014,7 @@
 0x1000ae48 func   _item_p_occult_blood_buff item_p_occult_blood_buff
 0x1000ae4d func   ?vfunc618@CNPCMaker@@QAEDD@Z CNPCMaker::vfunc618
 0x1000ae52 func   ?sub_100733c0@CUnknown100733c0@@QAEPAU1@H@Z CUnknown100733c0::sub_100733c0
+0x1000ae57 func   ??_GCAI_Navigator@@UAEPAXI@Z ??_GCAI_Navigator@@UAEPAXI@Z
 0x1000ae57 func   ?vfunc0@CAI_Navigator@@UAEPAV1@I@Z CAI_Navigator::vfunc0
 0x1000ae5c func   ?sub_1022d190@UtlVec72@@QAEXHH@Z UtlVec72::sub_1022d190
 0x1000ae61 func   ?sub_1020b020@CUnknown1020b020@@QAEHH@Z CUnknown1020b020::sub_1020b020
