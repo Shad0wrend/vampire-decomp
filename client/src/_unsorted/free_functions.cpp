@@ -328,3 +328,58 @@ void sub_100889f0(void *pHdr, int frame, float s, CBlendBone *pbone, CBlendAnim 
 	} q = q1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10088ba0 size=0x153
+#include "Vector.h"
+struct mstudioanimvalue_t {
+    union {
+        struct { unsigned char valid; unsigned char total; } num;
+        short value;
+    };
+};
+struct mstudioanim_t {
+    float weight;
+    int offset[6];
+};
+struct mstudiobone_t {
+    char pad[0x20];
+    float value[6];
+    float pad38;
+    float scale[6];
+};
+void sub_10088ba0(void *pStudioHdr, int frame, float s, mstudiobone_t *pbone, mstudioanim_t *panim, Vector &pos)
+{
+    if (panim->weight == 0.0) {
+        pos.x = 0;
+        pos.y = 0;
+        pos.z = 0;
+        return;
+    }
+    for (int j = 0; j < 3; j++) {
+        pos[j] = pbone->value[j];
+        if (panim->offset[j] != 0) {
+            mstudioanimvalue_t *panimvalue = (mstudioanimvalue_t *)((unsigned char *)panim + panim->offset[j]);
+            int k = frame;
+            if (panimvalue->num.total < panimvalue->num.valid)
+                k = 0;
+            while (panimvalue->num.total <= k) {
+                k -= panimvalue->num.total;
+                panimvalue += panimvalue->num.valid + 1;
+                if (panimvalue->num.total < panimvalue->num.valid)
+                    k = 0;
+            }
+            if (panimvalue->num.valid > k) {
+                if (panimvalue->num.valid > k + 1)
+                    pos[j] += (panimvalue[k + 1].value * (1.0 - s) + s * panimvalue[k + 2].value) * pbone->scale[j];
+                else
+                    pos[j] += panimvalue[k + 1].value * pbone->scale[j];
+            } else {
+                if (panimvalue->num.total <= k + 1)
+                    pos[j] += (panimvalue[panimvalue->num.valid].value * (1.0 - s) + s * panimvalue[panimvalue->num.valid + 2].value) * pbone->scale[j];
+                else
+                    pos[j] += panimvalue[panimvalue->num.valid].value * pbone->scale[j];
+            }
+        }
+    }
+}
+// END FUNCTION
