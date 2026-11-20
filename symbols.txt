@@ -1133,6 +1133,7 @@
 0x100026a3 func   ?sub_10200ea0@CVStatList_t@@QAE_NH@Z CVStatList_t::sub_10200ea0
 0x100026a8 func   ?sub_10146640@CUnknown10146640@@QAEPAXXZ CUnknown10146640::sub_10146640
 0x100026ad func   ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z CBaseEntity::vfunc173
+0x100026ad func   ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z CBaseEntity::vfunc173
 0x100026b2 func   ?sub_101efcf0@CVampireProjectile@@QAEXXZ CVampireProjectile::sub_101efcf0
 0x100026b7 func   ?vfunc606@CAI_BaseNPCTroika@@UAEHH@Z CAI_BaseNPCTroika::vfunc606
 0x100026bc func   ?vfunc2@?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCBaseEntity@@@@V?$CUtlMemory@V?$CHandle@VCBaseEntity@@@@@@@@$0M@@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z CUtlVectorDataOps<CUtlVector<CHandle<CBaseEntity>,CUtlMemory<CHandle<CBaseEntity> > >,12>::vfunc2
