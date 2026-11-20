@@ -5932,6 +5932,7 @@
 0x10008503 func   ?sub_1027fc10@CUnknown1027fc10@@QAEPAXH@Z CUnknown1027fc10::sub_1027fc10
 0x10008508 func   ?sub_10342910@CBaseCombatCharacter@@QAEHPAXPAVCBaseEntity@@_N2VVector@@3@Z CBaseCombatCharacter::sub_10342910
 0x1000850d func   ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z CBaseEntity::vfunc227
+0x1000850d func   ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z CBaseEntity::vfunc227
 0x10008512 func   ?sub_103e7580@CWeaponMelee_Torch@@QAEXXZ CWeaponMelee_Torch::sub_103e7580
 0x10008517 func   ?sub_1037ea90@@YAXXZ sub_1037ea90
 0x10008521 func   ?vfunc617@CNPC_VHengeyokai@@QAEXXZ CNPC_VHengeyokai::vfunc617
