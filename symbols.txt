@@ -10266,6 +10266,7 @@
 0x1000d98b func   ?vfunc180@CFire@@UAEXXZ CFire::vfunc180
 0x1000d990 func   ?sub_1026dc60@CUnknown1026dc60@@QAEXXZ CUnknown1026dc60::sub_1026dc60
 0x1000d995 func   ?vfunc181@CBasePlayer@@UAEXPAX00@Z CBasePlayer::vfunc181
+0x1000d995 func   ?vfunc181@CBasePlayer@@UAEXPBM00@Z CBasePlayer::vfunc181
 0x1000d99a func   ?sub_102fb0d0@CUnknown102f46d0Elem@@QAE?AVVector@@H@Z CUnknown102f46d0Elem::sub_102fb0d0
 0x1000d99f func   ?vfunc104@CBaseProp@@UAEXXZ CBaseProp::vfunc104
 0x1000d9a4 func   ?sub_1024fc20@CDropEntityUnit@@QAEXXZ CDropEntityUnit::sub_1024fc20
