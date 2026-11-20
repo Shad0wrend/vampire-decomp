@@ -4049,6 +4049,31 @@ void CUnknown1024b370::sub_1013d330()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d4e0 size=0x33
+// TARGET: sub_1013d4e0
+struct CFindItem_1024b590 {
+    int a;
+    int b;
+};
+struct CFindList_1024b590 {
+    char pad[0x18];
+    CFindItem_1024b590 **items;
+    char pad2[8];
+    int count;
+    int sub_1013d4e0(int v);
+};
+int CFindList_1024b590::sub_1013d4e0(int v)
+{
+    int i;
+    for (i = 0; i < count; i++) {
+        if (items[i]->a - items[i]->b >= v) {
+            return i;
+        }
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ddc0 size=0xbd
 #include "CUtlRBTree12.h"
 #include "utlrbtree.h"
