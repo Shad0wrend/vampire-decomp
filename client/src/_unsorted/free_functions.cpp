@@ -6892,6 +6892,16 @@ bool CUtlRBTreeBig::sub_101a7100(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a71c0 size=0xc1
+#include "utlrbtree.h"
+#include "CUtlRBTreeBig.h"
+
+bool CUtlRBTreeBig::sub_101a71c0(unsigned short i) const
+{
+    return Links(Links(i).m_Parent).m_Right == i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b3480 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
