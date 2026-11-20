@@ -515,6 +515,7 @@
 0x10001a23 func   ?sub_102cabd0@CUnknown102cabd0@@QAEHPAVCUnknown1028ebc0@@PAPAXH@Z CUnknown102cabd0::sub_102cabd0
 0x10001a28 func   ?sub_100bc510@bf_write@@QAEXPAXHHH@Z bf_write::sub_100bc510
 0x10001a32 func   ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ CBaseVampireSkillEntity::vfunc272
+0x10001a32 func   ?vfunc272@CBaseVampireSkillEntity@@UAEXXZ CBaseVampireSkillEntity::vfunc272
 0x10001a37 func   ?vfunc80@CItemGRingSilver@@QAEHXZ CItemGRingSilver::vfunc80
 0x10001a3c func   ?sub_103f3f00@CWeaponIArmorUnit@@QAEPAXXZ CWeaponIArmorUnit::sub_103f3f00
 0x10001a41 func   ?vfunc5@CNPC_VCombatman@@UAEPAVCBaseEntity@@I@Z CNPC_VCombatman::vfunc5
