@@ -23,3 +23,12 @@ void CSave::vfunc7(int a, int b, int count)
     sub_10129830(a, count * 2, b);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129110 size=0x1e
+#include "CSave.h"
+
+void CSave::vfunc9(const char *pszName, void *pData, int count)
+{
+    sub_10129830((int)pszName, count * 4, (int)pData);
+}
+// END FUNCTION
