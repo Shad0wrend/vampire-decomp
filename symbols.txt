@@ -9385,6 +9385,7 @@
 0x1000c928 func   ?sub_1009a210@@YAHXZ sub_1009a210
 0x1000c92d func   ?vfunc1@CTEInspectionFX@@UAEHXZ CTEInspectionFX::vfunc1
 0x1000c932 func   ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z CBaseEntity::vfunc231
+0x1000c932 func   ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z CBaseEntity::vfunc231
 0x1000c93c func   ?sub_100fbaf0@CBaseEntityUnit100fbaf0@@QAEXM@Z CBaseEntityUnit100fbaf0::sub_100fbaf0
 0x1000c941 func   ?vfunc5@CMoveHelperServer@@UAEXPBMHPBDMHHH@Z CMoveHelperServer::vfunc5
 0x1000c946 func   ?ShiftElementsRight@?$CUtlVector@Upenetrateevent_t@@V?$CUtlMemory@Upenetrateevent_t@@@@@@QAEXHH@Z CUtlVector<penetrateevent_t,CUtlMemory<penetrateevent_t> >::ShiftElementsRight
