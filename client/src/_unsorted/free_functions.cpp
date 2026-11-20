@@ -4935,6 +4935,32 @@ CUnk101e9570 *CUnk101e9570::sub_1014de80(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e090 size=0x67
+#include "CUnknown101e98c0.h"
+
+// TARGET: CUnknown101e98c0::sub_1014e090
+void CUnknown101e98c0::sub_1014e090()
+{
+	if (m_ppItems)
+	{
+		for (int i = 0; i < m_count; i++)
+		{
+			CUnknown101e98c0Item *p = m_ppItems[i];
+			if (p)
+			{
+				p->m_sub.sub_101451d0();
+				delete p;
+			}
+			m_ppItems[i] = 0;
+		}
+		operator delete(m_ppItems);
+		m_ppItems = 0;
+	}
+	m_count = 0;
+	m_field00 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150bc0 size=0x7b
 #include "CUnknown101ed170.h"
 
