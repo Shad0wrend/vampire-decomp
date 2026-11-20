@@ -5793,6 +5793,29 @@ int CUnk1006cbe0::sub_10160280(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160db0 size=0x29
+struct CUnk10204c20
+{
+    char pad0000[0xc];
+    int m_nScale;
+    int sub_10160db0(int a);
+};
+
+// TARGET: CUnk10204c20::sub_10160db0
+int CUnk10204c20::sub_10160db0(int a)
+{
+    int n = m_nScale;
+    int r;
+    if (n == 1)
+        r = a;
+    else if (n < 0)
+        r = -(a / n);
+    else
+        r = n * a;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101613e0 size=0x30
 #include "CVDmg_t.h"
 
