@@ -312,6 +312,7 @@
 0x10001627 func   ?vfunc409@CNPC_VMingXiaoTentacle@@UAEHXZ CNPC_VMingXiaoTentacle::vfunc409
 0x1000162c func   ?vfunc82@CTriggerPlayerActivityLevel@@UAEPAUdatamap_t@@XZ CTriggerPlayerActivityLevel::vfunc82
 0x10001631 func   ?sub_101d7fb0@CUnknown101d7ec0@@QAEDPAVCBaseCombatCharacter@@PBUCUnknown101d7ec0_Check@@@Z CUnknown101d7ec0::sub_101d7fb0
+0x10001636 func   ?vfunc142@CHL2_Player@@UAEHPAUCTakeDamageInfo@@@Z CHL2_Player::vfunc142
 0x10001636 func   ?vfunc142@CHL2_Player@@UAEHPAX@Z CHL2_Player::vfunc142
 0x1000163b func   ?vfunc80@CBatSwarm@@UAEHXZ CBatSwarm::vfunc80
 0x10001640 func   ?sub_10141320@@YA_NXZ sub_10141320
