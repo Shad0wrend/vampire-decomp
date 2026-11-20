@@ -242,6 +242,7 @@
 0x10156770 func   ?sub_10156770@@YIHPAUCUnknownStat101f69a0@@@Z sub_10156770
 0x101570b0 func   ?sub_101570b0@CVTraitEffectGroup_t@@QAEXPAUCTraitStatBlock@@@Z CVTraitEffectGroup_t::sub_101570b0
 0x101570f0 func   ?sub_101570f0@CUnk101f75f0@@QAEXPAUCTraitStatBlock@@@Z CUnk101f75f0::sub_101570f0
+0x10157130 func   ?sub_10157130@CVTraitEffectGroup_t@@QAEXPAVCVModInfo_t@@PAX@Z CVTraitEffectGroup_t::sub_10157130
 0x10157390 func   ?sub_10157390@CUnknown101f7960@@QAEPAUS101f7310@@XZ CUnknown101f7960::sub_10157390
 0x10157480 func   ?sub_10157480@CUnknown101f7bb0@@QAEXXZ CUnknown101f7bb0::sub_10157480
 0x1015f720 func   ?sub_1015f720@@YADPAVCFileParserSlotView@@PBDH1PAUstring_t@@PAPAU2@PAH@Z sub_1015f720
