@@ -9730,6 +9730,7 @@
 0x1000cf9f func   ?vfunc103@CBaseTerminal@@QAEXXZ CBaseTerminal::vfunc103
 0x1000cfa4 func   ?sub_103912e0@@YADXZ sub_103912e0
 0x1000cfa9 func   ?vfunc226@CBaseEntity@@QAEXH@Z CBaseEntity::vfunc226
+0x1000cfa9 func   ?vfunc226@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc226
 0x1000cfae func   ?vfunc5@CTriggerPush@@UAEPAVCBaseEntity@@I@Z CTriggerPush::vfunc5
 0x1000cfb3 func   ?sub_1013b610@@YAXPBVVector@@000MPAV1@@Z sub_1013b610
 0x1000cfb8 func   ?sub_1034e9a0@@YGXAAUinputdata_t@@@Z sub_1034e9a0
