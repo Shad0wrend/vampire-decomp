@@ -11150,6 +11150,7 @@
 0x1000ec37 func   ?vfunc82@CNPC_VTaxiDriver@@QAEPAUdatamap_t@@XZ CNPC_VTaxiDriver::vfunc82
 0x1000ec3c func   ?sub_100436c0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_100436c0
 0x1000ec41 func   ?vfunc198@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc198
+0x1000ec41 func   ?vfunc198@CBaseEntity@@UAEPAMXZ CBaseEntity::vfunc198
 0x1000ec46 func   ?sub_103b1300@CNPC_VAsianVampireUnit@@QAEXPAX@Z CNPC_VAsianVampireUnit::sub_103b1300
 0x1000ec4b func   ?sub_102343a0@@YAPAXXZ sub_102343a0
 0x1000ec4b func   ?vfunc82@CWeaponRanged@@UAEPAUdatamap_t@@XZ CWeaponRanged::vfunc82
