@@ -76,8 +76,6 @@ class CAI_Senses : public CAI_Component
 public:
 	// slot 0, the scalar deleting destructor at 0x1027cde0, is the implicit destructor
 
-	char pad08[4];
-	int m_n0c;
 	float m_flLookDist;	// 0x10
 	float m_f14;
 	float m_f18;
@@ -95,7 +93,7 @@ public:
 	int m_n84;
 
 	CAI_Senses()
-		: m_n0c(-1), m_flLookDist(3072.0f), m_f14(-1.0f), m_f18(-1.0f), m_n1c(0),
+		: m_flLookDist(3072.0f), m_f14(-1.0f), m_f18(-1.0f), m_n1c(0),
 		  m_timer68(0.15f, 1), m_timer70(0.25f, 1), m_timer78(0.45f, 1), m_b80(1), m_n84(0)
 	{
 		m_pVec20 = &m_vec20;

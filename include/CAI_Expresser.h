@@ -75,14 +75,12 @@ struct CAI_ExpresserTail	// the members at +0x4c .. +0x6f
 class CAI_Expresser : public CAI_Component
 {
 public:
-	int m_pad08;
-	int m_n0c;
-	CAI_ExpresserSink *m_n10;
+	CAI_ExpresserSink *m_n10;	// 0x10
 	CAI_ExpresserTree m_Tree;	// 0x14
 	CAI_ExpresserSub m_Sub;	// 0x30
 	CAI_ExpresserTail m_Tail;	// 0x4c
 
-	CAI_Expresser() : m_n0c(-1), m_n10(0)
+	CAI_Expresser() : m_n10(0)
 	{
 		*(char *)&m_Tail.m_n64 = 0;
 		m_Tail.m_n6c = -1;

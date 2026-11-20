@@ -235748,8 +235748,8 @@ int CAI_Motor::sub_102e0bd0(void *pOut, CBaseEntity *pTarget, int a, char b, cha
 	m_0c = gpGlobals->framecount;
 
 	CAI_MoveProbe *pWrite = (CAI_MoveProbe *)m_68;
-	pWrite->m_pad08 = *(int *)((char *)pWrite->m_pOuter + 0x156c);
-	pWrite->m_nUnk0c = gpGlobals->framecount;
+	pWrite->m_n08 = *(int *)((char *)pWrite->m_pOuter + 0x156c);
+	pWrite->m_n0c = gpGlobals->framecount;
 
 	CAI_MoveProbe *pProbe = (CAI_MoveProbe *)m_68;
 	Vector *pStart = ((CEntityVSlots *)m_pOuter)->slot220();
@@ -237426,7 +237426,7 @@ struct CAI_MoveProbeV : CAI_MoveProbe
 	COuter4 *GetOuter() const { return (COuter4 *)m_pOuter; }
 	const Vector &WorldAlignMins() const { return GetOuter()->m_Collision.vfunc1(); }
 	const Vector &WorldAlignMaxs() const { return GetOuter()->m_Collision.vfunc2(); }
-	int GetHullType() const { return m_pad08; }
+	int GetHullType() const { return m_n08; }
 	float GetHullWidth() const { return sub_102d61b0(GetHullType()); }
 	float GetHullHeight() const { return sub_102d61e0(GetHullType()); }
 	bool CheckStandPosition(const Vector &v, unsigned mask, int a8) { return sub_102e7270(&v.x, mask, 0, 0, 0, a8) != 0; }
@@ -238221,8 +238221,8 @@ bool CAI_MoveProbe::sub_102e6d70(int navType, const float *vecStart, const float
 {
 	static AIMoveTraceLocal s_Trace;
 
-	m_pad08 = *(int *)((char *)m_pOuter + 0x156c);
-	m_nUnk0c = gpGlobals->framecount;
+	m_n08 = *(int *)((char *)m_pOuter + 0x156c);
+	m_n0c = gpGlobals->framecount;
 
 	AIMoveTrace_t *pTraceLocal = pTrace;
 	if (!pTraceLocal)
@@ -240554,11 +240554,11 @@ bool CAI_Navigator::sub_102ecd20(void *pGoal, int nFlags)
 {
 	const AI_NavGoal &goal = *(const AI_NavGoal *)pGoal;
 
-	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = gpGlobals->framecount;
-	CAI_NavComponentData *pPathfinder = (CAI_NavComponentData *)sub_102ecc00();
-	pPathfinder->m_i08 = *(int *)(pPathfinder->m_pOuter + 0x156c);
-	pPathfinder->m_i0c = gpGlobals->framecount;
+	m_n08 = *(int *)((int)m_pOuter + 0x156c);
+	m_n0c = gpGlobals->framecount;
+	CAI_Component *pPathfinder = (CAI_Component *)sub_102ecc00();
+	pPathfinder->m_n08 = *(int *)((int)pPathfinder->m_pOuter + 0x156c);
+	pPathfinder->m_n0c = gpGlobals->framecount;
 
 	CAI_NavRoute *pPath = m_p30;
 	vfunc7();
@@ -240575,27 +240575,27 @@ bool CAI_Navigator::sub_102ecd20(void *pGoal, int nFlags)
 		((CUnknown102ee120 *)this)->sub_102ee250(goal.activity);
 
 	if (goal.tolerance == g_1049d980)
-		pPath->SetGoalTolerance(HullWidth(m_i08));
+		pPath->SetGoalTolerance(HullWidth(m_n08));
 	else if (goal.tolerance != g_1049d97c)
 		pPath->SetGoalTolerance(goal.tolerance);
 	else if (pPath->m_fl28 == g_104454c4)
 	{
-		pPath->SetGoalTolerance(HullWidth(m_i08));
+		pPath->SetGoalTolerance(HullWidth(m_n08));
 		CBaseEntity *pTarget = 0;
 		if (goal.type == 1 || goal.type == 2 || goal.type == 7)
 		{
 			if (goal.type == 1)
-				pTarget = LookupHandle((const unsigned int *)(m_pOuter + 0x5ce4));
+				pTarget = LookupHandle((const unsigned int *)((int)m_pOuter + 0x5ce4));
 			else if (goal.type == 2)
 				pTarget = (CBaseEntity *)((CEntityVSlots *)m_pOuter)->slot167();
 			else
 				pTarget = (CBaseEntity *)((NavOuterView *)m_pOuter)->m_pNPC98->v586().Get();
 		}
 		if (pTarget && pTarget->m_p9c)
-			pPath->SetGoalTolerance((HullWidth(m_i08) + HullWidth(*(int *)((char *)pTarget->m_p9c + 0x1568))) * 0.5);
+			pPath->SetGoalTolerance((HullWidth(m_n08) + HullWidth(*(int *)((char *)pTarget->m_p9c + 0x1568))) * 0.5);
 	}
 
-	pPath->m_fl40 = HullWidth(m_i08) * 0.5;
+	pPath->m_fl40 = HullWidth(m_n08) * 0.5;
 
 	if (goal.direction != g_10934060)
 		pPath->sub_1030be20((const int *)&goal.direction);
@@ -240604,7 +240604,7 @@ bool CAI_Navigator::sub_102ecd20(void *pGoal, int nFlags)
 
 	if (goal.flags & 2)
 	{
-		int startNode = ((NavNetworkView *)m_pProviders)->NearestNodeToNPC(m_pOuter);
+		int startNode = ((NavNetworkView *)m_pProviders)->NearestNodeToNPC((int)m_pOuter);
 		if (startNode == -1)
 			return false;
 		int endNode = ((CAI_Network *)m_pProviders)->sub_102f41b0(&goal.dest);
@@ -240625,7 +240625,7 @@ bool CAI_Navigator::sub_102ecd20(void *pGoal, int nFlags)
 	if (goal.type == 1 || goal.type == 2 || goal.type == 7)
 	{
 		if (goal.type == 1)
-			pTarget = ((EHANDLE *)(m_pOuter + 0x5ce4))->Get();
+			pTarget = ((EHANDLE *)((int)m_pOuter + 0x5ce4))->Get();
 		else if (goal.type == 2)
 			pTarget = (CBaseEntity *)((CEntityVSlots *)m_pOuter)->slot167();
 		else
@@ -240734,9 +240734,9 @@ bool CAI_Navigator::sub_102ed430(const Vector *pPosition, int a, int b, int c)
     CAI_NavProviderList *pList = m_pProviders;
     if (pList->m_nCount <= 0)
         return false;
-    m_i08 = *(int *)(m_pOuter + 0x156c);
-    m_i0c = gpGlobals->framecount;
-    int idx = pList->sub_102f3c10(m_pOuter, pPosition);
+    m_n08 = *(int *)((int)m_pOuter + 0x156c);
+    m_n0c = gpGlobals->framecount;
+    int idx = pList->sub_102f3c10((int)m_pOuter, pPosition);
     if (idx == -1)
         return false;
     void *p = ((S_PF *)sub_102ecc00())->sub_102ff3e0(idx, a, b);
@@ -240930,11 +240930,11 @@ bool CNavView::sub_102ed820(const Vector &goalPos, float minDist, bool fShouldDe
 #include "CAI_BaseNPC.h"
 bool CAI_Navigator::sub_102ed940(float f, const Vector *pVec, int c)
 {
-	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = *(int *)(((int *)gpGlobals) + 1);
-	CAI_NavComponentData *p = (CAI_NavComponentData *)sub_102ecc00();
-	p->m_i08 = *(int *)(p->m_pOuter + 0x156c);
-	p->m_i0c = *(int *)(((int *)gpGlobals) + 1);
+	m_n08 = *(int *)((int)m_pOuter + 0x156c);
+	m_n0c = *(int *)(((int *)gpGlobals) + 1);
+	CAI_Component *p = (CAI_Component *)sub_102ecc00();
+	p->m_n08 = *(int *)((int)p->m_pOuter + 0x156c);
+	p->m_n0c = *(int *)(((int *)gpGlobals) + 1);
 	return sub_102ed430((const Vector *)((CAI_BaseNPC *)m_pOuter)->vfunc220(), *(int *)&f, (int)pVec, c);
 }
 // END FUNCTION
@@ -240947,8 +240947,8 @@ struct CAI_PathfinderView
 {
 	int m_pVtable;
 	int m_pOuter;
-	int m_i08;
-	int m_i0c;
+	int m_n08;
+	int m_n0c;
 
 	int sub_10302e50(int a1, int a2, int a3, int a4, int a5, int a6, int a7);
 };
@@ -240956,11 +240956,11 @@ struct CAI_PathfinderView
 
 bool CAI_Navigator::sub_102ed9c0(int a1, int a2, int a3, int a4, int a5, int a6, int a7, Vector *pOut)
 {
-	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = gpGlobals->framecount;
+	m_n08 = *(int *)((int)m_pOuter + 0x156c);
+	m_n0c = gpGlobals->framecount;
 	CAI_PathfinderView *pPathfinder = (CAI_PathfinderView *)sub_102ecc00();
-	pPathfinder->m_i08 = *(int *)(pPathfinder->m_pOuter + 0x156c);
-	pPathfinder->m_i0c = gpGlobals->framecount;
+	pPathfinder->m_n08 = *(int *)((int)pPathfinder->m_pOuter + 0x156c);
+	pPathfinder->m_n0c = gpGlobals->framecount;
 	int node = ((CAI_PathfinderView *)sub_102ecc00())->sub_10302e50(a1, a2, a3, a4, a5, a6, a7);
 	if (node == -1)
 		return false;
@@ -240993,11 +240993,11 @@ int CUnknown102edaa0::sub_102edaa0(int a0, int a1, int a2, int a3, int a4, int a
 // TARGET: CAI_Navigator::sub_102edae0
 bool CAI_Navigator::sub_102edae0(const Vector *pPosition, float flDistance, int c, Vector *pOut)
 {
-	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = gpGlobals->framecount;
+	m_n08 = *(int *)((int)m_pOuter + 0x156c);
+	m_n0c = gpGlobals->framecount;
 	CUnknown103008f0 *pFinder = (CUnknown103008f0 *)sub_102ecc00();
-	pFinder->m_i08 = *(int *)(pFinder->m_pOuter + 0x156c);
-	pFinder->m_i0c = gpGlobals->framecount;
+	pFinder->m_n08 = *(int *)((int)pFinder->m_pOuter + 0x156c);
+	pFinder->m_n0c = gpGlobals->framecount;
 	int nNode = ((CUnknown103008f0 *)sub_102ecc00())->sub_103008f0(pPosition, flDistance, c);
 	if (nNode == -1)
 		return false;
@@ -241015,11 +241015,11 @@ bool CAI_Navigator::sub_102edae0(const Vector *pPosition, float flDistance, int 
 // TARGET: CAI_Navigator::sub_102edbb0
 bool CAI_Navigator::sub_102edbb0(const Vector *pPosition, float flDistance, int c, Vector *pOut)
 {
-	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = gpGlobals->framecount;
+	m_n08 = *(int *)((int)m_pOuter + 0x156c);
+	m_n0c = gpGlobals->framecount;
 	CUnknown103008f0 *pFinder = (CUnknown103008f0 *)sub_102ecc00();
-	pFinder->m_i08 = *(int *)(pFinder->m_pOuter + 0x156c);
-	pFinder->m_i0c = gpGlobals->framecount;
+	pFinder->m_n08 = *(int *)((int)pFinder->m_pOuter + 0x156c);
+	pFinder->m_n0c = gpGlobals->framecount;
 	int nNode = ((CUnknown103008f0 *)sub_102ecc00())->sub_10301010(pPosition, flDistance, c);
 	if (nNode == -1)
 		return false;
@@ -241036,11 +241036,11 @@ bool CAI_Navigator::sub_102edbb0(const Vector *pPosition, float flDistance, int 
 
 bool CAI_Navigator::sub_102edc80(const Vector *pPosition, float flDistance, int c, int d, Vector *pOut, int e)
 {
-	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = gpGlobals->framecount;
+	m_n08 = *(int *)((int)m_pOuter + 0x156c);
+	m_n0c = gpGlobals->framecount;
 	CUnknown103008f0 *pFinder = (CUnknown103008f0 *)sub_102ecc00();
-	pFinder->m_i08 = *(int *)(pFinder->m_pOuter + 0x156c);
-	pFinder->m_i0c = gpGlobals->framecount;
+	pFinder->m_n08 = *(int *)((int)pFinder->m_pOuter + 0x156c);
+	pFinder->m_n0c = gpGlobals->framecount;
 	int nNode = ((CUnknown103008f0 *)sub_102ecc00())->sub_10301720(pPosition, flDistance, c, d, e);
 	if (nNode == -1)
 		return false;
@@ -241058,11 +241058,11 @@ bool CAI_Navigator::sub_102edc80(const Vector *pPosition, float flDistance, int 
 // TARGET: CAI_Navigator::sub_102edd50
 bool CAI_Navigator::sub_102edd50(const Vector *pPosition, float flDistance, int c, int d, int e, Vector *pOut, int f)
 {
-	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = gpGlobals->framecount;
+	m_n08 = *(int *)((int)m_pOuter + 0x156c);
+	m_n0c = gpGlobals->framecount;
 	CUnknown103008f0 *pFinder = (CUnknown103008f0 *)sub_102ecc00();
-	pFinder->m_i08 = *(int *)(pFinder->m_pOuter + 0x156c);
-	pFinder->m_i0c = gpGlobals->framecount;
+	pFinder->m_n08 = *(int *)((int)pFinder->m_pOuter + 0x156c);
+	pFinder->m_n0c = gpGlobals->framecount;
 	int nNode = ((CUnknown103008f0 *)sub_102ecc00())->sub_10302320(pPosition, flDistance, c, d, e, f);
 	if (nNode == -1)
 		return false;
@@ -241295,11 +241295,11 @@ using namespace block_102ee300;
 
 void CAI_Navigator::sub_102ee300(int a, int b, int c, int d, int e)
 {
-	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = gpGlobals->framecount;
+	m_n08 = *(int *)((int)m_pOuter + 0x156c);
+	m_n0c = gpGlobals->framecount;
 	CAI_Pathfinder *p = (CAI_Pathfinder *)((CNavUnit *)this)->sub_102ecc00();
-	p->m_unk08 = *(int *)((char *)p->m_pOuter + 0x156c);
-	p->m_unk0c = gpGlobals->framecount;
+	p->m_n08 = *(int *)((char *)p->m_pOuter + 0x156c);
+	p->m_n0c = gpGlobals->framecount;
 	((CAI_Pathfinder *)((CNavUnit *)this)->sub_102ecc00())->sub_10300140(a, b, c, d, e);
 }
 // END FUNCTION
@@ -241309,15 +241309,15 @@ void CAI_Navigator::sub_102ee300(int a, int b, int c, int d, int e)
 struct CAI_PathfinderView { void sub_102fdcc0(int a, int b); };
 namespace block_102ee380 {
 struct CAI_NavigatorUnit : CAI_Navigator { int sub_102ecc00(); };
-int CAI_NavigatorUnit::sub_102ecc00() { return *(int *)(m_pOuter + 0x5d3c); }
+int CAI_NavigatorUnit::sub_102ecc00() { return *(int *)((int)m_pOuter + 0x5d3c); }
 }
 using namespace block_102ee380;
 // TARGET: CAI_Navigator::sub_102ee380
 void CAI_Navigator::sub_102ee380(int a, int b)
 {
 	CAI_NavigatorUnit *u = (CAI_NavigatorUnit *)this;
-	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = *(int *)((char *)gpGlobals + 4);
+	m_n08 = *(int *)((int)m_pOuter + 0x156c);
+	m_n0c = *(int *)((char *)gpGlobals + 4);
 	int *p = (int *)u->sub_102ecc00();
 	p[2] = *(int *)(p[1] + 0x156c);
 	p[3] = *(int *)((char *)gpGlobals + 4);
@@ -241630,8 +241630,8 @@ void CAI_Pathfinder::sub_102ee970()
 {
 	CBaseEntity *pOwner = (CBaseEntity *)m_pOuter;
 	CAI_PathfinderNetwork *pNetwork = m_pNetwork;
-	m_unk08 = *(int *)((char *)pOwner + 0x156c);
-	m_unk0c = g_1070b228[1];
+	m_n08 = *(int *)((char *)pOwner + 0x156c);
+	m_n0c = g_1070b228[1];
 	float *pPosition = ((CEntitySlots220 *)pOwner)->slot220();
 	pNetwork->sub_102f3c10(pOwner, pPosition);
 }
@@ -241645,7 +241645,7 @@ extern int g_106c994c;
 Vector *CAI_Navigator::sub_102ee9c0(Vector *pOut, int index)
 {
 	CAI_NavProvider *pNode;
-	int hull = m_i08;
+	int hull = m_n08;
 	CAI_NavProviderList *pList = m_pProviders;
 	if (index >= 0 && index < pList->m_nCount)
 		pNode = pList->m_ppItems[index];
@@ -241875,7 +241875,7 @@ bool CAI_DefMovementSink::sub_102ef1a0(void *pGoal, float flValue, int *pOut)
 	if ( !(pInfo->m_uFlags & 4) )
 	{
 		float fA = NAV102EF1A0->sub_102f1cf0();
-		double flHalf = sub_102d61b0(pcd_stage(NAV102EF1A0->m_i08)) * 0.5;
+		double flHalf = sub_102d61b0(pcd_stage(NAV102EF1A0->m_n08)) * 0.5;
 		if ( fA < flHalf )
 		{
 			if ( fA + flHalf < flValue )
@@ -243026,7 +243026,7 @@ char CAI_Pathfinder::sub_102f1900(int nodeNum, unsigned int collisionMask)
 		g_106c994c++;
 		pNode = 0;
 	}
-	pNode->sub_102fb0d0(vecPosition, m_unk08);
+	pNode->sub_102fb0d0(vecPosition, m_n08);
 	if (pNode->m_nType == 2) {
 		CAI_MoveProbe *pProbe = m_pMoveProbe;
 		if (!pProbe->sub_102e7270(vecPosition, collisionMask, 0, 0, 0, 0))
@@ -243105,7 +243105,7 @@ char CAI_Pathfinder::sub_102f1a20(const float *vecPosition, unsigned int collisi
 	const Vector &vecPos = *(const Vector *)vecPosition;
 	CGameTrace tr;
 	Vector vecEnd = vecPos;
-	int hull = m_unk08;
+	int hull = m_n08;
 	const void *pOuter = m_pOuter;
 	vecEnd.z += 0.01;
 	UTIL_TraceHullR(vecPos, vecEnd, *sub_102d6100(hull), *sub_102d6120(hull), collisionMask, pOuter, 0, &tr);
@@ -243154,22 +243154,22 @@ float __fastcall sub_102f1d90(CAI_Navigator *pThis)
 // TARGET: CAI_Navigator::sub_102f1dc0
 bool CAI_Navigator::sub_102f1dc0(int a, int b)
 {
-	m_i08 = *(int *)(m_pOuter + 0x156c);
-	m_i0c = gpGlobals->framecount;
-	CAI_NavComponentData *pPathfinder = (CAI_NavComponentData *)sub_102ecc00();
-	pPathfinder->m_i08 = *(int *)(pPathfinder->m_pOuter + 0x156c);
-	pPathfinder->m_i0c = gpGlobals->framecount;
+	m_n08 = *(int *)((int)m_pOuter + 0x156c);
+	m_n0c = gpGlobals->framecount;
+	CAI_Component *pPathfinder = (CAI_Component *)sub_102ecc00();
+	pPathfinder->m_n08 = *(int *)((int)pPathfinder->m_pOuter + 0x156c);
+	pPathfinder->m_n0c = gpGlobals->framecount;
 	CAI_NavRoute *pRoute = m_p30;
 	pRoute->m_pWaypoint.sub_10319ee0();
 	pRoute->m_nProvider = -1;
-	if (*(unsigned int *)(m_pOuter + 0x5d8c) & 0x20) {
+	if (*(unsigned int *)((int)m_pOuter + 0x5d8c) & 0x20) {
 		if (m_f48 < gpGlobals->curtime) {
 			vfunc10(0xc, 1.4012984643e-45f);
 			return false;
 		}
 		if (m_f4c < gpGlobals->curtime) {
 			if (sub_102f2330(b)) {
-				*(unsigned int *)(m_pOuter + 0x5d8c) &= ~0x20;
+				*(unsigned int *)((int)m_pOuter + 0x5d8c) &= ~0x20;
 				if (*((CAI_BaseNPC *)m_pOuter)->sub_1028a150() != 0x6e)
 					vfunc2(0);
 				return true;
@@ -243179,7 +243179,7 @@ bool CAI_Navigator::sub_102f1dc0(int a, int b)
 		}
 	} else {
 		if (sub_102f2330(b)) {
-			*(unsigned int *)(m_pOuter + 0x5d8c) &= ~0x20;
+			*(unsigned int *)((int)m_pOuter + 0x5d8c) &= ~0x20;
 			if (!((CAI_BaseNPC *)m_pOuter)->vfunc529())
 				vfunc2(0);
 			return true;
@@ -243188,7 +243188,7 @@ bool CAI_Navigator::sub_102f1dc0(int a, int b)
 			vfunc10(0xc, 1.4012984643e-45f);
 			return false;
 		}
-		*(unsigned int *)(m_pOuter + 0x5d8c) |= 0x20;
+		*(unsigned int *)((int)m_pOuter + 0x5d8c) |= 0x20;
 		m_f4c = gpGlobals->curtime + m_f44;
 		m_f48 = gpGlobals->curtime + m_f40;
 	}
@@ -243257,7 +243257,7 @@ struct S_Route2
 	char m_pad02[2];
 	int m_i04;
 	float m_fl08;
-	int m_i0c;
+	int m_n0c;
 	char m_b10;
 	char m_b11;
 	char m_pad12[2];
@@ -243331,7 +243331,7 @@ found:
 			dir.x = pOrigin->x - vec.x;
 			dir.y = pOrigin->y - vec.y;
 			dir.z = pOrigin->z - vec.z;
-			int nNavType = m_i08;
+			int nNavType = m_n08;
 			float f = sub_102d61b0(nNavType);
 			if (FastSqrt(dir.x * dir.x + dir.y * dir.y + dir.z * dir.z) < f * 0.5)
 				pRoute->sub_1030ba90();
@@ -245821,8 +245821,8 @@ struct CEnt5f44View
 	{
 		sub_10012738(hull);
 		CAI_Pathfinder *pf = GetPathfinder();
-		pf->m_unk08 = *(int *)((char *)pf->m_pOuter + 0x156c);
-		pf->m_unk0c = gpGlobals->framecount;
+		pf->m_n08 = *(int *)((char *)pf->m_pOuter + 0x156c);
+		pf->m_n0c = gpGlobals->framecount;
 	}
 };
 
@@ -248268,7 +248268,7 @@ NAVT __cdecl sub_102fca40(int flag)
 enum HULLT { HULL_HUMAN };
 struct CPFView : CAI_Pathfinder
 {
-	HULLT GetHullType() const { return (HULLT)m_unk08; }
+	HULLT GetHullType() const { return (HULLT)m_n08; }
 	int CapabilitiesGet() { return GetOuter()->vfunc513(); }
 	CAI_BaseNPC *GetOuter() { return (CAI_BaseNPC *)m_pOuter; }
 };
@@ -248332,7 +248332,7 @@ struct CAI_PathfinderNodeView : CAI_PathfinderNode
 
 struct CAI_PathfinderHullView : CAI_Pathfinder
 {
-	int GetHullType() { return m_unk08; }
+	int GetHullType() { return m_n08; }
 };
 
 struct CAI_WaypointCtorView
@@ -248387,7 +248387,7 @@ struct CAI_PathfinderNodeView : CAI_PathfinderNode
 
 struct CAI_PathfinderHullView : CAI_Pathfinder
 {
-	int GetHullType() { return m_unk08; }
+	int GetHullType() { return m_n08; }
 };
 
 struct CAI_WaypointCtorView
@@ -248497,9 +248497,9 @@ bool CAI_Pathfinder::sub_102fce80(int moveType, CAI_PathfinderLink *pLink)
 		*(float *)((char *)this + 0x14) = gpGlobals->curtime;
 		float vecDest[3];
 		float vecSrc[3];
-		int hull1 = m_unk08;
+		int hull1 = m_n08;
 		SPFNode *pDest = PFNodes(this)->Get(pLink->m_iDestID);
-		int hull2 = m_unk08;
+		int hull2 = m_n08;
 		SPFNode *pSrc = PFNodes(this)->Get(pLink->m_iSrcID);
 		if (sub_10304a40(pSrc->sub_102fb0d0(vecSrc, hull2), pDest->sub_102fb0d0(vecDest, hull1), moveType)) {
 			pLink->m_flags &= ~1;
@@ -248644,7 +248644,7 @@ struct CAI_LinkNodeH83 : CAI_NavProvider
 
 struct CAI_PathfinderH83 : CAI_Pathfinder
 {
-	int GetHullType() { return m_unk08; }
+	int GetHullType() { return m_n08; }
 	CAI_BaseNPC *GetOuter() { return (CAI_BaseNPC *)m_pOuter; }
 	int CapabilitiesGet() { return ((CAI_BaseNPC *)m_pOuter)->vfunc513(); }
 };
@@ -248675,7 +248675,7 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fd240(int startID, int endID)
 
 	nodeG[startID] = 0;
 
-	int hull = m_unk08;
+	int hull = m_n08;
 	if (0) (void)(pAInode[0]->sub_102fb0d0(hull) - pAInode[0]->sub_102fb0d0(hull));	// WORKAROUND (R12 numbering): with the SDK bitstring inlines these two dead mentions are what is left
 	if (0) (void)(pAInode[0]->sub_102fb0d0(hull) - pAInode[0]->sub_102fb0d0(hull));
 	nodeH[startID] = 0.1 * (pAInode[startID]->sub_102fb0d0(hull) - pAInode[endID]->sub_102fb0d0(hull)).Length();
@@ -248706,11 +248706,11 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fd240(int startID, int endID)
 			if (!sub_102ff960(nodeLink, smallestID))
 				continue;
 
-			hull = m_unk08;
+			hull = m_n08;
 			int moveType = nodeLink->m_iAcceptedMoveTypes[hull] & ((CAI_PathfinderH83 *)this)->CapabilitiesGet();
 			int testID = nodeLink->sub_102dda40(smallestID);
 
-			hull = m_unk08;
+			hull = m_n08;
 			CAI_NavigatorH83 *pNav = (CAI_NavigatorH83 *)((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder;
 			float dist = pNav->sub_102f1860(moveType, ((CAI_NodeH83 *)pSmallestNode)->sub_102fb0d0(hull), pAInode[testID]->sub_102fb0d0(hull));
 
@@ -248720,7 +248720,7 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fd240(int startID, int endID)
 			{
 				nodeP[testID] = smallestID;
 				nodeG[testID] = new_g;
-				hull = m_unk08;
+				hull = m_n08;
 				nodeH[testID] = (pAInode[testID]->sub_102fb0d0(hull) - pAInode[endID]->sub_102fb0d0(hull)).Length();
 				nodeF[testID] = nodeG[testID] + nodeH[testID];
 
@@ -248742,7 +248742,7 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fd240(int startID, int endID)
 
 		nodeG[startID] = 0;
 
-		hull = m_unk08;
+		hull = m_n08;
 		nodeH[startID] = 0.1 * (pAInode[startID]->sub_102fb0d0(hull) - pAInode[endID]->sub_102fb0d0(hull)).Length();
 		nodeF[startID] = nodeG[startID] + nodeH[startID];
 
@@ -248786,11 +248786,11 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fd240(int startID, int endID)
 					continue;
 				}
 
-				hull = m_unk08;
+				hull = m_n08;
 				int moveType = nodeLink->m_iAcceptedMoveTypes[hull] & ((CAI_PathfinderH83 *)this)->CapabilitiesGet();
 				int testID = nodeLink->sub_102dda40(smallestID);
 
-				hull = m_unk08;
+				hull = m_n08;
 				CAI_NavigatorH83 *pNav = (CAI_NavigatorH83 *)((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder;
 				float dist = pNav->sub_102f1860(moveType, ((CAI_NodeH83 *)pSmallestNode)->sub_102fb0d0(hull), pAInode[testID]->sub_102fb0d0(hull));
 
@@ -248800,7 +248800,7 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fd240(int startID, int endID)
 				{
 					nodeP[testID] = smallestID;
 					nodeG[testID] = new_g;
-					hull = m_unk08;
+					hull = m_n08;
 					nodeH[testID] = (pAInode[testID]->sub_102fb0d0(hull) - pAInode[endID]->sub_102fb0d0(hull)).Length();
 					nodeF[testID] = nodeG[testID] + nodeH[testID];
 
@@ -249122,7 +249122,7 @@ bool CAI_Pathfinder::sub_102fe150(int startNode, int endNode)
 	int nNodes = pProviders->m_nCount;
 	if (nNodes == 0)
 		return false;
-	int hull = m_unk08;
+	int hull = m_n08;
 	CAI_NodePosView **ppNodes = (CAI_NodePosView **)pProviders->m_ppItems;
 
 	Vector vecEnd = ppNodes[endNode]->sub_102fb0d0(hull);
@@ -249301,7 +249301,7 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fe9f0(int startID, int endID, char bRandom,
 
 	nodeG[startID] = 0;
 
-	int hull = m_unk08;
+	int hull = m_n08;
 	nodeH[startID] = 0.1 * (pAInode[startID]->sub_102fb0d0(hull) - pAInode[endID]->sub_102fb0d0(hull)).Length();
 	nodeF[startID] = nodeG[startID] + nodeH[startID];
 
@@ -249337,11 +249337,11 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fe9f0(int startID, int endID, char bRandom,
 			if (!sub_102ff960(nodeLink, smallestID))
 				continue;
 
-			hull = m_unk08;
+			hull = m_n08;
 			int moveType = nodeLink->m_iAcceptedMoveTypes[hull] & ((CAI_BaseNPC *)m_pOuter)->vfunc513();
 			int testID = nodeLink->sub_102dda40(smallestID);
 
-			hull = m_unk08;
+			hull = m_n08;
 			CAI_NavigatorA *pNav = (CAI_NavigatorA *)((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder;
 			float dist = pNav->sub_102f1860(moveType, ((CAI_NodeA *)pSmallestNode)->sub_102fb0d0(hull), pAInode[testID]->sub_102fb0d0(hull));
 
@@ -249362,7 +249362,7 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fe9f0(int startID, int endID, char bRandom,
 			{
 				nodeP[testID] = smallestID;
 				nodeG[testID] = new_g;
-				hull = m_unk08;
+				hull = m_n08;
 				nodeH[testID] = (pAInode[testID]->sub_102fb0d0(hull) - pAInode[endID]->sub_102fb0d0(hull)).Length();
 				nodeF[testID] = nodeG[testID] + nodeH[testID];
 
@@ -249449,7 +249449,7 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fef30(int startID, int endID, int *pOut)
 
 	nodeG[startID] = 0;
 
-	int hull = m_unk08;
+	int hull = m_n08;
 	nodeH[startID] = 0.1 * (pAInode[startID]->sub_102fb0d0(hull) - pAInode[endID]->sub_102fb0d0(hull)).Length();
 	nodeF[startID] = nodeG[startID] + nodeH[startID];
 
@@ -249478,11 +249478,11 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fef30(int startID, int endID, int *pOut)
 			if (!sub_102ff960(nodeLink, smallestID))
 				continue;
 
-			hull = m_unk08;
+			hull = m_n08;
 			int moveType = nodeLink->m_iAcceptedMoveTypes[hull] & ((CAI_BaseNPC *)m_pOuter)->vfunc513();
 			int testID = nodeLink->sub_102dda40(smallestID);
 
-			hull = m_unk08;
+			hull = m_n08;
 			CAI_NavigatorA *pNav = (CAI_NavigatorA *)((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder;
 			float dist = pNav->sub_102f1860(moveType, ((CAI_NodeA *)pSmallestNode)->sub_102fb0d0(hull), pAInode[testID]->sub_102fb0d0(hull));
 
@@ -249492,7 +249492,7 @@ CAI_Waypoint *CAI_Pathfinder::sub_102fef30(int startID, int endID, int *pOut)
 			{
 				nodeP[testID] = smallestID;
 				nodeG[testID] = new_g;
-				hull = m_unk08;
+				hull = m_n08;
 				nodeH[testID] = (pAInode[testID]->sub_102fb0d0(hull) - pAInode[endID]->sub_102fb0d0(hull)).Length();
 				nodeF[testID] = nodeG[testID] + nodeH[testID];
 
@@ -249780,7 +249780,7 @@ bool CAI_Pathfinder::sub_102ff960(CPairFields102dda40 *pLink, int startID)
 {
 	if (pLink->m_LinkInfo & 0x1000)
 		return false;
-	int hull = m_unk08;
+	int hull = m_n08;
 	int linkMoveTypes = GetOuter(this)->slot513() & pLink->m_iAcceptedMoveTypes[hull];
 	if (!linkMoveTypes)
 		return false;
@@ -249789,11 +249789,11 @@ bool CAI_Pathfinder::sub_102ff960(CPairFields102dda40 *pLink, int startID)
 		return false;
 	if (linkMoveTypes == 2) {
 		float v1[3], v2[3], v3[3];
-		int h1 = m_unk08;
+		int h1 = m_n08;
 		CAI_PathfinderNode *pEnd1 = GetNode(this, endID);
-		int h2 = m_unk08;
+		int h2 = m_n08;
 		CAI_PathfinderNode *pEnd2 = GetNode(this, endID);
-		int h3 = m_unk08;
+		int h3 = m_n08;
 		CAI_PathfinderNode *pStart = GetNode(this, startID);
 		if (!GetOuter(this)->slot521(
 				pStart->sub_102fb0d0(v1, h3),
@@ -250089,7 +250089,7 @@ struct CAI_OuterView103005f0 { char pad[0x5d34]; CAI_NavView103005f0 *m_pNavigat
 struct CAI_PFView103005f0 : CAI_Pathfinder {
 	CAI_OuterView103005f0 *GetOuterV() { return (CAI_OuterView103005f0 *)m_pOuter; }
 	CAI_NetView103005f0 *GetNetwork() { return GetOuterV()->GetNavigator()->GetNetwork(); }
-	int GetHullType() { return m_unk08; }
+	int GetHullType() { return m_n08; }
 };
 
 // TARGET: CAI_Pathfinder::sub_103005f0
@@ -250170,7 +250170,7 @@ struct CAI_PathfinderView : CAI_Pathfinder
 {
 	CAI_PathfinderOuterView *GetOuter() { return (CAI_PathfinderOuterView *)m_pOuter; }
 	CAI_PathfinderNetworkView *GetNetwork() { return GetOuter()->GetNavigator()->GetNetwork(); }
-	int GetHullType() { return m_unk08; }
+	int GetHullType() { return m_n08; }
 };
 
 // TARGET: CAI_Pathfinder::sub_103007e0
@@ -250234,7 +250234,7 @@ int CUnknown103008f0::sub_103008f0(const Vector *pPosition, float flDistance, in
 	if (iTarget == -1)
 		iTarget = iNearest;
 	Vector vecOrigin = *((CEntityVSlots *)m_pOuter)->slot220();
-	int nHull = m_i08;
+	int nHull = m_n08;
 	CAI_PathfinderNode *pNode = GetNode(((CAI_PathfinderOuter *)m_pOuter)->m_pPathfinder->m_pNetwork, iNearest);
 	Vector vecNodePos;
 	pNode->sub_102fb0d0(&vecNodePos.x, nHull);
@@ -250299,7 +250299,7 @@ int CAI_Pathfinder::sub_10300b50(void *pVisitedArg, const Vector *pA, float flMi
 		if (!sub_102ff960(pLink, nodeID))
 			continue;
 		Vector pos;
-		int nHull = m_unk08;
+		int nHull = m_n08;
 		PfNode(((PfOwnerView *)m_pOuter)->m_pPathfinder->m_pNetwork, id2)->sub_102fb0d0(&pos.x, nHull);
 		float dz = pos.z - pTarget->z;
 		if ((float)fabs(dz) > flMaxZ)
@@ -250418,7 +250418,7 @@ struct CAStarPathfinder : CAI_Pathfinder
 {
 	CAStarOuter *GetOuter() { return (CAStarOuter *)m_pOuter; }
 	CAStarNetwork *GetNetwork() { return GetOuter()->GetNetwork(); }
-	int GetHullType() { return m_unk08; }
+	int GetHullType() { return m_n08; }
 	CEntityVSlots *GetOuterSV() { return (CEntityVSlots *)m_pOuter; }
 	const Vector &GetLocalOrigin() { CEntityVSlots *p = GetOuterSV(); return *p->slot220(); }
 	const char *GetEntClassname() { return ((CBaseEntity *)m_pOuter)->sub_1009f200(); }
@@ -251273,7 +251273,7 @@ struct CoverPathfinder : CAI_Pathfinder
 {
 	CoverOuterV *GetOuter() { return (CoverOuterV *)m_pOuter; }
 	CoverNetworkV *GetNetwork() { return GetOuter()->m_pNavigator->m_pNetwork; }
-	int GetHullType() { return m_unk08; }
+	int GetHullType() { return m_n08; }
 	// CAI_Component::GetLocalOrigin / GetEntClassname (ai_basenpc.h inlines), used by FindCover
 	const Vector &GetLocalOrigin() { CoverOuterV *pOuter = GetOuter(); return pOuter->GetLocalOrigin(); }
 	const char *GetEntClassname() { return GetOuter()->GetEntClassname(); }
@@ -252265,7 +252265,7 @@ struct CoverPathfinder : CAI_Pathfinder
 {
 	CoverOuterV *GetOuter() { return (CoverOuterV *)m_pOuter; }
 	CoverNetworkV *GetNetwork() { return GetOuter()->m_pNavigator->m_pNetwork; }
-	int GetHullType() { return m_unk08; }
+	int GetHullType() { return m_n08; }
 	// CAI_Component::GetLocalOrigin / GetEntClassname (ai_basenpc.h inlines), used by FindCover
 	const Vector &GetLocalOrigin() { CoverOuterV *pOuter = GetOuter(); return pOuter->GetLocalOrigin(); }
 	const char *GetEntClassname() { return GetOuter()->GetEntClassname(); }
@@ -253793,7 +253793,7 @@ struct CVProfNodeTri
 struct CAI_PathfinderTri : CAI_Pathfinder
 {
 	CAI_PathfinderOuter *GetOuter() { return (CAI_PathfinderOuter *)m_pOuter; }
-	int GetHullType() const { return m_unk08; }
+	int GetHullType() const { return m_n08; }
 };
 
 inline CAI_MoveProbe *GetMoveProbeTri(CAI_PathfinderOuter *p) { return p->m_pMoveProbe; }
@@ -254573,11 +254573,11 @@ bool CAI_Pathfinder::sub_10306f60(CBaseEntity *pEnt, int a2, Vector *pTargetPos,
 		return false;
 
 	Vector vecOrigin = *((CEntityVSlots *)pEnt)->slot220();
-	m_unk08 = ((CFindHuntNPCView *)m_pOuter)->m_nHull;
-	m_unk0c = gpGlobals->framecount;
+	m_n08 = ((CFindHuntNPCView *)m_pOuter)->m_nHull;
+	m_n0c = gpGlobals->framecount;
 	CAI_Pathfinder *pOther = ((CAI_PathfinderOuter *)pEnt)->m_pPathfinder;
-	pOther->m_unk08 = ((CFindHuntNPCView *)pOther->m_pOuter)->m_nHull;
-	pOther->m_unk0c = gpGlobals->framecount;
+	pOther->m_n08 = ((CFindHuntNPCView *)pOther->m_pOuter)->m_nHull;
+	pOther->m_n0c = gpGlobals->framecount;
 	int nStart = GetNetwork()->sub_102f3c10(pEnt, &vecOrigin);
 	if (nStart == -1)
 	{
@@ -287402,8 +287402,8 @@ struct ManBatNav : CAI_Pathfinder
 {
 	void SetupFit()
 	{
-		m_unk08 = ((CNPC_VManBat *)m_pOuter)->m_n156c;
-		m_unk0c = gpGlobals->framecount;
+		m_n08 = ((CNPC_VManBat *)m_pOuter)->m_n156c;
+		m_n0c = gpGlobals->framecount;
 	}
 };
 
@@ -287838,8 +287838,8 @@ struct ManBatNav : CAI_Pathfinder
 {
 	void SetupFit()
 	{
-		m_unk08 = ((CNPC_VManBat *)m_pOuter)->m_n156c;
-		m_unk0c = gpGlobals->framecount;
+		m_n08 = ((CNPC_VManBat *)m_pOuter)->m_n156c;
+		m_n0c = gpGlobals->framecount;
 	}
 };
 
@@ -288111,8 +288111,8 @@ struct ManBatNav : CAI_Pathfinder
 {
 	void SetupFit()
 	{
-		m_unk08 = ((CNPC_VManBat *)m_pOuter)->m_n156c;
-		m_unk0c = gpGlobals->framecount;
+		m_n08 = ((CNPC_VManBat *)m_pOuter)->m_n156c;
+		m_n0c = gpGlobals->framecount;
 	}
 };
 

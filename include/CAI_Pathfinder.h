@@ -65,9 +65,7 @@ struct CAI_PathfinderNetwork
 class CAI_Pathfinder : public CAI_Component
 {
 public:
-	CAI_Pathfinder(CAI_BaseNPC *pOuter) : CAI_Component(pOuter), m_unk0c(-1) {}	// the outer, -1 and the overlay's zeros, then the vptr store
-	int m_unk08;	// 0x08
-	int m_unk0c;	// 0x0c
+	CAI_Pathfinder(CAI_BaseNPC *pOuter) : CAI_Component(pOuter) {}	// the outer, -1 and the overlay's zeros, then the vptr store
 	CAI_PathfinderOverlay m_Overlay;	// 0x10 (0x10 .. 0x17)
 	static void *operator new(unsigned int) { return ::operator new(0x18); }	// the game allocates the 0x18 byte pathfinder
 	char m_pad0018[0x24 - 0x18];

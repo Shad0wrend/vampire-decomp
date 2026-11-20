@@ -819,8 +819,8 @@ struct ManBatNav : CAI_Pathfinder
 {
 	void SetupFit()
 	{
-		m_unk08 = ((CNPC_VManBat *)m_pOuter)->m_n156c;
-		m_unk0c = gpGlobals->framecount;
+		m_n08 = ((CNPC_VManBat *)m_pOuter)->m_n156c;
+		m_n0c = gpGlobals->framecount;
 	}
 };
 

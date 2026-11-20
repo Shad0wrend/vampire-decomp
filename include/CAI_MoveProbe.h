@@ -35,7 +35,7 @@ struct AIMoveTrace_t
 class CAI_MoveProbe : public CAI_Component
 {
 public:
-	CAI_MoveProbe(void *pOuter) : m_nUnk0c(-1) { m_pOuter = pOuter; }
+	CAI_MoveProbe(void *pOuter) { m_pOuter = pOuter; }
 
 	bool sub_102e6d70(int navType, const float *vecStart, const float *vecEnd, unsigned int collisionMask, const CBaseEntity *pTarget, float pctToCheckStandPositions, unsigned char flags, AIMoveTrace_t *pTrace, int a9, int a10);	// "CAI_MoveProbe::MoveLimit" (stub 0x10012b43): true when the trace did not fail (fStatus >= 0)
 	void sub_102e2dc0(const float *pStart, const float *pEnd, unsigned int fMask, bool bUseCollisionGroup, CGameTrace *pTrace);
@@ -54,7 +54,5 @@ public:
 
 	char sub_102e4160(float *pArgs, float *pResult);
 	char sub_102e7e40(void *pEnt);	// stub 0x100114aa, thiscall with one stack argument: tail-jumps to the outer entity's slot 166
-	int m_pad08;
-	int m_nUnk0c;	// 0x0c: starts at -1
 	int m_unk10;
 };

@@ -11,7 +11,7 @@ struct TObj {
 void *operator new(unsigned int);
 
 CAI_Navigator::CAI_Navigator(int pOuter) :
-	CAI_NavComponentData(pOuter),
+	CAI_Component((void *)pOuter),
 	m_i54(-1)
 {
 	TObj *p = (TObj *)operator new(0x84);
@@ -566,8 +566,8 @@ void CAI_Navigator::vfunc5(float flInterval, int a)
         return;
     NavOwnerData *pData = (NavOwnerData *)m_pOuter;
     if (pData->b1a40) {
-        m_i08 = pData->m156c;
-        m_i0c = gpGlobals->framecount;
+        m_n08 = pData->m156c;
+        m_n0c = gpGlobals->framecount;
         NavComp *c = (NavComp *)sub_102ecc00();
         c->stamp8 = c->pOuter->m156c;
         c->stampC = gpGlobals->framecount;

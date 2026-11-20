@@ -1,10 +1,11 @@
 // class CAI_Navigator (RTTI .?AVCAI_Navigator@@): AI component; only the first 21 vtable slots are declared
 // (slots past 20 not yet seen).
 // vfunc9/vfunc10 take (int, 4-byte value); the exact type of the second argument is unknown.
-// Bases: CAI_Component at +0 (vptr with 3 slots, owner at +4, modelled by CAI_NavComponentData) and
-// CAI_DefMovementSink at +0x10.
+// Bases: CAI_Component at +0 (vptr with 3 slots, owner at +4, the stamps at +8 / +0xc) and CAI_DefMovementSink
+// at +0x10 (COL 0x105249e4).
 #pragma once
 
+#include "CAI_Component.h"
 #include "CAI_DefMovementSink.h"
 #include "Vector.h"
 
@@ -19,17 +20,6 @@ struct CAI_NavFloatPair
 };
 
 class CAI_Navigator;
-
-class CAI_NavComponentData
-{
-public:
-	CAI_NavComponentData(int pOuter) { m_pOuter = pOuter; m_i0c = -1; }
-	virtual CAI_Navigator *vfunc0(unsigned int flags); virtual void vfunc1(); virtual void vfunc2(int a);
-
-	int m_pOuter;	// 0x04
-	int m_i08;
-	int m_i0c;
-};
 
 // Names below are provisional (classes not recovered yet).
 struct CAI_NavSource	// supplies a handle through slot 1 (the pOut argument of sub_102f1fa0)
@@ -157,14 +147,16 @@ struct CAI_NavGoal	// the record CAI_Navigator::vfunc17 fills for the motor
 	CAI_NavRoute *m_pRoute;	// 0x3c
 };
 
-class CAI_Navigator : public CAI_NavComponentData, public CAI_DefMovementSink
+class CAI_Navigator : public CAI_Component, public CAI_DefMovementSink
 {
 public:
 	CAI_Waypoint *sub_102ff3e0(int startNode, float flMinDist, Vector *pDir);
 	CAI_Navigator(int pOuter);	// 0x102eca50: allocates the 0x84 byte object at +0x30
 	float sub_102f02a0();	// slot 0 of the CAI_DefMovementSink secondary vtable: the speed scale
 
-	virtual CAI_Navigator *vfunc0(unsigned int flags); virtual void vfunc1(); virtual void vfunc2(int a); virtual void vfunc3(int a); virtual void vfunc4(int);
+	virtual ~CAI_Navigator();	// 0x102ecb90 (stub 0x10011c98)
+	CAI_Navigator *vfunc0(unsigned int flags);	// slot 0 written out: the scalar deleting destructor 0x102ecb20 (the compiler's ??_GCAI_Navigator)
+	virtual void vfunc1(); virtual void vfunc2(int a); virtual void vfunc3(int a); virtual void vfunc4(int);
 	virtual void vfunc5(float flInterval, int a);	// slot 5 "CAI_Navigator::Move": scope trace; does nothing while sub_102ee2e0 holds or the owner's slot 525 accepts the interval; with the owner's flag byte +0x1a40 set stamps the components and steps the route (slots 12 / 13 / 14 by the route's move type, at most 16 times), else stops the motor (+0x20)
 	virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8();
 	bool vfunc1(int a, int b, int c);	// slot 1 of the CAI_DefMovementSink table: 0x102eefb0 (matched as CAI_DefMovementSink::sub_102eefb0; `this` is that base, as VC6 passes it to an override of a second base's slot)

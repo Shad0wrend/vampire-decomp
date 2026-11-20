@@ -454,8 +454,8 @@ void CNPC_VZombie::vfunc442(int *pTask)
 	case 0x150:
 	{
 		CAI_Navigator *pNav = m_pNavigator5d34;
-		pNav->m_i08 = *(int *)(pNav->m_pOuter + 0x156c);
-		pNav->m_i0c = gpGlobals->framecount;
+		pNav->m_n08 = *(int *)((int)pNav->m_pOuter + 0x156c);
+		pNav->m_n0c = gpGlobals->framecount;
 		CAI_NavProviderList *pProv = m_pNavigator5d34->m_pProviders;
 		int node = pProv->sub_102f3c10((int)this, SLOTS->vfunc220());
 		if (node != -1) {
