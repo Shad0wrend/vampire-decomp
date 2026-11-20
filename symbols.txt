@@ -12222,6 +12222,7 @@
 0x100100be func   ?sub_1030fa00@CAI_Senses@@QAEDPAVCBaseEntity@@@Z CAI_Senses::sub_1030fa00
 0x100100c3 func   ?vfunc82@CBaseDoor@@UAEPAUdatamap_t@@XZ CBaseDoor::vfunc82
 0x100100c8 func   ?vfunc215@CBeam@@QAEPAVVector@@XZ CBeam::vfunc215
+0x100100c8 func   ?vfunc215@CBeam@@UAEPAVVector@@XZ CBeam::vfunc215
 0x100100cd func   ?RotateRight@?$CUtlRBTree@UCRBTree12Entry_102cfaf0@@G@@QAEXG@Z CUtlRBTree<CRBTree12Entry_102cfaf0,unsigned short>::RotateRight
 0x100100cd func   ?sub_102cfd20@CUtlRBTree12Unit@@QAEXG@Z CUtlRBTree12Unit::sub_102cfd20
 0x100100d2 func   ?vfunc0@CPhysicsAnimlinkEntityDeleteProxy@@QAEXH@Z CPhysicsAnimlinkEntityDeleteProxy::vfunc0
