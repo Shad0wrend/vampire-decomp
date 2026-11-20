@@ -6873,13 +6873,11 @@ PUBLIC ?g_1056e8ac@lifted@@3DA
   DB 000h,000h,000h,000h,000h
   DB "CBreakable"
   DB 000h,000h,000h,000h,000h,000h
-; 0x1056ebf0 +240: ??_R0?AVCBreakable@@@8
-PUBLIC ??_R0?AVCBreakable@@@8
-??_R0?AVCBreakable@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVCBreakable@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
+  DB 9 DUP (0)
+; 0x1056ec09 +215: $rtti_tail_1056ec09
+PUBLIC $rtti_tail_1056ec09
+$rtti_tail_1056ec09 LABEL BYTE
+  DB 000h,000h,000h,000h,000h,000h,000h
   DB "func_breakable"
   DB 000h,000h,000h,000h,000h,000h
   DB "OnHealthChanged"

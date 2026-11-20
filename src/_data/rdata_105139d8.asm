@@ -25,7 +25,6 @@ EXTERN ??_R0?AVCBaseProp@@@8:BYTE
 EXTERN ??_R0?AVCBaseTempEntity@@@8:BYTE
 EXTERN ??_R0?AVCBaseTransmitProxy@@@8:BYTE
 EXTERN ??_R0?AVCBatSwarm@@@8:BYTE
-EXTERN ??_R0?AVCBreakable@@@8:BYTE
 EXTERN ??_R0?AVCBreakableProp@@@8:BYTE
 EXTERN ??_R0?AVCCameraAnimated@@@8:BYTE
 EXTERN ??_R0?AVCCameraTrack@@@8:BYTE
@@ -196,6 +195,7 @@ EXTERN ??_R1A@?0A@A@CBaseParticleEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseTempEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseToggle@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBeam@@8:BYTE
+EXTERN ??_R1A@?0A@A@CBreakable@@8:BYTE
 EXTERN ??_R1A@?0A@A@CCameraKeyFrame@@8:BYTE
 EXTERN ??_R1A@?0A@A@CLogicalEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@CPathKeyFrame@@8:BYTE
@@ -6048,34 +6048,7 @@ PUBLIC ??_R4CFuncAreaPortalWindow@@6B@
   DD OFFSET ??_R0?AVCFuncAreaPortalWindow@@@8
   DD OFFSET ??_R3CFuncAreaPortalWindow@@8
   DB 000h,000h,000h,000h
-; 0x1051cd8c +28: ??_R1A@?0A@A@CBreakable@@8
-PUBLIC ??_R1A@?0A@A@CBreakable@@8
-??_R1A@?0A@A@CBreakable@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVCBreakable@@@8
-  DB 004h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-; 0x1051cda8 +28: ??_R2CBreakable@@8
-PUBLIC ??_R2CBreakable@@8
-??_R2CBreakable@@8 LABEL BYTE
-  DD OFFSET ??_R1A@?0A@A@CBreakable@@8
-  DD OFFSET ??_R1A@?0A@A@CBaseEntity@@8
-  DD OFFSET ??_R1A@?0A@A@IServerEntity@@8
-  DD OFFSET ??_R1A@?0A@A@IServerUnknown@@8
-  DD OFFSET ??_R1A@?0A@A@IHandleEntity@@8
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-; 0x1051cdc4 +20: ??_R3CBreakable@@8
-PUBLIC ??_R3CBreakable@@8
-??_R3CBreakable@@8 LABEL BYTE
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,005h,000h,000h,000h
-  DD OFFSET ??_R2CBreakable@@8
-  DB 000h,000h,000h,000h
-; 0x1051cdd8 +24: ??_R4CBreakable@@6B@
-PUBLIC ??_R4CBreakable@@6B@
-??_R4CBreakable@@6B@ LABEL BYTE
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
-  DD OFFSET ??_R0?AVCBreakable@@@8
-  DD OFFSET ??_R3CBreakable@@8
-  DB 000h,000h,000h,000h
+  DB 4 DUP (0)
 ; 0x1051cdf0 +28: ??_R1A@?0A@A@CPushable@@8
 PUBLIC ??_R1A@?0A@A@CPushable@@8
 ??_R1A@?0A@A@CPushable@@8 LABEL BYTE
@@ -6135,12 +6108,6 @@ PUBLIC ??_R4CWindowPane@@6B@
   DD OFFSET ??_R0?AVCWindowPane@@@8
   DD OFFSET ??_R3CWindowPane@@8
   DB 000h,000h,000h,000h
-  DB 1 DUP (0)
-; 0x1051cef5 +11: $rtti_tail_1051cef5
-PUBLIC $rtti_tail_1051cef5
-$rtti_tail_1051cef5 LABEL BYTE
-  DB 082h,051h,010h,000h,000h,000h,000h,000h,000h,000h,000h
-  DB 4 DUP (0)
 ; 0x1051cf84 +28: ??_R1A@?0A@A@CFunc_Dust@@8
 PUBLIC ??_R1A@?0A@A@CFunc_Dust@@8
 ??_R1A@?0A@A@CFunc_Dust@@8 LABEL BYTE
