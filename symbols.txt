@@ -15032,6 +15032,7 @@
 0x10013840 func   ?sub_1004d100@CPhysicsSpring@@QAEXXZ CPhysicsSpring::sub_1004d100
 0x10013845 func   ?sub_1036ec20@@YIPAXPAX@Z sub_1036ec20
 0x1001384a func   ?vfunc202@CNodeEnt@@QAEXH@Z CNodeEnt::vfunc202
+0x1001384a func   ?vfunc202@CNodeEnt@@UAEXPAVCBaseEntity@@@Z CNodeEnt::vfunc202
 0x1001384f func   ?vfunc546@CNPC_VScurrying@@QAEHH@Z CNPC_VScurrying::vfunc546
 0x10013854 func   ?sub_10185490@CUtlVectorBase@@QAEXXZ CUtlVectorBase::sub_10185490
 0x10013859 func   ?sub_1030fc50@CAI_Senses@@QAEDPAX@Z CAI_Senses::sub_1030fc50
