@@ -5770,6 +5770,7 @@
 0x10008152 func   ?vfunc580@CNPC_VWerewolf@@UAEHXZ CNPC_VWerewolf::vfunc580
 0x10008157 func   ?NewNode@?$CUtlRBTree@UCRBEntry4_1024b9e0@@G@@QAEGXZ CUtlRBTree<CRBEntry4_1024b9e0,unsigned short>::NewNode
 0x10008161 func   ?vfunc175@CTriggerPush@@QAEXPAVCBaseEntity@@@Z CTriggerPush::vfunc175
+0x10008161 func   ?vfunc175@CTriggerPush@@UAEXPAVCBaseEntity@@@Z CTriggerPush::vfunc175
 0x10008166 func   ?Purge@?$CUtlMemory@PAVIHandleEntity@@@@QAEXXZ CUtlMemory<IHandleEntity *>::Purge
 0x10008166 func   ?sub_1003c1e0@UtlMem@@QAEXXZ UtlMem::sub_1003c1e0
 0x1000816b func   ?sub_102d4390@S102d4390@@QAEXH@Z S102d4390::sub_102d4390
