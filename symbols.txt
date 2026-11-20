@@ -3829,6 +3829,7 @@
 0x10005bcd func   ?sub_100a53d0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_100a53d0
 0x10005bd2 func   ?vfunc81@CWeaponMelee_Tzimisce3Claw@@QAEHXZ CWeaponMelee_Tzimisce3Claw::vfunc81
 0x10005bd7 func   ?vfunc144@CBaseEntity@@QAEXPAX@Z CBaseEntity::vfunc144
+0x10005bd7 func   ?vfunc144@CBaseEntity@@UAEXPAX@Z CBaseEntity::vfunc144
 0x10005bdc func   ?sub_10346760@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10346760
 0x10005be1 func   ?sub_10223800@CUnknown10223800@@QAEXH@Z CUnknown10223800::sub_10223800
 0x10005be6 func   ?vfunc103@CFuncParticle@@QAEXXZ CFuncParticle::vfunc103
