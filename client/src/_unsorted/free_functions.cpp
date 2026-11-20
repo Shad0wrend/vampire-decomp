@@ -1717,3 +1717,42 @@ void CUtlVector130::sub_101314a0(int num)
 	m_pElements = m_pMemory;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10131e60 size=0xcf
+#include "CUnknown101b9140.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+
+static inline int InsertMultipleBefore(CUnknown101b9140 *v, int elem, int num, const CUnknown101b9140Elem *pToCopy)
+{
+	if (num == 0)
+		return elem;
+	if (v->m_Size + num > v->m_nAllocationCount)
+		v->sub_101315b0(v->m_Size - v->m_nAllocationCount + num);
+	v->m_Size += num;
+	v->m_pElements = (CUnknown101b9140Elem *)v->m_pMemory;
+	int numToMove = v->m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		memmove(&v->m_pElements[elem + num], &v->m_pElements[elem], numToMove * 8);
+	for (int i = 0; i < num; i++) {
+		CUnknown101b9140Elem *p = &((CUnknown101b9140Elem *)v->m_pMemory)[elem + i];
+		if (p) {
+			p->m_w = 0xffff;
+			p->m_d = 0;
+		}
+	}
+	if (pToCopy) {
+		for (int i = 0; i < num; i++) {
+			CUnknown101b9140Elem *p = &((CUnknown101b9140Elem *)v->m_pMemory)[elem + i];
+			p->m_w = pToCopy[i].m_w;
+			p->m_d = pToCopy[i].m_d;
+		}
+	}
+	return elem;
+}
+
+int CUnknown101b9140::sub_10131e60(int num, const CUnknown101b9140Elem *pToCopy)
+{
+	return InsertMultipleBefore(this, m_Size, num, pToCopy);
+}
+// END FUNCTION
