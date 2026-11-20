@@ -16296,6 +16296,7 @@
 0x100150af func   ?sub_10215910@CUnknown10215910@@QAEXH@Z CUnknown10215910::sub_10215910
 0x100150b4 func   ?sub_1011fa80@CGameMovement@@QAEXXZ CGameMovement::sub_1011fa80
 0x100150b9 func   ?vfunc141@CBatSwarm@@QAEXPAHHPAX@Z CBatSwarm::vfunc141
+0x100150b9 func   ?vfunc141@CBatSwarm@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z CBatSwarm::vfunc141
 0x100150c3 func   ?sub_1020cc60@CSecCamera@@QAE_NPAVCBaseEntity@@@Z CSecCamera::sub_1020cc60
 0x100150c8 func   ?sub_102edbb0@CAI_Navigator@@QAE_NPBVVector@@MHPAV2@@Z CAI_Navigator::sub_102edbb0
 0x100150cd func   ?vfunc36@CSimplePhysicsProp@@QAEHXZ CSimplePhysicsProp::vfunc36
