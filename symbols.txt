@@ -15113,6 +15113,7 @@
 0x10013ab6 func   ?sub_101cfa40@@YAXPBVVector@@0HH@Z sub_101cfa40
 0x10013abb func   ?vfunc103@CStealthModifier@@UAEXXZ CStealthModifier::vfunc103
 0x10013ac0 func   ?sub_10225930@CPropDoorknob@@QAEEXZ CPropDoorknob::sub_10225930
+0x10013ac0 func   ?vfunc117@CPropDoorknob@@UAEHXZ CPropDoorknob::vfunc117
 0x10013ac5 func   ?sub_1014f6f0@@YAHXZ sub_1014f6f0
 0x10013aca func   ?sub_103a9e70@CNPC_VSabbatLeader@@QAE_NXZ CNPC_VSabbatLeader::sub_103a9e70
 0x10013acf func   ?sub_101e54c0@CUnknown101e56e0@@QAEHPAVCBaseCombatCharacter@@@Z CUnknown101e56e0::sub_101e54c0
