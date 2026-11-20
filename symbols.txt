@@ -5378,6 +5378,7 @@
 0x1000797d func   ?vfunc78@CRopeKeyframe@@UAEXXZ CRopeKeyframe::vfunc78
 0x10007982 func   ?sub_10158c40@@YAHXZ sub_10158c40
 0x10007987 func   ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z CBaseEntity::vfunc146
+0x10007987 func   ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z CBaseEntity::vfunc146
 0x1000798c func   ?sub_101450e0@@YAXPBVVector@@0DD@Z sub_101450e0
 0x10007991 func   ?sub_10155380@CRagdollProp@@QAEXXZ CRagdollProp::sub_10155380
 0x10007996 func   ?sub_10029610@CKeepUpright@@QAEPAV1@XZ CKeepUpright::sub_10029610
