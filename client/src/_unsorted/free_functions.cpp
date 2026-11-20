@@ -1106,3 +1106,18 @@ void sub_1010bc90(const Vector &a, const Vector &b, const Vector &c, Vector &out
 	out.z = d.z * t + b.z;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010c410 size=0x5f
+float sub_1010c410(float a, float b)
+{
+    float d = a - b;
+    if (a > b) {
+        while (d > 180.0f)
+            d -= 360.0f;
+    } else {
+        while (d <= -180.0f)
+            d += 360.0f;
+    }
+    return d;
+}
+// END FUNCTION
