@@ -815,6 +815,62 @@ int sub_10089170(int hdr, int seq, int *pOut, int *pRemap)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100891e0 size=0xd3
+struct SStudioHdr;
+
+struct SGroupSource
+{
+    virtual void v0();
+    virtual SStudioHdr *GetHdr(SStudioHdr *hdr, int index);
+};
+
+struct SIncludeModel
+{
+    int m_unk0;
+    SGroupSource *m_pSource;	// 0x04
+    int m_base;	// 0x08
+    int m_count;	// 0x0c
+    int m_remapOffset;	// 0x10
+};
+
+struct SStudioHdr
+{
+    char m_pad0000[0x110];
+    int m_numSeq;	// 0x110
+    int m_seqOffset;	// 0x114
+    char m_pad0118[0x194 - 0x118];
+    int m_numInclude;	// 0x194
+    int m_includeOffset;	// 0x198
+};
+
+// TARGET: sub_100891e0
+char *sub_100891e0(SStudioHdr *hdr, int seq, SStudioHdr **ppOut, int count, int *remap)
+{
+    int off = 0;
+    for (int i = 0; i < hdr->m_numInclude; i++, off += 0x74) {
+        SIncludeModel *inc = (SIncludeModel *)((char *)hdr + hdr->m_includeOffset + off);
+        int rel = seq - inc->m_base;
+        if (rel >= 0 && rel < inc->m_count && inc->m_pSource) {
+            SStudioHdr *found = inc->m_pSource->GetHdr(hdr, i);
+            if (found) {
+                for (int j = 0; j < count; j++) {
+                    if (remap[j] >= 0)
+                        remap[j] = *(short *)((char *)inc + inc->m_remapOffset + remap[j] * 0x38);
+                }
+                if (rel < found->m_numSeq) {
+                    *ppOut = found;
+                    if (rel < 0)
+                        rel = 0;
+                    return (char *)found + found->m_seqOffset + rel * 0x2fc;
+                }
+                return sub_100891e0(found, seq - inc->m_base, ppOut, count, remap);
+            }
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10089660 size=0x57
 struct SBone160 { char m_pad[0xa0]; };
 struct SBoneOwner { char m_pad0[0x58]; };
