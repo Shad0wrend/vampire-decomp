@@ -11551,6 +11551,7 @@
 0x1000f416 func   ?sub_100b0280@@YAXXZ sub_100b0280
 0x1000f41b func   ?sub_1036fb10@@YAPAXXZ sub_1036fb10
 0x1000f420 func   ?vfunc143@CBaseEntity@@QAEHMH@Z CBaseEntity::vfunc143
+0x1000f420 func   ?vfunc143@CBaseEntity@@UAEHMH@Z CBaseEntity::vfunc143
 0x1000f425 func   ?vfunc103@CWeaponGravityGun@@UAEXXZ CWeaponGravityGun::vfunc103
 0x1000f42a func   ?vfunc372@CWeaponMelee_Tzimisce3Claw@@QAEDHHH@Z CWeaponMelee_Tzimisce3Claw::vfunc372
 0x1000f42f func   ?sub_100309a0@CCollisionEvent@@QAEMH@Z CCollisionEvent::sub_100309a0
