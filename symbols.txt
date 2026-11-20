@@ -553,6 +553,7 @@
 0x10001adc func   ?vfunc404@CAI_BaseNPCTroika@@UAEHPAVCBaseEntity@@@Z CAI_BaseNPCTroika::vfunc404
 0x10001ae1 func   ?vfunc0@CTESparks@@UAEPAUServerClass@@XZ CTESparks::vfunc0
 0x10001ae6 func   ?vfunc81@CWeaponMelee_Claws@@UAEHXZ CWeaponMelee_Claws::vfunc81
+0x10001aeb func   ?vfunc226@CRagdollProp@@UAEXH@Z CRagdollProp::vfunc226
 0x10001aeb func   ?vfunc226@CRagdollProp@@UAEXPAX@Z CRagdollProp::vfunc226
 0x10001af0 func   ?sub_102043a0@CVDmgBlock16_t@@QAEPBDXZ CVDmgBlock16_t::sub_102043a0
 0x10001af5 func   ?vfunc511@CNPC_Crow@@QAEHXZ CNPC_Crow::vfunc511
