@@ -1121,3 +1121,17 @@ float sub_1010c410(float a, float b)
     return d;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010c470 size=0x32
+float __cdecl sub_1010c470(float a, float b)
+{
+    float d = a - b;
+    if (d <= -180.0f) {
+        return d + 360.0f;
+    }
+    if (d > 180.0f) {
+        d = d - 360.0f;
+    }
+    return d;
+}
+// END FUNCTION
