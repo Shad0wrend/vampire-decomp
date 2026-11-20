@@ -9402,6 +9402,7 @@
 0x1000c86f func   ?vfunc6@CServerGameClients@@UAEXPAUCServerGameClients_Edict@@H@Z CServerGameClients::vfunc6
 0x1000c874 func   ?sub_1006caa0@SCurve6caa0@@QAEMH@Z SCurve6caa0::sub_1006caa0
 0x1000c879 func   ?vfunc175@CTriggerPlayerActivityLevel@@QAEXPAVCBaseEntity@@@Z CTriggerPlayerActivityLevel::vfunc175
+0x1000c879 func   ?vfunc175@CTriggerPlayerActivityLevel@@UAEXPAVCBaseEntity@@@Z CTriggerPlayerActivityLevel::vfunc175
 0x1000c883 func   ?sub_100d7a70@@YAXXZ sub_100d7a70
 0x1000c888 func   ?sub_1023a7d0@CRopeKeyframe@@QAEXHHHH@Z CRopeKeyframe::sub_1023a7d0
 0x1000c88d func   ?sub_1042d9c0@CBits1042d9c0@@QAEXH@Z CBits1042d9c0::sub_1042d9c0
