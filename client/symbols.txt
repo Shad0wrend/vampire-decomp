@@ -16,6 +16,7 @@
 0x10049f20 func   ?sub_10049f20@CUnknown100f2f90@@QAEPAXHHH@Z CUnknown100f2f90::sub_10049f20
 0x10049f40 func   ?sub_10049f40@Vector@@QBE?AV1@ABV1@@Z Vector::sub_10049f40
 0x10067a50 func   ?sub_10067a50@UtlMem@@QAEXH@Z UtlMem::sub_10067a50
+0x100797c0 func   ?sub_100797c0@@YAXPAD@Z sub_100797c0
 0x10079a40 func   ?sub_10079a40@@YAHHPAH0@Z sub_10079a40
 0x1007b650 func   ?sub_1007b650@@YGHH@Z sub_1007b650
 0x100889f0 func   ?sub_100889f0@@YAXPAXHMPAUCBlendBone@@PAUCBlendAnim@@AAVQuaternion@@@Z sub_100889f0

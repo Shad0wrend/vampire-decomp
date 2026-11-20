@@ -386,6 +386,17 @@ void UtlMem::sub_10067a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100797c0 size=0x1c
+void sub_10079520(void *p);
+
+// TARGET: sub_100797c0
+void __cdecl sub_100797c0(char *p)
+{
+	if (p && *(int *)(p + 0x118) == 0)
+		sub_10079520(p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079a40 size=0x47
 int sub_10079a40(int n, int *values, int *weights)
 {
