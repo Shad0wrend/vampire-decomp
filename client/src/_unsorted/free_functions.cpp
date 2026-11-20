@@ -3610,6 +3610,20 @@ int CUnknown101b9140::sub_10132db0(int elem, int num, const CUnknown101b9140Elem
 }
 // END FUNCTION
 
+// FUNCTION: 0x101335e0 size=0x27
+#include "CFloatUnit.h"
+
+// TARGET: CFloatUnit::sub_101335e0
+void CFloatUnit::sub_101335e0(float flValue)
+{
+	if (m_flPrev != flValue)
+		m_bChanged = 1;
+	m_flRate = 0.0f;
+	m_flPrev = flValue;
+	m_flValue = flValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138700 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
