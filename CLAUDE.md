@@ -45,7 +45,7 @@ store order). DM is an `extern int g_XXXXXXXX[2]` placeholder; put your own func
 input-function addresses in place of these:
 
 ```cpp
-struct ISaveRestoreOps;
+class ISaveRestoreOps;	// a class, as the game's RTTI spells it (.?AV); `struct` gives .?AU
 struct datamap_t;
 struct typedescription_t {
     int fieldType;
@@ -125,6 +125,10 @@ cannot see these. Keep to them in new work:
   `CGlobalEntityList *`; cast where another view is needed).
 - **VC6 has no covariant returns.** An override returns the base slot's type: `CBaseCombatWeapon *vfunc5(unsigned int
   flags)` in every weapon, not `CWeaponMelee *` (error C2555 once the base is modelled).
+- **No view base class for a constructor's store order.** VC6 stores the vptr after the member initialisers (and
+  sinks it past plain body stores, up to the first call), so stores the game makes before the vptr store come from
+  the initialiser list or from members with constructors, not from an invented base: a base the game's RTTI does
+  not have is a link-audit error (CSave, CAI_Pathfinder, CAI_PlaneSolver were rewritten this way on 2026-11-19).
 - **A vtable slot that holds the class's own function is declared in that class** (with the base slot's signature),
   matched or not; otherwise the vtable the class's constructor emits holds the base's function there.
 - **A callee the game compiled before its caller, in the same unit.** If a function only matches with its callee
@@ -149,6 +153,9 @@ cannot see these. Keep to them in new work:
   places its destroy `?s_default@...@$AV2@A` since 2026-10-21). The stat list lookup (guard 0x109f0b2a, default list
   0x109f0b40) is `CVStatListSet::Of(pChar)->Find(type)` (CVStatList_t.h); the entry lookup (0x109f0938, 0x109f0960)
   is `FindEntry(key)` (CEntryX.h). Never a `static CVStatList_t s_default(-1)` or `static CEntryX` of your own.
+  That function must not be a *static* member function: VC6 names the guard of its static `?$S<n>@...` with n
+  counted per unit, so units do not share it (audit E static-shared). A non-static member or a free inline gets the
+  communal guard `??_B...@51` (variant_t::NullHandle, 2026-11-20).
 
 ## Source mathlib Vector code (x87): write it with Vector.h's operators
 
