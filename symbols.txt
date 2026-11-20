@@ -6041,6 +6041,7 @@
 0x10008661 func   ?vfunc0@CAI_ExpresserSink@@UAE_NXZ CAI_ExpresserSink::vfunc0
 0x10008666 func   ?sub_10240670@@YA_NABVVector@@0PAUBoxObj@@M@Z sub_10240670
 0x1000866b func   ?vfunc223@CFuncKeyframedMover@@QAE_NXZ CFuncKeyframedMover::vfunc223
+0x1000866b func   ?vfunc223@CFuncKeyframedMover@@UAE_NXZ CFuncKeyframedMover::vfunc223
 0x10008670 func   ?vfunc119@CLight@@QAEXXZ CLight::vfunc119
 0x10008675 func   ?vfunc0@CPositionInterpolator_Rope@@UAEXXZ CPositionInterpolator_Rope::vfunc0
 0x1000867a func   ?sub_10114f20@@YAHXZ sub_10114f20
