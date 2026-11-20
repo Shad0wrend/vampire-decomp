@@ -4099,6 +4099,16 @@ CUnknown101b6320 &CUnknown101b6320::sub_10130970(const CUnknown101b6320 &other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130f90 size=0x34
+#include "UtlVec8.h"
+void UtlVec8::sub_10130f90(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		sub_101d0f30(&m_pMemory[(elem + num) * 8], &m_pMemory[elem * 8], numToMove * 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131480 size=0x19
 struct E101b6b60 { unsigned short a; unsigned short pad; int b; };
 
