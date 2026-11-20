@@ -510,7 +510,7 @@ void CNPC_VHengeyokai::vfunc144(int info)
 	if (((CNPC_VHengeyokaiCalls *)this)->sub_10381c80()) {
 		((CNPC_VHengeyokaiCalls *)this)->sub_103828a0();
 	}
-	((CNPC_VVampire *)this)->vfunc144(info);
+	((CNPC_VVampire *)this)->CNPC_VVampire::vfunc144((void *)info);
 }
 // END FUNCTION
 

@@ -19,7 +19,7 @@ class CPropSlashable : public CBaseEntity
 public:
 	virtual void vfunc103();	// slot 103 "CPropSlashable::Spawn": CBaseProp::Spawn, take-damage mode 2, SetSolid(6), AddFlag(0x20000000), then the occludes-sound flag
 	void sub_10011793();	// CBaseProp::vfunc103, called directly (jump stub)
-	int vfunc142(CPropSlashableDamageInfo *pInfo);	// slot 142 (declared as a plain member) "CPropSlashable::OnTakeDamage": only a hit by an attacker wielding the knife (class name "item_w_knife") counts: subtracts the damage from the health (+0x210); at zero or below stores the broken state (+0x730) at +0x670, fires the output at +0x734 and returns 1, else 0
+	int vfunc142(struct CTakeDamageInfo *pInfo);	// slot 142 (declared as a plain member) "CPropSlashable::OnTakeDamage": only a hit by an attacker wielding the knife (class name "item_w_knife") counts: subtracts the damage from the health (+0x210); at zero or below stores the broken state (+0x730) at +0x670, fires the output at +0x734 and returns 1, else 0
 public:
     virtual datamap_t * vfunc82();
     virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CNPC_VGargoyle (transplant)

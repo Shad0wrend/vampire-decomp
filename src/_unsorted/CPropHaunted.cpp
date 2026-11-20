@@ -50,7 +50,7 @@ struct CPropHauntedPhysObj
 void CPropHaunted::vfunc103()
 {
 	sub_1018f340();
-	hsj1();
+	vfunc225();
 	vfunc93(0, 0);
 	CPropHauntedPhysObj *pObj = (CPropHauntedPhysObj *)sub_100a5ea0(6, 0, 1, 0);
 	if (pObj)
@@ -184,8 +184,9 @@ void CPropHaunted::vfunc174(CBaseEntity *pOther)
 struct CServerUnknownView { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual CBaseEntity *GetBaseEntity(); };
 struct CEdictView { char pad[0x40]; CServerUnknownView *m_pUnk; };
 // TARGET: CPropHaunted::vfunc228
-void CPropHaunted::vfunc228(int index, void *pEvent)
+void CPropHaunted::vfunc228(int index, int pEvent)
 {
+#define pEvent ((void *)pEvent)
 	CBaseEntity *pOther = ((CBaseEntity **)pEvent)[0x68 / 4 + (index == 0)];
 	if (!pOther) {
 		CEdictView *pEdict = (CEdictView *)engine->vfunc38(0);
@@ -197,6 +198,7 @@ void CPropHaunted::vfunc228(int index, void *pEvent)
 	sub_10213ef0(index, pEvent, pOther);
 	if (*(int *)((char *)this + 0x200) != 2)
 		sub_100a65a0(index, pEvent);
+#undef pEvent
 }
 // END FUNCTION
 

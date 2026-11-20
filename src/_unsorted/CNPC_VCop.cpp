@@ -217,7 +217,7 @@ void CNPC_VCop::vfunc463(int a, int type)
 {
 	CNPC_VCopSlots *pSlots = (CNPC_VCopSlots *)this;
 	CNPC_VCopTarget *pTarget;
-	if (vfunc167() && (pTarget = vfunc167()) != 0 && pTarget->m_pPlayer && type == 2)
+	if (vfunc167() && (pTarget = (CNPC_VCopTarget *)vfunc167()) != 0 && pTarget->m_pPlayer && type == 2)
 		pSlots->slot597(pTarget->m_pPlayer, 10);
 	if (a == 2) {
 		CBaseEntity *pEnt = m_h6664.Get();
@@ -229,7 +229,7 @@ void CNPC_VCop::vfunc463(int a, int type)
 				((CBasePlayer *)pPlayer)->sub_1017f6e0();
 			}
 		}
-		pTarget = vfunc168_slot();
+		pTarget = (CNPC_VCopTarget *)vfunc168();
 		if (pTarget && pTarget->m_pPlayer)
 			pSlots->slot598((CBaseEntity *)pTarget->m_pPlayer);
 	}
@@ -239,7 +239,7 @@ void CNPC_VCop::vfunc463(int a, int type)
 			((CNPC_VHumanCombatantWeapon *)sub_1032e7b0())->vfunc67();
 	case 1:
 	case 8:
-		pTarget = vfunc167();
+		pTarget = (CNPC_VCopTarget *)vfunc167();
 		if (pTarget && pTarget->m_pPlayer)
 			pSlots->slot598((CBaseEntity *)pTarget->m_pPlayer);
 		if (m_b6670 && EHandle_Get(m_h628c))
@@ -419,9 +419,11 @@ bool CNPC_VCop::vfunc366(int a0, int a1, int a2)
 
 // TARGET: CNPC_VCop::vfunc144
 // the game's 0x10372b50: a tail call (jmp) of CNPC_VHuman::vfunc144
-void CNPC_VCop::vfunc144(int a0)
+void CNPC_VCop::vfunc144(void *a0)
 {
+#define a0 ((int)a0)
 	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc144(a0);
+#undef a0
 }
 // END FUNCTION
 
@@ -611,7 +613,7 @@ void CNPC_VCop::vfunc123()
 		Vector vecMins = v->m_Collision.OBBMins();
 		Vector vecMaxs = v->m_Collision.OBBMaxs();
 		if (vecMaxs != vecMins) {
-			Vector vecPos = *vfunc217_slot() + Vector(0, 0, (vecMaxs.z - vecMins.z) + 8.0f);
+			Vector vecPos = *(Vector *)vfunc217() + Vector(0, 0, (vecMaxs.z - vecMins.z) + 8.0f);
 			char szText[128];
 			switch ((Disposition_t)vfunc404_slot((CNPC_VCopTarget *)EHandle_Get(m_h628c))) {
 			case D_FR:

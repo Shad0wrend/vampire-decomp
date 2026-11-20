@@ -470,8 +470,9 @@ struct CDoorActivatorView
 	CBaseCombatCharacter *m_pPlayer;
 };
 
-void CBaseDoor::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value)
+void CBaseDoor::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value)
 {
+#define value (*(float *)&value)
 	ScopeTrace trace("CBaseDoor::Use", g_106b8540, g_106b8540);
 	CBaseCombatCharacter *pPlayer;
 	if (pActivator == 0)
@@ -509,6 +510,7 @@ void CBaseDoor::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useT
 			vfunc242();
 		}
 	}
+#undef value
 }
 // END FUNCTION
 

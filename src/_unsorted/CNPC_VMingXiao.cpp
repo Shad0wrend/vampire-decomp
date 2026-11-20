@@ -707,7 +707,7 @@ void CNPC_VMingXiao::vfunc431()
 	case 2:
 		m_flags14bc &= 0x7ffffbff;
 		{
-			float *pOrigin = vfunc217_slot();
+			float *pOrigin = vfunc217();
 			Vector vec = *(Vector *)&m_f672c + *(Vector *)pOrigin;
 			vfunc518((int)&vec, 1.0f, 0.5f, 0.0f);
 		}
@@ -725,8 +725,8 @@ void CNPC_VMingXiao::vfunc431()
 
 	if (enginerandom->vfunc2(0, 99) < 10)
 	{
-		vfunc217_slot();
-		vfunc219_slot();
+		vfunc217();
+		vfunc219();
 		sub_102c42a0("Ming_xiao_slimetrail_emitter", this, "Bip01 TailRoot", 0);
 		sub_102c42a0("Ming_xiao_slimetrail_emitter2", this, "Bip01 Tail1", 0);
 		sub_102c42a0("Ming_xiao_slimetrail_emitter2", this, "Bip01 Tail2", 0);
@@ -968,8 +968,9 @@ bool CNPC_VMingXiao::vfunc366(int a0, int a1, int a2)
 struct CUnk1093b9b4 { virtual char vf0(); virtual char vf1(); char pad[0x28]; int m_n2c; };
 extern CUnk1093b9b4 *g_1093b9b4;
 // TARGET: CNPC_VMingXiao::vfunc144
-void CNPC_VMingXiao::vfunc144(int a)
+void CNPC_VMingXiao::vfunc144(void *a)
 {
+#define a ((int)a)
 	if (m_bActive6744) {
 		CGlobalEntityList_Ent *pEnt = EHandle_Get(m_hOwner6670);
 		if (pEnt)
@@ -985,6 +986,7 @@ void CNPC_VMingXiao::vfunc144(int a)
 		*(int *)((char *)this + 0x200) = 1;
 		sub_10395c70();
 	}
+#undef a
 }
 // END FUNCTION
 
@@ -1204,18 +1206,18 @@ static inline void *ResolveHandle(unsigned int h)
 	return 0;
 }
 
-char CNPC_VMingXiao::vfunc166(void *pOther)
+bool CNPC_VMingXiao::vfunc166(CBaseEntity *pOther)
 {
 	unsigned int *p = (unsigned int *)((char *)this + 0x66a8);
 	for (int i = 0; i < 6; i++, p++) {
 		if (ResolveHandle(p[-7]) == pOther)
-			return 0;
+			return (bool)(0);
 		if (ResolveHandle(p[0]) == pOther)
-			return 0;
+			return (bool)(0);
 	}
 	if (pOther && !((EntV *)pOther)->v164())
-		return 0;
-	return 1;
+		return (bool)(0);
+	return (bool)(1);
 }
 // END FUNCTION
 

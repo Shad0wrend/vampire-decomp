@@ -1262,7 +1262,7 @@ void CHL2_Player::vfunc478(unsigned int *pPower)
 struct SDamageView { CVDmg_t *m_pDmg; char m_pad[0x2c]; float m_flDamage; };
 extern ConVar *g_109382cc;
 extern CUnknown1070b244 *g_1070b244;
-int CHL2_Player::vfunc142(void  *pInfo)
+int CHL2_Player::vfunc142(struct CTakeDamageInfo *pInfo)
 {
 #define pInfo ((const CTakeDamageInfo *)pInfo)
     const SDamageView *pDamage = (const SDamageView *)pInfo;

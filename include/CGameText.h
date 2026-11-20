@@ -15,7 +15,7 @@ public:
 	bool sub_1009e430(const char *szKeyName, const char *szValue);	// CBaseEntity::vfunc110 (stub 0x1000fc86), called directly
 public:
 	datamap_t * vfunc82();
-	int vfunc173(int, int, int, int);
+	void vfunc173(CBaseEntity *p0, CBaseEntity *p1, int p2, int p3);
 	string_t m_iszMessage;	// 0x0450
 	struct TextParms_t
 	{

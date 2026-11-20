@@ -138,8 +138,10 @@ inline void SetOutInt(COutputEvent &o, int value, CBaseEntity *pActivator, CBase
 }
 
 // TARGET: CBreakableSurface::vfunc141
-void CBreakableSurface::vfunc141(CTakeDamageInfo *pInfoIn, const Vector *pVecDir, CGameTrace *pTrace)
+void CBreakableSurface::vfunc141(class CVDmg_t *pInfoIn, const Vector *pVecDir, struct CGameTrace *pTrace)
 {
+#define pInfoIn ((CTakeDamageInfo *)pInfoIn)
+#define pTrace ((CGameTrace *)pTrace)
 	SDmgView *pInfo = (SDmgView *)pInfoIn;
 	const STraceView *ptr = (const STraceView *)pTrace;
 
@@ -259,6 +261,8 @@ void CBreakableSurface::vfunc141(CTakeDamageInfo *pInfoIn, const Vector *pVecDir
 	engine->vfunc65(&filter, 0);
 	engine->vfunc67(3);
 	engine->vfunc66();
+#undef pTrace
+#undef pInfoIn
 }
 // END FUNCTION
 

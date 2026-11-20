@@ -1351,7 +1351,7 @@ void CTroikaView_10292de0::sub_10292de0()
 		sub_102bf310(flNormal);
 		if (F->m_bfAINPCFlags2 & 0x20000000)
 		{
-			if (!sub_101d1a90(F->m_h628c.Get(), this) || !((CBaseEntity *)this)->vfunc201((CBaseEntity *)F->m_h628c.Get(), 0x2804091, 0, 0))
+			if (!sub_101d1a90(F->m_h628c.Get(), this) || !((CBaseEntity *)this)->CBaseEntity::vfunc201((CBaseEntity *)F->m_h628c.Get(), 0x2804091, 0, 0))
 				sub_101cd940(this);
 		}
 		if (!sub_1026c3d0())

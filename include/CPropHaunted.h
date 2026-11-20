@@ -18,14 +18,14 @@ struct CPropHauntedSub	// the object at +0x7ec
 class CPropHaunted : public CBaseEntity
 {
 public:
-	HAUNTED_SLOTS10(hsa) HAUNTED_SLOTS10(hsb) HAUNTED_SLOTS10(hsc) HAUNTED_SLOTS10(hsd) HAUNTED_SLOTS10(hse)	// slots 134..183
-	virtual void hsf0(); virtual void hsf1(); virtual void hsf2(); virtual void hsf3(); virtual void hsf4();	// slots 184..193
-	virtual void hsf5(); virtual void hsf6(); virtual void hsf7(); virtual Vector vfunc192(); virtual void hsf9();	// slot 192: a position (pointer to three floats)
-	HAUNTED_SLOTS10(hsg) HAUNTED_SLOTS10(hsh)
-	virtual void hsi0(); virtual void hsi1(); virtual void hsi2(); virtual void hsi3(); virtual void hsi4();	// slots 214..223
-	virtual float *vfunc219(); virtual void hsi6(); virtual void hsi7(); virtual void hsi8(); virtual void hsi9();
-	HAUNTED_SLOTS10(hsj)	// slots 224..233
-	HAUNTED_SLOTS10(hsk)	// slots 234..253
+	virtual void vfunc134(); virtual float vfunc135(float); virtual bool vfunc136(); virtual int vfunc137(); virtual int vfunc138();  	virtual void vfunc139(CBaseEntity *); virtual bool vfunc140(CBaseEntity *); virtual void vfunc141(class CVDmg_t *, const Vector *, struct CGameTrace *); virtual int vfunc142(struct CTakeDamageInfo *); virtual int vfunc143(float, int); virtual void vfunc144(void *); virtual int vfunc145(); virtual void vfunc146(void *, const Vector &, void *); virtual bool vfunc147(CBaseEntity *); virtual void vfunc148();  	virtual void vfunc149(int, int); virtual void vfunc150(); virtual void vfunc151(class CBaseCombatWeapon *); virtual float vfunc152(); virtual int vfunc153(); virtual int vfunc154(int, int); virtual void vfunc155(struct CGameTrace *, int, char, int, class CBasePlayer *, int, char); virtual void vfunc156(int); virtual bool vfunc157(int); virtual bool vfunc158();  	virtual void vfunc159(); virtual bool vfunc160(const char *); virtual bool vfunc161(const char *); virtual char vfunc162(); virtual void vfunc163(); virtual bool vfunc164(); virtual void vfunc165(void *); virtual bool vfunc166(CBaseEntity *); virtual CBaseEntity *vfunc167(); virtual CBaseEntity *vfunc168();  	virtual void vfunc169(const Vector *); virtual void vfunc170(const Vector *); virtual void vfunc171(); virtual void vfunc172(); virtual void vfunc173(CBaseEntity *, CBaseEntity *, int, int);  virtual void vfunc175(CBaseEntity *); virtual void vfunc176(CBaseEntity *); virtual void vfunc177(CBaseEntity *); virtual void vfunc178(CBaseEntity *);  	virtual void vfunc179();  virtual void vfunc181(const float *, const float *, const float *); virtual void vfunc182(); virtual void vfunc183();	// slots 134..183
+	virtual void vfunc184(); virtual void vfunc185(struct CFireBulletsInfo *); virtual void vfunc186(); virtual CBaseEntity *vfunc187(); virtual void vfunc188();	// slots 184..193
+	virtual void vfunc189(); virtual float vfunc190(); virtual void vfunc191(int); virtual Vector vfunc192(); virtual Vector vfunc193();	// slot 192: a position (pointer to three floats)
+	virtual float *vfunc194(); virtual float *vfunc195(); virtual Vector vfunc196(); virtual Vector vfunc197(const Vector &, char, char); virtual float *vfunc198();  	virtual void vfunc199(float *, float *); virtual int vfunc200(); virtual bool vfunc201(CBaseEntity *, int, CBaseEntity **, int); virtual void vfunc202(CBaseEntity *); virtual float vfunc203(); virtual float vfunc204(); virtual void vfunc205(); virtual void vfunc206(); virtual bool vfunc207(); virtual void vfunc208(CBaseEntity *);  	virtual CBaseEntity *vfunc209(); virtual void vfunc210(); virtual unsigned int vfunc211(); virtual void vfunc212(string_t); virtual void vfunc213(const float *);
+	virtual float *vfunc214(); virtual Vector *vfunc215(); virtual void vfunc216(const Vector &); virtual float *vfunc217(); virtual void vfunc218(const float *);	// slots 214..223
+	virtual float *vfunc219(); virtual float *vfunc220(); virtual float *vfunc221(); virtual int vfunc222(int); virtual bool vfunc223();
+	virtual void vfunc224(); virtual void vfunc225(); virtual void vfunc226(int); virtual int vfunc227(struct CTakeDamageInfo *);   	virtual void vfunc229(int);  virtual void vfunc231(void *, float, int, int); virtual void vfunc232(int); virtual int vfunc233(int *, int);	// slots 224..233
+	virtual struct CGameTrace vfunc234(const Vector *); virtual void vfunc235(); virtual void vfunc236(); virtual int vfunc237(); virtual void vfunc238(Vector *, Vector *, int, int);  	virtual bool vfunc239(float); virtual int vfunc240(); virtual void hsk7(); virtual void hsk8(); virtual void hsk9();	// slots 234..253
 	virtual void hsl0(); virtual void hsl1(); virtual void hsl2(); virtual void hsl3(); virtual void hsl4();
 	virtual void hsl5(); virtual float hsl6(int a); virtual void hsl7(); virtual void hsl8(); virtual void hsl9();
 	virtual void hsm0(); virtual void hsm1(); virtual void hsm2(); virtual void hsm3(); virtual void hsm4();	// slots 254..265
@@ -40,7 +40,7 @@ public:
 	char vfunc68(int a);	// slot 68: 1 while the state at +0x200 is 2, else CBaseAnimating::vfunc68
 	char sub_1008bfe0(int a);	// CBaseAnimating::vfunc68 (stub), called directly
 	void vfunc174(CBaseEntity *pOther);	// slot 174 (declared as a plain member): CBaseEntity::vfunc174 for the entity that hit the prop, the impact reaction sub_10213ef0 (index 0, no event) first; the reaction is skipped while the state at +0x200 is 2
-	void vfunc228(int index, void *pEvent);	// slot 228 (declared as a plain member): the impact reaction sub_10213ef0 for the entity of the event's other side (the engine entity 0 when none), then CBaseEntity::vfunc228 unless the state at +0x200 is 2
+	void vfunc228(int index, int pEvent);	// slot 228 (declared as a plain member): the impact reaction sub_10213ef0 for the entity of the event's other side (the engine entity 0 when none), then CBaseEntity::vfunc228 unless the state at +0x200 is 2
 	void sub_100a65a0(int index, void *pEvent);	// CBaseEntity::vfunc228, called directly
 	void vfunc230(int index, void *pEvent);	// slot 230 (declared as a plain member): like vfunc228, ending in CBreakableProp::vfunc230
 	void sub_1018fe80(int index, void *pEvent);	// CBreakableProp::vfunc230, called directly

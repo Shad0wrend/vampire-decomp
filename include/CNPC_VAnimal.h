@@ -41,5 +41,5 @@ public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
 	int vfunc375(int);	// slot 375 (0x10360120): a tail call of CAI_BaseNPCTroika::vfunc375 (no such slot in this view: plain)
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
-	void vfunc144(int);	// slot 144 (0x10360200): a tail call of CAI_BaseNPCTroika::vfunc144 (a base declares another vfunc144: this one hides it)
+	void vfunc144(void *p0);	// slot 144 (0x10360200): a tail call of CAI_BaseNPCTroika::vfunc144 (a base declares another vfunc144: this one hides it)
 };

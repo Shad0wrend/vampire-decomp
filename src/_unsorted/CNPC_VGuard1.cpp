@@ -368,8 +368,10 @@ bool CNPC_VGuard1::vfunc366(int a0, int a1, int a2)
 
 // TARGET: CNPC_VGuard1::vfunc144
 // the game's 0x1037e2b0: a tail call (jmp) of CNPC_VHuman::vfunc144
-void CNPC_VGuard1::vfunc144(int a0)
+void CNPC_VGuard1::vfunc144(void *a0)
 {
+#define a0 ((int)a0)
 	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc144(a0);
+#undef a0
 }
 // END FUNCTION

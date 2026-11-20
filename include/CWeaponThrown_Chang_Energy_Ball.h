@@ -27,7 +27,7 @@ public:
 	void vfunc103();	// slot 103 "...::Restore-like": CBaseCombatWeapon::vfunc103 (stub 0x100047be), then the energy ball's timers and sound fields at +0x910 / +0x91c / +0x928 / +0x938 / +0x93c from the global at 0x1070b228
 	void sub_100047be();	// CBaseCombatWeapon::vfunc103 (stub 0x100047be), called directly
 	void vfunc104();	// "...::Precache": precaches the grenade particle systems, the tic sound and the relief models, then CBaseCombatWeapon::Precache
-	void vfunc230(int bFirst, CEnergyBallThrowInfo *pInfo);	// slot 230 (plain member; a virtual would add a vptr to this base-less class): sub_103f00c0 with pInfo->m_n68, or pInfo->m_n6c when bFirst is 0
+	void vfunc230(int bFirst, void *pInfo);	// slot 230 (plain member; a virtual would add a vptr to this base-less class): sub_103f00c0 with pInfo->m_n68, or pInfo->m_n6c when bFirst is 0
 	void sub_103f00c0(int unused);	// first call only (byte at +0x91c): tells the physics object, then swaps the nearest solid entity's model for a damaged relief (picked at random) and calls sub_103f0590
 	CBaseEntity *sub_103f0200();	// stub 0x10012409: finds the nearest solid entity that sub_103f01b0 accepts, within the radius of the global at 0x104e15f8 around this weapon's origin
 	char sub_103f01b0(CBaseEntity *pEnt);	// stub 0x10014abf: whether the entity's name starts with "changcoffin"
@@ -51,8 +51,8 @@ public:
 	float m_flLastThink93c;	// 0x93c: curtime at the last steering step (frame time = curtime - this; the think does nothing when it is not positive)
 public:
 	datamap_t *vfunc82();
-	virtual void vfunc142(); virtual void vfunc230();	// slots 142 and 230 with CBaseCombatWeapon's signatures: the game's words are the plain vfunc142(int) and vfunc230(int, CEnergyBallThrowInfo *)
-	int vfunc142(int);
+	/* vfunc142: declared by the slot */ /* vfunc230: declared by the slot */	// slots 142 and 230 with CBaseCombatWeapon's signatures: the game's words are the plain vfunc142(int) and vfunc230(int, CEnergyBallThrowInfo *)
+	int vfunc142(struct CTakeDamageInfo *p0);
 	CWeaponActivityRecord *vfunc362();
 	int vfunc363();
 	virtual void vfunc372(class CBaseEntity *pOther, float flSpeed, EHANDLE hTarget);	// its own new slot 372: "CWeaponThrown_Chang_Energy_Ball::Throw"

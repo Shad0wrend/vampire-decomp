@@ -412,7 +412,7 @@ void CBaseGrenade::vfunc406(CGameTrace *pTrace, int bitsDamageType)
 
 // FUNCTION: 0x10429f20 size=0xb
 #include "CBaseGrenade.h"
-void CBaseGrenade::vfunc144(int unused)
+void CBaseGrenade::vfunc144(void *unused)
 {
 	vfunc407();
 }

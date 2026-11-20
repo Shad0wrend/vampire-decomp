@@ -119,12 +119,12 @@ public:
 	virtual int vfunc124();
 	virtual bool vfunc128();	// matched as sub_1017be30
 	virtual void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace);
-	virtual int vfunc142(void *pInfo);	// the damage info (const CTakeDamageInfo *)
+	virtual int vfunc142(struct CTakeDamageInfo *pInfo);	// the damage info (const CTakeDamageInfo *)
 	virtual int vfunc143(float flHealth, int bitsDamageType);	// slot 143 "TakeHealth": clears the discipline effect bits of +0xe98 (bitsDamageType & 0x3fff), then the character's TakeHealth
 	virtual void vfunc144(void *pArg);	// slot 144: takes a damage info (CUnknown101c26d0, the force vector at +4); sub_10170d60 hands it a random force
 	virtual void vfunc148();	// matched as CPlayerAccum_1016aa00::sub_1016aa00
 	virtual char vfunc162();
-	virtual void vfunc167();	// matched as CBasePlayer::sub_1015dc60
+	virtual CBaseEntity *vfunc167();	// matched as CBasePlayer::sub_1015dc60
 	virtual void vfunc169(const Vector *pPunch);	// matched as CBasePlayer::sub_101710b0
 	virtual void vfunc170(const Vector *pOffset);	// slot 170: sub_100b3640(1), then sub_100b2e30 with the vector at +0x3d4 plus pOffset
 	virtual void vfunc180();	// slot 180: view parts released from the physics environment, then CBaseCombatCharacter::vfunc180
@@ -132,7 +132,7 @@ public:
 	virtual float *vfunc194();	// slot 194 "GetAbsAngles"-like: the player's angles (+0x206c) in world space: with a live move parent (handle at +0x25c) its matrix (+0x130, slot 98 first when bit 11 of its flags +0x268 is set) times the angles' matrix, turned back into angles in a static; else the angles themselves
 	virtual float *vfunc195();
 	virtual void vfunc226(int a);	// matched as sub_1017b880
-	virtual void vfunc229(CBaseEntity *pOther);
+	virtual void vfunc229(int pOther);
 	virtual int vfunc298(int a);
 	virtual void vfunc300(CBaseEntity *pVictim, char bQuiet, int n);	// slot 300 (ret 0xc), CBaseCombatCharacter::vfunc300 (sub_1032c580 stub 0x100051b9) first with the same arguments; then, when pVictim says sub_1033d580(this), sub_1022d9d0(this, 3); with the active weapon's slot 360 flags having 0x18000 and the character's stat list of type 3 value of stat 9 above 0 the Potence death blow effect (two D_Potence_DeathBlow emitters through CDisciplineParticle::sub_10050d90); then, unless bQuiet, a criminal level step: sub_1017e150(4, -1.0f, sub_101d3730("Event_TookLife %s", pVictim ? pVictim->GetDebugName() : "UNKNOWN"))
 	virtual void vfunc302(); virtual void vfunc303();	// matched as sub_10182ec0, sub_10182f10

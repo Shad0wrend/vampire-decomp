@@ -138,8 +138,9 @@ void CNPC_Bullseye::vfunc113()
 extern char g_1070d1b0[];
 extern void sub_101cf390(CNPC_Bullseye *, void *, void *);
 
-void CNPC_Bullseye::vfunc144(int a)
+void CNPC_Bullseye::vfunc144(void *a)
 {
+#define a ((int)a)
 	sub_10006f32(a);
 	vfunc93(0, 0);
 	{
@@ -148,6 +149,7 @@ void CNPC_Bullseye::vfunc144(int a)
 		pColl->sub_100dc580(pColl->m_usSolidFlags | 4);
 	}
 	sub_101cf390(this, g_1070d1b0, g_1070d1b0);
+#undef a
 }
 // END FUNCTION
 
@@ -180,8 +182,10 @@ struct BullseyeInfo {
 	char *pAttacker;
 };
 
-void CNPC_Bullseye::vfunc141(void *pInfo, int a, int b)
+void CNPC_Bullseye::vfunc141(class CVDmg_t *pInfo, const Vector *a, struct CGameTrace *b)
 {
+#define a ((int)a)
+#define b ((int)b)
 	BullseyeInfo *info = (BullseyeInfo *)pInfo;
 	if (*(unsigned int *)((char *)this + 0x204) & 0x40000) {
 		SlotObj *p = *(SlotObj **)(info->pAttacker + 0x94);
@@ -193,6 +197,8 @@ void CNPC_Bullseye::vfunc141(void *pInfo, int a, int b)
 	if ((*(unsigned int *)((char *)this + 0x204) & 0x80000) && *(int *)((char *)this + 0x1fc) == 0)
 		((SlotObj *)this)->v146(info->first, a, b);
 	sub_10015b13(pInfo, a, b);
+#undef b
+#undef a
 }
 // END FUNCTION
 
@@ -234,7 +240,7 @@ struct CBullseyeHandle
 	}
 };
 
-int CNPC_Bullseye::vfunc142(void *pInfo)
+int CNPC_Bullseye::vfunc142(struct CTakeDamageInfo *pInfo)
 {
 	CBullseyeDamageInfo *pDamage = (CBullseyeDamageInfo *)pInfo;
 	if (*(unsigned int *)((char *)this + 0x204) & 0x40000) {

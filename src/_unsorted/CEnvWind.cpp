@@ -43,7 +43,7 @@ void CEnvWind::vfunc241(int a0, int a1, int a2, int a3, int a4)
 
 // FUNCTION: 0x100fe720 size=0x3
 #include "CEnvWind.h"
-void CEnvWind::vfunc141(int a0, int a1, int a2)
+void CEnvWind::vfunc141(class CVDmg_t *a0, const Vector *a1, struct CGameTrace *a2)
 {
 }
 // END FUNCTION
@@ -119,7 +119,7 @@ struct CUnknown100fea60
 // TARGET: CUnknown100fea60::sub_100fea60
 void CUnknown100fea60::sub_100fea60(CBaseEntity *pOther)
 {
-	((CBaseEntity *)this)->vfunc176(pOther);
+	((CBaseEntity *)this)->CBaseEntity::vfunc176(pOther);
 	CBaseAnimating *pAnim = (CBaseAnimating *)sub_10430b64(pOther, 0, &g_10538764, &g_1053dd10, 0);
 	if (pAnim != 0)
 	{

@@ -159,7 +159,7 @@ struct CButtonDamageInfoView {
 };
 
 // TARGET: CBaseButton::vfunc142
-int CBaseButton::vfunc142(void *pInfo)
+int CBaseButton::vfunc142(struct CTakeDamageInfo *pInfo)
 {
 	CButtonDamageInfoView *pDamage = (CButtonDamageInfoView *)pInfo;
 	m_Output560.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0.0f);

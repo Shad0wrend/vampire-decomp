@@ -334,7 +334,7 @@ bool CNPC_VBach::vfunc366(int a0, int a1, int a2)
 
 // TARGET: CNPC_VBach::vfunc144
 // the game's 0x10363d70: a tail call (jmp) of CNPC_VVampire::vfunc144
-void CNPC_VBach::vfunc144(int a0)
+void CNPC_VBach::vfunc144(void *a0)
 {
 	((CNPC_VVampire *)this)->CNPC_VVampire::vfunc144(a0);
 }
@@ -355,6 +355,7 @@ void * CNPC_VBach::vfunc309()
 // FUNCTION: 0x10363db0 size=0x23d
 #include "CNPC_VBach.h"
 #include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
 #include "CVStatList_t.h"
 #include "utlrbtree.h"
 #include "utlsortvector.h"
@@ -390,7 +391,7 @@ void CNPC_VBach::vfunc561(int a, float flDist)
 			m_fl6688 = gpGlobals->curtime + 20.0f;
 			m_fl6684 = gpGlobals->curtime + 6.0f;
 			m_b66a5 = 1;
-			CPASAttenuationFilter filter(this);
+			CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 			int edict = m_pEdict2e0;
 			g_1070b248->vfunc3(&filter, engine->vfunc35(edict), 2, "Character/Boss/Bach/bach_shield.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 		}

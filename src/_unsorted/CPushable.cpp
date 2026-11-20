@@ -153,9 +153,9 @@ void CPushable::vfunc230(int index, gamevcollisionevent_t *pEvent)
 {
 	CBaseEntity *pOther = pEvent->pEntities[index == 0];
 	if (pOther->m_pA8)
-		((CBaseEntity *)this)->vfunc230(index, pEvent);
+		((CBaseEntity *)this)->CBaseEntity::vfunc230(index, pEvent);
 	else
-		((CBreakable *)this)->CBreakable::vfunc230(index, (int)pEvent);
+		((CBreakable *)this)->CBreakable::vfunc230(index, (void *)pEvent);
 }
 // END FUNCTION
 

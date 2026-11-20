@@ -664,10 +664,9 @@ int sub_10027000()
 // FUNCTION: 0x10027020 size=0x8
 #include "CBaseEntity.h"
 
-void CBaseEntity::vfunc168()
+CBaseEntity *CBaseEntity::vfunc168()
 {
-	typedef void (__fastcall *Fn)(CBaseEntity *);
-	(*(Fn *)((char *)*(void **)this + 0x29c))(this);
+	return vfunc167();
 }
 // END FUNCTION
 
@@ -1003,7 +1002,7 @@ struct IServerNetworkableX { virtual void n0(); virtual void n1(); virtual void 
 struct IServerUnknownX { virtual void v0(); virtual void v1(); virtual void v2(); virtual struct IServerNetworkableX *v3(); virtual void v4();
  const char *Name() { IServerNetworkableX *p = v3(); return p->n5(); } };
 struct EdictX { char pad[0x40]; IServerUnknownX *m_p40; };
-CGameTrace *CBaseEntity::vfunc234(CGameTrace *pResult, const Vector *pDelta) {
+CGameTrace CBaseEntity::vfunc234(const Vector *pDelta) {
  ScopeTrace trace("CBaseEntity::PhysicsPushEntity", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
  if ( EHandle_Get( m_hMoveParent ) ) {
    EdictX *e = (EdictX *)m_pEdict2e0;
@@ -1022,7 +1021,7 @@ CGameTrace *CBaseEntity::vfunc234(CGameTrace *pResult, const Vector *pDelta) {
  if ( trace2.m_fraction != g_104454c4 ) vfunc62( trace2.m_endpos );
  sub_100a53d0( (int)&vecOrigin );
  if ( trace2.m_pEnt ) sub_1003e6c0( trace2.m_pEnt, &trace2 );
- *pResult = trace2; return pResult; }
+ return trace2; }
 // END FUNCTION
 
 // FUNCTION: 0x10038710 size=0x232
@@ -1178,7 +1177,7 @@ extern ScopeTrace *g_109f3620;
 extern int *g_109f3680;
 extern char g_106b8540[];
 
-void CBaseEntity::vfunc238(int a, int b, int c, int d)
+void CBaseEntity::vfunc238(Vector *a, Vector *b, int c, int d)
 {
     const char *n;
     if (this) {
@@ -1879,7 +1878,7 @@ CBaseEntity::~CBaseEntity()
 {
 	{
 		ScopeTrace scope("CBaseEntity::~CBaseEntity", m_name26c ? m_name26c : g_106b8540);
-		vfunc225();
+		CBaseEntity::vfunc225();
 		g_10735d38 = 0;
 		sub_1003d8f0(this);
 		g_10735d38 = 1;
@@ -2286,22 +2285,12 @@ void CBaseEntity::vfunc122(const char *classname)
 
 // FUNCTION: 0x1009f2c0 size=0x86
 #include "CBaseEntity.h"
-#include "CBaseEntitySlots.h"
-struct ScopeEntry { const char *a; const char *b; const char *c; };
-extern int *g_109f3680;
-extern ScopeEntry *g_109f3620;
-extern char g_106b8540[];
+#include "ScopeTrace.h"
 
-int CBaseEntity::vfunc197(int a, int b, int c, int d)
+Vector CBaseEntity::vfunc197(const Vector &posSrc, char a, char b)
 {
-	const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
-	g_109f3620[*g_109f3680].a = "CBaseEntity::BodyTarget";
-	g_109f3620[*g_109f3680].b = name;
-	g_109f3620[*g_109f3680].c = g_106b8540;
-	(*g_109f3680)++;
-	((CBaseEntitySlots *)this)->slot192((float *)a);
-	(*g_109f3680)--;
-	return a;
+	ScopeTrace scope("CBaseEntity::BodyTarget", this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY");
+	return vfunc192();
 }
 // END FUNCTION
 
@@ -5248,7 +5237,7 @@ extern TraceEnt *g_109f3620;
 extern char g_10558a94[];
 extern char g_105387dc[];
 extern char g_106b8540[];
-void CBaseEntity::vfunc212(int set)
+void CBaseEntity::vfunc212(string_t set)
 {
     const char *name;
     if (this != 0) {
@@ -5261,7 +5250,7 @@ void CBaseEntity::vfunc212(int set)
     g_109f3620[*g_109f3680].b = name;
     g_109f3620[*g_109f3680].c = g_106b8540;
     ++*g_109f3680;
-    *(int *)((char *)this + 0x388) = set;
+    *(int *)((char *)this + 0x388) = *(int *)&set;
     --*g_109f3680;
 }
 // END FUNCTION
@@ -5815,33 +5804,28 @@ Vector CBaseEntity::vfunc193()
 // FUNCTION: 0x100b4bc0 size=0x8
 #include "CBaseEntity.h"
 
-void CBaseEntity::vfunc194()
+float *CBaseEntity::vfunc194()
 {
-	typedef void (__fastcall *Fn)(CBaseEntity *);
-	(*(Fn *)((char *)*(void **)this + 0x36c))(this);
+	return vfunc219();
 }
 // END FUNCTION
 
 // FUNCTION: 0x100b4be0 size=0x8
 #include "CBaseEntity.h"
 
-typedef void (__fastcall *VFunc)(CBaseEntity *);
-
 // TARGET: CBaseEntity::vfunc195
-void CBaseEntity::vfunc195()
+float *CBaseEntity::vfunc195()
 {
-	(*(VFunc **)this)[221](this);
+	return vfunc221();
 }
 // END FUNCTION
 
 // FUNCTION: 0x100b4c00 size=0x14
 #include "CBaseEntity.h"
-#include "CBaseEntitySlots.h"
 
-int CBaseEntity::vfunc196(int a)
+Vector CBaseEntity::vfunc196()
 {
-	((CBaseEntitySlots *)this)->slot193(a);
-	return a;
+	return vfunc193();
 }
 // END FUNCTION
 

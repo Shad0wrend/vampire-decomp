@@ -281,9 +281,11 @@ bool CNPC_VYukie::vfunc366(int a0, int a1, int a2)
 
 // TARGET: CNPC_VYukie::vfunc144
 // the game's 0x103dd860: a tail call (jmp) of CNPC_VHuman::vfunc144
-void CNPC_VYukie::vfunc144(int a0)
+void CNPC_VYukie::vfunc144(void *a0)
 {
+#define a0 ((int)a0)
 	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc144(a0);
+#undef a0
 }
 // END FUNCTION
 
@@ -436,7 +438,7 @@ extern unsigned char g_10924fba;
 extern unsigned char g_10924fb9;
 
 // TARGET: CNPC_VYukie::vfunc201
-bool CNPC_VYukie::vfunc201(void *pEnt, int traceMask, int *ppBlocker, int d)
+bool CNPC_VYukie::vfunc201(CBaseEntity *pEnt, int traceMask, CBaseEntity **ppBlocker, int d)
 {
 	if (!pEnt)
 		return false;

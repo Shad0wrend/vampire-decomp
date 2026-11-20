@@ -58,8 +58,9 @@ void CWeaponThrown_Chang_Energy_Ball::vfunc104()
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 
 // TARGET: CWeaponThrown_Chang_Energy_Ball::vfunc230
-void CWeaponThrown_Chang_Energy_Ball::vfunc230(int bFirst, CEnergyBallThrowInfo *pInfo)
+void CWeaponThrown_Chang_Energy_Ball::vfunc230(int bFirst, void *pv)
 {
+	CEnergyBallThrowInfo *pInfo = (CEnergyBallThrowInfo *)pv;
 	sub_103f00c0((&pInfo->m_n68)[bFirst == 0]);
 }
 // END FUNCTION
@@ -122,7 +123,7 @@ void CWeaponThrown_Chang_Energy_Ball::vfunc372(CBaseEntity *pOther, float flSpee
 namespace lifted {
 int __stdcall sub_100013b6(int);
 }
-int CWeaponThrown_Chang_Energy_Ball::vfunc142(int a0)
+int CWeaponThrown_Chang_Energy_Ball::vfunc142(struct CTakeDamageInfo *a0)
 {
     lifted::sub_100013b6(0);
     return 0;

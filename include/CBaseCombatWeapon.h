@@ -62,44 +62,44 @@ public:
 	virtual int vfunc127(int);
 	virtual void vfunc130(int pArg);
 	// slots 134..371
-	CBCW_V(134) CBCW_V(135) CBCW_V(136) CBCW_V(137) CBCW_V(138) CBCW_V(139) CBCW_V10(14) CBCW_V10(15) CBCW_V10(16)
+	virtual void vfunc134(); virtual float vfunc135(float); virtual bool vfunc136(); virtual int vfunc137(); virtual int vfunc138(); virtual void vfunc139(CBaseEntity *); virtual bool vfunc140(CBaseEntity *); virtual void vfunc141(class CVDmg_t *, const Vector *, struct CGameTrace *); virtual int vfunc142(struct CTakeDamageInfo *); virtual int vfunc143(float, int); virtual void vfunc144(void *); virtual int vfunc145(); virtual void vfunc146(void *, const Vector &, void *); virtual bool vfunc147(CBaseEntity *); virtual void vfunc148(); virtual void vfunc149(int, int);; virtual void vfunc150(); virtual void vfunc151(class CBaseCombatWeapon *); virtual float vfunc152(); virtual int vfunc153(); virtual int vfunc154(int, int); virtual void vfunc155(struct CGameTrace *, int, char, int, class CBasePlayer *, int, char); virtual void vfunc156(int); virtual bool vfunc157(int); virtual bool vfunc158(); virtual void vfunc159();; virtual bool vfunc160(const char *); virtual bool vfunc161(const char *); virtual char vfunc162(); virtual void vfunc163(); virtual bool vfunc164(); virtual void vfunc165(void *); virtual bool vfunc166(CBaseEntity *); virtual CBaseEntity *vfunc167(); virtual CBaseEntity *vfunc168(); virtual void vfunc169(const Vector *);;
 	virtual void vfunc170(const Vector *pVec);	// asked by vfunc269 with the scaled direction
-	CBCW_V(171) CBCW_V(172) virtual void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value); CBCW_V(174) CBCW_V(175) CBCW_V(176) CBCW_V(177) CBCW_V(178) CBCW_V(179)
-	CBCW_V(180) CBCW_V(181) CBCW_V(182) CBCW_V(183) CBCW_V(184) CBCW_V(185) CBCW_V(186)
+	virtual void vfunc171(); virtual void vfunc172(); virtual void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value); virtual void vfunc174(CBaseEntity *); virtual void vfunc175(CBaseEntity *); virtual void vfunc176(CBaseEntity *); virtual void vfunc177(CBaseEntity *); virtual void vfunc178(CBaseEntity *); virtual void vfunc179();
+	virtual void vfunc180(); virtual void vfunc181(const float *, const float *, const float *); virtual void vfunc182(); virtual void vfunc183(); virtual void vfunc184(); virtual void vfunc185(struct CFireBulletsInfo *); virtual void vfunc186();
 	virtual CBaseEntity *vfunc187();	// "CBaseCombatWeapon::Respawn": creates a new entity of the weapon's class at the game rules' respawn spot
-	CBCW_V(188) CBCW_V(189)
-	CBCW_V10(19)
-	CBCW_V10(20) CBCW_V10(21)
-	CBCW_V(220) virtual float *vfunc221();	// "GetAngles"
-	CBCW_V(222) CBCW_V(223) CBCW_V(224) CBCW_V(225) CBCW_V(226) CBCW_V(227) CBCW_V(228) CBCW_V(229)
-	CBCW_V10(23) CBCW_V10(24)
-	virtual float vfunc250(int a); CBCW_V(251) CBCW_V(252) CBCW_V(253) CBCW_V(254) CBCW_V(255) CBCW_V(256) CBCW_V(257) virtual void vfunc258(float a, int b); CBCW_V(259)
-	CBCW_V(260) CBCW_V(261) CBCW_V(262) CBCW_V(263) CBCW_V(264) CBCW_V(265) CBCW_V(266) virtual char vfunc267(); virtual char vfunc268();
+	virtual void vfunc188(); virtual void vfunc189();
+	virtual float vfunc190(); virtual void vfunc191(int); virtual Vector vfunc192(); virtual Vector vfunc193(); virtual float *vfunc194(); virtual float *vfunc195(); virtual Vector vfunc196(); virtual Vector vfunc197(const Vector &, char, char); virtual float *vfunc198(); virtual void vfunc199(float *, float *);;
+	virtual int vfunc200(); virtual bool vfunc201(CBaseEntity *, int, CBaseEntity **, int); virtual void vfunc202(CBaseEntity *); virtual float vfunc203(); virtual float vfunc204(); virtual void vfunc205(); virtual void vfunc206(); virtual bool vfunc207(); virtual void vfunc208(CBaseEntity *); virtual CBaseEntity *vfunc209();; virtual void vfunc210(); virtual unsigned int vfunc211(); virtual void vfunc212(string_t); virtual void vfunc213(const float *); virtual float *vfunc214(); virtual Vector *vfunc215(); virtual void vfunc216(const Vector &); virtual float *vfunc217(); virtual void vfunc218(const float *); virtual float *vfunc219();;
+	virtual float *vfunc220(); virtual float *vfunc221();	// "GetAngles"
+	virtual int vfunc222(int); virtual bool vfunc223(); virtual void vfunc224(); virtual void vfunc225(); virtual void vfunc226(int); virtual int vfunc227(struct CTakeDamageInfo *); virtual void vfunc228(int, int); virtual void vfunc229(int);
+	virtual void vfunc230(int, void *); virtual void vfunc231(void *, float, int, int); virtual void vfunc232(int); virtual int vfunc233(int *, int); virtual struct CGameTrace vfunc234(const Vector *); virtual void vfunc235(); virtual void vfunc236(); virtual int vfunc237(); virtual void vfunc238(Vector *, Vector *, int, int); virtual bool vfunc239(float);; virtual int vfunc240(); virtual void vfunc241(); virtual void vfunc242(); virtual void vfunc243(); virtual void vfunc244(); virtual void vfunc245(); virtual void vfunc246(); virtual void vfunc247(); virtual void vfunc248(); virtual void vfunc249();;
+	virtual float vfunc250(int a); virtual void vfunc251(); virtual void vfunc252(); virtual void vfunc253(); virtual void vfunc254(); virtual void vfunc255(); virtual void vfunc256(); virtual void vfunc257(); virtual void vfunc258(float a, int b); virtual void vfunc259();
+	virtual void vfunc260(); virtual void vfunc261(); virtual void vfunc262(); virtual void vfunc263(); virtual void vfunc264(); virtual void vfunc265(); virtual void vfunc266(); virtual char vfunc267(); virtual char vfunc268();
 	virtual void vfunc269(CBaseCombatWeapon *pOther, Vector vecDir);	// scales vecDir by the value slot 1 of the global at 0x1070b244 reports for the current roll slot (sub_102517e0) and, when that is not zero, hands it to slot 170 of pOther
-	virtual void vfunc270(struct CGameTrace *pHit, void *pInfo); CBCW_V(271)
+	virtual void vfunc270(struct CGameTrace *pHit, void *pInfo); virtual void vfunc271();
 	virtual char *vfunc272();
 	virtual char *vfunc273();
-	CBCW_V(274) virtual int vfunc275(int a); virtual int vfunc276(unsigned int index);	// slot 276: the int in the 0x1093c byte record `index` of the table at +0x2670 of the object 0x10010ea6 returns
+	virtual void vfunc274(); virtual int vfunc275(int a); virtual int vfunc276(unsigned int index);	// slot 276: the int in the 0x1093c byte record `index` of the table at +0x2670 of the object 0x10010ea6 returns
 	virtual bool vfunc277(int a);	// asked by vfunc280 with the ammo slot index
 	virtual float vfunc278();	// CWeaponGravityGun: the pull strength of the held object (the owner's stat 0x1a divided by the physics object's mass), -1.0f without one
 	virtual char vfunc279();
 	// slots 280..371
 	virtual bool vfunc280(int a);	// asked by CBaseCombatCharacter::GetBestRangedWeapon with 0
-	CBCW_V(281) virtual bool vfunc282();	/* slot 282: a boolean answer in al (CWeaponMelee override 0x103e4410 returns false) */
+	virtual void vfunc281(); virtual bool vfunc282();	/* slot 282: a boolean answer in al (CWeaponMelee override 0x103e4410 returns false) */
 	virtual bool vfunc283(CBaseEntity *pTarget);	// CWeaponMelee: true when pTarget answers slot 158, the weapon has an owner other than pTarget and the owner's centre (slot 192) is close to pTarget's
 	virtual bool vfunc284(void *a, void *b, void *c, int d, int e);
 	virtual void *vfunc285();	// CWeaponGravityGun: the entity of the held-object handle at +0x918, else sub_1014a1b0
-	CBCW_V(286) CBCW_V(287) CBCW_V(288) virtual int vfunc289();	/* slot 289: returns -1 (0x10149d00: or eax,-1) */
-	virtual int vfunc290(); CBCW_V(291) virtual void vfunc292(CBaseEntity *pEntity); virtual int vfunc293(); CBCW_V(294) CBCW_V(295) virtual int vfunc296();
+	virtual void vfunc286(); virtual void vfunc287(); virtual void vfunc288(); virtual int vfunc289();	/* slot 289: returns -1 (0x10149d00: or eax,-1) */
+	virtual int vfunc290(); virtual void vfunc291(); virtual void vfunc292(CBaseEntity *pEntity); virtual int vfunc293(); virtual void vfunc294(); virtual void vfunc295(); virtual int vfunc296();
 	virtual void vfunc297(int value);
 	virtual void vfunc298(CBaseEntity *pOwner, int unused);	// slot 298: the weapon is handed over to pOwner:
 	void sub_10252ea0(CBaseEntity *pOwner, float unused);	// body of vfunc298 (0x10252ea0) as a plain member, for float-signature forwarders move type 11, solid flag 8 removed and 4 added (scope traced), aim entity and owner handle (+0x88c) set, time stamps at +0x730 = curtime, touch function cleared, model by the owner's sex, owner's inventory told
 	virtual void vfunc299(const float *pVelocity);	// "CBaseCombatWeapon::Drop"-like: the owner gives the weapon up; the weapon becomes a physics-less dropped item (move type 6) that gets pVelocity
-	CBCW_V(300) virtual int vfunc301(CBaseEntity *pPlayer);	// always true; stores the state at +0x8b0: 0x40 or 2 when pPlayer holds this weapon as its active one (by the byte at pPlayer+0x20a8), else 1
+	virtual void vfunc300(); virtual int vfunc301(CBaseEntity *pPlayer);	// always true; stores the state at +0x8b0: 0x40 or 2 when pPlayer holds this weapon as its active one (by the byte at pPlayer+0x20a8), else 1
 	virtual char vfunc302();
 	virtual bool vfunc303();
 	virtual char vfunc304();	// true when the field at +0x2444 of the owner (sub_102517b0) is set
-	CBCW_V(305)
+	virtual void vfunc305();
 	virtual void vfunc306(int value);
 	virtual void vfunc307(int value);
 	virtual void vfunc308(int a, int b);	// pushes a to the first and b to the second view model of the weapon (owner's player object at +0xa8 needed): sequence from slot 342, slot 266 / 265, and the player's field +0x1488 copied to +0x6f4 of each
@@ -107,28 +107,28 @@ public:
 	virtual void vfunc310(float time);	// "SetNextAttack"-like: stores time at +0x894 of this weapon (just this one without an owner), of the owner's active weapon and of the weapon behind the owner's handle at +0x1c64
 	virtual float vfunc311();	// the weapon's next-attack time (as read by sub_10254b00)
 	virtual char vfunc312();	// asked by sub_10253b70 (whether the weapon may be used)
-	virtual char vfunc313(); CBCW_V(314)
+	virtual char vfunc313(); virtual void vfunc314();
 	virtual bool vfunc315();
 	virtual char vfunc316(int a);	// slot 316: clears the byte at +0x898, slot 307(0xde) when a is set, arms the owner's timer at +0x1564 (curtime + the active weapon's sequence duration) and starts slot 333 with 0x12 (owner AI object) or 0x13
-	virtual int vfunc317(); CBCW_V(318) CBCW_V(319)
-	CBCW_V(320) CBCW_V(321) CBCW_V(322) virtual void vfunc323();	// "FinishReload": with an owner (sub_102521f0): a pending reload (byte at +0x8c8) is cancelled through sub_10254cd0(0xc3); else for both ammo slots the clip (+0x74c + i * 4) is refilled from the owner's ammo count (not above slot 275's capacity); then clears the bytes at +0x898 / +0x899 / +0x89a
-	CBCW_V(324) virtual bool vfunc325();	/* slot 325: a boolean answer in al (CWeaponIArmor override 0x103f4070 returns false) */ CBCW_V(326) CBCW_V(327)
+	virtual int vfunc317(); virtual void vfunc318(); virtual void vfunc319();
+	virtual void vfunc320(); virtual void vfunc321(); virtual void vfunc322(); virtual void vfunc323();	// "FinishReload": with an owner (sub_102521f0): a pending reload (byte at +0x8c8) is cancelled through sub_10254cd0(0xc3); else for both ammo slots the clip (+0x74c + i * 4) is refilled from the owner's ammo count (not above slot 275's capacity); then clears the bytes at +0x898 / +0x899 / +0x89a
+	virtual void vfunc324(); virtual bool vfunc325();	/* slot 325: a boolean answer in al (CWeaponIArmor override 0x103f4070 returns false) */ virtual void vfunc326(); virtual void vfunc327();
 	virtual int vfunc328();
-	CBCW_V(329) virtual int vfunc330(); virtual const Vector &vfunc331(); CBCW_V(332)
+	virtual void vfunc329(); virtual int vfunc330(); virtual const Vector &vfunc331(); virtual void vfunc332();
 	virtual void vfunc333(int a, int b, int c, int d, int e, int f);
 	virtual void vfunc334(int a, int b);	// walks the slot 347(a) records (sub_10252120(a, i)) and tells the sound/overlay object at 0x1070b248 about each: with the record flag (+0x90) set only when the owner exists (type 6), else with b, for the owner's or the weapon's edict
-	CBCW_V(335) CBCW_V(336)
+	virtual void vfunc335(); virtual void vfunc336();
 	virtual float vfunc337(int a, int b);
 	virtual void vfunc338(int a, int b);	// "CBaseCombatWeapon::Weapon_SetActivity"-like: called by CBaseCombatCharacter::Weapon_SetActivity with its two arguments (b is a float's bits: the duration the sequence is stretched to)
-	CBCW_V(339)
-	CBCW_V(340) virtual void vfunc341(CBaseEntity *pPlayer);	// the weapon is picked up by pPlayer: its move children go (sub_1012c900), it joins the player's list at +0x8e0 (or +0x8f8 without the player's object at +0xa8), slot 225, becomes a non-solid item (solid flag 4 added, solid flags and solid type 0)
+	virtual void vfunc339();
+	virtual void vfunc340(); virtual void vfunc341(CBaseEntity *pPlayer);	// the weapon is picked up by pPlayer: its move children go (sub_1012c900), it joins the player's list at +0x8e0 (or +0x8f8 without the player's object at +0xa8), slot 225, becomes a non-solid item (solid flag 4 added, solid flags and solid type 0)
 	virtual int vfunc342(int a);	// the owner object (sub_102517b0) + 0x2188
 	virtual int vfunc343();
 	virtual int vfunc344();	// the owner object (sub_102517b0) + 0x2408
 	virtual int vfunc345();	// the weapon's weight (compared by CMultiplayRules::vfunc19)
-	CBCW_V(346) virtual int vfunc347(int a); virtual const char *vfunc348();	/* slot 348: the item's name (e.g. "item_p_occult_regen"; asked by the vendor lookup sub_10324190 and compared with _strcmpi) */ virtual int vfunc349();
-	CBCW_V(350) CBCW_V(351) virtual int vfunc352(); CBCW_V(353) CBCW_V(354) virtual int vfunc355(); CBCW_V(356) CBCW_V(357) CBCW_V(358) CBCW_V(359) virtual unsigned int vfunc360();	// the weapon's type flags (bits 13 and 14 mark ranged weapons)
-	CBCW_V(361)
+	virtual void vfunc346(); virtual int vfunc347(int a); virtual const char *vfunc348();	/* slot 348: the item's name (e.g. "item_p_occult_regen"; asked by the vendor lookup sub_10324190 and compared with _strcmpi) */ virtual int vfunc349();
+	virtual void vfunc350(); virtual void vfunc351(); virtual int vfunc352(); virtual void vfunc353(); virtual void vfunc354(); virtual int vfunc355(); virtual void vfunc356(); virtual void vfunc357(); virtual void vfunc358(); virtual void vfunc359(); virtual unsigned int vfunc360();	// the weapon's type flags (bits 13 and 14 mark ranged weapons)
+	virtual void vfunc361();
 	virtual CWeaponActivityRecord *vfunc362();	// the weapon's activity translation table
 	virtual int vfunc363();	// the number of records of that table
 	virtual void vfunc364(int a, int b, int c);

@@ -57,7 +57,7 @@ struct CUnk100137c3
 };
 
 // TARGET: CNPC_VCameraSecurity::vfunc201
-bool CNPC_VCameraSecurity::vfunc201(CBaseEntity *pOther, int a, int b, int c)
+bool CNPC_VCameraSecurity::vfunc201(CBaseEntity *pOther, int a, CBaseEntity **b, int c)
 {
 	CBaseEntity *pCamera = sub_10369e70();
 	if (*(int *)((char *)pOther + 0xa8) != 0 && pCamera != 0)

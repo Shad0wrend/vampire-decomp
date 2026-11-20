@@ -279,13 +279,7 @@ void CBaseMoveBehavior::vfunc242()
 // FUNCTION: 0x10140b50 size=0x59
 #include "CBaseMoveBehavior.h"
 extern "C" int __cdecl _strcmpi(const char *, const char *);
-#define D5(n) virtual void d##n##a(); virtual void d##n##b(); virtual void d##n##c(); virtual void d##n##d(); virtual void d##n##e();
-#define D25(n) D5(n##0) D5(n##1) D5(n##2) D5(n##3) D5(n##4)
-#define D100(n) D25(n##0) D25(n##1) D25(n##2) D25(n##3)
 struct CMoveView : public CBaseEntity {
-	D100(x0)
-	D5(y0)
-	virtual void z0(); virtual void z1();
 	virtual bool vfunc241(int a);
 };
 // TARGET: CBaseMoveBehavior::vfunc133

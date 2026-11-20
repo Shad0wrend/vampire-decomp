@@ -300,9 +300,9 @@ char sub_1015de90() {
 // FUNCTION: 0x1015deb0 size=0x7
 #include "CBasePlayer.h"
 
-void *CBasePlayer::vfunc198()
+float *CBasePlayer::vfunc198()
 {
-	return (char *)this + 0x211c;
+	return (float *)((char *)this + 0x211c);
 }
 // END FUNCTION
 
@@ -792,11 +792,11 @@ struct CTPHelper
 void __cdecl sub_1028d820(void *p);
 
 // TARGET: CBasePlayer::vfunc181
-void CBasePlayer::vfunc181(void *p, void *a, void *b)
+void CBasePlayer::vfunc181(const float *p, const float *a, const float *b)
 {
-	((CTPHelper *)this)->sub_100ada20(p, a, b);
+	((CTPHelper *)this)->sub_100ada20((void *)p, (void *)a, (void *)b);
 	if (p != 0)
-		sub_1028d820(p);
+		sub_1028d820((void *)p);
 }
 // END FUNCTION
 
@@ -1605,7 +1605,7 @@ void sub_101ce290(int a, int b, int c, int d, int e);
 
 #define GETDMG(p) ((p).m_pVDmg00 ? (float)(p).m_pVDmg00->sub_101faa70() : (p).m_flDamage)
 
-int CBasePlayer::vfunc142(void  *pInfo)
+int CBasePlayer::vfunc142(struct CTakeDamageInfo *pInfo)
 {
 #define pInfo ((const CTakeDamageInfo *)pInfo)
 	if (vfunc406())
@@ -6895,8 +6895,9 @@ struct CPlayerVelView
 #define EV ((CEntityVSlots *)this)
 
 // TARGET: CBasePlayer::vfunc229
-void CBasePlayer::vfunc229(CBaseEntity *pOther)
+void CBasePlayer::vfunc229(int pOther)
 {
+#define pOther ((CBaseEntity *)pOther)
 	IPhysicsObject *pPhysics = (IPhysicsObject *)pOther;
 	Vector newPosition;
 
@@ -6993,6 +6994,7 @@ void CBasePlayer::vfunc229(CBaseEntity *pOther)
 		}
 	}
 	m_oldOrigin = *EV->slot217();
+#undef pOther
 }
 // END FUNCTION
 

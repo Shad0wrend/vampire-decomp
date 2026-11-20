@@ -143,8 +143,8 @@
 	char sub_10339b50();	// CBaseCombatCharacter member (stub 0x1000f939), called on the target
 	char sub_10339c10();	// CBaseCombatCharacter member (stub 0x100144d9), called on the target
 	char vfunc321(int unused);	// slot 321 (plain member): re-arms the random view punch timer (+0x1da8) when it is due, then punches the view by a random angle scaled by the player and punch convars (slot 169)
-	void *vfunc198();	// slot 198: the address of the field at +0x211c
+	float *vfunc198();	// slot 198: the address of the field at +0x211c
 	int vfunc200();	// slot 200 (plain member): the dword at +0x233c
 	char sub_1015dd50();	// slot 117: CBaseEntity::vfunc117 masked with 0xfd
 	void vfunc410();
-	void vfunc181(void *p, void *a, void *b);	// slot 181: sub_100ada20(p, a, b), then the cdecl 0x1028d820(p) when p is set	// slot 410 (plain member): the float at +0x19b0 = gpGlobals->curtime
+	void vfunc181(const float *p, const float *a, const float *b);	// slot 181: sub_100ada20(p, a, b), then the cdecl 0x1028d820(p) when p is set	// slot 410 (plain member): the float at +0x19b0 = gpGlobals->curtime

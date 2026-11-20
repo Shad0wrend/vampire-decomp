@@ -423,7 +423,7 @@ void CFire::vfunc241(float flDelay)
 
 // FUNCTION: 0x1010b5a0 size=0x5
 #include "CFire.h"
-int CFire::vfunc142(int a0)
+int CFire::vfunc142(struct CTakeDamageInfo *a0)
 {
     return 0;
 }

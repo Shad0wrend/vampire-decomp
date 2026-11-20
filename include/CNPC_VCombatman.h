@@ -25,9 +25,9 @@ public:
 	char sub_1001482b(int a);	// condition test, called with 0x10 / 0x11 / 0x13
 public:
 	virtual void vfunc134();
-	virtual void vfunc135();
-	virtual void vfunc136();
-	virtual void vfunc137();
+	virtual float vfunc135(float);
+	virtual bool vfunc136();
+	virtual int vfunc137();
 	virtual int vfunc138();
 	char m_pad03e0[0x6664 - 0x3e0];
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
@@ -40,5 +40,5 @@ public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11
 	void vfunc259(animevent_t *);	// slot 259 (0x10370210): a tail call of CNPC_VHuman::vfunc259 (no such slot in this view: plain)
 	int vfunc390(CTakeDamageInfo *);	// slot 390 (0x10370380): a tail call of CNPC_VHuman::vfunc390 (no such slot in this view: plain)
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
-	void vfunc144(int);	// slot 144 (0x103703c0): a tail call of CNPC_VHuman::vfunc144 (a base declares another vfunc144: this one hides it)
+	void vfunc144(void *p0);	// slot 144 (0x103703c0): a tail call of CNPC_VHuman::vfunc144 (a base declares another vfunc144: this one hides it)
 };

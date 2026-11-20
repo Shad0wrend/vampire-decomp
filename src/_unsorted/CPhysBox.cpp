@@ -341,8 +341,9 @@ bool CPhysBox::vfunc73(CBaseEntity *pOther)
 void sub_10006d61();
 
 // TARGET: CPhysBox::vfunc230
-void CPhysBox::vfunc230(int a, int b)
+void CPhysBox::vfunc230(int a, void *b)
 {
+#define b ((int)b)
     void (CPhysBox::*pBase)(int, int);
     *(void **)&pBase = (void *)sub_10006d61;
     (this->*pBase)(a, b);
@@ -351,6 +352,7 @@ void CPhysBox::vfunc230(int a, int b)
     void **vt = *(void ***)this;
     *(void **)&pSlot75 = vt[0x12c / 4];
     (this->*pSlot75)(a, b);
+#undef b
 }
 // END FUNCTION
 
@@ -380,12 +382,14 @@ struct CUnknown1004e970Sub
     void sub_10010794(int a, void *pOwner, int b);
 };
 
-int CPhysBox::vfunc142(CBaseEntity *pEnt)
+int CPhysBox::vfunc142(struct CTakeDamageInfo *pEnt)
 {
+#define pEnt ((CBaseEntity *)pEnt)
     sub_1000850d(pEnt);
     if (*(int *)((char *)pEnt + 0x28) != 0) {
         ((CUnknown1004e970Sub *)((char *)this + 0x468))->sub_10010794(*(int *)((char *)pEnt + 0x2c), this, 0);
     }
     return 1;
+#undef pEnt
 }
 // END FUNCTION

@@ -62,7 +62,7 @@ struct SConVarX
 extern SConVarX *g_1094abac;
 
 // TARGET: CPlayerPickupController::vfunc173
-void CPlayerPickupController::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float flUseValue)
+void CPlayerPickupController::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int flUseValue)
 {
 	CBaseEntity *pPlayer = pActivator;
 	if (pPlayer)

@@ -25,9 +25,9 @@ public:
 	void vfunc495();	// slot 495 (plain member): like vfunc489 with the 0x106521b0 sounds
 public:
 	virtual void vfunc134();
-	virtual void vfunc135();
-	virtual void vfunc136();
-	virtual void vfunc137();
+	virtual float vfunc135(float);
+	virtual bool vfunc136();
+	virtual int vfunc137();
 	virtual int vfunc138();
 	virtual void *vfunc580();	// slot 580
 	virtual const char *vfunc451();	// slot 451: the class name "CNPC_VTest"
@@ -43,5 +43,5 @@ public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11
 	void vfunc259(animevent_t *);	// slot 259 (0x103b4f10): a tail call of CNPC_VHuman::vfunc259 (no such slot in this view: plain)
 	int vfunc390(CTakeDamageInfo *);	// slot 390 (0x103b51e0): a tail call of CNPC_VHuman::vfunc390 (no such slot in this view: plain)
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
-	void vfunc144(int);	// slot 144 (0x103b5220): a tail call of CNPC_VVampire::vfunc144 (a base declares another vfunc144: this one hides it)
+	void vfunc144(void *p0);	// slot 144 (0x103b5220): a tail call of CNPC_VVampire::vfunc144 (a base declares another vfunc144: this one hides it)
 };

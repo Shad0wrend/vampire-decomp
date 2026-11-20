@@ -149,8 +149,9 @@ struct PropView {
 	char m_bDone;
 };
 
-int CPropDestructable::vfunc142(const void *pInfo)
+int CPropDestructable::vfunc142(struct CTakeDamageInfo *pInfo)
 {
+#define pInfo ((const void *)pInfo)
 	PropView *p = (PropView *)this;
 	if (p->m_bDone)
 		return 0;
@@ -160,6 +161,7 @@ int CPropDestructable::vfunc142(const void *pInfo)
 		return 0;
 	info.m_flDamage = (pDmg ? (float)pDmg->sub_101faa70() : info.m_flDamage) - (float)p->m_iStageHealth;
 	return sub_10008a1c(&info);
+#undef pInfo
 }
 // END FUNCTION
 
@@ -167,8 +169,9 @@ int CPropDestructable::vfunc142(const void *pInfo)
 #include "CPropDestructable.h"
 #include "COutputEvent.h"
 
-void CPropDestructable::vfunc144(const CPropDestructableDamage *pInfo)
+void CPropDestructable::vfunc144(void *pInfo)
 {
+#define pInfo ((const CPropDestructableDamage *)pInfo)
 	CPropDestructableDamage info = *pInfo;
 	int nStages = *(int *)((char *)this + 0x77c);
 	if (*(int *)((char *)this + 0x784) == nStages) {
@@ -184,6 +187,7 @@ void CPropDestructable::vfunc144(const CPropDestructableDamage *pInfo)
 		sub_10193cc0(*(int *)((char *)this + 0x784) + 1, pInfo->m_data[11]);
 		m_iHealth = *(int *)((char *)this + 0x780);
 	}
+#undef pInfo
 }
 // END FUNCTION
 

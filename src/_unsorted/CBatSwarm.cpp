@@ -305,8 +305,9 @@ struct HitInfo {
 struct CountRef { int pad; int m_n; };
 extern float g_104454c0;
 extern float g_104454c4;
-void CBatSwarm::vfunc141(int *pRef, int unused, void *pInfo)
+void CBatSwarm::vfunc141(class CVDmg_t *pRef, const Vector *unused, struct CGameTrace *pInfo)
 {
+#define pRef ((int *)pRef)
     HitInfo *h = (HitInfo *)pInfo;
     if ((h->m_f2c < g_104454c0 || h->m_b36 || h->m_b37) && h->m_idx >= 0 && h->m_idx < 32) {
         int idx = h->m_idx;
@@ -316,6 +317,7 @@ void CBatSwarm::vfunc141(int *pRef, int unused, void *pInfo)
                 ((Slot265 *)this)->v265(idx);
         }
     }
+#undef pRef
 }
 // END FUNCTION
 

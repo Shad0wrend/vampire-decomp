@@ -349,8 +349,10 @@ bool CNPC_VAnimal::vfunc366(int a, int b, int c)
 
 // TARGET: CNPC_VAnimal::vfunc144
 // the game's 0x10360200: a tail call (jmp) of CAI_BaseNPCTroika::vfunc144
-void CNPC_VAnimal::vfunc144(int a0)
+void CNPC_VAnimal::vfunc144(void *a0)
 {
+#define a0 ((int)a0)
 	((CAI_BaseNPCTroika *)this)->CAI_BaseNPCTroika::vfunc144(a0);
+#undef a0
 }
 // END FUNCTION

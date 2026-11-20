@@ -34,30 +34,30 @@ public:
     virtual void vfunc130(int a);	// slot 130: CBaseAnimating::vfunc130(a), then the body array is reset (first body = the physics object at +0x36c, no link) and sub_1019bf80 runs on the count at +0x730
     void sub_1008df10(int a);	// CBaseAnimating::vfunc130 (stub 0x10009e6c), called directly
     virtual void vfunc134();
-    virtual void vfunc135(); virtual void vfunc136(); virtual void vfunc137(); virtual void vfunc138(); virtual void vfunc139();
-    virtual void vfunc140(); virtual void vfunc141(int a, int b, void *pInfo);	// slot 141 (TraceAttack): swaps the physics object of the body the info's short at +0x48 names (when it is inside the body count) with sub_100a68f0, then the base implementation
-    virtual void vfunc142(const CRagdollPropDamageInfo *pInfo); virtual void vfunc143(); virtual void vfunc144();	// slot 142 "CRagdollProp::OnTakeDamage"-like: forwards a copy of the info with bit 23 of the damage type added to the entity of the handle at +0xd5c when it is live, else the base implementation
-    virtual void vfunc145(); virtual void vfunc146(); virtual void vfunc147(); virtual void vfunc148(); virtual void vfunc149();
-    virtual void vfunc150(); virtual void vfunc151(); virtual void vfunc152(); virtual void vfunc153(); virtual void vfunc154();
-    virtual void vfunc155(); virtual void vfunc156(); virtual void vfunc157(); virtual char vfunc158(); virtual void vfunc159();
-    virtual void vfunc160(); virtual void vfunc161(); virtual void vfunc162(); virtual void vfunc163(); virtual void vfunc164();
-    virtual void vfunc165(); virtual void vfunc166(); virtual void vfunc167(); virtual void vfunc168x(); virtual void vfunc169();
-    virtual void vfunc170(); virtual void vfunc171(); virtual void vfunc172(); virtual void vfunc173(); virtual void vfunc174();
-    virtual void vfunc175(); virtual void vfunc176(); virtual void vfunc177(); virtual void vfunc178(); virtual void vfunc179();
+    virtual float vfunc135(float); virtual bool vfunc136(); virtual int vfunc137(); virtual int vfunc138(); virtual void vfunc139(CBaseEntity *);
+    virtual bool vfunc140(CBaseEntity *); virtual void vfunc141(class CVDmg_t *a, const Vector *b, struct CGameTrace *pInfo);	// slot 141 (TraceAttack): swaps the physics object of the body the info's short at +0x48 names (when it is inside the body count) with sub_100a68f0, then the base implementation
+    virtual int vfunc142(struct CTakeDamageInfo *pInfo); virtual int vfunc143(float, int); virtual void vfunc144(void *);	// slot 142 "CRagdollProp::OnTakeDamage"-like: forwards a copy of the info with bit 23 of the damage type added to the entity of the handle at +0xd5c when it is live, else the base implementation
+    virtual int vfunc145(); virtual void vfunc146(void *, const Vector &, void *); virtual bool vfunc147(CBaseEntity *); virtual void vfunc148(); virtual void vfunc149(int, int);
+    virtual void vfunc150(); virtual void vfunc151(class CBaseCombatWeapon *); virtual float vfunc152(); virtual int vfunc153(); virtual int vfunc154(int, int);
+    virtual void vfunc155(struct CGameTrace *, int, char, int, class CBasePlayer *, int, char); virtual void vfunc156(int); virtual bool vfunc157(int); virtual bool vfunc158(); virtual void vfunc159();
+    virtual bool vfunc160(const char *); virtual bool vfunc161(const char *); virtual char vfunc162(); virtual void vfunc163(); virtual bool vfunc164();
+    virtual void vfunc165(void *); virtual bool vfunc166(CBaseEntity *); virtual CBaseEntity *vfunc167(); virtual CBaseEntity *vfunc168(); virtual void vfunc169(const Vector *);
+    virtual void vfunc170(const Vector *); virtual void vfunc171(); virtual void vfunc172(); virtual void vfunc173(CBaseEntity *, CBaseEntity *, int, int); virtual void vfunc174(CBaseEntity *);
+    virtual void vfunc175(CBaseEntity *); virtual void vfunc176(CBaseEntity *); virtual void vfunc177(CBaseEntity *); virtual void vfunc178(CBaseEntity *); virtual void vfunc179();
     virtual void vfunc180(); virtual void vfunc181(const float *pPosition, const float *pAngles, const float *pVelocity);	// slot 181 "CRagdollProp::Teleport": moves the ragdoll bodies along with the entity: remembers the inverse of the root body's matrix, runs the base Teleport (sub_100ada20), and carries every other body to the new transform
     virtual void vfunc182(); virtual void vfunc183(); virtual void vfunc184();
-    virtual void vfunc185(); virtual void vfunc186(); virtual void vfunc187(); virtual void vfunc188(); virtual void vfunc189();
-    virtual void vfunc190(); virtual void vfunc191(); virtual void vfunc192(); virtual void vfunc193(); virtual void vfunc194x();
-    virtual void vfunc195x(); virtual void vfunc196(); virtual void vfunc197(); virtual void vfunc198(); virtual void vfunc199();
-    virtual void vfunc200(); virtual void vfunc201(); virtual void vfunc202(CBaseEntity *pOwner); virtual void vfunc203(); virtual void vfunc204();
-    virtual void vfunc205(); virtual void vfunc206(); virtual void vfunc207(); virtual void vfunc208(); virtual void vfunc209();
-    virtual void vfunc210(); virtual void vfunc211(); virtual void vfunc212(); virtual void vfunc213(); virtual void vfunc214();
-    virtual void vfunc215(); virtual void vfunc216(float *p); virtual float *vfunc217(); virtual void vfunc218(const float *absAngles); virtual void vfunc219();
-    virtual void vfunc220(); virtual void vfunc221(); virtual void vfunc222(); virtual void vfunc223(); virtual void vfunc224();
-    virtual void vfunc225(); virtual void vfunc226(void *pPhysics); virtual void vfunc227(); virtual void vfunc228(); virtual void vfunc229();	// slot 226 "VPhysicsUpdate" (real arg is IPhysicsObject*, unused): refreshes every ragdoll body's transform, the entity bounds/position and the collision flags; the body is 0x10155fb0
-    virtual void vfunc230(); virtual void vfunc231(); virtual void vfunc232(); virtual int vfunc233(int *pOut, int nMax); virtual void vfunc234();	// slot 233: copies the first nMax dwords of the element at +0x744 (one per 0x18 bytes, count at +0x730) into pOut and returns the count
-    virtual void vfunc235(); virtual void vfunc236(); virtual void vfunc237(); virtual void vfunc238(); virtual void vfunc239();
-    virtual void vfunc240(); virtual void vfunc241(); virtual void vfunc242(); virtual void vfunc243(); virtual void vfunc244();
+    virtual void vfunc185(struct CFireBulletsInfo *); virtual void vfunc186(); virtual CBaseEntity *vfunc187(); virtual void vfunc188(); virtual void vfunc189();
+    virtual float vfunc190(); virtual void vfunc191(int); virtual Vector vfunc192(); virtual Vector vfunc193(); virtual float *vfunc194();
+    virtual float *vfunc195(); virtual Vector vfunc196(); virtual Vector vfunc197(const Vector &, char, char); virtual float *vfunc198(); virtual void vfunc199(float *, float *);
+    virtual int vfunc200(); virtual bool vfunc201(CBaseEntity *, int, CBaseEntity **, int); virtual void vfunc202(CBaseEntity *pOwner); virtual float vfunc203(); virtual float vfunc204();
+    virtual void vfunc205(); virtual void vfunc206(); virtual bool vfunc207(); virtual void vfunc208(CBaseEntity *); virtual CBaseEntity *vfunc209();
+    virtual void vfunc210(); virtual unsigned int vfunc211(); virtual void vfunc212(string_t); virtual void vfunc213(const float *); virtual float *vfunc214();
+    virtual Vector *vfunc215(); virtual void vfunc216(const Vector &p); virtual float *vfunc217(); virtual void vfunc218(const float *absAngles); virtual float *vfunc219();
+    virtual float *vfunc220(); virtual float *vfunc221(); virtual int vfunc222(int); virtual bool vfunc223(); virtual void vfunc224();
+    virtual void vfunc225(); virtual void vfunc226(int pPhysics); virtual int vfunc227(struct CTakeDamageInfo *); virtual void vfunc228(int, int); virtual void vfunc229(int);	// slot 226 "VPhysicsUpdate" (real arg is IPhysicsObject*, unused): refreshes every ragdoll body's transform, the entity bounds/position and the collision flags; the body is 0x10155fb0
+    virtual void vfunc230(int, void *); virtual void vfunc231(void *, float, int, int); virtual void vfunc232(int); virtual int vfunc233(int *pOut, int nMax); virtual struct CGameTrace vfunc234(const Vector *);	// slot 233: copies the first nMax dwords of the element at +0x744 (one per 0x18 bytes, count at +0x730) into pOut and returns the count
+    virtual void vfunc235(); virtual void vfunc236(); virtual int vfunc237(); virtual void vfunc238(Vector *, Vector *, int, int); virtual bool vfunc239(float);
+    virtual int vfunc240(); virtual void vfunc241(); virtual void vfunc242(); virtual void vfunc243(); virtual void vfunc244();
     virtual void vfunc245(); virtual void vfunc246(); virtual void vfunc247(); virtual void vfunc248(); virtual void vfunc249();
     virtual void vfunc250(); virtual void vfunc251(); virtual void vfunc252(); virtual void vfunc253(); virtual void vfunc254();
     virtual void vfunc255(); virtual void vfunc256();

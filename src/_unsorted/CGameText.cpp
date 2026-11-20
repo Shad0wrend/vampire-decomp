@@ -6,9 +6,11 @@
 namespace lifted {
 int __stdcall sub_10004557(int);
 }
-int CGameText::vfunc173(int a0, int a1, int a2, int a3)
+void CGameText::vfunc173(CBaseEntity *a0, CBaseEntity *a1, int a2, int a3)
 {
-    return lifted::sub_10004557(a0);
+#define a0 ((int)a0)
+    lifted::sub_10004557(a0);
+#undef a0
 }
 // END FUNCTION
 

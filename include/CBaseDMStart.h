@@ -12,6 +12,6 @@ public:
 	void sub_1000cb8a();
 public:
 	datamap_t * vfunc82();
-	int vfunc147(int);
+	bool vfunc147(CBaseEntity *p0);
 	int m_field450;	// 0x450
 };

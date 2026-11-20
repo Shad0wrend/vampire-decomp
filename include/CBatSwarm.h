@@ -39,7 +39,7 @@ public:
 	int m_nBat[32];	// 0xbf8
 
 	// Slot 141, called directly so far; declared as a plain member.
-	void vfunc141(int *pRef, int unused, void *pInfo);
+	void vfunc141(class CVDmg_t *pRef, const Vector *unused, struct CGameTrace *pInfo);
 	void vfunc103();	// 0x100b87a0 (slot 103): spawn/init (model 0x1055a770, precaches Impact_Flesh_Emitter, randomises the 32 bat positions / velocities)
 	bool vfunc99(const Ray_t *pRay, unsigned int mask, CGameTrace *pTrace);	// 0x100b9c20 (slot 99): traces the ray against the 32 bat AABBs (+-16 units) using sub_1023f3d0 / sub_10240fd0
 

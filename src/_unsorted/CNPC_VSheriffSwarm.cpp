@@ -253,7 +253,7 @@ bool CNPC_VSheriffSwarm::vfunc366(int a0, int a1, int a2)
 
 // TARGET: CNPC_VSheriffSwarm::vfunc144
 // the game's 0x103b24f0: a tail call (jmp) of CNPC_VVampire::vfunc144
-void CNPC_VSheriffSwarm::vfunc144(int a0)
+void CNPC_VSheriffSwarm::vfunc144(void *a0)
 {
 	((CNPC_VVampire *)this)->CNPC_VVampire::vfunc144(a0);
 }

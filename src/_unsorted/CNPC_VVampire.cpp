@@ -103,8 +103,10 @@ int CNPC_VVampire::vfunc138()
 
 // TARGET: CNPC_VVampire::vfunc144
 // the game's 0x103c4f40: a tail call (jmp) of CNPC_VHuman::vfunc144
-void CNPC_VVampire::vfunc144(int a0)
+void CNPC_VVampire::vfunc144(void *a0)
 {
+#define a0 ((int)a0)
 	((CNPC_VHuman *)this)->CNPC_VHuman::vfunc144(a0);
+#undef a0
 }
 // END FUNCTION

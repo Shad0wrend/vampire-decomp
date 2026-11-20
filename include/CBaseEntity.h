@@ -85,50 +85,118 @@ public:
 	virtual void vfunc123(); virtual int vfunc124();	// slot 124 "DrawDebugTextOverlays"-like: returns the next free overlay text line
 	virtual void vfunc125(); virtual int vfunc126(int a); virtual int vfunc127(int a); virtual bool vfunc128(); virtual void vfunc129();
 	virtual void vfunc130(int a); virtual int vfunc131(); virtual void vfunc132(); virtual void vfunc133();
-	int vfunc137();	// slot 137: returns 0 (plain member here so the void filler overrides in the subclasses keep compiling)
+	// Its own slots 134..240 (the game's table has 241), in slot order with the slot's signature.
+	virtual void vfunc134();	// slot 134: the signature of the matched overrides
+	virtual float vfunc135(float f);	// slot 135: returns its argument
+	virtual bool vfunc136();	// slot 136: the signature of the matched overrides
+	virtual int vfunc137();	// slot 137: returns 0
+	virtual int vfunc138();	// slot 138: the signature of the matched overrides
+	virtual void vfunc139(CBaseEntity *);	// slot 139: the signature of the matched overrides
+	virtual bool vfunc140(CBaseEntity *pAttacker);	// "CBaseEntity::PassesDamageFilter": scope trace (entity name), true without a damage filter, else slot 241(pAttacker) of the entity behind the handle at +0x220
+	virtual void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace);	// slot 141 "CBaseEntity::TraceAttack" (ret 0xc): damage record, shot direction (x4.0f spread), trace; hits the physics object at +0x36c slot 31 and slots 145 / 146
+	virtual int vfunc142(CTakeDamageInfo *pInfo);	// slot 142 body 0x100a0e40 "CBaseEntity::OnTakeDamage" (plain member like vfunc143)
+	virtual int vfunc143(float flHealth, int bitsDamageType);	// "CBaseEntity::TakeHealth": scope trace (entity name), when the edict at +0x2e0 is set and the take-damage mode at +0x1fc is above 1 and the health at +0x210 is below the maximum at +0x208, adds flHealth (truncated) clamped to the maximum and returns 1, else 0
+	virtual void vfunc144(void *pInfo);	// "CBaseEntity::Event_Killed": scope trace (entity name), take-damage mode (+0x1fc) = 0, +0x200 = 2, then sub_101cd940(this); takes one stack argument (the damage info), unused
+	virtual int vfunc145();	// slot 145: the signature of the matched overrides
+	virtual void vfunc146(void *pInfo, const Vector &vecDir, void *pTrace);
+	virtual bool vfunc147(CBaseEntity *);	// slot 147 (master check: is this master triggered by pActivator), called directly
+	virtual void vfunc148();	// slot 148: placeholder, nothing matched yet
+	virtual void vfunc149(int, int);	// slot 149: the signature of the matched overrides
+	virtual void vfunc150();	// slot 150: placeholder, nothing matched yet
+	virtual void vfunc151(class CBaseCombatWeapon *);	// slot 151: the signature of the matched overrides
+	virtual float vfunc152();	// slot 152: the constant 0.0f
+	virtual int vfunc153();	// true when the velocity at +0x3d4 differs from the zero vector
+	virtual int vfunc154(int a, int b);	// slot 154: -1 in state 4; 0x34 when the state is set and b == 0x47; else the engine random stream's RandomInt(0, 4)
+	virtual void vfunc155(struct CGameTrace *pTrace, int decalIndex, char bFlag, int a4, class CBasePlayer *pPlayer, int nType, char bTrace);	// slot 155 "CBaseEntity::DecalTrace" (ret 0x1c): trace fields +0xc endpos, +0x40 surface props, +0x4c entity, +0x50 hitbox
+	virtual void vfunc156(int);	// slot 156: the signature of the matched overrides
+	virtual bool vfunc157(int);	// slot 157: the signature of the matched overrides
+	virtual bool vfunc158();
+	virtual void vfunc159();	// slot 159: placeholder, nothing matched yet
+	virtual bool vfunc160(const char *name);	// as in CBaseEntity (transplant)
+	virtual bool vfunc161(const char *name);	// "CBaseEntity::HasLinkedDoor": scope trace (entity name), true when the string at +0x20c is set and equals name (case-insensitive)
+	virtual char vfunc162();	// slot 162: the signature of the matched overrides
+	virtual void vfunc163();	// slot 163: placeholder, nothing matched yet
+	virtual bool vfunc164();
+	virtual void vfunc165(void *pEdict);	// slot 165: slot 166(the entity of the edict, or null)
+	virtual bool vfunc166(CBaseEntity *pEnt);	// slot 166: true unless pEnt is set and its slot 164 answers false	// slot 164: false when the flags from slot 211 have bit 4; true when slot 92 returns 1, 6 or 2; else sub_100b5110()
+	virtual CBaseEntity *vfunc167();	// slot 167: placeholder, nothing matched yet
+	virtual CBaseEntity *vfunc168();
+	virtual void vfunc169(const Vector *);	// slot 169: placeholder, nothing matched yet
+	virtual void vfunc170(const Vector *);	// slot 170: the signature of the matched overrides
+	virtual void vfunc171();	// slot 171 "CBaseEntity::SetMovedir": scope trace (entity name), sets the direction vector at +0x190 from the angles (slot 221): (0, 0, 1) for (0, -1, 0), (0, 0, -1) for (0, -2, 0), else AngleVectors forward; then slot 64(vec3_origin)
+	virtual void vfunc172();	// slot 172: placeholder, nothing matched yet
+	virtual void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value);	// "CBaseEntity::Use": scope trace (entity name), calls the use function pointer at +0x1f0 (when set), else forwards the arguments to slot 173 of the entity behind the handle at +0x254 (when it resolves)
+	virtual void vfunc174(CBaseEntity *pOther);	// "CBaseEntity::StartTouch": scope trace (entity name), when the handle at +0x254 resolves calls slot 174(pOther) on that entity
+	virtual void vfunc175(CBaseEntity *pOther);	// "CBaseEntity::Touch": scope trace (entity name), calls the touch function pointer at +0x1ec (when set) with pOther, then forwards pOther to slot 175 of the entity behind the handle at +0x254 (when it resolves)
+	virtual void vfunc176(CBaseEntity *pOther);	// "CBaseEntity::EndTouch": scope trace (entity name), when the handle at +0x254 resolves calls slot 176(pOther) on that entity
+	virtual void vfunc177(CBaseEntity *);	// slot 177: the signature of the matched overrides
+	virtual void vfunc178(CBaseEntity *pOther);	// "CBaseEntity::Blocked": scope trace (entity name), calls the function pointer at +0x1f4 (when set) with pOther, then forwards pOther to slot 178 of the entity behind the handle at +0x254 (when it resolves)
+	virtual void vfunc179();	// slot 179: the signature of the matched overrides
+	virtual void vfunc180();
+	virtual void vfunc181(const float *, const float *, const float *);	// slot 181: the signature of the matched overrides
+	virtual void vfunc182();	// slot 182: placeholder, nothing matched yet
+	virtual void vfunc183();	// slot 183: placeholder, nothing matched yet
+	virtual void vfunc184();	// slot 184: placeholder, nothing matched yet
+	virtual void vfunc185(struct CFireBulletsInfo *pInfo);	// slot 185 "FireBullets" (plain member)
+	virtual void vfunc186();	// slot 186: placeholder, nothing matched yet
+	virtual CBaseEntity *vfunc187();	// slot 187: the signature of the matched overrides
+	virtual void vfunc188();	// slot 188: placeholder, nothing matched yet
+	virtual void vfunc189();	// slot 189: placeholder, nothing matched yet
+	virtual float vfunc190();	// slot 190: the constant 0.0f
+	virtual void vfunc191(int);	// slot 191: the signature of the matched overrides
+	virtual Vector vfunc192();	// slot 192 "CBaseEntity::WorldSpaceCenter": the center of the collision bounds (CCollisionProperty at +0x270, OBBCenter / CollisionToWorldSpace inlined), returned by value
+	virtual Vector vfunc193();	// slot 193 "CBaseEntity::EyePosition": the absolute origin (slot 217) plus the view offset (+0x184), returned by value
+	virtual float *vfunc194();
+	virtual float *vfunc195();
+	virtual Vector vfunc196();	// slot 196: returns slot 193 (EyePosition) by value
+	virtual Vector vfunc197(const Vector &posSrc, char a, char b);	// "CBaseEntity::BodyTarget": scope trace, returns slot 192 (WorldSpaceCenter) by value
+	virtual float *vfunc198();	// slot 198: returns &field at +0x3d4 (the velocity)
+	virtual void vfunc199(float *vVelocity, float *vAngVelocity);	// "CBaseEntity::GetVelocity": scope trace (entity name), asks the physics object at +0x36c (slot 40) or else copies the fields at +0x3d4 / +0x3c8
+	virtual int vfunc200();	// slot 200: the signature of the matched overrides
+	virtual bool vfunc201(CBaseEntity *pEntity, int traceMask, CBaseEntity **ppBlocker, int nOrigin);	// slot 201 "CBaseEntity::FVisible" (ret 0x10): target entity, trace mask, blocker out, hit-origin kind (0..10)
+	virtual void vfunc202(CBaseEntity *pOwner);	// "CBaseEntity::SetOwnerEntity": scope trace (entity name), when the owner behind the handle at +0x364 differs from pOwner stores pOwner's handle (-1 for null) and calls slot 25 of the object at +0x36c (when set)
+	virtual float vfunc203();	// slot 203 "CBaseEntity::GetAttackDamageScale": scope trace (entity name), the product of the modifiers of the list at +0x230 (head index +0x23c, 12 byte nodes with the next index at +8) that are not disabled
+	virtual float vfunc204();	// slot 204 "CBaseEntity::GetReceivedDamageScale": scope trace (entity name), the product of the scales of the active modifiers in the same list (head index +0x23c, 12 byte nodes, next index at +8), 1.0f without any; declared as a plain member
+	virtual void vfunc205();	// slot 205: placeholder, nothing matched yet
+	virtual void vfunc206();	// slot 206: placeholder, nothing matched yet
+	virtual bool vfunc207();	// "CBaseEntity::IsCurrentlyTouching": scope trace (entity name), returns HasDataObjectType(1)
+	virtual void vfunc208(CBaseEntity *pEnt);	// "CBaseEntity::SetGroundEntity": scope trace (entity name), stores pEnt's handle at +0x384 (-1 for null), then AddFlag(1) / RemoveFlag(1)
+	virtual CBaseEntity *vfunc209();	// slot 209: placeholder, nothing matched yet
+	virtual void vfunc210();	// slot 210: placeholder, nothing matched yet
+	virtual unsigned int vfunc211();	// slot 211: placeholder, nothing matched yet
+	virtual void vfunc212(string_t);	// as in CBaseAnimating (transplant)
+	virtual void vfunc213(const float *size);	// "CBaseEntity::SetSize": scope trace, copies the three floats to +0x38c
+	virtual float *vfunc214();	// "CBaseEntity::GetSize": returns &field at +0x38c
+	virtual Vector *vfunc215();	// slot 215: the signature of the matched overrides
+	virtual void vfunc216(const Vector &absOrigin);	// slot 216 "CBaseEntity::SetAbsOrigin" (plain member): scope trace (entity name), slot 98, sub_100b5340(0x10800, 0), sub_100b52a0(), clears bit 11 of +0x268, stores the origin at +0x404 and as column 3 of the matrix at +0x130, then the local origin at +0x41c (the origin itself, or transformed into the move parent's space) and the byte at +0x1b1 when it changed
+	virtual float *vfunc217();	// "CBaseEntity::GetAbsOrigin": scope trace (entity name), calls slot 98 when bit 11 of +0x268 is set, returns &field at +0x404
+	virtual void vfunc218(const float *absAngles);	// "CBaseEntity::SetAbsAngles": scope trace (entity name), CalcAbsolutePosition (slot 98), InvalidatePhysicsRecursive(0x800, 0x3000), clears the dirty transform flag (bit 11 of +0x268), stores the angles at +0x410, rebuilds the coordinate frame (+0x130) from them and the origin (+0x404), and stores the angles relative to the move parent (handle +0x25c) in +0x428 (flagging the network state change at +0x1b1) when they changed
+	virtual float *vfunc219();	// "CBaseEntity::GetAbsAngles": scope trace (entity name), calls slot 98 when bit 11 of +0x268 is set, returns &field at +0x410
+	virtual float *vfunc220();	// "CBaseEntity::GetOrigin": returns &field at +0x41c
+	virtual float *vfunc221();	// "CBaseEntity::GetAngles": returns &field at +0x428
+	virtual int vfunc222(int a);	// "CBaseEntity::GetSoundEmissionOrigin": scope trace, calls slot 192(a), returns a
+	virtual bool vfunc223();	// slot 223: the signature of the matched overrides
+	virtual void vfunc224();	// slot 224: placeholder, nothing matched yet
+	virtual void vfunc225();	// slot 225 (plain member): unless the physics object at +0x36c is null, calls sub_1002ee60(this), sub_10158520(object, this) and clears +0x36c
+	virtual void vfunc226(int a);
+	virtual int vfunc227(struct CTakeDamageInfo *pInfo);	// slot 227 "CBaseEntity::VPhysicsTakeDamage" (0x100a1580, ret 4, always returns 1): scope trace (entity name or "NULL ENTITY"); damage = info+0x30 (or CVDmg_t::GetDmg of info+0) * 100.0f; with an attacker (info+0x28) traces from attacker slot 217 origin to this slot 217 origin (CTraceFilterWorldOnly 0x10450a58, Ray_t, engine trace global 0x1070b254 slot 4) and applies a force through the physics object (+0x36c) slot 31 (ApplyForceOffset) / slot 30; globals 0x106b8654 (slot 1 = IsPaused-like, +0x28 = frametime) and 0x10738960 (debug trace check)
+	virtual void vfunc228(int a, int b);
+	virtual void vfunc229(int);	// slot 229: the signature of the matched overrides
+	virtual void vfunc230(int index, void *pEvent);	// slot 230 "CBaseEntity::VPhysicsCollision": scope trace (entity name), with the event (gamevcollisionevent_t: objects, surface props, delta time at +0x14, speed at +0x18, entities at +0x68) and neither surface being the 0x58 material, plays the impact sound (sub_10031d50) and runs sub_10032180 / sub_10032380
+	virtual void vfunc231(void *pObject, float energy, int surfaceProps, int surfacePropsHit);	// slot 231 "CBaseEntity::VPhysicsFriction": scope trace (entity name), unless either surface data record (physprops slot 5 of surfacePropsHit / surfaceProps) has the word 0x58 at +0x70 forwards (this, pObject, energy, surfaceProps) to sub_100324b0
+	virtual void vfunc232(int a);	// "CBaseEntity::UpdatePhysicsShadow": scope trace (entity name), unless slot 94() returns 7 and when the object at +0x36c is set, calls its slot 46 with slot 217(slot 219(0, a))
+	virtual int vfunc233(int *pList, int maxObjects);	// "CBaseEntity::VPhysicsGetObjectList": scope trace (entity name), stores the object at +0x36c in pList[0] and returns 1 when it is set and maxObjects > 0, else 0
+	virtual struct CGameTrace vfunc234(const Vector *pDelta);	// slot 234: the trace of the push, by value
+	virtual void vfunc235();	// slot 235: placeholder, nothing matched yet
+	virtual void vfunc236();	// slot 236: placeholder, nothing matched yet
+	virtual int vfunc237();	// "CBaseEntity::PhysicsSolidMaskForEntity": scope trace (entity name), a solid mask picked by bit 13 of GetFlags() and the dword at +0xa8
+	virtual void vfunc238(Vector *pVelocity, Vector *pAngVelocity, int c, int d);	// "CBaseEntity::PerformCustomPhysics": only its scope trace
+	virtual bool vfunc239(float flDelta);	// slot 239 "CBaseEntity::PhysicsPushRotate": adds flDelta to the accumulator at +0x3f4 (access it as *(float *)((char *)this + 0x3f4); it is the CBaseToggle/CBaseEntity local-time field), returns false when the angular velocity (+0x3c8..0x3d0) is zero, else PerformRotatePush through the global CPhysicsPushedEntities object at 0x106bbae4 and returns its result	// slot 234 "CBaseEntity::PhysicsPushEntity": scope trace, warns when the move parent is set, hull-traces the entity from its origin to origin+pDelta (sub_10035030 / PhysicsTrace.h) and fills the 0x54-byte CGameTrace; then moves the entity and dispatches the impact	// "CBaseEntity::DrawAbsBoxOverlay"	// "CBaseEntity::DrawBBoxOverlay": scope trace (entity name or NULL ENTITY); with an edict (+0x2e0): sub_10142e20(this, 0xff, 100, 0, 0, 0); with bit 0 of m_bDebug2b5 (+0x2b5) the collision bounds (slot 3 of the property at +0x270) are turned into center / half sizes and handed to sub_10142aa0 (8 args, cdecl); with slot 211 (+0x34c) & 0x40 the OBB mins / maxs (slots 1 / 2) give the center, the abs origin (slot 217, +0x364) is added and sub_10144a30 is called (9 args)
+	virtual int vfunc240();	// slot 240
 
-	// Slots whose callers call them directly, so far only declared as plain members.
-	void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace);	// slot 141 "CBaseEntity::TraceAttack" (ret 0xc): damage record, shot direction (x4.0f spread), trace; hits the physics object at +0x36c slot 31 and slots 145 / 146
-	bool vfunc140(CBaseEntity *pAttacker);	// "CBaseEntity::PassesDamageFilter": scope trace (entity name), true without a damage filter, else slot 241(pAttacker) of the entity behind the handle at +0x220
-	int vfunc142(CTakeDamageInfo *pInfo);	// slot 142 body 0x100a0e40 "CBaseEntity::OnTakeDamage" (plain member like vfunc143)
-	int vfunc143(float flHealth, int bitsDamageType);	// "CBaseEntity::TakeHealth": scope trace (entity name), when the edict at +0x2e0 is set and the take-damage mode at +0x1fc is above 1 and the health at +0x210 is below the maximum at +0x208, adds flHealth (truncated) clamped to the maximum and returns 1, else 0
-	void vfunc146(void *pInfo, const Vector &vecDir, void *pTrace);
+	// Other members named after slots (overloads of another signature: plain, declared after the slots).
 	void sub_102692d0(int cCount, float flNoise, struct CGameTrace *ptr, Vector vecDir);	// 0x102692d0 (ret 0x18): the TraceBleed loop of TraceAttack with an explicit count / noise / direction (slot 158 gate, +0x208 decrement)	// slot 146 "CBaseEntity::TraceAttack" (0x10268ef0, ret 0xc): skipped when slot 145 (returns -1) is -1 / 0x14, when the info's int damage at +0x4 is 0.0f or when its byte damage type at +0x10 & 0xc7 is 0; then if !slot 158(), +0x208 must be positive and is decremented (or return); shot count / spread from the damage (damage < 10: 1 shot 0.1f, < 25: 2 shots 0.2f, else 4 shots 0.3f); per shot: random spread via the engine random object 0x1070b244 slot 1, direction = -vecDir, a ray built from trace->m_endpos (+0xc), CTraceFilterSimple(this, 0), g_1070b254->vfunc4(ray, 0x400b, filter, &trace), debug sub_10146570 when g_10738964 slot 1 is false and +0x2c is set, and on a partial hit sub_101cfe10(&trace, slot145(1), 1)
-	int vfunc153();	// true when the velocity at +0x3d4 differs from the zero vector
-	int vfunc154(int a, int b);	// slot 154: -1 in state 4; 0x34 when the state is set and b == 0x47; else the engine random stream's RandomInt(0, 4)
-	void vfunc155(struct CGameTrace *pTrace, int decalIndex, char bFlag, int a4, class CBasePlayer *pPlayer, int nType, char bTrace);	// slot 155 "CBaseEntity::DecalTrace" (ret 0x1c): trace fields +0xc endpos, +0x40 surface props, +0x4c entity, +0x50 hitbox
-	bool vfunc158();
-	void vfunc165(void *pEdict);	// slot 165: slot 166(the entity of the edict, or null)
-	bool vfunc161(const char *name);	// "CBaseEntity::HasLinkedDoor": scope trace (entity name), true when the string at +0x20c is set and equals name (case-insensitive)
-	void vfunc168();
-	void vfunc174(CBaseEntity *pOther);	// "CBaseEntity::StartTouch": scope trace (entity name), when the handle at +0x254 resolves calls slot 174(pOther) on that entity
-	void vfunc175(CBaseEntity *pOther);	// "CBaseEntity::Touch": scope trace (entity name), calls the touch function pointer at +0x1ec (when set) with pOther, then forwards pOther to slot 175 of the entity behind the handle at +0x254 (when it resolves)
-	void vfunc176(CBaseEntity *pOther);	// "CBaseEntity::EndTouch": scope trace (entity name), when the handle at +0x254 resolves calls slot 176(pOther) on that entity
-	void vfunc178(CBaseEntity *pOther);	// "CBaseEntity::Blocked": scope trace (entity name), calls the function pointer at +0x1f4 (when set) with pOther, then forwards pOther to slot 178 of the entity behind the handle at +0x254 (when it resolves)
-	void vfunc180();
-	void vfunc194();
-	void vfunc195();
-	int vfunc196(int a);	// slot 196: forwards its argument to slot 193 and returns it
-	int vfunc197(int a, int b, int c, int d);	// "CBaseEntity::BodyTarget": scope trace, calls slot 192(a), returns a
-	bool vfunc201(CBaseEntity *pEntity, int traceMask, CBaseEntity **ppBlocker, int nOrigin);	// slot 201 "CBaseEntity::FVisible" (ret 0x10): target entity, trace mask, blocker out, hit-origin kind (0..10)
 	void sub_100a72e0(CBaseEntity *pTarget, int nOrigin, Vector *pOut);	// 0x100a72e0 "CBaseEntity::FVisibleTargetOrigin": the target point for a hit-origin kind (0..10), reads the target's collision property at +0x270
-	void vfunc202(CBaseEntity *pOwner);	// "CBaseEntity::SetOwnerEntity": scope trace (entity name), when the owner behind the handle at +0x364 differs from pOwner stores pOwner's handle (-1 for null) and calls slot 25 of the object at +0x36c (when set)
-	bool vfunc207();	// "CBaseEntity::IsCurrentlyTouching": scope trace (entity name), returns HasDataObjectType(1)
-	void vfunc208(CBaseEntity *pEnt);	// "CBaseEntity::SetGroundEntity": scope trace (entity name), stores pEnt's handle at +0x384 (-1 for null), then AddFlag(1) / RemoveFlag(1)
-	void vfunc213(const float *size);	// "CBaseEntity::SetSize": scope trace, copies the three floats to +0x38c
-	float *vfunc214();	// "CBaseEntity::GetSize": returns &field at +0x38c
-	float *vfunc217();	// "CBaseEntity::GetAbsOrigin": scope trace (entity name), calls slot 98 when bit 11 of +0x268 is set, returns &field at +0x404
-	void vfunc218(const float *absAngles);	// "CBaseEntity::SetAbsAngles": scope trace (entity name), CalcAbsolutePosition (slot 98), InvalidatePhysicsRecursive(0x800, 0x3000), clears the dirty transform flag (bit 11 of +0x268), stores the angles at +0x410, rebuilds the coordinate frame (+0x130) from them and the origin (+0x404), and stores the angles relative to the move parent (handle +0x25c) in +0x428 (flagging the network state change at +0x1b1) when they changed
-	float *vfunc219();	// "CBaseEntity::GetAbsAngles": scope trace (entity name), calls slot 98 when bit 11 of +0x268 is set, returns &field at +0x410
-	float *vfunc220();	// "CBaseEntity::GetOrigin": returns &field at +0x41c
-	float *vfunc221();	// "CBaseEntity::GetAngles": returns &field at +0x428
-	int vfunc222(int a);	// "CBaseEntity::GetSoundEmissionOrigin": scope trace, calls slot 192(a), returns a
-	void vfunc226(int a);
-	void vfunc228(int a, int b);
-	void vfunc232(int a);	// "CBaseEntity::UpdatePhysicsShadow": scope trace (entity name), unless slot 94() returns 7 and when the object at +0x36c is set, calls its slot 46 with slot 217(slot 219(0, a))
-	int vfunc233(int *pList, int maxObjects);	// "CBaseEntity::VPhysicsGetObjectList": scope trace (entity name), stores the object at +0x36c in pList[0] and returns 1 when it is set and maxObjects > 0, else 0
-	int vfunc237();	// "CBaseEntity::PhysicsSolidMaskForEntity": scope trace (entity name), a solid mask picked by bit 13 of GetFlags() and the dword at +0xa8
-	void vfunc238(int a, int b, int c, int d);
 
 	char sub_100ab020(int a, int b, int c, int d, int e);	// slot 86 "CBaseEntity::ShouldTransmit": scope trace (entity name); true while the force-transmit time at +0x90 is ahead of curtime, false with bit 6 of +0x19c, else the visibility test of the network property at +0x2d4 for the viewer edict b
 	const char *sub_1000ea11();
@@ -367,8 +435,4 @@ public:
 	Vector m_vecVelocity3bc;	// 0x03bc
 	float m_angVel3c8[3];	// 0x03c8: the angular velocity SimulateAngles integrates
 	float m_vel3d4[3];
-	void vfunc212(int set);	// as in CBaseAnimating (transplant)
-	int vfunc240();	// slot 240
-	void vfunc185(struct CFireBulletsInfo *pInfo);	// slot 185 "FireBullets" (plain member)
-	bool vfunc160(const char *name);	// as in CBaseEntity (transplant)
 };

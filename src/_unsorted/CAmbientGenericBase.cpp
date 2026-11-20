@@ -113,11 +113,11 @@ CAmbientGenericBase::CAmbientGenericBase(char bAddAsDefault)
 	}
 	*(int *)(p + 0x4c) = 0;
 	e->CBaseEntity::vfunc93(0, 0);
-	e->vfunc202(0);
+	e->CBaseEntity::vfunc202(0);
 	e->CBaseEntity::vfunc6(0);
 	e->sub_100b12e0(0);
 	e->sub_100b1750(0);
-	(e->*(PfnStr)&CBaseEntity::vfunc212)(string_t(0));
+	e->CBaseEntity::vfunc212(string_t(0));
 	e->sub_1009edc0(g_1070d1b0, g_1070d1b0);
 	e->sub_100b37a0();
 	*(float *)(p + 0x3f0) = 1.0f;

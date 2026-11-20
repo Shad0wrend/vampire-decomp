@@ -15430,8 +15430,8 @@ void CBaseCombatCharacter::sub_100521e0()
 
 // FUNCTION: 0x100532b0 size=0x8fe
 // VC6 orders `or ebx, -1` / `mov ebp, 1` of this function by the unit's count of names. WORKAROUND dial: the
-// typedefs after the includes (of 0..80, 0..9 and 37..73 match under the headers with IRestore's slots of
-// 2026-11-20; 10..36 and 74..80 swap the two).
+// typedefs after the includes (of 0..80, 8..32 and 72..80 match under the headers with CBaseEntity's slots 134..240 of
+// 2026-11-20; the others swap the two).
 #include "vampire_all.h"
 // TARGET: CBaseCombatCharacter::sub_100532b0
 #include "CBasePlayer.h"
@@ -15466,41 +15466,6 @@ typedef int pcd_dial16;
 typedef int pcd_dial17;
 typedef int pcd_dial18;
 typedef int pcd_dial19;
-typedef int pcd_dial20;
-typedef int pcd_dial21;
-typedef int pcd_dial22;
-typedef int pcd_dial23;
-typedef int pcd_dial24;
-typedef int pcd_dial25;
-typedef int pcd_dial26;
-typedef int pcd_dial27;
-typedef int pcd_dial28;
-typedef int pcd_dial29;
-typedef int pcd_dial30;
-typedef int pcd_dial31;
-typedef int pcd_dial32;
-typedef int pcd_dial33;
-typedef int pcd_dial34;
-typedef int pcd_dial35;
-typedef int pcd_dial36;
-typedef int pcd_dial37;
-typedef int pcd_dial38;
-typedef int pcd_dial39;
-typedef int pcd_dial40;
-typedef int pcd_dial41;
-typedef int pcd_dial42;
-typedef int pcd_dial43;
-typedef int pcd_dial44;
-typedef int pcd_dial45;
-typedef int pcd_dial46;
-typedef int pcd_dial47;
-typedef int pcd_dial48;
-typedef int pcd_dial49;
-typedef int pcd_dial50;
-typedef int pcd_dial51;
-typedef int pcd_dial52;
-typedef int pcd_dial53;
-typedef int pcd_dial54;
 
 extern CVStatList_t g_109f0b40;
 void __cdecl sub_10012a8a();
@@ -102339,7 +102304,7 @@ void CRagdollProp::sub_101563b0(int unused, int index)
 	float *pb = (float *)this + 0x2fa + index * 3;
 	pb[0] = b[0]; pb[1] = b[1]; pb[2] = b[2];
 	if (index == 0) {
-		vfunc216((float *)this + 0x2a0);
+		vfunc216(*(const Vector *)((float *)this + 0x2a0));
 		sub_100a53d0(index);
 	}
 }
@@ -107960,7 +107925,8 @@ void CBasePlayer::sub_1016f2a0(const char *pszFile)
 // FUNCTION: 0x1016fa90 size=0x35b
 // VC6 orders two frame slots of this function by the unit's count of names (no CUnknown101d7520.h here; the weapon
 // base change of 2026-11-19 flipped them with it). WORKAROUND dial: the typedefs after the includes (of 0..130,
-// 15..28 and 79..92 match under the headers with IRestore's slots of 2026-11-20; the others swap the two slots).
+// 0..9, 60..73 and 124..130 match under the headers with CBaseEntity's slots 134..240 of 2026-11-20; the
+// others swap the two slots).
 #include "CBasePlayer.h"
 #include "CUnknown101daec0.h"
 #include "CUnknown101e56e0.h"
@@ -107996,6 +107962,51 @@ typedef int pcd_dial17;
 typedef int pcd_dial18;
 typedef int pcd_dial19;
 typedef int pcd_dial20;
+typedef int pcd_dial21;
+typedef int pcd_dial22;
+typedef int pcd_dial23;
+typedef int pcd_dial24;
+typedef int pcd_dial25;
+typedef int pcd_dial26;
+typedef int pcd_dial27;
+typedef int pcd_dial28;
+typedef int pcd_dial29;
+typedef int pcd_dial30;
+typedef int pcd_dial31;
+typedef int pcd_dial32;
+typedef int pcd_dial33;
+typedef int pcd_dial34;
+typedef int pcd_dial35;
+typedef int pcd_dial36;
+typedef int pcd_dial37;
+typedef int pcd_dial38;
+typedef int pcd_dial39;
+typedef int pcd_dial40;
+typedef int pcd_dial41;
+typedef int pcd_dial42;
+typedef int pcd_dial43;
+typedef int pcd_dial44;
+typedef int pcd_dial45;
+typedef int pcd_dial46;
+typedef int pcd_dial47;
+typedef int pcd_dial48;
+typedef int pcd_dial49;
+typedef int pcd_dial50;
+typedef int pcd_dial51;
+typedef int pcd_dial52;
+typedef int pcd_dial53;
+typedef int pcd_dial54;
+typedef int pcd_dial55;
+typedef int pcd_dial56;
+typedef int pcd_dial57;
+typedef int pcd_dial58;
+typedef int pcd_dial59;
+typedef int pcd_dial60;
+typedef int pcd_dial61;
+typedef int pcd_dial62;
+typedef int pcd_dial63;
+typedef int pcd_dial64;
+typedef int pcd_dial65;
 
 class ICommandLine
 {
@@ -108323,7 +108334,7 @@ void CBasePlayer::sub_101707c0(int unused, int bTouch, const char *pszLandmark)
 	CBaseLandmark *pLandmark = (CBaseLandmark *)sub_101c7690(pszLandmark, 0);
 	if (pLandmark) {
 		if (*(unsigned char *)&pLandmark->m_flags204 & 1) {
-			vfunc216(pLandmark->vfunc217());
+			vfunc216(*(const Vector *)pLandmark->vfunc217());
 			vfunc218(pLandmark->vfunc219());
 			float *pAngles = pLandmark->vfunc219();
 			m_vec206c.x = pAngles[0];
@@ -108331,7 +108342,7 @@ void CBasePlayer::sub_101707c0(int unused, int bTouch, const char *pszLandmark)
 			m_vec206c.z = pAngles[2];
 			sub_100b3b00();
 		} else if ((unsigned char)(pLandmark->m_flags204 >> 1) & 1) {
-			vfunc216(pLandmark->vfunc217());
+			vfunc216(*(const Vector *)pLandmark->vfunc217());
 			sub_100b3b00();
 		}
 		pLandmark->m_Output4f8.sub_100cd660(this, pLandmark, 0);
@@ -114018,10 +114029,10 @@ int CUnknown10182dd0::sub_10182dd0(int a0, int a1)
 #define U1(n) virtual void u##n();
 #define U10(n) U1(n##0) U1(n##1) U1(n##2) U1(n##3) U1(n##4) U1(n##5) U1(n##6) U1(n##7) U1(n##8) U1(n##9)
 
-struct CViewModelSlots : CBaseEntity	// slots 134..265 are placeholders, then the model setter
+struct CViewModelSlots : CBaseEntity	// slots 241..265 are placeholders, then the model setter
 {
-	U1(134) U1(135) U1(136) U1(137) U1(138) U1(139)
-	U10(14) U10(15) U10(16) U10(17) U10(18) U10(19) U10(20) U10(21) U10(22) U10(23) U10(24) U10(25)
+	U1(241) U1(242) U1(243) U1(244) U1(245) U1(246) U1(247) U1(248) U1(249)
+	U10(25)
 	U1(260) U1(261) U1(262) U1(263) U1(264) U1(265)
 	virtual void vfunc266(const char *pszModel);	// slot 266 (+0x428)
 };
@@ -175210,7 +175221,7 @@ void CSecCamera::sub_1020c4f0(int nState)
 		case 8:
 			m_n670 = 0;
 			((CBaseToggle *)this)->sub_101c17e0(&m_vecEnd7b4, *(int *)&m_flF78c);
-			m_flNextStateTime7a0 = (float)abs((int)(m_vecEnd7b4.y - s219()[1])) / m_flF78c + gpGlobals->curtime;
+			m_flNextStateTime7a0 = (float)abs((int)(m_vecEnd7b4.y - vfunc219()[1])) / m_flF78c + gpGlobals->curtime;
 			sub_1020c9a0(m_sPanSnd);
 			return;
 		default:
@@ -175296,6 +175307,7 @@ void CSecCamera::sub_1020c890()
 #include "ScopeTrace.h"
 #include "CSecCamera.h"
 #include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
 #include "engineserver.h"
 #include "engineiface.h"
 
@@ -175314,7 +175326,7 @@ void CSecCamera::sub_1020c9a0(const char *pszSound)
 		float flVolume = (pszSound == m_sAlarmSnd) ? 1.0 : 0.6;
 		int nSoundLevel = sub_10228350((pszSound == m_sAlarmSnd ? 2.0 : 1.25) * m_fVisRange);
 
-		CPASAttenuationFilter filter(this, (soundlevel_t)nSoundLevel);
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this, (soundlevel_t)nSoundLevel);
 		filter.MakeReliable();
 		enginesound->vfunc2(&filter, ENTINDEX((void *)m_pEdict2e0), 3, pszSound, flVolume,
 			nSoundLevel, 0, 100, 0, 0, 1, 0);
@@ -290782,7 +290794,7 @@ void CNPC_VMingXiao::sub_103990c0()
 	}
 	CBaseEntity *pEnt = vfunc167();
 	if (pEnt) {
-		Vector vecOrigin = *(Vector *)((CNPC_VMingXiao *)LOOK(m_h6718))->vfunc220_slot();
+		Vector vecOrigin = *(Vector *)((CNPC_VMingXiao *)LOOK(m_h6718))->vfunc220();
 		Vector vecTarget;
 		sub_102c36d0(vecOrigin, pEnt, MINGXIAO_THROW_POWER, 0, &vecTarget);
 		CBoundsView *pb = (CBoundsView *)pEnt;
@@ -290792,7 +290804,7 @@ void CNPC_VMingXiao::sub_103990c0()
 		Vector dir = vecTarget - vecOrigin;
 		float flLenSqr = dir.LengthSqr();
 		float flVecYaw = sub_101d2c70(&dir);
-		float flYaw = vfunc221_slot()[1];
+		float flYaw = vfunc221()[1];
 		float flDiff = sub_1013d580(flVecYaw, flYaw);
 		if (flDiff <= -20.0f) {
 			float z = dir.z;
@@ -290915,7 +290927,7 @@ void CNPC_VMingXiao::sub_103999f0(CNPC_VMingXiaoTentacle *pTentacle)
 	((CUnknown1039aaf0 *)this)->sub_1039aaf0(0);
 	((CUnknown1039aaf0 *)pTentacle)->sub_1039aaf0(0);
 
-	Vector vecThis = *(Vector *)vfunc217_slot();
+	Vector vecThis = *(Vector *)vfunc217();
 	Vector vecTentacle = *(Vector *)pTentacle->vfunc217();
 	Vector vecTarget = *(Vector *)pTarget->vfunc217();
 
@@ -291023,7 +291035,6 @@ void sub_101d2780(Vector, const char *, CBaseEntity *, int, int, int);
 
 void sub_1039a250()
 {
-	Vector v;
 	const char *name = engine->vfunc84(1);
 	if (!name || !*name)
 		return;
@@ -291048,6 +291059,7 @@ void sub_1039a250()
 				if (done)
 					break;
 				if (pEnt->sub_10398000(i)) {
+					Vector v;
 					((CUnknown10398630 *)pEnt)->sub_10398630(i, &v);
 					info.m_pos1c = *(CTDIPos *)&v;
 					switch (i) {
@@ -291085,8 +291097,8 @@ void sub_1039a250()
 		}
 	}
 	if (!_strcmpi(name, "player") || !_strcmpi(name, "5")) {
-		sub_101d26b0(*(Vector *)pPlayer->vfunc192(&v), "Ming_xiao_vomit_player_emitter", pPlayer, 1, -1, 0);
-		sub_101d2780(*(Vector *)pPlayer->vfunc192(&v), "Ming_xiao_hud_vomit_emitter", pPlayer, 0xe, 0, 0);
+		sub_101d26b0(pPlayer->vfunc192(), "Ming_xiao_vomit_player_emitter", pPlayer, 1, -1, 0);
+		sub_101d2780(pPlayer->vfunc192(), "Ming_xiao_hud_vomit_emitter", pPlayer, 0xe, 0, 0);
 	}
 }
 // END FUNCTION

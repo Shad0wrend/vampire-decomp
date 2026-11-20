@@ -7,7 +7,7 @@ class CBaseMoveBehavior : public CPathKeyFrame
 {
 public:
 	CBaseMoveBehavior() {}
-	virtual void vfunc135();	// slot 135 (CLogicalEntity's signature): the game's entry is the body below (stub 0x1000b997)
+	/* vfunc135: declared by the slot */	// slot 135 (CLogicalEntity's signature): the game's entry is the body below (stub 0x1000b997)
 	float vfunc135(float flFrameTime);	// 0x10140c00, slot 135's body: the keyframe mover step; returns flFrameTime
 	int vfunc153();	// slot 153 (CBaseEntity's int form): true while a move runs (+0x4b4)
 	virtual int vfunc117();	// slot 117: the logical entity's ObjectCaps with bit 9 cleared

@@ -94,7 +94,7 @@ struct SMSHandle
 		return 0;
 	}
 };
-void CMultiSource::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value)
+void CMultiSource::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value)
 {
 	int i = 0;
 	int nTotal = *(int *)((char *)this + 0x568);
@@ -136,7 +136,7 @@ void CMultiSource::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int u
 extern CUnknown10057680 g_106be530;
 
 // TARGET: CMultiSource::vfunc147
-unsigned char CMultiSource::vfunc147(CBaseEntity *pActivator)
+bool CMultiSource::vfunc147(CBaseEntity *pActivator)
 {
 	int i = 0;
 	if (!(m_flags204 & 1)) {
@@ -160,7 +160,10 @@ unsigned char CMultiSource::vfunc147(CBaseEntity *pActivator)
 		}
 	}
 fail:
-	return i & 0xffffff00;
+	// WORKAROUND: i read on the failing path keeps the global state name in eax, as the game's code has it (the
+	// SDK body, and a plain `return 0`, load it into ecx); the result is false (the old unsigned char form returned
+	// `i & 0xffffff00` for the same reason)
+	return *(bool *)&i && 0;
 }
 // END FUNCTION
 

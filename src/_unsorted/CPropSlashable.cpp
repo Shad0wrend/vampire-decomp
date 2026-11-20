@@ -80,8 +80,9 @@ extern int (__cdecl *g_109f3870)(const char *s1, const char *s2, int n);
 extern char g_10587630[];	// "item_w_knife"
 
 // TARGET: CPropSlashable::vfunc142
-int CPropSlashable::vfunc142(CPropSlashableDamageInfo *pInfo)
+int CPropSlashable::vfunc142(struct CTakeDamageInfo *pInfo)
 {
+#define pInfo ((CPropSlashableDamageInfo *)pInfo)
 	if (pInfo->m_pAttacker) {
 		CCharacterX *pAttacker = *(CCharacterX **)(pInfo->m_pAttacker + 0x9c);
 		if (pAttacker && pAttacker->sub_10007e19()) {
@@ -98,6 +99,7 @@ int CPropSlashable::vfunc142(CPropSlashableDamageInfo *pInfo)
 		}
 	}
 	return 0;
+#undef pInfo
 }
 // END FUNCTION
 

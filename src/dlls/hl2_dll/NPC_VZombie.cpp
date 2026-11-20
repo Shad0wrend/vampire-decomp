@@ -60,7 +60,7 @@ int CNPC_VZombie::vfunc438()
 	}
 	if ((m_nEffectFlags & 0x40) == 0x40)
 		vfunc67();
-	if (!vfunc158_slot())
+	if (!vfunc158())
 		sub_103dfbb0(m_a6680, m_a668c);
 	if (m_nMode6678 == 8 || m_nMode6678 == 7) {
 		if (sub_10269aa0(0x4c) || sub_10269aa0(0x4c) || sub_10269aa0(0x4d) || sub_10269aa0(0x79)) {
@@ -98,7 +98,7 @@ int CNPC_VZombie::vfunc438()
 		break;
 	case 2:
 	case 3: {
-		CZombieEnemy167 *pEnemy = vfunc167();
+		CZombieEnemy167 *pEnemy = (CZombieEnemy167 *)vfunc167();
 		if (pEnemy) {
 			CBaseCombatCharacter *pChar = pEnemy->m_pChar;
 			if (pChar && sub_10269aa0(0x46) && !pChar->sub_10146a80()) {
@@ -284,8 +284,9 @@ struct CZombieGlobal
 extern CZombieGlobal *g_1094049c;
 
 // TARGET: CNPC_VZombie::vfunc142
-int CNPC_VZombie::vfunc142(CZombieDmgInfo *pInfo)
+int CNPC_VZombie::vfunc142(struct CTakeDamageInfo *pInfo)
 {
+#define pInfo ((CZombieDmgInfo *)pInfo)
 	int nStatA = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0xf);
 	int nStatB = CVStatListSet::Of(this)->Find(0)->sub_102012d0(0x11);
 	float flDamage;
@@ -326,5 +327,6 @@ int CNPC_VZombie::vfunc142(CZombieDmgInfo *pInfo)
 			sub_103e05e0((int)"zombie_headshot_death_emitter");
 	}
 	return r;
+#undef pInfo
 }
 // END FUNCTION

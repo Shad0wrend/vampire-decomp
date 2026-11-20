@@ -166,7 +166,7 @@ void CRopeKeyframe::vfunc78()
 // FUNCTION: 0x1019f1c0 size=0x13
 #include "CRopeKeyframe.h"
 
-int CRopeKeyframe::vfunc142(int a)
+int CRopeKeyframe::vfunc142(struct CTakeDamageInfo *a)
 {
 	if (m_nRopeFlags & 0x10)
 		sub_1019ee40();

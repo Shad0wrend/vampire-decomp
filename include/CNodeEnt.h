@@ -8,7 +8,7 @@ class CNodeEnt : public CBaseEntity
 {
 public:
 	// Slot 202, called directly so far; declared as a plain member.
-	void vfunc202(int a);
+	void vfunc202(CBaseEntity *a);
 	virtual CBaseEntity *vfunc5(unsigned int flags);	// as in CLogicalEntity (transplant)
 	void sub_1000cb8a();	// as in CLogicalEntity (transplant)
 	CNodeEnt *sub_102d7cd0();	// as in CKeepUpright (transplant)

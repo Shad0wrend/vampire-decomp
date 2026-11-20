@@ -198,7 +198,7 @@ struct CPropSwitchUseFields
 };
 
 // TARGET: CPropSwitch::vfunc173
-void CPropSwitch::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value)
+void CPropSwitch::vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value)
 {
 	CPropSwitchUseFields *p = (CPropSwitchUseFields *)this;
 	if (sub_1020e020()) {

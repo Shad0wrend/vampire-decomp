@@ -218,14 +218,14 @@ int CWorld::vfunc131()
 
 // FUNCTION: 0x1023b9c0 size=0x3
 #include "CWorld.h"
-void CWorld::vfunc230(int a0, int a1)
+void CWorld::vfunc230(int a0, void *a1)
 {
 }
 // END FUNCTION
 
 // FUNCTION: 0x1023b9e0 size=0x3
 #include "CWorld.h"
-void CWorld::vfunc231(int a0, int a1, int a2, int a3)
+void CWorld::vfunc231(void *a0, float a1, int a2, int a3)
 {
 }
 // END FUNCTION
@@ -331,7 +331,7 @@ inline char *sub_NullIfEmpty(char *p)
 void CWorld::vfunc103()
 {
 	vfunc10(1);
-	vfunc212_slot((int)sub_NullIfEmpty(engine->vfunc19(vfunc8())));
+	vfunc212(string_t(sub_NullIfEmpty(engine->vfunc19(vfunc8()))));
 	sub_100b3580(0x1000000);
 	g_106e7050.sub_100cdd80();
 	sub_1023e6b0();

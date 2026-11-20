@@ -84,7 +84,7 @@ extern char g_1063a854[];
 void CNPC_VGargoyle::vfunc144(int info)
 {
     if (m_p6684) {
-        ((CNPC_VVampire *)this)->vfunc144(info);
+        ((CNPC_VVampire *)this)->CNPC_VVampire::vfunc144((void *)info);
         return;
     }
     *(const char **)((char *)this + 0x1b30) = g_1063a854;

@@ -317,7 +317,7 @@ bool CNPC_VZombie::vfunc366(int a0, int a1, int a2)
 
 // TARGET: CNPC_VZombie::vfunc144
 // the game's 0x103dfb90: a tail call (jmp) of CNPC_VAnimal::vfunc144
-void CNPC_VZombie::vfunc144(int a0)
+void CNPC_VZombie::vfunc144(void *a0)
 {
 	((CNPC_VAnimal *)this)->CNPC_VAnimal::vfunc144(a0);
 }
@@ -511,7 +511,7 @@ void CNPC_VZombie::vfunc442(int *pTask)
 
 struct S_Comb { void sub_10293a60(void *a, void *b); };
 struct S_Nav : CUnknown102ee270 { int sub_102ee620(); };
-struct S_Mot : CAI_Motor { void sub_102e2020(void *p); };
+struct S_Mot : CAI_Motor { void sub_102e2020(void *p, int b); };
 
 void CNPC_VZombie::vfunc444(int *pTask)
 {
@@ -551,7 +551,7 @@ void CNPC_VZombie::vfunc444(int *pTask)
             CBaseEntity *e = ((EHANDLE *)&m_hEnemy628c)->Get();
             if (e) {
                 CAI_Motor *m = m_pMotor5d44;
-                ((S_Mot *)m)->sub_102e2020((void *)((CNPC_VZombie *)e)->vfunc217(0));
+                ((S_Mot *)m)->sub_102e2020((void *)((CNPC_VZombie *)e)->vfunc217(), 0);
                 m_pMotor5d44->sub_102e1e20(-1);
             }
         }
@@ -614,8 +614,11 @@ void CNPC_VZombie::vfunc301(int *a0, int *a1)
 extern ConVar *g_10940404;
 extern ConVar *g_1094044c;
 
-void CNPC_VZombie::vfunc141(CUnknown101c2a50 *pInfo, int b, char *pTrace)
+void CNPC_VZombie::vfunc141(class CVDmg_t *pInfo, const Vector *b, struct CGameTrace *pTrace)
 {
+#define pInfo ((CUnknown101c2a50 *)pInfo)
+#define b ((int)b)
+#define pTrace ((char *)pTrace)
 	float body, head;
 	*((char *)this + 0x66e1) = 0;
 	head = g_10940404->vfunc1() ? 0.0f : g_10940404->m_fValue;
@@ -636,6 +639,9 @@ void CNPC_VZombie::vfunc141(CUnknown101c2a50 *pInfo, int b, char *pTrace)
 		break;
 	}
 	sub_10015b13(pInfo, b, pTrace);
+#undef pTrace
+#undef b
+#undef pInfo
 }
 // END FUNCTION
 
@@ -695,10 +701,12 @@ int CNPC_VZombie::vfunc460()
 extern char g_106b8540[];
 struct CZombieEnemy167 { char pad[0x9c]; CBaseCombatCharacter *m_pChar9c; };
 
-bool CNPC_VZombie::vfunc201(CBaseCombatCharacter *pEnt, int b, int c, int d)
+bool CNPC_VZombie::vfunc201(CBaseEntity *pEnt, int b, CBaseEntity **c, int d)
 {
+#define pEnt ((CBaseCombatCharacter *)pEnt)
+#define c ((int)c)
 	ScopeTrace trace("CNPC_VZombie::FVisible", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
-	CZombieEnemy167 *pEnemy = vfunc167();
+	CZombieEnemy167 *pEnemy = (CZombieEnemy167 *)vfunc167();
 	CBaseCombatCharacter *pChar;
 	if (!(pEnemy)) pChar = (CBaseCombatCharacter *)pEnemy; else pChar = pEnemy->m_pChar9c;
 	if (pChar == pEnt) {
@@ -707,6 +715,8 @@ bool CNPC_VZombie::vfunc201(CBaseCombatCharacter *pEnt, int b, int c, int d)
 		return true;
 	}
 	return sub_1000dbcf(pEnt, b, c, 0);
+#undef c
+#undef pEnt
 }
 // END FUNCTION
 

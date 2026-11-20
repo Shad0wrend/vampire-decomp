@@ -426,7 +426,7 @@ void CVampireProjectile::vfunc238(Vector *pVelocity, Vector *pOut, int a, int b)
 		}
 		Vector vecEye;
 		pTarget->slot193(&vecEye);
-		Vector vecOrigin = *vfunc217();
+		Vector vecOrigin = *(Vector *)vfunc217();
 		Vector vecCenter = pTarget->slot192();
 
 		Vector vecDelta;
@@ -453,7 +453,7 @@ void CVampireProjectile::vfunc238(Vector *pVelocity, Vector *pOut, int a, int b)
 	pOut->x = m_vecDir894.x * flSpeed;
 	pOut->y = m_vecDir894.y * flSpeed;
 	pOut->z = m_vecDir894.z * flSpeed;
-	sub_10139500(&vfunc220()->x, gpGlobals->frametime, &pOut->x, &pVelocity->x);
+	sub_10139500(&((Vector *)vfunc220())->x, gpGlobals->frametime, &pOut->x, &pVelocity->x);
 }
 // END FUNCTION
 

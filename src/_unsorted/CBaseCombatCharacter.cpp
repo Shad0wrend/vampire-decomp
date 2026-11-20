@@ -3150,7 +3150,7 @@ inline float DamageOf(const CTakeDamageInfo *p)
 
 extern float g_104454c4;
 
-int CBaseCombatCharacter::vfunc142(void *pInfo)
+int CBaseCombatCharacter::vfunc142(struct CTakeDamageInfo *pInfo)
 {
 	ScopeTrace scope("CBaseCombatCharacter::OnTakeDamage", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 	CTakeDamageInfo *info = (CTakeDamageInfo *)pInfo;

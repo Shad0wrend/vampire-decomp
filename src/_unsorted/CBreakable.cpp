@@ -196,8 +196,10 @@ struct CBreakableEdictView
 	int entindex() const { return engine->vfunc35(edict()); }
 };
 
-void CBreakable::vfunc141(CTakeDamageInfo *pInfo, const Vector *pDir, CGameTrace *pTrace)
+void CBreakable::vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace)
 {
+#define pInfo ((CTakeDamageInfo *)pInfo)
+#define pTrace ((CGameTrace *)pTrace)
 	if (enginerandom->vfunc2(0, 1))
 	{
 		switch (m_nMaterial)
@@ -226,6 +228,8 @@ void CBreakable::vfunc141(CTakeDamageInfo *pInfo, const Vector *pDir, CGameTrace
 	}
 
 	((CBaseEntityTraceBase *)this)->sub_100a7de0(pInfo, pDir, pTrace);
+#undef pTrace
+#undef pInfo
 }
 // END FUNCTION
 
@@ -311,8 +315,9 @@ int CBreakable::vfunc142(CTakeDamageInfo *pInfoV)
 void sub_10006d61();
 
 // TARGET: CBreakable::vfunc230
-void CBreakable::vfunc230(int a, int b)
+void CBreakable::vfunc230(int a, void *b)
 {
+#define b ((int)b)
     void (CBreakable::*pBase)(int, int);
     *(void **)&pBase = (void *)sub_10006d61;
     (this->*pBase)(a, b);
@@ -321,6 +326,7 @@ void CBreakable::vfunc230(int a, int b)
     void **vt = *(void ***)this;
     *(void **)&pSlot75 = vt[0x12c / 4];
     (this->*pSlot75)(a, b);
+#undef b
 }
 // END FUNCTION
 

@@ -136,7 +136,7 @@ void CAmbientGeneric::vfunc180()
 		int edict = *(int *)((char *)pEnt + 0x2e0);
 		((PFN_EmitAt)sub_101cdac0)(edict, (int)pEnt->slot217(), pszName, 0.0f, 0, 4, 0);
 	}
-	((CBaseEntity *)this)->vfunc180();
+	((CBaseEntity *)this)->CBaseEntity::vfunc180();
 }
 // END FUNCTION
 

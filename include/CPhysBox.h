@@ -15,7 +15,7 @@ public:
 	virtual void vfunc39(CBaseEntity *pOther);	// slot 39: wakes the physics object at +0x36c (its slot 2), then sub_1040d970(pOther)
 	bool sub_1004e1c0(int a);	// slot 32 override: true when the entity looked up from a (sub_104115b0) is this
 	void sub_1004e910(int a);	// slot 242 override: forwards to the helper at +0x498 with this
-	int vfunc142(CBaseEntity *pEnt);	// slot 142 (plain member): CBaseEntity::vfunc227 on this with pEnt, then when pEnt's word at +0x28 is set the helper at +0x468 is given (pEnt's word at +0x2c, this, 0); always 1
+	int vfunc142(struct CTakeDamageInfo *pEnt);	// slot 142 (plain member): CBaseEntity::vfunc227 on this with pEnt, then when pEnt's word at +0x28 is set the helper at +0x468 is given (pEnt's word at +0x2c, this, 0); always 1
 	void sub_1000850d(CBaseEntity *pEnt);	// CBaseEntity::vfunc227 (stub 0x1000850d), called directly on this
 	bool vfunc223();	// slot 223 override: warns when there is no physics object (+0x36c), otherwise wakes it / copies the origin to +0x458 and sets the flag object at +0x1b0
 	void vfunc241(int a);	// slot 241 "CPhysBox::CreateVPhysics" (plain member): SetSolid(6) and, with spawn flag bit 2, AddSolidFlags(4) (both inlined scope traces), then VPhysicsInitNormal(GetSolid(), GetSolidFlags(), true), PhysSetGameFlags(obj, 1) for material type 1, then the mass: scaled by the float at +0x454 when it is above zero, replaced by the float at +0x464 when that is above zero, clamped to 1.0 .. 1000000.0
@@ -37,7 +37,7 @@ public:
 	float m_flMass0464;	// 0x464: mass override (used when above zero)
 public:
     virtual datamap_t * vfunc82();
-    void vfunc230(int a, int b);	// as in CBreakable (transplant)
+    void vfunc230(int a, void *b);	// as in CBreakable (transplant)
 public:
     virtual int vfunc81();
     virtual int vfunc80();

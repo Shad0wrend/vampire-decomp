@@ -16,12 +16,12 @@ datamap_t *CBaseDMStart::vfunc82()
 // FUNCTION: 0x101c0ae0 size=0x17
 #include "CBaseDMStart.h"
 
-int sub_101cf930(int a, int b);
+bool __cdecl sub_101cf930(const char *pszMaster, CBaseEntity *pActivator);
 
 // TARGET: CBaseDMStart::vfunc147
-int CBaseDMStart::vfunc147(int a)
+bool CBaseDMStart::vfunc147(CBaseEntity *pActivator)
 {
-	return sub_101cf930(m_field450, a);
+	return sub_101cf930((const char *)m_field450, pActivator);
 }
 // END FUNCTION
 

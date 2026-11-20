@@ -8,7 +8,7 @@ extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
 
-void CNodeEnt::vfunc202(int a)
+void CNodeEnt::vfunc202(CBaseEntity *a)
 {
     const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
     g_109f3620[*g_109f3680].a = "CLogicalPointEntity::SetOwnerEntity";

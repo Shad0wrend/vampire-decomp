@@ -125,6 +125,7 @@ int CNPC_VBach::vfunc605(int arg)
 #include "CVStatList_t.h"
 #include "CVFeat_t.h"
 #include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
 #include "engineserver.h"
 #include "engineiface.h"
 #include "globalvars.h"
@@ -676,7 +677,7 @@ void CNPC_VBach::vfunc442(int *pTask)
 	case 0x14c:
 	{
 		sub_103656a0();
-		CPASAttenuationFilter filter(this);
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 		enginesound->vfunc3(&filter, BachEntIndex(m_pEdict2e0), 2, "Character/Boss/Bach/bach_holy_light.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 		m_b66a1 = 0;
 		BachTaskComplete(this);
@@ -728,7 +729,7 @@ void CNPC_VBach::vfunc442(int *pTask)
 		}
 		sub_1026dc30(1);
 		m_b66a7 = 0;
-		VS(this)->vfunc216(((CNPC_VBach *)m_p5ddc)->vfunc217_slot());
+		VS(this)->vfunc216((const Vector *)((CNPC_VBach *)m_p5ddc)->vfunc217());
 		Vector vecOrigin = *VS(this)->vfunc220_slot();
 		VS(this)->vfunc181(&vecOrigin, 0, 0);
 		vfunc62(&vecOrigin.x);
@@ -740,9 +741,9 @@ void CNPC_VBach::vfunc442(int *pTask)
 		m_fl6688 += 6.0f;
 		m_fl6684 = gpGlobals->curtime + 3.0f;
 		m_b66a5 = 1;
-		CPASAttenuationFilter filter(this);
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 		enginesound->vfunc3(&filter, BachEntIndex(m_pEdict2e0), 2, "Character/Boss/Bach/bach_shield.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
-		BachTaskComplete(this);
+		sub_10273e80(0);
 		return;
 	}
 	case 0x150:
@@ -783,7 +784,8 @@ void CNPC_VBach::vfunc442(int *pTask)
 	}
 	}
 	((CNPC_VHuman *)this)->vfunc442(pTask);
-	(void)BachDead(0); (void)BachDead(1);
+	// WORKAROUND: the dead inline calls spend VC6's inline budget (count tuned under CBaseEntity's 134..240 slots)
+	(void)BachDead(0); (void)BachDead(1); (void)BachDead(2);
 }
 // END FUNCTION
 
@@ -793,6 +795,7 @@ void CNPC_VBach::vfunc442(int *pTask)
 #include "CUnknown102e0150.h"
 #include "CAI_Motor.h"
 #include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
 
 extern "C" int __cdecl _strcmpi(const char *, const char *);
 
@@ -817,7 +820,7 @@ void CNPC_VBach::vfunc444(void *pTask)
 	Vector vec;
 	Vector tmp;
 	if (m_h5ba8.Get() && (m_n5cc0 == 4 || m_n5cc0 == 0xc)) {
-		vec = *((CNPC_VBach *)m_h5ba8.Get())->vfunc217_slot();
+		vec = *(Vector *)((CNPC_VBach *)m_h5ba8.Get())->vfunc217();
 	} else if (vfunc167()) {
 		vec = *vfunc541()->sub_102dfed0(&tmp, vfunc167());
 	} else {
@@ -836,7 +839,7 @@ void CNPC_VBach::vfunc444(void *pTask)
 		}
 	}
 	if (gpGlobals->curtime >= m_fl6694) {
-		CPASAttenuationFilter filter(this);
+		CPASAttenuationFilter filter((CEntitySoundOriginView *)this);
 		int edict = m_pEdict2e0;
 		enginesound->vfunc3(&filter, engine->vfunc35(edict), 2, "Character/Boss/Bach/snipe_warn6.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 		m_fl6694 = m_fl6694 + 999999.0f;
@@ -876,6 +879,7 @@ bool CNPC_VBatSwarm::sub_10365780(int a, int b)
 #include "engineserver.h"
 #include "engineiface.h"
 #include "CPASAttenuationFilter.h"
+#include "CEntitySoundOriginView.h"
 
 #define BVS(n) virtual void vs##n();
 #define BVS10(p) BVS(p##0) BVS(p##1) BVS(p##2) BVS(p##3) BVS(p##4) BVS(p##5) BVS(p##6) BVS(p##7) BVS(p##8) BVS(p##9)
@@ -915,7 +919,7 @@ struct CUnk102ae750Link { void sub_102ae750(int a, int b); };
 
 inline int BachDead(int x) { return x + 1; }
 inline int BachDead2(int x) { return BachDead(x) + 1; }
-inline const Vector &EnemyPos(CNPC_VBach *p) { return *p->vfunc217_slot(); }
+inline const Vector &EnemyPos(CNPC_VBach *p) { return *(Vector *)p->vfunc217(); }
 
 // TARGET: CNPC_VBachCamp::sub_10365a90
 void CNPC_VBachCamp::sub_10365a90()
@@ -995,11 +999,11 @@ void CNPC_VBachCamp::sub_10365a90()
 		}
 		if (bTrigger) {
 			if (bSound) {
-				CPASAttenuationFilter filter((CNPC_VBach *)this);
+				CPASAttenuationFilter filter((CEntitySoundOriginView *)(CNPC_VBach *)this);
 				int edict = m_pEdict2e0;
 				enginesound->vfunc3(&filter, engine->vfunc35(edict), 2, "Character/Boss/Bach/bach_grenade.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 			} else {
-				CPASAttenuationFilter filter((CNPC_VBach *)this);
+				CPASAttenuationFilter filter((CEntitySoundOriginView *)(CNPC_VBach *)this);
 				int edict = m_pEdict2e0;
 				enginesound->vfunc3(&filter, engine->vfunc35(edict), 2, "Character/Boss/Bach/bach_camp_warn.wav", 1.0f, 0.8f, 0, 100, 0, 0, 1, 0);
 				(void)BachDead2(0); (void)BachDead2(1);

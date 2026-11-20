@@ -117,13 +117,13 @@ void CNPC_VMingXiao::vfunc442(void *pTask)
         return;
     case 0x153:
         sub_102e0b40((float *)m_pMotor5d44);
-        ((CUnknown102e0a40 *)m_pMotor5d44)->sub_102e0a40(AngleY(vfunc221_slot()));
+        ((CUnknown102e0a40 *)m_pMotor5d44)->sub_102e0a40(AngleY(vfunc221()));
         ((CUnknown102e0a60 *)m_pMotor5d44)->sub_102e0a60(0x41a00000);
         sub_10289ee0(0x1131);
         return;
     case 0x154:
         sub_102e0b40((float *)m_pMotor5d44);
-        ((CUnknown102e0a40 *)m_pMotor5d44)->sub_102e0a40(AngleY(vfunc221_slot()));
+        ((CUnknown102e0a40 *)m_pMotor5d44)->sub_102e0a40(AngleY(vfunc221()));
         ((CUnknown102e0a60 *)m_pMotor5d44)->sub_102e0a60(0x41a00000);
         sub_10289ee0(0x1130);
         return;
@@ -170,7 +170,7 @@ void CNPC_VMingXiao::vfunc442(void *pTask)
         break;
     case 0x15a:
         sub_102e0b40((float *)m_pMotor5d44);
-        ((CUnknown102e0a40 *)m_pMotor5d44)->sub_102e0a40(AngleY(vfunc221_slot()));
+        ((CUnknown102e0a40 *)m_pMotor5d44)->sub_102e0a40(AngleY(vfunc221()));
         ((CUnknown102e0a60 *)m_pMotor5d44)->sub_102e0a60(0x41a00000);
         if (m_nSide671c == 4) {
             sub_10289ee0(0x1131);
@@ -189,7 +189,7 @@ void CNPC_VMingXiao::vfunc442(void *pTask)
         {
             Vector vec;
             sub_10398630(m_eLastLostTentacle, &vec);
-            Vector d = *(Vector *)vfunc217_slot() - vec;
+            Vector d = *(Vector *)vfunc217() - vec;
             float y = -sub_101d2c70(&d);
             y += enginerandom->vfunc1(-15.0f, 15.0f);
             vfunc345("hit_yaw", y, 0);
@@ -416,7 +416,7 @@ void CNPC_VMingXiao::sub_10395750(int index, CTakeDamageInfo *pInfo, void *pWeap
 			m_flSlotValue[index] = m_flSlotValue[index] - dmg;
 			if (m_flSlotValue[index] <= 0.0f)
 				sub_10397410(index);
-			float *pOrigin = vfunc219_slot();
+			float *pOrigin = vfunc219();
 			Vector vecA = *(Vector *)pOrigin;
 			Vector vecB = *(Vector *)&pInfo->m_pos1c;
 			sub_102c41d0("Ming_xiao_tentacle_damage_emitter", &vecB, &vecA, 0);
@@ -486,6 +486,7 @@ void CNPC_VMingXiao::sub_10395c70()
 
 // FUNCTION: 0x10396050 size=0x5f2
 #include "CNPC_VMingXiao.h"
+inline float *VPtr(const Vector &r) { return (float *)&r.x; }
 #include "CUnknown10924a1c.h"
 #include "engineiface.h"
 #include "Tier1.h"
@@ -580,8 +581,7 @@ int CNPC_VMingXiao::vfunc604(int unused)
                 return 0xc7;
             }
             if (vfunc167()) {
-                Vector v;
-                if (sub_1000c10d(((CNPC_VMingXiao *)vfunc167())->vfunc192(&v))) {
+                                if (sub_1000c10d(VPtr(((CNPC_VMingXiao *)vfunc167())->vfunc192()))) {
                     bool b = vfunc308();
                     m_pszFile1b30 = "E:\\Vampire\\main\\dlls\\hl2_dll\\NPC_VMingXiao.cpp";
                     if (b) {
@@ -791,7 +791,7 @@ void *CNPC_VMingXiao::sub_10397410(int nSlot)
 	sub_102c42a0("Ming_xiao_tentacle_burst_emitter", this, pszAtt, 0);
 	Vector vecSpawn;
 	sub_10398630(nSlot, &vecSpawn);
-	Vector vecOrg = *(Vector *)vfunc219_slot();
+	Vector vecOrg = *(Vector *)vfunc219();
 	Vector vecA = *(Vector *)sub_102d6100(0x11);
 	Vector vecB = *(Vector *)sub_102d6120(0x11);
 	Vector pos = vecSpawn;
@@ -845,8 +845,8 @@ void *CNPC_VMingXiao::sub_10397410(int nSlot)
 	CNPC_VMingXiao *pEnt = (CNPC_VMingXiao *)g_1093bb9c.sub_10310cf0(pos);
 	if (pEnt) {
 		CNPC_VMingXiaoTentacle *pTent = (CNPC_VMingXiaoTentacle *)pEnt;
-		pEnt->vfunc218_slot(&vecOrg);
-		Vector dir = vecSpawn - *(Vector *)vfunc217_slot();
+		pEnt->vfunc218(&vecOrg.x);
+		Vector dir = vecSpawn - *(Vector *)vfunc217();
 		VectorNormalize(dir);
 		dir *= 100.0f;
 		dir.x += enginerandom->vfunc1(-10.0f, 10.0f);
@@ -936,9 +936,9 @@ void CNPC_VMingXiao::sub_1039a750()
 		pTwin = (CNPC_VMingXiao *)pFound->m_pNPC98;
 
 	pTwin->m_flags204 |= 4;
-	pTwin->vfunc62(this->vfunc217_slot());
-	pTwin->vfunc64(this->vfunc221_slot());
-	pTwin->vfunc202_slot(this);
+	pTwin->vfunc62(this->vfunc217());
+	pTwin->vfunc64(this->vfunc221());
+	pTwin->vfunc202(this);
 	((CUnknown10097310 *)pTwin)->sub_10097310(this);
 	pTwin->m_f63b4 = 4096.0f;
 	sub_101d1280(pTwin);

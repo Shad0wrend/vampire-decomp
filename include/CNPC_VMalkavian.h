@@ -13,9 +13,9 @@ public:
 	CNPC_VMalkavian *sub_10389520();	// as in CKeepUpright (transplant)
 public:
 	virtual void vfunc134();
-	virtual void vfunc135();
-	virtual void vfunc136();
-	virtual void vfunc137();
+	virtual float vfunc135(float);
+	virtual bool vfunc136();
+	virtual int vfunc137();
 	virtual int vfunc138();
 	void *sub_10389560();
 	const char *sub_10389580();

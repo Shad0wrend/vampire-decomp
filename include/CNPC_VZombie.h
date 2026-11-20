@@ -17,9 +17,9 @@ public:
 	int vfunc546(int arg);
 	CNPC_VZombie *sub_103de330(int nMode);	// constructor body taking the initial mode (+0x6678)
 	CNPC_VZombie *sub_103de220();	// as in CKeepUpright (transplant)
-	void vfunc141(CUnknown101c2a50 *pInfo, int b, char *pTrace);	// slot 141 "CNPC_VZombie::TraceAttack": sets the head-hit flag at +0x66e1 from the hit group (dword +0x44 of the trace, 1 = head) and, for a head hit or an attacker whose weapon flags have bit 15 / 16 (0x18000), sets the damage of pInfo from one of two cvars, then CAI_BaseNPC::vfunc141
+	void vfunc141(class CVDmg_t *pInfo, const Vector *b, struct CGameTrace *pTrace);	// slot 141 "CNPC_VZombie::TraceAttack": sets the head-hit flag at +0x66e1 from the hit group (dword +0x44 of the trace, 1 = head) and, for a head hit or an attacker whose weapon flags have bit 15 / 16 (0x18000), sets the damage of pInfo from one of two cvars, then CAI_BaseNPC::vfunc141
 	void sub_10015b13(CUnknown101c2a50 *pInfo, int b, char *pTrace);	// CAI_BaseNPC::vfunc141 (stub 0x10015b13), called directly
-	bool vfunc201(CBaseCombatCharacter *pEnt, int b, int c, int d);	// slot 201 "CNPC_VZombie::FVisible": scope trace (entity name); when pEnt is the player record at +0x9c of the entity slot 167 gives, true unless that player passes CBaseCombatCharacter::sub_10146a80, else CAI_BaseNPCTroika::vfunc201(pEnt, b, c, 0); the fourth argument is not used
+	bool vfunc201(CBaseEntity *pEnt, int b, CBaseEntity **c, int d);	// slot 201 "CNPC_VZombie::FVisible": scope trace (entity name); when pEnt is the player record at +0x9c of the entity slot 167 gives, true unless that player passes CBaseCombatCharacter::sub_10146a80, else CAI_BaseNPCTroika::vfunc201(pEnt, b, c, 0); the fourth argument is not used
 	bool sub_1000dbcf(CBaseCombatCharacter *pEnt, int b, int c, int d);	// CAI_BaseNPCTroika::vfunc201 (stub 0x1000dbcf), called directly
 	virtual void vfunc105(const char *pszModel);	// slot 105 "CNPC_VZombie::SetModel": CAI_BaseNPCTroika::vfunc105, then the sound group (+0xb4) of the male / female zombie name (+0xc0) with the kind +0xbc = 2
 	void vfunc103();	// slot 103 "CNPC_VZombie::Spawn" (declared as a plain member): solid flags 0x4000000 / 0x200000 / 0x8000, the distances at +0x6348 to 999999, a scrambled random value at +0x6364, then CNPC_VAnimal::vfunc103
@@ -58,7 +58,7 @@ public:
 	void sub_103e0e30(struct CZombieInputData *pData);
 	void sub_103e0980(int a);	// hands the zombie the maker's value (CNPCMaker_Zombie::vfunc617), stub 0x1001128e
 	void sub_1029f300(int a);	// stub 0x10008931, called directly on the new zombie (also on the maker)
-	int vfunc142(struct CZombieDmgInfo *pInfo);	// slot 142 (OnTakeDamage-like): flags the byte at +0x66e0 when the damage exceeds the stats 0xf / 0x11 limit, the Troika version, then a schedule (0x164 for an enemy whose schedule is not 0x161, else 0x162 unless the byte at +0x6675), and a headshot emitter sound for the head-hit flag (+0x66e1)
+	int vfunc142(struct CTakeDamageInfo *pInfo);	// slot 142 (OnTakeDamage-like): flags the byte at +0x66e0 when the damage exceeds the stats 0xf / 0x11 limit, the Troika version, then a schedule (0x164 for an enemy whose schedule is not 0x161, else 0x162 unless the byte at +0x6675), and a headshot emitter sound for the head-hit flag (+0x66e1)
 	int sub_10004647(struct CZombieDmgInfo *pInfo);	// CAI_BaseNPCTroika::vfunc142 (stub 0x10004647), called directly
 	void vfunc432(int a);	// slot 432 "CNPC_VZombie::RunAI" (plain member): while the state (+0x6678) is 1 and the player is farther than the limit (+0x66dc) logs "zombie %s: player too far away, killing self" and runs slot 119; then CNPC_VAnimal::vfunc432(a); in the states 0 / 1, unless active (+0xfec = 0x4b), with condition 0x46 set, the player distance (+0x6264) inside the tuning range and the lunge timer (+0x66d8) due, with a live enemy (handle +0x628c) that has a player object, a roll against the tuning chance starts the schedule 0x16a and re-arms the timer; always sets the byte +0x5ac
 	void sub_10360160(int a);	// CNPC_VAnimal::vfunc432 (stub 0x10014f92), called directly
@@ -125,112 +125,112 @@ public:
     virtual void vfunc26(int);
 public:
 	virtual void vfunc134();
-	virtual void vfunc135();
-	virtual void vfunc136();
-	virtual void vfunc137();
+	virtual float vfunc135(float);
+	virtual bool vfunc136();
+	virtual int vfunc137();
 	virtual int vfunc138();
-	virtual void vfunc139();
-	virtual void vfunc140_slot();
-	virtual void vfunc141_slot();
-	virtual void vfunc142_slot();
-	virtual void vfunc143_slot();
-	virtual void vfunc144(int);
-	virtual void vfunc145();
-	virtual void vfunc146();
-	virtual void vfunc147();
+	virtual void vfunc139(CBaseEntity *);
+	virtual bool vfunc140(CBaseEntity *);
+	
+	
+	virtual int vfunc143(float, int);
+	virtual void vfunc144(void *p0);
+	virtual int vfunc145();
+	virtual void vfunc146(void *, const Vector &, void *);
+	virtual bool vfunc147(CBaseEntity *);
 	virtual void vfunc148();
-	virtual void vfunc149();
+	virtual void vfunc149(int, int);
 	virtual void vfunc150();
-	virtual void vfunc151();
-	virtual void vfunc152();
-	virtual void vfunc153_slot();
-	virtual void vfunc154();
-	virtual void vfunc155();
-	virtual void vfunc156();
-	virtual void vfunc157();
-	virtual char vfunc158_slot();
+	virtual void vfunc151(class CBaseCombatWeapon *);
+	virtual float vfunc152();
+	virtual int vfunc153();
+	virtual int vfunc154(int, int);
+	virtual void vfunc155(struct CGameTrace *, int, char, int, class CBasePlayer *, int, char);
+	virtual void vfunc156(int);
+	virtual bool vfunc157(int);
+	virtual bool vfunc158();
 	virtual void vfunc159();
-	virtual void vfunc160();
-	virtual void vfunc161_slot();
-	virtual void vfunc162();
+	virtual bool vfunc160(const char *);
+	virtual bool vfunc161(const char *);
+	virtual char vfunc162();
 	virtual void vfunc163();
-	virtual void vfunc164();
-	virtual void vfunc165();
-	virtual void vfunc166();
-	virtual struct CZombieEnemy167 *vfunc167();
-	virtual void vfunc168_slot();
-	virtual void vfunc169();
-	virtual void vfunc170();
+	virtual bool vfunc164();
+	virtual void vfunc165(void *);
+	virtual bool vfunc166(CBaseEntity *);
+	virtual CBaseEntity *vfunc167();
+	virtual CBaseEntity *vfunc168();
+	virtual void vfunc169(const Vector *);
+	virtual void vfunc170(const Vector *);
 	virtual void vfunc171();
 	virtual void vfunc172();
-	virtual void vfunc173();
-	virtual void vfunc174_slot();
-	virtual void vfunc175_slot();
-	virtual void vfunc176_slot();
-	virtual void vfunc177();
-	virtual void vfunc178_slot();
+	virtual void vfunc173(CBaseEntity *, CBaseEntity *, int, int);
+	virtual void vfunc174(CBaseEntity *);
+	virtual void vfunc175(CBaseEntity *);
+	virtual void vfunc176(CBaseEntity *);
+	virtual void vfunc177(CBaseEntity *);
+	virtual void vfunc178(CBaseEntity *);
 	virtual void vfunc179();
-	virtual void vfunc180_slot();
-	virtual void vfunc181();
+	virtual void vfunc180();
+	virtual void vfunc181(const float *, const float *, const float *);
 	virtual void vfunc182();
 	virtual void vfunc183();
 	virtual void vfunc184();
-	virtual void vfunc185();
+	virtual void vfunc185(struct CFireBulletsInfo *);
 	virtual void vfunc186();
-	virtual void vfunc187();
+	virtual CBaseEntity *vfunc187();
 	virtual void vfunc188();
 	virtual void vfunc189();
-	virtual void vfunc190();
-	virtual void vfunc191();
-	virtual void vfunc192();
-	virtual void vfunc193();
-	virtual void vfunc194_slot();
-	virtual void vfunc195_slot();
-	virtual void vfunc196_slot();
-	virtual void vfunc197_slot();
-	virtual void vfunc198();
-	virtual void vfunc199();
-	virtual void vfunc200();
-	virtual void vfunc201_slot();
-	virtual void vfunc202_slot();
-	virtual void vfunc203();
-	virtual void vfunc204();
+	virtual float vfunc190();
+	virtual void vfunc191(int);
+	virtual Vector vfunc192();
+	virtual Vector vfunc193();
+	virtual float *vfunc194();
+	virtual float *vfunc195();
+	virtual Vector vfunc196();
+	virtual Vector vfunc197(const Vector &, char, char);
+	virtual float *vfunc198();
+	virtual void vfunc199(float *, float *);
+	virtual int vfunc200();
+	
+	virtual void vfunc202(CBaseEntity *);
+	virtual float vfunc203();
+	virtual float vfunc204();
 	virtual void vfunc205();
 	virtual void vfunc206();
-	virtual void vfunc207_slot();
-	virtual void vfunc208_slot();
-	virtual void vfunc209();
+	virtual bool vfunc207();
+	virtual void vfunc208(CBaseEntity *);
+	virtual CBaseEntity *vfunc209();
 	virtual void vfunc210();
-	virtual void vfunc211();
-	virtual void vfunc212_slot();
-	virtual void vfunc213_slot();
-	virtual void vfunc214_slot();
-	virtual void vfunc215();
-	virtual void vfunc216();
-	virtual void *vfunc217(int a);
-	virtual void vfunc218_slot();
-	virtual void vfunc219_slot();
-	virtual void vfunc220_slot();
-	virtual void vfunc221_slot();
-	virtual void vfunc222_slot();
-	virtual void vfunc223();
+	virtual unsigned int vfunc211();
+	virtual void vfunc212(string_t);
+	virtual void vfunc213(const float *);
+	virtual float *vfunc214();
+	virtual Vector *vfunc215();
+	virtual void vfunc216(const Vector &);
+	virtual float *vfunc217();
+	virtual void vfunc218(const float *);
+	virtual float *vfunc219();
+	virtual float *vfunc220();
+	virtual float *vfunc221();
+	virtual int vfunc222(int);
+	virtual bool vfunc223();
 	virtual void vfunc224();
 	virtual void vfunc225();
-	virtual void vfunc226_slot();
-	virtual void vfunc227();
-	virtual void vfunc228_slot();
-	virtual void vfunc229();
-	virtual void vfunc230();
-	virtual void vfunc231();
-	virtual void vfunc232_slot();
-	virtual void vfunc233_slot();
-	virtual void vfunc234();
+	virtual void vfunc226(int);
+	virtual int vfunc227(struct CTakeDamageInfo *);
+	virtual void vfunc228(int, int);
+	virtual void vfunc229(int);
+	virtual void vfunc230(int, void *);
+	virtual void vfunc231(void *, float, int, int);
+	virtual void vfunc232(int);
+	virtual int vfunc233(int *, int);
+	virtual struct CGameTrace vfunc234(const Vector *);
 	virtual void vfunc235();
 	virtual void vfunc236();
-	virtual void vfunc237_slot();
-	virtual void vfunc238_slot();
-	virtual void vfunc239();
-	virtual void vfunc240();
+	virtual int vfunc237();
+	virtual void vfunc238(Vector *, Vector *, int, int);
+	virtual bool vfunc239(float);
+	virtual int vfunc240();
 	virtual void vfunc241();
 	virtual void vfunc242();
 	virtual void vfunc243();

@@ -32,10 +32,10 @@ public:
 	virtual int vfunc80(); virtual int vfunc81(); virtual datamap_t *vfunc82();	// slots 80..82
 	virtual char vfunc86(int a, int b, int c, int d, int e);
 	virtual void vfunc103();	// slot 103 "CHL2_Player::Spawn": clears the byte at +0x2544, slot 408 / 407 around the flag tests of CUnknown1015ef20 (bit 5 of +0x19c follows them), the player base (sub_1016d260), then CBasePlayer::sub_1015efa0 when slot 406 says so
-	virtual int vfunc142(void *pInfo);	// slot 142 "OnTakeDamage" (the damage info, const CTakeDamageInfo *): a damage above zero (the CVDmg_t's GetDmg when the record has one, else the plain damage at +0x30) stamps the time at +0x253c and punches the view by a random angle scaled by the damage (and a convar), then the player base
+	virtual int vfunc142(struct CTakeDamageInfo *pInfo);	// slot 142 "OnTakeDamage" (the damage info, const CTakeDamageInfo *): a damage above zero (the CVDmg_t's GetDmg when the record has one, else the plain damage at +0x30) stamps the time at +0x253c and punches the view by a random angle scaled by the damage (and a convar), then the player base
 	virtual void vfunc144(void *pArg);
 	virtual void vfunc175(CBaseEntity *pEnt);	// slot 175: flags the byte at +0x2128 when pEnt (not the slot 209 entity) is a type 7 / 6 entity whose object at +0x36c answers slot 1 false
-	virtual int vfunc196(int a);	// the slot's signature; the function is the plain Vector vfunc196() below
+	/* vfunc196: declared by the slot */	// the slot's signature; the function is the plain Vector vfunc196() below
 	virtual void vfunc333(int unused);	// slot 333: the camera offset: (the second vector of the viewpoint query) * 300.0f + the first one, kept at +0xe44 and copied to +0xe50, then slot 277(+0xe50)
 	virtual bool vfunc366(int, int, int);
 	virtual Vector vfunc370();	// the slot's signature; the function is the plain int sub_1034fd90(int) below

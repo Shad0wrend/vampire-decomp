@@ -196,7 +196,7 @@ void CUnknown1042e8c0::sub_1042e8c0()
 #include "CSprite.h"
 
 // TARGET: CSprite::vfunc173
-void CSprite::vfunc173(int a, int b, int nUseType, int d)
+void CSprite::vfunc173(CBaseEntity *a, CBaseEntity *b, int nUseType, int d)
 {
     int bOff = *(int *)((char *)this + 0x19c) != 0x40;
     if (sub_100a98f0(nUseType, bOff))

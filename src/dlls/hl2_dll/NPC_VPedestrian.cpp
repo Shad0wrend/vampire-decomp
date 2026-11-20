@@ -98,7 +98,7 @@ int CNPC_VPedestrian::vfunc461()
 					if (pChar) {
 						int *pRec = ((CBaseCombatWeapon *)pChar)->sub_102517e0();
 						Vector vecPos;
-						vecPos = *(Vector *)((CNPC_VPedestrian *)m_h628c.Get())->vfunc220_slot();
+						vecPos = *(Vector *)((CNPC_VPedestrian *)m_h628c.Get())->vfunc220();
 						sub_1028ea60(*(int *)((char *)pRec + 0x3c4), &vecPos, m_h628c.Get());
 						unsigned int seed = m_n6364;
 						CBasePlayer *pPlayer = (CBasePlayer *)m_h628c.Get();
@@ -111,7 +111,7 @@ int CNPC_VPedestrian::vfunc461()
 					CBaseEntity *pChar = sub_1032e7b0(m_h628c.Get());
 					if (pChar) {
 						int *pRec = ((CBaseCombatWeapon *)pChar)->sub_102517e0();
-						Vector vecPos = *(Vector *)((CNPC_VPedestrian *)m_h628c.Get())->vfunc220_slot();
+						Vector vecPos = *(Vector *)((CNPC_VPedestrian *)m_h628c.Get())->vfunc220();
 						sub_1028ea60(*(int *)((char *)pRec + 0x3c4), &vecPos, m_h628c.Get());
 						unsigned int seed = m_n6364;
 						CBasePlayer *pPlayer = (CBasePlayer *)m_h628c.Get();
@@ -125,8 +125,8 @@ int CNPC_VPedestrian::vfunc461()
 					PICK_STATE(0x344);
 				}
 				CBaseEntity *pOther = m_h5b78.Get();
-				const Vector &vecMine = *(const Vector *)vfunc220_slot();
-				if ((vecMine - *(const Vector *)((CNPC_VPedestrian *)pOther)->vfunc220_slot()).LengthSqr() <= 262144.0f && enginerandom->vfunc2(0, 99) < 0x4b) {
+				const Vector &vecMine = *(const Vector *)vfunc220();
+				if ((vecMine - *(const Vector *)((CNPC_VPedestrian *)pOther)->vfunc220()).LengthSqr() <= 262144.0f && enginerandom->vfunc2(0, 99) < 0x4b) {
 					PICK_STATE(0x352);
 				}
 			}

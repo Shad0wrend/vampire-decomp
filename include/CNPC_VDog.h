@@ -58,5 +58,5 @@ public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11
 	void vfunc463(int, int);	// slot 463 (0x10374260): a tail call of CNPC_VAnimal::vfunc463 (a base declares it plain vfunc463: this one hides it)
 	void vfunc390(CVAnimalArg *);	// slot 390 (0x103748e0): a tail call of CNPC_VAnimal::vfunc390 (a base declares it plain vfunc390: this one hides it)
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
-	void vfunc144(int);	// slot 144 (0x10374920): a tail call of CNPC_VAnimal::vfunc144
+	void vfunc144(void *p0);	// slot 144 (0x10374920): a tail call of CNPC_VAnimal::vfunc144
 };

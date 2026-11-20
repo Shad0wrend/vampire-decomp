@@ -27,12 +27,12 @@ public:
 	// Slot 438, declared as a plain member.
 	int vfunc438();	// "SelectSchedule": +0x1b2c = 0x2a; in state 2 (+0x5cc0) clears the byte at +0x5b80 and asks slot 604 (weapon flags 0x18000) or slot 605 with the active weapon's flags, returning a non-zero answer; otherwise CNPC_VHumanCombatant::vfunc438
 	int sub_103872d0();	// CNPC_VHumanCombatant::vfunc438 (stub 0x1000b10e), called directly
-	bool vfunc201(void *pEnt, int traceMask, int *ppBlocker, int d);	// slot 201: FVisible: false for a null entity or while the two global flags hold (clears *ppBlocker then), else slot 594
+	bool vfunc201(CBaseEntity *pEnt, int traceMask, CBaseEntity **ppBlocker, int d);	// slot 201: FVisible: false for a null entity or while the two global flags hold (clears *ppBlocker then), else slot 594
 public:
 	virtual void vfunc134();
-	virtual void vfunc135();
-	virtual void vfunc136();
-	virtual void vfunc137();
+	virtual float vfunc135(float);
+	virtual bool vfunc136();
+	virtual int vfunc137();
 	virtual int vfunc138();
 	virtual void *vfunc580();	// slot 580
 	virtual const char *vfunc451();	// slot 451: the class name "CNPC_VYukie"
@@ -51,5 +51,5 @@ public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11
 	void vfunc259(animevent_t *);	// slot 259 (0x103dd690): a tail call of CNPC_VHuman::vfunc259 (no such slot in this view: plain)
 	int vfunc390(CTakeDamageInfo *);	// slot 390 (0x103dd7e0): a tail call of CNPC_VHuman::vfunc390 (no such slot in this view: plain)
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)
-	void vfunc144(int);	// slot 144 (0x103dd860): a tail call of CNPC_VHuman::vfunc144 (a base declares another vfunc144: this one hides it)
+	void vfunc144(void *p0);	// slot 144 (0x103dd860): a tail call of CNPC_VHuman::vfunc144 (a base declares another vfunc144: this one hides it)
 };

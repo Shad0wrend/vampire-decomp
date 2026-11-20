@@ -298,8 +298,9 @@ bool CBreakableProp::vfunc74(int a)
 void sub_10006d61();
 
 // TARGET: CBreakableProp::vfunc230
-void CBreakableProp::vfunc230(int a, int b)
+void CBreakableProp::vfunc230(int a, void *b)
 {
+#define b ((int)b)
     void (CBreakableProp::*pBase)(int, int);
     *(void **)&pBase = (void *)sub_10006d61;
     (this->*pBase)(a, b);
@@ -308,6 +309,7 @@ void CBreakableProp::vfunc230(int a, int b)
     void **vt = *(void ***)this;
     *(void **)&pSlot75 = vt[0x12c / 4];
     (this->*pSlot75)(a, b);
+#undef b
 }
 // END FUNCTION
 

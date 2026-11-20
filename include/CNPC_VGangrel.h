@@ -13,9 +13,9 @@ public:
 	CNPC_VGangrel *sub_10377030();	// as in CKeepUpright (transplant)
 public:
 	virtual void vfunc134();
-	virtual void vfunc135();
-	virtual void vfunc136();
-	virtual void vfunc137();
+	virtual float vfunc135(float);
+	virtual bool vfunc136();
+	virtual int vfunc137();
 	virtual int vfunc138();
 	char m_pad6664[0x6668 - 0x6664];
 public:	// tail-call overrides (the game's 5-byte jmp bodies, link audit 2026-11-18)

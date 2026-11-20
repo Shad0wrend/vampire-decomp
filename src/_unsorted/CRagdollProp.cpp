@@ -141,7 +141,7 @@ void CRagdollProp::vfunc123()
 // FUNCTION: 0x10155150 size=0x3
 #include "CRagdollProp.h"
 // TARGET: CRagdollProp::vfunc158
-char CRagdollProp::vfunc158() { return 0; }
+bool CRagdollProp::vfunc158() { return (bool)(0); }
 // END FUNCTION
 
 // FUNCTION: 0x10155170 size=0x3
@@ -317,7 +317,7 @@ public:
 	VIEW_SLOT100(0)
 	VIEW_SLOT10(10) VIEW_SLOT10(11) VIEW_SLOT10(12) VIEW_SLOT10(13)
 	VIEW_SLOT(140) VIEW_SLOT(141)
-	virtual void vfunc142(const CRagdollPropDamageInfo *pInfo);
+	virtual int vfunc142(const CRagdollPropDamageInfo *pInfo);
 };
 
 struct CTakeDamageInfoView : CRagdollPropDamageInfo
@@ -333,34 +333,37 @@ struct CRagdollPropView
 
 struct CBaseEntityInfoView
 {
-	void sub_100a0e40(const CRagdollPropDamageInfo *pInfo);
+	int sub_100a0e40(const CRagdollPropDamageInfo *pInfo);
 };
 
 // TARGET: CRagdollProp::vfunc142
-void CRagdollProp::vfunc142(const CRagdollPropDamageInfo *pInfo)
+int CRagdollProp::vfunc142(struct CTakeDamageInfo *pDamage)
 {
-	const CRagdollPropDamageInfo &info = *pInfo;
+	const CRagdollPropDamageInfo &info = *(const CRagdollPropDamageInfo *)pDamage;
 	if ( ((CRagdollPropView *)this)->m_hDamageEntity.Get() )
 	{
 		CTakeDamageInfoView subInfo = *(const CTakeDamageInfoView *)&info;
 		subInfo.AddDamageType( 0x800000 );
-		((CRagdollPropView *)this)->m_hDamageEntity->vfunc142( &subInfo );
-		return;
+		return ((CRagdollPropView *)this)->m_hDamageEntity->vfunc142( &subInfo );
 	}
 
-	((CBaseEntityInfoView *)this)->sub_100a0e40( &info );
+	return ((CBaseEntityInfoView *)this)->sub_100a0e40( &info );
 }
 // END FUNCTION
 
 // FUNCTION: 0x10155a70 size=0x47
 #include "CRagdollProp.h"
 
-void CRagdollProp::vfunc141(int a, int b, void *pInfo)
+void CRagdollProp::vfunc141(class CVDmg_t *a, const Vector *b, struct CGameTrace *pInfo)
 {
+#define a ((int)a)
+#define b ((int)b)
 	short nBody = *(short *)((char *)pInfo + 0x48);
 	if (nBody >= 0 && nBody < m_nBodies730)
 		sub_100a68f0(m_Bodies[nBody].m_pObject);
 	CBaseEntity::vfunc141(a, b, pInfo);
+#undef b
+#undef a
 }
 // END FUNCTION
 
@@ -615,7 +618,7 @@ inline void MatrixAnglesX(const matrix3x4_t &m, QAngle &angles, Vector &pos)
 	sub_10137ed0(&m, &angles.x);
 	sub_10138720(&m, 3, &pos.x);
 }
-void CRagdollProp::vfunc226(void *pPhysics)
+void CRagdollProp::vfunc226(int pPhysics)
 {
 	CRagdollPropUnit *p = (CRagdollPropUnit *)this;
 	if (p->m_lastUpdateTickCount == gpGlobals->m_n18)
@@ -655,7 +658,7 @@ void CRagdollProp::vfunc226(void *pPhysics)
 				vecFullMaxs[j] = maxs[j];
 		}
 	}
-	vfunc216(&p->m_ragPos[0].x);
+	vfunc216(*(const Vector *)&p->m_ragPos[0].x);
 	CCollisionProperty *pColl = (CCollisionProperty *)((char *)this + 0x270);
 	const Vector &vecOrigin = *((CCollOriginView *)pColl)->s8();
 	pColl->AddSolidFlags(0x80);

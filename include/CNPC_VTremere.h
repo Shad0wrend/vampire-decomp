@@ -12,9 +12,9 @@ public:
 	CNPC_VTremere *sub_103b5a90();	// as in CKeepUpright (transplant)
 public:
 	virtual void vfunc134();
-	virtual void vfunc135();
-	virtual void vfunc136();
-	virtual void vfunc137();
+	virtual float vfunc135(float);
+	virtual bool vfunc136();
+	virtual int vfunc137();
 	virtual int vfunc138();
 	virtual void *vfunc580();	// slot 580
 	virtual const char *vfunc451();	// slot 451: the class name "CNPC_VTremere"

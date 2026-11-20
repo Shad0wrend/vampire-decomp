@@ -24,7 +24,7 @@ public:
 	int sub_1008f7b0(const char *pszName);	// CBaseAnimating::LookupSequence (stub 0x1000e057), called directly
 	void sub_1018df70();	// CBaseProp::vfunc103 (stub 0x10011793), called directly
 	void *sub_100952d0(int a);	// CBaseAnimating::GetModelPtr-like (stub 0x10013d8b), called directly
-	virtual void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, float value);	// slot 173 (Use): fires the output at +0x78c when the byte +0x7a4 is set, else the one at +0x774, then switches the state (sub_1020dce0) and the linked switch behind the handle at +0x740
+	virtual void vfunc173(CBaseEntity *pActivator, CBaseEntity *pCaller, int useType, int value);	// slot 173 (Use): fires the output at +0x78c when the byte +0x7a4 is set, else the one at +0x774, then switches the state (sub_1020dce0) and the linked switch behind the handle at +0x740
 	char sub_1020e020();	// the byte at +0x7a4 (stub 0x1000a2f9), called directly
 	char sub_1020e040();	// the byte at +0x7a5 (stub 0x1000b933), called directly
 	virtual void vfunc71();	// slot 71 "GetVSoundTable": looks the sound set named by the string at +0xc0 up in the sound table (0x1073dc00) into +0xb4, clears +0xbc and caches the ids of the sounds "on" / "off" in 0x1074f13c / 0x1074f140

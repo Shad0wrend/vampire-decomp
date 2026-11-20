@@ -20,7 +20,7 @@ datamap_t *CRevertSaved::vfunc82()
 void sub_101ce210(void *pColor, float a, float b, int flags);
 void sub_10001532();
 
-void CRevertSaved::vfunc173(int a, int b, int c, int d)
+void CRevertSaved::vfunc173(CBaseEntity *a, CBaseEntity *b, int c, int d)
 {
 	float fadeTime = m_fade.m_flFadeTime;
 	float hold = m_fade.m_flFadeHold;

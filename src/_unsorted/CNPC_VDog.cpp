@@ -343,7 +343,7 @@ bool CNPC_VDog::vfunc366(int a0, int a1, int a2)
 
 // TARGET: CNPC_VDog::vfunc144
 // the game's 0x10374920: a tail call (jmp) of CNPC_VAnimal::vfunc144
-void CNPC_VDog::vfunc144(int a0)
+void CNPC_VDog::vfunc144(void *a0)
 {
 	CNPC_VAnimal::vfunc144(a0);
 }
