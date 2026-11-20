@@ -3777,6 +3777,34 @@ char CUnk1011d310::sub_1013c7b0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013c8a0 size=0x33
+struct CInitView {
+    int m_n0;
+    int m_n4;
+    int m_n8;
+    int m_nc;
+    int m_n10;
+    unsigned char m_b14;
+    unsigned char m_b15;
+    CInitView *sub_1013c8a0(int a, int b, unsigned char bFlag);
+};
+
+// TARGET: CInitView::sub_1013c8a0
+CInitView *CInitView::sub_1013c8a0(int a, int b, unsigned char bFlag)
+{
+    m_n0 = a;
+    m_n4 = b;
+    m_n8 = -1;
+    m_b14 = 0;
+    m_nc = 0;
+    m_n10 = 0;
+    m_b15 = 0;
+    if (bFlag != 0)
+        m_b15 = 1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c970 size=0x7c
 #include "CUnknown1006bea0.h"
 
