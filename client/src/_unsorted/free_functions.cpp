@@ -2330,3 +2330,23 @@ S9 *S9::sub_10155b40()
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10155cc0 size=0x8c
+#include "CUnknown101f5150.h"
+bool CUnknown101f5150::sub_10155cc0(const char *pszName)
+{
+    CUnknown101f40f0 **pNew = (CUnknown101f40f0 **)operator new(m_nCount * 4 + 4);
+    if (m_nCount > 0) {
+        for (int i = 0; i < m_nCount; i++)
+            pNew[i] = m_pItems[i];
+        operator delete(m_pItems);
+    }
+    m_pItems = pNew;
+    CUnknown101f40f0 *p = (CUnknown101f40f0 *)operator new(0x34);
+    p = p ? p->sub_10155380() : 0;
+    m_pItems[m_nCount] = p;
+    m_pItems[m_nCount]->sub_101553d0(this, pszName);
+    m_nCount++;
+    return true;
+}
+// END FUNCTION
