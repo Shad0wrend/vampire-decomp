@@ -2400,6 +2400,7 @@
 0x10003f80 func   ?sub_102bf820@CAI_BaseNPCTroika@@QAEXM@Z CAI_BaseNPCTroika::sub_102bf820
 0x10003f85 func   ?sub_1002e0a0@@YAGPAUIPhysObj@@G@Z sub_1002e0a0
 0x10003f8a func   ?sub_10197050@@YAPAUPyObject@@PAU1@PAD@Z sub_10197050
+0x10003f8f func   ?vfunc142@CRagdollProp@@UAEHPAUCTakeDamageInfo@@@Z CRagdollProp::vfunc142
 0x10003f8f func   ?vfunc142@CRagdollProp@@UAEXPBUCRagdollPropDamageInfo@@@Z CRagdollProp::vfunc142
 0x10003f94 func   _logic_case_toggle logic_case_toggle
 0x10003f99 func   ?vfunc259@CBaseAnimating@@QAEXPAX@Z CBaseAnimating::vfunc259
