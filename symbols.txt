@@ -11761,6 +11761,7 @@
 0x1000f63c func   ?vfunc5@CAISound@@UAEPAVCBaseEntity@@I@Z CAISound::vfunc5
 0x1000f641 func   ?vfunc2@CTEShatterSurface@@UAEPAVCBaseTempEntity@@I@Z CTEShatterSurface::vfunc2
 0x1000f646 func   ?vfunc144@CNPC_VHunter@@UAEXH@Z CNPC_VHunter::vfunc144
+0x1000f646 func   ?vfunc144@CNPC_VHunter@@UAEXPAX@Z CNPC_VHunter::vfunc144
 0x1000f64b func   ?vfunc5@CNPC_VChangBrosBlade@@QAEPAV1@I@Z CNPC_VChangBrosBlade::vfunc5
 0x1000f650 func   ?sub_10204330@CUnknown10204330@@QAEPAXH@Z CUnknown10204330::sub_10204330
 0x1000f655 func   ?sub_103169a0@CUnknown10316890@@QAEXHVVector@@0H@Z CUnknown10316890::sub_103169a0
