@@ -13584,6 +13584,7 @@
 0x10011c89 func   ?vfunc624@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc624
 0x10011c8e func   ?vfunc68@CNPC_VWerewolf@@QAEDPAX@Z CNPC_VWerewolf::vfunc68
 0x10011c93 func   ?sub_10203440@@YAPAXH@Z sub_10203440
+0x10011c98 func   ??1CAI_Navigator@@UAE@XZ CAI_Navigator::~CAI_Navigator
 0x10011c98 func   ?sub_102ecb90@@YIXPAH@Z sub_102ecb90
 0x10011c9d func   ?vfunc250@CRotDoor@@QAEXXZ CRotDoor::vfunc250
 0x10011ca2 func   ?sub_102f7ca0@CUnknown102f7ca0@@QAEXXZ CUnknown102f7ca0::sub_102f7ca0
