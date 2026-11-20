@@ -8629,6 +8629,7 @@
 0x1000b9d8 func   ?sub_103dc040@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_103dc040
 0x1000b9dd func   ?sub_10268330@CBaseEntity@@QAEXPAV1@PAXM@Z CBaseEntity::sub_10268330
 0x1000b9e2 func   ?vfunc154@CBaseEntity@@QAEHHH@Z CBaseEntity::vfunc154
+0x1000b9e2 func   ?vfunc154@CBaseEntity@@UAEHHH@Z CBaseEntity::vfunc154
 0x1000b9e7 func   ?sub_1040b120@CUtlMemory192@@QAEXH@Z CUtlMemory192::sub_1040b120
 0x1000b9f1 func   _item_k_shrekhub_four_key item_k_shrekhub_four_key
 0x1000b9f6 func   ?sub_10159310@CPlatTrigger@@QAEXPAVCFuncPlat@@@Z CPlatTrigger::sub_10159310
