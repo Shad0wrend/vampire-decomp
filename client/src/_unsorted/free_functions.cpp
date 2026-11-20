@@ -200,3 +200,14 @@ void sub_10045630(Vector *a, Vector *b, Vector *out)
     CrossProduct(*a, *b, *out);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10049f20 size=0x19
+struct CUnknown100f2f90 { void * sub_10049f20(int, int, int); };
+void * CUnknown100f2f90::sub_10049f20(int a0, int a1, int a2)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = a1;
+    *(int *)((char *)this + 8) = a2;
+    return this;
+}
+// END FUNCTION
