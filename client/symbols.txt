@@ -109,6 +109,7 @@
 0x1013c9f0 func   ?sub_1013c9f0@CUnknown1006bea0@@QAEXXZ CUnknown1006bea0::sub_1013c9f0
 0x1013d330 func   ?sub_1013d330@CUnknown1024b370@@QAEXXZ CUnknown1024b370::sub_1013d330
 0x1013ddc0 func   ?sub_1013ddc0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_1013ddc0
+0x10140290 func   ?sub_10140290@CUnknown101d62d0@@QAEPAUCUnknown101d62d0Record@@XZ CUnknown101d62d0::sub_10140290
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit
