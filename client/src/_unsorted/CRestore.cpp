@@ -29,3 +29,13 @@ short CRestore::vfunc13()
 	return v;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012aae0 size=0x18
+#include "CRestore.h"
+char CRestore::vfunc16()
+{
+	char c = 0;
+	sub_1012ab60(&c, 1);
+	return c;
+}
+// END FUNCTION
