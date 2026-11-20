@@ -4160,6 +4160,42 @@ const char *CUnit101d5e00::sub_1013ffa0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101401e0 size=0x29
+#include "Vector.h"
+struct CUnknown101d61e0_Sub10 {
+	int m_n0;
+	int m_n4;
+	void Init() { m_n0 = 1; m_n4 = 0; }
+};
+struct CUnknown101d61e0 {
+	int m_p0000;
+	int m_n0004;
+	int m_n0008;
+	int m_n000c;
+	CUnknown101d61e0_Sub10 m_sub10;
+	int m_n0018;
+	int m_n001c;
+	int m_n0020;
+	int m_n0024;
+	int m_n0028;
+	CUnknown101d61e0 *sub_101401e0(int p);
+};
+
+// TARGET: CUnknown101d61e0::sub_101401e0
+CUnknown101d61e0 *CUnknown101d61e0::sub_101401e0(int p)
+{
+	m_sub10.Init();
+	m_n0020 = 0;
+	m_n0024 = 0;
+	m_n0028 = 0;
+	m_n000c = 0;
+	m_n0004 = 0;
+	m_n0008 = 0;
+	m_p0000 = p;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140290 size=0xec
 #include "CUnknown101d62d0.h"
 
