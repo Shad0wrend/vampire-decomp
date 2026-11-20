@@ -8,6 +8,8 @@ struct DummyPredictionSystem : IPredictionSystem
 {
 };
 
-DummyPredictionSystem g_dummyPredictionSystem;
+// built in a function nothing calls (a local one is optimized away): a global one would link itself into
+// g_pPredictionSystems at load
+IPredictionSystem *pcd_emit_10059db0() { return new DummyPredictionSystem; }
 // TARGET: ??_GIPredictionSystem@@UAEPAXI@Z
 // END FUNCTION

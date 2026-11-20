@@ -341,6 +341,7 @@ void CPhysForce::sub_10027b60(float flScale)
 // END FUNCTION
 
 // FUNCTION: 0x10027bb0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_10007810(GP *);
@@ -353,7 +354,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: phys_thruster
-extern "C" GP *phys_thruster()
+DLL_EXPORT GP *phys_thruster()
 {
 	GP *p = (GP *)sub_1000db89(0x4a8);
 	if (p) {
@@ -435,6 +436,7 @@ int sub_100281c0()
 // END FUNCTION
 
 // FUNCTION: 0x100281f0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_10007810(GP *);
@@ -447,7 +449,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: phys_torque
-extern "C" GP *phys_torque()
+DLL_EXPORT GP *phys_torque()
 {
 	GP *p = (GP *)sub_1000db89(0x4a8);
 	if (p) {
@@ -523,6 +525,7 @@ int *sub_10028720()
 // END FUNCTION
 
 // FUNCTION: 0x100289e0 size=0x5f
+#include "platform.h"
 #include "CHumanoidRec.h"
 #include "utlmemory.h"
 extern int vt_104462a8[];
@@ -543,7 +546,7 @@ struct CPhysMotorFactoryView {
 		return this;
 	}
 };
-extern "C" void *phys_motor()
+DLL_EXPORT void *phys_motor()
 {
 	CPhysMotorFactoryView *m = (CPhysMotorFactoryView *)sub_100aa720(0x4a0);
 	CPhysMotorFactoryView *p = m ? m->Construct() : 0;
@@ -728,12 +731,13 @@ int CUnknown10029130::sub_10029130(int a0, int a1, int a2)
 // END FUNCTION
 
 // FUNCTION: 0x10029200 size=0x43
+#include "platform.h"
 #include "CKeepUpright.h"
 void *sub_100aa720(int size);
 extern char g_1053896c[];
 
 // TARGET: phys_keepupright
-extern "C" CBaseEntity *phys_keepupright()
+DLL_EXPORT CBaseEntity *phys_keepupright()
 {
 	void *mem = sub_100aa720(0x480);
 	CKeepUpright *p;
@@ -952,6 +956,7 @@ int CKeepUprightMotionEvent::sub_10029940(void *pController, IPhysicsObject *pOb
 // END FUNCTION
 
 // FUNCTION: 0x10029ea0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 
 void *sub_100aa720(unsigned int size);
@@ -959,7 +964,7 @@ inline void *operator new(unsigned int, void *p) { return p; }
 extern const char g_1053938c[];
 
 // TARGET: info_constraint_anchor
-extern "C" CConstraintAnchor *info_constraint_anchor()
+DLL_EXPORT CConstraintAnchor *info_constraint_anchor()
 {
 	void *mem = sub_100aa720(0x450);
 	CConstraintAnchor *p = mem ? ::new(mem) CConstraintAnchor : 0;
@@ -986,6 +991,7 @@ int *sub_1002a0f0()
 // END FUNCTION
 
 // FUNCTION: 0x1002a1a0 size=0x4b
+#include "platform.h"
 #include "CPhysConstraintSystem.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
@@ -994,7 +1000,7 @@ extern char g_10446c24[];	// CPhysConstraintSystem vftable
 extern const char g_105393d4[];
 
 // TARGET: phys_constraintsystem
-extern "C" CBaseEntity *phys_constraintsystem()
+DLL_EXPORT CBaseEntity *phys_constraintsystem()
 {
 	void *mem = sub_100aa720(0x454);
 	CBaseEntity *p;
@@ -1588,6 +1594,7 @@ int sub_1002b760()
 // END FUNCTION
 
 // FUNCTION: 0x1002b790 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000e480(GP *);
@@ -1600,7 +1607,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: phys_hinge
-extern "C" GP *phys_hinge()
+DLL_EXPORT GP *phys_hinge()
 {
 	GP *p = (GP *)sub_1000db89(0x4c4);
 	if (p) {
@@ -1615,6 +1622,7 @@ extern "C" GP *phys_hinge()
 // END FUNCTION
 
 // FUNCTION: 0x1002bb20 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000e480(GP *);
@@ -1627,7 +1635,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: phys_ballsocket
-extern "C" GP *phys_ballsocket()
+DLL_EXPORT GP *phys_ballsocket()
 {
 	GP *p = (GP *)sub_1000db89(0x488);
 	if (p) {
@@ -1642,6 +1650,7 @@ extern "C" GP *phys_ballsocket()
 // END FUNCTION
 
 // FUNCTION: 0x1002bcc0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000e480(GP *);
@@ -1654,7 +1663,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: phys_slideconstraint
-extern "C" GP *phys_slideconstraint()
+DLL_EXPORT GP *phys_slideconstraint()
 {
 	GP *p = (GP *)sub_1000db89(0x498);
 	if (p) {
@@ -1683,6 +1692,7 @@ int sub_1002bd90()
 // END FUNCTION
 
 // FUNCTION: 0x1002c120 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000e480(GP *);
@@ -1695,7 +1705,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: phys_constraint
-extern "C" GP *phys_constraint()
+DLL_EXPORT GP *phys_constraint()
 {
 	GP *p = (GP *)sub_1000db89(0x488);
 	if (p) {
@@ -1724,6 +1734,7 @@ int sub_1002c360()
 // END FUNCTION
 
 // FUNCTION: 0x1002c390 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000e480(GP *);
@@ -1736,7 +1747,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: phys_pulleyconstraint
-extern "C" GP *phys_pulleyconstraint()
+DLL_EXPORT GP *phys_pulleyconstraint()
 {
 	GP *p = (GP *)sub_1000db89(0x4b4);
 	if (p) {
@@ -13550,6 +13561,7 @@ bool CUtlRBTree36::sub_1004c4c0(unsigned short i) const
 // END FUNCTION
 
 // FUNCTION: 0x1004ca10 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CPhysicsSpring.h"
 
@@ -13557,7 +13569,7 @@ void *sub_100aa720(int size);
 extern char g_1053d8e4[];
 
 // TARGET: phys_spring
-extern "C" CBaseEntity *phys_spring()
+DLL_EXPORT CBaseEntity *phys_spring()
 {
 	void *mem = sub_100aa720(0x48c);
 	CPhysicsSpring *p;
@@ -13846,12 +13858,13 @@ void __stdcall sub_1004ddc0(char *ptr, unsigned size, int count, PMF_1004ddc0 pm
 // END FUNCTION
 
 // FUNCTION: 0x1004de10 size=0x43
+#include "platform.h"
 #include "CPhysBox.h"
 void *sub_100aa720(int size);
 extern char g_1053db40[];
 
 // TARGET: func_physbox
-extern "C" CBaseEntity *func_physbox()
+DLL_EXPORT CBaseEntity *func_physbox()
 {
 	void *mem = sub_100aa720(0x4cc);
 	CPhysBox *p;
@@ -13990,6 +14003,7 @@ void block_1004e770::CEntUnit::sub_1004e770(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1004e9c0 size=0x4b
+#include "platform.h"
 #include "CPhysExplosion.h"
 
 void *sub_100aa720(unsigned int size);
@@ -13997,7 +14011,7 @@ inline void *operator new(unsigned int, void *p) { return p; }
 extern const char g_1053dc40[];
 
 // TARGET: env_physexplosion
-extern "C" CPhysExplosion *env_physexplosion()
+DLL_EXPORT CPhysExplosion *env_physexplosion()
 {
 	void *mem = sub_100aa720(0x45c);
 	CPhysExplosion *p = mem ? ::new(mem) CPhysExplosion : 0;
@@ -14100,6 +14114,7 @@ void CPhysExplosion::sub_1004ec60(float flRadius)
 // END FUNCTION
 
 // FUNCTION: 0x1004ee20 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -14107,7 +14122,7 @@ extern char g_1044a2c4[];	// CPhysImpact vftable
 extern const char g_1053dc78[];
 
 // TARGET: env_physimpact
-extern "C" CBaseEntity *env_physimpact()
+DLL_EXPORT CBaseEntity *env_physimpact()
 {
 	void *mem = sub_100aa720(0x464);
 	CBaseEntity *p;
@@ -14296,6 +14311,7 @@ void * CUnknown1004f860::sub_1004f860()
 // END FUNCTION
 
 // FUNCTION: 0x1004f880 size=0x53
+#include "platform.h"
 #include "CSimplePhysicsBrush.h"
 
 void *sub_100aa720(unsigned int size);
@@ -14303,7 +14319,7 @@ inline void *operator new(unsigned int, void *p) { return p; }
 extern const char g_1053dcd4[];
 
 // TARGET: simple_physics_brush
-extern "C" CSimplePhysicsBrush *simple_physics_brush()
+DLL_EXPORT CSimplePhysicsBrush *simple_physics_brush()
 {
 	void *mem = sub_100aa720(0x450);
 	CSimplePhysicsBrush *p = mem ? new(mem) CSimplePhysicsBrush : 0;
@@ -14313,12 +14329,13 @@ extern "C" CSimplePhysicsBrush *simple_physics_brush()
 // END FUNCTION
 
 // FUNCTION: 0x1004fb30 size=0x51
+#include "platform.h"
 #include "CBaseAnimating.h"
 void *sub_100aa720(unsigned int);
 void __fastcall sub_100103fc(void *p);
 extern int g_1044abf4[];
 struct ESP { unsigned int pad[0x13]; unsigned int m_f; };
-extern "C" CBaseAnimating *simple_physics_prop()
+DLL_EXPORT CBaseAnimating *simple_physics_prop()
 {
     CBaseAnimating *p = (CBaseAnimating *)sub_100aa720(0x730);
     if (p) {
@@ -14468,12 +14485,13 @@ CBaseEntity *sub_1004ff40(CBreakableSlots *pBreakable)
 // END FUNCTION
 
 // FUNCTION: 0x100500a0 size=0x43
+#include "platform.h"
 #include "CPhysConvert.h"
 void *sub_100aa720(int size);
 extern char g_1053dd98[];
 
 // TARGET: phys_convert
-extern "C" CBaseEntity *phys_convert()
+DLL_EXPORT CBaseEntity *phys_convert()
 {
 	void *mem = sub_100aa720(0x470);
 	CPhysConvert *p;
@@ -14738,6 +14756,7 @@ int sub_10050ae0()
 // END FUNCTION
 
 // FUNCTION: 0x10050b10 size=0x53
+#include "platform.h"
 void *sub_100aa720(unsigned int size);
 
 extern int vt_1044ba64;
@@ -14757,7 +14776,7 @@ struct GP {
 };
 
 // TARGET: disc_particle
-extern "C" GP *disc_particle()
+DLL_EXPORT GP *disc_particle()
 {
 	GP *p = (GP *)sub_100aa720(0x4c8);
 	if (p) {
@@ -15073,6 +15092,7 @@ void CDisciplineParticleUnit::sub_10051a40()
 // END FUNCTION
 
 // FUNCTION: 0x10051b00 size=0xcb
+#include "platform.h"
 #include "CUnknown101d7520.h"
 #include "CUnknown101daec0.h"
 #include "CUnknown101e56e0.h"
@@ -15088,7 +15108,7 @@ void *sub_100aa720(int size);
 extern void *vt_1044bf04[];
 extern char g_1053ea38[];
 
-extern "C" CBaseEntity *auspex_aura()
+DLL_EXPORT CBaseEntity *auspex_aura()
 {
 	CAuspexAura *pEnt;
 	void *pMem = sub_100aa720(0x4cc);
@@ -16272,6 +16292,7 @@ void CUtlRBTree24::sub_100561a0(int elem)
 // END FUNCTION
 
 // FUNCTION: 0x100563f0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -16279,7 +16300,7 @@ extern char g_1044c3b4[];	// CDynamicLight vftable
 extern const char g_1053f534[];
 
 // TARGET: light_dynamic
-extern "C" CBaseEntity *light_dynamic()
+DLL_EXPORT CBaseEntity *light_dynamic()
 {
 	void *mem = sub_100aa720(0x46c);
 	CBaseEntity *p;
@@ -16429,6 +16450,7 @@ CTempEntTester *sub_10056ba0(const float *pOrigin, const float *pAngles, const c
 // END FUNCTION
 
 // FUNCTION: 0x10056d00 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -16436,7 +16458,7 @@ extern char g_1044c854[];	// CTempEntTester vftable
 extern const char g_1053f72c[];
 
 // TARGET: te_tester
-extern "C" CBaseEntity *te_tester()
+DLL_EXPORT CBaseEntity *te_tester()
 {
 	void *mem = sub_100aa720(0x498);
 	CBaseEntity *p;
@@ -16483,6 +16505,7 @@ int CUnknown10056f80::sub_10056f80()
 // END FUNCTION
 
 // FUNCTION: 0x10057050 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CFireSmoke.h"
 
@@ -16490,7 +16513,7 @@ void *sub_100aa720(int size);
 extern char g_1053faa0[];
 
 // TARGET: _firesmoke
-extern "C" CBaseEntity *_firesmoke()
+DLL_EXPORT CBaseEntity *_firesmoke()
 {
 	void *mem = sub_100aa720(0x464);
 	CFireSmoke *p;
@@ -16933,6 +16956,7 @@ int sub_10057cf0()
 // END FUNCTION
 
 // FUNCTION: 0x10057f70 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100012e4(GP *);
@@ -16945,7 +16969,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: env_steam
-extern "C" GP *env_steam()
+DLL_EXPORT GP *env_steam()
 {
 	GP *p = (GP *)sub_1000db89(0x474);
 	if (p) {
@@ -16960,6 +16984,7 @@ extern "C" GP *env_steam()
 // END FUNCTION
 
 // FUNCTION: 0x10057fe0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100012e4(GP *);
@@ -16972,7 +16997,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: env_steamjet
-extern "C" GP *env_steamjet()
+DLL_EXPORT GP *env_steamjet()
 {
 	GP *p = (GP *)sub_1000db89(0x474);
 	if (p) {
@@ -20906,6 +20931,7 @@ int sub_1006b7a0()
 // END FUNCTION
 
 // FUNCTION: 0x1006ba30 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -20913,7 +20939,7 @@ extern char g_1044e1cc[];	// CTestTraceline vftable
 extern const char g_105461c8[];
 
 // TARGET: test_traceline
-extern "C" CBaseEntity *test_traceline()
+DLL_EXPORT CBaseEntity *test_traceline()
 {
 	void *mem = sub_100aa720(0x450);
 	CBaseEntity *p;
@@ -21895,13 +21921,14 @@ void __fastcall sub_1006d0a0(CDumpTable1006d0a0 *pTable)
 // END FUNCTION
 
 // FUNCTION: 0x1006d110 size=0x43
+#include "platform.h"
 #include "CBaseCineCam.h"
 
 void *sub_100aa720(int size);
 extern char g_10546d54[];
 
 // TARGET: camera_cinematic
-extern "C" CBaseCineCam *camera_cinematic()
+DLL_EXPORT CBaseCineCam *camera_cinematic()
 {
 	CBaseCineCam *p;
 	void *mem = sub_100aa720(0x644);
@@ -23274,6 +23301,7 @@ void CEnt10070990::sub_10070990(CBasePlayerV *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x10070a10 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CCameraAnimated.h"
 
@@ -23290,7 +23318,7 @@ struct CCameraVt
 };
 
 // TARGET: camera_animated
-extern "C" CBaseEntity *camera_animated()
+DLL_EXPORT CBaseEntity *camera_animated()
 {
 	void *mem = sub_100aa720(0x830);
 	CCameraAnimated *p;
@@ -32091,13 +32119,14 @@ void CUtlRBTree24::sub_1007ffc0(int elem)
 // END FUNCTION
 
 // FUNCTION: 0x100802e0 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CSceneEntity.h"
 void *sub_100aa720(int size);
 extern char g_10548ca8[];
 
 // TARGET: logic_choreographed_scene
-extern "C" CBaseEntity *logic_choreographed_scene()
+DLL_EXPORT CBaseEntity *logic_choreographed_scene()
 {
 	void *mem = sub_100aa720(0x580);
 	CSceneEntity *p;
@@ -32111,13 +32140,14 @@ extern "C" CBaseEntity *logic_choreographed_scene()
 // END FUNCTION
 
 // FUNCTION: 0x10080350 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CSceneEntity.h"
 void *sub_100aa720(int size);
 extern char g_10548cc8[];
 
 // TARGET: scripted_scene
-extern "C" CBaseEntity *scripted_scene()
+DLL_EXPORT CBaseEntity *scripted_scene()
 {
 	void *mem = sub_100aa720(0x580);
 	CSceneEntity *p;
@@ -33384,6 +33414,7 @@ void CSceneEntity::sub_100846c0(void *pScene)
 // END FUNCTION
 
 // FUNCTION: 0x100849b0 size=0x53
+#include "platform.h"
 void *sub_100aa720(unsigned int size);
 
 extern int vt_1044f584;
@@ -33403,7 +33434,7 @@ struct GP {
 };
 
 // TARGET: instanced_scripted_scene
-extern "C" GP *instanced_scripted_scene()
+DLL_EXPORT GP *instanced_scripted_scene()
 {
 	GP *p = (GP *)sub_100aa720(0x584);
 	if (p) {
@@ -46934,12 +46965,13 @@ int sub_100b5810()
 // END FUNCTION
 
 // FUNCTION: 0x100b5840 size=0x43
+#include "platform.h"
 #include "CBaseFlex.h"
 void *sub_100aa720(int size);
 extern char g_1055962c[];
 
 // TARGET: funCBaseFlex
-extern "C" CBaseEntity *funCBaseFlex()
+DLL_EXPORT CBaseEntity *funCBaseFlex()
 {
 	void *mem = sub_100aa720(0xa80);
 	CBaseFlex *p;
@@ -47337,11 +47369,12 @@ int *sub_100b7220()
 // END FUNCTION
 
 // FUNCTION: 0x100b7590 size=0xad
+#include "platform.h"
 #include "CBaseLandmark.h"
 #include "CBaseEntity.h"
 
 // TARGET: info_landmark
-extern "C" CBaseLandmark *info_landmark()
+DLL_EXPORT CBaseLandmark *info_landmark()
 {
 	CBaseLandmark *pEntity = new CBaseLandmark;
 	((CBaseEntity *)pEntity)->vfunc106("info_landmark");
@@ -47703,12 +47736,13 @@ int sub_100b8520()
 // END FUNCTION
 
 // FUNCTION: 0x100b86c0 size=0x43
+#include "platform.h"
 #include "CBatSwarm.h"
 void *sub_100aa720(int size);
 extern char g_1055a724[];
 
 // TARGET: env_swarm_bats
-extern "C" CBaseEntity *env_swarm_bats()
+DLL_EXPORT CBaseEntity *env_swarm_bats()
 {
 	void *mem = sub_100aa720(0xc78);
 	CBatSwarm *p;
@@ -48050,6 +48084,7 @@ void CUnknown100ba120::sub_100ba120(char value)
 // END FUNCTION
 
 // FUNCTION: 0x100ba140 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -48057,7 +48092,7 @@ extern char g_1044b584[];	// CPointEntity vftable
 extern const char g_1055afd4[];
 
 // TARGET: info_target
-extern "C" CBaseEntity *info_target()
+DLL_EXPORT CBaseEntity *info_target()
 {
 	void *mem = sub_100aa720(0x450);
 	CBaseEntity *p;
@@ -48120,12 +48155,13 @@ bool sub_100ba1b0(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x100ba290 size=0x43
+#include "platform.h"
 #include "CBeam.h"
 void *sub_100aa720(int size);
 extern char g_1055aff4[];
 
 // TARGET: beam
-extern "C" CBaseEntity *beam()
+DLL_EXPORT CBaseEntity *beam()
 {
 	void *mem = sub_100aa720(0x4f4);
 	CBeam *p;
@@ -50487,6 +50523,7 @@ void CUnk100bf6a0::sub_100bf6a0()
 // END FUNCTION
 
 // FUNCTION: 0x100bf6d0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -50494,7 +50531,7 @@ extern char g_10451fac[];	// CFuncIllusionary vftable
 extern const char g_1055bbe4[];
 
 // TARGET: func_illusionary
-extern "C" CBaseEntity *func_illusionary()
+DLL_EXPORT CBaseEntity *func_illusionary()
 {
 	void *mem = sub_100aa720(0x450);
 	CBaseEntity *p;
@@ -50511,6 +50548,7 @@ extern "C" CBaseEntity *func_illusionary()
 // END FUNCTION
 
 // FUNCTION: 0x100bf870 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -50518,7 +50556,7 @@ extern char g_1045243c[];	// CFuncRotating vftable
 extern const char g_1055bc1c[];
 
 // TARGET: func_rotating
-extern "C" CBaseEntity *func_rotating()
+DLL_EXPORT CBaseEntity *func_rotating()
 {
 	void *mem = sub_100aa720(0x470);
 	CBaseEntity *p;
@@ -54604,13 +54642,14 @@ int *sub_100c8490()
 // END FUNCTION
 
 // FUNCTION: 0x100c8660 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CBaseButton.h"
 void *sub_100aa720(int size);
 extern char g_1055cb18[];
 
 // TARGET: func_button
-extern "C" CBaseEntity *func_button()
+DLL_EXPORT CBaseEntity *func_button()
 {
 	void *mem = sub_100aa720(0x5d0);
 	CBaseButton *p;
@@ -54918,6 +54957,7 @@ void __fastcall sub_100c98e0(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x100c99b0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000f37b(GP *);
@@ -54930,7 +54970,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: func_rot_button
-extern "C" GP *func_rot_button()
+DLL_EXPORT GP *func_rot_button()
 {
 	GP *p = (GP *)sub_1000db89(0x5d0);
 	if (p) {
@@ -54999,6 +55039,7 @@ int *sub_100c9e10()
 // END FUNCTION
 
 // FUNCTION: 0x100ca040 size=0x80
+#include "platform.h"
 #include "CBaseEntity.h"
 
 void *sub_100aa720(int size);
@@ -55008,7 +55049,7 @@ void __fastcall sub_1000d5ee(void *pThis);
 void __fastcall sub_10002ddd(void *pThis);
 
 // TARGET: momentary_rot_button
-extern "C" CBaseEntity *momentary_rot_button()
+DLL_EXPORT CBaseEntity *momentary_rot_button()
 {
 	void *mem = sub_100aa720(0x608);
 	CBaseEntity *p;
@@ -55298,10 +55339,11 @@ void CMomentaryRotButton::sub_100cb110()
 // END FUNCTION
 
 // FUNCTION: 0x100cb580 size=0x67
+#include "platform.h"
 #include "CCameraKeyFrame.h"
 
 // TARGET: camera_keyframe
-extern "C" CBaseEntity *camera_keyframe()
+DLL_EXPORT CBaseEntity *camera_keyframe()
 {
     CCameraKeyFrame *p = new CCameraKeyFrame;
     p->vfunc106("camera_keyframe");
@@ -55352,12 +55394,13 @@ int *sub_100cb670()
 // END FUNCTION
 
 // FUNCTION: 0x100cb910 size=0x43
+#include "platform.h"
 #include "CCameraTrack.h"
 void *sub_100aa720(int size);
 extern char g_10547134[];
 
 // TARGET: camera_track
-extern "C" CBaseEntity *camera_track()
+DLL_EXPORT CBaseEntity *camera_track()
 {
 	void *mem = sub_100aa720(0x50c);
 	CCameraTrack *p;
@@ -63485,6 +63528,7 @@ int sub_100de690()
 // END FUNCTION
 
 // FUNCTION: 0x100de6c0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -63492,7 +63536,7 @@ extern char g_104541bc[];	// CTerrainMorph vftable
 extern const char g_105615a0[];
 
 // TARGET: tectonic
-extern "C" CBaseEntity *tectonic()
+DLL_EXPORT CBaseEntity *tectonic()
 {
 	void *mem = sub_100aa720(0x48c);
 	CBaseEntity *p;
@@ -63509,6 +63553,7 @@ extern "C" CBaseEntity *tectonic()
 // END FUNCTION
 
 // FUNCTION: 0x100de730 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -63516,7 +63561,7 @@ extern char g_104541bc[];	// CTerrainMorph vftable
 extern const char g_105615ac[];
 
 // TARGET: env_terrainmorph
-extern "C" CBaseEntity *env_terrainmorph()
+DLL_EXPORT CBaseEntity *env_terrainmorph()
 {
 	void *mem = sub_100aa720(0x48c);
 	CBaseEntity *p;
@@ -69294,12 +69339,13 @@ int *sub_100ed780()
 // END FUNCTION
 
 // FUNCTION: 0x100ee240 size=0x43
+#include "platform.h"
 #include "CBaseDoor.h"
 void *sub_100aa720(int size);
 extern char g_105652bc[];
 
 // TARGET: func_door
-extern "C" CBaseEntity *func_door()
+DLL_EXPORT CBaseEntity *func_door()
 {
 	void *mem = sub_100aa720(0x658);
 	CBaseDoor *p;
@@ -70191,6 +70237,7 @@ int sub_100f18d0()
 // END FUNCTION
 
 // FUNCTION: 0x100f1900 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000917e(GP *);
@@ -70203,7 +70250,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: func_door_rotating
-extern "C" GP *func_door_rotating()
+DLL_EXPORT GP *func_door_rotating()
 {
 	GP *p = (GP *)sub_1000db89(0x710);
 	if (p) {
@@ -70637,6 +70684,7 @@ int sub_100f4620()
 // END FUNCTION
 
 // FUNCTION: 0x100f4650 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -70644,7 +70692,7 @@ extern char g_1045505c[];	// CGibShooter vftable
 extern const char g_10566024[];
 
 // TARGET: gibshooter
-extern "C" CBaseEntity *gibshooter()
+DLL_EXPORT CBaseEntity *gibshooter()
 {
 	void *mem = sub_100aa720(0x478);
 	CBaseEntity *p;
@@ -70865,12 +70913,13 @@ int sub_100f52e0()
 // END FUNCTION
 
 // FUNCTION: 0x100f53e0 size=0x43
+#include "platform.h"
 #include "CEntityFlame.h"
 void *sub_100aa720(int size);
 extern char g_105660a0[];
 
 // TARGET: entityflame
-extern "C" CBaseEntity *entityflame()
+DLL_EXPORT CBaseEntity *entityflame()
 {
 	void *mem = sub_100aa720(0x458);
 	CEntityFlame *p;
@@ -71015,6 +71064,7 @@ int sub_100f5770()
 // END FUNCTION
 
 // FUNCTION: 0x100f57a0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -71022,7 +71072,7 @@ extern char g_10455984[];	// CEnvShooter vftable
 extern const char g_105660f0[];
 
 // TARGET: env_shooter
-extern "C" CBaseEntity *env_shooter()
+DLL_EXPORT CBaseEntity *env_shooter()
 {
 	void *mem = sub_100aa720(0x488);
 	CBaseEntity *p;
@@ -73059,13 +73109,14 @@ int sub_100fa840()
 // END FUNCTION
 
 // FUNCTION: 0x100fac50 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CEnvParticle.h"
 
 void *sub_100aa720(int size);
 extern char g_105675a4[];
 
-extern "C" CBaseEntity *env_particle()
+DLL_EXPORT CBaseEntity *env_particle()
 {
 	void *mem = sub_100aa720(0x4a4);
 	CEnvParticle *p;
@@ -73613,6 +73664,7 @@ CBaseEntity *sub_100fbd50(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x100fbef0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000a9d4(GP *);
@@ -73625,7 +73677,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: inspection_node
-extern "C" GP *inspection_node()
+DLL_EXPORT GP *inspection_node()
 {
 	GP *p = (GP *)sub_1000db89(0x4a8);
 	if (p) {
@@ -73721,6 +73773,7 @@ skip:
 // END FUNCTION
 
 // FUNCTION: 0x100fc490 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000a9d4(GP *);
@@ -73733,7 +73786,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: env_particle_hud
-extern "C" GP *env_particle_hud()
+DLL_EXPORT GP *env_particle_hud()
 {
 	GP *p = (GP *)sub_1000db89(0x4a4);
 	if (p) {
@@ -73748,6 +73801,7 @@ extern "C" GP *env_particle_hud()
 // END FUNCTION
 
 // FUNCTION: 0x100fc5c0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000a9d4(GP *);
@@ -73760,7 +73814,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: func_particle
-extern "C" GP *func_particle()
+DLL_EXPORT GP *func_particle()
 {
 	GP *p = (GP *)sub_1000db89(0x4c0);
 	if (p) {
@@ -73838,6 +73892,7 @@ int sub_100fcd30()
 // END FUNCTION
 
 // FUNCTION: 0x100fcd60 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -73845,7 +73900,7 @@ extern char g_1045719c[];	// CParamsParticle vftable
 extern const char g_10567888[];
 
 // TARGET: params_particle
-extern "C" CBaseEntity *params_particle()
+DLL_EXPORT CBaseEntity *params_particle()
 {
 	void *mem = sub_100aa720(0x45c);
 	CBaseEntity *p;
@@ -73915,6 +73970,7 @@ void sub_100fce70(CBaseEntity *pEntity, const char *pszName)
 // END FUNCTION
 
 // FUNCTION: 0x100fd000 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000a9d4(GP *);
@@ -73927,7 +73983,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: inspection_brush
-extern "C" GP *inspection_brush()
+DLL_EXPORT GP *inspection_brush()
 {
 	GP *p = (GP *)sub_1000db89(0x4c4);
 	if (p) {
@@ -74018,9 +74074,10 @@ skip:
 // END FUNCTION
 
 // FUNCTION: 0x100fd590 size=0x67
+#include "platform.h"
 #include "CEnvPlayerSurfaceTrigger.h"
 
-extern "C" CBaseEntity *env_player_surface_trigger()
+DLL_EXPORT CBaseEntity *env_player_surface_trigger()
 {
 	CEnvPlayerSurfaceTrigger *p = new CEnvPlayerSurfaceTrigger;
 	p->vfunc106("env_player_surface_trigger");
@@ -74384,6 +74441,7 @@ int sub_100fe610()
 // END FUNCTION
 
 // FUNCTION: 0x100fe640 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -74391,7 +74449,7 @@ extern char g_10457f6c[];	// CEnvWind vftable
 extern const char g_105682c8[];
 
 // TARGET: env_wind
-extern "C" CBaseEntity *env_wind()
+DLL_EXPORT CBaseEntity *env_wind()
 {
 	void *mem = sub_100aa720(0x460);
 	CBaseEntity *p;
@@ -74408,12 +74466,13 @@ extern "C" CBaseEntity *env_wind()
 // END FUNCTION
 
 // FUNCTION: 0x100feae0 size=0x43
+#include "platform.h"
 #include "CEnvBeam.h"
 void *sub_100aa720(int size);
 extern char g_10568a74[];
 
 // TARGET: env_beam
-extern "C" CBaseEntity *env_beam()
+DLL_EXPORT CBaseEntity *env_beam()
 {
 	void *mem = sub_100aa720(0x5ac);
 	CEnvBeam *p;
@@ -75151,10 +75210,11 @@ void CEnvBeam::sub_10100b60()
 // END FUNCTION
 
 // FUNCTION: 0x10100e10 size=0x5c
+#include "platform.h"
 #include "CEnvFade.h"
 
 // TARGET: env_fade
-extern "C" CBaseEntity *env_fade()
+DLL_EXPORT CBaseEntity *env_fade()
 {
 	CEnvFade *p = new CEnvFade;
 	p->vfunc106("env_fade");
@@ -75295,12 +75355,13 @@ void sub_101012c0()
 // END FUNCTION
 
 // FUNCTION: 0x10101380 size=0x43
+#include "platform.h"
 #include "CEnvLaser.h"
 void *sub_100aa720(int size);
 extern char g_1056932c[];
 
 // TARGET: env_laser
-extern "C" CBaseEntity *env_laser()
+DLL_EXPORT CBaseEntity *env_laser()
 {
 	void *mem = sub_100aa720(0x504);
 	CEnvLaser *p;
@@ -75490,10 +75551,11 @@ void CEnvLaser::sub_10101b30()
 // END FUNCTION
 
 // FUNCTION: 0x10101d50 size=0x5c
+#include "platform.h"
 #include "CMessage.h"
 
 // TARGET: env_message
-extern "C" CBaseEntity *env_message()
+DLL_EXPORT CBaseEntity *env_message()
 {
 	CMessage *p = new CMessage;
 	p->vfunc106("env_message");
@@ -75594,9 +75656,10 @@ void CMessage::sub_10102030(inputdata_t *inputdata)
 // END FUNCTION
 
 // FUNCTION: 0x10102320 size=0x66
+#include "platform.h"
 #include "CEnvMicrophone.h"
 
-extern "C" CBaseEntity *env_microphone()
+DLL_EXPORT CBaseEntity *env_microphone()
 {
 	CEnvMicrophone *p = new CEnvMicrophone;
 	p->vfunc106("env_microphone");
@@ -75731,6 +75794,7 @@ int sub_10102a70()
 // END FUNCTION
 
 // FUNCTION: 0x10102aa0 size=0x55
+#include "platform.h"
 void *sub_1000db89(int);
 extern int vt_10459f58;
 extern int vt_10459acc;
@@ -75743,7 +75807,7 @@ struct GP {
 	void sub_100090fc(int a);
 };
 // TARGET: env_shake
-extern "C" GP *env_shake()
+DLL_EXPORT GP *env_shake()
 {
 	GP *p = (GP *)sub_1000db89(0x48c);
 	if (p) {
@@ -76048,6 +76112,7 @@ void sub_101034f0()
 // END FUNCTION
 
 // FUNCTION: 0x10103670 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -76055,7 +76120,7 @@ extern char g_10459f64[];	// CEnvFloatingCamera vftable
 extern const char g_1056a414[];
 
 // TARGET: env_floating_camera
-extern "C" CBaseEntity *env_floating_camera()
+DLL_EXPORT CBaseEntity *env_floating_camera()
 {
 	void *mem = sub_100aa720(0x460);
 	CBaseEntity *p;
@@ -76300,12 +76365,13 @@ int *sub_10103c80()
 // END FUNCTION
 
 // FUNCTION: 0x10103d00 size=0x43
+#include "platform.h"
 #include "CEnvSpark.h"
 void *sub_100aa720(int size);
 extern char g_1056a984[];
 
 // TARGET: env_spark
-extern "C" CBaseEntity *env_spark()
+DLL_EXPORT CBaseEntity *env_spark()
 {
 	void *mem = sub_100aa720(0x478);
 	CEnvSpark *p;
@@ -76457,12 +76523,13 @@ void __fastcall sub_101041f0(void *pThis, int a, int b)
 // END FUNCTION
 
 // FUNCTION: 0x10104220 size=0x43
+#include "platform.h"
 #include "CParamsExplosion.h"
 void *sub_100aa720(int size);
 extern char g_1056b4a4[];
 
 // TARGET: params_explosion
-extern "C" CBaseEntity *params_explosion()
+DLL_EXPORT CBaseEntity *params_explosion()
 {
 	void *mem = sub_100aa720(0x5a0);
 	CParamsExplosion *p;
@@ -76535,6 +76602,7 @@ int sub_10104590()
 // END FUNCTION
 
 // FUNCTION: 0x101045c0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -76542,7 +76610,7 @@ extern char g_1045ad24[];	// CPointExplosion vftable
 extern const char g_1056b504[];
 
 // TARGET: point_explosion
-extern "C" CBaseEntity *point_explosion()
+DLL_EXPORT CBaseEntity *point_explosion()
 {
 	void *mem = sub_100aa720(0x454);
 	CBaseEntity *p;
@@ -77863,10 +77931,11 @@ void Mem400::sub_10107550(int num)
 // END FUNCTION
 
 // FUNCTION: 0x10107670 size=0x67
+#include "platform.h"
 #include "CBaseFilter.h"
 
 // TARGET: filter_base
-extern "C" CBaseEntity *filter_base()
+DLL_EXPORT CBaseEntity *filter_base()
 {
     CBaseFilter *p = new CBaseFilter;
     p->vfunc106("filter_base");
@@ -77934,6 +78003,7 @@ void CBaseFilter::sub_10107860(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x101078e0 size=0x88
+#include "platform.h"
 #include "CBaseEntity.h"
 
 extern void *vt_104475c4[];
@@ -77954,7 +78024,7 @@ struct CFilterMultiView : CBaseEntity {
 	int m_h[5];
 };
 
-extern "C" CBaseEntity *filter_multi()
+DLL_EXPORT CBaseEntity *filter_multi()
 {
 	CFilterMultiView *p = (CFilterMultiView *)sub_100aa720(0x4b0);
 	CBaseEntity *e;
@@ -77990,10 +78060,11 @@ int sub_10107a00()
 // END FUNCTION
 
 // FUNCTION: 0x10107b90 size=0x67
+#include "platform.h"
 #include "CFilterName.h"
 
 // TARGET: filter_activator_name
-extern "C" CBaseEntity *filter_activator_name()
+DLL_EXPORT CBaseEntity *filter_activator_name()
 {
     CFilterName *p = new CFilterName;
     p->vfunc106("filter_activator_name");
@@ -78016,10 +78087,11 @@ int sub_10107d50()
 // END FUNCTION
 
 // FUNCTION: 0x10107d80 size=0x67
+#include "platform.h"
 #include "CFilterClass.h"
 
 // TARGET: filter_activator_class
-extern "C" CBaseEntity *filter_activator_class()
+DLL_EXPORT CBaseEntity *filter_activator_class()
 {
     CFilterClass *p = new CFilterClass;
     p->vfunc106("filter_activator_class");
@@ -78042,10 +78114,11 @@ int sub_10107ec0()
 // END FUNCTION
 
 // FUNCTION: 0x10107ef0 size=0x67
+#include "platform.h"
 #include "CFilterMass.h"
 
 // TARGET: filter_activator_mass
-extern "C" CBaseEntity *filter_activator_mass()
+DLL_EXPORT CBaseEntity *filter_activator_mass()
 {
     CFilterMass *p = new CFilterMass;
     p->vfunc106("filter_activator_mass");
@@ -78068,10 +78141,11 @@ int sub_10108060()
 // END FUNCTION
 
 // FUNCTION: 0x10108090 size=0x71
+#include "platform.h"
 #include "CFilterInventory.h"
 
 // TARGET: filter_activator_inventory
-extern "C" CBaseEntity *filter_activator_inventory()
+DLL_EXPORT CBaseEntity *filter_activator_inventory()
 {
     CFilterInventory *p = new CFilterInventory;
     p->vfunc106("filter_activator_inventory");
@@ -78094,10 +78168,11 @@ int sub_101082a0()
 // END FUNCTION
 
 // FUNCTION: 0x101082d0 size=0x67
+#include "platform.h"
 #include "CFilterFeat.h"
 
 // TARGET: filter_activator_feat
-extern "C" CBaseEntity *filter_activator_feat()
+DLL_EXPORT CBaseEntity *filter_activator_feat()
 {
     CFilterFeat *p = new CFilterFeat;
     p->vfunc106("filter_activator_feat");
@@ -78389,12 +78464,13 @@ int *sub_10109840()
 // END FUNCTION
 
 // FUNCTION: 0x10109920 size=0x43
+#include "platform.h"
 #include "CFire.h"
 void *sub_100aa720(int size);
 extern char g_1056d8c8[];
 
 // TARGET: env_fire
-extern "C" CBaseEntity *env_fire()
+DLL_EXPORT CBaseEntity *env_fire()
 {
 	void *mem = sub_100aa720(0x4c4);
 	CFire *p;
@@ -79115,6 +79191,7 @@ int sub_1010bbb0()
 // END FUNCTION
 
 // FUNCTION: 0x1010bbe0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -79122,7 +79199,7 @@ extern char g_1045d66c[];	// CEnvFireSource vftable
 extern const char g_1056da24[];
 
 // TARGET: env_firesource
-extern "C" CBaseEntity *env_firesource()
+DLL_EXPORT CBaseEntity *env_firesource()
 {
 	void *mem = sub_100aa720(0x45c);
 	CBaseEntity *p;
@@ -79235,6 +79312,7 @@ int *sub_1010be40()
 // END FUNCTION
 
 // FUNCTION: 0x1010bf20 size=0x61
+#include "platform.h"
 void *sub_1000db89(int);
 void __fastcall sub_10002ddd(void *);
 extern int vt_1045dafc;
@@ -79247,7 +79325,7 @@ struct GP {
 	void sub_100090fc(char b);
 };
 // TARGET: env_firesensor
-extern "C" GP *env_firesensor()
+DLL_EXPORT GP *env_firesensor()
 {
 	GP *p = (GP *)sub_1000db89(0x494);
 	if (p) {
@@ -79333,13 +79411,14 @@ int __stdcall sub_1010c200(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1010c2a0 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CAreaPortal.h"
 void *sub_100aa720(int size);
 extern char g_10565398[];
 
 // TARGET: func_areaportal
-extern "C" CBaseEntity *func_areaportal()
+DLL_EXPORT CBaseEntity *func_areaportal()
 {
 	void *mem = sub_100aa720(0x45c);
 	CAreaPortal *p;
@@ -79585,12 +79664,13 @@ void CMem8f_t::sub_1010cbc0(int num)
 // END FUNCTION
 
 // FUNCTION: 0x1010cc50 size=0x43
+#include "platform.h"
 #include "CFuncAreaPortalWindow.h"
 void *sub_100aa720(int size);
 extern char g_1056e3e0[];
 
 // TARGET: func_areaportalwindow
-extern "C" CBaseEntity *func_areaportalwindow()
+DLL_EXPORT CBaseEntity *func_areaportalwindow()
 {
 	void *mem = sub_100aa720(0x46c);
 	CFuncAreaPortalWindow *p;
@@ -79682,10 +79762,11 @@ int CUnknown1010d0b0::sub_1010d0b0()
 // END FUNCTION
 
 // FUNCTION: 0x1010d3a0 size=0x6b
+#include "platform.h"
 #include "CBreakable.h"
 
 // TARGET: func_breakable
-extern "C" CBaseEntity *func_breakable()
+DLL_EXPORT CBaseEntity *func_breakable()
 {
 	CBreakable *p = new CBreakable;
 	p->vfunc106("func_breakable");
@@ -80046,13 +80127,14 @@ bool CUnknown1010efc0::sub_1010efc0()
 // END FUNCTION
 
 // FUNCTION: 0x1010f030 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CPushable.h"
 
 void *sub_100aa720(int size);
 extern char g_1056eeec[];
 
-extern "C" CBaseEntity *func_pushable()
+DLL_EXPORT CBaseEntity *func_pushable()
 {
 	void *mem = sub_100aa720(0x4ac);
 	CPushable *p;
@@ -80111,6 +80193,7 @@ void __fastcall sub_1010f4e0(void **p) { ((Fn *)*p)[241](p); }
 // END FUNCTION
 
 // FUNCTION: 0x1010f4f0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100103fc(GP *);
@@ -80123,7 +80206,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: window_pane
-extern "C" GP *window_pane()
+DLL_EXPORT GP *window_pane()
 {
 	GP *p = (GP *)sub_1000db89(0x730);
 	if (p) {
@@ -80260,10 +80343,11 @@ CGib *sub_1010f8b0(const float *pOrigin, const float *pAngles)
 // END FUNCTION
 
 // FUNCTION: 0x1010f9f0 size=0x6b
+#include "platform.h"
 #include "CBreakableSurface.h"
 
 // TARGET: func_breakable_surf
-extern "C" CBaseEntity *func_breakable_surf()
+DLL_EXPORT CBaseEntity *func_breakable_surf()
 {
     CBreakableSurface *p = new CBreakableSurface;
     p->vfunc106("func_breakable_surf");
@@ -81068,12 +81152,13 @@ int sub_10113b00()
 // END FUNCTION
 
 // FUNCTION: 0x10113b30 size=0x43
+#include "platform.h"
 #include "CFunc_DustMotes.h"
 void *sub_100aa720(int size);
 extern char g_10570070[];
 
 // TARGET: func_dustmotes
-extern "C" CBaseEntity *func_dustmotes()
+DLL_EXPORT CBaseEntity *func_dustmotes()
 {
 	void *mem = sub_100aa720(0x478);
 	CFunc_DustMotes *p;
@@ -81087,6 +81172,7 @@ extern "C" CBaseEntity *func_dustmotes()
 // END FUNCTION
 
 // FUNCTION: 0x10113ba0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000de36(GP *);
@@ -81099,7 +81185,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: func_dustcloud
-extern "C" GP *func_dustcloud()
+DLL_EXPORT GP *func_dustcloud()
 {
 	GP *p = (GP *)sub_1000db89(0x478);
 	if (p) {
@@ -81279,6 +81365,7 @@ void sub_10114440(int a, int b, const Vector *pOrigin, const Vector *pAngles, in
 // END FUNCTION
 
 // FUNCTION: 0x101144d0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -81286,7 +81373,7 @@ extern char g_10460e1c[];	// CEnvDustPuff vftable
 extern const char g_10570180[];
 
 // TARGET: env_dustpuff
-extern "C" CBaseEntity *env_dustpuff()
+DLL_EXPORT CBaseEntity *env_dustpuff()
 {
 	void *mem = sub_100aa720(0x458);
 	CBaseEntity *p;
@@ -81380,6 +81467,7 @@ int sub_10114820()
 // END FUNCTION
 
 // FUNCTION: 0x10114920 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CFunc_LOD.h"
 
@@ -81401,7 +81489,7 @@ struct CFuncLodCtor
 };
 
 // TARGET: func_lod
-extern "C" CBaseEntity *func_lod()
+DLL_EXPORT CBaseEntity *func_lod()
 {
 	void *mem = sub_100aa720(0x454);
 	CFunc_LOD *p;
@@ -81442,6 +81530,7 @@ int CUnknown10114aa0::sub_10114aa0()
 // END FUNCTION
 
 // FUNCTION: 0x10114d00 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -81449,7 +81538,7 @@ extern char g_1046173c[];	// CFuncMonitor vftable
 extern const char g_105706d0[];
 
 // TARGET: func_monitor
-extern "C" CBaseEntity *func_monitor()
+DLL_EXPORT CBaseEntity *func_monitor()
 {
 	void *mem = sub_100aa720(0x460);
 	CBaseEntity *p;
@@ -81697,6 +81786,7 @@ void sub_10115980(SHandleOwner *pOwner)
 // END FUNCTION
 
 // FUNCTION: 0x10115b20 size=0x8b
+#include "platform.h"
 #include "CBaseEntity.h"
 
 void *sub_100aa720(int size);
@@ -81706,7 +81796,7 @@ void __fastcall sub_1000d5ee(void *pThis);
 void __fastcall sub_10002ddd(void *pThis);
 
 // TARGET: func_movelinear
-extern "C" CBaseEntity *func_movelinear()
+DLL_EXPORT CBaseEntity *func_movelinear()
 {
 	void *mem = sub_100aa720(0x608);
 	CBaseEntity *p;
@@ -81730,6 +81820,7 @@ extern "C" CBaseEntity *func_movelinear()
 // END FUNCTION
 
 // FUNCTION: 0x10115c00 size=0x8b
+#include "platform.h"
 #include "CBaseEntity.h"
 
 void *sub_100aa720(int size);
@@ -81739,7 +81830,7 @@ void __fastcall sub_1000d5ee(void *pThis);
 void __fastcall sub_10002ddd(void *pThis);
 
 // TARGET: momentary_door
-extern "C" CBaseEntity *momentary_door()
+DLL_EXPORT CBaseEntity *momentary_door()
 {
 	void *mem = sub_100aa720(0x608);
 	CBaseEntity *p;
@@ -82161,6 +82252,7 @@ int *sub_101183f0()
 // END FUNCTION
 
 // FUNCTION: 0x101189e0 size=0xfd
+#include "platform.h"
 #include "CBaseEntity.h"
 
 void *sub_100aa720(int nSize);
@@ -82182,7 +82274,7 @@ struct CGameUIAux	// a 0x18 byte member (constructor stub 0x1001052d)
 #define GAMEUI_AUX(off) ((CGameUIAux *)((char *)pMem + (off)))->sub_101192e0();
 
 // TARGET: game_ui
-extern "C" CBaseEntity *game_ui(void)
+DLL_EXPORT CBaseEntity *game_ui(void)
 {
 	void *pMem = sub_100aa720(0x5ac);
 	CBaseEntity *pEnt;
@@ -87097,6 +87189,7 @@ void CGib::sub_1012b080(const char *pszModel)
 // END FUNCTION
 
 // FUNCTION: 0x1012b290 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100103fc(GP *);
@@ -87109,7 +87202,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: gib
-extern "C" GP *gib()
+DLL_EXPORT GP *gib()
 {
 	GP *p = (GP *)sub_1000db89(0x740);
 	if (p) {
@@ -87190,6 +87283,7 @@ void CBaseEntity::sub_1012b370(const char *pszModel, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x1012b640 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100103fc(GP *);
@@ -87202,7 +87296,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: raggib
-extern "C" GP *raggib()
+DLL_EXPORT GP *raggib()
 {
 	GP *p = (GP *)sub_1000db89(0x730);
 	if (p) {
@@ -87384,8 +87478,9 @@ Vector sub_1012c150(CBaseEntity *pEdict, const Vector &vecSpot1, Vector vecSpot2
 extern int g_1070ba58;
 void sub_1013d0e0(float a, float b, int c, int d, int e, int f, int g, int h);
 
-// TARGET: sub_1012c5b0
-int __stdcall sub_1012c5b0(int hInstance, int nReason, int pReserved)
+// TARGET: DllMain
+// LIBC's _DllMainCRTStartup (the entry point) calls it; nReason 1 is DLL_PROCESS_ATTACH
+extern "C" int __stdcall DllMain(int hInstance, int nReason, int pReserved)
 {
 	if (nReason == 1)
 	{
@@ -87770,12 +87865,13 @@ int __stdcall sub_1012cfb0(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1012cfd0 size=0x43
+#include "platform.h"
 #include "CHudTimer.h"
 void *sub_100aa720(int size);
 extern char g_10574160[];
 
 // TARGET: hud_timer
-extern "C" CBaseEntity *hud_timer()
+DLL_EXPORT CBaseEntity *hud_timer()
 {
 	void *mem = sub_100aa720(0x48c);
 	CHudTimer *p;
@@ -88038,12 +88134,13 @@ int sub_1012d8b0()
 // END FUNCTION
 
 // FUNCTION: 0x1012d8e0 size=0x43
+#include "platform.h"
 #include "CPropClockHand.h"
 void *sub_100aa720(int size);
 extern char g_10574188[];
 
 // TARGET: prop_clockhand
-extern "C" CBaseEntity *prop_clockhand()
+DLL_EXPORT CBaseEntity *prop_clockhand()
 {
 	void *mem = sub_100aa720(0x768);
 	CPropClockHand *p;
@@ -88124,6 +88221,7 @@ void CPropClockHand::sub_1012dbd0()
 // END FUNCTION
 
 // FUNCTION: 0x1012de90 size=0x4b
+#include "platform.h"
 #include "CHudCounter.h"
 
 void *sub_100aa720(unsigned int size);
@@ -88131,7 +88229,7 @@ inline void *operator new(unsigned int, void *p) { return p; }
 extern const char g_10574678[];
 
 // TARGET: hud_counter
-extern "C" CHudCounter *hud_counter()
+DLL_EXPORT CHudCounter *hud_counter()
 {
 	void *mem = sub_100aa720(0x464);
 	CHudCounter *p = mem ? new(mem) CHudCounter : 0;
@@ -88249,6 +88347,7 @@ void CUnknown1012e6a0::sub_1012e6a0(int unused)
 // END FUNCTION
 
 // FUNCTION: 0x1012e6c0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 
@@ -88257,7 +88356,7 @@ extern char g_104643b4[];	// CHudEntity vftable
 extern const char g_10574d64[];
 
 // TARGET: hud_image
-extern "C" CBaseEntity *hud_image()
+DLL_EXPORT CBaseEntity *hud_image()
 {
 	void *mem = sub_100aa720(0x474);
 	CBaseEntity *p;
@@ -88379,6 +88478,7 @@ InterfaceReg *InterfaceReg::sub_1012ee70(void *createFn, const char *pName)
 // END FUNCTION
 
 // FUNCTION: 0x1012ef10 size=0xdc
+#include "platform.h"
 #include "InterfaceReg.h"
 #include <string.h>
 
@@ -88391,7 +88491,7 @@ extern InterfaceReg *g_1070c4bc;
 #pragma intrinsic(strcmp)
 
 // TARGET: CreateInterface
-extern "C" void *CreateInterface(const char *pName, int *pReturnCode)
+DLL_EXPORT void *CreateInterface(const char *pName, int *pReturnCode)
 {
 	g_109f3620[*g_109f3680].a = "CreateInterface";
 	g_109f3620[*g_109f3680].b = g_106b8540;
@@ -88543,6 +88643,7 @@ int sub_1012f340(const char *a, const char *b)
 // END FUNCTION
 
 // FUNCTION: 0x1012f5a0 size=0x4b
+#include "platform.h"
 #include "CInfoIntermission.h"
 
 void *sub_100aa720(unsigned int size);
@@ -88550,7 +88651,7 @@ inline void *operator new(unsigned int, void *p) { return p; }
 extern const char g_10575184[];
 
 // TARGET: info_intermission
-extern "C" CInfoIntermission *info_intermission()
+DLL_EXPORT CInfoIntermission *info_intermission()
 {
 	void *mem = sub_100aa720(0x450);
 	CInfoIntermission *p = mem ? ::new(mem) CInfoIntermission : 0;
@@ -88790,6 +88891,7 @@ bool sub_101301f0(float flFrac, int index, int arg)
 // END FUNCTION
 
 // FUNCTION: 0x10130260 size=0x43
+#include "platform.h"
 #include "CLight.h"
 
 void *sub_100aa720(int size);
@@ -88805,7 +88907,7 @@ struct CLightVt
 };
 
 // TARGET: light
-extern "C" CBaseEntity *light()
+DLL_EXPORT CBaseEntity *light()
 {
 	void *mem = sub_100aa720(0x460);
 	CLight *p;
@@ -89046,6 +89148,7 @@ void CLight::sub_101308d0()
 // END FUNCTION
 
 // FUNCTION: 0x101309a0 size=0x43
+#include "platform.h"
 #include "CLight.h"
 
 void *sub_100aa720(int size);
@@ -89061,7 +89164,7 @@ struct CLightVt
 };
 
 // TARGET: light_spot
-extern "C" CBaseEntity *light_spot()
+DLL_EXPORT CBaseEntity *light_spot()
 {
 	void *mem = sub_100aa720(0x460);
 	CLight *p;
@@ -89075,6 +89178,7 @@ extern "C" CBaseEntity *light_spot()
 // END FUNCTION
 
 // FUNCTION: 0x10130a10 size=0x43
+#include "platform.h"
 #include "CLight.h"
 
 void *sub_100aa720(int size);
@@ -89090,7 +89194,7 @@ struct CLightVt
 };
 
 // TARGET: light_glspot
-extern "C" CBaseEntity *light_glspot()
+DLL_EXPORT CBaseEntity *light_glspot()
 {
 	void *mem = sub_100aa720(0x460);
 	CLight *p;
@@ -89104,6 +89208,7 @@ extern "C" CBaseEntity *light_glspot()
 // END FUNCTION
 
 // FUNCTION: 0x10130a80 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100121c5(GP *);
@@ -89116,7 +89221,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: light_environment
-extern "C" GP *light_environment()
+DLL_EXPORT GP *light_environment()
 {
 	GP *p = (GP *)sub_1000db89(0x460);
 	if (p) {
@@ -89131,9 +89236,10 @@ extern "C" GP *light_environment()
 // END FUNCTION
 
 // FUNCTION: 0x10130b90 size=0x56
+#include "platform.h"
 #include "CLogicAuto.h"
 // TARGET: _logic_auto
-extern "C" CBaseEntity *logic_auto()
+DLL_EXPORT CBaseEntity *logic_auto()
 {
     CLogicAuto *p = new CLogicAuto;
     p->vfunc106("logic_auto");
@@ -89173,6 +89279,7 @@ int *sub_10130c90()
 // END FUNCTION
 
 // FUNCTION: 0x10130e50 size=0x71
+#include "platform.h"
 #include "CBaseEntity.h"
 extern void *vt_104475c4[];
 extern void *vt_10465b24[];
@@ -89183,7 +89290,7 @@ void *sub_100aa720(unsigned int);
 void __fastcall sub_100cd2a0(void *);
 
 // TARGET: logic_multicompare
-extern "C" void *logic_multicompare()
+DLL_EXPORT void *logic_multicompare()
 {
 	char *p = (char *)sub_100aa720(0x490);
 	if (p) {
@@ -89306,6 +89413,7 @@ void CUnk101312f0::sub_101312f0(int *pArg)
 // END FUNCTION
 
 // FUNCTION: 0x10131390 size=0x72
+#include "platform.h"
 void *sub_1000db89(int);
 extern int vt_104475c4;
 extern int vt_10465fb4;
@@ -89319,7 +89427,7 @@ struct GP {
 	void sub_100090fc(int a);
 };
 // TARGET: logic_timer
-extern "C" GP *logic_timer()
+DLL_EXPORT GP *logic_timer()
 {
 	GP *p = (GP *)sub_1000db89(0x4b0);
 	if (p) {
@@ -89533,6 +89641,7 @@ void CTimerEntity::sub_101318e0(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x10131950 size=0x6b
+#include "platform.h"
 #include "CBaseEntity.h"
 
 extern void *vt_104475c4[];
@@ -89552,7 +89661,7 @@ struct CLogicLineView : CBaseEntity {
 	int m_h470;
 };
 
-extern "C" CBaseEntity *logic_lineto()
+DLL_EXPORT CBaseEntity *logic_lineto()
 {
 	CLogicLineView *p = (CLogicLineView *)sub_100aa720(0x474);
 	CBaseEntity *e;
@@ -89605,10 +89714,11 @@ int *sub_10131a40()
 // END FUNCTION
 
 // FUNCTION: 0x10131e70 size=0x5c
+#include "platform.h"
 #include "CMathRemap.h"
 
 // TARGET: math_remap
-extern "C" CBaseEntity *math_remap()
+DLL_EXPORT CBaseEntity *math_remap()
 {
 	CMathRemap *p = new CMathRemap;
 	p->vfunc106("math_remap");
@@ -89681,10 +89791,11 @@ void CMathRemap::sub_101321f0(inputdata_t &inputdata)
 // END FUNCTION
 
 // FUNCTION: 0x10132300 size=0x5c
+#include "platform.h"
 #include "CMathColorBlend.h"
 
 // TARGET: math_colorblend
-extern "C" CBaseEntity *math_colorblend()
+DLL_EXPORT CBaseEntity *math_colorblend()
 {
 	CMathColorBlend *p = new CMathColorBlend;
 	p->vfunc106("math_colorblend");
@@ -89779,6 +89890,7 @@ int sub_101328e0()
 // END FUNCTION
 
 // FUNCTION: 0x10132910 size=0x4b
+#include "platform.h"
 #include "CEnvGlobal.h"
 
 void *sub_100aa720(unsigned int size);
@@ -89786,7 +89898,7 @@ inline void *operator new(unsigned int, void *p) { return p; }
 extern const char g_105787a0[];
 
 // TARGET: env_global
-extern "C" CEnvGlobal *env_global()
+DLL_EXPORT CEnvGlobal *env_global()
 {
 	void *mem = sub_100aa720(0x45c);
 	CEnvGlobal *p = mem ? ::new(mem) CEnvGlobal : 0;
@@ -89918,6 +90030,7 @@ int *sub_10132db0()
 // END FUNCTION
 
 // FUNCTION: 0x10132e30 size=0x6e
+#include "platform.h"
 #include "CBaseEntity.h"
 
 extern void *vt_104475c4[];
@@ -89936,7 +90049,7 @@ struct CMultiSourceView : CBaseEntity {
 	COutputCtor m_out550;
 };
 
-extern "C" CBaseEntity *multisource()
+DLL_EXPORT CBaseEntity *multisource()
 {
 	CMultiSourceView *p = (CMultiSourceView *)sub_100aa720(0x570);
 	CBaseEntity *e;
@@ -90000,6 +90113,7 @@ void CMultiSource::sub_101331e0()
 // END FUNCTION
 
 // FUNCTION: 0x10133350 size=0x72
+#include "platform.h"
 void *sub_1000db89(int);
 extern int vt_104475c4;
 extern int vt_10467b14;
@@ -90013,7 +90127,7 @@ struct GP {
 	void sub_100090fc(int a);
 };
 // TARGET: math_counter
-extern "C" GP *math_counter()
+DLL_EXPORT GP *math_counter()
 {
 	GP *p = (GP *)sub_1000db89(0x4a4);
 	if (p) {
@@ -90243,6 +90357,7 @@ void CMathCounterView::sub_10133950(void *pActivator, float flNewValue)
 // END FUNCTION
 
 // FUNCTION: 0x10133ac0 size=0x78
+#include "platform.h"
 void *sub_1000db89(int);
 extern int vt_104475c4;
 extern int vt_10467fa4;
@@ -90256,7 +90371,7 @@ struct GP {
 	void sub_100090fc(int a);
 };
 // TARGET: logic_case
-extern "C" GP *logic_case()
+DLL_EXPORT GP *logic_case()
 {
 	GP *p = (GP *)sub_1000db89(0x628);
 	if (p) {
@@ -90418,6 +90533,7 @@ void CUnknown101346e0::sub_10134420(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x101344f0 size=0x78
+#include "platform.h"
 #include "CBaseEntity.h"
 
 extern void *vt_104475c4[];
@@ -90436,7 +90552,7 @@ struct CCaseToggleView : CBaseEntity {
 	COutputSlot m_out610;
 };
 
-extern "C" CBaseEntity *logic_case_toggle()
+DLL_EXPORT CBaseEntity *logic_case_toggle()
 {
 	CCaseToggleView *p = (CCaseToggleView *)sub_100aa720(0x62c);
 	CBaseEntity *e;
@@ -90555,6 +90671,7 @@ void CLogicCaseToggle::sub_101348a0(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x10134980 size=0x7d
+#include "platform.h"
 #include "CBaseEntity.h"
 
 void *sub_100aa720(int size);
@@ -90564,7 +90681,7 @@ extern char g_10578d0c[];
 void __fastcall sub_10002ddd(void *pThis);
 
 // TARGET: logic_compare
-extern "C" CBaseEntity *logic_compare()
+DLL_EXPORT CBaseEntity *logic_compare()
 {
 	void *mem = sub_100aa720(0x4b8);
 	CBaseEntity *p;
@@ -90735,10 +90852,11 @@ void CMathCounter::sub_10134d30(void *pActivator, float flNewValue)
 // END FUNCTION
 
 // FUNCTION: 0x10134e20 size=0x67
+#include "platform.h"
 #include "CLogicBranch.h"
 
 // TARGET: logic_branch
-extern "C" CBaseEntity *logic_branch()
+DLL_EXPORT CBaseEntity *logic_branch()
 {
     CLogicBranch *p = new CLogicBranch;
     p->vfunc106("logic_branch");
@@ -90841,10 +90959,11 @@ void CUnknown10135070::sub_10135070(int a, char flag)
 // END FUNCTION
 
 // FUNCTION: 0x101350c0 size=0x67
+#include "platform.h"
 #include "CLogicPythonCheck.h"
 
 // TARGET: logic_pythoncheck
-extern "C" CBaseEntity *logic_pythoncheck()
+DLL_EXPORT CBaseEntity *logic_pythoncheck()
 {
     CLogicPythonCheck *p = new CLogicPythonCheck;
     p->vfunc106("logic_pythoncheck");
@@ -90983,9 +91102,10 @@ void CUnknown10135420::sub_10135420(int *pArg)
 // END FUNCTION
 
 // FUNCTION: 0x10135470 size=0x71
+#include "platform.h"
 #include "CLogicNPCCondition.h"
 
-extern "C" CBaseEntity *logic_npc_condition()
+DLL_EXPORT CBaseEntity *logic_npc_condition()
 {
 	CLogicNPCCondition *p = new CLogicNPCCondition;
 	p->vfunc106("logic_npc_condition");
@@ -91131,10 +91251,11 @@ void CUnknown101358e0::sub_101358e0(int *pArg)
 // END FUNCTION
 
 // FUNCTION: 0x10135930 size=0x67
+#include "platform.h"
 #include "CLogicSquadCondition.h"
 
 // TARGET: logic_squad_condition
-extern "C" CBaseEntity *logic_squad_condition()
+DLL_EXPORT CBaseEntity *logic_squad_condition()
 {
     CLogicSquadCondition *p = new CLogicSquadCondition;
     p->vfunc106("logic_squad_condition");
@@ -91254,12 +91375,13 @@ void CUnknown10135d00::sub_10135d00(int *pArg)
 // END FUNCTION
 
 // FUNCTION: 0x10136260 size=0x43
+#include "platform.h"
 #include "CLogicRelay.h"
 void *sub_100aa720(int size);
 extern char g_105792fc[];
 
 // TARGET: logic_relay
-extern "C" CBaseEntity *logic_relay()
+DLL_EXPORT CBaseEntity *logic_relay()
 {
 	void *mem = sub_100aa720(0x46c);
 	CLogicRelay *p;
@@ -95733,6 +95855,7 @@ char __stdcall sub_1013dd10(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1013dd30 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -95740,7 +95863,7 @@ extern char g_1046a5ec[];	// CFuncBrush vftable
 extern const char g_10579ec0[];
 
 // TARGET: func_brush
-extern "C" CBaseEntity *func_brush()
+DLL_EXPORT CBaseEntity *func_brush()
 {
 	void *mem = sub_100aa720(0x458);
 	CBaseEntity *p;
@@ -95757,6 +95880,7 @@ extern "C" CBaseEntity *func_brush()
 // END FUNCTION
 
 // FUNCTION: 0x1013dda0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 
@@ -95765,7 +95889,7 @@ extern char g_1046a5ec[];	// CFuncBrush vftable
 extern const char g_10579ed0[];
 
 // TARGET: func_wall
-extern "C" CBaseEntity *func_wall()
+DLL_EXPORT CBaseEntity *func_wall()
 {
 	void *mem = sub_100aa720(0x458);
 	CBaseEntity *p;
@@ -95854,6 +95978,7 @@ void __fastcall sub_1013e450(CEntityVSlots *p)
 // END FUNCTION
 
 // FUNCTION: 0x1013e4a0 size=0x6c
+#include "platform.h"
 #include "CBaseEntity.h"
 
 void *sub_100aa720(int size);
@@ -95862,7 +95987,7 @@ extern char g_10579f58[];
 void __fastcall sub_10002ddd(void *pThis);
 
 // TARGET: trigger_brush
-extern "C" CBaseEntity *trigger_brush()
+DLL_EXPORT CBaseEntity *trigger_brush()
 {
 	void *mem = sub_100aa720(0x4a0);
 	CBaseEntity *p;
@@ -96109,6 +96234,7 @@ float sub_1013fe30(float a)
 // END FUNCTION
 
 // FUNCTION: 0x1013fea0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -96116,7 +96242,7 @@ extern char g_1046b00c[];	// CPathKeyFrame vftable
 extern const char g_1057a8b4[];
 
 // TARGET: keyframe_track
-extern "C" CBaseEntity *keyframe_track()
+DLL_EXPORT CBaseEntity *keyframe_track()
 {
 	void *mem = sub_100aa720(0x48c);
 	CBaseEntity *p;
@@ -96285,6 +96411,7 @@ CPathKeyFrame *CPathKeyFrame::sub_10140330(Vector vecOrigin, Vector vecAngles)
 // END FUNCTION
 
 // FUNCTION: 0x10140460 size=0x4b
+#include "platform.h"
 #include "CBaseMoveBehavior.h"
 
 void *sub_100aa720(unsigned int size);
@@ -96292,7 +96419,7 @@ inline void *operator new(unsigned int, void *p) { return p; }
 extern const char g_1057a8f0[];
 
 // TARGET: move_keyframed
-extern "C" CBaseMoveBehavior *move_keyframed()
+DLL_EXPORT CBaseMoveBehavior *move_keyframed()
 {
 	void *mem = sub_100aa720(0x4b8);
 	CBaseMoveBehavior *p = mem ? ::new(mem) CBaseMoveBehavior : 0;
@@ -98212,6 +98339,7 @@ void CUnknown10147a60::sub_10147a60()
 // END FUNCTION
 
 // FUNCTION: 0x10147a90 size=0x5c
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 #include "COutputEvent.h"
@@ -98222,7 +98350,7 @@ extern int vt_1046bb04;	// CPathCorner vftable
 extern char g_1055afe4[];
 
 // TARGET: path_corner
-extern "C" CBaseEntity *path_corner()
+DLL_EXPORT CBaseEntity *path_corner()
 {
 	void *mem = sub_100aa720(0x46c);
 	CBaseEntity *p;
@@ -98241,6 +98369,7 @@ extern "C" CBaseEntity *path_corner()
 // END FUNCTION
 
 // FUNCTION: 0x10147b30 size=0x5c
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 #include "COutputEvent.h"
@@ -98251,7 +98380,7 @@ extern int vt_1046bf94;	// CPathCornerCrash vftable
 extern char g_1057b618[];
 
 // TARGET: path_corner_crash
-extern "C" CBaseEntity *path_corner_crash()
+DLL_EXPORT CBaseEntity *path_corner_crash()
 {
 	void *mem = sub_100aa720(0x46c);
 	CBaseEntity *p;
@@ -98360,6 +98489,7 @@ void * __cdecl sub_101482e0(struct CUnk1014a140 *a0)
 // END FUNCTION
 
 // FUNCTION: 0x10148300 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100103fc(GP *);
@@ -98372,7 +98502,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: gravity_pellet
-extern "C" GP *gravity_pellet()
+DLL_EXPORT GP *gravity_pellet()
 {
 	GP *p = (GP *)sub_1000db89(0x738);
 	if (p) {
@@ -100546,12 +100676,13 @@ void CPhysicsAnimlinkPair::sub_1014ebd0(int n, CBaseEntity *pFirst, CBaseEntity 
 // END FUNCTION
 
 // FUNCTION: 0x1014ed40 size=0x43
+#include "platform.h"
 #include "CPhysicsAnimlink.h"
 void *sub_100aa720(int size);
 extern char g_1057c624[];
 
 // TARGET: phys_animlink
-extern "C" CBaseEntity *phys_animlink()
+DLL_EXPORT CBaseEntity *phys_animlink()
 {
 	void *mem = sub_100aa720(0x4d8);
 	CPhysicsAnimlink *p;
@@ -100830,6 +100961,7 @@ int sub_1014f640()
 // END FUNCTION
 
 // FUNCTION: 0x1014f670 size=0x5e
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100046c9(GP *);
@@ -100844,7 +100976,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: physics_cannister
-extern "C" GP *physics_cannister()
+DLL_EXPORT GP *physics_cannister()
 {
 	GP *p = (GP *)sub_1000db89(0x1a18);
 	if (p) {
@@ -101711,12 +101843,13 @@ void sub_101520a0(gamevcollisionevent_t *pEvent, int index, Vector *pContactPoin
 // END FUNCTION
 
 // FUNCTION: 0x101521b0 size=0x43
+#include "platform.h"
 #include "CRagdollProp.h"
 void *sub_100aa720(int size);
 extern char g_1057f178[];
 
 // TARGET: physics_prop_ragdoll
-extern "C" CBaseEntity *physics_prop_ragdoll()
+DLL_EXPORT CBaseEntity *physics_prop_ragdoll()
 {
 	void *mem = sub_100aa720(0x103c);
 	CRagdollProp *p;
@@ -101730,12 +101863,13 @@ extern "C" CBaseEntity *physics_prop_ragdoll()
 // END FUNCTION
 
 // FUNCTION: 0x10152220 size=0x43
+#include "platform.h"
 #include "CRagdollProp.h"
 void *sub_100aa720(int size);
 extern char g_1057f194[];
 
 // TARGET: prop_ragdoll
-extern "C" CBaseEntity *prop_ragdoll()
+DLL_EXPORT CBaseEntity *prop_ragdoll()
 {
 	void *mem = sub_100aa720(0x103c);
 	CRagdollProp *p;
@@ -102181,6 +102315,7 @@ void CAI_BaseNPC::sub_10156580(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x101565c0 size=0x50
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d27e(GP *);
@@ -102193,7 +102328,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: prop_ragdoll_attached
-extern "C" GP *prop_ragdoll_attached()
+DLL_EXPORT GP *prop_ragdoll_attached()
 {
 	GP *p = (GP *)sub_1000db89(0x1064);
 	if (p) {
@@ -102597,6 +102732,7 @@ void sub_10157350(CBaseEntity *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10157530 size=0x53
+#include "platform.h"
 void *sub_100aa720(unsigned int size);
 
 extern int vt_1046e774;
@@ -102616,7 +102752,7 @@ struct GP {
 };
 
 // TARGET: prop_ragdoll_special
-extern "C" GP *prop_ragdoll_special()
+DLL_EXPORT GP *prop_ragdoll_special()
 {
 	GP *p = (GP *)sub_100aa720(0x1054);
 	if (p) {
@@ -103368,6 +103504,7 @@ int sub_10158e20()
 // END FUNCTION
 
 // FUNCTION: 0x10158e50 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -103380,7 +103517,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: func_plat
-extern "C" GP *func_plat()
+DLL_EXPORT GP *func_plat()
 {
 	GP *p = (GP *)sub_1000db89(0x574);
 	if (p) {
@@ -103562,6 +103699,7 @@ void CUnknown10159700::sub_10159700(int activator, int caller, int useType, floa
 // END FUNCTION
 
 // FUNCTION: 0x1015a040 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -103574,7 +103712,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: func_platrot
-extern "C" GP *func_platrot()
+DLL_EXPORT GP *func_platrot()
 {
 	GP *p = (GP *)sub_1000db89(0x58c);
 	if (p) {
@@ -110026,6 +110164,7 @@ char CBasePlayer::sub_101787a0(CBaseEntity *pEnt, float flRate)
 // END FUNCTION
 
 // FUNCTION: 0x10178da0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -110033,7 +110172,7 @@ extern char g_10470e04[];	// CStripWeapons vftable
 extern const char g_10587980[];
 
 // TARGET: player_weaponstrip
-extern "C" CBaseEntity *player_weaponstrip()
+DLL_EXPORT CBaseEntity *player_weaponstrip()
 {
 	void *mem = sub_100aa720(0x450);
 	CBaseEntity *p;
@@ -110050,6 +110189,7 @@ extern "C" CBaseEntity *player_weaponstrip()
 // END FUNCTION
 
 // FUNCTION: 0x10178f30 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -110057,7 +110197,7 @@ extern char g_10471294[];	// CRevertSaved vftable
 extern const char g_105879b8[];
 
 // TARGET: player_loadsaved
-extern "C" CBaseEntity *player_loadsaved()
+DLL_EXPORT CBaseEntity *player_loadsaved()
 {
 	void *mem = sub_100aa720(0x464);
 	CBaseEntity *p;
@@ -116490,6 +116630,7 @@ int sub_1018a030()
 // END FUNCTION
 
 // FUNCTION: 0x1018a060 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -116497,7 +116638,7 @@ extern char g_1047178c[];	// CPlayerResource vftable
 extern const char g_10589974[];
 
 // TARGET: player_manager
-extern "C" CBaseEntity *player_manager()
+DLL_EXPORT CBaseEntity *player_manager()
 {
 	void *mem = sub_100aa720(0xa84);
 	CBaseEntity *p;
@@ -116514,6 +116655,7 @@ extern "C" CBaseEntity *player_manager()
 // END FUNCTION
 
 // FUNCTION: 0x1018a4e0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -116521,7 +116663,7 @@ extern char g_10471c54[];	// CSkyCamera vftable
 extern const char g_1058b594[];
 
 // TARGET: sky_camera
-extern "C" CBaseEntity *sky_camera()
+DLL_EXPORT CBaseEntity *sky_camera()
 {
 	void *mem = sub_100aa720(0x488);
 	CBaseEntity *p;
@@ -116998,12 +117140,13 @@ CPlayerLocalPredictedData *CPlayerLocalPredictedData::sub_1018c170()
 // END FUNCTION
 
 // FUNCTION: 0x1018c1b0 size=0x43
+#include "platform.h"
 #include "CPointCamera.h"
 void *sub_100aa720(int size);
 extern char g_1058c070[];
 
 // TARGET: point_camera
-extern "C" CBaseEntity *point_camera()
+DLL_EXPORT CBaseEntity *point_camera()
 {
 	void *mem = sub_100aa720(0x468);
 	CPointCamera *p;
@@ -117231,6 +117374,7 @@ int sub_1018c9a0()
 // END FUNCTION
 
 // FUNCTION: 0x1018cb00 size=0x76
+#include "platform.h"
 #include "CBaseEntity.h"
 
 void *sub_100aa720(int size);
@@ -117277,7 +117421,7 @@ struct CPointAngleSensorView : SPointBase
 };
 
 // TARGET: point_anglesensor
-extern "C" CBaseEntity *point_anglesensor()
+DLL_EXPORT CBaseEntity *point_anglesensor()
 {
 	CPointAngleSensorView *pv = new CPointAngleSensorView;
 	CBaseEntity *p = (CBaseEntity *)pv;
@@ -117389,6 +117533,7 @@ int sub_1018d430()
 // END FUNCTION
 
 // FUNCTION: 0x1018d460 size=0x55
+#include "platform.h"
 #include "CConstraintAnchor.h"
 
 void *sub_100aa720(unsigned int size);
@@ -117404,7 +117549,7 @@ struct GP {
 };
 
 // TARGET: point_hurt
-extern "C" GP *point_hurt()
+DLL_EXPORT GP *point_hurt()
 {
 	GP *p = (GP *)sub_100aa720(0x468);
 	if (p) {
@@ -117540,6 +117685,7 @@ void CUnknown1018d8c0::sub_1018d8c0(inputdata_t *inputdata)
 // END FUNCTION
 
 // FUNCTION: 0x1018d940 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -117547,7 +117693,7 @@ extern char g_10472e94[];	// CPointTeleport vftable
 extern const char g_1058cda0[];
 
 // TARGET: point_teleport
-extern "C" CBaseEntity *point_teleport()
+DLL_EXPORT CBaseEntity *point_teleport()
 {
 	void *mem = sub_100aa720(0x468);
 	CBaseEntity *p;
@@ -117659,6 +117805,7 @@ done:
 // END FUNCTION
 
 // FUNCTION: 0x1018df00 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100103fc(GP *);
@@ -117671,7 +117818,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: prop_base
-extern "C" GP *prop_base()
+DLL_EXPORT GP *prop_base()
 {
 	GP *p = (GP *)sub_1000db89(0x730);
 	if (p) {
@@ -118147,12 +118294,13 @@ void sub_1018ee60(CBaseEntity *pOwner, int activity)
 // END FUNCTION
 
 // FUNCTION: 0x1018ef30 size=0x43
+#include "platform.h"
 #include "CActivityCopyProp.h"
 void *sub_100aa720(int size);
 extern char g_1058ed74[];
 
 // TARGET: activity_copy_prop
-extern "C" CBaseEntity *activity_copy_prop()
+DLL_EXPORT CBaseEntity *activity_copy_prop()
 {
 	void *mem = sub_100aa720(0x748);
 	CActivityCopyProp *p;
@@ -118516,6 +118664,7 @@ void CBreakableProp::sub_1018fa70()
 // END FUNCTION
 
 // FUNCTION: 0x1018ff60 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CDynamicProp.h"
 
@@ -118523,7 +118672,7 @@ void *sub_100aa720(int size);
 extern char g_1054f3e0[];
 
 // TARGET: dynamic_prop
-extern "C" CBaseEntity *dynamic_prop()
+DLL_EXPORT CBaseEntity *dynamic_prop()
 {
 	void *mem = sub_100aa720(0x7dc);
 	CDynamicProp *p;
@@ -118537,13 +118686,14 @@ extern "C" CBaseEntity *dynamic_prop()
 // END FUNCTION
 
 // FUNCTION: 0x1018ffd0 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CDynamicProp.h"
 void *sub_100aa720(int size);
 extern char g_1058eed8[];
 
 // TARGET: prop_dynamic
-extern "C" CBaseEntity *prop_dynamic()
+DLL_EXPORT CBaseEntity *prop_dynamic()
 {
 	void *mem = sub_100aa720(0x7dc);
 	CDynamicProp *p;
@@ -118775,6 +118925,7 @@ void CDynamicProp::sub_10190a00(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x10190b10 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_10001eba(GP *);
@@ -118787,7 +118938,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: prop_dynamic_ornament
-extern "C" GP *prop_dynamic_ornament()
+DLL_EXPORT GP *prop_dynamic_ornament()
 {
 	GP *p = (GP *)sub_1000db89(0x8e4);
 	if (p) {
@@ -118987,6 +119138,7 @@ int __stdcall sub_10191200(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x10191220 size=0x5e
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CBreakableProp.h"
 #include "CUnknown101466e0.h"
@@ -119013,7 +119165,7 @@ struct SPhysProp {
 };
 
 // TARGET: _physics_prop
-extern "C" CBaseEntity *physics_prop()
+DLL_EXPORT CBaseEntity *physics_prop()
 {
 	SPhysProp *p = new SPhysProp;
 	((CBaseEntity *)p)->vfunc106("physics_prop");
@@ -119022,6 +119174,7 @@ extern "C" CBaseEntity *physics_prop()
 // END FUNCTION
 
 // FUNCTION: 0x10191340 size=0x5e
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CBreakableProp.h"
 #include "CUnknown101466e0.h"
@@ -119048,7 +119201,7 @@ struct SPhysProp {
 };
 
 // TARGET: _prop_physics
-extern "C" CBaseEntity *prop_physics()
+DLL_EXPORT CBaseEntity *prop_physics()
 {
 	SPhysProp *p = new SPhysProp;
 	((CBaseEntity *)p)->vfunc106("prop_physics");
@@ -119482,12 +119635,13 @@ const char *sub_101927c0(float x)
 // END FUNCTION
 
 // FUNCTION: 0x10192800 size=0x43
+#include "platform.h"
 #include "CPropMover.h"
 void *sub_100aa720(int size);
 extern char g_1058f1d4[];
 
 // TARGET: prop_mover
-extern "C" CBaseEntity *prop_mover()
+DLL_EXPORT CBaseEntity *prop_mover()
 {
 	void *mem = sub_100aa720(0x730);
 	CPropMover *p;
@@ -119520,6 +119674,7 @@ CPropMover *CPropMover::sub_10192870()
 // END FUNCTION
 
 // FUNCTION: 0x10192940 size=0x6f
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CUnknown101466e0.h"
 
@@ -119539,7 +119694,7 @@ struct CPhysPropContestedView
 };
 
 // TARGET: prop_physics_contested
-extern "C" CBaseEntity *prop_physics_contested()
+DLL_EXPORT CBaseEntity *prop_physics_contested()
 {
 	void *mem = sub_100aa720(0x7b4);
 	CBaseEntity *p;
@@ -119693,6 +119848,7 @@ int *sub_101931c0()
 // END FUNCTION
 
 // FUNCTION: 0x10193240 size=0x5a
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100103fc(GP *);
@@ -119707,7 +119863,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: prop_slashable
-extern "C" GP *prop_slashable()
+DLL_EXPORT GP *prop_slashable()
 {
 	GP *p = (GP *)sub_1000db89(0x74c);
 	if (p) {
@@ -119782,12 +119938,13 @@ int *sub_101934e0()
 // END FUNCTION
 
 // FUNCTION: 0x101938d0 size=0x43
+#include "platform.h"
 #include "CPropDestructable.h"
 void *sub_100aa720(int size);
 extern char g_1058f3c8[];
 
 // TARGET: prop_destructable
-extern "C" CBaseEntity *prop_destructable()
+DLL_EXPORT CBaseEntity *prop_destructable()
 {
 	void *mem = sub_100aa720(0x88c);
 	CPropDestructable *p;
@@ -119976,6 +120133,7 @@ void CNPCUnit::sub_10194160(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x10194270 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100103fc(GP *);
@@ -119988,7 +120146,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: prop_largehull_ignore
-extern "C" GP *prop_largehull_ignore()
+DLL_EXPORT GP *prop_largehull_ignore()
 {
 	GP *p = (GP *)sub_1000db89(0x730);
 	if (p) {
@@ -124426,12 +124584,13 @@ void CUnknown1019d490::sub_1019d490(char value)
 // END FUNCTION
 
 // FUNCTION: 0x1019d680 size=0x43
+#include "platform.h"
 #include "CRopeKeyframe.h"
 void *sub_100aa720(int size);
 extern char g_10588abc[];
 
 // TARGET: move_rope
-extern "C" CBaseEntity *move_rope()
+DLL_EXPORT CBaseEntity *move_rope()
 {
 	void *mem = sub_100aa720(0x49c);
 	CRopeKeyframe *p;
@@ -124445,12 +124604,13 @@ extern "C" CBaseEntity *move_rope()
 // END FUNCTION
 
 // FUNCTION: 0x1019d6f0 size=0x43
+#include "platform.h"
 #include "CRopeKeyframe.h"
 void *sub_100aa720(int size);
 extern char g_10588ac8[];
 
 // TARGET: keyframe_rope
-extern "C" CBaseEntity *keyframe_rope()
+DLL_EXPORT CBaseEntity *keyframe_rope()
 {
 	void *mem = sub_100aa720(0x49c);
 	CRopeKeyframe *p;
@@ -127168,13 +127328,14 @@ int *sub_101a5e10()
 // END FUNCTION
 
 // FUNCTION: 0x101a6260 size=0x43
+#include "platform.h"
 #include "CCineNPC.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(int size);
 extern char g_10594760[];
 
 // TARGET: scripted_sequence
-extern "C" CBaseEntity *scripted_sequence()
+DLL_EXPORT CBaseEntity *scripted_sequence()
 {
 	void *mem = sub_100aa720(0x608c);
 	CCineNPC *p;
@@ -127892,6 +128053,7 @@ void __fastcall sub_101a8cf0(CBaseEntity *self, int, int bStart)
 // END FUNCTION
 
 // FUNCTION: 0x101a8fe0 size=0x53
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ee9e(GP *);
@@ -127905,7 +128067,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: aiscripted_sequence
-extern "C" GP *aiscripted_sequence()
+DLL_EXPORT GP *aiscripted_sequence()
 {
 	GP *p = (GP *)sub_1000db89(0x608c);
 	if (p) {
@@ -127935,6 +128097,7 @@ int sub_101a9680()
 // END FUNCTION
 
 // FUNCTION: 0x101a96b0 size=0x53
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ee9e(GP *);
@@ -127948,7 +128111,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: aiscripted_schedule
-extern "C" GP *aiscripted_schedule()
+DLL_EXPORT GP *aiscripted_schedule()
 {
 	GP *p = (GP *)sub_1000db89(0x6098);
 	if (p) {
@@ -128029,10 +128192,11 @@ int *sub_101a9bd0()
 // END FUNCTION
 
 // FUNCTION: 0x101a9cb0 size=0x67
+#include "platform.h"
 #include "CScriptedSentence.h"
 
 // TARGET: scripted_sentence
-extern "C" CBaseEntity *scripted_sentence()
+DLL_EXPORT CBaseEntity *scripted_sentence()
 {
 	CScriptedSentence *p = new CScriptedSentence;
 	p->vfunc106("scripted_sentence");
@@ -128290,6 +128454,7 @@ int CScriptedSentence::sub_101aa390(CBaseEntity *pTarget)
 // END FUNCTION
 
 // FUNCTION: 0x101aa550 size=0x53
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100157df(GP *);
@@ -128303,7 +128468,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: npc_payphone
-extern "C" GP *npc_payphone()
+DLL_EXPORT GP *npc_payphone()
 {
 	GP *p = (GP *)sub_1000db89(0x665c);
 	if (p) {
@@ -128675,13 +128840,14 @@ int sub_101abbc0()
 // END FUNCTION
 
 // FUNCTION: 0x101ac130 size=0x43
+#include "platform.h"
 #include "CAmbientGeneric.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(int size);
 extern char g_105977cc[];
 
 // TARGET: ambient_generic
-extern "C" CBaseEntity *ambient_generic()
+DLL_EXPORT CBaseEntity *ambient_generic()
 {
 	void *mem = sub_100aa720(0x4e4);
 	CAmbientGeneric *p;
@@ -129321,6 +129487,7 @@ CGlobalEntityList_Ent *CUnknown101ad9a0::sub_101ad9a0()
 // END FUNCTION
 
 // FUNCTION: 0x101ae1b0 size=0x55
+#include "platform.h"
 #include "CConstraintAnchor.h"
 
 void *sub_100aa720(unsigned int size);
@@ -129336,7 +129503,7 @@ struct GP {
 };
 
 // TARGET: env_soundscape
-extern "C" GP *env_soundscape()
+DLL_EXPORT GP *env_soundscape()
 {
 	GP *p = (GP *)sub_100aa720(0x46c);
 	if (p) {
@@ -129706,6 +129873,7 @@ char sub_101af2d0(char *p)
 // END FUNCTION
 
 // FUNCTION: 0x101af300 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -129713,7 +129881,7 @@ extern char g_1047aeec[];	// CSpeaker vftable
 extern const char g_10597a0c[];
 
 // TARGET: speaker
-extern "C" CBaseEntity *speaker()
+DLL_EXPORT CBaseEntity *speaker()
 {
 	void *mem = sub_100aa720(0x468);
 	CBaseEntity *p;
@@ -134004,9 +134172,10 @@ int CUnknown101b9140::sub_101b9140(int elem, int num, const CUnknown101b9140Elem
 // END FUNCTION
 
 // FUNCTION: 0x101b9750 size=0x68
+#include "platform.h"
 #include "CSoundEnt.h"
 
-extern "C" CSoundEnt *soundent()
+DLL_EXPORT CSoundEnt *soundent()
 {
 	CSoundEnt *p = new CSoundEnt;
 	((CBaseEntity *)p)->vfunc106("soundent");
@@ -135362,6 +135531,7 @@ CSound *CSoundEnt::sub_101bb370(int iType, const Vector *pOrigin)
 // END FUNCTION
 
 // FUNCTION: 0x101bb430 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -135369,7 +135539,7 @@ extern char g_1047b87c[];	// CAISound vftable
 extern const char g_1059a4cc[];
 
 // TARGET: ai_sound
-extern "C" CBaseEntity *ai_sound()
+DLL_EXPORT CBaseEntity *ai_sound()
 {
 	void *mem = sub_100aa720(0x454);
 	CBaseEntity *p;
@@ -137247,6 +137417,7 @@ void CUtlRBTree12Unit::sub_101c05f0(unsigned short elem)
 // END FUNCTION
 
 // FUNCTION: 0x101c0900 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -137254,7 +137425,7 @@ extern char g_1047be44[];	// CNullEntity vftable
 extern const char g_1059c35c[];
 
 // TARGET: info_null
-extern "C" CBaseEntity *info_null()
+DLL_EXPORT CBaseEntity *info_null()
 {
 	void *mem = sub_100aa720(0x450);
 	CBaseEntity *p;
@@ -137285,6 +137456,7 @@ int sub_101c09d0()
 // END FUNCTION
 
 // FUNCTION: 0x101c0a00 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -137292,7 +137464,7 @@ extern char g_1047c2d4[];	// CBaseDMStart vftable
 extern const char g_1059c388[];
 
 // TARGET: info_player_deathmatch
-extern "C" CBaseEntity *info_player_deathmatch()
+DLL_EXPORT CBaseEntity *info_player_deathmatch()
 {
 	void *mem = sub_100aa720(0x454);
 	CBaseEntity *p;
@@ -137309,6 +137481,7 @@ extern "C" CBaseEntity *info_player_deathmatch()
 // END FUNCTION
 
 // FUNCTION: 0x101c0a70 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -137316,7 +137489,7 @@ extern char g_1044b584[];	// CPointEntity vftable
 extern const char g_1057c024[];
 
 // TARGET: info_player_start
-extern "C" CBaseEntity *info_player_start()
+DLL_EXPORT CBaseEntity *info_player_start()
 {
 	void *mem = sub_100aa720(0x450);
 	CBaseEntity *p;
@@ -137843,12 +138016,13 @@ int sub_101c2200()
 // END FUNCTION
 
 // FUNCTION: 0x101c23b0 size=0x43
+#include "platform.h"
 #include "CSun.h"
 void *sub_100aa720(int size);
 extern char g_1059c880[];
 
 // TARGET: env_sun
-extern "C" CBaseEntity *env_sun()
+DLL_EXPORT CBaseEntity *env_sun()
 {
 	void *mem = sub_100aa720(0x46c);
 	CSun *p;
@@ -139364,6 +139538,7 @@ int *sub_101c49e0()
 // END FUNCTION
 
 // FUNCTION: 0x101c4ac0 size=0x69
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -139377,7 +139552,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: trigger
-extern "C" GP *trigger()
+DLL_EXPORT GP *trigger()
 {
 	GP *p = (GP *)sub_1000db89(0x598);
 	if (p) {
@@ -139715,12 +139890,13 @@ int *sub_101c59b0()
 // END FUNCTION
 
 // FUNCTION: 0x101c5c30 size=0x43
+#include "platform.h"
 #include "CTriggerHurt.h"
 void *sub_100aa720(int size);
 extern char g_1059f788[];
 
 // TARGET: trigger_hurt
-extern "C" CBaseEntity *trigger_hurt()
+DLL_EXPORT CBaseEntity *trigger_hurt()
 {
 	void *mem = sub_100aa720(0x608);
 	CTriggerHurt *p;
@@ -139883,6 +140059,7 @@ void CTriggerHurt::sub_101c6670(int a)
 // END FUNCTION
 
 // FUNCTION: 0x101c66e0 size=0x7a
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -139897,7 +140074,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: trigger_multiple
-extern "C" GP *trigger_multiple()
+DLL_EXPORT GP *trigger_multiple()
 {
 	GP *p = (GP *)sub_1000db89(0x5b0);
 	if (p) {
@@ -140011,6 +140188,7 @@ int sub_101c6a10()
 // END FUNCTION
 
 // FUNCTION: 0x101c6a30 size=0x7a
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -140025,7 +140203,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: trigger_once
-extern "C" GP *trigger_once()
+DLL_EXPORT GP *trigger_once()
 {
 	GP *p = (GP *)sub_1000db89(0x5b0);
 	if (p) {
@@ -140045,6 +140223,7 @@ extern "C" GP *trigger_once()
 // END FUNCTION
 
 // FUNCTION: 0x101c6b00 size=0x84
+#include "platform.h"
 #include "CBaseEntity.h"
 
 extern void *vt_1047d08c[];
@@ -140067,7 +140246,7 @@ struct CTriggerLookView : CBaseEntity {
 	int m_h5b0;
 };
 
-extern "C" CBaseEntity *trigger_look()
+DLL_EXPORT CBaseEntity *trigger_look()
 {
 	CTriggerLookView *p = (CTriggerLookView *)sub_100aa720(0x5c4);
 	CBaseEntity *e;
@@ -140103,6 +140282,7 @@ int sub_101c6c20()
 // END FUNCTION
 
 // FUNCTION: 0x101c7060 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -140110,7 +140290,7 @@ extern char g_1047e864[];	// CTriggerVolume vftable
 extern const char g_1059f888[];
 
 // TARGET: trigger_transition
-extern "C" CBaseEntity *trigger_transition()
+DLL_EXPORT CBaseEntity *trigger_transition()
 {
 	void *mem = sub_100aa720(0x450);
 	CBaseEntity *p;
@@ -140127,6 +140307,7 @@ extern "C" CBaseEntity *trigger_transition()
 // END FUNCTION
 
 // FUNCTION: 0x101c71f0 size=0x7a
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -140141,7 +140322,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: trigger_changelevel
-extern "C" GP *trigger_changelevel()
+DLL_EXPORT GP *trigger_changelevel()
 {
 	GP *p = (GP *)sub_1000db89(0x5fc);
 	if (p) {
@@ -140848,12 +141029,13 @@ int sub_101c8820()
 // END FUNCTION
 
 // FUNCTION: 0x101c8850 size=0x43
+#include "platform.h"
 #include "CTriggerPush.h"
 void *sub_100aa720(int size);
 extern char g_1059fbd0[];
 
 // TARGET: trigger_push
-extern "C" CBaseEntity *trigger_push()
+DLL_EXPORT CBaseEntity *trigger_push()
 {
 	void *mem = sub_100aa720(0x5a4);
 	CTriggerPush *p;
@@ -140992,12 +141174,13 @@ void CView101c8b60::sub_101c8b60()
 // END FUNCTION
 
 // FUNCTION: 0x101c90e0 size=0x43
+#include "platform.h"
 #include "CTriggerTeleport.h"
 void *sub_100aa720(int size);
 extern char g_1059fc00[];
 
 // TARGET: trigger_teleport
-extern "C" CBaseEntity *trigger_teleport()
+DLL_EXPORT CBaseEntity *trigger_teleport()
 {
 	void *mem = sub_100aa720(0x5a0);
 	CTriggerTeleport *p;
@@ -141025,6 +141208,7 @@ int sub_101c91b0()
 // END FUNCTION
 
 // FUNCTION: 0x101c96d0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -141032,7 +141216,7 @@ extern char g_1044b584[];	// CPointEntity vftable
 extern const char g_1059fc3c[];
 
 // TARGET: info_teleport_destination
-extern "C" CBaseEntity *info_teleport_destination()
+DLL_EXPORT CBaseEntity *info_teleport_destination()
 {
 	void *mem = sub_100aa720(0x450);
 	CBaseEntity *p;
@@ -141049,6 +141233,7 @@ extern "C" CBaseEntity *info_teleport_destination()
 // END FUNCTION
 
 // FUNCTION: 0x101c9740 size=0x69
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -141062,7 +141247,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: trigger_autosave
-extern "C" GP *trigger_autosave()
+DLL_EXPORT GP *trigger_autosave()
 {
 	GP *p = (GP *)sub_1000db89(0x598);
 	if (p) {
@@ -141106,6 +141291,7 @@ void CUnknown101c9870::sub_101c9870(CUnknown101c9870 *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x101c98a0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -141113,7 +141299,7 @@ extern char g_10480014[];	// CAI_ChangeTarget vftable
 extern const char g_1059fcb8[];
 
 // TARGET: ai_changetarget
-extern "C" CBaseEntity *ai_changetarget()
+DLL_EXPORT CBaseEntity *ai_changetarget()
 {
 	void *mem = sub_100aa720(0x454);
 	CBaseEntity *p;
@@ -141173,6 +141359,7 @@ void __fastcall sub_101c99c0(S101c99c0Ent *pThis, int unused, int **pArg)
 // END FUNCTION
 
 // FUNCTION: 0x101c9a40 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -141180,7 +141367,7 @@ extern char g_104804a4[];	// CAI_ChangeHintGroup vftable
 extern const char g_1059fcf4[];
 
 // TARGET: ai_changehintgroup
-extern "C" CBaseEntity *ai_changehintgroup()
+DLL_EXPORT CBaseEntity *ai_changehintgroup()
 {
 	void *mem = sub_100aa720(0x460);
 	CBaseEntity *p;
@@ -141312,12 +141499,13 @@ int *sub_101c9cf0()
 // END FUNCTION
 
 // FUNCTION: 0x101c9d70 size=0x84
+#include "platform.h"
 #include "CTriggerProximity.h"
 
 extern char g_1059fd34[];
 
 // TARGET: trigger_proximity
-extern "C" CBaseEntity *trigger_proximity()
+DLL_EXPORT CBaseEntity *trigger_proximity()
 {
 	CTriggerProximity *p = new CTriggerProximity;
 	p->vfunc106(g_1059fd34);
@@ -141326,6 +141514,7 @@ extern "C" CBaseEntity *trigger_proximity()
 // END FUNCTION
 
 // FUNCTION: 0x101c9e30 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -141333,7 +141522,7 @@ extern char g_1044b584[];	// CPointEntity vftable
 extern const char g_1059fd4c[];
 
 // TARGET: logic_proximity
-extern "C" CBaseEntity *logic_proximity()
+DLL_EXPORT CBaseEntity *logic_proximity()
 {
 	void *mem = sub_100aa720(0x450);
 	CBaseEntity *p;
@@ -141417,6 +141606,7 @@ void CTriggerProximity::sub_101ca0c0()
 // END FUNCTION
 
 // FUNCTION: 0x101ca3b0 size=0x7a
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -141431,7 +141621,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: trigger_fog
-extern "C" GP *trigger_fog()
+DLL_EXPORT GP *trigger_fog()
 {
 	GP *p = (GP *)sub_1000db89(0x5b0);
 	if (p) {
@@ -141502,6 +141692,7 @@ void CTriggerUnit101ca510::sub_101ca510(CBaseEntity *pOther)
 // END FUNCTION
 
 // FUNCTION: 0x101ca6c0 size=0x84
+#include "platform.h"
 #include "CBaseEntity.h"
 
 extern void *vt_1047d08c[];
@@ -141526,7 +141717,7 @@ struct CTriggerWindView : CBaseEntity {
 	void **m_pWindVtable;
 };
 
-extern "C" CBaseEntity *trigger_wind()
+DLL_EXPORT CBaseEntity *trigger_wind()
 {
 	CTriggerWindView *p = (CTriggerWindView *)sub_100aa720(0x5ec);
 	CBaseEntity *e;
@@ -141670,6 +141861,7 @@ void CUnk101caea0::sub_101caea0(const CVariantArg101caea0 *d)
 // END FUNCTION
 
 // FUNCTION: 0x101cb010 size=0x8b
+#include "platform.h"
 #include "CBaseEntity.h"
 
 void *sub_100aa720(int size);
@@ -141687,7 +141879,7 @@ struct CTriggerImpactView
 };
 
 // TARGET: trigger_impact
-extern "C" CBaseEntity *trigger_impact()
+DLL_EXPORT CBaseEntity *trigger_impact()
 {
 	void *mem = sub_100aa720(0x5d4);
 	CBaseEntity *p;
@@ -141833,6 +142025,7 @@ int *sub_101cb6b0()
 // END FUNCTION
 
 // FUNCTION: 0x101cb730 size=0x7a
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -141847,7 +142040,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: trigger_checkvolume
-extern "C" GP *trigger_checkvolume()
+DLL_EXPORT GP *trigger_checkvolume()
 {
 	GP *p = (GP *)sub_1000db89(0x5b0);
 	if (p) {
@@ -141881,6 +142074,7 @@ int sub_101cb920()
 // END FUNCTION
 
 // FUNCTION: 0x101cb950 size=0x69
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -141894,7 +142088,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: trigger_stealth_mod
-extern "C" GP *trigger_stealth_mod()
+DLL_EXPORT GP *trigger_stealth_mod()
 {
 	GP *p = (GP *)sub_1000db89(0x59c);
 	if (p) {
@@ -141926,6 +142120,7 @@ int sub_101cbae0()
 // END FUNCTION
 
 // FUNCTION: 0x101cbb10 size=0x69
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -141939,7 +142134,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: trigger_environmental_audio
-extern "C" GP *trigger_environmental_audio()
+DLL_EXPORT GP *trigger_environmental_audio()
 {
 	GP *p = (GP *)sub_1000db89(0x59c);
 	if (p) {
@@ -141971,6 +142166,7 @@ int sub_101cbcc0()
 // END FUNCTION
 
 // FUNCTION: 0x101cbcf0 size=0x69
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -141984,7 +142180,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: trigger_small_hull
-extern "C" GP *trigger_small_hull()
+DLL_EXPORT GP *trigger_small_hull()
 {
 	GP *p = (GP *)sub_1000db89(0x598);
 	if (p) {
@@ -149026,12 +149222,13 @@ int sub_101d9bd0()
 // END FUNCTION
 
 // FUNCTION: 0x101d9cd0 size=0x43
+#include "platform.h"
 #include "CDisciplineProjectile.h"
 void *sub_100aa720(int size);
 extern char g_105a1dec[];
 
 // TARGET: vdisciplineprojectile
-extern "C" CBaseEntity *vdisciplineprojectile()
+DLL_EXPORT CBaseEntity *vdisciplineprojectile()
 {
 	void *mem = sub_100aa720(0x8c4);
 	CDisciplineProjectile *p;
@@ -159656,12 +159853,13 @@ int sub_101edfe0()
 // END FUNCTION
 
 // FUNCTION: 0x101ee190 size=0x43
+#include "platform.h"
 #include "CVampireProjectile.h"
 void *sub_100aa720(int size);
 extern char g_105a58cc[];
 
 // TARGET: vampireprojectile
-extern "C" CBaseEntity *vampireprojectile()
+DLL_EXPORT CBaseEntity *vampireprojectile()
 {
 	void *mem = sub_100aa720(0x8bc);
 	CVampireProjectile *p;
@@ -173829,13 +174027,14 @@ void CUnknown10206c70::sub_10207e60(CBaseCombatCharacter *pChar)
 // END FUNCTION
 
 // FUNCTION: 0x10207eb0 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CItemContainer.h"
 void *sub_100aa720(int size);
 extern char g_105a9a2c[];
 
 // TARGET: item_container
-extern "C" CBaseEntity *item_container()
+DLL_EXPORT CBaseEntity *item_container()
 {
 	void *mem = sub_100aa720(0x1a38);
 	CItemContainer *p;
@@ -174256,12 +174455,13 @@ void CItemContainer::sub_10209b20(CBaseEntity *pActivator)
 // END FUNCTION
 
 // FUNCTION: 0x10209cd0 size=0x43
+#include "platform.h"
 #include "CItemContainerAnimated.h"
 void *sub_100aa720(int size);
 extern char g_105a9c10[];
 
 // TARGET: item_container_animated
-extern "C" CBaseEntity *item_container_animated()
+DLL_EXPORT CBaseEntity *item_container_animated()
 {
 	void *mem = sub_100aa720(0x1a38);
 	CItemContainerAnimated *p;
@@ -174338,13 +174538,14 @@ void CItemContainerAnimated::sub_10209e30(const char *pszLabel)
 // END FUNCTION
 
 // FUNCTION: 0x10209ef0 size=0x43
+#include "platform.h"
 #include "CItemContainerOneItemFiltered.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(int size);
 extern char g_105a9c58[];
 
 // TARGET: item_container_one_item_filtered
-extern "C" CBaseEntity *item_container_one_item_filtered()
+DLL_EXPORT CBaseEntity *item_container_one_item_filtered()
 {
 	void *mem = sub_100aa720(0x1a38);
 	CItemContainerOneItemFiltered *p;
@@ -174372,6 +174573,7 @@ void *__fastcall sub_10209f60(void *p)
 // END FUNCTION
 
 // FUNCTION: 0x10209ff0 size=0x6d
+#include "platform.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(int size);
 extern char g_105a9e64[];
@@ -174384,7 +174586,7 @@ struct CDebugEntityUnit : CBaseEntity {
 };
 
 // TARGET: debug_entity
-extern "C" CBaseEntity *debug_entity()
+DLL_EXPORT CBaseEntity *debug_entity()
 {
     void *mem = sub_100aa720(0x464);
     CDebugEntityUnit *p;
@@ -174574,13 +174776,14 @@ int *sub_1020a7d0()
 // END FUNCTION
 
 // FUNCTION: 0x1020aa00 size=0x43
+#include "platform.h"
 #include "CBaseVampireSkillEntity.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(int size);
 extern char g_105addbc[];
 
 // TARGET: vampire_skill
-extern "C" CBaseEntity *vampire_skill()
+DLL_EXPORT CBaseEntity *vampire_skill()
 {
 	void *mem = sub_100aa720(0x80c);
 	CBaseVampireSkillEntity *p;
@@ -174704,12 +174907,13 @@ float CUnknown1020aea0::sub_1020b040(void *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x1020b370 size=0x43
+#include "platform.h"
 #include "CSecCamera.h"
 void *sub_100aa720(int size);
 extern char g_105ade40[];
 
 // TARGET: security_camera
-extern "C" CBaseEntity *security_camera()
+DLL_EXPORT CBaseEntity *security_camera()
 {
 	void *mem = sub_100aa720(0x824);
 	CSecCamera *p;
@@ -175239,12 +175443,13 @@ void CUnit1020d080::sub_1020d0b0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x1020d0e0 size=0x43
+#include "platform.h"
 #include "CPropSwitch.h"
 void *sub_100aa720(int size);
 extern char g_105ae144[];
 
 // TARGET: prop_switch
-extern "C" CBaseEntity *prop_switch()
+DLL_EXPORT CBaseEntity *prop_switch()
 {
 	void *mem = sub_100aa720(0x7b8);
 	CPropSwitch *p;
@@ -175558,6 +175763,7 @@ void __fastcall sub_1020e0d0(void *pThis, int b, int a)
 // END FUNCTION
 
 // FUNCTION: 0x1020e170 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -175565,7 +175771,7 @@ extern char g_104867fc[];	// CGameText vftable
 extern const char g_105ae204[];
 
 // TARGET: game_text
-extern "C" CBaseEntity *game_text()
+DLL_EXPORT CBaseEntity *game_text()
 {
 	void *mem = sub_100aa720(0x47c);
 	CBaseEntity *p;
@@ -175704,6 +175910,7 @@ void CGameTextUnit::sub_1020e6b0(CGameTextActivator *pActivator)
 // END FUNCTION
 
 // FUNCTION: 0x1020e740 size=0xea
+#include "platform.h"
 #include "CBaseEntity.h"
 extern int vt_10461bcc[];
 extern int vt_10486c8c[];
@@ -175713,7 +175920,7 @@ void *__fastcall sub_100cd2a0(void *pThis);
 void *__fastcall sub_100cc020(void *pThis);
 
 // TARGET: func_elevator
-extern "C" CBaseEntity *func_elevator()
+DLL_EXPORT CBaseEntity *func_elevator()
 {
 	char *p = (char *)sub_100aa720(0x818);
 	if (p) {
@@ -176007,6 +176214,7 @@ void CFuncElevator::sub_1020f700(int nFloor)
 // END FUNCTION
 
 // FUNCTION: 0x1020f770 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -176014,7 +176222,7 @@ extern char g_1048711c[];	// CPointTarget vftable
 extern const char g_105ae688[];
 
 // TARGET: point_target
-extern "C" CBaseEntity *point_target()
+DLL_EXPORT CBaseEntity *point_target()
 {
 	void *mem = sub_100aa720(0x450);
 	CBaseEntity *p;
@@ -176031,12 +176239,13 @@ extern "C" CBaseEntity *point_target()
 // END FUNCTION
 
 // FUNCTION: 0x1020f7e0 size=0x43
+#include "platform.h"
 #include "CLogicVisible.h"
 void *sub_100aa720(int size);
 extern char g_105ae698[];
 
 // TARGET: logic_visibility_test
-extern "C" CBaseEntity *logic_visibility_test()
+DLL_EXPORT CBaseEntity *logic_visibility_test()
 {
 	void *mem = sub_100aa720(0x4b8);
 	CLogicVisible *p;
@@ -176437,12 +176646,13 @@ bool CUnit10210250::sub_102102e0(CEntityVSlots *pA, CEntityVSlots *pB)
 // END FUNCTION
 
 // FUNCTION: 0x102106c0 size=0x43
+#include "platform.h"
 #include "CTriggerPlayerActivityLevel.h"
 void *sub_100aa720(int size);
 extern char g_105ae720[];
 
 // TARGET: trigger_player_activity_level
-extern "C" CBaseEntity *trigger_player_activity_level()
+DLL_EXPORT CBaseEntity *trigger_player_activity_level()
 {
 	void *mem = sub_100aa720(0x5a4);
 	CTriggerPlayerActivityLevel *p;
@@ -176584,12 +176794,13 @@ void sub_10210bc0()
 // END FUNCTION
 
 // FUNCTION: 0x10210be0 size=0x43
+#include "platform.h"
 #include "CTriggerDisciplineContext.h"
 void *sub_100aa720(int size);
 extern char g_105ae7dc[];
 
 // TARGET: trigger_discipline_context
-extern "C" CBaseEntity *trigger_discipline_context()
+DLL_EXPORT CBaseEntity *trigger_discipline_context()
 {
 	void *mem = sub_100aa720(0x59c);
 	CTriggerDisciplineContext *p;
@@ -176617,6 +176828,7 @@ int sub_10210cb0()
 // END FUNCTION
 
 // FUNCTION: 0x10210ec0 size=0x85
+#include "platform.h"
 #include "CBaseEntity.h"
 
 extern void *vt_1047d08c[];
@@ -176640,7 +176852,7 @@ struct CTriggerBombSiteView : CBaseEntity {
 	COutputCtor m_out5b8;
 };
 
-extern "C" CBaseEntity *trigger_bomb_site()
+DLL_EXPORT CBaseEntity *trigger_bomb_site()
 {
 	CTriggerBombSiteView *p = (CTriggerBombSiteView *)sub_100aa720(0x5d0);
 	CBaseEntity *e;
@@ -176815,13 +177027,14 @@ int CUnknown10211870::sub_10211870(int a0, int a1)
 // END FUNCTION
 
 // FUNCTION: 0x102118a0 size=0x43
+#include "platform.h"
 #include "CPropSign.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(int size);
 extern char g_105ae8c8[];
 
 // TARGET: prop_sign
-extern "C" CBaseEntity *prop_sign()
+DLL_EXPORT CBaseEntity *prop_sign()
 {
 	void *mem = sub_100aa720(0x770);
 	CPropSign *p;
@@ -177048,12 +177261,13 @@ bool CPropSign::sub_10212200()
 // END FUNCTION
 
 // FUNCTION: 0x10212430 size=0x43
+#include "platform.h"
 #include "CGameSign.h"
 void *sub_100aa720(int size);
 extern char g_105ae950[];
 
 // TARGET: game_sign
-extern "C" CBaseEntity *game_sign()
+DLL_EXPORT CBaseEntity *game_sign()
 {
 	void *mem = sub_100aa720(0x474);
 	CGameSign *p;
@@ -177374,12 +177588,13 @@ bool CGameSign::sub_10212da0()
 // END FUNCTION
 
 // FUNCTION: 0x10212fd0 size=0x43
+#include "platform.h"
 #include "CPropHaunted.h"
 void *sub_100aa720(int size);
 extern char g_105ae994[];
 
 // TARGET: prop_haunted
-extern "C" CBaseEntity *prop_haunted()
+DLL_EXPORT CBaseEntity *prop_haunted()
 {
 	void *mem = sub_100aa720(0x81c);
 	CPropHaunted *p;
@@ -177907,12 +178122,13 @@ CEnvParticle *CPropHaunted::sub_10214cc0(int a)
 // END FUNCTION
 
 // FUNCTION: 0x10214d60 size=0x43
+#include "platform.h"
 #include "CPropButton.h"
 void *sub_100aa720(int size);
 extern char g_105aeccc[];
 
 // TARGET: prop_button
-extern "C" CBaseEntity *prop_button()
+DLL_EXPORT CBaseEntity *prop_button()
 {
 	void *mem = sub_100aa720(0x834);
 	CPropButton *p;
@@ -178098,12 +178314,13 @@ void CPropButton::sub_10215ad0(int index, void *pActivator)
 // END FUNCTION
 
 // FUNCTION: 0x10215bd0 size=0x43
+#include "platform.h"
 #include "CPropModelState.h"
 void *sub_100aa720(int size);
 extern char g_105aeea4[];
 
 // TARGET: prop_model_state
-extern "C" CBaseEntity *prop_model_state()
+DLL_EXPORT CBaseEntity *prop_model_state()
 {
 	void *mem = sub_100aa720(0x850);
 	CPropModelState *p;
@@ -178350,6 +178567,7 @@ int *sub_10216c20()
 // END FUNCTION
 
 // FUNCTION: 0x10216ca0 size=0x7a
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000d5ee(GP *);
@@ -178364,7 +178582,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: trigger_inventory_check
-extern "C" GP *trigger_inventory_check()
+DLL_EXPORT GP *trigger_inventory_check()
 {
 	GP *p = (GP *)sub_1000db89(0x5b4);
 	if (p) {
@@ -178967,12 +179185,13 @@ const char *CPropHackingView10219400::sub_10219400(int nString)
 // END FUNCTION
 
 // FUNCTION: 0x102196a0 size=0x43
+#include "platform.h"
 #include "CPropHacking.h"
 void *sub_100aa720(int size);
 extern char g_105b03c8[];
 
 // TARGET: prop_hacking
-extern "C" CBaseEntity *prop_hacking()
+DLL_EXPORT CBaseEntity *prop_hacking()
 {
 	void *mem = sub_100aa720(0xc30);
 	CPropHacking *p;
@@ -180456,6 +180675,7 @@ bool CPropHacking::sub_1021cba0(const char *pszFile)
 // END FUNCTION
 
 // FUNCTION: 0x1021d660 size=0x43
+#include "platform.h"
 #include "CPropKeypad.h"
 
 void *sub_100aa720(int size);
@@ -180472,7 +180692,7 @@ public:
 };
 
 // TARGET: prop_keypad
-extern "C" CPropKeypad *prop_keypad()
+DLL_EXPORT CPropKeypad *prop_keypad()
 {
 	void *mem = sub_100aa720(0x8bc);
 	CPropKeypad *p;
@@ -183039,10 +183259,11 @@ void S10222ec0::sub_10222ec0(int num)
 // END FUNCTION
 
 // FUNCTION: 0x10222f50 size=0x5c
+#include "platform.h"
 #include "CMoverKeyFrame.h"
 
 // TARGET: mover_keyframe
-extern "C" CBaseEntity *mover_keyframe()
+DLL_EXPORT CBaseEntity *mover_keyframe()
 {
 	CMoverKeyFrame *p = new CMoverKeyFrame;
 	p->vfunc106("mover_keyframe");
@@ -183540,6 +183761,7 @@ void CUnknown10223b90::sub_10223b90()
 // END FUNCTION
 
 // FUNCTION: 0x10223f20 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_10011f9a(GP *);
@@ -183552,7 +183774,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: func_keyframed_mover
-extern "C" GP *func_keyframed_mover()
+DLL_EXPORT GP *func_keyframed_mover()
 {
 	GP *p = (GP *)sub_1000db89(0x600);
 	if (p) {
@@ -183931,12 +184153,13 @@ void CBaseLockableEnt::sub_102256f0(const char *pszDoorName)
 // END FUNCTION
 
 // FUNCTION: 0x10225830 size=0x43
+#include "platform.h"
 #include "CPropDoorknob.h"
 void *sub_100aa720(int size);
 extern char g_105b2620[];
 
 // TARGET: prop_doorknob
-extern "C" CBaseEntity *prop_doorknob()
+DLL_EXPORT CBaseEntity *prop_doorknob()
 {
 	void *mem = sub_100aa720(0x824);
 	CPropDoorknob *p;
@@ -183950,12 +184173,13 @@ extern "C" CBaseEntity *prop_doorknob()
 // END FUNCTION
 
 // FUNCTION: 0x10225c00 size=0x43
+#include "platform.h"
 #include "CPropPadlock.h"
 void *sub_100aa720(int size);
 extern char g_105b26a0[];
 
 // TARGET: prop_padlock
-extern "C" CBaseEntity *prop_padlock()
+DLL_EXPORT CBaseEntity *prop_padlock()
 {
 	void *mem = sub_100aa720(0x824);
 	CPropPadlock *p;
@@ -183999,12 +184223,13 @@ CPropPadlock *CPropPadlock::sub_10225c70()
 // END FUNCTION
 
 // FUNCTION: 0x10226190 size=0x43
+#include "platform.h"
 #include "CPropDoorknobElectronic.h"
 void *sub_100aa720(int size);
 extern char g_105b26d0[];
 
 // TARGET: prop_doorknob_electronic
-extern "C" CBaseEntity *prop_doorknob_electronic()
+DLL_EXPORT CBaseEntity *prop_doorknob_electronic()
 {
 	void *mem = sub_100aa720(0x824);
 	CPropDoorknobElectronic *p;
@@ -184018,13 +184243,14 @@ extern "C" CBaseEntity *prop_doorknob_electronic()
 // END FUNCTION
 
 // FUNCTION: 0x102263b0 size=0x43
+#include "platform.h"
 #include "CItemContainerLock.h"
 #include "CBaseEntity.h"
 
 void *sub_100aa720(int size);
 
 // TARGET: item_container_lock
-extern "C" CBaseEntity *item_container_lock()
+DLL_EXPORT CBaseEntity *item_container_lock()
 {
 	void *mem = sub_100aa720(0x824);
 	CItemContainerLock *p;
@@ -184056,12 +184282,13 @@ CItemContainerLock *CItemContainerLock::sub_10226420()
 // END FUNCTION
 
 // FUNCTION: 0x102265c0 size=0x43
+#include "platform.h"
 #include "CPlayerEvents.h"
 void *sub_100aa720(int size);
 extern char g_105b3374[];
 
 // TARGET: playerevents
-extern "C" CBaseEntity *playerevents()
+DLL_EXPORT CBaseEntity *playerevents()
 {
 	void *mem = sub_100aa720(0x67c);
 	CPlayerEvents *p;
@@ -184075,12 +184302,13 @@ extern "C" CBaseEntity *playerevents()
 // END FUNCTION
 
 // FUNCTION: 0x10226630 size=0x43
+#include "platform.h"
 #include "CPlayerEvents.h"
 void *sub_100aa720(int size);
 extern char g_105b3384[];
 
 // TARGET: events_player
-extern "C" CBaseEntity *events_player()
+DLL_EXPORT CBaseEntity *events_player()
 {
 	void *mem = sub_100aa720(0x67c);
 	CPlayerEvents *p;
@@ -185544,12 +185772,13 @@ void CSoundSchemeManager::sub_10229c50()
 // END FUNCTION
 
 // FUNCTION: 0x10229ff0 size=0x43
+#include "platform.h"
 #include "CSoundScheme.h"
 void *sub_100aa720(int size);
 extern char g_105b4574[];
 
 // TARGET: ambient_soundscheme
-extern "C" CBaseEntity *ambient_soundscheme()
+DLL_EXPORT CBaseEntity *ambient_soundscheme()
 {
 	void *mem = sub_100aa720(0x5b0);
 	CSoundScheme *p;
@@ -185968,12 +186197,13 @@ void CUnk1022b660::sub_1022b660()
 // END FUNCTION
 
 // FUNCTION: 0x1022bb30 size=0x43
+#include "platform.h"
 #include "CPropRadio.h"
 void *sub_100aa720(int size);
 extern char g_105b4900[];
 
 // TARGET: prop_radio
-extern "C" CBaseEntity *prop_radio()
+DLL_EXPORT CBaseEntity *prop_radio()
 {
 	void *mem = sub_100aa720(0x75c);
 	CPropRadio *p;
@@ -188119,6 +188349,7 @@ int CVDmgBlock16_t::sub_10230fc0(void *pCharacter)
 // END FUNCTION
 
 // FUNCTION: 0x10231190 size=0x43
+#include "platform.h"
 #include "CTriggerElectricBugaloo.h"
 
 void *sub_100aa720(int size);
@@ -188135,7 +188366,7 @@ public:
 };
 
 // TARGET: trigger_electric_bugaloo
-extern "C" CTriggerElectricBugaloo *trigger_electric_bugaloo()
+DLL_EXPORT CTriggerElectricBugaloo *trigger_electric_bugaloo()
 {
 	void *mem = sub_100aa720(0x5a0);
 	CTriggerElectricBugaloo *p;
@@ -188244,6 +188475,7 @@ int sub_10231970()
 // END FUNCTION
 
 // FUNCTION: 0x10231b50 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -188251,7 +188483,7 @@ extern char g_1048ebd4[];	// CVGuiScreen vftable
 extern const char g_105b5ea8[];
 
 // TARGET: vgui_screen
-extern "C" CBaseEntity *vgui_screen()
+DLL_EXPORT CBaseEntity *vgui_screen()
 {
 	void *mem = sub_100aa720(0x468);
 	CBaseEntity *p;
@@ -189443,6 +189675,7 @@ int sub_102345e0()
 // END FUNCTION
 
 // FUNCTION: 0x102346f0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ab0a(GP *);
@@ -189455,7 +189688,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_colt_anaconda
-extern "C" GP *item_w_colt_anaconda()
+DLL_EXPORT GP *item_w_colt_anaconda()
 {
 	GP *p = (GP *)sub_1000db89(0x91c);
 	if (p) {
@@ -189499,6 +189732,7 @@ int sub_102349e0()
 // END FUNCTION
 
 // FUNCTION: 0x10234af0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ab0a(GP *);
@@ -189511,7 +189745,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_crossbow
-extern "C" GP *item_w_crossbow()
+DLL_EXPORT GP *item_w_crossbow()
 {
 	GP *p = (GP *)sub_1000db89(0x91c);
 	if (p) {
@@ -189555,6 +189789,7 @@ int sub_10234d20()
 // END FUNCTION
 
 // FUNCTION: 0x10234e30 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ab0a(GP *);
@@ -189567,7 +189802,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_crossbow_flaming
-extern "C" GP *item_w_crossbow_flaming()
+DLL_EXPORT GP *item_w_crossbow_flaming()
 {
 	GP *p = (GP *)sub_1000db89(0x91c);
 	if (p) {
@@ -189611,6 +189846,7 @@ int sub_10235060()
 // END FUNCTION
 
 // FUNCTION: 0x10235170 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ab0a(GP *);
@@ -189623,7 +189859,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_glock_17c
-extern "C" GP *item_w_glock_17c()
+DLL_EXPORT GP *item_w_glock_17c()
 {
 	GP *p = (GP *)sub_1000db89(0x91c);
 	if (p) {
@@ -189667,6 +189903,7 @@ int sub_102353a0()
 // END FUNCTION
 
 // FUNCTION: 0x102354b0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ab0a(GP *);
@@ -189679,7 +189916,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_deserteagle
-extern "C" GP *item_w_deserteagle()
+DLL_EXPORT GP *item_w_deserteagle()
 {
 	GP *p = (GP *)sub_1000db89(0x91c);
 	if (p) {
@@ -189723,6 +189960,7 @@ int sub_102356e0()
 // END FUNCTION
 
 // FUNCTION: 0x102357f0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ab0a(GP *);
@@ -189735,7 +189973,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_ithaca_m_37
-extern "C" GP *item_w_ithaca_m_37()
+DLL_EXPORT GP *item_w_ithaca_m_37()
 {
 	GP *p = (GP *)sub_1000db89(0x91c);
 	if (p) {
@@ -189779,6 +190017,7 @@ int sub_10235a20()
 // END FUNCTION
 
 // FUNCTION: 0x10235b30 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ab0a(GP *);
@@ -189791,7 +190030,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_mac_10
-extern "C" GP *item_w_mac_10()
+DLL_EXPORT GP *item_w_mac_10()
 {
 	GP *p = (GP *)sub_1000db89(0x91c);
 	if (p) {
@@ -189890,12 +190129,13 @@ int sub_10235ea0()
 // END FUNCTION
 
 // FUNCTION: 0x10235fb0 size=0x43
+#include "platform.h"
 #include "CWeaponRanged_Rifle_Remington.h"
 void *sub_100aa720(int size);
 extern char g_105c1bbc[];
 
 // TARGET: item_w_remington_m_700
-extern "C" CBaseEntity *item_w_remington_m_700()
+DLL_EXPORT CBaseEntity *item_w_remington_m_700()
 {
 	void *mem = sub_100aa720(0x948);
 	CWeaponRanged_Rifle_Remington *p;
@@ -190042,6 +190282,7 @@ int sub_10236400()
 // END FUNCTION
 
 // FUNCTION: 0x10236510 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000e9bc(GP *);
@@ -190054,7 +190295,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_rem_m_700_bach
-extern "C" GP *item_w_rem_m_700_bach()
+DLL_EXPORT GP *item_w_rem_m_700_bach()
 {
 	GP *p = (GP *)sub_1000db89(0x948);
 	if (p) {
@@ -190098,6 +190339,7 @@ int sub_102366f0()
 // END FUNCTION
 
 // FUNCTION: 0x10236800 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000e9bc(GP *);
@@ -190110,7 +190352,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_steyr_aug
-extern "C" GP *item_w_steyr_aug()
+DLL_EXPORT GP *item_w_steyr_aug()
 {
 	GP *p = (GP *)sub_1000db89(0x948);
 	if (p) {
@@ -190154,6 +190396,7 @@ int sub_10236a30()
 // END FUNCTION
 
 // FUNCTION: 0x10236b40 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ab0a(GP *);
@@ -190166,7 +190409,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_supershotgun
-extern "C" GP *item_w_supershotgun()
+DLL_EXPORT GP *item_w_supershotgun()
 {
 	GP *p = (GP *)sub_1000db89(0x91c);
 	if (p) {
@@ -190210,6 +190453,7 @@ int sub_10236d70()
 // END FUNCTION
 
 // FUNCTION: 0x10236e80 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ab0a(GP *);
@@ -190222,7 +190466,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_uzi
-extern "C" GP *item_w_uzi()
+DLL_EXPORT GP *item_w_uzi()
 {
 	GP *p = (GP *)sub_1000db89(0x91c);
 	if (p) {
@@ -190266,6 +190510,7 @@ int sub_102370b0()
 // END FUNCTION
 
 // FUNCTION: 0x102371c0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ab0a(GP *);
@@ -190278,7 +190523,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_thirtyeight
-extern "C" GP *item_w_thirtyeight()
+DLL_EXPORT GP *item_w_thirtyeight()
 {
 	GP *p = (GP *)sub_1000db89(0x91c);
 	if (p) {
@@ -190322,6 +190567,7 @@ int sub_102373f0()
 // END FUNCTION
 
 // FUNCTION: 0x10237500 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ab0a(GP *);
@@ -190334,7 +190580,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_tzimisce2_head
-extern "C" GP *item_w_tzimisce2_head()
+DLL_EXPORT GP *item_w_tzimisce2_head()
 {
 	GP *p = (GP *)sub_1000db89(0x91c);
 	if (p) {
@@ -190439,6 +190685,7 @@ int sub_10237860()
 // END FUNCTION
 
 // FUNCTION: 0x10237970 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000ab0a(GP *);
@@ -190451,7 +190698,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_mingxiao_spit
-extern "C" GP *item_w_mingxiao_spit()
+DLL_EXPORT GP *item_w_mingxiao_spit()
 {
 	GP *p = (GP *)sub_1000db89(0x91c);
 	if (p) {
@@ -191046,6 +191293,7 @@ int sub_1023a6b0()
 // END FUNCTION
 
 // FUNCTION: 0x1023a6e0 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 void *sub_100aa720(unsigned int size);
@@ -191053,7 +191301,7 @@ extern char g_1049618c[];	// CDecal vftable
 extern const char g_105c3fa4[];
 
 // TARGET: infodecal
-extern "C" CBaseEntity *infodecal()
+DLL_EXPORT CBaseEntity *infodecal()
 {
 	void *mem = sub_100aa720(0x454);
 	CBaseEntity *p;
@@ -191284,12 +191532,13 @@ void CDecal::sub_1023aa30()
 // END FUNCTION
 
 // FUNCTION: 0x1023ae40 size=0x43
+#include "platform.h"
 #include "CWorld.h"
 void *sub_100aa720(int size);
 extern char g_10546e3c[];
 
 // TARGET: worldspawn
-extern "C" CBaseEntity *worldspawn()
+DLL_EXPORT CBaseEntity *worldspawn()
 {
 	void *mem = sub_100aa720(0x524);
 	CWorld *p;
@@ -191882,12 +192131,13 @@ void sub_1023cde0(SWorldInfo *pOut)
 // END FUNCTION
 
 // FUNCTION: 0x1023cf10 size=0x43
+#include "platform.h"
 #include "CWorldEvents.h"
 void *sub_100aa720(int size);
 extern char g_105c47bc[];
 
 // TARGET: worldevents
-extern "C" CBaseEntity *worldevents()
+DLL_EXPORT CBaseEntity *worldevents()
 {
 	void *mem = sub_100aa720(0x648);
 	CWorldEvents *p;
@@ -191901,12 +192151,13 @@ extern "C" CBaseEntity *worldevents()
 // END FUNCTION
 
 // FUNCTION: 0x1023cf80 size=0x43
+#include "platform.h"
 #include "CWorldEvents.h"
 void *sub_100aa720(int size);
 extern char g_105c47cc[];
 
 // TARGET: events_world
-extern "C" CBaseEntity *events_world()
+DLL_EXPORT CBaseEntity *events_world()
 {
 	void *mem = sub_100aa720(0x648);
 	CWorldEvents *p;
@@ -204471,6 +204722,7 @@ CUnknown10260980* CUnknown10260980::sub_10260980() { a = -1; return this; }
 // END FUNCTION
 
 // FUNCTION: 0x102609e0 size=0x43
+#include "platform.h"
 #include "CAI_BaseHumanoid.h"
 
 void *sub_100aa720(int size);
@@ -204487,7 +204739,7 @@ public:
 };
 
 // TARGET: npc_TestBaseHumanoid
-extern "C" CAI_BaseHumanoid *npc_TestBaseHumanoid()
+DLL_EXPORT CAI_BaseHumanoid *npc_TestBaseHumanoid()
 {
 	void *mem = sub_100aa720(0x6058);
 	CAI_BaseHumanoid *p;
@@ -226832,6 +227084,7 @@ void CAI_StandoffGoal::sub_102c8280(inputdata_t *pInput)
 // END FUNCTION
 
 // FUNCTION: 0x102c8460 size=0xc5
+#include "platform.h"
 #include "CAI_StandoffGoal.h"
 #include "utlvector.h"
 
@@ -226887,7 +227140,7 @@ struct StandoffGoalPart : StandoffGoalEntityPart
 };
 
 // TARGET: ai_goal_standoff
-extern "C" CBaseEntity *ai_goal_standoff()
+DLL_EXPORT CBaseEntity *ai_goal_standoff()
 {
 	CAI_StandoffGoal *p = (CAI_StandoffGoal *)new StandoffGoalPart;
 	p->vfunc106(g_10601ff0);
@@ -228170,6 +228423,7 @@ void __fastcall sub_102cc7e0(int *p) { p[16] = 0; }
 // END FUNCTION
 
 // FUNCTION: 0x102cc800 size=0x43
+#include "platform.h"
 #include "CAI_DynamicLink.h"
 
 void *sub_100aa720(int size);
@@ -228185,7 +228439,7 @@ struct CLightVt
 };
 
 // TARGET: info_node_link
-extern "C" CAI_DynamicLink *info_node_link()
+DLL_EXPORT CAI_DynamicLink *info_node_link()
 {
 	void *mem = sub_100aa720(0x460);
 	CAI_DynamicLink *p;
@@ -229263,13 +229517,14 @@ bool CUnknown102d0270::sub_102d0270(const float *pPoint)
 // END FUNCTION
 
 // FUNCTION: 0x102d0300 size=0x43
+#include "platform.h"
 #include "CAI_Hint.h"
 
 void *sub_100aa720(int size);
 extern char g_1060a388[];
 
 // TARGET: ai_hint
-extern "C" CAI_Hint *ai_hint()
+DLL_EXPORT CAI_Hint *ai_hint()
 {
 	void *mem = sub_100aa720(0x60c);
 	CAI_Hint *p;
@@ -231018,12 +231273,13 @@ int sub_102d6230(int i)
 // END FUNCTION
 
 // FUNCTION: 0x102d6250 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060ad3c[];
 
 // TARGET: info_hint
-extern "C" CBaseEntity *info_hint()
+DLL_EXPORT CBaseEntity *info_hint()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231037,12 +231293,13 @@ extern "C" CBaseEntity *info_hint()
 // END FUNCTION
 
 // FUNCTION: 0x102d62c0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_105b6464[];
 
 // TARGET: info_node
-extern "C" CBaseEntity *info_node()
+DLL_EXPORT CBaseEntity *info_node()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231056,12 +231313,13 @@ extern "C" CBaseEntity *info_node()
 // END FUNCTION
 
 // FUNCTION: 0x102d6330 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060ad48[];
 
 // TARGET: info_node_tzimisce
-extern "C" CBaseEntity *info_node_tzimisce()
+DLL_EXPORT CBaseEntity *info_node_tzimisce()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231075,12 +231333,13 @@ extern "C" CBaseEntity *info_node_tzimisce()
 // END FUNCTION
 
 // FUNCTION: 0x102d63a0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060ad60[];
 
 // TARGET: info_node_cover_med
-extern "C" CBaseEntity *info_node_cover_med()
+DLL_EXPORT CBaseEntity *info_node_cover_med()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231094,12 +231353,13 @@ extern "C" CBaseEntity *info_node_cover_med()
 // END FUNCTION
 
 // FUNCTION: 0x102d6410 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060ad78[];
 
 // TARGET: info_node_cover_low
-extern "C" CBaseEntity *info_node_cover_low()
+DLL_EXPORT CBaseEntity *info_node_cover_low()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231113,12 +231373,13 @@ extern "C" CBaseEntity *info_node_cover_low()
 // END FUNCTION
 
 // FUNCTION: 0x102d6480 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060ad90[];
 
 // TARGET: info_node_cover_corner
-extern "C" CBaseEntity *info_node_cover_corner()
+DLL_EXPORT CBaseEntity *info_node_cover_corner()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231132,12 +231393,13 @@ extern "C" CBaseEntity *info_node_cover_corner()
 // END FUNCTION
 
 // FUNCTION: 0x102d64f0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060adac[];
 
 // TARGET: info_node_patrol_point
-extern "C" CBaseEntity *info_node_patrol_point()
+DLL_EXPORT CBaseEntity *info_node_patrol_point()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231151,12 +231413,13 @@ extern "C" CBaseEntity *info_node_patrol_point()
 // END FUNCTION
 
 // FUNCTION: 0x102d6560 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060adc8[];
 
 // TARGET: info_node_kick_over
-extern "C" CBaseEntity *info_node_kick_over()
+DLL_EXPORT CBaseEntity *info_node_kick_over()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231170,12 +231433,13 @@ extern "C" CBaseEntity *info_node_kick_over()
 // END FUNCTION
 
 // FUNCTION: 0x102d65d0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060ade0[];
 
 // TARGET: info_node_kick_at
-extern "C" CBaseEntity *info_node_kick_at()
+DLL_EXPORT CBaseEntity *info_node_kick_at()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231189,12 +231453,13 @@ extern "C" CBaseEntity *info_node_kick_at()
 // END FUNCTION
 
 // FUNCTION: 0x102d6640 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060adf8[];
 
 // TARGET: info_node_shoot_at
-extern "C" CBaseEntity *info_node_shoot_at()
+DLL_EXPORT CBaseEntity *info_node_shoot_at()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231208,12 +231473,13 @@ extern "C" CBaseEntity *info_node_shoot_at()
 // END FUNCTION
 
 // FUNCTION: 0x102d66b0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060ae10[];
 
 // TARGET: info_node_hint
-extern "C" CBaseEntity *info_node_hint()
+DLL_EXPORT CBaseEntity *info_node_hint()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231227,12 +231493,13 @@ extern "C" CBaseEntity *info_node_hint()
 // END FUNCTION
 
 // FUNCTION: 0x102d6720 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060ae24[];
 
 // TARGET: info_node_crosswalk
-extern "C" CBaseEntity *info_node_crosswalk()
+DLL_EXPORT CBaseEntity *info_node_crosswalk()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231246,12 +231513,13 @@ extern "C" CBaseEntity *info_node_crosswalk()
 // END FUNCTION
 
 // FUNCTION: 0x102d6790 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060ae3c[];
 
 // TARGET: info_node_tzimisce_claw_left
-extern "C" CBaseEntity *info_node_tzimisce_claw_left()
+DLL_EXPORT CBaseEntity *info_node_tzimisce_claw_left()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231265,12 +231533,13 @@ extern "C" CBaseEntity *info_node_tzimisce_claw_left()
 // END FUNCTION
 
 // FUNCTION: 0x102d6800 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060ae60[];
 
 // TARGET: info_node_tzimisce_claw_right
-extern "C" CBaseEntity *info_node_tzimisce_claw_right()
+DLL_EXPORT CBaseEntity *info_node_tzimisce_claw_right()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231284,12 +231553,13 @@ extern "C" CBaseEntity *info_node_tzimisce_claw_right()
 // END FUNCTION
 
 // FUNCTION: 0x102d6870 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_105b6470[];
 
 // TARGET: info_node_air
-extern "C" CBaseEntity *info_node_air()
+DLL_EXPORT CBaseEntity *info_node_air()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231303,12 +231573,13 @@ extern "C" CBaseEntity *info_node_air()
 // END FUNCTION
 
 // FUNCTION: 0x102d68e0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060ae84[];
 
 // TARGET: info_node_air_hint
-extern "C" CBaseEntity *info_node_air_hint()
+DLL_EXPORT CBaseEntity *info_node_air_hint()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231322,12 +231593,13 @@ extern "C" CBaseEntity *info_node_air_hint()
 // END FUNCTION
 
 // FUNCTION: 0x102d6950 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060ae9c[];
 
 // TARGET: info_node_climb
-extern "C" CBaseEntity *info_node_climb()
+DLL_EXPORT CBaseEntity *info_node_climb()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231341,12 +231613,13 @@ extern "C" CBaseEntity *info_node_climb()
 // END FUNCTION
 
 // FUNCTION: 0x102d69c0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060aeb0[];
 
 // TARGET: info_node_werewolf
-extern "C" CBaseEntity *info_node_werewolf()
+DLL_EXPORT CBaseEntity *info_node_werewolf()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231360,12 +231633,13 @@ extern "C" CBaseEntity *info_node_werewolf()
 // END FUNCTION
 
 // FUNCTION: 0x102d6a30 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060aec8[];
 
 // TARGET: info_node_werewolf_hint
-extern "C" CBaseEntity *info_node_werewolf_hint()
+DLL_EXPORT CBaseEntity *info_node_werewolf_hint()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231379,12 +231653,13 @@ extern "C" CBaseEntity *info_node_werewolf_hint()
 // END FUNCTION
 
 // FUNCTION: 0x102d6aa0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060aee4[];
 
 // TARGET: info_node_sabbat_bottom
-extern "C" CBaseEntity *info_node_sabbat_bottom()
+DLL_EXPORT CBaseEntity *info_node_sabbat_bottom()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231398,12 +231673,13 @@ extern "C" CBaseEntity *info_node_sabbat_bottom()
 // END FUNCTION
 
 // FUNCTION: 0x102d6b10 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060af00[];
 
 // TARGET: info_node_sabbat_top
-extern "C" CBaseEntity *info_node_sabbat_top()
+DLL_EXPORT CBaseEntity *info_node_sabbat_top()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231417,12 +231693,13 @@ extern "C" CBaseEntity *info_node_sabbat_top()
 // END FUNCTION
 
 // FUNCTION: 0x102d6b80 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060af1c[];
 
 // TARGET: info_node_sabbat_arch
-extern "C" CBaseEntity *info_node_sabbat_arch()
+DLL_EXPORT CBaseEntity *info_node_sabbat_arch()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231436,12 +231713,13 @@ extern "C" CBaseEntity *info_node_sabbat_arch()
 // END FUNCTION
 
 // FUNCTION: 0x102d6bf0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060af38[];
 
 // TARGET: info_node_sabbat_hide
-extern "C" CBaseEntity *info_node_sabbat_hide()
+DLL_EXPORT CBaseEntity *info_node_sabbat_hide()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231455,12 +231733,13 @@ extern "C" CBaseEntity *info_node_sabbat_hide()
 // END FUNCTION
 
 // FUNCTION: 0x102d6c60 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060af54[];
 
 // TARGET: info_node_sabbat_nojump
-extern "C" CBaseEntity *info_node_sabbat_nojump()
+DLL_EXPORT CBaseEntity *info_node_sabbat_nojump()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231474,12 +231753,13 @@ extern "C" CBaseEntity *info_node_sabbat_nojump()
 // END FUNCTION
 
 // FUNCTION: 0x102d6cd0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060af70[];
 
 // TARGET: info_node_sabbat_dive
-extern "C" CBaseEntity *info_node_sabbat_dive()
+DLL_EXPORT CBaseEntity *info_node_sabbat_dive()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231493,12 +231773,13 @@ extern "C" CBaseEntity *info_node_sabbat_dive()
 // END FUNCTION
 
 // FUNCTION: 0x102d6d40 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060af8c[];
 
 // TARGET: info_node_bach_teleport_1
-extern "C" CBaseEntity *info_node_bach_teleport_1()
+DLL_EXPORT CBaseEntity *info_node_bach_teleport_1()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231512,12 +231793,13 @@ extern "C" CBaseEntity *info_node_bach_teleport_1()
 // END FUNCTION
 
 // FUNCTION: 0x102d6db0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060afac[];
 
 // TARGET: info_node_bach_teleport_2
-extern "C" CBaseEntity *info_node_bach_teleport_2()
+DLL_EXPORT CBaseEntity *info_node_bach_teleport_2()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231531,12 +231813,13 @@ extern "C" CBaseEntity *info_node_bach_teleport_2()
 // END FUNCTION
 
 // FUNCTION: 0x102d6e20 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060afcc[];
 
 // TARGET: info_node_bach_teleport_3
-extern "C" CBaseEntity *info_node_bach_teleport_3()
+DLL_EXPORT CBaseEntity *info_node_bach_teleport_3()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231550,12 +231833,13 @@ extern "C" CBaseEntity *info_node_bach_teleport_3()
 // END FUNCTION
 
 // FUNCTION: 0x102d6e90 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060afec[];
 
 // TARGET: info_node_bach_teleport_4
-extern "C" CBaseEntity *info_node_bach_teleport_4()
+DLL_EXPORT CBaseEntity *info_node_bach_teleport_4()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231569,12 +231853,13 @@ extern "C" CBaseEntity *info_node_bach_teleport_4()
 // END FUNCTION
 
 // FUNCTION: 0x102d6f00 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060b00c[];
 
 // TARGET: info_node_bach_run_1
-extern "C" CBaseEntity *info_node_bach_run_1()
+DLL_EXPORT CBaseEntity *info_node_bach_run_1()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231588,12 +231873,13 @@ extern "C" CBaseEntity *info_node_bach_run_1()
 // END FUNCTION
 
 // FUNCTION: 0x102d6f70 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060b028[];
 
 // TARGET: info_node_bach_run_2
-extern "C" CBaseEntity *info_node_bach_run_2()
+DLL_EXPORT CBaseEntity *info_node_bach_run_2()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231607,12 +231893,13 @@ extern "C" CBaseEntity *info_node_bach_run_2()
 // END FUNCTION
 
 // FUNCTION: 0x102d6fe0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060b044[];
 
 // TARGET: info_node_chang_jumpbase
-extern "C" CBaseEntity *info_node_chang_jumpbase()
+DLL_EXPORT CBaseEntity *info_node_chang_jumpbase()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231626,12 +231913,13 @@ extern "C" CBaseEntity *info_node_chang_jumpbase()
 // END FUNCTION
 
 // FUNCTION: 0x102d7050 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060b064[];
 
 // TARGET: info_node_chang_column
-extern "C" CBaseEntity *info_node_chang_column()
+DLL_EXPORT CBaseEntity *info_node_chang_column()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231645,12 +231933,13 @@ extern "C" CBaseEntity *info_node_chang_column()
 // END FUNCTION
 
 // FUNCTION: 0x102d70c0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060b080[];
 
 // TARGET: info_node_chang_teleport
-extern "C" CBaseEntity *info_node_chang_teleport()
+DLL_EXPORT CBaseEntity *info_node_chang_teleport()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231664,12 +231953,13 @@ extern "C" CBaseEntity *info_node_chang_teleport()
 // END FUNCTION
 
 // FUNCTION: 0x102d7130 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060b0a0[];
 
 // TARGET: info_node_chang_ledge
-extern "C" CBaseEntity *info_node_chang_ledge()
+DLL_EXPORT CBaseEntity *info_node_chang_ledge()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231683,12 +231973,13 @@ extern "C" CBaseEntity *info_node_chang_ledge()
 // END FUNCTION
 
 // FUNCTION: 0x102d71a0 size=0x43
+#include "platform.h"
 #include "CNodeEnt.h"
 void *sub_100aa720(int size);
 extern char g_1060b0bc[];
 
 // TARGET: info_node_manbat_fly_to_point
-extern "C" CBaseEntity *info_node_manbat_fly_to_point()
+DLL_EXPORT CBaseEntity *info_node_manbat_fly_to_point()
 {
 	void *mem = sub_100aa720(0x46c);
 	CNodeEnt *p;
@@ -231702,6 +231993,7 @@ extern "C" CBaseEntity *info_node_manbat_fly_to_point()
 // END FUNCTION
 
 // FUNCTION: 0x102d7210 size=0x53
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_10006659(GP *);
@@ -231715,7 +232007,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: aitesthull
-extern "C" GP *aitesthull()
+DLL_EXPORT GP *aitesthull()
 {
 	GP *p = (GP *)sub_1000db89(0x5f48);
 	if (p) {
@@ -232459,12 +232751,13 @@ void CUnknown102d9170::sub_102d9170(int num)
 // END FUNCTION
 
 // FUNCTION: 0x102d9490 size=0x43
+#include "platform.h"
 #include "CAI_InterestingPlace.h"
 void *sub_100aa720(int size);
 extern char g_1060ce40[];
 
 // TARGET: intersting_place
-extern "C" CBaseEntity *intersting_place()
+DLL_EXPORT CBaseEntity *intersting_place()
 {
 	void *mem = sub_100aa720(0x60c);
 	CAI_InterestingPlace *p;
@@ -233339,6 +233632,7 @@ int CUnknown102db760::sub_102db760()
 // END FUNCTION
 
 // FUNCTION: 0x102db780 size=0x43
+#include "platform.h"
 #include "CAI_InterestingPlaceConverstation.h"
 
 void *sub_100aa720(int size);
@@ -233359,7 +233653,7 @@ struct CInterestingCtor
 };
 
 // TARGET: intersting_place_conversation
-extern "C" CBaseEntity *intersting_place_conversation()
+DLL_EXPORT CBaseEntity *intersting_place_conversation()
 {
 	void *mem = sub_100aa720(0x52c);
 	CAI_InterestingPlaceConverstation *p;
@@ -244834,12 +245128,13 @@ int CUnknown102f4ea0::sub_102f4ea0(int i)
 // END FUNCTION
 
 // FUNCTION: 0x102f4ee0 size=0x43
+#include "platform.h"
 #include "CAI_NetworkManager.h"
 void *sub_100aa720(int size);
 extern char g_10610560[];
 
 // TARGET: ai_network
-extern "C" CBaseEntity *ai_network()
+DLL_EXPORT CBaseEntity *ai_network()
 {
 	void *mem = sub_100aa720(0x75c);
 	CAI_NetworkManager *p;
@@ -274147,6 +274442,7 @@ void CUnknown1034a240::sub_1034a240() { slot350(); }
 // END FUNCTION
 
 // FUNCTION: 0x1034a250 size=0x53
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_10006659(GP *);
@@ -274160,7 +274456,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: monster_generic
-extern "C" GP *monster_generic()
+DLL_EXPORT GP *monster_generic()
 {
 	GP *p = (GP *)sub_1000db89(0x5f44);
 	if (p) {
@@ -274224,12 +274520,13 @@ void CGenericNPC::sub_1034a310()
 // END FUNCTION
 
 // FUNCTION: 0x1034aae0 size=0x43
+#include "platform.h"
 #include "CNPCMaker.h"
 void *sub_100aa720(int size);
 extern char g_10624e80[];
 
 // TARGET: npc_maker
-extern "C" CBaseEntity *npc_maker()
+DLL_EXPORT CBaseEntity *npc_maker()
 {
 	void *mem = sub_100aa720(0x76d0);
 	CNPCMaker *p;
@@ -274459,12 +274756,13 @@ void CNPCMaker::sub_1034bbf0()
 // END FUNCTION
 
 // FUNCTION: 0x1034bd50 size=0x43
+#include "platform.h"
 #include "CNPCMaker_Fleshpile.h"
 void *sub_100aa720(int size);
 extern char g_106251f4[];
 
 // TARGET: npc_maker_fleshpile
-extern "C" CBaseEntity *npc_maker_fleshpile()
+DLL_EXPORT CBaseEntity *npc_maker_fleshpile()
 {
 	void *mem = sub_100aa720(0x76d0);
 	CNPCMaker_Fleshpile *p;
@@ -274531,12 +274829,13 @@ void CUnknown1034c8b0::sub_1034c8b0()
 // END FUNCTION
 
 // FUNCTION: 0x1034c980 size=0x43
+#include "platform.h"
 #include "CNPCMaker_Zombie.h"
 void *sub_100aa720(int size);
 extern char g_10625608[];
 
 // TARGET: npc_maker_zombie
-extern "C" CBaseEntity *npc_maker_zombie()
+DLL_EXPORT CBaseEntity *npc_maker_zombie()
 {
 	void *mem = sub_100aa720(0x76dc);
 	CNPCMaker_Zombie *p;
@@ -274735,6 +275034,7 @@ void CNPCMaker_Zombie::sub_1034d2d0()
 // END FUNCTION
 
 // FUNCTION: 0x1034d370 size=0x74
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CAI_BaseNPC.h"
 
@@ -274757,7 +275057,7 @@ struct CScriptedTargetView : CAI_BaseNPC {
 	COutputCtor m_out5f9c;
 };
 
-extern "C" CBaseEntity *scripted_target()
+DLL_EXPORT CBaseEntity *scripted_target()
 {
 	CScriptedTargetView *p = (CScriptedTargetView *)sub_100aa720(0x5fb4);
 	CBaseEntity *e;
@@ -275025,6 +275325,7 @@ void CUnknown1034d620::sub_1034dd70()
 // END FUNCTION
 
 // FUNCTION: 0x1034e420 size=0x4b
+#include "platform.h"
 #include "CConstraintAnchor.h"
 #include "CBaseEntity.h"
 
@@ -275033,7 +275334,7 @@ extern char g_104a228c[];	// CFogController vftable
 extern const char g_106260e0[];
 
 // TARGET: env_fog_controller
-extern "C" CBaseEntity *env_fog_controller()
+DLL_EXPORT CBaseEntity *env_fog_controller()
 {
 	void *mem = sub_100aa720(0x450);
 	CBaseEntity *p;
@@ -275397,6 +275698,7 @@ void __stdcall sub_1034e9a0(inputdata_t &in)
 // END FUNCTION
 
 // FUNCTION: 0x1034f1e0 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CHL2_Player.h"
 
@@ -275418,7 +275720,7 @@ struct CHL2Ctor
 };
 
 // TARGET: player
-extern "C" CBaseEntity *player()
+DLL_EXPORT CBaseEntity *player()
 {
 	void *mem = sub_100aa720(0x2548);
 	CHL2_Player *p;
@@ -275941,6 +276243,7 @@ int sub_10355c70()
 // END FUNCTION
 
 // FUNCTION: 0x10355d70 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100103fc(GP *);
@@ -275953,7 +276256,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: bodyque
-extern "C" GP *bodyque()
+DLL_EXPORT GP *bodyque()
 {
 	GP *p = (GP *)sub_1000db89(0x734);
 	if (p) {
@@ -276208,12 +276511,13 @@ int *sub_10356550()
 // END FUNCTION
 
 // FUNCTION: 0x10356630 size=0x43
+#include "platform.h"
 #include "CNPC_Bullseye.h"
 void *sub_100aa720(int size);
 extern char g_106287ac[];
 
 // TARGET: npc_bullseye
-extern "C" CBaseEntity *npc_bullseye()
+DLL_EXPORT CBaseEntity *npc_bullseye()
 {
 	void *mem = sub_100aa720(0x5f78);
 	CNPC_Bullseye *p;
@@ -276380,6 +276684,7 @@ int CUnknown10357180::sub_10357180(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x103572d0 size=0x5e
+#include "platform.h"
 #include "CHumanoidRec.h"
 #include "utlmemory.h"
 #include "CNPC_Crow.h"
@@ -276402,7 +276707,7 @@ struct CCrowFactoryView {
 		return this;
 	}
 };
-extern "C" CNPC_Crow *npc_crow()
+DLL_EXPORT CNPC_Crow *npc_crow()
 {
 	CCrowFactoryView *m = (CCrowFactoryView *)sub_100aa720(0x5f5c);
 	CCrowFactoryView *p = m ? m->Construct() : 0;
@@ -276830,6 +277135,7 @@ void sub_10359c50()
 // END FUNCTION
 
 // FUNCTION: 0x10359cf0 size=0x43
+#include "platform.h"
 #include "CGeneric_NPC.h"
 
 void *sub_100aa720(int size);
@@ -276850,7 +277156,7 @@ struct CGenericNpcCtor
 };
 
 // TARGET: npc_generic
-extern "C" CBaseEntity *npc_generic()
+DLL_EXPORT CBaseEntity *npc_generic()
 {
 	void *mem = sub_100aa720(0x6660);
 	CGeneric_NPC *p;
@@ -276963,12 +277269,13 @@ void sub_1035aaa0()
 // END FUNCTION
 
 // FUNCTION: 0x1035ab40 size=0x43
+#include "platform.h"
 #include "CGeneric_NPC_bathack.h"
 void *sub_100aa720(int size);
 extern char g_10629e60[];
 
 // TARGET: npc_generic_bathack
-extern "C" CBaseEntity *npc_generic_bathack()
+DLL_EXPORT CBaseEntity *npc_generic_bathack()
 {
 	void *mem = sub_100aa720(0x5f48);
 	CGeneric_NPC_bathack *p;
@@ -277092,13 +277399,14 @@ void sub_1035b2b0()
 // END FUNCTION
 
 // FUNCTION: 0x1035b350 size=0x43
+#include "platform.h"
 #include "CGenericSabbat_NPC.h"
 void *sub_100aa720(int size);
 void *__fastcall sub_1035b520(char *p);
 extern char g_1062a0b0[];
 
 // TARGET: npc_sabbat
-extern "C" void *npc_sabbat()
+DLL_EXPORT void *npc_sabbat()
 {
 	void *mem = sub_100aa720(0x5f48);
 	CGenericSabbat_NPC *p;
@@ -277190,6 +277498,7 @@ void __stdcall sub_1035bf90(int a0)
 // END FUNCTION
 
 // FUNCTION: 0x1035c080 size=0xc1
+#include "platform.h"
 extern int vt_104a7b94;
 extern int vt_104a7b68;
 extern int vt_104a6fc4;
@@ -277201,7 +277510,7 @@ void __fastcall sub_103c51a0(void *pThis);
 void __fastcall sub_1035c390(void *pThis);
 
 // TARGET: npc_VAndreiBlood
-extern "C" int *npc_VAndreiBlood()
+DLL_EXPORT int *npc_VAndreiBlood()
 {
 	int *raw = (int *)sub_100aa720(0x66ec);
 	int *p;
@@ -277733,12 +278042,13 @@ void CNPC_VAndreiBlood::sub_1035e950()
 // END FUNCTION
 
 // FUNCTION: 0x1035eaa0 size=0x43
+#include "platform.h"
 #include "CNPC_VAnimal.h"
 void *sub_100aa720(int size);
 extern char g_1062b794[];
 
 // TARGET: npc_VAnimal
-extern "C" CBaseEntity *npc_VAnimal()
+DLL_EXPORT CBaseEntity *npc_VAnimal()
 {
 	void *mem = sub_100aa720(0x6674);
 	CNPC_VAnimal *p;
@@ -278115,6 +278425,7 @@ int sub_1035fd20()
 // END FUNCTION
 
 // FUNCTION: 0x103602f0 size=0xad
+#include "platform.h"
 extern int vt_104a7b94;
 extern int vt_104a7b68;
 extern int vt_104a935c;
@@ -278126,7 +278437,7 @@ void __fastcall sub_103c51a0(void *pThis);
 void __fastcall sub_10360540(void *pThis);
 
 // TARGET: npc_VAsianVampire
-extern "C" int *npc_VAsianVampire()
+DLL_EXPORT int *npc_VAsianVampire()
 {
 	int *raw = (int *)sub_100aa720(0x66ec);
 	int *p;
@@ -278730,12 +279041,13 @@ bool CNPC_VAsianVampire::sub_103629d0(const float *pos, float radius)
 // END FUNCTION
 
 // FUNCTION: 0x10362ba0 size=0x43
+#include "platform.h"
 #include "CNPC_VBach.h"
 void *sub_100aa720(int size);
 extern char g_1062d9e8[];
 
 // TARGET: npc_VBach
-extern "C" CBaseEntity *npc_VBach()
+DLL_EXPORT CBaseEntity *npc_VBach()
 {
 	void *mem = sub_100aa720(0x66ac);
 	CNPC_VBach *p;
@@ -279322,12 +279634,13 @@ void CUtlVector16::sub_10366b30()
 // END FUNCTION
 
 // FUNCTION: 0x10366bc0 size=0x43
+#include "platform.h"
 #include "CNPC_VBatSwarm.h"
 void *sub_100aa720(int size);
 extern char g_1062ef80[];
 
 // TARGET: npc_VBatSwarm
-extern "C" CBaseEntity *npc_VBatSwarm()
+DLL_EXPORT CBaseEntity *npc_VBatSwarm()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VBatSwarm *p;
@@ -279532,12 +279845,13 @@ int sub_10367330()
 // END FUNCTION
 
 // FUNCTION: 0x103677c0 size=0x43
+#include "platform.h"
 #include "CNPC_VBrujah.h"
 void *sub_100aa720(int size);
 extern char g_1062f2d8[];
 
 // TARGET: npc_VBrujah
-extern "C" CBaseEntity *npc_VBrujah()
+DLL_EXPORT CBaseEntity *npc_VBrujah()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VBrujah *p;
@@ -279742,6 +280056,7 @@ int sub_10367fc0()
 // END FUNCTION
 
 // FUNCTION: 0x10367ff0 size=0x43
+#include "platform.h"
 #include "CNPC_VCamera.h"
 
 void *sub_100aa720(int size);
@@ -279762,7 +280077,7 @@ struct CGenericNpcCtor
 };
 
 // TARGET: npc_VCamera
-extern "C" CNPC_VCamera *npc_VCamera()
+DLL_EXPORT CNPC_VCamera *npc_VCamera()
 {
 	void *mem = sub_100aa720(0x6660);
 	CNPC_VCamera *p;
@@ -279954,12 +280269,13 @@ int sub_10369d50()
 // END FUNCTION
 
 // FUNCTION: 0x10369d80 size=0x43
+#include "platform.h"
 #include "CNPC_VCameraSecurity.h"
 void *sub_100aa720(int size);
 extern char g_1062fa34[];
 
 // TARGET: npc_VCameraSecurity
-extern "C" CBaseEntity *npc_VCameraSecurity()
+DLL_EXPORT CBaseEntity *npc_VCameraSecurity()
 {
 	void *mem = sub_100aa720(0x666c);
 	CNPC_VCameraSecurity *p;
@@ -280036,6 +280352,7 @@ CBaseEntity *CNPC_VCameraSecurity::sub_10369e70()
 // END FUNCTION
 
 // FUNCTION: 0x1036a0a0 size=0xb7
+#include "platform.h"
 extern int vt_104a7b94;
 extern int vt_104a7b68;
 extern int vt_104adabc;
@@ -280047,7 +280364,7 @@ void __fastcall sub_103c51a0(void *pThis);
 void __fastcall sub_1036a320(void *pThis);
 
 // TARGET: npc_VChangBros
-extern "C" int *npc_VChangBros()
+DLL_EXPORT int *npc_VChangBros()
 {
 	int *raw = (int *)sub_100aa720(0x66fc);
 	int *p;
@@ -281102,6 +281419,7 @@ void CNPC_VChangBros::sub_1036e8c0()
 // END FUNCTION
 
 // FUNCTION: 0x1036e990 size=0xd2
+#include "platform.h"
 extern int vt_104a7b94;
 extern int vt_104a7b68;
 extern int vt_104adabc;
@@ -281116,7 +281434,7 @@ void __fastcall sub_1036a320(void *pThis);
 void __fastcall sub_1036ec20(void *pThis);
 
 // TARGET: npc_VChangBrosBlade
-extern "C" int *npc_VChangBrosBlade()
+DLL_EXPORT int *npc_VChangBrosBlade()
 {
 	int *p;
 	int *raw = (int *)sub_100aa720(0x6700);
@@ -281296,6 +281614,7 @@ fail:
 // END FUNCTION
 
 // FUNCTION: 0x1036f190 size=0xd2
+#include "platform.h"
 extern int vt_104a7b94;
 extern int vt_104a7b68;
 extern int vt_104adabc;
@@ -281310,7 +281629,7 @@ void __fastcall sub_1036a320(void *pThis);
 void __fastcall sub_1036f420(void *pThis);
 
 // TARGET: npc_VChangBrosClaw
-extern "C" int *npc_VChangBrosClaw()
+DLL_EXPORT int *npc_VChangBrosClaw()
 {
 	int *raw = (int *)sub_100aa720(0x6700);
 	int *p;
@@ -281493,12 +281812,13 @@ tail:
 // END FUNCTION
 
 // FUNCTION: 0x1036fa60 size=0x43
+#include "platform.h"
 #include "CNPC_VCombatman.h"
 void *sub_100aa720(int size);
 extern char g_106316f8[];
 
 // TARGET: npc_VCombatman
-extern "C" CBaseEntity *npc_VCombatman()
+DLL_EXPORT CBaseEntity *npc_VCombatman()
 {
 	void *mem = sub_100aa720(0x6664);
 	CNPC_VCombatman *p;
@@ -281704,12 +282024,13 @@ int sub_103704c0()
 // END FUNCTION
 
 // FUNCTION: 0x103704f0 size=0x43
+#include "platform.h"
 #include "CNPC_VCop.h"
 void *sub_100aa720(int size);
 extern char g_10631cc4[];
 
 // TARGET: npc_VCop
-extern "C" CBaseEntity *npc_VCop()
+DLL_EXPORT CBaseEntity *npc_VCop()
 {
 	void *mem = sub_100aa720(0x6674);
 	CNPC_VCop *p;
@@ -282343,12 +282664,13 @@ void __fastcall sub_10373420(int *p) { p[3] = 0; }
 // END FUNCTION
 
 // FUNCTION: 0x10373480 size=0x43
+#include "platform.h"
 #include "CNPC_VDog.h"
 void *sub_100aa720(int size);
 extern char g_10636904[];
 
 // TARGET: npc_VDog
-extern "C" CBaseEntity *npc_VDog()
+DLL_EXPORT CBaseEntity *npc_VDog()
 {
 	void *mem = sub_100aa720(0x6694);
 	CNPC_VDog *p;
@@ -282626,6 +282948,7 @@ void CNPC_VDog::sub_10374f40()
 // END FUNCTION
 
 // FUNCTION: 0x10375050 size=0x6e
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000425a(GP *);
@@ -282642,7 +282965,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: npc_VFrenzyShadow
-extern "C" GP *npc_VFrenzyShadow()
+DLL_EXPORT GP *npc_VFrenzyShadow()
 {
 	GP *p = (GP *)sub_1000db89(0x666c);
 	if (p) {
@@ -282808,12 +283131,13 @@ int sub_10376d00(CEntityVSlots *pEnt)
 // END FUNCTION
 
 // FUNCTION: 0x10376fc0 size=0x43
+#include "platform.h"
 #include "CNPC_VGangrel.h"
 void *sub_100aa720(int size);
 extern char g_106390f0[];
 
 // TARGET: npc_VGangrel
-extern "C" CBaseEntity *npc_VGangrel()
+DLL_EXPORT CBaseEntity *npc_VGangrel()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VGangrel *p;
@@ -283040,13 +283364,14 @@ int *sub_10377970()
 // END FUNCTION
 
 // FUNCTION: 0x103779f0 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CNPC_VGargoyle.h"
 void *sub_100aa720(int size);
 extern char g_106399bc[];
 
 // TARGET: npc_VGargoyle
-extern "C" CBaseEntity *npc_VGargoyle()
+DLL_EXPORT CBaseEntity *npc_VGargoyle()
 {
 	void *mem = sub_100aa720(0x6690);
 	CNPC_VGargoyle *p;
@@ -283580,12 +283905,13 @@ void __fastcall sub_10379e80(E *e, int, int)
 // END FUNCTION
 
 // FUNCTION: 0x1037a670 size=0x43
+#include "platform.h"
 #include "CNPC_VGhoulCroucher.h"
 void *sub_100aa720(int size);
 extern char g_1063ad80[];
 
 // TARGET: npc_VGhoulCroucher
-extern "C" CBaseEntity *npc_VGhoulCroucher()
+DLL_EXPORT CBaseEntity *npc_VGhoulCroucher()
 {
 	void *mem = sub_100aa720(0x66a8);
 	CNPC_VGhoulCroucher *p;
@@ -283994,12 +284320,13 @@ int sub_1037c580()
 // END FUNCTION
 
 // FUNCTION: 0x1037c5b0 size=0x43
+#include "platform.h"
 #include "CNPC_VGuard1.h"
 void *sub_100aa720(int size);
 extern char g_1063b68c[];
 
 // TARGET: npc_VGuard1
-extern "C" CBaseEntity *npc_VGuard1()
+DLL_EXPORT CBaseEntity *npc_VGuard1()
 {
 	void *mem = sub_100aa720(0x6664);
 	CNPC_VGuard1 *p;
@@ -284236,6 +284563,7 @@ int sub_1037e550()
 // END FUNCTION
 
 // FUNCTION: 0x1037e610 size=0x43
+#include "platform.h"
 #include "CNPC_VHengeyokai.h"
 
 void *sub_100aa720(int size);
@@ -284256,7 +284584,7 @@ struct CNPCCtor
 };
 
 // TARGET: npc_VHengeyokai
-extern "C" CNPC_VHengeyokai *npc_VHengeyokai()
+DLL_EXPORT CNPC_VHengeyokai *npc_VHengeyokai()
 {
 	void *mem = sub_100aa720(0x66bc);
 	CNPC_VHengeyokai *p;
@@ -285772,6 +286100,7 @@ int sub_10383f70()
 // END FUNCTION
 
 // FUNCTION: 0x10383fa0 size=0x43
+#include "platform.h"
 #include "CNPC_VHuman.h"
 
 void *sub_100aa720(int size);
@@ -285792,7 +286121,7 @@ struct CNPCCtor
 };
 
 // TARGET: npc_VHuman
-extern "C" CNPC_VHuman *npc_VHuman()
+DLL_EXPORT CNPC_VHuman *npc_VHuman()
 {
 	void *mem = sub_100aa720(0x6660);
 	CNPC_VHuman *p;
@@ -285986,12 +286315,13 @@ int sub_10386a00()
 // END FUNCTION
 
 // FUNCTION: 0x10386a30 size=0x43
+#include "platform.h"
 #include "CNPC_VHumanCombatant.h"
 void *sub_100aa720(int size);
 extern char g_1063f928[];
 
 // TARGET: npc_VHumanCombatant
-extern "C" CBaseEntity *npc_VHumanCombatant()
+DLL_EXPORT CBaseEntity *npc_VHumanCombatant()
 {
 	void *mem = sub_100aa720(0x6664);
 	CNPC_VHumanCombatant *p;
@@ -286183,12 +286513,13 @@ int sub_10387630()
 // END FUNCTION
 
 // FUNCTION: 0x10387660 size=0x43
+#include "platform.h"
 #include "CNPC_VHumanCombatPatrol.h"
 void *sub_100aa720(int size);
 extern char g_1063fc00[];
 
 // TARGET: npc_VHumanCombatPatrol
-extern "C" CBaseEntity *npc_VHumanCombatPatrol()
+DLL_EXPORT CBaseEntity *npc_VHumanCombatPatrol()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VHumanCombatPatrol *p;
@@ -286386,12 +286717,13 @@ int sub_10387f30()
 // END FUNCTION
 
 // FUNCTION: 0x10387f60 size=0x43
+#include "platform.h"
 #include "CNPC_VHunter.h"
 void *sub_100aa720(int size);
 extern char g_1063ff68[];
 
 // TARGET: npc_VHunter
-extern "C" CBaseEntity *npc_VHunter()
+DLL_EXPORT CBaseEntity *npc_VHunter()
 {
 	void *mem = sub_100aa720(0x666c);
 	CNPC_VHunter *p;
@@ -286640,12 +286972,13 @@ int sub_10388d00()
 // END FUNCTION
 
 // FUNCTION: 0x10388d30 size=0x43
+#include "platform.h"
 #include "CNPC_VLasombra.h"
 void *sub_100aa720(int size);
 extern char g_10640768[];
 
 // TARGET: npc_VLasombra
-extern "C" CBaseEntity *npc_VLasombra()
+DLL_EXPORT CBaseEntity *npc_VLasombra()
 {
 	void *mem = sub_100aa720(0x666c);
 	CNPC_VLasombra *p;
@@ -286841,12 +287174,13 @@ void CNpc389::sub_103893f0(SArg389 *pArg)
 // END FUNCTION
 
 // FUNCTION: 0x103894b0 size=0x43
+#include "platform.h"
 #include "CNPC_VMalkavian.h"
 void *sub_100aa720(int size);
 extern char g_1064094c[];
 
 // TARGET: npc_VMalkavian
-extern "C" CBaseEntity *npc_VMalkavian()
+DLL_EXPORT CBaseEntity *npc_VMalkavian()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VMalkavian *p;
@@ -287039,6 +287373,7 @@ tail:
 // END FUNCTION
 
 // FUNCTION: 0x10389c50 size=0x43
+#include "platform.h"
 #include "CNPC_VManBat.h"
 
 void *sub_100aa720(int size);
@@ -287059,7 +287394,7 @@ struct CNPCCtor
 };
 
 // TARGET: npc_VManBat
-extern "C" CNPC_VManBat *npc_VManBat()
+DLL_EXPORT CNPC_VManBat *npc_VManBat()
 {
 	void *mem = sub_100aa720(0x66bc);
 	CNPC_VManBat *p;
@@ -288754,12 +289089,13 @@ int sub_10390e40()
 // END FUNCTION
 
 // FUNCTION: 0x10390e70 size=0x43
+#include "platform.h"
 #include "CNPC_VMingXiao.h"
 void *sub_100aa720(int size);
 extern char g_10643ad8[];
 
 // TARGET: npc_VMingXiao
-extern "C" CBaseEntity *npc_VMingXiao()
+DLL_EXPORT CBaseEntity *npc_VMingXiao()
 {
 	void *mem = sub_100aa720(0x6754);
 	CNPC_VMingXiao *p;
@@ -290840,6 +291176,7 @@ int sub_1039af00()
 // END FUNCTION
 
 // FUNCTION: 0x1039af30 size=0x43
+#include "platform.h"
 #include "CNPC_VMingXiaoTentacle.h"
 
 void *sub_100aa720(int size);
@@ -290860,7 +291197,7 @@ struct CNPCCtor
 };
 
 // TARGET: npc_VMingXiaoTentacle
-extern "C" CNPC_VMingXiaoTentacle *npc_VMingXiaoTentacle()
+DLL_EXPORT CNPC_VMingXiaoTentacle *npc_VMingXiaoTentacle()
 {
 	void *mem = sub_100aa720(0x669c);
 	CNPC_VMingXiaoTentacle *p;
@@ -291469,12 +291806,13 @@ void CNPC_VMingXiaoTentacle::sub_1039f310()
 // END FUNCTION
 
 // FUNCTION: 0x1039f550 size=0x43
+#include "platform.h"
 #include "CNPC_VMoleman.h"
 void *sub_100aa720(int size);
 extern char g_1064a5f8[];
 
 // TARGET: npc_VMoleman
-extern "C" CBaseEntity *npc_VMoleman()
+DLL_EXPORT CBaseEntity *npc_VMoleman()
 {
 	void *mem = sub_100aa720(0x6664);
 	CNPC_VMoleman *p;
@@ -291667,6 +292005,7 @@ tail:
 // END FUNCTION
 
 // FUNCTION: 0x1039fef0 size=0x43
+#include "platform.h"
 #include "CNPC_VNewscaster.h"
 
 void *sub_100aa720(int size);
@@ -291687,7 +292026,7 @@ struct CNPCCtor
 };
 
 // TARGET: npc_VNewscaster
-extern "C" CNPC_VNewscaster *npc_VNewscaster()
+DLL_EXPORT CNPC_VNewscaster *npc_VNewscaster()
 {
 	void *mem = sub_100aa720(0x6694);
 	CNPC_VNewscaster *p;
@@ -292063,12 +292402,13 @@ void CUnknown103a1320::sub_103a1320(int num)
 // END FUNCTION
 
 // FUNCTION: 0x103a13f0 size=0x43
+#include "platform.h"
 #include "CNPC_VNosferatu.h"
 void *sub_100aa720(int size);
 extern char g_1064ad1c[];
 
 // TARGET: npc_VNosferatu
-extern "C" CBaseEntity *npc_VNosferatu()
+DLL_EXPORT CBaseEntity *npc_VNosferatu()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VNosferatu *p;
@@ -292275,12 +292615,13 @@ int sub_103a1c80()
 // END FUNCTION
 
 // FUNCTION: 0x103a1cb0 size=0x43
+#include "platform.h"
 #include "CNPC_VPedestrian.h"
 void *sub_100aa720(int size);
 extern char g_1064b2c0[];
 
 // TARGET: npc_VPedestrian
-extern "C" CBaseEntity *npc_VPedestrian()
+DLL_EXPORT CBaseEntity *npc_VPedestrian()
 {
 	void *mem = sub_100aa720(0x6684);
 	CNPC_VPedestrian *p;
@@ -292294,12 +292635,13 @@ extern "C" CBaseEntity *npc_VPedestrian()
 // END FUNCTION
 
 // FUNCTION: 0x103a1d20 size=0x43
+#include "platform.h"
 #include "CNPC_VPedestrian.h"
 void *sub_100aa720(int size);
 extern char g_1064b2d4[];
 
 // TARGET: npc_VDialogPedestrian
-extern "C" CBaseEntity *npc_VDialogPedestrian()
+DLL_EXPORT CBaseEntity *npc_VDialogPedestrian()
 {
 	void *mem = sub_100aa720(0x6684);
 	CNPC_VPedestrian *p;
@@ -292507,12 +292849,13 @@ done:
 // END FUNCTION
 
 // FUNCTION: 0x103a3a20 size=0x43
+#include "platform.h"
 #include "CNPC_VPlaceholder.h"
 void *sub_100aa720(int size);
 extern char g_105861c8[];
 
 // TARGET: npc_VPlaceholder
-extern "C" CBaseEntity *npc_VPlaceholder()
+DLL_EXPORT CBaseEntity *npc_VPlaceholder()
 {
 	void *mem = sub_100aa720(0x6660);
 	CNPC_VPlaceholder *p;
@@ -292711,6 +293054,7 @@ CNPC_VPlaceholder *CNPC_VPlaceholder::sub_103a40c0()
 // END FUNCTION
 
 // FUNCTION: 0x103a4470 size=0x53
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000425a(GP *);
@@ -292724,7 +293068,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: npc_VPlayerController
-extern "C" GP *npc_VPlayerController()
+DLL_EXPORT GP *npc_VPlayerController()
 {
 	GP *p = (GP *)sub_1000db89(0x6664);
 	if (p) {
@@ -292740,6 +293084,7 @@ extern "C" GP *npc_VPlayerController()
 // END FUNCTION
 
 // FUNCTION: 0x103a4ab0 size=0x53
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100037f6(GP *);
@@ -292753,7 +293098,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: npc_VMercurio
-extern "C" GP *npc_VMercurio()
+DLL_EXPORT GP *npc_VMercurio()
 {
 	GP *p = (GP *)sub_1000db89(0x6664);
 	if (p) {
@@ -292769,6 +293114,7 @@ extern "C" GP *npc_VMercurio()
 // END FUNCTION
 
 // FUNCTION: 0x103a4b30 size=0x53
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_100037f6(GP *);
@@ -292782,7 +293128,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: npc_VProneDialog
-extern "C" GP *npc_VProneDialog()
+DLL_EXPORT GP *npc_VProneDialog()
 {
 	GP *p = (GP *)sub_1000db89(0x6664);
 	if (p) {
@@ -292812,12 +293158,13 @@ int sub_103a4fc0()
 // END FUNCTION
 
 // FUNCTION: 0x103a4ff0 size=0x43
+#include "platform.h"
 #include "CNPC_VSabbatGunman.h"
 void *sub_100aa720(int size);
 extern char g_1064c2f4[];
 
 // TARGET: npc_VSabbatGunman
-extern "C" CBaseEntity *npc_VSabbatGunman()
+DLL_EXPORT CBaseEntity *npc_VSabbatGunman()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VSabbatGunman *p;
@@ -292983,6 +293330,7 @@ done:
 // END FUNCTION
 
 // FUNCTION: 0x103a5ae0 size=0x43
+#include "platform.h"
 #include "CNPC_VSabbatLeader.h"
 
 void *sub_100aa720(int size);
@@ -293003,7 +293351,7 @@ struct CNPCCtor
 };
 
 // TARGET: npc_VSabbatLeader
-extern "C" CNPC_VSabbatLeader *npc_VSabbatLeader()
+DLL_EXPORT CNPC_VSabbatLeader *npc_VSabbatLeader()
 {
 	void *mem = sub_100aa720(0x66e8);
 	CNPC_VSabbatLeader *p;
@@ -293748,12 +294096,13 @@ void CNPC_VSabbatLeader::sub_103ab110(const char *pszEmitter, CEntityVSlots *pAt
 // END FUNCTION
 
 // FUNCTION: 0x103aba00 size=0x43
+#include "platform.h"
 #include "CNPC_VScurrying.h"
 void *sub_100aa720(int size);
 extern char g_1064f720[];
 
 // TARGET: npc_VScurrying
-extern "C" CBaseEntity *npc_VScurrying()
+DLL_EXPORT CBaseEntity *npc_VScurrying()
 {
 	void *mem = sub_100aa720(0x66a0);
 	CNPC_VScurrying *p;
@@ -294251,6 +294600,7 @@ int CUnknown103ad5a0::sub_103ad5a0()
 // END FUNCTION
 
 // FUNCTION: 0x103ad710 size=0x53
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000104b(GP *);
@@ -294264,7 +294614,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: npc_VRat
-extern "C" GP *npc_VRat()
+DLL_EXPORT GP *npc_VRat()
 {
 	GP *p = (GP *)sub_1000db89(0x66a0);
 	if (p) {
@@ -294280,6 +294630,7 @@ extern "C" GP *npc_VRat()
 // END FUNCTION
 
 // FUNCTION: 0x103ada30 size=0x43
+#include "platform.h"
 #include "CNPC_VSheriffMan.h"
 
 void *sub_100aa720(int size);
@@ -294300,7 +294651,7 @@ struct CNPCCtor
 };
 
 // TARGET: npc_VSheriffMan
-extern "C" CNPC_VSheriffMan *npc_VSheriffMan()
+DLL_EXPORT CNPC_VSheriffMan *npc_VSheriffMan()
 {
 	void *mem = sub_100aa720(0x66fc);
 	CNPC_VSheriffMan *p;
@@ -294919,12 +295270,13 @@ void CNPC_VSheriffMan::sub_103b1860()
 // END FUNCTION
 
 // FUNCTION: 0x103b19d0 size=0x43
+#include "platform.h"
 #include "CBatSwarm_Teleport.h"
 void *sub_100aa720(int size);
 extern char g_10651504[];
 
 // TARGET: sheriff_teleport_bats
-extern "C" CBaseEntity *sheriff_teleport_bats()
+DLL_EXPORT CBaseEntity *sheriff_teleport_bats()
 {
 	void *mem = sub_100aa720(0xc78);
 	CBatSwarm_Teleport *p;
@@ -294968,12 +295320,13 @@ int *__fastcall sub_103b1ad0(char *self)
 // END FUNCTION
 
 // FUNCTION: 0x103b1b70 size=0x43
+#include "platform.h"
 #include "CNPC_VSheriffSwarm.h"
 void *sub_100aa720(int size);
 extern char g_106519c4[];
 
 // TARGET: npc_VSheriffSwarm
-extern "C" CBaseEntity *npc_VSheriffSwarm()
+DLL_EXPORT CBaseEntity *npc_VSheriffSwarm()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VSheriffSwarm *p;
@@ -295196,12 +295549,13 @@ int sub_103b27d0()
 // END FUNCTION
 
 // FUNCTION: 0x103b2800 size=0x43
+#include "platform.h"
 #include "CNPC_VStalker.h"
 void *sub_100aa720(int size);
 extern char g_10651d5c[];
 
 // TARGET: npc_VStalker
-extern "C" CBaseEntity *npc_VStalker()
+DLL_EXPORT CBaseEntity *npc_VStalker()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VStalker *p;
@@ -295374,6 +295728,7 @@ fail:
 // END FUNCTION
 
 // FUNCTION: 0x103b2ed0 size=0x5e
+#include "platform.h"
 #include "CHumanoidRec.h"
 #include "utlmemory.h"
 extern int vt_104c8a14[];
@@ -295395,7 +295750,7 @@ struct CTaxiDriverFactoryView {
 		return this;
 	}
 };
-extern "C" void *npc_VTaxiDriver()
+DLL_EXPORT void *npc_VTaxiDriver()
 {
 	CTaxiDriverFactoryView *m = (CTaxiDriverFactoryView *)sub_100aa720(0x6664);
 	CTaxiDriverFactoryView *p = m ? m->Construct() : 0;
@@ -295553,12 +295908,13 @@ fail:
 // END FUNCTION
 
 // FUNCTION: 0x103b3a70 size=0x43
+#include "platform.h"
 #include "CNPC_VTest.h"
 void *sub_100aa720(int size);
 extern char g_106523fc[];
 
 // TARGET: npc_VTest
-extern "C" CBaseEntity *npc_VTest()
+DLL_EXPORT CBaseEntity *npc_VTest()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VTest *p;
@@ -295761,12 +296117,13 @@ fail:
 // END FUNCTION
 
 // FUNCTION: 0x103b5280 size=0x43
+#include "platform.h"
 #include "CNPC_VToreador.h"
 void *sub_100aa720(int size);
 extern char g_1065296c[];
 
 // TARGET: npc_VToreador
-extern "C" CBaseEntity *npc_VToreador()
+DLL_EXPORT CBaseEntity *npc_VToreador()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VToreador *p;
@@ -295958,12 +296315,13 @@ tail:
 // END FUNCTION
 
 // FUNCTION: 0x103b5a20 size=0x43
+#include "platform.h"
 #include "CNPC_VTremere.h"
 void *sub_100aa720(int size);
 extern char g_10652d58[];
 
 // TARGET: npc_VTremere
-extern "C" CBaseEntity *npc_VTremere()
+DLL_EXPORT CBaseEntity *npc_VTremere()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VTremere *p;
@@ -296170,6 +296528,7 @@ int sub_103b6bc0()
 // END FUNCTION
 
 // FUNCTION: 0x103b6bf0 size=0x43
+#include "platform.h"
 #include "CNPC_VTzimisce.h"
 
 void *sub_100aa720(int size);
@@ -296190,7 +296549,7 @@ struct CNPCCtor
 };
 
 // TARGET: npc_VTzimisce
-extern "C" CNPC_VTzimisce *npc_VTzimisce()
+DLL_EXPORT CNPC_VTzimisce *npc_VTzimisce()
 {
 	void *mem = sub_100aa720(0x66c0);
 	CNPC_VTzimisce *p;
@@ -298197,6 +298556,7 @@ fail:
 // END FUNCTION
 
 // FUNCTION: 0x103c11b0 size=0x43
+#include "platform.h"
 #include "CNPC_VTzimisceHeadClaw.h"
 
 void *sub_100aa720(int size);
@@ -298217,7 +298577,7 @@ struct CNPCCtor
 };
 
 // TARGET: npc_VTzimisceHeadClaw
-extern "C" CNPC_VTzimisceHeadClaw *npc_VTzimisceHeadClaw()
+DLL_EXPORT CNPC_VTzimisceHeadClaw *npc_VTzimisceHeadClaw()
 {
 	void *mem = sub_100aa720(0x6684);
 	CNPC_VTzimisceHeadClaw *p;
@@ -298508,6 +298868,7 @@ done:
 // END FUNCTION
 
 // FUNCTION: 0x103c2f30 size=0x43
+#include "platform.h"
 #include "CBaseEntity.h"
 #include "CNPC_VTzimisceRunner.h"
 
@@ -298524,7 +298885,7 @@ struct CNPCRunnerVt
 };
 
 // TARGET: npc_VTzimisceRunner
-extern "C" CBaseEntity *npc_VTzimisceRunner()
+DLL_EXPORT CBaseEntity *npc_VTzimisceRunner()
 {
 	void *mem = sub_100aa720(0x667c);
 	CNPC_VTzimisceRunner *p;
@@ -298581,12 +298942,13 @@ int sub_103c4840()
 // END FUNCTION
 
 // FUNCTION: 0x103c4870 size=0x43
+#include "platform.h"
 #include "CNPC_VVampire.h"
 void *sub_100aa720(int size);
 extern char g_1065e0ec[];
 
 // TARGET: npc_VVampire
-extern "C" CBaseEntity *npc_VVampire()
+DLL_EXPORT CBaseEntity *npc_VVampire()
 {
 	void *mem = sub_100aa720(0x6664);
 	CNPC_VVampire *p;
@@ -298764,6 +299126,7 @@ fail:
 // END FUNCTION
 
 // FUNCTION: 0x103c4fa0 size=0x8e
+#include "platform.h"
 #include "CNPC_VVampireBoss.h"
 
 void *sub_100aa720(int size);
@@ -298773,7 +299136,7 @@ void __fastcall sub_103c51a0(void *p);
 extern char vt_104a7b94[];
 extern char vt_104a7b68[];
 
-extern "C" void *npc_VVampireBoss()
+DLL_EXPORT void *npc_VVampireBoss()
 {
 	CNPC_VVampireBoss *p = (CNPC_VVampireBoss *)sub_100aa720(0x66b8);
 	if (p)
@@ -299578,12 +299941,13 @@ void CUnknown103c76b0::sub_103c76b0() { slot617(); }
 // END FUNCTION
 
 // FUNCTION: 0x103c7700 size=0x43
+#include "platform.h"
 #include "CNPC_VVentrue.h"
 void *sub_100aa720(int size);
 extern char g_1065f140[];
 
 // TARGET: npc_VVentrue
-extern "C" CBaseEntity *npc_VVentrue()
+DLL_EXPORT CBaseEntity *npc_VVentrue()
 {
 	void *mem = sub_100aa720(0x6668);
 	CNPC_VVentrue *p;
@@ -299776,6 +300140,7 @@ tail:
 // END FUNCTION
 
 // FUNCTION: 0x103c8760 size=0x43
+#include "platform.h"
 #include "CNPC_VWerewolf.h"
 
 void *sub_100aa720(int size);
@@ -299796,7 +300161,7 @@ struct CNPCCtor
 };
 
 // TARGET: npc_VWerewolf
-extern "C" CNPC_VWerewolf *npc_VWerewolf()
+DLL_EXPORT CNPC_VWerewolf *npc_VWerewolf()
 {
 	void *mem = sub_100aa720(0x67a4);
 	CNPC_VWerewolf *p;
@@ -304514,6 +304879,7 @@ int sub_103da440()
 // END FUNCTION
 
 // FUNCTION: 0x103da470 size=0x96
+#include "platform.h"
 #include "CBaseEntity.h"
 
 extern void *vt_104d00b4[];
@@ -304540,7 +304906,7 @@ struct CTriggerWWZoneView : CBaseEntity {
 	int m_h5b4;
 };
 
-extern "C" CBaseEntity *trigger_werewolf_zone()
+DLL_EXPORT CBaseEntity *trigger_werewolf_zone()
 {
 	CTriggerWWZoneView *p = (CTriggerWWZoneView *)sub_100aa720(0x5b8);
 	CBaseEntity *e;
@@ -305221,6 +305587,7 @@ CUnknown103dc5b0 *CUnknown103dc5b0::sub_103dc5b0(unsigned char flags)
 // END FUNCTION
 
 // FUNCTION: 0x103dc6c0 size=0x6e
+#include "platform.h"
 #include "CBaseEntity.h"
 
 void *sub_100aa720(int size);
@@ -305233,7 +305600,7 @@ void __fastcall sub_1000425a(void *pThis);
 void __fastcall sub_100104dd(void *pThis);
 
 // TARGET: npc_VWolfMorph
-extern "C" CBaseEntity *npc_VWolfMorph()
+DLL_EXPORT CBaseEntity *npc_VWolfMorph()
 {
 	void *mem = sub_100aa720(0x6670);
 	CBaseEntity *p;
@@ -305414,12 +305781,13 @@ tail:
 // END FUNCTION
 
 // FUNCTION: 0x103dcf90 size=0x43
+#include "platform.h"
 #include "CNPC_VYukie.h"
 void *sub_100aa720(int size);
 extern char g_10663f18[];
 
 // TARGET: npc_VYukie
-extern "C" CBaseEntity *npc_VYukie()
+DLL_EXPORT CBaseEntity *npc_VYukie()
 {
 	void *mem = sub_100aa720(0x666c);
 	CNPC_VYukie *p;
@@ -305582,12 +305950,13 @@ done:
 // END FUNCTION
 
 // FUNCTION: 0x103ddd70 size=0x43
+#include "platform.h"
 #include "CNPC_VZombie.h"
 void *sub_100aa720(int size);
 extern char g_10664388[];
 
 // TARGET: npc_VZombie
-extern "C" CBaseEntity *npc_VZombie()
+DLL_EXPORT CBaseEntity *npc_VZombie()
 {
 	void *mem = sub_100aa720(0x6700);
 	CNPC_VZombie *p;
@@ -306373,12 +306742,13 @@ void __cdecl sub_103e1cf0(CUnk1032f770 *p, int b, int c)
 // END FUNCTION
 
 // FUNCTION: 0x103e1d20 size=0x43
+#include "platform.h"
 #include "CFlameCluster.h"
 void *sub_100aa720(int size);
 extern char g_10666470[];
 
 // TARGET: flame_cluster
-extern "C" CBaseEntity *flame_cluster()
+DLL_EXPORT CBaseEntity *flame_cluster()
 {
 	void *mem = sub_100aa720(0x48c);
 	CFlameCluster *p;
@@ -306546,6 +306916,7 @@ int sub_103e2840()
 // END FUNCTION
 
 // FUNCTION: 0x103e2a10 size=0x43
+#include "platform.h"
 #include "CWeaponRanged_FlameThrower.h"
 
 void *sub_100aa720(int size);
@@ -306566,7 +306937,7 @@ struct CWepCtor
 };
 
 // TARGET: item_w_flamethrower
-extern "C" CWeaponRanged_FlameThrower *item_w_flamethrower()
+DLL_EXPORT CWeaponRanged_FlameThrower *item_w_flamethrower()
 {
 	void *mem = sub_100aa720(0x1568);
 	CWeaponRanged_FlameThrower *p;
@@ -307105,6 +307476,7 @@ int sub_103e4290()
 // END FUNCTION
 
 // FUNCTION: 0x103e43a0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307117,7 +307489,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_baseball_bat
-extern "C" GP *item_w_baseball_bat()
+DLL_EXPORT GP *item_w_baseball_bat()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307161,6 +307533,7 @@ int sub_103e4640()
 // END FUNCTION
 
 // FUNCTION: 0x103e4750 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307173,7 +307546,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_bush_hook
-extern "C" GP *item_w_bush_hook()
+DLL_EXPORT GP *item_w_bush_hook()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307217,6 +307590,7 @@ int sub_103e49b0()
 // END FUNCTION
 
 // FUNCTION: 0x103e4ac0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307229,7 +307603,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_claws
-extern "C" GP *item_w_claws()
+DLL_EXPORT GP *item_w_claws()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307273,6 +307647,7 @@ int sub_103e4d10()
 // END FUNCTION
 
 // FUNCTION: 0x103e4e20 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307285,7 +307660,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_claws_ghoul
-extern "C" GP *item_w_claws_ghoul()
+DLL_EXPORT GP *item_w_claws_ghoul()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307329,6 +307704,7 @@ int sub_103e5020()
 // END FUNCTION
 
 // FUNCTION: 0x103e5130 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307341,7 +307717,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_claws_protean4
-extern "C" GP *item_w_claws_protean4()
+DLL_EXPORT GP *item_w_claws_protean4()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307385,6 +307761,7 @@ int sub_103e5380()
 // END FUNCTION
 
 // FUNCTION: 0x103e5490 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307397,7 +307774,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_claws_protean5
-extern "C" GP *item_w_claws_protean5()
+DLL_EXPORT GP *item_w_claws_protean5()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307441,6 +307818,7 @@ int sub_103e56e0()
 // END FUNCTION
 
 // FUNCTION: 0x103e57f0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307453,7 +307831,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_fists
-extern "C" GP *item_w_fists()
+DLL_EXPORT GP *item_w_fists()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307497,6 +307875,7 @@ int sub_103e5a70()
 // END FUNCTION
 
 // FUNCTION: 0x103e5b80 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307509,7 +307888,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_zombie_fists
-extern "C" GP *item_w_zombie_fists()
+DLL_EXPORT GP *item_w_zombie_fists()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307553,6 +307932,7 @@ int sub_103e5db0()
 // END FUNCTION
 
 // FUNCTION: 0x103e5ec0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307565,7 +307945,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_fireaxe
-extern "C" GP *item_w_fireaxe()
+DLL_EXPORT GP *item_w_fireaxe()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307609,6 +307989,7 @@ int sub_103e61c0()
 // END FUNCTION
 
 // FUNCTION: 0x103e62d0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307621,7 +308002,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_katana
-extern "C" GP *item_w_katana()
+DLL_EXPORT GP *item_w_katana()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307665,6 +308046,7 @@ int sub_103e6500()
 // END FUNCTION
 
 // FUNCTION: 0x103e6610 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307677,7 +308059,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_knife
-extern "C" GP *item_w_knife()
+DLL_EXPORT GP *item_w_knife()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307721,6 +308103,7 @@ int sub_103e6860()
 // END FUNCTION
 
 // FUNCTION: 0x103e6970 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307733,7 +308116,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_occultblade
-extern "C" GP *item_w_occultblade()
+DLL_EXPORT GP *item_w_occultblade()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307777,6 +308160,7 @@ int sub_103e6ba0()
 // END FUNCTION
 
 // FUNCTION: 0x103e6cb0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307789,7 +308173,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_sheriff_sword
-extern "C" GP *item_w_sheriff_sword()
+DLL_EXPORT GP *item_w_sheriff_sword()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307833,6 +308217,7 @@ int sub_103e6e90()
 // END FUNCTION
 
 // FUNCTION: 0x103e6fa0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -307845,7 +308230,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_sledgehammer
-extern "C" GP *item_w_sledgehammer()
+DLL_EXPORT GP *item_w_sledgehammer()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -307882,6 +308267,7 @@ int sub_103e7200()
 // END FUNCTION
 
 // FUNCTION: 0x103e7340 size=0x53
+#include "platform.h"
 void *sub_100aa720(unsigned int size);
 
 extern int vt_104d970c;
@@ -307901,7 +308287,7 @@ struct GP {
 };
 
 // TARGET: item_w_torch
-extern "C" GP *item_w_torch()
+DLL_EXPORT GP *item_w_torch()
 {
 	GP *p = (GP *)sub_100aa720(0x918);
 	if (p) {
@@ -308105,6 +308491,7 @@ int sub_103e7b10()
 // END FUNCTION
 
 // FUNCTION: 0x103e7c20 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -308117,7 +308504,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_severed_arm
-extern "C" GP *item_w_severed_arm()
+DLL_EXPORT GP *item_w_severed_arm()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -308161,6 +308548,7 @@ int sub_103e7e80()
 // END FUNCTION
 
 // FUNCTION: 0x103e7f90 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -308173,7 +308561,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_tire_iron
-extern "C" GP *item_w_tire_iron()
+DLL_EXPORT GP *item_w_tire_iron()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -308217,6 +308605,7 @@ int sub_103e8210()
 // END FUNCTION
 
 // FUNCTION: 0x103e8320 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -308229,7 +308618,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_baton
-extern "C" GP *item_w_baton()
+DLL_EXPORT GP *item_w_baton()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -308273,6 +308662,7 @@ int sub_103e8570()
 // END FUNCTION
 
 // FUNCTION: 0x103e8680 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -308285,7 +308675,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_werewolf_attacks
-extern "C" GP *item_w_werewolf_attacks()
+DLL_EXPORT GP *item_w_werewolf_attacks()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -308329,6 +308719,7 @@ int sub_103e88b0()
 // END FUNCTION
 
 // FUNCTION: 0x103e89c0 size=0x43
+#include "platform.h"
 #include "CWeaponMelee_TzimisceMelee.h"
 
 void *sub_100aa720(int size);
@@ -308349,7 +308740,7 @@ struct CWepCtor
 };
 
 // TARGET: item_w_tzimisce_melee
-extern "C" CWeaponMelee_TzimisceMelee *item_w_tzimisce_melee()
+DLL_EXPORT CWeaponMelee_TzimisceMelee *item_w_tzimisce_melee()
 {
 	void *mem = sub_100aa720(0x914);
 	CWeaponMelee_TzimisceMelee *p;
@@ -308416,6 +308807,7 @@ int sub_103e8f30()
 // END FUNCTION
 
 // FUNCTION: 0x103e9040 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -308428,7 +308820,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_sabbatleader_attack
-extern "C" GP *item_w_sabbatleader_attack()
+DLL_EXPORT GP *item_w_sabbatleader_attack()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -308472,6 +308864,7 @@ int sub_103e9270()
 // END FUNCTION
 
 // FUNCTION: 0x103e9380 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -308484,7 +308877,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_chang_claw
-extern "C" GP *item_w_chang_claw()
+DLL_EXPORT GP *item_w_chang_claw()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -308528,6 +308921,7 @@ int sub_103e95b0()
 // END FUNCTION
 
 // FUNCTION: 0x103e96c0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -308540,7 +308934,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_chang_blade
-extern "C" GP *item_w_chang_blade()
+DLL_EXPORT GP *item_w_chang_blade()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -308584,6 +308978,7 @@ int sub_103e98f0()
 // END FUNCTION
 
 // FUNCTION: 0x103e9a00 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -308596,7 +308991,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_avamp_blade
-extern "C" GP *item_w_avamp_blade()
+DLL_EXPORT GP *item_w_avamp_blade()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -308822,6 +309217,7 @@ int sub_103eb0b0()
 // END FUNCTION
 
 // FUNCTION: 0x103eb1c0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -308834,7 +309230,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_gargoyle_fist
-extern "C" GP *item_w_gargoyle_fist()
+DLL_EXPORT GP *item_w_gargoyle_fist()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -308878,6 +309274,7 @@ int sub_103eb3c0()
 // END FUNCTION
 
 // FUNCTION: 0x103eb4d0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -308890,7 +309287,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_tzimisce2_claw
-extern "C" GP *item_w_tzimisce2_claw()
+DLL_EXPORT GP *item_w_tzimisce2_claw()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -308934,6 +309331,7 @@ int sub_103eb700()
 // END FUNCTION
 
 // FUNCTION: 0x103eb810 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -308946,7 +309344,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_tzimisce3_claw
-extern "C" GP *item_w_tzimisce3_claw()
+DLL_EXPORT GP *item_w_tzimisce3_claw()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -308990,6 +309388,7 @@ int sub_103ebb10()
 // END FUNCTION
 
 // FUNCTION: 0x103ebc20 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -309002,7 +309401,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_hengeyokai_fist
-extern "C" GP *item_w_hengeyokai_fist()
+DLL_EXPORT GP *item_w_hengeyokai_fist()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -309046,6 +309445,7 @@ int sub_103ebe20()
 // END FUNCTION
 
 // FUNCTION: 0x103ebf30 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000955c(GP *);
@@ -309058,7 +309458,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_manbat_claw
-extern "C" GP *item_w_manbat_claw()
+DLL_EXPORT GP *item_w_manbat_claw()
 {
 	GP *p = (GP *)sub_1000db89(0x910);
 	if (p) {
@@ -309102,6 +309502,7 @@ int sub_103ec130()
 // END FUNCTION
 
 // FUNCTION: 0x103ec240 size=0x43
+#include "platform.h"
 #include "CWeaponMelee_MingXiaoMelee.h"
 
 void *sub_100aa720(int size);
@@ -309122,7 +309523,7 @@ struct CWepCtor
 };
 
 // TARGET: item_w_mingxiao_melee
-extern "C" CWeaponMelee_MingXiaoMelee *item_w_mingxiao_melee()
+DLL_EXPORT CWeaponMelee_MingXiaoMelee *item_w_mingxiao_melee()
 {
 	void *mem = sub_100aa720(0x914);
 	CWeaponMelee_MingXiaoMelee *p;
@@ -309165,12 +309566,13 @@ int sub_103ec6f0()
 // END FUNCTION
 
 // FUNCTION: 0x103ec800 size=0x43
+#include "platform.h"
 #include "CWeaponMelee_MingXiaoTentacle.h"
 void *sub_100aa720(int size);
 extern char g_10646dac[];
 
 // TARGET: item_w_mingxiao_tentacle
-extern "C" CBaseEntity *item_w_mingxiao_tentacle()
+DLL_EXPORT CBaseEntity *item_w_mingxiao_tentacle()
 {
 	void *mem = sub_100aa720(0x914);
 	CWeaponMelee_MingXiaoTentacle *p;
@@ -309895,6 +310297,7 @@ int sub_103ef070()
 // END FUNCTION
 
 // FUNCTION: 0x103ef550 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_1000c748(GP *);
@@ -309907,7 +310310,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_w_grenade_frag
-extern "C" GP *item_w_grenade_frag()
+DLL_EXPORT GP *item_w_grenade_frag()
 {
 	GP *p = (GP *)sub_1000db89(0x934);
 	if (p) {
@@ -310286,11 +310689,12 @@ void CWeaponThrown_Chang_Energy_Ball::sub_103f0590()
 // END FUNCTION
 
 // FUNCTION: 0x103f0660 size=0x5e
+#include "platform.h"
 #include "CWeaponThrown_Chang_Energy_Ball.h"
 #include "CBaseEntity.h"
 
 // TARGET: item_w_chang_energy_ball
-extern "C" CBaseEntity *item_w_chang_energy_ball()
+DLL_EXPORT CBaseEntity *item_w_chang_energy_ball()
 {
 	CWeaponThrown_Chang_Energy_Ball *p = new CWeaponThrown_Chang_Energy_Ball;
 	((CBaseEntity *)p)->vfunc106("item_w_chang_energy_ball");
@@ -310457,6 +310861,7 @@ void CWeaponThrown_Chang_Ghost::sub_103f1270(void *pTarget)
 // END FUNCTION
 
 // FUNCTION: 0x103f1330 size=0x58
+#include "platform.h"
 #include "CBaseCombatWeapon.h"
 #include "CBaseEntity.h"
 
@@ -310478,7 +310883,7 @@ public:
 };
 
 // TARGET: item_w_chang_ghost
-extern "C" CBaseEntity *item_w_chang_ghost()
+DLL_EXPORT CBaseEntity *item_w_chang_ghost()
 {
 	CChangGhostFactoryView *p = new CChangGhostFactoryView;
 	((CBaseEntity *)p)->vfunc106("item_w_chang_ghost");
@@ -310516,12 +310921,13 @@ int sub_103f15b0()
 // END FUNCTION
 
 // FUNCTION: 0x103f1680 size=0x43
+#include "platform.h"
 #include "CVampireProjectile_MingXiaoSpit.h"
 void *sub_100aa720(int size);
 extern char g_1067e38c[];
 
 // TARGET: vampireprojectile_mingxiaospit
-extern "C" CBaseEntity *vampireprojectile_mingxiaospit()
+DLL_EXPORT CBaseEntity *vampireprojectile_mingxiaospit()
 {
 	void *mem = sub_100aa720(0x8c8);
 	CVampireProjectile_MingXiaoSpit *p;
@@ -310604,6 +311010,7 @@ int sub_103f1d90()
 // END FUNCTION
 
 // FUNCTION: 0x103f29d0 size=0x4b
+#include "platform.h"
 #include "CBaseEntity.h"
 
 void *sub_100aa720(unsigned int size);
@@ -310617,7 +311024,7 @@ struct CWeaponHolyLightCtorCall_103f29d0
 extern const char g_1062eb5c[];
 
 // TARGET: item_d_holy_light
-extern "C" CBaseEntity *item_d_holy_light()
+DLL_EXPORT CBaseEntity *item_d_holy_light()
 {
 	void *mem = sub_100aa720(0x914);
 	CBaseEntity *p;
@@ -310706,13 +311113,14 @@ int sub_103f30f0()
 // END FUNCTION
 
 // FUNCTION: 0x103f3200 size=0x49
+#include "platform.h"
 #include "CWeaponIArmor_Hvy_Cloth.h"
 extern void* vt_104e45bc;
 extern const char g_105871f0[];
 void* sub_1000db89(unsigned int);
 
 // TARGET: item_a_lt_cloth
-extern "C" CWeaponIArmor_Hvy_Cloth* item_a_lt_cloth()
+DLL_EXPORT CWeaponIArmor_Hvy_Cloth* item_a_lt_cloth()
 {
 	CWeaponIArmor_Hvy_Cloth* p = (CWeaponIArmor_Hvy_Cloth*)sub_1000db89(0x910);
 	if (p) {
@@ -310756,13 +311164,14 @@ int sub_103f3430()
 // END FUNCTION
 
 // FUNCTION: 0x103f3540 size=0x49
+#include "platform.h"
 #include "CWeaponIArmor_Hvy_Cloth.h"
 extern void* vt_104e4cbc;
 extern const char g_105875ec[];
 void* sub_1000db89(unsigned int);
 
 // TARGET: item_a_hvy_cloth
-extern "C" CWeaponIArmor_Hvy_Cloth* item_a_hvy_cloth()
+DLL_EXPORT CWeaponIArmor_Hvy_Cloth* item_a_hvy_cloth()
 {
 	CWeaponIArmor_Hvy_Cloth* p = (CWeaponIArmor_Hvy_Cloth*)sub_1000db89(0x910);
 	if (p) {
@@ -310806,13 +311215,14 @@ int sub_103f3770()
 // END FUNCTION
 
 // FUNCTION: 0x103f3840 size=0x49
+#include "platform.h"
 #include "CWeaponIArmor_Hvy_Cloth.h"
 extern void* vt_104e53bc;
 extern const char g_105875d4[];
 void* sub_1000db89(unsigned int);
 
 // TARGET: item_a_lt_leather
-extern "C" CWeaponIArmor_Hvy_Cloth* item_a_lt_leather()
+DLL_EXPORT CWeaponIArmor_Hvy_Cloth* item_a_lt_leather()
 {
 	CWeaponIArmor_Hvy_Cloth* p = (CWeaponIArmor_Hvy_Cloth*)sub_1000db89(0x910);
 	if (p) {
@@ -310856,13 +311266,14 @@ int sub_103f3a70()
 // END FUNCTION
 
 // FUNCTION: 0x103f3b40 size=0x49
+#include "platform.h"
 #include "CWeaponIArmor_Hvy_Cloth.h"
 extern void* vt_104e5abc;
 extern const char g_105875bc[];
 void* sub_1000db89(unsigned int);
 
 // TARGET: item_a_hvy_leather
-extern "C" CWeaponIArmor_Hvy_Cloth* item_a_hvy_leather()
+DLL_EXPORT CWeaponIArmor_Hvy_Cloth* item_a_hvy_leather()
 {
 	CWeaponIArmor_Hvy_Cloth* p = (CWeaponIArmor_Hvy_Cloth*)sub_1000db89(0x910);
 	if (p) {
@@ -310906,13 +311317,14 @@ int sub_103f3d70()
 // END FUNCTION
 
 // FUNCTION: 0x103f3e40 size=0x49
+#include "platform.h"
 #include "CWeaponIArmor_Hvy_Cloth.h"
 extern void* vt_104e61bc;
 extern const char g_105875a4[];
 void* sub_1000db89(unsigned int);
 
 // TARGET: item_a_body_armor
-extern "C" CWeaponIArmor_Hvy_Cloth* item_a_body_armor()
+DLL_EXPORT CWeaponIArmor_Hvy_Cloth* item_a_body_armor()
 {
 	CWeaponIArmor_Hvy_Cloth* p = (CWeaponIArmor_Hvy_Cloth*)sub_1000db89(0x910);
 	if (p) {
@@ -311075,13 +311487,14 @@ int sub_103f4bf0()
 // END FUNCTION
 
 // FUNCTION: 0x103f4d00 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104e76bc[];
 extern char g_105876fc[];
 
 // TARGET: item_g_lockpick
-extern "C" CItemGWarrLedger1* item_g_lockpick()
+DLL_EXPORT CItemGWarrLedger1* item_g_lockpick()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -311172,12 +311585,13 @@ int sub_103f5220()
 // END FUNCTION
 
 // FUNCTION: 0x103f5330 size=0x43
+#include "platform.h"
 #include "CWeaponUnarmed.h"
 void *sub_100aa720(int size);
 extern char g_1055f6bc[];
 
 // TARGET: item_w_unarmed
-extern "C" CBaseEntity *item_w_unarmed()
+DLL_EXPORT CBaseEntity *item_w_unarmed()
 {
 	void *mem = sub_100aa720(0x910);
 	CWeaponUnarmed *p;
@@ -311289,6 +311703,7 @@ int sub_103f59f0()
 // END FUNCTION
 
 // FUNCTION: 0x103f5ac0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_10004d9f(GP *);
@@ -311301,7 +311716,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_m_wallet
-extern "C" GP *item_m_wallet()
+DLL_EXPORT GP *item_m_wallet()
 {
 	GP *p = (GP *)sub_1000db89(0x918);
 	if (p) {
@@ -311345,6 +311760,7 @@ int sub_103f5cf0()
 // END FUNCTION
 
 // FUNCTION: 0x103f5dc0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_10004d9f(GP *);
@@ -311357,7 +311773,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_m_money_clip
-extern "C" GP *item_m_money_clip()
+DLL_EXPORT GP *item_m_money_clip()
 {
 	GP *p = (GP *)sub_1000db89(0x918);
 	if (p) {
@@ -311401,6 +311817,7 @@ int sub_103f5ff0()
 // END FUNCTION
 
 // FUNCTION: 0x103f60c0 size=0x49
+#include "platform.h"
 void *sub_1000db89(int);
 struct GP;
 void __fastcall sub_10004d9f(GP *);
@@ -311413,7 +311830,7 @@ struct GP {
 	virtual void name(const char *s);
 };
 // TARGET: item_m_money_envelope
-extern "C" GP *item_m_money_envelope()
+DLL_EXPORT GP *item_m_money_envelope()
 {
 	GP *p = (GP *)sub_1000db89(0x918);
 	if (p) {
@@ -311457,13 +311874,14 @@ int sub_103f62f0()
 // END FUNCTION
 
 // FUNCTION: 0x103f6400 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104ea0bc[];
 extern char g_10587204[];
 
 // TARGET: item_g_wallet
-extern "C" CItemGWarrLedger1* item_g_wallet()
+DLL_EXPORT CItemGWarrLedger1* item_g_wallet()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -311507,6 +311925,7 @@ int sub_103f6630()
 // END FUNCTION
 
 // FUNCTION: 0x103f6700 size=0x53
+#include "platform.h"
 void *sub_100aa720(unsigned int size);
 
 extern int vt_104ea7bc;
@@ -311526,7 +311945,7 @@ struct GP {
 };
 
 // TARGET: item_g_astrolite
-extern "C" GP *item_g_astrolite()
+DLL_EXPORT GP *item_g_astrolite()
 {
 	GP *p = (GP *)sub_100aa720(0x91c);
 	if (p) {
@@ -311644,13 +312063,14 @@ int sub_103f6d30()
 // END FUNCTION
 
 // FUNCTION: 0x103f6e00 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104eaebc[];
 extern char g_10680b20[];
 
 // TARGET: item_p_research_lg_computers
-extern "C" CItemGWarrLedger1* item_p_research_lg_computers()
+DLL_EXPORT CItemGWarrLedger1* item_p_research_lg_computers()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -311694,13 +312114,14 @@ int sub_103f7030()
 // END FUNCTION
 
 // FUNCTION: 0x103f7100 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104eb5bc[];
 extern char g_10680b8c[];
 
 // TARGET: item_p_research_hg_computers
-extern "C" CItemGWarrLedger1* item_p_research_hg_computers()
+DLL_EXPORT CItemGWarrLedger1* item_p_research_hg_computers()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -311744,13 +312165,14 @@ int sub_103f7330()
 // END FUNCTION
 
 // FUNCTION: 0x103f7400 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104ebcbc[];
 extern char g_10680bf8[];
 
 // TARGET: item_p_research_mg_security
-extern "C" CItemGWarrLedger1* item_p_research_mg_security()
+DLL_EXPORT CItemGWarrLedger1* item_p_research_mg_security()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -311794,13 +312216,14 @@ int sub_103f7630()
 // END FUNCTION
 
 // FUNCTION: 0x103f7700 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104ec3bc[];
 extern char g_10680c64[];
 
 // TARGET: item_p_research_mg_finance
-extern "C" CItemGWarrLedger1* item_p_research_mg_finance()
+DLL_EXPORT CItemGWarrLedger1* item_p_research_mg_finance()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -311844,13 +312267,14 @@ int sub_103f7930()
 // END FUNCTION
 
 // FUNCTION: 0x103f7a00 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104ecabc[];
 extern char g_10680ccc[];
 
 // TARGET: item_p_research_hg_firearms
-extern "C" CItemGWarrLedger1* item_p_research_hg_firearms()
+DLL_EXPORT CItemGWarrLedger1* item_p_research_hg_firearms()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -311894,13 +312318,14 @@ int sub_103f7c30()
 // END FUNCTION
 
 // FUNCTION: 0x103f7d00 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104ed1bc[];
 extern char g_10680d38[];
 
 // TARGET: item_p_research_mg_brawl
-extern "C" CItemGWarrLedger1* item_p_research_mg_brawl()
+DLL_EXPORT CItemGWarrLedger1* item_p_research_mg_brawl()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -311944,13 +312369,14 @@ int sub_103f7f30()
 // END FUNCTION
 
 // FUNCTION: 0x103f8000 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104ed8bc[];
 extern char g_10680da0[];
 
 // TARGET: item_p_research_lg_dodge
-extern "C" CItemGWarrLedger1* item_p_research_lg_dodge()
+DLL_EXPORT CItemGWarrLedger1* item_p_research_lg_dodge()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -311994,13 +312420,14 @@ int sub_103f8230()
 // END FUNCTION
 
 // FUNCTION: 0x103f8300 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104edfbc[];
 extern char g_10680e08[];
 
 // TARGET: item_p_research_hg_melee
-extern "C" CItemGWarrLedger1* item_p_research_hg_melee()
+DLL_EXPORT CItemGWarrLedger1* item_p_research_hg_melee()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312044,13 +312471,14 @@ int sub_103f8530()
 // END FUNCTION
 
 // FUNCTION: 0x103f8600 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104ee6bc[];
 extern char g_10680e70[];
 
 // TARGET: item_p_research_mg_melee
-extern "C" CItemGWarrLedger1* item_p_research_mg_melee()
+DLL_EXPORT CItemGWarrLedger1* item_p_research_mg_melee()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312094,13 +312522,14 @@ int sub_103f8830()
 // END FUNCTION
 
 // FUNCTION: 0x103f8900 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104eedbc[];
 extern char g_10680ed8[];
 
 // TARGET: item_p_research_hg_dodge
-extern "C" CItemGWarrLedger1* item_p_research_hg_dodge()
+DLL_EXPORT CItemGWarrLedger1* item_p_research_hg_dodge()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312144,13 +312573,14 @@ int sub_103f8b30()
 // END FUNCTION
 
 // FUNCTION: 0x103f8c00 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104ef4bc[];
 extern char g_10680f48[];
 
 // TARGET: item_p_research_lg_stealth
-extern "C" CItemGWarrLedger1* item_p_research_lg_stealth()
+DLL_EXPORT CItemGWarrLedger1* item_p_research_lg_stealth()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312194,13 +312624,14 @@ int sub_103f8e30()
 // END FUNCTION
 
 // FUNCTION: 0x103f8f00 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104efbbc[];
 extern char g_10680fb8[];
 
 // TARGET: item_p_research_lg_firearms
-extern "C" CItemGWarrLedger1* item_p_research_lg_firearms()
+DLL_EXPORT CItemGWarrLedger1* item_p_research_lg_firearms()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312341,12 +312772,13 @@ int sub_103f9480()
 // END FUNCTION
 
 // FUNCTION: 0x103f95a0 size=0x43
+#include "platform.h"
 #include "COccultRegen.h"
 void *sub_100aa720(int size);
 extern char g_10620048[];
 
 // TARGET: item_p_occult_regen
-extern "C" CBaseEntity *item_p_occult_regen()
+DLL_EXPORT CBaseEntity *item_p_occult_regen()
 {
 	void *mem = sub_100aa720(0x91c);
 	COccultRegen *p;
@@ -312389,13 +312821,14 @@ int sub_103f97d0()
 // END FUNCTION
 
 // FUNCTION: 0x103f98a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f09bc[];
 extern char g_10681090[];
 
 // TARGET: item_p_occult_hacking
-extern "C" CItemGWarrLedger1* item_p_occult_hacking()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_hacking()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312439,13 +312872,14 @@ int sub_103f9ad0()
 // END FUNCTION
 
 // FUNCTION: 0x103f9ba0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f10bc[];
 extern char g_106810e0[];
 
 // TARGET: item_p_occult_frenzy
-extern "C" CItemGWarrLedger1* item_p_occult_frenzy()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_frenzy()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312489,13 +312923,14 @@ int sub_103f9dd0()
 // END FUNCTION
 
 // FUNCTION: 0x103f9ea0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f17bc[];
 extern char g_1068113c[];
 
 // TARGET: item_p_occult_lockpicking
-extern "C" CItemGWarrLedger1* item_p_occult_lockpicking()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_lockpicking()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312539,13 +312974,14 @@ int sub_103fa0d0()
 // END FUNCTION
 
 // FUNCTION: 0x103fa1a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f1ebc[];
 extern char g_10681194[];
 
 // TARGET: item_p_occult_presence
-extern "C" CItemGWarrLedger1* item_p_occult_presence()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_presence()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312589,13 +313025,14 @@ int sub_103fa3d0()
 // END FUNCTION
 
 // FUNCTION: 0x103fa4a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f25bc[];
 extern char g_106811ec[];
 
 // TARGET: item_p_occult_obfuscate
-extern "C" CItemGWarrLedger1* item_p_occult_obfuscate()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_obfuscate()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312639,13 +313076,14 @@ int sub_103fa6d0()
 // END FUNCTION
 
 // FUNCTION: 0x103fa7a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f2cbc[];
 extern char g_10681244[];
 
 // TARGET: item_p_occult_dexterity
-extern "C" CItemGWarrLedger1* item_p_occult_dexterity()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_dexterity()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312689,13 +313127,14 @@ int sub_103fa9d0()
 // END FUNCTION
 
 // FUNCTION: 0x103faaa0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f33bc[];
 extern char g_10681298[];
 
 // TARGET: item_p_occult_strength
-extern "C" CItemGWarrLedger1* item_p_occult_strength()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_strength()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312739,13 +313178,14 @@ int sub_103facd0()
 // END FUNCTION
 
 // FUNCTION: 0x103fada0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f3abc[];
 extern char g_106812f4[];
 
 // TARGET: item_p_occult_experience
-extern "C" CItemGWarrLedger1* item_p_occult_experience()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_experience()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312789,13 +313229,14 @@ int sub_103fafd0()
 // END FUNCTION
 
 // FUNCTION: 0x103fb0a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f41bc[];
 extern char g_10681350[];
 
 // TARGET: item_p_occult_blood_buff
-extern "C" CItemGWarrLedger1* item_p_occult_blood_buff()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_blood_buff()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312839,13 +313280,14 @@ int sub_103fb2d0()
 // END FUNCTION
 
 // FUNCTION: 0x103fb3a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f48bc[];
 extern char g_106813a0[];
 
 // TARGET: item_p_occult_dodge
-extern "C" CItemGWarrLedger1* item_p_occult_dodge()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_dodge()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312889,13 +313331,14 @@ int sub_103fb5d0()
 // END FUNCTION
 
 // FUNCTION: 0x103fb6a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f4fbc[];
 extern char g_106813f8[];
 
 // TARGET: item_p_occult_thaum_damage
-extern "C" CItemGWarrLedger1* item_p_occult_thaum_damage()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_thaum_damage()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312939,13 +313382,14 @@ int sub_103fb8d0()
 // END FUNCTION
 
 // FUNCTION: 0x103fb9a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f56bc[];
 extern char g_10681464[];
 
 // TARGET: item_p_occult_passive_durations
-extern "C" CItemGWarrLedger1* item_p_occult_passive_durations()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_passive_durations()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -312989,13 +313433,14 @@ int sub_103fbbd0()
 // END FUNCTION
 
 // FUNCTION: 0x103fbca0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f5dbc[];
 extern char g_106814c4[];
 
 // TARGET: item_p_occult_heal_rate
-extern "C" CItemGWarrLedger1* item_p_occult_heal_rate()
+DLL_EXPORT CItemGWarrLedger1* item_p_occult_heal_rate()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313039,13 +313484,14 @@ int sub_103fbed0()
 // END FUNCTION
 
 // FUNCTION: 0x103fbfa0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f64bc[];
 extern char g_10681520[];
 
 // TARGET: item_p_gargoyle_talisman
-extern "C" CItemGWarrLedger1* item_p_gargoyle_talisman()
+DLL_EXPORT CItemGWarrLedger1* item_p_gargoyle_talisman()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313121,13 +313567,14 @@ int sub_103fc350()
 // END FUNCTION
 
 // FUNCTION: 0x103fc420 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f6bbc[];
 extern char g_10560060[];
 
 // TARGET: item_g_bloodpack
-extern "C" CItemGWarrLedger1* item_g_bloodpack()
+DLL_EXPORT CItemGWarrLedger1* item_g_bloodpack()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313203,13 +313650,14 @@ int sub_103fc7b0()
 // END FUNCTION
 
 // FUNCTION: 0x103fc880 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f72bc[];
 extern char g_10560044[];
 
 // TARGET: item_g_bluebloodpack
-extern "C" CItemGWarrLedger1* item_g_bluebloodpack()
+DLL_EXPORT CItemGWarrLedger1* item_g_bluebloodpack()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313286,13 +313734,14 @@ int sub_103fcbe0()
 // END FUNCTION
 
 // FUNCTION: 0x103fccb0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f79bc[];
 extern char g_10560028[];
 
 // TARGET: item_g_eldervitaepack
-extern "C" CItemGWarrLedger1* item_g_eldervitaepack()
+DLL_EXPORT CItemGWarrLedger1* item_g_eldervitaepack()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313336,13 +313785,14 @@ int sub_103fcee0()
 // END FUNCTION
 
 // FUNCTION: 0x103fcfb0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f80bc[];
 extern char g_10681618[];
 
 // TARGET: item_g_car_stereo
-extern "C" CItemGWarrLedger1* item_g_car_stereo()
+DLL_EXPORT CItemGWarrLedger1* item_g_car_stereo()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313386,13 +313836,14 @@ int sub_103fd190()
 // END FUNCTION
 
 // FUNCTION: 0x103fd260 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f87bc[];
 extern char g_10681664[];
 
 // TARGET: item_g_cash_box
-extern "C" CItemGWarrLedger1* item_g_cash_box()
+DLL_EXPORT CItemGWarrLedger1* item_g_cash_box()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313436,13 +313887,14 @@ int sub_103fd440()
 // END FUNCTION
 
 // FUNCTION: 0x103fd510 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f8ebc[];
 extern char g_106816b8[];
 
 // TARGET: item_g_drugs_drug_box
-extern "C" CItemGWarrLedger1* item_g_drugs_drug_box()
+DLL_EXPORT CItemGWarrLedger1* item_g_drugs_drug_box()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313486,13 +313938,14 @@ int sub_103fd6f0()
 // END FUNCTION
 
 // FUNCTION: 0x103fd7c0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f95bc[];
 extern char g_10681724[];
 
 // TARGET: item_g_drugs_morphine_bottle
-extern "C" CItemGWarrLedger1* item_g_drugs_morphine_bottle()
+DLL_EXPORT CItemGWarrLedger1* item_g_drugs_morphine_bottle()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313536,13 +313989,14 @@ int sub_103fd9a0()
 // END FUNCTION
 
 // FUNCTION: 0x103fda70 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104f9cbc[];
 extern char g_106817a0[];
 
 // TARGET: item_g_drugs_perscription_bottle
-extern "C" CItemGWarrLedger1* item_g_drugs_perscription_bottle()
+DLL_EXPORT CItemGWarrLedger1* item_g_drugs_perscription_bottle()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313586,13 +314040,14 @@ int sub_103fdc50()
 // END FUNCTION
 
 // FUNCTION: 0x103fdd20 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104fa3bc[];
 extern char g_10681810[];
 
 // TARGET: item_g_drugs_pill_bottle
-extern "C" CItemGWarrLedger1* item_g_drugs_pill_bottle()
+DLL_EXPORT CItemGWarrLedger1* item_g_drugs_pill_bottle()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313636,13 +314091,14 @@ int sub_103fdf00()
 // END FUNCTION
 
 // FUNCTION: 0x103fdfd0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104faabc[];
 extern char g_10681870[];
 
 // TARGET: item_g_ghost_pendant
-extern "C" CItemGWarrLedger1* item_g_ghost_pendant()
+DLL_EXPORT CItemGWarrLedger1* item_g_ghost_pendant()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313686,13 +314142,14 @@ int sub_103fe1b0()
 // END FUNCTION
 
 // FUNCTION: 0x103fe280 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104fb1bc[];
 extern char g_106818bc[];
 
 // TARGET: item_g_ring03
-extern "C" CItemGWarrLedger1* item_g_ring03()
+DLL_EXPORT CItemGWarrLedger1* item_g_ring03()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313736,13 +314193,14 @@ int sub_103fe460()
 // END FUNCTION
 
 // FUNCTION: 0x103fe530 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104fb8bc[];
 extern char g_10681908[];
 
 // TARGET: item_g_ring_silver
-extern "C" CItemGWarrLedger1* item_g_ring_silver()
+DLL_EXPORT CItemGWarrLedger1* item_g_ring_silver()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313786,13 +314244,14 @@ int sub_103fe710()
 // END FUNCTION
 
 // FUNCTION: 0x103fe7e0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104fbfbc[];
 extern char g_10681958[];
 
 // TARGET: item_g_ring_gold
-extern "C" CItemGWarrLedger1* item_g_ring_gold()
+DLL_EXPORT CItemGWarrLedger1* item_g_ring_gold()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313836,13 +314295,14 @@ int sub_103fe9c0()
 // END FUNCTION
 
 // FUNCTION: 0x103fea90 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104fc6bc[];
 extern char g_106819ac[];
 
 // TARGET: item_g_watch_normal
-extern "C" CItemGWarrLedger1* item_g_watch_normal()
+DLL_EXPORT CItemGWarrLedger1* item_g_watch_normal()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313886,13 +314346,14 @@ int sub_103fec70()
 // END FUNCTION
 
 // FUNCTION: 0x103fed40 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104fcdbc[];
 extern char g_10681a00[];
 
 // TARGET: item_g_watch_fancy
-extern "C" CItemGWarrLedger1* item_g_watch_fancy()
+DLL_EXPORT CItemGWarrLedger1* item_g_watch_fancy()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313936,13 +314397,14 @@ int sub_103fef20()
 // END FUNCTION
 
 // FUNCTION: 0x103feff0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104fd4bc[];
 extern char g_10681a54[];
 
 // TARGET: item_g_lilly_photo
-extern "C" CItemGWarrLedger1* item_g_lilly_photo()
+DLL_EXPORT CItemGWarrLedger1* item_g_lilly_photo()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -313986,13 +314448,14 @@ int sub_103ff1d0()
 // END FUNCTION
 
 // FUNCTION: 0x103ff2a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104fdbbc[];
 extern char g_10681aa8[];
 
 // TARGET: item_g_lilly_diary
-extern "C" CItemGWarrLedger1* item_g_lilly_diary()
+DLL_EXPORT CItemGWarrLedger1* item_g_lilly_diary()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314036,13 +314499,14 @@ int sub_103ff480()
 // END FUNCTION
 
 // FUNCTION: 0x103ff550 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104fe2bc[];
 extern char g_10681afc[];
 
 // TARGET: item_g_lilly_purse
-extern "C" CItemGWarrLedger1* item_g_lilly_purse()
+DLL_EXPORT CItemGWarrLedger1* item_g_lilly_purse()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314086,13 +314550,14 @@ int sub_103ff730()
 // END FUNCTION
 
 // FUNCTION: 0x103ff800 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104fe9bc[];
 extern char g_10681b5c[];
 
 // TARGET: item_g_bailbond_receipt
-extern "C" CItemGWarrLedger1* item_g_bailbond_receipt()
+DLL_EXPORT CItemGWarrLedger1* item_g_bailbond_receipt()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314136,13 +314601,14 @@ int sub_103ff9e0()
 // END FUNCTION
 
 // FUNCTION: 0x103ffab0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104ff0bc[];
 extern char g_10681bcc[];
 
 // TARGET: item_g_driver_license_gimble
-extern "C" CItemGWarrLedger1* item_g_driver_license_gimble()
+DLL_EXPORT CItemGWarrLedger1* item_g_driver_license_gimble()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314186,13 +314652,14 @@ int sub_103ffc90()
 // END FUNCTION
 
 // FUNCTION: 0x103ffd60 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104ff7bc[];
 extern char g_10681c30[];
 
 // TARGET: item_g_werewolf_bloodpack
-extern "C" CItemGWarrLedger1* item_g_werewolf_bloodpack()
+DLL_EXPORT CItemGWarrLedger1* item_g_werewolf_bloodpack()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314236,13 +314703,14 @@ int sub_103fff40()
 // END FUNCTION
 
 // FUNCTION: 0x10400010 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_104ffebc[];
 extern char g_10681c90[];
 
 // TARGET: item_g_jumbles_flyer
-extern "C" CItemGWarrLedger1* item_g_jumbles_flyer()
+DLL_EXPORT CItemGWarrLedger1* item_g_jumbles_flyer()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314286,13 +314754,14 @@ int sub_104001f0()
 // END FUNCTION
 
 // FUNCTION: 0x104002c0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105005bc[];
 extern char g_10681cf4[];
 
 // TARGET: item_g_larry_briefcase
-extern "C" CItemGWarrLedger1* item_g_larry_briefcase()
+DLL_EXPORT CItemGWarrLedger1* item_g_larry_briefcase()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314336,13 +314805,14 @@ int sub_104004a0()
 // END FUNCTION
 
 // FUNCTION: 0x10400570 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_10500cbc[];
 extern char g_10681d50[];
 
 // TARGET: item_g_horrortape_1
-extern "C" CItemGWarrLedger1* item_g_horrortape_1()
+DLL_EXPORT CItemGWarrLedger1* item_g_horrortape_1()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314386,13 +314856,14 @@ int sub_10400750()
 // END FUNCTION
 
 // FUNCTION: 0x10400820 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105013bc[];
 extern char g_10681da8[];
 
 // TARGET: item_g_horrortape_2
-extern "C" CItemGWarrLedger1* item_g_horrortape_2()
+DLL_EXPORT CItemGWarrLedger1* item_g_horrortape_2()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314436,13 +314907,14 @@ int sub_10400a00()
 // END FUNCTION
 
 // FUNCTION: 0x10400ad0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_10501abc[];
 extern char g_10681df4[];
 
 // TARGET: item_g_oh_diary
-extern "C" CItemGWarrLedger1* item_g_oh_diary()
+DLL_EXPORT CItemGWarrLedger1* item_g_oh_diary()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314486,13 +314958,14 @@ int sub_10400cb0()
 // END FUNCTION
 
 // FUNCTION: 0x10400d80 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105021bc[];
 extern char g_10681e48[];
 
 // TARGET: item_g_bach_journal
-extern "C" CItemGWarrLedger1* item_g_bach_journal()
+DLL_EXPORT CItemGWarrLedger1* item_g_bach_journal()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314536,13 +315009,14 @@ int sub_10400f60()
 // END FUNCTION
 
 // FUNCTION: 0x10401030 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105028bc[];
 extern char g_10681ea8[];
 
 // TARGET: item_g_vampyr_apocrypha
-extern "C" CItemGWarrLedger1* item_g_vampyr_apocrypha()
+DLL_EXPORT CItemGWarrLedger1* item_g_vampyr_apocrypha()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314586,13 +315060,14 @@ int sub_10401210()
 // END FUNCTION
 
 // FUNCTION: 0x104012e0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_10502fbc[];
 extern char g_10681f04[];
 
 // TARGET: item_g_pisha_fetish
-extern "C" CItemGWarrLedger1* item_g_pisha_fetish()
+DLL_EXPORT CItemGWarrLedger1* item_g_pisha_fetish()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314636,13 +315111,14 @@ int sub_104014c0()
 // END FUNCTION
 
 // FUNCTION: 0x10401590 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105036bc[];
 extern char g_10681f64[];
 
 // TARGET: item_g_edane_print_report
-extern "C" CItemGWarrLedger1* item_g_edane_print_report()
+DLL_EXPORT CItemGWarrLedger1* item_g_edane_print_report()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314686,13 +315162,14 @@ int sub_10401770()
 // END FUNCTION
 
 // FUNCTION: 0x10401840 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_10503dbc[];
 extern char g_10681fc4[];
 
 // TARGET: item_g_edane_report
-extern "C" CItemGWarrLedger1* item_g_edane_report()
+DLL_EXPORT CItemGWarrLedger1* item_g_edane_report()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314736,13 +315213,14 @@ int sub_10401a20()
 // END FUNCTION
 
 // FUNCTION: 0x10401af0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105044bc[];
 extern char g_1068203c[];
 
 // TARGET: item_g_giovanni_invitation_victor
-extern "C" CItemGWarrLedger1* item_g_giovanni_invitation_victor()
+DLL_EXPORT CItemGWarrLedger1* item_g_giovanni_invitation_victor()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314786,13 +315264,14 @@ int sub_10401cd0()
 // END FUNCTION
 
 // FUNCTION: 0x10401da0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_10504bbc[];
 extern char g_106820bc[];
 
 // TARGET: item_g_giovanni_invitation_maria
-extern "C" CItemGWarrLedger1* item_g_giovanni_invitation_maria()
+DLL_EXPORT CItemGWarrLedger1* item_g_giovanni_invitation_maria()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314836,13 +315315,14 @@ int sub_10401f80()
 // END FUNCTION
 
 // FUNCTION: 0x10402050 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105052bc[];
 extern char g_10682124[];
 
 // TARGET: item_g_guy_magazine
-extern "C" CItemGWarrLedger1* item_g_guy_magazine()
+DLL_EXPORT CItemGWarrLedger1* item_g_guy_magazine()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314886,13 +315366,14 @@ int sub_10402230()
 // END FUNCTION
 
 // FUNCTION: 0x10402300 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105059bc[];
 extern char g_10682184[];
 
 // TARGET: item_g_brotherhood_flyer
-extern "C" CItemGWarrLedger1* item_g_brotherhood_flyer()
+DLL_EXPORT CItemGWarrLedger1* item_g_brotherhood_flyer()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314936,13 +315417,14 @@ int sub_104024e0()
 // END FUNCTION
 
 // FUNCTION: 0x104025b0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105060bc[];
 extern char g_106821fc[];
 
 // TARGET: item_g_milligans_businesscard
-extern "C" CItemGWarrLedger1* item_g_milligans_businesscard()
+DLL_EXPORT CItemGWarrLedger1* item_g_milligans_businesscard()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -314986,13 +315468,14 @@ int sub_10402790()
 // END FUNCTION
 
 // FUNCTION: 0x10402860 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105067bc[];
 extern char g_10682258[];
 
 // TARGET: item_g_pisha_book
-extern "C" CItemGWarrLedger1* item_g_pisha_book()
+DLL_EXPORT CItemGWarrLedger1* item_g_pisha_book()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315036,13 +315519,14 @@ int sub_10402a40()
 // END FUNCTION
 
 // FUNCTION: 0x10402b10 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_10506ebc[];
 extern char g_106822b8[];
 
 // TARGET: item_g_badlucktalisman
-extern "C" CItemGWarrLedger1* item_g_badlucktalisman()
+DLL_EXPORT CItemGWarrLedger1* item_g_badlucktalisman()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315086,13 +315570,14 @@ int sub_10402cf0()
 // END FUNCTION
 
 // FUNCTION: 0x10402dc0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105075bc[];
 extern char g_1068093c[];
 
 // TARGET: item_g_warrens4_passkey
-extern "C" CItemGWarrLedger1* item_g_warrens4_passkey()
+DLL_EXPORT CItemGWarrLedger1* item_g_warrens4_passkey()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315136,13 +315621,14 @@ int sub_10402fa0()
 // END FUNCTION
 
 // FUNCTION: 0x10403070 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_10507cbc[];
 extern char g_10682364[];
 
 // TARGET: item_g_wireless_camera_1
-extern "C" CItemGWarrLedger1* item_g_wireless_camera_1()
+DLL_EXPORT CItemGWarrLedger1* item_g_wireless_camera_1()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315186,13 +315672,14 @@ int sub_10403250()
 // END FUNCTION
 
 // FUNCTION: 0x10403320 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105083bc[];
 extern char g_106823cc[];
 
 // TARGET: item_g_wireless_camera_2
-extern "C" CItemGWarrLedger1* item_g_wireless_camera_2()
+DLL_EXPORT CItemGWarrLedger1* item_g_wireless_camera_2()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315236,13 +315723,14 @@ int sub_10403500()
 // END FUNCTION
 
 // FUNCTION: 0x104035d0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_10508abc[];
 extern char g_10682434[];
 
 // TARGET: item_g_wireless_camera_3
-extern "C" CItemGWarrLedger1* item_g_wireless_camera_3()
+DLL_EXPORT CItemGWarrLedger1* item_g_wireless_camera_3()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315286,13 +315774,14 @@ int sub_104037b0()
 // END FUNCTION
 
 // FUNCTION: 0x10403880 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105091bc[];
 extern char g_1068249c[];
 
 // TARGET: item_g_wireless_camera_4
-extern "C" CItemGWarrLedger1* item_g_wireless_camera_4()
+DLL_EXPORT CItemGWarrLedger1* item_g_wireless_camera_4()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315336,13 +315825,14 @@ int sub_10403a60()
 // END FUNCTION
 
 // FUNCTION: 0x10403b30 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105098bc[];
 extern char g_106824ec[];
 
 // TARGET: item_g_eyes
-extern "C" CItemGWarrLedger1* item_g_eyes()
+DLL_EXPORT CItemGWarrLedger1* item_g_eyes()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315386,13 +315876,14 @@ int sub_10403d10()
 // END FUNCTION
 
 // FUNCTION: 0x10403de0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_10509fbc[];
 extern char g_10682548[];
 
 // TARGET: item_g_hatters_screenplay
-extern "C" CItemGWarrLedger1* item_g_hatters_screenplay()
+DLL_EXPORT CItemGWarrLedger1* item_g_hatters_screenplay()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315436,13 +315927,14 @@ int sub_10403fc0()
 // END FUNCTION
 
 // FUNCTION: 0x10404090 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050a6bc[];
 extern char g_10682598[];
 
 // TARGET: item_g_stake
-extern "C" CItemGWarrLedger1* item_g_stake()
+DLL_EXPORT CItemGWarrLedger1* item_g_stake()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315486,13 +315978,14 @@ int sub_10404270()
 // END FUNCTION
 
 // FUNCTION: 0x10404340 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050adbc[];
 extern char g_106825e8[];
 
 // TARGET: item_g_warr_clipboard
-extern "C" CItemGWarrLedger1* item_g_warr_clipboard()
+DLL_EXPORT CItemGWarrLedger1* item_g_warr_clipboard()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315536,13 +316029,14 @@ int sub_10404520()
 // END FUNCTION
 
 // FUNCTION: 0x104045f0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050b4bc[];
 extern char g_10682644[];
 
 // TARGET: item_g_warr_ledger_1
-extern "C" CItemGWarrLedger1* item_g_warr_ledger_1()
+DLL_EXPORT CItemGWarrLedger1* item_g_warr_ledger_1()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315586,13 +316080,14 @@ int sub_104047d0()
 // END FUNCTION
 
 // FUNCTION: 0x104048a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050bbbc[];
 extern char g_106826a0[];
 
 // TARGET: item_g_warr_ledger_2
-extern "C" CItemGWarrLedger1* item_g_warr_ledger_2()
+DLL_EXPORT CItemGWarrLedger1* item_g_warr_ledger_2()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315636,13 +316131,14 @@ int sub_10404a80()
 // END FUNCTION
 
 // FUNCTION: 0x10404b50 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050c2bc[];
 extern char g_10682704[];
 
 // TARGET: item_g_mercurio_journal
-extern "C" CItemGWarrLedger1* item_g_mercurio_journal()
+DLL_EXPORT CItemGWarrLedger1* item_g_mercurio_journal()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315686,13 +316182,14 @@ int sub_10404d30()
 // END FUNCTION
 
 // FUNCTION: 0x10404e00 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050c9bc[];
 extern char g_10682768[];
 
 // TARGET: item_g_hannahs_appt_book
-extern "C" CItemGWarrLedger1* item_g_hannahs_appt_book()
+DLL_EXPORT CItemGWarrLedger1* item_g_hannahs_appt_book()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315736,13 +316233,14 @@ int sub_10404fe0()
 // END FUNCTION
 
 // FUNCTION: 0x104050b0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050d0bc[];
 extern char g_106827dc[];
 
 // TARGET: item_g_junkyard_businesscard
-extern "C" CItemGWarrLedger1* item_g_junkyard_businesscard()
+DLL_EXPORT CItemGWarrLedger1* item_g_junkyard_businesscard()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315786,13 +316284,14 @@ int sub_10405290()
 // END FUNCTION
 
 // FUNCTION: 0x10405360 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050d7bc[];
 extern char g_10682834[];
 
 // TARGET: item_g_idol_cat
-extern "C" CItemGWarrLedger1* item_g_idol_cat()
+DLL_EXPORT CItemGWarrLedger1* item_g_idol_cat()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315836,13 +316335,14 @@ int sub_10405540()
 // END FUNCTION
 
 // FUNCTION: 0x10405610 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050debc[];
 extern char g_10682880[];
 
 // TARGET: item_g_idol_crane
-extern "C" CItemGWarrLedger1* item_g_idol_crane()
+DLL_EXPORT CItemGWarrLedger1* item_g_idol_crane()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315886,13 +316386,14 @@ int sub_104057f0()
 // END FUNCTION
 
 // FUNCTION: 0x104058c0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050e5bc[];
 extern char g_106828d4[];
 
 // TARGET: item_g_idol_dragon
-extern "C" CItemGWarrLedger1* item_g_idol_dragon()
+DLL_EXPORT CItemGWarrLedger1* item_g_idol_dragon()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315936,13 +316437,14 @@ int sub_10405aa0()
 // END FUNCTION
 
 // FUNCTION: 0x10405b70 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050ecbc[];
 extern char g_1068292c[];
 
 // TARGET: item_g_idol_elephant
-extern "C" CItemGWarrLedger1* item_g_idol_elephant()
+DLL_EXPORT CItemGWarrLedger1* item_g_idol_elephant()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -315986,13 +316488,14 @@ int sub_10405d50()
 // END FUNCTION
 
 // FUNCTION: 0x10405e20 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050f3bc[];
 extern char g_1068297c[];
 
 // TARGET: item_g_garys_cd
-extern "C" CItemGWarrLedger1* item_g_garys_cd()
+DLL_EXPORT CItemGWarrLedger1* item_g_garys_cd()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -316036,13 +316539,14 @@ int sub_10406000()
 // END FUNCTION
 
 // FUNCTION: 0x104060d0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_1050fabc[];
 extern char g_106829c8[];
 
 // TARGET: item_g_garys_film
-extern "C" CItemGWarrLedger1* item_g_garys_film()
+DLL_EXPORT CItemGWarrLedger1* item_g_garys_film()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -316086,13 +316590,14 @@ int sub_104062b0()
 // END FUNCTION
 
 // FUNCTION: 0x10406380 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105101bc[];
 extern char g_10682a1c[];
 
 // TARGET: item_g_garys_photo
-extern "C" CItemGWarrLedger1* item_g_garys_photo()
+DLL_EXPORT CItemGWarrLedger1* item_g_garys_photo()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -316136,13 +316641,14 @@ int sub_10406560()
 // END FUNCTION
 
 // FUNCTION: 0x10406630 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105108bc[];
 extern char g_10682a6c[];
 
 // TARGET: item_g_garys_tape
-extern "C" CItemGWarrLedger1* item_g_garys_tape()
+DLL_EXPORT CItemGWarrLedger1* item_g_garys_tape()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -316186,13 +316692,14 @@ int sub_10406810()
 // END FUNCTION
 
 // FUNCTION: 0x104068e0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_10510fbc[];
 extern char g_10682ac0[];
 
 // TARGET: item_g_bertrams_cd
-extern "C" CItemGWarrLedger1* item_g_bertrams_cd()
+DLL_EXPORT CItemGWarrLedger1* item_g_bertrams_cd()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -316236,13 +316743,14 @@ int sub_10406ac0()
 // END FUNCTION
 
 // FUNCTION: 0x10406b90 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105116bc[];
 extern char g_10682b24[];
 
 // TARGET: item_g_ring_serial_killer_1
-extern "C" CItemGWarrLedger1* item_g_ring_serial_killer_1()
+DLL_EXPORT CItemGWarrLedger1* item_g_ring_serial_killer_1()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -316286,13 +316794,14 @@ int sub_10406d70()
 // END FUNCTION
 
 // FUNCTION: 0x10406e40 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_10511dbc[];
 extern char g_10682b88[];
 
 // TARGET: item_g_gargoyle_book
-extern "C" CItemGWarrLedger1* item_g_gargoyle_book()
+DLL_EXPORT CItemGWarrLedger1* item_g_gargoyle_book()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -316336,13 +316845,14 @@ int sub_10407020()
 // END FUNCTION
 
 // FUNCTION: 0x104070f0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105124bc[];
 extern char g_10682bd8[];
 
 // TARGET: item_g_vv_photo
-extern "C" CItemGWarrLedger1* item_g_vv_photo()
+DLL_EXPORT CItemGWarrLedger1* item_g_vv_photo()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -316386,13 +316896,14 @@ int sub_104072d0()
 // END FUNCTION
 
 // FUNCTION: 0x104073a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_10512bbc[];
 extern char g_10682c34[];
 
 // TARGET: item_k_sarcophagus_key
-extern "C" CItemGWarrLedger1* item_k_sarcophagus_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_sarcophagus_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -316436,13 +316947,14 @@ int sub_10407580()
 // END FUNCTION
 
 // FUNCTION: 0x10407650 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105132bc[];
 extern char g_10682c8c[];
 
 // TARGET: item_g_sewerbook_1
-extern "C" CItemGWarrLedger1* item_g_sewerbook_1()
+DLL_EXPORT CItemGWarrLedger1* item_g_sewerbook_1()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x914);
 	if (p) {
@@ -316543,12 +317055,13 @@ int sub_104079a0()
 // END FUNCTION
 
 // FUNCTION: 0x10407a70 size=0x43
+#include "platform.h"
 #include "CItemGKeyring.h"
 void *sub_100aa720(int size);
 extern char g_105869a4[];
 
 // TARGET: item_g_keyring
-extern "C" CBaseEntity *item_g_keyring()
+DLL_EXPORT CBaseEntity *item_g_keyring()
 {
 	void *mem = sub_100aa720(0x928);
 	CItemGKeyring *p;
@@ -316899,13 +317412,14 @@ void SSrc192::sub_10408480(SDest192 *pDest)
 // END FUNCTION
 
 // FUNCTION: 0x104085f0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682d24[];
 
 // TARGET: item_k_key_generic
-extern "C" CItemGWarrLedger1* item_k_key_generic()
+DLL_EXPORT CItemGWarrLedger1* item_k_key_generic()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -316952,13 +317466,14 @@ int sub_104087d0()
 // END FUNCTION
 
 // FUNCTION: 0x104089c0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682d60[];
 
 // TARGET: item_k_gallery_noir_key
-extern "C" CItemGWarrLedger1* item_k_gallery_noir_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_gallery_noir_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -316973,13 +317488,14 @@ extern "C" CItemGWarrLedger1* item_k_gallery_noir_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408a30 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682d7c[];
 
 // TARGET: item_k_lilly_key
-extern "C" CItemGWarrLedger1* item_k_lilly_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_lilly_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -316994,13 +317510,14 @@ extern "C" CItemGWarrLedger1* item_k_lilly_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408aa0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682d90[];
 
 // TARGET: item_k_murietta_key
-extern "C" CItemGWarrLedger1* item_k_murietta_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_murietta_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317015,13 +317532,14 @@ extern "C" CItemGWarrLedger1* item_k_murietta_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408b10 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682da8[];
 
 // TARGET: item_k_oceanhouse_sewer_key
-extern "C" CItemGWarrLedger1* item_k_oceanhouse_sewer_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_oceanhouse_sewer_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317036,13 +317554,14 @@ extern "C" CItemGWarrLedger1* item_k_oceanhouse_sewer_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408b80 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682dcc[];
 
 // TARGET: item_k_oceanhouse_basement_key
-extern "C" CItemGWarrLedger1* item_k_oceanhouse_basement_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_oceanhouse_basement_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317057,13 +317576,14 @@ extern "C" CItemGWarrLedger1* item_k_oceanhouse_basement_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408bf0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682df4[];
 
 // TARGET: item_k_oceanhouse_upstairs_key
-extern "C" CItemGWarrLedger1* item_k_oceanhouse_upstairs_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_oceanhouse_upstairs_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317078,13 +317598,14 @@ extern "C" CItemGWarrLedger1* item_k_oceanhouse_upstairs_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408c60 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682e1c[];
 
 // TARGET: item_k_clinic_maintenance_key
-extern "C" CItemGWarrLedger1* item_k_clinic_maintenance_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_clinic_maintenance_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317099,13 +317620,14 @@ extern "C" CItemGWarrLedger1* item_k_clinic_maintenance_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408cd0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682e40[];
 
 // TARGET: item_k_clinic_stairs_key
-extern "C" CItemGWarrLedger1* item_k_clinic_stairs_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_clinic_stairs_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317120,13 +317642,14 @@ extern "C" CItemGWarrLedger1* item_k_clinic_stairs_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408d40 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682e60[];
 
 // TARGET: item_k_clinic_cs_key
-extern "C" CItemGWarrLedger1* item_k_clinic_cs_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_clinic_cs_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317141,13 +317664,14 @@ extern "C" CItemGWarrLedger1* item_k_clinic_cs_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408db0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682e7c[];
 
 // TARGET: item_k_malcolm_office_key
-extern "C" CItemGWarrLedger1* item_k_malcolm_office_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_malcolm_office_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317162,13 +317686,14 @@ extern "C" CItemGWarrLedger1* item_k_malcolm_office_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408e20 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682e9c[];
 
 // TARGET: item_k_gimble_key
-extern "C" CItemGWarrLedger1* item_k_gimble_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_gimble_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317183,13 +317708,14 @@ extern "C" CItemGWarrLedger1* item_k_gimble_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408e90 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682eb4[];
 
 // TARGET: item_k_lucky_star_murder_key
-extern "C" CItemGWarrLedger1* item_k_lucky_star_murder_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_lucky_star_murder_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317204,13 +317730,14 @@ extern "C" CItemGWarrLedger1* item_k_lucky_star_murder_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408f00 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682ed8[];
 
 // TARGET: item_k_leopold_int_key
-extern "C" CItemGWarrLedger1* item_k_leopold_int_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_leopold_int_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317225,13 +317752,14 @@ extern "C" CItemGWarrLedger1* item_k_leopold_int_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408f70 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682ef4[];
 
 // TARGET: item_k_museum_basement_key
-extern "C" CItemGWarrLedger1* item_k_museum_basement_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_museum_basement_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317246,13 +317774,14 @@ extern "C" CItemGWarrLedger1* item_k_museum_basement_key()
 // END FUNCTION
 
 // FUNCTION: 0x10408fe0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682f14[];
 
 // TARGET: item_k_museum_storeroom_key
-extern "C" CItemGWarrLedger1* item_k_museum_storeroom_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_museum_storeroom_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317267,13 +317796,14 @@ extern "C" CItemGWarrLedger1* item_k_museum_storeroom_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409050 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682f38[];
 
 // TARGET: item_k_museum_storage_key
-extern "C" CItemGWarrLedger1* item_k_museum_storage_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_museum_storage_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317288,13 +317818,14 @@ extern "C" CItemGWarrLedger1* item_k_museum_storage_key()
 // END FUNCTION
 
 // FUNCTION: 0x104090c0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682f58[];
 
 // TARGET: item_k_netcafe_office_key
-extern "C" CItemGWarrLedger1* item_k_netcafe_office_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_netcafe_office_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317309,13 +317840,14 @@ extern "C" CItemGWarrLedger1* item_k_netcafe_office_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409130 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682f78[];
 
 // TARGET: item_k_edane_key
-extern "C" CItemGWarrLedger1* item_k_edane_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_edane_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317330,13 +317862,14 @@ extern "C" CItemGWarrLedger1* item_k_edane_key()
 // END FUNCTION
 
 // FUNCTION: 0x104091a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682f8c[];
 
 // TARGET: item_k_empire_mafia_key
-extern "C" CItemGWarrLedger1* item_k_empire_mafia_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_empire_mafia_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317351,13 +317884,14 @@ extern "C" CItemGWarrLedger1* item_k_empire_mafia_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409210 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682fa8[];
 
 // TARGET: item_k_empire_jezebel_key
-extern "C" CItemGWarrLedger1* item_k_empire_jezebel_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_empire_jezebel_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317372,13 +317906,14 @@ extern "C" CItemGWarrLedger1* item_k_empire_jezebel_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409280 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682fc8[];
 
 // TARGET: item_k_carson_apartment_key
-extern "C" CItemGWarrLedger1* item_k_carson_apartment_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_carson_apartment_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317393,13 +317928,14 @@ extern "C" CItemGWarrLedger1* item_k_carson_apartment_key()
 // END FUNCTION
 
 // FUNCTION: 0x104092f0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10682fec[];
 
 // TARGET: item_k_tatoo_parlor_key
-extern "C" CItemGWarrLedger1* item_k_tatoo_parlor_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_tatoo_parlor_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317414,13 +317950,14 @@ extern "C" CItemGWarrLedger1* item_k_tatoo_parlor_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409360 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10683008[];
 
 // TARGET: item_k_malkavian_refrigerator_key
-extern "C" CItemGWarrLedger1* item_k_malkavian_refrigerator_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_malkavian_refrigerator_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317435,13 +317972,14 @@ extern "C" CItemGWarrLedger1* item_k_malkavian_refrigerator_key()
 // END FUNCTION
 
 // FUNCTION: 0x104093d0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10683030[];
 
 // TARGET: item_k_tutorial_chopshop_stairs_key
-extern "C" CItemGWarrLedger1* item_k_tutorial_chopshop_stairs_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_tutorial_chopshop_stairs_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317456,13 +317994,14 @@ extern "C" CItemGWarrLedger1* item_k_tutorial_chopshop_stairs_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409440 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_1068305c[];
 
 // TARGET: item_k_tawni_apartment_key
-extern "C" CItemGWarrLedger1* item_k_tawni_apartment_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_tawni_apartment_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317477,13 +318016,14 @@ extern "C" CItemGWarrLedger1* item_k_tawni_apartment_key()
 // END FUNCTION
 
 // FUNCTION: 0x104094b0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_1068307c[];
 
 // TARGET: item_k_shrekhub_one_key
-extern "C" CItemGWarrLedger1* item_k_shrekhub_one_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_shrekhub_one_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317498,13 +318038,14 @@ extern "C" CItemGWarrLedger1* item_k_shrekhub_one_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409520 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10683098[];
 
 // TARGET: item_k_shrekhub_three_key
-extern "C" CItemGWarrLedger1* item_k_shrekhub_three_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_shrekhub_three_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317519,13 +318060,14 @@ extern "C" CItemGWarrLedger1* item_k_shrekhub_three_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409590 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_106830b8[];
 
 // TARGET: item_k_shrekhub_four_key
-extern "C" CItemGWarrLedger1* item_k_shrekhub_four_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_shrekhub_four_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317540,13 +318082,14 @@ extern "C" CItemGWarrLedger1* item_k_shrekhub_four_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409600 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_106830d8[];
 
 // TARGET: item_k_kiki_key
-extern "C" CItemGWarrLedger1* item_k_kiki_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_kiki_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317561,13 +318104,14 @@ extern "C" CItemGWarrLedger1* item_k_kiki_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409670 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_106830ec[];
 
 // TARGET: item_k_oh_front_key
-extern "C" CItemGWarrLedger1* item_k_oh_front_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_oh_front_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317582,13 +318126,14 @@ extern "C" CItemGWarrLedger1* item_k_oh_front_key()
 // END FUNCTION
 
 // FUNCTION: 0x104096e0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10683104[];
 
 // TARGET: item_k_fu_office_key
-extern "C" CItemGWarrLedger1* item_k_fu_office_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_fu_office_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317603,13 +318148,14 @@ extern "C" CItemGWarrLedger1* item_k_fu_office_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409750 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10683120[];
 
 // TARGET: item_k_fu_cell_key
-extern "C" CItemGWarrLedger1* item_k_fu_cell_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_fu_cell_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317624,13 +318170,14 @@ extern "C" CItemGWarrLedger1* item_k_fu_cell_key()
 // END FUNCTION
 
 // FUNCTION: 0x104097c0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10683138[];
 
 // TARGET: item_k_chinese_theatre_key
-extern "C" CItemGWarrLedger1* item_k_chinese_theatre_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_chinese_theatre_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317645,13 +318192,14 @@ extern "C" CItemGWarrLedger1* item_k_chinese_theatre_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409830 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10683158[];
 
 // TARGET: item_k_hitman_lu_key
-extern "C" CItemGWarrLedger1* item_k_hitman_lu_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_hitman_lu_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317666,13 +318214,14 @@ extern "C" CItemGWarrLedger1* item_k_hitman_lu_key()
 // END FUNCTION
 
 // FUNCTION: 0x104098a0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10683174[];
 
 // TARGET: item_k_hitman_ji_key
-extern "C" CItemGWarrLedger1* item_k_hitman_ji_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_hitman_ji_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317687,13 +318236,14 @@ extern "C" CItemGWarrLedger1* item_k_hitman_ji_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409910 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_10683190[];
 
 // TARGET: item_k_hannahs_safe_key
-extern "C" CItemGWarrLedger1* item_k_hannahs_safe_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_hannahs_safe_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317708,13 +318258,14 @@ extern "C" CItemGWarrLedger1* item_k_hannahs_safe_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409980 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_106831ac[];
 
 // TARGET: item_k_skyline_haven_key
-extern "C" CItemGWarrLedger1* item_k_skyline_haven_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_skyline_haven_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317729,13 +318280,14 @@ extern "C" CItemGWarrLedger1* item_k_skyline_haven_key()
 // END FUNCTION
 
 // FUNCTION: 0x104099f0 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_106831cc[];
 
 // TARGET: item_k_museum_office_key
-extern "C" CItemGWarrLedger1* item_k_museum_office_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_museum_office_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317750,13 +318302,14 @@ extern "C" CItemGWarrLedger1* item_k_museum_office_key()
 // END FUNCTION
 
 // FUNCTION: 0x10409a60 size=0x49
+#include "platform.h"
 #include "CItemGWarrLedger1.h"
 extern void* sub_1000db89(unsigned int);
 extern void* vt_105140dc[];
 extern char g_106831ec[];
 
 // TARGET: item_k_ash_cell_key
-extern "C" CItemGWarrLedger1* item_k_ash_cell_key()
+DLL_EXPORT CItemGWarrLedger1* item_k_ash_cell_key()
 {
 	CItemGWarrLedger1* p = (CItemGWarrLedger1*)sub_1000db89(0x954);
 	if (p) {
@@ -317851,12 +318404,13 @@ void CUtlMemory192::sub_1040b120(int num)
 // END FUNCTION
 
 // FUNCTION: 0x1040b1b0 size=0x43
+#include "platform.h"
 #include "CWeaponIWritten.h"
 void *sub_100aa720(int size);
 extern char g_10683394[];
 
 // TARGET: item_i_written
-extern "C" CBaseEntity *item_i_written()
+DLL_EXPORT CBaseEntity *item_i_written()
 {
 	void *mem = sub_100aa720(0x914);
 	CWeaponIWritten *p;
@@ -318435,9 +318989,10 @@ float CUnknown1040cce0::sub_1040cce0(void *pWeapon)
 // END FUNCTION
 
 // FUNCTION: 0x1040cdb0 size=0x56
+#include "platform.h"
 #include "CPlayerPickupController.h"
 // TARGET: _player_pickup
-extern "C" CBaseEntity *player_pickup()
+DLL_EXPORT CBaseEntity *player_pickup()
 {
 	CPlayerPickupController *p = new CPlayerPickupController;
 	p->vfunc106("player_pickup");
@@ -318608,6 +319163,7 @@ int sub_1040d690()
 // END FUNCTION
 
 // FUNCTION: 0x1040d790 size=0x43
+#include "platform.h"
 #include "CWeaponPhysCannon.h"
 
 void *sub_100aa720(int size);
@@ -318628,7 +319184,7 @@ struct CWepCtor
 };
 
 // TARGET: weapon_physcannon
-extern "C" CWeaponPhysCannon *weapon_physcannon()
+DLL_EXPORT CWeaponPhysCannon *weapon_physcannon()
 {
 	void *mem = sub_100aa720(0xae8);
 	CWeaponPhysCannon *p;
@@ -326633,12 +327189,13 @@ int sub_10429460()
 // END FUNCTION
 
 // FUNCTION: 0x10429650 size=0x43
+#include "platform.h"
 #include "CBaseGrenade.h"
 void *sub_100aa720(int size);
 extern char g_106ad2c8[];
 
 // TARGET: grenade
-extern "C" CBaseEntity *grenade()
+DLL_EXPORT CBaseEntity *grenade()
 {
 	void *mem = sub_100aa720(0x19c8);
 	CBaseGrenade *p;
@@ -327114,12 +327671,13 @@ int CUnknown1042ba20::sub_1042ba20()
 // END FUNCTION
 
 // FUNCTION: 0x1042bae0 size=0x43
+#include "platform.h"
 #include "CBaseViewModel.h"
 void *sub_100aa720(int size);
 extern char g_10585acc[];
 
 // TARGET: viewmodel
-extern "C" CBaseEntity *viewmodel()
+DLL_EXPORT CBaseEntity *viewmodel()
 {
 	void *mem = sub_100aa720(0x74c);
 	CBaseViewModel *p;
@@ -327893,6 +328451,7 @@ int sub_1042df50()
 // END FUNCTION
 
 // FUNCTION: 0x1042dfc0 size=0x55
+#include "platform.h"
 #include "CConstraintAnchor.h"
 
 void *sub_100aa720(unsigned int size);
@@ -327908,7 +328467,7 @@ struct GP {
 };
 
 // TARGET: env_sprite
-extern "C" GP *env_sprite()
+DLL_EXPORT GP *env_sprite()
 {
 	GP *p = (GP *)sub_100aa720(0x494);
 	if (p) {
@@ -327924,6 +328483,7 @@ extern "C" GP *env_sprite()
 // END FUNCTION
 
 // FUNCTION: 0x1042e070 size=0x55
+#include "platform.h"
 #include "CConstraintAnchor.h"
 
 void *sub_100aa720(unsigned int size);
@@ -327939,7 +328499,7 @@ struct GP {
 };
 
 // TARGET: env_glow
-extern "C" GP *env_glow()
+DLL_EXPORT GP *env_glow()
 {
 	GP *p = (GP *)sub_100aa720(0x494);
 	if (p) {

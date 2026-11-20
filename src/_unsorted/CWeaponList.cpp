@@ -37,7 +37,8 @@ void CWeaponList::vfunc5()
 #define PCD_INITIALIZERS
 #include "CWeaponList.h"
 
-CWeaponList g_weaponListX;
+// a local object in a function nothing calls: a global one would join the game systems at load
+void pcd_emit_10250340() { CWeaponList list; }
 
 // TARGET: ??_GCWeaponList@@UAEPAXI@Z
 // END FUNCTION
