@@ -211,3 +211,13 @@ void * CUnknown100f2f90::sub_10049f20(int a0, int a1, int a2)
     return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10049f40 size=0x43
+#include "Vector.h"
+Vector Vector::sub_10049f40(const Vector &v) const
+{
+	Vector res;
+	VectorAdd(*this, v, res);
+	return res;
+}
+// END FUNCTION
