@@ -793,3 +793,12 @@ void CUtlMemory12::sub_100d3e30(int num)
 		m_pMemory = Plat_Alloc(m_nAllocationCount * 12);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100e27a0 size=0x99
+#include "CUtlLinkedList6.h"
+
+void CUtlLinkedList6::sub_100e27a0(unsigned short i)
+{
+	Unlink(i);
+}
+// END FUNCTION
