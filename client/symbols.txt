@@ -107,6 +107,7 @@
 0x1013c790 func   ?sub_1013c790@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1013c790
 0x1013c970 func   ?sub_1013c970@CUnknown1006bea0@@QAEXPAXH@Z CUnknown1006bea0::sub_1013c970
 0x1013c9f0 func   ?sub_1013c9f0@CUnknown1006bea0@@QAEXXZ CUnknown1006bea0::sub_1013c9f0
+0x1013d330 func   ?sub_1013d330@CUnknown1024b370@@QAEXXZ CUnknown1024b370::sub_1013d330
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit
