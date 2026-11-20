@@ -16537,6 +16537,7 @@
 0x100154d3 func   ?sub_10209ac0@CAI_BaseNPC@@QAEXPAVCBaseEntity@@@Z CAI_BaseNPC::sub_10209ac0
 0x100154d8 func   ?sub_1036ec40@@YADXZ sub_1036ec40
 0x100154dd func   ?vfunc175@CPlatTrigger@@QAEXPAVCBaseEntity@@@Z CPlatTrigger::vfunc175
+0x100154dd func   ?vfunc175@CPlatTrigger@@UAEXPAVCBaseEntity@@@Z CPlatTrigger::vfunc175
 0x100154e2 func   ?sub_100b03b0@@YAXXZ sub_100b03b0
 0x100154e7 func   ?sub_10075e70@CUnknown10075e70@@QAEMXZ CUnknown10075e70::sub_10075e70
 0x100154ec func   ?sub_1010ff40@CBreakableSurface@@QAEXXZ CBreakableSurface::sub_1010ff40
