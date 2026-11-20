@@ -17,7 +17,8 @@ public:
 #ifdef PCD_INITIALIZERS	// the initializer units: the real destructor the pool global's destroy runs
 	~CStringPool();	// function 0x101bf640 (stub 0x1000a4b6)
 #endif
-	char m_pad0000[0x10];	// CUtlRBTree<...> of the pooled strings; real members not recovered yet
+	char m_pad0000[0x18];	// CUtlRBTree<const char *, unsigned short> m_Strings: less function, CUtlMemory (pointer,
+						// count, grow), root, count, first free, total; 0x18 bytes, as the game's two pools
 };
 
 #ifdef PCD_INITIALIZERS	// the initializer units: Source's gamestringpool.cpp bases; VC places the base with the
