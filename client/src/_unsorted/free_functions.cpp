@@ -4295,6 +4295,34 @@ void CUnknown101bc140::sub_10133980(float flTarget, float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134200 size=0x7e
+#include "CUnknown101bc750.h"
+struct Mem4;
+void __fastcall sub_10135430(Mem4 *, int, int);
+void CUnknown101bc750::sub_10134200(int value)
+{
+    PQHeap101bc750 *h = &m_heap;
+    int idx = h->m_Size;
+    if (idx + 1 > h->m_allocationCount)
+        sub_10135430((Mem4 *)h, idx - h->m_allocationCount + 1, idx - h->m_allocationCount + 1);
+    h->m_Size++;
+    h->m_pElements = (UtlVec8Elem *)h->m_pMemory;
+    h->sub_101353f0(idx, 1);
+    ((int *)h->m_pMemory)[idx] = value;
+    while (idx != 0) {
+        int parent = (idx + 1) / 2 - 1;
+        int *mem = (int *)h->m_pMemory;
+        if (h->m_pLessFunc(&mem[idx], &mem[parent]))
+            break;
+        mem = (int *)h->m_pMemory;
+        int t = mem[parent];
+        mem[parent] = mem[idx];
+        ((int *)h->m_pMemory)[idx] = t;
+        idx = parent;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135380 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
