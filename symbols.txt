@@ -15237,6 +15237,7 @@
 0x10013b33 func   ?sub_10028bb0@CPhysMotor@@QAEXXZ CPhysMotor::sub_10028bb0
 0x10013b38 func   ?sub_1038ace0@@YAHXZ sub_1038ace0
 0x10013b3d func   ?vfunc142@CRopeKeyframe@@QAEHH@Z CRopeKeyframe::vfunc142
+0x10013b3d func   ?vfunc142@CRopeKeyframe@@UAEHPAUCTakeDamageInfo@@@Z CRopeKeyframe::vfunc142
 0x10013b42 func   ?sub_1011e560@CGameMovement@@QAEXXZ CGameMovement::sub_1011e560
 0x10013b47 func   ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z CBaseEntity::vfunc118
 0x10013b4c func   ?sub_1042b6d0@CBaseEntity@@QAEXH@Z CBaseEntity::sub_1042b6d0
