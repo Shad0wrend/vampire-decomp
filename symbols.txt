@@ -5755,6 +5755,7 @@
 0x100080ee func   ?sub_10130d10@CLogicAuto@@QAEXXZ CLogicAuto::sub_10130d10
 0x100080ee func   ?vfunc103@CLogicAuto@@UAEXXZ CLogicAuto::vfunc103
 0x100080f3 func   ?vfunc174@CTriggerInventory@@QAEXPAVCBaseEntity@@@Z CTriggerInventory::vfunc174
+0x100080f3 func   ?vfunc174@CTriggerInventory@@UAEXPAVCBaseEntity@@@Z CTriggerInventory::vfunc174
 0x100080f8 func   ?sub_10341c30@CBaseCombatCharacter@@QAEPAVCBaseEntity@@P6A_NPAV2@0@ZMM_NMH@Z CBaseCombatCharacter::sub_10341c30
 0x100080fd func   ?sub_104062b0@@YAHXZ sub_104062b0
 0x10008102 func   ?vfunc3@CPhysicsHook@@QAEXXZ CPhysicsHook::vfunc3
