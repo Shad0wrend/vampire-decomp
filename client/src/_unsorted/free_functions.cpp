@@ -561,3 +561,33 @@ float sub_10098720(float x, float lo, float hi)
 	return (x - lo) / (hi - lo);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100b4d30 size=0x8f
+#include "CUtlVector40.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+void CUtlVector40::sub_100b4d30(int num)
+{
+	if (num + m_size > m_allocationCount && m_growSize != -1) {
+		int newSize = m_allocationCount + (num + m_size - m_allocationCount);
+		while (m_allocationCount < newSize) {
+			if (m_allocationCount != 0) {
+				if (m_growSize != 0)
+					m_allocationCount += m_growSize;
+				else
+					m_allocationCount += m_allocationCount;
+			} else {
+				m_allocationCount = 1;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (char *)Plat_Realloc(m_pMemory, m_allocationCount * 40);
+		else
+			m_pMemory = (char *)Plat_Alloc(m_allocationCount * 40);
+	}
+	m_size += num;
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
