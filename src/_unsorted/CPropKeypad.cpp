@@ -58,7 +58,7 @@ void sub_100027cf();
 void CPropKeypad::vfunc104()
 {
 	m_nKeySound828 = enginesound->vfunc0("Environmental/Electronic/pad_keystroke_1.wav", 0);
-	((CBreakableProp *)this)->vfunc104();
+	((CBreakableProp *)this)->CBreakableProp::vfunc104();
 	sub_1021da40();
 	((CBreakableProp *)this)->sub_10007fe5((void *)sub_100027cf, 0, 0);
 	m_flNextThink17c = gpGlobals->curtime + 1.0;

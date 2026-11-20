@@ -62,7 +62,7 @@ void CPropDestructable::vfunc265()
 void CPropDestructable::vfunc103()
 {
 	*(const char **)((char *)this + 0x794) = *(const char **)((char *)this + 0x388);
-	((CBreakableProp *)this)->vfunc103();
+	((CBreakableProp *)this)->CBreakableProp::vfunc103();
 	const char *pszModel = *(const char **)((char *)this + 0x794);
 	if (!pszModel)
 		pszModel = g_106b8540;

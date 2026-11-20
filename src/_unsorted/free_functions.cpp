@@ -118412,8 +118412,8 @@ void sub_1000a8c6();
 void CBreakableProp::sub_10002d1f(float flDelay)
 {
     float flNext = flDelay + gpGlobals->curtime;
-    m_nRenderAlpha = 0xff;
-    m_nRenderFX = 0;
+    m_bAlpha1a3 = 0xff;
+    m_n16c = 0;
     m_flNextThink = flNext;
     m_flFadeTime770 = g_109f385c(1.0f, 2.0f);
     sub_1001457e(0x40000);
@@ -118437,14 +118437,14 @@ void sub_10014614(CBreakableProp *pEntity);
 // TARGET: CBreakableProp::sub_1018fa70
 void CBreakableProp::sub_1018fa70()
 {
-	if (m_nCollisionGroup == 0)
+	if (m_field368 == 0)
 		sub_100aaa40(1);
-	float flElapsed = g_1070b228->m_curtime - m_flFadeStart178;
-	m_nRenderFX = 2;
+	float flElapsed = g_1070b228->m_curtime - *(float *)((char *)this + 0x178);
+	m_n16c = 2;
 	float flRate = 255.0 / m_flFadeTime770;
-	m_nRenderAlpha = (unsigned char)sub_102283a0(m_nRenderAlpha, 0, flRate, flElapsed);
-	*(volatile char *)&m_bDirty1b1 = 1;
-	if (*(volatile unsigned char *)&m_nRenderAlpha <= 0)
+	m_bAlpha1a3 = (unsigned char)sub_102283a0(m_bAlpha1a3, 0, flRate, flElapsed);
+	*(volatile char *)&m_bChanged1b1 = 1;
+	if (*(volatile unsigned char *)&m_bAlpha1a3 <= 0)
 	{
 		sub_10014614(this);
 		return;

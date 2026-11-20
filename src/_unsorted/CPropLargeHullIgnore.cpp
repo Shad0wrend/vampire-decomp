@@ -11,7 +11,7 @@
 // TARGET: CPropLargeHullIgnore::vfunc103
 void CPropLargeHullIgnore::vfunc103()
 {
-    ((CBaseProp *)this)->vfunc103();
+    CBaseProp::vfunc103();
     ((CUnknown101466e0 *)((char *)this + 0x1b0))->sub_101466e0(1);
     ((CBaseEntity *)this)->sub_100a9470(0);
     ((CBaseEntity *)this)->sub_100a9290(1);
@@ -26,7 +26,7 @@ void CPropLargeHullIgnore::vfunc103()
 void sub_100aa7b0(void *p);
 
 // TARGET: CPropLargeHullIgnore::vfunc5
-CPropLargeHullIgnore *CPropLargeHullIgnore::vfunc5(unsigned int flags)
+CBaseEntity *CPropLargeHullIgnore::vfunc5(unsigned int flags)
 {
 	sub_10004c3c();
 	if (flags & 1)

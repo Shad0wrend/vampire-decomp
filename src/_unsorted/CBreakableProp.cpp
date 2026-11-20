@@ -28,7 +28,7 @@ struct CBaseEntityDtor
 
 void sub_100aa7b0(void *p);
 
-CBreakableProp *CBreakableProp::vfunc5(unsigned int flags)
+CBaseEntity *CBreakableProp::vfunc5(unsigned int flags)
 {
 	((CUnknownMember10015708 *)((char *)this + 0x748))->sub_10015708();
 	((CUnknownMember10015708 *)((char *)this + 0x730))->sub_10015708();
@@ -141,10 +141,10 @@ int CBreakableProp::vfunc142(CTakeDamageInfo *pInfo)
 	if ((pVDmg ? (pVDmg[4] | nBits) : nBits) & 0x20000)
 		info.m_flDamage *= 0.1f;
 	if (m_createFrame == g_1070ba38) {
-		int nOld = m_nTakeDamage1fc;
-		m_nTakeDamage1fc = 1;
+		int nOld = m_nTakeDamage;
+		m_nTakeDamage = 1;
 		int r = ((CBaseEntity *)this)->CBaseEntity::vfunc142(&info);
-		m_nTakeDamage1fc = nOld;
+		m_nTakeDamage = nOld;
 		return r;
 	}
 	int r = ((CBaseEntity *)this)->CBaseEntity::vfunc142(&info);
@@ -248,9 +248,9 @@ void CBreakableProp::vfunc266(CBaseEntity *pAttacker)
 {
 	m_hAttacker768 = pAttacker;
 	m_field200 = 2;
-	m_nTakeDamage1fc = 0;
+	m_nTakeDamage = 0;
 	((COutputEvent *)m_OnBreak730)->sub_100cd660(pAttacker, this, 0);
-	CBreakPhysView *pPhysics = (CBreakPhysView *)m_pPhysObj36c;
+	CBreakPhysView *pPhysics = (CBreakPhysView *)m_obj36c;
 	Vector vecVelocity;
 	Vector vecAngVelocity;
 	if (pPhysics) {
@@ -258,9 +258,9 @@ void CBreakableProp::vfunc266(CBaseEntity *pAttacker)
 	} else {
 		if (((CBreakFlags *)&m_flags268)->Test())
 			sub_100b1d10();
-		vecVelocity.x = m_vecVelocity3bc[0];
-		vecVelocity.y = m_vecVelocity3bc[1];
-		vecVelocity.z = m_vecVelocity3bc[2];
+		vecVelocity.x = m_vecVelocity3bc.x;
+		vecVelocity.y = m_vecVelocity3bc.y;
+		vecVelocity.z = m_vecVelocity3bc.z;
 		vecAngVelocity.x = m_angVel3c8[2];
 		vecAngVelocity.y = m_angVel3c8[0];
 		vecAngVelocity.z = m_angVel3c8[1];
@@ -284,14 +284,11 @@ void CBreakableProp::vfunc266(CBaseEntity *pAttacker)
 // END FUNCTION
 
 // FUNCTION: 0x1018fe50 size=0x11
-struct CBreakablePropFields1018fe50 {
-    char pad0[0x1fc];
-    int field1fc;
-    bool sub_1018fe50(int a);
-};
-bool CBreakablePropFields1018fe50::sub_1018fe50(int a)
+#include "CBreakableProp.h"
+
+bool CBreakableProp::vfunc74(int a)
 {
-    return field1fc == 2;
+    return m_nTakeDamage == 2;
 }
 // END FUNCTION
 
@@ -323,10 +320,10 @@ void __cdecl sub_101434b0(int entIndex, int lineOffset, const char *text, int du
 int CBreakableProp::vfunc124()
 {
 	int lineOffset = sub_10096100();
-	if (m_fTextOverlayFlags & 1) {
+	if (m_bDebugOverlays224 & 1) {
 		char text[32];
 		g_109f388c(text, 32, "Health: %d", m_iHealth);
-		int edict = m_pEdict;
+		int edict = m_pEdict2e0;
 		sub_101434b0(engine->vfunc35(edict), lineOffset, text, 0, 255, 255, 255, 255);
 		lineOffset++;
 	}

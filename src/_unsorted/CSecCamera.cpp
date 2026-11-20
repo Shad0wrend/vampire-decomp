@@ -65,7 +65,7 @@ void CSecCamera::vfunc104()
 
 void CSecCamera::vfunc103()
 {
-    ((CBreakableProp *)this)->vfunc103();
+    ((CBreakableProp *)this)->CBreakableProp::vfunc103();
     m_vecMovedir[0] = 0.0f;
     m_vecMovedir[1] = 1.0f;
     m_vecMovedir[2] = 0.0f;
@@ -91,7 +91,7 @@ void sub_10004c19();
 
 void CSecCamera::vfunc113()
 {
-    ((CBreakableProp *)this)->vfunc113();
+    ((CBreakableProp *)this)->CBreakableProp::vfunc113();
     m_flNextThink = gpGlobals->curtime + 0.1;
     m_flNextStateTime7a0 = 0;
     ((CBreakableProp *)this)->sub_10007fe5((void *)sub_10004c19, 0, 0);

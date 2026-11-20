@@ -52,7 +52,7 @@ void sub_1000f506();
 void CPropButton::vfunc104()
 {
 	vfunc71();
-	((CBaseProp *)this)->vfunc104();
+	((CBaseProp *)this)->CBaseProp::vfunc104();
 	*(void **)((char *)this + 0x1f0) = (void *)sub_1000f506;
 }
 // END FUNCTION
@@ -105,7 +105,7 @@ void CPropButton::vfunc71()
 // TARGET: CPropButton::vfunc103
 void CPropButton::vfunc103()
 {
-	((CBaseProp *)this)->vfunc103();
+	((CBaseProp *)this)->CBaseProp::vfunc103();
 	int n = m_nPositions;
 	n = (n > 7) ? 7 : ((n < 0) ? 0 : n);
 	m_nPositions = n;

@@ -216,7 +216,7 @@ int __fastcall sub_1022c180(char *self, int, int a)
 void CPropRadio::vfunc103()
 {
 	ScopeTrace trace("CPropRadio::Spawn", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
-	((CBaseProp *)this)->vfunc103();
+	((CBaseProp *)this)->CBaseProp::vfunc103();
 	m_nEffectFlags = 0xa0;
 	void *pStudioHdr = ((CBaseAnimating *)this)->sub_100952d0(-1);
 	if (pStudioHdr) {

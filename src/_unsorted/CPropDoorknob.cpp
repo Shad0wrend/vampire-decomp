@@ -2,17 +2,15 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1018fb50 size=0x25
-#include "CPropDoorknob.h"
-#include "CBaseProp.h"
+#include "CBreakableProp.h"
 
 void sub_10191ac0(const char *pszModel);
 
-// TARGET: CPropDoorknob::vfunc104
-void CPropDoorknob::vfunc104()
+void CBreakableProp::vfunc104()
 {
 	int unused;
 	sub_10191ac0(*vfunc9(&unused));
-	((CBaseProp *)this)->vfunc104();
+	CBaseProp::vfunc104();
 }
 // END FUNCTION
 

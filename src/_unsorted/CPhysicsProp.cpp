@@ -68,7 +68,7 @@ datamap_t * CPhysicsProp::vfunc82()
 // TARGET: CPhysicsProp::vfunc103
 void CPhysicsProp::vfunc103()
 {
-    ((CBreakableProp *)this)->vfunc103();
+    ((CBreakableProp *)this)->CBreakableProp::vfunc103();
     if (*((unsigned char *)this + 0x204) & 4) {
         ((CBaseEntity *)this)->sub_100aaa40(1);
     }

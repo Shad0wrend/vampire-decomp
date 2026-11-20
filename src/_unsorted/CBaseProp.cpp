@@ -87,7 +87,7 @@ void CBaseProp::vfunc104()
 void sub_100aa7b0(void *p);
 
 // TARGET: CBaseProp::vfunc5
-CBaseProp *CBaseProp::vfunc5(unsigned int flags)
+CBaseEntity *CBaseProp::vfunc5(unsigned int flags)
 {
 	sub_10004c3c();
 	if (flags & 1)
