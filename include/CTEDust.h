@@ -18,6 +18,7 @@ public:
 	Vector m_vec0020;
 public:
     virtual ServerClass * vfunc0();
+	virtual void vfunc4(CRecipientFilter &filter, float delay);	// slot 4 "Create": the game's word is the plain vfunc4 below (another signature)
     void vfunc4(int a, int b);	// as in CTEMetalSparks (transplant)
 public:
     virtual int vfunc1();

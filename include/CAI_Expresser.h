@@ -5,6 +5,8 @@
 #include "CAI_Component.h"
 #include "CUtlMemory16.h"
 
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);	// tier0
+
 void sub_1000186b();	// less func of the tree (a jump stub)
 void sub_1000feb1();	// callback at +0x2c (a jump stub)
 
@@ -12,6 +14,18 @@ struct CAI_ExpresserMem	// CUtlMemory16 whose constructor is the out of line sub
 {
 	CUtlMemory16 m_mem;
 	CAI_ExpresserMem(int growSize, int initSize) { m_mem.sub_10312f70(growSize, initSize); }
+	~CAI_ExpresserMem()	// CUtlMemory's: Purge unless the memory is external (grow size -1)
+	{
+		if (m_mem.m_growSize != -1)
+		{
+			if (m_mem.m_pMemory)
+			{
+				Plat_Free(m_mem.m_pMemory);
+				m_mem.m_pMemory = 0;
+			}
+			m_mem.m_allocationCount = 0;
+		}
+	}
 };
 
 struct CAI_ExpresserTree	// an inlined CUtlRBTree16 at +0x14, followed by the callback pointer at +0x2c
@@ -53,6 +67,7 @@ struct CAI_ExpresserSub	// 0x1c byte member at +0x30
 	CAI_ExpresserSub *sub_10311490();	// constructor body (out of line)
 	void sub_10311500();	// destructor body (out of line)
 	CAI_ExpresserSub() { sub_10311490(); }
+	~CAI_ExpresserSub() { sub_10311500(); }
 };
 
 struct CAI_ExpresserSink	// the object at +0x10, only its slots 0 / 1 (boolean answers) and 3 are known
@@ -90,7 +105,8 @@ public:
 	void SetSink(CAI_ExpresserSink *pSink) { m_n10 = pSink; }
 	void SetHost(void *pHost) { m_pOuter = pHost; }
 
-	virtual ~CAI_Expresser();	// slot 0
+	// slot 0: the implicit virtual destructor (CAI_Component's is virtual): m_Sub's, then m_Tree's memory;
+	// inline in the game's scalar deleting destructor 0x10312e80
 	CAI_Expresser *vfunc0(unsigned char flags);	// 0x10312e80: slot 0's scalar deleting form (plain member)
 	void sub_103121a0(float a, float b);	// (0x103121a0)
 	bool sub_10311ee0(int a, int b);	// asks the outer NPC (slot 540, with a) for a delay and, when it is positive, hands it on with b to sub_103121a0

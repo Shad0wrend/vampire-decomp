@@ -28,5 +28,6 @@ public:
 	int m_nField3c;	// 0x3c
 
 	void sub_1000e90d();	// destructor body
+	virtual void vfunc4(CRecipientFilter &filter, float delay);	// slot 4 "Create": the game's word is the plain vfunc4 below (another signature)
 	void vfunc4(void *pFilter, int delay);	// slot 4 "Create"-like worker (stub 0x100051a0), called directly
 };
