@@ -31,3 +31,20 @@ void ConVar::vfunc11(const char *tempVal)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x100df850 size=0x45
+// TARGET: ConVar::vfunc10
+#include "ConVar.h"
+bool ConVar::vfunc10(float *value)
+{
+	if (m_bHasMin && *value < m_fMinVal) {
+		*value = m_fMinVal;
+		return true;
+	}
+	if (m_bHasMax && *value > m_fMaxVal) {
+		*value = m_fMaxVal;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
