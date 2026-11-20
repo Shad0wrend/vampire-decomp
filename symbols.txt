@@ -8613,6 +8613,7 @@
 0x1000b898 func   ?sub_10340bd0@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z CBaseCombatCharacter::sub_10340bd0
 0x1000b89d func   ?vfunc5@CPhysicsSpring@@UAEPAV1@I@Z CPhysicsSpring::vfunc5
 0x1000b8a2 func   ?vfunc144@CNPC_VVampire@@QAEXH@Z CNPC_VVampire::vfunc144
+0x1000b8a2 func   ?vfunc144@CNPC_VVampire@@UAEXPAX@Z CNPC_VVampire::vfunc144
 0x1000b8a7 func   ?sub_10099140@CBaseAnimatingOverlay@@QAEHHMH@Z CBaseAnimatingOverlay::sub_10099140
 0x1000b8b1 func   ?vfunc104@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc104
 0x1000b8b6 func   ?sub_1030c800@@YGIPBD@Z sub_1030c800
