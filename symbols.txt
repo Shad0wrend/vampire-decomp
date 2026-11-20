@@ -2646,6 +2646,7 @@
 0x10004430 func   _item_p_research_mg_melee item_p_research_mg_melee
 0x10004435 func   ?sub_10335780@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10335780
 0x1000443a func   ?vfunc135@CBaseToggle@@QAEMM@Z CBaseToggle::vfunc135
+0x1000443a func   ?vfunc135@CBaseToggle@@UAEMM@Z CBaseToggle::vfunc135
 0x1000443f func   ?sub_1019b9d0@@YAPAHPAH@Z sub_1019b9d0
 0x10004444 func   ?sub_10212a30@CGameSign@@QAEXPAVCBasePlayer@@@Z CGameSign::sub_10212a30
 0x10004449 func   ?sub_101878d0@@YAPAXPAUSEdict@@@Z sub_101878d0
