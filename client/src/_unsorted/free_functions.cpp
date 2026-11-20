@@ -2261,6 +2261,27 @@ S6 *CUnknown101db210::sub_10146a90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147a40 size=0x4e
+#include "CUnknown101dcc80.h"
+struct CItemVec {
+	int m_nGrow;
+	int m_nAlloc;
+	int m_nCount;
+	void **m_pData;
+	void sub_101474a0(const CItemVec *pOther);
+};
+struct CRecListUnit : CUnknown101dcc80 {
+	CItemVec m_Items;	// 0x0c
+	void sub_10147a40(const CRecListUnit *pOther);
+};
+void CRecListUnit::sub_10147a40(const CRecListUnit *pOther)
+{
+	m_Items.sub_101474a0(&pOther->m_Items);
+	for (int i = 0; i < pOther->m_nCount; i++)
+		*sub_10147a90() = *pOther->m_ppRecords[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147a90 size=0xe6
 #include "CUnknown101dcc80.h"
 
