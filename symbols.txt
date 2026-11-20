@@ -11403,6 +11403,7 @@
 0x1000f169 func   ?sub_100f6b40@CGlobalEntityList@@QAEPAV1@XZ CGlobalEntityList::sub_100f6b40
 0x1000f16e func   ?sub_101c2910@CAnimParams@@QAEXPAX0PBM1MHHH@Z CAnimParams::sub_101c2910
 0x1000f173 func   ?vfunc103@CInfoIntermission@@UAEXXZ CInfoIntermission::vfunc103
+0x1000f178 func   ??0CBasePlayer@@QAE@XZ CBasePlayer::CBasePlayer
 0x1000f178 func   ??0CHL2_PlayerBase@@QAE@XZ CHL2_PlayerBase::CHL2_PlayerBase
 0x1000f17d func   _item_g_vv_photo item_g_vv_photo
 0x1000f182 func   _info_player_deathmatch info_player_deathmatch
