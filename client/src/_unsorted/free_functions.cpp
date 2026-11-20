@@ -1087,3 +1087,22 @@ void sub_1010ba80(const Vector &a, const Vector &v, const Vector &c, Vector &out
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010bc90 size=0x85
+#include "Vector.h"
+float sub_1010bae0(const Vector &a, const Vector &b, const Vector &c, Vector &out);
+void sub_1010bc90(const Vector &a, const Vector &b, const Vector &c, Vector &out, float *pT)
+{
+	Vector d;
+	float t = sub_1010bae0(a, b, c, d);
+	if (t > 1.0f)
+		t = 1.0f;
+	else if (t < 0.0f)
+		t = 0.0f;
+	if (pT)
+		*pT = t;
+	out.x = d.x * t + b.x;
+	out.y = d.y * t + b.y;
+	out.z = d.z * t + b.z;
+}
+// END FUNCTION
