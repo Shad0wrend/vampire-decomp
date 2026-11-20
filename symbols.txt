@@ -5429,6 +5429,7 @@
 0x10007b3a func   ?sub_104110d0@@YG_NPAUHolder@@@Z sub_104110d0
 0x10007b3f func   ?vfunc103@CTriggerHurt@@UAEXXZ CTriggerHurt::vfunc103
 0x10007b44 func   ?vfunc190@CBaseEntity@@QAEMXZ CBaseEntity::vfunc190
+0x10007b44 func   ?vfunc190@CBaseEntity@@UAEMXZ CBaseEntity::vfunc190
 0x10007b49 func   ?vfunc226@CPhysicsCannister@@QAEHXZ CPhysicsCannister::vfunc226
 0x10007b4e func   ?sub_102ee200@@YAHXZ sub_102ee200
 0x10007b53 func   ?sub_102f44d0@CNodePosFilter_102f44d0@@QAEMPBUCPosArg_102f44d0@@@Z CNodePosFilter_102f44d0::sub_102f44d0
