@@ -14411,6 +14411,7 @@
 0x10012c97 func   ?vfunc444@CNPC_VSheriffMan@@QAEXPAH@Z CNPC_VSheriffMan::vfunc444
 0x10012c9c func   ?sub_100dd780@CCollisionProperty@@QAEXPAVVector@@0@Z CCollisionProperty::sub_100dd780
 0x10012ca1 func   ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z CBaseEntity::vfunc234
+0x10012ca1 func   ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z CBaseEntity::vfunc234
 0x10012ca6 func   ?vfunc242@CPlayerResource@@QAEXXZ CPlayerResource::vfunc242
 0x10012cab func   ?sub_1013cec0@@YAMABUVector2D@@00PAM@Z sub_1013cec0
 0x10012cb0 func   ?vfunc128@CBaseButton@@UAE_NXZ CBaseButton::vfunc128
