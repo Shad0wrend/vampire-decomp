@@ -16652,6 +16652,7 @@
 0x100158bb func   ?sub_102ca630@CUnknown102ca630@@QAEXPAVCBaseEntity@@@Z CUnknown102ca630::sub_102ca630
 0x100158c0 func   ?vfunc80@CWeaponMelee_GargoyleFist@@UAEHXZ CWeaponMelee_GargoyleFist::vfunc80
 0x100158c5 func   ?sub_101c4b90@@YGXHHH@Z sub_101c4b90
+0x100158c5 func   ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z CBaseTrigger::vfunc141
 0x100158ca func   ?InsertBefore@?$CUtlVector@UUtlVec8Elem@@V?$CUtlMemory@UUtlVec8Elem@@@@@@QAEHH@Z CUtlVector<UtlVec8Elem,CUtlMemory<UtlVec8Elem> >::InsertBefore
 0x100158ca func   ?sub_102f90e0@UtlVec8@@QAEHH@Z UtlVec8::sub_102f90e0
 0x100158cf func   ?sub_102f65b0@@YAXXZ sub_102f65b0
