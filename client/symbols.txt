@@ -51,6 +51,7 @@
 0x10109010 func   ?sub_10109010@@YAXABVQAngle@@PAVVector@@@Z sub_10109010
 0x10109420 func   ?sub_10109420@@YAXPAM@Z sub_10109420
 0x1010a020 func   ?sub_1010a020@@YAXABVQuaternion@@0AAV1@@Z sub_1010a020
+0x1010a0f0 func   ?sub_1010a0f0@@YAXABVQuaternion@@0MAAV1@@Z sub_1010a0f0
 0x1010a2b0 func   ?sub_1010a2b0@@YAMPAM@Z sub_1010a2b0
 0x1010a570 func   ?sub_1010a570@@YAXABUQ@@PAM@Z sub_1010a570
 0x1010ba80 func   ?sub_1010ba80@@YAXABVVector@@00AAV1@@Z sub_1010ba80

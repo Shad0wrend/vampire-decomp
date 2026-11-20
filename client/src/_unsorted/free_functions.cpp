@@ -1059,6 +1059,23 @@ void sub_1010a020(const Quaternion &p, const Quaternion &q, Quaternion &qt)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a0f0 size=0x4a
+#include "Quaternion.h"
+float sub_1010a2b0(Quaternion &q);
+void sub_1010a0f0(const Quaternion &p, const Quaternion &q, float t, Quaternion &qt)
+{
+	float sclp, sclq;
+	int i;
+	sclp = 1.0f - t;
+	sclq = t;
+	for (i = 0; i < 4; i++)
+	{
+		qt[i] = sclp * p[i] + sclq * q[i];
+	}
+	sub_1010a2b0(qt);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a2b0 size=0x61
 #include <math.h>
 float sub_1010a2b0(float *q)
