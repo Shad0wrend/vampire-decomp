@@ -14363,6 +14363,7 @@
 0x10012a12 func   ?sub_101d3a10@CUnknown101d3a10@@QAEXXZ CUnknown101d3a10::sub_101d3a10
 0x10012a17 func   ?sub_10324c80@CBaseCombatCharacter@@QAEMH@Z CBaseCombatCharacter::sub_10324c80
 0x10012a1c func   ?vfunc142@CPropDestructable@@QAEHPBX@Z CPropDestructable::vfunc142
+0x10012a1c func   ?vfunc142@CPropDestructable@@UAEHPAUCTakeDamageInfo@@@Z CPropDestructable::vfunc142
 0x10012a21 func   ?vfunc1@CTraceFilterWorldOnly@@UAEHXZ CTraceFilterWorldOnly::vfunc1
 0x10012a26 func   ?vfunc80@CPhysBox@@UAEHXZ CPhysBox::vfunc80
 0x10012a2b func   ?sub_1007ee20@@YIXPAH@Z sub_1007ee20
