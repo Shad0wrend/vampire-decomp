@@ -890,3 +890,25 @@ CUnknown100353c0 *CUnknown100353c0::sub_100eb150(const CUnknown100353c0 *o)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100efee0 size=0x8d
+#include "CUtlLinkedList8.h"
+
+void CUtlLinkedList8::sub_100efee0(unsigned short elem)
+{
+	if (elem < m_NumAlloced && m_pMemory[elem].m_Previous != elem) {
+		CUtlLinkedList8Node *pList = m_pMemory;
+		CUtlLinkedList8Node *pElem = &pList[elem];
+		if (pElem->m_Previous != 0xffff)
+			pList[pElem->m_Previous].m_Next = pElem->m_Next;
+		else
+			m_Head = pElem->m_Next;
+		if (pElem->m_Next != 0xffff)
+			pList[pElem->m_Next].m_Previous = pElem->m_Previous;
+		else
+			m_Tail = pElem->m_Previous;
+		pElem->m_Previous = pElem->m_Next = elem;
+		--m_ElementCount;
+	}
+}
+// END FUNCTION
