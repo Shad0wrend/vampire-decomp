@@ -32,6 +32,7 @@
 0x10089660 func   ?sub_10089660@@YAXPADHHH@Z sub_10089660
 0x100896c0 func   ?sub_100896c0@@YAXPAUStudioHdr@@QAVVector@@QAVQuaternion@@@Z sub_100896c0
 0x1008a110 func   ?sub_1008a110@@YAXHHHHHHHM@Z sub_1008a110
+0x1008a8e0 func   ?sub_1008a8e0@@YAXPAUStudioHdr@@PBM111HPAUmatrix3x4_t@@PAUStudioBoneMask@@@Z sub_1008a8e0
 0x1008e230 func   ?sub_1008e230@CUnknown100c7f30@@QAEXPAUCUnknown100c7f30Hdr@@I@Z CUnknown100c7f30::sub_1008e230
 0x1008e370 func   ?sub_1008e370@CUnknown100c80d0@@QAEXPBIPBFPBX@Z CUnknown100c80d0::sub_1008e370
 0x1008e420 func   ?sub_1008e420@CUnknown100c81b0@@QAEXPBUCBitVecWords@@HPBUCBoneRecord@@PBUCStudioBoneCount@@@Z CUnknown100c81b0::sub_1008e420
