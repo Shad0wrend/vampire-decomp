@@ -7238,6 +7238,7 @@
 0x10009df4 func   ?sub_102f7970@CUnknown102f7970@@QAEXXZ CUnknown102f7970::sub_102f7970
 0x10009df9 func   ?vfunc266@CPropPadlock@@QAEXH@Z CPropPadlock::vfunc266
 0x10009dfe func   ?vfunc142@CPropSlashable@@QAEHPAUCPropSlashableDamageInfo@@@Z CPropSlashable::vfunc142
+0x10009dfe func   ?vfunc142@CPropSlashable@@UAEHPAUCTakeDamageInfo@@@Z CPropSlashable::vfunc142
 0x10009e03 func   ?sub_1002e210@@YA_NPAUSPhysSolid102e210@@PAVCBaseEntity@@H@Z sub_1002e210
 0x10009e08 func   ?sub_103f8530@@YAHXZ sub_103f8530
 0x10009e0d func   ?vfunc5@CNPC_VManBat@@QAEPAV1@I@Z CNPC_VManBat::vfunc5
