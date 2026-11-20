@@ -36,7 +36,7 @@ CAI_Navigator::CAI_Navigator(int pOuter) :
 // TARGET: CAI_Navigator::vfunc0
 CAI_Navigator *CAI_Navigator::vfunc0(unsigned int flags)
 {
-	sub_10011c98();
+	this->CAI_Navigator::~CAI_Navigator();
 	if (flags & 1)
 		operator delete(this);
 	return this;
