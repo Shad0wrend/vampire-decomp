@@ -5487,6 +5487,34 @@ void CVTraitEffectGroup_t::sub_101570b0(CTraitStatBlock *pBlock)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101570f0 size=0x3a
+#include "CUnknown101f6c50.h"
+
+struct CUnk101f75f0
+{
+    char m_pad0000[0xc];
+    int m_n0c;    // 0xc
+    int m_n10;    // 0x10
+    char *m_p14;    // 0x14: an array of 0x44 byte elements
+    void sub_101570f0(CTraitStatBlock *pOut);
+};
+
+// TARGET: CUnk101f75f0::sub_101570f0
+void CUnk101f75f0::sub_101570f0(CTraitStatBlock *pOut)
+{
+    if (m_n0c == 0) {
+        int i = 0;
+        *(int *)((char *)pOut + 0x40) = 0;
+        if (m_n10 > 0) {
+            do {
+                ((CUnknown101f6c50 *)(m_p14 + i * 0x44))->sub_10156980(pOut);
+                i++;
+            } while (i < m_n10);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157390 size=0xeb
 #include "CUnknown101f7960.h"
 
