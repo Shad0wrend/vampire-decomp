@@ -6363,6 +6363,7 @@
 0x10008ce2 func   ?sub_10079de0@SDumpOutput@@QAEXXZ SDumpOutput::sub_10079de0
 0x10008ce7 func   ?sub_10402a40@@YAHXZ sub_10402a40
 0x10008cec func   ?vfunc141@CRagdollProp@@UAEXHHPAX@Z CRagdollProp::vfunc141
+0x10008cec func   ?vfunc141@CRagdollProp@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z CRagdollProp::vfunc141
 0x10008cf1 func   ?vfunc273@CBaseTerminal@@QAEXHH@Z CBaseTerminal::vfunc273
 0x10008cf6 func   ?vfunc80@COccultDodge@@QAEHXZ COccultDodge::vfunc80
 0x10008cfb func   ?sub_101611e0@@YGDH@Z sub_101611e0
