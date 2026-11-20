@@ -3401,6 +3401,17 @@ void CUnknown102496d0::sub_1012c740(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e940 size=0x28
+#include "CUnknown101b3730.h"
+// TARGET: CUnknown101b3730::sub_1012e940
+void *CUnknown101b3730::sub_1012e940(int index)
+{
+    if (index >= 0 && index < m_nRecords)
+        return m_pRecords + 0x1c + index * 0xe8;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
