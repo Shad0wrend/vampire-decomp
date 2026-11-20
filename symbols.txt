@@ -3786,6 +3786,7 @@
 0x10005ace func   ?sub_102058e0@CUnknown102058e0@@QAEHH@Z CUnknown102058e0::sub_102058e0
 0x10005ad3 func   ?sub_102ed610@CAI_Navigator@@QAE_NPBVVector@@MMH@Z CAI_Navigator::sub_102ed610
 0x10005ad8 func   ?vfunc134@CLogicLineToEntity@@QAEXXZ CLogicLineToEntity::vfunc134
+0x10005ad8 func   ?vfunc134@CLogicLineToEntity@@UAEXXZ CLogicLineToEntity::vfunc134
 0x10005add func   ?sub_103e1680@@YAMXZ sub_103e1680
 0x10005ae2 func   ?sub_1006ef50@CUnknown1006eeb0@@QAEXPAVCBaseEntity@@H@Z CUnknown1006eeb0::sub_1006ef50
 0x10005ae7 func   ??0CWeaponMelee_TzimisceMelee@@QAE@XZ CWeaponMelee_TzimisceMelee::CWeaponMelee_TzimisceMelee
