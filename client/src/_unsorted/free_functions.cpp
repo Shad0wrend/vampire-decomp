@@ -926,3 +926,17 @@ float Vector::sub_10107500()
 	return radius;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10107550 size=0x41
+#include "Vector.h"
+#include <math.h>
+
+void __fastcall sub_10107550(Vector *v)
+{
+	float radius = (float)sqrt(v->x * v->x + v->y * v->y + v->z * v->z);
+	float iradius = 1.0f / (radius + 1.1920929e-7f);
+	v->x *= iradius;
+	v->y *= iradius;
+	v->z *= iradius;
+}
+// END FUNCTION

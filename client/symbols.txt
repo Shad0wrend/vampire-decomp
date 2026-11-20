@@ -44,6 +44,7 @@
 0x100efee0 func   ?sub_100efee0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100efee0
 0x10106c60 func   _CreateInterface CreateInterface
 0x10107500 func   ?sub_10107500@Vector@@QAEMXZ Vector::sub_10107500
+0x10107550 func   ?sub_10107550@@YIXPAVVector@@@Z sub_10107550
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit
