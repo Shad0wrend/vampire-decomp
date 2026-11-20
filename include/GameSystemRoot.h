@@ -1,12 +1,13 @@
-// GameSystemRoot.h: Source's game-system root as the initializer units see it (game_shared/igamesystem.h): IGameSystem's
-// eight slots and the virtual destructor in slot 8 (0x1024a1b0 ??1CBaseGameSystem, vtable 0x10516c94), CBaseGameSystem
-// with no fields, CAutoGameSystem with its out-of-line constructor (0x1042c260, links it into the list) and m_pNext.
+// GameSystemRoot.h: Source's game-system classes as the initializer units see them (game_shared/igamesystem.h):
+// CBaseGameSystem on the root IGameSystem (IGameSystem.h; the game has no CBaseGameSystem vtable, so no destructor of
+// its own), CAutoGameSystem with its out-of-line constructor (0x1042c260, links it into the list) and m_pNext.
 // Only units that define PCD_INITIALIZERS include it: elsewhere slot 8 stays the plain vfunc8 matched code calls
 // (a real destructor would rename them) and CAnchorList.h's 8-byte CBaseGameSystem stands.
 #pragma once
 #ifdef PCD_INITIALIZERS	// guarded as a whole: the link audit compiles every header in one unit without the define
+#include "IGameSystem.h"
 
-class CBaseGameSystem
+class CBaseGameSystem : public IGameSystem
 {
 public:
 	virtual bool vfunc0();	// Init
@@ -17,7 +18,6 @@ public:
 	virtual void vfunc5();
 	virtual void vfunc6();
 	virtual void vfunc7();
-	virtual ~CBaseGameSystem();
 };
 
 class CAutoGameSystem : public CBaseGameSystem

@@ -14,7 +14,15 @@ public:
 	virtual void LogMessage(const char *pszFormat, ...);
 };
 #else
-class CSoundEmitterSystem : public CSoundEmitterSystemBase, public IGameSystem
+// The flat model keeps CSoundEmitterSystemBase's vtable pointer as a plain member, so the game-system part at +0xdc
+// (CAutoGameSystem in the game's RTTI) is a plain view here too: a base with a vtable pointer would go to +0.
+class CSoundEmitterGameSystemPart
+{
+public:
+	void sub_1000cfbd();	// IGameSystem's destructor (stub 0x1000cfbd)
+};
+
+class CSoundEmitterSystem : public CSoundEmitterSystemBase, public CSoundEmitterGameSystemPart
 {
 public:
 	void vfunc3(const char *pszFormat, ...);	// slot 3 (the base's variadic log hook): with the developer object (0x1072bd5c) not answering true on slot 1 and its field +0x2c set, prints "(sv) <formatted text>" with Msg

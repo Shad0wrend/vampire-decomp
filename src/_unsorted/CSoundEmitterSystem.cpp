@@ -39,7 +39,7 @@ extern char vt_1047b3c0[];
 
 CSoundEmitterSystem *CSoundEmitterSystem::sub_101b0110(unsigned char flags)
 {
-	((IGameSystem *)this)->sub_1000cfbd();
+	((CSoundEmitterGameSystemPart *)this)->sub_1000cfbd();
 	m_vtbl = vt_1047b3c0;
 	((CUnknown1024b370 *)&m_listb0)->sub_1024b370();
 	CUtlVector<int> *vec = (CUtlVector<int> *)&m_i9c;

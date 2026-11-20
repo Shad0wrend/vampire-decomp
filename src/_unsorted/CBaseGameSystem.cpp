@@ -2,10 +2,10 @@
 #include "vampire.h"
 
 // FUNCTION: 0x1042c2c0 size=0xe
-#include "CAnchorList.h"
+#include "IGameSystem.h"
 void sub_1042c420(void *pObject);
 
-CBaseGameSystem::~CBaseGameSystem()
+IGameSystem::~IGameSystem()
 {
 	sub_1042c420(this);
 }

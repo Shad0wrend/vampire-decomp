@@ -9689,7 +9689,6 @@
 0x1000cfae func   ?vfunc5@CTriggerPush@@UAEPAVCBaseEntity@@I@Z CTriggerPush::vfunc5
 0x1000cfb3 func   ?sub_1013b610@@YAXPBVVector@@000MPAV1@@Z sub_1013b610
 0x1000cfb8 func   ?sub_1034e9a0@@YGXAAUinputdata_t@@@Z sub_1034e9a0
-0x1000cfbd func   ??1CBaseGameSystem@@UAE@XZ CBaseGameSystem::~CBaseGameSystem
 0x1000cfbd func   ??1IGameSystem@@UAE@XZ IGameSystem::~IGameSystem
 0x1000cfc2 func   ?vfunc482@CNPC_VTzimisce@@UAEHDH@Z CNPC_VTzimisce::vfunc482
 0x1000cfc7 func   ?sub_10130330@@YAHXZ sub_10130330

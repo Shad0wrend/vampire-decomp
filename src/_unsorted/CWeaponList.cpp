@@ -34,6 +34,7 @@ void CWeaponList::vfunc5()
 // END FUNCTION
 
 // FUNCTION: 0x10250340 size=0x89
+#define PCD_INITIALIZERS
 #include "CWeaponList.h"
 
 CWeaponList g_weaponListX;
