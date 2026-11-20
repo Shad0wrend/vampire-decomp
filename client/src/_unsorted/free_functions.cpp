@@ -1463,6 +1463,31 @@ void CMem16_t::sub_100ccb30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdb00 size=0x36
+#include <string.h>
+
+// TARGET: sub_100cdb00
+void sub_100cdb00(char *pTable, const char *psz)
+{
+    if (pTable == 0) {
+        return;
+    }
+    if (psz == 0) {
+        return;
+    }
+    memset(pTable, 0, 0x100);
+    char c = *psz;
+    if (c != 0) {
+        const char *p = psz;
+        do {
+            p++;
+            pTable[c] = 1;
+            c = *p;
+        } while (c != 0);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1190 size=0x8d
 #include "CUtlLinkedList8.h"
 
