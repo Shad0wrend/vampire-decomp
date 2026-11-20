@@ -2514,3 +2514,33 @@ void * CUnknown10206400::sub_10161db0(int a0)
     return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10161dd0 size=0x53
+struct CPtrArray10206430 {
+	int m_00;
+	int m_04;
+	int m_08;
+	int m_0c;
+	int m_10;
+	int m_nCount;	// 0x14
+	void **m_ppItems;	// 0x18
+
+	void sub_10161dd0();
+};
+
+void CPtrArray10206430::sub_10161dd0()
+{
+	if (m_ppItems) {
+		for (int i = 0; i < m_nCount; i++) {
+			if (m_ppItems[i])
+				delete m_ppItems[i];
+			m_ppItems[i] = 0;
+		}
+		delete m_ppItems;
+		m_ppItems = 0;
+	}
+	m_04 = 0;
+	m_nCount = 0;
+	m_10 = 0;
+}
+// END FUNCTION

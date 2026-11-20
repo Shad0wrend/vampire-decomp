@@ -131,6 +131,7 @@
 0x10160250 func   ?sub_10160250@StatDefault@@QAEHH@Z StatDefault::sub_10160250
 0x101613e0 func   ?sub_101613e0@CVDmgBlock16_t@@QAE_NPBU1@@Z CVDmgBlock16_t::sub_101613e0
 0x10161db0 func   ?sub_10161db0@CUnknown10206400@@QAEPAXH@Z CUnknown10206400::sub_10161db0
+0x10161dd0 func   ?sub_10161dd0@CPtrArray10206430@@QAEXXZ CPtrArray10206430::sub_10161dd0
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit
