@@ -7094,6 +7094,7 @@
 0x10009b06 func   ?sub_1035f650@CNPC_VAnimal@@QAEXPAH@Z CNPC_VAnimal::sub_1035f650
 0x10009b0b func   ?vfunc461@CNPC_VCombatman@@QAEHXZ CNPC_VCombatman::vfunc461
 0x10009b10 func   ?vfunc176@CTriggerProximity@@QAEXPAVCBaseEntity@@@Z CTriggerProximity::vfunc176
+0x10009b10 func   ?vfunc176@CTriggerProximity@@UAEXPAVCBaseEntity@@@Z CTriggerProximity::vfunc176
 0x10009b15 func   ?vfunc299@CBaseCombatCharacter@@QAEXPAXPAD@Z CBaseCombatCharacter::vfunc299
 0x10009b1a func   ?sub_101e9830@CUnknown101e9760@@QAE_NPAVCBaseCombatCharacter@@@Z CUnknown101e9760::sub_101e9830
 0x10009b1f func   ?vfunc104@CRopeKeyframe@@UAEXXZ CRopeKeyframe::vfunc104
