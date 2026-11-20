@@ -15874,6 +15874,7 @@
 0x10014812 func   ?sub_10369e70@CNPC_VCameraSecurity@@QAEPAVCBaseEntity@@XZ CNPC_VCameraSecurity::sub_10369e70
 0x10014817 func   ?sub_103b1470@CNPC_VSheriffMan@@QAEXH@Z CNPC_VSheriffMan::sub_103b1470
 0x1001481c func   ?vfunc141@CEnvWind@@UAEXHHH@Z CEnvWind::vfunc141
+0x1001481c func   ?vfunc141@CEnvWind@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z CEnvWind::vfunc141
 0x10014821 func   ?vfunc431@CNPC_VTzimisce@@QAEXXZ CNPC_VTzimisce::vfunc431
 0x10014826 func   ?vfunc433@CNPC_VTzimisceRunner@@UAEXXZ CNPC_VTzimisceRunner::vfunc433
 0x1001482b func   ?sub_10269d30@CAI_BaseNPCTroika@@QAE_NH@Z CAI_BaseNPCTroika::sub_10269d30
