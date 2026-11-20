@@ -216,6 +216,7 @@
 0x10149890 func   ?sub_10149890@CUnknown101e0c30@@QAEPAUS101e0520@@XZ CUnknown101e0c30::sub_10149890
 0x10149980 func   ?sub_10149980@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_10149980
 0x10149f70 func   ?sub_10149f70@CStatusFlagList@@QAEIHH@Z CStatusFlagList::sub_10149f70
+0x1014de80 func   ?sub_1014de80@CUnk101e9570@@QAEPAU1@H@Z CUnk101e9570::sub_1014de80
 0x10150bc0 func   ?sub_10150bc0@CUnknown101ed170@@QAEXXZ CUnknown101ed170::sub_10150bc0
 0x10152bb0 func   ?sub_10152bb0@CUnknown101f0b50@@QAEPAXH@Z CUnknown101f0b50::sub_10152bb0
 0x10152e30 func   ?sub_10152e30@CUnknown101f0ea0@@QAEPAUS101f0b50@@XZ CUnknown101f0ea0::sub_10152e30

@@ -4912,6 +4912,29 @@ unsigned int CStatusFlagList::sub_10149f70(int nKey, int nSkip)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014de80 size=0x1e
+struct CUnk101d8230 {
+	void sub_101451c0();
+};
+
+struct CUnk101e9570 {
+	int m_00;
+	char m_pad04[0x1c];
+	int m_20;
+	int m_24;
+	CUnk101e9570 *sub_1014de80(int a);
+};
+
+// TARGET: CUnk101e9570::sub_1014de80
+CUnk101e9570 *CUnk101e9570::sub_1014de80(int a)
+{
+	((CUnk101d8230 *)((char *)this + 0x1c))->sub_101451c0();
+	m_24 = 0;
+	m_00 = a;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150bc0 size=0x7b
 #include "CUnknown101ed170.h"
 
