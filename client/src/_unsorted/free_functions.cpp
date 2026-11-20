@@ -1588,3 +1588,33 @@ CRestoreSaveEnt *CRestore::sub_1012aec0(int index)
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012c3d0 size=0xa4
+#include "CUtlVector40.h"
+#include "CUnknown101a59f0.h"
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+struct E40 { int d[10]; };
+
+int CUtlVector40::sub_1012c3d0(int num, const void *pToCopy)
+{
+	int elem = m_size;
+	if (num != 0) {
+		if (m_size + num > m_allocationCount)
+			((CUnknown101a59f0 *)this)->sub_1012c640(m_size - m_allocationCount + num);
+		m_size += num;
+		m_pElements = m_pMemory;
+		int toMove = m_size - elem - num;
+		if (toMove > 0 && num > 0)
+			memmove(m_pMemory + (elem + num) * 40, m_pMemory + elem * 40, toMove * 40);
+		if (pToCopy != 0 && num > 0) {
+			int off = elem * 40;
+			for (int i = num; i > 0; i--) {
+				*(E40 *)(m_pMemory + off) = *(const E40 *)pToCopy;
+				pToCopy = (const E40 *)pToCopy + 1;
+				off += 40;
+			}
+		}
+	}
+	return elem;
+}
+// END FUNCTION
