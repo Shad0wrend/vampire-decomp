@@ -1,5 +1,6 @@
-// CUnknown101f0e50: small record with seven dwords of which five are cleared by its constructor-like
-// initialiser (fields +0x0, +0x4, +0x8, +0x14, +0x18); real name not yet known.
+// CUnknown101f0e50: the reaction table (the global g_1073a9a0), 0x4c bytes: seven dwords of which five are cleared
+// by its constructor-like initialiser (fields +0x0, +0x4, +0x8, +0x14, +0x18), then the modifier names and their
+// lengths; real name not yet known.
 #pragma once
 
 #include "CUnknown101f1c70.h"
@@ -28,6 +29,9 @@ public:
 	int m_f10;
 	int m_f14;
 	int m_f18;
+	const char *m_pszMods[6];	// 0x1c: the modifier names the Reaction.txt loader (sub_101f14a0) stores; matched code
+								// reads them as the globals g_1073a9bc / g_1073a9c0
+	int m_nModLens[6];	// 0x34: their lengths (the global g_1073a9d4 in matched code); 0x4c bytes in all
 
 	CUnknown101f0e50 *sub_101f0e50();	// zeroes the fields above and returns this
 	int sub_101f19c0(const char *pszName);	// the index of the entry named pszName, -1 when there is none (stub 0x10010861)
