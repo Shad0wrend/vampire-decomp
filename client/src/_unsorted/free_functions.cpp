@@ -1135,3 +1135,14 @@ float __cdecl sub_1010c470(float a, float b)
     return d;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010c4b0 size=0x49
+float sub_1010c4b0(float angle)
+{
+	while (angle > 180.0f)
+		angle -= 360.0f;
+	while (angle <= -180.0f)
+		angle += 360.0f;
+	return angle;
+}
+// END FUNCTION
