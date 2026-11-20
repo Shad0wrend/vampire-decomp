@@ -109,3 +109,17 @@ void CSave::vfunc5(const void *p)
 		*dst = pos;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129b00 size=0x53
+#include "CSave.h"
+struct SaveEB { char pad[0x12e8]; float flOffset; };
+void CSave::vfunc26(const char *pszName, void *pData, int count)
+{
+    sub_10129860(pszName, count * 4);
+    for (int i = 0; i < count; i++) {
+        float off = ((SaveEB *)m_pEntityBlock)->flOffset;
+        float f = ((float *)pData)[i] - off;
+        vfunc16(&f, 4);
+    }
+}
+// END FUNCTION
