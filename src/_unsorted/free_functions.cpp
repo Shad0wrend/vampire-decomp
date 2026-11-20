@@ -15423,6 +15423,10 @@ void CBaseCombatCharacter::sub_100521e0()
 #include "engineserver.h"
 #include "CEHandleGet.h"
 #include <stdlib.h>
+// identifier-count dial (CBaseButton layer 2026-11-20): VC6 orders `or ebx,-1` / `mov ebp,1` (0x10053ad6) by
+// symbol numbers, so 10 declarations here keep the game's order with these headers (window 5..16 and up).
+typedef int pcd_dial0; typedef int pcd_dial1; typedef int pcd_dial2; typedef int pcd_dial3; typedef int pcd_dial4;
+typedef int pcd_dial5; typedef int pcd_dial6; typedef int pcd_dial7; typedef int pcd_dial8; typedef int pcd_dial9;
 
 extern CVStatList_t g_109f0b40;
 void __cdecl sub_10012a8a();
@@ -54633,7 +54637,7 @@ void CBaseButton::sub_100c8a20(CBaseEntity *pOther)
 {
 	if (m_nState4f8 != 2 && m_nState4f8 != 3 && !m_b5c4) {
 		if (sub_100a7bd0((CBaseEntity *)EHandle_Get(m_hActivator53c))) {
-			m_pfnTouch1ec = 0;
+			m_pfnTouch = 0;
 			if (m_nState4f8 == 0) {
 				m_Output578.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0);
 				sub_100c97c0();
@@ -54759,7 +54763,7 @@ void CBaseButton::sub_100c9430(CBaseEntity *pOther)
 		m_hActivator53c = *pTouch->GetRefEHandle();
 		int state = sub_100c93b0();
 		if (state && !m_b5c4) {
-			m_pfnTouch1ec = 0;
+			m_pfnTouch = 0;
 			if (state == 2) {
 				m_Output578.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0.0f);
 				sub_100c97c0();
@@ -54790,7 +54794,7 @@ void CBaseButton::sub_100c9560()
 		if (m_flags204 & 1)
 			m_Output590.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0);
 		m_nState4f8 = 2;
-		m_pfnThink114 = sub_100c96a0;
+		m_pfn0114 = static_cast<void (CBaseEntity::*)()>(&CBaseButton::sub_100c96a0);
 		if (!m_b55d)
 			((CBaseToggle *)this)->sub_101c1520(&m_vec514, m_flSpeed164);
 		else
@@ -54852,7 +54856,7 @@ void CBaseButton::sub_100c97c0()
         m_Output5a8.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0.0f);
     if (!((char)(m_flags204 >> 13) & 1))
         g_1073dc00.sub_101f5950((CBaseEntity *)this, g_106e6f7c, 2, 1.0f, 1.25f);
-    m_pfnThink114 = &CBaseButton::sub_100c98e0;
+    m_pfn0114 = static_cast<void (CBaseEntity::*)()>(&CBaseButton::sub_100c98e0);
     if (!m_b55d) {
         ((CBaseToggle *)this)->sub_101c1520(&m_vec508, m_flSpeed164);
         m_n5c0 = 0;

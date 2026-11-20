@@ -36,7 +36,7 @@ bool CBaseButton::vfunc128()
 struct CUtlVector24 { void sub_10015708(); };
 void sub_100aa7b0(void *p);
 
-CBaseButton *CBaseButton::vfunc5(unsigned int flags)
+CBaseEntity *CBaseButton::vfunc5(unsigned int flags)
 {
 	((CUtlVector24 *)((char *)this + 0x5a8))->sub_10015708();
 	((CUtlVector24 *)((char *)this + 0x590))->sub_10015708();
@@ -96,8 +96,8 @@ struct CSoundNameView
 // TARGET: CBaseButton::vfunc71
 void CBaseButton::vfunc71()
 {
-	m_nField0bc = 0;
-	m_nSoundSet0b4 = g_1073dc00.sub_101f55a0((CBaseEntity *)this, ((CSoundNameView *)&m_pszSoundName0c0)->Get(), 0);
+	m_nVSoundTableIdx = 0;
+	m_nVSoundGroup = g_1073dc00.sub_101f55a0((CBaseEntity *)this, ((CSoundNameView *)&m_iszVSoundGroup)->Get(), 0);
 
 	g_106e6f78 = FindSoundId("on");
 	g_106e6f7c = FindSoundId("off");
@@ -126,7 +126,7 @@ int CBaseButton::vfunc35(int pActivator)
 // FUNCTION: 0x100c8990 size=0x16
 #include "CBaseButton.h"
 
-bool CBaseButton::sub_100c8990(int a)
+int CBaseButton::vfunc34(int a)
 {
 	return vfunc35(a) != 0;
 }
@@ -163,7 +163,7 @@ int CBaseButton::vfunc142(void *pInfo)
 {
 	CButtonDamageInfoView *pDamage = (CButtonDamageInfoView *)pInfo;
 	m_Output560.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0.0f);
-	if ((m_flags204 & 0x200) || m_nHealth210) {
+	if ((m_flags204 & 0x200) || m_iHealth) {
 		int state = sub_100c93b0();
 		if (state) {
 			if (pDamage->m_pAttacker)
@@ -171,7 +171,7 @@ int CBaseButton::vfunc142(void *pInfo)
 			else
 				m_hActivator53c = 0xffffffff;
 			if (EHandle_Get(m_hActivator53c) && !m_b5c4) {
-				m_pfnTouch1ec = 0;
+				m_pfnTouch = 0;
 				if (state == 2) {
 					m_Output578.sub_100cd660(EHandle_Get(m_hActivator53c), this, 0.0f);
 					sub_100c97c0();
@@ -211,7 +211,7 @@ void CBaseButton::vfunc103()
 		union { void (CBaseButton::*pm)(); int n; } think;
 		think.pm = &CBaseButton::sub_100c9190;
 		e->sub_100ac4e0(think.n, 0, 0);
-		m_flNextThink17c = gpGlobals->curtime + 0.5;
+		m_flNextThink = gpGlobals->curtime + 0.5;
 	}
 	vfunc171();
 	e->vfunc93(8, 0);
@@ -226,17 +226,17 @@ void CBaseButton::vfunc103()
 	}
 	if (m_flSpeed164 == 0.0f)
 		m_flSpeed164 = 40.0f;
-	m_nTakeDamage1fc = 2;
+	m_nTakeDamage = 2;
 	if (m_flWait500 == 0.0f)
 		m_flWait500 = 1.0f;
 	if (m_flLip504 == 0.0f)
 		m_flLip504 = 4.0f;
 	m_nState4f8 = 1;
 	m_vec508 = *(Vector *)vfunc220();
-	float dist = fabs((vfunc214()[0] - 2.0f) * m_vecMoveDir190.x)
-		+ fabs((vfunc214()[1] - 2.0f) * m_vecMoveDir190.y)
-		+ fabs((vfunc214()[2] - 2.0f) * m_vecMoveDir190.z);
-	m_vec514 = m_vec508 + m_vecMoveDir190 * (dist - m_flLip504);
+	float dist = fabs((vfunc214()[0] - 2.0f) * m_vecMovedir[0])
+		+ fabs((vfunc214()[1] - 2.0f) * m_vecMovedir[1])
+		+ fabs((vfunc214()[2] - 2.0f) * m_vecMovedir[2]);
+	m_vec514 = m_vec508 + (*(Vector *)m_vecMovedir) * (dist - m_flLip504);
 	if ((m_vec514 - m_vec508).Length() < 1.0f || (m_flags204 & 1))
 		m_vec514 = m_vec508;
 	int bNoReturn = (m_flWait500 == -1.0f);
@@ -247,15 +247,13 @@ void CBaseButton::vfunc103()
 	if (m_flags204 & 0x1000)
 		m_b5c5 = 1;
 	if (m_flags204 & 0x400)
-		m_pfnUse1f0 = &CBaseButton::sub_100c9250;
+		m_pfnUse = static_cast<void (CBaseEntity::*)(CBaseEntity *, CBaseEntity *, int, float)>(&CBaseButton::sub_100c9250);
 	else
-		m_pfnUse1f0 = 0;
+		m_pfnUse = 0;
 	if (m_flags204 & 0x100) {
-		union { void (CBaseButton::*pm)(CBaseEntity *); void *p; } u;
-		u.pm = &CBaseButton::sub_100c9430;
-		m_pfnTouch1ec = u.p;
+		m_pfnTouch = static_cast<void (CBaseEntity::*)(CBaseEntity *)>(&CBaseButton::sub_100c9430);
 	} else {
-		m_pfnTouch1ec = 0;
+		m_pfnTouch = 0;
 	}
 	vfunc223();
 }

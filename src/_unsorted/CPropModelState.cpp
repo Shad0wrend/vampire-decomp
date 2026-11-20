@@ -85,8 +85,8 @@ inline int FindSoundId(const char *pszName)
 void CPropModelState::vfunc71()
 {
 	CBaseButton *p = (CBaseButton *)this;
-	p->m_nField0bc = 0;
-	p->m_nSoundSet0b4 = g_1073dc00.sub_101f55a0((CBaseEntity *)this, ((CUnknown1073dc28Name *)&p->m_pszSoundName0c0)->Get(), 0);
+	p->m_nVSoundTableIdx = 0;
+	p->m_nVSoundGroup = g_1073dc00.sub_101f55a0((CBaseEntity *)this, ((CUnknown1073dc28Name *)&p->m_iszVSoundGroup)->Get(), 0);
 
 	g_1074f14c = FindSoundId("on");
 	g_1074f150 = FindSoundId("off");
