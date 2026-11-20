@@ -126,6 +126,7 @@
 0x10155cc0 func   ?sub_10155cc0@CUnknown101f5150@@QAE_NPBD@Z CUnknown101f5150::sub_10155cc0
 0x10157390 func   ?sub_10157390@CUnknown101f7960@@QAEPAUS101f7310@@XZ CUnknown101f7960::sub_10157390
 0x10157480 func   ?sub_10157480@CUnknown101f7bb0@@QAEXXZ CUnknown101f7bb0::sub_10157480
+0x1015f720 func   ?sub_1015f720@@YADPAVCFileParserSlotView@@PBDH1PAUstring_t@@PAPAU2@PAH@Z sub_1015f720
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit

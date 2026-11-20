@@ -2414,3 +2414,29 @@ void CUnknown101f7bb0::sub_10157480()
 	m_n0014 = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1015f720 size=0xb8
+#include "string_t.h"
+#include "CBCCSlotViews.h"
+
+string_t sub_1015fc40(const char *psz);
+
+char sub_1015f720(CFileParserSlotView *pParser, const char *pszName, int a3, const char *pszErr, string_t *pOut5, string_t **pOut6, int *pCount)
+{
+	void *pList = 0;
+	char *pKey;
+	if (pParser->vfunc15(pszName, a3, pszErr, (void **)&pKey, &pList, pCount) == 1) {
+		if (*pKey)
+			*pOut5 = sub_1015fc40(pKey);
+		else
+			*pOut5 = sub_1015fc40(pszName);
+		*pOut6 = new string_t[*pCount];
+		for (int i = 0; i < *pCount; i++) {
+			(*pOut6)[i] = sub_1015fc40(((char **)pList)[i]);
+		}
+		pParser->vfunc18(pList);
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
