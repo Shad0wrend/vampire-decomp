@@ -1343,6 +1343,7 @@
 0x10002a9f func   ?vfunc82@CMathCounter@@UAEPAUdatamap_t@@XZ CMathCounter::vfunc82
 0x10002aa4 func   ?vfunc81@CWeaponRanged_Pistol_Glock@@UAEHXZ CWeaponRanged_Pistol_Glock::vfunc81
 0x10002aa9 func   ?vfunc223@CPhysicsProp@@QAE_NXZ CPhysicsProp::vfunc223
+0x10002aa9 func   ?vfunc223@CPhysicsProp@@UAE_NXZ CPhysicsProp::vfunc223
 0x10002aae func   ?vfunc112@CBasePlayer@@UAEXHH@Z CBasePlayer::vfunc112
 0x10002ab3 func   ?vfunc0@CTEBreakModel@@UAEPAUServerClass@@XZ CTEBreakModel::vfunc0
 0x10002ab8 func   ?vfunc16@CGameMovement@@QAEXPAXMD@Z CGameMovement::vfunc16
