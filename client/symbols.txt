@@ -14,6 +14,7 @@
 0x100889f0 func   ?sub_100889f0@@YAXPAXHMPAUCBlendBone@@PAUCBlendAnim@@AAVQuaternion@@@Z sub_100889f0
 0x10088ba0 func   ?sub_10088ba0@@YAXPAXHMPAUmstudiobone_t@@PAUmstudioanim_t@@AAVVector@@@Z sub_10088ba0
 0x10089170 func   ?sub_10089170@@YAHHHPAH0@Z sub_10089170
+0x10089660 func   ?sub_10089660@@YAXPADHHH@Z sub_10089660
 0x10106c60 func   _CreateInterface CreateInterface
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag

@@ -405,3 +405,16 @@ int sub_10089170(int hdr, int seq, int *pOut, int *pRemap)
 	return sub_100891e0(hdr, seq, pOut, nBones, pRemap);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10089660 size=0x57
+struct SBone160 { char m_pad[0xa0]; };
+struct SBoneOwner { char m_pad0[0x58]; };
+void sub_10108450(void *pSrc, void *pOut);
+void sub_10108a50(void *pDst, void *pIn, int a);
+void sub_10089660(char *pOwner, int iSrc, int iDst, int a)
+{
+	char tmp[0x30];
+	sub_10108450(pOwner + iSrc * 0xa0 + *(int *)(pOwner + 0xf4) + 0x58, tmp);
+	sub_10108a50(pOwner + iDst * 0xa0 + *(int *)(pOwner + 0xf4) + 0x58, tmp, a);
+}
+// END FUNCTION
