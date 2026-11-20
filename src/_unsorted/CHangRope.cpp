@@ -15,7 +15,7 @@ void CHangRope::vfunc0(CRopeNode *pNodes, int iNode, Vector *pAccel)
 
 void CHangRope::vfunc1(CRopeNode *pNodes, int nNodes)
 {
-	sub_100027c5(pNodes, nNodes);
+	CBaseRopePhysics::vfunc1(pNodes, nNodes);
 	pNodes[0].m_vPos = m_vecStart;
 	pNodes[nNodes - 1].m_vPos = m_vecEnd;
 	float flMax = 0.0f;
