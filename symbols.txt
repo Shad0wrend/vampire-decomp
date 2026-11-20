@@ -11038,6 +11038,7 @@
 0x1000e845 func   ?vfunc5@CWeaponRanged_Pistol_DesertEagle@@UAEPAVCBaseEntity@@I@Z CWeaponRanged_Pistol_DesertEagle::vfunc5
 0x1000e84a func   ?sub_101ce210@@YAXHHHH@Z sub_101ce210
 0x1000e84f func   ?vfunc450@CAI_BaseNPC@@QAEHH@Z CAI_BaseNPC::vfunc450
+0x1000e854 func   ?vfunc142@CBaseCombatCharacter@@UAEHPAUCTakeDamageInfo@@@Z CBaseCombatCharacter::vfunc142
 0x1000e854 func   ?vfunc142@CBaseCombatCharacter@@UAEHPAX@Z CBaseCombatCharacter::vfunc142
 0x1000e859 func   ?sub_1009d1e0@CBaseEntity@@QAEXXZ CBaseEntity::sub_1009d1e0
 0x1000e85e func   ?sub_1039a6e0@CUnknown1039a6e0@@QAEXH@Z CUnknown1039a6e0::sub_1039a6e0
