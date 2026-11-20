@@ -2486,3 +2486,17 @@ int StatDefault::sub_10160250(int arg)
 	return i;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101613e0 size=0x30
+#include "CVDmg_t.h"
+
+bool CVDmgBlock16_t::sub_101613e0(const CVDmgBlock16_t *pOther)
+{
+	if (m_a != pOther->m_a)
+		return false;
+	if (m_b != pOther->m_b)
+		return false;
+	bool bSame = (m_d == pOther->m_d);
+	return bSame;
+}
+// END FUNCTION
