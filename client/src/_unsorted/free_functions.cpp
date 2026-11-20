@@ -1094,6 +1094,18 @@ float sub_1010a2b0(float *q)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a540 size=0x2a
+void sub_1010a570(int a, void *p);
+
+void sub_1010a540(int a1, int *pSrc, char *pDst)
+{
+    sub_1010a570(a1, pDst);
+    *(int *)(pDst + 0xc) = pSrc[0];
+    *(int *)(pDst + 0x1c) = pSrc[1];
+    *(int *)(pDst + 0x2c) = pSrc[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a570 size=0xdb
 struct Q { float x, y, z, w; };
 void sub_1010a570(const Q &q, float *m)
