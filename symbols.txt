@@ -4757,6 +4757,7 @@
 0x10006dd9 func   ?sub_1037a8a0@@YADXZ sub_1037a8a0
 0x10006dde func   ?sub_1010bdc0@@YGHH@Z sub_1010bdc0
 0x10006de3 func   ?vfunc142@CBaseButton@@QAEHPAX@Z CBaseButton::vfunc142
+0x10006de3 func   ?vfunc142@CBaseButton@@UAEHPAUCTakeDamageInfo@@@Z CBaseButton::vfunc142
 0x10006de8 func   ?sub_10029100@CUnknown10029100@@QAEXXZ CUnknown10029100::sub_10029100
 0x10006ded func   ?sub_10281430@CAI_BaseNPCTroika@@QAEDXZ CAI_BaseNPCTroika::sub_10281430
 0x10006df2 func   ?sub_10202fd0@CUnknown10202fd0@@QAEXPAUCSlotIter@@@Z CUnknown10202fd0::sub_10202fd0
