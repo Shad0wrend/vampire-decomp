@@ -2044,7 +2044,7 @@ char CBaseCombatCharacter::vfunc379(CBaseEntity *pTarget, int nRole, int nType, 
 		}
 	}
 	sub_100976e0();
-	m_vecGrapple1548 = *(Vector *)a86();
+	m_vecGrapple1548 = *(Vector *)vfunc220();
 	sub_101cf5c0(this, a5, 0);
 	vfunc65(*(int *)((char *)this + 0x428), a6, *(int *)((char *)this + 0x430));
 	m_nGrapple1534 = vfunc94();
@@ -2440,7 +2440,7 @@ void CBaseCombatCharacter::vfunc301(const Vector *pForce, CTakeDamageInfo *pInfo
 			ph++;
 		} while (--n);
 	} else if (!sub_1033c900(0x80000)) {
-		sub_10090180((int)pForce, bone, 0);
+		sub_10090180(pForce, bone, 0);
 		pCorpse = ((CSlotsA *)this)->s137();
 	} else {
 		pCorpse = (CBaseEntity *)sub_1032be80();

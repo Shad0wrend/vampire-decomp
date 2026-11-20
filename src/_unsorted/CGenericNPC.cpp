@@ -130,7 +130,7 @@ void CGenericNPC::vfunc103()
 			((CCollisionProperty *)((char *)p + 0x270))->AddSolidFlags(4);
 		}
 		p->m_nTakeDamage = 0;
-		p->a91();
+		p->vfunc225();
 	}
 	p->sub_100b3b00();
 }

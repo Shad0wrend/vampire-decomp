@@ -1191,7 +1191,7 @@ Vector CNPC_VTzimisce::vfunc389(const Vector &vecSrc)
 		return r;
 	}
 	}
-	return ((CBaseCombatCharacter *)this)->vfunc389(vecSrc);
+	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc389(vecSrc);
 }
 // END FUNCTION
 

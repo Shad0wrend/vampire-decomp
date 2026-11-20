@@ -58403,11 +58403,11 @@ void sub_100d2a60()
 #define U1(n) virtual void u##n();
 #define U10(n) U1(n##0) U1(n##1) U1(n##2) U1(n##3) U1(n##4) U1(n##5) U1(n##6) U1(n##7) U1(n##8) U1(n##9)
 
-struct CCharSlots : CBaseCombatCharacter	// the slots after the modelled ones, up to 459
+struct CCharSlots : CBaseCombatCharacter	// the slots after CBaseCombatCharacter's 0..405, up to 459
 {
-	U1(375) U1(376) U1(377) U1(378) U1(379)
-	U10(38) U10(39) U10(40) U10(41) U10(42) U10(43) U10(44)
-	U1(452) U1(453) U1(454) U1(455) U1(456) U1(457) U1(458)
+	U1(406) U1(407) U1(408) U1(409)
+	U10(41) U10(42) U10(43) U10(44)
+	U1(450) U1(451) U1(452) U1(453) U1(454) U1(455) U1(456) U1(457) U1(458)
 	virtual void vfunc459(const char *pszName, int a);	// slot 459 (+0x72c)
 };
 
@@ -107762,7 +107762,9 @@ void CBasePlayer::sub_1016f2a0(const char *pszFile)
 // END FUNCTION
 
 // FUNCTION: 0x1016fa90 size=0x35b
-// (no CUnknown101d7520.h here: VC6 orders two frame slots of this function by the unit's count of names; the weapon base change of 2026-11-19 flipped them with it)
+// VC6 orders two frame slots of this function by the unit's count of names (no CUnknown101d7520.h here; the weapon
+// base change of 2026-11-19 flipped them with it). WORKAROUND dial: the typedefs after the includes (17..24 match
+// under the CBaseCombatCharacter : CBaseFlex headers of 2026-11-20, 0..16 swap the two slots).
 #include "CBasePlayer.h"
 #include "CUnknown101daec0.h"
 #include "CUnknown101e56e0.h"
@@ -107777,6 +107779,26 @@ void CBasePlayer::sub_1016f2a0(const char *pszFile)
 #include "utlvector.h"
 #include "vampire.h"
 #include <string.h>
+typedef int pcd_dial0;
+typedef int pcd_dial1;
+typedef int pcd_dial2;
+typedef int pcd_dial3;
+typedef int pcd_dial4;
+typedef int pcd_dial5;
+typedef int pcd_dial6;
+typedef int pcd_dial7;
+typedef int pcd_dial8;
+typedef int pcd_dial9;
+typedef int pcd_dial10;
+typedef int pcd_dial11;
+typedef int pcd_dial12;
+typedef int pcd_dial13;
+typedef int pcd_dial14;
+typedef int pcd_dial15;
+typedef int pcd_dial16;
+typedef int pcd_dial17;
+typedef int pcd_dial18;
+typedef int pcd_dial19;
 
 class ICommandLine
 {
@@ -152058,7 +152080,7 @@ void CUnknown101e0f00Fx::sub_101dfc20(CBaseEntity *pSource, CBaseCombatCharacter
 	{
 		int nVolume = g_1072bc58;
 		char bFlag = g_1072bcb6;
-		CSoundEnt::sub_101bac90(0x10, (const Vector *)pTarget->a86(), nVolume, 0.2f, bFlag, pTarget);
+		CSoundEnt::sub_101bac90(0x10, (const Vector *)pTarget->vfunc220(), nVolume, 0.2f, bFlag, pTarget);
 	}
 
 	((CObj8 *)((char *)this + 8))->sub_101de660(pSource, pTarget, id, flDamage);
@@ -154204,7 +154226,7 @@ void CUnknown101e0f00::sub_101e3560(int pCharArg, CBaseCombatCharacter *idArg)
 		{
 			int nVolume = g_1072bc40;
 			char bFlag = g_1072bcb0;
-			CSoundEnt::sub_101bac90(1, (const Vector *)pChar->a86(), nVolume, 0.2f, bFlag, pChar);
+			CSoundEnt::sub_101bac90(1, (const Vector *)pChar->vfunc220(), nVolume, 0.2f, bFlag, pChar);
 		}
 
 		CBaseEntity *pPlayer = (CBaseEntity *)pChar->m_pA8;
@@ -264719,7 +264741,7 @@ bool CBaseCombatCharacter::sub_1032a490()
 	float flHeight = g_1049e030;
 	if (pNpc)
 		flHeight = pNpc->vfunc522() + 0.5f;
-	Vector vecEye = *(Vector *)a83();
+	Vector vecEye = *(Vector *)vfunc217();
 	vecEye[2] += flHeight;
 	int nBone = sub_10092550((int)"Bip01");
 	if (nBone >= 0)
@@ -264750,7 +264772,7 @@ bool CBaseCombatCharacter::sub_1032a490()
 				bRet = true;
 				if (pNpc)
 					pNpc->vfunc416(1);
-				Vector vecNew = *(Vector *)a86() - vecEye;
+				Vector vecNew = *(Vector *)vfunc220() - vecEye;
 				vfunc62(&vecNew.x);
 			}
 			else
@@ -266751,8 +266773,8 @@ __forceinline void UTIL_TraceHull_Box(const Vector &vecAbsStart, const Vector &v
 CBaseCombatWeapon *CBaseCombatCharacter::sub_10333ad0(const Vector &range)
 {
 	ScopeTrace trace("CBaseCombatCharacter::Weapon_FindUsable", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc, g_106b8540);
-	Vector mins = *(Vector *)a86() - range;
-	Vector maxs = *(Vector *)a86() + range;
+	Vector mins = *(Vector *)vfunc220() - range;
+	Vector maxs = *(Vector *)vfunc220() + range;
 	CBaseCombatWeapon *pBest = 0;
 	float flBest = 0;
 	CBaseEntity *list[64];
@@ -266771,14 +266793,14 @@ CBaseCombatWeapon *CBaseCombatCharacter::sub_10333ad0(const Vector &range)
 		if (!((CSlot382View *)this)->vfunc382(pWeapon))
 			continue;
 		CBaseCombatCharacter *pWepChar = (CBaseCombatCharacter *)pWeapon;
-		float flDist = (*(Vector *)pWepChar->a86() - *(Vector *)a86()).Length();
+		float flDist = (*(Vector *)pWepChar->vfunc220() - *(Vector *)vfunc220()).Length();
 		if (pBest)
 		{
 			if (!(pWeapon->vfunc360() & 0x6000) || flDist > flBest)
 				continue;
 		}
-		Vector vecStart = *(Vector *)pWepChar->a86();
-		Vector vecEnd = *(Vector *)pWepChar->a86();
+		Vector vecStart = *(Vector *)pWepChar->vfunc220();
+		Vector vecEnd = *(Vector *)pWepChar->vfunc220();
 		CCollisionProperty *pCol = (CCollisionProperty *)((char *)this + 0x270);
 		const Vector *pMins = (const Vector *)pCol->vfunc1();
 		const Vector *pMaxs = (const Vector *)pCol->vfunc2();
@@ -273032,7 +273054,7 @@ int CBaseCombatCharacter::sub_10345f10()
 	g_109f3620[*g_109f3680].m_pszName = name;
 	g_109f3620[*g_109f3680].m_pszExtra = g_106b8540;
 	(*g_109f3680)++;
-	CBaseEntity *pEnt = sub_1008d990(*(unsigned int *)((char *)this + 0x6f0));
+	CBaseEntity *pEnt = ::sub_1008d990(*(unsigned int *)((char *)this + 0x6f0));
 	if (pEnt) {
 		int act = pEnt->m_pEdict2e0;
 		if (act >= 0) {
@@ -273582,7 +273604,7 @@ void CBCCFindSpotV::sub_10348d00()
 	static const float s_flRadiusMax = 240.0f;
 	static const float s_flHeightMin = 0.0f;
 	static const float s_flHeightMax = 100.0f;
-	Vector origin = *(Vector *)a83();
+	Vector origin = *(Vector *)vfunc217();
 	for (float radius = s_flRadiusMin; radius < s_flRadiusMax; radius += g_10936f6c)
 	{
 		for (float height = s_flHeightMin; height < s_flHeightMax; height += g_10937b0c)

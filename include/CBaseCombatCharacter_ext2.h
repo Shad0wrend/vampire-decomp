@@ -58,7 +58,6 @@
 	float sub_10346220();	// "CBaseCombatCharacter::GetRawDefenseValue": scope trace (entity name), the value of the block (4, 0xc) for this character as a float
 	int sub_10337b00(int a);	// looks up the "Attribute Order Lookups" table of the global at 0x106c7c34 and returns its entry for a + 3 * (the value of stat 0 of the active stat list)
 	int sub_10337bd0(int a);	// as sub_10337b00, for the "Ability Order Lookups" table
-	virtual int vfunc375(int act);	// slot 375 "CBaseCombatCharacter::NPC_EarlyTranslateActivity": scope trace (entity name), activities that sub_104126a0 flags are translated by sub_10328380(act, -1, 0, -1), else returned unchanged
 	void sub_10346ac0();	// "CBaseCombatCharacter::SendIncomingSwingNotice": scope trace (entity name), sub_10341c30(stub 0x10003585, the global at 0x1049e04c, 0.7f, 0, 0, 0x46004003), then sub_10346910(the dword at +0x9c of slot 167's object, 0 without one)
 	void *sub_10341c30(void *pfn, int a, float b, int c, int d, int e);	// stub 0x100080f8, called directly; returns an object pointer (the AI object holder) in EAX
 	void sub_10346910(CBaseEntity *pTarget);	// "CBaseCombatCharacter::MeleeRollA...": stub 0x10009386, called directly with the owner of slot 167's object
@@ -73,9 +72,8 @@
 	void sub_103387a0(int value);	// "CBaseCombatCharacter::AbilityBonus": scope trace (entity name), hands value to the stat list with id 1 (shared default list when absent; sub_10200d60), then slot 93-ish call sub_100138c2(object at +0xa8, 0x19, 0) when that object is set
 	int sub_1033d9d0(CBaseEntity *pOther);	// "CBaseCombatCharacter::GetSpecialDamageModifier": scope trace (entity name), 0 without pOther or misc flag 0x200; else the highest weapon-info level (dword at +0x5eb40) over this character's weapons whose info name (+0x5eb20) equals pOther's classname
 	char sub_1033d9b0();
-int vfunc142(void *pInfo);	// slot 142 "CBaseCombatCharacter::OnTakeDamage" (0x1032ef60), declared as a plain member	// HasMiscFlag(0x200) (stub 0x1000281f), called directly
+	virtual int vfunc142(void *pInfo);	// slot 142 "CBaseCombatCharacter::OnTakeDamage" (0x1032ef60)	// HasMiscFlag(0x200) (stub 0x1000281f), called directly
 	virtual void vfunc125();	// slot 125 "CBaseCombatCharacter::DrawMuzzleOverlay": scope trace (entity name), with an active weapon (sub_1032e7b0): the position of its "muzzleflash" attachment (CBaseAnimating::sub_10092e20) is drawn as a 3.0f box (sub_10143b70), red (0xff) when the attachment exists
-	virtual void vfunc395();	// slot 395 "CBaseCombatCharacter::CorpseFade": scope trace (entity name), clears the float at +0x6f4, zero velocity (sub_100b2e30), slot 93(0, 0), zero origin (sub_100b2f50), stamps curtime at +0x174, sets bit 4 of the flags at +0x19c, then sub_102695d0()
 	void sub_102695d0();	// CAI_BaseNPC member (stub 0x10011667), called directly
 	void sub_100544f0(int which);	// "CBaseCombatCharacter::CreateSecondaryDiscParticles": scope trace (entity name), switch on which (0..4): 0 -> misc flag 4 + the particle record with attachment (state 7), 1 -> flag 4 + attachment (state 0xc), 2 -> flag 8 (state 0xc), 4 -> no flag; creates the disc particle of the record table entry [which] (global table at 0x1053e4c8, 0x24 bytes each) and gives it a 5.0f next think
 	void sub_103392c0(CBaseEntity *pInflictor, int a, int b);	// "CBaseCombatCharacter::Die": scope trace (entity name); unless the take-damage mode at +0x200 is 2 builds a CVDmg_t (source this, fields +4 and +0xc set to 1) and a damage info (inflictor pInflictor, 1.0f damage, flags a and b set on it), sets stat 0xf of the active stat list to the value of stat 0x11, then runs slots 144(info) and 403

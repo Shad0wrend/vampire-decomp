@@ -40,7 +40,7 @@ public:
 	// the signature our base headers give each slot; 250, 255 and 258 are this class's own.
 	virtual void vfunc134(); virtual float vfunc135(float flTime); virtual void vfunc136(); virtual int vfunc137();
 	virtual void vfunc138(); virtual void vfunc139(); virtual bool vfunc140(CBaseEntity *pAttacker); virtual void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace);
-	virtual int vfunc142(CTakeDamageInfo *pInfo); virtual int vfunc143(float flHealth, int bitsDamageType); virtual void vfunc144(void *pInfo); virtual void vfunc145();
+	virtual int vfunc142(void *pInfo); virtual int vfunc143(float flHealth, int bitsDamageType); virtual void vfunc144(void *pInfo); virtual int vfunc145();
 	virtual void vfunc146(void *pInfo, const Vector &vecDir, void *pTrace); virtual void vfunc147(); virtual void vfunc148(); virtual void vfunc149();
 	virtual void vfunc150(); virtual void vfunc151(); virtual float vfunc152(); virtual int vfunc153();
 	virtual int vfunc154(int a, int b); virtual void vfunc155(struct CGameTrace *pTrace, int decalIndex, char bFlag, int a4, class CBasePlayer *pPlayer, int nType, char bTrace); virtual void vfunc156(); virtual void vfunc157();
@@ -65,7 +65,7 @@ public:
 	virtual void vfunc230(int a, int b); virtual void vfunc231(); virtual void vfunc232(int a); virtual int vfunc233(int *pList, int maxObjects);
 	virtual void vfunc234(); virtual void vfunc235(); virtual void vfunc236(); virtual int vfunc237();
 	virtual void vfunc238(int a, int b, int c, int d); virtual void vfunc239(); virtual int vfunc240(); virtual void vfunc241(char *pszOut, int *pEvent);
-	virtual void vfunc242(); virtual void vfunc243(const char *pszModel, bool bDeathFX); virtual void vfunc244(); virtual void vfunc245();
+	virtual void vfunc242(); virtual void vfunc243(const char *pszModel, bool bDeathFX); virtual const char *vfunc244(); virtual void vfunc245();
 	virtual void vfunc246(); virtual void vfunc247(); virtual void vfunc248(); virtual float vfunc249();
 	virtual float vfunc250(float a);	// slot 250: CBaseAnimating::vfunc250(a), then advances the first four overlay layers that have a rate and, once finished, calls slot 112(layer, activity)
 	virtual char vfunc251(); virtual int vfunc252(int a, int b, int c); virtual int vfunc253(int a, int b, int c); virtual int vfunc254(int a, int b, int c);
@@ -104,7 +104,14 @@ public:
 	float sub_10091230(int sequence);	// CBaseAnimating::sub_10091230 (stub 0x10001429): the cycles per second of the sequence, called by the layer advance
 	char sub_10090ef0(int sequence);	// CBaseAnimating::sub_10090ef0 (stub 0x10014ffb): whether the sequence loops (bit 0 of the answer), called by the layer advance
 
-	char m_pad04a4[0x730 - 0x4a4];
+	char m_pad04a4[0x5a8 - 0x4a4];
+	// CBaseAnimating's members (it declares no data of its own; named here for the derived classes' code)
+	EHANDLE m_hAnimFollowModel;	// 0x05a8
+	char m_pad05ac[0x6f0 - 0x5ac];
+	int m_nSequence6f0;	// 0x6f0: the animation sequence
+	float m_flPlaybackRate6f4;	// 0x6f4: the playback rate
+	float m_fl6f8;	// 0x6f8: the cycle (the sequence start time used by the melee swing)
+	char m_pad06fc[0x730 - 0x6fc];
 	bool m_bNoFlinch;	// 0x0730
 	char m_pad0731[0x738 - 0x731];
 	union
