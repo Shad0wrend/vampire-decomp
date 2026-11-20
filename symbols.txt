@@ -6887,6 +6887,7 @@
 0x1000978c func   ?vfunc104@CBreakableProp@@UAEXXZ CBreakableProp::vfunc104
 0x10009791 func   ?sub_10240cb0@@YA_NABVVector@@000MPAUCGameTrace@@@Z sub_10240cb0
 0x10009796 func   ?vfunc213@CBaseEntity@@QAEXPBM@Z CBaseEntity::vfunc213
+0x10009796 func   ?vfunc213@CBaseEntity@@UAEXPBM@Z CBaseEntity::vfunc213
 0x1000979b func   ?sub_100cd870@COutputEvent@@QAEHPAVCRestore@@H@Z COutputEvent::sub_100cd870
 0x100097a0 func   ?sub_1037a980@@YAXXZ sub_1037a980
 0x100097a5 func   ?sub_10360560@@YADXZ sub_10360560
