@@ -13324,6 +13324,7 @@
 0x10011720 func   ?sub_10407020@@YAHXZ sub_10407020
 0x10011725 func   ?sub_1026e5e0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_1026e5e0
 0x1001172a func   ?vfunc160@CBaseEntity@@QAE_NPBD@Z CBaseEntity::vfunc160
+0x1001172a func   ?vfunc160@CBaseEntity@@UAE_NPBD@Z CBaseEntity::vfunc160
 0x1001172f func   ?sub_102d6160@@YAPADH@Z sub_102d6160
 0x10011734 func   ?sub_1006db10@CBaseCineCam@@QAE_NXZ CBaseCineCam::sub_1006db10
 0x10011739 func   ?sub_100a54a0@@YAXPBM0PAM1@Z sub_100a54a0
