@@ -2297,3 +2297,18 @@ void CReactionData::sub_10152f20()
 	m_n14 = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10153f10 size=0x20
+struct CVBaseA { int a; };
+struct CVBaseB { int b; };
+struct CVDerived : virtual CVBaseA, virtual CVBaseB { int d; };
+struct CUnk101f2520
+{
+    CVDerived *sub_10154540(void *a);
+    CVBaseB *sub_10153f10(void *a);
+};
+CVBaseB *CUnk101f2520::sub_10153f10(void *a)
+{
+    return ((CUnk101f2520 *)((char *)this - 0x30))->sub_10154540(a);
+}
+// END FUNCTION
