@@ -8957,6 +8957,7 @@
 0x1000c090 func   ?vfunc241@CFilterInventory@@UAE_NPAVCBaseEntity@@@Z CFilterInventory::vfunc241
 0x1000c095 func   ?sub_102dd500@CUnknown102dd500@@QAEPBDXZ CUnknown102dd500::sub_102dd500
 0x1000c09a func   ?vfunc214@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc214
+0x1000c09a func   ?vfunc214@CBaseEntity@@UAEPAMXZ CBaseEntity::vfunc214
 0x1000c09f func   ?sub_10185ae0@CUnk10185ae0@@QAEPAXE@Z CUnk10185ae0::sub_10185ae0
 0x1000c0a4 func   ?vfunc110@CGameText@@UAE_NPBD0@Z CGameText::vfunc110
 0x1000c0a9 func   ?vfunc432@CNPC_VAndreiBlood@@QAEXH@Z CNPC_VAndreiBlood::vfunc432
