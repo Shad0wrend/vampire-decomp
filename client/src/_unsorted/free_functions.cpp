@@ -418,3 +418,21 @@ void sub_10089660(char *pOwner, int iSrc, int iDst, int a)
 	sub_10108a50(pOwner + iDst * 0xa0 + *(int *)(pOwner + 0xf4) + 0x58, tmp, a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100896c0 size=0x75
+#include "StudioHdr.h"
+#include "Quaternion.h"
+
+void sub_100896c0(StudioHdr *pStudioHdr, Vector pos[], Quaternion q[])
+{
+	for (int i = 0; i < pStudioHdr->m_nBones; i++)
+	{
+		StudioBone *pbone = pStudioHdr->Bone(i);
+		pos[i] = pbone->m_pos;
+		q[i].x = pbone->m_quat.x;
+		q[i].y = pbone->m_quat.y;
+		q[i].z = pbone->m_quat.z;
+		q[i].w = pbone->m_quat.w;
+	}
+}
+// END FUNCTION
