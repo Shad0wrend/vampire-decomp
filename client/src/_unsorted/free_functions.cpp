@@ -180,3 +180,14 @@ void CUtlMemory12::sub_1002d690(int num)
 		m_pMemory = Plat_Alloc(m_nAllocationCount * 12);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10039080 size=0x19
+#include "Vector.h"
+Vector &Vector::sub_10039080(const Vector &v)
+{
+	x = v.x;
+	y = v.y;
+	z = v.z;
+	return *this;
+}
+// END FUNCTION
