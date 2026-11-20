@@ -979,6 +979,18 @@ void sub_1008a8e0(StudioHdr *pStudioHdr, const float *angles, const float *origi
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b560 size=0x21
+// TARGET: sub_1008b560
+void sub_1008b560(int *pTable, char *pSrc)
+{
+    int *p = *(int **)(pSrc + 0x28);
+    while (p != 0) {
+        pTable[p[0]] = (int)(p + 1);
+        p = (int *)p[13];
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e230 size=0x82
 #include "CUnknown100c7f30.h"
 
