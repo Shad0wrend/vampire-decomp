@@ -518,3 +518,31 @@ void CUnknown100c80d0::sub_1008e370(const unsigned int *pMask, const short *pTab
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1008e420 size=0x8e
+#include "CUnknown100c81b0.h"
+
+void CUnknown100c81b0::sub_1008e420(const CBitVecWords *pSource, int count, const CBoneRecord *pRecords, const CStudioBoneCount *pStudio)
+{
+	if (!pStudio || !pRecords) {
+		m_nBits = 0;
+		return;
+	}
+	m_nBits = pStudio->m_nBits;
+	int words = (m_nBits + 31) >> 5;
+	if (words != 0) {
+		unsigned int *p = m_words + words;
+		do {
+			p = p - 1;
+			words = words - 1;
+			*p = 0;
+		} while (words != 0);
+	}
+	for (; count != 0; count--, pRecords++) {
+		if (pSource->m_words[pRecords->m_nSource >> 5] & (1 << (pRecords->m_nSource & 31))) {
+			if (pRecords->m_nIndex >= 0)
+				m_words[pRecords->m_nIndex >> 5] |= 1 << (pRecords->m_nIndex & 31);
+		}
+	}
+}
+// END FUNCTION
