@@ -326,140 +326,140 @@ EXTERN ?vfunc132@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc133@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc133@CBaseToggle@@UAEXXZ:BYTE
 EXTERN ?vfunc134@CGameUI@@QAEXXZ:BYTE
-EXTERN ?vfunc134@CLogicLineToEntity@@QAEXXZ:BYTE
+EXTERN ?vfunc134@CLogicLineToEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc134@CTimerEntity@@QAEXXZ:BYTE
-EXTERN ?vfunc135@CBaseEntity@@QAEMM@Z:BYTE
-EXTERN ?vfunc135@CBaseToggle@@QAEMM@Z:BYTE
-EXTERN ?vfunc137@CBaseEntity@@QAEHXZ:BYTE
+EXTERN ?vfunc135@CBaseEntity@@UAEMM@Z:BYTE
+EXTERN ?vfunc135@CBaseToggle@@UAEMM@Z:BYTE
+EXTERN ?vfunc137@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc138@CBasePlayer@@UAEHXZ:BYTE
 EXTERN ?vfunc13@CBaseEntity@@UAEXPBD@Z:BYTE
-EXTERN ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z:BYTE
-EXTERN ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z:BYTE
+EXTERN ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z:BYTE
+EXTERN ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z:BYTE
 EXTERN ?vfunc141@CBasePlayer@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z:BYTE
 EXTERN ?vfunc141@CPhysicsCannister@@QAEXPAUCCannisterTakeInfo@@PBVVector@@PAUCGameTrace@@@Z:BYTE
-EXTERN ?vfunc141@CRagdollProp@@UAEXHHPAX@Z:BYTE
-EXTERN ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z:BYTE
-EXTERN ?vfunc142@CBasePlayer@@UAEHPAX@Z:BYTE
+EXTERN ?vfunc141@CRagdollProp@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z:BYTE
+EXTERN ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z:BYTE
+EXTERN ?vfunc142@CBasePlayer@@UAEHPAUCTakeDamageInfo@@@Z:BYTE
 EXTERN ?vfunc142@CPhysicsCannister@@QAEHPAUCCannisterTakeInfo@@@Z:BYTE
-EXTERN ?vfunc142@CRagdollProp@@UAEXPBUCRagdollPropDamageInfo@@@Z:BYTE
+EXTERN ?vfunc142@CRagdollProp@@UAEHPAUCTakeDamageInfo@@@Z:BYTE
 EXTERN ?vfunc143@CBaseCombatCharacter@@UAEHMH@Z:BYTE
-EXTERN ?vfunc143@CBaseEntity@@QAEHMH@Z:BYTE
+EXTERN ?vfunc143@CBaseEntity@@UAEHMH@Z:BYTE
 EXTERN ?vfunc143@CBasePlayer@@UAEHMH@Z:BYTE
 EXTERN ?vfunc144@CBaseCombatCharacter@@UAEXPAX@Z:BYTE
-EXTERN ?vfunc144@CBaseEntity@@QAEXPAX@Z:BYTE
+EXTERN ?vfunc144@CBaseEntity@@UAEXPAX@Z:BYTE
 EXTERN ?vfunc144@CBasePlayer@@UAEXPAX@Z:BYTE
 EXTERN ?vfunc145@CBaseCombatCharacter@@UAEHXZ:BYTE
-EXTERN ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z:BYTE
-EXTERN ?vfunc147@CMultiSource@@QAEEPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z:BYTE
+EXTERN ?vfunc147@CMultiSource@@UAE_NPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc149@CBasePlayer@@UAEXHH@Z:BYTE
 EXTERN ?vfunc14@CBaseEntity@@UAEPADXZ:BYTE
 EXTERN ?vfunc151@CBasePlayer@@UAEXPAVCBaseCombatWeapon@@@Z:BYTE
-EXTERN ?vfunc152@CBaseEntity@@QAEMXZ:BYTE
-EXTERN ?vfunc152@CBaseToggle@@QAEMXZ:BYTE
+EXTERN ?vfunc152@CBaseEntity@@UAEMXZ:BYTE
+EXTERN ?vfunc152@CBaseToggle@@UAEMXZ:BYTE
 EXTERN ?vfunc152@CPathCorner@@QAEMXZ:BYTE
-EXTERN ?vfunc153@CBaseEntity@@QAEHXZ:BYTE
-EXTERN ?vfunc154@CBaseEntity@@QAEHHH@Z:BYTE
-EXTERN ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z:BYTE
-EXTERN ?vfunc158@CBaseEntity@@QAE_NXZ:BYTE
+EXTERN ?vfunc153@CBaseEntity@@UAEHXZ:BYTE
+EXTERN ?vfunc154@CBaseEntity@@UAEHHH@Z:BYTE
+EXTERN ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z:BYTE
+EXTERN ?vfunc158@CBaseEntity@@UAE_NXZ:BYTE
 EXTERN ?vfunc158@CBaseProp@@UAE_NXZ:BYTE
 EXTERN ?vfunc158@CPhysicsCannister@@QAE_NXZ:BYTE
-EXTERN ?vfunc158@CRagdollProp@@UAEDXZ:BYTE
-EXTERN ?vfunc160@CBaseEntity@@QAE_NPBD@Z:BYTE
-EXTERN ?vfunc161@CBaseEntity@@QAE_NPBD@Z:BYTE
+EXTERN ?vfunc158@CRagdollProp@@UAE_NXZ:BYTE
+EXTERN ?vfunc160@CBaseEntity@@UAE_NPBD@Z:BYTE
+EXTERN ?vfunc161@CBaseEntity@@UAE_NPBD@Z:BYTE
 EXTERN ?vfunc162@CBasePlayer@@UAEDXZ:BYTE
-EXTERN ?vfunc164@CBaseEntity@@QAE_NXZ:BYTE
-EXTERN ?vfunc165@CBaseEntity@@QAEXPAX@Z:BYTE
-EXTERN ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z:BYTE
-EXTERN ?vfunc168@CBaseEntity@@QAEXXZ:BYTE
+EXTERN ?vfunc164@CBaseEntity@@UAE_NXZ:BYTE
+EXTERN ?vfunc165@CBaseEntity@@UAEXPAX@Z:BYTE
+EXTERN ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z:BYTE
+EXTERN ?vfunc168@CBaseEntity@@UAEPAV1@XZ:BYTE
 EXTERN ?vfunc170@CBasePlayer@@UAEXPBVVector@@@Z:BYTE
-EXTERN ?vfunc171@CBaseEntity@@QAEXXZ:BYTE
-EXTERN ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z:BYTE
+EXTERN ?vfunc171@CBaseEntity@@UAEXXZ:BYTE
+EXTERN ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z:BYTE
 EXTERN ?vfunc173@CFuncMoveLinear@@UAEXPAX0HM@Z:BYTE
 EXTERN ?vfunc173@CLight@@QAEXHHHH@Z:BYTE
-EXTERN ?vfunc173@CMultiSource@@UAEXPAVCBaseEntity@@0HM@Z:BYTE
-EXTERN ?vfunc173@CTriggerBrush@@QAEXPAVCBaseEntity@@0HH@Z:BYTE
-EXTERN ?vfunc174@CBaseEntity@@QAEXPAV1@@Z:BYTE
+EXTERN ?vfunc173@CMultiSource@@UAEXPAVCBaseEntity@@0HH@Z:BYTE
+EXTERN ?vfunc173@CTriggerBrush@@UAEXPAVCBaseEntity@@0HH@Z:BYTE
+EXTERN ?vfunc174@CBaseEntity@@UAEXPAV1@@Z:BYTE
 EXTERN ?vfunc174@CRagdollPropSpecial@@UAEXPAVCBaseEntity@@@Z:BYTE
-EXTERN ?vfunc174@CTriggerBrush@@QAEXPAVCBaseEntity@@@Z:BYTE
-EXTERN ?vfunc175@CBaseEntity@@QAEXPAV1@@Z:BYTE
-EXTERN ?vfunc176@CBaseEntity@@QAEXPAV1@@Z:BYTE
-EXTERN ?vfunc176@CTriggerBrush@@QAEXPAVCBaseEntity@@@Z:BYTE
-EXTERN ?vfunc178@CBaseEntity@@QAEXPAV1@@Z:BYTE
+EXTERN ?vfunc174@CTriggerBrush@@UAEXPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc175@CBaseEntity@@UAEXPAV1@@Z:BYTE
+EXTERN ?vfunc176@CBaseEntity@@UAEXPAV1@@Z:BYTE
+EXTERN ?vfunc176@CTriggerBrush@@UAEXPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc178@CBaseEntity@@UAEXPAV1@@Z:BYTE
 EXTERN ?vfunc178@CFuncMoveLinear@@UAEXPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc178@CFuncPlat@@UAEXPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc17@CBaseEntity@@UAEXHH@Z:BYTE
 EXTERN ?vfunc180@CBaseCombatCharacter@@UAEXXZ:BYTE
-EXTERN ?vfunc180@CBaseEntity@@QAEXXZ:BYTE
+EXTERN ?vfunc180@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc180@CBasePlayer@@UAEXXZ:BYTE
 EXTERN ?vfunc180@CFuncMonitor@@QAEXXZ:BYTE
 EXTERN ?vfunc180@CRagdollProp@@UAEXXZ:BYTE
-EXTERN ?vfunc181@CBasePlayer@@UAEXPAX00@Z:BYTE
+EXTERN ?vfunc181@CBasePlayer@@UAEXPBM00@Z:BYTE
 EXTERN ?vfunc181@CRagdollProp@@UAEXPBM00@Z:BYTE
-EXTERN ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z:BYTE
-EXTERN ?vfunc190@CBaseEntity@@QAEMXZ:BYTE
+EXTERN ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z:BYTE
+EXTERN ?vfunc190@CBaseEntity@@UAEMXZ:BYTE
 EXTERN ?vfunc191@CRagdollPropSpecial@@UAEXH@Z:BYTE
-EXTERN ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ:BYTE
-EXTERN ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ:BYTE
+EXTERN ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ:BYTE
+EXTERN ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ:BYTE
 EXTERN ?vfunc193@CBasePlayer@@UAE?AVVector@@XZ:BYTE
-EXTERN ?vfunc194@CBaseEntity@@QAEXXZ:BYTE
+EXTERN ?vfunc194@CBaseEntity@@UAEPAMXZ:BYTE
 EXTERN ?vfunc194@CBasePlayer@@UAEPAMXZ:BYTE
-EXTERN ?vfunc195@CBaseEntity@@QAEXXZ:BYTE
+EXTERN ?vfunc195@CBaseEntity@@UAEPAMXZ:BYTE
 EXTERN ?vfunc195@CBasePlayer@@UAEPAMXZ:BYTE
-EXTERN ?vfunc196@CBaseEntity@@QAEHH@Z:BYTE
-EXTERN ?vfunc197@CBaseEntity@@QAEHHHHH@Z:BYTE
+EXTERN ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ:BYTE
+EXTERN ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z:BYTE
 EXTERN ?vfunc197@CBasePlayer@@UAE?AVVector@@ABV2@DD@Z:BYTE
-EXTERN ?vfunc198@CBaseEntity@@QAEPAMXZ:BYTE
-EXTERN ?vfunc198@CBasePlayer@@UAEPAXXZ:BYTE
-EXTERN ?vfunc199@CBaseAnimating@@QAEXPAM0@Z:BYTE
-EXTERN ?vfunc199@CBaseEntity@@QAEXPAM0@Z:BYTE
+EXTERN ?vfunc198@CBaseEntity@@UAEPAMXZ:BYTE
+EXTERN ?vfunc198@CBasePlayer@@UAEPAMXZ:BYTE
+EXTERN ?vfunc199@CBaseAnimating@@UAEXPAM0@Z:BYTE
+EXTERN ?vfunc199@CBaseEntity@@UAEXPAM0@Z:BYTE
 EXTERN ?vfunc1@CPhysicsAnimlinkEntityDeleteProxy@@QAEXPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc200@CBasePlayer@@UAEHXZ:BYTE
-EXTERN ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z:BYTE
-EXTERN ?vfunc202@CBaseEntity@@QAEXPAV1@@Z:BYTE
-EXTERN ?vfunc203@CBaseEntity@@QAEMXZ:BYTE
-EXTERN ?vfunc204@CBaseEntity@@QAEMXZ:BYTE
-EXTERN ?vfunc207@CBaseEntity@@QAE_NXZ:BYTE
-EXTERN ?vfunc208@CBaseEntity@@QAEXPAV1@@Z:BYTE
-EXTERN ?vfunc212@CBaseEntity@@QAEXH@Z:BYTE
-EXTERN ?vfunc213@CBaseEntity@@QAEXPBM@Z:BYTE
-EXTERN ?vfunc214@CBaseEntity@@QAEPAMXZ:BYTE
-EXTERN ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z:BYTE
-EXTERN ?vfunc217@CBaseEntity@@QAEPAMXZ:BYTE
-EXTERN ?vfunc218@CBaseEntity@@QAEXPBM@Z:BYTE
-EXTERN ?vfunc219@CBaseEntity@@QAEPAMXZ:BYTE
+EXTERN ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z:BYTE
+EXTERN ?vfunc202@CBaseEntity@@UAEXPAV1@@Z:BYTE
+EXTERN ?vfunc203@CBaseEntity@@UAEMXZ:BYTE
+EXTERN ?vfunc204@CBaseEntity@@UAEMXZ:BYTE
+EXTERN ?vfunc207@CBaseEntity@@UAE_NXZ:BYTE
+EXTERN ?vfunc208@CBaseEntity@@UAEXPAV1@@Z:BYTE
+EXTERN ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z:BYTE
+EXTERN ?vfunc213@CBaseEntity@@UAEXPBM@Z:BYTE
+EXTERN ?vfunc214@CBaseEntity@@UAEPAMXZ:BYTE
+EXTERN ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z:BYTE
+EXTERN ?vfunc217@CBaseEntity@@UAEPAMXZ:BYTE
+EXTERN ?vfunc218@CBaseEntity@@UAEXPBM@Z:BYTE
+EXTERN ?vfunc219@CBaseEntity@@UAEPAMXZ:BYTE
 EXTERN ?vfunc21@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc21@CBasePlayer@@UAEXH@Z:BYTE
-EXTERN ?vfunc220@CBaseEntity@@QAEPAMXZ:BYTE
-EXTERN ?vfunc221@CBaseEntity@@QAEPAMXZ:BYTE
-EXTERN ?vfunc222@CBaseEntity@@QAEHH@Z:BYTE
+EXTERN ?vfunc220@CBaseEntity@@UAEPAMXZ:BYTE
+EXTERN ?vfunc221@CBaseEntity@@UAEPAMXZ:BYTE
+EXTERN ?vfunc222@CBaseEntity@@UAEHH@Z:BYTE
 EXTERN ?vfunc223@CFuncBrush@@QAE_NXZ:BYTE
 EXTERN ?vfunc223@CFuncMoveLinear@@QAE_NXZ:BYTE
 EXTERN ?vfunc223@CFuncPlat@@UAEDXZ:BYTE
 EXTERN ?vfunc223@CPhysicsCannister@@QAEDXZ:BYTE
-EXTERN ?vfunc225@CBaseEntity@@QAEXXZ:BYTE
-EXTERN ?vfunc226@CBaseEntity@@QAEXH@Z:BYTE
+EXTERN ?vfunc225@CBaseEntity@@UAEXXZ:BYTE
+EXTERN ?vfunc226@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc226@CPhysicsCannister@@QAEHXZ:BYTE
-EXTERN ?vfunc226@CRagdollProp@@UAEXPAX@Z:BYTE
-EXTERN ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z:BYTE
+EXTERN ?vfunc226@CRagdollProp@@UAEXH@Z:BYTE
+EXTERN ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z:BYTE
 EXTERN ?vfunc228@CBaseCombatCharacter@@UAEXHH@Z:BYTE
-EXTERN ?vfunc228@CBaseEntity@@QAEXHH@Z:BYTE
-EXTERN ?vfunc229@CBasePlayer@@UAEXPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc228@CBaseEntity@@UAEXHH@Z:BYTE
+EXTERN ?vfunc229@CBasePlayer@@UAEXH@Z:BYTE
 EXTERN ?vfunc22@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc22@CBasePlayer@@UAEXH@Z:BYTE
-EXTERN ?vfunc230@CBaseEntity@@QAEXHPAX@Z:BYTE
-EXTERN ?vfunc230@CRagdollPropSpecial@@QAEXHPAX@Z:BYTE
-EXTERN ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z:BYTE
-EXTERN ?vfunc232@CBaseEntity@@QAEXH@Z:BYTE
-EXTERN ?vfunc233@CBaseEntity@@QAEHPAHH@Z:BYTE
+EXTERN ?vfunc230@CBaseEntity@@UAEXHPAX@Z:BYTE
+EXTERN ?vfunc230@CRagdollPropSpecial@@UAEXHPAX@Z:BYTE
+EXTERN ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z:BYTE
+EXTERN ?vfunc232@CBaseEntity@@UAEXH@Z:BYTE
+EXTERN ?vfunc233@CBaseEntity@@UAEHPAHH@Z:BYTE
 EXTERN ?vfunc233@CRagdollProp@@UAEHPAHH@Z:BYTE
-EXTERN ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z:BYTE
-EXTERN ?vfunc237@CBaseEntity@@QAEHXZ:BYTE
-EXTERN ?vfunc238@CBaseEntity@@QAEXHHHH@Z:BYTE
-EXTERN ?vfunc239@CBaseEntity@@QAE_NM@Z:BYTE
+EXTERN ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z:BYTE
+EXTERN ?vfunc237@CBaseEntity@@UAEHXZ:BYTE
+EXTERN ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z:BYTE
+EXTERN ?vfunc239@CBaseEntity@@UAE_NM@Z:BYTE
 EXTERN ?vfunc23@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc23@CBasePlayer@@UAEXH@Z:BYTE
 EXTERN ?vfunc240@CBaseCombatCharacter@@UAEHXZ:BYTE
-EXTERN ?vfunc240@CBaseEntity@@QAEHXZ:BYTE
+EXTERN ?vfunc240@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z:BYTE
 EXTERN ?vfunc241@CFuncBrush@@QAEHXZ:BYTE
 EXTERN ?vfunc241@CFuncPlat@@UAEEXZ:BYTE
@@ -1020,112 +1020,112 @@ PUBLIC ?vt_1046004c@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CFunc_DustMotes@@6B@
 ; 0x104604dc +1168: ?g_104604dc@@3PADA
@@ -1266,112 +1266,112 @@ PUBLIC ?g_104604dc@@3PADA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CFunc_Dust@@6B@
 ; 0x1046096c +1160: ?g_1046096c@@3PADA ?g_1046096c@lifted@@3DA
@@ -1514,112 +1514,112 @@ PUBLIC ?g_1046096c@lifted@@3DA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 196 DUP (0)
   DB 4 DUP (0)
 ; 0x10460e1c +1164 prefix 4: ?g_10460e1c@@3PADA
@@ -1761,112 +1761,112 @@ PUBLIC ?g_10460e1c@@3PADA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
 ; 0x1046173c +1168 prefix 4: ?g_1046173c@@3PADA
   DD OFFSET ??_R4CFuncMonitor@@6B@
@@ -2007,112 +2007,112 @@ PUBLIC ?g_1046173c@@3PADA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
   DD OFFSET ?vfunc180@CFuncMonitor@@QAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?vfunc223@CFuncBrush@@QAE_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc241@CFuncBrush@@QAEHXZ
   DB 196 DUP (0)
   DD OFFSET ??_R4CFuncMoveLinear@@6B@
@@ -2256,112 +2256,112 @@ PUBLIC ?vt_10461bcc@@3PAPAXA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10116bf0@CFuncMoveLinear@@QAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseToggle@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseToggle@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseToggle@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
   DD OFFSET ?vfunc173@CFuncMoveLinear@@UAEXPAX0HM@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
   DD OFFSET ?vfunc178@CFuncMoveLinear@@UAEXPAVCBaseEntity@@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?vfunc223@CFuncMoveLinear@@QAE_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 196 DUP (0)
   DB 12 DUP (0)
 ; 0x10462064 +1180 prefix 4: ?vt_10462064@@3PADA
@@ -2503,112 +2503,112 @@ PUBLIC ?vt_10462064@@3PADA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc134@CGameUI@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DB 07Bh,014h,0AEh,047h,0E1h,07Ah,094h,03Fh,000h,000h,000h,000h,000h,000h,000h,000h
   DB 4 DUP (0)
@@ -2783,112 +2783,112 @@ PUBLIC ?vt_10462b8c@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseToggle@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseToggle@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
   DD OFFSET ?sub_1004fc50@@YIPAXPAX@Z
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseToggle@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseAnimating@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseAnimating@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z
   DD OFFSET ?sub_100916a0@@YIMPAD@Z
   DD OFFSET ?vfunc243@CBaseAnimating@@QAEXPBD_N@Z
@@ -3053,112 +3053,112 @@ PUBLIC ?vt_1046308c@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseToggle@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseToggle@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
   DD OFFSET ?sub_1004fc50@@YIPAXPAX@Z
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseToggle@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseAnimating@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseAnimating@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z
   DD OFFSET ?sub_100916a0@@YIMPAD@Z
   DD OFFSET ?vfunc243@CBaseAnimating@@QAEXPBD_N@Z
@@ -3327,112 +3327,112 @@ PUBLIC ?g_1046358c@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
   DD OFFSET ?sub_1012d720@CHudTimer@@QAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CPropClockHand@@6B@
 ; 0x10463a1c +1284: ?vt_10463a1c@@3PADA
@@ -3573,112 +3573,112 @@ PUBLIC ?vt_10463a1c@@3PADA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseToggle@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseToggle@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
   DD OFFSET ?sub_1004fc50@@YIPAXPAX@Z
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseToggle@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
   DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseAnimating@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseAnimating@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z
   DD OFFSET ?sub_100916a0@@YIMPAD@Z
   DD OFFSET ?vfunc243@CBaseAnimating@@QAEXPBD_N@Z
@@ -3844,112 +3844,112 @@ PUBLIC ?g_104643b4@@3PADA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
 ; 0x10464cd0 +12: ?g_10464cd0@@3NA
 PUBLIC ?g_10464cd0@@3NA
@@ -4095,112 +4095,112 @@ PUBLIC ?g_10464d74@@3PADA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
   DD OFFSET ?vfunc173@CLight@@QAEXHHHH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CEnvLight@@6B@
 ; 0x10465204 +1164: ?vt_10465204@@3HA
@@ -4341,112 +4341,112 @@ PUBLIC ?vt_10465204@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
   DD OFFSET ?vfunc173@CLight@@QAEXHHHH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DB 12 DUP (0)
 ; 0x10465b1c +8: ?g_10465b1c@@3MA
@@ -4592,112 +4592,112 @@ PUBLIC ?vt_10465b24@@3PAPAXA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CTimerEntity@@6B@
 ; 0x10465fb4 +1168: ?vt_10465fb4@@3HA
@@ -4838,112 +4838,112 @@ PUBLIC ?vt_10465fb4@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc134@CTimerEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CLogicLineToEntity@@6B@
 ; 0x10466444 +1164: ?vt_10466444@@3PAPAXA
@@ -5083,113 +5083,113 @@ PUBLIC ?vt_10466444@@3PAPAXA
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc134@CLogicLineToEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc134@CLogicLineToEntity@@UAEXXZ
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
 ; 0x10467684 +1168 prefix 4: ?vt_10467684@@3PAPAXA
   DD OFFSET ??_R4CMultiSource@@6B@
@@ -5330,112 +5330,112 @@ PUBLIC ?vt_10467684@@3PAPAXA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
-  DD OFFSET ?vfunc147@CMultiSource@@QAEEPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc147@CMultiSource@@UAE_NPAVCBaseEntity@@@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CMultiSource@@UAEXPAVCBaseEntity@@0HM@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CMultiSource@@UAEXPAVCBaseEntity@@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CMathCounter@@6B@
 ; 0x10467b14 +1168: ?vt_10467b14@@3HA
@@ -5576,112 +5576,112 @@ PUBLIC ?vt_10467b14@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CLogicCase@@6B@
 ; 0x10467fa4 +1168: ?vt_10467fa4@@3HA
@@ -5822,112 +5822,112 @@ PUBLIC ?vt_10467fa4@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CLogicCaseToggle@@6B@
 ; 0x10468434 +1168: ?vt_10468434@@3PAPAXA
@@ -6068,112 +6068,112 @@ PUBLIC ?vt_10468434@@3PAPAXA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CLogicCompare@@6B@
 ; 0x104688c4 +1164: ?vt_104688c4@@3PAPAXA
@@ -6314,112 +6314,112 @@ PUBLIC ?vt_104688c4@@3PAPAXA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
 ; 0x10469f94 +1164 prefix 4: ?vt_10469f94@@3PADA
   DD OFFSET ??_R4CLogicRelay@@6B@
@@ -6560,112 +6560,112 @@ PUBLIC ?vt_10469f94@@3PADA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
 ; 0x1046a420 +16: ?g_1046a420@@3IA
 PUBLIC ?g_1046a420@@3IA
@@ -6893,112 +6893,112 @@ PUBLIC ?g_1046a5ec@@3PADA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?vfunc223@CFuncBrush@@QAE_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc241@CFuncBrush@@QAEHXZ
   DB 196 DUP (0)
   DD OFFSET ??_R4CTriggerBrush@@6B@
@@ -7140,112 +7140,112 @@ PUBLIC ?vt_1046aa7c@@3PAPAXA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CTriggerBrush@@QAEXPAVCBaseEntity@@0HH@Z
-  DD OFFSET ?vfunc174@CTriggerBrush@@QAEXPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CTriggerBrush@@QAEXPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc173@CTriggerBrush@@UAEXPAVCBaseEntity@@0HH@Z
+  DD OFFSET ?vfunc174@CTriggerBrush@@UAEXPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CTriggerBrush@@UAEXPAVCBaseEntity@@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
 ; 0x1046b00c +1164 prefix 4: ?g_1046b00c@@3PADA
   DD OFFSET ??_R4CPathKeyFrame@@6B@
@@ -7386,112 +7386,112 @@ PUBLIC ?g_1046b00c@@3PADA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DB 8 DUP (0)
 ; 0x1046bac0 +36: ?g_1046bac0@lifted@@3MA
@@ -7648,112 +7648,112 @@ PUBLIC ?vt_1046bb04@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
   DD OFFSET ?vfunc152@CPathCorner@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CPathCornerCrash@@6B@
 ; 0x1046bf94 +1168: ?vt_1046bf94@@3HA
@@ -7894,112 +7894,112 @@ PUBLIC ?vt_1046bf94@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
   DD OFFSET ?vfunc152@CPathCorner@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CGravityPellet@@6B@
 ; 0x1046c424 +1272: ?vt_1046c424@@3HA ?vt_1046c424@@3PAPAXA
@@ -8142,112 +8142,112 @@ PUBLIC ?vt_1046c424@@3PAPAXA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseToggle@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseToggle@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
   DD OFFSET ?sub_1004fc50@@YIPAXPAX@Z
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseToggle@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseAnimating@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseAnimating@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z
   DD OFFSET ?sub_100916a0@@YIMPAD@Z
   DD OFFSET ?vfunc243@CBaseAnimating@@QAEXPBD_N@Z
@@ -8422,112 +8422,112 @@ PUBLIC ?vt_1046d094@@3PAPAXA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseEntity@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DB 200 DUP (0)
   DD OFFSET ??_R4CPhysicsCannister@@6B@
 ; 0x1046d524 +1956: ?g_1046d524@@3PADA ?vt_1046d524@@3HA
@@ -8670,111 +8670,111 @@ PUBLIC ?vt_1046d524@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseToggle@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseToggle@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
   DD OFFSET ?sub_1004fc50@@YIPAXPAX@Z
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?vfunc141@CPhysicsCannister@@QAEXPAUCCannisterTakeInfo@@PBVVector@@PAUCGameTrace@@@Z
   DD OFFSET ?vfunc142@CPhysicsCannister@@QAEHPAUCCannisterTakeInfo@@@Z
   DD OFFSET ?vfunc143@CBaseCombatCharacter@@UAEHMH@Z
   DD OFFSET ?vfunc144@CBaseCombatCharacter@@UAEXPAX@Z
   DD OFFSET ?vfunc145@CBaseCombatCharacter@@UAEHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseToggle@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
   DD OFFSET ?vfunc158@CPhysicsCannister@@QAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
   DD OFFSET ?vfunc180@CBaseCombatCharacter@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseAnimating@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseAnimating@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?vfunc223@CPhysicsCannister@@QAEDXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc226@CPhysicsCannister@@QAEHXZ
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc228@CBaseCombatCharacter@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
   DD OFFSET ?vfunc240@CBaseCombatCharacter@@UAEHXZ
   DD OFFSET ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z
   DD OFFSET ?sub_100916a0@@YIMPAD@Z
@@ -9091,112 +9091,112 @@ PUBLIC ?vt_1046dcec@@3PADA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseToggle@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseToggle@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
   DD OFFSET ?sub_1004fc50@@YIPAXPAX@Z
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CRagdollProp@@UAEXHHPAX@Z
-  DD OFFSET ?vfunc142@CRagdollProp@@UAEXPBUCRagdollPropDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CRagdollProp@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CRagdollProp@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseToggle@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CRagdollProp@@UAEDXZ
+  DD OFFSET ?vfunc158@CRagdollProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
   DD OFFSET ?vfunc180@CRagdollProp@@UAEXXZ
   DD OFFSET ?vfunc181@CRagdollProp@@UAEXPBM00@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseAnimating@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseAnimating@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CRagdollProp@@UAEXPAX@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CRagdollProp@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc233@CRagdollProp@@UAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z
   DD OFFSET ?sub_100916a0@@YIMPAD@Z
   DD OFFSET ?vfunc243@CBaseAnimating@@QAEXPBD_N@Z
@@ -9377,112 +9377,112 @@ PUBLIC ?vt_1046e23c@@3PADA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseToggle@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseToggle@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
   DD OFFSET ?sub_1004fc50@@YIPAXPAX@Z
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CRagdollProp@@UAEXHHPAX@Z
-  DD OFFSET ?vfunc142@CRagdollProp@@UAEXPBUCRagdollPropDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CRagdollProp@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CRagdollProp@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseToggle@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CRagdollProp@@UAEDXZ
+  DD OFFSET ?vfunc158@CRagdollProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
   DD OFFSET ?vfunc180@CRagdollProp@@UAEXXZ
   DD OFFSET ?vfunc181@CRagdollProp@@UAEXPBM00@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseAnimating@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseAnimating@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_10156d50@CUnit10156d50@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc233@CRagdollProp@@UAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z
   DD OFFSET ?sub_100916a0@@YIMPAD@Z
   DD OFFSET ?vfunc243@CBaseAnimating@@QAEXPBD_N@Z
@@ -9659,112 +9659,112 @@ PUBLIC ?vt_1046e774@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseToggle@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseToggle@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
   DD OFFSET ?sub_1004fc50@@YIPAXPAX@Z
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CRagdollProp@@UAEXHHPAX@Z
-  DD OFFSET ?vfunc142@CRagdollProp@@UAEXPBUCRagdollPropDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CRagdollProp@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CRagdollProp@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseToggle@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CRagdollProp@@UAEDXZ
+  DD OFFSET ?vfunc158@CRagdollProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
   DD OFFSET ?vfunc174@CRagdollPropSpecial@@UAEXPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
   DD OFFSET ?vfunc180@CRagdollProp@@UAEXXZ
   DD OFFSET ?vfunc181@CRagdollProp@@UAEXPBM00@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc191@CRagdollPropSpecial@@UAEXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseAnimating@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseAnimating@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CRagdollProp@@UAEXPAX@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CRagdollProp@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CRagdollPropSpecial@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
+  DD OFFSET ?vfunc230@CRagdollPropSpecial@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc233@CRagdollProp@@UAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z
   DD OFFSET ?sub_100916a0@@YIMPAD@Z
   DD OFFSET ?vfunc243@CBaseAnimating@@QAEXPBD_N@Z
@@ -9965,112 +9965,112 @@ PUBLIC ?vt_1046ed1c@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseToggle@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseToggle@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseToggle@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
   DD OFFSET ?vfunc178@CFuncPlat@@UAEXPAVCBaseEntity@@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?vfunc223@CFuncPlat@@UAEDXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc241@CFuncPlat@@UAEEXZ
   DD OFFSET ?vfunc242@CFuncPlat@@UAEXXZ
   DD OFFSET ?vfunc243@CFuncPlat@@UAEXXZ
@@ -10216,112 +10216,112 @@ PUBLIC ?vt_1046f654@@3HA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseToggle@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseToggle@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
-  DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc137@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
-  DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseEntity@@QAEXPAX@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
+  DD OFFSET ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
+  DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
+  DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
   DD OFFSET ?sub_10026df0@@YGXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?sub_10026e30@@YG_NH@Z
-  DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseToggle@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?sub_10026f60@@YGEXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_10027000@@YAHXZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_10027040@@YGXH@Z
   DD OFFSET ?sub_10027060@@YGXH@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
   DD OFFSET ?vfunc178@CFuncPlat@@UAEXPAVCBaseEntity@@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc194@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc195@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBaseEntity@@QAEHHHHH@Z
-  DD OFFSET ?vfunc198@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc199@CBaseEntity@@QAEXPAM0@Z
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc194@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc195@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc197@CBaseEntity@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseEntity@@UAEXPAM0@Z
   DD OFFSET ?sub_100ad6e0@@YIHPAD@Z
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?vfunc223@CFuncPlat@@UAEDXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc226@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
+  DD OFFSET ?vfunc226@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc228@CBaseEntity@@UAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
+  DD OFFSET ?vfunc240@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc241@CFuncPlat@@UAEEXZ
   DD OFFSET ?vfunc242@CFuncPlatRot@@QAEXXZ
   DD OFFSET ?vfunc243@CFuncPlatRot@@QAEXXZ
@@ -10499,111 +10499,111 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
-  DD OFFSET ?vfunc135@CBaseToggle@@QAEMM@Z
+  DD OFFSET ?vfunc135@CBaseToggle@@UAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
   DD OFFSET ?sub_1004fc50@@YIPAXPAX@Z
   DD OFFSET ?vfunc138@CBasePlayer@@UAEHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
-  DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?vfunc141@CBasePlayer@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBasePlayer@@UAEHPAX@Z
+  DD OFFSET ?vfunc142@CBasePlayer@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBasePlayer@@UAEHMH@Z
   DD OFFSET ?vfunc144@CBasePlayer@@UAEXPAX@Z
   DD OFFSET ?vfunc145@CBaseCombatCharacter@@UAEHXZ
-  DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
+  DD OFFSET ?vfunc146@CBaseEntity@@UAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_1016aa00@CPlayerAccum_1016aa00@@QAEXHD@Z
   DD OFFSET ?vfunc149@CBasePlayer@@UAEXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
   DD OFFSET ?vfunc151@CBasePlayer@@UAEXPAVCBaseCombatWeapon@@@Z
-  DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
-  DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
-  DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
+  DD OFFSET ?vfunc152@CBaseToggle@@UAEMXZ
+  DD OFFSET ?vfunc153@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc154@CBaseEntity@@UAEHHH@Z
+  DD OFFSET ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseEntity@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseEntity@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
-  DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
-  DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
+  DD OFFSET ?vfunc160@CBaseEntity@@UAE_NPBD@Z
+  DD OFFSET ?vfunc161@CBaseEntity@@UAE_NPBD@Z
   DD OFFSET ?vfunc162@CBasePlayer@@UAEDXZ
   DD OFFSET ?sub_100a9800@@YIDPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc164@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc165@CBaseEntity@@QAEXPAX@Z
-  DD OFFSET ?vfunc166@CBaseEntity@@QAE_NPAV1@@Z
+  DD OFFSET ?vfunc164@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc165@CBaseEntity@@UAEXPAX@Z
+  DD OFFSET ?vfunc166@CBaseEntity@@UAE_NPAV1@@Z
   DD OFFSET ?sub_1015dc60@CBasePlayer@@QAEPAVCBaseEntity@@XZ
-  DD OFFSET ?vfunc168@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc168@CBaseEntity@@UAEPAV1@XZ
   DD OFFSET ?sub_101710b0@CBasePlayer@@QAEXPBVVector@@@Z
   DD OFFSET ?vfunc170@CBasePlayer@@UAEXPBVVector@@@Z
-  DD OFFSET ?vfunc171@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc171@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_100a1d20@CUnknown100a1d20@@QAEPAXXZ
-  DD OFFSET ?vfunc173@CBaseEntity@@QAEXPAV1@0HH@Z
-  DD OFFSET ?vfunc174@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc175@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc176@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc173@CBaseEntity@@UAEXPAV1@0HH@Z
+  DD OFFSET ?vfunc174@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc175@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc176@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_10027080@@YGXH@Z
-  DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc178@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
   DD OFFSET ?vfunc180@CBasePlayer@@UAEXXZ
-  DD OFFSET ?vfunc181@CBasePlayer@@UAEXPAX00@Z
+  DD OFFSET ?vfunc181@CBasePlayer@@UAEXPBM00@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
-  DD OFFSET ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z
+  DD OFFSET ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z
   DD OFFSET ?sub_100270c0@@YGEXZ
   DD OFFSET ?sub_100270e0@@YGHXZ
   DD OFFSET ?sub_10027100@@YGEXZ
   DD OFFSET ?sub_100ad850@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc190@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc190@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027140@@YGXH@Z
-  DD OFFSET ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ
+  DD OFFSET ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ
   DD OFFSET ?vfunc193@CBasePlayer@@UAE?AVVector@@XZ
   DD OFFSET ?vfunc194@CBasePlayer@@UAEPAMXZ
   DD OFFSET ?vfunc195@CBasePlayer@@UAEPAMXZ
-  DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ
   DD OFFSET ?vfunc197@CBasePlayer@@UAE?AVVector@@ABV2@DD@Z
-  DD OFFSET ?vfunc198@CBasePlayer@@UAEPAXXZ
-  DD OFFSET ?vfunc199@CBaseAnimating@@QAEXPAM0@Z
+  DD OFFSET ?vfunc198@CBasePlayer@@UAEPAMXZ
+  DD OFFSET ?vfunc199@CBaseAnimating@@UAEXPAM0@Z
   DD OFFSET ?vfunc200@CBasePlayer@@UAEHXZ
-  DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
-  DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
-  DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
-  DD OFFSET ?vfunc204@CBaseEntity@@QAEMXZ
+  DD OFFSET ?vfunc201@CBaseEntity@@UAE_NPAV1@HPAPAV1@H@Z
+  DD OFFSET ?vfunc202@CBaseEntity@@UAEXPAV1@@Z
+  DD OFFSET ?vfunc203@CBaseEntity@@UAEMXZ
+  DD OFFSET ?vfunc204@CBaseEntity@@UAEMXZ
   DD OFFSET ?sub_10027330@@YGEXZ
   DD OFFSET ?sub_10027350@@YG_NHHHHH@Z
-  DD OFFSET ?vfunc207@CBaseEntity@@QAE_NXZ
-  DD OFFSET ?vfunc208@CBaseEntity@@QAEXPAV1@@Z
+  DD OFFSET ?vfunc207@CBaseEntity@@UAE_NXZ
+  DD OFFSET ?vfunc208@CBaseEntity@@UAEXPAV1@@Z
   DD OFFSET ?sub_100b1510@@YIPAVCBaseEntity@@PAV1@@Z
   DD OFFSET ?sub_10027370@CBaseEntityX@@QAEXAAVVector@@@Z
   DD OFFSET ?sub_100274d0@@YIHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc212@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc213@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc214@CBaseEntity@@QAEPAMXZ
+  DD OFFSET ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z
+  DD OFFSET ?vfunc213@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc214@CBaseEntity@@UAEPAMXZ
   DD OFFSET ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z
-  DD OFFSET ?vfunc217@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc218@CBaseEntity@@QAEXPBM@Z
-  DD OFFSET ?vfunc219@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc220@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc221@CBaseEntity@@QAEPAMXZ
-  DD OFFSET ?vfunc222@CBaseEntity@@QAEHH@Z
+  DD OFFSET ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z
+  DD OFFSET ?vfunc217@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc218@CBaseEntity@@UAEXPBM@Z
+  DD OFFSET ?vfunc219@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc220@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc221@CBaseEntity@@UAEPAMXZ
+  DD OFFSET ?vfunc222@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100b5080@@YA_NXZ
   DD OFFSET ?sub_100273b0@@YG_NH@Z
-  DD OFFSET ?vfunc225@CBaseEntity@@QAEXXZ
+  DD OFFSET ?vfunc225@CBaseEntity@@UAEXXZ
   DD OFFSET ?sub_1017b880@@YGXH@Z
-  DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc227@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc228@CBaseCombatCharacter@@UAEXHH@Z
-  DD OFFSET ?vfunc229@CBasePlayer@@UAEXPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc230@CBaseEntity@@QAEXHPAX@Z
-  DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
-  DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
-  DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
-  DD OFFSET ?vfunc234@CBaseEntity@@QAEPAUCGameTrace@@PAU2@PBVVector@@@Z
+  DD OFFSET ?vfunc229@CBasePlayer@@UAEXH@Z
+  DD OFFSET ?vfunc230@CBaseEntity@@UAEXHPAX@Z
+  DD OFFSET ?vfunc231@CBaseEntity@@UAEXPAXMHH@Z
+  DD OFFSET ?vfunc232@CBaseEntity@@UAEXH@Z
+  DD OFFSET ?vfunc233@CBaseEntity@@UAEHPAHH@Z
+  DD OFFSET ?vfunc234@CBaseEntity@@UAE?AUCGameTrace@@PBVVector@@@Z
   DD OFFSET ?sub_100273f0@@YGXH@Z
   DD OFFSET ?sub_10027410@@YGXHH@Z
-  DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
-  DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
+  DD OFFSET ?vfunc237@CBaseEntity@@UAEHXZ
+  DD OFFSET ?vfunc238@CBaseEntity@@UAEXPAVVector@@0HH@Z
+  DD OFFSET ?vfunc239@CBaseEntity@@UAE_NM@Z
   DD OFFSET ?vfunc240@CBaseCombatCharacter@@UAEHXZ
   DD OFFSET ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z
   DD OFFSET ?sub_100916a0@@YIMPAD@Z
