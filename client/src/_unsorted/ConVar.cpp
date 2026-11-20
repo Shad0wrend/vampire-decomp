@@ -62,3 +62,16 @@ void ConVar::vfunc6(const char *value) {
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x100dfa40 size=0x46
+#include "ConVar.h"
+void ConVar::vfunc5(float fNewValue)
+{
+	if (!m_pParent->vfunc1()) {
+		if (fNewValue != m_fValue)
+			vfunc8(fNewValue);
+		if (fNewValue != m_pParent->m_fValue)
+			m_pParent->vfunc8(fNewValue);
+	}
+}
+// END FUNCTION
