@@ -2048,6 +2048,44 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013cb00 size=0xa1
+#include "CUnknown1006bea0.h"
+
+void CUnknown1006bea0::sub_1013cb00(char *pString)
+{
+	if (m_flags) {
+		*pString = 0;
+		return;
+	}
+	if (!(m_flags15 & 1)) {
+		int nAvail = m_size - m_pos;
+		int i = 0;
+		while (i < nAvail) {
+			int c = m_pData[m_pos + i];
+			pString[i] = c;
+			i++;
+			if (!c)
+				goto done;
+		}
+		pString[i] = 0;
+		m_flags |= 2;
+done:
+		m_pos += i;
+		return;
+	}
+	sub_1013c9f0();
+	int size = m_size;
+	while (m_pos < size) {
+		char c = m_pData[m_pos];
+		if (c == '\n' || c == 0)
+			break;
+		*pString++ = c;
+		m_pos++;
+	}
+	*pString = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d330 size=0x6b
 #include "CUnknown1024b370.h"
 extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *p);
