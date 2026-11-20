@@ -139,7 +139,7 @@ void CBaseFlex::vfunc105(const char *pszModel)
 // FUNCTION: 0x100b5b00 size=0x21
 #include "CBaseFlex.h"
 
-void CBaseFlex::sub_100b5b00(const float *v)
+void CBaseFlex::vfunc277(const float *v)
 {
 	m_vec848[0] = v[0];
 	m_vec848[1] = v[1];
@@ -226,7 +226,7 @@ float CBaseFlex::vfunc281(int index)
 // FUNCTION: 0x100b5ce0 size=0x14
 #include "CBaseFlex.h"
 
-void CBaseFlex::sub_100b5ce0()
+void CBaseFlex::vfunc276()
 {
 	m_toggle854 = !m_toggle854;
 }

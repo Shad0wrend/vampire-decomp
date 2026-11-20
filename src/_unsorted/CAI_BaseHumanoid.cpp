@@ -67,7 +67,7 @@ void CAI_BaseHumanoid::vfunc277(const float *v)
 {
     unsigned int *flags = (unsigned int *)((char *)this + 0x5f4c);
     *flags = *flags & 0xfffffffe;
-    ((CBaseFlex *)this)->sub_100b5b00(v);
+    ((CBaseFlex *)this)->CBaseFlex::vfunc277(v);
 }
 // END FUNCTION
 
