@@ -46,6 +46,7 @@
 0x10107500 func   ?sub_10107500@Vector@@QAEMXZ Vector::sub_10107500
 0x10107550 func   ?sub_10107550@@YIXPAVVector@@@Z sub_10107550
 0x10107e40 func   ?sub_10107e40@@YAXPAM00@Z sub_10107e40
+0x10108080 func   ?sub_10108080@@YAXPBMQAY03$$CBMPAM@Z sub_10108080
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit

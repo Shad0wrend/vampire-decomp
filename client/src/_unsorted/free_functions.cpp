@@ -964,3 +964,15 @@ void sub_10107e40(float *pMatrix, float *pQuat, float *pAngles)
 	sub_10108510(pMatrix, 3, pAngles);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10108080 size=0x5c
+void sub_10108080(const float *in1, const float in2[3][4], float *out)
+{
+	float tx = in1[0] - in2[0][3];
+	float ty = in1[1] - in2[1][3];
+	float tz = in1[2] - in2[2][3];
+	out[0] = tx * in2[0][0] + ty * in2[1][0] + tz * in2[2][0];
+	out[1] = tx * in2[0][1] + ty * in2[1][1] + tz * in2[2][1];
+	out[2] = tx * in2[0][2] + ty * in2[1][2] + tz * in2[2][2];
+}
+// END FUNCTION
