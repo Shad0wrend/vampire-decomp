@@ -5439,6 +5439,40 @@ void CUnk101f5ed0::sub_10156160()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156770 size=0x40
+struct CUnknownStat101f69a0 {
+    int m0;
+    int m4;
+    int m8;
+    int m0c;
+    int m10;
+    int m14;
+    int m18;
+    int m1c;
+    int m20;
+    int m24;
+    int m28;
+    int m2c;
+    int m30;
+    int m34;
+    int m38;
+};
+
+// TARGET: sub_10156770
+int __fastcall sub_10156770(CUnknownStat101f69a0 *p)
+{
+    int iVar1 = ((p->m14 + p->m0) * p->m18) / p->m20;
+    if (p->m38 != 100) {
+        iVar1 = (p->m38 * iVar1) / 100;
+    }
+    int iVar2 = p->m28;
+    if (iVar1 <= p->m28 && (iVar2 = p->m30, iVar1 >= p->m30)) {
+        iVar2 = iVar1;
+    }
+    return iVar2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157390 size=0xeb
 #include "CUnknown101f7960.h"
 
