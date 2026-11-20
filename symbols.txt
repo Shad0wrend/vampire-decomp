@@ -4708,6 +4708,7 @@
 0x10006d3e func   ?sub_100ec360@CStanceTable@@QAEHHPAVCBaseCombatCharacter@@@Z CStanceTable::sub_100ec360
 0x10006d43 func   ?sub_101bd010@CRecipientFilter@@QAE_NPAX@Z CRecipientFilter::sub_101bd010
 0x10006d48 func   ?sub_1018fe50@CBreakablePropFields1018fe50@@QAE_NH@Z CBreakablePropFields1018fe50::sub_1018fe50
+0x10006d48 func   ?vfunc74@CBreakableProp@@UAE_NH@Z CBreakableProp::vfunc74
 0x10006d48 func   ?vfunc74@CPropDoorknob@@UAE_NH@Z CPropDoorknob::vfunc74
 0x10006d4d func   ?sub_1014f950@@YA_NXZ sub_1014f950
 0x10006d52 func   ?sub_100838d0@CSceneTokenProcessorX@@QAE_NXZ CSceneTokenProcessorX::sub_100838d0
