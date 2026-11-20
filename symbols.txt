@@ -7415,6 +7415,7 @@
 0x1000a254 func   ?sub_10279bb0@CAI_BaseNPC@@QAEPAVVector@@PAV2@@Z CAI_BaseNPC::sub_10279bb0
 0x1000a259 func   ??0CTETracer@@QAE@PBD@Z CTETracer::CTETracer
 0x1000a259 func   ?sub_1006a400@CTETracer@@QAEPAV1@PBD@Z CTETracer::sub_1006a400
+0x1000a25e func   ??1CAI_InterestingPlace@@QAE@XZ CAI_InterestingPlace::~CAI_InterestingPlace
 0x1000a25e func   ??1CAI_InterestingPlace@@UAE@XZ CAI_InterestingPlace::~CAI_InterestingPlace
 0x1000a263 func   ?vfunc103@CNPC_VTzimisce@@UAEXXZ CNPC_VTzimisce::vfunc103
 0x1000a268 func   ?sub_10072f10@CUnknown10072f10@@QAEXH@Z CUnknown10072f10::sub_10072f10
