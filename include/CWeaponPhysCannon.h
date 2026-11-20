@@ -67,6 +67,7 @@ public:
     void sub_1040dbb0();    // stub-less member, called directly (0x1040dbb0)
     void vfunc180();    // slot 180: vtable slot 372, then CBaseEntity::vfunc180
     void sub_1001089d(const float *pVelocity);    // CBaseCombatWeapon::vfunc299 (stub 0x1001089d), called directly
+	virtual int vfunc80(); virtual datamap_t *vfunc82();	// slots 80 and 82 with CBaseCombatWeapon's signatures: the game's words are sub_1040d590 and sub_1040d850
 	void *sub_1040d590();
 	datamap_t *sub_1040d850();
 };

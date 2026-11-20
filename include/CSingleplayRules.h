@@ -34,6 +34,7 @@ public:
     virtual bool vfunc21();
     virtual bool vfunc22();
     virtual bool vfunc24();
+    virtual void vfunc27(void *pPlayer);	// slot 27: the game's word 0x101abe30 is matched as the free sub_101abe30
     virtual void vfunc54(int, int, int);
     virtual bool vfunc26(int, int, int, int);
     virtual bool vfunc37(int);

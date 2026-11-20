@@ -152,6 +152,10 @@ class CAI_Navigator : public CAI_Component, public CAI_DefMovementSink
 public:
 	CAI_Waypoint *sub_102ff3e0(int startNode, float flMinDist, Vector *pDir);
 	CAI_Navigator(int pOuter);	// 0x102eca50: allocates the 0x84 byte object at +0x30
+	// CAI_DefMovementSink's slots 0 and 2..7 with its signatures: the game's words are this class's functions matched
+	// under other names (sub_102f02a0, sub_102ef1a0, sub_102ef350, sub_102ef0e0, sub_102ef760, sub_102ef6a0, sub_102ef6d0)
+	virtual float sink0(); virtual void sink2(); virtual void sink3(); virtual void sink4(); virtual void sink5(int *pResult);
+	virtual void sink6(); virtual void sink7();
 	float sub_102f02a0();	// slot 0 of the CAI_DefMovementSink secondary vtable: the speed scale
 
 	virtual ~CAI_Navigator();	// 0x102ecb90 (stub 0x10011c98)

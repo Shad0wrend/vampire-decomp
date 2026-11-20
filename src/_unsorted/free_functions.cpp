@@ -15410,8 +15410,8 @@ void CBaseCombatCharacter::sub_100521e0()
 
 // FUNCTION: 0x100532b0 size=0x8fe
 // VC6 orders `or ebx, -1` / `mov ebp, 1` of this function by the unit's count of names. WORKAROUND dial: the
-// typedefs after the includes (0..9 and 19..45 match under the CHL2_Player : CBasePlayer headers of 2026-11-20;
-// 10..18 swap the two).
+// typedefs after the includes (0..19 and 59..60 match under the standalone override headers of 2026-11-20;
+// 20..58 swap the two).
 #include "vampire_all.h"
 // TARGET: CBaseCombatCharacter::sub_100532b0
 #include "CBasePlayer.h"
@@ -15436,26 +15436,6 @@ typedef int pcd_dial6;
 typedef int pcd_dial7;
 typedef int pcd_dial8;
 typedef int pcd_dial9;
-typedef int pcd_dial10;
-typedef int pcd_dial11;
-typedef int pcd_dial12;
-typedef int pcd_dial13;
-typedef int pcd_dial14;
-typedef int pcd_dial15;
-typedef int pcd_dial16;
-typedef int pcd_dial17;
-typedef int pcd_dial18;
-typedef int pcd_dial19;
-typedef int pcd_dial20;
-typedef int pcd_dial21;
-typedef int pcd_dial22;
-typedef int pcd_dial23;
-typedef int pcd_dial24;
-typedef int pcd_dial25;
-typedef int pcd_dial26;
-typedef int pcd_dial27;
-typedef int pcd_dial28;
-typedef int pcd_dial29;
 
 extern CVStatList_t g_109f0b40;
 void __cdecl sub_10012a8a();
@@ -107796,8 +107776,8 @@ void CBasePlayer::sub_1016f2a0(const char *pszFile)
 
 // FUNCTION: 0x1016fa90 size=0x35b
 // VC6 orders two frame slots of this function by the unit's count of names (no CUnknown101d7520.h here; the weapon
-// base change of 2026-11-19 flipped them with it). WORKAROUND dial: the typedefs after the includes (46..59 and
-// 110..123 match under the CBasePlayer : CBaseCombatCharacter headers of 2026-11-20; 0..45 swap the two slots).
+// base change of 2026-11-19 flipped them with it). WORKAROUND dial: the typedefs after the includes (37..50 and
+// 101..114 match under the standalone override headers of 2026-11-20; 0..36 and 51..100 swap the two slots).
 #include "CBasePlayer.h"
 #include "CUnknown101daec0.h"
 #include "CUnknown101e56e0.h"
@@ -107855,15 +107835,6 @@ typedef int pcd_dial39;
 typedef int pcd_dial40;
 typedef int pcd_dial41;
 typedef int pcd_dial42;
-typedef int pcd_dial43;
-typedef int pcd_dial44;
-typedef int pcd_dial45;
-typedef int pcd_dial46;
-typedef int pcd_dial47;
-typedef int pcd_dial48;
-typedef int pcd_dial49;
-typedef int pcd_dial50;
-typedef int pcd_dial51;
 
 class ICommandLine
 {

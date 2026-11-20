@@ -51,6 +51,7 @@ public:
 	float m_flLastThink93c;	// 0x93c: curtime at the last steering step (frame time = curtime - this; the think does nothing when it is not positive)
 public:
 	datamap_t *vfunc82();
+	virtual void vfunc142(); virtual void vfunc230();	// slots 142 and 230 with CBaseCombatWeapon's signatures: the game's words are the plain vfunc142(int) and vfunc230(int, CEnergyBallThrowInfo *)
 	int vfunc142(int);
 	CWeaponActivityRecord *vfunc362();
 	int vfunc363();

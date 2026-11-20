@@ -39,6 +39,9 @@ public:
 	virtual void vfunc3(CBaseEntity *pEntity, int a, int b);	// for every pair registered for pEntity (only when bit 6 of its flags at +0x268 is set) calls slot 183 of the listener with (pEntity, a, b)
 	virtual void vfunc4(CBaseEntity *pEntity);	// "RemoveEntity": removes every pair that names pEntity (by copying the last pair over it)
 
+#ifdef PCD_INITIALIZERS
+	virtual void OnEntityCreated(CBaseEntity *pEntity);	// IEntityListener's slot: the game's word 0x100f8a20 is matched as the free sub_100f8a20
+#endif
 #ifdef PCD_INITIALIZERS	// the pairs
 	CUtlVector<int> m_notifyList;	// 0x08 (SDK: CUtlVector<notifylist_t>, 8-byte pairs)
 #else
