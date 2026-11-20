@@ -35,8 +35,9 @@ struct VKeyValuesInterface	// the IKeyValues part: slot 0 is the key's name
 
 // The real class: the vbptr is at 0x00 (no vftable of its own), a vtordisp before each virtual base (VC6 adds them
 // because the class has a user-declared constructor and overrides virtuals of its bases).
-struct VKeyValues : public virtual IKeyValues
+class VKeyValues : public virtual IKeyValues
 {
+public:
 	VKeyValues(const char *pszName);
 	virtual ~VKeyValues();	// 0x101f20d0: sub_101f2c60()
 	virtual void vfunc0();	// IKeyCacheable slot 0
