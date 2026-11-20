@@ -4127,6 +4127,18 @@ bool CUtlRBTree12::sub_1013ddc0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013fdc0 size=0x2f
+#include "CStatDefault3List.h"
+// TARGET: sub_1013fdc0
+
+void CStatDefault3List::sub_1013fdc0()
+{
+    int a = 0;
+    sub_1013fcb0("ClanDoc", (int)&a);
+    sub_1013fcb0("NPCTemplate", (int)&a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140290 size=0xec
 #include "CUnknown101d62d0.h"
 

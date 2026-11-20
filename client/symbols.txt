@@ -189,6 +189,7 @@
 0x1013d4e0 func   ?sub_1013d4e0@CFindList_1024b590@@QAEHH@Z CFindList_1024b590::sub_1013d4e0
 0x1013dd50 func   ?sub_1013dd50@UtlMem@@QAEXH@Z UtlMem::sub_1013dd50
 0x1013ddc0 func   ?sub_1013ddc0@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_1013ddc0
+0x1013fdc0 func   ?sub_1013fdc0@CStatDefault3List@@QAEXXZ CStatDefault3List::sub_1013fdc0
 0x10140290 func   ?sub_10140290@CUnknown101d62d0@@QAEPAUCUnknown101d62d0Record@@XZ CUnknown101d62d0::sub_10140290
 0x101405b0 func   ?sub_101405b0@CUnknown101d6750@@QAEPAUS101d61e0@@XZ CUnknown101d6750::sub_101405b0
 0x10146a90 func   ?sub_10146a90@CUnknown101db210@@QAEPAUS6@@XZ CUnknown101db210::sub_10146a90
