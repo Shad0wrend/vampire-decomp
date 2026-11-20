@@ -2152,6 +2152,43 @@ void sub_1010a0f0(const Quaternion &p, const Quaternion &q, float t, Quaternion 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a180 size=0x12a
+#include "Quaternion.h"
+#include <math.h>
+
+// TARGET: sub_1010a180
+void sub_1010a180(const Quaternion &p, const Quaternion &q, float t, Quaternion &qt)
+{
+	float omega, cosom, sinom, sclp, sclq;
+	int i;
+
+	cosom = p[0] * q[0] + p[1] * q[1] + p[2] * q[2] + p[3] * q[3];
+
+	if ((1.0f + cosom) > 0.000001f) {
+		if ((1.0f - cosom) > 0.000001f) {
+			omega = acos(cosom);
+			sinom = sin(omega);
+			sclp = sin((1.0f - t) * omega) / sinom;
+			sclq = sin(t * omega) / sinom;
+		} else {
+			sclp = 1.0f - t;
+			sclq = t;
+		}
+		for (i = 0; i < 4; i++)
+			qt[i] = sclp * p[i] + sclq * q[i];
+	} else {
+		qt[0] = -q[1];
+		qt[1] = q[0];
+		qt[2] = -q[3];
+		qt[3] = q[2];
+		sclp = sin((1.0f - t) * (0.5f * 3.14159265358979323846));
+		sclq = sin(t * (0.5f * 3.14159265358979323846));
+		for (i = 0; i < 3; i++)
+			qt[i] = sclp * p[i] + sclq * qt[i];
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a2b0 size=0x61
 #include <math.h>
 float sub_1010a2b0(float *q)
