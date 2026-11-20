@@ -1826,3 +1826,16 @@ void CUtlMemory12::sub_10138700(int num)
 		m_pMemory = Plat_Alloc(m_nAllocationCount * 12);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10138770 size=0xbd
+#include "CUtlRBTree12.h"
+#include "utlrbtree.h"
+struct CRBTree12Entry_10194f30 { char data[4]; };	// the tree of its sentinel (one T per game instance)
+
+bool CUtlRBTree12::sub_10138770(unsigned short i) const
+{
+	const CUtlRBTree<CRBTree12Entry_10194f30, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_10194f30, unsigned short> *)this;
+	unsigned short parent = tree->Links(i).m_Parent;
+	return tree->Links(parent).m_Left == i;
+}
+// END FUNCTION
