@@ -6468,6 +6468,7 @@
 0x10008eea func   ?sub_100e9290@CDialogDependency@@QAEXHPADPAIPAH@Z CDialogDependency::sub_100e9290
 0x10008eef func   ?sub_100bac20@@YAHXZ sub_100bac20
 0x10008ef4 func   ?vfunc174@CBaseTrigger@@QAEXPAVCBaseEntity@@@Z CBaseTrigger::vfunc174
+0x10008ef4 func   ?vfunc174@CBaseTrigger@@UAEXPAVCBaseEntity@@@Z CBaseTrigger::vfunc174
 0x10008ef9 func   ?sub_10427df0@@YAHPAUStudioHdr@@HPAH1HDDH@Z sub_10427df0
 0x10008efe func   ?sub_102726a0@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_102726a0
 0x10008f03 func   ?sub_102223f0@CExperienceTable@@QAEXXZ CExperienceTable::sub_102223f0
