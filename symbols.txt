@@ -11435,6 +11435,7 @@
 0x1000ef9d func   ?vfunc5@CWeaponIArmor_Hvy_Leather@@UAEPAVCBaseEntity@@I@Z CWeaponIArmor_Hvy_Leather::vfunc5
 0x1000efa2 func   ?vfunc367@CWeaponMelee_TzimisceMelee@@UAEHHMM@Z CWeaponMelee_TzimisceMelee::vfunc367
 0x1000efa7 func   ?vfunc142@CNPC_VZombie@@QAEHPAUCZombieDmgInfo@@@Z CNPC_VZombie::vfunc142
+0x1000efa7 func   ?vfunc142@CNPC_VZombie@@UAEHPAUCTakeDamageInfo@@@Z CNPC_VZombie::vfunc142
 0x1000efac func   ?sub_100e5240@CDialog@@QAEXXZ CDialog::sub_100e5240
 0x1000efb1 func   ?vfunc2@CTETracer@@UAEPAV1@I@Z CTETracer::vfunc2
 0x1000efb6 func   _item_k_lucky_star_murder_key item_k_lucky_star_murder_key
