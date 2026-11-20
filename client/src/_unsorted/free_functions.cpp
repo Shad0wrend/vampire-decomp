@@ -3525,6 +3525,18 @@ void CUtlVector130::sub_10131540(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131590 size=0x1a
+#include <string.h>
+
+// TARGET: sub_10131590
+void sub_10131590(void *pDest, void *pSrc)
+{
+	if (pDest != 0) {
+		memcpy(pDest, pSrc, 0x82);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131e60 size=0xcf
 #include "CUnknown101b9140.h"
 
