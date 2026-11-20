@@ -16545,6 +16545,7 @@
 0x100154f6 func   ?vfunc82@CNPC_VChangBrosClaw@@QAEPAUdatamap_t@@XZ CNPC_VChangBrosClaw::vfunc82
 0x100154fb func   ?sub_1023b3a0@@YAXPAUCStateHolder@@@Z sub_1023b3a0
 0x10015500 func   ?sub_1006cba0@StatDefault@@QAEHH@Z StatDefault::sub_1006cba0
+0x10015505 func   ?vfunc198@CBasePlayer@@UAEPAMXZ CBasePlayer::vfunc198
 0x10015505 func   ?vfunc198@CBasePlayer@@UAEPAXXZ CBasePlayer::vfunc198
 0x1001550a func   ?vfunc373@CWeaponMelee_MingXiaoMelee@@UAEHXZ CWeaponMelee_MingXiaoMelee::vfunc373
 0x1001550f func   ?sub_102fc910@CBitString@@QAEPAV1@H@Z CBitString::sub_102fc910
