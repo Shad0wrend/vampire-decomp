@@ -2422,6 +2422,24 @@ void CUnk101ddf80::sub_10148330()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148790 size=0x66
+#include "S101df260.h"
+
+S101df260 *S101df260::sub_10148790(int a)
+{
+	m_items[0].sub_101482a0();
+	m_items[1].sub_101482a0();
+	m_items[2].sub_101482a0();
+	m_items[3].sub_101482a0();
+	m_items[4].sub_101482a0();
+	m_obj364.sub_10148020();
+	m_n36c = -1;
+	m_n00 = a;
+	m_b371 = m_b370 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149890 size=0xee
 #include "CUnknown101e0c30.h"
 
