@@ -55,5 +55,5 @@ public:
 	int vfunc142(int);
 	CWeaponActivityRecord *vfunc362();
 	int vfunc363();
-	void vfunc372(class CBaseEntity *pOther, float flSpeed, EHANDLE hTarget);	// "CWeaponThrown_Chang_Energy_Ball::Throw"
+	virtual void vfunc372(class CBaseEntity *pOther, float flSpeed, EHANDLE hTarget);	// its own new slot 372: "CWeaponThrown_Chang_Energy_Ball::Throw"
 };

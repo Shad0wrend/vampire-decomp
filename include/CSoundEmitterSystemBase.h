@@ -168,7 +168,8 @@ public:
 	CSoundEmitterSystemBase();	// function 0x101b26c0
 	virtual ~CSoundEmitterSystemBase() {}
 	virtual bool BaseInit();
-	virtual void LogMessage(const char *pszFormat, ...);
+	virtual void BaseShutdown();	// slot 2 (0x101b2e30): empties the sound tables; CSoundEmitterSystem's LogMessage is
+								// its own slot 3
 
 	CUtlDict<CSoundEmitterRecord, int> m_Sounds;	// 0x04
 	CUtlDict<CSoundEmitterRecord, int> m_SavedOverrides;	// 0x50
