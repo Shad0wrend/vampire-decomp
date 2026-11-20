@@ -11199,6 +11199,7 @@
 0x1000ec19 func   ?vfunc436@CHL2_Player@@UAEXXZ CHL2_Player::vfunc436
 0x1000ec1e func   ?sub_101eab60@@YAXH@Z sub_101eab60
 0x1000ec23 func   ?vfunc176@CTriggerBrush@@QAEXPAVCBaseEntity@@@Z CTriggerBrush::vfunc176
+0x1000ec23 func   ?vfunc176@CTriggerBrush@@UAEXPAVCBaseEntity@@@Z CTriggerBrush::vfunc176
 0x1000ec28 func   ?sub_10122590@CGameMovement@@QAEXXZ CGameMovement::sub_10122590
 0x1000ec2d func   ?vfunc310@CNPC_VTzimisceRunner@@QAEHH@Z CNPC_VTzimisceRunner::vfunc310
 0x1000ec32 func   ?sub_1011e940@CGameMovement@@QAEXXZ CGameMovement::sub_1011e940
