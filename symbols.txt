@@ -5654,6 +5654,7 @@
 0x10007f27 func   ?sub_1018e9f0@@YAHPAVCBaseEntity@@PAPAVCActivityCopyProp@@H@Z sub_1018e9f0
 0x10007f2c func   ?vfunc81@CResearchBook_HG_COMP@@QAEHXZ CResearchBook_HG_COMP::vfunc81
 0x10007f31 func   ?vfunc158@CRagdollProp@@UAEDXZ CRagdollProp::vfunc158
+0x10007f31 func   ?vfunc158@CRagdollProp@@UAE_NXZ CRagdollProp::vfunc158
 0x10007f36 func   ?sub_1019cf90@@YIHPAX@Z sub_1019cf90
 0x10007f3b func   ??0ConCommandBase@@QAE@XZ ConCommandBase::ConCommandBase
 0x10007f3b func   ?sub_102454e0@CUnknown102454e0@@QAEPAXXZ CUnknown102454e0::sub_102454e0
