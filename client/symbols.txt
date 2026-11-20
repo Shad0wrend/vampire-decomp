@@ -226,6 +226,7 @@
 0x10152bb0 func   ?sub_10152bb0@CUnknown101f0b50@@QAEPAXH@Z CUnknown101f0b50::sub_10152bb0
 0x10152e30 func   ?sub_10152e30@CUnknown101f0ea0@@QAEPAUS101f0b50@@XZ CUnknown101f0ea0::sub_10152e30
 0x10152f20 func   ?sub_10152f20@CReactionData@@QAEXXZ CReactionData::sub_10152f20
+0x10153680 func   ?sub_10153680@CNamedList9fd0@@QAEHPBD@Z CNamedList9fd0::sub_10153680
 0x10153f10 func   ?sub_10153f10@CUnk101f2520@@QAEPAUCVBaseB@@PAX@Z CUnk101f2520::sub_10153f10
 0x10155b40 func   ?sub_10155b40@S9@@QAEPAU1@XZ S9::sub_10155b40
 0x10155cc0 func   ?sub_10155cc0@CUnknown101f5150@@QAE_NPBD@Z CUnknown101f5150::sub_10155cc0
