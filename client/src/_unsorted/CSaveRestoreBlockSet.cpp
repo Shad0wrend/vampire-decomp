@@ -47,3 +47,24 @@ void CSaveRestoreBlockSet::vfunc4()
 	m_pEntryElements = m_pEntries;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012bd30 size=0x23
+#include "CSaveRestoreBlockSet.h"
+
+struct CSaveRestoreBlockHandlerSlots {
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void s3();
+	virtual void s4();
+	virtual void vfunc5();
+};
+
+// TARGET: CSaveRestoreBlockSet::vfunc5
+void CSaveRestoreBlockSet::vfunc5()
+{
+	for (int i = 0; i < m_nHandlers; i++) {
+		((CSaveRestoreBlockHandlerSlots *)m_pHandlers[i])->vfunc5();
+	}
+}
+// END FUNCTION

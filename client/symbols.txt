@@ -92,6 +92,7 @@
 0x1012b280 func   ?vfunc24@CRestore@@UAEHPAMHH@Z CRestore::vfunc24
 0x1012ba50 func   ?vfunc2@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc2
 0x1012bcd0 func   ?vfunc4@CSaveRestoreBlockSet@@QAEXXZ CSaveRestoreBlockSet::vfunc4
+0x1012bd30 func   ?vfunc5@CSaveRestoreBlockSet@@QAEXXZ CSaveRestoreBlockSet::vfunc5
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit
