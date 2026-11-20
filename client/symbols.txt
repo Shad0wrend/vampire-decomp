@@ -93,6 +93,7 @@
 0x1010a570 func   ?sub_1010a570@@YAXABUQ@@PAM@Z sub_1010a570
 0x1010a650 func   ?sub_1010a650@@YAXABVQAngle@@PAM@Z sub_1010a650
 0x1010a690 func   ?sub_1010a690@@YAXABUQ@@AAVQAngle@@@Z sub_1010a690
+0x1010a720 func   ?sub_1010a720@@YAXABVVector@@MAAUQuaternion@@@Z sub_1010a720
 0x1010a930 func   ?sub_1010a930@@YAXPBMPAM@Z sub_1010a930
 0x1010ba80 func   ?sub_1010ba80@@YAXABVVector@@00AAV1@@Z sub_1010ba80
 0x1010bc90 func   ?sub_1010bc90@@YAXABVVector@@00AAV1@PAM@Z sub_1010bc90
