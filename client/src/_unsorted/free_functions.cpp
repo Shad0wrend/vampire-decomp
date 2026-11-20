@@ -1643,6 +1643,41 @@ void UtlMem::sub_100d3ed0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d87c0 size=0x67
+extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
+
+struct CMem16_t {
+	void *m_pMemory; int m_nAllocationCount; int m_nGrowSize;
+	// TARGET: CMem16_t::sub_100d87c0
+	void sub_100d87c0(int num);
+};
+
+void CMem16_t::sub_100d87c0(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int alloc = m_nAllocationCount;
+	int newAlloc = num + alloc;
+	if (alloc < newAlloc) {
+		do {
+			if (alloc != 0) {
+				if (m_nGrowSize != 0)
+					alloc += m_nGrowSize;
+				else
+					alloc += alloc;
+			} else
+				alloc = 2;
+		} while (alloc < newAlloc);
+		m_nAllocationCount = alloc;
+	}
+	if (m_pMemory)
+		m_pMemory = Plat_Realloc(m_pMemory, m_nAllocationCount << 4);
+	else
+		m_pMemory = Plat_Alloc(m_nAllocationCount << 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e27a0 size=0x99
 #include "CUtlLinkedList6.h"
 
