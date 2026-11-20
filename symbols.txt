@@ -12730,6 +12730,7 @@
 0x10010b9f func   ?sub_101e8100@CUnknown10739d08@@QAE?AUCSkillOutcome@@PAX0D@Z CUnknown10739d08::sub_101e8100
 0x10010ba4 func   ?sub_101e18c0@@YGHH@Z sub_101e18c0
 0x10010ba9 func   ?vfunc389@CBaseCombatCharacter@@QAE?AVVector@@ABV2@@Z CBaseCombatCharacter::vfunc389
+0x10010ba9 func   ?vfunc389@CBaseCombatCharacter@@UAE?AVVector@@ABV2@@Z CBaseCombatCharacter::vfunc389
 0x10010bae func   ?sub_1019ed90@CRopeKeyframe@@QAEXPAURopeArg@@@Z CRopeKeyframe::sub_1019ed90
 0x10010bb3 func   ?vfunc313@CNPC_VSabbatLeader@@QAEXXZ CNPC_VSabbatLeader::vfunc313
 0x10010bb8 func   ?vfunc346@CBaseCombatCharacter@@QAEMHMD@Z CBaseCombatCharacter::vfunc346
