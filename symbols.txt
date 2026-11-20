@@ -1354,6 +1354,7 @@
 0x10002aef func   ?vfunc40@CGameRules@@UAE_NXZ CGameRules::vfunc40
 0x10002af4 func   _item_g_edane_print_report item_g_edane_print_report
 0x10002af9 func   ?vfunc216@CBaseEntity@@QAEXABVVector@@@Z CBaseEntity::vfunc216
+0x10002af9 func   ?vfunc216@CBaseEntity@@UAEXABVVector@@@Z CBaseEntity::vfunc216
 0x10002afe func   ?vfunc81@CGargoyleTalisman@@QAEHXZ CGargoyleTalisman::vfunc81
 0x10002b03 func   ?sub_100b3db0@@YAPAVCBaseEntity@@PBD0H@Z sub_100b3db0
 0x10002b08 func   ?sub_100a0a10@matrix3x4_t@@QAEXPAVVector@@PBV2@@Z matrix3x4_t::sub_100a0a10
