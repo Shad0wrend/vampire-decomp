@@ -13957,6 +13957,7 @@
 0x10012391 func   ?sub_10239e70@CWeaponRanged@@QAEXXZ CWeaponRanged::sub_10239e70
 0x10012396 func   ?sub_10201470@CVStatList_t@@QAEPBDH@Z CVStatList_t::sub_10201470
 0x1001239b func   ?vfunc142@CPhysBox@@QAEHPAVCBaseEntity@@@Z CPhysBox::vfunc142
+0x1001239b func   ?vfunc142@CPhysBox@@UAEHPAUCTakeDamageInfo@@@Z CPhysBox::vfunc142
 0x100123a0 func   ?vfunc180@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc180
 0x100123a5 func   ?sub_1017f2a0@CBasePlayer@@QAEXHPAVCBaseEntity@@PBVVector@@@Z CBasePlayer::sub_1017f2a0
 0x100123aa func   ?sub_1017c830@CBasePlayer@@QAEXXZ CBasePlayer::sub_1017c830
