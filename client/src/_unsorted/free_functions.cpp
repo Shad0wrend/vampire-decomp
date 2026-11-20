@@ -564,6 +564,23 @@ void sub_100896c0(StudioHdr *pStudioHdr, Vector pos[], Quaternion q[])
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008a110 size=0xc7
+void sub_10089740(int a1, void *pB, void *pA, int a4, int a5, int a6, int a7);
+void sub_10088e10(int a1, int a3, int a2, int a4, void *pA, void *pB, float flWeight, int a7, int a9, int a10);
+
+void sub_1008a110(int a1, int a2, int a3, int a4, int a5, int a6, int a7, float flWeight)
+{
+	char bufA[0x15e0];
+	char bufB[0x1068];
+	if (flWeight > 1.0f)
+		flWeight = 1.0f;
+	else if (flWeight < 0.0f)
+		flWeight = 0.0f;
+	sub_10089740(a1, bufB, bufA, a4, a5, a6, a7);
+	sub_10088e10(a1, a3, a2, a4, bufA, bufB, flWeight, a7, 0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e230 size=0x82
 #include "CUnknown100c7f30.h"
 
