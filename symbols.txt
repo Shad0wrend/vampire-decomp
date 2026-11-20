@@ -8887,6 +8887,7 @@
 0x1000bf46 func   ?sub_1004bf70@CUtlRBTree16@@QBE_NG@Z CUtlRBTree16::sub_1004bf70
 0x1000bf4b func   ?vfunc141@CBaseEntity@@QAEXHHPAX@Z CBaseEntity::vfunc141
 0x1000bf4b func   ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z CBaseEntity::vfunc141
+0x1000bf4b func   ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z CBaseEntity::vfunc141
 0x1000bf50 func   ?vfunc2@CTESmoke@@UAEPAV1@I@Z CTESmoke::vfunc2
 0x1000bf55 func   ?sub_10337ff0@CBaseCombatCharacter@@QAEDXZ CBaseCombatCharacter::sub_10337ff0
 0x1000bf5a func   ?vfunc110@CFunc_Dust@@QAE_NPBD0@Z CFunc_Dust::vfunc110
