@@ -4869,6 +4869,32 @@ S101e0520 *CUnknown101e0c30::sub_10149890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149980 size=0x6a
+#include "CUnknown101d5bd0.h"
+
+extern "C++" void __cdecl operator delete(void *);
+
+// TARGET: CUnknown101d5bd0::sub_10149980
+void CUnknown101d5bd0::sub_10149980()
+{
+    if (m_pData) {
+        for (int i = 0; i < m_count; i++) {
+            CUnknown101d5bd0Entry *p = m_pData[i];
+            if (p) {
+                p->sub_10149400();
+                operator delete(p);
+            }
+            m_pData[i] = 0;
+        }
+        operator delete(m_pData);
+        m_pData = 0;
+    }
+    m_count = 0;
+    m_unk0 = 0;
+    m_bFlag18 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149f70 size=0x42
 #include "CStatusFlagList.h"
 unsigned int CStatusFlagList::sub_10149f70(int nKey, int nSkip)
