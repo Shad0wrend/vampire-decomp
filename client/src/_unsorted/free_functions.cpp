@@ -1163,3 +1163,15 @@ SCopy &SCopy::sub_1010f390(const SCopy &o)
     return *this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010f870 size=0x42
+#include "CUtlVector96.h"
+extern "C" void *memmove(void *, const void *, unsigned int);
+
+void CUtlVector96::sub_1010f870(int elem, int num)
+{
+    int numToMove = m_size - elem - num;
+    if (numToMove > 0 && num > 0)
+        memmove(&m_pMemory[elem + num], &m_pMemory[elem], numToMove * sizeof(UtlElem96));
+}
+// END FUNCTION

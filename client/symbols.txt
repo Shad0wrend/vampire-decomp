@@ -58,6 +58,7 @@
 0x1010c470 func   ?sub_1010c470@@YAMMM@Z sub_1010c470
 0x1010c4b0 func   ?sub_1010c4b0@@YAMM@Z sub_1010c4b0
 0x1010f390 func   ?sub_1010f390@SCopy@@QAEAAU1@ABU1@@Z SCopy::sub_1010f390
+0x1010f870 func   ?sub_1010f870@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1010f870
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit
