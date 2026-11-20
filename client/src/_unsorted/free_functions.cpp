@@ -6117,6 +6117,18 @@ void sub_101a3900(CUnknown10258b00 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6b10 size=0x24
+#include <string.h>
+// TARGET: sub_101a6b10
+void sub_101a6b10(unsigned short *dst, unsigned short *src)
+{
+    if (dst) {
+        *dst = *src;
+        memcpy((char *)dst + 4, (char *)src + 4, 0x17cc6 * 4);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be160 size=0xaa
 #include "CUtlVector4.h"
 
