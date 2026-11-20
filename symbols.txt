@@ -16573,6 +16573,7 @@
 0x100155b4 func   ?sub_1003c3c0@@YIXPAUMem@@HH@Z sub_1003c3c0
 0x100155b9 func   _item_w_uzi item_w_uzi
 0x100155be func   _prop_ragdoll prop_ragdoll
+0x100155c3 func   ?vfunc173@CMultiSource@@UAEXPAVCBaseEntity@@0HH@Z CMultiSource::vfunc173
 0x100155c3 func   ?vfunc173@CMultiSource@@UAEXPAVCBaseEntity@@0HM@Z CMultiSource::vfunc173
 0x100155c8 func   ?sub_1015af10@@YAPAHXZ sub_1015af10
 0x100155cd func   ?sub_1038e720@CNPC_VManBat@@QAEXVVector@@@Z CNPC_VManBat::sub_1038e720
