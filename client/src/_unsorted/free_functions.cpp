@@ -473,3 +473,48 @@ void CUnknown100c7f30::sub_1008e230(CUnknown100c7f30Hdr *hdr, unsigned int mask)
     *out = acc;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1008e370 size=0xa4
+#include "CUnknown100c80d0.h"
+
+void CUnknown100c80d0::sub_1008e370(const unsigned int *pMask, const short *pTable, const void *pSource)
+{
+	if (pSource && pTable) {
+		m_nBits = *(const int *)((const char *)pSource + 0xf0);
+		int n = (m_nBits + 31) >> 5;
+		if (n != 0) {
+			unsigned int *p = &m_words[n];
+			do {
+				p--;
+				n--;
+				*p = 0;
+			} while (n != 0);
+		}
+		unsigned int count = *pMask;
+		if (count) {
+			const unsigned int *pw = pMask;
+			unsigned int bit = 1;
+			unsigned int bits = *++pw;
+			pw++;
+			for (;;) {
+				if (bits & bit) {
+					int s = *pTable;
+					if (s >= 0)
+						m_words[s >> 5] |= 1 << (s & 0x1f);
+				}
+				if (--count == 0)
+					return;
+				bit += bit;
+				pTable += 0x1c;
+				if (bit == 0) {
+					bits = *pw;
+					bit = 1;
+					pw++;
+				}
+			}
+		}
+	} else {
+		m_nBits = 0;
+	}
+}
+// END FUNCTION
