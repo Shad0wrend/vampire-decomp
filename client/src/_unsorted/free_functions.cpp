@@ -2467,3 +2467,22 @@ int CFloatTable1006c9d0::sub_10160100(int index)
 	return -1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10160250 size=0x30
+#include "StatDefault.h"
+int StatDefault::sub_10160250(int arg)
+{
+	int n = a[4];
+	int i = 0;
+	if (n > 0) {
+		const float *p = (const float *)a[5];
+		do {
+			if (arg <= (int)*p)
+				return i;
+			i++;
+			p++;
+		} while (i < n);
+	}
+	return i;
+}
+// END FUNCTION
