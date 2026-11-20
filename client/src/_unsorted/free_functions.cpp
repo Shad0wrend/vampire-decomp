@@ -6829,6 +6829,25 @@ void sub_101a3900(CUnknown10258b00 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a6780 size=0x10b
+#include "utlrbtree.h"
+#include "CUtlRBTreeBig.h"
+
+unsigned short CUtlRBTreeBig::sub_101a6780(const void *search)
+{
+    unsigned short current = m_Root;
+    while (current != InvalidIndex()) {
+        if (m_LessFunc(search, m_pElements[current].m_Data))
+            current = Links(current).m_Left;
+        else if (m_LessFunc(m_pElements[current].m_Data, search))
+            current = Links(current).m_Right;
+        else
+            break;
+    }
+    return current;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6b10 size=0x24
 #include <string.h>
 // TARGET: sub_101a6b10
