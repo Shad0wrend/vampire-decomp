@@ -16165,6 +16165,7 @@
 0x10014dad func   ?vfunc618@CNPCMaker_Zombie@@QAEDD@Z CNPCMaker_Zombie::vfunc618
 0x10014db2 func   ?vfunc82@CBaseMoveBehavior@@UAEPAUdatamap_t@@XZ CBaseMoveBehavior::vfunc82
 0x10014db7 func   ?vfunc173@CTriggerBrush@@QAEXPAVCBaseEntity@@0HH@Z CTriggerBrush::vfunc173
+0x10014db7 func   ?vfunc173@CTriggerBrush@@UAEXPAVCBaseEntity@@0HH@Z CTriggerBrush::vfunc173
 0x10014dbc func   ??0CFireSphere@@QAE@PAHHDPBVVector@@M@Z CFireSphere::CFireSphere
 0x10014dc1 func   ?vfunc3@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc3
 0x10014dc6 func   ?vfunc82@CEnvSoundscape@@QAEPAUdatamap_t@@XZ CEnvSoundscape::vfunc82
