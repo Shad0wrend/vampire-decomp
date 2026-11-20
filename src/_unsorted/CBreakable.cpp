@@ -5,7 +5,7 @@
 #include "CBaseEntity.h"
 #include "CBreakable.h"
 // TARGET: CBreakable::vfunc117
-char CBreakable::vfunc117() { char c = ((CBaseEntity *)this)->CBaseEntity::vfunc117(); return c & (char)0xfd; }
+int CBreakable::vfunc117() { return CBaseEntity::vfunc117() & ~2; }
 // END FUNCTION
 
 // FUNCTION: 0x1010d450 size=0x6
@@ -63,7 +63,7 @@ extern char g_106b8540[];
 void sub_10011081();
 static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
 
-void CBreakable::sub_1010d6a0()
+void CBreakable::vfunc103()
 {
 	CBaseEntity *pEnt = (CBaseEntity *)this;
 	pEnt->vfunc104();
@@ -257,8 +257,7 @@ static inline void SetHandle458(unsigned int &h, CEntityVSlots *p)
 		h = 0xffffffff;
 }
 
-// TARGET: CBreakable::sub_1010e100
-int CBreakable::sub_1010e100(void *pInfoV)
+int CBreakable::vfunc142(CTakeDamageInfo *pInfoV)
 {
 	CTakeDamageInfo info = *(CTakeDamageInfo *)pInfoV;
 	CEntityVSlots *self = (CEntityVSlots *)this;
@@ -293,11 +292,11 @@ int CBreakable::sub_1010e100(void *pInfoV)
 		void *pInflictor = info.m_pInflictor;
 		m_iHealth = nNew;
 		int nHealth = nNew;
-		((CVariantCopy *)m_out0484)->sub_1000b320(4, &nHealth);
-		((COutputView *)m_out0484)->sub_100cd300(*(CVariantCopy *)m_out0484, pInflictor, this, 0);
+		((CVariantCopy *)&m_OnHealthChanged)->sub_1000b320(4, &nHealth);
+		((COutputView *)&m_OnHealthChanged)->sub_100cd300(*(CVariantCopy *)&m_OnHealthChanged, pInflictor, this, 0);
 		if (m_iHealth <= 0) {
 			self->slot144(&info);
-			SetHandle458(m_h458, (CEntityVSlots *)info.m_pInflictor);
+			SetHandle458((unsigned int &)m_hBreaker, (CEntityVSlots *)info.m_pInflictor);
 			self->slot241();
 			return 0;
 		}
@@ -327,12 +326,9 @@ void CBreakable::vfunc230(int a, int b)
 
 // FUNCTION: 0x1010e600 size=0x8
 #include "CBreakable.h"
-namespace lifted {
-int sub_10012e1d();
-}
-int CBreakable::vfunc74(int a0)
+bool CBreakable::vfunc74(int a0)
 {
-    return lifted::sub_10012e1d();
+    return sub_1010efc0();
 }
 // END FUNCTION
 
@@ -406,7 +402,7 @@ struct CBreakEntity : CBaseEntity
 
 #define BREAK_SOUND(s) enginesound->vfunc3(&filter, pThis->entindex(), 2, s, fvol, 0.8f, 0, pitch, 0, 0, 1, 0)
 
-void CBreakable::sub_1010e750()
+void CBreakable::vfunc241()
 {
 	CBreakEntity *pThis = (CBreakEntity *)this;
 	Vector vecSpot, vecVelocity;
@@ -486,7 +482,7 @@ void CBreakable::sub_1010e750()
 	pThis->AddSolidFlags(4);
 	pThis->sub_100b3b00();
 
-	((COutputEvent *)((char *)this + 0x46c))->sub_100cd660(((EHANDLE &)m_h458).Get(), pThis, 0);
+	((COutputEvent *)((char *)this + 0x46c))->sub_100cd660(m_hBreaker.Get(), pThis, 0);
 
 	((CEntityVSlots *)this)->slot225();
 	pThis->sub_100ac4e0((int)sub_101c0b10, 0, 0);
@@ -495,7 +491,7 @@ void CBreakable::sub_1010e750()
 	if (m_iszExplosionParamEnt.pszValue)
 	{
 		CParamsExplosion *pParams = (CParamsExplosion *)__RTDynamicCast(
-			g_106eb5d8.sub_100f7770(0, STRING(m_iszExplosionParamEnt), ((EHANDLE &)m_h458).Get(), 0),
+			g_106eb5d8.sub_100f7770(0, STRING(m_iszExplosionParamEnt), m_hBreaker.Get(), 0),
 			0, g_10538764, g_1056b4b8, 0);
 		if (pParams)
 		{
@@ -545,7 +541,7 @@ struct CBaseEntityDtor
 
 void sub_100aa7b0(void *p);
 
-CBreakable *CBreakable::vfunc5(unsigned int flags)
+CBaseEntity *CBreakable::vfunc5(unsigned int flags)
 {
 	((CUnknownMember10015708 *)((char *)this + 0x484))->sub_10015708();
 	((CUnknownMember10015708 *)((char *)this + 0x46c))->sub_10015708();

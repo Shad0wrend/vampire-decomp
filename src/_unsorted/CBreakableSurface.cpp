@@ -41,7 +41,7 @@ void sub_101d0ec0(const char *psz);
 void CBreakableSurface::vfunc104()
 {
     sub_101d0ec0("window_pane");
-    ((CBreakable *)this)->vfunc104();
+    CBreakable::vfunc104();
 }
 // END FUNCTION
 
@@ -138,7 +138,7 @@ inline void SetOutInt(COutputEvent &o, int value, CBaseEntity *pActivator, CBase
 }
 
 // TARGET: CBreakableSurface::vfunc141
-void CBreakableSurface::vfunc141(CTakeDamageInfo *pInfoIn, const Vector *pVecDir, const float *pTrace)
+void CBreakableSurface::vfunc141(CTakeDamageInfo *pInfoIn, const Vector *pVecDir, CGameTrace *pTrace)
 {
 	SDmgView *pInfo = (SDmgView *)pInfoIn;
 	const STraceView *ptr = (const STraceView *)pTrace;
@@ -157,7 +157,7 @@ void CBreakableSurface::vfunc141(CTakeDamageInfo *pInfoIn, const Vector *pVecDir
 	}
 
 	m_iHealth -= pInfo->GetDamage();
-	SetOutInt(m_Out484, m_iHealth, pInfo->GetAttacker(), this);
+	SetOutInt(m_OnHealthChanged, m_iHealth, pInfo->GetAttacker(), this);
 
 	if (m_iHealth > 0)
 		return;
@@ -165,7 +165,7 @@ void CBreakableSurface::vfunc141(CTakeDamageInfo *pInfoIn, const Vector *pVecDir
 	if (!m_b4c4) {
 		sub_10111ba0((int)pInfo->GetAttacker(), VP(ptr->endpos - ptr->startpos));
 	} else {
-		m_Out46c.sub_100cd660(pInfo->GetAttacker(), this, 0);
+		m_OnBreak.sub_100cd660(pInfo->GetAttacker(), this, 0);
 	}
 
 	if (bits & 0x4000086) {
@@ -270,7 +270,7 @@ void sub_101cd940(CBaseEntity *pEntity);
 
 void CBreakableSurface::vfunc103()
 {
-	sub_1010d6a0();
+	CBreakable::vfunc103();
 	if (m_nFaceCheck == 1) {
 		g_109f362c("Rejecting func_breakablesurf.  Has multiple faces that aren't NODRAW.\n");
 		sub_101cd940(this);
@@ -280,7 +280,7 @@ void CBreakableSurface::vfunc103()
 	} else {
 		sub_100aaa40(4);
 		m_b4c4 = 0;
-		m_n454 = 0;
+		m_nMaterial = 0;
 	}
 	sub_100b3580(0x20000000);
 	sub_100a9470(1);

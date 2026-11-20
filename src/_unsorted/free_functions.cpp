@@ -79673,29 +79673,12 @@ int CUnknown1010d0b0::sub_1010d0b0()
 // END FUNCTION
 
 // FUNCTION: 0x1010d3a0 size=0x6b
-#include <new.h>
-#include "CBaseEntity.h"
-#include "COutputEvent.h"
-
-void *sub_100aa720(unsigned int size);
-extern char g_1045ed3c[];	// the CBreakable vtable
+#include "CBreakable.h"
 
 // TARGET: func_breakable
 extern "C" CBaseEntity *func_breakable()
 {
-	void *mem = sub_100aa720(0x49c);
-	CBaseEntity *p;
-	if (mem)
-	{
-		p = (CBaseEntity *)mem;
-		new (p) CBaseEntity(0);
-		*(int *)((char *)p + 0x458) = -1;
-		((COutputEvent *)((char *)p + 0x46c))->sub_100cd2a0();
-		((COutputEvent *)((char *)p + 0x484))->sub_100cd2a0();
-		*(char **)p = g_1045ed3c;
-	}
-	else
-		p = 0;
+	CBreakable *p = new CBreakable;
 	p->vfunc106("func_breakable");
 	return p;
 }
@@ -79860,8 +79843,8 @@ void CBreakable::sub_1010dc50(inputdata_t &data)
 	m_iHealth -= data.value.fieldType == 4 ? data.value.iValue : 0;
 	void *pActivator = data.pActivator;
 	int value = m_iHealth;
-	((CVariantCopy *)m_out0484)->sub_1000b320(4, &value);
-	((COutputEvent *)m_out0484)->sub_100cd300(*(CVariantCopy *)m_out0484, pActivator, this, 0.0f);
+	((CVariantCopy *)&m_OnHealthChanged)->sub_1000b320(4, &value);
+	((COutputEvent *)&m_OnHealthChanged)->sub_100cd300(*(CVariantCopy *)&m_OnHealthChanged, pActivator, this, 0.0f);
 	if (m_iHealth <= 0)
 		sub_1010ddc0(data.pActivator);
 }
@@ -80500,7 +80483,7 @@ void CBreakableSurface::sub_10111ba0(int a, const Vector *pVec)
 	if (m_b4c4)
 		return;
 	m_b4c4 = 1;
-	m_Out46c.sub_100cd660((void *)a, this, 0);
+	m_OnBreak.sub_100cd660((void *)a, this, 0);
 
 	Vector vWidth = SurfSub(m_vLLVertex, m_vLRVertex);
 	Vector vHeight = SurfSub(m_vLLVertex, m_vULVertex);

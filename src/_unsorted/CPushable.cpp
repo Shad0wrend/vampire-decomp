@@ -78,7 +78,7 @@ static inline bool SpawnFlagBit7(const unsigned int *pFlags)
 void CPushable::vfunc103()
 {
     if (SpawnFlagBit7((unsigned int *)((char *)this + 0x204))) {
-        ((CBreakable *)this)->sub_1010d6a0();
+        ((CBreakable *)this)->CBreakable::vfunc103();
         return;
     }
     *(unsigned int *)((char *)this + 0x4c) |= 0x2000;
@@ -139,7 +139,7 @@ bool CPushable::vfunc223()
 int CPushable::vfunc142(void *pInfo)
 {
 	if (*(char *)((char *)this + 0x204) & 0x80)
-		return ((CBreakable *)this)->sub_1010e100(pInfo);
+		return ((CBreakable *)this)->CBreakable::vfunc142((CTakeDamageInfo *)pInfo);
 	return 1;
 }
 // END FUNCTION
@@ -155,7 +155,7 @@ void CPushable::vfunc230(int index, gamevcollisionevent_t *pEvent)
 	if (pOther->m_pA8)
 		((CBaseEntity *)this)->vfunc230(index, pEvent);
 	else
-		((CBreakable *)this)->vfunc230(index, (int)pEvent);
+		((CBreakable *)this)->CBreakable::vfunc230(index, (int)pEvent);
 }
 // END FUNCTION
 
