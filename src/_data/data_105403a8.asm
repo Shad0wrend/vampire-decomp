@@ -1446,13 +1446,7 @@ PUBLIC ?g_10541ccc@@3PBDB
   DB 68 DUP (0)
   DB "DT_TEBloodStream"
   DB 000h,000h,000h,000h
-; 0x10541d28 +40: ??_R0?AVCTEParticleSystem@@@8
-PUBLIC ??_R0?AVCTEParticleSystem@@@8
-??_R0?AVCTEParticleSystem@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVCTEParticleSystem@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h
+  DB 8 DUP (0)
 ; 0x10541d50 +488: ??_R0?AVCTEBloodStream@@@8
 PUBLIC ??_R0?AVCTEBloodStream@@@8
 ??_R0?AVCTEBloodStream@@@8 LABEL BYTE

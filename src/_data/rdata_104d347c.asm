@@ -166,7 +166,7 @@ EXTERN ?vfunc113@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc114@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc115@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc116@CBaseEntity@@UAEHXZ:BYTE
-EXTERN ?vfunc117@CBaseCombatWeapon@@UAEIXZ:BYTE
+EXTERN ?vfunc117@CBaseCombatWeapon@@UAEHXZ:BYTE
 EXTERN ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z:BYTE
 EXTERN ?vfunc119@CBaseCombatWeapon@@UAEXXZ:BYTE
 EXTERN ?vfunc11@CBaseEntity@@UAEXPBD@Z:BYTE
@@ -178,7 +178,7 @@ EXTERN ?vfunc124@CBaseCombatWeapon@@UAEHXZ:BYTE
 EXTERN ?vfunc125@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc127@CBaseCombatWeapon@@UAEHH@Z:BYTE
 EXTERN ?vfunc129@CBaseEntity@@UAEXXZ:BYTE
-EXTERN ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z:BYTE
+EXTERN ?vfunc130@CBaseCombatWeapon@@UAEXH@Z:BYTE
 EXTERN ?vfunc130@CWeaponMelee_Torch@@QAEXPAX@Z:BYTE
 EXTERN ?vfunc131@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc132@CBaseEntity@@UAEXXZ:BYTE
@@ -351,11 +351,11 @@ EXTERN ?vfunc345@CBaseCombatWeapon@@UAEHXZ:BYTE
 EXTERN ?vfunc347@CBaseCombatWeapon@@UAEHH@Z:BYTE
 EXTERN ?vfunc348@CBaseCombatWeapon@@UAEPBDXZ:BYTE
 EXTERN ?vfunc349@CBaseCombatWeapon@@UAEHXZ:BYTE
-EXTERN ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc34@CBaseCombatWeapon@@UAEHH@Z:BYTE
 EXTERN ?vfunc352@CBaseCombatWeapon@@UAEHXZ:BYTE
 EXTERN ?vfunc355@CBaseCombatWeapon@@UAEHXZ:BYTE
 EXTERN ?vfunc359@CBaseCombatWeapon@@UAEXXZ:BYTE
-EXTERN ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc35@CBaseCombatWeapon@@UAEHH@Z:BYTE
 EXTERN ?vfunc360@CWeaponMelee@@UAEIXZ:BYTE
 EXTERN ?vfunc360@CWeaponMelee_Baton@@UAEIXZ:BYTE
 EXTERN ?vfunc360@CWeaponMelee_Knife@@UAEIXZ:BYTE
@@ -471,25 +471,25 @@ EXTERN ?vfunc58@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc59@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc5@CWeaponMelee_AVampBlade@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CWeaponMelee_BaseballBat@@QAEPAV1@I@Z:BYTE
-EXTERN ?vfunc5@CWeaponMelee_Baton@@UAEPAVCBaseCombatWeapon@@I@Z:BYTE
+EXTERN ?vfunc5@CWeaponMelee_Baton@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CWeaponMelee_BushHook@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CWeaponMelee_ChangBlade@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CWeaponMelee_ChangClaw@@QAEPAV1@I@Z:BYTE
-EXTERN ?vfunc5@CWeaponMelee_Claws@@UAEPAVCBaseCombatWeapon@@I@Z:BYTE
-EXTERN ?vfunc5@CWeaponMelee_Claws_Ghoul@@UAEPAVCBaseCombatWeapon@@I@Z:BYTE
-EXTERN ?vfunc5@CWeaponMelee_Claws_Protean4@@UAEPAVCBaseCombatWeapon@@I@Z:BYTE
-EXTERN ?vfunc5@CWeaponMelee_Claws_Protean5@@UAEPAVCBaseCombatWeapon@@I@Z:BYTE
+EXTERN ?vfunc5@CWeaponMelee_Claws@@UAEPAVCBaseEntity@@I@Z:BYTE
+EXTERN ?vfunc5@CWeaponMelee_Claws_Ghoul@@UAEPAVCBaseEntity@@I@Z:BYTE
+EXTERN ?vfunc5@CWeaponMelee_Claws_Protean4@@UAEPAVCBaseEntity@@I@Z:BYTE
+EXTERN ?vfunc5@CWeaponMelee_Claws_Protean5@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CWeaponMelee_FireAxe@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CWeaponMelee_Fists@@QAEPAV1@I@Z:BYTE
-EXTERN ?vfunc5@CWeaponMelee_GargoyleFist@@UAEPAVCBaseCombatWeapon@@I@Z:BYTE
-EXTERN ?vfunc5@CWeaponMelee_HengeyokaiFist@@UAEPAVCBaseCombatWeapon@@I@Z:BYTE
-EXTERN ?vfunc5@CWeaponMelee_Katana@@UAEPAVCBaseCombatWeapon@@I@Z:BYTE
-EXTERN ?vfunc5@CWeaponMelee_Knife@@UAEPAVCBaseCombatWeapon@@I@Z:BYTE
-EXTERN ?vfunc5@CWeaponMelee_ManBatClaw@@UAEPAVCBaseCombatWeapon@@I@Z:BYTE
-EXTERN ?vfunc5@CWeaponMelee_OccultBlade@@UAEPAVCBaseCombatWeapon@@I@Z:BYTE
+EXTERN ?vfunc5@CWeaponMelee_GargoyleFist@@UAEPAVCBaseEntity@@I@Z:BYTE
+EXTERN ?vfunc5@CWeaponMelee_HengeyokaiFist@@UAEPAVCBaseEntity@@I@Z:BYTE
+EXTERN ?vfunc5@CWeaponMelee_Katana@@UAEPAVCBaseEntity@@I@Z:BYTE
+EXTERN ?vfunc5@CWeaponMelee_Knife@@UAEPAVCBaseEntity@@I@Z:BYTE
+EXTERN ?vfunc5@CWeaponMelee_ManBatClaw@@UAEPAVCBaseEntity@@I@Z:BYTE
+EXTERN ?vfunc5@CWeaponMelee_OccultBlade@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CWeaponMelee_SabbatLeaderAttack@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CWeaponMelee_SeveredArm@@QAEPAV1@I@Z:BYTE
-EXTERN ?vfunc5@CWeaponMelee_Sheriff_Sword@@UAEPAVCBaseCombatWeapon@@I@Z:BYTE
+EXTERN ?vfunc5@CWeaponMelee_Sheriff_Sword@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CWeaponMelee_Sledgehammer@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CWeaponMelee_TireIron@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CWeaponMelee_Torch@@QAEPAV1@I@Z:BYTE
@@ -519,25 +519,25 @@ EXTERN ?vfunc77@CBaseCombatWeapon@@UAEXXZ:BYTE
 EXTERN ?vfunc78@CBaseCombatWeapon@@UAEXXZ:BYTE
 EXTERN ?vfunc80@CWeaponMelee_AVampBlade@@QAEHXZ:BYTE
 EXTERN ?vfunc80@CWeaponMelee_BaseballBat@@QAEHXZ:BYTE
-EXTERN ?vfunc80@CWeaponMelee_Baton@@UAEPAXXZ:BYTE
+EXTERN ?vfunc80@CWeaponMelee_Baton@@UAEHXZ:BYTE
 EXTERN ?vfunc80@CWeaponMelee_BushHook@@QAEHXZ:BYTE
 EXTERN ?vfunc80@CWeaponMelee_ChangBlade@@QAEHXZ:BYTE
 EXTERN ?vfunc80@CWeaponMelee_ChangClaw@@QAEHXZ:BYTE
-EXTERN ?vfunc80@CWeaponMelee_Claws@@UAEPAXXZ:BYTE
-EXTERN ?vfunc80@CWeaponMelee_Claws_Ghoul@@UAEPAXXZ:BYTE
-EXTERN ?vfunc80@CWeaponMelee_Claws_Protean4@@UAEPAXXZ:BYTE
-EXTERN ?vfunc80@CWeaponMelee_Claws_Protean5@@UAEPAXXZ:BYTE
+EXTERN ?vfunc80@CWeaponMelee_Claws@@UAEHXZ:BYTE
+EXTERN ?vfunc80@CWeaponMelee_Claws_Ghoul@@UAEHXZ:BYTE
+EXTERN ?vfunc80@CWeaponMelee_Claws_Protean4@@UAEHXZ:BYTE
+EXTERN ?vfunc80@CWeaponMelee_Claws_Protean5@@UAEHXZ:BYTE
 EXTERN ?vfunc80@CWeaponMelee_FireAxe@@QAEHXZ:BYTE
 EXTERN ?vfunc80@CWeaponMelee_Fists@@QAEHXZ:BYTE
-EXTERN ?vfunc80@CWeaponMelee_GargoyleFist@@UAEPAXXZ:BYTE
-EXTERN ?vfunc80@CWeaponMelee_HengeyokaiFist@@UAEPAXXZ:BYTE
-EXTERN ?vfunc80@CWeaponMelee_Katana@@UAEPAXXZ:BYTE
-EXTERN ?vfunc80@CWeaponMelee_Knife@@UAEPAXXZ:BYTE
-EXTERN ?vfunc80@CWeaponMelee_ManBatClaw@@UAEPAXXZ:BYTE
-EXTERN ?vfunc80@CWeaponMelee_OccultBlade@@UAEPAXXZ:BYTE
+EXTERN ?vfunc80@CWeaponMelee_GargoyleFist@@UAEHXZ:BYTE
+EXTERN ?vfunc80@CWeaponMelee_HengeyokaiFist@@UAEHXZ:BYTE
+EXTERN ?vfunc80@CWeaponMelee_Katana@@UAEHXZ:BYTE
+EXTERN ?vfunc80@CWeaponMelee_Knife@@UAEHXZ:BYTE
+EXTERN ?vfunc80@CWeaponMelee_ManBatClaw@@UAEHXZ:BYTE
+EXTERN ?vfunc80@CWeaponMelee_OccultBlade@@UAEHXZ:BYTE
 EXTERN ?vfunc80@CWeaponMelee_SabbatLeaderAttack@@QAEHXZ:BYTE
 EXTERN ?vfunc80@CWeaponMelee_SeveredArm@@QAEHXZ:BYTE
-EXTERN ?vfunc80@CWeaponMelee_Sheriff_Sword@@UAEPAXXZ:BYTE
+EXTERN ?vfunc80@CWeaponMelee_Sheriff_Sword@@UAEHXZ:BYTE
 EXTERN ?vfunc80@CWeaponMelee_Sledgehammer@@QAEHXZ:BYTE
 EXTERN ?vfunc80@CWeaponMelee_TireIron@@QAEHXZ:BYTE
 EXTERN ?vfunc80@CWeaponMelee_Torch@@QAEHXZ:BYTE
@@ -576,7 +576,7 @@ EXTERN ?vfunc81@CWeaponMelee_ZombieFists@@QAEHXZ:BYTE
 EXTERN ?vfunc82@CWeaponMelee_Torch@@QAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc83@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc84@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z:BYTE
+EXTERN ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z:BYTE
 EXTERN ?vfunc87@CBaseEntity@@UAEXPAX@Z:BYTE
 EXTERN ?vfunc88@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc89@CBaseEntity@@UAEXXZ:BYTE
@@ -631,8 +631,8 @@ PUBLIC ?vt_104d349c@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -683,7 +683,7 @@ PUBLIC ?vt_104d349c@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -714,7 +714,7 @@ PUBLIC ?vt_104d349c@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -727,7 +727,7 @@ PUBLIC ?vt_104d349c@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -1010,8 +1010,8 @@ PUBLIC ?vt_104d3ba4@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -1062,7 +1062,7 @@ PUBLIC ?vt_104d3ba4@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -1093,7 +1093,7 @@ PUBLIC ?vt_104d3ba4@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -1106,7 +1106,7 @@ PUBLIC ?vt_104d3ba4@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -1360,7 +1360,7 @@ PUBLIC ?vt_104d42ac@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CWeaponMelee_Claws@@UAEPAVCBaseCombatWeapon@@I@Z
+  DD OFFSET ?vfunc5@CWeaponMelee_Claws@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -1389,8 +1389,8 @@ PUBLIC ?vt_104d42ac@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -1435,13 +1435,13 @@ PUBLIC ?vt_104d42ac@@3HA
   DD OFFSET ?vfunc77@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?sub_10256680@@YAPAPAXXZ
-  DD OFFSET ?vfunc80@CWeaponMelee_Claws@@UAEPAXXZ
+  DD OFFSET ?vfunc80@CWeaponMelee_Claws@@UAEHXZ
   DD OFFSET ?vfunc81@CWeaponMelee_Claws@@UAEHXZ
   DD OFFSET ?sub_10256750@@YAPAXXZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -1472,7 +1472,7 @@ PUBLIC ?vt_104d42ac@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -1485,7 +1485,7 @@ PUBLIC ?vt_104d42ac@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -1739,7 +1739,7 @@ PUBLIC ?vt_104d49b4@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CWeaponMelee_Claws_Ghoul@@UAEPAVCBaseCombatWeapon@@I@Z
+  DD OFFSET ?vfunc5@CWeaponMelee_Claws_Ghoul@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -1768,8 +1768,8 @@ PUBLIC ?vt_104d49b4@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -1814,13 +1814,13 @@ PUBLIC ?vt_104d49b4@@3HA
   DD OFFSET ?vfunc77@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?sub_10256680@@YAPAPAXXZ
-  DD OFFSET ?vfunc80@CWeaponMelee_Claws_Ghoul@@UAEPAXXZ
+  DD OFFSET ?vfunc80@CWeaponMelee_Claws_Ghoul@@UAEHXZ
   DD OFFSET ?vfunc81@CWeaponMelee_Claws_Ghoul@@UAEHXZ
   DD OFFSET ?sub_10256750@@YAPAXXZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -1851,7 +1851,7 @@ PUBLIC ?vt_104d49b4@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -1864,7 +1864,7 @@ PUBLIC ?vt_104d49b4@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -2118,7 +2118,7 @@ PUBLIC ?vt_104d50bc@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CWeaponMelee_Claws_Protean4@@UAEPAVCBaseCombatWeapon@@I@Z
+  DD OFFSET ?vfunc5@CWeaponMelee_Claws_Protean4@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -2147,8 +2147,8 @@ PUBLIC ?vt_104d50bc@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -2193,13 +2193,13 @@ PUBLIC ?vt_104d50bc@@3HA
   DD OFFSET ?vfunc77@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?sub_10256680@@YAPAPAXXZ
-  DD OFFSET ?vfunc80@CWeaponMelee_Claws_Protean4@@UAEPAXXZ
+  DD OFFSET ?vfunc80@CWeaponMelee_Claws_Protean4@@UAEHXZ
   DD OFFSET ?vfunc81@CWeaponMelee_Claws_Protean4@@UAEHXZ
   DD OFFSET ?sub_10256750@@YAPAXXZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -2230,7 +2230,7 @@ PUBLIC ?vt_104d50bc@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -2243,7 +2243,7 @@ PUBLIC ?vt_104d50bc@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -2497,7 +2497,7 @@ PUBLIC ?vt_104d57c4@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CWeaponMelee_Claws_Protean5@@UAEPAVCBaseCombatWeapon@@I@Z
+  DD OFFSET ?vfunc5@CWeaponMelee_Claws_Protean5@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -2526,8 +2526,8 @@ PUBLIC ?vt_104d57c4@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -2572,13 +2572,13 @@ PUBLIC ?vt_104d57c4@@3HA
   DD OFFSET ?vfunc77@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?sub_10256680@@YAPAPAXXZ
-  DD OFFSET ?vfunc80@CWeaponMelee_Claws_Protean5@@UAEPAXXZ
+  DD OFFSET ?vfunc80@CWeaponMelee_Claws_Protean5@@UAEHXZ
   DD OFFSET ?vfunc81@CWeaponMelee_Claws_Protean5@@UAEHXZ
   DD OFFSET ?sub_10256750@@YAPAXXZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -2609,7 +2609,7 @@ PUBLIC ?vt_104d57c4@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -2622,7 +2622,7 @@ PUBLIC ?vt_104d57c4@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -2905,8 +2905,8 @@ PUBLIC ?vt_104d5ecc@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -2957,7 +2957,7 @@ PUBLIC ?vt_104d5ecc@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -2988,7 +2988,7 @@ PUBLIC ?vt_104d5ecc@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -3001,7 +3001,7 @@ PUBLIC ?vt_104d5ecc@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -3284,8 +3284,8 @@ PUBLIC ?vt_104d65d4@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -3336,7 +3336,7 @@ PUBLIC ?vt_104d65d4@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -3367,7 +3367,7 @@ PUBLIC ?vt_104d65d4@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -3380,7 +3380,7 @@ PUBLIC ?vt_104d65d4@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -3663,8 +3663,8 @@ PUBLIC ?vt_104d6cdc@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -3715,7 +3715,7 @@ PUBLIC ?vt_104d6cdc@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -3746,7 +3746,7 @@ PUBLIC ?vt_104d6cdc@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -3759,7 +3759,7 @@ PUBLIC ?vt_104d6cdc@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -4013,7 +4013,7 @@ PUBLIC ?vt_104d73e4@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CWeaponMelee_Katana@@UAEPAVCBaseCombatWeapon@@I@Z
+  DD OFFSET ?vfunc5@CWeaponMelee_Katana@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -4042,8 +4042,8 @@ PUBLIC ?vt_104d73e4@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -4088,13 +4088,13 @@ PUBLIC ?vt_104d73e4@@3HA
   DD OFFSET ?vfunc77@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?sub_10256680@@YAPAPAXXZ
-  DD OFFSET ?vfunc80@CWeaponMelee_Katana@@UAEPAXXZ
+  DD OFFSET ?vfunc80@CWeaponMelee_Katana@@UAEHXZ
   DD OFFSET ?vfunc81@CWeaponMelee_Katana@@UAEHXZ
   DD OFFSET ?sub_10256750@@YAPAXXZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -4125,7 +4125,7 @@ PUBLIC ?vt_104d73e4@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -4138,7 +4138,7 @@ PUBLIC ?vt_104d73e4@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -4392,7 +4392,7 @@ PUBLIC ?vt_104d7aec@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CWeaponMelee_Knife@@UAEPAVCBaseCombatWeapon@@I@Z
+  DD OFFSET ?vfunc5@CWeaponMelee_Knife@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -4421,8 +4421,8 @@ PUBLIC ?vt_104d7aec@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -4467,13 +4467,13 @@ PUBLIC ?vt_104d7aec@@3HA
   DD OFFSET ?vfunc77@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?sub_10256680@@YAPAPAXXZ
-  DD OFFSET ?vfunc80@CWeaponMelee_Knife@@UAEPAXXZ
+  DD OFFSET ?vfunc80@CWeaponMelee_Knife@@UAEHXZ
   DD OFFSET ?vfunc81@CWeaponMelee_Knife@@UAEHXZ
   DD OFFSET ?sub_10256750@@YAPAXXZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -4504,7 +4504,7 @@ PUBLIC ?vt_104d7aec@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -4517,7 +4517,7 @@ PUBLIC ?vt_104d7aec@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -4771,7 +4771,7 @@ PUBLIC ?vt_104d81f4@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CWeaponMelee_OccultBlade@@UAEPAVCBaseCombatWeapon@@I@Z
+  DD OFFSET ?vfunc5@CWeaponMelee_OccultBlade@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -4800,8 +4800,8 @@ PUBLIC ?vt_104d81f4@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -4846,13 +4846,13 @@ PUBLIC ?vt_104d81f4@@3HA
   DD OFFSET ?vfunc77@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?sub_10256680@@YAPAPAXXZ
-  DD OFFSET ?vfunc80@CWeaponMelee_OccultBlade@@UAEPAXXZ
+  DD OFFSET ?vfunc80@CWeaponMelee_OccultBlade@@UAEHXZ
   DD OFFSET ?vfunc81@CWeaponMelee_OccultBlade@@UAEHXZ
   DD OFFSET ?sub_10256750@@YAPAXXZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -4883,7 +4883,7 @@ PUBLIC ?vt_104d81f4@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -4896,7 +4896,7 @@ PUBLIC ?vt_104d81f4@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -5150,7 +5150,7 @@ PUBLIC ?vt_104d88fc@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CWeaponMelee_Sheriff_Sword@@UAEPAVCBaseCombatWeapon@@I@Z
+  DD OFFSET ?vfunc5@CWeaponMelee_Sheriff_Sword@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -5179,8 +5179,8 @@ PUBLIC ?vt_104d88fc@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -5225,13 +5225,13 @@ PUBLIC ?vt_104d88fc@@3HA
   DD OFFSET ?vfunc77@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?sub_10256680@@YAPAPAXXZ
-  DD OFFSET ?vfunc80@CWeaponMelee_Sheriff_Sword@@UAEPAXXZ
+  DD OFFSET ?vfunc80@CWeaponMelee_Sheriff_Sword@@UAEHXZ
   DD OFFSET ?vfunc81@CWeaponMelee_Sheriff_Sword@@UAEHXZ
   DD OFFSET ?sub_10256750@@YAPAXXZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -5262,7 +5262,7 @@ PUBLIC ?vt_104d88fc@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -5275,7 +5275,7 @@ PUBLIC ?vt_104d88fc@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -5558,8 +5558,8 @@ PUBLIC ?vt_104d9004@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -5610,7 +5610,7 @@ PUBLIC ?vt_104d9004@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -5641,7 +5641,7 @@ PUBLIC ?vt_104d9004@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -5654,7 +5654,7 @@ PUBLIC ?vt_104d9004@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -5937,8 +5937,8 @@ PUBLIC ?vt_104d970c@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -5989,7 +5989,7 @@ PUBLIC ?vt_104d970c@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -6020,7 +6020,7 @@ PUBLIC ?vt_104d970c@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -6316,8 +6316,8 @@ PUBLIC ?vt_104d9e14@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -6368,7 +6368,7 @@ PUBLIC ?vt_104d9e14@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -6399,7 +6399,7 @@ PUBLIC ?vt_104d9e14@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -6412,7 +6412,7 @@ PUBLIC ?vt_104d9e14@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -6695,8 +6695,8 @@ PUBLIC ?vt_104da51c@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -6747,7 +6747,7 @@ PUBLIC ?vt_104da51c@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -6778,7 +6778,7 @@ PUBLIC ?vt_104da51c@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -6791,7 +6791,7 @@ PUBLIC ?vt_104da51c@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -7045,7 +7045,7 @@ PUBLIC ?vt_104dac24@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CWeaponMelee_Baton@@UAEPAVCBaseCombatWeapon@@I@Z
+  DD OFFSET ?vfunc5@CWeaponMelee_Baton@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -7074,8 +7074,8 @@ PUBLIC ?vt_104dac24@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -7120,13 +7120,13 @@ PUBLIC ?vt_104dac24@@3HA
   DD OFFSET ?vfunc77@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?sub_10256680@@YAPAPAXXZ
-  DD OFFSET ?vfunc80@CWeaponMelee_Baton@@UAEPAXXZ
+  DD OFFSET ?vfunc80@CWeaponMelee_Baton@@UAEHXZ
   DD OFFSET ?vfunc81@CWeaponMelee_Baton@@UAEHXZ
   DD OFFSET ?sub_10256750@@YAPAXXZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -7157,7 +7157,7 @@ PUBLIC ?vt_104dac24@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -7170,7 +7170,7 @@ PUBLIC ?vt_104dac24@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -7453,8 +7453,8 @@ PUBLIC ?vt_104db32c@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -7505,7 +7505,7 @@ PUBLIC ?vt_104db32c@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -7536,7 +7536,7 @@ PUBLIC ?vt_104db32c@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -7549,7 +7549,7 @@ PUBLIC ?vt_104db32c@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -7833,8 +7833,8 @@ PUBLIC ?vt_104dc15c@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -7885,7 +7885,7 @@ PUBLIC ?vt_104dc15c@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -7916,7 +7916,7 @@ PUBLIC ?vt_104dc15c@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -7929,7 +7929,7 @@ PUBLIC ?vt_104dc15c@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -8212,8 +8212,8 @@ PUBLIC ?vt_104dc864@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -8264,7 +8264,7 @@ PUBLIC ?vt_104dc864@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -8295,7 +8295,7 @@ PUBLIC ?vt_104dc864@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -8308,7 +8308,7 @@ PUBLIC ?vt_104dc864@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -8591,8 +8591,8 @@ PUBLIC ?vt_104dcf6c@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -8643,7 +8643,7 @@ PUBLIC ?vt_104dcf6c@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -8674,7 +8674,7 @@ PUBLIC ?vt_104dcf6c@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -8687,7 +8687,7 @@ PUBLIC ?vt_104dcf6c@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -8970,8 +8970,8 @@ PUBLIC ?vt_104dd674@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -9022,7 +9022,7 @@ PUBLIC ?vt_104dd674@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -9053,7 +9053,7 @@ PUBLIC ?vt_104dd674@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -9066,7 +9066,7 @@ PUBLIC ?vt_104dd674@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -9321,7 +9321,7 @@ PUBLIC ?vt_104de494@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CWeaponMelee_GargoyleFist@@UAEPAVCBaseCombatWeapon@@I@Z
+  DD OFFSET ?vfunc5@CWeaponMelee_GargoyleFist@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -9350,8 +9350,8 @@ PUBLIC ?vt_104de494@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -9396,13 +9396,13 @@ PUBLIC ?vt_104de494@@3HA
   DD OFFSET ?vfunc77@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?sub_10256680@@YAPAPAXXZ
-  DD OFFSET ?vfunc80@CWeaponMelee_GargoyleFist@@UAEPAXXZ
+  DD OFFSET ?vfunc80@CWeaponMelee_GargoyleFist@@UAEHXZ
   DD OFFSET ?vfunc81@CWeaponMelee_GargoyleFist@@UAEHXZ
   DD OFFSET ?sub_10256750@@YAPAXXZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -9433,7 +9433,7 @@ PUBLIC ?vt_104de494@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -9446,7 +9446,7 @@ PUBLIC ?vt_104de494@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -9729,8 +9729,8 @@ PUBLIC ?vt_104deb9c@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -9781,7 +9781,7 @@ PUBLIC ?vt_104deb9c@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -9812,7 +9812,7 @@ PUBLIC ?vt_104deb9c@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -9825,7 +9825,7 @@ PUBLIC ?vt_104deb9c@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -10108,8 +10108,8 @@ PUBLIC ?vt_104df2a4@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -10160,7 +10160,7 @@ PUBLIC ?vt_104df2a4@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -10191,7 +10191,7 @@ PUBLIC ?vt_104df2a4@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -10204,7 +10204,7 @@ PUBLIC ?vt_104df2a4@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -10458,7 +10458,7 @@ PUBLIC ?vt_104df9ac@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CWeaponMelee_HengeyokaiFist@@UAEPAVCBaseCombatWeapon@@I@Z
+  DD OFFSET ?vfunc5@CWeaponMelee_HengeyokaiFist@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -10487,8 +10487,8 @@ PUBLIC ?vt_104df9ac@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -10533,13 +10533,13 @@ PUBLIC ?vt_104df9ac@@3HA
   DD OFFSET ?vfunc77@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?sub_10256680@@YAPAPAXXZ
-  DD OFFSET ?vfunc80@CWeaponMelee_HengeyokaiFist@@UAEPAXXZ
+  DD OFFSET ?vfunc80@CWeaponMelee_HengeyokaiFist@@UAEHXZ
   DD OFFSET ?vfunc81@CWeaponMelee_HengeyokaiFist@@UAEHXZ
   DD OFFSET ?sub_10256750@@YAPAXXZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -10570,7 +10570,7 @@ PUBLIC ?vt_104df9ac@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -10583,7 +10583,7 @@ PUBLIC ?vt_104df9ac@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -10837,7 +10837,7 @@ PUBLIC ?vt_104e00b4@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CWeaponMelee_ManBatClaw@@UAEPAVCBaseCombatWeapon@@I@Z
+  DD OFFSET ?vfunc5@CWeaponMelee_ManBatClaw@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -10866,8 +10866,8 @@ PUBLIC ?vt_104e00b4@@3HA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -10912,13 +10912,13 @@ PUBLIC ?vt_104e00b4@@3HA
   DD OFFSET ?vfunc77@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?sub_10256680@@YAPAPAXXZ
-  DD OFFSET ?vfunc80@CWeaponMelee_ManBatClaw@@UAEPAXXZ
+  DD OFFSET ?vfunc80@CWeaponMelee_ManBatClaw@@UAEHXZ
   DD OFFSET ?vfunc81@CWeaponMelee_ManBatClaw@@UAEHXZ
   DD OFFSET ?sub_10256750@@YAPAXXZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -10949,7 +10949,7 @@ PUBLIC ?vt_104e00b4@@3HA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -10962,7 +10962,7 @@ PUBLIC ?vt_104e00b4@@3HA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ

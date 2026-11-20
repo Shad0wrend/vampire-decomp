@@ -2654,20 +2654,11 @@ PUBLIC ?g_105a5ecc@@3PADA
   DB 000h,000h,000h,000h,000h,000h
   DB "%d-%s"
   DB 000h,000h,000h
-  DB 4 DUP (0)
-; 0x105a5f28 +1244: ??_R0?AVVKeyValues@@@8 ?g_105a5f28@@3HA ?g_105a5f28@@3PADA ?g_105a5f28@@3PAHA
-PUBLIC ??_R0?AVVKeyValues@@@8
-??_R0?AVVKeyValues@@@8 LABEL BYTE
-PUBLIC ?g_105a5f28@@3HA
-?g_105a5f28@@3HA LABEL BYTE
-PUBLIC ?g_105a5f28@@3PADA
-?g_105a5f28@@3PADA LABEL BYTE
-PUBLIC ?g_105a5f28@@3PAHA
-?g_105a5f28@@3PAHA LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVVKeyValues@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
+  DB 13 DUP (0)
+; 0x105a5f41 +1219: $rtti_tail_105a5f41
+PUBLIC $rtti_tail_105a5f41
+$rtti_tail_105a5f41 LABEL BYTE
+  DB 000h,000h,000h,000h,000h,000h,000h
   DB "ERROR: parsing KeyValue in file %s, expecting {, got %s"
   DB 00Ah,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
   DB "(NULL)"

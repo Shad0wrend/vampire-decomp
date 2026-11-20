@@ -5140,13 +5140,11 @@ PUBLIC ?g_1060e654@@3PAHA
   DB 000h,000h,000h,000h,000h,000h
   DB "CAI_Motor"
   DB 000h,000h,000h
-; 0x1060e74c +436: ??_R0?AV?$CUtlVectorDataOps@VCAI_InterestTarget@@$08@@@8
-PUBLIC ??_R0?AV?$CUtlVectorDataOps@VCAI_InterestTarget@@$08@@@8
-??_R0?AV?$CUtlVectorDataOps@VCAI_InterestTarget@@$08@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AV?$CUtlVectorDataOps@VCAI_InterestTarget@@$08@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
+  DB 11 DUP (0)
+; 0x1060e787 +377: $rtti_tail_1060e787
+PUBLIC $rtti_tail_1060e787
+$rtti_tail_1060e787 LABEL BYTE
+  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
   DB "CAI_Motor_MoveNormalExecute"
   DB 000h,000h,000h,000h,000h,000h,000h,000h,000h
   DD OFFSET ?g_106b8540@@3DA

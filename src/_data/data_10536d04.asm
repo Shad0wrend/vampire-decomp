@@ -486,13 +486,6 @@ PUBLIC ?g_10537530@lifted@@3DA
   DB 000h,000h,000h
   DB "m_force"
   DB 000h,000h,000h,000h,000h
-; 0x105386c8 +48: ??_R0?AVCConstantForceController@@@8
-PUBLIC ??_R0?AVCConstantForceController@@@8
-??_R0?AVCConstantForceController@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVCConstantForceController@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
   DB 12 DUP (0)
 ; 0x105387c4 +24: ?g_105387c4@@3PADA
 PUBLIC ?g_105387c4@@3PADA
@@ -826,13 +819,6 @@ PUBLIC ?g_10539010@@3PAXA
   DB "m_pMachine"
   DB 000h,000h,000h,000h,000h,000h
   DB "CPhysConstraintSystem"
-  DB 000h,000h,000h,000h,000h,000h,000h
-; 0x105392dc +32: ??_R0?AVIGameSystem@@@8
-PUBLIC ??_R0?AVIGameSystem@@@8
-??_R0?AVIGameSystem@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVIGameSystem@@"
   DB 000h,000h,000h,000h,000h,000h,000h
 ; 0x1053938c +28: ?g_1053938c@@3QBDB
 PUBLIC ?g_1053938c@@3QBDB
@@ -2663,13 +2649,7 @@ PUBLIC ?g_1053dfac@@3HA
   DB 000h,000h,000h,000h,000h,000h,000h
   DB "CBaseTempEntity"
   DB 000h,000h,000h,000h,000h
-; 0x1053e020 +36: ??_R0?AVCBaseTempEntity@@@8
-PUBLIC ??_R0?AVCBaseTempEntity@@@8
-??_R0?AVCBaseTempEntity@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVCBaseTempEntity@@"
-  DB 000h,000h,000h,000h,000h,000h,000h
+  DB 4 DUP (0)
 ; 0x1053e044 +12: ?g_1053e044@@3PADA
 PUBLIC ?g_1053e044@@3PADA
 ?g_1053e044@@3PADA LABEL BYTE

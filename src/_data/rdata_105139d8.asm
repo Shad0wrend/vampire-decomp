@@ -19,11 +19,9 @@ EXTERN ??_R0?AVCBaseCombatCharacter@@@8:BYTE
 EXTERN ??_R0?AVCBaseDoor@@@8:BYTE
 EXTERN ??_R0?AVCBaseFire@@@8:BYTE
 EXTERN ??_R0?AVCBaseFlex@@@8:BYTE
-EXTERN ??_R0?AVCBaseHudEntity@@@8:BYTE
 EXTERN ??_R0?AVCBasePlatTrain@@@8:BYTE
 EXTERN ??_R0?AVCBasePlayer@@@8:BYTE
 EXTERN ??_R0?AVCBaseProp@@@8:BYTE
-EXTERN ??_R0?AVCBaseRopePhysics@@@8:BYTE
 EXTERN ??_R0?AVCBaseTempEntity@@@8:BYTE
 EXTERN ??_R0?AVCBaseTransmitProxy@@@8:BYTE
 EXTERN ??_R0?AVCBatSwarm@@@8:BYTE
@@ -160,7 +158,6 @@ EXTERN ??_R0?AVCTEFootprintDecal@@@8:BYTE
 EXTERN ??_R0?AVCTEGlowSprite@@@8:BYTE
 EXTERN ??_R0?AVCTEImpact@@@8:BYTE
 EXTERN ??_R0?AVCTEMuzzleFlash@@@8:BYTE
-EXTERN ??_R0?AVCTEParticleSystem@@@8:BYTE
 EXTERN ??_R0?AVCTEPlayerDecal@@@8:BYTE
 EXTERN ??_R0?AVCTEShowLine@@@8:BYTE
 EXTERN ??_R0?AVCTESmoke@@@8:BYTE
@@ -182,7 +179,6 @@ EXTERN ??_R0?AVCWindowPane@@@8:BYTE
 EXTERN ??_R0?AVIAI_MovementSink@@@8:BYTE
 EXTERN ??_R0?AVIChoreoEventCallback@@@8:BYTE
 EXTERN ??_R0?AVIEffects@@@8:BYTE
-EXTERN ??_R0?AVIGameSystem@@@8:BYTE
 EXTERN ??_R0?AVIMotionEvent@@@8:BYTE
 EXTERN ??_R0?AVIPartitionEnumerator@@@8:BYTE
 EXTERN ??_R0?AVISaveRestoreBlockHandler@@@8:BYTE
@@ -190,19 +186,23 @@ EXTERN ??_R0?AVISaveRestoreBlockSet@@@8:BYTE
 EXTERN ??_R0?AVISceneTokenProcessor@@@8:BYTE
 EXTERN ??_R0?AVIServerEntity@@@8:BYTE
 EXTERN ??_R0?AVITempEntsSystem@@@8:BYTE
-EXTERN ??_R0?AVIVPhysicsKeyHandler@@@8:BYTE
+EXTERN ??_R1A@?0A@A@CBaseAnimating@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseButton@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseEntityList@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseFilter@@8:BYTE
+EXTERN ??_R1A@?0A@A@CBaseHudEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseParticleEntity@@8:BYTE
+EXTERN ??_R1A@?0A@A@CBaseTempEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseToggle@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBeam@@8:BYTE
 EXTERN ??_R1A@?0A@A@CCameraKeyFrame@@8:BYTE
 EXTERN ??_R1A@?0A@A@CLogicalEntity@@8:BYTE
+EXTERN ??_R1A@?0A@A@CPathKeyFrame@@8:BYTE
 EXTERN ??_R1A@?0A@A@CPhysForce@@8:BYTE
 EXTERN ??_R1A@?0A@A@CPointEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@CTEBaseBeam@@8:BYTE
+EXTERN ??_R1A@?0A@A@CTEParticleSystem@@8:BYTE
 EXTERN ??_R1A@?0A@A@IEntityDataInstantiator@@8:BYTE
 EXTERN ??_R1A@?0A@A@IEntityListener@@8:BYTE
 EXTERN ??_R1A@?0A@A@IHandleEntity@@8:BYTE
@@ -379,7 +379,7 @@ EXTERN ?v1@CGlobalEntityList_Ent@@UAEPAIXZ:BYTE
 EXTERN ?vfunc0@CAutoGameSystem@@UAE_NXZ:BYTE
 EXTERN ?vfunc0@CBaseEntity@@UAEHH@Z:BYTE
 EXTERN ?vfunc0@CBaseRopePhysics@@UAEXPAUCRopeNode@@HPAVVector@@@Z:BYTE
-EXTERN ?vfunc0@CHangRope@@UAEHHHH@Z:BYTE
+EXTERN ?vfunc0@CHangRope@@UAEXPAUCRopeNode@@HPAVVector@@@Z:BYTE
 EXTERN ?vfunc100@CBaseAnimating@@QAE_NHHPAD@Z:BYTE
 EXTERN ?vfunc103@CBaseCombatCharacter@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CBaseCombatWeapon@@UAEXXZ:BYTE
@@ -409,7 +409,7 @@ EXTERN ?vfunc113@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc114@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc115@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc116@CBaseEntity@@UAEHXZ:BYTE
-EXTERN ?vfunc117@CBaseCombatWeapon@@UAEIXZ:BYTE
+EXTERN ?vfunc117@CBaseCombatWeapon@@UAEHXZ:BYTE
 EXTERN ?vfunc117@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc117@CBaseViewModel@@UAEHXZ:BYTE
 EXTERN ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z:BYTE
@@ -435,7 +435,7 @@ EXTERN ?vfunc127@CBaseEntity@@UAEHH@Z:BYTE
 EXTERN ?vfunc129@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc130@CBaseAnimating@@UAEXH@Z:BYTE
 EXTERN ?vfunc130@CBaseCombatCharacter@@UAEXH@Z:BYTE
-EXTERN ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z:BYTE
+EXTERN ?vfunc130@CBaseCombatWeapon@@UAEXH@Z:BYTE
 EXTERN ?vfunc130@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc131@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc132@CBaseEntity@@UAEXXZ:BYTE
@@ -710,7 +710,7 @@ EXTERN ?vfunc348@CBaseCombatWeapon@@UAEPBDXZ:BYTE
 EXTERN ?vfunc349@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z:BYTE
 EXTERN ?vfunc349@CBaseCombatWeapon@@UAEHXZ:BYTE
 EXTERN ?vfunc34@CBaseCombatCharacter@@UAEHH@Z:BYTE
-EXTERN ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc34@CBaseCombatWeapon@@UAEHH@Z:BYTE
 EXTERN ?vfunc34@CBaseEntity@@UAEHH@Z:BYTE
 EXTERN ?vfunc350@CBaseCombatCharacter@@QAEXPAUinputdata_t@@@Z:BYTE
 EXTERN ?vfunc351@CBaseCombatCharacter@@UAEXPAV1@@Z:BYTE
@@ -722,7 +722,7 @@ EXTERN ?vfunc357@CBaseCombatCharacter@@QAEXXZ:BYTE
 EXTERN ?vfunc358@CBaseCombatCharacter@@QAEXXZ:BYTE
 EXTERN ?vfunc359@CBaseCombatCharacter@@UAEHH@Z:BYTE
 EXTERN ?vfunc359@CBaseCombatWeapon@@UAEXXZ:BYTE
-EXTERN ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc35@CBaseCombatWeapon@@UAEHH@Z:BYTE
 EXTERN ?vfunc35@CBaseEntity@@UAEHH@Z:BYTE
 EXTERN ?vfunc360@CBaseCombatCharacter@@UAEDXZ:BYTE
 EXTERN ?vfunc360@CWeaponIGeneric@@UAEHXZ:BYTE
@@ -860,9 +860,9 @@ EXTERN ?vfunc82@CItemGKeyring@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CSprite@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc83@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc84@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc86@CBaseCombatCharacter@@QAEDHHHHH@Z:BYTE
-EXTERN ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z:BYTE
-EXTERN ?vfunc86@CBaseViewModel@@QAE_NHHHHH@Z:BYTE
+EXTERN ?vfunc86@CBaseCombatCharacter@@UAEDHHHHH@Z:BYTE
+EXTERN ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z:BYTE
+EXTERN ?vfunc86@CBaseViewModel@@UAEDHHHHH@Z:BYTE
 EXTERN ?vfunc87@CBaseEntity@@UAEXPAX@Z:BYTE
 EXTERN ?vfunc88@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc89@CBaseEntity@@UAEXXZ:BYTE
@@ -914,8 +914,8 @@ PUBLIC ?vt_105139dc@@3PAHA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -966,7 +966,7 @@ PUBLIC ?vt_105139dc@@3PAHA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -997,7 +997,7 @@ PUBLIC ?vt_105139dc@@3PAHA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -1291,8 +1291,8 @@ PUBLIC ?vt_105140dc@@3PAPAXA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -1343,7 +1343,7 @@ PUBLIC ?vt_105140dc@@3PAPAXA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -1374,7 +1374,7 @@ PUBLIC ?vt_105140dc@@3PAPAXA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -1387,7 +1387,7 @@ PUBLIC ?vt_105140dc@@3PAPAXA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -1668,8 +1668,8 @@ PUBLIC ?vt_105147dc@@3PAHA
   DD OFFSET ?vfunc31@CBaseAnimating@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc34@CBaseCombatWeapon@@UAEHH@Z
+  DD OFFSET ?vfunc35@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc38@CBaseEntity@@UAEPAXH@Z
@@ -1720,7 +1720,7 @@ PUBLIC ?vt_105147dc@@3PAHA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAE_NHPAXHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatWeapon@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -1751,7 +1751,7 @@ PUBLIC ?vt_105147dc@@3PAHA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEIXZ
+  DD OFFSET ?vfunc117@CBaseCombatWeapon@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseCombatWeapon@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -1764,7 +1764,7 @@ PUBLIC ?vt_105147dc@@3PAHA
   DD OFFSET ?vfunc127@CBaseCombatWeapon@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXPAX@Z
+  DD OFFSET ?vfunc130@CBaseCombatWeapon@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -2100,7 +2100,7 @@ PUBLIC ?vt_10515ac4@@3PAPAXA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatCharacter@@QAEDHHHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatCharacter@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -2524,7 +2524,7 @@ PUBLIC ?vt_1051671c@@3PAPAXA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseViewModel@@QAE_NHHHHH@Z
+  DD OFFSET ?vfunc86@CBaseViewModel@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -2726,7 +2726,7 @@ PUBLIC ?g_10516c64@lifted@@3DA
   DD OFFSET ??_R4CHangRope@@6B@
 PUBLIC ?g_10516cc4@@3PADA
 ?g_10516cc4@@3PADA LABEL BYTE
-  DD OFFSET ?vfunc0@CHangRope@@UAEHHHH@Z
+  DD OFFSET ?vfunc0@CHangRope@@UAEXPAUCRopeNode@@HPAVVector@@@Z
   DD OFFSET ?vfunc1@CHangRope@@UAEXPAUCRopeNode@@H@Z
   DB 000h,000h,000h,000h
   DD OFFSET ??_R4?$CRopePhysics@$0CAA@@@6B@
@@ -2987,12 +2987,7 @@ PUBLIC ?vt_10516cf4@@3HA
   DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
   DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
   DB 196 DUP (0)
-  DB 1 DUP (0)
-; 0x105182dd +11: $rtti_tail_105182dd
-PUBLIC $rtti_tail_105182dd
-$rtti_tail_105182dd LABEL BYTE
-  DB 082h,051h,010h,000h,000h,000h,000h,000h,000h,000h,000h
-  DB 12 DUP (0)
+  DB 8 DUP (0)
 ; 0x10518314 +28: ??_R1A@?0A@A@CPhysThruster@@8
 PUBLIC ??_R1A@?0A@A@CPhysThruster@@8
 ??_R1A@?0A@A@CPhysThruster@@8 LABEL BYTE
@@ -3169,22 +3164,7 @@ PUBLIC ??_R4CKeepUpright@@6BIMotionEvent@@@
   DD OFFSET ??_R0?AVCKeepUpright@@@8
   DD OFFSET ??_R3CKeepUpright@@8
   DB 000h,000h,000h,000h
-; 0x10518598 +28: ??_R1A@?0A@A@IGameSystem@@8
-PUBLIC ??_R1A@?0A@A@IGameSystem@@8
-??_R1A@?0A@A@IGameSystem@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVIGameSystem@@@8
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB 9 DUP (0)
-; 0x1051866d +23: $rtti_tail_1051866d
-PUBLIC $rtti_tail_1051866d
-$rtti_tail_1051866d LABEL BYTE
-  DB 082h,051h,010h
-  DD OFFSET ??_R1A@?0A@A@IServerEntity@@8
-  DD OFFSET ??_R1A@?0A@A@IServerUnknown@@8
-  DD OFFSET ??_R1A@?0A@A@IHandleEntity@@8
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB 12 DUP (0)
+  DB 8 DUP (0)
 ; 0x105186b0 +28: ??_R1A@?0A@A@CPhysConstraintSystem@@8
 PUBLIC ??_R1A@?0A@A@CPhysConstraintSystem@@8
 ??_R1A@?0A@A@CPhysConstraintSystem@@8 LABEL BYTE
@@ -3394,12 +3374,7 @@ PUBLIC ??_R4CPhysPulley@@6B@
   DD OFFSET ??_R0?AVCPhysPulley@@@8
   DD OFFSET ??_R3CPhysPulley@@8
   DB 000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x10518c09 +7: $rtti_tail_10518c09
-PUBLIC $rtti_tail_10518c09
-$rtti_tail_10518c09 LABEL BYTE
-  DB 085h,051h,010h,000h,000h,000h,000h
-  DB 8 DUP (0)
+  DB 4 DUP (0)
 ; 0x10518d68 +8: ??_R2IPartitionEnumerator@@8
 PUBLIC ??_R2IPartitionEnumerator@@8
 ??_R2IPartitionEnumerator@@8 LABEL BYTE
@@ -3470,11 +3445,6 @@ PUBLIC ??_R4CTraceFilterAgainstEntityList@@6B@
   DD OFFSET ??_R0?AVCTraceFilterAgainstEntityList@@@8
   DD OFFSET ??_R3CTraceFilterAgainstEntityList@@8
   DB 000h,000h,000h,000h
-  DB 9 DUP (0)
-; 0x10518ea5 +7: $rtti_tail_10518ea5
-PUBLIC $rtti_tail_10518ea5
-$rtti_tail_10518ea5 LABEL BYTE
-  DB 085h,051h,010h,000h,000h,000h,000h
 ; 0x10518f0c +28: ??_R1A@?0A@A@?$CEntityDataInstantiator@Utouchlink_t@@@@8
 PUBLIC ??_R1A@?0A@A@?$CEntityDataInstantiator@Utouchlink_t@@@@8
 ??_R1A@?0A@A@?$CEntityDataInstantiator@Utouchlink_t@@@@8 LABEL BYTE
@@ -3680,21 +3650,7 @@ PUBLIC ??_R4CPhysImpact@@6B@
   DD OFFSET ??_R0?AVCPhysImpact@@@8
   DD OFFSET ??_R3CPhysImpact@@8
   DB 000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x105194a1 +19: $rtti_tail_105194a1
-PUBLIC $rtti_tail_105194a1
-$rtti_tail_105194a1 LABEL BYTE
-  DB 082h,051h,010h
-  DD OFFSET ??_R1A@?0A@A@IServerUnknown@@8
-  DD OFFSET ??_R1A@?0A@A@IHandleEntity@@8
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB 8 DUP (0)
-; 0x105194fc +28: ??_R1A@?0A@A@CBaseAnimating@@8
-PUBLIC ??_R1A@?0A@A@CBaseAnimating@@8
-??_R1A@?0A@A@CBaseAnimating@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVCBaseAnimating@@@8
-  DB 005h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
+  DB 12 DUP (0)
 ; 0x10519518 +28: ??_R1A@?0A@A@CBaseProp@@8
 PUBLIC ??_R1A@?0A@A@CBaseProp@@8
 ??_R1A@?0A@A@CBaseProp@@8 LABEL BYTE
@@ -3762,12 +3718,7 @@ PUBLIC ??_R4CPhysConvert@@6B@
   DD OFFSET ??_R0?AVCPhysConvert@@@8
   DD OFFSET ??_R3CPhysConvert@@8
   DB 000h,000h,000h,000h
-; 0x10519654 +28: ??_R1A@?0A@A@CBaseTempEntity@@8
-PUBLIC ??_R1A@?0A@A@CBaseTempEntity@@8
-??_R1A@?0A@A@CBaseTempEntity@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVCBaseTempEntity@@@8
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
+  DB 12 DUP (0)
 ; 0x10519670 +8: ??_R2CBaseTempEntity@@8
 PUBLIC ??_R2CBaseTempEntity@@8
 ??_R2CBaseTempEntity@@8 LABEL BYTE
@@ -4114,13 +4065,6 @@ PUBLIC ??_R4CTEBeamSpline@@6B@
   DD OFFSET ??_R0?AVCTEBeamSpline@@@8
   DD OFFSET ??_R3CTEBeamSpline@@8
   DB 000h,000h,000h,000h
-  DB 4 DUP (0)
-; 0x10519e8c +28: ??_R1A@?0A@A@CTEParticleSystem@@8
-PUBLIC ??_R1A@?0A@A@CTEParticleSystem@@8
-??_R1A@?0A@A@CTEParticleSystem@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVCTEParticleSystem@@@8
-  DB 001h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
 ; 0x10519ea8 +28: ??_R1A@?0A@A@CTEBloodStream@@8
 PUBLIC ??_R1A@?0A@A@CTEBloodStream@@8
 ??_R1A@?0A@A@CTEBloodStream@@8 LABEL BYTE
@@ -5242,11 +5186,6 @@ $rtti_tail_1051b629 LABEL BYTE
   DB 091h,051h,010h
   DD OFFSET ??_R1A@?0A@A@ISaveRestoreBlockHandler@@8
   DB 000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x1051b819 +11: $rtti_tail_1051b819
-PUBLIC $rtti_tail_1051b819
-$rtti_tail_1051b819 LABEL BYTE
-  DB 0B7h,051h,010h,000h,000h,000h,000h,000h,000h,000h,000h
   DB 12 DUP (0)
 ; 0x1051b8c0 +28: ??_R1A@?0A@A@CTerrainMorph@@8
 PUBLIC ??_R1A@?0A@A@CTerrainMorph@@8
@@ -5515,11 +5454,7 @@ PUBLIC ??_R4CGlobalEntityList@@6B@
 PUBLIC $rtti_tail_1051bef9
 $rtti_tail_1051bef9 LABEL BYTE
   DB 091h,051h,010h,000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x1051bf55 +7: $rtti_tail_1051bf55
-PUBLIC $rtti_tail_1051bf55
-$rtti_tail_1051bf55 LABEL BYTE
-  DB 085h,051h,010h,000h,000h,000h,000h
+  DB 12 DUP (0)
 ; 0x1051bfbc +32: ??_R2CEnvParticle@@8
 PUBLIC ??_R2CEnvParticle@@8
 ??_R2CEnvParticle@@8 LABEL BYTE
@@ -6301,12 +6236,7 @@ PUBLIC ??_R4CFunc_Dust@@6B@
   DD OFFSET ??_R0?AVCFunc_Dust@@@8
   DD OFFSET ??_R3CFunc_Dust@@8
   DB 000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x1051d0dd +7: $rtti_tail_1051d0dd
-PUBLIC $rtti_tail_1051d0dd
-$rtti_tail_1051d0dd LABEL BYTE
-  DB 096h,051h,010h,000h,000h,000h,000h
-  DB 12 DUP (0)
+  DB 8 DUP (0)
 ; 0x1051d110 +28: ??_R1A@?0A@A@CEnvDustPuff@@8
 PUBLIC ??_R1A@?0A@A@CEnvDustPuff@@8
 ??_R1A@?0A@A@CEnvDustPuff@@8 LABEL BYTE
@@ -6336,15 +6266,7 @@ PUBLIC ??_R4CEnvDustPuff@@6B@
   DD OFFSET ??_R0?AVCEnvDustPuff@@@8
   DD OFFSET ??_R3CEnvDustPuff@@8
   DB 000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x1051d19d +19: $rtti_tail_1051d19d
-PUBLIC $rtti_tail_1051d19d
-$rtti_tail_1051d19d LABEL BYTE
-  DB 082h,051h,010h
-  DD OFFSET ??_R1A@?0A@A@IServerUnknown@@8
-  DD OFFSET ??_R1A@?0A@A@IHandleEntity@@8
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB 12 DUP (0)
+  DB 4 DUP (0)
 ; 0x1051d1dc +28: ??_R1A@?0A@A@CFuncBrush@@8
 PUBLIC ??_R1A@?0A@A@CFuncBrush@@8
 ??_R1A@?0A@A@CFuncBrush@@8 LABEL BYTE
@@ -6437,11 +6359,7 @@ PUBLIC ??_R4CGameUI@@6B@
   DD OFFSET ??_R0?AVCGameUI@@@8
   DD OFFSET ??_R3CGameUI@@8
   DB 000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x1051d711 +7: $rtti_tail_1051d711
-PUBLIC $rtti_tail_1051d711
-$rtti_tail_1051d711 LABEL BYTE
-  DB 0D6h,051h,010h,000h,000h,000h,000h
+  DB 12 DUP (0)
 ; 0x1051d7c8 +28: ??_R1A@?0A@A@CGib@@8
 PUBLIC ??_R1A@?0A@A@CGib@@8
 ??_R1A@?0A@A@CGib@@8 LABEL BYTE
@@ -6562,18 +6480,7 @@ PUBLIC ??_R4CPropClockHand@@6B@
   DD OFFSET ??_R0?AVCPropClockHand@@@8
   DD OFFSET ??_R3CPropClockHand@@8
   DB 000h,000h,000h,000h
-; 0x1051d978 +28: ??_R1A@?0A@A@CBaseHudEntity@@8
-PUBLIC ??_R1A@?0A@A@CBaseHudEntity@@8
-??_R1A@?0A@A@CBaseHudEntity@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVCBaseHudEntity@@@8
-  DB 004h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB 1 DUP (0)
-; 0x1051d9c5 +11: $rtti_tail_1051d9c5
-PUBLIC $rtti_tail_1051d9c5
-$rtti_tail_1051d9c5 LABEL BYTE
-  DB 082h,051h,010h,000h,000h,000h,000h,000h,000h,000h,000h
-  DB 12 DUP (0)
+  DB 4 DUP (0)
 ; 0x1051d9fc +28: ??_R1A@?0A@A@CHudEntity@@8
 PUBLIC ??_R1A@?0A@A@CHudEntity@@8
 ??_R1A@?0A@A@CHudEntity@@8 LABEL BYTE
@@ -6603,17 +6510,7 @@ PUBLIC ??_R4CHudEntity@@6B@
   DD OFFSET ??_R0?AVCHudEntity@@@8
   DD OFFSET ??_R3CHudEntity@@8
   DB 000h,000h,000h,000h
-; 0x1051dbc4 +28: ??_R1A@?0A@A@CBaseRopePhysics@@8
-PUBLIC ??_R1A@?0A@A@CBaseRopePhysics@@8
-??_R1A@?0A@A@CBaseRopePhysics@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVCBaseRopePhysics@@@8
-  DB 001h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x1051dc75 +7: $rtti_tail_1051dc75
-PUBLIC $rtti_tail_1051dc75
-$rtti_tail_1051dc75 LABEL BYTE
-  DB 0DCh,051h,010h,000h,000h,000h,000h
+  DB 8 DUP (0)
 ; 0x1051dcfc +28: ??_R1A@?0A@A@CLight@@8
 PUBLIC ??_R1A@?0A@A@CLight@@8
 ??_R1A@?0A@A@CLight@@8 LABEL BYTE
@@ -6987,17 +6884,7 @@ PUBLIC ??_R4CTriggerBrush@@6B@
   DD OFFSET ??_R0?AVCTriggerBrush@@@8
   DD OFFSET ??_R3CTriggerBrush@@8
   DB 000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x1051e569 +7: $rtti_tail_1051e569
-PUBLIC $rtti_tail_1051e569
-$rtti_tail_1051e569 LABEL BYTE
-  DB 0E5h,051h,010h,000h,000h,000h,000h
-; 0x1051e660 +28: ??_R1A@?0A@A@CPathKeyFrame@@8
-PUBLIC ??_R1A@?0A@A@CPathKeyFrame@@8
-??_R1A@?0A@A@CPathKeyFrame@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVCPathKeyFrame@@@8
-  DB 005h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
+  DB 8 DUP (0)
 ; 0x1051e67c +32: ??_R2CPathKeyFrame@@8
 PUBLIC ??_R2CPathKeyFrame@@8
 ??_R2CPathKeyFrame@@8 LABEL BYTE
@@ -7021,13 +6908,6 @@ PUBLIC ??_R4CPathKeyFrame@@6B@
   DD OFFSET ??_R0?AVCPathKeyFrame@@@8
   DD OFFSET ??_R3CPathKeyFrame@@8
   DB 000h,000h,000h,000h
-  DB 1 DUP (0)
-; 0x1051e6f9 +15: $rtti_tail_1051e6f9
-PUBLIC $rtti_tail_1051e6f9
-$rtti_tail_1051e6f9 LABEL BYTE
-  DB 082h,051h,010h
-  DD OFFSET ??_R1A@?0A@A@IHandleEntity@@8
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
 ; 0x1051e788 +28: ??_R1A@?0A@A@CPathCorner@@8
 PUBLIC ??_R1A@?0A@A@CPathCorner@@8
 ??_R1A@?0A@A@CPathCorner@@8 LABEL BYTE
@@ -7117,17 +6997,6 @@ PUBLIC ??_R4CGravityPellet@@6B@
   DD OFFSET ??_R0?AVCGravityPellet@@@8
   DD OFFSET ??_R3CGravityPellet@@8
   DB 000h,000h,000h,000h
-  DB 9 DUP (0)
-; 0x1051e961 +27: $rtti_tail_1051e961
-PUBLIC $rtti_tail_1051e961
-$rtti_tail_1051e961 LABEL BYTE
-  DB 094h,051h,010h
-  DD OFFSET ??_R1A@?0A@A@CBaseEntity@@8
-  DD OFFSET ??_R1A@?0A@A@IServerEntity@@8
-  DD OFFSET ??_R1A@?0A@A@IServerUnknown@@8
-  DD OFFSET ??_R1A@?0A@A@IHandleEntity@@8
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB 12 DUP (0)
 ; 0x1051e9a8 +28: ??_R1A@?0A@A@CPhysicsAnimlinkEntityDeleteProxy@@8
 PUBLIC ??_R1A@?0A@A@CPhysicsAnimlinkEntityDeleteProxy@@8
 ??_R1A@?0A@A@CPhysicsAnimlinkEntityDeleteProxy@@8 LABEL BYTE
@@ -7337,18 +7206,6 @@ PUBLIC ??_R4CRagdollPropSpecial@@6B@
   DD OFFSET ??_R0?AVCRagdollPropSpecial@@@8
   DD OFFSET ??_R3CRagdollPropSpecial@@8
   DB 000h,000h,000h,000h
-; 0x1051ec98 +28: ??_R1A@?0A@A@IVPhysicsKeyHandler@@8
-PUBLIC ??_R1A@?0A@A@IVPhysicsKeyHandler@@8
-??_R1A@?0A@A@IVPhysicsKeyHandler@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVIVPhysicsKeyHandler@@@8
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB 1 DUP (0)
-; 0x1051ecd5 +7: $rtti_tail_1051ecd5
-PUBLIC $rtti_tail_1051ecd5
-$rtti_tail_1051ecd5 LABEL BYTE
-  DB 0ECh,051h,010h,000h,000h,000h,000h
-  DB 12 DUP (0)
 ; 0x1051ed78 +28: ??_R1A@?0A@A@CBasePlatTrain@@8
 PUBLIC ??_R1A@?0A@A@CBasePlatTrain@@8
 ??_R1A@?0A@A@CBasePlatTrain@@8 LABEL BYTE
@@ -7532,12 +7389,7 @@ PUBLIC ??_R4CRevertSaved@@6B@
   DD OFFSET ??_R0?AVCRevertSaved@@@8
   DD OFFSET ??_R3CRevertSaved@@8
   DB 000h,000h,000h,000h
-  DB 1 DUP (0)
-; 0x1051f3a1 +11: $rtti_tail_1051f3a1
-PUBLIC $rtti_tail_1051f3a1
-$rtti_tail_1051f3a1 LABEL BYTE
-  DB 0F3h,051h,010h,000h,000h,000h,000h,000h,000h,000h,000h
-  DB 12 DUP (0)
+  DB 8 DUP (0)
 ; 0x1051f3d8 +28: ??_R1A@?0A@A@CPlayerResource@@8
 PUBLIC ??_R1A@?0A@A@CPlayerResource@@8
 ??_R1A@?0A@A@CPlayerResource@@8 LABEL BYTE
@@ -7566,11 +7418,6 @@ PUBLIC ??_R4CPlayerResource@@6B@
   DD OFFSET ??_R0?AVCPlayerResource@@@8
   DD OFFSET ??_R3CPlayerResource@@8
   DB 000h,000h,000h,000h
-  DB 9 DUP (0)
-; 0x1051f465 +7: $rtti_tail_1051f465
-PUBLIC $rtti_tail_1051f465
-$rtti_tail_1051f465 LABEL BYTE
-  DB 085h,051h,010h,000h,000h,000h,000h
   DB 12 DUP (0)
 ; 0x1051f498 +28: ??_R1A@?0A@A@CSkyCamera@@8
 PUBLIC ??_R1A@?0A@A@CSkyCamera@@8
@@ -7898,17 +7745,6 @@ PUBLIC ??_R4CPhysicsProp@@6B@
   DD OFFSET ??_R0?AVCPhysicsProp@@@8
   DD OFFSET ??_R3CPhysicsProp@@8
   DB 000h,000h,000h,000h
-  DB 9 DUP (0)
-; 0x1051f955 +7: $rtti_tail_1051f955
-PUBLIC $rtti_tail_1051f955
-$rtti_tail_1051f955 LABEL BYTE
-  DB 085h,051h,010h,000h,000h,000h,000h
-  DB 13 DUP (0)
-; 0x1051f9a9 +7: $rtti_tail_1051f9a9
-PUBLIC $rtti_tail_1051f9a9
-$rtti_tail_1051f9a9 LABEL BYTE
-  DB 0ECh,051h,010h,000h,000h,000h,000h
-  DB 12 DUP (0)
 ; 0x1051f9dc +28: ??_R1A@?0A@A@CPropMover@@8
 PUBLIC ??_R1A@?0A@A@CPropMover@@8
 ??_R1A@?0A@A@CPropMover@@8 LABEL BYTE
@@ -8067,11 +7903,6 @@ PUBLIC ??_R4CPropLargeHullIgnore@@6B@
   DD OFFSET ??_R0?AVCPropLargeHullIgnore@@@8
   DD OFFSET ??_R3CPropLargeHullIgnore@@8
   DB 000h,000h,000h,000h
-  DB 9 DUP (0)
-; 0x1051fc45 +7: $rtti_tail_1051fc45
-PUBLIC $rtti_tail_1051fc45
-$rtti_tail_1051fc45 LABEL BYTE
-  DB 085h,051h,010h,000h,000h,000h,000h
   DB 13 DUP (0)
 ; 0x1051fc99 +11: $rtti_tail_1051fc99
 PUBLIC $rtti_tail_1051fc99

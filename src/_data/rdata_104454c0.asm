@@ -182,7 +182,7 @@ EXTERN ?vfunc0@CBaseTransmitProxy@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc0@CChoreoEventCallback@@UAEXMHH@Z:BYTE
 EXTERN ?vfunc0@CChoreoQueueItem@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc0@CMotorController@@UAEHPAXHMAAVVector@@1@Z:BYTE
-EXTERN ?vfunc0@CPushBlockerEnum@@UAEHPAX@Z:BYTE
+EXTERN ?vfunc0@CPushBlockerEnum@@UAEHPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc0@CTEBSPDecal@@UAEPAUServerClass@@XZ:BYTE
 EXTERN ?vfunc0@CTEBeamEntPoint@@UAEPAUServerClass@@XZ:BYTE
 EXTERN ?vfunc0@CTEBeamPoints@@UAEPAUServerClass@@XZ:BYTE
@@ -251,7 +251,7 @@ EXTERN ?vfunc110@CDynamicLight@@QAE_NPBD0@Z:BYTE
 EXTERN ?vfunc111@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc112@CBaseEntity@@UAEXHH@Z:BYTE
 EXTERN ?vfunc113@CBaseEntity@@UAEXXZ:BYTE
-EXTERN ?vfunc113@CBaseParticleEntity@@QAEXXZ:BYTE
+EXTERN ?vfunc113@CBaseParticleEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc113@CKeepUpright@@UAEXXZ:BYTE
 EXTERN ?vfunc113@CPhysConstraint@@UAEXXZ:BYTE
 EXTERN ?vfunc113@CPhysForce@@UAEXXZ:BYTE
@@ -295,7 +295,7 @@ EXTERN ?vfunc131@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc132@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc133@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc133@CBaseToggle@@UAEXXZ:BYTE
-EXTERN ?vfunc134@CBaseParticleEntity@@QAEXXZ:BYTE
+EXTERN ?vfunc134@CBaseParticleEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc134@CInstancedSceneEntity@@QAEXXZ:BYTE
 EXTERN ?vfunc134@CPhysMotor@@UAEXXZ:BYTE
 EXTERN ?vfunc134@CSceneEntity@@UAEXXZ:BYTE
@@ -420,7 +420,7 @@ EXTERN ?vfunc239@CBaseEntity@@QAE_NM@Z:BYTE
 EXTERN ?vfunc23@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc240@CBaseEntity@@QAEHXZ:BYTE
 EXTERN ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z:BYTE
-EXTERN ?vfunc241@CBaseParticleEntity@@QAE_NHPAUCParticleTransmitInfo_t@@HH@Z:BYTE
+EXTERN ?vfunc241@CBaseParticleEntity@@UAE_NHPAUCParticleTransmitInfo_t@@HH@Z:BYTE
 EXTERN ?vfunc241@CEnvParticle@@QAEXXZ:BYTE
 EXTERN ?vfunc241@CPhysBox@@QAEXH@Z:BYTE
 EXTERN ?vfunc241@CPhysFixed@@QAEPAXPAXPAUCPhysConstraintObjects@@@Z:BYTE
@@ -524,7 +524,7 @@ EXTERN ?vfunc2@CTEFogRipple@@UAEPAV1@I@Z:BYTE
 EXTERN ?vfunc2@CTEFootprintDecal@@UAEPAVCBaseTempEntity@@I@Z:BYTE
 EXTERN ?vfunc2@CTEGlowSprite@@UAEPAVCBaseTempEntity@@I@Z:BYTE
 EXTERN ?vfunc2@CTEImpact@@UAEPAV1@I@Z:BYTE
-EXTERN ?vfunc2@CTEMuzzleFlash@@UAEPAV1@I@Z:BYTE
+EXTERN ?vfunc2@CTEMuzzleFlash@@UAEPAVCBaseTempEntity@@I@Z:BYTE
 EXTERN ?vfunc2@CTEPlayerDecal@@UAEPAV1@I@Z:BYTE
 EXTERN ?vfunc2@CTEShowLine@@UAEPAV1@I@Z:BYTE
 EXTERN ?vfunc2@CTESmoke@@UAEPAV1@I@Z:BYTE
@@ -533,7 +533,7 @@ EXTERN ?vfunc2@CTETParticle@@UAEPAV1@I@Z:BYTE
 EXTERN ?vfunc2@CTETParticleAttached@@UAEPAV1@I@Z:BYTE
 EXTERN ?vfunc2@CTETParticleHUD@@UAEPAV1@I@Z:BYTE
 EXTERN ?vfunc2@CTETracer@@UAEPAV1@I@Z:BYTE
-EXTERN ?vfunc2@CTEUserTracer@@UAEPAV1@I@Z:BYTE
+EXTERN ?vfunc2@CTEUserTracer@@UAEPAVCBaseTempEntity@@I@Z:BYTE
 EXTERN ?vfunc2@CTEWorldDecal@@UAEPAV1@I@Z:BYTE
 EXTERN ?vfunc30@CBaseEntity@@UAEMXZ:BYTE
 EXTERN ?vfunc31@CBaseAnimating@@UAEXH@Z:BYTE
@@ -574,7 +574,7 @@ EXTERN ?vfunc3@CTEEnergySplash@@UAEXPBVVector@@0@Z:BYTE
 EXTERN ?vfunc3@CTEFizz@@UAEXPBM0@Z:BYTE
 EXTERN ?vfunc3@CTEFogRipple@@UAEXPBVVector@@0@Z:BYTE
 EXTERN ?vfunc3@CTEGlowSprite@@UAEXABVVector@@ABVQAngle@@@Z:BYTE
-EXTERN ?vfunc3@CTEMuzzleFlash@@UAEXHH@Z:BYTE
+EXTERN ?vfunc3@CTEMuzzleFlash@@UAEXABVVector@@ABVQAngle@@@Z:BYTE
 EXTERN ?vfunc3@CTEPlayerDecal@@UAEXABVVector@@ABVQAngle@@@Z:BYTE
 EXTERN ?vfunc3@CTEShowLine@@UAEXPBVVector@@0@Z:BYTE
 EXTERN ?vfunc3@CTESmoke@@UAEXPBVVector@@0@Z:BYTE
@@ -583,7 +583,7 @@ EXTERN ?vfunc3@CTETParticle@@UAEXPBM0@Z:BYTE
 EXTERN ?vfunc3@CTETParticleAttached@@UAEXHH@Z:BYTE
 EXTERN ?vfunc3@CTETParticleHUD@@UAEXHH@Z:BYTE
 EXTERN ?vfunc3@CTETracer@@UAEXPBVVector@@0@Z:BYTE
-EXTERN ?vfunc3@CTEUserTracer@@UAEXHH@Z:BYTE
+EXTERN ?vfunc3@CTEUserTracer@@UAEXABVVector@@ABVQAngle@@@Z:BYTE
 EXTERN ?vfunc3@CTEWorldDecal@@UAEXABVVector@@ABVQAngle@@@Z:BYTE
 EXTERN ?vfunc40@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc41@CPhysBox@@QAEXH@Z:BYTE
@@ -694,7 +694,7 @@ EXTERN ?vfunc78@CEnvParticle@@QAEXXZ:BYTE
 EXTERN ?vfunc79@CBaseAnimating@@UAEHXZ:BYTE
 EXTERN ?vfunc79@CBaseAnimatingOverlay@@UAEHXZ:BYTE
 EXTERN ?vfunc79@CBaseEntity@@UAEHXZ:BYTE
-EXTERN ?vfunc79@CBaseParticleEntity@@QAEHXZ:BYTE
+EXTERN ?vfunc79@CBaseParticleEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc80@CBaseAnimating@@UAEHXZ:BYTE
 EXTERN ?vfunc80@CBaseAnimatingOverlay@@UAEHXZ:BYTE
 EXTERN ?vfunc80@CBaseCineCam@@UAEHXZ:BYTE
@@ -743,7 +743,7 @@ EXTERN ?vfunc82@CSteamJet@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CTestTraceline@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc83@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc84@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc86@CAuspexAura@@UAE_NHHHHH@Z:BYTE
+EXTERN ?vfunc86@CAuspexAura@@UAEDHHHHH@Z:BYTE
 EXTERN ?vfunc86@CDisciplineParticle@@QAEDHHHHH@Z:BYTE
 EXTERN ?vfunc86@CTestTraceline@@UAE_NHHHHH@Z:BYTE
 EXTERN ?vfunc87@CBaseEntity@@UAEXPAX@Z:BYTE
@@ -3603,7 +3603,7 @@ PUBLIC ?g_104492dc@lifted@@3MA
 ; 0x104492f0 +12: ?g_104492f0@@3PADA
 PUBLIC ?g_104492f0@@3PADA
 ?g_104492f0@@3PADA LABEL BYTE
-  DD OFFSET ?vfunc0@CPushBlockerEnum@@UAEHPAX@Z
+  DD OFFSET ?vfunc0@CPushBlockerEnum@@UAEHPAVCBaseEntity@@@Z
   DB 000h,000h,000h,000h
   DD OFFSET ??_R4IPartitionEnumerator@@6B@
 ; 0x104492fc +12: ?g_104492fc@@3PADA
@@ -5286,7 +5286,7 @@ PUBLIC ?vt_1044bf04@@3PAPAXA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CAuspexAura@@UAE_NHHHHH@Z
+  DD OFFSET ?vfunc86@CAuspexAura@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -6531,7 +6531,7 @@ PUBLIC ?vt_1044d614@@3HA
   DD OFFSET ?vfunc76@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc77@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc78@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc79@CBaseParticleEntity@@QAEHXZ
+  DD OFFSET ?vfunc79@CBaseParticleEntity@@UAEHXZ
   DD OFFSET ?vfunc80@CSteamJet@@UAEHXZ
   DD OFFSET ?vfunc81@CSteamJet@@UAEHXZ
   DD OFFSET ?vfunc82@CSteamJet@@UAEPAUdatamap_t@@XZ
@@ -6565,7 +6565,7 @@ PUBLIC ?vt_1044d614@@3HA
   DD OFFSET ?vfunc110@CBaseEntity@@UAE_NPBD0@Z
   DD OFFSET ?vfunc111@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc112@CBaseEntity@@UAEXHH@Z
-  DD OFFSET ?vfunc113@CBaseParticleEntity@@QAEXXZ
+  DD OFFSET ?vfunc113@CBaseParticleEntity@@UAEXXZ
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
@@ -6586,7 +6586,7 @@ PUBLIC ?vt_1044d614@@3HA
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc134@CBaseParticleEntity@@QAEXXZ
+  DD OFFSET ?vfunc134@CBaseParticleEntity@@UAEXXZ
   DD OFFSET ?vfunc135@CBaseEntity@@QAEMM@Z
   DD OFFSET ?sub_10026d30@@YAEXZ
   DD OFFSET ?vfunc137@CBaseEntity@@QAEHXZ
@@ -6693,7 +6693,7 @@ PUBLIC ?vt_1044d614@@3HA
   DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
   DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
   DD OFFSET ?vfunc240@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc241@CBaseParticleEntity@@QAE_NHPAUCParticleTransmitInfo_t@@HH@Z
+  DD OFFSET ?vfunc241@CBaseParticleEntity@@UAE_NHPAUCParticleTransmitInfo_t@@HH@Z
   DB 196 DUP (0)
   DB 4 DUP (0)
 ; 0x1044dbf8 +32 prefix 4: ?g_1044dbf8@lifted@@3DA ?vt_1044dbf8@@3PAHA
@@ -6921,8 +6921,8 @@ PUBLIC ?vt_1044dfd4@@3PAHA
 ?vt_1044dfd4@@3PAHA LABEL BYTE
   DD OFFSET ?vfunc0@CTEMuzzleFlash@@UAEPAUServerClass@@XZ
   DD OFFSET ?vfunc1@CTEMuzzleFlash@@UAEHXZ
-  DD OFFSET ?vfunc2@CTEMuzzleFlash@@UAEPAV1@I@Z
-  DD OFFSET ?vfunc3@CTEMuzzleFlash@@UAEXHH@Z
+  DD OFFSET ?vfunc2@CTEMuzzleFlash@@UAEPAVCBaseTempEntity@@I@Z
+  DD OFFSET ?vfunc3@CTEMuzzleFlash@@UAEXABVVector@@ABVQAngle@@@Z
   DD OFFSET ?vfunc4@CTEMuzzleFlash@@QAEXHH@Z
   DD OFFSET ?vfunc5@CBaseTempEntity@@UAEXXZ
   DB 000h,000h,000h,000h,000h,000h,000h,000h
@@ -7040,8 +7040,8 @@ PUBLIC ?vt_1044e184@@3PAHA
 ?vt_1044e184@@3PAHA LABEL BYTE
   DD OFFSET ?vfunc0@CTEUserTracer@@UAEPAUServerClass@@XZ
   DD OFFSET ?vfunc1@CTEUserTracer@@UAEHXZ
-  DD OFFSET ?vfunc2@CTEUserTracer@@UAEPAV1@I@Z
-  DD OFFSET ?vfunc3@CTEUserTracer@@UAEXHH@Z
+  DD OFFSET ?vfunc2@CTEUserTracer@@UAEPAVCBaseTempEntity@@I@Z
+  DD OFFSET ?vfunc3@CTEUserTracer@@UAEXABVVector@@ABVQAngle@@@Z
   DD OFFSET ?vfunc4@CTEUserTracer@@QAEXHH@Z
   DD OFFSET ?vfunc5@CBaseTempEntity@@UAEXXZ
   DB 000h,000h,000h,000h,000h,000h,000h,000h

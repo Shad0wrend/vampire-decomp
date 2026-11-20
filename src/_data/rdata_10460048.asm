@@ -222,7 +222,7 @@ EXTERN ?vfunc103@CLogicalEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CMathCounter@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CMultiSource@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CPathCorner@@QAEXXZ:BYTE
-EXTERN ?vfunc103@CPathKeyFrame@@QAEXXZ:BYTE
+EXTERN ?vfunc103@CPathKeyFrame@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CPhysicsAnimlink@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CPhysicsCannister@@QAEXXZ:BYTE
 EXTERN ?vfunc103@CPropClockHand@@UAEXXZ:BYTE
@@ -265,7 +265,7 @@ EXTERN ?vfunc113@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc113@CFuncMonitor@@QAEXXZ:BYTE
 EXTERN ?vfunc113@CFunc_Dust@@QAEXXZ:BYTE
 EXTERN ?vfunc113@CLogicLineToEntity@@UAEXXZ:BYTE
-EXTERN ?vfunc113@CPathKeyFrame@@QAEXXZ:BYTE
+EXTERN ?vfunc113@CPathKeyFrame@@UAEXXZ:BYTE
 EXTERN ?vfunc113@CPropClockHand@@UAEXXZ:BYTE
 EXTERN ?vfunc113@CRagdollPropSpecial@@UAEXXZ:BYTE
 EXTERN ?vfunc114@CBaseEntity@@UAEXXZ:BYTE
@@ -771,7 +771,7 @@ EXTERN ?vfunc5@CMathCounter@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CMultiSource@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CPathCorner@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CPathCornerCrash@@QAEPAV1@I@Z:BYTE
-EXTERN ?vfunc5@CPathKeyFrame@@QAEPAV1@I@Z:BYTE
+EXTERN ?vfunc5@CPathKeyFrame@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CPhysicsAnimlink@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CPhysicsCannister@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CPropClockHand@@UAEPAVCBaseEntity@@I@Z:BYTE
@@ -852,7 +852,7 @@ EXTERN ?vfunc82@CLogicRelay@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CMathCounter@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CMultiSource@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CPathCorner@@QAEPAUdatamap_t@@XZ:BYTE
-EXTERN ?vfunc82@CPathKeyFrame@@QAEPAUdatamap_t@@XZ:BYTE
+EXTERN ?vfunc82@CPathKeyFrame@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CPhysicsAnimlink@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CPhysicsCannister@@QAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CPropClockHand@@UAEPAUdatamap_t@@XZ:BYTE
@@ -863,10 +863,10 @@ EXTERN ?vfunc82@CTimerEntity@@QAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CTriggerBrush@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc83@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc84@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc86@CBaseCombatCharacter@@QAEDHHHHH@Z:BYTE
-EXTERN ?vfunc86@CHudCounter@@QAE_NHHHHH@Z:BYTE
-EXTERN ?vfunc86@CHudTimer@@QAE_NHHHHH@Z:BYTE
-EXTERN ?vfunc86@CPropClockHand@@QAEDHHHHH@Z:BYTE
+EXTERN ?vfunc86@CBaseCombatCharacter@@UAEDHHHHH@Z:BYTE
+EXTERN ?vfunc86@CHudCounter@@UAEDHHHHH@Z:BYTE
+EXTERN ?vfunc86@CHudTimer@@UAEDHHHHH@Z:BYTE
+EXTERN ?vfunc86@CPropClockHand@@UAEDHHHHH@Z:BYTE
 EXTERN ?vfunc87@CBaseEntity@@UAEXPAX@Z:BYTE
 EXTERN ?vfunc88@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc89@CBaseEntity@@UAEXXZ:BYTE
@@ -3278,7 +3278,7 @@ PUBLIC ?g_1046358c@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CHudTimer@@QAE_NHHHHH@Z
+  DD OFFSET ?vfunc86@CHudTimer@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -3524,7 +3524,7 @@ PUBLIC ?vt_10463a1c@@3PADA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CPropClockHand@@QAEDHHHHH@Z
+  DD OFFSET ?vfunc86@CPropClockHand@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -3795,7 +3795,7 @@ PUBLIC ?g_104643b4@@3PADA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CHudCounter@@QAE_NHHHHH@Z
+  DD OFFSET ?vfunc86@CHudCounter@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -7256,7 +7256,7 @@ PUBLIC ?g_1046b00c@@3PADA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CPathKeyFrame@@QAEPAV1@I@Z
+  DD OFFSET ?vfunc5@CPathKeyFrame@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -7333,7 +7333,7 @@ PUBLIC ?g_1046b00c@@3PADA
   DD OFFSET ?vfunc79@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc80@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc81@CBaseEntity@@UAEHXZ
-  DD OFFSET ?vfunc82@CPathKeyFrame@@QAEPAUdatamap_t@@XZ
+  DD OFFSET ?vfunc82@CPathKeyFrame@@UAEPAUdatamap_t@@XZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
@@ -7354,7 +7354,7 @@ PUBLIC ?g_1046b00c@@3PADA
   DD OFFSET ?sub_100aa9a0@@YI_NPAVCBaseEntity@@HHHH@Z
   DD OFFSET ?sub_100ab430@@YGXHH@Z
   DD OFFSET ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z
-  DD OFFSET ?vfunc103@CPathKeyFrame@@QAEXXZ
+  DD OFFSET ?vfunc103@CPathKeyFrame@@UAEXXZ
   DD OFFSET ?vfunc104@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc105@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc106@CBaseEntity@@UAEXPBD@Z
@@ -7364,7 +7364,7 @@ PUBLIC ?g_1046b00c@@3PADA
   DD OFFSET ?vfunc110@CBaseEntity@@UAE_NPBD0@Z
   DD OFFSET ?vfunc111@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc112@CBaseEntity@@UAEXHH@Z
-  DD OFFSET ?vfunc113@CPathKeyFrame@@QAEXXZ
+  DD OFFSET ?vfunc113@CPathKeyFrame@@UAEXXZ
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
@@ -8621,7 +8621,7 @@ PUBLIC ?vt_1046d524@@3HA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatCharacter@@QAEDHHHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatCharacter@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ
@@ -10450,7 +10450,7 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
-  DD OFFSET ?vfunc86@CBaseCombatCharacter@@QAEDHHHHH@Z
+  DD OFFSET ?vfunc86@CBaseCombatCharacter@@UAEDHHHHH@Z
   DD OFFSET ?vfunc87@CBaseEntity@@UAEXPAX@Z
   DD OFFSET ?vfunc88@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc89@CBaseEntity@@UAEXXZ

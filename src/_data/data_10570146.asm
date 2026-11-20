@@ -2603,13 +2603,7 @@ PUBLIC ?g_105744f4@@3PBDB
   DB 000h,000h,000h,000h
   DB "CHudCounter"
   DB 000h,000h,000h,000h,000h
-; 0x10574634 +36: ??_R0?AVCBaseHudEntity@@@8
-PUBLIC ??_R0?AVCBaseHudEntity@@@8
-??_R0?AVCBaseHudEntity@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVCBaseHudEntity@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
+  DB 4 DUP (0)
 ; 0x10574678 +416: ?g_10574678@@3QBDB
 PUBLIC ?g_10574678@@3QBDB
 ?g_10574678@@3QBDB LABEL BYTE
@@ -3113,14 +3107,7 @@ $rtti_tail_105752ab LABEL BYTE
   DB 000h,000h,000h,000h,000h,000h,000h,000h,000h
   DB "Catmull-Rom Spline"
   DB 000h,000h,000h,000h,000h,000h
-; 0x105752cc +40: ??_R0?AVCBaseRopePhysics@@@8
-PUBLIC ??_R0?AVCBaseRopePhysics@@@8
-??_R0?AVCBaseRopePhysics@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVCBaseRopePhysics@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
-  DB 12 DUP (0)
+  DB 4 DUP (0)
 ; 0x105753a0 +344: ?g_105753a0@@3PADA
 PUBLIC ?g_105753a0@@3PADA
 ?g_105753a0@@3PADA LABEL BYTE
@@ -5629,15 +5616,7 @@ PUBLIC ?g_1057a444@lifted@@3DA
   DB 000h,000h,000h,000h
   DB "CPathKeyFrame"
   DB 000h,000h,000h
-; 0x1057a890 +36: ??_R0?AVCPathKeyFrame@@@8 ?g_1057a890@@3PADA
-PUBLIC ??_R0?AVCPathKeyFrame@@@8
-??_R0?AVCPathKeyFrame@@@8 LABEL BYTE
-PUBLIC ?g_1057a890@@3PADA
-?g_1057a890@@3PADA LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVCPathKeyFrame@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h
+  DB 4 DUP (0)
 ; 0x1057a8b4 +20: ?g_1057a8b4@@3QBDB
 PUBLIC ?g_1057a8b4@@3QBDB
 ?g_1057a8b4@@3QBDB LABEL BYTE
@@ -7660,12 +7639,5 @@ PUBLIC ?g_10580180@@3PAXA
   DB 68 DUP (0)
   DB "DEFAULT"
   DB 000h,000h,000h,000h,000h
-; 0x105801d4 +40: ??_R0?AVIVPhysicsKeyHandler@@@8
-PUBLIC ??_R0?AVIVPhysicsKeyHandler@@@8
-??_R0?AVIVPhysicsKeyHandler@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVIVPhysicsKeyHandler@@"
-  DB 000h,000h,000h,000h,000h,000h,000h
 _DATA ENDS
 END
