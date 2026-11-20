@@ -68,3 +68,44 @@ void CSave::vfunc21(const char *pszName, const void *pData, int count)
 	sub_101299c0(pData, count * sizeof(Vector));
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129690 size=0xb9
+#include "CSave.h"
+#include "CUtlVector4.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+void CSave::vfunc5(const void *p)
+{
+	sub_10129860(p, 0);
+	int pos = vfunc0();
+	CUtlVector4 *v = (CUtlVector4 *)((char *)this + 4);
+	int elem = v->m_size;
+	if (1 + v->m_size > v->m_allocationCount && v->m_growSize != -1) {
+		int newSize = v->m_allocationCount + (1 + v->m_size - v->m_allocationCount);
+		while (v->m_allocationCount < newSize) {
+			if (v->m_allocationCount != 0) {
+				if (v->m_growSize != 0)
+					v->m_allocationCount += v->m_growSize;
+				else
+					v->m_allocationCount += v->m_allocationCount;
+			} else {
+				v->m_allocationCount = 8;
+			}
+		}
+		if (v->m_pMemory)
+			v->m_pMemory = (int *)Plat_Realloc(v->m_pMemory, v->m_allocationCount * 4);
+		else
+			v->m_pMemory = (int *)Plat_Alloc(v->m_allocationCount * 4);
+	}
+	v->m_size += 1;
+	v->m_pElements = v->m_pMemory;
+	int numToMove = v->m_size - elem - 1;
+	if (numToMove > 0)
+		memmove(v->m_pMemory + elem + 1, v->m_pMemory + elem, numToMove * 4);
+	int *dst = v->m_pMemory + elem;
+	if (dst)
+		*dst = pos;
+}
+// END FUNCTION
