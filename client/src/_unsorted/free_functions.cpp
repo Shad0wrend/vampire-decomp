@@ -2350,3 +2350,45 @@ bool CUnknown101f5150::sub_10155cc0(const char *pszName)
     return true;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10157390 size=0xeb
+#include "CUnknown101f7960.h"
+
+struct S101f7310 {
+	S101f7310 *sub_10156ed0(int);
+	int m_data[6];
+};
+
+S101f7310 *CUnknown101f7960::sub_10157390()
+{
+	if (m_allocCount == m_count) {
+		m_allocCount++;
+		if (m_pItems) {
+			S101f7310 **p = new S101f7310 *[m_allocCount];
+			int i = 0;
+			if (m_count > 0) {
+				do {
+					p[i] = m_pItems[i];
+					i++;
+				} while (i < m_count);
+			}
+			for (; i < m_allocCount; i++)
+				p[i] = 0;
+			delete m_pItems;
+			m_pItems = p;
+		} else {
+			m_pItems = new S101f7310 *[m_allocCount];
+			for (int i = 0; i < m_allocCount; i++)
+				m_pItems[i] = 0;
+		}
+		m_count++;
+	} else {
+		m_count++;
+	}
+	if (m_pItems[m_count - 1] == 0) {
+		S101f7310 *p = new S101f7310;
+		m_pItems[m_count - 1] = p ? p->sub_10156ed0(m_count - 1) : 0;
+	}
+	return m_pItems[m_count - 1];
+}
+// END FUNCTION
