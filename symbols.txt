@@ -10251,6 +10251,7 @@
 0x1000d981 func   ?sub_10263d30@@YAMMMMMMMPAM0@Z sub_10263d30
 0x1000d986 func   ?vfunc347@CBaseCombatWeapon@@UAEHH@Z CBaseCombatWeapon::vfunc347
 0x1000d98b func   ?vfunc180@CFire@@QAEXXZ CFire::vfunc180
+0x1000d98b func   ?vfunc180@CFire@@UAEXXZ CFire::vfunc180
 0x1000d990 func   ?sub_1026dc60@CUnknown1026dc60@@QAEXXZ CUnknown1026dc60::sub_1026dc60
 0x1000d995 func   ?vfunc181@CBasePlayer@@UAEXPAX00@Z CBasePlayer::vfunc181
 0x1000d99a func   ?sub_102fb0d0@CUnknown102f46d0Elem@@QAE?AVVector@@H@Z CUnknown102f46d0Elem::sub_102fb0d0
