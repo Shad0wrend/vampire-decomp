@@ -153,6 +153,29 @@ int *__fastcall sub_100291c0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029e70 size=0x36
+// TARGET: sub_10029e70
+struct CLinkElem
+{
+	int m_pad00[8];
+	int m_iPrev;	// 0x20
+	int m_iNext;	// 0x24
+	int m_pad28[5];
+};
+
+void sub_10029e70(CLinkElem *pBase, CLinkElem *pNode)
+{
+	if (pNode->m_iNext != -1) {
+		pBase[pNode->m_iNext].m_iPrev = -1;
+	}
+	if (pNode->m_iPrev != -1) {
+		pBase[pNode->m_iPrev].m_iNext = -1;
+	}
+	pNode->m_iPrev = -1;
+	pNode->m_iNext = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c080 size=0x8d
 #include "CUtlLinkedList8.h"
 
