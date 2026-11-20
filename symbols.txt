@@ -1594,6 +1594,7 @@
 0x10002fbd func   ?sub_101e8330@CUnknown10739d08@@QAE?AUCSkillOutcome@@PAX0H@Z CUnknown10739d08::sub_101e8330
 0x10002fc2 func   ?vfunc0@CBaseRopePhysics@@UAEXPAUCRopeNode@@HPAVVector@@@Z CBaseRopePhysics::vfunc0
 0x10002fc7 func   ?vfunc226@CPhysBox@@QAEXH@Z CPhysBox::vfunc226
+0x10002fc7 func   ?vfunc226@CPhysBox@@UAEXH@Z CPhysBox::vfunc226
 0x10002fcc func   ?sub_101e8e80@CUnknown101e8e80@@QAEHXZ CUnknown101e8e80::sub_101e8e80
 0x10002fd1 func   ?vfunc360@CWeaponMelee_Knife@@UAEIXZ CWeaponMelee_Knife::vfunc360
 0x10002fd6 func   _info_node_sabbat_dive info_node_sabbat_dive
