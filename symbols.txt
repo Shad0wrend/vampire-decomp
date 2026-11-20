@@ -9221,6 +9221,7 @@
 0x1000c527 func   ?vfunc453@CNPC_VPedestrian@@UAEXXZ CNPC_VPedestrian::vfunc453
 0x1000c52c func   ?sub_102dee60@@YIPAVCAI_PlaneSolver@@PAD@Z sub_102dee60
 0x1000c531 func   ?vfunc420@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc420
+0x1000c536 func   ?vfunc144@CPropDestructable@@UAEXPAX@Z CPropDestructable::vfunc144
 0x1000c536 func   ?vfunc144@CPropDestructable@@UAEXPBUCPropDestructableDamage@@@Z CPropDestructable::vfunc144
 0x1000c53b func   ?sub_101970f0@@YAPAUPyObj@@PAXPAU1@@Z sub_101970f0
 0x1000c540 func   ?vfunc80@CItemGWatchFancy@@QAEHXZ CItemGWatchFancy::vfunc80
