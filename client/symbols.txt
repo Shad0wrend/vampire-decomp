@@ -20,6 +20,7 @@
 0x10079a40 func   ?sub_10079a40@@YAHHPAH0@Z sub_10079a40
 0x10079cf0 func   ?sub_10079cf0@@YAHHH@Z sub_10079cf0
 0x1007aca0 func   ?sub_1007aca0@CUnknown100290c0@@QAEIPAI@Z CUnknown100290c0::sub_1007aca0
+0x1007b250 func   ?sub_1007b250@CWeaponCopy@@QAEPAU1@PBU1@@Z CWeaponCopy::sub_1007b250
 0x1007b650 func   ?sub_1007b650@@YGHH@Z sub_1007b650
 0x100889f0 func   ?sub_100889f0@@YAXPAXHMPAUCBlendBone@@PAUCBlendAnim@@AAVQuaternion@@@Z sub_100889f0
 0x10088ba0 func   ?sub_10088ba0@@YAXPAXHMPAUmstudiobone_t@@PAUmstudioanim_t@@AAVVector@@@Z sub_10088ba0
