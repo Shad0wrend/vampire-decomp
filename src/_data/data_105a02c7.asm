@@ -1863,15 +1863,6 @@ PUBLIC ?g_105a3558@@3QBDB
   DB 000h,000h,000h,000h,000h
   DB "rules"
   DB 000h,000h,000h
-; 0x105a43c0 +48: ??_R0?AVCBaseVampireSkillEntity@@@8 ?g_105a43c0@@3PADA
-PUBLIC ??_R0?AVCBaseVampireSkillEntity@@@8
-??_R0?AVCBaseVampireSkillEntity@@@8 LABEL BYTE
-PUBLIC ?g_105a43c0@@3PADA
-?g_105a43c0@@3PADA LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVCBaseVampireSkillEntity@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
 ; 0x105a43f0 +88: ?g_105a43f0@@3QBDB
 PUBLIC ?g_105a43f0@@3QBDB
 ?g_105a43f0@@3QBDB LABEL BYTE

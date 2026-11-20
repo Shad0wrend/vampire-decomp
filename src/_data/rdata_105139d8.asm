@@ -192,10 +192,12 @@ EXTERN ??_R1A@?0A@A@CBaseEntityList@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseFilter@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseHudEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseParticleEntity@@8:BYTE
+EXTERN ??_R1A@?0A@A@CBaseProp@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseTempEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseToggle@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBeam@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBreakable@@8:BYTE
+EXTERN ??_R1A@?0A@A@CBreakableProp@@8:BYTE
 EXTERN ??_R1A@?0A@A@CCameraKeyFrame@@8:BYTE
 EXTERN ??_R1A@?0A@A@CLogicalEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@CPathKeyFrame@@8:BYTE
@@ -3650,13 +3652,7 @@ PUBLIC ??_R4CPhysImpact@@6B@
   DD OFFSET ??_R0?AVCPhysImpact@@@8
   DD OFFSET ??_R3CPhysImpact@@8
   DB 000h,000h,000h,000h
-  DB 12 DUP (0)
-; 0x10519518 +28: ??_R1A@?0A@A@CBaseProp@@8
-PUBLIC ??_R1A@?0A@A@CBaseProp@@8
-??_R1A@?0A@A@CBaseProp@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVCBaseProp@@@8
-  DB 006h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
+  DB 8 DUP (0)
 ; 0x10519534 +28: ??_R1A@?0A@A@CSimplePhysicsProp@@8
 PUBLIC ??_R1A@?0A@A@CSimplePhysicsProp@@8
 ??_R1A@?0A@A@CSimplePhysicsProp@@8 LABEL BYTE
@@ -7575,12 +7571,7 @@ PUBLIC ??_R4CActivityCopyProp@@6B@
   DD OFFSET ??_R0?AVCActivityCopyProp@@@8
   DD OFFSET ??_R3CActivityCopyProp@@8
   DB 000h,000h,000h,000h
-; 0x1051f758 +28: ??_R1A@?0A@A@CBreakableProp@@8
-PUBLIC ??_R1A@?0A@A@CBreakableProp@@8
-??_R1A@?0A@A@CBreakableProp@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVCBreakableProp@@@8
-  DB 007h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
+  DB 12 DUP (0)
 ; 0x1051f774 +40: ??_R2CBreakableProp@@8
 PUBLIC ??_R2CBreakableProp@@8
 ??_R2CBreakableProp@@8 LABEL BYTE

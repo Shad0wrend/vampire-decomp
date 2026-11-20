@@ -39,7 +39,6 @@ EXTERN ??_R0?AVCBaseCombatCharacter@@@8:BYTE
 EXTERN ??_R0?AVCBaseDMStart@@@8:BYTE
 EXTERN ??_R0?AVCBaseGrenade@@@8:BYTE
 EXTERN ??_R0?AVCBaseKeyframedMover@@@8:BYTE
-EXTERN ??_R0?AVCBaseLockableEnt@@@8:BYTE
 EXTERN ??_R0?AVCBaseMoneyObject@@@8:BYTE
 EXTERN ??_R0?AVCBaseTerminal@@@8:BYTE
 EXTERN ??_R0?AVCBaseVampireSkillEntity@@@8:BYTE
@@ -358,10 +357,12 @@ EXTERN ??_R1A@?0A@A@CBaseCombatWeapon@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseFlex@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseGameSystem@@8:BYTE
+EXTERN ??_R1A@?0A@A@CBaseLockableEnt@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseProp@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseRopePhysics@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseToggle@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBaseTrigger@@8:BYTE
+EXTERN ??_R1A@?0A@A@CBaseVampireSkillEntity@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBatSwarm@@8:BYTE
 EXTERN ??_R1A@?0A@A@CBreakableProp@@8:BYTE
 EXTERN ??_R1A@?0A@A@CFuncMoveLinear@@8:BYTE
@@ -1428,12 +1429,7 @@ PUBLIC ??_R4CDebugEntity@@6B@
   DD OFFSET ??_R0?AVCDebugEntity@@@8
   DD OFFSET ??_R3CDebugEntity@@8
   DB 000h,000h,000h,000h
-; 0x10521cac +28: ??_R1A@?0A@A@CBaseVampireSkillEntity@@8
-PUBLIC ??_R1A@?0A@A@CBaseVampireSkillEntity@@8
-??_R1A@?0A@A@CBaseVampireSkillEntity@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVCBaseVampireSkillEntity@@@8
-  DB 008h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
+  DB 12 DUP (0)
 ; 0x10521cc8 +44: ??_R2CBaseVampireSkillEntity@@8
 PUBLIC ??_R2CBaseVampireSkillEntity@@8
 ??_R2CBaseVampireSkillEntity@@8 LABEL BYTE
@@ -1988,13 +1984,7 @@ PUBLIC ??_R4CFuncKeyframedMover@@6B@
   DD OFFSET ??_R0?AVCFuncKeyframedMover@@@8
   DD OFFSET ??_R3CFuncKeyframedMover@@8
   DB 000h,000h,000h,000h
-; 0x1052263c +28: ??_R1A@?0A@A@CBaseLockableEnt@@8
-PUBLIC ??_R1A@?0A@A@CBaseLockableEnt@@8
-??_R1A@?0A@A@CBaseLockableEnt@@8 LABEL BYTE
-  DD OFFSET ??_R0?AVCBaseLockableEnt@@@8
-  DB 009h,000h,000h,000h,000h,000h,000h,000h,0FFh,0FFh,0FFh,0FFh,000h,000h,000h,000h
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB 12 DUP (0)
+  DB 8 DUP (0)
 ; 0x10522674 +56: ??_R2CPropDoorknob@@8
 PUBLIC ??_R2CPropDoorknob@@8
 ??_R2CPropDoorknob@@8 LABEL BYTE
@@ -2057,18 +2047,7 @@ PUBLIC ??_R4CPropPadlock@@6B@
   DD OFFSET ??_R0?AVCPropPadlock@@@8
   DD OFFSET ??_R3CPropPadlock@@8
   DB 000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x1052278d +35: $rtti_tail_1052278d
-PUBLIC $rtti_tail_1052278d
-$rtti_tail_1052278d LABEL BYTE
-  DB 094h,051h,010h
-  DD OFFSET ??_R1A@?0A@A@CBaseToggle@@8
-  DD OFFSET ??_R1A@?0A@A@CBaseEntity@@8
-  DD OFFSET ??_R1A@?0A@A@IServerEntity@@8
-  DD OFFSET ??_R1A@?0A@A@IServerUnknown@@8
-  DD OFFSET ??_R1A@?0A@A@IHandleEntity@@8
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
-  DB 12 DUP (0)
+  DB 4 DUP (0)
 ; 0x105227dc +28: ??_R1A@?0A@A@CItemContainerLock@@8
 PUBLIC ??_R1A@?0A@A@CItemContainerLock@@8
 ??_R1A@?0A@A@CItemContainerLock@@8 LABEL BYTE

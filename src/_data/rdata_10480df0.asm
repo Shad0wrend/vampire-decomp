@@ -191,7 +191,6 @@ EXTERN ?sub_1021a200@V1021a200@@QAEXXZ:BYTE
 EXTERN ?sub_1021a5b0@CPropHacking@@QAEXPAVCBaseEntity@@@Z:BYTE
 EXTERN ?sub_1021dc20@CPropKeypad@@QAEPBDXZ:BYTE
 EXTERN ?sub_102241b0@@YIXPAH@Z:BYTE
-EXTERN ?sub_10225930@CPropDoorknob@@QAEEXZ:BYTE
 EXTERN ?sub_10225af0@CUnknown10225af0@@QAEXXZ:BYTE
 EXTERN ?sub_10225d00@CPropPadlock@@QAEEXZ:BYTE
 EXTERN ?sub_1022c180@@YIHPADHH@Z:BYTE
@@ -248,7 +247,7 @@ EXTERN ?vfunc100@CBaseAnimating@@QAE_NHHPAD@Z:BYTE
 EXTERN ?vfunc103@CBaseCombatWeapon@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CBaseTerminal@@QAEXXZ:BYTE
-EXTERN ?vfunc103@CBaseVampireSkillEntity@@QAEXXZ:BYTE
+EXTERN ?vfunc103@CBaseVampireSkillEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CFuncKeyframedMover@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CItemContainer@@QAEXXZ:BYTE
 EXTERN ?vfunc103@CItemContainerAnimated@@UAEXXZ:BYTE
@@ -334,6 +333,7 @@ EXTERN ?vfunc117@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc117@CGameSign@@UAEHXZ:BYTE
 EXTERN ?vfunc117@CItemContainerLock@@QAEHXZ:BYTE
 EXTERN ?vfunc117@CPropButton@@UAEHXZ:BYTE
+EXTERN ?vfunc117@CPropDoorknob@@UAEHXZ:BYTE
 EXTERN ?vfunc117@CPropModelState@@UAEHXZ:BYTE
 EXTERN ?vfunc117@CPropRadio@@UAEHXZ:BYTE
 EXTERN ?vfunc117@CPropSwitch@@UAEHXZ:BYTE
@@ -374,8 +374,8 @@ EXTERN ?vfunc130@CBaseAnimating@@UAEXH@Z:BYTE
 EXTERN ?vfunc130@CBaseCombatCharacter@@UAEXH@Z:BYTE
 EXTERN ?vfunc130@CBaseCombatWeapon@@UAEXH@Z:BYTE
 EXTERN ?vfunc130@CBaseEntity@@UAEXH@Z:BYTE
+EXTERN ?vfunc130@CBaseVampireSkillEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc130@CFuncElevator@@QAEXH@Z:BYTE
-EXTERN ?vfunc130@CPropDoorknob@@UAEXH@Z:BYTE
 EXTERN ?vfunc130@CPropSwitch@@UAEXH@Z:BYTE
 EXTERN ?vfunc130@CVampireProjectile@@UAEXH@Z:BYTE
 EXTERN ?vfunc131@CBaseEntity@@UAEHXZ:BYTE
@@ -556,35 +556,35 @@ EXTERN ?vfunc266@CPropPadlock@@QAEXH@Z:BYTE
 EXTERN ?vfunc266@CSecCamera@@QAEXPBM@Z:BYTE
 EXTERN ?vfunc267@CBaseAnimatingOverlay@@QAEHXZ:BYTE
 EXTERN ?vfunc267@CBaseCombatWeapon@@UAEDXZ:BYTE
-EXTERN ?vfunc267@CBaseVampireSkillEntity@@QAEPAHPAHPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc267@CBaseVampireSkillEntity@@UAEPAHPAHPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc267@CVampireProjectile@@UAEXH@Z:BYTE
 EXTERN ?vfunc268@CBaseAnimatingOverlay@@QAEXHHHD@Z:BYTE
 EXTERN ?vfunc268@CBaseCombatWeapon@@UAEDXZ:BYTE
-EXTERN ?vfunc268@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc268@CBaseVampireSkillEntity@@UAEHPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc268@CDisciplineProjectile@@UAEXXZ:BYTE
 EXTERN ?vfunc268@CPropHacking@@QAEHH@Z:BYTE
 EXTERN ?vfunc269@CBaseAnimatingOverlay@@QAEXH@Z:BYTE
 EXTERN ?vfunc269@CBaseCombatWeapon@@UAEXPAV1@VVector@@@Z:BYTE
-EXTERN ?vfunc269@CBaseVampireSkillEntity@@QAEXH@Z:BYTE
+EXTERN ?vfunc269@CBaseVampireSkillEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc269@CDisciplineProjectile@@UAEXXZ:BYTE
 EXTERN ?vfunc26@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc270@CBaseAnimatingOverlay@@QAEDH@Z:BYTE
 EXTERN ?vfunc270@CBaseCombatWeapon@@UAEXPAUCGameTrace@@PAX@Z:BYTE
-EXTERN ?vfunc270@CBaseVampireSkillEntity@@QAEXH@Z:BYTE
+EXTERN ?vfunc270@CBaseVampireSkillEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc270@CVampireProjectile@@UAE_NXZ:BYTE
 EXTERN ?vfunc271@CBaseAnimatingOverlay@@QAEHH@Z:BYTE
-EXTERN ?vfunc271@CBaseVampireSkillEntity@@QAEXH@Z:BYTE
+EXTERN ?vfunc271@CBaseVampireSkillEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc271@CVampireProjectile@@UAEMXZ:BYTE
 EXTERN ?vfunc272@CBaseAnimatingOverlay@@QAEHXZ:BYTE
 EXTERN ?vfunc272@CBaseCombatWeapon@@UAEPADXZ:BYTE
-EXTERN ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ:BYTE
+EXTERN ?vfunc272@CBaseVampireSkillEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc272@CPropHacking@@QAEXXZ:BYTE
 EXTERN ?vfunc272@CVampireProjectile@@UAEXPBVVector@@0PAVCBaseEntity@@HMPBD2@Z:BYTE
 EXTERN ?vfunc273@CBaseAnimatingOverlay@@QAEXHDH@Z:BYTE
 EXTERN ?vfunc273@CBaseCombatWeapon@@UAEPADXZ:BYTE
 EXTERN ?vfunc273@CBaseTerminal@@QAEXHH@Z:BYTE
 EXTERN ?vfunc273@CItemContainerLock@@QAEXXZ:BYTE
-EXTERN ?vfunc273@CPropDoorknob@@QAEXXZ:BYTE
+EXTERN ?vfunc273@CPropDoorknob@@UAEXXZ:BYTE
 EXTERN ?vfunc273@CPropHacking@@QAEXHPAD@Z:BYTE
 EXTERN ?vfunc273@CPropKeypad@@QAEXPAVCBasePlayer@@PBD@Z:BYTE
 EXTERN ?vfunc274@CBaseAnimatingOverlay@@QAEXH@Z:BYTE
@@ -911,7 +911,7 @@ EXTERN ?vfunc58@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc59@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc5@CBaseKeyframedMover@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CBaseTerminal@@QAEPAV1@I@Z:BYTE
-EXTERN ?vfunc5@CBaseVampireSkillEntity@@QAEPAV1@I@Z:BYTE
+EXTERN ?vfunc5@CBaseVampireSkillEntity@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CDebugEntity@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CDisciplineProjectile@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CFuncElevator@@UAEPAV1@I@Z:BYTE
@@ -1033,7 +1033,7 @@ EXTERN ?vfunc81@CWeaponRanged_Tzimisce2Head@@UAEHXZ:BYTE
 EXTERN ?vfunc82@CBaseEntity@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CBaseKeyframedMover@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CBaseTerminal@@QAEPAUdatamap_t@@XZ:BYTE
-EXTERN ?vfunc82@CBaseVampireSkillEntity@@QAEPAUdatamap_t@@XZ:BYTE
+EXTERN ?vfunc82@CBaseVampireSkillEntity@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CDisciplineProjectile@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CFuncElevator@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CGameText@@UAEPAUdatamap_t@@XZ:BYTE
@@ -4746,7 +4746,7 @@ PUBLIC ?vt_104858cc@@3PAHA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CBaseVampireSkillEntity@@QAEPAV1@I@Z
+  DD OFFSET ?vfunc5@CBaseVampireSkillEntity@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -4823,7 +4823,7 @@ PUBLIC ?vt_104858cc@@3PAHA
   DD OFFSET ?vfunc79@CBaseAnimating@@UAEHXZ
   DD OFFSET ?vfunc80@CBaseAnimating@@UAEHXZ
   DD OFFSET ?vfunc81@CBaseAnimating@@UAEHXZ
-  DD OFFSET ?vfunc82@CBaseVampireSkillEntity@@QAEPAUdatamap_t@@XZ
+  DD OFFSET ?vfunc82@CBaseVampireSkillEntity@@UAEPAUdatamap_t@@XZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
@@ -4844,7 +4844,7 @@ PUBLIC ?vt_104858cc@@3PAHA
   DD OFFSET ?vfunc100@CBaseAnimating@@QAE_NHHPAD@Z
   DD OFFSET ?sub_100ab430@@YGXHH@Z
   DD OFFSET ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z
-  DD OFFSET ?vfunc103@CBaseVampireSkillEntity@@QAEXXZ
+  DD OFFSET ?vfunc103@CBaseVampireSkillEntity@@UAEXXZ
   DD OFFSET ?vfunc104@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc105@CVampireProjectile@@UAEXPBD@Z
   DD OFFSET ?vfunc106@CBaseEntity@@UAEXPBD@Z
@@ -4871,7 +4871,7 @@ PUBLIC ?vt_104858cc@@3PAHA
   DD OFFSET ?vfunc127@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CPropDoorknob@@UAEXH@Z
+  DD OFFSET ?vfunc130@CBaseVampireSkillEntity@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -5008,12 +5008,12 @@ PUBLIC ?vt_104858cc@@3PAHA
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
   DD OFFSET ?vfunc265@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@QAEPAHPAHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc268@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ
+  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@UAEPAHPAHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc268@CBaseVampireSkillEntity@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc272@CBaseVampireSkillEntity@@UAEXXZ
   DB 224 DUP (0)
   DD OFFSET ??_R4CSecCamera@@6B@
 ; 0x10485df4 +1288: ?vt_10485df4@@3PAHA
@@ -8278,7 +8278,7 @@ PUBLIC ?vt_1048a5f4@@3PAHA
   DD OFFSET ?vfunc127@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CPropDoorknob@@UAEXH@Z
+  DD OFFSET ?vfunc130@CBaseVampireSkillEntity@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -8415,11 +8415,11 @@ PUBLIC ?vt_1048a5f4@@3PAHA
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
   DD OFFSET ?vfunc265@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@QAEPAHPAHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@UAEPAHPAHPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc268@CPropHacking@@QAEHH@Z
-  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@QAEXH@Z
+  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@UAEXH@Z
   DD OFFSET ?vfunc272@CPropHacking@@QAEXXZ
   DD OFFSET ?vfunc273@CPropHacking@@QAEXHPAD@Z
   DD OFFSET ?vfunc274@CPropHacking@@QAEPAXXZ
@@ -8564,7 +8564,7 @@ PUBLIC ?vt_1048ab34@@3PAHA
   DD OFFSET ?vfunc127@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CPropDoorknob@@UAEXH@Z
+  DD OFFSET ?vfunc130@CBaseVampireSkillEntity@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -8701,12 +8701,12 @@ PUBLIC ?vt_1048ab34@@3PAHA
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
   DD OFFSET ?vfunc265@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@QAEPAHPAHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc268@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ
+  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@UAEPAHPAHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc268@CBaseVampireSkillEntity@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc272@CBaseVampireSkillEntity@@UAEXXZ
   DD OFFSET ?vfunc273@CBaseTerminal@@QAEXHH@Z
   DD OFFSET ?vfunc274@CBaseTerminal@@QAEHXZ
   DD OFFSET ?vfunc275@CBaseTerminal@@QAEXXZ
@@ -8848,7 +8848,7 @@ PUBLIC ?vt_1048b074@@3PAHA
   DD OFFSET ?vfunc127@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CPropDoorknob@@UAEXH@Z
+  DD OFFSET ?vfunc130@CBaseVampireSkillEntity@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -8985,12 +8985,12 @@ PUBLIC ?vt_1048b074@@3PAHA
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
   DD OFFSET ?vfunc265@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@QAEPAHPAHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc268@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ
+  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@UAEPAHPAHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc268@CBaseVampireSkillEntity@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc272@CBaseVampireSkillEntity@@UAEXXZ
   DD OFFSET ?vfunc273@CPropKeypad@@QAEXPAVCBasePlayer@@PBD@Z
   DD OFFSET ?sub_1021dc20@CPropKeypad@@QAEPBDXZ
   DD OFFSET ?vfunc275@CPropKeypad@@QAEXXZ
@@ -9612,7 +9612,7 @@ PUBLIC ?vt_1048c364@@3PAPAXA
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
-  DD OFFSET ?sub_10225930@CPropDoorknob@@QAEEXZ
+  DD OFFSET ?vfunc117@CPropDoorknob@@UAEHXZ
   DD OFFSET ?vfunc118@CBaseEntity@@UAE_NPBDPAV1@1UCVariantCopy@@H@Z
   DD OFFSET ?vfunc119@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc120@CBaseEntity@@UAEXPBDPAM1@Z
@@ -9625,7 +9625,7 @@ PUBLIC ?vt_1048c364@@3PAPAXA
   DD OFFSET ?vfunc127@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CPropDoorknob@@UAEXH@Z
+  DD OFFSET ?vfunc130@CBaseVampireSkillEntity@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -9762,13 +9762,13 @@ PUBLIC ?vt_1048c364@@3PAPAXA
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
   DD OFFSET ?vfunc265@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@QAEPAHPAHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc268@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ
-  DD OFFSET ?vfunc273@CPropDoorknob@@QAEXXZ
+  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@UAEPAHPAHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc268@CBaseVampireSkillEntity@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc272@CBaseVampireSkillEntity@@UAEXXZ
+  DD OFFSET ?vfunc273@CPropDoorknob@@UAEXXZ
   DD OFFSET ?vfunc274@CItemContainerLock@@QAEXXZ
   DD OFFSET ?vfunc275@CItemContainerLock@@QAEXXZ
   DD OFFSET ?sub_102241b0@@YIXPAH@Z
@@ -9907,7 +9907,7 @@ PUBLIC ?vt_1048c89c@@3PAPAXA
   DD OFFSET ?vfunc127@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CPropDoorknob@@UAEXH@Z
+  DD OFFSET ?vfunc130@CBaseVampireSkillEntity@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -10044,12 +10044,12 @@ PUBLIC ?vt_1048c89c@@3PAPAXA
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
   DD OFFSET ?vfunc265@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc266@CPropPadlock@@QAEXH@Z
-  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@QAEPAHPAHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc268@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ
+  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@UAEPAHPAHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc268@CBaseVampireSkillEntity@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc272@CBaseVampireSkillEntity@@UAEXXZ
   DD OFFSET ?vfunc273@CItemContainerLock@@QAEXXZ
   DD OFFSET ?vfunc274@CPropPadlock@@QAEXXZ
   DD OFFSET ?vfunc275@CItemContainerLock@@QAEXXZ
@@ -10190,7 +10190,7 @@ PUBLIC ?vt_1048d30c@@3PAHA
   DD OFFSET ?vfunc127@CBaseEntity@@UAEHH@Z
   DD OFFSET ?sub_100aa680@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CPropDoorknob@@UAEXH@Z
+  DD OFFSET ?vfunc130@CBaseVampireSkillEntity@@UAEXH@Z
   DD OFFSET ?vfunc131@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
@@ -10327,12 +10327,12 @@ PUBLIC ?vt_1048d30c@@3PAHA
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
   DD OFFSET ?vfunc265@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@QAEPAHPAHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc268@CBaseVampireSkillEntity@@QAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@QAEXH@Z
-  DD OFFSET ?vfunc272@CBaseVampireSkillEntity@@QAEXXZ
+  DD OFFSET ?vfunc267@CBaseVampireSkillEntity@@UAEPAHPAHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc268@CBaseVampireSkillEntity@@UAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc269@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc270@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc271@CBaseVampireSkillEntity@@UAEXH@Z
+  DD OFFSET ?vfunc272@CBaseVampireSkillEntity@@UAEXXZ
   DD OFFSET ?vfunc273@CItemContainerLock@@QAEXXZ
   DD OFFSET ?vfunc274@CItemContainerLock@@QAEXXZ
   DD OFFSET ?vfunc275@CItemContainerLock@@QAEXXZ

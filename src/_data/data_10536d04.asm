@@ -2505,14 +2505,6 @@ PUBLIC ?g_1053dcd4@@3QBDB
 ?g_1053dcd4@@3QBDB LABEL BYTE
   DB "simple_physics_brush"
   DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB 4 DUP (0)
-; 0x1053dd34 +28: ??_R0?AVCBaseProp@@@8
-PUBLIC ??_R0?AVCBaseProp@@@8
-??_R0?AVCBaseProp@@@8 LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVCBaseProp@@"
-  DB 000h,000h,000h,000h,000h
 ; 0x1053dd50 +40: ??_R0?AVCSimplePhysicsProp@@@8 ?g_1053dd50@@3PADA
 PUBLIC ??_R0?AVCSimplePhysicsProp@@@8
 ??_R0?AVCSimplePhysicsProp@@@8 LABEL BYTE

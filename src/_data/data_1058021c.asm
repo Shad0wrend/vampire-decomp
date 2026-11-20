@@ -5732,15 +5732,11 @@ PUBLIC ?g_1058ed74@@3QBDB
   DB 000h,000h,000h,000h,000h,000h,000h
   DB "CBreakablePropBreakThink"
   DB 000h,000h,000h,000h,000h,000h,000h,000h
-; 0x1058edc8 +272: ??_R0?AVCBreakableProp@@@8 ?g_1058edc8@@3PADA
-PUBLIC ??_R0?AVCBreakableProp@@@8
-??_R0?AVCBreakableProp@@@8 LABEL BYTE
-PUBLIC ?g_1058edc8@@3PADA
-?g_1058edc8@@3PADA LABEL BYTE
-  DD OFFSET ??_7type_info@@6B@
-  DB 000h,000h,000h,000h
-  DB ".?AVCBreakableProp@@"
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,00Ah
+  DB 13 DUP (0)
+; 0x1058ede5 +243: $rtti_tail_1058ede5
+PUBLIC $rtti_tail_1058ede5
+$rtti_tail_1058ede5 LABEL BYTE
+  DB 000h,000h,000h,000h,000h,000h,000h,00Ah
   DB "**** HACK DESTRUCTABLE PROP HEALTH HACK ****"
   DB 00Ah,00Ah,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,00Ah
   DB "Setting entity %-4d's health to 0,  (%s, %s)"
