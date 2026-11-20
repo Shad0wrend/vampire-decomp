@@ -3416,6 +3416,7 @@
 0x100053da func   ?sub_102c1a80@CAI_BaseNPCTroika@@QAEXPAX0@Z CAI_BaseNPCTroika::sub_102c1a80
 0x100053df func   ?sub_101f24e0@CUnknown101f24e0@@QAEHXZ CUnknown101f24e0::sub_101f24e0
 0x100053e4 func   ?sub_100ce8a0@@YGXPBD@Z sub_100ce8a0
+0x100053e9 func   ??_GCAI_Expresser@@UAEPAXI@Z ??_GCAI_Expresser@@UAEPAXI@Z
 0x100053e9 func   ?vfunc0@CAI_Expresser@@QAEPAV1@E@Z CAI_Expresser::vfunc0
 0x100053ee func   ?sub_101d1d10@@YAPAVCBaseEntity@@PAV1@0@Z sub_101d1d10
 0x100053f3 func   ?sub_102e0630@CUnknown102e0630@@QAEHPAX@Z CUnknown102e0630::sub_102e0630
