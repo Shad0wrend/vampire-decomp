@@ -15,6 +15,21 @@ void __stdcall sub_10001000(char *ptr, unsigned size, int count, CUnkElemFn fn)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001030 size=0x31
+struct CUnknown1004ddc0 { };
+typedef void (CUnknown1004ddc0::*PMF_1004ddc0)();
+
+// TARGET: sub_10001030
+void __stdcall sub_10001030(char *ptr, unsigned size, int count, PMF_1004ddc0 pmf)
+{
+	ptr += size * count;
+	while (--count >= 0) {
+		ptr -= size;
+		(((CUnknown1004ddc0 *)ptr)->*pmf)();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003c10 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
