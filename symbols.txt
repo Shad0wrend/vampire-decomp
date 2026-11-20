@@ -5367,6 +5367,7 @@
 0x10007a04 func   ?vfunc153@CBaseEntity@@UAEHXZ CBaseEntity::vfunc153
 0x10007a09 func   ?vfunc5@CWeaponRanged_FlameThrower@@UAEPAVCBaseEntity@@I@Z CWeaponRanged_FlameThrower::vfunc5
 0x10007a0e func   ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ CBaseEntity::vfunc192
+0x10007a0e func   ?vfunc192@CBaseEntity@@UAE?AVVector@@XZ CBaseEntity::vfunc192
 0x10007a13 func   ?sub_1006d9a0@CCineCamFields1006d9a0@@QAEXXZ CCineCamFields1006d9a0::sub_1006d9a0
 0x10007a18 func   ?sub_101d0a00@@YAXPBVVector@@0H@Z sub_101d0a00
 0x10007a1d func   ?vfunc265@CWeaponThrown_Grenade_Frag@@QAEXXZ CWeaponThrown_Grenade_Frag::vfunc265
