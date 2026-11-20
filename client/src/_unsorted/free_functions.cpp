@@ -976,3 +976,30 @@ void sub_10108080(const float *in1, const float in2[3][4], float *out)
 	out[2] = tx * in2[0][2] + ty * in2[1][2] + tz * in2[2][2];
 }
 // END FUNCTION
+
+// FUNCTION: 0x10109010 size=0x8a
+#include "Vector.h"
+#include "QAngle.h"
+
+inline void SinCos(float radians, float *sine, float *cosine)
+{
+	__asm {
+		fld dword ptr [radians]
+		fsincos
+		mov edx, dword ptr [cosine]
+		mov eax, dword ptr [sine]
+		fstp dword ptr [edx]
+		fstp dword ptr [eax]
+	}
+}
+
+void sub_10109010(const QAngle &angles, Vector *forward)
+{
+	float sp, sy, cp, cy;
+	SinCos(angles.y * 0.017453292f, &sy, &cy);
+	SinCos(angles.x * 0.017453292f, &sp, &cp);
+	forward->x = cp * cy;
+	forward->y = cp * sy;
+	forward->z = -sp;
+}
+// END FUNCTION
