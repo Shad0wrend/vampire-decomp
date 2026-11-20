@@ -7579,6 +7579,7 @@
 0x1000a493 func   ?sub_101b9860@@YIXPAD@Z sub_101b9860
 0x1000a498 func   ?vfunc117@CFuncPlat@@UAEDXZ CFuncPlat::vfunc117
 0x1000a49d func   ?sub_101e4220@CUnknown101e0f00@@QAEXPAVCBasePlayer@@@Z CUnknown101e0f00::sub_101e4220
+0x1000a4a2 func   ?vfunc173@CPropSwitch@@UAEXPAVCBaseEntity@@0HH@Z CPropSwitch::vfunc173
 0x1000a4a2 func   ?vfunc173@CPropSwitch@@UAEXPAVCBaseEntity@@0HM@Z CPropSwitch::vfunc173
 0x1000a4a7 func   ?sub_101a6880@@YIXPAX@Z sub_101a6880
 0x1000a4ac func   ?sub_10201590@CVStatList_t@@QAEXH@Z CVStatList_t::sub_10201590
