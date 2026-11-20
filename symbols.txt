@@ -1241,6 +1241,7 @@
 0x100028d3 func   ?sub_103979d0@CNPC_VMingXiao@@QAEXPAVCNPC_VMingXiaoTentacle@@@Z CNPC_VMingXiao::sub_103979d0
 0x100028d8 func   ?vfunc339@CBaseCombatCharacter@@QAEXHHH@Z CBaseCombatCharacter::vfunc339
 0x100028d8 func   ?vfunc339@CBaseCombatCharacter@@QAEXHMH@Z CBaseCombatCharacter::vfunc339
+0x100028d8 func   ?vfunc339@CBaseCombatCharacter@@UAEXHMH@Z CBaseCombatCharacter::vfunc339
 0x100028dd func   ?sub_102c24a0@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c24a0
 0x100028e2 func   ?vfunc38@CBaseDoor@@UAEPAXH@Z CBaseDoor::vfunc38
 0x100028e7 func   ?sub_101d6520@CUnknown101d7520Rule@@QAE_NPAX@Z CUnknown101d7520Rule::sub_101d6520
