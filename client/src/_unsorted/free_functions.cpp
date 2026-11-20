@@ -3206,6 +3206,32 @@ void CSave::sub_10129830(int a, int bytes, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a530 size=0x26
+struct CUnknown101a1780Arg {
+    char m_pad0000[0x12];
+    unsigned short m_wFlags12;	// 0x12
+};
+
+struct CUnknown101a1780View {
+    char m_pad0000[0x20];
+    int m_n20;	// 0x20
+    bool sub_1012a530(CUnknown101a1780Arg *p);
+};
+
+// TARGET: CUnknown101a1780View::sub_1012a530
+bool CUnknown101a1780View::sub_1012a530(CUnknown101a1780Arg *p)
+{
+    unsigned short f = p->m_wFlags12;
+    if ((f & 2) == 0) {
+        return false;
+    }
+    if (m_n20 != 0 && (f & 1) != 0) {
+        return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012aec0 size=0x34
 #include "CRestore.h"
 struct CRestoreSaveRecord30 { int m_nId; char m_pad04[0x2c]; };
