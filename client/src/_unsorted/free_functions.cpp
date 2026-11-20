@@ -383,3 +383,25 @@ void sub_10088ba0(void *pStudioHdr, int frame, float s, mstudiobone_t *pbone, ms
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10089170 size=0x61
+int sub_100891e0(int hdr, int seq, int *pOut, int nBones, int *pRemap);
+int sub_10089170(int hdr, int seq, int *pOut, int *pRemap)
+{
+	int i = 0;
+	int nBones = *(int *)(hdr + 0xf0);
+	if (0 < nBones) {
+		do {
+			pRemap[i] = i;
+			i++;
+		} while (i < nBones);
+	}
+	if (seq < *(int *)(hdr + 0x110)) {
+		*pOut = hdr;
+		if (seq < 0)
+			seq = 0;
+		return *(int *)(hdr + 0x114) + seq * 0x2fc + hdr;
+	}
+	return sub_100891e0(hdr, seq, pOut, nBones, pRemap);
+}
+// END FUNCTION
