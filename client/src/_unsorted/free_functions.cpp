@@ -1900,6 +1900,29 @@ void CMem8b_t::sub_100eff70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10104360 size=0x1a
+struct CUnk1011d310
+{
+	int m_n0;
+	int m_n4;
+	int m_nLimit8;
+	int m_nCurrentC;
+	char m_bFlag10;
+
+	char sub_10104360(int a);
+};
+
+// TARGET: sub_10104360
+char CUnk1011d310::sub_10104360(int a)
+{
+	int sum = m_nCurrentC + a;
+	if (sum > m_nLimit8) {
+		m_bFlag10 = 1;
+	}
+	return m_bFlag10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107500 size=0x43
 #include "Vector.h"
 #include <math.h>
