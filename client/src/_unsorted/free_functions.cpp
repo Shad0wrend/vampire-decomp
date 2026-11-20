@@ -2262,3 +2262,15 @@ void CUnknown101ed170::sub_10150bc0()
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10152bb0 size=0x1a
+struct CUnknown101f0b50 { void * sub_10152bb0(int); };
+void * CUnknown101f0b50::sub_10152bb0(int a0)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 8) = -1;
+    return this;
+}
+// END FUNCTION
