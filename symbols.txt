@@ -7435,6 +7435,7 @@
 0x1000a1b4 func   ?sub_1034d620@CUnknown1034d620@@QAEXXZ CUnknown1034d620::sub_1034d620
 0x1000a1b9 func   ??0CWorld@@QAE@XZ CWorld::CWorld
 0x1000a1be func   ?vfunc176@CTriggerEnvAudio@@QAEXPAVCBaseEntity@@@Z CTriggerEnvAudio::vfunc176
+0x1000a1be func   ?vfunc176@CTriggerEnvAudio@@UAEXPAVCBaseEntity@@@Z CTriggerEnvAudio::vfunc176
 0x1000a1c3 func   ?vfunc81@CHL2_Player@@UAEHXZ CHL2_Player::vfunc81
 0x1000a1c8 func   ?sub_101f1d00@SIdList@@QAEHH@Z SIdList::sub_101f1d00
 0x1000a1cd func   ?sub_101d6070@@YIPAXPAX@Z sub_101d6070
