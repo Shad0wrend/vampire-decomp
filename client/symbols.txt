@@ -40,6 +40,7 @@
 0x100e2840 func   ?sub_100e2840@CUtlLinkedList6@@QAEG_N@Z CUtlLinkedList6::sub_100e2840
 0x100e2a10 func   ?sub_100e2a10@CUnknown100fde30@@QAEPAV1@XZ CUnknown100fde30::sub_100e2a10
 0x100e6e70 func   ?vfunc14@CGameMovement@@UAEHH@Z CGameMovement::vfunc14
+0x100eb150 func   ?sub_100eb150@CUnknown100353c0@@QAEPAV1@PBV1@@Z CUnknown100353c0::sub_100eb150
 0x10106c60 func   _CreateInterface CreateInterface
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
