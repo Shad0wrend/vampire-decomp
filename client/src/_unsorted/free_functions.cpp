@@ -1755,6 +1755,62 @@ void UtlVec40::sub_1012c600(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130970 size=0x1bd
+#include "CUnknown101b6320.h"
+
+CUnknown101b6320 &CUnknown101b6320::sub_10130970(const CUnknown101b6320 &other)
+{
+	m_bField00 = other.m_bField00;
+	m_bField01 = other.m_bField01;
+	m_nField04 = other.m_nField04;
+
+	CUnknown101b6320Params *p = &m_params;
+	const CUnknown101b6320Params *o = &other.m_params;
+	p->m_nField00 = o->m_nField00;
+	p->m_nField04 = o->m_nField04;
+	p->m_nField08 = o->m_nField08;
+	p->m_nField0c = o->m_nField0c;
+	p->m_nField10 = o->m_nField10;
+	p->m_nField14 = o->m_nField14;
+	p->m_nField18 = o->m_nField18;
+	p->m_bField1c = o->m_bField1c;
+	p->m_bField1d = o->m_bField1d;
+
+	CUnknown101b9140 *v = &p->m_vecA;
+	int nA = o->m_vecA.m_Size;
+	const CUnknown101b9140Elem *pA = (const CUnknown101b9140Elem *)o->m_vecA.m_pMemory;
+	int i;
+	for (i = v->m_Size; --i >= 0; )
+		v->sub_10130be0();
+	v->m_Size = 0;
+	v->sub_10131e60(nA, 0);
+	for (i = 0; i < nA; i++)
+		((CUnknown101b9140Elem *)v->m_pMemory)[i] = pA[i];
+
+	v = &p->m_vecB;
+	int nB = o->m_vecB.m_Size;
+	const CUnknown101b9140Elem *pB = (const CUnknown101b9140Elem *)o->m_vecB.m_pMemory;
+	for (i = v->m_Size; --i >= 0; )
+		v->sub_10130be0();
+	v->m_Size = 0;
+	v->sub_10132db0(0, nB, 0);
+	for (i = 0; i < nB; i++)
+		((CUnknown101b9140Elem *)v->m_pMemory)[i] = pB[i];
+
+	p->m_bField48 = o->m_bField48;
+	unsigned int u;
+	for (u = 0; u < 0x20; u++)
+		p->m_szVolume[u] = o->m_szVolume[u];
+	for (u = 0; u < 0x20; u++)
+		p->m_szChannel[u] = o->m_szChannel[u];
+	for (u = 0; u < 0x20; u++)
+		p->m_szSoundLevel[u] = o->m_szSoundLevel[u];
+	for (u = 0; u < 0x20; u++)
+		p->m_szPitch[u] = o->m_szPitch[u];
+	return *this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101314a0 size=0x95
 #include "CUtlVector130.h"
 
