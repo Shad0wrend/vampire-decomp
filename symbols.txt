@@ -13376,6 +13376,7 @@
 0x10011707 func   ?sub_102f37a0@@YAHPBM0@Z sub_102f37a0
 0x1001170c func   ?sub_101976b0@@YAPAUPyObj@@PAU1@0@Z sub_101976b0
 0x10011711 func   ?vfunc544@CAI_BaseNPC@@UAEDPAVCBaseEntity@@HH@Z CAI_BaseNPC::vfunc544
+0x10011716 func   ?vfunc229@CBasePlayer@@UAEXH@Z CBasePlayer::vfunc229
 0x10011716 func   ?vfunc229@CBasePlayer@@UAEXPAVCBaseEntity@@@Z CBasePlayer::vfunc229
 0x1001171b func   ?vfunc17@CBaseEntity@@UAEXHH@Z CBaseEntity::vfunc17
 0x10011720 func   ?sub_10407020@@YAHXZ sub_10407020
