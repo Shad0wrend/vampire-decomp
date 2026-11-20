@@ -8386,6 +8386,7 @@
 0x1000b460 func   _item_k_museum_storage_key item_k_museum_storage_key
 0x1000b465 func   ?sub_10407580@@YAHXZ sub_10407580
 0x1000b46a func   ?vfunc180@CPlayerEvents@@QAEXXZ CPlayerEvents::vfunc180
+0x1000b46a func   ?vfunc180@CPlayerEvents@@UAEXXZ CPlayerEvents::vfunc180
 0x1000b46f func   _func_plat func_plat
 0x1000b474 func   ?vfunc2@CPhysSaveRestoreBlockHandler@@QAEXPAVCSave@@@Z CPhysSaveRestoreBlockHandler::vfunc2
 0x1000b479 func   ?vfunc363@CWeaponMelee_ZombieFists@@QAEHXZ CWeaponMelee_ZombieFists::vfunc363
