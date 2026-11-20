@@ -10734,6 +10734,7 @@
 0x1000e214 func   _func_platrot func_platrot
 0x1000e219 func   ??0StatDefault@@QAE@H@Z StatDefault::StatDefault
 0x1000e21e func   ?vfunc174@CNPC_VGhoulCroucher@@QAEXPAVCBaseEntity@@@Z CNPC_VGhoulCroucher::vfunc174
+0x1000e21e func   ?vfunc174@CNPC_VGhoulCroucher@@UAEXPAVCBaseEntity@@@Z CNPC_VGhoulCroucher::vfunc174
 0x1000e223 func   ?sub_101d8b40@CUnknown101d8a70@@QAEPAHPAX_N@Z CUnknown101d8a70::sub_101d8b40
 0x1000e228 func   ?sub_1007a060@CUnknown1007a060@@QAEPAVCUnknown1007a060Elem@@XZ CUnknown1007a060::sub_1007a060
 0x1000e22d func   ?sub_101145a0@@YAHXZ sub_101145a0
