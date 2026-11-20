@@ -5304,6 +5304,7 @@
 0x10007829 func   ?sub_1027efb0@@YIXPAUCTraceDumpNPC@@@Z sub_1027efb0
 0x10007833 func   ?sub_101b5840@CUnk101b5840@@QAEHHH@Z CUnk101b5840::sub_101b5840
 0x1000783d func   ?vfunc176@CTriggerDisciplineContext@@QAEXPAVCBaseEntity@@@Z CTriggerDisciplineContext::vfunc176
+0x1000783d func   ?vfunc176@CTriggerDisciplineContext@@UAEXPAVCBaseEntity@@@Z CTriggerDisciplineContext::vfunc176
 0x10007842 func   ?vfunc580@CNPC_VGhoulCroucher@@UAEHXZ CNPC_VGhoulCroucher::vfunc580
 0x10007847 func   ?sub_101b6b60@@YAXPAUE101b6b60@@PBU1@@Z sub_101b6b60
 0x1000784c func   ?vfunc5@CEffectsServer@@UAEXPBMHHH@Z CEffectsServer::vfunc5
