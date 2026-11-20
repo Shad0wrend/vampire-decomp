@@ -904,6 +904,7 @@
 0x100021ee func   ?vfunc32@CPropSign@@UAE_NPAX@Z CPropSign::vfunc32
 0x100021f3 func   ?vfunc81@COrnamentProp@@UAEHXZ COrnamentProp::vfunc81
 0x100021f8 func   ?vfunc174@CTriggerProximity@@QAEXPAVCBaseEntity@@@Z CTriggerProximity::vfunc174
+0x100021f8 func   ?vfunc174@CTriggerProximity@@UAEXPAVCBaseEntity@@@Z CTriggerProximity::vfunc174
 0x100021fd func   ?sub_10204100@@YAHPAVCBaseCombatCharacter@@HD@Z sub_10204100
 0x10002202 func   ?sub_1024b830@CUnknown1024b2d0@@QAEPBDUCUnknown1024b2d0Id@@@Z CUnknown1024b2d0::sub_1024b830
 0x10002207 func   ?vfunc8@CPlayerEventsManager@@UAEPAVCAutoGameSystem@@I@Z CPlayerEventsManager::vfunc8
