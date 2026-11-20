@@ -7316,6 +7316,7 @@
 0x1000a01a func   ?sub_10138df0@@YAXABUmatrix3x4_t@@0AAU1@@Z sub_10138df0
 0x1000a01f func   ?sub_1025d880@@YAXXZ sub_1025d880
 0x1000a024 func   ?vfunc178@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc178
+0x1000a024 func   ?vfunc178@CBaseEntity@@UAEXPAV1@@Z CBaseEntity::vfunc178
 0x1000a029 func   ?sub_1002bdc0@CPhysSlideConstraint@@QAEXHPAPAX@Z CPhysSlideConstraint::sub_1002bdc0
 0x1000a02e func   ?vfunc113@CPropDestructable@@UAEXXZ CPropDestructable::vfunc113
 0x1000a033 func   ?sub_100cb110@CMomentaryRotButton@@QAEXXZ CMomentaryRotButton::sub_100cb110
