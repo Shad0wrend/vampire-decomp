@@ -2213,3 +2213,20 @@ S101e0520 *CUnknown101e0c30::sub_10149890()
 	return m_pItems[m_count - 1];
 }
 // END FUNCTION
+
+// FUNCTION: 0x10149f70 size=0x42
+#include "CStatusFlagList.h"
+unsigned int CStatusFlagList::sub_10149f70(int nKey, int nSkip)
+{
+	for (int i = 0; i < m_nCount; i++)
+	{
+		if (m_ppEntries[i]->m_nKey == nKey)
+		{
+			if (i + nSkip < m_nCount)
+				return m_ppEntries[i + nSkip]->m_nFlags;
+			return 0;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
