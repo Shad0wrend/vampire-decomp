@@ -2500,3 +2500,17 @@ bool CVDmgBlock16_t::sub_101613e0(const CVDmgBlock16_t *pOther)
 	return bSame;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10161db0 size=0x20
+struct CUnknown10206400 { void * sub_10161db0(int); };
+void * CUnknown10206400::sub_10161db0(int a0)
+{
+    *(int *)this = 1;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = a0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    return this;
+}
+// END FUNCTION
