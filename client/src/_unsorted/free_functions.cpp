@@ -1460,3 +1460,46 @@ void CUtlMemory20::sub_1011fdf0(int num)
 		m_pMemory = Plat_Alloc(m_nAllocationCount * 20);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10127320 size=0x87
+#include "Vector.h"
+struct CRagdollBoneMatrix { float m_f[12]; };
+struct CRagdollPhysObject
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24(); virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34(); virtual void v35(); virtual void v36(); virtual void v37();
+	virtual void vfunc38(const CRagdollBoneMatrix *pMatrix);
+};
+struct CRagdollElement
+{
+	char m_pad0000[0xc];
+	CRagdollPhysObject *m_pObject;	// 0x0c
+	char m_pad0010[4];
+	int m_iParent;	// 0x14
+};
+struct CRagdollLayout
+{
+	char m_pad0000[8];
+	CRagdollElement m_elements[1];	// 0x08, 0x18 bytes each
+};
+struct CRagdollStudio { char m_pad0000[4]; CRagdollBoneMatrix *m_pBones; };
+void sub_10107f80(CRagdollElement *pElem, const CRagdollBoneMatrix *pParent, Vector *pOut);
+void sub_10108540(Vector *pIn, int axes, CRagdollBoneMatrix *pMatrix);
+bool sub_10127320(CRagdollLayout *pRagdoll, CRagdollStudio *pStudio, int index)
+{
+	int bone = ((int *)((char *)pRagdoll + 0x2d8))[index];
+	if (bone < 0)
+		return false;
+	CRagdollElement *pElem = &pRagdoll->m_elements[index];
+	pElem->m_pObject->vfunc38(&pStudio->m_pBones[bone]);
+	if (pElem->m_iParent >= 0) {
+		Vector v;
+		int parentBone = ((int *)((char *)pRagdoll + 0x2d8))[pElem->m_iParent];
+		sub_10107f80(pElem, &pStudio->m_pBones[parentBone], &v);
+		sub_10108540(&v, 3, &pStudio->m_pBones[bone]);
+	}
+	return true;
+}
+// END FUNCTION
