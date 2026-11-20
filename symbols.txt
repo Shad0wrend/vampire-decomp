@@ -3592,6 +3592,7 @@
 0x10005718 func   ?sub_10208b00@CItemContainer@@QAEXXZ CItemContainer::sub_10208b00
 0x1000571d func   ?sub_100b12e0@CBaseEntity@@QAEXD@Z CBaseEntity::sub_100b12e0
 0x10005722 func   ?vfunc176@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc176
+0x10005722 func   ?vfunc176@CBaseEntity@@UAEXPAV1@@Z CBaseEntity::vfunc176
 0x10005727 func   ?vfunc0@CTEBeamEntPoint@@UAEPAUServerClass@@XZ CTEBeamEntPoint::vfunc0
 0x1000572c func   ?sub_101c0b60@@YAXXZ sub_101c0b60
 0x10005731 func   ?sub_10266ef0@@YGXPAUCTriggerDmgInfo@@PBVVector@@11@Z sub_10266ef0
