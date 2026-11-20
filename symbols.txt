@@ -12877,6 +12877,7 @@
 0x10010cda func   ??0CAI_LocalIdSpace@@QAE@_N@Z CAI_LocalIdSpace::CAI_LocalIdSpace
 0x10010cda func   ?sub_102ea090@CUnknown102ea090@@QAEPAU1@D@Z CUnknown102ea090::sub_102ea090
 0x10010cdf func   ?vfunc175@CTriggerLook@@QAEXPAVCBaseEntity@@@Z CTriggerLook::vfunc175
+0x10010cdf func   ?vfunc175@CTriggerLook@@UAEXPAVCBaseEntity@@@Z CTriggerLook::vfunc175
 0x10010ce4 func   ?sub_10429f40@@YIXPADHHHHH@Z sub_10429f40
 0x10010ce9 func   _env_soundscape env_soundscape
 0x10010cee func   ?vfunc420@CNPC_VGhoulCroucher@@QAEXXZ CNPC_VGhoulCroucher::vfunc420
