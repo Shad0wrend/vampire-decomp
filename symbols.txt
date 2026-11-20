@@ -2317,6 +2317,7 @@
 0x10003dcd func   ?sub_10386b00@CNPC_VHumanCombatant@@QAEPBDXZ CNPC_VHumanCombatant::sub_10386b00
 0x10003dd2 func   ?sub_1033d990@@YAHXZ sub_1033d990
 0x10003dd7 func   ?vfunc176@CTriggerLook@@QAEXPAVCBaseEntity@@@Z CTriggerLook::vfunc176
+0x10003dd7 func   ?vfunc176@CTriggerLook@@UAEXPAVCBaseEntity@@@Z CTriggerLook::vfunc176
 0x10003ddc func   ?sub_10307ef0@CAI_PlaneSolver@@QAEDPAXPAVVector@@_NHPAUCAI_PlaneSolverTrace@@@Z CAI_PlaneSolver::sub_10307ef0
 0x10003de1 func   ?sub_101e6040@CVFeatMgr@@QAEXXZ CVFeatMgr::sub_101e6040
 0x10003de6 func   ?sub_10271b10@@YIXPAVCAI_BaseNPC@@@Z sub_10271b10
