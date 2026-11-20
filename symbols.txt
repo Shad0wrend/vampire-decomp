@@ -7346,6 +7346,7 @@
 0x1000a100 func   ?vfunc144@CHL2_Player@@UAEXH@Z CHL2_Player::vfunc144
 0x1000a10a func   ?sub_102ddab0@CAI_LocalNavigator@@QAEPAV1@H@Z CAI_LocalNavigator::sub_102ddab0
 0x1000a10f func   ?sub_1010d6a0@CBreakable@@QAEXXZ CBreakable::sub_1010d6a0
+0x1000a10f func   ?vfunc103@CBreakable@@UAEXXZ CBreakable::vfunc103
 0x1000a114 func   ?vfunc5@CWeaponMelee_Claws_Ghoul@@UAEPAVCBaseEntity@@I@Z CWeaponMelee_Claws_Ghoul::vfunc5
 0x1000a119 func   ?sub_101f2e20@@YAPAXPBDH@Z sub_101f2e20
 0x1000a11e func   ?vfunc4@CTEFootprintDecal@@QAEXHH@Z CTEFootprintDecal::vfunc4
