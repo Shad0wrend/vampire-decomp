@@ -4952,6 +4952,7 @@
 0x100071b7 func   ?sub_103b1cf0@@YIPAXPAX@Z sub_103b1cf0
 0x100071bc func   ?sub_101f1b30@@YGXHH@Z sub_101f1b30
 0x100071c1 func   ?vfunc178@CFuncRotating@@QAEXPAVCBaseEntity@@@Z CFuncRotating::vfunc178
+0x100071c1 func   ?vfunc178@CFuncRotating@@UAEXPAVCBaseEntity@@@Z CFuncRotating::vfunc178
 0x100071c6 func   ?vfunc7@CPhysSaveRestoreBlockHandler@@QAEXPAVCRestore@@HPBD@Z CPhysSaveRestoreBlockHandler::vfunc7
 0x100071cb func   ?sub_1013a5c0@@YAMH@Z sub_1013a5c0
 0x100071d0 func   _item_a_lt_leather item_a_lt_leather
