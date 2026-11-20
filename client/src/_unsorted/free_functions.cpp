@@ -2274,3 +2274,26 @@ void * CUnknown101f0b50::sub_10152bb0(int a0)
     return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10152f20 size=0x60
+#include "CReactionData.h"
+
+void CReactionData::sub_10152f20()
+{
+	if (m_ppEntries) {
+		for (int i = 0; i < m_nEntries; i++) {
+			delete m_ppEntries[i];
+			m_ppEntries[i] = 0;
+		}
+		delete m_ppEntries;
+		m_ppEntries = 0;
+	}
+	m_nEntries = 0;
+	m_n00 = 0;
+	if (m_p18) {
+		delete m_p18;
+		m_p18 = 0;
+	}
+	m_n14 = 0;
+}
+// END FUNCTION
