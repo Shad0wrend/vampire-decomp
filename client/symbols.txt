@@ -202,6 +202,7 @@
 0x10145d40 func   ?sub_10145d40@CUnk101d9190@@QAEHH@Z CUnk101d9190::sub_10145d40
 0x10146a90 func   ?sub_10146a90@CUnknown101db210@@QAEPAUS6@@XZ CUnknown101db210::sub_10146a90
 0x10146cb0 func   ?sub_10146cb0@CStatDefault60List@@QAEDPAVIKVNodeView@@PAX@Z CStatDefault60List::sub_10146cb0
+0x10146ed0 func   ?sub_10146ed0@CUnk101db960@@QAEPAU1@XZ CUnk101db960::sub_10146ed0
 0x10147a40 func   ?sub_10147a40@CRecListUnit@@QAEXPBU1@@Z CRecListUnit::sub_10147a40
 0x10147a90 func   ?sub_10147a90@CUnknown101dcc80@@QAEPAUCUnknown101dcc80Record@@XZ CUnknown101dcc80::sub_10147a90
 0x10147b80 func   ?sub_10147b80@CUnknown101dcdb0@@QAEXXZ CUnknown101dcdb0::sub_10147b80

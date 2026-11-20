@@ -4505,6 +4505,49 @@ char CStatDefault60List::sub_10146cb0(IKVNodeView *pKV, void *pFilter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146ed0 size=0x25
+namespace block_101db960 {
+struct CUnitA { int m_0, m_4, m_8, m_c; void *sub_101465b0(); };
+void *CUnitA::sub_101465b0()
+{
+	m_0 = 0;
+	m_4 = -1;
+	m_8 = -1;
+	m_c = 100;
+	return this;
+}
+struct CUnitB { int m_0, m_4, m_8; CUnitB *sub_10146c90(); };
+CUnitB *CUnitB::sub_10146c90()
+{
+	m_8 = 0;
+	m_0 = 0;
+	m_4 = 0;
+	return this;
+}
+}
+using namespace block_101db960;
+
+struct CUnk101db960 {
+	int m_0, m_4, m_8, m_c, m_10;
+	CUnitA m_a;
+	CUnitB m_b;
+	CUnk101db960 *sub_10146ed0();
+};
+
+// TARGET: CUnk101db960::sub_10146ed0
+CUnk101db960 *CUnk101db960::sub_10146ed0()
+{
+	m_a.sub_101465b0();
+	m_b.sub_10146c90();
+	m_0 = 0;
+	m_4 = 0;
+	m_8 = 0;
+	m_c = 0;
+	m_10 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147a40 size=0x4e
 #include "CUnknown101dcc80.h"
 struct CItemVec {
