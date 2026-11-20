@@ -18055,6 +18055,7 @@
 0x1049d950 data   ??_7CNavPropertyDatabase@@6BCAutoGameSystem@@@ ??_7CNavPropertyDatabase@@6BCAutoGameSystem@@@
 0x1049d994 vtable ??_7CAI_Navigator@@6BCAI_DefMovementSink@@@ CAI_Navigator::vftable
 0x1049d9c4 vtable ??_7CAI_Navigator@@6B@ CAI_Navigator::vftable
+0x1049d9c4 data   ??_7CAI_Navigator@@6BCAI_Component@@@ ??_7CAI_Navigator@@6BCAI_Component@@@
 0x1049d9c4 data   ??_7CAI_Navigator@@6BCAI_NavComponentData@@@ ??_7CAI_Navigator@@6BCAI_NavComponentData@@@
 0x1049da30 vtable ??_7CTraceFilterNearestNode@@6B@ CTraceFilterNearestNode::vftable
 0x1049da40 vtable ??_7CNodeNPCFilter@@6B@ CNodeNPCFilter::vftable
