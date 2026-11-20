@@ -16208,6 +16208,7 @@
 0x10014ddf func   ?sub_102fa630@CAI_Node@@QAEXXZ CAI_Node::sub_102fa630
 0x10014de4 func   ?sub_1038fa50@CUnknown1038fa50@@QAEXH@Z CUnknown1038fa50::sub_1038fa50
 0x10014de9 func   ?vfunc234@CDisciplineProjectile@@QAE?AUCGameTrace@@PBVVector@@@Z CDisciplineProjectile::vfunc234
+0x10014de9 func   ?vfunc234@CDisciplineProjectile@@UAE?AUCGameTrace@@PBVVector@@@Z CDisciplineProjectile::vfunc234
 0x10014dee func   ?sub_10304020@CAI_Pathfinder@@QAEPAVCAI_Waypoint@@HPBMHHHHHHHH@Z CAI_Pathfinder::sub_10304020
 0x10014df3 func   ?vfunc618@CNPC_VVampireBoss@@QAEXXZ CNPC_VVampireBoss::vfunc618
 0x10014df8 func   ?sub_10269aa0@CAI_BaseNPC@@QAE_NH@Z CAI_BaseNPC::sub_10269aa0
