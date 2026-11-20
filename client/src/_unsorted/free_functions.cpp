@@ -5291,6 +5291,25 @@ bool CUnknown101f27b0::sub_101540f0(int a, bool b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101546c0 size=0x3f
+#include <string.h>
+#include <stdlib.h>
+
+// TARGET: sub_101546c0
+char *sub_101546c0(const char *pszSrc)
+{
+    char *pszDst = 0;
+    if (pszSrc != 0) {
+        int nLen = strlen(pszSrc);
+        char *p = (char *)malloc(nLen + 1);
+        memcpy(p, pszSrc, nLen);
+        p[nLen] = 0;
+        pszDst = p;
+    }
+    return pszDst;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155b40 size=0x1d
 struct S9 {
 	int a, b, c, d, e, f, g, h, i;
