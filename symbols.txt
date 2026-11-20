@@ -14682,6 +14682,7 @@
 0x10012fcb func   ?sub_10246ef0@@YA?AVSendProp@@HHPBDH@Z sub_10246ef0
 0x10012fd0 func   ?sub_10359c50@@YAXXZ sub_10359c50
 0x10012fd5 func   ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z CBaseEntity::vfunc185
+0x10012fd5 func   ?vfunc185@CBaseEntity@@UAEXPAUCFireBulletsInfo@@@Z CBaseEntity::vfunc185
 0x10012fda func   ?vfunc81@CFuncParticle@@QAEHXZ CFuncParticle::vfunc81
 0x10012fdf func   _item_k_hitman_lu_key item_k_hitman_lu_key
 0x10012fe4 func   _item_w_katana item_w_katana
