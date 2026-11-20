@@ -802,3 +802,56 @@ void CUtlLinkedList6::sub_100e27a0(unsigned short i)
 	Unlink(i);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100e2840 size=0x106
+#include "utlrbtree.h"
+#include "CUtlLinkedList6.h"
+
+extern "C" __declspec(dllimport) void Error(const char *fmt, ...);
+
+unsigned short CUtlLinkedList6::sub_100e2840(bool multilist)
+{
+	unsigned short elem;
+	if (m_FirstFree == InvalidIndex())
+	{
+		if (m_TotalElements == m_allocationCount)
+		{
+			if (m_growSize != -1)
+			{
+				int nAllocationRequested = m_allocationCount + 1;
+				while (m_allocationCount < nAllocationRequested)
+				{
+					if (m_allocationCount != 0)
+					{
+						if (m_growSize)
+							m_allocationCount += m_growSize;
+						else
+							m_allocationCount += m_allocationCount;
+					}
+					else
+						m_allocationCount = (31 + sizeof(CUtlLinkedList6Node)) / sizeof(CUtlLinkedList6Node);
+				}
+				if (m_pMemory)
+					m_pMemory = (CUtlLinkedList6Node *)_imp__Plat_Realloc(m_pMemory, m_allocationCount * sizeof(CUtlLinkedList6Node));
+				else
+					m_pMemory = (CUtlLinkedList6Node *)_imp__Plat_Alloc(m_allocationCount * sizeof(CUtlLinkedList6Node));
+			}
+		}
+		elem = m_TotalElements;
+		++m_TotalElements;
+		if (elem == InvalidIndex())
+			Error("CUtlLinkedList overflow!\n");
+	}
+	else
+	{
+		elem = m_FirstFree;
+		m_FirstFree = InternalElement(m_FirstFree).m_Next;
+	}
+	if (!multilist)
+		InternalElement(elem).m_Next = InternalElement(elem).m_Previous = elem;
+	else
+		InternalElement(elem).m_Next = InternalElement(elem).m_Previous = InvalidIndex();
+	m_pElements = m_pMemory;
+	return elem;
+}
+// END FUNCTION
