@@ -3933,6 +3933,7 @@
 0x10005d4e func   ?sub_101eb6b0@CEntryX@@QAEDPAX@Z CEntryX::sub_101eb6b0
 0x10005d53 func   ?sub_100bef30@@YAHXZ sub_100bef30
 0x10005d58 func   ?vfunc144@CNPC_VCombatman@@QAEXH@Z CNPC_VCombatman::vfunc144
+0x10005d58 func   ?vfunc144@CNPC_VCombatman@@UAEXPAX@Z CNPC_VCombatman::vfunc144
 0x10005d5d func   ?sub_10307990@@YAHXZ sub_10307990
 0x10005d62 func   ?sub_101dce30@CUnknown101dce30@@QAE_NPAUCUnknown101dc5a0Keys@@PBD@Z CUnknown101dce30::sub_101dce30
 0x10005d67 func   ?vfunc242@CSceneEntity@@UAEXXZ CSceneEntity::vfunc242
