@@ -18,3 +18,32 @@ void CSaveRestoreBlockSet::vfunc2(void *pSave)
 	m_nSize = s->vfunc0() - start;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012bcd0 size=0x60
+#include "CSaveRestoreBlockSet.h"
+
+struct sub_BlockHandler4
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+	virtual void vfunc4();
+};
+extern "C" __declspec(dllimport) void Plat_Free(void *);
+
+// TARGET: CSaveRestoreBlockSet::vfunc4
+void CSaveRestoreBlockSet::vfunc4()
+{
+	for (int i = 0; i < m_nHandlers; i++)
+		((sub_BlockHandler4 *)m_pHandlers[i])->vfunc4();
+	m_nEntries = 0;
+	if (m_nEntriesGrow != -1)
+	{
+		if (m_pEntries)
+		{
+			Plat_Free(m_pEntries);
+			m_pEntries = 0;
+		}
+		m_nEntriesAlloc = 0;
+	}
+	m_pEntryElements = m_pEntries;
+}
+// END FUNCTION
