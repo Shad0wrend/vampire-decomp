@@ -14,12 +14,9 @@ CPropDoorknobElectronic::CPropDoorknobElectronic()
 
 // FUNCTION: 0x10226240 size=0x8
 #include "CPropDoorknobElectronic.h"
-// TARGET: CPropDoorknobElectronic::sub_10226240
-unsigned char CPropDoorknobElectronic::sub_10226240()
+int CPropDoorknobElectronic::vfunc117()
 {
-	unsigned char value = sub_100056aa();
-	value &= 0xfd;
-	return value;
+	return sub_100056aa() & ~2;
 }
 // END FUNCTION
 
@@ -77,9 +74,9 @@ void CPropDoorknobElectronic::vfunc103()
 	CPropDoorknob::vfunc103();
 	m_b815 = 1;
 	if (((block_102262f0::CItemContainerLockUnit *)this)->sub_10224100())
-		m_unk670 = 0;
+		*(int *)((char *)this + 0x670) = 0;
 	else
-		m_unk670 = 1;
+		*(int *)((char *)this + 0x670) = 1;
 }
 // END FUNCTION
 
@@ -88,7 +85,7 @@ void CPropDoorknobElectronic::vfunc103()
 
 void CPropDoorknobElectronic::vfunc274()
 {
-	m_unk670 = 1;
+	*(int *)((char *)this + 0x670) = 1;
 }
 // END FUNCTION
 
@@ -100,7 +97,7 @@ void CItemContainerLock::vfunc275()
 	m_unk780 = 1;
 }
 // TARGET: CPropDoorknobElectronic::vfunc275
-void CPropDoorknobElectronic::vfunc275() { ((CItemContainerLock *)this)->CItemContainerLock::vfunc275(); m_unk670 = 0; }
+void CPropDoorknobElectronic::vfunc275() { ((CItemContainerLock *)this)->CItemContainerLock::vfunc275(); *(int *)((char *)this + 0x670) = 0; }
 // END FUNCTION
 
 // FUNCTION: 0x10226380 size=0x14

@@ -15,15 +15,14 @@ void CBreakableProp::vfunc104()
 // END FUNCTION
 
 // FUNCTION: 0x1020ac70 size=0x21
-#include "CPropDoorknob.h"
+#include "CBaseVampireSkillEntity.h"
 
 struct CPropDoorknobHelper
 {
 	void sub_10009e6c(int bFlag);
 };
 
-// TARGET: CPropDoorknob::vfunc130
-void CPropDoorknob::vfunc130(int bFlag)
+void CBaseVampireSkillEntity::vfunc130(int bFlag)
 {
 	((CPropDoorknobHelper *)this)->sub_10009e6c(bFlag);
 	if ((char)bFlag)
@@ -151,13 +150,9 @@ CPropDoorknob *CPropDoorknob::sub_102258a0()
 
 // FUNCTION: 0x10225930 size=0x8
 #include "CPropDoorknob.h"
-// TARGET: CPropDoorknob::sub_10225930
-unsigned char CPropDoorknob::sub_10225930()
+int CPropDoorknob::vfunc117()
 {
-    unsigned char b;
-    b = sub_100056aa();
-    b &= 0xfd;
-    return b;
+    return sub_100056aa() & ~2;
 }
 // END FUNCTION
 
@@ -204,7 +199,7 @@ extern char g_106b8540[];
 
 void CPropDoorknob::vfunc103()
 {
-	((CBaseVampireSkillEntity *)this)->vfunc103();
+	CBaseVampireSkillEntity::vfunc103();
 	*(int *)((char *)this + 0x19c) = 0xa0;
 	const char *name = m_name26c ? m_name26c : g_106b8540;
 	g_109f3620[*g_109f3680].a = "CBaseEntity::SetSolid";
@@ -225,7 +220,7 @@ void CPropDoorknob::vfunc103()
 // END FUNCTION
 
 // FUNCTION: 0x10225af0 size=0x36
-#include "CBaseVampireSkillEntity.h"
+#include "CBaseLockableEnt.h"
 
 
 struct CUnknown10225af0
@@ -248,7 +243,7 @@ void CUnknown10225af0::sub_10225af0()
 	const char *pszDoorName = m_pszDoorName;
 	m_n1fc = 0;
 	m_fl17c = gpGlobals->curtime + 0.1;
-	((CBaseVampireSkillEntity *)this)->sub_102256f0(pszDoorName);
+	((CBaseLockableEnt *)this)->sub_102256f0(pszDoorName);
 }
 // END FUNCTION
 

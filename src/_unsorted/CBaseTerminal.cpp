@@ -104,7 +104,7 @@ void CBaseTerminal::vfunc71()
 // TARGET: CBaseTerminal::vfunc103
 void CBaseTerminal::vfunc103()
 {
-	((CBaseVampireSkillEntity *)this)->vfunc103();
+	((CBaseVampireSkillEntity *)this)->CBaseVampireSkillEntity::vfunc103();
 	CBaseEntity *pEnt = (CBaseEntity *)this;
 	CCollisionProperty *pColl;
 	{

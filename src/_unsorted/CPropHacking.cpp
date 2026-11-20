@@ -319,7 +319,7 @@ void CPropHacking::vfunc272()
 	for (int i = 0; i < m_nCounts0998; i++)
 		m_pnCounts098c[i] = 0;
 	m_n0c28 = 0;
-	((CBaseVampireSkillEntity *)this)->vfunc272();
+	((CBaseVampireSkillEntity *)this)->CBaseVampireSkillEntity::vfunc272();
 }
 // END FUNCTION
 

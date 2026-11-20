@@ -28,7 +28,7 @@ struct CBaseEntityDtor
 
 void sub_100aa7b0(void *p);
 
-CBaseVampireSkillEntity *CBaseVampireSkillEntity::vfunc5(unsigned int flags)
+CBaseEntity *CBaseVampireSkillEntity::vfunc5(unsigned int flags)
 {
 	((CUnknownMember10015708 *)((char *)this + 0x7f4))->sub_10015708();
 	((CUnknownMember10015708 *)((char *)this + 0x7dc))->sub_10015708();

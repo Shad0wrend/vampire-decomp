@@ -342,7 +342,7 @@ CItemContainerLock *CItemContainerLock::vfunc5(unsigned int flags)
 
 void CItemContainerLock::vfunc103()
 {
-    ((CBaseVampireSkillEntity *)this)->vfunc103();
+    ((CBaseVampireSkillEntity *)this)->CBaseVampireSkillEntity::vfunc103();
     *(unsigned int *)((char *)this + 0x19c) |= 0x40;
 }
 // END FUNCTION

@@ -15423,10 +15423,6 @@ void CBaseCombatCharacter::sub_100521e0()
 #include "engineserver.h"
 #include "CEHandleGet.h"
 #include <stdlib.h>
-// identifier-count dial (CBaseButton layer 2026-11-20): VC6 orders `or ebx,-1` / `mov ebp,1` (0x10053ad6) by
-// symbol numbers, so 10 declarations here keep the game's order with these headers (window 5..16 and up).
-typedef int pcd_dial0; typedef int pcd_dial1; typedef int pcd_dial2; typedef int pcd_dial3; typedef int pcd_dial4;
-typedef int pcd_dial5; typedef int pcd_dial6; typedef int pcd_dial7; typedef int pcd_dial8; typedef int pcd_dial9;
 
 extern CVStatList_t g_109f0b40;
 void __cdecl sub_10012a8a();
@@ -183834,7 +183830,7 @@ void CItemContainerLock::sub_10224fa0(CBaseCombatCharacter *pPlayer)
 // END FUNCTION
 
 // FUNCTION: 0x102256f0 size=0xf3
-#include "CBaseVampireSkillEntity.h"
+#include "CBaseLockableEnt.h"
 #include "CBaseDoor.h"
 #include "CGlobalEntityList.h"
 #include "CEHandleGet.h"
@@ -183847,7 +183843,7 @@ extern CGlobalEntityList g_106eb5d8;
 extern void (*g_109f364c)(const char *pszFormat, ...);	// DevWarning
 void sub_101cd940(CBaseVampireSkillEntity *pEnt);
 
-void CBaseVampireSkillEntity::sub_102256f0(const char *pszDoorName)
+void CBaseLockableEnt::sub_102256f0(const char *pszDoorName)
 {
 	if (!pszDoorName)
 		pszDoorName = g_106b8540;
