@@ -1038,3 +1038,21 @@ void sub_1010a020(const Quaternion &p, const Quaternion &q, Quaternion &qt)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010a2b0 size=0x61
+#include <math.h>
+float sub_1010a2b0(float *q)
+{
+	float radius, iradius;
+	radius = q[3] * q[3] + q[2] * q[2] + q[1] * q[1] + q[0] * q[0];
+	if (radius) {
+		radius = sqrt(radius);
+		iradius = 1.0f / radius;
+		q[3] *= iradius;
+		q[2] *= iradius;
+		q[1] *= iradius;
+		q[0] *= iradius;
+	}
+	return radius;
+}
+// END FUNCTION
