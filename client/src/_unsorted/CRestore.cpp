@@ -17,3 +17,15 @@ void CRestore::vfunc8()
 	((CRestoreSlot1 *)this)->vfunc1(v);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012aaa0 size=0x1c
+#include "CRestore.h"
+
+// TARGET: CRestore::vfunc13
+short CRestore::vfunc13()
+{
+	int v = 0;
+	sub_1012ab60(&v, 2);
+	return v;
+}
+// END FUNCTION
