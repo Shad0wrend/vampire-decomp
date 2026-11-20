@@ -13,6 +13,7 @@
 0x1007b650 func   ?sub_1007b650@@YGHH@Z sub_1007b650
 0x100889f0 func   ?sub_100889f0@@YAXPAXHMPAUCBlendBone@@PAUCBlendAnim@@AAVQuaternion@@@Z sub_100889f0
 0x10088ba0 func   ?sub_10088ba0@@YAXPAXHMPAUmstudiobone_t@@PAUmstudioanim_t@@AAVVector@@@Z sub_10088ba0
+0x10088d00 func   ?sub_10088d00@@YAXMABVQuaternion@@0AAV1@@Z sub_10088d00
 0x10089170 func   ?sub_10089170@@YAHHHPAH0@Z sub_10089170
 0x10089660 func   ?sub_10089660@@YAXPADHHH@Z sub_10089660
 0x100896c0 func   ?sub_100896c0@@YAXPAUStudioHdr@@QAVVector@@QAVQuaternion@@@Z sub_100896c0

@@ -384,6 +384,26 @@ void sub_10088ba0(void *pStudioHdr, int frame, float s, mstudiobone_t *pbone, ms
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088d00 size=0x5a
+#include "Quaternion.h"
+
+void sub_1010a320(const float *p, float t, float *qt);
+void sub_1010a450(const Quaternion &p, const Quaternion &q, Quaternion &qt);
+float sub_1010a2b0(Quaternion &q);
+
+void sub_10088d00(float s, const Quaternion &p, const Quaternion &q, Quaternion &qt)
+{
+	Quaternion p1, q1;
+	sub_1010a320(&p.x, s, &p1.x);
+	sub_1010a450(p1, q, q1);
+	sub_1010a2b0(q1);
+	qt[0] = q1[0];
+	qt[1] = q1[1];
+	qt[2] = q1[2];
+	qt[3] = q1[3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10089170 size=0x61
 int sub_100891e0(int hdr, int seq, int *pOut, int nBones, int *pRemap);
 int sub_10089170(int hdr, int seq, int *pOut, int *pRemap)
