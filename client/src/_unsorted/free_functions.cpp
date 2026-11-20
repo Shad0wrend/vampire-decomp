@@ -5418,6 +5418,27 @@ void CEntryTable_101f5e80::sub_10156120()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156160 size=0x19
+struct CUnk101f5ed0
+{
+	char m_pad0000[8];
+
+	void sub_10156160();
+};
+
+// TARGET: sub_10156160
+void CUnk101f5ed0::sub_10156160()
+{
+	int *p = (int *)(m_pad0000 + 8);
+	for (int i = 0x118d; i != 0; i--) {
+		p[-2] = 0;
+		p[-1] = 0;
+		p[0] = 0;
+		p += 3;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157390 size=0xeb
 #include "CUnknown101f7960.h"
 
