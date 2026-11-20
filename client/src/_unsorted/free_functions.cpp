@@ -1839,3 +1839,14 @@ bool CUtlRBTree12::sub_10138770(unsigned short i) const
 	return tree->Links(parent).m_Left == i;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1013c790 size=0x19
+#include "Vector.h"
+Vector &Vector::sub_1013c790(const Vector &v)
+{
+	x = v.x;
+	y = v.y;
+	z = v.z;
+	return *this;
+}
+// END FUNCTION
