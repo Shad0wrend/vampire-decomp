@@ -855,3 +855,17 @@ unsigned short CUtlLinkedList6::sub_100e2840(bool multilist)
 	return elem;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100e2a10 size=0xc1
+#include "CUnknown100fde30.h"
+
+CUnknown100fde30 *CUnknown100fde30::sub_100e2a10()
+{
+	((CUniformRandomStream *)m_stream1)->CUniformRandomStream::CUniformRandomStream();
+	((CUniformRandomStream *)m_stream2)->CUniformRandomStream::CUniformRandomStream();
+	m_rec1.CUnknown100fde30Rec::CUnknown100fde30Rec();
+	m_rec2.CUnknown100fde30Rec::CUnknown100fde30Rec();
+	m_field170 = 0;
+	return this;
+}
+// END FUNCTION
