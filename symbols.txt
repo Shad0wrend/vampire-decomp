@@ -17009,6 +17009,7 @@
 0x10015cf8 func   ?vfunc59@CSingleplayRules@@UAEMXZ CSingleplayRules::vfunc59
 0x10015cfd func   ?sub_10323770@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_10323770
 0x10015d02 func   ?vfunc230@CWorld@@UAEXHH@Z CWorld::vfunc230
+0x10015d02 func   ?vfunc230@CWorld@@UAEXHPAX@Z CWorld::vfunc230
 0x10015d07 func   ?sub_101fc5b0@CVStatCost_t@@QAEPBDXZ CVStatCost_t::sub_101fc5b0
 0x10015d0c func   ?vfunc461@CNPC_VSheriffMan@@QAEHXZ CNPC_VSheriffMan::vfunc461
 0x10015d11 func   ?sub_102c7250@@YAXXZ sub_102c7250
