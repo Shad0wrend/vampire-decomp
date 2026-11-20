@@ -9989,6 +9989,7 @@
 0x1000d48b func   ?sub_1034b490@CNPCMaker@@QAEXXZ CNPCMaker::sub_1034b490
 0x1000d490 func   ?vfunc9@CAI_Navigator@@UAEXHM@Z CAI_Navigator::vfunc9
 0x1000d495 func   ?vfunc164@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc164
+0x1000d495 func   ?vfunc164@CBaseEntity@@UAE_NXZ CBaseEntity::vfunc164
 0x1000d49a func   ?sub_104126a0@@YA_NH@Z sub_104126a0
 0x1000d49f func   ?sub_10288540@CUnknown10288540@@QAEPAU1@XZ CUnknown10288540::sub_10288540
 0x1000d4a4 func   ?vfunc447@CAI_BaseNPC@@UAEHH@Z CAI_BaseNPC::vfunc447
