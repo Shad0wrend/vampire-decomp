@@ -12402,6 +12402,7 @@
 0x10010541 func   ?sub_1018d430@@YAHXZ sub_1018d430
 0x10010546 func   ?sub_103059d0@CAI_Pathfinder@@QAE_NHPBM0MPBVCBaseEntity@@PAMID@Z CAI_Pathfinder::sub_103059d0
 0x1001054b func   ?vfunc135@CBaseEntity@@QAEMM@Z CBaseEntity::vfunc135
+0x1001054b func   ?vfunc135@CBaseEntity@@UAEMM@Z CBaseEntity::vfunc135
 0x10010550 func   ?sub_101c2660@CUnknown101c2660@@QAEHPAH@Z CUnknown101c2660::sub_101c2660
 0x10010555 func   ?sub_101cd880@CTracePassFilterX@@QAE_NPAXH@Z CTracePassFilterX::sub_101cd880
 0x1001055a func   ?vfunc3@CCollisionEvent@@UAEXPAX00@Z CCollisionEvent::vfunc3
