@@ -5074,6 +5074,33 @@ void CPtrList101d6400::sub_10151840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151890 size=0x50
+struct CPtrList101d6400 {
+	int m_n0;
+	int m_n4;
+	int m_nCount;	// 0x8
+	int **m_ppData;	// 0xc: array of owned pointers
+
+	void sub_10151890();
+};
+
+// TARGET: CPtrList101d6400::sub_10151890
+void CPtrList101d6400::sub_10151890()
+{
+	if (m_ppData) {
+		for (int i = 0; i < m_nCount; i++) {
+			if (m_ppData[i])
+				delete m_ppData[i];
+			m_ppData[i] = 0;
+		}
+		delete m_ppData;
+		m_ppData = 0;
+	}
+	m_nCount = 0;
+	m_n4 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152bb0 size=0x1a
 struct CUnknown101f0b50 { void * sub_10152bb0(int); };
 void * CUnknown101f0b50::sub_10152bb0(int a0)
