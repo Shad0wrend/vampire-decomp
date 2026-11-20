@@ -416,6 +416,26 @@ int sub_10079a40(int n, int *values, int *weights)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079cf0 size=0x40
+int sub_10079d30(int a, int b);
+int sub_10079c20(int a, int b);
+int sub_10079b70(int a, int b, int c, int d, int e);
+
+// TARGET: sub_10079cf0
+int sub_10079cf0(int a, int b)
+{
+    int iVar1 = sub_10079d30(a, b);
+    if (iVar1 < 0) {
+        iVar1 = sub_10079c20(a, b);
+        if (iVar1 != -1) {
+            return sub_10079b70(a, iVar1, 0, 0, -1);
+        }
+        iVar1 = -1;
+    }
+    return iVar1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100889f0 size=0x1a2
 #include "Quaternion.h"
 union CBlendAnimValue
