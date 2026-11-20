@@ -14010,6 +14010,7 @@
 0x100121de func   ?sub_10133910@CMathCounter@@QAEXAAUinputdata_t@@@Z CMathCounter::sub_10133910
 0x100121e3 func   _npc_VMoleman npc_VMoleman
 0x100121e8 func   ?vfunc173@CSprite@@UAEXHHHH@Z CSprite::vfunc173
+0x100121e8 func   ?vfunc173@CSprite@@UAEXPAVCBaseEntity@@0HH@Z CSprite::vfunc173
 0x100121ed func   ?sub_10026dd0@@YGXHH@Z sub_10026dd0
 0x100121f2 func   ?sub_1010b530@CFire@@QAEXM@Z CFire::sub_1010b530
 0x100121f7 func   ?sub_100dda20@@YIXPAX@Z sub_100dda20
