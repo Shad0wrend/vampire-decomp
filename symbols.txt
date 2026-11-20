@@ -16016,6 +16016,7 @@
 0x10014bc3 func   ?sub_10299d50@@YAXH@Z sub_10299d50
 0x10014bc8 func   ?vfunc451@CBasePlayer@@UAEXH@Z CBasePlayer::vfunc451
 0x10014bcd func   ?vfunc228@CBaseEntity@@QAEXHH@Z CBaseEntity::vfunc228
+0x10014bcd func   ?vfunc228@CBaseEntity@@UAEXHH@Z CBaseEntity::vfunc228
 0x10014bd2 func   ?sub_1026af30@@YIPAXPAUCUnknown1026af30View@@@Z sub_1026af30
 0x10014bd7 func   ?sub_101857b0@UtlMem@@QAEXXZ UtlMem::sub_101857b0
 0x10014bdc func   ?sub_10240250@@YA_NABVVector@@000@Z sub_10240250
