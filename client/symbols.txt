@@ -33,6 +33,7 @@
 0x100df510 func   ?vfunc4@ConCommand@@UAEHHH@Z ConCommand::vfunc4
 0x100df7a0 func   ?vfunc11@ConVar@@UAEXPBD@Z ConVar::vfunc11
 0x100df850 func   ?vfunc10@ConVar@@UAE_NPAM@Z ConVar::vfunc10
+0x100dfa10 func   ?vfunc6@ConVar@@UAEXPBD@Z ConVar::vfunc6
 0x10106c60 func   _CreateInterface CreateInterface
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag

@@ -48,3 +48,17 @@ bool ConVar::vfunc10(float *value)
 	return false;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100dfa10 size=0x2e
+// TARGET: ConVar::vfunc6
+#include "ConVar.h"
+
+void ConVar::vfunc6(const char *value) {
+    if (!m_pParent->vfunc1()) {
+        vfunc7(value);
+        if (this != m_pParent) {
+            m_pParent->vfunc7(value);
+        }
+    }
+}
+// END FUNCTION
