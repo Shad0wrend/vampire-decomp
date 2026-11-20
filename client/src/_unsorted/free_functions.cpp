@@ -546,3 +546,18 @@ void CUnknown100c81b0::sub_1008e420(const CBitVecWords *pSource, int count, cons
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10098720 size=0x59
+float sub_10098720(float x, float lo, float hi)
+{
+	if (x > hi) {
+		x = hi;
+		return (x - lo) / (hi - lo);
+	}
+	if (x < lo) {
+		x = lo;
+		return (x - lo) / (hi - lo);
+	}
+	return (x - lo) / (hi - lo);
+}
+// END FUNCTION
