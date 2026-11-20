@@ -436,6 +436,23 @@ int sub_10079cf0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007aca0 size=0x2b
+#include "CUnknown100290c0.h"
+
+// TARGET: CUnknown100290c0::sub_1007aca0
+unsigned int CUnknown100290c0::sub_1007aca0(unsigned int *pHandle)
+{
+    unsigned int h = *pHandle;
+    if (h != 0xffffffff) {
+        CUnknown100290c0Slot *pSlot = &m_Slots[h & 0x1fff];
+        if (pSlot->m_Serial == (int)(h >> 13)) {
+            return pSlot->m_Value;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100889f0 size=0x1a2
 #include "Quaternion.h"
 union CBlendAnimValue
