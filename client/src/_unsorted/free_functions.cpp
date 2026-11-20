@@ -3031,6 +3031,18 @@ void CUtlMemory20::sub_1011fdf0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101209c0 size=0x1b
+// TARGET: sub_101209c0
+struct CUnk1042da10 {
+    unsigned int m_flags;
+    void sub_101209c0(char bSet);
+};
+void CUnk1042da10::sub_101209c0(char bSet)
+{
+    m_flags = ((((bSet != 0) ^ m_flags) & 1) ^ m_flags);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127320 size=0x87
 #include "Vector.h"
 struct CRagdollBoneMatrix { float m_f[12]; };
