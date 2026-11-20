@@ -164,7 +164,6 @@ EXTERN ?sub_1014fa30@@YA_NXZ:BYTE
 EXTERN ?sub_1014fa50@@YA_NXZ:BYTE
 EXTERN ?sub_101c0820@CPointEntity@@QAEXXZ:BYTE
 EXTERN ?sub_101c4b50@CBaseTrigger@@QAEEXZ:BYTE
-EXTERN ?sub_101c4b90@@YGXHHH@Z:BYTE
 EXTERN ?sub_101ca450@@YAPAXXZ:BYTE
 EXTERN ?sub_101ca8f0@@YAPAXXZ:BYTE
 EXTERN ?sub_101cba00@CStealthUnit101cba00@@QAEXPAX@Z:BYTE
@@ -391,6 +390,7 @@ EXTERN ?vfunc137@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc13@CBaseEntity@@UAEXPBD@Z:BYTE
 EXTERN ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z:BYTE
 EXTERN ?vfunc141@CBaseEntity@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z:BYTE
+EXTERN ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z:BYTE
 EXTERN ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z:BYTE
 EXTERN ?vfunc142@CBreakableProp@@UAEHPAUCTakeDamageInfo@@@Z:BYTE
 EXTERN ?vfunc142@CItemContainer@@QAEHPAUCItemDamageInfo@@@Z:BYTE
@@ -1220,7 +1220,7 @@ PUBLIC ?vt_10480df4@@3HA
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
-  DD OFFSET ?sub_101c4b90@@YGXHHH@Z
+  DD OFFSET ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
   DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
   DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
@@ -1476,7 +1476,7 @@ PUBLIC ?vt_104812b4@@3PAPAXA
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
-  DD OFFSET ?sub_101c4b90@@YGXHHH@Z
+  DD OFFSET ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
   DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
   DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
@@ -1739,7 +1739,7 @@ PUBLIC ?vt_1048178c@@3PAPAXA
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
-  DD OFFSET ?sub_101c4b90@@YGXHHH@Z
+  DD OFFSET ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
   DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
   DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
@@ -1995,7 +1995,7 @@ PUBLIC ?vt_10481c4c@@3HA
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
-  DD OFFSET ?sub_101c4b90@@YGXHHH@Z
+  DD OFFSET ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
   DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
   DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
@@ -2252,7 +2252,7 @@ PUBLIC ?vt_1048210c@@3HA
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
-  DD OFFSET ?sub_101c4b90@@YGXHHH@Z
+  DD OFFSET ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
   DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
   DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
@@ -2508,7 +2508,7 @@ PUBLIC ?vt_104825cc@@3HA
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
-  DD OFFSET ?sub_101c4b90@@YGXHHH@Z
+  DD OFFSET ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
   DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
   DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
@@ -2764,7 +2764,7 @@ PUBLIC ?vt_10482a8c@@3HA
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
-  DD OFFSET ?sub_101c4b90@@YGXHHH@Z
+  DD OFFSET ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
   DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
   DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
@@ -6686,7 +6686,7 @@ PUBLIC ?vt_104883bc@@3PAPAXA
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
-  DD OFFSET ?sub_101c4b90@@YGXHHH@Z
+  DD OFFSET ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
   DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
   DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
@@ -8031,7 +8031,7 @@ PUBLIC ?vt_1048a134@@3HA
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
-  DD OFFSET ?sub_101c4b90@@YGXHHH@Z
+  DD OFFSET ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
   DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
   DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
@@ -11009,7 +11009,7 @@ PUBLIC ?vt_1048e714@@3PAHA
   DD OFFSET ?sub_100a7a80@@YAHXZ
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z
-  DD OFFSET ?sub_101c4b90@@YGXHHH@Z
+  DD OFFSET ?vfunc141@CBaseTrigger@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
   DD OFFSET ?vfunc142@CBaseEntity@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@UAEHMH@Z
   DD OFFSET ?vfunc144@CBaseEntity@@UAEXPAX@Z
