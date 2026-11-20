@@ -1146,3 +1146,20 @@ float sub_1010c4b0(float angle)
 	return angle;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010f390 size=0x4b
+struct SCopy {
+    int a, b, c, d;
+    char e, f;
+    char g[2];
+    SCopy &sub_1010f390(const SCopy &o);
+};
+SCopy &SCopy::sub_1010f390(const SCopy &o)
+{
+    a = o.a; b = o.b; c = o.c; d = o.d;
+    e = o.e; f = o.f;
+    for (unsigned i = 0; i < 2; i++)
+        g[i] = o.g[i];
+    return *this;
+}
+// END FUNCTION
