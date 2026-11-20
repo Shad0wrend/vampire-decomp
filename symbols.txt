@@ -7840,6 +7840,7 @@
 0x1000a970 func   ?vfunc81@CSun@@UAEHXZ CSun::vfunc81
 0x1000a975 func   ?vfunc5@CPhysHinge@@UAEPAV1@I@Z CPhysHinge::vfunc5
 0x1000a97a func   ?vfunc139@CNPCMaker_Fleshpile@@QAEXPAVCBaseEntity@@@Z CNPCMaker_Fleshpile::vfunc139
+0x1000a97a func   ?vfunc139@CNPCMaker_Fleshpile@@UAEXPAVCBaseEntity@@@Z CNPCMaker_Fleshpile::vfunc139
 0x1000a97f func   ?vfunc166@CNPC_VMingXiao@@QAEDPAX@Z CNPC_VMingXiao::vfunc166
 0x1000a984 func   ?sub_101fd1b0@CVStatAction_t@@QAEXHHH@Z CVStatAction_t::sub_101fd1b0
 0x1000a989 func   ?sub_101e95a0@CHistoryItem@@QAE_NPAUCKVNode@@@Z CHistoryItem::sub_101e95a0
