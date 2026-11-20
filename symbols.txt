@@ -5452,6 +5452,7 @@
 0x10007bb2 func   ?vfunc103@CBaseMoveBehavior@@UAEXXZ CBaseMoveBehavior::vfunc103
 0x10007bb7 func   ?vfunc80@CItemGBrotherhoodFlyer@@QAEHXZ CItemGBrotherhoodFlyer::vfunc80
 0x10007bbc func   ?vfunc381@CBaseCombatCharacter@@QAEHH@Z CBaseCombatCharacter::vfunc381
+0x10007bbc func   ?vfunc381@CBaseCombatCharacter@@UAEHH@Z CBaseCombatCharacter::vfunc381
 0x10007bc1 func   ?vfunc5@CLogicAuto@@UAEPAVCBaseEntity@@I@Z CLogicAuto::vfunc5
 0x10007bcb func   ?vfunc3@CAI_ProxyMovementSink@@QAE_NHHH@Z CAI_ProxyMovementSink::vfunc3
 0x10007bd0 func   ?vfunc13@CGameMovement@@UAEXH@Z CGameMovement::vfunc13
