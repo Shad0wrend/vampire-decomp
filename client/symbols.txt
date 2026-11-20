@@ -88,6 +88,7 @@
 0x1010a020 func   ?sub_1010a020@@YAXABVQuaternion@@0AAV1@@Z sub_1010a020
 0x1010a0b0 func   ?sub_1010a0b0@@YAXHHHH@Z sub_1010a0b0
 0x1010a0f0 func   ?sub_1010a0f0@@YAXABVQuaternion@@0MAAV1@@Z sub_1010a0f0
+0x1010a140 func   ?sub_1010a140@@YAXHHHH@Z sub_1010a140
 0x1010a180 func   ?sub_1010a180@@YAXABVQuaternion@@0MAAV1@@Z sub_1010a180
 0x1010a2b0 func   ?sub_1010a2b0@@YAMPAM@Z sub_1010a2b0
 0x1010a420 func   ?sub_1010a420@@YAMPAM0@Z sub_1010a420

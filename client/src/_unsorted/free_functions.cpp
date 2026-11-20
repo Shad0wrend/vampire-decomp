@@ -2310,6 +2310,19 @@ void sub_1010a0f0(const Quaternion &p, const Quaternion &q, float t, Quaternion 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a140 size=0x35
+void sub_1010a020(int a, int b, void *pOut);
+void sub_1010a180(int a, void *pIn, int c, int d);
+
+// TARGET: sub_1010a140
+void sub_1010a140(int a, int b, int c, int d)
+{
+    char local[16];
+    sub_1010a020(a, b, local);
+    sub_1010a180(a, local, c, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a180 size=0x12a
 #include "Quaternion.h"
 #include <math.h>
