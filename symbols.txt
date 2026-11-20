@@ -14830,6 +14830,7 @@
 0x100133ea func   ?sub_100fdc00@CEnvPlayerSurfaceTrigger@@QAEXPAXD@Z CEnvPlayerSurfaceTrigger::sub_100fdc00
 0x100133ef func   ?vfunc81@CItemGBertramsCD@@QAEHXZ CItemGBertramsCD::vfunc81
 0x100133f4 func   ?vfunc225@CBaseEntity@@QAEXXZ CBaseEntity::vfunc225
+0x100133f4 func   ?vfunc225@CBaseEntity@@UAEXXZ CBaseEntity::vfunc225
 0x100133f9 func   ?sub_103591e0@@YADXZ sub_103591e0
 0x100133fe func   ?vfunc599@CNPC_VGargoyle@@UAEDH@Z CNPC_VGargoyle::vfunc599
 0x10013403 func   ?sub_102496d0@CUnknown102496d0@@QAEXM@Z CUnknown102496d0::sub_102496d0
