@@ -1056,3 +1056,19 @@ float sub_1010a2b0(float *q)
 	return radius;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010a570 size=0xdb
+struct Q { float x, y, z, w; };
+void sub_1010a570(const Q &q, float *m)
+{
+    m[0] = 1.0 - 2.0 * q.y * q.y - 2.0 * q.z * q.z;
+    m[4] = 2.0 * q.x * q.y + 2.0 * q.w * q.z;
+    m[8] = 2.0 * q.x * q.z - 2.0 * q.w * q.y;
+    m[1] = 2.0 * q.x * q.y - 2.0 * q.w * q.z;
+    m[5] = 1.0f - 2.0f * q.x * q.x - 2.0f * q.z * q.z;
+    m[9] = 2.0 * q.y * q.z + 2.0 * q.w * q.x;
+    m[2] = 2.0 * q.x * q.z + 2.0 * q.w * q.y;
+    m[6] = 2.0 * q.y * q.z - 2.0 * q.w * q.x;
+    m[10] = 1.0f - 2.0f * q.x * q.x - 2.0f * q.y * q.y;
+}
+// END FUNCTION
