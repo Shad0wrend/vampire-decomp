@@ -144,7 +144,6 @@ EXTERN ?sub_1014fa30@@YA_NXZ:BYTE
 EXTERN ?sub_1014fa50@@YA_NXZ:BYTE
 EXTERN ?sub_1015e110@CUnk1015e110@@QAEPAXE@Z:BYTE
 EXTERN ?sub_1018a210@@YIXPAX@Z:BYTE
-EXTERN ?sub_1018fe50@CBreakablePropFields1018fe50@@QAE_NH@Z:BYTE
 EXTERN ?sub_101912d0@CPhysicsProp@@QAEEXZ:BYTE
 EXTERN ?sub_10191830@@YGXH@Z:BYTE
 EXTERN ?sub_10193100@CContestedFields10193100@@QAEHH@Z:BYTE
@@ -308,8 +307,8 @@ EXTERN ?vfunc0@CServerNetworkProperty@@UAEHXZ:BYTE
 EXTERN ?vfunc100@CBaseAnimating@@QAE_NHHPAD@Z:BYTE
 EXTERN ?vfunc103@CActivityCopyProp@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CBaseEntity@@UAEXXZ:BYTE
-EXTERN ?vfunc103@CBaseProp@@QAEXXZ:BYTE
-EXTERN ?vfunc103@CBreakableProp@@QAEXXZ:BYTE
+EXTERN ?vfunc103@CBaseProp@@UAEXXZ:BYTE
+EXTERN ?vfunc103@CBreakableProp@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CChangeLevel@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CCineAISchedule@@QAEXXZ:BYTE
 EXTERN ?vfunc103@CCineNPC@@QAEXXZ:BYTE
@@ -324,7 +323,7 @@ EXTERN ?vfunc103@CPlayerResource@@QAEXXZ:BYTE
 EXTERN ?vfunc103@CPointAngleSensor@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CPointHurt@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CPropDestructable@@UAEXXZ:BYTE
-EXTERN ?vfunc103@CPropLargeHullIgnore@@QAEXXZ:BYTE
+EXTERN ?vfunc103@CPropLargeHullIgnore@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CPropMover@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CPropSlashable@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CSkyCamera@@UAEXXZ:BYTE
@@ -338,11 +337,11 @@ EXTERN ?vfunc104@CAI_BaseNPC@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CAI_BaseNPCTroika@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CActivityCopyProp@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CBaseEntity@@UAEXXZ:BYTE
-EXTERN ?vfunc104@CBaseProp@@QAEXXZ:BYTE
+EXTERN ?vfunc104@CBaseProp@@UAEXXZ:BYTE
+EXTERN ?vfunc104@CBreakableProp@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CPhysicsPropContested@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CPointHurt@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CPropDestructable@@UAEXXZ:BYTE
-EXTERN ?vfunc104@CPropDoorknob@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CSkyCamera@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CSpeaker@@QAEXXZ:BYTE
 EXTERN ?vfunc105@CAI_BaseNPCTroika@@QAEXPBD@Z:BYTE
@@ -368,7 +367,7 @@ EXTERN ?vfunc112@CBaseEntity@@UAEXHH@Z:BYTE
 EXTERN ?vfunc113@CAI_BaseNPCTroika@@UAEXXZ:BYTE
 EXTERN ?vfunc113@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc113@CBaseTrigger@@UAEXXZ:BYTE
-EXTERN ?vfunc113@CBreakableProp@@QAEXXZ:BYTE
+EXTERN ?vfunc113@CBreakableProp@@UAEXXZ:BYTE
 EXTERN ?vfunc113@CCineNPC@@QAEXXZ:BYTE
 EXTERN ?vfunc113@CDynamicProp@@UAEXXZ:BYTE
 EXTERN ?vfunc113@COrnamentProp@@UAEXXZ:BYTE
@@ -401,7 +400,7 @@ EXTERN ?vfunc123@CEnvSoundscape@@QAEXXZ:BYTE
 EXTERN ?vfunc124@CBaseAnimating@@UAEHXZ:BYTE
 EXTERN ?vfunc124@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc124@CBaseTrigger@@UAEHXZ:BYTE
-EXTERN ?vfunc124@CBreakableProp@@QAEHXZ:BYTE
+EXTERN ?vfunc124@CBreakableProp@@UAEHXZ:BYTE
 EXTERN ?vfunc124@CTriggerLook@@UAEHXZ:BYTE
 EXTERN ?vfunc125@CBaseCombatCharacter@@UAEXXZ:BYTE
 EXTERN ?vfunc125@CBaseEntity@@UAEXXZ:BYTE
@@ -437,14 +436,14 @@ EXTERN ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z:BYTE
 EXTERN ?vfunc142@CAI_BaseNPC@@UAEHH@Z:BYTE
 EXTERN ?vfunc142@CAI_BaseNPCTroika@@UAEHH@Z:BYTE
 EXTERN ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z:BYTE
-EXTERN ?vfunc142@CBreakableProp@@QAEHPAUCTakeDamageInfo@@@Z:BYTE
+EXTERN ?vfunc142@CBreakableProp@@UAEHPAUCTakeDamageInfo@@@Z:BYTE
 EXTERN ?vfunc142@CPropDestructable@@QAEHPBX@Z:BYTE
 EXTERN ?vfunc142@CPropSlashable@@QAEHPAUCPropSlashableDamageInfo@@@Z:BYTE
 EXTERN ?vfunc143@CBaseCombatCharacter@@UAEHMH@Z:BYTE
 EXTERN ?vfunc143@CBaseEntity@@QAEHMH@Z:BYTE
 EXTERN ?vfunc144@CAI_BaseNPCTroika@@UAEXH@Z:BYTE
 EXTERN ?vfunc144@CBaseEntity@@QAEXPAX@Z:BYTE
-EXTERN ?vfunc144@CBreakableProp@@QAEXPAX@Z:BYTE
+EXTERN ?vfunc144@CBreakableProp@@UAEXPAX@Z:BYTE
 EXTERN ?vfunc144@CPropDestructable@@UAEXPBUCPropDestructableDamage@@@Z:BYTE
 EXTERN ?vfunc145@CBaseCombatCharacter@@QAEHXZ:BYTE
 EXTERN ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z:BYTE
@@ -457,7 +456,7 @@ EXTERN ?vfunc153@CBaseEntity@@QAEHXZ:BYTE
 EXTERN ?vfunc154@CBaseEntity@@QAEHHH@Z:BYTE
 EXTERN ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z:BYTE
 EXTERN ?vfunc158@CBaseEntity@@QAE_NXZ:BYTE
-EXTERN ?vfunc158@CBaseProp@@QAE_NXZ:BYTE
+EXTERN ?vfunc158@CBaseProp@@UAE_NXZ:BYTE
 EXTERN ?vfunc160@CBaseEntity@@QAE_NPBD@Z:BYTE
 EXTERN ?vfunc161@CBaseEntity@@QAE_NPBD@Z:BYTE
 EXTERN ?vfunc164@CBaseEntity@@QAE_NXZ:BYTE
@@ -533,7 +532,7 @@ EXTERN ?vfunc228@CBaseEntity@@QAEXHH@Z:BYTE
 EXTERN ?vfunc22@CAI_BaseNPCTroika@@QAEXH@Z:BYTE
 EXTERN ?vfunc22@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc230@CBaseEntity@@QAEXHPAX@Z:BYTE
-EXTERN ?vfunc230@CBreakableProp@@QAEXHH@Z:BYTE
+EXTERN ?vfunc230@CBreakableProp@@UAEXHH@Z:BYTE
 EXTERN ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z:BYTE
 EXTERN ?vfunc232@CBaseEntity@@QAEXH@Z:BYTE
 EXTERN ?vfunc233@CBaseEntity@@QAEHPAHH@Z:BYTE
@@ -584,10 +583,10 @@ EXTERN ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z:BYTE
 EXTERN ?vfunc263@CBaseAnimating@@QAE?AVVector@@XZ:BYTE
 EXTERN ?vfunc264@CBaseAnimating@@QAEXXZ:BYTE
 EXTERN ?vfunc265@CBaseAnimatingOverlay@@QAEXHMMHH@Z:BYTE
-EXTERN ?vfunc265@CBreakableProp@@QAEXXZ:BYTE
+EXTERN ?vfunc265@CBreakableProp@@UAEXXZ:BYTE
 EXTERN ?vfunc265@CPropDestructable@@UAEXXZ:BYTE
 EXTERN ?vfunc266@CBaseAnimatingOverlay@@QAEXXZ:BYTE
-EXTERN ?vfunc266@CBreakableProp@@QAEXPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc267@CBaseAnimatingOverlay@@QAEHXZ:BYTE
 EXTERN ?vfunc268@CBaseAnimatingOverlay@@QAEXHHHD@Z:BYTE
 EXTERN ?vfunc269@CBaseAnimatingOverlay@@QAEXH@Z:BYTE
@@ -992,8 +991,8 @@ EXTERN ?vfunc5@CAI_ChangeHintGroup@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CAI_ChangeTarget@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CActivityCopyProp@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CBaseDMStart@@UAEPAVCBaseEntity@@I@Z:BYTE
-EXTERN ?vfunc5@CBaseProp@@QAEPAV1@I@Z:BYTE
-EXTERN ?vfunc5@CBreakableProp@@QAEPAV1@I@Z:BYTE
+EXTERN ?vfunc5@CBaseProp@@UAEPAVCBaseEntity@@I@Z:BYTE
+EXTERN ?vfunc5@CBreakableProp@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CCineAI@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CCineNPC@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CCopyRecipientFilter@@UAEHXZ:BYTE
@@ -1009,7 +1008,7 @@ EXTERN ?vfunc5@CPointCamera@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CPointHurt@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CPointTeleport@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CPropDestructable@@UAEPAVCBaseEntity@@I@Z:BYTE
-EXTERN ?vfunc5@CPropLargeHullIgnore@@QAEPAV1@I@Z:BYTE
+EXTERN ?vfunc5@CPropLargeHullIgnore@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CPropMover@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CPropSlashable@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CRevertSaved@@UAEPAVCBaseEntity@@I@Z:BYTE
@@ -1059,6 +1058,7 @@ EXTERN ?vfunc72@CPayphone@@UAE_NH@Z:BYTE
 EXTERN ?vfunc73@CBaseCombatCharacter@@UAE_NPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc73@CPhysicsProp@@UAE_NPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc74@CBaseEntity@@UAE_NH@Z:BYTE
+EXTERN ?vfunc74@CBreakableProp@@UAE_NH@Z:BYTE
 EXTERN ?vfunc75@CBaseEntity@@UAEXHPAX@Z:BYTE
 EXTERN ?vfunc76@CAI_BaseNPC@@UAEXXZ:BYTE
 EXTERN ?vfunc76@CBaseEntity@@UAEXXZ:BYTE
@@ -1094,7 +1094,7 @@ EXTERN ?vfunc82@CBaseAnimating@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CBaseDMStart@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CBaseEntity@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CBaseTrigger@@UAEPAUdatamap_t@@XZ:BYTE
-EXTERN ?vfunc82@CBreakableProp@@QAEPAUdatamap_t@@XZ:BYTE
+EXTERN ?vfunc82@CBreakableProp@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CChangeLevel@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CCineAISchedule@@QAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CDynamicProp@@UAEPAUdatamap_t@@XZ:BYTE
@@ -3156,7 +3156,7 @@ PUBLIC ?vt_1047332c@@3PAPAXA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CBaseProp@@QAEPAV1@I@Z
+  DD OFFSET ?vfunc5@CBaseProp@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -3254,8 +3254,8 @@ PUBLIC ?vt_1047332c@@3PAPAXA
   DD OFFSET ?vfunc100@CBaseAnimating@@QAE_NHHPAD@Z
   DD OFFSET ?sub_100ab430@@YGXHH@Z
   DD OFFSET ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z
-  DD OFFSET ?vfunc103@CBaseProp@@QAEXXZ
-  DD OFFSET ?vfunc104@CBaseProp@@QAEXXZ
+  DD OFFSET ?vfunc103@CBaseProp@@UAEXXZ
+  DD OFFSET ?vfunc104@CBaseProp@@UAEXXZ
   DD OFFSET ?vfunc105@CVampireProjectile@@UAEXPBD@Z
   DD OFFSET ?vfunc106@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z
@@ -3309,7 +3309,7 @@ PUBLIC ?vt_1047332c@@3PAPAXA
   DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseProp@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
   DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
   DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
@@ -3579,7 +3579,7 @@ PUBLIC ?vt_1047382c@@3PADA
   DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseProp@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
   DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
   DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
@@ -3696,7 +3696,7 @@ PUBLIC ?g_10473d2c@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CBreakableProp@@QAEPAV1@I@Z
+  DD OFFSET ?vfunc5@CBreakableProp@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -3765,7 +3765,7 @@ PUBLIC ?g_10473d2c@@3HA
   DD OFFSET ?vfunc71@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc72@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?sub_10026af0@@YGDH@Z
-  DD OFFSET ?sub_1018fe50@CBreakablePropFields1018fe50@@QAE_NH@Z
+  DD OFFSET ?vfunc74@CBreakableProp@@UAE_NH@Z
   DD OFFSET ?vfunc75@CBaseEntity@@UAEXHPAX@Z
   DD OFFSET ?vfunc76@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc77@CBaseEntity@@UAEXXZ
@@ -3773,7 +3773,7 @@ PUBLIC ?g_10473d2c@@3HA
   DD OFFSET ?vfunc79@CBaseAnimating@@UAEHXZ
   DD OFFSET ?vfunc80@CBaseAnimating@@UAEHXZ
   DD OFFSET ?vfunc81@CBaseAnimating@@UAEHXZ
-  DD OFFSET ?vfunc82@CBreakableProp@@QAEPAUdatamap_t@@XZ
+  DD OFFSET ?vfunc82@CBreakableProp@@UAEPAUdatamap_t@@XZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
@@ -3794,8 +3794,8 @@ PUBLIC ?g_10473d2c@@3HA
   DD OFFSET ?vfunc100@CBaseAnimating@@QAE_NHHPAD@Z
   DD OFFSET ?sub_100ab430@@YGXHH@Z
   DD OFFSET ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z
-  DD OFFSET ?vfunc103@CBreakableProp@@QAEXXZ
-  DD OFFSET ?vfunc104@CPropDoorknob@@UAEXXZ
+  DD OFFSET ?vfunc103@CBreakableProp@@UAEXXZ
+  DD OFFSET ?vfunc104@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc105@CVampireProjectile@@UAEXPBD@Z
   DD OFFSET ?vfunc106@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z
@@ -3804,7 +3804,7 @@ PUBLIC ?g_10473d2c@@3HA
   DD OFFSET ?vfunc110@CBaseToggle@@UAE_NPBD0@Z
   DD OFFSET ?vfunc111@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc112@CBaseEntity@@UAEXHH@Z
-  DD OFFSET ?vfunc113@CBreakableProp@@QAEXXZ
+  DD OFFSET ?vfunc113@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
@@ -3815,7 +3815,7 @@ PUBLIC ?g_10473d2c@@3HA
   DD OFFSET ?vfunc121@CBaseEntity@@UAE_NPBDPAUCVariantCopy@@@Z
   DD OFFSET ?vfunc122@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc123@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc124@CBreakableProp@@QAEHXZ
+  DD OFFSET ?vfunc124@CBreakableProp@@UAEHXZ
   DD OFFSET ?vfunc125@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc126@CBaseEntity@@UAEHH@Z
   DD OFFSET ?vfunc127@CBaseEntity@@UAEHH@Z
@@ -3833,9 +3833,9 @@ PUBLIC ?g_10473d2c@@3HA
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
   DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBreakableProp@@QAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc142@CBreakableProp@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBreakableProp@@QAEXPAX@Z
+  DD OFFSET ?vfunc144@CBreakableProp@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
   DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
@@ -3849,7 +3849,7 @@ PUBLIC ?g_10473d2c@@3HA
   DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseProp@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
   DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
   DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
@@ -3921,7 +3921,7 @@ PUBLIC ?g_10473d2c@@3HA
   DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBreakableProp@@QAEXHH@Z
+  DD OFFSET ?vfunc230@CBreakableProp@@UAEXHH@Z
   DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
   DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
   DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
@@ -3956,8 +3956,8 @@ PUBLIC ?g_10473d2c@@3HA
   DD OFFSET ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z
   DD OFFSET ?vfunc263@CBaseAnimating@@QAE?AVVector@@XZ
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
-  DD OFFSET ?vfunc265@CBreakableProp@@QAEXXZ
-  DD OFFSET ?vfunc266@CBreakableProp@@QAEXPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc265@CBreakableProp@@UAEXXZ
+  DD OFFSET ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z
   DB 216 DUP (0)
   DD OFFSET ??_R4CDynamicProp@@6B@
 ; 0x10474234 +1288: ?vt_10474234@@3PAPAXA
@@ -4037,7 +4037,7 @@ PUBLIC ?vt_10474234@@3PAPAXA
   DD OFFSET ?vfunc71@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc72@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?sub_10026af0@@YGDH@Z
-  DD OFFSET ?sub_1018fe50@CBreakablePropFields1018fe50@@QAE_NH@Z
+  DD OFFSET ?vfunc74@CBreakableProp@@UAE_NH@Z
   DD OFFSET ?vfunc75@CBaseEntity@@UAEXHPAX@Z
   DD OFFSET ?vfunc76@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc77@CBaseEntity@@UAEXXZ
@@ -4067,7 +4067,7 @@ PUBLIC ?vt_10474234@@3PAPAXA
   DD OFFSET ?sub_100ab430@@YGXHH@Z
   DD OFFSET ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z
   DD OFFSET ?vfunc103@CDynamicProp@@QAEXXZ
-  DD OFFSET ?vfunc104@CPropDoorknob@@UAEXXZ
+  DD OFFSET ?vfunc104@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc105@CVampireProjectile@@UAEXPBD@Z
   DD OFFSET ?vfunc106@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z
@@ -4087,7 +4087,7 @@ PUBLIC ?vt_10474234@@3PAPAXA
   DD OFFSET ?vfunc121@CBaseEntity@@UAE_NPBDPAUCVariantCopy@@@Z
   DD OFFSET ?vfunc122@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc123@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc124@CBreakableProp@@QAEHXZ
+  DD OFFSET ?vfunc124@CBreakableProp@@UAEHXZ
   DD OFFSET ?vfunc125@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc126@CBaseEntity@@UAEHH@Z
   DD OFFSET ?vfunc127@CBaseEntity@@UAEHH@Z
@@ -4105,9 +4105,9 @@ PUBLIC ?vt_10474234@@3PAPAXA
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
   DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBreakableProp@@QAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc142@CBreakableProp@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBreakableProp@@QAEXPAX@Z
+  DD OFFSET ?vfunc144@CBreakableProp@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
   DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
@@ -4121,7 +4121,7 @@ PUBLIC ?vt_10474234@@3PAPAXA
   DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseProp@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
   DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
   DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
@@ -4193,7 +4193,7 @@ PUBLIC ?vt_10474234@@3PAPAXA
   DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBreakableProp@@QAEXHH@Z
+  DD OFFSET ?vfunc230@CBreakableProp@@UAEXHH@Z
   DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
   DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
   DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
@@ -4228,8 +4228,8 @@ PUBLIC ?vt_10474234@@3PAPAXA
   DD OFFSET ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z
   DD OFFSET ?vfunc263@CBaseAnimating@@QAE?AVVector@@XZ
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
-  DD OFFSET ?vfunc265@CBreakableProp@@QAEXXZ
-  DD OFFSET ?vfunc266@CBreakableProp@@QAEXPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc265@CBreakableProp@@UAEXXZ
+  DD OFFSET ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z
   DB 216 DUP (0)
   DD OFFSET ??_R4COrnamentProp@@6B@
 ; 0x1047473c +1288: ?vt_1047473c@@3HA
@@ -4309,7 +4309,7 @@ PUBLIC ?vt_1047473c@@3HA
   DD OFFSET ?vfunc71@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc72@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?sub_10026af0@@YGDH@Z
-  DD OFFSET ?sub_1018fe50@CBreakablePropFields1018fe50@@QAE_NH@Z
+  DD OFFSET ?vfunc74@CBreakableProp@@UAE_NH@Z
   DD OFFSET ?vfunc75@CBaseEntity@@UAEXHPAX@Z
   DD OFFSET ?vfunc76@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc77@CBaseEntity@@UAEXXZ
@@ -4339,7 +4339,7 @@ PUBLIC ?vt_1047473c@@3HA
   DD OFFSET ?sub_100ab430@@YGXHH@Z
   DD OFFSET ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z
   DD OFFSET ?vfunc103@COrnamentProp@@UAEXXZ
-  DD OFFSET ?vfunc104@CPropDoorknob@@UAEXXZ
+  DD OFFSET ?vfunc104@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc105@CVampireProjectile@@UAEXPBD@Z
   DD OFFSET ?vfunc106@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z
@@ -4359,7 +4359,7 @@ PUBLIC ?vt_1047473c@@3HA
   DD OFFSET ?vfunc121@CBaseEntity@@UAE_NPBDPAUCVariantCopy@@@Z
   DD OFFSET ?vfunc122@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc123@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc124@CBreakableProp@@QAEHXZ
+  DD OFFSET ?vfunc124@CBreakableProp@@UAEHXZ
   DD OFFSET ?vfunc125@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc126@CBaseEntity@@UAEHH@Z
   DD OFFSET ?vfunc127@CBaseEntity@@UAEHH@Z
@@ -4377,9 +4377,9 @@ PUBLIC ?vt_1047473c@@3HA
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
   DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBreakableProp@@QAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc142@CBreakableProp@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBreakableProp@@QAEXPAX@Z
+  DD OFFSET ?vfunc144@CBreakableProp@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
   DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
@@ -4393,7 +4393,7 @@ PUBLIC ?vt_1047473c@@3HA
   DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseProp@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
   DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
   DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
@@ -4465,7 +4465,7 @@ PUBLIC ?vt_1047473c@@3HA
   DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBreakableProp@@QAEXHH@Z
+  DD OFFSET ?vfunc230@CBreakableProp@@UAEXHH@Z
   DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
   DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
   DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
@@ -4500,8 +4500,8 @@ PUBLIC ?vt_1047473c@@3HA
   DD OFFSET ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z
   DD OFFSET ?vfunc263@CBaseAnimating@@QAE?AVVector@@XZ
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
-  DD OFFSET ?vfunc265@CBreakableProp@@QAEXXZ
-  DD OFFSET ?vfunc266@CBreakableProp@@QAEXPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc265@CBreakableProp@@UAEXXZ
+  DD OFFSET ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z
   DB 216 DUP (0)
   DD OFFSET ??_R4CPhysicsProp@@6B@
 ; 0x10474c44 +1284: ?vt_10474c44@@3PADA ?vt_10474c44@@3PAPAXA
@@ -4583,7 +4583,7 @@ PUBLIC ?vt_10474c44@@3PAPAXA
   DD OFFSET ?vfunc71@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc72@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc73@CPhysicsProp@@UAE_NPAVCBaseEntity@@@Z
-  DD OFFSET ?sub_1018fe50@CBreakablePropFields1018fe50@@QAE_NH@Z
+  DD OFFSET ?vfunc74@CBreakableProp@@UAE_NH@Z
   DD OFFSET ?vfunc75@CBaseEntity@@UAEXHPAX@Z
   DD OFFSET ?vfunc76@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc77@CBaseEntity@@UAEXXZ
@@ -4613,7 +4613,7 @@ PUBLIC ?vt_10474c44@@3PAPAXA
   DD OFFSET ?sub_100ab430@@YGXHH@Z
   DD OFFSET ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z
   DD OFFSET ?vfunc103@CPhysicsProp@@UAEXXZ
-  DD OFFSET ?vfunc104@CPropDoorknob@@UAEXXZ
+  DD OFFSET ?vfunc104@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc105@CVampireProjectile@@UAEXPBD@Z
   DD OFFSET ?vfunc106@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z
@@ -4622,7 +4622,7 @@ PUBLIC ?vt_10474c44@@3PAPAXA
   DD OFFSET ?vfunc110@CBaseToggle@@UAE_NPBD0@Z
   DD OFFSET ?vfunc111@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc112@CBaseEntity@@UAEXHH@Z
-  DD OFFSET ?vfunc113@CBreakableProp@@QAEXXZ
+  DD OFFSET ?vfunc113@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
@@ -4633,7 +4633,7 @@ PUBLIC ?vt_10474c44@@3PAPAXA
   DD OFFSET ?vfunc121@CBaseEntity@@UAE_NPBDPAUCVariantCopy@@@Z
   DD OFFSET ?vfunc122@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc123@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc124@CBreakableProp@@QAEHXZ
+  DD OFFSET ?vfunc124@CBreakableProp@@UAEHXZ
   DD OFFSET ?vfunc125@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc126@CBaseEntity@@UAEHH@Z
   DD OFFSET ?vfunc127@CBaseEntity@@UAEHH@Z
@@ -4651,9 +4651,9 @@ PUBLIC ?vt_10474c44@@3PAPAXA
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
   DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBreakableProp@@QAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc142@CBreakableProp@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBreakableProp@@QAEXPAX@Z
+  DD OFFSET ?vfunc144@CBreakableProp@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
   DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
@@ -4667,7 +4667,7 @@ PUBLIC ?vt_10474c44@@3PAPAXA
   DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseProp@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
   DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
   DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
@@ -4739,7 +4739,7 @@ PUBLIC ?vt_10474c44@@3PAPAXA
   DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBreakableProp@@QAEXHH@Z
+  DD OFFSET ?vfunc230@CBreakableProp@@UAEXHH@Z
   DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
   DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
   DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
@@ -4774,8 +4774,8 @@ PUBLIC ?vt_10474c44@@3PAPAXA
   DD OFFSET ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z
   DD OFFSET ?vfunc263@CBaseAnimating@@QAE?AVVector@@XZ
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
-  DD OFFSET ?vfunc265@CBreakableProp@@QAEXXZ
-  DD OFFSET ?vfunc266@CBreakableProp@@QAEXPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc265@CBreakableProp@@UAEXXZ
+  DD OFFSET ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z
   DB 216 DUP (0)
 ; 0x1047518c +1280 prefix 4: ?vt_1047518c@@3PAHA
   DD OFFSET ??_R4CPropMover@@6B@
@@ -4885,7 +4885,7 @@ PUBLIC ?vt_1047518c@@3PAHA
   DD OFFSET ?sub_100ab430@@YGXHH@Z
   DD OFFSET ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z
   DD OFFSET ?vfunc103@CPropMover@@UAEXXZ
-  DD OFFSET ?vfunc104@CBaseProp@@QAEXXZ
+  DD OFFSET ?vfunc104@CBaseProp@@UAEXXZ
   DD OFFSET ?vfunc105@CVampireProjectile@@UAEXPBD@Z
   DD OFFSET ?vfunc106@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z
@@ -4939,7 +4939,7 @@ PUBLIC ?vt_1047518c@@3PAHA
   DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseProp@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
   DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
   DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
@@ -5125,7 +5125,7 @@ PUBLIC ?vt_1047568c@@3PAPAXA
   DD OFFSET ?vfunc71@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc72@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc73@CPhysicsProp@@UAE_NPAVCBaseEntity@@@Z
-  DD OFFSET ?sub_1018fe50@CBreakablePropFields1018fe50@@QAE_NH@Z
+  DD OFFSET ?vfunc74@CBreakableProp@@UAE_NH@Z
   DD OFFSET ?vfunc75@CBaseEntity@@UAEXHPAX@Z
   DD OFFSET ?vfunc76@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc77@CBaseEntity@@UAEXXZ
@@ -5164,7 +5164,7 @@ PUBLIC ?vt_1047568c@@3PAPAXA
   DD OFFSET ?vfunc110@CBaseToggle@@UAE_NPBD0@Z
   DD OFFSET ?vfunc111@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc112@CBaseEntity@@UAEXHH@Z
-  DD OFFSET ?vfunc113@CBreakableProp@@QAEXXZ
+  DD OFFSET ?vfunc113@CBreakableProp@@UAEXXZ
   DD OFFSET ?vfunc114@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
@@ -5175,7 +5175,7 @@ PUBLIC ?vt_1047568c@@3PAPAXA
   DD OFFSET ?vfunc121@CBaseEntity@@UAE_NPBDPAUCVariantCopy@@@Z
   DD OFFSET ?vfunc122@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc123@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc124@CBreakableProp@@QAEHXZ
+  DD OFFSET ?vfunc124@CBreakableProp@@UAEHXZ
   DD OFFSET ?vfunc125@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc126@CBaseEntity@@UAEHH@Z
   DD OFFSET ?vfunc127@CBaseEntity@@UAEHH@Z
@@ -5193,9 +5193,9 @@ PUBLIC ?vt_1047568c@@3PAPAXA
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
   DD OFFSET ?vfunc141@CBaseEntity@@QAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBreakableProp@@QAEHPAUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc142@CBreakableProp@@UAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc143@CBaseEntity@@QAEHMH@Z
-  DD OFFSET ?vfunc144@CBreakableProp@@QAEXPAX@Z
+  DD OFFSET ?vfunc144@CBreakableProp@@UAEXPAX@Z
   DD OFFSET ?sub_10026d90@@YAHXZ
   DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
@@ -5209,7 +5209,7 @@ PUBLIC ?vt_1047568c@@3PAPAXA
   DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseProp@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
   DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
   DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
@@ -5281,7 +5281,7 @@ PUBLIC ?vt_1047568c@@3PAPAXA
   DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBreakableProp@@QAEXHH@Z
+  DD OFFSET ?vfunc230@CBreakableProp@@UAEXHH@Z
   DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
   DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
   DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
@@ -5316,8 +5316,8 @@ PUBLIC ?vt_1047568c@@3PAPAXA
   DD OFFSET ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z
   DD OFFSET ?vfunc263@CBaseAnimating@@QAE?AVVector@@XZ
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
-  DD OFFSET ?vfunc265@CBreakableProp@@QAEXXZ
-  DD OFFSET ?vfunc266@CBreakableProp@@QAEXPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc265@CBreakableProp@@UAEXXZ
+  DD OFFSET ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z
   DB 216 DUP (0)
   DD OFFSET ??_R4CPropSlashable@@6B@
 ; 0x10475b94 +1280: ?vt_10475b94@@3HA
@@ -5427,7 +5427,7 @@ PUBLIC ?vt_10475b94@@3HA
   DD OFFSET ?sub_100ab430@@YGXHH@Z
   DD OFFSET ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z
   DD OFFSET ?vfunc103@CPropSlashable@@UAEXXZ
-  DD OFFSET ?vfunc104@CBaseProp@@QAEXXZ
+  DD OFFSET ?vfunc104@CBaseProp@@UAEXXZ
   DD OFFSET ?vfunc105@CVampireProjectile@@UAEXPBD@Z
   DD OFFSET ?vfunc106@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z
@@ -5481,7 +5481,7 @@ PUBLIC ?vt_10475b94@@3HA
   DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseProp@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
   DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
   DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
@@ -5667,7 +5667,7 @@ PUBLIC ?g_10476094@@3HA
   DD OFFSET ?vfunc71@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc72@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?sub_10026af0@@YGDH@Z
-  DD OFFSET ?sub_1018fe50@CBreakablePropFields1018fe50@@QAE_NH@Z
+  DD OFFSET ?vfunc74@CBreakableProp@@UAE_NH@Z
   DD OFFSET ?vfunc75@CBaseEntity@@UAEXHPAX@Z
   DD OFFSET ?vfunc76@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc77@CBaseEntity@@UAEXXZ
@@ -5751,7 +5751,7 @@ PUBLIC ?g_10476094@@3HA
   DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseProp@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
   DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
   DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
@@ -5823,7 +5823,7 @@ PUBLIC ?g_10476094@@3HA
   DD OFFSET ?vfunc227@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z
   DD OFFSET ?vfunc228@CBaseEntity@@QAEXHH@Z
   DD OFFSET ?sub_100273d0@@YGXH@Z
-  DD OFFSET ?vfunc230@CBreakableProp@@QAEXHH@Z
+  DD OFFSET ?vfunc230@CBreakableProp@@UAEXHH@Z
   DD OFFSET ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z
   DD OFFSET ?vfunc232@CBaseEntity@@QAEXH@Z
   DD OFFSET ?vfunc233@CBaseEntity@@QAEHPAHH@Z
@@ -5859,7 +5859,7 @@ PUBLIC ?g_10476094@@3HA
   DD OFFSET ?vfunc263@CBaseAnimating@@QAE?AVVector@@XZ
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
   DD OFFSET ?vfunc265@CPropDestructable@@UAEXXZ
-  DD OFFSET ?vfunc266@CBreakableProp@@QAEXPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc266@CBreakableProp@@UAEXPAVCBaseEntity@@@Z
   DB 216 DUP (0)
   DD OFFSET ??_R4CPropLargeHullIgnore@@6B@
 ; 0x1047659c +1272: ?vt_1047659c@@3HA
@@ -5870,7 +5870,7 @@ PUBLIC ?vt_1047659c@@3HA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CPropLargeHullIgnore@@QAEPAV1@I@Z
+  DD OFFSET ?vfunc5@CPropLargeHullIgnore@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -5968,8 +5968,8 @@ PUBLIC ?vt_1047659c@@3HA
   DD OFFSET ?vfunc100@CBaseAnimating@@QAE_NHHPAD@Z
   DD OFFSET ?sub_100ab430@@YGXHH@Z
   DD OFFSET ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z
-  DD OFFSET ?vfunc103@CPropLargeHullIgnore@@QAEXXZ
-  DD OFFSET ?vfunc104@CBaseProp@@QAEXXZ
+  DD OFFSET ?vfunc103@CPropLargeHullIgnore@@UAEXXZ
+  DD OFFSET ?vfunc104@CBaseProp@@UAEXXZ
   DD OFFSET ?vfunc105@CVampireProjectile@@UAEXPBD@Z
   DD OFFSET ?vfunc106@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z
@@ -6023,7 +6023,7 @@ PUBLIC ?vt_1047659c@@3HA
   DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseProp@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
   DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
   DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z

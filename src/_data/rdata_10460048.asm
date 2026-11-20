@@ -231,7 +231,7 @@ EXTERN ?vfunc103@CTimerEntity@@QAEXXZ:BYTE
 EXTERN ?vfunc103@CTriggerBrush@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CBasePlayer@@QAEXXZ:BYTE
-EXTERN ?vfunc104@CBaseProp@@QAEXXZ:BYTE
+EXTERN ?vfunc104@CBaseProp@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CFuncMoveLinear@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CFuncPlat@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CGravityPellet@@QAEXXZ:BYTE
@@ -363,7 +363,7 @@ EXTERN ?vfunc153@CBaseEntity@@QAEHXZ:BYTE
 EXTERN ?vfunc154@CBaseEntity@@QAEHHH@Z:BYTE
 EXTERN ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z:BYTE
 EXTERN ?vfunc158@CBaseEntity@@QAE_NXZ:BYTE
-EXTERN ?vfunc158@CBaseProp@@QAE_NXZ:BYTE
+EXTERN ?vfunc158@CBaseProp@@UAE_NXZ:BYTE
 EXTERN ?vfunc158@CPhysicsCannister@@QAE_NXZ:BYTE
 EXTERN ?vfunc158@CRagdollProp@@UAEDXZ:BYTE
 EXTERN ?vfunc160@CBaseEntity@@QAE_NPBD@Z:BYTE
@@ -3542,7 +3542,7 @@ PUBLIC ?vt_10463a1c@@3PADA
   DD OFFSET ?sub_100ab430@@YGXHH@Z
   DD OFFSET ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z
   DD OFFSET ?vfunc103@CPropClockHand@@UAEXXZ
-  DD OFFSET ?vfunc104@CBaseProp@@QAEXXZ
+  DD OFFSET ?vfunc104@CBaseProp@@UAEXXZ
   DD OFFSET ?vfunc105@CVampireProjectile@@UAEXPBD@Z
   DD OFFSET ?vfunc106@CBaseEntity@@UAEXPBD@Z
   DD OFFSET ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z
@@ -3596,7 +3596,7 @@ PUBLIC ?vt_10463a1c@@3PADA
   DD OFFSET ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z
   DD OFFSET ?sub_10026ee0@@YGXH@Z
   DD OFFSET ?sub_10026f00@@YG_NH@Z
-  DD OFFSET ?vfunc158@CBaseProp@@QAE_NXZ
+  DD OFFSET ?vfunc158@CBaseProp@@UAE_NXZ
   DD OFFSET ?sub_10026f20@CBaseEntityX@@QAEHXZ
   DD OFFSET ?vfunc160@CBaseEntity@@QAE_NPBD@Z
   DD OFFSET ?vfunc161@CBaseEntity@@QAE_NPBD@Z
