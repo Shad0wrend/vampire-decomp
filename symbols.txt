@@ -11662,6 +11662,7 @@
 0x1000f623 func   ?sub_10240bc0@@YAMPBUSVec3@@00M@Z sub_10240bc0
 0x1000f628 func   ?sub_1011a560@@YADXZ sub_1011a560
 0x1000f62d func   ?vfunc161@CBaseEntity@@QAE_NPBD@Z CBaseEntity::vfunc161
+0x1000f62d func   ?vfunc161@CBaseEntity@@UAE_NPBD@Z CBaseEntity::vfunc161
 0x1000f632 func   ?vfunc82@CKeepUpright@@UAEPAUdatamap_t@@XZ CKeepUpright::vfunc82
 0x1000f63c func   ?vfunc5@CAISound@@UAEPAVCBaseEntity@@I@Z CAISound::vfunc5
 0x1000f641 func   ?vfunc2@CTEShatterSurface@@UAEPAVCBaseTempEntity@@I@Z CTEShatterSurface::vfunc2
