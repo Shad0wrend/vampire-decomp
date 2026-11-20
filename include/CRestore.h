@@ -111,4 +111,5 @@ public:
 public:
 	virtual bool vfunc32();
 	virtual int vfunc33();
+	virtual void *vfunc34(unsigned char bFree);	// slot 34: its own deleting destructor (0x101a1400, matched through the view SRestore); declared only
 };

@@ -8,6 +8,10 @@ class IServerGameEnts
 {
 public:
 	virtual ~IServerGameEnts() {}
+	// slots 1..3 as CServerGameEnts declares them (pure here: the game's words are _purecall)
+	virtual void vfunc1() = 0;
+	virtual void vfunc2(CServerGameEntsEdict *pFirst, CServerGameEntsEdict *pSecond) = 0;
+	virtual int vfunc3(int) = 0;
 };
 #else
 class IServerGameEnts

@@ -8,6 +8,20 @@ class IServerGameClients
 {
 public:
 	virtual ~IServerGameClients() {}
+	// slots 1..13 as CServerGameClients declares them (pure here: the game's words are _purecall)
+	virtual void vfunc1() = 0;
+	virtual void vfunc2(int) = 0;
+	virtual void vfunc3(void *pEdict) = 0;
+	virtual int vfunc4(int, int) = 0;
+	virtual void vfunc5() = 0;
+	virtual void vfunc6(CServerGameClients_Edict *pEdict, int clientIndex) = 0;
+	virtual void vfunc7(int edictA, int edictB, int c) = 0;
+	virtual float vfunc8(CServerGameClients_Edict *pEdict, void *pBuf, int a3, int numcmds, int totalcmds, char bIgnore, int a7) = 0;
+	virtual void vfunc9(CServerGameClients_Edict *pEdict, int a) = 0;
+	virtual void vfunc10() = 0;
+	virtual void vfunc11() = 0;
+	virtual void *vfunc12(void *pEdict) = 0;
+	virtual void vfunc13(void *pEdict, float *pOut) = 0;
 };
 #else
 class IServerGameClients
