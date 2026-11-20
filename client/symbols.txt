@@ -97,6 +97,7 @@
 0x1012bfb0 func   ?vfunc8@CSaveRestoreBlockSet@@QAEXXZ CSaveRestoreBlockSet::vfunc8
 0x1012c3d0 func   ?sub_1012c3d0@CUtlVector40@@QAEHHPBX@Z CUtlVector40::sub_1012c3d0
 0x1012c4c0 func   ?sub_1012c4c0@CUnknown101a5800@@QAEHHHPBUCVecElem40_t@@@Z CUnknown101a5800::sub_1012c4c0
+0x1012c570 func   ?sub_1012c570@CUtlVector40@@QAEXH@Z CUtlVector40::sub_1012c570
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit

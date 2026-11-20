@@ -1645,3 +1645,33 @@ int CUnknown101a5800::sub_1012c4c0(int elem, int num, const CVecElem40_t *pToCop
 	return elem;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012c570 size=0x8f
+#include "CUtlVector40.h"
+
+extern "C" __declspec(dllimport) void *Plat_Alloc(unsigned int);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *, unsigned int);
+
+void CUtlVector40::sub_1012c570(int num)
+{
+	if (num + m_size > m_allocationCount && m_growSize != -1) {
+		int newSize = m_allocationCount + (num + m_size - m_allocationCount);
+		while (m_allocationCount < newSize) {
+			if (m_allocationCount != 0) {
+				if (m_growSize != 0)
+					m_allocationCount += m_growSize;
+				else
+					m_allocationCount += m_allocationCount;
+			} else {
+				m_allocationCount = 1;
+			}
+		}
+		if (m_pMemory)
+			m_pMemory = (char *)Plat_Realloc(m_pMemory, m_allocationCount * 40);
+		else
+			m_pMemory = (char *)Plat_Alloc(m_allocationCount * 40);
+	}
+	m_size += num;
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
