@@ -3374,6 +3374,74 @@ void CMem8b_t::sub_1011fa30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011faa0 size=0x132
+#include "CUtlVector20.h"
+#include "CUtlMemory20.h"
+
+extern "C" void *__cdecl sub_101d0f30(void *, const void *, unsigned int);
+
+struct E8;
+struct E8x
+{
+	int a;
+	int b;
+};
+
+struct CMem8c_t
+{
+	E8x *m_p;
+	int m_alloc;
+	int m_grow;
+	int m_size;
+	int m_pad;
+	int sub_1011fbe0(int elem, int num, const E8 *pToCopy);
+};
+
+int CUtlVector20::sub_1011faa0(int elem, int num, const void *pToCopy)
+{
+	if (num == 0)
+		return elem;
+	if (m_size + num > m_allocationCount)
+		((CUtlMemory20 *)this)->sub_1011fe60(m_size + num - m_allocationCount);
+	m_size += num;
+	m_pElements = m_pMemory;
+	int toMove = m_size - elem - num;
+	if (toMove > 0 && num > 0)
+		sub_101d0f30(m_pMemory + (elem + num) * 20, m_pMemory + elem * 20, toMove * 20);
+	if (num > 0) {
+		int off = elem * 20;
+		for (int i = num; i > 0; i--) {
+			int *p = (int *)(m_pMemory + off);
+			if (p) {
+				p[0] = 0;
+				p[1] = 0;
+				p[2] = 0;
+				p[3] = 0;
+				p[4] = 0;
+			}
+			off += 20;
+		}
+	}
+	if (pToCopy != 0 && num > 0) {
+		const CMem8c_t *src = (const CMem8c_t *)pToCopy;
+		for (int i = 0; i < num; i++) {
+			const CMem8c_t *s = src + i;
+			CMem8c_t *dst = (CMem8c_t *)m_pMemory + elem + i;
+			int n = s->m_size;
+			const E8x *se = s->m_p;
+			dst->m_size = 0;
+			dst->sub_1011fbe0(0, n, 0);
+			for (int j = 0; j < n; j++) {
+				E8x *d = dst->m_p;
+				d[j].a = se[j].a;
+				d[j].b = se[j].b;
+			}
+		}
+	}
+	return elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011fbe0 size=0xba
 extern "C" void *__cdecl sub_101d0f30(void *, const void *, unsigned int);
 
