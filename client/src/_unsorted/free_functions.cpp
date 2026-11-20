@@ -1926,3 +1926,16 @@ void CUnknown1024b370::sub_1013d330()
     Purge(m_mem0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x1013ddc0 size=0xbd
+#include "CUtlRBTree12.h"
+#include "utlrbtree.h"
+struct CRBTree12Entry_10194f30 { char data[4]; };	// the tree of its sentinel (one T per game instance)
+
+bool CUtlRBTree12::sub_1013ddc0(unsigned short i) const
+{
+	const CUtlRBTree<CRBTree12Entry_10194f30, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_10194f30, unsigned short> *)this;
+	unsigned short parent = tree->Links(i).m_Parent;
+	return tree->Links(parent).m_Left == i;
+}
+// END FUNCTION
