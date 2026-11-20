@@ -1269,6 +1269,16 @@ void CUnknown100c81b0::sub_1008e420(const CBitVecWords *pSource, int count, cons
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008e630 size=0x34
+#include "UtlVec8.h"
+void UtlVec8::sub_1008e630(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		sub_101d0f30(&m_pMemory[(elem + num) * 4], &m_pMemory[elem * 4], numToMove * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e670 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
