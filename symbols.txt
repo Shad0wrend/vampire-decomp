@@ -10204,6 +10204,7 @@
 0x1000d995 func   ?vfunc181@CBasePlayer@@QAEXPAX00@Z CBasePlayer::vfunc181
 0x1000d99a func   ?sub_102fb0d0@CUnknown102f46d0Elem@@QAE?AVVector@@H@Z CUnknown102f46d0Elem::sub_102fb0d0
 0x1000d99f func   ?vfunc104@CBaseProp@@QAEXXZ CBaseProp::vfunc104
+0x1000d99f func   ?vfunc104@CBaseProp@@UAEXXZ CBaseProp::vfunc104
 0x1000d9a4 func   ?sub_1024fc20@CDropEntityUnit@@QAEXXZ CDropEntityUnit::sub_1024fc20
 0x1000d9a9 func   ?sub_10138870@@YAXPAVVector@@00@Z sub_10138870
 0x1000d9ae func   ?vfunc320@CItemContainer@@QAE_NHH@Z CItemContainer::vfunc320
