@@ -3624,6 +3624,23 @@ void CFloatUnit::sub_101335e0(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133960 size=0x1d
+#include "CFloatUnit.h"
+
+struct CUnknown101bbbf0 {
+	char m_pad0000[0x38];
+	unsigned int m_n0038;
+	void sub_10133960(float flValue, float flTime);
+};
+
+// TARGET: CUnknown101bbbf0::sub_10133960
+void CUnknown101bbbf0::sub_10133960(float flValue, float flTime)
+{
+	m_n0038 |= 2;
+	((CFloatUnit *)this)->sub_10133560(flValue, flTime);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138700 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
