@@ -1871,3 +1871,17 @@ void CUnknown1006bea0::sub_1013c970(void *dest, int count)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x1013c9f0 size=0x41
+#include "CUnknown1006bea0.h"
+#include <ctype.h>
+
+void CUnknown1006bea0::sub_1013c9f0()
+{
+    if ((m_flags15 & 1) && !m_flags) {
+        int size = m_size;
+        while (m_pos < size && isspace(m_pData[m_pos]))
+            m_pos++;
+    }
+}
+// END FUNCTION
