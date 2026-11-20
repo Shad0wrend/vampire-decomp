@@ -1254,6 +1254,7 @@
 0x100028f1 func   ?vfunc5@CSprayCan@@UAEPAVCBaseEntity@@I@Z CSprayCan::vfunc5
 0x100028f6 func   ?sub_103f5460@@YAXXZ sub_103f5460
 0x100028fb func   ?vfunc230@CBreakableProp@@UAEXHH@Z CBreakableProp::vfunc230
+0x100028fb func   ?vfunc230@CBreakableProp@@UAEXHPAX@Z CBreakableProp::vfunc230
 0x10002900 func   ?sub_10076280@CUnknown10075aa0@@QAEMM@Z CUnknown10075aa0::sub_10076280
 0x10002905 func   ?sub_10349e10@CUtlVector16@@QAEXHH@Z CUtlVector16::sub_10349e10
 0x1000290a func   ?sub_101cd190@@YAXPAUCTraceEntity101cd190@@PBM1IPAXHPAUCGameTrace@@@Z sub_101cd190
