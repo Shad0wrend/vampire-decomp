@@ -11558,6 +11558,7 @@
 0x1000f286 func   ?vfunc81@CHudTimer@@UAEHXZ CHudTimer::vfunc81
 0x1000f28b func   ?sub_100298a0@@YAPAVCKeepUpright@@PAX0PAVCBaseEntity@@HD@Z sub_100298a0
 0x1000f290 func   ?vfunc231@CWorld@@UAEXHHHH@Z CWorld::vfunc231
+0x1000f290 func   ?vfunc231@CWorld@@UAEXPAXMHH@Z CWorld::vfunc231
 0x1000f295 func   ?sub_10233c80@@YAXXZ sub_10233c80
 0x1000f29f func   ?sub_1042fe30@@YAII@Z sub_1042fe30
 0x1000f2a9 func   ?vfunc546@CNPC_VCop@@QAEHH@Z CNPC_VCop::vfunc546
