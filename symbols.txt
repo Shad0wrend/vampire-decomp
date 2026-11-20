@@ -8098,6 +8098,7 @@
 0x1000afdd func   ?vfunc21@CSave@@UAEXPBDPBXH@Z CSave::vfunc21
 0x1000afe2 func   ?sub_1013dd10@@YGDH@Z sub_1013dd10
 0x1000afe7 func   ?vfunc230@CBreakable@@QAEXHH@Z CBreakable::vfunc230
+0x1000afe7 func   ?vfunc230@CBreakable@@UAEXHH@Z CBreakable::vfunc230
 0x1000afec func   ?sub_100ed3b0@@YAHXZ sub_100ed3b0
 0x1000aff1 func   ?vfunc3@?$CEntityDataInstantiator@UModelWidthScale@@@@UAEXI@Z CEntityDataInstantiator<ModelWidthScale>::vfunc3
 0x1000aff6 func   ?vfunc171@CTriggerImpact@@QAEXXZ CTriggerImpact::vfunc171
