@@ -106,6 +106,7 @@
 0x1010e3e0 func   ?sub_1010e3e0@Pool@@QAEPAII@Z Pool::sub_1010e3e0
 0x1010f390 func   ?sub_1010f390@SCopy@@QAEAAU1@ABU1@@Z SCopy::sub_1010f390
 0x1010f870 func   ?sub_1010f870@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1010f870
+0x10112250 func   ?sub_10112250@@YAXPAUE101b6b60@@PBU1@@Z sub_10112250
 0x10117ba0 func   ?sub_10117ba0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_10117ba0
 0x10117c70 func   ?sub_10117c70@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_10117c70
 0x10119d90 func   ?sub_10119d90@@YAHABUmatrix3x4_t@@ABVVector@@@Z sub_10119d90

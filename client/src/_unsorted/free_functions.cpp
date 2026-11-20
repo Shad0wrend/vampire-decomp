@@ -2523,6 +2523,19 @@ void CUtlVector96::sub_1010f870(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10112250 size=0x19
+struct E101b6b60 { unsigned short a; unsigned short pad; int b; };
+
+// TARGET: sub_10112250
+void sub_10112250(E101b6b60 *dst, const E101b6b60 *src)
+{
+	if (dst) {
+		dst->a = src->a;
+		dst->b = src->b;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117ba0 size=0x8d
 #include "CUtlLinkedList8.h"
 
