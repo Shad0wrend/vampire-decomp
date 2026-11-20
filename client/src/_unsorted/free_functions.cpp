@@ -4474,6 +4474,37 @@ S6 *CUnknown101db210::sub_10146a90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146cb0 size=0x55
+#include "CStatDefault60List.h"
+
+class IKVNodeView
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual IKVNodeView *vfunc2(const char *pszName);
+	virtual IKVNodeView *vfunc3();
+};
+
+// TARGET: CStatDefault60List::sub_10146cb0
+char CStatDefault60List::sub_10146cb0(IKVNodeView *pKV, void *pFilter)
+{
+	sub_10146e00();
+	if (pKV) {
+		IKVNodeView *pNode = pKV->vfunc2("Affects_Table");
+		while (pNode) {
+			StatDefault60 *pItem = sub_10146d10();
+			if (pItem) {
+				pItem->sub_10146990(pNode, pFilter);
+				pNode = pNode->vfunc3();
+			}
+		}
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147a40 size=0x4e
 #include "CUnknown101dcc80.h"
 struct CItemVec {
