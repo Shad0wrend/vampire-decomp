@@ -134,3 +134,14 @@ void CSave::vfunc29(const char *pszName, void *pData, int count)
 	vfunc27((const Vector *)pData, count);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129dc0 size=0x61
+#include "CSave.h"
+void CSave::vfunc33(const char *pszName, void *pData, int count)
+{
+	int tmp[256];
+	for (int i = 0; i < count; i++)
+		tmp[i] = sub_10129a30(((void **)pData)[i]);
+	vfunc9(pszName, tmp, count);
+}
+// END FUNCTION
