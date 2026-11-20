@@ -5648,6 +5648,23 @@ int CNamedListX::sub_10157b80(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159f20 size=0x4c
+struct S5_101fc4d0 { int v[5]; };
+struct T_101fc4d0 : S5_101fc4d0 {
+	char sub_10159b10(S5_101fc4d0 s);
+};
+struct C101fc4d0 {
+	S5_101fc4d0 m_a;
+	S5_101fc4d0 m_b;
+	char sub_10159f20(T_101fc4d0 a, T_101fc4d0 b);
+};
+// TARGET: C101fc4d0::sub_10159f20
+char C101fc4d0::sub_10159f20(T_101fc4d0 a, T_101fc4d0 b)
+{
+	return a.sub_10159b10(m_a) && b.sub_10159b10(m_b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"
