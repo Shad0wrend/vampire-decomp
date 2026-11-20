@@ -20,7 +20,7 @@ datamap_t *CAI_BaseHumanoid::vfunc82()
 float CAI_BaseHumanoid::vfunc250(float a)
 {
 	m_flags5f4c &= ~3;
-	return ((CBaseAnimatingOverlay *)this)->vfunc250(a);
+	return ((CBaseAnimatingOverlay *)this)->CBaseAnimatingOverlay::vfunc250(a);
 }
 // END FUNCTION
 
