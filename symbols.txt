@@ -3866,6 +3866,7 @@
 0x10005c9a func   ?vfunc103@CNPC_VNosferatu@@UAEXXZ CNPC_VNosferatu::vfunc103
 0x10005c9f func   ?sub_101f6e20@CVTraitEffect_t@@QAEXPAVCVModInfo_t@@PAH@Z CVTraitEffect_t::sub_101f6e20
 0x10005ca4 func   ?vfunc34@IRestore@@QAEPAXE@Z IRestore::vfunc34
+0x10005ca4 func   ?vfunc34@IRestore@@UAEPAXE@Z IRestore::vfunc34
 0x10005ca9 func   ?sub_1038f660@CNPC_VManBat@@QAEXXZ CNPC_VManBat::sub_1038f660
 0x10005cae func   ?sub_100430a0@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_100430a0
 0x10005cb3 func   _npc_VWerewolf npc_VWerewolf
