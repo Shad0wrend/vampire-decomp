@@ -5874,6 +5874,27 @@ void CPtrArray10206430::sub_10161dd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10162840 size=0x2f
+#include "QuestJournal.h"
+
+// TARGET: QuestJournal::sub_10162840
+void QuestJournal::sub_10162840()
+{
+	int i = 0;
+	if (m_field[8] > 0)
+	{
+		int offset = 0;
+		do
+		{
+			*(int *)(m_field[5] + offset + 0x10) = -1;
+			i++;
+			*(int *)(offset + m_field[5] + 0xc) = 0;
+			offset += 0x68;
+		} while ((int)i < m_field[8]);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163a50 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
