@@ -3704,6 +3704,7 @@
 0x10005970 func   ?sub_101bc260@CUnknown101bc140@@QAEXPAX@Z CUnknown101bc140::sub_101bc260
 0x10005975 func   ?vfunc320@CNPC_VGargoyle@@QAE_NHH@Z CNPC_VGargoyle::vfunc320
 0x1000597a func   ?sub_101c4b70@@YGXHHHHH@Z sub_101c4b70
+0x1000597a func   ?vfunc250@CBaseTrigger@@UAEXHHHHH@Z CBaseTrigger::vfunc250
 0x1000597f func   ?sub_100d1290@CUnknown100d1290@@QAEXPAVCBaseEntity@@@Z CUnknown100d1290::sub_100d1290
 0x10005984 func   _item_k_clinic_maintenance_key item_k_clinic_maintenance_key
 0x10005989 func   ?InsertAt@?$CUtlRBTree@UCRBTree12Entry_102cfaf0@@G@@QAEGG_N@Z CUtlRBTree<CRBTree12Entry_102cfaf0,unsigned short>::InsertAt
