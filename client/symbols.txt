@@ -101,6 +101,7 @@
 0x1010c410 func   ?sub_1010c410@@YAMMM@Z sub_1010c410
 0x1010c470 func   ?sub_1010c470@@YAMMM@Z sub_1010c470
 0x1010c4b0 func   ?sub_1010c4b0@@YAMM@Z sub_1010c4b0
+0x1010df80 func   ?sub_1010df80@CAccum64View@@QAEXPB_J@Z CAccum64View::sub_1010df80
 0x1010f390 func   ?sub_1010f390@SCopy@@QAEAAU1@ABU1@@Z SCopy::sub_1010f390
 0x1010f870 func   ?sub_1010f870@CUtlVector96@@QAEXHH@Z CUtlVector96::sub_1010f870
 0x10117ba0 func   ?sub_10117ba0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_10117ba0

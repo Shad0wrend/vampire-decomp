@@ -2426,6 +2426,23 @@ float sub_1010c4b0(float angle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010df80 size=0x33
+struct CAccum64View {
+    char pad0[8];
+    __int64 m_qwA;
+    char pad1[8];
+    __int64 m_qwB;
+    void sub_1010df80(const __int64 *pValue);
+};
+
+// TARGET: CAccum64View::sub_1010df80
+void CAccum64View::sub_1010df80(const __int64 *pValue)
+{
+    m_qwA += *pValue;
+    m_qwB += *pValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f390 size=0x4b
 struct SCopy {
     int a, b, c, d;
