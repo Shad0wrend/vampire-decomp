@@ -69,3 +69,20 @@ void sub_10027d20(const Vector &origin, const Vector &mins, const Vector &maxs, 
     sub_100dfc60(p1, p2, r, g, b, noDepthTest, duration);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100291c0 size=0x32
+#include <string.h>
+
+int *__fastcall sub_100291c0(int *p)
+{
+    p[0] = 0;
+    p[1] = 0;
+    p[2] = 0;
+    p[3] = 0;
+    p[4] = 0;
+    memset(p + 5, 0, 0x41 * 4);
+    *(char *)(p + 0x46) = 0;
+    p[0xd] = -1;
+    return p;
+}
+// END FUNCTION
