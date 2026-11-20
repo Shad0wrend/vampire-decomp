@@ -7163,6 +7163,7 @@
 0x10009c37 func   ?sub_10202760@@YAHH@Z sub_10202760
 0x10009c3c func   ?vfunc80@CWeaponRanged_Rifle_Remington@@UAEHXZ CWeaponRanged_Rifle_Remington::vfunc80
 0x10009c41 func   ?vfunc139@CNPCMaker@@QAEXPAVCBaseEntity@@@Z CNPCMaker::vfunc139
+0x10009c41 func   ?vfunc139@CNPCMaker@@UAEXPAVCBaseEntity@@@Z CNPCMaker::vfunc139
 0x10009c46 func   ?sub_10193c30@CPDV@@QAEXPAUS10193c30@@@Z CPDV::sub_10193c30
 0x10009c4b func   ?sub_101953d0@@YAPAHPAUPyObj@@PAX@Z sub_101953d0
 0x10009c50 func   ?sub_101c7ff0@@YAHPAUlevellist_t@@HPBD1@Z sub_101c7ff0
