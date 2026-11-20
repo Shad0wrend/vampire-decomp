@@ -3468,6 +3468,19 @@ CUnknown101b6320 &CUnknown101b6320::sub_10130970(const CUnknown101b6320 &other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131480 size=0x19
+struct E101b6b60 { unsigned short a; unsigned short pad; int b; };
+
+// TARGET: sub_10131480
+void sub_10131480(E101b6b60 *dst, const E101b6b60 *src)
+{
+	if (dst) {
+		dst->a = src->a;
+		dst->b = src->b;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101314a0 size=0x95
 #include "CUtlVector130.h"
 
