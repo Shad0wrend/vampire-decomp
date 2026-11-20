@@ -145,3 +145,14 @@ void CSave::vfunc33(const char *pszName, void *pData, int count)
 	vfunc9(pszName, tmp, count);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129e30 size=0x59
+#include "CSave.h"
+void CSave::vfunc32(const int *pHandles, int count)
+{
+	int indices[256];
+	for (int i = 0; i < count; i++)
+		indices[i] = sub_10129a30((void *)pHandles[i]);
+	vfunc10(indices, count);
+}
+// END FUNCTION
