@@ -66,6 +66,19 @@ void CUtlMemory192::sub_10003c10(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10004ce0 size=0x62
+#include "Vector.h"
+#include <stdlib.h>
+// TARGET: Vector::sub_10004ce0
+void Vector::sub_10004ce0(float minVal, float maxVal)
+{
+	float scale = (maxVal - minVal) * 3.051851e-5f;
+	x = rand() * scale + minVal;
+	y = rand() * scale + minVal;
+	z = rand() * scale + minVal;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10004d80 size=0x43
 #include "Vector.h"
 Vector Vector::sub_10004d80(float fl) const
