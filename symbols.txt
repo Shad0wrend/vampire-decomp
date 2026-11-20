@@ -8287,6 +8287,7 @@
 0x1000b1f4 func   ?sub_1032a490@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_1032a490
 0x1000b1f9 func   ?vfunc212@CBaseEntity@@QAEXH@Z CBaseEntity::vfunc212
 0x1000b1f9 func   ?vfunc212@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc212
+0x1000b1f9 func   ?vfunc212@CBaseEntity@@UAEXUstring_t@@@Z CBaseEntity::vfunc212
 0x1000b1fe func   ?vfunc142@CNPC_Bullseye@@QAEHPAX@Z CNPC_Bullseye::vfunc142
 0x1000b1fe func   ?vfunc142@CNPC_Bullseye@@UAEHPAUCTakeDamageInfo@@@Z CNPC_Bullseye::vfunc142
 0x1000b203 func   ?vfunc373@CAI_BaseNPC@@QAEHH@Z CAI_BaseNPC::vfunc373
