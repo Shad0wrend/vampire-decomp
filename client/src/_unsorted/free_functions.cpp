@@ -3641,6 +3641,19 @@ void CUnknown101bbbf0::sub_10133960(float flValue, float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133980 size=0x3b
+#include "CUnknown101bc140.h"
+#include "CFloatUnit.h"
+// TARGET: CUnknown101bc140::sub_10133980
+void CUnknown101bc140::sub_10133980(float flTarget, float flTime)
+{
+	m_n38 |= 1;
+	if (flTarget > 1.0)
+		flTarget = 1.0f;
+	((CFloatUnit *)&m_flPitchScale)->sub_10133560(flTarget, flTime);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138700 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
