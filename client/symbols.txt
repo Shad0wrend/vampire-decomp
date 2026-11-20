@@ -69,6 +69,7 @@
 0x1011fd80 func   ?sub_1011fd80@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_1011fd80
 0x1011fdf0 func   ?sub_1011fdf0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_1011fdf0
 0x10127320 func   ?sub_10127320@@YA_NPAUCRagdollLayout@@PAUCRagdollStudio@@H@Z sub_10127320
+0x10128b80 func   ?vfunc0@CBaseRopePhysics@@UAEXPAUCRopeNode@@HPAVVector@@@Z CBaseRopePhysics::vfunc0
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit
