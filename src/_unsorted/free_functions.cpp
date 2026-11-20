@@ -235545,7 +235545,7 @@ CNode102e0770 * __fastcall sub_102e0770(CList102e0770 *list, int edx, CBaseEntit
 // FUNCTION: 0x102e0860 size=0x80
 #include "CAI_InterestTarget.h"
 #include "CUtlVectorDataOps.h"
-struct CAI_InterestTarget;
+class CAI_InterestTarget;
 class ISaveRestoreOps;
 struct datamap_t;
 struct typedescription_t {
