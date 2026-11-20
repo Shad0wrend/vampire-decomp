@@ -246,6 +246,7 @@
 0x10157390 func   ?sub_10157390@CUnknown101f7960@@QAEPAUS101f7310@@XZ CUnknown101f7960::sub_10157390
 0x10157480 func   ?sub_10157480@CUnknown101f7bb0@@QAEXXZ CUnknown101f7bb0::sub_10157480
 0x10157b30 func   ?sub_10157b30@CNamedListX@@QAEHPBD@Z CNamedListX::sub_10157b30
+0x10157b80 func   ?sub_10157b80@CNamedListX@@QAEHPBD@Z CNamedListX::sub_10157b80
 0x1015f720 func   ?sub_1015f720@@YADPAVCFileParserSlotView@@PBDH1PAUstring_t@@PAPAU2@PAH@Z sub_1015f720
 0x10160100 func   ?sub_10160100@CFloatTable1006c9d0@@QAEHH@Z CFloatTable1006c9d0::sub_10160100
 0x10160250 func   ?sub_10160250@StatDefault@@QAEHH@Z StatDefault::sub_10160250
