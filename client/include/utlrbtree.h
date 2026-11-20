@@ -111,12 +111,6 @@ public:
 	Links_t const &sub_101386a0(I i) const;
 	Links_t const &sub_1013dcb0(I i) const;
 	Links_t &Links(I i);
-	Links_t &sub_10113190(I i);
-	Links_t &sub_10112720(I i);
-	Links_t &sub_101397f0(I i);
-	Links_t &sub_10131a70(I i);
-	Links_t &sub_101386a0(I i);
-	Links_t &sub_1013dcb0(I i);
 
 	bool IsRed(I i) const;
 	bool IsBlack(I i) const;
