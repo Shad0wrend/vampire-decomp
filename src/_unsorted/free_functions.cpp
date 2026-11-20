@@ -44945,7 +44945,7 @@ void sub_100af340(void *pPlayer, CBaseEntity *pEntity)
 				case 12:
 					if (var.m_fieldType != 12)
 					{
-						variant_t::NullHandle();
+						((variant_t *)&var)->NullHandle();
 					}
 					else
 					{

@@ -34,8 +34,10 @@ struct variant_t
 
 	// Source's variant_t::Entity() for a variant that is not an EHANDLE: `static CHandle<CBaseEntity> hNull;
 	// hNull.Set(NULL); return hNull;`. VC6 makes the guard and the static's (empty) atexit destroy. The game has one
-	// copy of each, so every function that uses the static calls this one inline.
-	static unsigned long &NullHandle()
+	// copy of each, so every function that uses the static calls this one inline. Not a static member function:
+	// VC6 names the guard of a static member function's local static by a counter of the unit ($S1, $S3 ...), so
+	// units would not share it; a member function's guard is the communal ??_B...@51.
+	unsigned long &NullHandle()
 	{
 		static CHandle<CBaseEntity> hNull;
 		hNull.Set(0);
