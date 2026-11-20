@@ -4847,6 +4847,7 @@
 0x10006fa0 func   ?sub_101c59b0@@YAPAHXZ sub_101c59b0
 0x10006fa5 func   ?sub_1027ffe0@@YAXXZ sub_1027ffe0
 0x10006faa func   ?vfunc223@CRotDoor@@QAE_NXZ CRotDoor::vfunc223
+0x10006faa func   ?vfunc223@CRotDoor@@UAE_NXZ CRotDoor::vfunc223
 0x10006faf func   ?sub_100bbdf0@@YGPAVCBaseEntity@@PBD@Z sub_100bbdf0
 0x10006fb4 func   ?sub_10088380@@YAXXZ sub_10088380
 0x10006fb9 func   ?vfunc589@CAI_BaseHumanoid@@QAEPBDH@Z CAI_BaseHumanoid::vfunc589
