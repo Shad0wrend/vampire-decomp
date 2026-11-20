@@ -450,6 +450,7 @@
 0x100018ca func   ??1VKeyValues@@UAE@XZ VKeyValues::~VKeyValues
 0x100018cf func   ?vfunc124@CBaseEntity@@UAEHXZ CBaseEntity::vfunc124
 0x100018d4 func   ?vfunc141@CBreakable@@UAEXPAUCTakeDamageInfo@@PBVVector@@PAUCGameTrace@@@Z CBreakable::vfunc141
+0x100018d4 func   ?vfunc141@CBreakable@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z CBreakable::vfunc141
 0x100018d9 func   ?sub_100ed5a0@@YAHXZ sub_100ed5a0
 0x100018de func   ?vfunc82@CAI_NetworkManager@@UAEPAUdatamap_t@@XZ CAI_NetworkManager::vfunc82
 0x100018e3 func   ?sub_102506a0@@YIDPAVCBaseCombatWeapon@@@Z sub_102506a0
