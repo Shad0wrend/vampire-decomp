@@ -2230,3 +2230,35 @@ unsigned int CStatusFlagList::sub_10149f70(int nKey, int nSkip)
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10150bc0 size=0x7b
+#include "CUnknown101ed170.h"
+
+void CUnknown101ed170::sub_10150bc0()
+{
+    if (m_p10 != 0) {
+        delete m_p10;
+        m_p10 = 0;
+    }
+    if (m_p14 != 0) {
+        delete m_p14;
+        m_p14 = 0;
+    }
+    if (m_p18 != 0) {
+        delete m_p18;
+        m_p18 = 0;
+    }
+    if (m_p20 != 0) {
+        delete m_p20;
+        m_p20 = 0;
+    }
+    if (m_p24 != 0) {
+        delete m_p24;
+        m_p24 = 0;
+    }
+    if (m_p28 != 0) {
+        delete m_p28;
+        m_p28 = 0;
+    }
+}
+// END FUNCTION
