@@ -116,8 +116,6 @@ EXTERN ?sub_100b17f0@@YIHPAD@Z:BYTE
 EXTERN ?sub_100b3d10@CBaseEntity@@QAEHXZ:BYTE
 EXTERN ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z:BYTE
 EXTERN ?sub_100b5080@@YA_NXZ:BYTE
-EXTERN ?sub_100b5b00@CBaseFlex@@QAEXPBM@Z:BYTE
-EXTERN ?sub_100b5ce0@CBaseFlex@@QAEXXZ:BYTE
 EXTERN ?sub_100ba0c0@CBatSwarm@@QAE_NPAX@Z:BYTE
 EXTERN ?sub_100bf740@CFuncIllusionary@@QAEEXZ:BYTE
 EXTERN ?sub_100bf8e0@CFuncRotating@@QAEEXZ:BYTE
@@ -401,7 +399,7 @@ EXTERN ?vfunc249@CBaseDoor@@UAEXXZ:BYTE
 EXTERN ?vfunc249@CRotDoor@@UAEHXZ:BYTE
 EXTERN ?vfunc24@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc250@CBaseAnimating@@QAEMM@Z:BYTE
-EXTERN ?vfunc250@CBaseAnimatingOverlay@@QAEMM@Z:BYTE
+EXTERN ?vfunc250@CBaseAnimatingOverlay@@UAEMM@Z:BYTE
 EXTERN ?vfunc250@CBaseDoor@@QAEXXZ:BYTE
 EXTERN ?vfunc250@CRotDoor@@QAEXXZ:BYTE
 EXTERN ?vfunc251@CBaseAnimating@@QAEDXZ:BYTE
@@ -409,30 +407,32 @@ EXTERN ?vfunc252@CBaseAnimating@@QAEHHHH@Z:BYTE
 EXTERN ?vfunc253@CBaseAnimating@@QAEHHHH@Z:BYTE
 EXTERN ?vfunc254@CBaseAnimating@@QAEHHHH@Z:BYTE
 EXTERN ?vfunc255@CBaseAnimating@@QAEXPAX0H@Z:BYTE
-EXTERN ?vfunc255@CBaseAnimatingOverlay@@QAEXPAX0H@Z:BYTE
+EXTERN ?vfunc255@CBaseAnimatingOverlay@@UAEXPAX0H@Z:BYTE
 EXTERN ?vfunc256@CBaseAnimating@@QAEXHPAM@Z:BYTE
 EXTERN ?vfunc257@CBaseAnimating@@QAEXHH@Z:BYTE
 EXTERN ?vfunc258@CBaseAnimating@@QAEXMPAX@Z:BYTE
-EXTERN ?vfunc258@CBaseAnimatingOverlay@@QAEXMPAX@Z:BYTE
+EXTERN ?vfunc258@CBaseAnimatingOverlay@@UAEXMPAX@Z:BYTE
 EXTERN ?vfunc259@CBaseAnimating@@QAEXPAX@Z:BYTE
 EXTERN ?vfunc25@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z:BYTE
 EXTERN ?vfunc263@CBaseAnimating@@QAE?AVVector@@XZ:BYTE
 EXTERN ?vfunc264@CBaseAnimating@@QAEXXZ:BYTE
-EXTERN ?vfunc265@CBaseAnimatingOverlay@@QAEXHMMHH@Z:BYTE
+EXTERN ?vfunc265@CBaseAnimatingOverlay@@UAEXHMMHH@Z:BYTE
 EXTERN ?vfunc265@CBatSwarm@@QAEXH@Z:BYTE
-EXTERN ?vfunc266@CBaseAnimatingOverlay@@QAEXXZ:BYTE
+EXTERN ?vfunc266@CBaseAnimatingOverlay@@UAEXXZ:BYTE
 EXTERN ?vfunc266@CBatSwarm@@QAEXH@Z:BYTE
-EXTERN ?vfunc267@CBaseAnimatingOverlay@@QAEHXZ:BYTE
-EXTERN ?vfunc268@CBaseAnimatingOverlay@@QAEXHHHD@Z:BYTE
-EXTERN ?vfunc269@CBaseAnimatingOverlay@@QAEXH@Z:BYTE
+EXTERN ?vfunc267@CBaseAnimatingOverlay@@UAEHXZ:BYTE
+EXTERN ?vfunc268@CBaseAnimatingOverlay@@UAEXHHHD@Z:BYTE
+EXTERN ?vfunc269@CBaseAnimatingOverlay@@UAEXH@Z:BYTE
 EXTERN ?vfunc26@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc270@CBaseAnimatingOverlay@@QAEDH@Z:BYTE
-EXTERN ?vfunc271@CBaseAnimatingOverlay@@QAEHH@Z:BYTE
-EXTERN ?vfunc272@CBaseAnimatingOverlay@@QAEHXZ:BYTE
-EXTERN ?vfunc273@CBaseAnimatingOverlay@@QAEXHDH@Z:BYTE
-EXTERN ?vfunc274@CBaseAnimatingOverlay@@QAEXH@Z:BYTE
-EXTERN ?vfunc275@CBaseAnimatingOverlay@@QAEXXZ:BYTE
+EXTERN ?vfunc270@CBaseAnimatingOverlay@@UAEDH@Z:BYTE
+EXTERN ?vfunc271@CBaseAnimatingOverlay@@UAEHH@Z:BYTE
+EXTERN ?vfunc272@CBaseAnimatingOverlay@@UAEHXZ:BYTE
+EXTERN ?vfunc273@CBaseAnimatingOverlay@@UAEXHDH@Z:BYTE
+EXTERN ?vfunc274@CBaseAnimatingOverlay@@UAEXH@Z:BYTE
+EXTERN ?vfunc275@CBaseAnimatingOverlay@@UAEXXZ:BYTE
+EXTERN ?vfunc276@CBaseFlex@@UAEXXZ:BYTE
+EXTERN ?vfunc277@CBaseFlex@@UAEXPBM@Z:BYTE
 EXTERN ?vfunc278@CBaseFlex@@UAEPADXZ:BYTE
 EXTERN ?vfunc279@CBaseFlex@@UAEXHM@Z:BYTE
 EXTERN ?vfunc280@CBaseFlex@@UAEXHM@Z:BYTE
@@ -935,34 +935,34 @@ PUBLIC ?vt_10450abc@@3PAPAXA
   DD OFFSET ?sub_10090c80@@YIXPAVCBaseAnimating@@HH@Z
   DD OFFSET ?sub_10091740@CBaseAnimating@@QAEMXZ
   DD OFFSET ?vfunc249@CBaseAnimating@@QAEMXZ
-  DD OFFSET ?vfunc250@CBaseAnimatingOverlay@@QAEMM@Z
+  DD OFFSET ?vfunc250@CBaseAnimatingOverlay@@UAEMM@Z
   DD OFFSET ?vfunc251@CBaseAnimating@@QAEDXZ
   DD OFFSET ?vfunc252@CBaseAnimating@@QAEHHHH@Z
   DD OFFSET ?vfunc253@CBaseAnimating@@QAEHHHH@Z
   DD OFFSET ?vfunc254@CBaseAnimating@@QAEHHHH@Z
-  DD OFFSET ?vfunc255@CBaseAnimatingOverlay@@QAEXPAX0H@Z
+  DD OFFSET ?vfunc255@CBaseAnimatingOverlay@@UAEXPAX0H@Z
   DD OFFSET ?vfunc256@CBaseAnimating@@QAEXHPAM@Z
   DD OFFSET ?vfunc257@CBaseAnimating@@QAEXHH@Z
-  DD OFFSET ?vfunc258@CBaseAnimatingOverlay@@QAEXMPAX@Z
+  DD OFFSET ?vfunc258@CBaseAnimatingOverlay@@UAEXMPAX@Z
   DD OFFSET ?vfunc259@CBaseAnimating@@QAEXPAX@Z
   DD OFFSET ?sub_10091fe0@@YIMPAVCBaseAnimating@@HHM@Z
   DD OFFSET ?sub_10091f10@CBaseAnimating@@QAEXPBDM@Z
   DD OFFSET ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z
   DD OFFSET ?vfunc263@CBaseAnimating@@QAE?AVVector@@XZ
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
-  DD OFFSET ?vfunc265@CBaseAnimatingOverlay@@QAEXHMMHH@Z
-  DD OFFSET ?vfunc266@CBaseAnimatingOverlay@@QAEXXZ
-  DD OFFSET ?vfunc267@CBaseAnimatingOverlay@@QAEHXZ
-  DD OFFSET ?vfunc268@CBaseAnimatingOverlay@@QAEXHHHD@Z
-  DD OFFSET ?vfunc269@CBaseAnimatingOverlay@@QAEXH@Z
-  DD OFFSET ?vfunc270@CBaseAnimatingOverlay@@QAEDH@Z
-  DD OFFSET ?vfunc271@CBaseAnimatingOverlay@@QAEHH@Z
-  DD OFFSET ?vfunc272@CBaseAnimatingOverlay@@QAEHXZ
-  DD OFFSET ?vfunc273@CBaseAnimatingOverlay@@QAEXHDH@Z
-  DD OFFSET ?vfunc274@CBaseAnimatingOverlay@@QAEXH@Z
-  DD OFFSET ?vfunc275@CBaseAnimatingOverlay@@QAEXXZ
-  DD OFFSET ?sub_100b5ce0@CBaseFlex@@QAEXXZ
-  DD OFFSET ?sub_100b5b00@CBaseFlex@@QAEXPBM@Z
+  DD OFFSET ?vfunc265@CBaseAnimatingOverlay@@UAEXHMMHH@Z
+  DD OFFSET ?vfunc266@CBaseAnimatingOverlay@@UAEXXZ
+  DD OFFSET ?vfunc267@CBaseAnimatingOverlay@@UAEHXZ
+  DD OFFSET ?vfunc268@CBaseAnimatingOverlay@@UAEXHHHD@Z
+  DD OFFSET ?vfunc269@CBaseAnimatingOverlay@@UAEXH@Z
+  DD OFFSET ?vfunc270@CBaseAnimatingOverlay@@UAEDH@Z
+  DD OFFSET ?vfunc271@CBaseAnimatingOverlay@@UAEHH@Z
+  DD OFFSET ?vfunc272@CBaseAnimatingOverlay@@UAEHXZ
+  DD OFFSET ?vfunc273@CBaseAnimatingOverlay@@UAEXHDH@Z
+  DD OFFSET ?vfunc274@CBaseAnimatingOverlay@@UAEXH@Z
+  DD OFFSET ?vfunc275@CBaseAnimatingOverlay@@UAEXXZ
+  DD OFFSET ?vfunc276@CBaseFlex@@UAEXXZ
+  DD OFFSET ?vfunc277@CBaseFlex@@UAEXPBM@Z
   DD OFFSET ?vfunc278@CBaseFlex@@UAEPADXZ
   DD OFFSET ?vfunc279@CBaseFlex@@UAEXHM@Z
   DD OFFSET ?vfunc280@CBaseFlex@@UAEXHM@Z

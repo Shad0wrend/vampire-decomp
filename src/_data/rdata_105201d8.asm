@@ -3939,20 +3939,7 @@ PUBLIC ??_R4CFogController@@6B@
   DD OFFSET ??_R0?AVCFogController@@@8
   DD OFFSET ??_R3CFogController@@8
   DB 000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x105251dd +47: $rtti_tail_105251dd
-PUBLIC $rtti_tail_105251dd
-$rtti_tail_105251dd LABEL BYTE
-  DB 0EAh,051h,010h
-  DD OFFSET ??_R1A@?0A@A@CBaseFlex@@8
-  DD OFFSET ??_R1A@?0A@A@CBaseAnimatingOverlay@@8
-  DD OFFSET ??_R1A@?0A@A@CBaseAnimating@@8
-  DD OFFSET ??_R1A@?0A@A@CBaseToggle@@8
-  DD OFFSET ??_R1A@?0A@A@CBaseEntity@@8
-  DD OFFSET ??_R1A@?0A@A@IServerEntity@@8
-  DD OFFSET ??_R1A@?0A@A@IServerUnknown@@8
-  DD OFFSET ??_R1A@?0A@A@IHandleEntity@@8
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
+  DB 4 DUP (0)
 ; 0x1052534c +28: ??_R1A@?0A@A@CHalfLife2@@8
 PUBLIC ??_R1A@?0A@A@CHalfLife2@@8
 ??_R1A@?0A@A@CHalfLife2@@8 LABEL BYTE

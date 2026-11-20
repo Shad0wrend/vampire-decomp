@@ -117,8 +117,6 @@ EXTERN ?sub_100b17f0@@YIHPAD@Z:BYTE
 EXTERN ?sub_100b3d10@CBaseEntity@@QAEHXZ:BYTE
 EXTERN ?sub_100b4c30@@YIPAMPAVCBaseEntity@@@Z:BYTE
 EXTERN ?sub_100b5080@@YA_NXZ:BYTE
-EXTERN ?sub_100b5b00@CBaseFlex@@QAEXPBM@Z:BYTE
-EXTERN ?sub_100b5ce0@CBaseFlex@@QAEXXZ:BYTE
 EXTERN ?sub_10116550@CFuncMoveLinear@@QAEEXZ:BYTE
 EXTERN ?sub_10116bf0@CFuncMoveLinear@@QAEXXZ:BYTE
 EXTERN ?sub_1012d720@CHudTimer@@QAEXXZ:BYTE
@@ -230,7 +228,7 @@ EXTERN ?vfunc103@CRagdollProp@@UAEXXZ:BYTE
 EXTERN ?vfunc103@CTimerEntity@@QAEXXZ:BYTE
 EXTERN ?vfunc103@CTriggerBrush@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CBaseEntity@@UAEXXZ:BYTE
-EXTERN ?vfunc104@CBasePlayer@@QAEXXZ:BYTE
+EXTERN ?vfunc104@CBasePlayer@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CBaseProp@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CFuncMoveLinear@@UAEXXZ:BYTE
 EXTERN ?vfunc104@CFuncPlat@@UAEXXZ:BYTE
@@ -260,7 +258,7 @@ EXTERN ?vfunc110@CMultiSource@@UAE_NPBD0@Z:BYTE
 EXTERN ?vfunc111@CBaseCombatCharacter@@UAEXXZ:BYTE
 EXTERN ?vfunc111@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc112@CBaseEntity@@UAEXHH@Z:BYTE
-EXTERN ?vfunc112@CBasePlayer@@QAEXHH@Z:BYTE
+EXTERN ?vfunc112@CBasePlayer@@UAEXHH@Z:BYTE
 EXTERN ?vfunc113@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc113@CFuncMonitor@@QAEXXZ:BYTE
 EXTERN ?vfunc113@CFunc_Dust@@QAEXXZ:BYTE
@@ -269,7 +267,7 @@ EXTERN ?vfunc113@CPathKeyFrame@@UAEXXZ:BYTE
 EXTERN ?vfunc113@CPropClockHand@@UAEXXZ:BYTE
 EXTERN ?vfunc113@CRagdollPropSpecial@@UAEXXZ:BYTE
 EXTERN ?vfunc114@CBaseEntity@@UAEXXZ:BYTE
-EXTERN ?vfunc114@CBasePlayer@@QAEXXZ:BYTE
+EXTERN ?vfunc114@CBasePlayer@@UAEXXZ:BYTE
 EXTERN ?vfunc115@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc116@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc117@CBaseEntity@@UAEHXZ:BYTE
@@ -307,10 +305,10 @@ EXTERN ?vfunc125@CBaseCombatCharacter@@UAEXXZ:BYTE
 EXTERN ?vfunc125@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc126@CBaseCombatCharacter@@UAEHH@Z:BYTE
 EXTERN ?vfunc126@CBaseEntity@@UAEHH@Z:BYTE
-EXTERN ?vfunc126@CBasePlayer@@QAEHH@Z:BYTE
+EXTERN ?vfunc126@CBasePlayer@@UAEHH@Z:BYTE
 EXTERN ?vfunc127@CBaseCombatCharacter@@UAEHH@Z:BYTE
 EXTERN ?vfunc127@CBaseEntity@@UAEHH@Z:BYTE
-EXTERN ?vfunc127@CBasePlayer@@QAEHPAVCRestore@@@Z:BYTE
+EXTERN ?vfunc127@CBasePlayer@@UAEHH@Z:BYTE
 EXTERN ?vfunc128@CFuncBrush@@QAE_NXZ:BYTE
 EXTERN ?vfunc128@CFuncMoveLinear@@UAE_NXZ:BYTE
 EXTERN ?vfunc128@CFuncPlat@@UAEDXZ:BYTE
@@ -320,10 +318,10 @@ EXTERN ?vfunc129@CRagdollProp@@UAEXXZ:BYTE
 EXTERN ?vfunc130@CBaseAnimating@@UAEXH@Z:BYTE
 EXTERN ?vfunc130@CBaseCombatCharacter@@UAEXH@Z:BYTE
 EXTERN ?vfunc130@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc130@CBasePlayer@@QAEXD@Z:BYTE
+EXTERN ?vfunc130@CBasePlayer@@UAEXH@Z:BYTE
 EXTERN ?vfunc130@CRagdollProp@@UAEXH@Z:BYTE
 EXTERN ?vfunc131@CBaseEntity@@UAEHXZ:BYTE
-EXTERN ?vfunc131@CBasePlayer@@QAEHXZ:BYTE
+EXTERN ?vfunc131@CBasePlayer@@UAEHXZ:BYTE
 EXTERN ?vfunc132@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc133@CBaseEntity@@UAEXXZ:BYTE
 EXTERN ?vfunc133@CBaseToggle@@UAEXXZ:BYTE
@@ -341,21 +339,21 @@ EXTERN ?vfunc141@CBasePlayer@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z:BYTE
 EXTERN ?vfunc141@CPhysicsCannister@@QAEXPAUCCannisterTakeInfo@@PBVVector@@PAUCGameTrace@@@Z:BYTE
 EXTERN ?vfunc141@CRagdollProp@@UAEXHHPAX@Z:BYTE
 EXTERN ?vfunc142@CBaseEntity@@QAEHPAUCTakeDamageInfo@@@Z:BYTE
-EXTERN ?vfunc142@CBasePlayer@@UAEHPBUCTakeDamageInfo@@@Z:BYTE
+EXTERN ?vfunc142@CBasePlayer@@UAEHPAX@Z:BYTE
 EXTERN ?vfunc142@CPhysicsCannister@@QAEHPAUCCannisterTakeInfo@@@Z:BYTE
 EXTERN ?vfunc142@CRagdollProp@@UAEXPBUCRagdollPropDamageInfo@@@Z:BYTE
 EXTERN ?vfunc143@CBaseCombatCharacter@@UAEHMH@Z:BYTE
 EXTERN ?vfunc143@CBaseEntity@@QAEHMH@Z:BYTE
 EXTERN ?vfunc143@CBasePlayer@@UAEHMH@Z:BYTE
-EXTERN ?vfunc144@CBaseCombatCharacter@@QAEXPAX@Z:BYTE
+EXTERN ?vfunc144@CBaseCombatCharacter@@UAEXPAX@Z:BYTE
 EXTERN ?vfunc144@CBaseEntity@@QAEXPAX@Z:BYTE
-EXTERN ?vfunc144@CBasePlayer@@UAEXPBX@Z:BYTE
-EXTERN ?vfunc145@CBaseCombatCharacter@@QAEHXZ:BYTE
+EXTERN ?vfunc144@CBasePlayer@@UAEXPAX@Z:BYTE
+EXTERN ?vfunc145@CBaseCombatCharacter@@UAEHXZ:BYTE
 EXTERN ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z:BYTE
 EXTERN ?vfunc147@CMultiSource@@QAEEPAVCBaseEntity@@@Z:BYTE
-EXTERN ?vfunc149@CBasePlayer@@QAEXHH@Z:BYTE
+EXTERN ?vfunc149@CBasePlayer@@UAEXHH@Z:BYTE
 EXTERN ?vfunc14@CBaseEntity@@UAEPADXZ:BYTE
-EXTERN ?vfunc151@CBasePlayer@@QAEXPAVCBaseCombatWeapon@@@Z:BYTE
+EXTERN ?vfunc151@CBasePlayer@@UAEXPAVCBaseCombatWeapon@@@Z:BYTE
 EXTERN ?vfunc152@CBaseEntity@@QAEMXZ:BYTE
 EXTERN ?vfunc152@CBaseToggle@@QAEMXZ:BYTE
 EXTERN ?vfunc152@CPathCorner@@QAEMXZ:BYTE
@@ -390,12 +388,12 @@ EXTERN ?vfunc178@CBaseEntity@@QAEXPAV1@@Z:BYTE
 EXTERN ?vfunc178@CFuncMoveLinear@@UAEXPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc178@CFuncPlat@@UAEXPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc17@CBaseEntity@@UAEXHH@Z:BYTE
-EXTERN ?vfunc180@CBaseCombatCharacter@@QAEXXZ:BYTE
+EXTERN ?vfunc180@CBaseCombatCharacter@@UAEXXZ:BYTE
 EXTERN ?vfunc180@CBaseEntity@@QAEXXZ:BYTE
 EXTERN ?vfunc180@CBasePlayer@@UAEXXZ:BYTE
 EXTERN ?vfunc180@CFuncMonitor@@QAEXXZ:BYTE
 EXTERN ?vfunc180@CRagdollProp@@UAEXXZ:BYTE
-EXTERN ?vfunc181@CBasePlayer@@QAEXPAX00@Z:BYTE
+EXTERN ?vfunc181@CBasePlayer@@UAEXPAX00@Z:BYTE
 EXTERN ?vfunc181@CRagdollProp@@UAEXPBM00@Z:BYTE
 EXTERN ?vfunc185@CBaseEntity@@QAEXPAUCFireBulletsInfo@@@Z:BYTE
 EXTERN ?vfunc190@CBaseEntity@@QAEMXZ:BYTE
@@ -409,13 +407,13 @@ EXTERN ?vfunc195@CBaseEntity@@QAEXXZ:BYTE
 EXTERN ?vfunc195@CBasePlayer@@UAEPAMXZ:BYTE
 EXTERN ?vfunc196@CBaseEntity@@QAEHH@Z:BYTE
 EXTERN ?vfunc197@CBaseEntity@@QAEHHHHH@Z:BYTE
-EXTERN ?vfunc197@CBasePlayer@@QAE?AVVector@@ABV2@DD@Z:BYTE
+EXTERN ?vfunc197@CBasePlayer@@UAE?AVVector@@ABV2@DD@Z:BYTE
 EXTERN ?vfunc198@CBaseEntity@@QAEPAMXZ:BYTE
-EXTERN ?vfunc198@CBasePlayer@@QAEPAXXZ:BYTE
+EXTERN ?vfunc198@CBasePlayer@@UAEPAXXZ:BYTE
 EXTERN ?vfunc199@CBaseAnimating@@QAEXPAM0@Z:BYTE
 EXTERN ?vfunc199@CBaseEntity@@QAEXPAM0@Z:BYTE
 EXTERN ?vfunc1@CPhysicsAnimlinkEntityDeleteProxy@@QAEXPAVCBaseEntity@@@Z:BYTE
-EXTERN ?vfunc200@CBasePlayer@@QAEHXZ:BYTE
+EXTERN ?vfunc200@CBasePlayer@@UAEHXZ:BYTE
 EXTERN ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z:BYTE
 EXTERN ?vfunc202@CBaseEntity@@QAEXPAV1@@Z:BYTE
 EXTERN ?vfunc203@CBaseEntity@@QAEMXZ:BYTE
@@ -430,7 +428,7 @@ EXTERN ?vfunc217@CBaseEntity@@QAEPAMXZ:BYTE
 EXTERN ?vfunc218@CBaseEntity@@QAEXPBM@Z:BYTE
 EXTERN ?vfunc219@CBaseEntity@@QAEPAMXZ:BYTE
 EXTERN ?vfunc21@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc21@CBasePlayer@@QAEXH@Z:BYTE
+EXTERN ?vfunc21@CBasePlayer@@UAEXH@Z:BYTE
 EXTERN ?vfunc220@CBaseEntity@@QAEPAMXZ:BYTE
 EXTERN ?vfunc221@CBaseEntity@@QAEPAMXZ:BYTE
 EXTERN ?vfunc222@CBaseEntity@@QAEHH@Z:BYTE
@@ -447,7 +445,7 @@ EXTERN ?vfunc228@CBaseCombatCharacter@@UAEXHH@Z:BYTE
 EXTERN ?vfunc228@CBaseEntity@@QAEXHH@Z:BYTE
 EXTERN ?vfunc229@CBasePlayer@@UAEXPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc22@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc22@CBasePlayer@@QAEXH@Z:BYTE
+EXTERN ?vfunc22@CBasePlayer@@UAEXH@Z:BYTE
 EXTERN ?vfunc230@CBaseEntity@@QAEXHPAX@Z:BYTE
 EXTERN ?vfunc230@CRagdollPropSpecial@@QAEXHPAX@Z:BYTE
 EXTERN ?vfunc231@CBaseEntity@@QAEXPAXMHH@Z:BYTE
@@ -459,8 +457,8 @@ EXTERN ?vfunc237@CBaseEntity@@QAEHXZ:BYTE
 EXTERN ?vfunc238@CBaseEntity@@QAEXHHHH@Z:BYTE
 EXTERN ?vfunc239@CBaseEntity@@QAE_NM@Z:BYTE
 EXTERN ?vfunc23@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc23@CBasePlayer@@QAEXH@Z:BYTE
-EXTERN ?vfunc240@CBaseCombatCharacter@@QAEHXZ:BYTE
+EXTERN ?vfunc23@CBasePlayer@@UAEXH@Z:BYTE
+EXTERN ?vfunc240@CBaseCombatCharacter@@UAEHXZ:BYTE
 EXTERN ?vfunc240@CBaseEntity@@QAEHXZ:BYTE
 EXTERN ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z:BYTE
 EXTERN ?vfunc241@CFuncBrush@@QAEHXZ:BYTE
@@ -478,9 +476,9 @@ EXTERN ?vfunc245@CFuncPlatRot@@QAEXXZ:BYTE
 EXTERN ?vfunc246@CBaseAnimating@@QAEXXZ:BYTE
 EXTERN ?vfunc249@CBaseAnimating@@QAEMXZ:BYTE
 EXTERN ?vfunc24@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc24@CBasePlayer@@UAEXPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc24@CBasePlayer@@UAEXH@Z:BYTE
 EXTERN ?vfunc250@CBaseAnimating@@QAEMM@Z:BYTE
-EXTERN ?vfunc250@CBaseAnimatingOverlay@@QAEMM@Z:BYTE
+EXTERN ?vfunc250@CBaseAnimatingOverlay@@UAEMM@Z:BYTE
 EXTERN ?vfunc251@CBaseAnimating@@QAEDXZ:BYTE
 EXTERN ?vfunc252@CBaseAnimating@@QAEHHHH@Z:BYTE
 EXTERN ?vfunc252@CBaseCombatCharacter@@UAEHHHH@Z:BYTE
@@ -489,44 +487,46 @@ EXTERN ?vfunc253@CBaseCombatCharacter@@UAEHHHH@Z:BYTE
 EXTERN ?vfunc254@CBaseAnimating@@QAEHHHH@Z:BYTE
 EXTERN ?vfunc254@CBaseCombatCharacter@@UAEHHHH@Z:BYTE
 EXTERN ?vfunc255@CBaseAnimating@@QAEXPAX0H@Z:BYTE
-EXTERN ?vfunc255@CBaseAnimatingOverlay@@QAEXPAX0H@Z:BYTE
+EXTERN ?vfunc255@CBaseAnimatingOverlay@@UAEXPAX0H@Z:BYTE
 EXTERN ?vfunc256@CBaseAnimating@@QAEXHPAM@Z:BYTE
 EXTERN ?vfunc257@CBaseAnimating@@QAEXHH@Z:BYTE
 EXTERN ?vfunc257@CRagdollProp@@UAEXPAXH@Z:BYTE
 EXTERN ?vfunc258@CBaseAnimating@@QAEXMPAX@Z:BYTE
-EXTERN ?vfunc258@CBaseAnimatingOverlay@@QAEXMPAX@Z:BYTE
+EXTERN ?vfunc258@CBaseAnimatingOverlay@@UAEXMPAX@Z:BYTE
 EXTERN ?vfunc259@CBaseAnimating@@QAEXPAX@Z:BYTE
-EXTERN ?vfunc259@CBasePlayer@@QAEXPAUanimevent_t@@@Z:BYTE
+EXTERN ?vfunc259@CBasePlayer@@UAEXPAX@Z:BYTE
 EXTERN ?vfunc25@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc25@CBasePlayer@@QAEXPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc25@CBasePlayer@@UAEXH@Z:BYTE
 EXTERN ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z:BYTE
 EXTERN ?vfunc263@CBaseAnimating@@QAE?AVVector@@XZ:BYTE
 EXTERN ?vfunc264@CBaseAnimating@@QAEXXZ:BYTE
-EXTERN ?vfunc265@CBaseAnimatingOverlay@@QAEXHMMHH@Z:BYTE
+EXTERN ?vfunc265@CBaseAnimatingOverlay@@UAEXHMMHH@Z:BYTE
 EXTERN ?vfunc265@CRagdollProp@@UAEHPBD@Z:BYTE
-EXTERN ?vfunc266@CBaseAnimatingOverlay@@QAEXXZ:BYTE
+EXTERN ?vfunc266@CBaseAnimatingOverlay@@UAEXXZ:BYTE
 EXTERN ?vfunc266@CRagdollProp@@UAEXHH@Z:BYTE
-EXTERN ?vfunc267@CBaseAnimatingOverlay@@QAEHXZ:BYTE
+EXTERN ?vfunc267@CBaseAnimatingOverlay@@UAEHXZ:BYTE
 EXTERN ?vfunc267@CRagdollProp@@UAE_NXZ:BYTE
-EXTERN ?vfunc268@CBaseAnimatingOverlay@@QAEXHHHD@Z:BYTE
+EXTERN ?vfunc268@CBaseAnimatingOverlay@@UAEXHHHD@Z:BYTE
 EXTERN ?vfunc268@CRagdollProp@@UAEXPAVCBaseEntity@@@Z:BYTE
-EXTERN ?vfunc269@CBaseAnimatingOverlay@@QAEXH@Z:BYTE
+EXTERN ?vfunc269@CBaseAnimatingOverlay@@UAEXH@Z:BYTE
 EXTERN ?vfunc269@CRagdollProp@@UAE_NHH@Z:BYTE
 EXTERN ?vfunc26@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc26@CBasePlayer@@QAEXPAVCBaseEntity@@@Z:BYTE
-EXTERN ?vfunc270@CBaseAnimatingOverlay@@QAEDH@Z:BYTE
+EXTERN ?vfunc26@CBasePlayer@@UAEXH@Z:BYTE
+EXTERN ?vfunc270@CBaseAnimatingOverlay@@UAEDH@Z:BYTE
 EXTERN ?vfunc270@CRagdollProp@@UAEXHH@Z:BYTE
-EXTERN ?vfunc271@CBaseAnimatingOverlay@@QAEHH@Z:BYTE
+EXTERN ?vfunc271@CBaseAnimatingOverlay@@UAEHH@Z:BYTE
 EXTERN ?vfunc271@CRagdollProp@@UAEXHH@Z:BYTE
-EXTERN ?vfunc272@CBaseAnimatingOverlay@@QAEHXZ:BYTE
+EXTERN ?vfunc272@CBaseAnimatingOverlay@@UAEHXZ:BYTE
 EXTERN ?vfunc272@CRagdollProp@@UAE_NH@Z:BYTE
-EXTERN ?vfunc273@CBaseAnimatingOverlay@@QAEXHDH@Z:BYTE
+EXTERN ?vfunc273@CBaseAnimatingOverlay@@UAEXHDH@Z:BYTE
 EXTERN ?vfunc273@CRagdollProp@@UAEHXZ:BYTE
-EXTERN ?vfunc274@CBaseAnimatingOverlay@@QAEXH@Z:BYTE
+EXTERN ?vfunc274@CBaseAnimatingOverlay@@UAEXH@Z:BYTE
 EXTERN ?vfunc274@CRagdollProp@@UAE_NH@Z:BYTE
-EXTERN ?vfunc275@CBaseAnimatingOverlay@@QAEXXZ:BYTE
+EXTERN ?vfunc275@CBaseAnimatingOverlay@@UAEXXZ:BYTE
 EXTERN ?vfunc275@CRagdollProp@@UAE?AVVector@@XZ:BYTE
+EXTERN ?vfunc276@CBaseFlex@@UAEXXZ:BYTE
 EXTERN ?vfunc276@CRagdollProp@@UAEDXZ:BYTE
+EXTERN ?vfunc277@CBaseFlex@@UAEXPBM@Z:BYTE
 EXTERN ?vfunc278@CBaseFlex@@UAEPADXZ:BYTE
 EXTERN ?vfunc279@CBaseFlex@@UAEXHM@Z:BYTE
 EXTERN ?vfunc280@CBaseFlex@@UAEXHM@Z:BYTE
@@ -550,12 +550,12 @@ EXTERN ?vfunc299@CBaseCombatCharacter@@QAEXPAXPAD@Z:BYTE
 EXTERN ?vfunc29@CBaseEntity@@UAEMXZ:BYTE
 EXTERN ?vfunc2@CBaseEntity@@UAEPADXZ:BYTE
 EXTERN ?vfunc2@CPhysicsAnimlinkEntityDeleteProxy@@QAEPAV1@I@Z:BYTE
-EXTERN ?vfunc300@CBaseCombatCharacter@@QAEXHHH@Z:BYTE
+EXTERN ?vfunc300@CBaseCombatCharacter@@UAEXPAVCBaseEntity@@DH@Z:BYTE
 EXTERN ?vfunc300@CBasePlayer@@UAEXPAVCBaseEntity@@DH@Z:BYTE
 EXTERN ?vfunc301@CBaseCombatCharacter@@QAEXPBVVector@@PAUCTakeDamageInfo@@@Z:BYTE
 EXTERN ?vfunc304@CBaseCombatCharacter@@QAEXXZ:BYTE
 EXTERN ?vfunc305@CBaseCombatCharacter@@QAEXXZ:BYTE
-EXTERN ?vfunc306@CBaseCombatCharacter@@QAEXPAV1@D@Z:BYTE
+EXTERN ?vfunc306@CBaseCombatCharacter@@UAEXPAV1@D@Z:BYTE
 EXTERN ?vfunc307@CBaseCombatCharacter@@QAEHXZ:BYTE
 EXTERN ?vfunc308@CBaseCombatCharacter@@QAE_NXZ:BYTE
 EXTERN ?vfunc309@CBaseCombatCharacter@@QAEPAXXZ:BYTE
@@ -573,31 +573,31 @@ EXTERN ?vfunc31@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc31@CBasePlayer@@UAEXH@Z:BYTE
 EXTERN ?vfunc31@CBaseToggle@@UAEXH@Z:BYTE
 EXTERN ?vfunc320@CBasePlayer@@UAE_NHH@Z:BYTE
-EXTERN ?vfunc321@CBasePlayer@@QAEDH@Z:BYTE
+EXTERN ?vfunc321@CBasePlayer@@UAEDH@Z:BYTE
 EXTERN ?vfunc323@CBaseCombatCharacter@@UAEHPBVVector@@@Z:BYTE
-EXTERN ?vfunc326@CBaseCombatCharacter@@QAE_NHH@Z:BYTE
+EXTERN ?vfunc326@CBaseCombatCharacter@@UAE_NHPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc326@CBasePlayer@@UAE_NHPAVCBaseEntity@@@Z:BYTE
-EXTERN ?vfunc327@CBaseCombatCharacter@@UAE_NXZ:BYTE
+EXTERN ?vfunc327@CBaseCombatCharacter@@UAEDXZ:BYTE
 EXTERN ?vfunc327@CBasePlayer@@UAEDXZ:BYTE
 EXTERN ?vfunc328@CBasePlayer@@UAEDXZ:BYTE
 EXTERN ?vfunc32@CBaseEntity@@UAE_NH@Z:BYTE
 EXTERN ?vfunc32@CFuncMonitor@@QAE_NPAX@Z:BYTE
 EXTERN ?vfunc32@CRagdollProp@@UAE_NH@Z:BYTE
 EXTERN ?vfunc331@CBasePlayer@@QAE_NPAVCBaseCombatWeapon@@HHPAH@Z:BYTE
-EXTERN ?vfunc333@CBaseCombatCharacter@@QAEXH@Z:BYTE
-EXTERN ?vfunc334@CBaseCombatCharacter@@QAE_NHH@Z:BYTE
+EXTERN ?vfunc333@CBaseCombatCharacter@@UAEXH@Z:BYTE
+EXTERN ?vfunc334@CBaseCombatCharacter@@UAE_NHH@Z:BYTE
 EXTERN ?vfunc334@CBasePlayer@@UAE_NHH@Z:BYTE
 EXTERN ?vfunc335@CBaseCombatCharacter@@QAEXXZ:BYTE
 EXTERN ?vfunc336@CBaseCombatCharacter@@QAEXXZ:BYTE
 EXTERN ?vfunc337@CBaseCombatCharacter@@QAEHXZ:BYTE
-EXTERN ?vfunc338@CBaseCombatCharacter@@QAEXHHH@Z:BYTE
-EXTERN ?vfunc338@CBasePlayer@@QAEXHDH@Z:BYTE
-EXTERN ?vfunc339@CBaseCombatCharacter@@QAEXHHH@Z:BYTE
-EXTERN ?vfunc339@CBasePlayer@@QAEXHMH@Z:BYTE
+EXTERN ?vfunc338@CBaseCombatCharacter@@UAEXHDH@Z:BYTE
+EXTERN ?vfunc338@CBasePlayer@@UAEXHDH@Z:BYTE
+EXTERN ?vfunc339@CBaseCombatCharacter@@UAEXHMH@Z:BYTE
+EXTERN ?vfunc339@CBasePlayer@@UAEXHMH@Z:BYTE
 EXTERN ?vfunc33@CBaseEntity@@UAEHXZ:BYTE
-EXTERN ?vfunc340@CBaseCombatCharacter@@QAEXHHH@Z:BYTE
+EXTERN ?vfunc340@CBaseCombatCharacter@@UAEXHHH@Z:BYTE
 EXTERN ?vfunc340@CBasePlayer@@QAEHHMM@Z:BYTE
-EXTERN ?vfunc341@CBaseCombatCharacter@@QAEXHH@Z:BYTE
+EXTERN ?vfunc341@CBaseCombatCharacter@@UAEXHH@Z:BYTE
 EXTERN ?vfunc342@CBaseCombatCharacter@@QAEDH@Z:BYTE
 EXTERN ?vfunc344@CBaseCombatCharacter@@QAEMXZ:BYTE
 EXTERN ?vfunc345@CBaseCombatCharacter@@QAEXPBDHH@Z:BYTE
@@ -614,62 +614,62 @@ EXTERN ?vfunc356@CBaseCombatCharacter@@QAEXXZ:BYTE
 EXTERN ?vfunc357@CBaseCombatCharacter@@QAEXXZ:BYTE
 EXTERN ?vfunc358@CBaseCombatCharacter@@QAEXXZ:BYTE
 EXTERN ?vfunc359@CBaseCombatCharacter@@UAEHH@Z:BYTE
-EXTERN ?vfunc359@CBasePlayer@@UAEHPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc359@CBasePlayer@@UAEHH@Z:BYTE
 EXTERN ?vfunc35@CBaseEntity@@UAEHH@Z:BYTE
 EXTERN ?vfunc35@CFuncMonitor@@QAEHH@Z:BYTE
 EXTERN ?vfunc360@CBaseCombatCharacter@@UAEDXZ:BYTE
-EXTERN ?vfunc360@CBasePlayer@@QAE_NXZ:BYTE
+EXTERN ?vfunc360@CBasePlayer@@UAEDXZ:BYTE
 EXTERN ?vfunc362@CBaseCombatCharacter@@QAEDPBM@Z:BYTE
 EXTERN ?vfunc363@CBaseCombatCharacter@@QAEDPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc364@CBaseCombatCharacter@@QAE_NPBVVector@@@Z:BYTE
 EXTERN ?vfunc365@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z:BYTE
-EXTERN ?vfunc366@CBaseCombatCharacter@@QAE_NHHH@Z:BYTE
-EXTERN ?vfunc367@CBaseCombatCharacter@@QAE?AVQAngle@@XZ:BYTE
+EXTERN ?vfunc366@CBaseCombatCharacter@@UAE_NHHH@Z:BYTE
+EXTERN ?vfunc367@CBaseCombatCharacter@@UAE?AVQAngle@@XZ:BYTE
 EXTERN ?vfunc367@CBasePlayer@@QAEPAMPAM@Z:BYTE
-EXTERN ?vfunc368@CBaseCombatCharacter@@QAE?AVVector@@XZ:BYTE
-EXTERN ?vfunc369@CBaseCombatCharacter@@QAE?AVVector@@XZ:BYTE
+EXTERN ?vfunc368@CBaseCombatCharacter@@UAE?AVVector@@XZ:BYTE
+EXTERN ?vfunc369@CBaseCombatCharacter@@UAE?AVVector@@XZ:BYTE
 EXTERN ?vfunc36@CBaseEntity@@UAEHXZ:BYTE
 EXTERN ?vfunc36@CRagdollProp@@UAEHXZ:BYTE
-EXTERN ?vfunc370@CBaseCombatCharacter@@QAE?AVVector@@XZ:BYTE
-EXTERN ?vfunc371@CBaseCombatCharacter@@QAE?AVVector@@XZ:BYTE
-EXTERN ?vfunc372@CBaseCombatCharacter@@QAEHH@Z:BYTE
-EXTERN ?vfunc373@CBaseCombatCharacter@@QAEHH@Z:BYTE
+EXTERN ?vfunc370@CBaseCombatCharacter@@UAE?AVVector@@XZ:BYTE
+EXTERN ?vfunc371@CBaseCombatCharacter@@UAE?AVVector@@XZ:BYTE
+EXTERN ?vfunc372@CBaseCombatCharacter@@UAEHH@Z:BYTE
+EXTERN ?vfunc373@CBaseCombatCharacter@@UAEHH@Z:BYTE
 EXTERN ?vfunc374@CBaseCombatCharacter@@UAEHHHH@Z:BYTE
 EXTERN ?vfunc375@CBaseCombatCharacter@@UAEHH@Z:BYTE
-EXTERN ?vfunc376@CBaseCombatCharacter@@QAEHH@Z:BYTE
-EXTERN ?vfunc379@CBaseCombatCharacter@@QAEDPAVCBaseEntity@@HHHHHD@Z:BYTE
+EXTERN ?vfunc376@CBaseCombatCharacter@@UAEHH@Z:BYTE
+EXTERN ?vfunc379@CBaseCombatCharacter@@UAEDPAVCBaseEntity@@HHHHHD@Z:BYTE
 EXTERN ?vfunc379@CBasePlayer@@QAEDHHHHHHH@Z:BYTE
 EXTERN ?vfunc37@CBaseEntity@@UAEMXZ:BYTE
-EXTERN ?vfunc380@CBaseCombatCharacter@@QAEXXZ:BYTE
-EXTERN ?vfunc380@CBasePlayer@@QAEXXZ:BYTE
-EXTERN ?vfunc381@CBaseCombatCharacter@@QAEHH@Z:BYTE
+EXTERN ?vfunc380@CBaseCombatCharacter@@UAEXXZ:BYTE
+EXTERN ?vfunc380@CBasePlayer@@UAEXXZ:BYTE
+EXTERN ?vfunc381@CBaseCombatCharacter@@UAEHH@Z:BYTE
 EXTERN ?vfunc382@CBasePlayer@@UAE_NPAVCBaseCombatWeapon@@@Z:BYTE
-EXTERN ?vfunc383@CBaseCombatCharacter@@QAEXPAVCBaseCombatWeapon@@D@Z:BYTE
-EXTERN ?vfunc383@CBasePlayer@@UAEXPAVCBaseEntity@@D@Z:BYTE
-EXTERN ?vfunc384@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z:BYTE
-EXTERN ?vfunc385@CBaseCombatCharacter@@QAEXPAVCBaseCombatWeapon@@HD@Z:BYTE
+EXTERN ?vfunc383@CBaseCombatCharacter@@UAEXPAVCBaseCombatWeapon@@D@Z:BYTE
+EXTERN ?vfunc383@CBasePlayer@@UAEXPAVCBaseCombatWeapon@@D@Z:BYTE
+EXTERN ?vfunc384@CBaseCombatCharacter@@UAEXPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc385@CBaseCombatCharacter@@UAEXPAVCBaseCombatWeapon@@HD@Z:BYTE
 EXTERN ?vfunc385@CBasePlayer@@QAEXPAVCBaseEntity@@HD@Z:BYTE
-EXTERN ?vfunc386@CBaseCombatCharacter@@QAEXXZ:BYTE
-EXTERN ?vfunc387@CBaseCombatCharacter@@QAEXXZ:BYTE
-EXTERN ?vfunc388@CBaseCombatCharacter@@QAEDPAXH@Z:BYTE
-EXTERN ?vfunc388@CBasePlayer@@UAEDPAVCBaseEntity@@H@Z:BYTE
-EXTERN ?vfunc389@CBaseCombatCharacter@@QAE?AVVector@@ABV2@@Z:BYTE
-EXTERN ?vfunc389@CBasePlayer@@QAE?AVVector@@ABV2@@Z:BYTE
+EXTERN ?vfunc386@CBaseCombatCharacter@@UAEXXZ:BYTE
+EXTERN ?vfunc387@CBaseCombatCharacter@@UAEXXZ:BYTE
+EXTERN ?vfunc388@CBaseCombatCharacter@@UAEDPAXH@Z:BYTE
+EXTERN ?vfunc388@CBasePlayer@@UAEDPAXH@Z:BYTE
+EXTERN ?vfunc389@CBaseCombatCharacter@@UAE?AVVector@@ABV2@@Z:BYTE
+EXTERN ?vfunc389@CBasePlayer@@UAE?AVVector@@ABV2@@Z:BYTE
 EXTERN ?vfunc38@CBaseEntity@@UAEPAXH@Z:BYTE
 EXTERN ?vfunc390@CBasePlayer@@UAEHPAUCTakeDamageInfo@@@Z:BYTE
-EXTERN ?vfunc391@CBaseCombatCharacter@@QAEHH@Z:BYTE
-EXTERN ?vfunc392@CBaseCombatCharacter@@QAEHPAX@Z:BYTE
-EXTERN ?vfunc393@CBaseCombatCharacter@@QAEHXZ:BYTE
-EXTERN ?vfunc394@CBaseCombatCharacter@@QAEDXZ:BYTE
+EXTERN ?vfunc391@CBaseCombatCharacter@@UAEHH@Z:BYTE
+EXTERN ?vfunc392@CBaseCombatCharacter@@UAEHPAX@Z:BYTE
+EXTERN ?vfunc393@CBaseCombatCharacter@@UAEHXZ:BYTE
+EXTERN ?vfunc394@CBaseCombatCharacter@@UAEDXZ:BYTE
 EXTERN ?vfunc395@CBaseCombatCharacter@@UAEXXZ:BYTE
 EXTERN ?vfunc39@CBaseEntity@@UAEXPAV1@@Z:BYTE
 EXTERN ?vfunc39@CFuncMonitor@@QAEXPAX@Z:BYTE
 EXTERN ?vfunc39@CRagdollProp@@UAEXPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc3@CBaseEntity@@UAEPADXZ:BYTE
-EXTERN ?vfunc402@CBaseCombatCharacter@@QAEDXZ:BYTE
-EXTERN ?vfunc403@CBaseCombatCharacter@@QAEXXZ:BYTE
+EXTERN ?vfunc402@CBaseCombatCharacter@@UAEDXZ:BYTE
+EXTERN ?vfunc403@CBaseCombatCharacter@@UAEXXZ:BYTE
 EXTERN ?vfunc403@CBasePlayer@@UAEXXZ:BYTE
-EXTERN ?vfunc404@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z:BYTE
+EXTERN ?vfunc404@CBaseCombatCharacter@@UAEHPAVCBaseEntity@@@Z:BYTE
 EXTERN ?vfunc406@CBasePlayer@@UAEDXZ:BYTE
 EXTERN ?vfunc407@CBasePlayer@@UAEXXZ:BYTE
 EXTERN ?vfunc408@CBasePlayer@@UAEXXZ:BYTE
@@ -700,7 +700,7 @@ EXTERN ?vfunc430@CBasePlayer@@QAEXHH@Z:BYTE
 EXTERN ?vfunc431@CBasePlayer@@UAEXXZ:BYTE
 EXTERN ?vfunc434@CBasePlayer@@QAEXXZ:BYTE
 EXTERN ?vfunc435@CBasePlayer@@QAEXXZ:BYTE
-EXTERN ?vfunc436@CBasePlayer@@QAEXXZ:BYTE
+EXTERN ?vfunc436@CBasePlayer@@UAEXXZ:BYTE
 EXTERN ?vfunc437@CBasePlayer@@QAEXXZ:BYTE
 EXTERN ?vfunc438@CBasePlayer@@UAEXMH@Z:BYTE
 EXTERN ?vfunc439@CBasePlayer@@UAEDXZ:BYTE
@@ -744,7 +744,7 @@ EXTERN ?vfunc56@CBaseEntity@@UAEXHHHHHHHH@Z:BYTE
 EXTERN ?vfunc57@CBaseEntity@@UAEXHHHHHHH@Z:BYTE
 EXTERN ?vfunc58@CBaseEntity@@UAEXH@Z:BYTE
 EXTERN ?vfunc59@CBaseEntity@@UAEXH@Z:BYTE
-EXTERN ?vfunc5@CBasePlayer@@QAEPAV1@I@Z:BYTE
+EXTERN ?vfunc5@CBasePlayer@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CEnvDustPuff@@UAEPAVCBaseEntity@@I@Z:BYTE
 EXTERN ?vfunc5@CEnvLight@@QAEPAV1@I@Z:BYTE
 EXTERN ?vfunc5@CFuncBrush@@QAEPAV1@I@Z:BYTE
@@ -829,7 +829,7 @@ EXTERN ?vfunc81@CHudTimer@@UAEHXZ:BYTE
 EXTERN ?vfunc81@CRagdollProp@@UAEHXZ:BYTE
 EXTERN ?vfunc81@CRagdollPropAttached@@UAEHXZ:BYTE
 EXTERN ?vfunc82@CBaseAnimating@@UAEPAUdatamap_t@@XZ:BYTE
-EXTERN ?vfunc82@CBasePlayer@@UAEPAXXZ:BYTE
+EXTERN ?vfunc82@CBasePlayer@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CEnvDustPuff@@UAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CFuncBrush@@QAEPAUdatamap_t@@XZ:BYTE
 EXTERN ?vfunc82@CFuncMonitor@@QAEPAUdatamap_t@@XZ:BYTE
@@ -8679,8 +8679,8 @@ PUBLIC ?vt_1046d524@@3HA
   DD OFFSET ?vfunc141@CPhysicsCannister@@QAEXPAUCCannisterTakeInfo@@PBVVector@@PAUCGameTrace@@@Z
   DD OFFSET ?vfunc142@CPhysicsCannister@@QAEHPAUCCannisterTakeInfo@@@Z
   DD OFFSET ?vfunc143@CBaseCombatCharacter@@UAEHMH@Z
-  DD OFFSET ?vfunc144@CBaseCombatCharacter@@QAEXPAX@Z
-  DD OFFSET ?vfunc145@CBaseCombatCharacter@@QAEHXZ
+  DD OFFSET ?vfunc144@CBaseCombatCharacter@@UAEXPAX@Z
+  DD OFFSET ?vfunc145@CBaseCombatCharacter@@UAEHXZ
   DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_10026dd0@@YGXHH@Z
@@ -8715,7 +8715,7 @@ PUBLIC ?vt_1046d524@@3HA
   DD OFFSET ?sub_10027080@@YGXH@Z
   DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
-  DD OFFSET ?vfunc180@CBaseCombatCharacter@@QAEXXZ
+  DD OFFSET ?vfunc180@CBaseCombatCharacter@@UAEXXZ
   DD OFFSET ?sub_100ada20@@YIXPAVCBaseEntity@@HPBM11@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
@@ -8775,7 +8775,7 @@ PUBLIC ?vt_1046d524@@3HA
   DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
   DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
   DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseCombatCharacter@@QAEHXZ
+  DD OFFSET ?vfunc240@CBaseCombatCharacter@@UAEHXZ
   DD OFFSET ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z
   DD OFFSET ?sub_100916a0@@YIMPAD@Z
   DD OFFSET ?vfunc243@CBaseAnimating@@QAEXPBD_N@Z
@@ -8785,34 +8785,34 @@ PUBLIC ?vt_1046d524@@3HA
   DD OFFSET ?sub_10090c80@@YIXPAVCBaseAnimating@@HH@Z
   DD OFFSET ?sub_10091740@CBaseAnimating@@QAEMXZ
   DD OFFSET ?vfunc249@CBaseAnimating@@QAEMXZ
-  DD OFFSET ?vfunc250@CBaseAnimatingOverlay@@QAEMM@Z
+  DD OFFSET ?vfunc250@CBaseAnimatingOverlay@@UAEMM@Z
   DD OFFSET ?vfunc251@CBaseAnimating@@QAEDXZ
   DD OFFSET ?vfunc252@CBaseCombatCharacter@@UAEHHHH@Z
   DD OFFSET ?vfunc253@CBaseCombatCharacter@@UAEHHHH@Z
   DD OFFSET ?vfunc254@CBaseCombatCharacter@@UAEHHHH@Z
-  DD OFFSET ?vfunc255@CBaseAnimatingOverlay@@QAEXPAX0H@Z
+  DD OFFSET ?vfunc255@CBaseAnimatingOverlay@@UAEXPAX0H@Z
   DD OFFSET ?vfunc256@CBaseAnimating@@QAEXHPAM@Z
   DD OFFSET ?vfunc257@CBaseAnimating@@QAEXHH@Z
-  DD OFFSET ?vfunc258@CBaseAnimatingOverlay@@QAEXMPAX@Z
+  DD OFFSET ?vfunc258@CBaseAnimatingOverlay@@UAEXMPAX@Z
   DD OFFSET ?sub_1032e330@CBaseCombatCharacter@@QAEXPAX@Z
   DD OFFSET ?sub_10091fe0@@YIMPAVCBaseAnimating@@HHM@Z
   DD OFFSET ?sub_10091f10@CBaseAnimating@@QAEXPBDM@Z
   DD OFFSET ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z
   DD OFFSET ?vfunc263@CBaseAnimating@@QAE?AVVector@@XZ
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
-  DD OFFSET ?vfunc265@CBaseAnimatingOverlay@@QAEXHMMHH@Z
-  DD OFFSET ?vfunc266@CBaseAnimatingOverlay@@QAEXXZ
-  DD OFFSET ?vfunc267@CBaseAnimatingOverlay@@QAEHXZ
-  DD OFFSET ?vfunc268@CBaseAnimatingOverlay@@QAEXHHHD@Z
-  DD OFFSET ?vfunc269@CBaseAnimatingOverlay@@QAEXH@Z
-  DD OFFSET ?vfunc270@CBaseAnimatingOverlay@@QAEDH@Z
-  DD OFFSET ?vfunc271@CBaseAnimatingOverlay@@QAEHH@Z
-  DD OFFSET ?vfunc272@CBaseAnimatingOverlay@@QAEHXZ
-  DD OFFSET ?vfunc273@CBaseAnimatingOverlay@@QAEXHDH@Z
-  DD OFFSET ?vfunc274@CBaseAnimatingOverlay@@QAEXH@Z
-  DD OFFSET ?vfunc275@CBaseAnimatingOverlay@@QAEXXZ
-  DD OFFSET ?sub_100b5ce0@CBaseFlex@@QAEXXZ
-  DD OFFSET ?sub_100b5b00@CBaseFlex@@QAEXPBM@Z
+  DD OFFSET ?vfunc265@CBaseAnimatingOverlay@@UAEXHMMHH@Z
+  DD OFFSET ?vfunc266@CBaseAnimatingOverlay@@UAEXXZ
+  DD OFFSET ?vfunc267@CBaseAnimatingOverlay@@UAEHXZ
+  DD OFFSET ?vfunc268@CBaseAnimatingOverlay@@UAEXHHHD@Z
+  DD OFFSET ?vfunc269@CBaseAnimatingOverlay@@UAEXH@Z
+  DD OFFSET ?vfunc270@CBaseAnimatingOverlay@@UAEDH@Z
+  DD OFFSET ?vfunc271@CBaseAnimatingOverlay@@UAEHH@Z
+  DD OFFSET ?vfunc272@CBaseAnimatingOverlay@@UAEHXZ
+  DD OFFSET ?vfunc273@CBaseAnimatingOverlay@@UAEXHDH@Z
+  DD OFFSET ?vfunc274@CBaseAnimatingOverlay@@UAEXH@Z
+  DD OFFSET ?vfunc275@CBaseAnimatingOverlay@@UAEXXZ
+  DD OFFSET ?vfunc276@CBaseFlex@@UAEXXZ
+  DD OFFSET ?vfunc277@CBaseFlex@@UAEXPBM@Z
   DD OFFSET ?vfunc278@CBaseFlex@@UAEPADXZ
   DD OFFSET ?vfunc279@CBaseFlex@@UAEXHM@Z
   DD OFFSET ?vfunc280@CBaseFlex@@UAEXHM@Z
@@ -8835,13 +8835,13 @@ PUBLIC ?vt_1046d524@@3HA
   DD OFFSET ?sub_10332ef0@CUnknown10332fc0@@QAEXPAXHH@Z
   DD OFFSET ?sub_10323c20@@YIHPADHH@Z
   DD OFFSET ?vfunc299@CBaseCombatCharacter@@QAEXPAXPAD@Z
-  DD OFFSET ?vfunc300@CBaseCombatCharacter@@QAEXHHH@Z
+  DD OFFSET ?vfunc300@CBaseCombatCharacter@@UAEXPAVCBaseEntity@@DH@Z
   DD OFFSET ?vfunc301@CBaseCombatCharacter@@QAEXPBVVector@@PAUCTakeDamageInfo@@@Z
   DD OFFSET ?sub_10335f60@@YI_NPADHHH@Z
   DD OFFSET ?sub_10336000@@YI_NPADHH@Z
   DD OFFSET ?vfunc304@CBaseCombatCharacter@@QAEXXZ
   DD OFFSET ?vfunc305@CBaseCombatCharacter@@QAEXXZ
-  DD OFFSET ?vfunc306@CBaseCombatCharacter@@QAEXPAV1@D@Z
+  DD OFFSET ?vfunc306@CBaseCombatCharacter@@UAEXPAV1@D@Z
   DD OFFSET ?vfunc307@CBaseCombatCharacter@@QAEHXZ
   DD OFFSET ?vfunc308@CBaseCombatCharacter@@QAE_NXZ
   DD OFFSET ?vfunc309@CBaseCombatCharacter@@QAEPAXXZ
@@ -8861,22 +8861,22 @@ PUBLIC ?vt_1046d524@@3HA
   DD OFFSET ?vfunc323@CBaseCombatCharacter@@UAEHPBVVector@@@Z
   DD OFFSET ?sub_1014f7f0@@YA_NXZ
   DD OFFSET ?sub_1014f810@@YA_NXZ
-  DD OFFSET ?vfunc326@CBaseCombatCharacter@@QAE_NHH@Z
-  DD OFFSET ?vfunc327@CBaseCombatCharacter@@UAE_NXZ
+  DD OFFSET ?vfunc326@CBaseCombatCharacter@@UAE_NHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc327@CBaseCombatCharacter@@UAEDXZ
   DD OFFSET ?sub_1014f830@@YA_NXZ
   DD OFFSET ?sub_1014f850@@YA_NXZ
   DD OFFSET ?sub_1014f870@@YGXPAX0@Z
   DD OFFSET ?sub_10347180@CMeleeChar@@QAE_NPAVCMeleeWeapon@@PAV1@HPAH@Z
   DD OFFSET ?sub_1014f890@@YGXPAX@Z
-  DD OFFSET ?vfunc333@CBaseCombatCharacter@@QAEXH@Z
-  DD OFFSET ?vfunc334@CBaseCombatCharacter@@QAE_NHH@Z
+  DD OFFSET ?vfunc333@CBaseCombatCharacter@@UAEXH@Z
+  DD OFFSET ?vfunc334@CBaseCombatCharacter@@UAE_NHH@Z
   DD OFFSET ?vfunc335@CBaseCombatCharacter@@QAEXXZ
   DD OFFSET ?vfunc336@CBaseCombatCharacter@@QAEXXZ
   DD OFFSET ?vfunc337@CBaseCombatCharacter@@QAEHXZ
-  DD OFFSET ?vfunc338@CBaseCombatCharacter@@QAEXHHH@Z
-  DD OFFSET ?vfunc339@CBaseCombatCharacter@@QAEXHHH@Z
-  DD OFFSET ?vfunc340@CBaseCombatCharacter@@QAEXHHH@Z
-  DD OFFSET ?vfunc341@CBaseCombatCharacter@@QAEXHH@Z
+  DD OFFSET ?vfunc338@CBaseCombatCharacter@@UAEXHDH@Z
+  DD OFFSET ?vfunc339@CBaseCombatCharacter@@UAEXHMH@Z
+  DD OFFSET ?vfunc340@CBaseCombatCharacter@@UAEXHHH@Z
+  DD OFFSET ?vfunc341@CBaseCombatCharacter@@UAEXHH@Z
   DD OFFSET ?vfunc342@CBaseCombatCharacter@@QAEDH@Z
   DD OFFSET ?sub_10053e20@@YIXPAVCBaseEntity@@HMMH@Z
   DD OFFSET ?vfunc344@CBaseCombatCharacter@@QAEMXZ
@@ -8901,35 +8901,35 @@ PUBLIC ?vt_1046d524@@3HA
   DD OFFSET ?vfunc363@CBaseCombatCharacter@@QAEDPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc364@CBaseCombatCharacter@@QAE_NPBVVector@@@Z
   DD OFFSET ?vfunc365@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc366@CBaseCombatCharacter@@QAE_NHHH@Z
-  DD OFFSET ?vfunc367@CBaseCombatCharacter@@QAE?AVQAngle@@XZ
-  DD OFFSET ?vfunc368@CBaseCombatCharacter@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc369@CBaseCombatCharacter@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc370@CBaseCombatCharacter@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc371@CBaseCombatCharacter@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc372@CBaseCombatCharacter@@QAEHH@Z
-  DD OFFSET ?vfunc373@CBaseCombatCharacter@@QAEHH@Z
+  DD OFFSET ?vfunc366@CBaseCombatCharacter@@UAE_NHHH@Z
+  DD OFFSET ?vfunc367@CBaseCombatCharacter@@UAE?AVQAngle@@XZ
+  DD OFFSET ?vfunc368@CBaseCombatCharacter@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc369@CBaseCombatCharacter@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc370@CBaseCombatCharacter@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc371@CBaseCombatCharacter@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc372@CBaseCombatCharacter@@UAEHH@Z
+  DD OFFSET ?vfunc373@CBaseCombatCharacter@@UAEHH@Z
   DD OFFSET ?vfunc374@CBaseCombatCharacter@@UAEHHHH@Z
   DD OFFSET ?vfunc375@CBaseCombatCharacter@@UAEHH@Z
-  DD OFFSET ?vfunc376@CBaseCombatCharacter@@QAEHH@Z
+  DD OFFSET ?vfunc376@CBaseCombatCharacter@@UAEHH@Z
   DD OFFSET ?sub_1014f9d0@@YG_NHH@Z
   DD OFFSET ?sub_1014f9f0@@YG_NHH@Z
-  DD OFFSET ?vfunc379@CBaseCombatCharacter@@QAEDPAVCBaseEntity@@HHHHHD@Z
-  DD OFFSET ?vfunc380@CBaseCombatCharacter@@QAEXXZ
-  DD OFFSET ?vfunc381@CBaseCombatCharacter@@QAEHH@Z
+  DD OFFSET ?vfunc379@CBaseCombatCharacter@@UAEDPAVCBaseEntity@@HHHHHD@Z
+  DD OFFSET ?vfunc380@CBaseCombatCharacter@@UAEXXZ
+  DD OFFSET ?vfunc381@CBaseCombatCharacter@@UAEHH@Z
   DD OFFSET ?sub_1032d9b0@CBaseCombatCharacter@@QAE_NPAX@Z
-  DD OFFSET ?vfunc383@CBaseCombatCharacter@@QAEXPAVCBaseCombatWeapon@@D@Z
-  DD OFFSET ?vfunc384@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc385@CBaseCombatCharacter@@QAEXPAVCBaseCombatWeapon@@HD@Z
-  DD OFFSET ?vfunc386@CBaseCombatCharacter@@QAEXXZ
-  DD OFFSET ?vfunc387@CBaseCombatCharacter@@QAEXXZ
-  DD OFFSET ?vfunc388@CBaseCombatCharacter@@QAEDPAXH@Z
-  DD OFFSET ?vfunc389@CBaseCombatCharacter@@QAE?AVVector@@ABV2@@Z
+  DD OFFSET ?vfunc383@CBaseCombatCharacter@@UAEXPAVCBaseCombatWeapon@@D@Z
+  DD OFFSET ?vfunc384@CBaseCombatCharacter@@UAEXPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc385@CBaseCombatCharacter@@UAEXPAVCBaseCombatWeapon@@HD@Z
+  DD OFFSET ?vfunc386@CBaseCombatCharacter@@UAEXXZ
+  DD OFFSET ?vfunc387@CBaseCombatCharacter@@UAEXXZ
+  DD OFFSET ?vfunc388@CBaseCombatCharacter@@UAEDPAXH@Z
+  DD OFFSET ?vfunc389@CBaseCombatCharacter@@UAE?AVVector@@ABV2@@Z
   DD OFFSET ?sub_103302e0@CBaseCombatCharacter@@QAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc391@CBaseCombatCharacter@@QAEHH@Z
-  DD OFFSET ?vfunc392@CBaseCombatCharacter@@QAEHPAX@Z
-  DD OFFSET ?vfunc393@CBaseCombatCharacter@@QAEHXZ
-  DD OFFSET ?vfunc394@CBaseCombatCharacter@@QAEDXZ
+  DD OFFSET ?vfunc391@CBaseCombatCharacter@@UAEHH@Z
+  DD OFFSET ?vfunc392@CBaseCombatCharacter@@UAEHPAX@Z
+  DD OFFSET ?vfunc393@CBaseCombatCharacter@@UAEHXZ
+  DD OFFSET ?vfunc394@CBaseCombatCharacter@@UAEDXZ
   DD OFFSET ?vfunc395@CBaseCombatCharacter@@UAEXXZ
   DD OFFSET ?sub_10325f00@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?sub_10325fa0@CBaseCombatCharacter@@QAEDXZ
@@ -8937,9 +8937,9 @@ PUBLIC ?vt_1046d524@@3HA
   DD OFFSET ?sub_1014fa30@@YA_NXZ
   DD OFFSET ?sub_1014fa50@@YA_NXZ
   DD OFFSET ?sub_10348b00@@YIHPADHH@Z
-  DD OFFSET ?vfunc402@CBaseCombatCharacter@@QAEDXZ
-  DD OFFSET ?vfunc403@CBaseCombatCharacter@@QAEXXZ
-  DD OFFSET ?vfunc404@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc402@CBaseCombatCharacter@@UAEDXZ
+  DD OFFSET ?vfunc403@CBaseCombatCharacter@@UAEXXZ
+  DD OFFSET ?vfunc404@CBaseCombatCharacter@@UAEHPAVCBaseEntity@@@Z
   DD OFFSET ?sub_10333700@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z
   DB 328 DUP (0)
   DD OFFSET ??_R4CThrustController@@6B@
@@ -10369,7 +10369,7 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?vfunc2@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc3@CBaseEntity@@UAEPADXZ
   DD OFFSET ?vfunc4@CBaseEntity@@UAEPAXXZ
-  DD OFFSET ?vfunc5@CBasePlayer@@QAEPAV1@I@Z
+  DD OFFSET ?vfunc5@CBasePlayer@@UAEPAVCBaseEntity@@I@Z
   DD OFFSET ?vfunc6@CBaseEntity@@UAEX_N@Z
   DD OFFSET ?sub_100b12e0@CBaseEntity@@QAEXD@Z
   DD OFFSET ?sub_100b17f0@@YIHPAD@Z
@@ -10385,12 +10385,12 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?sub_1009b2c0@CBaseEntity@@QAEXHH@Z
   DD OFFSET ?sub_1009b5a0@CBaseEntity@@QAEXPBD@Z
   DD OFFSET ?sub_1009b500@CBaseEntity@@QAEXPBD@Z
-  DD OFFSET ?vfunc21@CBasePlayer@@QAEXH@Z
-  DD OFFSET ?vfunc22@CBasePlayer@@QAEXH@Z
-  DD OFFSET ?vfunc23@CBasePlayer@@QAEXH@Z
-  DD OFFSET ?vfunc24@CBasePlayer@@UAEXPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc25@CBasePlayer@@QAEXPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc26@CBasePlayer@@QAEXPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc21@CBasePlayer@@UAEXH@Z
+  DD OFFSET ?vfunc22@CBasePlayer@@UAEXH@Z
+  DD OFFSET ?vfunc23@CBasePlayer@@UAEXH@Z
+  DD OFFSET ?vfunc24@CBasePlayer@@UAEXH@Z
+  DD OFFSET ?vfunc25@CBasePlayer@@UAEXH@Z
+  DD OFFSET ?vfunc26@CBasePlayer@@UAEXH@Z
   DD OFFSET ?sub_100265f0@@YGXH@Z
   DD OFFSET ?vfunc28@CBaseEntity@@UAEMXZ
   DD OFFSET ?vfunc29@CBaseEntity@@UAEMXZ
@@ -10446,7 +10446,7 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?sub_1015d660@@YAPAXXZ
   DD OFFSET ?sub_10179740@@YAPAXXZ
   DD OFFSET ?sub_10179760@@YAHXZ
-  DD OFFSET ?vfunc82@CBasePlayer@@UAEPAXXZ
+  DD OFFSET ?vfunc82@CBasePlayer@@UAEPAUdatamap_t@@XZ
   DD OFFSET ?vfunc83@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc84@CBaseEntity@@UAEXH@Z
   DD OFFSET ?sub_100b3d10@CBaseEntity@@QAEHXZ
@@ -10468,7 +10468,7 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?sub_100ab430@@YGXHH@Z
   DD OFFSET ?sub_100ab450@CBaseEntity@@QAEXHHHHH@Z
   DD OFFSET ?sub_1016d260@SV@@QAEXXZ
-  DD OFFSET ?vfunc104@CBasePlayer@@QAEXXZ
+  DD OFFSET ?vfunc104@CBasePlayer@@UAEXXZ
   DD OFFSET ?vfunc105@CBasePlayer@@UAEXPBD@Z
   DD OFFSET ?vfunc106@CBaseCombatCharacter@@UAEXPBD@Z
   DD OFFSET ?vfunc107@CBaseEntity@@UAEXPAVCEntityMapData@@@Z
@@ -10476,9 +10476,9 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?vfunc109@CBaseToggle@@UAE_NPBDM@Z
   DD OFFSET ?vfunc110@CBaseToggle@@UAE_NPBD0@Z
   DD OFFSET ?vfunc111@CBaseCombatCharacter@@UAEXXZ
-  DD OFFSET ?vfunc112@CBasePlayer@@QAEXHH@Z
+  DD OFFSET ?vfunc112@CBasePlayer@@UAEXHH@Z
   DD OFFSET ?vfunc113@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc114@CBasePlayer@@QAEXXZ
+  DD OFFSET ?vfunc114@CBasePlayer@@UAEXXZ
   DD OFFSET ?vfunc115@CBaseEntity@@UAEXH@Z
   DD OFFSET ?vfunc116@CBaseEntity@@UAEHXZ
   DD OFFSET ?sub_1015dd50@CBasePlayer@@QAEDXZ
@@ -10490,12 +10490,12 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?vfunc123@CBasePlayer@@UAEXXZ
   DD OFFSET ?vfunc124@CBasePlayer@@UAEHXZ
   DD OFFSET ?vfunc125@CBaseCombatCharacter@@UAEXXZ
-  DD OFFSET ?vfunc126@CBasePlayer@@QAEHH@Z
-  DD OFFSET ?vfunc127@CBasePlayer@@QAEHPAVCRestore@@@Z
+  DD OFFSET ?vfunc126@CBasePlayer@@UAEHH@Z
+  DD OFFSET ?vfunc127@CBasePlayer@@UAEHH@Z
   DD OFFSET ?sub_1017be30@@YADXZ
   DD OFFSET ?vfunc129@CBaseEntity@@UAEXXZ
-  DD OFFSET ?vfunc130@CBasePlayer@@QAEXD@Z
-  DD OFFSET ?vfunc131@CBasePlayer@@QAEHXZ
+  DD OFFSET ?vfunc130@CBasePlayer@@UAEXH@Z
+  DD OFFSET ?vfunc131@CBasePlayer@@UAEHXZ
   DD OFFSET ?vfunc132@CBaseEntity@@UAEXXZ
   DD OFFSET ?vfunc133@CBaseToggle@@UAEXXZ
   DD OFFSET ?sub_10026c70@CBaseEntity@@QAEXXZ
@@ -10506,16 +10506,16 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?sub_10026d70@@YGXH@Z
   DD OFFSET ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z
   DD OFFSET ?vfunc141@CBasePlayer@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z
-  DD OFFSET ?vfunc142@CBasePlayer@@UAEHPBUCTakeDamageInfo@@@Z
+  DD OFFSET ?vfunc142@CBasePlayer@@UAEHPAX@Z
   DD OFFSET ?vfunc143@CBasePlayer@@UAEHMH@Z
-  DD OFFSET ?vfunc144@CBasePlayer@@UAEXPBX@Z
-  DD OFFSET ?vfunc145@CBaseCombatCharacter@@QAEHXZ
+  DD OFFSET ?vfunc144@CBasePlayer@@UAEXPAX@Z
+  DD OFFSET ?vfunc145@CBaseCombatCharacter@@UAEHXZ
   DD OFFSET ?vfunc146@CBaseEntity@@QAEXPAXABVVector@@0@Z
   DD OFFSET ?sub_10026db0@@YG_NH@Z
   DD OFFSET ?sub_1016aa00@CPlayerAccum_1016aa00@@QAEXHD@Z
-  DD OFFSET ?vfunc149@CBasePlayer@@QAEXHH@Z
+  DD OFFSET ?vfunc149@CBasePlayer@@UAEXHH@Z
   DD OFFSET ?sub_10026e10@@YG_NH@Z
-  DD OFFSET ?vfunc151@CBasePlayer@@QAEXPAVCBaseCombatWeapon@@@Z
+  DD OFFSET ?vfunc151@CBasePlayer@@UAEXPAVCBaseCombatWeapon@@@Z
   DD OFFSET ?vfunc152@CBaseToggle@@QAEMXZ
   DD OFFSET ?vfunc153@CBaseEntity@@QAEHXZ
   DD OFFSET ?vfunc154@CBaseEntity@@QAEHHH@Z
@@ -10545,7 +10545,7 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?vfunc178@CBaseEntity@@QAEXPAV1@@Z
   DD OFFSET ?sub_100270a0@@YAXXZ
   DD OFFSET ?vfunc180@CBasePlayer@@UAEXXZ
-  DD OFFSET ?vfunc181@CBasePlayer@@QAEXPAX00@Z
+  DD OFFSET ?vfunc181@CBasePlayer@@UAEXPAX00@Z
   DD OFFSET ?sub_100ad8f0@@YGXPAX000@Z
   DD OFFSET ?sub_100ad910@@YGXPAX00@Z
   DD OFFSET ?sub_10267260@CEntView184@@QAEXPBMPBXH@Z
@@ -10561,10 +10561,10 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?vfunc194@CBasePlayer@@UAEPAMXZ
   DD OFFSET ?vfunc195@CBasePlayer@@UAEPAMXZ
   DD OFFSET ?vfunc196@CBaseEntity@@QAEHH@Z
-  DD OFFSET ?vfunc197@CBasePlayer@@QAE?AVVector@@ABV2@DD@Z
-  DD OFFSET ?vfunc198@CBasePlayer@@QAEPAXXZ
+  DD OFFSET ?vfunc197@CBasePlayer@@UAE?AVVector@@ABV2@DD@Z
+  DD OFFSET ?vfunc198@CBasePlayer@@UAEPAXXZ
   DD OFFSET ?vfunc199@CBaseAnimating@@QAEXPAM0@Z
-  DD OFFSET ?vfunc200@CBasePlayer@@QAEHXZ
+  DD OFFSET ?vfunc200@CBasePlayer@@UAEHXZ
   DD OFFSET ?vfunc201@CBaseEntity@@QAE_NPAV1@HPAPAV1@H@Z
   DD OFFSET ?vfunc202@CBaseEntity@@QAEXPAV1@@Z
   DD OFFSET ?vfunc203@CBaseEntity@@QAEMXZ
@@ -10604,7 +10604,7 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?vfunc237@CBaseEntity@@QAEHXZ
   DD OFFSET ?vfunc238@CBaseEntity@@QAEXHHHH@Z
   DD OFFSET ?vfunc239@CBaseEntity@@QAE_NM@Z
-  DD OFFSET ?vfunc240@CBaseCombatCharacter@@QAEHXZ
+  DD OFFSET ?vfunc240@CBaseCombatCharacter@@UAEHXZ
   DD OFFSET ?vfunc241@CBaseAnimating@@QAEXPADPAH@Z
   DD OFFSET ?sub_100916a0@@YIMPAD@Z
   DD OFFSET ?vfunc243@CBaseAnimating@@QAEXPBD_N@Z
@@ -10614,34 +10614,34 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?sub_10090c80@@YIXPAVCBaseAnimating@@HH@Z
   DD OFFSET ?sub_10091740@CBaseAnimating@@QAEMXZ
   DD OFFSET ?vfunc249@CBaseAnimating@@QAEMXZ
-  DD OFFSET ?vfunc250@CBaseAnimatingOverlay@@QAEMM@Z
+  DD OFFSET ?vfunc250@CBaseAnimatingOverlay@@UAEMM@Z
   DD OFFSET ?vfunc251@CBaseAnimating@@QAEDXZ
   DD OFFSET ?vfunc252@CBaseCombatCharacter@@UAEHHHH@Z
   DD OFFSET ?vfunc253@CBaseCombatCharacter@@UAEHHHH@Z
   DD OFFSET ?vfunc254@CBaseCombatCharacter@@UAEHHHH@Z
-  DD OFFSET ?vfunc255@CBaseAnimatingOverlay@@QAEXPAX0H@Z
+  DD OFFSET ?vfunc255@CBaseAnimatingOverlay@@UAEXPAX0H@Z
   DD OFFSET ?vfunc256@CBaseAnimating@@QAEXHPAM@Z
   DD OFFSET ?vfunc257@CBaseAnimating@@QAEXHH@Z
-  DD OFFSET ?vfunc258@CBaseAnimatingOverlay@@QAEXMPAX@Z
-  DD OFFSET ?vfunc259@CBasePlayer@@QAEXPAUanimevent_t@@@Z
+  DD OFFSET ?vfunc258@CBaseAnimatingOverlay@@UAEXMPAX@Z
+  DD OFFSET ?vfunc259@CBasePlayer@@UAEXPAX@Z
   DD OFFSET ?sub_10091fe0@@YIMPAVCBaseAnimating@@HHM@Z
   DD OFFSET ?sub_10091f10@CBaseAnimating@@QAEXPBDM@Z
   DD OFFSET ?vfunc262@CBaseAnimating@@QAE_NHPAM@Z
   DD OFFSET ?vfunc263@CBaseAnimating@@QAE?AVVector@@XZ
   DD OFFSET ?vfunc264@CBaseAnimating@@QAEXXZ
-  DD OFFSET ?vfunc265@CBaseAnimatingOverlay@@QAEXHMMHH@Z
-  DD OFFSET ?vfunc266@CBaseAnimatingOverlay@@QAEXXZ
-  DD OFFSET ?vfunc267@CBaseAnimatingOverlay@@QAEHXZ
-  DD OFFSET ?vfunc268@CBaseAnimatingOverlay@@QAEXHHHD@Z
-  DD OFFSET ?vfunc269@CBaseAnimatingOverlay@@QAEXH@Z
-  DD OFFSET ?vfunc270@CBaseAnimatingOverlay@@QAEDH@Z
-  DD OFFSET ?vfunc271@CBaseAnimatingOverlay@@QAEHH@Z
-  DD OFFSET ?vfunc272@CBaseAnimatingOverlay@@QAEHXZ
-  DD OFFSET ?vfunc273@CBaseAnimatingOverlay@@QAEXHDH@Z
-  DD OFFSET ?vfunc274@CBaseAnimatingOverlay@@QAEXH@Z
-  DD OFFSET ?vfunc275@CBaseAnimatingOverlay@@QAEXXZ
-  DD OFFSET ?sub_100b5ce0@CBaseFlex@@QAEXXZ
-  DD OFFSET ?sub_100b5b00@CBaseFlex@@QAEXPBM@Z
+  DD OFFSET ?vfunc265@CBaseAnimatingOverlay@@UAEXHMMHH@Z
+  DD OFFSET ?vfunc266@CBaseAnimatingOverlay@@UAEXXZ
+  DD OFFSET ?vfunc267@CBaseAnimatingOverlay@@UAEHXZ
+  DD OFFSET ?vfunc268@CBaseAnimatingOverlay@@UAEXHHHD@Z
+  DD OFFSET ?vfunc269@CBaseAnimatingOverlay@@UAEXH@Z
+  DD OFFSET ?vfunc270@CBaseAnimatingOverlay@@UAEDH@Z
+  DD OFFSET ?vfunc271@CBaseAnimatingOverlay@@UAEHH@Z
+  DD OFFSET ?vfunc272@CBaseAnimatingOverlay@@UAEHXZ
+  DD OFFSET ?vfunc273@CBaseAnimatingOverlay@@UAEXHDH@Z
+  DD OFFSET ?vfunc274@CBaseAnimatingOverlay@@UAEXH@Z
+  DD OFFSET ?vfunc275@CBaseAnimatingOverlay@@UAEXXZ
+  DD OFFSET ?vfunc276@CBaseFlex@@UAEXXZ
+  DD OFFSET ?vfunc277@CBaseFlex@@UAEXPBM@Z
   DD OFFSET ?vfunc278@CBaseFlex@@UAEPADXZ
   DD OFFSET ?vfunc279@CBaseFlex@@UAEXHM@Z
   DD OFFSET ?vfunc280@CBaseFlex@@UAEXHM@Z
@@ -10685,7 +10685,7 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?vfunc318@CBasePlayer@@UAE_NHPAUmelee_dice_roll_result@@H@Z
   DD OFFSET ?sub_10160d00@CBasePlayerUnit@@QAE_NHPAUmelee_dice_roll_result@@H@Z
   DD OFFSET ?vfunc320@CBasePlayer@@UAE_NHH@Z
-  DD OFFSET ?vfunc321@CBasePlayer@@QAEDH@Z
+  DD OFFSET ?vfunc321@CBasePlayer@@UAEDH@Z
   DD OFFSET ?sub_1014f7d0@@YGXPAX@Z
   DD OFFSET ?vfunc323@CBaseCombatCharacter@@UAEHPBVVector@@@Z
   DD OFFSET ?sub_1014f7f0@@YA_NXZ
@@ -10697,13 +10697,13 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?sub_1014f870@@YGXPAX0@Z
   DD OFFSET ?vfunc331@CBasePlayer@@QAE_NPAVCBaseCombatWeapon@@HHPAH@Z
   DD OFFSET ?sub_1014f890@@YGXPAX@Z
-  DD OFFSET ?vfunc333@CBaseCombatCharacter@@QAEXH@Z
+  DD OFFSET ?vfunc333@CBaseCombatCharacter@@UAEXH@Z
   DD OFFSET ?vfunc334@CBasePlayer@@UAE_NHH@Z
   DD OFFSET ?vfunc335@CBaseCombatCharacter@@QAEXXZ
   DD OFFSET ?vfunc336@CBaseCombatCharacter@@QAEXXZ
   DD OFFSET ?vfunc337@CBaseCombatCharacter@@QAEHXZ
-  DD OFFSET ?vfunc338@CBasePlayer@@QAEXHDH@Z
-  DD OFFSET ?vfunc339@CBasePlayer@@QAEXHMH@Z
+  DD OFFSET ?vfunc338@CBasePlayer@@UAEXHDH@Z
+  DD OFFSET ?vfunc339@CBasePlayer@@UAEXHMH@Z
   DD OFFSET ?vfunc340@CBasePlayer@@QAEHHMM@Z
   DD OFFSET ?sub_10182530@@YAXHM@Z
   DD OFFSET ?vfunc342@CBaseCombatCharacter@@QAEDH@Z
@@ -10723,42 +10723,42 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?vfunc356@CBaseCombatCharacter@@QAEXXZ
   DD OFFSET ?vfunc357@CBaseCombatCharacter@@QAEXXZ
   DD OFFSET ?vfunc358@CBaseCombatCharacter@@QAEXXZ
-  DD OFFSET ?vfunc359@CBasePlayer@@UAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc360@CBasePlayer@@QAE_NXZ
+  DD OFFSET ?vfunc359@CBasePlayer@@UAEHH@Z
+  DD OFFSET ?vfunc360@CBasePlayer@@UAEDXZ
   DD OFFSET ?sub_10168e10@CBasePlayer@@QAE_NXZ
   DD OFFSET ?vfunc362@CBaseCombatCharacter@@QAEDPBM@Z
   DD OFFSET ?vfunc363@CBaseCombatCharacter@@QAEDPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc364@CBaseCombatCharacter@@QAE_NPBVVector@@@Z
   DD OFFSET ?vfunc365@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z
-  DD OFFSET ?vfunc366@CBaseCombatCharacter@@QAE_NHHH@Z
+  DD OFFSET ?vfunc366@CBaseCombatCharacter@@UAE_NHHH@Z
   DD OFFSET ?vfunc367@CBasePlayer@@QAEPAMPAM@Z
-  DD OFFSET ?vfunc368@CBaseCombatCharacter@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc369@CBaseCombatCharacter@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc370@CBaseCombatCharacter@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc371@CBaseCombatCharacter@@QAE?AVVector@@XZ
-  DD OFFSET ?vfunc372@CBaseCombatCharacter@@QAEHH@Z
-  DD OFFSET ?vfunc373@CBaseCombatCharacter@@QAEHH@Z
+  DD OFFSET ?vfunc368@CBaseCombatCharacter@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc369@CBaseCombatCharacter@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc370@CBaseCombatCharacter@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc371@CBaseCombatCharacter@@UAE?AVVector@@XZ
+  DD OFFSET ?vfunc372@CBaseCombatCharacter@@UAEHH@Z
+  DD OFFSET ?vfunc373@CBaseCombatCharacter@@UAEHH@Z
   DD OFFSET ?vfunc374@CBaseCombatCharacter@@UAEHHHH@Z
   DD OFFSET ?vfunc375@CBaseCombatCharacter@@UAEHH@Z
   DD OFFSET ?sub_101647a0@CBasePlayer@@QAEHH@Z
   DD OFFSET ?sub_1014f9d0@@YG_NHH@Z
   DD OFFSET ?sub_1014f9f0@@YG_NHH@Z
   DD OFFSET ?vfunc379@CBasePlayer@@QAEDHHHHHHH@Z
-  DD OFFSET ?vfunc380@CBasePlayer@@QAEXXZ
-  DD OFFSET ?vfunc381@CBaseCombatCharacter@@QAEHH@Z
+  DD OFFSET ?vfunc380@CBasePlayer@@UAEXXZ
+  DD OFFSET ?vfunc381@CBaseCombatCharacter@@UAEHH@Z
   DD OFFSET ?vfunc382@CBasePlayer@@UAE_NPAVCBaseCombatWeapon@@@Z
-  DD OFFSET ?vfunc383@CBasePlayer@@UAEXPAVCBaseEntity@@D@Z
-  DD OFFSET ?vfunc384@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc383@CBasePlayer@@UAEXPAVCBaseCombatWeapon@@D@Z
+  DD OFFSET ?vfunc384@CBaseCombatCharacter@@UAEXPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc385@CBasePlayer@@QAEXPAVCBaseEntity@@HD@Z
-  DD OFFSET ?vfunc386@CBaseCombatCharacter@@QAEXXZ
-  DD OFFSET ?vfunc387@CBaseCombatCharacter@@QAEXXZ
-  DD OFFSET ?vfunc388@CBasePlayer@@UAEDPAVCBaseEntity@@H@Z
-  DD OFFSET ?vfunc389@CBasePlayer@@QAE?AVVector@@ABV2@@Z
+  DD OFFSET ?vfunc386@CBaseCombatCharacter@@UAEXXZ
+  DD OFFSET ?vfunc387@CBaseCombatCharacter@@UAEXXZ
+  DD OFFSET ?vfunc388@CBasePlayer@@UAEDPAXH@Z
+  DD OFFSET ?vfunc389@CBasePlayer@@UAE?AVVector@@ABV2@@Z
   DD OFFSET ?vfunc390@CBasePlayer@@UAEHPAUCTakeDamageInfo@@@Z
-  DD OFFSET ?vfunc391@CBaseCombatCharacter@@QAEHH@Z
-  DD OFFSET ?vfunc392@CBaseCombatCharacter@@QAEHPAX@Z
-  DD OFFSET ?vfunc393@CBaseCombatCharacter@@QAEHXZ
-  DD OFFSET ?vfunc394@CBaseCombatCharacter@@QAEDXZ
+  DD OFFSET ?vfunc391@CBaseCombatCharacter@@UAEHH@Z
+  DD OFFSET ?vfunc392@CBaseCombatCharacter@@UAEHPAX@Z
+  DD OFFSET ?vfunc393@CBaseCombatCharacter@@UAEHXZ
+  DD OFFSET ?vfunc394@CBaseCombatCharacter@@UAEDXZ
   DD OFFSET ?vfunc395@CBaseCombatCharacter@@UAEXXZ
   DD OFFSET ?sub_10325f00@@YI_NPAVCBaseEntity@@@Z
   DD OFFSET ?sub_10325fa0@CBaseCombatCharacter@@QAEDXZ
@@ -10766,9 +10766,9 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?sub_1014fa30@@YA_NXZ
   DD OFFSET ?sub_1014fa50@@YA_NXZ
   DD OFFSET ?sub_10348b00@@YIHPADHH@Z
-  DD OFFSET ?vfunc402@CBaseCombatCharacter@@QAEDXZ
+  DD OFFSET ?vfunc402@CBaseCombatCharacter@@UAEDXZ
   DD OFFSET ?vfunc403@CBasePlayer@@UAEXXZ
-  DD OFFSET ?vfunc404@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z
+  DD OFFSET ?vfunc404@CBaseCombatCharacter@@UAEHPAVCBaseEntity@@@Z
   DD OFFSET ?sub_10333700@CBaseCombatCharacter@@QAEHPAVCBaseEntity@@@Z
   DD OFFSET ?vfunc406@CBasePlayer@@UAEDXZ
   DD OFFSET ?vfunc407@CBasePlayer@@UAEXXZ
@@ -10800,7 +10800,7 @@ PUBLIC ?vt_1046fbb4@@3PAHA
   DD OFFSET ?sub_1016a640@@YIXPAX@Z
   DD OFFSET ?vfunc434@CBasePlayer@@QAEXXZ
   DD OFFSET ?vfunc435@CBasePlayer@@QAEXXZ
-  DD OFFSET ?vfunc436@CBasePlayer@@QAEXXZ
+  DD OFFSET ?vfunc436@CBasePlayer@@UAEXXZ
   DD OFFSET ?vfunc437@CBasePlayer@@QAEXXZ
   DD OFFSET ?vfunc438@CBasePlayer@@UAEXMH@Z
   DD OFFSET ?vfunc439@CBasePlayer@@UAEDXZ
