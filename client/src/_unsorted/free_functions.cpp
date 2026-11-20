@@ -4796,6 +4796,37 @@ int CNamedList9fd0::sub_10149260(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149600 size=0x4c
+#include "CUnknown101e0f00.h"
+#include "S101df260.h"
+struct TailList101e08d0 {
+	int m_n0;
+	int m_nCount;
+	S101df260 **m_pp;
+	S101df260 *sub_101492b0(int i);
+};
+struct EntryView101e08d0 {
+	char m_pad[0x34];
+	char m_b34;
+	char m_pad35[0xdc - 0x35];
+	TailList101e08d0 m_tail;
+	char sub_10149600(int a, int b);
+};
+// TARGET: EntryView101e08d0::sub_10149600
+char EntryView101e08d0::sub_10149600(int a, int b)
+{
+	char *p;
+	for (int i = 0; i < m_tail.m_nCount; i++) {
+		p = &m_tail.sub_101492b0(i)->m_items[4].m_b00;
+		if (*p) {
+			m_b34 = 1;
+			return 1;
+		}
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149890 size=0xee
 #include "CUnknown101e0c30.h"
 
