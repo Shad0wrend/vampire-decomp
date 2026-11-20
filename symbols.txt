@@ -3100,6 +3100,7 @@
 0x10004d13 func   ?sub_100ab250@@YAHPAUCUnknown100ab250@@@Z sub_100ab250
 0x10004d18 func   ?sub_102a1470@@YIHPAUN@@@Z sub_102a1470
 0x10004d1d func   ?vfunc196@CHL2_Player@@QAE?AVVector@@XZ CHL2_Player::vfunc196
+0x10004d1d func   ?vfunc196@CHL2_Player@@UAE?AVVector@@XZ CHL2_Player::vfunc196
 0x10004d22 func   ?sub_10273390@CAI_BaseNPC@@QAEXXZ CAI_BaseNPC::sub_10273390
 0x10004d27 func   ?vfunc5@CNPC_VHuman@@QAEPAV1@H@Z CNPC_VHuman::vfunc5
 0x10004d2c func   ?sub_1022b480@S1022b480@@QAEXAAUinputdata_t@@@Z S1022b480::sub_1022b480
