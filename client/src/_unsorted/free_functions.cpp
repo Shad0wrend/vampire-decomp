@@ -6979,6 +6979,16 @@ int CUtlVector4::sub_101be160(int elem, const int *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be2a0 size=0x34
+#include "UtlVec8.h"
+void UtlVec8::sub_101be2a0(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		sub_101d0f30(&m_pMemory[(elem + num) * 4], &m_pMemory[elem * 4], numToMove * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2cf0 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
