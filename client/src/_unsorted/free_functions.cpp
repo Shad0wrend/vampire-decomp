@@ -655,3 +655,25 @@ int CUnknown100b6f80::sub_100c4b10(CUnknown100b6f80Hdr *hdr, int index, int *pOu
 	return m_count;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100caa00 size=0x7b
+#include "CUtlLinkedList12.h"
+
+void CUtlLinkedList12::sub_100caa00(int elem)
+{
+	if (IsInList(elem)) {
+		CUtlLinkedList12Node *pBase = m_pMemory;
+		CUtlLinkedList12Node *pOldElem = &pBase[elem];
+		if (pOldElem->m_Previous != -1)
+			pBase[pOldElem->m_Previous].m_Next = pOldElem->m_Next;
+		else
+			m_Head = pOldElem->m_Next;
+		if (pOldElem->m_Next != -1)
+			pBase[pOldElem->m_Next].m_Previous = pOldElem->m_Previous;
+		else
+			m_Tail = pOldElem->m_Previous;
+		pOldElem->m_Previous = pOldElem->m_Next = elem;
+		--m_ElementCount;
+	}
+}
+// END FUNCTION
