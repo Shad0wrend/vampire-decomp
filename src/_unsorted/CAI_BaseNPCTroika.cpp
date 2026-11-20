@@ -3960,7 +3960,7 @@ struct CAnimEdictView
 	char m_pad02e4[0x6f0 - 0x2e4];
 	int m_n6f0;
 	char m_pad06f4[4];
-	float m_f6f8;
+	float m_fl6f8;
 };
 
 struct CAnimCharCall
@@ -4130,7 +4130,7 @@ void CAI_BaseNPCTroika::vfunc259(animevent_t *pEvent)
 		if (pEvent->options == 0 || pEvent->options[0] == 0)
 			return;
 		CAnimEdictView *pView = (CAnimEdictView *)this;
-		float fDur = sub_10091080(pView->m_n6f0) * pView->m_f6f8 + 0.1;
+		float fDur = sub_10091080(pView->m_n6f0) * pView->m_fl6f8 + 0.1;
 		((CAnimCharCall *)this)->sub_10106580(pEvent->options, 0, 0, fDur, 0, 1.0f);
 		return;
 	}

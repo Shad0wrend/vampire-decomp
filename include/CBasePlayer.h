@@ -1,12 +1,13 @@
-// CBasePlayer: the player entity.
-// Barely recovered yet: only the members decompiled code needs are named, the
-// rest is padding that keeps their offsets. The vtable is modelled as placeholder
-// slots up to slot 468 (the ones the code calls are typed).
+// CBasePlayer : CBaseCombatCharacter (the game's RTTI; vtable 0x1046fbb4, 469 slots; its data starts at 0x19a8):
+// the player entity. Only the members decompiled code needs are named, the rest is padding that keeps their
+// offsets. Below slot 406 it declares only its own overrides, each with the signature its base gives the slot;
+// its new slots 406..468 follow (placeholders where the code does not call them).
 // New method declarations can go into CBasePlayer_ext.h (included at the end of the method list) so that
 // workers do not overwrite each other's edits of this large file.
 #pragma once
 #include "string_t.h"
 #include "CRestore.h"
+#include "CBaseCombatCharacter.h"
 
 #include "Vector.h"
 #include "utlvector.h"
@@ -59,7 +60,7 @@ struct CBasePlayerPart	// a view object (pointer at +0x2104 / +0x2108); slots 21
 	CBP_V10(qa) CBP_V10(qb) CBP_V1(qc)
 	virtual void vfunc21(int a);
 	CBP_V10(qd) CBP_V1(qe0) CBP_V1(qe1) CBP_V1(qe2)
-	virtual void vfunc35(int a);
+	virtual void vfunc35(float *pOrigin, const char *pName, int a);	// with this player's slot 217 (its origin), a name and 0
 };
 
 struct CBasePlayerPartOwner	// the object at +0x2100; only slot 5 is typed
@@ -101,74 +102,66 @@ struct CBasePlayerFadeRec	// a saved fade (0x10 bytes)
 	float m_flValue;
 };
 
-class CBasePlayer
+class CBasePlayer : public CBaseCombatCharacter
 {
 public:
-	// slots 0..63
-	CBP_V10(sa0) CBP_V10(sa1) CBP_V1(sa20) CBP_V1(sa21) CBP_V1(sa22) CBP_V1(sa23) virtual void vfunc24(CBaseEntity *pOther); CBP_V1(sa25) CBP_V1(sa26) CBP_V1(sa27) CBP_V1(sa28) CBP_V1(sa29) CBP_V1(sa30) virtual void vfunc31(int pDump); CBP_V1(sa32) CBP_V1(sa33) CBP_V1(sa34) CBP_V1(sa35) CBP_V1(sa36) CBP_V1(sa37) CBP_V1(sa38) CBP_V1(sa39) CBP_V10(sa4) CBP_V10(sa5) CBP_V1(sa6) CBP_V1(sa7) CBP_V1(sa8) CBP_V1(sa9)
-	virtual void vfunc64(float *pVec);
-	// slots 65..220
-	CBP_V10(sb0) CBP_V10(sb1) CBP_V1(sb20) CBP_V1(sb21) CBP_V1(sb22) CBP_V1(sb23) CBP_V1(sb24) CBP_V1(sb25) CBP_V1(sb26) virtual int vfunc92(); virtual void vfunc93(int a, int b);
-	virtual int vfunc94();	// slot 94 (+0x178), CBaseEntity::vfunc94: the move type (10 = the value CWeaponUnarmed::vfunc319 sends the view message 0x4c for)
-	CBP_V10(sb3) virtual void vfunc105(const char *pszModel); CBP_V1(sb41) CBP_V1(sb42) CBP_V1(sb43) CBP_V1(sb44) CBP_V1(sb45) CBP_V1(sb46) CBP_V1(sb47) CBP_V1(sb48) CBP_V1(sb49) CBP_V1(sb50) CBP_V1(sb51) CBP_V1(sb52) CBP_V1(sb53) CBP_V1(sb54) CBP_V1(sb55) CBP_V1(sb56) CBP_V1(sb57) virtual void vfunc123();	/* slot 123 "CBasePlayer::DrawDebugGeometryOverlays" (0x10162340) */ virtual int vfunc124(); CBP_V10(sb6)
-	CBP_V1(sb70) CBP_V1(sb71) CBP_V1(sb72) CBP_V1(sb73) CBP_V1(sb74) CBP_V1(sb75) virtual void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace); virtual int vfunc142(const struct CTakeDamageInfo *pInfo);
+	// Its own slots below 406 (the base declares every slot). The plain members of the slot's signature override
+	// by themselves: 5, 21..23, 25, 26, 82, 104, 112, 114, 126, 127, 130, 131, 138, 149, 151, 181, 197, 198,
+	// 200, 259, 321, 338, 339, 360, 380 and 389.
+	virtual void vfunc24(int pOther);
+	virtual void vfunc31(int pDump);
+	virtual int vfunc79(); virtual int vfunc80(); virtual int vfunc81();	// matched as sub_1015d660, sub_10179740, sub_10179760
+	virtual void vfunc103();	// the game's 0x1016d260, matched as SV::sub_1016d260
+	virtual void vfunc105(const char *pszModel);
+	virtual int vfunc117();	// matched as CBasePlayer::sub_1015dd50
+	virtual void vfunc123();
+	virtual int vfunc124();
+	virtual bool vfunc128();	// matched as sub_1017be30
+	virtual void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace);
+	virtual int vfunc142(void *pInfo);	// the damage info (const CTakeDamageInfo *)
 	virtual int vfunc143(float flHealth, int bitsDamageType);	// slot 143 "TakeHealth": clears the discipline effect bits of +0xe98 (bitsDamageType & 0x3fff), then the character's TakeHealth
-	virtual void vfunc144(const void *pArg);	// slot 144: takes a damage info (CUnknown101c26d0, the force vector at +4); sub_10170d60 hands it a random force
-	virtual int vfunc145();	// slot 145: the int handed to sub_102699e0 as its second argument
-	CBP_V1(sb81) CBP_V1(sb82) CBP_V1(sb83) CBP_V1(sb84) CBP_V1(sb85) CBP_V1(sb86) CBP_V1(sb87) CBP_V1(sb88) CBP_V1(sb89) CBP_V1(sb90) CBP_V1(sb91) CBP_V1(sb92) virtual char vfunc158(); CBP_V1(sb94) CBP_V1(sb95) CBP_V1(sb96) virtual char vfunc162(); CBP_V1(sb98) CBP_V1(sb99)
-	CBP_V1(sc00) virtual char vfunc166(CBaseEntity *pEnt); CBP_V1(sc02) CBP_V1(sc03)	// slots 165..168
-	virtual void vfunc169(const Vector *pPunch);	// slot 169: takes the pointer of a view punch angle
+	virtual void vfunc144(void *pArg);	// slot 144: takes a damage info (CUnknown101c26d0, the force vector at +4); sub_10170d60 hands it a random force
+	virtual void vfunc148();	// matched as CPlayerAccum_1016aa00::sub_1016aa00
+	virtual char vfunc162();
+	virtual void vfunc167();	// matched as CBasePlayer::sub_1015dc60
+	virtual void vfunc169(const Vector *pPunch);	// matched as CBasePlayer::sub_101710b0
 	virtual void vfunc170(const Vector *pOffset);	// slot 170: sub_100b3640(1), then sub_100b2e30 with the vector at +0x3d4 plus pOffset
- CBP_V1(sc06) CBP_V1(sc07) CBP_V1(sc08) CBP_V1(sc09)	// slots 170..174
-	CBP_V1(sc10) CBP_V1(sc11) CBP_V1(sc12) CBP_V1(sc13) CBP_V1(sc14)	// slots 175..179
 	virtual void vfunc180();	// slot 180: view parts released from the physics environment, then CBaseCombatCharacter::vfunc180
-	CBP_V1(sc16) CBP_V1(sc17) CBP_V1(sc18) CBP_V1(sc19)	// slots 181..184
-	void sub_1000b0c8();	// CBaseCombatCharacter::vfunc180, called directly
-	CBP_V1(sc20) CBP_V1(sc21) CBP_V1(sc22) CBP_V1(sc23) CBP_V1(sc24) CBP_V1(sc25) CBP_V1(sc26)
-	virtual Vector vfunc192();	// "EyePosition"-like getter returning the vector by value (hidden pointer, ret 4)
 	virtual Vector vfunc193();	// slot 193 \"EyePosition\" (by value, hidden result pointer)
 	virtual float *vfunc194();	// slot 194 "GetAbsAngles"-like: the player's angles (+0x206c) in world space: with a live move parent (handle at +0x25c) its matrix (+0x130, slot 98 first when bit 11 of its flags +0x268 is set) times the angles' matrix, turned back into angles in a static; else the angles themselves
-	virtual float *vfunc195(); CBP_V1(sc31) CBP_V1(sc32) CBP_V1(sc33) CBP_V1(sc34) CBP_V1(sc35) CBP_V1(sc36) CBP_V1(sc37) CBP_V1(sc38) CBP_V1(sc39) CBP_V1(sc40) CBP_V1(sc41) CBP_V1(sc42) CBP_V1(sc43)
-	virtual CBaseEntity *vfunc209();	// slot 209: an entity (the player's ground / move parent entity); null when none
-	CBP_V1(sc45) virtual unsigned int vfunc211(); CBP_V1(sc47) CBP_V1(sc48) CBP_V1(sc49)
-	CBP_V1(sd0) virtual void vfunc216(float *pOrigin);
-	virtual int vfunc217(const void *pName, int a);
-	virtual void vfunc218(float *pAngles);	// slot 218: SetAbsAngles (the teleport_player command 0x101803a0 passes the vector it wrote to +0x206c)
-	virtual float *vfunc219();
-	virtual float *vfunc220();	// "CBaseEntity::GetOrigin"
-	virtual float *vfunc221();
-	void vfunc259(struct animevent_t *pInput);	// slot 259 (0x10178a10): the player's scene/expression input handler (plain member so it can be defined; the slot itself is the se37 placeholder)
-	void sub_1032e330(struct animevent_t *pInput);	// CBaseCombatCharacter::vfunc259 body at 0x1032e330, called directly (the default branch)
-	// slots 222..402
-	CBP_V1(se00) CBP_V1(se01) CBP_V1(se02) CBP_V1(se03) CBP_V1(se04) CBP_V1(se05) CBP_V1(se06) virtual void vfunc229(CBaseEntity *pOther); CBP_V1(se08) CBP_V1(se09) CBP_V10(se1) CBP_V10(se2) CBP_V10(se3) CBP_V10(se4) CBP_V10(se5) CBP_V10(se6) CBP_V1(se70) CBP_V1(se71) CBP_V1(se72) CBP_V1(se73) CBP_V1(se74) CBP_V1(se75) virtual int vfunc298(int a); CBP_V1(se77)
+	virtual float *vfunc195();
+	virtual void vfunc226(int a);	// matched as sub_1017b880
+	virtual void vfunc229(CBaseEntity *pOther);
+	virtual int vfunc298(int a);
 	virtual void vfunc300(CBaseEntity *pVictim, char bQuiet, int n);	// slot 300 (ret 0xc), CBaseCombatCharacter::vfunc300 (sub_1032c580 stub 0x100051b9) first with the same arguments; then, when pVictim says sub_1033d580(this), sub_1022d9d0(this, 3); with the active weapon's slot 360 flags having 0x18000 and the character's stat list of type 3 value of stat 9 above 0 the Potence death blow effect (two D_Potence_DeathBlow emitters through CDisciplineParticle::sub_10050d90); then, unless bQuiet, a criminal level step: sub_1017e150(4, -1.0f, sub_101d3730("Event_TookLife %s", pVictim ? pVictim->GetDebugName() : "UNKNOWN"))
-	CBP_V1(se79) CBP_V10(se8)
-	CBP_V1(se90) CBP_V1(se91) CBP_V1(se92) CBP_V1(se93)
+	virtual void vfunc302(); virtual void vfunc303();	// matched as sub_10182ec0, sub_10182f10
+	virtual void vfunc306(CBaseCombatCharacter *pTarget, char bUseEyes);	// matched as CBasePlayer::sub_10178660
 	virtual void vfunc316(CGlobalEntityList_Ent *pEnt, int a, int b);	// slot 316: with an entity: unless the entity of the handle at +0x1c58 is live, answers slot 158 and differs from pEnt, takes over pEnt's handle into +0x1c5c / +0x1c60 while the activity at +0xff0 is 1 or 5 and sub_1015fd50() is -1
-	CBP_V1(se95)
 	virtual bool vfunc318(int a, melee_dice_roll_result *pRoll, int c);	// slot 318: false without a roll; when the roll hit (AttackHit) adds the soak dice of the character's first stat list (stat 2) to it and picks the reaction activity by the roll's level (level 3: 0x1156 with a 1.0f pause, else 0x52 with 0.3f); starts the activity (sub_101644f0), copies +0x1488 to +0x6f4 and arms the timer at +0x1564; true
-	CBP_V1(se97) virtual bool vfunc320(int a, int b); CBP_V1(se99)
-	CBP_V1(sf00) CBP_V1(sf01) CBP_V1(sf02) CBP_V1(sf03)
+	virtual void vfunc319();	// matched as CBasePlayerUnit::sub_10160d00
+	virtual bool vfunc320(int a, int b);
 	virtual bool vfunc326(int a, CBaseEntity *pOther);	// slot 326: when the active weapon's type flags (slot 360) have bit 13 or 14, false unless pOther is set and its character template (default stat item) has the byte at +0xa0; else CBaseCombatCharacter::vfunc326(a, pOther)
-	virtual char vfunc327(); virtual char vfunc328(); CBP_V1(sf07) CBP_V1(sf08) CBP_V1(sf09)
-	CBP_V1(sf10) CBP_V1(sf11)
+	virtual char vfunc327(); virtual char vfunc328();
+	virtual void vfunc331(CBaseCombatWeapon *pWeapon, CBaseEntity *pEnemy, int nActivity, int *pOutSequence);	// the slot's signature; the function is the plain bool vfunc331 (CBasePlayer_ext.h)
 	virtual bool vfunc334(int a, int b);	// slot 334: whether the player may act with the given kind of action (4 = use): the use entity answering 300 allows it; a dialog partner, a fade, the use entity, a local-player state or the discipline record forbid it; else CBaseCombatCharacter::vfunc334
-	CBP_V1(sf13) CBP_V1(sf14) CBP_V1(sf15) CBP_V1(sf16) CBP_V1(sf17) CBP_V1(sf18) CBP_V1(sf19) CBP_V10(sf2) CBP_V1(sf30) CBP_V1(sf31) CBP_V1(sf32) CBP_V1(sf33) CBP_V1(sf34) CBP_V1(sf35) CBP_V1(sf36) CBP_V1(sf37)
-	virtual int vfunc359(CBaseEntity *pEnt);	// slot 359: 3 while the frenzy count (+0x146c) is positive, -1 without an entity, else by the game rules' relation (slot 64): 5 / 1 / 2
-	CBP_V1(sf39) CBP_V1(sf40) CBP_V1(sf41) CBP_V1(sf42) CBP_V1(sf43) CBP_V1(sf44) CBP_V1(sf45)
-	virtual Vector vfunc368();	// slot 368 (+0x5c0) "CBaseCombatCharacter::BodyDirection2D": the body's forward direction, flattened and normalised; returned by value (hidden result pointer, ret 4)
-	virtual Vector vfunc369();	// slot 369 (+0x5c4) "CBaseCombatCharacter::BodyDirection3D": the body's 3D forward direction, returned by value (hidden result pointer, ret 4)
-	CBP_V1(sf48) CBP_V1(sf49) CBP_V1(sf50) CBP_V1(sf51) CBP_V1(sf52) virtual int vfunc375(int a); virtual int vfunc376(int a); CBP_V1(sf55) CBP_V1(sf56) CBP_V1(sf57) CBP_V1(sf58) virtual int vfunc381(int a);
+	virtual void vfunc340(int a, int b, int c);	// the slot's signature; the function is the plain int vfunc340 below
+	virtual void vfunc341(int discipline, int unused);	// matched as sub_10182530
+	virtual int vfunc359(int pEnt);	// the entity (CBaseEntity *)
+	virtual void vfunc361();	// matched as CBasePlayer::sub_10168e10
+	virtual QAngle vfunc367();	// the slot's signature; the function is the plain float *vfunc367(float *out) below
+	virtual int vfunc376(int a);	// matched as CBasePlayer::sub_101647a0
+	virtual char vfunc379(CBaseEntity *pTarget, int nRole, int nType, int a4, int a5, int a6, char bHolster);	// the slot's signature; the function is the plain vfunc379 (CBasePlayer_ext.h)
 	virtual bool vfunc382(CBaseCombatWeapon *pWeapon);	// slot 382 "Weapon_CanUse": true unless the weapon is of the two type flags 0x18000 and the player already owns a weapon of its class, then the player object at +0xa8 is sent message 0x4e with the weapon owner's text and false is returned
-	virtual void vfunc383(CBaseEntity *pWeapon, char bNoSwitch);	// slot 383 "Weapon_Equip": CBaseCombatCharacter::vfunc383, and (unless bNoSwitch) a new holder entity for the weapon's class (handle at +0x1c64) plus the game rules' FShouldSwitchWeapon / slot 388 switch
-	CBP_V1(sf62) CBP_V1(sf63) CBP_V1(sf64) CBP_V1(sf65)
-	virtual char vfunc388(CBaseEntity *pWeapon, int a);	// slot 388: switches to the given weapon (answers in al: false when it could not, CWeaponUnarmed::vfunc319 tests it)
-	virtual void vfunc389(Vector *pOut, const Vector *pOrigin);	// slot 389 (+0x614): fills pOut with the view angles for pOrigin
+	virtual void vfunc383(CBaseCombatWeapon *pWeapon, char bNoSwitch);	// slot 383 "Weapon_Equip": CBaseCombatCharacter::vfunc383, and (unless bNoSwitch) a new holder entity for the weapon's class (handle at +0x1c64) plus the game rules' FShouldSwitchWeapon / slot 388 switch
+	virtual void vfunc385(CBaseCombatWeapon *pWeapon, int nUnused, char bForce);	// the slot's signature; the function is the plain vfunc385 (CBasePlayer_ext.h)
+	virtual char vfunc388(void *pWeapon, int a);	// slot 388: switches to the given weapon (answers in al: false when it could not, CWeaponUnarmed::vfunc319 tests it)
 	virtual int vfunc390(struct CTakeDamageInfo *pInfo);	// slot 390: OnTakeDamage_Alive override (applies the damage flags, then the base)
-	CBP_V1(sf69)
-	CBP_V10(sf7) CBP_V1(sg0)
 	virtual void vfunc403();
-	CBP_V1(sh0) CBP_V1(sh1) virtual char vfunc406();
+	void sub_1000b0c8();	// CBaseCombatCharacter::vfunc180, called directly
+	void vfunc259(void *pInput);	// slot 259 (0x10178a10): the player's scene/expression input handler (plain member so it can be defined; the slot itself is the se37 placeholder)
+	void sub_1032e330(struct animevent_t *pInput);	// CBaseCombatCharacter::vfunc259 body at 0x1032e330, called directly (the default branch)
+	// its new slots 406..468
+	virtual char vfunc406();
 	virtual void vfunc407();
 	virtual void vfunc408();
 	// slots 409..447
@@ -211,99 +204,10 @@ public:
 	virtual void vfunc468();	// registers the "player_stand" / "player_crouch" collision hulls (16x16x36 and -16,-16,0) for the sub-object at +0x270
 
 	void vfunc437();	// slot 437: player per-frame update
-	char m_pad0004[0x184 - 0x4];	// 0x0004 .. 0x0183
-	Vector m_vecViewOffset184;	// 0x0184: the eye offset (CBaseEntity::m_vecViewOffset)
-	Vector m_vecMovedir190;
-	char m_pad019c[0x1fc - 0x19c];	// 0x019c .. 0x01FB
-	int m_nTakeDamage1FC;	// 0x01FC: the take-damage mode (CBaseEntity::m_nTakeDamage)
-	char m_pad0200[0x210 - 0x200];	// 0x0200 .. 0x020F
-	int m_iHealth;	// 0x0210
-	char m_pad0214[0x224 - 0x214];	// 0x0214 .. 0x0223
-	unsigned int m_fDebugOverlays224;	// 0x0224
-	char m_pad0228[0x22c - 0x228];	// 0x0228 .. 0x022B
-	int m_n22C;	// 0x022C: set to -1 when the command run is paused
-	char m_pad0230[0x268 - 0x230];	// 0x0230 .. 0x0267
-	unsigned int m_fFlags268;	// 0x0268: the entity flag word (bit 12 = attached to a parent)
-	const char *m_name26c;	// 0x026C: the entity name
 	void sub_1015f150(struct inputdata_t *pInput);	// "CBasePlayer::InputPlayHUDParticle"
 	void sub_1015f330(struct inputdata_t *pInput);	// "CBasePlayer::InputStopHUDParticle" (stub 0x10015ae1)
-	CBasePlayerSub270 m_sub270;	// 0x0270
-	char m_pad0274[0x6c];	// 0x0274 .. 0x02DF
-	int m_n02E0;
-	char m_pad02E4[0x368 - 0x2e4];
-	int m_nCollisionGroup368;	// 0x368: the collision group CTraceFilterSimple is given
-	char m_pad036C[0x3b0 - 0x36c];
 	CBaseEntity *sub_1016a030(unsigned int mask, int unused);	// the player-side "find a ledge / wall to climb" probe (ret 8): a flat hull trace along the view direction (slot 466 long) with mask, then, when it hits a wall facing the player (normal . dir <= -0.5), a second trace from the reflected point raised by slot 465; returns the hit entity unless slot 166 refuses it
-	Vector m_vec03B0;	// 0x03B0: the velocity
-	Vector m_vec03BC;	// 0x03BC: the base velocity
-	char m_pad03C8[0x3d4 - 0x3c8];	// 0x03C8 .. 0x03D3
-	Vector m_vec03D4;	// 0x03D4
-	int m_n03E0;	// 0x03E0: the move type
-	char m_pad03E4[0x65c - 0x3e4];	// 0x03E4 .. 0x065B
-	char m_b65c;	// 0x065C
-	char m_pad065D[0x6f0 - 0x65d];	// 0x065D .. 0x06EF
-	int m_n6F0;	// 0x06F0: the sequence (CBaseAnimating::m_nSequence)
-	char m_pad06F4[0x6f8 - 0x6f4];	// 0x06F4 .. 0x06F7
-	float m_f6f8;	// 0x06F8
-	char m_pad06FC[0xe98 - 0x6fc];	// 0x06FC .. 0x0E97
-	unsigned int m_flags0E98;	// 0x0E98: the discipline effect mask (bit 0x8000 << i)
-	char m_pad0E9C[0xea0 - 0xe9c];
-	char m_b0EA0;	// 0x0EA0
-	char m_pad0EA1[0xea4 - 0xea1];
-	unsigned int m_hEnt0EA4;	// entity handle
-	EHANDLE m_hEnt0EA8;	// 0x0EA8: a second entity handle next to +0xea4 (CWeaponUnarmed::vfunc319 resolves both)
-	char m_pad0EAC[0xfe8 - 0xeac];	// 0x0EA8 .. 0x0FE7
-	unsigned int m_hDialogPartnerFE8;	// 0x0FE8: entity handle
-	int m_nFEC;	// 0x0FEC
-	int m_nFF0;	// 0x0FF0: the activity
-	int m_n0FF4;	// 0x0FF4: the translated activity
-	char m_pad0FF8[0x1040 - 0xff8];	// 0x0FF8 .. 0x103F
-	unsigned int m_hUseEnt1040;	// 0x1040: entity handle
-	int m_n1044;	// 0x1044: reset to -1 by the death handler (vfunc144)
-	int m_n1048;	// 0x1048: 0 on death
-	int m_n104C;	// 0x104C: 0 on death
-	int m_n1050;	// 0x1050: 0 on death
-	char m_pad1054[0x10dc - 0x1054];
-	EHANDLE m_hEnt10DC;	// 0x10DC: entity handle
-	EHANDLE m_hEnt10E0;	// 0x10E0: entity handle
-	char m_pad10E4[0x146c - 0x10e4];
-	int m_n146c;	// 0x146c: the frenzy count
-	char m_pad1470[4];
-	char m_b1474;
-	char m_b1475;
-	char m_b1476;	// 0x1476: cleared by the death handler (vfunc144)
-	char m_pad1477;
-	float m_f1478;	// 0x1478: the time the fade of the feeding started / ends
-	float m_f147C;	// 0x147C
-	char m_pad1480[0x1488 - 0x1480];	// 0x1480 .. 0x1487
-	float m_flSpeedScale1488;	// 0x1488: multiplies sv_runscale / sv_sneakscale (CHL2_Player::vfunc436)
-	float m_f148C;	// 0x148C
-	char m_pad1490[0x149c - 0x1490];	// 0x1490 .. 0x149B
-	int m_h149C;	// 0x149C: the feeding target handle (-1 on death, vfunc144; CBaseCombatCharacter::m_h149c)
-	int m_n14A0;	// 0x14A0: the blood pool (checked > 0 after the feeding steps)
-	char m_pad14A4[4];	// 0x14A4 .. 0x14A7
-	char m_b14A8;
-	char m_pad14A9;
-	char m_b14AA;	// 0x14AA: cleared by the death handler (vfunc144)
-	char m_pad14AB;
-	int m_n14AC;	// 0x14AC: -1 on death (vfunc144)
-	int m_n14B0;	// 0x14B0
-	int m_n14B4;	// 0x14B4
-	char m_pad14B8[0x14dc - 0x14b8];	// 0x14B8 .. 0x14DB
-	char m_b14DC;	// 0x14DC: cleared by the death handler (vfunc144)
-	char m_pad14DD[0x1538 - 0x14dd];	// 0x14DD .. 0x1537
-	unsigned int m_h1538;	// entity handle
-	int m_n153C;
-	int m_n1540;
-	char m_pad1544[0x18];	// 0x1544 .. 0x155B
-	unsigned int m_h155C;	// 0x155C: entity handle
-	char m_pad1560[4];	// 0x1560 .. 0x1563
-	float m_f1564;
-	char m_pad1568[0x1588 - 0x1568];
-	bool m_bCanSwitchWeapons;	// 0x1588: weapons may be switched (CBaseCombatCharacter)
-	char m_pad1589[0x1594 - 0x1589];
-	int m_nHitBoxSet1594;	// 0x1594 (CBaseCombatCharacter::m_nHitBoxSet1594): the hit group of the last damage
-	char m_pad1598[0x19b0 - 0x1598];
+	char m_pad19a8[0x19b0 - 0x19a8];	// 0x19A8 .. 0x19AF
 	float m_flLastCombatAnimTime;	// 0x19b0
 	char m_pad19b4[0x19b8 - 0x19b4];	// 0x1568 .. 0x19B7
 	float m_flFadeStart19B8;	// 0x19B8: when the fade began
@@ -603,13 +507,15 @@ public:
 	// ~CBasePlayer body (sub_1015df00, called by vfunc5 via stub 0x100017d5): views of the members it tears down, in destruction order.
 	// Layout stays padding; the element types of the vectors are not known (CUtlVector<int> stands in), see the note on 0x1015df00.
 	void sub_1015df00();	// destructor body: vptr 0x1046fbb4, delete [+0x1d24] (dtor stub 0x1000546b), delete [+0x245c] (CUtlVector, RemoveAll 0x10185790 + Purge 0x101857b0), vectors at +0x23bc, +0x1e28 (vptrs CUserCmd 0x10462854 at +0x235c, CPlayerLocalPredictedData 0x10470490 at +0x1e40), +0x1e10, +0x1d90, +0x1d7c, +0x1d68, object +0x1a1c (sub_1017a290), +0x19d8; tail jmp 0x100078c4 -> CBaseCombatCharacter body 0x103274d0
+	CBasePlayerSub270 &Sub270() { return *(CBasePlayerSub270 *)((char *)this + 0x270); }	// the small polymorphic object at +0x270 (inside CBaseEntity's m_pad0270)
+	int &MoveType3e0() { return *(int *)((char *)this + 0x3e0); }	// 0x3e0: the move type (inside CBaseToggle's m_pad03e0)
 	void *&Ptr1d24() { return *(void **)((char *)this + 0x1d24); }	// deleted object (inside m_pad1CE4)
 	CUtlVector<int> &Vec1e10() { return *(CUtlVector<int> *)((char *)this + 0x1e10); }	// inside m_pad1E10
 	CUtlVector<int> &Vec1d90() { return *(CUtlVector<int> *)((char *)this + 0x1d90); }	// inside m_pad1D90
 	CUtlVector<int> &Vec1d68() { return *(CUtlVector<int> *)((char *)this + 0x1d68); }	// overlaps m_pQuestRecords1D68 (its memory pointer) and m_nQuestRecords1D74 (its size)
 	CUtlVector<int> &Vec23bc() { return *(CUtlVector<int> *)((char *)this + 0x23bc); }	// same storage as m_SimulationList
 	void *Obj1a1c() { return (char *)this + 0x1a1c; }	// object destroyed by sub_1017a290 (no ecx-typed member known), inside m_pad1A00
-	int vfunc127(CRestore *pRestore);	// slot 127 override, "CBasePlayer::Restore"/Spawn-like (plain member): +0x1e00 = 1; r = sub_10348890(pRestore); stub 0x10015311 (-> 0x1009d960, cdecl 2 args) on +0x1ce0 (2), +0x1ce4 (2), +0x1cf8 (4); on failure +0x1e00 = 0, return 0; sub_103239a0("player"); when the landmark ([gpGlobals+0x20]+0x12dc) is 0: Msg("No Landmark:%s\n", +0x12e0), the entity of slot 453 gives the spawn: slot 62(its slot 220 origin + 1.0f in z), slot 64(its slot 221); then slot 64({0, [+0x2070], [+0x2074]}), +0x2074 = 0, +0x207c = 1, +0x1570 = 0xf7, g_1070ba28 = slot 8(); with sub_100b3700() & 2: sub_1016b750(this), hull (-16,-16,0)..(16,16,36) via sub_101cf390(this, &mins, &maxs), +0x1edd = 1; else +0x1edd = 0 and the hull to 72; slot 468; sub_1017c830; +0x1dc0 = 0, +0x1e00 = 0; sub_10299ce0(pRestore); return 1
+	int vfunc127(int pRestore);	// slot 127 override, "CBasePlayer::Restore"/Spawn-like (plain member): +0x1e00 = 1; r = sub_10348890(pRestore); stub 0x10015311 (-> 0x1009d960, cdecl 2 args) on +0x1ce0 (2), +0x1ce4 (2), +0x1cf8 (4); on failure +0x1e00 = 0, return 0; sub_103239a0("player"); when the landmark ([gpGlobals+0x20]+0x12dc) is 0: Msg("No Landmark:%s\n", +0x12e0), the entity of slot 453 gives the spawn: slot 62(its slot 220 origin + 1.0f in z), slot 64(its slot 221); then slot 64({0, [+0x2070], [+0x2074]}), +0x2074 = 0, +0x207c = 1, +0x1570 = 0xf7, g_1070ba28 = slot 8(); with sub_100b3700() & 2: sub_1016b750(this), hull (-16,-16,0)..(16,16,36) via sub_101cf390(this, &mins, &maxs), +0x1edd = 1; else +0x1edd = 0 and the hull to 72; slot 468; sub_1017c830; +0x1dc0 = 0, +0x1e00 = 0; sub_10299ce0(pRestore); return 1
 	int sub_10348890(CRestore *pRestore);	// CBaseCombatCharacter::vfunc127 (stub 0x10010d48), called directly
 	void sub_103239a0(const char *pszName);	// CBaseCombatCharacter member (stub 0x10015bcc), called with "player"
 	float sub_1017d900();	// fade progress 0..1 of the timer at +0x19b8 / +0x19bc (needs a live entity at +0x19c0 or +0x19cc), resets the fade fields when it has ended
@@ -621,7 +527,7 @@ public:
 	CBaseEntity *sub_1015dc60();	// slot 167 override: resolves the entity handle at +0x1c60 (null when stale)
 	bool sub_10168e10();	// slot 361 override: true when the entity handle at +0xfe8 does not resolve
 	bool sub_1015ff40();	// slot 411: true when the byte at +0x1edc is set, or the float at +0x19b0 (stamped with curtime while slot 158 of the entity at +0x1c58 is true) is positive and less than 5 seconds old
-	CBasePlayer *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
+	CBaseEntity *vfunc5(unsigned int flags);	// as in CPhysForce (transplant)
 	void sub_100017d5();	// as in CPhysForce (transplant)
 	float *vfunc367(float *out);	// as in CBaseEntity (transplant)
 	int sub_101647a0(int act);	// NPC_TranslateActivity: scope-traced, 0x16 -> 9, 0x17 -> 0x13
@@ -672,7 +578,7 @@ public:
 	void sub_103345d0();	// CZeroFields103345d0::sub_103345d0 (stub 0x10015000), called directly
 	CBaseEntity *sub_10163f70();	// the player's hud fire emitter: the entity of the handle at +0x1d64, or a new "DMGFX_hud_fire_emitter" (env_particle) attached to the entity sub_1015d680(0) resolves, whose handle is stored again (cleared when none could be made)
 	void sub_10167030(Vector vecOrigin, Vector vecTarget);	// teleports / places the player: flag bit 5 at +0x20f0, the spawn angles global copied to +0x184, vecTarget (after slot 64 adjusted it) stored at +0x206c, +0x207c = 1, solid flag 4 added, take damage 0, move type 0, model index 0, then sub_101cf5c0(this, &vecOrigin, 0)
-	void vfunc103();	// slot 103 (declared as a plain member; the CHL2_Player override calls it): slot 407, sub_1015ef00, SetSolid(0) (inlined scope trace), move type (9, 0), sub_101cf600(this), RemoveFlag(1), then slot 457("item_w_fists", 0)
+	void sub_1015efa0();	// CHL2_Player's slot 103 ends with it (it was named vfunc103, but CBasePlayer's slot 103 is 0x1016d260): slot 407, sub_1015ef00, SetSolid(0) (inlined scope trace), move type (9, 0), sub_101cf600(this), RemoveFlag(1), then slot 457("item_w_fists", 0)
 	void sub_1017d460(CBaseEntity *pEnt, float flBlend);
 	void sub_1017d280(CBaseEntity *pEnt, float flBlend);
 	void sub_1017d0b0(float flBlend);	// stub 0x100051d2, called by CBaseCombatCharacter::SetAsCameraTarget(this, 0) for every connected player
@@ -688,10 +594,10 @@ public:
 	void sub_100b1d10();	// CBaseEntity member (stub 0x1000d486), called directly by slot 434
 	void vfunc434();	// slot 434 (plain member): with the player on the ground (flags bit 0, not bit 2, move type below 2): slot 449(2, 0), stamps the time at +0x148c and, when the entity of slot 209 has flag bit 12, hands the velocity plus the base velocity to sub_100b2e30
 
-	void vfunc25(CBaseEntity *pOther);	// slot 25 override (plain member beside the placeholder sa25; twin of slot 26): with an entity, the handle at +0x1c60 becomes the handle of its owning object (+0x9c, -1 when none)
-	void vfunc26(CBaseEntity *pOther);
-	virtual void *vfunc82();	// slot 82: the class's datamap
-	virtual int vfunc138();	// slot 138	// slot 26 override (plain member beside the placeholder sa26; twin of slot 25): with an entity, the handle at +0x1c60 becomes the handle of its owning object (+0x9c, -1 when none)
+	void vfunc25(int pOther);	// slot 25 override (plain member beside the placeholder sa25; twin of slot 26): with an entity, the handle at +0x1c60 becomes the handle of its owning object (+0x9c, -1 when none)
+	void vfunc26(int pOther);
+	datamap_t *vfunc82();	// slot 82: the class's datamap
+	int vfunc138();	// slot 138	// slot 26 override (plain member beside the placeholder sa26; twin of slot 25): with an entity, the handle at +0x1c60 becomes the handle of its owning object (+0x9c, -1 when none)
 	void vfunc339(int a, float b, int c);	// slot 339: forwards to CBaseCombatCharacter::vfunc339 (float second argument)
 	int vfunc340(int a, float b, float c);	// slot 340 (plain member): forwards unchanged to CBaseCombatCharacter::vfunc340
 	int sub_10345480();	// CBaseAnimating member (transplant): handle at +0x6f0 -> sequence descriptor -> its +0x2e8 offset, -1 when none

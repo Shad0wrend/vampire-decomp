@@ -44,23 +44,23 @@ void CBasePlayer::vfunc460()
 {
 	ScopeTrace trace("CBasePlayer::PlayerUse", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
 	CGlobalEntityList *pList = g_10566458;
-	if (pList->sub_100290c0(&m_hUseEnt1040)) {
-		if (!((CBaseEntity *)pList->sub_100290c0(&m_hUseEnt1040))->vfunc32((int)this)) {
+	if (pList->sub_100290c0((unsigned int *)&m_hInteractiveUseTarget)) {
+		if (!((CBaseEntity *)pList->sub_100290c0((unsigned int *)&m_hInteractiveUseTarget))->vfunc32((int)this)) {
 			sub_10167fd0();
 			return;
 		}
 		pList = g_10566458;
 	}
 	if (!((m_nFlags2088 | m_n208C | m_afButtonReleased) & 0x20)) {
-		if (ListGet(pList, m_hUseEnt1040))
+		if (ListGet(pList, m_hInteractiveUseTarget.m_Index))
 			sub_10167e00();
 		return;
 	}
-	if (ListGet(pList, m_h155C))
+	if (ListGet(pList, m_hProteanTransformOther.m_Index))
 		return;
 	if (sub_10167370())
 		return;
-	CBaseEntity *pUseEntity = (CBaseEntity *)EHandle_Get(m_hUseEnt1040);
+	CBaseEntity *pUseEntity = (CBaseEntity *)EHandle_Get(m_hInteractiveUseTarget.m_Index);
 	if (!pUseEntity)
 		pUseEntity = sub_104115b0(this, 0);
 	if (!pUseEntity)
@@ -87,14 +87,14 @@ void CBasePlayer::vfunc460()
 		}
 		if (pUseEntity->vfunc32((int)this)) {
 			if (m_b208C & 0x20) {
-				if (!EHandle_Get(m_hUseEnt1040)) {
+				if (!EHandle_Get(m_hInteractiveUseTarget.m_Index)) {
 					sub_10167d70(pUseEntity);
 					return;
 				}
 				if (pUseEntity->vfunc44((int)this))
 					sub_10167fd0();
 			} else {
-				if (EHandle_Get(m_hUseEnt1040))
+				if (EHandle_Get(m_hInteractiveUseTarget.m_Index))
 					sub_10167e00();
 			}
 			return;

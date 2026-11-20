@@ -1890,7 +1890,7 @@ struct CAI_BaseNPCView355 : CAI_BaseNPC
 	char m_pad0004[0x1538 - 4];
 	EHANDLE m_h1538;
 	int m_n153c;
-	int m_n1540;
+	int m_nTargetMode1540;
 	char m_pad1544[0x5c20 - 0x1544];
 	COutputEvent355 m_Output5c20;
 	bool sub_1026d160();
@@ -1900,7 +1900,7 @@ struct CAI_BaseNPCView355 : CAI_BaseNPC
 bool CAI_BaseNPC::vfunc355()
 {
 	CAI_BaseNPCView355 *p = (CAI_BaseNPCView355 *)this;
-	if (!p->m_h1538 || p->m_n153c == -1 || p->m_n1540 != 8)
+	if (!p->m_h1538 || p->m_n153c == -1 || p->m_nTargetMode1540 != 8)
 	{
 		if ((char)(int)EHandleDetail::g_10566458 == -1) p->m_Output5c20.sub_100cd660(p->m_n153c != -1 ? p->m_h1538.Get() : 0, this, 0);
 		else p->m_Output5c20.sub_100cd660(p->m_n153c != -1 ? p->m_h1538.Get() : 0, this, 0);
@@ -2170,7 +2170,7 @@ extern CGatherDevFlag *g_10924a6c;
 struct CGatherNPCView
 {
 	char m_pad0000[0x1564];
-	float m_f1564;
+	float m_flNextAttack1564;
 	char m_pad1568[0x5b88 - 0x1568];
 	float m_f5b88;
 	float m_f5b8c;
@@ -2199,7 +2199,7 @@ void CAI_BaseNPC::vfunc561(CAI_BaseNPC *pOther, float flDist)
 	int r;
 	Vector vecTarget = pOther->vfunc197(*(Vector *)vfunc217(), true, false);
 	if (!((flags & 0x2000) && sub_10007e19())) { if (flags & 0x20000) {
-		if (!(gpGlobals->curtime >= pView->m_f1564)) {
+		if (!(gpGlobals->curtime >= pView->m_flNextAttack1564)) {
 			g_10924a6c->vfunc1();
 			sub_10269a20(0x2f);
 		}

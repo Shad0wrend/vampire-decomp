@@ -38,7 +38,7 @@ void __fastcall sub_10366290(void *pSelf)
 struct CBossView
 {
 	char m_pad0000[0x6f0];
-	int m_n6F0;
+	int m_nSequence6f0;
 	char m_pad06f4[0x1568 - 0x6f4];
 	void *m_pHull1568;
 };
@@ -107,7 +107,7 @@ bool CNPC_VBaseBoss::vfunc617(Vector vecA, bool bNoCheck, bool bUseHitbox, Vecto
 
 	Vector vecMins, vecMaxs;
 	CBossView *pBoss = (CBossView *)this;
-	if (bUseHitbox && ((CBaseAnimating *)this)->sub_1008d990(pBoss->m_n6F0))
+	if (bUseHitbox && ((CBaseAnimating *)this)->sub_1008d990(pBoss->m_nSequence6f0))
 	{
 		((CBaseAnimating *)this)->ComputeHitboxSurroundingBox(&vecMins, &vecMaxs);
 	}

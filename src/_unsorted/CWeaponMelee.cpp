@@ -432,7 +432,7 @@ void CWeaponMelee::vfunc326()
 	bool bFlag = false;
 	if (!pOwner)
 		return;
-	if (EHandle_Get(pOwner->m_h1538) && pOwner->m_n153C != -1)
+	if (EHandle_Get(pOwner->m_hTarget1538.m_Index) && pOwner->m_nTarget153c != -1)
 		return;
 	if (pPlayer)
 	{
@@ -480,7 +480,7 @@ struct CMeleeSlot372View {
 struct CMeleePlayerView {
     char m_pad[0x1538];
     unsigned int m_h1538;
-    int m_n153C;
+    int m_nTarget153c;
 };
 
 void CWeaponMelee::vfunc327()
@@ -495,7 +495,7 @@ void CWeaponMelee::vfunc327()
             if (pSlot->m_Serial == (int)(h >> 13))
                 pEnt = pSlot->m_pEntity;
         }
-        if (!pEnt || pPlayer->m_n153C == -1) {
+        if (!pEnt || pPlayer->m_nTarget153c == -1) {
             if (((CMeleeSlot372View *)this)->vfunc372(0x4e, 1, 0) && pOwner)
                 pOwner->vfunc429();
         }

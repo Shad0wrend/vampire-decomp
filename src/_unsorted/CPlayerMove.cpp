@@ -176,8 +176,8 @@ void CPlayerMove::vfunc1(CBasePlayer *pPlayer, CUserCmd *pCmd, void *pHelper, vo
 	g_109f3648->EnterScope("CPlayerMove::SetupMove", 0, "Unaccounted", false);
 
 	int iTargetActivity;
-	if (((CUnknown100290c0 *)g_10566458)->sub_100290c0(&pPlayer->m_h1538))
-		iTargetActivity = pPlayer->m_n153C;
+	if (((CUnknown100290c0 *)g_10566458)->sub_100290c0((unsigned int *)&pPlayer->m_hTarget1538))
+		iTargetActivity = pPlayer->m_nTarget153c;
 	else
 		iTargetActivity = -1;
 	bool bHasTarget = (iTargetActivity != -1);
@@ -225,11 +225,11 @@ void CPlayerMove::vfunc1(CBasePlayer *pPlayer, CUserCmd *pCmd, void *pHelper, vo
 		{ if (*(short *)&pMove == -1) pMove->m_flUpMove = 0.0f; else pMove->m_flUpMove = 0.0f; }
 		void *pModel;
 		pModel = ((CBaseAnimating *)pPlayer)->sub_100952d0(-1);
-		if (pModel && pPlayer->m_n6F0 >= 0)
+		if (pModel && pPlayer->m_nSequence6f0 >= 0)
 		{
-			float flRate = ((CBaseAnimating *)pPlayer)->sub_10091230(pPlayer->m_n6F0);
+			float flRate = ((CBaseAnimating *)pPlayer)->sub_10091230(pPlayer->m_nSequence6f0);
 			float flPlayback = *(float *)((char *)pPlayer + 0x6f4);
-			float flStart = ((pPlayer->m_f2358 - pCmd->frametime) - (*(float *)((char *)pPlayer + 0x174) - 0.1f)) * (flRate * flPlayback) + pPlayer->m_f6f8;
+			float flStart = ((pPlayer->m_f2358 - pCmd->frametime) - (*(float *)((char *)pPlayer + 0x174) - 0.1f)) * (flRate * flPlayback) + pPlayer->m_fl6f8;
 			float flEnd = (flRate * flPlayback) * gpGlobals->frametime + flStart;
 			if (flStart < g_104454c4)
 				flStart = 0.0f;
@@ -242,7 +242,7 @@ void CPlayerMove::vfunc1(CBasePlayer *pPlayer, CUserCmd *pCmd, void *pHelper, vo
 			bool bOk = false;
 			if (flStart < flEnd)
 			{
-				bOk = sub_100c5d10(pModel, pPlayer->m_n6F0, flStart, flEnd, (const float *)((char *)pPlayer + 0x690), vecMove, vecOther);
+				bOk = sub_100c5d10(pModel, pPlayer->m_nSequence6f0, flStart, flEnd, (const float *)((char *)pPlayer + 0x690), vecMove, vecOther);
 			}
 			if (bOk)
 			{
@@ -265,10 +265,10 @@ void CPlayerMove::vfunc1(CBasePlayer *pPlayer, CUserCmd *pCmd, void *pHelper, vo
 	pMove->m_nOldButtons = *(int *)((char *)pPlayer + 0x1eec);
 	pMove->m_vec58 = *(Vector *)((CEntV *)pPlayer)->s221();
 	pMove->m_vec58.y = pPlayer->m_vec206c.y;
-	if (TestBit(pPlayer->m_fFlags268, 12))
+	if (TestBit(pPlayer->m_flags268, 12))
 		pPlayer->sub_100b1d10();
-	pMove->m_vec40 = pPlayer->m_vec03BC;
-	pMove->m_vec4c = pPlayer->m_vec03B0;
+	pMove->m_vec40 = pPlayer->m_vecVelocity3bc;
+	pMove->m_vec4c = pPlayer->m_vecBaseVelocity;
 	pMove->m_nPlayerHandle = *pEnt->vfunc1();
 	pMove->m_vec70 = *(Vector *)((CEntV *)pPlayer)->s220();
 
@@ -276,7 +276,7 @@ void CPlayerMove::vfunc1(CBasePlayer *pPlayer, CUserCmd *pCmd, void *pHelper, vo
 	((Vector *)&pMove->m_fl98)->Init();
 	if (bHasTarget)
 	{
-		switch (pPlayer->m_nFF0)
+		switch (pPlayer->m_IdealActivity)
 		{
 		case 0xf88: case 0xf91: case 0xf9a: case 0xfb7: case 0xfc0:
 		case 0xff7: case 0x1000: case 0x1009: case 0x1039:
@@ -285,10 +285,10 @@ void CPlayerMove::vfunc1(CBasePlayer *pPlayer, CUserCmd *pCmd, void *pHelper, vo
 		default:
 			{
 				CBaseEntity *pTarget;
-				if (pPlayer->m_n153C == -1)
+				if (pPlayer->m_nTarget153c == -1)
 					pTarget = 0;
 				else
-					pTarget = (CBaseEntity *)EHandle_Get(pPlayer->m_h1538);
+					pTarget = (CBaseEntity *)EHandle_Get(pPlayer->m_hTarget1538);
 				pMove->m_vec70 = *(Vector *)((CEntV *)pTarget)->s220();
 				ICollideable *pPlayerColl = (ICollideable *)((char *)pPlayer + 0x270);
 				const float *pTargetMins = ((ICollideable *)((char *)pTarget + 0x270))->vfunc1();

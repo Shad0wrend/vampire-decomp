@@ -15409,6 +15409,9 @@ void CBaseCombatCharacter::sub_100521e0()
 // END FUNCTION
 
 // FUNCTION: 0x100532b0 size=0x8fe
+// VC6 orders `or ebx, -1` / `mov ebp, 1` of this function by the unit's count of names. WORKAROUND dial: the
+// typedefs after the includes (5..29 match under the CBasePlayer : CBaseCombatCharacter headers of 2026-11-20;
+// 0..4 and 30 swap the two).
 #include "vampire_all.h"
 // TARGET: CBaseCombatCharacter::sub_100532b0
 #include "CBasePlayer.h"
@@ -15423,6 +15426,23 @@ void CBaseCombatCharacter::sub_100521e0()
 #include "engineserver.h"
 #include "CEHandleGet.h"
 #include <stdlib.h>
+typedef int pcd_dial0;
+typedef int pcd_dial1;
+typedef int pcd_dial2;
+typedef int pcd_dial3;
+typedef int pcd_dial4;
+typedef int pcd_dial5;
+typedef int pcd_dial6;
+typedef int pcd_dial7;
+typedef int pcd_dial8;
+typedef int pcd_dial9;
+typedef int pcd_dial10;
+typedef int pcd_dial11;
+typedef int pcd_dial12;
+typedef int pcd_dial13;
+typedef int pcd_dial14;
+typedef int pcd_dial15;
+typedef int pcd_dial16;
 
 extern CVStatList_t g_109f0b40;
 void __cdecl sub_10012a8a();
@@ -22232,13 +22252,13 @@ bool CBaseCineCam::sub_1006e130(const char *pszName, int a, int b)
 			res = pPlayer;
 		} else if ((flags & 2) && pPlayer) {
 			res = EHandle_Get(pEnt->m_hDialogPartnerFE8);
-		} else if ((flags & 0x80000) && EHandle_Get(pEnt->m_h1538) && pEnt->m_n153C == 0) {
-			res = EHandle_Get(pEnt->m_h1538);
-		} else if ((flags & 0x100000) && EHandle_Get(pEnt->m_h1538) && pEnt->m_n153C == 1) {
-			res = EHandle_Get(pEnt->m_h1538);
-		} else if ((flags & 0x80000) && EHandle_Get(pEnt->m_h1538) && pEnt->m_n153C == 1) {
+		} else if ((flags & 0x80000) && EHandle_Get(pEnt->m_hTarget1538) && pEnt->m_nTarget153c == 0) {
+			res = EHandle_Get(pEnt->m_hTarget1538);
+		} else if ((flags & 0x100000) && EHandle_Get(pEnt->m_hTarget1538) && pEnt->m_nTarget153c == 1) {
+			res = EHandle_Get(pEnt->m_hTarget1538);
+		} else if ((flags & 0x80000) && EHandle_Get(pEnt->m_hTarget1538) && pEnt->m_nTarget153c == 1) {
 			res = pEnt;
-		} else if ((flags & 0x100000) && EHandle_Get(pEnt->m_h1538) && pEnt->m_n153C == 0) {
+		} else if ((flags & 0x100000) && EHandle_Get(pEnt->m_hTarget1538) && pEnt->m_nTarget153c == 0) {
 			res = pEnt;
 		} else if (flags & 4) {
 			res = g_106eb5d8.sub_100f7380(0, "worldspawn");
@@ -85598,7 +85618,7 @@ void CGameMovement::sub_10125db0()
 	{
 		if (F1EE8 >= flThreshold)
 		{
-			if (PENT->m_n03E0 > 0)
+			if (PENT->MoveType3e0() > 0)
 			{
 				PMV->m_n00c0 = 9;
 				fDuck = (F1EE8 / G39.sub_101e7db0() > g_10449280)
@@ -87222,8 +87242,8 @@ void __cdecl sub_10146570(const V3 *pStart, const V3 *pEnd, int r, int g, int b,
 // TARGET: sub_1012b750
 bool sub_1012b750(CBasePlayer *pPlayer, CBasePlayer *pOther, Vector *pResult, float flRadius)
 {
-	if ((pPlayer->m_n03E0 != 3 && pOther->m_n03E0 == 3) ||
-	    (pPlayer->m_n03E0 == 3 && pOther->m_n03E0 == 0))
+	if ((pPlayer->MoveType3e0() != 3 && pOther->MoveType3e0() == 3) ||
+	    (pPlayer->MoveType3e0() == 3 && pOther->MoveType3e0() == 0))
 		return false;
 
 	Vector vecEye = pPlayer->vfunc193();
@@ -97946,7 +97966,7 @@ void __fastcall sub_10146e20(CBaseCombatCharacter *self, int, int act, int anim)
 		{
 			CBasePlayer *pThis = (CBasePlayer *)self;
 			void *pWeapon;
-			if (EHandle_Get(pThis->m_hDialogPartnerFE8) || EHandle_Get(pThis->m_hUseEnt1040)
+			if (EHandle_Get(pThis->m_hDialogPartnerFE8) || EHandle_Get(pThis->m_hInteractiveUseTarget)
 				|| ((pWeapon = self->sub_1032e7b0()) != 0
 					&& (*(PFN_Slot *)(*(int *)pWeapon + 0x430))(pWeapon)
 					&& (*(PFN_Slot *)(*(int *)pWeapon + 0x42c))(pWeapon)))
@@ -104088,7 +104108,7 @@ void CBasePlayer::sub_1015df00()
 	*(void **)((char *)v + 0x10) = *(void **)v;
 	sub_10185140(v);
 
-	sub_103274d0(this);
+	::sub_103274d0(this);
 }
 // END FUNCTION
 
@@ -104595,9 +104615,9 @@ struct CWeaponHandleView
 
 inline const Vector &PlayerAbsVelocity(CBasePlayer *p)
 {
-	if (TestBit(p->m_fFlags268, 12))
+	if (TestBit(p->m_flags268, 12))
 		p->sub_100b1d10();
-	return p->m_vec03BC;
+	return p->m_vecVelocity3bc;
 }
 
 inline float AngleDelta(float flOld, float flNew)
@@ -105134,8 +105154,8 @@ CBaseEntity *CBasePlayer::sub_10161d20()
 		const char *pszName = *me->slot9(&tmp);
 		pEnt->slot105(pszName ? pszName : "");
 		sub_101d1280(pEnt);
-		int a = m_sub270.vfunc1();
-		int b = m_sub270.vfunc2();
+		int a = Sub270().vfunc1();
+		int b = Sub270().vfunc2();
 		sub_101cf390(pEnt, a, b);
 		sub_101cf600(pEnt);
 		pEnt->m_nFlags |= 0x60;
@@ -105574,14 +105594,14 @@ void CBasePlayer::sub_10166120()
 	if (((CBaseEntity *)this)->m_iHealth < 0)
 		return;
 
-	if (m_n03E0 != 3)
+	if (MoveType3e0() != 3)
 	{
 		m_fl22FC = gpGlobals->curtime + 12.0f;
 		m_n2344 = 2;
 		if (m_n2284 > m_n2288)
 		{
-			m_b0EA0 = 0;
-			m_flags0E98 = (m_flags0E98 & ~0x4000) | 0x80000;
+			m_rgbTimeBasedDamage[4] = 0;
+			m_bitsDamageType = (m_bitsDamageType & ~0x4000) | 0x80000;
 		}
 	}
 	else
@@ -105589,8 +105609,8 @@ void CBasePlayer::sub_10166120()
 		if (((CBaseCombatCharacter *)this)->sub_10337f30())
 			goto tail;
 
-		m_b0EA0 = 0;
-		m_flags0E98 &= ~0x80000;
+		m_rgbTimeBasedDamage[4] = 0;
+		m_bitsDamageType &= ~0x80000;
 		if (m_fl22FC < gpGlobals->curtime)
 		{
 			if (m_fl2300 < gpGlobals->curtime)
@@ -105613,14 +105633,14 @@ void CBasePlayer::sub_10166120()
 		}
 		else
 		{
-			m_flags0E98 &= ~0x4000;
+			m_bitsDamageType &= ~0x4000;
 		}
 	}
 
 tail:
-	if (m_n03E0 < 2)
+	if (MoveType3e0() < 2)
 	{
-		if (m_n03E0 == 0)
+		if (MoveType3e0() == 0)
 		{
 			if (((CBaseEntity *)this)->sub_100b3700() & 0x200)
 			{
@@ -105635,7 +105655,7 @@ tail:
 	}
 	else
 	{
-		if (m_n03E0 > 2)
+		if (MoveType3e0() > 2)
 		{
 			if (!g_10726004)
 			{
@@ -105776,7 +105796,7 @@ void CBasePlayer::sub_10166500()
 	eye.z += 8.0f;
 
 	Vector dir;
-	sub_10139610(&m_vec206c, &dir, 0, 0);
+	::sub_10139610(&m_vec206c, &dir, 0, 0);
 	dir.z = 0;
 	VectorNormalize(dir);
 
@@ -105787,18 +105807,18 @@ void CBasePlayer::sub_10166500()
 
 	if (trace.m_fraction < 1.0f)
 	{
-		eye.z += ((const Vector *)m_sub270.vfunc2())->z * 0.2f;
+		eye.z += ((const Vector *)Sub270().vfunc2())->z * 0.2f;
 		end = eye + dir * 24.0f;
-		m_vecMovedir190 = *(Vector *)trace.m_planeNormal * -50.0f;
+		(*(Vector *)m_vecMovedir) = *(Vector *)trace.m_planeNormal * -50.0f;
 
 		UTIL_TraceLine_RayCall(eye, end, 0x1400b, (const void *)this, 0, &trace);
 
 		if (trace.m_fraction == 1.0f)
 		{
 			sub_100b3580(4);
-			if (FlagBit12(m_fFlags268))
+			if (FlagBit12(m_flags268))
 				sub_100b1d10();
-			Vector vel = m_vec03BC;
+			Vector vel = m_vecVelocity3bc;
 			vel.z = 225.0f;
 			sub_100b2e30(&vel);
 			m_fl2314 = gpGlobals->curtime + 2.0f;
@@ -106280,9 +106300,9 @@ struct CEntView { char pad[0x98]; CUseObj *m_p98; int pad2; int m_a0; };
 CBaseEntity *CBasePlayer::sub_10167470(char bFlag)
 {
 	CEntListView *pList = (CEntListView *)EHandleDetail::g_10566458;
-	if (pList->sub_100290c0(&m_hDialogPartnerFE8))
+	if (pList->sub_100290c0((unsigned int *)&m_hDialogPartnerFE8))
 		return 0;
-	if (m_n153C != -1 && pList->sub_100290c0(&m_h1538))
+	if (m_nTarget153c != -1 && pList->sub_100290c0((unsigned int *)&m_hTarget1538))
 		return 0;
 	if (sub_101618a0())
 		return 0;
@@ -106336,7 +106356,7 @@ inline void SetH(unsigned int &h, CBaseEntity *p)
 void CBasePlayer::sub_10167d70(CBaseEntity *pEnt)
 {
 	if (pEnt->vfunc32((int)this)) {
-		SetH(m_hUseEnt1040, pEnt);
+		SetH(*(unsigned int *)&m_hInteractiveUseTarget, pEnt);
 		SetH(*(unsigned int *)((char *)pEnt + 0x8c), (CBaseEntity *)this);
 		pEnt->vfunc39((CBaseEntity *)this);
 	}
@@ -106638,9 +106658,9 @@ CBaseEntity *CBasePlayer::sub_1016a030(unsigned int mask, int unused)
 	VectorAdd(start, delta, end);
 	CGameTrace tr;
 	{
-		int group = m_nCollisionGroup368;
-		const Vector *mins = (const Vector *)m_sub270.vfunc1();
-		const Vector *maxs = (const Vector *)m_sub270.vfunc2();
+		int group = m_field368;
+		const Vector *mins = (const Vector *)Sub270().vfunc1();
+		const Vector *maxs = (const Vector *)Sub270().vfunc2();
 		UTIL_TraceHull_DebugCall(start, end, *mins, *maxs, mask, this, group, &tr, 1, 0);
 	}
 	if (tr.m_fraction != 1.0f)
@@ -106653,9 +106673,9 @@ CBaseEntity *CBasePlayer::sub_1016a030(unsigned int mask, int unused)
 			end = start;
 			end.z += vfunc465();
 			{
-				int group = m_nCollisionGroup368;
-				const Vector *mins = (const Vector *)m_sub270.vfunc1();
-				const Vector *maxs = (const Vector *)m_sub270.vfunc2();
+				int group = m_field368;
+				const Vector *mins = (const Vector *)Sub270().vfunc1();
+				const Vector *maxs = (const Vector *)Sub270().vfunc2();
 				TraceHullInlineRay(start, end, *mins, *maxs, mask, this, group, &tr);
 			}
 			{
@@ -106770,7 +106790,7 @@ void CBasePlayer::sub_1016b270()
 	int i;
 	unsigned char bDuration = 0;
 
-	if (!(m_flags0E98 & 0xffffc000))
+	if (!(m_bitsDamageType & 0xffffc000))
 		return;
 
 	if (abs((int)(gpGlobals->curtime - m_tbdPrev)) < 2.0)
@@ -106780,7 +106800,7 @@ void CBasePlayer::sub_1016b270()
 
 	for (i = 0; i < 8; i++)
 	{
-		if (m_flags0E98 & (0x8000 << i))
+		if (m_bitsDamageType & (0x8000 << i))
 		{
 			switch (i)
 			{
@@ -106824,16 +106844,16 @@ void CBasePlayer::sub_1016b270()
 				bDuration = 0;
 			}
 
-			if (m_pad0E9C[i])
+			if (m_rgbTimeBasedDamage[i])
 			{
-				if (!m_pad0E9C[i] || --m_pad0E9C[i] == 0)
+				if (!m_rgbTimeBasedDamage[i] || --m_rgbTimeBasedDamage[i] == 0)
 				{
-					m_pad0E9C[i] = 0;
-					m_flags0E98 &= ~(0x8000 << i);
+					m_rgbTimeBasedDamage[i] = 0;
+					m_bitsDamageType &= ~(0x8000 << i);
 				}
 			}
 			else
-				m_pad0E9C[i] = bDuration;
+				m_rgbTimeBasedDamage[i] = bDuration;
 		}
 	}
 }
@@ -106912,14 +106932,14 @@ static inline bool TestBit(unsigned int value, int bit)
 struct CBasePlayerV : public CBasePlayer
 {
 	void sub_1016b480();
-	int edict() { return m_n02E0; }
+	int edict() { return m_pEdict2e0; }
 	int GetFlags() { return ((CBaseEntity *)(void *)this)->sub_100b3700(); }
 	
 	const Vector &GetAbsVelocity()
 	{
-		if (TestBit(m_fFlags268, 12))
+		if (TestBit(m_flags268, 12))
 			sub_100b1d10();
-		return m_vec03BC;
+		return m_vecVelocity3bc;
 	}
 };
 
@@ -107763,8 +107783,8 @@ void CBasePlayer::sub_1016f2a0(const char *pszFile)
 
 // FUNCTION: 0x1016fa90 size=0x35b
 // VC6 orders two frame slots of this function by the unit's count of names (no CUnknown101d7520.h here; the weapon
-// base change of 2026-11-19 flipped them with it). WORKAROUND dial: the typedefs after the includes (17..24 match
-// under the CBaseCombatCharacter : CBaseFlex headers of 2026-11-20, 0..16 swap the two slots).
+// base change of 2026-11-19 flipped them with it). WORKAROUND dial: the typedefs after the includes (46..59 and
+// 110..123 match under the CBasePlayer : CBaseCombatCharacter headers of 2026-11-20; 0..45 swap the two slots).
 #include "CBasePlayer.h"
 #include "CUnknown101daec0.h"
 #include "CUnknown101e56e0.h"
@@ -107799,6 +107819,38 @@ typedef int pcd_dial16;
 typedef int pcd_dial17;
 typedef int pcd_dial18;
 typedef int pcd_dial19;
+typedef int pcd_dial20;
+typedef int pcd_dial21;
+typedef int pcd_dial22;
+typedef int pcd_dial23;
+typedef int pcd_dial24;
+typedef int pcd_dial25;
+typedef int pcd_dial26;
+typedef int pcd_dial27;
+typedef int pcd_dial28;
+typedef int pcd_dial29;
+typedef int pcd_dial30;
+typedef int pcd_dial31;
+typedef int pcd_dial32;
+typedef int pcd_dial33;
+typedef int pcd_dial34;
+typedef int pcd_dial35;
+typedef int pcd_dial36;
+typedef int pcd_dial37;
+typedef int pcd_dial38;
+typedef int pcd_dial39;
+typedef int pcd_dial40;
+typedef int pcd_dial41;
+typedef int pcd_dial42;
+typedef int pcd_dial43;
+typedef int pcd_dial44;
+typedef int pcd_dial45;
+typedef int pcd_dial46;
+typedef int pcd_dial47;
+typedef int pcd_dial48;
+typedef int pcd_dial49;
+typedef int pcd_dial50;
+typedef int pcd_dial51;
 
 class ICommandLine
 {
@@ -107978,13 +108030,13 @@ void sub_101cd940(CBaseEntity *);
 
 void CBasePlayer::sub_10170090()
 {
-	if (m_n153C != -1 && EHandle_Get(m_h1538))
+	if (m_nTarget153c != -1 && EHandle_Get(m_hTarget1538.m_Index))
 		sub_10329560();
 	if (EHandle_Get(m_hDialogPartnerFE8)) {
 		Error("Can't change levels while in dialog!\n");
 		vfunc415();
 	}
-	if (EHandle_Get(m_hUseEnt1040))
+	if (EHandle_Get(m_hInteractiveUseTarget.m_Index))
 		sub_10167fd0();
 	if (sub_10175180())
 		sub_1033f6d0();
@@ -108037,15 +108089,15 @@ char CBasePlayer::sub_10170340()
 		DevWarning("Invalid Player: bad solid type: %d\n", vfunc92());
 		ok = false;
 	}
-	if (m_nCollisionGroup368 != 3) {
-		DevWarning("Invalid Player: bad collision group: %d\n", m_nCollisionGroup368);
+	if (m_field368 != 3) {
+		DevWarning("Invalid Player: bad collision group: %d\n", m_field368);
 		ok = false;
 	}
-	if (vfunc94() != 3 && vfunc94() != 10 && (vfunc94() != 9 || !((unsigned char)(m_fFlags268 >> 2) & 1)) && (vfunc94() != 0 || m_n153C == -1 || !EHandle_Get(m_h1538))) {
+	if (vfunc94() != 3 && vfunc94() != 10 && (vfunc94() != 9 || !((unsigned char)(m_flags268 >> 2) & 1)) && (vfunc94() != 0 || m_nTarget153c == -1 || !EHandle_Get(m_hTarget1538.m_Index))) {
 		DevWarning("Invalid Player: bad move type: %d\n", vfunc94());
 		ok = false;
 	}
-	CSub270Bounds *pCol = (CSub270Bounds *)&m_sub270;
+	CSub270Bounds *pCol = (CSub270Bounds *)&Sub270();
 	Vector v = pCol->vfunc1();
 	if (v != Vector(-16, -16, 0) && v != Vector(-16, -16, 0)) {
 		DevWarning("Invalid Player: bad min bounds: %.1f %.1f %.1f\n", v.x, v.y, v.z);
@@ -108442,7 +108494,7 @@ void CBasePlayer::sub_101712d0(CBasePlayerVehicle *pVehicle, int role)
 	m_b20F4 = 1;
 	m_flags1E74 |= 1;
 	if (!pVehicle->vfunc5(role))
-		sb01();
+		vfunc66();
 	((CBaseEntity *)this)->sub_100b2e30(g_1070d1b0);
 	((CBaseEntity *)this)->vfunc93(9, 0);
 	((CBaseEntity *)this)->sub_100aaa40(8);
@@ -109053,7 +109105,7 @@ void CBasePlayer::sub_10174580()
 		m_n1E9C = engine->vfunc35(ed);
 	}
 	m_n1EA8 = 0;
-	if (!((m_n153C != -1 && HH(0x1538).Get()) || HH(0xfe8).Get() || HH(0x1040).Get()
+	if (!((m_nTarget153c != -1 && HH(0x1538).Get()) || HH(0xfe8).Get() || HH(0x1040).Get()
 		|| sub_1000306c() || sub_1017d630() || sub_101618a0())) {
 		m_b1E8C = 1;
 		m_n1E90 = 0;
@@ -109292,7 +109344,7 @@ int CBasePlayer::sub_10175220()
 		return 0x10;
 	if (sub_10146a80())
 		return 0x28;
-	return (m_n03E0 < 3) ? 0 : 0xf;
+	return (MoveType3e0() < 3) ? 0 : 0xf;
 }
 // END FUNCTION
 
@@ -109468,6 +109520,14 @@ struct CRulesView10176520
 	virtual char vfunc40();
 };
 
+#define RV100(p) RV10(p##0) RV10(p##1) RV10(p##2) RV10(p##3) RV10(p##4) RV10(p##5) RV10(p##6) RV10(p##7) RV10(p##8) RV10(p##9)
+struct CBasePlayerV389	// slot 389 called with the hidden return pointer spelled out
+{
+	RV100(p0) RV100(p1) RV100(p2) RV10(p30) RV10(p31) RV10(p32) RV10(p33) RV10(p34) RV10(p35) RV10(p36) RV10(p37)
+	RV1(p380) RV1(p381) RV1(p382) RV1(p383) RV1(p384) RV1(p385) RV1(p386) RV1(p387) RV1(p388)
+	virtual void vfunc389(Vector *pOut, const Vector *pOrigin);
+};
+
 void sub_10139610(const QAngle &angles, Vector *forward, Vector *right, Vector *up);
 char sub_101764d0();
 extern CRulesView10176520 *g_1070ba0c;
@@ -109486,7 +109546,7 @@ Vector CBasePlayer::sub_10176520(float flDelta)
 		return forward;
 	}
 	Vector eye;
-	vfunc389(&eye, (Vector *)vfunc220());
+	((CBasePlayerV389 *)this)->vfunc389(&eye, (Vector *)vfunc220());
 	Vector *pRecoil = (Vector *)&m_f22A8;
 	m_f22A8 = 0;
 	m_f22AC = 0;
@@ -109569,7 +109629,7 @@ Vector CBasePlayer::sub_10176930(Vector &vecSrc, float flDist, float flDelta)
 		return *(Vector *)g_1070d9d0;
 	}
 	Vector forward, right, up;
-	sub_10139610(m_vec206c + m_vec1EFC + *(Vector *)&m_f22A8, &forward, &right, &up);
+	::sub_10139610(m_vec206c + m_vec1EFC + *(Vector *)&m_f22A8, &forward, &right, &up);
 	Vector bestdir = forward;
 	float bestdot = flDelta;
 	CAimEnt *bestent = 0;
@@ -109585,7 +109645,7 @@ Vector CBasePlayer::sub_10176930(Vector &vecSrc, float flDist, float flDelta)
 			sub_10146570((const Vector *)&tr.m_startpos, (const Vector *)&tr.m_endpos, 0xff, 0, 0, 1, -1.0f);
 	}
 	CAimEnt *pHit = (CAimEnt *)tr.m_pEnt;
-	if (pHit && pHit->m_n1fc && (m_n03E0 == 3 || pHit->m_n3e0 != 3) && (m_n03E0 != 3 || pHit->m_n3e0 != 0)) {
+	if (pHit && pHit->m_n1fc && (MoveType3e0() == 3 || pHit->m_n3e0 != 3) && (MoveType3e0() != 3 || pHit->m_n3e0 != 0)) {
 		if (((CBaseEntity *)pHit)->sub_100b3700() & 0x10000)
 			m_b20A8 = 1;
 		return Vector(0, 0, 0);
@@ -109604,7 +109664,7 @@ Vector CBasePlayer::sub_10176930(Vector &vecSrc, float flDist, float flDelta)
 			continue;
 		if (!pEnt->slot158())
 			continue;
-		if (!((m_n03E0 == 3 || pEnt->m_n3e0 != 3) && (m_n03E0 != 3 || pEnt->m_n3e0 != 0)))
+		if (!((MoveType3e0() == 3 || pEnt->m_n3e0 != 3) && (MoveType3e0() != 3 || pEnt->m_n3e0 != 0)))
 			continue;
 		if (((CEntityVSlots *)this)->slot404(pEnt) != 1 && !((CAimEntA8 *)pEnt)->m_na8 && !g_1070ba0c->vfunc22())
 			continue;
@@ -109661,7 +109721,7 @@ void CBasePlayer::sub_10177120()
 		*(volatile int *)&m_f22A8 = 0;
 		*(int *)&m_f22AC = 0;
 		*(volatile int *)&m_f22B0 = 0;
-		g_1070b22c->vfunc88(*(volatile int *)&m_n02E0, 0, 0);
+		g_1070b22c->vfunc88(*(volatile int *)&m_pEdict2e0, 0, 0);
 	}
 	m_b20A8 = 0;
 }
@@ -110608,14 +110668,14 @@ void CBasePlayer::sub_1017bf10(int mode)
 	m_nPartMode = mode;
 	switch (mode) {
 	case 0:
-		m_pPart2104->vfunc35(vfunc217(g_1070d9d0, 0));
+		m_pPart2104->vfunc35(vfunc217(), g_1070d9d0, 0);
 		m_pPart2108->vfunc21(0);
 		m_pPart2104->vfunc21(1);
 		m_pPartOwner->vfunc5(m_pPart2104);
 		((CBaseEntity *)this)->sub_100a68f0((int)m_pPart2104);
 		break;
 	case 1:
-		m_pPart2108->vfunc35(vfunc217(g_1070d9d0, 0));
+		m_pPart2108->vfunc35(vfunc217(), g_1070d9d0, 0);
 		m_pPart2104->vfunc21(0);
 		m_pPart2108->vfunc21(1);
 		m_pPartOwner->vfunc5(m_pPart2108);
@@ -110900,10 +110960,10 @@ void CBasePlayerUnit::sub_1017c600(CBaseEntity *pEnt, char bLoot, int a, int b, 
     m_bNotifyUse1EC0 = bLoot;
     if (!bLoot) {
         ((CBCCX *)pEnt)->sub_10323cc0(a, b, c);
-        g_1070b22c->vfunc61(m_n02E0, g_10587ef4);
+        g_1070b22c->vfunc61(m_pEdict2e0, g_10587ef4);
     } else {
         ((CBCCX *)pEnt)->sub_10324080();
-        g_1070b22c->vfunc61(m_n02E0, g_10587ee8);
+        g_1070b22c->vfunc61(m_pEdict2e0, g_10587ee8);
     }
 }
 // END FUNCTION
@@ -111008,7 +111068,7 @@ void CBasePlayer::sub_1017c830()
 void CBasePlayer::sub_1017c900(char bFlag)
 {
 	CEntityMessageFilter filter;
-	int iEdict = m_n02E0;
+	int iEdict = m_pEdict2e0;
 	int iClient = engine->vfunc35(iEdict);
 	filter.sub_1019d2f0(iClient);
 	filter.MakeReliable();
@@ -113155,7 +113215,7 @@ struct CHeldEntitySlots {
 void CBasePlayer::sub_101816c0(const char *pszName)
 {
 	vfunc457(pszName, 0);
-	m_f1564 = 0;
+	m_flNextAttack1564 = 0;
 	CHeldWeaponSlots *pWeapon = (CHeldWeaponSlots *)sub_1032e7b0();
 	if (pWeapon) {
 		pWeapon->v310(0);
@@ -113176,7 +113236,7 @@ void CBasePlayer::sub_101816c0(const char *pszName)
 #include "CBaseCombatCharacter.h"
 #include "CEHandleGet.h"
 
-inline bool Player1538Valid(CBasePlayer *p) { return EHandle_Get(p->m_h1538) && p->m_n153C != -1; }
+inline bool Player1538Valid(CBasePlayer *p) { return EHandle_Get(*(unsigned int *)&p->m_hTarget1538) && p->m_nTarget153c != -1; }
 
 // TARGET: CBasePlayer::sub_10181780
 void CBasePlayer::sub_10181780()
@@ -113188,11 +113248,11 @@ void CBasePlayer::sub_10181780()
 		unsigned int f = m_nFlags1ED8;
 		m_nFlags1ED8 = f | 2;
 		unsigned int g = f | 2;
-		if (!EHandle_Get(m_h1538) || m_n1540 != 2)
+		if (!EHandle_Get(*(unsigned int *)&m_hTarget1538) || m_nTargetMode1540 != 2)
 			m_nFlags1ED8 = g & ~0x20;
 		else
 			m_nFlags1ED8 = g | 0x20;
-		if (EHandle_Get(m_h1538) && m_n1540 == 8)
+		if (EHandle_Get(*(unsigned int *)&m_hTarget1538) && m_nTargetMode1540 == 8)
 			m_nFlags1ED8 |= 0x100;
 		else
 			m_nFlags1ED8 &= ~0x100;
@@ -113201,12 +113261,12 @@ void CBasePlayer::sub_10181780()
 		m_nFlags1ED8 |= 1;
 	else
 		m_nFlags1ED8 &= ~1;
-	if (m_b14AA) m_nFlags1ED8 |= 4; else m_nFlags1ED8 &= ~4;
-	if (EHandle_Get(m_hUseEnt1040) && EHandle_Get(m_hUseEnt1040) == EHandle_Get(m_h1CB8))
+	if (m_b14aa) m_nFlags1ED8 |= 4; else m_nFlags1ED8 &= ~4;
+	if (EHandle_Get(*(unsigned int *)&m_hInteractiveUseTarget) && EHandle_Get(*(unsigned int *)&m_hInteractiveUseTarget) == EHandle_Get(m_h1CB8))
 		m_nFlags1ED8 |= 0x200;
 	else
 		m_nFlags1ED8 &= ~0x200;
-	if (EHandle_Get(m_hUseEnt1040) && EHandle_Get(m_hUseEnt1040) == EHandle_Get(m_h1CBC))
+	if (EHandle_Get(*(unsigned int *)&m_hInteractiveUseTarget) && EHandle_Get(*(unsigned int *)&m_hInteractiveUseTarget) == EHandle_Get(m_h1CBC))
 		m_nFlags1ED8 |= 0x200;
 	else
 		m_nFlags1ED8 &= ~0x200;
@@ -114975,19 +115035,19 @@ void __stdcall sub_10185f90(CBasePlayer *pPlayer, double flFrame)
                 Vector vecBase;
                 ((CGroundEntityView *)pGround)->vfunc210(&vecBase);
                 if (pPlayerEnt->sub_100b3700() & 0x800000) {
-                    vecBase.x = vecBase.x + pPlayer->m_vec03B0.x;
-                    vecBase.y = vecBase.y + pPlayer->m_vec03B0.y;
-                    vecBase.z = vecBase.z + pPlayer->m_vec03B0.z;
+                    vecBase.x = vecBase.x + pPlayer->m_vecBaseVelocity.x;
+                    vecBase.y = vecBase.y + pPlayer->m_vecBaseVelocity.y;
+                    vecBase.z = vecBase.z + pPlayer->m_vecBaseVelocity.z;
                 }
-                pPlayer->m_vec03B0 = vecBase;
+                pPlayer->m_vecBaseVelocity = vecBase;
                 pPlayerEnt->sub_100b3580(0x800000);
             }
         }
     }
     if (!(pPlayerEnt->sub_100b3700() & 0x800000)) {
-        Vector vecImpulse = pPlayer->m_vec03B0 * (float)(flFrame * 0.5 + 1.0);
+        Vector vecImpulse = pPlayer->m_vecBaseVelocity * (float)(flFrame * 0.5 + 1.0);
         pPlayerEnt->sub_100b2aa0(vecImpulse);
-        pPlayer->m_vec03B0 = g_1070d1b0;
+        pPlayer->m_vecBaseVelocity = g_1070d1b0;
     }
     pPlayerEnt->sub_100b3640(0x800000);
 }
@@ -115234,7 +115294,7 @@ inline void *Instance(int iEnt)
 inline void SetWaterLevel(CBasePlayer *p, int nLevel)
 {
 	ScopeTrace trace("CBaseEntity::SetWaterLevel", STRINGR(p->m_name26c));
-	p->m_n03E0 = nLevel;
+	p->MoveType3e0() = nLevel;
 }
 inline int RoundDown(float f)
 {
@@ -115275,8 +115335,8 @@ void CPlayerMove::sub_101874a0(CBasePlayer *pPlayer, CUserCmd *pCmd, void *pHelp
 		pPlayer->m_vec206c = pCmd->viewangles;
 	sub_10186f00(pPlayer);
 	((CPlayerMoveX *)this)->sub_101871f0(pPlayer, 0.015);
-	if (VectorLength(pPlayer->m_vec03B0) > g_1044fab0)
-		pPlayer->m_vec1EF0 = pPlayer->m_vec03B0;
+	if (VectorLength(pPlayer->m_vecBaseVelocity) > g_1044fab0)
+		pPlayer->m_vec1EF0 = pPlayer->m_vecBaseVelocity;
 	vfunc1(pPlayer, pCmd, pHelper, g_10628368);
 	if (!pVehicle) {
 		g_10627580->v1(pPlayer, g_10628368);
@@ -116779,9 +116839,9 @@ void sub_1018b7e0(CBasePlayer *pPlayer)
 	Vector *pOrigin = (Vector *)pPlayer->vfunc220();
 	Vector vecEye;
 	const Vector &o = *pOrigin;
-	vecEye.x = o[0] + pPlayer->m_vecViewOffset184[0];
-	vecEye.y = o[1] + pPlayer->m_vecViewOffset184[1];
-	vecEye.z = o[2] + pPlayer->m_vecViewOffset184[2];
+	vecEye.x = o[0] + pPlayer->m_vecViewOffset[0];
+	vecEye.y = o[1] + pPlayer->m_vecViewOffset[1];
+	vecEye.z = o[2] + pPlayer->m_vecViewOffset[2];
 	pLocal->m_i04 = 0;
 	SW_ *pWep = sub_1032e7b0(pPlayer);
 	if (!pWep || !(pWep->vfunc360() & 0x18000))
@@ -116790,21 +116850,21 @@ void sub_1018b7e0(CBasePlayer *pPlayer)
 	pLocal->m_i0c = pPlayer->m_nDefaultSpreadRModel;
 	pLocal->m_i10 = pPlayer->m_n2068;
 	pPlayer->m_nEdict1EB0 = 0;
-	pPlayer->m_b1EB4 = pPlayer->m_b1474;
-	bool bGrapple = (((SLook *)g_10566458)->sub_100290c0(&pPlayer->m_h1538) && pPlayer->m_n153C != -1 && pPlayer->m_n1540 == 0)
-		|| (EHandle_Get(pPlayer->m_h1538) && pPlayer->m_n153C != -1 && pPlayer->m_n1540 == 2);
+	pPlayer->m_b1EB4 = pPlayer->m_flag1474;
+	bool bGrapple = (((SLook *)g_10566458)->sub_100290c0((unsigned int *)&pPlayer->m_hTarget1538) && pPlayer->m_nTarget153c != -1 && pPlayer->m_nTargetMode1540 == 0)
+		|| (EHandle_Get(*(unsigned int *)&pPlayer->m_hTarget1538) && pPlayer->m_nTarget153c != -1 && pPlayer->m_nTargetMode1540 == 2);
 	if (!bGrapple)
 	{
-		if (sub_1033b7c0(pPlayer) && pPlayer->m_b14AA && ((EHANDLE &)pPlayer->m_n14AC).Get())
-			pPlayer->m_nEdict1EB0 = engine->vfunc35(((SEnt_ *)((EHANDLE &)pPlayer->m_n14AC).Get())->edict());
+		if (sub_1033b7c0(pPlayer) && pPlayer->m_b14aa && ((EHANDLE &)pPlayer->m_h14ac.m_Index).Get())
+			pPlayer->m_nEdict1EB0 = engine->vfunc35(((SEnt_ *)((EHANDLE &)pPlayer->m_h14ac.m_Index).Get())->edict());
 	}
 	else
 	{
-		int n = pPlayer->m_n153C;
-		if ((EHandle_Get(pPlayer->m_h1538) && n == 0 && EHandle_Get(pPlayer->m_h149C))
-			|| (EHandle_Get(pPlayer->m_h1538) && n == 1 && EHandle_Get(pPlayer->m_h1538)
-				&& EHandle_Get(*(unsigned int *)((char *)EHandle_Get(pPlayer->m_h1538) + 0x149c))))
-			pPlayer->m_nEdict1EB0 = engine->vfunc35(((SEnt_ *)EHandle_Get(pPlayer->m_h1538))->edict());
+		int n = pPlayer->m_nTarget153c;
+		if ((EHandle_Get(*(unsigned int *)&pPlayer->m_hTarget1538) && n == 0 && EHandle_Get(*(unsigned int *)&pPlayer->m_h149c))
+			|| (EHandle_Get(*(unsigned int *)&pPlayer->m_hTarget1538) && n == 1 && EHandle_Get(*(unsigned int *)&pPlayer->m_hTarget1538)
+				&& EHandle_Get(*(unsigned int *)((char *)EHandle_Get(*(unsigned int *)&pPlayer->m_hTarget1538) + 0x149c))))
+			pPlayer->m_nEdict1EB0 = engine->vfunc35(((SEnt_ *)EHandle_Get(*(unsigned int *)&pPlayer->m_hTarget1538))->edict());
 	}
 	pPlayer->m_nEdict1EAC = 0;
 	if (EHandle_Get(pPlayer->m_hMeleeOpponent))
@@ -166176,7 +166236,7 @@ void __stdcall sub_101f9a80(CBasePlayer *pChar, const char *pszName)
 		CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)pChar->sub_1032e120(pszName);
 		if (pWeapon) {
 			if (pChar->sub_10334c20(pWeapon))
-				pChar->vfunc383((CBaseEntity *)pWeapon, 0);
+				pChar->vfunc383(pWeapon, 0);
 			else
 				sub_1024f7b0(pWeapon);
 		}
@@ -220519,7 +220579,7 @@ struct CTroikaView
 	char m_pad0000[0x1488];
 	float m_f1488;
 	char m_pad148c[0x1564 - 0x148c];
-	float m_f1564;
+	float m_flNextAttack1564;
 	char m_pad1568[0x5b84 - 0x1568];
 	unsigned int m_flags5b84;
 	char m_pad5b88[0x5d9c - 0x5b88];
@@ -220559,7 +220619,7 @@ void CAI_BaseNPCTroika::sub_102b2570()
 			sub_100041b0(0xe);
 		}
 	}
-	if (sub_10269c70(0xf) && p->m_f1564 < gpGlobals->curtime && sub_10014df8(0x5f) && sub_10007e19()
+	if (sub_10269c70(0xf) && p->m_flNextAttack1564 < gpGlobals->curtime && sub_10014df8(0x5f) && sub_10007e19()
 		&& TestBit(((CEntityVSlots *)sub_10007e19())->slot360(), 30))
 	{
 		g_10924a6c->vfunc1();
@@ -264499,7 +264559,7 @@ struct CGrappleFields {
 	char m_pad2[0x1538 - 0xac];
 	unsigned int m_hTarget;
 	int m_n153c;
-	int m_n1540;
+	int m_nTargetMode1540;
 };
 
 struct CSlotEnt {
@@ -264535,7 +264595,7 @@ void CBaseCombatCharacter::sub_10329560()
 	}
 	if (f->m_pAI && f->m_hTarget != 0xffffffff) {
 		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[f->m_hTarget & 0x1fff];
-		if (s->m_Serial == (int)(f->m_hTarget >> 13) && s->m_pEntity && f->m_n153c != -1 && f->m_n1540 == 8)
+		if (s->m_Serial == (int)(f->m_hTarget >> 13) && s->m_pEntity && f->m_n153c != -1 && f->m_nTargetMode1540 == 8)
 			f->m_pAI->sub_10175400(0);
 	}
 	if (f->m_hTarget != 0xffffffff) {
@@ -309211,8 +309271,7 @@ void CWeaponThrown_Grenade_Frag::sub_103ed200()
 	if (!pPlayer)
 		return;
 
-	Vector vecEye;
-	pPlayer->vfunc389(&vecEye, (const Vector *)((CWeaponThrown_Grenade_Frag *)pPlayer)->vfunc217());
+	Vector vecEye = pPlayer->vfunc389(*(const Vector *)((CWeaponThrown_Grenade_Frag *)pPlayer)->vfunc217());
 	Vector vecForward = pPlayer->sub_10176520(0.087155744f);
 		Vector vecEnd = AddA(vecEye, vecForward * 56755.84f);
 		Msg("Grenade facing vector %f %f %f\n", vecForward.x, vecForward.y, vecForward.z);
@@ -309265,10 +309324,10 @@ void CWeaponThrown_Grenade_Frag::sub_103ed200()
 	{
 		Vector vecVel;
 		if (m_n86c == 0) {
-			vecVel = vecForward * 800.0f + pPlayer->m_vec03D4;
+			vecVel = vecForward * 800.0f + (*(Vector *)pPlayer->m_vel3d4);
 		} else {
 			vecForward.z = -0.25f;
-			vecVel = vecForward * 500.0f + pPlayer->m_vec03D4;
+			vecVel = vecForward * 500.0f + (*(Vector *)pPlayer->m_vel3d4);
 		}
 		Vector angVel = g_1070d1b0;
 		pGrenade = vfunc372_slot(vecEye, vecForward, vecVel, angVel);
@@ -319189,8 +319248,7 @@ int CWeaponPhysCannon::sub_1040e9c0()
 	Vector forward;
 	((CEyeVecView *)pPlayer)->sub_100b7fa0(&forward, 0, 0);
 
-	Vector start;
-	pPlayer->vfunc389(&start, (Vector *)pPlayer->vfunc220());
+	Vector start = pPlayer->vfunc389(*(Vector *)pPlayer->vfunc220());
 	float testLength = sub_1040e5b0(this);
 	Vector end = start + forward * testLength;
 

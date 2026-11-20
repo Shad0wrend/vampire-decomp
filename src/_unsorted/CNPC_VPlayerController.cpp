@@ -340,7 +340,7 @@ void CNPC_VPlayerController::vfunc246()
         CBasePlayer *pPlayer = *(CBasePlayer **)((char *)pOwner + 0xa8);
         if (pPlayer != 0)
         {
-            pPlayer->se24();
+            pPlayer->vfunc246();
             return;
         }
     }

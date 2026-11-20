@@ -8,7 +8,7 @@
 	void vfunc21(int a);	// slot 21 (plain member): stamps m_f1DD0 with gpGlobals->curtime
 	void vfunc22(int a);	// slot 22 (plain member): stamps m_f1DD0 with gpGlobals->curtime
 	void vfunc23(int a);	// slot 23 (plain member): stamps m_f1DD0 with gpGlobals->curtime
-	void vfunc130(char bFlag);	// slot 130: CBaseCombatCharacter::vfunc130, then resets the vector pair at +0x1efc / +0x1f08, the stat-bound fields (+0x1adc.. / +0x1b20..) and the keyring
+	void vfunc130(int bFlag);	// slot 130: CBaseCombatCharacter::vfunc130, then resets the vector pair at +0x1efc / +0x1f08, the stat-bound fields (+0x1adc.. / +0x1b20..) and the keyring
 	void sub_1000bfcd(char bFlag);	// CBaseCombatCharacter::vfunc130, called directly
 	void sub_1017cc20(const char *pszQuest, int nStep);	// "SetQuest" (the Python SetQuest(name, step) call): the global journal's quest of that name, when it has that step: stamps the quest's order number (+0xc) when it has none, makes step - 1 current (+0x10), and when sub_10182420 allows runs the completion state: money (sub_10340e50), a hud message, a Python snippet in __main__ (PyRun_ConsoleString), sub_1017c900(1), sub_10182260, and the view message (sub_101cebc0(this, 7, 0)) for a state of kind 2
 	void sub_10340e50(int amount);	// CBaseCombatCharacter::MoneyAdd worker (stub 0x1000a5fb), called directly
@@ -105,7 +105,7 @@
 	void *sub_10178120();	// stub 0x10012ab2: the CDialog object at +0x1d24
 	void sub_10171da0(inputdata_t *pInput);	// input handler: only for the "Player_Malkavian" template; the input as text (a string input as is, "" when empty) is handed to the whisper object (global 0x1073dbfc, sub_101f6530) when the dialog partner (handle +0xfe8) is gone, else stored as the pending whisper text of the dialog object (sub_10178120()->sub_100e09a0)
 	void sub_10175400(char bFade);	// the screen fade user message to this player only (reliable single user filter): the flags 0x81 with the amount (255 at most, 0 at least) from the time left until the float at +0x1478 over the fade duration (global 0x10739d08), or 0x82 with amount 0 when bFade is clear; the message is built as (flags, amount, 0, 0)
-	bool vfunc360();	// slot 360 "CheckForPlayerFrenzy" (plain member): fails (with a DevWarning) while the player grapples, without close NPCs; otherwise creates the "npc_VFrenzyShadow" controller, equips the fists, raises the criminal level and tells the frenzy list
+	char vfunc360();	// slot 360 "CheckForPlayerFrenzy" (plain member): fails (with a DevWarning) while the player grapples, without close NPCs; otherwise creates the "npc_VFrenzyShadow" controller, equips the fists, raises the criminal level and tells the frenzy list
 	void *sub_10161a70(const char *pszClassname);	// stub 0x1000cc93: creates the entity of that class for the player
 	void sub_10147a30(int a);	// stub 0x10001d8e
 	void sub_10147a60();	// stub 0x100087dd, tail called by sub_10170750

@@ -448,7 +448,7 @@ struct S436
 	char pad0[0x200];
 	int m_lifeState200;
 	char pad1[0x268 - 0x204];
-	unsigned int m_fFlags268;
+	unsigned int m_flags268;
 	char pad2[0x2e0 - 0x26c];
 	S436Edict *m_pEdict2e0;
 	char pad3[0x3c4 - 0x2e4];
@@ -456,7 +456,7 @@ struct S436
 	char pad4[0x3e0 - 0x3c8];
 	int m_MoveType3e0;
 	char pad5[0x1488 - 0x3e4];
-	float m_flSpeedScale1488;
+	float m_flFrenzyRate;
 	char pad6[0x1b84 - 0x148c];
 	float m_flRunForwardSpeeds[8];
 	float m_flRunSideSpeeds[8];
@@ -507,8 +507,8 @@ void CHL2_Player::vfunc436()
 	} else {
 		float flMax = 0.0f;
 		sub_10350620(9, d->m_flWalkForwardSpeeds, d->m_flWalkSideSpeeds, &flMax, sv_walkscale.GetFloat());
-		sub_10350620(0x13, d->m_flRunForwardSpeeds, d->m_flRunSideSpeeds, &flMax, sv_runscale.GetFloat() * d->m_flSpeedScale1488);
-		sub_10350620(0x12, d->m_flSneakForwardSpeeds, d->m_flSneakSideSpeeds, &flMax, sv_sneakscale.GetFloat() * d->m_flSpeedScale1488);
+		sub_10350620(0x13, d->m_flRunForwardSpeeds, d->m_flRunSideSpeeds, &flMax, sv_runscale.GetFloat() * d->m_flFrenzyRate);
+		sub_10350620(0x12, d->m_flSneakForwardSpeeds, d->m_flSneakSideSpeeds, &flMax, sv_sneakscale.GetFloat() * d->m_flFrenzyRate);
 		if (d->m_bForceWalk) {
 			for (int i = 0; i < 8; i++) {
 				d->m_flRunForwardSpeeds[i] = d->m_flWalkForwardSpeeds[i];
@@ -577,7 +577,7 @@ void CHL2_Player::vfunc436()
 			pGround->slot173(this, this, 2, -1.0f);
 	}
 	if (!(pe->sub_100b3700() & 1)) {
-		if (TestBit(d->m_fFlags268, 12))
+		if (TestBit(d->m_flags268, 12))
 			pe->sub_100b1d10();
 		d->m_f1ee8 = -d->m_f3c4;
 	}
@@ -690,7 +690,7 @@ void CHL2_Player::vfunc103()
 	sub_1016d260();
 	*(int *)((char *)this + 0x1c6c) = 0;
 	if (vfunc406())
-		((CBasePlayer *)this)->vfunc103();
+		((CBasePlayer *)this)->sub_1015efa0();
 }
 // END FUNCTION
 
@@ -844,7 +844,7 @@ void CHL2_Player::vfunc471()
 	else
 	{
 		Vector vecMins, vecMaxs, vecFeet, vecHead;
-		CCollisionProperty *pColl = (CCollisionProperty *)&pPlayer->m_sub270;
+		CCollisionProperty *pColl = (CCollisionProperty *)&pPlayer->Sub270();
 		pColl->sub_100dcd90(&pColl->m_vecMins.x, &pColl->m_vecMaxs.x, &vecMins.x, &vecMaxs.x);
 		Vector vecCenter = pPlayer->vfunc192();
 
@@ -1154,7 +1154,7 @@ void CHL2_Player::vfunc430(int a1, int a2)
 
 	p->vfunc430(a1, a2);
 	sub_1018c600();
-	sub_10115980((void *)p->m_n02E0, a1);
+	sub_10115980((void *)p->m_pEdict2e0, a1);
 }
 // END FUNCTION
 

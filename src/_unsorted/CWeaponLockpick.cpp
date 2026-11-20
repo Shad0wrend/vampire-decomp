@@ -61,7 +61,7 @@ char CWeaponLockpick::vfunc314()
 {
 	CLockpickOwnerView_103f4de0 *pOwner = (CLockpickOwnerView_103f4de0 *)sub_102521f0();
 	if (pOwner && pOwner->m_pPlayer) {
-		CBaseEntity *pUse = ((EHANDLE *)&pOwner->m_pPlayer->m_hUseEnt1040)->Get();
+		CBaseEntity *pUse = ((EHANDLE *)&pOwner->m_pPlayer->m_hInteractiveUseTarget.m_Index)->Get();
 		if (pUse && dynamic_cast<CBaseLockableEnt *>(pUse))
 			return 1;
 	}

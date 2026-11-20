@@ -39,29 +39,29 @@ public:
 	// Slots 134..264 again (our CBaseEntity declares 0..133, our CBaseAnimating none past them): placeholders with
 	// the signature our base headers give each slot; 250, 255 and 258 are this class's own.
 	virtual void vfunc134(); virtual float vfunc135(float flTime); virtual void vfunc136(); virtual int vfunc137();
-	virtual void vfunc138(); virtual void vfunc139(); virtual bool vfunc140(CBaseEntity *pAttacker); virtual void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace);
+	virtual int vfunc138(); virtual void vfunc139(); virtual bool vfunc140(CBaseEntity *pAttacker); virtual void vfunc141(class CVDmg_t *pInfo, const Vector *pDir, struct CGameTrace *pTrace);
 	virtual int vfunc142(void *pInfo); virtual int vfunc143(float flHealth, int bitsDamageType); virtual void vfunc144(void *pInfo); virtual int vfunc145();
-	virtual void vfunc146(void *pInfo, const Vector &vecDir, void *pTrace); virtual void vfunc147(); virtual void vfunc148(); virtual void vfunc149();
-	virtual void vfunc150(); virtual void vfunc151(); virtual float vfunc152(); virtual int vfunc153();
+	virtual void vfunc146(void *pInfo, const Vector &vecDir, void *pTrace); virtual void vfunc147(); virtual void vfunc148(); virtual void vfunc149(int a, int b);
+	virtual void vfunc150(); virtual void vfunc151(class CBaseCombatWeapon *pWeapon); virtual float vfunc152(); virtual int vfunc153();
 	virtual int vfunc154(int a, int b); virtual void vfunc155(struct CGameTrace *pTrace, int decalIndex, char bFlag, int a4, class CBasePlayer *pPlayer, int nType, char bTrace); virtual void vfunc156(); virtual void vfunc157();
 	virtual bool vfunc158(); virtual void vfunc159(); virtual bool vfunc160(const char *name); virtual bool vfunc161(const char *name);
-	virtual void vfunc162(); virtual void vfunc163(); virtual void vfunc164(); virtual void vfunc165(void *pEdict);
-	virtual void vfunc166(); virtual void vfunc167(); virtual void vfunc168(); virtual void vfunc169();
-	virtual void vfunc170(); virtual void vfunc171(); virtual void vfunc172(); virtual void vfunc173();
+	virtual char vfunc162(); virtual void vfunc163(); virtual void vfunc164(); virtual void vfunc165(void *pEdict);
+	virtual char vfunc166(CBaseEntity *pEnt); virtual void vfunc167(); virtual void vfunc168(); virtual void vfunc169(const Vector *pPunch);
+	virtual void vfunc170(const Vector *pOffset); virtual void vfunc171(); virtual void vfunc172(); virtual void vfunc173();
 	virtual void vfunc174(CBaseEntity *pOther); virtual void vfunc175(CBaseEntity *pOther); virtual void vfunc176(CBaseEntity *pOther); virtual void vfunc177();
-	virtual void vfunc178(CBaseEntity *pOther); virtual void vfunc179(); virtual void vfunc180(); virtual void vfunc181();
+	virtual void vfunc178(CBaseEntity *pOther); virtual void vfunc179(); virtual void vfunc180(); virtual void vfunc181(void *p, void *a, void *b);
 	virtual void vfunc182(); virtual void vfunc183(); virtual void vfunc184(); virtual void vfunc185(struct CFireBulletsInfo *pInfo);
 	virtual void vfunc186(); virtual void vfunc187(); virtual void vfunc188(); virtual void vfunc189();
-	virtual void vfunc190(); virtual void vfunc191(); virtual void vfunc192(); virtual Vector vfunc193();
-	virtual void vfunc194(); virtual void vfunc195(); virtual int vfunc196(int a); virtual int vfunc197(int a, int b, int c, int d);
-	virtual void vfunc198(); virtual void vfunc199(float *vVelocity, float *vAngVelocity); virtual void vfunc200(); virtual bool vfunc201(CBaseEntity *pEntity, int traceMask, CBaseEntity **ppBlocker, int nOrigin);
+	virtual void vfunc190(); virtual void vfunc191(); virtual Vector vfunc192(); virtual Vector vfunc193();
+	virtual float *vfunc194(); virtual float *vfunc195(); virtual int vfunc196(int a); virtual Vector vfunc197(const Vector &posSrc, char bRandom, char bAddViewOffset);
+	virtual void *vfunc198(); virtual void vfunc199(float *vVelocity, float *vAngVelocity); virtual int vfunc200(); virtual bool vfunc201(CBaseEntity *pEntity, int traceMask, CBaseEntity **ppBlocker, int nOrigin);
 	virtual void vfunc202(CBaseEntity *pOwner); virtual void vfunc203(); virtual void vfunc204(); virtual void vfunc205();
-	virtual void vfunc206(); virtual bool vfunc207(); virtual void vfunc208(CBaseEntity *pEnt); virtual void vfunc209();
-	virtual void vfunc210(); virtual void vfunc211(); virtual void vfunc212(int set); virtual void vfunc213(const float *size);
-	virtual float * vfunc214(); virtual void vfunc215(); virtual void vfunc216(); virtual float * vfunc217();
+	virtual void vfunc206(); virtual bool vfunc207(); virtual void vfunc208(CBaseEntity *pEnt); virtual CBaseEntity *vfunc209();
+	virtual void vfunc210(); virtual unsigned int vfunc211(); virtual void vfunc212(int set); virtual void vfunc213(const float *size);
+	virtual float * vfunc214(); virtual void vfunc215(); virtual void vfunc216(float *pOrigin); virtual float * vfunc217();
 	virtual void vfunc218(const float *absAngles); virtual float * vfunc219(); virtual float * vfunc220(); virtual float * vfunc221();
 	virtual int vfunc222(int a); virtual void vfunc223(); virtual void vfunc224(); virtual void vfunc225();
-	virtual void vfunc226(int a); virtual void vfunc227(); virtual void vfunc228(int a, int b); virtual void vfunc229();
+	virtual void vfunc226(int a); virtual void vfunc227(); virtual void vfunc228(int a, int b); virtual void vfunc229(CBaseEntity *pOther);
 	virtual void vfunc230(int a, int b); virtual void vfunc231(); virtual void vfunc232(int a); virtual int vfunc233(int *pList, int maxObjects);
 	virtual void vfunc234(); virtual void vfunc235(); virtual void vfunc236(); virtual int vfunc237();
 	virtual void vfunc238(int a, int b, int c, int d); virtual void vfunc239(); virtual int vfunc240(); virtual void vfunc241(char *pszOut, int *pEvent);
@@ -107,7 +107,9 @@ public:
 	char m_pad04a4[0x5a8 - 0x4a4];
 	// CBaseAnimating's members (it declares no data of its own; named here for the derived classes' code)
 	EHANDLE m_hAnimFollowModel;	// 0x05a8
-	char m_pad05ac[0x6f0 - 0x5ac];
+	char m_pad05ac[0x65c - 0x5ac];
+	char m_b65c;	// 0x65c: a flag byte (CBasePlayer's slot 421 asks it)
+	char m_pad065d[0x6f0 - 0x65d];
 	int m_nSequence6f0;	// 0x6f0: the animation sequence
 	float m_flPlaybackRate6f4;	// 0x6f4: the playback rate
 	float m_fl6f8;	// 0x6f8: the cycle (the sequence start time used by the melee swing)

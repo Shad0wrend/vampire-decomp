@@ -97,9 +97,9 @@ void CWeaponUnarmed::vfunc319()
 				return;
 			}
 			CBaseEntity *pItem;
-			if (EHandle_Get(pPlayer->m_hEnt0EA4) && (pItem = (CBaseEntity *)EHandle_LookupEntity(pPlayer->m_hEnt0EA4)) != 0 && pItem != (CBaseEntity *)this
+			if (EHandle_Get(*(unsigned int *)&pPlayer->m_hEa4) && (pItem = (CBaseEntity *)EHandle_LookupEntity(*(unsigned int *)&pPlayer->m_hEa4)) != 0 && pItem != (CBaseEntity *)this
 				&& strcmpi(pItem->sub_1009f200(), ((CBaseEntity *)this)->sub_1009f200()) != 0
-				|| EHandle_Get(*(unsigned int *)&pPlayer->m_hEnt0EA8) && (pItem = (CBaseEntity *)EHandle_LookupEntity(*(unsigned int *)&pPlayer->m_hEnt0EA8)) != 0)
+				|| EHandle_Get(*(unsigned int *)&pPlayer->m_hEa8) && (pItem = (CBaseEntity *)EHandle_LookupEntity(*(unsigned int *)&pPlayer->m_hEa8)) != 0)
 			{
 				if (pPlayer->vfunc388(pItem, 0))
 					((CBaseCombatWeapon *)pItem)->vfunc319();

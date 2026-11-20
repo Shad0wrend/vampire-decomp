@@ -44,27 +44,28 @@ public:
 	void vfunc299(void *pInfo, char *pbOut);	// slot 299 "CBaseCombatCharacter::CreateDamageEffects" (0x10330d00, ret 8)
 	void sub_10027060(const Vector *pVec);	// slot 170 body (0x10027060)	// slot 298: the number of weapon slots of inventory section nSection
 	virtual void c299();
-	CBCC_SLOTS10(c30)
+	virtual void vfunc300(CBaseEntity *pVictim, char bQuiet, int n); virtual void c301(); virtual void vfunc302(); virtual void vfunc303(); virtual void c304(); virtual void c305();
+	virtual void vfunc306(CBaseCombatCharacter *pTarget, char bUseEyes); virtual void c307(); virtual void c308(); virtual void c309();
 	virtual void c310(); virtual void c311(); virtual void vfunc312(int a); virtual void c313();
 	void sub_100521e0();
 	void sub_10106050(int a);
 	void sub_10325620(int a);
 	int sub_100ab4f0(); virtual void c314();
 	virtual void vfunc315();	// slot 315 (+0x4ec) "CBaseCombatCharacter::MeleeSwingUpdate"
-	virtual void c316(); virtual void c317(); virtual void c318(); virtual void c319();
-	virtual void c320(); virtual void c321(); virtual void c322();
+	virtual void vfunc316(class CGlobalEntityList_Ent *pEnt, int a, int b); virtual void c317(); virtual bool vfunc318(int a, struct melee_dice_roll_result *pRoll, int c); virtual void vfunc319();
+	virtual bool vfunc320(int a, int b); virtual char vfunc321(int a); virtual void c322();
 	virtual int vfunc323(const Vector *pDirection);	// slot 323: which side of the character a horizontal direction is on: 0 when the direction has no horizontal length, else by the angle (0..360) between the character's yaw (slot 219) and the direction's yaw: 2 for 316..360 and up to 45, 3 up to 135, 0 up to 225, 1 beyond
-	virtual void c324(); virtual void c325(); virtual void c326(); virtual bool vfunc327(); virtual void c328(); virtual void c329();
+	virtual void c324(); virtual void c325(); virtual bool vfunc326(int unused1, CBaseEntity *pOther); virtual char vfunc327(); virtual char vfunc328(); virtual void c329();
 	virtual void c330();
 	virtual void vfunc331(CBaseCombatWeapon *pWeapon, CBaseEntity *pEnemy, int nActivity, int *pOutSequence);	// slot 331 "CBaseCombatCharacter::ChooseMeleeAttackSequence" (0x10347180, ret 16, 0x617c-byte frame with alloca_probe): scope trace (entity name), *pOutSequence = -1, then walks the model's sequences usable with pWeapon (slot 360 flags 0x18000; CBaseCombatWeapon::sub_102517e0 index into the weapon's 0x44-byte table at +0x7a0) for pEnemy
-	virtual void c332(); virtual void c333x(); virtual void c334(); virtual void c335x(); virtual void c336x(); virtual void c337x(); virtual void c338x(); virtual void c339x();
-	virtual void c340(); virtual void c341(); virtual void c342(); virtual void c343(); virtual void c344(); virtual void c345(); virtual void c346(); virtual void c347();
+	virtual void c332(); virtual void c333x(); virtual bool vfunc334(int a, int b); virtual void c335x(); virtual void c336x(); virtual void c337x(); virtual void vfunc338(int a, char b, int c); virtual void vfunc339(int a, float b, int c);
+	virtual void vfunc340(int a, int b, int c); virtual void vfunc341(int discipline, int unused); virtual void c342(); virtual void c343(); virtual void c344(); virtual void c345(); virtual void c346(); virtual void c347();
 	virtual int c348();	// slot 348 (see vfunc348, the plain member, for what it does)
 	virtual void c349();
 	virtual void c350(); virtual void vfunc351(CBaseCombatCharacter *pTarget); virtual void vfunc352(); virtual void c353(); virtual void c354(); virtual void c355(); virtual void c356(); virtual void c357(); virtual void c358(); virtual int vfunc359(int a);
 	virtual char vfunc360();	// slot 360 (+0x5a0): a bool-like byte result, read by InputFrenzyTrigger
-	virtual void c361(); virtual void c362(); virtual void c363(); virtual void c364(); virtual void c365();
-	virtual void c366(); virtual void c367(); virtual void c368(); virtual void c369();
+	virtual void vfunc361(); virtual void c362(); virtual void c363(); virtual void c364(); virtual void c365();
+	virtual void c366(); virtual QAngle vfunc367(); virtual Vector vfunc368(); virtual Vector vfunc369();
 	virtual void c370(); virtual void c371(); virtual void c372(); virtual void c373();
 	virtual int vfunc374(int count, int ammoIndex, int unused);	// slot 374 "CBaseCombatCharacter::GiveAmmo" by index
 	virtual int vfunc375(int act);	// slot 375 "CBaseCombatCharacter::NPC_EarlyTranslateActivity": scope trace (entity name), activities that sub_104126a0 flags are translated by sub_10328380(act, -1, 0, -1), else returned unchanged
@@ -74,7 +75,7 @@ public:
 	virtual char vfunc379(CBaseEntity *pTarget, int nRole, int nType, int a4, int a5, int a6, char bHolster);	// "CBaseCombatCharacter::EnterGrappleState"
 	virtual void vfunc380();	// slot 380 "CBaseCombatCharacter::LeaveGrappleState": scope trace (entity name), optional debug "%s LeaveGrappleState" through sub_103221b0, resets m_flTimeA9c to -1.0f and the grapple target state (+0x1538 handle, +0x153c, +0x1540, +0x1544, +0x1558 to -1), remembers the old grapple target's position (+0x1548 / +0x154c) when the mode was 1 or 4, tells the active weapon (slot 67) when the byte at +0x1554 was set, then with the player object (+0xa8, sub_10161ed0) puts the character back on the ground through two Ray_t traces (mask 0x201400b), else (slot 158 true, not sub_100903e0) moves it to the "Bip01" bone; finally slot 93 when slot 94 is 0. Called by CBasePlayer::vfunc380 and CAI_BaseNPC::vfunc380
 	virtual int vfunc381(int a);	// "CBaseCombatCharacter::Weapon_TranslateActivity": scope trace (entity name), when the active weapon (handle at +0x19a4) resolves and does not have bit 6 of the byte at +0x19c set, returns slot 361(a) of the weapon, else a
-	virtual void vfunc382();	// slot 382: CBaseCombatCharacter::sub_1032d9b0 "Weapon_CanUse"
+	virtual bool vfunc382(CBaseCombatWeapon *pWeapon);	// slot 382: CBaseCombatCharacter::sub_1032d9b0 "Weapon_CanUse"
 	virtual void vfunc383(CBaseCombatWeapon *pWeapon, char bNoEquip);	// slot 383 "CBaseCombatCharacter::Weapon_Equip"
 	virtual void vfunc384(CBaseEntity *pAmmoWeapon);	// "CBaseCombatCharacter::Weapon_EquipAmmoOnly": scope trace (entity name), finds the owned weapon whose classname matches the ammo weapon's (edict model name), then moves the two ammo counts of pAmmoWeapon (+0x74c) into this through slot 374 and, if any was taken, calls slot 333(10, 3, 0, 0, 0, 0) on pAmmoWeapon
 	virtual void vfunc385(CBaseCombatWeapon *pWeapon, int nUnused, char bForce);	// slot 385 "CBaseCombatCharacter::Weapon_Drop"
@@ -82,7 +83,7 @@ public:
 	virtual void vfunc387();
 	virtual char vfunc388(void *weapon, int a);	// switches to the given weapon (Weapon_Switch); true when it became active
 	virtual Vector vfunc389(const Vector &vecSrc);	// "CBaseCombatCharacter::Weapon_ShootPosition": scope trace (entity name), the active weapon's "muzzleflash" attachment, else vecSrc plus the gun position offsets (+0x157c forward, +0x1578 right, +0x1580 up) along the angles of slot 221; returned by value
-	virtual void vfunc390();	// slot 390: CBaseCombatCharacter::sub_103302e0 "OnTakeDamage_Alive"
+	virtual int vfunc390(struct CTakeDamageInfo *pInfo);	// slot 390: CBaseCombatCharacter::sub_103302e0 "OnTakeDamage_Alive"
 	virtual int vfunc391(int a);	// slot 391 "OnTakeDamage_Dying" (0x103315e0, matched as sub_103315e0)
 	virtual int vfunc392(void *pInfo);	// "CBaseCombatCharacter::OnTakeDamage_Dead": scope trace (entity name), unless the life state at +0x1fc is 1 lowers the health at +0x210 by the info's damage (a CVDmg_t at info+0 when set, else the float at info+0x30); returns 1
 	virtual int vfunc393();
@@ -213,14 +214,11 @@ public:
 	void vfunc335();
 	void vfunc336();
 	int vfunc337();
-	void vfunc338(int a, int b, int c);
-	void vfunc339(int a, int b, int c);
-	void vfunc339(int a, float b, int c);	// the real signature (float second argument), see CBasePlayer::vfunc339
-	void vfunc340(int a, int b, int c);
+	// vfunc339 (declared virtual in the slot block): the real signature (float second argument), see CBasePlayer::vfunc339
 	void vfunc358();	// "CBaseCombatCharacter::PrayerEnd": scope trace (entity name), clears the prayer state at +0x14a8/+0x1475/+0x1478/+0x14aa, +0x14ac = -1, +0xff0 = 0x133 and, when the object at +0xa8 is set, slot 93(3, 0)
 	char vfunc362(const float *pos);	// "CBaseCombatCharacter::FInViewCone": scope trace, then sub_103268e0(pos, field at +0x1574)
 	int vfunc365(CBaseEntity *pTarget);	// "CBaseCombatCharacter::FInAimCone": scope trace (entity name), returns slot 364(target slot 197(buf, slot 193(buf), 1, 0))
-	QAngle vfunc367();	// "CBaseCombatCharacter::BodyAngles": scope trace (entity name), returns the three floats returned by slot 219 by value
+	// vfunc367 (declared virtual in the slot block): "CBaseCombatCharacter::BodyAngles": scope trace (entity name), returns the three floats returned by slot 219 by value
 	void sub_1032c960(CBaseEntity *pObject);
 	void vfunc50(int a);	// scope-traced wrapper around sub_10014eb6(a, 0)
 	void vfunc51(int unused, float *pOut);	// "CBaseCombatCharacter::GetCameraTargetPosition": scope trace (entity name), with the flag byte at +0x10d4 set sub_10014eb6(pOut, 0), else copies the vector slot 192 returns into pOut
@@ -228,9 +226,9 @@ public:
 	void sub_10106c40();	// "CBaseCombatCharacter::ReloadExpressionsForMyModel" (stub 0x10001203), called directly
 	void sub_100b5ab0(const char *pszModel);	// CBaseFlex::vfunc105 (stub 0x10013813), called directly
 	void vfunc119();	// "CBaseCombatCharacter::Kill": scope trace (entity name), then CBaseEntity::vfunc119
-	bool vfunc326(int unused1, int unused2);	// slot 326: false when the character's default stat item has the byte at +0x9e set or the first stat list with a zero field at +0x10 (default list when none) is IsEqual(0xf, 0x11); else slot 158 as a bool
+	// vfunc326 (declared virtual in the slot block): slot 326: false when the character's default stat item has the byte at +0x9e set or the first stat list with a zero field at +0x10 (default list when none) is IsEqual(0xf, 0x11); else slot 158 as a bool
 	Vector vfunc371();
-	Vector vfunc369();	// "CBaseCombatCharacter::BodyDirection3D": scope trace (entity name), AngleVectors of slot 367 (BodyAngles) into a local forward vector, returned by value
+	// vfunc369 (declared virtual in the slot block): "CBaseCombatCharacter::BodyDirection3D": scope trace (entity name), AngleVectors of slot 367 (BodyAngles) into a local forward vector, returned by value
 	void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);	// AngleVectors (stub 0x10002310)
 	void sub_100b7fa0(float *pOut, int a, int b);
 	void vfunc104();	// slot 104 "CBaseCombatCharacter::Precache": scope trace (entity name), the character's stat record is precached through the default item list (global 0x10738d10), then, depending on sub_102f9970, either slot 337's answer goes to sub_102f9920 or the spawn-after-links check (slot 337 masked by sub_102f9950 must equal slot 337) prints the "ERROR" DevMsg block and gives up
@@ -374,7 +372,7 @@ public:
 	int m_nMotionTrail;	// 0x1484
 	float m_flFrenzyRate;	// 0x1488
 	bool sub_103395f0();	// "CBaseCombatCharacter::CanFeed": scope trace (entity name); needs sub_10337f30, then true without a live target (handle +0x149c), else true when the target's stat list 0 gives a non-zero bounded stat 12 and the target's slot 158 holds
-	char m_pad148c[0x1490 - 0x148c];
+	float m_f148C;	// 0x148c (CBasePlayer's code reads it)
 	float m_flNextFeed1490;
 	float m_flFeedInterval1494;
 	float m_flFeedStart1498;

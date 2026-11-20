@@ -79,7 +79,7 @@ void CBasePlayer::vfunc457(const char *pszName, int a)
 {
 	if (!pszName)
 		return;
-	if (EHandle_Get(m_h1538) && m_n153C != -1)
+	if (EHandle_Get(m_hTarget1538.m_Index) && m_nTarget153c != -1)
 		return;
 	for (int i = 0; i < 0xe0; i++) {
 		CBaseCombatWeapon *pWeapon = (CBaseCombatWeapon *)sub_1032e8b0(i);
@@ -98,7 +98,7 @@ void CBasePlayer::vfunc457(const char *pszName, int a)
 			return;
 		if (pWeapon == sub_1032e7b0())
 			return;
-		if ((CBaseEntity *)pWeapon == m_hEnt10DC.Get())
+		if ((CBaseEntity *)pWeapon == m_hActiveIArmor.Get())
 			return;
 		if (pWeapon->sub_10256200()) {
 			if (sub_1032e7b0()) {
@@ -110,7 +110,7 @@ void CBasePlayer::vfunc457(const char *pszName, int a)
 			if (sub_1032e7b0())
 				vfunc443(((CBaseCombatWeapon *)sub_1032e7b0())->vfunc317());
 		} else {
-			m_hEnt10E0 = m_hEnt10DC;
+			m_hLastIArmor = m_hActiveIArmor;
 		}
 		vfunc388((CBaseEntity *)pWeapon, 0);
 		sub_10182e00((CBaseCombatWeapon *)sub_1032e7b0());
@@ -124,9 +124,9 @@ void CBasePlayer::vfunc457(const char *pszName, int a)
 extern int g_10580edc[];
 
 // TARGET: CBasePlayer::vfunc82
-void *CBasePlayer::vfunc82()
+datamap_t  *CBasePlayer::vfunc82()
 {
-	return g_10580edc;
+	return (datamap_t  *)(g_10580edc);
 }
 // END FUNCTION
 
@@ -189,7 +189,7 @@ char CBasePlayer::vfunc328() { return 1; }
 // TARGET: CBasePlayer::vfunc131
 int CBasePlayer::vfunc131()
 {
-	int nEdict = m_n02E0;
+	int nEdict = m_pEdict2e0;
 	return engine->vfunc35(nEdict);
 }
 // END FUNCTION
@@ -312,7 +312,7 @@ void *CBasePlayer::vfunc198()
 void sub_100aa7b0(void *p);
 
 // TARGET: CBasePlayer::vfunc5
-CBasePlayer *CBasePlayer::vfunc5(unsigned int flags)
+CBaseEntity  *CBasePlayer::vfunc5(unsigned int flags)
 {
 	sub_100017d5();
 	if (flags & 1)
@@ -662,8 +662,8 @@ struct CUnknown1015ef00
 
 void __cdecl sub_101cf600(CBaseEntity *pEnt);
 
-// TARGET: CBasePlayer::vfunc103
-void CBasePlayer::vfunc103()
+// TARGET: CBasePlayer::sub_1015efa0
+void CBasePlayer::sub_1015efa0()
 {
 	CBaseEntity *pEnt = (CBaseEntity *)this;
 	vfunc407();
@@ -683,12 +683,12 @@ void CBasePlayer::vfunc103()
 #include "CBasePlayer.h"
 void CBasePlayer::vfunc112(int unused, int nArg)
 {
-	if (m_n14B0 == nArg && m_n14B4 != -1) {
-		if (sub_10099400(m_n14B0)) {
+	if (m_aCurWpnActivity == nArg && m_aNextWpnActivity != -1) {
+		if (sub_10099400(m_aCurWpnActivity)) {
 			if (!sub_10099430(0))
-				sub_101644f0(-1, m_n14B4, 1);
+				sub_101644f0(-1, m_aNextWpnActivity, 1);
 			else
-				sub_101644f0(-1, m_n14B0, 1);
+				sub_101644f0(-1, m_aCurWpnActivity, 1);
 		}
 	}
 }
@@ -821,9 +821,9 @@ bool CBasePlayer::vfunc320(int a1, int activity)
 	if (pAnim->sub_1008dc40(vfunc376(vfunc381(activity)), -1) < 0)
 		return false;
 
-	se44();
+	vfunc266();
 
-	if (EHandle_Get(m_h1538) && m_n153C == 0)
+	if (EHandle_Get(m_hTarget1538.m_Index) && m_nTarget153c == 0)
 		return false;
 
 	sub_101644f0(activity, 0, 1);
@@ -840,7 +840,7 @@ bool CBasePlayer::vfunc320(int a1, int activity)
 		}
 	}
 
-	float flDuration = pAnim->sub_10091080(m_n6F0);
+	float flDuration = pAnim->sub_10091080(m_nSequence6f0);
 	float flAmplitude = (g_107251ac->vfunc1() ? 0.0f : g_107251ac->m_fValue) * flDuration;
 
 	Vector vecPunch;
@@ -911,7 +911,7 @@ bool CBasePlayer::vfunc318(int a, melee_dice_roll_result *pRoll, int c)
 	}
 	sub_101644f0(nActivity, -1, 1);
 	*(int *)((char *)this + 0x6f4) = *(int *)((char *)this + 0x1488);
-	m_f1564 = flTime + gpGlobals->curtime;
+	m_flNextAttack1564 = flTime + gpGlobals->curtime;
 	return true;
 }
 // END FUNCTION
@@ -949,7 +949,7 @@ bool CBasePlayerUnit::sub_10160d00(int a, melee_dice_roll_result *pRoll, int c)
 	if (pRoll && ((melee_dice_roll_result_view *)pRoll)->sub_10349830() == 2)
 		flBase = g_1046faf8;
 	float flTime = (PL_F1488(this) > g_1046a5e4) ? (double)flBase / PL_F1488(this) : g_104454c4;
-	m_f1564 = flTime + gpGlobals->curtime;
+	m_flNextAttack1564 = flTime + gpGlobals->curtime;
 	return true;
 }
 // END FUNCTION
@@ -1071,7 +1071,7 @@ bool CBasePlayer::vfunc412()
 	CBasePlayerActView *p = (CBasePlayerActView *)this;
 	int act = p->m_nActivity;
 	if (act == 0x1152 || act == 0x1153 || act == 0x52 || act == 0x1156) {
-		if (gpGlobals->curtime < m_f1564)
+		if (gpGlobals->curtime < m_flNextAttack1564)
 			return true;
 	} else if (p->m_nSequence >= 0) {
 		if (p->m_flCycle >= 1.0f)
@@ -1113,7 +1113,7 @@ bool CBasePlayer::vfunc412()
 // TARGET: CBasePlayer::vfunc413
 bool CBasePlayer::vfunc413()
 {
-	if (m_nFF0 == 0x32)
+	if (m_IdealActivity == 0x32)
 		return true;
 	return vfunc412();
 }
@@ -1244,26 +1244,26 @@ struct CFrenzyList
 extern CFrenzyList g_10750cb4;
 
 // TARGET: CBasePlayer::vfunc360
-bool CBasePlayer::vfunc360()
+char CBasePlayer::vfunc360()
 {
-	if (EHandle_Get(m_h1538) && m_n153C != -1)
+	if (EHandle_Get(m_hTarget1538.m_Index) && m_nTarget153c != -1)
 	{
 		DevWarning("CheckForPlayerFrenzy - Failed because player is grappling!\n");
-		return false;
+		return (char)(false);
 	}
 	if (m_nUseEdictIndex1EB8)
-		return false;
+		return (char)(false);
 	if (!sub_10376d00(this))
 	{
 		DevWarning("CheckForPlayerFrenzy - Failed to prepare NPC enemy list!  No close NPCs.\n");
-		return false;
+		return (char)(false);
 	}
 	vfunc457("item_w_fists", 0);
 	CFrenzyShadowView *pShadow = (CFrenzyShadowView *)sub_10161a70("npc_VFrenzyShadow");
 	if (!pShadow)
 	{
 		DevWarning("Failed to create frenzy controller in CheckForPlayerFrenzy!\n");
-		return false;
+		return (char)(false);
 	}
 	if (pShadow->vfunc138() != 3)
 		DevWarning("Non Troika Ent in CheckForPlayerFrenzy!\n");
@@ -1271,7 +1271,7 @@ bool CBasePlayer::vfunc360()
 	sub_1017e150(1, -1.0f, sub_101d3730("CheckForPlayerFrenzy"));
 	sub_101cebc0(this, 0, 0);
 	g_10750cb4.sub_10227a30(this, 0);
-	return true;
+	return (char)(true);
 }
 // END FUNCTION
 
@@ -1336,8 +1336,8 @@ void CBasePlayer::vfunc448()
 // TARGET: CBasePlayer::vfunc143
 int CBasePlayer::vfunc143(float flHealth, int bitsDamageType)
 {
-	if (m_nTakeDamage1FC != 0)
-		m_flags0E98 &= ~(bitsDamageType & 0x3fff);
+	if (m_nTakeDamage != 0)
+		m_bitsDamageType &= ~(bitsDamageType & 0x3fff);
 	return ((CBaseCombatCharacter *)this)->CBaseCombatCharacter::vfunc143(flHealth, bitsDamageType);
 }
 // END FUNCTION
@@ -1431,7 +1431,7 @@ void CBasePlayer::vfunc123()
 		Vector forward, right, up;
 		Vector mins(-5, -5, -5);
 		Vector maxs(5, 5, 5);
-		sub_10139610(pV->GetAbsAngles(), &forward, &right, &up);
+		::sub_10139610(pV->GetAbsAngles(), &forward, &right, &up);
 		Vector anchor = pV->GetAbsOrigin();
 		anchor += forward * 40.0f;
 		anchor.z += 20.0f;
@@ -1492,7 +1492,7 @@ inline int ENTINDEX_141(int pEdict) { return engine->vfunc35(pEdict); }
 // TARGET: CBasePlayer::vfunc141
 void CBasePlayer::vfunc141(CVDmg_t *pInfoArg, const Vector *pDir, CGameTrace *pTrace)
 {
-	if (m_nTakeDamage1FC)
+	if (m_nTakeDamage)
 	{
 		CTDIScale info = *(CTDIScale *)pInfoArg;
 
@@ -1500,10 +1500,10 @@ void CBasePlayer::vfunc141(CVDmg_t *pInfoArg, const Vector *pDir, CGameTrace *pT
 		if (pSub && (pSub->vfunc513() & 0x10000000))
 			return;
 
-		if (info.m_pVDmg00->sub_101fb340(ENTINDEX_141(m_n02E0)))
+		if (info.m_pVDmg00->sub_101fb340(ENTINDEX_141(m_pEdict2e0)))
 			return;
 
-		int idx = ENTINDEX_141(m_n02E0);
+		int idx = ENTINDEX_141(m_pEdict2e0);
 		float flDamage = (float)info.m_pVDmg00->sub_101fb200(idx, info.sub_101c29b0());
 
 		m_nHitBoxSet1594 = pTrace->m_hitgroup;
@@ -1605,8 +1605,9 @@ void sub_101ce290(int a, int b, int c, int d, int e);
 
 #define GETDMG(p) ((p).m_pVDmg00 ? (float)(p).m_pVDmg00->sub_101faa70() : (p).m_flDamage)
 
-int CBasePlayer::vfunc142(const CTakeDamageInfo *pInfo)
+int CBasePlayer::vfunc142(void  *pInfo)
 {
+#define pInfo ((const CTakeDamageInfo *)pInfo)
 	if (vfunc406())
 		return 0;
 
@@ -1621,8 +1622,8 @@ int CBasePlayer::vfunc142(const CTakeDamageInfo *pInfo)
 	if (((CBaseEntity *)this)->sub_100b3700() & 0x4000)
 		return 0;
 
-	if ((EHandle_Get(m_h1538) && m_n153C != -1 && m_n1540 == 0) ||
-		(EHandle_Get(m_h1538) && m_n153C != -1 && m_n1540 == 2))
+	if ((EHandle_Get(m_hTarget1538) && m_nTarget153c != -1 && m_nTargetMode1540 == 0) ||
+		(EHandle_Get(m_hTarget1538) && m_nTarget153c != -1 && m_nTargetMode1540 == 2))
 	{
 		((CBaseCombatCharacter *)this)->c353();
 		sub_10329560();
@@ -1631,15 +1632,15 @@ int CBasePlayer::vfunc142(const CTakeDamageInfo *pInfo)
 	sub_1017c6d0();
 	sub_10167fd0();
 
-	if (m_aLastplayerAnim == 0xc && m_n14A0 > 0)
+	if (m_aLastplayerAnim == 0xc && m_iBloodStolen > 0)
 	{
 		do
 		{
-			m_n14A0--;
+			m_iBloodStolen--;
 			sub_10338df0(1);
 			m_aLastplayerAnim = 0;
 			m_bPlayerAnimCyclePlaying = false;
-		} while (m_n14A0 > 0);
+		} while (m_iBloodStolen > 0);
 	}
 
 	if (m_fDebugOverlays224 & 0x2000000)
@@ -1720,6 +1721,7 @@ int CBasePlayer::vfunc142(const CTakeDamageInfo *pInfo)
 	}
 
 	return nDamage;
+#undef pInfo
 }
 // END FUNCTION
 
@@ -1854,12 +1856,12 @@ inline bool IsSolidFlagSet(CBaseEntity *pEnt)
 
 struct CPlayerImpulse : CBasePlayer
 {
-	bool IsDirtyAbsVelocity() { return (m_fFlags268 >> 12) & 1; }
+	bool IsDirtyAbsVelocity() { return (m_flags268 >> 12) & 1; }
 	const Vector &GetAbsVelocity()
 	{
 		if (IsDirtyAbsVelocity())
 			((CBaseEntity *)(void *)this)->sub_100b1d10();
-		return m_vec03BC;
+		return m_vecVelocity3bc;
 	}
 	void ApplyAbsVelocityImpulse(const Vector &inVecImpulse)
 	{
@@ -1870,7 +1872,7 @@ struct CPlayerImpulse : CBasePlayer
 
 int CBasePlayer::vfunc390(CTakeDamageInfo *pInfo)
 {
-	m_flags0E98 |= GetDamageType(*pInfo);
+	m_bitsDamageType |= GetDamageType(*pInfo);
 
 	if (!((CBaseCombatCharacter *)(void *)this)->sub_103302e0(pInfo))
 		return 0;
@@ -1924,10 +1926,11 @@ struct CWeaponView144 {
 struct CBP144View : CBasePlayer
 {
 	void sub_10003684(const void *pArg);
-	int GetEdict() { return m_n02E0; }
+	int GetEdict() { return m_pEdict2e0; }
 };
-void CBasePlayer::vfunc144(const void *pArg)
+void CBasePlayer::vfunc144(void  *pArg)
 {
+#define pArg ((const void *)pArg)
 	CSingleUserRecipientFilter filter(this);
 	filter.MakeReliable();
 	engine->vfunc65(&filter, g_10726088);
@@ -1946,7 +1949,7 @@ void CBasePlayer::vfunc144(const void *pArg)
 	if (m_hPlaceholder1da4.Get())
 		sub_10161f10();
 	g_10750cb4.sub_10227a30(this, 5);
-	CSoundEntView *pSnd = sub_101bb150(sub_101bb220(m_n02E0));
+	CSoundEntView *pSnd = sub_101bb150(sub_101bb220(m_pEdict2e0));
 	if (pSnd)
 		pSnd->sub_101b98d0();
 	if (*(int *)((char *)this + 0x210) < -99)
@@ -1965,21 +1968,22 @@ void CBasePlayer::vfunc144(const void *pArg)
 		engine->vfunc67(m_n20E8);
 		engine->vfunc66();
 	}
-	*(EHANDLE *)&m_hUseEnt1040 = (CBaseEntity *)0;
-	*(EHANDLE *)&m_n14AC = (CBaseEntity *)0;
-	*(EHANDLE *)&m_h149C = (CBaseEntity *)0;
-	m_b1475 = 0;
-	m_b1476 = 0;
-	m_f1478 = 0;
-	m_b14A8 = 0;
-	m_b14AA = 0;
-	m_b14DC = 0;
-	m_n1044 = -1;
-	m_n1048 = 0;
-	m_n1050 = 0;
-	m_n104C = 0;
+	*(EHANDLE *)&m_hInteractiveUseTarget.m_Index = (CBaseEntity *)0;
+	*(EHANDLE *)&m_h14ac.m_Index = (CBaseEntity *)0;
+	*(EHANDLE *)&m_h149c.m_Index = (CBaseEntity *)0;
+	m_bCantBreakGrapple = 0;
+	m_bIsFrenzyGrapple = 0;
+	m_flBreakGrappleTimer = 0;
+	m_b14a8 = 0;
+	m_b14aa = 0;
+	m_bObfuscateReady14dc = 0;
+	m_nShakyIndex1044 = -1;
+	m_flShakyEnd1048 = 0;
+	m_flShakyIntensity1050 = 0;
+	m_flShakyTime104c = 0;
 	m_n1E78 = 0;
 	((CBP144View *)this)->sub_10003684(pArg);
+#undef pArg
 }
 // END FUNCTION
 
@@ -2014,8 +2018,8 @@ struct CEntSlot360View
 
 static inline CGlobalEntityList_Ent *GrappleTarget(CBasePlayer *p)
 {
-	CGlobalEntityList_Ent *pEnt = EHandle_Get(p->m_h1538);
-	if (pEnt && p->m_n153C != -1)
+	CGlobalEntityList_Ent *pEnt = EHandle_Get(p->m_hTarget1538);
+	if (pEnt && p->m_nTarget153c != -1)
 		return pEnt;
 	return 0;
 }
@@ -2024,9 +2028,9 @@ void CBasePlayer::vfunc449(int a, int b)
 {
 	if (vfunc412())
 	{
-		if (m_b1DF4 && sub_10161380() && m_f6f8 >= 0.65f)
+		if (m_b1DF4 && sub_10161380() && m_fl6f8 >= 0.65f)
 		{
-			CEntSlot360View *pEnt = (CEntSlot360View *)EHandle_Get(m_hEnt0EA4);
+			CEntSlot360View *pEnt = (CEntSlot360View *)EHandle_Get(m_hEa4);
 			if (pEnt && (pEnt->vfunc360() & 0x6000))
 			{
 				m_b1DF4 = 0;
@@ -2039,12 +2043,12 @@ void CBasePlayer::vfunc449(int a, int b)
 	{
 		vfunc417(a, b);
 	}
-	else if (!(EHandle_Get(m_h1538) && m_n153C == 1))
+	else if (!(EHandle_Get(m_hTarget1538) && m_nTarget153c == 1))
 	{
 		char r;
-		if (EHandle_Get(m_h1538))
+		if (EHandle_Get(m_hTarget1538))
 		{
-			switch (m_n1540)
+			switch (m_nTargetMode1540)
 			{
 			case 0:
 			case 1:
@@ -2079,8 +2083,8 @@ void CBasePlayer::vfunc449(int a, int b)
 			vfunc449(a, 0);
 		}
 	}
-	sub_10146e20(m_nFF0, a);
-	sub_1017e900(m_nFEC, a);
+	sub_10146e20(m_IdealActivity, a);
+	sub_1017e900(m_Activity, a);
 }
 // END FUNCTION
 
@@ -2197,7 +2201,7 @@ inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
 #define m_f6F4 (*(float *)((char *)this + 0x6f4))
 #define m_f19EC (*(float *)((char *)this + 0x19ec))
 #define m_f2458 (*(float *)((char *)this + 0x2458))
-#define m_hUseEnt1040X (*(EHANDLE *)&m_hUseEnt1040)
+#define m_hUseEnt1040X (*(EHANDLE *)&m_hInteractiveUseTarget.m_Index)
 namespace block_10164040 {
 #pragma auto_inline(off)
 
@@ -2291,7 +2295,7 @@ void CBasePlayer::vfunc417(int playerAnim, int b)
 	if (m_hPlaceholder1da4.Get())
 	{
 		sub_10329560();
-		CBaseEntity *pWeapon = m_hEnt0EA8.Get();
+		CBaseEntity *pWeapon = m_hEa8.Get();
 		if (pWeapon)
 		{
 			vfunc388(pWeapon, 0);
@@ -2305,7 +2309,7 @@ void CBasePlayer::vfunc417(int playerAnim, int b)
 	}
 
 	m_b1DF4 = 0;
-	float speed = m_vec03D4.Length2D();
+	float speed = (*(Vector *)m_vel3d4).Length2D();
 	{
 		float flYaw = anglemod(vfunc219()[1]);
 
@@ -2315,7 +2319,7 @@ void CBasePlayer::vfunc417(int playerAnim, int b)
 		if (speed > g_104454c4)
 		{
 			int iMoveYaw = self->sub_10092270("move_yaw");
-			float flVel = sub_101d2c70(m_vec03D4);
+			float flVel = sub_101d2c70((*(Vector *)m_vel3d4));
 			float flDiff = sub_1013d580(flYaw, flVel);
 			if (gpGlobals->curtime - 0.3f > *(float *)&m_f2458)
 				slots->SetPoseParameter(iMoveYaw, flDiff, 0);
@@ -2372,11 +2376,11 @@ void CBasePlayer::vfunc417(int playerAnim, int b)
 
 	if (playerAnim == 0xb)
 	{
-		idealActivity = (m_vec03D4.z < -40.0f) ? 0x34 : 0x33;
-		if (m_vec03D4.z > -40.0f && m_vec03D4.z < 40.0f)
+		idealActivity = ((*(Vector *)m_vel3d4).z < -40.0f) ? 0x34 : 0x33;
+		if ((*(Vector *)m_vel3d4).z > -40.0f && (*(Vector *)m_vel3d4).z < 40.0f)
 			m_f6F4 = 0;
 		else
-			m_f6F4 = m_flSpeedScale1488;
+			m_f6F4 = m_flFrenzyRate;
 	}
 	else if (playerAnim == 2)
 	{
@@ -2407,8 +2411,8 @@ void CBasePlayer::vfunc417(int playerAnim, int b)
 	}
 	else if (playerAnim == 9)
 	{
-		if ((speed > 25.0f && m_n03E0 >= 3 && fabs(m_vec03D4.x) > 20.0) ||
-			(speed > 75.0f && !(sub_100b3700() & 1) && fabs(m_vec03D4.x) > 20.0))
+		if ((speed > 25.0f && MoveType3e0() >= 3 && fabs((*(Vector *)m_vel3d4).x) > 20.0) ||
+			(speed > 75.0f && !(sub_100b3700() & 1) && fabs((*(Vector *)m_vel3d4).x) > 20.0))
 			idealActivity = 0x25;
 		else
 			idealActivity = 0x26;
@@ -2443,7 +2447,7 @@ void CBasePlayer::vfunc417(int playerAnim, int b)
 	}
 	else if (playerAnim == 7)
 	{
-		int n = m_nFF0;
+		int n = m_IdealActivity;
 		iSeq = 0;
 		if (m_b65c)
 		{
@@ -2451,7 +2455,7 @@ void CBasePlayer::vfunc417(int playerAnim, int b)
 				idealActivity = 0x132;
 			else if (n == 0x132)
 			{
-				if (!m_b14A8)
+				if (!m_b14a8)
 				{
 					((CEntityVSlots *)this)->slot358();
 					idealActivity = 0x133;
@@ -2475,7 +2479,7 @@ void CBasePlayer::vfunc417(int playerAnim, int b)
 				idealActivity = 0x131;
 			}
 			else
-				idealActivity = m_nFF0;
+				idealActivity = m_IdealActivity;
 		}
 	}
 	else if (playerAnim == 0xc)
@@ -2499,13 +2503,13 @@ void CBasePlayer::vfunc417(int playerAnim, int b)
 	else if (playerAnim == 0xd)
 	{
 		idealActivity = 0x1154;
-		Vector vec = m_vec03D4;
+		Vector vec = (*(Vector *)m_vel3d4);
 		vec.x = 0;
 		vec.y = 0;
 		sub_100b2e30(&vec);
 	}
 
-	if ((idealActivity == 5 || idealActivity == 1) && m_nFF0 == 0x4b && !m_b65c)
+	if ((idealActivity == 5 || idealActivity == 1) && m_IdealActivity == 0x4b && !m_b65c)
 		return;
 
 	sub_101815b0(6);
@@ -2542,8 +2546,8 @@ char CBasePlayer::vfunc422(int unused)
 	SPlayerStepView *v = (SPlayerStepView *)this;
 	sub_101644f0(-1, 0, 0);
 	CEntityVSlots *pTarget;
-	if (m_n153C != -1)
-		pTarget = (CEntityVSlots *)EHandle_Get(m_h1538);
+	if (m_nTarget153c != -1)
+		pTarget = (CEntityVSlots *)EHandle_Get(m_hTarget1538.m_Index);
 	else
 		pTarget = 0;
 	int act = v->nActivity;
@@ -2645,7 +2649,7 @@ char CBasePlayer::vfunc418(int unused)
 char CBasePlayer::vfunc419(int unused)
 {
 	sub_101644f0(-1, 0, 0);
-	CGlobalEntityList_Ent *pTarget = (m_n153C != -1) ? EHandle_Get(m_h1538) : 0;
+	CGlobalEntityList_Ent *pTarget = (m_nTarget153c != -1) ? EHandle_Get(m_hTarget1538.m_Index) : 0;
 	int nActivity = *(int *)((char *)this + 0xff0);
 	if (!pTarget || !((CEntityVSlots *)pTarget)->slot158()) {
 		*(char *)((char *)this + 0x14a8) = 0;
@@ -2694,8 +2698,8 @@ run:
 void CBasePlayer::vfunc426()
 {
 	CBaseEntity *p = 0;
-	if (m_n153C != -1)
-		p = (CBaseEntity *)EHandle_Get(m_h1538);
+	if (m_nTarget153c != -1)
+		p = (CBaseEntity *)EHandle_Get(m_hTarget1538.m_Index);
 	else
 		p = 0;
 	sub_10165790(p);
@@ -2708,7 +2712,7 @@ void CBasePlayer::vfunc426()
 #include "CEHandleGet.h"
 void CBasePlayer::vfunc427()
 {
-	sub_10165790(m_n153C != -1 ? (CBaseEntity *)EHandle_Get(m_h1538) : 0);
+	sub_10165790(m_nTarget153c != -1 ? (CBaseEntity *)EHandle_Get(m_hTarget1538.m_Index) : 0);
 }
 // END FUNCTION
 
@@ -2742,7 +2746,7 @@ inline CVStatList_t *GetActiveList(CBaseCombatCharacter *pChar)
 char CBasePlayer::vfunc420(int unused)
 {
 	sub_101644f0(-1, 0, 0);
-	CGlobalEntityList_Ent *pTarget = (m_n153C != -1) ? EHandle_Get(m_h1538) : 0;
+	CGlobalEntityList_Ent *pTarget = (m_nTarget153c != -1) ? EHandle_Get(m_hTarget1538.m_Index) : 0;
 	int nActivity = *(int *)((char *)this + 0xff0);
 	if (!pTarget || !((CEntityVSlots *)pTarget)->slot158()) {
 		*(char *)((char *)this + 0x14a8) = 0;
@@ -2821,8 +2825,8 @@ struct CStatHolderHandle
 char CBasePlayer::vfunc421(int unused)
 {
     if (*(char *)((char *)this + 0x65c)) {
-        if (m_n153C != -1) {
-            CBaseCombatCharacter *pChar = ((CStatHolderHandle *)&m_h1538)->Get();
+        if (m_nTarget153c != -1) {
+            CBaseCombatCharacter *pChar = ((CStatHolderHandle *)&m_hTarget1538.m_Index)->Get();
             if (pChar) {
                 CVDmg_t dmg;
                 dmg.sub_101fa960((CVDmgSource_t *)this);
@@ -2868,7 +2872,7 @@ struct SPlayerStepView423
 char CBasePlayer::vfunc423(int unused)
 {
 	sub_101644f0(-1, 0, 0);
-	CGlobalEntityList_Ent *pTarget = (m_n153C != -1) ? EHandle_Get(m_h1538) : 0;
+	CGlobalEntityList_Ent *pTarget = (m_nTarget153c != -1) ? EHandle_Get(m_hTarget1538.m_Index) : 0;
 	int nActivity = *(int *)((char *)this + 0xff0);
 	if (!pTarget || !((CEntityVSlots *)pTarget)->slot158()) {
 		*(char *)((char *)this + 0x14a8) = 0;
@@ -2941,7 +2945,7 @@ struct CFoundView10341c30
 char CBasePlayer::vfunc424(char bFlag)
 {
 	char buf[256];
-	if (EHandle_Get(m_h1538) && m_n153C != -1)
+	if (EHandle_Get(*(unsigned int *)&m_hTarget1538) && m_nTarget153c != -1)
 		return 0;
 
 	CBaseEntity *pVictim = LookForGrappleVictim();
@@ -2963,9 +2967,9 @@ char CBasePlayer::vfunc424(char bFlag)
 			{
 				if (sub_1032e7b0())
 					((CBaseEntity *)sub_1032e7b0())->vfunc66();
-				m_b14A8 = 1;
-				m_b1475 = bFlag;
-				m_f1478 = 0;
+				m_b14a8 = 1;
+				*(char *)&m_bCantBreakGrapple = bFlag;
+				m_flBreakGrappleTimer = 0;
 				return 1;
 			}
 			if (!g_10937034->vfunc1() && g_10937034->m_n2c)
@@ -3033,7 +3037,7 @@ extern CUnknown101e8bb0 g_10739d08;
 char CBasePlayer::vfunc425(CBaseEntity *pTarget)
 {
 	char szBuf[256];
-	if (EHandle_Get(m_h1538) && m_n153C != -1)
+	if (EHandle_Get(m_hTarget1538.m_Index) && m_nTarget153c != -1)
 		return 0;
 	if (pTarget) {
 		if (!g_10937034->vfunc1() && g_10937034->m_n2c) {
@@ -3044,10 +3048,10 @@ char CBasePlayer::vfunc425(CBaseEntity *pTarget)
 		if (sub_10328df0(pTarget, 8)) {
 			if (sub_1032e7b0())
 				((CEntityVSlots *)sub_1032e7b0())->slot66();
-			m_b14A8 = 1;
-			m_b1475 = 1;
-			m_f1478 = g_10739d08.sub_101e8bb0() + gpGlobals->curtime;
-			m_f147C = ((CUnknown101e8b50 *)&g_10739d08)->sub_101e8b50() + gpGlobals->curtime;
+			m_b14a8 = 1;
+			m_bCantBreakGrapple = 1;
+			m_flBreakGrappleTimer = g_10739d08.sub_101e8bb0() + gpGlobals->curtime;
+			m_flGrappleDamageTimer = ((CUnknown101e8b50 *)&g_10739d08)->sub_101e8b50() + gpGlobals->curtime;
 			goto done;
 		}
 		if (!g_10937034->vfunc1() && g_10937034->m_n2c)
@@ -3334,26 +3338,26 @@ struct CBP380View : CBasePlayer { int sub_1033c9c0(); };
 
 void CBasePlayer::vfunc380()
 {
-	CBaseCombatCharacter *target = (m_n153C != -1) ? (CBaseCombatCharacter *)((EHANDLE &)m_h1538).Get() : 0;
+	CBaseCombatCharacter *target = (m_nTarget153c != -1) ? (CBaseCombatCharacter *)((EHANDLE &)m_hTarget1538.m_Index).Get() : 0;
 	const EHandleEntInfo *volatile pInfo;
-	if (m_h1538 != 0xffffffff)
-		pInfo = &EHandleDetail::g_10566458->m_EntPtrArray[m_h1538 & 0x1fff];
+	if (m_hTarget1538.m_Index != 0xffffffff)
+		pInfo = &EHandleDetail::g_10566458->m_EntPtrArray[m_hTarget1538.m_Index & 0x1fff];
 	sub_10329a70();
 	sub_101815b0(1);
 	m_b1B6C = 0;
 	sub_1017cef0(0);
 	if (target) {
 		((CEntityVSlots *)this)->slot306((int)target, 0);
-		if (m_n14A0 > 0) {
+		if (m_iBloodStolen > 0) {
 			if (sub_10339cd0() && !target->sub_10339b50()) {
 				if (g_10738d10.sub_101d5f10(target)->m_8c[6] && enginerandom->vfunc2(0, 100) < 0x32) {
 					sub_101cebc0(this, 0x4a, 0);
-					if (m_n14A0 > 0)
+					if (m_iBloodStolen > 0)
 						vfunc449(0xc, 1);
 				}
 			} else if (target->sub_10339c10()) {
 				sub_101cebc0(this, 0x11, 0);
-				if (m_n14A0 > 0)
+				if (m_iBloodStolen > 0)
 					vfunc449(0xc, 1);
 			} else if (((CBP380View *)this)->sub_1033c9c0() & 0x10000) {
 				if (((CEntityVSlots *)target)->slot138() == 0xd)
@@ -3509,25 +3513,25 @@ CBaseEntity *GVPlayer::sub_101690b0()
 
 static inline CBaseEntity *ToNPC10169960(CBaseEntity *p) { return !p ? 0 : (CBaseEntity *)p->m_pNPC98; }
 static inline bool IsNPC10169960(CBaseEntity *p) { return p->m_pNPC98 != 0; }
-inline CBaseEntity *CBPView_10169960::GrappleTarget() { return m_n153C != -1 ? HGET(&m_h1538) : 0; }
+inline CBaseEntity *CBPView_10169960::GrappleTarget() { return m_nTarget153c != -1 ? HGET(&m_hTarget1538.m_Index) : 0; }
 static inline bool Expired10169960(const CScareRec &r) { return g_10725848.GetFloat() + r.m_flTime < gpGlobals->curtime; }
 void CBPView_10169960::sub_10169960()
 {
 	EngineGlobals::CGlobalVars *pGlobals = gpGlobals;
-	if (m_b1475 || pGlobals->curtime - F1498() < 1.0) {
-		if (HGET(&m_h1538) && m_n153C != -1 && m_n1540 == 8) {
+	if (m_bCantBreakGrapple || pGlobals->curtime - F1498() < 1.0) {
+		if (HGET(&m_hTarget1538.m_Index) && m_nTarget153c != -1 && m_nTargetMode1540 == 8) {
 			if (m_n208C & 0x400f9b) {
-				m_f1478 -= G39D08->sub_101e8bd0();
+				m_flBreakGrappleTimer -= G39D08->sub_101e8bd0();
 				pGlobals = gpGlobals;
 			}
-			if (pGlobals->curtime >= m_f1478) {
-				m_b14A8 = 0;
-				m_b1475 = 0;
-				m_f1478 = 0;
+			if (pGlobals->curtime >= m_flBreakGrappleTimer) {
+				m_b14a8 = 0;
+				m_bCantBreakGrapple = 0;
+				m_flBreakGrappleTimer = 0;
 				sub_10175400(0);
-				sf31();
-			} else if (pGlobals->curtime >= m_f147C) {
-				m_f147C += (G39D08->sub_101e8b70());
+				c353();
+			} else if (pGlobals->curtime >= m_flGrappleDamageTimer) {
+				m_flGrappleDamageTimer += (G39D08->sub_101e8b70());
 				CBaseEntity *pB = GrappleTarget();
 				CBaseEntity *pA = GrappleTarget();
 				CUnknown101c26d0 info;
@@ -3535,9 +3539,9 @@ void CBPView_10169960::sub_10169960()
 				((CBaseEntity *)this)->sub_100a1250(&info);
 			}
 		}
-	} else if (m_b14A8 && (m_n208C & 0x400f9b)) {
-		m_b14A8 = 0;
-		sf31();
+	} else if (m_b14a8 && (m_n208C & 0x400f9b)) {
+		m_b14a8 = 0;
+		c353();
 	}
 	sub_10181780();
 	sub_10181be0();
@@ -3611,7 +3615,7 @@ void __fastcall sub_1016a640(void *pThis)
 
 void CBasePlayer::vfunc434()
 {
-    if (!(sub_100b3700() & 4) && m_n03E0 < 2 && (m_b208C & 2)) {
+    if (!(sub_100b3700() & 4) && MoveType3e0() < 2 && (m_b208C & 2)) {
         if (sub_100b3700() & 1) {
             if (vfunc209()) {
                 vfunc449(2, 0);
@@ -3619,9 +3623,9 @@ void CBasePlayer::vfunc434()
                 CBaseEntity *pEnt = vfunc209();
                 if (pEnt) {
                     if (pEnt->sub_100b3700() & 0x1000) {
-                        if (TestBit(m_fFlags268, 12))
+                        if (TestBit(m_flags268, 12))
                             sub_100b1d10();
-                        Vector vecVelocity = m_vec03BC + m_vec03B0;
+                        Vector vecVelocity = m_vecVelocity3bc + m_vecBaseVelocity;
                         ((CBaseEntity *)this)->sub_100b2e30(&vecVelocity.x);
                     }
                 }
@@ -3636,7 +3640,7 @@ void CBasePlayer::vfunc434()
 
 void CBasePlayer::vfunc435()
 {
-	if ((m_nFlags2088 & 4) && m_nFEC != 0x2c)
+	if ((m_nFlags2088 & 4) && m_Activity != 0x2c)
 		vfunc449(1, 0);
 }
 // END FUNCTION
@@ -3699,7 +3703,7 @@ SPlayerSlots *sub_1000ac8b(int index);
 
 void CBasePlayer::vfunc149(int a, int b)
 {
-	int edict = m_n02E0;
+	int edict = m_pEdict2e0;
 	int me = engine->vfunc35(edict);
 	for (int i = 1; i <= gpGlobals->maxClients; i++) {
 		SPlayerSlots *pOther = sub_1000ac8b(i);
@@ -3755,7 +3759,7 @@ void CBasePlayer::vfunc461(CUserCmd *pCmds, int numcmds, int totalcmds, int drop
 	int nDelta = totalcmds - numcmds;
 	if (paused)
 	{
-		m_n22C = -1;
+		m_nSimulationTick = -1;
 		for (int i = 0; i < numcmds; i++)
 		{
 			pCmds[i].frametime = 0;
@@ -4146,11 +4150,11 @@ struct CPTV_1016be10
 	char m_pad13d0[0x4];
 	float m_f13d4;
 	char m_pad13d8[0x94];
-	int m_n146c;
+	int m_field146c;
 	char m_pad1470[0x4];
-	char m_b1474;
+	char m_flag1474;
 	char m_pad1475[0x1];
-	char m_b1476;
+	char m_bIsFrenzyGrapple;
 	char m_pad1477[0x11];
 	float m_f1488;
 	char m_pad148c[0xd0];
@@ -4396,9 +4400,9 @@ void CBasePlayer::vfunc437()
 				V->vfunc277(pOther->vfunc278());
 			}
 			V->sub_100b3b00();
-			if (pOther->vfunc138() == 3 && V->m_n146c > 0 && V->m_b1474 && V->vfunc424(1))
+			if (pOther->vfunc138() == 3 && V->m_field146c > 0 && V->m_flag1474 && V->vfunc424(1))
 			{
-				V->m_b1476 = 1;
+				V->m_bIsFrenzyGrapple = 1;
 				V->sub_1033f6d0();
 			}
 		}
@@ -4924,8 +4928,9 @@ extern char g_105869b8[];
 int sub_10299d50(int a);
 void *__cdecl __RTDynamicCast(void *p, long l, void *pFrom, void *pTo, int b);
 // TARGET: CBasePlayer::vfunc130
-void CBasePlayer::vfunc130(char bFlag)
+void CBasePlayer::vfunc130(int nFlag)
 {
+#define bFlag ((char)nFlag)
 	sub_1000bfcd(bFlag);
 	m_vec1EFC = g_1070d9d0;
 	m_vec1F08 = g_1070d9d0;
@@ -4943,7 +4948,7 @@ void CBasePlayer::vfunc130(char bFlag)
 	sub_10182e00((CBaseCombatWeapon *)sub_1032e7b0());
 	if (g_10628368)
 		*(int *)(g_10628368 + 0xb8) = 0;
-	sub_10299d50(*(int *)&bFlag);
+	sub_10299d50(nFlag);
 	m_flags1E74 &= ~1;
 	int &r1 = *(int *)((char *)this + 0x1cc0);
 	int &r2 = *(int *)((char *)this + 0x1a84);
@@ -4972,6 +4977,7 @@ void CBasePlayer::vfunc130(char bFlag)
 			pKeyring->sub_10408220(m_pInventory);
 		}
 	}
+#undef bFlag
 }
 // END FUNCTION
 
@@ -5062,7 +5068,7 @@ int CBasePlayer::vfunc126(int a)
 	else
 		m_bCopWaitDelayed = true;
 	m_bDebugSaved = true;
-	m_f1564 = (m_f1564) - gpGlobals->curtime;
+	m_flNextAttack1564 = (m_flNextAttack1564) - gpGlobals->curtime;
 	if (m_lBirthday == 0)
 	{
 		m_lBirthday = sub_101d1070(0, 0);
@@ -5156,8 +5162,9 @@ struct LandmarkView
 };
 
 // TARGET: CBasePlayer::vfunc127
-int CBasePlayer::vfunc127(CRestore *pRestore)
+int CBasePlayer::vfunc127(int pRestore)
 {
+#define pRestore ((CRestore *)pRestore)
 	m_pad1E00[0] = 1;
 	int r = sub_10348890(pRestore);
 	sub_10015311(&m_f1CE0, 2);
@@ -5204,6 +5211,7 @@ int CBasePlayer::vfunc127(CRestore *pRestore)
 	m_pad1E00[0] = 0;
 	sub_10299ce0(pRestore);
 	return 1;
+#undef pRestore
 }
 // END FUNCTION
 
@@ -5214,7 +5222,7 @@ int CBasePlayer::vfunc127(CRestore *pRestore)
 extern char g_106b8540[];
 static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_106b8540; }
 
-#define m_hLastWeapon (*(CHandle<CBaseCombatWeapon> *)&m_hEnt0EA4)
+#define m_hLastWeapon (*(CHandle<CBaseCombatWeapon> *)&m_hEa4.m_Index)
 
 void CBasePlayer::vfunc456()
 {
@@ -5255,7 +5263,7 @@ void CBasePlayer::sub_101710b0(const Vector *pImpulse)
 void CBasePlayer::vfunc170(const Vector *pOffset)
 {
 	((CBaseEntity *)this)->sub_100b3640(1);
-	Vector v = m_vec03D4 + *pOffset;
+	Vector v = (*(Vector *)m_vel3d4) + *pOffset;
 	((CBaseEntity *)this)->sub_100b2e30(&v.x);
 }
 // END FUNCTION
@@ -5375,7 +5383,7 @@ void CBasePlayer::vfunc450()
 		if (gpGlobals->curtime < m_f22c8)
 			break;
 		Vector forward;
-		sub_10139610(*(QAngle *)&m_vec206c, &forward, 0, 0);
+		::sub_10139610(*(QAngle *)&m_vec206c, &forward, 0, 0);
 		UTIL_TraceLine_DebugCall(vfunc193(), vfunc193() + forward * 128.0f, 0x400b, this, 0, &tr);
 		if (tr.m_fraction != 1.0) {
 			m_f22c8 = gpGlobals->curtime + (g_1070ae34->vfunc1() ? g_104454c4 : g_1070ae34->m_f28);
@@ -5617,7 +5625,7 @@ void CBasePlayer::vfunc451(int iImpulse)
 		void *pWorld = engine->vfunc38(0);
 		Vector start = vfunc193();
 		Vector forward;
-		sub_10139610(*(QAngle *)&m_vec206c, &forward, 0, 0);
+		::sub_10139610(*(QAngle *)&m_vec206c, &forward, 0, 0);
 		Vector end = start + forward * 1024.0f;
 		UTIL_TraceLine(start, end, 0x400b, this, 0, &tr);
 		const char *pTextureName = tr.m_surfaceName;
@@ -5649,7 +5657,7 @@ void CBasePlayer::vfunc451(int iImpulse)
 
 	case 202: {
 		Vector forward;
-		sub_10139610(*(QAngle *)&m_vec206c, &forward, 0, 0);
+		::sub_10139610(*(QAngle *)&m_vec206c, &forward, 0, 0);
 		UTIL_TraceLine(vfunc193(), vfunc193() + forward * 128.0f, 0x400b, this, 0, &tr);
 		if (tr.m_fraction != 1.0) {
 			CBloodSplat *pBlood = new CBloodSplat;
@@ -5705,7 +5713,7 @@ void CBasePlayer::vfunc151(CBaseCombatWeapon *pWeapon)
         pWeapon->sub_100ac4e0(0, 0, 0);
         *(int *)((char *)this + 0x1c50) = 0;
     }
-    if (EHandle_Get(m_hEnt0EA4) == (void *)pWeapon)
+    if (EHandle_Get(m_hEa4.m_Index) == (void *)pWeapon)
         vfunc443(0);
     unsigned int &h10dc = *(unsigned int *)((char *)this + 0x10dc);
     if (EHandle_Get(h10dc) == (void *)pWeapon)
@@ -5735,17 +5743,17 @@ struct WeaponSlots {
 
 void CBasePlayer::vfunc458()
 {
-	unsigned int h = m_h1538;
+	unsigned int h = m_hTarget1538.m_Index;
 	if (h != 0xffffffff) {
 		CGlobalEntityList_Slot *s = &g_10566458->m_Slots[h & 0x1fff];
-		if (s->m_Serial == (int)(h >> 13) && s->m_pEntity != 0 && m_n153C != -1)
+		if (s->m_Serial == (int)(h >> 13) && s->m_pEntity != 0 && m_nTarget153c != -1)
 			return;
 	}
 	if (m_pVehicle) {
 		m_pVehicle->vfunc10(this);
 		return;
 	}
-	if (!(gpGlobals->curtime < m_f1564) && !vfunc412()) {
+	if (!(gpGlobals->curtime < m_flNextAttack1564) && !vfunc412()) {
 		vfunc450();
 		if (sub_1032e7b0())
 			((WeaponSlots *)sub_1032e7b0())->vfunc319();
@@ -5922,7 +5930,7 @@ void CBasePlayer::vfunc444()
 	M(int, 0x1f80) = sub_10175290();
 	CSingleUserRecipientFilter user(this);
 	user.MakeReliable();
-	if (HGet(m_h1538) && m_n153C != -1 && m_n1540 == 8)
+	if (HGet(m_hTarget1538.m_Index) && m_nTarget153c != -1 && m_nTargetMode1540 == 8)
 		sub_10175400(1);
 	if (m_fInitHUD) {
 		m_fInitHUD = false;
@@ -5980,11 +5988,11 @@ void CBasePlayer::vfunc444()
 		}
 		M(int, 0x1a88) = v;
 	}
-	if (!(HGet(m_h1538) && m_n153C != -1 && m_n1540 == 8)) {
-		CBasePlayer *pTarget = ((const HView6 *)&m_h149C)->Get();
-		if (!pTarget && HGet(m_h1538) && m_n153C == 0)
-			pTarget = HGet2(m_h1538);
-		if (HGet(m_h149C) || (pTarget && m_b14A8)) {
+	if (!(HGet(m_hTarget1538.m_Index) && m_nTarget153c != -1 && m_nTargetMode1540 == 8)) {
+		CBasePlayer *pTarget = ((const HView6 *)&m_h149c.m_Index)->Get();
+		if (!pTarget && HGet(m_hTarget1538.m_Index) && m_nTarget153c == 0)
+			pTarget = HGet2(m_hTarget1538.m_Index);
+		if (HGet(m_h149c.m_Index) || (pTarget && m_b14a8)) {
 			v = StatList(pTarget, 0)->sub_102012d0(0xc);
 			if (v != M(int, 0x1a8c)) {
 				v = max(v, 0);
@@ -6055,13 +6063,13 @@ void CBasePlayer::vfunc444()
 		M(float, 0x1b80) = gpGlobals->curtime;
 		engine->vfunc66();
 	}
-	if (m_n146c != M(int, 0x1b68)) {
+	if (m_field146c != M(int, 0x1b68)) {
 		if (g_10726068) {
 			engine->vfunc65(&user, g_10726068);
-			engine->vfunc67(m_n146c);
+			engine->vfunc67(m_field146c);
 			engine->vfunc66();
 		}
-		M(int, 0x1b68) = m_n146c;
+		M(int, 0x1b68) = m_field146c;
 	}
 	if (M(int, 0x13a4) & 1) {
 		M(int, 0x13a4) &= ~1;
@@ -6169,8 +6177,9 @@ char __fastcall sub_10256280(CBaseCombatWeapon *pWeapon);
 
 inline const char *STRINGR(const char *const &s) { return s ? s : g_106b8540; }
 
-char CBasePlayer::vfunc388(CBaseEntity *pWeapon, int a)
+char CBasePlayer::vfunc388(void  *pWeapon, int a)
 {
+#define pWeapon ((CBaseEntity *)pWeapon)
 	if (m_bCanSwitchWeapons)
 	{
 		CBaseAnimating *viewWeapon = (CBaseAnimating *)m_pViewWeapon.Get();
@@ -6200,11 +6209,11 @@ char CBasePlayer::vfunc388(CBaseEntity *pWeapon, int a)
 								if (seq == -1)
 									seq = 0;
 							}
-							m_f1564 = viewWeapon->sub_10091080(seq) + gpGlobals->curtime;
+							m_flNextAttack1564 = viewWeapon->sub_10091080(seq) + gpGlobals->curtime;
 						}
 						else
 						{
-							m_f1564 = gpGlobals->curtime + 0.1f;
+							m_flNextAttack1564 = gpGlobals->curtime + 0.1f;
 						}
 						*(short *)((char *)m_pViewWeapon.Get() + 0x8da) = *(short *)((char *)w + 0x8da);
 						((CBaseCombatWeapon *)m_pViewWeapon.Get())->vfunc105(STRINGR(w->m_pszModelName754));
@@ -6239,6 +6248,7 @@ char CBasePlayer::vfunc388(CBaseEntity *pWeapon, int a)
 		}
 	}
 	return 0;
+#undef pWeapon
 }
 // END FUNCTION
 
@@ -6272,7 +6282,7 @@ void CBasePlayer::vfunc443(int a)
 		if (pEnt->vfunc268())
 			return;
 	}
-	SetH443(m_hEnt0EA4, pEnt);
+	SetH443(*(unsigned int *)&m_hEa4, pEnt);
 }
 // END FUNCTION
 
@@ -6378,8 +6388,9 @@ static inline CGlobalEntityList_Ent *LookupEntity(unsigned int h)
 
 #define HOLDER_HANDLE (*(unsigned int *)((char *)this + 0x1c64))
 
-void CBasePlayer::vfunc383(CBaseEntity *pWeapon, char bNoSwitch)
+void CBasePlayer::vfunc383(CBaseCombatWeapon  *pWeapon, char bNoSwitch)
 {
+#define pWeapon ((CBaseEntity *)pWeapon)
 	if (!bNoSwitch) {
 		if (LookupEntity(*(volatile unsigned int *)((char *)this + 0x1c64)))
 			((HolderSlots *)LookupEntity(HOLDER_HANDLE))->slot359();
@@ -6396,6 +6407,7 @@ void CBasePlayer::vfunc383(CBaseEntity *pWeapon, char bNoSwitch)
 		if (g_1070ba0c->vfunc19((CBaseEntity *)this, pWeapon))
 			vfunc388(pWeapon, 0);
 	}
+#undef pWeapon
 }
 // END FUNCTION
 
@@ -6490,7 +6502,7 @@ void CBasePlayer::vfunc440(int nUnused, float flDelta, Vector *pOut)
 	Vector vecSrc;
 	Vector forward;
 	{ const CPod3 *pc = (const CPod3 *)(&(const Vector &)vfunc193()); CPod3 *pd = (CPod3 *)&vecSrc; int a = pc->a; int b = pc->b; pd->a = a; int c = pc->c; pd->b = b; pd->c = c; }
-	sub_10139610(*(QAngle *)&m_vec206c, &forward, 0, 0);
+	::sub_10139610(*(QAngle *)&m_vec206c, &forward, 0, 0);
 	Vector dir;
 	dir = forward;
 	Vector vecEnd;
@@ -6520,7 +6532,7 @@ void CBasePlayer::vfunc440(int nUnused, float flDelta, Vector *pOut)
 			continue;
 		CCollisionProperty *pCol = (CCollisionProperty *)((char *)pEntity + 0x270);
 		for (int j = 0; j < 3; j++)
-			vecEnd[j] = (*(const Vector *)((CEntityVSlots *)pEntity)->slot220())[j] + (((*(const Vector *)pCol->vfunc1())[j] + (*(const Vector *)pCol->vfunc2())[j]) * 0.75 + m_vecViewOffset184[j] * 0.0);
+			vecEnd[j] = (*(const Vector *)((CEntityVSlots *)pEntity)->slot220())[j] + (((*(const Vector *)pCol->vfunc1())[j] + (*(const Vector *)pCol->vfunc2())[j]) * 0.75 + m_vecViewOffset[j] * 0.0);
 		dir = vecEnd - vecSrc;
 		VectorNormalize(dir);
 		float dot = DotProduct(dir, forward);
@@ -6692,8 +6704,9 @@ extern "C" int sscanf(const char *, const char *, ...);
 CBaseEntity *sub_10070550(const char *, CBasePlayer *);
 void sub_10139550(const QAngle &, Vector *);
 // TARGET: CBasePlayer::vfunc259
-void CBasePlayer::vfunc259(animevent_t *pEvent)
+void CBasePlayer::vfunc259(void  *pEvent)
 {
+#define pEvent ((animevent_t *)pEvent)
 	if ( vfunc406() )
 		return;
 	if ( pEvent->pSource != (CBaseEntity *)this )
@@ -6751,6 +6764,7 @@ void CBasePlayer::vfunc259(animevent_t *pEvent)
 		sub_1032e330(pEvent);
 		return;
 	}
+#undef pEvent
 }
 // END FUNCTION
 
@@ -6760,9 +6774,10 @@ void CBasePlayer::vfunc259(animevent_t *pEvent)
 #include "CGameRules.h"
 extern CGameRules *g_1070ba0c;
 // TARGET: CBasePlayer::vfunc359
-int CBasePlayer::vfunc359(CBaseEntity *pEnt)
+int CBasePlayer::vfunc359(int pEnt)
 {
-    if (m_n146c > 0)
+#define pEnt ((CBaseEntity *)pEnt)
+    if (m_field146c > 0)
         return 3;
     if (!pEnt)
         return -1;
@@ -6774,6 +6789,7 @@ int CBasePlayer::vfunc359(CBaseEntity *pEnt)
             return 1;
     }
     return 2;
+#undef pEnt
 }
 // END FUNCTION
 
@@ -6994,9 +7010,9 @@ int sub_1002dfe0(int a, int b);
 // TARGET: CBasePlayer::vfunc468
 void CBasePlayer::vfunc468()
 {
-    se03();
-    int w = m_sub270.vfunc1();
-    int h = m_sub270.vfunc2();
+    vfunc225();
+    int w = Sub270().vfunc1();
+    int h = Sub270().vfunc2();
     int stand = sub_1002dfe0(w, h);
     float maxs[3] = { 16.0f, 16.0f, 36.0f };
     float mins[3] = { -16.0f, -16.0f, 0.0f };
@@ -7171,11 +7187,11 @@ CBaseEntity *CBasePlayer101618a0::sub_101618a0()
 bool CBasePlayer::vfunc334(int a, int b)
 {
 	CBaseEntity *pEnt;
-	if (a == 4 && (pEnt = LookupG(m_hUseEnt1040)) && pEnt->vfunc33() == 300)
+	if (a == 4 && (pEnt = LookupG(*(unsigned int *)&m_hInteractiveUseTarget)) && pEnt->vfunc33() == 300)
 		return true;
-	if (LookupG(m_hDialogPartnerFE8))
+	if (LookupG(*(unsigned int *)&m_hDialogPartnerFE8))
 		return false;
-	if (((block_10182550::CBasePlayer101618a0 *)this)->sub_101618a0() && !LookupG(m_h155C))
+	if (((block_10182550::CBasePlayer101618a0 *)this)->sub_101618a0() && !LookupG(*(unsigned int *)&m_hProteanTransformOther))
 		return false;
 	if (sub_1017d900() > 0.0)
 		return false;
@@ -7263,12 +7279,14 @@ void CBasePlayer::vfunc23(int a)
 // FUNCTION: 0x10182fc0 size=0x52
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"
-void CBasePlayer::vfunc24(CBaseEntity *pOther)
+void CBasePlayer::vfunc24(int pOther)
 {
+#define pOther ((CBaseEntity *)pOther)
 	if (pOther) {
 		m_hEnt1C60 = (CBaseEntity *)pOther->m_p9c;
 		m_f1DD8 = gpGlobals->curtime;
 	}
+#undef pOther
 }
 // END FUNCTION
 
@@ -7277,23 +7295,27 @@ void CBasePlayer::vfunc24(CBaseEntity *pOther)
 #include "CBaseEntity.h"
 
 // TARGET: CBasePlayer::vfunc25
-void CBasePlayer::vfunc25(CBaseEntity *pOther)
+void CBasePlayer::vfunc25(int pOther)
 {
+#define pOther ((CBaseEntity *)pOther)
 	if (pOther)
 	{
 		m_hEnt1C60 = (CBaseEntity *)pOther->m_p9c;
 	}
+#undef pOther
 }
 // END FUNCTION
 
 // FUNCTION: 0x10183090 size=0x34
 #include "CBasePlayer.h"
 #include "CBaseEntity.h"
-void CBasePlayer::vfunc26(CBaseEntity *pOther)
+void CBasePlayer::vfunc26(int pOther)
 {
+#define pOther ((CBaseEntity *)pOther)
 	if (pOther) {
 		m_hEnt1C60 = (CBaseEntity *)pOther->m_p9c;
 	}
+#undef pOther
 }
 // END FUNCTION
 

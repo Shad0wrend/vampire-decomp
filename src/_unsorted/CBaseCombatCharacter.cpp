@@ -2495,8 +2495,9 @@ public:
     void sub_103f9160(int a);
 };
 
-void CBaseCombatCharacter::vfunc300(int a, int b, int c)
+void CBaseCombatCharacter::vfunc300(CBaseEntity  *a, char b, int c)
 {
+#define a ((int)a)
     ScopeTrace trace("CBaseCombatCharacter::Event_TookLife", this ? (m_name26c ? m_name26c : g_106b8540) : g_105387dc);
     if (*(unsigned char *)((char *)this + 0xe38) & 4) {
         for (int i = 0; i < sub_1032e890(); i++) {
@@ -2505,6 +2506,7 @@ void CBaseCombatCharacter::vfunc300(int a, int b, int c)
                 pWeapon->sub_103f9160(a);
         }
     }
+#undef a
 }
 // END FUNCTION
 
@@ -4890,7 +4892,7 @@ extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
 
-void CBaseCombatCharacter::vfunc338(int a, int b, int c)
+void CBaseCombatCharacter::vfunc338(int a, char b, int c)
 {
     const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
     g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::AddPreDisciplineEffect";
@@ -4933,7 +4935,7 @@ extern int *g_109f3680;
 extern ScopeEntry *g_109f3620;
 extern char g_106b8540[];
 
-void CBaseCombatCharacter::vfunc339(int a, int b, int c)
+void CBaseCombatCharacter::vfunc339(int a, float b, int c)
 {
     const char *name = this ? (m_name26c ? m_name26c : g_106b8540) : "NULL ENTITY";
     g_109f3620[*g_109f3680].a = "CBaseCombatCharacter::AddDisciplineEffect";
@@ -5655,9 +5657,9 @@ int CBaseCombatCharacter::vfunc323(const Vector *pDirection)
 
 // FUNCTION: 0x10345460 size=0x3
 #include "CBaseCombatCharacter.h"
-bool CBaseCombatCharacter::vfunc327()
+char CBaseCombatCharacter::vfunc327()
 {
-	return true;
+	return (char)(true);
 }
 // END FUNCTION
 
@@ -6160,7 +6162,7 @@ done:
 extern CStatDefault3List g_10738d10;
 
 // TARGET: CBaseCombatCharacter::vfunc326
-bool CBaseCombatCharacter::vfunc326(int unused1, int unused2)
+bool CBaseCombatCharacter::vfunc326(int unused1, CBaseEntity  *unused2)
 {
 	StatDefault3 *pDefault = g_10738d10.sub_101d5f10(this);
 	if (pDefault->m_98[6])

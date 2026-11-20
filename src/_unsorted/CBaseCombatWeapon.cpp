@@ -2818,8 +2818,7 @@ void CBaseCombatWeapon::vfunc326()
 	*(unsigned int *)((char *)pOwner + 0x19c) |= 2;
 	pW->v307(pW->v328());
 	pOwner->vfunc449(5, 0);
-	Vector v1;
-	pOwner->vfunc389(&v1, (const Vector *)pOwner->vfunc220());
+	Vector v1 = pOwner->vfunc389(*(const Vector *)pOwner->vfunc220());
 	Vector v2;
 	pOwner->sub_10176520(&v2, 0.087155745f);
 	int n = 0;

@@ -46,7 +46,7 @@
 	void sub_103330f0(CBaseEntity *pEntity, int nModifier);	// "CBaseCombatCharacter::SetDialogReactionModifier": scope trace (entity name), sets the +0x10 value of the relationship record (0x14 bytes, table at +0x1598, used count +0x15a0, capacity +0x159c) whose handle is pEntity; else expands the table when full and appends a record for pEntity (slot 404 / 405 give its values)
 	void sub_10324ea0();	// "CBaseCombatCharacter::UpdateVampHeal_HOT": scope trace (entity name), when CanVampHeal_HOT and the time at +0xa84 has passed heals (cost scaled by stat 0x20) and schedules the next tick with sub_10324c80
 	float sub_10324c80(int a);	// returns a time value (called through the stub at 0x10012a17)
-	void vfunc341(int discipline, int unused);	// slot 341 "CBaseCombatCharacter::RemoveDisciplineEffects": scope trace (entity name), then the global discipline manager at 0x10739a4c RemoveEffect(this, discipline, 0); takes a second, unused stack argument
+	// vfunc341 (declared virtual in the slot block): slot 341 "CBaseCombatCharacter::RemoveDisciplineEffects": scope trace (entity name), then the global discipline manager at 0x10739a4c RemoveEffect(this, discipline, 0); takes a second, unused stack argument
 	char vfunc342(int unused);	// slot 342 "CBaseCombatCharacter::CanBeFedUp"-named trace: scope trace (entity name), true when sub_10339a90(), bit 27 of the dword at +0x14bc is clear, the handle at +0x1538 does not resolve or the dword at +0x153c is -1, slot 158 is true and the character is not unconscious; takes one unused stack argument
 	virtual void vfunc106(const char *szClassname);	// "CBaseCombatCharacter::PostConstructor": scope trace (entity name), CBaseEntity::vfunc106(szClassname), then slot 111
 	void vfunc349(inputdata_t *pInput);	// slot 349 "CBaseCombatCharacter::InputBarterBegin": scope trace (entity name), when the activator of the input is set calls sub_103411c0(the dword at +0x9c of it, 0)
@@ -83,7 +83,7 @@
 	void sub_103419c0(inputdata_t *data);	// "CBaseCombatCharacter::InputChang...": scope trace (entity name), then calls sub_1000b6a9(this, +-1) |integer value| times (sign of the value) when the input's type is 4
 	void sub_10340d70(inputdata_t *data);	// "CBaseCombatCharacter::InputMoney...": scope trace (entity name), when the input's type is 4 and its integer is non-zero calls sub_10341030(integer)
 	void sub_10341030(int amount);	// "CBaseCombatCharacter::MoneyRemove": scope trace (entity name), lowers the money at +0x13d8 (not below 0) and, when the object at +0xa8 has the dword at +0x1eb8 clear, passes (0xb, amount) to sub_101cebc0
-	Vector vfunc368();	// "CBaseCombatCharacter::BodyDirection2D": scope trace (entity name), slot 369 (BodyDirection3D) into a local, z = 0, normalised through the function pointer at 0x1057966c, returned by value
+	// vfunc368 (declared virtual in the slot block): "CBaseCombatCharacter::BodyDirection2D": scope trace (entity name), slot 369 (BodyDirection3D) into a local, z = 0, normalised through the function pointer at 0x1057966c, returned by value
 	Vector vfunc370();	// "CBaseCombatCharacter::HeadDirection2D"-like: scope trace (entity name), slot 371 into a local, z = 0, normalised through the function pointer at 0x1057966c, returned by value
 	void sub_10340c90(inputdata_t *data);	// "CBaseCombatCharacter::InputMoneyAdd": scope trace (entity name), when the input's type is 4 and its integer is non-zero calls sub_10340e50(integer)
 	void sub_10340e50(int amount);
