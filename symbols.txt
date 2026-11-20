@@ -467,6 +467,7 @@
 0x1000191a func   ?sub_100bc0f0@CUnknown100bc0f0@@QAEXPAUCInputData100bc0f0@@@Z CUnknown100bc0f0::sub_100bc0f0
 0x1000191f func   ?sub_103dbad0@@YAXPAUCDbgEnt@@@Z sub_103dbad0
 0x10001924 func   ?vfunc144@CNPC_VGuard1@@UAEXH@Z CNPC_VGuard1::vfunc144
+0x10001924 func   ?vfunc144@CNPC_VGuard1@@UAEXPAX@Z CNPC_VGuard1::vfunc144
 0x10001929 func   ?sub_10159700@CUnknown10159700@@QAEXHHHM@Z CUnknown10159700::sub_10159700
 0x1000192e func   ?vfunc10@?$CAI_Behavior@VCAI_BaseNPC@@$0BIGKA@@@UAEXXZ CAI_Behavior<CAI_BaseNPC,100000>::vfunc10
 0x10001933 func   ?vfunc431@CBasePlayer@@UAEXXZ CBasePlayer::vfunc431
