@@ -4961,6 +4961,33 @@ void CUnknown101e98c0::sub_1014e090()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e630 size=0x4d
+extern "C" int __cdecl sub_101e28e0(const char *, const char *);
+struct CNamePtr {
+	const char *m_p;
+	const char *Get() { return m_p ? m_p : ""; }
+};
+struct CNamedEntry9fd0 {
+	int m_unk0;
+	CNamePtr m_Name;
+};
+struct CNamedList9fd0 {
+	int m_unk0;
+	int m_count;
+	CNamedEntry9fd0 **m_pData;
+	int sub_1014e630(const char *name);
+};
+// TARGET: CNamedList9fd0::sub_1014e630
+int CNamedList9fd0::sub_1014e630(const char *name)
+{
+	for (int i = 0; i < m_count; i++) {
+		if (sub_101e28e0(m_pData[i]->m_Name.Get(), name) == 0)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150bc0 size=0x7b
 #include "CUnknown101ed170.h"
 
