@@ -143,6 +143,7 @@
 0x10129dc0 func   ?vfunc33@CSave@@UAEXPBDPAXH@Z CSave::vfunc33
 0x10129e30 func   ?vfunc32@CSave@@UAEXPBHH@Z CSave::vfunc32
 0x1012a530 func   ?sub_1012a530@CUnknown101a1780View@@QAE_NPAUCUnknown101a1780Arg@@@Z CUnknown101a1780View::sub_1012a530
+0x1012a5e0 func   ?sub_1012a5e0@CUnknown101a1780View@@QAE_NPAUCUnknown101a1780Arg@@@Z CUnknown101a1780View::sub_1012a5e0
 0x1012a7f0 func   ?vfunc8@CRestore@@UAEXXZ CRestore::vfunc8
 0x1012aaa0 func   ?vfunc13@CRestore@@UAEFXZ CRestore::vfunc13
 0x1012aae0 func   ?vfunc16@CRestore@@QAEDXZ CRestore::vfunc16
