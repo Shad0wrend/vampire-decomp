@@ -5764,6 +5764,35 @@ int StatDefault::sub_10160250(int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160280 size=0x28
+struct CUnk1006cbe0
+{
+    char pad0000[0x10];
+    int m_nCount;
+    float *m_pValues;
+
+    int sub_10160280(float x);
+};
+
+// TARGET: CUnk1006cbe0::sub_10160280
+int CUnk1006cbe0::sub_10160280(float x)
+{
+    int i = 0;
+    if (m_nCount > 0)
+    {
+        float *p = m_pValues;
+        do
+        {
+            if (x <= *p)
+                return i;
+            i++;
+            p++;
+        } while (i < m_nCount);
+    }
+    return i;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101613e0 size=0x30
 #include "CVDmg_t.h"
 
