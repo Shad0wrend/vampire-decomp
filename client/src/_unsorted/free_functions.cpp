@@ -3380,6 +3380,27 @@ void UtlVec40::sub_1012c600(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c740 size=0x25
+struct CUnknown102496d0 {
+    int m_0;
+    int m_4;
+    int m_8;
+    int m_c;
+    float m_10;
+    void sub_1012c740(float flValue);
+};
+
+// TARGET: CUnknown102496d0::sub_1012c740
+void CUnknown102496d0::sub_1012c740(float flValue)
+{
+    m_0 = 0;
+    m_4 = 0;
+    m_8 = 0;
+    *(float *)&m_c = flValue;
+    m_10 = flValue * flValue * 0.5f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
