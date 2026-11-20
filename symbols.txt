@@ -14386,6 +14386,7 @@
 0x10012b6b func   ?vfunc30@CSingleplayRules@@UAEMH@Z CSingleplayRules::vfunc30
 0x10012b70 func   ?vfunc133@CItemContainer@@QAEXXZ CItemContainer::vfunc133
 0x10012b75 func   ?vfunc171@CBaseEntity@@QAEXXZ CBaseEntity::vfunc171
+0x10012b75 func   ?vfunc171@CBaseEntity@@UAEXXZ CBaseEntity::vfunc171
 0x10012b7f func   ?sub_102cdb70@CAI_GoalEntity@@QAEXH@Z CAI_GoalEntity::sub_102cdb70
 0x10012b84 func   ?sub_1013b0d0@@YAXABUQ@@PAM@Z sub_1013b0d0
 0x10012b89 func   ??0?$CUtlMemory@UCNPC_VWerewolfVec3@@@@QAE@HH@Z CUtlMemory<CNPC_VWerewolfVec3>::CUtlMemory
