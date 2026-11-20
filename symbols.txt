@@ -14310,6 +14310,7 @@
 0x100128b4 func   ?vfunc471@CNPC_VScurrying@@UAEMXZ CNPC_VScurrying::vfunc471
 0x100128b9 func   ?vfunc142@CItemContainer@@QAEHPAUCItemDamageInfo@@@Z CItemContainer::vfunc142
 0x100128be func   ?vfunc173@CGameText@@QAEHHHHH@Z CGameText::vfunc173
+0x100128be func   ?vfunc173@CGameText@@UAEXPAVCBaseEntity@@0HH@Z CGameText::vfunc173
 0x100128c3 func   ?vfunc419@CBasePlayer@@QAEDH@Z CBasePlayer::vfunc419
 0x100128c8 func   ?vfunc431@CAI_BaseNPC@@UAEXXZ CAI_BaseNPC::vfunc431
 0x100128cd func   ?sub_1009d6a0@CBaseEntity@@QAEHXZ CBaseEntity::sub_1009d6a0
