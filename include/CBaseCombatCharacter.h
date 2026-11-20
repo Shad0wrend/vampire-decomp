@@ -58,15 +58,15 @@ public:
 	virtual void c324(); virtual void c325(); virtual bool vfunc326(int unused1, CBaseEntity *pOther); virtual char vfunc327(); virtual char vfunc328(); virtual void c329();
 	virtual void c330();
 	virtual void vfunc331(CBaseCombatWeapon *pWeapon, CBaseEntity *pEnemy, int nActivity, int *pOutSequence);	// slot 331 "CBaseCombatCharacter::ChooseMeleeAttackSequence" (0x10347180, ret 16, 0x617c-byte frame with alloca_probe): scope trace (entity name), *pOutSequence = -1, then walks the model's sequences usable with pWeapon (slot 360 flags 0x18000; CBaseCombatWeapon::sub_102517e0 index into the weapon's 0x44-byte table at +0x7a0) for pEnemy
-	virtual void c332(); virtual void c333x(); virtual bool vfunc334(int a, int b); virtual void c335x(); virtual void c336x(); virtual void c337x(); virtual void vfunc338(int a, char b, int c); virtual void vfunc339(int a, float b, int c);
+	virtual void c332(); virtual void vfunc333(int a); virtual bool vfunc334(int a, int b); virtual void c335x(); virtual void c336x(); virtual void c337x(); virtual void vfunc338(int a, char b, int c); virtual void vfunc339(int a, float b, int c);
 	virtual void vfunc340(int a, int b, int c); virtual void vfunc341(int discipline, int unused); virtual void c342(); virtual void c343(); virtual void c344(); virtual void c345(); virtual void c346(); virtual void c347();
 	virtual int c348();	// slot 348 (see vfunc348, the plain member, for what it does)
 	virtual void c349();
 	virtual void c350(); virtual void vfunc351(CBaseCombatCharacter *pTarget); virtual void vfunc352(); virtual void c353(); virtual void c354(); virtual void c355(); virtual void c356(); virtual void c357(); virtual void c358(); virtual int vfunc359(int a);
 	virtual char vfunc360();	// slot 360 (+0x5a0): a bool-like byte result, read by InputFrenzyTrigger
 	virtual void vfunc361(); virtual void c362(); virtual void c363(); virtual void c364(); virtual void c365();
-	virtual void c366(); virtual QAngle vfunc367(); virtual Vector vfunc368(); virtual Vector vfunc369();
-	virtual void c370(); virtual void c371(); virtual void c372(); virtual void c373();
+	virtual bool vfunc366(int a, int b, int c); virtual QAngle vfunc367(); virtual Vector vfunc368(); virtual Vector vfunc369();
+	virtual Vector vfunc370(); virtual Vector vfunc371(); virtual int vfunc372(int a); virtual int vfunc373(int a);
 	virtual int vfunc374(int count, int ammoIndex, int unused);	// slot 374 "CBaseCombatCharacter::GiveAmmo" by index
 	virtual int vfunc375(int act);	// slot 375 "CBaseCombatCharacter::NPC_EarlyTranslateActivity": scope trace (entity name), activities that sub_104126a0 flags are translated by sub_10328380(act, -1, 0, -1), else returned unchanged
 	virtual int vfunc376(int a);
@@ -203,13 +203,12 @@ public:
 	void sub_1033e0a0(int nDiscipline, int unused1, CBaseEntity *pUnused2);	// "CBaseCombatCharacter::AddFakedDisciplineEffect": scope trace (entity name), plays the discipline's sound (the string at +0xe4 of its record in the table at 0x1074e098; precached first) from this entity's edict to the players that can hear it (a PAS attenuation filter built inline), unless the name is empty or starts with a blank; takes three stack arguments, only the first is used
 
 	virtual int vfunc240();	// slot 240: returns the int global at 0x1072b360 (read by 0x1014f8b0, written by PyServerSystem::vfunc0)
-	int vfunc372(int a);	// slot 372: vtable slot 370 with the argument, then the argument
+	// vfunc372 (declared virtual in the slot block): slot 372: vtable slot 370 with the argument, then the argument
 	virtual int vfunc145();	// slot 145: the blood color at +0x1570
 	bool vfunc73(CBaseEntity *pOther);	// "CBaseCombatCharacter::CausesImpactDamage": scope trace, (pOther's flags at +0x434 & 0x20000000) != 0
 	bool vfunc295(int a);
 	void *vfunc309();	// returns the best ranged weapon (or null)
 	int vfunc307();	// "CBaseCombatCharacter::HasUsableMeleeWeapon": scope trace (entity name), then sub_10336a50
-	void vfunc333(int a);
 	float vfunc344();	// "CBaseCombatCharacter::GetShakyHandsIntensity": scope trace, the float at +0x1050 when the dword at +0x1044 is >= 0, else a constant
 	void vfunc335();
 	void vfunc336();
@@ -227,7 +226,6 @@ public:
 	void sub_100b5ab0(const char *pszModel);	// CBaseFlex::vfunc105 (stub 0x10013813), called directly
 	void vfunc119();	// "CBaseCombatCharacter::Kill": scope trace (entity name), then CBaseEntity::vfunc119
 	// vfunc326 (declared virtual in the slot block): slot 326: false when the character's default stat item has the byte at +0x9e set or the first stat list with a zero field at +0x10 (default list when none) is IsEqual(0xf, 0x11); else slot 158 as a bool
-	Vector vfunc371();
 	// vfunc369 (declared virtual in the slot block): "CBaseCombatCharacter::BodyDirection3D": scope trace (entity name), AngleVectors of slot 367 (BodyAngles) into a local forward vector, returned by value
 	void sub_10139610(const QAngle *pAngles, Vector *pForward, Vector *pRight, Vector *pUp);	// AngleVectors (stub 0x10002310)
 	void sub_100b7fa0(float *pOut, int a, int b);
@@ -444,5 +442,5 @@ public:
 	void sub_10348d00();
 	void sub_10336390(int hFile);	// "CBaseCombatCharacter::Inventory_Debug_Log": writes the inventory to the open file handle
 	int sub_103449b0(CBaseEntity *pAttacker, CBaseEntity *pOther, void *pInfo);	// 0x10348d00: grapple-release helper called by vfunc380 (searches for a free spot around the entity using the OBB at +0x270 and traces, then SetAbsOrigin / slot 216)
-	bool vfunc366(int a, int b, int c);	// slot 366 "HandleInteraction" (0x10326d40; plain in this view)
+	// vfunc366 (declared virtual in the slot block): slot 366 "HandleInteraction" (0x10326d40)
 };

@@ -111,7 +111,7 @@ int CHL2_Player::vfunc483()
 void sub_100aa7b0(void *p);
 
 // TARGET: CHL2_Player::vfunc5
-CHL2_Player *CHL2_Player::vfunc5(unsigned int flags)
+CBaseEntity  *CHL2_Player::vfunc5(unsigned int flags)
 {
 	sub_100140f1();
 	if (flags & 1)
@@ -213,14 +213,16 @@ ReturnSpot:
 #include "CBaseEntity.h"
 #include "CHL2_Player.h"
 // TARGET: CHL2_Player::vfunc144
-void CHL2_Player::vfunc144(int a)
+void CHL2_Player::vfunc144(void  *a)
 {
+#define a ((int)a)
     sub_10163af0(a);
     vfunc407();
     *(unsigned int *)((char *)this + 0x19c) |= 0x20;
     ((CBaseEntity *)this)->vfunc66();
     sub_103373e0();
     *(unsigned int *)((char *)this + 0x1ed8) |= 0x400;
+#undef a
 }
 // END FUNCTION
 
@@ -261,11 +263,11 @@ void CHL2_Player::vfunc469(Vector *pTarget, float flTime)
 	float flYaw = sub_101d2c70(&delta);
 	Vector *pAngles = pSlots->slot221();
 
-	Smooth(m_fe5c, Norm(flYaw - pAngles->y), flTime);
+	Smooth(m_flHeadYaw, Norm(flYaw - pAngles->y), flTime);
 
-	if (m_fe5c > 360.0f)
-		m_fe5c = 0.0f;
-	m_fe5c = ((CBaseAnimating *)this)->sub_10095cb0(0, m_fe5c);
+	if (m_flHeadYaw > 360.0f)
+		m_flHeadYaw = 0.0f;
+	m_flHeadYaw = ((CBaseAnimating *)this)->sub_10095cb0(0, m_flHeadYaw);
 
 	Vector vecEye;
 	pSlots->slot193(&vecEye);
@@ -332,8 +334,8 @@ void sub_1000ecd2(int a, float f);
 
 int CHL2_Player::sub_1034fd90(int a)
 {
-    Vector v = vfunc367();
-    sub_1000ecd2(a, v.y + m_fe5c);
+    QAngle v = vfunc367();
+    sub_1000ecd2(a, v.y + m_flHeadYaw);
     return a;
 }
 // END FUNCTION
@@ -353,10 +355,10 @@ struct SHL2PlayerView
 
 Vector CHL2_Player::vfunc371()
 {
-	Vector tmp = vfunc367();
+	QAngle tmp = vfunc367();
 	QAngle ang(((SHL2PlayerView *)this)->m_f60, tmp.y + ((SHL2PlayerView *)this)->m_f5c, 0);
 	Vector fwd;
-	sub_10139610(ang, &fwd, 0, 0);
+	::sub_10139610(ang, &fwd, 0, 0);
 	return fwd;
 }
 // END FUNCTION
@@ -383,9 +385,9 @@ void CHL2_Player::vfunc333(int unused)
 	Vector vecSecond;
 	Vector vecFirst;
 	sub_10014eb6((float *)&vecFirst, (float *)&vecSecond);
-	m_vecE44 = vecSecond * 300.0f + vecFirst;
-	m_vecE50 = m_vecE44;
-	vfunc277(&m_vecE50);
+	m_vEyeLookTarget = vecSecond * 300.0f + vecFirst;
+	m_vCurEyeTarget = m_vEyeLookTarget;
+	vfunc277(&m_vCurEyeTarget.x);
 }
 // END FUNCTION
 
@@ -615,7 +617,7 @@ bool CHL2_Player::vfunc366(int a0, int a1, int a2)
 #include "CBasePlayer.h"
 #include "CUserCmd.h"
 
-void CHL2_Player::vfunc462(void *pCmd, void *pExtra)
+void CHL2_Player::vfunc462(CUserCmd  *pCmd, void  *pExtra)
 {
 	CUserCmd *ucmd = (CUserCmd *)pCmd;
 	CBasePlayer *pPlayer = (CBasePlayer *)this;
@@ -1260,8 +1262,9 @@ void CHL2_Player::vfunc478(unsigned int *pPower)
 struct SDamageView { CVDmg_t *m_pDmg; char m_pad[0x2c]; float m_flDamage; };
 extern ConVar *g_109382cc;
 extern CUnknown1070b244 *g_1070b244;
-int CHL2_Player::vfunc142(const CTakeDamageInfo *pInfo)
+int CHL2_Player::vfunc142(void  *pInfo)
 {
+#define pInfo ((const CTakeDamageInfo *)pInfo)
     const SDamageView *pDamage = (const SDamageView *)pInfo;
     float flDamage = pDamage->m_pDmg ? (float)pDamage->m_pDmg->sub_101faa70() : pDamage->m_flDamage;
     if (flDamage > 0.0f)
@@ -1277,6 +1280,7 @@ int CHL2_Player::vfunc142(const CTakeDamageInfo *pInfo)
         vfunc169(&punch);
     }
     return sub_10163020(pInfo);
+#undef pInfo
 }
 // END FUNCTION
 

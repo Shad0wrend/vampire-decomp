@@ -15,6 +15,14 @@
 #include "globalvars.h"
 #include <string.h>
 
+// The CBasePlayer constructor (the symbol map's ??0CBasePlayer@@QAE@XZ), defined as the constructor of a
+// view: it calls the base constructor itself and writes the members by offset.
+struct __declspec(novtable) CHL2_PlayerBase
+{
+	CHL2_PlayerBase();
+	virtual void pa00();
+};
+
 #define M(T, o) (*(T *)((char *)this + (o)))
 
 extern int vt_1046fbb4[];

@@ -15410,8 +15410,8 @@ void CBaseCombatCharacter::sub_100521e0()
 
 // FUNCTION: 0x100532b0 size=0x8fe
 // VC6 orders `or ebx, -1` / `mov ebp, 1` of this function by the unit's count of names. WORKAROUND dial: the
-// typedefs after the includes (5..29 match under the CBasePlayer : CBaseCombatCharacter headers of 2026-11-20;
-// 0..4 and 30 swap the two).
+// typedefs after the includes (0..9 and 19..45 match under the CHL2_Player : CBasePlayer headers of 2026-11-20;
+// 10..18 swap the two).
 #include "vampire_all.h"
 // TARGET: CBaseCombatCharacter::sub_100532b0
 #include "CBasePlayer.h"
@@ -15443,6 +15443,19 @@ typedef int pcd_dial13;
 typedef int pcd_dial14;
 typedef int pcd_dial15;
 typedef int pcd_dial16;
+typedef int pcd_dial17;
+typedef int pcd_dial18;
+typedef int pcd_dial19;
+typedef int pcd_dial20;
+typedef int pcd_dial21;
+typedef int pcd_dial22;
+typedef int pcd_dial23;
+typedef int pcd_dial24;
+typedef int pcd_dial25;
+typedef int pcd_dial26;
+typedef int pcd_dial27;
+typedef int pcd_dial28;
+typedef int pcd_dial29;
 
 extern CVStatList_t g_109f0b40;
 void __cdecl sub_10012a8a();

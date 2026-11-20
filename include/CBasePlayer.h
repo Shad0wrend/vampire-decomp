@@ -105,6 +105,7 @@ struct CBasePlayerFadeRec	// a saved fade (0x10 bytes)
 class CBasePlayer : public CBaseCombatCharacter
 {
 public:
+	CBasePlayer();	// 0x1015d7c0 (its block defines it as the constructor of a view, CHL2_PlayerBase)
 	// Its own slots below 406 (the base declares every slot). The plain members of the slot's signature override
 	// by themselves: 5, 21..23, 25, 26, 82, 104, 112, 114, 126, 127, 130, 131, 138, 149, 151, 181, 197, 198,
 	// 200, 259, 321, 338, 339, 360, 380 and 389.
@@ -177,7 +178,7 @@ public:
 	CBP_V1(si19)
 	virtual void vfunc429();	// slot 429: stores curtime at +0x1dd4
 	virtual void vfunc430(unsigned char *pvs, int a);	// slot 430 "SetupVisibility" (CServerGameClients::vfunc7)
-	virtual void vfunc431(); CBP_V1(si23) CBP_V1(si24) CBP_V1(si25) CBP_V1(si26) CBP_V1(si27) CBP_V1(si28)
+	virtual void vfunc431(); CBP_V1(si23) CBP_V1(si24) CBP_V1(si25) CBP_V1(si26) virtual void vfunc436(); CBP_V1(si28)
 	virtual void vfunc438(float flArg, int flags);	// slot 438: with flag bit 2 hands the eye position, vfunc145() and flArg to sub_102699e0
 	virtual char vfunc439();
 	virtual void vfunc440(int nUnused, float flThreshold, Vector *pOut);	// slot 440 (+0x6e0): the view-cone aim-point search (fills pOut with the aim point); nUnused is not read, flThreshold is the cosine compared against the normalised direction
@@ -192,7 +193,7 @@ public:
 	virtual void vfunc450();
 	virtual void vfunc451(int nImpulse);	// slot 451 "CBasePlayer::CheatImpulseCommands" (0x10172e60, ret 4): jump-table switch on nImpulse - 0x45 (0..0x86), gated by the global 0x10752e9c; grunt / godmode / give-all / audible-silent / dump-entity / trace-and-spawn cheats
 	virtual bool vfunc452(const char *pszKey);	// slot 452 key handler: "vehicleRole" with two console arguments hands the role number to the vehicle at +0x20fc (leaving the vehicle first when it does not know the role yet)
-	CBP_V1(sk0e) CBP_V1(sk0f) CBP_V1(sk0g)
+	virtual CBaseEntity *vfunc453(); CBP_V1(sk0f) CBP_V1(sk0g)
 	virtual void vfunc456();	// slot 456: when the entity of the handle at +0xea4 is live (and the active weapon, if any, answers slot 313), hands the entity's classname and its slot 296 value to slot 457
 	virtual void vfunc457(const char *pszName, int a);
 	virtual void vfunc458();	// slot 458: if the entity at +0x1538 is not set up, lets the vehicle at +0x20fc handle it, else picks the weapon call by the float at +0x1564
