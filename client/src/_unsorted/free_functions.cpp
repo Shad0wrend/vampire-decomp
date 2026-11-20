@@ -2580,3 +2580,63 @@ void CUtlMemory12::sub_10163a50(int num)
 		m_pMemory = Plat_Alloc(m_nAllocationCount * 12);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a2290 size=0x157
+#include "QAngle.h"
+#include "VMatrix.h"
+#include "Vector.h"
+
+#define M_PI		3.14159265358979323846
+#define M_PI_F		((float)(M_PI))
+#define DEG2RAD( x  )  ( (float)(x) * (float)(M_PI_F / 180.f) )
+#define PITCH 0
+#define YAW 1
+#define ROLL 2
+
+void inline SinCos( float radians, float *sine, float *cosine )
+{
+	_asm
+	{
+		fld		DWORD PTR [radians]
+		fsincos
+
+		mov edx, DWORD PTR [cosine]
+		mov eax, DWORD PTR [sine]
+
+		fstp DWORD PTR [edx]
+		fstp DWORD PTR [eax]
+	}
+}
+
+void VMatrix::sub_101a2290( const Vector &origin, const QAngle &vAngles )
+{
+	float		sr, sp, sy, cr, cp, cy;
+
+	SinCos( DEG2RAD( vAngles[YAW] ), &sy, &cy );
+	SinCos( DEG2RAD( vAngles[PITCH] ), &sp, &cp );
+	SinCos( DEG2RAD( vAngles[ROLL] ), &sr, &cr );
+
+	// matrix = (YAW * PITCH) * ROLL
+	m[0][0] = cp*cy;
+	m[1][0] = cp*sy;
+	m[2][0] = -sp;
+	m[0][1] = sr*sp*cy+cr*-sy;
+	m[1][1] = sr*sp*sy+cr*cy;
+	m[2][1] = sr*cp;
+	m[0][2] = (cr*sp*cy+-sr*-sy);
+	m[1][2] = (cr*sp*sy+-sr*cy);
+	m[2][2] = cr*cp;
+	m[0][3] = 0.f;
+	m[1][3] = 0.f;
+	m[2][3] = 0.f;
+	
+	// Add translation
+	m[0][3] = origin.x;
+	m[1][3] = origin.y;
+	m[2][3] = origin.z;
+	m[3][0] = 0.0f;
+	m[3][1] = 0.0f;
+	m[3][2] = 0.0f;
+	m[3][3] = 1.0f;
+}
+// END FUNCTION
