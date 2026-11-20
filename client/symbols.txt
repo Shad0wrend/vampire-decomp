@@ -80,6 +80,7 @@
 0x10129560 func   ?sub_10129560@CSave@@QAEHPBXPAUtypedescription_t@@H@Z CSave::sub_10129560
 0x10129690 func   ?vfunc5@CSave@@UAEXPBX@Z CSave::vfunc5
 0x10129b00 func   ?vfunc26@CSave@@UAEXPBDPAXH@Z CSave::vfunc26
+0x10129cb0 func   ?vfunc29@CSave@@UAEXPBDPAXH@Z CSave::vfunc29
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit

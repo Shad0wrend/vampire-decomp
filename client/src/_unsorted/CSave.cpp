@@ -123,3 +123,14 @@ void CSave::vfunc26(const char *pszName, void *pData, int count)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129cb0 size=0x2d
+#include "CSave.h"
+
+// TARGET: CSave::vfunc29
+void CSave::vfunc29(const char *pszName, void *pData, int count)
+{
+	sub_10129860(pszName, count * 12);
+	vfunc27((const Vector *)pData, count);
+}
+// END FUNCTION
