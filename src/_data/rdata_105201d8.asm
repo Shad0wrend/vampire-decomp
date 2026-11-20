@@ -28,7 +28,6 @@ EXTERN ??_R0?AVCAI_HumanoidNavigator@@@8:BYTE
 EXTERN ??_R0?AVCAI_LocalNavigator@@@8:BYTE
 EXTERN ??_R0?AVCAI_Motor@@@8:BYTE
 EXTERN ??_R0?AVCAI_MoveAndShootOverlay@@@8:BYTE
-EXTERN ??_R0?AVCAI_Navigator@@@8:BYTE
 EXTERN ??_R0?AVCAI_NetworkManager@@@8:BYTE
 EXTERN ??_R0?AVCAI_ProxyMovementSink@@@8:BYTE
 EXTERN ??_R0?AVCAI_RatLocalNavigator@@@8:BYTE
@@ -395,7 +394,6 @@ EXTERN ??_R1BA@?0A@A@CAI_DefMovementSink@@8:BYTE
 EXTERN ??_R1BA@?0A@A@IAI_MovementSink@@8:BYTE
 EXTERN ??_R1BJLA@?0A@A@CAI_DefMovementSink@@8:BYTE
 EXTERN ??_R1BJLA@?0A@A@IAI_MovementSink@@8:BYTE
-EXTERN ??_R3CAI_Navigator@@8:BYTE
 CONST SEGMENT PARA PUBLIC USE32 'CONST'
   DB 8 DUP (0)
 ; 0x105201d8 +24: ??_R4CPayphone@@6BCAI_BaseNPCTroika@@@
@@ -3597,14 +3595,7 @@ PUBLIC ??_R4CTraceFilterNavGround@@6B@
   DD OFFSET ??_R0?AVCTraceFilterNavGround@@@8
   DD OFFSET ??_R3CTraceFilterNavGround@@8
   DB 000h,000h,000h,000h
-  DB 12 DUP (0)
-; 0x105249e4 +24: ??_R4CAI_Navigator@@6BCAI_Component@@@
-PUBLIC ??_R4CAI_Navigator@@6BCAI_Component@@@
-??_R4CAI_Navigator@@6BCAI_Component@@@ LABEL BYTE
-  DB 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,000h
-  DD OFFSET ??_R0?AVCAI_Navigator@@@8
-  DD OFFSET ??_R3CAI_Navigator@@8
-  DB 000h,000h,000h,000h
+  DB 4 DUP (0)
 ; 0x10524a3c +28: ??_R1A@?0A@A@CTraceFilterNearestNode@@8
 PUBLIC ??_R1A@?0A@A@CTraceFilterNearestNode@@8
 ??_R1A@?0A@A@CTraceFilterNearestNode@@8 LABEL BYTE
