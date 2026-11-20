@@ -57,3 +57,14 @@ void CSave::vfunc17(const char *pszName, void *pData, int count)
 	vfunc19(ppStrings, count);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129220 size=0x2b
+#include "CSave.h"
+
+// TARGET: CSave::vfunc21
+void CSave::vfunc21(const char *pszName, const void *pData, int count)
+{
+	sub_10129860(pszName, count * sizeof(Vector));
+	sub_101299c0(pData, count * sizeof(Vector));
+}
+// END FUNCTION
