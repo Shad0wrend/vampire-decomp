@@ -9832,6 +9832,7 @@
 0x1000d1ed func   ?sub_1008ed50@CBaseAnimating@@QAEHHPAH@Z CBaseAnimating::sub_1008ed50
 0x1000d1f2 func   ?sub_1039ef90@CUnknown1039ef90@@QAEXPBH@Z CUnknown1039ef90::sub_1039ef90
 0x1000d1f7 func   ?vfunc155@CBaseEntity@@QAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z CBaseEntity::vfunc155
+0x1000d1f7 func   ?vfunc155@CBaseEntity@@UAEXPAUCGameTrace@@HDHPAVCBasePlayer@@HD@Z CBaseEntity::vfunc155
 0x1000d1fc func   ?vfunc468@CNPC_VCameraSecurity@@QAE_NPAVCBaseEntity@@@Z CNPC_VCameraSecurity::vfunc468
 0x1000d201 func   ?vfunc546@CNPC_VHuman@@QAEHH@Z CNPC_VHuman::vfunc546
 0x1000d206 func   ?vfunc363@CWeaponRanged_Rifle_Crossbow@@UAEHXZ CWeaponRanged_Rifle_Crossbow::vfunc363
