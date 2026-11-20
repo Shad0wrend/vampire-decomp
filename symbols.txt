@@ -14899,6 +14899,7 @@
 0x100136a1 func   ?sub_10360640@@YAXXZ sub_10360640
 0x100136a6 func   ?sub_1030fe70@CUnknown1030fe50@@QAEXHPAVCUtlVector4@@@Z CUnknown1030fe50::sub_1030fe70
 0x100136ab func   ?sub_1023e1c0@@YGXPAUCParam@@@Z sub_1023e1c0
+0x100136b0 func   ??0CBaseRopePhysics@@QAE@PAXH0@Z CBaseRopePhysics::CBaseRopePhysics
 0x100136b0 func   ??0CRopeSimBase@@QAE@PAXH0@Z CRopeSimBase::CRopeSimBase
 0x100136b5 func   ?sub_101f0270@@YIPAHPAHHH@Z sub_101f0270
 0x100136bf func   ?sub_1010f130@CPushable@@QAEPAV1@XZ CPushable::sub_1010f130
