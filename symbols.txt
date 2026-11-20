@@ -4175,6 +4175,7 @@
 0x10006299 func   ?sub_1042fde0@@YAII@Z sub_1042fde0
 0x1000629e func   ?vfunc546@CNPC_VCamera@@QAEHH@Z CNPC_VCamera::vfunc546
 0x100062a3 func   ?vfunc372@CWeaponThrown_Chang_Energy_Ball@@QAEXPAVCBaseEntity@@MV?$CHandle@VCBaseEntity@@@@@Z CWeaponThrown_Chang_Energy_Ball::vfunc372
+0x100062a3 func   ?vfunc372@CWeaponThrown_Chang_Energy_Ball@@UAEXPAVCBaseEntity@@MV?$CHandle@VCBaseEntity@@@@@Z CWeaponThrown_Chang_Energy_Ball::vfunc372
 0x100062a8 func   ?sub_101554a0@CRagdollProp@@QAEXABVVector@@H0PAX1MH_N@Z CRagdollProp::sub_101554a0
 0x100062ad func   ?vfunc81@CItemGRingSerialKiller1@@QAEHXZ CItemGRingSerialKiller1::vfunc81
 0x100062b2 func   ??0CFlexAnimationTrack@@QAE@PBV0@@Z CFlexAnimationTrack::CFlexAnimationTrack
