@@ -5232,6 +5232,21 @@ int CNamedList9fd0::sub_101536d0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153c20 size=0x23
+struct VB101f2140 { virtual void f0(); virtual void f1(); virtual ~VB101f2140(); };
+struct D101f2140 : virtual VB101f2140 { int m_ref; char pad[0x28 - 8]; D101f2140(); };
+struct E101f2140 { char pad[4]; void sub_10153c20(); };
+
+// TARGET: E101f2140::sub_10153c20
+void E101f2140::sub_10153c20()
+{
+	D101f2140 *d = (D101f2140 *)((char *)this - 0x28);
+	int *pRef = (int *)((char *)this - 0x24);
+	if (--*pRef <= 0)
+		delete d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153f10 size=0x20
 struct CVBaseA { int a; };
 struct CVBaseB { int b; };
