@@ -5079,16 +5079,7 @@ PUBLIC ??_R4CFuncRotating@@6B@
   DD OFFSET ??_R0?AVCFuncRotating@@@8
   DD OFFSET ??_R3CFuncRotating@@8
   DB 000h,000h,000h,000h
-  DB 5 DUP (0)
-; 0x1051b3c9 +23: $rtti_tail_1051b3c9
-PUBLIC $rtti_tail_1051b3c9
-$rtti_tail_1051b3c9 LABEL BYTE
-  DB 082h,051h,010h
-  DD OFFSET ??_R1A@?0A@A@IServerEntity@@8
-  DD OFFSET ??_R1A@?0A@A@IServerUnknown@@8
-  DD OFFSET ??_R1A@?0A@A@IHandleEntity@@8
-  DB 000h,000h,000h,000h,000h,000h,000h,000h
-  DB 12 DUP (0)
+  DB 8 DUP (0)
 ; 0x1051b40c +28: ??_R1A@?0A@A@CRotButton@@8
 PUBLIC ??_R1A@?0A@A@CRotButton@@8
 ??_R1A@?0A@A@CRotButton@@8 LABEL BYTE

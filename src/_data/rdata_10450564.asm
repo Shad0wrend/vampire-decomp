@@ -122,7 +122,6 @@ EXTERN ?sub_100b5ce0@CBaseFlex@@QAEXXZ:BYTE
 EXTERN ?sub_100ba0c0@CBatSwarm@@QAE_NPAX@Z:BYTE
 EXTERN ?sub_100bf740@CFuncIllusionary@@QAEEXZ:BYTE
 EXTERN ?sub_100bf8e0@CFuncRotating@@QAEEXZ:BYTE
-EXTERN ?sub_100c8990@CBaseButton@@QAE_NH@Z:BYTE
 EXTERN ?sub_100cbf70@@YIMPAX@Z:BYTE
 EXTERN ?sub_100ea7b0@@YGPAUCUnknown100eb000@@PAU1@PAH00@Z:BYTE
 EXTERN ?sub_100ee3b0@CBaseDoor@@QAEDXZ:BYTE
@@ -464,6 +463,7 @@ EXTERN ?vfunc31@CBaseFlex@@UAEXH@Z:BYTE
 EXTERN ?vfunc31@CBaseToggle@@UAEXH@Z:BYTE
 EXTERN ?vfunc32@CBaseEntity@@UAE_NH@Z:BYTE
 EXTERN ?vfunc33@CBaseEntity@@UAEHXZ:BYTE
+EXTERN ?vfunc34@CBaseButton@@UAEHH@Z:BYTE
 EXTERN ?vfunc34@CBaseEntity@@UAEHH@Z:BYTE
 EXTERN ?vfunc35@CBaseButton@@UAEHH@Z:BYTE
 EXTERN ?vfunc35@CBaseDoor@@UAEHH@Z:BYTE
@@ -1821,7 +1821,7 @@ PUBLIC ?vt_10452dcc@@3HA
   DD OFFSET ?vfunc31@CBaseToggle@@UAEXH@Z
   DD OFFSET ?vfunc32@CBaseEntity@@UAE_NH@Z
   DD OFFSET ?vfunc33@CBaseEntity@@UAEHXZ
-  DD OFFSET ?sub_100c8990@CBaseButton@@QAE_NH@Z
+  DD OFFSET ?vfunc34@CBaseButton@@UAEHH@Z
   DD OFFSET ?vfunc35@CBaseButton@@UAEHH@Z
   DD OFFSET ?vfunc36@CBaseEntity@@UAEHXZ
   DD OFFSET ?vfunc37@CBaseEntity@@UAEMXZ
