@@ -5565,6 +5565,7 @@
 0x10007df1 func   ?sub_101e12a0@CFindListView@@QAEHI@Z CFindListView::sub_101e12a0
 0x10007df6 func   ?sub_101a1f70@CUnknown101a1f70@@QAEHXZ CUnknown101a1f70::sub_101a1f70
 0x10007dfb func   ?vfunc451@CNPC_VHumanCombatPatrol@@UAEHXZ CNPC_VHumanCombatPatrol::vfunc451
+0x10007e00 func   ?vfunc130@CBaseVampireSkillEntity@@UAEXH@Z CBaseVampireSkillEntity::vfunc130
 0x10007e00 func   ?vfunc130@CPropDoorknob@@UAEXH@Z CPropDoorknob::vfunc130
 0x10007e05 func   ?vfunc113@CBreakable@@UAEXXZ CBreakable::vfunc113
 0x10007e0a func   ?sub_1023d050@@YAPAHXZ sub_1023d050
