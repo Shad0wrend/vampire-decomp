@@ -106,3 +106,17 @@ int CRestore::vfunc30(unsigned int *pValues, int count, int nBytesAvailable)
 	return n;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012b280 size=0x3d
+#include "CRestore.h"
+
+// TARGET: CRestore::vfunc24
+int CRestore::vfunc24(float *pValues, int count, int nBytesAvailable)
+{
+	float flAdd = *(float *)(m_pData2 + 0x12e8);
+	int n = vfunc18(pValues, count, nBytesAvailable);
+	for (int i = n - 1; i >= 0; i--)
+		pValues[i] = flAdd + pValues[i];
+	return n;
+}
+// END FUNCTION
