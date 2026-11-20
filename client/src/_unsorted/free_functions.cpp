@@ -2312,3 +2312,21 @@ CVBaseB *CUnk101f2520::sub_10153f10(void *a)
     return ((CUnk101f2520 *)((char *)this - 0x30))->sub_10154540(a);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10155b40 size=0x1d
+struct S9 {
+	int a, b, c, d, e, f, g, h, i;
+	S9 *sub_10155b40();
+};
+S9 *S9::sub_10155b40()
+{
+	a = 1;
+	b = 0;
+	e = 0;
+	f = 0;
+	g = 0;
+	h = 0;
+	i = 0;
+	return this;
+}
+// END FUNCTION

@@ -122,6 +122,7 @@
 0x10152bb0 func   ?sub_10152bb0@CUnknown101f0b50@@QAEPAXH@Z CUnknown101f0b50::sub_10152bb0
 0x10152f20 func   ?sub_10152f20@CReactionData@@QAEXXZ CReactionData::sub_10152f20
 0x10153f10 func   ?sub_10153f10@CUnk101f2520@@QAEPAUCVBaseB@@PAX@Z CUnk101f2520::sub_10153f10
+0x10155b40 func   ?sub_10155b40@S9@@QAEPAU1@XZ S9::sub_10155b40
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit
