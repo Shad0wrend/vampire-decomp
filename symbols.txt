@@ -9074,6 +9074,7 @@
 0x1000c22f func   ?vfunc0@CMotorController@@UAEHPAXHMAAVVector@@1@Z CMotorController::vfunc0
 0x1000c234 func   ?vfunc373@CWeaponMelee_Fists@@QAEHXZ CWeaponMelee_Fists::vfunc373
 0x1000c239 func   ?vfunc175@CTriggerTeleport@@QAEXPAVCBaseEntity@@@Z CTriggerTeleport::vfunc175
+0x1000c239 func   ?vfunc175@CTriggerTeleport@@UAEXPAVCBaseEntity@@@Z CTriggerTeleport::vfunc175
 0x1000c23e func   ?sub_101cf720@@YAPADPBDZZ sub_101cf720
 0x1000c243 func   ?sub_1037a880@@YIPAXPAX@Z sub_1037a880
 0x1000c248 func   ?sub_1021e6c0@@YIXPAUMem@@HH@Z sub_1021e6c0
