@@ -5391,6 +5391,7 @@
 0x10007a13 func   ?sub_1006d9a0@CCineCamFields1006d9a0@@QAEXXZ CCineCamFields1006d9a0::sub_1006d9a0
 0x10007a18 func   ?sub_101d0a00@@YAXPBVVector@@0H@Z sub_101d0a00
 0x10007a1d func   ?vfunc265@CWeaponThrown_Grenade_Frag@@QAEXXZ CWeaponThrown_Grenade_Frag::vfunc265
+0x10007a22 func   ?vfunc173@CBaseDoor@@UAEXPAVCBaseEntity@@0HH@Z CBaseDoor::vfunc173
 0x10007a22 func   ?vfunc173@CBaseDoor@@UAEXPAVCBaseEntity@@0HM@Z CBaseDoor::vfunc173
 0x10007a27 func   ?sub_100a9c90@CBaseEntity@@QAEPAV1@XZ CBaseEntity::sub_100a9c90
 0x10007a2c func   ?sub_1024e140@@YAXABUS1024e140Matrix@@AAU1@@Z sub_1024e140
