@@ -3,6 +3,7 @@
 0x10027d20 func   ?sub_10027d20@@YAXABVVector@@00HHH_NM@Z sub_10027d20
 0x100291c0 func   ?sub_100291c0@@YIPAHPAH@Z sub_100291c0
 0x1002c080 func   ?sub_1002c080@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_1002c080
+0x1002d620 func   ?sub_1002d620@CUtlMemory36@@QAEXH@Z CUtlMemory36::sub_1002d620
 0x10106c60 func   _CreateInterface CreateInterface
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
