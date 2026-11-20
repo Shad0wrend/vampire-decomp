@@ -10536,6 +10536,7 @@
 0x1000de5e func   ?vfunc7@CSoundControllerImp@@UAEPAVCUnknown101bc140@@PAXIHPBDM@Z CSoundControllerImp::vfunc7
 0x1000de63 func   ?sub_103bf580@CNPC_VTzimisce@@QAEPAXPAX@Z CNPC_VTzimisce::sub_103bf580
 0x1000de68 func   ?vfunc141@CNPC_Bullseye@@QAEXPAXHH@Z CNPC_Bullseye::vfunc141
+0x1000de68 func   ?vfunc141@CNPC_Bullseye@@UAEXPAVCVDmg_t@@PBVVector@@PAUCGameTrace@@@Z CNPC_Bullseye::vfunc141
 0x1000de6d func   ?vfunc175@CTriggerHurt@@QAEXPAVCBaseEntity@@@Z CTriggerHurt::vfunc175
 0x1000de6d func   ?vfunc175@CTriggerHurt@@UAEXPAVCBaseEntity@@@Z CTriggerHurt::vfunc175
 0x1000de72 func   ?vfunc384@CBaseCombatCharacter@@UAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::vfunc384
