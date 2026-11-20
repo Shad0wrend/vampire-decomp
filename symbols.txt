@@ -8274,6 +8274,7 @@
 0x1000b1f9 func   ?vfunc212@CBaseEntity@@QAEXH@Z CBaseEntity::vfunc212
 0x1000b1f9 func   ?vfunc212@CBaseEntity@@UAEXH@Z CBaseEntity::vfunc212
 0x1000b1fe func   ?vfunc142@CNPC_Bullseye@@QAEHPAX@Z CNPC_Bullseye::vfunc142
+0x1000b1fe func   ?vfunc142@CNPC_Bullseye@@UAEHPAUCTakeDamageInfo@@@Z CNPC_Bullseye::vfunc142
 0x1000b203 func   ?vfunc373@CAI_BaseNPC@@QAEHH@Z CAI_BaseNPC::vfunc373
 0x1000b208 func   ?vfunc242@CRotDoor@@UAEHXZ CRotDoor::vfunc242
 0x1000b212 func   ?sub_10341aa0@CBaseCombatCharacter@@QAE_NXZ CBaseCombatCharacter::sub_10341aa0
