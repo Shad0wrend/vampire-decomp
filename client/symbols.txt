@@ -82,6 +82,7 @@
 0x10108fd0 func   ?sub_10108fd0@@YAXPBMM0PAM@Z sub_10108fd0
 0x10109010 func   ?sub_10109010@@YAXABVQAngle@@PAVVector@@@Z sub_10109010
 0x10109420 func   ?sub_10109420@@YAXPAM@Z sub_10109420
+0x10109e90 func   ?sub_10109e90@@YAXABVVector@@MAAV1@@Z sub_10109e90
 0x1010a020 func   ?sub_1010a020@@YAXABVQuaternion@@0AAV1@@Z sub_1010a020
 0x1010a0f0 func   ?sub_1010a0f0@@YAXABVQuaternion@@0MAAV1@@Z sub_1010a0f0
 0x1010a2b0 func   ?sub_1010a2b0@@YAMPAM@Z sub_1010a2b0

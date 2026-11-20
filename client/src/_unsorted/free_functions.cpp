@@ -2071,6 +2071,35 @@ void sub_10109420(float *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109e90 size=0x6b
+#include "Vector.h"
+
+inline void SinCos(float radians, float *sine, float *cosine)
+{
+	__asm {
+		fld dword ptr [radians]
+		fsincos
+		mov edx, dword ptr [cosine]
+		mov eax, dword ptr [sine]
+		fstp dword ptr [edx]
+		fstp dword ptr [eax]
+	}
+}
+
+// TARGET: sub_10109e90
+void sub_10109e90(const Vector &in, float yaw, Vector &out)
+{
+	float cy;
+	SinCos(yaw * 0.017453292f, &yaw, &cy);
+	float x = in.x;
+	float y = in.y;
+	out.x = x * cy - y * yaw;
+	float a = x * yaw;
+	out.y = a + y * cy;
+	out.z = in.z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a020 size=0x82
 #include "Quaternion.h"
 
