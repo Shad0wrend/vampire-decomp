@@ -5816,6 +5816,7 @@
 0x1000820b func   ?sub_101c88c0@CTriggerPush@@QAEPAV1@XZ CTriggerPush::sub_101c88c0
 0x10008210 func   ?sub_103a6ef0@CNPC_VSabbatLeader@@QAEHXZ CNPC_VSabbatLeader::sub_103a6ef0
 0x10008215 func   ?vfunc144@CNPC_Bullseye@@QAEXH@Z CNPC_Bullseye::vfunc144
+0x10008215 func   ?vfunc144@CNPC_Bullseye@@UAEXPAX@Z CNPC_Bullseye::vfunc144
 0x1000821a func   ??0?$CUtlMemory@PAVCBaseEntity@@@@QAE@HH@Z CUtlMemory<CBaseEntity *>::CUtlMemory
 0x1000821a func   ?sub_100f97d0@UtlMem@@QAEPAV1@HH@Z UtlMem::sub_100f97d0
 0x1000821f func   ?sub_1005f9a0@@YAHXZ sub_1005f9a0
