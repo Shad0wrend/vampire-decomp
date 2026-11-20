@@ -43,6 +43,14 @@ public:
 	virtual void vfunc0();	// IKeyCacheable slot 0
 	virtual void vfunc1();	// IKeyCacheable slot 1
 	virtual void kv0();	// IKeyValues slot 1
+	// IKeyValues' other slots: the game's vtordisp thunks (0x101f3100 .. 0x101f3230) jump to this class's functions,
+	// matched under view names; declared only, the standalone link takes the thunks' targets
+	virtual void kv1(); virtual IKeyValues *kv2(const char *pszName); virtual IKeyValues *kv3();
+	virtual void kv4(); virtual void kv5(); virtual void kv6(); virtual void kv7(); virtual void kv8();
+	virtual void kv9(); virtual void kv10(); virtual void kv11(); virtual void kv12();
+	virtual const char *kv13(const char *pszName, const char *pszDefault);
+	virtual void kv14(); virtual void kv15(); virtual void kv16(); virtual void kv17(); virtual void kv18();
+	virtual void kv19(); virtual void kv20();
 	void sub_101f2c60();	// clears the sub keys, the string and the name
 
 	int m_n04;	// 0x04
