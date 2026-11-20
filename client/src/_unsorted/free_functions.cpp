@@ -3195,6 +3195,17 @@ int __stdcall sub_10129800(const char *pBytes, int nBytes)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129830 size=0x25
+#include "CSave.h"
+
+// TARGET: sub_10129830
+void CSave::sub_10129830(int a, int bytes, int b)
+{
+    sub_10129860((const void *)a, bytes);
+    sub_101299c0((const void *)b, bytes);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012aec0 size=0x34
 #include "CRestore.h"
 struct CRestoreSaveRecord30 { int m_nId; char m_pad04[0x2c]; };
