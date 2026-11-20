@@ -1072,3 +1072,18 @@ void sub_1010a570(const Q &q, float *m)
     m[10] = 1.0f - 2.0f * q.x * q.x - 2.0f * q.y * q.y;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010ba80 size=0x56
+#include "Vector.h"
+void sub_1010ba80(const Vector &a, const Vector &v, const Vector &c, Vector &out)
+{
+	for (int i = 0; i < 3; i++) {
+		if (c[i] < a[i])
+			out[i] = a[i];
+		else if (c[i] > v[i])
+			out[i] = v[i];
+		else
+			out[i] = c[i];
+	}
+}
+// END FUNCTION
