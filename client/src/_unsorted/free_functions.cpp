@@ -2683,3 +2683,15 @@ void sub_101a2520(const S1024e140Matrix &src, S1024e140Matrix &dst)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a25e0 size=0x18
+#include <string.h>
+
+void sub_101a25e0(void *src, void *dst)
+{
+    if (src != dst)
+    {
+        memcpy(dst, src, 64);
+    }
+}
+// END FUNCTION
