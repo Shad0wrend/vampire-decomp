@@ -2443,6 +2443,23 @@ void CAccum64View::sub_1010df80(const __int64 *pValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e290 size=0x3c
+#include "Pool.h"
+// TARGET: Pool::sub_1010e290
+Pool *Pool::sub_1010e290(unsigned int cbItem, unsigned int nItemsPerBlock, unsigned int nMode)
+{
+	if (cbItem < 4)
+		cbItem = 4;
+	m_cbItem = cbItem;
+	m_nItemsPerBlock = nItemsPerBlock;
+	m_nMode = nMode;
+	m_nPeak = 0;
+	sub_1010e2f0();
+	sub_1010e360(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f390 size=0x4b
 struct SCopy {
     int a, b, c, d;
