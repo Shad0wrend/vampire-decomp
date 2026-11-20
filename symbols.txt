@@ -12645,6 +12645,7 @@
 0x10010997 func   ?vfunc4@CPlayerEventsManager@@UAEXXZ CPlayerEventsManager::vfunc4
 0x100109a6 func   ?vfunc16@CSingleplayRules@@UAEXXZ CSingleplayRules::vfunc16
 0x100109ab func   ?vfunc203@CBaseEntity@@QAEMXZ CBaseEntity::vfunc203
+0x100109ab func   ?vfunc203@CBaseEntity@@UAEMXZ CBaseEntity::vfunc203
 0x100109b0 func   ?sub_102c6bf0@UtlMem@@QAEXXZ UtlMem::sub_102c6bf0
 0x100109b5 func   ?sub_103f8b30@@YAHXZ sub_103f8b30
 0x100109ba func   _prop_switch prop_switch
