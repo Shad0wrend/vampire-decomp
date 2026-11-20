@@ -12267,6 +12267,7 @@
 0x1001020d func   ?sub_103e3570@CWeaponRanged_FlameThrower@@QAEXPAVCBaseEntity@@VVector@@@Z CWeaponRanged_FlameThrower::sub_103e3570
 0x10010212 func   ?sub_100916a0@@YIMPAD@Z sub_100916a0
 0x10010217 func   ?vfunc233@CBaseEntity@@QAEHPAHH@Z CBaseEntity::vfunc233
+0x10010217 func   ?vfunc233@CBaseEntity@@UAEHPAHH@Z CBaseEntity::vfunc233
 0x1001021c func   ?sub_1030b880@CUnknown1030b880@@QAEMXZ CUnknown1030b880::sub_1030b880
 0x10010221 func   ?vfunc82@CPlayerResource@@QAEPAUdatamap_t@@XZ CPlayerResource::vfunc82
 0x10010226 func   ?sub_100697a0@@YAHXZ sub_100697a0
