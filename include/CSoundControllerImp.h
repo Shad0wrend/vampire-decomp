@@ -91,6 +91,7 @@ public:
 	virtual int vfunc14(int);
 	virtual void vfunc15(void *pSound, int command, int *pPoints);
 	virtual void vfunc17(int a);
+	virtual void vfunc18();	// its own slot 18 (0x101bd850, matched through the view CSoundControllerImpView)
 
 	CSoundControllerImp()
 	{

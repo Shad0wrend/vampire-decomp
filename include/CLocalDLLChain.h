@@ -17,6 +17,7 @@ class __declspec(novtable) CBaseDLLChain
 {
 public:
 	virtual void vfunc0(CLocalDLLChainVisitor *pVisitor) = 0;
+	virtual void vfunc1(int value) = 0;
 
 	CBaseDLLChain *m_pPrev;	// 0x04
 	CBaseDLLChain *m_pNext;	// 0x08
@@ -42,6 +43,7 @@ public:
 	}
 	~CLocalDLLChain() {}
 	virtual void vfunc0(CLocalDLLChainVisitor *pVisitor);
+	virtual void vfunc1(int value);	// slot 1 (0x100ed6c0, matched as the free __fastcall sub_100ed6c0): stores value in the global g_106eb3c8
 };
 #else
 class CLocalDLLChain

@@ -20,6 +20,7 @@ public:
 	// own slots the game's vtable holds (matched under another name)
 	virtual void vfunc1();	// 0x102ea5a0
 	virtual void OnEntityCreated(CBaseEntity *pEntity);	// 0x102ea5e0
+	virtual void OnEntityDeleted(CBaseEntity *pEntity);	// 0x102ea600
 #endif
 	void vfunc4();	// rebuilds the free list of the global linked list at 0x10934018 (12 byte nodes, count at 0x1093402a)
 };

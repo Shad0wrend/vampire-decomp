@@ -24,6 +24,7 @@ class IEntityListener
 {
 public:
 	virtual void OnEntityCreated(CBaseEntity *pEntity);	// vtable 0x10455ea0 in CNotifyList
+	virtual void OnEntityDeleted(CBaseEntity *pEntity);	// slot 1, as in CGlobalEntityList.h
 };
 #endif
 
@@ -41,6 +42,7 @@ public:
 
 #ifdef PCD_INITIALIZERS
 	virtual void OnEntityCreated(CBaseEntity *pEntity);	// IEntityListener's slot: the game's word 0x100f8a20 is matched as the free sub_100f8a20
+	virtual void OnEntityDeleted(CBaseEntity *pEntity);	// IEntityListener's slot 1: the game's word 0x100f8a40 is matched through the view CInner100f8a40 (its this is the listener base)
 #endif
 #ifdef PCD_INITIALIZERS	// the pairs
 	CUtlVector<int> m_notifyList;	// 0x08 (SDK: CUtlVector<notifylist_t>, 8-byte pairs)
