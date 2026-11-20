@@ -10844,6 +10844,7 @@
 0x1000e64c func   ?sub_1029f6c0@CAI_BaseNPCTroika@@QAEHPAX@Z CAI_BaseNPCTroika::sub_1029f6c0
 0x1000e651 func   ?sub_10326d40@@YI_NPADHHHH@Z sub_10326d40
 0x1000e651 func   ?vfunc366@CBaseCombatCharacter@@QAE_NHHH@Z CBaseCombatCharacter::vfunc366
+0x1000e651 func   ?vfunc366@CBaseCombatCharacter@@UAE_NHHH@Z CBaseCombatCharacter::vfunc366
 0x1000e656 func   ?sub_10356c30@CBoxTrace@@QAEXPAMH@Z CBoxTrace::sub_10356c30
 0x1000e65b func   ?sub_10078520@CUnknown10078520@@QAEHXZ CUnknown10078520::sub_10078520
 0x1000e665 func   ?sub_100f7930@CLinkedList100f7930@@QAEPAUCLinkedEnt100f7930@@PAU2@PBD@Z CLinkedList100f7930::sub_100f7930
