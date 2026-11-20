@@ -1535,3 +1535,33 @@ const char *sub_10128d80(SFuncMap *pMap, int pFunc)
     return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129560 size=0x4c
+#include "CSave.h"
+
+class ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+	int fieldType;
+	const char *fieldName;
+	int fieldOffset[2];
+	unsigned short fieldSize;
+	short flags;
+	const char *externalName;
+	ISaveRestoreOps *pSaveRestoreOps;
+	void *inputFunc;
+	datamap_t *td;
+	int fieldSizeInBytes;
+	int unk;
+};
+
+int CSave::sub_10129560(const void *pBaseData, typedescription_t *pFields, int nFields)
+{
+	int nNonEmpty = 0;
+	for (int i = 0; i < nFields; i++) {
+		if (sub_10129250((char *)pBaseData + pFields[i].fieldOffset[0], &pFields[i]))
+			nNonEmpty++;
+	}
+	return nNonEmpty;
+}
+// END FUNCTION
