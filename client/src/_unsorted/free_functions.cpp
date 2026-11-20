@@ -3511,6 +3511,20 @@ void CUtlVector130::sub_101314a0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131540 size=0x4b
+#include "CUtlVector130.h"
+
+extern "C" void *memmove(void *, const void *, unsigned int);
+
+// TARGET: CUtlVector130::sub_10131540
+void CUtlVector130::sub_10131540(int elem, int num)
+{
+	int numToMove = m_size - elem - num;
+	if ((numToMove > 0) && (num > 0))
+		memmove(m_pMemory + (elem + num) * 130, m_pMemory + elem * 130, numToMove * 130);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131e60 size=0xcf
 #include "CUnknown101b9140.h"
 
