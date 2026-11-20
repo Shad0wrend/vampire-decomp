@@ -2018,3 +2018,45 @@ S101d61e0 *CUnknown101d6750::sub_101405b0()
 	return m_pItems[m_count - 1];
 }
 // END FUNCTION
+
+// FUNCTION: 0x10146a90 size=0xf1
+#include "CUnknown101db210.h"
+
+struct S6 {
+	S6 *sub_101467d0(int);
+	int m_data[6];
+};
+
+S6 *CUnknown101db210::sub_10146a90()
+{
+	if (m_allocCount == m_count) {
+		m_allocCount++;
+		if (m_pItems) {
+			S6 **p = new S6 *[m_allocCount];
+			int i = 0;
+			if (m_count > 0) {
+				do {
+					p[i] = m_pItems[i];
+					i++;
+				} while (i < m_count);
+			}
+			for (; i < m_allocCount; i++)
+				p[i] = 0;
+			delete m_pItems;
+			m_pItems = p;
+		} else {
+			m_pItems = new S6 *[m_allocCount];
+			for (int i = 0; i < m_allocCount; i++)
+				m_pItems[i] = 0;
+		}
+		m_count++;
+	} else {
+		m_count++;
+	}
+	if (m_pItems[m_count - 1] == 0) {
+		S6 *p = new S6;
+		m_pItems[m_count - 1] = p ? p->sub_101467d0(m_count - 1) : 0;
+	}
+	return m_pItems[m_count - 1];
+}
+// END FUNCTION
