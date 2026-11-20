@@ -5326,6 +5326,20 @@ void __fastcall sub_10154b40(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101553d0 size=0x25
+#include "CUnknown101f40f0.h"
+#include "CUnknown101f5150.h"
+
+int *sub_1015fc40(void *pOwnerRef, const char *pszName);
+
+// TARGET: CUnknown101f40f0::sub_101553d0
+void CUnknown101f40f0::sub_101553d0(CUnknown101f5150 *pOwner, const char *pszName)
+{
+    m_pParent = (CUnknown101f40f0_Parent *)pOwner;
+    m_pszName = (const char *)*sub_1015fc40(&pOwner, pszName);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155b40 size=0x1d
 struct S9 {
 	int a, b, c, d, e, f, g, h, i;
