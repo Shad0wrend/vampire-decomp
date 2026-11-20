@@ -6319,6 +6319,7 @@
 0x10008cab func   ?sub_1030d3d0@@YGIH@Z sub_1030d3d0
 0x10008cb0 func   ?vfunc134@CLogicAuto@@QAEXXZ CLogicAuto::vfunc134
 0x10008cb5 func   ?vfunc240@CBaseEntity@@QAEHXZ CBaseEntity::vfunc240
+0x10008cb5 func   ?vfunc240@CBaseEntity@@UAEHXZ CBaseEntity::vfunc240
 0x10008cba func   ?sub_100ee950@CBaseDoor@@QAEPAVCBaseEntity@@PAV2@@Z CBaseDoor::sub_100ee950
 0x10008cbf func   ?sub_1020b440@@YAPAHXZ sub_1020b440
 0x10008cc9 func   ?sub_1042c420@@YAXPAX@Z sub_1042c420
