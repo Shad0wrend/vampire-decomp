@@ -3108,6 +3108,7 @@
 0x10004db3 func   ?sub_10228350@@YAHM@Z sub_10228350
 0x10004db8 func   ?sub_102308f0@CUnknown102308f0@@QAEHXZ CUnknown102308f0::sub_102308f0
 0x10004dbd func   ?vfunc113@CBreakableProp@@QAEXXZ CBreakableProp::vfunc113
+0x10004dbd func   ?vfunc113@CBreakableProp@@UAEXXZ CBreakableProp::vfunc113
 0x10004dc2 func   ?vfunc113@CDynamicProp@@UAEXXZ CDynamicProp::vfunc113
 0x10004dc7 func   ?vfunc34@CGameRules@@UAE_NH@Z CGameRules::vfunc34
 0x10004dcc func   ?sub_101e8ad0@CUnknown101e8ad0@@QAEMXZ CUnknown101e8ad0::sub_101e8ad0
