@@ -6633,6 +6633,16 @@ void CUtlMemory12::sub_10163a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0f20 size=0x34
+#include "UtlVec8.h"
+void UtlVec8::sub_101a0f20(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		sub_101d0f30(&m_pMemory[(elem + num) * 4], &m_pMemory[elem * 4], numToMove * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2290 size=0x157
 #include "QAngle.h"
 #include "VMatrix.h"
