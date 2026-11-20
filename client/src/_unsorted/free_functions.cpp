@@ -89,6 +89,30 @@ Vector Vector::sub_10004d80(float fl) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005de0 size=0x1b
+struct CSubObj1005f190 {
+	virtual int v0();
+	virtual char v1();
+	char pad[0x28];
+	int m_n2c;
+};
+
+struct CFoo1005f190 {
+	char pad[4];
+	CSubObj1005f190 *m_pSub;
+	int sub_10005de0();
+};
+
+// TARGET: sub_10005de0
+int CFoo1005f190::sub_10005de0()
+{
+	if (m_pSub->v1()) {
+		return 0;
+	}
+	return m_pSub->m_n2c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027d20 size=0x191
 #include "Vector.h"
 void sub_100dfc60(const Vector &a, const Vector &b, int r, int g, int bl, bool noDepthTest, float duration);
