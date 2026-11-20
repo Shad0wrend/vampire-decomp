@@ -97,6 +97,7 @@
 0x1010a930 func   ?sub_1010a930@@YAXPBMPAM@Z sub_1010a930
 0x1010ba80 func   ?sub_1010ba80@@YAXABVVector@@00AAV1@@Z sub_1010ba80
 0x1010bc90 func   ?sub_1010bc90@@YAXABVVector@@00AAV1@PAM@Z sub_1010bc90
+0x1010c2e0 func   ?sub_1010c2e0@@YAMMMM@Z sub_1010c2e0
 0x1010c410 func   ?sub_1010c410@@YAMMM@Z sub_1010c410
 0x1010c470 func   ?sub_1010c470@@YAMMM@Z sub_1010c470
 0x1010c4b0 func   ?sub_1010c4b0@@YAMM@Z sub_1010c4b0

@@ -2372,6 +2372,20 @@ void sub_1010bc90(const Vector &a, const Vector &b, const Vector &c, Vector &out
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c2e0 size=0x3f
+// TARGET: sub_1010c2e0
+float sub_1010c2e0(float a, float b, float c)
+{
+    if (a - b > c) {
+        return b + c;
+    }
+    if (a - b < -c) {
+        return b - c;
+    }
+    return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c410 size=0x5f
 float sub_1010c410(float a, float b)
 {
