@@ -7587,6 +7587,7 @@
 0x1000a5d3 func   ?vfunc245@CBaseTrigger@@QAEXH@Z CBaseTrigger::vfunc245
 0x1000a5d8 func   ?sub_10132db0@@YAPAHXZ sub_10132db0
 0x1000a5dd func   ?sub_1012c5b0@@YGHHHH@Z sub_1012c5b0
+0x1000a5dd func   _DllMain@12 DllMain
 0x1000a5e2 func   ?sub_103f5800@CUnknown103f5800@@QAEHXZ CUnknown103f5800::sub_103f5800
 0x1000a5e7 func   ?vfunc108@CPropDoorknob@@UAE_NPBDMMM@Z CPropDoorknob::vfunc108
 0x1000a5e7 func   ?vfunc108@CVampireProjectile@@UAE_NPBDMMM@Z CVampireProjectile::vfunc108
