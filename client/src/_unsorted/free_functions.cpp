@@ -46,3 +46,26 @@ Vector Vector::sub_10004d80(float fl) const
 	return res;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10027d20 size=0x191
+#include "Vector.h"
+void sub_100dfc60(const Vector &a, const Vector &b, int r, int g, int bl, bool noDepthTest, float duration);
+
+void sub_10027d20(const Vector &origin, const Vector &mins, const Vector &maxs, int r, int g, int b, bool noDepthTest, float duration)
+{
+    Vector o = origin;
+    double t0 = maxs.z; o.z = o.z - t0 * 0.5;
+    Vector p1 = o + mins;
+    Vector p2 = o + maxs;
+    sub_100dfc60(p1, p2, r, g, b, noDepthTest, duration);
+    p1.x += maxs.x - mins.x;
+    p2.x -= maxs.x - mins.x;
+    sub_100dfc60(p1, p2, r, g, b, noDepthTest, duration);
+    p1.y += maxs.y - mins.y;
+    p2.y -= maxs.y - mins.y;
+    sub_100dfc60(p1, p2, r, g, b, noDepthTest, duration);
+    p1.x -= maxs.x - mins.x;
+    p2.x += maxs.x - mins.x;
+    sub_100dfc60(p1, p2, r, g, b, noDepthTest, duration);
+}
+// END FUNCTION
