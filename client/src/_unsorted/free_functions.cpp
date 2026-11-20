@@ -5702,6 +5702,22 @@ int __cdecl sub_1015f810(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ff70 size=0x23
+struct CUnknown1006c7d0 {
+	void sub_1015ff70();
+};
+
+// TARGET: CUnknown1006c7d0::sub_1015ff70
+void CUnknown1006c7d0::sub_1015ff70()
+{
+	if (*(void **)((char *)this + 0x14) != 0) {
+		delete *(void **)((char *)this + 0x14);
+		*(int *)((char *)this + 0x14) = 0;
+	}
+	*(int *)((char *)this + 0x10) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160100 size=0x53
 struct CFloatTable1006c9d0 {
 	char m_pad[0xc];
