@@ -15966,6 +15966,7 @@
 0x1001490c func   ?sub_10202460@@YAPBDPAUCVDmgBlock16_t@@H@Z sub_10202460
 0x10014911 func   _info_node_bach_run_1 info_node_bach_run_1
 0x10014916 func   ?vfunc174@CTriggerDisciplineContext@@QAEXPAVCBaseEntity@@@Z CTriggerDisciplineContext::vfunc174
+0x10014916 func   ?vfunc174@CTriggerDisciplineContext@@UAEXPAVCBaseEntity@@@Z CTriggerDisciplineContext::vfunc174
 0x1001491b func   _info_node_bach_run_2 info_node_bach_run_2
 0x10014925 func   ?sub_10130c10@CLogicAuto@@QAEEXZ CLogicAuto::sub_10130c10
 0x1001492a func   ?sub_103a5270@@YAXXZ sub_103a5270
