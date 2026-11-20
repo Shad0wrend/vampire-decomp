@@ -5394,6 +5394,30 @@ bool CUnknown101f5150::sub_10155cc0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156120 size=0x33
+// TARGET: sub_10156120
+struct CEntryPair_101f5e80 {
+    int a;
+    void *b;
+    void *c;
+};
+struct CEntryTable_101f5e80 {
+    CEntryPair_101f5e80 e[0x118d];
+    void sub_10156120();
+};
+void CEntryTable_101f5e80::sub_10156120()
+{
+    int i;
+    for (i = 0; i < 0x118d; i++) {
+        delete e[i].b;
+        delete e[i].c;
+        e[i].a = 0;
+        e[i].b = 0;
+        e[i].c = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157390 size=0xeb
 #include "CUnknown101f7960.h"
 
