@@ -16069,6 +16069,7 @@
 0x10014b0a func   ??1CVDataRecord_1074f004@@QAE@XZ CVDataRecord_1074f004::~CVDataRecord_1074f004
 0x10014b0a func   ?sub_10206430@CPtrArray10206430@@QAEXXZ CPtrArray10206430::sub_10206430
 0x10014b0f func   ?vfunc180@CPropHaunted@@QAEXXZ CPropHaunted::vfunc180
+0x10014b0f func   ?vfunc180@CPropHaunted@@UAEXXZ CPropHaunted::vfunc180
 0x10014b14 func   ?sub_1017b880@@YGXH@Z sub_1017b880
 0x10014b19 func   ?vfunc81@CItemGBailbondReceipt@@QAEHXZ CItemGBailbondReceipt::vfunc81
 0x10014b1e func   ?sub_1021e4f0@UtlVec8@@QAEXHH@Z UtlVec8::sub_1021e4f0
