@@ -12546,6 +12546,7 @@
 0x100105b4 func   ?sub_102db5e0@@YAPADH@Z sub_102db5e0
 0x100105b9 func   ?sub_10365840@@YAXXZ sub_10365840
 0x100105be func   ?vfunc144@CNPC_VDog@@QAEXH@Z CNPC_VDog::vfunc144
+0x100105be func   ?vfunc144@CNPC_VDog@@UAEXPAX@Z CNPC_VDog::vfunc144
 0x100105c3 func   ?sub_100cd240@@YAHH@Z sub_100cd240
 0x100105c8 func   ?sub_1017b6f0@CBasePlayer@@QAEXHPBDH0@Z CBasePlayer::sub_1017b6f0
 0x100105cd func   ?sub_10311ee0@CAI_Expresser@@QAE_NHH@Z CAI_Expresser::sub_10311ee0
