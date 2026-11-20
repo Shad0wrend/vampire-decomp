@@ -2440,3 +2440,30 @@ char sub_1015f720(CFileParserSlotView *pParser, const char *pszName, int a3, con
 	return 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10160100 size=0x53
+struct CFloatTable1006c9d0 {
+	char m_pad[0xc];
+	unsigned char m_flags;	// 0xc: bit 0 = clamp to the ends
+	char m_pad0d[3];
+	int m_count;	// 0x10
+	float *m_pData;	// 0x14
+
+	int sub_10160100(int index);
+};
+
+int CFloatTable1006c9d0::sub_10160100(int index)
+{
+	if (m_flags & 1)
+	{
+		if (index < 0)
+			index = 0;
+		else if (index >= m_count)
+			index = m_count - 1;
+		return (int)m_pData[index];
+	}
+	if (index >= 0 && index < m_count)
+		return (int)m_pData[index];
+	return -1;
+}
+// END FUNCTION
