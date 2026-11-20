@@ -43,3 +43,17 @@ void CSave::vfunc18(int a, const char *psz)
 	sub_10129830(a, strlen(psz) + 1, (int)psz);
 }
 // END FUNCTION
+
+// FUNCTION: 0x101291a0 size=0x59
+#include "CSave.h"
+#include <string.h>
+void CSave::vfunc17(const char *pszName, void *pData, int count)
+{
+	const char **ppStrings = (const char **)pData;
+	int total = 0;
+	for (int i = 0; i < count; i++)
+		total += strlen(ppStrings[i] ? ppStrings[i] : "") + 1;
+	sub_10129860(pszName, total);
+	vfunc19(ppStrings, count);
+}
+// END FUNCTION
