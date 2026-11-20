@@ -74,6 +74,7 @@
 0x10128fb0 func   ?vfunc1@CSave@@UAEXH@Z CSave::vfunc1
 0x101290f0 func   ?vfunc7@CSave@@UAEXHHH@Z CSave::vfunc7
 0x10129110 func   ?vfunc9@CSave@@UAEXPBDPAXH@Z CSave::vfunc9
+0x10129170 func   ?vfunc18@CSave@@UAEXHPBD@Z CSave::vfunc18
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit

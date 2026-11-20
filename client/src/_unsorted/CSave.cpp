@@ -32,3 +32,14 @@ void CSave::vfunc9(const char *pszName, void *pData, int count)
     sub_10129830((int)pszName, count * 4, (int)pData);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10129170 size=0x22
+#include "CSave.h"
+#include <string.h>
+#pragma intrinsic(strlen)
+
+void CSave::vfunc18(int a, const char *psz)
+{
+	sub_10129830(a, strlen(psz) + 1, (int)psz);
+}
+// END FUNCTION
