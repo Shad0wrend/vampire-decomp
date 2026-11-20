@@ -500,6 +500,29 @@ CWeaponCopy *CWeaponCopy::sub_1007b250(const CWeaponCopy *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007cdc0 size=0x1c
+namespace block_10256200 {
+unsigned char __fastcall sub_1007cd70(unsigned char *self)
+{
+	unsigned char v = self[0x778];
+	v >>= 1;
+	v &= 1;
+	return v;
+}
+}
+using namespace block_10256200;
+
+char *__fastcall sub_1007b160(void *p);
+
+// TARGET: sub_1007cdc0
+unsigned char __fastcall sub_1007cdc0(void *p)
+{
+	if (sub_1007cd70((unsigned char *)p))
+		return 0;
+	return *(int *)(sub_1007b160(p) + 0x24d0) == 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100889f0 size=0x1a2
 #include "Quaternion.h"
 union CBlendAnimValue
