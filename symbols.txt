@@ -4130,6 +4130,7 @@
 0x10006181 func   ?sub_101a7500@CCineNPC@@QAEXH@Z CCineNPC::sub_101a7500
 0x10006186 func   ?vfunc5@CItemGGarysPhoto@@QAEPAV1@I@Z CItemGGarysPhoto::vfunc5
 0x1000618b func   ?vfunc221@CBaseEntity@@QAEPAMXZ CBaseEntity::vfunc221
+0x1000618b func   ?vfunc221@CBaseEntity@@UAEPAMXZ CBaseEntity::vfunc221
 0x10006190 func   ??0CSoundEmitterRecord@@QAE@XZ CSoundEmitterRecord::CSoundEmitterRecord
 0x10006190 func   ?sub_101b6250@CUnknown101b6250@@QAEPAV1@XZ CUnknown101b6250::sub_101b6250
 0x10006195 func   ?vfunc5@CItemGHorrorTape_2@@QAEPAV1@I@Z CItemGHorrorTape_2::vfunc5
