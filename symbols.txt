@@ -8970,6 +8970,7 @@
 0x1000c176 func   ?sub_10321a60@@YAHXZ sub_10321a60
 0x1000c17b func   ?sub_1019ab40@@YAXXZ sub_1019ab40
 0x1000c180 func   ?sub_101cc140@Helper@@QAEPAXI@Z Helper::sub_101cc140
+0x1000c180 func   ?vfunc5@CTriggerProximity@@UAEPAVCBaseEntity@@I@Z CTriggerProximity::vfunc5
 0x1000c185 func   ?sub_1033f6d0@CBaseCombatCharacter@@QAEXXZ CBaseCombatCharacter::sub_1033f6d0
 0x1000c18a func   ?vfunc359@CNPC_VGargoyle@@UAEHH@Z CNPC_VGargoyle::vfunc359
 0x1000c18f func   ?sub_101896f0@@YADPAVCBaseEntity@@HH@Z sub_101896f0
