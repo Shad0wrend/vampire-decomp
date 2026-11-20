@@ -14890,6 +14890,7 @@
 0x10013462 func   ?vfunc134@CFlameCluster@@UAEXXZ CFlameCluster::vfunc134
 0x10013467 func   ?sub_102ca460@CUnknown102ca630@@QAEXPAUCUnknown102ca630Rec@@@Z CUnknown102ca630::sub_102ca460
 0x1001346c func   ?vfunc176@CBaseTrigger@@QAEXPAVCBaseEntity@@@Z CBaseTrigger::vfunc176
+0x1001346c func   ?vfunc176@CBaseTrigger@@UAEXPAVCBaseEntity@@@Z CBaseTrigger::vfunc176
 0x10013471 func   ?sub_101263c0@CGameMovement@@QAEXD@Z CGameMovement::sub_101263c0
 0x10013476 func   ?sub_1021f710@@YAPBDPAUCKeyHolderSet@@H@Z sub_1021f710
 0x1001347b func   ?sub_1021df90@CPropKeypad@@QAEXXZ CPropKeypad::sub_1021df90
