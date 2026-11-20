@@ -7139,6 +7139,7 @@
 0x10009ca5 func   ?sub_1006cb80@CWrap1006cb80@@QAEXH@Z CWrap1006cb80::sub_1006cb80
 0x10009caa func   ?vfunc0@CHalfLife2@@QAEPAVCGameRules@@I@Z CHalfLife2::vfunc0
 0x10009caf func   ?vfunc174@CBaseEntity@@QAEXPAV1@@Z CBaseEntity::vfunc174
+0x10009caf func   ?vfunc174@CBaseEntity@@UAEXPAV1@@Z CBaseEntity::vfunc174
 0x10009cb4 func   ?vfunc5@CWeaponRanged_Rifle_Crossbow@@UAEPAVCBaseEntity@@I@Z CWeaponRanged_Rifle_Crossbow::vfunc5
 0x10009cb9 func   ?sub_100c12b0@@YAXABVQuaternion@@M0AAV1@@Z sub_100c12b0
 0x10009cbe func   ?sub_1024edc0@CBaseCombatWeapon@@QAEXXZ CBaseCombatWeapon::sub_1024edc0
