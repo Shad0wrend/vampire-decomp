@@ -21,7 +21,7 @@ public:
 	virtual void vfunc119();	// "CTriggerWWZone::Kill": scope trace (entity name), disables the trigger (CBaseTrigger::sub_101c4dd0), sets the think function to the stub at 0x10015b68 and the next think to curtime + 1.0f
 	virtual void vfunc113();	// "CTriggerWWZone::Activate": scope trace (entity name), the base activation, then sub_1000dfd0
 	void sub_100113a6();	// CBaseTrigger::vfunc113 (Activate), called directly
-	void vfunc251();	// slot 251: sets the zone up when it is not yet (sub_103da730, sub_103daa30), then stores the handle of the entity named at +0x5b0 in +0x5b4 (-1 when none)
+	virtual void vfunc251();	// slot 251: sets the zone up when it is not yet (sub_103da730, sub_103daa30), then stores the handle of the entity named at +0x5b0 in +0x5b4 (-1 when none)
 	void sub_103da730();	// stub 0x100090e8, set-up step
 	void sub_103daa30();	// stub 0x1000966a, set-up step
 	void sub_1000dfd0();	// the zone's own activation step (stub of 0x101c5080)

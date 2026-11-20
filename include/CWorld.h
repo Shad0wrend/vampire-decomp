@@ -29,7 +29,7 @@ public:
     void sub_1000fe98();    // as in CPhysForce (transplant)
     CWorld *sub_1023b840();    // as in CKeepUpright (transplant)
     virtual bool vfunc110(const char *key, const char *value);    // "CWorld::KeyValue": skyname / sounds / WaveHeight / newunit / world_mins / world_maxs, else CBaseEntity::KeyValue
-    void vfunc241(void *pSource, int nSound, int unused1, int unused2);    // slot 241 (declared as a plain member): plays the sound of the table entry nSound (global table at 0x105c230c, 8 bytes each, skipped when negative) to every player from the position at +0xc of pSource, through the engine object at 0x10540528 (slot 41)
+    virtual void vfunc241(void *pSource, int nSound, int unused1, int unused2);    // slot 241: plays the sound of the table entry nSound (global table at 0x105c230c, 8 bytes each, skipped when negative) to every player from the position at +0xc of pSource, through the engine object at 0x10540528 (slot 41)
 
     char m_padWorld[0x450 - 0x3e0];
     const char *m_psz450;    // 0x0450: the chapter title string (DevMsg "Chapter title: %s", moved to the env_message entity's +0x450)
