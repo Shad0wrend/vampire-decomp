@@ -219,6 +219,10 @@ public:
 	int vfunc365(CBaseEntity *pTarget);	// "CBaseCombatCharacter::FInAimCone": scope trace (entity name), returns slot 364(target slot 197(buf, slot 193(buf), 1, 0))
 	// vfunc367 (declared virtual in the slot block): "CBaseCombatCharacter::BodyAngles": scope trace (entity name), returns the three floats returned by slot 219 by value
 	void sub_1032c960(CBaseEntity *pObject);
+	// its own slots 50..53 and 74 with CBaseEntity's signatures: 50 and 51 are the plain members below (another
+	// signature), 52, 53 and 74 are matched as the fastcall functions sub_103321a0, sub_10332240, sub_103404f0
+	virtual void vfunc50(Vector *pOut); virtual void vfunc51(int unused, Vector *pOut);
+	virtual float vfunc52(); virtual float vfunc53(); virtual bool vfunc74(int a);
 	void vfunc50(int a);	// scope-traced wrapper around sub_10014eb6(a, 0)
 	void vfunc51(int unused, float *pOut);	// "CBaseCombatCharacter::GetCameraTargetPosition": scope trace (entity name), with the flag byte at +0x10d4 set sub_10014eb6(pOut, 0), else copies the vector slot 192 returns into pOut
 	virtual void vfunc105(const char *pszModel);	// slot 105 "CBaseCombatCharacter::SetModel": scope trace (entity name), CBaseFlex::vfunc105, then from the model header the legs flag (stat 0xb of the active stat list, +0x13cc), the aim_pitch / aim_yaw pose parameters (+0x106c / +0x1070) and the Bip01_Head bone with its axis (+0x1080 / +0x1074); +0xbc = -1
