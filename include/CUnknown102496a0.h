@@ -3,7 +3,8 @@
 // 0x18 bytes; its constructor is sub_102496a0 (stub 0x10013dcc).
 #pragma once
 
-#include "CBaseRopePhysics.h"
+struct CRopeNode;	// CBaseRopePhysics.h (which includes this header for its m_timer)
+class CBaseRopePhysics;
 
 class CUnknown102496a0
 {

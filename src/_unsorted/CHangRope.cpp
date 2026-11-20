@@ -3,12 +3,9 @@
 
 // FUNCTION: 0x1042dda0 size=0x1b
 #include "CHangRope.h"
-int CHangRope::vfunc0(int a0, int a1, int a2)
+void CHangRope::vfunc0(CRopeNode *pNodes, int iNode, Vector *pAccel)
 {
-    *(int *)((char *)a2) = 0;
-    *(int *)((char *)a2 + 4) = 0;
-    *(int *)((char *)a2 + 8) = -994344960;
-    return a2;
+	pAccel->Init(0, 0, -1500);
 }
 // END FUNCTION
 

@@ -197232,7 +197232,7 @@ void SList::sub_10249220()
 // FUNCTION: 0x10249340 size=0x3c
 #include "CPositionInterpolator_Rope.h"
 
-void CRopeSimBase::sub_10249340(int nNodes)
+void CBaseRopePhysics::sub_10249340(int nNodes)
 {
 	int i = 0;
 	m_nNodes = nNodes;
@@ -197240,8 +197240,8 @@ void CRopeSimBase::sub_10249340(int nNodes)
 	{
 		do
 		{
-			m_pSprings[i * 2] = &m_pNodes[i];
-			m_pSprings[i * 2 + 1] = &m_pNodes[i + 1];
+			((void **)m_pLinks)[i * 2] = &m_pNodes[i];
+			((void **)m_pLinks)[i * 2 + 1] = &m_pNodes[i + 1];
 			i++;
 		} while (i < m_nNodes - 1);
 	}
@@ -197380,7 +197380,7 @@ void CUnknown102496d0::sub_102496d0(float flValue)
 // END FUNCTION
 
 // FUNCTION: 0x10249710 size=0x1bf
-#include "CUnknown102496a0.h"
+#include "CBaseRopePhysics.h"
 
 extern "C" double __cdecl ceil(double);
 
@@ -327774,7 +327774,7 @@ extern char g_10516cc4[];	// CHangRope's vtable
 
 struct CRopePhysics512View
 {
-	CRopeSimBase m_base;
+	CBaseRopePhysics m_base;
 	CRopeNodeInit m_Nodes[512];
 	CRopeLink m_Springs[511];
 	__forceinline CRopePhysics512View() : m_base(m_Nodes, 512, m_Springs) { *(void **)this = g_10516cd4; }

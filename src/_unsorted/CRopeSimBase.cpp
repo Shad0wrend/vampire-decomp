@@ -14,14 +14,14 @@ struct CNodeX {
 	CNodeVec m_vPredicted;
 };
 
-CRopeSimBase::CRopeSimBase(void *pNodes, int nNodes, void *pSprings)
+CBaseRopePhysics::CBaseRopePhysics(void *pNodes, int nNodes, void *pSprings)
 	: m_timer()
 {
 	CNodeX *pNode = (CNodeX *)pNodes;
-	m_pSprings = (void **)pSprings;
+	m_pLinks = (CRopeLink *)pSprings;
 	m_pNodes = (CRopeNode *)pNodes;
-	m_f18 = 1.0f;
-	m_f14 = 1.0f;
+	m_flMinDistSq = 1.0f;
+	m_flRestLength = 1.0f;
 	sub_10249390();
 	for (int i = 0; i < nNodes; i++) {
 		pNode[i].m_vPos.Init(0, 0, 0);
@@ -29,6 +29,6 @@ CRopeSimBase::CRopeSimBase(void *pNodes, int nNodes, void *pSprings)
 		pNode[i].m_vPredicted.Init(0, 0, 0);
 	}
 	sub_10249340(nNodes);
-	m_n04 = 0;
+	m_pNext = 0;
 }
 // END FUNCTION

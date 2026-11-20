@@ -1,10 +1,7 @@
 // CPositionInterpolator_Rope (RTTI .?AVCPositionInterpolator_Rope@@): rope position interpolator, base IPositionInterpolator.
 #pragma once
 #include "PcdVirtual.h"	// PCD_PURE: the interpolator globals' classes are not abstract in the initializer units
-#include "CUnknown102496a0.h"
-#include "CBaseRopePhysics.h"	// CRopeNode
-
-class CRopeDelegate;
+#include "CBaseRopePhysics.h"	// CRopePhysics<10>, CSimplePhysics::IHelper
 
 class IPositionInterpolator
 {
@@ -17,57 +14,14 @@ public:
 	int m_unk0004;
 };
 
-// RTTI .?AVCSimplePhysics@@ with its nested helper interface (vtable 0x10497520): the first base of the rope simulation.
-class CSimplePhysics
-{
-public:
-	class IHelper
-	{
-	public:
-		virtual void vfunc0() = 0;
-	};
-};
-
-// base of CRopePhysics<10>, constructed out of line (0x100136b0): nodes, node count, springs
-// (RTTI name CBaseRopePhysics, vtable 0x10497510)
-class CRopeSimBase : public CSimplePhysics::IHelper
-{
-public:
-	CRopeSimBase(void *pNodes, int nNodes, void *pSprings);
-	virtual void vfunc0();
-	int m_n04;
-	CRopeNode *m_pNodes;	// 0x08
-	int m_nNodes;	// 0x0c
-	void **m_pSprings;	// 0x10
-	float m_f14;
-	float m_f18;
-	char m_pad001c[4];
-	CUnknown102496a0 m_timer;	// 0x20
-
-	void sub_10249390();	// sets the timer's interval to 0.02 s
-	void sub_10249340(int nNodes);	// links the nodes into springs
-	void sub_10249420(float flSegment, CRopeDelegate *pDelegate);	// stub 0x100142d6: the rest length of one segment, and the delegate that supplies the end points
-	void sub_10249470(float flValue);	// stub 0x100060c3
-};
-
-// RTTI .?AV?$CRopePhysics@$09@@, the member at +8 of CPositionInterpolator_Rope
-template<int N>
-class CRopePhysics : public CRopeSimBase
-{
-public:
-	CRopePhysics() : CRopeSimBase(m_nodes, N, m_springs) {}
-	virtual void vfunc1();
-	char m_nodes[0x168];	// 0x38
-	char m_springs[0x48];	// 0x1a0
-};
-
-// RTTI .?AVCRopeDelegate@@, the member at +0x1f0 of CPositionInterpolator_Rope (just a vtable pointer)
-class CRopeDelegate
+// RTTI .?AVCRopeDelegate@@ (base CSimplePhysics::IHelper, vtable 0x10464d34), the member at +0x1f0 of
+// CPositionInterpolator_Rope (just a vtable pointer)
+class CRopeDelegate : public CSimplePhysics::IHelper
 {
 public:
 	CRopeDelegate() {}
-	virtual int vfunc0(int, int, int);
-	virtual void vfunc1(int *pOut, int count);	// slot 1: copies the first two of the delegate's 9-dword records (at +4..+0x18) to pOut and the last one to pOut + (count * 9 - 9) dwords; does nothing for count < 2
+	virtual void vfunc0(CRopeNode *pNodes, int iNode, Vector *pAccel);	// GetNodeForces: gravity (0, 0, -1500)
+	virtual void vfunc1(CRopeNode *pNodes, int nNodes);	// ApplyConstraints: copies the first two of the delegate's 9-dword records (at +4..+0x18) to pOut and the last one to pOut + (count * 9 - 9) dwords; does nothing for count < 2
 };
 
 struct CRopeVec
