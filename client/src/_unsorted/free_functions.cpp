@@ -4139,6 +4139,27 @@ void CStatDefault3List::sub_1013fdc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ffa0 size=0x29
+struct string_t_v { const char *pszValue; };
+inline const char *STRING_V(const string_t_v *s) { return s->pszValue ? s->pszValue : ""; }
+struct CEntry101d5e00 { char pad[0xc]; string_t_v m_str; };
+
+struct CUnit101d5e00 {
+    int m_4_dummy_unused;
+    int m_nCount;
+    CEntry101d5e00 **m_ppItems;
+    const char *sub_1013ffa0(int index);
+};
+
+// TARGET: CUnit101d5e00::sub_1013ffa0
+const char *CUnit101d5e00::sub_1013ffa0(int index)
+{
+    if (index < 0 || index >= m_nCount)
+        return 0;
+    return STRING_V(&m_ppItems[index]->m_str);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140290 size=0xec
 #include "CUnknown101d62d0.h"
 
