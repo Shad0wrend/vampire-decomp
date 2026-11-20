@@ -3183,6 +3183,18 @@ int CSave::sub_10129560(const void *pBaseData, typedescription_t *pFields, int n
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129800 size=0x26
+// TARGET: sub_10129800
+int __stdcall sub_10129800(const char *pBytes, int nBytes)
+{
+	for (int i = 0; i < nBytes; i++) {
+		if (pBytes[i] != 0)
+			return 0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012aec0 size=0x34
 #include "CRestore.h"
 struct CRestoreSaveRecord30 { int m_nId; char m_pad04[0x2c]; };
