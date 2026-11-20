@@ -39,3 +39,44 @@ char CRestore::vfunc16()
 	return c;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012ad70 size=0x7b
+#include "CRestore.h"
+#include "CUnknown101a1f70.h"
+
+struct PooledString1042
+{
+	PooledString1042() {}
+	PooledString1042(const PooledString1042 &o) : m_v(o.m_v) {}
+	PooledString1042 &operator=(const PooledString1042 &o) { m_v = o.m_v; return *this; }
+	int m_v;
+};
+PooledString1042 sub_100ee890(const char *psz);
+
+struct CRestoreUnit : CRestore
+{
+	void sub_1012abd0(int nBytes);
+};
+
+// TARGET: CRestore::vfunc20
+int CRestore::vfunc20(int *pValues, int count, int nBytesAvailable)
+{
+	const char *pString = (const char *)((CUnknown101a1f70 *)this)->sub_1012ab50();
+	const char *pLimit = pString + nBytesAvailable;
+	int nRead = 0;
+	PooledString1042 *pDest = (PooledString1042 *)pValues;
+	while (nRead < count && pString < pLimit)
+	{
+		if (*pString == 0)
+			pDest[nRead].m_v = 0;
+		else
+			pDest[nRead] = sub_100ee890(pString);
+		while (*pString)
+			pString++;
+		pString++;
+		nRead++;
+	}
+	((CRestoreUnit *)this)->sub_1012abd0(nBytesAvailable);
+	return nRead;
+}
+// END FUNCTION

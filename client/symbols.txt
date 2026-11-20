@@ -86,6 +86,7 @@
 0x1012a7f0 func   ?vfunc8@CRestore@@UAEXXZ CRestore::vfunc8
 0x1012aaa0 func   ?vfunc13@CRestore@@UAEFXZ CRestore::vfunc13
 0x1012aae0 func   ?vfunc16@CRestore@@QAEDXZ CRestore::vfunc16
+0x1012ad70 func   ?vfunc20@CRestore@@UAEHPAHHH@Z CRestore::vfunc20
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit
