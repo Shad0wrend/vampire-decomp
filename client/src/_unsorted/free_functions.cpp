@@ -1,6 +1,20 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10001000 size=0x2a
+struct CUnkElem { };
+typedef void (CUnkElem::*CUnkElemFn)();
+
+// TARGET: sub_10001000
+void __stdcall sub_10001000(char *ptr, unsigned size, int count, CUnkElemFn fn)
+{
+    while (--count >= 0) {
+        (((CUnkElem *)ptr)->*fn)();
+        ptr += size;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003c10 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
