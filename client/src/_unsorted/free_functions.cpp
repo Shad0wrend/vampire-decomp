@@ -1122,6 +1122,24 @@ void sub_1010a570(const Q &q, float *m)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a930 size=0x4c
+void sub_1010a570(const float *q, float *mat);
+void sub_10107eb0(const float *mat, float *angles);
+
+void sub_1010a930(const float *q, float *angles)
+{
+	float mat[12];
+	sub_1010a570(q, mat);
+	sub_10107eb0(mat, angles);
+	float a = angles[1] * 0.017453292f;
+	float b = angles[0] * 0.017453292f;
+	float c = angles[2] * 0.017453292f;
+	angles[0] = c;
+	angles[1] = b;
+	angles[2] = a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010ba80 size=0x56
 #include "Vector.h"
 void sub_1010ba80(const Vector &a, const Vector &v, const Vector &c, Vector &out)
