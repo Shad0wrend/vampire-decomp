@@ -5364,6 +5364,7 @@
 0x100079fa func   ?sub_10134c40@CUnknown10134c40@@QAEXPAUCInputData100bc0f0@@@Z CUnknown10134c40::sub_10134c40
 0x100079ff func   ?sub_1021e160@@YIXPAH@Z sub_1021e160
 0x10007a04 func   ?vfunc153@CBaseEntity@@QAEHXZ CBaseEntity::vfunc153
+0x10007a04 func   ?vfunc153@CBaseEntity@@UAEHXZ CBaseEntity::vfunc153
 0x10007a09 func   ?vfunc5@CWeaponRanged_FlameThrower@@UAEPAVCBaseEntity@@I@Z CWeaponRanged_FlameThrower::vfunc5
 0x10007a0e func   ?vfunc192@CBaseEntity@@QAE?AVVector@@XZ CBaseEntity::vfunc192
 0x10007a13 func   ?sub_1006d9a0@CCineCamFields1006d9a0@@QAEXXZ CCineCamFields1006d9a0::sub_1006d9a0
