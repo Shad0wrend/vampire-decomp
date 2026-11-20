@@ -240,3 +240,91 @@ int sub_10079a40(int n, int *values, int *weights)
 	return values[best];
 }
 // END FUNCTION
+
+// FUNCTION: 0x100889f0 size=0x1a2
+#include "Quaternion.h"
+union CBlendAnimValue
+{
+	struct
+	{
+		unsigned char valid;
+		unsigned char total;
+	} num;
+	short value;
+};
+
+struct CBlendAnim
+{
+	float weight;
+	int pad04[3];
+	int offset[4];
+};
+
+struct CBlendBone
+{
+	char pad00[0x2c];
+	float value[4];
+	char pad3c[0x48 - 0x3c];
+	float scale[4];
+};
+
+void sub_1010a0b0(Quaternion &p, Quaternion &q, float t, Quaternion &qt);
+
+void sub_100889f0(void *pHdr, int frame, float s, CBlendBone *pbone, CBlendAnim *panim, Quaternion &q)
+{
+	int j, k;
+	Quaternion q1, q2;
+	CBlendAnimValue *panimvalue;
+
+	if (panim->weight == 0)
+	{
+		q.x = 0;
+		q.y = 0;
+		q.z = 0;
+		q.w = 0;
+		return;
+	} j = 0; while (j < 4) { if (panim->offset[j] == 0)
+		{
+			q1[j] = q2[j] = pbone->value[j];
+		}
+		else
+		{
+			panimvalue = (CBlendAnimValue *)((unsigned char *)panim + panim->offset[j]);
+			k = frame;
+			while (panimvalue->num.total <= k)
+			{
+				k = k - panimvalue->num.total;
+				panimvalue = panimvalue + (panimvalue->num.valid + 1);
+			}
+			if (panimvalue->num.valid > k)
+			{
+				q1[j] = panimvalue[(int)k + 1].value;
+				if (panimvalue->num.valid > k + 1)
+				{
+					q2[j] = panimvalue[k + 2].value;
+				}
+				else
+				{
+					if (panimvalue->num.total > k + 1)
+						q2[j] = q1[j];
+					else
+						q2[j] = panimvalue[panimvalue->num.valid + 2].value;
+				}
+			}
+			else
+			{
+				q1[j] = panimvalue[panimvalue->num.valid].value;
+				if (!(panimvalue->num.total > (1 + k))) q2[j] = panimvalue[panimvalue->num.valid + 2].value; else q2[j] = q1[j];
+			}
+			q1[j] *= (pbone->scale[j]);
+			q2[j] = q2[j] * pbone->scale[j];
+		} ++j; }
+	int *pa1 = (int *)&q1;
+	int *pa2 = (int *)&q2;
+	if (((pa1[1] ^ pa2[1]) | (pa1[2] ^ pa2[2]) | (pa2[3] ^ pa1[3]) | (pa2[0] ^ pa1[0])) != 0)
+	{
+		sub_1010a0b0(q1, q2, s, q);
+		return;
+	} q = q1;
+}
+// END FUNCTION

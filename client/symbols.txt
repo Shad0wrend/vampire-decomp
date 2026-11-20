@@ -11,6 +11,7 @@
 0x10049f40 func   ?sub_10049f40@Vector@@QBE?AV1@ABV1@@Z Vector::sub_10049f40
 0x10079a40 func   ?sub_10079a40@@YAHHPAH0@Z sub_10079a40
 0x1007b650 func   ?sub_1007b650@@YGHH@Z sub_1007b650
+0x100889f0 func   ?sub_100889f0@@YAXPAXHMPAUCBlendBone@@PAUCBlendAnim@@AAVQuaternion@@@Z sub_100889f0
 0x10106c60 func   _CreateInterface CreateInterface
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
