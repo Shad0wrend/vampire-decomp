@@ -940,3 +940,27 @@ void __fastcall sub_10107550(Vector *v)
 	v->z *= iradius;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10107e40 size=0x61
+struct RadianEuler10137e40
+{
+	float x, y, z;
+	inline void Init(float ix, float iy, float iz) { x = ix; y = iy; z = iz; }
+};
+#define DEG2RAD10137e40(x) ((float)(x) * (float)(3.14159265358979323846f / 180.f))
+void sub_10107eb0(float *pMatrix, float *pOut);
+void sub_1010a790(RadianEuler10137e40 *pAngles, float *pOut);
+void sub_10108510(float *pMatrix, int n, float *pOut);
+inline void MatrixAngles10137e40(float *matrix, RadianEuler10137e40 &angles)
+{
+	sub_10107eb0(matrix, (float *)&angles);
+	angles.Init(DEG2RAD10137e40(angles.z), DEG2RAD10137e40(angles.x), DEG2RAD10137e40(angles.y));
+}
+void sub_10107e40(float *pMatrix, float *pQuat, float *pAngles)
+{
+	RadianEuler10137e40 angles;
+	MatrixAngles10137e40(pMatrix, angles);
+	sub_1010a790(&angles, pQuat);
+	sub_10108510(pMatrix, 3, pAngles);
+}
+// END FUNCTION
