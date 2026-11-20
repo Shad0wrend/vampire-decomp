@@ -4867,6 +4867,7 @@
 0x10006f91 func   ?vfunc80@CItemGLillyPurse@@QAEHXZ CItemGLillyPurse::vfunc80
 0x10006f96 func   ?sub_10335ea0@CBaseCombatCharacter@@QAEXPAVCBaseEntity@@@Z CBaseCombatCharacter::sub_10335ea0
 0x10006f9b func   ?vfunc144@CBaseGrenade@@UAEXH@Z CBaseGrenade::vfunc144
+0x10006f9b func   ?vfunc144@CBaseGrenade@@UAEXPAX@Z CBaseGrenade::vfunc144
 0x10006fa0 func   ?sub_101c59b0@@YAPAHXZ sub_101c59b0
 0x10006fa5 func   ?sub_1027ffe0@@YAXXZ sub_1027ffe0
 0x10006faa func   ?vfunc223@CRotDoor@@QAE_NXZ CRotDoor::vfunc223
