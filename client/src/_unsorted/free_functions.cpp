@@ -603,3 +603,13 @@ void UtlVec40::sub_100b4dc0(int elem, int num)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x100b9b80 size=0x43
+#include "Vector.h"
+Vector Vector::sub_100b9b80(const Vector &v) const
+{
+	Vector res;
+	VectorSubtract(*this, v, res);
+	return res;
+}
+// END FUNCTION
