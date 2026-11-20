@@ -5358,6 +5358,22 @@ S9 *S9::sub_10155b40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155ca0 size=0x1e
+int *sub_1015fc40(int *pArg, int value);
+
+struct CUnk101f5120 {
+	char m_pad0000[0x24];
+	int m_24;
+	void sub_10155ca0(int a);
+};
+
+// TARGET: CUnk101f5120::sub_10155ca0
+void CUnk101f5120::sub_10155ca0(int a)
+{
+	m_24 = *sub_1015fc40(&a, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155cc0 size=0x8c
 #include "CUnknown101f5150.h"
 bool CUnknown101f5150::sub_10155cc0(const char *pszName)
