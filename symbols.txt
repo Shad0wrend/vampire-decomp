@@ -100,6 +100,7 @@
 0x10001203 func   ?sub_10106c40@CBCCReloadUnit@@QAEXXZ CBCCReloadUnit::sub_10106c40
 0x10001208 func   ?sub_101b9920@S101b9920@@QAE_NXZ S101b9920::sub_101b9920
 0x1000120d func   ?vfunc199@CBaseEntity@@QAEXPAM0@Z CBaseEntity::vfunc199
+0x1000120d func   ?vfunc199@CBaseEntity@@UAEXPAM0@Z CBaseEntity::vfunc199
 0x10001212 func   ?sub_101dd3a0@CUnknown101dd3a0@@QAEHHH@Z CUnknown101dd3a0::sub_101dd3a0
 0x10001217 func   ?vfunc259@CNPC_Crow@@QAEXPAH@Z CNPC_Crow::vfunc259
 0x1000121c func   ?vfunc17@CServerGameDLL@@UAEXXZ CServerGameDLL::vfunc17
