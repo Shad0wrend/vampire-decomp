@@ -7639,6 +7639,7 @@
 0x1000a5ec func   ?vfunc134@CEnvMicrophone@@UAEXXZ CEnvMicrophone::vfunc134
 0x1000a5f1 func   _npc_VCombatman npc_VCombatman
 0x1000a5f6 func   ?vfunc230@CRagdollPropSpecial@@QAEXHPAX@Z CRagdollPropSpecial::vfunc230
+0x1000a5f6 func   ?vfunc230@CRagdollPropSpecial@@UAEXHPAX@Z CRagdollPropSpecial::vfunc230
 0x1000a5fb func   ?sub_10340e50@CBaseCombatCharacter@@QAEXH@Z CBaseCombatCharacter::sub_10340e50
 0x1000a600 func   ?vfunc619@CNPC_VWerewolf@@UAEHH@Z CNPC_VWerewolf::vfunc619
 0x1000a605 func   ?sub_10037e90@CPhysicsPushedEntities@@QAEPAVCBaseEntity@@PAV2@M@Z CPhysicsPushedEntities::sub_10037e90
