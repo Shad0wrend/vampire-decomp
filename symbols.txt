@@ -9116,6 +9116,7 @@
 0x1000c324 func   ?sub_10172170@@YAPAVCBaseEntity@@PAV1@PBD@Z sub_10172170
 0x1000c329 func   ?vfunc246@CNPC_VPlayerController@@QAEXXZ CNPC_VPlayerController::vfunc246
 0x1000c32e func   ?vfunc226@CPhysicsProp@@QAEXH@Z CPhysicsProp::vfunc226
+0x1000c32e func   ?vfunc226@CPhysicsProp@@UAEXH@Z CPhysicsProp::vfunc226
 0x1000c333 func   ?sub_10102dd0@CEnvShake@@QAEXH@Z CEnvShake::sub_10102dd0
 0x1000c338 func   ?vfunc80@CWeaponMelee_OccultBlade@@UAEHXZ CWeaponMelee_OccultBlade::vfunc80
 0x1000c33d func   ?sub_10269fb0@CAI_BaseNPC@@QAEXH@Z CAI_BaseNPC::sub_10269fb0
