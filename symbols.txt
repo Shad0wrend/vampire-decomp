@@ -7886,6 +7886,7 @@
 0x1000aba5 func   ?sub_1040f940@CGrabController@@QAE_NPAVCEntityVSlots@@M@Z CGrabController::sub_1040f940
 0x1000abaa func   ?sub_100dbc60@CUnknown100dbc60@@QAEXPAVCBaseEntity@@@Z CUnknown100dbc60::sub_100dbc60
 0x1000abaf func   ?sub_1010e750@CBreakable@@QAEXXZ CBreakable::sub_1010e750
+0x1000abaf func   ?vfunc241@CBreakable@@UAEXXZ CBreakable::vfunc241
 0x1000abb4 func   ?sub_10396bc0@CNPC_VMingXiao@@QAEHXZ CNPC_VMingXiao::sub_10396bc0
 0x1000abbe func   ??0CTEBeamRing@@QAE@PBD@Z CTEBeamRing::CTEBeamRing
 0x1000abc3 func   ?sub_10138060@@YAXPBMPAY03$$CBMPAM@Z sub_10138060
