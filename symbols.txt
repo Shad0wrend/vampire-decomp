@@ -3121,6 +3121,7 @@
 0x10004d6d func   ?sub_101e28e0@@YGHH@Z sub_101e28e0
 0x10004d72 func   ?sub_101b2420@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_101b2420
 0x10004d7c func   ?vfunc201@CNPC_VYukie@@QAE_NPAXHPAHH@Z CNPC_VYukie::vfunc201
+0x10004d7c func   ?vfunc201@CNPC_VYukie@@UAE_NPAVCBaseEntity@@HPAPAV2@H@Z CNPC_VYukie::vfunc201
 0x10004d81 func   ?sub_101f9df0@CTraitIdListY@@QAEHHHH@Z CTraitIdListY::sub_101f9df0
 0x10004d86 func   ?sub_10032d20@UtlVec32@@QAEXHH@Z UtlVec32::sub_10032d20
 0x10004d8b func   ?vfunc2@CPyObjStrSaveRestoreDataOps@@UAE_NPAUSaveRestoreFieldInfo_t@@@Z CPyObjStrSaveRestoreDataOps::vfunc2
