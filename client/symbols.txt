@@ -49,6 +49,7 @@
 0x10108080 func   ?sub_10108080@@YAXPBMQAY03$$CBMPAM@Z sub_10108080
 0x10109010 func   ?sub_10109010@@YAXABVQAngle@@PAVVector@@@Z sub_10109010
 0x10109420 func   ?sub_10109420@@YAXPAM@Z sub_10109420
+0x1010a020 func   ?sub_1010a020@@YAXABVQuaternion@@0AAV1@@Z sub_1010a020
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit

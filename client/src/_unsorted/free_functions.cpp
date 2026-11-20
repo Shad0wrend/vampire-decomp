@@ -1016,3 +1016,25 @@ void sub_10109420(float *p)
     ((int *)p)[10] = 0x3f800000;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010a020 size=0x82
+#include "Quaternion.h"
+
+void sub_1010a020(const Quaternion &p, const Quaternion &q, Quaternion &qt)
+{
+	int i;
+	float a = 0;
+	float b = 0;
+	for (i = 0; i < 4; i++) {
+		a += (p[i] - q[i]) * (p[i] - q[i]);
+		b += (p[i] + q[i]) * (p[i] + q[i]);
+	}
+	if (a > b) {
+		for (i = 0; i < 4; i++)
+			qt[i] = -q[i];
+	} else if (&qt != &q) {
+		for (i = 0; i < 4; i++)
+			qt[i] = q[i];
+	}
+}
+// END FUNCTION
