@@ -15069,6 +15069,7 @@
 0x100139ee func   ?sub_102f97c0@CRelSetUnit@@QAEXD@Z CRelSetUnit::sub_102f97c0
 0x100139f3 func   ?vfunc585@CAI_BaseHumanoid@@QAEXDMM@Z CAI_BaseHumanoid::vfunc585
 0x100139f8 func   ?sub_100c8990@CBaseButton@@QAE_NH@Z CBaseButton::sub_100c8990
+0x100139f8 func   ?vfunc34@CBaseButton@@UAEHH@Z CBaseButton::vfunc34
 0x100139fd func   ?vfunc5@CNPC_VSheriffSwarm@@UAEPAVCBaseEntity@@I@Z CNPC_VSheriffSwarm::vfunc5
 0x10013a02 func   ?sub_1022ee50@@YAXPAUSAction@@HHHH@Z sub_1022ee50
 0x10013a07 func   ??1CUnknown101d7c10@@QAE@XZ CUnknown101d7c10::~CUnknown101d7c10
