@@ -1850,3 +1850,24 @@ Vector &Vector::sub_1013c790(const Vector &v)
 	return *this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1013c970 size=0x7c
+#include "CUnknown1006bea0.h"
+
+extern "C" void *memcpy(void *, const void *, unsigned);
+extern "C" void *memset(void *, int, unsigned);
+
+void CUnknown1006bea0::sub_1013c970(void *dest, int count)
+{
+    int avail = m_size - m_pos;
+    if (avail < count) {
+        memcpy(dest, m_pData + m_pos, avail);
+        memset(dest, 0, count - avail);
+        m_pos += avail;
+        m_flags |= 2;
+    } else {
+        memcpy(dest, m_pData + m_pos, count);
+        m_pos += count;
+    }
+}
+// END FUNCTION
