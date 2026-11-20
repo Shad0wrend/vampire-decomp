@@ -9327,6 +9327,7 @@
 0x1000c85b func   ?sub_102c6cf0@UtlVec8@@QAEXHH@Z UtlVec8::sub_102c6cf0
 0x1000c860 func   ?vfunc81@CItemGBachJournal@@QAEHXZ CItemGBachJournal::vfunc81
 0x1000c865 func   ?vfunc0@CHangRope@@UAEXPAUCRopeNode@@HPAVVector@@@Z CHangRope::vfunc0
+0x1000c86a func   ?sub_1015efa0@CBasePlayer@@QAEXXZ CBasePlayer::sub_1015efa0
 0x1000c86a func   ?vfunc103@CBasePlayer@@QAEXXZ CBasePlayer::vfunc103
 0x1000c86f func   ?vfunc6@CServerGameClients@@UAEXPAUCServerGameClients_Edict@@H@Z CServerGameClients::vfunc6
 0x1000c874 func   ?sub_1006caa0@SCurve6caa0@@QAEMH@Z SCurve6caa0::sub_1006caa0
