@@ -4389,6 +4389,7 @@
 0x10006636 func   ?sub_1024a2b0@@YA_NPAG0@Z sub_1024a2b0
 0x1000663b func   ?sub_10389630@@YIPAXPAX@Z sub_10389630
 0x10006640 func   ?vfunc173@CPropRadio@@QAEXPAVCBaseEntity@@0HH@Z CPropRadio::vfunc173
+0x10006640 func   ?vfunc173@CPropRadio@@UAEXPAVCBaseEntity@@0HH@Z CPropRadio::vfunc173
 0x10006645 func   ?sub_10097980@CBaseAnimating@@QAEHPBD@Z CBaseAnimating::sub_10097980
 0x1000664a func   ?vfunc580@CNPC_VAndreiBlood@@UAEPAUCAI_CondOwner@@XZ CNPC_VAndreiBlood::vfunc580
 0x1000664f func   ?vfunc452@CNPC_VTremere@@UAEDXZ CNPC_VTremere::vfunc452
