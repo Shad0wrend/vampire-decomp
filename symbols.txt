@@ -20012,6 +20012,7 @@
 0x1052195c data   ??_R1A@?0A@A@VKeyValues@@8 ??_R1A@?0A@A@VKeyValues@@8
 0x10521978 data   ??_R2VKeyValues@@8 ??_R2VKeyValues@@8
 0x10521988 data   ??_R3VKeyValues@@8 ??_R3VKeyValues@@8
+0x1052199c data   ??_R4VKeyValues@@6BIKeyValues@@@ ??_R4VKeyValues@@6BIKeyValues@@@
 0x105219b4 data   ??_R1A@?0A@A@CVTraitEffectGroup_t@@8 ??_R1A@?0A@A@CVTraitEffectGroup_t@@8
 0x105219d0 data   ??_R2CVTraitEffectGroup_t@@8 ??_R2CVTraitEffectGroup_t@@8
 0x105219d8 data   ??_R3CVTraitEffectGroup_t@@8 ??_R3CVTraitEffectGroup_t@@8
