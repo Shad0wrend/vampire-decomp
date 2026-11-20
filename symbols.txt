@@ -13322,6 +13322,7 @@
 0x1001178e func   ??0CHolderVDmg198@@QAE@XZ CHolderVDmg198::CHolderVDmg198
 0x1001178e func   ?sub_1025b390@CHolderVDmg198@@QAEPAU1@XZ CHolderVDmg198::sub_1025b390
 0x10011793 func   ?vfunc103@CBaseProp@@QAEXXZ CBaseProp::vfunc103
+0x10011793 func   ?vfunc103@CBaseProp@@UAEXXZ CBaseProp::vfunc103
 0x10011798 func   ??0CRopeNodeInit@@QAE@XZ CRopeNodeInit::CRopeNodeInit
 0x10011798 func   ?sub_1042def0@CUnknown1042def0@@QAEPAXXZ CUnknown1042def0::sub_1042def0
 0x1001179d func   ?sub_103c2900@@YAHXZ sub_103c2900
