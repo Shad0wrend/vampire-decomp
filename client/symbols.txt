@@ -83,6 +83,7 @@
 0x10129cb0 func   ?vfunc29@CSave@@UAEXPBDPAXH@Z CSave::vfunc29
 0x10129dc0 func   ?vfunc33@CSave@@UAEXPBDPAXH@Z CSave::vfunc33
 0x10129e30 func   ?vfunc32@CSave@@UAEXPBHH@Z CSave::vfunc32
+0x1012a7f0 func   ?vfunc8@CRestore@@UAEXXZ CRestore::vfunc8
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit
