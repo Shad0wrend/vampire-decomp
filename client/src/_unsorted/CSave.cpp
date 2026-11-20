@@ -14,3 +14,12 @@ void CSave::vfunc1(int pos)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x101290f0 size=0x1a
+#include "CSave.h"
+
+void CSave::vfunc7(int a, int b, int count)
+{
+    sub_10129830(a, count * 2, b);
+}
+// END FUNCTION
