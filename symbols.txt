@@ -7799,6 +7799,7 @@
 0x1000a957 func   ?sub_102c6780@UtlVec8@@QAEHPBUUtlVec8Elem@@@Z UtlVec8::sub_102c6780
 0x1000a95c func   ?vfunc226@CSimplePhysicsProp@@UAEHXZ CSimplePhysicsProp::vfunc226
 0x1000a961 func   ?vfunc196@CBaseEntity@@QAEHH@Z CBaseEntity::vfunc196
+0x1000a961 func   ?vfunc196@CBaseEntity@@UAE?AVVector@@XZ CBaseEntity::vfunc196
 0x1000a966 func   ?sub_103a1460@@YIPAXPAD@Z sub_103a1460
 0x1000a96b func   ?sub_10349fd0@UtlMem@@QAEXXZ UtlMem::sub_10349fd0
 0x1000a970 func   ?vfunc81@CSun@@UAEHXZ CSun::vfunc81
