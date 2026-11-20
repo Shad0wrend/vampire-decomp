@@ -3086,6 +3086,41 @@ bool sub_10127320(CRagdollLayout *pRagdoll, CRagdollStudio *pStudio, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127830 size=0x67
+extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
+
+struct CMem16_t {
+	void *m_pMemory; int m_nAllocationCount; int m_nGrowSize;
+	// TARGET: CMem16_t::sub_10127830
+	void sub_10127830(int num);
+};
+
+void CMem16_t::sub_10127830(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int alloc = m_nAllocationCount;
+	int newAlloc = num + alloc;
+	if (alloc < newAlloc) {
+		do {
+			if (alloc != 0) {
+				if (m_nGrowSize != 0)
+					alloc += m_nGrowSize;
+				else
+					alloc += alloc;
+			} else
+				alloc = 2;
+		} while (alloc < newAlloc);
+		m_nAllocationCount = alloc;
+	}
+	if (m_pMemory)
+		m_pMemory = Plat_Realloc(m_pMemory, m_nAllocationCount << 4);
+	else
+		m_pMemory = Plat_Alloc(m_nAllocationCount << 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128d80 size=0x4d
 struct SFuncField {
     int fieldType;
