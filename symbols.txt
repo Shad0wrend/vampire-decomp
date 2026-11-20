@@ -12478,6 +12478,7 @@
 0x10010604 func   ?sub_102a9860@@YIPBDPAUCUnknown102a9860@@@Z sub_102a9860
 0x10010609 func   ?sub_102012d0@CVStatList_t@@QAEHH@Z CVStatList_t::sub_102012d0
 0x1001060e func   ?vfunc222@CBaseEntity@@QAEHH@Z CBaseEntity::vfunc222
+0x1001060e func   ?vfunc222@CBaseEntity@@UAEHH@Z CBaseEntity::vfunc222
 0x10010613 func   ?sub_102dfed0@CEnemiesView@@QAE?AVVector@@PAVCBaseEntity@@@Z CEnemiesView::sub_102dfed0
 0x10010618 func   ?sub_10105170@CExpressionTable@@QAEXXZ CExpressionTable::sub_10105170
 0x1001061d func   ?IsValidExpression@CExpressionTable@@QAE_NH@Z CExpressionTable::IsValidExpression
