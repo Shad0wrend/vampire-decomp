@@ -5691,6 +5691,17 @@ char sub_1015f720(CFileParserSlotView *pParser, const char *pszName, int a3, con
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f810 size=0x1c
+void __cdecl sub_1015f830(int a, int b, const char *name);
+
+// TARGET: sub_1015f810
+int __cdecl sub_1015f810(int a, int b)
+{
+	sub_1015f830(a, b, "Name");
+	return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160100 size=0x53
 struct CFloatTable1006c9d0 {
 	char m_pad[0xc];
