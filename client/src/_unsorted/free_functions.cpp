@@ -1003,3 +1003,16 @@ void sub_10109010(const QAngle &angles, Vector *forward)
 	forward->z = -sp;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10109420 size=0x1f
+void sub_10109420(float *p)
+{
+    for (int i = 0; i < 12; i++)
+    {
+        ((int *)p)[i] = 0;
+    }
+    ((int *)p)[0] = 0x3f800000;
+    ((int *)p)[5] = 0x3f800000;
+    ((int *)p)[10] = 0x3f800000;
+}
+// END FUNCTION
