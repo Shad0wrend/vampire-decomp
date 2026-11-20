@@ -1618,3 +1618,30 @@ int CUtlVector40::sub_1012c3d0(int num, const void *pToCopy)
 	return elem;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012c4c0 size=0xae
+#include "CUnknown101a5800.h"
+#include "CUnknown101a59f0.h"
+
+int CUnknown101a5800::sub_1012c4c0(int elem, int num, const CVecElem40_t *pToCopy)
+{
+	if (num == 0)
+		return elem;
+	if (m_size + num > m_allocationCount)
+		((CUnknown101a59f0 *)this)->sub_1012c640(m_size + num - m_allocationCount);
+	m_size += num;
+	m_pElements = m_pMemory;
+	int toMove = m_size - elem - num;
+	if (toMove > 0 && num > 0)
+		memmove(m_pMemory + (elem + num) * 40, m_pMemory + elem * 40, toMove * 40);
+	if (pToCopy != 0 && num > 0) {
+		int off = elem * 40;
+		for (int i = num; i > 0; i--) {
+			*(CVecElem40_t *)(m_pMemory + off) = *pToCopy;
+			pToCopy++;
+			off += 40;
+		}
+	}
+	return elem;
+}
+// END FUNCTION
