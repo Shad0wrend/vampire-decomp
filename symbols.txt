@@ -20006,6 +20006,7 @@
 0x105218d4 data   ??_R2IKeyValues@@8 ??_R2IKeyValues@@8
 0x105218e0 data   ??_R3IKeyValues@@8 ??_R3IKeyValues@@8
 0x105218f4 data   ??_R4IKeyValues@@6BIKeyCacheable@@@ ??_R4IKeyValues@@6BIKeyCacheable@@@
+0x1052190c data   ??_R4VKeyValues@@6BIKeyCacheable@@@ ??_R4VKeyValues@@6BIKeyCacheable@@@
 0x10521924 data   ??_R1A@A@3BA@IKeyCacheable@@8 ??_R1A@A@3BA@IKeyCacheable@@8
 0x10521940 data   ??_R1A@A@7BA@IKeyValues@@8 ??_R1A@A@7BA@IKeyValues@@8
 0x1052195c data   ??_R1A@?0A@A@VKeyValues@@8 ??_R1A@?0A@A@VKeyValues@@8
