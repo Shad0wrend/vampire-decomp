@@ -14619,6 +14619,7 @@
 0x100130f2 func   ?sub_10240c40@@YAMABVVector@@0HMM@Z sub_10240c40
 0x100130f7 func   ?sub_1006cd00@S1006cd00@@QAEXXZ S1006cd00::sub_1006cd00
 0x100130fc func   ?vfunc152@CBaseEntity@@QAEMXZ CBaseEntity::vfunc152
+0x100130fc func   ?vfunc152@CBaseEntity@@UAEMXZ CBaseEntity::vfunc152
 0x10013101 func   ?sub_100c0be0@CUnknown100c0be0@@QAEXH@Z CUnknown100c0be0::sub_100c0be0
 0x10013106 func   ?vfunc319@CWeaponIArmor@@UAEXXZ CWeaponIArmor::vfunc319
 0x1001310b func   ?vfunc319@CNPC_VPlaceholder@@UAE_NHHH@Z CNPC_VPlaceholder::vfunc319
