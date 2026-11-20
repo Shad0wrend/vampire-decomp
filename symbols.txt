@@ -11859,6 +11859,7 @@
 0x1000f8cb func   ?vfunc304@CAI_BaseNPCTroika@@UAEXXZ CAI_BaseNPCTroika::vfunc304
 0x1000f8d5 func   ?vfunc81@CBlueBloodPack@@QAEHXZ CBlueBloodPack::vfunc81
 0x1000f8da func   ?vfunc176@CStealthModifier@@QAEXPAVCBaseEntity@@@Z CStealthModifier::vfunc176
+0x1000f8da func   ?vfunc176@CStealthModifier@@UAEXPAVCBaseEntity@@@Z CStealthModifier::vfunc176
 0x1000f8df func   ?vfunc412@CBasePlayer@@UAE_NXZ CBasePlayer::vfunc412
 0x1000f8e4 func   ?sub_1025e4b0@@YAHXZ sub_1025e4b0
 0x1000f8e9 func   ?vfunc583@CCineNPC@@QAEXXZ CCineNPC::vfunc583
