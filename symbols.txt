@@ -8493,6 +8493,7 @@
 0x1000b72b func   ?sub_10231f80@CUnk10231f80@@QAEXXZ CUnk10231f80::sub_10231f80
 0x1000b730 func   ?sub_101975d0@@YAPAUPyObj@@PAU1@0@Z sub_101975d0
 0x1000b735 func   ?vfunc177@CBaseDoor@@QAEXPAVCBaseEntity@@@Z CBaseDoor::vfunc177
+0x1000b735 func   ?vfunc177@CBaseDoor@@UAEXPAVCBaseEntity@@@Z CBaseDoor::vfunc177
 0x1000b73a func   ?vfunc5@CMomentaryRotButton@@UAEPAV1@I@Z CMomentaryRotButton::vfunc5
 0x1000b73f func   ?sub_1037e2d0@CUnknown1037e2d0@@QAEHXZ CUnknown1037e2d0::sub_1037e2d0
 0x1000b744 func   ?vfunc81@CResearchBook_LG_COMP@@QAEHXZ CResearchBook_LG_COMP::vfunc81
