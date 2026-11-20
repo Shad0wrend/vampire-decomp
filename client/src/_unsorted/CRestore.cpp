@@ -80,3 +80,29 @@ int CRestore::vfunc20(int *pValues, int count, int nBytesAvailable)
 	return nRead;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012afb0 size=0xaa
+#include "CRestore.h"
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+struct HandleSrc {
+	virtual void pad0();
+	virtual unsigned int *GetRefEHandle();
+};
+
+int CRestore::vfunc30(unsigned int *pValues, int count, int nBytesAvailable)
+{
+	int buf[256];
+	int n = vfunc15(buf, count, nBytesAvailable);
+	for (int i = 0; i < n; i++) {
+		HandleSrc *e = (HandleSrc *)sub_1012ae60(buf[i]);
+		if (e)
+			pValues[i] = *e->GetRefEHandle();
+		else
+			pValues[i] = 0xffffffff;
+	}
+	if (n < count)
+		memset(&pValues[n], 0, (count - n) * sizeof(unsigned int));
+	return n;
+}
+// END FUNCTION
