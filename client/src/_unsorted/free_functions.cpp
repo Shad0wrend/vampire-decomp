@@ -1815,6 +1815,34 @@ CUnknown100353c0 *CUnknown100353c0::sub_100eb150(const CUnknown100353c0 *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ebb50 size=0xa5
+#include "CGameMovement.h"
+
+// TARGET: CGameMovement::sub_100ebb50
+int CGameMovement::sub_100ebb50(Vector &in, Vector &normal, Vector &out, float overbounce)
+{
+    float backoff;
+    float change;
+    float angle;
+    int i, blocked;
+
+    angle = normal[2];
+    blocked = 0x00;
+    if (angle > 0)
+        blocked |= 0x01;
+    if (!angle)
+        blocked |= 0x02;
+    backoff = DotProduct(in, normal) * overbounce;
+    for (i = 0; i < 3; i++) {
+        change = normal[i] * backoff;
+        out[i] = in[i] - change;
+        if (out[i] > -0.1 && out[i] < 0.1)
+            out[i] = 0;
+    }
+    return blocked;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efee0 size=0x8d
 #include "CUtlLinkedList8.h"
 
