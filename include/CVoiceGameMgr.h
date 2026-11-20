@@ -25,6 +25,7 @@ class IVoiceGameMgrHelper
 {
 public:
 	virtual ~IVoiceGameMgrHelper() {}
+	virtual bool vfunc1(int a, int b) = 0;	// slot 1: pure in the interface (the game's word is _purecall)
 };
 #endif
 

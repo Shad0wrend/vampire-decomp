@@ -63,6 +63,7 @@ public:
 	virtual void ReadRestoreHeaders(void *pRestore);
 	virtual void Restore(void *pRestore, bool fCreatePlayers);
 	virtual void PostRestore();
+	virtual void vfunc9(void *p, void *q);	// slot 9, Troika's: an empty default of two arguments (0x10043be0)
 };
 
 class IPhysSaveRestoreManager
