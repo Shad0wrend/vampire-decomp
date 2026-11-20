@@ -15249,6 +15249,7 @@
 0x10013a6b func   _item_g_giovanni_invitation_maria item_g_giovanni_invitation_maria
 0x10013a70 func   ?vfunc134@CInstancedSceneEntity@@QAEXXZ CInstancedSceneEntity::vfunc134
 0x10013a75 func   ?vfunc144@CNPC_VMoleman@@QAEXH@Z CNPC_VMoleman::vfunc144
+0x10013a75 func   ?vfunc144@CNPC_VMoleman@@UAEXPAX@Z CNPC_VMoleman::vfunc144
 0x10013a7a func   ?sub_101a8640@CCineNPC@@QAEXPAVCBaseAnimating@@@Z CCineNPC::sub_101a8640
 0x10013a7f func   ?sub_100b97b0@@YIXPAD@Z sub_100b97b0
 0x10013a84 func   ?sub_102c6e10@@YIHH@Z sub_102c6e10
