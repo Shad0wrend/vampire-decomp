@@ -2722,3 +2722,47 @@ void sub_101a2e30(VMatrix &dst, float angle)
 	dst[3][3] = 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x101a3900 size=0xe7
+#include "CUnknown10258b00.h"
+
+void sub_101a3900(CUnknown10258b00 *p)
+{
+	int i;
+	int j;
+	for (i = 0; i < 2; i++) {
+		CUnknown10258b00_A *a = &p->m_A[i];
+		a->m_b14 = 0;
+		a->m_b118 = 0;
+		a->m_b198 = 0;
+		a->m_n114 = -1;
+		a->m_n00 = -1;
+		a->m_n08 = 0;
+		a->m_n0c = 0;
+		a->m_f10 = 1.0f;
+	}
+	for (i = 0; i < 3; i++) {
+		CUnknown10258b00_B *b = &p->m_B[i];
+		b->m_nIndex = i;
+		b->m_b04 = 0;
+		b->m_n104 = -1;
+		b->m_n108 = -1;
+		b->m_n25c = -1;
+		b->m_n10c = -1;
+		for (j = 0; j < 2; j++) {
+			CUnknown10258b00_C *c = &b->m_C[j];
+			c->m_n00 = 0;
+			c->m_b04 = 0;
+			c->m_n84 = 0;
+		}
+		b->m_n3c0 = 0;
+	}
+	p->m_n24d0 = -1;
+	p->m_n25e0 = -1;
+	p->m_n2664 = -1;
+	p->m_n2554 = -2;
+	for (i = 0; i < 5; i++)
+		p->m_aTail[i] = 0;
+	p->m_n4fe84 = 0;
+}
+// END FUNCTION
