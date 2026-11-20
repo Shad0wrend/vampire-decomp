@@ -5339,6 +5339,7 @@
 0x10007937 func   ?sub_10149de0@@YA_NXZ sub_10149de0
 0x1000793c func   ?sub_1004eab0@@YAHXZ sub_1004eab0
 0x10007941 func   ?vfunc193@CBaseEntity@@QAE?AVVector@@XZ CBaseEntity::vfunc193
+0x10007941 func   ?vfunc193@CBaseEntity@@UAE?AVVector@@XZ CBaseEntity::vfunc193
 0x10007946 func   ?vfunc442@CNPC_VMingXiaoTentacle@@UAEXPAUCTentTask@@@Z CNPC_VMingXiaoTentacle::vfunc442
 0x1000794b func   ?GrowVector@?$CUtlVector@HV?$CUtlMemory@H@@@@QAEXH@Z CUtlVector<int,CUtlMemory<int> >::GrowVector
 0x1000794b func   ?sub_10071ae0@CUtlVector4@@QAEXH@Z CUtlVector4::sub_10071ae0
