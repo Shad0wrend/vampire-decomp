@@ -7562,6 +7562,7 @@
 0x1000a4ca func   ?vfunc86@CInspectionNode@@QAEDHPAXHHH@Z CInspectionNode::vfunc86
 0x1000a4cf func   ?sub_10405d50@@YAHXZ sub_10405d50
 0x1000a4d4 func   ?vfunc218@CBaseEntity@@QAEXPBM@Z CBaseEntity::vfunc218
+0x1000a4d4 func   ?vfunc218@CBaseEntity@@UAEXPBM@Z CBaseEntity::vfunc218
 0x1000a4d9 func   ?sub_1042c6c0@@YAXXZ sub_1042c6c0
 0x1000a4de func   ?vfunc14@CSoundControllerImp@@UAEHH@Z CSoundControllerImp::vfunc14
 0x1000a4e3 func   ?vfunc233@CRagdollProp@@UAEHPAHH@Z CRagdollProp::vfunc233
