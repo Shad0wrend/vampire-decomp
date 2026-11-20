@@ -713,3 +713,25 @@ void CUtlMemory12::sub_100caa80(int num)
 		m_pMemory = Plat_Alloc(m_nAllocationCount * 12);
 }
 // END FUNCTION
+
+// FUNCTION: 0x100d1190 size=0x8d
+#include "CUtlLinkedList8.h"
+
+void CUtlLinkedList8::sub_100d1190(unsigned short elem)
+{
+	if (elem < m_NumAlloced && m_pMemory[elem].m_Previous != elem) {
+		CUtlLinkedList8Node *pList = m_pMemory;
+		CUtlLinkedList8Node *pElem = &pList[elem];
+		if (pElem->m_Previous != 0xffff)
+			pList[pElem->m_Previous].m_Next = pElem->m_Next;
+		else
+			m_Head = pElem->m_Next;
+		if (pElem->m_Next != 0xffff)
+			pList[pElem->m_Next].m_Previous = pElem->m_Previous;
+		else
+			m_Tail = pElem->m_Previous;
+		pElem->m_Previous = pElem->m_Next = elem;
+		--m_ElementCount;
+	}
+}
+// END FUNCTION
