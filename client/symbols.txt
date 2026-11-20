@@ -26,6 +26,7 @@
 0x100c1e70 func   ?sub_100c1e70@UtlVec40@@QAEXHH@Z UtlVec40::sub_100c1e70
 0x100c4b10 func   ?sub_100c4b10@CUnknown100b6f80@@QAEHPAUCUnknown100b6f80Hdr@@HPAH@Z CUnknown100b6f80::sub_100c4b10
 0x100caa00 func   ?sub_100caa00@CUtlLinkedList12@@QAEXH@Z CUtlLinkedList12::sub_100caa00
+0x100caa80 func   ?sub_100caa80@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_100caa80
 0x10106c60 func   _CreateInterface CreateInterface
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag

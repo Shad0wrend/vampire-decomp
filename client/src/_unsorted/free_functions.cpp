@@ -677,3 +677,39 @@ void CUtlLinkedList12::sub_100caa00(int elem)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x100caa80 size=0x6a
+extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
+extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
+
+struct CUtlMemory12 {
+	void *m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_100caa80(int num);
+};
+
+void CUtlMemory12::sub_100caa80(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int requested = m_nAllocationCount + num;
+	if (m_nAllocationCount < requested) {
+		int n = m_nAllocationCount;
+		do {
+			if (n) {
+				if (m_nGrowSize)
+					n = n + m_nGrowSize;
+				else
+					n = n + n;
+			} else
+				n = 3;
+		} while (n < requested);
+		m_nAllocationCount = n;
+	}
+	if (m_pMemory)
+		m_pMemory = Plat_Realloc(m_pMemory, m_nAllocationCount * 12);
+	else
+		m_pMemory = Plat_Alloc(m_nAllocationCount * 12);
+}
+// END FUNCTION
