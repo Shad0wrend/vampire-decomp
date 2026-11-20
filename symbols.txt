@@ -64,6 +64,7 @@
 0x10001140 func   ?vfunc388@CBasePlayer@@UAEDPAXH@Z CBasePlayer::vfunc388
 0x10001145 func   ?vfunc70@CBaseEntity@@UAE_NXZ CBaseEntity::vfunc70
 0x1000114a func   ?vfunc194@CBaseEntity@@QAEXXZ CBaseEntity::vfunc194
+0x1000114a func   ?vfunc194@CBaseEntity@@UAEPAMXZ CBaseEntity::vfunc194
 0x1000114a func   ?vfunc194@CBaseEntity@@UAEXXZ CBaseEntity::vfunc194
 0x1000114f func   ?sub_103e2470@CUnknown103e2470@@QAEXPAUCFlameEvent_t@@@Z CUnknown103e2470::sub_103e2470
 0x10001154 func   ?sub_102dca60@CUnknown102dca60@@QAEXXZ CUnknown102dca60::sub_102dca60
