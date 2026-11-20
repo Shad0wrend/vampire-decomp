@@ -5984,6 +5984,7 @@
 0x1000861b func   ?vfunc113@CEnvBeam@@UAEXXZ CEnvBeam::vfunc113
 0x10008620 func   ?sub_1029ca30@@YGMM@Z sub_1029ca30
 0x10008625 func   ?vfunc239@CBaseEntity@@QAE_NM@Z CBaseEntity::vfunc239
+0x10008625 func   ?vfunc239@CBaseEntity@@UAE_NM@Z CBaseEntity::vfunc239
 0x1000862a func   ?vfunc5@CAI_InterestingPlaceConverstation@@UAEPAVCBaseEntity@@I@Z CAI_InterestingPlaceConverstation::vfunc5
 0x1000862f func   ?sub_10209b20@CItemContainer@@QAEXPAVCBaseEntity@@@Z CItemContainer::sub_10209b20
 0x10008634 func   ?vfunc5@CNPC_VYukie@@UAEPAVCBaseEntity@@I@Z CNPC_VYukie::vfunc5
