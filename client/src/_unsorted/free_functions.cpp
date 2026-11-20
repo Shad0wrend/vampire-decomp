@@ -346,6 +346,16 @@ Vector Vector::sub_10049f40(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10055890 size=0x34
+#include "UtlVec8.h"
+void UtlVec8::sub_10055890(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0)
+		sub_101d0f30(&m_pMemory[(elem + num) * 4], &m_pMemory[elem * 4], numToMove * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067a50 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
