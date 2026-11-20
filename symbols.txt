@@ -3837,6 +3837,7 @@
 0x10005be1 func   ?sub_10223800@CUnknown10223800@@QAEXH@Z CUnknown10223800::sub_10223800
 0x10005be6 func   ?vfunc103@CFuncParticle@@QAEXXZ CFuncParticle::vfunc103
 0x10005beb func   ?vfunc140@CBaseEntity@@QAE_NPAV1@@Z CBaseEntity::vfunc140
+0x10005beb func   ?vfunc140@CBaseEntity@@UAE_NPAV1@@Z CBaseEntity::vfunc140
 0x10005bf0 func   ?sub_10366490@CNPC_VWerewolf@@QAEHH@Z CNPC_VWerewolf::sub_10366490
 0x10005bf5 func   ?vfunc344@CBaseCombatWeapon@@UAEHXZ CBaseCombatWeapon::vfunc344
 0x10005bfa func   ?vfunc379@CAI_BaseNPC@@UAE_NPAVCBaseEntity@@HHHHHH@Z CAI_BaseNPC::vfunc379
