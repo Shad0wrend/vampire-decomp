@@ -15313,6 +15313,7 @@
 0x10013bab func   ?vfunc429@CAI_BaseHumanoid@@QAEPAVCAI_Navigator@@XZ CAI_BaseHumanoid::vfunc429
 0x10013bb0 func   ?vfunc362@CWeaponMelee_HengeyokaiFist@@UAEPAUCWeaponActivityRecord@@XZ CWeaponMelee_HengeyokaiFist::vfunc362
 0x10013bb5 func   ?vfunc144@CNPC_VMingXiao@@UAEXH@Z CNPC_VMingXiao::vfunc144
+0x10013bb5 func   ?vfunc144@CNPC_VMingXiao@@UAEXPAX@Z CNPC_VMingXiao::vfunc144
 0x10013bba func   ?vfunc104@CPropHaunted@@UAEXXZ CPropHaunted::vfunc104
 0x10013bbf func   ?sub_100f79b0@CGlobalEntityList@@QAEPAVCBaseEntity@@PAV2@PBMM@Z CGlobalEntityList::sub_100f79b0
 0x10013bc4 func   ?sub_100ad8f0@@YGXPAX000@Z sub_100ad8f0
