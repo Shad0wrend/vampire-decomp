@@ -6414,6 +6414,7 @@
 0x10008e95 func   ?sub_10352e20@@YAHPAUS10352e20@@PBD@Z sub_10352e20
 0x10008e9a func   ?sub_103b51a0@@YAXM@Z sub_103b51a0
 0x10008e9f func   ?vfunc207@CBaseEntity@@QAE_NXZ CBaseEntity::vfunc207
+0x10008e9f func   ?vfunc207@CBaseEntity@@UAE_NXZ CBaseEntity::vfunc207
 0x10008ea4 func   _info_node_manbat_fly_to_point info_node_manbat_fly_to_point
 0x10008ea9 func   ?sub_1016e0c0@@YAXXZ sub_1016e0c0
 0x10008eae func   ?sub_1014f790@@YG_NHH@Z sub_1014f790
