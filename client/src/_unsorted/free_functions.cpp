@@ -1675,3 +1675,15 @@ void CUtlVector40::sub_1012c570(int num)
 	m_pElements = m_pMemory;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012c600 size=0x3e
+#include "UtlVec40.h"
+
+void UtlVec40::sub_1012c600(int elem, int num)
+{
+	int numToMove = m_Size - elem - num;
+	if (numToMove > 0 && num > 0) {
+		sub_101d0f30(m_pMemory + (elem + num) * 40, m_pMemory + elem * 40, numToMove * 40);
+	}
+}
+// END FUNCTION
