@@ -9064,6 +9064,7 @@
 0x1000c34c func   ?sub_1040b0b0@CUtlVector192@@QAEXHH@Z CUtlVector192::sub_1040b0b0
 0x1000c351 func   ?sub_102f9900@@YAXXZ sub_102f9900
 0x1000c356 func   ?sub_100b5ce0@CBaseFlex@@QAEXXZ CBaseFlex::sub_100b5ce0
+0x1000c356 func   ?vfunc276@CBaseFlex@@UAEXXZ CBaseFlex::vfunc276
 0x1000c35b func   ?sub_1006bf40@CUnknown1006bea0@@QAEXXZ CUnknown1006bea0::sub_1006bf40
 0x1000c360 func   ?vfunc5@CWeaponMelee_OccultBlade@@UAEPAVCBaseEntity@@I@Z CWeaponMelee_OccultBlade::vfunc5
 0x1000c365 func   ?sub_101d9870@CUnknown101d9840@@QAEPADH@Z CUnknown101d9840::sub_101d9870
