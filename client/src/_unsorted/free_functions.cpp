@@ -5310,6 +5310,22 @@ char *sub_101546c0(const char *pszSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154b40 size=0x21
+// TARGET: sub_10154b40
+void __fastcall sub_10154b40(int *p)
+{
+    p[0] = -1;
+    p[1] = 0;
+    p[2] = 0;
+    p[5] = 0;
+    p[6] = 0;
+    p[7] = 0;
+    p[8] = 0;
+    p[3] = 0;
+    p[4] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155b40 size=0x1d
 struct S9 {
 	int a, b, c, d, e, f, g, h, i;
