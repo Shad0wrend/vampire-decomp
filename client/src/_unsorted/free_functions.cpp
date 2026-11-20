@@ -5592,6 +5592,34 @@ void CUnknown101f7bb0::sub_10157480()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157b30 size=0x4d
+extern "C" int __cdecl sub_101e28e0(const char *, const char *);
+struct CNamePtr {
+	const char *m_p;
+	const char *Get() { return m_p ? m_p : ""; }
+};
+struct CNamedEntryX {
+	int m_unk0;
+	int m_unk4;
+	CNamePtr m_Name;
+};
+struct CNamedListX {
+	int m_unk0;
+	int m_count;
+	CNamedEntryX **m_pData;
+	int sub_10157b30(const char *name);
+};
+// TARGET: CNamedListX::sub_10157b30
+int CNamedListX::sub_10157b30(const char *name)
+{
+	for (int i = 0; i < m_count; i++) {
+		if (sub_101e28e0(m_pData[i]->m_Name.Get(), name) == 0)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"
