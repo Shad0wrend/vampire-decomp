@@ -116,6 +116,7 @@
 0x10147b80 func   ?sub_10147b80@CUnknown101dcdb0@@QAEXXZ CUnknown101dcdb0::sub_10147b80
 0x101482a0 func   ?sub_101482a0@S101ddec0@@QAEPAU1@XZ S101ddec0::sub_101482a0
 0x10148330 func   ?sub_10148330@CUnk101ddf80@@QAEXXZ CUnk101ddf80::sub_10148330
+0x10149890 func   ?sub_10149890@CUnknown101e0c30@@QAEPAUS101e0520@@XZ CUnknown101e0c30::sub_10149890
 0x101d0d40 func   __cfltcvt_init _cfltcvt_init
 0x101d0d78 func   ___setfflag __setfflag
 0x101d0d88 func   __onexit _onexit

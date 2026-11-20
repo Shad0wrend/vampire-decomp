@@ -2171,3 +2171,45 @@ void CUnk101ddf80::sub_10148330()
     ((CUnk101ddf80Sub78 *)((char *)this + 0x5c))->sub_101479b0();
 }
 // END FUNCTION
+
+// FUNCTION: 0x10149890 size=0xee
+#include "CUnknown101e0c30.h"
+
+struct S101e0520 {
+	S101e0520 *sub_10149370(int);
+	int m_data[58];
+};
+
+S101e0520 *CUnknown101e0c30::sub_10149890()
+{
+	if (m_allocCount == m_count) {
+		m_allocCount++;
+		if (m_pItems) {
+			S101e0520 **p = new S101e0520 *[m_allocCount];
+			int i = 0;
+			if (m_count > 0) {
+				do {
+					p[i] = m_pItems[i];
+					i++;
+				} while (i < m_count);
+			}
+			for (; i < m_allocCount; i++)
+				p[i] = 0;
+			delete m_pItems;
+			m_pItems = p;
+		} else {
+			m_pItems = new S101e0520 *[m_allocCount];
+			for (int i = 0; i < m_allocCount; i++)
+				m_pItems[i] = 0;
+		}
+		m_count++;
+	} else {
+		m_count++;
+	}
+	if (m_pItems[m_count - 1] == 0) {
+		S101e0520 *p = new S101e0520;
+		m_pItems[m_count - 1] = p ? p->sub_10149370(m_count - 1) : 0;
+	}
+	return m_pItems[m_count - 1];
+}
+// END FUNCTION
