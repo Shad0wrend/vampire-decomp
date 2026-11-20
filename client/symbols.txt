@@ -117,6 +117,7 @@
 0x1011d900 func   ?vfunc1@?$CEntityDataInstantiator@Utouchlink_t@@@@UAEHI@Z CEntityDataInstantiator<touchlink_t>::vfunc1
 0x1011f550 func   ?sub_1011f550@CMem8b_t@@QAEXH@Z CMem8b_t::sub_1011f550
 0x1011f7c0 func   ?sub_1011f7c0@CMem8b_t@@QAEXH@Z CMem8b_t::sub_1011f7c0
+0x1011fa30 func   ?sub_1011fa30@CMem8b_t@@QAEXH@Z CMem8b_t::sub_1011fa30
 0x1011fd10 func   ?sub_1011fd10@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_1011fd10
 0x1011fd80 func   ?sub_1011fd80@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_1011fd80
 0x1011fdf0 func   ?sub_1011fdf0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_1011fdf0
