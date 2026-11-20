@@ -8600,6 +8600,7 @@
 0x1000ba05 func   ?sub_10088de0@@YAXXZ sub_10088de0
 0x1000ba0a func   ?sub_101eaaa0@@YAXH@Z sub_101eaaa0
 0x1000ba0f func   ?vfunc388@CBaseCombatCharacter@@QAEDPAXH@Z CBaseCombatCharacter::vfunc388
+0x1000ba0f func   ?vfunc388@CBaseCombatCharacter@@UAEDPAXH@Z CBaseCombatCharacter::vfunc388
 0x1000ba14 func   ?vfunc438@CNPC_VGuard1@@QAEHXZ CNPC_VGuard1::vfunc438
 0x1000ba19 func   ?sub_102fca10@@YAHXZ sub_102fca10
 0x1000ba1e func   ?sub_10191420@@YAHXZ sub_10191420
