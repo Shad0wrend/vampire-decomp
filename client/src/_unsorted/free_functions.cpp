@@ -912,3 +912,17 @@ void CUtlLinkedList8::sub_100efee0(unsigned short elem)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x10107500 size=0x43
+#include "Vector.h"
+#include <math.h>
+float Vector::sub_10107500()
+{
+	float radius = (float)sqrt(x * x + y * y + z * z);
+	float iradius = 1.0f / (radius + 1.192092896e-07f);
+	x *= iradius;
+	y *= iradius;
+	z *= iradius;
+	return radius;
+}
+// END FUNCTION
