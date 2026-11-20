@@ -15566,6 +15566,7 @@
 0x10014218 func   ?vfunc30@CSave@@UAEXPBDABVVector@@@Z CSave::vfunc30
 0x1001421d func   ?vfunc5@CPushable@@UAEPAV1@I@Z CPushable::vfunc5
 0x10014222 func   ?vfunc156@CRotDoor@@QAEXH@Z CRotDoor::vfunc156
+0x10014222 func   ?vfunc156@CRotDoor@@UAEXH@Z CRotDoor::vfunc156
 0x10014227 func   ?vfunc0@CTEShowLine@@UAEHXZ CTEShowLine::vfunc0
 0x1001422c func   ?vfunc5@CItemGLillyPhoto@@QAEPAV1@I@Z CItemGLillyPhoto::vfunc5
 0x10014231 func   ?sub_102c2c50@CAI_BaseNPCTroika@@QAEXPAUinputdata_t@@@Z CAI_BaseNPCTroika::sub_102c2c50
