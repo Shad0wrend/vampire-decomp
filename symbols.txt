@@ -11017,6 +11017,7 @@
 0x1000e804 func   ?vfunc12@CGameMovement@@UAEXXZ CGameMovement::vfunc12
 0x1000e809 func   ?vfunc604@CNPC_VSheriffMan@@QAEHH@Z CNPC_VSheriffMan::vfunc604
 0x1000e80e func   ?vfunc228@CPropHaunted@@QAEXHPAX@Z CPropHaunted::vfunc228
+0x1000e80e func   ?vfunc228@CPropHaunted@@UAEXHH@Z CPropHaunted::vfunc228
 0x1000e818 func   ?vfunc378@CItemContainer@@QAE_NHH@Z CItemContainer::vfunc378
 0x1000e81d func   _item_w_rem_m_700_bach item_w_rem_m_700_bach
 0x1000e822 func   ?sub_10076f10@S10076f10@@QAEXDPBD0@Z S10076f10::sub_10076f10
