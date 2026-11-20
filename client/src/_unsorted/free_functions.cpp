@@ -191,3 +191,12 @@ Vector &Vector::sub_10039080(const Vector &v)
 	return *this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10045630 size=0x3b
+#include "Vector.h"
+
+void sub_10045630(Vector *a, Vector *b, Vector *out)
+{
+    CrossProduct(*a, *b, *out);
+}
+// END FUNCTION
