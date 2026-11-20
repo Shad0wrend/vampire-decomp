@@ -3754,6 +3754,29 @@ Vector &Vector::sub_1013c790(const Vector &v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013c7b0 size=0x1a
+struct CUnk1011d310
+{
+	int m_n0;
+	int m_n4;
+	int m_nLimit8;
+	int m_nCurrentC;
+	char m_bFlag10;
+
+	char sub_1013c7b0(int a);
+};
+
+// TARGET: sub_1013c7b0
+char CUnk1011d310::sub_1013c7b0(int a)
+{
+	int sum = m_nCurrentC + a;
+	if (sum > m_nLimit8) {
+		m_bFlag10 = 1;
+	}
+	return m_bFlag10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c970 size=0x7c
 #include "CUnknown1006bea0.h"
 
