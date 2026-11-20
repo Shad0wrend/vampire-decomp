@@ -11561,6 +11561,7 @@
 0x1000f4b1 func   ?sub_101a6b80@@YAMXZ sub_101a6b80
 0x1000f4b6 func   ?sub_103c7010@CNPC_VVampireBoss@@QAEPAVCBaseEntity@@HPBD@Z CNPC_VVampireBoss::sub_103c7010
 0x1000f4bb func   ?ShiftElementsLeft@?$CUtlVector@UCAI_InterestTarget@@V?$CUtlMemory@UCAI_InterestTarget@@@@@@QAEXHH@Z CUtlVector<CAI_InterestTarget,CUtlMemory<CAI_InterestTarget> >::ShiftElementsLeft
+0x1000f4bb func   ?ShiftElementsLeft@?$CUtlVector@VCAI_InterestTarget@@V?$CUtlMemory@VCAI_InterestTarget@@@@@@QAEXHH@Z CUtlVector<CAI_InterestTarget,CUtlMemory<CAI_InterestTarget> >::ShiftElementsLeft
 0x1000f4c0 func   ?sub_10088be0@@YAXXZ sub_10088be0
 0x1000f4c5 func   ?sub_101e4a90@CUnknown101e4a90@@QAEXXZ CUnknown101e4a90::sub_101e4a90
 0x1000f4ca func   ?vfunc62@CMultiplayRules@@UAEHH@Z CMultiplayRules::vfunc62
