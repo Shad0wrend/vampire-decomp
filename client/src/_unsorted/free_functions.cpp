@@ -36,3 +36,13 @@ void CUtlMemory192::sub_10003c10(int num)
 		m_pMemory = Plat_Alloc(m_nAllocationCount * 0xc0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10004d80 size=0x43
+#include "Vector.h"
+Vector Vector::sub_10004d80(float fl) const
+{
+	Vector res;
+	VectorMultiply(*this, fl, res);
+	return res;
+}
+// END FUNCTION
