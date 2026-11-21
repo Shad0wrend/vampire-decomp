@@ -2098,6 +2098,7 @@
 0x100ee8c0 func   ?sub_100ee8c0@@YA?AUR1042c030@@H@Z sub_100ee8c0
 0x100ee900 func   ?sub_100ee900@CUnk10129770@@QAEHXZ CUnk10129770::sub_100ee900
 0x100eea60 func   ??_GGlobalWetnessProxy@@UAEPAXI@Z ??_GGlobalWetnessProxy@@UAEPAXI@Z
+0x100eed70 func   ??_GCGlowOverlay@@UAEPAXI@Z ??_GCGlowOverlay@@UAEPAXI@Z
 0x100eed90 func   ??1CGlowOverlay@@UAE@XZ CGlowOverlay::~CGlowOverlay
 0x100efe70 func   ?sub_100efe70@CUnknown100efe70@@QAEXXZ CUnknown100efe70::sub_100efe70
 0x100efee0 func   ?sub_100efee0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100efee0
