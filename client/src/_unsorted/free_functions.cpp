@@ -32566,6 +32566,16 @@ void sub_10170c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170f60 size=0x6
+namespace lifted {
+extern int g_105fb14c;
+}
+int sub_10170f60()
+{
+    return lifted::g_105fb14c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10172ac0 size=0x3
 char sub_10172ac0()
 {

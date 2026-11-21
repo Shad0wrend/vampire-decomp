@@ -1804,6 +1804,7 @@
 0x1016a6a0 func   ?sub_1016a6a0@@YAXXZ sub_1016a6a0
 0x10170170 func   ?sub_10170170@@YAHXZ sub_10170170
 0x10170c20 func   ?sub_10170c20@@YAXXZ sub_10170c20
+0x10170f60 func   ?sub_10170f60@@YAHXZ sub_10170f60
 0x10172ac0 func   ?sub_10172ac0@@YADXZ sub_10172ac0
 0x10174c40 func   ?sub_10174c40@@YAXXZ sub_10174c40
 0x101779a0 func   ?sub_101779a0@@YGXH@Z sub_101779a0
