@@ -21974,6 +21974,54 @@ void CVStatList_t::sub_1015d350(int a, int *pSource, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015d6e0 size=0x83
+#include "CVStatList_t.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+
+// CVStatList_t::sub_102008b0: the game compiled it before this function, in the same unit, so VC6 knows which registers it keeps;
+// the block's own copy, in a namespace of its own: no second definition of the game's name.
+namespace block_10200ca0 {
+struct CVStatListUnit : CVStatList_t
+{
+	char sub_1015d3e0(int stat);
+};
+
+char CVStatListUnit::sub_1015d3e0(int stat)
+{
+	if (stat >= 0 && stat < m_field04)
+		return 1;
+	return 0;
+}
+}
+using namespace block_10200ca0;
+
+// TARGET: CVStatList_t::sub_1015d6e0
+int CVStatList_t::sub_1015d6e0(int stat)
+{
+	g_101e3124[*g_101e3128].m_pszFunc = "CVStatList_t::GetBase";
+	g_101e3124[*g_101e3128].m_pszName = g_102de300;
+	g_101e3124[*g_101e3128].m_pszExtra = g_102de300;
+	(*g_101e3128)++;
+	if (((CVStatListUnit *)this)->sub_1015d3e0(stat)) {
+		int value = (**(int ***)&m_field08)[stat];
+		(*g_101e3128)--;
+		return value;
+	}
+	(*g_101e3128)--;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015e490 size=0xf0
 #include "CVStatListManager_t.h"
 
