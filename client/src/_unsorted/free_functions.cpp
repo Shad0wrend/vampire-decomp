@@ -18205,6 +18205,19 @@ int sub_10079480(int a, int b, float *pA, float *pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100794f0 size=0x22
+// TARGET: sub_100794f0
+extern "C" void __declspec(dllimport) Msg(const char *pszFormat, ...);
+void *__cdecl sub_100794f0(int *pHdr)
+{
+    if (pHdr != 0 && pHdr[1] == 0x9e3) {
+        return pHdr;
+    }
+    Msg("Bad pstudiohdr in GetStudioHdr()!\n");
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079520 size=0x27b
 extern "C" int abs(int);
 #pragma intrinsic(abs)
