@@ -5940,6 +5940,16 @@ char sub_1007f6e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f960 size=0x6
+namespace lifted {
+extern char g_10486a78;
+}
+int sub_1007f960()
+{
+    return (int)&lifted::g_10486a78;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080e00 size=0x5
 int __stdcall sub_10080e00(int a0)
 {
