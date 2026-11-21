@@ -12407,6 +12407,16 @@ CUnk10245660Node *sub_100df2c0(const char *pName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df300 size=0x6
+namespace lifted {
+extern int g_104cf3d4;
+}
+int sub_100df300()
+{
+    return lifted::g_104cf3d4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df340 size=0x38
 struct CUnknown10245720Node
 {
