@@ -18339,6 +18339,17 @@ unsigned short CUtlRBTree16::sub_10112270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10114680 size=0xa
+namespace lifted {
+extern char g_104dff38;
+struct C10088650 { int sub_10088650(); };
+}
+int sub_10114680()
+{
+    return ((lifted::C10088650 *)((int)&lifted::g_104dff38))->sub_10088650();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10115dd0 size=0x5
 int __stdcall sub_10115dd0(int a0, int a1)
 {
