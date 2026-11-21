@@ -10469,6 +10469,16 @@ int sub_100bd530()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bd720 size=0x6
+namespace lifted {
+extern char g_104a3a08;
+}
+int sub_100bd720()
+{
+    return (int)&lifted::g_104a3a08;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bde50 size=0x5
 struct CUnknown100bde50 { void sub_100bde50(); };
 void CUnknown100bde50::sub_100bde50()
