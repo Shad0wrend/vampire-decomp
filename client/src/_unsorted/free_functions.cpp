@@ -2253,6 +2253,17 @@ void bf_write::sub_10087650(const Vector &fa)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100877f0 size=0x2b
+#include "bf_write.h"
+
+// TARGET: bf_write::sub_100877f0
+void bf_write::sub_100877f0(const Vector *pVec)
+{
+	Vector local(pVec->x, pVec->y, pVec->z);
+	sub_10087380(local);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087830 size=0xad
 #include "bf_write.h"
 
