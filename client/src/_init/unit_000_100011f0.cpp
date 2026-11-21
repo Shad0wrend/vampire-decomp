@@ -1322,3 +1322,9 @@ ConVar g_104d2fb0("cl_meleecircle", "0", 0);
 #include "ConVar.h"
 ConVar g_104d2ff8("cl_meleefaceattack", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101047c0 size=0xa
+#include "ConCommand.h"
+void sub_10101f20(void);
+ConCommand g_104d3a6c("+commandermousemove", sub_10101f20, 0, 0, 0);
+// END FUNCTION
