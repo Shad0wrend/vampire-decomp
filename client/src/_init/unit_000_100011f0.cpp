@@ -2456,3 +2456,8 @@ ConVar g_105fc8c8("r_viewcubemapsize", "96", 128);
 #include "ConVar.h"
 ConVar g_105fbd30("cl_leveloverview", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018e4a0 size=0x5
+#include "Vector.h"
+Vector g_105fc4d4(0.0f, 0.0f, 0.0f);
+// END FUNCTION
