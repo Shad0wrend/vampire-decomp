@@ -9145,6 +9145,13 @@ void sub_100e6ce0(const char *file, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e6ea0 size=0x5
+char __stdcall sub_100e6ea0(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e91e0 size=0x1a4
 #include "Ray_t.h"
 #include <math.h>
