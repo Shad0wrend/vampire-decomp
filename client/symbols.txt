@@ -870,6 +870,7 @@
 0x100c8e30 func   ?sub_100c8e30@@YAHXZ sub_100c8e30
 0x100c92f0 func   ?sub_100c92f0@CUnknown100c92f0@@QAEHXZ CUnknown100c92f0::sub_100c92f0
 0x100c9300 func   ?sub_100c9300@CUnknown100c9300@@QAEHXZ CUnknown100c9300::sub_100c9300
+0x100c9310 func   ?sub_100c9310@CUnknown100c9310@@QAEHXZ CUnknown100c9310::sub_100c9310
 0x100c9320 func   ?sub_100c9320@@YGDH@Z sub_100c9320
 0x100c9d40 func   ?sub_100c9d40@CUnknown100c9d40@@QAEHXZ CUnknown100c9d40::sub_100c9d40
 0x100ca0b0 func   ?sub_100ca0b0@UtlMem@@QAEXH@Z UtlMem::sub_100ca0b0

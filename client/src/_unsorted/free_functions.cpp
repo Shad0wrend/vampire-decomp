@@ -11839,6 +11839,14 @@ int CUnknown100c9300::sub_100c9300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9310 size=0xc
+struct CUnknown100c9310 { int sub_100c9310(); };
+int CUnknown100c9310::sub_100c9310()
+{
+    return ((unsigned)(*(int *)((char *)this + 0x444)) >> 1) & 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9320 size=0x5
 char __stdcall sub_100c9320(int a0)
 {
