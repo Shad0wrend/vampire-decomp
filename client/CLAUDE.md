@@ -53,10 +53,39 @@ byte-equal vtmb twin, the RTTI vftable it stores and the pushes of the initializ
 then saved 557 definitions (522 through a named constructor), all in `src/_init/unit_000_100011f0.cpp`: client.dll's
 initializer table is one run (vtmb's incremental link gave 251), so that file says nothing about units. Their 2,174
 initializer pieces went from skip to matched. Totals now: 4,749 matched; the progress counts 4,723 of 13,585
-functions / 171,313 of 1,668,122 bytes (10.27%; the pieces count now, so the total grew). Still blocked: 331
-constructs call 0x100e1590, whose bytes equal vtmb's SendTable constructor (on the client side probably RecvTable:
-a RecvTable/ClientClass generator, not a name); InterfaceReg's 47; classes only RTTI names, with no header here.
-Backups: cache/`project.db.pre-ctornames-20261121`, `.pre-globals-`.
+functions / 171,313 of 1,668,122 bytes (10.27%; the pieces count now, so the total grew). Backups:
+cache/`project.db.pre-ctornames-20261121`, `.pre-globals-`.
+
+RecvTable: 0x100e1590 (bytes equal to vtmb's SendTable constructor) is `RecvTable::RecvTable()`, which calls
+Construct(NULL, 0, NULL); with 0x100e15b0 (the three-argument constructor), 0x100e15d0 (the empty destructor, where
+all 331 globals' destroys jump) and 0x100e15e0 (Construct) it is the SDK's dt_recv.cpp in order. `include/RecvTable.h`
+(the SDK's layout, read off Construct's stores) and these names let `pcdecomp globals` save the 331
+BEGIN_RECV_TABLE tables (`RecvTable g_X;`) and InterfaceReg's 47 (0x10106be0 now also has its real constructor
+name): 378 more, 1,418 pieces, 15,124 bytes. Totals now: 6,144 matched of 15,003 functions / 186,520 of 1,683,246
+bytes (11.08%). Next behind them: 333 open functions that fill those tables (each builds its RecvProp list and calls
+Construct), 61,755 bytes. Still blocked: classes only RTTI names, with no header here. Backups:
+cache/`project.db.pre-recvtable-20261121`, `.pre-recvglobals-`.
+
+Recv table builders (2026-11-21, `pcdecomp recvtables`, pcdecomp main 9f015cc). A hand pass first named, from the
+code and the SDK's dt_recv.cpp / cl_dll/recvproxy.cpp:
+- RecvProp::RecvProp (0x100e1560; its stores give RecvProp's 13 fields);
+- the six prop helpers, each setting m_RecvType to its DPT_ value: RecvPropFloat 0x100e1610, Vector 0x100e1660,
+  Int 0x100e16b0, String 0x100e1730, DataTable 0x100e1790, InternalRecvPropArray 0x100e17f0;
+- cl_dll's RecvPropTime 0x101277b0, RecvPropPredictableId 0x101277e0 and RecvPropEHandle 0x10127770 (VtMB's has 3
+  parameters, the proxy fixed in its body; all 23 callers pass m_h* names);
+- 9 proxies: FloatToFloat 0x100e1840, VectorToVector 0x100e1850, Int32ToInt8/16/32 0x100e1870/1880/1890,
+  StringToString 0x100e18a0, the Static/Pointer data table proxies 0x100e18e0/18f0, IntToEHandle 0x10127720.
+
+`include/RecvTable.h` gained SendPropType, DVariant, CRecvProxyData, the proxy typedefs (data table proxy:
+`void (void **, void *, int)`), RecvProp and the declarations; 12 of those functions matched from the SDK's code.
+`pcdecomp split` cut 12 rows at a local static's destroy (11 builders and 0x100ce160) and `skip-initializers`
+marked the 12 skip. Then `pcdecomp recvtables` named all 331 builders `?ClientClassInit@@YAHPAUignored@DT_X@@@Z`
+and matched them (61,690 bytes), each with its array's 1-byte destroy as a local destroy companion; a `verify` of
+20 still matched. `globals --kind recvinit` saved the 331 `g_RecvTableInit` (662 pieces). Totals now: 7,506
+matched rows; the panel counts 7,480 of 15,996 functions / 256,261 of 1,690,516 bytes (15.16%). Left unnamed:
+0x10127810 (the SDK's static RecvProxy_IntToPredictableId, matched as sub_), 0x10127680 (VtMB's queued handle
+lookup) and the game's own proxies (0x10043090, 0x1009d4e0, ...). Backups: cache/`project.db.pre-handpass-20261121`,
+`.pre-split-`, `.pre-recvtables-`, `.pre-recvinit-`.
 
 Units: `pcdecomp units --apply` saved 4,066 unit guesses in 194 units (functions.unit_guess: the "probably unit"
 line and the panel's per-unit progress; it never moves a file), from the reference trees' class homes and the
