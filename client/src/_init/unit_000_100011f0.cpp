@@ -263,3 +263,8 @@ ConCommand g_103ef08c("mm_resetparticles", sub_100656a0, 0, 0, 0);
 #include "utlvector.h"
 CUtlVector<int> g_104770f8;
 // END FUNCTION
+
+// FUNCTION: 0x10067c10 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_10477154;
+// END FUNCTION
