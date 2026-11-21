@@ -32867,6 +32867,17 @@ void TSeg::sub_101556d0(int target, int *outIndex, int *outOffset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155950 size=0x13
+struct CUnknown10155950 { void * sub_10155950(int); };
+void * CUnknown10155950::sub_10155950(int a0)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155b40 size=0x1d
 struct S9 {
 	int a, b, c, d, e, f, g, h, i;
