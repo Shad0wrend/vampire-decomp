@@ -10561,6 +10561,16 @@ void UtlMem::sub_100be200(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be2d0 size=0x6
+namespace lifted {
+extern char g_104a3d24;
+}
+int sub_100be2d0()
+{
+    return (int)&lifted::g_104a3d24;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c0960 size=0x3
 struct CUnknown100c0960 { void * sub_100c0960(); };
 void * CUnknown100c0960::sub_100c0960()

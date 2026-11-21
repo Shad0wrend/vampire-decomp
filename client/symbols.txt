@@ -748,6 +748,7 @@
 0x100be130 func   ?sub_100be130@CUnknown100be130@@QAEDXZ CUnknown100be130::sub_100be130
 0x100be140 func   ?sub_100be140@CUnknown100be140@@QAEDXZ CUnknown100be140::sub_100be140
 0x100be200 func   ?sub_100be200@UtlMem@@QAEXH@Z UtlMem::sub_100be200
+0x100be2d0 func   ?sub_100be2d0@@YAHXZ sub_100be2d0
 0x100c0960 func   ?sub_100c0960@CUnknown100c0960@@QAEPAXXZ CUnknown100c0960::sub_100c0960
 0x100c1e70 func   ?sub_100c1e70@UtlVec40@@QAEXHH@Z UtlVec40::sub_100c1e70
 0x100c1eb0 func   ?sub_100c1eb0@UtlMem@@QAEXXZ UtlMem::sub_100c1eb0
