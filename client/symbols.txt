@@ -996,6 +996,7 @@
 0x100f2490 func   ?sub_100f2490@@YGXH@Z sub_100f2490
 0x100f24a0 func   ?sub_100f24a0@@YAXXZ sub_100f24a0
 0x100f25a0 func   ?sub_100f25a0@@YAXXZ sub_100f25a0
+0x100f2650 func   ?sub_100f2650@@YGHH@Z sub_100f2650
 0x100f2740 func   ?sub_100f2740@CUnknown100f2740@@QAEHXZ CUnknown100f2740::sub_100f2740
 0x100f27a0 func   ?sub_100f27a0@@YGXHHH@Z sub_100f27a0
 0x100f3680 func   ?sub_100f3680@CUnknown100f3680@@QAEXXZ CUnknown100f3680::sub_100f3680

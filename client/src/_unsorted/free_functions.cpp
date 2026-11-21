@@ -14143,6 +14143,16 @@ void sub_100f25a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2650 size=0x8
+namespace lifted {
+int sub_100f2600();
+}
+int __stdcall sub_100f2650(int a0)
+{
+    return lifted::sub_100f2600();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2740 size=0x3
 struct CUnknown100f2740 { int sub_100f2740(); };
 int CUnknown100f2740::sub_100f2740()
