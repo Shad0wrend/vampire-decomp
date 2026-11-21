@@ -10725,6 +10725,20 @@ float sub_1010bde0(float *p, float *a, float *b, float *d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010be50 size=0x4b
+float sub_1010bde0(float *, float *, float *, float *);
+
+void sub_1010be50(float *a, float *b, float *c, float *out, float *pT)
+{
+	float d[2];
+	float t = sub_1010bde0(a, b, c, d);
+	if (pT)
+		*pT = t;
+	out[0] = d[0] * t + b[0];
+	out[1] = d[1] * t + b[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c230 size=0x4b
 // mathlib's _SSE_RSqrtAccurate (Intel / Kipps SSE RSqrt), verbatim
 // TARGET: sub_1010c230
