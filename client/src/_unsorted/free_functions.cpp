@@ -6832,6 +6832,13 @@ void CMem8b_t::sub_100d1240(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d14d0 size=0x3
+char sub_100d14d0()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d14e0 size=0x1
 void sub_100d14e0()
 {
