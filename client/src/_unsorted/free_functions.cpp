@@ -1026,6 +1026,31 @@ CUnknown10412470Ent *sub_10068160(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068300 size=0x2f
+// TARGET: sub_10068300
+extern int g_10477160;
+extern int *g_10477154;
+
+bool sub_10068300(int value)
+{
+    int idx = 0;
+    if (g_10477160 > 0)
+    {
+        do
+        {
+            if (g_10477154[idx] == value)
+            {
+                goto found;
+            }
+            idx++;
+        } while (idx < g_10477160);
+    }
+    idx = -1;
+found:
+    return idx >= 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100790f0 size=0x69
 #include "CUnknown10427700.h"
 #include <string.h>
