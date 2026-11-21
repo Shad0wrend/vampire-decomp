@@ -20694,6 +20694,16 @@ void * CUnknown101d91c0::sub_10145d60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145d80 size=0x5
+namespace lifted {
+int sub_10145d90();
+}
+int sub_10145d80()
+{
+    return lifted::sub_10145d90();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146220 size=0x27
 #include "CUnknown10739194.h"
 
