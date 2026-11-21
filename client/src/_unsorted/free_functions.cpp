@@ -18857,6 +18857,14 @@ void CBits1042d9c0::sub_10120990(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101209b0 size=0x6
+struct CUnknown101209b0 { int sub_101209b0(); };
+int CUnknown101209b0::sub_101209b0()
+{
+    return (unsigned)(*(int *)this) >> 0x1c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101209c0 size=0x1b
 // TARGET: sub_101209c0
 struct CUnk1042da10 {
