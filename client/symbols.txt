@@ -121,6 +121,7 @@
 0x1000c0d0 func   ?sub_1000c0d0@@YAHXZ sub_1000c0d0
 0x1000c1f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_ManBatClaw@@@Z ClientClassInit
 0x1000c350 func   ?sub_1000c350@@YAHXZ sub_1000c350
+0x1000c470 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_MingXiaoMelee@@@Z ClientClassInit
 0x1000c5d0 func   ?sub_1000c5d0@@YAHXZ sub_1000c5d0
 0x1000c850 func   ?sub_1000c850@@YAHXZ sub_1000c850
 0x1000cad0 func   ?sub_1000cad0@@YAHXZ sub_1000cad0
