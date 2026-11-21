@@ -668,3 +668,8 @@ ConVar g_104a4450("print_flex_rules", "0", 128);
 #include "ConVar.h"
 ConVar g_104a4c98("phonemefilter_min", "0.0", 128);
 // END FUNCTION
+
+// FUNCTION: 0x100c3b90 size=0xa
+#include "ConVar.h"
+ConVar g_104a4ce0("phonemefilter_max", "0.0", 128);
+// END FUNCTION
