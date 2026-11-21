@@ -1383,6 +1383,7 @@
 0x101869b0 func   ?sub_101869b0@@YAXXZ sub_101869b0
 0x10186bc0 func   ?sub_10186bc0@@YGXH@Z sub_10186bc0
 0x10187d90 func   ?sub_10187d90@@YGXH@Z sub_10187d90
+0x10187fc0 func   ?sub_10187fc0@@YAHXZ sub_10187fc0
 0x10189130 func   ?sub_10189130@@YAXXZ sub_10189130
 0x101895d0 func   ?sub_101895d0@@YGXH@Z sub_101895d0
 0x101895f0 func   ?sub_101895f0@@YAXXZ sub_101895f0

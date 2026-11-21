@@ -28379,6 +28379,16 @@ void __stdcall sub_10187d90(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10187fc0 size=0x5
+namespace lifted {
+int sub_10187da0();
+}
+int sub_10187fc0()
+{
+    return lifted::sub_10187da0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189130 size=0x1
 void sub_10189130()
 {
