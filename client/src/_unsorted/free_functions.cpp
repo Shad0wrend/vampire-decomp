@@ -25954,6 +25954,17 @@ void VMatrix::sub_101a1b20(VMatrix &ret) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1be0 size=0x28
+#include "VMatrix.h"
+
+VMatrix VMatrix::sub_101a1be0() const
+{
+    VMatrix ret;
+    sub_101a1b20(ret);
+    return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1d40 size=0x18
 struct CUnk1024d7b0 {
     char pad4[4];
