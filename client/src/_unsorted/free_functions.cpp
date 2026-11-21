@@ -39176,6 +39176,23 @@ int CUnknown101460e0::sub_101460e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146100 size=0x1d
+struct StatOwner2 { int sub_1015f270(int); };
+extern StatOwner2 g_105f93c0;
+extern char g_102de300[];
+
+// TARGET: sub_10146100
+const char * __fastcall sub_10146100(int *pThis)
+{
+    int *p = (int *)g_105f93c0.sub_1015f270(pThis[5]);
+    const char **pp = (const char **)((char *)p + 8);
+    const char *psz = *pp;
+    if (psz == 0)
+        return g_102de300;
+    return psz;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146120 size=0x1d
 namespace lifted {
 extern char g_105f93c0;
