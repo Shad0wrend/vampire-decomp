@@ -2044,6 +2044,11 @@ RecvTable g_104a0c18;
 RecvTable g_104a0d34;
 // END FUNCTION
 
+// FUNCTION: 0x100a4810 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049e4fc;
+// END FUNCTION
+
 // FUNCTION: 0x100a7260 size=0xa
 #include "ConVar.h"
 ConVar g_1049e838("vamplight_enabled", "0", 0);
