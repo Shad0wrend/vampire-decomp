@@ -20212,6 +20212,14 @@ void CUnknown1042d770::sub_101207d0(int a, int b, const char *pszName1, const ch
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120980 size=0xa
+struct CUnknown10120980 { int sub_10120980(); };
+int CUnknown10120980::sub_10120980()
+{
+    return (*(short *)((char *)this + 2)) & 0xfff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120990 size=0x18
 struct CBits1042d9c0
 {
