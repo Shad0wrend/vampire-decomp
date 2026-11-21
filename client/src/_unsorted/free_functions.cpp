@@ -5696,6 +5696,17 @@ int sub_10058080()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10058090 size=0x1a
+namespace lifted {
+extern char g_103eec94;
+struct C10058ea0 { int sub_10058ea0(int, int, int); };
+}
+int sub_10058090(int a0, int a1, int a2)
+{
+    return ((lifted::C10058ea0 *)((int)&lifted::g_103eec94))->sub_10058ea0(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058310 size=0xa
 namespace lifted {
 extern char g_103eec94;
