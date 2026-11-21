@@ -2292,3 +2292,8 @@ ConVar g_105fb370("cl_v_shadow_count", "2", 128);
 #include "ConVar.h"
 ConVar g_105fb2e0("vchar_edit_histories", "0", 128);
 // END FUNCTION
+
+// FUNCTION: 0x1017f2f0 size=0xa
+#include "ConVar.h"
+ConVar g_105fb6a0("vchar_skip_intro", "0", 128);
+// END FUNCTION
