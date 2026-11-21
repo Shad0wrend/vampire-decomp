@@ -1735,6 +1735,7 @@
 0x100bbb90 func   ?sub_100bbb90@CUnknown100bbb90@@QAEPAXXZ CUnknown100bbb90::sub_100bbb90
 0x100bbba0 func   ??_GC_GameRules@@UAEPAXI@Z ??_GC_GameRules@@UAEPAXI@Z
 0x100bbbc0 func   ??1C_GameRules@@UAE@XZ C_GameRules::~C_GameRules
+0x100bbe00 func   ??_GCHudCounterElement@@UAEPAXI@Z ??_GCHudCounterElement@@UAEPAXI@Z
 0x100bbe40 func   ?sub_100bbe40@@YAHXZ sub_100bbe40
 0x100bbf40 func   ?ClientClassInit@@YAHPAUignored@DT_HudCounter@@@Z ClientClassInit
 0x100bc0d0 func   ??1C_HudCounter@@UAE@XZ C_HudCounter::~C_HudCounter
