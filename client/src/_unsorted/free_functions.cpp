@@ -6149,6 +6149,17 @@ float sub_100db3c0(const SVec3 *pOrigin, const SVec3 *pDir, const SVec3 *pNormal
 }
 // END FUNCTION
 
+// FUNCTION: 0x100db420 size=0x44
+#include "Vector.h"
+float sub_100db420(const Vector &a, const Vector &b, int i, float c, float d)
+{
+	float t = (b[i] - a[i]) * c;
+	if (t == 0.0f)
+		return 0.0f;
+	return (1.0f / t) * (d - a[i] * c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df190 size=0x24
 struct CUnknown10753434
 {
