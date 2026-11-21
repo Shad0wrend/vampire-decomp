@@ -2036,3 +2036,8 @@ CUtlVector<int> g_104e1be4;
 #include "Vector.h"
 Vector g_105e5440[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.40824834f, 0.70710677f, 0.57735026f), Vector(-0.40824822f, -0.7071068f, 0.57735026f) };
 // END FUNCTION
+
+// FUNCTION: 0x1012b3b0 size=0x5
+int sub_1012b3d0(void);
+int g_105e54c0 = ((int (*)(int))sub_1012b3d0)(0);
+// END FUNCTION
