@@ -6417,6 +6417,12 @@ void *CUnknown100b7a90::sub_100d15b0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1960 size=0x1
+void sub_100d1960()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3380 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
