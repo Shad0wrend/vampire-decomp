@@ -2939,6 +2939,13 @@ int g_102ec2d4 = ClientClassInit((DT_TEBeamRingPoint::ignored *)0);
 RecvTable g_102ec460;
 // END FUNCTION
 
+// FUNCTION: 0x100340c0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBeamSpline { struct ignored; }
+template <> int ClientClassInit<DT_TEBeamSpline::ignored>(DT_TEBeamSpline::ignored *);
+int g_102ec45c = ClientClassInit((DT_TEBeamSpline::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10034480 size=0xa
 #include "RecvTable.h"
 RecvTable g_102ec54c;
