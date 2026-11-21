@@ -16727,6 +16727,14 @@ void CUnknown101b7370::sub_10131620(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101316b0 size=0x3
+struct CUnknown101316b0 { int sub_101316b0(); };
+int CUnknown101316b0::sub_101316b0()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131e60 size=0xcf
 #include "CUnknown101b9140.h"
 
