@@ -1902,6 +1902,7 @@
 0x10157b30 func   ?sub_10157b30@CNamedListX@@QAEHPBD@Z CNamedListX::sub_10157b30
 0x10157b80 func   ?sub_10157b80@CNamedListX@@QAEHPBD@Z CNamedListX::sub_10157b80
 0x10157bd0 func   ?sub_10157bd0@CUnknown101f1a30@@QAEHPBD@Z CUnknown101f1a30::sub_10157bd0
+0x10157c80 func   ?sub_10157c80@@YAHH@Z sub_10157c80
 0x10157d10 func   ?sub_10157d10@CUnknown10157d10@@QAEPAXXZ CUnknown10157d10::sub_10157d10
 0x10158060 func   ?sub_10158060@CUnknown101f9b70@@QAEHH@Z CUnknown101f9b70::sub_10158060
 0x10158790 func   ?sub_10158790@@YAXXZ sub_10158790
