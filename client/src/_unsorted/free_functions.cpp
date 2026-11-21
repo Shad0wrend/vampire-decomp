@@ -3697,6 +3697,70 @@ char sub_1008c5d0(CBoneOwner *p, int a, int b, Vector *turn, Vector *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008ce40 size=0x154
+#include "CUnknown101dff00.h"
+#include "CRestore.h"
+
+struct CRecord160
+{
+	char m_pad0000[4];
+	int m_nParent;		// 0x04
+	char m_pad0008[0x88 - 8];
+	unsigned int m_nFlags;	// 0x88
+	char m_pad008c[0xa0 - 0x8c];
+};
+
+struct CEntry1c
+{
+	int m_nRecord;
+	char m_pad[0x1c - 4];
+};
+
+struct CRecordHolder
+{
+	char m_pad0000[0xf0];
+	int m_nRecords;		// 0xf0
+	int m_nRecordsOffset;	// 0xf4
+	char m_pad00f8[0x18c - 0xf8];
+	int m_nEntries;		// 0x18c
+	int m_nEntriesOffset;	// 0x190
+
+	CRecord160 *Rec(int i)
+	{
+		return (CRecord160 *)((char *)this + m_nRecordsOffset) + i;
+	}
+	CEntry1c *Entry(int i)
+	{
+		return (CEntry1c *)((char *)this + m_nEntriesOffset) + i;
+	}
+};
+
+void sub_1008cfa0(CRecordHolder *pHolder, int a, CRestoreVec *pVec);
+
+// TARGET: sub_1008ce40
+void sub_1008ce40(CRecordHolder *pHolder, int a)
+{
+	CRestoreVec vec;
+	sub_1008cfa0(pHolder, a, &vec);
+	if (!(pHolder)) return; for (int i = 0; i < pHolder->m_nEntries; i++)
+		{
+			CEntry1c *pEntry = pHolder->Entry(i);
+			int r;
+			for (r = pEntry->m_nRecord; r >= 0; r = pHolder->Rec(r)->m_nParent)
+				pHolder->Rec(r)->m_nFlags |= 0xfffc;
+			r = pEntry->m_nRecord;
+			while (1) { int j;
+				for (j = r + 1; j < pHolder->m_nRecords; j++)
+					if (pHolder->Rec(j)->m_nParent == r)
+						break;
+				if (j >= pHolder->m_nRecords)
+					break;
+				pHolder->Rec(j)->m_nFlags |= 0xfffc;
+				r = j; }
+		}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008d930 size=0x9f
 struct SPoseHdr;
 
