@@ -10284,6 +10284,13 @@ int sub_100b69e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6c20 size=0x6
+int sub_100b6c20()
+{
+    return 0xff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6c30 size=0x5
 namespace lifted {
 int sub_1009f210();
