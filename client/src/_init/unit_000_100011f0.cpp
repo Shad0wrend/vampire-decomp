@@ -1738,6 +1738,11 @@ ConVar g_104772a8("debug_infinite_ammo", "0", 8192, "Set this to 1 to give playe
 RecvTable g_10486410;
 // END FUNCTION
 
+// FUNCTION: 0x1007cff0 size=0xa
+#include "RecvTable.h"
+RecvTable g_10477278;
+// END FUNCTION
+
 // FUNCTION: 0x10081370 size=0xa
 #include "ConVar.h"
 ConVar g_104870e0("r_DrawBeams", "1", 0);
