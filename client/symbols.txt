@@ -2762,6 +2762,7 @@
 0x1015ef10 func   ?sub_1015ef10@CUnknown10202d10@@QAEPAVCUnknown102029c0@@XZ CUnknown10202d10::sub_1015ef10
 0x1015f010 func   ?sub_1015f010@CUnknown10202d10@@QAEHHPBDHD@Z CUnknown10202d10::sub_1015f010
 0x1015f060 func   ?sub_1015f060@CUnknown10202ec0@@QAEHHHH@Z CUnknown10202ec0::sub_1015f060
+0x1015f080 func   ?sub_1015f080@CUnknown10202d10@@QAE_NH@Z CUnknown10202d10::sub_1015f080
 0x1015f120 func   ?sub_1015f120@CUnknown10202fd0@@QAEXPAUCSlotIter@@@Z CUnknown10202fd0::sub_1015f120
 0x1015f1c0 func   ?sub_1015f1c0@CTableList@@QAEPBDHH@Z CTableList::sub_1015f1c0
 0x1015f210 func   ?sub_1015f210@CUnknown10203110@@QAEHH@Z CUnknown10203110::sub_1015f210
