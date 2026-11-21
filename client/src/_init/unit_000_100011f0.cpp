@@ -3047,6 +3047,13 @@ int g_102ed6c0 = ClientClassInit((DT_TEDynamicLight::ignored *)0);
 RecvTable g_102ed6e4;
 // END FUNCTION
 
+// FUNCTION: 0x100366e0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEEnergySplash { struct ignored; }
+template <> int ClientClassInit<DT_TEEnergySplash::ignored>(DT_TEEnergySplash::ignored *);
+int g_102ed6e0 = ClientClassInit((DT_TEEnergySplash::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10036df0 size=0xa
 #include "RecvTable.h"
 RecvTable g_102eda74;
