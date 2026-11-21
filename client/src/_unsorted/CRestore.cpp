@@ -1,6 +1,56 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1012a6d0 size=0xbe
+#include "CRestore.h"
+
+extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
+extern void *(*g_101e3100)(unsigned int);	// Plat_Alloc
+extern void *(*g_101e3104)(void *, unsigned int);	// Plat_Realloc
+
+struct RestoreSlots
+{
+	virtual int s0();
+	virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8();
+	virtual void s9(unsigned short *p);
+};
+
+void CRestore::sub_1012a6d0(unsigned short *pValue)
+{
+	((RestoreSlots *)this)->s9(pValue);
+	int value = ((RestoreSlots *)this)->s0() + *pValue;
+	int elem = m_vec.m_size;
+	if (m_vec.m_size + 1 > m_vec.m_allocationCount) {
+		if (m_vec.m_growSize != -1) {
+			int num = m_vec.m_size + 1 - m_vec.m_allocationCount;
+			int nAllocationRequested = m_vec.m_allocationCount + num;
+			while (m_vec.m_allocationCount < nAllocationRequested) {
+				if (m_vec.m_allocationCount != 0) {
+					if (m_vec.m_growSize != 0)
+						m_vec.m_allocationCount += m_vec.m_growSize;
+					else
+						m_vec.m_allocationCount += m_vec.m_allocationCount;
+				} else {
+					m_vec.m_allocationCount = 8;
+				}
+			}
+			if (m_vec.m_pMemory)
+				m_vec.m_pMemory = (int *)g_101e3104(m_vec.m_pMemory, m_vec.m_allocationCount * 4);
+			else
+				m_vec.m_pMemory = (int *)g_101e3100(m_vec.m_allocationCount * 4);
+		}
+	}
+	m_vec.m_pElements = m_vec.m_pMemory;
+	m_vec.m_size++;
+	int toMove = m_vec.m_size - elem - 1;
+	if (toMove > 0)
+		memmove(&m_vec.m_pMemory[elem + 1], &m_vec.m_pMemory[elem], toMove * 4);
+	int *p = &m_vec.m_pMemory[elem];
+	if (p)
+		*p = value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a7f0 size=0x42
 #include "utlrbtree.h"
 #include "CRestore.h"
