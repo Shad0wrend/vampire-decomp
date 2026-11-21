@@ -3283,6 +3283,13 @@ int g_103eb508 = ClientClassInit((DT_TESparks::ignored *)0);
 RecvTable g_103eb738;
 // END FUNCTION
 
+// FUNCTION: 0x1003f690 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TESprite { struct ignored; }
+template <> int ClientClassInit<DT_TESprite::ignored>(DT_TESprite::ignored *);
+int g_103eb734 = ClientClassInit((DT_TESprite::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1003f9e0 size=0xa
 #include "RecvTable.h"
 RecvTable g_103eb924;
