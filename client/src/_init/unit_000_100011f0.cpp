@@ -3711,6 +3711,13 @@ int g_104865b8 = ClientClassInit((DT_BaseGrenade::ignored *)0);
 RecvTable g_104867b4;
 // END FUNCTION
 
+// FUNCTION: 0x1007f3e0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseParticleEntity { struct ignored; }
+template <> int ClientClassInit<DT_BaseParticleEntity::ignored>(DT_BaseParticleEntity::ignored *);
+int g_104867b0 = ClientClassInit((DT_BaseParticleEntity::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1007fa00 size=0xa
 #include "RecvTable.h"
 RecvTable g_10486a60;
