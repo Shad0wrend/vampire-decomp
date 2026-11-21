@@ -1978,6 +1978,11 @@ ConVar g_1049e1a8("cl_interpolate", "1.0", 0, "Interpolate entities on the clien
 RecvTable g_1049e170;
 // END FUNCTION
 
+// FUNCTION: 0x1009d620 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049e328;
+// END FUNCTION
+
 // FUNCTION: 0x1009e280 size=0xa
 #include "ConVar.h"
 ConVar g_1049dbd8("cl_simpleshadows", "0", 0);
