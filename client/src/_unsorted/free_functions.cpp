@@ -19077,6 +19077,32 @@ void Range::sub_101480a0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148150 size=0x74
+#include "CUnknown101ddc30.h"
+
+extern char g_102de300[];
+void sub_1015f830(CUnknown101ddc30Kv **ppOut, CUnknown101ddc30Kv *pKV, const char *pszName);
+int sub_10146f10(const char *psz);
+int sub_10146f90(const char *psz);
+
+bool CUnknown101ddc30::sub_10148150(CUnknown101ddc30Kv *pKV)
+{
+	if (pKV) {
+		CUnknown101ddc30Kv *pSub;
+		sub_1015f830(&pSub, pKV, "DisciplineFX");
+		if (pSub)
+			m_pKv = pSub;
+		const char *psz = pKV->vfunc13("Source", g_102de300);
+		if (*psz)
+			m_nSource = sub_10146f10(psz);
+		psz = pKV->vfunc13("Affects", g_102de300);
+		if (*psz)
+			m_nAffects = sub_10146f90(psz);
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101482a0 size=0x8a
 #include "S101df260.h"
 
