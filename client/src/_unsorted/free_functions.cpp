@@ -570,6 +570,33 @@ void CUnknown100dcd00::sub_100437f0(const float *pA, const float *pB, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10044420 size=0x21
+struct CUnkVT100ddc00
+{
+    virtual void vf0();
+    virtual void vf1();
+    virtual void vf2();
+    virtual void vf3(unsigned short value);
+};
+
+extern CUnkVT100ddc00 *g_104a5808;
+
+struct CUnk100ddc00
+{
+    void sub_10044420();
+};
+
+// TARGET: sub_10044420
+void CUnk100ddc00::sub_10044420()
+{
+    unsigned short h = *(unsigned short *)((char *)this + 0x46);
+    if (h != 0xffff) {
+        g_104a5808->vf3(h);
+        *(unsigned short *)((char *)this + 0x46) = 0xffff;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045630 size=0x3b
 #include "Vector.h"
 
