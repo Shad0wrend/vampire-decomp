@@ -25010,6 +25010,18 @@ void sub_1013cfe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d090 size=0xb
+namespace lifted {
+extern int g_105e74d8;
+int sub_1013cfe0();
+}
+int sub_1013d090()
+{
+    lifted::sub_1013cfe0();
+    return lifted::g_105e74d8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d0a0 size=0x25
 struct CUnknown1024b000_Ref
 {
