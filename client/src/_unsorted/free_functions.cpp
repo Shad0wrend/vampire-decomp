@@ -19944,6 +19944,16 @@ char __stdcall sub_101407f0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140900 size=0x5
+namespace lifted {
+int sub_10140a00();
+}
+int sub_10140900()
+{
+    return lifted::sub_10140a00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140a00 size=0x66
 struct Elem1006cd00 { void sub_10140530(); };
 struct S1006cd00 {
