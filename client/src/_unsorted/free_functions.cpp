@@ -28280,6 +28280,17 @@ CUnknown101d7ec0_Entry *CUnknown101d7ec0::sub_10145090(int iKey)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145110 size=0x17
+struct CUnknown10145110 { void * sub_10145110(); };
+void * CUnknown10145110::sub_10145110()
+{
+    *(int *)this = -1;
+    *(int *)((char *)this + 4) = -1;
+    *(int *)((char *)this + 8) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145130 size=0x1
 void sub_10145130()
 {
