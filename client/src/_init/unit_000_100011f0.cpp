@@ -2216,3 +2216,9 @@ ConCommand g_105fb0c8("chooseteam", sub_10173600, 0, 0, 0);
 void sub_10173620(void);
 ConCommand g_105fb040("questlog", sub_10173620, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10173770 size=0xa
+#include "ConCommand.h"
+void sub_10173750(void);
+ConCommand g_105fb06c("hideteam", sub_10173750, 0, 0, 0);
+// END FUNCTION
