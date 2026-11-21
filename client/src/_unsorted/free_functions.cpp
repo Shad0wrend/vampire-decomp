@@ -209,6 +209,13 @@ char sub_100285d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100285e0 size=0x3
+int sub_100285e0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028630 size=0x1
 void sub_10028630()
 {
