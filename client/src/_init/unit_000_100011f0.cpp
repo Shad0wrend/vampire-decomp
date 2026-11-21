@@ -735,3 +735,8 @@ Vector g_104cf544(0.0f, 0.0f, 0.0f);
 #include "ConVar.h"
 ConVar g_104cf7c8("footstep_pc_vol", "0.5", 8576, "PC Step sound volume");
 // END FUNCTION
+
+// FUNCTION: 0x100e6c90 size=0xa
+#include "ConVar.h"
+ConVar g_104cfc00("force_unstick", "0", 8192);
+// END FUNCTION
