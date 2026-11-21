@@ -2192,6 +2192,24 @@ void * CUnknown100bc460::sub_10087a30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087ab0 size=0x3b
+#include "bf_write.h"
+
+// TARGET: bf_write::sub_10087ab0
+void bf_write::sub_10087ab0(void *pData, int nBytes, int iStartBit, int nBits)
+{
+	m_pData = (unsigned long *)pData;
+	m_nDataBytes = nBytes;
+	m_bOverflow = false;
+	if (nBits == -1) {
+		m_nDataBits = nBytes * 8;
+	} else {
+		m_nDataBits = nBits;
+	}
+	m_iCurBit = iStartBit;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087bb0 size=0x233
 #include "bf_read.h"
 
