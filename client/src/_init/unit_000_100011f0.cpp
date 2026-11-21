@@ -3953,6 +3953,13 @@ void * sub_10125080(void);
 InterfaceReg g_104e17e4(sub_10125080, "EntitySpeed_IMaterialProxy003");
 // END FUNCTION
 
+// FUNCTION: 0x10125150 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10125180(void);
+InterfaceReg g_104e17fc(sub_10125180, "EntityRandom_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x10126ab0 size=0xa
 #include "ConVar.h"
 ConVar g_104e1ba0("debug_total_mass_divisor", "4", 8192);
