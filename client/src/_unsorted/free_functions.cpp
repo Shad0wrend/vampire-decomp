@@ -21453,6 +21453,37 @@ void CUnknown101f1c70::sub_101538a0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153910 size=0x52
+struct SEntry {
+	int m_n0;
+	int m_n4;
+	int m_nKey;
+};
+struct SManager {
+	bool sub_10153660(int key);
+	SEntry *sub_10153770(int id);
+};
+extern SManager g_105e8a58;
+
+struct SIdList {
+	int m_nCount;
+	int *m_pIds;
+
+	int sub_10153910(int key);
+};
+
+int SIdList::sub_10153910(int key)
+{
+	if (g_105e8a58.sub_10153660(key)) {
+		for (int i = 0; i < m_nCount; i++) {
+			if (g_105e8a58.sub_10153770(m_pIds[i])->m_nKey == key)
+				return m_pIds[i];
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101539e0 size=0x67
 extern "C" int __cdecl sprintf(char *, const char *, ...);
 void __cdecl sub_1015fbb0(const char *msg);
