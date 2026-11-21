@@ -28650,6 +28650,17 @@ int __fastcall sub_1014ddf0(void *pSelf, int unused, void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014de20 size=0xa
+namespace lifted {
+extern int g_105e8514;
+}
+int sub_1014de20(int a0)
+{
+    lifted::g_105e8514 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014de30 size=0x3
 void __stdcall sub_1014de30(int a0)
 {
