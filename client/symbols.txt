@@ -490,6 +490,7 @@
 0x1015c8f0 func   ?sub_1015c8f0@CVStatInfoList_t@@QAEHPBD@Z CVStatInfoList_t::sub_1015c8f0
 0x1015d350 func   ?sub_1015d350@CVStatList_t@@QAEXHPAHH@Z CVStatList_t::sub_1015d350
 0x1015e580 func   ?sub_1015e580@CVStatListManager_t@@QAEDH@Z CVStatListManager_t::sub_1015e580
+0x1015ecd0 func   ?sub_1015ecd0@CUnknown10202ba0@@QAEPBDH@Z CUnknown10202ba0::sub_1015ecd0
 0x1015f720 func   ?sub_1015f720@@YADPAVCFileParserSlotView@@PBDH1PAUstring_t@@PAPAU2@PAH@Z sub_1015f720
 0x1015f810 func   ?sub_1015f810@@YAHHH@Z sub_1015f810
 0x1015ff70 func   ?sub_1015ff70@CUnknown1006c7d0@@QAEXXZ CUnknown1006c7d0::sub_1015ff70

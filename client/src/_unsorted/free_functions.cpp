@@ -12021,6 +12021,26 @@ char CVStatListManager_t::sub_1015e580(int time)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ecd0 size=0x2b
+#include "CUnknown10202ba0.h"
+#include "CUnknown10202ac0.h"
+
+extern char g_102de300[];
+
+// TARGET: CUnknown10202ba0::sub_1015ecd0
+const char *CUnknown10202ba0::sub_1015ecd0(int index)
+{
+    const char **ppEntry = 0;
+    if (((CUnknown10202ac0 *)this)->sub_1015ed50(&index)) {
+        ppEntry = (const char **)*(char **)((char *)this + 0x10) + index;
+        if (*ppEntry != 0) {
+            return *ppEntry;
+        }
+    }
+    return g_102de300;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"
