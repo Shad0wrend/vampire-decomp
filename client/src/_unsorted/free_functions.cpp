@@ -6669,6 +6669,52 @@ bool sub_100dac00(const Vector &boxMin1, const Vector &boxMax1, const Vector &bo
 }
 // END FUNCTION
 
+// FUNCTION: 0x100daf90 size=0x127
+#include "Vector.h"
+
+struct Vec3 { float x, y, z; };
+
+struct BoxObj {
+	Vec3 m_vMin;
+	Vec3 m_vMax;
+	char m_pad18[0xc];
+	Vec3 m_vExt;
+	char m_pad30;
+	bool m_bFlag;
+};
+
+bool sub_100dac00(const Vector &a, const Vector &b, const Vector &c, const Vector &d);
+bool sub_100dae30(const Vec3 &a, const Vec3 &b, const Vec3 &c, const Vec3 &d, float e);
+extern float g_101e34f0;
+
+bool sub_100daf90(const Vector &a, const Vector &b, BoxObj *obj, float margin)
+{
+	float v[6];
+	if (!obj->m_bFlag) {
+		v[3] = obj->m_vMin.x - obj->m_vExt.x;
+		v[4] = obj->m_vMin.y - obj->m_vExt.y;
+		v[5] = obj->m_vMin.z - obj->m_vExt.z;
+		v[0] = obj->m_vMin.x + obj->m_vExt.x;
+		v[1] = obj->m_vExt.y + obj->m_vMin.y;
+		v[2] = obj->m_vExt.z + obj->m_vMin.z;
+		if (margin != g_101e34f0) {
+			v[3] -= margin; v[4] -= margin; v[5] -= margin;
+			v[0] += margin; v[1] += margin; v[2] += margin;
+		}
+		return sub_100dac00(a, b, *(Vector *)&v[3], *(Vector *)&v[0]);
+	}
+	v[0] = a.x - obj->m_vExt.x;
+	v[1] = a.y - obj->m_vExt.y;
+	v[2] = a.z - obj->m_vExt.z;
+	v[3] = b.x + obj->m_vExt.x;
+	float ey = obj->m_vExt.y;
+	float ez = obj->m_vExt.z;
+	v[4] = ey + b.y;
+	v[5] = ez + b.z;
+	return sub_100dae30(*(Vec3 *)&v[0], *(Vec3 *)&v[3], obj->m_vMin, obj->m_vMax, margin);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100db300 size=0x57
 #include "Vector.h"
 struct RayView10240ac0 { Vector m_vecStart; Vector m_vecDelta; };
