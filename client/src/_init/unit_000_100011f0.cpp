@@ -653,3 +653,8 @@ ConVar g_104a4898("phoneme_delay", "0", 128);
 #include "ConVar.h"
 ConVar g_104a4d28("flex_rules", "1", 128);
 // END FUNCTION
+
+// FUNCTION: 0x100c3aa0 size=0xa
+#include "ConVar.h"
+ConVar g_104a48f8("print_flex_weights", "0", 128);
+// END FUNCTION
