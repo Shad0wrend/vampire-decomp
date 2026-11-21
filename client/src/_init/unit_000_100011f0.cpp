@@ -1538,3 +1538,9 @@ ConCommand g_104d38c4("impulse", sub_101022d0, 0, 0, 0);
 void sub_10101f60(void);
 ConCommand g_104d3afc("+klook", sub_10101f60, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105300 size=0xa
+#include "ConCommand.h"
+void sub_10101f70(void);
+ConCommand g_104d2dec("-klook", sub_10101f70, 0, 0, 0);
+// END FUNCTION
