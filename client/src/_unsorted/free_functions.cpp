@@ -7012,6 +7012,15 @@ int CUnknown10087b10::sub_10087b10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087b20 size=0xa
+struct CUnknown10087b20 { int sub_10087b20(int); };
+int CUnknown10087b20::sub_10087b20(int a0)
+{
+    *(int *)((char *)this + 0x14) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087b30 size=0x7b
 #include "bf_read.h"
 
