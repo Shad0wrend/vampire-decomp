@@ -12709,6 +12709,35 @@ int CUnknown10202ec0::sub_1015f060(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f120 size=0x3f
+struct CSlotIter
+{
+	virtual int slot0(const char *pszName, int a);
+	virtual int slot1();
+	virtual int slot2();
+	virtual int slot3();
+	virtual CSlotIter *slot4();
+	virtual CSlotIter *slot5();
+};
+
+extern char g_102cc654[];
+
+struct CUnknown10202fd0
+{
+	void sub_1015f010(CSlotIter *pObj, int nValue);	// stub 0x10009d95, called directly
+	void sub_1015f120(CSlotIter *pObj);
+};
+
+// TARGET: CUnknown10202fd0::sub_1015f120
+void CUnknown10202fd0::sub_1015f120(CSlotIter *pObj)
+{
+	for (CSlotIter *p = pObj->slot4(); p; p = p->slot5()) {
+		int nValue = p->slot0(g_102cc654, 1);
+		sub_1015f010(pObj, nValue);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"
