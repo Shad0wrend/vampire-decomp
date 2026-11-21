@@ -18826,6 +18826,25 @@ bool CHistoryList::sub_1014e2a0(const char *pszFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e590 size=0x18
+struct CUnknown101e9f10
+{
+    char pad[4];
+    int m_nCount;
+
+    char sub_1014e590(int index);
+};
+
+char CUnknown101e9f10::sub_1014e590(int index)
+{
+    if (index > -1 && index < m_nCount)
+    {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e630 size=0x4d
 extern "C" int __cdecl sub_101e28e0(const char *, const char *);
 struct CNamePtr {
