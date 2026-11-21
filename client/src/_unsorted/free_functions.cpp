@@ -40612,6 +40612,41 @@ CUnknown101b61a0 &CUnknown101b61a0::sub_10130860(const CUnknown101b61a0 &other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101308d0 size=0x9e
+#include "CUnknown101b6250.h"
+
+extern char *(*g_101e3188)(char *dest, const char *src, int maxLen);
+
+struct Five
+{
+	int a, b, c, d, e;
+	void Zero() { a = 0; b = 0; c = 0; d = 0; e = 0; }
+};
+
+CUnknown101b6250 *CUnknown101b6250::sub_101308d0()
+{
+	char *(*Q_strncpy)(char *dest, const char *src, int maxLen) = g_101e3188;
+	m_nField00 = -1;
+	((Five *)&m_nField2c)->Zero();
+	((Five *)&m_nField40)->Zero();
+	m_nField0c = 0;
+	Q_strncpy(m_szChannel, "CHAN_AUTO", 0x20);
+	m_flChannelScale = 1.0f;
+	m_nField14 = 0;
+	Q_strncpy(m_szVolume, "VOL_NORM", 0x20);
+	m_flVolume = 100.0f;
+	m_nField1c = 0;
+	Q_strncpy(m_szPitch, "PITCH_NORM", 0x20);
+	m_flPitch = 75.0f;
+	m_nField24 = 0;
+	Q_strncpy(m_szSoundLevel, "SNDLVL_NORM", 0x20);
+	m_bField28 = 0;
+	m_bField29 = 1;
+	m_bField54 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
