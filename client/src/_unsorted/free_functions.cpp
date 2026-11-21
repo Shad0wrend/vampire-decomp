@@ -21559,6 +21559,12 @@ void CPtrList101d6400::sub_10151890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152520 size=0x1
+void sub_10152520()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152530 size=0x5a
 extern char g_102de300[];
 int *sub_1015fc40(void *pTemp, const char *psz);
