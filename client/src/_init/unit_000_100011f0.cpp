@@ -1460,3 +1460,9 @@ ConCommand g_104d3c90("-moveleft", sub_101020c0, 0, 0, 0);
 void sub_101020d0(void);
 ConCommand g_104d3d24("+moveright", sub_101020d0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10104ef0 size=0xa
+#include "ConCommand.h"
+void sub_101020e0(void);
+ConCommand g_104d334c("-moveright", sub_101020e0, 0, 0, 0);
+// END FUNCTION
