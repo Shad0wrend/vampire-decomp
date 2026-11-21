@@ -43573,6 +43573,41 @@ int __stdcall sub_10153970(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153980 size=0x59
+#include "StatDefault.h"
+
+struct StatOwner
+{
+	StatDefault *sub_10160590(int id);
+};
+
+struct CTableList
+{
+	const char *sub_1015f1c0(int a, int b);
+};
+
+struct CReactionNames
+{
+	int sub_10153970(int a, int b);
+	char *sub_10153980(int a, int b);
+};
+
+extern StatOwner g_105f985c;
+extern CTableList g_105f93c0;
+extern int g_105e8aa8;
+extern int g_105e8aa4;
+extern char g_105e89d8[];
+extern "C" int sprintf(char *, const char *, ...);
+
+// TARGET: CReactionNames::sub_10153980
+char *CReactionNames::sub_10153980(int a, int b)
+{
+	int n = sub_10153970(a, b);
+	sprintf(g_105e89d8, "%d-%s", n, g_105f93c0.sub_1015f1c0(g_105e8aa4, g_105f985c.sub_10160590(g_105e8aa8)->sub_10160250(n)));
+	return g_105e89d8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101539e0 size=0x67
 extern "C" int __cdecl sprintf(char *, const char *, ...);
 void __cdecl sub_1015fbb0(const char *msg);
