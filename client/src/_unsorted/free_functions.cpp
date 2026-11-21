@@ -35671,6 +35671,17 @@ int CUnknown101bc8b0::sub_101bc8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bd770 size=0x8
+namespace lifted {
+struct C101c9db0 { int sub_101c9db0(); };
+}
+struct CUnknown101bd770 { int sub_101bd770(); };
+int CUnknown101bd770::sub_101bd770()
+{
+    return ((lifted::C101c9db0 *)(*(int *)((char *)this + 0x68)))->sub_101c9db0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be160 size=0xaa
 #include "CUtlVector4.h"
 
