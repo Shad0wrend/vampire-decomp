@@ -417,6 +417,7 @@
 0x100232d0 func   ?sub_100232d0@@YAHXZ sub_100232d0
 0x100233f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMuseumStorageKey@@@Z ClientClassInit
 0x10023550 func   ?sub_10023550@@YAHXZ sub_10023550
+0x10023670 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKNetcafeOfficeKey@@@Z ClientClassInit
 0x100237d0 func   ?sub_100237d0@@YAHXZ sub_100237d0
 0x10023a50 func   ?sub_10023a50@@YAHXZ sub_10023a50
 0x10023cd0 func   ?sub_10023cd0@@YAHXZ sub_10023cd0
