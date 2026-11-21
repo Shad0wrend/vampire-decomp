@@ -25145,6 +25145,16 @@ void CVTraitEffectGroup_t::sub_10157280(void *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157380 size=0x5
+namespace lifted {
+int sub_10157480();
+}
+int sub_10157380()
+{
+    return lifted::sub_10157480();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157390 size=0xeb
 #include "CUnknown101f7960.h"
 
