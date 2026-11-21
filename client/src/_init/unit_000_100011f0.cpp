@@ -577,3 +577,8 @@ ConVar g_104a3c98("rope_drawlines", "0", 0);
 #include "ConVar.h"
 ConVar g_104a3b48("rope_subdiv", "2", 0, "Rope subdivision amount", true, 0.0f, true, 8.0f);
 // END FUNCTION
+
+// FUNCTION: 0x100be6e0 size=0xa
+#include "ConVar.h"
+ConVar g_104a4118("rope_collide", "0", 0, "Collide rope with the world");
+// END FUNCTION
