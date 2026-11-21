@@ -3216,6 +3216,7 @@
 0x1018bcc0 func   ?sub_1018bcc0@CUnknown1018bcc0@@QAEXXZ CUnknown1018bcc0::sub_1018bcc0
 0x1018c710 func   ?sub_1018c710@@YAXXZ sub_1018c710
 0x1018c840 func   ?sub_1018c840@@YADXZ sub_1018c840
+0x1018ca70 func   ??1VHLabel@@UAE@XZ VHLabel::~VHLabel
 0x1018ca70 func   ?sub_1018ca70@CUnknown1018ca70@@QAEHXZ CUnknown1018ca70::sub_1018ca70
 0x1018cc70 func   ?sub_1018cc70@CUnknown1018cc70@@QAEHXZ CUnknown1018cc70::sub_1018cc70
 0x1018d160 func   ?sub_1018d160@@YAHXZ sub_1018d160
