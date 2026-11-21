@@ -2489,6 +2489,13 @@ void * sub_100e1a10(void);
 InterfaceReg g_104cf518(sub_100e1a10, "Dummy_IMaterialProxy003");
 // END FUNCTION
 
+// FUNCTION: 0x100e1a70 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100e1aa0(void);
+InterfaceReg g_104cf538(sub_100e1aa0, "IEffects001");
+// END FUNCTION
+
 // FUNCTION: 0x100e29e0 size=0x5
 #include "Vector.h"
 Vector g_104cf544(0.0f, 0.0f, 0.0f);
