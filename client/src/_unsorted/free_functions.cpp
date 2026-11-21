@@ -27255,6 +27255,13 @@ char *sub_1018e330(char *pBuffer, const char *pszFormat, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10193270 size=0x3
+char sub_10193270()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197a20 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
