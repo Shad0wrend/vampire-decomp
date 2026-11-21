@@ -1755,6 +1755,7 @@
 0x100bce00 func   ?sub_100bce00@CPlayerLocalPredictedData@@QAEPAV1@XZ CPlayerLocalPredictedData::sub_100bce00
 0x100bce50 func   ?sub_100bce50@@YAHXZ sub_100bce50
 0x100bcf50 func   ?ClientClassInit@@YAHPAUignored@DT_PlayerResource@@@Z ClientClassInit
+0x100bd330 func   ??_GC_PlayerResource@@UAEPAXI@Z ??_GC_PlayerResource@@UAEPAXI@Z
 0x100bd350 func   ??1C_PlayerResource@@UAE@XZ C_PlayerResource::~C_PlayerResource
 0x100bd530 func   ?sub_100bd530@@YAHXZ sub_100bd530
 0x100bd720 func   ?sub_100bd720@@YAHXZ sub_100bd720
