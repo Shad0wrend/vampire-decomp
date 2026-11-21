@@ -5073,6 +5073,15 @@ char CUnknown1005f290::sub_1005f290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f6b0 size=0xa
+struct CUnknown1005f6b0 { char sub_1005f6b0(char); };
+char CUnknown1005f6b0::sub_1005f6b0(char a0)
+{
+    *(char *)((char *)this + 0x24) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005f6c0 size=0x6
 int sub_1005f6c0()
 {
