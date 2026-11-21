@@ -8021,6 +8021,13 @@ void sub_100e0100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0240 size=0x3
+char sub_100e0240()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1040 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
