@@ -13540,6 +13540,25 @@ int sub_100cb560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb570 size=0x20
+namespace lifted {
+extern char g_10233f44;
+extern char g_104a579c;
+}
+struct CUnknown100cb570 { void * sub_100cb570(); };
+void * CUnknown100cb570::sub_100cb570()
+{
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)this = (int)&lifted::g_10233f44;
+    lifted::g_104a579c = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cbee0 size=0x10
 namespace lifted {
 extern char g_104a573c;
