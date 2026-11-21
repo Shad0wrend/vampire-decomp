@@ -312,6 +312,7 @@
 0x1012afb0 func   ?vfunc30@CRestore@@UAEHPAIHH@Z CRestore::vfunc30
 0x1012b280 func   ?vfunc24@CRestore@@UAEHPAMHH@Z CRestore::vfunc24
 0x1012b2e0 func   ?vfunc25@CRestore@@UAEHPAVVector@@HH@Z CRestore::vfunc25
+0x1012b3d0 func   ?sub_1012b3d0@@YAHXZ sub_1012b3d0
 0x1012ba50 func   ?vfunc2@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc2
 0x1012bac0 func   ?vfunc3@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc3
 0x1012bcd0 func   ?vfunc4@CSaveRestoreBlockSet@@QAEXXZ CSaveRestoreBlockSet::vfunc4

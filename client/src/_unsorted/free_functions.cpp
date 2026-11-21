@@ -7458,6 +7458,20 @@ CRestoreSaveEnt *CRestore::sub_1012aec0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012b3d0 size=0x1a
+namespace lifted {
+extern int g_102c3508;
+extern int g_102c350c;
+extern char g_102c354c;
+}
+int sub_1012b3d0()
+{
+    lifted::g_102c350c = 9;
+    lifted::g_102c3508 = (int)&lifted::g_102c354c;
+    return (int)&lifted::g_102c3508;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c3d0 size=0xa4
 #include "CUtlVector40.h"
 #include "CUnknown101a59f0.h"
