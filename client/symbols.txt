@@ -59,6 +59,7 @@
 0x10089500 func   ?sub_10089500@@YAXPAUStudioHdrX@@PBMAAUSeqDescX@@HAAMAAH@Z sub_10089500
 0x10089660 func   ?sub_10089660@@YAXPADHHH@Z sub_10089660
 0x100896c0 func   ?sub_100896c0@@YAXPAUStudioHdr@@QAVVector@@QAVQuaternion@@@Z sub_100896c0
+0x10089c40 func   ?sub_10089c40@@YAXPADPAUV3@@PAUQ4@@HHPAM0@Z sub_10089c40
 0x1008a110 func   ?sub_1008a110@@YAXHHHHHHHM@Z sub_1008a110
 0x1008a8e0 func   ?sub_1008a8e0@@YAXPAUStudioHdr@@PBM111HPAUmatrix3x4_t@@PAUStudioBoneMask@@@Z sub_1008a8e0
 0x1008ae50 func   ?sub_1008ae50@@YAXPAUBoneView@@HPAUBoneAccView@@@Z sub_1008ae50
