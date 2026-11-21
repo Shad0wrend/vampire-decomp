@@ -15780,6 +15780,28 @@ int sub_100e1890(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e18a0 size=0x39
+#include "RecvTable.h"
+
+void RecvProxy_StringToString(const CRecvProxyData *pData, void *pStruct, void *pOut)
+{
+	char *pStrOut = (char *)pOut;
+	if (pData->m_pRecvProp->m_StringBufferSize <= 0)
+	{
+		return;
+	}
+
+	for (int i = 0; i < pData->m_pRecvProp->m_StringBufferSize; i++)
+	{
+		pStrOut[i] = pData->m_Value.m_pString[i];
+		if (pStrOut[i] == 0)
+			break;
+	}
+
+	pStrOut[pData->m_pRecvProp->m_StringBufferSize - 1] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e18e0 size=0xb
 int sub_100e18e0(int a0, int a1)
 {
