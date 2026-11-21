@@ -12317,6 +12317,13 @@ char sub_10115f90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115fa0 size=0x3
+char sub_10115fa0()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117ba0 size=0x8d
 #include "CUtlLinkedList8.h"
 
