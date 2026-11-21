@@ -3158,6 +3158,86 @@ void sub_100cdb00(char *pTable, const char *psz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdb90 size=0x26c
+extern unsigned int g_10234000[256];
+#define pulCRCTable g_10234000
+
+void sub_100cdb90(unsigned int *pulCRC, const void *pBuffer, int nBuffer)
+{
+	unsigned int ulCrc = *pulCRC;
+	unsigned char *pb = (unsigned char *)pBuffer;
+	unsigned int nFront;
+	int nMain;
+
+JustAfew:
+
+	switch (nBuffer)
+	{
+	case 7:
+		ulCrc  = pulCRCTable[*pb++ ^ (unsigned char)ulCrc] ^ (ulCrc >> 8);
+
+	case 6:
+		ulCrc  = pulCRCTable[*pb++ ^ (unsigned char)ulCrc] ^ (ulCrc >> 8);
+
+	case 5:
+		ulCrc  = pulCRCTable[*pb++ ^ (unsigned char)ulCrc] ^ (ulCrc >> 8);
+
+	case 4:
+		ulCrc ^= *(unsigned int *)pb;
+		ulCrc  = pulCRCTable[(unsigned char)ulCrc] ^ (ulCrc >> 8);
+		ulCrc  = pulCRCTable[(unsigned char)ulCrc] ^ (ulCrc >> 8);
+		ulCrc  = pulCRCTable[(unsigned char)ulCrc] ^ (ulCrc >> 8);
+		ulCrc  = pulCRCTable[(unsigned char)ulCrc] ^ (ulCrc >> 8);
+		*pulCRC = ulCrc;
+		return;
+
+	case 3:
+		ulCrc  = pulCRCTable[*pb++ ^ (unsigned char)ulCrc] ^ (ulCrc >> 8);
+
+	case 2:
+		ulCrc  = pulCRCTable[*pb++ ^ (unsigned char)ulCrc] ^ (ulCrc >> 8);
+
+	case 1:
+		ulCrc  = pulCRCTable[*pb++ ^ (unsigned char)ulCrc] ^ (ulCrc >> 8);
+
+	case 0:
+		*pulCRC = ulCrc;
+		return;
+	}
+
+	nFront = ((unsigned int)pb) & 3;
+	nBuffer -= nFront;
+	switch (nFront)
+	{
+	case 3:
+		ulCrc  = pulCRCTable[*pb++ ^ (unsigned char)ulCrc] ^ (ulCrc >> 8);
+	case 2:
+		ulCrc  = pulCRCTable[*pb++ ^ (unsigned char)ulCrc] ^ (ulCrc >> 8);
+	case 1:
+		ulCrc  = pulCRCTable[*pb++ ^ (unsigned char)ulCrc] ^ (ulCrc >> 8);
+	}
+
+	nMain = nBuffer >> 3;
+	while (nMain--)
+	{
+		ulCrc ^= *(unsigned int *)pb;
+		ulCrc  = pulCRCTable[(unsigned char)ulCrc] ^ (ulCrc >> 8);
+		ulCrc  = pulCRCTable[(unsigned char)ulCrc] ^ (ulCrc >> 8);
+		ulCrc  = pulCRCTable[(unsigned char)ulCrc] ^ (ulCrc >> 8);
+		ulCrc  = pulCRCTable[(unsigned char)ulCrc] ^ (ulCrc >> 8);
+		ulCrc ^= *(unsigned int *)(pb + 4);
+		ulCrc  = pulCRCTable[(unsigned char)ulCrc] ^ (ulCrc >> 8);
+		ulCrc  = pulCRCTable[(unsigned char)ulCrc] ^ (ulCrc >> 8);
+		ulCrc  = pulCRCTable[(unsigned char)ulCrc] ^ (ulCrc >> 8);
+		ulCrc  = pulCRCTable[(unsigned char)ulCrc] ^ (ulCrc >> 8);
+		pb += 8;
+	}
+
+	nBuffer &= 7;
+	goto JustAfew;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d05d0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
