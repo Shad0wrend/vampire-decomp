@@ -29,6 +29,14 @@ void CAutoGameSystem::vfunc6()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9b20 size=0x3
+#include "CDirtySpatialPartitionEntityList.h"
+bool CAutoGameSystem::vfunc0()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9b30 size=0x1
 #include "CDirtySpatialPartitionEntityList.h"
 void CAutoGameSystem::vfunc1()
