@@ -1727,6 +1727,7 @@
 0x100bb410 func   ??_GCDustEffect@@UAEPAXI@Z ??_GCDustEffect@@UAEPAXI@Z
 0x100bb4f0 func   ?sub_100bb4f0@@YAHXZ sub_100bb4f0
 0x100bb5f0 func   ?ClientClassInit@@YAHPAUignored@DT_Func_LOD@@@Z ClientClassInit
+0x100bb6f0 func   ??_GC_Func_LOD@@UAEPAXI@Z ??_GC_Func_LOD@@UAEPAXI@Z
 0x100bb9a0 func   ?sub_100bb9a0@@YAHXZ sub_100bb9a0
 0x100bbae0 func   ?ClientClassInit@@YAHPAUignored@DT_FuncMonitor@@@Z ClientClassInit
 0x100bbb80 func   ?sub_100bbb80@@YAHXZ sub_100bbb80
