@@ -25,3 +25,8 @@ ConVar g_102e26c8("torchlight_enable", "0", 0);
 #include "ConVar.h"
 ConVar g_102e71d8("torchlight_fast", "17", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10027200 size=0xa
+#include "ConVar.h"
+ConVar g_102e7220("torchlight_slow", "7", 0);
+// END FUNCTION
