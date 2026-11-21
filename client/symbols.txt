@@ -614,6 +614,7 @@
 0x10087380 func   ?sub_10087380@bf_write@@QAEXABVVector@@@Z bf_write::sub_10087380
 0x10087650 func   ?sub_10087650@bf_write@@QAEXABVVector@@@Z bf_write::sub_10087650
 0x100877f0 func   ?sub_100877f0@bf_write@@QAEXPBVVector@@@Z bf_write::sub_100877f0
+0x10087820 func   ?sub_10087820@@YGHH@Z sub_10087820
 0x10087830 func   ?sub_10087830@bf_write@@QAEXI@Z bf_write::sub_10087830
 0x100878f0 func   ?sub_100878f0@bf_write@@QAEXI@Z bf_write::sub_100878f0
 0x100879e0 func   ?sub_100879e0@CStrParser@@QAE_NPBD@Z CStrParser::sub_100879e0

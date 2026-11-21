@@ -7031,6 +7031,16 @@ void bf_write::sub_100877f0(const Vector *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087820 size=0xf
+namespace lifted {
+int __stdcall sub_100866b0(int, int);
+}
+int __stdcall sub_10087820(int a0)
+{
+    return lifted::sub_100866b0(a0, 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087830 size=0xad
 #include "bf_write.h"
 
