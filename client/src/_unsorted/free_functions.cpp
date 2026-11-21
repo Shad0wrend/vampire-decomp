@@ -6827,6 +6827,62 @@ bool sub_10127320(CRagdollLayout *pRagdoll, CRagdollStudio *pStudio, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101273b0 size=0x116
+#include "QAngle.h"
+#include "Vector.h"
+struct CPhysCollide;
+struct SBoundsObj {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21(); virtual void v22(); virtual void v23(); virtual void v24();
+	virtual void v25(); virtual void v26(); virtual void v27(); virtual void v28(); virtual void v29();
+	virtual void v30(); virtual void v31(); virtual void v32(); virtual void v33(); virtual void v34();
+	virtual void v35(); virtual void v36();
+	virtual void GetPosition(Vector *pos, QAngle *ang);
+	virtual void v38(); virtual void v39(); virtual void v40(); virtual void v41(); virtual void v42();
+	virtual void v43(); virtual void v44(); virtual void v45(); virtual void v46(); virtual void v47();
+	virtual void v48();
+	virtual const CPhysCollide *GetCollide();
+};
+struct SBoundsEntry {
+	SBoundsObj *m_pObj;
+	int m_unk4; int m_unk8; int m_unkc; int m_unk10; int m_unk14;
+};
+struct SBoundsList {
+	int m_nCount;
+	int m_unk4; int m_unk8; int m_unkc; int m_unk10;
+	SBoundsEntry m_Entries[1];
+};
+struct SBoundsCollision {
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17();
+	virtual void CollideGetAABB(Vector &mins, Vector &maxs, const CPhysCollide *pCollide, const Vector &origin, const QAngle &angles);
+};
+extern SBoundsCollision *g_104e0c8c;
+
+void sub_101273b0(SBoundsList *pList, const Vector &origin, Vector &mins, Vector &maxs)
+{
+	mins = origin;
+	maxs = origin;
+	for (int i = 0; i < pList->m_nCount; i++) {
+		SBoundsObj *pObj = pList->m_Entries[i].m_pObj;
+		Vector pos;
+		QAngle ang;
+		pObj->GetPosition(&pos, &ang);
+		Vector lo, hi;
+		g_104e0c8c->CollideGetAABB(lo, hi, pObj->GetCollide(), pos, ang);
+		for (int k = 0; k < 3; k++) {
+			if (lo[k] < mins[k]) mins[k] = lo[k];
+			if (hi[k] > maxs[k]) maxs[k] = hi[k];
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127830 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
