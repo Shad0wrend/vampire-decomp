@@ -855,6 +855,7 @@
 0x100bb4f0 func   ?sub_100bb4f0@@YAHXZ sub_100bb4f0
 0x100bb9a0 func   ?sub_100bb9a0@@YAHXZ sub_100bb9a0
 0x100bbb80 func   ?sub_100bbb80@@YAHXZ sub_100bbb80
+0x100bbb90 func   ?sub_100bbb90@CUnknown100bbb90@@QAEPAXXZ CUnknown100bbb90::sub_100bbb90
 0x100bbe40 func   ?sub_100bbe40@@YAHXZ sub_100bbe40
 0x100bc170 func   ?sub_100bc170@@YGHHH@Z sub_100bc170
 0x100bc330 func   ?sub_100bc330@@YAHXZ sub_100bc330

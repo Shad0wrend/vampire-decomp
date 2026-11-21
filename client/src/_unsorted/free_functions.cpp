@@ -11537,6 +11537,19 @@ int sub_100bbb80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbb90 size=0x10
+namespace lifted {
+extern char g_10230c48;
+}
+struct CUnknown100bbb90 { void * sub_100bbb90(); };
+void * CUnknown100bbb90::sub_100bbb90()
+{
+    *(int *)this = (int)&lifted::g_10230c48;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bbe40 size=0x6
 namespace lifted {
 extern char g_104a2dd4;
