@@ -709,6 +709,7 @@
 0x100ac780 func   ?sub_100ac780@CUnknown100ac780@@QAEXXZ CUnknown100ac780::sub_100ac780
 0x100ad790 func   ?sub_100ad790@@YAHXZ sub_100ad790
 0x100ad7a0 func   ?sub_100ad7a0@@YAHXZ sub_100ad7a0
+0x100add50 func   ?sub_100add50@@YAHXZ sub_100add50
 0x100ae060 func   ?sub_100ae060@@YADXZ sub_100ae060
 0x100b4d30 func   ?sub_100b4d30@CUtlVector40@@QAEXH@Z CUtlVector40::sub_100b4d30
 0x100b4dc0 func   ?sub_100b4dc0@UtlVec40@@QAEXHH@Z UtlVec40::sub_100b4dc0
