@@ -56705,6 +56705,32 @@ const char *CUnknown10202ba0::sub_1015ecd0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ed00 size=0x41
+extern "C" int _strcmpi(const char *a, const char *b);
+
+struct CUnknown10202a50 {
+    char m_pad0000[0xc];
+    int m_nCount;
+    const char *sub_1015ecd0(int index);
+    int sub_1015ed00(const char *name);
+};
+
+// TARGET: sub_1015ed00
+int CUnknown10202a50::sub_1015ed00(const char *name)
+{
+    int i = 0;
+    if (m_nCount > 0) {
+        do {
+            if (_strcmpi(sub_1015ecd0(i), name) == 0) {
+                return i;
+            }
+            i++;
+        } while (i < m_nCount);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ed90 size=0x66
 #include "CUnknown10202b10.h"
 extern char g_102de300[];
