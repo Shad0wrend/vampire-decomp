@@ -429,6 +429,7 @@
 0x1004bba0 func   ?sub_1004bba0@CUnknown1004bba0@@QAEHXZ CUnknown1004bba0::sub_1004bba0
 0x1004bbb0 func   ?sub_1004bbb0@@YAHXZ sub_1004bbb0
 0x1004bbc0 func   ?sub_1004bbc0@CUnknown1004bbc0@@QAEDXZ CUnknown1004bbc0::sub_1004bbc0
+0x1004bdd0 func   ?sub_1004bdd0@CUnknown1004bdd0@@QAEXXZ CUnknown1004bdd0::sub_1004bdd0
 0x1004d410 func   ?sub_1004d410@@YGXHH@Z sub_1004d410
 0x1004d490 func   ?sub_1004d490@CUnknown1004d490@@QAEDXZ CUnknown1004d490::sub_1004d490
 0x1004d4a0 func   ?sub_1004d4a0@@YAHXZ sub_1004d4a0

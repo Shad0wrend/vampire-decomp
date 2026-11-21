@@ -4437,6 +4437,14 @@ char CUnknown1004bbc0::sub_1004bbc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004bdd0 size=0xb
+struct CUnknown1004bdd0 { void sub_1004bdd0(); };
+void CUnknown1004bdd0::sub_1004bdd0()
+{
+    *(int *)((char *)this + 0x1a4) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d410 size=0x3
 void __stdcall sub_1004d410(int a0, int a1)
 {
