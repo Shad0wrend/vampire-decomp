@@ -35439,6 +35439,40 @@ void __fastcall sub_10133630(void *pSelf, int unused, float scale)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133680 size=0x80
+#include "utlmemory.h"
+#include "utlvector.h"
+#include "CUtlVectorDataOps.h"
+#include "saverestore_utlvector.h"
+class ISaveRestoreOps;
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    ISaveRestoreOps *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern int g_102c5034[2];
+int *sub_10133680()
+{
+    static typedescription_t dataDesc[] = {
+        { 0, 0, {0, 0}, 0, 0, 0, 0, 0, 0, 0, 0 },
+        { 4, "m_Flags", {4, 0}, 1, 2 },
+        { 10, "m_Recipients", {8, 0}, 1, 2, 0, (ISaveRestoreOps *)CUtlVectorDataopsInstantiator<CUtlVector<int, CUtlMemory<int> >, 4>::GetDataOps((CUtlVector<int, CUtlMemory<int> > *)0), 0 },
+    };
+    g_102c5034[1] = sizeof(dataDesc) / sizeof(dataDesc[0]) - 1;
+    g_102c5034[0] = (int)&dataDesc[1];
+    return g_102c5034;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133780 size=0x1a
 namespace lifted {
 extern int g_102c50d4;
