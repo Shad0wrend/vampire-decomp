@@ -4949,6 +4949,16 @@ void sub_10067d00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067f00 size=0x6
+namespace lifted {
+extern int g_10477104;
+}
+int sub_10067f00()
+{
+    return lifted::g_10477104;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067f10 size=0x43
 struct S8 { int a; unsigned short b; char c; char d; };
 extern S8 *g_104770f8;
