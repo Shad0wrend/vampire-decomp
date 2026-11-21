@@ -714,6 +714,46 @@ bool sub_1004ba90(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e830 size=0x67
+extern "C" {
+__declspec(dllimport) void* Plat_Alloc(int size);
+__declspec(dllimport) void* Plat_Realloc(void* p, int size);
+}
+
+struct UtlMem {
+	int* m_pMemory;
+	int m_nAllocationCount;
+	int m_nGrowSize;
+	void sub_1004e830(int num);
+};
+
+// TARGET: UtlMem::sub_1004e830
+void UtlMem::sub_1004e830(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int newAlloc = m_nAllocationCount;
+	int target = newAlloc + num;
+	if (newAlloc < target) {
+		do {
+			if (newAlloc != 0) {
+				if (m_nGrowSize != 0)
+					newAlloc += m_nGrowSize;
+				else
+					newAlloc += newAlloc;
+			} else {
+				newAlloc = 8;
+			}
+		} while (newAlloc < target);
+		m_nAllocationCount = newAlloc;
+	}
+	if (m_pMemory)
+		m_pMemory = (int*)Plat_Realloc(m_pMemory, m_nAllocationCount * 4);
+	else
+		m_pMemory = (int*)Plat_Alloc(m_nAllocationCount * 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050100 size=0x3d
 #include "CUtlVector16.h"
 
