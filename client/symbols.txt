@@ -2081,6 +2081,7 @@
 0x1012d9d0 func   ?sub_1012d9d0@@YAPBDH@Z sub_1012d9d0
 0x1012da10 func   ?sub_1012da10@CRangeView@@QAEPBDXZ CRangeView::sub_1012da10
 0x1012dab0 func   ?sub_1012dab0@CUnknown101b2570@@QAEPBDXZ CUnknown101b2570::sub_1012dab0
+0x1012db70 func   ?sub_1012db70@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_1012db70
 0x1012dbf0 func   ?sub_1012dbf0@@YAHPBD@Z sub_1012dbf0
 0x1012dd00 func   ?sub_1012dd00@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_1012dd00
 0x1012dd70 func   ?sub_1012dd70@CSoundEmitterSystemBase@@QAEPAV1@XZ CSoundEmitterSystemBase::sub_1012dd70

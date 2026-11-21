@@ -39713,6 +39713,24 @@ const char *CUnknown101b2570::sub_1012dab0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012db70 size=0x4b
+#include "CUnknown101b2570.h"
+SFloatPair sub_10107010(const char *psz);
+extern "C" __declspec(dllimport) int Q_strcasecmp(const char *, const char *);
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+// TARGET: CUnknown101b2570::sub_1012db70
+void CUnknown101b2570::sub_1012db70(const char *volume)
+{
+    if (Q_strcasecmp(volume, "VOL_NORM") == 0) {
+        m_volume.a = 1.0f;
+        m_volume.b = 0.0f;
+    } else {
+        m_volume = sub_10107010(volume);
+    }
+    Q_strncpy(m_szVolume, volume, 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012dbf0 size=0x7b
 struct ChanEnt { int value; const char *name; };
 extern ChanEnt g_102c4228[7];
