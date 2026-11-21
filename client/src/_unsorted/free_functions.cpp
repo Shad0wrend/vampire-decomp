@@ -27289,6 +27289,35 @@ void sub_100c4270(const char *in, char *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c48e0 size=0x60
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+struct StudioNamedRec24 {
+	int m_nNameIndex;
+	char m_pad[0x14];
+	const char *Name() { return (const char *)this + m_nNameIndex; }
+};
+struct StudioHdr8c {
+	char m_pad0000[0x8c];
+	int m_nCount;
+	int m_nIndex;
+	StudioNamedRec24 *Rec(int i) { return (StudioNamedRec24 *)((char *)this + m_nIndex) + i; }
+};
+StudioNamedRec24 * __stdcall sub_100c48e0(StudioHdr8c *pHdr, const char *pszName)
+{
+	StudioNamedRec24 *p = 0;
+	int i;
+	for (i = 0; i < pHdr->m_nCount; i++) {
+		p = pHdr->Rec(i);
+		if (p) {
+			const char *pszRec = p->Name();
+			if (!_strcmpi(pszRec, pszName))
+				break;
+		}
+	}
+	return (i >= pHdr->m_nCount) ? 0 : p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4b10 size=0x81
 #include "CUnknown100b6f80.h"
 
