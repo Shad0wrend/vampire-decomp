@@ -1595,6 +1595,13 @@ int g_102e7584 = ClientClassInit((DT_ItemGLillyPurse::ignored *)0);
 RecvTable g_102e4244;
 // END FUNCTION
 
+// FUNCTION: 0x10019650 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGBailbondReceipt { struct ignored; }
+template <> int ClientClassInit<DT_ItemGBailbondReceipt::ignored>(DT_ItemGBailbondReceipt::ignored *);
+int g_102e4240 = ClientClassInit((DT_ItemGBailbondReceipt::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10019890 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e3378;
