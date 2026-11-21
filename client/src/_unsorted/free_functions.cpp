@@ -12708,6 +12708,16 @@ void sub_100e15d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1aa0 size=0x6
+namespace lifted {
+extern char g_104cf524;
+}
+int sub_100e1aa0()
+{
+    return (int)&lifted::g_104cf524;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e21f0 size=0x144
 #include "utlrbtree.h"
 #include "CBaseEntityList.h"
