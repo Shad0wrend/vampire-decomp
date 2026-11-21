@@ -13198,6 +13198,14 @@ char * CUnknown100e13a0::sub_100e13a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1420 size=0x8
+struct CUnknown100e1420 { void sub_100e1420(); };
+void CUnknown100e1420::sub_100e1420()
+{
+    *(int *)((char *)this + 0x10) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1470 size=0x6
 int sub_100e1470()
 {
