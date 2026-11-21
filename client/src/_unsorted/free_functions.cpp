@@ -57848,6 +57848,41 @@ void S1006cd00::sub_10160350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101603c0 size=0xeb
+#include "CStatDefaultList.h"
+
+StatDefault *CStatDefaultList::sub_101603c0()
+{
+	if (m_allocCount == m_count) {
+		m_allocCount++;
+		if (m_pItems) {
+			StatDefault **p = new StatDefault *[m_allocCount];
+			int i = 0;
+			if (m_count > 0) {
+				do {
+					p[i] = m_pItems[i];
+					i++;
+				} while (i < m_count);
+			}
+			for (; i < m_allocCount; i++)
+				p[i] = 0;
+			delete m_pItems;
+			m_pItems = p;
+		} else {
+			m_pItems = new StatDefault *[m_allocCount];
+			for (int i = 0; i < m_allocCount; i++)
+				m_pItems[i] = 0;
+		}
+		m_count++;
+	} else {
+		m_count++;
+	}
+	if (m_pItems[m_count - 1] == 0)
+		m_pItems[m_count - 1] = new StatDefault(m_count - 1);
+	return m_pItems[m_count - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101604b0 size=0x4c
 #include "CStatDefaultList.h"
 
