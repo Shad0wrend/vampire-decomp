@@ -54247,6 +54247,26 @@ CVStatInfoList_t *CVStatInfoList_t::sub_1015c2f0(const char *name, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015c3a0 size=0x9e
+#include "CVStatInfoList_t.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+
+void CVStatInfoList_t::sub_1015c3a0()
+{
+	g_101e3124[*g_101e3128].a = "CVStatInfoList_t::~CVStatInfoList_t";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	(*g_101e3128)++;
+	delete[] m_pStats;
+	m_nStats = 0;
+	(*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015c8f0 size=0xb8
 #include "CVStatInfoList_t.h"
 
