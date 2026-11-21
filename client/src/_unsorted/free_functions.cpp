@@ -27050,6 +27050,13 @@ string_t sub_1015fc40(const char *psz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fec0 size=0x5
+int sub_1015fec0(int a0, int a1)
+{
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ff70 size=0x23
 struct CUnknown1006c7d0 {
 	void sub_1015ff70();
