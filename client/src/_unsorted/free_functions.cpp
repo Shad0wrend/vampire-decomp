@@ -10186,6 +10186,27 @@ unsigned int *Pool::sub_1010e3e0(unsigned int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e440 size=0x1a
+struct CUnk1013dce0
+{
+	char m_pad0000[0x1c];
+	int *m_pHead1c;
+	int m_n20;
+
+	void sub_1010e440(int *p);
+};
+
+// TARGET: sub_1010e440
+void CUnk1013dce0::sub_1010e440(int *p)
+{
+	if (p != 0) {
+		m_n20--;
+		*p = (int)m_pHead1c;
+		m_pHead1c = p;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f390 size=0x4b
 struct SCopy {
     int a, b, c, d;
