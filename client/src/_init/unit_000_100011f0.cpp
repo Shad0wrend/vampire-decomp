@@ -324,3 +324,8 @@ ConVar g_10499848("debug_show_bones", "0", 0, "Enable this to draw wireframe bon
 #include "utlvector.h"
 CUtlVector<int> g_1049bfcc;
 // END FUNCTION
+
+// FUNCTION: 0x100928d0 size=0xa
+#include "ConVar.h"
+ConVar g_1049c448("vcollide_wireframe", "0", 0);
+// END FUNCTION
