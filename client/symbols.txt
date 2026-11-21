@@ -176,6 +176,7 @@
 0x100865c0 func   ?sub_100865c0@bf_write@@QAEPAV1@PBDPAXHH@Z bf_write::sub_100865c0
 0x100865f0 func   ?sub_100865f0@bf_write@@QAEPAV1@PAXHH@Z bf_write::sub_100865f0
 0x10086620 func   ?sub_10086620@bf_write@@QAEXPAXHHH@Z bf_write::sub_10086620
+0x10086680 func   ?sub_10086680@CUnknown10086680@@QAEHXZ CUnknown10086680::sub_10086680
 0x100866b0 func   ?sub_100866b0@bf_write03@@QAEXHH@Z bf_write03::sub_100866b0
 0x10086890 func   ?sub_10086890@bf_write@@QAEXIH_N@Z bf_write::sub_10086890
 0x10086970 func   ?sub_10086970@bf_write@@QAE_NPBXH@Z bf_write::sub_10086970
