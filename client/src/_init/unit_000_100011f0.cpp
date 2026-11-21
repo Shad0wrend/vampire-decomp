@@ -1667,6 +1667,13 @@ int g_102e1408 = ClientClassInit((DT_ItemGHorrorTape_1::ignored *)0);
 RecvTable g_102e13d4;
 // END FUNCTION
 
+// FUNCTION: 0x1001a550 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGHorrorTape_2 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGHorrorTape_2::ignored>(DT_ItemGHorrorTape_2::ignored *);
+int g_102e13d0 = ClientClassInit((DT_ItemGHorrorTape_2::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001a790 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e1568;
