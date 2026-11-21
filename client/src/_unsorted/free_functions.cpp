@@ -21736,6 +21736,14 @@ void CSoundEmitterSystemBase::sub_1012fda0(const char *pszSound, const char *psz
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012fe60 size=0x7
+struct CUnknown1012fe60 { int sub_1012fe60(); };
+int CUnknown1012fe60::sub_1012fe60()
+{
+    return *(int *)((char *)this + 0xa8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012fe70 size=0x29
 struct CUnit101b5290 {
     char *sub_1012fe70(int index);
