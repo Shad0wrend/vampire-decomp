@@ -37751,6 +37751,19 @@ void __stdcall sub_10186bc0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186ce0 size=0x16
+namespace lifted {
+extern char g_102bbe88;
+extern char g_104cfe38;
+struct C100f0ed0 { int sub_100f0ed0(int); };
+struct C10186a80 { int sub_10186a80(); };
+}
+int sub_10186ce0()
+{
+    return ((lifted::C10186a80 *)(((lifted::C100f0ed0 *)((int)&lifted::g_104cfe38))->sub_100f0ed0((int)&lifted::g_102bbe88)))->sub_10186a80();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10187c10 size=0x7
 struct CUnknown10187c10 { char sub_10187c10(); };
 char CUnknown10187c10::sub_10187c10()
