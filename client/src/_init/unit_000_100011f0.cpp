@@ -1235,6 +1235,13 @@ int g_102e1a78 = ClientClassInit((DT_GargoyleTalisman::ignored *)0);
 RecvTable g_102e0324;
 // END FUNCTION
 
+// FUNCTION: 0x10014b50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BloodPack { struct ignored; }
+template <> int ClientClassInit<DT_BloodPack::ignored>(DT_BloodPack::ignored *);
+int g_102e0320 = ClientClassInit((DT_BloodPack::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10014d90 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e145c;
