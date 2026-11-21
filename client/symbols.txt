@@ -425,6 +425,7 @@
 0x10023cd0 func   ?sub_10023cd0@@YAHXZ sub_10023cd0
 0x10023df0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKEmpireJezebelKey@@@Z ClientClassInit
 0x10023f50 func   ?sub_10023f50@@YAHXZ sub_10023f50
+0x10024070 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKCarsonApartmentKey@@@Z ClientClassInit
 0x100241d0 func   ?sub_100241d0@@YAHXZ sub_100241d0
 0x10024450 func   ?sub_10024450@@YAHXZ sub_10024450
 0x100246d0 func   ?sub_100246d0@@YAHXZ sub_100246d0
