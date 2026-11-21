@@ -2470,6 +2470,13 @@ void * sub_100d8310(void);
 InterfaceReg g_104cf054(sub_100d8310, "Shadow_IMaterialProxy003");
 // END FUNCTION
 
+// FUNCTION: 0x100d8500 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100d8530(void);
+InterfaceReg g_104cf0cc(sub_100d8530, "ShadowModel_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x100dfd60 size=0xa
 #include "ConVar.h"
 ConVar g_104cf3e0("mat_fullbright", "0", 0);
