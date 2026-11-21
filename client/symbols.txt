@@ -475,6 +475,7 @@
 0x10157130 func   ?sub_10157130@CVTraitEffectGroup_t@@QAEXPAVCVModInfo_t@@PAX@Z CVTraitEffectGroup_t::sub_10157130
 0x10157390 func   ?sub_10157390@CUnknown101f7960@@QAEPAUS101f7310@@XZ CUnknown101f7960::sub_10157390
 0x10157480 func   ?sub_10157480@CUnknown101f7bb0@@QAEXXZ CUnknown101f7bb0::sub_10157480
+0x10157a20 func   ?sub_10157a20@CUnknown101d5bd0@@QAEXXZ CUnknown101d5bd0::sub_10157a20
 0x10157b30 func   ?sub_10157b30@CNamedListX@@QAEHPBD@Z CNamedListX::sub_10157b30
 0x10157b80 func   ?sub_10157b80@CNamedListX@@QAEHPBD@Z CNamedListX::sub_10157b80
 0x101594e0 func   ?sub_101594e0@CVStatSubCost_t@@QAEPAU1@XZ CVStatSubCost_t::sub_101594e0
