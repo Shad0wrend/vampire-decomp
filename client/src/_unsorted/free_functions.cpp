@@ -22985,6 +22985,37 @@ char CUnknown101d7520Sub::sub_10161bb0(void *pArg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161bf0 size=0x36
+#include "CUnknown10205dc0.h"
+
+extern void *g_101e3108;
+typedef void (*PfnMsg)(const char *fmt, ...);
+
+struct CUnknown10206190
+{
+	char m_pad0000[0x14];
+	int m_nCount;	// 0x14
+	CUnknown10205dc0 **m_ppItems;	// 0x18
+
+	void sub_10161bf0();
+};
+
+// TARGET: CUnknown10206190::sub_10161bf0
+void CUnknown10206190::sub_10161bf0()
+{
+	int i = 0;
+	if (m_nCount > 0)
+	{
+		PfnMsg pfnMsg = (PfnMsg)g_101e3108;
+		do
+		{
+			pfnMsg("%s", m_ppItems[i]->sub_101618f0());
+			i++;
+		} while (i < m_nCount);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161db0 size=0x20
 struct CUnknown10206400 { void * sub_10161db0(int); };
 void * CUnknown10206400::sub_10161db0(int a0)
