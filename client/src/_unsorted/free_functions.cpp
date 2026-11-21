@@ -11879,6 +11879,20 @@ int __fastcall sub_10156770(CUnknownStat101f69a0 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156f40 size=0x2a
+#include "CUnknown101f73b0.h"
+
+int *sub_1015f7e0(int *pValue, int a, const char *pszName);
+extern const char g_102863d0[];
+
+// TARGET: CUnknown101f73b0::sub_10156f40
+void CUnknown101f73b0::sub_10156f40(int a, int b)
+{
+    m_n0c = b;
+    m_n08 = *sub_1015f7e0(&b, a, g_102863d0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101570b0 size=0x38
 // TARGET: CVTraitEffectGroup_t::sub_101570b0
 #include "CVTraitEffectGroup_t.h"

@@ -483,6 +483,7 @@
 0x10156120 func   ?sub_10156120@CEntryTable_101f5e80@@QAEXXZ CEntryTable_101f5e80::sub_10156120
 0x10156160 func   ?sub_10156160@CUnk101f5ed0@@QAEXXZ CUnk101f5ed0::sub_10156160
 0x10156770 func   ?sub_10156770@@YIHPAUCUnknownStat101f69a0@@@Z sub_10156770
+0x10156f40 func   ?sub_10156f40@CUnknown101f73b0@@QAEXHH@Z CUnknown101f73b0::sub_10156f40
 0x101570b0 func   ?sub_101570b0@CVTraitEffectGroup_t@@QAEXPAUCTraitStatBlock@@@Z CVTraitEffectGroup_t::sub_101570b0
 0x101570f0 func   ?sub_101570f0@CUnk101f75f0@@QAEXPAUCTraitStatBlock@@@Z CUnk101f75f0::sub_101570f0
 0x10157130 func   ?sub_10157130@CVTraitEffectGroup_t@@QAEXPAVCVModInfo_t@@PAX@Z CVTraitEffectGroup_t::sub_10157130
