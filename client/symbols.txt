@@ -704,6 +704,7 @@
 0x100aad80 func   ?sub_100aad80@UtlMem@@QAEXH@Z UtlMem::sub_100aad80
 0x100abf90 func   ?sub_100abf90@@YADXZ sub_100abf90
 0x100ac060 func   ?sub_100ac060@@YAHXZ sub_100ac060
+0x100ac070 func   ?sub_100ac070@@YAHXZ sub_100ac070
 0x100ac080 func   ?sub_100ac080@UtlMem@@QAEXH@Z UtlMem::sub_100ac080
 0x100ac780 func   ?sub_100ac780@CUnknown100ac780@@QAEXXZ CUnknown100ac780::sub_100ac780
 0x100ae060 func   ?sub_100ae060@@YADXZ sub_100ae060

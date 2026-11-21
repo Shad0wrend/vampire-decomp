@@ -10064,6 +10064,16 @@ int sub_100ac060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ac070 size=0x6
+namespace lifted {
+extern int g_104a0d50;
+}
+int sub_100ac070()
+{
+    return lifted::g_104a0d50;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac080 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
