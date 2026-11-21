@@ -275,6 +275,13 @@ char sub_10028650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028660 size=0x5
+int __stdcall sub_10028660(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100286d0 size=0x4
 struct CUnknown100286d0 { char * sub_100286d0(); };
 char * CUnknown100286d0::sub_100286d0()
