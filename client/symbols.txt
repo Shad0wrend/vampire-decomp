@@ -443,6 +443,7 @@
 0x1001a410 func   ??_GC_ItemGHorrorTape_2@@UAEPAXI@Z ??_GC_ItemGHorrorTape_2@@UAEPAXI@Z
 0x1001a450 func   ?sub_1001a450@@YAHXZ sub_1001a450
 0x1001a570 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGHorrorTape_2@@@Z ClientClassInit
+0x1001a690 func   ??_GC_ItemGOHDiary@@UAEPAXI@Z ??_GC_ItemGOHDiary@@UAEPAXI@Z
 0x1001a6d0 func   ?sub_1001a6d0@@YAHXZ sub_1001a6d0
 0x1001a7f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGOHDiary@@@Z ClientClassInit
 0x1001a950 func   ?sub_1001a950@@YAHXZ sub_1001a950
