@@ -12119,6 +12119,32 @@ int CNamedListX::sub_10157b80(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157bd0 size=0x41
+extern "C" int sub_101e28e0(const char *a, const char *b);
+
+struct CUnknown101f1a30 {
+    char m_pad0000[0x14];
+    int m_nCount;
+    const char *sub_10157ac0(int index);
+    int sub_10157bd0(const char *name);
+};
+
+// TARGET: sub_10157bd0
+int CUnknown101f1a30::sub_10157bd0(const char *name)
+{
+    int i = 0;
+    if (m_nCount > 0) {
+        do {
+            if (sub_101e28e0(sub_10157ac0(i), name) == 0) {
+                return i;
+            }
+            i++;
+        } while (i < m_nCount);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101594e0 size=0x6d
 #include "CVStatCost_t.h"
 
