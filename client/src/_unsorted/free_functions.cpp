@@ -480,6 +480,12 @@ void CUtlMemory12::sub_1002d690(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002ebc0 size=0x1
+void sub_1002ebc0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039080 size=0x19
 #include "Vector.h"
 Vector &Vector::sub_10039080(const Vector &v)
