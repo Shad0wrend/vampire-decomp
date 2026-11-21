@@ -7437,6 +7437,42 @@ InterfaceReg *InterfaceReg::sub_10106be0(void *createFn, const char *pName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106c60 size=0xdc
+#include "platform.h"
+#include "InterfaceReg.h"
+#include <string.h>
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+extern InterfaceReg *g_104d4050;
+
+#pragma intrinsic(strcmp)
+
+// TARGET: CreateInterface
+DLL_EXPORT void *CreateInterface(const char *pName, int *pReturnCode)
+{
+	g_101e3124[*g_101e3128].a = "CreateInterface";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	++*g_101e3128;
+	for (InterfaceReg *pCur = g_104d4050; pCur; pCur = pCur->m_pNext) {
+		if (strcmp(pCur->m_pName, pName) == 0) {
+			if (pReturnCode)
+				*pReturnCode = 0;
+			void *pRet = ((void *(*)())pCur->m_CreateFn)();
+			--*g_101e3128;
+			return pRet;
+		}
+	}
+	if (pReturnCode)
+		*pReturnCode = 1;
+	--*g_101e3128;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106f30 size=0x69
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_101e3128;
