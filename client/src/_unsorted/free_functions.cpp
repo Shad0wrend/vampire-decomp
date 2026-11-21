@@ -3679,6 +3679,24 @@ bool sub_1008c530(mstudioanimdesc_t *panim, float flCycle, Vector &vecVelocity)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008c5d0 size=0xb1
+#include "Vector.h"
+struct CBoneOwner { int pad[4]; int m_p; };
+void sub_1008c360(CBoneOwner *p, int idx, Vector *pos, Vector *ang);
+void sub_10109e90(Vector *v, float f, Vector *out);
+char sub_1008c5d0(CBoneOwner *p, int a, int b, Vector *turn, Vector *pOut)
+{
+    if (!p->m_p) return 0;
+    Vector p0, a0, p1, a1;
+    sub_1008c360(p, a, &p0, &a0);
+    sub_1008c360(p, b, &p1, &a1);
+    Vector delta = p1 - p0;
+    pOut->y = a1.y - a0.y;
+    sub_10109e90(&delta, -a0.y, turn);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008d930 size=0x9f
 struct SPoseHdr;
 
