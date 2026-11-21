@@ -313,6 +313,14 @@ int CRestore::vfunc22(Vector *pValues, int count, int nBytesAvailable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012afa0 size=0x5
+#include "CRestore.h"
+int CRestore::vfunc29(int * a0, int a1, int a2)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012afb0 size=0xaa
 #include "CRestore.h"
 extern "C" void *__cdecl memset(void *, int, unsigned int);
