@@ -444,3 +444,8 @@ CUtlVector<int> g_1049d964;
 #include "ConVar.h"
 ConVar g_1049d990("camera_prefs", "6", 128);
 // END FUNCTION
+
+// FUNCTION: 0x1009c200 size=0xa
+#include "ConVar.h"
+ConVar g_1049d910("camera_weaponswitch", "1", 128);
+// END FUNCTION
