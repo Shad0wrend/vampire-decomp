@@ -1074,6 +1074,25 @@ int sub_100681e0(int h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068200 size=0x24
+extern int g_103ef0c8;
+unsigned short *sub_10068160(int a);
+
+struct CUnknown10249fc0Callee {
+    int sub_101390c0(unsigned short handle);
+};
+
+// TARGET: sub_10068200
+int sub_10068200(int a)
+{
+    unsigned short *p = sub_10068160(a);
+    if (p != 0) {
+        return ((CUnknown10249fc0Callee *)&g_103ef0c8)->sub_101390c0(p[2]);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068300 size=0x2f
 // TARGET: sub_10068300
 extern int g_10477160;
