@@ -29295,6 +29295,21 @@ int sub_100df4c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df670 size=0x48
+#include "ConVar.h"
+
+extern void *vt_10234900[];
+
+// TARGET: ConVar::sub_100df670
+ConVar *ConVar::sub_100df670(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax, void (*pCallback)(ConVar *, const char *))
+{
+	sub_100df1c0();
+	*(void ***)this = vt_10234900;
+	ConVar::vfunc12(pName, pDefaultValue, flags, pHelpString, bMin, fMin, bMax, fMax, pCallback);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df6f0 size=0x18
 struct CUnk10245c80 {
     char pad[0x20];
