@@ -9952,6 +9952,16 @@ int CUnknown100a2a80::sub_100a2a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2da0 size=0x8
+namespace lifted {
+int __stdcall sub_100a29b0(int);
+}
+int sub_100a2da0()
+{
+    return lifted::sub_100a29b0(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2e80 size=0x7
 struct CUnknown100a2e80 { char sub_100a2e80(); };
 char CUnknown100a2e80::sub_100a2e80()
