@@ -36339,6 +36339,17 @@ int sub_1018dd90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e290 size=0xe
+namespace lifted {
+struct C101aa0a0 { int sub_101aa0a0(int); };
+}
+struct CUnknown1018e290 { int sub_1018e290(); };
+int CUnknown1018e290::sub_1018e290()
+{
+    return ((lifted::C101aa0a0 *)(this + 0x10))->sub_101aa0a0(0x3e8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e330 size=0x28
 #include <stdarg.h>
 
