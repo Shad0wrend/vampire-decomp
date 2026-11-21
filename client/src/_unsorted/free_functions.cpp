@@ -43666,6 +43666,64 @@ void E101f2140::sub_10153c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153dd0 size=0x106
+#include "CUnknown101f2360.h"
+#include <string.h>
+
+const char *sub_10154690(const char **ppBuf, void *pFile, char *pQuoted);
+char *sub_101546c0(const char *psz);
+extern "C" long strtol(const char *, char **, int);
+extern "C" double strtod(const char *, char **);
+
+void CUnknown101f2360::sub_10153dd0(const char **ppBuf, void *pFile)
+{
+	while (1)
+	{
+		const char *pszName = sub_10154690(ppBuf, pFile, 0);
+		if (!pszName || !*pszName)
+			break;
+		if (!strcmp(pszName, "}"))
+			break;
+		CUnknown101f2360 *pNode = sub_101544e0(pszName);
+		char bQuoted;
+		const char *pszValue = sub_10154690(ppBuf, pFile, &bQuoted);
+		if (!strcmp(pszValue, "{"))
+		{
+			pNode->sub_10153dd0(ppBuf, pFile);
+		}
+		else
+		{
+			pNode->m_pszValue = sub_101546c0(pszValue);
+			if (bQuoted)
+			{
+				pNode->m_nType = 1;
+			}
+			else
+			{
+				char *pEndInt;
+				char *pEndFloat;
+				long n = strtol(pszValue, &pEndInt, 10);
+				double d = strtod(pszValue, &pEndFloat);
+				if (pEndFloat > pEndInt)
+				{
+					pNode->m_fValue = (float)d;
+					pNode->m_nType = 3;
+				}
+				else if (pEndInt > pszValue)
+				{
+					pNode->m_iValue = n;
+					pNode->m_nType = 2;
+				}
+				else
+				{
+					pNode->m_nType = 1;
+				}
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153ee0 size=0x4
 struct CUnknown10153ee0 { int sub_10153ee0(); };
 int CUnknown10153ee0::sub_10153ee0()
