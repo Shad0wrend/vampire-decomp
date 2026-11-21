@@ -794,6 +794,7 @@
 0x1009d400 func   ?sub_1009d400@@YAHXZ sub_1009d400
 0x1009d4a0 func   ?sub_1009d4a0@@YAHHH@Z sub_1009d4a0
 0x1009d4c0 func   ?sub_1009d4c0@@YAHHH@Z sub_1009d4c0
+0x1009d4e0 func   ?sub_1009d4e0@@YAHHH@Z sub_1009d4e0
 0x1009db70 func   ?sub_1009db70@@YAXXZ sub_1009db70
 0x1009db80 func   ?sub_1009db80@@YADD@Z sub_1009db80
 0x1009dd60 func   ?sub_1009dd60@CUnknown1009dd60@@QAEPAXXZ CUnknown1009dd60::sub_1009dd60
