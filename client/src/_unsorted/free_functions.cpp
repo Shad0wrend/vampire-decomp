@@ -2425,6 +2425,26 @@ int bf_readX::sub_100886e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088880 size=0x2f
+// TARGET: bf_read::sub_10088880
+#include "bf_read.h"
+
+bool bf_read::sub_10088880(int iBit) {
+    if (iBit < 0) {
+        m_iCurBit = m_nDataBits;
+        m_bOverflow = true;
+        return false;
+    }
+    if (iBit > m_nDataBits) {
+        m_iCurBit = m_nDataBits;
+        m_bOverflow = true;
+        return false;
+    }
+    m_iCurBit = iBit;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100889f0 size=0x1a2
 #include "Quaternion.h"
 union CBlendAnimValue

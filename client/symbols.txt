@@ -106,6 +106,7 @@
 0x100885e0 func   ?sub_100885e0@bf_read@@QAEHXZ bf_read::sub_100885e0
 0x10088660 func   ?sub_10088660@bf_readX@@QAEHXZ bf_readX::sub_10088660
 0x100886e0 func   ?sub_100886e0@bf_readX@@QAEHXZ bf_readX::sub_100886e0
+0x10088880 func   ?sub_10088880@bf_read@@QAE_NH@Z bf_read::sub_10088880
 0x100889f0 func   ?sub_100889f0@@YAXPAXHMPAUCBlendBone@@PAUCBlendAnim@@AAVQuaternion@@@Z sub_100889f0
 0x10088ba0 func   ?sub_10088ba0@@YAXPAXHMPAUmstudiobone_t@@PAUmstudioanim_t@@AAVVector@@@Z sub_10088ba0
 0x10088d00 func   ?sub_10088d00@@YAXMABVQuaternion@@0AAV1@@Z sub_10088d00
