@@ -17182,6 +17182,34 @@ char CStatDefault60List::sub_10146cb0(IKVNodeView *pKV, void *pFilter)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146e00 size=0x66
+struct Elem1006cd00 { void sub_10146980(); };
+struct S1006cd00 {
+    int m0;
+    int m4;
+    Elem1006cd00 **m8;
+    void sub_10146e00();
+};
+// TARGET: S1006cd00::sub_10146e00
+void S1006cd00::sub_10146e00()
+{
+    if (m8) {
+        for (int i = 0; i < m4; i++) {
+            Elem1006cd00 *e = m8[i];
+            if (e) {
+                e->sub_10146980();
+                delete e;
+            }
+            m8[i] = 0;
+        }
+        delete m8;
+        m8 = 0;
+    }
+    m4 = 0;
+    m0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146ed0 size=0x25
 namespace block_101db960 {
 struct CUnitA { int m_0, m_4, m_8, m_c; void *sub_101465b0(); };
