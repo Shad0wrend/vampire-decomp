@@ -2166,6 +2166,14 @@ char sub_1007d930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007db70 size=0x3
+struct CUnknown1007db70 { int sub_1007db70(); };
+int CUnknown1007db70::sub_1007db70()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ddd0 size=0x1c
 extern unsigned int g_102af670;
 
