@@ -2393,6 +2393,13 @@ RecvTable g_104a5424;
 RecvTable g_104a545c;
 // END FUNCTION
 
+// FUNCTION: 0x100cb2d0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100cb300(void);
+InterfaceReg g_104a5700(sub_100cb300, "Camo_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x100cb430 size=0xa
 #include "ConVar.h"
 ConVar g_104a5758("showparticlecounts", "0", 0, "Display number of particles drawn per frame");
