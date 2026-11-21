@@ -4413,6 +4413,13 @@ int g_104a3048 = ClientClassInit((DT_LightGlow::ignored *)0);
 RecvTable g_104a3208;
 // END FUNCTION
 
+// FUNCTION: 0x100bcb30 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PhysBox { struct ignored; }
+template <> int ClientClassInit<DT_PhysBox::ignored>(DT_PhysBox::ignored *);
+int g_104a3204 = ClientClassInit((DT_PhysBox::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100bcca0 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a3398;
