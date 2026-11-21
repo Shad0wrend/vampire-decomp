@@ -13930,6 +13930,14 @@ void CUnk1042da10::sub_101209c0(char bSet)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101209f0 size=0x3
+struct CUnknown101209f0 { int sub_101209f0(); };
+int CUnknown101209f0::sub_101209f0()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120a10 size=0x7e
 #include "CUnknown1042d9a0.h"
 
