@@ -12826,6 +12826,14 @@ int CUnknown100df410::sub_100df410()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df420 size=0x7
+struct CUnknown100df420 { char sub_100df420(); };
+char CUnknown100df420::sub_100df420()
+{
+    return *(char *)((char *)(*(int *)((char *)this + 4)) + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df4c0 size=0x3
 int sub_100df4c0()
 {
