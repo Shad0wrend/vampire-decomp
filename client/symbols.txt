@@ -267,6 +267,7 @@
 0x10127df0 func   ?sub_10127df0@@YAPAXPAHH@Z sub_10127df0
 0x10128270 func   ?sub_10128270@CLinkList@@QAEPAUCLinkNode1c@@H@Z CLinkList::sub_10128270
 0x10128540 func   ?sub_10128540@CKeyValuesX@@QAEMPBDM@Z CKeyValuesX::sub_10128540
+0x10128b60 func   ?sub_10128b60@CUnknown10249470@@QAEHH@Z CUnknown10249470::sub_10128b60
 0x10128b80 func   ?vfunc0@CBaseRopePhysics@@UAEXPAUCRopeNode@@HPAVVector@@@Z CBaseRopePhysics::vfunc0
 0x10128d80 func   ?sub_10128d80@@YAPBDPAUSFuncMap@@H@Z sub_10128d80
 0x10128fb0 func   ?vfunc1@CSave@@UAEXH@Z CSave::vfunc1

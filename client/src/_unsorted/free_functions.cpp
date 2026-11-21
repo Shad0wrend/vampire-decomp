@@ -7007,6 +7007,18 @@ float CKeyValuesX::sub_10128540(const char *pszKey, float flDefault)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128b60 size=0x1f
+namespace lifted {
+extern int g_102c3368;
+struct C100086a7 { int sub_1012c770(int, int, int, int, int); };
+}
+struct CUnknown10249470 { int sub_10128b60(int); };
+int CUnknown10249470::sub_10128b60(int a0)
+{
+    return ((lifted::C100086a7 *)(this + 0x20))->sub_1012c770(*(int *)((char *)this + 8), *(int *)((char *)this + 0xc), (int)this, a0, lifted::g_102c3368);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128d80 size=0x4d
 struct SFuncField {
     int fieldType;
