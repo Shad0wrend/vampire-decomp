@@ -841,3 +841,8 @@ ConVar g_104d1dc0("c_maxdistance", "200", 128);
 #include "ConVar.h"
 ConVar g_104d27c8("c_mindistance", "30", 128);
 // END FUNCTION
+
+// FUNCTION: 0x100fb230 size=0xa
+#include "ConVar.h"
+ConVar g_104d2130("c_orthowidth", "100", 128);
+// END FUNCTION
