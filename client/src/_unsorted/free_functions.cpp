@@ -22456,6 +22456,17 @@ const char *sub_1012d970(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d9c0 size=0xc
+namespace lifted {
+int sub_1012d9d0(int);
+}
+struct CUnknown1012d9c0 { int sub_1012d9c0(); };
+int CUnknown1012d9c0::sub_1012d9c0()
+{
+    return lifted::sub_1012d9d0(*(int *)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d9d0 size=0x37
 struct NameEntry { int m_key; const char *m_pName; };
 extern NameEntry g_102c4228[7];
