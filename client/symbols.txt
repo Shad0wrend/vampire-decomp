@@ -174,6 +174,7 @@
 0x1001d3d0 func   ?sub_1001d3d0@@YAHXZ sub_1001d3d0
 0x1001d650 func   ?sub_1001d650@@YAHXZ sub_1001d650
 0x1001d8d0 func   ?sub_1001d8d0@@YAHXZ sub_1001d8d0
+0x1001db50 func   ?sub_1001db50@@YAHXZ sub_1001db50
 0x10027d20 func   ?sub_10027d20@@YAXABVVector@@00HHH_NM@Z sub_10027d20
 0x100285d0 func   ?sub_100285d0@@YADXZ sub_100285d0
 0x100285e0 func   ?sub_100285e0@@YAHXZ sub_100285e0
