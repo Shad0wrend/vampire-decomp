@@ -1,6 +1,32 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1012a320 size=0x2a
+#include "CRestore.h"
+
+extern char g_102de300[];
+extern char g_102c3974[];
+
+struct CTokenTbl {
+	char pad[0x10]; int m_nCount; char **m_ppStr;
+	const char *StringFromSymbol(int token)
+	{
+		if (token >= 0 && token < m_nCount)
+			return m_ppStr[token];
+		return g_102c3974;
+	}
+};
+
+const char *CRestore::vfunc11(int token)
+{
+	CTokenTbl *t = *(CTokenTbl **)((char *)this + 0x18);
+	const char *s = t->StringFromSymbol(token);
+	if (s)
+		return s;
+	return g_102de300;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a6d0 size=0xbe
 #include "CRestore.h"
 
