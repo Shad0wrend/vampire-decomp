@@ -75,3 +75,9 @@ CGameMovement g_102ea5e8;
 inline int pcd_initial_102ea8ac() { return 0xffffffff; }
 int g_102ea8ac = pcd_initial_102ea8ac();
 // END FUNCTION
+
+// FUNCTION: 0x1002c030 size=0xa
+#include "ConCommand.h"
+void sub_1002c020(void);
+ConCommand g_102eacd0("ai_node_graph_built", sub_1002c020, 0, 0, 0);
+// END FUNCTION
