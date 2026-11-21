@@ -6394,6 +6394,12 @@ void sub_100d14e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d1500 size=0x1
+void sub_100d1500()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d15b0 size=0x22
 struct CUnknown100b7a90 {
 	void sub_100d1630();
