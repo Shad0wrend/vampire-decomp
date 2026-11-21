@@ -54742,6 +54742,31 @@ void CUnknown10202ba0::sub_1015ee00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015eea0 size=0x6d
+#include "CUnknown10202c80.h"
+
+extern "C++" void __cdecl operator delete(void *);
+
+void CUnknown10202c80::sub_1015eea0()
+{
+    if (m_pData) {
+        for (int i = 0; i < m_count; i++) {
+            CUnknown102029c0 *p = m_pData[i];
+            if (p) {
+                p->~CUnknown102029c0();
+                operator delete(p);
+            }
+            m_pData[i] = 0;
+        }
+        operator delete(m_pData);
+        m_pData = 0;
+    }
+    m_count = 0;
+    m_unk4 = 0;
+    m_unk0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f010 size=0x48
 #include "CUnknown10202d10.h"
 #include "CUnknown10202b10.h"
