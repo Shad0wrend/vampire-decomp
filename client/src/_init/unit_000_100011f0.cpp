@@ -2668,3 +2668,8 @@ ConVar g_10619458("r_drawtranslucentworld", "1", 0);
 #include "ConVar.h"
 ConVar g_10619218("r_drawviewmodel", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10197db0 size=0xa
+#include "ConVar.h"
+ConVar g_10618b48("r_3dsky", "1", 0, "Enable the rendering of 3d sky boxes");
+// END FUNCTION
