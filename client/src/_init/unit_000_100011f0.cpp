@@ -1547,6 +1547,13 @@ int g_102e3134 = ClientClassInit((DT_ItemGWatchNormal::ignored *)0);
 RecvTable g_102e12f4;
 // END FUNCTION
 
+// FUNCTION: 0x10018c50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWatchFancy { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWatchFancy::ignored>(DT_ItemGWatchFancy::ignored *);
+int g_102e12f0 = ClientClassInit((DT_ItemGWatchFancy::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10018e90 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e425c;
