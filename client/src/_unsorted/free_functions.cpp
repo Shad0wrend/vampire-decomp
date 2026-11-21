@@ -8201,6 +8201,27 @@ void CUnknown101bc750::sub_10134200(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101347f0 size=0x2a
+namespace lifted {
+extern char g_102366ac;
+}
+struct CUnknown101bcef0 { void * sub_101347f0(); };
+void * CUnknown101bcef0::sub_101347f0()
+{
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)this = (int)&lifted::g_102366ac;
+    *(char *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = -1;
+    *(char *)((char *)this + 0x24) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135350 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
