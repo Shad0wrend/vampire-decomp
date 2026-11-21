@@ -4199,6 +4199,13 @@ InterfaceReg g_104a0fc0(sub_100ad790, "ClientStats004");
 RecvTable g_104a12e4;
 // END FUNCTION
 
+// FUNCTION: 0x100ade30 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_DynamicLight { struct ignored; }
+template <> int ClientClassInit<DT_DynamicLight::ignored>(DT_DynamicLight::ignored *);
+int g_104a12e0 = ClientClassInit((DT_DynamicLight::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100ae670 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a1798;
