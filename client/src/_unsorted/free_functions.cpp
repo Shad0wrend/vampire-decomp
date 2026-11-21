@@ -18566,6 +18566,13 @@ void StatDefault3::sub_1013e530(StatDefault3 *pParent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f290 size=0x3
+char sub_1013f290()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f2a0 size=0x45
 struct CIndexTables {
 	char m_pad[0xd0];
