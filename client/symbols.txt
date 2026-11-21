@@ -173,6 +173,7 @@
 0x1000c310 func   ??_GC_WeaponMelee_MingXiaoMelee@@UAEPAXI@Z ??_GC_WeaponMelee_MingXiaoMelee@@UAEPAXI@Z
 0x1000c350 func   ?sub_1000c350@@YAHXZ sub_1000c350
 0x1000c470 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_MingXiaoMelee@@@Z ClientClassInit
+0x1000c590 func   ??_GC_WeaponMelee_MingXiaoTentacle@@UAEPAXI@Z ??_GC_WeaponMelee_MingXiaoTentacle@@UAEPAXI@Z
 0x1000c5d0 func   ?sub_1000c5d0@@YAHXZ sub_1000c5d0
 0x1000c6f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_MingXiaoTentacle@@@Z ClientClassInit
 0x1000c850 func   ?sub_1000c850@@YAHXZ sub_1000c850
