@@ -972,6 +972,12 @@ bool sub_1004ba90(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d410 size=0x3
+void __stdcall sub_1004d410(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e830 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
