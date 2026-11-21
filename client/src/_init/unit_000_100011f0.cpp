@@ -4353,6 +4353,13 @@ ConVar g_104a2b18("lod_Enable", "1", 0);
 RecvTable g_104a2b7c;
 // END FUNCTION
 
+// FUNCTION: 0x100bb5d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Func_LOD { struct ignored; }
+template <> int ClientClassInit<DT_Func_LOD::ignored>(DT_Func_LOD::ignored *);
+int g_104a2b78 = ClientClassInit((DT_Func_LOD::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100bba80 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a2c50;
