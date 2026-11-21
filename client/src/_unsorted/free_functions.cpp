@@ -17354,6 +17354,45 @@ bool CUnknown101dc5a0::sub_101475e0(CUnknown101dc5a0Keys *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147730 size=0x2f
+#include "CUnknown101e0f00.h"
+#include "CUnknown101dbe30.h"
+
+namespace block_101dc750 {
+struct CUnit : CUnknown101dbe30 {
+	bool sub_10147210();
+};
+#pragma auto_inline(off)
+bool CUnit::sub_10147210()
+{
+	return m_field0000 ? true : false;
+}
+#pragma auto_inline(on)
+}
+using namespace block_101dc750;
+
+struct CSrcSubView_101dc750
+{
+	char m_pad0000[8];
+	int m_nCount;
+	CUnit **m_ppItems;
+};
+
+// TARGET: CUnknown101e0f00SrcSub::sub_10147730
+char CUnknown101e0f00SrcSub::sub_10147730()
+{
+	CSrcSubView_101dc750 *v = (CSrcSubView_101dc750 *)this;
+	if (v->m_nCount > 0) {
+		for (int i = 0; i < v->m_nCount; i++) {
+			if (!v->m_ppItems[i]->sub_10147210())
+				return 0;
+		}
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147a40 size=0x4e
 #include "CUnknown101dcc80.h"
 struct CItemVec {
