@@ -1206,6 +1206,7 @@
 0x10059330 func   ??_GCHUDSprite@@UAEPAXI@Z ??_GCHUDSprite@@UAEPAXI@Z
 0x10059350 func   ??1CHUDSprite@@UAE@XZ CHUDSprite::~CHUDSprite
 0x1005d870 func   ?sub_1005d870@@YAHXZ sub_1005d870
+0x1005d930 func   ??_GC_HudTimer@@UAEPAXI@Z ??_GC_HudTimer@@UAEPAXI@Z
 0x1005d9b0 func   ?ClientClassInit@@YAHPAUignored@DT_HudTimer@@@Z ClientClassInit
 0x1005db20 func   ??1CHudTimerUI@@UAE@XZ CHudTimerUI::~CHudTimerUI
 0x1005df10 func   ?sub_1005df10@CUnknown1005df10@@QAEDD@Z CUnknown1005df10::sub_1005df10
