@@ -23733,6 +23733,12 @@ void CUnknown101f5f00::sub_10156180(int first, int key, int second)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156250 size=0x3
+void __stdcall sub_10156250(int a0, int a1, int a2)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101563e0 size=0x1
 void sub_101563e0()
 {
