@@ -776,3 +776,8 @@ ConVar g_104d0f70("_fov", "0", 0, "Automates fov command to server.", sub_100f28
 #include "ConVar.h"
 ConVar g_104d0fb8("crosshair", "1", 128);
 // END FUNCTION
+
+// FUNCTION: 0x100fae20 size=0xa
+#include "ConVar.h"
+ConVar g_104d2700("cam_command", "0", 0);
+// END FUNCTION
