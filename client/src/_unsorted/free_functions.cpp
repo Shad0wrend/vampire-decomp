@@ -12295,6 +12295,34 @@ void Dump::sub_101602b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160350 size=0x66
+struct Elem1006cd00 { void sub_1015ff60(); };
+struct S1006cd00 {
+    int m0;
+    int m4;
+    Elem1006cd00 **m8;
+    void sub_10160350();
+};
+// TARGET: S1006cd00::sub_10160350
+void S1006cd00::sub_10160350()
+{
+    if (m8) {
+        for (int i = 0; i < m4; i++) {
+            Elem1006cd00 *e = m8[i];
+            if (e) {
+                e->sub_1015ff60();
+                delete e;
+            }
+            m8[i] = 0;
+        }
+        delete m8;
+        m8 = 0;
+    }
+    m4 = 0;
+    m0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160db0 size=0x29
 struct CUnk10204c20
 {
