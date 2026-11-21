@@ -8308,6 +8308,14 @@ void sub_100dfb70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dff10 size=0x4
+struct CUnknown100dff10 { char * sub_100dff10(); };
+char * CUnknown100dff10::sub_100dff10()
+{
+    return (char *)this + 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfff0 size=0x3
 char sub_100dfff0()
 {
