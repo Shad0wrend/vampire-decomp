@@ -710,3 +710,8 @@ ConCommand g_104cf0a4("r_shadowdir", sub_100d56c0, 0, 0, 0);
 void sub_100d5790(void);
 ConCommand g_104cef98("r_shadowcolor", sub_100d5790, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d60a0 size=0xa
+#include "ConVar.h"
+ConVar g_104cf010("cl_softshadows", "1", 0);
+// END FUNCTION
