@@ -20281,6 +20281,40 @@ int sub_100b6e90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6f90 size=0x15b
+#include "RecvTable.h"
+extern RecvTable g_104a2304;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_BreakableSurface { struct ignored; }
+template <> int ClientClassInit<DT_BreakableSurface::ignored>(DT_BreakableSurface::ignored *)
+{
+	char *pRecvTableName = "DT_BreakableSurface";
+	RecvTable &RecvTable = g_104a2304;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_nNumWide", 1044, 4, 0, 0),
+		RecvPropInt("m_nNumHigh", 1048, 4, 0, 0),
+		RecvPropFloat("m_flPanelWidth", 1052, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flPanelHeight", 1056, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropVector("m_vNormal", 1060, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vCorner", 1072, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_bIsBroken", 1084, 1, 0, 0),
+		RecvPropInt("m_nSurfaceType", 1088, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b9b80 size=0x43
 #include "Vector.h"
 Vector Vector::sub_100b9b80(const Vector &v) const
