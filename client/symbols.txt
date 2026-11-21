@@ -245,6 +245,7 @@
 0x1000ff10 func   ??_GC_WeaponWallet@@UAEPAXI@Z ??_GC_WeaponWallet@@UAEPAXI@Z
 0x1000ff50 func   ?sub_1000ff50@@YAHXZ sub_1000ff50
 0x10010070 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponWallet@@@Z ClientClassInit
+0x10010190 func   ??_GC_ItemMWallet@@UAEPAXI@Z ??_GC_ItemMWallet@@UAEPAXI@Z
 0x100101d0 func   ?sub_100101d0@@YAHXZ sub_100101d0
 0x100102f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemMWallet@@@Z ClientClassInit
 0x10010450 func   ?sub_10010450@@YAHXZ sub_10010450
