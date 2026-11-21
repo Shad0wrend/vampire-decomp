@@ -2246,3 +2246,9 @@ ConCommand g_105fb1a8("hidecharwizard", sub_10174e30, 0, 0, 0);
 void sub_10175e80(void);
 ConCommand g_105fb150("vdebug_charwizard", sub_10175e80, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10176060 size=0xa
+#include "ConCommand.h"
+void sub_10175ff0(void);
+ConCommand g_105fb1d0("vchargen_key", sub_10175ff0, 0, 0, 0);
+// END FUNCTION
