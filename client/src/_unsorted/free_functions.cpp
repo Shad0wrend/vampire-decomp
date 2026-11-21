@@ -11245,6 +11245,41 @@ void * CUnknown10042370::sub_10042370()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10042e80 size=0x131
+#include "RecvTable.h"
+extern RecvTable g_103ecc30;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void sub_10043000(const CRecvProxyData *, void *, void *);
+void sub_10043020(const CRecvProxyData *, void *, void *);
+void sub_10042fc0(const CRecvProxyData *, void *, void *);
+void sub_10042fe0(const CRecvProxyData *, void *, void *);
+void sub_10043070(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void sub_10043090(const CRecvProxyData *, void *, void *);
+void sub_10043040(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_CollisionProperty { struct ignored; }
+template <> int ClientClassInit<DT_CollisionProperty::ignored>(DT_CollisionProperty::ignored *)
+{
+	char *pRecvTableName = "DT_CollisionProperty";
+	RecvTable &RecvTable = g_103ecc30;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropVector("m_vecMins", 4, 12, 0, sub_10043000),
+		RecvPropVector("m_vecMaxs", 16, 12, 0, sub_10043020),
+		RecvPropInt("solid", 0, -1, 0, sub_10042fc0),
+		RecvPropInt("solidflags", 0, -1, 0, sub_10042fe0),
+		RecvPropInt("m_nSurroundType", 28, 1, 0, sub_10043070),
+		RecvPropFloat("m_flTriggerBloat", 32, 4, 0, sub_10043090),
+		RecvPropVector("m_vecSpecifiedSurroundingMins", 36, 12, 0, sub_10043040),
+		RecvPropVector("m_vecSpecifiedSurroundingMaxs", 48, 12, 0, sub_10043040),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10042fc0 size=0x12
 namespace lifted {
 struct C10043230 { int sub_10043230(int); };
