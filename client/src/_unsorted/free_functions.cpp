@@ -8966,6 +8966,35 @@ int sub_10034470()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100344e0 size=0x132
+#include "RecvTable.h"
+extern RecvTable g_102ec54c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBloodSprite { struct ignored; }
+template <> int ClientClassInit<DT_TEBloodSprite::ignored>(DT_TEBloodSprite::ignored *)
+{
+	char *pRecvTableName = "DT_TEBloodSprite";
+	RecvTable &RecvTable = g_102ec54c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropVector("m_vecOrigin", 16, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vecDirection", 28, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("r", 40, 4, 0, 0),
+		RecvPropInt("g", 44, 4, 0, 0),
+		RecvPropInt("b", 48, 4, 0, 0),
+		RecvPropInt("a", 52, 4, 0, 0),
+		RecvPropInt("m_nSprayModel", 60, 4, 0, 0),
+		RecvPropInt("m_nDropModel", 56, 4, 0, 0),
+		RecvPropInt("m_nSize", 64, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10034690 size=0x12
 namespace lifted {
 extern char g_10226158;
