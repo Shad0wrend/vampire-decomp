@@ -4608,6 +4608,13 @@ ConVar g_104a4ce0("phonemefilter_max", "0.0", 128);
 RecvTable g_104a4f04;
 // END FUNCTION
 
+// FUNCTION: 0x100c4d80 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Sun { struct ignored; }
+template <> int ClientClassInit<DT_Sun::ignored>(DT_Sun::ignored *);
+int g_104a4f00 = ClientClassInit((DT_Sun::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100c66a0 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a4fa0;
