@@ -990,6 +990,7 @@
 0x10161820 func   ?sub_10161820@CVTraitDependencyValue_t@@QAEPAV1@H@Z CVTraitDependencyValue_t::sub_10161820
 0x10161bb0 func   ?sub_10161bb0@CUnknown101d7520Sub@@QAEDPAX@Z CUnknown101d7520Sub::sub_10161bb0
 0x10161bf0 func   ?sub_10161bf0@CUnknown10206190@@QAEXXZ CUnknown10206190::sub_10161bf0
+0x10161d20 func   ?sub_10161d20@CUnknown10206340@@QAE_NPAX@Z CUnknown10206340::sub_10161d20
 0x10161db0 func   ?sub_10161db0@CUnknown10206400@@QAEPAXH@Z CUnknown10206400::sub_10161db0
 0x10161dd0 func   ?sub_10161dd0@CPtrArray10206430@@QAEXXZ CPtrArray10206430::sub_10161dd0
 0x101624d0 func   ?sub_101624d0@QuestJournal@@QAEPAV1@XZ QuestJournal::sub_101624d0
