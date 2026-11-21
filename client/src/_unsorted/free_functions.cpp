@@ -34930,6 +34930,16 @@ void CUnknown10161430::sub_10161430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161590 size=0x10
+struct CUnknown10161590 { int sub_10161590(int); };
+int CUnknown10161590::sub_10161590(int a0)
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101615a0 size=0xe
 namespace lifted {
 struct C101606f0 { int sub_101606f0(); };
