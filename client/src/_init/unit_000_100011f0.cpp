@@ -2041,3 +2041,8 @@ Vector g_105e5440[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.408248
 int sub_1012b3d0(void);
 int g_105e54c0 = ((int (*)(int))sub_1012b3d0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1012b5d0 size=0x5
+#include "CEntitySaveRestoreBlockHandler.h"
+CEntitySaveRestoreBlockHandler g_105e54c4;
+// END FUNCTION
