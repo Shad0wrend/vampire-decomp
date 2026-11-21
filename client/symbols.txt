@@ -494,6 +494,7 @@
 0x1001ce90 func   ??_GC_ItemGWirelessCamera3@@UAEPAXI@Z ??_GC_ItemGWirelessCamera3@@UAEPAXI@Z
 0x1001ced0 func   ?sub_1001ced0@@YAHXZ sub_1001ced0
 0x1001cff0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWirelessCamera3@@@Z ClientClassInit
+0x1001d110 func   ??_GC_ItemGWirelessCamera4@@UAEPAXI@Z ??_GC_ItemGWirelessCamera4@@UAEPAXI@Z
 0x1001d150 func   ?sub_1001d150@@YAHXZ sub_1001d150
 0x1001d270 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWirelessCamera4@@@Z ClientClassInit
 0x1001d3d0 func   ?sub_1001d3d0@@YAHXZ sub_1001d3d0
