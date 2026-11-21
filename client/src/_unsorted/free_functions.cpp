@@ -21420,6 +21420,39 @@ void CUnknown10227c90::sub_10153830(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101538a0 size=0x65
+#include "CUnknown101f1c70.h"
+#include "CUnknown101f0e50.h"
+
+extern CUnknown101f0e50 g_105e8a58;
+
+void CUnknown101f1c70::sub_101538a0(int value)
+{
+	if (g_105e8a58.sub_10153640(value)) {
+		int n = m_count;
+		int i = 0;
+		if (0 < n) {
+			int *p = m_pData;
+			int *q = p;
+			do {
+				if (*q == value) {
+					if (i < n - 1)
+						p[i] = p[n - 1];
+					if (m_count <= 1) {
+						delete (void *)m_pData;
+						m_pData = 0;
+					}
+					m_count--;
+					return;
+				}
+				i++;
+				q++;
+			} while (i < n);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101539e0 size=0x67
 extern "C" int __cdecl sprintf(char *, const char *, ...);
 void __cdecl sub_1015fbb0(const char *msg);
