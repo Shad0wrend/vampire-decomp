@@ -18181,6 +18181,31 @@ bool CUnknown101e0f00::sub_10149c30(const char *name, int *pIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149d40 size=0x3b
+#include "CUnknown101e0f00.h"
+
+int CUnknown101e0f00::sub_10149d40(int key, int offset)
+{
+    int count = *(int *)((char *)this + 4);
+    int i = 0;
+    if (count > 0) {
+        int **pp = *(int ***)((char *)this + 8);
+        do {
+            if (*(int *)((char *)*pp + 0x10) == key) {
+                int idx = i + offset;
+                if (idx < count) {
+                    return idx;
+                }
+                break;
+            }
+            i++;
+            pp++;
+        } while (i < count);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149f70 size=0x42
 #include "CStatusFlagList.h"
 unsigned int CStatusFlagList::sub_10149f70(int nKey, int nSkip)
