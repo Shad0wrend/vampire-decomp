@@ -1955,6 +1955,13 @@ int g_102e0fd0 = ClientClassInit((DT_ItemGWarrLedger1::ignored *)0);
 RecvTable g_102e1008;
 // END FUNCTION
 
+// FUNCTION: 0x1001e150 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWarrLedger2 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWarrLedger2::ignored>(DT_ItemGWarrLedger2::ignored *);
+int g_102e1004 = ClientClassInit((DT_ItemGWarrLedger2::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001e390 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e335c;
