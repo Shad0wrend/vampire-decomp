@@ -620,6 +620,7 @@
 0x1010df40 func   ?sub_1010df40@CUnknown1010df40@@QAEHXZ CUnknown1010df40::sub_1010df40
 0x1010df50 func   ?sub_1010df50@CUnknown1010df50@@QAEPADXZ CUnknown1010df50::sub_1010df50
 0x1010df60 func   ?sub_1010df60@CUnknown1010df60@@QAEPADXZ CUnknown1010df60::sub_1010df60
+0x1010df70 func   ?sub_1010df70@CUnknown1010df70@@QAEPADXZ CUnknown1010df70::sub_1010df70
 0x1010df80 func   ?sub_1010df80@CAccum64View@@QAEXPB_J@Z CAccum64View::sub_1010df80
 0x1010dfe0 func   ?sub_1010dfe0@@YAXXZ sub_1010dfe0
 0x1010e070 func   ?sub_1010e070@@YAHPAPAUCUnknown10247800@block_102479b0@@0@Z sub_1010e070
