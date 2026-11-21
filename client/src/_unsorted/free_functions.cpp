@@ -30608,6 +30608,15 @@ void CKV::sub_10154480()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101544d0 size=0xa
+struct CUnknown101544d0 { int sub_101544d0(int); };
+int CUnknown101544d0::sub_101544d0(int a0)
+{
+    *(int *)((char *)this + 0x18) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154590 size=0x25
 extern int g_102ca678[];
 extern int g_102ca694[];
