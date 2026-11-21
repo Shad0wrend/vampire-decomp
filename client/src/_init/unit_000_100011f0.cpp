@@ -1511,6 +1511,13 @@ void * sub_1004a7d0(void);
 InterfaceReg g_103ecd68(sub_1004a7d0, "MatrixRotate_IMaterialProxy003");
 // END FUNCTION
 
+// FUNCTION: 0x1004b180 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1004b1b0(void);
+InterfaceReg g_103ecd88(sub_1004b1b0, "Thermal_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x1004b1d0 size=0xa
 #include "ConVar.h"
 ConVar g_103edd98("r_visualizetraces", "0", 8192);
