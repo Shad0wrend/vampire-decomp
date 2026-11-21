@@ -1181,6 +1181,13 @@ ConVar g_102ea428("ft_spawn_particles", "1", 8192, "Set to 0 to stop spawning fi
 CGameMovement g_102ea5e8;
 // END FUNCTION
 
+// FUNCTION: 0x1002a170 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1002a1a0(void);
+InterfaceReg g_102ea5d8(sub_1002a1a0, "GameMovement001");
+// END FUNCTION
+
 // FUNCTION: 0x1002a250 size=0x5
 inline int pcd_initial_102ea8ac() { return 0xffffffff; }
 int g_102ea8ac = pcd_initial_102ea8ac();
