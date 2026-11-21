@@ -4211,6 +4211,13 @@ int g_104a12e0 = ClientClassInit((DT_DynamicLight::ignored *)0);
 RecvTable g_104a1798;
 // END FUNCTION
 
+// FUNCTION: 0x100ae6b0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_EnvParticle { struct ignored; }
+template <> int ClientClassInit<DT_EnvParticle::ignored>(DT_EnvParticle::ignored *);
+int g_104a1794 = ClientClassInit((DT_EnvParticle::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100b2b20 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a153c;
