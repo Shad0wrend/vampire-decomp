@@ -22271,6 +22271,13 @@ int sub_1014a240()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a250 size=0x5
+int __stdcall sub_1014a250(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a9e0 size=0x5c
 #include "CUnknown101e0f00.h"
 
