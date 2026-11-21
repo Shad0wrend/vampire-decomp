@@ -535,6 +535,7 @@
 0x100321e0 func   ?sub_100321e0@CUnknown100321e0@@QAEHXZ CUnknown100321e0::sub_100321e0
 0x100322b0 func   ?sub_100322b0@@YAHXZ sub_100322b0
 0x10032350 func   ?sub_10032350@@YAHXZ sub_10032350
+0x100323c0 func   ?ClientClassInit@@YAHPAUignored@DT_TEMetalSparks@@@Z ClientClassInit
 0x10032480 func   ?sub_10032480@@YAHXZ sub_10032480
 0x10032550 func   ?sub_10032550@@YAHXZ sub_10032550
 0x100326c0 func   ?sub_100326c0@CUnknown100326c0@@QAEHXZ CUnknown100326c0::sub_100326c0
