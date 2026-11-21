@@ -2366,6 +2366,11 @@ RecvTable g_104a4f04;
 RecvTable g_104a4fa0;
 // END FUNCTION
 
+// FUNCTION: 0x100c6950 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a5258;
+// END FUNCTION
+
 // FUNCTION: 0x100c76d0 size=0xa
 #include "ConVar.h"
 ConVar g_104a5210("flood_terminal", "0", 0);
