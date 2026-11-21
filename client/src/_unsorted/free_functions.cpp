@@ -9621,6 +9621,42 @@ void sub_1010a720(const Vector &axis, float angle, Quaternion &q)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a790 size=0xfc
+#include "Quaternion.h"
+
+struct SRadianEuler
+{
+	float x, y, z;
+};
+
+inline void SinCos(float radians, float *sine, float *cosine)
+{
+	__asm
+	{
+		fld DWORD PTR [radians]
+		fsincos
+		mov edx, DWORD PTR [cosine]
+		mov eax, DWORD PTR [sine]
+		fstp DWORD PTR [edx]
+		fstp DWORD PTR [eax]
+	}
+}
+
+void sub_1010a790(const SRadianEuler &angles, Quaternion &outQuat)
+{
+	float sr, sp, sy, cr, cp, cy;
+	SinCos(angles.z * 0.5f, &sy, &cy);
+	SinCos(angles.y * 0.5f, &sp, &cp);
+	SinCos(angles.x * 0.5f, &sr, &cr);
+	float srXcp = sr * cp, crXsp = cr * sp;
+	outQuat.x = srXcp * cy - crXsp * sy;
+	outQuat.y = crXsp * cy + srXcp * sy;
+	float crXcp = cr * cp, srXsp = sr * sp;
+	outQuat.z = crXcp * sy - srXsp * cy;
+	outQuat.w = crXcp * cy + srXsp * sy;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a930 size=0x4c
 void sub_1010a570(const float *q, float *mat);
 void sub_10107eb0(const float *mat, float *angles);
