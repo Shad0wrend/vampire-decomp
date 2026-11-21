@@ -201,6 +201,7 @@
 0x100cdb90 func   ?sub_100cdb90@@YAXPAIPBXH@Z sub_100cdb90
 0x100d05d0 func   ?sub_100d05d0@CMem16_t@@QAEXH@Z CMem16_t::sub_100d05d0
 0x100d1190 func   ?sub_100d1190@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100d1190
+0x100d1240 func   ?sub_100d1240@CMem8b_t@@QAEXH@Z CMem8b_t::sub_100d1240
 0x100d15b0 func   ?sub_100d15b0@CUnknown100b7a90@@QAEPAXI@Z CUnknown100b7a90::sub_100d15b0
 0x100d3380 func   ?sub_100d3380@UtlMem@@QAEXXZ UtlMem::sub_100d3380
 0x100d33d0 func   ?sub_100d33d0@UtlMem@@QAEXXZ UtlMem::sub_100d33d0
