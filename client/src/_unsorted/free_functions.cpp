@@ -10500,6 +10500,17 @@ int sub_100ae5d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aeff0 size=0x8
+namespace lifted {
+struct C100af150 { int sub_100af150(); };
+}
+struct CUnknown100aeff0 { int sub_100aeff0(); };
+int CUnknown100aeff0::sub_100aeff0()
+{
+    return ((lifted::C100af150 *)(this + -16))->sub_100af150();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100af130 size=0x7
 struct CUnknown100af130 { int sub_100af130(); };
 int CUnknown100af130::sub_100af130()
