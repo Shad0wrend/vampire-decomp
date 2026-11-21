@@ -1610,3 +1610,9 @@ ConCommand g_104d3c68("-alt1", sub_101021c0, 0, 0, 0);
 void sub_10102460(void);
 ConCommand g_104d360c("+showvprof", sub_10102460, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x101056c0 size=0xa
+#include "ConCommand.h"
+void sub_10102480(void);
+ConCommand g_104d3a94("-showvprof", sub_10102480, 0, 0, 0);
+// END FUNCTION
