@@ -2006,3 +2006,8 @@ ConVar g_104e15c8("cl_predictionlist", "0", 0, "Show which entities are predicti
 #include "ConVar.h"
 ConVar g_104e16b0("cl_pdump", "-1", 0, "Dump info about this entity to screen.");
 // END FUNCTION
+
+// FUNCTION: 0x10120d60 size=0xa
+#include "ConVar.h"
+ConVar g_104e1750("cl_pclass", "", 0, "Dump entity by prediction classname.");
+// END FUNCTION
