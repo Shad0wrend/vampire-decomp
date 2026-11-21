@@ -52322,6 +52322,70 @@ void CVTraitEffect_t::sub_10156c60(void *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156d40 size=0x187
+#include "CVTraitEffect_t.h"
+#include "CUnknown102043a0.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" __declspec(dllimport) void DevMsg(int, const char *, ...);
+extern char g_102de300[];
+extern char g_105f8ac8[];
+extern const char *g_105f8bb4[];
+
+const char *sub_1015e8a0(CVTraitEffect_t *pEffect, int nValue);
+
+static __forceinline const char *FormatEffect(CVTraitEffect_t *pEffect, const char *psz)
+{
+	if (!psz || !*psz)
+		psz = ((CUnknown102043a0 *)pEffect)->sub_10160740();
+	switch (pEffect->m_nKind) {
+	case 0: {
+		int n = pEffect->m_n14;
+		if (n < 0) {
+			sprintf(g_105f8ac8, "%s  %d", psz, n);
+			return g_105f8ac8;
+		}
+		const char *pszKind = g_105f8bb4[0] ? g_105f8bb4[0] : g_102de300;
+		sprintf(g_105f8ac8, "%s  %s%d", psz, pszKind, n);
+		return g_105f8ac8;
+	}
+	case 6: {
+		const char *pszKind = g_105f8bb4[6] ? g_105f8bb4[6] : g_102de300;
+		sprintf(g_105f8ac8, "%s  %s  %s", psz, pszKind, sub_1015e8a0(pEffect, pEffect->m_n14));
+		DevMsg(1, g_105f8ac8);
+		return g_105f8ac8;
+	}
+	case 7: {
+		const char *pszKind = g_105f8bb4[7] ? g_105f8bb4[7] : g_102de300;
+		sprintf(g_105f8ac8, "%s-%s", psz, pszKind);
+		return g_105f8ac8;
+	}
+	case 9: {
+		const char *pszKind = g_105f8bb4[9] ? g_105f8bb4[9] : g_102de300;
+		sprintf(g_105f8ac8, "%s  %s  %d%%", psz, pszKind, pEffect->m_n14);
+		return g_105f8ac8;
+	}
+	case 10: {
+		const char *pszKind = g_105f8bb4[10] ? g_105f8bb4[10] : g_102de300;
+		sprintf(g_105f8ac8, "%s  %s  %d%%", psz, pszKind, pEffect->m_n14);
+		return g_105f8ac8;
+	}
+	default: {
+		const char *pszKind = g_105f8bb4[pEffect->m_nKind] ? g_105f8bb4[pEffect->m_nKind] : g_102de300;
+		sprintf(g_105f8ac8, "%s  %s  %d", psz, pszKind, pEffect->m_n14);
+		return g_105f8ac8;
+	}
+	}
+}
+
+const char *CVTraitEffect_t::sub_10156d40(const char *pszName)
+{
+	if (*(int *)this != -1)
+		return FormatEffect(this, pszName);
+	return "<ERROR>";
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156ed0 size=0x21
 namespace lifted {
 extern char g_10248398;
