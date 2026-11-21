@@ -1016,3 +1016,8 @@ ConVar g_104d20e8("cdamp_springlength", "0.1", 0);
 #include "ConVar.h"
 ConVar g_104d20a0("cdamp_maxdist", "50.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fbd20 size=0xa
+#include "ConVar.h"
+ConVar g_104d2208("cam_trace_radius", "9.0", 0);
+// END FUNCTION
