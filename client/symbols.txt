@@ -1824,6 +1824,7 @@
 0x10182450 func   ?sub_10182450@@YAXXZ sub_10182450
 0x10184500 func   ?sub_10184500@@YAHXZ sub_10184500
 0x101869b0 func   ?sub_101869b0@@YAXXZ sub_101869b0
+0x10186bb0 func   ?sub_10186bb0@@YAHXZ sub_10186bb0
 0x10186bc0 func   ?sub_10186bc0@@YGXH@Z sub_10186bc0
 0x10187d90 func   ?sub_10187d90@@YGXH@Z sub_10187d90
 0x10187fc0 func   ?sub_10187fc0@@YAHXZ sub_10187fc0
