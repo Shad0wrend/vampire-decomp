@@ -2107,3 +2107,8 @@ ConVar g_105faa30("draw_hud", "1", 0);
 #include "ConVar.h"
 ConVar g_105faac8("scr_printspeed", "8", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10164b00 size=0xa
+#include "ConVar.h"
+ConVar g_105faa80("scr_centertime", "2", 0);
+// END FUNCTION
