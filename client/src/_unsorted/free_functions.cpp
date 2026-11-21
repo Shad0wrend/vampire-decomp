@@ -37387,6 +37387,113 @@ bool StatDefault3::sub_1013e790(VKeyValuesInterface *pNode, CStatDefault3List *p
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ec60 size=0x516
+#include "StatDefault3.h"
+#include "CStatDefault3List.h"
+#include "CUnit101d5e00.h"
+
+struct CNamedList83a0 { int sub_10157b80(const char *pszName); };
+struct CNamedListY { int sub_10140db0(const char *pszName); };
+extern CNamedList83a0 g_105f8b98;
+extern CNamedListY g_105e74e8;
+extern CUnit101d5e00 g_105e74fc;
+extern int g_105e7500;
+extern char g_102de300[];
+extern char g_105f9220[], g_105f90b8[], g_105f8c60[];
+
+struct StatNode
+{
+	virtual const char *vfunc0();
+	virtual void vfunc1();
+	virtual StatNode *vfunc2(const char *pszName);
+	virtual StatNode *vfunc3();
+	virtual void vfunc4(); virtual void vfunc5(); virtual void vfunc6(); virtual void vfunc7(); virtual void vfunc8(); virtual void vfunc9();
+	virtual int vfunc10(const char *pszKey, int nDefault);
+	virtual float vfunc11(const char *pszKey, float flDefault);
+	virtual bool vfunc12(const char *pszKey, bool bDefault);
+	virtual const char *vfunc13(const char *pszKey, const char *pszDefault);
+};
+
+// TARGET: StatDefault3::sub_1013ec60
+char StatDefault3::sub_1013ec60(void *pNode, CStatDefault3List *pList)
+{
+	if (m_4 != -1)
+		sub_1013e530(pList->sub_10140000(m_4));
+	StatNode *pKV = (StatNode *)pNode;
+	if (pKV) {
+		StatNode *pGeneral = pKV->vfunc2("General");
+		if (pGeneral) {
+			m_84 = g_105f8b98.sub_10157b80(pGeneral->vfunc13("ClanEffect", g_102de300));
+			m_88 = g_105f8b98.sub_10157b80(pGeneral->vfunc13("FrenzyEffect", g_102de300));
+		}
+		StatNode *pAttr = pKV->vfunc2("Attributes");
+		if (pAttr) {
+			sub_1013f180(pAttr, g_105f9220, m_d0[0]);
+			const char *s = pAttr->vfunc13("AutoLevel_Template", g_102de300);
+			if (*s)
+				m_d0[0][0x84 / 4] = g_105e74e8.sub_10140db0(s);
+			s = pAttr->vfunc13("CharGen_AutoLevel_Template", g_102de300);
+			if (*s)
+				m_b4 = g_105e74e8.sub_10140db0(s);
+			s = pAttr->vfunc13("Default_AutoLevel_Template", g_102de300);
+			if (*s)
+				m_b8 = g_105e74e8.sub_10140db0(s);
+		}
+		StatNode *pAbilities = pKV->vfunc2("Abilities");
+		if (pAbilities)
+			sub_1013f180(pAbilities, g_105f90b8, m_d0[1]);
+		StatNode *pDisc = pKV->vfunc2("Disciplines");
+		if (!pDisc)
+			pDisc = pKV->vfunc2("Numina");
+		if (pDisc)
+			sub_1013f180(pDisc, g_105f8c60, m_pd8);
+		StatNode *pReactions = pKV->vfunc2("Reactions");
+		if (pReactions) {
+			StatNode *pTo = pReactions->vfunc2("To");
+			if (pTo) {
+				for (int i = 0; i < g_105e7500; i++)
+					m_dc[i] = pTo->vfunc10(g_105e74fc.sub_1013ffa0(i), 0);
+			}
+		}
+		m_8c[0] = pGeneral->vfunc12("Kindred", m_8c[0]);
+		m_8c[1] = pGeneral->vfunc12("Animal", m_8c[1]);
+		m_8c[2] = pGeneral->vfunc12("Monster", m_8c[2]);
+		m_8c[3] = pGeneral->vfunc12("Supernatural", m_8c[3]);
+		m_8c[4] = pGeneral->vfunc12("Boss", m_8c[4]);
+		m_8c[5] = pGeneral->vfunc12("GibsCollide", true);
+		m_8c[6] = pGeneral->vfunc12("Tramp", m_8c[6]);
+		m_8c[7] = pGeneral->vfunc12("Is_Blueblood", m_8c[7]);
+		m_8c[8] = pGeneral->vfunc12("Has_Badblood", m_8c[8]);
+		m_8c[9] = pGeneral->vfunc12("NoBiting", m_8c[9]);
+		m_8c[10] = pGeneral->vfunc12("FastFood", m_8c[10]);
+		m_8c[11] = pGeneral->vfunc12("HasTrueSight", m_8c[11]);
+		m_ac = pGeneral->vfunc10("TrueSightVisionDistance", m_ac);
+		m_98[0] = pGeneral->vfunc12("Has_Burning_Death", m_98[0]);
+		m_98[1] = pGeneral->vfunc12("special_health_gfx", m_98[1]);
+		m_98[2] = pGeneral->vfunc12("multiplayer", m_98[2]);
+		m_98[3] = pGeneral->vfunc12("AlwaysInnocent", m_98[3]);
+		m_98[4] = pGeneral->vfunc12("NeverInnocent", m_98[4]);
+		m_98[5] = pGeneral->vfunc12("Disallow_Kindred_Death", m_98[5]);
+		m_98[6] = pGeneral->vfunc12("Disallow_Knockbacks", m_98[6]);
+		m_98[7] = pGeneral->vfunc12("Disallow_FirearmsToBashing", m_98[7]);
+		m_98[8] = pGeneral->vfunc12("KnockbackRangedPlayer", m_98[8]);
+		m_98[9] = pGeneral->vfunc12("DisallowDiscipineTgt", m_98[9]);
+		m_a4 = pGeneral->vfunc10("DisciplineStrata", m_a4);
+		m_a8 = pGeneral->vfunc12("AbsorbsRangedAttacks", m_a8);
+		m_a9 = pGeneral->vfunc12("ReceivesExtraClubDmg", m_a9);
+		if (m_8c[0])
+			m_bc[0] = 0.5f;
+		m_bc[0] = pGeneral->vfunc11("DamageFilterBashing", m_bc[0]);
+		m_bc[1] = pGeneral->vfunc11("DamageFilterLethal", m_bc[1]);
+		m_bc[2] = pGeneral->vfunc11("DamageFilterAggravated", m_bc[2]);
+		m_cc = pGeneral->vfunc11("SpecialMoveADamage", m_cc);
+		m_c8 = pGeneral->vfunc11("DamageFilterFlame", m_bc[2]);
+		m_d0[0][10] = m_0;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f290 size=0x3
 char sub_1013f290()
 {
