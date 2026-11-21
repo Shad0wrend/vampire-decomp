@@ -12270,6 +12270,31 @@ int CUnk1006cbe0::sub_10160280(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101602b0 size=0x79
+int sub_101d159d(char *, const char *, ...);
+void sub_1015fbb0(char *);
+extern char g_102de300[];
+struct Dump {
+    char pad[8];
+    const char *m_pName;
+    char pad2[0x10 - 0xc];
+    int m_nCount;
+    float *m_pValues;
+    void sub_101602b0();
+};
+
+void Dump::sub_101602b0()
+{
+    char buf[128];
+    sub_101d159d(buf, "\n\t%s:\n", m_pName ? m_pName : g_102de300);
+    sub_1015fbb0(buf);
+    for (int i = 0; i < m_nCount; i++) {
+        sub_101d159d(buf, "(%d):\t\t%8.3f\n", i, m_pValues[i]);
+        sub_1015fbb0(buf);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160db0 size=0x29
 struct CUnk10204c20
 {
