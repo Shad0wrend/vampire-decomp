@@ -4725,6 +4725,16 @@ void __stdcall sub_10057f40(int a0, int a1, int a2, int a3, int a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10058080 size=0x6
+namespace lifted {
+extern int g_103eec98;
+}
+int sub_10058080()
+{
+    return lifted::g_103eec98;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005e010 size=0x4
 struct CUnknown1005e010 { char sub_1005e010(); };
 char CUnknown1005e010::sub_1005e010()
