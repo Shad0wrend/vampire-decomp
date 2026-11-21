@@ -357,6 +357,7 @@
 0x1001e7d0 func   ?sub_1001e7d0@@YAHXZ sub_1001e7d0
 0x1001e8f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGJunkyardBusinesscard@@@Z ClientClassInit
 0x1001ea50 func   ?sub_1001ea50@@YAHXZ sub_1001ea50
+0x1001eb70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGIdolCat@@@Z ClientClassInit
 0x1001ecd0 func   ?sub_1001ecd0@@YAHXZ sub_1001ecd0
 0x1001ef50 func   ?sub_1001ef50@@YAHXZ sub_1001ef50
 0x1001f1d0 func   ?sub_1001f1d0@@YAHXZ sub_1001f1d0
