@@ -3505,6 +3505,7 @@
 0x101666a0 func   ?sub_101666a0@@YAHXZ sub_101666a0
 0x101666b0 func   ?sub_101666b0@CUnknown101666b0@@QAEPAXXZ CUnknown101666b0::sub_101666b0
 0x101666c0 func   ?sub_101666c0@@YAXXZ sub_101666c0
+0x101666f0 func   ??_GCGrid@vgui2@@UAEPAXI@Z ??_GCGrid@vgui2@@UAEPAXI@Z
 0x10166710 func   ??1CGrid@vgui2@@UAE@XZ vgui2::CGrid::~CGrid
 0x101667f0 func   ?sub_101667f0@CUnkDelete101d7c90@@QAEPAXE@Z CUnkDelete101d7c90::sub_101667f0
 0x10166850 func   ?sub_10166850@CUnknown10166850@@QAEHHH@Z CUnknown10166850::sub_10166850
