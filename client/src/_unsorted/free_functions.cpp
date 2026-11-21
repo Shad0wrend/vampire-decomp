@@ -24590,6 +24590,29 @@ float SCurve6caa0::sub_101601a0(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101601f0 size=0x31
+#include "CUnknown10204e90.h"
+#include "CUnknown10204c60.h"
+
+struct CUnk_1006ca50
+{
+    char pad_0000[0x18];
+    void sub_101601a0(int a);
+    void sub_101601f0(int a);
+};
+
+void CUnk_1006ca50::sub_101601f0(int a)
+{
+    int v;
+    if (a != 0) {
+        v = ((CUnknown10204e90 *)((char *)this + 0x18))->sub_10160b40((void *)a);
+    } else {
+        v = ((CUnknown10204c60 *)((char *)this + 0x18))->sub_10160de0();
+    }
+    this->sub_101601a0(v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160250 size=0x30
 #include "StatDefault.h"
 int StatDefault::sub_10160250(int arg)
