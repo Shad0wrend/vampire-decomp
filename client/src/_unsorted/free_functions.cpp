@@ -12341,6 +12341,14 @@ void CAccum64View::sub_1010df80(const __int64 *pValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010dfc0 size=0x4
+struct CUnknown1010dfc0 { int sub_1010dfc0(); };
+int CUnknown1010dfc0::sub_1010dfc0()
+{
+    return *(int *)((char *)this + 0x24);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010dfe0 size=0x84
 #include <string.h>
 #include <stdlib.h>
