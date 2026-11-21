@@ -24004,6 +24004,44 @@ void sub_101a23f0(float *m)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2450 size=0xc4
+#include <math.h>
+struct mat34_1024e030 { float m[3][4]; float *operator[](int i) { return m[i]; } const float *operator[](int i) const { return m[i]; } };
+struct ang_1024e030 { float x, y, z; float &operator[](int i) { return ((float *)this)[i]; } };
+
+#define M_PI_F_1024e030 ((float)(3.14159265358979323846))
+#define RAD2DEG_1024e030(x) ((float)(x) * (float)(180.f / M_PI_F_1024e030))
+
+void sub_101a2450(const mat34_1024e030 &matrix, ang_1024e030 &angles)
+{
+	float forward[3];
+	float left[3];
+	float up[3];
+
+	forward[0] = matrix[0][0];
+	forward[1] = matrix[1][0];
+	forward[2] = matrix[2][0];
+	left[0] = matrix[0][1];
+	left[1] = matrix[1][1];
+	left[2] = matrix[2][1];
+	up[2] = matrix[2][2];
+
+	float xyDist = (float)sqrt(forward[0] * forward[0] + forward[1] * forward[1]);
+	if (xyDist > 0.001f)
+	{
+		angles[1] = RAD2DEG_1024e030((float)atan2(forward[1], forward[0]));
+		angles[0] = RAD2DEG_1024e030((float)atan2(-forward[2], xyDist));
+		angles[2] = RAD2DEG_1024e030((float)atan2(left[2], up[2]));
+	}
+	else
+	{
+		angles[1] = RAD2DEG_1024e030((float)atan2(-left[0], left[1]));
+		angles[0] = RAD2DEG_1024e030((float)atan2(-forward[2], xyDist));
+		angles[2] = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2520 size=0xb4
 struct S1024e140Matrix
 {
