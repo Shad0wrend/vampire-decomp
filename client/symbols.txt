@@ -530,6 +530,7 @@
 0x1007ddd0 func   ?sub_1007ddd0@@YAXPAX@Z sub_1007ddd0
 0x1007ddf0 func   ?sub_1007ddf0@@YAHXZ sub_1007ddf0
 0x1007e230 func   ?sub_1007e230@@YAHXZ sub_1007e230
+0x1007f300 func   ?sub_1007f300@@YAHXZ sub_1007f300
 0x1007f6e0 func   ?sub_1007f6e0@@YADXZ sub_1007f6e0
 0x10080e00 func   ?sub_10080e00@@YGHH@Z sub_10080e00
 0x10080e10 func   ?sub_10080e10@@YGXHH@Z sub_10080e10
