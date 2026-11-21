@@ -18,3 +18,34 @@ int CGameMovement::vfunc14(int type)
 	return 1;
 }
 // END FUNCTION
+
+// FUNCTION: 0x100eb1f0 size=0x46
+#include "CGameMovement.h"
+struct CSurfProp { char pad[0x72]; char m_bFlag; };
+struct CSurfSys {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual CSurfProp *Get(int i);
+};
+struct CPhysSys {
+	virtual void a0(); virtual void a1(); virtual void a2(); virtual void a3(); virtual void a4();
+	virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8();
+	virtual CSurfSys *GetSurfaceProps();
+};
+struct CTraceView { char pad[0x30]; unsigned int m_flags; char pad2[0xc]; short m_surf; };
+extern CPhysSys *g_104df784;
+
+// TARGET: CGameMovement::vfunc21
+char CGameMovement::vfunc21(void *pTrace)
+{
+	CTraceView *t = (CTraceView *)pTrace;
+	if (t->m_flags & 0x20000000)
+		return 1;
+	CSurfSys *p = g_104df784->GetSurfaceProps();
+	if (p) {
+		CSurfProp *s = p->Get(t->m_surf);
+		if (s && s->m_bFlag)
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
