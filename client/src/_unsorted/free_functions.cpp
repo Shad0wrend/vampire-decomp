@@ -14439,6 +14439,18 @@ void sub_1012d3f0(int a, int b, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d7a0 size=0x42
+struct SSoundCache { char *sub_1012f090(char *name, int a); };
+extern SSoundCache g_105e5540;
+__declspec(dllimport) const char *Q_stristr(const char *, const char *);
+char *sub_1012d7a0(char *name, int a)
+{
+    if (Q_stristr(name, ".wav") || Q_stristr(name, ".mp3"))
+        return name;
+    return g_105e5540.sub_1012f090(name, a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d830 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);

@@ -591,6 +591,7 @@
 0x1012c740 func   ?sub_1012c740@CUnknown102496d0@@QAEXM@Z CUnknown102496d0::sub_1012c740
 0x1012c770 func   ?sub_1012c770@CUnknown102496a0@@QAEXPAUCRopeNode@@HPAVCBaseRopePhysics@@MM@Z CUnknown102496a0::sub_1012c770
 0x1012d3f0 func   ?sub_1012d3f0@@YAXHHPBD@Z sub_1012d3f0
+0x1012d7a0 func   ?sub_1012d7a0@@YAPADPADH@Z sub_1012d7a0
 0x1012d830 func   ?sub_1012d830@UtlMem@@QAEXXZ UtlMem::sub_1012d830
 0x1012d970 func   ?sub_1012d970@@YAPBDM@Z sub_1012d970
 0x1012d9d0 func   ?sub_1012d9d0@@YAPBDH@Z sub_1012d9d0
