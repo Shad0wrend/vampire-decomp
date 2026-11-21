@@ -21422,6 +21422,36 @@ int sub_100c68b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c69b0 size=0x14f
+#include "RecvTable.h"
+extern RecvTable g_104a5258;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102ad768;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseTerminal { struct ignored; }
+template <> int ClientClassInit<DT_BaseTerminal::ignored>(DT_BaseTerminal::ignored *)
+{
+	char *pRecvTableName = "DT_BaseTerminal";
+	RecvTable &RecvTable = g_104a5258;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102ad768, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_nScreenColumns", 1964, 4, 0, 0),
+		RecvPropInt("m_nScreenRows", 1968, 4, 0, 0),
+		RecvPropInt("m_bInUse", 3844, 1, 0, 0),
+		RecvPropInt("m_nColorScheme", 3848, 4, 0, 0),
+		RecvPropInt("m_HackFlags", 3856, 4, 0, 0),
+		RecvPropInt("m_nMaxInput", 3860, 4, 0, 0),
+		RecvPropInt("m_idxKeystrokeSnd", 3864, 4, 0, 0),
+		RecvPropInt("m_bAllowDirKeys", 3853, 1, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c7f30 size=0x8
 struct CUnknown100c7f30 { void sub_100c7f30(); };
 void CUnknown100c7f30::sub_100c7f30()
