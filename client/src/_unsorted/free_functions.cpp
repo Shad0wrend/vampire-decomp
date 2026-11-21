@@ -23944,6 +23944,15 @@ int CUnknown101b9140::sub_10132db0(int elem, int num, const CUnknown101b9140Elem
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133280 size=0xf
+struct CUnknown10133280 { void * sub_10133280(int); };
+void * CUnknown10133280::sub_10133280(int a0)
+{
+    *(short *)this = *(short *)((char *)a0);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133340 size=0x1d1
 #include "Vector.h"
 #include "utlmemory.h"
