@@ -23745,6 +23745,14 @@ void __stdcall sub_10156260(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101563d0 size=0x3
+struct CUnknown101563d0 { void * sub_101563d0(); };
+void * CUnknown101563d0::sub_101563d0()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101563e0 size=0x1
 void sub_101563e0()
 {
