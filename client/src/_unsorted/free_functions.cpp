@@ -27232,6 +27232,13 @@ void sub_1018c710()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c840 size=0x3
+char sub_1018c840()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e330 size=0x28
 #include <stdarg.h>
 
