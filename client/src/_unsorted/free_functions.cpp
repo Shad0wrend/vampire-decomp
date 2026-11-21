@@ -11496,6 +11496,12 @@ int sub_1010e070(CUnknown10247800 **pA, CUnknown10247800 **pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e1d0 size=0x1
+void sub_1010e1d0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e1e0 size=0x91
 #include <string.h>
 
