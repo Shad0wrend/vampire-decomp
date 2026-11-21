@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100df4a0 size=0x3
+#include "ConCommand.h"
+bool ConCommand::vfunc1()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df4d0 size=0x38
 #include "ConCommand.h"
 #include "ConCommandBase.h"
