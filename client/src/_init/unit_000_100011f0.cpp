@@ -592,3 +592,8 @@ ConVar g_104a3af0("mat_fullbright", "0", 0);
 #include "ConVar.h"
 ConVar g_104a3aa8("r_speeds", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100be7d0 size=0xa
+#include "ConVar.h"
+ConVar g_104a3ce0("r_drawropes", "1", 0);
+// END FUNCTION
