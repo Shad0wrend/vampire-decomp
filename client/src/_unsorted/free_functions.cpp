@@ -53305,6 +53305,67 @@ void CUnk101f4330::sub_10155510(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155540 size=0x15f
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CUnknown101f4370.h"
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+extern "C" char *strrchr(const char *, int);
+extern "C" int _strcmpi(const char *, const char *);
+extern "C" int atoi(const char *);
+extern void (__cdecl *g_101e3188)(char *, const char *, int);
+extern char g_102de300[];
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_102de300; }
+
+struct NameLookup {
+    char m_pad0[0x14];
+    int m_nCount;
+    CUnknown101f4370NameRec **m_pRecs;
+
+    int Find(const char *name)
+    {
+        for (int i = 0; i < m_nCount; i++) {
+            if (_strcmpi(STRINGR(m_pRecs[i]->m_name.m_psz), name) == 0)
+                return m_pRecs[i]->m_id;
+        }
+        return -1;
+    }
+};
+
+void CUnknown101f4370::sub_10155540(const char *name, int *pIndex, int *pExtra)
+{
+    char buf[64];
+    int idx;
+    int val;
+    g_101e3188(buf, name, strlen(name) + 1);
+    char *dot = strrchr(buf, '.');
+    if (dot)
+        *dot = 0;
+    char *us = strrchr(buf, '_');
+    if (!us) {
+        idx = ((NameLookup *)m_pNames)->Find(buf);
+        val = 0;
+    } else {
+        *us = 0;
+        idx = ((NameLookup *)m_pNames)->Find(buf);
+        if (idx != -1) {
+            val = atoi(us + 1);
+        } else {
+            *us = '_';
+            idx = ((NameLookup *)m_pNames)->Find(buf);
+            val = 0;
+        }
+    }
+    if (pIndex)
+        *pIndex = idx;
+    if (pExtra)
+        *pExtra = val;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101556a0 size=0x2b
 struct CUnit101f4530 {
     int sub_101556a0(int n, int b);
