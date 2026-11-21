@@ -11842,6 +11842,34 @@ void CUnk1042da10::sub_101209c0(char bSet)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120a10 size=0x7e
+#include "CUnknown1042d9a0.h"
+
+// sub_1042d700, sub_1042d720, sub_1042d9a0, sub_10011e4b (0x1042d9f0): the game compiled them before this function, in the same unit, so VC6 knows which registers they keep;
+// the block's own copy, in a namespace of its own: no second definition of the game's name.
+namespace block_1042daa0 {
+unsigned __fastcall sub_10120790(unsigned *p) { return *p >> 1 & 0x1f; }
+unsigned __fastcall sub_101207a0(unsigned *p) { return *p >> 6 & 0x3ff; }
+unsigned __fastcall sub_10120980(unsigned *p) { return ((unsigned short *)p)[1] & 0xfff; }
+unsigned __fastcall sub_101209b0(unsigned *p) { return *p >> 28; }
+}
+using namespace block_1042daa0;
+
+// TARGET: CUnknown1042d9a0::sub_10120a10
+char CUnknown1042d9a0::sub_10120a10(CUnknown1042d9a0 *other)
+{
+    if (this == other)
+        return 1;
+    if (sub_10120790((unsigned *)this) != sub_10120790((unsigned *)other))
+        return 0;
+    if (sub_101207a0((unsigned *)this) != sub_101207a0((unsigned *)other))
+        return 0;
+    if (block_1042daa0::sub_10120980((unsigned *)this) != block_1042daa0::sub_10120980((unsigned *)other))
+        return 0;
+    return sub_101209b0((unsigned *)this) == sub_101209b0((unsigned *)other);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101271e0 size=0x7d
 struct IApi {
     virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
