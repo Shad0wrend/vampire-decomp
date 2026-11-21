@@ -2753,3 +2753,8 @@ ConVar g_10618998("r_screendelaymax", "0.5f", 0);
 #include "ConVar.h"
 ConVar g_10619018("r_DrawDetailProps", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1019c650 size=0xa
+#include "ConVar.h"
+ConVar g_106193c8("fog_override", "0", 0);
+// END FUNCTION
