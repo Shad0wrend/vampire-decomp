@@ -58729,6 +58729,29 @@ float *CUnk1024d7e0::sub_101a1d60(float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1e50 size=0x104
+#include "VMatrix.h"
+
+VMatrix VMatrix::sub_101a1e50() const
+{
+	Vector tmp, vecs[3];
+	tmp.sub_10049f20(m[0][0], m[1][0], m[2][0]);
+	vecs[0] = tmp;
+	vecs[1].sub_10039080(sub_101a1d40(tmp));
+	vecs[2].sub_10039080(sub_101a1d60(tmp));
+	VectorNormalize(vecs[0]);
+	VectorNormalize(vecs[1]);
+	VectorNormalize(vecs[2]);
+	VMatrix mRet;
+	mRet.SetForward(vecs[0]);
+	mRet.SetLeft(vecs[1]);
+	mRet.SetUp(vecs[2]);
+	mRet.m[3][0] = mRet.m[3][1] = mRet.m[3][2] = 0.0f;
+	mRet.m[3][3] = 1.0f;
+	return mRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2290 size=0x157
 #include "QAngle.h"
 #include "VMatrix.h"
