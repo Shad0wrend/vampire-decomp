@@ -34804,6 +34804,20 @@ void sub_1010c5b0(const float *angles1, const float *angles2, float *pOut1, floa
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c620 size=0x99
+#include "Vector.h"
+
+void sub_1010c620(const Vector &v1, const Vector &v2, const Vector &v3, Vector &normal, float &intercept)
+{
+	Vector e1, e2;
+	VectorSubtract(v2, v1, e1);
+	VectorSubtract(v3, v1, e2);
+	CrossProduct(e1, e2, normal);
+	VectorNormalize(normal);
+	intercept = DotProduct(normal, v1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010df00 size=0x1f
 struct CUnk10247770
 {
