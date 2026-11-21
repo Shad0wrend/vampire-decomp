@@ -3735,6 +3735,13 @@ int g_10486a5c = ClientClassInit((DT_BaseViewModel::ignored *)0);
 RecvTable g_104870cc;
 // END FUNCTION
 
+// FUNCTION: 0x1007fde0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BeamPredictableId { struct ignored; }
+template <> int ClientClassInit<DT_BeamPredictableId::ignored>(DT_BeamPredictableId::ignored *);
+int g_104870c8 = ClientClassInit((DT_BeamPredictableId::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1007fea0 size=0xa
 #include "RecvTable.h"
 RecvTable g_104870a4;
