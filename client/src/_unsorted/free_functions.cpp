@@ -17025,6 +17025,18 @@ char CUnk1011d310::sub_10104360(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101063f0 size=0x1d
+struct CUnknown101063f0 { int sub_101063f0(int, int); };
+int CUnknown101063f0::sub_101063f0(int a0, int a1)
+{
+    *(int *)((char *)a0) = *(int *)((char *)this + 0x54);
+    *(int *)((char *)a1) = *(int *)((char *)this + 0x58);
+    *(int *)((char *)this + 0x54) = 0;
+    *(int *)((char *)this + 0x58) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106be0 size=0x7c
 #include "InterfaceReg.h"
 
