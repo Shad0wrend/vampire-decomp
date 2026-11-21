@@ -16058,6 +16058,183 @@ void sub_100896c0(StudioHdr *pStudioHdr, Vector pos[], Quaternion q[])
 }
 // END FUNCTION
 
+// FUNCTION: 0x10089740 size=0x3d6
+#include "Quaternion.h"
+#include "Vector.h"
+#include <math.h>
+struct StudioHdrX;
+struct SeqDescX
+{
+	char m_pad00[8];
+	int flags;	// 0x08
+	char m_pad0c[0x38 - 0x0c];
+	short anim[16][16];	// 0x38
+	char m_pad238[0x23c - 0x238];
+	int groupsize[2];	// 0x23c
+	int paramindex[2];	// 0x244
+	float paramstart[2];
+	float paramend[2];
+	char m_pad25c[0x2fc - 0x25c];
+};
+struct AnimDescX;
+struct StudioHdrX
+{
+	char m_pad00[0x10c];
+	int animdescindex;	// 0x10c
+	int numseq;	// 0x110
+	int seqindex;	// 0x114
+	char m_pad118[0x184 - 0x118];
+	int poseparamindex;	// 0x184
+	SeqDescX *pSeqdesc(int i) { if (i < 0) i = 0; return (SeqDescX *)((char *)this + seqindex) + i; }
+	AnimDescX *pAnimdesc(int i) { return (AnimDescX *)((char *)this + animdescindex + i * 0x48); }
+};
+
+extern float g_101e34f0;
+
+#define min(a,b) (((a) < (b)) ? (a) : (b))
+#define max(a,b) (((a) > (b)) ? (a) : (b))
+
+
+struct PoseParamDescX
+{
+	char pad00[8];
+	float start;
+	float end;
+	float loop;
+};
+namespace block_100c1f40 {
+#pragma auto_inline(off)
+void sub_10089500(StudioHdrX *pStudioHdr, const float *poseParameter, SeqDescX &seqdesc, int iLocalIndex, float &flSetting, int &index);
+void sub_10089500(StudioHdrX *pStudioHdr, const float *poseParameter, SeqDescX &seqdesc, int iLocalIndex, float &flSetting, int &index)
+{
+	int iPose = seqdesc.paramindex[iLocalIndex];
+	if (iPose == -1) {
+		flSetting = 0;
+		index = 0;
+		return;
+	}
+	PoseParamDescX &Pose = *(PoseParamDescX *)((char *)pStudioHdr + pStudioHdr->poseparamindex + iPose * 0x14);
+	float flValue = poseParameter[iPose];
+	if (Pose.loop != g_101e34f0) {
+		float wrap = (Pose.end + Pose.start) * 0.5 + Pose.loop * 0.5;
+		float shift = Pose.loop - wrap;
+		flValue = flValue - Pose.loop * floor((flValue + shift) / Pose.loop);
+	}
+	flSetting = (flValue - (seqdesc.paramstart[iLocalIndex] - Pose.start) / (Pose.end - Pose.start)) /
+		((seqdesc.paramend[iLocalIndex] - Pose.start) / (Pose.end - Pose.start) - (seqdesc.paramstart[iLocalIndex] - Pose.start) / (Pose.end - Pose.start));
+	if (flSetting < g_101e34f0)
+		flSetting = 0.0f;
+	else if (flSetting > 1.0f)
+		flSetting = 1.0f;
+	index = 0;
+	if (seqdesc.groupsize[iLocalIndex] > 1) {
+		index = (int)((seqdesc.groupsize[iLocalIndex] - 1) * flSetting);
+		if (index == seqdesc.groupsize[iLocalIndex] - 1)
+			index = seqdesc.groupsize[iLocalIndex] - 2;
+		flSetting = (seqdesc.groupsize[iLocalIndex] - 1) * flSetting - index;
+	}
+}
+#pragma auto_inline(on)
+}
+using namespace block_100c1f40;
+void sub_10089b20(StudioHdrX *pStudioHdr, Vector *pos, Quaternion *q, AnimDescX *panim, float cycle, int boneMask);
+void sub_100892c0(StudioHdrX *pStudioHdr, Quaternion *q1, Vector *pos1, AnimDescX *panim, Quaternion *q2, Vector *pos2, float s, int boneMask);
+
+void sub_10089740(StudioHdrX *pHdrArg, Vector *pos, Quaternion *q, int sequence, float cycle, const float *poseParameter, int boneMask)
+{
+	static Vector pos2[128];
+	static Quaternion q2[128];
+	static Vector pos3[128];
+	static Quaternion q3[128];
+
+	StudioHdrX *pStudioHdr = pHdrArg;
+	int iSeq = sequence;
+	if (iSeq < 0 || iSeq >= pStudioHdr->numseq)
+		iSeq = 0;
+
+	SeqDescX &seqdesc = *pStudioHdr->pSeqdesc(iSeq);
+
+	int &i0 = *(int *)&pHdrArg;
+	float &s0 = *(float *)&sequence;
+	int i1;
+	float s1;
+	i0 = 0;
+	i1 = 0;
+	s0 = 0;
+	s1 = 0;
+
+	sub_10089500(pStudioHdr, poseParameter, seqdesc, 0, s0, i0);
+	sub_10089500(pStudioHdr, poseParameter, seqdesc, 1, s1, i1);
+
+	if (cycle < g_101e34f0 || cycle >= 1)
+	{
+		if (seqdesc.flags & 1)
+		{
+			cycle = cycle - (int)cycle;
+			if (cycle < g_101e34f0)
+				cycle += 1;
+		}
+		else
+		{
+			cycle = max(0.0, min(cycle, 0.9999));
+		}
+	}
+
+	AnimDescX *panim0;
+	AnimDescX *panim1;
+	if (seqdesc.groupsize[1] == 1)
+	{
+		if (seqdesc.groupsize[0] == 1)
+		{
+			panim0 = pStudioHdr->pAnimdesc(seqdesc.anim[0][0]);
+			sub_10089b20(pStudioHdr, pos, q, panim0, cycle, boneMask);
+		}
+		else
+		{
+			panim0 = pStudioHdr->pAnimdesc(seqdesc.anim[i0  ][i1  ]);
+			panim1 = pStudioHdr->pAnimdesc(seqdesc.anim[i0+1][i1  ]);
+
+			sub_10089b20(pStudioHdr, pos,  q,  panim0, cycle, boneMask);
+			sub_10089b20(pStudioHdr, pos2, q2, panim1, cycle, boneMask);
+
+			sub_100892c0(pStudioHdr, q, pos, panim1, q2, pos2, s0, boneMask);
+		}
+	}
+	else
+	{
+		if (seqdesc.groupsize[0] == 1)
+		{
+			panim0 = pStudioHdr->pAnimdesc(seqdesc.anim[i0  ][i1  ]);
+			panim1 = pStudioHdr->pAnimdesc(seqdesc.anim[i0  ][i1+1]);
+
+			sub_10089b20(pStudioHdr, pos,  q,  panim0, cycle, boneMask);
+			sub_10089b20(pStudioHdr, pos2, q2, panim1, cycle, boneMask);
+
+			sub_100892c0(pStudioHdr, q, pos, panim1, q2, pos2, s0, boneMask);
+		}
+		else
+		{
+			panim0 = pStudioHdr->pAnimdesc(seqdesc.anim[i0  ][i1]);
+			panim1 = pStudioHdr->pAnimdesc(seqdesc.anim[i0+1][i1]);
+
+			sub_10089b20(pStudioHdr, pos,  q,  panim0, cycle, boneMask);
+			sub_10089b20(pStudioHdr, pos2, q2, panim1, cycle, boneMask);
+
+			sub_100892c0(pStudioHdr, q, pos, panim1, q2, pos2, s0, boneMask);
+
+			panim0 = pStudioHdr->pAnimdesc(seqdesc.anim[i0  ][i1+1]);
+			panim1 = pStudioHdr->pAnimdesc(seqdesc.anim[i0+1][i1+1]);
+
+			sub_10089b20(pStudioHdr, pos2, q2, panim0, cycle, boneMask);
+			sub_10089b20(pStudioHdr, pos3, q3, panim1, cycle, boneMask);
+
+			sub_100892c0(pStudioHdr, q2, pos2, panim1, q3, pos3, s0, boneMask);
+			sub_100892c0(pStudioHdr, q, pos, panim1, q2, pos2, s1, boneMask);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10089b20 size=0xdf
 struct CBlendStudioHdr { char m_pad[0xf0]; int numbones; int boneindex; };
 struct CBlendBone { char m_pad[0xa0]; };
