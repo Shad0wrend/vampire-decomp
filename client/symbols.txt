@@ -347,6 +347,7 @@
 0x10015410 func   ??_GC_WeaponIArmor_Lt_Cloth@@UAEPAXI@Z ??_GC_WeaponIArmor_Lt_Cloth@@UAEPAXI@Z
 0x10015450 func   ?sub_10015450@@YAHXZ sub_10015450
 0x10015570 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponIArmor_Lt_Cloth@@@Z ClientClassInit
+0x10015690 func   ??_GC_WeaponIArmor_Hvy_Cloth@@UAEPAXI@Z ??_GC_WeaponIArmor_Hvy_Cloth@@UAEPAXI@Z
 0x100156d0 func   ?sub_100156d0@@YAHXZ sub_100156d0
 0x100157f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponIArmor_Hvy_Cloth@@@Z ClientClassInit
 0x10015950 func   ?sub_10015950@@YAHXZ sub_10015950
