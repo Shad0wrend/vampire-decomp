@@ -33540,6 +33540,14 @@ void sub_10182450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10183ac0 size=0x7
+struct CUnknown10183ac0 { char sub_10183ac0(); };
+char CUnknown10183ac0::sub_10183ac0()
+{
+    return *(char *)((char *)this + 0x1e14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10184500 size=0x5
 namespace lifted {
 int sub_10184360();

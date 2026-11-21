@@ -1923,6 +1923,7 @@
 0x1017ce10 func   ?sub_1017ce10@@YAHXZ sub_1017ce10
 0x10181b70 func   ?sub_10181b70@@YAXXZ sub_10181b70
 0x10182450 func   ?sub_10182450@@YAXXZ sub_10182450
+0x10183ac0 func   ?sub_10183ac0@CUnknown10183ac0@@QAEDXZ CUnknown10183ac0::sub_10183ac0
 0x10184500 func   ?sub_10184500@@YAHXZ sub_10184500
 0x101869b0 func   ?sub_101869b0@@YAXXZ sub_101869b0
 0x10186bb0 func   ?sub_10186bb0@@YAHXZ sub_10186bb0
