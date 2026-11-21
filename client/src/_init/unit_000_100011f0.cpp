@@ -2015,6 +2015,13 @@ int g_102e7500 = ClientClassInit((DT_ItemGIdolCat::ignored *)0);
 RecvTable g_102e6d7c;
 // END FUNCTION
 
+// FUNCTION: 0x1001edd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGIdolCrane { struct ignored; }
+template <> int ClientClassInit<DT_ItemGIdolCrane::ignored>(DT_ItemGIdolCrane::ignored *);
+int g_102e6d78 = ClientClassInit((DT_ItemGIdolCrane::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001f010 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e1e90;
