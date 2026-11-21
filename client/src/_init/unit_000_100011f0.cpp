@@ -2591,6 +2591,13 @@ int g_102e3fb4 = ClientClassInit((DT_ItemKHitmanJiKey::ignored *)0);
 RecvTable g_102e1b88;
 // END FUNCTION
 
+// FUNCTION: 0x100265d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKHannahsSafeKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKHannahsSafeKey::ignored>(DT_ItemKHannahsSafeKey::ignored *);
+int g_102e1b84 = ClientClassInit((DT_ItemKHannahsSafeKey::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10026810 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e0ca4;
