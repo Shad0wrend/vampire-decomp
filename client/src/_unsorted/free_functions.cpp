@@ -12889,6 +12889,13 @@ char __stdcall sub_1010e460(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010f250 size=0x5
+int __stdcall sub_1010f250(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f390 size=0x4b
 struct SCopy {
     int a, b, c, d;
