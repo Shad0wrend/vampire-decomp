@@ -4090,6 +4090,13 @@ ConVar g_105faac8("scr_printspeed", "8", 0);
 ConVar g_105faa80("scr_centertime", "2", 0);
 // END FUNCTION
 
+// FUNCTION: 0x10165130 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10165160(void);
+InterfaceReg g_105fab0c(sub_10165160, "VCENTERPRINT001");
+// END FUNCTION
+
 // FUNCTION: 0x10165e40 size=0xa
 #include "ConVar.h"
 ConVar g_105fab38("cl_showfps", "0", 0, "Draw fps meter at top of screen");
