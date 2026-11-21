@@ -19542,6 +19542,12 @@ CUnk101dc850 *CUnk101dc850::sub_10147760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147780 size=0x1
+void sub_10147780()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101479d0 size=0x64
 struct CItemVec {
     int m_growBy;
