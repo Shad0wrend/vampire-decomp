@@ -18332,6 +18332,12 @@ void CPtrList101d6400::sub_10140380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101405a0 size=0x1
+void sub_101405a0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101405b0 size=0xf1
 #include "CUnknown101d6750.h"
 
