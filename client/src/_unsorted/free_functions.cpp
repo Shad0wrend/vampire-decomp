@@ -882,6 +882,41 @@ void CMem8b_t::sub_10055900(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057470 size=0x72
+struct Elem { char data[0x88]; };
+struct Mem {
+    Elem *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+};
+extern void *(*g_101e3104)(void *, int);
+extern void *(*g_101e3100)(int);
+
+void __fastcall sub_10057470(Mem *self, int, int num)
+{
+    if (self->m_nGrowSize == -1)
+        return;
+    int nAllocationRequested = self->m_nAllocationCount + num;
+    if (self->m_nAllocationCount < nAllocationRequested) {
+        int count = self->m_nAllocationCount;
+        do {
+            if (count != 0) {
+                if (self->m_nGrowSize != 0)
+                    count += self->m_nGrowSize;
+                else
+                    count += count;
+            } else
+                count = 1;
+        } while (count < nAllocationRequested);
+        self->m_nAllocationCount = count;
+    }
+    if (self->m_pMemory)
+        self->m_pMemory = (Elem *)g_101e3104(self->m_pMemory, self->m_nAllocationCount * sizeof(Elem));
+    else
+        self->m_pMemory = (Elem *)g_101e3100(self->m_nAllocationCount * sizeof(Elem));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067a50 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
