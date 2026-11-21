@@ -2596,3 +2596,8 @@ ConVar g_105fbe10("v_split", "0", 0, "Split the view into to panes ( 1 == vert, 
 #include "ConVar.h"
 ConVar g_105fc910("v_rearview", "0", 0, "Rearview mirror mode");
 // END FUNCTION
+
+// FUNCTION: 0x1018f2a0 size=0xa
+#include "ConVar.h"
+ConVar g_105fc718("viewmodel_fov", "54", 0);
+// END FUNCTION
