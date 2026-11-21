@@ -17851,6 +17851,15 @@ void S1011d6a0::sub_1010f8c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10110430 size=0x9
+struct CUnknown10110430 { void * sub_10110430(); };
+void * CUnknown10110430::sub_10110430()
+{
+    *(int *)this = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101104a0 size=0x3
 struct CUnknown101104a0 { int sub_101104a0(); };
 int CUnknown101104a0::sub_101104a0()
