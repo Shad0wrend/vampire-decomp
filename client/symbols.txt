@@ -331,6 +331,7 @@
 0x1001c750 func   ?sub_1001c750@@YAHXZ sub_1001c750
 0x1001c870 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWarrens4Passkey@@@Z ClientClassInit
 0x1001c9d0 func   ?sub_1001c9d0@@YAHXZ sub_1001c9d0
+0x1001caf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWirelessCamera1@@@Z ClientClassInit
 0x1001cc50 func   ?sub_1001cc50@@YAHXZ sub_1001cc50
 0x1001ced0 func   ?sub_1001ced0@@YAHXZ sub_1001ced0
 0x1001d150 func   ?sub_1001d150@@YAHXZ sub_1001d150
