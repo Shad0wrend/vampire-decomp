@@ -6394,6 +6394,23 @@ char *__stdcall sub_100df3c0(char *s)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df6f0 size=0x18
+struct CUnk10245c80 {
+    char pad[0x20];
+    int m_20;
+    char pad2[0x40 - 0x24];
+    void (__cdecl *m_40)(void *, int);
+    void sub_100df6f0(void (__cdecl *fn)(void *, int));
+};
+
+void CUnk10245c80::sub_100df6f0(void (__cdecl *fn)(void *, int))
+{
+    m_40 = fn;
+    if (fn)
+        fn(this, m_20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1040 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
