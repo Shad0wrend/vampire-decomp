@@ -2681,6 +2681,13 @@ ConVar g_102e0048("torchlight_exponent", "1", 0);
 RecvTable g_102ea138;
 // END FUNCTION
 
+// FUNCTION: 0x10027690 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_FlameThrower { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_FlameThrower::ignored>(DT_WeaponRanged_FlameThrower::ignored *);
+int g_102ea134 = ClientClassInit((DT_WeaponRanged_FlameThrower::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100284a0 size=0xa
 #include "RecvTable.h"
 RecvTable g_102ea254;
