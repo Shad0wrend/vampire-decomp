@@ -119,6 +119,13 @@ int g_102decec = ClientClassInit((DT_OccultRegen::ignored *)0);
 RecvTable g_102ded3c;
 // END FUNCTION
 
+// FUNCTION: 0x100040a0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ParticleStorm { struct ignored; }
+template <> int ClientClassInit<DT_ParticleStorm::ignored>(DT_ParticleStorm::ignored *);
+int g_102ded38 = ClientClassInit((DT_ParticleStorm::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10005cc0 size=0xa
 #include "RecvTable.h"
 RecvTable g_102df168;
