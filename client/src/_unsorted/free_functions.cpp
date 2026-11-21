@@ -2598,6 +2598,22 @@ void UtlMem::sub_100d8690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8790 size=0x30
+#include "CUtlMemory16.h"
+
+extern void *(__cdecl *g_101e3100)(unsigned int);
+
+CUtlMemory16 *CUtlMemory16::sub_100d8790(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount)
+		m_pMemory = (char *)g_101e3100(allocationCount * 16);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d87c0 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);

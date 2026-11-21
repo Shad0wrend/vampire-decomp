@@ -98,6 +98,7 @@
 0x100d3e30 func   ?sub_100d3e30@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_100d3e30
 0x100d3ed0 func   ?sub_100d3ed0@UtlMem@@QAEXH@Z UtlMem::sub_100d3ed0
 0x100d8690 func   ?sub_100d8690@UtlMem@@QAEXXZ UtlMem::sub_100d8690
+0x100d8790 func   ?sub_100d8790@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_100d8790
 0x100d87c0 func   ?sub_100d87c0@CMem16_t@@QAEXH@Z CMem16_t::sub_100d87c0
 0x100df510 func   ?vfunc4@ConCommand@@UAEHHH@Z ConCommand::vfunc4
 0x100df7a0 func   ?vfunc11@ConVar@@UAEXPBD@Z ConVar::vfunc11
