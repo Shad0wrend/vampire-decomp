@@ -3798,6 +3798,13 @@ int g_1049bfb4 = ClientClassInit((DT_ServerAnimationData::ignored *)0);
 RecvTable g_10498f90;
 // END FUNCTION
 
+// FUNCTION: 0x1008eec0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseAnimating { struct ignored; }
+template <> int ClientClassInit<DT_BaseAnimating::ignored>(DT_BaseAnimating::ignored *);
+int g_10498f8c = ClientClassInit((DT_BaseAnimating::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10090f30 size=0xa
 #include "ConVar.h"
 ConVar g_1049c490("debug_npc_move_yaw_snap", "1", 0, "Enable this to force the move_yaw pose parameter to snap rather than blend for NPCs.");
