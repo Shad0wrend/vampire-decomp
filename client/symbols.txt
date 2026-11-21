@@ -734,6 +734,7 @@
 0x10149f70 func   ?sub_10149f70@CStatusFlagList@@QAEIHH@Z CStatusFlagList::sub_10149f70
 0x1014a020 func   ?sub_1014a020@CStatusFlagList@@QAEIH@Z CStatusFlagList::sub_1014a020
 0x1014cfd0 func   ?sub_1014cfd0@CRules101e7dd0@@QAEMM@Z CRules101e7dd0::sub_1014cfd0
+0x1014d120 func   ?sub_1014d120@COwner101e80c0@@QAEPAHPAHHHH@Z COwner101e80c0::sub_1014d120
 0x1014de80 func   ?sub_1014de80@CUnk101e9570@@QAEPAU1@H@Z CUnk101e9570::sub_1014de80
 0x1014dea0 func   ?sub_1014dea0@CHistoryItem@@QAE_NPAUCKVNode@@@Z CHistoryItem::sub_1014dea0
 0x1014df20 func   ?sub_1014df20@CUnknown101e98c0Item@@QAE_NPAUCDataNode@@@Z CUnknown101e98c0Item::sub_1014df20

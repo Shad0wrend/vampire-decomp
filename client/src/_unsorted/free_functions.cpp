@@ -18377,6 +18377,40 @@ float CRules101e7dd0::sub_1014cfd0(float a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d120 size=0x2e
+struct CWorker101e80c0
+{
+	int sub_1014b3b0(int a);
+};
+
+struct CInner101e80c0
+{
+	char m_pad0000[0x8];
+	CWorker101e80c0 *m_pWorker;
+};
+
+struct COwner101e80c0
+{
+	char m_pad0000[0x1c];
+	CInner101e80c0 *m_pInner;
+
+	int *sub_1014d120(int *pResult, int a, int unused, int limit);
+};
+
+// TARGET: COwner101e80c0::sub_1014d120
+int *COwner101e80c0::sub_1014d120(int *pResult, int a, int unused, int limit)
+{
+	int v = m_pInner->m_pWorker->sub_1014b3b0(a);
+	if (v >= limit)
+	{
+		*pResult = 3;
+		return pResult;
+	}
+	*pResult = 1;
+	return pResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014de80 size=0x1e
 struct CUnk101d8230 {
 	void sub_101451c0();
