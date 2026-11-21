@@ -39425,6 +39425,38 @@ const char *sub_10128d80(SFuncMap *pMap, int pFunc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128dd0 size=0x71
+#include "datamap.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+__declspec(dllimport) void __cdecl Msg(const char *fmt, ...);
+
+inline bool FStrEq(const char *sz1, const char *sz2)
+{
+	return !_strcmpi(sz1, sz2);
+}
+
+void *sub_10128dd0(datamap_t *pMap, const char *pName)
+{
+	while (pMap)
+	{
+		for (int i = 0; i < pMap->dataNumFields; i++)
+		{
+			if (pMap->dataDesc[i].flags & 0x20)
+			{
+				if (FStrEq(pName, pMap->dataDesc[i].fieldName))
+				{
+					return pMap->dataDesc[i].inputFunc;
+				}
+			}
+		}
+		pMap = pMap->baseMap;
+	}
+	Msg("Failed to find function %s\n", pName);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129250 size=0xf7
 #include "datamap.h"
 #include "CSave.h"
