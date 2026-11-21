@@ -10516,6 +10516,21 @@ int CNamedList9fd0::sub_1014e680(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101501b0 size=0x1c
+struct CUnk101ec450 {
+	void sub_101501b0(int a, int b);
+};
+extern void (__cdecl *g_105e863c)(void *, int, int);
+
+// TARGET: CUnk101ec450::sub_101501b0
+void CUnk101ec450::sub_101501b0(int a, int b)
+{
+	if (g_105e863c) {
+		g_105e863c(this, a, b);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150bc0 size=0x7b
 #include "CUnknown101ed170.h"
 
