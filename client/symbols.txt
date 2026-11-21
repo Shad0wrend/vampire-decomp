@@ -869,6 +869,7 @@
 0x10154690 func   ?sub_10154690@@YAPAXPAHHH@Z sub_10154690
 0x101546c0 func   ?sub_101546c0@@YAPADPBD@Z sub_101546c0
 0x10154b40 func   ?sub_10154b40@@YIXPAH@Z sub_10154b40
+0x10154c90 func   ?sub_10154c90@CUnknown101f3d80@@QAE_NXZ CUnknown101f3d80::sub_10154c90
 0x10154f60 func   ?sub_10154f60@CVSoundFileFolder_t@@QAEXHHH@Z CVSoundFileFolder_t::sub_10154f60
 0x10155070 func   ?sub_10155070@CUnknown101f3d80@@QAEXHH@Z CUnknown101f3d80::sub_10155070
 0x101550d0 func   ?sub_101550d0@CUnknown101f3d80@@QAEXHH@Z CUnknown101f3d80::sub_101550d0
