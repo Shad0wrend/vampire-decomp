@@ -18742,6 +18742,22 @@ char *sub_1007a330(CStrTable10428d50 *pTable, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a370 size=0x58
+struct CStudioNamedView { char m_pad[0x140]; int m_nCount; int m_nIndex; };
+extern "C" __declspec(dllimport) int Q_strcasecmp(const char *a, const char *b);
+int sub_1007a370(CStudioNamedView *p, const char *name)
+{
+	if (p) {
+		for (int i = 0; i < p->m_nCount; i++) {
+			int *rec = (int *)((char *)p + p->m_nIndex + i * 16);
+			if (!Q_strcasecmp(name, (char *)rec + *rec))
+				return i;
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a3d0 size=0x2c
 struct CTable10428e20 {
     char pad[0x140];
