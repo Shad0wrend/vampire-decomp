@@ -50204,6 +50204,35 @@ void CUnknown101f0b80::sub_10152bd0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152c00 size=0xb2
+#include "CUnknown101f0960.h"
+#include "CUnknown101f0bc0.h"
+
+struct CKVNode
+{
+	virtual void a0(); virtual void a1();
+	virtual CKVNode *v2(const char *name);
+	virtual CKVNode *v3();
+};
+
+void CUnknown101f0bc0::sub_10152c00(void *pKeyValues)
+{
+	CKVNode *pKV = (CKVNode *)pKeyValues;
+	for (CKVNode *pKey = pKV->v2("Reaction"); pKey; pKey = pKey->v3())
+		m_nReactions++;
+	if (m_nReactions > 0) {
+		m_pReactions = new CUnknown101f0960[m_nReactions];
+		CKVNode *pKey = pKV->v2("Reaction");
+		for (int i = 0; i < m_nReactions; i++) {
+			if (!pKey)
+				break;
+			m_pReactions[i].sub_10152b00(pKey);
+			pKey = pKey->v3();
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152cc0 size=0x66
 void __fastcall sub_101451d0(int *pThis);
 void operator delete(void *);
