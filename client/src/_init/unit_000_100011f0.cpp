@@ -2576,3 +2576,8 @@ ConVar g_105fbea0("v_iroll_level", "0.1", 0);
 #include "ConVar.h"
 ConVar g_105fc640("v_ipitch_level", "0.3", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018f160 size=0xa
+#include "ConVar.h"
+ConVar g_105fc3e8("v_centermove", "0.15", 0);
+// END FUNCTION
