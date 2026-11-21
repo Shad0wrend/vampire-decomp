@@ -6716,6 +6716,12 @@ void UtlMem::sub_100d90b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9740 size=0x1
+void sub_100d9740()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100da050 size=0x5a
 struct SVec3
 {
