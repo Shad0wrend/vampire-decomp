@@ -2383,6 +2383,18 @@ void bf_read::sub_100884f0(Vector &fa)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100885e0 size=0x3a
+#include "bf_read.h"
+
+// TARGET: bf_read::sub_100885e0
+int bf_read::sub_100885e0()
+{
+	int value = ((unsigned char *)m_pData)[m_iCurBit >> 3] & (1 << (m_iCurBit & 7));
+	++m_iCurBit;
+	return value != 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088660 size=0x65
 #include "bf_read.h"
 
