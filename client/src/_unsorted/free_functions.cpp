@@ -1699,6 +1699,36 @@ void sub_1008b560(int *pTable, char *pSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b590 size=0x5e
+struct SPoolEntry100c { char pad[0x38]; };
+extern SPoolEntry100c g_104892c8[512];
+extern int g_10491338[0xb0];
+extern char g_10498e7c;
+extern int g_10498e78;
+extern SPoolEntry100c *g_10498e74;
+extern int g_104902c4;
+char sub_1008b590()
+{
+	if (g_10498e7c == 0) {
+		for (int i = 0; i < 0x1c00; i++)
+			((int *)g_104892c8)[i] = 0;
+		for (int j = 0; j < 0xb0; j++)
+			g_10491338[j] = 0;
+		g_10498e7c = 1;
+		g_10498e78 = 0;
+		g_10498e74 = g_104892c8;
+		int *p = (int *)g_104892c8 + 0xd;
+		do {
+			*p = (int)(p + 1);
+			p += 0xe;
+		} while ((int)p < (int)g_104892c8 + 0x7034);
+		g_104902c4 = 0;
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e230 size=0x82
 #include "CUnknown100c7f30.h"
 
