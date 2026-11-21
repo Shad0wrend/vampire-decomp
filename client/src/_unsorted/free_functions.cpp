@@ -45756,6 +45756,29 @@ void sub_101467f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146890 size=0xb6
+#include "CUnknown101daf60.h"
+#include "CUnknown101e09c0.h"
+extern "C" {
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+__declspec(dllimport) void Msg(const char *pMsg, ...);
+}
+extern CUnknown101e09c0 *g_105e80f4;
+
+void CUnknown101daf60::sub_10146890()
+{
+	char buf[0x200];
+	Q_snprintf(buf, 0x200, "[AffectsFilterMap]:\n");
+	Msg("%s", buf);
+	Q_snprintf(buf, 0x200, "   HitTable: %s\n", g_105e80f4->sub_101496b0(m_unk4));
+	Msg("%s", buf);
+	Q_snprintf(buf, 0x200, "   Chance: %d\n", (int)m_pData);
+	Msg("%s", buf);
+	Q_snprintf(buf, 0x200, "   Count: %d\n", *(int *)((char *)this + 0xc));
+	Msg("%s", buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146a90 size=0xf1
 #include "CUnknown101db210.h"
 
