@@ -227,6 +227,7 @@
 0x10014550 func   ?sub_10014550@@YAHXZ sub_10014550
 0x10014670 func   ?ClientClassInit@@YAHPAUignored@DT_OccultHealRate@@@Z ClientClassInit
 0x100147d0 func   ?sub_100147d0@@YAHXZ sub_100147d0
+0x100148f0 func   ?ClientClassInit@@YAHPAUignored@DT_GargoyleTalisman@@@Z ClientClassInit
 0x10014a50 func   ?sub_10014a50@@YAHXZ sub_10014a50
 0x10014cd0 func   ?sub_10014cd0@@YAHXZ sub_10014cd0
 0x10014f50 func   ?sub_10014f50@@YAHXZ sub_10014f50
