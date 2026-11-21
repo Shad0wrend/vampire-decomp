@@ -281,6 +281,30 @@ int CRestore::vfunc20(int *pValues, int count, int nBytesAvailable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ae10 size=0x4c
+#include "CRestore.h"
+
+int CRestore::vfunc22(Vector *pValues, int count, int nBytesAvailable)
+{
+	int desired = count * 12;
+	int actual;
+
+	if (nBytesAvailable == 0)
+		actual = desired;
+	else
+	{
+		actual = ((desired < nBytesAvailable) ? desired : nBytesAvailable);
+	}
+
+	sub_1012ab60(pValues, actual);
+
+	if (actual < nBytesAvailable)
+		sub_1012abd0(nBytesAvailable - actual);
+
+	return (actual / 12u);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012afb0 size=0xaa
 #include "CRestore.h"
 extern "C" void *__cdecl memset(void *, int, unsigned int);
