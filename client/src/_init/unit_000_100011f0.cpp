@@ -901,3 +901,8 @@ ConVar g_104d23e0("camfeed_pitch_pow2", "-0.35", 0);
 #include "ConVar.h"
 ConVar g_104d1b48("camfeed_roll", "0.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fb5f0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1f30("camfeed_forward_base", "-50.0", 0);
+// END FUNCTION
