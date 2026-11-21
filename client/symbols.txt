@@ -1817,6 +1817,7 @@
 0x100c8a60 func   ??_GC_VampSP_GameRules@@UAEPAXI@Z ??_GC_VampSP_GameRules@@UAEPAXI@Z
 0x100c8a80 func   ??1C_SingleplayRules@@UAE@XZ C_SingleplayRules::~C_SingleplayRules
 0x100c8a80 func   ?sub_100c8a80@CUnknown100c8a80@@QAEHXZ CUnknown100c8a80::sub_100c8a80
+0x100c8af0 func   ??_GC_VampMP_GameRules@@UAEPAXI@Z ??_GC_VampMP_GameRules@@UAEPAXI@Z
 0x100c8b10 func   ??1C_MultiplayRules@@UAE@XZ C_MultiplayRules::~C_MultiplayRules
 0x100c8b10 func   ?sub_100c8b10@CUnknown100c8b10@@QAEHXZ CUnknown100c8b10::sub_100c8b10
 0x100c8e30 func   ?sub_100c8e30@@YAHXZ sub_100c8e30
