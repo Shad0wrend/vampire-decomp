@@ -13672,6 +13672,18 @@ void sub_100d1960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d27e0 size=0x17
+namespace lifted {
+struct C100d2560 { int sub_100d2560(int, int); };
+}
+struct CUnknown100d27e0 { char sub_100d27e0(int, int); };
+char CUnknown100d27e0::sub_100d27e0(int a0, int a1)
+{
+    ((lifted::C100d2560 *)(this + -8))->sub_100d2560(a0, a1);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3370 size=0x8
 struct CUnknown100d3370 { void sub_100d3370(); };
 void CUnknown100d3370::sub_100d3370()
