@@ -270,6 +270,21 @@ int CRestore::vfunc17(void *p, int count, int nBytesAvailable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ad40 size=0x2a
+#include "CRestore.h"
+
+extern void (*g_101e3188)(char *, const char *, int);
+void __stdcall sub_1012abd0(int n);
+
+// TARGET: CRestore::vfunc21
+void CRestore::vfunc21(char *pDest, int n, int a)
+{
+    const char *src = (const char *)sub_1012ab50();
+    ::sub_1012abd0(a);
+    g_101e3188(pDest, src, n);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ad70 size=0x7b
 #include "CRestore.h"
 #include "CUnknown101a1f70.h"
