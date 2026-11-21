@@ -15289,6 +15289,23 @@ done:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013cbb0 size=0x25
+// TARGET: CUnknown1006c180::sub_1013cbb0
+#include "CUnknown1006c180.h"
+
+bool CUnknown1006c180::sub_1013cbb0(int nAdd)
+{
+	if (m_b14 == 0)
+	{
+		int nSum = m_nC + nAdd;
+		if (m_n4 >= nSum)
+			return true;
+		m_b14 = 2;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013cc20 size=0x1d2
 #include "CUtlBuffer.h"
 #include <stdlib.h>
