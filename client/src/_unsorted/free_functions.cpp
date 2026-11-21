@@ -6187,6 +6187,16 @@ void bf_write::sub_10086620(void *pData, int nBytes, int iStartBit, int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10086660 size=0x9
+struct CUnknown10086660 { int sub_10086660(); };
+int CUnknown10086660::sub_10086660()
+{
+    *(int *)((char *)this + 0xc) = 0;
+    *(char *)((char *)this + 0x10) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086680 size=0x4
 struct CUnknown10086680 { int sub_10086680(); };
 int CUnknown10086680::sub_10086680()
