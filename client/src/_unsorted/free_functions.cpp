@@ -12265,6 +12265,17 @@ int sub_100cb560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cbee0 size=0x10
+namespace lifted {
+extern char g_104a573c;
+struct C100cbf60 { int sub_100cbf60(int); };
+}
+int sub_100cbee0(int a0, int a1, int a2, int a3)
+{
+    return ((lifted::C100cbf60 *)((int)&lifted::g_104a573c))->sub_100cbf60(a3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc560 size=0x1
 void sub_100cc560()
 {
