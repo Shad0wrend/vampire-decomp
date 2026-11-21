@@ -1199,6 +1199,13 @@ void __stdcall sub_10057500(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057520 size=0x3
+char sub_10057520()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064c60 size=0x1
 void sub_10064c60()
 {
