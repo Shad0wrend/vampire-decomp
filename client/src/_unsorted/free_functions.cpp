@@ -10880,6 +10880,63 @@ char HOwner::sub_1014e1f0(const char* name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e2a0 size=0xb3
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include "CHistoryList.h"
+
+struct CKVBase
+{
+	virtual void a0();
+	virtual void Release();
+};
+struct CKVNode
+{
+	virtual void a0(); virtual void a1();
+	virtual CKVNode *Find(const char *name);
+	virtual CKVNode *Next();
+};
+struct CKVRoot : virtual CKVBase
+{
+	virtual void r0(); virtual void r1();
+	virtual CKVNode *Find(const char *name);
+};
+struct CHistEntry
+{
+	void sub_1014df20(CKVNode *pNode);
+};
+
+extern void *g_104a580c;
+extern CKVRoot *sub_101545c0(const char *, void *);
+extern void (*g_101e3108)(const char *, ...);
+
+bool CHistoryList::sub_1014e2a0(const char *pszFile)
+{
+	CKVRoot *pRoot = sub_101545c0(pszFile, g_104a580c);
+	if (!pRoot) {
+		g_101e3108("Unable to open history data file for: %s\n", pszFile);
+		return false;
+	}
+	CKVNode *pNode = pRoot->Find("HistoryData");
+	if (pNode) {
+		int i = 0;
+		do {
+			CHistEntry *pEntry = (*(CHistEntry ***)((char *)this + 8))[i++];
+			if (!pEntry) {
+				g_101e3108("Unable to parse history data file for: %s.  Memory allocation ERROR!\n", pszFile);
+				pRoot->Release();
+				return false;
+			}
+			pEntry->sub_1014df20(pNode);
+			pNode = pNode->Next();
+		} while (pNode);
+	}
+	pRoot->Release();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e630 size=0x4d
 extern "C" int __cdecl sub_101e28e0(const char *, const char *);
 struct CNamePtr {
