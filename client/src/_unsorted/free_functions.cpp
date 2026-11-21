@@ -10586,6 +10586,17 @@ Vector Vector::sub_100b9b80(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b9bf0 size=0x7
+namespace lifted {
+extern char g_10227c5c;
+}
+struct CUnknown100b9bf0 { void sub_100b9bf0(); };
+void CUnknown100b9bf0::sub_100b9bf0()
+{
+    *(int *)this = (int)&lifted::g_10227c5c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ba0e0 size=0x6
 namespace lifted {
 extern char g_104a26d4;
