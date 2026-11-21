@@ -6167,6 +6167,16 @@ unsigned int CUnknown100290c0::sub_1007aca0(unsigned int *pHandle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007b150 size=0xc
+namespace lifted {
+int sub_1007b160();
+}
+float sub_1007b150()
+{
+    return *(float *)((char *)(lifted::sub_1007b160()) + 0x4fe6c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007b250 size=0x351
 struct CWeaponStruct44 { int d[17]; };
 struct CWeaponStruct88 { int d[34]; };
