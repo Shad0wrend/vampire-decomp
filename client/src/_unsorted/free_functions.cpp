@@ -11871,6 +11871,17 @@ void UtlMem::sub_100d3ed0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3f70 size=0x7
+namespace lifted {
+extern char g_102346cc;
+}
+struct CUnknown100d3f70 { void sub_100d3f70(); };
+void CUnknown100d3f70::sub_100d3f70()
+{
+    *(int *)this = (int)&lifted::g_102346cc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d5140 size=0x3
 struct CUnknown100d5140 { int sub_100d5140(); };
 int CUnknown100d5140::sub_100d5140()
