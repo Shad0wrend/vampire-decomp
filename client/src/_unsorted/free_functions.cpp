@@ -1896,6 +1896,60 @@ CacheEntry *sub_1008b5f0(int a, int b, float c, const float *v1, const float *v2
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b6c0 size=0x143
+#include "Vector.h"
+struct Item48 { int d[12]; };
+struct Node { int idx; Item48 item; Node *next; };
+struct Rec { int a; int b; int c; Vector v1; Vector v2; unsigned flags; Node *head; };
+struct Ent { char pad[0x88]; unsigned flags; char pad2[0xa0 - 0x8c]; };
+struct Src {
+    char pad[0xf0];
+    int count;
+    int offset;
+    Ent *Ents() { return (Ent *)((char *)this + offset); }
+};
+extern int g_10498e78;
+extern Rec g_10491338[16];
+extern Node *g_10498e74;
+void sub_1008b590();
+void sub_1008b810(Rec *);
+void sub_1008b850();
+
+Rec *sub_1008b6c0(Src *src, int b, int c, Vector *v1, Vector *v2, unsigned flags, Item48 *items)
+{
+    sub_1008b590();
+    g_10498e78 = (1 + g_10498e78) & 0xf;
+    Rec *r = &*(g_10491338 + g_10498e78);
+    sub_1008b810(r);
+    r->a = (int)src;
+    r->b = b;
+    r->c = c;
+    r->v1 = *v1;
+    r->v2 = *v2;
+    r->flags = flags;
+    r->head = 0;
+    Node *last = 0;
+    { long i = 0; while ((int)i < src->count) { if ((flags & src->Ents()[i].flags) || !(src->Ents()[0].flags & 0xfffc)) {
+            Node *n = g_10498e74;
+            if (!n) {
+                sub_1008b850();
+                n = g_10498e74;
+            }
+            g_10498e74 = n->next;
+            if (!r->head)
+                r->head = n;
+            else
+                last->next = n;
+            n->idx = i;
+            n->item = *(items + i);
+            last = n;
+        } i += 1; } }
+    if (last)
+        last->next = 0;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b810 size=0x35
 // TARGET: sub_1008b810
 struct CUnknownFreeNode100c4980
