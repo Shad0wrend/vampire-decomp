@@ -11799,6 +11799,21 @@ void sub_10120730()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101207b0 size=0x18
+struct CBits1042d740
+{
+	unsigned int m_bits;
+
+	void sub_101207b0(int v);
+};
+
+// TARGET: sub_101207b0
+void CBits1042d740::sub_101207b0(int v)
+{
+	m_bits = ((v << 6) ^ m_bits) & 0xffc0 ^ m_bits;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101209c0 size=0x1b
 // TARGET: sub_101209c0
 struct CUnk1042da10 {
