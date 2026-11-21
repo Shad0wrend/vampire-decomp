@@ -11659,6 +11659,26 @@ float __cdecl sub_1004b220(const Vector *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004b270 size=0x75
+#include "Vector.h"
+#include <math.h>
+
+float sub_1004b270(const Vector &vec)
+{
+	float pitch;
+	if (vec[1] == 0 && vec[0] == 0) {
+		if (vec[2] < 0)
+			pitch = 180.0f;
+		else
+			pitch = -180.0f;
+	} else {
+		float dist = vec.Length2D();
+		pitch = (float)atan2(-vec[2], dist) * (float)(180.0f / 3.14159265358979323846);
+	}
+	return pitch;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004b5c0 size=0x19
 namespace lifted {
 extern char g_10227c78;
