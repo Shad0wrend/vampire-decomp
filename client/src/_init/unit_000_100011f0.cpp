@@ -4401,6 +4401,13 @@ int g_104a2e08 = ClientClassInit((DT_HudEntity::ignored *)0);
 RecvTable g_104a304c;
 // END FUNCTION
 
+// FUNCTION: 0x100bc7d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_LightGlow { struct ignored; }
+template <> int ClientClassInit<DT_LightGlow::ignored>(DT_LightGlow::ignored *);
+int g_104a3048 = ClientClassInit((DT_LightGlow::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100bcaf0 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a3208;
