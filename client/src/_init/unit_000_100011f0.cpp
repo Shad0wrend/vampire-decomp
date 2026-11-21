@@ -2446,3 +2446,8 @@ ConCommand g_105fbc7c("vprof_generate_report", sub_1018d6f0, "Reset just the pea
 #include "ConVar.h"
 ConVar g_105fc880("r_viewcubemap", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018e3c0 size=0xa
+#include "ConVar.h"
+ConVar g_105fc8c8("r_viewcubemapsize", "96", 128);
+// END FUNCTION
