@@ -37,6 +37,13 @@ char sub_10001640()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100018f0 size=0x3
+char sub_100018f0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003c10 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);

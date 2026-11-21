@@ -1,6 +1,7 @@
 0x10001000 func   ?sub_10001000@@YGXPADIHP8CUnkElem@@AEXXZ@Z sub_10001000
 0x10001030 func   ?sub_10001030@@YGXPADIHP8CUnknown1004ddc0@@AEXXZ@Z sub_10001030
 0x10001640 func   ?sub_10001640@@YADXZ sub_10001640
+0x100018f0 func   ?sub_100018f0@@YADXZ sub_100018f0
 0x10003c10 func   ?sub_10003c10@CUtlMemory192@@QAEXH@Z CUtlMemory192::sub_10003c10
 0x10004ce0 func   ?sub_10004ce0@Vector@@QAEXMM@Z Vector::sub_10004ce0
 0x10004d80 func   ?sub_10004d80@Vector@@QBE?AV1@M@Z Vector::sub_10004d80
