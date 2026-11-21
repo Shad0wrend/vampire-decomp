@@ -3556,6 +3556,13 @@ void * sub_10107210(void);
 InterfaceReg g_104d4054(sub_10107210, "lampbeam_IMaterialProxy003");
 // END FUNCTION
 
+// FUNCTION: 0x10107390 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_101073c0(void);
+InterfaceReg g_104d4060(sub_101073c0, "lamphalo_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x10107410 size=0x5
 #include "Vector.h"
 Vector g_104d4970(0.0f, 0.0f, 0.0f);
