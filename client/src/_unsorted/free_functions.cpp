@@ -35928,6 +35928,19 @@ const char *sub_1015ebd0(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015eca0 size=0x1a
+struct CUnknown1015eca0 { void * sub_1015eca0(int); };
+void * CUnknown1015eca0::sub_1015eca0(int a0)
+{
+    *(int *)((char *)this + 4) = 0;
+    *(int *)this = a0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(char *)((char *)this + 0x14) = 1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ecd0 size=0x2b
 #include "CUnknown10202ba0.h"
 #include "CUnknown10202ac0.h"
