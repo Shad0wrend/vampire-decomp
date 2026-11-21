@@ -1119,6 +1119,7 @@
 0x100df510 func   ?vfunc4@ConCommand@@UAEHHH@Z ConCommand::vfunc4
 0x100df540 func   ??0ConVar@@QAE@PBD0H@Z ConVar::ConVar
 0x100df5a0 func   ??0ConVar@@QAE@PBD0H0@Z ConVar::ConVar
+0x100df5e0 func   ??0ConVar@@QAE@PBD0H0_NM1M@Z ConVar::ConVar
 0x100df6f0 func   ?sub_100df6f0@CUnk10245c80@@QAEXP6AXPAXH@Z@Z CUnk10245c80::sub_100df6f0
 0x100df710 func   ?vfunc1@ConVar@@UAEDXZ ConVar::vfunc1
 0x100df730 func   ?vfunc7@ConVar@@UAEXPBD@Z ConVar::vfunc7
