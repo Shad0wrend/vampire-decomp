@@ -6320,6 +6320,13 @@ int sub_100a6b00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9910 size=0x5
+char __stdcall sub_100a9910(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9be0 size=0x3
 void __stdcall sub_100a9be0(int a0, int a1, int a2)
 {
