@@ -28614,6 +28614,18 @@ void sub_10147200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101472e0 size=0x14
+struct CUnknown101472e0 { void * sub_101472e0(); };
+void * CUnknown101472e0::sub_101472e0()
+{
+    *(int *)this = 1;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101475e0 size=0x14f
 #include "CUnknown101dc5a0.h"
 
