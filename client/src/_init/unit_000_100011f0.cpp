@@ -1619,6 +1619,13 @@ int g_102e3374 = ClientClassInit((DT_ItemGDriversLicenseGimble::ignored *)0);
 RecvTable g_102e4a84;
 // END FUNCTION
 
+// FUNCTION: 0x10019b50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWerewolfBlood { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWerewolfBlood::ignored>(DT_ItemGWerewolfBlood::ignored *);
+int g_102e4a80 = ClientClassInit((DT_ItemGWerewolfBlood::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10019d90 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e0afc;
