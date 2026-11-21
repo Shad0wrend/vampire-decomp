@@ -9,4 +9,5 @@ public:
 	int m_nGrowSize;
 
 	void sub_1012c640(int num);
+	void sub_100c1ee0(int num);
 };

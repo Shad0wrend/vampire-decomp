@@ -22,7 +22,10 @@ public:
 	UtlVec8Elem *m_pElements;
 
 	void sub_10130f90(int elem, int num);	// ShiftElementsRight
-		// "CUtlVector::InsertBefore": grows by one, shifts the tail up, stores *src
+	int sub_1011ecd0(int elem, const UtlVec8Elem *src);	// "CUtlVector::InsertBefore": grows by one, shifts the tail up, stores *src
+	int sub_1011ed80(int elem, const UtlVec8Elem *src);
+	int sub_1011ee30(int elem, const UtlVec8Elem *src);
+	int sub_1011eee0(int elem, const UtlVec8Elem *src);
 		// same as sub_10042200 (another instance)
 		// same as sub_10042200 (another instance)
 		// same as sub_10042200 (another instance)
@@ -35,7 +38,7 @@ public:
 		// the whole destructor of such a vector (stub 0x10009516)
 	void GrowVector(int num);
 	void sub_1008e5a0(int num);
-		// same shape as GrowVector (initial allocation 4)
+	void sub_10130f00(int num);	// same shape as GrowVector (initial allocation 4)
 		// same shape as GrowVector (initial allocation 4)
 		// copy constructor-like: constructs num elements, then copies them
 	void sub_10055890(int elem, int num);	// provisional, like sub_10032f00 (transplant)

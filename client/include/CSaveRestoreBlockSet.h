@@ -4,8 +4,8 @@
 
 extern "C" void *__cdecl memmove(void *, const void *, unsigned int);
 extern "C" void *__cdecl sub_101d0f30(void *, const void *, unsigned int);
-extern void *(__cdecl *g_109f3634)(unsigned int);
-extern void *(__cdecl *g_109f3638)(void *, unsigned int);
+extern void *(__cdecl *g_101e3100)(unsigned int);
+extern void *(__cdecl *g_101e3104)(void *, unsigned int);
 
 #include "utlvector.h"
 
@@ -94,9 +94,9 @@ public:
 			m_nAllocCount = count;
 		}
 		if (m_pHandlers)
-			m_pHandlers = (void **)g_109f3638(m_pHandlers, m_nAllocCount * 4);
+			m_pHandlers = (void **)g_101e3104(m_pHandlers, m_nAllocCount * 4);
 		else
-			m_pHandlers = (void **)g_109f3634(m_nAllocCount * 4);
+			m_pHandlers = (void **)g_101e3100(m_nAllocCount * 4);
 	}
 	void GrowVector()
 	{

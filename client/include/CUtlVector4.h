@@ -22,6 +22,11 @@ public:
 		// "CUtlVector::AddToTail" (InsertBefore at the current size, inlined): returns the new index
 		// "CUtlVector::AddToTail": grows by one and stores value at the end
 	void sub_1008e5a0(int num);	// "CUtlVector::GrowVector": grows the allocation to hold num more elements
+	void sub_10055800(int num);
+	void sub_1009ce10(int num);
+	void sub_100a3440(int num);
+	void sub_101a0e90(int num);
+	void sub_101be210(int num);
 		// same as sub_10071ae0 (another instance)
 		// same as sub_10071ae0 (another instance)
 		// same as sub_10071ae0 (another instance)

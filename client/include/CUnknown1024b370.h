@@ -32,8 +32,8 @@ public:
 	int m_n24;	// 0x24
 	void *m_p28;	// 0x28
 
-		// DevMsg("%4d - %s\n") for every symbol: its index and its string
-		// the node count (m_s12, stub 0x10004aca)
+	void sub_1013d7c0();	// DevMsg("%4d - %s\n") for every symbol: its index and its string
+	int sub_1013d820();	// the node count (m_s12, stub 0x10004aca)
 	void sub_1013d730();	// "RemoveAll" of the node list: re-links every node into the free list (sub_1024bf80 per node, highest first), resets the heads, then frees every string of m_mem1 and clears +0x24
 	void sub_1013d330();	// resets: base reset, clears +0x24, purges m_mem1, caches its pointer at +0x28, purges it again and m_mem0
 		// Find: the symbol of pString or 0xffff (CUtlSymbolTable::Find)

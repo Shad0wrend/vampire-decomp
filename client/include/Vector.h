@@ -9,6 +9,7 @@ class Vector;
 
 // mathlib's function pointers (set by the engine to the x87 / 3DNow! / SSE versions)
 extern float (*pfSqrt)(float x);	// 0x10579660
+extern float (*g_102be4dc)(float x);
 extern float (__fastcall *pfVectorNormalize)(Vector &v);	// 0x1057966c
 
 #define FastSqrt(x) (*pfSqrt)(x)

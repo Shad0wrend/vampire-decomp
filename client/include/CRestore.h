@@ -8,7 +8,7 @@ struct CRestoreField;
 struct typedescription_t;
 class CBaseEntity;
 
-extern void (*g_109f3624)(void *);	// Plat_Free
+extern void (*g_101e30fc)(void *);	// Plat_Free
 
 // The CUtlVector<int> that CRestore starts with (memory, allocation count, grow size, size, element pointer).
 struct CRestoreVec
@@ -22,7 +22,7 @@ struct CRestoreVec
 	CRestoreVec() { m_pMemory = 0; m_allocationCount = 0; m_growSize = 0; m_size = 0; m_pElements = 0; }
 	~CRestoreVec()
 	{
-		void (*pfnFree)(void *) = g_109f3624;
+		void (*pfnFree)(void *) = g_101e30fc;
 		m_size = 0;
 		if (m_growSize != -1)
 		{
@@ -92,7 +92,7 @@ public:
 		// "CRestore::ReadField": dispatches on the field type (0xb..0x13) to the matching read slot, "Bad field type" warning otherwise (stub 0x10001f5a)
 		// dispatches on the field type: <= 10 CSave::sub_101a1520 (basic write), else sub_101a2820 (ReadField)
 		// "CRestore::ShouldReadField" (stub 0x100092cd)
-		// slot 7: calls slot 9(pValue), then appends slot 0() + *pValue to the vector at +4
+	void sub_1012a6d0(unsigned short *pValue);	// slot 7: calls slot 9(pValue), then appends slot 0() + *pValue to the vector at +4
 	void sub_1012ab60(void *pData, int size);	// reads size bytes into pData
 	int sub_1012ab50();	// CUnknown101a1f70::sub_101a1f70 (stub 0x10007df6), the int at the record of +0x18, called directly
 		// the callee of slots 12 / 17 (stub 0x1000fe9d)
