@@ -25896,6 +25896,15 @@ void CPartListUnit3::sub_101413a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101416a0 size=0xa
+struct CUnknown101416a0 { int sub_101416a0(int); };
+int CUnknown101416a0::sub_101416a0(int a0)
+{
+    *(int *)((char *)this + 0x10) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141810 size=0x8
 namespace lifted {
 struct C10142000 { int sub_10142000(); };
