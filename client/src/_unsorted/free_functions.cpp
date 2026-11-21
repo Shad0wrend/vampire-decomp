@@ -13269,6 +13269,22 @@ void sub_1012d3f0(int a, int b, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d830 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_101e30fc)(void *);
+
+void UtlMem::sub_1012d830()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_101e30fc(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012dd00 size=0x6b
 #include "CUnknown101b2570.h"
 extern "C" unsigned int strlen(const char *);
