@@ -16564,6 +16564,16 @@ char sub_1010c2c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c2d0 size=0x6
+namespace lifted {
+extern char g_104df5bb;
+}
+char sub_1010c2d0()
+{
+    return lifted::g_104df5bb;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c2e0 size=0x3f
 // TARGET: sub_1010c2e0
 float sub_1010c2e0(float a, float b, float c)
