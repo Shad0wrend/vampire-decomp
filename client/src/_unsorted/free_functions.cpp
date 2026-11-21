@@ -47641,6 +47641,18 @@ char __stdcall sub_1014a1a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a1b0 size=0x21
+// TARGET: sub_1014a1b0
+void __declspec(dllimport) DevMsg(const char *pszFormat, ...);
+void __stdcall sub_10149d80(int a);
+float __stdcall sub_1014a1b0(int a)
+{
+    sub_10149d80(a);
+    DevMsg("ERROR: DiscFlag Lookup Failed!\n");
+    return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a1e0 size=0x5
 int __stdcall sub_1014a1e0(int a0)
 {
