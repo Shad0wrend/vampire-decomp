@@ -14747,6 +14747,15 @@ void UtlMem::sub_10135430(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137ce0 size=0x51
+#include <string.h>
+#pragma intrinsic(strcmp)
+bool sub_10137ce0(const char **a, const char **b)
+{
+    return strcmp(*a, *b) < 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138700 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);

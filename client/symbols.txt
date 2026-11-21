@@ -606,6 +606,7 @@
 0x10135380 func   ?sub_10135380@UtlMem@@QAEXH@Z UtlMem::sub_10135380
 0x101353f0 func   ?sub_101353f0@UtlVec8@@QAEXHH@Z UtlVec8::sub_101353f0
 0x10135430 func   ?sub_10135430@UtlMem@@QAEXH@Z UtlMem::sub_10135430
+0x10137ce0 func   ?sub_10137ce0@@YA_NPAPBD0@Z sub_10137ce0
 0x10138700 func   ?sub_10138700@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_10138700
 0x10138770 func   ?sub_10138770@CUtlRBTree12@@QBE_NG@Z CUtlRBTree12::sub_10138770
 0x10138bd0 func   ?sub_10138bd0@SymMap@@QAEGIH@Z SymMap::sub_10138bd0
