@@ -12521,6 +12521,27 @@ void CUnknown102491e0::sub_10128980(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101289b0 size=0x5b
+extern int (__cdecl *g_101e3190)(char *, int, const char *, ...);
+extern "C" int atoi(const char *);
+struct SNode { char pad[0x10]; SNode *m_pNext; const char *sub_10127c70(); };
+struct SList { char pad[0x14]; SNode *m_pHead; void sub_10128270(const char *); void sub_101289b0(); };
+
+// TARGET: SList::sub_101289b0
+void SList::sub_101289b0()
+{
+    int n = 1;
+    for (SNode *p = m_pHead; p; p = p->m_pNext) {
+        int v = atoi(p->sub_10127c70());
+        if (n <= v)
+            n = v + 1;
+    }
+    char buf[12];
+    g_101e3190(buf, sizeof(buf), "%d", n);
+    sub_10128270(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128b60 size=0x1f
 namespace lifted {
 extern int g_102c3368;
