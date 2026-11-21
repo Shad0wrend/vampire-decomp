@@ -28327,6 +28327,13 @@ int CDiscTable_101e1800::sub_1014a0f0(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a130 size=0xc
+int __stdcall sub_1014a130(int a0)
+{
+    return a0 & 0x7fffffff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a190 size=0x5
 int __stdcall sub_1014a190(int a0)
 {
