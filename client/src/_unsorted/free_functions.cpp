@@ -113,6 +113,31 @@ int CFoo1005f190::sub_10005de0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005e00 size=0x8f
+#include "Ray_t.h"
+
+// TARGET: Ray_t::sub_10005e00
+inline void Ray_t::sub_10005e00(const float *pStart, const float *pEnd)
+{
+    VectorSubtract(*(const Vector *)pEnd, *(const Vector *)pStart, *(Vector *)m_Delta);
+    m_IsSwept = ((Vector *)m_Delta)->LengthSqr() != 0;
+    m_StartOffset[2] = 0;
+    m_StartOffset[1] = 0;
+    m_StartOffset[0] = 0;
+    m_IsRay = true;
+    m_Extents[2] = 0;
+    m_Extents[1] = 0;
+    m_Extents[0] = 0;
+    m_Start[0] = pStart[0];
+    m_Start[1] = pStart[1];
+    m_Start[2] = pStart[2];
+    m_b32 = 0;
+    m_n34 = 0;
+    m_b33 = 0;
+}
+static void (Ray_t::*s_sub_1004f7a0)(const float *, const float *) = &Ray_t::sub_10005e00;
+// END FUNCTION
+
 // FUNCTION: 0x10027d20 size=0x191
 #include "Vector.h"
 void sub_100dfc60(const Vector &a, const Vector &b, int r, int g, int bl, bool noDepthTest, float duration);
