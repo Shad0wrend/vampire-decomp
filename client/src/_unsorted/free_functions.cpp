@@ -1780,6 +1780,28 @@ int sub_1000b6d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000b7f0 size=0x72
+#include "RecvTable.h"
+extern RecvTable g_102e3794;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102abca0;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Tzimisce2Head { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Tzimisce2Head::ignored>(DT_WeaponRanged_Tzimisce2Head::ignored *)
+{
+	char *pRecvTableName = "DT_WeaponRanged_Tzimisce2Head";
+	RecvTable &RecvTable = g_102e3794;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102abca0, DataTableRecvProxy_StaticDataTable),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000b950 size=0x6
 namespace lifted {
 extern char g_102e69ec;
