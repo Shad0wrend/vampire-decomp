@@ -44071,6 +44071,17 @@ void __fastcall sub_10154590(void *pThis, int dummy, void *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154640 size=0x26
+extern int g_102ca65c[];
+extern int g_102ca694[];
+extern void *(__cdecl *g_101e31e8)(void *p);
+
+void *sub_10154640(void *p)
+{
+	return __RTDynamicCast(g_101e31e8(p), 0, g_102ca65c, g_102ca694, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154670 size=0x1d
 typedef void (*PFN_109f383c)(int, void *);
 extern PFN_109f383c g_101e31d4;
