@@ -65,3 +65,8 @@ ConVar g_102ea590("ft_draw_chain", "0", 8192, "Set to 1 to draw the client chain
 #include "ConVar.h"
 ConVar g_102ea428("ft_spawn_particles", "1", 8192, "Set to 0 to stop spawning fire particles");
 // END FUNCTION
+
+// FUNCTION: 0x1002a130 size=0xa
+#include "CGameMovement.h"
+CGameMovement g_102ea5e8;
+// END FUNCTION
