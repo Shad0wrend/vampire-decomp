@@ -1640,3 +1640,9 @@ ConCommand g_104d37d8("+break", sub_10101f40, 0, 0, 0);
 void sub_10101f50(void);
 ConCommand g_104d3b4c("-break", sub_10101f50, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105850 size=0xa
+#include "ConCommand.h"
+void sub_10101b20(void);
+ConCommand g_104d3b9c("force_centerview", sub_10101b20, 0, 0, 0);
+// END FUNCTION
