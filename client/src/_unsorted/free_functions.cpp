@@ -13325,6 +13325,27 @@ CUnk10247c50 *CUnk10247c50::sub_10127920(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127960 size=0x3b
+struct CUnk10247c50
+{
+    int m_n0000;
+
+    void sub_101279a0(int a);
+    void sub_10128920(int a, int b);
+    CUnk10247c50 *sub_10127960(int a, int b, int c, int d, int e);
+};
+
+// TARGET: CUnk10247c50::sub_10127960
+CUnk10247c50 *CUnk10247c50::sub_10127960(int a, int b, int c, int d, int e)
+{
+    m_n0000 = 0;
+    sub_101279a0(a);
+    sub_10128920(b, c);
+    sub_10128920(d, e);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101279a0 size=0x51
 #include "CUnknown10248a50.h"
 #include <string.h>
