@@ -2123,6 +2123,13 @@ int g_102e6770 = ClientClassInit((DT_ItemGRingSerialKiller1::ignored *)0);
 RecvTable g_102e67a4;
 // END FUNCTION
 
+// FUNCTION: 0x10020450 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGRingSerialKiller2 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGRingSerialKiller2::ignored>(DT_ItemGRingSerialKiller2::ignored *);
+int g_102e67a0 = ClientClassInit((DT_ItemGRingSerialKiller2::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10020690 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e0440;
