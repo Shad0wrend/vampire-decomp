@@ -6185,6 +6185,13 @@ Vector Vector::sub_100b9b80(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x100baba0 size=0x3
+char sub_100baba0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be200 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
