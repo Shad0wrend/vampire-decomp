@@ -1181,6 +1181,7 @@
 0x10117d00 func   ?sub_10117d00@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10117d00
 0x10117d70 func   ?sub_10117d70@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10117d70
 0x101180b0 func   ?sub_101180b0@CUnknown101180b0@@QAEHXZ CUnknown101180b0::sub_101180b0
+0x10118f90 func   ?sub_10118f90@@YGHHHHHH@Z sub_10118f90
 0x101190d0 func   ?sub_101190d0@@YAHXZ sub_101190d0
 0x101194a0 func   ?sub_101194a0@@YGDH@Z sub_101194a0
 0x101194b0 func   ?sub_101194b0@@YGHH@Z sub_101194b0

@@ -17974,6 +17974,13 @@ int CUnknown101180b0::sub_101180b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10118f90 size=0x8
+int __stdcall sub_10118f90(int a0, int a1, int a2, int a3, int a4)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101190d0 size=0x6
 namespace lifted {
 extern char g_104e0a74;
