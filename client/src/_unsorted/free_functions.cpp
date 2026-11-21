@@ -18583,6 +18583,24 @@ const char *sub_10079f20(int pStudioHdr, int iSequence)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079f80 size=0x58
+extern __declspec(dllimport) void __cdecl DevMsg(const char *, ...);
+int *sub_1008d9d0(int a, int b);
+const char *sub_10079f80(int pStudioHdr, int iSequence)
+{
+    int *seqdesc = sub_1008d9d0(pStudioHdr, iSequence);
+    if (!seqdesc) {
+        if (pStudioHdr) {
+            DevMsg("Bad sequence %d in GetSequenceActivityName() for model '%s'!\n", iSequence, (char *)pStudioHdr + 0xc);
+            return "Unknown";
+        }
+        DevMsg("Null model in GetSequenceActivityName() for sequence %d\n", iSequence);
+        return "Unknown";
+    }
+    return (const char *)seqdesc + seqdesc[1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079fe0 size=0x1b
 // TARGET: sub_10079fe0
 int sub_10079fe0(int v)
