@@ -3918,6 +3918,13 @@ ConVar g_104e14f0("cl_pred_optimize", "2", 0, "Optimize for not copying data if 
 CUtlVector<int> g_104e160c;
 // END FUNCTION
 
+// FUNCTION: 0x10124bd0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10124c00(void);
+InterfaceReg g_104e17f0(sub_10124c00, "PlayerProximity_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x10126ab0 size=0xa
 #include "ConVar.h"
 ConVar g_104e1ba0("debug_total_mass_divisor", "4", 8192);
