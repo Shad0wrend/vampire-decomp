@@ -17083,6 +17083,15 @@ int __stdcall sub_101465e0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101466a0 size=0x18
+struct CUnknown101da9e0 { void * sub_101466a0(int); };
+void * CUnknown101da9e0::sub_101466a0(int a0)
+{
+    *(int *)this = (*(int *)this) & (~(1 << a0));
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146a90 size=0xf1
 #include "CUnknown101db210.h"
 
