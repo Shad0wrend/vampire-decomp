@@ -10060,6 +10060,31 @@ void CAccum64View::sub_1010df80(const __int64 *pValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e070 size=0x38
+namespace block_102479b0 {
+#pragma auto_inline(off)
+struct CUnknown10247800
+{
+	char m_pad0000[0x18];
+	__int64 m_key;
+	__int64 *sub_1010df50();
+};
+__int64 *CUnknown10247800::sub_1010df50() { return &m_key; }
+#pragma auto_inline(on)
+}
+using namespace block_102479b0;
+
+// TARGET: sub_1010e070
+int sub_1010e070(CUnknown10247800 **pA, CUnknown10247800 **pB)
+{
+	__int64 *a = (*pA)->sub_1010df50();
+	__int64 *b = (*pB)->sub_1010df50();
+	if (*a < *b)
+		return 1;
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e290 size=0x3c
 #include "Pool.h"
 // TARGET: Pool::sub_1010e290
