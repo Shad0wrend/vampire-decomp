@@ -6096,6 +6096,13 @@ void UtlMem::sub_100ac080(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ae060 size=0x3
+char sub_100ae060()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4d30 size=0x8f
 #include "CUtlVector40.h"
 
