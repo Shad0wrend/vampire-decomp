@@ -11697,6 +11697,37 @@ CVStatSubCost_t *CVStatSubCost_t::sub_101594e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159550 size=0x8b
+#include "CVStatCost_t.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+
+void CVStatSubCost_t::sub_10159550()
+{
+	int *f = (int *)m_data;
+	g_101e3124[*g_101e3128].m_pszFunc = "CVStatSubCost_t::Null";
+	g_101e3124[*g_101e3128].m_pszName = g_102de300;
+	g_101e3124[*g_101e3128].m_pszExtra = g_102de300;
+	(*g_101e3128)++;
+	f[0] = 10000;
+	f[1] = 1;
+	f[2] = 0;
+	f[3] = 0;
+	delete (char *)f[4];
+	f[4] = 0;
+	(*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159f20 size=0x4c
 struct S5_101fc4d0 { int v[5]; };
 struct T_101fc4d0 : S5_101fc4d0 {
