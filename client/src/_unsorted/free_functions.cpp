@@ -40,6 +40,40 @@ int sub_100011e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100012e0 size=0x15b
+#include "RecvTable.h"
+extern RecvTable g_102de368;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseCineCam { struct ignored; }
+template <> int ClientClassInit<DT_BaseCineCam::ignored>(DT_BaseCineCam::ignored *)
+{
+	char *pRecvTableName = "DT_BaseCineCam";
+	RecvTable &RecvTable = g_102de368;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_ShotIndex", 1108, 4, 0, 0),
+		RecvPropInt("CamMode", 1116, 4, 0, 0),
+		RecvPropInt("m_bDrawPlayer", 1124, 1, 0, 0),
+		RecvPropVector("m_vecCamOrigin", 1040, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vecCamTarget", 1052, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_angCamAngles", 1064, 12, 0, RecvProxy_VectorToVector),
+		RecvPropFloat("m_flFOV", 1112, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nClientResetFrame", 1120, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10001590 size=0x4
 struct CUnknown10001590 { char * sub_10001590(); };
 char * CUnknown10001590::sub_10001590()
