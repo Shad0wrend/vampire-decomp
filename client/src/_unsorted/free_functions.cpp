@@ -37064,6 +37064,17 @@ void *sub_101a4770(unsigned short index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a58c0 size=0xb
+namespace lifted {
+struct C10158790 { int sub_10158790(); };
+}
+struct CUnknown101a58c0 { int sub_101a58c0(); };
+int CUnknown101a58c0::sub_101a58c0()
+{
+    return ((lifted::C10158790 *)(this + 0x198))->sub_10158790();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a5a50 size=0x24
 extern int g_1061993c;
 
