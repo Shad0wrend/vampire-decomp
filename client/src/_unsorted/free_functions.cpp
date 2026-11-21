@@ -4959,6 +4959,18 @@ void sub_10109420(float *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109440 size=0x22
+void __cdecl sub_10109470(int a, int b);
+void __cdecl sub_10108540(int a, int b, int c);
+
+// TARGET: sub_10109440
+void __cdecl sub_10109440(int a, int b, int c)
+{
+    sub_10109470(a, c);
+    sub_10108540(b, 3, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109470 size=0x40
 #include "Vector.h"
 
