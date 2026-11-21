@@ -32757,6 +32757,17 @@ void sub_10161fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10162340 size=0x7
+namespace lifted {
+extern char g_10248488;
+}
+struct CUnknown10162340 { void sub_10162340(); };
+void CUnknown10162340::sub_10162340()
+{
+    *(int *)this = (int)&lifted::g_10248488;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101624d0 size=0x83
 #include "QuestJournal.h"
 
