@@ -39731,6 +39731,20 @@ void CUnknown101b2570::sub_1012db70(const char *volume)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012dbc0 size=0x25
+#include "CUnknown101b2570.h"
+
+int sub_1012dbf0(const char *name);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int nBytes);
+
+// TARGET: CUnknown101b2570::sub_1012dbc0
+void CUnknown101b2570::sub_1012dbc0(const char *channel)
+{
+    m_nChannel = sub_1012dbf0(channel);
+    Q_strncpy(m_szChannel, channel, 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012dbf0 size=0x7b
 struct ChanEnt { int value; const char *name; };
 extern ChanEnt g_102c4228[7];
