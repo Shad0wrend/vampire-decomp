@@ -52484,6 +52484,28 @@ CVBaseB *CUnk101f2520::sub_10153f10(void *a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153f30 size=0x35
+#include <string.h>
+struct SNodeVT { int slot0; int slot1; int offset; };
+struct SNode {
+	SNodeVT *vt;
+	int pad[4];
+	const char *name;
+	SNode *next;
+};
+// TARGET: sub_10153f30
+int __fastcall sub_10153f30(void *self)
+{
+	SNode *node = *(SNode **)((char *)self - 0x18);
+	while (node) {
+		if (_strcmpi(*(const char **)((char *)self - 0x1c), node->name) == 0)
+			return (int)node + node->vt->offset;
+		node = node->next;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153fb0 size=0x2c
 extern int g_105eb338;
 extern char g_105eab08[32][64];
