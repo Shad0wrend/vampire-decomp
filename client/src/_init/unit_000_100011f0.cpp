@@ -1941,3 +1941,8 @@ ConVar g_104e0968("particle_simulateoverflow", "0", 0, "Used for stress-testing 
 #include "ConVar.h"
 ConVar g_104e0a90("cl_phys_timescale", "1", 0, "Sets the scale of time for client-side physics (ragdolls)");
 // END FUNCTION
+
+// FUNCTION: 0x10118de0 size=0xa
+#include "ConVar.h"
+ConVar g_104e0a30("cl_ragdoll_collide", "0", 0);
+// END FUNCTION
