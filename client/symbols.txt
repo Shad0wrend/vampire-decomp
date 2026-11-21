@@ -601,6 +601,7 @@
 0x10134fa0 func   ?sub_10134fa0@CAutoGameSystem@@QAEPAXI@Z CAutoGameSystem::sub_10134fa0
 0x101351e0 func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@UAEXPAUSaveRestoreFieldInfo_t@@PAVIRestore@@@Z CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc1
 0x101352e0 func   ?sub_101352e0@CUtlVector4@@QAEXHH@Z CUtlVector4::sub_101352e0
+0x10135310 func   ?sub_10135310@UtlVec8@@QAEXHH@Z UtlVec8::sub_10135310
 0x10135350 func   ?sub_10135350@UtlMem@@QAEXXZ UtlMem::sub_10135350
 0x10135380 func   ?sub_10135380@UtlMem@@QAEXH@Z UtlMem::sub_10135380
 0x101353f0 func   ?sub_101353f0@UtlVec8@@QAEXHH@Z UtlVec8::sub_101353f0
