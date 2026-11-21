@@ -2606,3 +2606,9 @@ ConVar g_105fc718("viewmodel_fov", "54", 0);
 #include "ConVar.h"
 ConVar g_105fbef0("gl_clear", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018f5d0 size=0xa
+#include "ConCommand.h"
+void sub_1018f600(void);
+ConCommand g_105fc4e0("centerview", sub_1018f600, 0, 0, 0);
+// END FUNCTION
