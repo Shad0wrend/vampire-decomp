@@ -197,6 +197,7 @@
 0x10011fd0 func   ?sub_10011fd0@@YAHXZ sub_10011fd0
 0x100120f0 func   ?ClientClassInit@@YAHPAUignored@DT_ResearchBook_MG_MELEE@@@Z ClientClassInit
 0x10012250 func   ?sub_10012250@@YAHXZ sub_10012250
+0x10012370 func   ?ClientClassInit@@YAHPAUignored@DT_ResearchBook_LG_STEALTH@@@Z ClientClassInit
 0x100124d0 func   ?sub_100124d0@@YAHXZ sub_100124d0
 0x10012750 func   ?sub_10012750@@YAHXZ sub_10012750
 0x100129d0 func   ?sub_100129d0@@YAHXZ sub_100129d0
