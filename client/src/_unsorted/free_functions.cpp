@@ -23911,6 +23911,36 @@ void sub_100dc610(CObjY *p, const Vector *a1, const Vector *a2, const Vector *a3
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dc800 size=0x1a5
+#include "Vector.h"
+struct SegPair { Vector o; Vector d; char pad[0x18]; bool b; int pad2; };
+int sub_100db0c0(SegPair *a, SegPair *b, float *t1, float *t2);
+struct SegT2 { float x, y; float &operator[](int i) { return ((float *)this)[i]; } };
+
+int sub_100dc800(Vector *p1, Vector *d1, float s1, Vector *p2, float s2, Vector *o2, SegT2 &out)
+{
+    SegPair A;
+    SegPair B;
+    float t1, t2;
+    A.o = *p1;
+    A.d = *d1;
+    B.o = *o2;
+    B.d = *p2 * -(s2 * 10.0f);
+    A.b = true;
+    B.b = true;
+    sub_100db0c0(&A, &B, &t1, &t2);
+    out[0] = t1 / s1;
+    A.d = *p2;
+    B.d = *d1 * -(s1 * 10.0f);
+    sub_100db0c0(&A, &B, &t1, &t2);
+    t1 /= s2;
+    out[1] = t1;
+    if (!(out[0] < 0.0f) && !(out[0] > 1.0f) && !(t1 < 0.0f) && !(t1 > 1.0f))
+        return 1;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd3a0 size=0xb7
 #include "Vector.h"
 struct S2D { float x, y; };
