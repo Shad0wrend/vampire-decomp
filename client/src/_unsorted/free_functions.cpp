@@ -3637,6 +3637,16 @@ void __stdcall sub_10039f20(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10039f70 size=0x6
+namespace lifted {
+extern char g_102ee94c;
+}
+int sub_10039f70()
+{
+    return (int)&lifted::g_102ee94c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003a1e0 size=0x3
 void __stdcall sub_1003a1e0(int a0)
 {
