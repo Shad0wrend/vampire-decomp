@@ -349,3 +349,8 @@ ConVar g_1049d7b8("damage_floaters_dist_min", "64", 0, "Distance from camera to 
 #include "ConVar.h"
 ConVar g_1049d758("damage_floaters_dist_max", "800", 0, "Distance from camera to be considered the maximum for basis of scaling floater values.");
 // END FUNCTION
+
+// FUNCTION: 0x1009a3c0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d5f0("damage_floaters_duration_min", "0.7", 0, "Duration of floaters when at the minimum distance value.");
+// END FUNCTION
