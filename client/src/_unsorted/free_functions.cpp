@@ -8185,6 +8185,23 @@ void sub_10108080(const float *in1, const float in2[3][4], float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101080e0 size=0x53
+inline float Dot3(const float *v1, const float *v2)
+{
+	float z = v1[2] * v2[2];
+	float y = v1[1] * v2[1];
+	float x = v1[0] * v2[0];
+	return z + y + x;
+}
+
+void sub_101080e0(const float *in1, const float in2[3][4], float *out)
+{
+	out[0] = Dot3(in1, in2[0]);
+	out[1] = Dot3(in1, in2[1]);
+	out[2] = Dot3(in1, in2[2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108450 size=0xb2
 #include "matrix3x4_t.h"
 
