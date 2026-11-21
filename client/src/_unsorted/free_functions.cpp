@@ -22804,6 +22804,20 @@ void * CUnknown10204330::sub_101606f0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160710 size=0x30
+#include "CVDmg_t.h"
+
+bool CVDmgBlock16_t::sub_10160710(const CVDmgBlock16_t *pOther)
+{
+	if (m_a != pOther->m_a)
+		return false;
+	if (m_b != pOther->m_b)
+		return false;
+	bool bSame = (m_d == pOther->m_d);
+	return bSame;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160db0 size=0x29
 struct CUnk10204c20
 {
