@@ -4038,6 +4038,13 @@ void * sub_1013a3d0(void);
 InterfaceReg g_105e6ea0(sub_1013a3d0, "TextureScroll_IMaterialProxy003");
 // END FUNCTION
 
+// FUNCTION: 0x1013ba80 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1013bab0(void);
+InterfaceReg g_105e74c0(sub_1013bab0, "Time_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x10145480 size=0x5
 int sub_101454a0(void);
 int g_105e7928 = ((int (*)(int))sub_101454a0)(0);
