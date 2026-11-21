@@ -9496,6 +9496,29 @@ int sub_10036690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10036700 size=0x9e
+#include "RecvTable.h"
+extern RecvTable g_102ed6e4;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEEnergySplash { struct ignored; }
+template <> int ClientClassInit<DT_TEEnergySplash::ignored>(DT_TEEnergySplash::ignored *)
+{
+	char *pRecvTableName = "DT_TEEnergySplash";
+	RecvTable &RecvTable = g_102ed6e4;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropVector("m_vecPos", 16, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vecDir", 28, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_bExplosive", 40, 1, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10036a60 size=0x12
 namespace lifted {
 extern char g_1022658c;
