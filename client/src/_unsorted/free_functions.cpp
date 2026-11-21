@@ -1532,6 +1532,23 @@ void __cdecl sub_1007a280(SeqHdr *p, int *pv, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a2e0 size=0x47
+struct SeqHdr { char pad[0x140]; int count; int tableOffset; };
+struct SeqRec { int a; int n; int divisor; int d; };
+int sub_1007a2e0(SeqHdr *hdr, int value, int index)
+{
+	if (!hdr)
+		return 0;
+	if (index > hdr->count)
+		return 0;
+	SeqRec *rec = (SeqRec *)((char *)hdr + hdr->tableOffset + index * 16);
+	int n = rec->n;
+	if (n <= 1)
+		return 0;
+	return (value / rec->divisor) % n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007aca0 size=0x2b
 #include "CUnknown100290c0.h"
 
