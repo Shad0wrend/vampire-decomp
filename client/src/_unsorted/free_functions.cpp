@@ -10737,6 +10737,30 @@ bool CHistoryItem::sub_1014dea0(CKVNode *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014df20 size=0x96
+#include "CUnknown101e98c0.h"
+
+extern CEffectTable g_105f8b98;
+int *sub_1015f7e0(int *pOut, CDataNode *pNode, const char *pszName);
+void sub_1014dfc0(void *pGenders, const char *pszList);
+
+// TARGET: CUnknown101e98c0Item::sub_1014df20
+bool CUnknown101e98c0Item::sub_1014df20(CDataNode *pNode)
+{
+	if (pNode == 0)
+		return true;
+	CDataNode *pGeneral = pNode->v2("General");
+	if (pGeneral) {
+		int tmp;
+		m_nInternalName = *sub_1015f7e0(&tmp, pGeneral, "InternalName");
+		m_sub.sub_101452d0(pGeneral->v13("CritterScope", ""));
+		sub_1014dfc0(m_genders, pGeneral->v13("Genders_Disallowed", ""));
+		m_nEffect = g_105f8b98.sub_10157b80(pGeneral->v13("Effect", ""));
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e090 size=0x67
 #include "CUnknown101e98c0.h"
 
