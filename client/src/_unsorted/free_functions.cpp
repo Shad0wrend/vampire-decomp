@@ -21508,6 +21508,12 @@ int __fastcall sub_1014ddf0(void *pSelf, int unused, void *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014de30 size=0x3
+void __stdcall sub_1014de30(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014de80 size=0x1e
 struct CUnk101d8230 {
 	void sub_101451c0();
