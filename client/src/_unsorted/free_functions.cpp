@@ -5597,6 +5597,25 @@ CUnknown101b6320 &CUnknown101b6320::sub_10130970(const CUnknown101b6320 &other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130ba0 size=0x3d
+#include "CUtlVector16.h"
+
+extern void (__cdecl *g_101e30fc)(void *);
+
+void CUtlVector16::sub_10130ba0()
+{
+	m_size = 0;
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_101e30fc(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130f90 size=0x34
 #include "UtlVec8.h"
 void UtlVec8::sub_10130f90(int elem, int num)
