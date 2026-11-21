@@ -1921,3 +1921,8 @@ ConVar g_104dfa10("sv_jump_boost", "25.0", 8320, "How many extra inches to add t
 #include "ConVar.h"
 ConVar g_104dfbc0("sv_jump_maxspeed", "350.0", 8320, "Maximum attainable speed while jumping.");
 // END FUNCTION
+
+// FUNCTION: 0x10110060 size=0xa
+#include "ConVar.h"
+ConVar g_104df938("sv_jump_boost_immediate", "0", 8320, "");
+// END FUNCTION
