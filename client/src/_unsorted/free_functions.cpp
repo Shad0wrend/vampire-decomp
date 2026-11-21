@@ -15426,6 +15426,24 @@ int CUtlBuffer::sub_1013cc20(const char *pFmt, char *list)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ce60 size=0x2a
+#include "CUtlBuffer.h"
+#include <string.h>
+
+struct CUnit1006c4f0 : CUtlBuffer {
+    void sub_1013ce60(const char *pString);
+};
+
+void CUnit1006c4f0::sub_1013ce60(const char *pString)
+{
+    int nSize = strlen(pString);
+    if ((m_nFlags & 1) == 0) {
+        nSize++;
+    }
+    sub_1013ce20(pString, nSize);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d2b0 size=0x71
 #include "CUnknown1024b2d0.h"
 
