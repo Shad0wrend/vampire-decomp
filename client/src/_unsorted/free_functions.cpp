@@ -6456,6 +6456,14 @@ char sub_100baba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be130 size=0x4
+struct CUnknown100be130 { char sub_100be130(); };
+char CUnknown100be130::sub_100be130()
+{
+    return *(char *)((char *)this + 0x28);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be200 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
