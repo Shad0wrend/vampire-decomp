@@ -22353,6 +22353,25 @@ const char *CTableList::sub_1015f1c0(int key, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f210 size=0x28
+struct CUnknown10203110 {
+    char pad_0000[8];
+    int m_nCount;
+    int **m_ppElements;
+    int sub_1015f210(int value);
+};
+
+// TARGET: CUnknown10203110::sub_1015f210
+int CUnknown10203110::sub_1015f210(int value)
+{
+    for (int i = 0; i < m_nCount; i++) {
+        if (*m_ppElements[i] == value)
+            return i;
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"
