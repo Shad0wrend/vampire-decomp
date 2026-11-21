@@ -2376,6 +2376,13 @@ RecvTable g_104a5258;
 ConVar g_104a5210("flood_terminal", "0", 0);
 // END FUNCTION
 
+// FUNCTION: 0x100c8780 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100c87b0(void);
+InterfaceReg g_104a4ffc(sub_100c87b0, "TextConsole_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x100cb430 size=0xa
 #include "ConVar.h"
 ConVar g_104a5758("showparticlecounts", "0", 0, "Display number of particles drawn per frame");
