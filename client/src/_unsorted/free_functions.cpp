@@ -22892,6 +22892,42 @@ bool sub_1008c8e0(const void *pHdr, int iSequence, float flCycle, const float *p
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008cbc0 size=0xa0
+#include <string.h>
+struct SModelLoader {
+    virtual void a0();
+    virtual char *vfunc1(char *pHdr, int index);
+};
+struct SIncludeModel {
+    int m_unk0;
+    SModelLoader *m_pLoader;
+};
+int sub_1008cbc0(char *pHdr, const char *pszName);
+
+int sub_1008cbc0(char *pHdr, const char *pszName)
+{
+    if (pHdr) {
+        for (int i = 0; i < *(int *)(pHdr + 0x148); i++) {
+            int *pSeq = (int *)(pHdr + *(int *)(pHdr + 0x14c) + i * 0x3c);
+            if (_strcmpi(pszName, (char *)pSeq + *pSeq) == 0)
+                return i;
+        }
+    }
+    for (int j = 0; j < *(int *)(pHdr + 0x194); j++) {
+        SIncludeModel *pInc = (SIncludeModel *)(pHdr + *(int *)(pHdr + 0x198) + j * 0x74);
+        if (pInc && pInc->m_pLoader) {
+            char *pSub = pInc->m_pLoader->vfunc1(pHdr, j);
+            if (pSub) {
+                int r = sub_1008cbc0(pSub, pszName);
+                if (r != -1)
+                    return r;
+            }
+        }
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008ce20 size=0x7
 namespace lifted {
 extern float g_101e34f0;
