@@ -51391,6 +51391,60 @@ void __fastcall sub_10154b40(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154b70 size=0xc9
+#include "CUnknown101f35c0.h"
+#include "CUnknown101f3d80.h"
+
+extern "C" {
+char *strstr(const char *, const char *);
+char *strrchr(const char *, int);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+}
+void *operator new(unsigned int);
+int *sub_1015fc40(void *pTable, const char *pszName);
+
+struct CSoundTableUnit
+{
+    int sub_101554a0();
+    int sub_101554f0();
+};
+
+struct CUnknown101f35c0Fields
+{
+    int m_n00;
+    int m_nArg1;
+    CUnknown101f3d80 *m_pOwner;
+    int m_n0c;
+    int m_n10;
+    char *m_pBytes;
+    int m_nBytes;
+};
+
+void CUnknown101f35c0::sub_10154b70(int a, CUnknown101f3d80 *pOwner, int b, int c)
+{
+    CUnknown101f35c0Fields *p = (CUnknown101f35c0Fields *)this;
+    char szPath[260];
+    int dummy;
+    p->m_nArg1 = a;
+    p->m_pOwner = pOwner;
+    p->m_n00 = ((CSoundTableUnit *)a)->sub_101554a0();
+    Q_strncpy(szPath, (const char *)b, 260);
+    char *pszStart = strstr(szPath, "sound\\");
+    if (!pszStart)
+        pszStart = szPath;
+    char *pszStar = strrchr(pszStart, '*');
+    if (pszStar)
+        *pszStar = 0;
+    p->m_n0c = *sub_1015fc40(&dummy, pszStart);
+    p->m_n10 = *sub_1015fc40(&dummy, (const char *)c);
+    int n = ((CSoundTableUnit *)p->m_nArg1)->sub_101554f0();
+    p->m_pBytes = (char *)operator new(n);
+    p->m_nBytes = n;
+    for (int i = 0; i < n; i++)
+        p->m_pBytes[i] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154c90 size=0x156
 #include "CUnknown101f3d80.h"
 #include "IFileSystemFind.h"
