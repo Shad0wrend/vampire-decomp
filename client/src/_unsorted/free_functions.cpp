@@ -8457,6 +8457,18 @@ void __cdecl sub_10108540(int *pSrc, int index, int *pArr)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108570 size=0x2d
+// TARGET: sub_10108570
+int sub_10108570(const float *a, const float *b) {
+    for (int i = 0; i < 3; i++) {
+        if (a[i] != b[i]) {
+            return 0;
+        }
+    }
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108fd0 size=0x3d
 // VectorMA (mathlib.cpp, _WIN32 form): Valve's naked x87 asm.
 // TARGET: sub_10108fd0
