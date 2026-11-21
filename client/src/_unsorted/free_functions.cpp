@@ -21435,6 +21435,24 @@ void CVStatSubCost_t::sub_10159b70(const char *pszLabel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159c10 size=0x66
+#include "CVStatCost_t.h"
+extern int *g_101e3128;
+extern int **g_101e3124;
+extern int g_102de300;
+
+void CVStatCost_t::sub_10159c10()
+{
+	g_101e3124[*g_101e3128 * 3] = (int *)"CVStatCost_t::Null";
+	g_101e3124[*g_101e3128 * 3 + 1] = (int *)&g_102de300;
+	g_101e3124[*g_101e3128 * 3 + 2] = (int *)&g_102de300;
+	++*g_101e3128;
+	m_first.sub_10159550();
+	m_second.sub_10159550();
+	--*g_101e3128;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159d10 size=0xeb
 #include "CVStatCost_t.h"
 
