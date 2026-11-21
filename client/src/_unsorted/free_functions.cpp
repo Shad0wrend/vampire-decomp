@@ -15921,6 +15921,20 @@ void CMem8b_t::sub_100eff70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0570 size=0x12
+namespace lifted {
+extern char g_10234d64;
+extern char g_104cfe38;
+struct C100f1060 { int sub_100f1060(int); };
+}
+struct CUnknown100f0570 { int sub_100f0570(); };
+int CUnknown100f0570::sub_100f0570()
+{
+    *(int *)this = (int)&lifted::g_10234d64;
+    return ((lifted::C100f1060 *)((int)&lifted::g_104cfe38))->sub_100f1060((int)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f10c0 size=0x4
 struct CUnknown100f10c0 { float sub_100f10c0(); };
 float CUnknown100f10c0::sub_100f10c0()
