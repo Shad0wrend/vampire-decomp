@@ -9576,6 +9576,35 @@ void *CUnknown101d8a70::sub_101457a0(void *pValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145ca0 size=0x92
+#include "CUnknown101d90c0.h"
+extern char g_102de300[];
+int *sub_1015fc40(int *pOut, const char *str);
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+// TARGET: CUnknown101d90c0::sub_10145ca0
+bool CUnknown101d90c0::sub_10145ca0(CUnknown101d90c0_Section *pSection)
+{
+    if (pSection) {
+        char buf[0x20];
+        int tmp;
+        const char *name = m_pszName;
+        if (name == 0)
+            name = g_102de300;
+        CUnknown101d90c0_Section *sec = pSection->vfunc2(name);
+        if (sec) {
+            m_nName = *sub_1015fc40(&tmp, sec->vfunc13("Name", g_102de300));
+            for (int i = 0; i < 100; i++) {
+                sprintf(buf, "%d", i);
+                m_values[i] = sec->vfunc10(buf, 1);
+            }
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145d40 size=0x1c
 struct CUnk101d9190 {
 	int m_00[3];
