@@ -29299,6 +29299,14 @@ void UtlMem::sub_101c2cf0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c9da0 size=0x4
+struct CUnknown101c9da0 { int sub_101c9da0(); };
+int CUnknown101c9da0::sub_101c9da0()
+{
+    return *(int *)((char *)this + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0d28 size=0x18
 // TARGET: sub_101d0d28
 void sub_101d0d40();
