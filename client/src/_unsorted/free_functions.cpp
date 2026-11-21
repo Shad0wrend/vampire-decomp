@@ -47425,6 +47425,46 @@ SoundRecX *SoundRecX::sub_10148cb0(const SoundRecX *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148ed0 size=0xf7
+#include "CUnknown101dff00.h"
+extern "C" __declspec(dllimport) int __cdecl Q_snprintf(char *, int, const char *, ...);
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *, ...);
+extern char g_102de300[];
+extern char g_102c8564[];
+extern char g_1028653c[];
+extern char g_102c8548[];
+extern char g_102c84c0[];
+extern char g_102c8540[];
+extern char g_102c8538[];
+extern char g_102c852c[];
+extern char g_102c8520[];
+extern char g_102c850c[];
+extern CTraitEffectTable g_105f8b98;
+struct Range { void sub_101480a0(const char *label); };
+void CUnknown101dff00::sub_10148ed0()
+{
+	char buf[512];
+	const char *name = m_pszName;
+	if (!name)
+		name = g_102de300;
+	Q_snprintf(buf, 512, g_102c8564, name);
+	Msg(g_1028653c, buf);
+	if (m_nTraitEffect != -1) {
+		const char *effect = g_105f8b98.sub_10157c20(m_nTraitEffect)->m_Name.Get();
+		if (!effect)
+			effect = g_102de300;
+		Q_snprintf(buf, 512, g_102c8548, effect, m_nTraitEffect);
+		Msg(g_1028653c, buf);
+	}
+	((Range *)((char *)this + 0x364))->sub_101480a0(g_102c84c0);
+	((CUnknown101df000 *)((char *)this + 0x8))->sub_101485b0(g_102c8540);
+	((CUnknown101df000 *)((char *)this + 0xb4))->sub_101485b0(g_102c8538);
+	((CUnknown101df000 *)((char *)this + 0x160))->sub_101485b0(g_102c852c);
+	((CUnknown101df000 *)((char *)this + 0x20c))->sub_101485b0(g_102c8520);
+	((CUnknown101df000 *)((char *)this + 0x2b8))->sub_101485b0(g_102c850c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148fd0 size=0xd
 struct CUnknown10148fd0 { void * sub_10148fd0(); };
 void * CUnknown10148fd0::sub_10148fd0()
