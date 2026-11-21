@@ -35810,6 +35810,17 @@ void sub_1018d5f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018d670 size=0xb
+namespace lifted {
+extern char g_1018d680;
+extern int g_105fbc28;
+}
+void sub_1018d670()
+{
+    lifted::g_105fbc28 = (int)&lifted::g_1018d680;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018dd90 size=0x5
 namespace lifted {
 int sub_101a9f00();
