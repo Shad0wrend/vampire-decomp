@@ -941,6 +941,7 @@
 0x100c68b0 func   ?sub_100c68b0@@YAHXZ sub_100c68b0
 0x100c7f30 func   ?sub_100c7f30@CUnknown100c7f30@@QAEXXZ CUnknown100c7f30::sub_100c7f30
 0x100c7f40 func   ?sub_100c7f40@CUnknown100c7f40@@QAEXXZ CUnknown100c7f40::sub_100c7f40
+0x100c84c0 func   ?sub_100c84c0@CUnknown100c84c0@@QAEPAXH@Z CUnknown100c84c0::sub_100c84c0
 0x100c8500 func   ?sub_100c8500@CUnknown100c8500@@QAEPAXXZ CUnknown100c8500::sub_100c8500
 0x100c8a80 func   ?sub_100c8a80@CUnknown100c8a80@@QAEHXZ CUnknown100c8a80::sub_100c8a80
 0x100c8b10 func   ?sub_100c8b10@CUnknown100c8b10@@QAEHXZ CUnknown100c8b10::sub_100c8b10
