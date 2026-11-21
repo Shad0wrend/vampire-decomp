@@ -1122,3 +1122,9 @@ ConCommand g_104d183c("togglecamera", sub_100fbd90, 0, 0, 0);
 void sub_100fbda0(void);
 ConCommand g_104d1e4c("camortho", sub_100fbda0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10100220 size=0xa
+#include "ConCommand.h"
+void sub_100fbdb0(void);
+ConCommand g_104d26d4("+cammousemove", sub_100fbdb0, 0, 0, 0);
+// END FUNCTION
