@@ -4508,6 +4508,16 @@ char CUnknown10052ea0::sub_10052ea0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10052ef0 size=0x6
+namespace lifted {
+extern int g_103ee138;
+}
+int sub_10052ef0()
+{
+    return lifted::g_103ee138;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100557c0 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_101e3100)(int);
