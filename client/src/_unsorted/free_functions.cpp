@@ -23303,6 +23303,29 @@ char QuestJournal::sub_10163030(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163260 size=0x2d
+namespace lifted {
+extern char g_102cd29c;
+extern int g_105f9a0c;
+extern int g_105f9a10;
+extern int g_105f9a14;
+}
+struct CUnknown102221d0 { void * sub_10163260(); };
+void * CUnknown102221d0::sub_10163260()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(char *)((char *)this + 0x14) = 0;
+    lifted::g_105f9a0c = (int)&lifted::g_102cd29c;
+    lifted::g_105f9a10 = (int)&lifted::g_102cd29c;
+    lifted::g_105f9a14 = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163600 size=0x95
 #include "CExperienceTable.h"
 
