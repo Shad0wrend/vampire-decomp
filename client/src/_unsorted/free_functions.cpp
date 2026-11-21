@@ -28982,6 +28982,17 @@ int sub_1014edc0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014edd0 size=0xa
+namespace lifted {
+extern int g_105e8640;
+}
+int sub_1014edd0(int a0)
+{
+    lifted::g_105e8640 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ee70 size=0x1
 void sub_1014ee70()
 {

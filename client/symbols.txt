@@ -1769,6 +1769,7 @@
 0x1014e680 func   ?sub_1014e680@CNamedList9fd0@@QAEHPBD@Z CNamedList9fd0::sub_1014e680
 0x1014edb0 func   ?sub_1014edb0@@YAHH@Z sub_1014edb0
 0x1014edc0 func   ?sub_1014edc0@@YAHH@Z sub_1014edc0
+0x1014edd0 func   ?sub_1014edd0@@YAHH@Z sub_1014edd0
 0x1014ee70 func   ?sub_1014ee70@@YAXXZ sub_1014ee70
 0x1014ee80 func   ?sub_1014ee80@CEntryY@@QAE_NPAX@Z CEntryY::sub_1014ee80
 0x1014eee0 func   ?sub_1014eee0@CUnknown101eac50@@QAEXXZ CUnknown101eac50::sub_1014eee0
