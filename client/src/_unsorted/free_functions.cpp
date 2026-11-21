@@ -12088,6 +12088,39 @@ char sub_1015f720(CFileParserSlotView *pParser, const char *pszName, int a3, con
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f7e0 size=0x2c
+struct IObj102038e0 {
+    virtual void vfunc0();
+    virtual void vfunc1();
+    virtual void vfunc2();
+    virtual void vfunc3();
+    virtual void vfunc4();
+    virtual void vfunc5();
+    virtual void vfunc6();
+    virtual void vfunc7();
+    virtual void vfunc8();
+    virtual void vfunc9();
+    virtual void vfunc10();
+    virtual void vfunc11();
+    virtual void vfunc12();
+    virtual int vfunc13(int a, void *b);
+};
+
+extern int g_102de300;
+int sub_1015fb60(int a);
+void sub_1015fc40(int a, int b);
+int sub_1015fb60(int a);
+
+// TARGET: sub_1015f7e0
+int sub_1015f7e0(int a, IObj102038e0 *obj, int b)
+{
+    int r = obj->vfunc13(b, &g_102de300);
+    r = sub_1015fb60(r);
+    sub_1015fc40(a, r);
+    return a;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f810 size=0x1c
 void __cdecl sub_1015f830(int a, int b, const char *name);
 
