@@ -5782,6 +5782,37 @@ int CUnknown101b9140::sub_10131e60(int num, const CUnknown101b9140Elem *pToCopy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10132d30 size=0x7c
+#include "CUnknown101b90a0.h"
+
+extern void *(*g_101e3100)(int);
+extern void *(*g_101e3104)(void *, int);
+
+void CUnknown101b90a0::sub_10132d30(int num)
+{
+    if (m_growSize == -1)
+        return;
+    int newAlloc = m_allocationCount;
+    int target = num + newAlloc;
+    if (newAlloc < target) {
+        do {
+            if (newAlloc != 0) {
+                if (m_growSize != 0)
+                    newAlloc += m_growSize;
+                else
+                    newAlloc += newAlloc;
+            } else
+                newAlloc = 1;
+        } while (newAlloc < target);
+        m_allocationCount = newAlloc;
+    }
+    if (m_pMemory)
+        m_pMemory = (char *)g_101e3104(m_pMemory, m_allocationCount * 0xe8);
+    else
+        m_pMemory = (char *)g_101e3100(m_allocationCount * 0xe8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10132db0 size=0xc6
 #include "CUnknown101b9140.h"
 
