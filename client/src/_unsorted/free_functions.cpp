@@ -6234,6 +6234,31 @@ void sub_100dd570(const V2 *p0, const V2 *p1, const V2 *p2, float s, float t, V2
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df0f0 size=0x9b
+#include "Vector.h"
+
+bool sub_100df0f0(float edgeY, float edgeX, float absEdgeY, float absEdgeX, const Vector &p2, const Vector &p3, const Vector &extents, float flEpsilon)
+{
+	float dist2 = edgeY * p2.x - edgeX * p2.y;
+	float dist3 = edgeY * p3.x - edgeX * p3.y;
+
+	float distBox = absEdgeY * extents.x + absEdgeX * extents.y;
+
+	if( dist3 < dist2 )
+	{
+		if( ( dist3 > ( distBox + flEpsilon ) ) || ( dist2 < -( distBox + flEpsilon ) ) )
+			return false;
+	}
+	else
+	{
+		if( ( dist2 > ( distBox + flEpsilon ) ) || ( dist3 < -( distBox + flEpsilon ) ) )
+			return false;
+	}
+
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df190 size=0x24
 struct CUnknown10753434
 {
