@@ -33,6 +33,7 @@
 0x100044d0 func   ?sub_100044d0@CUnknown100044d0@@QAEDD@Z CUnknown100044d0::sub_100044d0
 0x10004560 func   ?sub_10004560@@YADXZ sub_10004560
 0x10004ce0 func   ?sub_10004ce0@Vector@@QAEXMM@Z Vector::sub_10004ce0
+0x10004d50 func   ?sub_10004d50@@YAMPBVVector@@@Z sub_10004d50
 0x10004d80 func   ?sub_10004d80@Vector@@QBE?AV1@M@Z Vector::sub_10004d80
 0x100058e0 func   ?sub_100058e0@@YADXZ sub_100058e0
 0x10005c20 func   ?sub_10005c20@@YAHXZ sub_10005c20

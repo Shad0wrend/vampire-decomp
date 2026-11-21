@@ -533,6 +533,15 @@ void Vector::sub_10004ce0(float minVal, float maxVal)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10004d50 size=0x2e
+// TARGET: sub_10004d50
+#include "Vector.h"
+
+float sub_10004d50(const Vector *v) {
+    return FastSqrt(v->z * v->z + v->y * v->y + v->x * v->x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10004d80 size=0x43
 #include "Vector.h"
 Vector Vector::sub_10004d80(float fl) const
