@@ -2521,3 +2521,8 @@ ConVar g_105fc508("cl_bobcycle", "0.8", 0);
 #include "ConVar.h"
 ConVar g_105fc958("cl_bob", "0.01", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018edf0 size=0xa
+#include "ConVar.h"
+ConVar g_105fca80("cl_bobup", "0.5", 0);
+// END FUNCTION
