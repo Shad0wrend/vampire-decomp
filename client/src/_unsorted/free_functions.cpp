@@ -47750,6 +47750,24 @@ void *CUnknown101e0f00::sub_1014a9e0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014aa40 size=0x5b
+#include "CUnknown101e0f00.h"
+__declspec(dllimport) void DevMsg(const char *, ...);
+void CUnknown101e0f00::sub_1014aa40(int a, char *pFlag, int *pRef, unsigned int *pMask, float *pTime, int *pOut)
+{
+	int idx = sub_10149d40(a, *pRef);
+	if (idx == -1) {
+		DevMsg("ERROR: Wpn_UpdateMode Failed!\n");
+		return;
+	}
+	CUnknown101e0f00Entry *pEntry = (CUnknown101e0f00Entry *)m_ppEntries[idx];
+	*pFlag = 0;
+	*pMask = pEntry->m_nMask;
+	*pTime = 10.0f;
+	*pOut = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014b580 size=0x5
 int __stdcall sub_1014b580(int a0)
 {
