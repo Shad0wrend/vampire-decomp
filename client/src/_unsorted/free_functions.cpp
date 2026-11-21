@@ -10530,6 +10530,15 @@ int sub_100a2da0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2e40 size=0xd
+struct CUnknown100a2e40 { char sub_100a2e40(char); };
+char CUnknown100a2e40::sub_100a2e40(char a0)
+{
+    *(char *)((char *)this + 0xf0) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2e80 size=0x7
 struct CUnknown100a2e80 { char sub_100a2e80(); };
 char CUnknown100a2e80::sub_100a2e80()
