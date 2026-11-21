@@ -1165,6 +1165,7 @@
 0x100e15e0 func   ?Construct@RecvTable@@QAEXPAVRecvProp@@HPAD@Z RecvTable::Construct
 0x100e1610 func   ?RecvPropFloat@@YA?AVRecvProp@@PADHHHP6AXPBVCRecvProxyData@@PAX2@Z@Z RecvPropFloat
 0x100e1660 func   ?RecvPropVector@@YA?AVRecvProp@@PADHHHP6AXPBVCRecvProxyData@@PAX2@Z@Z RecvPropVector
+0x100e16b0 func   ?RecvPropInt@@YA?AVRecvProp@@PADHHHP6AXPBVCRecvProxyData@@PAX2@Z@Z RecvPropInt
 0x100e1840 func   ?sub_100e1840@@YAHHHH@Z sub_100e1840
 0x100e1870 func   ?sub_100e1870@@YAHHHH@Z sub_100e1870
 0x100e1880 func   ?sub_100e1880@@YAHHHH@Z sub_100e1880
