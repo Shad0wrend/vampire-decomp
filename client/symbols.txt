@@ -17,6 +17,7 @@
 0x1002a0e0 func   ?sub_1002a0e0@@YAXPAUNode60@@0H@Z sub_1002a0e0
 0x1002c080 func   ?sub_1002c080@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_1002c080
 0x1002c130 func   ?sub_1002c130@CMem8b_t@@QAEXH@Z CMem8b_t::sub_1002c130
+0x1002c4a0 func   ?sub_1002c4a0@@YAXXZ sub_1002c4a0
 0x1002d430 func   ?sub_1002d430@CUtlMemory12@@QAEPAU1@HH@Z CUtlMemory12::sub_1002d430
 0x1002d470 func   ?sub_1002d470@UtlMem@@QAEXXZ UtlMem::sub_1002d470
 0x1002d620 func   ?sub_1002d620@CUtlMemory36@@QAEXH@Z CUtlMemory36::sub_1002d620
