@@ -3679,6 +3679,40 @@ bool sub_1008b180(Base_100c40e0 *p, int idx, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b1e0 size=0x171
+struct posedesc_t { int a; int flags; float start; float end; };
+extern posedesc_t *sub_1008b360(void *hdr, int index);
+extern double g_1022cc40, g_101e3210, g_1022cc38, g_1022cc30, g_1022cc28, g_101e34e0, g_10227bf0;
+extern float g_10227bec, g_101e34f0, g_101e34ec, g_101e4408;
+
+float sub_1008b1e0(void *hdr, int index, float value, float *ctl)
+{
+    if (!hdr) return value;
+    posedesc_t *p = sub_1008b360(hdr, index);
+    if (!p) return value;
+    if (p->flags & 0x38) {
+        if (p->end < p->start) value = -value;
+        if (p->start + g_1022cc40 >= p->end) {
+            float mid = (p->end + p->start) * g_101e3210;
+            if (value > mid + g_1022cc38) value = value - g_10227bec;
+            if (value < mid - g_1022cc38) value = value + g_10227bec;
+        } else {
+            if (value > g_10227bec) {
+                value = value - (int)(g_1022cc30 * value) * g_10227bf0;
+            } else if (value < g_101e34f0) {
+                value = value + (int)(g_1022cc28 * value + g_101e34e0) * g_10227bf0;
+            }
+        }
+    }
+    *ctl = (value - p->start) / (p->end - p->start);
+    if (*ctl < g_101e34f0) *ctl = 0;
+    else if (*ctl > g_101e34ec) *ctl = 1.0f;
+    float r = (g_101e34e0 - *ctl) * p->start + p->end * *ctl;
+    if ((p->flags & 0x38) && p->end < p->start) r = r * g_101e4408;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b360 size=0x3b
 struct CEntry100c4340
 {
