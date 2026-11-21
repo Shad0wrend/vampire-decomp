@@ -18220,6 +18220,12 @@ void __fastcall sub_101400d0(void *pSelf)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140150 size=0x1
+void sub_10140150()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101401e0 size=0x29
 #include "Vector.h"
 struct CUnknown101d61e0_Sub10 {
