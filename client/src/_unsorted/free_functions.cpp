@@ -23382,6 +23382,78 @@ int sub_1008df40(int a, char *pHdr, int x, int y)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008df90 size=0x296
+#include "utlvector.h"
+#include <string.h>
+
+__declspec(dllimport) int Q_strnicmp(const char *, const char *, int);
+void sub_10109420(float *);
+
+struct SeqDesc_100c7be0
+{
+	int m_nLabelIndex;
+	char m_pad04[0x9c];
+	const char *Label() { return (const char *)this + m_nLabelIndex; }
+};
+
+struct SeqHdr_100c7be0
+{
+	char m_pad00[0xf0];
+	int m_nSeq;
+	int m_nSeqIndex;
+	SeqDesc_100c7be0 *Seq(int i) { return (SeqDesc_100c7be0 *)((char *)this + m_nSeqIndex) + i; }
+};
+
+struct SeqMatch_100c7be0
+{
+	int m_iFrom;
+	int m_iTo;
+	char m_bFlag;
+	float m_Matrix[12];
+};
+
+void sub_1008df90(CUtlVector<SeqMatch_100c7be0> *pOut, SeqHdr_100c7be0 *pFrom, const char *pszPrefix, SeqHdr_100c7be0 *pTo, const char *pszReplace)
+{
+	pOut->m_Size = 0;
+	if (!pFrom || !pTo)
+		return;
+	if (!pszPrefix)
+		pszPrefix = "";
+	if (!pszReplace || !*pszReplace)
+		pszReplace = pszPrefix;
+	int len = strlen(pszPrefix);
+	for (int i = 0; i < pFrom->m_nSeq; i++) {
+		const char *pszName = pFrom->Seq(i)->Label();
+		char szBuf[256];
+		if (len) {
+			if (Q_strnicmp(pszPrefix, pszName, len))
+				continue;
+			strcpy(szBuf, pszReplace);
+			strcat(szBuf, pszName + len);
+			pszName = szBuf;
+		}
+		int j = 0;
+		if (j < pTo->m_nSeq) {
+		int off = 0;
+		do {
+			SeqDesc_100c7be0 *pSeq = (SeqDesc_100c7be0 *)((char *)pTo + pTo->m_nSeqIndex + off);
+			int r = _strcmpi(pszName, pSeq->Label());
+			if (r == 0) {
+				SeqMatch_100c7be0 m;
+				m.m_iFrom = i;
+				m.m_bFlag = r;
+				m.m_iTo = j;
+				sub_10109420(m.m_Matrix);
+				pOut->AddToTail(m);
+			}
+			j++;
+			off += 0xa0;
+		} while (j < pTo->m_nSeq);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e230 size=0x82
 #include "CUnknown100c7f30.h"
 

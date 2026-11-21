@@ -1093,6 +1093,7 @@
 0x1008dd60 func   ?sub_1008dd60@@YAHPAUStudioHdr@@HH@Z sub_1008dd60
 0x1008de30 func   ?sub_1008de30@@YAMPAUSObj@@0M@Z sub_1008de30
 0x1008df40 func   ?sub_1008df40@@YAHHPADHH@Z sub_1008df40
+0x1008df90 func   ?sub_1008df90@@YAXPAV?$CUtlVector@USeqMatch_100c7be0@@V?$CUtlMemory@USeqMatch_100c7be0@@@@@@PAUSeqHdr_100c7be0@@PBD12@Z sub_1008df90
 0x1008e230 func   ?sub_1008e230@CUnknown100c7f30@@QAEXPAUCUnknown100c7f30Hdr@@I@Z CUnknown100c7f30::sub_1008e230
 0x1008e370 func   ?sub_1008e370@CUnknown100c80d0@@QAEXPBIPBFPBX@Z CUnknown100c80d0::sub_1008e370
 0x1008e420 func   ?sub_1008e420@CUnknown100c81b0@@QAEXPBUCBitVecWords@@HPBUCBoneRecord@@PBUCStudioBoneCount@@@Z CUnknown100c81b0::sub_1008e420
