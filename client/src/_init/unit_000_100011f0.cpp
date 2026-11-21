@@ -2198,3 +2198,9 @@ ConCommand g_105fb004("hidebarter", sub_10170360, 0, 0, 0);
 void sub_10172bc0(void);
 ConCommand g_105fb124("clanchangedone", sub_10172bc0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10173660 size=0xa
+#include "ConCommand.h"
+void sub_10173640(void);
+ConCommand g_105fb094("createplayer", sub_10173640, 0, 0, 0);
+// END FUNCTION
