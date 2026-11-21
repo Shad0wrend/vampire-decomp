@@ -684,6 +684,20 @@ void UtlMem::sub_10067a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067f70 size=0x48
+#include "utlrbtree.h"
+#include "utlvector.h"
+struct CTreeHolder1024a120;
+void __fastcall sub_101391d0(CTreeHolder1024a120 *p);
+extern CTreeHolder1024a120 g_103ef0c8;
+extern CUtlVector<int> g_104770f8;
+void sub_10067f70()
+{
+    sub_101391d0(&g_103ef0c8);
+    g_104770f8.Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100790f0 size=0x69
 #include "CUnknown10427700.h"
 #include <string.h>
