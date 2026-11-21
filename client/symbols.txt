@@ -65,6 +65,7 @@
 0x1000c350 func   ?sub_1000c350@@YAHXZ sub_1000c350
 0x1000c5d0 func   ?sub_1000c5d0@@YAHXZ sub_1000c5d0
 0x1000c850 func   ?sub_1000c850@@YAHXZ sub_1000c850
+0x1000cad0 func   ?sub_1000cad0@@YAHXZ sub_1000cad0
 0x10027d20 func   ?sub_10027d20@@YAXABVVector@@00HHH_NM@Z sub_10027d20
 0x100285d0 func   ?sub_100285d0@@YADXZ sub_100285d0
 0x100285e0 func   ?sub_100285e0@@YAHXZ sub_100285e0
