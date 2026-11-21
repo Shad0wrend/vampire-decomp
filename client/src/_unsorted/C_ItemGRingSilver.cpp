@@ -1,0 +1,12 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "client.h"
+
+// FUNCTION: 0x10018610 size=0x1e
+#include "C_ItemGRingSilver.h"
+
+// VC6 writes C_ItemGRingSilver's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+C_ItemGRingSilver *pcd_emit_10018610() { return new C_ItemGRingSilver; }
+
+// TARGET: ??_GC_ItemGRingSilver@@UAEPAXI@Z
+// END FUNCTION
