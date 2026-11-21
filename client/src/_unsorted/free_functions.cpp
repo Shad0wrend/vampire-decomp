@@ -8556,6 +8556,50 @@ void sub_10108960(const S10138cc0Mat3 &in1, const S10138cc0Mat3 &in2, S10138cc0M
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108a50 size=0x18a
+#include "matrix3x4_t.h"
+
+namespace block_10138600 {
+void sub_10108430(const matrix3x4_t &in, matrix3x4_t &out)
+{
+	out = in;
+}
+}
+using namespace block_10138600;
+
+// the incremental link stub of this very function, which the recursive calls go through
+void sub_10108a50(const matrix3x4_t &in1, const matrix3x4_t &in2, matrix3x4_t &out);
+
+// TARGET: sub_10108a50
+void sub_10108a50(const matrix3x4_t &in1, const matrix3x4_t &in2, matrix3x4_t &out)
+{
+	if (&in1 == &out) {
+		matrix3x4_t in1b;
+		sub_10108430(in1, in1b);
+		sub_10108a50(in1b, in2, out);
+		return;
+	}
+	if (&in2 == &out) {
+		matrix3x4_t in2b;
+		sub_10108430(in2, in2b);
+		sub_10108a50(in1, in2b, out);
+		return;
+	}
+	out.m_flMatVal[0][0] = in1.m_flMatVal[0][0] * in2.m_flMatVal[0][0] + in1.m_flMatVal[0][1] * in2.m_flMatVal[1][0] + in1.m_flMatVal[0][2] * in2.m_flMatVal[2][0];
+	out.m_flMatVal[0][1] = in1.m_flMatVal[0][0] * in2.m_flMatVal[0][1] + in1.m_flMatVal[0][1] * in2.m_flMatVal[1][1] + in1.m_flMatVal[0][2] * in2.m_flMatVal[2][1];
+	out.m_flMatVal[0][2] = in1.m_flMatVal[0][0] * in2.m_flMatVal[0][2] + in1.m_flMatVal[0][1] * in2.m_flMatVal[1][2] + in1.m_flMatVal[0][2] * in2.m_flMatVal[2][2];
+	out.m_flMatVal[0][3] = in1.m_flMatVal[0][0] * in2.m_flMatVal[0][3] + in1.m_flMatVal[0][1] * in2.m_flMatVal[1][3] + in1.m_flMatVal[0][2] * in2.m_flMatVal[2][3] + in1.m_flMatVal[0][3];
+	out.m_flMatVal[1][0] = in1.m_flMatVal[1][0] * in2.m_flMatVal[0][0] + in1.m_flMatVal[1][1] * in2.m_flMatVal[1][0] + in1.m_flMatVal[1][2] * in2.m_flMatVal[2][0];
+	out.m_flMatVal[1][1] = in1.m_flMatVal[1][0] * in2.m_flMatVal[0][1] + in1.m_flMatVal[1][1] * in2.m_flMatVal[1][1] + in1.m_flMatVal[1][2] * in2.m_flMatVal[2][1];
+	out.m_flMatVal[1][2] = in1.m_flMatVal[1][0] * in2.m_flMatVal[0][2] + in1.m_flMatVal[1][1] * in2.m_flMatVal[1][2] + in1.m_flMatVal[1][2] * in2.m_flMatVal[2][2];
+	out.m_flMatVal[1][3] = in1.m_flMatVal[1][0] * in2.m_flMatVal[0][3] + in1.m_flMatVal[1][1] * in2.m_flMatVal[1][3] + in1.m_flMatVal[1][2] * in2.m_flMatVal[2][3] + in1.m_flMatVal[1][3];
+	out.m_flMatVal[2][0] = in1.m_flMatVal[2][0] * in2.m_flMatVal[0][0] + in1.m_flMatVal[2][1] * in2.m_flMatVal[1][0] + in1.m_flMatVal[2][2] * in2.m_flMatVal[2][0];
+	out.m_flMatVal[2][1] = in1.m_flMatVal[2][0] * in2.m_flMatVal[0][1] + in1.m_flMatVal[2][1] * in2.m_flMatVal[1][1] + in1.m_flMatVal[2][2] * in2.m_flMatVal[2][1];
+	out.m_flMatVal[2][2] = in1.m_flMatVal[2][0] * in2.m_flMatVal[0][2] + in1.m_flMatVal[2][1] * in2.m_flMatVal[1][2] + in1.m_flMatVal[2][2] * in2.m_flMatVal[2][2];
+	out.m_flMatVal[2][3] = in1.m_flMatVal[2][0] * in2.m_flMatVal[0][3] + in1.m_flMatVal[2][1] * in2.m_flMatVal[1][3] + in1.m_flMatVal[2][2] * in2.m_flMatVal[2][3] + in1.m_flMatVal[2][3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108fd0 size=0x3d
 // VectorMA (mathlib.cpp, _WIN32 form): Valve's naked x87 asm.
 // TARGET: sub_10108fd0
