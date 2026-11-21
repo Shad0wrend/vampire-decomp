@@ -245,6 +245,7 @@
 0x10015bd0 func   ?sub_10015bd0@@YAHXZ sub_10015bd0
 0x10015cf0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponIArmor_Hvy_Leather@@@Z ClientClassInit
 0x10015e50 func   ?sub_10015e50@@YAHXZ sub_10015e50
+0x10015f70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponIArmor_Body_Armor@@@Z ClientClassInit
 0x100160d0 func   ?sub_100160d0@@YAHXZ sub_100160d0
 0x10016350 func   ?sub_10016350@@YAHXZ sub_10016350
 0x100165d0 func   ?sub_100165d0@@YAHXZ sub_100165d0
