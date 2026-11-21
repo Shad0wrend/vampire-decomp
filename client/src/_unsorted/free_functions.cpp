@@ -9729,6 +9729,35 @@ int sub_100378f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10037960 size=0xf5
+#include "RecvTable.h"
+extern RecvTable g_102edf00;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_1027c4e8;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEFootprintDecal { struct ignored; }
+template <> int ClientClassInit<DT_TEFootprintDecal::ignored>(DT_TEFootprintDecal::ignored *)
+{
+	char *pRecvTableName = "DT_TEFootprintDecal";
+	RecvTable &RecvTable = g_102edf00;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_1027c4e8, DataTableRecvProxy_StaticDataTable),
+		RecvPropVector("m_vecOrigin", 16, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vecDirection", 28, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_nEntity", 52, 4, 0, 0),
+		RecvPropInt("m_nIndex", 56, 4, 0, 0),
+		RecvPropInt("m_chMaterialType", 60, 1, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037ad0 size=0x12
 namespace lifted {
 extern char g_1022672c;
