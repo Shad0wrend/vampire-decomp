@@ -2853,3 +2853,8 @@ ConVar g_10618b00("cl_overlay_redvision_blur_radius", "0.005", 0);
 #include "ConVar.h"
 ConVar g_10618ef0("cl_overlay_redvision_expand", "0.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1019f430 size=0xa
+#include "ConVar.h"
+ConVar g_10618dd0("cl_overlay_redvision_dx6", "85", 0);
+// END FUNCTION
