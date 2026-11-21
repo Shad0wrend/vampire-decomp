@@ -1751,3 +1751,8 @@ ConVar g_104d3ea0("m_filter", "0", 128, "Mouse filtering (set this to 1 to avera
 #include "ConVar.h"
 ConVar g_104d3fc0("sensitivity", "3", 128, "Mouse sensitivity.", true, 0.1f, true, 100.0f);
 // END FUNCTION
+
+// FUNCTION: 0x10106150 size=0xa
+#include "ConVar.h"
+ConVar g_104d3ee8("m_side", "0.8", 128, "Mouse side factor.");
+// END FUNCTION
