@@ -8082,6 +8082,20 @@ void CFloatUnit::sub_101335e0(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133780 size=0x1a
+namespace lifted {
+extern int g_102c50d4;
+extern int g_102c50d8;
+extern char g_102c511c;
+}
+int sub_10133780()
+{
+    lifted::g_102c50d8 = 0xc;
+    lifted::g_102c50d4 = (int)&lifted::g_102c511c;
+    return (int)&lifted::g_102c50d4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133960 size=0x1d
 #include "CFloatUnit.h"
 
