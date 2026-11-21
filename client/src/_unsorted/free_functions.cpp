@@ -35190,6 +35190,19 @@ void sub_1016a6a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1016a790 size=0xb
+namespace lifted {
+extern char g_10249e5c;
+int sub_101a9780();
+}
+struct CUnknown1016a790 { int sub_1016a790(); };
+int CUnknown1016a790::sub_1016a790()
+{
+    *(int *)this = (int)&lifted::g_10249e5c;
+    return lifted::sub_101a9780();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016f530 size=0x7
 struct CUnknown1016f530 { char * sub_1016f530(); };
 char * CUnknown1016f530::sub_1016f530()
