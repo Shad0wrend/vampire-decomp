@@ -10914,6 +10914,28 @@ void sub_1010c500(const Vector &p1, const Vector &p2, float t, Vector &out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c5b0 size=0x6d
+#include "Quaternion.h"
+
+void sub_1010a650(const float *angles, Quaternion &q);
+void sub_1010a320(const float *p, float t, float *qt);
+void sub_1010a450(const Quaternion &p, const Quaternion &q, Quaternion &qt);
+float sub_1010a2b0(Quaternion &q);
+void sub_1010a6c0(const Quaternion &q, float *a, float *b);
+
+// TARGET: sub_1010c5b0
+void sub_1010c5b0(const float *angles1, const float *angles2, float *pOut1, float *pOut2)
+{
+	Quaternion q1, q2, qScaled, qResult;
+	sub_1010a650(angles1, q1);
+	sub_1010a650(angles2, q2);
+	sub_1010a320(&q1.x, -1.0f, &qScaled.x);
+	sub_1010a450(qScaled, q2, qResult);
+	sub_1010a2b0(qResult);
+	sub_1010a6c0(qResult, pOut1, pOut2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010df00 size=0x1f
 struct CUnk10247770
 {
