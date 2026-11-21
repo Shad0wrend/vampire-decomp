@@ -41125,6 +41125,38 @@ int sub_10151d20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151e20 size=0x103
+#include "RecvTable.h"
+extern RecvTable g_105e8704;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102ad768;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropEHandle(char *, int, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_VampireProjectile { struct ignored; }
+template <> int ClientClassInit<DT_VampireProjectile::ignored>(DT_VampireProjectile::ignored *)
+{
+	char *pRecvTableName = "DT_VampireProjectile";
+	RecvTable &RecvTable = g_105e8704;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102ad768, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_flKillTime", 1944, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropEHandle("m_hAttachedEntity", 1936, 4),
+		RecvPropInt("m_iAttachedBone", 1940, 4, 0, 0),
+		RecvPropVector("m_vecAttachOrigin", 1948, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_angAttachAngle", 1960, 12, 0, RecvProxy_VectorToVector),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101520c0 size=0x5
 namespace lifted {
 int sub_100a2930();
