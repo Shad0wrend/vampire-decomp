@@ -21653,6 +21653,41 @@ int sub_100ca230()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca330 size=0x17b
+#include "RecvTable.h"
+extern RecvTable g_104a545c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_World { struct ignored; }
+template <> int ClientClassInit<DT_World::ignored>(DT_World::ignored *)
+{
+	char *pRecvTableName = "DT_World";
+	RecvTable &RecvTable = g_104a545c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_flWaveHeight", 1040, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropVector("m_WorldMins", 1044, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_WorldMaxs", 1056, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_bStartDark", 1068, 1, 0, 0),
+		RecvPropInt("m_nAreaType", 1072, 4, 0, 0),
+		RecvPropInt("m_bNosferatuTolerant", 1076, 1, 0, 0),
+		RecvPropFloat("m_flWetnessFadeTarget", 1080, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flWetnessFadeIn", 1084, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flWetnessFadeOut", 1088, 4, 0, RecvProxy_FloatToFloat),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca7f0 size=0x5
 namespace lifted {
 int sub_100a0240();
