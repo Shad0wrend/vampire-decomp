@@ -7377,6 +7377,19 @@ void __cdecl sub_100f4270(PFN_ForEach pfn)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f42a0 size=0x23
+extern void **g_104d1038;
+extern int g_104d1044;
+
+// TARGET: sub_100f42a0
+void __cdecl sub_100f42a0(void (__fastcall *pfn)(void *))
+{
+	for (int i = g_104d1044 - 1; i >= 0; i--) {
+		pfn(g_104d1038[i]);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104360 size=0x1a
 struct CUnk1011d310
 {
