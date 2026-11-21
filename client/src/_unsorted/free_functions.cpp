@@ -3946,6 +3946,19 @@ CUnknown100fde30 *CUnknown100fde30::sub_100e2a10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2fa0 size=0x1f
+extern float g_104cf544;
+extern float g_104cf548;
+extern float g_104cf54c;
+
+void sub_100e2fa0()
+{
+    g_104cf544 = 0.0f;
+    g_104cf548 = 0.0f;
+    g_104cf54c = 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb150 size=0x93
 #include "CUnknown100353c0.h"
 
