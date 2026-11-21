@@ -1,0 +1,12 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "client.h"
+
+// FUNCTION: 0x10003230 size=0x1e
+#include "C_ItemPhysicsHand.h"
+
+// VC6 writes C_ItemPhysicsHand's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+C_ItemPhysicsHand *pcd_emit_10003230() { return new C_ItemPhysicsHand; }
+
+// TARGET: ??_GC_ItemPhysicsHand@@UAEPAXI@Z
+// END FUNCTION
