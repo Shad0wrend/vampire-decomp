@@ -22921,6 +22921,14 @@ float CUnknown10133a00::sub_10133a00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133c80 size=0x8
+struct CUnknown10133c80 { void sub_10133c80(); };
+void CUnknown10133c80::sub_10133c80()
+{
+    *(int *)((char *)this + 0x24) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134010 size=0x1a
 namespace lifted {
 extern int g_102c532c;
