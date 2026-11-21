@@ -2148,6 +2148,11 @@ RecvTable g_104a1f1c;
 RecvTable g_104a1f34;
 // END FUNCTION
 
+// FUNCTION: 0x100b6ac0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a22e8;
+// END FUNCTION
+
 // FUNCTION: 0x100bb430 size=0xa
 #include "ConVar.h"
 ConVar g_104a2a30("lod_TransitionDist", "400", 0);
