@@ -1,6 +1,30 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1012a170 size=0x8b
+#include "CRestore.h"
+extern void *(*g_101e3104)(void *, int);
+extern void *(*g_101e3100)(int);
+
+inline void CRestoreVec::EnsureCapacity(int num)
+{
+	if (m_allocationCount < num && m_growSize != -1) {
+		m_allocationCount = num;
+		if (m_pMemory)
+			m_pMemory = (int *)g_101e3104(m_pMemory, num * 4);
+		else
+			m_pMemory = (int *)g_101e3100(num * 4);
+	}
+	m_pElements = m_pMemory;
+}
+
+// TARGET: CRestore::CRestore
+CRestore::CRestore(void *pData) : m_pData(pData), m_pData2(pData ? (char *)pData + 0x18 : 0), m_field20(0), m_bField24(true)
+{
+	m_vec.EnsureCapacity(32);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a220 size=0x13
 #include "CRestore.h"
 namespace lifted {
