@@ -1029,6 +1029,7 @@
 0x10040b10 func   ?sub_10040b10@@YAHXZ sub_10040b10
 0x10040bb0 func   ?sub_10040bb0@@YAHXZ sub_10040bb0
 0x10040c20 func   ?ClientClassInit@@YAHPAUignored@DT_TETracer@@@Z ClientClassInit
+0x10040d40 func   ??_GC_TEUserTracer@@UAEPAXI@Z ??_GC_TEUserTracer@@UAEPAXI@Z
 0x10040d60 func   ??1C_TEUserTracer@@UAE@XZ C_TEUserTracer::~C_TEUserTracer
 0x10040d60 func   ?sub_10040d60@CUnknown10040d60@@QAEHXZ CUnknown10040d60::sub_10040d60
 0x10040e90 func   ?sub_10040e90@@YAHXZ sub_10040e90
