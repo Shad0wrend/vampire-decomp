@@ -983,6 +983,13 @@ int g_102e4f9c = ClientClassInit((DT_ResearchBook_HG_FIRE::ignored *)0);
 RecvTable g_102e7850;
 // END FUNCTION
 
+// FUNCTION: 0x100116d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_MG_BRAWL { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_MG_BRAWL::ignored>(DT_ResearchBook_MG_BRAWL::ignored *);
+int g_102e784c = ClientClassInit((DT_ResearchBook_MG_BRAWL::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10011910 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e6b00;
