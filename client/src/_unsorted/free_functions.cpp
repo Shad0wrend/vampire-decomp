@@ -4385,6 +4385,13 @@ void UtlMem::sub_1004e830(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ea50 size=0x6
+int sub_1004ea50()
+{
+    return 0x20;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050100 size=0x3d
 #include "CUtlVector16.h"
 
