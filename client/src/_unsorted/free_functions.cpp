@@ -86,6 +86,13 @@ void CUtlMemory192::sub_10003c10(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10004560 size=0x3
+char sub_10004560()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10004ce0 size=0x62
 #include "Vector.h"
 #include <stdlib.h>
