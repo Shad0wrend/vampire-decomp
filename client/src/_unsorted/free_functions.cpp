@@ -728,6 +728,47 @@ void __cdecl sub_100797c0(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100797e0 size=0x16d
+#include "StudioHdr.h"
+
+void sub_100797c0(StudioHdr *pHdr);
+int sub_100797e0(StudioHdr *pHdr, int activity, int *pSeqOut, int *pWeightOut, int base, char bExclude100, char bExclude200, int maxWeight);
+
+int sub_100797e0(StudioHdr *pHdr, int activity, int *pSeqOut, int *pWeightOut, int base, char bExclude100, char bExclude200, int maxWeight)
+{
+	if (activity <= 0)
+		return 0;
+	if (!pHdr)
+		return 0;
+	int nFound = 0;
+	unsigned int flags = 0x80;
+	if (pHdr->m_nLocalSeq) {
+		sub_100797c0(pHdr);
+		StudioSeqDesc *pDesc = pHdr->LocalSeq(0);
+		for (int i = 0; i < pHdr->m_nLocalSeq; i++, pDesc++) {
+			if (pDesc->m_nActivity == activity
+				&& (!bExclude100 || !(pDesc->m_flags & 0x100))
+				&& (!bExclude200 || !(pDesc->m_flags & 0x200))
+				&& (maxWeight < 0 || pDesc->m_nMaxWeight < 0 || maxWeight >= pDesc->m_nMaxWeight)) {
+				pSeqOut[nFound] = base + i;
+				pWeightOut[nFound] = pDesc->m_nActivityWeight;
+				flags = pDesc->m_flags;
+				nFound++;
+			}
+		}
+	}
+		if (0) nFound += pHdr->m_nIncludeIndex + 0;
+	if (flags & 0x80) {
+		for (int i = 0; i < pHdr->m_nIncludeModels; i++) {
+			StudioIncludeModel *pInc = pHdr->IncludeModel(i);
+			if (pInc->m_pVirtual)
+				nFound += sub_100797e0(pInc->m_pVirtual->vfunc1(pHdr, i), activity, pSeqOut + nFound, pWeightOut + nFound, pInc->m_nBase + base, bExclude100, bExclude200, maxWeight);
+		}
+	}
+	return nFound;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079a40 size=0x47
 int sub_10079a40(int n, int *values, int *weights)
 {
