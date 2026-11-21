@@ -21113,6 +21113,31 @@ int CVDmg_t::sub_10159080(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159170 size=0x7e
+#include "CVDmg_t.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+extern bool (*g_105f9390)(CVDmg_t *, int);
+
+bool CVDmg_t::sub_10159170(int target)
+{
+    g_101e3124[*g_101e3128].name = "CVDmg_t::EvadeCheck";
+    g_101e3124[*g_101e3128].ent = g_102de300;
+    g_101e3124[*g_101e3128].extra = g_102de300;
+    ++*g_101e3128;
+    if (g_105f9390) {
+        bool r = g_105f9390(this, target);
+        --*g_101e3128;
+        return r;
+    }
+    --*g_101e3128;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101594e0 size=0x6d
 #include "CVStatCost_t.h"
 
