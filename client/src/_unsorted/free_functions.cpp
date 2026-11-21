@@ -40105,6 +40105,41 @@ void sub_1012eb10(char *pSrc, int split, int skip, char *dst, int max, char *dst
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012eb70 size=0x107
+#include "CUnknown101b3a10.h"
+
+extern "C" __declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+__declspec(dllimport) const char *Q_stristr(const char *pStr, const char *pSearch);
+extern "C" __declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+
+void sub_1012eb10(const char *pszSrc, int nSplit, int nSkip, char *pszFirst, int nFirst, char *pszSecond, int nSecond);
+
+void CUnknown101b3a10::sub_1012eb70(void *pCharacter, const char *pszSrc, char *pszDest, int nDest)
+{
+	Q_strncpy(pszDest, pszSrc, nDest);
+	const char *pszGender = Q_stristr(pszSrc, "$gender");
+	if (pszGender) {
+		int nGender = sub_1012ec90(pCharacter);
+		if (nGender) {
+			char szFirst[0x100];
+			char szSecond[0x100];
+			memset(szFirst, 0, sizeof(szFirst));
+			memset(szSecond, 0, sizeof(szSecond));
+			sub_1012eb10(pszSrc, pszGender - pszSrc, 7, szFirst, 0x100, szSecond, 0x100);
+			switch (nGender) {
+			case 1:
+				Q_snprintf(pszDest, nDest, "%s%s%s", szFirst, "male", szSecond);
+				break;
+			case 2:
+				Q_snprintf(pszDest, nDest, "%s%s%s", szFirst, "female", szSecond);
+				break;
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ec80 size=0x1
 void sub_1012ec80()
 {
