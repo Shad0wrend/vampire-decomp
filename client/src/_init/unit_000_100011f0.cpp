@@ -2133,3 +2133,8 @@ ConCommand g_105facd4("vloadtips", sub_10167b10, 0, 0, 0);
 #include "ConVar.h"
 ConVar g_105fad10("timemode", "4", 0, "Show timings in:\n    0 = cycles\n    1 = microseconds\n    2 = milliseconds\n    3 = seconds\n    4 = %% frametime", true, 0.0f, true, 4.0f);
 // END FUNCTION
+
+// FUNCTION: 0x10167c50 size=0xa
+#include "ConVar.h"
+ConVar g_105fad58("host_speeds", "0", 0);
+// END FUNCTION
