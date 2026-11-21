@@ -113,6 +113,18 @@ missed by score (the `carried:` notes), 47 failed to compile, and 44 wait on one
 functions / 366,788 of 1,690,545 bytes (21.70%). Backups: cache/`project.db.pre-names2-20261121`,
 cache/`project.db.pre-carry9-20261121`.
 
+Carry run 10 (2026-11-21, pcdecomp main d212c95). The `_strcmpi` conflict came from vtmb's two linker names for
+one CRT function: the C name `__strcmpi` (which this project knows at 0x101e28e0) and a C++ declaration
+`?_strcmpi@@YAHPBD0@Z` this project does not know at all. Carry now lets a name this project knows at the paired
+address win over an alias it does not know; an alias this project places at another address is still a conflict.
+Run 10 planned 187 and matched 39 (+2 initializer rows), 10,235 bytes; all 39 are `_strcmpi` callers. Of the other
+5: 0x1008cfa0 (score 3) and 0x10128360 (score 1) missed, and 0x1014f200, 0x1014f700, 0x101a3eb0 now wait on an
+unpaired placeholder (a header still spelled `sub_X`). Name conflicts 108 -> 62: 19 are `??_GIRecipientFilter`
+deleting destructors and 33 constructors, destructors and vfuncs whose own name this project's row cannot take (no
+linker name), and 10 are the `s_default` / `s_Sentinel` statics spelled at two addresses. A `verify` of 20 still matched. Totals now:
+7,754 matched rows; the panel counts 7,727 of 16,009 functions / 377,023 of 1,690,556 bytes (22.30%). Backup:
+cache/`project.db.pre-carry10-20261121`.
+
 Units: `pcdecomp units --apply` saved 4,066 unit guesses in 194 units (functions.unit_guess: the "probably unit"
 line and the panel's per-unit progress; it never moves a file), from the reference trees' class homes and the
 functions between two of one unit; client.dll's code names no source path. A unit under `_init/` is not read as the
