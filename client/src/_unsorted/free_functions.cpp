@@ -25308,6 +25308,22 @@ single:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e30f0 size=0x32
+extern char g_104cf750;
+extern char g_104cf550;
+extern char g_104cf650;
+void sub_100cdb00(char *pObj, const char *pszChars);
+
+void sub_100e30f0()
+{
+    if (!g_104cf750) {
+        sub_100cdb00(&g_104cf550, "{}()'");
+        sub_100cdb00(&g_104cf650, "{}()':");
+        g_104cf750 = 1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e32d0 size=0x10
 namespace lifted {
 extern char g_10234ae8;
