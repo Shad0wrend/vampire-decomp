@@ -36,6 +36,7 @@
 0x10044450 func   ?sub_10044450@@YAXXZ sub_10044450
 0x100445e0 func   ?vfunc2@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc2
 0x100445f0 func   ?vfunc3@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc3
+0x10044600 func   ?vfunc4@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc4
 0x10045630 func   ?sub_10045630@@YAXPAVVector@@00@Z sub_10045630
 0x10049f20 func   ?sub_10049f20@CUnknown100f2f90@@QAEPAXHHH@Z CUnknown100f2f90::sub_10049f20
 0x10049f40 func   ?sub_10049f40@Vector@@QBE?AV1@ABV1@@Z Vector::sub_10049f40
