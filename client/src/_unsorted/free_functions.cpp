@@ -6918,6 +6918,26 @@ void CMem16_t::sub_10127830(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101279a0 size=0x51
+#include "CUnknown10248a50.h"
+#include <string.h>
+extern char g_104e23f8;
+void CUnknown10248a50::sub_101279a0(const char *pszName)
+{
+    if (pszName) {
+        m_pszName = new char[strlen(pszName) + 1];
+        strcpy(m_pszName, pszName);
+    } else {
+        m_pszName = 0;
+    }
+    m_pSub = 0;
+    m_pPeer = 0;
+    m_pszString = 0;
+    *(int *)&m_pad0018 = 0;
+    g_104e23f8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128d80 size=0x4d
 struct SFuncField {
     int fieldType;
