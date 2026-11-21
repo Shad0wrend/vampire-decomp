@@ -19148,6 +19148,16 @@ char sub_10115fa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116df0 size=0x11
+struct CUnknown10116df0 { int sub_10116df0(int, int); };
+int CUnknown10116df0::sub_10116df0(int a0, int a1)
+{
+    *(int *)((char *)this + 0x2c) = a1;
+    *(int *)((char *)this + 0x30) = a0;
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101175a0 size=0xb
 namespace lifted {
 struct C1010e440 { int sub_1010e440(); };
