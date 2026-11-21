@@ -2511,3 +2511,8 @@ ConVar g_105fc5b0("cl_rollspeed", "200", 0);
 #include "ConVar.h"
 ConVar g_105fc550("cl_rollangle", "2", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018ed50 size=0xa
+#include "ConVar.h"
+ConVar g_105fc508("cl_bobcycle", "0.8", 0);
+// END FUNCTION
