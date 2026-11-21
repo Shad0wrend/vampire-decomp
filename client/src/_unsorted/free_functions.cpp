@@ -9741,6 +9741,14 @@ char * CUnknown1009f360::sub_1009f360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f6e0 size=0x7
+struct CUnknown1009f6e0 { char * sub_1009f6e0(); };
+char * CUnknown1009f6e0::sub_1009f6e0()
+{
+    return (char *)this + 0x2b4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fb40 size=0x4
 struct CUnknown1009fb40 { int sub_1009fb40(); };
 int CUnknown1009fb40::sub_1009fb40()
