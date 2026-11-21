@@ -10983,6 +10983,16 @@ void CUtlMemory12::sub_100caa80(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cb560 size=0x6
+namespace lifted {
+extern char g_104a573c;
+}
+int sub_100cb560()
+{
+    return (int)&lifted::g_104a573c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cc560 size=0x1
 void sub_100cc560()
 {

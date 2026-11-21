@@ -771,6 +771,7 @@
 0x100ca8c0 func   ?sub_100ca8c0@@YAHXZ sub_100ca8c0
 0x100caa00 func   ?sub_100caa00@CUtlLinkedList12@@QAEXH@Z CUtlLinkedList12::sub_100caa00
 0x100caa80 func   ?sub_100caa80@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_100caa80
+0x100cb560 func   ?sub_100cb560@@YAHXZ sub_100cb560
 0x100cc560 func   ?sub_100cc560@@YAXXZ sub_100cc560
 0x100ccb30 func   ?sub_100ccb30@CMem16_t@@QAEXH@Z CMem16_t::sub_100ccb30
 0x100cd000 func   ?sub_100cd000@@YAXMPBM0PAM@Z sub_100cd000
