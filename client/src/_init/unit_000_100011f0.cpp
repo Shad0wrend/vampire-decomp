@@ -3023,6 +3023,13 @@ int g_102ed080 = ClientClassInit((DT_TEBubbleTrail::ignored *)0);
 RecvTable g_102ed454;
 // END FUNCTION
 
+// FUNCTION: 0x10035f80 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEDecal { struct ignored; }
+template <> int ClientClassInit<DT_TEDecal::ignored>(DT_TEDecal::ignored *);
+int g_102ed450 = ClientClassInit((DT_TEDecal::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10036340 size=0xa
 #include "RecvTable.h"
 RecvTable g_102ed6c4;
