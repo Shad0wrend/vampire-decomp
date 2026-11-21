@@ -1616,3 +1616,9 @@ ConCommand g_104d360c("+showvprof", sub_10102460, 0, 0, 0);
 void sub_10102480(void);
 ConCommand g_104d3a94("-showvprof", sub_10102480, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105710 size=0xa
+#include "ConCommand.h"
+void sub_101021d0(void);
+ConCommand g_104d2f14("+graph", sub_101021d0, 0, 0, 0);
+// END FUNCTION
