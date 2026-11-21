@@ -18030,6 +18030,14 @@ void S10032fb0::sub_1011a3c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011ac80 size=0x7
+struct CUnknown1011ac80 { char sub_1011ac80(); };
+char CUnknown1011ac80::sub_1011ac80()
+{
+    return *(char *)((char *)this + 0xd8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011b1d0 size=0x77
 #include "CDataObjectAccessSystem.h"
 
