@@ -53365,6 +53365,65 @@ void CUnknown101f7bb0::sub_10157480()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157630 size=0xb4
+#include "CUnknown101f7cc0.h"
+#include "CVTraitEffectGroup_t.h"
+
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *pMsg, ...);
+
+struct DfKeys
+{
+	virtual void a0();
+	virtual void a1();
+	virtual DfKeys *FindKey(const char *pszName);
+	virtual DfKeys *NextKey();
+	virtual void a4(); virtual void a5(); virtual void a6(); virtual void a7(); virtual void a8();
+	virtual void a9(); virtual void a10(); virtual void a11(); virtual void a12();
+	virtual const char *GetString(const char *pszKey, const char *pszDefault);
+};
+
+struct CTraitNameTable
+{
+	int sub_10157bd0(const char *pszName);	// stub 0x1001431c
+};
+extern CTraitNameTable g_105f8b98;
+
+bool CUnknown101f7cc0::sub_10157630(void *pData)
+{
+	DfKeys *pKeys = (DfKeys *)pData;
+	if (pKeys) {
+		CVTraitEffectGroup_t *pCur;
+		int id = g_105f8b98.sub_10157bd0(pKeys->GetString("InternalName", ""));
+		int i = 0;
+		if (m_nGroups > 0) {
+			CVTraitEffectGroup_t **pp = m_ppGroups;
+			do {
+				pCur = *pp;
+				if (pCur->m_nId == id)
+					break;
+				i++;
+				pp++;
+			} while (i < m_nGroups);
+		}
+		DfKeys *pGroup = pKeys->FindKey("TraitEffectGroup");
+		if (pGroup) {
+			do {
+				CVTraitEffectGroup_t *pEntry = m_ppGroups[i++];
+				if (!pEntry) {
+					Msg("Unable to parse data file TraitEffectInfoList.  Memory allocation ERROR!\n");
+					return false;
+				}
+				pEntry->sub_10156f70((CVStatKV *)pGroup);
+				pGroup = pGroup->NextKey();
+			} while (pGroup);
+		}
+		return true;
+	}
+	Msg("Unable to parse data file for TraitEffectInfoList.\n");
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157a20 size=0x9f
 #include <stdio.h>
 #include "FileSystemViews.h"
