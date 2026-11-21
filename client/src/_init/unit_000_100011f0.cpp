@@ -2051,3 +2051,8 @@ CEntitySaveRestoreBlockHandler g_105e54c4;
 int sub_1012b940(void);
 int g_105e54bc = ((int (*)(int))sub_1012b940)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1012c930 size=0xa
+#include "ConVar.h"
+ConVar g_105e54d0("sv_soundemitter_trace", "0", 8192, "Show all EmitSound calls including their symbolic name and the actual .wav file they resolved to\n");
+// END FUNCTION
