@@ -4319,6 +4319,13 @@ InterfaceReg g_104a2540(sub_100b9cd0, "BreakableSurface_IMaterialProxy003");
 RecvTable g_104a2554;
 // END FUNCTION
 
+// FUNCTION: 0x100ba1c0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Func_Dust { struct ignored; }
+template <> int ClientClassInit<DT_Func_Dust::ignored>(DT_Func_Dust::ignored *);
+int g_104a2550 = ClientClassInit((DT_Func_Dust::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100bb220 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a26c0;
