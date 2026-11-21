@@ -50,6 +50,7 @@
 0x10006480 func   ?sub_10006480@@YAHXZ sub_10006480
 0x10006580 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Dementation@@@Z ClientClassInit
 0x10006750 func   ?sub_10006750@@YAHXZ sub_10006750
+0x10006850 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Domination@@@Z ClientClassInit
 0x10006a20 func   ?sub_10006a20@@YAHXZ sub_10006a20
 0x10006d60 func   ?sub_10006d60@CUnknown10006d60@@QAEPAXH@Z CUnknown10006d60::sub_10006d60
 0x10007220 func   ?sub_10007220@@YAHXZ sub_10007220
