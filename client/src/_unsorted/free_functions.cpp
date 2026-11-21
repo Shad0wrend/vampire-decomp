@@ -1907,6 +1907,55 @@ bool bf_write::sub_10086970(const void *pInData, int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10086c90 size=0x277
+#include "bf_read.h"
+#include "bf_write.h"
+
+struct bf_writeWBFB : bf_write
+{
+	// the 2003 SDK's bf_write::WriteUBitLong, as WriteBitsFromBuffer inlines it
+	void WriteUBitLong2003(unsigned int curData, int numbits)
+	{
+		if ((m_iCurBit + numbits) > m_nDataBits) {
+			m_iCurBit = m_nDataBits;
+			m_bOverflow = true;
+			return;
+		}
+
+		int nBitsLeft = numbits;
+		int iCurBit = m_iCurBit;
+
+		unsigned int iDWord = iCurBit >> 5;
+		unsigned long iCurBitMasked = iCurBit & 31;
+		m_pData[iDWord] &= g_104871b0[iCurBitMasked][nBitsLeft];
+		m_pData[iDWord] |= curData << iCurBitMasked;
+
+		int nBitsWritten = 32 - iCurBitMasked;
+		if (nBitsWritten < nBitsLeft) {
+			nBitsLeft -= nBitsWritten;
+			iCurBit += nBitsWritten;
+			curData >>= nBitsWritten;
+
+			iCurBitMasked = iCurBit & 31;
+			m_pData[iDWord + 1] &= g_104871b0[iCurBitMasked][nBitsLeft];
+			m_pData[iDWord + 1] |= curData << iCurBitMasked;
+		}
+
+		m_iCurBit += numbits;
+	}
+};
+
+bool bf_write::sub_10086c90(bf_read *pIn, int nBits)
+{
+	while (nBits > 32) {
+		((bf_writeWBFB *)this)->WriteUBitLong2003(pIn->ReadUBitLong(32), 32);
+		nBits -= 32;
+	}
+	((bf_writeWBFB *)this)->WriteUBitLong2003(pIn->ReadUBitLong(nBits), nBits);
+	return !m_bOverflow && !pIn->m_bOverflow;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086f10 size=0xfd
 #include "bf_write.h"
 void bf_write::sub_10086f10(float fAngle, int numbits)
