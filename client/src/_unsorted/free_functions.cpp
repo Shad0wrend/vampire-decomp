@@ -5660,6 +5660,13 @@ int __stdcall sub_10095ba0(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095bb0 size=0x5
+int __stdcall sub_10095bb0(int a0, int a1, int a2)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096d10 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
