@@ -2056,3 +2056,9 @@ int g_105e54bc = ((int (*)(int))sub_1012b940)(0);
 #include "ConVar.h"
 ConVar g_105e54d0("sv_soundemitter_trace", "0", 8192, "Show all EmitSound calls including their symbolic name and the actual .wav file they resolved to\n");
 // END FUNCTION
+
+// FUNCTION: 0x1012cbf0 size=0xa
+#include "ConCommand.h"
+void sub_1012cc40(void);
+ConCommand g_105e5514("cl_soundemitter_flush", sub_1012cc40, "Flushes the sounds.txt system (client only)", 0, 0);
+// END FUNCTION
