@@ -23963,6 +23963,13 @@ int SIdList::sub_10153910(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153970 size=0x5
+int __stdcall sub_10153970(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101539e0 size=0x67
 extern "C" int __cdecl sprintf(char *, const char *, ...);
 void __cdecl sub_1015fbb0(const char *msg);
