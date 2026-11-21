@@ -21531,6 +21531,36 @@ int sub_100c8e30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c8f30 size=0x11e
+#include "RecvTable.h"
+extern RecvTable g_104a5424;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_VGuiScreen { struct ignored; }
+template <> int ClientClassInit<DT_VGuiScreen::ignored>(DT_VGuiScreen::ignored *)
+{
+	char *pRecvTableName = "DT_VGuiScreen";
+	RecvTable &RecvTable = g_104a5424;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_flWidth", 1048, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flHeight", 1052, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_fScreenFlags", 1092, 4, 0, 0),
+		RecvPropInt("m_nPanelName", 1056, 4, 0, 0),
+		RecvPropInt("m_nAttachmentIndex", 1084, 4, 0, 0),
+		RecvPropInt("m_nOverlayMaterial", 1088, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c92f0 size=0xb
 namespace lifted {
 struct C10110480 { int sub_10110480(); };
