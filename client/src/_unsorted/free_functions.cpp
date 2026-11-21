@@ -8469,6 +8469,40 @@ int sub_10108570(const float *a, const float *b) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x101085a0 size=0x3d
+// VectorMA (mathlib.cpp, _WIN32 form): Valve's naked x87 asm.
+// TARGET: sub_101085a0
+__declspec(naked) void sub_101085a0(const float *start, float scale, const float *direction, float *dest)
+{
+	_asm {
+		mov	eax, DWORD PTR [esp+0x04]	; *start, s0..s2
+		mov ecx, DWORD PTR [esp+0x0c]	; *direction, d0..d2
+		mov edx, DWORD PTR [esp+0x10]	; *dest
+		fld DWORD PTR [esp+0x08]		; sc
+		fld	DWORD PTR [eax]				; s0		| sc
+		fld DWORD PTR [ecx]				; d0		| s0	| sc
+		fld DWORD PTR [eax+4]			; s1		| d0	| s0	| sc
+		fld DWORD PTR [ecx+4]			; d1		| s1	| d0	| s0	| sc
+		fld DWORD PTR [eax+8]			; s2		| d1	| s1	| d0	| s0	| sc
+		fxch st(4)						; s0		| d1	| s1	| d0	| s2	| sc
+		fld DWORD PTR [ecx+8]			; d2		| s0	| d1	| s1	| d0	| s2	| sc
+		fxch st(4)						; d0		| s0	| d1	| s1	| d2	| s2	| sc
+		fmul st,st(6)					; d0*sc		| s0	| d1	| s1	| d2	| s2	| sc
+		fxch st(2)						; d1		| s0	| d0*sc	| s1	| d2	| s2	| sc
+		fmul st,st(6)					; d1*sc		| s0	| d0*sc	| s1	| d2	| s2	| sc
+		fxch st(4)						; d2 		| s0	| d0*sc	| s1	| d1*sc | s2	| sc
+		fmulp st(6),st					; s0		| d0*sc	| s1	| d1*sc	| s2	| d2*sc
+		faddp st(1),st					; s0+d0*sc	| s1	| d1*sc	| s2	| d2*sc
+		fstp DWORD PTR [edx]			; s1		| d1*sc	| s2	| d2*sc
+		faddp st(1),st					; s1+d1*sc	| s2	| d2*sc
+		fstp DWORD PTR [edx+4]			; s2		| d2*sc
+		faddp st(1),st					; s2+d2*sc
+		fstp DWORD PTR [edx+8]			; [Empty stack]
+		ret
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108fd0 size=0x3d
 // VectorMA (mathlib.cpp, _WIN32 form): Valve's naked x87 asm.
 // TARGET: sub_10108fd0
