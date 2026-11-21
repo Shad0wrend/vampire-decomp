@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10128e50 size=0x84
+#include "CSave.h"
+
+// TARGET: CSave::CSave
+CSave::CSave(void *pData)
+	: m_pSections(0), m_nAlloc(0), m_nGrow(0), m_nSections(0), m_pElements(0), m_pData(pData),
+	  m_pEntityBlock(pData ? (char *)pData + 0x18 : 0)
+{
+	((CUtlVector<int> *)&m_pSections)->EnsureCapacity(0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128f00 size=0x13
 #include "CSave.h"
 namespace lifted {
