@@ -1996,3 +1996,8 @@ ConVar g_104e1620("cl_smoothtime", "0.1", 0, "Smooth client's view after predict
 #include "ConVar.h"
 ConVar g_104e1580("cl_idealpitchscale", "0.8", 128);
 // END FUNCTION
+
+// FUNCTION: 0x10120cc0 size=0xa
+#include "ConVar.h"
+ConVar g_104e15c8("cl_predictionlist", "0", 0, "Show which entities are predicting\n");
+// END FUNCTION
