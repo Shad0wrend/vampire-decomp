@@ -300,6 +300,7 @@
 0x1012a610 func   ?vfunc4@CRestore@@UAEXPAXPAUtypedescription_t@@H@Z CRestore::vfunc4
 0x1012a6d0 func   ?sub_1012a6d0@CRestore@@QAEXPAG@Z CRestore::sub_1012a6d0
 0x1012a7f0 func   ?vfunc8@CRestore@@UAEXXZ CRestore::vfunc8
+0x1012aa70 func   ?vfunc9@CRestore@@UAEXPAG@Z CRestore::vfunc9
 0x1012aaa0 func   ?vfunc13@CRestore@@UAEFXZ CRestore::vfunc13
 0x1012aae0 func   ?vfunc16@CRestore@@QAEDXZ CRestore::vfunc16
 0x1012ad70 func   ?vfunc20@CRestore@@UAEHPAHHH@Z CRestore::vfunc20

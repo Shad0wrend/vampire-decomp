@@ -167,6 +167,19 @@ void CRestore::vfunc8()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012aa70 size=0x30
+#include "CRestore.h"
+void CRestore::vfunc9(unsigned short *pValue)
+{
+	if (pValue) {
+		pValue[0] = vfunc13();
+		pValue[1] = vfunc13();
+		return;
+	}
+	sub_1012abd0(4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012aaa0 size=0x1c
 #include "CRestore.h"
 
