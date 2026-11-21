@@ -971,3 +971,8 @@ ConVar g_104d2648("camseduct_pitch_max", "60.0", 0);
 #include "ConVar.h"
 ConVar g_104d2600("camseduct_pitch_min", "0.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fba50 size=0xa
+#include "ConVar.h"
+ConVar g_104d1768("camseduct_forward_base", "-40.0", 0);
+// END FUNCTION
