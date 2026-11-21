@@ -319,6 +319,7 @@
 0x1001b850 func   ?sub_1001b850@@YAHXZ sub_1001b850
 0x1001b970 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGiovanniInvitationMaria@@@Z ClientClassInit
 0x1001bad0 func   ?sub_1001bad0@@YAHXZ sub_1001bad0
+0x1001bbf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGuyMagazine@@@Z ClientClassInit
 0x1001bd50 func   ?sub_1001bd50@@YAHXZ sub_1001bd50
 0x1001bfd0 func   ?sub_1001bfd0@@YAHXZ sub_1001bfd0
 0x1001c250 func   ?sub_1001c250@@YAHXZ sub_1001c250
