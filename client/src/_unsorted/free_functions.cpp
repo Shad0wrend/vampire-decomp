@@ -25139,6 +25139,66 @@ void CUnknown100fde30::sub_100e2cf0(float flSpeed)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2dd0 size=0x1ca
+#include "CUnknown100fe0c0.h"
+#include "Vector.h"
+extern Vector g_104cf544;
+void sub_10109010(Vector *a, Vector *b);
+
+// TARGET: CUnknown100fe0c0::sub_100e2dd0
+float CUnknown100fe0c0::sub_100e2dd0(float flTime)
+{
+	sub_100e2c80(flTime);
+	for (;;) {
+		float seg = m_40 - m_3c;
+		float dt = flTime - m_3c;
+		float step;
+		bool more;
+		if (dt > seg) {
+			step = seg;
+			more = true;
+		} else {
+			step = dt;
+			more = false;
+		}
+		if (m_44 > m_2c) {
+			m_2c = step * 150.0f + m_2c;
+			if (m_2c > m_44)
+				m_2c = m_44;
+		} else if (m_44 < m_2c) {
+			m_2c = m_2c - step * 500.0f;
+			if (m_2c < m_44)
+				m_2c = m_44;
+		}
+		if (!more)
+			break;
+		m_3c = m_40;
+		if (m_48) {
+			m_44 = (float)m_58.vfunc2(m_8, m_c);
+			m_48 = 0;
+			m_40 = m_58.vfunc1(0, m_1c) + m_18 + m_40;
+		} else {
+			m_44 = (float)m_58.vfunc2(m_10, m_14);
+			m_28 += m_58.vfunc2(-m_20, m_20);
+			m_28 = (int)((float)((int)((float)m_28 * 182.04445f) & 0xffff) * 0.005493164f);
+			m_48 = 1;
+			m_40 = m_40 + 10.0f;
+		}
+	}
+	Vector v;
+	v.y = (float)m_28 + m_4c;
+	m_3c = flTime;
+	v.x = 0;
+	v.z = 0;
+	sub_10109010(&v, &g_104cf544);
+	float s = m_50 * m_2c;
+	g_104cf544.x *= s;
+	g_104cf544.y *= s;
+	g_104cf544.z *= s;
+	return flTime + 0.01f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e2fa0 size=0x1f
 extern float g_104cf544;
 extern float g_104cf548;
