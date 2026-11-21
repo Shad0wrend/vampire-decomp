@@ -12474,6 +12474,58 @@ TList *TList::sub_1015ab20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015b050 size=0xf5
+#include "CVStatInfo_t.h"
+#include "CVStatCost_t.h"
+
+struct CUnknown102056d0
+{
+    int m_value;
+    char m_pad[0x10];
+    CUnknown102056d0 *sub_10161410();
+};
+struct TList
+{
+    int m_a, m_b, m_c;
+    TList *sub_1015ab20();
+};
+
+struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
+extern ScopeEntry_t *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+
+CVStatInfo_t *CVStatInfo_t::sub_1015b050()
+{
+    ((CUnknown102056d0 *)((char *)this + 0x4c))->sub_10161410();
+    ((CUnknown102056d0 *)((char *)this + 0x60))->sub_10161410();
+    ((CUnknown102056d0 *)((char *)this + 0x74))->sub_10161410();
+    ((CUnknown102056d0 *)((char *)this + 0x88))->sub_10161410();
+    ((CUnknown102056d0 *)((char *)this + 0x9c))->sub_10161410();
+    CVStatSubCost_t *pCost = (CVStatSubCost_t *)((char *)this + 0xb0);
+    pCost->sub_101594e0();
+    (pCost + 1)->sub_101594e0();
+    ((TList *)((char *)this + 0x10c))->sub_1015ab20();
+    m_field0120 = 1;
+    m_field0124 = 0;
+    m_field0130 = 0;
+    m_field0134 = 0;
+    m_field0138 = 0;
+    g_101e3124[*g_101e3128].m_pszName = "CVStatInfo_t::CVStatInfo_t";
+    g_101e3124[*g_101e3128].m_pszEnt = g_102de300;
+    g_101e3124[*g_101e3128].m_pszExtra = g_102de300;
+    (*g_101e3128)++;
+    m_field0000 = 0;
+    m_field0004 = 0;
+    m_field0008 = -1;
+    m_flags = 0;
+    m_bField0108 = 0;
+    m_pLevels = 0;
+    (*g_101e3128)--;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015c8f0 size=0xb8
 #include "CVStatInfoList_t.h"
 
