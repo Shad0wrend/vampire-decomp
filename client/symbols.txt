@@ -1187,6 +1187,7 @@
 0x100e6ce0 func   ?sub_100e6ce0@@YAXPBD0ZZ sub_100e6ce0
 0x100e6d60 func   ??0CGameMovement@@QAE@XZ CGameMovement::CGameMovement
 0x100e6e10 func   ?vfunc13@CGameMovement@@UAEXH@Z CGameMovement::vfunc13
+0x100e6e40 func   ??1CGameMovement@@UAE@XZ CGameMovement::~CGameMovement
 0x100e6e40 func   ?sub_100e6e40@CUnknown100e6e40@@QAEXXZ CUnknown100e6e40::sub_100e6e40
 0x100e6e70 func   ?vfunc14@CGameMovement@@UAEHH@Z CGameMovement::vfunc14
 0x100e6ea0 func   ?sub_100e6ea0@@YGDH@Z sub_100e6ea0
