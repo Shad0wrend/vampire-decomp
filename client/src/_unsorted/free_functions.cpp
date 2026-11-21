@@ -12502,6 +12502,25 @@ void CUnknown102491a0::sub_10128950(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128980 size=0x25
+struct CUnknown102491e0 {
+    char m_pad0000[0xc];
+    int m_0c;
+    int *sub_101282e0(int a, int b);
+    void sub_10128980(int a, int b);
+};
+
+// TARGET: CUnknown102491e0::sub_10128980
+void CUnknown102491e0::sub_10128980(int a, int b)
+{
+    int *p = sub_101282e0(a, 1);
+    if (p != 0) {
+        p[2] = b;
+        m_0c = 3;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128b60 size=0x1f
 namespace lifted {
 extern int g_102c3368;
