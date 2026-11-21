@@ -2648,3 +2648,8 @@ ConVar g_10618878("cl_alwayscopyframebuffertotexture", "1", 0);
 #include "ConVar.h"
 ConVar g_10618d40("r_watercullheight", "25", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10197c70 size=0xa
+#include "ConVar.h"
+ConVar g_106194e8("r_watercullenable", "0", 0);
+// END FUNCTION
