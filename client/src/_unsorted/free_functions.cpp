@@ -21233,6 +21233,12 @@ void CUnknown101eac50::sub_1014eee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014f1f0 size=0x1
+void sub_1014f1f0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014f300 size=0x2a
 #include "utlrbtree.h"
 #include "utlsortvector.h"
