@@ -39,3 +39,25 @@ void ConCommandBase::vfunc2(const char *pszName, const char *pszHelp, int nFlags
 		p->vfunc3();
 }
 // END FUNCTION
+
+// FUNCTION: 0x100df2a0 size=0x1f
+#include "ConCommandBase.h"
+
+extern int g_104cf3d8;
+
+class IConCommandBaseAccessor
+{
+public:
+	virtual bool RegisterConCommandBase(ConCommandBase *pVar);
+};
+
+void ConCommandBase::vfunc3()
+{
+	IConCommandBaseAccessor *pAccessor = (IConCommandBaseAccessor *)g_104cf3d8;
+	if (pAccessor && !*((char *)this + 0xc))
+	{
+		pAccessor->RegisterConCommandBase(this);
+		*((char *)this + 0xc) = 1;
+	}
+}
+// END FUNCTION
