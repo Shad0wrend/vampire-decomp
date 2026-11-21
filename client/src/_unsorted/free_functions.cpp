@@ -17963,6 +17963,17 @@ void CMem8b_t::sub_10117d70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101180b0 size=0x8
+namespace lifted {
+struct C101163a0 { int sub_101163a0(); };
+}
+struct CUnknown101180b0 { int sub_101180b0(); };
+int CUnknown101180b0::sub_101180b0()
+{
+    return ((lifted::C101163a0 *)(this + 8))->sub_101163a0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101190d0 size=0x6
 namespace lifted {
 extern char g_104e0a74;
