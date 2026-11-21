@@ -19246,6 +19246,31 @@ void CPtrList101d6400::sub_10151890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152590 size=0xca
+#include "CUnknown101f0330.h"
+
+extern "C" char *__cdecl strcat(char *, const char *);
+extern "C" char *__cdecl strcpy(char *, const char *);
+extern "C" char *__cdecl strncat(char *, const char *, unsigned int);
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+#pragma intrinsic(strcat, strcpy)
+extern char *(__cdecl *g_101e3188)(char *, const char *, int);	// Q_strncpy
+void sub_1015fbb0(const char *msg);
+
+void CUnknown101f0330::sub_10152590()
+{
+	char buf[256];
+	g_101e3188(buf, m_pszText ? m_pszText : "", 254);
+	strcat(buf, "\n");
+	sub_1015fbb0(buf);
+	sprintf(buf, "\t-%s\n\n", m_pszName ? m_pszName : "");
+	strcpy(buf, "\t-");
+	strncat(buf, m_pszName ? m_pszName : "", 250);
+	strcat(buf, "\n\n");
+	sub_1015fbb0(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152bb0 size=0x1a
 struct CUnknown101f0b50 { void * sub_10152bb0(int); };
 void * CUnknown101f0b50::sub_10152bb0(int a0)
