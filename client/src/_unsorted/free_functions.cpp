@@ -29020,6 +29020,13 @@ bool CUnknown101f5150::sub_10155cc0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156020 size=0x6
+int __stdcall sub_10156020(int a0, int a1, int a2)
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156030 size=0x3
 void __stdcall sub_10156030(int a0, int a1, int a2, int a3, int a4)
 {
