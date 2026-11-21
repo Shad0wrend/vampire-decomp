@@ -2094,6 +2094,13 @@ ConVar g_104a0dc8("bc_fade", "0.2", 0);
 ConVar g_104a0e58("bc_ground", "1", 0);
 // END FUNCTION
 
+// FUNCTION: 0x100ad760 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100ad790(void);
+InterfaceReg g_104a0fc0(sub_100ad790, "ClientStats004");
+// END FUNCTION
+
 // FUNCTION: 0x100b3680 size=0xa
 #include "ConCommand.h"
 void sub_100b36b0(void);
