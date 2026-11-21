@@ -13660,6 +13660,19 @@ char CUnknown100df420::sub_100df420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df490 size=0xb
+namespace lifted {
+extern char g_102348dc;
+int sub_100df230();
+}
+struct CUnknown100df490 { int sub_100df490(); };
+int CUnknown100df490::sub_100df490()
+{
+    *(int *)this = (int)&lifted::g_102348dc;
+    return lifted::sub_100df230();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df4c0 size=0x3
 int sub_100df4c0()
 {
