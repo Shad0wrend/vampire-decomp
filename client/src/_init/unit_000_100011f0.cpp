@@ -2183,6 +2183,13 @@ int g_102e5614 = ClientClassInit((DT_ItemKGalleryNoirKey::ignored *)0);
 RecvTable g_102e68ec;
 // END FUNCTION
 
+// FUNCTION: 0x100210d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKLillyKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKLillyKey::ignored>(DT_ItemKLillyKey::ignored *);
+int g_102e68e8 = ClientClassInit((DT_ItemKLillyKey::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10021310 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e0030;
