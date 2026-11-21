@@ -38035,6 +38035,16 @@ int CUnknown101b16e0::sub_101b16e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b1780 size=0xf
+struct CUnknown101b1780 { int sub_101b1780(); };
+int CUnknown101b1780::sub_101b1780()
+{
+    *(int *)((char *)this + 0x9c) = 0;
+    *(int *)((char *)this + 0xa0) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1830 size=0xd
 struct CUnknown101b1830 { char sub_101b1830(char); };
 char CUnknown101b1830::sub_101b1830(char a0)
