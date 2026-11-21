@@ -14903,6 +14903,18 @@ unsigned short SymMap::sub_10138bd0(unsigned int key, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101390c0 size=0x89
+#include "utlrbtree.h"
+#include "CUnknown10249fc0.h"
+int CUnknown10249fc0::sub_101390c0(unsigned short i)
+{
+	if (m_pTree->Links(i).m_Left == i)
+		return 0;
+	CUnknown10249fc0_Tree *t = m_pTree;
+	return t->m_sub.sub_1013d6f0(*t->sub_10139320(i));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139340 size=0x116
 #include "utlmemory.h"
 #include "utlrbtree.h"
