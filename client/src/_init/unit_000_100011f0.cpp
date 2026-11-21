@@ -3859,6 +3859,13 @@ int g_1049cd6c = ClientClassInit((DT_BaseAnimatingOverlay::ignored *)0);
 RecvTable g_1049d890;
 // END FUNCTION
 
+// FUNCTION: 0x100982d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BCCLocalPlayerExclusive { struct ignored; }
+template <> int ClientClassInit<DT_BCCLocalPlayerExclusive::ignored>(DT_BCCLocalPlayerExclusive::ignored *);
+int g_1049d88c = ClientClassInit((DT_BCCLocalPlayerExclusive::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100983b0 size=0xa
 #include "RecvTable.h"
 RecvTable g_1049d358;
