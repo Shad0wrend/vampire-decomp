@@ -12752,6 +12752,14 @@ int sub_100df300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df330 size=0x7
+struct CUnknown100df330 { int sub_100df330(); };
+int CUnknown100df330::sub_100df330()
+{
+    return *(int *)((char *)(*(int *)((char *)this + 4)) + 0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df340 size=0x38
 struct CUnknown10245720Node
 {
