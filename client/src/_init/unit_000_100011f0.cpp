@@ -2623,3 +2623,8 @@ ConCommand g_105fc43c("print_client_viewmodel_info", sub_10190f30, "", 0, 0);
 #include "ConVar.h"
 ConVar g_10618708("v_dark", "0", 0, "Start level with black to normal screen fade");
 // END FUNCTION
+
+// FUNCTION: 0x10197a90 size=0x5
+#include "Vector.h"
+Vector g_10618f7c(0.0f, 0.0f, 0.0f);
+// END FUNCTION
