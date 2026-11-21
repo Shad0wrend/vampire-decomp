@@ -3384,6 +3384,54 @@ void sub_1008a110(int a1, int a2, int a3, int a4, int a5, int a6, int a7, float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008a4d0 size=0x13a
+#include "matrix3x4_t.h"
+#include "Quaternion.h"
+
+struct S100c30b0Bone
+{
+    int m_nName;
+    int m_nParent;
+    char m_pad08[0x88 - 8];
+    int m_nFlags;
+    char m_pad8c[0xa0 - 0x8c];
+};
+
+struct S100c30b0Hdr
+{
+    char m_pad0000[0xf4];
+    int m_nBoneIndex;
+    S100c30b0Bone *Bone(int i) { return (S100c30b0Bone *)((char *)this + m_nBoneIndex) + i; }
+};
+
+void sub_1010a540(const Quaternion &q, const Vector &pos, matrix3x4_t &out);
+void sub_10108a50(const matrix3x4_t &in1, const matrix3x4_t &in2, matrix3x4_t &out);
+void sub_1008a4d0(S100c30b0Hdr *pStudioHdr, const matrix3x4_t &parentTransform, const Vector *pos, const Quaternion *q, int iBone, matrix3x4_t *bonetoworld);
+
+// TARGET: sub_1008a4d0
+void sub_1008a4d0(S100c30b0Hdr *pStudioHdr, const matrix3x4_t &parentTransform, const Vector *pos, const Quaternion *q, int iBone, matrix3x4_t *bonetoworld)
+{
+    matrix3x4_t bonematrix;
+    sub_1010a540(q[iBone], pos[iBone], bonematrix);
+    int parent = pStudioHdr->Bone(iBone)->m_nParent;
+    if (parent == -1) {
+        sub_10108a50(parentTransform, bonematrix, bonetoworld[iBone]);
+        return;
+    }
+    sub_1008a4d0(pStudioHdr, parentTransform, pos, q, parent, bonetoworld);
+    if (pStudioHdr->Bone(iBone)->m_nFlags & 2) {
+        matrix3x4_t tmp;
+        sub_10108a50(parentTransform, bonematrix, bonetoworld[iBone]);
+        sub_10108a50(bonetoworld[parent], bonematrix, tmp);
+        bonetoworld[iBone].m_flMatVal[0][3] = tmp.m_flMatVal[0][3];
+        bonetoworld[iBone].m_flMatVal[1][3] = tmp.m_flMatVal[1][3];
+        bonetoworld[iBone].m_flMatVal[2][3] = tmp.m_flMatVal[2][3];
+        return;
+    }
+    sub_10108a50(bonetoworld[parent], bonematrix, bonetoworld[iBone]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008a690 size=0xde
 struct CBoneVecX {
 	float x, y, z;
