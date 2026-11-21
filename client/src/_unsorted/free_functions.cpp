@@ -22828,6 +22828,25 @@ int CUnknown101f1a30::sub_10157bd0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158060 size=0x55
+#include "CUnknown101f9b70.h"
+#include "CUnknown101f0e50.h"
+#include "CVTraitEffectGroup_t.h"
+extern CUnknown101f0e50 g_105f8b98;
+
+// TARGET: CUnknown101f9b70::sub_10158060
+int CUnknown101f9b70::sub_10158060(int index)
+{
+	if (g_105f8b98.sub_10157b10(index)) {
+		for (int i = 0; i < m_count; i++) {
+			if (g_105f8b98.sub_10157c20(m_ids[i])->m_nId == index)
+				return m_ids[i];
+		}
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158790 size=0x56
 struct ScopeTraceEntry_t
 {
