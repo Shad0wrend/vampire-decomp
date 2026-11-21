@@ -13511,6 +13511,42 @@ void CSoundEmitterSystemBase::sub_1012e970(void *pTable, const char *pszName, in
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012eb10 size=0x58
+void sub_1012eb10(char *pSrc, int split, int skip, char *dst, int max, char *dst2, int max2)
+{
+	char *src = pSrc;
+	char *out = dst;
+	int limit = max;
+	int i = 0;
+	int n = 0;
+	while (*src)
+	{
+		if (i == split)
+		{
+			while (--skip >= 0)
+				src++;
+			limit = max2;
+			*out = 0;
+			out = dst2;
+			i++;
+		}
+		else if (n >= limit)
+		{
+			src++;
+			i++;
+		}
+		else
+		{
+			*out++ = *src;
+			src++;
+			n++;
+			i++;
+		}
+	}
+	*out = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
