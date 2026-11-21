@@ -439,3 +439,8 @@ CUtlVector<int> g_1049d8f8;
 #include "utlvector.h"
 CUtlVector<int> g_1049d964;
 // END FUNCTION
+
+// FUNCTION: 0x1009c1b0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d990("camera_prefs", "6", 128);
+// END FUNCTION
