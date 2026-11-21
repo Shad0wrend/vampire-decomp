@@ -659,6 +659,7 @@
 0x1009cf00 func   ?sub_1009cf00@UtlMem@@QAEXH@Z UtlMem::sub_1009cf00
 0x1009d400 func   ?sub_1009d400@@YAHXZ sub_1009d400
 0x1009db70 func   ?sub_1009db70@@YAXXZ sub_1009db70
+0x1009e230 func   ?sub_1009e230@@YAHXZ sub_1009e230
 0x1009f040 func   ?sub_1009f040@CUnknown1009f040@@QAEPAXXZ CUnknown1009f040::sub_1009f040
 0x1009f260 func   ?sub_1009f260@@YGDHHH@Z sub_1009f260
 0x1009f2e0 func   ?sub_1009f2e0@@YGXHH@Z sub_1009f2e0
