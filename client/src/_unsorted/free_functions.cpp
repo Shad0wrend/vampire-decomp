@@ -1086,6 +1086,24 @@ void CMem8b_t::sub_10078da0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078f20 size=0x19
+struct CUnk10427480
+{
+	int m_nCount;
+
+	int *sub_10078f20(int i);
+};
+
+// TARGET: sub_10078f20
+int *CUnk10427480::sub_10078f20(int i)
+{
+	if (i >= m_nCount) {
+		return 0;
+	}
+	return (int *)this + i * 9 + 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100790f0 size=0x69
 #include "CUnknown10427700.h"
 #include <string.h>
