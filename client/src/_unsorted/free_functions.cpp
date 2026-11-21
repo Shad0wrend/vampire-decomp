@@ -5954,6 +5954,14 @@ int CUnknown1007db70::sub_1007db70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007dba0 size=0x7
+struct CUnknown1007dba0 { char sub_1007dba0(); };
+char CUnknown1007dba0::sub_1007dba0()
+{
+    return *(char *)((char *)this + 0x3e0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ddc0 size=0x6
 namespace lifted {
 extern int g_102af670;
