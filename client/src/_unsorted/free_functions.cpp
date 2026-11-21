@@ -1793,6 +1793,22 @@ void UtlVec8::sub_100a34d0(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3590 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_101e30fc)(void *);
+
+void UtlMem::sub_100a3590()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_101e30fc(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac080 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
