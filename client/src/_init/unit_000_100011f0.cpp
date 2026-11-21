@@ -3331,6 +3331,13 @@ int g_103ec0c0 = ClientClassInit((DT_TETParticle::ignored *)0);
 RecvTable g_103ec27c;
 // END FUNCTION
 
+// FUNCTION: 0x10040520 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TETParticleAttached { struct ignored; }
+template <> int ClientClassInit<DT_TETParticleAttached::ignored>(DT_TETParticleAttached::ignored *);
+int g_103ec278 = ClientClassInit((DT_TETParticleAttached::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100407d0 size=0xa
 #include "RecvTable.h"
 RecvTable g_103ec2b0;
