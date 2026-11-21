@@ -2517,6 +2517,20 @@ void UtlVec8::sub_1009cea0(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3300 size=0x1a
+namespace lifted {
+extern int g_102afbe8;
+extern int g_102afbec;
+extern char g_1049e35c;
+}
+int sub_100a3300()
+{
+    lifted::g_102afbec = 1;
+    lifted::g_102afbe8 = (int)&lifted::g_1049e35c;
+    return (int)&lifted::g_102afbe8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3440 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_101e3100)(int);
