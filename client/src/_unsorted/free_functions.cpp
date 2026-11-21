@@ -1868,6 +1868,45 @@ void bf_write03::sub_100866b0(int data, int numbits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10086970 size=0x316
+#include "bf_write.h"
+
+bool bf_write::sub_10086970(const void *pInData, int nBits)
+{
+	unsigned char *pOut = (unsigned char *)pInData;
+	int nBitsLeft = nBits;
+
+	while (((unsigned long)pOut & 3) != 0 && nBitsLeft >= 8) {
+		WriteUBitLongIndexed(*pOut, 8);
+		++pOut;
+		nBitsLeft -= 8;
+	}
+
+	if (nBitsLeft >= 32) {
+		int nDwords = (unsigned int)nBitsLeft >> 5;
+		nBitsLeft -= nDwords * 32;
+		do {
+			WriteUBitLongIndexed(*(unsigned long *)pOut, 32);
+			pOut += 4;
+		} while (--nDwords);
+	}
+
+	if (nBitsLeft >= 8) {
+		int nBytes = (unsigned int)nBitsLeft >> 3;
+		nBitsLeft -= nBytes * 8;
+		do {
+			WriteUBitLongIndexed(*pOut, 8);
+			++pOut;
+		} while (--nBytes);
+	}
+
+	if (nBitsLeft)
+		WriteUBitLongIndexed(*pOut, nBitsLeft);
+
+	return !m_bOverflow;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086f10 size=0xfd
 #include "bf_write.h"
 void bf_write::sub_10086f10(float fAngle, int numbits)
