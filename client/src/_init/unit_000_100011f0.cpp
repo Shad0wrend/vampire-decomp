@@ -143,6 +143,13 @@ int g_102df164 = ClientClassInit((DT_PlasmaBeamNode::ignored *)0);
 RecvTable g_102df2a8;
 // END FUNCTION
 
+// FUNCTION: 0x10005f90 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PointCamera { struct ignored; }
+template <> int ClientClassInit<DT_PointCamera::ignored>(DT_PointCamera::ignored *);
+int g_102df2a4 = ClientClassInit((DT_PointCamera::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10006250 size=0xa
 #include "RecvTable.h"
 RecvTable g_102dfaa0;
