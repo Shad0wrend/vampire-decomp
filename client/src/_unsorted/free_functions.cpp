@@ -12131,6 +12131,14 @@ void sub_100cdb00(char *pTable, const char *psz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cdb40 size=0xb
+int sub_100cdb40(int a0)
+{
+    *(int *)((char *)a0) = -1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdb60 size=0x26
 extern unsigned int g_10234000[256];
 
