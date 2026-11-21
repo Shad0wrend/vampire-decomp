@@ -874,6 +874,7 @@
 0x1012e970 func   ?sub_1012e970@CSoundEmitterSystemBase@@QAEXPAXPBDH@Z CSoundEmitterSystemBase::sub_1012e970
 0x1012eb10 func   ?sub_1012eb10@@YAXPADHH0H0H@Z sub_1012eb10
 0x1012ec80 func   ?sub_1012ec80@@YAXXZ sub_1012ec80
+0x1012ec90 func   ?sub_1012ec90@@YGHH@Z sub_1012ec90
 0x1012f090 func   ?sub_1012f090@@YGPADPADH@Z sub_1012f090
 0x1012f130 func   ?sub_1012f130@CSoundEmitterSystemBase@@QAEHPBD@Z CSoundEmitterSystemBase::sub_1012f130
 0x1012f1a0 func   ?sub_1012f1a0@CSoundEmitterSystemBase@@QAEDH@Z CSoundEmitterSystemBase::sub_1012f1a0

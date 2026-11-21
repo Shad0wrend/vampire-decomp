@@ -16804,6 +16804,13 @@ void sub_1012ec80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ec90 size=0x5
+int __stdcall sub_1012ec90(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f090 size=0x99
 struct S101b40a0 {
     int a;
