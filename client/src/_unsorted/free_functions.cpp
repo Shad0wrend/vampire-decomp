@@ -45440,6 +45440,98 @@ void CUnknown101d9210::sub_10145d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145e10 size=0x2ab
+#include "CUnknown101d9210.h"
+#include "CUnknown101d90c0.h"
+#include "string_t.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+__declspec(dllimport) void Msg(const char *pFormat, ...);
+extern int g_104a580c;
+string_t sub_1015fc40(const char *psz);
+const char *sub_1015fb60(const char *psz);
+
+struct CUnknown10202ec0
+{
+	int sub_1015f060(CUnknown101d90c0_Section *pSection, const char *pszKey, int nDefault);
+};
+extern CUnknown10202ec0 g_105f93c0;
+
+struct CRollIface
+{
+	virtual void v0();
+	virtual void Release();
+};
+
+struct CRollFile : public CUnknown101d90c0_Section, public virtual CRollIface
+{
+};
+CRollFile *sub_101545c0(const char *pszName, int pathID);
+
+// TARGET: CUnknown101d9210::sub_10145e10
+void CUnknown101d9210::sub_10145e10()
+{
+	char szPath[128];
+	sub_10145d90();
+	sprintf(szPath, "%s%s.txt", "vdata\\system\\", "DiceRolls");
+	CRollFile *pFile = sub_101545c0(szPath, g_104a580c);
+	if (pFile) {
+		CUnknown101d90c0_Section *pText = pFile->vfunc2("Text");
+		if (pText) {
+			m_nName04 = (int)sub_1015fc40(pText->vfunc13("Name", "")).pszValue;
+			m_handle10 = g_105f93c0.sub_1015f060(pText, "Difficulty", 1);
+			m_handle14 = g_105f93c0.sub_1015f060(pText, "Success", 1);
+			m_handle18 = g_105f93c0.sub_1015f060(pText, "RollResult", 1);
+		} else {
+			Msg("Unable to read RollInfo data file for: %s\n", szPath);
+		}
+
+		CUnknown101d90c0_Section *pRules = pFile->vfunc2("Rules");
+		if (pRules) {
+			if (!pRules->vfunc16("HealthModifiers", 20, "%d", (int *)&m_pBuf20, &m_count1c))
+				Msg("Unable to read RollInfo data file for: %s\n", szPath);
+			CUnknown101d90c0_Section *pTable = pRules->vfunc2("TableWeightings");
+			if (pTable) {
+				m_nName08 = (int)sub_1015fc40(pTable->vfunc13("Name", "")).pszValue;
+				CUnknown101d90c0_Section *pChild = pTable->vfunc4();
+				while (pChild) {
+					if (pChild->vfunc1())
+						m_count0++;
+					pChild = pChild->vfunc5();
+				}
+				if (m_count0 > 0) {
+					m_pBuf0c = (char *)operator new(m_count0 * 0x19c);
+					CUnknown101d90c0_Section *pSub = pTable->vfunc4();
+					int n = 0;
+					if (n < m_count0) {
+						int off = 0;
+						do {
+							if (pSub->vfunc1()) {
+								const char *pszName = sub_1015fb60(pSub->vfunc0());
+								CUnknown101d90c0 *pRec = (CUnknown101d90c0 *)(m_pBuf0c + off);
+								pRec->m_pszName = sub_1015fc40(pszName).pszValue;
+								n++;
+								off += 0x19c;
+							}
+							pSub = pSub->vfunc5();
+						} while (n < m_count0);
+					}
+					for (int i = 0; i < m_count0; i++)
+						((CUnknown101d90c0 *)m_pBuf0c)[i].sub_10145ca0(pTable);
+				}
+			} else {
+				Msg("Unable to read RollInfo data file for: %s\n", szPath);
+			}
+		} else {
+			Msg("Unable to open RollInfo data file for: %s\n", szPath);
+		}
+		pFile->Release();
+	} else {
+		Msg("Unable to load RollInfo data for: %s\n", szPath);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101460c0 size=0x1d
 struct StatOwner2 { int sub_1015f270(int); };
 extern StatOwner2 g_105f93c0;
