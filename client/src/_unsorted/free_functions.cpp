@@ -5829,6 +5829,16 @@ char *sub_1007a4d0(char *pObj, int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a800 size=0x9
+struct CUnknown1007a800 { int sub_1007a800(); };
+int CUnknown1007a800::sub_1007a800()
+{
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007aca0 size=0x2b
 #include "CUnknown100290c0.h"
 
