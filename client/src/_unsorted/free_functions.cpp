@@ -51796,6 +51796,78 @@ bool CUnknown101f5150::sub_10155cc0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155e80 size=0x198
+#include "CUnknown101f5d60.h"
+#include "CUnknown101f4c80.h"
+
+struct CKVBase { virtual void a0(); virtual void Release(); };
+struct CKV : virtual CKVBase {
+	virtual void k0(); virtual void k1();
+	virtual CKV *FindKey(const char *pszName);
+	virtual CKV *GetNextKey();
+};
+int *sub_1015f7e0(int *pOut, CKV *pKV, const char *pszName);
+int *sub_1015f810(int *pOut, CKV *pKV);
+void *operator new(unsigned int);
+void operator delete(void *);
+
+bool CUnknown101f5d60::sub_10155e80(void *pKVData)
+{
+	CKV *pKV = (CKV *)pKVData;
+	if (pKV) {
+		CKV *pScheme = pKV->FindKey("SoundScheme");
+		if (pScheme) {
+			int tmp;
+			m_nScheme0c = *sub_1015f810(&tmp, pScheme);
+			m_nInternalName = *sub_1015f7e0(&tmp, pScheme, "InternalName");
+			CKV *pList = pScheme->FindKey("SoundList");
+			if (pList) {
+				for (CKV *pSound = pList->FindKey("Sound"); pSound; pSound = pSound->GetNextKey()) {
+					if (m_nAlloc == m_nCount) {
+						m_nAlloc += m_nGrow;
+						if (m_pRecords) {
+							CUnknown101f4c80 **pNew = (CUnknown101f4c80 **)operator new(m_nAlloc * 4);
+							int i = 0;
+							if (0 < m_nCount) {
+								do {
+									pNew[i] = m_pRecords[i];
+									i++;
+								} while (i < m_nCount);
+							}
+							if (i < m_nAlloc) {
+								do {
+									pNew[i] = 0;
+									i++;
+								} while (i < m_nAlloc);
+							}
+							operator delete(m_pRecords);
+							m_pRecords = pNew;
+							m_nCount++;
+						} else {
+							m_pRecords = (CUnknown101f4c80 **)operator new(m_nAlloc * 4);
+							int i = 0;
+							if (0 < m_nAlloc) {
+								do {
+									m_pRecords[i] = 0;
+									i++;
+								} while (i < m_nAlloc);
+							}
+							m_nCount++;
+						}
+					} else
+						m_nCount++;
+					if (m_pRecords[m_nCount - 1] == 0)
+						m_pRecords[m_nCount - 1] = new CUnknown101f4c80(m_nNextId++);
+					m_pRecords[m_nCount - 1]->sub_10155990(pSound, this, m_nCount - 1);
+				}
+			}
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156020 size=0x6
 int __stdcall sub_10156020(int a0, int a1, int a2)
 {
