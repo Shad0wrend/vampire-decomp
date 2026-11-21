@@ -10225,6 +10225,15 @@ int sub_100a4a10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5280 size=0x9
+struct CUnknown100a5280 { int sub_100a5280(int); };
+int CUnknown100a5280::sub_100a5280(int a0)
+{
+    *(int *)this = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5410 size=0x3
 struct CUnknown100a5410 { void * sub_100a5410(); };
 void * CUnknown100a5410::sub_100a5410()
