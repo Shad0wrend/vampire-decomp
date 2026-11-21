@@ -20245,6 +20245,27 @@ int CUnk101f42a0::sub_101554b0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101554d0 size=0x1a
+struct CUnk101f3b00
+{
+	int sub_10154ee0(int a, int b, int c);
+};
+
+struct CUnk101f42d0
+{
+	int sub_101554d0(int a, int b, int c);
+};
+
+// TARGET: sub_101554d0
+int CUnk101f42d0::sub_101554d0(int a, int b, int c)
+{
+	if (a != -1) {
+		return ((CUnk101f3b00 *)((char *)this + 0x10))->sub_10154ee0(a, b, c);
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155510 size=0x2c
 struct CUnkSub101f4330
 {
