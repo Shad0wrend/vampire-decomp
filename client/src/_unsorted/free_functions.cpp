@@ -6601,6 +6601,16 @@ char sub_100baba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbb80 size=0x5
+namespace lifted {
+int sub_1009f210();
+}
+int sub_100bbb80()
+{
+    return lifted::sub_1009f210();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be130 size=0x4
 struct CUnknown100be130 { char sub_100be130(); };
 char CUnknown100be130::sub_100be130()
