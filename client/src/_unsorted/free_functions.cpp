@@ -5780,6 +5780,28 @@ int sub_1001ef50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1001f070 size=0x72
+#include "RecvTable.h"
+extern RecvTable g_102e1e90;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102abca0;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGIdolDragon { struct ignored; }
+template <> int ClientClassInit<DT_ItemGIdolDragon::ignored>(DT_ItemGIdolDragon::ignored *)
+{
+	char *pRecvTableName = "DT_ItemGIdolDragon";
+	RecvTable &RecvTable = g_102e1e90;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102abca0, DataTableRecvProxy_StaticDataTable),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1001f1d0 size=0x6
 namespace lifted {
 extern char g_102e0bb0;
