@@ -57047,6 +57047,31 @@ CUnknown102029c0 *StatOwner2::sub_1015f270(int id)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f2f0 size=0x82
+#include "CUnknown10203240.h"
+extern "C" int _strcmpi(const char *, const char *);
+extern const char g_102de300[];
+
+struct Base1 { int a; };
+struct Base2 {
+    const char *m_p;
+    const char *Get() const { return m_p ? m_p : g_102de300; }
+};
+struct Elem : Base1, Base2 {};
+
+CUnknown102029c0 *CUnknown10203240::sub_1015f2f0(const char *name)
+{
+    int i = 0;
+    for (; i < m_nCount; i++) {
+        Elem *e = (Elem *)m_pEntries[i];
+        if (_strcmpi(e->Get(), name) == 0)
+            return (CUnknown102029c0 *)m_pEntries[i];
+    }
+    static CUnknown102029c0 def(-1);
+    return &def;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f660 size=0x1c
 struct CUnk102036e0Target { void sub_1015ecd0(int a); };
 struct CUnk102036e0Table { CUnk102036e0Target *sub_1015f2f0(const char *name); };
