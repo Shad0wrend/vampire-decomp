@@ -1968,6 +1968,58 @@ void *sub_1008db40(StudioHdr *pHdr, int iSeq, StudioHdr **ppOwner, float *pOut, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008dc70 size=0xf0
+struct StudioHdr;
+struct ModelCache { virtual void v0(); virtual StudioHdr *vfunc1(StudioHdr *pHdr, int index); };
+struct InclModel
+{
+    char pad0[4];
+    ModelCache *m_pCache;
+    int m_nBase;
+    int m_nCount;
+    int m_nRemapOfs;
+    char pad14[0x74 - 0x14];
+};
+struct StudioHdr
+{
+    char pad0[0xf0];
+    int m_nRemap;
+    char pad1[0x110 - 0xf4];
+    int m_nLocal;
+    char pad2[0x194 - 0x114];
+    int m_nIncl;
+    int m_nInclOfs;
+};
+int sub_1008dc70(StudioHdr *pHdr, int a, int b);
+int sub_1008dc70(StudioHdr *pHdr, int a, int b)
+{
+    int idx = 0;
+    if (pHdr != 0 && a >= 0 && b >= 0) {
+        if (a < pHdr->m_nLocal) {
+            if (b < pHdr->m_nRemap)
+                return b;
+        } else {
+            for (int i = 0; i < pHdr->m_nIncl; i++) {
+                InclModel *pRec = (InclModel *)((char *)pHdr + pHdr->m_nInclOfs + i * 0x74);
+                if (pRec->m_nBase <= a && pRec->m_nBase + pRec->m_nCount > a && pRec->m_pCache) {
+                    StudioHdr *pSub = pRec->m_pCache->vfunc1(pHdr, i);
+                    if (pSub) {
+                        idx = sub_1008dc70(pSub, a - pRec->m_nBase, b);
+                        if (idx >= 0) {
+                            for (int j = 0; j < pHdr->m_nRemap; j++) {
+                                if (*(short *)((char *)pRec + pRec->m_nRemapOfs + j * 0x38) == idx)
+                                    return j;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e230 size=0x82
 #include "CUnknown100c7f30.h"
 
