@@ -16871,6 +16871,12 @@ bool CUtlRBTree12::sub_10138770(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138bb0 size=0x1
+void sub_10138bb0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138bd0 size=0xdb
 #include "CUtlRBTree16.h"
 
