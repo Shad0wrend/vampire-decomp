@@ -1931,3 +1931,8 @@ ConVar g_104df938("sv_jump_boost_immediate", "0", 8320, "");
 #include "ConVar.h"
 ConVar g_104e0920("r_DrawParticles", "1", 0, "Enable/disable particle rendering");
 // END FUNCTION
+
+// FUNCTION: 0x10115cb0 size=0xa
+#include "ConVar.h"
+ConVar g_104e0968("particle_simulateoverflow", "0", 0, "Used for stress-testing particle systems. Randomly denies creation of particles.");
+// END FUNCTION
