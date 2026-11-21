@@ -2174,3 +2174,9 @@ ConVar g_105faed0("net_graphheight", "64", 0);
 void sub_10170180(void);
 ConCommand g_105faf70("showbarter", sub_10170180, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10170230 size=0xa
+#include "ConCommand.h"
+void sub_10170200(void);
+ConCommand g_105fafd8("showloot", sub_10170200, 0, 0, 0);
+// END FUNCTION
