@@ -2405,6 +2405,13 @@ InterfaceReg g_104a5700(sub_100cb300, "Camo_IMaterialProxy003");
 ConVar g_104a5758("showparticlecounts", "0", 0, "Display number of particles drawn per frame");
 // END FUNCTION
 
+// FUNCTION: 0x100cb530 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100cb560(void);
+InterfaceReg g_104a5710(sub_100cb560, "VClient008");
+// END FUNCTION
+
 // FUNCTION: 0x100d12b0 size=0xa
 #include "ConVar.h"
 ConVar g_104cef00("cl_drawleaf", "-1", 0);
