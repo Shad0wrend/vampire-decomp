@@ -10599,6 +10599,17 @@ float sub_1010b140(float p1, float p2, float d1, float d2, float t)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b1a0 size=0x2a
+void sub_1010b090(int a, int b, void *pOut, void *pOut2, int c, int d);
+
+// TARGET: sub_1010b1a0
+void sub_1010b1a0(int a, int b, int c, int d, int e)
+{
+    char buf[12];
+    sub_1010b090(b, c, buf, buf, d, e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b9d0 size=0xab
 #include "Vector.h"
 // TARGET: sub_1010b9d0
