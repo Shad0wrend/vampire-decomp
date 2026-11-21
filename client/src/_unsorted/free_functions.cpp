@@ -17745,6 +17745,76 @@ int sub_1008ede0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008eee0 size=0x4ce
+#include "RecvTable.h"
+extern RecvTable g_10498f90;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp InternalRecvPropArray(int, int, char *, void (*)(void *, int, int));
+extern RecvTable g_1049bfb8;
+RecvProp RecvPropString(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_StringToString(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseAnimating { struct ignored; }
+template <> int ClientClassInit<DT_BaseAnimating::ignored>(DT_BaseAnimating::ignored *)
+{
+	char *pRecvTableName = "DT_BaseAnimating";
+	RecvTable &RecvTable = g_10498f90;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_nSequence", 1596, 4, 0, 0),
+		RecvPropInt("m_nForceBone", 1312, 4, 0, 0),
+		RecvPropVector("m_vecForce", 1300, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_bForceLatch", 1316, 4, 0, 0),
+		RecvPropInt("m_nSkin", 1372, 4, 0, 0),
+		RecvPropInt("m_nSkinCrossfade", 1040, 4, 0, 0),
+		RecvPropFloat("m_flSkinCrossfadeTime", 1048, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nBody", 1376, 4, 0, 0),
+		RecvPropInt("m_nHitboxSet", 1380, 4, 0, 0),
+		RecvPropFloat("m_flModelScale", 1384, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nTopColor", 1388, 4, 0, 0),
+		RecvPropInt("m_nBottomColor", 1392, 4, 0, 0),
+		RecvPropFloat("m_flPoseParameter[0]", 1492, 4, 0, RecvProxy_FloatToFloat),
+		InternalRecvPropArray(24, 4, "m_flPoseParameter", 0),
+		RecvPropFloat("m_flPlaybackRate", 1600, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flEncodedController[0]", 1644, 4, 0, RecvProxy_FloatToFloat),
+		InternalRecvPropArray(4, 4, "m_flEncodedController", 0),
+		RecvPropInt("m_bClientSideAnimation", 1704, 1, 0, 0),
+		RecvPropInt("m_nClientSideFrameReset", 1705, 1, 0, 0),
+		RecvPropDataTable("serveranimdata", 0, 0, &g_1049bfb8, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_flEffectStartTime", 1612, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nRagDollRootBone[0]", 1324, 4, 0, 0),
+		InternalRecvPropArray(4, 4, "m_nRagDollRootBone", 0),
+		RecvPropFloat("m_flRagDollBeginFadeTime[0]", 1340, 4, 0, RecvProxy_FloatToFloat),
+		InternalRecvPropArray(4, 4, "m_flRagDollBeginFadeTime", 0),
+		RecvPropFloat("m_flRagDollFadeDuration[0]", 1356, 4, 0, RecvProxy_FloatToFloat),
+		InternalRecvPropArray(4, 4, "m_flRagDollFadeDuration", 0),
+		RecvPropVector("m_vecPrevSeqOrigin", 1680, 12, 0, RecvProxy_VectorToVector),
+		RecvPropFloat("m_angPrevSeqAngles[0]", 1692, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_angPrevSeqAngles[1]", 1696, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_angPrevSeqAngles[2]", 1700, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nPhysicsChainDisableMask", 1928, 4, 0, 0),
+		RecvPropInt("m_nExtraAnimationModels[0]", 1056, 4, 0, 0),
+		InternalRecvPropArray(2, 4, "m_nExtraAnimationModels", 0),
+		RecvPropString("m_szBoneRenameSrcPrefix", 1064, 40, 0, RecvProxy_StringToString),
+		RecvPropString("m_szBoneRenameDstPrefix", 1104, 40, 0, RecvProxy_StringToString),
+		RecvPropFloat("m_flWindAngle", 1272, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flWindChangesPerSecond", 1276, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flWindMinSpeed", 1280, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flWindMaxSpeed", 1284, 4, 0, RecvProxy_FloatToFloat),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100923c0 size=0x1e
 namespace lifted {
 extern int g_1049bfd8;
