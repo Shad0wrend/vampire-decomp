@@ -5201,6 +5201,17 @@ void CMem8b_t::sub_10078da0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078e50 size=0x7
+namespace lifted {
+extern char g_10227c5c;
+}
+struct CUnknown10078e50 { void sub_10078e50(); };
+void CUnknown10078e50::sub_10078e50()
+{
+    *(int *)this = (int)&lifted::g_10227c5c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10078f20 size=0x19
 struct CUnk10427480
 {

@@ -491,6 +491,7 @@
 0x10068200 func   ?sub_10068200@@YAHH@Z sub_10068200
 0x10068300 func   ?sub_10068300@@YA_NH@Z sub_10068300
 0x10078da0 func   ?sub_10078da0@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10078da0
+0x10078e50 func   ?sub_10078e50@CUnknown10078e50@@QAEXXZ CUnknown10078e50::sub_10078e50
 0x10078f20 func   ?sub_10078f20@CUnk10427480@@QAEPAHH@Z CUnk10427480::sub_10078f20
 0x10078f90 func   ?sub_10078f90@CTable@@QAEHH@Z CTable::sub_10078f90
 0x10078ff0 func   ?sub_10078ff0@CTbl@@QAEHH@Z CTbl::sub_10078ff0
