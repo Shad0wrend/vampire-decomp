@@ -1,6 +1,15 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100df430 size=0x34
+#include "ConCommand.h"
+// TARGET: ConCommand::ConCommand
+ConCommand::ConCommand(const char *pszName, void (*pCallback)(), const char *pszHelp, int nFlags, void (*pCompletion)())
+{
+	vfunc7(pszName, pCallback, pszHelp, nFlags, pCompletion);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df4a0 size=0x3
 #include "ConCommand.h"
 bool ConCommand::vfunc1()
