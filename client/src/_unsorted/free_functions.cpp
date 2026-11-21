@@ -29195,6 +29195,14 @@ UtlMem *UtlMem::sub_101be2e0(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0cb0 size=0x4
+struct CUnknown101c0cb0 { int sub_101c0cb0(); };
+int CUnknown101c0cb0::sub_101c0cb0()
+{
+    return *(int *)((char *)this + 0x5c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2bd0 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_101e3100)(int);
