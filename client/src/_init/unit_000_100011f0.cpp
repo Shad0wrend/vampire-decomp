@@ -2451,3 +2451,8 @@ ConVar g_105fc880("r_viewcubemap", "0", 0);
 #include "ConVar.h"
 ConVar g_105fc8c8("r_viewcubemapsize", "96", 128);
 // END FUNCTION
+
+// FUNCTION: 0x1018e410 size=0xa
+#include "ConVar.h"
+ConVar g_105fbd30("cl_leveloverview", "0", 0);
+// END FUNCTION
