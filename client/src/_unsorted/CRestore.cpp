@@ -27,6 +27,79 @@ const char *CRestore::vfunc11(int token)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a610 size=0xbb
+#include <string.h>
+#include "CRestore.h"
+
+struct SaveRestoreFieldInfo_t
+{
+	void *pField;
+	void *pOwner;
+	typedescription_t *pTypeDesc;
+};
+
+struct ISaveRestoreOpsLocal
+{
+	virtual void s0();
+	virtual void s1();
+	virtual void s2();
+	virtual void Empty(SaveRestoreFieldInfo_t *pFieldInfo);
+};
+
+struct datamap_t
+{
+	typedescription_t *dataDesc;
+	int dataNumFields;
+};
+
+struct typedescription_t
+{
+	int fieldType;
+	const char *fieldName;
+	int fieldOffset[2];
+	unsigned short fieldSize;
+	short flags;
+	const char *externalName;
+	ISaveRestoreOpsLocal *pSaveRestoreOps;
+	void *inputFunc;
+	datamap_t *td;
+	int fieldSizeInBytes;
+	int unk;
+};
+
+extern int g_102c34b8[];
+
+// TARGET: CRestore::vfunc4
+void CRestore::vfunc4(void *pBaseData, typedescription_t *pFields, int fieldCount)
+{
+	for (int i = 0; i < fieldCount; i++)
+	{
+		typedescription_t *pField = &pFields[i];
+		if (!sub_1012a5e0(pField))
+			continue;
+		void *pData = (char *)pBaseData + pField->fieldOffset[0];
+		if (pField->fieldType == 10)
+		{
+			SaveRestoreFieldInfo_t fieldInfo;
+			fieldInfo.pField = pData;
+			fieldInfo.pOwner = pBaseData;
+			fieldInfo.pTypeDesc = pField;
+			pField->pSaveRestoreOps->Empty(&fieldInfo);
+		}
+		else if (pField->fieldType == 9)
+		{
+			if (pField->flags & 0x40)
+				pData = *(void **)pData;
+			vfunc4(pData, pField->td->dataDesc, pField->td->dataNumFields);
+		}
+		else
+		{
+			memset(pData, 0, g_102c34b8[pField->fieldType] * (short)pField->fieldSize);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a6d0 size=0xbe
 #include "CRestore.h"
 

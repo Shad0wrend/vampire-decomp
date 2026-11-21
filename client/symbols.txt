@@ -297,6 +297,7 @@
 0x1012a350 func   ?sub_1012a350@CSave@@QAEXPBGPAX1PAUtypedescription_t@@@Z CSave::sub_1012a350
 0x1012a530 func   ?sub_1012a530@CUnknown101a1780View@@QAE_NPAUCUnknown101a1780Arg@@@Z CUnknown101a1780View::sub_1012a530
 0x1012a5e0 func   ?sub_1012a5e0@CUnknown101a1780View@@QAE_NPAUCUnknown101a1780Arg@@@Z CUnknown101a1780View::sub_1012a5e0
+0x1012a610 func   ?vfunc4@CRestore@@UAEXPAXPAUtypedescription_t@@H@Z CRestore::vfunc4
 0x1012a6d0 func   ?sub_1012a6d0@CRestore@@QAEXPAG@Z CRestore::sub_1012a6d0
 0x1012a7f0 func   ?vfunc8@CRestore@@UAEXXZ CRestore::vfunc8
 0x1012aaa0 func   ?vfunc13@CRestore@@UAEFXZ CRestore::vfunc13
