@@ -17837,6 +17837,14 @@ void sub_10136d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136fc0 size=0x4
+struct CUnknown10136fc0 { int sub_10136fc0(); };
+int CUnknown10136fc0::sub_10136fc0()
+{
+    return *(int *)((char *)this + 0x18);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137ce0 size=0x51
 #include <string.h>
 #pragma intrinsic(strcmp)

@@ -884,6 +884,7 @@
 0x10135430 func   ?sub_10135430@UtlMem@@QAEXH@Z UtlMem::sub_10135430
 0x10135580 func   ?sub_10135580@@YAXXZ sub_10135580
 0x10136d90 func   ?sub_10136d90@@YAXXZ sub_10136d90
+0x10136fc0 func   ?sub_10136fc0@CUnknown10136fc0@@QAEHXZ CUnknown10136fc0::sub_10136fc0
 0x10137ce0 func   ?sub_10137ce0@@YA_NPAPBD0@Z sub_10137ce0
 0x10137d90 func   ?sub_10137d90@CStringPool@@QAEXXZ CStringPool::sub_10137d90
 0x10137dd0 func   ?sub_10137dd0@CUtlRBTree12@@QAEHH@Z CUtlRBTree12::sub_10137dd0
