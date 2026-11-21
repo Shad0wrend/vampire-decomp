@@ -128,6 +128,7 @@
 0x10009d90 func   ??_GC_WeaponMelee_SeveredArm@@UAEPAXI@Z ??_GC_WeaponMelee_SeveredArm@@UAEPAXI@Z
 0x10009dd0 func   ?sub_10009dd0@@YAHXZ sub_10009dd0
 0x10009ef0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_SeveredArm@@@Z ClientClassInit
+0x1000a010 func   ??_GC_WeaponMelee_Claws_Protean4@@UAEPAXI@Z ??_GC_WeaponMelee_Claws_Protean4@@UAEPAXI@Z
 0x1000a050 func   ?sub_1000a050@@YAHXZ sub_1000a050
 0x1000a170 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Claws_Protean4@@@Z ClientClassInit
 0x1000a2d0 func   ?sub_1000a2d0@@YAHXZ sub_1000a2d0
