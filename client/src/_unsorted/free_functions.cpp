@@ -18899,6 +18899,34 @@ int CNamedList9fd0::sub_1014e680(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014ee80 size=0x5c
+#include "CEntryY.h"
+
+struct IObj102038e0;
+struct DataNodeY
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual int GetInt(const char *pszName, int nDefault);
+};
+int sub_1015f7e0(int, IObj102038e0 *, int);
+int *sub_1015f810(int *pOut, DataNodeY *pNode);
+
+bool CEntryY::sub_1014ee80(void *pData)
+{
+	DataNodeY *pNode = (DataNodeY *)pData;
+	int tmp;
+	if (pNode) {
+		m_pad = *(int *)sub_1015f7e0((int)&tmp, (IObj102038e0 *)pNode, (int)"InternalName");
+		m_name = (const char *)*sub_1015f810(&tmp, pNode);
+		if (pNode->GetInt("IsDisplayed", 0))
+			m_unk0c |= 1;
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101501b0 size=0x1c
 struct CUnk101ec450 {
 	void sub_101501b0(int a, int b);
