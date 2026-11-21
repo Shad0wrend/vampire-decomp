@@ -23260,6 +23260,16 @@ int sub_101520c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101522b0 size=0x5
+namespace lifted {
+int sub_10095f30();
+}
+int sub_101522b0()
+{
+    return lifted::sub_10095f30();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152520 size=0x1
 void sub_10152520()
 {
