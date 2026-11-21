@@ -11694,6 +11694,16 @@ int __stdcall sub_100be040(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be050 size=0x11
+struct CUnknown100be050 { int sub_100be050(int); };
+int CUnknown100be050::sub_100be050(int a0)
+{
+    *(int *)((char *)this + 0x1c) = 1;
+    *(int *)((char *)this + 0x20) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be0c0 size=0x5
 struct CUnknown100be0c0 { void sub_100be0c0(); };
 void CUnknown100be0c0::sub_100be0c0()
