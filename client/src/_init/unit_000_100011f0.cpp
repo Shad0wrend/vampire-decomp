@@ -1967,6 +1967,13 @@ int g_102e1004 = ClientClassInit((DT_ItemGWarrLedger2::ignored *)0);
 RecvTable g_102e335c;
 // END FUNCTION
 
+// FUNCTION: 0x1001e3d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGMercurioJournal { struct ignored; }
+template <> int ClientClassInit<DT_ItemGMercurioJournal::ignored>(DT_ItemGMercurioJournal::ignored *);
+int g_102e3358 = ClientClassInit((DT_ItemGMercurioJournal::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001e610 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e04dc;
