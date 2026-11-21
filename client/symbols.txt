@@ -1241,6 +1241,7 @@
 0x1005fa60 func   ?sub_1005fa60@@YAHHHH@Z sub_1005fa60
 0x1005fb00 func   ?sub_1005fb00@@YAHXZ sub_1005fb00
 0x1005fb10 func   ?sub_1005fb10@CUnknown1005fb10@@QAEDXZ CUnknown1005fb10::sub_1005fb10
+0x1005fb20 func   ??_GCProgBar@@UAEPAXI@Z ??_GCProgBar@@UAEPAXI@Z
 0x1005fc80 func   ??1CProgBar@@UAE@XZ CProgBar::~CProgBar
 0x10060530 func   ??1CSignTextBlock@@UAE@XZ CSignTextBlock::~CSignTextBlock
 0x10060750 func   ??1CSignLabel@@UAE@XZ CSignLabel::~CSignLabel
