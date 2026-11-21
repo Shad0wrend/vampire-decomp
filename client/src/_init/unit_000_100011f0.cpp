@@ -730,3 +730,8 @@ ConVar g_104cf3e0("mat_fullbright", "0", 0);
 #include "Vector.h"
 Vector g_104cf544(0.0f, 0.0f, 0.0f);
 // END FUNCTION
+
+// FUNCTION: 0x100e6c40 size=0xa
+#include "ConVar.h"
+ConVar g_104cf7c8("footstep_pc_vol", "0.5", 8576, "PC Step sound volume");
+// END FUNCTION
