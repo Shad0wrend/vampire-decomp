@@ -455,6 +455,13 @@ int g_102e21b8 = ClientClassInit((DT_WeaponMelee_TzimisceMelee::ignored *)0);
 RecvTable g_102e56d0;
 // END FUNCTION
 
+// FUNCTION: 0x1000a8d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_WerewolfAttacks { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_WerewolfAttacks::ignored>(DT_WeaponMelee_WerewolfAttacks::ignored *);
+int g_102e56cc = ClientClassInit((DT_WeaponMelee_WerewolfAttacks::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1000ab10 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e1700;
