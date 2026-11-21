@@ -3013,6 +3013,16 @@ void CUtlMemory12::sub_1002d690(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002d700 size=0x6
+namespace lifted {
+extern char g_104a6d28;
+}
+int sub_1002d700()
+{
+    return (int)&lifted::g_104a6d28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002ebc0 size=0x1
 void sub_1002ebc0()
 {
