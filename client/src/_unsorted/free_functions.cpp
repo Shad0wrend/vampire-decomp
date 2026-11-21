@@ -161,6 +161,42 @@ void sub_10027d20(const Vector &origin, const Vector &mins, const Vector &maxs, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028920 size=0xe1
+extern char *(*g_101e3188)(char *, const char *, int);
+extern char g_1027aedc[];
+extern char g_1027aed8[];
+char *sub_101d1300(const char *, const char *);
+double sub_101d12af(const char *);
+
+void sub_10028920(float *out, const char *str)
+{
+    float x = 0.0f;
+    float y = 0.0f;
+    float z = 0.0f;
+    char buf[48];
+    char *(*pfnCopy)(char *, const char *, int) = g_101e3188;
+    pfnCopy(buf, str, 48);
+    char *p = sub_101d1300(buf, g_1027aedc);
+    if (p) {
+        pfnCopy(buf, p + 1, 48);
+        x = (float)sub_101d12af(buf);
+    }
+    p = sub_101d1300(buf, g_1027aed8);
+    if (p) {
+        pfnCopy(buf, p + 1, 48);
+        y = (float)sub_101d12af(buf);
+    }
+    p = sub_101d1300(buf, g_1027aed8);
+    if (p) {
+        pfnCopy(buf, p + 1, 48);
+        z = (float)sub_101d12af(buf);
+    }
+    out[0] = x;
+    out[1] = y;
+    out[2] = z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100291c0 size=0x32
 #include <string.h>
 
