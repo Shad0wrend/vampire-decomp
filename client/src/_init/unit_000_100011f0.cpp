@@ -2170,6 +2170,11 @@ InterfaceReg g_104a2540(sub_100b9cd0, "BreakableSurface_IMaterialProxy003");
 RecvTable g_104a2554;
 // END FUNCTION
 
+// FUNCTION: 0x100bb220 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a26c0;
+// END FUNCTION
+
 // FUNCTION: 0x100bb430 size=0xa
 #include "ConVar.h"
 ConVar g_104a2a30("lod_TransitionDist", "400", 0);
