@@ -1993,6 +1993,7 @@
 0x1018f390 func   ?sub_1018f390@@YAHXZ sub_1018f390
 0x1018f3a0 func   ?sub_1018f3a0@@YAHXZ sub_1018f3a0
 0x1018f3b0 func   ?sub_1018f3b0@@YAHXZ sub_1018f3b0
+0x10192cb0 func   ?sub_10192cb0@CUnknown10192cb0@@QAEXXZ CUnknown10192cb0::sub_10192cb0
 0x10192e70 func   ?sub_10192e70@@YAHXZ sub_10192e70
 0x10193270 func   ?sub_10193270@@YADXZ sub_10193270
 0x10193280 func   ?sub_10193280@@YADXZ sub_10193280

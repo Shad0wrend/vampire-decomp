@@ -34153,6 +34153,14 @@ int sub_1018f3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10192cb0 size=0x8
+struct CUnknown10192cb0 { void sub_10192cb0(); };
+void CUnknown10192cb0::sub_10192cb0()
+{
+    *(int *)((char *)this + 0xc) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10192e70 size=0x6
 namespace lifted {
 extern char g_104d5190;
