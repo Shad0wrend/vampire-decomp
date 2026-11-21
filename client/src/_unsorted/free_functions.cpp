@@ -22188,6 +22188,31 @@ char CVStatListManager_t::sub_1015e580(int time)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ebd0 size=0x8c
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+extern const char *g_102cb140[];
+extern void (*g_101e3120)(int level, const char *fmt, ...);
+
+const char *sub_1015ebd0(int type)
+{
+	g_101e3124[*g_101e3128].a = "GetParticleAttachTypeName";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	(*g_101e3128)++;
+	if (type >= 0 && type < 0x13) {
+		const char *name = g_102cb140[type];
+		(*g_101e3128)--;
+		return name;
+	}
+	g_101e3120(1, "Invalid particle attach type '%d'\n", type);
+	(*g_101e3128)--;
+	return "Invalid attach type";
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ecd0 size=0x2b
 #include "CUnknown10202ba0.h"
 #include "CUnknown10202ac0.h"
