@@ -509,6 +509,14 @@ void CMem8b_t::sub_1002c130(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c3a0 size=0x4
+struct CUnknown1002c3a0 { int sub_1002c3a0(); };
+int CUnknown1002c3a0::sub_1002c3a0()
+{
+    return *(int *)((char *)this + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c4a0 size=0x1
 void sub_1002c4a0()
 {
