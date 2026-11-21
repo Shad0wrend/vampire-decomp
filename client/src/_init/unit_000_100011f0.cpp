@@ -4223,6 +4223,13 @@ int g_104a1794 = ClientClassInit((DT_EnvParticle::ignored *)0);
 RecvTable g_104a153c;
 // END FUNCTION
 
+// FUNCTION: 0x100b2b60 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ThaumaturgyParticle { struct ignored; }
+template <> int ClientClassInit<DT_ThaumaturgyParticle::ignored>(DT_ThaumaturgyParticle::ignored *);
+int g_104a1538 = ClientClassInit((DT_ThaumaturgyParticle::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100b3130 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a1bec;
