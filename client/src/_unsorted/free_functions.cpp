@@ -16055,6 +16055,46 @@ int CNamedListX::sub_1013fdf0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013fe40 size=0xa8
+extern "C" char *sub_101d23bd(char *);
+extern "C" char *sub_101d1300(const char *, const char *);
+extern char g_102de300[];
+struct Sub {
+	const char *name;
+	const char *Get() { return name ? name : g_102de300; }
+};
+struct Entry {
+	int a, b;
+	Sub sub;
+};
+struct List {
+	int pad;
+	int m_count;
+	Entry **m_items;
+	int sub_1013fe40(const char *name);
+};
+static inline void Cpy(char *d, const char *s)
+{
+	while ((*d++ = *s++))
+		;
+}
+int List::sub_1013fe40(const char *name)
+{
+	char lowName[128];
+	char lowEntry[128];
+	Cpy(lowName, name);
+	sub_101d23bd(lowName);
+	for (int i = 0; i < m_count; i++) {
+		const char *n = m_items[i]->sub.Get();
+		Cpy(lowEntry, n);
+		sub_101d23bd(lowEntry);
+		if (sub_101d1300(lowEntry, lowName) == lowEntry)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013ffa0 size=0x29
 struct string_t_v { const char *pszValue; };
 inline const char *STRING_V(const string_t_v *s) { return s->pszValue ? s->pszValue : ""; }
