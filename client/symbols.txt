@@ -2103,6 +2103,7 @@
 0x1017a7c0 func   ?sub_1017a7c0@@YGXH@Z sub_1017a7c0
 0x1017a7e0 func   ?sub_1017a7e0@@YAXXZ sub_1017a7e0
 0x1017ac30 func   ?sub_1017ac30@@YAXXZ sub_1017ac30
+0x1017b180 func   ?sub_1017b180@CUnknown1017b180@@QAEHXZ CUnknown1017b180::sub_1017b180
 0x1017c540 func   ?sub_1017c540@@YGXH@Z sub_1017c540
 0x1017c550 func   ?sub_1017c550@@YGXH@Z sub_1017c550
 0x1017c570 func   ?sub_1017c570@@YAXXZ sub_1017c570
