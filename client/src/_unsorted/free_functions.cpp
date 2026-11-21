@@ -2458,6 +2458,22 @@ void CUtlLinkedList8::sub_100d3a80(unsigned short elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3c30 size=0x34
+#include "UtlMem.h"
+extern void *(__cdecl *g_101e3100)(int);
+
+UtlMem *UtlMem::sub_100d3c30(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount) {
+		m_pMemory = (int *)g_101e3100(allocationCount * 8);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3e30 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
