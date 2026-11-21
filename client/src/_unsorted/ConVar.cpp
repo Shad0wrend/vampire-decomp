@@ -68,6 +68,23 @@ bool ConVar::vfunc10(float *value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df8a0 size=0x5f
+#include "ConVar.h"
+extern int (__cdecl *g_101e3190)(char *, int, const char *, ...);
+
+void ConVar::vfunc8(float fNewValue)
+{
+    vfunc10(&fNewValue);
+    m_fValue = fNewValue;
+    m_nValue = (int)fNewValue;
+    if (!(m_nFlags & 0x1000)) {
+        char tempVal[32];
+        g_101e3190(tempVal, sizeof(tempVal), "%f", fNewValue);
+        vfunc11(tempVal);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfa10 size=0x2e
 // TARGET: ConVar::vfunc6
 #include "ConVar.h"
