@@ -5382,6 +5382,12 @@ void sub_1009ffb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009ffc0 size=0x1
+void sub_1009ffc0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3300 size=0x1a
 namespace lifted {
 extern int g_102afbe8;
