@@ -4104,6 +4104,13 @@ ConVar g_1049fe08("test_room_dsp", "-1", 0);
 RecvTable g_104a0c18;
 // END FUNCTION
 
+// FUNCTION: 0x100a3ce0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PlayerState { struct ignored; }
+template <> int ClientClassInit<DT_PlayerState::ignored>(DT_PlayerState::ignored *);
+int g_104a0c14 = ClientClassInit((DT_PlayerState::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100a3da0 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a0d34;
