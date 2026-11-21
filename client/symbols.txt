@@ -155,6 +155,7 @@
 0x1008b810 func   ?sub_1008b810@@YAXPAUCUnknownFreeList100c4980@@@Z sub_1008b810
 0x1008b850 func   ?sub_1008b850@@YAXXZ sub_1008b850
 0x1008c060 func   ?sub_1008c060@@YAXPAUStudioHdr@@HPBMPAPAXPAM@Z sub_1008c060
+0x1008c1f0 func   ?sub_1008c1f0@@YAHHHH@Z sub_1008c1f0
 0x1008c530 func   ?sub_1008c530@@YA_NPAUmstudioanimdesc_t@@MAAVVector@@@Z sub_1008c530
 0x1008c5d0 func   ?sub_1008c5d0@@YADPAUCBoneOwner@@HHPAVVector@@1@Z sub_1008c5d0
 0x1008ce40 func   ?sub_1008ce40@@YAXPAUCRecordHolder@@H@Z sub_1008ce40

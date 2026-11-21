@@ -4071,6 +4071,28 @@ void sub_1008c060(StudioHdr *pStudioHdr, int iSequence, const float *poseParamet
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008c1f0 size=0x71
+struct S100c5600 { int pad[3]; int m_n; };
+
+void sub_1008c060(int a, int b, int c, S100c5600 **pEntries, float *pWeights);
+
+// TARGET: sub_1008c1f0
+int sub_1008c1f0(int a, int b, int c)
+{
+	float w[4];
+	S100c5600 *p[4];
+	sub_1008c060(a, b, c, p, w);
+	float sum = 0.0f;
+	for (int i = 0; i < 4; i++) {
+		if (w[i] > 0.0f)
+			sum += p[i]->m_n * w[i];
+	}
+	if (sum > 1.0f)
+		sum -= 1.0f;
+	return (int)sum;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008c530 size=0x96
 #include "Vector.h"
 struct mstudiomovement_t
