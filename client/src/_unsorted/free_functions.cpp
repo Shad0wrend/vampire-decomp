@@ -20145,6 +20145,13 @@ void CSave::sub_10129860(const void *p, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129a20 size=0x6
+int __stdcall sub_10129a20(int a0)
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a060 size=0x110
 #include "CSave.h"
 
