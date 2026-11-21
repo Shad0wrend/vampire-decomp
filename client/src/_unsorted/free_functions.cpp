@@ -4740,6 +4740,23 @@ void __cdecl sub_101094b0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109910 size=0x33
+// TARGET: sub_10109910
+#include <math.h>
+extern float g_104d4d8c[];
+
+void sub_10109910()
+{
+    int i = 0;
+    float *p = &g_104d4d8c[0];
+    do {
+        double v = pow(2.0, (double)(i - 128)) * 0.00392156862745098;
+        i++;
+        p[i] = (float)v;
+    } while (i < 256);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109e90 size=0x6b
 #include "Vector.h"
 
