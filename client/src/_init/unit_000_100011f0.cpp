@@ -3786,6 +3786,13 @@ ConVar g_1049bf28("cl_SetupAllBones", "0", 0);
 RecvTable g_1049bfb8;
 // END FUNCTION
 
+// FUNCTION: 0x1008ed10 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ServerAnimationData { struct ignored; }
+template <> int ClientClassInit<DT_ServerAnimationData::ignored>(DT_ServerAnimationData::ignored *);
+int g_1049bfb4 = ClientClassInit((DT_ServerAnimationData::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1008ee80 size=0xa
 #include "RecvTable.h"
 RecvTable g_10498f90;
