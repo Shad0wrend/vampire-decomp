@@ -27093,6 +27093,23 @@ float sub_10107be0(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107cb0 size=0x28
+#include <math.h>
+extern float g_104d406c[];
+// TARGET: sub_10107cb0
+void sub_10107cb0()
+{
+    int i = 0;
+    do
+    {
+        double x = (double)i;
+        i++;
+        x = sin(x * 0.02454369260617026);
+        g_104d406c[i] = (float)x;
+    } while (i < 0x100);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107ce0 size=0x36
 // TARGET: sub_10107ce0
 #include "Vector.h"

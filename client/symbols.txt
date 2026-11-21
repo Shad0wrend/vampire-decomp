@@ -1650,6 +1650,7 @@
 0x10107a00 func   ?sub_10107a00@@YAMM@Z sub_10107a00
 0x10107ac0 func   ?sub_10107ac0@@YAXMPAM0@Z sub_10107ac0
 0x10107be0 func   ?sub_10107be0@@YAMM@Z sub_10107be0
+0x10107cb0 func   ?sub_10107cb0@@YAXXZ sub_10107cb0
 0x10107ce0 func   ?sub_10107ce0@@YAHPAVVector@@0@Z sub_10107ce0
 0x10107d20 func   ?sub_10107d20@@YAHABVVector@@M00PAM1@Z sub_10107d20
 0x10107df0 func   ?sub_10107df0@@YAXAAUmatrix3x4_t@@AAURadianEulerV@@PAH@Z sub_10107df0
