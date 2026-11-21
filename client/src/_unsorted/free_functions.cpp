@@ -13894,6 +13894,30 @@ template <> int ClientClassInit<DT_LocalActiveWeaponData::ignored>(DT_LocalActiv
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d050 size=0xf6
+#include "RecvTable.h"
+extern RecvTable g_10477278;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+template <typename T> int ClientClassInit(T *);
+namespace DT_LocalWeaponData { struct ignored; }
+template <> int ClientClassInit<DT_LocalWeaponData::ignored>(DT_LocalWeaponData::ignored *)
+{
+	char *pRecvTableName = "DT_LocalWeaponData";
+	RecvTable &RecvTable = g_10477278;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_iMagazineCurAmts[ 0 ]", 1964, 4, 0, 0),
+		RecvPropInt("m_iMagazineCurAmts[ 1 ]", 1968, 4, 0, 0),
+		RecvPropInt("m_iAmmoTypes[ 0 ]", 1956, 4, 0, 0),
+		RecvPropInt("m_iAmmoTypes[ 1 ]", 1960, 4, 0, 0),
+		RecvPropInt("m_nViewModelIndex", 2324, 4, 0, 0),
+		RecvPropInt("m_bIsJammed", 2334, 1, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d7f0 size=0x1
 void sub_1007d7f0()
 {
