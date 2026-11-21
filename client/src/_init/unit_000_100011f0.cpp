@@ -4473,6 +4473,13 @@ int g_104a3a20 = ClientClassInit((DT_OrnamentProp::ignored *)0);
 RecvTable g_104a3d40;
 // END FUNCTION
 
+// FUNCTION: 0x100be3b0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_RopeKeyframe { struct ignored; }
+template <> int ClientClassInit<DT_RopeKeyframe::ignored>(DT_RopeKeyframe::ignored *);
+int g_104a3d3c = ClientClassInit((DT_RopeKeyframe::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100be5e0 size=0xa
 #include "ConVar.h"
 ConVar g_104a3a58("rope_shake", "0", 0);
