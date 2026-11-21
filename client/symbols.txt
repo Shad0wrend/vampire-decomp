@@ -587,6 +587,7 @@
 0x101104a0 func   ?sub_101104a0@CUnknown101104a0@@QAEHXZ CUnknown101104a0::sub_101104a0
 0x10112250 func   ?sub_10112250@@YAXPAUE101b6b60@@PBU1@@Z sub_10112250
 0x10112270 func   ?sub_10112270@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_10112270
+0x10115de0 func   ?sub_10115de0@@YADXZ sub_10115de0
 0x10117ba0 func   ?sub_10117ba0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_10117ba0
 0x10117c70 func   ?sub_10117c70@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_10117c70
 0x10117d00 func   ?sub_10117d00@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10117d00

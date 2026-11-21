@@ -12296,6 +12296,13 @@ unsigned short CUtlRBTree16::sub_10112270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115de0 size=0x3
+char sub_10115de0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117ba0 size=0x8d
 #include "CUtlLinkedList8.h"
 
