@@ -7749,6 +7749,35 @@ CUnknown101b6320 &CUnknown101b6320::sub_10130970(const CUnknown101b6320 &other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130b30 size=0x6d
+#include "UtlVec8.h"
+
+struct SElem8 {
+	short a;
+	int b;
+	void sub_10133290();
+};
+
+void UtlVec8::sub_10130b30(const SElem8 *src, int num)
+{
+	m_Size = 0;
+	if (num) {
+		sub_10130f00(num);
+		sub_10130f90(0, num);
+		for (int i = 0; i < num; i++) {
+			SElem8 *p = (SElem8 *)m_pMemory + i;
+			if (p)
+				p->sub_10133290();
+		}
+	}
+	for (int i = 0; i < num; i++) {
+		SElem8 *d = (SElem8 *)m_pMemory + i;
+		d->a = src[i].a;
+		d->b = src[i].b;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130ba0 size=0x3d
 #include "CUtlVector16.h"
 
