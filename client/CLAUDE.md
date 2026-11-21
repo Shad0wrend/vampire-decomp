@@ -87,6 +87,17 @@ matched rows; the panel counts 7,480 of 15,996 functions / 256,261 of 1,690,516 
 lookup) and the game's own proxies (0x10043090, 0x1009d4e0, ...). Backups: cache/`project.db.pre-handpass-20261121`,
 `.pre-split-`, `.pre-recvtables-`, `.pre-recvinit-`.
 
+Carry run 8 (2026-11-21, pcdecomp main 6351212). Carry's byte mask used to blank the four bytes after every 0xE8/0xE9
+byte, also when that byte was part of an address or of another call's displacement; those bytes differ between the
+two DLLs, so long functions with many addresses never looked equal (and a few unequal ones did: `c1 e8 02` against
+`c1 e8 03`). It now decodes each body and masks only real call/jmp displacements: 1,252 open functions in 611 groups
+instead of 1,080. The run planned 332 and matched 64 (+7 initializer rows matched with them), 83,636 bytes, 68 of them
+from groups the old mask missed; the biggest is 0x10068330 (68,194 bytes, the activity list: 4,460 `ACT_` names
+registered with their numbers, vampire.dll's 0x104126e0) with its helper 0x10068230. 185 missed by score (most by 1
+or 3: a `carried: from 0x..., score N` note marks them, a good hand pass), 47 failed to compile. A `verify` of 19
+still matched. Totals now: 7,577 matched rows; the panel counts 7,550 of 16,003 functions / 339,582 of 1,690,523
+bytes (20.09%). Backup: cache/`project.db.pre-carry8-20261121`.
+
 Units: `pcdecomp units --apply` saved 4,066 unit guesses in 194 units (functions.unit_guess: the "probably unit"
 line and the panel's per-unit progress; it never moves a file), from the reference trees' class homes and the
 functions between two of one unit; client.dll's code names no source path. A unit under `_init/` is not read as the
