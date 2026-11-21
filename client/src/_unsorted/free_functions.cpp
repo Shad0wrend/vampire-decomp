@@ -20999,6 +20999,45 @@ int sub_100be2d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100be3d0 size=0x1f7
+#include "RecvTable.h"
+extern RecvTable g_104a3d40;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropEHandle(char *, int, int);
+void sub_100be290(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_RopeKeyframe { struct ignored; }
+template <> int ClientClassInit<DT_RopeKeyframe::ignored>(DT_RopeKeyframe::ignored *)
+{
+	char *pRecvTableName = "DT_RopeKeyframe";
+	RecvTable &RecvTable = g_104a3d40;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_iRopeMaterialModel", 1104, 4, 0, 0),
+		RecvPropEHandle("m_hStartPoint", 1724, 4),
+		RecvPropEHandle("m_hEndPoint", 1728, 4),
+		RecvPropInt("m_iStartAttachment", 1732, 2, 0, 0),
+		RecvPropInt("m_iEndAttachment", 1734, 2, 0, 0),
+		RecvPropInt("m_fLockedPoints", 1752, 4, 0, 0),
+		RecvPropInt("m_Slack", 1744, 4, 0, sub_100be290),
+		RecvPropInt("m_RopeLength", 1740, 4, 0, sub_100be290),
+		RecvPropInt("m_RopeFlags", 1100, 4, 0, 0),
+		RecvPropFloat("m_TextureScale", 1748, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nSegments", 1720, 4, 0, 0),
+		RecvPropInt("m_Subdiv", 1736, 1, 0, 0),
+		RecvPropFloat("m_Width", 1756, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flScrollSpeed", 1096, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropVector("m_vecAbsOrigin", 692, 12, 0, RecvProxy_VectorToVector),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bf700 size=0xd
 struct CUnknown100bf700 { int sub_100bf700(); };
 int CUnknown100bf700::sub_100bf700()
