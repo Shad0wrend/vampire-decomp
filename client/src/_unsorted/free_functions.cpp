@@ -55934,6 +55934,52 @@ void CParsedValue::sub_101615d0(CVStatKV *pKV, const char *pszKey)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101616b0 size=0xab
+#include "CVDmg_t.h"
+
+extern "C" int __cdecl isdigit(int);
+extern "C" int __cdecl atoi(const char *);
+
+struct CNameTable
+{
+	int sub_10160500(const char *pszName);
+};
+
+struct CParsedValue
+{
+	void sub_10161590(int nValue);
+	void sub_101615a0(CVDmgBlock16_t *pBlock);
+	void sub_101615b0(int nIndex);
+	void sub_101616b0(void *pOwner, const char *pszText);
+};
+
+extern CNameTable g_105f985c;
+int sub_1015e9e0(void *pOwner, const char *pszText);
+
+void CParsedValue::sub_101616b0(void *pOwner, const char *pszText)
+{
+	if (isdigit(*pszText) || *pszText == '-')
+	{
+		sub_10161590(atoi(pszText));
+		return;
+	}
+	CVDmgBlock16_t block;
+	block.sub_101608a0(pszText);
+	if (!block.sub_10160660())
+	{
+		sub_101615a0(&block);
+		return;
+	}
+	int nIndex = g_105f985c.sub_10160500(pszText);
+	if (nIndex != -1)
+	{
+		sub_101615b0(nIndex);
+		return;
+	}
+	sub_10161590(sub_1015e9e0(pOwner, pszText));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161800 size=0x1c
 #include "CVTraitDependencyValue_t.h"
 
