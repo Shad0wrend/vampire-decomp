@@ -10648,6 +10648,16 @@ void CUnknown101a59f0::sub_100c1ee0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c3680 size=0x6
+namespace lifted {
+extern char g_104a48dc;
+}
+int sub_100c3680()
+{
+    return (int)&lifted::g_104a48dc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4270 size=0x7f
 extern "C" unsigned strlen(const char *);
 extern void (*g_101e3188)(char *dest, const char *src, int count);
