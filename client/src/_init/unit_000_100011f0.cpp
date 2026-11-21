@@ -1259,6 +1259,13 @@ int g_102e1458 = ClientClassInit((DT_BlueBloodPack::ignored *)0);
 RecvTable g_102e5a20;
 // END FUNCTION
 
+// FUNCTION: 0x10015050 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ElderVitaePack { struct ignored; }
+template <> int ClientClassInit<DT_ElderVitaePack::ignored>(DT_ElderVitaePack::ignored *);
+int g_102e5a1c = ClientClassInit((DT_ElderVitaePack::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10015290 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e1c74;
