@@ -11201,6 +11201,18 @@ void __cdecl sub_10154670(int a, char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154690 size=0x23
+extern int g_105e8b08;
+int sub_100e3130(int a, void *b, int c);
+
+// TARGET: sub_10154690
+void *sub_10154690(int *p, int unused, int value)
+{
+    *p = sub_100e3130(*p, &g_105e8b08, value);
+    return &g_105e8b08;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101546c0 size=0x3f
 #include <string.h>
 #include <stdlib.h>
