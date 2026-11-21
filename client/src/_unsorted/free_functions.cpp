@@ -21176,6 +21176,12 @@ int CNamedList9fd0::sub_1014e680(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014ee70 size=0x1
+void sub_1014ee70()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ee80 size=0x5c
 #include "CEntryY.h"
 
