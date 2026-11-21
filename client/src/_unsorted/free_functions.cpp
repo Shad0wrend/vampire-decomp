@@ -9940,6 +9940,35 @@ S101df260 *S101df260::sub_10148790(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148800 size=0x38
+// TARGET: CUnknown101df2f0::sub_10148800
+struct CUnknownDtorMember101df2f0
+{
+	char m_pad[0xac];
+	void sub_10148330();
+};
+
+struct CUnknown101df2f0
+{
+	char m_pad0000[8];
+	CUnknownDtorMember101df2f0 m_m8;
+	CUnknownDtorMember101df2f0 m_mb4;
+	CUnknownDtorMember101df2f0 m_m160;
+	CUnknownDtorMember101df2f0 m_m20c;
+	CUnknownDtorMember101df2f0 m_m2b8;
+	void sub_10148800();
+};
+
+void CUnknown101df2f0::sub_10148800()
+{
+	m_m2b8.sub_10148330();
+	m_m20c.sub_10148330();
+	m_m160.sub_10148330();
+	m_mb4.sub_10148330();
+	m_m8.sub_10148330();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149100 size=0xee
 #include "CUnknown101e01e0.h"
 
