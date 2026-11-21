@@ -2206,6 +2206,14 @@ char sub_10080ff0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10086500 size=0x3
+struct CUnknown10086500 { void * sub_10086500(); };
+void * CUnknown10086500::sub_10086500()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100865a0 size=0x1e
 struct CUnknown100bc460 { void * sub_100865a0(); };
 void * CUnknown100bc460::sub_100865a0()
