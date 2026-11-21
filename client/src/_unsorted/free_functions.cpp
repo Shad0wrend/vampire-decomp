@@ -19913,6 +19913,48 @@ int sub_100ae5d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ae6d0 size=0x283
+#include "RecvTable.h"
+extern RecvTable g_104a1798;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_EnvParticle { struct ignored; }
+template <> int ClientClassInit<DT_EnvParticle::ignored>(DT_EnvParticle::ignored *)
+{
+	char *pRecvTableName = "DT_EnvParticle";
+	RecvTable &RecvTable = g_104a1798;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_nParticle", 1040, 4, 0, 0),
+		RecvPropInt("m_bActive", 1048, 4, 0, 0),
+		RecvPropInt("m_nAttachType", 1056, 4, 0, 0),
+		RecvPropInt("m_nAttachPoint", 1060, 4, 0, 0),
+		RecvPropFloat("m_flActivationTime", 1052, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fRateScaleTarget", 1104, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fRampTime", 1108, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_nRampFrame", 1116, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fRedScale", 1068, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fGreenScale", 1072, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fBlueScale", 1076, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fMaskScale", 1080, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fSizeScale", 1084, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fSpawnBounds", 1100, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fSecondaryRed", 1088, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fSecondaryGreen", 1092, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fSecondaryBlue", 1096, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_bHUDDrawThird", 1208, 1, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aef00 size=0xa
 struct CUnknown100aef00 { int sub_100aef00(); };
 int CUnknown100aef00::sub_100aef00()
