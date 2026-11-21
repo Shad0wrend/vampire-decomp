@@ -2153,6 +2153,7 @@
 0x1013a7d0 func   ?sub_1013a7d0@@YAXXZ sub_1013a7d0
 0x1013c790 func   ?sub_1013c790@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1013c790
 0x1013c7b0 func   ?sub_1013c7b0@CUnk1011d310@@QAEDH@Z CUnk1011d310::sub_1013c7b0
+0x1013c850 func   ??0CUtlBuffer@@QAE@HHH@Z CUtlBuffer::CUtlBuffer
 0x1013c8a0 func   ?sub_1013c8a0@CInitView@@QAEPAU1@HHE@Z CInitView::sub_1013c8a0
 0x1013c8e0 func   ?sub_1013c8e0@CUtlBuffer@@QAEXPADH_N@Z CUtlBuffer::sub_1013c8e0
 0x1013c930 func   ?sub_1013c930@CUtlMemUnit1006be50@@QAEXH@Z CUtlMemUnit1006be50::sub_1013c930
