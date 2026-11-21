@@ -20946,6 +20946,28 @@ int CUnknown101f1a30::sub_10157bd0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158790 size=0x56
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_101e3124;
+extern int *g_101e3128;
+
+// TARGET: sub_10158790
+void sub_10158790()
+{
+	g_101e3124[*g_101e3128].m_pszFunc = "CVDmg_t::~CVDmg_t";
+	g_101e3124[*g_101e3128].m_pszName = "";
+	g_101e3124[*g_101e3128].m_pszExtra = "";
+	(*g_101e3128)++;
+	(*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101594e0 size=0x6d
 #include "CVStatCost_t.h"
 

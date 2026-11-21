@@ -837,6 +837,7 @@
 0x10157b30 func   ?sub_10157b30@CNamedListX@@QAEHPBD@Z CNamedListX::sub_10157b30
 0x10157b80 func   ?sub_10157b80@CNamedListX@@QAEHPBD@Z CNamedListX::sub_10157b80
 0x10157bd0 func   ?sub_10157bd0@CUnknown101f1a30@@QAEHPBD@Z CUnknown101f1a30::sub_10157bd0
+0x10158790 func   ?sub_10158790@@YAXXZ sub_10158790
 0x101594e0 func   ?sub_101594e0@CVStatSubCost_t@@QAEPAU1@XZ CVStatSubCost_t::sub_101594e0
 0x10159550 func   ?sub_10159550@CVStatSubCost_t@@QAEXXZ CVStatSubCost_t::sub_10159550
 0x101595e0 func   ?sub_101595e0@CVStatSubCost_t@@QAE_NXZ CVStatSubCost_t::sub_101595e0
