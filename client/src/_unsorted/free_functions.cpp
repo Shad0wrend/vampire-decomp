@@ -7473,6 +7473,27 @@ DLL_EXPORT void *CreateInterface(const char *pName, int *pReturnCode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106de0 size=0x65
+struct ScopeEnt { const char* a; const void* b; const void* c; };
+extern ScopeEnt* g_101e3124;
+extern int* g_101e3128;
+extern char g_102be184[];
+extern char g_102de300[];
+extern "C" __declspec(dllimport) int __stdcall FreeLibrary(void* h);
+
+// TARGET: sub_10106de0
+void sub_10106de0(void* h)
+{
+	g_101e3124[*g_101e3128].a = g_102be184;
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	(*g_101e3128)++;
+	if (h)
+		FreeLibrary(h);
+	(*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106f30 size=0x69
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_101e3128;
