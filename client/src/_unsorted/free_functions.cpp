@@ -8370,6 +8370,65 @@ bool CUtlRBTree12::sub_10138770(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10138bd0 size=0xdb
+#include "CUtlRBTree16.h"
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+struct SymConv {
+	unsigned short *sub_1013d520(unsigned int *pKey, unsigned int key);
+};
+
+struct SymElem {
+	unsigned short key;
+	int value;
+	SymElem() : key(0xffff) {}
+	SymElem(const SymElem &o) : key(o.key), value(o.value) {}
+};
+
+struct SymTree : CUtlRBTree16 {
+	SymConv m_Conv;	// 0x18
+	unsigned short *sub_101397f0(unsigned short i);
+	void sub_10139460(unsigned short node, unsigned short parent, bool left);
+};
+
+struct SymMap {
+	SymTree *m_pTree;
+	// TARGET
+	unsigned short sub_10138bd0(unsigned int key, int value);
+};
+
+unsigned short SymMap::sub_10138bd0(unsigned int key, int value)
+{
+	SymTree *t = m_pTree;
+	SymElem el;
+	unsigned short *pSym = t->m_Conv.sub_1013d520(&key, key);
+	unsigned short cur = t->m_Root;
+	el.key = *pSym;
+	unsigned short parent = 0xffff;
+	bool left = false;
+	while (cur != 0xffff) {
+		parent = cur;
+		if (t->m_LessFunc(&el, (char *)t->m_pElements + cur * 16 + 8)) {
+			left = true;
+			cur = *t->sub_101397f0(cur);
+		} else {
+			left = false;
+			cur = t->sub_101397f0(cur)[1];
+		}
+	}
+	unsigned short n = t->sub_10139340();
+	t->sub_10139460(n, parent, left);
+	t->m_NumElements++;
+	SymElem *e = (SymElem *)((char *)t->m_pElements + n * 16 + 8);
+	if (e) {
+		new (e) SymElem(el);
+	}
+	*(int *)((char *)t->m_pElements + n * 16 + 12) = value;
+	return n;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139340 size=0x116
 #include "utlmemory.h"
 #include "utlrbtree.h"
