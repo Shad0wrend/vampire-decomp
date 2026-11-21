@@ -24809,6 +24809,23 @@ CVStatInfo_t *__fastcall sub_10160d50(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160d90 size=0x18
+extern char g_102de300;
+void *sub_10160d50(void);
+
+struct CUnk10204bf0 {
+    char *sub_1015b270(int a);
+};
+
+char *__stdcall sub_10160d90(int a)
+{
+    void *p = sub_10160d50();
+    if (p)
+        return ((CUnk10204bf0 *)p)->sub_1015b270(a);
+    return &g_102de300;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160db0 size=0x29
 struct CUnk10204c20
 {
