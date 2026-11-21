@@ -11750,6 +11750,80 @@ bool CVStatSubCost_t::sub_101595e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159650 size=0x17e
+#include "CVStatCost_t.h"
+struct TraceEntry { const char *a, *b, *c; };
+extern int *g_101e3128;
+extern TraceEntry *g_101e3124;
+extern char g_102de300[];
+struct ScopeTrace {
+    ScopeTrace(const char *a, const char *b, const char *c) {
+        g_101e3124[*g_101e3128].a = a;
+        g_101e3124[*g_101e3128].b = b;
+        g_101e3124[*g_101e3128].c = c;
+        ++*g_101e3128;
+    }
+    ~ScopeTrace() { --*g_101e3128; }
+};
+extern "C" char *strstr(const char *, const char *);
+extern "C" char *strchr(const char *, int);
+extern "C" int isdigit(int);
+extern "C" int atoi(const char *);
+void *__cdecl operator new(unsigned int);
+
+struct SubCostView {
+    int m_type;
+    int m_value;
+    int m_pad8;
+    int m_nCount;
+    int *m_pTable;
+};
+
+void CVStatSubCost_t::sub_10159650(const char *str)
+{
+    ScopeTrace trace("CVStatSubCost_t::Parse", g_102de300, g_102de300);
+    SubCostView *self = (SubCostView *)this;
+    if (*str) {
+        char *p = strstr(str, "Current_Rating");
+        if (p) {
+            p += 14;
+            int d = isdigit(*p);
+            while (d == 0) {
+                p++;
+                if (*p == 0)
+                    break;
+                d = isdigit(*p);
+            }
+            self->m_type = 9999;
+            self->m_value = atoi(p);
+            return;
+        }
+        p = strstr(str, "Table:");
+        if (p) {
+            char *q = p + 7;
+            self->m_type = 0x270e;
+            self->m_nCount = 1;
+            for (char *c = strchr(q, ','); c; c = strchr(c + 1, ','))
+                self->m_nCount++;
+            self->m_pTable = (int *)operator new(self->m_nCount << 2);
+            int i = 0;
+            if (self->m_nCount > 0) {
+                do {
+                    while (*q == ' ')
+                        q++;
+                    self->m_pTable[i] = atoi(q);
+                    q = strchr(q, ',') + 1;
+                    i++;
+                } while (i < self->m_nCount);
+                return;
+            }
+        } else {
+            self->m_type = atoi(str);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159f20 size=0x4c
 struct S5_101fc4d0 { int v[5]; };
 struct T_101fc4d0 : S5_101fc4d0 {
