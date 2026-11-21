@@ -4389,6 +4389,13 @@ int g_104a2df0 = ClientClassInit((DT_HudCounter::ignored *)0);
 RecvTable g_104a2e0c;
 // END FUNCTION
 
+// FUNCTION: 0x100bc490 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_HudEntity { struct ignored; }
+template <> int ClientClassInit<DT_HudEntity::ignored>(DT_HudEntity::ignored *);
+int g_104a2e08 = ClientClassInit((DT_HudEntity::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100bc790 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a304c;
