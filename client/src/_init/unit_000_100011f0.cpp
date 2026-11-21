@@ -30,3 +30,8 @@ ConVar g_102e71d8("torchlight_fast", "17", 0);
 #include "ConVar.h"
 ConVar g_102e7220("torchlight_slow", "7", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10027250 size=0xa
+#include "ConVar.h"
+ConVar g_102e0048("torchlight_exponent", "1", 0);
+// END FUNCTION
