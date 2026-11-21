@@ -1604,6 +1604,23 @@ void sub_1007a440(char *pObj, int index, const float *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a4d0 size=0x2d
+extern char g_102de300[];
+
+// TARGET: sub_1007a4d0
+char *sub_1007a4d0(char *pObj, int nIndex)
+{
+	if (pObj == 0) {
+		return g_102de300;
+	}
+	int *p = (int *)(pObj + *(int *)(pObj + 0x104) + nIndex * 12);
+	if (p == 0) {
+		return g_102de300;
+	}
+	return (char *)(*p + (int)p);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007aca0 size=0x2b
 #include "CUnknown100290c0.h"
 
