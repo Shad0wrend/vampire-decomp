@@ -37268,6 +37268,125 @@ void StatDefault3::sub_1013e530(StatDefault3 *pParent)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e790 size=0x4c7
+#include "StatDefault3.h"
+#include "CStatDefault3List.h"
+#include "VKeyValues.h"
+
+struct SPtr { const char *p; SPtr(const SPtr &o) { p = o.p; } };
+struct SInt { int v; SInt(const SInt &o) { v = o.v; } };
+SPtr __cdecl sub_1015f830(VKeyValuesInterface *kv, const char *name);
+SPtr __cdecl sub_1015f810(VKeyValuesInterface *kv);
+SInt __cdecl sub_1015f7e0(VKeyValuesInterface *kv, const char *name);
+SPtr __cdecl sub_1015fc40(const char *s);
+void __cdecl sub_1013f250(int *pDst, const char *pszGender);
+extern void (__cdecl *g_101e310c)(const char *fmt, ...);
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern char g_102de300[];
+
+inline const char *STRINGR(const char *const &s) { return s ? s : g_102de300; }
+
+// TARGET: StatDefault3::sub_1013e790
+bool StatDefault3::sub_1013e790(VKeyValuesInterface *pNode, CStatDefault3List *pList)
+{
+	if (!pNode)
+		return true;
+	VKeyValuesInterface *pTpl = pNode->vfunc2("Text");
+	if (pTpl) {
+		m_pszName = sub_1015f830(pTpl, "TemplateName").p;
+		const char *pszParent = sub_1015f830(pTpl, "ParentTemplateName").p;
+		if (*STRINGR(pszParent)) {
+			m_4 = pList->sub_1013fdf0(STRINGR(pszParent));
+			if (m_4 == -1)
+				g_101e310c("Parent template '%s' not loaded before dependent template '%s'\n", STRINGR(m_pszName), STRINGR(pszParent));
+		}
+		m_pszName0c = sub_1015f810(pTpl).p;
+		const char *pszDesc = sub_1015f830(pTpl, "Description").p;
+		if (!*STRINGR(pszDesc))
+			m_pszDisplayName = 0;
+		else
+			m_pszDisplayName = pszDesc;
+		const char *pszShort = sub_1015f830(pTpl, "ShortDescription").p;
+		if (!*STRINGR(pszShort))
+			m_14 = 0;
+		else
+			m_14 = (int)pszShort;
+		const char *pszPenalty = sub_1015f830(pTpl, "ShortPenaltyDescription").p;
+		if (!*STRINGR(pszPenalty))
+			m_18 = 0;
+		else
+			m_18 = (int)pszPenalty;
+	}
+	VKeyValuesInterface *pGen = pNode->vfunc2("General");
+	if (pGen) {
+		m_3c = sub_1015f7e0(pGen, "Clan").v;
+		m_pszMBody[0] = sub_1015f830(pGen, "M_Body").p;
+		m_pszFBody[0] = sub_1015f830(pGen, "F_Body").p;
+		if (!*STRINGR(m_pszFBody[0]))
+			m_pszFBody[0] = m_pszMBody[0];
+		if (!*STRINGR(m_pszMBody[0]))
+			m_pszMBody[0] = m_pszFBody[0];
+		if (!*STRINGR(m_pszMBody[0])) {
+			for (int i = 0; i < 6; i++) {
+				char buf[32];
+				sprintf(buf, "M_Body%d", i);
+				m_pszMBody[i] = sub_1015f830(pGen, buf).p;
+				buf[0] = 'F';
+				m_pszFBody[i] = sub_1015f830(pGen, buf).p;
+			}
+			if (!*STRINGR(m_pszFBody[0]))
+				m_pszFBody[0] = m_pszMBody[0];
+			if (!*STRINGR(m_pszMBody[0]))
+				m_pszMBody[0] = m_pszFBody[0];
+			for (int j = 0; j < 6; j++) {
+				if (!*STRINGR(m_pszFBody[j]))
+					m_pszFBody[j] = m_pszFBody[0];
+				if (!*STRINGR(m_pszMBody[0]))
+					m_pszMBody[j] = m_pszMBody[0];
+			}
+		} else {
+			for (int k = 0; k < 6; k++) {
+				m_pszFBody[k] = m_pszMBody[0];
+				m_pszMBody[k] = m_pszFBody[0];
+			}
+		}
+		m_pszFHands = sub_1015f830(pGen, "F_Hands").p;
+		if (!*STRINGR(m_pszFHands))
+			m_pszFHands = sub_1015fc40("models/hands/female/shared/v_shared_female_hands.mdl").p;
+		m_pszMHands = sub_1015f830(pGen, "M_Hands").p;
+		if (!*STRINGR(m_pszMHands))
+			m_pszMHands = sub_1015fc40("models/hands/male/shared/v_shared_male_hands.mdl").p;
+		m_pszGib = sub_1015f830(pGen, "DeathGib").p;
+		if (!*STRINGR(m_pszGib))
+			m_pszGib = sub_1015fc40("models/gibs/hgibs.mdl").p;
+		m_pszGibParticle = sub_1015f830(pGen, "DeathGibParticle").p;
+		if (!*STRINGR(m_pszGibParticle))
+			m_pszGibParticle = sub_1015fc40("D_Thaum_Bld_Cauldron_Explode_Tgt_Emitter").p;
+		sub_1013f250(&m_80, pGen->vfunc13("Gender", g_102de300));
+		const char *pszIcon = sub_1015f830(pGen, "ClanIcon").p;
+		if (!*STRINGR(pszIcon))
+			m_1c = 0;
+		else
+			m_1c = (int)pszIcon;
+		const char *pszSound = sub_1015f830(pGen, "SoundGroup").p;
+		if (!*STRINGR(pszSound))
+			m_20 = 0;
+		else
+			m_20 = (int)pszSound;
+		int nPkg = pGen->vfunc10("MPEquipPkg", 0);
+		if (nPkg)
+			m_b0 = nPkg;
+		m_24 = pGen->vfunc11("NormalFootfallVol", 0.45f);
+		m_28 = pGen->vfunc11("NormalFootfallDist", 256.0f);
+		m_2c = pGen->vfunc11("HeavyFootfallVol", 0.85f);
+		m_30 = pGen->vfunc11("HeavyFootfallDist", 512.0f);
+		m_34 = (int)pGen->vfunc11("NpcFakeReloadCountMin", 8.0f);
+		m_38 = (int)pGen->vfunc11("NpcFakeReloadCountMax", (float)m_34);
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f290 size=0x3
 char sub_1013f290()
 {
