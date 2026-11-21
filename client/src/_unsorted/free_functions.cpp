@@ -11899,6 +11899,36 @@ char C101fc4d0::sub_10159f20(T_101fc4d0 a, T_101fc4d0 b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ab20 size=0x69
+struct TScope {
+	const char *name;
+	void *a;
+	void *b;
+};
+extern int *g_101e3128;
+extern TScope *g_101e3124;
+extern char g_102cb9e0[];
+extern char g_102de300[];
+
+struct TList {
+	int a, b, c;
+	TList *sub_1015ab20();
+};
+
+TList *TList::sub_1015ab20()
+{
+	g_101e3124[*g_101e3128].name = g_102cb9e0;
+	g_101e3124[*g_101e3128].a = g_102de300;
+	g_101e3124[*g_101e3128].b = g_102de300;
+	(*g_101e3128)++;
+	a = 0;
+	b = 0;
+	c = 0;
+	(*g_101e3128)--;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"

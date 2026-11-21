@@ -486,6 +486,7 @@
 0x101597d0 func   ?sub_101597d0@CVStatSubCost_t@@QAEHH@Z CVStatSubCost_t::sub_101597d0
 0x10159e90 func   ?sub_10159e90@CVStatCost_t@@QAEHH_N@Z CVStatCost_t::sub_10159e90
 0x10159f20 func   ?sub_10159f20@C101fc4d0@@QAEDUT_101fc4d0@@0@Z C101fc4d0::sub_10159f20
+0x1015ab20 func   ?sub_1015ab20@TList@@QAEPAU1@XZ TList::sub_1015ab20
 0x1015f720 func   ?sub_1015f720@@YADPAVCFileParserSlotView@@PBDH1PAUstring_t@@PAPAU2@PAH@Z sub_1015f720
 0x1015f810 func   ?sub_1015f810@@YAHHH@Z sub_1015f810
 0x1015ff70 func   ?sub_1015ff70@CUnknown1006c7d0@@QAEXXZ CUnknown1006c7d0::sub_1015ff70
