@@ -1734,6 +1734,21 @@ void sub_1007ddd0(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100865a0 size=0x1e
+struct CUnknown100bc460 { void * sub_100865a0(); };
+void * CUnknown100bc460::sub_100865a0()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = -1;
+    *(int *)((char *)this + 0xc) = 0;
+    *(char *)((char *)this + 0x10) = 0;
+    *(char *)((char *)this + 0x11) = 1;
+    *(int *)((char *)this + 0x14) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086f10 size=0xfd
 #include "bf_write.h"
 void bf_write::sub_10086f10(float fAngle, int numbits)
