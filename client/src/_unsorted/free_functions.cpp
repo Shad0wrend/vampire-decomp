@@ -1218,6 +1218,12 @@ void __stdcall sub_10057e10(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057f40 size=0x3
+void __stdcall sub_10057f40(int a0, int a1, int a2, int a3, int a4)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064c60 size=0x1
 void sub_10064c60()
 {
