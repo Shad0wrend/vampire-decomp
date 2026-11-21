@@ -2049,6 +2049,7 @@
 0x101c2e30 func   ?sub_101c2e30@CUnknown101c2e30@@QAEXXZ CUnknown101c2e30::sub_101c2e30
 0x101c7470 func   ?sub_101c7470@CUnknown101c7470@@QAEHXZ CUnknown101c7470::sub_101c7470
 0x101c74f0 func   ?sub_101c74f0@CUnknown101c74f0@@QAEDXZ CUnknown101c74f0::sub_101c74f0
+0x101c7500 func   ?sub_101c7500@CUnknown101c7500@@QAEDXZ CUnknown101c7500::sub_101c7500
 0x101c9da0 func   ?sub_101c9da0@CUnknown101c9da0@@QAEHXZ CUnknown101c9da0::sub_101c9da0
 0x101cb000 func   ?sub_101cb000@CUnknown101cb000@@QAEHXZ CUnknown101cb000::sub_101cb000
 0x101cb010 func   ?sub_101cb010@CUnknown101cb010@@QAEHXZ CUnknown101cb010::sub_101cb010
