@@ -1153,6 +1153,14 @@ void __stdcall sub_10051b30(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10051b50 size=0x4
+struct CUnknown10051b50 { char sub_10051b50(); };
+char CUnknown10051b50::sub_10051b50()
+{
+    return *(char *)((char *)this + 0x1c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100557c0 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_101e3100)(int);
