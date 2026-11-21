@@ -47578,6 +47578,22 @@ void S1006cd00::sub_10160350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101604b0 size=0x4c
+#include "CStatDefaultList.h"
+
+bool CStatDefaultList::sub_101604b0(CVTraitKV *pKV, const CVTraitDependency *pDefaultDependency)
+{
+	if (pKV) {
+		for (CVTraitKV *pChild = pKV->FindKey("Table"); pChild; pChild = pChild->GetNextKey()) {
+			StatDefault *pItem = sub_101603c0();
+			((CUnknown1006c810 *)pItem)->sub_1015ffa0(pChild, pDefaultDependency);
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160560 size=0x2e
 // TARGET: sub_10160560
 
