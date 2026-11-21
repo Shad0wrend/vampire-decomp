@@ -554,6 +554,7 @@
 0x10020090 func   ??_GC_ItemGRingSerialKiller1@@UAEPAXI@Z ??_GC_ItemGRingSerialKiller1@@UAEPAXI@Z
 0x100200d0 func   ?sub_100200d0@@YAHXZ sub_100200d0
 0x100201f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGRingSerialKiller1@@@Z ClientClassInit
+0x10020310 func   ??_GC_ItemGRingSerialKiller2@@UAEPAXI@Z ??_GC_ItemGRingSerialKiller2@@UAEPAXI@Z
 0x10020350 func   ?sub_10020350@@YAHXZ sub_10020350
 0x10020470 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGRingSerialKiller2@@@Z ClientClassInit
 0x100205d0 func   ?sub_100205d0@@YAHXZ sub_100205d0
