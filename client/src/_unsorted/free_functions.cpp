@@ -32748,6 +32748,41 @@ __declspec(naked) void sub_101085a0(const float *start, float scale, const float
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108660 size=0x146
+#include "Vector.h"
+#include "matrix3x4_t.h"
+
+extern Vector g_104d4970;
+void sub_10108540(const Vector &in, int column, matrix3x4_t &out);
+
+void sub_10108660(const Vector &forward, matrix3x4_t &matrix)
+{
+	Vector right, up, left;
+	if (forward.x == 0 && forward.y == 0)
+	{
+		up.y = -forward.z;
+		left.x = -1.0f;
+		left.y = 0;
+		left.z = 0;
+		up.x = 0;
+		up.z = 0;
+	}
+	else
+	{
+		Vector worldUp(0, 0, 1);
+		CrossProduct(forward, worldUp, right);
+		VectorNormalize(right);
+		CrossProduct(right, forward, up);
+		VectorMultiply(right, -1.0f, left);
+		VectorNormalize(up);
+	}
+	sub_10108540(forward, 0, matrix);
+	sub_10108540(left, 1, matrix);
+	sub_10108540(up, 2, matrix);
+	sub_10108540(g_104d4970, 3, matrix);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108880 size=0xd5
 #include "Vector.h"
 #include <math.h>
