@@ -1038,3 +1038,9 @@ ConCommand g_104d2294("+campitchup", sub_100ff700, 0, 0, 0);
 void sub_100ff710(void);
 ConCommand g_104d27a0("-campitchup", sub_100ff710, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100ffdc0 size=0xa
+#include "ConCommand.h"
+void sub_100ff720(void);
+ConCommand g_104d1d94("+campitchdown", sub_100ff720, 0, 0, 0);
+// END FUNCTION
