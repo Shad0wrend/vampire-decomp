@@ -32962,6 +32962,13 @@ char sub_10193280()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101932a0 size=0x6
+int sub_101932a0()
+{
+    return 0xff;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197a20 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
