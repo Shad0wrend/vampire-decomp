@@ -10096,6 +10096,17 @@ float sub_10109f00(float a, float b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109f40 size=0x58
+float sub_10109f00(float a, float b);
+
+float sub_10109f40(float x, float g)
+{
+	if (x < 0.5)
+		return sub_10109f00(x + x, 1.0f - g) * 0.5f;
+	return 1.0f - sub_10109f00(2.0f - (x + x), 1.0f - g) * 0.5f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109fa0 size=0x19
 #include <math.h>
 
