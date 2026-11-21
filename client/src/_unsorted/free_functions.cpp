@@ -8900,6 +8900,19 @@ int CFindList_1024b590::sub_1013d4e0(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d6f0 size=0x3c
+#include "CUnknown1024b2d0.h"
+extern char g_102de300[];
+
+// TARGET: CUnknown1024b2d0::sub_1013d6f0
+const char *CUnknown1024b2d0::sub_1013d6f0(CUnknown1024b2d0Id id)
+{
+    if (id.m_id == 0xffff) return g_102de300;
+    unsigned short *pIdx = (unsigned short *)((char *)m_pData + id.m_id * 12 + 8);
+    return (const char *)(((int *)m_i18)[pIdx[0]] + pIdx[1] + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d7c0 size=0x56
 #include "CUnknown1024b370.h"
 
