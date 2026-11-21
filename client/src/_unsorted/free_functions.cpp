@@ -1131,6 +1131,30 @@ int CTable::sub_10078f90(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078ff0 size=0x58
+struct CTblObjInner { virtual bool vfunc0(); virtual bool vfunc1(); char m_pad[0x24]; float m_f28; };
+struct CTblObj { int m_n0; CTblObjInner *m_p4; };
+struct CTblEntry { int m_pad0[5]; int m_n14; int m_n18; int m_pad1c; CTblObj *m_p20; };
+struct CTbl { int m_nCount; CTblEntry m_entries[1]; int sub_10078ff0(int i); };
+extern float g_101e34f0;
+int CTbl::sub_10078ff0(int i)
+{
+	if (i >= 1 && i < m_nCount) {
+		CTblEntry *e = (CTblEntry *)((char *)this + i * 36);
+		if (e->m_n14 == -1) {
+			CTblObj *p = e->m_p20;
+			if (p) {
+				if (p->m_p4->vfunc1())
+					return (int)g_101e34f0;
+				return (int)p->m_p4->m_f28;
+			}
+		} else
+			return e->m_n18;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100790f0 size=0x69
 #include "CUnknown10427700.h"
 #include <string.h>
