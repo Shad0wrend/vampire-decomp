@@ -27504,6 +27504,14 @@ bool CUnknown101e8080::sub_1014d860(const char *type, int *a, int *b, int *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d930 size=0x7
+struct CUnknown1014d930 { char * sub_1014d930(); };
+char * CUnknown1014d930::sub_1014d930()
+{
+    return (char *)this + 0x2bc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014dae0 size=0x43
 struct CDiscValues_101e9080 {
     char pad[0x3a0];
