@@ -242,3 +242,8 @@ ConVar g_103eeaa0("cl_hud_health", "", 0);
 inline int pcd_initial_103eef34() { return 0xffffffff; }
 int g_103eef34 = pcd_initial_103eef34();
 // END FUNCTION
+
+// FUNCTION: 0x100646b0 size=0xa
+#include "ConVar.h"
+ConVar g_103eefa8("crosshair_rot", "0.0f", 0);
+// END FUNCTION
