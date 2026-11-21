@@ -251,6 +251,7 @@
 0x10010410 func   ??_GC_ItemMMoneyClip@@UAEPAXI@Z ??_GC_ItemMMoneyClip@@UAEPAXI@Z
 0x10010450 func   ?sub_10010450@@YAHXZ sub_10010450
 0x10010570 func   ?ClientClassInit@@YAHPAUignored@DT_ItemMMoneyClip@@@Z ClientClassInit
+0x10010690 func   ??_GC_ItemMMoneyEnvelope@@UAEPAXI@Z ??_GC_ItemMMoneyEnvelope@@UAEPAXI@Z
 0x100106d0 func   ?sub_100106d0@@YAHXZ sub_100106d0
 0x100107f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemMMoneyEnvelope@@@Z ClientClassInit
 0x10010950 func   ?sub_10010950@@YAHXZ sub_10010950
