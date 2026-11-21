@@ -347,6 +347,7 @@
 0x1001db50 func   ?sub_1001db50@@YAHXZ sub_1001db50
 0x1001dc70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWarrClipboard@@@Z ClientClassInit
 0x1001ddd0 func   ?sub_1001ddd0@@YAHXZ sub_1001ddd0
+0x1001def0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWarrLedger1@@@Z ClientClassInit
 0x1001e050 func   ?sub_1001e050@@YAHXZ sub_1001e050
 0x1001e2d0 func   ?sub_1001e2d0@@YAHXZ sub_1001e2d0
 0x1001e550 func   ?sub_1001e550@@YAHXZ sub_1001e550
