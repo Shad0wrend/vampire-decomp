@@ -23088,6 +23088,12 @@ void CUnknown101f5f00::sub_10156180(int first, int key, int second)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101563e0 size=0x1
+void sub_101563e0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101563f0 size=0x121
 #include "FileSystemViews.h"
 
