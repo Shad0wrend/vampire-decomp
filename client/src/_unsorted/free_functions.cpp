@@ -37044,6 +37044,15 @@ void CUnknown101cac70::sub_101cac70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101caff0 size=0xa
+struct CUnknown101caff0 { int sub_101caff0(int); };
+int CUnknown101caff0::sub_101caff0(int a0)
+{
+    *(int *)((char *)this + 0x74) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101cb000 size=0x4
 struct CUnknown101cb000 { int sub_101cb000(); };
 int CUnknown101cb000::sub_101cb000()
