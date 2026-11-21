@@ -2354,3 +2354,8 @@ ConVar g_105fbb28("vgui_eyetarget_x", "-1000", 0);
 #include "ConVar.h"
 ConVar g_105fba98("vgui_eyetarget_y", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10189f30 size=0xa
+#include "ConVar.h"
+ConVar g_105fbae0("vgui_eyetarget_z", "64", 0);
+// END FUNCTION
