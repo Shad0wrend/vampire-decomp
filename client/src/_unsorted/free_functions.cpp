@@ -1528,6 +1528,22 @@ void UtlMem::sub_10096d10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096d40 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_101e30fc)(void *);
+
+void UtlMem::sub_10096d40()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_101e30fc(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098720 size=0x59
 float sub_10098720(float x, float lo, float hi)
 {
