@@ -1167,3 +1167,8 @@ ConVar g_104d2bc0("joyadvanced", "0", 0);
 #include "ConVar.h"
 ConVar g_104d2a10("joyadvaxisx", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10100540 size=0xa
+#include "ConVar.h"
+ConVar g_104d29c8("joyadvaxisy", "0", 0);
+// END FUNCTION
