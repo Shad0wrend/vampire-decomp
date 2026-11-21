@@ -9464,6 +9464,22 @@ void sub_1010a320(const float *p, float t, float *q)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a3d0 size=0x4a
+#include "Quaternion.h"
+
+void sub_1010a020(const Quaternion &p, const Quaternion &q, Quaternion &qt);
+
+void sub_1010a3d0(const Quaternion &p, const Quaternion &q, Quaternion &qt)
+{
+	Quaternion q2;
+	sub_1010a020(p, q, q2);
+	qt[0] = p[0] + q2[0];
+	qt[1] = p[1] + q2[1];
+	qt[2] = p[2] + q2[2];
+	qt[3] = p[3] + q2[3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a420 size=0x25
 // TARGET: sub_1010a420
 float sub_1010a420(float *a, float *b)
