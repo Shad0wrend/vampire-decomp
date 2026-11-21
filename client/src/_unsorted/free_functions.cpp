@@ -23740,6 +23740,17 @@ char *sub_1012d7a0(char *name, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d7f0 size=0x15
+namespace lifted {
+extern char g_105e5540;
+struct C1012e6d0 { int sub_1012e6d0(int, int); };
+}
+int sub_1012d7f0(int a0, int a1)
+{
+    return ((lifted::C1012e6d0 *)((int)&lifted::g_105e5540))->sub_1012e6d0(a0, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d810 size=0x1
 void sub_1012d810()
 {
