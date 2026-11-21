@@ -1711,6 +1711,13 @@ void * sub_10079320(void);
 InterfaceReg g_10477178(sub_10079320, "AnimatedEntityTexture_IMaterialProxy003");
 // END FUNCTION
 
+// FUNCTION: 0x100793a0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100793d0(void);
+InterfaceReg g_10477184(sub_100793d0, "AnimatedTexture_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x1007a510 size=0xa
 #include "ConVar.h"
 ConVar g_10477190("debug_dump_anim_seq_list", "0", 8448, "Set this to true to allow a dump of animation seqences on errors.");
