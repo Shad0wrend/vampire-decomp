@@ -20,6 +20,17 @@ ConVar::ConVar(const char *pName, const char *pDefaultValue, int flags, const ch
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df5e0 size=0x45
+#include "ConVar.h"
+
+// TARGET: ConVar::ConVar
+ConVar::ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, bool bMin, float fMin, bool bMax, float fMax)
+	: ConCommandBase()
+{
+	vfunc12(pName, pDefaultValue, flags, pHelpString, bMin, fMin, bMax, fMax, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df6c0 size=0x28
 #include "ConVar.h"
 ConVar::~ConVar()
