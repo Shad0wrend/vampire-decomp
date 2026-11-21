@@ -1266,6 +1266,7 @@
 0x100bc4b0 func   ?ClientClassInit@@YAHPAUignored@DT_HudEntity@@@Z ClientClassInit
 0x100bc680 func   ?sub_100bc680@@YGHHH@Z sub_100bc680
 0x100bc6f0 func   ?sub_100bc6f0@@YAHXZ sub_100bc6f0
+0x100bc7f0 func   ?ClientClassInit@@YAHPAUignored@DT_LightGlow@@@Z ClientClassInit
 0x100bca50 func   ?sub_100bca50@@YAHXZ sub_100bca50
 0x100bce50 func   ?sub_100bce50@@YAHXZ sub_100bce50
 0x100bd530 func   ?sub_100bd530@@YAHXZ sub_100bd530
