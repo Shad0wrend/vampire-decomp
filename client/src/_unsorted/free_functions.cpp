@@ -42274,6 +42274,51 @@ void S1006cd00::sub_1013f9b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013fac0 size=0xbd
+#include "CStatDefault3List.h"
+
+extern void (__cdecl *g_101e3108)(const char *pszFormat, ...);	// tier0 Msg
+
+struct DFVBase
+{
+	virtual void v0();
+	virtual void Release();
+};
+
+struct DFNode : virtual DFVBase
+{
+	virtual void n0();
+	virtual void n1();
+	virtual DFNode *FindKey(const char *pszName);
+	virtual DFNode *NextKey();
+};
+
+extern void *g_104a580c;
+DFNode *sub_101545c0(const char *pszFile, void *pFileSystem);
+
+// TARGET: CStatDefault3List::sub_1013fac0
+char CStatDefault3List::sub_1013fac0(const char *pszFile, int arg)
+{
+	int *pIndex = (int *)arg;
+	DFNode *pFile = sub_101545c0(pszFile, g_104a580c);
+	if (!pFile) {
+		g_101e3108("Unable to open data file for: %s\n", pszFile);
+		return 0;
+	}
+	for (DFNode *pNode = pFile->FindKey("ClanData"); pNode; pNode = pNode->NextKey()) {
+		StatDefault3 *pItem = m_pItems[(*pIndex)++];
+		if (!pItem) {
+			g_101e3108("Unable to parse data file for: %s.  Memory allocation ERROR!\n", pszFile);
+			return 0;
+		}
+		pItem->sub_1013e3a0();
+		pItem->sub_1013ec60(pNode, this);
+	}
+	pFile->Release();
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fc80 size=0x22
 extern char g_102c6c3c[];
 extern char g_102c6c30[];
