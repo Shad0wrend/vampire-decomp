@@ -481,6 +481,11 @@ RecvTable g_102e44ec;
 RecvTable g_102e0ae4;
 // END FUNCTION
 
+// FUNCTION: 0x10013990 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e12c4;
+// END FUNCTION
+
 // FUNCTION: 0x100270c0 size=0xa
 #include "ConVar.h"
 ConVar g_102e32e0("torchlight_minradius", "190", 0);
