@@ -1092,6 +1092,7 @@
 0x10096f90 func   ?sub_10096f90@UtlMem@@QAEXXZ UtlMem::sub_10096f90
 0x10097080 func   ?sub_10097080@@YIXPAUMem@@HH@Z sub_10097080
 0x10097160 func   ?sub_10097160@S101859a0@@QAEXH@Z S101859a0::sub_10097160
+0x10097290 func   ?ClientClassInit@@YAHPAUignored@DT_Animationlayer@@@Z ClientClassInit
 0x10097380 func   ?sub_10097380@@YAHXZ sub_10097380
 0x100981f0 func   ?sub_100981f0@@YAHXZ sub_100981f0
 0x10098720 func   ?sub_10098720@@YAMMMM@Z sub_10098720
