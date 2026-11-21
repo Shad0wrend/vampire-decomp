@@ -54267,6 +54267,36 @@ void CVStatInfoList_t::sub_1015c3a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015c440 size=0x69
+#include "CVStatInfo_t.h"
+
+void *CVStatInfo_t::sub_1015c440(unsigned int flags)
+{
+	if (flags & 2)
+	{
+		void *pBase = (char *)this - 4;
+		int n = *(int *)pBase;
+		CVStatInfo_t *p = this + n;
+		if (--n >= 0)
+		{
+			int count = n + 1;
+			do
+			{
+				--p;
+				p->~CVStatInfo_t();
+			} while (--count);
+		}
+		if (flags & 1)
+			operator delete(pBase);
+		return pBase;
+	}
+	this->~CVStatInfo_t();
+	if (flags & 1)
+		operator delete(this);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015c8f0 size=0xb8
 #include "CVStatInfoList_t.h"
 
