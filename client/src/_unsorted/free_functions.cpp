@@ -40232,6 +40232,36 @@ char CSoundEmitterSystemBase::sub_1012f1a0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f490 size=0x99
+#include "CUnknown101b45b0.h"
+extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+
+struct Five
+{
+	int a, b, c, d, e;
+	void Zero() { a = 0; b = 0; c = 0; d = 0; e = 0; }
+};
+
+CUnknown101b45b0 *CUnknown101b45b0::sub_1012f490()
+{
+	Q_strncpy((((Five *)&m_nField3c)->Zero(), m_nField08 = 0, m_szChannel),
+		(((Five *)&m_nField28)->Zero(), "CHAN_AUTO"), 0x20);
+	m_flChannelScale = 1.0f;
+	m_nField10 = 0;
+	Q_strncpy(m_szVolume, "VOL_NORM", 0x20);
+	m_flVolume = 100.0f;
+	m_nField18 = 0;
+	Q_strncpy(m_szPitch, "PITCH_NORM", 0x20);
+	m_flPitch = 75.0f;
+	m_nField20 = 0;
+	Q_strncpy(m_szSoundLevel, "SNDLVL_NORM", 0x20);
+	m_bField24 = 0;
+	m_bField25 = 1;
+	m_bField50 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f8c0 size=0x4a
 struct Entry { float value; const char *text; };
 extern Entry g_102c4260[1];
