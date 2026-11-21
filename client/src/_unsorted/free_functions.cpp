@@ -10601,6 +10601,33 @@ int sub_1003f280()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003f2f0 size=0xc1
+#include "RecvTable.h"
+extern RecvTable g_103eb50c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_1028111c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TESparks { struct ignored; }
+template <> int ClientClassInit<DT_TESparks::ignored>(DT_TESparks::ignored *)
+{
+	char *pRecvTableName = "DT_TESparks";
+	RecvTable &RecvTable = g_103eb50c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_1028111c, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_nMagnitude", 28, 4, 0, 0),
+		RecvPropInt("m_nTrailLength", 32, 4, 0, 0),
+		RecvPropVector("m_vecDir", 36, 12, 0, RecvProxy_VectorToVector),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003f430 size=0x12
 namespace lifted {
 extern char g_10227300;
