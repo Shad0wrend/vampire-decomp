@@ -19173,6 +19173,25 @@ void CUnknown101ed170::sub_10150bc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151290 size=0x42
+#include "CUnknown101ed9e0.h"
+struct IObj102038e0;
+int sub_1015f7e0(int, IObj102038e0 *, int);
+int *sub_1015f810(int *, IObj102038e0 *);
+bool CUnknown101ed9e0::sub_10151290(void *pNode)
+{
+	IObj102038e0 *p = (IObj102038e0 *)pNode;
+	if (p)
+	{
+		int tmp;
+		m_unk4 = *(int *)sub_1015f7e0((int)&tmp, p, (int)"InternalName");
+		m_unk8 = *sub_1015f810(&tmp, p);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151840 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
