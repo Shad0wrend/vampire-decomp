@@ -33009,6 +33009,16 @@ void UtlMem::sub_10197a20(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198d30 size=0x6
+namespace lifted {
+extern char g_10618f7c;
+}
+int sub_10198d30()
+{
+    return (int)&lifted::g_10618f7c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019c230 size=0x1f
 struct CUnk102a9640Obj
 {
