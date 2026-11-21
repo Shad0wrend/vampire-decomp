@@ -17033,6 +17033,29 @@ int CUnknown10739194::sub_10146220(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146270 size=0x2c
+#include "CUnknown101d9840.h"
+
+namespace block_101d9870 {
+	struct CUnit101d9840 : CUnknown101d9840 {
+		char sub_10146250(int index);
+	};
+	char CUnit101d9840::sub_10146250(int index)
+	{
+		return index >= 0 && index < m_count;
+	}
+}
+using namespace block_101d9870;
+
+// TARGET: CUnknown101d9840::sub_10146270
+char *CUnknown101d9840::sub_10146270(int index)
+{
+	if (((CUnit101d9840 *)this)->sub_10146250(index))
+		return (char *)m_pItems + index * 0x19c;
+	return g_105e7958;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146a90 size=0xf1
 #include "CUnknown101db210.h"
 
