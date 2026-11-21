@@ -1241,6 +1241,28 @@ void CUnknown10427700::sub_10079260(const char *name, int a, int b, int plrDmg, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100792d0 size=0x1e
+struct CUnk10427970Entry {
+	void *m_p0;
+	char m_pad0004[0x24 - 4];
+};
+
+struct CUnk10427970 {
+	char m_pad0000[0x28];
+	CUnk10427970Entry m_arr[31];
+	void sub_100792d0();
+};
+
+// TARGET: CUnk10427970::sub_100792d0
+void CUnk10427970::sub_100792d0()
+{
+	for (int i = 0; i < 31; i++)
+	{
+		operator delete(m_arr[i].m_p0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100797c0 size=0x1c
 void sub_10079520(void *p);
 
