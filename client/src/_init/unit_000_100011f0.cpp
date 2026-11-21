@@ -2158,3 +2158,8 @@ ConVar g_105fadb0("net_scale", "5", 128);
 #include "ConVar.h"
 ConVar g_105fae88("net_graphpos", "1", 128);
 // END FUNCTION
+
+// FUNCTION: 0x10168a10 size=0xa
+#include "ConVar.h"
+ConVar g_105faf20("net_graphsolid", "1", 128);
+// END FUNCTION
