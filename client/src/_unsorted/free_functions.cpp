@@ -6650,6 +6650,38 @@ void CUtlMemory20::sub_1011fdf0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101201c0 size=0x6a
+#include <malloc.h>
+
+struct IRestoreSrc {
+    virtual int StartBlock(int a, const char *name, int c);
+    virtual void EndBlock(int h);
+    virtual void ReadBytes(char *buf, int size, int h);
+    virtual void v3();
+    virtual void v4();
+    virtual void v5();
+    virtual int BlockSize(int h);
+};
+struct IFieldSink {
+    virtual void v0();
+    virtual void SetString(int a, const char *s);
+};
+extern char g_102b6618[];
+
+void sub_101201c0(int a, IFieldSink *sink, IRestoreSrc *src)
+{
+    int h = src->StartBlock(a, g_102b6618, 0);
+    if (h) {
+        int size = src->BlockSize(h);
+        char *buf = (char *)_alloca(size + 1);
+        src->ReadBytes(buf, size, h);
+        src->EndBlock(h);
+        buf[size] = 0;
+        sink->SetString(a, buf);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101209c0 size=0x1b
 // TARGET: sub_101209c0
 struct CUnk1042da10 {
