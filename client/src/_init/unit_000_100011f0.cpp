@@ -2975,6 +2975,13 @@ int g_102eca30 = ClientClassInit((DT_TEBloodStream::ignored *)0);
 RecvTable g_102eccb8;
 // END FUNCTION
 
+// FUNCTION: 0x100350b0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBreakModel { struct ignored; }
+template <> int ClientClassInit<DT_TEBreakModel::ignored>(DT_TEBreakModel::ignored *);
+int g_102eccb4 = ClientClassInit((DT_TEBreakModel::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100354d0 size=0xa
 #include "RecvTable.h"
 RecvTable g_102ece20;
