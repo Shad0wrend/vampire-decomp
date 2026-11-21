@@ -2997,6 +2997,14 @@ void bf_write::sub_10087ab0(void *pData, int nBytes, int iStartBit, int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087b10 size=0x4
+struct CUnknown10087b10 { int sub_10087b10(); };
+int CUnknown10087b10::sub_10087b10()
+{
+    return *(int *)((char *)this + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087b30 size=0x7b
 #include "bf_read.h"
 
