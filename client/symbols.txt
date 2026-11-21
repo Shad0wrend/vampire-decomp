@@ -538,6 +538,7 @@
 0x10162650 func   ?sub_10162650@QuestJournal@@QAEXXZ QuestJournal::sub_10162650
 0x10162710 func   ?sub_10162710@QuestJournal@@QAEXXZ QuestJournal::sub_10162710
 0x10162840 func   ?sub_10162840@QuestJournal@@QAEXXZ QuestJournal::sub_10162840
+0x10162f00 func   ?sub_10162f00@QuestJournal@@QAEPADH@Z QuestJournal::sub_10162f00
 0x10162fa0 func   ?sub_10162fa0@QuestJournal@@QAEDH@Z QuestJournal::sub_10162fa0
 0x10163600 func   ?sub_10163600@CExperienceTable@@QAEPAUCExperienceAward@@H@Z CExperienceTable::sub_10163600
 0x10163970 func   ?sub_10163970@S10032fb0@@QAEXH@Z S10032fb0::sub_10163970
