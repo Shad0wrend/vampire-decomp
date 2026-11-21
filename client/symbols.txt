@@ -143,6 +143,7 @@
 0x1000aa10 func   ??_GC_WeaponMelee_SabbatLeaderAttack@@UAEPAXI@Z ??_GC_WeaponMelee_SabbatLeaderAttack@@UAEPAXI@Z
 0x1000aa50 func   ?sub_1000aa50@@YAHXZ sub_1000aa50
 0x1000ab70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_SabbatLeaderAttack@@@Z ClientClassInit
+0x1000ac90 func   ??_GC_WeaponMelee_ChangClaw@@UAEPAXI@Z ??_GC_WeaponMelee_ChangClaw@@UAEPAXI@Z
 0x1000acd0 func   ?sub_1000acd0@@YAHXZ sub_1000acd0
 0x1000adf0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_ChangClaw@@@Z ClientClassInit
 0x1000af50 func   ?sub_1000af50@@YAHXZ sub_1000af50
