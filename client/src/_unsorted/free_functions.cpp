@@ -10979,6 +10979,16 @@ int sub_1009d400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d4c0 size=0x12
+namespace lifted {
+struct C1009fc90 { int sub_1009fc90(int); };
+}
+int sub_1009d4c0(int a0, int a1)
+{
+    return ((lifted::C1009fc90 *)a1)->sub_1009fc90(*(int *)((char *)a0 + 4));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009db70 size=0x1
 void sub_1009db70()
 {
