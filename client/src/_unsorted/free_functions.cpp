@@ -11043,6 +11043,16 @@ void sub_100cd000(float t, const float *a, const float *b, float *out) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd0f0 size=0x6
+namespace lifted {
+extern int g_104a5834;
+}
+int sub_100cd0f0()
+{
+    return lifted::g_104a5834;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cd330 size=0xdb
 #include "Vector.h"
 #include "CUnknown1070b254.h"
