@@ -4170,6 +4170,34 @@ int CGameMovement::sub_100ebb50(Vector &in, Vector &normal, Vector &out, float o
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec3a0 size=0xae
+#include "CGameMovement.h"
+
+struct IEngineTraceY { virtual int GetPointContents(const Vector &vecPosition, void *ppEntity); };
+extern IEngineTraceY *g_104a582c;
+extern char g_102bb1a8;
+
+static inline float DistToSqrY(const Vector &a, const Vector &b)
+{
+    Vector d;
+    VectorSubtract(a, b, d);
+    return d.x * d.x + (d.y * d.y + d.z * d.z);
+}
+
+// TARGET: CGameMovement::sub_100ec3a0
+int CGameMovement::sub_100ec3a0(const Vector &point)
+{
+    if (g_102bb1a8) {
+        if (m_nCachedContents == -9999 || DistToSqrY(point, m_vecCachedPoint) > 1.0f) {
+            m_nCachedContents = g_104a582c->GetPointContents(point, 0);
+            m_vecCachedPoint = point;
+        }
+        return m_nCachedContents;
+    }
+    return g_104a582c->GetPointContents(point, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efee0 size=0x8d
 #include "CUtlLinkedList8.h"
 
