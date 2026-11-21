@@ -23250,6 +23250,16 @@ void CPtrList101d6400::sub_10151890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101520c0 size=0x5
+namespace lifted {
+int sub_100a2930();
+}
+int sub_101520c0()
+{
+    return lifted::sub_100a2930();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152520 size=0x1
 void sub_10152520()
 {
