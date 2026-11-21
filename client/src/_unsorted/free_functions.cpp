@@ -23564,6 +23564,16 @@ void *CUnknown101f0cb0::sub_10152cc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152e20 size=0x5
+namespace lifted {
+int sub_10152f20();
+}
+int sub_10152e20()
+{
+    return lifted::sub_10152f20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152e30 size=0xeb
 #include "CUnknown101f0ea0.h"
 
