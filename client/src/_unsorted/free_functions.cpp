@@ -7074,6 +7074,14 @@ void UtlMem::sub_100d3ed0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5140 size=0x3
+struct CUnknown100d5140 { int sub_100d5140(); };
+int CUnknown100d5140::sub_100d5140()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8690 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
