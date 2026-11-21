@@ -25796,6 +25796,12 @@ bool CUnknown10206340::sub_10161d20(void *pKeys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161da0 size=0x1
+void sub_10161da0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161db0 size=0x20
 struct CUnknown10206400 { void * sub_10161db0(int); };
 void * CUnknown10206400::sub_10161db0(int a0)
