@@ -1663,6 +1663,13 @@ ConVar g_103eefa8("crosshair_rot", "0.0f", 0);
 ConVar g_103eeff0("mm_verbose", "0", 0);
 // END FUNCTION
 
+// FUNCTION: 0x10065630 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10065660(void);
+InterfaceReg g_103ef038(sub_10065660, "MainMenu001");
+// END FUNCTION
+
 // FUNCTION: 0x10065670 size=0xa
 #include "ConCommand.h"
 void sub_100656a0(void);
