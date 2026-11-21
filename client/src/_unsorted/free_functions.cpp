@@ -11781,6 +11781,17 @@ int sub_100c0c80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0c90 size=0x10
+namespace lifted {
+extern char g_104a4160;
+struct C100c1060 { int sub_100c1060(int); };
+}
+int sub_100c0c90(int a0)
+{
+    return ((lifted::C100c1060 *)((int)&lifted::g_104a4160))->sub_100c1060(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c1e70 size=0x3e
 #include "UtlVec40.h"
 
