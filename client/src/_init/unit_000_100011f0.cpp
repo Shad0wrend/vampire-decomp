@@ -2638,3 +2638,8 @@ Vector g_10619134(0.0f, 0.0f, 0.0f);
 #include "ConVar.h"
 ConVar g_10618a70("cl_copyframebuffertotexture", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10197bd0 size=0xa
+#include "ConVar.h"
+ConVar g_10618878("cl_alwayscopyframebuffertotexture", "1", 0);
+// END FUNCTION
