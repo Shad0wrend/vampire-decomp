@@ -781,3 +781,8 @@ ConVar g_104d0fb8("crosshair", "1", 128);
 #include "ConVar.h"
 ConVar g_104d2700("cam_command", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fae70 size=0xa
+#include "ConVar.h"
+ConVar g_104d17f8("cam_snapto", "0", 0);
+// END FUNCTION
