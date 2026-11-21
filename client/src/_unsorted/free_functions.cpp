@@ -1749,6 +1749,24 @@ void * CUnknown100bc460::sub_100865a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10086620 size=0x3b
+#include "bf_write.h"
+
+// TARGET: bf_write::sub_10086620
+void bf_write::sub_10086620(void *pData, int nBytes, int iStartBit, int nBits)
+{
+	m_pData = (unsigned long *)pData;
+	m_nDataBytes = nBytes;
+	m_bOverflow = false;
+	if (nBits == -1) {
+		m_nDataBits = nBytes * 8;
+	} else {
+		m_nDataBits = nBits;
+	}
+	m_iCurBit = iStartBit;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086f10 size=0xfd
 #include "bf_write.h"
 void bf_write::sub_10086f10(float fAngle, int numbits)
