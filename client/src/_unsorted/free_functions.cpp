@@ -2660,6 +2660,18 @@ int bf_read::sub_100885e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088620 size=0x2b
+#include "bf_read.h"
+
+// TARGET: bf_read::sub_10088620
+void bf_read::sub_10088620(Vector &fa)
+{
+    Vector tmp;
+    sub_100882d0(tmp);
+    fa.Init(tmp.x, tmp.y, tmp.z);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088660 size=0x65
 #include "bf_read.h"
 
