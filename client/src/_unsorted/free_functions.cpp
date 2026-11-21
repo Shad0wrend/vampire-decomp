@@ -10085,6 +10085,40 @@ int sub_1010e070(CUnknown10247800 **pA, CUnknown10247800 **pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e1e0 size=0x91
+#include <string.h>
+
+char *sub_1010e1e0(const char *buf, int end, int *pos, char *out, int outSize)
+{
+	int start = *pos;
+	if (buf != 0 && out != 0 && start < end) {
+		int i = start;
+		int stop = end;
+		if (end - start > outSize - 1)
+			stop = start + outSize - 1;
+		int found = 0;
+		if (start < stop) {
+			do {
+				if (found)
+					break;
+				if (buf[i] == '\n')
+					found = 1;
+				i++;
+			} while (i < stop);
+			if (i != start) {
+				int len = i - start;
+				memcpy(out, buf + start, len);
+				if (len < outSize)
+					out[len] = 0;
+				*pos = i;
+				return out;
+			}
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e290 size=0x3c
 #include "Pool.h"
 // TARGET: Pool::sub_1010e290
