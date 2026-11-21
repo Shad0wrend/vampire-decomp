@@ -2586,3 +2586,8 @@ ConVar g_105fc3e8("v_centermove", "0.15", 0);
 #include "ConVar.h"
 ConVar g_105fc760("v_centerspeed", "500", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018f200 size=0xa
+#include "ConVar.h"
+ConVar g_105fbe10("v_split", "0", 0, "Split the view into to panes ( 1 == vert, -1 == vert with inverted lower, other == nxn split )");
+// END FUNCTION
