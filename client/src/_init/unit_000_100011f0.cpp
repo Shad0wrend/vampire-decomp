@@ -314,3 +314,8 @@ ConVar g_1049bf28("cl_SetupAllBones", "0", 0);
 #include "ConVar.h"
 ConVar g_1049c490("debug_npc_move_yaw_snap", "1", 0, "Enable this to force the move_yaw pose parameter to snap rather than blend for NPCs.");
 // END FUNCTION
+
+// FUNCTION: 0x10091970 size=0xa
+#include "ConVar.h"
+ConVar g_10499848("debug_show_bones", "0", 0, "Enable this to draw wireframe bones for characters.");
+// END FUNCTION
