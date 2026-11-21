@@ -25761,6 +25761,17 @@ int StatDefault3::sub_1013f440(int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f8a0 size=0xd
+struct CUnknown1013f8a0 { void * sub_1013f8a0(); };
+void * CUnknown1013f8a0::sub_1013f8a0()
+{
+    *(int *)((char *)this + 8) = 0;
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f8b0 size=0x5
 namespace lifted {
 int sub_1013f9b0();
