@@ -1192,3 +1192,8 @@ ConVar g_104d2938("joyadvaxisu", "0", 0);
 #include "ConVar.h"
 ConVar g_104d28f0("joyadvaxisv", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101006d0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2b78("joyforwardthreshold", "0.15", 0);
+// END FUNCTION
