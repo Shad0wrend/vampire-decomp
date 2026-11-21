@@ -98,6 +98,21 @@ or 3: a `carried: from 0x..., score N` note marks them, a good hand pass), 47 fa
 still matched. Totals now: 7,577 matched rows; the panel counts 7,550 of 16,003 functions / 339,582 of 1,690,523
 bytes (20.09%). Backup: cache/`project.db.pre-carry8-20261121`.
 
+Naming pass and carry run 9 (2026-11-21). Run 8's misses were mostly missing names, not different code: carry keeps
+a name only where this project knows it at the same address, and this project had no symbol at any import slot, so
+a carried `Msg(...)` became `g_101e3108` and the link failed ("not in the game's import table"); names used from
+headers (`pfSqrt`, constructors) gave "unknown symbol". A naming pass with `rename_symbol` (agent `carry-names`, 49
+commits) added 27 import-slot names copied from vtmb by import name (only names whose own identifier is the
+import's: vtmb's slot aliases `Q_strstr` at the Q_stristr slot and `ExitScopeCall` at the ExitScope slot were left
+out) and 22 names proven by run 8's byte-equal pairs (`pfSqrt` 0x102be4dc, `pfVectorNormalize` 0x102be4e8,
+ConCommandBase's constructor 0x100df1c0, 18 constructors and destructors). Run 9 then planned 275 and matched 132
+(+4 initializer rows), 27,206 bytes; all 125 of run 8's misses that a judge-only preview said would match did. 60
+missed by score (the `carried:` notes), 47 failed to compile, and 44 wait on one spelling conflict: `_strcmpi`
+(0x101e28e0, a skipped CRT row whose linker name is `__strcmpi`) would be spelled both `sub_101e28e0` and
+`_strcmpi`. A `verify` of 20 still matched. Totals now: 7,713 matched rows; the panel counts 7,686 of 16,007
+functions / 366,788 of 1,690,545 bytes (21.70%). Backups: cache/`project.db.pre-names2-20261121`,
+cache/`project.db.pre-carry9-20261121`.
+
 Units: `pcdecomp units --apply` saved 4,066 unit guesses in 194 units (functions.unit_guess: the "probably unit"
 line and the panel's per-unit progress; it never moves a file), from the reference trees' class homes and the
 functions between two of one unit; client.dll's code names no source path. A unit under `_init/` is not read as the
