@@ -3039,6 +3039,16 @@ int sub_1002f7a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10030c50 size=0x6
+namespace lifted {
+extern char g_102eb568;
+}
+int sub_10030c50()
+{
+    return (int)&lifted::g_102eb568;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100310b0 size=0x3
 char sub_100310b0()
 {
