@@ -1520,3 +1520,9 @@ ConCommand g_104d31a0("-use", sub_10102160, 0, 0, 0);
 void sub_10102200(void);
 ConCommand g_104d3878("+jump", sub_10102200, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105210 size=0xa
+#include "ConCommand.h"
+void sub_101021f0(void);
+ConCommand g_104d3948("-jump", sub_101021f0, 0, 0, 0);
+// END FUNCTION
