@@ -46592,6 +46592,30 @@ bool CUnknown101ddc30::sub_10148150(CUnknown101ddc30Kv *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101481d0 size=0xc7
+#include "CUnknown101dddb0.h"
+extern "C" __declspec(dllimport) int Q_snprintf(char *dest, int maxLen, const char *fmt, ...);
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+const char *sub_10146f80(int index);
+const char *sub_10147000(int index);
+extern char g_102de300[];
+
+void CUnknown101dddb0::sub_101481d0()
+{
+    char buf[512];
+    if (m_pszFX) {
+        Q_snprintf(buf, 512, "Trigger_Casting:\n");
+        Msg("%s", buf);
+        Q_snprintf(buf, 512, "   DisciplineFX: %s\n", m_pszFX ? m_pszFX : g_102de300);
+        Msg("%s", buf);
+        Q_snprintf(buf, 512, "   Source: %s\n", sub_10146f80(m_nSource));
+        Msg("%s", buf);
+        Q_snprintf(buf, 512, "   Affects: %s\n", sub_10147000(m_nAffects));
+        Msg("%s", buf);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101482a0 size=0x8a
 #include "S101df260.h"
 
