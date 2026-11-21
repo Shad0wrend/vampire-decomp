@@ -16486,6 +16486,17 @@ int sub_100f0630(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f0650 size=0x1a
+namespace lifted {
+extern char g_104cfe38;
+struct C100f27a0 { int sub_100f27a0(int, int, int); };
+}
+int sub_100f0650(int a0, int a1, int a2)
+{
+    return ((lifted::C100f27a0 *)((int)&lifted::g_104cfe38))->sub_100f27a0(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f10c0 size=0x4
 struct CUnknown100f10c0 { float sub_100f10c0(); };
 float CUnknown100f10c0::sub_100f10c0()
