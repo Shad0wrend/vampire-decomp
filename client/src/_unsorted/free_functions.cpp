@@ -26788,6 +26788,18 @@ void sub_101444b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101445f0 size=0xf
+namespace lifted {
+extern char g_105e74fc;
+struct C1013ffa0 { int sub_1013ffa0(int); };
+}
+struct CUnknown101445f0 { int sub_101445f0(); };
+int CUnknown101445f0::sub_101445f0()
+{
+    return ((lifted::C1013ffa0 *)((int)&lifted::g_105e74fc))->sub_1013ffa0(*(int *)((char *)this + 4));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144770 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
