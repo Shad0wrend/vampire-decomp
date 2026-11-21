@@ -19665,6 +19665,14 @@ int CUnknown10141350::sub_10141350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141360 size=0x4
+struct CUnknown10141360 { int sub_10141360(); };
+int CUnknown10141360::sub_10141360()
+{
+    return *(int *)((char *)this + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101413a0 size=0x59
 struct CPartListUnit2 {
     void sub_10141240();
