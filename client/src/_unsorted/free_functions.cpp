@@ -35416,6 +35416,16 @@ int sub_101666a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101666b0 size=0xd
+struct CUnknown101666b0 { void * sub_101666b0(); };
+void * CUnknown101666b0::sub_101666b0()
+{
+    *(int *)this = 0;
+    *(char *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101666c0 size=0x1
 void sub_101666c0()
 {
