@@ -1152,3 +1152,8 @@ ConCommand g_104d25d4("-camdistance", sub_100fbde0, 0, 0, 0);
 void sub_100fbdf0(void);
 ConCommand g_104d19d4("snapto", sub_100fbdf0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10100450 size=0xa
+#include "ConVar.h"
+ConVar g_104d2860("joyname", "joystick", 0);
+// END FUNCTION
