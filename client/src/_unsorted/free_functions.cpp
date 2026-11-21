@@ -13382,6 +13382,115 @@ int sub_10079480(int a, int b, float *pA, float *pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079520 size=0x27b
+extern "C" int abs(int);
+#pragma intrinsic(abs)
+struct KnockbackElem	// 0xbc
+{
+    int m_pad00[10];
+    int m_nCount[4];	// 0x28
+    int m_nActivity[4][4];	// 0x38
+    int m_nNameIndex[4][4];	// 0x78
+    int m_padb8;
+};
+struct SeqView
+{
+    int m_nLabelIndex;
+    int m_pad04[2];
+    int m_nActivity;	// 0x0c
+    char m_pad10[0x2c4 - 0x10];
+    int m_nKnockbacks;	// 0x2c4
+    int m_nKnockbackIndex;	// 0x2c8
+    int m_pad2cc[3];
+    int m_nDodgeActivity;	// 0x2d8
+    int m_nDodgeNameIndex;	// 0x2dc
+    int m_nBlockActivity;	// 0x2e0
+    int m_nBlockNameIndex;	// 0x2e4
+    char m_pad2e8[0x2fc - 0x2e8];
+    const char *Label() { return (char *)this + m_nLabelIndex; }
+    KnockbackElem *Knockback(int i) { return (KnockbackElem *)((char *)this + m_nKnockbackIndex) + i; }
+};
+struct HdrView
+{
+    int m_pad00[3];
+    char m_name[0x110 - 0xc];
+    int numseq;
+    int seqindex;
+    int m_nVersion;
+    SeqView *pSeqdesc(int i) { if (i < 0) i = 0; return (SeqView *)((char *)this + seqindex) + i; }
+};
+typedef void (*FnDevWarning)(int level, const char *fmt, ...);
+extern FnDevWarning g_101e3120;
+const char *sub_10079f80(HdrView *h, int i);
+int sub_100681e0(const char *s);
+int sub_10068190(const char *s);
+
+void sub_10079520(HdrView *pstudiohdr)
+{
+    int i;
+    if (!pstudiohdr)
+        return;
+    if (!pstudiohdr->numseq)
+        return;
+    SeqView *pseqdesc = (SeqView *)((char *)pstudiohdr + pstudiohdr->seqindex);
+    for (i = 0; i < pstudiohdr->numseq; i++)
+    {
+        const char *pszActivityName = sub_10079f80(pstudiohdr, i);
+        if (pszActivityName[0] != '\0')
+        {
+            int iActivityIndex = sub_100681e0(pszActivityName);
+            if (iActivityIndex == -1)
+            {
+                g_101e3120(2, "***\nModel %s tried to reference unregistered activity: %s \n***\n", pstudiohdr->m_name, pszActivityName);
+                pseqdesc[i].m_nActivity = sub_10068190(pszActivityName);
+            }
+            else
+            {
+                pseqdesc[i].m_nActivity = iActivityIndex;
+            }
+        }
+        SeqView *seq = pstudiohdr->pSeqdesc(i);
+        for (int k = 0; k < seq->m_nKnockbacks; k++)
+        {
+            KnockbackElem *e = seq->Knockback(k);
+            for (int g = 0; g < 4; g++)
+            {
+                int n = abs(e->m_nCount[g]);
+                for (int j = 0; j < n; j++)
+                {
+                    const char *nm = (char *)e + e->m_nNameIndex[g][j];
+                    int act = sub_100681e0(nm);
+                    if (act == -1)
+                    {
+                        g_101e3120(1, "***\nModel %s tried to reference unregistered knockback activity %s for sequence %s\n***\n", pstudiohdr->m_name, nm, seq->Label());
+                        n--;
+                        e->m_nNameIndex[g][j] = e->m_nNameIndex[g][n];
+                    }
+                    else
+                    {
+                        e->m_nActivity[g][j] = act;
+                    }
+                }
+                e->m_nCount[g] = n;
+            }
+        }
+        if (seq->m_nDodgeNameIndex >= 0)
+        {
+            seq->m_nDodgeActivity = sub_100681e0((char *)seq + seq->m_nDodgeNameIndex);
+            if (seq->m_nDodgeActivity < 0)
+                g_101e3120(1, "***\nModel %s tried to reference unregistered dodge activity %s for sequence %s\n***\n", pstudiohdr->m_name, (char *)seq + seq->m_nDodgeNameIndex, seq->Label());
+        }
+        if (seq->m_nBlockNameIndex >= 0)
+        {
+            seq->m_nBlockActivity = sub_100681e0((char *)seq + seq->m_nBlockNameIndex);
+            if (seq->m_nBlockActivity < 0)
+                g_101e3120(1, "***\nModel %s tried to reference unregistered block reaction activity %s for sequence %s\n***\n", pstudiohdr->m_name, (char *)seq + seq->m_nBlockNameIndex, seq->Label());
+        }
+    }
+    pstudiohdr->m_nVersion = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100797c0 size=0x1c
 void sub_10079520(void *p);
 
