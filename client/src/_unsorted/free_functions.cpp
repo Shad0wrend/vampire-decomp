@@ -20409,6 +20409,19 @@ bool CUnknown101f5150::sub_10155cc0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101560f0 size=0x27
+void __fastcall sub_101560f0(void **pThis)
+{
+	void **pp = (void **)((char *)pThis + 8);
+	for (int i = 0x118d; i != 0; i--)
+	{
+		operator delete(pp[-1]);
+		operator delete(pp[0]);
+		pp += 3;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156120 size=0x33
 // TARGET: sub_10156120
 struct CEntryPair_101f5e80 {
