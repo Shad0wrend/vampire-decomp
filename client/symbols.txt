@@ -1171,6 +1171,7 @@
 0x100e17f0 func   ?InternalRecvPropArray@@YA?AVRecvProp@@HHPADP6AXPAXHH@Z@Z InternalRecvPropArray
 0x100e1840 func   ?RecvProxy_FloatToFloat@@YAXPBVCRecvProxyData@@PAX1@Z RecvProxy_FloatToFloat
 0x100e1840 func   ?sub_100e1840@@YAHHHH@Z sub_100e1840
+0x100e1850 func   ?RecvProxy_VectorToVector@@YAXPBVCRecvProxyData@@PAX1@Z RecvProxy_VectorToVector
 0x100e1870 func   ?sub_100e1870@@YAHHHH@Z sub_100e1870
 0x100e1880 func   ?sub_100e1880@@YAHHHH@Z sub_100e1880
 0x100e1890 func   ?sub_100e1890@@YAHHHH@Z sub_100e1890
