@@ -54767,6 +54767,41 @@ void CUnknown10202c80::sub_1015eea0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ef10 size=0xf6
+#include "CUnknown10202d10.h"
+
+CUnknown102029c0 *CUnknown10202d10::sub_1015ef10()
+{
+	if (m_nAllocated == m_nCount) {
+		m_nAllocated += 4;
+		if (m_ppRecords) {
+			CUnknown102029c0 **p = new CUnknown102029c0 *[m_nAllocated];
+			int i = 0;
+			if (m_nCount > 0) {
+				do {
+					p[i] = m_ppRecords[i];
+					i++;
+				} while (i < m_nCount);
+			}
+			for (; i < m_nAllocated; i++)
+				p[i] = 0;
+			delete m_ppRecords;
+			m_ppRecords = p;
+		} else {
+			m_ppRecords = new CUnknown102029c0 *[m_nAllocated];
+			for (int i = 0; i < m_nAllocated; i++)
+				m_ppRecords[i] = 0;
+		}
+		m_nCount++;
+	} else {
+		m_nCount++;
+	}
+	if (m_ppRecords[m_nCount - 1] == 0)
+		m_ppRecords[m_nCount - 1] = new CUnknown102029c0(m_nNextId++);
+	return m_ppRecords[m_nCount - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f010 size=0x48
 #include "CUnknown10202d10.h"
 #include "CUnknown10202b10.h"
