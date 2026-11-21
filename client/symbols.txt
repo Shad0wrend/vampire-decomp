@@ -459,6 +459,7 @@
 0x10026750 func   ?sub_10026750@@YAHXZ sub_10026750
 0x10026870 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKSkylineHavenKey@@@Z ClientClassInit
 0x100269d0 func   ?sub_100269d0@@YAHXZ sub_100269d0
+0x10026af0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMuseumOfficeKey@@@Z ClientClassInit
 0x10026c50 func   ?sub_10026c50@@YAHXZ sub_10026c50
 0x10026e80 func   ?sub_10026e80@@YAHXZ sub_10026e80
 0x100275b0 func   ?sub_100275b0@@YAHXZ sub_100275b0
