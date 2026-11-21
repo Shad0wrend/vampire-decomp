@@ -4392,6 +4392,16 @@ int sub_1004ea50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004f830 size=0x6
+namespace lifted {
+extern char g_103ede7c;
+}
+char sub_1004f830()
+{
+    return lifted::g_103ede7c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050100 size=0x3d
 #include "CUtlVector16.h"
 
