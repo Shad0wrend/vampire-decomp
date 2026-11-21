@@ -1831,3 +1831,8 @@ ConVar g_104df8a8("sv_noclipspeed", "2000", 8576);
 #include "ConVar.h"
 ConVar g_104dfa58("sv_maxspeed", "2048", 8448);
 // END FUNCTION
+
+// FUNCTION: 0x1010fac0 size=0xa
+#include "ConVar.h"
+ConVar g_104dfc98("sv_accelerate", "10", 8448);
+// END FUNCTION
