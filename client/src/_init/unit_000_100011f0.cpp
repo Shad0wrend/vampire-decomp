@@ -454,3 +454,8 @@ ConVar g_1049d910("camera_weaponswitch", "1", 128);
 #include "Vector.h"
 Vector g_1049da94[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.40824834f, 0.70710677f, 0.57735026f), Vector(-0.40824822f, -0.7071068f, 0.57735026f) };
 // END FUNCTION
+
+// FUNCTION: 0x1009cfe0 size=0xa
+#include "ConVar.h"
+ConVar g_1049e1a8("cl_interpolate", "1.0", 0, "Interpolate entities on the client.");
+// END FUNCTION
