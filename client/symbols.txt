@@ -343,6 +343,7 @@
 0x1001d650 func   ?sub_1001d650@@YAHXZ sub_1001d650
 0x1001d770 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGHattersScreenplay@@@Z ClientClassInit
 0x1001d8d0 func   ?sub_1001d8d0@@YAHXZ sub_1001d8d0
+0x1001d9f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGStake@@@Z ClientClassInit
 0x1001db50 func   ?sub_1001db50@@YAHXZ sub_1001db50
 0x1001ddd0 func   ?sub_1001ddd0@@YAHXZ sub_1001ddd0
 0x1001e050 func   ?sub_1001e050@@YAHXZ sub_1001e050
