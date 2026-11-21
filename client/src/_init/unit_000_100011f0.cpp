@@ -2506,3 +2506,8 @@ ConVar g_105fc9e8("scr_ofsz", "0", 0, "Offset the render origin along the z axis
 #include "ConVar.h"
 ConVar g_105fc5b0("cl_rollspeed", "200", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018ed00 size=0xa
+#include "ConVar.h"
+ConVar g_105fc550("cl_rollangle", "2", 0);
+// END FUNCTION
