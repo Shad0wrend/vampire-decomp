@@ -470,3 +470,8 @@ ConVar g_1049dbd8("cl_simpleshadows", "0", 0);
 void sub_100a2b30(void);
 ConCommand g_1049e2fc("cl_sizeof", sub_100a2b30, "Determines the size of the specified client class.", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100a32e0 size=0x5
+int sub_100a3300(void);
+int g_1049e188 = ((int (*)(int))sub_100a3300)(0);
+// END FUNCTION
