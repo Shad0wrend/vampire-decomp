@@ -10028,6 +10028,21 @@ void sub_1010c500(const Vector &p1, const Vector &p2, float t, Vector &out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010df00 size=0x1f
+struct CUnk10247770
+{
+    char m_pad0000[8];
+    __int64 m_n08;
+    __int64 m_n10;
+    void sub_1010df00();
+};
+void CUnk10247770::sub_1010df00()
+{
+    if (m_n10 < m_n08)
+        m_n10 = m_n08;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010df80 size=0x33
 struct CAccum64View {
     char pad0[8];
