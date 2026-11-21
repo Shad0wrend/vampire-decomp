@@ -85,6 +85,7 @@
 0x1004b7e0 func   ?sub_1004b7e0@CTraceEntList@@QAEXH@Z CTraceEntList::sub_1004b7e0
 0x1004ba40 func   ?sub_1004ba40@@YAPADPBDZZ sub_1004ba40
 0x1004ba90 func   ?sub_1004ba90@@YA_NPAD@Z sub_1004ba90
+0x1004bbc0 func   ?sub_1004bbc0@CUnknown1004bbc0@@QAEDXZ CUnknown1004bbc0::sub_1004bbc0
 0x1004d410 func   ?sub_1004d410@@YGXHH@Z sub_1004d410
 0x1004e830 func   ?sub_1004e830@UtlMem@@QAEXH@Z UtlMem::sub_1004e830
 0x10050100 func   ?sub_10050100@CUtlVector16@@QAEXXZ CUtlVector16::sub_10050100

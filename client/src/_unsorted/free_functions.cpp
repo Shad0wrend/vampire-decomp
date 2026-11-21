@@ -1028,6 +1028,14 @@ bool sub_1004ba90(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004bbc0 size=0x4
+struct CUnknown1004bbc0 { char sub_1004bbc0(); };
+char CUnknown1004bbc0::sub_1004bbc0()
+{
+    return *(char *)((char *)this + 0x2c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d410 size=0x3
 void __stdcall sub_1004d410(int a0, int a1)
 {
