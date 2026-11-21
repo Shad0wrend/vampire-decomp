@@ -149,6 +149,7 @@
 0x1000af10 func   ??_GC_WeaponMelee_ChangBlade@@UAEPAXI@Z ??_GC_WeaponMelee_ChangBlade@@UAEPAXI@Z
 0x1000af50 func   ?sub_1000af50@@YAHXZ sub_1000af50
 0x1000b070 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_ChangBlade@@@Z ClientClassInit
+0x1000b190 func   ??_GC_WeaponMelee_AVampBlade@@UAEPAXI@Z ??_GC_WeaponMelee_AVampBlade@@UAEPAXI@Z
 0x1000b1d0 func   ?sub_1000b1d0@@YAHXZ sub_1000b1d0
 0x1000b2f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_AVampBlade@@@Z ClientClassInit
 0x1000b450 func   ?sub_1000b450@@YAHXZ sub_1000b450
