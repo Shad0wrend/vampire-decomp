@@ -655,6 +655,12 @@ void __stdcall sub_100326e0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100326f0 size=0x3
+void __stdcall sub_100326f0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039080 size=0x19
 #include "Vector.h"
 Vector &Vector::sub_10039080(const Vector &v)
