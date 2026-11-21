@@ -11026,6 +11026,20 @@ void * CUnknown101f0b50::sub_10152bb0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152bd0 size=0x2a
+#include "CUnknown101f0b80.h"
+
+int *sub_1015f7e0(int *pValue, int a, const char *pszName);
+extern const char g_102863d0[];
+
+// TARGET: CUnknown101f0b80::sub_10152bd0
+void CUnknown101f0b80::sub_10152bd0(int a, int b)
+{
+    m_n08 = b;
+    m_n04 = *sub_1015f7e0(&b, a, g_102863d0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152e30 size=0xeb
 #include "CUnknown101f0ea0.h"
 
