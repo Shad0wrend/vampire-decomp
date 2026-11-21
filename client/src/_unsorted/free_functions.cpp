@@ -6378,6 +6378,22 @@ void sub_100df340(unsigned int mask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df3c0 size=0x49
+#include <string.h>
+char *__stdcall sub_100df3c0(char *s)
+{
+	int n = strlen(s);
+	if (n <= 0) {
+		char *q = new char[1];
+		*q = 0;
+		return q;
+	}
+	char *p = new char[n + 1];
+	strcpy(p, s);
+	return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1040 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
