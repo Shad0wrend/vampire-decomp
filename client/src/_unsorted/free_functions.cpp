@@ -1591,6 +1591,19 @@ int sub_1007a3d0(CTable10428e20 *p, int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a440 size=0x2e
+// TARGET: sub_1007a440
+void sub_10108430(void *pDest, const float *pData);
+
+void sub_1007a440(char *pObj, int index, const float *pData)
+{
+    if (index >= 0)
+    {
+        sub_10108430(pObj + *(int *)(pObj + 0x14c) + index * 0x3c + 0xc, pData);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007aca0 size=0x2b
 #include "CUnknown100290c0.h"
 
