@@ -980,6 +980,28 @@ int sub_10007850()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10007970 size=0x72
+#include "RecvTable.h"
+extern RecvTable g_102e2710;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_10272848;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_SelectFireMachineGun { struct ignored; }
+template <> int ClientClassInit<DT_SelectFireMachineGun::ignored>(DT_SelectFireMachineGun::ignored *)
+{
+	char *pRecvTableName = "DT_SelectFireMachineGun";
+	RecvTable &RecvTable = g_102e2710;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_10272848, DataTableRecvProxy_StaticDataTable),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10007ad0 size=0x6
 namespace lifted {
 extern char g_102e338c;
