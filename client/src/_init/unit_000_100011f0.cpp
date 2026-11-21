@@ -45,3 +45,8 @@ ConVar g_102ea548("ft_link_velocity", "800", 8192, "The initial velocity of a fl
 #include "ConVar.h"
 ConVar g_102ea4b8("ft_link_drag", ".1", 8192, "The drag applied to a flamethrower link. The velocity is curved by this much each second. ");
 // END FUNCTION
+
+// FUNCTION: 0x10029a50 size=0xa
+#include "ConVar.h"
+ConVar g_102ea470("ft_link_gravity", "-100", 8192, "The amouunt of drop applied to a link, in inches per second.");
+// END FUNCTION
