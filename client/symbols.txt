@@ -113,6 +113,7 @@
 0x10057f40 func   ?sub_10057f40@@YGXHHHHH@Z sub_10057f40
 0x1005e010 func   ?sub_1005e010@CUnknown1005e010@@QAEDXZ CUnknown1005e010::sub_1005e010
 0x1005ed10 func   ?sub_1005ed10@CUnknown1005ed10@@QAEDXZ CUnknown1005ed10::sub_1005ed10
+0x1005f160 func   ?sub_1005f160@CUnknown1005f160@@QAEHXZ CUnknown1005f160::sub_1005f160
 0x10064c60 func   ?sub_10064c60@@YAXXZ sub_10064c60
 0x10067a50 func   ?sub_10067a50@UtlMem@@QAEXH@Z UtlMem::sub_10067a50
 0x10067d00 func   ?sub_10067d00@@YAXXZ sub_10067d00
