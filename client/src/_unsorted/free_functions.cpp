@@ -6964,6 +6964,30 @@ bool sub_100db6f0(const Ray_t &ray, const Vector &boxMins, const Vector &boxMaxs
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dbb00 size=0xe7
+#include "Vector.h"
+
+extern Vector g_104d5190;
+void sub_101094b0(const Vector *pAngles, const Vector *pOrigin, float *pMatrix);
+void sub_100db470(int a, int b, const Vector *pMins, const Vector *pMaxs, int c, int d);
+void sub_100db7e0(int a, int b, const float *pMatrix, const Vector *pMins, const Vector *pMaxs, int c, int d);
+
+void sub_100dbb00(int a, int b, const Vector *pOrigin, const Vector *pAngles, const Vector *pMins, const Vector *pMaxs, int c, int d)
+{
+	if (*pAngles == g_104d5190) {
+		Vector vecMins;
+		Vector vecMaxs;
+		VectorAdd(*pOrigin, *pMins, vecMins);
+		VectorAdd(*pOrigin, *pMaxs, vecMaxs);
+		sub_100db470(a, b, &vecMins, &vecMaxs, c, d);
+	} else {
+		float matrix[12];
+		sub_101094b0(pAngles, pOrigin, matrix);
+		sub_100db7e0(a, b, matrix, pMins, pMaxs, c, d);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd3a0 size=0xb7
 #include "Vector.h"
 struct S2D { float x, y; };
