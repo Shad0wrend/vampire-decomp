@@ -5658,6 +5658,22 @@ void UtlVec8::sub_10130f90(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130fd0 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_101e30fc)(void *);
+
+void UtlMem::sub_10130fd0()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_101e30fc(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131480 size=0x19
 struct E101b6b60 { unsigned short a; unsigned short pad; int b; };
 
