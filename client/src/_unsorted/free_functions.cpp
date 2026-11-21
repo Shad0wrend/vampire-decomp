@@ -23741,6 +23741,50 @@ VMatrix sub_101a1410(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1470 size=0xd3
+#include "Vector.h"
+
+struct SPlane
+{
+	Vector m_Normal;
+	float m_Dist;
+};
+
+struct SVMatrix
+{
+	float m[4][4];
+
+	void Init(float m00, float m01, float m02, float m03,
+		float m10, float m11, float m12, float m13,
+		float m20, float m21, float m22, float m23,
+		float m30, float m31, float m32, float m33)
+	{
+		m[0][0] = m00; m[0][1] = m01; m[0][2] = m02; m[0][3] = m03;
+		m[1][0] = m10; m[1][1] = m11; m[1][2] = m12; m[1][3] = m13;
+		m[2][0] = m20; m[2][1] = m21; m[2][2] = m22; m[2][3] = m23;
+		m[3][0] = m30; m[3][1] = m31; m[3][2] = m32; m[3][3] = m33;
+	}
+
+	bool sub_101a1950(SVMatrix &dst);
+	Vector GetTranslation() const { return Vector(m[0][3], m[1][3], m[2][3]); }
+};
+
+bool sub_101a1470(const SPlane &vp1, const SPlane &vp2, const SPlane &vp3, Vector &vOut)
+{
+	SVMatrix mMat, mInverse;
+	mMat.Init(
+		vp1.m_Normal.x, vp1.m_Normal.y, vp1.m_Normal.z, -vp1.m_Dist,
+		vp2.m_Normal.x, vp2.m_Normal.y, vp2.m_Normal.z, -vp2.m_Dist,
+		vp3.m_Normal.x, vp3.m_Normal.y, vp3.m_Normal.z, -vp3.m_Dist,
+		0.0f, 0.0f, 0.0f, 1.0f);
+	if (mMat.sub_101a1950(mInverse)) {
+		vOut = Vector(mInverse.m[0][3], mInverse.m[1][3], mInverse.m[2][3]);
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2290 size=0x157
 #include "QAngle.h"
 #include "VMatrix.h"
