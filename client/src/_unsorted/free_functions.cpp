@@ -4447,6 +4447,74 @@ void __fastcall sub_10107550(Vector *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107be0 size=0xc7
+// mathlib _SSE2_cos (SSE2 cos), verbatim
+// TARGET: sub_10107be0
+// the game builds an ebp frame here (not in _SSE2_SinCos): frame-pointer omission off for this function
+extern int g_10235460;	// _ps_am_inv_sign_mask
+extern int g_10235430;	// _ps_am_pi_o_2
+extern int g_10235440;	// _ps_am_2_o_pi
+extern int g_10235470;	// _epi32_1
+extern int g_10235420;	// _ps_am_1
+extern int g_10235480;	// _epi32_2
+extern int g_102354c0;	// _ps_sincos_p3
+extern int g_102354b0;	// _ps_sincos_p2
+extern int g_102354a0;	// _ps_sincos_p1
+extern int g_10235490;	// _ps_sincos_p0
+
+#pragma optimize("y", off)
+float sub_10107be0(float x)
+{
+	__asm
+	{
+		movss	xmm0, x
+		movss	xmm1, g_10235460
+		movss	xmm2, g_10235430
+		movss	xmm3, g_10235440
+		andps	xmm0, xmm1
+		addss	xmm0, xmm2
+		mulss	xmm0, xmm3
+
+		pxor	xmm3, xmm3
+		movd	xmm5, g_10235470
+		movss	xmm4, g_10235420
+		cvttps2dq	xmm2, xmm0
+		pand	xmm5, xmm2
+		movd	xmm1, g_10235480
+		pcmpeqd	xmm5, xmm3
+		cvtdq2ps	xmm6, xmm2
+		pand	xmm2, xmm1
+		pslld	xmm2, (31 - 1)
+
+		subss	xmm0, xmm6
+		movss	xmm3, g_102354c0
+		minss	xmm0, xmm4
+		subss	xmm4, xmm0
+		andps	xmm0, xmm5
+		andnps	xmm5, xmm4
+		orps	xmm0, xmm5
+
+		movaps	xmm1, xmm0
+		movss	xmm4, g_102354b0
+		mulss	xmm0, xmm0
+		movss	xmm5, g_102354a0
+		orps	xmm1, xmm2
+		movaps	xmm7, xmm0
+		mulss	xmm0, xmm3
+		movss	xmm6, g_10235490
+		addss	xmm0, xmm4
+		mulss	xmm0, xmm7
+		addss	xmm0, xmm5
+		mulss	xmm0, xmm7
+		addss	xmm0, xmm6
+		mulss	xmm0, xmm1
+		movss   x,    xmm0
+	}
+
+	return x;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107e40 size=0x61
 struct RadianEuler10137e40
 {
