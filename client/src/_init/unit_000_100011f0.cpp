@@ -384,3 +384,8 @@ ConVar g_1049d560("damage_floaters_scale_max", "0.9", 0, "Scaled size of floater
 #include "ConVar.h"
 ConVar g_1049d800("damage_floaters_spacing_min", "5", 0, "Spacing between floater art when at the minimum distance value.");
 // END FUNCTION
+
+// FUNCTION: 0x1009a5f0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d8a8("damage_floaters_spacing_max", "8", 0, "Spacing between floater art when at the maximum distance value.");
+// END FUNCTION
