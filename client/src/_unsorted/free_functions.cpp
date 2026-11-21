@@ -21736,6 +21736,41 @@ bool TInfo::sub_1015b3b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015bcc0 size=0x93
+#include "CVStatInfo_t.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_101e3124;
+extern int *g_101e3128;
+
+struct StatMgr {
+	virtual void v0();
+	virtual bool v1();
+	char m_pad04[0x28];
+	int m_field2c;
+};
+extern StatMgr *g_105f9284;
+
+bool CVStatInfo_t::sub_1015bcc0()
+{
+	g_101e3124[*g_101e3128].fn = "CVStatInfo_t::IsPassive";
+	g_101e3124[*g_101e3128].name = "";
+	g_101e3124[*g_101e3128].extra = "";
+	(*g_101e3128)++;
+	if (!g_105f9284->v1() && g_105f9284->m_field2c) {
+		bool r = (m_flags >> 2) & 1;
+		(*g_101e3128)--;
+		return r;
+	}
+	(*g_101e3128)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015c8f0 size=0xb8
 #include "CVStatInfoList_t.h"
 
