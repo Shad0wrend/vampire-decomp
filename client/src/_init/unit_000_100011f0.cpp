@@ -3660,6 +3660,13 @@ void * sub_1010d840(void);
 InterfaceReg g_104df640(sub_1010d840, "GaussianNoise_IMaterialProxy003");
 // END FUNCTION
 
+// FUNCTION: 0x1010da00 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010da30(void);
+InterfaceReg g_104df5d4(sub_1010da30, "Exponential_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x1010ddc0 size=0xa
 #include "ConVar.h"
 ConVar g_104df6b8("measure_resort", "1.0", 0, "How often to re-sort profiling sections\n");
