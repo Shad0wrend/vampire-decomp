@@ -23953,6 +23953,16 @@ void * CUnknown10133280::sub_10133280(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133290 size=0xf
+struct CUnknown10133290 { void * sub_10133290(); };
+void * CUnknown10133290::sub_10133290()
+{
+    *(short *)this = 0xffff;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133340 size=0x1d1
 #include "Vector.h"
 #include "utlmemory.h"
