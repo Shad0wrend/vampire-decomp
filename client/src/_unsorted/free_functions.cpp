@@ -11824,6 +11824,40 @@ void CVStatSubCost_t::sub_10159650(const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101597d0 size=0xa3
+#include "CVStatCost_t.h"
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+
+int CVStatSubCost_t::sub_101597d0(int level)
+{
+	g_101e3124[*g_101e3128].a = "CVStatSubCost_t::GetCostToBuy";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	(*g_101e3128)++;
+	int *p = (int *)m_data;
+	int cost = p[0];
+	switch (cost) {
+	case 9998:
+		cost = ((int *)p[4])[level];
+		break;
+	case 9999: {
+		int r = p[1] * level + p[2];
+		(*g_101e3128)--;
+		return r;
+	}
+	case 10000:
+		(*g_101e3128)--;
+		return 10000;
+	}
+	(*g_101e3128)--;
+	return cost;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159f20 size=0x4c
 struct S5_101fc4d0 { int v[5]; };
 struct T_101fc4d0 : S5_101fc4d0 {
