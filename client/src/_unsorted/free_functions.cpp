@@ -6932,6 +6932,38 @@ single:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e6ce0 size=0x7f
+#include <stdarg.h>
+struct IFileSys {
+    virtual void *Open(const char *file, const char *mode, const char *pathId);
+    virtual void Close(void *h);
+    virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+    virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11();
+    virtual void v12(); virtual void v13(); virtual void v14(); virtual void v15(); virtual void v16();
+    virtual void v17(); virtual void v18(); virtual void v19(); virtual void v20();
+    virtual int FPrintf(void *h, const char *fmt, ...);
+};
+extern IFileSys *g_104a580c;
+extern int (*g_101e31a8)(char *, int, const char *, char *);
+extern char g_102bb1f0[];
+extern char g_102bb1ec[];
+extern char g_1028653c[];
+void sub_100e6ce0(const char *file, const char *fmt, ...)
+{
+    char buf[1024];
+    va_list ap;
+    if (!file)
+        file = g_102bb1f0;
+    va_start(ap, fmt);
+    g_101e31a8(buf, 1024, fmt, ap);
+    void *h = g_104a580c->Open(file, g_102bb1ec, 0);
+    if (h) {
+        g_104a580c->FPrintf(h, g_1028653c, buf);
+        g_104a580c->Close(h);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e91e0 size=0x1a4
 #include "Ray_t.h"
 #include <math.h>
