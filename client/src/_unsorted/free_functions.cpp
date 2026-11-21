@@ -5881,6 +5881,16 @@ int CUnknown1007db70::sub_1007db70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ddc0 size=0x6
+namespace lifted {
+extern int g_102af670;
+}
+int sub_1007ddc0()
+{
+    return lifted::g_102af670;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007ddd0 size=0x1c
 extern unsigned int g_102af670;
 
