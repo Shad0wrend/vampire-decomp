@@ -479,6 +479,7 @@
 0x1001c210 func   ??_GC_ItemGPishaBook@@UAEPAXI@Z ??_GC_ItemGPishaBook@@UAEPAXI@Z
 0x1001c250 func   ?sub_1001c250@@YAHXZ sub_1001c250
 0x1001c370 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGPishaBook@@@Z ClientClassInit
+0x1001c490 func   ??_GC_ItemGBadluckTalisman@@UAEPAXI@Z ??_GC_ItemGBadluckTalisman@@UAEPAXI@Z
 0x1001c4d0 func   ?sub_1001c4d0@@YAHXZ sub_1001c4d0
 0x1001c5f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGBadluckTalisman@@@Z ClientClassInit
 0x1001c750 func   ?sub_1001c750@@YAHXZ sub_1001c750
