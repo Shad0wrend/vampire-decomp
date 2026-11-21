@@ -13356,6 +13356,29 @@ ActEntry *sub_10067fc0(const char *pName, int iActivityIndex, bool isPrivate)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100680c0 size=0x59
+#include "CUnknown10249fc0.h"
+struct CActivityEntry { int pad[1]; unsigned short m_act; };
+CActivityEntry *sub_10068120(const char *name);
+CActivityEntry *sub_10068160(const char *name);
+void sub_10067fc0(const char *a, const char *b, int c);
+__declspec(dllimport) void Warning(const char *fmt, ...);
+extern CUnknown10249fc0 g_103ef0c8;
+bool sub_100680c0(const char *a, const char *b)
+{
+	CActivityEntry *p = sub_10068120(a);
+	if (p == 0)
+		p = sub_10068160(b);
+	if (p != 0) {
+		Warning("***\nShared activity collision! %s<->%s\n***\n", a, g_103ef0c8.sub_101390c0(p->m_act));
+		return false;
+	} else {
+		sub_10067fc0(a, b, 0);
+		return true;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068120 size=0x3f
 struct CActivityTable
 {
