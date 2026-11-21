@@ -12436,6 +12436,21 @@ CVTraitDependencyValue_t *CVTraitDependencyValue_t::sub_10161800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161820 size=0x1e
+#include "CVTraitDependencyValue_t.h"
+
+extern int vt_10248470[];
+
+// TARGET: CVTraitDependencyValue_t::sub_10161820
+CVTraitDependencyValue_t *CVTraitDependencyValue_t::sub_10161820(int a)
+{
+	m_18.sub_10161410();
+	m_vptr = vt_10248470;
+	sub_10161840();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161db0 size=0x20
 struct CUnknown10206400 { void * sub_10161db0(int); };
 void * CUnknown10206400::sub_10161db0(int a0)
