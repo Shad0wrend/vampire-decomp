@@ -10878,6 +10878,34 @@ CVBaseB *CUnk101f2520::sub_10153f10(void *a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153fb0 size=0x2c
+extern int g_105eb338;
+extern char g_105eab08[32][64];
+extern char g_105e8ac8[];
+
+// TARGET: sub_10153fb0
+void sub_10153fb0(void)
+{
+	char *pDst;
+	char *pSrc;
+	char c;
+
+	if (g_105eb338 < 0x20)
+	{
+		pSrc = g_105e8ac8;
+		pDst = g_105eab08[g_105eb338];
+		g_105eb338 = g_105eb338 + 1;
+		do
+		{
+			c = *pSrc;
+			pSrc++;
+			*pDst = c;
+			pDst++;
+		} while (c != 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101540f0 size=0x29
 struct CVBaseView101f27b0 {
     virtual void vfunc0();
