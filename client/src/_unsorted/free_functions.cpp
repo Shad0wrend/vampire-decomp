@@ -28328,6 +28328,17 @@ int CKey101eb190::sub_1014f300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014f6f0 size=0x8
+namespace lifted {
+struct C10158790 { int sub_10158790(); };
+}
+struct CUnknown1014f6f0 { int sub_1014f6f0(); };
+int CUnknown1014f6f0::sub_1014f6f0()
+{
+    return ((lifted::C10158790 *)(this + 0xc))->sub_10158790();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014f820 size=0x166
 #include <string.h>
 #include <stdio.h>
