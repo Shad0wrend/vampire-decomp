@@ -473,6 +473,7 @@
 0x1001bd10 func   ??_GC_ItemGBrotherhoodFlyer@@UAEPAXI@Z ??_GC_ItemGBrotherhoodFlyer@@UAEPAXI@Z
 0x1001bd50 func   ?sub_1001bd50@@YAHXZ sub_1001bd50
 0x1001be70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGBrotherhoodFlyer@@@Z ClientClassInit
+0x1001bf90 func   ??_GC_ItemGMilligansBuisnesscard@@UAEPAXI@Z ??_GC_ItemGMilligansBuisnesscard@@UAEPAXI@Z
 0x1001bfd0 func   ?sub_1001bfd0@@YAHXZ sub_1001bfd0
 0x1001c0f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGMilligansBuisnesscard@@@Z ClientClassInit
 0x1001c250 func   ?sub_1001c250@@YAHXZ sub_1001c250
