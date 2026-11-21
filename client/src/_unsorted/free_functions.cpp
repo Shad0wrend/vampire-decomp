@@ -6110,6 +6110,20 @@ bool sub_100dac00(const Vector &boxMin1, const Vector &boxMax1, const Vector &bo
 }
 // END FUNCTION
 
+// FUNCTION: 0x100db300 size=0x57
+#include "Vector.h"
+struct RayView10240ac0 { Vector m_vecStart; Vector m_vecDelta; };
+struct PlaneView10240ac0 { Vector m_vecNormal; float m_flDist; };
+
+float sub_100db300(const RayView10240ac0 *pRay, const PlaneView10240ac0 *pPlane)
+{
+	float denom = DotProduct(pRay->m_vecDelta, pPlane->m_vecNormal);
+	if (denom == 0.0f)
+		return 0.0f;
+	return (1.0f / denom) * (pPlane->m_flDist - DotProduct(pRay->m_vecStart, pPlane->m_vecNormal));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df190 size=0x24
 struct CUnknown10753434
 {
