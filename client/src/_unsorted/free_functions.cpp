@@ -2199,6 +2199,13 @@ void __stdcall sub_10080e10(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080ff0 size=0x3
+char sub_10080ff0()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100865a0 size=0x1e
 struct CUnknown100bc460 { void * sub_100865a0(); };
 void * CUnknown100bc460::sub_100865a0()
