@@ -6137,6 +6137,18 @@ float sub_100db360(const SVec3 *pOrigin, const SVec3 *pDir, const SPlane1024 *pP
 }
 // END FUNCTION
 
+// FUNCTION: 0x100db3c0 size=0x5b
+struct SVec3 { float x, y, z; };
+
+float sub_100db3c0(const SVec3 *pOrigin, const SVec3 *pDir, const SVec3 *pNormal, float flDist)
+{
+	float denom = pDir->z * pNormal->z + pDir->y * pNormal->y + pDir->x * pNormal->x;
+	if (denom == 0.0f)
+		return 0.0f;
+	return (1.0f / denom) * (flDist - (pOrigin->z * pNormal->z + pOrigin->y * pNormal->y + pOrigin->x * pNormal->x));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df190 size=0x24
 struct CUnknown10753434
 {
