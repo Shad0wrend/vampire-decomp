@@ -1712,3 +1712,9 @@ ConCommand g_104d38ec("dlgscrlup", sub_10054c50, 0, 0, 0);
 void sub_10054b60(void);
 ConCommand g_104d3a1c("dlghist", sub_10054b60, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105c10 size=0xa
+#include "ConCommand.h"
+void sub_101023d0(void);
+ConCommand g_104d359c("holster", sub_101023d0, 0, 0, 0);
+// END FUNCTION
