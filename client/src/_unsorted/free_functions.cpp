@@ -44707,6 +44707,41 @@ int sub_1013f8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f8c0 size=0xee
+#include "CStatDefault3List.h"
+
+StatDefault3 *CStatDefault3List::sub_1013f8c0()
+{
+	if (m_allocCount == m_count) {
+		m_allocCount++;
+		if (m_pItems) {
+			StatDefault3 **p = new StatDefault3 *[m_allocCount];
+			int i = 0;
+			if (m_count > 0) {
+				do {
+					p[i] = m_pItems[i];
+					i++;
+				} while (i < m_count);
+			}
+			for (; i < m_allocCount; i++)
+				p[i] = 0;
+			delete m_pItems;
+			m_pItems = p;
+		} else {
+			m_pItems = new StatDefault3 *[m_allocCount];
+			for (int i = 0; i < m_allocCount; i++)
+				m_pItems[i] = 0;
+		}
+		m_count++;
+	} else {
+		m_count++;
+	}
+	if (m_pItems[m_count - 1] == 0)
+		m_pItems[m_count - 1] = new StatDefault3(m_count - 1);
+	return m_pItems[m_count - 1];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f9b0 size=0x66
 struct Elem1006cd00 { void sub_1013e340(); };
 struct S1006cd00 {

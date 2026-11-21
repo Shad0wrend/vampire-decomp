@@ -2281,6 +2281,7 @@
 0x1013f440 func   ?sub_1013f440@StatDefault3@@QAEHH@Z StatDefault3::sub_1013f440
 0x1013f8a0 func   ?sub_1013f8a0@CUnknown1013f8a0@@QAEPAXXZ CUnknown1013f8a0::sub_1013f8a0
 0x1013f8b0 func   ?sub_1013f8b0@@YAHXZ sub_1013f8b0
+0x1013f8c0 func   ?sub_1013f8c0@CStatDefault3List@@QAEPAUStatDefault3@@XZ CStatDefault3List::sub_1013f8c0
 0x1013f9b0 func   ?sub_1013f9b0@S1006cd00@@QAEXXZ S1006cd00::sub_1013f9b0
 0x1013fac0 func   ?sub_1013fac0@CStatDefault3List@@QAEDPBDH@Z CStatDefault3List::sub_1013fac0
 0x1013fb80 func   ?sub_1013fb80@Loader@@QAEXPBD@Z Loader::sub_1013fb80
