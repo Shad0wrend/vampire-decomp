@@ -1012,6 +1012,7 @@
 0x10141360 func   ?sub_10141360@CUnknown10141360@@QAEHXZ CUnknown10141360::sub_10141360
 0x101413a0 func   ?sub_101413a0@CPartListUnit3@@QAEXXZ CPartListUnit3::sub_101413a0
 0x10141b00 func   ?sub_10141b00@CUnknown10141b00@@QAEHXZ CUnknown10141b00::sub_10141b00
+0x10141bb0 func   ?sub_10141bb0@@YAHH@Z sub_10141bb0
 0x10141bc0 func   ?sub_10141bc0@CUnknown10141bc0@@QAEPADXZ CUnknown10141bc0::sub_10141bc0
 0x10141bd0 func   ?sub_10141bd0@CUnknown10141bd0@@QAEHXZ CUnknown10141bd0::sub_10141bd0
 0x10142000 func   ?sub_10142000@CPtrList101d6400@@QAEXXZ CPtrList101d6400::sub_10142000

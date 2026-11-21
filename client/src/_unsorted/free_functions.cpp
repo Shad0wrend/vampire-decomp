@@ -20177,6 +20177,13 @@ int CUnknown10141b00::sub_10141b00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141bb0 size=0x5
+int sub_10141bb0(int a0)
+{
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141bc0 size=0x4
 struct CUnknown10141bc0 { char * sub_10141bc0(); };
 char * CUnknown10141bc0::sub_10141bc0()
