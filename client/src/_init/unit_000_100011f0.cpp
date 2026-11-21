@@ -191,6 +191,13 @@ int g_102df49c = ClientClassInit((DT_WeaponRanged_Domination::ignored *)0);
 RecvTable g_102dfab8;
 // END FUNCTION
 
+// FUNCTION: 0x10006b00 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Thaumaturgy { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Thaumaturgy::ignored>(DT_WeaponRanged_Thaumaturgy::ignored *);
+int g_102dfab4 = ClientClassInit((DT_WeaponRanged_Thaumaturgy::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100073b0 size=0xa
 #include "RecvTable.h"
 RecvTable g_102dfcdc;
