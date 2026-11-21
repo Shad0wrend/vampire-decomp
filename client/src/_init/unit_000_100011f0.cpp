@@ -2138,6 +2138,11 @@ ConCommand g_104a1724("decal", sub_100b38e0, "Displays a decal.  decal <name|num
 ConVar g_104a1750("cl_show_client_particles", "0", 0);
 // END FUNCTION
 
+// FUNCTION: 0x100b5140 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a1f1c;
+// END FUNCTION
+
 // FUNCTION: 0x100bb430 size=0xa
 #include "ConVar.h"
 ConVar g_104a2a30("lod_TransitionDist", "400", 0);
