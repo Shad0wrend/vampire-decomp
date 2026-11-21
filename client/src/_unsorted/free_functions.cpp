@@ -3959,6 +3959,21 @@ void sub_100e2fa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2fc0 size=0x1f
+namespace lifted {
+extern float g_104cf544;
+extern int g_104cf548;
+extern int g_104cf54c;
+}
+int sub_100e2fc0(int a0, int a1)
+{
+    *(float *)((char *)a1) = lifted::g_104cf544;
+    *(int *)((char *)a1 + 4) = lifted::g_104cf548;
+    *(int *)((char *)a1 + 8) = lifted::g_104cf54c;
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb150 size=0x93
 #include "CUnknown100353c0.h"
 
