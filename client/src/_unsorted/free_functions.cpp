@@ -14452,6 +14452,14 @@ int sub_10134010()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134030 size=0x24
+// TARGET: sub_10134030
+int sub_10134030(char **pa, char **pb)
+{
+    return *(float *)(*pa + 4) > *(float *)(*pb + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134060 size=0x40
 #include "CUnknown101bbd10.h"
 
