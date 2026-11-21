@@ -2438,6 +2438,16 @@ void sub_10027d20(const Vector &origin, const Vector &mins, const Vector &maxs, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100283d0 size=0x6
+namespace lifted {
+extern char g_102ea238;
+}
+int sub_100283d0()
+{
+    return (int)&lifted::g_102ea238;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100285d0 size=0x3
 char sub_100285d0()
 {
