@@ -20001,6 +20001,32 @@ int sub_100b2a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b2b80 size=0xb0
+#include "RecvTable.h"
+extern RecvTable g_104a153c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102b2c10;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_ThaumaturgyParticle { struct ignored; }
+template <> int ClientClassInit<DT_ThaumaturgyParticle::ignored>(DT_ThaumaturgyParticle::ignored *)
+{
+	char *pRecvTableName = "DT_ThaumaturgyParticle";
+	RecvTable &RecvTable = g_104a153c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102b2c10, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_hRecipient", 1216, 4, 0, 0),
+		RecvPropFloat("m_flStartTime", 1220, 4, 0, RecvProxy_FloatToFloat),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b3050 size=0x6
 namespace lifted {
 extern char g_104a1c1c;
