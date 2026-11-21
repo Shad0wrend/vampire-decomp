@@ -5724,6 +5724,13 @@ char sub_1009fcd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009ff70 size=0x3
+char sub_1009ff70()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ffb0 size=0x1
 void sub_1009ffb0()
 {
