@@ -3432,6 +3432,27 @@ void sub_1008a4d0(S100c30b0Hdr *pStudioHdr, const matrix3x4_t &parentTransform, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008a610 size=0x7c
+struct matrix3x4_view { float m[12]; };
+struct StudioBoneView {
+	char m_pad[0xf4];
+	int m_nBoneIndex;	// 0xf4: offset of the bone records (0xa0 bytes each; the parent index is at +4)
+};
+
+void sub_10108450(const matrix3x4_view *pIn, matrix3x4_view *pOut);
+void sub_10108a50(const matrix3x4_view *pIn1, const matrix3x4_view *pIn2, matrix3x4_view *pOut);
+void sub_10107e40(const matrix3x4_view *pMatrix, float *pQuat, float *pPos);
+
+void sub_1008a610(StudioBoneView *pHdr, int iBone, matrix3x4_view *pBoneToWorld, float *pPos, float *pQuat)
+{
+	matrix3x4_view bonematrix, local;
+	int parent = *(int *)((char *)pHdr + pHdr->m_nBoneIndex + iBone * 0xa0 + 4);
+	sub_10108450(&pBoneToWorld[parent], &bonematrix);
+	sub_10108a50(&bonematrix, &pBoneToWorld[iBone], &local);
+	sub_10107e40(&local, pQuat + iBone * 4, pPos + iBone * 3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008a690 size=0xde
 struct CBoneVecX {
 	float x, y, z;
