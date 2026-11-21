@@ -12695,6 +12695,13 @@ char * CUnknown100e13a0::sub_100e13a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1470 size=0x6
+int sub_100e1470()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e15d0 size=0x1
 void sub_100e15d0()
 {
