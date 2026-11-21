@@ -434,3 +434,8 @@ CUtlVector<int> g_1049d978;
 #include "utlvector.h"
 CUtlVector<int> g_1049d8f8;
 // END FUNCTION
+
+// FUNCTION: 0x1009b170 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_1049d964;
+// END FUNCTION
