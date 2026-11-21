@@ -18206,6 +18206,33 @@ int CUnknown101e0f00::sub_10149d40(int key, int offset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149d80 size=0x33
+struct CFindElemView {
+    int m_unk0;
+    int m_unk4;
+    int m_unk8;
+    unsigned int m_id;
+};
+
+struct CFindListView {
+    int m_unk0;
+    int m_count;
+    CFindElemView **m_pElems;
+    unsigned int sub_1014a130(unsigned int id);
+    int sub_10149d80(unsigned int id);
+};
+
+// TARGET: CFindListView::sub_10149d80
+int CFindListView::sub_10149d80(unsigned int id)
+{
+    unsigned int key = sub_1014a130(id);
+    for (int i = 0; i < m_count; i++)
+        if (m_pElems[i]->m_id == key)
+            return i;
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149f70 size=0x42
 #include "CStatusFlagList.h"
 unsigned int CStatusFlagList::sub_10149f70(int nKey, int nSkip)
