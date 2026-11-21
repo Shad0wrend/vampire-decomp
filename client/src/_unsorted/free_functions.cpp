@@ -32599,6 +32599,16 @@ void sub_10174c40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10174d40 size=0x6
+namespace lifted {
+extern char g_105fb201;
+}
+char sub_10174d40()
+{
+    return lifted::g_105fb201;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101779a0 size=0x3
 void __stdcall sub_101779a0(int a0)
 {
