@@ -4350,6 +4350,30 @@ char CUnk1011d310::sub_10104360(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106be0 size=0x7c
+#include "InterfaceReg.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+extern InterfaceReg *g_104d4050;
+
+InterfaceReg *InterfaceReg::sub_10106be0(void *createFn, const char *pName)
+{
+    m_pName = pName;
+    g_101e3124[*g_101e3128].name = "InterfaceReg::InterfaceReg";
+    g_101e3124[*g_101e3128].ent = g_102de300;
+    g_101e3124[*g_101e3128].extra = g_102de300;
+    ++*g_101e3128;
+    m_CreateFn = createFn;
+    m_pNext = g_104d4050;
+    g_104d4050 = this;
+    --*g_101e3128;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107500 size=0x43
 #include "Vector.h"
 #include <math.h>
