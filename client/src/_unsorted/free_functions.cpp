@@ -39003,6 +39003,46 @@ void CSave::sub_10129860(const void *p, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101299c0 size=0x5f
+#include "CSave.h"
+#include <string.h>
+#pragma warning(disable: 4716)
+
+struct Buf
+{
+	int pad;
+	char *m_pCur;
+	int m_nUsed;
+	int m_nSize;
+	bool Write(const void *pData, int nBytes)
+	{
+		if (nBytes > m_nSize - m_nUsed)
+		{
+			m_nUsed = m_nSize;
+			return false;
+		}
+		memcpy(m_pCur, pData, nBytes);
+		m_pCur += nBytes;
+		m_nUsed += nBytes;
+		return true;
+	}
+};
+
+__declspec(dllimport) void __cdecl Warning(const char *fmt, ...);
+
+bool CSave::sub_101299c0(const void *pData, int nBytes)
+{
+	Buf *pBuf = (Buf *)m_pData;
+	if (pBuf)
+	{
+		if (!pBuf->Write(pData, nBytes))
+		{
+			Warning("Save/Restore overflow!");
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129a20 size=0x6
 int __stdcall sub_10129a20(int a0)
 {

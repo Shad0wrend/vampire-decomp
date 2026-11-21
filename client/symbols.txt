@@ -2003,6 +2003,7 @@
 0x10129800 func   ?sub_10129800@@YGHPBDH@Z sub_10129800
 0x10129830 func   ?sub_10129830@CSave@@QAEXHHH@Z CSave::sub_10129830
 0x10129860 func   ?sub_10129860@CSave@@QAEXPBXH@Z CSave::sub_10129860
+0x101299c0 func   ?sub_101299c0@CSave@@QAE_NPBXH@Z CSave::sub_101299c0
 0x10129a20 func   ?sub_10129a20@@YGHH@Z sub_10129a20
 0x10129b00 func   ?vfunc26@CSave@@UAEXPBDPAXH@Z CSave::vfunc26
 0x10129ba0 func   ?vfunc30@CSave@@UAEXPBDABVVector@@@Z CSave::vfunc30
