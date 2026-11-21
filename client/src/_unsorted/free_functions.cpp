@@ -964,6 +964,29 @@ bool bf_read::sub_10087bb0(void *pOutData, int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088410 size=0xd1
+#include "bf_read.h"
+
+float bf_read::sub_10088410()
+{
+	int signbit;
+	if (m_iCurBit + 1 > m_nDataBits)
+		m_bOverflow = true;
+	if (!m_bOverflow) {
+		int value = ((unsigned char *)m_pData)[m_iCurBit >> 3] & (1 << (m_iCurBit & 7));
+		++m_iCurBit;
+		signbit = value != 0;
+	} else {
+		signbit = 0;
+	}
+	unsigned int fractVal = ReadUBitLong(11);
+	float value = fractVal * (1.0 / 2047.0);
+	if (signbit)
+		value = -value;
+	return value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100889f0 size=0x1a2
 #include "Quaternion.h"
 union CBlendAnimValue
