@@ -942,6 +942,7 @@
 0x1005fc80 func   ??1CProgBar@@UAE@XZ CProgBar::~CProgBar
 0x10060530 func   ??1CSignTextBlock@@UAE@XZ CSignTextBlock::~CSignTextBlock
 0x10060750 func   ??1CSignLabel@@UAE@XZ CSignLabel::~CSignLabel
+0x100609c0 func   ??1CSignUI@@UAE@XZ CSignUI::~CSignUI
 0x10062280 func   ?sub_10062280@CUnknown10062280@@QAEDDDDD@Z CUnknown10062280::sub_10062280
 0x100622a0 func   ?sub_100622a0@@YAHXZ sub_100622a0
 0x100622b0 func   ?sub_100622b0@@YADXZ sub_100622b0
