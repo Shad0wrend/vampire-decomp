@@ -2429,6 +2429,13 @@ ConVar g_104cef00("cl_drawleaf", "-1", 0);
 ConVar g_104cef48("r_PortalTestEnts", "1", 0, "Clip entities against portal frustums.");
 // END FUNCTION
 
+// FUNCTION: 0x100d13a0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100d13d0(void);
+InterfaceReg g_104ceef0(sub_100d13d0, "ClientLeafSystem001");
+// END FUNCTION
+
 // FUNCTION: 0x100d5210 size=0xa
 #include "ConVar.h"
 ConVar g_104cf060("r_shadows", "1", 0);
