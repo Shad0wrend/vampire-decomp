@@ -202,6 +202,13 @@ void sub_10027d20(const Vector &origin, const Vector &mins, const Vector &maxs, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100285d0 size=0x3
+char sub_100285d0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028630 size=0x1
 void sub_10028630()
 {
