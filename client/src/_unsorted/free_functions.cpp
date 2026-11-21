@@ -1571,6 +1571,26 @@ char *sub_1007a330(CStrTable10428d50 *pTable, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a3d0 size=0x2c
+struct CTable10428e20 {
+    char pad[0x140];
+    int m_i140;
+    int m_i144;
+};
+
+// TARGET: sub_1007a3d0
+int sub_1007a3d0(CTable10428e20 *p, int idx)
+{
+    if (p == 0) {
+        return 0;
+    }
+    if (idx > p->m_i140) {
+        return 0;
+    }
+    return *(int *)((char *)p + 4 + p->m_i144 + idx * 16);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007aca0 size=0x2b
 #include "CUnknown100290c0.h"
 

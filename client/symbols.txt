@@ -72,6 +72,7 @@
 0x1007a280 func   ?sub_1007a280@@YAXPAUSeqHdr@@PAHHH@Z sub_1007a280
 0x1007a2e0 func   ?sub_1007a2e0@@YAHPAUSeqHdr@@HH@Z sub_1007a2e0
 0x1007a330 func   ?sub_1007a330@@YAPADPAUCStrTable10428d50@@H@Z sub_1007a330
+0x1007a3d0 func   ?sub_1007a3d0@@YAHPAUCTable10428e20@@H@Z sub_1007a3d0
 0x1007aca0 func   ?sub_1007aca0@CUnknown100290c0@@QAEIPAI@Z CUnknown100290c0::sub_1007aca0
 0x1007b250 func   ?sub_1007b250@CWeaponCopy@@QAEPAU1@PBU1@@Z CWeaponCopy::sub_1007b250
 0x1007b650 func   ?sub_1007b650@@YGHH@Z sub_1007b650
