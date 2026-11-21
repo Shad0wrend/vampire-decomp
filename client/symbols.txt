@@ -539,6 +539,7 @@
 0x1012c4c0 func   ?sub_1012c4c0@CUnknown101a5800@@QAEHHHPBUCVecElem40_t@@@Z CUnknown101a5800::sub_1012c4c0
 0x1012c570 func   ?sub_1012c570@CUtlVector40@@QAEXH@Z CUtlVector40::sub_1012c570
 0x1012c600 func   ?sub_1012c600@UtlVec40@@QAEXHH@Z UtlVec40::sub_1012c600
+0x1012c640 func   ?sub_1012c640@CUnknown101a59f0@@QAEXH@Z CUnknown101a59f0::sub_1012c640
 0x1012c6e0 func   ?sub_1012c6e0@@YG_NHH@Z sub_1012c6e0
 0x1012c740 func   ?sub_1012c740@CUnknown102496d0@@QAEXM@Z CUnknown102496d0::sub_1012c740
 0x1012dd00 func   ?sub_1012dd00@CUnknown101b2570@@QAEXPBD@Z CUnknown101b2570::sub_1012dd00
