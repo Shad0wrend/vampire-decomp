@@ -61790,6 +61790,297 @@ void *sub_101a4770(unsigned short index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a48b0 size=0xd07
+#include "CWeaponAmmoInfo.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "StatOwner2.h"
+#include "CUnknown102029c0.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_102de300[];
+
+struct VBase10259f80
+{
+	virtual void a0();
+	virtual void Release();
+};
+struct KV10259f80 : virtual VBase10259f80
+{
+	virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4(); virtual void s5();
+	virtual KV10259f80 *FindKey(const char *pszName);	// slot 6
+	virtual void s7(); virtual void s8(); virtual void s9();
+	virtual int GetInt(const char *pszKey, int nDefault);	// slot 10
+	virtual float GetFloat(const char *pszKey, float flDefault);	// slot 11
+	virtual void s12();
+	virtual const char *GetString(const char *pszKey, const char *pszDefault);	// slot 13
+};
+
+class CUnknown10258b00;
+struct IKVNode;
+struct IKVSub;
+struct WeaponSoundInfo;
+struct CWeaponAmmoInfo;
+unsigned short sub_101a55c0(const char *pszName);
+void *sub_101a4770(unsigned short id);
+void sub_101a3900(CUnknown10258b00 *pInfo);
+void *sub_101545c0(const char *pszFile, int pathID);
+int sub_1007d890(const char *pszGroup);
+void sub_101a39f0(IKVSub *pKV, WeaponSoundInfo *pSoundInfo, const char *pszName);
+void sub_101a5a90(const char *pszName, unsigned int *pMask, const char *pszValue);
+char sub_101a3c20(IKVNode *pKV, CWeaponAmmoInfo *pInfo, const char *pszName);
+char sub_101a3eb0(IKVNode *pKV, CUnknown10258b00 *pInfo, const char *pszName);
+char *sub_1015fb10(const char *psz);
+
+struct CVStatInfoList_t { int sub_1015c8f0(const char *psz); };
+extern CVStatInfoList_t g_105f90b8;
+extern StatOwner2 g_105f93c0;
+struct CNamedListXB { int sub_10157b30(const char *psz); };
+extern CNamedListXB g_105f8b98;
+
+struct SNameEntry10259f80 { int m_id; const char *m_pName; };
+extern int g_105e85dc;
+extern SNameEntry10259f80 **g_105e85e0;
+
+namespace block_10259f80 {
+inline const char *NameOf(const char *const &p)
+{
+	return p ? p : g_102de300;
+}
+
+inline int FindItemType(const char *pszName)
+{
+	for (int k = 0; k < g_105e85dc; k++)
+	{
+		if (!_strcmpi(NameOf(g_105e85e0[k]->m_pName), pszName))
+			return g_105e85e0[k]->m_id;
+	}
+	return -1;
+}
+}
+using namespace block_10259f80;
+
+#define I_INT(off) (*(int *)(info + (off)))
+#define I_FLT(off) (*(float *)(info + (off)))
+#define I_CHR(off) (*(char *)(info + (off)))
+#define I_STR(off) (info + (off))
+#define MISSING "!!! Missing printname on weapon"
+
+char sub_101a48b0(void *fs, const char *name, void *p)
+{
+	unsigned short *phandle = (unsigned short *)p;
+	if (!phandle)
+		return 0;
+
+	*phandle = sub_101a55c0(name);
+	char *info = (char *)sub_101a4770(*phandle);
+	if (*info)
+		return 1;
+
+	sub_101a3900((CUnknown10258b00 *)info);
+
+	char sz[128];
+	Q_snprintf(sz, sizeof(sz) - 1, "vdata/items/%s.txt", name);
+	Q_snprintf(I_STR(0x8), 0x80, name);
+
+	KV10259f80 *kv = (KV10259f80 *)sub_101545c0(sz, (int)fs);
+	if (!kv)
+		return 0;
+
+	*info = 1;
+	Q_strncpy(I_STR(0x8), name, 0x80);
+	Q_strncpy(I_STR(0x88), kv->GetString("printname", MISSING), 0x80);
+	Q_strncpy(I_STR(0x2188), kv->GetString("viewmodel", g_102de300), 0x80);
+	Q_strncpy(I_STR(0x2208), kv->GetString("playermodel", g_102de300), 0x80);
+	Q_strncpy(I_STR(0x2408), kv->GetString("anim_prefix", g_102de300), 0x10);
+	I_CHR(0x2418) = sub_1007d890(kv->GetString("impact_snd_group", g_102de300));
+	I_INT(0x241c) = kv->GetInt("bucket", 0);
+	I_INT(0x2420) = kv->GetInt("bucket_position", 0);
+	I_INT(0x2424) = kv->GetInt("weight", 0);
+	I_INT(0x2428) = kv->GetInt("item_flags", 8);
+	I_CHR(0x5f314) = kv->GetInt("showusagehint", 0) != 0;
+	I_CHR(0x50374) = kv->GetInt("uses_accuracycursors", 0) != 0;
+	I_FLT(0x2430) = kv->GetFloat("ZoomSwayDeltaMagnitudeMin", 0.6f);
+	I_FLT(0x2434) = kv->GetFloat("ZoomSwayDeltaMagnitudeMax", 3.0f);
+	I_FLT(0x2438) = kv->GetFloat("ZoomSwayTimerMin", 0.5f);
+	I_FLT(0x243c) = kv->GetFloat("ZoomSwayTimerMax", 2.0f);
+
+	KV10259f80 *pSprite = kv->FindKey("SpriteData");
+	if (pSprite)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			char szKey[128];
+			char szDefault[64];
+			sprintf(szKey, "Acc_Crosshair%02d", i);
+			sprintf(szDefault, "hud/Crosshairs/Crosshair_%02d", i);
+			Q_strncpy(I_STR(0x5ebf0) + i * 0x80, pSprite->GetString(szKey, szDefault), 0x80);
+		}
+		Q_strncpy(I_STR(0x5f0f0), pSprite->GetString("Interactive_Crosshair", "hud/Crosshairs/Crosshair_Interactive"), 0x80);
+		Q_strncpy(I_STR(0x5f170), pSprite->GetString("Crosshair_UP", "hud/Crosshairs/Crosshair_UP"), 0x80);
+		Q_strncpy(I_STR(0x5f1f0), pSprite->GetString("Crosshair_X", "hud/Crosshairs/Crosshair_X"), 0x80);
+		Q_strncpy(I_STR(0x5f270), pSprite->GetString("Crosshair_Zero", "hud/Crosshairs/Crosshair_09"), 0x80);
+	}
+
+	I_INT(0x242c) = 0;
+	if (kv->GetInt("BitFlag_CantBeLast", 0))
+		I_INT(0x242c) |= 1;
+	if (kv->GetInt("BitFlag_Discipline_Tgt", 0))
+		I_INT(0x242c) |= 2;
+	if (kv->GetInt("reload_single", 0))
+		I_INT(0x242c) |= 8;
+
+	I_INT(0x4fe98) = kv->GetInt("throwing_weapon", 0);
+	I_INT(0x4fe9c) = kv->GetInt("is_droppable", 1);
+	I_INT(0x4fea0) = kv->GetInt("is_stackable", 0);
+	I_INT(0x4fea4) = kv->GetInt("permanent_inventory", 0);
+	I_INT(0x4fea8) = kv->GetInt("stack_limit", 10);
+	I_INT(0x4feac) = kv->GetInt("restrict_flags", 0);
+	I_INT(0x4feb0) = kv->GetInt("item_class_discount", 0);
+	I_INT(0x4feb4) = kv->GetInt("knowledge_min", 0);
+	I_INT(0x4fed4) = kv->GetInt("can_stakedmg", 0);
+	I_INT(0x4fed8) = kv->GetInt("fires_projectile", 0);
+	I_FLT(0x50370) = kv->GetFloat("knockback_chance", 0);
+	I_INT(0x4fedc) = kv->GetInt("projectile_sticks", 0);
+	I_INT(0x4fee0) = kv->GetInt("bloodpoints_restored", 1);
+	I_INT(0x4fee4) = kv->GetInt("is_wieldable", 1);
+	I_INT(0x4fee8) = kv->GetInt("discard_on_reload", 0);
+	I_FLT(0x4feec) = kv->GetFloat("projectile_velocity", 1000.0f);
+	Q_strncpy(I_STR(0x4fef0), kv->GetString("projectile_model", "models/weapons/projectile/bullet01.mdl"), 0x80);
+	Q_strncpy(I_STR(0x4ff70), kv->GetString("projectile_particles", "BulletTrail_Emitter"), 0x80);
+	Q_strncpy(I_STR(0x4fff0), kv->GetString("projectile_class", "vampireprojectile"), 0x80);
+	Q_strncpy(I_STR(0x50070), kv->GetString("projectile_impact_sound", g_102de300), 0x80);
+	Q_strncpy(I_STR(0x500f0), kv->GetString("projectile_sound", g_102de300), 0x80);
+	Q_strncpy(I_STR(0x50170), kv->GetString("muzzleflash_particle", "MuzzleFlash_Emitter"), 0x80);
+	Q_strncpy(I_STR(0x501f0), kv->GetString("muzzlesmoke_particle", "MuzzleSmoke_Emitter"), 0x80);
+	Q_strncpy(I_STR(0x50270), kv->GetString("viewmuzzleflash_particle", "MuzzleFlash_Emitter"), 0x80);
+	Q_strncpy(I_STR(0x502f0), kv->GetString("viewmuzzlesmoke_particle", "MuzzleSmoke_Emitter"), 0x80);
+	sub_101a39f0((IKVSub *)kv, (WeaponSoundInfo *)I_STR(0x50378), name);
+
+	const char *pszGrade = kv->GetString("grade", g_102de300);
+	if (!strcmp(pszGrade, "low"))
+		I_INT(0x4feb8) = 1;
+	else if (!strcmp(pszGrade, "mid"))
+		I_INT(0x4feb8) = 2;
+	else if (!strcmp(pszGrade, "high"))
+		I_INT(0x4feb8) = 3;
+	else
+		I_INT(0x4feb8) = 0;
+
+	const char *pszUpgrade = kv->GetString("upgrade_ability", g_102de300);
+	I_INT(0x4febc) = -1;
+	if (*pszUpgrade)
+		I_INT(0x4febc) = g_105f90b8.sub_1015c8f0(pszUpgrade);
+
+	I_INT(0x4fec0) = kv->GetInt("occult_min", 0);
+	I_INT(0x4fec4) = kv->GetInt("ranged_min", 0);
+	I_INT(0x4fec8) = kv->GetInt("melee_min", 0);
+	I_INT(0x4fecc) = kv->GetInt("thrown_min", 0);
+	I_INT(0x4fed0) = 0;
+	int idx = g_105f93c0.sub_1015f160("OccultGroups");
+	if (idx != -1)
+	{
+		const char *pszPower = kv->GetString("occult_power", g_102de300);
+		if (*pszPower)
+		{
+			for (int i = 0; i < 15; i++)
+			{
+				if (!_strcmpi(pszPower, g_105f93c0.sub_1015f270(idx)->sub_1015ecd0(i)))
+				{
+					if (i > 0)
+						I_INT(0x4fed0) = 1 << (i - 1);
+					break;
+				}
+			}
+		}
+	}
+
+	Q_strncpy(I_STR(0x2288), kv->GetString("wieldmodel_f", g_102de300), 0x80);
+	Q_strncpy(I_STR(0x2308), kv->GetString("wieldmodel_m", g_102de300), 0x80);
+	Q_strncpy(I_STR(0x2388), kv->GetString("infomodel", g_102de300), 0x80);
+	Q_strncpy(I_STR(0x108), kv->GetString("description", MISSING), 0x2000);
+	Q_strncpy(I_STR(0x2108), kv->GetString("activation0", MISSING), 0x20);
+	Q_strncpy(I_STR(0x2128), kv->GetString("activation1", MISSING), 0x20);
+	Q_strncpy(I_STR(0x2148), kv->GetString("jammed0", MISSING), 0x20);
+	Q_strncpy(I_STR(0x2168), kv->GetString("jammed1", MISSING), 0x20);
+	I_INT(0x2444) = kv->GetInt("is_visible_in_hud", 1);
+	I_INT(0x2448) = kv->GetInt("shows_view_model", 1);
+	I_INT(0x244c) = kv->GetInt("hides_hands_model", 0);
+	strcpy(I_STR(0x2450), kv->GetString("item_type", g_102de300));
+	strcpy(I_STR(0x24d4), kv->GetString("sound_group", g_102de300));
+	I_INT(0x2558) = kv->GetInt("item_worth", 0);
+	I_INT(0x255c) = kv->GetInt("player_sell", I_INT(0x2558));
+	strcpy(I_STR(0x2560), kv->GetString("wield_effect", g_102de300));
+	strcpy(I_STR(0x25e4), kv->GetString("equip_effect", g_102de300));
+	sub_101a5a90(name, (unsigned int *)I_STR(0x5eb1c), kv->GetString("equip_mask", g_102de300));
+
+	KV10259f80 *pDmg = kv->FindKey("DmgSpecialInfo");
+	if (pDmg)
+	{
+		Q_strncpy(I_STR(0x5eb20), pDmg->GetString("CritterClass", g_102de300), 0x20);
+		I_INT(0x5eb40) = pDmg->GetInt("DmgModifier", 0);
+		Q_strncpy(I_STR(0x5eb44), pDmg->GetString("SoundFX", g_102de300), 0x80);
+	}
+
+	I_FLT(0x4fe8c) = kv->GetInt("origin_x", 0);
+	I_FLT(0x4fe90) = kv->GetInt("origin_y", 0);
+	I_FLT(0x4fe94) = kv->GetInt("origin_z", 0);
+
+	const char *pszCamera = kv->GetString("camera_class", g_102de300);
+	if (!strcmp(pszCamera, "ranged"))
+		I_INT(0x2440) = 2;
+	else if (!strcmp(pszCamera, "melee"))
+		I_INT(0x2440) = 0x10;
+	else if (!strcmp(pszCamera, "thrown"))
+		I_INT(0x2440) = 4;
+	else if (!strcmp(pszCamera, "force_1st"))
+		I_INT(0x2440) = 8;
+	else if (!strcmp(pszCamera, "force_3rd"))
+		I_INT(0x2440) = 0x10;
+	else
+		I_INT(0x2440) = 0;
+
+	I_FLT(0x4fe6c) = kv->GetFloat("impact_force", 0);
+
+	if (!sub_101a3c20((IKVNode *)kv, (CWeaponAmmoInfo *)info, name))
+	{
+		kv->Release();
+		return 0;
+	}
+	if (!sub_101a3eb0((IKVNode *)kv, (CUnknown10258b00 *)info, name))
+	{
+		kv->Release();
+		return 0;
+	}
+
+	const char *pszScope = kv->GetString("Scope_Ranges", g_102de300);
+	if (*pszScope)
+	{
+		char szRanges[128];
+		strcpy(szRanges, pszScope);
+		char *tok = strtok(szRanges, ", ");
+		while (tok)
+		{
+			I_INT(0x4fe70 + I_INT(0x4fe84) * 4) = atoi(tok);
+			I_INT(0x4fe84)++;
+			tok = strtok(NULL, ", ");
+		}
+	}
+
+	char *pszType = sub_1015fb10(I_STR(0x2450));
+	strtok(pszType, " ");
+	I_INT(0x24d0) = FindItemType(pszType);
+	I_INT(0x25e0) = g_105f8b98.sub_10157b30(I_STR(0x2560));
+	I_INT(0x2664) = g_105f8b98.sub_10157b30(I_STR(0x25e4));
+
+	kv->Release();
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a58c0 size=0xb
 namespace lifted {
 struct C10158790 { int sub_10158790(); };
