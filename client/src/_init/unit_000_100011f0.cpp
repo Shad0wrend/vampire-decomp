@@ -1283,6 +1283,13 @@ int g_102e1c70 = ClientClassInit((DT_WeaponIArmor::ignored *)0);
 RecvTable g_102e5898;
 // END FUNCTION
 
+// FUNCTION: 0x10015550 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponIArmor_Lt_Cloth { struct ignored; }
+template <> int ClientClassInit<DT_WeaponIArmor_Lt_Cloth::ignored>(DT_WeaponIArmor_Lt_Cloth::ignored *);
+int g_102e5894 = ClientClassInit((DT_WeaponIArmor_Lt_Cloth::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10015790 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e033c;
