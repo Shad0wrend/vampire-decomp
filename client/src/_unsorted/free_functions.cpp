@@ -5157,6 +5157,57 @@ void CSave::sub_10129860(const void *p, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a060 size=0x110
+#include "CSave.h"
+
+struct datamap_t;
+struct typedescription_t {
+    int fieldType;
+    const char *fieldName;
+    int fieldOffset[2];
+    unsigned short fieldSize;
+    short flags;
+    const char *externalName;
+    void *pSaveRestoreOps;
+    void *inputFunc;
+    datamap_t *td;
+    int fieldSizeInBytes;
+    int unk;
+};
+extern void (*g_101e3114)(const char *, ...);
+
+bool CSave::sub_1012a060(int a, void *pData, void *pBase, typedescription_t *pField)
+{
+    switch (pField->fieldType) {
+    case 0xb:
+        vfunc33(pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    case 0xd:
+        vfunc35(pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    case 0xc:
+        vfunc37(pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    case 0xe:
+        vfunc29(pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    case 0xf:
+        vfunc26(pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    case 0x10:
+    case 0x11:
+        vfunc17(pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    case 0x13:
+        vfunc31(pBase, pField->fieldName, pData, (short)pField->fieldSize);
+        return true;
+    default:
+        g_101e3114("Bad field type\n");
+        return false;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a530 size=0x26
 struct CUnknown101a1780Arg {
     char m_pad0000[0x12];
