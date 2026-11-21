@@ -1497,6 +1497,13 @@ RecvTable g_103ecc30;
 ConVar g_103ecd10("muzzleflash_light", "1", 128);
 // END FUNCTION
 
+// FUNCTION: 0x1004a600 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1004a630(void);
+InterfaceReg g_103ecd5c(sub_1004a630, "TextureTransform_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x1004b1d0 size=0xa
 #include "ConVar.h"
 ConVar g_103edd98("r_visualizetraces", "0", 8192);
