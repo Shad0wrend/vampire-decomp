@@ -57961,6 +57961,26 @@ bool CUnknown1006cfb0::sub_10160560(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160590 size=0x66
+#include "StatDefault.h"
+struct StatItem { int id; };
+struct StatOwner {
+    char pad[0x4];
+    int m_count;
+    StatItem **m_items;
+    StatDefault *sub_10160590(int id);
+};
+StatDefault *StatOwner::sub_10160590(int id)
+{
+    for (int i = 0; i < m_count; i++) {
+        if (m_items[i]->id == id)
+            return (StatDefault *)m_items[i];
+    }
+    static StatDefault s_default(-1);
+    return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160610 size=0x50
 extern "C" int sprintf(char *, const char *, ...);
 void sub_1015fbb0(const char *);
