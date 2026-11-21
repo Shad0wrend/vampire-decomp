@@ -10476,6 +10476,31 @@ int sub_1003ecb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003ed20 size=0x8f
+#include "RecvTable.h"
+extern RecvTable g_103eb13c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_1028111c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEShowLine { struct ignored; }
+template <> int ClientClassInit<DT_TEShowLine::ignored>(DT_TEShowLine::ignored *)
+{
+	char *pRecvTableName = "DT_TEShowLine";
+	RecvTable &RecvTable = g_103eb13c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_1028111c, DataTableRecvProxy_StaticDataTable),
+		RecvPropVector("m_vecEnd", 28, 12, 0, RecvProxy_VectorToVector),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003ee60 size=0x12
 namespace lifted {
 extern char g_10227210;
