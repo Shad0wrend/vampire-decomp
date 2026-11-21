@@ -14045,6 +14045,31 @@ void UtlMem::sub_10130fd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131140 size=0xf9
+#include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CSoundEmitterRecord { char m_Data[216]; };
+#include "CUtlRBTree232.h"
+
+void CUtlRBTree232::sub_10131140(const void *pInsert, int *pParent, bool *pLeftChild)
+{
+    const CUtlRBTree232Of<CSoundEmitterRecord> *tree = (const CUtlRBTree232Of<CSoundEmitterRecord> *)this;
+    int current = m_Root;
+    *pParent = InvalidIndex();
+    *pLeftChild = false;
+    while (current != InvalidIndex()) {
+        *pParent = current;
+        if (m_LessFunc(pInsert, ElementAt(current).m_Data)) {
+            *pLeftChild = true;
+            current = tree->Links(current).m_Left;
+        } else {
+            *pLeftChild = false;
+            current = tree->Links(current).m_Right;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131480 size=0x19
 struct E101b6b60 { unsigned short a; unsigned short pad; int b; };
 
