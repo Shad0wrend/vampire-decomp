@@ -4444,6 +4444,13 @@ char CUnknown10050a60::sub_10050a60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050a70 size=0x6
+int sub_10050a70()
+{
+    return 0x200;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051b20 size=0x3
 void __stdcall sub_10051b20(int a0)
 {
