@@ -299,6 +299,14 @@ void sub_10028920(float *out, const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100291b0 size=0x3
+struct CUnknown100291b0 { void * sub_100291b0(); };
+void * CUnknown100291b0::sub_100291b0()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100291c0 size=0x32
 #include <string.h>
 
