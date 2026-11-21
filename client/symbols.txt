@@ -365,6 +365,7 @@
 0x1001f1d0 func   ?sub_1001f1d0@@YAHXZ sub_1001f1d0
 0x1001f2f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGIdolElephant@@@Z ClientClassInit
 0x1001f450 func   ?sub_1001f450@@YAHXZ sub_1001f450
+0x1001f570 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGarysCD@@@Z ClientClassInit
 0x1001f6d0 func   ?sub_1001f6d0@@YAHXZ sub_1001f6d0
 0x1001f950 func   ?sub_1001f950@@YAHXZ sub_1001f950
 0x1001fbd0 func   ?sub_1001fbd0@@YAHXZ sub_1001fbd0
