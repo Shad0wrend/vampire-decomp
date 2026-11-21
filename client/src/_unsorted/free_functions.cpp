@@ -27560,6 +27560,14 @@ void CUtlMemory12::sub_10163a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101646a0 size=0x4
+struct CUnknown101646a0 { int sub_101646a0(); };
+int CUnknown101646a0::sub_101646a0()
+{
+    return *(int *)((char *)this + 0x34);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101666c0 size=0x1
 void sub_101666c0()
 {
