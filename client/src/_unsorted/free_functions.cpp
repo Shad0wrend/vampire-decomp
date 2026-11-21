@@ -29307,6 +29307,14 @@ int CUnknown101c9da0::sub_101c9da0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cb000 size=0x4
+struct CUnknown101cb000 { int sub_101cb000(); };
+int CUnknown101cb000::sub_101cb000()
+{
+    return *(int *)((char *)this + 0x74);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0d28 size=0x18
 // TARGET: sub_101d0d28
 void sub_101d0d40();
