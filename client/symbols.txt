@@ -470,6 +470,7 @@
 0x1001ba90 func   ??_GC_ItemGGuyMagazine@@UAEPAXI@Z ??_GC_ItemGGuyMagazine@@UAEPAXI@Z
 0x1001bad0 func   ?sub_1001bad0@@YAHXZ sub_1001bad0
 0x1001bbf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGuyMagazine@@@Z ClientClassInit
+0x1001bd10 func   ??_GC_ItemGBrotherhoodFlyer@@UAEPAXI@Z ??_GC_ItemGBrotherhoodFlyer@@UAEPAXI@Z
 0x1001bd50 func   ?sub_1001bd50@@YAHXZ sub_1001bd50
 0x1001be70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGBrotherhoodFlyer@@@Z ClientClassInit
 0x1001bfd0 func   ?sub_1001bfd0@@YAHXZ sub_1001bfd0
