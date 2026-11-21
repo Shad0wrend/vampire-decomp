@@ -23659,6 +23659,17 @@ void sub_101a0f80(float *m)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a0fc0 size=0x47
+#include "VMatrix.h"
+void sub_101a0fc0(VMatrix &dst, const Vector &t)
+{
+    dst.Init(1.0f, 0.0f, 0.0f, t.x,
+             0.0f, 1.0f, 0.0f, t.y,
+             0.0f, 0.0f, 1.0f, t.z,
+             0.0f, 0.0f, 0.0f, 1.0f);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2290 size=0x157
 #include "QAngle.h"
 #include "VMatrix.h"
