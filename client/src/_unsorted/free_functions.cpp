@@ -11723,6 +11723,25 @@ void sub_101201c0(int a, IFieldSink *sink, IRestoreSrc *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101205d0 size=0x39
+struct CUnknown10158b40Obj {
+    virtual void vfunc0();
+    virtual void vfunc1(int nA, int nB);
+};
+
+extern CUnknown10158b40Obj *g_104e0c98;
+void sub_10120560(void *pA, void *pB);
+
+typedef int (__fastcall *CUnknownHandleFn)(void *pThis);
+
+// TARGET: sub_101205d0
+void sub_101205d0(void *pA, void *pB)
+{
+    g_104e0c98->vfunc1(((CUnknownHandleFn)((void **)*(void **)pA)[6])(pA), ((CUnknownHandleFn)((void **)*(void **)pB)[6])(pB));
+    sub_10120560(pA, pB);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120660 size=0x24
 class IPlaceholder10158c00
 {
