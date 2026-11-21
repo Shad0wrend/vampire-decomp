@@ -18554,6 +18554,40 @@ int __stdcall sub_1014d270(CCharView *p, int idx, unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d860 size=0xc4
+#include "CUnknown101e8080.h"
+extern int (*g_101e311c)(const char *, ...);
+extern const char g_102c9788[];
+extern const char g_102c97d4[];
+int sub_101e28e0(const char *, const char *);
+
+// TARGET: CUnknown101e8080::sub_1014d860
+bool CUnknown101e8080::sub_1014d860(const char *type, int *a, int *b, int *c)
+{
+    const char *name;
+    if (type) {
+        int n = m_nFollowers;
+        for (int i = 0; i < n; i++) {
+            CFollowerInfo *p = (CFollowerInfo *)((char *)m_pFollowers + i * 0x2c);
+            if (sub_101e28e0(p->m_name, type) == 0) {
+                *a = p->m_a;
+                *b = p->m_b;
+                *c = p->m_c;
+                return true;
+            }
+        }
+        name = type;
+    } else {
+        name = g_102c97d4;
+    }
+    g_101e311c(g_102c9788, name, m_pFollowers);
+    *a = m_pFollowers->m_a;
+    *b = m_pFollowers->m_b;
+    *c = m_pFollowers->m_c;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014de80 size=0x1e
 struct CUnk101d8230 {
 	void sub_101451c0();
