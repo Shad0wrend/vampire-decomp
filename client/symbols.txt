@@ -730,6 +730,7 @@
 0x100baba0 func   ?sub_100baba0@@YADXZ sub_100baba0
 0x100bb170 func   ?sub_100bb170@@YAHXZ sub_100bb170
 0x100bb210 func   ?sub_100bb210@@YAHXZ sub_100bb210
+0x100bb4f0 func   ?sub_100bb4f0@@YAHXZ sub_100bb4f0
 0x100bbb80 func   ?sub_100bbb80@@YAHXZ sub_100bbb80
 0x100bc170 func   ?sub_100bc170@@YGHHH@Z sub_100bc170
 0x100bc680 func   ?sub_100bc680@@YGHHH@Z sub_100bc680
