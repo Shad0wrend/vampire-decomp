@@ -2298,6 +2298,7 @@
 0x10140380 func   ?sub_10140380@CPtrList101d6400@@QAEXXZ CPtrList101d6400::sub_10140380
 0x101403d0 func   ?sub_101403d0@CLevelLoader@@QAE_NPAUKVNode@@H@Z CLevelLoader::sub_101403d0
 0x10140440 func   ?sub_10140440@@YGDHH@Z sub_10140440
+0x10140500 func   ??0CUnknown101d7520Entry@@QAE@H@Z CUnknown101d7520Entry::CUnknown101d7520Entry
 0x101405a0 func   ?sub_101405a0@@YAXXZ sub_101405a0
 0x101405b0 func   ?sub_101405b0@CUnknown101d6750@@QAEPAUS101d61e0@@XZ CUnknown101d6750::sub_101405b0
 0x101406b0 func   ?sub_101406b0@CPartListUnit3@@QAEXXZ CPartListUnit3::sub_101406b0
