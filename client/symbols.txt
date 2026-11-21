@@ -1985,6 +1985,7 @@
 0x1012a7f0 func   ?vfunc8@CRestore@@UAEXXZ CRestore::vfunc8
 0x1012aa70 func   ?vfunc9@CRestore@@UAEXPAG@Z CRestore::vfunc9
 0x1012aaa0 func   ?vfunc13@CRestore@@UAEFXZ CRestore::vfunc13
+0x1012aac0 func   ?vfunc14@CRestore@@UAEHXZ CRestore::vfunc14
 0x1012aae0 func   ?vfunc16@CRestore@@QAEDXZ CRestore::vfunc16
 0x1012ab00 func   ?sub_1012ab00@CSave@@QAEHHHPAUCSaveDesc@@@Z CSave::sub_1012ab00
 0x1012abd0 func   ?sub_1012abd0@@YGHH@Z sub_1012abd0

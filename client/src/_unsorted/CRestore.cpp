@@ -211,6 +211,17 @@ short CRestore::vfunc13()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012aac0 size=0x1b
+// TARGET: CRestore::vfunc14
+#include "CRestore.h"
+int CRestore::vfunc14()
+{
+	int v = 0;
+	sub_1012ab60(&v, 4);
+	return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012aae0 size=0x18
 #include "CRestore.h"
 char CRestore::vfunc16()
