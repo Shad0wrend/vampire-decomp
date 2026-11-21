@@ -410,6 +410,7 @@
 0x10018890 func   ??_GC_ItemGWatchNormal@@UAEPAXI@Z ??_GC_ItemGWatchNormal@@UAEPAXI@Z
 0x100188d0 func   ?sub_100188d0@@YAHXZ sub_100188d0
 0x100189f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWatchNormal@@@Z ClientClassInit
+0x10018b10 func   ??_GC_ItemGWatchFancy@@UAEPAXI@Z ??_GC_ItemGWatchFancy@@UAEPAXI@Z
 0x10018b50 func   ?sub_10018b50@@YAHXZ sub_10018b50
 0x10018c70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWatchFancy@@@Z ClientClassInit
 0x10018dd0 func   ?sub_10018dd0@@YAHXZ sub_10018dd0
