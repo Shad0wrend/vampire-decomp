@@ -5394,6 +5394,15 @@ void CMem16_t::sub_100ccb30(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd000 size=0x2e
+// TARGET: sub_100cd000
+void sub_100cd000(float t, const float *a, const float *b, float *out) {
+    for (int i = 0; i < 3; i++) {
+        out[i] = (b[i] - a[i]) * t + a[i];
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdb00 size=0x36
 #include <string.h>
 
