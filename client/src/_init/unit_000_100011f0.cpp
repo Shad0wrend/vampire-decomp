@@ -1151,6 +1151,13 @@ int g_102e0ae0 = ClientClassInit((DT_OccultStrength::ignored *)0);
 RecvTable g_102e12c4;
 // END FUNCTION
 
+// FUNCTION: 0x100139d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultExperience { struct ignored; }
+template <> int ClientClassInit<DT_OccultExperience::ignored>(DT_OccultExperience::ignored *);
+int g_102e12c0 = ClientClassInit((DT_OccultExperience::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10013c10 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e4ab4;
