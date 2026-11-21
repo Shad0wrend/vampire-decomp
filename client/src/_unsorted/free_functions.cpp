@@ -20467,6 +20467,35 @@ void CUnk101f5ed0::sub_10156160()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156180 size=0xc2
+#include "CUnknown101f5f00.h"
+
+void CUnknown101f5f00::sub_10156180(int first, int key, int second)
+{
+	if (key != -1) {
+		CUnknown101f5f00Rec *rec = &m_aRecs[key];
+		if (rec->m_nCount == 0) {
+			rec->m_pFirst = (int *)operator new(4);
+			rec->m_pSecond = (int *)operator new(4);
+		} else {
+			int *pNewFirst = (int *)operator new(rec->m_nCount * 4 + 4);
+			int *pNewSecond = (int *)operator new(rec->m_nCount * 4 + 4);
+			for (int i = 0; i < rec->m_nCount; i++) {
+				pNewFirst[i] = rec->m_pFirst[i];
+				pNewSecond[i] = rec->m_pSecond[i];
+			}
+			operator delete(rec->m_pFirst);
+			operator delete(rec->m_pSecond);
+			rec->m_pSecond = pNewSecond;
+			rec->m_pFirst = pNewFirst;
+		}
+		rec->m_pFirst[rec->m_nCount] = first;
+		rec->m_pSecond[rec->m_nCount] = second;
+		rec->m_nCount++;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156770 size=0x40
 struct CUnknownStat101f69a0 {
     int m0;
