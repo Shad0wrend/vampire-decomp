@@ -1051,6 +1051,7 @@
 0x100ebf30 func   ?sub_100ebf30@@YGXH@Z sub_100ebf30
 0x100ebf40 func   ?sub_100ebf40@@YAXXZ sub_100ebf40
 0x100ec360 func   ?sub_100ec360@@YAHXZ sub_100ec360
+0x100ec390 func   ?sub_100ec390@CUnknown100ec390@@QAEXXZ CUnknown100ec390::sub_100ec390
 0x100ec3a0 func   ?sub_100ec3a0@CGameMovement@@QAEHABVVector@@@Z CGameMovement::sub_100ec3a0
 0x100ecfb0 func   ?sub_100ecfb0@@YGMMM@Z sub_100ecfb0
 0x100edcf0 func   ?sub_100edcf0@@YAPBDH@Z sub_100edcf0

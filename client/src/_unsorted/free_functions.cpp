@@ -14626,6 +14626,14 @@ int sub_100ec360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec390 size=0xb
+struct CUnknown100ec390 { void sub_100ec390(); };
+void CUnknown100ec390::sub_100ec390()
+{
+    *(int *)((char *)this + 0xac) = -9999;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ec3a0 size=0xae
 #include "CGameMovement.h"
 
