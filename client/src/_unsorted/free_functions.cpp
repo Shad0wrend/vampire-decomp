@@ -5370,6 +5370,12 @@ void UtlMem::sub_1009cf00(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009db70 size=0x1
+void sub_1009db70()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3300 size=0x1a
 namespace lifted {
 extern int g_102afbe8;
