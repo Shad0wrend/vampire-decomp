@@ -2135,6 +2135,13 @@ int g_102e67a0 = ClientClassInit((DT_ItemGRingSerialKiller2::ignored *)0);
 RecvTable g_102e0440;
 // END FUNCTION
 
+// FUNCTION: 0x100206d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGGargoyleBook { struct ignored; }
+template <> int ClientClassInit<DT_ItemGGargoyleBook::ignored>(DT_ItemGGargoyleBook::ignored *);
+int g_102e043c = ClientClassInit((DT_ItemGGargoyleBook::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10020910 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e3b08;
