@@ -28789,6 +28789,14 @@ int *COwner101e80c0::sub_1014d120(int *pResult, int a, int unused, int limit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d150 size=0xd
+int __stdcall sub_1014d150(int a0, int a1, int a2, int a3)
+{
+    *(int *)((char *)a0) = 1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d160 size=0x2b
 struct CUnk101e8210Inner {
     int sub_1014b3b0(int a);
