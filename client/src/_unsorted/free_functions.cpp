@@ -21771,6 +21771,28 @@ bool CVStatInfo_t::sub_1015bcc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015be50 size=0x6d
+struct TraceEnt { const char *a; void *b; void *c; };
+extern int *g_101e3128;
+extern TraceEnt *g_101e3124;
+extern char g_102cbe74[];
+extern char g_102de300[];
+struct CVStatInfo_t { char pad[0xfc]; int m_hidden; bool sub_1015be50(); };
+bool CVStatInfo_t::sub_1015be50()
+{
+    g_101e3124[*g_101e3128].a = g_102cbe74;
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    ++*g_101e3128;
+    if (m_hidden == 0) {
+        --*g_101e3128;
+        return false;
+    }
+    --*g_101e3128;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015c8f0 size=0xb8
 #include "CVStatInfoList_t.h"
 
