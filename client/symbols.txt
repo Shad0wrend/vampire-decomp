@@ -748,6 +748,7 @@
 0x10146c20 func   ?sub_10146c20@CUnknown101db210@@QAEXXZ CUnknown101db210::sub_10146c20
 0x10146cb0 func   ?sub_10146cb0@CStatDefault60List@@QAEDPAVIKVNodeView@@PAX@Z CStatDefault60List::sub_10146cb0
 0x10146e00 func   ?sub_10146e00@S1006cd00@@QAEXXZ S1006cd00::sub_10146e00
+0x10146e70 func   ?sub_10146e70@CUnknown101dbc60Tail@@QAEXXZ CUnknown101dbc60Tail::sub_10146e70
 0x10146ed0 func   ?sub_10146ed0@CUnk101db960@@QAEPAU1@XZ CUnk101db960::sub_10146ed0
 0x10146f10 func   ?sub_10146f10@@YAHH@Z sub_10146f10
 0x10146f90 func   ?sub_10146f90@@YAHH@Z sub_10146f90

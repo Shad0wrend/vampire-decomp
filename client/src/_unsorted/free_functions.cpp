@@ -18629,6 +18629,23 @@ void S1006cd00::sub_10146e00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146e70 size=0x57
+#include "CUnknown101dbc60.h"
+#include "CUnknown101db210.h"
+
+extern int (*g_101e3190)(char *pDest, int maxLen, const char *pFormat, ...);
+extern void (*g_101e3108)(const char *pMsg, ...);
+
+void CUnknown101dbc60Tail::sub_10146e70()
+{
+	char buf[512];
+	g_101e3190(buf, 512, "[[Affects_Table_List]]:\n");
+	g_101e3108("%s", buf);
+	for (int i = 0; i < m_nCount; i++)
+		m_ppTables[i]->sub_10146c20();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146ed0 size=0x25
 namespace block_101db960 {
 struct CUnitA { int m_0, m_4, m_8, m_c; void *sub_101465b0(); };
