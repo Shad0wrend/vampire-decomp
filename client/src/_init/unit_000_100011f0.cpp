@@ -2999,6 +2999,13 @@ int g_102ece1c = ClientClassInit((DT_TEBSPDecal::ignored *)0);
 RecvTable g_102ed034;
 // END FUNCTION
 
+// FUNCTION: 0x10035800 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBubbles { struct ignored; }
+template <> int ClientClassInit<DT_TEBubbles::ignored>(DT_TEBubbles::ignored *);
+int g_102ed030 = ClientClassInit((DT_TEBubbles::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10035b00 size=0xa
 #include "RecvTable.h"
 RecvTable g_102ed084;
