@@ -45,6 +45,7 @@
 0x10004d50 func   ?sub_10004d50@@YAMPBVVector@@@Z sub_10004d50
 0x10004d80 func   ?sub_10004d80@Vector@@QBE?AV1@M@Z Vector::sub_10004d80
 0x100054f0 func   ??_GCPlasmaSpray@@UAEPAXI@Z ??_GCPlasmaSpray@@UAEPAXI@Z
+0x100057a0 func   ??_GC_PlasmaBeamNode@@UAEPAXI@Z ??_GC_PlasmaBeamNode@@UAEPAXI@Z
 0x100057c0 func   ??1C_PlasmaBeamNode@@UAE@XZ C_PlasmaBeamNode::~C_PlasmaBeamNode
 0x100058e0 func   ?sub_100058e0@@YADXZ sub_100058e0
 0x10005c20 func   ?sub_10005c20@@YAHXZ sub_10005c20
