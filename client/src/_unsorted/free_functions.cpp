@@ -19913,6 +19913,28 @@ const char *CUnknown101e19b0::sub_1014a200(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a9e0 size=0x5c
+#include "CUnknown101e0f00.h"
+
+extern CUnknown101e0f00 g_105e80d0;
+
+// TARGET: CUnknown101e0f00::sub_1014a9e0
+void *CUnknown101e0f00::sub_1014a9e0(int a, int b, int c)
+{
+	int index = g_105e80d0.sub_10149d40(b, c);
+	if (index != -1)
+	{
+		void *pTarget = sub_1014a9c0((void *)a);
+		if (pTarget)
+		{
+			if (sub_1014a270((CUnknown101e0f00Entry *)m_ppEntries[index], (void *)a, (void *)a, pTarget, 1))
+				return pTarget;
+		}
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014cfd0 size=0x41
 struct CGravityVar101e7dd0 { virtual void v0(); virtual bool IsZero(); char pad[0x28 - 4]; float m_flValue; };
 extern CGravityVar101e7dd0 *g_104dfce4;
