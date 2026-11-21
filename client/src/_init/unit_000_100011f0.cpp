@@ -2138,3 +2138,8 @@ ConVar g_105fad10("timemode", "4", 0, "Show timings in:\n    0 = cycles\n    1 =
 #include "ConVar.h"
 ConVar g_105fad58("host_speeds", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101688d0 size=0xa
+#include "ConVar.h"
+ConVar g_105fae40("net_graph", "0", 0, "Draw the network usage graph");
+// END FUNCTION
