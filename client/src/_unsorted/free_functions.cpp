@@ -14978,6 +14978,37 @@ void __fastcall sub_101391d0(CTreeHolder1024a120 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101392a0 size=0x54
+#include "CUnknown1024a230.h"
+#include "CUnknown1024b2d0.h"
+#include "utlrbtree.h"
+
+struct CUnknown1024a230_Entry
+{
+	unsigned short m_id;
+	int m_data;
+};
+
+bool sub_10139300(const CUnknown1024a230_Entry &a, const CUnknown1024a230_Entry &b);
+
+struct CUnknown1024a230ObjX
+{
+	CUtlRBTree<CUnknown1024a230_Entry, unsigned short> m_Tree;
+	CUnknown1024b2d0 m_Strings;
+
+	CUnknown1024a230ObjX() : m_Tree(0, 0, sub_10139300)
+	{
+		m_Strings.sub_1013d2b0(0, 0, 1);
+	}
+};
+
+CUnknown1024a230 *CUnknown1024a230::sub_101392a0()
+{
+	m_pObj = (CUnknown1024a230Obj *)new CUnknown1024a230ObjX;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139340 size=0x116
 #include "utlmemory.h"
 #include "utlrbtree.h"
