@@ -120,6 +120,7 @@
 0x10089b20 func   ?sub_10089b20@@YAXPAUCBlendStudioHdr@@PAUCBlendVec@@PAUCBlendQuat@@PAUCBlendSeqDesc@@MPAUCBlendBoneMask@@@Z sub_10089b20
 0x10089c40 func   ?sub_10089c40@@YAXPADPAUV3@@PAUQ4@@HHPAM0@Z sub_10089c40
 0x1008a110 func   ?sub_1008a110@@YAXHHHHHHHM@Z sub_1008a110
+0x1008a690 func   ?sub_1008a690@@YAXPADPAX1HH@Z sub_1008a690
 0x1008a8e0 func   ?sub_1008a8e0@@YAXPAUStudioHdr@@PBM111HPAUmatrix3x4_t@@PAUStudioBoneMask@@@Z sub_1008a8e0
 0x1008ae50 func   ?sub_1008ae50@@YAXPAUBoneView@@HPAUBoneAccView@@@Z sub_1008ae50
 0x1008b560 func   ?sub_1008b560@@YAXPAHPAD@Z sub_1008b560
