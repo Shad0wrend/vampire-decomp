@@ -2379,6 +2379,7 @@
 0x10118150 func   ??1CSimpleEmitter@@UAE@XZ CSimpleEmitter::~CSimpleEmitter
 0x10118150 func   ?sub_10118150@CUnknown10118150@@QAEHXZ CUnknown10118150::sub_10118150
 0x101181b0 func   ?sub_101181b0@CUnknown101181b0@@QAEHHH@Z CUnknown101181b0::sub_101181b0
+0x10118800 func   ??_GCEmberEffect@@UAEPAXI@Z ??_GCEmberEffect@@UAEPAXI@Z
 0x10118f90 func   ?sub_10118f90@@YGHHHHHH@Z sub_10118f90
 0x101190d0 func   ?sub_101190d0@@YAHXZ sub_101190d0
 0x10119410 func   ?sub_10119410@@YAHXZ sub_10119410
