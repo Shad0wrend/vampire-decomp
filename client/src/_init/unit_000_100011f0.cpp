@@ -273,3 +273,9 @@ CUtlVector<int> g_10477154;
 #include "ConVar.h"
 ConVar g_10477110("debug_dump_activity_list", "0", 8448, "Set this to true to get a full list of activities and sequences when you fail to find one.");
 // END FUNCTION
+
+// FUNCTION: 0x10067d50 size=0xa
+#include "ConCommand.h"
+void sub_10067d00(void);
+ConCommand g_104770d0("activitydump", sub_10067d00, "Forces ActivityList Dump", 8448, 0);
+// END FUNCTION
