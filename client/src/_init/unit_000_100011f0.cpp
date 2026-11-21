@@ -796,3 +796,8 @@ ConVar g_104d1d08("cam_idealyaw", "0", 0);
 #include "ConVar.h"
 ConVar g_104d2690("cam_idealpitch", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100faf60 size=0xa
+#include "ConVar.h"
+ConVar g_104d2058("cam_idealdist", "85", 0);
+// END FUNCTION
