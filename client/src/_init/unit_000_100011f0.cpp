@@ -4044,6 +4044,13 @@ int g_1049e18c = ClientClassInit((DT_PredictableId::ignored *)0);
 RecvTable g_1049dabc;
 // END FUNCTION
 
+// FUNCTION: 0x1009d840 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseEntity { struct ignored; }
+template <> int ClientClassInit<DT_BaseEntity::ignored>(DT_BaseEntity::ignored *);
+int g_1049dab8 = ClientClassInit((DT_BaseEntity::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1009e280 size=0xa
 #include "ConVar.h"
 ConVar g_1049dbd8("cl_simpleshadows", "0", 0);
