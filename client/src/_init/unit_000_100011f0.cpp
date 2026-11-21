@@ -3179,6 +3179,13 @@ int g_102eeb58 = ClientClassInit((DT_TEInspectionFX::ignored *)0);
 RecvTable g_102eeb88;
 // END FUNCTION
 
+// FUNCTION: 0x1003a560 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEKillPlayerAttachments { struct ignored; }
+template <> int ClientClassInit<DT_TEKillPlayerAttachments::ignored>(DT_TEKillPlayerAttachments::ignored *);
+int g_102eeb84 = ClientClassInit((DT_TEKillPlayerAttachments::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1003a6b0 size=0xa
 #include "ConVar.h"
 ConVar g_102eec58("cl_ejectbrass", "1", 0);
