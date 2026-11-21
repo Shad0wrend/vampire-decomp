@@ -1441,6 +1441,25 @@ int sub_10079fe0(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a030 size=0x1d
+// TARGET: sub_1007a030
+struct CUnk10428970
+{
+    char pad[8];
+    int m_8;
+};
+CUnk10428970 *__cdecl sub_1008d9d0(int a, int b);
+int __cdecl sub_1007a030(int a, int b)
+{
+    CUnk10428970 *p = sub_1008d9d0(a, b);
+    if (p)
+    {
+        return p->m_8;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007aca0 size=0x2b
 #include "CUnknown100290c0.h"
 
