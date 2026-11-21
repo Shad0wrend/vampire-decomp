@@ -369,3 +369,8 @@ ConVar g_1049d370("damage_floaters_speed_min", "50", 0, "Upward speed of floater
 #include "ConVar.h"
 ConVar g_1049d3b8("damage_floaters_speed_max", "100", 0, "Upward speed of floaters when at the maximum distance value.");
 // END FUNCTION
+
+// FUNCTION: 0x1009a500 size=0xa
+#include "ConVar.h"
+ConVar g_1049d518("damage_floaters_scale_min", "0.3", 0, "Scaled size of floater art when at the minimum distance value.");
+// END FUNCTION
