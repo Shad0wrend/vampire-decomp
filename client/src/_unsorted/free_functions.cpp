@@ -11244,6 +11244,58 @@ int *CUnknown101f1050::sub_10152f80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152ff0 size=0xd0
+#include "CUnknown101f10e0.h"
+
+struct CReactionKV
+{
+	virtual void v0(); virtual void v1();
+	virtual CReactionKV *FindKey(const char *name);	// slot 2
+	virtual CReactionKV *GetNextKey();	// slot 3
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12();
+	virtual const char *GetString(const char *name, const char *def);	// slot 13
+};
+
+struct CReactionItem { void sub_10152bd0(CReactionKV *pGroup, int id); };
+struct CReactionNames { int sub_10153720(const char *name); };
+
+extern CReactionNames g_105e8a58;
+extern void (__cdecl *g_101e3108)(const char *fmt, ...);
+extern char g_102de300[];
+int *sub_1015f7e0(int *pOut, CReactionKV *pData, const char *name);
+
+bool CUnknown101f10e0::sub_10152ff0(void *pData)
+{
+	CReactionKV *pKV = (CReactionKV *)pData;
+	if (pKV) {
+		const char *pszName = pKV->GetString("InternalName", g_102de300);
+		int id = g_105e8a58.sub_10153720(pszName);
+		if (id == -1) {
+			int *pSlot = sub_10152f80();
+			if (pSlot) {
+				int tmp;
+				*pSlot = *sub_1015f7e0(&tmp, pKV, "InternalName");
+			}
+			id = g_105e8a58.sub_10153720(pszName);
+		}
+		CReactionKV *pGroup = pKV->FindKey("ReactionGroup");
+		while (pGroup) {
+			CReactionItem *pItem = (CReactionItem *)sub_10152e30();
+			if (!pItem) {
+				g_101e3108("Unable to parse data file ReactionInfoList.  Memory allocation ERROR!\n");
+				return false;
+			}
+			pItem->sub_10152bd0(pGroup, id);
+			pGroup = pGroup->GetNextKey();
+		}
+		return true;
+	}
+	g_101e3108("Unable to parse data file for ReactionInfoList.\n");
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153610 size=0x29
 extern char g_102ca648[];
 extern char g_102de300[];
