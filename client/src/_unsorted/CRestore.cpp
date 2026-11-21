@@ -300,6 +300,18 @@ int CRestore::vfunc20(int *pValues, int count, int nBytesAvailable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012adf0 size=0x14
+#include "CRestore.h"
+namespace lifted {
+int __stdcall sub_1012ab60(int, int);
+}
+int CRestore::vfunc23(int a0)
+{
+    lifted::sub_1012ab60(a0, 0xc);
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ae10 size=0x4c
 #include "CRestore.h"
 

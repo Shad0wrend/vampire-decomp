@@ -1546,6 +1546,7 @@
 0x1012abe0 func   ?vfunc12@CRestore@@UAEIHHH@Z CRestore::vfunc12
 0x1012ac70 func   ?vfunc17@CRestore@@UAEHPAXHH@Z CRestore::vfunc17
 0x1012ad70 func   ?vfunc20@CRestore@@UAEHPAHHH@Z CRestore::vfunc20
+0x1012adf0 func   ?vfunc23@CRestore@@UAEHH@Z CRestore::vfunc23
 0x1012ae10 func   ?vfunc22@CRestore@@UAEHPAVVector@@HH@Z CRestore::vfunc22
 0x1012aec0 func   ?sub_1012aec0@CRestore@@QAEPAUCRestoreSaveEnt@@H@Z CRestore::sub_1012aec0
 0x1012afa0 func   ?vfunc29@CRestore@@UAEHPAHHH@Z CRestore::vfunc29
