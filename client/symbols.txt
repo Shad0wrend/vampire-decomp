@@ -2314,6 +2314,7 @@
 0x10186bc0 func   ?sub_10186bc0@@YGXH@Z sub_10186bc0
 0x10186ce0 func   ?sub_10186ce0@@YAHXZ sub_10186ce0
 0x10187c10 func   ?sub_10187c10@CUnknown10187c10@@QAEDXZ CUnknown10187c10::sub_10187c10
+0x10187ca0 func   ?sub_10187ca0@@YAHXZ sub_10187ca0
 0x10187d80 func   ?sub_10187d80@@YAHXZ sub_10187d80
 0x10187d90 func   ?sub_10187d90@@YGXH@Z sub_10187d90
 0x10187fc0 func   ?sub_10187fc0@@YAHXZ sub_10187fc0
