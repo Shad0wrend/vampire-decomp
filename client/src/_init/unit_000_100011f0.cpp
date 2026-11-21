@@ -1400,3 +1400,9 @@ ConCommand g_104d34e4("-forward", sub_10102040, 0, 0, 0);
 void sub_10102050(void);
 ConCommand g_104d36ec("+back", sub_10102050, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10104bd0 size=0xa
+#include "ConCommand.h"
+void sub_10102060(void);
+ConCommand g_104d3ac8("-back", sub_10102060, 0, 0, 0);
+// END FUNCTION
