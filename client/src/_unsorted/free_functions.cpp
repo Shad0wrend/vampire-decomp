@@ -12543,6 +12543,74 @@ void QuestJournal::sub_10162650()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10162710 size=0x123
+#include "QuestJournal.h"
+
+struct ScopeEntry_t { const char *m_pszName; const char *m_pszEnt; const char *m_pszExtra; };
+extern ScopeEntry_t *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+extern void (*g_101e30fc)(void *);
+
+struct Completion_t
+{
+    int m_a0;
+    void *m_p4;
+    int m_a8;
+    int m_ac;
+    void *m_p10;
+    void *m_p14;
+};
+
+void QuestJournal::sub_10162710()
+{
+    g_101e3124[*g_101e3128].m_pszName = "QuestJournal::PurgeQuestData";
+    g_101e3124[*g_101e3128].m_pszEnt = g_102de300;
+    g_101e3124[*g_101e3128].m_pszExtra = g_102de300;
+    (*g_101e3128)++;
+    int i = 0;
+    m_flag28 = 0;
+    for (i = 0; i < m_field[3]; i++) {
+        operator delete(((Completion_t *)m_field[0])[i].m_p4);
+        operator delete(((Completion_t *)m_field[0])[i].m_p10);
+        operator delete(((Completion_t *)m_field[0])[i].m_p14);
+    }
+    i = 0;
+    if (m_field[8] > 0) {
+        int off = 0;
+        do {
+            operator delete(*(void **)(m_field[5] + off));
+            operator delete(*(void **)(m_field[5] + off + 4));
+            i++;
+            off += 0x68;
+        } while (i < m_field[8]);
+    }
+    void (*pfnFree)(void *) = g_101e30fc;
+    m_field[3] = 0;
+    if (m_field[2] != -1) {
+        if (m_field[0]) {
+            pfnFree((void *)m_field[0]);
+            m_field[0] = 0;
+        }
+        m_field[1] = 0;
+    }
+    m_field[4] = m_field[0];
+    {
+        int *pB = &m_field[5];
+        pB[3] = 0;
+        if (pB[2] != -1) {
+            if (pB[0]) {
+                pfnFree((void *)pB[0]);
+                pB[0] = 0;
+            }
+            pB[1] = 0;
+        }
+        m_field[9] = pB[0];
+    }
+    (*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10162840 size=0x2f
 #include "QuestJournal.h"
 
