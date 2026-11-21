@@ -631,6 +631,7 @@
 0x1013cc20 func   ?sub_1013cc20@CUtlBuffer@@QAEHPBDPAD@Z CUtlBuffer::sub_1013cc20
 0x1013ce60 func   ?sub_1013ce60@CUnit1006c4f0@@QAEXPBD@Z CUnit1006c4f0::sub_1013ce60
 0x1013ce90 func   ?sub_1013ce90@CUtlBuffer@@QAEXPBDPAD@Z CUtlBuffer::sub_1013ce90
+0x1013cfe0 func   ?sub_1013cfe0@@YAXXZ sub_1013cfe0
 0x1013d2b0 func   ?sub_1013d2b0@CUnknown1024b2d0@@QAEPAV1@HHD@Z CUnknown1024b2d0::sub_1013d2b0
 0x1013d330 func   ?sub_1013d330@CUnknown1024b370@@QAEXXZ CUnknown1024b370::sub_1013d330
 0x1013d3a0 func   ?sub_1013d3a0@CUnknown1024b370@@QAE?AUCUnknown1024b370Symbol@@PBD@Z CUnknown1024b370::sub_1013d3a0

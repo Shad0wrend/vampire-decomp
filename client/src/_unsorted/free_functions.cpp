@@ -15457,6 +15457,20 @@ void CUtlBuffer::sub_1013ce90(const char *pFmt, char *list)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013cfe0 size=0x43
+#include "CUnknown1024b2d0.h"
+extern CUnknown1024b2d0 *g_105e74d8;
+extern char g_105e74dc;
+void sub_1013cfe0()
+{
+	if (!g_105e74dc) {
+		CUnknown1024b2d0 *p = (CUnknown1024b2d0 *)operator new(0x2c);
+		g_105e74d8 = p ? p->sub_1013d2b0(0, 0x20, 0) : 0;
+		g_105e74dc = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d2b0 size=0x71
 #include "CUnknown1024b2d0.h"
 
