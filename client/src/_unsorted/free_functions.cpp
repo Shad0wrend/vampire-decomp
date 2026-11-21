@@ -6160,6 +6160,26 @@ float sub_100db420(const Vector &a, const Vector &b, int i, float c, float d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd3a0 size=0xb7
+#include "Vector.h"
+struct S2D { float x, y; };
+
+inline void VectorLerpIdx(const Vector &src1, const Vector &src2, vec_t t, Vector &dest)
+{
+	dest[0] = src1[0] + (src2[0] - src1[0]) * t;
+	dest[1] = src1[1] + (src2[1] - src1[1]) * t;
+	dest[2] = src1[2] + (src2[2] - src1[2]) * t;
+}
+
+void sub_100dd3a0(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, const S2D &frac, Vector &out)
+{
+	Vector t[2];
+	VectorLerpIdx(p1, p4, frac.y, t[0]);
+	VectorLerpIdx(p2, p3, frac.y, t[1]);
+	VectorLerpIdx(t[0], t[1], frac.x, out);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df190 size=0x24
 struct CUnknown10753434
 {
