@@ -8386,6 +8386,12 @@ void CMem8b_t::sub_100eff70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f24a0 size=0x1
+void sub_100f24a0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3f90 size=0xcb
 extern "C" void *__cdecl sub_101d0f30(void *, const void *, unsigned int);
 extern void *(__cdecl *g_101e3100)(int);
