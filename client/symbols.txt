@@ -848,6 +848,7 @@
 0x100d8830 func   ?sub_100d8830@UtlMem@@QAEXXZ UtlMem::sub_100d8830
 0x100d90b0 func   ?sub_100d90b0@UtlMem@@QAEXXZ UtlMem::sub_100d90b0
 0x100d9160 func   ?sub_100d9160@CUnknown100d9160@@QAEXXZ CUnknown100d9160::sub_100d9160
+0x100d9210 func   ?sub_100d9210@CUnknown100d9210@@QAEXXZ CUnknown100d9210::sub_100d9210
 0x100d9740 func   ?sub_100d9740@@YAXXZ sub_100d9740
 0x100d9b20 func   ?vfunc0@CAutoGameSystem@@UAE_NXZ CAutoGameSystem::vfunc0
 0x100d9b30 func   ?vfunc1@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc1

@@ -12022,6 +12022,17 @@ void CUnknown100d9160::sub_100d9160()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9210 size=0x7
+namespace lifted {
+extern char g_1023486c;
+}
+struct CUnknown100d9210 { void sub_100d9210(); };
+void CUnknown100d9210::sub_100d9210()
+{
+    *(int *)this = (int)&lifted::g_1023486c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9740 size=0x1
 void sub_100d9740()
 {
