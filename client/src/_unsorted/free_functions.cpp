@@ -27176,6 +27176,12 @@ void sub_101869b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10186bc0 size=0x3
+void __stdcall sub_10186bc0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189130 size=0x1
 void sub_10189130()
 {
