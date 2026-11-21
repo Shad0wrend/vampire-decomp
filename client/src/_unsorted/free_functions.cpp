@@ -14754,6 +14754,13 @@ int sub_10125790()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10125dc0 size=0x5
+int __stdcall sub_10125dc0(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10126a30 size=0x39
 void sub_10120660(int a, int b);
 
