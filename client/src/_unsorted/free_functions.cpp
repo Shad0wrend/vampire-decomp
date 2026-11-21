@@ -5762,6 +5762,13 @@ void __stdcall sub_100a13d0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a32c0 size=0x3
+char sub_100a32c0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3300 size=0x1a
 namespace lifted {
 extern int g_102afbe8;
