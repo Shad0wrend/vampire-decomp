@@ -1675,6 +1675,7 @@
 0x100ae060 func   ?sub_100ae060@@YADXZ sub_100ae060
 0x100ae5d0 func   ?sub_100ae5d0@@YAHXZ sub_100ae5d0
 0x100ae6d0 func   ?ClientClassInit@@YAHPAUignored@DT_EnvParticle@@@Z ClientClassInit
+0x100aeac0 func   ??_GC_EnvParticle@@UAEPAXI@Z ??_GC_EnvParticle@@UAEPAXI@Z
 0x100aeae0 func   ??1C_EnvParticle@@UAE@XZ C_EnvParticle::~C_EnvParticle
 0x100aef00 func   ?sub_100aef00@CUnknown100aef00@@QAEHXZ CUnknown100aef00::sub_100aef00
 0x100aeff0 func   ?sub_100aeff0@CUnknown100aeff0@@QAEHXZ CUnknown100aeff0::sub_100aeff0
