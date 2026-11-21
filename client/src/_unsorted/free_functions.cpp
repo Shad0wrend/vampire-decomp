@@ -2810,6 +2810,16 @@ int sub_1002c1c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c320 size=0x6
+namespace lifted {
+extern int g_102ead70;
+}
+int sub_1002c320()
+{
+    return lifted::g_102ead70;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c3a0 size=0x4
 struct CUnknown1002c3a0 { int sub_1002c3a0(); };
 int CUnknown1002c3a0::sub_1002c3a0()
