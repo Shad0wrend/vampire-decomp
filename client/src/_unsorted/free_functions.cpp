@@ -17380,6 +17380,16 @@ int sub_10119d90(const matrix3x4_t &mat, const Vector &dir)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10119f60 size=0x6
+namespace lifted {
+extern int g_104e0c88;
+}
+int sub_10119f60()
+{
+    return lifted::g_104e0c88;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119f70 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
