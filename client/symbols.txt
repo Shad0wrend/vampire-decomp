@@ -88,6 +88,7 @@
 0x100cdb00 func   ?sub_100cdb00@@YAXPADPBD@Z sub_100cdb00
 0x100d05d0 func   ?sub_100d05d0@CMem16_t@@QAEXH@Z CMem16_t::sub_100d05d0
 0x100d1190 func   ?sub_100d1190@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100d1190
+0x100d3380 func   ?sub_100d3380@UtlMem@@QAEXXZ UtlMem::sub_100d3380
 0x100d3a80 func   ?sub_100d3a80@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100d3a80
 0x100d3e30 func   ?sub_100d3e30@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_100d3e30
 0x100d3ed0 func   ?sub_100d3ed0@UtlMem@@QAEXH@Z UtlMem::sub_100d3ed0
