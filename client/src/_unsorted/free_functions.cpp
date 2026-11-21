@@ -14951,6 +14951,16 @@ int CUnknown100e0110::sub_100e0110()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0220 size=0x14
+int __stdcall sub_100e0220(int a0)
+{
+    *(int *)((char *)a0 + 8) = 0x3f800000;
+    *(int *)((char *)a0 + 4) = 0x3f800000;
+    *(int *)((char *)a0) = 0x3f800000;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e0240 size=0x3
 char sub_100e0240()
 {
