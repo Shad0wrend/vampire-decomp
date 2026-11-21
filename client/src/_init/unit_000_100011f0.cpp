@@ -95,6 +95,13 @@ int g_102deab8 = ClientClassInit((DT_ItemGKeyring::ignored *)0);
 RecvTable g_102dea38;
 // END FUNCTION
 
+// FUNCTION: 0x10003a80 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKeyGeneric { struct ignored; }
+template <> int ClientClassInit<DT_ItemKeyGeneric::ignored>(DT_ItemKeyGeneric::ignored *);
+int g_102dea34 = ClientClassInit((DT_ItemKeyGeneric::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10003e40 size=0xa
 #include "RecvTable.h"
 RecvTable g_102decf0;
