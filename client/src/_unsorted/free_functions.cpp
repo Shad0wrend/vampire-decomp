@@ -33588,6 +33588,14 @@ void __stdcall sub_10186bc0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10187c10 size=0x7
+struct CUnknown10187c10 { char sub_10187c10(); };
+char CUnknown10187c10::sub_10187c10()
+{
+    return *(char *)((char *)this + 0x278);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10187d80 size=0x6
 namespace lifted {
 extern char g_102d2900;
