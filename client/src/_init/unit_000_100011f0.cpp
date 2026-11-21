@@ -1961,3 +1961,8 @@ CSolidSetDefaults g_104e0c30;
 #include "ConVar.h"
 ConVar g_104e0c40("phys_rolling_drag", "1", 8192);
 // END FUNCTION
+
+// FUNCTION: 0x10120a90 size=0xa
+#include "ConVar.h"
+ConVar g_104e1708("cl_predict", "1", 0, "Perform client side prediction.");
+// END FUNCTION
