@@ -12147,6 +12147,41 @@ void sub_101273b0(SBoundsList *pList, const Vector &origin, Vector &mins, Vector
 }
 // END FUNCTION
 
+// FUNCTION: 0x101274d0 size=0x33
+struct CBoolVirtView {
+    virtual int f0();
+    virtual int f1();
+    virtual int f2();
+    virtual int f3();
+    virtual bool f4();
+};
+
+struct CBoolItemView {
+    CBoolVirtView *m_p;
+    char pad0[0x14];
+};
+
+struct CBoolListView {
+    int m_count;
+    char pad0[0x10];
+    CBoolItemView m_items[1];
+};
+
+// TARGET: sub_101274d0
+bool sub_101274d0(CBoolListView *p)
+{
+    int i = 0;
+    if (p->m_count > 0) {
+        do {
+            if (!p->m_items[i].m_p->f4())
+                return false;
+            i++;
+        } while (i < p->m_count);
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127830 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
