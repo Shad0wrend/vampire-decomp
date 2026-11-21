@@ -19543,6 +19543,16 @@ int StatDefault3::sub_1013f440(int n)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f8b0 size=0x5
+namespace lifted {
+int sub_1013f9b0();
+}
+int sub_1013f8b0()
+{
+    return lifted::sub_1013f9b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fc80 size=0x22
 extern char g_102c6c3c[];
 extern char g_102c6c30[];
