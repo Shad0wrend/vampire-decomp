@@ -47768,6 +47768,33 @@ void CUnknown101e0f00::sub_1014aa40(int a, char *pFlag, int *pRef, unsigned int 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014aba0 size=0xbd
+#include "CUnknown101e44c0.h"
+extern char g_102de300[];
+inline const char *STRINGR(const char *const &s) { return s ? s : g_102de300; }
+extern "C" unsigned int strlen(const char *);
+#pragma intrinsic(strlen)
+__declspec(dllimport) int Q_snprintf(char *buf, int n, const char *fmt, ...);
+
+bool CUnknown101e44c0::sub_1014aba0(char *buf, const char *fmt, unsigned int mask)
+{
+	bool any = false;
+	Q_snprintf(buf, 512, fmt);
+	int len = strlen(buf);
+	unsigned int bit = 1;
+	for (int i = 0; i < 0x78; i += 4) {
+		if (mask & bit) {
+			any = true;
+			NamedEntry101e44c0 *e = *(NamedEntry101e44c0 **)((char *)m_ppEntries + i);
+			Q_snprintf(buf + len, 512, " %s", STRINGR(e->m_pszName));
+			len += strlen(STRINGR(e->m_pszName)) + 1;
+		}
+		bit <<= 1;
+	}
+	return any;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014b580 size=0x5
 int __stdcall sub_1014b580(int a0)
 {
