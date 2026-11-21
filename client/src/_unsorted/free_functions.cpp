@@ -36714,6 +36714,15 @@ void sub_101b6c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b9d50 size=0xa
+struct CUnknown101b9d50 { int sub_101b9d50(int); };
+int CUnknown101b9d50::sub_101b9d50(int a0)
+{
+    *(int *)((char *)this + 0x28) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101bc8b0 size=0x4
 struct CUnknown101bc8b0 { int sub_101bc8b0(); };
 int CUnknown101bc8b0::sub_101bc8b0()
