@@ -24097,6 +24097,72 @@ void sub_101a25e0(void *src, void *dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2600 size=0x264
+#include "Vector.h"
+#include <string.h>
+
+class VM
+{
+public:
+	VM();
+	float* operator[](int i) { return m[i]; }
+	float const* operator[](int i) const { return m[i]; }
+	float m[4][4];
+};
+inline VM::VM()
+{
+}
+
+#pragma auto_inline(off)
+namespace block_1024e260 {
+void sub_101a25e0( const VM& src, VM& dst )
+{
+	if (&src != &dst)
+	{
+		memcpy( dst.m, src.m, 16 * sizeof(float) );
+	}
+}
+}
+using namespace block_1024e260;
+
+void sub_101a2600( const VM& src1, const VM& src2, VM& dst )
+{
+	// Make sure it works if src1 == dst or src2 == dst
+	VM tmp1, tmp2;
+	const VM& s1 = (&src1 == &dst) ? tmp1 : src1;
+	const VM& s2 = (&src2 == &dst) ? tmp2 : src2;
+
+	if (&src1 == &dst)
+	{
+		sub_101a25e0( src1, tmp1 );
+	}
+	if (&src2 == &dst)
+	{
+		sub_101a25e0( src2, tmp2 );
+	}
+
+	dst[0][0] = s1[0][0] * s2[0][0] + s1[0][1] * s2[1][0] + s1[0][2] * s2[2][0] + s1[0][3] * s2[3][0];
+	dst[0][1] = s1[0][0] * s2[0][1] + s1[0][1] * s2[1][1] + s1[0][2] * s2[2][1] + s1[0][3] * s2[3][1];
+	dst[0][2] = s1[0][0] * s2[0][2] + s1[0][1] * s2[1][2] + s1[0][2] * s2[2][2] + s1[0][3] * s2[3][2];
+	dst[0][3] = s1[0][0] * s2[0][3] + s1[0][1] * s2[1][3] + s1[0][2] * s2[2][3] + s1[0][3] * s2[3][3];
+
+	dst[1][0] = s1[1][0] * s2[0][0] + s1[1][1] * s2[1][0] + s1[1][2] * s2[2][0] + s1[1][3] * s2[3][0];
+	dst[1][1] = s1[1][0] * s2[0][1] + s1[1][1] * s2[1][1] + s1[1][2] * s2[2][1] + s1[1][3] * s2[3][1];
+	dst[1][2] = s1[1][0] * s2[0][2] + s1[1][1] * s2[1][2] + s1[1][2] * s2[2][2] + s1[1][3] * s2[3][2];
+	dst[1][3] = s1[1][0] * s2[0][3] + s1[1][1] * s2[1][3] + s1[1][2] * s2[2][3] + s1[1][3] * s2[3][3];
+
+	dst[2][0] = s1[2][0] * s2[0][0] + s1[2][1] * s2[1][0] + s1[2][2] * s2[2][0] + s1[2][3] * s2[3][0];
+	dst[2][1] = s1[2][0] * s2[0][1] + s1[2][1] * s2[1][1] + s1[2][2] * s2[2][1] + s1[2][3] * s2[3][1];
+	dst[2][2] = s1[2][0] * s2[0][2] + s1[2][1] * s2[1][2] + s1[2][2] * s2[2][2] + s1[2][3] * s2[3][2];
+	dst[2][3] = s1[2][0] * s2[0][3] + s1[2][1] * s2[1][3] + s1[2][2] * s2[2][3] + s1[2][3] * s2[3][3];
+
+	dst[3][0] = s1[3][0] * s2[0][0] + s1[3][1] * s2[1][0] + s1[3][2] * s2[2][0] + s1[3][3] * s2[3][0];
+	dst[3][1] = s1[3][0] * s2[0][1] + s1[3][1] * s2[1][1] + s1[3][2] * s2[2][1] + s1[3][3] * s2[3][1];
+	dst[3][2] = s1[3][0] * s2[0][2] + s1[3][1] * s2[1][2] + s1[3][2] * s2[2][2] + s1[3][3] * s2[3][2];
+	dst[3][3] = s1[3][0] * s2[0][3] + s1[3][1] * s2[1][3] + s1[3][2] * s2[2][3] + s1[3][3] * s2[3][3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2e30 size=0x59
 #include "VMatrix.h"
 #include <math.h>
