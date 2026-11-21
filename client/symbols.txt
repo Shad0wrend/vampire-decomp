@@ -89,6 +89,7 @@
 0x100098d0 func   ?sub_100098d0@@YAHXZ sub_100098d0
 0x100099f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_TireIron@@@Z ClientClassInit
 0x10009b50 func   ?sub_10009b50@@YAHXZ sub_10009b50
+0x10009c70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Baton@@@Z ClientClassInit
 0x10009dd0 func   ?sub_10009dd0@@YAHXZ sub_10009dd0
 0x1000a050 func   ?sub_1000a050@@YAHXZ sub_1000a050
 0x1000a2d0 func   ?sub_1000a2d0@@YAHXZ sub_1000a2d0
