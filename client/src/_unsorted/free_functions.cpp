@@ -20838,6 +20838,17 @@ char *CUnknown101f18b0::sub_10157ac0(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157af0 size=0x18
+#include "CUnknown101f0e50.h"
+
+bool CUnknown101f0e50::sub_10157af0(int index)
+{
+	if (index != -1 && index < m_f04)
+		return true;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157b30 size=0x4d
 extern "C" int __cdecl sub_101e28e0(const char *, const char *);
 struct CNamePtr {
