@@ -10122,6 +10122,16 @@ void CUnknown100ac780::sub_100ac780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ad790 size=0x6
+namespace lifted {
+extern char g_104a0fd0;
+}
+int sub_100ad790()
+{
+    return (int)&lifted::g_104a0fd0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ae060 size=0x3
 char sub_100ae060()
 {
