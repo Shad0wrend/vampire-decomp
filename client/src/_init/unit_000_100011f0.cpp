@@ -567,3 +567,8 @@ ConVar g_104a2b18("lod_Enable", "1", 0);
 #include "ConVar.h"
 ConVar g_104a3a58("rope_shake", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100be630 size=0xa
+#include "ConVar.h"
+ConVar g_104a3c98("rope_drawlines", "0", 0);
+// END FUNCTION
