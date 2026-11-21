@@ -931,3 +931,8 @@ ConVar g_104d1c70("camseduct_speedmult", "1.0", 0);
 #include "ConVar.h"
 ConVar g_104d1ab8("camseduct_yaw", "-58", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fb7d0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1868("camseduct_yaw_pow", "1.2", 0);
+// END FUNCTION
