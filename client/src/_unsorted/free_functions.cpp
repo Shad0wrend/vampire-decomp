@@ -47147,6 +47147,97 @@ void CUnk101ddf80::sub_10148330()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101485b0 size=0x1de
+#include "CUnknown101dff00.h"
+#include "CUnknown101dddb0.h"
+#include "CUnknown101e0f00.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+__declspec(dllimport) void Msg(const char *pMsg, ...);
+
+class Range
+{
+public:
+	void sub_101480a0(const char *pszLabel);
+};
+
+int sub_10068200(int nGesture);
+const char *sub_1007a6c0(int nAnim);
+
+struct CActionString
+{
+	const char *m_psz;
+
+	const char *Get() const
+	{
+		if (m_psz)
+			return m_psz;
+		return "";
+	}
+};
+
+struct CActionRecordView
+{
+	char m_bInUse;	// 0x00
+	char m_pad0001[0x34 - 1];
+	CActionString m_schedule;	// 0x34
+	int m_nPlayerAnim;	// 0x38
+	int m_nGestureAnim;	// 0x3c
+	float m_flGestureRate;	// 0x40
+	CActionString m_expression;	// 0x44
+	int m_nFlinch;	// 0x48
+	int m_nKnockback;	// 0x4c
+	CUnknown101dddb0 m_trigger;	// 0x50
+	CUnknown101e0f00Src m_srcInstant;	// 0x5c
+	CUnknown101e0f00Src m_srcHit;	// 0x78
+	char m_pad0094[0x9c - 0x94];
+	int m_nSounds;	// 0x9c
+	CUnknown101e0f00SrcB **m_ppSounds;	// 0xa0
+};
+
+void CUnknown101df000::sub_101485b0(const char *pszLabel)
+{
+	CActionRecordView *pRec = (CActionRecordView *)this;
+	if (!pRec->m_bInUse)
+		return;
+	char szBuf[512];
+	Q_snprintf(szBuf, 512, "%s\n", pszLabel);
+	Msg("%s", szBuf);
+	if (pRec->m_schedule.m_psz) {
+		Q_snprintf(szBuf, 512, "AI_Schedule: %s\n", pRec->m_schedule.Get());
+		Msg("%s", szBuf);
+	}
+	if (pRec->m_nPlayerAnim != -1) {
+		Q_snprintf(szBuf, 512, "Player_Anim: %s\n", sub_1007a6c0(pRec->m_nPlayerAnim));
+		Msg("%s", szBuf);
+	}
+	if (pRec->m_nGestureAnim != -1) {
+		Q_snprintf(szBuf, 512, "Gesture_Anim: %s (%03f)\n", sub_10068200(pRec->m_nGestureAnim), (double)pRec->m_flGestureRate);
+		Msg("%s", szBuf);
+	}
+	if (pRec->m_expression.m_psz) {
+		Q_snprintf(szBuf, 512, "Expression: %s\n", pRec->m_expression.Get());
+		Msg("%s", szBuf);
+	}
+	if (pRec->m_nFlinch) {
+		Q_snprintf(szBuf, 512, "Flinch: %d%\n", pRec->m_nFlinch);
+		Msg("%s", szBuf);
+	}
+	if (pRec->m_nKnockback) {
+		Q_snprintf(szBuf, 512, "Knockback: %d%\n", pRec->m_nKnockback);
+		Msg("%s", szBuf);
+	}
+	((Range *)((char *)this + 0x04))->sub_101480a0("Dmg_Health");
+	((Range *)((char *)this + 0x20))->sub_101480a0("Heal_Blood");
+	((Range *)((char *)this + 0x28))->sub_101480a0("Health_Buffer");
+	pRec->m_trigger.sub_101481d0();
+	pRec->m_srcInstant.sub_10147da0("Effect_Tgt_Instant");
+	pRec->m_srcHit.sub_10147da0("Effect_Tgt_Hit");
+	for (int i = 0; i < pRec->m_nSounds; i++)
+		pRec->m_ppSounds[i]->sub_10147290();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148790 size=0x66
 #include "S101df260.h"
 
