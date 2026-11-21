@@ -21474,6 +21474,12 @@ void CUnknown101ed170::sub_10150bc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151280 size=0x1
+void sub_10151280()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151290 size=0x42
 #include "CUnknown101ed9e0.h"
 struct IObj102038e0;
