@@ -57,6 +57,7 @@
 0x10007220 func   ?sub_10007220@@YAHXZ sub_10007220
 0x10007280 func   ?sub_10007280@CUnknown10007280@@QAEPADXZ CUnknown10007280::sub_10007280
 0x100073a0 func   ?sub_100073a0@@YAHXZ sub_100073a0
+0x10007410 func   ?ClientClassInit@@YAHPAUignored@DT_TEConcussiveExplosion@@@Z ClientClassInit
 0x100075d0 func   ?sub_100075d0@@YAHXZ sub_100075d0
 0x10007850 func   ?sub_10007850@@YAHXZ sub_10007850
 0x10007ad0 func   ?sub_10007ad0@@YAHXZ sub_10007ad0
