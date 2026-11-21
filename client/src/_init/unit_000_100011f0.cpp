@@ -1901,3 +1901,8 @@ ConVar g_104df8f0("sv_maxvelocity", "3500", 8192, "Maximum speed any ballistical
 #include "ConVar.h"
 ConVar g_104df818("sv_stepsize", "18", 8448);
 // END FUNCTION
+
+// FUNCTION: 0x1010ff20 size=0xa
+#include "ConVar.h"
+ConVar g_104df7d0("sv_skyname", "sky_urb01", 8320, "Current name of the skybox texture");
+// END FUNCTION
