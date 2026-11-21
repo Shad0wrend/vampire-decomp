@@ -13233,6 +13233,42 @@ void CUnknown102496a0::sub_1012c770(CRopeNode *pNodes, int nNodes, CBaseRopePhys
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d3f0 size=0x10b
+struct SndInfo {
+    int a;
+    float b;
+    int c, d, e, f;
+    char g;
+    int h;
+    char name[128];
+};
+struct IA { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(int, int, const char *); };
+struct CSndMgr { void **vt; bool sub_1012e6d0(const char *, SndInfo *); };
+extern IA *g_104a5818;
+extern CSndMgr g_105e5540;
+extern char *(*g_101e31ac)(const char *, const char *);
+extern char g_102c4004[], g_102c3ffc[], g_102c400c[], g_102c3fa4[];
+
+void sub_1012d3f0(int a, int b, const char *name)
+{
+    if (name) {
+        char *(*f)(const char *, const char *) = g_101e31ac;
+        if (f(name, g_102c4004) || f(name, g_102c3ffc) || *name == '!') {
+            g_104a5818->v7(a, b, name);
+            ((void (__cdecl *)(void *, const char *, ...))g_105e5540.vt[3])(&g_105e5540, g_102c400c, name, a);
+            return;
+        }
+    }
+    SndInfo si;
+    si.a = 0; si.b = 1.0f; si.c = 100; si.d = 100; si.e = 100; si.f = 0x4b;
+    si.name[0] = 0; si.g = 0; si.h = 0;
+    if (g_105e5540.sub_1012e6d0(name, &si) && si.name[0]) {
+        g_104a5818->v7(a, si.a, si.name);
+        ((void (__cdecl *)(void *, const char *, ...))g_105e5540.vt[3])(&g_105e5540, g_102c3fa4, name, si.name, a);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012dd00 size=0x6b
 #include "CUnknown101b2570.h"
 extern "C" unsigned int strlen(const char *);
