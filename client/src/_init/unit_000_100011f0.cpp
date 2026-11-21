@@ -2819,6 +2819,13 @@ int g_102eae90 = ClientClassInit((DT_SmokeStack::ignored *)0);
 RecvTable g_102eb550;
 // END FUNCTION
 
+// FUNCTION: 0x10030d30 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_SteamJet { struct ignored; }
+template <> int ClientClassInit<DT_SteamJet::ignored>(DT_SteamJet::ignored *);
+int g_102eb54c = ClientClassInit((DT_SteamJet::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10032360 size=0xa
 #include "RecvTable.h"
 RecvTable g_102eb614;
