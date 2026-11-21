@@ -15,3 +15,8 @@ ConVar g_102e32e0("torchlight_minradius", "190", 0);
 #include "ConVar.h"
 ConVar g_102e0ed0("torchlight_maxradius", "240", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10027160 size=0xa
+#include "ConVar.h"
+ConVar g_102e26c8("torchlight_enable", "0", 0);
+// END FUNCTION
