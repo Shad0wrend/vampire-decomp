@@ -4712,6 +4712,22 @@ void sub_10109420(float *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109470 size=0x40
+#include "Vector.h"
+
+void sub_101094e0(Vector *pVec, int arg);
+
+// TARGET: sub_10109470
+void sub_10109470(const Vector *pVec, int arg)
+{
+    Vector tmp;
+    tmp.x = pVec->y * 57.29578f;
+    tmp.y = pVec->z * 57.29578f;
+    tmp.z = pVec->x * 57.29578f;
+    sub_101094e0(&tmp, arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109e90 size=0x6b
 #include "Vector.h"
 
