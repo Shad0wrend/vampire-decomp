@@ -116,6 +116,13 @@ Vector Vector::sub_10004d80(float fl) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x100058e0 size=0x3
+char sub_100058e0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10005de0 size=0x1b
 struct CSubObj1005f190 {
 	virtual int v0();
