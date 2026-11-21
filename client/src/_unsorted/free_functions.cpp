@@ -23215,6 +23215,15 @@ int sub_101277a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101277b0 size=0x28
+#include "RecvTable.h"
+
+RecvProp RecvPropTime(char *pVarName, int offset, int sizeofVar)
+{
+	return RecvPropFloat(pVarName, offset, sizeofVar);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127810 size=0x12
 namespace lifted {
 struct C10120a00 { int sub_10120a00(int); };
