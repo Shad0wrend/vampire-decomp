@@ -5208,6 +5208,97 @@ bool CSave::sub_1012a060(int a, void *pData, void *pBase, typedescription_t *pFi
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a350 size=0x1bc
+#include "datamap.h"
+#include "CSave.h"
+#include "SaveRestoreFieldInfo_t.h"
+
+extern void (__cdecl *g_101e3114)(const char *pMsg, ...);
+
+struct SaveFieldDesc101a1520
+{
+	int fieldType;
+	const char *fieldName;
+	int fieldOffset[2];
+	short fieldSize;
+	short flags;
+	const char *externalName;
+	struct SaveOps101a1520 *pSaveRestoreOps;
+	void *inputFunc;
+	void *td;
+};
+
+struct SaveOps101a1520
+{
+	virtual void v0();
+	virtual void Save(SaveRestoreFieldInfo_t *pInfo, ISave *pSave);
+};
+
+#define SAVE_SLOT(n) virtual void s##n();
+struct SaveWriteSlots101a1520
+{
+	virtual int vfunc0();
+	virtual void vfunc1(int pos);
+	virtual void vfunc2(void *pData, void *pMap);
+	SAVE_SLOT(3) SAVE_SLOT(4) SAVE_SLOT(5) SAVE_SLOT(6) SAVE_SLOT(7) SAVE_SLOT(8) SAVE_SLOT(9) SAVE_SLOT(10) SAVE_SLOT(11)
+	virtual void vfunc12(void *pData, int count, int token);
+	SAVE_SLOT(13) SAVE_SLOT(14)
+	virtual void vfunc15(void *pData, int count, int token);
+	SAVE_SLOT(16)
+	virtual void vfunc17(void *pData, int count, int token);
+	virtual void vfunc18(void *pData, int count, int token);
+	virtual void vfunc19(void *pData, int count, int token);
+	virtual void vfunc20(void *pData, int count, int token);
+	SAVE_SLOT(21)
+	virtual void vfunc22(void *pData, int count, int token);
+};
+
+void CSave::sub_1012a350(const unsigned short *pToken, void *pData, void *pRootMap, typedescription_t *pDesc)
+{
+	SaveFieldDesc101a1520 *pField = (SaveFieldDesc101a1520 *)pDesc;
+	SaveWriteSlots101a1520 *pSlots = (SaveWriteSlots101a1520 *)this;
+	switch (pField->fieldType) {
+	case 1:
+		pSlots->vfunc18(pData, pField->fieldSize, *pToken);
+		return;
+	case 2:
+		pSlots->vfunc20(pData, pField->fieldSize, *pToken);
+		return;
+	case 3:
+		pSlots->vfunc22(pData, pField->fieldSize, *pToken);
+		return;
+	case 5:
+		pSlots->vfunc17(pData, pField->fieldSize, *pToken);
+		return;
+	case 6:
+		pSlots->vfunc12(pData, pField->fieldSize, *pToken);
+		return;
+	case 7:
+		pSlots->vfunc19(pData, pField->fieldSize, *pToken);
+		return;
+	case 4:
+	case 8:
+		pSlots->vfunc15(pData, pField->fieldSize, *pToken);
+		return;
+	case 9:
+		if (pField->flags & 0x40)
+			pData = *(void **)pData;
+		pSlots->vfunc2(pData, pField->td);
+		return;
+	case 10: {
+		int nEnd = pSlots->vfunc0() + *pToken;
+		SaveRestoreFieldInfo_t info = { pData, (char *)pData - pField->fieldOffset[0], pDesc };
+		pField->pSaveRestoreOps->Save(&info, this);
+		pSlots->vfunc1(nEnd);
+		return;
+	}
+	default:
+		g_101e3114("Bad field type\n");
+		return;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a530 size=0x26
 struct CUnknown101a1780Arg {
     char m_pad0000[0x12];
