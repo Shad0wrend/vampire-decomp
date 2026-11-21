@@ -13202,6 +13202,65 @@ void sub_10126a70(Holder *h)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127000 size=0xdf
+struct V3 { float x, y, z; };
+
+struct CPhysConstraintLike
+{
+    virtual void s0(); virtual void s1(); virtual void s2(); virtual void s3(); virtual void s4();
+    virtual void s5(); virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9();
+    virtual void s10(); virtual void s11(); virtual void s12(); virtual void s13(); virtual void s14();
+    virtual void s15(); virtual void s16(); virtual void s17(); virtual void s18(); virtual void s19();
+    virtual void s20(); virtual void s21(); virtual void s22(); virtual void s23(); virtual void s24();
+    virtual void s25(); virtual void s26(); virtual void s27();
+    virtual void SetA(V3 *pA, V3 *pB);
+    virtual void s29(); virtual void s30(); virtual void s31(); virtual void s32(); virtual void s33();
+    virtual void s34(); virtual void s35(); virtual void s36(); virtual void s37(); virtual void s38();
+    virtual void s39(); virtual void s40();
+    virtual void SetB(V3 *pA, V3 *pB);
+};
+
+struct CRagdollEntry
+{
+    CPhysConstraintLike *m_pConstraint;
+    char m_pad[0x14];
+};
+
+struct CRagdollBones
+{
+    int m_nBones;
+    char m_pad04[0x10];
+    CRagdollEntry m_entries[1];
+};
+
+struct CBoneSetBase
+{
+    int m_pad;
+    char *m_pBones;
+};
+
+void sub_1008a3b0(V3 *pOut1, V3 *pOut2, char *pBoneA, char *pBoneB, int a);
+void sub_101082f0(V3 *pIn, char *pBone, V3 *pOut);
+
+void sub_10127000(CRagdollBones *pRagdoll, CBoneSetBase *pSetA, CBoneSetBase *pSetB, int a)
+{
+    V3 v28, v1c, v24, v30;
+    int i = 0;
+    if (pRagdoll->m_nBones > 0) {
+        do {
+            int off = *(int *)((char *)pRagdoll + 0x2d8 + i * 4) * 0x30;
+            sub_1008a3b0(&v24, &v30, pSetA->m_pBones + off, pSetB->m_pBones + off, a);
+            sub_101082f0(&v24, pSetB->m_pBones + off, &v1c);
+            sub_101082f0(&v30, pSetB->m_pBones + off, &v28);
+            pRagdoll->m_entries[i].m_pConstraint->SetA(&v24, &v1c);
+            pRagdoll->m_entries[i].m_pConstraint->SetA(&v30, &v28);
+            pRagdoll->m_entries[i].m_pConstraint->SetB(&v24, &v30);
+            i++;
+        } while (i < pRagdoll->m_nBones);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101270e0 size=0xf3
 #include "Vector.h"
 #include "IPhysicsObject.h"
