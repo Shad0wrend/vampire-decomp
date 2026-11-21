@@ -46385,6 +46385,41 @@ bool CVStatInfo_t::sub_1015bcc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015bdb0 size=0x93
+#include "CVStatInfo_t.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_101e3124;
+extern int *g_101e3128;
+
+struct StatMgr {
+	virtual void v0();
+	virtual bool v1();
+	char m_pad04[0x28];
+	int m_field2c;
+};
+extern StatMgr *g_105f934c;
+
+bool CVStatInfo_t::sub_1015bdb0()
+{
+	g_101e3124[*g_101e3128].fn = "CVStatInfo_t::IsRenewable";
+	g_101e3124[*g_101e3128].name = "";
+	g_101e3124[*g_101e3128].extra = "";
+	(*g_101e3128)++;
+	if (!g_105f934c->v1() && g_105f934c->m_field2c) {
+		bool r = (m_flags >> 3) & 1;
+		(*g_101e3128)--;
+		return r;
+	}
+	(*g_101e3128)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015be50 size=0x6d
 struct TraceEnt { const char *a; void *b; void *c; };
 extern int *g_101e3128;
