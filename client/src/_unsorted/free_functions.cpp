@@ -6739,6 +6739,53 @@ CUnknown100fde30 *CUnknown100fde30::sub_100e2a10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2ae0 size=0x129
+#include "utlrbtree.h"
+#include "CUnknown100fde30.h"
+
+extern CUnknown100fde30Owner *sub_10135100();
+extern void (*g_101e30fc)(void *);
+
+inline void ListRemoveAll(CUnknown100fde30List *p)
+{
+    if (p->m_NumAlloced) {
+        unsigned short prev = CUnknown100fde30List::InvalidIndex();
+        for (int i = (int)p->m_NumAlloced; --i >= 0; ) {
+            p->InternalElement(i).m_Next = prev;
+            p->InternalElement(i).m_Previous = i;
+            prev = i;
+        }
+        p->m_FirstFree = 0;
+        p->m_Head = CUnknown100fde30List::InvalidIndex();
+        p->m_Tail = CUnknown100fde30List::InvalidIndex();
+        p->m_ElementCount = 0;
+    }
+}
+
+inline void ListPurge(CUnknown100fde30List *p)
+{
+    if (p->m_growSize != -1) {
+        if (p->m_pMemory) {
+            g_101e30fc(p->m_pMemory);
+            p->m_pMemory = 0;
+        }
+        p->m_allocationCount = 0;
+    }
+}
+
+void CUnknown100fde30::sub_100e2ae0()
+{
+    CUnknown100fde30List *pList1 = List1();
+    CUnknown100fde30List *pList2 = List2();
+    if (m_field170)
+        sub_10135100()->vfunc5(m_field170);
+    ListRemoveAll(pList2);
+    ListPurge(pList2);
+    ListRemoveAll(pList1);
+    ListPurge(pList1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e2fa0 size=0x1f
 extern float g_104cf544;
 extern float g_104cf548;
