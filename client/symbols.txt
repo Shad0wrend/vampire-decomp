@@ -15,6 +15,7 @@
 0x1002d620 func   ?sub_1002d620@CUtlMemory36@@QAEXH@Z CUtlMemory36::sub_1002d620
 0x1002d690 func   ?sub_1002d690@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_1002d690
 0x10039080 func   ?sub_10039080@Vector@@QAEAAV1@ABV1@@Z Vector::sub_10039080
+0x10039e60 func   ?sub_10039e60@UtlMem@@QAEXXZ UtlMem::sub_10039e60
 0x10045630 func   ?sub_10045630@@YAXPAVVector@@00@Z sub_10045630
 0x10049f20 func   ?sub_10049f20@CUnknown100f2f90@@QAEPAXHHH@Z CUnknown100f2f90::sub_10049f20
 0x10049f40 func   ?sub_10049f40@Vector@@QBE?AV1@ABV1@@Z Vector::sub_10049f40
