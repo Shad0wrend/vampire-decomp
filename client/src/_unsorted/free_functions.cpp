@@ -15717,6 +15717,24 @@ RecvProp RecvPropDataTable(char *pVarName, int offset, int flags, RecvTable *pTa
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e17f0 size=0x4d
+#include "RecvTable.h"
+
+RecvProp InternalRecvPropArray(const int elementCount, const int elementStride, char *pName,
+								ArrayLengthRecvProxyFn proxy)
+{
+	RecvProp ret;
+
+	ret.m_RecvType = DPT_Array;
+	ret.m_nElements = elementCount;
+	ret.m_ElementStride = elementStride;
+	ret.m_pVarName = pName;
+	ret.m_ArrayLengthProxy = proxy;
+
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1840 size=0xe
 int sub_100e1840(int a0, int a1, int a2)
 {
