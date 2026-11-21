@@ -17003,6 +17003,21 @@ int CUnk101d9190::sub_10145d40(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145d60 size=0x1c
+struct CUnknown101d91c0 { void * sub_10145d60(); };
+void * CUnknown101d91c0::sub_10145d60()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = -1;
+    *(int *)((char *)this + 0x14) = -1;
+    *(int *)((char *)this + 0x18) = -1;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146a90 size=0xf1
 #include "CUnknown101db210.h"
 

@@ -686,6 +686,7 @@
 0x101457a0 func   ?sub_101457a0@CUnknown101d8a70@@QAEPAXPAX@Z CUnknown101d8a70::sub_101457a0
 0x10145ca0 func   ?sub_10145ca0@CUnknown101d90c0@@QAE_NPAVCUnknown101d90c0_Section@@@Z CUnknown101d90c0::sub_10145ca0
 0x10145d40 func   ?sub_10145d40@CUnk101d9190@@QAEHH@Z CUnk101d9190::sub_10145d40
+0x10145d60 func   ?sub_10145d60@CUnknown101d91c0@@QAEPAXXZ CUnknown101d91c0::sub_10145d60
 0x10146a90 func   ?sub_10146a90@CUnknown101db210@@QAEPAUS6@@XZ CUnknown101db210::sub_10146a90
 0x10146cb0 func   ?sub_10146cb0@CStatDefault60List@@QAEDPAVIKVNodeView@@PAX@Z CStatDefault60List::sub_10146cb0
 0x10146ed0 func   ?sub_10146ed0@CUnk101db960@@QAEPAU1@XZ CUnk101db960::sub_10146ed0
