@@ -20079,6 +20079,102 @@ void bf_write::sub_10086f10(float fAngle, int numbits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087010 size=0x1f4
+#include "bf_write.h"
+
+extern "C" int __cdecl abs(int);
+#pragma intrinsic(abs)
+
+#define COORD_INTEGER_BITS 14
+#define COORD_FRACTIONAL_BITS 4
+#define COORD_DENOMINATOR (1<<(COORD_FRACTIONAL_BITS))
+#define COORD_RESOLUTION (1.0/(COORD_DENOMINATOR))
+
+struct bf_write_v : bf_write
+{
+	inline void SetOverflowFlag()
+	{
+		if (m_bAssertOnOverflow)
+		{
+		}
+		m_bOverflow = true;
+	}
+	inline bool CheckForOverflow(int nBits)
+	{
+		if (m_iCurBit + nBits > m_nDataBits)
+		{
+			SetOverflowFlag();
+		}
+		return m_bOverflow;
+	}
+	inline void WriteOneBitNoCheck(int nValue)
+	{
+		if(nValue)
+			((unsigned char *)m_pData)[m_iCurBit >> 3] |= (1 << (m_iCurBit & 7));
+		else
+			((unsigned char *)m_pData)[m_iCurBit >> 3] &= ~(1 << (m_iCurBit & 7));
+		++m_iCurBit;
+	}
+	inline void WriteOneBit(int nValue)
+	{
+		if( !CheckForOverflow(1) )
+			WriteOneBitNoCheck( nValue );
+	}
+	inline void WriteUBitLong( unsigned int curData, int numbits, bool bCheckRange=true )
+	{
+		if((m_iCurBit+numbits) > m_nDataBits)
+		{
+			m_iCurBit = m_nDataBits;
+			SetOverflowFlag();
+			return;
+		}
+		int nBitsLeft = numbits;
+		int iCurBit = m_iCurBit;
+		unsigned int iDWord = iCurBit >> 5;
+		unsigned long iCurBitMasked = iCurBit & 31;
+		((unsigned long*)m_pData)[iDWord] &= g_104871b0[iCurBitMasked][nBitsLeft];
+		((unsigned long*)m_pData)[iDWord] |= curData << iCurBitMasked;
+		int nBitsWritten = 32 - iCurBitMasked;
+		if(nBitsWritten < nBitsLeft)
+		{
+			nBitsLeft -= nBitsWritten;
+			iCurBit += nBitsWritten;
+			curData >>= nBitsWritten;
+			unsigned long iCurBitMasked = iCurBit & 31;
+			((unsigned long*)m_pData)[iDWord+1] &= g_104871b0[iCurBitMasked][nBitsLeft];
+			((unsigned long*)m_pData)[iDWord+1] |= curData << iCurBitMasked;
+		}
+		m_iCurBit += numbits;
+	}
+};
+
+// TARGET: bf_write::sub_10087010
+void bf_write::sub_10087010(float f)
+{
+	bf_write_v *w = (bf_write_v *)this;
+	int		signbit = (f <= -COORD_RESOLUTION);
+	int		intval = (int)abs(f);
+	int		fractval = abs((int)(f*COORD_DENOMINATOR)) & (COORD_DENOMINATOR-1);
+
+	w->WriteOneBit( intval );
+	w->WriteOneBit( fractval );
+
+	if ( intval || fractval )
+	{
+		w->WriteOneBit( signbit );
+		if ( intval )
+		{
+			intval--;
+			w->WriteUBitLong( (unsigned int)intval, COORD_INTEGER_BITS );
+		}
+		if ( fractval )
+		{
+			sub_10087210( (unsigned int)fractval, COORD_FRACTIONAL_BITS, true );
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087210 size=0xb7
 #include "bf_write.h"
 
