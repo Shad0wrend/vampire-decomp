@@ -505,3 +505,8 @@ ConVar g_1049e838("vamplight_enabled", "0", 0);
 #include "ConVar.h"
 ConVar g_1049fd68("vamplight_radius", "200", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100a7300 size=0xa
+#include "ConVar.h"
+ConVar g_104a0ce8("vamplight_offset", "0", 0);
+// END FUNCTION
