@@ -449,6 +449,7 @@
 0x10153fe0 func   ?sub_10153fe0@@YAXXZ sub_10153fe0
 0x101540a0 func   ?sub_101540a0@VKeyValuesInterface@@QAEHPBDH@Z VKeyValuesInterface::sub_101540a0
 0x101540f0 func   ?sub_101540f0@CUnknown101f27b0@@QAE_NH_N@Z CUnknown101f27b0::sub_101540f0
+0x10154120 func   ?sub_10154120@VKeyValuesInterface@@QAEPAXPBDPAX@Z VKeyValuesInterface::sub_10154120
 0x10154670 func   ?sub_10154670@@YAXHPAD@Z sub_10154670
 0x101546c0 func   ?sub_101546c0@@YAPADPBD@Z sub_101546c0
 0x10154b40 func   ?sub_10154b40@@YIXPAH@Z sub_10154b40
