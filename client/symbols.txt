@@ -739,6 +739,7 @@
 0x1014d1a0 func   ?sub_1014d1a0@COwner101e8270@@QAEPAHPAHHHH@Z COwner101e8270::sub_1014d1a0
 0x1014d1d0 func   ?sub_1014d1d0@COwner101e82b0@@QAEPAHPAHHH@Z COwner101e82b0::sub_1014d1d0
 0x1014d200 func   ?sub_1014d200@COwner101e82f0@@QAEPAHPAHHH@Z COwner101e82f0::sub_1014d200
+0x1014d270 func   ?sub_1014d270@@YGHPAUCCharView@@HE@Z sub_1014d270
 0x1014de80 func   ?sub_1014de80@CUnk101e9570@@QAEPAU1@H@Z CUnk101e9570::sub_1014de80
 0x1014dea0 func   ?sub_1014dea0@CHistoryItem@@QAE_NPAUCKVNode@@@Z CHistoryItem::sub_1014dea0
 0x1014df20 func   ?sub_1014df20@CUnknown101e98c0Item@@QAE_NPAUCDataNode@@@Z CUnknown101e98c0Item::sub_1014df20

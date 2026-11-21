@@ -18534,6 +18534,26 @@ int *COwner101e82f0::sub_1014d200(int *pResult, int a, int limit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d270 size=0x34
+extern int g_102c89f0[];
+
+struct CCharView {
+    bool sub_1008eb70();
+};
+
+// TARGET: sub_1014d270
+int __stdcall sub_1014d270(CCharView *p, int idx, unsigned char flags)
+{
+    int v = 0xd;
+    if (p->sub_1008eb70())
+        v = 0x11;
+    v += g_102c89f0[idx];
+    if (flags & 0x20)
+        v++;
+    return v;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014de80 size=0x1e
 struct CUnk101d8230 {
 	void sub_101451c0();
