@@ -3879,6 +3879,7 @@
 0x101c5950 func   ??_GImagePanel@vgui2@@UAEPAXI@Z ??_GImagePanel@vgui2@@UAEPAXI@Z
 0x101c5970 func   ??1ImagePanel@vgui2@@UAE@XZ vgui2::ImagePanel::~ImagePanel
 0x101c5d10 func   ??_GRadioImage@@UAEPAXI@Z ??_GRadioImage@@UAEPAXI@Z
+0x101c5d30 func   ??_GRadioButton@vgui2@@UAEPAXI@Z ??_GRadioButton@vgui2@@UAEPAXI@Z
 0x101c5d50 func   ??1RadioButton@vgui2@@UAE@XZ vgui2::RadioButton::~RadioButton
 0x101c68e0 func   ??1MessageBox@vgui2@@UAE@XZ vgui2::MessageBox::~MessageBox
 0x101c6c70 func   ??1MenuItem@vgui2@@UAE@XZ vgui2::MenuItem::~MenuItem
