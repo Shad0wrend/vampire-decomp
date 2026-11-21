@@ -456,6 +456,50 @@ void UtlMem::sub_10039e60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043150 size=0x76
+extern int g_104d4970, g_104d4974, g_104d4978;
+struct Rec64 {
+    int m00;
+    int m04, m08, m0c, m10, m14, m18;
+    char m1c;
+    int m20, m24, m28, m2c, m30, m34, m38;
+    int m3c;
+    int m40;
+    short m44;
+    int m48;
+    int m4c, m50, m54;
+    int m58, m5c, m60;
+    void sub_10043150(int v);
+};
+void Rec64::sub_10043150(int v)
+{
+    m3c = v;
+    m04 = 0;
+    m08 = 0;
+    m0c = 0;
+    m10 = 0;
+    m14 = 0;
+    m18 = 0;
+    m48 = 0;
+    m20 = 0;
+    m44 = 0;
+    m40 = 0;
+    m1c = 0;
+    m4c = g_104d4970;
+    m50 = g_104d4974;
+    m54 = g_104d4978;
+    m58 = g_104d4970;
+    m5c = g_104d4974;
+    m60 = g_104d4978;
+    m24 = 0;
+    m28 = 0;
+    m2c = 0;
+    m30 = 0;
+    m34 = 0;
+    m38 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045630 size=0x3b
 #include "Vector.h"
 
