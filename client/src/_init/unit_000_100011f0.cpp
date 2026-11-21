@@ -2097,3 +2097,8 @@ ConVar g_105f9348("vdiscipline_allow_renewables", "0", 8576);
 #include "ConVar.h"
 ConVar g_105f9990("default_fov", "75", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10163ba0 size=0xa
+#include "ConVar.h"
+ConVar g_105faa30("draw_hud", "1", 0);
+// END FUNCTION
