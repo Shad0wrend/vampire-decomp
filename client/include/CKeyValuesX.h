@@ -32,11 +32,11 @@ public:
 	CKeyValuesX *sub_10128270(const char *pszName);	// creates a sub key of that name at the end of the list (stub 0x10004eee)
 
 	const char *sub_10128590(const char *pszKey, const char *pszDefault);	// "GetString" (called through the stub 0x1000ed95)
-		// stub 0x1001569a: finds the sub key of that name
-		// stub 0x10004c8c: the first sub key
+	CKeyValuesX *sub_10128350(const char *pszName, int bCreate);	// stub 0x1001569a: finds the sub key of that name
+	CKeyValuesX *sub_101283a0();	// stub 0x10004c8c: the first sub key
 	CKeyValuesX *sub_101283b0();	// stub 0x1000fa65: the next key of the same level
 	const char *sub_10127c70();	// "GetName" (stub 0x1000fec0): the key's name
-		// "LoadFromFile" (stub 0x100108b6, same as CUnknown10248a50::sub_102480f0); the object is made by `new CUnknown10248a50(name)` (ctor stub 0x1000e363)
+	bool sub_10127c90(const char *pszFile, void *pFileSystem, const char *pszPathID, bool bRefresh);	// "LoadFromFile" (stub 0x100108b6, same as CUnknown10248a50::sub_102480f0); the object is made by `new CUnknown10248a50(name)` (ctor stub 0x1000e363)
 		// the destructor body (stub 0x100046f1), called before `delete`
 	void sub_10128180(CUtlBuffer *pBuf, int nIndent);	// "RecursiveSaveToFile": writes this key and its sub keys as text, one level deeper per sub key
 		// the stub of sub_10248730 (the recursion goes through it)
@@ -45,7 +45,7 @@ public:
 	float sub_10128540(const char *pszKey, float flDefault);	// "GetFloat" (stub 0x10009a9d)
 	int sub_10128510(const char *pszKey, int nDefault);	// typed int lookup (stub 0x10014b...): the sub key of that name when it has the value type 3 its value at +8, 0 for another type, nDefault when there is no such key
 		// the FindKey worker (stub 0x1000b58c): the sub key of that name, created through sub_10248870 when bCreate is set, else 0
-	CKeyValuesX *sub_10128350(const char *pszName, char bCreate);	// a jump to sub_10248900 with the same two arguments (stub-like thunk)
+		// a jump to sub_10248900 with the same two arguments (stub-like thunk)
 	void sub_101288c0(const char *pszName, const char *pszValue);	// "SetString": finds or creates the sub key and stores a copy of the string, type 0
 	void sub_10128100(const char *pszFile, IKeyValuesFileView *pFileSystem, const char *pszPathID);	// "SaveToFile": writes the tree as text into the file
 };

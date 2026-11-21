@@ -21,7 +21,7 @@ struct CUnknown101d7520Sub	// the object embedded at +0x18 of an entry and at +0
 	int m_n10;	// 0x10 (entry +0x28)
 	int m_nCount;	// 0x14: elements in m_ppItems
 	CUnknown10205e60 **m_ppItems;	// 0x18: the list of dependencies this object checks
-		// dumps the object (stub 0x1000cd1a)
+	void sub_10161bf0();	// dumps the object (stub 0x1000cd1a)
 	char sub_10161bb0(void *pArg);	// stub 0x10013ce1: whether every dependency in the list holds for the given argument (the local player's object at +0xa8)
 };
 
@@ -38,7 +38,7 @@ struct CUnknown101d7520Rule	// one of the rules of an entry (the array at +0xc o
 	CUnknown101d7520Element **m_ppElements;	// 0x000c
 	CUnknown101d7520Sub m_sub;	// 0x0010 (0x1c bytes)
 
-		// dumps the rule (stub 0x10007603)
+	void sub_10140470();	// dumps the rule (stub 0x10007603)
 		// whether the rule's dependencies hold for pArg (m_sub.sub_10206140)
 };
 
@@ -56,7 +56,7 @@ struct CUnknown101d7520Entry
 	CUnknown101d7520Entry(int);
 	~CUnknown101d7520Entry();
 
-		// dumps the entry (stub 0x10015dca)
+	void sub_10140840();	// dumps the entry (stub 0x10015dca)
 		// whether the entry accepts the character: m_sub.sub_10206140 holds and the clan is -1 or the character's clan
 };
 

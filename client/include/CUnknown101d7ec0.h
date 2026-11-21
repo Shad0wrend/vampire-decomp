@@ -31,7 +31,7 @@ public:
 	int m_n0;
 	CUnknown101d7ec0_Entry *m_pEntries;	// 0x04
 
-		// the constructor: three entries (keys / types 0..2) whose texts come from the CritterScopes section of vdata\system\reaction.txt
+	void sub_10144dc0();	// the constructor: three entries (keys / types 0..2) whose texts come from the CritterScopes section of vdata\system\reaction.txt
 	CUnknown101d7ec0_Entry *sub_10145090(int iKey);	// stub 0x100015af: the entry with that key, else the shared default record at 0x10739148
 	int sub_10144f40(const char *pszName, int *pOut);	// stub 0x1000dd37: the id of the entry of that name (case-insensitive) and, through pOut, its sub id (-1 for a direct hit); -1 when there is none
 		// stub 0x1000461f
