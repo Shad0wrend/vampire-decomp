@@ -2071,6 +2071,22 @@ void UtlVec40::sub_100c1e70(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c1eb0 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_101e30fc)(void *);
+
+void UtlMem::sub_100c1eb0()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_101e30fc(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4b10 size=0x81
 #include "CUnknown100b6f80.h"
 
