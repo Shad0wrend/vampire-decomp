@@ -1,6 +1,18 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100df6c0 size=0x28
+#include "ConVar.h"
+ConVar::~ConVar()
+{
+	if (m_pszString) {
+		delete m_pszString;
+		m_pszString = 0;
+	}
+	sub_100df230();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df710 size=0x3
 #include "ConVar.h"
 char ConVar::vfunc1()
