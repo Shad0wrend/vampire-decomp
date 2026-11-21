@@ -13199,6 +13199,13 @@ char __stdcall sub_101194a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101194b0 size=0x5
+int __stdcall sub_101194b0(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10119d90 size=0x6b
 #include "matrix3x4_t.h"
 #include <math.h>

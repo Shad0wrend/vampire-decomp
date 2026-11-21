@@ -688,6 +688,7 @@
 0x10117d00 func   ?sub_10117d00@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10117d00
 0x10117d70 func   ?sub_10117d70@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10117d70
 0x101194a0 func   ?sub_101194a0@@YGDH@Z sub_101194a0
+0x101194b0 func   ?sub_101194b0@@YGHH@Z sub_101194b0
 0x10119d90 func   ?sub_10119d90@@YAHABUmatrix3x4_t@@ABVVector@@@Z sub_10119d90
 0x10119f70 func   ?sub_10119f70@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10119f70
 0x10119fe0 func   ?sub_10119fe0@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_10119fe0
