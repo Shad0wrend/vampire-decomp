@@ -2356,6 +2356,18 @@ void * CUnknown100bc460::sub_10087a30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087a50 size=0x25
+#include "bf_write.h"
+
+// TARGET: sub_10087a50
+bf_write *bf_write::sub_10087a50(void *pData, int nBytes, int nBits)
+{
+    m_bAssertOnOverflow = true;
+    sub_10087ab0(pData, nBytes, 0, nBits);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087ab0 size=0x3b
 #include "bf_write.h"
 
