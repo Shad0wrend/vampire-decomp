@@ -16,3 +16,33 @@ CAutoGameSystem *CDirtySpatialPartitionEntityList::vfunc8(unsigned int flags)
 	return this;
 }
 // END FUNCTION
+
+// FUNCTION: 0x10042ca0 size=0x27
+extern int g_104a5808;
+
+struct CDirtyIfaceView {
+    virtual void vfunc0();
+    virtual void vfunc1();
+    virtual void vfunc2();
+    virtual void vfunc3();
+    virtual void vfunc4();
+    virtual void vfunc5();
+    virtual void vfunc6();
+    virtual void vfunc7();
+    virtual void vfunc8();
+    virtual void vfunc9();
+    virtual void vfunc10(int p);
+};
+
+bool __fastcall sub_10042ca0(char *p)
+{
+    int a;
+    if (p != 0) {
+        a = (int)(p + 8);
+    } else {
+        a = 0;
+    }
+    ((CDirtyIfaceView *)g_104a5808)->vfunc10(a);
+    return true;
+}
+// END FUNCTION
