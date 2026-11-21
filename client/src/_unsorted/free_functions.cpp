@@ -5710,6 +5710,13 @@ void __stdcall sub_1009f2e0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f330 size=0x3
+char sub_1009f330()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ffb0 size=0x1
 void sub_1009ffb0()
 {
