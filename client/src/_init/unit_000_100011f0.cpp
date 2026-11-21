@@ -1021,3 +1021,8 @@ ConVar g_104d20a0("cdamp_maxdist", "50.0", 0);
 #include "ConVar.h"
 ConVar g_104d2208("cam_trace_radius", "9.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fbfb0 size=0xa
+#include "ConVar.h"
+ConVar g_104d17b0("cam_collide", "1", 0);
+// END FUNCTION
