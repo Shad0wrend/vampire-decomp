@@ -3171,6 +3171,7 @@
 0x1017d240 func   ?sub_1017d240@CUnknown1017d240@@QAEHXZ CUnknown1017d240::sub_1017d240
 0x1017d450 func   ??1VHOHeadingLabel@@UAE@XZ VHOHeadingLabel::~VHOHeadingLabel
 0x1017d450 func   ?sub_1017d450@CUnknown1017d450@@QAEHXZ CUnknown1017d450::sub_1017d450
+0x1017d570 func   ??1VUnderscoreLabel@@UAE@XZ VUnderscoreLabel::~VUnderscoreLabel
 0x1017d570 func   ?sub_1017d570@CUnknown1017d570@@QAEHXZ CUnknown1017d570::sub_1017d570
 0x1017d660 func   ?sub_1017d660@CUnknown1017d660@@QAEHXZ CUnknown1017d660::sub_1017d660
 0x1017f850 func   ?sub_1017f850@CUnknown1017f850@@QAEPAXXZ CUnknown1017f850::sub_1017f850
