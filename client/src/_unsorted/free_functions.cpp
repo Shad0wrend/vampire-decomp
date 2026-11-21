@@ -10328,6 +10328,16 @@ Vector Vector::sub_100b9b80(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ba0e0 size=0x6
+namespace lifted {
+extern char g_104a26d4;
+}
+int sub_100ba0e0()
+{
+    return (int)&lifted::g_104a26d4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100baba0 size=0x3
 char sub_100baba0()
 {

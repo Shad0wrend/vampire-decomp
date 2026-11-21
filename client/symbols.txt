@@ -726,6 +726,7 @@
 0x100b6c40 func   ?sub_100b6c40@@YADXZ sub_100b6c40
 0x100b6e90 func   ?sub_100b6e90@@YAHXZ sub_100b6e90
 0x100b9b80 func   ?sub_100b9b80@Vector@@QBE?AV1@ABV1@@Z Vector::sub_100b9b80
+0x100ba0e0 func   ?sub_100ba0e0@@YAHXZ sub_100ba0e0
 0x100baba0 func   ?sub_100baba0@@YADXZ sub_100baba0
 0x100bbb80 func   ?sub_100bbb80@@YAHXZ sub_100bbb80
 0x100bc170 func   ?sub_100bc170@@YGHHH@Z sub_100bc170
