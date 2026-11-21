@@ -1916,3 +1916,8 @@ ConVar g_104dfb30("sv_backspeed", "0.6", 8320, "How much to slow down backwards 
 #include "ConVar.h"
 ConVar g_104dfa10("sv_jump_boost", "25.0", 8320, "How many extra inches to add to the player's origin on the first frame of the jump");
 // END FUNCTION
+
+// FUNCTION: 0x10110010 size=0xa
+#include "ConVar.h"
+ConVar g_104dfbc0("sv_jump_maxspeed", "350.0", 8320, "Maximum attainable speed while jumping.");
+// END FUNCTION
