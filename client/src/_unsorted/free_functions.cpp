@@ -19614,6 +19614,19 @@ Pool *Pool::sub_1010e290(unsigned int cbItem, unsigned int nItemsPerBlock, unsig
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e2f0 size=0x15
+struct CUnknown1010e2f0 { char * sub_1010e2f0(); };
+char * CUnknown1010e2f0::sub_1010e2f0()
+{
+    *(short *)((char *)this + 0x28) = 0;
+    *(int *)((char *)this + 0x20) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x10) = (int)((char *)this + 0xc);
+    *(int *)((char *)((char *)this + 0xc)) = (int)((char *)this + 0xc);
+    return (char *)this + 0xc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e340 size=0x18
 extern void (__cdecl *g_104df710)(const char *, int);
 
