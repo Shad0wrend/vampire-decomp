@@ -3782,6 +3782,7 @@
 0x101a7660 func   ??_GCHudWeaponSelection@@UAEPAXI@Z ??_GCHudWeaponSelection@@UAEPAXI@Z
 0x101a8c60 func   ?sub_101a8c60@CUnknown101a8c60@@QAEPAXXZ CUnknown101a8c60::sub_101a8c60
 0x101a8c90 func   ?sub_101a8c90@@YAXXZ sub_101a8c90
+0x101a9460 func   ??_GPanel@vgui2@@UAEPAXI@Z ??_GPanel@vgui2@@UAEPAXI@Z
 0x101a9780 func   ??1Panel@vgui2@@UAE@XZ vgui2::Panel::~Panel
 0x101aa220 func   ?sub_101aa220@CUnknown101aa220@@QAEHXZ CUnknown101aa220::sub_101aa220
 0x101aab50 func   ?sub_101aab50@CUnknown101aab50@@QAEHXZ CUnknown101aab50::sub_101aab50
