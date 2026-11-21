@@ -18346,6 +18346,22 @@ unsigned int CStatusFlagList::sub_10149f70(int nKey, int nSkip)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a020 size=0x27
+// TARGET: CStatusFlagList::sub_1014a020
+#include "CStatusFlagList.h"
+
+unsigned int CStatusFlagList::sub_1014a020(int nKey)
+{
+	unsigned int nFlags = 0;
+	for (int i = 0; i < m_nCount; i++)
+	{
+		if (m_ppEntries[i]->m_nKey == nKey)
+			nFlags |= m_ppEntries[i]->m_nFlags;
+	}
+	return nFlags;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014cfd0 size=0x41
 struct CGravityVar101e7dd0 { virtual void v0(); virtual bool IsZero(); char pad[0x28 - 4]; float m_flValue; };
 extern CGravityVar101e7dd0 *g_104dfce4;
