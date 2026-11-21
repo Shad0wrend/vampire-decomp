@@ -608,3 +608,8 @@ ConVar g_104a4210("soundscape_fadetime", "3.0", 0, "Time to crossfade sound effe
 void sub_100c0ec0(void);
 ConCommand g_104a41e8("soundscape_flush", sub_100c0ec0, "Flushes the client side soundscapes", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100c1fc0 size=0xa
+#include "ConVar.h"
+ConVar g_104a4330("r_traceglow", "0", 0);
+// END FUNCTION
