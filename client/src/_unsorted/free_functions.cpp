@@ -17253,6 +17253,23 @@ CUnk101db960 *CUnk101db960::sub_10146ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146f10 size=0x63
+#include <string.h>
+extern const char *g_102c7bfc[2];
+const char *sub_1015fb60(int);
+
+// TARGET: sub_10146f10
+int sub_10146f10(int a)
+{
+    const char *s = sub_1015fb60(a);
+    for (int i = 0; i < 2; i++) {
+        if (strcmp(g_102c7bfc[i], s) == 0)
+            return i;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147a40 size=0x4e
 #include "CUnknown101dcc80.h"
 struct CItemVec {
