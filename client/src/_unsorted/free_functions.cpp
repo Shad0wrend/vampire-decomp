@@ -1004,6 +1004,28 @@ CActivityEntry *sub_10068120(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068160 size=0x2a
+struct CUnknown10412470Ent
+{
+    int key;
+    int value;
+};
+
+extern int g_10477104;
+extern CUnknown10412470Ent *g_104770f8;
+
+// TARGET: sub_10068160
+CUnknown10412470Ent *sub_10068160(int key)
+{
+    int i;
+    for (i = 0; i < g_10477104; i++) {
+        if (g_104770f8[i].key == key)
+            return &g_104770f8[i];
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100790f0 size=0x69
 #include "CUnknown10427700.h"
 #include <string.h>
