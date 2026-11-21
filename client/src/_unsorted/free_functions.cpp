@@ -6080,6 +6080,21 @@ int sub_100da9e0(const Vector *pStart, const Vector *pDir, const Vector *pPoint,
 }
 // END FUNCTION
 
+// FUNCTION: 0x100daae0 size=0x71
+#include "Vector.h"
+// TARGET: sub_100daae0
+bool sub_100daae0(const Vector *p, const Vector *mins, const Vector *maxs)
+{
+    if ((double)p->x > (double)maxs->x || (double)p->x < (double)mins->x)
+        return false;
+    if ((double)p->y > (double)maxs->y || (double)p->y < (double)mins->y)
+        return false;
+    if ((double)p->z > (double)maxs->z || (double)p->z < (double)mins->z)
+        return false;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df190 size=0x24
 struct CUnknown10753434
 {
