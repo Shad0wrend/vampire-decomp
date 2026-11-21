@@ -2359,3 +2359,8 @@ ConVar g_105fba98("vgui_eyetarget_y", "0", 0);
 #include "ConVar.h"
 ConVar g_105fbae0("vgui_eyetarget_z", "64", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018b380 size=0xa
+#include "ConVar.h"
+ConVar g_105fb880("modelpanel_fov", "35", 0, "Use this to set the field of view for the 'orthogonal' view for a model in vgui.", true, 20.0f, true, 120.0f);
+// END FUNCTION
