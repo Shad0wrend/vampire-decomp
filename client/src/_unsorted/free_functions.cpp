@@ -4738,6 +4738,15 @@ void CMem8b_t::sub_10055900(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10055f20 size=0xa
+struct CUnknown10055f20 { char sub_10055f20(char); };
+char CUnknown10055f20::sub_10055f20(char a0)
+{
+    *(char *)((char *)this + 0xc) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10055f30 size=0x6
 int sub_10055f30()
 {
