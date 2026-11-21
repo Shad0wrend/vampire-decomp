@@ -33620,6 +33620,111 @@ void sub_1010bf60(const float *a, const float *b, const float *c, float *out, fl
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c0a0 size=0x18d
+#include "Vector.h"
+
+struct CPUInformation
+{
+	int m_Size;
+	bool m_bRDTSC : 1, m_bCMOV : 1, m_bFCMOV : 1, m_bSSE : 1, m_bSSE2 : 1, m_b3DNow : 1, m_bMMX : 1;
+};
+
+extern const CPUInformation *(*g_101e3174)();
+extern bool g_104df5b0;
+extern bool g_104df5b8;
+extern bool g_104df5b9;
+extern bool g_104df5ba;
+extern bool g_104df5bb;
+extern void (*g_102be4e0)();
+extern void (*g_102be4e4)();
+extern void (*g_102be4ec)();
+extern void (*g_102be4f0)();
+extern void (*g_102be4f4)();
+extern void (*g_102be4f8)();
+void sub_101074d0();
+void sub_10107500();
+void sub_101074e0();
+void sub_10107550();
+void sub_101075a0();
+void sub_101073f0();
+void sub_101073e0();
+void sub_10107610();
+void sub_10107630();
+void sub_101076c0();
+void sub_101076d0();
+void sub_101075e0();
+void sub_101077e0();
+void sub_10107870();
+void sub_10107710();
+void sub_1010c230();
+void sub_1010c280();
+void sub_101078c0();
+void sub_10107a00();
+void sub_10107ac0();
+void sub_10107be0();
+void sub_10107cb0();
+void sub_10109950(float gamma, float texGamma, float brightness, int overbright);
+
+// TARGET: sub_1010c0a0
+void sub_1010c0a0(float gamma, float texGamma, float brightness, int overbright, bool bAllow3DNow, bool bAllowSSE, bool bAllowSSE2, bool bAllowMMX)
+{
+	const CPUInformation *pi = g_101e3174();
+
+	g_102be4e0 = sub_101074e0;
+	g_102be4e4 = sub_101074e0;
+	g_102be4dc = (float (*)(float))sub_101074d0;
+	g_102be4e8 = (float (__fastcall *)(Vector &))sub_10107500;
+	g_102be4ec = sub_10107550;
+	g_102be4f0 = sub_101075a0;
+	g_102be4f4 = sub_101073f0;
+	g_102be4f8 = sub_101073e0;
+
+	if (bAllowMMX && pi->m_bMMX) {
+		g_104df5b9 = true;
+	} else {
+		g_104df5b9 = false;
+	}
+
+	if (bAllow3DNow && pi->m_b3DNow) {
+		g_104df5b8 = true;
+		g_102be4e8 = (float (__fastcall *)(Vector &))sub_10107630;
+		g_102be4ec = sub_101076c0;
+		g_102be4f0 = sub_101076d0;
+		g_102be4dc = (float (*)(float))sub_101075e0;
+		g_102be4e0 = sub_10107610;
+		g_102be4e4 = sub_10107610;
+	} else {
+		g_104df5b8 = false;
+	}
+
+	if (bAllowSSE && pi->m_bSSE) {
+		g_104df5ba = true;
+		g_102be4e8 = (float (__fastcall *)(Vector &))sub_10107500;
+		g_102be4ec = sub_101077e0;
+		g_102be4f0 = sub_10107870;
+		g_102be4dc = (float (*)(float))sub_10107710;
+		g_102be4e0 = sub_1010c230;
+		g_102be4e4 = sub_1010c280;
+		g_102be4f4 = sub_101078c0;
+		g_102be4f8 = sub_10107a00;
+	} else {
+		g_104df5ba = false;
+	}
+
+	if (bAllowSSE2 && pi->m_bSSE2) {
+		g_104df5bb = true;
+		g_102be4f4 = sub_10107ac0;
+		g_102be4f8 = sub_10107be0;
+	} else {
+		g_104df5bb = false;
+	}
+
+	g_104df5b0 = true;
+	sub_10107cb0();
+	sub_10109950(gamma, texGamma, brightness, overbright);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c230 size=0x4b
 // mathlib's _SSE_RSqrtAccurate (Intel / Kipps SSE RSqrt), verbatim
 // TARGET: sub_1010c230
