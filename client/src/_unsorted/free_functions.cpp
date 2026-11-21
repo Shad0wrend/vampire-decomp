@@ -347,6 +347,16 @@ int sub_10006a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10007220 size=0x6
+namespace lifted {
+extern char g_102dfd28;
+}
+int sub_10007220()
+{
+    return (int)&lifted::g_102dfd28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10007280 size=0x4
 struct CUnknown10007280 { char * sub_10007280(); };
 char * CUnknown10007280::sub_10007280()
