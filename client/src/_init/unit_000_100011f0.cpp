@@ -1062,3 +1062,9 @@ ConCommand g_104d2834("+camyawleft", sub_100ff740, 0, 0, 0);
 void sub_100ff750(void);
 ConCommand g_104d1f9c("-camyawleft", sub_100ff750, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fff00 size=0xa
+#include "ConCommand.h"
+void sub_100ff760(void);
+ConCommand g_104d1c00("+camyawright", sub_100ff760, 0, 0, 0);
+// END FUNCTION
