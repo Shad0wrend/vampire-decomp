@@ -6358,6 +6358,13 @@ int g_105e7928 = ((int (*)(int))sub_101454a0)(0);
 RecvTable g_105e80b8;
 // END FUNCTION
 
+// FUNCTION: 0x101463e0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_DisciplineProjectile { struct ignored; }
+template <> int ClientClassInit<DT_DisciplineProjectile::ignored>(DT_DisciplineProjectile::ignored *);
+int g_105e80b4 = ClientClassInit((DT_DisciplineProjectile::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10151dc0 size=0xa
 #include "RecvTable.h"
 RecvTable g_105e8704;
