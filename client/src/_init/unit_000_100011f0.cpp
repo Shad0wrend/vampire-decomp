@@ -3681,6 +3681,13 @@ void * sub_1010db50(void);
 InterfaceReg g_104df610(sub_1010db50, "Empty_IMaterialProxy003");
 // END FUNCTION
 
+// FUNCTION: 0x1010dd40 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010dd70(void);
+InterfaceReg g_104df5f8(sub_1010dd70, "LessOrEqual_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x1010ddc0 size=0xa
 #include "ConVar.h"
 ConVar g_104df6b8("measure_resort", "1.0", 0, "How often to re-sort profiling sections\n");
