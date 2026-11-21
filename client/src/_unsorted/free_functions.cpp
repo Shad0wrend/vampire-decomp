@@ -431,6 +431,30 @@ int sub_10003d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10003ea0 size=0xad
+#include "RecvTable.h"
+extern RecvTable g_102decf0;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102abca0;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultRegen { struct ignored; }
+template <> int ClientClassInit<DT_OccultRegen::ignored>(DT_OccultRegen::ignored *)
+{
+	char *pRecvTableName = "DT_OccultRegen";
+	RecvTable &RecvTable = g_102decf0;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102abca0, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_iRechargeKillCounter", 2424, 4, 0, 0),
+		RecvPropInt("m_iStolenBloodCount", 2428, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003fc0 size=0x6
 namespace lifted {
 extern char g_102ded50;
