@@ -2309,3 +2309,9 @@ ConCommand g_105fb730("showhotkeys", sub_10184360, 0, 0, 0);
 void sub_10184420(void);
 ConCommand g_105fb708("hidehotkeys", sub_10184420, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10186bf0 size=0xa
+#include "ConCommand.h"
+void sub_10186bd0(void);
+ConCommand g_105fb778("showiteminfo", sub_10186bd0, 0, 0, 0);
+// END FUNCTION
