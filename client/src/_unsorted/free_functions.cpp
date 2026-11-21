@@ -405,6 +405,25 @@ Vector Vector::sub_10049f40(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050100 size=0x3d
+#include "CUtlVector16.h"
+
+extern void (__cdecl *g_101e30fc)(void *);
+
+void CUtlVector16::sub_10050100()
+{
+	m_size = 0;
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_101e30fc(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+	m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10055890 size=0x34
 #include "UtlVec8.h"
 void UtlVec8::sub_10055890(int elem, int num)
