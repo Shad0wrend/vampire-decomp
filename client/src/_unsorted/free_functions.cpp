@@ -44120,6 +44120,43 @@ void CPtrList101d6400::sub_10140380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101403d0 size=0x68
+#include "CUnknown101d62d0.h"
+struct KVNode {
+    virtual void s0();
+    virtual void s1();
+    virtual KVNode *GetFirst(const char *name);
+    virtual KVNode *GetNext();
+};
+struct DepList {
+    void sub_10161a40(KVNode *pKeys, const char *name);
+};
+struct LevelRec {
+    void sub_10140160(KVNode *pKey);
+};
+struct CLevelLoader : CUnknown101d62d0 {
+    bool sub_101403d0(KVNode *pKeys, int unused);
+};
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+bool CLevelLoader::sub_101403d0(KVNode *pKeys, int unused)
+{
+    if (pKeys) {
+        ((DepList *)((char *)this + 0x10))->sub_10161a40(pKeys, "Dependency");
+        for (KVNode *p = pKeys->GetFirst("Level"); p; p = p->GetNext()) {
+            LevelRec *rec = (LevelRec *)sub_10140290();
+            if (!rec) {
+                Msg("Unable to parse data file:  Memory allocation ERROR!\n");
+                return false;
+            }
+            rec->sub_10140160(p);
+        }
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140440 size=0x5
 char __stdcall sub_10140440(int a0, int a1)
 {
