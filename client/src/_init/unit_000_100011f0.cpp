@@ -2186,3 +2186,9 @@ ConCommand g_105fafd8("showloot", sub_10170200, 0, 0, 0);
 void sub_10170280(void);
 ConCommand g_105fafa0("showinventory", sub_10170280, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10170390 size=0xa
+#include "ConCommand.h"
+void sub_10170360(void);
+ConCommand g_105fb004("hidebarter", sub_10170360, 0, 0, 0);
+// END FUNCTION
