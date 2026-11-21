@@ -8372,6 +8372,28 @@ int sub_10032350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100323c0 size=0x8b
+#include "RecvTable.h"
+extern RecvTable g_102eb614;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEMetalSparks { struct ignored; }
+template <> int ClientClassInit<DT_TEMetalSparks::ignored>(DT_TEMetalSparks::ignored *)
+{
+	char *pRecvTableName = "DT_TEMetalSparks";
+	RecvTable &RecvTable = g_102eb614;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropVector("m_vecPos", 16, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vecDir", 28, 12, 0, RecvProxy_VectorToVector),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032480 size=0x6
 namespace lifted {
 extern char g_102eb5f8;
