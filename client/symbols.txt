@@ -289,6 +289,7 @@
 0x100192d0 func   ?sub_100192d0@@YAHXZ sub_100192d0
 0x100193f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGLillyPurse@@@Z ClientClassInit
 0x10019550 func   ?sub_10019550@@YAHXZ sub_10019550
+0x10019670 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGBailbondReceipt@@@Z ClientClassInit
 0x100197d0 func   ?sub_100197d0@@YAHXZ sub_100197d0
 0x10019a50 func   ?sub_10019a50@@YAHXZ sub_10019a50
 0x10019cd0 func   ?sub_10019cd0@@YAHXZ sub_10019cd0
