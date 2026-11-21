@@ -15287,6 +15287,115 @@ void CUtlRBTree232::sub_10131140(const void *pInsert, int *pParent, bool *pLeftC
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131240 size=0x1fe
+#include "utlvector.h"
+#include "Vector.h"
+#include "utlmemory.h"
+#include "UtlVec8.h"
+#include "UtlMem.h"
+#include "CMem8_t.h"
+#include "CUnknown101b6630.h"
+
+struct E101b6b60 { short w; int d; };
+void sub_10131480(E101b6b60 *pDest, const E101b6b60 *pSrc);
+
+struct CB6EA0Blk { char d[32]; };
+
+struct CB6EA0Vec : UtlVec8
+{
+	void Init()
+	{
+		((UtlMem *)this)->sub_10131440(0, 0);
+		m_Size = 0;
+		m_pElements = (UtlVec8Elem *)m_pMemory;
+	}
+	E101b6b60 *Base() { return (E101b6b60 *)((CUnknown101b6630 *)this)->sub_10130be0(); }
+	int GrowVector(int num)
+	{
+		if (m_Size + num > m_allocationCount)
+			((CMem8_t *)this)->sub_101315b0(m_Size + num - m_allocationCount);
+		int size = m_Size += num;
+		m_pElements = (UtlVec8Elem *)Base();
+		return size;
+	}
+	void ShiftElementsRight(int size, int elem, int num)
+	{
+		int numToMove = size - elem - num;
+		if (numToMove > 0 && num > 0)
+			memmove((E101b6b60 *)((CUnknown101b6630 *)this)->sub_10130be0() + (elem + num),
+				(E101b6b60 *)((CUnknown101b6630 *)this)->sub_10130be0() + elem,
+				numToMove * sizeof(E101b6b60));
+	}
+	void InsertBefore(int elem, const E101b6b60 &src)
+	{
+		int size = GrowVector(1);
+		ShiftElementsRight(size, elem, 1);
+		sub_10131480((E101b6b60 *)m_pMemory + elem, &src);
+	}
+};
+
+struct CB6EA0Obj
+{
+	short w0;
+	short m_unk02;
+	char b4;
+	char b5;
+	int i8;
+	int ic, i10, i14, i18, i1c, i20, i24;
+	char b28;
+	char b29;
+	CB6EA0Vec vecA;	// 0x2c
+	CB6EA0Vec vecB;	// 0x40
+	char b54;
+	CB6EA0Blk k55;
+	CB6EA0Blk k75;
+	CB6EA0Blk k95;
+	CB6EA0Blk kb5;
+};
+
+void sub_10131240(CB6EA0Obj *dst, const CB6EA0Obj *src)
+{
+	if (dst) {
+		CB6EA0Vec *va = &dst->vecA;
+		int i, c;
+		dst->w0 = src->w0;
+		dst->b4 = src->b4;
+		dst->b5 = src->b5;
+		dst->i8 = src->i8;
+		va->Init();
+		CB6EA0Vec *vb = &dst->vecB;
+		vb->Init();
+		dst->ic = src->ic;
+		dst->i10 = src->i10;
+		dst->i14 = src->i14;
+		dst->i18 = src->i18;
+		dst->i1c = src->i1c;
+		dst->i20 = src->i20;
+		dst->i24 = src->i24;
+		dst->b28 = src->b28;
+		c = src->vecA.m_Size;
+		for (i = 0; i < c; i++) {
+			const E101b6b60 *s = (const E101b6b60 *)src->vecA.m_pMemory;
+			int n = va->m_Size;
+			va->sub_10130f00(1);
+			va->sub_10130f90(n, 1);
+			sub_10131480((E101b6b60 *)va->m_pMemory + n, s + i);
+		}
+		c = src->vecB.m_Size;
+		for (i = 0; i < c; i++) {
+			const E101b6b60 *s = (const E101b6b60 *)src->vecB.m_pMemory;
+			vb->InsertBefore(vb->m_Size, s[i]);
+		}
+		dst->b29 = src->b29;
+		dst->b54 = src->b54;
+		dst->k75 = src->k75;
+		dst->k55 = src->k55;
+		dst->kb5 = src->kb5;
+		dst->k95 = src->k95;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131440 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_101e3100)(int);
