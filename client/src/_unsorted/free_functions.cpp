@@ -8042,6 +8042,32 @@ int sub_10133540()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133560 size=0x75
+extern "C" double fabs(double);
+extern float g_101e34f0;
+extern double g_10224050;
+void __stdcall sub_101335e0(float);
+struct CFloatUnit {
+    float a, b, c;
+    char d;
+    void sub_10133560(float x, float y);
+};
+// TARGET: CFloatUnit::sub_10133560
+void CFloatUnit::sub_10133560(float x, float y)
+{
+    float diff = x - a;
+    if (diff != g_101e34f0 && y > g_101e34f0) {
+        b = x;
+        double r = fabs(diff / y);
+        c = (g_10224050 > r) ? g_10224050 : r;
+        return;
+    }
+    if (x != a)
+        d = 1;
+    sub_101335e0(x);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101335e0 size=0x27
 #include "CFloatUnit.h"
 
