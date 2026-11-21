@@ -1767,6 +1767,107 @@ void bf_write::sub_10086620(void *pData, int nBytes, int iStartBit, int nBits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100866b0 size=0x1d9
+#include "bf_write.h"
+
+#define g_BitWriteMasks g_104871b0
+
+struct bf_write03 : public bf_write
+{
+	void WriteSBitLong(int data, int numbits);
+
+	bool CheckForOverflow(int nBits)
+	{
+		if (m_iCurBit + nBits > m_nDataBits)
+		{
+			SetOverflowFlag();
+		}
+
+		return m_bOverflow;
+	}
+
+	void SetOverflowFlag()
+	{
+		if (m_bAssertOnOverflow)
+		{
+		}
+
+		m_bOverflow = true;
+	}
+
+	void WriteOneBitNoCheck(int nValue)
+	{
+		if (nValue)
+			((unsigned char *)m_pData)[m_iCurBit >> 3] |= (1 << (m_iCurBit & 7));
+		else
+			((unsigned char *)m_pData)[m_iCurBit >> 3] &= ~(1 << (m_iCurBit & 7));
+
+		++m_iCurBit;
+	}
+
+	void WriteOneBit(int nValue)
+	{
+		if (!CheckForOverflow(1))
+			WriteOneBitNoCheck(nValue);
+	}
+
+	void WriteUBitLong(unsigned int curData, int numbits, bool bCheckRange = true)
+	{
+		// Bounds checking..
+		if ((m_iCurBit + numbits) > m_nDataBits)
+		{
+			m_iCurBit = m_nDataBits;
+			SetOverflowFlag();
+			return;
+		}
+
+		int nBitsLeft = numbits;
+		int iCurBit = m_iCurBit;
+
+		// Mask in a dword.
+		unsigned int iDWord = iCurBit >> 5;
+
+		unsigned long iCurBitMasked = iCurBit & 31;
+		((unsigned long *)m_pData)[iDWord] &= g_BitWriteMasks[iCurBitMasked][nBitsLeft];
+		((unsigned long *)m_pData)[iDWord] |= curData << iCurBitMasked;
+
+		// Did it span a dword?
+		int nBitsWritten = 32 - iCurBitMasked;
+		if (nBitsWritten < nBitsLeft)
+		{
+			nBitsLeft -= nBitsWritten;
+			iCurBit += nBitsWritten;
+			curData >>= nBitsWritten;
+
+			unsigned long iCurBitMasked = iCurBit & 31;
+			((unsigned long *)m_pData)[iDWord + 1] &= g_BitWriteMasks[iCurBitMasked][nBitsLeft];
+			((unsigned long *)m_pData)[iDWord + 1] |= curData << iCurBitMasked;
+		}
+
+		m_iCurBit += numbits;
+	}
+
+	void sub_100866b0(int data, int numbits);
+};
+
+// TARGET: bf_write03::sub_100866b0
+void bf_write03::sub_100866b0(int data, int numbits)
+{
+	// Note: it does this wierdness here so it's bit-compatible with regular integer data in the buffer.
+	// (Some old code writes direct integers right into the buffer).
+	if (data < 0)
+	{
+		WriteUBitLong((unsigned int)(0x80000000 + data), numbits - 1, false);
+		WriteOneBit(1);
+	}
+	else
+	{
+		WriteUBitLong((unsigned int)data, numbits - 1);
+		WriteOneBit(0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086f10 size=0xfd
 #include "bf_write.h"
 void bf_write::sub_10086f10(float fAngle, int numbits)
