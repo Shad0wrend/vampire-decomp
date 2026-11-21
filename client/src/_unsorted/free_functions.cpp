@@ -26254,6 +26254,25 @@ int CUnknown101365a0::sub_101365a0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136d70 size=0x1c
+namespace lifted {
+extern int g_105e5d70;
+extern int g_105e5d74;
+extern int g_105e5d78;
+extern int g_105e5d7c;
+extern char g_105e5d80;
+}
+int sub_10136d70()
+{
+    lifted::g_105e5d70 = 0;
+    lifted::g_105e5d78 = 0;
+    lifted::g_105e5d74 = 0;
+    lifted::g_105e5d7c = 0;
+    lifted::g_105e5d80 = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10136d90 size=0x1
 void sub_10136d90()
 {
