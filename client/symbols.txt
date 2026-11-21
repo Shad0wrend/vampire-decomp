@@ -2006,6 +2006,7 @@
 0x10198d60 func   ?sub_10198d60@@YAHXZ sub_10198d60
 0x10198d70 func   ?sub_10198d70@@YAHXZ sub_10198d70
 0x10198d80 func   ?sub_10198d80@@YAHXZ sub_10198d80
+0x10198e60 func   ?sub_10198e60@@YAXXZ sub_10198e60
 0x1019c230 func   ?sub_1019c230@CUnk102a9640@@QAEMXZ CUnk102a9640::sub_1019c230
 0x101a0e90 func   ?sub_101a0e90@CUtlVector4@@QAEXH@Z CUtlVector4::sub_101a0e90
 0x101a0f20 func   ?sub_101a0f20@UtlVec8@@QAEXHH@Z UtlVec8::sub_101a0f20
