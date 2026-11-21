@@ -672,6 +672,12 @@ Vector &Vector::sub_10039080(const Vector &v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10039460 size=0x3
+void __stdcall sub_10039460(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039e60 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
