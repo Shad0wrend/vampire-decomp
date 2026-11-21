@@ -12364,6 +12364,21 @@ void sub_101283d0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128400 size=0x2a
+#include <string.h>
+extern int g_105e543c;
+extern char g_104e2438[][64];
+extern char g_104e23f8[];
+
+void sub_10128400()
+{
+    if (g_105e543c > 0) {
+        g_105e543c--;
+        strcpy(g_104e23f8, g_104e2438[g_105e543c]);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128540 size=0x4f
 #include "CKeyValuesX.h"
 extern "C" double __cdecl atof(const char *);
