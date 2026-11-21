@@ -19705,6 +19705,14 @@ void CPartListUnit3::sub_101413a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141b00 size=0x4
+struct CUnknown10141b00 { int sub_10141b00(); };
+int CUnknown10141b00::sub_10141b00()
+{
+    return *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142000 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
