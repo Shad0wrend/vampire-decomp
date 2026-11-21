@@ -8892,6 +8892,12 @@ void CMem8b_t::sub_100eff70(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2490 size=0x3
+void __stdcall sub_100f2490(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f24a0 size=0x1
 void sub_100f24a0()
 {
