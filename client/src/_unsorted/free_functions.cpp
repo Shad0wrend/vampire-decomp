@@ -13659,6 +13659,39 @@ void CUnk101b4c90::sub_1012f9c0(unsigned short *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012fd30 size=0x70
+#include "CSoundEmitterSystemBase.h"
+
+extern void (*g_101e3140)(const char *fmt, ...);
+
+namespace block_101b31a0 {
+struct CSoundEmitterUnit : CSoundEmitterSystemBase {
+	char sub_1012e510(int index);
+};
+char CSoundEmitterUnit::sub_1012e510(int index)
+{
+	if (index >= 0 && index < m_i64)
+		return 1;
+	return 0;
+}
+}
+using namespace block_101b31a0;
+
+// TARGET: CSoundEmitterSystemBase::sub_1012fd30
+void CSoundEmitterSystemBase::sub_1012fd30(const char *pszName)
+{
+	int index = sub_1012e3f0(pszName);
+	if (!((CSoundEmitterUnit *)this)->sub_1012e510(index)) {
+		g_101e3140("Can't remove %s, no such sound!\n", pszName);
+		return;
+	}
+	*((char *)m_i54 + index * 0xe8 + 0x14) = 1;
+	int script = *(int *)((char *)m_i54 + index * 0xe8 + 0x18);
+	if (script >= 0 && script < m_ia8)
+		*((char *)m_i9c + script * 0x82) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
