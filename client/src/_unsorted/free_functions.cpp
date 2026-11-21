@@ -13285,6 +13285,23 @@ void UtlMem::sub_1012d830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d970 size=0x46
+struct Entry { float value; const char *text; };
+extern Entry g_102c4260[1];
+extern char g_105e5648[];
+extern int (__cdecl *g_101e3190)(char *, int, const char *, ...);
+
+const char *sub_1012d970(float value)
+{
+	for (int p = (int)g_102c4260; p < (int)(g_102c4260 + 1); p += sizeof(Entry)) {
+		if (((Entry *)p)->value == value)
+			return ((Entry *)p)->text;
+	}
+	g_101e3190(g_105e5648, 0x20, "%.3f", (double)value);
+	return g_105e5648;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012dd00 size=0x6b
 #include "CUnknown101b2570.h"
 extern "C" unsigned int strlen(const char *);
