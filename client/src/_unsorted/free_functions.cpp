@@ -24341,6 +24341,17 @@ void sub_101a2e30(VMatrix &dst, float angle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2e90 size=0x46
+#include "VMatrix.h"
+void sub_101a2e90(VMatrix &dst, float x, float y, float z)
+{
+	dst[0][0] = x; dst[0][1] = 0.0f; dst[0][2] = 0.0f; dst[0][3] = 0.0f;
+	dst[1][1] = y; dst[1][0] = 0.0f; dst[1][2] = 0.0f; dst[1][3] = 0.0f;
+	dst[2][0] = 0.0f; dst[2][1] = 0.0f; dst[2][2] = z; dst[2][3] = 0.0f;
+	dst[3][0] = 0.0f; dst[3][1] = 0.0f; dst[3][2] = 0.0f; dst[3][3] = 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3900 size=0xe7
 #include "CUnknown10258b00.h"
 
