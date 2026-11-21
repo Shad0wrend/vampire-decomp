@@ -2893,3 +2893,8 @@ ConVar g_106195c0("cl_cinebar_time", "0.5", 0);
 #include "ConVar.h"
 ConVar g_10618a28("cl_cinebar_power", "3", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101a0350 size=0xa
+#include "ConVar.h"
+ConVar g_10618ea8("cl_force_cinebar", "-1", 0);
+// END FUNCTION
