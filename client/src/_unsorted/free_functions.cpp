@@ -10381,6 +10381,34 @@ S101df260 *CUnknown101e01e0::sub_10149100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101491f0 size=0x66
+struct Elem1006cd00 { void sub_10148800(); };
+struct S1006cd00 {
+    int m0;
+    int m4;
+    Elem1006cd00 **m8;
+    void sub_101491f0();
+};
+// TARGET: S1006cd00::sub_101491f0
+void S1006cd00::sub_101491f0()
+{
+    if (m8) {
+        for (int i = 0; i < m4; i++) {
+            Elem1006cd00 *e = m8[i];
+            if (e) {
+                e->sub_10148800();
+                delete e;
+            }
+            m8[i] = 0;
+        }
+        delete m8;
+        m8 = 0;
+    }
+    m4 = 0;
+    m0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149260 size=0x4d
 extern "C" int __cdecl sub_101e28e0(const char *, const char *);
 struct CNamePtr {
