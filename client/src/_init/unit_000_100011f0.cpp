@@ -2321,3 +2321,9 @@ ConCommand g_105fb778("showiteminfo", sub_10186bd0, 0, 0, 0);
 void sub_10186c40(void);
 ConCommand g_105fb7ac("hideiteminfo", sub_10186c40, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10187e60 size=0xa
+#include "ConCommand.h"
+void sub_10187da0(void);
+ConCommand g_105fb81c("showmapscreen", sub_10187da0, 0, 0, 0);
+// END FUNCTION
