@@ -1042,6 +1042,14 @@ void __stdcall sub_1004d410(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004d490 size=0x4
+struct CUnknown1004d490 { char sub_1004d490(); };
+char CUnknown1004d490::sub_1004d490()
+{
+    return *(char *)((char *)this + 0x30);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e830 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
