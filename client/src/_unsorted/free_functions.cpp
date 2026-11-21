@@ -16393,6 +16393,100 @@ void sub_1008a110(int a1, int a2, int a3, int a4, int a5, int a6, int a7, float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008a1e0 size=0x1c4
+#include "Quaternion.h"
+#include "Vector.h"
+
+struct SRadianEuler
+{
+	float x, y, z;
+};
+
+struct SBoneController
+{
+	int bone;
+	int type;
+	float start;
+	float end;
+	int rest;
+	int inputfield;
+};
+
+struct SStudioHdr
+{
+	char m_pad0000[0xf8];
+	int numbonecontrollers;	// 0xf8
+	int bonecontrollerindex;	// 0xfc
+};
+
+struct SBoneMask
+{
+	int m_pad0000;
+	unsigned int m_bits[1];
+};
+
+extern float g_101e34f0;
+void sub_1010a790(const SRadianEuler &ang, Quaternion &q);
+void sub_10088d00(float s, const Quaternion &p, const Quaternion &q, Quaternion &qt);
+
+void sub_1008a1e0(SStudioHdr *pStudioHdr, Vector *pos, Quaternion *q, const float *controllers, SBoneMask *pBoneMask)
+{
+	int nControllers = pStudioHdr->numbonecontrollers;
+	if (!nControllers)
+		return;
+	SBoneController *pbonecontroller = (SBoneController *)((char *)pStudioHdr + pStudioHdr->bonecontrollerindex);
+	for (int j = 0; j < nControllers; j++) {
+		int bone = pbonecontroller[j].bone;
+		if (!(pBoneMask->m_bits[bone >> 5] & (1 << (bone & 0x1f))))
+			continue;
+		float value = controllers[pbonecontroller[j].inputfield];
+		if (value < g_101e34f0)
+			value = g_101e34f0;
+		if (value > 1.0)
+			value = 1.0f;
+		value = (1.0 - value) * pbonecontroller[j].start + value * pbonecontroller[j].end;
+		SRadianEuler ang;
+		Quaternion qt;
+		float *pf;
+		switch (pbonecontroller[j].type & 0x3ffff) {
+		case 8:
+			ang.x = value * 0.017453292519943295;
+			ang.y = 0;
+			ang.z = 0;
+			sub_1010a790(ang, qt);
+			sub_10088d00(1.0f, qt, q[bone], q[bone]);
+			continue;
+		case 0x10:
+			ang.x = 0;
+			ang.y = value * 0.017453292519943295;
+			ang.z = 0;
+			sub_1010a790(ang, qt);
+			sub_10088d00(1.0f, qt, q[bone], q[bone]);
+			continue;
+		case 0x20:
+			ang.x = 0;
+			ang.y = 0;
+			ang.z = value * 0.017453292519943295;
+			sub_1010a790(ang, qt);
+			sub_10088d00(1.0f, qt, q[bone], q[bone]);
+			continue;
+		case 1:
+			pf = &pos[bone].x;
+			break;
+		case 2:
+			pf = &pos[bone].y;
+			break;
+		case 4:
+			pf = &pos[bone].z;
+			break;
+		default:
+			continue;
+		}
+		*pf += value;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008a3b0 size=0x103
 #include "matrix3x4_t.h"
 #include "QAngle.h"
