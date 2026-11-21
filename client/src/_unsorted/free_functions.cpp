@@ -12840,6 +12840,22 @@ int sub_100bd950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bde20 size=0x1e
+struct CUnknown100bde20 { int sub_100bde20(); };
+int CUnknown100bde20::sub_100bde20()
+{
+    *(char *)((char *)this + 4) = 0;
+    *(char *)((char *)this + 5) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x20) = -1;
+    *(int *)((char *)this + 0x24) = -1;
+    *(int *)((char *)this + 0x14) = 0;
+    *(char *)((char *)this + 0x28) = 0;
+    *(char *)((char *)this + 0x29) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bde50 size=0x5
 struct CUnknown100bde50 { void sub_100bde50(); };
 void CUnknown100bde50::sub_100bde50()
