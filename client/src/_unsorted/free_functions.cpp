@@ -28998,6 +28998,14 @@ void sub_101a8c90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101aa220 size=0x4
+struct CUnknown101aa220 { int sub_101aa220(); };
+int CUnknown101aa220::sub_101aa220()
+{
+    return *(int *)((char *)this + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1e60 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
