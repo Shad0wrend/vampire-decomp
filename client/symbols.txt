@@ -259,6 +259,7 @@
 0x1009cea0 func   ?sub_1009cea0@UtlVec8@@QAEXHH@Z UtlVec8::sub_1009cea0
 0x1009cf00 func   ?sub_1009cf00@UtlMem@@QAEXH@Z UtlMem::sub_1009cf00
 0x1009db70 func   ?sub_1009db70@@YAXXZ sub_1009db70
+0x1009f040 func   ?sub_1009f040@CUnknown1009f040@@QAEPAXXZ CUnknown1009f040::sub_1009f040
 0x1009ffb0 func   ?sub_1009ffb0@@YAXXZ sub_1009ffb0
 0x1009ffc0 func   ?sub_1009ffc0@@YAXXZ sub_1009ffc0
 0x100a1200 func   ?sub_100a1200@@YAXXZ sub_100a1200

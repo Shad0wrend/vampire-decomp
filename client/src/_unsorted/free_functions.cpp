@@ -5696,6 +5696,14 @@ void sub_1009db70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f040 size=0x3
+struct CUnknown1009f040 { void * sub_1009f040(); };
+void * CUnknown1009f040::sub_1009f040()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ffb0 size=0x1
 void sub_1009ffb0()
 {
