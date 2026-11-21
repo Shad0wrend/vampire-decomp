@@ -324,6 +324,7 @@
 0x100e1290 func   ?sub_100e1290@UtlMem@@QAEXXZ UtlMem::sub_100e1290
 0x100e12c0 func   ?sub_100e12c0@UtlMem@@QAEXH@Z UtlMem::sub_100e12c0
 0x100e14e0 func   ?vfunc0@CLocalDLLChain@@UAEXPAVCLocalDLLChainVisitor@@@Z CLocalDLLChain::vfunc0
+0x100e15d0 func   ?sub_100e15d0@@YAXXZ sub_100e15d0
 0x100e21f0 func   ?sub_100e21f0@CBaseEntityList@@QAEXXZ CBaseEntityList::sub_100e21f0
 0x100e2590 func   ?sub_100e2590@CBaseEntityList@@QAEXI@Z CBaseEntityList::sub_100e2590
 0x100e27a0 func   ?sub_100e27a0@CUtlLinkedList6@@QAEXG@Z CUtlLinkedList6::sub_100e27a0

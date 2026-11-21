@@ -7600,6 +7600,12 @@ void UtlMem::sub_100e12c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e15d0 size=0x1
+void sub_100e15d0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e21f0 size=0x144
 #include "utlrbtree.h"
 #include "CBaseEntityList.h"
