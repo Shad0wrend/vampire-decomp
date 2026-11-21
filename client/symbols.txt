@@ -1693,6 +1693,7 @@
 0x100b50a0 func   ?sub_100b50a0@@YAHXZ sub_100b50a0
 0x100b51a0 func   ?ClientClassInit@@YAHPAUignored@DT_FireSmoke@@@Z ClientClassInit
 0x100b5470 func   ??_GCLitSmokeEmitter@@UAEPAXI@Z ??_GCLitSmokeEmitter@@UAEPAXI@Z
+0x100b5490 func   ??_GC_FireSmoke@@UAEPAXI@Z ??_GC_FireSmoke@@UAEPAXI@Z
 0x100b54f0 func   ??1C_FireSmoke@@UAE@XZ C_FireSmoke::~C_FireSmoke
 0x100b56b0 func   ?sub_100b56b0@@YADXZ sub_100b56b0
 0x100b63f0 func   ?sub_100b63f0@@YAHXZ sub_100b63f0
