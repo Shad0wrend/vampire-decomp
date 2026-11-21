@@ -2484,6 +2484,26 @@ float bf_read::sub_10087df0(int numbits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087ea0 size=0xaf
+#include "bf_read.h"
+
+unsigned int bf_read::sub_10087ea0(int numbits)
+{
+	bf_read savebf;
+	savebf.sub_10087a30();
+	savebf = *this;
+
+	unsigned int r = 0;
+	for (int i = 0; i < numbits; i++) {
+		if (ReadOneBit())
+			r |= 1u << i;
+	}
+
+	*this = savebf;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087f50 size=0xd4
 #include "bf_read.h"
 
