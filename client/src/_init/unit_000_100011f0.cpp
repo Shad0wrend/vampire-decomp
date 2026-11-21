@@ -941,3 +941,8 @@ ConVar g_104d1868("camseduct_yaw_pow", "1.2", 0);
 #include "ConVar.h"
 ConVar g_104d1d50("camseduct_yaw_pow_end", "1.2", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fb870 size=0xa
+#include "ConVar.h"
+ConVar g_104d2178("camseduct_roll", "0.0", 0);
+// END FUNCTION
