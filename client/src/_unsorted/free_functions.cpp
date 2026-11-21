@@ -15534,6 +15534,28 @@ bool sub_1013d180(const Sym *a, const Sym *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d230 size=0x7d
+struct StrRef { unsigned short blk; unsigned short off; };
+struct StrTable { char pad[0x18]; char **blocks; };
+extern char *g_105e74d0;
+extern StrTable *g_105e74d4;
+int sub_101e28e0(const char *, const char *);
+
+static inline const char *StrOf(const StrRef *r)
+{
+    if (r->blk == 0xffff && r->off == 0xffff)
+        return g_105e74d0;
+    return g_105e74d4->blocks[r->blk] + 8 + r->off;
+}
+
+bool sub_1013d230(const StrRef *a, const StrRef *b)
+{
+    const char *s1 = StrOf(a);
+    const char *s2 = StrOf(b);
+    return sub_101e28e0(s1, s2) < 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d2b0 size=0x71
 #include "CUnknown1024b2d0.h"
 

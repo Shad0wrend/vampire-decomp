@@ -635,6 +635,7 @@
 0x1013d0a0 func   ?sub_1013d0a0@CUnknown1024b000@@QAEPAU1@H@Z CUnknown1024b000::sub_1013d0a0
 0x1013d100 func   ?sub_1013d100@CVNameId@@QAE_NPBD@Z CVNameId::sub_1013d100
 0x1013d180 func   ?sub_1013d180@@YA_NPBUSym@@0@Z sub_1013d180
+0x1013d230 func   ?sub_1013d230@@YA_NPBUStrRef@@0@Z sub_1013d230
 0x1013d2b0 func   ?sub_1013d2b0@CUnknown1024b2d0@@QAEPAV1@HHD@Z CUnknown1024b2d0::sub_1013d2b0
 0x1013d330 func   ?sub_1013d330@CUnknown1024b370@@QAEXXZ CUnknown1024b370::sub_1013d330
 0x1013d3a0 func   ?sub_1013d3a0@CUnknown1024b370@@QAE?AUCUnknown1024b370Symbol@@PBD@Z CUnknown1024b370::sub_1013d3a0
