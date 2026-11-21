@@ -959,6 +959,12 @@ void __fastcall sub_10057470(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064c60 size=0x1
+void sub_10064c60()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067a50 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
