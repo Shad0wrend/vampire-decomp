@@ -1606,6 +1606,7 @@
 0x1014cf90 func   ?sub_1014cf90@CUnknown1014cf90@@QAEMXZ CUnknown1014cf90::sub_1014cf90
 0x1014cfa0 func   ?sub_1014cfa0@CUnknown1014cfa0@@QAEMXZ CUnknown1014cfa0::sub_1014cfa0
 0x1014cfb0 func   ?sub_1014cfb0@CUnknown1014cfb0@@QAEMXZ CUnknown1014cfb0::sub_1014cfb0
+0x1014cfc0 func   ?sub_1014cfc0@CUnknown1014cfc0@@QAEMXZ CUnknown1014cfc0::sub_1014cfc0
 0x1014cfd0 func   ?sub_1014cfd0@CRules101e7dd0@@QAEMM@Z CRules101e7dd0::sub_1014cfd0
 0x1014d120 func   ?sub_1014d120@COwner101e80c0@@QAEPAHPAHHHH@Z COwner101e80c0::sub_1014d120
 0x1014d160 func   ?sub_1014d160@CUnit101e8210@@QAE?AUR101e8210@@HH@Z CUnit101e8210::sub_1014d160
