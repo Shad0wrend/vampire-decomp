@@ -2683,3 +2683,8 @@ ConVar g_10618cb0("cl_drawhud", "1", 0, "Enable the rendering of the hud");
 #include "ConVar.h"
 ConVar g_106196f0("cl_overlayframebuffer", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10197ea0 size=0xa
+#include "ConVar.h"
+ConVar g_10619380("cl_drawshadowtexture", "0", 0);
+// END FUNCTION
