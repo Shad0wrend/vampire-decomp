@@ -1178,6 +1178,7 @@
 0x100e1880 func   ?sub_100e1880@@YAHHHH@Z sub_100e1880
 0x100e1890 func   ?RecvProxy_Int32ToInt32@@YAXPBVCRecvProxyData@@PAX1@Z RecvProxy_Int32ToInt32
 0x100e1890 func   ?sub_100e1890@@YAHHHH@Z sub_100e1890
+0x100e18a0 func   ?RecvProxy_StringToString@@YAXPBVCRecvProxyData@@PAX1@Z RecvProxy_StringToString
 0x100e18e0 func   ?sub_100e18e0@@YAHHH@Z sub_100e18e0
 0x100e18f0 func   ?sub_100e18f0@@YAHHH@Z sub_100e18f0
 0x100e1aa0 func   ?sub_100e1aa0@@YAHXZ sub_100e1aa0
