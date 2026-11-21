@@ -19876,6 +19876,43 @@ int CDiscTable_101e1800::sub_1014a0f0(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a200 size=0x3e
+struct CEntry101e19b0
+{
+	int m_n0000;
+	const char *m_pszText;
+};
+
+struct CUnknown101e19b0
+{
+	char m_pad0000[0x8];
+	CEntry101e19b0 **m_ppEntries;
+
+	int sub_10149d80(const char *pszName);
+	const char *sub_1014a200(const char *pszName);
+};
+
+extern char g_102de300[];
+extern char g_102c8820[];
+typedef void (*FnDevMsg)(const char *pszFormat, ...);
+extern FnDevMsg g_101e311c;
+
+// TARGET: CUnknown101e19b0::sub_1014a200
+const char *CUnknown101e19b0::sub_1014a200(const char *pszName)
+{
+	int nIndex = sub_10149d80(pszName);
+	if (nIndex != -1)
+	{
+		const char **ppText = &m_ppEntries[nIndex]->m_pszText;
+		if (*ppText)
+			return *ppText;
+		return g_102de300;
+	}
+	g_101e311c(g_102c8820);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014cfd0 size=0x41
 struct CGravityVar101e7dd0 { virtual void v0(); virtual bool IsZero(); char pad[0x28 - 4]; float m_flValue; };
 extern CGravityVar101e7dd0 *g_104dfce4;
