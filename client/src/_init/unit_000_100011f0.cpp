@@ -1508,3 +1508,9 @@ ConCommand g_104d2eec("-attack2", sub_10102140, 0, 0, 0);
 void sub_10102150(void);
 ConCommand g_104d2dac("+use", sub_10102150, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105170 size=0xa
+#include "ConCommand.h"
+void sub_10102160(void);
+ConCommand g_104d31a0("-use", sub_10102160, 0, 0, 0);
+// END FUNCTION
