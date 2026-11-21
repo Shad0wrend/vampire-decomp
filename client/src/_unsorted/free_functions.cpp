@@ -2340,6 +2340,13 @@ char __stdcall sub_1007c1c0(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007c8d0 size=0x5
+char __stdcall sub_1007c8d0(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007c8e0 size=0x3
 void __stdcall sub_1007c8e0(int a0)
 {
