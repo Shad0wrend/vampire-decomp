@@ -4365,6 +4365,13 @@ int g_104a2b78 = ClientClassInit((DT_Func_LOD::ignored *)0);
 RecvTable g_104a2c50;
 // END FUNCTION
 
+// FUNCTION: 0x100bbac0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_FuncMonitor { struct ignored; }
+template <> int ClientClassInit<DT_FuncMonitor::ignored>(DT_FuncMonitor::ignored *);
+int g_104a2c4c = ClientClassInit((DT_FuncMonitor::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100bbee0 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a2df4;
