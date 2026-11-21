@@ -107,6 +107,7 @@
 0x1000af50 func   ?sub_1000af50@@YAHXZ sub_1000af50
 0x1000b070 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_ChangBlade@@@Z ClientClassInit
 0x1000b1d0 func   ?sub_1000b1d0@@YAHXZ sub_1000b1d0
+0x1000b2f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_AVampBlade@@@Z ClientClassInit
 0x1000b450 func   ?sub_1000b450@@YAHXZ sub_1000b450
 0x1000b6d0 func   ?sub_1000b6d0@@YAHXZ sub_1000b6d0
 0x1000b950 func   ?sub_1000b950@@YAHXZ sub_1000b950
