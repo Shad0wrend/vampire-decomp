@@ -1644,6 +1644,7 @@
 0x1014d9b0 func   ?sub_1014d9b0@CUnknown1014d9b0@@QAEHXZ CUnknown1014d9b0::sub_1014d9b0
 0x1014da90 func   ?sub_1014da90@CUnknown1014da90@@QAEMXZ CUnknown1014da90::sub_1014da90
 0x1014daa0 func   ?sub_1014daa0@CUnknown1014daa0@@QAEHXZ CUnknown1014daa0::sub_1014daa0
+0x1014dab0 func   ?sub_1014dab0@CUnknown1014dab0@@QAEMXZ CUnknown1014dab0::sub_1014dab0
 0x1014dae0 func   ?sub_1014dae0@CDiscValues_101e9080@@QAEXPAH000@Z CDiscValues_101e9080::sub_1014dae0
 0x1014ddf0 func   ?sub_1014ddf0@@YIHPAXH0@Z sub_1014ddf0
 0x1014de30 func   ?sub_1014de30@@YGXH@Z sub_1014de30
