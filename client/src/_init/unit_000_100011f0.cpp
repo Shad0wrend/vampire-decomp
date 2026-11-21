@@ -258,3 +258,8 @@ ConVar g_103eeff0("mm_verbose", "0", 0);
 void sub_100656a0(void);
 ConCommand g_103ef08c("mm_resetparticles", sub_100656a0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10067b30 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_104770f8;
+// END FUNCTION
