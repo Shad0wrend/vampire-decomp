@@ -52441,6 +52441,18 @@ void CVTraitEffectGroup_t::sub_10156f70(CVStatKV *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157040 size=0x52
+#include "CVTraitEffectGroup_t.h"
+
+CVTraitEffect_t *CVTraitEffectGroup_t::sub_10157040(int i)
+{
+	if (i >= 0 && i < m_nEffects)
+		return &m_pEffects[i];
+	static CVTraitEffect_t s_default;
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101570b0 size=0x38
 // TARGET: CVTraitEffectGroup_t::sub_101570b0
 #include "CVTraitEffectGroup_t.h"
