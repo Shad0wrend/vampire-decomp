@@ -31117,6 +31117,16 @@ int __stdcall sub_101537f0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153800 size=0x10
+struct CUnknown10153800 { void * sub_10153800(); };
+void * CUnknown10153800::sub_10153800()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153810 size=0x1c
 struct CUnk101f1bb0 {
 	void *m_00;
