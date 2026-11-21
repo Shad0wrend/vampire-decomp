@@ -173,3 +173,9 @@ ConVar g_103ee0f0("v_hidedlg", "0", 1);
 void sub_10058310(void);
 ConCommand g_103eeb54("slot1", sub_10058310, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10058400 size=0xa
+#include "ConCommand.h"
+void sub_10058320(void);
+ConCommand g_103eeb7c("slot2", sub_10058320, 0, 0, 0);
+// END FUNCTION
