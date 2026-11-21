@@ -44788,6 +44788,41 @@ void CUnknown101f6c50::sub_10156b30(int nType, CTraitStatBlock *pBlock, int *pOu
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156c60 size=0xd7
+#include "CVTraitEffect_t.h"
+#include "CVDmg_t.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+extern char g_102de300[];
+extern const char *g_105f8bb4[];
+void sub_1015fbc0(void *pOut, const char *pszText);
+const char *sub_1015e8a0(CVTraitEffect_t *pEffect, int nValue);
+
+inline const char *TE_KindName(int k)
+{
+	const char *p = g_105f8bb4[k];
+	return p ? p : g_102de300;
+}
+
+// TARGET: CVTraitEffect_t::sub_10156c60
+void CVTraitEffect_t::sub_10156c60(void *pOut)
+{
+	if (pOut) {
+		if (*(int *)this != -1) {
+			char szLine[128];
+			const char *pszTrait = ((CVDmgBlock16_t *)this)->sub_10160740();
+			if (m_nKind != 6)
+				sprintf(szLine, "\t\t\t( %s  %s  %d )", pszTrait, TE_KindName(m_nKind), m_n14);
+			else
+				sprintf(szLine, "\t\t\t( %s  %s  %s )", pszTrait, TE_KindName(6), sub_1015e8a0(this, m_n14));
+			sub_1015fbc0(pOut, szLine);
+		} else {
+			sub_1015fbc0(pOut, "\t\t\t( <ERROR> )");
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156f40 size=0x2a
 #include "CUnknown101f73b0.h"
 
