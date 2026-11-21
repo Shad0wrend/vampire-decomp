@@ -148,6 +148,32 @@ char CUnknown100026a0::sub_100026a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10002730 size=0xb0
+#include "RecvTable.h"
+extern RecvTable g_102de350;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102ad768;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_CCameraAnimated { struct ignored; }
+template <> int ClientClassInit<DT_CCameraAnimated::ignored>(DT_CCameraAnimated::ignored *)
+{
+	char *pRecvTableName = "DT_CCameraAnimated";
+	RecvTable &RecvTable = g_102de350;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102ad768, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_bShouldDraw", 1936, 1, 0, 0),
+		RecvPropFloat("m_flOverrideFOV", 1940, 4, 0, RecvProxy_FloatToFloat),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002900 size=0x6
 namespace lifted {
 extern char g_102de74c;
