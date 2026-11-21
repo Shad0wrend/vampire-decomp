@@ -1568,3 +1568,9 @@ ConCommand g_104d3850("+jlook", sub_10101f80, 0, 0, 0);
 void sub_10101f90(void);
 ConCommand g_104d39f4("-jlook", sub_10101f90, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105490 size=0xa
+#include "ConCommand.h"
+void sub_10102170(void);
+ConCommand g_104d30f4("+duck", sub_10102170, 0, 0, 0);
+// END FUNCTION
