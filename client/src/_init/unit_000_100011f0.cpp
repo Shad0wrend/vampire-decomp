@@ -221,3 +221,9 @@ ConCommand g_103eec6c("slot8", sub_10058380, 0, 0, 0);
 void sub_10058390(void);
 ConCommand g_103eeae4("vdiscipline", sub_10058390, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10058680 size=0xa
+#include "ConCommand.h"
+void sub_100583a0(void);
+ConCommand g_103eea78("vhotkey", sub_100583a0, 0, 0, 0);
+// END FUNCTION
