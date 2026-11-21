@@ -23515,6 +23515,22 @@ void *CUnkDelete101d7c90::sub_101667f0(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018e330 size=0x28
+#include <stdarg.h>
+
+extern "C" int __cdecl _vsnprintf(char *buffer, size_t count, const char *format, va_list argptr);
+
+// TARGET: sub_1018e330
+char *sub_1018e330(char *pBuffer, const char *pszFormat, ...)
+{
+    va_list args;
+    va_start(args, pszFormat);
+    _vsnprintf(pBuffer, 0xff, pszFormat, args);
+    pBuffer[0xff] = 0;
+    return pBuffer;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0e90 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_101e3100)(int);
