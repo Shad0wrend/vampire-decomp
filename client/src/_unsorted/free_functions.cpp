@@ -50968,6 +50968,22 @@ void sub_101a2b00(int *p, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2b30 size=0x25
+void sub_101a23f0(void *p);
+
+// TARGET: sub_101a2b30
+void sub_101a2b30(float *p, const float *v)
+{
+    sub_101a23f0(p);
+    float x = v[0];
+    p[3] = x;
+    float y = v[1];
+    p[7] = y;
+    float z = v[2];
+    p[11] = z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2b60 size=0x112
 #include <math.h>
 #include "Vector.h"
