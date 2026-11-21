@@ -9859,6 +9859,18 @@ void sub_1010bc90(const Vector &a, const Vector &b, const Vector &c, Vector &out
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010bde0 size=0x62
+float sub_1010bde0(float *p, float *a, float *b, float *d)
+{
+	d[0] = b[0] - a[0];
+	d[1] = b[1] - a[1];
+	float len2 = d[1] * d[1] + d[0] * d[0];
+	if (len2 < 1e-5f)
+		return 0.0f;
+	return ((p[0] * d[0] + d[1] * p[1]) - (d[1] * a[1] + a[0] * d[0])) / len2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c2e0 size=0x3f
 // TARGET: sub_1010c2e0
 float sub_1010c2e0(float a, float b, float c)
