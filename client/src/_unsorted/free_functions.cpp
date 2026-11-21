@@ -11760,6 +11760,17 @@ int CUnknown100aa450::sub_100aa450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aa460 size=0x14
+namespace lifted {
+int __stdcall sub_100aa410(int);
+}
+struct CUnknown100aa460 { int sub_100aa460(); };
+int CUnknown100aa460::sub_100aa460()
+{
+    return lifted::sub_100aa410(1 - (*(int *)((char *)this + 0x1628)));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa480 size=0xd
 struct CUnknown100aa480 { int sub_100aa480(int); };
 int CUnknown100aa480::sub_100aa480(int a0)
