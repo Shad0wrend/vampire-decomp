@@ -30691,6 +30691,60 @@ char *sub_100eb740(int axis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eb7a0 size=0x150
+#include "CGameMovement.h"
+
+extern "C" __declspec(dllimport) void DevMsg(int level, const char *pszFormat, ...);
+
+struct SConVarView {
+	virtual void v0();
+	virtual char v1();
+	char pad[0x24];
+	float m_fValue;	// 0x28
+};
+extern SConVarView *g_104df8f4;
+extern unsigned int g_10235410;
+const char *sub_100eb740(int axis);
+
+struct SMovePlayerView
+{
+	char m_pad0000[0x40];
+	float m_vecVelocity[3];	// 0x40
+	char m_pad004c[0x70 - 0x4c];
+	float m_vecOrigin[3];	// 0x70
+};
+
+#define MAXVEL (g_104df8f4->v1() ? 0.0f : g_104df8f4->m_fValue)
+#define IS_NAN(x) (((*(unsigned int *)&(x)) & g_10235410) == g_10235410)
+#define PLAYER ((SMovePlayerView *)m_pPlayer)
+
+struct CGameMovementUnit : CGameMovement
+{
+	void sub_100eb7a0();	// "CGameMovement::CheckVelocity"
+};
+
+void CGameMovementUnit::sub_100eb7a0()
+{
+	for (int i = 0; i < 3; i++) {
+		if (IS_NAN(PLAYER->m_vecVelocity[i])) {
+			DevMsg(1, "PM  Got a NaN velocity %s\n", sub_100eb740(i));
+			PLAYER->m_vecVelocity[i] = 0;
+		}
+		if (IS_NAN(PLAYER->m_vecOrigin[i])) {
+			DevMsg(1, "PM  Got a NaN origin on %s\n", sub_100eb740(i));
+			PLAYER->m_vecOrigin[i] = 0;
+		}
+		if (PLAYER->m_vecVelocity[i] > MAXVEL) {
+			DevMsg(1, "PM  Got a velocity too high on %s\n", sub_100eb740(i));
+			PLAYER->m_vecVelocity[i] = MAXVEL;
+		} else if (PLAYER->m_vecVelocity[i] < -MAXVEL) {
+			DevMsg(1, "PM  Got a velocity too low on %s\n", sub_100eb740(i));
+			PLAYER->m_vecVelocity[i] = -MAXVEL;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ebb50 size=0xa5
 #include "CGameMovement.h"
 
