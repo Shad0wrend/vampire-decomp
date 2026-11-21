@@ -1739,6 +1739,13 @@ int g_102e101c = ClientClassInit((DT_ItemGEDanePrintReport::ignored *)0);
 RecvTable g_102e4e64;
 // END FUNCTION
 
+// FUNCTION: 0x1001b450 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGEDaneReport { struct ignored; }
+template <> int ClientClassInit<DT_ItemGEDaneReport::ignored>(DT_ItemGEDaneReport::ignored *);
+int g_102e4e60 = ClientClassInit((DT_ItemGEDaneReport::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001b690 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e08c4;
