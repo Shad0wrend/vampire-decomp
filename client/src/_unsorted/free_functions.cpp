@@ -7136,6 +7136,19 @@ int CSave::sub_10129560(const void *pBaseData, typedescription_t *pFields, int n
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129640 size=0x47
+#include "CSave.h"
+struct CSaveDesc { int m_n0, m_n4, m_n8; CSaveDesc *m_pParent; };
+int CSave::sub_10129640(int a, int b, CSaveDesc *p)
+{
+    if (p->m_pParent) {
+        if (!sub_10129640(a, b, p->m_pParent))
+            return 0;
+    }
+    return vfunc3(p->m_n8, a, b, p->m_n0, p->m_n4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129800 size=0x26
 // TARGET: sub_10129800
 int __stdcall sub_10129800(const char *pBytes, int nBytes)
