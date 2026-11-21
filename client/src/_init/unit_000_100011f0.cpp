@@ -1287,3 +1287,8 @@ ConVar g_104d3088("cl_forwardspeed", "400", 128);
 #include "ConVar.h"
 ConVar g_104d3c18("cl_backspeed", "400", 128);
 // END FUNCTION
+
+// FUNCTION: 0x10101990 size=0xa
+#include "ConVar.h"
+ConVar g_104d31f0("lookspring", "0", 128);
+// END FUNCTION
