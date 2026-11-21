@@ -740,6 +740,7 @@
 0x101391d0 func   ?sub_101391d0@@YIXPAUCTreeHolder1024a120@@@Z sub_101391d0
 0x101392a0 func   ?sub_101392a0@CUnknown1024a230@@QAEPAV1@XZ CUnknown1024a230::sub_101392a0
 0x10139340 func   ?sub_10139340@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_10139340
+0x1013a7d0 func   ?sub_1013a7d0@@YAXXZ sub_1013a7d0
 0x1013c790 func   ?sub_1013c790@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1013c790
 0x1013c7b0 func   ?sub_1013c7b0@CUnk1011d310@@QAEDH@Z CUnk1011d310::sub_1013c7b0
 0x1013c8a0 func   ?sub_1013c8a0@CInitView@@QAEPAU1@HHE@Z CInitView::sub_1013c8a0

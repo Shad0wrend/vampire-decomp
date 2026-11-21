@@ -17097,6 +17097,12 @@ unsigned short CUtlRBTree16::sub_10139340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013a7d0 size=0x1
+void sub_1013a7d0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c790 size=0x19
 #include "Vector.h"
 Vector &Vector::sub_1013c790(const Vector &v)
