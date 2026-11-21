@@ -6732,6 +6732,58 @@ void CUnk1042da10::sub_101209c0(char bSet)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101271e0 size=0x7d
+struct IApi {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+    virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+    virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+    virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+    virtual void v20(void *p);
+    virtual void v21(); virtual void v22();
+    virtual void v23(void *p);
+    virtual void v24(void *p);
+};
+extern IApi *g_104e0c90;
+struct Item24 { int a; int b; int c; int d; int e; int f; };
+struct Block {
+    int count;
+    void *m_p;
+    int pad[2];
+    int m_u14;
+    Item24 items[1];
+};
+void sub_101271e0(int *s)
+{
+    int *b = s;
+    if (*b != 0) {
+        int i = 0;
+        int *p;
+        if (0 < *b) {
+            p = b + 6;
+            do {
+                g_104e0c90->v23((void *)*p);
+                *p = 0;
+                i++;
+                p += 6;
+            } while (i < *b);
+        }
+        i = 0;
+        if (0 < *b) {
+            p = b + 5;
+            do {
+                g_104e0c90->v20((void *)*p);
+                *p = 0;
+                i++;
+                p += 6;
+            } while (i < *b);
+        }
+        g_104e0c90->v24((void *)b[1]);
+        b[1] = 0;
+        *b = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127320 size=0x87
 #include "Vector.h"
 struct CRagdollBoneMatrix { float m_f[12]; };

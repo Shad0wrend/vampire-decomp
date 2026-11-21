@@ -259,6 +259,7 @@
 0x10120660 func   ?sub_10120660@@YAXHH@Z sub_10120660
 0x10120730 func   ?sub_10120730@@YAXXZ sub_10120730
 0x101209c0 func   ?sub_101209c0@CUnk1042da10@@QAEXD@Z CUnk1042da10::sub_101209c0
+0x101271e0 func   ?sub_101271e0@@YAXPAH@Z sub_101271e0
 0x10127320 func   ?sub_10127320@@YA_NPAUCRagdollLayout@@PAUCRagdollStudio@@H@Z sub_10127320
 0x10127830 func   ?sub_10127830@CMem16_t@@QAEXH@Z CMem16_t::sub_10127830
 0x10128b80 func   ?vfunc0@CBaseRopePhysics@@UAEXPAUCRopeNode@@HPAVVector@@@Z CBaseRopePhysics::vfunc0
