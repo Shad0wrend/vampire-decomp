@@ -31361,6 +31361,18 @@ const char *__fastcall sub_101501f0(void *pThis, int dummy, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150220 size=0x16
+struct CUnknown10150220 { void * sub_10150220(int); };
+void * CUnknown10150220::sub_10150220(int a0)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101503a0 size=0x9c
 #include "CUnknown101ec6f0.h"
 
