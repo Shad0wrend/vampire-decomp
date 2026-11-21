@@ -285,6 +285,7 @@
 0x10018dd0 func   ?sub_10018dd0@@YAHXZ sub_10018dd0
 0x10018ef0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGLillyPhoto@@@Z ClientClassInit
 0x10019050 func   ?sub_10019050@@YAHXZ sub_10019050
+0x10019170 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGLillyDiary@@@Z ClientClassInit
 0x100192d0 func   ?sub_100192d0@@YAHXZ sub_100192d0
 0x10019550 func   ?sub_10019550@@YAHXZ sub_10019550
 0x100197d0 func   ?sub_100197d0@@YAHXZ sub_100197d0
