@@ -16763,6 +16763,20 @@ void *CUnkDelete101d7c90::sub_10144d90(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145090 size=0x61
+#include "CUnknown101d7ec0.h"
+
+CUnknown101d7ec0_Entry *CUnknown101d7ec0::sub_10145090(int iKey)
+{
+	for (int i = 0; i < m_n0; i++) {
+		if (m_pEntries[i].m_n0 == iKey)
+			return &m_pEntries[i];
+	}
+	static CUnknown101d7ec0_DefaultEntry s_default;
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145140 size=0x7c
 #include <stdio.h>
 #include "CUnknown101d82d0.h"
