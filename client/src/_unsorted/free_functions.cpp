@@ -14316,6 +14316,25 @@ void CUnknown100d8260::sub_100d8260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8330 size=0x20
+namespace lifted {
+extern char g_10234828;
+}
+struct CUnknown100d8330 { void * sub_100d8330(); };
+void * CUnknown100d8330::sub_100d8330()
+{
+    *(int *)this = (int)&lifted::g_10234828;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8380 size=0x7
 namespace lifted {
 extern char g_10227c5c;
