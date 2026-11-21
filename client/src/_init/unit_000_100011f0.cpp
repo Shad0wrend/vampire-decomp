@@ -2082,3 +2082,8 @@ int g_105e5ad8 = ((int (*)(int))sub_10134010)(0);
 int sub_101454a0(void);
 int g_105e7928 = ((int (*)(int))sub_101454a0)(0);
 // END FUNCTION
+
+// FUNCTION: 0x1015bc70 size=0xa
+#include "ConVar.h"
+ConVar g_105f9280("vdiscipline_use_new", "1", 8448);
+// END FUNCTION
