@@ -34111,6 +34111,24 @@ void sub_1010aba0(
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010ada0 size=0x17c
+#include "Vector.h"
+void sub_1010a980(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, float t, Vector &output);
+
+// TARGET: sub_1010ada0
+void sub_1010ada0(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, float t, Vector &output)
+{
+    float dt = (p3 - p2).Length();
+    Vector d1 = p1 - p2;
+    Vector d2 = p4 - p3;
+    VectorNormalize(d1);
+    VectorNormalize(d2);
+    d1 = d1 * dt + p2;
+    d2 = d2 * dt + p3;
+    sub_1010a980(d1, p2, p3, d2, t, output);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010af20 size=0x16a
 #include "Vector.h"
 
