@@ -495,3 +495,8 @@ ConVar g_104a0ca0("test_player_dsp", "-1", 0);
 #include "ConVar.h"
 ConVar g_1049fe08("test_room_dsp", "-1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100a7260 size=0xa
+#include "ConVar.h"
+ConVar g_1049e838("vamplight_enabled", "0", 0);
+// END FUNCTION
