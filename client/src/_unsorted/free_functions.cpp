@@ -20500,6 +20500,29 @@ int sub_100bb9a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bbae0 size=0x8f
+#include "RecvTable.h"
+extern RecvTable g_104a2c50;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_FuncMonitor { struct ignored; }
+template <> int ClientClassInit<DT_FuncMonitor::ignored>(DT_FuncMonitor::ignored *)
+{
+	char *pRecvTableName = "DT_FuncMonitor";
+	RecvTable &RecvTable = g_104a2c50;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_TargetIndex", 1040, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bbb80 size=0x5
 namespace lifted {
 int sub_1009f210();
