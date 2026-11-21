@@ -2144,6 +2144,7 @@
 0x1018c840 func   ?sub_1018c840@@YADXZ sub_1018c840
 0x1018ca70 func   ?sub_1018ca70@CUnknown1018ca70@@QAEHXZ CUnknown1018ca70::sub_1018ca70
 0x1018cc70 func   ?sub_1018cc70@CUnknown1018cc70@@QAEHXZ CUnknown1018cc70::sub_1018cc70
+0x1018d1f0 func   ?sub_1018d1f0@@YAXXZ sub_1018d1f0
 0x1018dd90 func   ?sub_1018dd90@@YAHXZ sub_1018dd90
 0x1018e330 func   ?sub_1018e330@@YAPADPADPBDZZ sub_1018e330
 0x1018f340 func   ?sub_1018f340@@YAHXZ sub_1018f340
