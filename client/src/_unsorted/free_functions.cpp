@@ -16179,6 +16179,13 @@ void CUnknown101b2790::sub_1012de10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e0d0 size=0x4
+int sub_1012e0d0()
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e0e0 size=0xe8
 #include "utlvector.h"
 #include "CSoundEmitterSystemBase.h"
