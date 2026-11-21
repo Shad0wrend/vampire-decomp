@@ -1586,3 +1586,9 @@ ConCommand g_104d31c8("-duck", sub_10102180, 0, 0, 0);
 void sub_10102190(void);
 ConCommand g_104d3800("+reload", sub_10102190, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105580 size=0xa
+#include "ConCommand.h"
+void sub_101021a0(void);
+ConCommand g_104d3324("-reload", sub_101021a0, 0, 0, 0);
+// END FUNCTION
