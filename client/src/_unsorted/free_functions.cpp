@@ -8002,6 +8002,13 @@ char sub_100e0000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e0010 size=0x3
+char sub_100e0010()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e00f0 size=0x1
 void sub_100e00f0()
 {
