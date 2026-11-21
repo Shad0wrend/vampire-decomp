@@ -1766,3 +1766,8 @@ ConVar g_104d3f30("m_yaw", "0.022", 128, "Mouse yaw factor.");
 #include "ConVar.h"
 ConVar g_104d3f78("m_forward", "1", 128, "Mouse forward factor.");
 // END FUNCTION
+
+// FUNCTION: 0x10106780 size=0xa
+#include "ConVar.h"
+ConVar g_104d4008("cl_mouseenable", "1", 0);
+// END FUNCTION
