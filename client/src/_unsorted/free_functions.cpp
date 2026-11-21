@@ -27085,6 +27085,13 @@ void sub_10170c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10172ac0 size=0x3
+char sub_10172ac0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10174c40 size=0x1
 void sub_10174c40()
 {
