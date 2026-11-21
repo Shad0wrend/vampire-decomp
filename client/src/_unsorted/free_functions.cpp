@@ -29830,6 +29830,15 @@ int sub_101522b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152510 size=0xb
+struct CUnknown10152510 { void * sub_10152510(int); };
+void * CUnknown10152510::sub_10152510(int a0)
+{
+    *(int *)this = a0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152520 size=0x1
 void sub_10152520()
 {
