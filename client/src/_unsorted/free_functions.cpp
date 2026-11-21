@@ -14744,6 +14744,16 @@ char CUnknown1042d9a0::sub_10120a10(CUnknown1042d9a0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10125790 size=0x5
+namespace lifted {
+int sub_10094890();
+}
+int sub_10125790()
+{
+    return lifted::sub_10094890();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10126a30 size=0x39
 void sub_10120660(int a, int b);
 
