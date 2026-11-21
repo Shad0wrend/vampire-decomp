@@ -6305,6 +6305,20 @@ void * CUnknown102454e0::sub_100df1c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df200 size=0x25
+#include "ConCommandBase.h"
+
+extern char vt_102348c8[];
+
+// TARGET: sub_100df200
+ConCommandBase *ConCommandBase::sub_100df200(const char *pszName, const char *pszHelp, int nFlags)
+{
+    *(void **)this = vt_102348c8;
+    vfunc2(pszName, pszHelp, nFlags);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df2c0 size=0x3d
 int sub_101e28e0(const char *, const char *);
 
