@@ -1169,6 +1169,7 @@
 0x10120a10 func   ?sub_10120a10@CUnknown1042d9a0@@QAEDPAV1@@Z CUnknown1042d9a0::sub_10120a10
 0x10125790 func   ?sub_10125790@@YAHXZ sub_10125790
 0x10125dc0 func   ?sub_10125dc0@@YGHH@Z sub_10125dc0
+0x10125e70 func   ?sub_10125e70@@YAHXZ sub_10125e70
 0x10126a30 func   ?sub_10126a30@@YAXPAUCUnknown1019bf80List@@@Z sub_10126a30
 0x10126a70 func   ?sub_10126a70@@YAXPAUHolder@@@Z sub_10126a70
 0x10127000 func   ?sub_10127000@@YAXPAUCRagdollBones@@PAUCBoneSetBase@@1H@Z sub_10127000
