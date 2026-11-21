@@ -8843,6 +8843,35 @@ int sub_10033da0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033e10 size=0xc7
+#include "RecvTable.h"
+extern RecvTable g_102ec2d8;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_1027d268;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBeamRingPoint { struct ignored; }
+template <> int ClientClassInit<DT_TEBeamRingPoint::ignored>(DT_TEBeamRingPoint::ignored *)
+{
+	char *pRecvTableName = "DT_TEBeamRingPoint";
+	RecvTable &RecvTable = g_102ec2d8;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_1027d268, DataTableRecvProxy_StaticDataTable),
+		RecvPropVector("m_vecCenter", 72, 12, 0, RecvProxy_VectorToVector),
+		RecvPropFloat("m_flStartRadius", 84, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flEndRadius", 88, 4, 0, RecvProxy_FloatToFloat),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10033f50 size=0x12
 namespace lifted {
 extern char g_10226068;
