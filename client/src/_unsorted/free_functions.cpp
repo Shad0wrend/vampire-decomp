@@ -7997,6 +7997,19 @@ float sub_10107be0(float x)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107ce0 size=0x36
+// TARGET: sub_10107ce0
+#include "Vector.h"
+
+int sub_10107ce0(Vector *a, Vector *b)
+{
+	if (a->x == b->x && a->y == b->y && a->z == b->z) {
+		return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107e40 size=0x61
 struct RadianEuler10137e40
 {
