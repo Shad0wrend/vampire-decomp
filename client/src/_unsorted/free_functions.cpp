@@ -2836,6 +2836,28 @@ int sub_10010950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10010a70 size=0x72
+#include "RecvTable.h"
+extern RecvTable g_102e260c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102abca0;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_LG_COMP { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_LG_COMP::ignored>(DT_ResearchBook_LG_COMP::ignored *)
+{
+	char *pRecvTableName = "DT_ResearchBook_LG_COMP";
+	RecvTable &RecvTable = g_102e260c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102abca0, DataTableRecvProxy_StaticDataTable),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10010bd0 size=0x6
 namespace lifted {
 extern char g_102e1e74;
