@@ -22569,6 +22569,42 @@ void CDebugListEntry::sub_101571b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157280 size=0xdd
+#include "CVTraitEffectGroup_t.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+extern char g_102de300[];
+void sub_1015fbc0(void *pOut, const char *pszText);
+
+struct CVTraitIdList {
+	const char *sub_10157ac0(int id);	// stub 0x1000ecdc
+};
+extern CVTraitIdList g_105f8b98;
+
+void CVTraitEffectGroup_t::sub_10157280(void *pOut)
+{
+	char szLine[128];
+	if (pOut) {
+		const char *pszName = m_pszName;
+		if (!pszName)
+			pszName = g_102de300;
+		sprintf(szLine, "[%s]\t\t\t{%s}\t", g_105f8b98.sub_10157ac0(m_nId), pszName);
+		sub_1015fbc0(pOut, szLine);
+		if (m_nId != -1) {
+			if (m_nEffects > 0) {
+				for (int i = 0; i < m_nEffects; i++)
+					m_pEffects[i].sub_10156c60(pOut);
+			} else {
+				sub_1015fbc0(pOut, "\t\t\t( <ERROR> )");
+			}
+			sub_1015fbc0(pOut, "\n");
+		} else {
+			sub_1015fbc0(pOut, "\t\t\t( <ERROR> )");
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157390 size=0xeb
 #include "CUnknown101f7960.h"
 
