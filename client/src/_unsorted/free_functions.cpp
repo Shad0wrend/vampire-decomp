@@ -45779,6 +45779,63 @@ void CUnknown101daf60::sub_10146890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146990 size=0xf6
+#include "CUnknown101db210.h"
+#include "CUnknown101db5f0.h"
+
+__declspec(dllimport) void DevMsg(const char *pszFormat, ...);
+
+struct CAffectsFilterLoader {
+	char sub_101466c0(IKVNodeView *pKV);	// loads the "Affects_Filters" flags (stub 0x1000eceb)
+};
+
+namespace block_101db0d0 {
+struct CUnknown101daf60Unit : public CUnknown101daf60 {
+	bool sub_10146880();
+};
+bool CUnknown101daf60Unit::sub_10146880()
+{
+	{ bool b_ = m_pData != 0; return b_; }
+}
+}
+using namespace block_101db0d0;
+
+// TARGET: CUnknown101db210::sub_10146990
+bool CUnknown101db210::sub_10146990(IKVNodeView *pKV, const CUnknown101db210Filter *pFilter)
+{
+	sub_10146b90();
+	if (pKV) {
+		CUnknown101db210Filter *pDest = (CUnknown101db210Filter *)m_filter;
+		*pDest = *pFilter;
+		((CAffectsFilterLoader *)pDest)->sub_101466c0(pKV);
+		((CUnknown101daec0 *)&m_first)->sub_10146800(pKV, "Default_Mapping");
+		IKVNodeView *pNode = pKV->vfunc2("Mapping");
+		while (pNode) {
+			CUnknown101daec0 *pItem = (CUnknown101daec0 *)sub_10146a90();
+			if (pItem) {
+				pItem->sub_10146800(pNode, 0);
+				pNode = pNode->vfunc3();
+			}
+		}
+		void *pMem = operator new(0xc);
+		CUnknown101db5f0 *pObj = pMem ? ((CUnknown101db5f0 *)pMem)->sub_10146c90() : 0;
+		m_pSub = (CUnknown101db210Sub *)pObj;
+		m_pSub->sub_10146cb0(pKV, pDest);
+		int nTotal = 0;
+		for (int i = 0; i < m_count; i++)
+			nTotal += ((CUnknown101daec0 *)m_pItems[i])->m_nChance;
+		if (nTotal != 100) {
+			if (!((CUnknown101daf60Unit *)&m_first)->sub_10146880()) {
+				if (m_pSub->m_nCount == 0)
+					DevMsg("ERROR: DisciplineFX: AffectsTable mappings don't add up to 100% (%d)!\n", nTotal);
+			}
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146a90 size=0xf1
 #include "CUnknown101db210.h"
 
