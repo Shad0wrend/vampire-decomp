@@ -28217,6 +28217,17 @@ int CUnknown10144b30::sub_10144b30(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144d10 size=0x17
+struct CUnknown10144d10 { void * sub_10144d10(); };
+void * CUnknown10144d10::sub_10144d10()
+{
+    *(int *)this = -1;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144d30 size=0x1
 void sub_10144d30()
 {
