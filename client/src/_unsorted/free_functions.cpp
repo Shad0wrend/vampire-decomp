@@ -19123,6 +19123,24 @@ void CUnknown101eccd0::sub_10150820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150b60 size=0x21
+extern bool (*g_105e865c)(void *, int, int);
+
+struct CUnk101ed0f0
+{
+    bool sub_10150b60(int a, int b);
+};
+
+// TARGET: sub_10150b60
+bool CUnk101ed0f0::sub_10150b60(int a, int b)
+{
+    if (g_105e865c != 0) {
+        return g_105e865c(this, a, b);
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150bc0 size=0x7b
 #include "CUnknown101ed170.h"
 
