@@ -1856,3 +1856,8 @@ ConVar g_104dfc50("sv_wateraccelerate", "10", 8448);
 #include "ConVar.h"
 ConVar g_104dfae8("sv_waterfriction", "1", 8448);
 // END FUNCTION
+
+// FUNCTION: 0x1010fc50 size=0xa
+#include "ConVar.h"
+ConVar g_104dfe00("sv_edgefriction", "2", 8448);
+// END FUNCTION
