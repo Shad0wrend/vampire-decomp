@@ -21,6 +21,10 @@ public:
 
 	int sub_10157b30(const char *name);
 	int sub_10157b80(const char *name);
+	int sub_1013fdf0(const char *name);
+	int sub_10149dc0(const char *name);
+	int sub_1013fef0(const char *name, int start);
+	int sub_10149ec0(const char *name, int start);
 		// same as sub_101d5d20 (another instance)
 	void sub_10140a70();	// purges the list, then loads the "LevelingTemplate" data files (vdata/system) one by one
 	void sub_101499f0();

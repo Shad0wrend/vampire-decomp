@@ -13,7 +13,8 @@ public:
 	int m_nStrata;	// 0x08: discipline strata to match (-1 for any)
 	int m_nChance;	// 0x0c: percent that is checked against the global budget at 0x10739a7c (100 = always)
 
-		// true when the entry exists (called through the stub at 0x1000d788)
-		// prints "[AffectsFilter]:" and every existing entry (0..14) with Msg
+	const char *sub_10146650(int index);
+	bool sub_10146660(int index);	// true when the entry exists (called through the stub at 0x1000d788)
+	void sub_10146750();	// prints "[AffectsFilter]:" and every existing entry (0..14) with Msg
 		// whether the filter lets pChar (acting on pTarget) through
 };

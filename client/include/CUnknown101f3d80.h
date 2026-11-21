@@ -13,7 +13,7 @@ public:
 	int m_nCount;	// 0x1c
 	CUnknown101f35c0 **m_pItems;	// 0x20
 
-		// appends a new record, growing the pointer array by one
+	void sub_101550d0(int a, int b);	// appends a new record, growing the pointer array by one
 	void sub_10155070(int a, int b);	// same shape as sub_101f3d80 (the other record kind), called by the scan
 	bool sub_10154c90();	// scans "sound\<dir>\*.*": every file goes to sub_101f3d00(path, name), then every sub directory except "." and ".." to sub_101f3d80(path, name); true
 };

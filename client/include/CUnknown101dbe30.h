@@ -6,9 +6,10 @@ class CBaseEntity;
 class CUnknown101dbe30
 {
 public:
-		// constructor body (stub 0x10003350): returns this
-		// the sound is set (stub 0x10012a5d)
-		// DevMsg's "   SoundFX: <name>" when the sound is set (stub 0x10006ece)
+	bool sub_10147220(void *pKeys);
+	CUnknown101dbe30 *sub_101471e0(int index);	// constructor body (stub 0x10003350): returns this
+	bool sub_10147210();	// the sound is set (stub 0x10012a5d)
+	void sub_10147290();	// DevMsg's "   SoundFX: <name>" when the sound is set (stub 0x10006ece)
 		// plays the sound from the entity to the players that hear it, logging it with DevMsg
 
 		// stops the sound on the entity's channel

@@ -12,14 +12,15 @@ public:
 
 	CVStatList_t(int a);
 	~CVStatList_t();
-		// "CVStatList_t::AddBase" (called through the stub at 0x1000e66a)
-		// "CVStatList_t::SubBase": scope trace, returns AddBase(stat, -amount)
-		// "CVStatList_t::IsValidStat": 0 <= stat < m_field04
-		// "CVStatList_t::GetBase": scope trace, the base value of the stat (first dword array behind m_field08), 0 when the stat is invalid
+	int sub_1015dbd0(int a);
+	char sub_1015d950(int stat, int amount);	// "CVStatList_t::AddBase" (called through the stub at 0x1000e66a)
+	char sub_1015da50(int stat, int amount);	// "CVStatList_t::SubBase": scope trace, returns AddBase(stat, -amount)
+	char sub_1015d3e0(int stat);	// "CVStatList_t::IsValidStat": 0 <= stat < m_field04
+	int sub_1015d6e0(int stat);	// "CVStatList_t::GetBase": scope trace, the base value of the stat (first dword array behind m_field08), 0 when the stat is invalid
 	void sub_1015d2c0();	// called by Bind (stub 0x1000f5bf)
 	void sub_1015d350(int a, int *pSource, int c);	// "CVStatList_t::Bind": scope trace, stores a at +0, the source at +0xc, its count (dword at +4) at +4 and c at +8, then sub_10200730()
-		// "CVStatList_t::IsEqual": scope trace, true when sub_10010609(a) == sub_10010609(b)
-		// "CVStatList_t::GetHighestValueIndex": scope trace, index of the first stat with the highest sub_10010609 value, -1 when empty
+	bool sub_1015dfa0(int a, int b);	// "CVStatList_t::IsEqual": scope trace, true when sub_10010609(a) == sub_10010609(b)
+	int sub_1015e100();	// "CVStatList_t::GetHighestValueIndex": scope trace, index of the first stat with the highest sub_10010609 value, -1 when empty
 	char sub_1015ddc0();	// recomputes every stat value (stored in the array behind m_field08), true when one changed (stub 0x1000a1a0)
 		// "CVStatList_t::SetValue"-like worker taking one stack argument (stub 0x10005cbd), called by the VStatGet wrapper; returns a flag byte
 		// stat setter taking (stat, value) (stub 0x10011e46)

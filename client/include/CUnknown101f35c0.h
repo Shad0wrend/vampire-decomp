@@ -8,7 +8,7 @@ class CUnknown101f35c0
 public:
 	char m_pad[0x24];
 
-		// constructor (stub 0x1000238d)
+	CUnknown101f35c0 *sub_10154ae0();	// constructor (stub 0x1000238d)
 	void sub_10154b70(int a, CUnknown101f3d80 *pOwner, int b, int c);	// stub 0x1000364d
 	bool sub_10154c40();	// stub 0x100045f2
 };

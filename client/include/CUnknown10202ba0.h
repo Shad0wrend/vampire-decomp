@@ -4,7 +4,7 @@
 class CUnknown10202ba0
 {
 public:
-		// prints the name and then every entry as "(%d):\t\t%s\n"
+	void sub_1015ee00();	// prints the name and then every entry as "(%d):\t\t%s\n"
 	const char *sub_1015ecd0(int index);	// the entry's text (stub 0x10010c8f)
 
 	int m_pad0000;

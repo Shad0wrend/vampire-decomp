@@ -9,5 +9,5 @@ public:
 	void *m_pData;
 
 	bool sub_10146880();
-		// prints this entry (stub 0x1000760d)
+	void sub_10146890();	// prints this entry (stub 0x1000760d)
 };

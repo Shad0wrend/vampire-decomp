@@ -9,7 +9,7 @@ public:
 	int m_field[10];
 	char m_flag28;
 
-		// the constructor (QuestJournal::QuestJournal); returns this
+	QuestJournal *sub_101624d0();	// the constructor (QuestJournal::QuestJournal); returns this
 #ifdef PCD_INITIALIZERS	// the initializer units: the out-of-line constructor the global's initializer jumps to
 	QuestJournal();	// function 0x10220e10
 #endif
@@ -17,9 +17,9 @@ public:
 		// "QuestJournal::GetQuestIndex": scope trace, index of the quest record (0x68 bytes each, name pointer first) whose name is a case-insensitive prefix match of the argument's length, or a warning and -1
 	char *sub_10162f00(int index);	// "QuestJournal::GetQuest": scope trace, record `index` (0x68 bytes each) of the array whose base is m_field[5], or a warning and the base when the index is invalid
 	char sub_10162fa0(int index);	// "QuestJournal::IsQuestIndexValid": 0 <= index < m_field[8]
-		// "QuestJournal::IsCompletionIndexValid": 0 <= index < m_field[3]
-		// "QuestJournal::GetCompletionState": scope trace, GetCompletionState(dword `index` (0 <= index < 20) at +0x14 of quest record `quest`), or a warning and the base when invalid
-		// "QuestJournal::GetCompletionState": scope trace, record `index` (0x18 bytes each) of the array whose base is m_field[0], or a warning and the base when invalid
+	char sub_10163030(int index);	// "QuestJournal::IsCompletionIndexValid": 0 <= index < m_field[3]
+	char *sub_101630c0(int quest, int index);	// "QuestJournal::GetCompletionState": scope trace, GetCompletionState(dword `index` (0 <= index < 20) at +0x14 of quest record `quest`), or a warning and the base when invalid
+	char *sub_10163180(int index);	// "QuestJournal::GetCompletionState": scope trace, record `index` (0x18 bytes each) of the array whose base is m_field[0], or a warning and the base when invalid
 	void sub_10162710();	// "QuestJournal::PurgeQuestData": scope trace, clears the flag, frees the strings of every completion (0x18 byte records at m_field[0]) and quest (0x68 byte records at m_field[5]) record, then empties and releases both vectors
 	void sub_10162840();	// resets every quest record (0x68 bytes each at m_field[5], count m_field[8]): the dword at +0x10 = -1, the dword at +0xc = 0
 	void sub_10162650();	// "QuestJournal::PreCache": scope trace, once (flag +0x28): loads the four quest script files "vdata\system\<name>.txt" through sub_102212b0

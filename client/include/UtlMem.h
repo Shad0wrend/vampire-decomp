@@ -9,6 +9,12 @@ public:
 	int m_allocationCount;
 	int m_growSize;
 
+	void sub_1004e830(int num);
+	void sub_1009cf00(int num);
+	void sub_100aad80(int num);
+	void sub_100ca0b0(int num);
+	void sub_10135430(int num);
+	void sub_10197a20(int num);
 	void sub_1002d470();	// "CUtlMemory::Purge": frees the allocation unless the grow size is -1 (external memory)
 	void sub_10039e60();
 	void sub_100558d0();
@@ -44,7 +50,9 @@ public:
 	void sub_10135350();
 	void sub_101b1e60();
 	void sub_101c2cc0();
+	void sub_1012d830();
 	UtlMem *sub_100d3c30(int growSize, int allocationCount);	// constructor for 8-byte elements
+	UtlMem *sub_10131440(int growSize, int allocationCount);
 		// provisional, like sub_1002cbd0 (transplant)
 		// provisional, like sub_1002cbd0 (transplant)
 		// provisional, like sub_1002cbd0 (transplant)
@@ -81,7 +89,7 @@ public:
 		// provisional, like sub_1002cbd0 (transplant)
 		// provisional, like sub_1002cbd0 (transplant)
 		// provisional, like sub_1002cbd0 (transplant)
-	void sub_1012d830();	// provisional, like sub_1002cbd0 (transplant)
+		// provisional, like sub_1002cbd0 (transplant)
 		// provisional, like sub_1002cbd0 (transplant)
 		// provisional, like sub_1002cbd0 (transplant)
 		// provisional, like sub_1002cbd0 (transplant)
@@ -116,6 +124,7 @@ public:
 	UtlMem *sub_101be2e0(int growSize, int allocationCount);
 	UtlMem *sub_101c2bd0(int growSize, int allocationCount);
 	UtlMem *sub_101c2c80(int growSize, int allocationCount);
+	UtlMem *sub_1008e560(int growSize, int allocationCount);
 		// provisional, like sub_10032ab0 (transplant)
 		// provisional, like sub_10032ab0 (transplant)
 		// provisional, like sub_10032ab0 (transplant)

@@ -27,25 +27,25 @@ public:
 	CKeyValuesX *m_pPeer;	// 0x10: the next key of the same level
 	CKeyValuesX *m_pSub;	// 0x14: the first sub key
 	CKeyValuesX *m_pBase18;	// 0x18: the key searched next when no sub key has the name
-		// "GetInt": the sub key's value as an int (atoi of the string, ftol of the float), nDefault when there is no such key
+	int sub_101284c0(const char *pszKey, int nDefault);	// "GetInt": the sub key's value as an int (atoi of the string, ftol of the float), nDefault when there is no such key
 	CKeyValuesX *sub_101282e0(const char *pszName, int bCreate);	// the stub of sub_10248900 (the recursion goes through it)
 	CKeyValuesX *sub_10128270(const char *pszName);	// creates a sub key of that name at the end of the list (stub 0x10004eee)
 
-		// "GetString" (called through the stub 0x1000ed95)
+	const char *sub_10128590(const char *pszKey, const char *pszDefault);	// "GetString" (called through the stub 0x1000ed95)
 		// stub 0x1001569a: finds the sub key of that name
 		// stub 0x10004c8c: the first sub key
 	CKeyValuesX *sub_101283b0();	// stub 0x1000fa65: the next key of the same level
-		// "GetName" (stub 0x1000fec0): the key's name
+	const char *sub_10127c70();	// "GetName" (stub 0x1000fec0): the key's name
 		// "LoadFromFile" (stub 0x100108b6, same as CUnknown10248a50::sub_102480f0); the object is made by `new CUnknown10248a50(name)` (ctor stub 0x1000e363)
 		// the destructor body (stub 0x100046f1), called before `delete`
-		// "RecursiveSaveToFile": writes this key and its sub keys as text, one level deeper per sub key
+	void sub_10128180(CUtlBuffer *pBuf, int nIndent);	// "RecursiveSaveToFile": writes this key and its sub keys as text, one level deeper per sub key
 		// the stub of sub_10248730 (the recursion goes through it)
-		// "FindKey" without create (stub 0x1000c9fa): the sub key of that name, 0 when there is none
+	CKeyValuesX *sub_10128430(const char *pszName);	// "FindKey" without create (stub 0x1000c9fa): the sub key of that name, 0 when there is none
 		// "GetNextKey" (stub 0x1000894f): the next key of the same level
 	float sub_10128540(const char *pszKey, float flDefault);	// "GetFloat" (stub 0x10009a9d)
-		// typed int lookup (stub 0x10014b...): the sub key of that name when it has the value type 3 its value at +8, 0 for another type, nDefault when there is no such key
+	int sub_10128510(const char *pszKey, int nDefault);	// typed int lookup (stub 0x10014b...): the sub key of that name when it has the value type 3 its value at +8, 0 for another type, nDefault when there is no such key
 		// the FindKey worker (stub 0x1000b58c): the sub key of that name, created through sub_10248870 when bCreate is set, else 0
-		// a jump to sub_10248900 with the same two arguments (stub-like thunk)
-		// "SetString": finds or creates the sub key and stores a copy of the string, type 0
-		// "SaveToFile": writes the tree as text into the file
+	CKeyValuesX *sub_10128350(const char *pszName, char bCreate);	// a jump to sub_10248900 with the same two arguments (stub-like thunk)
+	void sub_101288c0(const char *pszName, const char *pszValue);	// "SetString": finds or creates the sub key and stores a copy of the string, type 0
+	void sub_10128100(const char *pszFile, IKeyValuesFileView *pFileSystem, const char *pszPathID);	// "SaveToFile": writes the tree as text into the file
 };

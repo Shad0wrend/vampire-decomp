@@ -49,7 +49,7 @@ public:
 		// ConCommandBase destructor body (stub 0x100049d0), called directly
 	void sub_100df1c0();	// ConCommandBase constructor (stub 0x10007f3b, jumps to 0x102454e0), called directly first by the constructors
 		// ConCommandBase::Create, called directly (stub 0x1000de4f)
-		// slot 4's implementation as called directly with an integer ("ConVar::SetValue( int )", stub 0x1000c5cc)
+	void sub_100dfa90(int nValue);	// slot 4's implementation as called directly with an integer ("ConVar::SetValue( int )", stub 0x1000c5cc)
 
 	const char *GetString() { const char *psz = ""; if (!m_pParent->vfunc1()) { if (m_nFlags & 0x1000) return "FCVAR_NEVER_AS_STRING"; if (m_pParent->m_pszString) psz = m_pParent->m_pszString; } return psz; }
 	int GetInt() { return m_pParent->vfunc1() ? 0 : m_pParent->m_nValue; }

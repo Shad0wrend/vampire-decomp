@@ -43,14 +43,15 @@ public:
 		m[2][2] = vUp.z;
 	}
 
-		// VMatrix * VPlane
-		// column 1 (GetLeft), out of line; returns out
-		// column 2 (GetUp), out of line; returns out
+	struct VPlane sub_101a1550(const struct VPlane &in) const;	// VMatrix * VPlane
+	Vector &sub_101a1d40(Vector &out) const;	// column 1 (GetLeft), out of line; returns out
+	Vector &sub_101a1d60(Vector &out) const;	// column 2 (GetUp), out of line; returns out
 		// out = this * vm (16 dot products computed descending into locals, stored at the end)
 		// NormalizeBasisVectors: the three basis columns normalised, bottom row 0 0 0 1, returned by value
-		// "VMatrix::InverseTR" by value: { VMatrix ret; InverseTR(ret); return ret; }	// "VMatrix::InverseTR": ret = the inverse of a rotation + translation matrix (transposed 3x3, the translation transformed by it and negated, bottom row 0 0 0 1)
+	void sub_101a1b20(VMatrix &ret) const;
+	VMatrix sub_101a1be0() const;	// "VMatrix::InverseTR" by value: { VMatrix ret; InverseTR(ret); return ret; }	// "VMatrix::InverseTR": ret = the inverse of a rotation + translation matrix (transposed 3x3, the translation transformed by it and negated, bottom row 0 0 0 1)
 		// out = this with its columns 0..2 scaled by vScale (the fourth column of the first three rows is copied, the corner is 1.0f)
-		// ecx = this, dst on the stack (ret 4): out[c][r] = m[r][c] for a 4x4 float copy that reads all 16 floats before any store (8 via fld, 8 via integer moves, frame 0x20); 0x1024d630 calls it with this = its dst and out = a local, then copies the local back with CBlock64_t::sub_1024cef0
+	VMatrix *sub_101a1f60(VMatrix &out) const;	// ecx = this, dst on the stack (ret 4): out[c][r] = m[r][c] for a 4x4 float copy that reads all 16 floats before any store (8 via fld, 8 via integer moves, frame 0x20); 0x1024d630 calls it with this = its dst and out = a local, then copies the local back with CBlock64_t::sub_1024cef0
 		// "VMatrix::GetScale": the lengths of the three columns (returned through a hidden pointer)
 	void sub_101a2290(const Vector &origin, const QAngle &angles);	// "SetupMatrixOrgAngles": the rotation matrix from the angles (degrees) with origin in the fourth column
 };

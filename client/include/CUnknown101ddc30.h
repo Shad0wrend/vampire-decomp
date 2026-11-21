@@ -17,6 +17,6 @@ public:
 	int m_nSource;	// 0x04
 	int m_nAffects;	// 0x08
 
-		// loads the record from the key file; always false
+	bool sub_10148150(CUnknown101ddc30Kv *pKV);	// loads the record from the key file; always false
 	void sub_10148120();	// the constructor body (stub 0x10003936)
 };

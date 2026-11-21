@@ -22,11 +22,13 @@ public:
 	~CVStatInfoList_t();	// function 0x101ff3e0
 #endif
 		// "CVStatInfoList_t::CVStatInfoList_t": scope trace, nulls the cost, stores b at +0, zeroes the list, a at +0x2c and copies name to +0xc
-		// "CVStatInfoList_t::~CVStatInfoList_t"-like: scope trace, delete[]s the records and zeroes the count
+	void sub_1015c3a0();	// "CVStatInfoList_t::~CVStatInfoList_t"-like: scope trace, delete[]s the records and zeroes the count
 		// "CVStatInfoList_t::PreCache": scope trace, frees the records, opens "vdata\\system\\stats.txt", finds the block named like the list (+0xc), reads its display text (+0x24) and "InternalName" (+0x28), counts and allocates the records of its "Stat" keys and pre-loads each; DevMsg when the count differs from the one the list was made with (+0)
 	int sub_1015c8f0(const char *name);	// "CVStatInfoList_t::Lookup(char*)": scope trace, index of the stat whose name equals the argument (case-insensitive, null name counts as ""), -1 when none
+	int sub_1015c9b0(const char *name);
 		// "CVStatInfoList_t::Lookup( const char *name )": same lookup (name string at +0x18 of each record)
-		// "CVStatInfoList_t::LookupPartial": scope trace, index of the first stat whose lowercased name starts with the lowercased argument, -1 when none
+	int sub_1015ca70(const char *name);	// "CVStatInfoList_t::LookupPartial": scope trace, index of the first stat whose lowercased name starts with the lowercased argument, -1 when none
+	int sub_1015cb90(const char *name);
 		// "CVStatInfoList_t::LookupPartial" (second variant): scope trace, same prefix lookup with 128 byte lower-cased copies
 		// "CVStatInfoList_t::LookupNextPart": scope trace, like LookupPartial but starting after startIdx
 		// "CVStatInfoList_t::LookupNextPart" (another instance)

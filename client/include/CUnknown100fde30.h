@@ -86,7 +86,7 @@ public:
 	CUnknown100fde30Rec m_rec2;	// 0x198
 
 	CUnknown100fde30 *sub_100e2a10();	// constructor: builds both random streams and both records, clears +0x170; returns this
-		// releases the object behind +0x170 (when set), then RemoveAll + Purge of both linked lists (the views of the records)
+	void sub_100e2ae0();	// releases the object behind +0x170 (when set), then RemoveAll + Purge of both linked lists (the views of the records)
 		// unless the game check (global 0x10566258, slot 10) says so: changes the pitch (100 + 120 * x^0.3) and volume (0.7 + 0.3 * x^0.3) of the sound handle at +0x170 over a random 1..2 s, x = flSpeed / 150 clamped to 1
 	CUnknown100fde30List *List1() { return (CUnknown100fde30List *)&m_rec1; }
 	CUnknown100fde30List *List2() { return (CUnknown100fde30List *)&m_rec2; }

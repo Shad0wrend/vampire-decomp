@@ -10,7 +10,7 @@ class CUnknown102496a0
 {
 public:
 	CUnknown102496a0();
-		// "CSimplePhysics::Simulate": advances the predicted time by dt, runs the missing fixed steps (verlet with the helper's forces and constraints), then interpolates every node's predicted position
+	void sub_1012c770(CRopeNode *pNodes, int nNodes, CBaseRopePhysics *pHelper, float dt, float flDamp);	// "CSimplePhysics::Simulate": advances the predicted time by dt, runs the missing fixed steps (verlet with the helper's forces and constraints), then interpolates every node's predicted position
 
 	double m_flPredictedTime;	// 0x00
 	int m_iCurTimeStep;	// 0x08

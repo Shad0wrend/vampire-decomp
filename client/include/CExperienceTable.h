@@ -23,8 +23,8 @@ public:
 	char m_flag14;	// 0x14
 
 	CExperienceAward *sub_10163600(int index);	// "ExperienceTable::GetAward": scope trace, record `index` or a warning and the static dummy record
-		// "ExperienceTable::PurgeExperience": scope trace, frees the two strings of every record and purges the memory
-		// "ExperienceTable::~ExperienceTable": scope trace, PurgeExperience, then the inlined CUtlVector destructor (RemoveAll + Purge, then the CUtlMemory Purge)
+	void sub_10163410();	// "ExperienceTable::PurgeExperience": scope trace, frees the two strings of every record and purges the memory
+	void sub_10163290();	// "ExperienceTable::~ExperienceTable": scope trace, PurgeExperience, then the inlined CUtlVector destructor (RemoveAll + Purge, then the CUtlMemory Purge)
 		// "ExperienceTable::FindIndex": scope trace, index of the record whose name equals pszName (case-insensitive, compared over the longer length), else a warning and -1
 		// "ExperienceTable::ParseLine": scope trace, splits "name|desc|number" in place at the two '|' and fills out with heap copies of name and desc and atoi(number); false when a part is missing or empty
 		// "ExperienceTable::LoadFile": scope trace, reads lines of the file through slot 20 of the global at 0x1070b238 into a 0x1000 byte buffer; skips lines starting with '>' and lines shorter than 3 characters, parses the others and appends them (inlined CUtlVector::AddToTail); stops at the end of the file or on a parse failure

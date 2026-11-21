@@ -49,6 +49,7 @@ public:
 	void sub_1013dd10(int elem, int num);
 	void sub_101a0f20(int elem, int num);
 	void sub_101be2a0(int elem, int num);
+	void sub_10135310(int elem, int num);
 		// provisional, like sub_10032f00 (transplant)
 		// provisional, like sub_10032f00 (transplant)
 		// provisional, like sub_10032f00 (transplant)

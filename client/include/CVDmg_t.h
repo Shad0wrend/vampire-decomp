@@ -20,9 +20,10 @@ struct CVDmgBlock16_t
 	CVDmgBlock16_t();	// calls sub_10204270 (stub 0x10004b7e, body at 0x10205380)
 	CVDmgBlock16_t(int a, int b);	// calls sub_102042a0(a, b) (0x102053a0, stub 0x10004561)
 		// the constructor's body (stub 0x10004b7e), called directly on a block that is a part of an int array
-		// reset: m_a = m_b = -1, m_d = 1 (stub 0x10010573)
+	void sub_10160670();	// reset: m_a = m_b = -1, m_d = 1 (stub 0x10010573)
 	void sub_10160690(int a, int b);	// stores a / b in the first two fields and sets m_d to 1 (stub 0x10014290)
 	bool sub_101613e0(const CVDmgBlock16_t *pOther);	// whether kind, number and multiplier (not m_c) equal pOther's
+	bool sub_10160710(const CVDmgBlock16_t *pOther);
 		// a copy of sub_10204360 in another unit
 	bool sub_10160660();	// whether the block is empty (stub 0x100051f0)
 	int sub_10160b40(void *pCharacter);	// the value this block names for the character (a stat, a feat, ...; stub 0x10013cc8), 0 for an empty block or no character
@@ -69,16 +70,16 @@ public:
 #ifdef PCD_INITIALIZERS	// the initializer units: the array 0x108c1288 destroys its elements with it (body 0x101fa680)
 	~CVDmg_t();
 #endif
-		// "CVDmg_t::GetDmg"
-		// "CVDmg_t::Apply": forwards to the global apply callback
-		// "CVDmg_t::EvadeCheck": forwards to the global evade callback
-		// "CVDmg_t::AddFlags": ORs the flags into the dword at +0x40
-		// "CVDmg_t::Copy": scope trace, copies the fields 0x00..0x34 and 0x40 of pOther (blocks of 20, 16 and 16 bytes, then two dwords)
-		// "CVDmg_t::Null": scope trace, resets the fields (the two 16 byte blocks at +0x14 / +0x24 through sub_10204270)
+	int sub_10158a80();	// "CVDmg_t::GetDmg"
+	int sub_10159080(int a, int b);	// "CVDmg_t::Apply": forwards to the global apply callback
+	bool sub_10159170(int target);	// "CVDmg_t::EvadeCheck": forwards to the global evade callback
+	void sub_101591f0(unsigned int flags);	// "CVDmg_t::AddFlags": ORs the flags into the dword at +0x40
+	void sub_101587f0(CVDmg_t *pOther);	// "CVDmg_t::Copy": scope trace, copies the fields 0x00..0x34 and 0x40 of pOther (blocks of 20, 16 and 16 bytes, then two dwords)
+	void sub_101588c0();	// "CVDmg_t::Null": scope trace, resets the fields (the two 16 byte blocks at +0x14 / +0x24 through sub_10204270)
 		// "CVDmg_t::SetSrc": scope trace; removes the first block's value for the old source from the field at +0x4, stores the new source's edict index (IndexOfEdict) at +0x34 (0 for no source) and adds the block's value for the new source
 		// "CVDmg_t::ToStr": scope trace; into the global buffer at 0x1074e5c8: "(" then the first block's name, " <field +4> <name of the damage type record>", the second block's name and " )"
 		// "CVDmg_t::ToShortStr": scope trace; into the global buffer at 0x1074e2ec: "" for field +0 == -1, else " %s %d" (block name, field +4) or " %d" (field +4) when the block at +0x14 is empty
-		// the destructor body (stub 0x10010956), called directly
-		// "CVDmg_t::Set": scope trace, stores a / c / b in the fields +0 / +4 / +0x10 (the free-function form of the same address is matched as sub_101fa8d0)
+	void sub_10158790();	// the destructor body (stub 0x10010956), called directly
+	void sub_10158950(int a, int b, int c);	// "CVDmg_t::Set": scope trace, stores a / c / b in the fields +0 / +4 / +0x10 (the free-function form of the same address is matched as sub_101fa8d0)
 		// "CVDmg_t::Parse": scope trace; reads "<block> <number> <damage type value> ..." from the text (space separated): the first block (a name, or the empty block when it starts with a digit), the number at +4, the damage type value at +0 and the field at +0x10, then an optional second block at +0x24; a text that is cut short nulls the record
 };

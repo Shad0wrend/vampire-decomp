@@ -14,7 +14,7 @@ class CStatusFlagList
 {
 public:
 		// true when the target's status flags (+0xeb4) hit the first mask and, shifted up to five places, the second
-		// the OR of the flags of every entry whose key is nKey (0 when none)
+	unsigned int sub_1014a020(int nKey);	// the OR of the flags of every entry whose key is nKey (0 when none)
 	unsigned int sub_10149f70(int nKey, int nSkip);	// the flags of the entry nSkip places after the first entry with key nKey (0 when none)
 	char m_pad0000[0x4];
 	int m_nCount;	// +0x4

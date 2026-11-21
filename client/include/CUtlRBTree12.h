@@ -44,7 +44,7 @@ public:
 		// "CUtlRBTree::FindInsertionPoint" (another instance)
 		// "CUtlRBTree::FreeNode"-like: the node's left link takes its own index, its right link the old free list head, which becomes elem
 	void sub_1013d3a0(unsigned short *pOut, int pTable);	// searches for the element whose less-function key is {0xffff, 0xffff}: stores the table and this tree in two globals for the less function, writes the found index (or 0xffff) to *pOut; 0xffff when pTable is zero
-		// "CUtlMap::Find"-like: Find(key) inlined, then the 4 byte element of a valid node, or 0
+	int sub_10137dd0(int key);	// "CUtlMap::Find"-like: Find(key) inlined, then the 4 byte element of a valid node, or 0
 };
 
 // The game has one CUtlRBTree<T, I> per element type T; CUtlRBTree12 stands for every instance with 12-byte nodes.

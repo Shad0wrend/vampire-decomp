@@ -17,7 +17,7 @@ public:
 	virtual const char *vfunc13(const char *key, const char *defaultValue);	// +0x34: string value
 };
 
-	// the game's shared empty string
+extern char g_102de300[];	// the game's shared empty string
 class CUnknown101e0940;
 
 class CUnknown101daec0

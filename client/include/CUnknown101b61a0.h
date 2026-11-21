@@ -14,5 +14,5 @@ struct CUnknown101b61a0Elem
 class CUnknown101b61a0 : public UtlVec8
 {
 public:
-		// copy assignment ("CUtlVector::CopyArray"): empties, grows to other's size, constructs the elements and copies them one by one
+	CUnknown101b61a0 &sub_10130860(const CUnknown101b61a0 &other);	// copy assignment ("CUtlVector::CopyArray"): empties, grows to other's size, constructs the elements and copies them one by one
 };

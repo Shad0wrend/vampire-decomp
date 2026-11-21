@@ -21,10 +21,11 @@ public:
 			Plat_Free(m_pBuffer);
 	}
 
-		// frees an owned buffer, then wraps the external one (grow -1), cursors cleared, text flag set from bText
+	void sub_1013c8e0(char *pBuffer, int nSize, bool bText);	// frees an owned buffer, then wraps the external one (grow -1), cursors cleared, text flag set from bText
 	void sub_1013c9f0();	// skips the white space at the read cursor of a text buffer (stub 0x1000c35b)
 	void sub_1013ca40(char *pString);	// reads one string: to the terminating null of a binary buffer, or to the next white space of a text buffer
 	int sub_1013cc20(const char *pFmt, char *list);	// \"CUtlBuffer::VaScanf\": text buffers only; matches pFmt (space = skip white space, %c %d %i %x %u %f %s) against the data and stores through the va_list, returns the number of conversions
 		// CheckPut (stub 0x10005583)	// makes room for nSize more bytes at the write cursor (stub 0x10005583), false when the buffer cannot take them
-		// copies nSize bytes to the write cursor and moves the cursor past them, when sub_10005583(nSize) holds
+	void sub_1013ce90(const char *pFmt, char *list);
+	void sub_1013ce20(const void *pMem, int nSize);	// copies nSize bytes to the write cursor and moves the cursor past them, when sub_10005583(nSize) holds
 };

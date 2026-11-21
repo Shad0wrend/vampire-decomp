@@ -66,6 +66,7 @@ public:
 	void RemoveAt(I i);
 	void RemoveNode(I i);
 	void sub_10111ee0(I i);
+	void sub_10131ad0(I i);
 	bool Remove(T const &remove);
 	void RemoveAll();
 	void sub_1011ef90();
@@ -128,9 +129,11 @@ public:
 	void sub_101143a0(I i);
 	void sub_101389f0(I i);
 	void sub_1013e040(I i);
+	void sub_10139ad0(I i);
 	void InsertRebalance(I i);
 	void RemoveRebalance(I i);
 	void sub_101131f0(I i);
+	void sub_10132460(I i);
 	void FindInsertionPosition(T const &insert, I &parent, bool &leftchild);
 
 	LessFunc_t m_LessFunc;

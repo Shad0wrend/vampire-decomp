@@ -30,12 +30,12 @@ struct CUnknown101e0f00SrcA	// an element of the first list of a source descript
 
 struct CUnknown101e0f00SrcB	// an element of the second list of a source description
 {
-		// Debug_Display (stub 0x10006ece)
+	void sub_10147290();	// Debug_Display (stub 0x10006ece)
 };
 
 struct CUnknown101e0f00SrcSub	// the object at +0xc of a source description
 {
-		// whether it holds a value (stub 0x10011bc6)
+	char sub_10147730();	// whether it holds a value (stub 0x10011bc6)
 		// runs the list of the sub object for the owner (stub 0x10015e38)
 };
 
@@ -49,7 +49,7 @@ struct CUnknown101e0f00Src	// the 0x1c byte source descriptions at +0xa4 / +0xc0
 	int m_nB;	// 0x14
 	CUnknown101e0f00SrcB **m_ppB;	// 0x18
 
-		// Debug_Display with the label (stub 0x10015d66)
+	void sub_10147da0(const char *pszLabel);	// Debug_Display with the label (stub 0x10015d66)
 	void sub_10147990();	// the constructor body (stub 0x10002036)
 		// notes the hit of discipline id on a (stub 0x10012157)
 		// takes the effect of discipline id back from the character (stub 0x10001212)
@@ -129,7 +129,7 @@ public:
 		// counts the "vdata\system\DisciplineTgt_*.txt" files, then loads each DisciplineTgt_%03d.txt (Msg when one cannot be opened)
 		// the index of the entry whose internal name equals pszName (case-insensitive), -1 when none (stub 0x10004570)
 		// "Targeted Discipline Manager" Debug_Display: without a name lists every entry (index, name, base cost), with the name of an entry (or "ALL") displays that entry (every entry)
-		// the index of the entry of the discipline id, -1 when none (stub 0x10007df1)
+	int sub_10149d80(int id);	// the index of the entry of the discipline id, -1 when none (stub 0x10007df1)
 		// the entry with that index (stub 0x100123d7)
 		// "CallbackHit": looks the entry of discipline c up, logs "Discipline<%s> CallbackHit", runs the entry's tail callback worker with (d, a, b, c | 0x80000000) while the global current entry (0x10739a74) points at the entry
 		// the mask (+0xc) of the entry with that internal name (case-insensitive), 0 when none (stub 0x1000418d)
@@ -138,14 +138,14 @@ public:
 		// "InterruptSchedule" callback: looks the entry of discipline id up, logs "Discipline<%s> InterruptSchedule", runs the entry's tail callback worker with the character's two lookups while the global current entry (0x10739a74) points at the entry
 		// "Hit" callback: looks the entry of discipline id up, logs "Discipline<%s> Hit", notes the hit on the entry's hit source (a, id), runs the entry's tail callback worker with (d, a, b, id | 0x80000000) while the global current entry (0x10739a74) points at the entry
 		// id | 0x80000000, called with this in ecx (the game's member form of the free function)
-		// the target of the source for the discipline reference (pSource, c): sub_101e28e0 of the source when the entry applies to the pair (sub_101e1a60 with 1), else 0
-		// the target object of the source (stub 0x10004d6d)
-		// the index of the entry for a discipline reference (stub 0x100142a4), -1 when none
-		// whether the entry applies to the source / target pair (stub 0x1000b956)
+	void *sub_1014a9e0(int a, int b, int c);	// the target of the source for the discipline reference (pSource, c): sub_101e28e0 of the source when the entry applies to the pair (sub_101e1a60 with 1), else 0
+	void *sub_1014a9c0(void *pSource);	// the target object of the source (stub 0x10004d6d)
+	int sub_10149d40(int a, int b);	// the index of the entry for a discipline reference (stub 0x100142a4), -1 when none
+	char sub_1014a270(CUnknown101e0f00Entry *pEntry, void *pSource, void *pSource2, void *pTarget, char flag);	// whether the entry applies to the source / target pair (stub 0x1000b956)
 		// applies the entry's effect (stub 0x1000ae07)
 		// applies the effect of a mask to the pair with one more value (stub 0x1000fb4b)
 		// "ActivateEffect" by reference: finds the entry, applies it to the target when sub_101e1a60 accepts the pair or the target is a CNPC_VPlayerController (dynamic cast of a CBaseCombatCharacter)
-		// "ERROR: Wpn_UpdateMode Failed!" when the reference has no entry; else hands back the entry's mask and a time of 10.0f
+	void sub_1014aa40(int a, char *pFlag, int *pRef, unsigned int *pMask, float *pTime, int *pOut);	// "ERROR: Wpn_UpdateMode Failed!" when the reference has no entry; else hands back the entry's mask and a time of 10.0f
 		// "CVTgt_DisciplineFXMgr_t::UpdateSupernaturalLevel": when the player's default stat list has a positive stat 0x19, hands the level of the "Thaumaturgy_Bloodshield" entry to the player's sub_1017df50 (time -1.0f)
 		// "ActivateEffect" by discipline id (stub 0x10005c0e): prepares the pair (sub_101e3560) and applies the entry (sub_101e3730 with flag -1)
 		// like sub_101e3400 but without the dynamic cast: when the entry does not apply and sub_101e22b0 holds, runs sub_101e3be0(pTarget, entry mask)

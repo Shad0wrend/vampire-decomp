@@ -14,4 +14,4 @@ struct matrix3x4_t
 		// whether the three rows are orthonormal: every row's length within 0.01f of 1, every pair's dot product within 0.01f of 0
 };
 
-	// AngleMatrix: the rotation matrix of pitch / yaw / roll (each converted with 0.017453292f)
+void sub_101094e0(const QAngle &angles, matrix3x4_t &matrix);	// AngleMatrix: the rotation matrix of pitch / yaw / roll (each converted with 0.017453292f)

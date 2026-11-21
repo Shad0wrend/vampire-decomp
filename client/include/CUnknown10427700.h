@@ -22,6 +22,6 @@ public:
 	CUnknown10427700Entry m_entries[0x20];
 
 	bool sub_100790f0(const char *name, int a, int b);
-		// like sub_10427790 with plain numbers instead of cvar names
-		// "CAmmoDef::AddAmmoType"
+	void sub_10079260(const char *name, int a, int b, int plrDmg, int npcDmg, int maxCarry);	// like sub_10427790 with plain numbers instead of cvar names
+	void sub_10079160(const char *name, int a, int b, const char *plrCvar, const char *npcCvar, const char *carryCvar);	// "CAmmoDef::AddAmmoType"
 };

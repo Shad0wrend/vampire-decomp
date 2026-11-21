@@ -14,6 +14,7 @@ public:
 	int *m_pElements;
 
 	int sub_101be160(int elem, const int *src);	// "CUtlVector::InsertBefore": grows by one, shifts the tail up, stores *src
+	int sub_1008e4b0(int elem, const int *src);
 		// same as sub_1003c0e0 (another instance)
 		// same as sub_1003c0e0 (another instance)
 		// same as sub_1003c0e0 (another instance)
@@ -35,7 +36,7 @@ public:
 		// same as sub_10071ae0 (another instance)
 		// same as sub_10071ae0 (another instance)
 		// same as sub_10071ae0 (another instance)
-		// "CUtlVector::Swap": exchanges the elements a and b
+	void sub_101352e0(int a, int b);	// "CUtlVector::Swap": exchanges the elements a and b
 		// "CUtlVector<EHANDLE>::Find": index of the first element resolving to the same entity as *pHandle, or -1
 		// "CUtlVector<EHANDLE>::InsertMultipleBefore": grows by num, shifts the tail, fills the new slots with -1 (invalid handle) and then copies pToInsert over them; returns elem
 		// "CUtlVector<EHANDLE>::InsertMultipleBefore" (another instance, other grow function)

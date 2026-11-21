@@ -71,17 +71,17 @@ public:
 	}
 
 	bool sub_10087bb0(void *pOutData, int nBits);	// \"ReadBits\": whole bytes up to a dword boundary of the output, then dwords, then the remaining bytes and bits; true unless the reader overflowed
-		// "ReadBitAngle": ReadUBitLong(numbits) scaled to 360 degrees
+	float sub_10087df0(int numbits);	// "ReadBitAngle": ReadUBitLong(numbits) scaled to 360 degrees
 	float sub_10088410();	// "ReadBitNormal": sign bit, then 11 fractional bits scaled by 1/2047
-		// "ReadSBitLong": ReadUBitLong(numbits - 1), minus 1 << (numbits - 1) when the sign bit is set
-		// "ReadBitLong": ReadSBitLong(numbits) when bSigned, else ReadUBitLong(numbits)
-		// default constructor body (called through the stub at 0x1000a0ec)
-		// "PeekUBitLong": reads numbits bits one at a time from a saved copy of the reader, restores the reader, returns the value
-		// "ReadBitCoord" (stub 0x10006d1b): the float in ST0
-		// "ReadBitVec3Coord": clears fa, reads the three presence flags, then ReadBitCoord for each component whose flag is set
-		// 0x100bee40: ReadBitVec3Coord into a temporary, then copied into fa
-		// "Seek" (stub 0x1001477c): sets the current bit; out of range (negative or past the end) sets the overflow flag, parks at the end and answers false
-		// removes nBits bits at iStart: the bits behind them are moved down through a bf_write at iStart, then the size shrinks by nBits and the position goes back to iStart
+	int sub_10087f50(int numbits);	// "ReadSBitLong": ReadUBitLong(numbits - 1), minus 1 << (numbits - 1) when the sign bit is set
+	unsigned int sub_10088030(int numbits, bool bSigned);	// "ReadBitLong": ReadSBitLong(numbits) when bSigned, else ReadUBitLong(numbits)
+	void sub_10087a30();	// default constructor body (called through the stub at 0x1000a0ec)
+	unsigned int sub_10087ea0(int numbits);	// "PeekUBitLong": reads numbits bits one at a time from a saved copy of the reader, restores the reader, returns the value
+	float sub_100880c0();	// "ReadBitCoord" (stub 0x10006d1b): the float in ST0
+	void sub_100882d0(Vector &fa);	// "ReadBitVec3Coord": clears fa, reads the three presence flags, then ReadBitCoord for each component whose flag is set
+	void sub_10088620(Vector &fa);	// 0x100bee40: ReadBitVec3Coord into a temporary, then copied into fa
+	bool sub_10088880(int iBit);	// "Seek" (stub 0x1001477c): sets the current bit; out of range (negative or past the end) sets the overflow flag, parks at the end and answers false
+	void sub_100888b0(int iStart, int nBits);	// removes nBits bits at iStart: the bits behind them are moved down through a bf_write at iStart, then the size shrinks by nBits and the position goes back to iStart
 	int sub_100885e0();	// the unchecked single bit read (stub 0x10013791), called by the checked reads of ReadBitVec3Normal
 	void sub_100884f0(Vector &fa);	// "ReadBitVec3Normal": x / y flag bits, ReadBitNormal for each set one (else 0), the z sign bit, z = sqrt(1 - x*x - y*y) (0 when the sum reaches 1), negated by the sign bit
 };
