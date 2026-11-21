@@ -10390,6 +10390,14 @@ int CUnknown100a2450::sub_100a2450()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2460 size=0xb
+struct CUnknown100a2460 { void sub_100a2460(); };
+void CUnknown100a2460::sub_100a2460()
+{
+    *(int *)((char *)this + 0x2cc) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2600 size=0x7
 struct CUnknown100a2600 { char sub_100a2600(); };
 char CUnknown100a2600::sub_100a2600()
