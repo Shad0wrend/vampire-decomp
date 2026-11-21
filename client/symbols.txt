@@ -3654,6 +3654,7 @@
 0x10187fa0 func   ?sub_10187fa0@@YAHXZ sub_10187fa0
 0x10187fc0 func   ?sub_10187fc0@@YAHXZ sub_10187fc0
 0x10188030 func   ??1QuestLogPanel@@UAE@XZ QuestLogPanel::~QuestLogPanel
+0x10188050 func   ??_GQuestLogPanel@@UAEPAXI@Z ??_GQuestLogPanel@@UAEPAXI@Z
 0x101880f0 func   ??1VQQuestButton@@UAE@XZ VQQuestButton::~VQQuestButton
 0x101880f0 func   ?sub_101880f0@CUnknown101880f0@@QAEHXZ CUnknown101880f0::sub_101880f0
 0x101882c0 func   ??1VQTextEntry@@UAE@XZ VQTextEntry::~VQTextEntry
