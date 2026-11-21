@@ -24,6 +24,7 @@
 0x10002dc0 func   ??_GC_Corpse@@UAEPAXI@Z ??_GC_Corpse@@UAEPAXI@Z
 0x10002ee0 func   ?ClientClassInit@@YAHPAUignored@DT_HL2Local@@@Z ClientClassInit
 0x10002f60 func   ?sub_10002f60@CUnknown10002f60@@QAEPAXXZ CUnknown10002f60::sub_10002f60
+0x10003230 func   ??_GC_ItemPhysicsHand@@UAEPAXI@Z ??_GC_ItemPhysicsHand@@UAEPAXI@Z
 0x10003270 func   ?sub_10003270@@YAHXZ sub_10003270
 0x10003390 func   ?ClientClassInit@@YAHPAUignored@DT_ItemPhysicsHand@@@Z ClientClassInit
 0x10003580 func   ?sub_10003580@@YAHXZ sub_10003580
