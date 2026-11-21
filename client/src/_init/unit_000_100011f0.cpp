@@ -1664,3 +1664,9 @@ ConCommand g_104d3474("+chareditor", sub_101022f0, 0, 0, 0);
 void sub_10102320(void);
 ConCommand g_104d397c("-chareditor", sub_10102320, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105990 size=0xa
+#include "ConCommand.h"
+void sub_10102350(void);
+ConCommand g_104d3914("togglechareditor", sub_10102350, 0, 0, 0);
+// END FUNCTION
