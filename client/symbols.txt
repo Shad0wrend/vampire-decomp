@@ -3175,6 +3175,7 @@
 0x1017d570 func   ?sub_1017d570@CUnknown1017d570@@QAEHXZ CUnknown1017d570::sub_1017d570
 0x1017d660 func   ??1VRAcceptButton@@UAE@XZ VRAcceptButton::~VRAcceptButton
 0x1017d660 func   ?sub_1017d660@CUnknown1017d660@@QAEHXZ CUnknown1017d660::sub_1017d660
+0x1017d6e0 func   ??1CharEditStatsPanel@@UAE@XZ CharEditStatsPanel::~CharEditStatsPanel
 0x1017f850 func   ?sub_1017f850@CUnknown1017f850@@QAEPAXXZ CUnknown1017f850::sub_1017f850
 0x10181b70 func   ?sub_10181b70@@YAXXZ sub_10181b70
 0x101820f0 func   ?sub_101820f0@CUnknown101820f0@@QAEHH@Z CUnknown101820f0::sub_101820f0
