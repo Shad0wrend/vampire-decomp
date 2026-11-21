@@ -987,6 +987,21 @@ float bf_read::sub_10088410()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10088660 size=0x65
+#include "bf_read.h"
+
+struct bf_readX : bf_read
+{
+	int sub_10088660();
+};
+
+// TARGET: bf_readX::sub_10088660
+int bf_readX::sub_10088660()
+{
+	return ReadUBitLong(8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100889f0 size=0x1a2
 #include "Quaternion.h"
 union CBlendAnimValue
