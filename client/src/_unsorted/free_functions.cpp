@@ -11141,6 +11141,39 @@ char VKeyValuesInterface::sub_10154370(const char *pszName, int nMax, const char
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154480 size=0x50
+struct VB { virtual void f0(); virtual void f1(); };
+struct VNode : virtual VB { int a; };
+struct CKV {
+	int pad0[3];
+	char *m_pName;
+	int m_n10;
+	char *m_pStr;
+	VNode *m_pNext;
+	VNode *m_pChild;
+	int m_n20;
+	void sub_10154480();
+};
+void sub_10154700(void *);
+extern char g_105e8ac8;
+void CKV::sub_10154480()
+{
+	VNode *p = m_pChild;
+	while (p) {
+		VNode *n = *(VNode **)((char *)p + 0x18);
+		p->f1();
+		p = n;
+	}
+	m_pChild = 0;
+	sub_10154700(m_pStr);
+	sub_10154700(m_pName);
+	m_n10 = 0;
+	g_105e8ac8 = 0;
+	m_pNext = 0;
+	m_n20 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154670 size=0x1d
 typedef void (*PFN_109f383c)(int, void *);
 extern PFN_109f383c g_101e31d4;
