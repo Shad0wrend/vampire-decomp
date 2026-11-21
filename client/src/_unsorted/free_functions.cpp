@@ -1927,6 +1927,47 @@ char *sub_1008da80(CStudioHdr *pHdr, int index, CStudioHdr **ppOwner)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008db40 size=0x12d
+#include "StudioHdr.h"
+
+extern float g_101e34f0;
+
+struct PoseParams
+{
+    float m_a[24];
+};
+
+void *sub_1008db40(StudioHdr *pHdr, int iSeq, StudioHdr **ppOwner, float *pOut, const float *pIn);	// the stub of this function
+
+void *sub_1008db40(StudioHdr *pHdr, int iSeq, StudioHdr **ppOwner, float *pOut, const float *pIn)
+{
+    if (pHdr && iSeq >= 0) {
+        if (iSeq < pHdr->m_nLocalSeq) {
+            *ppOwner = pHdr;
+            *(PoseParams *)pOut = *(const PoseParams *)pIn;
+            return (char *)pHdr + *(int *)((char *)pHdr + 0x114) + iSeq * 0x2fc;
+        }
+        for (int i = 0; i < pHdr->m_nIncludeModels; i++) {
+            StudioIncludeModel *pInc = pHdr->IncludeModel(i);
+            if (pInc->m_nBase <= iSeq && pInc->m_nBase + pInc->m_nCount > iSeq && pInc->m_pVirtual) {
+                StudioHdr *pIncHdr = pInc->m_pVirtual->vfunc1(pHdr, i);
+                if (pIncHdr) {
+                    float local[24];
+                    for (int k = 0; k < 24; k++) {
+                        int idx = pInc->m_aPoseParamRemap[k];
+                        local[k] = idx >= 0 ? pIn[idx] : g_101e34f0;
+                    }
+                    void *p = sub_1008db40(pIncHdr, iSeq - pInc->m_nBase, ppOwner, pOut, local);
+                    if (p)
+                        return p;
+                }
+            }
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e230 size=0x82
 #include "CUnknown100c7f30.h"
 
