@@ -10972,6 +10972,16 @@ char __stdcall sub_100a9910(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9af0 size=0x10
+namespace lifted {
+int sub_100ab1e0(int);
+}
+int __stdcall sub_100a9af0(int a0)
+{
+    return lifted::sub_100ab1e0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9be0 size=0x3
 void __stdcall sub_100a9be0(int a0, int a1, int a2)
 {
