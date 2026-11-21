@@ -2394,3 +2394,8 @@ ConVar g_105fb930("modelpanel_light_ang1", "1", 0, "Blah");
 #include "ConVar.h"
 ConVar g_105fb978("modelpanel_light_ang2", "1", 0, "Blah");
 // END FUNCTION
+
+// FUNCTION: 0x1018c720 size=0xa
+#include "ConVar.h"
+ConVar g_105fbb70("v_hidevgui", "0", 256);
+// END FUNCTION
