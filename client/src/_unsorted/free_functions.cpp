@@ -8503,6 +8503,39 @@ __declspec(naked) void sub_101085a0(const float *start, float scale, const float
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108880 size=0xd5
+#include "Vector.h"
+#include <math.h>
+#include "QAngle.h"
+#pragma intrinsic(atan2, sqrt)
+
+extern float g_101e34f0;
+
+// TARGET: sub_10108880
+void sub_10108880(const Vector &forward, QAngle &angles)
+{
+    float tmp, yaw, pitch;
+    if (forward.y == g_101e34f0 && forward.x == g_101e34f0) {
+        yaw = 0;
+        if (forward.z > g_101e34f0)
+            pitch = 270;
+        else
+            pitch = 90;
+    } else {
+        yaw = (float)(atan2(forward.y, forward.x) * (180.0 / 3.14159265358979323846));
+        if (yaw < g_101e34f0)
+            yaw += 360;
+        tmp = (float)sqrt(forward.x * forward.x + forward.y * forward.y);
+        pitch = (float)(atan2(-forward.z, tmp) * (180.0 / 3.14159265358979323846));
+        if (pitch < g_101e34f0)
+            pitch += 360;
+    }
+    angles.x = pitch;
+    angles.y = yaw;
+    angles.z = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108fd0 size=0x3d
 // VectorMA (mathlib.cpp, _WIN32 form): Valve's naked x87 asm.
 // TARGET: sub_10108fd0
