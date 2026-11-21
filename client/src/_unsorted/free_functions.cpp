@@ -22043,6 +22043,28 @@ char CVStatList_t::sub_1015da50(int stat, int amount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015ddc0 size=0x3a
+#include "CVStatList_t.h"
+// TARGET: CVStatList_t::sub_1015ddc0
+char CVStatList_t::sub_1015ddc0()
+{
+    char bChanged = 0;
+    int i = 0;
+    if (m_field04 > 0) {
+        do {
+            int value = sub_1015dbd0(i);
+            int *pValue = &((int *)((int *)m_field08)[1])[i];
+            if (*pValue != value) {
+                bChanged = 1;
+            }
+            *pValue = value;
+            i++;
+        } while (i < m_field04);
+    }
+    return bChanged;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015e490 size=0xf0
 #include "CVStatListManager_t.h"
 
