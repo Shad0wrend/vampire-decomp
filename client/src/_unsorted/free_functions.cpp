@@ -17287,6 +17287,73 @@ int sub_10146f90(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101475e0 size=0x14f
+#include "CUnknown101dc5a0.h"
+
+extern void (*g_101e3108)(const char *pFormat, ...);
+extern char g_102c7fcc[];
+extern char g_102c7f88[];
+
+struct SoundListUnit : CUnknown101dc5a0
+{
+	inline CUnknown101dbe30 *Alloc()
+	{
+		if (m_allocationCount == m_count)
+		{
+			m_allocationCount += m_growBy;
+			if (m_pItems)
+			{
+				CUnknown101dbe30 **pNew = new CUnknown101dbe30 *[m_allocationCount];
+				int i;
+				for (i = 0; i < m_count; i++)
+					pNew[i] = m_pItems[i];
+				for (; i < m_allocationCount; i++)
+					pNew[i] = 0;
+				delete m_pItems;
+				m_pItems = pNew;
+				m_count++;
+			}
+			else
+			{
+				m_pItems = new CUnknown101dbe30 *[m_allocationCount];
+				for (int i = 0; i < m_allocationCount; i++)
+					m_pItems[i] = 0;
+				m_count++;
+			}
+		}
+		else
+		{
+			m_count++;
+		}
+		if (!m_pItems[m_count - 1])
+		{
+			void *p = ::operator new(0xc);
+			m_pItems[m_count - 1] = p ? ((CUnknown101dbe30 *)p)->sub_101471e0(m_count - 1) : 0;
+		}
+		return m_pItems[m_count - 1];
+	}
+};
+
+// TARGET: CUnknown101dc5a0::sub_101475e0
+bool CUnknown101dc5a0::sub_101475e0(CUnknown101dc5a0Keys *pKeys)
+{
+	if (pKeys) {
+		CUnknown101dc5a0Keys *pSub = pKeys->vfunc2(g_102c7fcc);
+		while (pSub) {
+			CUnknown101dbe30 *pItem = ((SoundListUnit *)this)->Alloc();
+			if (!pItem) {
+				g_101e3108(g_102c7f88);
+				return false;
+			}
+			pItem->sub_10147220(pSub);
+			pSub = pSub->vfunc3();
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147a40 size=0x4e
 #include "CUnknown101dcc80.h"
 struct CItemVec {
