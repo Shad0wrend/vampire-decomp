@@ -9145,6 +9145,25 @@ char *CClanInfoView::sub_1013f320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013fc80 size=0x22
+extern char g_102c6c3c[];
+extern char g_102c6c30[];
+
+struct CClanDocLoader
+{
+    void sub_1013f9b0();
+    void sub_1013fb80(const char *pszName);
+    void sub_1013fc80();
+};
+
+void CClanDocLoader::sub_1013fc80()
+{
+    sub_1013f9b0();
+    sub_1013fb80(g_102c6c3c);
+    sub_1013fb80(g_102c6c30);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fdc0 size=0x2f
 #include "CStatDefault3List.h"
 // TARGET: sub_1013fdc0
