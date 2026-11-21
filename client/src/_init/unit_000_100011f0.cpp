@@ -2618,3 +2618,8 @@ ConCommand g_105fc4e0("centerview", sub_1018f600, 0, 0, 0);
 void sub_10190f30(void);
 ConCommand g_105fc43c("print_client_viewmodel_info", sub_10190f30, "", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10196200 size=0xa
+#include "ConVar.h"
+ConVar g_10618708("v_dark", "0", 0, "Start level with black to normal screen fade");
+// END FUNCTION
