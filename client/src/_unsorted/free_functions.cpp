@@ -28960,6 +28960,17 @@ int CNamedList9fd0::sub_1014e680(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014edb0 size=0xa
+namespace lifted {
+extern int g_105e8638;
+}
+int sub_1014edb0(int a0)
+{
+    lifted::g_105e8638 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014ee70 size=0x1
 void sub_1014ee70()
 {
