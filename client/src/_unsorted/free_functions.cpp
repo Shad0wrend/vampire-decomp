@@ -5918,6 +5918,14 @@ void __stdcall sub_1009f2e0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f2f0 size=0x4
+struct CUnknown1009f2f0 { char * sub_1009f2f0(); };
+char * CUnknown1009f2f0::sub_1009f2f0()
+{
+    return (char *)this + -8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f330 size=0x3
 char sub_1009f330()
 {
