@@ -27141,6 +27141,17 @@ void CUnknown101db210::sub_10146c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146c90 size=0xd
+struct CUnknown10146c90 { void * sub_10146c90(); };
+void * CUnknown10146c90::sub_10146c90()
+{
+    *(int *)((char *)this + 8) = 0;
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146cb0 size=0x55
 #include "CStatDefault60List.h"
 
