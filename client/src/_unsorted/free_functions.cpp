@@ -22818,6 +22818,26 @@ bool CVDmgBlock16_t::sub_10160710(const CVDmgBlock16_t *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160d50 size=0x3d
+#include "CVStatInfoList_t.h"
+extern CVStatInfoList_t g_105f8c60;
+extern CVStatInfoList_t g_105f90b8;
+extern CVStatInfoList_t g_105f9220;
+
+CVStatInfo_t *__fastcall sub_10160d50(int *p)
+{
+    switch (p[0]) {
+    case 0:
+        return g_105f9220.sub_1015cfe0(p[1]);
+    case 1:
+        return g_105f90b8.sub_1015cfe0(p[1]);
+    case 2:
+        return g_105f8c60.sub_1015cfe0(p[1]);
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160db0 size=0x29
 struct CUnk10204c20
 {
