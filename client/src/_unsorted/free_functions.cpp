@@ -32569,6 +32569,14 @@ void sub_10161420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161430 size=0x7
+struct CUnknown10161430 { void sub_10161430(); };
+void CUnknown10161430::sub_10161430()
+{
+    *(int *)this = -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101615d0 size=0x2b
 #include "CParsedValue.h"
 
