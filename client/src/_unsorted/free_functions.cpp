@@ -2800,6 +2800,16 @@ void CMem8b_t::sub_1002c130(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c1c0 size=0x6
+namespace lifted {
+extern char g_102ead54;
+}
+int sub_1002c1c0()
+{
+    return (int)&lifted::g_102ead54;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c3a0 size=0x4
 struct CUnknown1002c3a0 { int sub_1002c3a0(); };
 int CUnknown1002c3a0::sub_1002c3a0()
