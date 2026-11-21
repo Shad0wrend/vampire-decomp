@@ -1602,6 +1602,7 @@
 0x1014a260 func   ?sub_1014a260@@YGHH@Z sub_1014a260
 0x1014a9e0 func   ?sub_1014a9e0@CUnknown101e0f00@@QAEPAXHHH@Z CUnknown101e0f00::sub_1014a9e0
 0x1014b580 func   ?sub_1014b580@@YGHH@Z sub_1014b580
+0x1014cf80 func   ?sub_1014cf80@CUnknown1014cf80@@QAEMXZ CUnknown1014cf80::sub_1014cf80
 0x1014cfd0 func   ?sub_1014cfd0@CRules101e7dd0@@QAEMM@Z CRules101e7dd0::sub_1014cfd0
 0x1014d120 func   ?sub_1014d120@COwner101e80c0@@QAEPAHPAHHHH@Z COwner101e80c0::sub_1014d120
 0x1014d160 func   ?sub_1014d160@CUnit101e8210@@QAE?AUR101e8210@@HH@Z CUnit101e8210::sub_1014d160
