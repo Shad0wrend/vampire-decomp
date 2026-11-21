@@ -28303,6 +28303,17 @@ void CPtrList101d6400::sub_10143a90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144490 size=0x19
+struct CUnknown10144490 { void * sub_10144490(int); };
+void * CUnknown10144490::sub_10144490(int a0)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = -1;
+    *(int *)((char *)this + 0x20) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101444b0 size=0x1
 void sub_101444b0()
 {
