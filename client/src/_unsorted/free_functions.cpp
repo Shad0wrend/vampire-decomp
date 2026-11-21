@@ -22743,6 +22743,35 @@ void S1006cd00::sub_10160350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160560 size=0x2e
+// TARGET: sub_10160560
+
+struct CUnknown1006cfb0
+{
+    int m_pad0000;
+    int m_count;
+    int **m_ppItems;
+    bool sub_10160560(int value);
+};
+
+bool CUnknown1006cfb0::sub_10160560(int value)
+{
+    int i = 0;
+    if (m_count > 0)
+    {
+        do
+        {
+            if (*m_ppItems[i] == value)
+            {
+                return true;
+            }
+            i++;
+        } while (i < m_count);
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160db0 size=0x29
 struct CUnk10204c20
 {
