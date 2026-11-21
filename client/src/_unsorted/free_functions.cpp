@@ -9439,6 +9439,31 @@ float sub_1010a2b0(float *q)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a320 size=0xa9
+#include <math.h>
+
+// TARGET: sub_1010a320
+void sub_1010a320(const float *p, float t, float *q)
+{
+    float r;
+    float sinom = sqrt(p[0] * p[0] + p[1] * p[1] + p[2] * p[2]);
+    sinom = sinom < 1.0f ? sinom : 1.0f;
+    float sinsom = sin(asin(sinom) * t);
+    t = sinsom / (sinom + 1.192092896e-07f);
+    q[0] = p[0] * t;
+    q[1] = p[1] * t;
+    q[2] = p[2] * t;
+    r = 1.0f - sinsom * sinsom;
+    if (r < 0.0f)
+        r = 0.0f;
+    r = sqrt(r);
+    if (p[3] < 0)
+        q[3] = -r;
+    else
+        q[3] = r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a420 size=0x25
 // TARGET: sub_1010a420
 float sub_1010a420(float *a, float *b)
