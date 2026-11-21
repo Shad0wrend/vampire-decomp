@@ -3663,6 +3663,13 @@ ConVar g_104772a8("debug_infinite_ammo", "0", 8192, "Set this to 1 to give playe
 RecvTable g_10486410;
 // END FUNCTION
 
+// FUNCTION: 0x1007cf40 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_LocalActiveWeaponData { struct ignored; }
+template <> int ClientClassInit<DT_LocalActiveWeaponData::ignored>(DT_LocalActiveWeaponData::ignored *);
+int g_1048640c = ClientClassInit((DT_LocalActiveWeaponData::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1007cff0 size=0xa
 #include "RecvTable.h"
 RecvTable g_10477278;
