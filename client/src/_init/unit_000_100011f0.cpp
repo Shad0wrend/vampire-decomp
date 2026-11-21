@@ -4055,6 +4055,11 @@ int g_105e7928 = ((int (*)(int))sub_101454a0)(0);
 RecvTable g_105e80b8;
 // END FUNCTION
 
+// FUNCTION: 0x10151dc0 size=0xa
+#include "RecvTable.h"
+RecvTable g_105e8704;
+// END FUNCTION
+
 // FUNCTION: 0x1015bc70 size=0xa
 #include "ConVar.h"
 ConVar g_105f9280("vdiscipline_use_new", "1", 8448);
