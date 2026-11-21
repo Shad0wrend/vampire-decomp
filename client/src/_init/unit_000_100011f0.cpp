@@ -779,6 +779,13 @@ int g_102e0c00 = ClientClassInit((DT_WeaponRanged_Rifle_Remington::ignored *)0);
 RecvTable g_102e2794;
 // END FUNCTION
 
+// FUNCTION: 0x1000ec50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Rifle_SteyrAug { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Rifle_SteyrAug::ignored>(DT_WeaponRanged_Rifle_SteyrAug::ignored *);
+int g_102e2790 = ClientClassInit((DT_WeaponRanged_Rifle_SteyrAug::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1000ee90 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e6970;
