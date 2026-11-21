@@ -22307,6 +22307,13 @@ void *CUnknown101e0f00::sub_1014a9e0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014b580 size=0x5
+int __stdcall sub_1014b580(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014cfd0 size=0x41
 struct CGravityVar101e7dd0 { virtual void v0(); virtual bool IsZero(); char pad[0x28 - 4]; float m_flValue; };
 extern CGravityVar101e7dd0 *g_104dfce4;
