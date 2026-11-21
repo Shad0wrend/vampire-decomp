@@ -21311,6 +21311,12 @@ void CUnknown101eb820::sub_1014f820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014fc00 size=0x1
+void sub_1014fc00()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101501b0 size=0x1c
 struct CUnk101ec450 {
 	void sub_101501b0(int a, int b);
