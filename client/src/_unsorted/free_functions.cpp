@@ -6232,6 +6232,14 @@ void UtlMem::sub_100be200(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0960 size=0x3
+struct CUnknown100c0960 { void * sub_100c0960(); };
+void * CUnknown100c0960::sub_100c0960()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c1e70 size=0x3e
 #include "UtlVec40.h"
 
