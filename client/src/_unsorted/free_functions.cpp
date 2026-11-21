@@ -2309,6 +2309,30 @@ int bf_read::sub_10087f50(int numbits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100880c0 size=0x20e
+#include "bf_read.h"
+
+// TARGET: bf_read::sub_100880c0
+float bf_read::sub_100880c0()
+{
+	int intval = 0, fractval = 0, signbit = 0;
+	float value = 0.0f;
+	intval = ReadOneBit();
+	fractval = ReadOneBit();
+	if (intval || fractval) {
+		signbit = ReadOneBit();
+		if (intval)
+			intval = ReadUBitLong(14) + 1;
+		if (fractval)
+			fractval = ReadUBitLong(4);
+		value = intval + fractval * (1.0 / 16);
+		if (signbit)
+			value = -value;
+	}
+	return value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088410 size=0xd1
 #include "bf_read.h"
 
