@@ -12445,6 +12445,25 @@ float CKeyValuesX::sub_10128540(const char *pszKey, float flDefault)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101288c0 size=0x5e
+#include "CKeyValuesX.h"
+#include <string.h>
+
+// TARGET: CKeyValuesX::sub_101288c0
+void CKeyValuesX::sub_101288c0(const char *pszName, const char *pszValue)
+{
+	CKeyValuesX *pKey = sub_101282e0(pszName, 1);
+	if (pKey)
+	{
+		delete [] (char *)pKey->m_sValue;
+		int len = strlen(pszValue);
+		pKey->m_sValue = new char[len + 1];
+		memcpy((char *)pKey->m_sValue, pszValue, len + 1);
+		pKey->m_iDataType = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128b60 size=0x1f
 namespace lifted {
 extern int g_102c3368;
