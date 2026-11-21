@@ -3633,6 +3633,24 @@ void sub_100df190(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df1c0 size=0x1d
+namespace lifted {
+extern char g_102348c8;
+}
+struct CUnknown102454e0 { void * sub_100df1c0(); };
+void * CUnknown102454e0::sub_100df1c0()
+{
+    *(int *)this = (int)&lifted::g_102348c8;
+    *(int *)((char *)this + 4) = 0;
+    *(char *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 8) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1040 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
