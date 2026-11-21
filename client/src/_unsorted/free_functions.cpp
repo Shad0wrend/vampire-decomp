@@ -28920,6 +28920,14 @@ int *COwner101e82f0::sub_1014d200(int *pResult, int a, int limit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d230 size=0xd
+int __stdcall sub_1014d230(int a0, int a1, int a2, int a3)
+{
+    *(int *)((char *)a0) = 1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d270 size=0x34
 extern int g_102c89f0[];
 
