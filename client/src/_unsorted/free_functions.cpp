@@ -1228,6 +1228,19 @@ bool CUnknown10427700::sub_100790f0(const char *name, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079260 size=0x4d
+#include "CUnknown10427700.h"
+void CUnknown10427700::sub_10079260(const char *name, int a, int b, int plrDmg, int npcDmg, int maxCarry)
+{
+    if (sub_100790f0(name, a, b)) {
+        m_entries[m_nEntries].m_plrDmg = plrDmg;
+        m_entries[m_nEntries].m_npcDmg = npcDmg;
+        m_entries[m_nEntries].m_maxCarry = maxCarry;
+        m_nEntries++;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100797c0 size=0x1c
 void sub_10079520(void *p);
 
