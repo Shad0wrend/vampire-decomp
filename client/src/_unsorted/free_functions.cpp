@@ -18950,6 +18950,34 @@ void CUnknown101eac50::sub_1014eee0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014f300 size=0x2a
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+extern int g_105e8588;
+extern int **g_105e858c;
+
+struct CKey101eb190 {
+    char pad[0x10];
+    int m_key;
+    int Find() const
+    {
+        for (int i = 0; i < g_105e8588; i++) {
+            if (*g_105e858c[i] == m_key)
+                return i;
+        }
+        return -1;
+    }
+    int sub_1014f300();
+};
+
+// TARGET: CKey101eb190::sub_1014f300
+int CKey101eb190::sub_1014f300()
+{
+    return Find() - 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101501b0 size=0x1c
 struct CUnk101ec450 {
 	void sub_101501b0(int a, int b);
