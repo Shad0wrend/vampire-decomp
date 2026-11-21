@@ -1556,3 +1556,9 @@ ConCommand g_104d32fc("+mlook", sub_10101fa0, 0, 0, 0);
 void sub_101024a0(void);
 ConCommand g_104d3760("-mlook", sub_101024a0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x101053f0 size=0xa
+#include "ConCommand.h"
+void sub_10101f80(void);
+ConCommand g_104d3850("+jlook", sub_10101f80, 0, 0, 0);
+// END FUNCTION
