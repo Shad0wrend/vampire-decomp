@@ -693,3 +693,8 @@ ConVar g_104cef00("cl_drawleaf", "-1", 0);
 #include "ConVar.h"
 ConVar g_104cef48("r_PortalTestEnts", "1", 0, "Clip entities against portal frustums.");
 // END FUNCTION
+
+// FUNCTION: 0x100d5210 size=0xa
+#include "ConVar.h"
+ConVar g_104cf060("r_shadows", "1", 0);
+// END FUNCTION
