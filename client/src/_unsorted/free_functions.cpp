@@ -16889,6 +16889,36 @@ void CUnknown101d82d0::sub_101452d0(const char *pszList)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101453c0 size=0x77
+#include <stdio.h>
+#include <string.h>
+
+struct CUnk101d84e0Elem {
+    char pad[12];
+    const char *sub_10145140();
+};
+struct CUnk101d84e0 {
+    int m_nCount;
+    CUnk101d84e0Elem *m_pElems;
+    char *sub_101453c0();
+};
+extern char g_105e7808[];
+
+char *CUnk101d84e0::sub_101453c0()
+{
+    int len = 0;
+    for (int i = 0; i < m_nCount; i++) {
+        if (i < m_nCount - 1) {
+            sprintf(g_105e7808 + len, "%s ", m_pElems[i].sub_10145140());
+            len = strlen(g_105e7808);
+        } else {
+            sprintf(g_105e7808 + len, "%s", m_pElems[i].sub_10145140());
+        }
+    }
+    return g_105e7808;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101454a0 size=0x1a
 namespace lifted {
 extern int g_102c77c8;
