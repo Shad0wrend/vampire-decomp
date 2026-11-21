@@ -1676,3 +1676,9 @@ ConCommand g_104d3914("togglechareditor", sub_10102350, 0, 0, 0);
 void sub_10102370(void);
 ConCommand g_104d30cc("+questlog", sub_10102370, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105a30 size=0xa
+#include "ConCommand.h"
+void sub_101023a0(void);
+ConCommand g_104d344c("-questlog", sub_101023a0, 0, 0, 0);
+// END FUNCTION
