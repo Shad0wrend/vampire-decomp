@@ -2601,3 +2601,8 @@ ConVar g_105fc910("v_rearview", "0", 0, "Rearview mirror mode");
 #include "ConVar.h"
 ConVar g_105fc718("viewmodel_fov", "54", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018f2f0 size=0xa
+#include "ConVar.h"
+ConVar g_105fbef0("gl_clear", "0", 0);
+// END FUNCTION
