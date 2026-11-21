@@ -539,6 +539,13 @@ int g_102e3790 = ClientClassInit((DT_WeaponRanged_Tzimisce2Head::ignored *)0);
 RecvTable g_102e15b4;
 // END FUNCTION
 
+// FUNCTION: 0x1000ba50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Tzimisce3Claw { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Tzimisce3Claw::ignored>(DT_WeaponMelee_Tzimisce3Claw::ignored *);
+int g_102e15b0 = ClientClassInit((DT_WeaponMelee_Tzimisce3Claw::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1000bc90 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e4634;
