@@ -53635,6 +53635,32 @@ void TSeg::sub_101556d0(int target, int *outIndex, int *outOffset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155840 size=0x104
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+#include <stdio.h>
+#include "CUnknown101f4b20.h"
+extern "C" __declspec(dllimport) void __cdecl DevMsg(int level, const char *pszFormat, ...);
+struct CFolderDumpX { void sub_10155170(); };
+
+// TARGET: CUnknown101f4b20::sub_10155840
+void CUnknown101f4b20::sub_10155840()
+{
+    char buf[128];
+    sprintf(buf, "\n[Sound Tree]:\n");
+    DevMsg(0, buf);
+    sprintf(buf, "-Ranges-:\n");
+    DevMsg(0, buf);
+    int n = m_pTable->m_nRecords;
+    for (int i = 0; i < n; i++) {
+        sprintf(buf, "\t\t   (%d)[%s]: %d\n", i, m_pTable->Find(i)->m_folder.Get(), m_pValues[i]);
+        DevMsg(0, buf);
+    }
+    ((CFolderDumpX *)((char *)this + 0x10))->sub_10155170();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155950 size=0x13
 struct CUnknown10155950 { void * sub_10155950(int); };
 void * CUnknown10155950::sub_10155950(int a0)
