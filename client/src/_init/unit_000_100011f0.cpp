@@ -2491,3 +2491,8 @@ Vector g_105fc5a0(0.0f, 0.0f, 0.0f);
 #include "ConVar.h"
 ConVar g_105fc9a0("scr_ofsx", "0", 0, "Offset the render origin along the x axis");
 // END FUNCTION
+
+// FUNCTION: 0x1018ec10 size=0xa
+#include "ConVar.h"
+ConVar g_105fca30("scr_ofsy", "0", 0, "Offset the render origin along the y axis");
+// END FUNCTION
