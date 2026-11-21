@@ -8126,6 +8126,18 @@ void CUnknown101bc140::sub_10133980(float flTarget, float flTime)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101339c0 size=0x25
+#include "UTIL_BloodStream.h"
+#include "CUnknown101bc140.h"
+
+// TARGET: CUnknown101bc140::sub_101339c0
+void CUnknown101bc140::sub_101339c0(float flValue)
+{
+	sub_10133980(0, flValue);
+	m_fl24 = g_102ba388->vfunc9() + flValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134200 size=0x7e
 #include "CUnknown101bc750.h"
 struct Mem4;
