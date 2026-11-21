@@ -14110,6 +14110,14 @@ int sub_100e1870(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1890 size=0xe
+int sub_100e1890(int a0, int a1, int a2)
+{
+    *(int *)((char *)a2) = *(int *)((char *)a0 + 4);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e18e0 size=0xb
 int sub_100e18e0(int a0, int a1)
 {
