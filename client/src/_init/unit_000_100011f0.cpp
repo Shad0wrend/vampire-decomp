@@ -6327,6 +6327,13 @@ int g_105e5ad8 = ((int (*)(int))sub_10134010)(0);
 RecvTable g_105e5d5c;
 // END FUNCTION
 
+// FUNCTION: 0x10135eb0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Sprite { struct ignored; }
+template <> int ClientClassInit<DT_Sprite::ignored>(DT_Sprite::ignored *);
+int g_105e5d58 = ClientClassInit((DT_Sprite::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1013a3a0 size=0x5
 #define PCD_INITIALIZERS
 #include "InterfaceReg.h"
