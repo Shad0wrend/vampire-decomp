@@ -1104,6 +1104,33 @@ int *CUnk10427480::sub_10078f20(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10078f90 size=0x53
+struct SubObj { virtual void v0(); virtual bool v1(); char pad[0x24]; float f28; };
+struct Inner { int pad0; SubObj *pObj; };
+struct Entry { int pad[4]; int m10; int pad14[2]; Inner *m1c; int pad20; };
+struct CTable {
+    int count;
+    int pad4[8];
+    Entry e[1];
+    int sub_10078f90(int i);
+};
+extern float g_101e34f0;
+// TARGET: CTable::sub_10078f90
+int CTable::sub_10078f90(int i)
+{
+    if (i >= 1 && i < count) {
+        Entry &en = e[i - 1];
+        if (en.m10 != -1) return en.m10;
+        Inner *p = en.m1c;
+        if (p) {
+            if (p->pObj->v1()) return (int)g_101e34f0;
+            return (int)p->pObj->f28;
+        }
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100790f0 size=0x69
 #include "CUnknown10427700.h"
 #include <string.h>
