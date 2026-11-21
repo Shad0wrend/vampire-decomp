@@ -1133,6 +1133,14 @@ char CUnknown100509a0::sub_100509a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10050a60 size=0x4
+struct CUnknown10050a60 { char sub_10050a60(); };
+char CUnknown10050a60::sub_10050a60()
+{
+    return *(char *)((char *)this + 0x24);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10051b20 size=0x3
 void __stdcall sub_10051b20(int a0)
 {
