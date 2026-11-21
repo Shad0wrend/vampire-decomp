@@ -255,6 +255,7 @@
 0x10016850 func   ?sub_10016850@@YAHXZ sub_10016850
 0x10016970 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponThrown_Chang_Energy_Ball@@@Z ClientClassInit
 0x10016ad0 func   ?sub_10016ad0@@YAHXZ sub_10016ad0
+0x10016bf0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponThrown_Chang_Ghost@@@Z ClientClassInit
 0x10016d50 func   ?sub_10016d50@@YAHXZ sub_10016d50
 0x10016fd0 func   ?sub_10016fd0@@YAHXZ sub_10016fd0
 0x10017250 func   ?sub_10017250@@YAHXZ sub_10017250
