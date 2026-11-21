@@ -2525,6 +2525,16 @@ char * CUnknown10028740::sub_10028740()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028750 size=0x6
+namespace lifted {
+extern char g_104d5190;
+}
+int sub_10028750()
+{
+    return (int)&lifted::g_104d5190;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028760 size=0x3
 char sub_10028760()
 {
