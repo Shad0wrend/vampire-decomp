@@ -973,6 +973,26 @@ void sub_10067d00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067f10 size=0x43
+struct S8 { int a; unsigned short b; char c; char d; };
+extern S8 *g_104770f8;
+extern int g_10477104;
+struct CUnknown10249fc0 { int sub_101390c0(unsigned short x); };
+extern CUnknown10249fc0 g_103ef0c8;
+bool sub_10067f10(int idx, int *out1, int *out2)
+{
+    if (idx >= 0 && idx < g_10477104) {
+        S8 *p = &g_104770f8[idx];
+        if (!p->c) {
+            *out1 = p->a;
+            *out2 = g_103ef0c8.sub_101390c0(p->b);
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067f70 size=0x48
 #include "utlrbtree.h"
 #include "utlvector.h"
