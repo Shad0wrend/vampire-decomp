@@ -1050,3 +1050,9 @@ ConCommand g_104d1d94("+campitchdown", sub_100ff720, 0, 0, 0);
 void sub_100ff730(void);
 ConCommand g_104d1e74("-campitchdown", sub_100ff730, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100ffe60 size=0xa
+#include "ConCommand.h"
+void sub_100ff740(void);
+ConCommand g_104d2834("+camyawleft", sub_100ff740, 0, 0, 0);
+// END FUNCTION
