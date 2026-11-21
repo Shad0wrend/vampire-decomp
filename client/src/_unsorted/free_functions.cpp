@@ -8910,6 +8910,14 @@ void sub_100f25a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f2740 size=0x3
+struct CUnknown100f2740 { int sub_100f2740(); };
+int CUnknown100f2740::sub_100f2740()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3f90 size=0xcb
 extern "C" void *__cdecl sub_101d0f30(void *, const void *, unsigned int);
 extern void *(__cdecl *g_101e3100)(int);
