@@ -1811,6 +1811,13 @@ int g_102e2d24 = ClientClassInit((DT_ItemGMilligansBuisnesscard::ignored *)0);
 RecvTable g_102e634c;
 // END FUNCTION
 
+// FUNCTION: 0x1001c350 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGPishaBook { struct ignored; }
+template <> int ClientClassInit<DT_ItemGPishaBook::ignored>(DT_ItemGPishaBook::ignored *);
+int g_102e6348 = ClientClassInit((DT_ItemGPishaBook::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001c590 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e7628;
