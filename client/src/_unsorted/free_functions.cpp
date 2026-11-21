@@ -6430,6 +6430,15 @@ char sub_1007f6e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007f860 size=0xd
+struct CUnknown1007f860 { int sub_1007f860(int); };
+int CUnknown1007f860::sub_1007f860(int a0)
+{
+    *(int *)((char *)this + 0x7d4) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007f870 size=0x7
 struct CUnknown1007f870 { int sub_1007f870(); };
 int CUnknown1007f870::sub_1007f870()
