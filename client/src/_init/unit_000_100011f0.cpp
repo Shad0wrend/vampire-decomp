@@ -1580,3 +1580,9 @@ ConCommand g_104d30f4("+duck", sub_10102170, 0, 0, 0);
 void sub_10102180(void);
 ConCommand g_104d31c8("-duck", sub_10102180, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105530 size=0xa
+#include "ConCommand.h"
+void sub_10102190(void);
+ConCommand g_104d3800("+reload", sub_10102190, 0, 0, 0);
+// END FUNCTION
