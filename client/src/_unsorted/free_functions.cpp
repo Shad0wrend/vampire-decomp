@@ -10579,6 +10579,16 @@ void * CUnknown100c0960::sub_100c0960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c0c80 size=0x6
+namespace lifted {
+extern char g_104a4160;
+}
+int sub_100c0c80()
+{
+    return (int)&lifted::g_104a4160;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c1e70 size=0x3e
 #include "UtlVec40.h"
 
