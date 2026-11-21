@@ -256,6 +256,7 @@
 0x1011fd80 func   ?sub_1011fd80@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_1011fd80
 0x1011fdf0 func   ?sub_1011fdf0@CUtlMemory20@@QAEXH@Z CUtlMemory20::sub_1011fdf0
 0x101201c0 func   ?sub_101201c0@@YAXHPAUIFieldSink@@PAUIRestoreSrc@@@Z sub_101201c0
+0x10120660 func   ?sub_10120660@@YAXHH@Z sub_10120660
 0x101209c0 func   ?sub_101209c0@CUnk1042da10@@QAEXD@Z CUnk1042da10::sub_101209c0
 0x10127320 func   ?sub_10127320@@YA_NPAUCRagdollLayout@@PAUCRagdollStudio@@H@Z sub_10127320
 0x10127830 func   ?sub_10127830@CMem16_t@@QAEXH@Z CMem16_t::sub_10127830

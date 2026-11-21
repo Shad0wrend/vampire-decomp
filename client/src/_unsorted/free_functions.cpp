@@ -6682,6 +6682,24 @@ void sub_101201c0(int a, IFieldSink *sink, IRestoreSrc *src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120660 size=0x24
+class IPlaceholder10158c00
+{
+public:
+	virtual void vfunc0();
+	virtual void vfunc1(int a, int b);
+};
+extern IPlaceholder10158c00 *g_104e0c98;
+void sub_10120560(int a, int b);
+
+// TARGET: sub_10120660
+void sub_10120660(int a, int b)
+{
+    g_104e0c98->vfunc1(a, b);
+    sub_10120560(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101209c0 size=0x1b
 // TARGET: sub_101209c0
 struct CUnk1042da10 {
