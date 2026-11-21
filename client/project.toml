@@ -1,0 +1,22 @@
+[game]
+name = "Vampire: The Masquerade - Bloodlines (client)"
+binary = "G:\\decomp\\VtMB\\Vampire\\cl_dlls\\client.dll"
+sha1 = "39a2d2556f08090542f2d186320b9012a83ffb6b"
+
+[compiler]
+cl = "G:\\decomp\\tools\\vc6\\VC98\\BIN\\CL.EXE"
+vcvars = "G:\\decomp\\tools\\vc6\\vcvars32.bat"
+prelude = "client.h"
+flags = ["/O2", "/GR"]
+timeout_s = 30
+
+[agents]
+claim_expiry_min = 30
+max_attempts_per_claim = 20
+prefer_sizes = [100, 400]
+x87_heavy = 8
+vector_calls = []
+
+[cache]
+prune_every_hours = 1
+keep_hours = 2

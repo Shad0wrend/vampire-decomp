@@ -1,0 +1,7236 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "client.h"
+
+// FUNCTION: 0x10001280 size=0xa
+#include "RecvTable.h"
+RecvTable g_102de368;
+// END FUNCTION
+
+// FUNCTION: 0x100012c0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseCineCam { struct ignored; }
+template <> int ClientClassInit<DT_BaseCineCam::ignored>(DT_BaseCineCam::ignored *);
+int g_102de364 = ClientClassInit((DT_BaseCineCam::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10001bd0 size=0xa
+#include "ConVar.h"
+ConVar g_102de308("camera_fov", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100026d0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102de350;
+// END FUNCTION
+
+// FUNCTION: 0x10002710 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_CCameraAnimated { struct ignored; }
+template <> int ClientClassInit<DT_CCameraAnimated::ignored>(DT_CCameraAnimated::ignored *);
+int g_102de34c = ClientClassInit((DT_CCameraAnimated::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100029a0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102de694;
+// END FUNCTION
+
+// FUNCTION: 0x100029e0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_HL2_Player { struct ignored; }
+template <> int ClientClassInit<DT_HL2_Player::ignored>(DT_HL2_Player::ignored *);
+int g_102de690 = ClientClassInit((DT_HL2_Player::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10002c80 size=0xa
+#include "RecvTable.h"
+RecvTable g_102de784;
+// END FUNCTION
+
+// FUNCTION: 0x10002cc0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Corpse { struct ignored; }
+template <> int ClientClassInit<DT_Corpse::ignored>(DT_Corpse::ignored *);
+int g_102de780 = ClientClassInit((DT_Corpse::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10002e80 size=0xa
+#include "RecvTable.h"
+RecvTable g_102de840;
+// END FUNCTION
+
+// FUNCTION: 0x10002ec0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_HL2Local { struct ignored; }
+template <> int ClientClassInit<DT_HL2Local::ignored>(DT_HL2Local::ignored *);
+int g_102de83c = ClientClassInit((DT_HL2Local::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10003330 size=0xa
+#include "RecvTable.h"
+RecvTable g_102de8e0;
+// END FUNCTION
+
+// FUNCTION: 0x10003370 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemPhysicsHand { struct ignored; }
+template <> int ClientClassInit<DT_ItemPhysicsHand::ignored>(DT_ItemPhysicsHand::ignored *);
+int g_102de8dc = ClientClassInit((DT_ItemPhysicsHand::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10003620 size=0xa
+#include "RecvTable.h"
+RecvTable g_102deabc;
+// END FUNCTION
+
+// FUNCTION: 0x10003660 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGKeyring { struct ignored; }
+template <> int ClientClassInit<DT_ItemGKeyring::ignored>(DT_ItemGKeyring::ignored *);
+int g_102deab8 = ClientClassInit((DT_ItemGKeyring::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10003a40 size=0xa
+#include "RecvTable.h"
+RecvTable g_102dea38;
+// END FUNCTION
+
+// FUNCTION: 0x10003a80 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKeyGeneric { struct ignored; }
+template <> int ClientClassInit<DT_ItemKeyGeneric::ignored>(DT_ItemKeyGeneric::ignored *);
+int g_102dea34 = ClientClassInit((DT_ItemKeyGeneric::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10003e40 size=0xa
+#include "RecvTable.h"
+RecvTable g_102decf0;
+// END FUNCTION
+
+// FUNCTION: 0x10003e80 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultRegen { struct ignored; }
+template <> int ClientClassInit<DT_OccultRegen::ignored>(DT_OccultRegen::ignored *);
+int g_102decec = ClientClassInit((DT_OccultRegen::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10004060 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ded3c;
+// END FUNCTION
+
+// FUNCTION: 0x100040a0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ParticleStorm { struct ignored; }
+template <> int ClientClassInit<DT_ParticleStorm::ignored>(DT_ParticleStorm::ignored *);
+int g_102ded38 = ClientClassInit((DT_ParticleStorm::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10005cc0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102df168;
+// END FUNCTION
+
+// FUNCTION: 0x10005d00 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PlasmaBeamNode { struct ignored; }
+template <> int ClientClassInit<DT_PlasmaBeamNode::ignored>(DT_PlasmaBeamNode::ignored *);
+int g_102df164 = ClientClassInit((DT_PlasmaBeamNode::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10005f50 size=0xa
+#include "RecvTable.h"
+RecvTable g_102df2a8;
+// END FUNCTION
+
+// FUNCTION: 0x10005f90 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PointCamera { struct ignored; }
+template <> int ClientClassInit<DT_PointCamera::ignored>(DT_PointCamera::ignored *);
+int g_102df2a4 = ClientClassInit((DT_PointCamera::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10006250 size=0xa
+#include "RecvTable.h"
+RecvTable g_102dfaa0;
+// END FUNCTION
+
+// FUNCTION: 0x10006290 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Animalism { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Animalism::ignored>(DT_WeaponRanged_Animalism::ignored *);
+int g_102dfa9c = ClientClassInit((DT_WeaponRanged_Animalism::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10006520 size=0xa
+#include "RecvTable.h"
+RecvTable g_102df898;
+// END FUNCTION
+
+// FUNCTION: 0x10006560 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Dementation { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Dementation::ignored>(DT_WeaponRanged_Dementation::ignored *);
+int g_102df894 = ClientClassInit((DT_WeaponRanged_Dementation::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100067f0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102df4a0;
+// END FUNCTION
+
+// FUNCTION: 0x10006830 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Domination { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Domination::ignored>(DT_WeaponRanged_Domination::ignored *);
+int g_102df49c = ClientClassInit((DT_WeaponRanged_Domination::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10006ac0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102dfab8;
+// END FUNCTION
+
+// FUNCTION: 0x10006b00 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Thaumaturgy { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Thaumaturgy::ignored>(DT_WeaponRanged_Thaumaturgy::ignored *);
+int g_102dfab4 = ClientClassInit((DT_WeaponRanged_Thaumaturgy::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100073b0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102dfcdc;
+// END FUNCTION
+
+// FUNCTION: 0x100073f0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEConcussiveExplosion { struct ignored; }
+template <> int ClientClassInit<DT_TEConcussiveExplosion::ignored>(DT_TEConcussiveExplosion::ignored *);
+int g_102dfcd8 = ClientClassInit((DT_TEConcussiveExplosion::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10007690 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3fec;
+// END FUNCTION
+
+// FUNCTION: 0x100076d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_MachineGun { struct ignored; }
+template <> int ClientClassInit<DT_MachineGun::ignored>(DT_MachineGun::ignored *);
+int g_102e3fe8 = ClientClassInit((DT_MachineGun::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10007910 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e2710;
+// END FUNCTION
+
+// FUNCTION: 0x10007950 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_SelectFireMachineGun { struct ignored; }
+template <> int ClientClassInit<DT_SelectFireMachineGun::ignored>(DT_SelectFireMachineGun::ignored *);
+int g_102e270c = ClientClassInit((DT_SelectFireMachineGun::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10007b90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3b38;
+// END FUNCTION
+
+// FUNCTION: 0x10007bd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseBludgeonWeapon { struct ignored; }
+template <> int ClientClassInit<DT_BaseBludgeonWeapon::ignored>(DT_BaseBludgeonWeapon::ignored *);
+int g_102e3b34 = ClientClassInit((DT_BaseBludgeonWeapon::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10007e10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e52f8;
+// END FUNCTION
+
+// FUNCTION: 0x10007e50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee::ignored>(DT_WeaponMelee::ignored *);
+int g_102e52f4 = ClientClassInit((DT_WeaponMelee::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10008090 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e28d4;
+// END FUNCTION
+
+// FUNCTION: 0x100080d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_BaseballBat { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_BaseballBat::ignored>(DT_WeaponMelee_BaseballBat::ignored *);
+int g_102e28d0 = ClientClassInit((DT_WeaponMelee_BaseballBat::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10008310 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e10c0;
+// END FUNCTION
+
+// FUNCTION: 0x10008350 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_BushHook { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_BushHook::ignored>(DT_WeaponMelee_BushHook::ignored *);
+int g_102e10bc = ClientClassInit((DT_WeaponMelee_BushHook::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10008590 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e57f8;
+// END FUNCTION
+
+// FUNCTION: 0x100085d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Claws { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Claws::ignored>(DT_WeaponMelee_Claws::ignored *);
+int g_102e57f4 = ClientClassInit((DT_WeaponMelee_Claws::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10008810 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e23d4;
+// END FUNCTION
+
+// FUNCTION: 0x10008850 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Fists { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Fists::ignored>(DT_WeaponMelee_Fists::ignored *);
+int g_102e23d0 = ClientClassInit((DT_WeaponMelee_Fists::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10008a90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3820;
+// END FUNCTION
+
+// FUNCTION: 0x10008ad0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_FireAxe { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_FireAxe::ignored>(DT_WeaponMelee_FireAxe::ignored *);
+int g_102e381c = ClientClassInit((DT_WeaponMelee_FireAxe::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10008d10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e7010;
+// END FUNCTION
+
+// FUNCTION: 0x10008d50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Katana { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Katana::ignored>(DT_WeaponMelee_Katana::ignored *);
+int g_102e700c = ClientClassInit((DT_WeaponMelee_Katana::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10008f90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e7400;
+// END FUNCTION
+
+// FUNCTION: 0x10008fd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Knife { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Knife::ignored>(DT_WeaponMelee_Knife::ignored *);
+int g_102e73fc = ClientClassInit((DT_WeaponMelee_Knife::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10009210 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3b6c;
+// END FUNCTION
+
+// FUNCTION: 0x10009250 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_OccultBlade { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_OccultBlade::ignored>(DT_WeaponMelee_OccultBlade::ignored *);
+int g_102e3b68 = ClientClassInit((DT_WeaponMelee_OccultBlade::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10009490 size=0xa
+#include "RecvTable.h"
+RecvTable g_102dfebc;
+// END FUNCTION
+
+// FUNCTION: 0x100094d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Stake { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Stake::ignored>(DT_WeaponMelee_Stake::ignored *);
+int g_102dfeb8 = ClientClassInit((DT_WeaponMelee_Stake::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10009710 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4acc;
+// END FUNCTION
+
+// FUNCTION: 0x10009750 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Sledgehammer { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Sledgehammer::ignored>(DT_WeaponMelee_Sledgehammer::ignored *);
+int g_102e4ac8 = ClientClassInit((DT_WeaponMelee_Sledgehammer::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10009990 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e076c;
+// END FUNCTION
+
+// FUNCTION: 0x100099d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_TireIron { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_TireIron::ignored>(DT_WeaponMelee_TireIron::ignored *);
+int g_102e0768 = ClientClassInit((DT_WeaponMelee_TireIron::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10009c10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e74ec;
+// END FUNCTION
+
+// FUNCTION: 0x10009c50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Baton { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Baton::ignored>(DT_WeaponMelee_Baton::ignored *);
+int g_102e74e8 = ClientClassInit((DT_WeaponMelee_Baton::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10009e90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e050c;
+// END FUNCTION
+
+// FUNCTION: 0x10009ed0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_SeveredArm { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_SeveredArm::ignored>(DT_WeaponMelee_SeveredArm::ignored *);
+int g_102e0508 = ClientClassInit((DT_WeaponMelee_SeveredArm::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000a110 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e12ac;
+// END FUNCTION
+
+// FUNCTION: 0x1000a150 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Claws_Protean4 { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Claws_Protean4::ignored>(DT_WeaponMelee_Claws_Protean4::ignored *);
+int g_102e12a8 = ClientClassInit((DT_WeaponMelee_Claws_Protean4::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000a390 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e11c4;
+// END FUNCTION
+
+// FUNCTION: 0x1000a3d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Claws_Protean5 { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Claws_Protean5::ignored>(DT_WeaponMelee_Claws_Protean5::ignored *);
+int g_102e11c0 = ClientClassInit((DT_WeaponMelee_Claws_Protean5::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000a610 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e21bc;
+// END FUNCTION
+
+// FUNCTION: 0x1000a650 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_TzimisceMelee { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_TzimisceMelee::ignored>(DT_WeaponMelee_TzimisceMelee::ignored *);
+int g_102e21b8 = ClientClassInit((DT_WeaponMelee_TzimisceMelee::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000a890 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e56d0;
+// END FUNCTION
+
+// FUNCTION: 0x1000a8d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_WerewolfAttacks { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_WerewolfAttacks::ignored>(DT_WeaponMelee_WerewolfAttacks::ignored *);
+int g_102e56cc = ClientClassInit((DT_WeaponMelee_WerewolfAttacks::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000ab10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1700;
+// END FUNCTION
+
+// FUNCTION: 0x1000ab50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_SabbatLeaderAttack { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_SabbatLeaderAttack::ignored>(DT_WeaponMelee_SabbatLeaderAttack::ignored *);
+int g_102e16fc = ClientClassInit((DT_WeaponMelee_SabbatLeaderAttack::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000ad90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e422c;
+// END FUNCTION
+
+// FUNCTION: 0x1000add0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_ChangClaw { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_ChangClaw::ignored>(DT_WeaponMelee_ChangClaw::ignored *);
+int g_102e4228 = ClientClassInit((DT_WeaponMelee_ChangClaw::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000b010 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1a4c;
+// END FUNCTION
+
+// FUNCTION: 0x1000b050 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_ChangBlade { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_ChangBlade::ignored>(DT_WeaponMelee_ChangBlade::ignored *);
+int g_102e1a48 = ClientClassInit((DT_WeaponMelee_ChangBlade::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000b290 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e36c4;
+// END FUNCTION
+
+// FUNCTION: 0x1000b2d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_AVampBlade { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_AVampBlade::ignored>(DT_WeaponMelee_AVampBlade::ignored *);
+int g_102e36c0 = ClientClassInit((DT_WeaponMelee_AVampBlade::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000b510 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e7958;
+// END FUNCTION
+
+// FUNCTION: 0x1000b550 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Tzimisce2Claw { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Tzimisce2Claw::ignored>(DT_WeaponMelee_Tzimisce2Claw::ignored *);
+int g_102e7954 = ClientClassInit((DT_WeaponMelee_Tzimisce2Claw::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000b790 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3794;
+// END FUNCTION
+
+// FUNCTION: 0x1000b7d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Tzimisce2Head { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Tzimisce2Head::ignored>(DT_WeaponRanged_Tzimisce2Head::ignored *);
+int g_102e3790 = ClientClassInit((DT_WeaponRanged_Tzimisce2Head::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000ba10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e15b4;
+// END FUNCTION
+
+// FUNCTION: 0x1000ba50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Tzimisce3Claw { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Tzimisce3Claw::ignored>(DT_WeaponMelee_Tzimisce3Claw::ignored *);
+int g_102e15b0 = ClientClassInit((DT_WeaponMelee_Tzimisce3Claw::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000bc90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4634;
+// END FUNCTION
+
+// FUNCTION: 0x1000bcd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_GargoyleFist { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_GargoyleFist::ignored>(DT_WeaponMelee_GargoyleFist::ignored *);
+int g_102e4630 = ClientClassInit((DT_WeaponMelee_GargoyleFist::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000bf10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e2278;
+// END FUNCTION
+
+// FUNCTION: 0x1000bf50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_HengeyokaiFist { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_HengeyokaiFist::ignored>(DT_WeaponMelee_HengeyokaiFist::ignored *);
+int g_102e2274 = ClientClassInit((DT_WeaponMelee_HengeyokaiFist::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000c190 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1190;
+// END FUNCTION
+
+// FUNCTION: 0x1000c1d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_ManBatClaw { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_ManBatClaw::ignored>(DT_WeaponMelee_ManBatClaw::ignored *);
+int g_102e118c = ClientClassInit((DT_WeaponMelee_ManBatClaw::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000c410 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5fe0;
+// END FUNCTION
+
+// FUNCTION: 0x1000c450 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_MingXiaoMelee { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_MingXiaoMelee::ignored>(DT_WeaponMelee_MingXiaoMelee::ignored *);
+int g_102e5fdc = ClientClassInit((DT_WeaponMelee_MingXiaoMelee::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000c690 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1d48;
+// END FUNCTION
+
+// FUNCTION: 0x1000c6d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_MingXiaoTentacle { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_MingXiaoTentacle::ignored>(DT_WeaponMelee_MingXiaoTentacle::ignored *);
+int g_102e1d44 = ClientClassInit((DT_WeaponMelee_MingXiaoTentacle::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000c910 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e775c;
+// END FUNCTION
+
+// FUNCTION: 0x1000c950 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_ZombieFists { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_ZombieFists::ignored>(DT_WeaponMelee_ZombieFists::ignored *);
+int g_102e7758 = ClientClassInit((DT_WeaponMelee_ZombieFists::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000cb90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0018;
+// END FUNCTION
+
+// FUNCTION: 0x1000cbd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_MingXiao_Spit { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_MingXiao_Spit::ignored>(DT_WeaponRanged_MingXiao_Spit::ignored *);
+int g_102e0014 = ClientClassInit((DT_WeaponRanged_MingXiao_Spit::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000ce10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e56b8;
+// END FUNCTION
+
+// FUNCTION: 0x1000ce50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Claws_Ghoul { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Claws_Ghoul::ignored>(DT_WeaponMelee_Claws_Ghoul::ignored *);
+int g_102e56b4 = ClientClassInit((DT_WeaponMelee_Claws_Ghoul::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000d090 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e53e8;
+// END FUNCTION
+
+// FUNCTION: 0x1000d0d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Rifle_RemingtonBach { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Rifle_RemingtonBach::ignored>(DT_WeaponRanged_Rifle_RemingtonBach::ignored *);
+int g_102e53e4 = ClientClassInit((DT_WeaponRanged_Rifle_RemingtonBach::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000d310 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e55e4;
+// END FUNCTION
+
+// FUNCTION: 0x1000d350 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Sheriff_Sword { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Sheriff_Sword::ignored>(DT_WeaponMelee_Sheriff_Sword::ignored *);
+int g_102e55e0 = ClientClassInit((DT_WeaponMelee_Sheriff_Sword::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000d590 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e079c;
+// END FUNCTION
+
+// FUNCTION: 0x1000d5d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged::ignored>(DT_WeaponRanged::ignored *);
+int g_102e0798 = ClientClassInit((DT_WeaponRanged::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000d810 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1b6c;
+// END FUNCTION
+
+// FUNCTION: 0x1000d850 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Pistol_Anaconda { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Pistol_Anaconda::ignored>(DT_WeaponRanged_Pistol_Anaconda::ignored *);
+int g_102e1b68 = ClientClassInit((DT_WeaponRanged_Pistol_Anaconda::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000da90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e2524;
+// END FUNCTION
+
+// FUNCTION: 0x1000dad0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Rifle_Crossbow { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Rifle_Crossbow::ignored>(DT_WeaponRanged_Rifle_Crossbow::ignored *);
+int g_102e2520 = ClientClassInit((DT_WeaponRanged_Rifle_Crossbow::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000dd10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5400;
+// END FUNCTION
+
+// FUNCTION: 0x1000dd50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Rifle_Crossbow_Flaming { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Rifle_Crossbow_Flaming::ignored>(DT_WeaponRanged_Rifle_Crossbow_Flaming::ignored *);
+int g_102e53fc = ClientClassInit((DT_WeaponRanged_Rifle_Crossbow_Flaming::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000df90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e16d0;
+// END FUNCTION
+
+// FUNCTION: 0x1000dfd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Pistol_DesertEagle { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Pistol_DesertEagle::ignored>(DT_WeaponRanged_Pistol_DesertEagle::ignored *);
+int g_102e16cc = ClientClassInit((DT_WeaponRanged_Pistol_DesertEagle::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000e210 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3640;
+// END FUNCTION
+
+// FUNCTION: 0x1000e250 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Pistol_Glock { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Pistol_Glock::ignored>(DT_WeaponRanged_Pistol_Glock::ignored *);
+int g_102e363c = ClientClassInit((DT_WeaponRanged_Pistol_Glock::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000e490 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e2408;
+// END FUNCTION
+
+// FUNCTION: 0x1000e4d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Rifle_M37 { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Rifle_M37::ignored>(DT_WeaponRanged_Rifle_M37::ignored *);
+int g_102e2404 = ClientClassInit((DT_WeaponRanged_Rifle_M37::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000e710 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6648;
+// END FUNCTION
+
+// FUNCTION: 0x1000e750 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Smg_Mac10 { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Smg_Mac10::ignored>(DT_WeaponRanged_Smg_Mac10::ignored *);
+int g_102e6644 = ClientClassInit((DT_WeaponRanged_Smg_Mac10::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000e990 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0c04;
+// END FUNCTION
+
+// FUNCTION: 0x1000e9d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Rifle_Remington { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Rifle_Remington::ignored>(DT_WeaponRanged_Rifle_Remington::ignored *);
+int g_102e0c00 = ClientClassInit((DT_WeaponRanged_Rifle_Remington::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000ec10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e2794;
+// END FUNCTION
+
+// FUNCTION: 0x1000ec50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Rifle_SteyrAug { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Rifle_SteyrAug::ignored>(DT_WeaponRanged_Rifle_SteyrAug::ignored *);
+int g_102e2790 = ClientClassInit((DT_WeaponRanged_Rifle_SteyrAug::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000ee90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6970;
+// END FUNCTION
+
+// FUNCTION: 0x1000eed0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Rifle_SuperShotgun { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Rifle_SuperShotgun::ignored>(DT_WeaponRanged_Rifle_SuperShotgun::ignored *);
+int g_102e696c = ClientClassInit((DT_WeaponRanged_Rifle_SuperShotgun::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000f110 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e68b4;
+// END FUNCTION
+
+// FUNCTION: 0x1000f150 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Smg_Uzi { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Smg_Uzi::ignored>(DT_WeaponRanged_Smg_Uzi::ignored *);
+int g_102e68b0 = ClientClassInit((DT_WeaponRanged_Smg_Uzi::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000f390 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0bec;
+// END FUNCTION
+
+// FUNCTION: 0x1000f3d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Pistol_Thirtyeight { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Pistol_Thirtyeight::ignored>(DT_WeaponRanged_Pistol_Thirtyeight::ignored *);
+int g_102e0be8 = ClientClassInit((DT_WeaponRanged_Pistol_Thirtyeight::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000f610 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0ebc;
+// END FUNCTION
+
+// FUNCTION: 0x1000f650 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponIWritten { struct ignored; }
+template <> int ClientClassInit<DT_WeaponIWritten::ignored>(DT_WeaponIWritten::ignored *);
+int g_102e0eb8 = ClientClassInit((DT_WeaponIWritten::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000f890 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e218c;
+// END FUNCTION
+
+// FUNCTION: 0x1000f8d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponIGeneric { struct ignored; }
+template <> int ClientClassInit<DT_WeaponIGeneric::ignored>(DT_WeaponIGeneric::ignored *);
+int g_102e2188 = ClientClassInit((DT_WeaponIGeneric::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000fb10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5d98;
+// END FUNCTION
+
+// FUNCTION: 0x1000fb50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponLockpick { struct ignored; }
+template <> int ClientClassInit<DT_WeaponLockpick::ignored>(DT_WeaponLockpick::ignored *);
+int g_102e5d94 = ClientClassInit((DT_WeaponLockpick::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1000fd90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5048;
+// END FUNCTION
+
+// FUNCTION: 0x1000fdd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponUnarmed { struct ignored; }
+template <> int ClientClassInit<DT_WeaponUnarmed::ignored>(DT_WeaponUnarmed::ignored *);
+int g_102e5044 = ClientClassInit((DT_WeaponUnarmed::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10010010 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4618;
+// END FUNCTION
+
+// FUNCTION: 0x10010050 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponWallet { struct ignored; }
+template <> int ClientClassInit<DT_WeaponWallet::ignored>(DT_WeaponWallet::ignored *);
+int g_102e4614 = ClientClassInit((DT_WeaponWallet::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10010290 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4c7c;
+// END FUNCTION
+
+// FUNCTION: 0x100102d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemMWallet { struct ignored; }
+template <> int ClientClassInit<DT_ItemMWallet::ignored>(DT_ItemMWallet::ignored *);
+int g_102e4c78 = ClientClassInit((DT_ItemMWallet::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10010510 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e03b8;
+// END FUNCTION
+
+// FUNCTION: 0x10010550 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemMMoneyClip { struct ignored; }
+template <> int ClientClassInit<DT_ItemMMoneyClip::ignored>(DT_ItemMMoneyClip::ignored *);
+int g_102e03b4 = ClientClassInit((DT_ItemMMoneyClip::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10010790 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4f04;
+// END FUNCTION
+
+// FUNCTION: 0x100107d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemMMoneyEnvelope { struct ignored; }
+template <> int ClientClassInit<DT_ItemMMoneyEnvelope::ignored>(DT_ItemMMoneyEnvelope::ignored *);
+int g_102e4f00 = ClientClassInit((DT_ItemMMoneyEnvelope::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10010a10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e260c;
+// END FUNCTION
+
+// FUNCTION: 0x10010a50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_LG_COMP { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_LG_COMP::ignored>(DT_ResearchBook_LG_COMP::ignored *);
+int g_102e2608 = ClientClassInit((DT_ResearchBook_LG_COMP::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10010c90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e42dc;
+// END FUNCTION
+
+// FUNCTION: 0x10010cd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_HG_COMP { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_HG_COMP::ignored>(DT_ResearchBook_HG_COMP::ignored *);
+int g_102e42d8 = ClientClassInit((DT_ResearchBook_HG_COMP::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10010f10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5630;
+// END FUNCTION
+
+// FUNCTION: 0x10010f50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_MG_SEC { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_MG_SEC::ignored>(DT_ResearchBook_MG_SEC::ignored *);
+int g_102e562c = ClientClassInit((DT_ResearchBook_MG_SEC::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10011190 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6ff8;
+// END FUNCTION
+
+// FUNCTION: 0x100111d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_MG_FIN { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_MG_FIN::ignored>(DT_ResearchBook_MG_FIN::ignored *);
+int g_102e6ff4 = ClientClassInit((DT_ResearchBook_MG_FIN::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10011410 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4fa0;
+// END FUNCTION
+
+// FUNCTION: 0x10011450 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_HG_FIRE { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_HG_FIRE::ignored>(DT_ResearchBook_HG_FIRE::ignored *);
+int g_102e4f9c = ClientClassInit((DT_ResearchBook_HG_FIRE::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10011690 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e7850;
+// END FUNCTION
+
+// FUNCTION: 0x100116d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_MG_BRAWL { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_MG_BRAWL::ignored>(DT_ResearchBook_MG_BRAWL::ignored *);
+int g_102e784c = ClientClassInit((DT_ResearchBook_MG_BRAWL::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10011910 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6b00;
+// END FUNCTION
+
+// FUNCTION: 0x10011950 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_LG_DODGE { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_LG_DODGE::ignored>(DT_ResearchBook_LG_DODGE::ignored *);
+int g_102e6afc = ClientClassInit((DT_ResearchBook_LG_DODGE::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10011b90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1aac;
+// END FUNCTION
+
+// FUNCTION: 0x10011bd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_HG_MELEE { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_HG_MELEE::ignored>(DT_ResearchBook_HG_MELEE::ignored *);
+int g_102e1aa8 = ClientClassInit((DT_ResearchBook_HG_MELEE::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10011e10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e2d10;
+// END FUNCTION
+
+// FUNCTION: 0x10011e50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_HG_DODGE { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_HG_DODGE::ignored>(DT_ResearchBook_HG_DODGE::ignored *);
+int g_102e2d0c = ClientClassInit((DT_ResearchBook_HG_DODGE::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10012090 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e01e8;
+// END FUNCTION
+
+// FUNCTION: 0x100120d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_MG_MELEE { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_MG_MELEE::ignored>(DT_ResearchBook_MG_MELEE::ignored *);
+int g_102e01e4 = ClientClassInit((DT_ResearchBook_MG_MELEE::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10012310 size=0xa
+#include "RecvTable.h"
+RecvTable g_102dfffc;
+// END FUNCTION
+
+// FUNCTION: 0x10012350 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_LG_STEALTH { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_LG_STEALTH::ignored>(DT_ResearchBook_LG_STEALTH::ignored *);
+int g_102dfff8 = ClientClassInit((DT_ResearchBook_LG_STEALTH::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10012590 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1144;
+// END FUNCTION
+
+// FUNCTION: 0x100125d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_LG_FIREARMS { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_LG_FIREARMS::ignored>(DT_ResearchBook_LG_FIREARMS::ignored *);
+int g_102e1140 = ClientClassInit((DT_ResearchBook_LG_FIREARMS::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10012810 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6c08;
+// END FUNCTION
+
+// FUNCTION: 0x10012850 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultHacking { struct ignored; }
+template <> int ClientClassInit<DT_OccultHacking::ignored>(DT_OccultHacking::ignored *);
+int g_102e6c04 = ClientClassInit((DT_OccultHacking::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10012a90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e27e8;
+// END FUNCTION
+
+// FUNCTION: 0x10012ad0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultFrenzy { struct ignored; }
+template <> int ClientClassInit<DT_OccultFrenzy::ignored>(DT_OccultFrenzy::ignored *);
+int g_102e27e4 = ClientClassInit((DT_OccultFrenzy::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10012d10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5e50;
+// END FUNCTION
+
+// FUNCTION: 0x10012d50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultLockpicking { struct ignored; }
+template <> int ClientClassInit<DT_OccultLockpicking::ignored>(DT_OccultLockpicking::ignored *);
+int g_102e5e4c = ClientClassInit((DT_OccultLockpicking::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10012f90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3044;
+// END FUNCTION
+
+// FUNCTION: 0x10012fd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultPresence { struct ignored; }
+template <> int ClientClassInit<DT_OccultPresence::ignored>(DT_OccultPresence::ignored *);
+int g_102e3040 = ClientClassInit((DT_OccultPresence::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10013210 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0fec;
+// END FUNCTION
+
+// FUNCTION: 0x10013250 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultObfuscate { struct ignored; }
+template <> int ClientClassInit<DT_OccultObfuscate::ignored>(DT_OccultObfuscate::ignored *);
+int g_102e0fe8 = ClientClassInit((DT_OccultObfuscate::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10013490 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e44ec;
+// END FUNCTION
+
+// FUNCTION: 0x100134d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultDexterity { struct ignored; }
+template <> int ClientClassInit<DT_OccultDexterity::ignored>(DT_OccultDexterity::ignored *);
+int g_102e44e8 = ClientClassInit((DT_OccultDexterity::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10013710 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0ae4;
+// END FUNCTION
+
+// FUNCTION: 0x10013750 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultStrength { struct ignored; }
+template <> int ClientClassInit<DT_OccultStrength::ignored>(DT_OccultStrength::ignored *);
+int g_102e0ae0 = ClientClassInit((DT_OccultStrength::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10013990 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e12c4;
+// END FUNCTION
+
+// FUNCTION: 0x100139d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultExperience { struct ignored; }
+template <> int ClientClassInit<DT_OccultExperience::ignored>(DT_OccultExperience::ignored *);
+int g_102e12c0 = ClientClassInit((DT_OccultExperience::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10013c10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4ab4;
+// END FUNCTION
+
+// FUNCTION: 0x10013c50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultBloodBuff { struct ignored; }
+template <> int ClientClassInit<DT_OccultBloodBuff::ignored>(DT_OccultBloodBuff::ignored *);
+int g_102e4ab0 = ClientClassInit((DT_OccultBloodBuff::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10013e90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6e00;
+// END FUNCTION
+
+// FUNCTION: 0x10013ed0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultDodge { struct ignored; }
+template <> int ClientClassInit<DT_OccultDodge::ignored>(DT_OccultDodge::ignored *);
+int g_102e6dfc = ClientClassInit((DT_OccultDodge::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10014110 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4600;
+// END FUNCTION
+
+// FUNCTION: 0x10014150 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultThaumDamage { struct ignored; }
+template <> int ClientClassInit<DT_OccultThaumDamage::ignored>(DT_OccultThaumDamage::ignored *);
+int g_102e45fc = ClientClassInit((DT_OccultThaumDamage::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10014390 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5a38;
+// END FUNCTION
+
+// FUNCTION: 0x100143d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultPassiveDurations { struct ignored; }
+template <> int ClientClassInit<DT_OccultPassiveDurations::ignored>(DT_OccultPassiveDurations::ignored *);
+int g_102e5a34 = ClientClassInit((DT_OccultPassiveDurations::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10014610 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6988;
+// END FUNCTION
+
+// FUNCTION: 0x10014650 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultHealRate { struct ignored; }
+template <> int ClientClassInit<DT_OccultHealRate::ignored>(DT_OccultHealRate::ignored *);
+int g_102e6984 = ClientClassInit((DT_OccultHealRate::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10014890 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1a7c;
+// END FUNCTION
+
+// FUNCTION: 0x100148d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_GargoyleTalisman { struct ignored; }
+template <> int ClientClassInit<DT_GargoyleTalisman::ignored>(DT_GargoyleTalisman::ignored *);
+int g_102e1a78 = ClientClassInit((DT_GargoyleTalisman::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10014b10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0324;
+// END FUNCTION
+
+// FUNCTION: 0x10014b50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BloodPack { struct ignored; }
+template <> int ClientClassInit<DT_BloodPack::ignored>(DT_BloodPack::ignored *);
+int g_102e0320 = ClientClassInit((DT_BloodPack::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10014d90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e145c;
+// END FUNCTION
+
+// FUNCTION: 0x10014dd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BlueBloodPack { struct ignored; }
+template <> int ClientClassInit<DT_BlueBloodPack::ignored>(DT_BlueBloodPack::ignored *);
+int g_102e1458 = ClientClassInit((DT_BlueBloodPack::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10015010 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5a20;
+// END FUNCTION
+
+// FUNCTION: 0x10015050 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ElderVitaePack { struct ignored; }
+template <> int ClientClassInit<DT_ElderVitaePack::ignored>(DT_ElderVitaePack::ignored *);
+int g_102e5a1c = ClientClassInit((DT_ElderVitaePack::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10015290 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1c74;
+// END FUNCTION
+
+// FUNCTION: 0x100152d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponIArmor { struct ignored; }
+template <> int ClientClassInit<DT_WeaponIArmor::ignored>(DT_WeaponIArmor::ignored *);
+int g_102e1c70 = ClientClassInit((DT_WeaponIArmor::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10015510 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5898;
+// END FUNCTION
+
+// FUNCTION: 0x10015550 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponIArmor_Lt_Cloth { struct ignored; }
+template <> int ClientClassInit<DT_WeaponIArmor_Lt_Cloth::ignored>(DT_WeaponIArmor_Lt_Cloth::ignored *);
+int g_102e5894 = ClientClassInit((DT_WeaponIArmor_Lt_Cloth::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10015790 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e033c;
+// END FUNCTION
+
+// FUNCTION: 0x100157d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponIArmor_Hvy_Cloth { struct ignored; }
+template <> int ClientClassInit<DT_WeaponIArmor_Hvy_Cloth::ignored>(DT_WeaponIArmor_Hvy_Cloth::ignored *);
+int g_102e0338 = ClientClassInit((DT_WeaponIArmor_Hvy_Cloth::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10015a10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6f70;
+// END FUNCTION
+
+// FUNCTION: 0x10015a50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponIArmor_Lt_Leather { struct ignored; }
+template <> int ClientClassInit<DT_WeaponIArmor_Lt_Leather::ignored>(DT_WeaponIArmor_Lt_Leather::ignored *);
+int g_102e6f6c = ClientClassInit((DT_WeaponIArmor_Lt_Leather::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10015c90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e7658;
+// END FUNCTION
+
+// FUNCTION: 0x10015cd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponIArmor_Hvy_Leather { struct ignored; }
+template <> int ClientClassInit<DT_WeaponIArmor_Hvy_Leather::ignored>(DT_WeaponIArmor_Hvy_Leather::ignored *);
+int g_102e7654 = ClientClassInit((DT_WeaponIArmor_Hvy_Leather::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10015f10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e19e8;
+// END FUNCTION
+
+// FUNCTION: 0x10015f50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponIArmor_Body_Armor { struct ignored; }
+template <> int ClientClassInit<DT_WeaponIArmor_Body_Armor::ignored>(DT_WeaponIArmor_Body_Armor::ignored *);
+int g_102e19e4 = ClientClassInit((DT_WeaponIArmor_Body_Armor::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10016190 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5c08;
+// END FUNCTION
+
+// FUNCTION: 0x100161d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponIThrown { struct ignored; }
+template <> int ClientClassInit<DT_WeaponIThrown::ignored>(DT_WeaponIThrown::ignored *);
+int g_102e5c04 = ClientClassInit((DT_WeaponIThrown::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10016410 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0204;
+// END FUNCTION
+
+// FUNCTION: 0x10016450 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponIThrownGrenade { struct ignored; }
+template <> int ClientClassInit<DT_WeaponIThrownGrenade::ignored>(DT_WeaponIThrownGrenade::ignored *);
+int g_102e0200 = ClientClassInit((DT_WeaponIThrownGrenade::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10016690 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0528;
+// END FUNCTION
+
+// FUNCTION: 0x100166d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponThrown_Grenade_Frag { struct ignored; }
+template <> int ClientClassInit<DT_WeaponThrown_Grenade_Frag::ignored>(DT_WeaponThrown_Grenade_Frag::ignored *);
+int g_102e0524 = ClientClassInit((DT_WeaponThrown_Grenade_Frag::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10016910 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1a18;
+// END FUNCTION
+
+// FUNCTION: 0x10016950 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponThrown_Chang_Energy_Ball { struct ignored; }
+template <> int ClientClassInit<DT_WeaponThrown_Chang_Energy_Ball::ignored>(DT_WeaponThrown_Chang_Energy_Ball::ignored *);
+int g_102e1a14 = ClientClassInit((DT_WeaponThrown_Chang_Energy_Ball::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10016b90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6138;
+// END FUNCTION
+
+// FUNCTION: 0x10016bd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponThrown_Chang_Ghost { struct ignored; }
+template <> int ClientClassInit<DT_WeaponThrown_Chang_Ghost::ignored>(DT_WeaponThrown_Chang_Ghost::ignored *);
+int g_102e6134 = ClientClassInit((DT_WeaponThrown_Chang_Ghost::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10016e10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e02a0;
+// END FUNCTION
+
+// FUNCTION: 0x10016e50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGDrugsMorphineBottle { struct ignored; }
+template <> int ClientClassInit<DT_ItemGDrugsMorphineBottle::ignored>(DT_ItemGDrugsMorphineBottle::ignored *);
+int g_102e029c = ClientClassInit((DT_ItemGDrugsMorphineBottle::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10017090 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e7c90;
+// END FUNCTION
+
+// FUNCTION: 0x100170d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGDrugsPerscriptionBottle { struct ignored; }
+template <> int ClientClassInit<DT_ItemGDrugsPerscriptionBottle::ignored>(DT_ItemGDrugsPerscriptionBottle::ignored *);
+int g_102e7c8c = ClientClassInit((DT_ItemGDrugsPerscriptionBottle::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10017310 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e44d4;
+// END FUNCTION
+
+// FUNCTION: 0x10017350 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGDrugsPillBottle { struct ignored; }
+template <> int ClientClassInit<DT_ItemGDrugsPillBottle::ignored>(DT_ItemGDrugsPillBottle::ignored *);
+int g_102e44d0 = ClientClassInit((DT_ItemGDrugsPillBottle::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10017590 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e7b20;
+// END FUNCTION
+
+// FUNCTION: 0x100175d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGDrugsDrugBox { struct ignored; }
+template <> int ClientClassInit<DT_ItemGDrugsDrugBox::ignored>(DT_ItemGDrugsDrugBox::ignored *);
+int g_102e7b1c = ClientClassInit((DT_ItemGDrugsDrugBox::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10017810 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6d60;
+// END FUNCTION
+
+// FUNCTION: 0x10017850 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGAstrolite { struct ignored; }
+template <> int ClientClassInit<DT_ItemGAstrolite::ignored>(DT_ItemGAstrolite::ignored *);
+int g_102e6d5c = ClientClassInit((DT_ItemGAstrolite::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10017a90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1174;
+// END FUNCTION
+
+// FUNCTION: 0x10017ad0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGCashBox { struct ignored; }
+template <> int ClientClassInit<DT_ItemGCashBox::ignored>(DT_ItemGCashBox::ignored *);
+int g_102e1170 = ClientClassInit((DT_ItemGCashBox::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10017d10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3b54;
+// END FUNCTION
+
+// FUNCTION: 0x10017d50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGCarStereo { struct ignored; }
+template <> int ClientClassInit<DT_ItemGCarStereo::ignored>(DT_ItemGCarStereo::ignored *);
+int g_102e3b50 = ClientClassInit((DT_ItemGCarStereo::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10017f90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e55b0;
+// END FUNCTION
+
+// FUNCTION: 0x10017fd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGGhostPendant { struct ignored; }
+template <> int ClientClassInit<DT_ItemGGhostPendant::ignored>(DT_ItemGGhostPendant::ignored *);
+int g_102e55ac = ClientClassInit((DT_ItemGGhostPendant::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10018210 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6eb4;
+// END FUNCTION
+
+// FUNCTION: 0x10018250 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGRing03 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGRing03::ignored>(DT_ItemGRing03::ignored *);
+int g_102e6eb0 = ClientClassInit((DT_ItemGRing03::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10018490 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6e9c;
+// END FUNCTION
+
+// FUNCTION: 0x100184d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGRingGold { struct ignored; }
+template <> int ClientClassInit<DT_ItemGRingGold::ignored>(DT_ItemGRingGold::ignored *);
+int g_102e6e98 = ClientClassInit((DT_ItemGRingGold::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10018710 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0e68;
+// END FUNCTION
+
+// FUNCTION: 0x10018750 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGRingSilver { struct ignored; }
+template <> int ClientClassInit<DT_ItemGRingSilver::ignored>(DT_ItemGRingSilver::ignored *);
+int g_102e0e64 = ClientClassInit((DT_ItemGRingSilver::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10018990 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3138;
+// END FUNCTION
+
+// FUNCTION: 0x100189d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWatchNormal { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWatchNormal::ignored>(DT_ItemGWatchNormal::ignored *);
+int g_102e3134 = ClientClassInit((DT_ItemGWatchNormal::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10018c10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e12f4;
+// END FUNCTION
+
+// FUNCTION: 0x10018c50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWatchFancy { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWatchFancy::ignored>(DT_ItemGWatchFancy::ignored *);
+int g_102e12f0 = ClientClassInit((DT_ItemGWatchFancy::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10018e90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e425c;
+// END FUNCTION
+
+// FUNCTION: 0x10018ed0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGLillyPhoto { struct ignored; }
+template <> int ClientClassInit<DT_ItemGLillyPhoto::ignored>(DT_ItemGLillyPhoto::ignored *);
+int g_102e4258 = ClientClassInit((DT_ItemGLillyPhoto::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10019110 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1440;
+// END FUNCTION
+
+// FUNCTION: 0x10019150 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGLillyDiary { struct ignored; }
+template <> int ClientClassInit<DT_ItemGLillyDiary::ignored>(DT_ItemGLillyDiary::ignored *);
+int g_102e143c = ClientClassInit((DT_ItemGLillyDiary::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10019390 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e7588;
+// END FUNCTION
+
+// FUNCTION: 0x100193d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGLillyPurse { struct ignored; }
+template <> int ClientClassInit<DT_ItemGLillyPurse::ignored>(DT_ItemGLillyPurse::ignored *);
+int g_102e7584 = ClientClassInit((DT_ItemGLillyPurse::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10019610 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4244;
+// END FUNCTION
+
+// FUNCTION: 0x10019650 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGBailbondReceipt { struct ignored; }
+template <> int ClientClassInit<DT_ItemGBailbondReceipt::ignored>(DT_ItemGBailbondReceipt::ignored *);
+int g_102e4240 = ClientClassInit((DT_ItemGBailbondReceipt::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10019890 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3378;
+// END FUNCTION
+
+// FUNCTION: 0x100198d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGDriversLicenseGimble { struct ignored; }
+template <> int ClientClassInit<DT_ItemGDriversLicenseGimble::ignored>(DT_ItemGDriversLicenseGimble::ignored *);
+int g_102e3374 = ClientClassInit((DT_ItemGDriversLicenseGimble::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10019b10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4a84;
+// END FUNCTION
+
+// FUNCTION: 0x10019b50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWerewolfBlood { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWerewolfBlood::ignored>(DT_ItemGWerewolfBlood::ignored *);
+int g_102e4a80 = ClientClassInit((DT_ItemGWerewolfBlood::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10019d90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0afc;
+// END FUNCTION
+
+// FUNCTION: 0x10019dd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGJumblesFlyer { struct ignored; }
+template <> int ClientClassInit<DT_ItemGJumblesFlyer::ignored>(DT_ItemGJumblesFlyer::ignored *);
+int g_102e0af8 = ClientClassInit((DT_ItemGJumblesFlyer::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001a010 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5920;
+// END FUNCTION
+
+// FUNCTION: 0x1001a050 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGLarryBriefcase { struct ignored; }
+template <> int ClientClassInit<DT_ItemGLarryBriefcase::ignored>(DT_ItemGLarryBriefcase::ignored *);
+int g_102e591c = ClientClassInit((DT_ItemGLarryBriefcase::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001a290 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e140c;
+// END FUNCTION
+
+// FUNCTION: 0x1001a2d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGHorrorTape_1 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGHorrorTape_1::ignored>(DT_ItemGHorrorTape_1::ignored *);
+int g_102e1408 = ClientClassInit((DT_ItemGHorrorTape_1::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001a510 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e13d4;
+// END FUNCTION
+
+// FUNCTION: 0x1001a550 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGHorrorTape_2 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGHorrorTape_2::ignored>(DT_ItemGHorrorTape_2::ignored *);
+int g_102e13d0 = ClientClassInit((DT_ItemGHorrorTape_2::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001a790 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1568;
+// END FUNCTION
+
+// FUNCTION: 0x1001a7d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGOHDiary { struct ignored; }
+template <> int ClientClassInit<DT_ItemGOHDiary::ignored>(DT_ItemGOHDiary::ignored *);
+int g_102e1564 = ClientClassInit((DT_ItemGOHDiary::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001aa10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102dffc8;
+// END FUNCTION
+
+// FUNCTION: 0x1001aa50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGBachJournal { struct ignored; }
+template <> int ClientClassInit<DT_ItemGBachJournal::ignored>(DT_ItemGBachJournal::ignored *);
+int g_102dffc4 = ClientClassInit((DT_ItemGBachJournal::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001ac90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e2244;
+// END FUNCTION
+
+// FUNCTION: 0x1001acd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGVampyrApocrypha { struct ignored; }
+template <> int ClientClassInit<DT_ItemGVampyrApocrypha::ignored>(DT_ItemGVampyrApocrypha::ignored *);
+int g_102e2240 = ClientClassInit((DT_ItemGVampyrApocrypha::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001af10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3344;
+// END FUNCTION
+
+// FUNCTION: 0x1001af50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGPishaFetish { struct ignored; }
+template <> int ClientClassInit<DT_ItemGPishaFetish::ignored>(DT_ItemGPishaFetish::ignored *);
+int g_102e3340 = ClientClassInit((DT_ItemGPishaFetish::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001b190 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1020;
+// END FUNCTION
+
+// FUNCTION: 0x1001b1d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGEDanePrintReport { struct ignored; }
+template <> int ClientClassInit<DT_ItemGEDanePrintReport::ignored>(DT_ItemGEDanePrintReport::ignored *);
+int g_102e101c = ClientClassInit((DT_ItemGEDanePrintReport::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001b410 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4e64;
+// END FUNCTION
+
+// FUNCTION: 0x1001b450 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGEDaneReport { struct ignored; }
+template <> int ClientClassInit<DT_ItemGEDaneReport::ignored>(DT_ItemGEDaneReport::ignored *);
+int g_102e4e60 = ClientClassInit((DT_ItemGEDaneReport::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001b690 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e08c4;
+// END FUNCTION
+
+// FUNCTION: 0x1001b6d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGGiovanniInvitationVictor { struct ignored; }
+template <> int ClientClassInit<DT_ItemGGiovanniInvitationVictor::ignored>(DT_ItemGGiovanniInvitationVictor::ignored *);
+int g_102e08c0 = ClientClassInit((DT_ItemGGiovanniInvitationVictor::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001b910 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4b00;
+// END FUNCTION
+
+// FUNCTION: 0x1001b950 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGGiovanniInvitationMaria { struct ignored; }
+template <> int ClientClassInit<DT_ItemGGiovanniInvitationMaria::ignored>(DT_ItemGGiovanniInvitationMaria::ignored *);
+int g_102e4afc = ClientClassInit((DT_ItemGGiovanniInvitationMaria::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001bb90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5298;
+// END FUNCTION
+
+// FUNCTION: 0x1001bbd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGGuyMagazine { struct ignored; }
+template <> int ClientClassInit<DT_ItemGGuyMagazine::ignored>(DT_ItemGGuyMagazine::ignored *);
+int g_102e5294 = ClientClassInit((DT_ItemGGuyMagazine::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001be10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e520c;
+// END FUNCTION
+
+// FUNCTION: 0x1001be50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGBrotherhoodFlyer { struct ignored; }
+template <> int ClientClassInit<DT_ItemGBrotherhoodFlyer::ignored>(DT_ItemGBrotherhoodFlyer::ignored *);
+int g_102e5208 = ClientClassInit((DT_ItemGBrotherhoodFlyer::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001c090 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e2d28;
+// END FUNCTION
+
+// FUNCTION: 0x1001c0d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGMilligansBuisnesscard { struct ignored; }
+template <> int ClientClassInit<DT_ItemGMilligansBuisnesscard::ignored>(DT_ItemGMilligansBuisnesscard::ignored *);
+int g_102e2d24 = ClientClassInit((DT_ItemGMilligansBuisnesscard::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001c310 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e634c;
+// END FUNCTION
+
+// FUNCTION: 0x1001c350 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGPishaBook { struct ignored; }
+template <> int ClientClassInit<DT_ItemGPishaBook::ignored>(DT_ItemGPishaBook::ignored *);
+int g_102e6348 = ClientClassInit((DT_ItemGPishaBook::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001c590 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e7628;
+// END FUNCTION
+
+// FUNCTION: 0x1001c5d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGBadluckTalisman { struct ignored; }
+template <> int ClientClassInit<DT_ItemGBadluckTalisman::ignored>(DT_ItemGBadluckTalisman::ignored *);
+int g_102e7624 = ClientClassInit((DT_ItemGBadluckTalisman::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001c810 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5f58;
+// END FUNCTION
+
+// FUNCTION: 0x1001c850 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWarrens4Passkey { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWarrens4Passkey::ignored>(DT_ItemGWarrens4Passkey::ignored *);
+int g_102e5f54 = ClientClassInit((DT_ItemGWarrens4Passkey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001ca90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3c70;
+// END FUNCTION
+
+// FUNCTION: 0x1001cad0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWirelessCamera1 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWirelessCamera1::ignored>(DT_ItemGWirelessCamera1::ignored *);
+int g_102e3c6c = ClientClassInit((DT_ItemGWirelessCamera1::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001cd10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3c10;
+// END FUNCTION
+
+// FUNCTION: 0x1001cd50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWirelessCamera2 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWirelessCamera2::ignored>(DT_ItemGWirelessCamera2::ignored *);
+int g_102e3c0c = ClientClassInit((DT_ItemGWirelessCamera2::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001cf90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3c40;
+// END FUNCTION
+
+// FUNCTION: 0x1001cfd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWirelessCamera3 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWirelessCamera3::ignored>(DT_ItemGWirelessCamera3::ignored *);
+int g_102e3c3c = ClientClassInit((DT_ItemGWirelessCamera3::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001d210 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3bf8;
+// END FUNCTION
+
+// FUNCTION: 0x1001d250 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWirelessCamera4 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWirelessCamera4::ignored>(DT_ItemGWirelessCamera4::ignored *);
+int g_102e3bf4 = ClientClassInit((DT_ItemGWirelessCamera4::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001d490 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1d30;
+// END FUNCTION
+
+// FUNCTION: 0x1001d4d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGEyes { struct ignored; }
+template <> int ClientClassInit<DT_ItemGEyes::ignored>(DT_ItemGEyes::ignored *);
+int g_102e1d2c = ClientClassInit((DT_ItemGEyes::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001d710 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4c94;
+// END FUNCTION
+
+// FUNCTION: 0x1001d750 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGHattersScreenplay { struct ignored; }
+template <> int ClientClassInit<DT_ItemGHattersScreenplay::ignored>(DT_ItemGHattersScreenplay::ignored *);
+int g_102e4c90 = ClientClassInit((DT_ItemGHattersScreenplay::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001d990 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e7554;
+// END FUNCTION
+
+// FUNCTION: 0x1001d9d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGStake { struct ignored; }
+template <> int ClientClassInit<DT_ItemGStake::ignored>(DT_ItemGStake::ignored *);
+int g_102e7550 = ClientClassInit((DT_ItemGStake::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001dc10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1bd4;
+// END FUNCTION
+
+// FUNCTION: 0x1001dc50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWarrClipboard { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWarrClipboard::ignored>(DT_ItemGWarrClipboard::ignored *);
+int g_102e1bd0 = ClientClassInit((DT_ItemGWarrClipboard::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001de90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0fd4;
+// END FUNCTION
+
+// FUNCTION: 0x1001ded0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWarrLedger1 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWarrLedger1::ignored>(DT_ItemGWarrLedger1::ignored *);
+int g_102e0fd0 = ClientClassInit((DT_ItemGWarrLedger1::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001e110 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1008;
+// END FUNCTION
+
+// FUNCTION: 0x1001e150 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWarrLedger2 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWarrLedger2::ignored>(DT_ItemGWarrLedger2::ignored *);
+int g_102e1004 = ClientClassInit((DT_ItemGWarrLedger2::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001e390 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e335c;
+// END FUNCTION
+
+// FUNCTION: 0x1001e3d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGMercurioJournal { struct ignored; }
+template <> int ClientClassInit<DT_ItemGMercurioJournal::ignored>(DT_ItemGMercurioJournal::ignored *);
+int g_102e3358 = ClientClassInit((DT_ItemGMercurioJournal::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001e610 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e04dc;
+// END FUNCTION
+
+// FUNCTION: 0x1001e650 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGHannahsApptBook { struct ignored; }
+template <> int ClientClassInit<DT_ItemGHannahsApptBook::ignored>(DT_ItemGHannahsApptBook::ignored *);
+int g_102e04d8 = ClientClassInit((DT_ItemGHannahsApptBook::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001e890 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0cd8;
+// END FUNCTION
+
+// FUNCTION: 0x1001e8d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGJunkyardBusinesscard { struct ignored; }
+template <> int ClientClassInit<DT_ItemGJunkyardBusinesscard::ignored>(DT_ItemGJunkyardBusinesscard::ignored *);
+int g_102e0cd4 = ClientClassInit((DT_ItemGJunkyardBusinesscard::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001eb10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e7504;
+// END FUNCTION
+
+// FUNCTION: 0x1001eb50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGIdolCat { struct ignored; }
+template <> int ClientClassInit<DT_ItemGIdolCat::ignored>(DT_ItemGIdolCat::ignored *);
+int g_102e7500 = ClientClassInit((DT_ItemGIdolCat::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001ed90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6d7c;
+// END FUNCTION
+
+// FUNCTION: 0x1001edd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGIdolCrane { struct ignored; }
+template <> int ClientClassInit<DT_ItemGIdolCrane::ignored>(DT_ItemGIdolCrane::ignored *);
+int g_102e6d78 = ClientClassInit((DT_ItemGIdolCrane::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001f010 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1e90;
+// END FUNCTION
+
+// FUNCTION: 0x1001f050 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGIdolDragon { struct ignored; }
+template <> int ClientClassInit<DT_ItemGIdolDragon::ignored>(DT_ItemGIdolDragon::ignored *);
+int g_102e1e8c = ClientClassInit((DT_ItemGIdolDragon::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001f290 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1428;
+// END FUNCTION
+
+// FUNCTION: 0x1001f2d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGIdolElephant { struct ignored; }
+template <> int ClientClassInit<DT_ItemGIdolElephant::ignored>(DT_ItemGIdolElephant::ignored *);
+int g_102e1424 = ClientClassInit((DT_ItemGIdolElephant::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001f510 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4778;
+// END FUNCTION
+
+// FUNCTION: 0x1001f550 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGGarysCD { struct ignored; }
+template <> int ClientClassInit<DT_ItemGGarysCD::ignored>(DT_ItemGGarysCD::ignored *);
+int g_102e4774 = ClientClassInit((DT_ItemGGarysCD::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001f790 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e437c;
+// END FUNCTION
+
+// FUNCTION: 0x1001f7d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGGarysFilm { struct ignored; }
+template <> int ClientClassInit<DT_ItemGGarysFilm::ignored>(DT_ItemGGarysFilm::ignored *);
+int g_102e4378 = ClientClassInit((DT_ItemGGarysFilm::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001fa10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5a08;
+// END FUNCTION
+
+// FUNCTION: 0x1001fa50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGGarysPhoto { struct ignored; }
+template <> int ClientClassInit<DT_ItemGGarysPhoto::ignored>(DT_ItemGGarysPhoto::ignored *);
+int g_102e5a04 = ClientClassInit((DT_ItemGGarysPhoto::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001fc90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e69d4;
+// END FUNCTION
+
+// FUNCTION: 0x1001fcd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGGarysTape { struct ignored; }
+template <> int ClientClassInit<DT_ItemGGarysTape::ignored>(DT_ItemGGarysTape::ignored *);
+int g_102e69d0 = ClientClassInit((DT_ItemGGarysTape::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1001ff10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4020;
+// END FUNCTION
+
+// FUNCTION: 0x1001ff50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGBertramsCD { struct ignored; }
+template <> int ClientClassInit<DT_ItemGBertramsCD::ignored>(DT_ItemGBertramsCD::ignored *);
+int g_102e401c = ClientClassInit((DT_ItemGBertramsCD::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10020190 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6774;
+// END FUNCTION
+
+// FUNCTION: 0x100201d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGRingSerialKiller1 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGRingSerialKiller1::ignored>(DT_ItemGRingSerialKiller1::ignored *);
+int g_102e6770 = ClientClassInit((DT_ItemGRingSerialKiller1::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10020410 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e67a4;
+// END FUNCTION
+
+// FUNCTION: 0x10020450 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGRingSerialKiller2 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGRingSerialKiller2::ignored>(DT_ItemGRingSerialKiller2::ignored *);
+int g_102e67a0 = ClientClassInit((DT_ItemGRingSerialKiller2::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10020690 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0440;
+// END FUNCTION
+
+// FUNCTION: 0x100206d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGGargoyleBook { struct ignored; }
+template <> int ClientClassInit<DT_ItemGGargoyleBook::ignored>(DT_ItemGGargoyleBook::ignored *);
+int g_102e043c = ClientClassInit((DT_ItemGGargoyleBook::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10020910 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3b08;
+// END FUNCTION
+
+// FUNCTION: 0x10020950 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGVVPhoto { struct ignored; }
+template <> int ClientClassInit<DT_ItemGVVPhoto::ignored>(DT_ItemGVVPhoto::ignored *);
+int g_102e3b04 = ClientClassInit((DT_ItemGVVPhoto::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10020b90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5bd0;
+// END FUNCTION
+
+// FUNCTION: 0x10020bd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGSewerBook1 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGSewerBook1::ignored>(DT_ItemGSewerBook1::ignored *);
+int g_102e5bcc = ClientClassInit((DT_ItemGSewerBook1::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10020e10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5618;
+// END FUNCTION
+
+// FUNCTION: 0x10020e50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKGalleryNoirKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKGalleryNoirKey::ignored>(DT_ItemKGalleryNoirKey::ignored *);
+int g_102e5614 = ClientClassInit((DT_ItemKGalleryNoirKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10021090 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e68ec;
+// END FUNCTION
+
+// FUNCTION: 0x100210d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKLillyKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKLillyKey::ignored>(DT_ItemKLillyKey::ignored *);
+int g_102e68e8 = ClientClassInit((DT_ItemKLillyKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10021310 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0030;
+// END FUNCTION
+
+// FUNCTION: 0x10021350 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKMuriettaKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKMuriettaKey::ignored>(DT_ItemKMuriettaKey::ignored *);
+int g_102e002c = ClientClassInit((DT_ItemKMuriettaKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10021590 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e751c;
+// END FUNCTION
+
+// FUNCTION: 0x100215d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKOceanHouseSewerKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKOceanHouseSewerKey::ignored>(DT_ItemKOceanHouseSewerKey::ignored *);
+int g_102e7518 = ClientClassInit((DT_ItemKOceanHouseSewerKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10021810 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e59c0;
+// END FUNCTION
+
+// FUNCTION: 0x10021850 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKOceanHouseBasementKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKOceanHouseBasementKey::ignored>(DT_ItemKOceanHouseBasementKey::ignored *);
+int g_102e59bc = ClientClassInit((DT_ItemKOceanHouseBasementKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10021a90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e08ac;
+// END FUNCTION
+
+// FUNCTION: 0x10021ad0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKOceanHouseUpstairsKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKOceanHouseUpstairsKey::ignored>(DT_ItemKOceanHouseUpstairsKey::ignored *);
+int g_102e08a8 = ClientClassInit((DT_ItemKOceanHouseUpstairsKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10021d10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e31f0;
+// END FUNCTION
+
+// FUNCTION: 0x10021d50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKClinicMaintenanceKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKClinicMaintenanceKey::ignored>(DT_ItemKClinicMaintenanceKey::ignored *);
+int g_102e31ec = ClientClassInit((DT_ItemKClinicMaintenanceKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10021f90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e518c;
+// END FUNCTION
+
+// FUNCTION: 0x10021fd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKClinicStairsKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKClinicStairsKey::ignored>(DT_ItemKClinicStairsKey::ignored *);
+int g_102e5188 = ClientClassInit((DT_ItemKClinicStairsKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10022210 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0e84;
+// END FUNCTION
+
+// FUNCTION: 0x10022250 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKClinicCSKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKClinicCSKey::ignored>(DT_ItemKClinicCSKey::ignored *);
+int g_102e0e80 = ClientClassInit((DT_ItemKClinicCSKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10022490 size=0xa
+#include "RecvTable.h"
+RecvTable g_102dfea0;
+// END FUNCTION
+
+// FUNCTION: 0x100224d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKMalcomOfficeKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKMalcomOfficeKey::ignored>(DT_ItemKMalcomOfficeKey::ignored *);
+int g_102dfe9c = ClientClassInit((DT_ItemKMalcomOfficeKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10022710 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0784;
+// END FUNCTION
+
+// FUNCTION: 0x10022750 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKGimbleKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKGimbleKey::ignored>(DT_ItemKGimbleKey::ignored *);
+int g_102e0780 = ClientClassInit((DT_ItemKGimbleKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10022990 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3f34;
+// END FUNCTION
+
+// FUNCTION: 0x100229d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKLuckyStarMurderKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKLuckyStarMurderKey::ignored>(DT_ItemKLuckyStarMurderKey::ignored *);
+int g_102e3f30 = ClientClassInit((DT_ItemKLuckyStarMurderKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10022c10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e5d14;
+// END FUNCTION
+
+// FUNCTION: 0x10022c50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKLeopoldIntKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKLeopoldIntKey::ignored>(DT_ItemKLeopoldIntKey::ignored *);
+int g_102e5d10 = ClientClassInit((DT_ItemKLeopoldIntKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10022e90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e067c;
+// END FUNCTION
+
+// FUNCTION: 0x10022ed0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKMuseumBasementKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKMuseumBasementKey::ignored>(DT_ItemKMuseumBasementKey::ignored *);
+int g_102e0678 = ClientClassInit((DT_ItemKMuseumBasementKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10023110 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e71a4;
+// END FUNCTION
+
+// FUNCTION: 0x10023150 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKMuseumStoreroomKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKMuseumStoreroomKey::ignored>(DT_ItemKMuseumStoreroomKey::ignored *);
+int g_102e71a0 = ClientClassInit((DT_ItemKMuseumStoreroomKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10023390 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e55c8;
+// END FUNCTION
+
+// FUNCTION: 0x100233d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKMuseumStorageKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKMuseumStorageKey::ignored>(DT_ItemKMuseumStorageKey::ignored *);
+int g_102e55c4 = ClientClassInit((DT_ItemKMuseumStorageKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10023610 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3534;
+// END FUNCTION
+
+// FUNCTION: 0x10023650 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKNetcafeOfficeKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKNetcafeOfficeKey::ignored>(DT_ItemKNetcafeOfficeKey::ignored *);
+int g_102e3530 = ClientClassInit((DT_ItemKNetcafeOfficeKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10023890 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e7120;
+// END FUNCTION
+
+// FUNCTION: 0x100238d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKEDaneKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKEDaneKey::ignored>(DT_ItemKEDaneKey::ignored *);
+int g_102e711c = ClientClassInit((DT_ItemKEDaneKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10023b10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e760c;
+// END FUNCTION
+
+// FUNCTION: 0x10023b50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKEmpireMafiaKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKEmpireMafiaKey::ignored>(DT_ItemKEmpireMafiaKey::ignored *);
+int g_102e7608 = ClientClassInit((DT_ItemKEmpireMafiaKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10023d90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6100;
+// END FUNCTION
+
+// FUNCTION: 0x10023dd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKEmpireJezebelKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKEmpireJezebelKey::ignored>(DT_ItemKEmpireJezebelKey::ignored *);
+int g_102e60fc = ClientClassInit((DT_ItemKEmpireJezebelKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10024010 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0cbc;
+// END FUNCTION
+
+// FUNCTION: 0x10024050 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKCarsonApartmentKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKCarsonApartmentKey::ignored>(DT_ItemKCarsonApartmentKey::ignored *);
+int g_102e0cb8 = ClientClassInit((DT_ItemKCarsonApartmentKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10024290 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e2fc4;
+// END FUNCTION
+
+// FUNCTION: 0x100242d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKTatooParlorKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKTatooParlorKey::ignored>(DT_ItemKTatooParlorKey::ignored *);
+int g_102e2fc0 = ClientClassInit((DT_ItemKTatooParlorKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10024510 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0130;
+// END FUNCTION
+
+// FUNCTION: 0x10024550 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKMalkavianRefrigeratorKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKMalkavianRefrigeratorKey::ignored>(DT_ItemKMalkavianRefrigeratorKey::ignored *);
+int g_102e012c = ClientClassInit((DT_ItemKMalkavianRefrigeratorKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10024790 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e475c;
+// END FUNCTION
+
+// FUNCTION: 0x100247d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKTutorialChopshopStairsKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKTutorialChopshopStairsKey::ignored>(DT_ItemKTutorialChopshopStairsKey::ignored *);
+int g_102e4758 = ClientClassInit((DT_ItemKTutorialChopshopStairsKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10024a10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e52c8;
+// END FUNCTION
+
+// FUNCTION: 0x10024a50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKTawniApartmentKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKTawniApartmentKey::ignored>(DT_ItemKTawniApartmentKey::ignored *);
+int g_102e52c4 = ClientClassInit((DT_ItemKTawniApartmentKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10024c90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4f88;
+// END FUNCTION
+
+// FUNCTION: 0x10024cd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKShrekHubOneKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKShrekHubOneKey::ignored>(DT_ItemKShrekHubOneKey::ignored *);
+int g_102e4f84 = ClientClassInit((DT_ItemKShrekHubOneKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10024f10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e52b0;
+// END FUNCTION
+
+// FUNCTION: 0x10024f50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKShrekHubThreeKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKShrekHubThreeKey::ignored>(DT_ItemKShrekHubThreeKey::ignored *);
+int g_102e52ac = ClientClassInit((DT_ItemKShrekHubThreeKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10025190 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3c28;
+// END FUNCTION
+
+// FUNCTION: 0x100251d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKShrekHubFourKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKShrekHubFourKey::ignored>(DT_ItemKShrekHubFourKey::ignored *);
+int g_102e3c24 = ClientClassInit((DT_ItemKShrekHubFourKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10025410 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e54a0;
+// END FUNCTION
+
+// FUNCTION: 0x10025450 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKKikiKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKKikiKey::ignored>(DT_ItemKKikiKey::ignored *);
+int g_102e549c = ClientClassInit((DT_ItemKKikiKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10025690 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3ca0;
+// END FUNCTION
+
+// FUNCTION: 0x100256d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKSarcophagusKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKSarcophagusKey::ignored>(DT_ItemKSarcophagusKey::ignored *);
+int g_102e3c9c = ClientClassInit((DT_ItemKSarcophagusKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10025910 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e6e1c;
+// END FUNCTION
+
+// FUNCTION: 0x10025950 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKOHFrontKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKOHFrontKey::ignored>(DT_ItemKOHFrontKey::ignored *);
+int g_102e6e18 = ClientClassInit((DT_ItemKOHFrontKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10025b90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e4ae8;
+// END FUNCTION
+
+// FUNCTION: 0x10025bd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKFUOfficeKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKFUOfficeKey::ignored>(DT_ItemKFUOfficeKey::ignored *);
+int g_102e4ae4 = ClientClassInit((DT_ItemKFUOfficeKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10025e10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e27b0;
+// END FUNCTION
+
+// FUNCTION: 0x10025e50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKChineseTheatreKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKChineseTheatreKey::ignored>(DT_ItemKChineseTheatreKey::ignored *);
+int g_102e27ac = ClientClassInit((DT_ItemKChineseTheatreKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10026090 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e36e0;
+// END FUNCTION
+
+// FUNCTION: 0x100260d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKHitmanLuKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKHitmanLuKey::ignored>(DT_ItemKHitmanLuKey::ignored *);
+int g_102e36dc = ClientClassInit((DT_ItemKHitmanLuKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10026310 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e3fb8;
+// END FUNCTION
+
+// FUNCTION: 0x10026350 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKHitmanJiKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKHitmanJiKey::ignored>(DT_ItemKHitmanJiKey::ignored *);
+int g_102e3fb4 = ClientClassInit((DT_ItemKHitmanJiKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10026590 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1b88;
+// END FUNCTION
+
+// FUNCTION: 0x100265d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKHannahsSafeKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKHannahsSafeKey::ignored>(DT_ItemKHannahsSafeKey::ignored *);
+int g_102e1b84 = ClientClassInit((DT_ItemKHannahsSafeKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10026810 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e0ca4;
+// END FUNCTION
+
+// FUNCTION: 0x10026850 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKSkylineHavenKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKSkylineHavenKey::ignored>(DT_ItemKSkylineHavenKey::ignored *);
+int g_102e0ca0 = ClientClassInit((DT_ItemKSkylineHavenKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10026a90 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e1ba4;
+// END FUNCTION
+
+// FUNCTION: 0x10026ad0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKMuseumOfficeKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKMuseumOfficeKey::ignored>(DT_ItemKMuseumOfficeKey::ignored *);
+int g_102e1ba0 = ClientClassInit((DT_ItemKMuseumOfficeKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10026d10 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e29bc;
+// END FUNCTION
+
+// FUNCTION: 0x10026d50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKAshCellKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKAshCellKey::ignored>(DT_ItemKAshCellKey::ignored *);
+int g_102e29b8 = ClientClassInit((DT_ItemKAshCellKey::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10026f20 size=0xa
+#include "RecvTable.h"
+RecvTable g_102e2054;
+// END FUNCTION
+
+// FUNCTION: 0x10026f60 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Torch { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Torch::ignored>(DT_WeaponMelee_Torch::ignored *);
+int g_102e2050 = ClientClassInit((DT_WeaponMelee_Torch::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100270c0 size=0xa
+#include "ConVar.h"
+ConVar g_102e32e0("torchlight_minradius", "190", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10027110 size=0xa
+#include "ConVar.h"
+ConVar g_102e0ed0("torchlight_maxradius", "240", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10027160 size=0xa
+#include "ConVar.h"
+ConVar g_102e26c8("torchlight_enable", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100271b0 size=0xa
+#include "ConVar.h"
+ConVar g_102e71d8("torchlight_fast", "17", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10027200 size=0xa
+#include "ConVar.h"
+ConVar g_102e7220("torchlight_slow", "7", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10027250 size=0xa
+#include "ConVar.h"
+ConVar g_102e0048("torchlight_exponent", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10027650 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ea138;
+// END FUNCTION
+
+// FUNCTION: 0x10027690 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_FlameThrower { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_FlameThrower::ignored>(DT_WeaponRanged_FlameThrower::ignored *);
+int g_102ea134 = ClientClassInit((DT_WeaponRanged_FlameThrower::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100284a0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ea254;
+// END FUNCTION
+
+// FUNCTION: 0x100284e0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponPhysCannon { struct ignored; }
+template <> int ClientClassInit<DT_WeaponPhysCannon::ignored>(DT_WeaponPhysCannon::ignored *);
+int g_102ea250 = ClientClassInit((DT_WeaponPhysCannon::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100299b0 size=0xa
+#include "ConVar.h"
+ConVar g_102ea548("ft_link_velocity", "800", 8192, "The initial velocity of a flamethrower link");
+// END FUNCTION
+
+// FUNCTION: 0x10029a00 size=0xa
+#include "ConVar.h"
+ConVar g_102ea4b8("ft_link_drag", ".1", 8192, "The drag applied to a flamethrower link. The velocity is curved by this much each second. ");
+// END FUNCTION
+
+// FUNCTION: 0x10029a50 size=0xa
+#include "ConVar.h"
+ConVar g_102ea470("ft_link_gravity", "-100", 8192, "The amouunt of drop applied to a link, in inches per second.");
+// END FUNCTION
+
+// FUNCTION: 0x10029aa0 size=0xa
+#include "ConVar.h"
+ConVar g_102ea500("ft_link_lifetime", "1", 8192, "How long a link in the chain lives");
+// END FUNCTION
+
+// FUNCTION: 0x10029af0 size=0xa
+#include "ConVar.h"
+ConVar g_102ea590("ft_draw_chain", "0", 8192, "Set to 1 to draw the client chain, 2 to draw the server, 3 for both, 0 for none.");
+// END FUNCTION
+
+// FUNCTION: 0x10029b40 size=0xa
+#include "ConVar.h"
+ConVar g_102ea428("ft_spawn_particles", "1", 8192, "Set to 0 to stop spawning fire particles");
+// END FUNCTION
+
+// FUNCTION: 0x1002a130 size=0xa
+#include "CGameMovement.h"
+CGameMovement g_102ea5e8;
+// END FUNCTION
+
+// FUNCTION: 0x1002a170 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1002a1a0(void);
+InterfaceReg g_102ea5d8(sub_1002a1a0, "GameMovement001");
+// END FUNCTION
+
+// FUNCTION: 0x1002a250 size=0x5
+inline int pcd_initial_102ea8ac() { return 0xffffffff; }
+int g_102ea8ac = pcd_initial_102ea8ac();
+// END FUNCTION
+
+// FUNCTION: 0x1002a2b0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1002a2e0(void);
+InterfaceReg g_102ea898(sub_1002a2e0, "VClientPrediction001");
+// END FUNCTION
+
+// FUNCTION: 0x1002a4d0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eab98;
+// END FUNCTION
+
+// FUNCTION: 0x1002a510 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BatSwarm { struct ignored; }
+template <> int ClientClassInit<DT_BatSwarm::ignored>(DT_BatSwarm::ignored *);
+int g_102eab94 = ClientClassInit((DT_BatSwarm::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1002c030 size=0xa
+#include "ConCommand.h"
+void sub_1002c020(void);
+ConCommand g_102eacd0("ai_node_graph_built", sub_1002c020, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x1002c260 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ead40;
+// END FUNCTION
+
+// FUNCTION: 0x1002c2a0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseTempEntity { struct ignored; }
+template <> int ClientClassInit<DT_BaseTempEntity::ignored>(DT_BaseTempEntity::ignored *);
+int g_102ead3c = ClientClassInit((DT_BaseTempEntity::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1002d3e0 size=0xa
+#include "ConCommand.h"
+void sub_1002d2b0(void);
+ConCommand g_102ead74("CreateHairball", sub_1002d2b0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x1002f660 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eaeb0;
+// END FUNCTION
+
+// FUNCTION: 0x1002f6a0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_SmokeStackLightInfo { struct ignored; }
+template <> int ClientClassInit<DT_SmokeStackLightInfo::ignored>(DT_SmokeStackLightInfo::ignored *);
+int g_102eaeac = ClientClassInit((DT_SmokeStackLightInfo::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1002f840 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eae94;
+// END FUNCTION
+
+// FUNCTION: 0x1002f880 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_SmokeStack { struct ignored; }
+template <> int ClientClassInit<DT_SmokeStack::ignored>(DT_SmokeStack::ignored *);
+int g_102eae90 = ClientClassInit((DT_SmokeStack::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10030cf0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eb550;
+// END FUNCTION
+
+// FUNCTION: 0x10030d30 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_SteamJet { struct ignored; }
+template <> int ClientClassInit<DT_SteamJet::ignored>(DT_SteamJet::ignored *);
+int g_102eb54c = ClientClassInit((DT_SteamJet::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10032360 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eb614;
+// END FUNCTION
+
+// FUNCTION: 0x100323a0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEMetalSparks { struct ignored; }
+template <> int ClientClassInit<DT_TEMetalSparks::ignored>(DT_TEMetalSparks::ignored *);
+int g_102eb610 = ClientClassInit((DT_TEMetalSparks::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10032560 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eb62c;
+// END FUNCTION
+
+// FUNCTION: 0x100325a0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEArmorRicochet { struct ignored; }
+template <> int ClientClassInit<DT_TEArmorRicochet::ignored>(DT_TEArmorRicochet::ignored *);
+int g_102eb628 = ClientClassInit((DT_TEArmorRicochet::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100327c0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eba70;
+// END FUNCTION
+
+// FUNCTION: 0x10032800 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseBeam { struct ignored; }
+template <> int ClientClassInit<DT_BaseBeam::ignored>(DT_BaseBeam::ignored *);
+int g_102eba6c = ClientClassInit((DT_BaseBeam::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10032c50 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eba8c;
+// END FUNCTION
+
+// FUNCTION: 0x10032c90 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBeamEntPoint { struct ignored; }
+template <> int ClientClassInit<DT_TEBeamEntPoint::ignored>(DT_TEBeamEntPoint::ignored *);
+int g_102eba88 = ClientClassInit((DT_TEBeamEntPoint::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10032ff0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ebcd4;
+// END FUNCTION
+
+// FUNCTION: 0x10033030 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBeamEnts { struct ignored; }
+template <> int ClientClassInit<DT_TEBeamEnts::ignored>(DT_TEBeamEnts::ignored *);
+int g_102ebcd0 = ClientClassInit((DT_TEBeamEnts::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10033360 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ebefc;
+// END FUNCTION
+
+// FUNCTION: 0x100333a0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBeamLaser { struct ignored; }
+template <> int ClientClassInit<DT_TEBeamLaser::ignored>(DT_TEBeamLaser::ignored *);
+int g_102ebef8 = ClientClassInit((DT_TEBeamLaser::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100336d0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ebf74;
+// END FUNCTION
+
+// FUNCTION: 0x10033710 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBeamPoints { struct ignored; }
+template <> int ClientClassInit<DT_TEBeamPoints::ignored>(DT_TEBeamPoints::ignored *);
+int g_102ebf70 = ClientClassInit((DT_TEBeamPoints::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10033a40 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ec1bc;
+// END FUNCTION
+
+// FUNCTION: 0x10033a80 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBeamRing { struct ignored; }
+template <> int ClientClassInit<DT_TEBeamRing::ignored>(DT_TEBeamRing::ignored *);
+int g_102ec1b8 = ClientClassInit((DT_TEBeamRing::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10033db0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ec2d8;
+// END FUNCTION
+
+// FUNCTION: 0x10033df0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBeamRingPoint { struct ignored; }
+template <> int ClientClassInit<DT_TEBeamRingPoint::ignored>(DT_TEBeamRingPoint::ignored *);
+int g_102ec2d4 = ClientClassInit((DT_TEBeamRingPoint::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10034080 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ec460;
+// END FUNCTION
+
+// FUNCTION: 0x100340c0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBeamSpline { struct ignored; }
+template <> int ClientClassInit<DT_TEBeamSpline::ignored>(DT_TEBeamSpline::ignored *);
+int g_102ec45c = ClientClassInit((DT_TEBeamSpline::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10034480 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ec54c;
+// END FUNCTION
+
+// FUNCTION: 0x100344c0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBloodSprite { struct ignored; }
+template <> int ClientClassInit<DT_TEBloodSprite::ignored>(DT_TEBloodSprite::ignored *);
+int g_102ec548 = ClientClassInit((DT_TEBloodSprite::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10034ce0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eca34;
+// END FUNCTION
+
+// FUNCTION: 0x10034d20 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBloodStream { struct ignored; }
+template <> int ClientClassInit<DT_TEBloodStream::ignored>(DT_TEBloodStream::ignored *);
+int g_102eca30 = ClientClassInit((DT_TEBloodStream::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10035070 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eccb8;
+// END FUNCTION
+
+// FUNCTION: 0x100350b0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBreakModel { struct ignored; }
+template <> int ClientClassInit<DT_TEBreakModel::ignored>(DT_TEBreakModel::ignored *);
+int g_102eccb4 = ClientClassInit((DT_TEBreakModel::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100354d0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ece20;
+// END FUNCTION
+
+// FUNCTION: 0x10035510 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBSPDecal { struct ignored; }
+template <> int ClientClassInit<DT_TEBSPDecal::ignored>(DT_TEBSPDecal::ignored *);
+int g_102ece1c = ClientClassInit((DT_TEBSPDecal::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100357c0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ed034;
+// END FUNCTION
+
+// FUNCTION: 0x10035800 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBubbles { struct ignored; }
+template <> int ClientClassInit<DT_TEBubbles::ignored>(DT_TEBubbles::ignored *);
+int g_102ed030 = ClientClassInit((DT_TEBubbles::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10035b00 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ed084;
+// END FUNCTION
+
+// FUNCTION: 0x10035b40 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBubbleTrail { struct ignored; }
+template <> int ClientClassInit<DT_TEBubbleTrail::ignored>(DT_TEBubbleTrail::ignored *);
+int g_102ed080 = ClientClassInit((DT_TEBubbleTrail::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10035f40 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ed454;
+// END FUNCTION
+
+// FUNCTION: 0x10035f80 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEDecal { struct ignored; }
+template <> int ClientClassInit<DT_TEDecal::ignored>(DT_TEDecal::ignored *);
+int g_102ed450 = ClientClassInit((DT_TEDecal::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10036340 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ed6c4;
+// END FUNCTION
+
+// FUNCTION: 0x10036380 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEDynamicLight { struct ignored; }
+template <> int ClientClassInit<DT_TEDynamicLight::ignored>(DT_TEDynamicLight::ignored *);
+int g_102ed6c0 = ClientClassInit((DT_TEDynamicLight::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100366a0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ed6e4;
+// END FUNCTION
+
+// FUNCTION: 0x100366e0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEEnergySplash { struct ignored; }
+template <> int ClientClassInit<DT_TEEnergySplash::ignored>(DT_TEEnergySplash::ignored *);
+int g_102ed6e0 = ClientClassInit((DT_TEEnergySplash::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10036df0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eda74;
+// END FUNCTION
+
+// FUNCTION: 0x10036e30 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEExplosion { struct ignored; }
+template <> int ClientClassInit<DT_TEExplosion::ignored>(DT_TEExplosion::ignored *);
+int g_102eda70 = ClientClassInit((DT_TEExplosion::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100371b0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102edbdc;
+// END FUNCTION
+
+// FUNCTION: 0x100371f0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEFizz { struct ignored; }
+template <> int ClientClassInit<DT_TEFizz::ignored>(DT_TEFizz::ignored *);
+int g_102edbd8 = ClientClassInit((DT_TEFizz::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100376c0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102edd14;
+// END FUNCTION
+
+// FUNCTION: 0x10037700 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEFogRipple { struct ignored; }
+template <> int ClientClassInit<DT_TEFogRipple::ignored>(DT_TEFogRipple::ignored *);
+int g_102edd10 = ClientClassInit((DT_TEFogRipple::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10037900 size=0xa
+#include "RecvTable.h"
+RecvTable g_102edf00;
+// END FUNCTION
+
+// FUNCTION: 0x10037940 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEFootprintDecal { struct ignored; }
+template <> int ClientClassInit<DT_TEFootprintDecal::ignored>(DT_TEFootprintDecal::ignored *);
+int g_102edefc = ClientClassInit((DT_TEFootprintDecal::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100382e0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102edf80;
+// END FUNCTION
+
+// FUNCTION: 0x10038320 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEShatterSurface { struct ignored; }
+template <> int ClientClassInit<DT_TEShatterSurface::ignored>(DT_TEShatterSurface::ignored *);
+int g_102edf7c = ClientClassInit((DT_TEShatterSurface::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10038830 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ee320;
+// END FUNCTION
+
+// FUNCTION: 0x10038870 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEGlowSprite { struct ignored; }
+template <> int ClientClassInit<DT_TEGlowSprite::ignored>(DT_TEGlowSprite::ignored *);
+int g_102ee31c = ClientClassInit((DT_TEGlowSprite::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100397b0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ee60c;
+// END FUNCTION
+
+// FUNCTION: 0x100397f0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEGunshotDecal { struct ignored; }
+template <> int ClientClassInit<DT_TEGunshotDecal::ignored>(DT_TEGunshotDecal::ignored *);
+int g_102ee608 = ClientClassInit((DT_TEGunshotDecal::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10039cf0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ee588;
+// END FUNCTION
+
+// FUNCTION: 0x10039d30 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEExplosiveGunshotDecal { struct ignored; }
+template <> int ClientClassInit<DT_TEExplosiveGunshotDecal::ignored>(DT_TEExplosiveGunshotDecal::ignored *);
+int g_102ee584 = ClientClassInit((DT_TEExplosiveGunshotDecal::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1003a020 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eeaa4;
+// END FUNCTION
+
+// FUNCTION: 0x1003a060 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEImpact { struct ignored; }
+template <> int ClientClassInit<DT_TEImpact::ignored>(DT_TEImpact::ignored *);
+int g_102eeaa0 = ClientClassInit((DT_TEImpact::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1003a2c0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eeb5c;
+// END FUNCTION
+
+// FUNCTION: 0x1003a300 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEInspectionFX { struct ignored; }
+template <> int ClientClassInit<DT_TEInspectionFX::ignored>(DT_TEInspectionFX::ignored *);
+int g_102eeb58 = ClientClassInit((DT_TEInspectionFX::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1003a520 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eeb88;
+// END FUNCTION
+
+// FUNCTION: 0x1003a560 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEKillPlayerAttachments { struct ignored; }
+template <> int ClientClassInit<DT_TEKillPlayerAttachments::ignored>(DT_TEKillPlayerAttachments::ignored *);
+int g_102eeb84 = ClientClassInit((DT_TEKillPlayerAttachments::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1003a6b0 size=0xa
+#include "ConVar.h"
+ConVar g_102eec58("cl_ejectbrass", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1003aa90 size=0xa
+#include "ConVar.h"
+ConVar g_103eac38("clip_x", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1003aae0 size=0xa
+#include "ConVar.h"
+ConVar g_103eac80("clip_y", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1003ab30 size=0xa
+#include "ConVar.h"
+ConVar g_103eacc8("clip_z", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1003dbe0 size=0xa
+#include "RecvTable.h"
+RecvTable g_103eaea0;
+// END FUNCTION
+
+// FUNCTION: 0x1003dc20 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEMuzzleFlash { struct ignored; }
+template <> int ClientClassInit<DT_TEMuzzleFlash::ignored>(DT_TEMuzzleFlash::ignored *);
+int g_103eae9c = ClientClassInit((DT_TEMuzzleFlash::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1003de00 size=0xa
+#include "RecvTable.h"
+RecvTable g_103eaf70;
+// END FUNCTION
+
+// FUNCTION: 0x1003de40 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEParticleSystem { struct ignored; }
+template <> int ClientClassInit<DT_TEParticleSystem::ignored>(DT_TEParticleSystem::ignored *);
+int g_103eaf6c = ClientClassInit((DT_TEParticleSystem::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1003e910 size=0xa
+#include "RecvTable.h"
+RecvTable g_103eafb8;
+// END FUNCTION
+
+// FUNCTION: 0x1003e950 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEPlayerDecal { struct ignored; }
+template <> int ClientClassInit<DT_TEPlayerDecal::ignored>(DT_TEPlayerDecal::ignored *);
+int g_103eafb4 = ClientClassInit((DT_TEPlayerDecal::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1003ecc0 size=0xa
+#include "RecvTable.h"
+RecvTable g_103eb13c;
+// END FUNCTION
+
+// FUNCTION: 0x1003ed00 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEShowLine { struct ignored; }
+template <> int ClientClassInit<DT_TEShowLine::ignored>(DT_TEShowLine::ignored *);
+int g_103eb138 = ClientClassInit((DT_TEShowLine::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1003efb0 size=0xa
+#include "RecvTable.h"
+RecvTable g_103eb3a4;
+// END FUNCTION
+
+// FUNCTION: 0x1003eff0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TESmoke { struct ignored; }
+template <> int ClientClassInit<DT_TESmoke::ignored>(DT_TESmoke::ignored *);
+int g_103eb3a0 = ClientClassInit((DT_TESmoke::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1003f290 size=0xa
+#include "RecvTable.h"
+RecvTable g_103eb50c;
+// END FUNCTION
+
+// FUNCTION: 0x1003f2d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TESparks { struct ignored; }
+template <> int ClientClassInit<DT_TESparks::ignored>(DT_TESparks::ignored *);
+int g_103eb508 = ClientClassInit((DT_TESparks::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1003f650 size=0xa
+#include "RecvTable.h"
+RecvTable g_103eb738;
+// END FUNCTION
+
+// FUNCTION: 0x1003f690 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TESprite { struct ignored; }
+template <> int ClientClassInit<DT_TESprite::ignored>(DT_TESprite::ignored *);
+int g_103eb734 = ClientClassInit((DT_TESprite::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1003f9e0 size=0xa
+#include "RecvTable.h"
+RecvTable g_103eb924;
+// END FUNCTION
+
+// FUNCTION: 0x1003fa20 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TESpriteSpray { struct ignored; }
+template <> int ClientClassInit<DT_TESpriteSpray::ignored>(DT_TESpriteSpray::ignored *);
+int g_103eb920 = ClientClassInit((DT_TESpriteSpray::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1003fdb0 size=0xa
+#include "RecvTable.h"
+RecvTable g_103eba4c;
+// END FUNCTION
+
+// FUNCTION: 0x1003fdf0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TETextMessage { struct ignored; }
+template <> int ClientClassInit<DT_TETextMessage::ignored>(DT_TETextMessage::ignored *);
+int g_103eba48 = ClientClassInit((DT_TETextMessage::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10040200 size=0xa
+#include "RecvTable.h"
+RecvTable g_103ec0c4;
+// END FUNCTION
+
+// FUNCTION: 0x10040240 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TETParticle { struct ignored; }
+template <> int ClientClassInit<DT_TETParticle::ignored>(DT_TETParticle::ignored *);
+int g_103ec0c0 = ClientClassInit((DT_TETParticle::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100404e0 size=0xa
+#include "RecvTable.h"
+RecvTable g_103ec27c;
+// END FUNCTION
+
+// FUNCTION: 0x10040520 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TETParticleAttached { struct ignored; }
+template <> int ClientClassInit<DT_TETParticleAttached::ignored>(DT_TETParticleAttached::ignored *);
+int g_103ec278 = ClientClassInit((DT_TETParticleAttached::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100407d0 size=0xa
+#include "RecvTable.h"
+RecvTable g_103ec2b0;
+// END FUNCTION
+
+// FUNCTION: 0x10040810 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TETParticleHUD { struct ignored; }
+template <> int ClientClassInit<DT_TETParticleHUD::ignored>(DT_TETParticleHUD::ignored *);
+int g_103ec2ac = ClientClassInit((DT_TETParticleHUD::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10040bc0 size=0xa
+#include "RecvTable.h"
+RecvTable g_103ec3e8;
+// END FUNCTION
+
+// FUNCTION: 0x10040c00 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TETracer { struct ignored; }
+template <> int ClientClassInit<DT_TETracer::ignored>(DT_TETracer::ignored *);
+int g_103ec3e4 = ClientClassInit((DT_TETracer::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10040f40 size=0xa
+#include "RecvTable.h"
+RecvTable g_103ec484;
+// END FUNCTION
+
+// FUNCTION: 0x10040f80 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEUserTracer { struct ignored; }
+template <> int ClientClassInit<DT_TEUserTracer::ignored>(DT_TEUserTracer::ignored *);
+int g_103ec480 = ClientClassInit((DT_TEUserTracer::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10041320 size=0xa
+#include "RecvTable.h"
+RecvTable g_103ec640;
+// END FUNCTION
+
+// FUNCTION: 0x10041360 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEWorldDecal { struct ignored; }
+template <> int ClientClassInit<DT_TEWorldDecal::ignored>(DT_TEWorldDecal::ignored *);
+int g_103ec63c = ClientClassInit((DT_TEWorldDecal::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10041500 size=0xa
+#include "RecvTable.h"
+RecvTable g_103ec9b0;
+// END FUNCTION
+
+// FUNCTION: 0x10041540 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TestTraceline { struct ignored; }
+template <> int ClientClassInit<DT_TestTraceline::ignored>(DT_TestTraceline::ignored *);
+int g_103ec9ac = ClientClassInit((DT_TestTraceline::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10042e20 size=0xa
+#include "RecvTable.h"
+RecvTable g_103ecc30;
+// END FUNCTION
+
+// FUNCTION: 0x10042e60 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_CollisionProperty { struct ignored; }
+template <> int ClientClassInit<DT_CollisionProperty::ignored>(DT_CollisionProperty::ignored *);
+int g_103ecc2c = ClientClassInit((DT_CollisionProperty::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100446e0 size=0xa
+#include "ConVar.h"
+ConVar g_103ecd10("muzzleflash_light", "1", 128);
+// END FUNCTION
+
+// FUNCTION: 0x1004a600 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1004a630(void);
+InterfaceReg g_103ecd5c(sub_1004a630, "TextureTransform_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1004a7a0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1004a7d0(void);
+InterfaceReg g_103ecd68(sub_1004a7d0, "MatrixRotate_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1004b180 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1004b1b0(void);
+InterfaceReg g_103ecd88(sub_1004b1b0, "Thermal_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1004b1d0 size=0xa
+#include "ConVar.h"
+ConVar g_103edd98("r_visualizetraces", "0", 8192);
+// END FUNCTION
+
+// FUNCTION: 0x1004deb0 size=0xa
+#include "ConVar.h"
+ConVar g_103eddf8("credits_scrollrate", "30", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10051b70 size=0xa
+#include "ConVar.h"
+ConVar g_103ee098("nosradar_min_strike_dist", "80", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10051bc0 size=0xa
+#include "ConVar.h"
+ConVar g_103edf78("nosradar_max_strike_dist", "190", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10051c10 size=0xa
+#include "ConVar.h"
+ConVar g_103edfc0("nosradar_flash_speed", "8", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10052310 size=0xa
+#include "ConVar.h"
+ConVar g_103edee8("ic_arr_x", "950", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10052360 size=0xa
+#include "ConVar.h"
+ConVar g_103edea0("ic_arr_y", "20", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100523b0 size=0xa
+#include "ConVar.h"
+ConVar g_103ee050("ic_bg_x", "886", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10052400 size=0xa
+#include "ConVar.h"
+ConVar g_103ee008("ic_bg_y", "20", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10052450 size=0xa
+#include "ConVar.h"
+ConVar g_103edf30("ic_yaw", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10053030 size=0xa
+#include "ConVar.h"
+ConVar g_103ee0f0("v_hidedlg", "0", 1);
+// END FUNCTION
+
+// FUNCTION: 0x100583b0 size=0xa
+#include "ConCommand.h"
+void sub_10058310(void);
+ConCommand g_103eeb54("slot1", sub_10058310, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10058400 size=0xa
+#include "ConCommand.h"
+void sub_10058320(void);
+ConCommand g_103eeb7c("slot2", sub_10058320, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10058450 size=0xa
+#include "ConCommand.h"
+void sub_10058330(void);
+ConCommand g_103eeba4("slot3", sub_10058330, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100584a0 size=0xa
+#include "ConCommand.h"
+void sub_10058340(void);
+ConCommand g_103eebcc("slot4", sub_10058340, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100584f0 size=0xa
+#include "ConCommand.h"
+void sub_10058350(void);
+ConCommand g_103eebf4("slot5", sub_10058350, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10058540 size=0xa
+#include "ConCommand.h"
+void sub_10058360(void);
+ConCommand g_103eec1c("slot6", sub_10058360, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10058590 size=0xa
+#include "ConCommand.h"
+void sub_10058370(void);
+ConCommand g_103eec44("slot7", sub_10058370, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100585e0 size=0xa
+#include "ConCommand.h"
+void sub_10058380(void);
+ConCommand g_103eec6c("slot8", sub_10058380, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10058630 size=0xa
+#include "ConCommand.h"
+void sub_10058390(void);
+ConCommand g_103eeae4("vdiscipline", sub_10058390, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10058680 size=0xa
+#include "ConCommand.h"
+void sub_100583a0(void);
+ConCommand g_103eea78("vhotkey", sub_100583a0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10058710 size=0xa
+#include "ConVar.h"
+ConVar g_103eeb10("cl_hud_bloodbar", "", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10058760 size=0xa
+#include "ConVar.h"
+ConVar g_103eeaa0("cl_hud_health", "", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1005d950 size=0xa
+#include "RecvTable.h"
+RecvTable g_103eecbc;
+// END FUNCTION
+
+// FUNCTION: 0x1005d990 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_HudTimer { struct ignored; }
+template <> int ClientClassInit<DT_HudTimer::ignored>(DT_HudTimer::ignored *);
+int g_103eecb8 = ClientClassInit((DT_HudTimer::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10063730 size=0x5
+inline int pcd_initial_103eef34() { return 0xffffffff; }
+int g_103eef34 = pcd_initial_103eef34();
+// END FUNCTION
+
+// FUNCTION: 0x100646b0 size=0xa
+#include "ConVar.h"
+ConVar g_103eefa8("crosshair_rot", "0.0f", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100654d0 size=0xa
+#include "ConVar.h"
+ConVar g_103eeff0("mm_verbose", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10065630 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10065660(void);
+InterfaceReg g_103ef038(sub_10065660, "MainMenu001");
+// END FUNCTION
+
+// FUNCTION: 0x10065670 size=0xa
+#include "ConCommand.h"
+void sub_100656a0(void);
+ConCommand g_103ef08c("mm_resetparticles", sub_100656a0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10067b30 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_104770f8;
+// END FUNCTION
+
+// FUNCTION: 0x10067c10 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_10477154;
+// END FUNCTION
+
+// FUNCTION: 0x10067cb0 size=0xa
+#include "ConVar.h"
+ConVar g_10477110("debug_dump_activity_list", "0", 8448, "Set this to true to get a full list of activities and sequences when you fail to find one.");
+// END FUNCTION
+
+// FUNCTION: 0x10067d50 size=0xa
+#include "ConCommand.h"
+void sub_10067d00(void);
+ConCommand g_104770d0("activitydump", sub_10067d00, "Forces ActivityList Dump", 8448, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10078ed0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10078f00(void);
+InterfaceReg g_1047716c(sub_10078f00, "Alpha_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x100792f0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10079320(void);
+InterfaceReg g_10477178(sub_10079320, "AnimatedEntityTexture_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x100793a0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100793d0(void);
+InterfaceReg g_10477184(sub_100793d0, "AnimatedTexture_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1007a510 size=0xa
+#include "ConVar.h"
+ConVar g_10477190("debug_dump_anim_seq_list", "0", 8448, "Set this to true to allow a dump of animation seqences on errors.");
+// END FUNCTION
+
+// FUNCTION: 0x1007a950 size=0xa
+#include "ConVar.h"
+ConVar g_104772f0("vdebug_weapon_anims", "0", 8192, "Set this to true to get extra info.");
+// END FUNCTION
+
+// FUNCTION: 0x1007a9a0 size=0xa
+#include "ConVar.h"
+ConVar g_104772a8("debug_infinite_ammo", "0", 8192, "Set this to 1 to give player infinite ammo.  Set to 2 to never need to reload.");
+// END FUNCTION
+
+// FUNCTION: 0x1007cf00 size=0xa
+#include "RecvTable.h"
+RecvTable g_10486410;
+// END FUNCTION
+
+// FUNCTION: 0x1007cf40 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_LocalActiveWeaponData { struct ignored; }
+template <> int ClientClassInit<DT_LocalActiveWeaponData::ignored>(DT_LocalActiveWeaponData::ignored *);
+int g_1048640c = ClientClassInit((DT_LocalActiveWeaponData::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1007cff0 size=0xa
+#include "RecvTable.h"
+RecvTable g_10477278;
+// END FUNCTION
+
+// FUNCTION: 0x1007d030 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_LocalWeaponData { struct ignored; }
+template <> int ClientClassInit<DT_LocalWeaponData::ignored>(DT_LocalWeaponData::ignored *);
+int g_10477274 = ClientClassInit((DT_LocalWeaponData::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1007d160 size=0xa
+#include "RecvTable.h"
+RecvTable g_104863f8;
+// END FUNCTION
+
+// FUNCTION: 0x1007d1a0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseCombatWeapon { struct ignored; }
+template <> int ClientClassInit<DT_BaseCombatWeapon::ignored>(DT_BaseCombatWeapon::ignored *);
+int g_104863f4 = ClientClassInit((DT_BaseCombatWeapon::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1007e2d0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104865bc;
+// END FUNCTION
+
+// FUNCTION: 0x1007e310 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseGrenade { struct ignored; }
+template <> int ClientClassInit<DT_BaseGrenade::ignored>(DT_BaseGrenade::ignored *);
+int g_104865b8 = ClientClassInit((DT_BaseGrenade::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1007f3a0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104867b4;
+// END FUNCTION
+
+// FUNCTION: 0x1007f3e0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseParticleEntity { struct ignored; }
+template <> int ClientClassInit<DT_BaseParticleEntity::ignored>(DT_BaseParticleEntity::ignored *);
+int g_104867b0 = ClientClassInit((DT_BaseParticleEntity::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1007fa00 size=0xa
+#include "RecvTable.h"
+RecvTable g_10486a60;
+// END FUNCTION
+
+// FUNCTION: 0x1007fa40 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseViewModel { struct ignored; }
+template <> int ClientClassInit<DT_BaseViewModel::ignored>(DT_BaseViewModel::ignored *);
+int g_10486a5c = ClientClassInit((DT_BaseViewModel::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1007fda0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104870cc;
+// END FUNCTION
+
+// FUNCTION: 0x1007fde0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BeamPredictableId { struct ignored; }
+template <> int ClientClassInit<DT_BeamPredictableId::ignored>(DT_BeamPredictableId::ignored *);
+int g_104870c8 = ClientClassInit((DT_BeamPredictableId::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1007fea0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104870a4;
+// END FUNCTION
+
+// FUNCTION: 0x1007fee0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Beam { struct ignored; }
+template <> int ClientClassInit<DT_Beam::ignored>(DT_Beam::ignored *);
+int g_104870a0 = ClientClassInit((DT_Beam::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10081370 size=0xa
+#include "ConVar.h"
+ConVar g_104870e0("r_DrawBeams", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1008e880 size=0xa
+#include "RecvTable.h"
+RecvTable g_10498e88;
+// END FUNCTION
+
+// FUNCTION: 0x1008e8c0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_AI_BaseNPCTroika { struct ignored; }
+template <> int ClientClassInit<DT_AI_BaseNPCTroika::ignored>(DT_AI_BaseNPCTroika::ignored *);
+int g_10498e84 = ClientClassInit((DT_AI_BaseNPCTroika::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1008ec30 size=0xa
+#include "ConVar.h"
+ConVar g_1049bee0("r_drawmrmmodels", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1008ec80 size=0xa
+#include "ConVar.h"
+ConVar g_1049bf28("cl_SetupAllBones", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1008ecd0 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049bfb8;
+// END FUNCTION
+
+// FUNCTION: 0x1008ed10 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ServerAnimationData { struct ignored; }
+template <> int ClientClassInit<DT_ServerAnimationData::ignored>(DT_ServerAnimationData::ignored *);
+int g_1049bfb4 = ClientClassInit((DT_ServerAnimationData::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1008ee80 size=0xa
+#include "RecvTable.h"
+RecvTable g_10498f90;
+// END FUNCTION
+
+// FUNCTION: 0x1008eec0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseAnimating { struct ignored; }
+template <> int ClientClassInit<DT_BaseAnimating::ignored>(DT_BaseAnimating::ignored *);
+int g_10498f8c = ClientClassInit((DT_BaseAnimating::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10090f30 size=0xa
+#include "ConVar.h"
+ConVar g_1049c490("debug_npc_move_yaw_snap", "1", 0, "Enable this to force the move_yaw pose parameter to snap rather than blend for NPCs.");
+// END FUNCTION
+
+// FUNCTION: 0x10091970 size=0xa
+#include "ConVar.h"
+ConVar g_10499848("debug_show_bones", "0", 0, "Enable this to draw wireframe bones for characters.");
+// END FUNCTION
+
+// FUNCTION: 0x100922e0 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_1049bfcc;
+// END FUNCTION
+
+// FUNCTION: 0x100928d0 size=0xa
+#include "ConVar.h"
+ConVar g_1049c448("vcollide_wireframe", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10092920 size=0xa
+#include "ConVar.h"
+ConVar g_1049bf70("r_disable_highlight", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10097230 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049c4e4;
+// END FUNCTION
+
+// FUNCTION: 0x10097270 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Animationlayer { struct ignored; }
+template <> int ClientClassInit<DT_Animationlayer::ignored>(DT_Animationlayer::ignored *);
+int g_1049c4e0 = ClientClassInit((DT_Animationlayer::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10097420 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049cd70;
+// END FUNCTION
+
+// FUNCTION: 0x10097460 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseAnimatingOverlay { struct ignored; }
+template <> int ClientClassInit<DT_BaseAnimatingOverlay::ignored>(DT_BaseAnimatingOverlay::ignored *);
+int g_1049cd6c = ClientClassInit((DT_BaseAnimatingOverlay::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10098290 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049d890;
+// END FUNCTION
+
+// FUNCTION: 0x100982d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BCCLocalPlayerExclusive { struct ignored; }
+template <> int ClientClassInit<DT_BCCLocalPlayerExclusive::ignored>(DT_BCCLocalPlayerExclusive::ignored *);
+int g_1049d88c = ClientClassInit((DT_BCCLocalPlayerExclusive::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100983b0 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049d358;
+// END FUNCTION
+
+// FUNCTION: 0x100983f0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseCombatCharacter { struct ignored; }
+template <> int ClientClassInit<DT_BaseCombatCharacter::ignored>(DT_BaseCombatCharacter::ignored *);
+int g_1049d354 = ClientClassInit((DT_BaseCombatCharacter::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100987b0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d5a8("npc_motiontrailscale", "4.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1009a320 size=0xa
+#include "ConVar.h"
+ConVar g_1049d7b8("damage_floaters_dist_min", "64", 0, "Distance from camera to be considered the minimum for basis of scaling floater values.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a370 size=0xa
+#include "ConVar.h"
+ConVar g_1049d758("damage_floaters_dist_max", "800", 0, "Distance from camera to be considered the maximum for basis of scaling floater values.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a3c0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d5f0("damage_floaters_duration_min", "0.7", 0, "Duration of floaters when at the minimum distance value.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a410 size=0xa
+#include "ConVar.h"
+ConVar g_1049d638("damage_floaters_duration_max", "1.0", 0, "Duration of floaters when at the maximum distance value.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a460 size=0xa
+#include "ConVar.h"
+ConVar g_1049d370("damage_floaters_speed_min", "50", 0, "Upward speed of floaters when at the minimum distance value.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a4b0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d3b8("damage_floaters_speed_max", "100", 0, "Upward speed of floaters when at the maximum distance value.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a500 size=0xa
+#include "ConVar.h"
+ConVar g_1049d518("damage_floaters_scale_min", "0.3", 0, "Scaled size of floater art when at the minimum distance value.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a550 size=0xa
+#include "ConVar.h"
+ConVar g_1049d560("damage_floaters_scale_max", "0.9", 0, "Scaled size of floater art when at the maximum distance value.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a5a0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d800("damage_floaters_spacing_min", "5", 0, "Spacing between floater art when at the minimum distance value.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a5f0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d8a8("damage_floaters_spacing_max", "8", 0, "Spacing between floater art when at the maximum distance value.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a640 size=0xa
+#include "ConVar.h"
+ConVar g_1049d680("damage_floaters_color_max_r", "255", 0, "Red Color Component (0-255) of damage floaters when at full health.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a690 size=0xa
+#include "ConVar.h"
+ConVar g_1049d710("damage_floaters_color_max_g", "200", 0, "Green Color Component (0-255) of damage floaters when at full health.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a6e0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d6c8("damage_floaters_color_max_b", "0", 0, "Blue Color Component (0-255) of damage floaters when at full health.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a730 size=0xa
+#include "ConVar.h"
+ConVar g_1049d310("damage_floaters_color_min_r", "255", 0, "Red Color Component (0-255) of damage floaters when at zero health.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a780 size=0xa
+#include "ConVar.h"
+ConVar g_1049d2c8("damage_floaters_color_min_g", "0", 0, "Green Color Component (0-255) of damage floaters when at zero health.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a7d0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d848("damage_floaters_color_min_b", "0", 0, "Blue Color Component (0-255) of damage floaters when at zero health.");
+// END FUNCTION
+
+// FUNCTION: 0x1009a820 size=0xa
+#include "ConVar.h"
+ConVar g_1049d4d0("damage_floaters_color_max_threshhold", "90", 0, "Value (0-100) at which above this percent health we always display the full health color.");
+// END FUNCTION
+
+// FUNCTION: 0x1009b030 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_1049d978;
+// END FUNCTION
+
+// FUNCTION: 0x1009b0d0 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_1049d8f8;
+// END FUNCTION
+
+// FUNCTION: 0x1009b170 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_1049d964;
+// END FUNCTION
+
+// FUNCTION: 0x1009c1b0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d990("camera_prefs", "6", 128);
+// END FUNCTION
+
+// FUNCTION: 0x1009c200 size=0xa
+#include "ConVar.h"
+ConVar g_1049d910("camera_weaponswitch", "1", 128);
+// END FUNCTION
+
+// FUNCTION: 0x1009cf70 size=0x5
+#include "Vector.h"
+Vector g_1049da94[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.40824834f, 0.70710677f, 0.57735026f), Vector(-0.40824822f, -0.7071068f, 0.57735026f) };
+// END FUNCTION
+
+// FUNCTION: 0x1009cfe0 size=0xa
+#include "ConVar.h"
+ConVar g_1049e1a8("cl_interpolate", "1.0", 0, "Interpolate entities on the client.");
+// END FUNCTION
+
+// FUNCTION: 0x1009d520 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049e170;
+// END FUNCTION
+
+// FUNCTION: 0x1009d560 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Edict { struct ignored; }
+template <> int ClientClassInit<DT_Edict::ignored>(DT_Edict::ignored *);
+int g_1049e16c = ClientClassInit((DT_Edict::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1009d620 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049e328;
+// END FUNCTION
+
+// FUNCTION: 0x1009d660 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_AnimTimeMustBeFirst { struct ignored; }
+template <> int ClientClassInit<DT_AnimTimeMustBeFirst::ignored>(DT_AnimTimeMustBeFirst::ignored *);
+int g_1049e324 = ClientClassInit((DT_AnimTimeMustBeFirst::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1009d700 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049e190;
+// END FUNCTION
+
+// FUNCTION: 0x1009d740 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PredictableId { struct ignored; }
+template <> int ClientClassInit<DT_PredictableId::ignored>(DT_PredictableId::ignored *);
+int g_1049e18c = ClientClassInit((DT_PredictableId::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1009d800 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049dabc;
+// END FUNCTION
+
+// FUNCTION: 0x1009d840 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseEntity { struct ignored; }
+template <> int ClientClassInit<DT_BaseEntity::ignored>(DT_BaseEntity::ignored *);
+int g_1049dab8 = ClientClassInit((DT_BaseEntity::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1009e280 size=0xa
+#include "ConVar.h"
+ConVar g_1049dbd8("cl_simpleshadows", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100a2ae0 size=0xa
+#include "ConCommand.h"
+void sub_100a2b30(void);
+ConCommand g_1049e2fc("cl_sizeof", sub_100a2b30, "Determines the size of the specified client class.", 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100a32e0 size=0x5
+int sub_100a3300(void);
+int g_1049e188 = ((int (*)(int))sub_100a3300)(0);
+// END FUNCTION
+
+// FUNCTION: 0x100a37b0 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049e3a4;
+// END FUNCTION
+
+// FUNCTION: 0x100a37f0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseNetworkable { struct ignored; }
+template <> int ClientClassInit<DT_BaseNetworkable::ignored>(DT_BaseNetworkable::ignored *);
+int g_1049e3a0 = ClientClassInit((DT_BaseNetworkable::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100a3b60 size=0xa
+#include "ConVar.h"
+ConVar g_104a0b88("zoom_sensitivity_ratio", "1.0", 0, "Additional mouse sensitivity scale factor applied when FOV is zoomed in.");
+// END FUNCTION
+
+// FUNCTION: 0x100a3bb0 size=0xa
+#include "ConVar.h"
+ConVar g_1049e880("hud_fastswitch", "1", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100a3c00 size=0xa
+#include "ConVar.h"
+ConVar g_104a0ca0("test_player_dsp", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100a3c50 size=0xa
+#include "ConVar.h"
+ConVar g_1049fe08("test_room_dsp", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100a3ca0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a0c18;
+// END FUNCTION
+
+// FUNCTION: 0x100a3ce0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PlayerState { struct ignored; }
+template <> int ClientClassInit<DT_PlayerState::ignored>(DT_PlayerState::ignored *);
+int g_104a0c14 = ClientClassInit((DT_PlayerState::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100a3da0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a0d34;
+// END FUNCTION
+
+// FUNCTION: 0x100a3de0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Local { struct ignored; }
+template <> int ClientClassInit<DT_Local::ignored>(DT_Local::ignored *);
+int g_104a0d30 = ClientClassInit((DT_Local::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100a4810 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049e4fc;
+// END FUNCTION
+
+// FUNCTION: 0x100a4850 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_LocalPlayerExclusive { struct ignored; }
+template <> int ClientClassInit<DT_LocalPlayerExclusive::ignored>(DT_LocalPlayerExclusive::ignored *);
+int g_1049e4f8 = ClientClassInit((DT_LocalPlayerExclusive::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100a4ab0 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049fd54;
+// END FUNCTION
+
+// FUNCTION: 0x100a4af0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BasePlayer { struct ignored; }
+template <> int ClientClassInit<DT_BasePlayer::ignored>(DT_BasePlayer::ignored *);
+int g_1049fd50 = ClientClassInit((DT_BasePlayer::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100a7260 size=0xa
+#include "ConVar.h"
+ConVar g_1049e838("vamplight_enabled", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100a72b0 size=0xa
+#include "ConVar.h"
+ConVar g_1049fd68("vamplight_radius", "200", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100a7300 size=0xa
+#include "ConVar.h"
+ConVar g_104a0ce8("vamplight_offset", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100a7350 size=0xa
+#include "ConVar.h"
+ConVar g_1049e7f0("vamplight_exponent", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100a7840 size=0xa
+#include "ConVar.h"
+ConVar g_104a0c58("camera_ignore", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100ac790 size=0xa
+#include "ConVar.h"
+ConVar g_104a0f30("money", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100ac7e0 size=0xa
+#include "ConVar.h"
+ConVar g_104a0dc8("bc_fade", "0.2", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100ac830 size=0xa
+#include "ConVar.h"
+ConVar g_104a0e58("bc_ground", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100ad760 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100ad790(void);
+InterfaceReg g_104a0fc0(sub_100ad790, "ClientStats004");
+// END FUNCTION
+
+// FUNCTION: 0x100addf0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a12e4;
+// END FUNCTION
+
+// FUNCTION: 0x100ade30 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_DynamicLight { struct ignored; }
+template <> int ClientClassInit<DT_DynamicLight::ignored>(DT_DynamicLight::ignored *);
+int g_104a12e0 = ClientClassInit((DT_DynamicLight::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100ae670 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a1798;
+// END FUNCTION
+
+// FUNCTION: 0x100ae6b0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_EnvParticle { struct ignored; }
+template <> int ClientClassInit<DT_EnvParticle::ignored>(DT_EnvParticle::ignored *);
+int g_104a1794 = ClientClassInit((DT_EnvParticle::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100b2b20 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a153c;
+// END FUNCTION
+
+// FUNCTION: 0x100b2b60 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ThaumaturgyParticle { struct ignored; }
+template <> int ClientClassInit<DT_ThaumaturgyParticle::ignored>(DT_ThaumaturgyParticle::ignored *);
+int g_104a1538 = ClientClassInit((DT_ThaumaturgyParticle::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100b3130 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a1bec;
+// END FUNCTION
+
+// FUNCTION: 0x100b3170 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_FuncParticle { struct ignored; }
+template <> int ClientClassInit<DT_FuncParticle::ignored>(DT_FuncParticle::ignored *);
+int g_104a1be8 = ClientClassInit((DT_FuncParticle::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100b3680 size=0xa
+#include "ConCommand.h"
+void sub_100b36b0(void);
+ConCommand g_104a1bc0("particle", sub_100b36b0, "Displays a particle system.  particle <name|number> [distance]", 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100b38b0 size=0xa
+#include "ConCommand.h"
+void sub_100b38e0(void);
+ConCommand g_104a1724("decal", sub_100b38e0, "Displays a decal.  decal <name|number> [distance]", 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100b4580 size=0xa
+#include "ConVar.h"
+ConVar g_104a1750("cl_show_client_particles", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100b5140 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a1f1c;
+// END FUNCTION
+
+// FUNCTION: 0x100b5180 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_FireSmoke { struct ignored; }
+template <> int ClientClassInit<DT_FireSmoke::ignored>(DT_FireSmoke::ignored *);
+int g_104a1f18 = ClientClassInit((DT_FireSmoke::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100b6490 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a1f34;
+// END FUNCTION
+
+// FUNCTION: 0x100b64d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_EntityFlame { struct ignored; }
+template <> int ClientClassInit<DT_EntityFlame::ignored>(DT_EntityFlame::ignored *);
+int g_104a1f30 = ClientClassInit((DT_EntityFlame::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100b6ac0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a22e8;
+// END FUNCTION
+
+// FUNCTION: 0x100b6b00 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_FuncAreaPortalWindow { struct ignored; }
+template <> int ClientClassInit<DT_FuncAreaPortalWindow::ignored>(DT_FuncAreaPortalWindow::ignored *);
+int g_104a22e4 = ClientClassInit((DT_FuncAreaPortalWindow::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100b6f30 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a2304;
+// END FUNCTION
+
+// FUNCTION: 0x100b6f70 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BreakableSurface { struct ignored; }
+template <> int ClientClassInit<DT_BreakableSurface::ignored>(DT_BreakableSurface::ignored *);
+int g_104a2300 = ClientClassInit((DT_BreakableSurface::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100b9ca0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100b9cd0(void);
+InterfaceReg g_104a2540(sub_100b9cd0, "BreakableSurface_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x100ba180 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a2554;
+// END FUNCTION
+
+// FUNCTION: 0x100ba1c0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Func_Dust { struct ignored; }
+template <> int ClientClassInit<DT_Func_Dust::ignored>(DT_Func_Dust::ignored *);
+int g_104a2550 = ClientClassInit((DT_Func_Dust::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100bb220 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a26c0;
+// END FUNCTION
+
+// FUNCTION: 0x100bb260 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEDust { struct ignored; }
+template <> int ClientClassInit<DT_TEDust::ignored>(DT_TEDust::ignored *);
+int g_104a26bc = ClientClassInit((DT_TEDust::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100bb430 size=0xa
+#include "ConVar.h"
+ConVar g_104a2a30("lod_TransitionDist", "400", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100bb480 size=0xa
+#include "ConVar.h"
+ConVar g_104a2b18("lod_Enable", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100bb590 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a2b7c;
+// END FUNCTION
+
+// FUNCTION: 0x100bb5d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Func_LOD { struct ignored; }
+template <> int ClientClassInit<DT_Func_LOD::ignored>(DT_Func_LOD::ignored *);
+int g_104a2b78 = ClientClassInit((DT_Func_LOD::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100bba80 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a2c50;
+// END FUNCTION
+
+// FUNCTION: 0x100bbac0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_FuncMonitor { struct ignored; }
+template <> int ClientClassInit<DT_FuncMonitor::ignored>(DT_FuncMonitor::ignored *);
+int g_104a2c4c = ClientClassInit((DT_FuncMonitor::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100bbee0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a2df4;
+// END FUNCTION
+
+// FUNCTION: 0x100bbf20 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_HudCounter { struct ignored; }
+template <> int ClientClassInit<DT_HudCounter::ignored>(DT_HudCounter::ignored *);
+int g_104a2df0 = ClientClassInit((DT_HudCounter::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100bc450 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a2e0c;
+// END FUNCTION
+
+// FUNCTION: 0x100bc490 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_HudEntity { struct ignored; }
+template <> int ClientClassInit<DT_HudEntity::ignored>(DT_HudEntity::ignored *);
+int g_104a2e08 = ClientClassInit((DT_HudEntity::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100bc790 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a304c;
+// END FUNCTION
+
+// FUNCTION: 0x100bc7d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_LightGlow { struct ignored; }
+template <> int ClientClassInit<DT_LightGlow::ignored>(DT_LightGlow::ignored *);
+int g_104a3048 = ClientClassInit((DT_LightGlow::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100bcaf0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a3208;
+// END FUNCTION
+
+// FUNCTION: 0x100bcb30 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PhysBox { struct ignored; }
+template <> int ClientClassInit<DT_PhysBox::ignored>(DT_PhysBox::ignored *);
+int g_104a3204 = ClientClassInit((DT_PhysBox::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100bcca0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a3398;
+// END FUNCTION
+
+// FUNCTION: 0x100bcce0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PlayerLocalPredictedData { struct ignored; }
+template <> int ClientClassInit<DT_PlayerLocalPredictedData::ignored>(DT_PlayerLocalPredictedData::ignored *);
+int g_104a3394 = ClientClassInit((DT_PlayerLocalPredictedData::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100bcef0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a33b4;
+// END FUNCTION
+
+// FUNCTION: 0x100bcf30 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PlayerResource { struct ignored; }
+template <> int ClientClassInit<DT_PlayerResource::ignored>(DT_PlayerResource::ignored *);
+int g_104a33b0 = ClientClassInit((DT_PlayerResource::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100bd7c0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a398c;
+// END FUNCTION
+
+// FUNCTION: 0x100bd800 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_DynamicProp { struct ignored; }
+template <> int ClientClassInit<DT_DynamicProp::ignored>(DT_DynamicProp::ignored *);
+int g_104a3988 = ClientClassInit((DT_DynamicProp::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100bd9f0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a3a24;
+// END FUNCTION
+
+// FUNCTION: 0x100bda30 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OrnamentProp { struct ignored; }
+template <> int ClientClassInit<DT_OrnamentProp::ignored>(DT_OrnamentProp::ignored *);
+int g_104a3a20 = ClientClassInit((DT_OrnamentProp::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100be370 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a3d40;
+// END FUNCTION
+
+// FUNCTION: 0x100be3b0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_RopeKeyframe { struct ignored; }
+template <> int ClientClassInit<DT_RopeKeyframe::ignored>(DT_RopeKeyframe::ignored *);
+int g_104a3d3c = ClientClassInit((DT_RopeKeyframe::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100be5e0 size=0xa
+#include "ConVar.h"
+ConVar g_104a3a58("rope_shake", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100be630 size=0xa
+#include "ConVar.h"
+ConVar g_104a3c98("rope_drawlines", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100be680 size=0xa
+#include "ConVar.h"
+ConVar g_104a3b48("rope_subdiv", "2", 0, "Rope subdivision amount", true, 0.0f, true, 8.0f);
+// END FUNCTION
+
+// FUNCTION: 0x100be6e0 size=0xa
+#include "ConVar.h"
+ConVar g_104a4118("rope_collide", "0", 0, "Collide rope with the world");
+// END FUNCTION
+
+// FUNCTION: 0x100be730 size=0xa
+#include "ConVar.h"
+ConVar g_104a3af0("mat_fullbright", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100be780 size=0xa
+#include "ConVar.h"
+ConVar g_104a3aa8("r_speeds", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100be7d0 size=0xa
+#include "ConVar.h"
+ConVar g_104a3ce0("r_drawropes", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100c0970 size=0xa
+#include "ConVar.h"
+ConVar g_104a4210("soundscape_fadetime", "3.0", 0, "Time to crossfade sound effects between soundscapes");
+// END FUNCTION
+
+// FUNCTION: 0x100c0e70 size=0xa
+#include "ConCommand.h"
+void sub_100c0ec0(void);
+ConCommand g_104a41e8("soundscape_flush", sub_100c0ec0, "Flushes the client side soundscapes", 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100c1fc0 size=0xa
+#include "ConVar.h"
+ConVar g_104a4330("r_traceglow", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100c2010 size=0xa
+#include "ConVar.h"
+ConVar g_104a43c0("r_occlusionglow", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100c2060 size=0xa
+#include "ConVar.h"
+ConVar g_104a42e8("r_drawsprites", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100c20b0 size=0xa
+#include "ConVar.h"
+ConVar g_104a42a0("r_traceglowfast", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100c2100 size=0xa
+#include "ConVar.h"
+ConVar g_104a4408("r_traceglowbackoff", "16", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100c2150 size=0xa
+#include "ConVar.h"
+ConVar g_104a4378("r_glowfadein", "0.2", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100c21a0 size=0xa
+#include "ConVar.h"
+ConVar g_104a4258("r_glowfadeout", "0.1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100c3720 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a4940;
+// END FUNCTION
+
+// FUNCTION: 0x100c3760 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseFlex { struct ignored; }
+template <> int ClientClassInit<DT_BaseFlex::ignored>(DT_BaseFlex::ignored *);
+int g_104a493c = ClientClassInit((DT_BaseFlex::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100c3a00 size=0xa
+#include "ConVar.h"
+ConVar g_104a4898("phoneme_delay", "0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100c3a50 size=0xa
+#include "ConVar.h"
+ConVar g_104a4d28("flex_rules", "1", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100c3aa0 size=0xa
+#include "ConVar.h"
+ConVar g_104a48f8("print_flex_weights", "0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100c3af0 size=0xa
+#include "ConVar.h"
+ConVar g_104a4450("print_flex_rules", "0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100c3b40 size=0xa
+#include "ConVar.h"
+ConVar g_104a4c98("phonemefilter_min", "0.0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100c3b90 size=0xa
+#include "ConVar.h"
+ConVar g_104a4ce0("phonemefilter_max", "0.0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100c4d40 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a4f04;
+// END FUNCTION
+
+// FUNCTION: 0x100c4d80 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Sun { struct ignored; }
+template <> int ClientClassInit<DT_Sun::ignored>(DT_Sun::ignored *);
+int g_104a4f00 = ClientClassInit((DT_Sun::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100c66a0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a4fa0;
+// END FUNCTION
+
+// FUNCTION: 0x100c66e0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_VampireProjectile_MingXiaoSpit { struct ignored; }
+template <> int ClientClassInit<DT_VampireProjectile_MingXiaoSpit::ignored>(DT_VampireProjectile_MingXiaoSpit::ignored *);
+int g_104a4f9c = ClientClassInit((DT_VampireProjectile_MingXiaoSpit::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100c6950 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a5258;
+// END FUNCTION
+
+// FUNCTION: 0x100c6990 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseTerminal { struct ignored; }
+template <> int ClientClassInit<DT_BaseTerminal::ignored>(DT_BaseTerminal::ignored *);
+int g_104a5254 = ClientClassInit((DT_BaseTerminal::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100c76d0 size=0xa
+#include "ConVar.h"
+ConVar g_104a5210("flood_terminal", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100c8780 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100c87b0(void);
+InterfaceReg g_104a4ffc(sub_100c87b0, "TextConsole_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x100c8ed0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a5424;
+// END FUNCTION
+
+// FUNCTION: 0x100c8f10 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_VGuiScreen { struct ignored; }
+template <> int ClientClassInit<DT_VGuiScreen::ignored>(DT_VGuiScreen::ignored *);
+int g_104a5420 = ClientClassInit((DT_VGuiScreen::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100ca2d0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a545c;
+// END FUNCTION
+
+// FUNCTION: 0x100ca310 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_World { struct ignored; }
+template <> int ClientClassInit<DT_World::ignored>(DT_World::ignored *);
+int g_104a5458 = ClientClassInit((DT_World::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x100cb2d0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100cb300(void);
+InterfaceReg g_104a5700(sub_100cb300, "Camo_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x100cb430 size=0xa
+#include "ConVar.h"
+ConVar g_104a5758("showparticlecounts", "0", 0, "Display number of particles drawn per frame");
+// END FUNCTION
+
+// FUNCTION: 0x100cb530 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100cb560(void);
+InterfaceReg g_104a5710(sub_100cb560, "VClient008");
+// END FUNCTION
+
+// FUNCTION: 0x100d0980 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100d09b0(void);
+InterfaceReg g_104a6d98(sub_100d09b0, "VClientEntityList002");
+// END FUNCTION
+
+// FUNCTION: 0x100d12b0 size=0xa
+#include "ConVar.h"
+ConVar g_104cef00("cl_drawleaf", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100d1300 size=0xa
+#include "ConVar.h"
+ConVar g_104cef48("r_PortalTestEnts", "1", 0, "Clip entities against portal frustums.");
+// END FUNCTION
+
+// FUNCTION: 0x100d13a0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100d13d0(void);
+InterfaceReg g_104ceef0(sub_100d13d0, "ClientLeafSystem001");
+// END FUNCTION
+
+// FUNCTION: 0x100d5210 size=0xa
+#include "ConVar.h"
+ConVar g_104cf060("r_shadows", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100d5690 size=0xa
+#include "ConCommand.h"
+void sub_100d56c0(void);
+ConCommand g_104cf0a4("r_shadowdir", sub_100d56c0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100d5760 size=0xa
+#include "ConCommand.h"
+void sub_100d5790(void);
+ConCommand g_104cef98("r_shadowcolor", sub_100d5790, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100d60a0 size=0xa
+#include "ConVar.h"
+ConVar g_104cf010("cl_softshadows", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100d7e70 size=0xa
+#include "ConVar.h"
+ConVar g_104cefc0("r_worldlights", "2", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100d82e0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100d8310(void);
+InterfaceReg g_104cf054(sub_100d8310, "Shadow_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x100d8500 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100d8530(void);
+InterfaceReg g_104cf0cc(sub_100d8530, "ShadowModel_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x100dfd60 size=0xa
+#include "ConVar.h"
+ConVar g_104cf3e0("mat_fullbright", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100e19e0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100e1a10(void);
+InterfaceReg g_104cf518(sub_100e1a10, "Dummy_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x100e1a70 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100e1aa0(void);
+InterfaceReg g_104cf538(sub_100e1aa0, "IEffects001");
+// END FUNCTION
+
+// FUNCTION: 0x100e29e0 size=0x5
+#include "Vector.h"
+Vector g_104cf544(0.0f, 0.0f, 0.0f);
+// END FUNCTION
+
+// FUNCTION: 0x100e6c40 size=0xa
+#include "ConVar.h"
+ConVar g_104cf7c8("footstep_pc_vol", "0.5", 8576, "PC Step sound volume");
+// END FUNCTION
+
+// FUNCTION: 0x100e6c90 size=0xa
+#include "ConVar.h"
+ConVar g_104cfc00("force_unstick", "0", 8192);
+// END FUNCTION
+
+// FUNCTION: 0x100ecaf0 size=0xa
+#include "ConVar.h"
+ConVar g_104cfbb8("fall_threshold", "200", 8192);
+// END FUNCTION
+
+// FUNCTION: 0x100eea00 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100eea30(void);
+InterfaceReg g_104cfd68(sub_100eea30, "GlobalWetness_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x100eec20 size=0xa
+#include "ConVar.h"
+ConVar g_104cfd78("cl_ShowSunVectors", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100f0470 size=0xa
+#include "ConVar.h"
+ConVar g_104cfdf0("cl_hudenable", "1", 0, "Enable/disable the HUD drawing for profiling.");
+// END FUNCTION
+
+// FUNCTION: 0x100f04c0 size=0xa
+#include "ConVar.h"
+ConVar g_104cfeb8("hidehud", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100f1350 size=0xa
+#include "ConVar.h"
+ConVar g_104cff00("hud_saytext_time", "12", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100f2810 size=0xa
+#include "ConVar.h"
+void sub_100f2850(ConVar *, const char *);
+ConVar g_104d0f70("_fov", "0", 0, "Automates fov command to server.", sub_100f2850);
+// END FUNCTION
+
+// FUNCTION: 0x100f35f0 size=0xa
+#include "ConVar.h"
+ConVar g_104d0fb8("crosshair", "1", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100fae20 size=0xa
+#include "ConVar.h"
+ConVar g_104d2700("cam_command", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fae70 size=0xa
+#include "ConVar.h"
+ConVar g_104d17f8("cam_snapto", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100faec0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1d08("cam_idealyaw", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100faf10 size=0xa
+#include "ConVar.h"
+ConVar g_104d2690("cam_idealpitch", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100faf60 size=0xa
+#include "ConVar.h"
+ConVar g_104d2058("cam_idealdist", "85", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fafb0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1b00("cam_targetangle", "15", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb000 size=0xa
+#include "ConVar.h"
+ConVar g_104d2590("cam_yaw", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb050 size=0xa
+#include "ConVar.h"
+ConVar g_104d2398("c_maxpitch", "90", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100fb0a0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1fc8("c_minpitch", "0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100fb0f0 size=0xa
+#include "ConVar.h"
+ConVar g_104d21c0("c_maxyaw", "135", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100fb140 size=0xa
+#include "ConVar.h"
+ConVar g_104d16d8("c_minyaw", "-135", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100fb190 size=0xa
+#include "ConVar.h"
+ConVar g_104d1dc0("c_maxdistance", "200", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100fb1e0 size=0xa
+#include "ConVar.h"
+ConVar g_104d27c8("c_mindistance", "30", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100fb230 size=0xa
+#include "ConVar.h"
+ConVar g_104d2130("c_orthowidth", "100", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100fb280 size=0xa
+#include "ConVar.h"
+ConVar g_104d24f0("c_orthoheight", "100", 128);
+// END FUNCTION
+
+// FUNCTION: 0x100fb2d0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1ee8("cam_fadestart", "32", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb320 size=0xa
+#include "ConVar.h"
+ConVar g_104d22c0("cam_fadeend", "18", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb370 size=0xa
+#include "ConVar.h"
+ConVar g_104d2350("camfeed_yaw", "50", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb3c0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2308("camfeed_yaw_end", "2.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb410 size=0xa
+#include "ConVar.h"
+ConVar g_104d1990("camfeed_pitch", "80.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb460 size=0xa
+#include "ConVar.h"
+ConVar g_104d1c28("camfeed_pitch_max", "60.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb4b0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1bb8("camfeed_pitch_min", "0.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb500 size=0xa
+#include "ConVar.h"
+ConVar g_104d2428("camfeed_pitch_pow1", "2.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb550 size=0xa
+#include "ConVar.h"
+ConVar g_104d23e0("camfeed_pitch_pow2", "-0.35", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb5a0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1b48("camfeed_roll", "0.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb5f0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1f30("camfeed_forward_base", "-50.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb640 size=0xa
+#include "ConVar.h"
+ConVar g_104d2010("camfeed_forward_pow", "0.5", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb690 size=0xa
+#include "ConVar.h"
+ConVar g_104d24a0("camdead_forward_base", "-50.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb6e0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1720("camdead_forward_pow", "1.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb730 size=0xa
+#include "ConVar.h"
+ConVar g_104d1c70("camseduct_speedmult", "1.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb780 size=0xa
+#include "ConVar.h"
+ConVar g_104d1ab8("camseduct_yaw", "-58", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb7d0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1868("camseduct_yaw_pow", "1.2", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb820 size=0xa
+#include "ConVar.h"
+ConVar g_104d1d50("camseduct_yaw_pow_end", "1.2", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb870 size=0xa
+#include "ConVar.h"
+ConVar g_104d2178("camseduct_roll", "0.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb8c0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2250("camseduct_pitch", "10.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb910 size=0xa
+#include "ConVar.h"
+ConVar g_104d1900("camseduct_pitch_max1", "8.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb960 size=0xa
+#include "ConVar.h"
+ConVar g_104d1948("camseduct_pitch_max2", "0.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fb9b0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2648("camseduct_pitch_max", "60.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fba00 size=0xa
+#include "ConVar.h"
+ConVar g_104d2600("camseduct_pitch_min", "0.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fba50 size=0xa
+#include "ConVar.h"
+ConVar g_104d1768("camseduct_forward_base", "-40.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fbaa0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1cb8("camseduct_forward_pow", "0.5", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fbaf0 size=0xa
+#include "ConVar.h"
+ConVar g_104d1a00("camseduct_forward_powm1", "-7.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fbb40 size=0xa
+#include "ConVar.h"
+ConVar g_104d1a70("camseduct_forward_powm2", "1.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fbb90 size=0xa
+#include "ConVar.h"
+ConVar g_104d1e08("cdamp_on", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fbbe0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2750("cdamp_hookesconstant", "4.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fbc30 size=0xa
+#include "ConVar.h"
+ConVar g_104d1ea0("cdamp_hookesconstantwall", "15.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fbc80 size=0xa
+#include "ConVar.h"
+ConVar g_104d20e8("cdamp_springlength", "0.1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fbcd0 size=0xa
+#include "ConVar.h"
+ConVar g_104d20a0("cdamp_maxdist", "50.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fbd20 size=0xa
+#include "ConVar.h"
+ConVar g_104d2208("cam_trace_radius", "9.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fbfb0 size=0xa
+#include "ConVar.h"
+ConVar g_104d17b0("cam_collide", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x100ffd20 size=0xa
+#include "ConCommand.h"
+void sub_100ff700(void);
+ConCommand g_104d2294("+campitchup", sub_100ff700, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100ffd70 size=0xa
+#include "ConCommand.h"
+void sub_100ff710(void);
+ConCommand g_104d27a0("-campitchup", sub_100ff710, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100ffdc0 size=0xa
+#include "ConCommand.h"
+void sub_100ff720(void);
+ConCommand g_104d1d94("+campitchdown", sub_100ff720, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100ffe10 size=0xa
+#include "ConCommand.h"
+void sub_100ff730(void);
+ConCommand g_104d1e74("-campitchdown", sub_100ff730, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100ffe60 size=0xa
+#include "ConCommand.h"
+void sub_100ff740(void);
+ConCommand g_104d2834("+camyawleft", sub_100ff740, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100ffeb0 size=0xa
+#include "ConCommand.h"
+void sub_100ff750(void);
+ConCommand g_104d1f9c("-camyawleft", sub_100ff750, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fff00 size=0xa
+#include "ConCommand.h"
+void sub_100ff760(void);
+ConCommand g_104d1c00("+camyawright", sub_100ff760, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fff50 size=0xa
+#include "ConCommand.h"
+void sub_100ff770(void);
+ConCommand g_104d1f74("-camyawright", sub_100ff770, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100fffa0 size=0xa
+#include "ConCommand.h"
+void sub_100ff780(void);
+ConCommand g_104d18ac("+camin", sub_100ff780, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x100ffff0 size=0xa
+#include "ConCommand.h"
+void sub_100ff790(void);
+ConCommand g_104d18d4("-camin", sub_100ff790, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100040 size=0xa
+#include "ConCommand.h"
+void sub_100ff7a0(void);
+ConCommand g_104d280c("+camout", sub_100ff7a0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100090 size=0xa
+#include "ConCommand.h"
+void sub_100ff7b0(void);
+ConCommand g_104d1a44("-camout", sub_100ff7b0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101000e0 size=0xa
+#include "ConCommand.h"
+void sub_100fbd70(void);
+ConCommand g_104d2540("thirdperson", sub_100fbd70, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100130 size=0xa
+#include "ConCommand.h"
+void sub_100fbd80(void);
+ConCommand g_104d2568("firstperson", sub_100fbd80, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100180 size=0xa
+#include "ConCommand.h"
+void sub_100fbd90(void);
+ConCommand g_104d183c("togglecamera", sub_100fbd90, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101001d0 size=0xa
+#include "ConCommand.h"
+void sub_100fbda0(void);
+ConCommand g_104d1e4c("camortho", sub_100fbda0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100220 size=0xa
+#include "ConCommand.h"
+void sub_100fbdb0(void);
+ConCommand g_104d26d4("+cammousemove", sub_100fbdb0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100270 size=0xa
+#include "ConCommand.h"
+void sub_100fbdc0(void);
+ConCommand g_104d246c("-cammousemove", sub_100fbdc0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101002c0 size=0xa
+#include "ConCommand.h"
+void sub_100fbdd0(void);
+ConCommand g_104d1b8c("+camdistance", sub_100fbdd0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100310 size=0xa
+#include "ConCommand.h"
+void sub_100fbde0(void);
+ConCommand g_104d25d4("-camdistance", sub_100fbde0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100360 size=0xa
+#include "ConCommand.h"
+void sub_100fbdf0(void);
+ConCommand g_104d19d4("snapto", sub_100fbdf0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100450 size=0xa
+#include "ConVar.h"
+ConVar g_104d2860("joyname", "joystick", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101004a0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2bc0("joyadvanced", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101004f0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2a10("joyadvaxisx", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100540 size=0xa
+#include "ConVar.h"
+ConVar g_104d29c8("joyadvaxisy", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100590 size=0xa
+#include "ConVar.h"
+ConVar g_104d2980("joyadvaxisz", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101005e0 size=0xa
+#include "ConVar.h"
+ConVar g_104d28a8("joyadvaxisr", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100630 size=0xa
+#include "ConVar.h"
+ConVar g_104d2938("joyadvaxisu", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100680 size=0xa
+#include "ConVar.h"
+ConVar g_104d28f0("joyadvaxisv", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101006d0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2b78("joyforwardthreshold", "0.15", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100720 size=0xa
+#include "ConVar.h"
+ConVar g_104d2c98("joysidethreshold", "0.15", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100770 size=0xa
+#include "ConVar.h"
+ConVar g_104d2d10("joypitchthreshold", "0.15", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101007c0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2c50("joyyawthreshold", "0.15", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100810 size=0xa
+#include "ConVar.h"
+ConVar g_104d2c08("joyforwardsensitivity", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100860 size=0xa
+#include "ConVar.h"
+ConVar g_104d2ae8("joysidesensitivity", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101008b0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2d58("joypitchsensitivity", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100900 size=0xa
+#include "ConVar.h"
+ConVar g_104d2b30("joyyawsensitivity", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10100950 size=0xa
+#include "ConVar.h"
+ConVar g_104d2aa0("joywwhack1", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101009a0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2a58("joywwhack2", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101016c0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3d98("cl_anglespeedkey", "0.67", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10101710 size=0xa
+#include "ConVar.h"
+ConVar g_104d3268("cl_yawspeed", "210", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10101760 size=0xa
+#include "ConVar.h"
+ConVar g_104d3d50("cl_pitchspeed", "225", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101017b0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3040("cl_pitchdown", "89", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10101800 size=0xa
+#include "ConVar.h"
+ConVar g_104d3518("cl_pitchup", "89", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10101850 size=0xa
+#include "ConVar.h"
+ConVar g_104d39b0("cl_sidespeed", "400", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101018a0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3cb8("cl_upspeed", "320", 128);
+// END FUNCTION
+
+// FUNCTION: 0x101018f0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3088("cl_forwardspeed", "400", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10101940 size=0xa
+#include "ConVar.h"
+ConVar g_104d3c18("cl_backspeed", "400", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10101990 size=0xa
+#include "ConVar.h"
+ConVar g_104d31f0("lookspring", "0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x101019e0 size=0xa
+#include "ConVar.h"
+ConVar g_104d33e0("lookstrafe", "0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10101a30 size=0xa
+#include "ConVar.h"
+ConVar g_104d2e58("joystick", "0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10101a80 size=0xa
+#include "ConVar.h"
+ConVar g_104d35c8("cl_forceviewcenter", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10101ad0 size=0xa
+#include "ConVar.h"
+ConVar g_104d34a0("cl_lagcomp_errorcheck", "0", 0, "Player index of other player to check for position errors.");
+// END FUNCTION
+
+// FUNCTION: 0x10103020 size=0xa
+#include "ConVar.h"
+ConVar g_104d2fb0("cl_meleecircle", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10103070 size=0xa
+#include "ConVar.h"
+ConVar g_104d2ff8("cl_meleefaceattack", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101047c0 size=0xa
+#include "ConCommand.h"
+void sub_10101f20(void);
+ConCommand g_104d3a6c("+commandermousemove", sub_10101f20, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104810 size=0xa
+#include "ConCommand.h"
+void sub_10101f30(void);
+ConCommand g_104d365c("-commandermousemove", sub_10101f30, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104860 size=0xa
+#include "ConCommand.h"
+void sub_10101fb0(void);
+ConCommand g_104d3634("+moveup", sub_10101fb0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101048b0 size=0xa
+#include "ConCommand.h"
+void sub_10101fc0(void);
+ConCommand g_104d32d4("-moveup", sub_10101fc0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104900 size=0xa
+#include "ConCommand.h"
+void sub_10101fd0(void);
+ConCommand g_104d3684("+movedown", sub_10101fd0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104950 size=0xa
+#include "ConCommand.h"
+void sub_10101fe0(void);
+ConCommand g_104d3178("-movedown", sub_10101fe0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101049a0 size=0xa
+#include "ConCommand.h"
+void sub_10101ff0(void);
+ConCommand g_104d3240("+left", sub_10101ff0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101049f0 size=0xa
+#include "ConCommand.h"
+void sub_10102000(void);
+ConCommand g_104d3788("-left", sub_10102000, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104a40 size=0xa
+#include "ConCommand.h"
+void sub_10102010(void);
+ConCommand g_104d3374("+right", sub_10102010, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104a90 size=0xa
+#include "ConCommand.h"
+void sub_10102020(void);
+ConCommand g_104d3828("-right", sub_10102020, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104ae0 size=0xa
+#include "ConCommand.h"
+void sub_10102030(void);
+ConCommand g_104d3144("+forward", sub_10102030, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104b30 size=0xa
+#include "ConCommand.h"
+void sub_10102040(void);
+ConCommand g_104d34e4("-forward", sub_10102040, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104b80 size=0xa
+#include "ConCommand.h"
+void sub_10102050(void);
+ConCommand g_104d36ec("+back", sub_10102050, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104bd0 size=0xa
+#include "ConCommand.h"
+void sub_10102060(void);
+ConCommand g_104d3ac8("-back", sub_10102060, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104c20 size=0xa
+#include "ConCommand.h"
+void sub_10102070(void);
+ConCommand g_104d2e14("+lookup", sub_10102070, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104c70 size=0xa
+#include "ConCommand.h"
+void sub_10102080(void);
+ConCommand g_104d3b24("-lookup", sub_10102080, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104cc0 size=0xa
+#include "ConCommand.h"
+void sub_10102090(void);
+ConCommand g_104d3424("+lookdown", sub_10102090, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104d10 size=0xa
+#include "ConCommand.h"
+void sub_101020a0(void);
+ConCommand g_104d3cfc("-lookdown", sub_101020a0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104d60 size=0xa
+#include "ConCommand.h"
+void sub_10102110(void);
+ConCommand g_104d339c("+strafe", sub_10102110, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104db0 size=0xa
+#include "ConCommand.h"
+void sub_10102120(void);
+ConCommand g_104d3bc4("-strafe", sub_10102120, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104e00 size=0xa
+#include "ConCommand.h"
+void sub_101020b0(void);
+ConCommand g_104d3a44("+moveleft", sub_101020b0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104e50 size=0xa
+#include "ConCommand.h"
+void sub_101020c0(void);
+ConCommand g_104d3c90("-moveleft", sub_101020c0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104ea0 size=0xa
+#include "ConCommand.h"
+void sub_101020d0(void);
+ConCommand g_104d3d24("+moveright", sub_101020d0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104ef0 size=0xa
+#include "ConCommand.h"
+void sub_101020e0(void);
+ConCommand g_104d334c("-moveright", sub_101020e0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104f40 size=0xa
+#include "ConCommand.h"
+void sub_101020f0(void);
+ConCommand g_104d2f7c("+speed", sub_101020f0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104f90 size=0xa
+#include "ConCommand.h"
+void sub_10102100(void);
+ConCommand g_104d311c("-speed", sub_10102100, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10104fe0 size=0xa
+#include "ConCommand.h"
+void sub_10102270(void);
+ConCommand g_104d37b0("+attack", sub_10102270, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105030 size=0xa
+#include "ConCommand.h"
+void sub_101022a0(void);
+ConCommand g_104d32ac("-attack", sub_101022a0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105080 size=0xa
+#include "ConCommand.h"
+void sub_10102130(void);
+ConCommand g_104d355c("+attack2", sub_10102130, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101050d0 size=0xa
+#include "ConCommand.h"
+void sub_10102140(void);
+ConCommand g_104d2eec("-attack2", sub_10102140, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105120 size=0xa
+#include "ConCommand.h"
+void sub_10102150(void);
+ConCommand g_104d2dac("+use", sub_10102150, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105170 size=0xa
+#include "ConCommand.h"
+void sub_10102160(void);
+ConCommand g_104d31a0("-use", sub_10102160, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101051c0 size=0xa
+#include "ConCommand.h"
+void sub_10102200(void);
+ConCommand g_104d3878("+jump", sub_10102200, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105210 size=0xa
+#include "ConCommand.h"
+void sub_101021f0(void);
+ConCommand g_104d3948("-jump", sub_101021f0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105260 size=0xa
+#include "ConCommand.h"
+void sub_101022d0(void);
+ConCommand g_104d38c4("impulse", sub_101022d0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101052b0 size=0xa
+#include "ConCommand.h"
+void sub_10101f60(void);
+ConCommand g_104d3afc("+klook", sub_10101f60, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105300 size=0xa
+#include "ConCommand.h"
+void sub_10101f70(void);
+ConCommand g_104d2dec("-klook", sub_10101f70, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105350 size=0xa
+#include "ConCommand.h"
+void sub_10101fa0(void);
+ConCommand g_104d32fc("+mlook", sub_10101fa0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101053a0 size=0xa
+#include "ConCommand.h"
+void sub_101024a0(void);
+ConCommand g_104d3760("-mlook", sub_101024a0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101053f0 size=0xa
+#include "ConCommand.h"
+void sub_10101f80(void);
+ConCommand g_104d3850("+jlook", sub_10101f80, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105440 size=0xa
+#include "ConCommand.h"
+void sub_10101f90(void);
+ConCommand g_104d39f4("-jlook", sub_10101f90, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105490 size=0xa
+#include "ConCommand.h"
+void sub_10102170(void);
+ConCommand g_104d30f4("+duck", sub_10102170, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101054e0 size=0xa
+#include "ConCommand.h"
+void sub_10102180(void);
+ConCommand g_104d31c8("-duck", sub_10102180, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105530 size=0xa
+#include "ConCommand.h"
+void sub_10102190(void);
+ConCommand g_104d3800("+reload", sub_10102190, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105580 size=0xa
+#include "ConCommand.h"
+void sub_101021a0(void);
+ConCommand g_104d3324("-reload", sub_101021a0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101055d0 size=0xa
+#include "ConCommand.h"
+void sub_101021b0(void);
+ConCommand g_104d3bec("+alt1", sub_101021b0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105620 size=0xa
+#include "ConCommand.h"
+void sub_101021c0(void);
+ConCommand g_104d3c68("-alt1", sub_101021c0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105670 size=0xa
+#include "ConCommand.h"
+void sub_10102460(void);
+ConCommand g_104d360c("+showvprof", sub_10102460, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101056c0 size=0xa
+#include "ConCommand.h"
+void sub_10102480(void);
+ConCommand g_104d3a94("-showvprof", sub_10102480, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105710 size=0xa
+#include "ConCommand.h"
+void sub_101021d0(void);
+ConCommand g_104d2f14("+graph", sub_101021d0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105760 size=0xa
+#include "ConCommand.h"
+void sub_101021e0(void);
+ConCommand g_104d2e9c("-graph", sub_101021e0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101057b0 size=0xa
+#include "ConCommand.h"
+void sub_10101f40(void);
+ConCommand g_104d37d8("+break", sub_10101f40, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105800 size=0xa
+#include "ConCommand.h"
+void sub_10101f50(void);
+ConCommand g_104d3b4c("-break", sub_10101f50, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105850 size=0xa
+#include "ConCommand.h"
+void sub_10101b20(void);
+ConCommand g_104d3b9c("force_centerview", sub_10101b20, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101058a0 size=0xa
+#include "ConCommand.h"
+void sub_10101b70(void);
+ConCommand g_104d3e10("joyadvancedupdate", sub_10101b70, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101058f0 size=0xa
+#include "ConCommand.h"
+void sub_101022f0(void);
+ConCommand g_104d3474("+chareditor", sub_101022f0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105940 size=0xa
+#include "ConCommand.h"
+void sub_10102320(void);
+ConCommand g_104d397c("-chareditor", sub_10102320, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105990 size=0xa
+#include "ConCommand.h"
+void sub_10102350(void);
+ConCommand g_104d3914("togglechareditor", sub_10102350, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101059e0 size=0xa
+#include "ConCommand.h"
+void sub_10102370(void);
+ConCommand g_104d30cc("+questlog", sub_10102370, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105a30 size=0xa
+#include "ConCommand.h"
+void sub_101023a0(void);
+ConCommand g_104d344c("-questlog", sub_101023a0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105a80 size=0xa
+#include "ConCommand.h"
+void sub_10102230(void);
+ConCommand g_104d3b74("+feed", sub_10102230, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105ad0 size=0xa
+#include "ConCommand.h"
+void sub_10102240(void);
+ConCommand g_104d2ec4("-feed", sub_10102240, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105b20 size=0xa
+#include "ConCommand.h"
+void sub_10054cb0(void);
+ConCommand g_104d36ac("dlgscrldn", sub_10054cb0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105b70 size=0xa
+#include "ConCommand.h"
+void sub_10054c50(void);
+ConCommand g_104d38ec("dlgscrlup", sub_10054c50, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105bc0 size=0xa
+#include "ConCommand.h"
+void sub_10054b60(void);
+ConCommand g_104d3a1c("dlghist", sub_10054b60, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105c10 size=0xa
+#include "ConCommand.h"
+void sub_101023d0(void);
+ConCommand g_104d359c("holster", sub_101023d0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105c60 size=0xa
+#include "ConCommand.h"
+void sub_101023f0(void);
+ConCommand g_104d3ddc("dropitem", sub_101023f0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105cb0 size=0xa
+#include "ConCommand.h"
+void sub_101024e0(void);
+ConCommand g_104d2f48("+wpn_secondaryatk", sub_101024e0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10105d00 size=0xa
+#include "ConCommand.h"
+void sub_101024f0(void);
+ConCommand g_104d3720("-wpn_secondaryatk", sub_101024f0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10106050 size=0xa
+#include "ConVar.h"
+ConVar g_104d3e58("m_pitch", "0.022", 128, "Mouse pitch factor.");
+// END FUNCTION
+
+// FUNCTION: 0x101060a0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3ea0("m_filter", "0", 128, "Mouse filtering (set this to 1 to average the mouse over 2 frames).");
+// END FUNCTION
+
+// FUNCTION: 0x101060f0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3fc0("sensitivity", "3", 128, "Mouse sensitivity.", true, 0.1f, true, 100.0f);
+// END FUNCTION
+
+// FUNCTION: 0x10106150 size=0xa
+#include "ConVar.h"
+ConVar g_104d3ee8("m_side", "0.8", 128, "Mouse side factor.");
+// END FUNCTION
+
+// FUNCTION: 0x101061a0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3f30("m_yaw", "0.022", 128, "Mouse yaw factor.");
+// END FUNCTION
+
+// FUNCTION: 0x101061f0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3f78("m_forward", "1", 128, "Mouse forward factor.");
+// END FUNCTION
+
+// FUNCTION: 0x10106780 size=0xa
+#include "ConVar.h"
+ConVar g_104d4008("cl_mouseenable", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101071e0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10107210(void);
+InterfaceReg g_104d4054(sub_10107210, "lampbeam_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x10107390 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_101073c0(void);
+InterfaceReg g_104d4060(sub_101073c0, "lamphalo_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x10107410 size=0x5
+#include "Vector.h"
+Vector g_104d4970(0.0f, 0.0f, 0.0f);
+// END FUNCTION
+
+// FUNCTION: 0x10107440 size=0x5
+#include "Vector.h"
+Vector g_104d5190(0.0f, 0.0f, 0.0f);
+// END FUNCTION
+
+// FUNCTION: 0x10107470 size=0x5
+#include "Vector.h"
+Vector g_104d4d80(0.0f, 0.0f, 0.0f);
+// END FUNCTION
+
+// FUNCTION: 0x101074a0 size=0x5
+#include "Vector.h"
+Vector g_104db5a0(3.4028235e+38f, 3.4028235e+38f, 3.4028235e+38f);
+// END FUNCTION
+
+// FUNCTION: 0x1010c7f0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010c820(void);
+InterfaceReg g_104df5bc(sub_1010c820, "Add_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010c9a0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010c9d0(void);
+InterfaceReg g_104df64c(sub_1010c9d0, "Subtract_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010cb50 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010cb80(void);
+InterfaceReg g_104df604(sub_1010cb80, "Multiply_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010cd30 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010cd60(void);
+InterfaceReg g_104df658(sub_1010cd60, "Divide_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010cf90 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010cfc0(void);
+InterfaceReg g_104df628(sub_1010cfc0, "Clamp_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010d150 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010d180(void);
+InterfaceReg g_104df5c8(sub_1010d180, "Sine_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010d260 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010d290(void);
+InterfaceReg g_104df634(sub_1010d290, "Equals_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010d3e0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010d410(void);
+InterfaceReg g_104df5ec(sub_1010d410, "Frac_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010d510 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010d540(void);
+InterfaceReg g_104df61c(sub_1010d540, "LinearRamp_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010d630 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010d660(void);
+InterfaceReg g_104df664(sub_1010d660, "UniformNoise_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010d810 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010d840(void);
+InterfaceReg g_104df640(sub_1010d840, "GaussianNoise_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010da00 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010da30(void);
+InterfaceReg g_104df5d4(sub_1010da30, "Exponential_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010daa0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010dad0(void);
+InterfaceReg g_104df5e0(sub_1010dad0, "Abs_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010db20 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010db50(void);
+InterfaceReg g_104df610(sub_1010db50, "Empty_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010dd40 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010dd70(void);
+InterfaceReg g_104df5f8(sub_1010dd70, "LessOrEqual_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1010ddc0 size=0xa
+#include "ConVar.h"
+ConVar g_104df6b8("measure_resort", "1.0", 0, "How often to re-sort profiling sections\n");
+// END FUNCTION
+
+// FUNCTION: 0x1010de10 size=0xa
+#include "ConVar.h"
+ConVar g_104df670("game_speeds", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1010f0d0 size=0xa
+#include "ConVar.h"
+ConVar g_104df740("cl_solid_players", "1", 0, "When predicting movements, determines whether the local player collides on the client with other player objects");
+// END FUNCTION
+
+// FUNCTION: 0x1010f930 size=0xa
+#include "ConVar.h"
+ConVar g_104dfce0("sv_gravity", "800", 8448, "World gravity.");
+// END FUNCTION
+
+// FUNCTION: 0x1010f980 size=0xa
+#include "ConVar.h"
+ConVar g_104dfb78("sv_stopspeed", "16", 8448, "Minimum stopping speed when on ground.");
+// END FUNCTION
+
+// FUNCTION: 0x1010f9d0 size=0xa
+#include "ConVar.h"
+ConVar g_104dfdb8("sv_noclipaccelerate", "15", 8576);
+// END FUNCTION
+
+// FUNCTION: 0x1010fa20 size=0xa
+#include "ConVar.h"
+ConVar g_104df8a8("sv_noclipspeed", "2000", 8576);
+// END FUNCTION
+
+// FUNCTION: 0x1010fa70 size=0xa
+#include "ConVar.h"
+ConVar g_104dfa58("sv_maxspeed", "2048", 8448);
+// END FUNCTION
+
+// FUNCTION: 0x1010fac0 size=0xa
+#include "ConVar.h"
+ConVar g_104dfc98("sv_accelerate", "10", 8448);
+// END FUNCTION
+
+// FUNCTION: 0x1010fb10 size=0xa
+#include "ConVar.h"
+ConVar g_104dfc08("sv_deccelerate", "5", 8448);
+// END FUNCTION
+
+// FUNCTION: 0x1010fb60 size=0xa
+#include "ConVar.h"
+ConVar g_104dfd70("sv_airaccelerate", "10", 8448);
+// END FUNCTION
+
+// FUNCTION: 0x1010fbb0 size=0xa
+#include "ConVar.h"
+ConVar g_104dfc50("sv_wateraccelerate", "10", 8448);
+// END FUNCTION
+
+// FUNCTION: 0x1010fc00 size=0xa
+#include "ConVar.h"
+ConVar g_104dfae8("sv_waterfriction", "1", 8448);
+// END FUNCTION
+
+// FUNCTION: 0x1010fc50 size=0xa
+#include "ConVar.h"
+ConVar g_104dfe00("sv_edgefriction", "2", 8448);
+// END FUNCTION
+
+// FUNCTION: 0x1010fca0 size=0xa
+#include "ConVar.h"
+ConVar g_104df788("sv_wateramp", "0", 8448);
+// END FUNCTION
+
+// FUNCTION: 0x1010fcf0 size=0xa
+#include "ConVar.h"
+ConVar g_104dfaa0("sv_footsteps", "1", 8448, "Play footstep sound for players");
+// END FUNCTION
+
+// FUNCTION: 0x1010fd40 size=0xa
+#include "ConVar.h"
+ConVar g_104df860("sv_rollspeed", "200", 8448);
+// END FUNCTION
+
+// FUNCTION: 0x1010fd90 size=0xa
+#include "ConVar.h"
+ConVar g_104dfd28("sv_rollangle", "2", 8448);
+// END FUNCTION
+
+// FUNCTION: 0x1010fde0 size=0xa
+#include "ConVar.h"
+ConVar g_104df9c8("sv_friction", "4", 8448, "World friction.");
+// END FUNCTION
+
+// FUNCTION: 0x1010fe30 size=0xa
+#include "ConVar.h"
+ConVar g_104df980("sv_bounce", "1", 8448, "Bounce multiplier for when physically simulated objects collide with other objects.");
+// END FUNCTION
+
+// FUNCTION: 0x1010fe80 size=0xa
+#include "ConVar.h"
+ConVar g_104df8f0("sv_maxvelocity", "3500", 8192, "Maximum speed any ballistically moving object is allowed to attain per axis.");
+// END FUNCTION
+
+// FUNCTION: 0x1010fed0 size=0xa
+#include "ConVar.h"
+ConVar g_104df818("sv_stepsize", "18", 8448);
+// END FUNCTION
+
+// FUNCTION: 0x1010ff20 size=0xa
+#include "ConVar.h"
+ConVar g_104df7d0("sv_skyname", "sky_urb01", 8320, "Current name of the skybox texture");
+// END FUNCTION
+
+// FUNCTION: 0x1010ff70 size=0xa
+#include "ConVar.h"
+ConVar g_104dfb30("sv_backspeed", "0.6", 8320, "How much to slow down backwards motion");
+// END FUNCTION
+
+// FUNCTION: 0x1010ffc0 size=0xa
+#include "ConVar.h"
+ConVar g_104dfa10("sv_jump_boost", "25.0", 8320, "How many extra inches to add to the player's origin on the first frame of the jump");
+// END FUNCTION
+
+// FUNCTION: 0x10110010 size=0xa
+#include "ConVar.h"
+ConVar g_104dfbc0("sv_jump_maxspeed", "350.0", 8320, "Maximum attainable speed while jumping.");
+// END FUNCTION
+
+// FUNCTION: 0x10110060 size=0xa
+#include "ConVar.h"
+ConVar g_104df938("sv_jump_boost_immediate", "0", 8320, "");
+// END FUNCTION
+
+// FUNCTION: 0x10115c60 size=0xa
+#include "ConVar.h"
+ConVar g_104e0920("r_DrawParticles", "1", 0, "Enable/disable particle rendering");
+// END FUNCTION
+
+// FUNCTION: 0x10115cb0 size=0xa
+#include "ConVar.h"
+ConVar g_104e0968("particle_simulateoverflow", "0", 0, "Used for stress-testing particle systems. Randomly denies creation of particles.");
+// END FUNCTION
+
+// FUNCTION: 0x10118b40 size=0xa
+#include "ConVar.h"
+ConVar g_104e0a90("cl_phys_timescale", "1", 0, "Sets the scale of time for client-side physics (ragdolls)");
+// END FUNCTION
+
+// FUNCTION: 0x10118de0 size=0xa
+#include "ConVar.h"
+ConVar g_104e0a30("cl_ragdoll_collide", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1011ad70 size=0xa
+#include "ConVar.h"
+ConVar g_104e0ad8("think_limit", "10", 8192, "Maximum think time in milliseconds, warning is printed if this is exceeded.");
+// END FUNCTION
+
+// FUNCTION: 0x1011fed0 size=0x5
+#include "CSolidSetDefaults.h"
+CSolidSetDefaults g_104e0c30;
+// END FUNCTION
+
+// FUNCTION: 0x1011fef0 size=0xa
+#include "ConVar.h"
+ConVar g_104e0c40("phys_rolling_drag", "1", 8192);
+// END FUNCTION
+
+// FUNCTION: 0x10120a90 size=0xa
+#include "ConVar.h"
+ConVar g_104e1708("cl_predict", "1", 0, "Perform client side prediction.");
+// END FUNCTION
+
+// FUNCTION: 0x10120ae0 size=0xa
+#include "ConVar.h"
+ConVar g_104e14a8("cl_predictweapons", "1", 0, "Perform client side prediction of weapon effects.");
+// END FUNCTION
+
+// FUNCTION: 0x10120b30 size=0xa
+#include "ConVar.h"
+ConVar g_104e1798("cl_lagcompensation", "0", 0, "Perform server side lag compensation of weapon firing events.");
+// END FUNCTION
+
+// FUNCTION: 0x10120b80 size=0xa
+#include "ConVar.h"
+ConVar g_104e1668("cl_showerror", "0", 0, "Show prediction errors, 2 for above plus detailed field deltas.");
+// END FUNCTION
+
+// FUNCTION: 0x10120bd0 size=0xa
+#include "ConVar.h"
+ConVar g_104e1538("cl_smooth", "1", 0, "Smooth view/eye origin after prediction errors");
+// END FUNCTION
+
+// FUNCTION: 0x10120c20 size=0xa
+#include "ConVar.h"
+ConVar g_104e1620("cl_smoothtime", "0.1", 0, "Smooth client's view after prediction error over this many seconds");
+// END FUNCTION
+
+// FUNCTION: 0x10120c70 size=0xa
+#include "ConVar.h"
+ConVar g_104e1580("cl_idealpitchscale", "0.8", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10120cc0 size=0xa
+#include "ConVar.h"
+ConVar g_104e15c8("cl_predictionlist", "0", 0, "Show which entities are predicting\n");
+// END FUNCTION
+
+// FUNCTION: 0x10120d10 size=0xa
+#include "ConVar.h"
+ConVar g_104e16b0("cl_pdump", "-1", 0, "Dump info about this entity to screen.");
+// END FUNCTION
+
+// FUNCTION: 0x10120d60 size=0xa
+#include "ConVar.h"
+ConVar g_104e1750("cl_pclass", "", 0, "Dump entity by prediction classname.");
+// END FUNCTION
+
+// FUNCTION: 0x10120db0 size=0xa
+#include "ConVar.h"
+ConVar g_104e14f0("cl_pred_optimize", "2", 0, "Optimize for not copying data if didn't receive a network update (1), and also for not repredicting if there were no errors (2).");
+// END FUNCTION
+
+// FUNCTION: 0x101210b0 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_104e160c;
+// END FUNCTION
+
+// FUNCTION: 0x10124bd0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10124c00(void);
+InterfaceReg g_104e17f0(sub_10124c00, "PlayerProximity_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x10124d40 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10124d70(void);
+InterfaceReg g_104e1820(sub_10124d70, "PlayerView_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x10124e50 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10124e80(void);
+InterfaceReg g_104e1808(sub_10124e80, "PlayerSpeed_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x10124f70 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10124fa0(void);
+InterfaceReg g_104e1814(sub_10124fa0, "PlayerPosition_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x10125050 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10125080(void);
+InterfaceReg g_104e17e4(sub_10125080, "EntitySpeed_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x10125150 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10125180(void);
+InterfaceReg g_104e17fc(sub_10125180, "EntityRandom_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x10125f10 size=0xa
+#include "RecvTable.h"
+RecvTable g_104e1b88;
+// END FUNCTION
+
+// FUNCTION: 0x10125f50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Ragdoll { struct ignored; }
+template <> int ClientClassInit<DT_Ragdoll::ignored>(DT_Ragdoll::ignored *);
+int g_104e1b84 = ClientClassInit((DT_Ragdoll::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10126610 size=0xa
+#include "RecvTable.h"
+RecvTable g_104e196c;
+// END FUNCTION
+
+// FUNCTION: 0x10126650 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Ragdoll_Attached { struct ignored; }
+template <> int ClientClassInit<DT_Ragdoll_Attached::ignored>(DT_Ragdoll_Attached::ignored *);
+int g_104e1968 = ClientClassInit((DT_Ragdoll_Attached::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10126ab0 size=0xa
+#include "ConVar.h"
+ConVar g_104e1ba0("debug_total_mass_divisor", "4", 8192);
+// END FUNCTION
+
+// FUNCTION: 0x10127540 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_104e1be4;
+// END FUNCTION
+
+// FUNCTION: 0x10128d10 size=0x5
+#include "Vector.h"
+Vector g_105e5440[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.40824834f, 0.70710677f, 0.57735026f), Vector(-0.40824822f, -0.7071068f, 0.57735026f) };
+// END FUNCTION
+
+// FUNCTION: 0x1012b3b0 size=0x5
+int sub_1012b3d0(void);
+int g_105e54c0 = ((int (*)(int))sub_1012b3d0)(0);
+// END FUNCTION
+
+// FUNCTION: 0x1012b5d0 size=0x5
+#include "CEntitySaveRestoreBlockHandler.h"
+CEntitySaveRestoreBlockHandler g_105e54c4;
+// END FUNCTION
+
+// FUNCTION: 0x1012b920 size=0x5
+int sub_1012b940(void);
+int g_105e54bc = ((int (*)(int))sub_1012b940)(0);
+// END FUNCTION
+
+// FUNCTION: 0x1012c930 size=0xa
+#include "ConVar.h"
+ConVar g_105e54d0("sv_soundemitter_trace", "0", 8192, "Show all EmitSound calls including their symbolic name and the actual .wav file they resolved to\n");
+// END FUNCTION
+
+// FUNCTION: 0x1012cbf0 size=0xa
+#include "ConCommand.h"
+void sub_1012cc40(void);
+ConCommand g_105e5514("cl_soundemitter_flush", sub_1012cc40, "Flushes the sounds.txt system (client only)", 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10133520 size=0x5
+int sub_10133540(void);
+int g_105e5aa8 = ((int (*)(int))sub_10133540)(0);
+// END FUNCTION
+
+// FUNCTION: 0x10133760 size=0x5
+int sub_10133780(void);
+int g_105e5adc = ((int (*)(int))sub_10133780)(0);
+// END FUNCTION
+
+// FUNCTION: 0x10133ff0 size=0x5
+int sub_10134010(void);
+int g_105e5ad8 = ((int (*)(int))sub_10134010)(0);
+// END FUNCTION
+
+// FUNCTION: 0x10135e70 size=0xa
+#include "RecvTable.h"
+RecvTable g_105e5d5c;
+// END FUNCTION
+
+// FUNCTION: 0x10135eb0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Sprite { struct ignored; }
+template <> int ClientClassInit<DT_Sprite::ignored>(DT_Sprite::ignored *);
+int g_105e5d58 = ClientClassInit((DT_Sprite::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1013a3a0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1013a3d0(void);
+InterfaceReg g_105e6ea0(sub_1013a3d0, "TextureScroll_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x1013ba80 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1013bab0(void);
+InterfaceReg g_105e74c0(sub_1013bab0, "Time_IMaterialProxy003");
+// END FUNCTION
+
+// FUNCTION: 0x10145480 size=0x5
+int sub_101454a0(void);
+int g_105e7928 = ((int (*)(int))sub_101454a0)(0);
+// END FUNCTION
+
+// FUNCTION: 0x101463a0 size=0xa
+#include "RecvTable.h"
+RecvTable g_105e80b8;
+// END FUNCTION
+
+// FUNCTION: 0x101463e0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_DisciplineProjectile { struct ignored; }
+template <> int ClientClassInit<DT_DisciplineProjectile::ignored>(DT_DisciplineProjectile::ignored *);
+int g_105e80b4 = ClientClassInit((DT_DisciplineProjectile::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x10151dc0 size=0xa
+#include "RecvTable.h"
+RecvTable g_105e8704;
+// END FUNCTION
+
+// FUNCTION: 0x10151e00 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_VampireProjectile { struct ignored; }
+template <> int ClientClassInit<DT_VampireProjectile::ignored>(DT_VampireProjectile::ignored *);
+int g_105e8700 = ClientClassInit((DT_VampireProjectile::ignored *)0);
+// END FUNCTION
+
+// FUNCTION: 0x1015bc70 size=0xa
+#include "ConVar.h"
+ConVar g_105f9280("vdiscipline_use_new", "1", 8448);
+// END FUNCTION
+
+// FUNCTION: 0x1015bd60 size=0xa
+#include "ConVar.h"
+ConVar g_105f9348("vdiscipline_allow_renewables", "0", 8576);
+// END FUNCTION
+
+// FUNCTION: 0x101622c0 size=0xa
+#include "ConVar.h"
+ConVar g_105f9990("default_fov", "75", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10163ba0 size=0xa
+#include "ConVar.h"
+ConVar g_105faa30("draw_hud", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10164ab0 size=0xa
+#include "ConVar.h"
+ConVar g_105faac8("scr_printspeed", "8", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10164b00 size=0xa
+#include "ConVar.h"
+ConVar g_105faa80("scr_centertime", "2", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10165130 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_10165160(void);
+InterfaceReg g_105fab0c(sub_10165160, "VCENTERPRINT001");
+// END FUNCTION
+
+// FUNCTION: 0x10165e40 size=0xa
+#include "ConVar.h"
+ConVar g_105fab38("cl_showfps", "0", 0, "Draw fps meter at top of screen");
+// END FUNCTION
+
+// FUNCTION: 0x10165e90 size=0xa
+#include "ConVar.h"
+ConVar g_105fab88("cl_showpos", "0", 0, "Draw current position at top of screen");
+// END FUNCTION
+
+// FUNCTION: 0x10167ba0 size=0xa
+#include "ConCommand.h"
+void sub_10167b10(void);
+ConCommand g_105facd4("vloadtips", sub_10167b10, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10167bf0 size=0xa
+#include "ConVar.h"
+ConVar g_105fad10("timemode", "4", 0, "Show timings in:\n    0 = cycles\n    1 = microseconds\n    2 = milliseconds\n    3 = seconds\n    4 = %% frametime", true, 0.0f, true, 4.0f);
+// END FUNCTION
+
+// FUNCTION: 0x10167c50 size=0xa
+#include "ConVar.h"
+ConVar g_105fad58("host_speeds", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101688d0 size=0xa
+#include "ConVar.h"
+ConVar g_105fae40("net_graph", "0", 0, "Draw the network usage graph");
+// END FUNCTION
+
+// FUNCTION: 0x10168920 size=0xa
+#include "ConVar.h"
+ConVar g_105fadf8("net_graphwidth", "192", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10168970 size=0xa
+#include "ConVar.h"
+ConVar g_105fadb0("net_scale", "5", 128);
+// END FUNCTION
+
+// FUNCTION: 0x101689c0 size=0xa
+#include "ConVar.h"
+ConVar g_105fae88("net_graphpos", "1", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10168a10 size=0xa
+#include "ConVar.h"
+ConVar g_105faf20("net_graphsolid", "1", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10168a60 size=0xa
+#include "ConVar.h"
+ConVar g_105faed0("net_graphheight", "64", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101701b0 size=0xa
+#include "ConCommand.h"
+void sub_10170180(void);
+ConCommand g_105faf70("showbarter", sub_10170180, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10170230 size=0xa
+#include "ConCommand.h"
+void sub_10170200(void);
+ConCommand g_105fafd8("showloot", sub_10170200, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10170310 size=0xa
+#include "ConCommand.h"
+void sub_10170280(void);
+ConCommand g_105fafa0("showinventory", sub_10170280, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10170390 size=0xa
+#include "ConCommand.h"
+void sub_10170360(void);
+ConCommand g_105fb004("hidebarter", sub_10170360, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10172c00 size=0xa
+#include "ConCommand.h"
+void sub_10172bc0(void);
+ConCommand g_105fb124("clanchangedone", sub_10172bc0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10173660 size=0xa
+#include "ConCommand.h"
+void sub_10173640(void);
+ConCommand g_105fb094("createplayer", sub_10173640, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101736b0 size=0xa
+#include "ConCommand.h"
+void sub_10173600(void);
+ConCommand g_105fb0c8("chooseteam", sub_10173600, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10173700 size=0xa
+#include "ConCommand.h"
+void sub_10173620(void);
+ConCommand g_105fb040("questlog", sub_10173620, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10173770 size=0xa
+#include "ConCommand.h"
+void sub_10173750(void);
+ConCommand g_105fb06c("hideteam", sub_10173750, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10174710 size=0xa
+#include "ConCommand.h"
+void sub_101746f0(void);
+ConCommand g_105fb0f8("chareditor", sub_101746f0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10174de0 size=0xa
+#include "ConCommand.h"
+void sub_10174dc0(void);
+ConCommand g_105fb180("showcharwizard", sub_10174dc0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10174e50 size=0xa
+#include "ConCommand.h"
+void sub_10174e30(void);
+ConCommand g_105fb1a8("hidecharwizard", sub_10174e30, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10175eb0 size=0xa
+#include "ConCommand.h"
+void sub_10175e80(void);
+ConCommand g_105fb150("vdebug_charwizard", sub_10175e80, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10176060 size=0xa
+#include "ConCommand.h"
+void sub_10175ff0(void);
+ConCommand g_105fb1d0("vchargen_key", sub_10175ff0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101760e0 size=0xa
+#include "ConVar.h"
+ConVar g_105fb328("cl_v_image_quality", "0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10176130 size=0xa
+#include "ConVar.h"
+ConVar g_105fb250("cl_v_lighting", "0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10176180 size=0xa
+#include "ConVar.h"
+ConVar g_105fb3b8("cl_v_bump_mapping", "1", 128);
+// END FUNCTION
+
+// FUNCTION: 0x101761d0 size=0xa
+#include "ConVar.h"
+ConVar g_105fb400("cl_v_geometric_detail", "5", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10176220 size=0xa
+#include "ConVar.h"
+ConVar g_105fb208("cl_v_shadows", "3", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10176270 size=0xa
+#include "ConVar.h"
+ConVar g_105fb298("cl_v_combat_effects", "1", 128);
+// END FUNCTION
+
+// FUNCTION: 0x101762c0 size=0xa
+#include "ConVar.h"
+ConVar g_105fb370("cl_v_shadow_count", "2", 128);
+// END FUNCTION
+
+// FUNCTION: 0x10176310 size=0xa
+#include "ConVar.h"
+ConVar g_105fb2e0("vchar_edit_histories", "0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x1017f2f0 size=0xa
+#include "ConVar.h"
+ConVar g_105fb6a0("vchar_skip_intro", "0", 128);
+// END FUNCTION
+
+// FUNCTION: 0x101843d0 size=0xa
+#include "ConCommand.h"
+void sub_10184360(void);
+ConCommand g_105fb730("showhotkeys", sub_10184360, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10184450 size=0xa
+#include "ConCommand.h"
+void sub_10184420(void);
+ConCommand g_105fb708("hidehotkeys", sub_10184420, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10186bf0 size=0xa
+#include "ConCommand.h"
+void sub_10186bd0(void);
+ConCommand g_105fb778("showiteminfo", sub_10186bd0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10186c60 size=0xa
+#include "ConCommand.h"
+void sub_10186c40(void);
+ConCommand g_105fb7ac("hideiteminfo", sub_10186c40, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10187e60 size=0xa
+#include "ConCommand.h"
+void sub_10187da0(void);
+ConCommand g_105fb81c("showmapscreen", sub_10187da0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10187eb0 size=0xa
+#include "ConCommand.h"
+void sub_10187e00(void);
+ConCommand g_105fb7f4("showsewermapscreen", sub_10187e00, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10187f20 size=0xa
+#include "ConCommand.h"
+void sub_10187f00(void);
+ConCommand g_105fb84c("hidemapscreen", sub_10187f00, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10189a80 size=0x5
+#include "Vector.h"
+Vector g_105fb90c[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.40824834f, 0.70710677f, 0.57735026f), Vector(-0.40824822f, -0.7071068f, 0.57735026f) };
+// END FUNCTION
+
+// FUNCTION: 0x10189e90 size=0xa
+#include "ConVar.h"
+ConVar g_105fbb28("vgui_eyetarget_x", "-1000", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10189ee0 size=0xa
+#include "ConVar.h"
+ConVar g_105fba98("vgui_eyetarget_y", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10189f30 size=0xa
+#include "ConVar.h"
+ConVar g_105fbae0("vgui_eyetarget_z", "64", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018b380 size=0xa
+#include "ConVar.h"
+ConVar g_105fb880("modelpanel_fov", "35", 0, "Use this to set the field of view for the 'orthogonal' view for a model in vgui.", true, 20.0f, true, 120.0f);
+// END FUNCTION
+
+// FUNCTION: 0x1018b3e0 size=0xa
+#include "ConVar.h"
+ConVar g_105fb8c8("modelpanel_scalar", "1.2", 0, "Use this to adjust the width of the screen for the model.  Increase if there is clipping.  Shrink if model looks too small.");
+// END FUNCTION
+
+// FUNCTION: 0x1018b430 size=0xa
+#include "ConVar.h"
+ConVar g_105fb9c0("modelpanel_light_x", "60", 0, "Blah");
+// END FUNCTION
+
+// FUNCTION: 0x1018b480 size=0xa
+#include "ConVar.h"
+ConVar g_105fba08("modelpanel_light_y", "30", 0, "Blah");
+// END FUNCTION
+
+// FUNCTION: 0x1018b4d0 size=0xa
+#include "ConVar.h"
+ConVar g_105fba50("modelpanel_light_z", "60", 0, "Blah");
+// END FUNCTION
+
+// FUNCTION: 0x1018b520 size=0xa
+#include "ConVar.h"
+ConVar g_105fb930("modelpanel_light_ang1", "1", 0, "Blah");
+// END FUNCTION
+
+// FUNCTION: 0x1018b570 size=0xa
+#include "ConVar.h"
+ConVar g_105fb978("modelpanel_light_ang2", "1", 0, "Blah");
+// END FUNCTION
+
+// FUNCTION: 0x1018c720 size=0xa
+#include "ConVar.h"
+ConVar g_105fbb70("v_hidevgui", "0", 256);
+// END FUNCTION
+
+// FUNCTION: 0x1018cda0 size=0xa
+#include "ConCommand.h"
+void sub_1018cdd0(void);
+ConCommand g_105fbbb4("vconsole_notify", sub_1018cdd0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018d1a0 size=0xa
+#include "ConCommand.h"
+void sub_1018d1f0(void);
+ConCommand g_105fbc54("vprof", sub_1018d1f0, "Toggle VProf profiler", 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018d360 size=0xa
+#include "ConCommand.h"
+void sub_1018d3b0(void);
+ConCommand g_105fbd00("vprof_on", sub_1018d3b0, "Turn on VProf profiler", 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018d460 size=0xa
+#include "ConCommand.h"
+void sub_1018d4b0(void);
+ConCommand g_105fbcd4("vprof_off", sub_1018d4b0, "Turn off VProf profiler", 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018d5a0 size=0xa
+#include "ConCommand.h"
+void sub_1018d5f0(void);
+ConCommand g_105fbc2c("vprof_reset", sub_1018d5f0, "Reset the stats in VProf profiler", 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018d620 size=0xa
+#include "ConCommand.h"
+void sub_1018d670(void);
+ConCommand g_105fbca4("vprof_reset_peaks", sub_1018d670, "Reset just the peak time in VProf profiler", 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018d6a0 size=0xa
+#include "ConCommand.h"
+void sub_1018d6f0(void);
+ConCommand g_105fbc7c("vprof_generate_report", sub_1018d6f0, "Reset just the peak time in VProf profiler", 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018e370 size=0xa
+#include "ConVar.h"
+ConVar g_105fc880("r_viewcubemap", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018e3c0 size=0xa
+#include "ConVar.h"
+ConVar g_105fc8c8("r_viewcubemapsize", "96", 128);
+// END FUNCTION
+
+// FUNCTION: 0x1018e410 size=0xa
+#include "ConVar.h"
+ConVar g_105fbd30("cl_leveloverview", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018e4a0 size=0x5
+#include "Vector.h"
+Vector g_105fc4d4(0.0f, 0.0f, 0.0f);
+// END FUNCTION
+
+// FUNCTION: 0x1018e4d0 size=0x5
+#include "Vector.h"
+Vector g_105fc7a4(0.0f, 0.0f, 0.0f);
+// END FUNCTION
+
+// FUNCTION: 0x1018e500 size=0x5
+#include "Vector.h"
+Vector g_105fc464(0.0f, 0.0f, 0.0f);
+// END FUNCTION
+
+// FUNCTION: 0x1018e530 size=0x5
+#include "Vector.h"
+Vector g_105fbe04(0.0f, 0.0f, 0.0f);
+// END FUNCTION
+
+// FUNCTION: 0x1018e560 size=0x5
+#include "Vector.h"
+Vector g_105fc470(0.0f, 0.0f, 0.0f);
+// END FUNCTION
+
+// FUNCTION: 0x1018e590 size=0x5
+#include "Vector.h"
+Vector g_105fc5a0(0.0f, 0.0f, 0.0f);
+// END FUNCTION
+
+// FUNCTION: 0x1018ebc0 size=0xa
+#include "ConVar.h"
+ConVar g_105fc9a0("scr_ofsx", "0", 0, "Offset the render origin along the x axis");
+// END FUNCTION
+
+// FUNCTION: 0x1018ec10 size=0xa
+#include "ConVar.h"
+ConVar g_105fca30("scr_ofsy", "0", 0, "Offset the render origin along the y axis");
+// END FUNCTION
+
+// FUNCTION: 0x1018ec60 size=0xa
+#include "ConVar.h"
+ConVar g_105fc9e8("scr_ofsz", "0", 0, "Offset the render origin along the z axis");
+// END FUNCTION
+
+// FUNCTION: 0x1018ecb0 size=0xa
+#include "ConVar.h"
+ConVar g_105fc5b0("cl_rollspeed", "200", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018ed00 size=0xa
+#include "ConVar.h"
+ConVar g_105fc550("cl_rollangle", "2", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018ed50 size=0xa
+#include "ConVar.h"
+ConVar g_105fc508("cl_bobcycle", "0.8", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018eda0 size=0xa
+#include "ConVar.h"
+ConVar g_105fc958("cl_bob", "0.01", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018edf0 size=0xa
+#include "ConVar.h"
+ConVar g_105fca80("cl_bobup", "0.5", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018ee40 size=0xa
+#include "ConVar.h"
+ConVar g_105fc688("cl_waterdist", "4", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018ee90 size=0xa
+#include "ConVar.h"
+ConVar g_105fbe58("v_kicktime", "0.5", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018eee0 size=0xa
+#include "ConVar.h"
+ConVar g_105fc7b0("v_kickroll", "0.6", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018ef30 size=0xa
+#include "ConVar.h"
+ConVar g_105fc6d0("v_kickpitch", "0.6", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018ef80 size=0xa
+#include "ConVar.h"
+ConVar g_105fc5f8("v_iyaw_cycle", "2", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018efd0 size=0xa
+#include "ConVar.h"
+ConVar g_105fc7f8("v_iroll_cycle", "0.5", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018f020 size=0xa
+#include "ConVar.h"
+ConVar g_105fbdc0("v_ipitch_cycle", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018f070 size=0xa
+#include "ConVar.h"
+ConVar g_105fbd78("v_iyaw_level", "0.3", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018f0c0 size=0xa
+#include "ConVar.h"
+ConVar g_105fbea0("v_iroll_level", "0.1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018f110 size=0xa
+#include "ConVar.h"
+ConVar g_105fc640("v_ipitch_level", "0.3", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018f160 size=0xa
+#include "ConVar.h"
+ConVar g_105fc3e8("v_centermove", "0.15", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018f1b0 size=0xa
+#include "ConVar.h"
+ConVar g_105fc760("v_centerspeed", "500", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018f200 size=0xa
+#include "ConVar.h"
+ConVar g_105fbe10("v_split", "0", 0, "Split the view into to panes ( 1 == vert, -1 == vert with inverted lower, other == nxn split )");
+// END FUNCTION
+
+// FUNCTION: 0x1018f250 size=0xa
+#include "ConVar.h"
+ConVar g_105fc910("v_rearview", "0", 0, "Rearview mirror mode");
+// END FUNCTION
+
+// FUNCTION: 0x1018f2a0 size=0xa
+#include "ConVar.h"
+ConVar g_105fc718("viewmodel_fov", "54", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018f2f0 size=0xa
+#include "ConVar.h"
+ConVar g_105fbef0("gl_clear", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1018f5d0 size=0xa
+#include "ConCommand.h"
+void sub_1018f600(void);
+ConCommand g_105fc4e0("centerview", sub_1018f600, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10191150 size=0xa
+#include "ConCommand.h"
+void sub_10190f30(void);
+ConCommand g_105fc43c("print_client_viewmodel_info", sub_10190f30, "", 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x10196200 size=0xa
+#include "ConVar.h"
+ConVar g_10618708("v_dark", "0", 0, "Start level with black to normal screen fade");
+// END FUNCTION
+
+// FUNCTION: 0x10197a90 size=0x5
+#include "Vector.h"
+Vector g_10618f7c(0.0f, 0.0f, 0.0f);
+// END FUNCTION
+
+// FUNCTION: 0x10197ac0 size=0x5
+#include "Vector.h"
+Vector g_10619134(0.0f, 0.0f, 0.0f);
+// END FUNCTION
+
+// FUNCTION: 0x10197b80 size=0xa
+#include "ConVar.h"
+ConVar g_10618a70("cl_copyframebuffertotexture", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10197bd0 size=0xa
+#include "ConVar.h"
+ConVar g_10618878("cl_alwayscopyframebuffertotexture", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10197c20 size=0xa
+#include "ConVar.h"
+ConVar g_10618d40("r_watercullheight", "25", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10197c70 size=0xa
+#include "ConVar.h"
+ConVar g_106194e8("r_watercullenable", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10197cc0 size=0xa
+#include "ConVar.h"
+ConVar g_10618b90("cl_drawmaterial", "", 0, "Draw a particular material over the frame");
+// END FUNCTION
+
+// FUNCTION: 0x10197d10 size=0xa
+#include "ConVar.h"
+ConVar g_10619458("r_drawtranslucentworld", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10197d60 size=0xa
+#include "ConVar.h"
+ConVar g_10619218("r_drawviewmodel", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10197db0 size=0xa
+#include "ConVar.h"
+ConVar g_10618b48("r_3dsky", "1", 0, "Enable the rendering of 3d sky boxes");
+// END FUNCTION
+
+// FUNCTION: 0x10197e00 size=0xa
+#include "ConVar.h"
+ConVar g_10618cb0("cl_drawhud", "1", 0, "Enable the rendering of the hud");
+// END FUNCTION
+
+// FUNCTION: 0x10197e50 size=0xa
+#include "ConVar.h"
+ConVar g_106196f0("cl_overlayframebuffer", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10197ea0 size=0xa
+#include "ConVar.h"
+ConVar g_10619380("cl_drawshadowtexture", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10197ef0 size=0xa
+#include "ConVar.h"
+ConVar g_10618d88("mat_showwatertextures", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10197f40 size=0xa
+#include "ConVar.h"
+ConVar g_10619650("r_drawopaqueworld", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10197f90 size=0xa
+#include "ConVar.h"
+ConVar g_10619338("r_drawtranslucentrenderables", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10197fe0 size=0xa
+#include "ConVar.h"
+ConVar g_10618950("r_drawopaquerenderables", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10198030 size=0xa
+#include "ConVar.h"
+ConVar g_106192a8("mat_drawwater", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10198080 size=0xa
+#include "ConVar.h"
+ConVar g_106198a8("r_DoCovertTransitions", "1", 4096);
+// END FUNCTION
+
+// FUNCTION: 0x101980d0 size=0xa
+#include "ConVar.h"
+ConVar g_10618c20("r_TransitionSensitivity", "6", 0, "Controls when LODs are changed. Lower numbers cause more overt LOD transitions.");
+// END FUNCTION
+
+// FUNCTION: 0x10198120 size=0xa
+#include "ConVar.h"
+ConVar g_106192f0("mat_wireframe", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10198170 size=0xa
+#include "ConVar.h"
+ConVar g_10618830("r_noisefps", "22", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101981c0 size=0xa
+#include "ConVar.h"
+ConVar g_10619188("r_noisescale", "0.6", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10198210 size=0xa
+#include "ConVar.h"
+ConVar g_10619260("r_noisealpha", "19", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101984d0 size=0xa
+#include "ConVar.h"
+ConVar g_10618998("r_screendelaymax", "0.5f", 0);
+// END FUNCTION
+
+// FUNCTION: 0x10199790 size=0xa
+#include "ConVar.h"
+ConVar g_10619018("r_DrawDetailProps", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019c650 size=0xa
+#include "ConVar.h"
+ConVar g_106193c8("fog_override", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019c6a0 size=0xa
+#include "ConVar.h"
+ConVar g_10618fd0("fog_start", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019c6f0 size=0xa
+#include "ConVar.h"
+ConVar g_10619410("fog_end", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019c740 size=0xa
+#include "ConVar.h"
+ConVar g_10618908("fog_color", "-1 -1 -1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019c790 size=0xa
+#include "ConVar.h"
+ConVar g_10618ab8("fog_enable", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019c7e0 size=0xa
+#include "ConVar.h"
+ConVar g_10619530("fog_startskybox", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019c830 size=0xa
+#include "ConVar.h"
+ConVar g_106189e0("fog_endskybox", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019c880 size=0xa
+#include "ConVar.h"
+ConVar g_106194a0("fog_colorskybox", "-1 -1 -1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019c8d0 size=0xa
+#include "ConVar.h"
+ConVar g_10619578("fog_enableskybox", "1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019c920 size=0xa
+#include "ConVar.h"
+ConVar g_10619860("fog_clip", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019dae0 size=0xa
+#include "ConVar.h"
+ConVar g_10618bd8("cl_obfuscate_nightvision", "20", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019db30 size=0xa
+#include "ConVar.h"
+ConVar g_10618e18("cl_obfuscate_daylight", "-100", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019db80 size=0xa
+#include "ConVar.h"
+ConVar g_10619140("cl_reportskybox", "0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019ee80 size=0xa
+#include "ConVar.h"
+ConVar g_10619738("cl_overlay_celerity_intensity_scale", "0.3", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019eed0 size=0xa
+#include "ConVar.h"
+ConVar g_10619608("cl_overlay_celerity_expand_scale", "0.5", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019f0a0 size=0xa
+#include "ConVar.h"
+ConVar g_10618f88("cl_overlay_noise_lightblur", "0.005", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019f0f0 size=0xa
+#include "ConVar.h"
+ConVar g_106190a8("cl_overlay_noise_lightblend", "0.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019f340 size=0xa
+#include "ConVar.h"
+ConVar g_106191d0("cl_overlay_redvision_intensity", "1.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019f390 size=0xa
+#include "ConVar.h"
+ConVar g_10618b00("cl_overlay_redvision_blur_radius", "0.005", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019f3e0 size=0xa
+#include "ConVar.h"
+ConVar g_10618ef0("cl_overlay_redvision_expand", "0.0", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019f430 size=0xa
+#include "ConVar.h"
+ConVar g_10618dd0("cl_overlay_redvision_dx6", "85", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019fe00 size=0xa
+#include "ConVar.h"
+ConVar g_10618cf8("cl_overlay_obfuscate_scale", "0.6", 0);
+// END FUNCTION
+
+// FUNCTION: 0x1019fe50 size=0xa
+#include "ConVar.h"
+ConVar g_10619780("cl_overlay_obfuscate_blur", "0.002", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101a0000 size=0xa
+#include "ConVar.h"
+ConVar g_10618f38("cl_overlay_bloodshield_scale", "0.6", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101a0050 size=0xa
+#include "ConVar.h"
+ConVar g_10619810("cl_overlay_bloodshield_blur", "0.002", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101a0260 size=0xa
+#include "ConVar.h"
+ConVar g_10618e60("cl_cinebar_fuzz", "0.1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101a02b0 size=0xa
+#include "ConVar.h"
+ConVar g_106195c0("cl_cinebar_time", "0.5", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101a0300 size=0xa
+#include "ConVar.h"
+ConVar g_10618a28("cl_cinebar_power", "3", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101a0350 size=0xa
+#include "ConVar.h"
+ConVar g_10618ea8("cl_force_cinebar", "-1", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101a7460 size=0xa
+#include "ConVar.h"
+ConVar g_10678d48("hud_drawhistory_time", "5", 0);
+// END FUNCTION
+
+// FUNCTION: 0x101a7550 size=0xa
+#include "ConCommand.h"
+void sub_101a74f0(void);
+ConCommand g_10678d1c("cancelselect", sub_101a74f0, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101a75a0 size=0xa
+#include "ConCommand.h"
+void sub_101a7510(void);
+ConCommand g_10678da0("invnext", sub_101a7510, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101a75f0 size=0xa
+#include "ConCommand.h"
+void sub_101a7530(void);
+ConCommand g_10678cc8("invprev", sub_101a7530, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101a8b50 size=0xa
+#include "ConCommand.h"
+void sub_101a8b30(void);
+ConCommand g_10678ca0("toggleinven", sub_101a8b30, 0, 0, 0);
+// END FUNCTION
+
+// FUNCTION: 0x101a8bd0 size=0xa
+#include "ConCommand.h"
+void sub_101a8bb0(void);
+ConCommand g_10678cf4("toggleuiside", sub_101a8bb0, 0, 0, 0);
+// END FUNCTION
