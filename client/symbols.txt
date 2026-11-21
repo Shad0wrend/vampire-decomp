@@ -13,6 +13,7 @@
 0x10002200 func   ?sub_10002200@@YGXH@Z sub_10002200
 0x100025c0 func   ?sub_100025c0@@YAHXZ sub_100025c0
 0x100026a0 func   ?sub_100026a0@CUnknown100026a0@@QAEDXZ CUnknown100026a0::sub_100026a0
+0x100026b0 func   ??_GC_CameraAnimated@@UAEPAXI@Z ??_GC_CameraAnimated@@UAEPAXI@Z
 0x10002730 func   ?ClientClassInit@@YAHPAUignored@DT_CCameraAnimated@@@Z ClientClassInit
 0x10002900 func   ?sub_10002900@@YAHXZ sub_10002900
 0x10002a00 func   ?ClientClassInit@@YAHPAUignored@DT_HL2_Player@@@Z ClientClassInit
