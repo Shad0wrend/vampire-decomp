@@ -4914,6 +4914,34 @@ float sub_1010a420(float *a, float *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a450 size=0xed
+#include "Quaternion.h"
+
+void sub_1010a020(const Quaternion &p, const Quaternion &q, Quaternion &qt);
+void sub_1010a450(const Quaternion &p, const Quaternion &q, Quaternion &qt);
+
+// TARGET: sub_1010a450
+void sub_1010a450(const Quaternion &p, const Quaternion &q, Quaternion &qt)
+{
+	if (&p == &qt)
+	{
+		Quaternion p2 = p;
+		sub_1010a450(p2, q, qt);
+		return;
+	}
+	else
+	{
+		Quaternion q2;
+		sub_1010a020(p, q, q2);
+
+		qt.x = q2.z * p.y + q2.w * p.x - q2.y * p.z + q2.x * p.w;
+		qt.y = q2.x * p.z - q2.z * p.x + q2.w * p.y + q2.y * p.w;
+		qt.z = q2.y * p.x - q2.x * p.y + q2.w * p.z + q2.z * p.w;
+		qt.w = q2.w * p.w - (q2.y * p.y + q2.z * p.z + q2.x * p.x);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a540 size=0x2a
 void sub_1010a570(int a, void *p);
 
