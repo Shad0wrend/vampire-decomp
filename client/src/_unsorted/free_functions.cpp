@@ -7071,6 +7071,14 @@ int CUnknown100d0c80::sub_100d0c80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0ca0 size=0x4
+struct CUnknown100d0ca0 { int sub_100d0ca0(); };
+int CUnknown100d0ca0::sub_100d0ca0()
+{
+    return *(int *)((char *)this + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1190 size=0x8d
 #include "CUtlLinkedList8.h"
 
