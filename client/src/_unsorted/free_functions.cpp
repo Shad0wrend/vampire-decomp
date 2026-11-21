@@ -3383,6 +3383,19 @@ float sub_1008b3e0(const void *pStudioHdr, int iParameter, float flValue, float 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b4c0 size=0x2b
+float *sub_1008d930(int a, int b);
+
+// TARGET: sub_1008b4c0
+float sub_1008b4c0(int a, int b, float t)
+{
+	float *p = sub_1008d930(a, b);
+	if (p != 0)
+		return (p[3] - p[2]) * t + p[2];
+	return 0.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b560 size=0x21
 // TARGET: sub_1008b560
 void sub_1008b560(int *pTable, char *pSrc)
