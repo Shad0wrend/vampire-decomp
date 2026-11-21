@@ -132,3 +132,8 @@ ConVar g_103ee098("nosradar_min_strike_dist", "80", 0);
 #include "ConVar.h"
 ConVar g_103edf78("nosradar_max_strike_dist", "190", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10051c10 size=0xa
+#include "ConVar.h"
+ConVar g_103edfc0("nosradar_flash_speed", "8", 0);
+// END FUNCTION
