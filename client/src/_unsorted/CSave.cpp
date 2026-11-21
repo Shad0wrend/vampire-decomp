@@ -79,6 +79,17 @@ void CSave::vfunc9(const char *pszName, void *pData, int count)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129130 size=0x17
+#include "CSave.h"
+namespace lifted {
+struct C10129830 { int sub_10129830(int, int, int); };
+}
+int CSave::vfunc11(int a0, int a1, int a2)
+{
+    return ((lifted::C10129830 *)this)->sub_10129830(a0, a2, a1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129170 size=0x22
 #include "CSave.h"
 #include <string.h>
