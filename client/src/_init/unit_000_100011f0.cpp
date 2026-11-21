@@ -1262,3 +1262,8 @@ ConVar g_104d3d50("cl_pitchspeed", "225", 0);
 #include "ConVar.h"
 ConVar g_104d3040("cl_pitchdown", "89", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10101800 size=0xa
+#include "ConVar.h"
+ConVar g_104d3518("cl_pitchup", "89", 0);
+// END FUNCTION
