@@ -18631,6 +18631,49 @@ void sub_10079be0(CEyePosSource *pSource, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079c20 size=0xc3
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+void sub_100797c0(char *);
+int sub_10079c20(char *p, const char *name);
+struct SlotObjX { virtual void v0(); virtual char *v1(char *a, int b); };
+struct SlotRecX { int a; SlotObjX *obj; char pad[0x6c]; };
+
+int sub_10079c20(char *p, const char *name)
+{
+    if (p) {
+        if (*(int *)(p + 0x110)) {
+            sub_100797c0(p);
+            char *base = p + *(int *)(p + 0x114);
+            int i = 0;
+            if (0 < *(int *)(p + 0x110)) {
+                char *e = base;
+                do {
+                    if (_strcmpi(e + *(int *)(e + 4), name) == 0)
+                        return *(int *)(base + i * 0x2fc + 0xc);
+                    i++;
+                    e += 0x2fc;
+                } while (i < *(int *)(p + 0x110));
+            }
+        }
+        int j = 0;
+        if (0 < *(int *)(p + 0x194)) {
+            int o = 0;
+            do {
+                SlotRecX *q = (SlotRecX *)((char *)(*(int *)(p + 0x198) + o) + (int)p);
+                if (q->obj) {
+                    int r = sub_10079c20(q->obj->v1(p, j), name);
+                    if (r != -1)
+                        return r;
+                }
+                j++;
+                o += 0x74;
+            } while (j < *(int *)(p + 0x194));
+        }
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079cf0 size=0x40
 int sub_10079d30(int a, int b);
 int sub_10079c20(int a, int b);
