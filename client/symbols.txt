@@ -227,6 +227,7 @@
 0x1000f010 func   ??_GC_WeaponRanged_Smg_Uzi@@UAEPAXI@Z ??_GC_WeaponRanged_Smg_Uzi@@UAEPAXI@Z
 0x1000f050 func   ?sub_1000f050@@YAHXZ sub_1000f050
 0x1000f170 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Smg_Uzi@@@Z ClientClassInit
+0x1000f290 func   ??_GC_WeaponRanged_Pistol_Thirtyeight@@UAEPAXI@Z ??_GC_WeaponRanged_Pistol_Thirtyeight@@UAEPAXI@Z
 0x1000f2d0 func   ?sub_1000f2d0@@YAHXZ sub_1000f2d0
 0x1000f3f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Pistol_Thirtyeight@@@Z ClientClassInit
 0x1000f550 func   ?sub_1000f550@@YAHXZ sub_1000f550
