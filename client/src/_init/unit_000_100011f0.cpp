@@ -1364,3 +1364,9 @@ ConCommand g_104d3178("-movedown", sub_10101fe0, 0, 0, 0);
 void sub_10101ff0(void);
 ConCommand g_104d3240("+left", sub_10101ff0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x101049f0 size=0xa
+#include "ConCommand.h"
+void sub_10102000(void);
+ConCommand g_104d3788("-left", sub_10102000, 0, 0, 0);
+// END FUNCTION
