@@ -12162,6 +12162,23 @@ string_t sub_1015f830(CObj10203950 *pObj, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fa10 size=0x31
+// TARGET: sub_1015fa10
+void __cdecl sub_1015fa50(const char *a, const char *b);
+extern const char g_102cc7ec[];
+extern const char g_102cc7e4[];
+extern const char g_102cc7d0[];
+extern const char g_102cc7c4[];
+extern const char g_102cc7b4[];
+
+void __cdecl sub_1015fa10()
+{
+    sub_1015fa50(g_102cc7e4, g_102cc7ec);
+    sub_1015fa50(g_102cc7d0, g_102cc7ec);
+    sub_1015fa50(g_102cc7b4, g_102cc7c4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ff70 size=0x23
 struct CUnknown1006c7d0 {
 	void sub_1015ff70();
