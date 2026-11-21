@@ -55,6 +55,7 @@
 0x10039f20 func   ?sub_10039f20@@YGXH@Z sub_10039f20
 0x1003a1e0 func   ?sub_1003a1e0@@YGXH@Z sub_1003a1e0
 0x10041730 func   ?sub_10041730@@YADXZ sub_10041730
+0x100421e0 func   ?sub_100421e0@CUnknown100421e0@@QAEPAXXZ CUnknown100421e0::sub_100421e0
 0x10042c30 func   ?vfunc8@CDirtySpatialPartitionEntityList@@UAEPAVCAutoGameSystem@@I@Z CDirtySpatialPartitionEntityList::vfunc8
 0x10042ca0 func   ?sub_10042ca0@@YI_NPAD@Z sub_10042ca0
 0x10042cd0 func   ?vfunc1@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc1

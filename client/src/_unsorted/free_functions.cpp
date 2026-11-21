@@ -713,6 +713,14 @@ char sub_10041730()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100421e0 size=0x3
+struct CUnknown100421e0 { void * sub_100421e0(); };
+void * CUnknown100421e0::sub_100421e0()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043150 size=0x76
 extern int g_104d4970, g_104d4974, g_104d4978;
 struct Rec64 {
