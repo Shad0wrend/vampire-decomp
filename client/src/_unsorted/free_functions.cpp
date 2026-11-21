@@ -31724,6 +31724,17 @@ int sub_10157cd0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157ce0 size=0xa
+namespace lifted {
+extern int g_105f8c40;
+}
+int sub_10157ce0(int a0)
+{
+    lifted::g_105f8c40 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157d10 size=0x9
 struct CUnknown10157d10 { void * sub_10157d10(); };
 void * CUnknown10157d10::sub_10157d10()
