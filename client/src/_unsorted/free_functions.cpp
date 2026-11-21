@@ -22662,6 +22662,16 @@ bool CUnknown101e98c0Item::sub_1014df20(CDataNode *pNode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e080 size=0x5
+namespace lifted {
+int sub_1014e090();
+}
+int sub_1014e080()
+{
+    return lifted::sub_1014e090();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e090 size=0x67
 #include "CUnknown101e98c0.h"
 
