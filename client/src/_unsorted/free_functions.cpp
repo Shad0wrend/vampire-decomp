@@ -22022,6 +22022,27 @@ int CVStatList_t::sub_1015d6e0(int stat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015da50 size=0x6c
+#include "CVStatList_t.h"
+
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern TraceEnt *g_101e3124;
+extern char g_102de300[];
+
+// TARGET: CVStatList_t::sub_1015da50
+char CVStatList_t::sub_1015da50(int stat, int amount)
+{
+	g_101e3124[*g_101e3128].a = "CVStatList_t::SubBase";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	++*g_101e3128;
+	char r = sub_1015d950(stat, -amount);
+	--*g_101e3128;
+	return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015e490 size=0xf0
 #include "CVStatListManager_t.h"
 
