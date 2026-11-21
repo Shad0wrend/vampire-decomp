@@ -29604,6 +29604,22 @@ char * CUnknown1010e2f0::sub_1010e2f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e310 size=0x2b
+void sub_101d1727(void *p);
+void __fastcall sub_1010e2f0(int *pThis);
+
+void __fastcall sub_1010e310(int *pThis)
+{
+    int *pNode = (int *)pThis[4];
+    while (pNode != pThis + 3) {
+        int *pNext = (int *)pNode[1];
+        sub_101d1727(pNode);
+        pNode = pNext;
+    }
+    sub_1010e2f0(pThis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e340 size=0x18
 extern void (__cdecl *g_104df710)(const char *, int);
 
