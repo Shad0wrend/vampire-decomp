@@ -9213,6 +9213,20 @@ int sub_10109d10(float f)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109d50 size=0x31
+extern int g_104db5b0[];
+
+int sub_10109d50(float f)
+{
+	int i = (int)(f * 1024.0f);
+	if (i < 0)
+		i = 0;
+	else if (i > 0xfff)
+		i = 0xfff;
+	return g_104db5b0[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109e90 size=0x6b
 #include "Vector.h"
 
