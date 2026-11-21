@@ -155,6 +155,13 @@ int g_102df2a4 = ClientClassInit((DT_PointCamera::ignored *)0);
 RecvTable g_102dfaa0;
 // END FUNCTION
 
+// FUNCTION: 0x10006290 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponRanged_Animalism { struct ignored; }
+template <> int ClientClassInit<DT_WeaponRanged_Animalism::ignored>(DT_WeaponRanged_Animalism::ignored *);
+int g_102dfa9c = ClientClassInit((DT_WeaponRanged_Animalism::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10006520 size=0xa
 #include "RecvTable.h"
 RecvTable g_102df898;
