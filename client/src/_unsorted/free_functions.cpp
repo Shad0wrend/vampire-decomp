@@ -12132,6 +12132,36 @@ int __cdecl sub_1015f810(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f830 size=0x26
+#include "string_t.h"
+
+struct CObj10203950 {
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2();
+	virtual void vfunc3();
+	virtual void vfunc4();
+	virtual void vfunc5();
+	virtual void vfunc6();
+	virtual void vfunc7();
+	virtual void vfunc8();
+	virtual void vfunc9();
+	virtual void vfunc10();
+	virtual void vfunc11();
+	virtual void vfunc12();
+	virtual const char *vfunc13(int arg, const char *pszDefault);
+};
+
+extern char g_102de300[];
+string_t sub_1015fc40(const char *psz);
+
+// TARGET: sub_1015f830
+string_t sub_1015f830(CObj10203950 *pObj, int arg)
+{
+	return sub_1015fc40(pObj->vfunc13(arg, g_102de300));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ff70 size=0x23
 struct CUnknown1006c7d0 {
 	void sub_1015ff70();
