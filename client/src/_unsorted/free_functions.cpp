@@ -19864,6 +19864,38 @@ int sub_100add50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ade50 size=0x15b
+#include "RecvTable.h"
+extern RecvTable g_104a12e4;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_DynamicLight { struct ignored; }
+template <> int ClientClassInit<DT_DynamicLight::ignored>(DT_DynamicLight::ignored *)
+{
+	char *pRecvTableName = "DT_DynamicLight";
+	RecvTable &RecvTable = g_104a12e4;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_Flags", 1040, 1, 0, 0),
+		RecvPropInt("m_LightStyle", 1041, 1, 0, 0),
+		RecvPropFloat("m_Radius", 1044, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_Exponent", 1048, 4, 0, 0),
+		RecvPropFloat("m_InnerAngle", 1052, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_OuterAngle", 1056, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_SpotRadius", 1060, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nAttachment", 1064, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ae060 size=0x3
 char sub_100ae060()
 {
