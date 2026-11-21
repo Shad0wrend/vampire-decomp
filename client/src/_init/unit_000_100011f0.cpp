@@ -760,3 +760,8 @@ ConVar g_104cfdf0("cl_hudenable", "1", 0, "Enable/disable the HUD drawing for pr
 #include "ConVar.h"
 ConVar g_104cfeb8("hidehud", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100f1350 size=0xa
+#include "ConVar.h"
+ConVar g_104cff00("hud_saytext_time", "12", 0);
+// END FUNCTION
