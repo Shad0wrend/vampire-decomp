@@ -4394,6 +4394,31 @@ int sub_10106fa0(const char *a, const char *b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107010 size=0x81
+struct SFloatPair { float lo; float range; };
+
+extern void (*g_101e3188)(char *dest, const char *src, int count);
+char *sub_101d245b(char *str, const char *delim);
+double sub_101d12af(const char *str);
+
+SFloatPair sub_10107010(const char *text)
+{
+    SFloatPair r;
+    r.lo = 0;
+    r.range = 0;
+    char buf[128];
+    g_101e3188(buf, text, 128);
+    char *tok = sub_101d245b(buf, ",");
+    if (tok) {
+        r.lo = (float)sub_101d12af(tok);
+        tok = sub_101d245b(0, ",");
+        if (tok)
+            r.range = sub_101d12af(tok) - r.lo;
+    }
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107500 size=0x43
 #include "Vector.h"
 #include <math.h>

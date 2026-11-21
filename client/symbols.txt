@@ -171,6 +171,7 @@
 0x10106be0 func   ?sub_10106be0@InterfaceReg@@QAEPAV1@PAXPBD@Z InterfaceReg::sub_10106be0
 0x10106c60 func   _CreateInterface CreateInterface
 0x10106fa0 func   ?sub_10106fa0@@YAHPBD0@Z sub_10106fa0
+0x10107010 func   ?sub_10107010@@YA?AUSFloatPair@@PBD@Z sub_10107010
 0x10107500 func   ?sub_10107500@Vector@@QAEMXZ Vector::sub_10107500
 0x10107550 func   ?sub_10107550@@YIXPAVVector@@@Z sub_10107550
 0x10107e40 func   ?sub_10107e40@@YAXPAM00@Z sub_10107e40
