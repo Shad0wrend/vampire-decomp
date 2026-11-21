@@ -2653,3 +2653,8 @@ ConVar g_10618d40("r_watercullheight", "25", 0);
 #include "ConVar.h"
 ConVar g_106194e8("r_watercullenable", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10197cc0 size=0xa
+#include "ConVar.h"
+ConVar g_10618b90("cl_drawmaterial", "", 0, "Draw a particular material over the frame");
+// END FUNCTION
