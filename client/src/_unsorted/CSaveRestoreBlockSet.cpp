@@ -234,3 +234,16 @@ void CSaveRestoreBlockSet::vfunc8()
 	m_pEntryElements = m_pEntries;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012c010 size=0xa7
+#include "CSaveRestoreBlockSet.h"
+void CSaveRestoreBlockSet::vfunc9(void *pHandler)
+{
+	int idx = m_nHandlers;
+	GrowVector();
+	ShiftElementsRight(idx);
+	void **p = &m_pHandlers[idx];
+	if (p)
+		*p = pHandler;
+}
+// END FUNCTION
