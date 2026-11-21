@@ -12881,6 +12881,14 @@ void sub_100dfae0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dfb50 size=0x7
+struct CUnknown100dfb50 { int sub_100dfb50(); };
+int CUnknown100dfb50::sub_100dfb50()
+{
+    return *(int *)((char *)(*(int *)((char *)this + 4)) + 0x1c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dfb60 size=0x1
 void sub_100dfb60()
 {
