@@ -1741,3 +1741,8 @@ ConCommand g_104d3720("-wpn_secondaryatk", sub_101024f0, 0, 0, 0);
 #include "ConVar.h"
 ConVar g_104d3e58("m_pitch", "0.022", 128, "Mouse pitch factor.");
 // END FUNCTION
+
+// FUNCTION: 0x101060a0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3ea0("m_filter", "0", 128, "Mouse filtering (set this to 1 to average the mouse over 2 frames).");
+// END FUNCTION
