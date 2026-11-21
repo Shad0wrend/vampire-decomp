@@ -6310,6 +6310,16 @@ int sub_100a5a40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a6b00 size=0x5
+namespace lifted {
+int sub_10098800();
+}
+int sub_100a6b00()
+{
+    return lifted::sub_10098800();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9be0 size=0x3
 void __stdcall sub_100a9be0(int a0, int a1, int a2)
 {
