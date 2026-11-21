@@ -12589,6 +12589,44 @@ void CVStatList_t::sub_1015d350(int a, int *pSource, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015e490 size=0xf0
+#include "CVStatListManager_t.h"
+
+struct ScopeEntry { const char *name; const void *file; const void *line; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+extern int g_105f9220[];
+extern int g_105f90b8[];
+extern int g_105f8c60[];
+extern int g_105f91c8[];
+
+// TARGET: CVStatListManager_t::sub_1015e490
+void CVStatListManager_t::sub_1015e490(int which, int c)
+{
+	g_101e3124[*g_101e3128].name = "CVStatListManager_t::BindStatList";
+	g_101e3124[*g_101e3128].file = g_102de300;
+	g_101e3124[*g_101e3128].line = g_102de300;
+	(*g_101e3128)++;
+	switch (which)
+	{
+	case 0:
+		m_pLists[0]->sub_1015d350((int)this, g_105f9220, c);
+		break;
+	case 1:
+		m_pLists[1]->sub_1015d350((int)this, g_105f90b8, c);
+		break;
+	case 2:
+		m_pLists[2]->sub_1015d350((int)this, g_105f8c60, c);
+		break;
+	case 3:
+		m_pLists[3]->sub_1015d350((int)this, g_105f91c8, c);
+		break;
+	}
+	(*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015e580 size=0x90
 #include "CVStatListManager_t.h"
 struct ScopeEntry { const char *a; const char *b; const char *c; };
