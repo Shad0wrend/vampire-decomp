@@ -2062,3 +2062,8 @@ ConVar g_105e54d0("sv_soundemitter_trace", "0", 8192, "Show all EmitSound calls 
 void sub_1012cc40(void);
 ConCommand g_105e5514("cl_soundemitter_flush", sub_1012cc40, "Flushes the sounds.txt system (client only)", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10133520 size=0x5
+int sub_10133540(void);
+int g_105e5aa8 = ((int (*)(int))sub_10133540)(0);
+// END FUNCTION
