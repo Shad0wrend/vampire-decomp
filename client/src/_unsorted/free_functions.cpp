@@ -18927,6 +18927,29 @@ bool CEntryY::sub_1014ee80(void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014eee0 size=0xa3
+#include "CUnknown101eac50.h"
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" char *strcat(char *, const char *);
+extern char g_102de300[];
+void sub_1015fbb0(const char *);
+
+void CUnknown101eac50::sub_1014eee0()
+{
+    char buf[128];
+    sprintf(buf, "(%d): %s\n", m_index, m_name ? m_name : g_102de300);
+    sub_1015fbb0(buf);
+    buf[0] = 0;
+    if (m_flags & 1) {
+        strcat(buf, "\tIsDisplayed");
+        if (buf[0]) {
+            strcat(buf, "\n");
+            sub_1015fbb0(buf);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101501b0 size=0x1c
 struct CUnk101ec450 {
 	void sub_101501b0(int a, int b);
