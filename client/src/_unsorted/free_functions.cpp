@@ -5097,6 +5097,17 @@ char CUnknown1005f6d0::sub_1005f6d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005fa40 size=0xa
+namespace lifted {
+extern char g_103eedf8;
+}
+char sub_1005fa40(char a0)
+{
+    lifted::g_103eedf8 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005fb00 size=0x6
 int sub_1005fb00()
 {
