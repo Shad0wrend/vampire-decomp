@@ -2596,6 +2596,13 @@ char sub_10028780()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028850 size=0x8
+int __stdcall sub_10028850(int a0, int a1)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028920 size=0xe1
 extern char *(*g_101e3188)(char *, const char *, int);
 extern char g_1027aedc[];
