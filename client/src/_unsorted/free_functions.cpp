@@ -6625,6 +6625,16 @@ int __stdcall sub_100bc680(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bd530 size=0x5
+namespace lifted {
+int sub_100a0240();
+}
+int sub_100bd530()
+{
+    return lifted::sub_100a0240();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be130 size=0x4
 struct CUnknown100be130 { char sub_100be130(); };
 char CUnknown100be130::sub_100be130()
