@@ -1162,3 +1162,8 @@ ConVar g_104d2860("joyname", "joystick", 0);
 #include "ConVar.h"
 ConVar g_104d2bc0("joyadvanced", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101004f0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2a10("joyadvaxisx", "0", 0);
+// END FUNCTION
