@@ -2016,3 +2016,8 @@ ConVar g_104e1750("cl_pclass", "", 0, "Dump entity by prediction classname.");
 #include "ConVar.h"
 ConVar g_104e14f0("cl_pred_optimize", "2", 0, "Optimize for not copying data if didn't receive a network update (1), and also for not repredicting if there were no errors (2).");
 // END FUNCTION
+
+// FUNCTION: 0x101210b0 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_104e160c;
+// END FUNCTION
