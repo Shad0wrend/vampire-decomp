@@ -13417,6 +13417,16 @@ const char *sub_100edcf0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee880 size=0x6
+namespace lifted {
+extern char g_104cfd4c;
+}
+int sub_100ee880()
+{
+    return (int)&lifted::g_104cfd4c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee890 size=0x2e
 #include "CGameStringPool.h"
 #include "string_t.h"

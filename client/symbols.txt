@@ -919,6 +919,7 @@
 0x100ecfb0 func   ?sub_100ecfb0@@YGMMM@Z sub_100ecfb0
 0x100edcf0 func   ?sub_100edcf0@@YAPBDH@Z sub_100edcf0
 0x100ee850 func   ?vfunc8@CGameStringPool@@QAEPAV1@I@Z CGameStringPool::vfunc8
+0x100ee880 func   ?sub_100ee880@@YAHXZ sub_100ee880
 0x100ee890 func   ?sub_100ee890@@YA?AUstring_t@@PBD@Z sub_100ee890
 0x100ee8c0 func   ?sub_100ee8c0@@YA?AUR1042c030@@H@Z sub_100ee8c0
 0x100ee900 func   ?sub_100ee900@CUnk10129770@@QAEHXZ CUnk10129770::sub_100ee900
