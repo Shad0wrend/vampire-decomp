@@ -28127,6 +28127,19 @@ void CPartListUnit3::sub_101427f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10142e50 size=0x19
+struct CUnknown10142e50 { void * sub_10142e50(int); };
+void * CUnknown10142e50::sub_10142e50(int a0)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10143180 size=0x14
 struct CUnknown10143180 { void * sub_10143180(); };
 void * CUnknown10143180::sub_10143180()
