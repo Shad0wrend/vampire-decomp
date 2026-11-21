@@ -1973,6 +1973,11 @@ Vector g_1049da94[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.408248
 ConVar g_1049e1a8("cl_interpolate", "1.0", 0, "Interpolate entities on the client.");
 // END FUNCTION
 
+// FUNCTION: 0x1009d520 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049e170;
+// END FUNCTION
+
 // FUNCTION: 0x1009e280 size=0xa
 #include "ConVar.h"
 ConVar g_1049dbd8("cl_simpleshadows", "0", 0);
