@@ -128,6 +128,16 @@ int sub_10003580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100039a0 size=0x6
+namespace lifted {
+extern char g_102dead0;
+}
+int sub_100039a0()
+{
+    return (int)&lifted::g_102dead0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003c10 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
