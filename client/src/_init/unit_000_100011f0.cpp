@@ -541,3 +541,9 @@ ConVar g_104a0e58("bc_ground", "1", 0);
 void sub_100b36b0(void);
 ConCommand g_104a1bc0("particle", sub_100b36b0, "Displays a particle system.  particle <name|number> [distance]", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100b38b0 size=0xa
+#include "ConCommand.h"
+void sub_100b38e0(void);
+ConCommand g_104a1724("decal", sub_100b38e0, "Displays a decal.  decal <name|number> [distance]", 0, 0);
+// END FUNCTION
