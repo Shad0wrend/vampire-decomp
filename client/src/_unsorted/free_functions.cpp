@@ -6095,6 +6095,12 @@ void CUtlMemory12::sub_100caa80(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc560 size=0x1
+void sub_100cc560()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ccb30 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
