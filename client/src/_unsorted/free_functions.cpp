@@ -7832,6 +7832,68 @@ int *__fastcall sub_100291c0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029200 size=0x16f
+#include "CCameraShotTable.h"
+#include "CUnknown10248a50.h"
+
+extern "C" unsigned int strlen(const char *);
+extern "C" void *memset(void *, int, unsigned int);
+#pragma intrinsic(strlen, memset)
+
+struct FileSysFindView
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
+	virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8(); virtual void v9();
+	virtual void v10(); virtual void v11(); virtual void v12(); virtual void v13(); virtual void v14();
+	virtual void v15(); virtual void v16(); virtual void v17(); virtual void v18(); virtual void v19();
+	virtual void v20(); virtual void v21();
+	virtual const char *FindFirst(const char *pWildCard, int *pHandle);	// slot 22
+	virtual const char *FindNext(int handle);	// slot 23
+	virtual void v24();
+	virtual void FindClose(int handle);	// slot 25
+};
+extern IFileSys *g_104a580c;
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) void Msg(const char *pszFormat, ...);
+
+#define FS ((FileSysFindView *)g_104a580c)
+
+// TARGET: CCameraShotTable::sub_10029200
+void CCameraShotTable::sub_10029200(const char *pszWildcard)
+{
+	if (m_bLoaded)
+		return;
+	int hFind;
+	const char *pszFile = FS->FindFirst(pszWildcard, &hFind);
+	if (pszFile) {
+		do {
+			char szPath[260];
+			memset(szPath, 0, sizeof(szPath));
+			Q_strncpy(szPath, pszWildcard, sizeof(szPath));
+			szPath[strlen(szPath) - 6] = 0;
+			Q_snprintf(szPath, sizeof(szPath), "%s/%s", szPath, pszFile);
+			CUnknown10248a50 *pKV = new CUnknown10248a50("CameraShotTable");
+			IFileSys *pFileSys;
+			if (pKV && (pFileSys = g_104a580c, pKV->sub_10127c90(szPath, pFileSys, 0, 1))) {
+				CUnknown10248a50 *pShot = pKV->sub_101283a0();
+				while (pShot) {
+					sub_10028d20(pShot);
+					pShot = pShot->sub_101283b0();
+				}
+			} else
+				Msg("Unable to open Camera Shot Descriptions file: %s \n", szPath);
+			if (pKV) {
+				pKV->sub_10127c60();
+				::operator delete(pKV);
+			}
+		} while ((pszFile = FS->FindNext(hFind)) != 0);
+	}
+	FS->FindClose(hFind);
+	m_bLoaded = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029370 size=0x44
 #include "utlrbtree.h"
 #include "utlvector.h"
