@@ -14729,6 +14729,19 @@ single:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e32d0 size=0x10
+namespace lifted {
+extern char g_10234ae8;
+}
+struct CUnknown100e32d0 { void * sub_100e32d0(); };
+void * CUnknown100e32d0::sub_100e32d0()
+{
+    *(int *)((char *)this + 4) = 0;
+    *(int *)this = (int)&lifted::g_10234ae8;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e3300 size=0x7
 namespace lifted {
 extern char g_10227c5c;
