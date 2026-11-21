@@ -10455,6 +10455,27 @@ void sub_1010a790(const SRadianEuler &angles, Quaternion &outQuat)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a890 size=0x9a
+#include "matrix3x4_t.h"
+#include "QAngle.h"
+
+void sub_10108540(const Vector &in, int column, matrix3x4_t &out);
+void sub_1010a650(const Vector &angles, int a);
+void sub_10107eb0(const matrix3x4_t &m, QAngle &ang);
+
+void sub_1010a890(const Vector &a, const Vector &b, const Vector &c, int d)
+{
+	matrix3x4_t m;
+	Vector v = b;
+	v *= -1.0f;
+	sub_10108540(a, 0, m);
+	sub_10108540(v, 1, m);
+	sub_10108540(c, 2, m);
+	sub_10107eb0(m, *(QAngle *)&v);
+	sub_1010a650(v, d);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a930 size=0x4c
 void sub_1010a570(const float *q, float *mat);
 void sub_10107eb0(const float *mat, float *angles);
