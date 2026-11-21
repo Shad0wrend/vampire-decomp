@@ -14371,6 +14371,17 @@ void CFloatUnit::sub_101335e0(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133630 size=0x23
+float __cdecl sub_1010c2e0(float a, float b, float c);
+
+// TARGET: sub_10133630
+void __fastcall sub_10133630(void *pSelf, int unused, float scale)
+{
+    float *p = (float *)pSelf;
+    p[0] = sub_1010c2e0(p[1], p[0], scale * p[2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133780 size=0x1a
 namespace lifted {
 extern int g_102c50d4;
