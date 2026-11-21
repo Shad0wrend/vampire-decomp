@@ -1037,6 +1037,12 @@ void CUtlVector16::sub_10050100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10051b20 size=0x3
+void __stdcall sub_10051b20(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100557c0 size=0x34
 #include "UtlMem.h"
 extern void *(__cdecl *g_101e3100)(int);
