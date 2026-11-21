@@ -10935,6 +10935,21 @@ int sub_1008ede0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100923c0 size=0x1e
+namespace lifted {
+extern int g_1049bfd8;
+extern char g_1049c48c;
+extern char g_1049c48d;
+}
+char sub_100923c0(char a0, char a1)
+{
+    lifted::g_1049bfd8 = 0;
+    lifted::g_1049c48c = a0;
+    lifted::g_1049c48d = a1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10093ef0 size=0xd
 struct CUnknown10093ef0 { int sub_10093ef0(int); };
 int CUnknown10093ef0::sub_10093ef0(int a0)
