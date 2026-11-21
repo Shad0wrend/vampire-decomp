@@ -365,6 +365,16 @@ char * CUnknown10007280::sub_10007280()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100073a0 size=0x6
+namespace lifted {
+extern char g_102dfcf4;
+}
+int sub_100073a0()
+{
+    return (int)&lifted::g_102dfcf4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027d20 size=0x191
 #include "Vector.h"
 void sub_100dfc60(const Vector &a, const Vector &b, int r, int g, int bl, bool noDepthTest, float duration);
