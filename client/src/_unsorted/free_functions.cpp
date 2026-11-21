@@ -5616,6 +5616,38 @@ void CUtlVector16::sub_10130ba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130f00 size=0x8c
+#include "UtlVec8.h"
+extern void *(*g_101e3100)(int);
+extern void *(*g_101e3104)(void *, int);
+
+void UtlVec8::sub_10130f00(int num)
+{
+    if (m_Size + num > m_allocationCount && m_growSize != -1) {
+        int alloc = m_allocationCount;
+        int newSize = m_Size + num;
+        if (alloc < newSize) {
+            do {
+                if (alloc != 0) {
+                    if (m_growSize != 0)
+                        alloc += m_growSize;
+                    else
+                        alloc += alloc;
+                } else
+                    alloc = 4;
+            } while (alloc < newSize);
+            m_allocationCount = alloc;
+        }
+        if (m_pMemory)
+            m_pMemory = (char *)g_101e3104(m_pMemory, m_allocationCount << 3);
+        else
+            m_pMemory = (char *)g_101e3100(m_allocationCount << 3);
+    }
+    m_Size += num;
+    m_pElements = (UtlVec8Elem *)m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130f90 size=0x34
 #include "UtlVec8.h"
 void UtlVec8::sub_10130f90(int elem, int num)
