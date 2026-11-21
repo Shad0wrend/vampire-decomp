@@ -4097,6 +4097,30 @@ void Ray_t::sub_100e91e0(const Vector &start, const float *pEnd, const float *pM
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ea590 size=0xd8
+#include "CGameMovement.h"
+struct SVarA { virtual void v0(); virtual bool v1(); char pad[0x24]; float f28; };
+struct SRandom { virtual void v0(); virtual void v1(); virtual int RandomInt(int lo, int hi); };
+struct SSound { virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(const void *pos, int ch, const char *snd, float vol, int level, int flags, int pitch); };
+extern SVarA *g_104cf7cc;
+extern SRandom *g_104a5738;
+extern SSound *g_104df784;
+
+void CGameMovement::sub_100ea590()
+{
+    float vol = g_104cf7cc->v1() ? 0.0f : g_104cf7cc->f28;
+    if (vol > 1.0)
+        vol = 1.0f;
+    int pitch = g_104a5738->RandomInt(95, 105);
+    switch (g_104a5738->RandomInt(0, 3)) {
+    case 0: g_104df784->v5((char *)m_pPlayer + 0x70, 6, "surfaces/wade/stepleft1.wav", vol, 75, 0, pitch); break;
+    case 1: g_104df784->v5((char *)m_pPlayer + 0x70, 6, "surfaces/wade/stepleft2.wav", vol, 75, 0, pitch); break;
+    case 2: g_104df784->v5((char *)m_pPlayer + 0x70, 6, "surfaces/wade/stepright1.wav", vol, 75, 0, pitch); break;
+    case 3: g_104df784->v5((char *)m_pPlayer + 0x70, 6, "surfaces/wade/stepright2.wav", vol, 75, 0, pitch); break;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb150 size=0x93
 #include "CUnknown100353c0.h"
 
