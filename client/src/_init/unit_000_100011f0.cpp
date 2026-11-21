@@ -2374,3 +2374,8 @@ ConVar g_105fb8c8("modelpanel_scalar", "1.2", 0, "Use this to adjust the width o
 #include "ConVar.h"
 ConVar g_105fb9c0("modelpanel_light_x", "60", 0, "Blah");
 // END FUNCTION
+
+// FUNCTION: 0x1018b480 size=0xa
+#include "ConVar.h"
+ConVar g_105fba08("modelpanel_light_y", "30", 0, "Blah");
+// END FUNCTION
