@@ -2713,3 +2713,8 @@ ConVar g_10618950("r_drawopaquerenderables", "1", 0);
 #include "ConVar.h"
 ConVar g_106192a8("mat_drawwater", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10198080 size=0xa
+#include "ConVar.h"
+ConVar g_106198a8("r_DoCovertTransitions", "1", 4096);
+// END FUNCTION
