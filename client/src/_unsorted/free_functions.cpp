@@ -7948,6 +7948,24 @@ int sub_1002c1c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c2c0 size=0x50
+#include "RecvTable.h"
+extern RecvTable g_102ead40;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseTempEntity { struct ignored; }
+template <> int ClientClassInit<DT_BaseTempEntity::ignored>(DT_BaseTempEntity::ignored *)
+{
+	char *pRecvTableName = "DT_BaseTempEntity";
+	RecvTable &RecvTable = g_102ead40;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c320 size=0x6
 namespace lifted {
 extern int g_102ead70;
