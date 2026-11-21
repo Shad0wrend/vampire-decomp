@@ -12776,6 +12776,91 @@ void CBits1042d740::sub_101207b0(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101207d0 size=0xd8
+#include "CUnknown1042d770.h"
+extern "C" void *__cdecl memset(void *, int, unsigned int);
+unsigned long sub_101208b0(const char *a, const char *b, int n);
+
+struct IdRecord { unsigned int id; int n; };
+struct IdTable
+{
+	int key;
+	int count;
+	IdRecord rec[256];
+};
+extern IdTable g_104e0ca0;
+
+namespace block_1042d770 {
+struct CUnknown1042d6d0
+{
+	unsigned int m_bit0 : 1;
+	unsigned int m_a : 5;
+	unsigned int m_rest : 26;
+	void sub_10120770(int v);
+};
+void CUnknown1042d6d0::sub_10120770(int v)
+{
+	m_a = v;
+}
+struct CBits1042d740
+{
+	unsigned int m_bits0 : 6;
+	unsigned int m_b : 10;
+	unsigned int m_rest : 16;
+	void sub_101207b0(int v);
+};
+void CBits1042d740::sub_101207b0(int v)
+{
+	m_b = v;
+}
+}
+using namespace block_1042d770;
+
+static inline IdRecord *FindId(IdTable &t, int key, unsigned int id)
+{
+	if (key != t.key) {
+		t.key = key;
+		t.count = 0;
+		memset(t.rec, 0, sizeof(t.rec));
+	}
+	IdRecord *p = 0;
+	int i = 0;
+	if (i < t.count) {
+		IdRecord *q = t.rec;
+		do {
+			if (q->id == id) {
+				p = q;
+				break;
+			}
+			i++;
+			q++;
+		} while (i < t.count);
+	}
+	if (!p) {
+		if (t.count >= 256)
+			return 0;
+		i = t.count + 1; p = &t.rec[i - 1]; t.count = i; p->id = id; p->n = 0;
+	}
+	return p;
+}
+
+static inline int NextSerial(IdTable &t, int key, unsigned int id)
+{
+	IdRecord *p = FindId(t, key, id);
+	if (!p)
+		return 0;
+	return ++p->n - 1;
+}
+
+void CUnknown1042d770::sub_101207d0(int a, int b, const char *pszName1, const char *pszName2, int n)
+{
+	((CUnknown1042d6d0 *)this)->sub_10120770(a);
+	((CBits1042d740 *)this)->sub_101207b0(b);
+	m_id = sub_101208b0(pszName1, pszName2, n);
+	sub_10120990(NextSerial(g_104e0ca0, b, m_id));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120990 size=0x18
 struct CBits1042d9c0
 {
