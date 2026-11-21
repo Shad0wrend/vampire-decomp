@@ -2399,6 +2399,13 @@ int g_102e7608 = ClientClassInit((DT_ItemKEmpireMafiaKey::ignored *)0);
 RecvTable g_102e6100;
 // END FUNCTION
 
+// FUNCTION: 0x10023dd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKEmpireJezebelKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKEmpireJezebelKey::ignored>(DT_ItemKEmpireJezebelKey::ignored *);
+int g_102e60fc = ClientClassInit((DT_ItemKEmpireJezebelKey::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10024010 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e0cbc;
