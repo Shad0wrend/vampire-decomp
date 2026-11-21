@@ -2346,6 +2346,7 @@
 0x101465d0 func   ?sub_101465d0@@YAXXZ sub_101465d0
 0x101465e0 func   ?sub_101465e0@@YGHH@Z sub_101465e0
 0x101466a0 func   ?sub_101466a0@CUnknown101da9e0@@QAEPAXH@Z CUnknown101da9e0::sub_101466a0
+0x10146750 func   ?sub_10146750@CUnknown101da960@@QAEXXZ CUnknown101da960::sub_10146750
 0x101467d0 func   ?sub_101467d0@CUnknown101467d0@@QAEPAXH@Z CUnknown101467d0::sub_101467d0
 0x101467f0 func   ?sub_101467f0@@YAXXZ sub_101467f0
 0x10146950 func   ??0StatDefault60@@QAE@H@Z StatDefault60::StatDefault60
