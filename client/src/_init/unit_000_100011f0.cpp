@@ -1104,3 +1104,9 @@ ConCommand g_104d1a44("-camout", sub_100ff7b0, 0, 0, 0);
 void sub_100fbd70(void);
 ConCommand g_104d2540("thirdperson", sub_100fbd70, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10100130 size=0xa
+#include "ConCommand.h"
+void sub_100fbd80(void);
+ConCommand g_104d2568("firstperson", sub_100fbd80, 0, 0, 0);
+// END FUNCTION
