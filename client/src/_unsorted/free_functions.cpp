@@ -11210,6 +11210,32 @@ int CNamedList9fd0::sub_101536d0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153720 size=0x41
+extern "C" int sub_101e28e0(const char *a, const char *b);
+
+struct CUnknown101f1a30 {
+    char m_pad0000[0x14];
+    int m_nCount;
+    const char *sub_10153610(int index);
+    int sub_10153720(const char *name);
+};
+
+// TARGET: sub_10153720
+int CUnknown101f1a30::sub_10153720(const char *name)
+{
+    int i = 0;
+    if (m_nCount > 0) {
+        do {
+            if (sub_101e28e0(sub_10153610(i), name) == 0) {
+                return i;
+            }
+            i++;
+        } while (i < m_nCount);
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153ba0 size=0x2d
 #include "VKeyValues.h"
 char *sub_101546c0(const char *pszSrc);
