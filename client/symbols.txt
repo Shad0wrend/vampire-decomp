@@ -638,6 +638,7 @@
 0x10024690 func   ??_GC_ItemKTutorialChopshopStairsKey@@UAEPAXI@Z ??_GC_ItemKTutorialChopshopStairsKey@@UAEPAXI@Z
 0x100246d0 func   ?sub_100246d0@@YAHXZ sub_100246d0
 0x100247f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKTutorialChopshopStairsKey@@@Z ClientClassInit
+0x10024910 func   ??_GC_ItemKTawniApartmentKey@@UAEPAXI@Z ??_GC_ItemKTawniApartmentKey@@UAEPAXI@Z
 0x10024950 func   ?sub_10024950@@YAHXZ sub_10024950
 0x10024a70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKTawniApartmentKey@@@Z ClientClassInit
 0x10024bd0 func   ?sub_10024bd0@@YAHXZ sub_10024bd0
