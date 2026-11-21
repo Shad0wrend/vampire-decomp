@@ -9418,6 +9418,14 @@ void UtlMem::sub_10096d40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096d70 size=0x8
+struct CUnknown10096d70 { void sub_10096d70(); };
+void CUnknown10096d70::sub_10096d70()
+{
+    *(int *)((char *)this + 0xc) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096d80 size=0x95
 #include "CUtlVector76.h"
 extern void *(*g_101e3100)(int);
