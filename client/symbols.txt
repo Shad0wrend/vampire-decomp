@@ -129,6 +129,7 @@
 0x1000cad0 func   ?sub_1000cad0@@YAHXZ sub_1000cad0
 0x1000cbf0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_MingXiao_Spit@@@Z ClientClassInit
 0x1000cd50 func   ?sub_1000cd50@@YAHXZ sub_1000cd50
+0x1000ce70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Claws_Ghoul@@@Z ClientClassInit
 0x1000cfd0 func   ?sub_1000cfd0@@YAHXZ sub_1000cfd0
 0x1000d250 func   ?sub_1000d250@@YAHXZ sub_1000d250
 0x1000d4d0 func   ?sub_1000d4d0@@YAHXZ sub_1000d4d0
