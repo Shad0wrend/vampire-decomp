@@ -25846,6 +25846,12 @@ void CPtrArray10206430::sub_10161dd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161fc0 size=0x1
+void sub_10161fc0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101624d0 size=0x83
 #include "QuestJournal.h"
 
