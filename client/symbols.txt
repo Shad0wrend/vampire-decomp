@@ -583,6 +583,7 @@
 0x1005fa60 func   ?sub_1005fa60@@YAHHHH@Z sub_1005fa60
 0x1005fb00 func   ?sub_1005fb00@@YAHXZ sub_1005fb00
 0x1005fb10 func   ?sub_1005fb10@CUnknown1005fb10@@QAEDXZ CUnknown1005fb10::sub_1005fb10
+0x10062280 func   ?sub_10062280@CUnknown10062280@@QAEDDDDD@Z CUnknown10062280::sub_10062280
 0x100622a0 func   ?sub_100622a0@@YAHXZ sub_100622a0
 0x100622b0 func   ?sub_100622b0@@YADXZ sub_100622b0
 0x100624d0 func   ?sub_100624d0@CUnknown100624d0@@QAEDXZ CUnknown100624d0::sub_100624d0
