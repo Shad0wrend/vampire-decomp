@@ -24217,6 +24217,44 @@ void sub_101a2930(const VMatrix &src1, const Vector &src2, Vector &dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a29b0 size=0xc6
+#include "VMatrix.h"
+
+class Vector4D
+{
+public:
+	float x, y, z, w;
+	float &operator[](int i) { return ((float *)this)[i]; }
+	float operator[](int i) const { return ((float *)this)[i]; }
+};
+
+inline void Vector4DCopy(const Vector4D &src, Vector4D &dst)
+{
+	dst.x = src.x;
+	dst.y = src.y;
+	dst.z = src.z;
+	dst.w = src.w;
+}
+
+void sub_101a29b0(const VMatrix &src1, const Vector4D &src2, Vector4D &dst)
+{
+	bool srcEqualsDst = (&src2 == &dst);
+
+	Vector4D tmp;
+	const Vector4D &v = srcEqualsDst ? tmp : src2;
+
+	if (srcEqualsDst)
+	{
+		Vector4DCopy(src2, tmp);
+	}
+
+	dst[0] = src1[0][0] * v[0] + (src1[1][0] * v[1] + src1[3][0] * v[3] + src1[2][0] * v[2]);
+	dst[1] = src1[0][1] * v[0] + (src1[1][1] * v[1] + src1[3][1] * v[3] + src1[2][1] * v[2]);
+	dst[2] = src1[0][2] * v[0] + (src1[1][2] * v[1] + src1[3][2] * v[3] + src1[2][2] * v[2]);
+	dst[3] = src1[0][3] * v[0] + (src1[1][3] * v[1] + src1[3][3] * v[3] + src1[2][3] * v[2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2e30 size=0x59
 #include "VMatrix.h"
 #include <math.h>
