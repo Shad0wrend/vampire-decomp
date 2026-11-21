@@ -14882,6 +14882,14 @@ int CUnknown10127c70::sub_10127c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127c80 size=0x4
+struct CUnknown10127c80 { int sub_10127c80(); };
+int CUnknown10127c80::sub_10127c80()
+{
+    return *(int *)((char *)this + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127df0 size=0x23
 extern int g_104e3438;
 int sub_100e3130(int a, void *b, int c);
