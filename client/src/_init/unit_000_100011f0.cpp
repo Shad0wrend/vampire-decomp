@@ -2795,6 +2795,13 @@ ConCommand g_102ead74("CreateHairball", sub_1002d2b0, 0, 0, 0);
 RecvTable g_102eaeb0;
 // END FUNCTION
 
+// FUNCTION: 0x1002f6a0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_SmokeStackLightInfo { struct ignored; }
+template <> int ClientClassInit<DT_SmokeStackLightInfo::ignored>(DT_SmokeStackLightInfo::ignored *);
+int g_102eaeac = ClientClassInit((DT_SmokeStackLightInfo::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1002f840 size=0xa
 #include "RecvTable.h"
 RecvTable g_102eae94;
