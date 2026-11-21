@@ -2317,6 +2317,7 @@
 0x10187ca0 func   ?sub_10187ca0@@YAHXZ sub_10187ca0
 0x10187d80 func   ?sub_10187d80@@YAHXZ sub_10187d80
 0x10187d90 func   ?sub_10187d90@@YGXH@Z sub_10187d90
+0x10187fa0 func   ?sub_10187fa0@@YAHXZ sub_10187fa0
 0x10187fc0 func   ?sub_10187fc0@@YAHXZ sub_10187fc0
 0x101880f0 func   ?sub_101880f0@CUnknown101880f0@@QAEHXZ CUnknown101880f0::sub_101880f0
 0x101882c0 func   ?sub_101882c0@CUnknown101882c0@@QAEHXZ CUnknown101882c0::sub_101882c0
