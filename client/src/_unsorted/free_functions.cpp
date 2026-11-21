@@ -55822,6 +55822,48 @@ void CUnknown10161430::sub_10161430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161440 size=0xc4
+#include "CVStatValue_t.h"
+#include "CVDmg_t.h"
+#include "CUnknown10204c60.h"
+#include "StatDefault.h"
+
+struct StatOwner
+{
+	StatDefault *sub_10160590(int id);
+};
+extern StatOwner g_105f985c;
+
+// TARGET: CVStatValue_t::sub_10161440
+int CVStatValue_t::sub_10161440(int arg)
+{
+	switch (m_nType) {
+	case 0:
+		return m_nValue;
+	case 1:
+		if (arg) {
+			CVDmgBlock16_t block;
+			block.sub_101613c0(&m_nValue);
+			return block.sub_10160b40((void *)arg);
+		} else {
+			CVDmgBlock16_t block;
+			block.sub_101613c0(&m_nValue);
+			return ((CUnknown10204c60 *)&block)->sub_10160de0();
+		}
+	case 2:
+		return g_105f985c.sub_10160590(m_nValue)->sub_10160160(arg);
+	case 3: {
+		int (__cdecl *pfn)(int) = (int (__cdecl *)(int))m_nValue;
+		if (pfn)
+			return pfn(arg);
+		return 0;
+	}
+	default:
+		return -1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161590 size=0x10
 struct CUnknown10161590 { int sub_10161590(int); };
 int CUnknown10161590::sub_10161590(int a0)
