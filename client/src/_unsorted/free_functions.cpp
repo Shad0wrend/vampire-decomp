@@ -37692,6 +37692,14 @@ int CUnknown101c0c10::sub_101c0c10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c0c20 size=0xb
+struct CUnknown101c0c20 { void sub_101c0c20(); };
+void CUnknown101c0c20::sub_101c0c20()
+{
+    *(int *)((char *)this + 0x84) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0ca0 size=0xa
 struct CUnknown101c0ca0 { int sub_101c0ca0(int); };
 int CUnknown101c0ca0::sub_101c0ca0(int a0)
