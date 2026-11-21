@@ -9112,6 +9112,12 @@ void sub_100f7dc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10102fd0 size=0x3
+void __stdcall sub_10102fd0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104360 size=0x1a
 struct CUnk1011d310
 {
