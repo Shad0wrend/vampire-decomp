@@ -28334,6 +28334,13 @@ int __stdcall sub_1014a130(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a140 size=0xc
+int __stdcall sub_1014a140(int a0)
+{
+    return a0 | -2147483648;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a190 size=0x5
 int __stdcall sub_1014a190(int a0)
 {
