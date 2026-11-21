@@ -2733,3 +2733,8 @@ ConVar g_106192f0("mat_wireframe", "0", 0);
 #include "ConVar.h"
 ConVar g_10618830("r_noisefps", "22", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101981c0 size=0xa
+#include "ConVar.h"
+ConVar g_10619188("r_noisescale", "0.6", 0);
+// END FUNCTION
