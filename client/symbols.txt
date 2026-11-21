@@ -299,6 +299,7 @@
 0x10019f50 func   ?sub_10019f50@@YAHXZ sub_10019f50
 0x1001a070 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGLarryBriefcase@@@Z ClientClassInit
 0x1001a1d0 func   ?sub_1001a1d0@@YAHXZ sub_1001a1d0
+0x1001a2f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGHorrorTape_1@@@Z ClientClassInit
 0x1001a450 func   ?sub_1001a450@@YAHXZ sub_1001a450
 0x1001a6d0 func   ?sub_1001a6d0@@YAHXZ sub_1001a6d0
 0x1001a950 func   ?sub_1001a950@@YAHXZ sub_1001a950
