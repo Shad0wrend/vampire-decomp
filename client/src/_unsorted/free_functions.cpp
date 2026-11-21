@@ -6950,6 +6950,39 @@ void *sub_10127df0(int *p, int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128270 size=0x70
+struct CLinkNode1c {
+    char m_pad[0x10];
+    CLinkNode1c *m_pNext;
+    char m_pad14[8];
+    CLinkNode1c *sub_101278a0(int a);
+    CLinkNode1c *sub_101283b0();
+    void sub_101283c0(CLinkNode1c *pNext);
+};
+struct CLinkList {
+    char m_pad[0x14];
+    CLinkNode1c *m_pHead;
+    CLinkNode1c *sub_10128270(int a);
+};
+
+CLinkNode1c *CLinkList::sub_10128270(int a)
+{
+    void *mem = operator new(0x1c);
+    CLinkNode1c *pNode = mem ? ((CLinkNode1c *)mem)->sub_101278a0(a) : 0;
+    CLinkNode1c *p = m_pHead;
+    if (!p) {
+        m_pHead = pNode;
+        pNode->m_pNext = p;
+        return pNode;
+    }
+    while (p->sub_101283b0())
+        p = p->sub_101283b0();
+    p->sub_101283c0(pNode);
+    pNode->m_pNext = 0;
+    return pNode;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128d80 size=0x4d
 struct SFuncField {
     int fieldType;
