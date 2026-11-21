@@ -10968,6 +10968,60 @@ void CAccum64View::sub_1010df80(const __int64 *pValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010dfe0 size=0x84
+#include <string.h>
+#include <stdlib.h>
+
+extern int g_104df700;
+
+namespace block_102478f0 {
+#pragma auto_inline(off)
+struct CMeasureSection2 {
+	char m_pad[0x24];
+	CMeasureSection2 *m_pNext;
+	CMeasureSection2 *sub_1010dfc0();
+};
+extern CMeasureSection2 *g_104df6fc;
+CMeasureSection2 *CMeasureSection2::sub_1010dfc0()
+{
+	return m_pNext;
+}
+CMeasureSection2 *sub_1010dfd0()
+{
+	return g_104df6fc;
+}
+#pragma auto_inline(on)
+}
+using namespace block_102478f0;
+int __cdecl sub_1010e070(const void *a, const void *b);
+
+void sub_1010dfe0()
+{
+	if (g_104df700 <= 1)
+		return;
+
+	CMeasureSection2 *sortarray[128];
+	CMeasureSection2 *ms;
+	memset(sortarray, 512, (size_t)0.0);
+
+	ms = sub_1010dfd0();
+	int c = 0;
+	while (ms) {
+		sortarray[c++] = ms;
+		ms = ms->sub_1010dfc0();
+	}
+
+	qsort(sortarray, c, sizeof(CMeasureSection2 *), sub_1010e070);
+
+	int i;
+	for (i = 0; i < c - 1; i++)
+		sortarray[i]->m_pNext = sortarray[i + 1];
+	sortarray[i]->m_pNext = 0;
+
+	g_104df6fc = sortarray[0];
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e070 size=0x38
 namespace block_102479b0 {
 #pragma auto_inline(off)
