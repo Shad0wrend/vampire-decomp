@@ -3486,6 +3486,7 @@
 0x101e3108 data   ?Msg@@YAXPBDZZ Msg
 0x101e3108 data   Msg Msg
 0x101e3108 data   __imp_?Msg@@YAXPBDZZ _imp_?Msg
+0x101e3114 data   ?Warning@@YAXPBDZZ Warning
 0x101e3118 data   ?DevMsg@@YAXHPBDZZ DevMsg
 0x101e3118 data   DevMsg DevMsg
 0x101e3118 data   __imp_?DevMsg@@YAXHPBDZZ _imp_?DevMsg
