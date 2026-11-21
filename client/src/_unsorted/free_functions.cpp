@@ -8222,6 +8222,39 @@ void * CUnknown101bcef0::sub_101347f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134fa0 size=0x9e
+#include "CDirtySpatialPartitionEntityList.h"
+#include "utlvector.h"
+#include "UtlMem.h"
+
+void __cdecl sub_101d1296(void *p);
+
+class CPrimaryBase { public: virtual void pv(); };
+
+class CMyComplete : public CPrimaryBase, public CAutoGameSystem { };
+
+void *CAutoGameSystem::sub_10134fa0(unsigned int flags)
+{
+	int *v2 = (int *)((char *)this + 0x1c);
+	v2[3] = 0;
+	((UtlMem *)v2)->sub_10135350();
+	v2[4] = v2[0];
+	if (v2[2] != -1) {
+		if (v2[0] != 0) { Plat_Free((void *)v2[0]); v2[0] = 0; }
+		v2[1] = 0;
+	}
+
+	((CUtlVector<int> *)((char *)this + 8))->~CUtlVector<int>();
+
+	CAutoGameSystem *base = ((char *)this - 4) ? this : 0;
+	base->sub_100f3f80();
+
+	if (flags & 1)
+		sub_101d1296((char *)this - 4);
+	return (char *)this - 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135350 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);

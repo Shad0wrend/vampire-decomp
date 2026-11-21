@@ -354,6 +354,7 @@
 0x10134060 func   ?sub_10134060@@YGXPAUCUnknown101bc540Rec@@@Z sub_10134060
 0x10134200 func   ?sub_10134200@CUnknown101bc750@@QAEXH@Z CUnknown101bc750::sub_10134200
 0x101347f0 func   ?sub_101347f0@CUnknown101bcef0@@QAEPAXXZ CUnknown101bcef0::sub_101347f0
+0x10134fa0 func   ?sub_10134fa0@CAutoGameSystem@@QAEPAXI@Z CAutoGameSystem::sub_10134fa0
 0x101351e0 func   ?vfunc1@?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@UAEXPAUSaveRestoreFieldInfo_t@@PAVIRestore@@@Z CUtlVectorDataOps<CUtlVector<int,CUtlMemory<int> >,4>::vfunc1
 0x10135350 func   ?sub_10135350@UtlMem@@QAEXXZ UtlMem::sub_10135350
 0x10135380 func   ?sub_10135380@UtlMem@@QAEXH@Z UtlMem::sub_10135380
