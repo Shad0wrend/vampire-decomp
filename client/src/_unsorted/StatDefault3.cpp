@@ -47,3 +47,14 @@ StatDefault3::StatDefault3(int a0)
 	m_cc = 0;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1013e340 size=0x51
+#include "StatDefault3.h"
+StatDefault3::~StatDefault3()
+{
+    if (m_d0[0]) delete m_d0[0];
+    if (m_d0[1]) delete m_d0[1];
+    if (m_pd8) delete m_pd8;
+    if (m_dc) delete m_dc;
+}
+// END FUNCTION
