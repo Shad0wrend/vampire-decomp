@@ -26438,6 +26438,12 @@ void sub_10177ea0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017a7e0 size=0x1
+void sub_1017a7e0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e330 size=0x28
 #include <stdarg.h>
 
