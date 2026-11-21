@@ -1609,6 +1609,7 @@
 0x1013f2a0 func   ?sub_1013f2a0@CIndexTables@@QAEHHH@Z CIndexTables::sub_1013f2a0
 0x1013f320 func   ?sub_1013f320@CClanInfoView@@QAEPADXZ CClanInfoView::sub_1013f320
 0x1013f420 func   ?sub_1013f420@CUnknown1013f420@@QAEHH@Z CUnknown1013f420::sub_1013f420
+0x1013f430 func   ?sub_1013f430@CUnknown1013f430@@QAEHH@Z CUnknown1013f430::sub_1013f430
 0x1013f440 func   ?sub_1013f440@StatDefault3@@QAEHH@Z StatDefault3::sub_1013f440
 0x1013f8b0 func   ?sub_1013f8b0@@YAHXZ sub_1013f8b0
 0x1013fc80 func   ?sub_1013fc80@CClanDocLoader@@QAEXXZ CClanDocLoader::sub_1013fc80

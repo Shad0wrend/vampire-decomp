@@ -25580,6 +25580,15 @@ int CUnknown1013f420::sub_1013f420(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f430 size=0xc
+struct CUnknown1013f430 { int sub_1013f430(int); };
+int CUnknown1013f430::sub_1013f430(int a0)
+{
+    *(int *)((char *)a0) = *(int *)((char *)this + 0x7c);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013f440 size=0x47
 #include "StatDefault3.h"
 int StatDefault3::sub_1013f440(int n)
