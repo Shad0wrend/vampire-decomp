@@ -10184,6 +10184,14 @@ void __stdcall sub_100a9be0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a9de0 size=0x7
+struct CUnknown100a9de0 { float sub_100a9de0(); };
+float CUnknown100a9de0::sub_100a9de0()
+{
+    return *(float *)((char *)this + 0x19f0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aa490 size=0x1
 void sub_100aa490()
 {
