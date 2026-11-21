@@ -29404,6 +29404,17 @@ bool CUnknown101ed9e0::sub_10151290(void *pNode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151560 size=0xa
+namespace lifted {
+extern int g_105e8660;
+}
+int sub_10151560(int a0)
+{
+    lifted::g_105e8660 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151620 size=0x1
 void sub_10151620()
 {
