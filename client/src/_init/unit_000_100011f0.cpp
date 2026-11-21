@@ -2777,6 +2777,13 @@ ConCommand g_102eacd0("ai_node_graph_built", sub_1002c020, 0, 0, 0);
 RecvTable g_102ead40;
 // END FUNCTION
 
+// FUNCTION: 0x1002c2a0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseTempEntity { struct ignored; }
+template <> int ClientClassInit<DT_BaseTempEntity::ignored>(DT_BaseTempEntity::ignored *);
+int g_102ead3c = ClientClassInit((DT_BaseTempEntity::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1002d3e0 size=0xa
 #include "ConCommand.h"
 void sub_1002d2b0(void);
