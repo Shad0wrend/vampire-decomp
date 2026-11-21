@@ -156,6 +156,23 @@ void CSave::vfunc5(const void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129760 size=0x6d
+#include "utlrbtree.h"
+#include "CSave.h"
+
+void CSave::vfunc6()
+{
+    CUtlVector<int> &stack = *(CUtlVector<int> *)((char *)this + 4);
+    int pos = vfunc0();
+    int start = (*(int **)&m_pSections)[stack.Count() - 1];
+    int size = pos - start;
+    stack.Remove(stack.Count() - 1);
+    vfunc1(start - 4);
+    sub_101299c0(&size, 2);
+    vfunc1(pos);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129b00 size=0x53
 #include "CSave.h"
 struct SaveEB { char pad[0x12e8]; float flOffset; };
