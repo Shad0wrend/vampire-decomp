@@ -1427,6 +1427,13 @@ int g_102e7c8c = ClientClassInit((DT_ItemGDrugsPerscriptionBottle::ignored *)0);
 RecvTable g_102e44d4;
 // END FUNCTION
 
+// FUNCTION: 0x10017350 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGDrugsPillBottle { struct ignored; }
+template <> int ClientClassInit<DT_ItemGDrugsPillBottle::ignored>(DT_ItemGDrugsPillBottle::ignored *);
+int g_102e44d0 = ClientClassInit((DT_ItemGDrugsPillBottle::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10017590 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e7b20;
