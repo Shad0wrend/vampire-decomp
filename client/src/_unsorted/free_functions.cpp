@@ -13023,6 +13023,20 @@ int sub_1012b3d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012b940 size=0x1a
+namespace lifted {
+extern int g_102c36d8;
+extern int g_102c36dc;
+extern char g_102c371c;
+}
+int sub_1012b940()
+{
+    lifted::g_102c36dc = 3;
+    lifted::g_102c36d8 = (int)&lifted::g_102c371c;
+    return (int)&lifted::g_102c36d8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c3d0 size=0xa4
 #include "CUtlVector40.h"
 #include "CUnknown101a59f0.h"
