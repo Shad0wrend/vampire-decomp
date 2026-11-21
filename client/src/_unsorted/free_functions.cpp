@@ -21384,6 +21384,18 @@ int CVStatSubCost_t::sub_10159880(int level, bool bForce)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159b10 size=0x2a
+#include "CUnknown101fbf80.h"
+
+// TARGET: CUnknown101fbf80::sub_10159b10
+bool CUnknown101fbf80::sub_10159b10(int a, int b, int c, int d, int e)
+{
+    if (a == m_x && b == m_y && c == m_z)
+        return true;
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159d10 size=0xeb
 #include "CVStatCost_t.h"
 
