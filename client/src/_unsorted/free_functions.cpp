@@ -3295,6 +3295,23 @@ void CUtlLinkedList8::sub_100d1190(unsigned short elem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d15b0 size=0x22
+struct CUnknown100b7a90 {
+	void sub_100d1630();
+	void *sub_100d15b0(unsigned int flags);
+};
+
+// TARGET: CUnknown100b7a90::sub_100d15b0
+void *CUnknown100b7a90::sub_100d15b0(unsigned int flags)
+{
+	sub_100d1630();
+	if (flags & 1) {
+		operator delete((char *)this - 4);
+	}
+	return (char *)this - 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3380 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
