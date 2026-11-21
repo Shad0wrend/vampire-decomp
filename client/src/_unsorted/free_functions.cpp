@@ -24196,6 +24196,27 @@ void sub_101a2870(const S1024e570Matrix &src1, const S1024e570Vec4 &src2, S1024e
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2930 size=0x7b
+#include "Vector.h"
+#include "VMatrix.h"
+
+void sub_101a2930(const VMatrix &src1, const Vector &src2, Vector &dst)
+{
+	// Make sure it works if src2 == dst
+	Vector tmp;
+	const Vector &v = (&src2 == &dst) ? tmp : src2;
+
+	if( &src2 == &dst )
+	{
+		VectorCopy( src2, tmp );
+	}
+
+	dst[0] = src1[0][0] * v[0] + src1[0][1] * v[1] + src1[0][2] * v[2];
+	dst[1] = src1[1][0] * v[0] + src1[1][1] * v[1] + src1[1][2] * v[2];
+	dst[2] = src1[2][0] * v[0] + src1[2][1] * v[1] + src1[2][2] * v[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2e30 size=0x59
 #include "VMatrix.h"
 #include <math.h>
