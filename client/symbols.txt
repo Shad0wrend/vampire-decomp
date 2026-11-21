@@ -207,6 +207,7 @@
 0x10012c50 func   ?sub_10012c50@@YAHXZ sub_10012c50
 0x10012d70 func   ?ClientClassInit@@YAHPAUignored@DT_OccultLockpicking@@@Z ClientClassInit
 0x10012ed0 func   ?sub_10012ed0@@YAHXZ sub_10012ed0
+0x10012ff0 func   ?ClientClassInit@@YAHPAUignored@DT_OccultPresence@@@Z ClientClassInit
 0x10013150 func   ?sub_10013150@@YAHXZ sub_10013150
 0x100133d0 func   ?sub_100133d0@@YAHXZ sub_100133d0
 0x10013650 func   ?sub_10013650@@YAHXZ sub_10013650
