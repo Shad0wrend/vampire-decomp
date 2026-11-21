@@ -674,6 +674,7 @@
 0x10026490 func   ??_GC_ItemKHannahsSafeKey@@UAEPAXI@Z ??_GC_ItemKHannahsSafeKey@@UAEPAXI@Z
 0x100264d0 func   ?sub_100264d0@@YAHXZ sub_100264d0
 0x100265f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKHannahsSafeKey@@@Z ClientClassInit
+0x10026710 func   ??_GC_ItemKSkylineHavenKey@@UAEPAXI@Z ??_GC_ItemKSkylineHavenKey@@UAEPAXI@Z
 0x10026750 func   ?sub_10026750@@YAHXZ sub_10026750
 0x10026870 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKSkylineHavenKey@@@Z ClientClassInit
 0x100269d0 func   ?sub_100269d0@@YAHXZ sub_100269d0
