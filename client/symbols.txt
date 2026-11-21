@@ -3823,6 +3823,7 @@
 0x101b6900 func   ?sub_101b6900@CUnknown101b6900@@QAEXXZ CUnknown101b6900::sub_101b6900
 0x101b6970 func   ?sub_101b6970@CUnknown101b6970@@QAEHHH@Z CUnknown101b6970::sub_101b6970
 0x101b6c70 func   ?sub_101b6c70@@YAXXZ sub_101b6c70
+0x101b6e10 func   ??_GPropertyDialog@vgui2@@UAEPAXI@Z ??_GPropertyDialog@vgui2@@UAEPAXI@Z
 0x101b6e30 func   ??1PropertyDialog@vgui2@@UAE@XZ vgui2::PropertyDialog::~PropertyDialog
 0x101b6e30 func   ?sub_101b6e30@CUnknown101b6e30@@QAEHXZ CUnknown101b6e30::sub_101b6e30
 0x101b85d0 func   ??1Frame@vgui2@@UAE@XZ vgui2::Frame::~Frame
