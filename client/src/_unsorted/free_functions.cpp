@@ -23495,6 +23495,26 @@ void CUtlMemory12::sub_10163a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101667f0 size=0x21
+struct CUnkDelete101d7c90
+{
+    void *sub_101667f0(unsigned char flags);
+};
+
+// TARGET: sub_101667f0
+void *CUnkDelete101d7c90::sub_101667f0(unsigned char flags)
+{
+    char *p = (char *)this;
+    if (flags & 2) {
+        p = p - 4;
+    }
+    if (flags & 1) {
+        operator delete(p);
+    }
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0e90 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_101e3100)(int);

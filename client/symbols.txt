@@ -932,6 +932,7 @@
 0x10163970 func   ?sub_10163970@S10032fb0@@QAEXH@Z S10032fb0::sub_10163970
 0x101639e0 func   ?sub_101639e0@@YIXPAUMem@@HH@Z sub_101639e0
 0x10163a50 func   ?sub_10163a50@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_10163a50
+0x101667f0 func   ?sub_101667f0@CUnkDelete101d7c90@@QAEPAXE@Z CUnkDelete101d7c90::sub_101667f0
 0x101a0e90 func   ?sub_101a0e90@CUtlVector4@@QAEXH@Z CUtlVector4::sub_101a0e90
 0x101a0f20 func   ?sub_101a0f20@UtlVec8@@QAEXHH@Z UtlVec8::sub_101a0f20
 0x101a2290 func   ?sub_101a2290@VMatrix@@QAEXABVVector@@ABVQAngle@@@Z VMatrix::sub_101a2290
