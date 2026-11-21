@@ -10680,6 +10680,20 @@ float sub_1010bae0(const Vector &P, const Vector &vLineA, const Vector &vLineB, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010bb70 size=0x57
+#include "Vector.h"
+float sub_1010bae0(const Vector &a, const Vector &b, const Vector &c, Vector &out);
+
+void sub_1010bb70(const Vector &a, const Vector &b, const Vector &c, Vector &out, float *pT)
+{
+	Vector dir;
+	float t = sub_1010bae0(a, b, c, dir);
+	if (pT)
+		*pT = t;
+	VectorMA(b, t, dir, out);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010bc90 size=0x85
 #include "Vector.h"
 float sub_1010bae0(const Vector &a, const Vector &b, const Vector &c, Vector &out);
