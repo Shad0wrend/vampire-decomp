@@ -2282,3 +2282,8 @@ ConVar g_105fb208("cl_v_shadows", "3", 128);
 #include "ConVar.h"
 ConVar g_105fb298("cl_v_combat_effects", "1", 128);
 // END FUNCTION
+
+// FUNCTION: 0x101762c0 size=0xa
+#include "ConVar.h"
+ConVar g_105fb370("cl_v_shadow_count", "2", 128);
+// END FUNCTION
