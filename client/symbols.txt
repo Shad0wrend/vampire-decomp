@@ -627,6 +627,7 @@
 0x10037d40 func   ?sub_10037d40@CUnknown10037d40@@QAEHXZ CUnknown10037d40::sub_10037d40
 0x10038230 func   ?sub_10038230@@YAHXZ sub_10038230
 0x100382d0 func   ?sub_100382d0@@YAHXZ sub_100382d0
+0x10038340 func   ?ClientClassInit@@YAHPAUignored@DT_TEShatterSurface@@@Z ClientClassInit
 0x10038670 func   ?sub_10038670@CUnknown10038670@@QAEHXZ CUnknown10038670::sub_10038670
 0x10038780 func   ?sub_10038780@@YAHXZ sub_10038780
 0x10038820 func   ?sub_10038820@@YAHXZ sub_10038820
