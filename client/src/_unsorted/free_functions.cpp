@@ -187,6 +187,14 @@ char sub_100060f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10007280 size=0x4
+struct CUnknown10007280 { char * sub_10007280(); };
+char * CUnknown10007280::sub_10007280()
+{
+    return (char *)this + -4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027d20 size=0x191
 #include "Vector.h"
 void sub_100dfc60(const Vector &a, const Vector &b, int r, int g, int bl, bool noDepthTest, float duration);
