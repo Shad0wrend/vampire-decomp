@@ -3747,6 +3747,13 @@ int g_104870c8 = ClientClassInit((DT_BeamPredictableId::ignored *)0);
 RecvTable g_104870a4;
 // END FUNCTION
 
+// FUNCTION: 0x1007fee0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Beam { struct ignored; }
+template <> int ClientClassInit<DT_Beam::ignored>(DT_Beam::ignored *);
+int g_104870a0 = ClientClassInit((DT_Beam::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10081370 size=0xa
 #include "ConVar.h"
 ConVar g_104870e0("r_DrawBeams", "1", 0);
