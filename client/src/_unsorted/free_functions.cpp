@@ -21592,6 +21592,37 @@ const char *CVStatCost_t::sub_10159fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a290 size=0x68
+struct TScope {
+	const char *name;
+	void *a;
+	void *b;
+};
+extern int *g_101e3128;
+extern TScope *g_101e3124;
+extern char g_102cb824[];
+extern char g_102de300[];
+
+struct TStat {
+	char pad0[4];
+	int f4;
+	char pad8[0x34];
+	int f3c;
+	void sub_1015a290(int a, int b);
+};
+
+void TStat::sub_1015a290(int a, int b)
+{
+	g_101e3124[*g_101e3128].name = g_102cb824;
+	g_101e3124[*g_101e3128].a = g_102de300;
+	g_101e3124[*g_101e3128].b = g_102de300;
+	(*g_101e3128)++;
+	f4 = a;
+	f3c = b;
+	(*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ab20 size=0x69
 struct TScope {
 	const char *name;
