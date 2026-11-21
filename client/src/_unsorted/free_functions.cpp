@@ -47124,6 +47124,18 @@ bool CUnknown10203150::sub_1015f240(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f660 size=0x1c
+struct CUnk102036e0Target { void sub_1015ecd0(int a); };
+struct CUnk102036e0Table { CUnk102036e0Target *sub_1015f2f0(const char *name); };
+extern CUnk102036e0Table g_105f93c0;
+
+// TARGET: sub_1015f660
+void sub_1015f660(int a)
+{
+	g_105f93c0.sub_1015f2f0("Gender")->sub_1015ecd0(a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"
