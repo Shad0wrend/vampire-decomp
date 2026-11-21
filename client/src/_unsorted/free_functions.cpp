@@ -13957,6 +13957,14 @@ int CUnknown100f17e0::sub_100f17e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f1850 size=0x7
+struct CUnknown100f1850 { float sub_100f1850(); };
+float CUnknown100f1850::sub_100f1850()
+{
+    return *(float *)((char *)this + 0xbc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2490 size=0x3
 void __stdcall sub_100f2490(int a0)
 {
