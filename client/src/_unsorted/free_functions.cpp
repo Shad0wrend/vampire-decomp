@@ -174,6 +174,16 @@ void CUtlMemory192::sub_10003c10(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10003d80 size=0x6
+namespace lifted {
+extern char g_102dec00;
+}
+int sub_10003d80()
+{
+    return (int)&lifted::g_102dec00;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10004560 size=0x3
 char sub_10004560()
 {

@@ -13,6 +13,7 @@
 0x10003580 func   ?sub_10003580@@YAHXZ sub_10003580
 0x100039a0 func   ?sub_100039a0@@YAHXZ sub_100039a0
 0x10003c10 func   ?sub_10003c10@CUtlMemory192@@QAEXH@Z CUtlMemory192::sub_10003c10
+0x10003d80 func   ?sub_10003d80@@YAHXZ sub_10003d80
 0x10004560 func   ?sub_10004560@@YADXZ sub_10004560
 0x10004ce0 func   ?sub_10004ce0@Vector@@QAEXMM@Z Vector::sub_10004ce0
 0x10004d80 func   ?sub_10004d80@Vector@@QBE?AV1@M@Z Vector::sub_10004d80
