@@ -5188,6 +5188,45 @@ float sub_1010c4b0(float angle)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c500 size=0xa8
+#include "Vector.h"
+extern float g_101e34f0;
+
+namespace block_1013d6c0 {
+float sub_1010c410(float dest, float src)
+{
+	float delta = dest - src;
+	if (dest > src)
+	{
+		while (delta > 180.0f)
+			delta -= 360.0f;
+	}
+	else
+	{
+		while (delta <= -180.0f)
+			delta += 360.0f;
+	}
+	return delta;
+}
+}
+using namespace block_1013d6c0;
+
+// TARGET: sub_1010c500
+void sub_1010c500(const Vector &p1, const Vector &p2, float t, Vector &out)
+{
+	if (t > g_101e34f0 && t < 1.0f)
+	{
+		out.x = sub_1010c410(p2[0], p1[0]) * t + p1[0];
+		out.y = sub_1010c410(p2[1], p1[1]) * t + p1[1];
+		out.z = sub_1010c410(p2[2], p1[2]) * t + p1[2];
+	}
+	else
+	{
+		VectorCopy(t > g_101e34f0 ? p2 : p1, out);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010df80 size=0x33
 struct CAccum64View {
     char pad0[8];
