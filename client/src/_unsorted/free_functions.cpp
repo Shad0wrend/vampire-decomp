@@ -19675,6 +19675,33 @@ void CUnk101f1bb0::sub_10153810()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101539e0 size=0x67
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+void __cdecl sub_1015fbb0(const char *msg);
+
+struct ItemObjX { void sub_10152d40(); };
+struct ItemMgrX { ItemObjX *sub_10153770(int key); };
+extern ItemMgrX g_105e8a58;
+
+struct CUnknown101f1e20 {
+	int m_nCount;
+	int *m_pItems;
+	void sub_101539e0();
+};
+
+void CUnknown101f1e20::sub_101539e0()
+{
+	char buf[0x80];
+	sprintf(buf, "\n");
+	sub_1015fbb0(buf);
+	if (m_nCount > 0) {
+		for (int i = 0; i < m_nCount; i++)
+			g_105e8a58.sub_10153770(m_pItems[i])->sub_10152d40();
+	}
+	sub_1015fbb0("\n");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153ba0 size=0x2d
 #include "VKeyValues.h"
 char *sub_101546c0(const char *pszSrc);
