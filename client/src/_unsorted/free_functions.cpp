@@ -6025,6 +6025,31 @@ int sub_100da5c0(const Vector &p0, const Vector &p1, const Vector &p2, const flo
 }
 // END FUNCTION
 
+// FUNCTION: 0x100da940 size=0x91
+#include "Vector.h"
+
+bool sub_100da940(const Vector &boxMin, const Vector &boxMax, const Vector &center, float radius)
+{
+	float flDelta;
+	float flDistSqr = 0.0f;
+	if (center[0] < boxMin[0]) {
+		flDelta = center[0] - boxMin[0];
+		flDistSqr = flDelta * flDelta;
+	} else if (center[0] > boxMax[0]) {
+		flDelta = boxMax[0] - center[0];
+		flDistSqr = flDelta * flDelta;
+	}
+	if (center[1] < boxMin[1]) {
+		flDelta = center[1] - boxMin[1];
+		flDistSqr += flDelta * flDelta;
+	} else if (center[1] > boxMax[1]) {
+		flDelta = boxMax[1] - center[1];
+		flDistSqr += flDelta * flDelta;
+	}
+	return flDistSqr < radius * radius;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df190 size=0x24
 struct CUnknown10753434
 {
