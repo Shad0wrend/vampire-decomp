@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1012a270 size=0x4
+#include "CRestore.h"
+int CRestore::vfunc33()
+{
+    return *(int *)((char *)this + 0x1c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a320 size=0x2a
 #include "CRestore.h"
 
