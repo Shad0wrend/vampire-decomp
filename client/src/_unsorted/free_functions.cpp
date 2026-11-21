@@ -29092,6 +29092,14 @@ void sub_101b6c70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101bc8b0 size=0x4
+struct CUnknown101bc8b0 { int sub_101bc8b0(); };
+int CUnknown101bc8b0::sub_101bc8b0()
+{
+    return *(int *)((char *)this + 0x60);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be160 size=0xaa
 #include "CUtlVector4.h"
 
