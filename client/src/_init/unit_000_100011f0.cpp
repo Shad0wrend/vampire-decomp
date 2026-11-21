@@ -2333,3 +2333,9 @@ ConCommand g_105fb81c("showmapscreen", sub_10187da0, 0, 0, 0);
 void sub_10187e00(void);
 ConCommand g_105fb7f4("showsewermapscreen", sub_10187e00, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10187f20 size=0xa
+#include "ConCommand.h"
+void sub_10187f00(void);
+ConCommand g_105fb84c("hidemapscreen", sub_10187f00, 0, 0, 0);
+// END FUNCTION
