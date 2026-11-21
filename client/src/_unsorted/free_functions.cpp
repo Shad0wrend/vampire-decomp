@@ -38499,6 +38499,23 @@ void sub_10177ea0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10178030 size=0x1f
+struct CUnknown10178030 { void * sub_10178030(); };
+void * CUnknown10178030::sub_10178030()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(char *)((char *)this + 0x20) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017a7c0 size=0x3
 void __stdcall sub_1017a7c0(int a0)
 {
