@@ -2087,3 +2087,8 @@ int g_105e7928 = ((int (*)(int))sub_101454a0)(0);
 #include "ConVar.h"
 ConVar g_105f9280("vdiscipline_use_new", "1", 8448);
 // END FUNCTION
+
+// FUNCTION: 0x1015bd60 size=0xa
+#include "ConVar.h"
+ConVar g_105f9348("vdiscipline_allow_renewables", "0", 8576);
+// END FUNCTION
