@@ -15633,6 +15633,23 @@ RecvProp RecvPropFloat(char *pVarName, int offset, int sizeofVar, int flags, Rec
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1660 size=0x4d
+#include "RecvTable.h"
+
+RecvProp RecvPropVector(char *pVarName, int offset, int sizeofVar, int flags, RecvVarProxyFn varProxy)
+{
+	RecvProp ret;
+
+	ret.m_pVarName = pVarName;
+	ret.m_Offset = offset;
+	ret.m_RecvType = DPT_Vector;
+	ret.m_Flags = flags;
+	ret.m_ProxyFn = varProxy;
+
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1840 size=0xe
 int sub_100e1840(int a0, int a1, int a2)
 {
