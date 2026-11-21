@@ -13302,6 +13302,24 @@ const char *sub_1012d970(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d9d0 size=0x37
+struct NameEntry { int m_key; const char *m_pName; };
+extern NameEntry g_102c4228[7];
+extern char g_105e5730[];
+extern int (__cdecl *g_101e3190)(char *, int, const char *, ...);
+const char *sub_1012d9d0(int key)
+{
+	NameEntry *p = g_102c4228;
+	do {
+		if (p->m_key == key)
+			return p->m_pName;
+		p++;
+	} while ((int)p < (int)(g_102c4228 + 7));
+	g_101e3190(g_105e5730, 32, "%i", key);
+	return g_105e5730;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012dd00 size=0x6b
 #include "CUnknown101b2570.h"
 extern "C" unsigned int strlen(const char *);
