@@ -352,6 +352,7 @@
 0x100359b0 func   ?sub_100359b0@CUnknown100359b0@@QAEHXZ CUnknown100359b0::sub_100359b0
 0x10035a50 func   ?sub_10035a50@@YAHXZ sub_10035a50
 0x10035af0 func   ?sub_10035af0@@YAHXZ sub_10035af0
+0x10035cf0 func   ?sub_10035cf0@CUnknown10035cf0@@QAEHXZ CUnknown10035cf0::sub_10035cf0
 0x10035e90 func   ?sub_10035e90@@YAHXZ sub_10035e90
 0x10035f30 func   ?sub_10035f30@@YAHXZ sub_10035f30
 0x10036290 func   ?sub_10036290@@YAHXZ sub_10036290
