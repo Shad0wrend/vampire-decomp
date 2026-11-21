@@ -35815,6 +35815,16 @@ void __fastcall sub_10160610(CDumpTable1006d0a0 *pTable)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160670 size=0x15
+struct CUnknown10160670 { void sub_10160670(); };
+void CUnknown10160670::sub_10160670()
+{
+    *(int *)this = -1;
+    *(int *)((char *)this + 4) = -1;
+    *(int *)((char *)this + 0xc) = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101606f0 size=0x19
 struct CUnknown10204330 { void * sub_101606f0(int); };
 void * CUnknown10204330::sub_101606f0(int a0)
