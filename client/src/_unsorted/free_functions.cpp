@@ -4269,6 +4269,13 @@ bool sub_1004ba90(char *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004bbb0 size=0x6
+int sub_1004bbb0()
+{
+    return 0x2000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004bbc0 size=0x4
 struct CUnknown1004bbc0 { char sub_1004bbc0(); };
 char CUnknown1004bbc0::sub_1004bbc0()
