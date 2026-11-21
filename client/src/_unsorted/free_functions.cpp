@@ -1659,6 +1659,41 @@ void __fastcall sub_10097080(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10097160 size=0x6a
+extern void *(*g_101e3104)(void *, int);
+extern void *(*g_101e3100)(int);
+struct S101859a0 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_10097160(int num);
+};
+// TARGET: S101859a0::sub_10097160
+void S101859a0::sub_10097160(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 1;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_101e3104(m_pMemory, m_nAllocationCount * 0x48);
+    else
+        m_pMemory = g_101e3100(m_nAllocationCount * 0x48);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098720 size=0x59
 float sub_10098720(float x, float lo, float hi)
 {
