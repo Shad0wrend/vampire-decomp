@@ -3107,6 +3107,13 @@ int g_102edefc = ClientClassInit((DT_TEFootprintDecal::ignored *)0);
 RecvTable g_102edf80;
 // END FUNCTION
 
+// FUNCTION: 0x10038320 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEShatterSurface { struct ignored; }
+template <> int ClientClassInit<DT_TEShatterSurface::ignored>(DT_TEShatterSurface::ignored *);
+int g_102edf7c = ClientClassInit((DT_TEShatterSurface::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10038830 size=0xa
 #include "RecvTable.h"
 RecvTable g_102ee320;
