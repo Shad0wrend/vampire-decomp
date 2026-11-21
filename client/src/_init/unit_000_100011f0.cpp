@@ -252,3 +252,9 @@ ConVar g_103eefa8("crosshair_rot", "0.0f", 0);
 #include "ConVar.h"
 ConVar g_103eeff0("mm_verbose", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10065670 size=0xa
+#include "ConCommand.h"
+void sub_100656a0(void);
+ConCommand g_103ef08c("mm_resetparticles", sub_100656a0, 0, 0, 0);
+// END FUNCTION
