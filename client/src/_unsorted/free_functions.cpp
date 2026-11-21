@@ -6451,6 +6451,15 @@ int CUnknown10086690::sub_10086690(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100866a0 size=0xa
+struct CUnknown100866a0 { int sub_100866a0(int); };
+int CUnknown100866a0::sub_100866a0(int a0)
+{
+    *(int *)((char *)this + 0xc) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100866b0 size=0x1d9
 #include "bf_write.h"
 
