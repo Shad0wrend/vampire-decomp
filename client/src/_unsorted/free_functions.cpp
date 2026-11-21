@@ -29811,6 +29811,17 @@ char *sub_101546c0(const char *pszSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101547d0 size=0x8
+namespace lifted {
+struct C10153ef0 { int sub_10153ef0(); };
+}
+struct CUnknown101547d0 { int sub_101547d0(); };
+int CUnknown101547d0::sub_101547d0()
+{
+    return ((lifted::C10153ef0 *)(this - (*(int *)((char *)this + -4))))->sub_10153ef0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154b40 size=0x21
 // TARGET: sub_10154b40
 void __fastcall sub_10154b40(int *p)
