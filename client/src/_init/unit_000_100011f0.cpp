@@ -1302,3 +1302,8 @@ ConVar g_104d33e0("lookstrafe", "0", 128);
 #include "ConVar.h"
 ConVar g_104d2e58("joystick", "0", 128);
 // END FUNCTION
+
+// FUNCTION: 0x10101a80 size=0xa
+#include "ConVar.h"
+ConVar g_104d35c8("cl_forceviewcenter", "0", 0);
+// END FUNCTION
