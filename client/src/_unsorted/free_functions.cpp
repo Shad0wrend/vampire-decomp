@@ -5833,6 +5833,16 @@ unsigned char __fastcall sub_1007cdc0(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ce10 size=0x6
+namespace lifted {
+extern char g_1047733c;
+}
+int sub_1007ce10()
+{
+    return (int)&lifted::g_1047733c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d7f0 size=0x1
 void sub_1007d7f0()
 {
