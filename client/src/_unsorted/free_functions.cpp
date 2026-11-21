@@ -22748,6 +22748,12 @@ int CUnknown101f1a30::sub_10153720(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101537d0 size=0x3
+void __stdcall sub_101537d0(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153810 size=0x1c
 struct CUnk101f1bb0 {
 	void *m_00;
