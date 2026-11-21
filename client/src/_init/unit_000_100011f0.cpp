@@ -1272,3 +1272,8 @@ ConVar g_104d3518("cl_pitchup", "89", 0);
 #include "ConVar.h"
 ConVar g_104d39b0("cl_sidespeed", "400", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101018a0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3cb8("cl_upspeed", "320", 128);
+// END FUNCTION
