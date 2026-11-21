@@ -13997,6 +13997,17 @@ void __stdcall sub_100f27a0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3680 size=0x7
+namespace lifted {
+extern char g_102351cc;
+}
+struct CUnknown100f3680 { void sub_100f3680(); };
+void CUnknown100f3680::sub_100f3680()
+{
+    *(int *)this = (int)&lifted::g_102351cc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3f90 size=0xcb
 extern "C" void *__cdecl sub_101d0f30(void *, const void *, unsigned int);
 extern void *(__cdecl *g_101e3100)(int);
