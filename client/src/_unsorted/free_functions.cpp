@@ -22344,6 +22344,16 @@ void *CAutoGameSystem::sub_10134fa0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135100 size=0x6
+namespace lifted {
+extern char g_105e5a40;
+}
+int sub_10135100()
+{
+    return (int)&lifted::g_105e5a40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101352e0 size=0x21
 // TARGET: CUtlVector4::sub_101352e0
 #include "CUtlVector4.h"
