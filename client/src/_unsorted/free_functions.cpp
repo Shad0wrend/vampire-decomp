@@ -6290,6 +6290,16 @@ void SInit::sub_100a5420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5a30 size=0x5
+namespace lifted {
+int sub_1009f2b0();
+}
+int sub_100a5a30()
+{
+    return lifted::sub_1009f2b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a9be0 size=0x3
 void __stdcall sub_100a9be0(int a0, int a1, int a2)
 {
