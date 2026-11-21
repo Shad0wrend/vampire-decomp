@@ -20496,6 +20496,50 @@ void CUnknown101f5f00::sub_10156180(int first, int key, int second)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101563f0 size=0x121
+#include "FileSystemViews.h"
+
+extern IFileSystemView *g_104a580c;
+extern IUniformRandomView *g_104a5738;
+extern char g_105f8868[];
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+const char *__stdcall sub_101563f0(const char *szName)
+{
+    char path[260];
+    int handle;
+    int count = 0;
+    int pick, i;
+    const char *file;
+    sprintf(path, "sound\\whispers\\%s\\*.wav", szName);
+    file = g_104a580c->FindFirst(path, &handle);
+    while (file) {
+        if (!g_104a580c->FindIsDirectory(handle))
+            count++;
+        file = g_104a580c->FindNext(handle);
+    }
+    g_104a580c->FindClose(handle);
+    if (count != 0) {
+        count--;
+        pick = g_104a5738->RandomInt(0, count);
+        i = 0;
+        file = g_104a580c->FindFirst(path, &handle);
+        while (file) {
+            if (!g_104a580c->FindIsDirectory(handle)) {
+                if (pick == i)
+                    break;
+                i++;
+            }
+            file = g_104a580c->FindNext(handle);
+        }
+        sprintf(g_105f8868, "whispers\\%s\\%s", szName, file);
+        g_104a580c->FindClose(handle);
+        return g_105f8868;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156770 size=0x40
 struct CUnknownStat101f69a0 {
     int m0;
