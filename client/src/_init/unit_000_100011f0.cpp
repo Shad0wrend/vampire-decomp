@@ -1352,3 +1352,9 @@ ConCommand g_104d32d4("-moveup", sub_10101fc0, 0, 0, 0);
 void sub_10101fd0(void);
 ConCommand g_104d3684("+movedown", sub_10101fd0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10104950 size=0xa
+#include "ConCommand.h"
+void sub_10101fe0(void);
+ConCommand g_104d3178("-movedown", sub_10101fe0, 0, 0, 0);
+// END FUNCTION
