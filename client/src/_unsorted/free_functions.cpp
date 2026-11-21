@@ -37727,6 +37727,17 @@ UtlMem *UtlMem::sub_101be2e0(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be740 size=0xc
+namespace lifted {
+extern int g_1067b40c;
+}
+int __stdcall sub_101be740(int a0)
+{
+    lifted::g_1067b40c = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be750 size=0x6
 namespace lifted {
 extern int g_1067b40c;
