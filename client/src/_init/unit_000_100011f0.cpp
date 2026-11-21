@@ -2763,3 +2763,8 @@ ConVar g_106193c8("fog_override", "0", 0);
 #include "ConVar.h"
 ConVar g_10618fd0("fog_start", "-1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1019c6f0 size=0xa
+#include "ConVar.h"
+ConVar g_10619410("fog_end", "-1", 0);
+// END FUNCTION
