@@ -2171,6 +2171,13 @@ int g_102e5bcc = ClientClassInit((DT_ItemGSewerBook1::ignored *)0);
 RecvTable g_102e5618;
 // END FUNCTION
 
+// FUNCTION: 0x10020e50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKGalleryNoirKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKGalleryNoirKey::ignored>(DT_ItemKGalleryNoirKey::ignored *);
+int g_102e5614 = ClientClassInit((DT_ItemKGalleryNoirKey::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10021090 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e68ec;
