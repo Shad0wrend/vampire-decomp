@@ -8199,6 +8199,12 @@ int sub_100ebee0(int nIndex, int server, Vector &offset)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ebf40 size=0x1
+void sub_100ebf40()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ec3a0 size=0xae
 #include "CGameMovement.h"
 
