@@ -1382,3 +1382,9 @@ ConCommand g_104d3374("+right", sub_10102010, 0, 0, 0);
 void sub_10102020(void);
 ConCommand g_104d3828("-right", sub_10102020, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10104ae0 size=0xa
+#include "ConCommand.h"
+void sub_10102030(void);
+ConCommand g_104d3144("+forward", sub_10102030, 0, 0, 0);
+// END FUNCTION
