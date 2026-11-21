@@ -648,3 +648,8 @@ ConVar g_104a4258("r_glowfadeout", "0.1", 0);
 #include "ConVar.h"
 ConVar g_104a4898("phoneme_delay", "0", 128);
 // END FUNCTION
+
+// FUNCTION: 0x100c3a50 size=0xa
+#include "ConVar.h"
+ConVar g_104a4d28("flex_rules", "1", 128);
+// END FUNCTION
