@@ -360,6 +360,31 @@ int sub_100039a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10003aa0 size=0x92
+#include "RecvTable.h"
+extern RecvTable g_102dea38;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102abca0;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropString(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_StringToString(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKeyGeneric { struct ignored; }
+template <> int ClientClassInit<DT_ItemKeyGeneric::ignored>(DT_ItemKeyGeneric::ignored *)
+{
+	char *pRecvTableName = "DT_ItemKeyGeneric";
+	RecvTable &RecvTable = g_102dea38;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102abca0, DataTableRecvProxy_StaticDataTable),
+		RecvPropString("m_szKeyClass", 2424, 64, 0, RecvProxy_StringToString),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003c10 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
