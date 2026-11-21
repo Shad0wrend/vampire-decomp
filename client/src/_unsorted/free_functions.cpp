@@ -46933,6 +46933,26 @@ bool CUnknown101dce30::sub_10147be0(CUnknown101dc5a0Keys *pKeys, const char *psz
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147da0 size=0x90
+#include "CUnknown101e0f00.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+void CUnknown101e0f00Src::sub_10147da0(const char *pszLabel)
+{
+	char buf[512];
+	if (m_nA || m_sub.sub_10147730()) {
+		Q_snprintf(buf, 512, "[%s]:\n", pszLabel);
+		Msg("%s", buf);
+		for (int i = 0; i < m_nA; i++)
+			m_ppA[i]->sub_10147790();
+		for (int j = 0; j < m_nB; j++)
+			m_ppB[j]->sub_10147290();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147e30 size=0x2b
 #include "CUnknown101dd480.h"
 
