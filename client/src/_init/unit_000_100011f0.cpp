@@ -720,3 +720,8 @@ ConVar g_104cf010("cl_softshadows", "1", 0);
 #include "ConVar.h"
 ConVar g_104cefc0("r_worldlights", "2", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100dfd60 size=0xa
+#include "ConVar.h"
+ConVar g_104cf3e0("mat_fullbright", "0", 0);
+// END FUNCTION
