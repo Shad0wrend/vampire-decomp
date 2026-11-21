@@ -11702,6 +11702,29 @@ float sub_1004b2f0(const matrix3x4_t *pMatrix, const Vector *pVec)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004b3a0 size=0xa7
+#include "matrix3x4_t.h"
+#include <math.h>
+
+extern float g_101e34f0;
+extern float g_10227c6c;
+extern float g_10227bec;
+
+float sub_1004b3a0(const matrix3x4_t *pMatrix, const Vector *pVec)
+{
+	Vector tmp = *pVec;
+	VectorNormalize(tmp);
+	float x = tmp.x * pMatrix->m_flMatVal[0][0] + tmp.y * pMatrix->m_flMatVal[1][0] + tmp.z * pMatrix->m_flMatVal[2][0];
+	float y = tmp.x * pMatrix->m_flMatVal[0][2] + tmp.y * pMatrix->m_flMatVal[1][2] + tmp.z * pMatrix->m_flMatVal[2][2];
+	if (x == g_101e34f0 && y == g_101e34f0)
+		return g_101e34f0;
+	float yaw = atan2(y, x) * g_10227c6c;
+	if (yaw < g_101e34f0)
+		yaw += g_10227bec;
+	return yaw;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004b5c0 size=0x19
 namespace lifted {
 extern char g_10227c78;
