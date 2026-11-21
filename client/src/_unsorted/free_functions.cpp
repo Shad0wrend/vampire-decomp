@@ -11870,6 +11870,41 @@ char CUnknown1042d9a0::sub_10120a10(CUnknown1042d9a0 *other)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10126a30 size=0x39
+void sub_10120660(int a, int b);
+
+struct CUnknown1019bf80Entry {
+    int m_a;
+    int m_b;
+    int m_nIndex;
+    int m_c;
+    int m_d;
+    int m_e;
+};
+
+struct CUnknown1019bf80List {
+    int m_nCount;
+    int m_pad0004[4];
+    CUnknown1019bf80Entry m_entries[1];
+};
+
+// TARGET: sub_10126a30
+void sub_10126a30(CUnknown1019bf80List *pList)
+{
+    int i = 0;
+    if (pList->m_nCount > 0) {
+        CUnknown1019bf80Entry *pEntry = pList->m_entries;
+        do {
+            if (pEntry->m_nIndex >= 0) {
+                sub_10120660(pEntry->m_a, pList->m_entries[pEntry->m_nIndex].m_a);
+            }
+            i++;
+            pEntry++;
+        } while (i < pList->m_nCount);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101271e0 size=0x7d
 struct IApi {
     virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4();
