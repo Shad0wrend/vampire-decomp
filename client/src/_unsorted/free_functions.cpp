@@ -19336,6 +19336,26 @@ void sub_1007d7f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d890 size=0x2e
+#include <string.h>
+// TARGET: sub_1007d890
+extern const char *g_102abcb0[6];
+
+int sub_1007d890(const char *psz)
+{
+    int i = 0;
+    do
+    {
+        if (_strcmpi(g_102abcb0[i], psz) == 0)
+        {
+            return i;
+        }
+        i++;
+    } while (i < 6);
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d930 size=0x1a
 char *sub_1007b160();
 
