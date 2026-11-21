@@ -40327,6 +40327,37 @@ int CSoundEmitterSystemBase::sub_1012f5c0(bool bVerbose)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f720 size=0xbf
+extern "C" __declspec(dllimport) int Q_strcasecmp(const char *, const char *);
+__declspec(dllimport) void DevMsg(const char *, ...);
+extern const float g_101e34f0;
+extern const float g_1022559c;
+extern const float g_10229f2c;
+extern const float g_10227bc0;
+extern const float g_1023668c;
+extern const float g_102291b0;
+
+float __stdcall sub_1012f720(const char *name)
+{
+    if (name) {
+        if (Q_strcasecmp(name, "ATTN_NONE") == 0)
+            return g_101e34f0;
+        if (Q_strcasecmp(name, "ATTN_NORM") != 0) {
+            if (Q_strcasecmp(name, "ATTN_IDLE") == 0)
+                return g_1022559c;
+            if (Q_strcasecmp(name, "ATTN_STATIC") == 0)
+                return g_10229f2c;
+            if (Q_strcasecmp(name, "ATTN_RICOCHET") == 0)
+                return g_10227bc0;
+            if (Q_strcasecmp(name, "ATTN_GUNFIRE") == 0)
+                return g_1023668c;
+            DevMsg("CSoundEmitterSystem:  Unknown attenuation key %s\n", name);
+        }
+    }
+    return g_102291b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012f8c0 size=0x4a
 struct Entry { float value; const char *text; };
 extern Entry g_102c4260[1];
