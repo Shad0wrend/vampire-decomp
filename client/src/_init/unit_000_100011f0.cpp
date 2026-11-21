@@ -2122,3 +2122,9 @@ ConVar g_105fab38("cl_showfps", "0", 0, "Draw fps meter at top of screen");
 #include "ConVar.h"
 ConVar g_105fab88("cl_showpos", "0", 0, "Draw current position at top of screen");
 // END FUNCTION
+
+// FUNCTION: 0x10167ba0 size=0xa
+#include "ConCommand.h"
+void sub_10167b10(void);
+ConCommand g_105facd4("vloadtips", sub_10167b10, 0, 0, 0);
+// END FUNCTION
