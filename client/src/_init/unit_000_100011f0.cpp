@@ -826,3 +826,8 @@ ConVar g_104d1fc8("c_minpitch", "0", 128);
 #include "ConVar.h"
 ConVar g_104d21c0("c_maxyaw", "135", 128);
 // END FUNCTION
+
+// FUNCTION: 0x100fb140 size=0xa
+#include "ConVar.h"
+ConVar g_104d16d8("c_minyaw", "-135", 128);
+// END FUNCTION
