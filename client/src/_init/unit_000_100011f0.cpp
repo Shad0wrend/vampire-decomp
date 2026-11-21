@@ -911,3 +911,8 @@ ConVar g_104d1f30("camfeed_forward_base", "-50.0", 0);
 #include "ConVar.h"
 ConVar g_104d2010("camfeed_forward_pow", "0.5", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fb690 size=0xa
+#include "ConVar.h"
+ConVar g_104d24a0("camdead_forward_base", "-50.0", 0);
+// END FUNCTION
