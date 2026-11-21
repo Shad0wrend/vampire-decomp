@@ -14770,6 +14770,31 @@ void CStringPool::sub_10137d90()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137dd0 size=0x15b
+#include "CUtlRBTree12.h"
+#include "utlrbtree.h"
+struct CRBTree12Entry_101c03c0 { char data[4]; };	// the tree of sentinel 0x1072c7dc (RotateLeft 0x101c03c0)
+
+// TARGET: CUtlRBTree12::sub_10137dd0
+int CUtlRBTree12::sub_10137dd0(int key)
+{
+	const CUtlRBTree<CRBTree12Entry_101c03c0, unsigned short> *tree = (const CUtlRBTree<CRBTree12Entry_101c03c0, unsigned short> *)this;
+	unsigned short cur = m_Root;
+	while (cur != InvalidIndex())
+	{
+		if (m_LessFunc(&key, m_pElements[cur].m_Data))
+			cur = tree->Links(cur).m_Left;
+		else if (m_LessFunc(m_pElements[cur].m_Data, &key))
+			cur = tree->Links(cur).m_Right;
+		else
+			break;
+	}
+	if (tree->Links(cur).m_Left != cur)
+		return *(int *)m_pElements[cur].m_Data;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138700 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
