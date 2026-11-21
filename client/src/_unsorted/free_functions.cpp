@@ -3309,6 +3309,45 @@ bool sub_1008b180(Base_100c40e0 *p, int idx, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b360 size=0x3b
+struct CEntry100c4340
+{
+	char m_pad0000[0x14];
+	int m_key;
+};
+
+struct CHolder100c4340
+{
+	char m_pad0000[0xf8];
+	int m_nCount;
+	int m_nOffset;
+};
+
+// TARGET: sub_1008b360
+CEntry100c4340 *sub_1008b360(CHolder100c4340 *pHolder, int key)
+{
+	int n = pHolder->m_nCount;
+	if (1 <= n)
+	{
+		int i = 0;
+		CEntry100c4340 *p = (CEntry100c4340 *)((char *)pHolder + pHolder->m_nOffset);
+		if (p->m_key == key)
+			return p;
+		long k;
+		do
+		{
+			i++;
+			if (i == n)
+				return 0;
+			p++;
+			k = p->m_key;
+		} while (k != key);
+		return p;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b560 size=0x21
 // TARGET: sub_1008b560
 void sub_1008b560(int *pTable, char *pSrc)
