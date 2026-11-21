@@ -7581,6 +7581,29 @@ SFloatPair sub_10107010(const char *text)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101070a0 size=0x35
+#include "CUnknown1070b244.h"
+
+extern CUnknown1070b244 *g_104a5738;
+
+struct CUnknown1012f700
+{
+	float m_flMin;
+	float m_flMax;
+};
+
+// TARGET: sub_101070a0
+float sub_101070a0(CUnknown1012f700 *pRange)
+{
+	float flMin = pRange->m_flMin;
+	if (pRange->m_flMax != 0.0f)
+	{
+		return g_104a5738->vfunc1(0.0f, pRange->m_flMax) + flMin;
+	}
+	return flMin;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107500 size=0x43
 #include "Vector.h"
 #include <math.h>
