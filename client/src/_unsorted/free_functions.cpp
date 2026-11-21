@@ -16165,6 +16165,22 @@ char *CUnit101d5e40::sub_1013ffd0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101400d0 size=0x23
+void __fastcall sub_1013f490(void *pObj);
+
+// TARGET: sub_101400d0
+void __fastcall sub_101400d0(void *pSelf)
+{
+    int i = 0;
+    if (0 < *(int *)((char *)pSelf + 4)) {
+        do {
+            sub_1013f490(*(void **)(*(int *)((char *)pSelf + 8) + i * 4));
+            i++;
+        } while (i < *(int *)((char *)pSelf + 4));
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101401e0 size=0x29
 #include "Vector.h"
 struct CUnknown101d61e0_Sub10 {
