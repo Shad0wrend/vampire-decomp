@@ -1298,6 +1298,7 @@
 0x100a35f0 func   ?sub_100a35f0@Mem1c@@QAEXH@Z Mem1c::sub_100a35f0
 0x100a3710 func   ?sub_100a3710@@YAHXZ sub_100a3710
 0x100a3810 func   ?ClientClassInit@@YAHPAUignored@DT_BaseNetworkable@@@Z ClientClassInit
+0x100a38e0 func   ??1C_BaseNetworkable@@UAE@XZ C_BaseNetworkable::~C_BaseNetworkable
 0x100a3990 func   ?sub_100a3990@@YAXXZ sub_100a3990
 0x100a39a0 func   ?sub_100a39a0@CUnknown100a39a0@@QAEHXZ CUnknown100a39a0::sub_100a39a0
 0x100a39b0 func   ?sub_100a39b0@CUnknown100a39b0@@QAEHH@Z CUnknown100a39b0::sub_100a39b0
