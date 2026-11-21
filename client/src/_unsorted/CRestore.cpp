@@ -344,3 +344,24 @@ int CRestore::vfunc24(float *pValues, int count, int nBytesAvailable)
 	return n;
 }
 // END FUNCTION
+
+// FUNCTION: 0x1012b2e0 size=0x7f
+#include "CRestore.h"
+
+extern Vector g_104d4970;
+
+// TARGET: CRestore::vfunc25
+int CRestore::vfunc25(Vector *pValues, int count, int nBytesAvailable)
+{
+	const Vector *pOffset;
+	if (*(int *)(m_pData2 + 0x12c4))
+		pOffset = (const Vector *)(m_pData2 + 0x12dc);
+	else
+		pOffset = &g_104d4970;
+	Vector vecOffset = *pOffset;
+	int nRead = vfunc22(pValues, count, nBytesAvailable);
+	for (int i = nRead - 1; i >= 0; i--)
+		VectorAdd(vecOffset, pValues[i], pValues[i]);
+	return nRead;
+}
+// END FUNCTION
