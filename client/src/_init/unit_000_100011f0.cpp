@@ -658,3 +658,8 @@ ConVar g_104a4d28("flex_rules", "1", 128);
 #include "ConVar.h"
 ConVar g_104a48f8("print_flex_weights", "0", 128);
 // END FUNCTION
+
+// FUNCTION: 0x100c3af0 size=0xa
+#include "ConVar.h"
+ConVar g_104a4450("print_flex_rules", "0", 128);
+// END FUNCTION
