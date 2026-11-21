@@ -5919,6 +5919,22 @@ void CUnknown101bc750::sub_10134200(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135350 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_101e30fc)(void *);
+
+void UtlMem::sub_10135350()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_101e30fc(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135380 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
