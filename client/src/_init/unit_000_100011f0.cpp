@@ -2297,3 +2297,9 @@ ConVar g_105fb2e0("vchar_edit_histories", "0", 128);
 #include "ConVar.h"
 ConVar g_105fb6a0("vchar_skip_intro", "0", 128);
 // END FUNCTION
+
+// FUNCTION: 0x101843d0 size=0xa
+#include "ConCommand.h"
+void sub_10184360(void);
+ConCommand g_105fb730("showhotkeys", sub_10184360, 0, 0, 0);
+// END FUNCTION
