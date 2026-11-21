@@ -2339,6 +2339,7 @@
 0x101b1e60 func   ?sub_101b1e60@UtlMem@@QAEXXZ UtlMem::sub_101b1e60
 0x101b3480 func   ?sub_101b3480@UtlMem@@QAEXH@Z UtlMem::sub_101b3480
 0x101b6900 func   ?sub_101b6900@CUnknown101b6900@@QAEXXZ CUnknown101b6900::sub_101b6900
+0x101b6970 func   ?sub_101b6970@CUnknown101b6970@@QAEHHH@Z CUnknown101b6970::sub_101b6970
 0x101b6c70 func   ?sub_101b6c70@@YAXXZ sub_101b6c70
 0x101b6e30 func   ?sub_101b6e30@CUnknown101b6e30@@QAEHXZ CUnknown101b6e30::sub_101b6e30
 0x101b9d50 func   ?sub_101b9d50@CUnknown101b9d50@@QAEHH@Z CUnknown101b9d50::sub_101b9d50
