@@ -10531,6 +10531,24 @@ void CUnk101ec450::sub_101501b0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101501d0 size=0x1f
+extern char *(__cdecl *g_105e8640)(int, int);
+extern char g_102de300[];
+
+struct CUnk101ec480
+{
+    char *sub_101501d0(int b);
+};
+char *CUnk101ec480::sub_101501d0(int b)
+{
+    if (g_105e8640)
+    {
+        return g_105e8640((int)this, b);
+    }
+    return g_102de300;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150bc0 size=0x7b
 #include "CUnknown101ed170.h"
 
