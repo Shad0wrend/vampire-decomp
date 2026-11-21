@@ -1112,6 +1112,7 @@
 0x10153ba0 func   ?sub_10153ba0@VKeyValues@@QAEXPBD@Z VKeyValues::sub_10153ba0
 0x10153c20 func   ?sub_10153c20@E101f2140@@QAEXXZ E101f2140::sub_10153c20
 0x10153ee0 func   ?sub_10153ee0@CUnknown10153ee0@@QAEHXZ CUnknown10153ee0::sub_10153ee0
+0x10153ef0 func   ?sub_10153ef0@CUnknown10153ef0@@QAEHXZ CUnknown10153ef0::sub_10153ef0
 0x10153f10 func   ?sub_10153f10@CUnk101f2520@@QAEPAUCVBaseB@@PAX@Z CUnk101f2520::sub_10153f10
 0x10153fb0 func   ?sub_10153fb0@@YAXXZ sub_10153fb0
 0x10153fe0 func   ?sub_10153fe0@@YAXXZ sub_10153fe0
