@@ -4170,6 +4170,58 @@ char sub_1008c5d0(CBoneOwner *p, int a, int b, Vector *turn, Vector *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008c690 size=0xd6
+struct SegEntry {
+	int m_nValue;
+	int m_n04;
+	float m_fA;
+	float m_fB;
+	int m_n10;
+	int m_n14;
+	int m_n18;
+	int m_n1c;
+	int m_n20;
+	int m_n24;
+	int m_n28;
+};
+
+struct SegTable {
+	int m_n00;
+	int m_n04;
+	int m_n08;
+	int m_nCount;
+	int m_nSegs;
+	int m_nOffset;
+};
+
+bool sub_10109dd0(float a, float b, float c, float &r1, float &r2);
+
+float sub_1008c690(SegTable *tbl, float t)
+{
+	float prev = 0.0f;
+	if (t <= 0.0f)
+		return 0.0f;
+	int i = 0;
+	if (tbl->m_nSegs > 0) {
+		SegEntry *e = (SegEntry *)((char *)tbl + tbl->m_nOffset);
+		do {
+			float len = (e->m_fB + e->m_fA) * 0.5;
+			if (len >= t) {
+				float root1, root2;
+				if (sub_10109dd0((e->m_fB - e->m_fA) * 0.5, e->m_fA, -t, root1, root2))
+					return ((e->m_nValue - prev) * root1 + prev) * (1.0 / (tbl->m_nCount - 1));
+				return 0.0f;
+			}
+			t -= len;
+			i++;
+			prev = (float)e->m_nValue;
+			e++;
+		} while (i < tbl->m_nSegs);
+	}
+	return 1.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008ce40 size=0x154
 #include "CUnknown101dff00.h"
 #include "CRestore.h"
