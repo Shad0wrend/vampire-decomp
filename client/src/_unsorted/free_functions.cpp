@@ -245,6 +245,21 @@ void CMem8b_t::sub_1002c130(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002d430 size=0x33
+#include "CUtlMemory12.h"
+extern void *(*g_101e3100)(int);
+
+CUtlMemory12 *CUtlMemory12::sub_1002d430(int growSize, int allocationCount)
+{
+    m_pMemory = 0;
+    m_allocationCount = allocationCount;
+    m_growSize = growSize;
+    if (allocationCount)
+        m_pMemory = (char *)g_101e3100(allocationCount * 12);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002d620 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
