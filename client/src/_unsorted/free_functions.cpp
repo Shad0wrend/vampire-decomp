@@ -10338,6 +10338,16 @@ char sub_1009db80(char a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009dd60 size=0x10
+struct CUnknown1009dd60 { void * sub_1009dd60(); };
+void * CUnknown1009dd60::sub_1009dd60()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009e230 size=0x6
 namespace lifted {
 extern int g_102b8e9c;
