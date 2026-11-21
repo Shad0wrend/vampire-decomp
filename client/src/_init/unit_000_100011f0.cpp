@@ -725,3 +725,8 @@ ConVar g_104cefc0("r_worldlights", "2", 0);
 #include "ConVar.h"
 ConVar g_104cf3e0("mat_fullbright", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100e29e0 size=0x5
+#include "Vector.h"
+Vector g_104cf544(0.0f, 0.0f, 0.0f);
+// END FUNCTION
