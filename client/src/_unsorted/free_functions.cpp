@@ -19765,6 +19765,15 @@ int CUnknown101209f0::sub_101209f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120a00 size=0x9
+struct CUnknown10120a00 { int sub_10120a00(int); };
+int CUnknown10120a00::sub_10120a00(int a0)
+{
+    *(int *)this = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120a10 size=0x7e
 #include "CUnknown1042d9a0.h"
 
