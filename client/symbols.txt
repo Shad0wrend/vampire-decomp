@@ -281,6 +281,7 @@
 0x10011d10 func   ??_GC_ResearchBook_HG_DODGE@@UAEPAXI@Z ??_GC_ResearchBook_HG_DODGE@@UAEPAXI@Z
 0x10011d50 func   ?sub_10011d50@@YAHXZ sub_10011d50
 0x10011e70 func   ?ClientClassInit@@YAHPAUignored@DT_ResearchBook_HG_DODGE@@@Z ClientClassInit
+0x10011f90 func   ??_GC_ResearchBook_MG_MELEE@@UAEPAXI@Z ??_GC_ResearchBook_MG_MELEE@@UAEPAXI@Z
 0x10011fd0 func   ?sub_10011fd0@@YAHXZ sub_10011fd0
 0x100120f0 func   ?ClientClassInit@@YAHPAUignored@DT_ResearchBook_MG_MELEE@@@Z ClientClassInit
 0x10012250 func   ?sub_10012250@@YAHXZ sub_10012250
