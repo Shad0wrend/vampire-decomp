@@ -1746,3 +1746,8 @@ ConVar g_104d3e58("m_pitch", "0.022", 128, "Mouse pitch factor.");
 #include "ConVar.h"
 ConVar g_104d3ea0("m_filter", "0", 128, "Mouse filtering (set this to 1 to average the mouse over 2 frames).");
 // END FUNCTION
+
+// FUNCTION: 0x101060f0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3fc0("sensitivity", "3", 128, "Mouse sensitivity.", true, 0.1f, true, 100.0f);
+// END FUNCTION
