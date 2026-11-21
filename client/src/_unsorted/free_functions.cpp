@@ -49504,6 +49504,24 @@ int __fastcall sub_10156770(CUnknownStat101f69a0 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156af0 size=0x32
+#include "CVModInfo_t.h"
+#include "CVTraitEffect_t.h"
+
+char __stdcall sub_101613e0(void *p);
+
+void CVTraitEffect_t::sub_10156af0(CVModInfo_t *pInfo, int *pResult)
+{
+    if (sub_101613e0((char *)pInfo + 4)) {
+        if (m_nKind == 7) {
+            if (!m_cost.sub_10159c80()) {
+                *pResult = (int)&m_cost;
+            }
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156b30 size=0x2e
 // TARGET: CUnknown101f6c50::sub_10156b30
 #include "CUnknown101f6c50.h"
