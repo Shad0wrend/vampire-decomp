@@ -8907,6 +8907,30 @@ int sub_10034070()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100340e0 size=0xa0
+#include "RecvTable.h"
+extern RecvTable g_102ec460;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+RecvProp InternalRecvPropArray(int, int, char *, void (*)(void *, int, int));
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBeamSpline { struct ignored; }
+template <> int ClientClassInit<DT_TEBeamSpline::ignored>(DT_TEBeamSpline::ignored *)
+{
+	char *pRecvTableName = "DT_TEBeamSpline";
+	RecvTable &RecvTable = g_102ec460;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_nPoints", 208, 4, 0, 0),
+		RecvPropVector("m_vecPoints[0]", 16, 12, 0, RecvProxy_VectorToVector),
+		InternalRecvPropArray(16, 12, "m_vecPoints", 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10034200 size=0x12
 namespace lifted {
 extern char g_102260e0;
