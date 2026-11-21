@@ -249,6 +249,13 @@ char sub_10028610()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028620 size=0x5
+char __stdcall sub_10028620(int a0, int a1, int a2, int a3, int a4)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028630 size=0x1
 void sub_10028630()
 {
