@@ -21042,6 +21042,34 @@ void __fastcall sub_10158950(CVDmg_t *self, int, int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158a80 size=0x7b
+#include "CVDmg_t.h"
+struct TraceEnt { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern TraceEnt *g_101e3124;
+extern char g_102cb38c[];
+extern char g_102de300[];
+int CVDmg_t::sub_10158a80()
+{
+    g_101e3124[*g_101e3128].a = g_102cb38c;
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    ++*g_101e3128;
+    if (m_field08 > 0) {
+        int v = m_field08;
+        --*g_101e3128;
+        return v;
+    }
+    if (m_field08 == 0) {
+        int v = m_field04;
+        --*g_101e3128;
+        return v;
+    }
+    --*g_101e3128;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101594e0 size=0x6d
 #include "CVStatCost_t.h"
 
