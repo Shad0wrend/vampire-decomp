@@ -7639,6 +7639,60 @@ void *CUnknown101b3730::sub_1012e940(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012e970 size=0x82
+#include "utlvector.h"
+#include "CSoundEmitterSystemBase.h"
+#include "CUnknown1024b370.h"
+#include "CMem8_t.h"
+#include <string.h>
+
+inline void *operator new(unsigned int, void *p) { return p; }
+
+struct SymbolRecord_t
+{
+	CUnknown1024b370Symbol symbol;
+	int gender;
+};
+
+struct SymbolVec_t
+{
+	CMem8_t m_Memory;	// 0x00
+	int m_Size;	// 0x0c
+	SymbolRecord_t *m_pElements;	// 0x10
+
+	SymbolRecord_t &Element(int i) { return ((SymbolRecord_t *)m_Memory.m_pMemory)[i]; }
+
+	void InsertBefore(int elem, const SymbolRecord_t &src)
+	{
+		if (m_Size + 1 > m_Memory.m_nAllocationCount)
+			m_Memory.sub_101315b0(m_Size + 1 - m_Memory.m_nAllocationCount);
+		m_Size += 1;
+		m_pElements = (SymbolRecord_t *)m_Memory.m_pMemory;
+		int numToMove = m_Size - elem - 1;
+		if (numToMove > 0)
+			memmove(&Element(elem + 1), &Element(elem), numToMove * sizeof(SymbolRecord_t));
+		new (&Element(elem)) SymbolRecord_t(src);
+	}
+	void AddToTail(const SymbolRecord_t &src) { InsertBefore(m_Size, src); }
+};
+
+struct SymbolTable_t
+{
+	char m_pad0000[0x20];
+	SymbolVec_t m_Vec;	// 0x20
+};
+
+// TARGET: CSoundEmitterSystemBase::sub_1012e970
+void CSoundEmitterSystemBase::sub_1012e970(void *pTable, const char *pszName, int value)
+{
+	CUnknown1024b370Symbol sym = ((CUnknown1024b370 *)&m_listb0)->sub_1013d520(pszName);
+	SymbolRecord_t e;
+	e.symbol = sym;
+	e.gender = value;
+	((SymbolTable_t *)pTable)->m_Vec.AddToTail(e);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
