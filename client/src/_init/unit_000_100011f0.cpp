@@ -886,3 +886,8 @@ ConVar g_104d1c28("camfeed_pitch_max", "60.0", 0);
 #include "ConVar.h"
 ConVar g_104d1bb8("camfeed_pitch_min", "0.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fb500 size=0xa
+#include "ConVar.h"
+ConVar g_104d2428("camfeed_pitch_pow1", "2.0", 0);
+// END FUNCTION
