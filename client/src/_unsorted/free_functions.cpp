@@ -9062,6 +9062,93 @@ void sub_10109910()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109950 size=0x2c8
+#include <math.h>
+
+extern unsigned char g_104d4470[256];
+extern int g_104d95a0[1024];
+extern float g_104d51a0[256];
+extern float g_104d4980[256];
+extern float g_104d4570[256];
+extern int g_104da5a0[1024];
+extern float g_104d55a0[4096];
+extern int g_104db5b0[4096];
+void sub_10109910();
+
+// TARGET: sub_10109950
+void sub_10109950(float gamma, float texGamma, float brightness, int overbright)
+{
+	int i, inf;
+	float g1, g, g3, f;
+
+	g = gamma;
+	if (g > 3.0)
+		g = 3.0f;
+	g = 1.0 / g;
+	g1 = texGamma * g;
+	if (brightness <= 0.0)
+		g3 = 0.125f;
+	else if (brightness > 1.0)
+		g3 = 0.05f;
+	else
+		g3 = 0.125 - (brightness * brightness) * 0.075;
+
+	for (i = 0; i < 256; i++) {
+		inf = (int)(pow(i * (1.0f / 255.0f), g1) * 255.0);
+		if (inf < 0)
+			inf = 0;
+		else if (inf > 255)
+			inf = 255;
+		g_104d4470[i] = inf;
+	}
+
+	for (i = 0; i < 1024; i++) {
+		f = i * (1.0 / 1023.0);
+		if (brightness > 1.0)
+			f = f * brightness;
+		if (f <= g3)
+			f = (f / g3) * 0.125;
+		else
+			f = 0.125 + ((f - g3) / (1.0 - g3)) * 0.875;
+		inf = (int)(pow(f, g) * 255.0);
+		if (inf < 0)
+			inf = 0;
+		else if (inf > 255)
+			inf = 255;
+		g_104d95a0[i] = inf;
+	}
+
+	for (i = 0; i < 256; i++) {
+		float t = i * (1.0f / 255.0f);
+		g_104d51a0[i] = pow(t, texGamma);
+		g_104d4980[i] = pow(t, 0.4545454446934474);
+		g_104d4570[i] = pow(t, 2.2f);
+	}
+
+	for (i = 0; i < 1024; i++)
+		g_104da5a0[i] = (int)(pow(i * (1.0 / 1023.0), 1.0 / texGamma) * 255.0);
+
+	sub_10109910();
+
+	float scale2 = 1.0f;
+	if (overbright == 2)
+		scale2 = 0.5f;
+	else if (overbright == 4)
+		scale2 = 0.25f;
+
+	for (i = 0; i < 4096; i++) {
+		float v = pow(i * (1.0 / 1024.0), 1.0 / gamma) * scale2;
+		g_104d55a0[i] = v;
+		if (v > 1.0f)
+			g_104d55a0[i] = 1.0f;
+		inf = (int)(v * 255.0f);
+		g_104db5b0[i] = inf;
+		if (inf > 255)
+			g_104db5b0[i] = 255;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109e90 size=0x6b
 #include "Vector.h"
 
