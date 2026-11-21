@@ -13918,6 +13918,49 @@ template <> int ClientClassInit<DT_LocalWeaponData::ignored>(DT_LocalWeaponData:
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d1c0 size=0x25a
+#include "RecvTable.h"
+extern RecvTable g_104863f8;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102ad768;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+extern RecvTable g_10477278;
+extern RecvTable g_10486410;
+RecvProp RecvPropEHandle(char *, int, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseCombatWeapon { struct ignored; }
+template <> int ClientClassInit<DT_BaseCombatWeapon::ignored>(DT_BaseCombatWeapon::ignored *)
+{
+	char *pRecvTableName = "DT_BaseCombatWeapon";
+	RecvTable &RecvTable = g_104863f8;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102ad768, DataTableRecvProxy_StaticDataTable),
+		RecvPropDataTable("LocalWeaponData", 0, 0, &g_10477278, DataTableRecvProxy_StaticDataTable),
+		RecvPropDataTable("LocalActiveWeaponData", 0, 0, &g_10486410, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_iUniqueId", 1944, 4, 0, 0),
+		RecvPropInt("m_iInvenPos", 1948, 4, 0, 0),
+		RecvPropInt("m_iViewModelIndex", 2336, 4, 0, 0),
+		RecvPropInt("m_iWorldModelIndex", 2340, 4, 0, 0),
+		RecvPropInt("m_iWieldModelFIndex", 1996, 4, 0, 0),
+		RecvPropInt("m_iWieldModelMIndex", 2000, 4, 0, 0),
+		RecvPropInt("m_iTargetModelIndex", 2004, 4, 0, 0),
+		RecvPropInt("m_iState", 2356, 4, 0, 0),
+		RecvPropInt("m_iItemCurActivateMode", 2216, 4, 0, 0),
+		RecvPropEHandle("m_hOwner", 2320, 4),
+		RecvPropEHandle("m_hEntTgt", 2296, 4),
+		RecvPropInt("m_iCostToBuy", 2244, 4, 0, 0),
+		RecvPropInt("m_iCostToSell", 2248, 4, 0, 0),
+		RecvPropInt("m_iAtkMode", 2252, 4, 0, 0),
+		RecvPropInt("m_iItemCount", 2388, 4, 0, 0),
+		RecvPropInt("m_iCashAmount", 2392, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d7f0 size=0x1
 void sub_1007d7f0()
 {
