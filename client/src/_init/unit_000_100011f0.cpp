@@ -587,3 +587,8 @@ ConVar g_104a4118("rope_collide", "0", 0, "Collide rope with the world");
 #include "ConVar.h"
 ConVar g_104a3af0("mat_fullbright", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100be780 size=0xa
+#include "ConVar.h"
+ConVar g_104a3aa8("r_speeds", "0", 0);
+// END FUNCTION
