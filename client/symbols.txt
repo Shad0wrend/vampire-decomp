@@ -306,6 +306,7 @@
 0x100a35c0 func   ?sub_100a35c0@UtlMem@@QAEXXZ UtlMem::sub_100a35c0
 0x100a35f0 func   ?sub_100a35f0@Mem1c@@QAEXH@Z Mem1c::sub_100a35f0
 0x100a3990 func   ?sub_100a3990@@YAXXZ sub_100a3990
+0x100a39a0 func   ?sub_100a39a0@CUnknown100a39a0@@QAEHXZ CUnknown100a39a0::sub_100a39a0
 0x100a3a40 func   ?sub_100a3a40@@YGXH@Z sub_100a3a40
 0x100a3a50 func   ?sub_100a3a50@@YGXH@Z sub_100a3a50
 0x100a5410 func   ?sub_100a5410@CUnknown100a5410@@QAEPAXXZ CUnknown100a5410::sub_100a5410
