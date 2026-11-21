@@ -8974,6 +8974,22 @@ void UtlVec8::sub_101be2a0(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be2e0 size=0x34
+#include "UtlMem.h"
+extern void *(__cdecl *g_101e3100)(int);
+
+UtlMem *UtlMem::sub_101be2e0(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount) {
+		m_pMemory = (int *)g_101e3100(allocationCount * 4);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2cf0 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
