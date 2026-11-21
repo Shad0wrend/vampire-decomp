@@ -35340,6 +35340,19 @@ char sub_10174d40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101763a0 size=0xb
+namespace lifted {
+extern char g_1024baec;
+int sub_101acdb0();
+}
+struct CUnknown101763a0 { int sub_101763a0(); };
+int CUnknown101763a0::sub_101763a0()
+{
+    *(int *)this = (int)&lifted::g_1024baec;
+    return lifted::sub_101acdb0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101779a0 size=0x3
 void __stdcall sub_101779a0(int a0)
 {
