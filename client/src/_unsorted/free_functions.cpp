@@ -2552,6 +2552,27 @@ float bf_read::sub_100880c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100882d0 size=0x13f
+#include "bf_read.h"
+
+void bf_read::sub_100882d0(Vector &fa)
+{
+    int xflag, yflag, zflag;
+    fa.x = 0.0f;
+    fa.y = 0.0f;
+    fa.z = 0.0f;
+    xflag = ReadOneBit();
+    yflag = ReadOneBit();
+    zflag = ReadOneBit();
+    if (xflag)
+        fa.x = sub_100880c0();
+    if (yflag)
+        fa.y = sub_100880c0();
+    if (zflag)
+        fa.z = sub_100880c0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088410 size=0xd1
 #include "bf_read.h"
 
