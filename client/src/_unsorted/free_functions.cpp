@@ -22196,6 +22196,13 @@ int CDiscTable_101e1800::sub_1014a0f0(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a190 size=0x5
+int __stdcall sub_1014a190(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a200 size=0x3e
 struct CEntry101e19b0
 {
