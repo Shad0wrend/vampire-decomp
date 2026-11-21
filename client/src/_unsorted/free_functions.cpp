@@ -28740,6 +28740,14 @@ int __stdcall sub_1014d050(int a0, int a1, int a2, int a3)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d100 size=0xd
+int __stdcall sub_1014d100(int a0, int a1, int a2, int a3)
+{
+    *(int *)((char *)a0) = 3;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d110 size=0x8
 int __stdcall sub_1014d110(int a0)
 {
