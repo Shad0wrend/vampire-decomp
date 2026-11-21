@@ -1393,6 +1393,7 @@
 0x10189c00 func   ?sub_10189c00@@YADXZ sub_10189c00
 0x10189c10 func   ?sub_10189c10@@YADXZ sub_10189c10
 0x10189c20 func   ?sub_10189c20@CUnknown10189c20@@QAEHXZ CUnknown10189c20::sub_10189c20
+0x1018bcc0 func   ?sub_1018bcc0@CUnknown1018bcc0@@QAEXXZ CUnknown1018bcc0::sub_1018bcc0
 0x1018c710 func   ?sub_1018c710@@YAXXZ sub_1018c710
 0x1018c840 func   ?sub_1018c840@@YADXZ sub_1018c840
 0x1018e330 func   ?sub_1018e330@@YAPADPADPBDZZ sub_1018e330
