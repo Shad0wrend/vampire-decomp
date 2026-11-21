@@ -3492,6 +3492,7 @@
 0x101e311c data   ?DevMsg@@YAXPBDZZ DevMsg
 0x101e3140 data   ?DevWarning@@YAXPBDZZ DevWarning
 0x101e3188 data   ?Q_strncpy@@YAPADPADPBDH@Z Q_strncpy
+0x101e3188 data   ?Q_strncpy@@YAXPADPBDH@Z Q_strncpy
 0x101e3190 data   ?Q_snprintf@@YAHPADHPBDZZ Q_snprintf
 0x101e3190 data   Q_snprintf Q_snprintf
 0x101e3190 data   __imp_?Q_snprintf@@YAHPADHPBDZZ _imp_?Q_snprintf
