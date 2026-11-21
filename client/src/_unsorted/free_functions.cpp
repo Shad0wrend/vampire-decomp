@@ -8918,6 +8918,12 @@ int CUnknown100f2740::sub_100f2740()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f27a0 size=0x3
+void __stdcall sub_100f27a0(int a0, int a1, int a2)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3f90 size=0xcb
 extern "C" void *__cdecl sub_101d0f30(void *, const void *, unsigned int);
 extern void *(__cdecl *g_101e3100)(int);
