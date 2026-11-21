@@ -1226,6 +1226,7 @@
 0x100af130 func   ?sub_100af130@CUnknown100af130@@QAEHXZ CUnknown100af130::sub_100af130
 0x100af140 func   ?sub_100af140@CUnknown100af140@@QAEHH@Z CUnknown100af140::sub_100af140
 0x100b2a40 func   ?sub_100b2a40@@YAHXZ sub_100b2a40
+0x100b2b80 func   ?ClientClassInit@@YAHPAUignored@DT_ThaumaturgyParticle@@@Z ClientClassInit
 0x100b3050 func   ?sub_100b3050@@YAHXZ sub_100b3050
 0x100b4d30 func   ?sub_100b4d30@CUtlVector40@@QAEXH@Z CUtlVector40::sub_100b4d30
 0x100b4dc0 func   ?sub_100b4dc0@UtlVec40@@QAEXHH@Z UtlVec40::sub_100b4dc0
