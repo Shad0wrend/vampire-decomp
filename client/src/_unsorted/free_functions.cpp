@@ -2117,6 +2117,12 @@ void sub_1007bf40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007c8e0 size=0x3
+void __stdcall sub_1007c8e0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007cdc0 size=0x1c
 namespace block_10256200 {
 unsigned char __fastcall sub_1007cd70(unsigned char *self)
