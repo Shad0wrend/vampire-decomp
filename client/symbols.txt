@@ -341,6 +341,7 @@
 0x10109470 func   ?sub_10109470@@YAXPBVVector@@H@Z sub_10109470
 0x101094b0 func   ?sub_101094b0@@YAXHHH@Z sub_101094b0
 0x101094e0 func   ?sub_101094e0@@YAXABVQAngle@@AAUmatrix3x4_t@@@Z sub_101094e0
+0x10109810 func   ?sub_10109810@@YA_NABVVector@@M00@Z sub_10109810
 0x10109910 func   ?sub_10109910@@YAXXZ sub_10109910
 0x10109e90 func   ?sub_10109e90@@YAXABVVector@@MAAV1@@Z sub_10109e90
 0x1010a020 func   ?sub_1010a020@@YAXABVQuaternion@@0AAV1@@Z sub_1010a020

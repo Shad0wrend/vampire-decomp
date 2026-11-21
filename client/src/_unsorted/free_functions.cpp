@@ -8999,6 +8999,26 @@ void sub_101094e0(const QAngle &angles, matrix3x4_t &matrix)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109810 size=0x71
+#include "Vector.h"
+
+// TARGET: sub_10109810
+bool sub_10109810(const Vector &center, float radius, const Vector &mins, const Vector &maxs)
+{
+	float dist = 0.0f;
+	for (int i = 0; i < 3; i++) {
+		if (center[i] < mins[i]) {
+			float d = center[i] - mins[i];
+			dist += d * d;
+		} else if (center[i] > maxs[i]) {
+			float d = center[i] - maxs[i];
+			dist += d * d;
+		}
+	}
+	return dist <= radius * radius;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109910 size=0x33
 // TARGET: sub_10109910
 #include <math.h>
