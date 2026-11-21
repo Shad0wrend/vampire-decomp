@@ -20294,6 +20294,26 @@ void CUnk101f4330::sub_10155510(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101556a0 size=0x2b
+struct CUnit101f4530 {
+    int sub_101556a0(int n, int b);
+};
+
+int CUnit101f4530::sub_101556a0(int n, int b)
+{
+    int sum = 0;
+    if (n > 0) {
+        int *p = *(int **)((char *)this + 0xc);
+        do {
+            sum += *p;
+            p++;
+            n--;
+        } while (n != 0);
+    }
+    return sum + b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155b40 size=0x1d
 struct S9 {
 	int a, b, c, d, e, f, g, h, i;
