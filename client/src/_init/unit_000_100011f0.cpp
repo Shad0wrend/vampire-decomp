@@ -3764,6 +3764,13 @@ ConVar g_104870e0("r_DrawBeams", "1", 0);
 RecvTable g_10498e88;
 // END FUNCTION
 
+// FUNCTION: 0x1008e8c0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_AI_BaseNPCTroika { struct ignored; }
+template <> int ClientClassInit<DT_AI_BaseNPCTroika::ignored>(DT_AI_BaseNPCTroika::ignored *);
+int g_10498e84 = ClientClassInit((DT_AI_BaseNPCTroika::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1008ec30 size=0xa
 #include "ConVar.h"
 ConVar g_1049bee0("r_drawmrmmodels", "1", 0);
