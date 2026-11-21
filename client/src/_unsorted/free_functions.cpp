@@ -1460,6 +1460,62 @@ int __cdecl sub_1007a030(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a140 size=0x13d
+struct CStudioHdr;
+char *sub_1008da80(CStudioHdr *pStudioHdr, int iSequence, CStudioHdr **ppOwner);
+extern void (__cdecl *g_101e3108)(const char *fmt, ...);	// Msg
+
+// TARGET: sub_1007a140
+int sub_1007a140(CStudioHdr *pStudioHdr, int iFrom, int iTo, int *pDirection)
+{
+	CStudioHdr *pFromHdr;
+	CStudioHdr *pToHdr;
+	char *pFrom = sub_1008da80(pStudioHdr, iFrom, &pFromHdr);
+	char *pTo = sub_1008da80(pStudioHdr, iTo, &pToHdr);
+	unsigned int uEntryNode;
+	unsigned int uExitNode;
+	if (!pFrom || !(uEntryNode = *(unsigned int *)(pFrom + 0x270)) || !pTo || !(uExitNode = *(unsigned int *)(pTo + 0x270)) || pFromHdr != pToHdr)
+	{
+		*pDirection = 1;
+		return iTo;
+	}
+	unsigned int uNode = *pDirection > 0 ? *(unsigned int *)(pFrom + 0x274) : uEntryNode;
+	if (uNode == uExitNode)
+	{
+		*pDirection = 1;
+		return iTo;
+	}
+	char *pBase = (char *)pFromHdr;
+	unsigned int uStep = *(unsigned char *)(pBase + *(int *)(pBase + 0x150) * (uNode - 1) + *(int *)(pBase + 0x154) + uExitNode - 1);
+	if (uStep == 0)
+		return iTo;
+	int i = 0;
+	char *pSeq = pBase + *(int *)(pBase + 0x114);
+	int nSeqs = *(int *)(pBase + 0x110);
+	if (0 < nSeqs)
+	{
+		do
+		{
+			if (*(unsigned int *)(pSeq + 0x270) == uNode && *(unsigned int *)(pSeq + 0x274) == uStep)
+			{
+				*pDirection = 1;
+				return i;
+			}
+			if (*(unsigned int *)(pSeq + 0x278) != 0 && *(unsigned int *)(pSeq + 0x274) == uNode && *(unsigned int *)(pSeq + 0x270) == uStep)
+			{
+				*pDirection = -1;
+				return i;
+			}
+			i++;
+			pSeq += 0x2fc;
+		} while (i < nSeqs);
+	}
+	g_101e3108("error in transition graph");
+	*pDirection = 1;
+	return iTo;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007aca0 size=0x2b
 #include "CUnknown100290c0.h"
 
