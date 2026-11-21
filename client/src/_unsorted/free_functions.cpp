@@ -44554,6 +44554,78 @@ void CPartListUnit3::sub_101406b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140710 size=0xd2
+#include "CUnknown101d6750.h"
+#include "CUnknown101d5bd0.h"
+
+extern "C" __declspec(dllimport) void Msg(const char *pszFormat, ...);
+extern CUnknown101d5bd0 g_105e74fc;
+
+int *sub_1015f810(void *pOut, void *pNode);
+int *sub_1015f7e0(void *pOut, void *pNode, const char *pszName);
+
+struct CKVNodeView
+{
+	virtual void v0();
+	virtual void v1();
+	virtual CKVNodeView *vfunc2(const char *pszName);
+	virtual CKVNodeView *vfunc3();
+	virtual void v4(); virtual void v5(); virtual void v6(); virtual void v7(); virtual void v8();
+	virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12();
+	virtual const char *vfunc13(const char *pszKey, const char *pszDefault);
+};
+
+struct CDependencyView
+{
+	void sub_10161a40(CKVNodeView *pNode, const char *pszName);
+};
+
+struct CLevelLoaderView
+{
+	void sub_101403d0(CKVNodeView *pNode, int a);
+};
+
+struct CLoaderView : CUnknown101d6750
+{
+	int m_n10;
+	int m_n14;
+	CDependencyView m_dep18;
+	char m_pad0019[0x34 - 0x19];
+	int m_n34;
+	bool sub_10140710(CKVNodeView *pNode, int a);
+};
+
+// TARGET: sub_10140710
+bool CLoaderView::sub_10140710(CKVNodeView *pNode, int a)
+{
+	if (!pNode)
+		return false;
+	int tmp;
+	m_n10 = *sub_1015f810(&tmp, pNode);
+	m_n14 = *sub_1015f7e0(&tmp, pNode, "InternalName");
+	m_dep18.sub_10161a40(pNode, "Dependency");
+	m_n34 = g_105e74fc.sub_1013fdf0(pNode->vfunc13("ClanDependency", ""));
+	for (CKVNodeView *pKey = pNode->vfunc2("LevelGroup"); pKey; pKey = pKey->vfunc3())
+	{
+		CLevelLoaderView *pLoader = (CLevelLoaderView *)sub_101405b0();
+		if (!pLoader)
+			goto fail;
+		pLoader->sub_101403d0(pKey, a);
+	}
+	{
+		CLevelLoaderView *pLoader = (CLevelLoaderView *)sub_101405b0();
+		if (pLoader)
+		{
+			pLoader->sub_101403d0(pNode, a);
+			return true;
+		}
+	}
+fail:
+	Msg("Unable to parse data file:  Memory allocation ERROR!\n");
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101407f0 size=0x5
 char __stdcall sub_101407f0(int a0, int a1)
 {

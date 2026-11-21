@@ -2274,6 +2274,7 @@
 0x101405a0 func   ?sub_101405a0@@YAXXZ sub_101405a0
 0x101405b0 func   ?sub_101405b0@CUnknown101d6750@@QAEPAUS101d61e0@@XZ CUnknown101d6750::sub_101405b0
 0x101406b0 func   ?sub_101406b0@CPartListUnit3@@QAEXXZ CPartListUnit3::sub_101406b0
+0x10140710 func   ?sub_10140710@CLoaderView@@QAE_NPAUCKVNodeView@@H@Z CLoaderView::sub_10140710
 0x101407f0 func   ?sub_101407f0@@YGDHH@Z sub_101407f0
 0x10140840 func   ?sub_10140840@CUnknown101d7520Entry@@QAEXXZ CUnknown101d7520Entry::sub_10140840
 0x101408f0 func   ?sub_101408f0@CUnknown101408f0@@QAEPAXXZ CUnknown101408f0::sub_101408f0
