@@ -2101,6 +2101,11 @@ void * sub_100ad790(void);
 InterfaceReg g_104a0fc0(sub_100ad790, "ClientStats004");
 // END FUNCTION
 
+// FUNCTION: 0x100addf0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a12e4;
+// END FUNCTION
+
 // FUNCTION: 0x100b3680 size=0xa
 #include "ConCommand.h"
 void sub_100b36b0(void);
