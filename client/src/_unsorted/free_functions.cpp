@@ -4400,6 +4400,17 @@ int CUnknown1004bb80::sub_1004bb80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004bb90 size=0xb
+namespace lifted {
+struct C101ab130 { int sub_101ab130(); };
+}
+struct CUnknown1004bb90 { int sub_1004bb90(); };
+int CUnknown1004bb90::sub_1004bb90()
+{
+    return ((lifted::C101ab130 *)(this + -368))->sub_101ab130();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004bbb0 size=0x6
 int sub_1004bbb0()
 {
