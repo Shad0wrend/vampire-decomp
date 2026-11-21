@@ -21388,6 +21388,12 @@ void CUnknown101ec6f0::sub_101503a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10150720 size=0x1
+void sub_10150720()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150820 size=0xcb
 #include "CUnknown101eccd0.h"
 extern char g_102de300[];
