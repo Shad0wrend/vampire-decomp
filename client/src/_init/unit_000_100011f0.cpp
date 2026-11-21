@@ -2021,3 +2021,8 @@ ConVar g_104e14f0("cl_pred_optimize", "2", 0, "Optimize for not copying data if 
 #include "utlvector.h"
 CUtlVector<int> g_104e160c;
 // END FUNCTION
+
+// FUNCTION: 0x10126ab0 size=0xa
+#include "ConVar.h"
+ConVar g_104e1ba0("debug_total_mass_divisor", "4", 8192);
+// END FUNCTION
