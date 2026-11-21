@@ -309,3 +309,8 @@ ConVar g_1049bee0("r_drawmrmmodels", "1", 0);
 #include "ConVar.h"
 ConVar g_1049bf28("cl_SetupAllBones", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10090f30 size=0xa
+#include "ConVar.h"
+ConVar g_1049c490("debug_npc_move_yaw_snap", "1", 0, "Enable this to force the move_yaw pose parameter to snap rather than blend for NPCs.");
+// END FUNCTION
