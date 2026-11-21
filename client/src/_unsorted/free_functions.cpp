@@ -13749,6 +13749,21 @@ void CSoundEmitterSystemBase::sub_1012fda0(const char *pszSound, const char *psz
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012fe70 size=0x29
+struct CUnit101b5290 {
+    char *sub_1012fe70(int index);
+};
+
+char *CUnit101b5290::sub_1012fe70(int index)
+{
+    if (index >= 0 && index < *(int *)((char *)this + 0xa8)) {
+        char *pBase = *(char **)((char *)this + 0x9c);
+        return pBase + 2 + index * 0x82;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
