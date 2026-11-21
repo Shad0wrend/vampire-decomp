@@ -2257,3 +2257,8 @@ ConCommand g_105fb1d0("vchargen_key", sub_10175ff0, 0, 0, 0);
 #include "ConVar.h"
 ConVar g_105fb328("cl_v_image_quality", "0", 128);
 // END FUNCTION
+
+// FUNCTION: 0x10176130 size=0xa
+#include "ConVar.h"
+ConVar g_105fb250("cl_v_lighting", "0", 128);
+// END FUNCTION
