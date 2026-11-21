@@ -4300,6 +4300,22 @@ void sub_100f3f90(int src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4200 size=0x2a
+void sub_100f42a0(void *pfn);
+void sub_100f4310();
+extern char *g_104d104c;
+
+// TARGET: sub_100f4200
+void sub_100f4200()
+{
+	sub_100f42a0((void *)sub_100f4310);
+	if (g_104d104c) {
+		delete g_104d104c;
+		g_104d104c = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104360 size=0x1a
 struct CUnk1011d310
 {
