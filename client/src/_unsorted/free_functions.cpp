@@ -10906,6 +10906,21 @@ void sub_10153fb0(void)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153fe0 size=0x2a
+#include <string.h>
+extern int g_105eb338;
+extern char g_105eab08[][64];
+extern char g_105e8ac8[];
+
+void sub_10153fe0()
+{
+    if (g_105eb338 > 0) {
+        g_105eb338--;
+        strcpy(g_105e8ac8, g_105eab08[g_105eb338]);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101540f0 size=0x29
 struct CVBaseView101f27b0 {
     virtual void vfunc0();
