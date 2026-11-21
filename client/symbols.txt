@@ -263,6 +263,7 @@
 0x10017250 func   ?sub_10017250@@YAHXZ sub_10017250
 0x10017370 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGDrugsPillBottle@@@Z ClientClassInit
 0x100174d0 func   ?sub_100174d0@@YAHXZ sub_100174d0
+0x100175f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGDrugsDrugBox@@@Z ClientClassInit
 0x10017750 func   ?sub_10017750@@YAHXZ sub_10017750
 0x100179d0 func   ?sub_100179d0@@YAHXZ sub_100179d0
 0x10017c50 func   ?sub_10017c50@@YAHXZ sub_10017c50
