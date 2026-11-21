@@ -1134,3 +1134,9 @@ ConCommand g_104d26d4("+cammousemove", sub_100fbdb0, 0, 0, 0);
 void sub_100fbdc0(void);
 ConCommand g_104d246c("-cammousemove", sub_100fbdc0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x101002c0 size=0xa
+#include "ConCommand.h"
+void sub_100fbdd0(void);
+ConCommand g_104d1b8c("+camdistance", sub_100fbdd0, 0, 0, 0);
+// END FUNCTION
