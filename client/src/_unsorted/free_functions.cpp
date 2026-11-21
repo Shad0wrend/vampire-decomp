@@ -17617,6 +17617,30 @@ void SRange::sub_10148040(const char *psz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101480a0 size=0x78
+extern int (*g_101e3190)(char *, int, const char *, ...);
+extern void (*g_101e3108)(const char *, ...);
+struct Range {
+    int m_Min;
+    int m_Max;
+    void sub_101480a0(const char *name);
+};
+
+void Range::sub_101480a0(const char *name)
+{
+    char buf[512];
+    if (m_Min == m_Max) {
+        if (m_Max == 0)
+            return;
+    }
+    if (m_Min != m_Max)
+        g_101e3190(buf, 512, "[%s]: %d - %d\n", name, m_Min, m_Max);
+    else
+        g_101e3190(buf, 512, "[%s]: %d\n", name, m_Min);
+    g_101e3108("%s", buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101482a0 size=0x8a
 #include "S101df260.h"
 
