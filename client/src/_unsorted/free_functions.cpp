@@ -43083,6 +43083,60 @@ void *CUnknown101f0cb0::sub_10152cc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152d40 size=0xbe
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern char g_102de300[];
+extern char g_1027feac[];
+void sub_1015fbb0(const char *psz);
+
+struct CUnknown101f0ae0	// one 16 byte entry
+{
+	int m_a;
+	int m_b;
+	int m_c;
+	int m_d;
+
+	void sub_10152b60();
+};
+
+struct CUnknown1073a9a0
+{
+	const char *sub_10153610(int id);
+};
+
+extern CUnknown1073a9a0 g_105e8a58;
+
+struct CUnknown101f0d60
+{
+	int m_n00;
+	const char *m_pszName;
+	int m_id;
+	int m_nEntries;
+	CUnknown101f0ae0 *m_pEntries;
+
+	void sub_10152d40();
+};
+
+void CUnknown101f0d60::sub_10152d40()
+{
+	char buf[128];
+	const char *pszName = m_pszName ? m_pszName : g_102de300;
+	sprintf(buf, "[%s]\t\t\t{%s}\t", g_105e8a58.sub_10153610(m_id), pszName);
+	sub_1015fbb0(buf);
+	if (m_id != -1) {
+		if (m_nEntries > 0) {
+			for (int i = 0; i < m_nEntries; i++)
+				m_pEntries[i].sub_10152b60();
+		} else {
+			sub_1015fbb0("\t\t\t( <ERROR> )");
+		}
+		sub_1015fbb0(g_1027feac);
+	} else {
+		sub_1015fbb0("\t\t\t( <ERROR> )");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152e00 size=0x13
 struct CUnknown10152e00 { void * sub_10152e00(); };
 void * CUnknown10152e00::sub_10152e00()
