@@ -22196,6 +22196,16 @@ int sub_101277a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127810 size=0x12
+namespace lifted {
+struct C10120a00 { int sub_10120a00(int); };
+}
+int sub_10127810(int a0, int a1, int a2)
+{
+    return ((lifted::C10120a00 *)a2)->sub_10120a00(*(int *)((char *)a0 + 4));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127830 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
