@@ -349,6 +349,7 @@
 0x10109c20 func   ?sub_10109c20@@YAMM@Z sub_10109c20
 0x10109c80 func   ?sub_10109c80@@YAMM@Z sub_10109c80
 0x10109ce0 func   ?sub_10109ce0@@YAMH@Z sub_10109ce0
+0x10109d10 func   ?sub_10109d10@@YAHM@Z sub_10109d10
 0x10109e90 func   ?sub_10109e90@@YAXABVVector@@MAAV1@@Z sub_10109e90
 0x1010a020 func   ?sub_1010a020@@YAXABVQuaternion@@0AAV1@@Z sub_1010a020
 0x1010a0b0 func   ?sub_1010a0b0@@YAXHHHH@Z sub_1010a0b0
