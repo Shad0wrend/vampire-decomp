@@ -3178,6 +3178,16 @@ int sub_10033350()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10033620 size=0x6
+namespace lifted {
+extern char g_102ec060;
+}
+int sub_10033620()
+{
+    return (int)&lifted::g_102ec060;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039080 size=0x19
 #include "Vector.h"
 Vector &Vector::sub_10039080(const Vector &v)
