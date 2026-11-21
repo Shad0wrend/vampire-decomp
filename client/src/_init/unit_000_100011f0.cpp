@@ -1956,3 +1956,8 @@ ConVar g_104e0ad8("think_limit", "10", 8192, "Maximum think time in milliseconds
 #include "CSolidSetDefaults.h"
 CSolidSetDefaults g_104e0c30;
 // END FUNCTION
+
+// FUNCTION: 0x1011fef0 size=0xa
+#include "ConVar.h"
+ConVar g_104e0c40("phys_rolling_drag", "1", 8192);
+// END FUNCTION
