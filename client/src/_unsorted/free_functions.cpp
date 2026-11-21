@@ -27528,6 +27528,14 @@ int CUnknown1014d950::sub_1014d950()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d960 size=0x7
+struct CUnknown1014d960 { float sub_1014d960(); };
+float CUnknown1014d960::sub_1014d960()
+{
+    return *(float *)((char *)this + 0x350);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014dae0 size=0x43
 struct CDiscValues_101e9080 {
     char pad[0x3a0];
