@@ -2748,3 +2748,8 @@ ConVar g_10619260("r_noisealpha", "19", 0);
 #include "ConVar.h"
 ConVar g_10618998("r_screendelaymax", "0.5f", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10199790 size=0xa
+#include "ConVar.h"
+ConVar g_10619018("r_DrawDetailProps", "1", 0);
+// END FUNCTION
