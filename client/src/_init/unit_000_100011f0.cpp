@@ -1691,6 +1691,13 @@ int g_102e1564 = ClientClassInit((DT_ItemGOHDiary::ignored *)0);
 RecvTable g_102dffc8;
 // END FUNCTION
 
+// FUNCTION: 0x1001aa50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGBachJournal { struct ignored; }
+template <> int ClientClassInit<DT_ItemGBachJournal::ignored>(DT_ItemGBachJournal::ignored *);
+int g_102dffc4 = ClientClassInit((DT_ItemGBachJournal::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001ac90 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e2244;
