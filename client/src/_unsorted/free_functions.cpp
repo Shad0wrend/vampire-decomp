@@ -5113,6 +5113,41 @@ float sub_1010c2e0(float a, float b, float c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c320 size=0xe1
+extern float g_101e34fc;
+extern float g_101e34f8;
+
+static inline float anglemod(float a)
+{
+    a = g_101e34f8 * ((int)(a * g_101e34fc) & 65535);
+    return a;
+}
+
+// TARGET: sub_1010c320
+float sub_1010c320(float target, float value, float speed)
+{
+    target = anglemod(target);
+    value = anglemod(value);
+    float delta = target - value;
+    if (speed < 0)
+        speed = -speed;
+    if (delta <= -180) {
+        while (delta <= -180)
+            delta += 360;
+    } else {
+        while (delta > 180)
+            delta -= 360;
+    }
+    if (delta > speed)
+        value += speed;
+    else if (delta < -speed)
+        value -= speed;
+    else
+        value = target;
+    return value;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c410 size=0x5f
 float sub_1010c410(float a, float b)
 {
