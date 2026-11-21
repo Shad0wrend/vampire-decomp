@@ -18740,6 +18740,12 @@ void CPartListUnit3::sub_101437d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143a10 size=0x1
+void sub_10143a10()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10143a90 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
