@@ -39967,6 +39967,26 @@ bool CUnknown101a1780View::sub_1012a530(CUnknown101a1780Arg *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a560 size=0x77
+#include "CRestore.h"
+struct CRestoreField { int pad; const char *fieldName; char rest[0x2c - 8]; };
+extern "C" int _strcmpi(const char *, const char *);
+CRestoreField *CRestore::sub_1012a560(const char *name, CRestoreField *fields, int count, int *pStart)
+{
+    if (name) {
+        for (int i = 0; i < count; i++) {
+            CRestoreField *f = &fields[(*pStart)++];
+            if (*pStart == count)
+                *pStart = 0;
+            if (!_strcmpi(f->fieldName, name))
+                return f;
+        }
+    }
+    *pStart = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a5e0 size=0x26
 struct CUnknown101a1780Arg {
     char m_pad0000[0x12];
