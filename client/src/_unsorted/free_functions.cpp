@@ -39080,6 +39080,29 @@ void sub_10128400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128480 size=0x3d
+#include <string.h>
+
+extern char g_104e23f8;
+char *__fastcall sub_101283b0(char *self);
+
+char *__fastcall sub_10128480(char *self)
+{
+    char *p;
+    if (g_104e23f8 != 0) {
+        p = sub_101283b0(self);
+        while (p != 0) {
+            if (_strcmpi(&g_104e23f8, *(char **)p) == 0) {
+                break;
+            }
+            p = sub_101283b0(p);
+        }
+        return p;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101284c0 size=0x4a
 #include "CKeyValuesX.h"
 extern "C" int __cdecl atoi(const char *);
