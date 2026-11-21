@@ -1771,3 +1771,8 @@ ConVar g_104d3f78("m_forward", "1", 128, "Mouse forward factor.");
 #include "ConVar.h"
 ConVar g_104d4008("cl_mouseenable", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10107410 size=0x5
+#include "Vector.h"
+Vector g_104d4970(0.0f, 0.0f, 0.0f);
+// END FUNCTION
