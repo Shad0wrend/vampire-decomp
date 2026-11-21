@@ -339,6 +339,7 @@
 0x1001d150 func   ?sub_1001d150@@YAHXZ sub_1001d150
 0x1001d270 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGWirelessCamera4@@@Z ClientClassInit
 0x1001d3d0 func   ?sub_1001d3d0@@YAHXZ sub_1001d3d0
+0x1001d4f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGEyes@@@Z ClientClassInit
 0x1001d650 func   ?sub_1001d650@@YAHXZ sub_1001d650
 0x1001d8d0 func   ?sub_1001d8d0@@YAHXZ sub_1001d8d0
 0x1001db50 func   ?sub_1001db50@@YAHXZ sub_1001db50
