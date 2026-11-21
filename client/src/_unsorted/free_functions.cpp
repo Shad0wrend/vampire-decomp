@@ -4338,6 +4338,13 @@ char CUnknown1004e210::sub_1004e210()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e330 size=0x6
+int sub_1004e330()
+{
+    return 0x200000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e830 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
