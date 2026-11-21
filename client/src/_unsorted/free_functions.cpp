@@ -527,6 +527,12 @@ char sub_1002c520()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c530 size=0x3
+void __stdcall sub_1002c530(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002d430 size=0x33
 #include "CUtlMemory12.h"
 extern void *(*g_101e3100)(int);
