@@ -1199,6 +1199,13 @@ int g_102e45fc = ClientClassInit((DT_OccultThaumDamage::ignored *)0);
 RecvTable g_102e5a38;
 // END FUNCTION
 
+// FUNCTION: 0x100143d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultPassiveDurations { struct ignored; }
+template <> int ClientClassInit<DT_OccultPassiveDurations::ignored>(DT_OccultPassiveDurations::ignored *);
+int g_102e5a34 = ClientClassInit((DT_OccultPassiveDurations::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10014610 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e6988;
