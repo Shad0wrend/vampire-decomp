@@ -37872,6 +37872,29 @@ int sub_10146300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146400 size=0x8f
+#include "RecvTable.h"
+extern RecvTable g_105e80b8;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102ca210;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_DisciplineProjectile { struct ignored; }
+template <> int ClientClassInit<DT_DisciplineProjectile::ignored>(DT_DisciplineProjectile::ignored *)
+{
+	char *pRecvTableName = "DT_DisciplineProjectile";
+	RecvTable &RecvTable = g_105e80b8;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102ca210, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_ibFlag", 2048, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101465b0 size=0x19
 struct CUnknown101da880 { void * sub_101465b0(); };
 void * CUnknown101da880::sub_101465b0()
