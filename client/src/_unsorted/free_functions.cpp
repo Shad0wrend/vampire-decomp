@@ -19316,6 +19316,40 @@ template <> int ClientClassInit<DT_Local::ignored>(DT_Local::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a4870 size=0x168
+#include "RecvTable.h"
+extern RecvTable g_1049e4fc;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable g_104a0d34;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropTime(char *, int, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_LocalPlayerExclusive { struct ignored; }
+template <> int ClientClassInit<DT_LocalPlayerExclusive::ignored>(DT_LocalPlayerExclusive::ignored *)
+{
+	char *pRecvTableName = "DT_LocalPlayerExclusive";
+	RecvTable &RecvTable = g_1049e4fc;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("m_Local", 5720, 0, &g_104a0d34, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_vecViewOffset[0]", 328, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_vecViewOffset[1]", 332, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_vecViewOffset[2]", 336, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flFriction", 156, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_fFlags", 716, 4, 0, 0),
+		RecvPropInt("m_fOnTarget", 6292, 1, 0, 0),
+		RecvPropTime("m_flTimeBase", 6640, 4),
+		RecvPropTime("m_flNextThink", 120, 4),
+		RecvPropInt("m_lifeState", 136, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a4a10 size=0x6
 namespace lifted {
 extern char g_1049fdac;
