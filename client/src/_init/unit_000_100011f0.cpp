@@ -1463,6 +1463,13 @@ int g_102e6d5c = ClientClassInit((DT_ItemGAstrolite::ignored *)0);
 RecvTable g_102e1174;
 // END FUNCTION
 
+// FUNCTION: 0x10017ad0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGCashBox { struct ignored; }
+template <> int ClientClassInit<DT_ItemGCashBox::ignored>(DT_ItemGCashBox::ignored *);
+int g_102e1170 = ClientClassInit((DT_ItemGCashBox::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10017d10 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e3b54;
