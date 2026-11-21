@@ -8106,6 +8106,12 @@ void Ray_t::sub_100e91e0(const Vector &start, const float *pEnd, const float *pM
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ea250 size=0x1
+void sub_100ea250()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ea590 size=0xd8
 #include "CGameMovement.h"
 struct SVarA { virtual void v0(); virtual bool v1(); char pad[0x24]; float f28; };
