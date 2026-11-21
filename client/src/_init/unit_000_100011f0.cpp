@@ -429,3 +429,8 @@ ConVar g_1049d4d0("damage_floaters_color_max_threshhold", "90", 0, "Value (0-100
 #include "utlvector.h"
 CUtlVector<int> g_1049d978;
 // END FUNCTION
+
+// FUNCTION: 0x1009b0d0 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_1049d8f8;
+// END FUNCTION
