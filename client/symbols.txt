@@ -2064,6 +2064,7 @@
 0x100e4e30 func   ??_GCExplosionParticle@@UAEPAXI@Z ??_GCExplosionParticle@@UAEPAXI@Z
 0x100e5d20 func   ??_GCFXQuad@@UAEPAXI@Z ??_GCFXQuad@@UAEPAXI@Z
 0x100e5d40 func   ??1CFXQuad@@UAE@XZ CFXQuad::~CFXQuad
+0x100e6610 func   ??_GCFXStaticLine@@UAEPAXI@Z ??_GCFXStaticLine@@UAEPAXI@Z
 0x100e6630 func   ??1CFXStaticLine@@UAE@XZ CFXStaticLine::~CFXStaticLine
 0x100e6ce0 func   ?sub_100e6ce0@@YAXPBD0ZZ sub_100e6ce0
 0x100e6d60 func   ??0CGameMovement@@QAE@XZ CGameMovement::CGameMovement
