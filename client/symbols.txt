@@ -165,6 +165,7 @@
 0x1007b650 func   ?sub_1007b650@@YGHH@Z sub_1007b650
 0x1007bf10 func   ?sub_1007bf10@@YGXH@Z sub_1007bf10
 0x1007bf40 func   ?sub_1007bf40@@YAXXZ sub_1007bf40
+0x1007c1c0 func   ?sub_1007c1c0@@YGDHHHH@Z sub_1007c1c0
 0x1007c8e0 func   ?sub_1007c8e0@@YGXH@Z sub_1007c8e0
 0x1007cdc0 func   ?sub_1007cdc0@@YIEPAX@Z sub_1007cdc0
 0x1007d7f0 func   ?sub_1007d7f0@@YAXXZ sub_1007d7f0
