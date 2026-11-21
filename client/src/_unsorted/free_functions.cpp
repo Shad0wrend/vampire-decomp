@@ -9861,6 +9861,16 @@ char * CUnknown100a3b50::sub_100a3b50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a4a10 size=0x6
+namespace lifted {
+extern char g_1049fdac;
+}
+int sub_100a4a10()
+{
+    return (int)&lifted::g_1049fdac;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5410 size=0x3
 struct CUnknown100a5410 { void * sub_100a5410(); };
 void * CUnknown100a5410::sub_100a5410()
