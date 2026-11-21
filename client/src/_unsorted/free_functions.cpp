@@ -20745,6 +20745,49 @@ int sub_100bce50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bcf50 size=0x2a0
+#include "RecvTable.h"
+extern RecvTable g_104a33b4;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp InternalRecvPropArray(int, int, char *, void (*)(void *, int, int));
+template <typename T> int ClientClassInit(T *);
+namespace DT_PlayerResource { struct ignored; }
+template <> int ClientClassInit<DT_PlayerResource::ignored>(DT_PlayerResource::ignored *)
+{
+	char *pRecvTableName = "DT_PlayerResource";
+	RecvTable &RecvTable = g_104a33b4;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_iPing[0]", 2888, 4, 0, 0),
+		InternalRecvPropArray(33, 4, "m_iPing", 0),
+		RecvPropInt("m_iPacketloss[0]", 3020, 4, 0, 0),
+		InternalRecvPropArray(33, 4, "m_iPacketloss", 0),
+		RecvPropInt("m_iScore[0]", 3152, 4, 0, 0),
+		InternalRecvPropArray(33, 4, "m_iScore", 0),
+		RecvPropInt("m_iVScore[0]", 1040, 4, 0, 0),
+		InternalRecvPropArray(33, 4, "m_iVScore", 0),
+		RecvPropInt("m_iVDmgReward[0]", 1172, 4, 0, 0),
+		InternalRecvPropArray(33, 4, "m_iVDmgReward", 0),
+		RecvPropInt("m_iVTeamWin[0]", 1304, 4, 0, 0),
+		InternalRecvPropArray(33, 4, "m_iVTeamWin", 0),
+		RecvPropInt("m_iVTeamLoss[0]", 1436, 4, 0, 0),
+		InternalRecvPropArray(33, 4, "m_iVTeamLoss", 0),
+		RecvPropInt("m_iVRoundGoal[0]", 1568, 4, 0, 0),
+		InternalRecvPropArray(33, 4, "m_iVRoundGoal", 0),
+		RecvPropInt("m_iVSubGoal[0]", 1700, 4, 0, 0),
+		InternalRecvPropArray(33, 4, "m_iVSubGoal", 0),
+		RecvPropInt("m_iDeaths[0]", 3284, 4, 0, 0),
+		InternalRecvPropArray(33, 4, "m_iDeaths", 0),
+		RecvPropInt("m_bConnected[0]", 3416, 1, 0, 0),
+		InternalRecvPropArray(33, 1, "m_bConnected", 0),
+		RecvPropInt("m_bSpectating[0]", 3449, 1, 0, 0),
+		InternalRecvPropArray(33, 1, "m_bSpectating", 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bd530 size=0x5
 namespace lifted {
 int sub_100a0240();
