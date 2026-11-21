@@ -4331,6 +4331,13 @@ int g_104a2550 = ClientClassInit((DT_Func_Dust::ignored *)0);
 RecvTable g_104a26c0;
 // END FUNCTION
 
+// FUNCTION: 0x100bb260 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEDust { struct ignored; }
+template <> int ClientClassInit<DT_TEDust::ignored>(DT_TEDust::ignored *);
+int g_104a26bc = ClientClassInit((DT_TEDust::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100bb430 size=0xa
 #include "ConVar.h"
 ConVar g_104a2a30("lod_TransitionDist", "400", 0);
