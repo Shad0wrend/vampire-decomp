@@ -14173,6 +14173,34 @@ int sub_1007f960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007fa60 size=0x131
+#include "RecvTable.h"
+extern RecvTable g_10486a60;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseViewModel { struct ignored; }
+template <> int ClientClassInit<DT_BaseViewModel::ignored>(DT_BaseViewModel::ignored *)
+{
+	char *pRecvTableName = "DT_BaseViewModel";
+	RecvTable &RecvTable = g_10486a60;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_nModelIndex", 128, 4, 0, 0),
+		RecvPropInt("m_nSkin", 1372, 4, 0, 0),
+		RecvPropInt("m_nBody", 1376, 4, 0, 0),
+		RecvPropInt("m_nSequence", 1596, 4, 0, 0),
+		RecvPropInt("m_nViewModelIndex", 2004, 4, 0, 0),
+		RecvPropFloat("m_flPlaybackRate", 1600, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_fEffects", 116, 4, 0, 0),
+		RecvPropInt("m_nAnimationParity", 2020, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007fd00 size=0x6
 namespace lifted {
 extern char g_10487084;
