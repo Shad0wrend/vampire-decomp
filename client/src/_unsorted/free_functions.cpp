@@ -5307,6 +5307,21 @@ int sub_1004ea50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004f810 size=0x17
+namespace lifted {
+extern int g_10284b9c;
+extern char g_103ede7c;
+extern int g_103ede80;
+}
+int sub_1004f810()
+{
+    lifted::g_10284b9c = -1;
+    lifted::g_103ede7c = 0;
+    lifted::g_103ede80 = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004f830 size=0x6
 namespace lifted {
 extern char g_103ede7c;
