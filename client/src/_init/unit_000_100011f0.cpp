@@ -1222,3 +1222,8 @@ ConVar g_104d2c08("joyforwardsensitivity", "-1", 0);
 #include "ConVar.h"
 ConVar g_104d2ae8("joysidesensitivity", "-1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101008b0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2d58("joypitchsensitivity", "1", 0);
+// END FUNCTION
