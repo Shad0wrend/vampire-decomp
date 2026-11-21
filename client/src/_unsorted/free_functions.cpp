@@ -34627,6 +34627,15 @@ char __stdcall sub_101642d0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10164690 size=0xa
+struct CUnknown10164690 { int sub_10164690(int); };
+int CUnknown10164690::sub_10164690(int a0)
+{
+    *(int *)((char *)this + 0x34) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101646a0 size=0x4
 struct CUnknown101646a0 { int sub_101646a0(); };
 int CUnknown101646a0::sub_101646a0()
