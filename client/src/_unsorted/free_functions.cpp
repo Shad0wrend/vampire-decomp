@@ -35599,6 +35599,15 @@ int sub_10170170()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10170430 size=0xd
+struct CUnknown10170430 { char sub_10170430(char); };
+char CUnknown10170430::sub_10170430(char a0)
+{
+    *(char *)((char *)this + 0x4db) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10170c20 size=0x1
 void sub_10170c20()
 {
