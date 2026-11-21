@@ -92,3 +92,8 @@ ConCommand g_102ead74("CreateHairball", sub_1002d2b0, 0, 0, 0);
 #include "ConVar.h"
 ConVar g_102eec58("cl_ejectbrass", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1003aa90 size=0xa
+#include "ConVar.h"
+ConVar g_103eac38("clip_x", "0", 0);
+// END FUNCTION
