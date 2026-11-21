@@ -25965,6 +25965,18 @@ VMatrix VMatrix::sub_101a1be0() const
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1c10 size=0x2b
+#include "VMatrix.h"
+struct CBlock64_t { char b[64]; CBlock64_t *sub_101a1650(const CBlock64_t *); };
+struct VMatrixUnit : VMatrix { void sub_101a1950(VMatrix *q); };
+void __cdecl sub_101a1c10(VMatrix *src, VMatrix *dst)
+{
+	((VMatrixUnit *)src)->sub_101a1950(dst);
+	VMatrix tmp;
+	((CBlock64_t *)dst)->sub_101a1650((CBlock64_t *)dst->sub_101a1f60(tmp));
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1d40 size=0x18
 struct CUnk1024d7b0 {
     char pad4[4];
