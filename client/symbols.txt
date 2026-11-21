@@ -3157,6 +3157,7 @@
 0x1017b180 func   ?sub_1017b180@CUnknown1017b180@@QAEHXZ CUnknown1017b180::sub_1017b180
 0x1017b270 func   ?sub_1017b270@CUnknown1017b270@@QAEHH@Z CUnknown1017b270::sub_1017b270
 0x1017b350 func   ??1VSlider@@UAE@XZ VSlider::~VSlider
+0x1017b4f0 func   ??1CharEditInfoPanel@@UAE@XZ CharEditInfoPanel::~CharEditInfoPanel
 0x1017c540 func   ?sub_1017c540@@YGXH@Z sub_1017c540
 0x1017c550 func   ?sub_1017c550@@YGXH@Z sub_1017c550
 0x1017c570 func   ?sub_1017c570@@YAXXZ sub_1017c570
