@@ -13014,6 +13014,18 @@ int sub_100c0c90(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c18e0 size=0x20
+namespace lifted {
+extern char g_104d4970;
+struct C100c1900 { int sub_100c1900(int, int, int, int, int, int); };
+}
+struct CUnknown100c18e0 { int sub_100c18e0(int, int, int); };
+int CUnknown100c18e0::sub_100c18e0(int a0, int a1, int a2)
+{
+    return ((lifted::C100c1900 *)this)->sub_100c1900(a0, 1, a1, 0, a2, (int)&lifted::g_104d4970);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c1e70 size=0x3e
 #include "UtlVec40.h"
 
