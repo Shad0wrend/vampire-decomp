@@ -22261,6 +22261,16 @@ const char *CUnknown101e19b0::sub_1014a200(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a240 size=0x5
+namespace lifted {
+int sub_10149dc0();
+}
+int sub_1014a240()
+{
+    return lifted::sub_10149dc0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a9e0 size=0x5c
 #include "CUnknown101e0f00.h"
 
