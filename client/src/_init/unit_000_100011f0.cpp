@@ -83,6 +83,13 @@ int g_102de8dc = ClientClassInit((DT_ItemPhysicsHand::ignored *)0);
 RecvTable g_102deabc;
 // END FUNCTION
 
+// FUNCTION: 0x10003660 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGKeyring { struct ignored; }
+template <> int ClientClassInit<DT_ItemGKeyring::ignored>(DT_ItemGKeyring::ignored *);
+int g_102deab8 = ClientClassInit((DT_ItemGKeyring::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10003a40 size=0xa
 #include "RecvTable.h"
 RecvTable g_102dea38;
