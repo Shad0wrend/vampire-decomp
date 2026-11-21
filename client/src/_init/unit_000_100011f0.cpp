@@ -3211,6 +3211,13 @@ ConVar g_103eacc8("clip_z", "0", 0);
 RecvTable g_103eaea0;
 // END FUNCTION
 
+// FUNCTION: 0x1003dc20 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEMuzzleFlash { struct ignored; }
+template <> int ClientClassInit<DT_TEMuzzleFlash::ignored>(DT_TEMuzzleFlash::ignored *);
+int g_103eae9c = ClientClassInit((DT_TEMuzzleFlash::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1003de00 size=0xa
 #include "RecvTable.h"
 RecvTable g_103eaf70;
