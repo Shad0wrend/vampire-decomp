@@ -10989,6 +10989,30 @@ void *VKeyValuesInterface::sub_10154120(const char *pszName, void *pDefault)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154150 size=0x4e
+#include <stdlib.h>
+#include "VKeyValues.h"
+// TARGET: VKeyValuesInterface::sub_10154150
+float VKeyValuesInterface::sub_10154150(const char *pszName, float flDefault)
+{
+	VKeyValues *pKey = (VKeyValues *)((char *)this - 0x30);
+	if (pszName)
+		pKey = pKey->sub_10154540(pszName);
+	if (pKey) {
+		switch (pKey->m_nType10) {
+		case 1:
+			return (float)atof(pKey->m_pszValue0c);
+		case 2:
+			return (float)pKey->m_nValue08;
+		case 3:
+			return *(float *)&pKey->m_nValue08;
+		}
+		return 0.0f;
+	}
+	return flDefault;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154670 size=0x1d
 typedef void (*PFN_109f383c)(int, void *);
 extern PFN_109f383c g_101e31d4;
