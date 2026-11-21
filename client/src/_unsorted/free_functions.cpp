@@ -14915,6 +14915,40 @@ int CUnknown10249fc0::sub_101390c0(unsigned short i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10139150 size=0x7e
+struct Node16 {
+    unsigned short m_Left, m_Right, m_Parent, m_Tag;
+    int m_pad8;
+    int m_Elem;
+};
+struct Hdr { int m_pad0; Node16 *m_pNodes; };
+extern unsigned char g_10680e8d;
+extern Node16 g_105e5d8c;
+struct NodeHolder {
+    Hdr *m_pHdr;
+    int sub_10139150(unsigned short idx);
+};
+int NodeHolder::sub_10139150(unsigned short idx)
+{
+    Hdr *h = m_pHdr;
+    if (!(g_10680e8d & 1)) {
+        g_10680e8d |= 1;
+        g_105e5d8c.m_Left = 0xffff;
+        g_105e5d8c.m_Right = 0xffff;
+        g_105e5d8c.m_Parent = 0xffff;
+        g_105e5d8c.m_Tag = 1;
+    }
+    Node16 *n;
+    if (idx != 0xffff)
+        n = &h->m_pNodes[idx];
+    else
+        n = &g_105e5d8c;
+    if (n->m_Left == idx)
+        return 0;
+    return m_pHdr->m_pNodes[idx].m_Elem;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139340 size=0x116
 #include "utlmemory.h"
 #include "utlrbtree.h"
