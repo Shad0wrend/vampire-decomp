@@ -34023,6 +34023,34 @@ const char *sub_1012d9d0(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012dbf0 size=0x7b
+struct ChanEnt { int value; const char *name; };
+extern ChanEnt g_102c4228[7];
+extern char g_102c45f0[];
+extern char g_102c45a8[];
+extern int (*g_101e31dc)(const char *, const char *, int);
+extern int (*g_101e31b4)(const char *, const char *);
+extern void (*g_101e311c)(const char *, ...);
+extern "C" unsigned strlen(const char *);
+extern "C" int atoi(const char *);
+int sub_1012dbf0(const char *s)
+{
+    if (!s)
+        return 0;
+    if (g_101e31dc(s, g_102c45f0, strlen(g_102c45f0)) != 0)
+        return atoi(s);
+    int (*cmp)(const char *, const char *) = g_101e31b4;
+    int i = 0;
+    do {
+        if (cmp(s, g_102c4228[i].name) == 0)
+            return g_102c4228[i].value;
+        i++;
+    } while (i < 7);
+    g_101e311c(g_102c45a8, s);
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012dd00 size=0x6b
 #include "CUnknown101b2570.h"
 extern "C" unsigned int strlen(const char *);
