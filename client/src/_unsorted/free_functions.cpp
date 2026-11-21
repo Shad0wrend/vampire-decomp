@@ -11192,6 +11192,36 @@ int sub_10041460()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10041560 size=0x16b
+#include "RecvTable.h"
+extern RecvTable g_103ec9b0;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TestTraceline { struct ignored; }
+template <> int ClientClassInit<DT_TestTraceline::ignored>(DT_TestTraceline::ignored *)
+{
+	char *pRecvTableName = "DT_TestTraceline";
+	RecvTable &RecvTable = g_103ec9b0;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_clrRender.r", 80, 1, 0, 0),
+		RecvPropInt("m_clrRender.g", 81, 1, 0, 0),
+		RecvPropInt("m_clrRender.b", 82, 1, 0, 0),
+		RecvPropInt("m_clrRender.a", 83, 1, 0, 0),
+		RecvPropFloat("m_vecAbsOrigin[0]", 572, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_vecAbsOrigin[1]", 576, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_vecAbsOrigin[2]", 580, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_angAbsRotation[0]", 584, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_angAbsRotation[1]", 588, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_angAbsRotation[2]", 592, 4, 0, RecvProxy_FloatToFloat),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10041730 size=0x3
 char sub_10041730()
 {
