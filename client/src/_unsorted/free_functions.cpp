@@ -15643,6 +15643,99 @@ int CUnknown101b9140::sub_10132db0(int elem, int num, const CUnknown101b9140Elem
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133340 size=0x1d1
+#include "Vector.h"
+#include "utlmemory.h"
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CUnknown101b6320.h"
+#include "UtlVec8.h"
+#include "CMem8_t.h"
+#include <string.h>
+
+void sub_10131480(void *pDest, const void *pSrc);
+
+struct CUnknown101b5b70VecB : UtlVec8
+{
+	CUnknown101b9140Elem &Element(int i) { return ((CUnknown101b9140Elem *)m_pMemory)[i]; }
+	void Grow1(int num)
+	{
+		if (m_Size + num > m_allocationCount)
+			((CMem8_t *)this)->sub_101315b0(m_Size + num - m_allocationCount);
+		m_Size += num;
+		m_pElements = (UtlVec8Elem *)m_pMemory;
+	}
+	void ShiftRight(int elem, int num)
+	{
+		int numToMove = m_Size - elem - num;
+		if (numToMove > 0 && num > 0)
+			memmove(&Element(elem + num), &Element(elem), numToMove * sizeof(CUnknown101b9140Elem));
+	}
+	int InsertBefore(int elem, const CUnknown101b9140Elem &src)
+	{
+		Grow1(1);
+		ShiftRight(elem, 1);
+		CUnknown101b9140Elem *p = &Element(elem);
+		if (p) {
+			p->m_w = src.m_w;
+			p->m_d = src.m_d;
+		}
+		return elem;
+	}
+	int AddToTail(const CUnknown101b9140Elem &src) { return InsertBefore(m_Size, src); }
+	void Init()
+	{
+		m_pMemory = 0;
+		m_allocationCount = 0;
+		m_growSize = 0;
+		m_Size = 0;
+		m_pElements = 0;
+	}
+};
+
+CUnknown101b6320Params *CUnknown101b6320Params::sub_10133340(const CUnknown101b6320Params &other)
+{
+	UtlVec8 *pA = (UtlVec8 *)&m_vecA;
+	const UtlVec8 *pOtherA = (const UtlVec8 *)&other.m_vecA;
+	int i = 0;
+	CUnknown101b5b70VecB *pB = (CUnknown101b5b70VecB *)&m_vecB;
+	CUnknown101b5b70VecB *pOtherB = (CUnknown101b5b70VecB *)&other.m_vecB;
+	int n;
+	((CUnknown101b5b70VecB *)pA)->Init();
+	pB->Init();
+	int t0 = other.m_nField00; m_nField00 = t0;
+	m_nField04 = other.m_nField04;
+	m_nField08 = other.m_nField08;
+	m_nField0c = other.m_nField0c;
+	m_nField10 = other.m_nField10;
+	m_nField14 = other.m_nField14;
+	m_nField18 = other.m_nField18;
+	m_bField1c = other.m_bField1c;
+	n = pOtherA->m_Size;
+	for (; i < n; i++) {
+		char *pSrcBase = pOtherA->m_pMemory;
+		int idx; idx = pA->m_Size;
+		if (idx + 1 > pA->m_allocationCount)
+			((CMem8_t *)pA)->sub_101315b0(idx - pA->m_allocationCount + 1);
+		pA->m_Size++;
+		pA->m_pElements = (UtlVec8Elem *)pA->m_pMemory;
+		pA->sub_10130f90(idx, 1);
+		sub_10131480(pA->m_pMemory + idx * 8, (8 * i) + pSrcBase);
+	}
+	n = pOtherB->m_Size;
+	i = 0;
+	for (; i < n; i++)
+		pB->AddToTail(pOtherB->Element(i));
+	m_bField1d = other.m_bField1d;
+	m_bField48 = other.m_bField48;
+	memcpy(m_szChannel, other.m_szChannel, sizeof(m_szChannel));
+	memcpy(m_szVolume, other.m_szVolume, sizeof(m_szVolume));
+	memcpy(m_szPitch, other.m_szPitch, sizeof(m_szPitch));
+	memcpy(m_szSoundLevel, other.m_szSoundLevel, sizeof(m_szSoundLevel));
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133540 size=0x1a
 namespace lifted {
 extern int g_102c4f40;
