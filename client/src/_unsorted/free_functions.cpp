@@ -26379,6 +26379,19 @@ void sub_101a2a80(const VMatrix &src1, const Vector &src2, Vector &dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2b00 size=0x25
+void sub_101a23f0(void *p);
+
+// TARGET: sub_101a2b00
+void sub_101a2b00(int *p, int a, int b, int c)
+{
+    sub_101a23f0(p);
+    p[3] = a;
+    p[7] = b;
+    p[11] = c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2b60 size=0x112
 #include <math.h>
 #include "Vector.h"
