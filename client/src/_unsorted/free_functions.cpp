@@ -37300,6 +37300,17 @@ CBlock64_t *CBlock64_t::sub_101a1650(const CBlock64_t *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1950 size=0x11
+namespace lifted {
+int sub_101a1970(int, int);
+}
+struct CUnknown101a1950 { int sub_101a1950(int); };
+int CUnknown101a1950::sub_101a1950(int a0)
+{
+    return lifted::sub_101a1970((int)this, a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1b20 size=0xbe
 #include "VMatrix.h"
 
