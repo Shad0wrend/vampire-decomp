@@ -4490,6 +4490,44 @@ void sub_100f3f90(int src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f40e0 size=0x94
+#include "Vector.h"
+struct AutoSys {
+	virtual bool Init();
+	AutoSys *m_pNext;
+};
+extern AutoSys *g_104d1050;
+extern AutoSys **g_104d1038;
+extern int g_104d1044;
+extern "C" __declspec(dllimport) void __cdecl DevWarning(int level, const char *fmt, ...);
+void sub_100f3f90(AutoSys *sys);
+
+static inline int FindSystem(AutoSys *sys)
+{
+	for (int i = 0; i < g_104d1044; i++) {
+		if (g_104d1038[i] == sys)
+			return i;
+	}
+	return -1;
+}
+
+bool sub_100f40e0()
+{
+	for (AutoSys *p = g_104d1050; p; p = p->m_pNext) {
+		if (FindSystem(p) == -1)
+			sub_100f3f90(p);
+		else
+			DevWarning(1, "AutoGameSystem already added to game system list!!!\n");
+	}
+	g_104d1050 = 0;
+	for (int i = 0; i < g_104d1044; i++) {
+		if (!g_104d1038[i]->Init())
+			return false;
+	}
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4200 size=0x2a
 void sub_100f42a0(void *pfn);
 void sub_100f4310();
