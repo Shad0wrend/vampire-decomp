@@ -1334,3 +1334,9 @@ ConCommand g_104d3a6c("+commandermousemove", sub_10101f20, 0, 0, 0);
 void sub_10101f30(void);
 ConCommand g_104d365c("-commandermousemove", sub_10101f30, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10104860 size=0xa
+#include "ConCommand.h"
+void sub_10101fb0(void);
+ConCommand g_104d3634("+moveup", sub_10101fb0, 0, 0, 0);
+// END FUNCTION
