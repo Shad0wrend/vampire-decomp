@@ -2390,6 +2390,7 @@
 0x10148840 func   ?sub_10148840@CUnknown101dff00@@QAEDHPBD@Z CUnknown101dff00::sub_10148840
 0x10148cb0 func   ?sub_10148cb0@SoundRecX@@QAEPAU1@PBU1@@Z SoundRecX::sub_10148cb0
 0x10148fd0 func   ?sub_10148fd0@CUnknown10148fd0@@QAEPAXXZ CUnknown10148fd0::sub_10148fd0
+0x10148ff0 func   ?sub_10148ff0@CUnknown101e01e0@@QAE_NPAVIKVNodeView@@PBDPAH@Z CUnknown101e01e0::sub_10148ff0
 0x10149100 func   ?sub_10149100@CUnknown101e01e0@@QAEPAUS101df260@@XZ CUnknown101e01e0::sub_10149100
 0x101491f0 func   ?sub_101491f0@S1006cd00@@QAEXXZ S1006cd00::sub_101491f0
 0x10149260 func   ?sub_10149260@CNamedList9fd0@@QAEHPBD@Z CNamedList9fd0::sub_10149260

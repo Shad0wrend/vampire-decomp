@@ -46869,6 +46869,48 @@ void * CUnknown10148fd0::sub_10148fd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148ff0 size=0x105
+#include "CUnknown101e01e0.h"
+#include "S101df260.h"
+
+extern "C" __declspec(dllimport) void Error(const char *pszFormat, ...);
+__declspec(dllimport) void Q_strncpy(char *pDest, const char *pSrc, int maxLen);
+
+extern int g_105e8100;
+extern char g_105e7b38[];
+
+bool CUnknown101e01e0::sub_10148ff0(IKVNodeView *pKV, const char *pszName, int *pIndex)
+{
+	g_105e8100++;
+	if (g_105e8100 > 0x18) {
+		Error("Disciplines: Error loading HitGroupList: Infinite Inheritance Loop!\n");
+		return false;
+	}
+	IKVNodeView *pNode;
+	S101df260 *pRec;
+	if (pKV && (pNode = pKV->vfunc2(pszName)) != 0 && (pRec = sub_10149100()) != 0) {
+		if (pRec->sub_10148da0(this, pNode, pszName)) {
+			if (pIndex)
+				*pIndex = pRec->m_n00;
+		} else {
+			char szDefault[0x60];
+			Q_strncpy(szDefault, g_105e7b38, 0x60);
+			if (sub_10148ff0(pKV, szDefault, 0) && pRec->sub_10148da0(this, pNode, pszName)) {
+			} else {
+				Error("Disciplines: Error loading HitGroupList: HitGroup not found!\n");
+				return false;
+			}
+			if (pIndex)
+				*pIndex = pRec->m_n00;
+		}
+		g_105e8100--;
+		return true;
+	}
+	g_105e8100--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149100 size=0xee
 #include "CUnknown101e01e0.h"
 
