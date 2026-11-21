@@ -11805,6 +11805,14 @@ void sub_100d1960()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3370 size=0x8
+struct CUnknown100d3370 { void sub_100d3370(); };
+void CUnknown100d3370::sub_100d3370()
+{
+    *(int *)((char *)this + 0xc) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3380 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
