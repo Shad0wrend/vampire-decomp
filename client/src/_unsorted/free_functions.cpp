@@ -7062,6 +7062,29 @@ void sub_100dd570(const V2 *p0, const V2 *p1, const V2 *p2, float s, float t, V2
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd5e0 size=0x10e
+#include "matrix3x4_t.h"
+
+void sub_100dd790(const Vector &a, const Vector &b, const Vector &c, const Vector &d, matrix3x4_t &out);
+void sub_100dd6f0(const Vector &a, const Vector &b, const Vector &c, const Vector &d, matrix3x4_t &out);
+void sub_100dd830(const matrix3x4_t &m0, const matrix3x4_t &m1, const Vector &v0, const Vector &v1, int p9, int p10);
+
+void sub_100dd5e0(const Vector &a1, const Vector &a2, const Vector &a3, const Vector &a4,
+	const Vector &b1, const Vector &b2, const Vector &b3, const Vector &b4, int p9, int p10)
+{
+	matrix3x4_t m0;
+	matrix3x4_t m1;
+	sub_100dd790(a1, a2, a3, a4, m0);
+	sub_100dd6f0(b1, b2, b3, b4, m1);
+	Vector v0, v1;
+	VectorSubtract(a4, a3, v0);
+	VectorSubtract(b4, b3, v1);
+	v0 *= 0.5f;
+	v1 *= 0.5f;
+	sub_100dd830(m0, m1, v0, v1, p9, p10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100dd6f0 size=0x9c
 #include "matrix3x4_t.h"
 #include "Vector.h"
