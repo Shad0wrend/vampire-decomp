@@ -4424,6 +4424,15 @@ int sub_1004dc30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004e200 size=0xa
+struct CUnknown1004e200 { char sub_1004e200(char); };
+char CUnknown1004e200::sub_1004e200(char a0)
+{
+    *(char *)((char *)this + 0x18) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004e210 size=0x4
 struct CUnknown1004e210 { char sub_1004e210(); };
 char CUnknown1004e210::sub_1004e210()
