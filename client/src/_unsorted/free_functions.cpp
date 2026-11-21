@@ -6411,6 +6411,29 @@ void CUnk10245c80::sub_100df6f0(void (__cdecl *fn)(void *, int))
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dfae0 size=0x26
+struct CNode102461d0
+{
+	virtual bool vfunc0();
+	virtual bool vfunc1();
+	int m_unk4;	// +4
+	CNode102461d0 *m_pNext8;	// +8
+	void sub_100dfad0();
+};
+
+extern CNode102461d0 *g_104cf3d4;
+
+// TARGET: sub_100dfae0
+void sub_100dfae0()
+{
+	for (CNode102461d0 *p = g_104cf3d4; p; p = p->m_pNext8)
+	{
+		if (!p->vfunc1())
+			p->sub_100dfad0();
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1040 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
