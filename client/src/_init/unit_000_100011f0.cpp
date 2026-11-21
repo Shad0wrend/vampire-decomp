@@ -510,3 +510,8 @@ ConVar g_1049fd68("vamplight_radius", "200", 0);
 #include "ConVar.h"
 ConVar g_104a0ce8("vamplight_offset", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100a7350 size=0xa
+#include "ConVar.h"
+ConVar g_1049e7f0("vamplight_exponent", "0", 0);
+// END FUNCTION
