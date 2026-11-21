@@ -58391,6 +58391,41 @@ void sub_10161fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101621f0 size=0x7a
+extern "C" int sprintf(char *, const char *, ...);
+extern "C" int _strcmpi(const char *, const char *);
+extern char g_102ca32c[];
+extern char g_102de300[];
+void sub_1015fbb0(char *);
+struct StrHolder {
+    const char *s;
+    const char *Get() const { return s ? s : g_102de300; }
+};
+struct NameItem { char pad[0xc]; StrHolder h; };
+struct NameSet {
+    char pad0[0xc];
+    const char *m_name;
+    int pad10;
+    int m_count;
+    NameItem **m_items;
+    void sub_101621f0(const char *other);
+};
+void NameSet::sub_101621f0(const char *other)
+{
+    char buf[128];
+    const char *n = m_name;
+    if (!n)
+        n = g_102de300;
+    sprintf(buf, g_102ca32c, n);
+    sub_1015fbb0(buf);
+    if (other) {
+        for (int i = 0; i < m_count; i++) {
+            _strcmpi(m_items[i]->h.Get(), other);
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10162310 size=0x9
 namespace lifted {
 extern char g_10248488;
