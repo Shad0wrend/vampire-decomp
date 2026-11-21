@@ -23468,6 +23468,23 @@ char C101fc4d0::sub_10159f20(T_101fc4d0 a, T_101fc4d0 b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159f70 size=0x4c
+struct S5_101fc540 { int v[5]; };
+struct T_101fc540 : S5_101fc540 {
+	char sub_10159b10(S5_101fc540 s);
+};
+struct C101fc540 {
+	S5_101fc540 m_a;
+	S5_101fc540 m_b;
+	char sub_10159f70(T_101fc540 a, T_101fc540 b);
+};
+// TARGET: C101fc540::sub_10159f70
+char C101fc540::sub_10159f70(T_101fc540 a, T_101fc540 b)
+{
+	return !(a.sub_10159b10(m_a) && b.sub_10159b10(m_b));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159fc0 size=0xb3
 #include "CVStatCost_t.h"
 #include <stdio.h>
