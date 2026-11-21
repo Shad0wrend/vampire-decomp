@@ -557,6 +557,12 @@ void Rec64::sub_10043150(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043220 size=0x1
+void sub_10043220()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043580 size=0xfa
 #include "CUnknown100dc9f0.h"
 #include "TempVector.h"
