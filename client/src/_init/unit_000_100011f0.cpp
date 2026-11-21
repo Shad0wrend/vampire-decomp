@@ -2143,3 +2143,8 @@ ConVar g_105fad58("host_speeds", "0", 0);
 #include "ConVar.h"
 ConVar g_105fae40("net_graph", "0", 0, "Draw the network usage graph");
 // END FUNCTION
+
+// FUNCTION: 0x10168920 size=0xa
+#include "ConVar.h"
+ConVar g_105fadf8("net_graphwidth", "192", 128);
+// END FUNCTION
