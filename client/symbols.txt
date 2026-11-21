@@ -3357,6 +3357,7 @@
 0x101b9c50 func   ??1TextImage@vgui2@@UAE@XZ vgui2::TextImage::~TextImage
 0x101b9d50 func   ?sub_101b9d50@CUnknown101b9d50@@QAEHH@Z CUnknown101b9d50::sub_101b9d50
 0x101baa30 func   ??1CheckButton@vgui2@@UAE@XZ vgui2::CheckButton::~CheckButton
+0x101bb110 func   ??1LabelComboBox@vgui2@@UAE@XZ vgui2::LabelComboBox::~LabelComboBox
 0x101bb2f0 func   ?sub_101bb2f0@CUnknown101bb2f0@@QAEHXZ CUnknown101bb2f0::sub_101bb2f0
 0x101bb3f0 func   ?sub_101bb3f0@CUnknown101bb3f0@@QAEHXZ CUnknown101bb3f0::sub_101bb3f0
 0x101bc8b0 func   ?sub_101bc8b0@CUnknown101bc8b0@@QAEHXZ CUnknown101bc8b0::sub_101bc8b0
