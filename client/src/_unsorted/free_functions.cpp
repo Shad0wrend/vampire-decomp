@@ -4316,6 +4316,17 @@ void sub_100f4200()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4270 size=0x28
+typedef void (__fastcall *PFN_ForEach)(void *pThis);
+extern void **g_104d1038;
+extern int g_104d1044;
+void __cdecl sub_100f4270(PFN_ForEach pfn)
+{
+	for (int i = 0; i < g_104d1044; i++)
+		pfn(g_104d1038[i]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104360 size=0x1a
 struct CUnk1011d310
 {

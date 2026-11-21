@@ -166,6 +166,7 @@
 0x100eff70 func   ?sub_100eff70@CMem8b_t@@QAEXH@Z CMem8b_t::sub_100eff70
 0x100f3f90 func   ?sub_100f3f90@@YAXH@Z sub_100f3f90
 0x100f4200 func   ?sub_100f4200@@YAXXZ sub_100f4200
+0x100f4270 func   ?sub_100f4270@@YAXP6IXPAX@Z@Z sub_100f4270
 0x10104360 func   ?sub_10104360@CUnk1011d310@@QAEDH@Z CUnk1011d310::sub_10104360
 0x10106c60 func   _CreateInterface CreateInterface
 0x10107500 func   ?sub_10107500@Vector@@QAEMXZ Vector::sub_10107500
