@@ -2267,6 +2267,13 @@ int g_102e5188 = ClientClassInit((DT_ItemKClinicStairsKey::ignored *)0);
 RecvTable g_102e0e84;
 // END FUNCTION
 
+// FUNCTION: 0x10022250 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKClinicCSKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKClinicCSKey::ignored>(DT_ItemKClinicCSKey::ignored *);
+int g_102e0e80 = ClientClassInit((DT_ItemKClinicCSKey::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10022490 size=0xa
 #include "RecvTable.h"
 RecvTable g_102dfea0;
