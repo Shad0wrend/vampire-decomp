@@ -679,6 +679,22 @@ void CTraceEntList::sub_1004b7e0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004ba40 size=0x46
+#include <stdarg.h>
+extern int (__cdecl *g_101e31a8)(char *pDest, int maxLen, const char *pFormat, va_list params);
+extern char g_103ecd98[4][1024];
+extern int g_103edddc;
+char *sub_1004ba40(const char *format, ...)
+{
+	va_list argptr;
+	g_103edddc = (g_103edddc + 1) % 4;
+	va_start(argptr, format);
+	g_101e31a8(g_103ecd98[g_103edddc], sizeof(g_103ecd98[0]), format, argptr);
+	va_end(argptr);
+	return g_103ecd98[g_103edddc];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050100 size=0x3d
 #include "CUtlVector16.h"
 
