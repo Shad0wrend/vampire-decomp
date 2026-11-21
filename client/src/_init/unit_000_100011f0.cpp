@@ -247,3 +247,8 @@ int g_103eef34 = pcd_initial_103eef34();
 #include "ConVar.h"
 ConVar g_103eefa8("crosshair_rot", "0.0f", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100654d0 size=0xa
+#include "ConVar.h"
+ConVar g_103eeff0("mm_verbose", "0", 0);
+// END FUNCTION
