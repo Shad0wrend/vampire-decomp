@@ -2262,3 +2262,8 @@ ConVar g_105fb328("cl_v_image_quality", "0", 128);
 #include "ConVar.h"
 ConVar g_105fb250("cl_v_lighting", "0", 128);
 // END FUNCTION
+
+// FUNCTION: 0x10176180 size=0xa
+#include "ConVar.h"
+ConVar g_105fb3b8("cl_v_bump_mapping", "1", 128);
+// END FUNCTION
