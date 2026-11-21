@@ -302,6 +302,7 @@
 0x10012e90 func   ??_GC_OccultPresence@@UAEPAXI@Z ??_GC_OccultPresence@@UAEPAXI@Z
 0x10012ed0 func   ?sub_10012ed0@@YAHXZ sub_10012ed0
 0x10012ff0 func   ?ClientClassInit@@YAHPAUignored@DT_OccultPresence@@@Z ClientClassInit
+0x10013110 func   ??_GC_OccultObfuscate@@UAEPAXI@Z ??_GC_OccultObfuscate@@UAEPAXI@Z
 0x10013150 func   ?sub_10013150@@YAHXZ sub_10013150
 0x10013270 func   ?ClientClassInit@@YAHPAUignored@DT_OccultObfuscate@@@Z ClientClassInit
 0x100133d0 func   ?sub_100133d0@@YAHXZ sub_100133d0
