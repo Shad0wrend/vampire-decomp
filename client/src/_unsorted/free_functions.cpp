@@ -14966,6 +14966,16 @@ void sub_100f4060(void *pSystem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f40c0 size=0xb
+namespace lifted {
+extern int g_104d1044;
+}
+void sub_100f40c0()
+{
+    lifted::g_104d1044 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f40d0 size=0x6
 namespace lifted {
 extern int g_104d104c;
