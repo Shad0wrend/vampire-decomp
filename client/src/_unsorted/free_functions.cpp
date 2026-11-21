@@ -13341,6 +13341,40 @@ void CUnknown101b2570::sub_1012dd00(const char *soundlevel)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012dd70 size=0x93
+#include "CSoundEmitterSystemBase.h"
+
+extern char vt_10236680[];
+bool sub_10130bf0(int const &, int const &);
+bool sub_10130c10(int const &, int const &);
+
+struct SoundEmitterBody
+{
+	void *m_vtbl;
+	CSoundEmitterDict m_a;
+	CSoundEmitterDict m_b;
+	int m_v[5];
+	CUnknown1024b2d0 m_t;
+
+	SoundEmitterBody() : m_a(sub_10130bf0), m_b(sub_10130c10)
+	{
+		m_v[0] = 0;
+		m_v[1] = 0;
+		m_v[2] = 0;
+		m_v[3] = 0;
+		m_v[4] = 0;
+		m_t.sub_1013d2b0(0, 0x20, 0);
+		m_vtbl = vt_10236680;
+	}
+};
+
+CSoundEmitterSystemBase *CSoundEmitterSystemBase::sub_1012dd70()
+{
+	((SoundEmitterBody *)this)->SoundEmitterBody::SoundEmitterBody();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e940 size=0x28
 #include "CUnknown101b3730.h"
 // TARGET: CUnknown101b3730::sub_1012e940
