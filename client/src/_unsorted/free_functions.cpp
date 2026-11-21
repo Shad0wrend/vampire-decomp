@@ -22518,6 +22518,22 @@ void __cdecl sub_1015fa10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fbc0 size=0x2f
+#include "FileSystemViews.h"
+#include <string.h>
+// TARGET: sub_1015fbc0
+
+extern IFileSystemView *g_104a580c;
+
+void sub_1015fbc0(int arg, const char *pszFile)
+{
+    if (arg != 0)
+    {
+        g_104a580c->vfunc3(pszFile, strlen(pszFile), arg);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ff70 size=0x23
 struct CUnknown1006c7d0 {
 	void sub_1015ff70();
