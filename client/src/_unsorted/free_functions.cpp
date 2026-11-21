@@ -1722,6 +1722,18 @@ char sub_1007d930()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ddd0 size=0x1c
+extern unsigned int g_102af670;
+
+void sub_1007ddd0(void *p)
+{
+	if (p == 0)
+		g_102af670 = 0xffffffff;
+	else
+		g_102af670 = *(unsigned int *)((char *)p + 0x48);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086f10 size=0xfd
 #include "bf_write.h"
 void bf_write::sub_10086f10(float fAngle, int numbits)
