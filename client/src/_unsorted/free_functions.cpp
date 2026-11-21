@@ -13087,6 +13087,19 @@ bool sub_101a3de0(SKeyValues *kv, char *out, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a4770 size=0x26
+extern char g_10619980[];
+extern char *g_1061993c;
+
+// TARGET: sub_101a4770
+void *sub_101a4770(unsigned short index)
+{
+	if (index == 0xffff)
+		return g_10619980;
+	return g_1061993c + index * 0x5f324 + 0xc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6780 size=0x10b
 #include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
