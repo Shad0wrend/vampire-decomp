@@ -262,6 +262,7 @@
 0x1009f040 func   ?sub_1009f040@CUnknown1009f040@@QAEPAXXZ CUnknown1009f040::sub_1009f040
 0x1009f2e0 func   ?sub_1009f2e0@@YGXHH@Z sub_1009f2e0
 0x1009f330 func   ?sub_1009f330@@YADXZ sub_1009f330
+0x1009fcd0 func   ?sub_1009fcd0@@YADXZ sub_1009fcd0
 0x1009ffb0 func   ?sub_1009ffb0@@YAXXZ sub_1009ffb0
 0x1009ffc0 func   ?sub_1009ffc0@@YAXXZ sub_1009ffc0
 0x100a1200 func   ?sub_100a1200@@YAXXZ sub_100a1200
