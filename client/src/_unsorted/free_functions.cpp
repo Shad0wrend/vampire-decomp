@@ -9566,6 +9566,13 @@ void sub_1009c1a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009ce00 size=0x7
+int __stdcall sub_1009ce00(int a0)
+{
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ce10 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_101e3100)(int);
