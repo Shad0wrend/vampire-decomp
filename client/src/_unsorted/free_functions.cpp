@@ -642,6 +642,12 @@ void sub_10045630(Vector *a, Vector *b, Vector *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10048ff0 size=0x1
+void sub_10048ff0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10049f20 size=0x19
 struct CUnknown100f2f90 { void * sub_10049f20(int, int, int); };
 void * CUnknown100f2f90::sub_10049f20(int a0, int a1, int a2)
