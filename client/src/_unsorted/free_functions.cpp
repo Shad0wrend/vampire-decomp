@@ -627,6 +627,21 @@ Vector Vector::sub_10049f40(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004b220 size=0x4b
+#include "Vector.h"
+#include <math.h>
+// TARGET: sub_1004b220
+float __cdecl sub_1004b220(const Vector *v)
+{
+    if (v->y == 0 && v->x == 0)
+        return 0;
+    float yaw = (float)atan2(v->y, v->x) * 57.29578f;
+    if (yaw < 0)
+        yaw += 360;
+    return yaw;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050100 size=0x3d
 #include "CUtlVector16.h"
 
