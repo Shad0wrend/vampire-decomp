@@ -21499,6 +21499,12 @@ bool CUnknown101ed9e0::sub_10151290(void *pNode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151620 size=0x1
+void sub_10151620()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151840 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
