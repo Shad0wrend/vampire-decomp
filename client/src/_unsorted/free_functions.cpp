@@ -9871,6 +9871,35 @@ float sub_1010bde0(float *p, float *a, float *b, float *d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010c230 size=0x4b
+// mathlib's _SSE_RSqrtAccurate (Intel / Kipps SSE RSqrt), verbatim
+// TARGET: sub_1010c230
+float __cdecl sub_1010c230(float a)
+{
+	float x;
+	float half = 0.5f;
+	float three = 3.f;
+
+	__asm
+	{
+		movss   xmm3, a;
+		movss   xmm1, half;
+		movss   xmm2, three;
+		rsqrtss xmm0, xmm3;
+
+		mulss   xmm3, xmm0;
+		mulss   xmm1, xmm0;
+		mulss   xmm3, xmm0;
+		subss   xmm2, xmm3;
+		mulss   xmm1, xmm2;
+
+		movss   x,    xmm1;
+	}
+
+	return x;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010c2e0 size=0x3f
 // TARGET: sub_1010c2e0
 float sub_1010c2e0(float a, float b, float c)
