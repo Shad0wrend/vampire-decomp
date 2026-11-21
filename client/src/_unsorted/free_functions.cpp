@@ -2087,6 +2087,37 @@ void UtlMem::sub_100c1eb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c1ee0 size=0x6a
+#include "CUnknown101a59f0.h"
+
+extern void *(*g_101e3100)(int);
+extern void *(*g_101e3104)(void *, int);
+
+void CUnknown101a59f0::sub_100c1ee0(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int requested = m_nAllocationCount + num;
+    int alloc = m_nAllocationCount;
+    if (alloc < requested) {
+        while (alloc < requested) {
+            if (alloc) {
+                if (m_nGrowSize)
+                    alloc += m_nGrowSize;
+                else
+                    alloc += alloc;
+            } else
+                alloc = 1;
+        }
+        m_nAllocationCount = alloc;
+    }
+    if (m_pMemory)
+        m_pMemory = g_101e3104(m_pMemory, m_nAllocationCount * 40);
+    else
+        m_pMemory = g_101e3100(m_nAllocationCount * 40);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4b10 size=0x81
 #include "CUnknown100b6f80.h"
 
