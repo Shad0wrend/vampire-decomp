@@ -153,6 +153,18 @@ int *__fastcall sub_100291c0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029450 size=0x35
+#include "CCameraShotTable.h"
+extern void (*g_101e3108)(const char *pszFormat, ...);
+CCameraShot_t *CCameraShotTable::sub_10029450(int index)
+{
+	if (index <= m_size && index >= 0)
+		return &m_pMemory[index];
+	g_101e3108("Invalid camera shot index\n");
+	return &m_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029e70 size=0x36
 // TARGET: sub_10029e70
 struct CLinkElem
