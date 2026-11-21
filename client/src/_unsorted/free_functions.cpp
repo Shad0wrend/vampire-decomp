@@ -7051,6 +7051,61 @@ const char *sub_10128d80(SFuncMap *pMap, int pFunc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129250 size=0xf7
+#include "datamap.h"
+#include "CSave.h"
+
+struct SaveRestoreFieldInfoX {
+	void *pField;
+	void *pOwner;
+	typedescription_t *pTypeDesc;
+};
+
+struct ISaveRestoreOpsX {
+	virtual void v0();
+	virtual void v1();
+	virtual bool IsEmpty(const SaveRestoreFieldInfoX &fieldInfo);
+};
+
+extern int g_102c34b8[];
+
+bool CSave::sub_10129250(void *pData, typedescription_t *pField)
+{
+	int type;
+	if ((pField->flags & 2) && (type = pField->fieldType) != 0) {
+		if (type == 9) {
+			void *pEmbedded = !(pField->flags & 0x40) ? pData : *(void **)pData;
+			typedescription_t *pTest = pField->td->dataDesc;
+			typedescription_t *pLimit = pTest + pField->td->dataNumFields;
+			if (pTest < pLimit) {
+				bool r;
+				do {
+					r = sub_10129250((char *)pEmbedded + pTest->fieldOffset[0], pTest);
+					if (r)
+						goto yes;
+					pTest++;
+				} while (pTest < pLimit);
+				return r;
+			}
+		} else if (type == 10) {
+			SaveRestoreFieldInfoX fieldInfo = { pData, (char *)pData - pField->fieldOffset[0], pField };
+			if (!((ISaveRestoreOpsX *)pField->pSaveRestoreOps)->IsEmpty(fieldInfo))
+				goto yes;
+		} else if (type == 12) {
+			if (!sub_10129800(pData, (short)pField->fieldSize * 4))
+				goto yes;
+		} else {
+			if (sub_10129800(pData, g_102c34b8[type] * (short)pField->fieldSize))
+				return false;
+			goto yes;
+		}
+	}
+	return false;
+yes:
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129560 size=0x4c
 #include "CSave.h"
 

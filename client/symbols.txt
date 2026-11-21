@@ -277,6 +277,7 @@
 0x10129170 func   ?vfunc18@CSave@@UAEXHPBD@Z CSave::vfunc18
 0x101291a0 func   ?vfunc17@CSave@@UAEXPBDPAXH@Z CSave::vfunc17
 0x10129220 func   ?vfunc21@CSave@@UAEXPBDPBXH@Z CSave::vfunc21
+0x10129250 func   ?sub_10129250@CSave@@QAE_NPAXPAUtypedescription_t@@@Z CSave::sub_10129250
 0x10129560 func   ?sub_10129560@CSave@@QAEHPBXPAUtypedescription_t@@H@Z CSave::sub_10129560
 0x101295b0 func   ?vfunc3@CSave@@UAEHHHHHH@Z CSave::vfunc3
 0x10129690 func   ?vfunc5@CSave@@UAEXPBX@Z CSave::vfunc5
