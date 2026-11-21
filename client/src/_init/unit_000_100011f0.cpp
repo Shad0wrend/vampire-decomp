@@ -3835,6 +3835,13 @@ ConVar g_1049bf70("r_disable_highlight", "0", 0);
 RecvTable g_1049c4e4;
 // END FUNCTION
 
+// FUNCTION: 0x10097270 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Animationlayer { struct ignored; }
+template <> int ClientClassInit<DT_Animationlayer::ignored>(DT_Animationlayer::ignored *);
+int g_1049c4e0 = ClientClassInit((DT_Animationlayer::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10097420 size=0xa
 #include "RecvTable.h"
 RecvTable g_1049cd70;
