@@ -326,6 +326,7 @@
 0x100a5410 func   ?sub_100a5410@CUnknown100a5410@@QAEPAXXZ CUnknown100a5410::sub_100a5410
 0x100a5420 func   ?sub_100a5420@SInit@@QAEXXZ SInit::sub_100a5420
 0x100a5a30 func   ?sub_100a5a30@@YAHXZ sub_100a5a30
+0x100a5a40 func   ?sub_100a5a40@@YAHXZ sub_100a5a40
 0x100a9be0 func   ?sub_100a9be0@@YGXHHH@Z sub_100a9be0
 0x100aa490 func   ?sub_100aa490@@YAXXZ sub_100aa490
 0x100aacb0 func   ?sub_100aacb0@CUnknown101a5290@@QAEXXZ CUnknown101a5290::sub_100aacb0
