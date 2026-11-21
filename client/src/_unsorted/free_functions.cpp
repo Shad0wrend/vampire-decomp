@@ -33420,6 +33420,17 @@ void sub_1015fbc0(int arg, const char *pszFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fbf0 size=0xa
+namespace lifted {
+extern int g_105f9830;
+}
+int sub_1015fbf0(int a0)
+{
+    lifted::g_105f9830 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015fc40 size=0x2e
 #include "CGameStringPool.h"
 #include "string_t.h"
