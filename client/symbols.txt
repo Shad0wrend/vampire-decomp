@@ -1219,6 +1219,7 @@
 0x1005ed00 func   ?sub_1005ed00@@YAHXZ sub_1005ed00
 0x1005ed10 func   ?sub_1005ed10@CUnknown1005ed10@@QAEDXZ CUnknown1005ed10::sub_1005ed10
 0x1005edb0 func   ?sub_1005edb0@@YAHXZ sub_1005edb0
+0x1005edc0 func   ??_GCItemInfo@@UAEPAXI@Z ??_GCItemInfo@@UAEPAXI@Z
 0x1005ede0 func   ??1CItemInfo@@UAE@XZ CItemInfo::~CItemInfo
 0x1005eee0 func   ?sub_1005eee0@CUnknown1005eee0@@QAEXXZ CUnknown1005eee0::sub_1005eee0
 0x1005f130 func   ??1CManagedHudElement@@UAE@XZ CManagedHudElement::~CManagedHudElement
