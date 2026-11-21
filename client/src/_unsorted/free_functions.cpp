@@ -4256,6 +4256,15 @@ Vector Vector::sub_10049f40(const Vector &v) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004a950 size=0xa
+struct CUnknown1004a950 { int sub_1004a950(int, int); };
+int CUnknown1004a950::sub_1004a950(int a0, int a1)
+{
+    *(int *)((char *)this + 0x54) = a1;
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004b0a0 size=0x7
 namespace lifted {
 extern char g_10227c5c;
