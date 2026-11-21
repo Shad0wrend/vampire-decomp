@@ -2230,6 +2230,11 @@ RecvTable g_104a33b4;
 RecvTable g_104a398c;
 // END FUNCTION
 
+// FUNCTION: 0x100bd9f0 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a3a24;
+// END FUNCTION
+
 // FUNCTION: 0x100be5e0 size=0xa
 #include "ConVar.h"
 ConVar g_104a3a58("rope_shake", "0", 0);
