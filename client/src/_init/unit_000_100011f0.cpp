@@ -1391,6 +1391,13 @@ int g_102e1a14 = ClientClassInit((DT_WeaponThrown_Chang_Energy_Ball::ignored *)0
 RecvTable g_102e6138;
 // END FUNCTION
 
+// FUNCTION: 0x10016bd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponThrown_Chang_Ghost { struct ignored; }
+template <> int ClientClassInit<DT_WeaponThrown_Chang_Ghost::ignored>(DT_WeaponThrown_Chang_Ghost::ignored *);
+int g_102e6134 = ClientClassInit((DT_WeaponThrown_Chang_Ghost::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10016e10 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e02a0;
