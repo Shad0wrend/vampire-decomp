@@ -23876,6 +23876,29 @@ void VMatrix::sub_101a1b20(VMatrix &ret) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1d40 size=0x18
+struct CUnk1024d7b0 {
+    char pad4[4];
+    float m_4;
+    char pad8[0x14 - 8];
+    float m_14;
+    char pad18[0x24 - 0x18];
+    float m_24;
+    float *sub_101a1d40(float *out);
+};
+
+float *CUnk1024d7b0::sub_101a1d40(float *out)
+{
+    float z = m_24;
+    float y = m_14;
+    float x = m_4;
+    out[0] = x;
+    out[1] = y;
+    out[2] = z;
+    return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2290 size=0x157
 #include "QAngle.h"
 #include "VMatrix.h"
