@@ -226,6 +226,7 @@
 0x1011a2c0 func   ?sub_1011a2c0@@YAXPAUS10032fb0@@HHHHIGM@Z sub_1011a2c0
 0x1011a3c0 func   ?sub_1011a3c0@S10032fb0@@QAEXH@Z S10032fb0::sub_1011a3c0
 0x1011b150 func   ?sub_1011b150@@YIXPAUSys@@@Z sub_1011b150
+0x1011b1d0 func   ?sub_1011b1d0@CDataObjectAccessSystem@@QAEXHPAX@Z CDataObjectAccessSystem::sub_1011b1d0
 0x1011d900 func   ?vfunc1@?$CEntityDataInstantiator@Utouchlink_t@@@@UAEHI@Z CEntityDataInstantiator<touchlink_t>::vfunc1
 0x1011ecd0 func   ?sub_1011ecd0@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_1011ecd0
 0x1011ed80 func   ?sub_1011ed80@UtlVec8@@QAEHHPBUUtlVec8Elem@@@Z UtlVec8::sub_1011ed80

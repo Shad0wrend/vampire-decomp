@@ -5690,6 +5690,26 @@ void S10032fb0::sub_1011a3c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011b1d0 size=0x77
+#include "CDataObjectAccessSystem.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+
+void CDataObjectAccessSystem::sub_1011b1d0(int index, void *pData)
+{
+    g_101e3124[*g_101e3128].name = "CDataObjectAccessSystem::AddDataAccessor";
+    g_101e3124[*g_101e3128].ent = g_102de300;
+    g_101e3124[*g_101e3128].extra = g_102de300;
+    ++*g_101e3128;
+    if (index >= 0 && index < 32 && m_data[index] == 0)
+        m_data[index] = pData;
+    --*g_101e3128;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ecd0 size=0xb0
 #include "UtlVec8.h"
 
