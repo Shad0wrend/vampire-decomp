@@ -21093,6 +21093,35 @@ void sub_1008a690(char *pStudioHdr, void *pos, void *q, int a4, int a5)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008a790 size=0x12f
+#define MAX(a, b) (((a) > (b)) ? (a) : (b))
+#define MIN(a, b) (((a) < (b)) ? (a) : (b))
+
+struct CStudioView100c3440 { char m_pad[0x110]; int m_nCount; };
+struct CBuf106ded28 { char m_b[0x20d0]; ~CBuf106ded28() {} };
+struct CBuf106e0df8 { char m_b[0x800]; ~CBuf106e0df8() {} };
+
+void sub_10089c40(CStudioView100c3440 *p, void *a, void *b, int idx, float f, int a4, int a10);
+void sub_1008a690(CStudioView100c3440 *p, void *a, void *b, int a4, int a10);
+void sub_1008a1e0(CStudioView100c3440 *p, void *a, void *b, int a7, int a10);
+void sub_1008a8e0(CStudioView100c3440 *p, int a5, int a6, void *a, void *b, int a8, int a9, int a10);
+
+// TARGET: sub_1008a790
+void sub_1008a790(CStudioView100c3440 *p, int idx, float f, int a4, int a5, int a6, int a7, int a8, int a9, int a10)
+{
+	static CBuf106ded28 s_a;
+	static CBuf106e0df8 s_b;
+	if (idx < 0 || idx >= p->m_nCount)
+		idx = 0;
+	f = MIN(MAX(f, 0.0f), 0.999);
+	sub_10089c40(p, &s_a, &s_b, idx, f, a4, a10);
+	sub_1008a690(p, &s_a, &s_b, a4, a10);
+	if (a7)
+		sub_1008a1e0(p, &s_a, &s_b, a7, a10);
+	sub_1008a8e0(p, a5, a6, &s_a, &s_b, a8, a9, a10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008a8e0 size=0x2de
 #include "StudioHdr.h"
 #include "matrix3x4_t.h"
