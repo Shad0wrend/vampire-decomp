@@ -7907,6 +7907,24 @@ string_t sub_100ee890(const char *psz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee8c0 size=0x1e
+struct CUnkTree12 {
+	char *sub_10137dd0(int key);
+};
+extern CUnkTree12 g_104cfd50;
+
+struct R1042c030 {
+	char *p;
+	R1042c030(char *q) { p = *q ? q : 0; }
+};
+
+// TARGET: sub_100ee8c0
+R1042c030 sub_100ee8c0(int key)
+{
+	return R1042c030(g_104cfd50.sub_10137dd0(key));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ee900 size=0x19
 struct CUnk10129770
 {
