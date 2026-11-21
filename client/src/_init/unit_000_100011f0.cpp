@@ -1141,6 +1141,11 @@ ConVar g_102e0048("torchlight_exponent", "1", 0);
 RecvTable g_102ea138;
 // END FUNCTION
 
+// FUNCTION: 0x100284a0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ea254;
+// END FUNCTION
+
 // FUNCTION: 0x100299b0 size=0xa
 #include "ConVar.h"
 ConVar g_102ea548("ft_link_velocity", "800", 8192, "The initial velocity of a flamethrower link");
