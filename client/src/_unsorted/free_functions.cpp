@@ -3974,6 +3974,87 @@ int sub_100e2fc0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2fe0 size=0x10b
+void sub_100e30f0();
+extern char g_104cf751;
+extern char g_104cf550[];
+extern char g_104cf650[];
+
+char *sub_100e2fe0(char *data, char *token, char *quoted)
+{
+    int c;
+    int len;
+    char *brk;
+    if (quoted)
+        *quoted = 0;
+    if (!data)
+        return 0;
+    sub_100e30f0();
+    brk = g_104cf550;
+    if (!g_104cf751)
+        brk = g_104cf650;
+    len = 0;
+    token[0] = 0;
+skip:
+    c = *data;
+    while (c <= 32) {
+        if (c == 0)
+            return 0;
+        c = *++data;
+    }
+    if (c == '/') {
+        if (data[1] == '/') {
+            while (*data && *data != '\n')
+                data++;
+        } else if (data[1] == '*') {
+            data += 2;
+            while (*data) {
+                if (*data == '*' && data[1] == '/') {
+                    data += 2;
+                    break;
+                }
+                data++;
+            }
+        } else
+            goto single;
+        goto skip;
+    }
+    if (c == '"') {
+        if (quoted)
+            *quoted = 1;
+        data++;
+        for (;;) {
+            c = *data++;
+            if (c == '\\') {
+                if (*data == '"') {
+                    c = '"';
+                    data++;
+                }
+            } else if (c == '"' || c == 0)
+                break;
+            token[len++] = c;
+        }
+        token[len] = 0;
+        return data;
+    }
+single:
+    if (brk[c]) {
+        token[0] = c;
+        token[1] = 0;
+        return data + 1;
+    }
+    do {
+        data++;
+        token[len++] = c;
+        c = *data;
+        if (brk[c])
+            break;
+    } while (c > 32);
+    token[len] = 0;
+    return data;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb150 size=0x93
 #include "CUnknown100353c0.h"
 
