@@ -14036,6 +14036,14 @@ int CUnk10129770::sub_100ee900()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100efe70 size=0x8
+struct CUnknown100efe70 { void sub_100efe70(); };
+void CUnknown100efe70::sub_100efe70()
+{
+    *(char *)((char *)this + 0x8c) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efee0 size=0x8d
 #include "CUtlLinkedList8.h"
 
