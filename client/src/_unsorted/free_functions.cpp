@@ -31501,6 +31501,31 @@ DLL_EXPORT void *CreateInterface(const char *pName, int *pReturnCode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106d40 size=0x9b
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+extern "C" __declspec(dllimport) void *__stdcall LoadLibraryA(const char *);
+extern "C" __declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+
+void *sub_10106d40(const char *name)
+{
+    char buf[512];
+    g_101e3124[*g_101e3128].a = "Sys_LoadModule";
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    (*g_101e3128)++;
+    void *h = LoadLibraryA(name);
+    if (!h) {
+        Q_snprintf(buf, 512, "%s.dll", name);
+        h = LoadLibraryA(buf);
+    }
+    (*g_101e3128)--;
+    return h;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106de0 size=0x65
 struct ScopeEnt { const char* a; const void* b; const void* c; };
 extern ScopeEnt* g_101e3124;

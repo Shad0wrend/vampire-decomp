@@ -1652,6 +1652,7 @@
 0x10106be0 func   ??0InterfaceReg@@QAE@P6APAXXZPBD@Z InterfaceReg::InterfaceReg
 0x10106be0 func   ?sub_10106be0@InterfaceReg@@QAEPAV1@PAXPBD@Z InterfaceReg::sub_10106be0
 0x10106c60 func   _CreateInterface CreateInterface
+0x10106d40 func   ?sub_10106d40@@YAPAXPBD@Z sub_10106d40
 0x10106de0 func   ?sub_10106de0@@YAXPAX@Z sub_10106de0
 0x10106e50 func   ?sub_10106e50@@YAHH@Z sub_10106e50
 0x10106f30 func   ?sub_10106f30@@YAHPBD@Z sub_10106f30
