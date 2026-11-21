@@ -25762,6 +25762,12 @@ void CUnknown10206190::sub_10161bf0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161d10 size=0x1
+void sub_10161d10()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161d20 size=0x71
 #include "CUnknown10206340.h"
 
