@@ -22,3 +22,48 @@ CMeasureSectionInstance::CMeasureSectionInstance(int section)
     }
 }
 // END FUNCTION
+
+// FUNCTION: 0x1010e140 size=0x8e
+#include "CMeasureSectionInstance.h"
+
+struct MeasureProfiler
+{
+	virtual void v0();
+	virtual bool vfunc1();
+	char m_pad[0x2c - 4];
+	int m_nLevel;
+};
+struct MeasureTarget { void sub_1010df80(CMeasureTsc *pTsc); };
+
+extern MeasureProfiler *g_105fad5c;
+extern MeasureProfiler *g_104df674;
+
+struct CycleCount
+{
+	unsigned __int64 m_Int64;
+	CycleCount() { m_Int64 = 0; }
+	void Sample()
+	{
+		unsigned long *pSample = (unsigned long *)&m_Int64;
+		__asm {
+			mov ecx, pSample
+			rdtsc
+			mov [ecx], eax
+			mov [ecx + 4], edx
+		}
+	}
+};
+
+CMeasureSectionInstance::~CMeasureSectionInstance()
+{
+	if (g_105fad5c->vfunc1() || g_105fad5c->m_nLevel < 3) {
+		if (g_104df674->vfunc1() || g_104df674->m_nLevel == 0)
+			return;
+	}
+	CMeasureTsc *p = &m_tsc;
+	CycleCount now;
+	now.Sample();
+	*(unsigned __int64 *)p = now.m_Int64 - *(unsigned __int64 *)p;
+	((MeasureTarget *)m_section)->sub_1010df80(p);
+}
+// END FUNCTION
