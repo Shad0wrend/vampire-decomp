@@ -1756,3 +1756,8 @@ ConVar g_104d3fc0("sensitivity", "3", 128, "Mouse sensitivity.", true, 0.1f, tru
 #include "ConVar.h"
 ConVar g_104d3ee8("m_side", "0.8", 128, "Mouse side factor.");
 // END FUNCTION
+
+// FUNCTION: 0x101061a0 size=0xa
+#include "ConVar.h"
+ConVar g_104d3f30("m_yaw", "0.022", 128, "Mouse yaw factor.");
+// END FUNCTION
