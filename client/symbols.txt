@@ -1806,6 +1806,7 @@
 0x10170c20 func   ?sub_10170c20@@YAXXZ sub_10170c20
 0x10170f60 func   ?sub_10170f60@@YAHXZ sub_10170f60
 0x10172ac0 func   ?sub_10172ac0@@YADXZ sub_10172ac0
+0x101745c0 func   ?sub_101745c0@@YAHXZ sub_101745c0
 0x10174c40 func   ?sub_10174c40@@YAXXZ sub_10174c40
 0x101779a0 func   ?sub_101779a0@@YGXH@Z sub_101779a0
 0x10177a10 func   ?sub_10177a10@@YAXXZ sub_10177a10
