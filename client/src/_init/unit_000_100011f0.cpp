@@ -2195,6 +2195,13 @@ int g_102e68e8 = ClientClassInit((DT_ItemKLillyKey::ignored *)0);
 RecvTable g_102e0030;
 // END FUNCTION
 
+// FUNCTION: 0x10021350 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKMuriettaKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKMuriettaKey::ignored>(DT_ItemKMuriettaKey::ignored *);
+int g_102e002c = ClientClassInit((DT_ItemKMuriettaKey::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10021590 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e751c;
