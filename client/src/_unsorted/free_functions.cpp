@@ -13101,6 +13101,81 @@ void sub_10067d00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067db0 size=0x147
+__declspec(dllimport) void DevMsg(const char *fmt, ...);
+
+struct ActivityInfo
+{
+	unsigned short m_nIndex;
+	char m_bPrivate;
+	char m_pad;
+};
+
+struct ActivityEntry
+{
+	int m_nId;
+	ActivityInfo m_info;
+};
+
+struct ActivityStringPool
+{
+	const char *sub_101390c0(ActivityInfo info);
+	void sub_10138bb0();
+};
+
+struct ActivityList
+{
+	virtual void v0();
+	virtual char vfunc1();
+	char m_pad04[0x28];
+	int m_f2c;
+};
+
+extern ActivityList *g_10477114;
+extern int g_10477104;
+extern ActivityEntry *g_104770f8;
+extern ActivityStringPool g_103ef0c8;
+extern const char g_1027feac[];	// "\n"
+
+void sub_10067db0()
+{
+	if (!g_10477114->vfunc1() && g_10477114->m_f2c) {
+		int n = g_10477104;
+		DevMsg("// *******************************************************\n");
+		DevMsg("// *******************************************************\n");
+		DevMsg("// ***    DUMPING ACTIVITY LIST\n");
+		DevMsg("// **\n");
+		DevMsg("// *\n");
+		DevMsg(g_1027feac);
+		DevMsg("///////////////////////\n");
+		DevMsg("// Begin Activity list:\n");
+		DevMsg(g_1027feac);
+		for (int i = 0; i < n; i++) {
+			ActivityEntry e = g_104770f8[i];
+			const char *pszVis = e.m_info.m_bPrivate ? "private" : "public";
+			DevMsg("%3d - %3d - %-40s - %s\n", i, e.m_nId, g_103ef0c8.sub_101390c0(e.m_info), pszVis);
+		}
+		DevMsg(g_1027feac);
+		DevMsg("// End String pool:\n");
+		DevMsg("///////////////////////\n");
+		DevMsg(g_1027feac);
+		DevMsg("///////////////////////\n");
+		DevMsg("// Begin String pool:\n");
+		DevMsg(g_1027feac);
+		g_103ef0c8.sub_10138bb0();
+		DevMsg(g_1027feac);
+		DevMsg("// End String pool:\n");
+		DevMsg("///////////////////////\n");
+		DevMsg(g_1027feac);
+		DevMsg("// *\n");
+		DevMsg("// **\n");
+		DevMsg("// ***    DONE DUMPING ACTIVITY LIST\n");
+		DevMsg("// *******************************************************\n");
+		DevMsg("// *******************************************************\n");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067f00 size=0x6
 namespace lifted {
 extern int g_10477104;
