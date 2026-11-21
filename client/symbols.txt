@@ -83,6 +83,7 @@
 0x10007810 func   ??_GC_SelectFireMachineGun@@UAEPAXI@Z ??_GC_SelectFireMachineGun@@UAEPAXI@Z
 0x10007850 func   ?sub_10007850@@YAHXZ sub_10007850
 0x10007970 func   ?ClientClassInit@@YAHPAUignored@DT_SelectFireMachineGun@@@Z ClientClassInit
+0x10007a90 func   ??_GC_BaseBludgeonWeapon@@UAEPAXI@Z ??_GC_BaseBludgeonWeapon@@UAEPAXI@Z
 0x10007ad0 func   ?sub_10007ad0@@YAHXZ sub_10007ad0
 0x10007bf0 func   ?ClientClassInit@@YAHPAUignored@DT_BaseBludgeonWeapon@@@Z ClientClassInit
 0x10007d50 func   ?sub_10007d50@@YAHXZ sub_10007d50
