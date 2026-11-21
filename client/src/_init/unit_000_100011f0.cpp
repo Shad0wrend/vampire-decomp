@@ -1786,3 +1786,8 @@ Vector g_104d5190(0.0f, 0.0f, 0.0f);
 #include "Vector.h"
 Vector g_104d4d80(0.0f, 0.0f, 0.0f);
 // END FUNCTION
+
+// FUNCTION: 0x101074a0 size=0x5
+#include "Vector.h"
+Vector g_104db5a0(3.4028235e+38f, 3.4028235e+38f, 3.4028235e+38f);
+// END FUNCTION
