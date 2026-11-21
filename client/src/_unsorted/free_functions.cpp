@@ -15444,6 +15444,19 @@ void CUnit1006c4f0::sub_1013ce60(const char *pString)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ce90 size=0x43
+#include "CUtlBuffer.h"
+extern "C" int __cdecl vsprintf(char *, const char *, char *);
+void CUtlBuffer::sub_1013ce90(const char *pFmt, char *list)
+{
+	char temp[2048];
+	int len = vsprintf(temp, pFmt, list);
+	if (!(m_nFlags & 1))
+		len++;
+	sub_1013ce20(temp, len);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d2b0 size=0x71
 #include "CUnknown1024b2d0.h"
 
