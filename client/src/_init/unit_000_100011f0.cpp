@@ -1919,6 +1919,13 @@ int g_102e4c90 = ClientClassInit((DT_ItemGHattersScreenplay::ignored *)0);
 RecvTable g_102e7554;
 // END FUNCTION
 
+// FUNCTION: 0x1001d9d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGStake { struct ignored; }
+template <> int ClientClassInit<DT_ItemGStake::ignored>(DT_ItemGStake::ignored *);
+int g_102e7550 = ClientClassInit((DT_ItemGStake::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001dc10 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e1bd4;
