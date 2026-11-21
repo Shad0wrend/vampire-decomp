@@ -13574,6 +13574,47 @@ float CKeyValuesX::sub_10128540(const char *pszKey, float flDefault)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128590 size=0x8b
+extern int (*g_101e3190)(char *buffer, int count, const char *format, ...);
+
+struct CKeyValuesX {
+	int m_n00;
+	const char *m_sValue;	// 0x04
+	union {
+		int m_iValue;
+		float m_flValue;
+	};	// 0x08
+	int m_iDataType;	// 0x0c
+
+	CKeyValuesX *sub_101282e0(const char *keyName, int bCreate);	// FindKey (stub 0x1000b58c)
+	void sub_101288c0(const char *keyName, const char *value);	// SetString (stub 0x10015258)
+	const char *sub_10128590(const char *keyName, const char *defaultValue);
+};
+
+const char *CKeyValuesX::sub_10128590(const char *keyName, const char *defaultValue)
+{
+	CKeyValuesX *dat = this;
+	if (keyName)
+		dat = sub_101282e0(keyName, 0);
+	if (dat) {
+		char buf[64];
+		switch (dat->m_iDataType) {
+		case 1:
+		case 3:
+			g_101e3190(buf, 64, "%d", dat->m_iValue);
+			sub_101288c0(keyName, buf);
+			break;
+		case 2:
+			g_101e3190(buf, 64, "%f", (double)dat->m_flValue);
+			sub_101288c0(keyName, buf);
+			break;
+		}
+		return dat->m_sValue;
+	}
+	return defaultValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101288c0 size=0x5e
 #include "CKeyValuesX.h"
 #include <string.h>
