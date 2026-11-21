@@ -9019,6 +9019,18 @@ bool sub_10109810(const Vector &center, float radius, const Vector &mins, const 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109890 size=0x23
+struct V3 {
+	float x, y, z;
+};
+
+void sub_10109890(V3 *mins, V3 *maxs)
+{
+	mins->x = mins->y = mins->z = 99999.0f;
+	maxs->x = maxs->y = maxs->z = -99999.0f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109910 size=0x33
 // TARGET: sub_10109910
 #include <math.h>
