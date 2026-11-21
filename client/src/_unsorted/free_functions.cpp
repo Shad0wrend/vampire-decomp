@@ -1544,6 +1544,38 @@ void UtlMem::sub_10096d40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096d80 size=0x95
+#include "CUtlVector76.h"
+extern void *(*g_101e3100)(int);
+extern void *(*g_101e3104)(void *, int);
+
+void CUtlVector76::sub_10096d80(int num)
+{
+    if (m_size + num > m_allocationCount && m_growSize != -1) {
+        int alloc = m_allocationCount;
+        int newSize = m_size + num;
+        if (alloc < newSize) {
+            do {
+                if (alloc != 0) {
+                    if (m_growSize != 0)
+                        alloc += m_growSize;
+                    else
+                        alloc += alloc;
+                } else
+                    alloc = 1;
+            } while (alloc < newSize);
+            m_allocationCount = alloc;
+        }
+        if (m_pMemory)
+            m_pMemory = (char *)g_101e3104(m_pMemory, m_allocationCount * 76);
+        else
+            m_pMemory = (char *)g_101e3100(m_allocationCount * 76);
+    }
+    m_size += num;
+    m_pElements = m_pMemory;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098720 size=0x59
 float sub_10098720(float x, float lo, float hi)
 {
