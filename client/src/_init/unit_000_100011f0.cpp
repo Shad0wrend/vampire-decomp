@@ -765,3 +765,9 @@ ConVar g_104cfeb8("hidehud", "0", 0);
 #include "ConVar.h"
 ConVar g_104cff00("hud_saytext_time", "12", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100f2810 size=0xa
+#include "ConVar.h"
+void sub_100f2850(ConVar *, const char *);
+ConVar g_104d0f70("_fov", "0", 0, "Automates fov command to server.", sub_100f2850);
+// END FUNCTION
