@@ -10062,6 +10062,16 @@ void sub_1009c1a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c7e0 size=0xb
+namespace lifted {
+extern int g_1049d984;
+}
+void sub_1009c7e0()
+{
+    lifted::g_1049d984 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ce00 size=0x7
 int __stdcall sub_1009ce00(int a0)
 {
