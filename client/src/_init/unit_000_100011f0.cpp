@@ -1055,6 +1055,13 @@ int g_102dfff8 = ClientClassInit((DT_ResearchBook_LG_STEALTH::ignored *)0);
 RecvTable g_102e1144;
 // END FUNCTION
 
+// FUNCTION: 0x100125d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_LG_FIREARMS { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_LG_FIREARMS::ignored>(DT_ResearchBook_LG_FIREARMS::ignored *);
+int g_102e1140 = ClientClassInit((DT_ResearchBook_LG_FIREARMS::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10012810 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e6c08;
