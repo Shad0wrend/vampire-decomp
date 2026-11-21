@@ -15471,6 +15471,30 @@ void sub_1013cfe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d0a0 size=0x25
+struct CUnknown1024b000_Ref
+{
+    unsigned short *sub_1013d520();
+};
+
+CUnknown1024b000_Ref *__stdcall sub_1013d090(int *pValue, int value);
+
+struct CUnknown1024b000
+{
+    unsigned short m_nValue;
+
+    CUnknown1024b000 *sub_1013d0a0(int value);
+};
+
+// TARGET: CUnknown1024b000::sub_1013d0a0
+CUnknown1024b000 *CUnknown1024b000::sub_1013d0a0(int value)
+{
+    unsigned short *p = sub_1013d090(&value, value)->sub_1013d520();
+    m_nValue = *p;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d2b0 size=0x71
 #include "CUnknown1024b2d0.h"
 
