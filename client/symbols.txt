@@ -65,6 +65,7 @@
 0x1008ae50 func   ?sub_1008ae50@@YAXPAUBoneView@@HPAUBoneAccView@@@Z sub_1008ae50
 0x1008b560 func   ?sub_1008b560@@YAXPAHPAD@Z sub_1008b560
 0x1008b590 func   ?sub_1008b590@@YADXZ sub_1008b590
+0x1008b5f0 func   ?sub_1008b5f0@@YAPAUCacheEntry@@HHMPBM0I@Z sub_1008b5f0
 0x1008b810 func   ?sub_1008b810@@YAXPAUCUnknownFreeList100c4980@@@Z sub_1008b810
 0x1008d930 func   ?sub_1008d930@@YAPAUSPoseHdr@@PAU1@H@Z sub_1008d930
 0x1008d9d0 func   ?sub_1008d9d0@@YAPAUSeqDesc@@PAUStudioHdr@@H@Z sub_1008d9d0

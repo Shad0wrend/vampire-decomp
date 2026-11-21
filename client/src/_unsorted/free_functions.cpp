@@ -1864,6 +1864,38 @@ char sub_1008b590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b5f0 size=0xc2
+struct CacheEntry {
+	int m_a;
+	int m_b;
+	float m_c;
+	float m_v1[3];
+	float m_v2[3];
+	unsigned int m_nFlags;
+};
+
+extern int g_10491338[];
+extern unsigned int g_10498e78;
+
+void sub_1008b590();
+
+CacheEntry *sub_1008b5f0(int a, int b, float c, const float *v1, const float *v2, unsigned int nFlags)
+{
+	sub_1008b590();
+	unsigned int i = g_10498e78;
+	do {
+		CacheEntry *e = (CacheEntry *)&g_10491338[i * 11];
+		if (e->m_a == a && e->m_b == b && e->m_c == c
+			&& v1[0] == e->m_v1[0] && v1[1] == e->m_v1[1] && v1[2] == e->m_v1[2]
+			&& v2[0] == e->m_v2[0] && v2[1] == e->m_v2[1] && v2[2] == e->m_v2[2]
+			&& (e->m_nFlags & nFlags) == nFlags)
+			return e;
+		i = (i - 1) & 0xf;
+	} while (i != g_10498e78);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b810 size=0x35
 // TARGET: sub_1008b810
 struct CUnknownFreeNode100c4980
