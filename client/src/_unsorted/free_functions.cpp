@@ -78,6 +78,18 @@ char CUnknown10001990::sub_10001990(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001f20 size=0x12
+namespace lifted {
+extern char g_102ea298;
+struct C10029450 { int sub_10029450(int); };
+}
+struct CUnknown10001f20 { int sub_10001f20(); };
+int CUnknown10001f20::sub_10001f20()
+{
+    return ((lifted::C10029450 *)((int)&lifted::g_102ea298))->sub_10029450(*(int *)((char *)this + 0x454));
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002200 size=0x3
 void __stdcall sub_10002200(int a0)
 {
