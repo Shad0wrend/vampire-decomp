@@ -20710,6 +20710,31 @@ template <> int ClientClassInit<DT_PhysBox::ignored>(DT_PhysBox::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bcd00 size=0xe6
+#include "RecvTable.h"
+extern RecvTable g_104a3398;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp InternalRecvPropArray(int, int, char *, void (*)(void *, int, int));
+template <typename T> int ClientClassInit(T *);
+namespace DT_PlayerLocalPredictedData { struct ignored; }
+template <> int ClientClassInit<DT_PlayerLocalPredictedData::ignored>(DT_PlayerLocalPredictedData::ignored *)
+{
+	char *pRecvTableName = "DT_PlayerLocalPredictedData";
+	RecvTable &RecvTable = g_104a3398;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_nTargetModel", 4, 4, 0, 0),
+		RecvPropInt("m_nSpreadLModel", 8, 4, 0, 0),
+		RecvPropInt("m_nSpreadRModel", 12, 4, 0, 0),
+		RecvPropInt("m_nDeadFlag", 16, 4, 0, 0),
+		RecvPropInt("m_chAreaBits[0]", 20, 1, 0, 0),
+		InternalRecvPropArray(32, 1, "m_chAreaBits", 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bce50 size=0x6
 namespace lifted {
 extern char g_104a38dc;
