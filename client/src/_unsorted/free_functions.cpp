@@ -14306,6 +14306,17 @@ char sub_10101b80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101d90 size=0x7
+namespace lifted {
+extern char g_102352ec;
+}
+struct CUnknown10101d90 { void sub_10101d90(); };
+void CUnknown10101d90::sub_10101d90()
+{
+    *(int *)this = (int)&lifted::g_102352ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10102fd0 size=0x3
 void __stdcall sub_10102fd0(int a0)
 {
