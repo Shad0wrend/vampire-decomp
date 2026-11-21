@@ -21088,6 +21088,31 @@ void sub_10159020(int callback)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159080 size=0x83
+#include "CVDmg_t.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+extern int (*g_105f938c)(CVDmg_t *, int, int);
+
+int CVDmg_t::sub_10159080(int a, int b)
+{
+    g_101e3124[*g_101e3128].name = "CVDmg_t::Apply";
+    g_101e3124[*g_101e3128].ent = g_102de300;
+    g_101e3124[*g_101e3128].extra = g_102de300;
+    ++*g_101e3128;
+    if (g_105f938c) {
+        int r = g_105f938c(this, a, b);
+        --*g_101e3128;
+        return r;
+    }
+    --*g_101e3128;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101594e0 size=0x6d
 #include "CVStatCost_t.h"
 
