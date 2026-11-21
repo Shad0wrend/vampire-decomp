@@ -4668,6 +4668,13 @@ int g_104a5420 = ClientClassInit((DT_VGuiScreen::ignored *)0);
 RecvTable g_104a545c;
 // END FUNCTION
 
+// FUNCTION: 0x100ca310 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_World { struct ignored; }
+template <> int ClientClassInit<DT_World::ignored>(DT_World::ignored *);
+int g_104a5458 = ClientClassInit((DT_World::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100cb2d0 size=0x5
 #define PCD_INITIALIZERS
 #include "InterfaceReg.h"
