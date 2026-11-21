@@ -23,6 +23,13 @@ ConVar g_102de308("camera_fov", "-1", 0);
 RecvTable g_102de350;
 // END FUNCTION
 
+// FUNCTION: 0x10002710 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_CCameraAnimated { struct ignored; }
+template <> int ClientClassInit<DT_CCameraAnimated::ignored>(DT_CCameraAnimated::ignored *);
+int g_102de34c = ClientClassInit((DT_CCameraAnimated::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100029a0 size=0xa
 #include "RecvTable.h"
 RecvTable g_102de694;
