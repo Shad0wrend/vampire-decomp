@@ -1063,6 +1063,7 @@
 0x1010bf60 func   ?sub_1010bf60@@YAXPBM00PAM1@Z sub_1010bf60
 0x1010c230 func   ?sub_1010c230@@YAMM@Z sub_1010c230
 0x1010c2a0 func   ?sub_1010c2a0@@YADXZ sub_1010c2a0
+0x1010c2b0 func   ?sub_1010c2b0@@YADXZ sub_1010c2b0
 0x1010c2e0 func   ?sub_1010c2e0@@YAMMMM@Z sub_1010c2e0
 0x1010c320 func   ?sub_1010c320@@YAMMMM@Z sub_1010c320
 0x1010c410 func   ?sub_1010c410@@YAMMM@Z sub_1010c410
