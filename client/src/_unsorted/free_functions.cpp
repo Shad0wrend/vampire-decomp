@@ -27496,6 +27496,16 @@ void CPtrList101d6400::sub_10151890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151d20 size=0x6
+namespace lifted {
+extern char g_105e8894;
+}
+int sub_10151d20()
+{
+    return (int)&lifted::g_105e8894;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101520c0 size=0x5
 namespace lifted {
 int sub_100a2930();
