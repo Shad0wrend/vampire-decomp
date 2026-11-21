@@ -38473,6 +38473,20 @@ bool CUnknown10248a50::sub_10127f20(int unused, const char *pszBuffer, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128100 size=0x7c
+#include "CKeyValuesX.h"
+#include "CUtlBuffer.h"
+
+void CKeyValuesX::sub_10128100(const char *pszFile, IKeyValuesFileView *pFileSystem, const char *pszPathID)
+{
+	CUtlBuffer buf(0, 0, 1);
+	sub_10128180(&buf, 0);
+	int hFile = pFileSystem->Open(pszFile, "wt", pszPathID);
+	pFileSystem->Write(buf.m_pBuffer, buf.m_nPut, hFile);
+	pFileSystem->Close(hFile);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128260 size=0xa
 struct CUnknown10128260 { int sub_10128260(int); };
 int CUnknown10128260::sub_10128260(int a0)
