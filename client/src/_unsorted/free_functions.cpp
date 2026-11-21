@@ -12401,6 +12401,26 @@ int CKeyValuesX::sub_101284c0(const char *pszKey, int nDefault)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128510 size=0x2e
+#include "CKeyValuesX.h"
+
+// TARGET: CKeyValuesX::sub_10128510
+int CKeyValuesX::sub_10128510(const char *pszKey, int nDefault)
+{
+	CKeyValuesX *pKey = this;
+	if (pszKey != 0) {
+		pKey = sub_101282e0(pszKey, 0);
+	}
+	if (pKey != 0) {
+		if (((int *)pKey)[3] != 3) {
+			return 0;
+		}
+		return ((int *)pKey)[2];
+	}
+	return nDefault;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128540 size=0x4f
 #include "CKeyValuesX.h"
 extern "C" double __cdecl atof(const char *);
