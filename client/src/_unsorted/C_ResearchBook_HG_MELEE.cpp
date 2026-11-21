@@ -1,0 +1,12 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "client.h"
+
+// FUNCTION: 0x10011a90 size=0x1e
+#include "C_ResearchBook_HG_MELEE.h"
+
+// VC6 writes C_ResearchBook_HG_MELEE's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+C_ResearchBook_HG_MELEE *pcd_emit_10011a90() { return new C_ResearchBook_HG_MELEE; }
+
+// TARGET: ??_GC_ResearchBook_HG_MELEE@@UAEPAXI@Z
+// END FUNCTION
