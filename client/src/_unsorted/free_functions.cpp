@@ -18806,6 +18806,12 @@ void CPtrList101d6400::sub_10144770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144d30 size=0x1
+void sub_10144d30()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10144d60 size=0x25
 // TARGET: sub_10144d60
 void __fastcall sub_10144d60(int *pThis)
