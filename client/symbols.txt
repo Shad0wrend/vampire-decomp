@@ -79,6 +79,7 @@
 0x100c1e70 func   ?sub_100c1e70@UtlVec40@@QAEXHH@Z UtlVec40::sub_100c1e70
 0x100c1eb0 func   ?sub_100c1eb0@UtlMem@@QAEXXZ UtlMem::sub_100c1eb0
 0x100c1ee0 func   ?sub_100c1ee0@CUnknown101a59f0@@QAEXH@Z CUnknown101a59f0::sub_100c1ee0
+0x100c4270 func   ?sub_100c4270@@YAXPBDPAD@Z sub_100c4270
 0x100c4b10 func   ?sub_100c4b10@CUnknown100b6f80@@QAEHPAUCUnknown100b6f80Hdr@@HPAH@Z CUnknown100b6f80::sub_100c4b10
 0x100c4c10 func   ?sub_100c4c10@UtlMem@@QAEXH@Z UtlMem::sub_100c4c10
 0x100caa00 func   ?sub_100caa00@CUtlLinkedList12@@QAEXH@Z CUtlLinkedList12::sub_100caa00

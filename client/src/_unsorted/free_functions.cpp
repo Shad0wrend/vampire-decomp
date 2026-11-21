@@ -2118,6 +2118,31 @@ void CUnknown101a59f0::sub_100c1ee0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4270 size=0x7f
+extern "C" unsigned strlen(const char *);
+extern void (*g_101e3188)(char *dest, const char *src, int count);
+
+void sub_100c4270(const char *in, char *out)
+{
+    int len = strlen(in);
+    int end = len - 1;
+    while (end && in[end] != '.' && in[end] != '/' && in[end] != '\\')
+        end--;
+    if (in[end] != '.')
+        end = len - 1;
+    else
+        end--;
+    int start = len - 1;
+    while (start >= 0 && in[start] != '/' && in[start] != '\\')
+        start--;
+    if (start >= 0 && (in[start] == '/' || in[start] == '\\'))
+        start++;
+    else
+        start = 0;
+    g_101e3188(out, &in[start], end - start + 2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c4b10 size=0x81
 #include "CUnknown100b6f80.h"
 
