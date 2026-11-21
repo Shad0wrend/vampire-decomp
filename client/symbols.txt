@@ -964,6 +964,7 @@
 0x1003dd60 func   ?sub_1003dd60@@YAHXZ sub_1003dd60
 0x1003de60 func   ?ClientClassInit@@YAHPAUignored@DT_TEParticleSystem@@@Z ClientClassInit
 0x1003df30 func   ??_GC_TEParticleSystem@@UAEPAXI@Z ??_GC_TEParticleSystem@@UAEPAXI@Z
+0x1003df80 func   ??_GCTEParticleRenderer@@UAEPAXI@Z ??_GCTEParticleRenderer@@UAEPAXI@Z
 0x1003dfa0 func   ??1CTEParticleRenderer@@UAE@XZ CTEParticleRenderer::~CTEParticleRenderer
 0x1003dfa0 func   ?sub_1003dfa0@CUnknown1003dfa0@@QAEHXZ CUnknown1003dfa0::sub_1003dfa0
 0x1003e7c0 func   ??1C_TEPlayerDecal@@UAE@XZ C_TEPlayerDecal::~C_TEPlayerDecal
