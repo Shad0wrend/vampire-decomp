@@ -20037,6 +20037,37 @@ int sub_100b3050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b3190 size=0x14a
+#include "RecvTable.h"
+extern RecvTable g_104a1bec;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102b2c10;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_FuncParticle { struct ignored; }
+template <> int ClientClassInit<DT_FuncParticle::ignored>(DT_FuncParticle::ignored *)
+{
+	char *pRecvTableName = "DT_FuncParticle";
+	RecvTable &RecvTable = g_104a1bec;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102b2c10, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_flSizeScalar", 1216, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_vecSpawnMins[0]", 1232, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_vecSpawnMins[1]", 1236, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_vecSpawnMins[2]", 1240, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_vecSpawnMaxs[0]", 1220, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_vecSpawnMaxs[1]", 1224, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_vecSpawnMaxs[2]", 1228, 4, 0, RecvProxy_FloatToFloat),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b4d30 size=0x8f
 #include "CUtlVector40.h"
 
