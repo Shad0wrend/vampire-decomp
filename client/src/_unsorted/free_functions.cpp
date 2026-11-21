@@ -2330,6 +2330,18 @@ void CUtlVector76::sub_10096d80(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10096e20 size=0x49
+#include "CUtlVector76.h"
+void *sub_101d0f30(void *, const void *, unsigned int);
+
+void CUtlVector76::sub_10096e20(int elem, int num)
+{
+    int numToMove = m_size - elem - num;
+    if (numToMove > 0 && num > 0)
+        sub_101d0f30(m_pMemory + (elem + num) * 76, m_pMemory + elem * 76, numToMove * 76);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096e70 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
