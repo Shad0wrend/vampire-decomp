@@ -4810,6 +4810,17 @@ int sub_10042fe0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043070 size=0x16
+namespace lifted {
+struct C100442b0 { int sub_100442b0(); };
+}
+int sub_10043070(int a0, int a1, int a2)
+{
+    *(int *)((char *)a2) = *(int *)((char *)a0 + 4);
+    return ((lifted::C100442b0 *)a1)->sub_100442b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100430e0 size=0xb
 namespace lifted {
 extern char g_10227adc;
