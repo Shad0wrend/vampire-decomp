@@ -28116,6 +28116,13 @@ void __stdcall sub_101537e0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101537f0 size=0x6
+int __stdcall sub_101537f0(int a0, int a1)
+{
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153810 size=0x1c
 struct CUnk101f1bb0 {
 	void *m_00;
