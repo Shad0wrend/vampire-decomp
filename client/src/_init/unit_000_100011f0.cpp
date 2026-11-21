@@ -203,3 +203,9 @@ ConCommand g_103eebf4("slot5", sub_10058350, 0, 0, 0);
 void sub_10058360(void);
 ConCommand g_103eec1c("slot6", sub_10058360, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10058590 size=0xa
+#include "ConCommand.h"
+void sub_10058370(void);
+ConCommand g_103eec44("slot7", sub_10058370, 0, 0, 0);
+// END FUNCTION
