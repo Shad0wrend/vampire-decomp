@@ -28418,6 +28418,19 @@ void CPtrList101d6400::sub_10142000()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101427d0 size=0x1b
+struct CUnknown101427d0 { void * sub_101427d0(); };
+void * CUnknown101427d0::sub_101427d0()
+{
+    *(int *)this = 1;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101427f0 size=0x59
 struct CPartListUnit2 {
     void sub_101423a0();
