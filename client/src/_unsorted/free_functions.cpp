@@ -13340,6 +13340,16 @@ void sub_100ebf40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ec360 size=0x6
+namespace lifted {
+extern int g_104df784;
+}
+int sub_100ec360()
+{
+    return lifted::g_104df784;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ec3a0 size=0xae
 #include "CGameMovement.h"
 
