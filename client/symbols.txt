@@ -1228,6 +1228,7 @@
 0x10114690 func   ?sub_10114690@@YAHXZ sub_10114690
 0x101146a0 func   ?sub_101146a0@@YAHXZ sub_101146a0
 0x101146b0 func   ?sub_101146b0@@YAHXZ sub_101146b0
+0x101146c0 func   ?sub_101146c0@@YAHXZ sub_101146c0
 0x10115dd0 func   ?sub_10115dd0@@YGHHH@Z sub_10115dd0
 0x10115de0 func   ?sub_10115de0@@YADXZ sub_10115de0
 0x10115df0 func   ?sub_10115df0@@YADXZ sub_10115df0
