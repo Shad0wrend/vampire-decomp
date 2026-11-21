@@ -525,3 +525,8 @@ ConVar g_104a0c58("camera_ignore", "0", 0);
 #include "ConVar.h"
 ConVar g_104a0f30("money", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100ac7e0 size=0xa
+#include "ConVar.h"
+ConVar g_104a0dc8("bc_fade", "0.2", 0);
+// END FUNCTION
