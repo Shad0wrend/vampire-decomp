@@ -21138,6 +21138,30 @@ bool CVDmg_t::sub_10159170(int target)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101591f0 size=0x66
+struct ScopeTrace_t { const char *name; const char *a; const char *b; };
+extern ScopeTrace_t *g_101e3124;
+extern int *g_101e3128;
+extern const char g_102de300[];
+extern const char g_102cb550[];
+
+struct CVDmg_t {
+	char pad[0x40]; unsigned int m_nFlags;
+	// TARGET: CVDmg_t::sub_101591f0
+	void sub_101591f0(unsigned int flags);
+};
+
+void CVDmg_t::sub_101591f0(unsigned int flags)
+{
+	g_101e3124[*g_101e3128].name = g_102cb550;
+	g_101e3124[*g_101e3128].a = g_102de300;
+	g_101e3124[*g_101e3128].b = g_102de300;
+	++*g_101e3128;
+	m_nFlags |= flags;
+	--*g_101e3128;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101594e0 size=0x6d
 #include "CVStatCost_t.h"
 
