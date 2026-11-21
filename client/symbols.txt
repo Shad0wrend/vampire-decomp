@@ -277,6 +277,7 @@
 0x100ebee0 func   ?sub_100ebee0@@YAHHHAAVVector@@@Z sub_100ebee0
 0x100ec3a0 func   ?sub_100ec3a0@CGameMovement@@QAEHABVVector@@@Z CGameMovement::sub_100ec3a0
 0x100ecfb0 func   ?sub_100ecfb0@@YGMMM@Z sub_100ecfb0
+0x100edcf0 func   ?sub_100edcf0@@YAPBDH@Z sub_100edcf0
 0x100efee0 func   ?sub_100efee0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100efee0
 0x100eff70 func   ?sub_100eff70@CMem8b_t@@QAEXH@Z CMem8b_t::sub_100eff70
 0x100f3f90 func   ?sub_100f3f90@@YAXH@Z sub_100f3f90
