@@ -251,6 +251,27 @@ template <> int ClientClassInit<DT_Corpse::ignored>(DT_Corpse::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10002ee0 size=0x6e
+#include "RecvTable.h"
+extern RecvTable g_102de840;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_HL2Local { struct ignored; }
+template <> int ClientClassInit<DT_HL2Local::ignored>(DT_HL2Local::ignored *)
+{
+	char *pRecvTableName = "DT_HL2Local";
+	RecvTable &RecvTable = g_102de840;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropFloat("m_flSuitPower", 0, 4, 0, RecvProxy_FloatToFloat),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002f60 size=0x9
 struct CUnknown10002f60 { void * sub_10002f60(); };
 void * CUnknown10002f60::sub_10002f60()
