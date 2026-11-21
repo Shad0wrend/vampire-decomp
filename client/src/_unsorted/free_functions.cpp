@@ -9297,6 +9297,18 @@ void sub_10109e90(const Vector &in, float yaw, Vector &out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109f00 size=0x34
+#include <math.h>
+extern float g_104df5b4;
+// TARGET: sub_10109f00
+float sub_10109f00(float a, float b)
+{
+	if (-1.0f != b)
+		g_104df5b4 = (float)(log(b) * -1.4427000284194946);
+	return (float)pow(a, g_104df5b4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a020 size=0x82
 #include "Quaternion.h"
 
