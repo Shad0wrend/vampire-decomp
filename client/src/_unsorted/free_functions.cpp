@@ -33053,6 +33053,15 @@ bool CVDmgBlock16_t::sub_101613e0(const CVDmgBlock16_t *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161410 size=0x9
+struct CUnknown10161410 { void * sub_10161410(); };
+void * CUnknown10161410::sub_10161410()
+{
+    *(int *)this = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161420 size=0x1
 void sub_10161420()
 {
