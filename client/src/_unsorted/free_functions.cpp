@@ -9849,6 +9849,14 @@ void __stdcall sub_100a13d0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a13e0 size=0x7
+struct CUnknown100a13e0 { int sub_100a13e0(); };
+int CUnknown100a13e0::sub_100a13e0()
+{
+    return *(int *)((char *)this + 0x170);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a32c0 size=0x3
 char sub_100a32c0()
 {
