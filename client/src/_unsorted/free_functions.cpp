@@ -20150,6 +20150,17 @@ char sub_10115fa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10116b90 size=0x17
+struct CUnknown10116b90 { int sub_10116b90(int, int, int); };
+int CUnknown10116b90::sub_10116b90(int a0, int a1, int a2)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 4) = a1;
+    *(int *)((char *)this + 8) = a2;
+    return a2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10116df0 size=0x11
 struct CUnknown10116df0 { int sub_10116df0(int, int); };
 int CUnknown10116df0::sub_10116df0(int a0, int a1)
