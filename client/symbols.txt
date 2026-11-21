@@ -945,6 +945,7 @@
 0x1007f860 func   ?sub_1007f860@CUnknown1007f860@@QAEHH@Z CUnknown1007f860::sub_1007f860
 0x1007f870 func   ?sub_1007f870@CUnknown1007f870@@QAEHXZ CUnknown1007f870::sub_1007f870
 0x1007f960 func   ?sub_1007f960@@YAHXZ sub_1007f960
+0x1007fa60 func   ?ClientClassInit@@YAHPAUignored@DT_BaseViewModel@@@Z ClientClassInit
 0x1007fd00 func   ?sub_1007fd00@@YAHXZ sub_1007fd00
 0x10080e00 func   ?sub_10080e00@@YGHH@Z sub_10080e00
 0x10080e10 func   ?sub_10080e10@@YGXHH@Z sub_10080e10
