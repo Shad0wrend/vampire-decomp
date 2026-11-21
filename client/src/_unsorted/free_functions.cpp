@@ -23681,6 +23681,53 @@ void sub_101a1010(VMatrix &dst, const Vector &scale)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1210 size=0xe7
+#include "VMatrix.h"
+
+struct VPlane
+{
+	Vector m_Normal;
+	vec_t m_Dist;
+};
+
+// TARGET: sub_101a1210
+VMatrix sub_101a1210(const Vector &vOrigin, const VPlane &thePlane)
+{
+	vec_t dot;
+	VMatrix mRet;
+
+	#define PN thePlane.m_Normal
+	#define PD thePlane.m_Dist;
+
+		dot = PN[0]*vOrigin.x + PN[1]*vOrigin.y + PN[2]*vOrigin.z - PD;
+
+		mRet.m[0][0] = dot - vOrigin.x * PN[0];
+		mRet.m[0][1] = -vOrigin.x * PN[1];
+		mRet.m[0][2] = -vOrigin.x * PN[2];
+		mRet.m[0][3] = -vOrigin.x * -PD;
+
+		mRet.m[1][0] = -vOrigin.y * PN[0];
+		mRet.m[1][1] = dot - vOrigin.y * PN[1];
+		mRet.m[1][2] = -vOrigin.y * PN[2];
+		mRet.m[1][3] = -vOrigin.y * -PD;
+
+		mRet.m[2][0] = -vOrigin.z * PN[0];
+		mRet.m[2][1] = -vOrigin.z * PN[1];
+		mRet.m[2][2] = dot - vOrigin.z * PN[2];
+		mRet.m[2][3] = -vOrigin.z * -PD;
+
+		mRet.m[3][0] = -PN[0];
+		mRet.m[3][1] = -PN[1];
+		mRet.m[3][2] = -PN[2];
+		mRet.m[3][3] = dot + PD;
+
+	#undef PN
+	#undef PD
+
+	return mRet;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2290 size=0x157
 #include "QAngle.h"
 #include "VMatrix.h"
