@@ -8583,6 +8583,16 @@ bool sub_1008c770(void *pStudioHdr, int iSequence, float flCycleFrom, float flCy
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008ce20 size=0x7
+namespace lifted {
+extern float g_101e34f0;
+}
+float sub_1008ce20()
+{
+    return lifted::g_101e34f0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008ce30 size=0x3
 int sub_1008ce30()
 {
