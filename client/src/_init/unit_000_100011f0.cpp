@@ -1787,6 +1787,13 @@ int g_102e5294 = ClientClassInit((DT_ItemGGuyMagazine::ignored *)0);
 RecvTable g_102e520c;
 // END FUNCTION
 
+// FUNCTION: 0x1001be50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGBrotherhoodFlyer { struct ignored; }
+template <> int ClientClassInit<DT_ItemGBrotherhoodFlyer::ignored>(DT_ItemGBrotherhoodFlyer::ignored *);
+int g_102e5208 = ClientClassInit((DT_ItemGBrotherhoodFlyer::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001c090 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e2d28;
