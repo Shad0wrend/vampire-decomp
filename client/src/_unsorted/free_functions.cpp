@@ -10610,6 +10610,16 @@ void sub_1010b1a0(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b1d0 size=0x32
+// TARGET: sub_1010b1d0
+void __cdecl sub_1010b140(float a, float b, float c, float d, int e);
+
+void __cdecl sub_1010b1d0(float p1, float p2, float p3, int p4)
+{
+    sub_1010b140(p2, p3, p2 - p1, p3 - p2, p4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010b9d0 size=0xab
 #include "Vector.h"
 // TARGET: sub_1010b9d0
