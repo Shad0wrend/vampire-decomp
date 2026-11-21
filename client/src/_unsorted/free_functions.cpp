@@ -13637,6 +13637,16 @@ void sub_100f4060(void *pSystem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f40d0 size=0x6
+namespace lifted {
+extern int g_104d104c;
+}
+int sub_100f40d0()
+{
+    return lifted::g_104d104c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f40e0 size=0x94
 #include "Vector.h"
 struct AutoSys {
