@@ -14620,6 +14620,17 @@ void *CAutoGameSystem::sub_10134fa0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101352e0 size=0x21
+// TARGET: CUtlVector4::sub_101352e0
+#include "CUtlVector4.h"
+void CUtlVector4::sub_101352e0(int a, int b)
+{
+    int tmp = m_pMemory[a];
+    m_pMemory[a] = m_pMemory[b];
+    m_pMemory[b] = tmp;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135350 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
