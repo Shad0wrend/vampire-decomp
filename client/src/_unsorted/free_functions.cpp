@@ -14155,6 +14155,41 @@ void sub_10131590(void *pDest, void *pSrc)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101315b0 size=0x67
+extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
+extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
+
+struct CMem8b_t {
+	void *m_pMemory; int m_nAllocationCount; int m_nGrowSize;
+	// TARGET: CMem8b_t::sub_101315b0
+	void sub_101315b0(int num);
+};
+
+void CMem8b_t::sub_101315b0(int num)
+{
+	if (m_nGrowSize == -1)
+		return;
+	int alloc = m_nAllocationCount;
+	int newAlloc = num + alloc;
+	if (alloc < newAlloc) {
+		do {
+			if (alloc != 0) {
+				if (m_nGrowSize != 0)
+					alloc += m_nGrowSize;
+				else
+					alloc += alloc;
+			} else
+				alloc = 4;
+		} while (alloc < newAlloc);
+		m_nAllocationCount = alloc;
+	}
+	if (m_pMemory)
+		m_pMemory = Plat_Realloc(m_pMemory, m_nAllocationCount << 3);
+	else
+		m_pMemory = Plat_Alloc(m_nAllocationCount << 3);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131e60 size=0xcf
 #include "CUnknown101b9140.h"
 
