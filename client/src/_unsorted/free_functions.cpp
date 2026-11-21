@@ -3595,6 +3595,16 @@ int sub_100397a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10039c40 size=0x6
+namespace lifted {
+extern char g_102ee56c;
+}
+int sub_10039c40()
+{
+    return (int)&lifted::g_102ee56c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039e60 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
