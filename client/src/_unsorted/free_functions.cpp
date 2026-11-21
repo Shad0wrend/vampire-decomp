@@ -17592,6 +17592,31 @@ CUnknown101dd480 *CUnknown101dd480::sub_10147e30()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148040 size=0x52
+#include <stdlib.h>
+#include <string.h>
+struct SRange {
+	int m_nMin;
+	int m_nMax;
+
+	void sub_10148040(const char *psz);
+};
+
+void SRange::sub_10148040(const char *psz)
+{
+	if (psz && *psz) {
+		m_nMin = atoi(psz);
+		if (m_nMin == -1)
+			m_nMin = 99999;
+		const char *pDash = strchr(psz, '-');
+		if (pDash)
+			m_nMax = atoi(pDash + 1);
+		else
+			m_nMax = m_nMin;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101482a0 size=0x8a
 #include "S101df260.h"
 
