@@ -21411,6 +21411,30 @@ bool CUnit101fbfc0::sub_10159b40(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159b70 size=0x9f
+#include <stdio.h>
+#include "CVStatCost_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+extern void (__cdecl *g_101e3118)(int level, const char *fmt, ...);
+
+void CVStatSubCost_t::sub_10159b70(const char *pszLabel)
+{
+    char buf[128];
+    g_101e3124[*g_101e3128].a = "CVStatSubCost_t::Debug_Display";
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    (*g_101e3128)++;
+    if (!sub_101595e0()) {
+        sprintf(buf, "\t\t\t( %s: '%s' )\t", pszLabel, sub_10159940());
+        g_101e3118(1, buf);
+    }
+    (*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159d10 size=0xeb
 #include "CVStatCost_t.h"
 
