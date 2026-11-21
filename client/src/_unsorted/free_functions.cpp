@@ -6690,6 +6690,41 @@ unsigned short CUtlLinkedList6::sub_100e2840(bool multilist)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2970 size=0x68
+extern void *(*g_101e3104)(void *, int);
+extern void *(*g_101e3100)(int);
+struct S100fa600 {
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+    void sub_100e2970(int num);
+};
+// TARGET: S100fa600::sub_100e2970
+void S100fa600::sub_100e2970(int num)
+{
+    if (m_nGrowSize == -1)
+        return;
+    int newCount = m_nAllocationCount + num;
+    if (m_nAllocationCount < newCount) {
+        int a = m_nAllocationCount;
+        do {
+            if (a != 0) {
+                if (m_nGrowSize != 0)
+                    a = a + m_nGrowSize;
+                else
+                    a = a * 2;
+            } else
+                a = 6;
+        } while (a < newCount);
+        m_nAllocationCount = a;
+    }
+    if (m_pMemory)
+        m_pMemory = g_101e3104(m_pMemory, m_nAllocationCount * 6);
+    else
+        m_pMemory = g_101e3100(m_nAllocationCount * 6);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e2a10 size=0xc1
 #include "CUnknown100fde30.h"
 
