@@ -37069,6 +37069,17 @@ int CUnknown101cb010::sub_101cb010()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101cb0b0 size=0xa
+namespace lifted {
+extern int g_1067c0a0;
+}
+int sub_101cb0b0(int a0)
+{
+    lifted::g_1067c0a0 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101d0d28 size=0x18
 // TARGET: sub_101d0d28
 void sub_101d0d40();
