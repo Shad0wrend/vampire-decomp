@@ -1,0 +1,12 @@
+// Matched functions only. Written by pcdecomp; change it through pcdecomp.
+#include "client.h"
+
+// FUNCTION: 0x10025a90 size=0x1e
+#include "C_ItemKFUOfficeKey.h"
+
+// VC6 writes C_ItemKFUOfficeKey's scalar deleting destructor where it emits the class's vtable; `new` in a function
+// nothing calls makes it emit both here
+C_ItemKFUOfficeKey *pcd_emit_10025a90() { return new C_ItemKFUOfficeKey; }
+
+// TARGET: ??_GC_ItemKFUOfficeKey@@UAEPAXI@Z
+// END FUNCTION
