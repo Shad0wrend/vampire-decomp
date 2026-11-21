@@ -52048,6 +52048,53 @@ void __cdecl sub_1015fa10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fa50 size=0xb1
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+
+struct CVDataBase	// the virtual base of the data file object
+{
+	virtual void vfunc0();
+	virtual void vfunc1();	// releases the file object
+};
+
+struct CVDataKeys : virtual CVDataBase	// a parsed data file / block: slot 2 finds a block by name, slot 3 gives the next sibling
+{
+	virtual void vk0();
+	virtual void vk1();
+	virtual CVDataKeys *vfunc2(const char *pszName);
+	virtual CVDataKeys *vfunc3();
+};
+
+struct CVDataStrings { void sub_1015f120(CVDataKeys *pKeys); };	// stub 0x10006df2
+struct CVDataTables { void sub_101604b0(CVDataKeys *pKeys, int a); };	// stub 0x10011be9
+
+extern void *g_104a580c;
+extern CVDataStrings g_105f93c0;
+extern CVDataTables g_105f985c;
+extern void (__cdecl *g_101e3108)(const char *fmt, ...);	// Msg
+extern void (__cdecl *g_101e310c)(const char *fmt, ...);	// Error
+CVDataKeys *sub_101545c0(const char *pszFile, void *pFileSystem);	// stub 0x1000a119
+
+void __cdecl sub_1015fa50(const char *pszName, const char *pszKind)
+{
+	char szFile[128];
+	sprintf(szFile, "%s%s.txt", "vdata\\system\\", pszName);
+	CVDataKeys *pKeys = sub_101545c0(szFile, g_104a580c);
+	if (pKeys) {
+		CVDataKeys *p = pKeys->vfunc2("Strings");
+		if (p)
+			g_105f93c0.sub_1015f120(p);
+		p = pKeys->vfunc2("Tables");
+		if (p)
+			g_105f985c.sub_101604b0(p, 0);
+		pKeys->vfunc1();
+		return;
+	}
+	g_101e3108("Unable to load vamp_support_general_strings_Precache data for: %s\n", szFile);
+	g_101e310c(szFile);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015fbc0 size=0x2f
 #include "FileSystemViews.h"
 #include <string.h>
