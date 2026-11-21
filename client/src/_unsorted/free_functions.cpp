@@ -19850,6 +19850,13 @@ void CPtrList101d6400::sub_10140380()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140440 size=0x5
+char __stdcall sub_10140440(int a0, int a1)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101405a0 size=0x1
 void sub_101405a0()
 {
