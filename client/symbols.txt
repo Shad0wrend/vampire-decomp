@@ -224,6 +224,7 @@
 0x1000ed90 func   ??_GC_WeaponRanged_Rifle_SuperShotgun@@UAEPAXI@Z ??_GC_WeaponRanged_Rifle_SuperShotgun@@UAEPAXI@Z
 0x1000edd0 func   ?sub_1000edd0@@YAHXZ sub_1000edd0
 0x1000eef0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Rifle_SuperShotgun@@@Z ClientClassInit
+0x1000f010 func   ??_GC_WeaponRanged_Smg_Uzi@@UAEPAXI@Z ??_GC_WeaponRanged_Smg_Uzi@@UAEPAXI@Z
 0x1000f050 func   ?sub_1000f050@@YAHXZ sub_1000f050
 0x1000f170 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Smg_Uzi@@@Z ClientClassInit
 0x1000f2d0 func   ?sub_1000f2d0@@YAHXZ sub_1000f2d0
