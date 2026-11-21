@@ -1926,3 +1926,8 @@ ConVar g_104dfbc0("sv_jump_maxspeed", "350.0", 8320, "Maximum attainable speed w
 #include "ConVar.h"
 ConVar g_104df938("sv_jump_boost_immediate", "0", 8320, "");
 // END FUNCTION
+
+// FUNCTION: 0x10115c60 size=0xa
+#include "ConVar.h"
+ConVar g_104e0920("r_DrawParticles", "1", 0, "Enable/disable particle rendering");
+// END FUNCTION
