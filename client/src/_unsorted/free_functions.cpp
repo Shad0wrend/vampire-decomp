@@ -538,6 +538,25 @@ void UtlMem::sub_10067a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100790f0 size=0x69
+#include "CUnknown10427700.h"
+#include <string.h>
+
+extern char *(*g_101e3188)(char *, const char *, int);
+
+bool CUnknown10427700::sub_100790f0(const char *name, int a, int b)
+{
+    if (m_nEntries == 0x20)
+        return false;
+    unsigned int len = strlen(name);
+    m_entries[m_nEntries].m_pName = (char *)operator new(len + 1);
+    g_101e3188(m_entries[m_nEntries].m_pName, name, len + 1);
+    m_entries[m_nEntries].m_a = a;
+    m_entries[m_nEntries].m_b = b;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100797c0 size=0x1c
 void sub_10079520(void *p);
 
