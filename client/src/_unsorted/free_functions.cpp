@@ -12818,6 +12818,14 @@ char *__stdcall sub_100df3c0(char *s)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df410 size=0x7
+struct CUnknown100df410 { int sub_100df410(); };
+int CUnknown100df410::sub_100df410()
+{
+    return *(int *)((char *)(*(int *)((char *)this + 4)) + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df4c0 size=0x3
 int sub_100df4c0()
 {

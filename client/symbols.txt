@@ -889,6 +889,7 @@
 0x100df340 func   ?sub_100df340@@YAXI@Z sub_100df340
 0x100df3a0 func   ?sub_100df3a0@CUnknown100df3a0@@QAEHXZ CUnknown100df3a0::sub_100df3a0
 0x100df3c0 func   ?sub_100df3c0@@YGPADPAD@Z sub_100df3c0
+0x100df410 func   ?sub_100df410@CUnknown100df410@@QAEHXZ CUnknown100df410::sub_100df410
 0x100df4a0 func   ?vfunc1@ConCommand@@UAE_NXZ ConCommand::vfunc1
 0x100df4c0 func   ?sub_100df4c0@@YAHXZ sub_100df4c0
 0x100df4d0 func   ?vfunc7@ConCommand@@UAEXPBDP6AXXZ0H1@Z ConCommand::vfunc7
