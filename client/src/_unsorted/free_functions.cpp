@@ -18119,6 +18119,39 @@ bool CUnknown10427700::sub_100790f0(const char *name, int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079160 size=0xfe
+#include "CUnknown10427700.h"
+
+struct ICvarFind { virtual void v0(); virtual void v1(); virtual void *FindVar(const char *name); };
+extern ICvarFind *g_104a57e0;
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+void CUnknown10427700::sub_10079160(const char *name, int a, int b, const char *plrCvar, const char *npcCvar, const char *carryCvar)
+{
+	if (!sub_100790f0(name, a, b))
+		return;
+	if (plrCvar) {
+		m_entries[m_nEntries].m_pPlrCvar = g_104a57e0->FindVar(plrCvar);
+		if (!m_entries[m_nEntries].m_pPlrCvar)
+			Msg("ERROR: Ammo (%s) found no CVar named (%s)\n", name, plrCvar);
+		m_entries[m_nEntries].m_plrDmg = -1;
+	}
+	if (npcCvar) {
+		m_entries[m_nEntries].m_pNpcCvar = g_104a57e0->FindVar(npcCvar);
+		if (!m_entries[m_nEntries].m_pNpcCvar)
+			Msg("ERROR: Ammo (%s) found no CVar named (%s)\n", name, npcCvar);
+		m_entries[m_nEntries].m_npcDmg = -1;
+	}
+	if (carryCvar) {
+		m_entries[m_nEntries].m_pCarryCvar = g_104a57e0->FindVar(carryCvar);
+		if (!m_entries[m_nEntries].m_pCarryCvar)
+			Msg("ERROR: Ammo (%s) found no CVar named (%s)\n", name, carryCvar);
+		m_entries[m_nEntries].m_maxCarry = -1;
+	}
+	m_nEntries++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079260 size=0x4d
 #include "CUnknown10427700.h"
 void CUnknown10427700::sub_10079260(const char *name, int a, int b, int plrDmg, int npcDmg, int maxCarry)
