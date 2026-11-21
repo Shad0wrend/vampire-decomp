@@ -760,6 +760,7 @@
 0x100a39b0 func   ?sub_100a39b0@CUnknown100a39b0@@QAEHH@Z CUnknown100a39b0::sub_100a39b0
 0x100a3a40 func   ?sub_100a3a40@@YGXH@Z sub_100a3a40
 0x100a3a50 func   ?sub_100a3a50@@YGXH@Z sub_100a3a50
+0x100a3a60 func   ?sub_100a3a60@CUnknown100a3a60@@QAEDD@Z CUnknown100a3a60::sub_100a3a60
 0x100a3a70 func   ?sub_100a3a70@CUnknown100a3a70@@QAEDXZ CUnknown100a3a70::sub_100a3a70
 0x100a3ab0 func   ?sub_100a3ab0@CUnknown100a3ab0@@QAEPADXZ CUnknown100a3ab0::sub_100a3ab0
 0x100a3b50 func   ?sub_100a3b50@CUnknown100a3b50@@QAEPADXZ CUnknown100a3b50::sub_100a3b50

@@ -10500,6 +10500,15 @@ void __stdcall sub_100a3a50(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3a60 size=0xa
+struct CUnknown100a3a60 { char sub_100a3a60(char); };
+char CUnknown100a3a60::sub_100a3a60(char a0)
+{
+    *(char *)((char *)this + 0x10) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a3a70 size=0x4
 struct CUnknown100a3a70 { char sub_100a3a70(); };
 char CUnknown100a3a70::sub_100a3a70()
