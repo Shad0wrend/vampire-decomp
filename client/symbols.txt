@@ -3874,6 +3874,7 @@
 0x101c2cc0 func   ?sub_101c2cc0@UtlMem@@QAEXXZ UtlMem::sub_101c2cc0
 0x101c2cf0 func   ?sub_101c2cf0@UtlMem@@QAEXH@Z UtlMem::sub_101c2cf0
 0x101c2e30 func   ?sub_101c2e30@CUnknown101c2e30@@QAEXXZ CUnknown101c2e30::sub_101c2e30
+0x101c3a40 func   ??_GBuildModeDialog@vgui2@@UAEPAXI@Z ??_GBuildModeDialog@vgui2@@UAEPAXI@Z
 0x101c3a60 func   ??1BuildModeDialog@vgui2@@UAE@XZ vgui2::BuildModeDialog::~BuildModeDialog
 0x101c5970 func   ??1ImagePanel@vgui2@@UAE@XZ vgui2::ImagePanel::~ImagePanel
 0x101c5d50 func   ??1RadioButton@vgui2@@UAE@XZ vgui2::RadioButton::~RadioButton
