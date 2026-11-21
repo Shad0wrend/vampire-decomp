@@ -98,6 +98,7 @@
 0x1007b650 func   ?sub_1007b650@@YGHH@Z sub_1007b650
 0x1007bf40 func   ?sub_1007bf40@@YAXXZ sub_1007bf40
 0x1007cdc0 func   ?sub_1007cdc0@@YIEPAX@Z sub_1007cdc0
+0x1007d7f0 func   ?sub_1007d7f0@@YAXXZ sub_1007d7f0
 0x1007d930 func   ?sub_1007d930@@YADXZ sub_1007d930
 0x1007ddd0 func   ?sub_1007ddd0@@YAXPAX@Z sub_1007ddd0
 0x100865a0 func   ?sub_100865a0@CUnknown100bc460@@QAEPAXXZ CUnknown100bc460::sub_100865a0

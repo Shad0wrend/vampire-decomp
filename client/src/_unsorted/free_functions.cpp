@@ -1869,6 +1869,12 @@ unsigned char __fastcall sub_1007cdc0(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007d7f0 size=0x1
+void sub_1007d7f0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007d930 size=0x1a
 char *sub_1007b160();
 
