@@ -2243,6 +2243,13 @@ int g_102e08a8 = ClientClassInit((DT_ItemKOceanHouseUpstairsKey::ignored *)0);
 RecvTable g_102e31f0;
 // END FUNCTION
 
+// FUNCTION: 0x10021d50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKClinicMaintenanceKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKClinicMaintenanceKey::ignored>(DT_ItemKClinicMaintenanceKey::ignored *);
+int g_102e31ec = ClientClassInit((DT_ItemKClinicMaintenanceKey::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10021f90 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e518c;
