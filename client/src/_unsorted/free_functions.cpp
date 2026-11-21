@@ -29371,6 +29371,17 @@ bool CUnknown101e98c0Item::sub_1014df20(CDataNode *pNode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e070 size=0xd
+struct CUnknown1014e070 { void * sub_1014e070(); };
+void * CUnknown1014e070::sub_1014e070()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e080 size=0x5
 namespace lifted {
 int sub_1014e090();
