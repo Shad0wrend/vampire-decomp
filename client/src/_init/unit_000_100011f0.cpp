@@ -3403,6 +3403,13 @@ int g_103ec9ac = ClientClassInit((DT_TestTraceline::ignored *)0);
 RecvTable g_103ecc30;
 // END FUNCTION
 
+// FUNCTION: 0x10042e60 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_CollisionProperty { struct ignored; }
+template <> int ClientClassInit<DT_CollisionProperty::ignored>(DT_CollisionProperty::ignored *);
+int g_103ecc2c = ClientClassInit((DT_CollisionProperty::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100446e0 size=0xa
 #include "ConVar.h"
 ConVar g_103ecd10("muzzleflash_light", "1", 128);
