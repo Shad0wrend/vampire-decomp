@@ -737,6 +737,7 @@
 0x1003f930 func   ?sub_1003f930@@YAHXZ sub_1003f930
 0x1003f9d0 func   ?sub_1003f9d0@@YAHXZ sub_1003f9d0
 0x1003fa40 func   ?ClientClassInit@@YAHPAUignored@DT_TESpriteSpray@@@Z ClientClassInit
+0x1003fbe0 func   ??1C_TETextMessage@@UAE@XZ C_TETextMessage::~C_TETextMessage
 0x1003fbe0 func   ?sub_1003fbe0@CUnknown1003fbe0@@QAEHXZ CUnknown1003fbe0::sub_1003fbe0
 0x1003fd00 func   ?sub_1003fd00@@YAHXZ sub_1003fd00
 0x1003fda0 func   ?sub_1003fda0@@YAHXZ sub_1003fda0
