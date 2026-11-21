@@ -2240,3 +2240,9 @@ ConCommand g_105fb180("showcharwizard", sub_10174dc0, 0, 0, 0);
 void sub_10174e30(void);
 ConCommand g_105fb1a8("hidecharwizard", sub_10174e30, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10175eb0 size=0xa
+#include "ConCommand.h"
+void sub_10175e80(void);
+ConCommand g_105fb150("vdebug_charwizard", sub_10175e80, 0, 0, 0);
+// END FUNCTION
