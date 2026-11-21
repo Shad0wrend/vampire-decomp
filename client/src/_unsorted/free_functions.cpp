@@ -3396,6 +3396,24 @@ float sub_1008b4c0(int a, int b, float t)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b530 size=0x25
+// TARGET: sub_1008b530
+int *sub_1008b530(char *pThis, int key)
+{
+    int *pNode = *(int **)(pThis + 0x28);
+    while (pNode != 0) {
+        if (*pNode == key) {
+            return pNode + 1;
+        }
+        if (*pNode > key) {
+            return 0;
+        }
+        pNode = (int *)pNode[0xd];
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b560 size=0x21
 // TARGET: sub_1008b560
 void sub_1008b560(int *pTable, char *pSrc)
