@@ -13575,6 +13575,17 @@ void sub_100e6ce0(const char *file, const char *fmt, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e6e40 size=0x7
+namespace lifted {
+extern char g_10234c38;
+}
+struct CUnknown100e6e40 { void sub_100e6e40(); };
+void CUnknown100e6e40::sub_100e6e40()
+{
+    *(int *)this = (int)&lifted::g_10234c38;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6ea0 size=0x5
 char __stdcall sub_100e6ea0(int a0)
 {
