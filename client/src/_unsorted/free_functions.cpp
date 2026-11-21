@@ -13203,6 +13203,36 @@ void CUnknown102496d0::sub_1012c740(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c770 size=0x1bf
+#include "CBaseRopePhysics.h"
+
+extern "C" double __cdecl ceil(double);
+
+void CUnknown102496a0::sub_1012c770(CRopeNode *pNodes, int nNodes, CBaseRopePhysics *pHelper, float dt, float flDamp)
+{
+	m_flPredictedTime += dt;
+	int iEnd = (int)ceil(m_flPredictedTime / m_flTimeStep);
+	int nTicks = iEnd - m_iCurTimeStep;
+	for (int iTick = 0; iTick < nTicks; iTick++) {
+		for (int i = 0; i < nNodes; i++) {
+			CRopeNode *pNode = &pNodes[i];
+			Vector vAccel;
+			pHelper->vfunc0(pNodes, i, &vAccel);
+			Vector vPrev = pNode->m_vPos;
+			pNode->m_vPos = pNode->m_vPos + (pNode->m_vPos - pNode->m_vPrevPos) * flDamp + vAccel * m_flTimeStepSq;
+			pNode->m_vPrevPos = vPrev;
+		}
+		pHelper->vfunc1(pNodes, nNodes);
+	}
+	m_iCurTimeStep = iEnd;
+	float flInterp = (m_flPredictedTime - (iEnd * m_flTimeStep - m_flTimeStep)) / m_flTimeStep;
+	for (int i = 0; i < nNodes; i++) {
+		CRopeNode *pNode = &pNodes[i];
+		VectorLerp(pNode->m_vPrevPos, pNode->m_vPos, flInterp, pNode->m_vPredicted);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012dd00 size=0x6b
 #include "CUnknown101b2570.h"
 extern "C" unsigned int strlen(const char *);
