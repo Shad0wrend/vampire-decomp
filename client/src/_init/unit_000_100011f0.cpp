@@ -1467,6 +1467,11 @@ RecvTable g_103ec27c;
 RecvTable g_103ec2b0;
 // END FUNCTION
 
+// FUNCTION: 0x10040bc0 size=0xa
+#include "RecvTable.h"
+RecvTable g_103ec3e8;
+// END FUNCTION
+
 // FUNCTION: 0x100446e0 size=0xa
 #include "ConVar.h"
 ConVar g_103ecd10("muzzleflash_light", "1", 128);
