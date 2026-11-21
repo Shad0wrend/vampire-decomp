@@ -20273,6 +20273,51 @@ void bf_write::sub_10087380(const Vector &fa)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087530 size=0x116
+#include "bf_write.h"
+
+extern "C" int __cdecl abs(int);
+#pragma intrinsic(abs)
+
+void bf_write::sub_10087530(float f)
+{
+    int signbit = f <= -(1.0 / 2047.0);
+    unsigned int fractval = abs((int)(f * 2047.0f));
+    unsigned int bitPos;
+    int iDWord;
+    unsigned int bit;
+    int bitsLeft;
+    if (fractval > 2047)
+        fractval = 2047;
+    if (m_iCurBit + 1 > m_nDataBits)
+        m_bOverflow = true;
+    if (!m_bOverflow) {
+        if (signbit)
+            *((unsigned char *)m_pData + (m_iCurBit >> 3)) |= (unsigned char)(1 << (m_iCurBit & 7));
+        else
+            *((unsigned char *)m_pData + (m_iCurBit >> 3)) &= ~(unsigned char)(1 << (m_iCurBit & 7));
+        m_iCurBit++;
+    }
+    bitPos = m_iCurBit;
+    if ((int)(bitPos + 11) > m_nDataBits) {
+        m_iCurBit = m_nDataBits;
+        m_bOverflow = true;
+        return;
+    }
+    bit = bitPos & 31;
+    iDWord = (int)bitPos >> 5;
+    m_pData[iDWord] &= g_104871b0[bit][11];
+    m_pData[iDWord] |= fractval << bit;
+    bitsLeft = 32 - bit;
+    if (bitsLeft < 11) {
+        bit = (bitsLeft + bitPos) & 31;
+        m_pData[iDWord + 1] &= g_104871b0[bit][11 - bitsLeft];
+        m_pData[iDWord + 1] |= (fractval >> bitsLeft) << bit;
+    }
+    m_iCurBit = m_iCurBit + 11;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087650 size=0x19e
 #include "bf_write.h"
 #include "Vector.h"
