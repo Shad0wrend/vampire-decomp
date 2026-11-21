@@ -55,3 +55,8 @@ ConVar g_102ea470("ft_link_gravity", "-100", 8192, "The amouunt of drop applied 
 #include "ConVar.h"
 ConVar g_102ea500("ft_link_lifetime", "1", 8192, "How long a link in the chain lives");
 // END FUNCTION
+
+// FUNCTION: 0x10029af0 size=0xa
+#include "ConVar.h"
+ConVar g_102ea590("ft_draw_chain", "0", 8192, "Set to 1 to draw the client chain, 2 to draw the server, 3 for both, 0 for none.");
+// END FUNCTION
