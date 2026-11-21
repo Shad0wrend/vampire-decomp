@@ -9149,6 +9149,24 @@ void sub_10109950(float gamma, float texGamma, float brightness, int overbright)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109c20 size=0x58
+extern float g_104d4570[];
+float sub_10109c20(float f)
+{
+	if (f < 0.0f)
+		return 0.0f;
+	if (f >= 0.95f)
+		return 1.0f;
+	f = f * 255.0f;
+	int i;
+	__asm {
+		fld f
+		fistp i
+	}
+	return g_104d4570[i];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109e90 size=0x6b
 #include "Vector.h"
 
