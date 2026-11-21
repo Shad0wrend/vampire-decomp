@@ -3837,6 +3837,7 @@
 0x101baa10 func   ??_GCheckButton@vgui2@@UAEPAXI@Z ??_GCheckButton@vgui2@@UAEPAXI@Z
 0x101baa30 func   ??1CheckButton@vgui2@@UAE@XZ vgui2::CheckButton::~CheckButton
 0x101bae50 func   ??_GLabelComboBoxButton@vgui2@@UAEPAXI@Z ??_GLabelComboBoxButton@vgui2@@UAEPAXI@Z
+0x101bb0f0 func   ??_GLabelComboBox@vgui2@@UAEPAXI@Z ??_GLabelComboBox@vgui2@@UAEPAXI@Z
 0x101bb110 func   ??1LabelComboBox@vgui2@@UAE@XZ vgui2::LabelComboBox::~LabelComboBox
 0x101bb2f0 func   ?sub_101bb2f0@CUnknown101bb2f0@@QAEHXZ CUnknown101bb2f0::sub_101bb2f0
 0x101bb3f0 func   ??1PropertyPage@vgui2@@UAE@XZ vgui2::PropertyPage::~PropertyPage
