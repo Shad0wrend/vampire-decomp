@@ -5278,6 +5278,16 @@ int sub_100650b0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100652e0 size=0xb
+namespace lifted {
+extern int g_103eefec;
+}
+void sub_100652e0()
+{
+    lifted::g_103eefec = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10065660 size=0x6
 namespace lifted {
 extern char g_103ef088;
