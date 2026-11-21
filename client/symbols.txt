@@ -920,6 +920,7 @@
 0x10079be0 func   ?sub_10079be0@@YAXPAUCEyePosSource@@PAH@Z sub_10079be0
 0x10079c20 func   ?sub_10079c20@@YAHPADPBD@Z sub_10079c20
 0x10079cf0 func   ?sub_10079cf0@@YAHHH@Z sub_10079cf0
+0x10079d30 func   ?sub_10079d30@@YAHPAUStudioHdr@@PBD@Z sub_10079d30
 0x10079e00 func   ?sub_10079e00@@YAXPAUStudioHdr@@HPAM1@Z sub_10079e00
 0x10079e90 func   ?sub_10079e90@@YAXPAUCStudioHdrRaw@@HPAMM@Z sub_10079e90
 0x10079f20 func   ?sub_10079f20@@YAPBDHH@Z sub_10079f20
