@@ -23326,6 +23326,39 @@ void * CUnknown102221d0::sub_10163260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163410 size=0xc3
+#include "CExperienceTable.h"
+extern int *g_101e3128;
+extern const char **g_101e3124;
+extern const char g_102de300[];
+extern const char g_102cd334[];
+extern void (*g_101e30fc)(void *);
+
+// TARGET: CExperienceTable::sub_10163410
+void CExperienceTable::sub_10163410()
+{
+    g_101e3124[*g_101e3128 * 3] = g_102cd334;
+    g_101e3124[*g_101e3128 * 3 + 1] = g_102de300;
+    g_101e3124[*g_101e3128 * 3 + 2] = g_102de300;
+    ++*g_101e3128;
+    m_flag14 = 0;
+    for (int i = 0; i < m_Size; i++) {
+        delete (void *)m_pMemory[i].m_a;
+        delete (void *)m_pMemory[i].m_b;
+    }
+    m_Size = 0;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            g_101e30fc(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+    m_pElements = m_pMemory;
+    --*g_101e3128;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163600 size=0x95
 #include "CExperienceTable.h"
 
