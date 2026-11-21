@@ -26466,6 +26466,16 @@ void sub_101a2e90(VMatrix &dst, float x, float y, float z)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2ee0 size=0x1d
+void sub_101a2e90(void *m, float a, float b, float c);
+
+// TARGET: sub_101a2ee0
+void __cdecl sub_101a2ee0(void *m, const float *v)
+{
+	sub_101a2e90(m, v[0], v[1], v[2]);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3900 size=0xe7
 #include "CUnknown10258b00.h"
 
