@@ -6150,6 +6150,14 @@ void __stdcall sub_100a3a50(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3a70 size=0x4
+struct CUnknown100a3a70 { char sub_100a3a70(); };
+char CUnknown100a3a70::sub_100a3a70()
+{
+    return *(char *)((char *)this + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5410 size=0x3
 struct CUnknown100a5410 { void * sub_100a5410(); };
 void * CUnknown100a5410::sub_100a5410()
