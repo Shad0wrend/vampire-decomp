@@ -42460,6 +42460,33 @@ bool CUnknown101ed9e0::sub_10151290(void *pNode)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101512e0 size=0x36
+int sub_101d159d(char *buffer, const char *format, ...);
+void sub_1015fbb0(const char *pszText);
+
+struct CUnknown101eda90
+{
+	int m_n00;
+	char m_pad04[4];
+	const char *m_pszText08;
+
+	void sub_101512e0();
+};
+
+// TARGET: CUnknown101eda90::sub_101512e0
+void CUnknown101eda90::sub_101512e0()
+{
+	const char *pszText = m_pszText08;
+	if (pszText == 0)
+	{
+		pszText = "";
+	}
+	char buf[0x80];
+	sub_101d159d(buf, "(%d): %s\n", m_n00, pszText);
+	sub_1015fbb0(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151560 size=0xa
 namespace lifted {
 extern int g_105e8660;
