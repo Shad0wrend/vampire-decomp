@@ -2077,3 +2077,8 @@ int g_105e5adc = ((int (*)(int))sub_10133780)(0);
 int sub_10134010(void);
 int g_105e5ad8 = ((int (*)(int))sub_10134010)(0);
 // END FUNCTION
+
+// FUNCTION: 0x10145480 size=0x5
+int sub_101454a0(void);
+int g_105e7928 = ((int (*)(int))sub_101454a0)(0);
+// END FUNCTION
