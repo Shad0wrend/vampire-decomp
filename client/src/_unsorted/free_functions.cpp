@@ -17056,6 +17056,18 @@ char *CUnknown101d9840::sub_10146270(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101465b0 size=0x19
+struct CUnknown101da880 { void * sub_101465b0(); };
+void * CUnknown101da880::sub_101465b0()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = -1;
+    *(int *)((char *)this + 8) = -1;
+    *(int *)((char *)this + 0xc) = 0x64;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146a90 size=0xf1
 #include "CUnknown101db210.h"
 
