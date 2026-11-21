@@ -4620,6 +4620,13 @@ int g_104a4f00 = ClientClassInit((DT_Sun::ignored *)0);
 RecvTable g_104a4fa0;
 // END FUNCTION
 
+// FUNCTION: 0x100c66e0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_VampireProjectile_MingXiaoSpit { struct ignored; }
+template <> int ClientClassInit<DT_VampireProjectile_MingXiaoSpit::ignored>(DT_VampireProjectile_MingXiaoSpit::ignored *);
+int g_104a4f9c = ClientClassInit((DT_VampireProjectile_MingXiaoSpit::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100c6950 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a5258;
