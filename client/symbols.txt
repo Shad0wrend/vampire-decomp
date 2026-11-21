@@ -236,6 +236,7 @@
 0x1000f790 func   ??_GC_WeaponIGeneric@@UAEPAXI@Z ??_GC_WeaponIGeneric@@UAEPAXI@Z
 0x1000f7d0 func   ?sub_1000f7d0@@YAHXZ sub_1000f7d0
 0x1000f8f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponIGeneric@@@Z ClientClassInit
+0x1000fa10 func   ??_GC_WeaponLockpick@@UAEPAXI@Z ??_GC_WeaponLockpick@@UAEPAXI@Z
 0x1000fa50 func   ?sub_1000fa50@@YAHXZ sub_1000fa50
 0x1000fb70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponLockpick@@@Z ClientClassInit
 0x1000fcd0 func   ?sub_1000fcd0@@YAHXZ sub_1000fcd0
