@@ -879,6 +879,7 @@
 0x100df190 func   ?sub_100df190@@YAXH@Z sub_100df190
 0x100df1c0 func   ?sub_100df1c0@CUnknown102454e0@@QAEPAXXZ CUnknown102454e0::sub_100df1c0
 0x100df200 func   ?sub_100df200@ConCommandBase@@QAEPAV1@PBD0H@Z ConCommandBase::sub_100df200
+0x100df230 func   ?sub_100df230@CUnknown100df230@@QAEXXZ CUnknown100df230::sub_100df230
 0x100df240 func   ?vfunc1@ConCommandBase@@QAE_NXZ ConCommandBase::vfunc1
 0x100df250 func   ?vfunc2@ConCommandBase@@QAEXPBD0H@Z ConCommandBase::vfunc2
 0x100df2a0 func   ?vfunc3@ConCommandBase@@QAEXXZ ConCommandBase::vfunc3

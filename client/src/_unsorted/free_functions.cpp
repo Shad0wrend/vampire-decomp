@@ -12706,6 +12706,17 @@ ConCommandBase *ConCommandBase::sub_100df200(const char *pszName, const char *ps
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df230 size=0x7
+namespace lifted {
+extern char g_102348c8;
+}
+struct CUnknown100df230 { void sub_100df230(); };
+void CUnknown100df230::sub_100df230()
+{
+    *(int *)this = (int)&lifted::g_102348c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df2c0 size=0x3d
 int sub_101e28e0(const char *, const char *);
 
