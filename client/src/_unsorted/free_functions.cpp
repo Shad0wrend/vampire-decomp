@@ -284,6 +284,24 @@ int sub_1002a040(int *p, int arg)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002a0e0 size=0x4c
+struct Node60 { int d[8]; int m_n20; int m_n24; int e[5]; };
+int sub_1002a080(Node60 *);
+void sub_1002a0e0(Node60 *list, Node60 *src, int parent)
+{
+    int idx = sub_1002a080(list);
+    Node60 *n = &list[idx];
+    *n = *src;
+    n->m_n20 = -1;
+    if (parent != -1) {
+        n->m_n24 = parent;
+        list[parent].m_n20 = idx;
+    } else {
+        n->m_n24 = -1;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002c080 size=0x8d
 #include "CUtlLinkedList8.h"
 
