@@ -127,3 +127,8 @@ ConVar g_103eddf8("credits_scrollrate", "30", 0);
 #include "ConVar.h"
 ConVar g_103ee098("nosradar_min_strike_dist", "80", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10051bc0 size=0xa
+#include "ConVar.h"
+ConVar g_103edf78("nosradar_max_strike_dist", "190", 0);
+// END FUNCTION
