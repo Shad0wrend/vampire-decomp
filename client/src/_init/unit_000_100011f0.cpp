@@ -2063,6 +2063,13 @@ int g_102e4774 = ClientClassInit((DT_ItemGGarysCD::ignored *)0);
 RecvTable g_102e437c;
 // END FUNCTION
 
+// FUNCTION: 0x1001f7d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGGarysFilm { struct ignored; }
+template <> int ClientClassInit<DT_ItemGGarysFilm::ignored>(DT_ItemGGarysFilm::ignored *);
+int g_102e4378 = ClientClassInit((DT_ItemGGarysFilm::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001fa10 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e5a08;
