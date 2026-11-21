@@ -5910,6 +5910,14 @@ void __stdcall sub_100a3a50(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5410 size=0x3
+struct CUnknown100a5410 { void * sub_100a5410(); };
+void * CUnknown100a5410::sub_100a5410()
+{
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5420 size=0x53
 struct SInit {
 	int m_n0;
