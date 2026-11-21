@@ -2561,3 +2561,8 @@ ConVar g_105fc7f8("v_iroll_cycle", "0.5", 0);
 #include "ConVar.h"
 ConVar g_105fbdc0("v_ipitch_cycle", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018f070 size=0xa
+#include "ConVar.h"
+ConVar g_105fbd78("v_iyaw_level", "0.3", 0);
+// END FUNCTION
