@@ -1049,6 +1049,7 @@
 0x1008c060 func   ?sub_1008c060@@YAXPAUStudioHdr@@HPBMPAPAXPAM@Z sub_1008c060
 0x1008c1f0 func   ?sub_1008c1f0@@YAHHHH@Z sub_1008c1f0
 0x1008c270 func   ?sub_1008c270@@YAMHHH@Z sub_1008c270
+0x1008c360 func   ?sub_1008c360@@YA_NPAUStudioAnimDesc@@MAAVVector@@AAVQAngle@@@Z sub_1008c360
 0x1008c530 func   ?sub_1008c530@@YA_NPAUmstudioanimdesc_t@@MAAVVector@@@Z sub_1008c530
 0x1008c5d0 func   ?sub_1008c5d0@@YADPAUCBoneOwner@@HHPAVVector@@1@Z sub_1008c5d0
 0x1008c690 func   ?sub_1008c690@@YAMPAUSegTable@@M@Z sub_1008c690

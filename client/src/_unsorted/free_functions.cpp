@@ -17363,6 +17363,87 @@ float sub_1008c270(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008c360 size=0x1ce
+#include "Vector.h"
+#include "QAngle.h"
+
+struct StudioMovement	// mstudiomovement_t, 0x2c bytes
+{
+	int endframe;	// 0x00
+	int motionflags;	// 0x04
+	float v0;	// 0x08
+	float v1;	// 0x0c
+	float angle;	// 0x10
+	Vector vector;	// 0x14
+	Vector position;	// 0x20
+};
+
+struct StudioAnimDesc	// mstudioanimdesc_t (the fields read here)
+{
+	int m_unk00;
+	int m_unk04;
+	int m_unk08;
+	int numframes;	// 0x0c
+	int nummovements;	// 0x10
+	int movementindex;	// 0x14
+	StudioMovement *pMovement(int i) { return (StudioMovement *)(((char *)this) + movementindex) + i; }
+};
+
+// TARGET: sub_1008c360
+bool sub_1008c360(StudioAnimDesc *panim, float flCycle, Vector &vecPos, QAngle &vecAngle)
+{
+	float prevframe = 0;
+	vecPos.Init();
+	vecAngle.Init();
+
+	if (panim->nummovements == 0)
+		return false;
+
+	int iLoops = 0;
+	if (flCycle > 1.0)
+	{
+		iLoops = (int)flCycle;
+	}
+	else if (flCycle < 0.0)
+	{
+		iLoops = (int)flCycle - 1;
+	}
+	flCycle = flCycle - iLoops;
+
+	float flFrame = flCycle * (panim->numframes - 1);
+
+	for (int i = 0; i < panim->nummovements; i++)
+	{
+		StudioMovement *pmove = panim->pMovement(i);
+
+		if (pmove->endframe >= flFrame)
+		{
+			float f = (flFrame - prevframe) / (pmove->endframe - prevframe);
+
+			float d = pmove->v0 * f + 0.5 * (pmove->v1 - pmove->v0) * f * f;
+
+			vecPos = vecPos + d * pmove->vector;
+			vecAngle.y = vecAngle.y * (1 - f) + pmove->angle * f;
+			if (iLoops != 0)
+			{
+				StudioMovement *pmove = panim->pMovement(panim->nummovements - 1);
+				vecPos = vecPos + iLoops * pmove->position;
+				vecAngle.y = vecAngle.y + iLoops * pmove->angle;
+			}
+			return true;
+		}
+		else
+		{
+			prevframe = pmove->endframe;
+			vecPos = pmove->position;
+			vecAngle.y = pmove->angle;
+		}
+	}
+
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008c530 size=0x96
 #include "Vector.h"
 struct mstudiomovement_t
