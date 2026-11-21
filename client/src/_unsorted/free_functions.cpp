@@ -52326,6 +52326,33 @@ void CUnknown1073dc28::sub_10155b60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155c00 size=0x9b
+#include "CUnknown101f5050.h"
+
+void CUnknown101f5050::sub_10155c00()
+{
+	for (int i = 0; i < m_nGroups; i++) {
+		if (m_pGroups[i])
+			delete m_pGroups[i];
+	}
+	delete m_pGroups;
+	m_pGroups = 0;
+	m_nGroups = 0;
+	if (m_pRecords) {
+		for (int i = 0; i < m_nRecords; i++) {
+			if (m_pRecords[i])
+				delete m_pRecords[i];
+			m_pRecords[i] = 0;
+		}
+		delete m_pRecords;
+		m_pRecords = 0;
+	}
+	m_unk04 = 0;
+	m_nRecords = 0;
+	m_unk10 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155ca0 size=0x1e
 int *sub_1015fc40(int *pArg, int value);
 
