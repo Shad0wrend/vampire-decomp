@@ -11293,6 +11293,27 @@ void CUnknown101f40f0::sub_101553d0(CUnknown101f5150 *pOwner, const char *pszNam
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155400 size=0x9b
+#include "CUnknown101f40f0.h"
+#include <stdio.h>
+extern char g_102de300[];
+
+void CUnknown101f40f0::sub_10155400()
+{
+    char szBuf[260];
+    int n = m_pParent->m_nCount;
+    m_pInts = (int *)operator new(n * 4);
+    for (int i = 0; i < n; i++)
+        m_pInts[i] = 1;
+    const char *pszName = m_pszName ? m_pszName : g_102de300;
+    const char *const *ppParentName = &m_pParent->m_pszName;
+    const char *pszParent = *ppParentName ? *ppParentName : g_102de300;
+    sprintf(szBuf, "%s\\%s", pszParent, pszName);
+    m_Inner.sub_10154b70((int)this, 0, (int)szBuf, (int)(m_pszName ? m_pszName : g_102de300));
+    m_Inner.sub_10154c40();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155b40 size=0x1d
 struct S9 {
 	int a, b, c, d, e, f, g, h, i;
