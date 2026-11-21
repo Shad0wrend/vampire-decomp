@@ -4140,6 +4140,13 @@ int g_1049e4f8 = ClientClassInit((DT_LocalPlayerExclusive::ignored *)0);
 RecvTable g_1049fd54;
 // END FUNCTION
 
+// FUNCTION: 0x100a4af0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BasePlayer { struct ignored; }
+template <> int ClientClassInit<DT_BasePlayer::ignored>(DT_BasePlayer::ignored *);
+int g_1049fd50 = ClientClassInit((DT_BasePlayer::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100a7260 size=0xa
 #include "ConVar.h"
 ConVar g_1049e838("vamplight_enabled", "0", 0);
