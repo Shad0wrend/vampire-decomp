@@ -34287,6 +34287,17 @@ void Dump::sub_101602b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160330 size=0xd
+struct CUnknown10160330 { void * sub_10160330(); };
+void * CUnknown10160330::sub_10160330()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160350 size=0x66
 struct Elem1006cd00 { void sub_1015ff60(); };
 struct S1006cd00 {
