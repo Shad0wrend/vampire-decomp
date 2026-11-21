@@ -4429,6 +4429,13 @@ char CUnknown100509a0::sub_100509a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100509b0 size=0x6
+int sub_100509b0()
+{
+    return 0x80;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10050a60 size=0x4
 struct CUnknown10050a60 { char sub_10050a60(); };
 char CUnknown10050a60::sub_10050a60()
