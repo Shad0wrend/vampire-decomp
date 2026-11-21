@@ -3551,6 +3551,7 @@
 0x10170d60 func   ??_GFuckYouValveLabel@@UAEPAXI@Z ??_GFuckYouValveLabel@@UAEPAXI@Z
 0x10170d80 func   ??1FuckYouValveLabel@@UAE@XZ FuckYouValveLabel::~FuckYouValveLabel
 0x10170d80 func   ?sub_10170d80@CUnknown10170d80@@QAEHXZ CUnknown10170d80::sub_10170d80
+0x10170e00 func   ??_GFuckYouValveTextEntry@@UAEPAXI@Z ??_GFuckYouValveTextEntry@@UAEPAXI@Z
 0x10170e20 func   ??1FuckYouValveTextEntry@@UAE@XZ FuckYouValveTextEntry::~FuckYouValveTextEntry
 0x10170e20 func   ?sub_10170e20@CUnknown10170e20@@QAEHXZ CUnknown10170e20::sub_10170e20
 0x10170ed0 func   ??1VAnarchyLabel@@UAE@XZ VAnarchyLabel::~VAnarchyLabel
