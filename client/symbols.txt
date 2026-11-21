@@ -762,6 +762,7 @@
 0x100c4ca0 func   ?sub_100c4ca0@@YAHXZ sub_100c4ca0
 0x100c65c0 func   ?sub_100c65c0@@YAHXZ sub_100c65c0
 0x100c68b0 func   ?sub_100c68b0@@YAHXZ sub_100c68b0
+0x100c8e30 func   ?sub_100c8e30@@YAHXZ sub_100c8e30
 0x100c9320 func   ?sub_100c9320@@YGDH@Z sub_100c9320
 0x100c9d40 func   ?sub_100c9d40@CUnknown100c9d40@@QAEHXZ CUnknown100c9d40::sub_100c9d40
 0x100ca0b0 func   ?sub_100ca0b0@UtlMem@@QAEXH@Z UtlMem::sub_100ca0b0
