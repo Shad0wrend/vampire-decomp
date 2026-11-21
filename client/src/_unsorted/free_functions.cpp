@@ -908,6 +908,36 @@ int sub_100073a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10007410 size=0xde
+#include "RecvTable.h"
+extern RecvTable g_102dfcdc;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_1028111c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEConcussiveExplosion { struct ignored; }
+template <> int ClientClassInit<DT_TEConcussiveExplosion::ignored>(DT_TEConcussiveExplosion::ignored *)
+{
+	char *pRecvTableName = "DT_TEConcussiveExplosion";
+	RecvTable &RecvTable = g_102dfcdc;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_1028111c, DataTableRecvProxy_StaticDataTable),
+		RecvPropVector("m_vecNormal", 28, 12, 0, RecvProxy_VectorToVector),
+		RecvPropFloat("m_flScale", 40, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nRadius", 44, 4, 0, 0),
+		RecvPropInt("m_nMagnitude", 48, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100075d0 size=0x6
 namespace lifted {
 extern char g_102e1a60;
