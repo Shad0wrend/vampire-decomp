@@ -7063,6 +7063,14 @@ void CMem16_t::sub_100d05d0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d0c80 size=0x4
+struct CUnknown100d0c80 { int sub_100d0c80(); };
+int CUnknown100d0c80::sub_100d0c80()
+{
+    return *(int *)((char *)this + 4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1190 size=0x8d
 #include "CUtlLinkedList8.h"
 
