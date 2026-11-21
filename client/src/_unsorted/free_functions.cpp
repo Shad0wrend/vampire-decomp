@@ -11742,6 +11742,25 @@ void sub_101205d0(void *pA, void *pB)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120630 size=0x24
+class IPlaceholder10158bc0
+{
+public:
+	virtual void vfunc0();
+	virtual void vfunc1();
+	virtual void vfunc2(int a, int b);
+};
+extern IPlaceholder10158bc0 *g_104e0c98;
+void sub_10120560(int a, int b);
+
+// TARGET: sub_10120630
+void sub_10120630(int a, int b)
+{
+    g_104e0c98->vfunc2(a, b);
+    sub_10120560(a, b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120660 size=0x24
 class IPlaceholder10158c00
 {
