@@ -906,6 +906,7 @@
 0x10037ab0 func   ??_GC_TEFootprintDecal@@UAEPAXI@Z ??_GC_TEFootprintDecal@@UAEPAXI@Z
 0x10037ad0 func   ??1C_TEFootprintDecal@@UAE@XZ C_TEFootprintDecal::~C_TEFootprintDecal
 0x10037ad0 func   ?sub_10037ad0@CUnknown10037ad0@@QAEHXZ CUnknown10037ad0::sub_10037ad0
+0x10037d20 func   ??_GC_TEShatterSurface@@UAEPAXI@Z ??_GC_TEShatterSurface@@UAEPAXI@Z
 0x10037d40 func   ??1C_TEShatterSurface@@UAE@XZ C_TEShatterSurface::~C_TEShatterSurface
 0x10037d40 func   ?sub_10037d40@CUnknown10037d40@@QAEHXZ CUnknown10037d40::sub_10037d40
 0x10038230 func   ?sub_10038230@@YAHXZ sub_10038230
