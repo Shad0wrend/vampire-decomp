@@ -572,3 +572,8 @@ ConVar g_104a3a58("rope_shake", "0", 0);
 #include "ConVar.h"
 ConVar g_104a3c98("rope_drawlines", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100be680 size=0xa
+#include "ConVar.h"
+ConVar g_104a3b48("rope_subdiv", "2", 0, "Rope subdivision amount", true, 0.0f, true, 8.0f);
+// END FUNCTION
