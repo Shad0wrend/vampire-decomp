@@ -12917,6 +12917,29 @@ int CFloatTable1006c9d0::sub_10160100(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160160 size=0x31
+#include "CUnknown10204e90.h"
+#include "CUnknown10204c60.h"
+
+struct CUnk_1006ca50
+{
+    char pad_0000[0x18];
+    void sub_10160100(int a);
+    void sub_10160160(int a);
+};
+
+void CUnk_1006ca50::sub_10160160(int a)
+{
+    int v;
+    if (a != 0) {
+        v = ((CUnknown10204e90 *)((char *)this + 0x18))->sub_10160b40((void *)a);
+    } else {
+        v = ((CUnknown10204c60 *)((char *)this + 0x18))->sub_10160de0();
+    }
+    this->sub_10160100(v);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160250 size=0x30
 #include "StatDefault.h"
 int StatDefault::sub_10160250(int arg)
