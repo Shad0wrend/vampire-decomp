@@ -15148,6 +15148,35 @@ void CUtlBuffer::sub_1013c8e0(char *pBuffer, int nSize, bool bText)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013c930 size=0x3b
+extern void *(*g_101e3104)(void *, int);
+extern void *(*g_101e3100)(int);
+
+struct CUtlMemUnit1006be50
+{
+    void *m_pMemory;
+    int m_nAllocationCount;
+    int m_nGrowSize;
+
+    void sub_1013c930(int num);
+};
+
+// TARGET: sub_1013c930
+void CUtlMemUnit1006be50::sub_1013c930(int num)
+{
+    if (m_nAllocationCount < num && m_nGrowSize != -1)
+    {
+        m_nAllocationCount = num;
+        if (m_pMemory)
+        {
+            m_pMemory = g_101e3104(m_pMemory, num);
+            return;
+        }
+        m_pMemory = g_101e3100(num);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013c970 size=0x7c
 #include "CUnknown1006bea0.h"
 
