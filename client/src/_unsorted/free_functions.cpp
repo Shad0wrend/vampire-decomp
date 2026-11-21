@@ -13889,6 +13889,18 @@ void UtlMem::sub_100d8690()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8770 size=0x16
+struct CUnknown100d8770 { int sub_100d8770(); };
+int CUnknown100d8770::sub_100d8770()
+{
+    *(short *)((char *)this + 0x2c) = 0xffff;
+    *(short *)((char *)this + 0x2e) = 0;
+    *(short *)((char *)this + 0x30) = 0;
+    *(int *)((char *)this + 0x34) = *(int *)this;
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8790 size=0x30
 #include "CUtlMemory16.h"
 

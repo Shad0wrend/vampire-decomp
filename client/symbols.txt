@@ -1019,6 +1019,7 @@
 0x100d8260 func   ?sub_100d8260@CUnknown100d8260@@QAEXXZ CUnknown100d8260::sub_100d8260
 0x100d8380 func   ?sub_100d8380@CUnknown100d8380@@QAEXXZ CUnknown100d8380::sub_100d8380
 0x100d8690 func   ?sub_100d8690@UtlMem@@QAEXXZ UtlMem::sub_100d8690
+0x100d8770 func   ?sub_100d8770@CUnknown100d8770@@QAEHXZ CUnknown100d8770::sub_100d8770
 0x100d8790 func   ?sub_100d8790@CUtlMemory16@@QAEPAV1@HH@Z CUtlMemory16::sub_100d8790
 0x100d87c0 func   ?sub_100d87c0@CMem16_t@@QAEXH@Z CMem16_t::sub_100d87c0
 0x100d8830 func   ?sub_100d8830@UtlMem@@QAEXXZ UtlMem::sub_100d8830
