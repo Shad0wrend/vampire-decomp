@@ -1909,6 +1909,7 @@
 0x10157cc0 func   ?sub_10157cc0@@YAHH@Z sub_10157cc0
 0x10157cd0 func   ?sub_10157cd0@@YAHH@Z sub_10157cd0
 0x10157ce0 func   ?sub_10157ce0@@YAHH@Z sub_10157ce0
+0x10157cf0 func   ?sub_10157cf0@@YAHH@Z sub_10157cf0
 0x10157d10 func   ?sub_10157d10@CUnknown10157d10@@QAEPAXXZ CUnknown10157d10::sub_10157d10
 0x10158060 func   ?sub_10158060@CUnknown101f9b70@@QAEHH@Z CUnknown101f9b70::sub_10158060
 0x10158790 func   ?sub_10158790@@YAXXZ sub_10158790
