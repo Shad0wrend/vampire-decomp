@@ -17898,6 +17898,39 @@ int CNamedList9fd0::sub_10149260(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149400 size=0x35
+// TARGET: CUnknown101e05e0::sub_10149400
+struct CUnknown101e05e0_A { void sub_10148fe0(); };
+struct CUnknown101e05e0_B { void sub_101479b0(); };
+struct CUnknown101e05e0_C { void sub_10147e60(); };
+struct CUnknown101e05e0_E { void sub_10146f00(); };
+
+struct CUnknown101e05e0
+{
+	char m_pad0000[0x38];
+	CUnknown101e05e0_E m_m38;
+	char m_pad39[0x68 - 0x39];
+	CUnknown101e05e0_C m_m68;
+	char m_pad69[0xa4 - 0x69];
+	CUnknown101e05e0_B m_ma4;
+	char m_padA5[0xc0 - 0xa5];
+	CUnknown101e05e0_B m_mc0;
+	char m_padC1[0xdc - 0xc1];
+	CUnknown101e05e0_A m_mdc;
+
+	void sub_10149400();
+};
+
+void CUnknown101e05e0::sub_10149400()
+{
+	m_mdc.sub_10148fe0();
+	m_mc0.sub_101479b0();
+	m_ma4.sub_101479b0();
+	m_m68.sub_10147e60();
+	m_m38.sub_10146f00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149600 size=0x4c
 #include "CUnknown101e0f00.h"
 #include "S101df260.h"
