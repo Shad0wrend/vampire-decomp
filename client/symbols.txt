@@ -569,6 +569,7 @@
 0x10130b30 func   ?sub_10130b30@UtlVec8@@QAEXPBUSElem8@@H@Z UtlVec8::sub_10130b30
 0x10130ba0 func   ?sub_10130ba0@CUtlVector16@@QAEXXZ CUtlVector16::sub_10130ba0
 0x10130c30 func   ?sub_10130c30@CUnk101b66b0@@QAEPADH@Z CUnk101b66b0::sub_10130c30
+0x10130df0 func   ?sub_10130df0@CUtlRBTreeFind232@@QAEHPBX@Z CUtlRBTreeFind232::sub_10130df0
 0x10130f00 func   ?sub_10130f00@UtlVec8@@QAEXH@Z UtlVec8::sub_10130f00
 0x10130f90 func   ?sub_10130f90@UtlVec8@@QAEXHH@Z UtlVec8::sub_10130f90
 0x10130fd0 func   ?sub_10130fd0@UtlMem@@QAEXXZ UtlMem::sub_10130fd0

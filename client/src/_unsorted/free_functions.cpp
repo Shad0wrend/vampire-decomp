@@ -13964,6 +13964,29 @@ char *CUnk101b66b0::sub_10130c30(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130df0 size=0xf3
+#include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CSoundEmitterRecord { char m_Data[216]; };
+#include "CUtlRBTreeFind232.h"
+
+int CUtlRBTreeFind232::sub_10130df0(const void *search)
+{
+	const CUtlRBTree232Of<CSoundEmitterRecord> *tree = (const CUtlRBTree232Of<CSoundEmitterRecord> *)this;
+	int current = m_Root;
+	while (current != InvalidIndex())
+	{
+		if (m_LessFunc(search, m_pElements[current].m_Data))
+			current = tree->Links(current).m_Left;
+		else if (m_LessFunc(m_pElements[current].m_Data, search))
+			current = tree->Links(current).m_Right;
+		else
+			break;
+	}
+	return current;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130f00 size=0x8c
 #include "UtlVec8.h"
 extern void *(*g_101e3100)(int);
