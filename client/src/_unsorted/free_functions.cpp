@@ -16561,6 +16561,17 @@ void sub_100f25a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f25e0 size=0x1b
+struct CUnknown100f25e0 { char sub_100f25e0(char); };
+char CUnknown100f25e0::sub_100f25e0(char a0)
+{
+    *(char *)((char *)this + 0x88) = a0;
+    *(char *)((char *)this + 0x80) = 1;
+    *(char *)((char *)this + 0x81) = 1;
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f2650 size=0x8
 namespace lifted {
 int sub_100f2600();
