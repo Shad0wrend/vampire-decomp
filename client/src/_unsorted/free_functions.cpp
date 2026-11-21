@@ -12882,6 +12882,13 @@ void CUnk1013dce0::sub_1010e440(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e460 size=0x5
+char __stdcall sub_1010e460(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010f390 size=0x4b
 struct SCopy {
     int a, b, c, d;
