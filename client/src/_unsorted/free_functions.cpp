@@ -44826,6 +44826,88 @@ void CUnknown101df2f0::sub_10148800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148840 size=0x46d
+#include "CUnknown101dff00.h"
+
+struct CNamedList9fd0 { int sub_10149260(const char *pszName); };
+struct CItemVec { char m_pad[0x10]; void sub_101474a0(const CItemVec *p); };
+struct CRecListUnit { char m_pad[0x1c]; void sub_10147a40(const CRecListUnit *p); };
+struct SoundRecX { char m_pad[0xac]; SoundRecX *sub_10148cb0(const SoundRecX *p); };
+struct HitVec3 { float x, y, z; };
+
+struct HitRecView
+{
+	char m_b00;
+	int m_n04, m_n08, m_n0c, m_n10, m_n14, m_n18;
+	char m_b1c, m_b1d, m_b1e;
+	int m_n20, m_n24, m_n28, m_n2c, m_n30, m_n34, m_n38, m_n3c, m_n40, m_n44, m_n48, m_n4c;
+	HitVec3 m_vec50;
+	CRecListUnit m_l5c;
+	CRecListUnit m_l78;
+	CItemVec m_v94;
+	int m_na4, m_na8;
+};
+
+struct HitGroupView
+{
+	char m_pad[8];
+	HitRecView m_r0;
+	HitRecView m_r1;
+	HitRecView m_r2;
+	SoundRecX m_s1, m_s2;
+	int m_n364, m_n368, m_n36c;
+	char m_b370, m_b371;
+};
+
+extern char g_105e7b38[];
+
+#define COPYREC(R) \
+	d->R.m_b00 = s->R.m_b00; \
+	d->R.m_n04 = s->R.m_n04; d->R.m_n08 = s->R.m_n08; d->R.m_n0c = s->R.m_n0c; \
+	d->R.m_n10 = s->R.m_n10; d->R.m_n14 = s->R.m_n14; d->R.m_n18 = s->R.m_n18; \
+	d->R.m_b1c = s->R.m_b1c; d->R.m_b1d = s->R.m_b1d; d->R.m_b1e = s->R.m_b1e; \
+	d->R.m_n20 = s->R.m_n20; d->R.m_n24 = s->R.m_n24; d->R.m_n28 = s->R.m_n28; \
+	d->R.m_n2c = s->R.m_n2c; d->R.m_n30 = s->R.m_n30; d->R.m_n34 = s->R.m_n34; \
+	d->R.m_n38 = s->R.m_n38; d->R.m_n3c = s->R.m_n3c; d->R.m_n40 = s->R.m_n40; \
+	d->R.m_n44 = s->R.m_n44; d->R.m_n48 = s->R.m_n48; d->R.m_n4c = s->R.m_n4c; \
+	d->R.m_vec50 = s->R.m_vec50; \
+	d->R.m_l5c.sub_10147a40(&s->R.m_l5c); \
+	d->R.m_l78.sub_10147a40(&s->R.m_l78); \
+	d->R.m_v94.sub_101474a0(&s->R.m_v94); \
+	d->R.m_na4 = s->R.m_na4; d->R.m_na8 = s->R.m_na8;
+
+// TARGET: CUnknown101dff00::sub_10148840
+char CUnknown101dff00::sub_10148840(int a, const char *pszParent)
+{
+	int idx = ((CNamedList9fd0 *)a)->sub_10149260(pszParent);
+	if (idx == -1)
+	{
+		const char *p = pszParent;
+		char c;
+		do
+		{
+			c = *p;
+			g_105e7b38[p - pszParent] = c;
+			p++;
+		} while (c);
+		return 0;
+	}
+	HitGroupView *s = (HitGroupView *)((CUnknown101dff00List *)a)->sub_101492b0(idx);
+	HitGroupView *d = (HitGroupView *)this;
+	COPYREC(m_r0)
+	COPYREC(m_r1)
+	COPYREC(m_r2)
+	d->m_s1.sub_10148cb0(&s->m_s1);
+	d->m_s2.sub_10148cb0(&s->m_s2);
+	d->m_n364 = s->m_n364;
+	d->m_n368 = s->m_n368;
+	d->m_n36c = s->m_n36c;
+	d->m_b370 = s->m_b370;
+	d->m_b371 = s->m_b371;
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148cb0 size=0xe9
 struct Vec3X { int x, y, z; };
 struct ItemVecX {
