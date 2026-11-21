@@ -888,6 +888,7 @@
 0x10036d40 func   ?sub_10036d40@@YAHXZ sub_10036d40
 0x10036de0 func   ?sub_10036de0@@YAHXZ sub_10036de0
 0x10036e50 func   ?ClientClassInit@@YAHPAUignored@DT_TEExplosion@@@Z ClientClassInit
+0x10037040 func   ??_GC_TEFizz@@UAEPAXI@Z ??_GC_TEFizz@@UAEPAXI@Z
 0x10037060 func   ??1C_TEFizz@@UAE@XZ C_TEFizz::~C_TEFizz
 0x10037060 func   ?sub_10037060@CUnknown10037060@@QAEHXZ CUnknown10037060::sub_10037060
 0x10037100 func   ?sub_10037100@@YAHXZ sub_10037100
