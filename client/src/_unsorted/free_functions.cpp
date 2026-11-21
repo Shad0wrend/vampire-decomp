@@ -28472,6 +28472,16 @@ char sub_1018c840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018dd90 size=0x5
+namespace lifted {
+int sub_101a9f00();
+}
+int sub_1018dd90()
+{
+    return lifted::sub_101a9f00();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e330 size=0x28
 #include <stdarg.h>
 
