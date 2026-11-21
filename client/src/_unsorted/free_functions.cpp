@@ -16743,6 +16743,26 @@ void __fastcall sub_10144d60(int *pThis)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144d90 size=0x21
+struct CUnkDelete101d7c90
+{
+    void *sub_10144d90(unsigned char flags);
+};
+
+// TARGET: sub_10144d90
+void *CUnkDelete101d7c90::sub_10144d90(unsigned char flags)
+{
+    char *p = (char *)this;
+    if (flags & 2) {
+        p = p - 4;
+    }
+    if (flags & 1) {
+        operator delete(p);
+    }
+    return p;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145140 size=0x7c
 #include <stdio.h>
 #include "CUnknown101d82d0.h"
