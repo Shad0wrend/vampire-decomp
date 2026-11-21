@@ -2031,3 +2031,8 @@ ConVar g_104e1ba0("debug_total_mass_divisor", "4", 8192);
 #include "utlvector.h"
 CUtlVector<int> g_104e1be4;
 // END FUNCTION
+
+// FUNCTION: 0x10128d10 size=0x5
+#include "Vector.h"
+Vector g_105e5440[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.40824834f, 0.70710677f, 0.57735026f), Vector(-0.40824822f, -0.7071068f, 0.57735026f) };
+// END FUNCTION
