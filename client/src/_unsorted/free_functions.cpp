@@ -1410,6 +1410,62 @@ void sub_100892c0(BlendOwner *pOwner, BlendQuat *q1, Vector *pos1, BlendSeq *pSe
 }
 // END FUNCTION
 
+// FUNCTION: 0x10089500 size=0x152
+#include <math.h>
+
+struct PoseParamDescX
+{
+	char pad00[8];
+	float start;
+	float end;
+	float loop;
+};
+struct StudioHdrX
+{
+	char pad00[0x184];
+	int poseparamindex;
+};
+struct SeqDescX
+{
+	char pad00[0x23c];
+	int groupsize[2];
+	int paramindex[2];
+	float paramstart[2];
+	float paramend[2];
+};
+extern float g_101e34f0;
+
+void sub_10089500(StudioHdrX *pStudioHdr, const float *poseParameter, SeqDescX &seqdesc, int iLocalIndex, float &flSetting, int &index)
+{
+	int iPose = seqdesc.paramindex[iLocalIndex];
+	if (iPose == -1) {
+		flSetting = 0;
+		index = 0;
+		return;
+	}
+	PoseParamDescX &Pose = *(PoseParamDescX *)((char *)pStudioHdr + pStudioHdr->poseparamindex + iPose * 0x14);
+	float flValue = poseParameter[iPose];
+	if (Pose.loop != g_101e34f0) {
+		float wrap = (Pose.end + Pose.start) * 0.5 + Pose.loop * 0.5;
+		float shift = Pose.loop - wrap;
+		flValue = flValue - Pose.loop * floor((flValue + shift) / Pose.loop);
+	}
+	flSetting = (flValue - (seqdesc.paramstart[iLocalIndex] - Pose.start) / (Pose.end - Pose.start)) /
+		((seqdesc.paramend[iLocalIndex] - Pose.start) / (Pose.end - Pose.start) - (seqdesc.paramstart[iLocalIndex] - Pose.start) / (Pose.end - Pose.start));
+	if (flSetting < g_101e34f0)
+		flSetting = 0.0f;
+	else if (flSetting > 1.0f)
+		flSetting = 1.0f;
+	index = 0;
+	if (seqdesc.groupsize[iLocalIndex] > 1) {
+		index = (int)((seqdesc.groupsize[iLocalIndex] - 1) * flSetting);
+		if (index == seqdesc.groupsize[iLocalIndex] - 1)
+			index = seqdesc.groupsize[iLocalIndex] - 2;
+		flSetting = (seqdesc.groupsize[iLocalIndex] - 1) * flSetting - index;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10089660 size=0x57
 struct SBone160 { char m_pad[0xa0]; };
 struct SBoneOwner { char m_pad0[0x58]; };
