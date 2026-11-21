@@ -15298,6 +15298,14 @@ void SList::sub_101289b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128b20 size=0x4
+struct CUnknown10128b20 { float sub_10128b20(); };
+float CUnknown10128b20::sub_10128b20()
+{
+    return *(float *)((char *)this + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128b60 size=0x1f
 namespace lifted {
 extern int g_102c3368;
