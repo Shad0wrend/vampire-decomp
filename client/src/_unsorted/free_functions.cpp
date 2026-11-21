@@ -6611,6 +6611,13 @@ int sub_100bbb80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc170 size=0x5
+int __stdcall sub_100bc170(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100be130 size=0x4
 struct CUnknown100be130 { char sub_100be130(); };
 char CUnknown100be130::sub_100be130()

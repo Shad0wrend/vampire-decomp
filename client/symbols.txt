@@ -348,6 +348,7 @@
 0x100b9b80 func   ?sub_100b9b80@Vector@@QBE?AV1@ABV1@@Z Vector::sub_100b9b80
 0x100baba0 func   ?sub_100baba0@@YADXZ sub_100baba0
 0x100bbb80 func   ?sub_100bbb80@@YAHXZ sub_100bbb80
+0x100bc170 func   ?sub_100bc170@@YGHHH@Z sub_100bc170
 0x100be130 func   ?sub_100be130@CUnknown100be130@@QAEDXZ CUnknown100be130::sub_100be130
 0x100be140 func   ?sub_100be140@CUnknown100be140@@QAEDXZ CUnknown100be140::sub_100be140
 0x100be200 func   ?sub_100be200@UtlMem@@QAEXH@Z UtlMem::sub_100be200
