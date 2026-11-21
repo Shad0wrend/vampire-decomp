@@ -1891,3 +1891,8 @@ ConVar g_104df9c8("sv_friction", "4", 8448, "World friction.");
 #include "ConVar.h"
 ConVar g_104df980("sv_bounce", "1", 8448, "Bounce multiplier for when physically simulated objects collide with other objects.");
 // END FUNCTION
+
+// FUNCTION: 0x1010fe80 size=0xa
+#include "ConVar.h"
+ConVar g_104df8f0("sv_maxvelocity", "3500", 8192, "Maximum speed any ballistically moving object is allowed to attain per axis.");
+// END FUNCTION
