@@ -2277,3 +2277,8 @@ ConVar g_105fb400("cl_v_geometric_detail", "5", 128);
 #include "ConVar.h"
 ConVar g_105fb208("cl_v_shadows", "3", 128);
 // END FUNCTION
+
+// FUNCTION: 0x10176270 size=0xa
+#include "ConVar.h"
+ConVar g_105fb298("cl_v_combat_effects", "1", 128);
+// END FUNCTION
