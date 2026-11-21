@@ -233,6 +233,7 @@
 0x1000f510 func   ??_GC_WeaponIWritten@@UAEPAXI@Z ??_GC_WeaponIWritten@@UAEPAXI@Z
 0x1000f550 func   ?sub_1000f550@@YAHXZ sub_1000f550
 0x1000f670 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponIWritten@@@Z ClientClassInit
+0x1000f790 func   ??_GC_WeaponIGeneric@@UAEPAXI@Z ??_GC_WeaponIGeneric@@UAEPAXI@Z
 0x1000f7d0 func   ?sub_1000f7d0@@YAHXZ sub_1000f7d0
 0x1000f8f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponIGeneric@@@Z ClientClassInit
 0x1000fa50 func   ?sub_1000fa50@@YAHXZ sub_1000fa50
