@@ -17195,6 +17195,16 @@ int __stdcall sub_10115e00(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115ef0 size=0x6
+namespace lifted {
+extern char g_104d5190;
+}
+int sub_10115ef0()
+{
+    return (int)&lifted::g_104d5190;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10115f90 size=0x3
 char sub_10115f90()
 {

@@ -1101,6 +1101,7 @@
 0x10115de0 func   ?sub_10115de0@@YADXZ sub_10115de0
 0x10115df0 func   ?sub_10115df0@@YADXZ sub_10115df0
 0x10115e00 func   ?sub_10115e00@@YGHHH@Z sub_10115e00
+0x10115ef0 func   ?sub_10115ef0@@YAHXZ sub_10115ef0
 0x10115f90 func   ?sub_10115f90@@YADXZ sub_10115f90
 0x10115fa0 func   ?sub_10115fa0@@YADXZ sub_10115fa0
 0x10117ba0 func   ?sub_10117ba0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_10117ba0
