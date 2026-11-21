@@ -18200,6 +18200,28 @@ int sub_100981f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100982f0 size=0xa1
+#include "RecvTable.h"
+extern RecvTable g_1049d890;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropTime(char *, int, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_BCCLocalPlayerExclusive { struct ignored; }
+template <> int ClientClassInit<DT_BCCLocalPlayerExclusive::ignored>(DT_BCCLocalPlayerExclusive::ignored *)
+{
+	char *pRecvTableName = "DT_BCCLocalPlayerExclusive";
+	RecvTable &RecvTable = g_1049d890;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropTime("m_flNextAttack", 4056, 4),
+		RecvPropInt("m_iDisciplineFlags", 4276, 4, 0, 0),
+		RecvPropInt("m_iDisciplineFlags2", 4280, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098720 size=0x59
 float sub_10098720(float x, float lo, float hi)
 {
