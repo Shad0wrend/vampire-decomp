@@ -2855,6 +2855,13 @@ int g_102eb628 = ClientClassInit((DT_TEArmorRicochet::ignored *)0);
 RecvTable g_102eba70;
 // END FUNCTION
 
+// FUNCTION: 0x10032800 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseBeam { struct ignored; }
+template <> int ClientClassInit<DT_BaseBeam::ignored>(DT_BaseBeam::ignored *);
+int g_102eba6c = ClientClassInit((DT_BaseBeam::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10032c50 size=0xa
 #include "RecvTable.h"
 RecvTable g_102eba8c;
