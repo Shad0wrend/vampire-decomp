@@ -533,6 +533,22 @@ void Rec64::sub_10043150(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10043580 size=0xfa
+#include "CUnknown100dc9f0.h"
+#include "TempVector.h"
+
+float *CUnknown100dc9f0::sub_10043580(const float *pPoint, float *pOut)
+{
+	Vector &vecTemp = AllocTempVector();
+	VectorSubtract(m_maxs, m_mins, vecTemp);
+	Vector vecSize = vecTemp;
+	pOut[0] = (vecSize.x != 0.0f) ? (pPoint[0] - m_mins.x) / vecSize.x : 0.5f;
+	pOut[1] = (vecSize.y != 0.0f) ? (pPoint[1] - m_mins.y) / vecSize.y : 0.5f;
+	pOut[2] = (vecSize.z != 0.0f) ? (pPoint[2] - m_mins.z) / vecSize.z : 0.5f;
+	return pOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100437f0 size=0x6d
 #include "CUnknown100dcd00.h"
 
