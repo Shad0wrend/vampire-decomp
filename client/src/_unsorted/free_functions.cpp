@@ -6344,6 +6344,40 @@ CUnk10245660Node *sub_100df2c0(const char *pName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df340 size=0x38
+struct CUnknown10245720Node
+{
+    char pad0000[8];
+    CUnknown10245720Node *pNext;
+    char pad000c[0x18 - 0xc];
+    unsigned int flags;
+};
+
+extern CUnknown10245720Node *g_104cf3d4;
+
+// TARGET: sub_100df340
+void sub_100df340(unsigned int mask)
+{
+    CUnknown10245720Node *pKeep = 0;
+    CUnknown10245720Node *pNode = g_104cf3d4;
+    while (pNode != 0)
+    {
+        CUnknown10245720Node *pNext = pNode->pNext;
+        if ((mask & pNode->flags) == 0)
+        {
+            pNode->pNext = pKeep;
+            pKeep = pNode;
+        }
+        else
+        {
+            pNode->pNext = 0;
+        }
+        pNode = pNext;
+    }
+    g_104cf3d4 = pKeep;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1040 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
