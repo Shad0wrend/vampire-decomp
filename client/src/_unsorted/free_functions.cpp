@@ -18719,6 +18719,17 @@ char sub_10115fa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101175a0 size=0xb
+namespace lifted {
+struct C1010e440 { int sub_1010e440(); };
+}
+struct CUnknown101175a0 { int sub_101175a0(); };
+int CUnknown101175a0::sub_101175a0()
+{
+    return ((lifted::C1010e440 *)(*(int *)((char *)this + 0x1ac)))->sub_1010e440();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10117ba0 size=0x8d
 #include "CUtlLinkedList8.h"
 
