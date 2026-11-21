@@ -11728,6 +11728,28 @@ void CVStatSubCost_t::sub_10159550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101595e0 size=0x6c
+struct TraceEnt { const char *a; void *b; void *c; };
+extern int *g_101e3128;
+extern TraceEnt *g_101e3124;
+extern char g_102cb5d8[];
+extern char g_102de300[];
+struct CVStatSubCost_t { int v; bool sub_101595e0(); };
+bool CVStatSubCost_t::sub_101595e0()
+{
+    g_101e3124[*g_101e3128].a = g_102cb5d8;
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    ++*g_101e3128;
+    if (v != 10000) {
+        --*g_101e3128;
+        return false;
+    }
+    --*g_101e3128;
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159f20 size=0x4c
 struct S5_101fc4d0 { int v[5]; };
 struct T_101fc4d0 : S5_101fc4d0 {
