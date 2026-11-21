@@ -2768,3 +2768,8 @@ ConVar g_10618fd0("fog_start", "-1", 0);
 #include "ConVar.h"
 ConVar g_10619410("fog_end", "-1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1019c740 size=0xa
+#include "ConVar.h"
+ConVar g_10618908("fog_color", "-1 -1 -1", 0);
+// END FUNCTION
