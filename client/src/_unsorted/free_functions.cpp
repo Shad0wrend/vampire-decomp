@@ -21705,6 +21705,37 @@ CVStatInfo_t *CVStatInfo_t::sub_1015b050()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015b3b0 size=0x69
+struct TScope {
+	const char *name;
+	void *a;
+	void *b;
+};
+extern int *g_101e3128;
+extern TScope *g_101e3124;
+extern char g_102cbb68[];
+extern char g_102de300[];
+
+struct TInfo {
+	void *p;
+	bool sub_1015b3b0();
+};
+
+bool TInfo::sub_1015b3b0()
+{
+	g_101e3124[*g_101e3128].name = g_102cbb68;
+	g_101e3124[*g_101e3128].a = g_102de300;
+	g_101e3124[*g_101e3128].b = g_102de300;
+	(*g_101e3128)++;
+	if (p) {
+		(*g_101e3128)--;
+		return true;
+	}
+	(*g_101e3128)--;
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015c8f0 size=0xb8
 #include "CVStatInfoList_t.h"
 
