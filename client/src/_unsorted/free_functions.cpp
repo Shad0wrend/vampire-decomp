@@ -25369,6 +25369,41 @@ void * CUnknown102221d0::sub_10163260()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163290 size=0xb5
+#include "CExperienceTable.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_101e3124;
+extern int *g_101e3128;
+extern char g_102cd2a4[];
+extern char g_102de300[];
+extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *);
+void CExperienceTable::sub_10163290()
+{
+    g_101e3124[*g_101e3128].a = g_102cd2a4;
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    ++*g_101e3128;
+    sub_10163410();
+    --*g_101e3128;
+    m_Size = 0;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            Plat_Free(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+    m_pElements = m_pMemory;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            Plat_Free(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163410 size=0xc3
 #include "CExperienceTable.h"
 extern int *g_101e3128;
