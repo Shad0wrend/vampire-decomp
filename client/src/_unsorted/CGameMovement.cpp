@@ -1,6 +1,13 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100e6e10 size=0x3
+#include "CGameMovement.h"
+void CGameMovement::vfunc13(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e6e70 size=0x2f
 #include "CGameMovement.h"
 
