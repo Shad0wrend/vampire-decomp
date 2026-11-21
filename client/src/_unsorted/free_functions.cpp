@@ -19326,6 +19326,38 @@ CUnknown101f08a0 *CUnknown101f08a0::sub_101529b0(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152a00 size=0x40
+struct CUnknownStat101f0910 {
+    int m0;
+    int m4;
+    int m8;
+    int m0c;
+    int m10;
+    int m14;
+    int m18;
+    int m1c;
+    int m20;
+    int m24;
+    int m28;
+    int m2c;
+    int m30;
+};
+
+// TARGET: sub_10152a00
+int __fastcall sub_10152a00(CUnknownStat101f0910 *p)
+{
+    int iVar1 = ((p->m0c + p->m0) * p->m10) / p->m18;
+    if (p->m30 != 100) {
+        iVar1 = (p->m30 * iVar1) / 100;
+    }
+    int iVar2 = p->m20;
+    if (iVar1 <= p->m20 && (iVar2 = p->m28, iVar1 >= p->m28)) {
+        iVar2 = iVar1;
+    }
+    return iVar2;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152bb0 size=0x1a
 struct CUnknown101f0b50 { void * sub_10152bb0(int); };
 void * CUnknown101f0b50::sub_10152bb0(int a0)
