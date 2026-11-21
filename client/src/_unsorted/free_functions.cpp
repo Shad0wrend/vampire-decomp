@@ -14989,6 +14989,14 @@ CLinkNode1c *CLinkList::sub_10128270(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101283a0 size=0x4
+struct CUnknown101283a0 { int sub_101283a0(); };
+int CUnknown101283a0::sub_101283a0()
+{
+    return *(int *)((char *)this + 0x14);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101283d0 size=0x2c
 extern int g_105e543c;
 extern char g_104e2438[32][64];
