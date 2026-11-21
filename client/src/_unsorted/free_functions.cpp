@@ -49140,6 +49140,34 @@ int CKey101eb190::sub_1014f300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014f330 size=0x148
+#include "CUnknown101eb1d0.h"
+#include "CEntryY.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+#pragma intrinsic(strcat)
+extern "C" char *strcat(char *, const char *);
+extern char g_102de300[];
+extern const char *g_105e8580;
+void sub_1015fbb0(const char *text);
+
+// TARGET: CUnknown101eb1d0::sub_1014f330
+void CUnknown101eb1d0::sub_1014f330()
+{
+	char buf[128];
+	sprintf(buf, "(%d): %s\n", m_nId, m_pszName ? m_pszName : g_102de300);
+	sub_1015fbb0(buf);
+	CEntryY *e = FindEntryY(m_nKey);
+	sprintf(buf, "\t\t%s [ %s ]", g_105e8580 ? g_105e8580 : g_102de300, e->m_name ? e->m_name : g_102de300);
+	if (m_nFlags & 1)
+		strcat(buf, "\tIsWielded");
+	if (m_nFlags & 2)
+		strcat(buf, "\tIsWorn");
+	strcat(buf, "\n");
+	sub_1015fbb0(buf);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014f6f0 size=0x8
 namespace lifted {
 struct C10158790 { int sub_10158790(); };
