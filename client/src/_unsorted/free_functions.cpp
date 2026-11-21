@@ -7301,6 +7301,17 @@ void sub_100f3f90(int src)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4060 size=0x55
+#include "utlvector.h"
+
+extern CUtlVector<void *> g_104d1038;
+
+void sub_100f4060(void *pSystem)
+{
+	g_104d1038.FindAndRemove(pSystem);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f40e0 size=0x94
 #include "Vector.h"
 struct AutoSys {
