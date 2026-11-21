@@ -2591,3 +2591,8 @@ ConVar g_105fc760("v_centerspeed", "500", 0);
 #include "ConVar.h"
 ConVar g_105fbe10("v_split", "0", 0, "Split the view into to panes ( 1 == vert, -1 == vert with inverted lower, other == nxn split )");
 // END FUNCTION
+
+// FUNCTION: 0x1018f250 size=0xa
+#include "ConVar.h"
+ConVar g_105fc910("v_rearview", "0", 0, "Rearview mirror mode");
+// END FUNCTION
