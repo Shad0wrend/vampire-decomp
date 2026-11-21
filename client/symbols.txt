@@ -650,6 +650,7 @@
 0x10025090 func   ??_GC_ItemKShrekHubFourKey@@UAEPAXI@Z ??_GC_ItemKShrekHubFourKey@@UAEPAXI@Z
 0x100250d0 func   ?sub_100250d0@@YAHXZ sub_100250d0
 0x100251f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKShrekHubFourKey@@@Z ClientClassInit
+0x10025310 func   ??_GC_ItemKKikiKey@@UAEPAXI@Z ??_GC_ItemKKikiKey@@UAEPAXI@Z
 0x10025350 func   ?sub_10025350@@YAHXZ sub_10025350
 0x10025470 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKKikiKey@@@Z ClientClassInit
 0x100255d0 func   ?sub_100255d0@@YAHXZ sub_100255d0
