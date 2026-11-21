@@ -1062,6 +1062,18 @@ CUnknown10412470Ent *sub_10068160(int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100681e0 size=0x18
+void *sub_10068120(int h);
+
+int sub_100681e0(int h)
+{
+	int *p = (int *)sub_10068120(h);
+	if (p)
+		return *p;
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10068300 size=0x2f
 // TARGET: sub_10068300
 extern int g_10477160;
