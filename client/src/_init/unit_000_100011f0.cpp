@@ -2633,3 +2633,8 @@ Vector g_10618f7c(0.0f, 0.0f, 0.0f);
 #include "Vector.h"
 Vector g_10619134(0.0f, 0.0f, 0.0f);
 // END FUNCTION
+
+// FUNCTION: 0x10197b80 size=0xa
+#include "ConVar.h"
+ConVar g_10618a70("cl_copyframebuffertotexture", "1", 0);
+// END FUNCTION
