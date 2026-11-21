@@ -6845,6 +6845,12 @@ void sub_100d14e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d14f0 size=0x3
+void __stdcall sub_100d14f0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d1500 size=0x1
 void sub_100d1500()
 {

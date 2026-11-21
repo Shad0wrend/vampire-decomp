@@ -321,6 +321,7 @@
 0x100d1240 func   ?sub_100d1240@CMem8b_t@@QAEXH@Z CMem8b_t::sub_100d1240
 0x100d14d0 func   ?sub_100d14d0@@YADXZ sub_100d14d0
 0x100d14e0 func   ?sub_100d14e0@@YAXXZ sub_100d14e0
+0x100d14f0 func   ?sub_100d14f0@@YGXH@Z sub_100d14f0
 0x100d1500 func   ?sub_100d1500@@YAXXZ sub_100d1500
 0x100d15b0 func   ?sub_100d15b0@CUnknown100b7a90@@QAEPAXI@Z CUnknown100b7a90::sub_100d15b0
 0x100d1960 func   ?sub_100d1960@@YAXXZ sub_100d1960
