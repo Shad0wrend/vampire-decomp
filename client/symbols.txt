@@ -1434,6 +1434,7 @@
 0x100dd6f0 func   ?sub_100dd6f0@@YAXABVVector@@000AAUmatrix3x4_t@@@Z sub_100dd6f0
 0x100df0f0 func   ?sub_100df0f0@@YA_NMMMMABVVector@@00M@Z sub_100df0f0
 0x100df190 func   ?sub_100df190@@YAXH@Z sub_100df190
+0x100df1c0 func   ??0ConCommandBase@@QAE@XZ ConCommandBase::ConCommandBase
 0x100df1c0 func   ?sub_100df1c0@CUnknown102454e0@@QAEPAXXZ CUnknown102454e0::sub_100df1c0
 0x100df200 func   ?sub_100df200@ConCommandBase@@QAEPAV1@PBD0H@Z ConCommandBase::sub_100df200
 0x100df230 func   ?sub_100df230@CUnknown100df230@@QAEXXZ CUnknown100df230::sub_100df230
