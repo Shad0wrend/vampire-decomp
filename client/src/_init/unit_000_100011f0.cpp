@@ -6370,6 +6370,13 @@ int g_105e80b4 = ClientClassInit((DT_DisciplineProjectile::ignored *)0);
 RecvTable g_105e8704;
 // END FUNCTION
 
+// FUNCTION: 0x10151e00 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_VampireProjectile { struct ignored; }
+template <> int ClientClassInit<DT_VampireProjectile::ignored>(DT_VampireProjectile::ignored *);
+int g_105e8700 = ClientClassInit((DT_VampireProjectile::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1015bc70 size=0xa
 #include "ConVar.h"
 ConVar g_105f9280("vdiscipline_use_new", "1", 8448);
