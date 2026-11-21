@@ -8447,6 +8447,16 @@ void __cdecl sub_10108510(int *pArr, int index, int *pOut)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108540 size=0x22
+// TARGET: sub_10108540
+void __cdecl sub_10108540(int *pSrc, int index, int *pArr)
+{
+    pArr[index] = pSrc[0];
+    pArr[index + 4] = pSrc[1];
+    pArr[index + 8] = pSrc[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108fd0 size=0x3d
 // VectorMA (mathlib.cpp, _WIN32 form): Valve's naked x87 asm.
 // TARGET: sub_10108fd0
