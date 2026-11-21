@@ -33039,6 +33039,16 @@ int sub_10198d50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10198d60 size=0x6
+namespace lifted {
+extern char g_106196e0;
+}
+int sub_10198d60()
+{
+    return (int)&lifted::g_106196e0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1019c230 size=0x1f
 struct CUnk102a9640Obj
 {
