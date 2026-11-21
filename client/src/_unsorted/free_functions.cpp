@@ -21353,6 +21353,33 @@ int sub_100c4ca0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4da0 size=0xf9
+#include "RecvTable.h"
+extern RecvTable g_104a4f04;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void sub_10127510(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_Sun { struct ignored; }
+template <> int ClientClassInit<DT_Sun::ignored>(DT_Sun::ignored *)
+{
+	char *pRecvTableName = "DT_Sun";
+	RecvTable &RecvTable = g_104a4f04;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_clrRender", 80, 4, 0, sub_10127510),
+		RecvPropVector("m_vDirection", 1184, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_nLayers", 1196, 4, 0, 0),
+		RecvPropInt("m_bOn", 1208, 4, 0, 0),
+		RecvPropInt("m_HorzSize", 1200, 4, 0, 0),
+		RecvPropInt("m_VertSize", 1204, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c65c0 size=0x6
 namespace lifted {
 extern char g_104a4fb4;
