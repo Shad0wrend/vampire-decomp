@@ -5282,6 +5282,12 @@ float sub_10098720(float x, float lo, float hi)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009c1a0 size=0x1
+void sub_1009c1a0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ce10 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_101e3100)(int);
