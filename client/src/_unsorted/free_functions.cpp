@@ -4602,6 +4602,25 @@ InterfaceReg *InterfaceReg::sub_10106be0(void *createFn, const char *pName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106f30 size=0x69
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+int sub_10106fa0(const char *a, const char *b);
+
+int sub_10106f30(const char *module)
+{
+    g_101e3124[*g_101e3128].a = "Sys_GetFactory";
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    (*g_101e3128)++;
+    int r = sub_10106fa0(module, "CreateInterface");
+    (*g_101e3128)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10106fa0 size=0x6e
 struct ScopeEntry { const char *a; const char *b; const char *c; };
 extern int *g_101e3128;
