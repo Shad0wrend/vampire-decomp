@@ -6128,6 +6128,13 @@ int sub_1007a3d0(CTable10428e20 *p, int idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a430 size=0xd
+int sub_1007a430(int a0)
+{
+    return (*(int *)((char *)a0 + 0x188)) + a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a440 size=0x2e
 // TARGET: sub_1007a440
 void sub_10108430(void *pDest, const float *pData);
