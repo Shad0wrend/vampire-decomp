@@ -589,6 +589,7 @@
 0x10088620 func   ?sub_10088620@bf_read@@QAEXAAVVector@@@Z bf_read::sub_10088620
 0x10088650 func   ?sub_10088650@@YAHXZ sub_10088650
 0x10088660 func   ?sub_10088660@bf_readX@@QAEHXZ bf_readX::sub_10088660
+0x100886d0 func   ?sub_100886d0@@YAHXZ sub_100886d0
 0x100886e0 func   ?sub_100886e0@bf_readX@@QAEHXZ bf_readX::sub_100886e0
 0x10088880 func   ?sub_10088880@bf_read@@QAE_NH@Z bf_read::sub_10088880
 0x100888b0 func   ?sub_100888b0@bf_read@@QAEXHH@Z bf_read::sub_100888b0
