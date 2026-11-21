@@ -1936,3 +1936,8 @@ ConVar g_104e0920("r_DrawParticles", "1", 0, "Enable/disable particle rendering"
 #include "ConVar.h"
 ConVar g_104e0968("particle_simulateoverflow", "0", 0, "Used for stress-testing particle systems. Randomly denies creation of particles.");
 // END FUNCTION
+
+// FUNCTION: 0x10118b40 size=0xa
+#include "ConVar.h"
+ConVar g_104e0a90("cl_phys_timescale", "1", 0, "Sets the scale of time for client-side physics (ragdolls)");
+// END FUNCTION
