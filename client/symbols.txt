@@ -3493,6 +3493,7 @@
 0x101e3140 data   ?DevWarning@@YAXPBDZZ DevWarning
 0x101e3190 data   ?Q_snprintf@@YAHPADHPBDZZ Q_snprintf
 0x101e3190 data   Q_snprintf Q_snprintf
+0x101e3190 data   __imp_?Q_snprintf@@YAHPADHPBDZZ _imp_?Q_snprintf
 0x101e319c data   __imp_?CommandLine@@YAPAUICommandLine@@XZ _imp_?CommandLine
 0x101e321c vtable ??_7C_BaseCineCamera@@6BIClientThinkable@@@ C_BaseCineCamera::vftable
 0x101e3230 vtable ??_7C_BaseCineCamera@@6BIClientCollideable@@@ C_BaseCineCamera::vftable
