@@ -8444,6 +8444,14 @@ void UtlMem::sub_100e12c0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e13a0 size=0x4
+struct CUnknown100e13a0 { char * sub_100e13a0(); };
+char * CUnknown100e13a0::sub_100e13a0()
+{
+    return (char *)this + -4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e15d0 size=0x1
 void sub_100e15d0()
 {
