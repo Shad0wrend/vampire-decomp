@@ -315,6 +315,7 @@
 0x1001b350 func   ?sub_1001b350@@YAHXZ sub_1001b350
 0x1001b470 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGEDaneReport@@@Z ClientClassInit
 0x1001b5d0 func   ?sub_1001b5d0@@YAHXZ sub_1001b5d0
+0x1001b6f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGiovanniInvitationVictor@@@Z ClientClassInit
 0x1001b850 func   ?sub_1001b850@@YAHXZ sub_1001b850
 0x1001bad0 func   ?sub_1001bad0@@YAHXZ sub_1001bad0
 0x1001bd50 func   ?sub_1001bd50@@YAHXZ sub_1001bd50
