@@ -7722,6 +7722,35 @@ float __fastcall sub_10107730(Vector &v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101077e0 size=0x8b
+// TARGET: sub_101077e0
+#include "Vector.h"
+
+void __fastcall sub_101077e0(Vector &vec)
+{
+    float half = 0.5f;
+    float three = 3.0f;
+    float oolength;
+    float len2 = vec.x * vec.x + vec.y * vec.y + vec.z * vec.z + 1.1920929e-7f;
+    __asm
+    {
+        movss xmm3, len2
+        movss xmm1, half
+        movss xmm2, three
+        rsqrtss xmm0, xmm3
+        mulss xmm3, xmm0
+        mulss xmm1, xmm0
+        mulss xmm3, xmm0
+        subss xmm2, xmm3
+        mulss xmm1, xmm2
+        movss oolength, xmm1
+    }
+    vec.x *= oolength;
+    vec.y *= oolength;
+    vec.z *= oolength;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107be0 size=0xc7
 // mathlib _SSE2_cos (SSE2 cos), verbatim
 // TARGET: sub_10107be0
