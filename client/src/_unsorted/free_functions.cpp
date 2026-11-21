@@ -11992,6 +11992,35 @@ void CVStatList_t::sub_1015d350(int a, int *pSource, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015e580 size=0x90
+#include "CVStatListManager_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+
+// TARGET: CVStatListManager_t::sub_1015e580
+char CVStatListManager_t::sub_1015e580(int time)
+{
+    char changed = 0;
+    int i = 0;
+    g_101e3124[*g_101e3128].a = "CVStatListManager_t::Update";
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    ++*g_101e3128;
+    m_nTime = time;
+    if (m_nLists > 0) {
+        do {
+            if (m_pLists[i]->sub_1015ddc0())
+                changed = 1;
+            i++;
+        } while (i < m_nLists);
+    }
+    --*g_101e3128;
+    return changed;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"
