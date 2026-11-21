@@ -14211,6 +14211,27 @@ int sub_1007fd00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007fe00 size=0x83
+#include "RecvTable.h"
+extern RecvTable g_104870cc;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropPredictableId(char *, int, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_BeamPredictableId { struct ignored; }
+template <> int ClientClassInit<DT_BeamPredictableId::ignored>(DT_BeamPredictableId::ignored *)
+{
+	char *pRecvTableName = "DT_BeamPredictableId";
+	RecvTable &RecvTable = g_104870cc;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropPredictableId("m_PredictableID", 204, 4),
+		RecvPropInt("m_bIsPlayerSimulated", 992, 1, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080e00 size=0x5
 int __stdcall sub_10080e00(int a0)
 {
