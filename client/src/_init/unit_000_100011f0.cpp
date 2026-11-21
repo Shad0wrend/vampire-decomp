@@ -1079,6 +1079,13 @@ int g_102e6c04 = ClientClassInit((DT_OccultHacking::ignored *)0);
 RecvTable g_102e27e8;
 // END FUNCTION
 
+// FUNCTION: 0x10012ad0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultFrenzy { struct ignored; }
+template <> int ClientClassInit<DT_OccultFrenzy::ignored>(DT_OccultFrenzy::ignored *);
+int g_102e27e4 = ClientClassInit((DT_OccultFrenzy::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10012d10 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e5e50;
