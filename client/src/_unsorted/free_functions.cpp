@@ -10800,6 +10800,16 @@ void UtlMem::sub_100c4c10(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c4ca0 size=0x6
+namespace lifted {
+extern char g_104a4d78;
+}
+int sub_100c4ca0()
+{
+    return (int)&lifted::g_104a4d78;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9320 size=0x5
 char __stdcall sub_100c9320(int a0)
 {
