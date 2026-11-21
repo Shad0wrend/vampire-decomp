@@ -397,6 +397,7 @@
 0x100219d0 func   ?sub_100219d0@@YAHXZ sub_100219d0
 0x10021af0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKOceanHouseUpstairsKey@@@Z ClientClassInit
 0x10021c50 func   ?sub_10021c50@@YAHXZ sub_10021c50
+0x10021d70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKClinicMaintenanceKey@@@Z ClientClassInit
 0x10021ed0 func   ?sub_10021ed0@@YAHXZ sub_10021ed0
 0x10022150 func   ?sub_10022150@@YAHXZ sub_10022150
 0x100223d0 func   ?sub_100223d0@@YAHXZ sub_100223d0
