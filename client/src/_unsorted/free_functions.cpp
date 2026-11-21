@@ -8689,6 +8689,85 @@ unsigned int sub_10108d40(float *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108d70 size=0x25c
+// mathlib BoxOnPlaneSide (2003 tree, C version), verbatim
+// TARGET: sub_10108d70
+// cplane_t::normal is a Vector: its const operator[] decides the fld/fmul operand order
+#include "Vector.h"
+struct cplane_t
+{
+	Vector	normal;
+	float	dist;
+	unsigned char	type;
+	unsigned char	signbits;
+	unsigned char	pad[2];
+};
+
+int sub_10108d70 (const float *emins, const float *emaxs, const cplane_t *p)
+{
+	float	dist1, dist2;
+	int		sides;
+
+// fast axial cases
+	if (p->type < 3)
+	{
+		if (p->dist <= emins[p->type])
+			return 1;
+		if (p->dist >= emaxs[p->type])
+			return 2;
+		return 3;
+	}
+	
+// general case
+	switch (p->signbits)
+	{
+	case 0:
+dist1 = p->normal[0]*emaxs[0] + p->normal[1]*emaxs[1] + p->normal[2]*emaxs[2];
+dist2 = p->normal[0]*emins[0] + p->normal[1]*emins[1] + p->normal[2]*emins[2];
+		break;
+	case 1:
+dist1 = p->normal[0]*emins[0] + p->normal[1]*emaxs[1] + p->normal[2]*emaxs[2];
+dist2 = p->normal[0]*emaxs[0] + p->normal[1]*emins[1] + p->normal[2]*emins[2];
+		break;
+	case 2:
+dist1 = p->normal[0]*emaxs[0] + p->normal[1]*emins[1] + p->normal[2]*emaxs[2];
+dist2 = p->normal[0]*emins[0] + p->normal[1]*emaxs[1] + p->normal[2]*emins[2];
+		break;
+	case 3:
+dist1 = p->normal[0]*emins[0] + p->normal[1]*emins[1] + p->normal[2]*emaxs[2];
+dist2 = p->normal[0]*emaxs[0] + p->normal[1]*emaxs[1] + p->normal[2]*emins[2];
+		break;
+	case 4:
+dist1 = p->normal[0]*emaxs[0] + p->normal[1]*emaxs[1] + p->normal[2]*emins[2];
+dist2 = p->normal[0]*emins[0] + p->normal[1]*emins[1] + p->normal[2]*emaxs[2];
+		break;
+	case 5:
+dist1 = p->normal[0]*emins[0] + p->normal[1]*emaxs[1] + p->normal[2]*emins[2];
+dist2 = p->normal[0]*emaxs[0] + p->normal[1]*emins[1] + p->normal[2]*emaxs[2];
+		break;
+	case 6:
+dist1 = p->normal[0]*emaxs[0] + p->normal[1]*emins[1] + p->normal[2]*emins[2];
+dist2 = p->normal[0]*emins[0] + p->normal[1]*emaxs[1] + p->normal[2]*emaxs[2];
+		break;
+	case 7:
+dist1 = p->normal[0]*emins[0] + p->normal[1]*emins[1] + p->normal[2]*emins[2];
+dist2 = p->normal[0]*emaxs[0] + p->normal[1]*emaxs[1] + p->normal[2]*emaxs[2];
+		break;
+	default:
+		dist1 = dist2 = 0;		// shut up compiler
+		break;
+	}
+
+	sides = 0;
+	if (dist1 >= p->dist)
+		sides = 1;
+	if (dist2 < p->dist)
+		sides |= 2;
+
+	return sides;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108fd0 size=0x3d
 // VectorMA (mathlib.cpp, _WIN32 form): Valve's naked x87 asm.
 // TARGET: sub_10108fd0
