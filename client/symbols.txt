@@ -1450,6 +1450,7 @@
 0x100c4c10 func   ?sub_100c4c10@UtlMem@@QAEXH@Z UtlMem::sub_100c4c10
 0x100c4ca0 func   ?sub_100c4ca0@@YAHXZ sub_100c4ca0
 0x100c4da0 func   ?ClientClassInit@@YAHPAUignored@DT_Sun@@@Z ClientClassInit
+0x100c4f20 func   ??1C_Sun@@UAE@XZ C_Sun::~C_Sun
 0x100c65c0 func   ?sub_100c65c0@@YAHXZ sub_100c65c0
 0x100c6700 func   ?ClientClassInit@@YAHPAUignored@DT_VampireProjectile_MingXiaoSpit@@@Z ClientClassInit
 0x100c68b0 func   ?sub_100c68b0@@YAHXZ sub_100c68b0
