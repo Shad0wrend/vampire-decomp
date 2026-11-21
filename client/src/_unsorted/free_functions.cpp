@@ -3636,6 +3636,49 @@ void sub_1008c060(StudioHdr *pStudioHdr, int iSequence, const float *poseParamet
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008c530 size=0x96
+#include "Vector.h"
+struct mstudiomovement_t
+{
+	int endframe;
+	int motionflags;
+	float v0;
+	float v1;
+	float angle;
+	Vector vector;
+	Vector position;
+};
+
+struct mstudioanimdesc_t
+{
+	char m_pad0[0xc];
+	int numframes;
+	int nummovements;
+	int movementindex;
+	mstudiomovement_t *pMovement(int i) const { return (mstudiomovement_t *)(((char *)this) + movementindex) + i; }
+};
+
+// TARGET: sub_1008c530
+bool sub_1008c530(mstudioanimdesc_t *panim, float flCycle, Vector &vecVelocity)
+{
+	float prevframe = 0;
+	float flFrame = flCycle * (panim->numframes - 1);
+	for (int i = 0; i < panim->nummovements; i++)
+	{
+		mstudiomovement_t *pmove = panim->pMovement(i);
+		if (pmove->endframe >= flFrame)
+		{
+			float f = (flFrame - prevframe) / (pmove->endframe - prevframe);
+			float vel = pmove->v0 * (1 - f) + pmove->v1 * f;
+			vel = vel * (pmove->endframe - prevframe) / (panim->numframes - 1);
+			vecVelocity = pmove->vector * vel;
+			return true;
+		}
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008d930 size=0x9f
 struct SPoseHdr;
 
