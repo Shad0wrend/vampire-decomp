@@ -2612,3 +2612,9 @@ ConVar g_105fbef0("gl_clear", "0", 0);
 void sub_1018f600(void);
 ConCommand g_105fc4e0("centerview", sub_1018f600, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10191150 size=0xa
+#include "ConCommand.h"
+void sub_10190f30(void);
+ConCommand g_105fc43c("print_client_viewmodel_info", sub_10190f30, "", 0, 0);
+// END FUNCTION
