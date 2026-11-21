@@ -2158,6 +2158,13 @@ RecvTable g_104a22e8;
 RecvTable g_104a2304;
 // END FUNCTION
 
+// FUNCTION: 0x100b9ca0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100b9cd0(void);
+InterfaceReg g_104a2540(sub_100b9cd0, "BreakableSurface_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x100bb430 size=0xa
 #include "ConVar.h"
 ConVar g_104a2a30("lod_TransitionDist", "400", 0);
