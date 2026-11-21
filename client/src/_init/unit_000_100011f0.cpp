@@ -1312,3 +1312,8 @@ ConVar g_104d35c8("cl_forceviewcenter", "0", 0);
 #include "ConVar.h"
 ConVar g_104d34a0("cl_lagcomp_errorcheck", "0", 0, "Player index of other player to check for position errors.");
 // END FUNCTION
+
+// FUNCTION: 0x10103020 size=0xa
+#include "ConVar.h"
+ConVar g_104d2fb0("cl_meleecircle", "0", 0);
+// END FUNCTION
