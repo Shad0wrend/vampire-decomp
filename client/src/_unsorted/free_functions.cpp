@@ -14438,6 +14438,20 @@ void CUnknown101bc140::sub_101339c0(float flValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10134010 size=0x1a
+namespace lifted {
+extern int g_102c532c;
+extern int g_102c5330;
+extern char g_102c5374;
+}
+int sub_10134010()
+{
+    lifted::g_102c5330 = 4;
+    lifted::g_102c532c = (int)&lifted::g_102c5374;
+    return (int)&lifted::g_102c532c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10134060 size=0x40
 #include "CUnknown101bbd10.h"
 
