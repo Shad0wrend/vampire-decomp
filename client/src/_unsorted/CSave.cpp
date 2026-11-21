@@ -9,6 +9,14 @@ int CSave::vfunc38()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128fa0 size=0x7
+#include "CSave.h"
+int CSave::vfunc0()
+{
+    return *(int *)((char *)(*(int *)((char *)this + 0x18)) + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128fb0 size=0x1d
 #include "CSave.h"
 
