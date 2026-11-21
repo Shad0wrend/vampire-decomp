@@ -5718,6 +5718,17 @@ int sub_100580b0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100580d0 size=0x1a
+namespace lifted {
+extern char g_103eec94;
+struct C10058e80 { int sub_10058e80(int, int, int); };
+}
+int sub_100580d0(int a0, int a1, int a2)
+{
+    return ((lifted::C10058e80 *)((int)&lifted::g_103eec94))->sub_10058e80(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10058310 size=0xa
 namespace lifted {
 extern char g_103eec94;
