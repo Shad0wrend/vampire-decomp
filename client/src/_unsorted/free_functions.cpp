@@ -32783,6 +32783,31 @@ void sub_10108660(const Vector &forward, matrix3x4_t &matrix)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101087b0 size=0xc7
+#include "Vector.h"
+
+void sub_101087b0(const Vector &forward, Vector &right, Vector &up)
+{
+    Vector tmp;
+    if (forward[0] == 0 && forward[1] == 0) {
+        right[0] = 1.0f;
+        right[1] = 0.0f;
+        right[2] = 0.0f;
+        up[0] = 0.0f;
+        up[1] = -forward[2];
+        up[2] = 0.0f;
+        return;
+    }
+    tmp[0] = 0.0f;
+    tmp[1] = 0.0f;
+    tmp[2] = 1.0f;
+    CrossProduct(forward, tmp, right);
+    VectorNormalize(right);
+    CrossProduct(right, forward, up);
+    VectorNormalize(up);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108880 size=0xd5
 #include "Vector.h"
 #include <math.h>
