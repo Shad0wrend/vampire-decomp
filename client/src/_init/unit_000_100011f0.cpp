@@ -4566,6 +4566,13 @@ ConVar g_104a4258("r_glowfadeout", "0.1", 0);
 RecvTable g_104a4940;
 // END FUNCTION
 
+// FUNCTION: 0x100c3760 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseFlex { struct ignored; }
+template <> int ClientClassInit<DT_BaseFlex::ignored>(DT_BaseFlex::ignored *);
+int g_104a493c = ClientClassInit((DT_BaseFlex::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100c3a00 size=0xa
 #include "ConVar.h"
 ConVar g_104a4898("phoneme_delay", "0", 128);
