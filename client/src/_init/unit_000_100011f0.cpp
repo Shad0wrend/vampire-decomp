@@ -1436,3 +1436,9 @@ ConCommand g_104d3cfc("-lookdown", sub_101020a0, 0, 0, 0);
 void sub_10102110(void);
 ConCommand g_104d339c("+strafe", sub_10102110, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10104db0 size=0xa
+#include "ConCommand.h"
+void sub_10102120(void);
+ConCommand g_104d3bc4("-strafe", sub_10102120, 0, 0, 0);
+// END FUNCTION
