@@ -10676,6 +10676,26 @@ void CDataObjectAccessSystem::sub_1011b1d0(int index, void *pData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1011c140 size=0x6d
+struct TraceEnt { const char *a; void *b; void *c; };
+struct trace21 { int d[21]; };
+extern int *g_101e3128;
+extern TraceEnt *g_101e3124;
+extern char g_102c156c[];
+extern char g_102de300[];
+extern trace21 g_104e0b20;
+trace21 *sub_1011c140(trace21 *out)
+{
+    g_101e3124[*g_101e3128].a = g_102c156c;
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    ++*g_101e3128;
+    *out = g_104e0b20;
+    --*g_101e3128;
+    return out;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1011ecd0 size=0xb0
 #include "UtlVec8.h"
 
