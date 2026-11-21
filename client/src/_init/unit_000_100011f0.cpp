@@ -2833,3 +2833,8 @@ ConVar g_10619608("cl_overlay_celerity_expand_scale", "0.5", 0);
 #include "ConVar.h"
 ConVar g_10618f88("cl_overlay_noise_lightblur", "0.005", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1019f0f0 size=0xa
+#include "ConVar.h"
+ConVar g_106190a8("cl_overlay_noise_lightblend", "0.0", 0);
+// END FUNCTION
