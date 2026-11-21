@@ -39621,6 +39621,21 @@ void UtlMem::sub_1012d830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d920 size=0x4b
+struct SRange101b2100 { int m0; float m4; float m8; };
+const char *sub_1012d970(float v);
+extern char g_105e5668[];
+__declspec(dllimport) int Q_snprintf(char *, int, const char *, ...);
+// TARGET: sub_1012d920
+const char *__fastcall sub_1012d920(SRange101b2100 *p)
+{
+    if (p->m8 == 0.0f)
+        return sub_1012d970(p->m4);
+    Q_snprintf(g_105e5668, 0x40, "%.3f, %.3f", p->m4, p->m8 + p->m4);
+    return g_105e5668;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d970 size=0x46
 struct Entry { float value; const char *text; };
 extern Entry g_102c4260[1];
