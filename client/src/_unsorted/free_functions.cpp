@@ -10549,6 +10549,21 @@ char *CUnk101ec480::sub_101501d0(int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101501f0 size=0x24
+typedef const char *(__cdecl *Fn1073a398)(void *pThis, int a, int b);
+
+extern Fn1073a398 g_105e8644;
+extern const char g_102de300;
+
+// TARGET: sub_101501f0
+const char *__fastcall sub_101501f0(void *pThis, int dummy, int a, int b)
+{
+	if (g_105e8644)
+		return g_105e8644(pThis, a, b);
+	return &g_102de300;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10150bc0 size=0x7b
 #include "CUnknown101ed170.h"
 
