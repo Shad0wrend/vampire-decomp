@@ -2154,6 +2154,29 @@ void bf_write::sub_100878f0(unsigned int curData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100879e0 size=0x45
+struct CStrParser {
+	char m_pad[0x10];
+	char m_bFailed;
+	void sub_10087820(int c);
+	bool sub_100879e0(const char *s);
+};
+bool CStrParser::sub_100879e0(const char *s)
+{
+	if (s) {
+		char c;
+		do {
+			sub_10087820(*s);
+			c = *s;
+			s++;
+		} while (c != 0);
+	} else {
+		sub_10087820(0);
+	}
+	return m_bFailed == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10087bb0 size=0x233
 #include "bf_read.h"
 
