@@ -3583,6 +3583,13 @@ Vector g_104d4d80(0.0f, 0.0f, 0.0f);
 Vector g_104db5a0(3.4028235e+38f, 3.4028235e+38f, 3.4028235e+38f);
 // END FUNCTION
 
+// FUNCTION: 0x1010c7f0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1010c820(void);
+InterfaceReg g_104df5bc(sub_1010c820, "Add_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x1010ddc0 size=0xa
 #include "ConVar.h"
 ConVar g_104df6b8("measure_resort", "1.0", 0, "How often to re-sort profiling sections\n");
