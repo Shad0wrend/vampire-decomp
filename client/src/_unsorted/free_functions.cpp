@@ -5404,6 +5404,21 @@ int CUtlVector40::sub_1012c3d0(int num, const void *pToCopy)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c480 size=0x33
+#include "CUtlMemory40.h"
+extern void *(*g_101e3100)(int);
+
+CUtlMemory40 *CUtlMemory40::sub_1012c480(int growSize, int allocationCount)
+{
+    m_pMemory = 0;
+    m_allocationCount = allocationCount;
+    m_growSize = growSize;
+    if (allocationCount)
+        m_pMemory = (char *)g_101e3100(allocationCount * 40);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c4c0 size=0xae
 #include "CUnknown101a5800.h"
 #include "CUnknown101a59f0.h"
