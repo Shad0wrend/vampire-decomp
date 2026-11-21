@@ -14550,6 +14550,16 @@ void sub_10120660(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101206d0 size=0x5
+namespace lifted {
+int sub_100cd9a0();
+}
+int sub_101206d0()
+{
+    return lifted::sub_100cd9a0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120730 size=0x25
 struct CUnknown109ef590
 {
