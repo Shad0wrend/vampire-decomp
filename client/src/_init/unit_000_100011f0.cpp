@@ -1986,3 +1986,8 @@ ConVar g_104e1668("cl_showerror", "0", 0, "Show prediction errors, 2 for above p
 #include "ConVar.h"
 ConVar g_104e1538("cl_smooth", "1", 0, "Smooth view/eye origin after prediction errors");
 // END FUNCTION
+
+// FUNCTION: 0x10120c20 size=0xa
+#include "ConVar.h"
+ConVar g_104e1620("cl_smoothtime", "0.1", 0, "Smooth client's view after prediction error over this many seconds");
+// END FUNCTION
