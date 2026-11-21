@@ -2192,3 +2192,9 @@ ConCommand g_105fafa0("showinventory", sub_10170280, 0, 0, 0);
 void sub_10170360(void);
 ConCommand g_105fb004("hidebarter", sub_10170360, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10172c00 size=0xa
+#include "ConCommand.h"
+void sub_10172bc0(void);
+ConCommand g_105fb124("clanchangedone", sub_10172bc0, 0, 0, 0);
+// END FUNCTION
