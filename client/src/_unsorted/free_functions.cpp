@@ -34282,6 +34282,16 @@ int sub_101ac8f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101ac900 size=0x6
+namespace lifted {
+extern int g_10678dec;
+}
+int sub_101ac900()
+{
+    return lifted::g_10678dec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b16e0 size=0x4
 struct CUnknown101b16e0 { int sub_101b16e0(); };
 int CUnknown101b16e0::sub_101b16e0()
