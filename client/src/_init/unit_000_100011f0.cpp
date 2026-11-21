@@ -678,3 +678,8 @@ ConVar g_104a4ce0("phonemefilter_max", "0.0", 128);
 #include "ConVar.h"
 ConVar g_104a5210("flood_terminal", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100cb430 size=0xa
+#include "ConVar.h"
+ConVar g_104a5758("showparticlecounts", "0", 0, "Display number of particles drawn per frame");
+// END FUNCTION
