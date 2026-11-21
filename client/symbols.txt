@@ -735,6 +735,7 @@
 0x100bbb80 func   ?sub_100bbb80@@YAHXZ sub_100bbb80
 0x100bbe40 func   ?sub_100bbe40@@YAHXZ sub_100bbe40
 0x100bc170 func   ?sub_100bc170@@YGHHH@Z sub_100bc170
+0x100bc330 func   ?sub_100bc330@@YAHXZ sub_100bc330
 0x100bc680 func   ?sub_100bc680@@YGHHH@Z sub_100bc680
 0x100bd530 func   ?sub_100bd530@@YAHXZ sub_100bd530
 0x100bde50 func   ?sub_100bde50@CUnknown100bde50@@QAEXXZ CUnknown100bde50::sub_100bde50
