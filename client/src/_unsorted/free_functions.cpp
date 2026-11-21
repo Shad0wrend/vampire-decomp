@@ -16768,6 +16768,12 @@ void sub_10135580()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10136d90 size=0x1
+void sub_10136d90()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137ce0 size=0x51
 #include <string.h>
 #pragma intrinsic(strcmp)
