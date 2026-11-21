@@ -4147,6 +4147,21 @@ void UtlMem::sub_10039e60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10039ef0 size=0x12
+namespace lifted {
+extern char g_102269dc;
+extern char g_10226a14;
+int sub_1002c390();
+}
+struct CUnknown10039ef0 { int sub_10039ef0(); };
+int CUnknown10039ef0::sub_10039ef0()
+{
+    *(int *)this = (int)&lifted::g_10226a14;
+    *(int *)((char *)this + 4) = (int)&lifted::g_102269dc;
+    return lifted::sub_1002c390();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039f20 size=0x3
 void __stdcall sub_10039f20(int a0)
 {

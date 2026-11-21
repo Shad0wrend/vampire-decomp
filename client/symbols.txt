@@ -388,6 +388,7 @@
 0x10039c40 func   ?sub_10039c40@@YAHXZ sub_10039c40
 0x10039ce0 func   ?sub_10039ce0@@YAHXZ sub_10039ce0
 0x10039e60 func   ?sub_10039e60@UtlMem@@QAEXXZ UtlMem::sub_10039e60
+0x10039ef0 func   ?sub_10039ef0@CUnknown10039ef0@@QAEHXZ CUnknown10039ef0::sub_10039ef0
 0x10039f20 func   ?sub_10039f20@@YGXH@Z sub_10039f20
 0x10039f70 func   ?sub_10039f70@@YAHXZ sub_10039f70
 0x1003a010 func   ?sub_1003a010@@YAHXZ sub_1003a010
