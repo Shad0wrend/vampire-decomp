@@ -26187,6 +26187,19 @@ void UtlMem::sub_10135430(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135560 size=0x1b
+struct CUnknown10135560 { void * sub_10135560(); };
+void * CUnknown10135560::sub_10135560()
+{
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    *(int *)((char *)this + 0x90) = 0x3f800000;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10135580 size=0x1
 void sub_10135580()
 {
