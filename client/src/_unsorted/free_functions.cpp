@@ -30,6 +30,13 @@ void __stdcall sub_10001030(char *ptr, unsigned size, int count, PMF_1004ddc0 pm
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001640 size=0x3
+char sub_10001640()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10003c10 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
