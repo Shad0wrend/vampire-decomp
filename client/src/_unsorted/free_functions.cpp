@@ -52576,6 +52576,28 @@ int __fastcall sub_10154010(SHead101f2680 *pThis, int unused, const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154060 size=0x3d
+#include <string.h>
+
+extern char g_105e8ac8;
+
+inline int FindNode(char *self)
+{
+    for (char *node = *(char **)(self - 0x18); node != 0; node = *(char **)(node + 0x18)) {
+        if (_strcmpi(&g_105e8ac8, *(char **)(node + 0x14)) == 0)
+            return *(int *)(*(int *)node + 8) + (int)node;
+    }
+    return 0;
+}
+
+int __fastcall sub_10154060(char *self)
+{
+    if (g_105e8ac8)
+        return FindNode(self);
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101540a0 size=0x49
 #include "VKeyValues.h"
 #include <stdlib.h>
