@@ -5261,6 +5261,22 @@ Pool *Pool::sub_1010e290(unsigned int cbItem, unsigned int nItemsPerBlock, unsig
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e340 size=0x18
+extern void (__cdecl *g_104df710)(const char *, int);
+
+struct CUnk1013db80 {
+    char pad[0x20];
+    int m_20;
+    void sub_1010e340();
+};
+
+void CUnk1013db80::sub_1010e340()
+{
+    if (g_104df710)
+        g_104df710("Memory leak: mempool blocks left in memory: %d\n", m_20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e3e0 size=0x53
 struct Pool {
     unsigned int m_size;
