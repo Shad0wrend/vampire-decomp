@@ -16846,6 +16846,49 @@ void *CUnkDelete101d7c90::sub_10145200(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101452d0 size=0x9b
+#include "CUnknown101d82d0.h"
+#include "CUnknown101d7ec0.h"
+
+extern "C" char *__cdecl _strlwr(char *);
+extern "C" char *__cdecl strtok(char *, const char *);
+
+// TARGET: CUnknown101d82d0::sub_101452d0
+void CUnknown101d82d0::sub_101452d0(const char *pszList)
+{
+	char szBuf[256];
+	int i = 0;
+	do
+	{
+		*(szBuf + i) = pszList[i];
+	} while (pszList[i++]);
+	_strlwr(szBuf);
+	char *pszToken = strtok(szBuf, " ,()");
+	while (pszToken)
+	{
+		int bNegated = 0;
+		if (*pszToken == '!')
+		{
+			bNegated = 1;
+			pszToken++;
+		}
+		int nSub;
+		unsigned int nId; nId = g_105e7910.sub_10144f40(pszToken, &nSub);
+		if ((int)nId != -1)
+		{
+			CUnknown101d82d0_Elem *pElem = sub_10145230();
+			if (pElem)
+			{
+				pElem->m_b = nSub;
+				pElem->m_a = nId;
+				pElem->m_c = bNegated;
+			}
+		}
+		pszToken = strtok(0, " ,()");
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101454a0 size=0x1a
 namespace lifted {
 extern int g_102c77c8;
