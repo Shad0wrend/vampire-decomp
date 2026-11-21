@@ -161,6 +161,12 @@ void sub_10027d20(const Vector &origin, const Vector &mins, const Vector &maxs, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028630 size=0x1
+void sub_10028630()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10028920 size=0xe1
 extern char *(*g_101e3188)(char *, const char *, int);
 extern char g_1027aedc[];
