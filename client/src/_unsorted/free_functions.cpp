@@ -6738,6 +6738,27 @@ bool sub_100dac00(const Vector &boxMin1, const Vector &boxMax1, const Vector &bo
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dad40 size=0xed
+#include "Vector.h"
+bool sub_100dac00(const Vector &a, const Vector &b, const Vector &c, const Vector &d);
+char sub_100dd5e0(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, const Vector &p5, const Vector &p6, const Vector &p7, const Vector &p8, int p9, void *pOut);
+
+// TARGET: sub_100dad40
+bool sub_100dad40(const Vector &p1, const Vector &p2, const Vector &p3, const Vector &p4, const Vector &p5, const Vector &p6, const Vector &p7, const Vector &p8, int p9)
+{
+	if (p2 == p6)
+	{
+		Vector delta = p5 - p1;
+		Vector lo, hi;
+		VectorAdd(delta, p7, lo);
+		VectorAdd(delta, p8, hi);
+		return sub_100dac00(p3, p4, lo, hi);
+	}
+	char tmp[20];
+	return sub_100dd5e0(p1, p2, p3, p4, p5, p6, p7, p8, p9, tmp) == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100daf90 size=0x127
 #include "Vector.h"
 
