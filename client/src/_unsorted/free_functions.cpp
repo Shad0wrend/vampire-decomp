@@ -29130,6 +29130,19 @@ int sub_10145d80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101460e0 size=0x1d
+namespace lifted {
+extern char g_105f93c0;
+struct C1015ecd0 { int sub_1015ecd0(); };
+struct C1015f270 { int sub_1015f270(int, int); };
+}
+struct CUnknown101460e0 { int sub_101460e0(int); };
+int CUnknown101460e0::sub_101460e0(int a0)
+{
+    return ((lifted::C1015ecd0 *)(((lifted::C1015f270 *)((int)&lifted::g_105f93c0))->sub_1015f270(*(int *)((char *)this + 0x10), a0)))->sub_1015ecd0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146220 size=0x27
 #include "CUnknown10739194.h"
 
