@@ -18262,6 +18262,12 @@ CUnknown101d61e0 *CUnknown101d61e0::sub_101401e0(int p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140280 size=0x1
+void sub_10140280()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140290 size=0xec
 #include "CUnknown101d62d0.h"
 
