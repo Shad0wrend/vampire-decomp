@@ -32466,6 +32466,16 @@ int CUnknown101646a0::sub_101646a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10165160 size=0x6
+namespace lifted {
+extern char g_105faa78;
+}
+int sub_10165160()
+{
+    return (int)&lifted::g_105faa78;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101666c0 size=0x1
 void sub_101666c0()
 {
