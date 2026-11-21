@@ -2627,6 +2627,13 @@ int g_102e1ba0 = ClientClassInit((DT_ItemKMuseumOfficeKey::ignored *)0);
 RecvTable g_102e29bc;
 // END FUNCTION
 
+// FUNCTION: 0x10026d50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKAshCellKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKAshCellKey::ignored>(DT_ItemKAshCellKey::ignored *);
+int g_102e29b8 = ClientClassInit((DT_ItemKAshCellKey::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10026f20 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e2054;
