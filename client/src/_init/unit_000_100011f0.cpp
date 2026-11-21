@@ -1187,6 +1187,13 @@ int g_102e6dfc = ClientClassInit((DT_OccultDodge::ignored *)0);
 RecvTable g_102e4600;
 // END FUNCTION
 
+// FUNCTION: 0x10014150 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultThaumDamage { struct ignored; }
+template <> int ClientClassInit<DT_OccultThaumDamage::ignored>(DT_OccultThaumDamage::ignored *);
+int g_102e45fc = ClientClassInit((DT_OccultThaumDamage::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10014390 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e5a38;
