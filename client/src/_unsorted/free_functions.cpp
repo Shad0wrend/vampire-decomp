@@ -26173,6 +26173,17 @@ char __stdcall sub_101407f0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101408f0 size=0xd
+struct CUnknown101408f0 { void * sub_101408f0(); };
+void * CUnknown101408f0::sub_101408f0()
+{
+    *(int *)((char *)this + 8) = 0;
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10140900 size=0x5
 namespace lifted {
 int sub_10140a00();
