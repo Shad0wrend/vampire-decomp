@@ -27094,6 +27094,14 @@ float CUnknown1014cf80::sub_1014cf80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014cf90 size=0x7
+struct CUnknown1014cf90 { float sub_1014cf90(); };
+float CUnknown1014cf90::sub_1014cf90()
+{
+    return *(float *)((char *)this + 0x3d8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014cfd0 size=0x41
 struct CGravityVar101e7dd0 { virtual void v0(); virtual bool IsZero(); char pad[0x28 - 4]; float m_flValue; };
 extern CGravityVar101e7dd0 *g_104dfce4;
