@@ -3119,6 +3119,13 @@ int g_102edf7c = ClientClassInit((DT_TEShatterSurface::ignored *)0);
 RecvTable g_102ee320;
 // END FUNCTION
 
+// FUNCTION: 0x10038870 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEGlowSprite { struct ignored; }
+template <> int ClientClassInit<DT_TEGlowSprite::ignored>(DT_TEGlowSprite::ignored *);
+int g_102ee31c = ClientClassInit((DT_TEGlowSprite::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100397b0 size=0xa
 #include "RecvTable.h"
 RecvTable g_102ee60c;
