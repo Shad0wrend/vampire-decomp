@@ -41272,6 +41272,38 @@ void * CUnknown10133290::sub_10133290()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101332a0 size=0x98
+#include "CUnknown101b30d0.h"
+extern "C" __declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+
+struct Five
+{
+	int a, b, c, d, e;
+	void Zero() { a = 0; b = 0; c = 0; d = 0; e = 0; }
+};
+
+CUnknown101b30d0 *CUnknown101b30d0::sub_101332a0()
+{
+	((Five *)&m_nField20)->Zero();
+	((Five *)&m_nField34)->Zero();
+	m_nField00 = 0;
+	Q_strncpy(m_szChannel, "CHAN_AUTO", 32);
+	m_flChannelScale = 1.0f;
+	m_nField08 = 0;
+	Q_strncpy(m_szVolume, "VOL_NORM", 32);
+	m_flVolume = 100.0f;
+	m_nField10 = 0;
+	Q_strncpy(m_szPitch, "PITCH_NORM", 32);
+	m_flPitch = 75.0f;
+	m_nField18 = 0;
+	Q_strncpy(m_szSoundLevel, "SNDLVL_NORM", 32);
+	m_bField1c = 0;
+	m_bField1d = 1;
+	m_bField48 = 0;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10133340 size=0x1d1
 #include "Vector.h"
 #include "utlmemory.h"
