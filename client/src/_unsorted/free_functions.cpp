@@ -24049,6 +24049,16 @@ CUnknown1024b000 *CUnknown1024b000::sub_1013d0a0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d0f0 size=0x8
+namespace lifted {
+extern char g_102c63d0;
+}
+void sub_1013d0f0()
+{
+    lifted::g_102c63d0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d100 size=0x5e
 #include <string.h>
 struct CVNameId
