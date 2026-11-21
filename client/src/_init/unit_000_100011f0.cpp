@@ -2441,3 +2441,8 @@ ConCommand g_105fbca4("vprof_reset_peaks", sub_1018d670, "Reset just the peak ti
 void sub_1018d6f0(void);
 ConCommand g_105fbc7c("vprof_generate_report", sub_1018d6f0, "Reset just the peak time in VProf profiler", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018e370 size=0xa
+#include "ConVar.h"
+ConVar g_105fc880("r_viewcubemap", "0", 0);
+// END FUNCTION
