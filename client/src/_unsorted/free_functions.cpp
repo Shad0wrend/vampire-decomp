@@ -28368,6 +28368,17 @@ int CUnknown10141be0::sub_10141be0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141eb0 size=0x1b
+struct CUnknown10141eb0 { void * sub_10141eb0(int); };
+void * CUnknown10141eb0::sub_10141eb0(int a0)
+{
+    *(int *)((char *)this + 4) = *(int *)((char *)a0 + 4);
+    *(int *)((char *)this + 8) = *(int *)((char *)a0 + 8);
+    *(int *)((char *)this + 0xc) = *(int *)((char *)a0 + 0xc);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10141fe0 size=0x14
 struct CUnknown10141fe0 { void * sub_10141fe0(); };
 void * CUnknown10141fe0::sub_10141fe0()
