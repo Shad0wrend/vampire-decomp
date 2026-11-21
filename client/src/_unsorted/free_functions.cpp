@@ -27460,6 +27460,13 @@ float CUnknown1014d040::sub_1014d040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d110 size=0x8
+int __stdcall sub_1014d110(int a0)
+{
+    return 0xa;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d120 size=0x2e
 struct CWorker101e80c0
 {
