@@ -9780,6 +9780,38 @@ float sub_1010b140(float p1, float p2, float d1, float d2, float t)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010b9d0 size=0xab
+#include "Vector.h"
+// TARGET: sub_1010b9d0
+float sub_1010b9d0(const Vector &mins, const Vector &maxs, const Vector &point)
+{
+    float flDelta;
+    float flDistSqr = 0.0f;
+    if (point.x < mins.x) {
+        flDelta = mins.x - point.x;
+        flDistSqr += flDelta * flDelta;
+    } else if (point.x > maxs.x) {
+        flDelta = point.x - maxs.x;
+        flDistSqr += flDelta * flDelta;
+    }
+    if (point.y < mins.y) {
+        flDelta = mins.y - point.y;
+        flDistSqr += flDelta * flDelta;
+    } else if (point.y > maxs.y) {
+        flDelta = point.y - maxs.y;
+        flDistSqr += flDelta * flDelta;
+    }
+    if (point.z < mins.z) {
+        flDelta = mins.z - point.z;
+        flDistSqr += flDelta * flDelta;
+    } else if (point.z > maxs.z) {
+        flDelta = point.z - maxs.z;
+        flDistSqr += flDelta * flDelta;
+    }
+    return flDistSqr;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010ba80 size=0x56
 #include "Vector.h"
 void sub_1010ba80(const Vector &a, const Vector &v, const Vector &c, Vector &out)
