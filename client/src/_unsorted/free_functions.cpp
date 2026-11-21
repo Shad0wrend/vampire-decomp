@@ -16436,6 +16436,52 @@ void CUnknown101d5bd0::sub_10140a70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140cb0 size=0x9b
+#include "CUnknown101d7380.h"
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+struct DFNode {
+	virtual void n0();
+	virtual void n1();
+	virtual void n2();
+	virtual DFNode *Next();
+};
+struct DFBase {
+	virtual void b0();
+	virtual void Close();
+};
+struct DFFile : virtual DFBase {
+	virtual void f0();
+	virtual void f1();
+	virtual DFNode *Find(const char *name);
+};
+extern int g_104a580c;
+DFFile *sub_101545c0(const char *name, int arg);
+extern void (*g_101e3108)(const char *fmt, ...);
+
+// TARGET: CUnknown101d7380::sub_10140cb0
+bool CUnknown101d7380::sub_10140cb0(const char *name, int *pIndex)
+{
+	DFFile *file = sub_101545c0(name, g_104a580c);
+	if (!file) {
+		g_101e3108("Unable to open data file for: %s\n", name);
+		return false;
+	}
+	DFNode *node = file->Find("LevelingTemplate");
+	while (node) {
+		CUnknown101d7380Entry *item = m_pData[(*pIndex)++];
+		if (!item) {
+			g_101e3108("Unable to parse data file for: %s.  Memory allocation ERROR!\n", name);
+			return false;
+		}
+		node = node->Next();
+	}
+	file->Close();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142000 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
