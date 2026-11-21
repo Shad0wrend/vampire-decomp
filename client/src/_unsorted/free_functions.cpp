@@ -6916,6 +6916,13 @@ void UtlMem::sub_100c4c10(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9320 size=0x5
+char __stdcall sub_100c9320(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100c9d40 size=0x4
 struct CUnknown100c9d40 { int sub_100c9d40(); };
 int CUnknown100c9d40::sub_100c9d40()
