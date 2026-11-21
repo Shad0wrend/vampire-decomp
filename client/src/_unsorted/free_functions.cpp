@@ -895,6 +895,33 @@ unsigned char __fastcall sub_1007cdc0(void *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10086f10 size=0xfd
+#include "bf_write.h"
+void bf_write::sub_10086f10(float fAngle, int numbits)
+{
+	unsigned int shift = 1 << numbits;
+	int t1 = fAngle * shift; unsigned int t0 = (t1) / 360; unsigned int t2 = shift - 1; unsigned int curData = (t0) & (t2);
+	int nBits = m_nDataBits;
+	int bit; bit = m_iCurBit;
+	if (bit + numbits > nBits) {
+		m_iCurBit = nBits;
+		m_bOverflow = true;
+		return;
+	}
+	int iDWord = bit >> 5;
+	int iCur = bit & 31;
+	m_pData[iDWord] &= g_104871b0[iCur][numbits];
+	m_pData[iDWord] |= curData << iCur;
+	int n = 32 - iCur;
+	if (n < numbits) {
+		int t3 = n + bit; int iCur2 = (t3) & 31;
+		*(m_pData + iDWord + 1) &= g_104871b0[iCur2][numbits - n];
+		*(m_pData + iDWord + 1) |= (curData >> n) << iCur2;
+	}
+	m_iCurBit += numbits;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100889f0 size=0x1a2
 #include "Quaternion.h"
 union CBlendAnimValue
