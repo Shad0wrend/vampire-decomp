@@ -2664,6 +2664,7 @@
 0x10156d40 func   ?sub_10156d40@CVTraitEffect_t@@QAEPBDPBD@Z CVTraitEffect_t::sub_10156d40
 0x10156ed0 func   ?sub_10156ed0@CUnknown101f7310@@QAEPAXH@Z CUnknown101f7310::sub_10156ed0
 0x10156f40 func   ?sub_10156f40@CUnknown101f73b0@@QAEXHH@Z CUnknown101f73b0::sub_10156f40
+0x10156f70 func   ?sub_10156f70@CVTraitEffectGroup_t@@QAEXPAUCVStatKV@@@Z CVTraitEffectGroup_t::sub_10156f70
 0x101570b0 func   ?sub_101570b0@CVTraitEffectGroup_t@@QAEXPAUCTraitStatBlock@@@Z CVTraitEffectGroup_t::sub_101570b0
 0x101570f0 func   ?sub_101570f0@CUnk101f75f0@@QAEXPAUCTraitStatBlock@@@Z CUnk101f75f0::sub_101570f0
 0x10157130 func   ?sub_10157130@CVTraitEffectGroup_t@@QAEXPAVCVModInfo_t@@PAX@Z CVTraitEffectGroup_t::sub_10157130
