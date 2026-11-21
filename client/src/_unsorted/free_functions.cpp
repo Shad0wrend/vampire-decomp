@@ -6050,6 +6050,36 @@ bool sub_100da940(const Vector &boxMin, const Vector &boxMax, const Vector &cent
 }
 // END FUNCTION
 
+// FUNCTION: 0x100da9e0 size=0xfb
+#include "Vector.h"
+
+void sub_10108fd0(const Vector &start, float flScale, const Vector &dir, Vector &out);
+
+int sub_100da9e0(const Vector *pStart, const Vector *pDir, const Vector *pPoint, float flRadius1, float flRadius2)
+{
+	flRadius1 = flRadius1 + flRadius2;
+	Vector vecTemp;
+	float t = DotProduct(*pPoint - *pStart, *pDir);
+	if (t <= 0.0f) {
+		t = 0.0f;
+	} else {
+		float flLenSqr = DotProduct(*pDir, *pDir);
+		if (t > flLenSqr)
+			t = 1.0f;
+		else
+			t = t / flLenSqr;
+	}
+	sub_10108fd0(*pStart, t, *pDir, vecTemp);
+	float dx = vecTemp.x - pPoint->x;
+	float dy = vecTemp.y - pPoint->y;
+	float dz = vecTemp.z - pPoint->z;
+	float flDist = dx * dx + dy * dy + dz * dz;
+	if (flDist <= flRadius1 * flRadius1)
+		return 1;
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df190 size=0x24
 struct CUnknown10753434
 {
