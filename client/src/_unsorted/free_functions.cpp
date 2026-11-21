@@ -58667,6 +58667,22 @@ void __cdecl sub_101a1c10(VMatrix *src, VMatrix *dst)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1c40 size=0xf4
+#include "VMatrix.h"
+Vector VMatrix::sub_101a1c40() const
+{
+	Vector tmp, vecs[3];
+	tmp.sub_10049f20(m[0][0], m[1][0], m[2][0]);
+	vecs[0] = tmp;
+	vecs[1].sub_10039080(sub_101a1d40(tmp));
+	vecs[2].sub_10039080(sub_101a1d60(tmp));
+	float b = vecs[1].Length();
+	float a = FastSqrt(vecs[0].y * vecs[0].y + vecs[0].x * vecs[0].x + vecs[0].z * vecs[0].z);
+	float c = vecs[2].Length();
+	return Vector(a, b, c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1d40 size=0x18
 struct CUnk1024d7b0 {
     char pad4[4];
