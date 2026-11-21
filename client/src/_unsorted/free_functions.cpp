@@ -13547,6 +13547,41 @@ void sub_1012eb10(char *pSrc, int split, int skip, char *dst, int max, char *dst
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f090 size=0x99
+struct S101b40a0 {
+    int a;
+    float b;
+    int c, d, e;
+    int f;
+    char g;
+    int h;
+    char name[128];
+};
+extern char g_105e57a0[];
+char __stdcall sub_1012e6d0(const char *p, S101b40a0 *s);
+extern char *(__cdecl *g_101e3188)(char *, const char *, int);
+
+char * __stdcall sub_1012f090(char *p, int unused)
+{
+    S101b40a0 s;
+    s.c = 100;
+    s.d = 100;
+    s.e = 100;
+    s.a = 0;
+    s.b = 1.0f;
+    s.f = 75;
+    s.name[0] = 0;
+    s.g = 0;
+    s.h = 0;
+    if (!sub_1012e6d0(p, &s))
+        return p;
+    if (!s.name[0])
+        return p;
+    g_101e3188(g_105e57a0, s.name, 512);
+    return g_105e57a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 

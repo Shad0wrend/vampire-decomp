@@ -554,6 +554,7 @@
 0x1012e940 func   ?sub_1012e940@CUnknown101b3730@@QAEPAXH@Z CUnknown101b3730::sub_1012e940
 0x1012e970 func   ?sub_1012e970@CSoundEmitterSystemBase@@QAEXPAXPBDH@Z CSoundEmitterSystemBase::sub_1012e970
 0x1012eb10 func   ?sub_1012eb10@@YAXPADHH0H0H@Z sub_1012eb10
+0x1012f090 func   ?sub_1012f090@@YGPADPADH@Z sub_1012f090
 0x10130970 func   ?sub_10130970@CUnknown101b6320@@QAEAAV1@ABV1@@Z CUnknown101b6320::sub_10130970
 0x10130b30 func   ?sub_10130b30@UtlVec8@@QAEXPBUSElem8@@H@Z UtlVec8::sub_10130b30
 0x10130ba0 func   ?sub_10130ba0@CUtlVector16@@QAEXXZ CUtlVector16::sub_10130ba0
