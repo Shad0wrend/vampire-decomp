@@ -28122,6 +28122,19 @@ void sub_10143a10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10143a70 size=0x17
+struct CUnknown10143a70 { void * sub_10143a70(); };
+void * CUnknown10143a70::sub_10143a70()
+{
+    *(int *)this = 1;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x24) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10143a90 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
