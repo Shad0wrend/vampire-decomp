@@ -1729,6 +1729,37 @@ char sub_1008b590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b810 size=0x35
+// TARGET: sub_1008b810
+struct CUnknownFreeNode100c4980
+{
+	char m_pad0000[0x34];
+	CUnknownFreeNode100c4980 *m_pNext;	// 0x34
+};
+
+struct CUnknownFreeList100c4980
+{
+	int m_n00;
+	char m_pad04[0x28 - 4];
+	CUnknownFreeNode100c4980 *m_pHead;	// 0x28
+};
+
+extern CUnknownFreeNode100c4980 *g_10498e74;
+
+void sub_1008b810(CUnknownFreeList100c4980 *pList)
+{
+	CUnknownFreeNode100c4980 *pNode = pList->m_pHead;
+	while (pNode != 0) {
+		CUnknownFreeNode100c4980 *pNext = pNode->m_pNext;
+		pNode->m_pNext = g_10498e74;
+		g_10498e74 = pNode;
+		pNode = pNext;
+	}
+	pList->m_n00 = 0;
+	pList->m_pHead = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008e230 size=0x82
 #include "CUnknown100c7f30.h"
 
