@@ -231,6 +231,16 @@ char sub_100058e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005c20 size=0x6
+namespace lifted {
+extern char g_102df14c;
+}
+int sub_10005c20()
+{
+    return (int)&lifted::g_102df14c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10005de0 size=0x1b
 struct CSubObj1005f190 {
 	virtual int v0();
