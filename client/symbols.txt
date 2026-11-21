@@ -821,6 +821,7 @@
 0x100aef00 func   ?sub_100aef00@CUnknown100aef00@@QAEHXZ CUnknown100aef00::sub_100aef00
 0x100aeff0 func   ?sub_100aeff0@CUnknown100aeff0@@QAEHXZ CUnknown100aeff0::sub_100aeff0
 0x100af130 func   ?sub_100af130@CUnknown100af130@@QAEHXZ CUnknown100af130::sub_100af130
+0x100af140 func   ?sub_100af140@CUnknown100af140@@QAEHH@Z CUnknown100af140::sub_100af140
 0x100b2a40 func   ?sub_100b2a40@@YAHXZ sub_100b2a40
 0x100b3050 func   ?sub_100b3050@@YAHXZ sub_100b3050
 0x100b4d30 func   ?sub_100b4d30@CUtlVector40@@QAEXH@Z CUtlVector40::sub_100b4d30

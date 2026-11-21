@@ -11173,6 +11173,15 @@ int CUnknown100af130::sub_100af130()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100af140 size=0xd
+struct CUnknown100af140 { int sub_100af140(int); };
+int CUnknown100af140::sub_100af140(int a0)
+{
+    *(int *)((char *)this + 0x4bc) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b2a40 size=0x6
 namespace lifted {
 extern char g_104a1c00;
