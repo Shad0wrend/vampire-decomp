@@ -775,6 +775,7 @@
 0x10032350 func   ?sub_10032350@@YAHXZ sub_10032350
 0x100323c0 func   ?ClientClassInit@@YAHPAUignored@DT_TEMetalSparks@@@Z ClientClassInit
 0x10032480 func   ?sub_10032480@@YAHXZ sub_10032480
+0x100324e0 func   ??_GC_TEArmorRicochet@@UAEPAXI@Z ??_GC_TEArmorRicochet@@UAEPAXI@Z
 0x10032550 func   ?sub_10032550@@YAHXZ sub_10032550
 0x100325c0 func   ?ClientClassInit@@YAHPAUignored@DT_TEArmorRicochet@@@Z ClientClassInit
 0x100326c0 func   ??1C_TEBaseBeam@@UAE@XZ C_TEBaseBeam::~C_TEBaseBeam
