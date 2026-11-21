@@ -1516,6 +1516,22 @@ int sub_1007a140(CStudioHdr *pStudioHdr, int iFrom, int iTo, int *pDirection)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a280 size=0x53
+struct SeqHdr { char pad[0x140]; int m140; int m144; };
+// TARGET: sub_1007a280
+void __cdecl sub_1007a280(SeqHdr *p, int *pv, int a, int b)
+{
+    if (p && a <= p->m140) {
+        int *e = (int *)((char *)p + p->m144 + a * 16);
+        int n = e[1];
+        if (b < n) {
+            int d = e[2];
+            *pv = (b - (*pv / d) % n) * d + *pv;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007aca0 size=0x2b
 #include "CUnknown100290c0.h"
 
