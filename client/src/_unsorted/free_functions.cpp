@@ -28482,6 +28482,18 @@ void * CUnknown101da9e0::sub_101466a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101467d0 size=0x16
+struct CUnknown101467d0 { void * sub_101467d0(int); };
+void * CUnknown101467d0::sub_101467d0(int a0)
+{
+    *(int *)this = a0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0x10) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101467f0 size=0x1
 void sub_101467f0()
 {
