@@ -39696,6 +39696,23 @@ const char *CRangeView::sub_1012da10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012dab0 size=0x65
+#include "CUnknown101b2570.h"
+
+__declspec(dllimport) int Q_snprintf(char *pDest, int maxLen, const char *pFormat, ...);
+const char *sub_1012db20(float value);
+extern char g_105e56b0[];
+
+// TARGET: CUnknown101b2570::sub_1012dab0
+const char *CUnknown101b2570::sub_1012dab0()
+{
+	if (m_pitch.b == 0.0f)
+		return sub_1012db20((float)(int)m_pitch.a);
+	Q_snprintf(g_105e56b0, 0x40, "%i, %i", (int)m_pitch.a, (int)(m_pitch.b + m_pitch.a));
+	return g_105e56b0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012dbf0 size=0x7b
 struct ChanEnt { int value; const char *name; };
 extern ChanEnt g_102c4228[7];
