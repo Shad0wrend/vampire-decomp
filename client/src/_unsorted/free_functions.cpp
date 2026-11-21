@@ -28181,6 +28181,13 @@ void CUtlMemory12::sub_10163a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101642d0 size=0x5
+char __stdcall sub_101642d0(int a0)
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101646a0 size=0x4
 struct CUnknown101646a0 { int sub_101646a0(); };
 int CUnknown101646a0::sub_101646a0()
