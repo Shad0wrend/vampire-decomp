@@ -26101,6 +26101,22 @@ bool sub_100f40e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f4190 size=0x4e
+#include <string.h>
+extern char *g_104d104c;
+void __fastcall sub_100f42e0(void *p);
+void sub_100f4270(void (__fastcall *pfn)(void *));
+
+void sub_100f4190(const char *psz)
+{
+	if (g_104d104c)
+		delete g_104d104c;
+	g_104d104c = new char[strlen(psz) + 1];
+	strcpy(g_104d104c, psz);
+	sub_100f4270(sub_100f42e0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f4200 size=0x2a
 void sub_100f42a0(void *pfn);
 void sub_100f4310();
