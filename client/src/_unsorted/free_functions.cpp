@@ -32425,6 +32425,20 @@ void sub_10151620()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10151820 size=0x1e
+struct CUnknown10151820 { void * sub_10151820(); };
+void * CUnknown10151820::sub_10151820()
+{
+    *(int *)this = 1;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = -1;
+    *(char *)((char *)this + 0x14) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10151840 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
