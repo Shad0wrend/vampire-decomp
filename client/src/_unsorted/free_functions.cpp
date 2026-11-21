@@ -1993,6 +1993,22 @@ void UtlVec40::sub_100b4dc0(int elem, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b4e00 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_101e30fc)(void *);
+
+void UtlMem::sub_100b4e00()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_101e30fc(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b9b80 size=0x43
 #include "Vector.h"
 Vector Vector::sub_100b9b80(const Vector &v) const

@@ -73,6 +73,7 @@
 0x100ac080 func   ?sub_100ac080@UtlMem@@QAEXH@Z UtlMem::sub_100ac080
 0x100b4d30 func   ?sub_100b4d30@CUtlVector40@@QAEXH@Z CUtlVector40::sub_100b4d30
 0x100b4dc0 func   ?sub_100b4dc0@UtlVec40@@QAEXHH@Z UtlVec40::sub_100b4dc0
+0x100b4e00 func   ?sub_100b4e00@UtlMem@@QAEXXZ UtlMem::sub_100b4e00
 0x100b9b80 func   ?sub_100b9b80@Vector@@QBE?AV1@ABV1@@Z Vector::sub_100b9b80
 0x100be200 func   ?sub_100be200@UtlMem@@QAEXH@Z UtlMem::sub_100be200
 0x100c1e70 func   ?sub_100c1e70@UtlVec40@@QAEXHH@Z UtlVec40::sub_100c1e70
