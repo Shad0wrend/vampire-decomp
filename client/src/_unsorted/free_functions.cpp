@@ -7422,6 +7422,19 @@ bool CUnknown101a1780View::sub_1012a5e0(CUnknown101a1780Arg *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ab00 size=0x47
+#include "CSave.h"
+struct CSaveDesc { int m_n0, m_n4, m_n8; CSaveDesc *m_pParent; };
+int CSave::sub_1012ab00(int a, int b, CSaveDesc *p)
+{
+    if (p->m_pParent) {
+        if (!sub_1012ab00(a, b, p->m_pParent))
+            return 0;
+    }
+    return vfunc3(p->m_n8, a, b, p->m_n0, p->m_n4);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012aec0 size=0x34
 #include "CRestore.h"
 struct CRestoreSaveRecord30 { int m_nId; char m_pad04[0x2c]; };
