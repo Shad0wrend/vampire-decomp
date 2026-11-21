@@ -16796,6 +16796,16 @@ int CUnknown1010dfc0::sub_1010dfc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010dfd0 size=0x6
+namespace lifted {
+extern int g_104df6fc;
+}
+int sub_1010dfd0()
+{
+    return lifted::g_104df6fc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010dfe0 size=0x84
 #include <string.h>
 #include <stdlib.h>

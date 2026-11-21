@@ -1080,6 +1080,7 @@
 0x1010df70 func   ?sub_1010df70@CUnknown1010df70@@QAEPADXZ CUnknown1010df70::sub_1010df70
 0x1010df80 func   ?sub_1010df80@CAccum64View@@QAEXPB_J@Z CAccum64View::sub_1010df80
 0x1010dfc0 func   ?sub_1010dfc0@CUnknown1010dfc0@@QAEHXZ CUnknown1010dfc0::sub_1010dfc0
+0x1010dfd0 func   ?sub_1010dfd0@@YAHXZ sub_1010dfd0
 0x1010dfe0 func   ?sub_1010dfe0@@YAXXZ sub_1010dfe0
 0x1010e070 func   ?sub_1010e070@@YAHPAPAUCUnknown10247800@block_102479b0@@0@Z sub_1010e070
 0x1010e1d0 func   ?sub_1010e1d0@@YAXXZ sub_1010e1d0
