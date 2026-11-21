@@ -10560,6 +10560,16 @@ int CUnknown100a13f0::sub_100a13f0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a1eb0 size=0x10
+namespace lifted {
+int sub_101d270e(int, int);
+}
+int sub_100a1eb0(int a0)
+{
+    return lifted::sub_101d270e(1, a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1ff0 size=0xd
 struct CUnknown100a1ff0 { char sub_100a1ff0(char); };
 char CUnknown100a1ff0::sub_100a1ff0(char a0)
