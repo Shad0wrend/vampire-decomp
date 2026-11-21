@@ -17046,6 +17046,16 @@ unsigned char CUnknown101b52d0::sub_1012fea0(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101307e0 size=0x5
+namespace lifted {
+int sub_1012d9d0();
+}
+int sub_101307e0()
+{
+    return lifted::sub_1012d9d0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130800 size=0x59
 struct CUnknown101a5290 {
     void *m_pMemory;
