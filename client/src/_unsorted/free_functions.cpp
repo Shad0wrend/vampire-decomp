@@ -19200,6 +19200,122 @@ template <> int ClientClassInit<DT_PlayerState::ignored>(DT_PlayerState::ignored
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3e00 size=0x9fc
+#include "RecvTable.h"
+extern RecvTable g_104a0d34;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable g_104a3398;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+RecvProp InternalRecvPropArray(int, int, char *, void (*)(void *, int, int));
+template <typename T> int ClientClassInit(T *);
+namespace DT_Local { struct ignored; }
+template <> int ClientClassInit<DT_Local::ignored>(DT_Local::ignored *)
+{
+	char *pRecvTableName = "DT_Local";
+	RecvTable &RecvTable = g_104a0d34;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("m_Predicted", 0, 0, &g_104a3398, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_iHideHUD", 52, 4, 0, 0),
+		RecvPropInt("m_iFOV", 56, 4, 0, 0),
+		RecvPropInt("m_iViewmodelFOV", 76, 4, 0, 0),
+		RecvPropInt("m_bDrawCrosshair", 80, 1, 0, 0),
+		RecvPropInt("m_targetEntityIndex", 84, 4, 0, 0),
+		RecvPropInt("m_tgtDisciplineEntIdx", 88, 4, 0, 0),
+		RecvPropInt("m_tgtStealthInfo", 92, 4, 0, 0),
+		RecvPropInt("m_idxInteractiveUseEntity", 96, 4, 0, 0),
+		RecvPropInt("m_targetEntityHighlight", 100, 4, 0, 0),
+		RecvPropInt("m_targetEntityIcon", 104, 4, 0, 0),
+		RecvPropInt("m_targetIFF", 108, 4, 0, 0),
+		RecvPropInt("m_nMeleeOpponentIndex", 112, 4, 0, 0),
+		RecvPropInt("m_nFeedingPartnerEntIndex", 116, 4, 0, 0),
+		RecvPropInt("m_nFrenzyHunger", 120, 4, 0, 0),
+		RecvPropInt("m_iBarterTgtEntIdx", 124, 4, 0, 0),
+		RecvPropInt("m_iControllerNPCEntIdx", 128, 4, 0, 0),
+		RecvPropInt("m_iCameraOverrideIdx", 136, 4, 0, 0),
+		RecvPropInt("m_idxInsightTarget", 140, 4, 0, 0),
+		RecvPropInt("m_nInsightIntensity", 144, 4, 0, 0),
+		RecvPropInt("m_idxNosferatuRadarNPC", 148, 4, 0, 0),
+		RecvPropInt("m_idxDialogNPC", 152, 4, 0, 0),
+		RecvPropInt("m_bitsCharState", 156, 4, 0, 0),
+		RecvPropInt("m_bWolf", 160, 1, 0, 0),
+		RecvPropInt("m_bDucked", 161, 1, 0, 0),
+		RecvPropInt("m_bDucking", 162, 1, 0, 0),
+		RecvPropFloat("m_flDucktime", 164, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nStepside", 168, 4, 0, 0),
+		RecvPropFloat("m_flFallVelocity", 172, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nOldButtons", 176, 4, 0, 0),
+		RecvPropVector("m_vecClientBaseVelocity", 180, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vecPunchangle", 192, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vecPunchangleVel", 204, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_bDrawViewmodel", 216, 1, 0, 0),
+		RecvPropInt("m_nightvision_level", 220, 4, 0, 0),
+		RecvPropInt("m_daylight_level", 224, 4, 0, 0),
+		RecvPropInt("m_bWearingSuit", 228, 1, 0, 0),
+		RecvPropFloat("m_flStepSize", 232, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_bAllowAutoMovement", 236, 1, 0, 0),
+		RecvPropFloat("m_flCameraFOVOverride", 264, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flCameraRollOverride", 268, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropVector("m_vecCameraViewOverride", 240, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vecCameraTargetOverride", 252, 12, 0, RecvProxy_VectorToVector),
+		RecvPropFloat("m_flCameraOverrideTimestamp", 272, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flCameraOverrideFadeStartTime", 276, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flCameraOverrideFadeDuration", 280, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropVector("m_vecCrossfadeFromLandmark", 284, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vecCrossfadeToLandmark", 296, 12, 0, RecvProxy_VectorToVector),
+		RecvPropFloat("m_flCrossfadeYawDifference", 308, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flCrossfadeStartTime", 312, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flCrossfadeDuration", 316, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flResetCameraDampeningTime", 320, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_sndRoomDSP", 324, 4, 0, 0),
+		RecvPropInt("m_sndPlayerDSP", 328, 4, 0, 0),
+		RecvPropInt("m_skybox3d.scale", 332, 4, 0, 0),
+		RecvPropVector("m_skybox3d.origin", 336, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_skybox3d.area", 348, 4, 0, 0),
+		RecvPropInt("m_skybox3d.fog.enable", 352, 1, 0, 0),
+		RecvPropInt("m_skybox3d.fog.blend", 353, 1, 0, 0),
+		RecvPropVector("m_skybox3d.fog.dirPrimary", 356, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_skybox3d.fog.colorPrimary.r", 368, 1, 0, 0),
+		RecvPropInt("m_skybox3d.fog.colorPrimary.g", 369, 1, 0, 0),
+		RecvPropInt("m_skybox3d.fog.colorPrimary.b", 370, 1, 0, 0),
+		RecvPropInt("m_skybox3d.fog.colorSecondary.r", 372, 1, 0, 0),
+		RecvPropInt("m_skybox3d.fog.colorSecondary.g", 373, 1, 0, 0),
+		RecvPropInt("m_skybox3d.fog.colorSecondary.b", 374, 1, 0, 0),
+		RecvPropFloat("m_skybox3d.fog.start", 376, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_skybox3d.fog.end", 380, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_fog.enable", 384, 1, 0, 0),
+		RecvPropInt("m_fog.blend", 385, 1, 0, 0),
+		RecvPropVector("m_fog.dirPrimary", 388, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_fog.colorPrimary.r", 400, 1, 0, 0),
+		RecvPropInt("m_fog.colorPrimary.g", 401, 1, 0, 0),
+		RecvPropInt("m_fog.colorPrimary.b", 402, 1, 0, 0),
+		RecvPropInt("m_fog.colorSecondary.r", 404, 1, 0, 0),
+		RecvPropInt("m_fog.colorSecondary.g", 405, 1, 0, 0),
+		RecvPropInt("m_fog.colorSecondary.b", 406, 1, 0, 0),
+		RecvPropFloat("m_fog.start", 408, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fog.end", 412, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropVector("m_audio.localSound[0]", 416, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_audio.localSound[1]", 428, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_audio.localSound[2]", 440, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_audio.localSound[3]", 452, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_audio.soundscapeIndex", 464, 4, 0, 0),
+		RecvPropInt("m_audio.localBits", 468, 4, 0, 0),
+		RecvPropInt("m_audio.entityIndex", 472, 4, 0, 0),
+		RecvPropInt("m_iHotkeyTypes[0]", 476, 4, 0, 0),
+		InternalRecvPropArray(10, 4, "m_iHotkeyTypes", 0),
+		RecvPropInt("m_iHotkeyData[0]", 516, 4, 0, 0),
+		InternalRecvPropArray(10, 4, "m_iHotkeyData", 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a4a10 size=0x6
 namespace lifted {
 extern char g_1049fdac;
