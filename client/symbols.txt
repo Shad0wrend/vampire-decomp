@@ -918,6 +918,7 @@
 0x10038780 func   ?sub_10038780@@YAHXZ sub_10038780
 0x10038820 func   ?sub_10038820@@YAHXZ sub_10038820
 0x10038890 func   ?ClientClassInit@@YAHPAUignored@DT_TEGlowSprite@@@Z ClientClassInit
+0x10038a00 func   ??_GC_TEGunshotDecal@@UAEPAXI@Z ??_GC_TEGunshotDecal@@UAEPAXI@Z
 0x10038a20 func   ??1C_TEGunshotDecal@@UAE@XZ C_TEGunshotDecal::~C_TEGunshotDecal
 0x10038a20 func   ?sub_10038a20@CUnknown10038a20@@QAEHXZ CUnknown10038a20::sub_10038a20
 0x10039080 func   ?sub_10039080@Vector@@QAEAAV1@ABV1@@Z Vector::sub_10039080
