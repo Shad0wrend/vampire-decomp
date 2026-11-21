@@ -4632,6 +4632,13 @@ int g_104a4f9c = ClientClassInit((DT_VampireProjectile_MingXiaoSpit::ignored *)0
 RecvTable g_104a5258;
 // END FUNCTION
 
+// FUNCTION: 0x100c6990 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseTerminal { struct ignored; }
+template <> int ClientClassInit<DT_BaseTerminal::ignored>(DT_BaseTerminal::ignored *);
+int g_104a5254 = ClientClassInit((DT_BaseTerminal::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100c76d0 size=0xa
 #include "ConVar.h"
 ConVar g_104a5210("flood_terminal", "0", 0);
