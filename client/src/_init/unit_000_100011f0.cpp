@@ -1103,6 +1103,13 @@ int g_102e5e4c = ClientClassInit((DT_OccultLockpicking::ignored *)0);
 RecvTable g_102e3044;
 // END FUNCTION
 
+// FUNCTION: 0x10012fd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_OccultPresence { struct ignored; }
+template <> int ClientClassInit<DT_OccultPresence::ignored>(DT_OccultPresence::ignored *);
+int g_102e3040 = ClientClassInit((DT_OccultPresence::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10013210 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e0fec;
