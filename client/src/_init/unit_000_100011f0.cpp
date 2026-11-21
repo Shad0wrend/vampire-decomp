@@ -464,3 +464,9 @@ ConVar g_1049e1a8("cl_interpolate", "1.0", 0, "Interpolate entities on the clien
 #include "ConVar.h"
 ConVar g_1049dbd8("cl_simpleshadows", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100a2ae0 size=0xa
+#include "ConCommand.h"
+void sub_100a2b30(void);
+ConCommand g_1049e2fc("cl_sizeof", sub_100a2b30, "Determines the size of the specified client class.", 0, 0);
+// END FUNCTION
