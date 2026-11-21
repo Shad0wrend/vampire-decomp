@@ -1634,3 +1634,9 @@ ConCommand g_104d2e9c("-graph", sub_101021e0, 0, 0, 0);
 void sub_10101f40(void);
 ConCommand g_104d37d8("+break", sub_10101f40, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105800 size=0xa
+#include "ConCommand.h"
+void sub_10101f50(void);
+ConCommand g_104d3b4c("-break", sub_10101f50, 0, 0, 0);
+// END FUNCTION
