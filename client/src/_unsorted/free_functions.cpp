@@ -6700,6 +6700,26 @@ void sub_10120660(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120730 size=0x25
+struct CUnknown109ef590
+{
+    int m_a;
+    int m_b;
+    int m_c[0x200];
+};
+
+extern CUnknown109ef590 g_104e0ca0;
+
+// TARGET: sub_10120730
+void sub_10120730()
+{
+    g_104e0ca0.m_a = -1;
+    g_104e0ca0.m_b = 0;
+    for (int i = 0; i < 0x200; i++)
+        g_104e0ca0.m_c[i] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101209c0 size=0x1b
 // TARGET: sub_101209c0
 struct CUnk1042da10 {
