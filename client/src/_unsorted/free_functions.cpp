@@ -34632,6 +34632,18 @@ void CUnknown10161430::sub_10161430()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101615a0 size=0xe
+namespace lifted {
+struct C101606f0 { int sub_101606f0(); };
+}
+struct CUnknown101615a0 { int sub_101615a0(); };
+int CUnknown101615a0::sub_101615a0()
+{
+    *(int *)this = 1;
+    return ((lifted::C101606f0 *)(this + 4))->sub_101606f0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x101615d0 size=0x2b
 #include "CParsedValue.h"
 
