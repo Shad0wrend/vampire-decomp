@@ -21022,6 +21022,26 @@ void CVDmg_t::sub_101588c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10158950 size=0x6e
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+struct CVDmg_t { int f0; int f4; int f8; int fc; int f10; };
+
+void __fastcall sub_10158950(CVDmg_t *self, int, int a, int b, int c)
+{
+    g_101e3124[*g_101e3128].a = "CVDmg_t::Set";
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    (*g_101e3128)++;
+    self->f0 = a;
+    self->f10 = b;
+    self->f4 = c;
+    (*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101594e0 size=0x6d
 #include "CVStatCost_t.h"
 
