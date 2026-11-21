@@ -13026,6 +13026,67 @@ void sub_101a3900(CUnknown10258b00 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3de0 size=0xcc
+struct SKeyValues
+{
+    virtual const char *GetName();
+    virtual void v1(); virtual void v2(); virtual void v3();
+    virtual SKeyValues *GetFirstSubKey();
+    virtual void v5();
+    virtual SKeyValues *FindKey(const char *name);
+    virtual SKeyValues *GetNextKey();
+    virtual void Begin();
+    virtual void End();
+    virtual void v10(); virtual void v11(); virtual void v12();
+    virtual const char *GetString(const char *key, const char *def);
+};
+
+extern const char *g_102d68f8[4];
+extern const char g_102de300[];
+int sub_101e28e0(const char *, const char *);
+
+// TARGET: sub_101a3de0
+bool sub_101a3de0(SKeyValues *kv, char *out, const char *name)
+{
+    if (kv) {
+        kv->Begin();
+        SKeyValues *sub = kv->FindKey(name);
+        if (sub) {
+            int *entry = (int *)out;
+            int i = 0;
+            do {
+                if (i >= 2) {
+                    kv->End();
+                    return false;
+                }
+                SKeyValues *child = sub->GetFirstSubKey();
+                if (child) {
+                    for (int j = 0; j < 4; j++) {
+                        if (sub_101e28e0(child->GetName(), g_102d68f8[j]) == 0) {
+                            entry[0] = j;
+                            break;
+                        }
+                    }
+                    const char *s = child->GetString(0, g_102de300);
+                    char *d = (char *)entry + 4;
+                    char c;
+                    do {
+                        c = *s++;
+                        *d++ = c;
+                    } while (c);
+                }
+                sub = sub->GetNextKey();
+                i++;
+                entry += 0x22;
+            } while (sub);
+        }
+        kv->End();
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a6780 size=0x10b
 #include "utlrbtree.h"
 #include "CUtlRBTreeBig.h"
