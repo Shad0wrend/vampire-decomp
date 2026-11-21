@@ -4445,6 +4445,16 @@ void CUnknown1004bdd0::sub_1004bdd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004c520 size=0xb
+namespace lifted {
+extern int g_103edde0;
+}
+void sub_1004c520()
+{
+    lifted::g_103edde0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004d410 size=0x3
 void __stdcall sub_1004d410(int a0, int a1)
 {
