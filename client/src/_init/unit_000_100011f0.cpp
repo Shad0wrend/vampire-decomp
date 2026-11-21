@@ -1182,3 +1182,8 @@ ConVar g_104d2980("joyadvaxisz", "0", 0);
 #include "ConVar.h"
 ConVar g_104d28a8("joyadvaxisr", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10100630 size=0xa
+#include "ConVar.h"
+ConVar g_104d2938("joyadvaxisu", "0", 0);
+// END FUNCTION
