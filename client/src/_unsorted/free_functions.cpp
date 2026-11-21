@@ -28260,6 +28260,19 @@ int CUnknown10141360::sub_10141360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141380 size=0x1b
+struct CUnknown10141380 { void * sub_10141380(); };
+void * CUnknown10141380::sub_10141380()
+{
+    *(int *)this = 1;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    *(int *)((char *)this + 0x10) = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101413a0 size=0x59
 struct CPartListUnit2 {
     void sub_10141240();
