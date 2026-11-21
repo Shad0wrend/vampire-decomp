@@ -2639,6 +2639,13 @@ int g_102e29b8 = ClientClassInit((DT_ItemKAshCellKey::ignored *)0);
 RecvTable g_102e2054;
 // END FUNCTION
 
+// FUNCTION: 0x10026f60 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_Torch { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_Torch::ignored>(DT_WeaponMelee_Torch::ignored *);
+int g_102e2050 = ClientClassInit((DT_WeaponMelee_Torch::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100270c0 size=0xa
 #include "ConVar.h"
 ConVar g_102e32e0("torchlight_minradius", "190", 0);
