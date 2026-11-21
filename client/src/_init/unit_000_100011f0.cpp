@@ -2501,3 +2501,8 @@ ConVar g_105fca30("scr_ofsy", "0", 0, "Offset the render origin along the y axis
 #include "ConVar.h"
 ConVar g_105fc9e8("scr_ofsz", "0", 0, "Offset the render origin along the z axis");
 // END FUNCTION
+
+// FUNCTION: 0x1018ecb0 size=0xa
+#include "ConVar.h"
+ConVar g_105fc5b0("cl_rollspeed", "200", 0);
+// END FUNCTION
