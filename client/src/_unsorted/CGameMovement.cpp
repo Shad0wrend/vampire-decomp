@@ -26,6 +26,17 @@ int CGameMovement::vfunc14(int type)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e7860 size=0x7
+#include "CGameMovement.h"
+namespace lifted {
+extern float g_101e34ec;
+}
+float CGameMovement::vfunc23()
+{
+    return lifted::g_101e34ec;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100eb1f0 size=0x46
 #include "CGameMovement.h"
 struct CSurfProp { char pad[0x72]; char m_bFlag; };
