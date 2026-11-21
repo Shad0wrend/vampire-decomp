@@ -268,3 +268,8 @@ CUtlVector<int> g_104770f8;
 #include "utlvector.h"
 CUtlVector<int> g_10477154;
 // END FUNCTION
+
+// FUNCTION: 0x10067cb0 size=0xa
+#include "ConVar.h"
+ConVar g_10477110("debug_dump_activity_list", "0", 8448, "Set this to true to get a full list of activities and sequences when you fail to find one.");
+// END FUNCTION
