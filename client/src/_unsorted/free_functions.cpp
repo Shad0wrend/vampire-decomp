@@ -13948,6 +13948,22 @@ void CUtlVector16::sub_10130ba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130c30 size=0x1a
+struct CUnk101b66b0
+{
+	int m_pad0000;
+	char *m_p4;
+
+	char *sub_10130c30(int index);
+};
+
+// TARGET: sub_10130c30
+char *CUnk101b66b0::sub_10130c30(int index)
+{
+	return m_p4 + 0x10 + index * 0xe8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130f00 size=0x8c
 #include "UtlVec8.h"
 extern void *(*g_101e3100)(int);
