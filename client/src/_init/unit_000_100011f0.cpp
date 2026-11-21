@@ -334,3 +334,8 @@ ConVar g_1049c448("vcollide_wireframe", "0", 0);
 #include "ConVar.h"
 ConVar g_1049bf70("r_disable_highlight", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100987b0 size=0xa
+#include "ConVar.h"
+ConVar g_1049d5a8("npc_motiontrailscale", "4.0", 0);
+// END FUNCTION
