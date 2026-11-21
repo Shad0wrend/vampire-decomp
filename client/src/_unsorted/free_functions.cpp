@@ -957,6 +957,22 @@ void UtlMem::sub_10067a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067d00 size=0x46
+#include "ConVar.h"
+extern ConVar *g_10477114;
+extern ConVar g_10477110;
+void sub_10067db0();
+// TARGET: sub_10067d00
+void sub_10067d00()
+{
+	int n = g_10477114->vfunc1() ? 0 : g_10477114->m_nValue;
+	g_10477110.sub_100dfa90(1);
+	sub_10067db0();
+	bool b = n != 0;
+	g_10477110.sub_100dfa90(b);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067f70 size=0x48
 #include "utlrbtree.h"
 #include "utlvector.h"
