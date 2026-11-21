@@ -1011,3 +1011,8 @@ ConVar g_104d1ea0("cdamp_hookesconstantwall", "15.0", 0);
 #include "ConVar.h"
 ConVar g_104d20e8("cdamp_springlength", "0.1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fbcd0 size=0xa
+#include "ConVar.h"
+ConVar g_104d20a0("cdamp_maxdist", "50.0", 0);
+// END FUNCTION
