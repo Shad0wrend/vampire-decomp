@@ -1179,6 +1179,21 @@ int CGameRulesSlotTable::sub_10079050(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100790b0 size=0x1c
+struct CUnknown104276a0 {
+	int m_nCount;	// 0x00
+	int sub_100790b0(int i);
+};
+
+// TARGET: CUnknown104276a0::sub_100790b0
+int CUnknown104276a0::sub_100790b0(int i)
+{
+	if (i >= 1 && i < m_nCount)
+		return *(int *)((char *)this + i * 36 + 8);
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100790f0 size=0x69
 #include "CUnknown10427700.h"
 #include <string.h>
