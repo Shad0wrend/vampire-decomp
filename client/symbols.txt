@@ -385,6 +385,7 @@
 0x10020ad0 func   ?sub_10020ad0@@YAHXZ sub_10020ad0
 0x10020bf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGSewerBook1@@@Z ClientClassInit
 0x10020d50 func   ?sub_10020d50@@YAHXZ sub_10020d50
+0x10020e70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKGalleryNoirKey@@@Z ClientClassInit
 0x10020fd0 func   ?sub_10020fd0@@YAHXZ sub_10020fd0
 0x10021250 func   ?sub_10021250@@YAHXZ sub_10021250
 0x100214d0 func   ?sub_100214d0@@YAHXZ sub_100214d0
