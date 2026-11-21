@@ -15029,6 +15029,12 @@ char *sub_1012d7a0(char *name, int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012d810 size=0x1
+void sub_1012d810()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012d830 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
