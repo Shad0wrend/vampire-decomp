@@ -9844,6 +9844,29 @@ bool CUnknown101dce30::sub_10147be0(CUnknown101dc5a0Keys *pKeys, const char *psz
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147e30 size=0x2b
+#include "CUnknown101dd480.h"
+
+struct CUnknown101dd480Sub
+{
+    void sub_101472e0();
+    void sub_10147990();
+};
+
+// TARGET: CUnknown101dd480::sub_10147e30
+CUnknown101dd480 *CUnknown101dd480::sub_10147e30()
+{
+    ((CUnknown101dd480Sub *)((char *)this + 0x10))->sub_101472e0();
+    ((CUnknown101dd480Sub *)((char *)this + 0x20))->sub_10147990();
+    m_nHead = -1;
+    m_n04 = 0;
+    m_n08 = 0;
+    m_b0c = 0;
+    m_b0d = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101482a0 size=0x8a
 #include "S101df260.h"
 
