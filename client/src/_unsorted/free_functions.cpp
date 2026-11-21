@@ -13375,6 +13375,22 @@ CSoundEmitterSystemBase *CSoundEmitterSystemBase::sub_1012dd70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012de10 size=0xaf
+#include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CSoundEmitterRecord { char m_Data[216]; };
+#include "CUnknown101b2790.h"
+#include "CUtlRBTree232.h"
+
+void CUnknown101b2790::sub_1012de10()
+{
+	const CUtlRBTree232Of<CSoundEmitterRecord> *tree = (const CUtlRBTree232Of<CSoundEmitterRecord> *)((char *)this + 0x50);
+	int i = tree->m_Root;
+	while (tree->Links(i).m_Left != -1)
+		i = tree->Links(i).m_Left;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012e940 size=0x28
 #include "CUnknown101b3730.h"
 // TARGET: CUnknown101b3730::sub_1012e940
