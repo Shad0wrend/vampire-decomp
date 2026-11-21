@@ -1193,6 +1193,12 @@ void __fastcall sub_10057470(Mem *self, int, int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10057500 size=0x3
+void __stdcall sub_10057500(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064c60 size=0x1
 void sub_10064c60()
 {

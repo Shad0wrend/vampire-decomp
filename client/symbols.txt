@@ -89,6 +89,7 @@
 0x100558d0 func   ?sub_100558d0@UtlMem@@QAEXXZ UtlMem::sub_100558d0
 0x10055900 func   ?sub_10055900@CMem8b_t@@QAEXH@Z CMem8b_t::sub_10055900
 0x10057470 func   ?sub_10057470@@YIXPAUMem@@HH@Z sub_10057470
+0x10057500 func   ?sub_10057500@@YGXH@Z sub_10057500
 0x10064c60 func   ?sub_10064c60@@YAXXZ sub_10064c60
 0x10067a50 func   ?sub_10067a50@UtlMem@@QAEXH@Z UtlMem::sub_10067a50
 0x10067d00 func   ?sub_10067d00@@YAXXZ sub_10067d00
