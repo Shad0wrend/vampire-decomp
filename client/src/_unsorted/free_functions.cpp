@@ -8473,6 +8473,40 @@ int sub_10032720()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10032820 size=0x1b5
+#include "RecvTable.h"
+extern RecvTable g_102eba70;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseBeam { struct ignored; }
+template <> int ClientClassInit<DT_BaseBeam::ignored>(DT_BaseBeam::ignored *)
+{
+	char *pRecvTableName = "DT_BaseBeam";
+	RecvTable &RecvTable = g_102eba70;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_nModelIndex", 16, 4, 0, 0),
+		RecvPropInt("m_nHaloIndex", 20, 4, 0, 0),
+		RecvPropInt("m_nStartFrame", 24, 4, 0, 0),
+		RecvPropInt("m_nFrameRate", 28, 4, 0, 0),
+		RecvPropFloat("m_fLife", 32, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fWidth", 36, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fEndWidth", 40, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nFadeLength", 44, 4, 0, 0),
+		RecvPropFloat("m_fAmplitude", 48, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nSpeed", 68, 4, 0, 0),
+		RecvPropInt("r", 52, 4, 0, 0),
+		RecvPropInt("g", 56, 4, 0, 0),
+		RecvPropInt("b", 60, 4, 0, 0),
+		RecvPropInt("a", 64, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10032a40 size=0x12
 namespace lifted {
 extern char g_10225d98;
