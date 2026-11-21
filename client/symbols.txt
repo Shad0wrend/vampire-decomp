@@ -55,6 +55,7 @@
 0x10096d10 func   ?sub_10096d10@UtlMem@@QAEXXZ UtlMem::sub_10096d10
 0x10096d40 func   ?sub_10096d40@UtlMem@@QAEXXZ UtlMem::sub_10096d40
 0x10096d80 func   ?sub_10096d80@CUtlVector76@@QAEXH@Z CUtlVector76::sub_10096d80
+0x10096e70 func   ?sub_10096e70@UtlMem@@QAEXXZ UtlMem::sub_10096e70
 0x10098720 func   ?sub_10098720@@YAMMMM@Z sub_10098720
 0x1009cea0 func   ?sub_1009cea0@UtlVec8@@QAEXHH@Z UtlVec8::sub_1009cea0
 0x100a34d0 func   ?sub_100a34d0@UtlVec8@@QAEXHH@Z UtlVec8::sub_100a34d0
