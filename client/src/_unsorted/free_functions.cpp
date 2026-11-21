@@ -31130,6 +31130,34 @@ int sub_101260d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10126670 size=0xea
+#include "RecvTable.h"
+extern RecvTable g_104e196c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102c2de0;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_Ragdoll_Attached { struct ignored; }
+template <> int ClientClassInit<DT_Ragdoll_Attached::ignored>(DT_Ragdoll_Attached::ignored *)
+{
+	char *pRecvTableName = "DT_Ragdoll_Attached";
+	RecvTable &RecvTable = g_104e196c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102c2de0, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_boneIndexAttached", 2840, 4, 0, 0),
+		RecvPropInt("m_ragdollAttachedObjectIndex", 2836, 4, 0, 0),
+		RecvPropVector("m_attachmentPointBoneSpace", 2800, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_attachmentPointRagdollSpace", 2824, 12, 0, RecvProxy_VectorToVector),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10126a30 size=0x39
 void sub_10120660(int a, int b);
 
