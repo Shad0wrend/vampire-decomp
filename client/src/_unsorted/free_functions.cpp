@@ -6809,6 +6809,20 @@ void CUnknown100fe0c0::sub_100e2c10(int a0, int a1, float a2, int a3, float a4)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2c80 size=0x68
+#include "CUnknown100fe0c0.h"
+
+// TARGET: CUnknown100fe0c0::sub_100e2c80
+void CUnknown100fe0c0::sub_100e2c80(float flTime)
+{
+	while (flTime >= m_38) {
+		m_4c = m_e4.vfunc1(-10.0f, 10.0f);
+		m_50 = m_e4.vfunc1(-0.2f, 0.2f) + 1.0;
+		m_38 += 0.1f;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e2fa0 size=0x1f
 extern float g_104cf544;
 extern float g_104cf548;
