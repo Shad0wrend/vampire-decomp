@@ -4264,6 +4264,13 @@ ConVar g_104a1750("cl_show_client_particles", "0", 0);
 RecvTable g_104a1f1c;
 // END FUNCTION
 
+// FUNCTION: 0x100b5180 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_FireSmoke { struct ignored; }
+template <> int ClientClassInit<DT_FireSmoke::ignored>(DT_FireSmoke::ignored *);
+int g_104a1f18 = ClientClassInit((DT_FireSmoke::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100b6490 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a1f34;
