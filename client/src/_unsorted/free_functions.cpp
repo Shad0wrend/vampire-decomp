@@ -21396,6 +21396,21 @@ bool CUnknown101fbf80::sub_10159b10(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159b40 size=0x2a
+struct CUnit101fbfc0 {
+    int m_v[3];
+    bool sub_10159b40(int a, int b, int c, int d, int e);
+};
+
+bool CUnit101fbfc0::sub_10159b40(int a, int b, int c, int d, int e)
+{
+    if (a == m_v[0] && b == m_v[1] && c == m_v[2]) {
+        return false;
+    }
+    return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159d10 size=0xeb
 #include "CVStatCost_t.h"
 
