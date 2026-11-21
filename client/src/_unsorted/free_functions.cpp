@@ -16685,6 +16685,119 @@ void sub_1008a8e0(StudioHdr *pStudioHdr, const float *angles, const float *origi
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008abc0 size=0x290
+#include "StudioHdr.h"
+#include "matrix3x4_t.h"
+
+struct StudioAxisInterpBone	// mstudioaxisinterpbone_t
+{
+	int control;
+	int axis;
+	Vector pos[6];
+	Quaternion quat[6];
+};
+
+struct BoneAccessorView	// CBoneAccessor
+{
+	void *m_pAnimating;
+	matrix3x4_t *m_pBones;
+	const matrix3x4_t &GetBone(int i) const { return m_pBones[i]; }
+	matrix3x4_t &GetBoneForWrite(int i) { return m_pBones[i]; }
+};
+
+extern float g_101e34f0;
+void sub_101082f0(const Vector &in, const matrix3x4_t &matrix, Vector &out);
+void sub_1010a140(const Quaternion &p, const Quaternion &q, float t, Quaternion &qt);
+void sub_10108fd0(const Vector &start, float scale, const Vector &direction, Vector &dest);
+void sub_1010a540(const Quaternion &q, const Vector &pos, matrix3x4_t &matrix);
+void sub_10108a50(const matrix3x4_t &in1, const matrix3x4_t &in2, matrix3x4_t &out);
+
+void sub_1008abc0(StudioBone *pbones, int ibone, BoneAccessorView &bonetoworld)
+{
+	matrix3x4_t bonematrix;
+	Vector control;
+
+	StudioAxisInterpBone *pProc = (StudioAxisInterpBone *)pbones[ibone].pProcedure();
+	const matrix3x4_t &controlBone = bonetoworld.GetBone(pProc->control);
+	if (pbones[pProc->control].m_iParent != -1)
+	{
+		Vector tmp;
+		tmp.x = controlBone.m_flMatVal[0][pProc->axis];
+		tmp.y = controlBone.m_flMatVal[1][pProc->axis];
+		tmp.z = controlBone.m_flMatVal[2][pProc->axis];
+		sub_101082f0(tmp, bonetoworld.GetBone(pbones[pProc->control].m_iParent), control);
+	}
+	else
+	{
+		control.x = controlBone.m_flMatVal[0][pProc->axis];
+		control.y = controlBone.m_flMatVal[1][pProc->axis];
+		control.z = controlBone.m_flMatVal[2][pProc->axis];
+	}
+
+	Quaternion *q1, *q2, *q3;
+	Vector *p1, *p2, *p3;
+
+	float a1 = control.x;
+	float a2 = control.y;
+	float a3 = control.z;
+	if (control.x >= g_101e34f0)
+	{
+		q1 = &pProc->quat[0];
+		p1 = &pProc->pos[0];
+	}
+	else
+	{
+		a1 = -control.x;
+		q1 = &pProc->quat[1];
+		p1 = &pProc->pos[1];
+	}
+	if (control.y >= g_101e34f0)
+	{
+		q2 = &pProc->quat[2];
+		p2 = &pProc->pos[2];
+	}
+	else
+	{
+		a2 = -control.y;
+		q2 = &pProc->quat[3];
+		p2 = &pProc->pos[3];
+	}
+	if (control.z >= g_101e34f0)
+	{
+		q3 = &pProc->quat[4];
+		p3 = &pProc->pos[4];
+	}
+	else
+	{
+		a3 = -control.z;
+		q3 = &pProc->quat[5];
+		p3 = &pProc->pos[5];
+	}
+
+	Vector p;
+	Quaternion v, tmp;
+	if (a1 + a2 > g_101e34f0)
+	{
+		float t;
+		t = 1.0 / (a1 + a2 + a3);
+		sub_1010a140(*q2, *q1, a1 / (a1 + a2), tmp);
+		a3 = a3 * t;
+		sub_1010a140(tmp, *q3, a3, v);
+		VectorScale(*p1, a1 * t, p);
+		sub_10108fd0(p, a2 * t, *p2, p);
+		sub_10108fd0(p, a3, *p3, p);
+	}
+	else
+	{
+		sub_1010a140(*q3, *q3, 0, v);
+		p = *p3;
+	}
+
+	sub_1010a540(v, p, bonematrix);
+	sub_10108a50(bonetoworld.GetBone(pbones[ibone].m_iParent), bonematrix, bonetoworld.GetBoneForWrite(ibone));
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008ae50 size=0x32f
 #include <math.h>
 
