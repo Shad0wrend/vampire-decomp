@@ -1100,6 +1100,7 @@
 0x1014a0f0 func   ?sub_1014a0f0@CDiscTable_101e1800@@QAEHH@Z CDiscTable_101e1800::sub_1014a0f0
 0x1014a190 func   ?sub_1014a190@@YGHH@Z sub_1014a190
 0x1014a1a0 func   ?sub_1014a1a0@@YGDH@Z sub_1014a1a0
+0x1014a1e0 func   ?sub_1014a1e0@@YGHH@Z sub_1014a1e0
 0x1014a200 func   ?sub_1014a200@CUnknown101e19b0@@QAEPBDPBD@Z CUnknown101e19b0::sub_1014a200
 0x1014a9e0 func   ?sub_1014a9e0@CUnknown101e0f00@@QAEPAXHHH@Z CUnknown101e0f00::sub_1014a9e0
 0x1014cfd0 func   ?sub_1014cfd0@CRules101e7dd0@@QAEMM@Z CRules101e7dd0::sub_1014cfd0

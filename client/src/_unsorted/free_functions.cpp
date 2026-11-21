@@ -22210,6 +22210,13 @@ char __stdcall sub_1014a1a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014a1e0 size=0x5
+int __stdcall sub_1014a1e0(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014a200 size=0x3e
 struct CEntry101e19b0
 {
