@@ -1831,6 +1831,19 @@ void * CUnknown100bc460::sub_100865a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100865c0 size=0x2c
+#include "bf_write.h"
+
+// TARGET: bf_write::sub_100865c0
+bf_write *bf_write::sub_100865c0(const char *pDebugName, void *pData, int nBytes, int nBits)
+{
+	m_pDebugName = pDebugName;
+	m_bAssertOnOverflow = true;
+	sub_10086620(pData, nBytes, 0, nBits);
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10086620 size=0x3b
 #include "bf_write.h"
 
