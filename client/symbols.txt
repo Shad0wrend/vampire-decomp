@@ -778,6 +778,7 @@
 0x100a2600 func   ?sub_100a2600@CUnknown100a2600@@QAEDXZ CUnknown100a2600::sub_100a2600
 0x100a29a0 func   ?sub_100a29a0@CUnknown100a29a0@@QAEDXZ CUnknown100a29a0::sub_100a29a0
 0x100a2a80 func   ?sub_100a2a80@CUnknown100a2a80@@QAEHXZ CUnknown100a2a80::sub_100a2a80
+0x100a2a90 func   ?sub_100a2a90@@YAHH@Z sub_100a2a90
 0x100a2da0 func   ?sub_100a2da0@@YAHXZ sub_100a2da0
 0x100a2e40 func   ?sub_100a2e40@CUnknown100a2e40@@QAEDD@Z CUnknown100a2e40::sub_100a2e40
 0x100a2e80 func   ?sub_100a2e80@CUnknown100a2e80@@QAEDXZ CUnknown100a2e80::sub_100a2e80

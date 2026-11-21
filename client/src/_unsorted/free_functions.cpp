@@ -10639,6 +10639,17 @@ int CUnknown100a2a80::sub_100a2a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a2a90 size=0x11
+namespace lifted {
+extern int g_102b8e9c;
+struct C100d0cf0 { int sub_100d0cf0(int); };
+}
+int sub_100a2a90(int a0)
+{
+    return ((lifted::C100d0cf0 *)lifted::g_102b8e9c)->sub_100d0cf0(a0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a2da0 size=0x8
 namespace lifted {
 int __stdcall sub_100a29b0(int);
