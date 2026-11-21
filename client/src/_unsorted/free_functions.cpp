@@ -14474,6 +14474,14 @@ void CUnknown10248a50::sub_101279a0(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127c70 size=0x3
+struct CUnknown10127c70 { int sub_10127c70(); };
+int CUnknown10127c70::sub_10127c70()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127df0 size=0x23
 extern int g_104e3438;
 int sub_100e3130(int a, void *b, int c);
