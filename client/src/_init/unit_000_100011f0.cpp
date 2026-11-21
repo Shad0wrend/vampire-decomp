@@ -1202,3 +1202,8 @@ ConVar g_104d2b78("joyforwardthreshold", "0.15", 0);
 #include "ConVar.h"
 ConVar g_104d2c98("joysidethreshold", "0.15", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10100770 size=0xa
+#include "ConVar.h"
+ConVar g_104d2d10("joypitchthreshold", "0.15", 0);
+// END FUNCTION
