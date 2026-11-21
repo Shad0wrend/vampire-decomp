@@ -304,3 +304,8 @@ ConVar g_104870e0("r_DrawBeams", "1", 0);
 #include "ConVar.h"
 ConVar g_1049bee0("r_drawmrmmodels", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1008ec80 size=0xa
+#include "ConVar.h"
+ConVar g_1049bf28("cl_SetupAllBones", "0", 0);
+// END FUNCTION
