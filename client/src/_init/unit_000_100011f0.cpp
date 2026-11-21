@@ -2435,3 +2435,9 @@ ConCommand g_105fbc2c("vprof_reset", sub_1018d5f0, "Reset the stats in VProf pro
 void sub_1018d670(void);
 ConCommand g_105fbca4("vprof_reset_peaks", sub_1018d670, "Reset just the peak time in VProf profiler", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018d6a0 size=0xa
+#include "ConCommand.h"
+void sub_1018d6f0(void);
+ConCommand g_105fbc7c("vprof_generate_report", sub_1018d6f0, "Reset just the peak time in VProf profiler", 0, 0);
+// END FUNCTION
