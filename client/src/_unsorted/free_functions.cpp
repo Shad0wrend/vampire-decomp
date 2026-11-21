@@ -12662,6 +12662,36 @@ char QuestJournal::sub_10162fa0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10163600 size=0x95
+#include "CExperienceTable.h"
+
+struct ScopeEntry {
+	const char *fn;
+	const char *name;
+	const char *extra;
+};
+extern ScopeEntry *g_101e3124;
+extern int *g_101e3128;
+extern void (*g_101e3140)(const char *, ...);
+extern CExperienceAward g_105f9a0c;
+
+CExperienceAward *CExperienceTable::sub_10163600(int index)
+{
+	g_101e3124[*g_101e3128].fn = "ExperienceTable::GetAward";
+	g_101e3124[*g_101e3128].name = "";
+	g_101e3124[*g_101e3128].extra = "";
+	(*g_101e3128)++;
+	if (index >= 0 && index < m_Size) {
+		CExperienceAward *base = m_pMemory;
+		(*g_101e3128)--;
+		return &base[index];
+	}
+	g_101e3140("Invalid index for experience table: %d\n", index);
+	(*g_101e3128)--;
+	return &g_105f9a0c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163970 size=0x6a
 extern void *(*g_101e3104)(void *, int);
 extern void *(*g_101e3100)(int);
