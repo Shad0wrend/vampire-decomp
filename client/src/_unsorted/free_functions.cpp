@@ -16522,6 +16522,38 @@ int List::sub_10140e00(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101413a0 size=0x59
+struct CPartListUnit2 {
+    void sub_10141240();
+};
+struct CPartListUnit3 {
+    char m_pad0000[4];
+    int m_n4;	// 0x4
+    int m_nItems;	// 0x8
+    CPartListUnit2 **m_ppItems;	// 0xc
+    void sub_101413a0();
+};
+
+// TARGET: CPartListUnit3::sub_101413a0
+void CPartListUnit3::sub_101413a0()
+{
+    if (m_ppItems) {
+        for (int i = 0; i < m_nItems; i++) {
+            CPartListUnit2 *p = m_ppItems[i];
+            if (p) {
+                p->sub_10141240();
+                delete p;
+            }
+            m_ppItems[i] = 0;
+        }
+        delete m_ppItems;
+        m_ppItems = 0;
+    }
+    m_nItems = 0;
+    m_n4 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142000 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
