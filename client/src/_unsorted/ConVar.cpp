@@ -111,3 +111,23 @@ void ConVar::vfunc5(float fNewValue)
 	}
 }
 // END FUNCTION
+
+// FUNCTION: 0x100dfa90 size=0x36
+#include "ConVar.h"
+
+// TARGET: ConVar::sub_100dfa90
+void ConVar::sub_100dfa90(int nValue)
+{
+	if (!m_pParent->vfunc1())
+	{
+		if (nValue != m_nValue)
+		{
+			vfunc9(nValue);
+		}
+		if (nValue != m_pParent->m_nValue)
+		{
+			m_pParent->vfunc9(nValue);
+		}
+	}
+}
+// END FUNCTION
