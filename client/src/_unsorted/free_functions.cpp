@@ -18485,6 +18485,27 @@ template <> int ClientClassInit<DT_AnimTimeMustBeFirst::ignored>(DT_AnimTimeMust
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d760 size=0x83
+#include "RecvTable.h"
+extern RecvTable g_1049e190;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropPredictableId(char *, int, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_PredictableId { struct ignored; }
+template <> int ClientClassInit<DT_PredictableId::ignored>(DT_PredictableId::ignored *)
+{
+	char *pRecvTableName = "DT_PredictableId";
+	RecvTable &RecvTable = g_1049e190;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropPredictableId("m_PredictableID", 204, 4),
+		RecvPropInt("m_bIsPlayerSimulated", 992, 1, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009db70 size=0x1
 void sub_1009db70()
 {
