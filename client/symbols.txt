@@ -2475,6 +2475,7 @@
 0x10124eb0 func   ??_GCPlayerSpeedProxy@@UAEPAXI@Z ??_GCPlayerSpeedProxy@@UAEPAXI@Z
 0x10124fd0 func   ??_GCPlayerPositionProxy@@UAEPAXI@Z ??_GCPlayerPositionProxy@@UAEPAXI@Z
 0x101250b0 func   ??_GCEntitySpeedProxy@@UAEPAXI@Z ??_GCEntitySpeedProxy@@UAEPAXI@Z
+0x101251b0 func   ??_GCEntityRandomProxy@@UAEPAXI@Z ??_GCEntityRandomProxy@@UAEPAXI@Z
 0x101251d0 func   ?sub_101251d0@CUnknown101251d0@@QAEPAXXZ CUnknown101251d0::sub_101251d0
 0x10125410 func   ?sub_10125410@CUnknown10125410@@QAEPAXXZ CUnknown10125410::sub_10125410
 0x10125790 func   ?sub_10125790@@YAHXZ sub_10125790
