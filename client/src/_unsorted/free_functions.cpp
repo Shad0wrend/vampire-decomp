@@ -48732,6 +48732,34 @@ void HOwner::sub_1014e360()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e4d0 size=0xc0
+#include "CHistoryList.h"
+#include "FileSystemViews.h"
+
+extern "C" int __cdecl sprintf(char *, const char *, ...);
+extern "C" __declspec(dllimport) void Msg(const char *, ...);
+extern IFileSystemView *g_104a580c;
+
+void CHistoryList::sub_1014e4d0()
+{
+	int handle;
+	char szFile[260];
+	if (g_104a580c->FindFirst("vdata\\system\\Histories*.txt", &handle)) {
+		int count = 1;
+		while (g_104a580c->FindNext(handle))
+			count++;
+		g_104a580c->FindClose(handle);
+		if (count > 0) {
+			for (int i = 0; i < count; i++) {
+				sprintf(szFile, "%sHistories%03d.txt", "vdata\\system\\", i);
+				if (!sub_1014e2a0(szFile))
+					Msg("Unable to open History List data file for: %s\n", szFile);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e590 size=0x18
 struct CUnknown101e9f10
 {
