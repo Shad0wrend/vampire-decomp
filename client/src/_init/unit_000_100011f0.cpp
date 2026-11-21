@@ -289,3 +289,8 @@ ConVar g_10477190("debug_dump_anim_seq_list", "0", 8448, "Set this to true to al
 #include "ConVar.h"
 ConVar g_104772f0("vdebug_weapon_anims", "0", 8192, "Set this to true to get extra info.");
 // END FUNCTION
+
+// FUNCTION: 0x1007a9a0 size=0xa
+#include "ConVar.h"
+ConVar g_104772a8("debug_infinite_ammo", "0", 8192, "Set this to 1 to give player infinite ammo.  Set to 2 to never need to reload.");
+// END FUNCTION
