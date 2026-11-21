@@ -1337,6 +1337,11 @@ RecvTable g_102ed6e4;
 RecvTable g_102eda74;
 // END FUNCTION
 
+// FUNCTION: 0x100371b0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102edbdc;
+// END FUNCTION
+
 // FUNCTION: 0x1003a6b0 size=0xa
 #include "ConVar.h"
 ConVar g_102eec58("cl_ejectbrass", "1", 0);
