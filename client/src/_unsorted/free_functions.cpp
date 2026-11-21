@@ -10832,6 +10832,22 @@ int CNamedList9fd0::sub_101536d0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153ba0 size=0x2d
+#include "VKeyValues.h"
+char *sub_101546c0(const char *pszSrc);
+extern char g_105e8ac8;
+void VKeyValues::sub_10153ba0(const char *pszName)
+{
+	m_pszName14 = sub_101546c0(pszName);
+	m_pszValue0c = 0;
+	m_nType10 = 0;
+	m_pChild1c = 0;
+	m_pNext18 = 0;
+	m_pParent20 = 0;
+	g_105e8ac8 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153c20 size=0x23
 struct VB101f2140 { virtual void f0(); virtual void f1(); virtual ~VB101f2140(); };
 struct D101f2140 : virtual VB101f2140 { int m_ref; char pad[0x28 - 8]; D101f2140(); };
