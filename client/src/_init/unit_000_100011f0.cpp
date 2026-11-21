@@ -3675,6 +3675,13 @@ int g_1048640c = ClientClassInit((DT_LocalActiveWeaponData::ignored *)0);
 RecvTable g_10477278;
 // END FUNCTION
 
+// FUNCTION: 0x1007d030 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_LocalWeaponData { struct ignored; }
+template <> int ClientClassInit<DT_LocalWeaponData::ignored>(DT_LocalWeaponData::ignored *);
+int g_10477274 = ClientClassInit((DT_LocalWeaponData::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1007d160 size=0xa
 #include "RecvTable.h"
 RecvTable g_104863f8;
