@@ -3886,6 +3886,7 @@
 0x101c68e0 func   ??1MessageBox@vgui2@@UAE@XZ vgui2::MessageBox::~MessageBox
 0x101c6c50 func   ??_GMenuItem@vgui2@@UAEPAXI@Z ??_GMenuItem@vgui2@@UAEPAXI@Z
 0x101c6c70 func   ??1MenuItem@vgui2@@UAE@XZ vgui2::MenuItem::~MenuItem
+0x101c6ea0 func   ??_GMenuItemCheckImage@@UAEPAXI@Z ??_GMenuItemCheckImage@@UAEPAXI@Z
 0x101c7470 func   ?sub_101c7470@CUnknown101c7470@@QAEHXZ CUnknown101c7470::sub_101c7470
 0x101c74f0 func   ?sub_101c74f0@CUnknown101c74f0@@QAEDXZ CUnknown101c74f0::sub_101c74f0
 0x101c7500 func   ?sub_101c7500@CUnknown101c7500@@QAEDXZ CUnknown101c7500::sub_101c7500
