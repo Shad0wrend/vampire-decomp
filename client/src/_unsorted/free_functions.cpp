@@ -14756,6 +14756,20 @@ bool sub_10137ce0(const char **a, const char **b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10137d90 size=0x2f
+#include "utlrbtree.h"
+#include "utlvector.h"
+#include "CGameStringPool.h"
+#include "utlmemory.h"
+
+// TARGET: CStringPool::sub_10137d90
+void CStringPool::sub_10137d90()
+{
+	sub_10138140();
+	((CUtlMemory<int> *)((char *)this + 4))->Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10138700 size=0x6a
 extern "C" __declspec(dllimport) void *__cdecl Plat_Realloc(void *, int);
 extern "C" __declspec(dllimport) void *__cdecl Plat_Alloc(int);
