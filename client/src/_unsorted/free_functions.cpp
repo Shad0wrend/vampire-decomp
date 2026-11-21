@@ -13930,6 +13930,14 @@ void sub_100e15d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e18e0 size=0xb
+int sub_100e18e0(int a0, int a1)
+{
+    *(int *)((char *)a0) = a1;
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1aa0 size=0x6
 namespace lifted {
 extern char g_104cf524;
