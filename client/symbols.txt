@@ -524,6 +524,7 @@
 0x1007ce10 func   ?sub_1007ce10@@YAHXZ sub_1007ce10
 0x1007d7f0 func   ?sub_1007d7f0@@YAXXZ sub_1007d7f0
 0x1007d930 func   ?sub_1007d930@@YADXZ sub_1007d930
+0x1007dae0 func   ?sub_1007dae0@@YAHXZ sub_1007dae0
 0x1007db70 func   ?sub_1007db70@CUnknown1007db70@@QAEHXZ CUnknown1007db70::sub_1007db70
 0x1007ddd0 func   ?sub_1007ddd0@@YAXPAX@Z sub_1007ddd0
 0x1007f6e0 func   ?sub_1007f6e0@@YADXZ sub_1007f6e0
