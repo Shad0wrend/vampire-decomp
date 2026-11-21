@@ -935,6 +935,7 @@
 0x101667f0 func   ?sub_101667f0@CUnkDelete101d7c90@@QAEPAXE@Z CUnkDelete101d7c90::sub_101667f0
 0x1018e330 func   ?sub_1018e330@@YAPADPADPBDZZ sub_1018e330
 0x10197a20 func   ?sub_10197a20@UtlMem@@QAEXH@Z UtlMem::sub_10197a20
+0x1019c230 func   ?sub_1019c230@CUnk102a9640@@QAEMXZ CUnk102a9640::sub_1019c230
 0x101a0e90 func   ?sub_101a0e90@CUtlVector4@@QAEXH@Z CUtlVector4::sub_101a0e90
 0x101a0f20 func   ?sub_101a0f20@UtlVec8@@QAEXHH@Z UtlVec8::sub_101a0f20
 0x101a2290 func   ?sub_101a2290@VMatrix@@QAEXABVVector@@ABVQAngle@@@Z VMatrix::sub_101a2290

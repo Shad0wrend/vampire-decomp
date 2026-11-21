@@ -23571,6 +23571,30 @@ void UtlMem::sub_10197a20(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1019c230 size=0x1f
+struct CUnk102a9640Obj
+{
+    virtual void vfunc0();
+    virtual char vfunc1();
+    char pad[0x28 - 4];
+    float m_28;
+};
+struct CUnk102a9640
+{
+    char pad[4];
+    CUnk102a9640Obj *m_4;
+    float sub_1019c230();
+};
+float CUnk102a9640::sub_1019c230()
+{
+    if (m_4->vfunc1())
+    {
+        return 0.0f;
+    }
+    return m_4->m_28;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a0e90 size=0x8c
 #include "CUtlVector4.h"
 extern void *(*g_101e3100)(int);
