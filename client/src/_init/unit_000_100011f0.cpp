@@ -863,6 +863,13 @@ int g_102e5d94 = ClientClassInit((DT_WeaponLockpick::ignored *)0);
 RecvTable g_102e5048;
 // END FUNCTION
 
+// FUNCTION: 0x1000fdd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponUnarmed { struct ignored; }
+template <> int ClientClassInit<DT_WeaponUnarmed::ignored>(DT_WeaponUnarmed::ignored *);
+int g_102e5044 = ClientClassInit((DT_WeaponUnarmed::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10010010 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e4618;
