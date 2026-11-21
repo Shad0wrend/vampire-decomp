@@ -3532,6 +3532,7 @@
 0x1016a790 func   ?sub_1016a790@CUnknown1016a790@@QAEHXZ CUnknown1016a790::sub_1016a790
 0x1016acb0 func   ?sub_1016acb0@@YAHXZ sub_1016acb0
 0x1016acd0 func   ?sub_1016acd0@@YAHXZ sub_1016acd0
+0x1016ae60 func   ??_GVBarterIconButton@@UAEPAXI@Z ??_GVBarterIconButton@@UAEPAXI@Z
 0x1016ae80 func   ??1VBarterIconButton@@UAE@XZ VBarterIconButton::~VBarterIconButton
 0x1016ae80 func   ?sub_1016ae80@CUnknown1016ae80@@QAEHXZ CUnknown1016ae80::sub_1016ae80
 0x1016b070 func   ??1VBarterFrameLabel@@UAE@XZ VBarterFrameLabel::~VBarterFrameLabel
