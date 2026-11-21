@@ -16814,6 +16814,18 @@ const char *CUnknown101d82d0_Elem::sub_10145140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101451d0 size=0x25
+// TARGET: sub_101451d0
+void __fastcall sub_101451d0(int *pThis)
+{
+    if (pThis[1] != 0) {
+        operator delete((void *)(pThis[1] - 4));
+        pThis[1] = 0;
+    }
+    pThis[0] = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101454a0 size=0x1a
 namespace lifted {
 extern int g_102c77c8;

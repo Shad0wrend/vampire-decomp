@@ -678,6 +678,7 @@
 0x10144d90 func   ?sub_10144d90@CUnkDelete101d7c90@@QAEPAXE@Z CUnkDelete101d7c90::sub_10144d90
 0x10145090 func   ?sub_10145090@CUnknown101d7ec0@@QAEPAUCUnknown101d7ec0_Entry@@H@Z CUnknown101d7ec0::sub_10145090
 0x10145140 func   ?sub_10145140@CUnknown101d82d0_Elem@@QAEPBDXZ CUnknown101d82d0_Elem::sub_10145140
+0x101451d0 func   ?sub_101451d0@@YIXPAH@Z sub_101451d0
 0x101454a0 func   ?sub_101454a0@@YAHXZ sub_101454a0
 0x101457a0 func   ?sub_101457a0@CUnknown101d8a70@@QAEPAXPAX@Z CUnknown101d8a70::sub_101457a0
 0x10145ca0 func   ?sub_10145ca0@CUnknown101d90c0@@QAE_NPAVCUnknown101d90c0_Section@@@Z CUnknown101d90c0::sub_10145ca0
