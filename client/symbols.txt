@@ -2644,6 +2644,7 @@
 0x10153970 func   ?sub_10153970@@YGHHH@Z sub_10153970
 0x10153980 func   ?sub_10153980@CReactionNames@@QAEPADHH@Z CReactionNames::sub_10153980
 0x101539e0 func   ?sub_101539e0@CUnknown101f1e20@@QAEXXZ CUnknown101f1e20::sub_101539e0
+0x10153ab0 func   ??0VKeyValues@@QAE@PBD@Z VKeyValues::VKeyValues
 0x10153ba0 func   ?sub_10153ba0@VKeyValues@@QAEXPBD@Z VKeyValues::sub_10153ba0
 0x10153c20 func   ?sub_10153c20@E101f2140@@QAEXXZ E101f2140::sub_10153c20
 0x10153dd0 func   ?sub_10153dd0@CUnknown101f2360@@QAEXPAPBDPAX@Z CUnknown101f2360::sub_10153dd0
