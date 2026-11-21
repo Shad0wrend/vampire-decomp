@@ -32858,6 +32858,16 @@ char *sub_1018e330(char *pBuffer, const char *pszFormat, ...)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018f340 size=0x6
+namespace lifted {
+extern char g_105fc464;
+}
+int sub_1018f340()
+{
+    return (int)&lifted::g_105fc464;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10193270 size=0x3
 char sub_10193270()
 {
