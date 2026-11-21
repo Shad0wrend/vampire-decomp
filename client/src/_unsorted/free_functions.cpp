@@ -6220,6 +6220,20 @@ void sub_100dd4f0(const Vector &a1, const Vector &a2, const Vector &a3, int a4, 
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dd570 size=0x61
+struct V2 { float x, y; };
+void sub_100dd570(const V2 *p0, const V2 *p1, const V2 *p2, float s, float t, V2 *out)
+{
+	V2 d1, d2;
+	d1.x = p1->x - p0->x; d1.y = p1->y - p0->y;
+	d2.x = p2->x - p0->x; d2.y = p2->y - p0->y;
+	out->x = d1.x * s + p0->x;
+	out->y = d1.y * s + p0->y;
+	out->x = d2.x * t + out->x;
+	out->y = d2.y * t + out->y;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df190 size=0x24
 struct CUnknown10753434
 {
