@@ -2420,6 +2420,22 @@ void UtlMem::sub_100d33d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d3470 size=0x28
+#include "UtlMem.h"
+extern void (__cdecl *g_101e30fc)(void *);
+
+void UtlMem::sub_100d3470()
+{
+	if (m_growSize != -1) {
+		if (m_pMemory) {
+			g_101e30fc(m_pMemory);
+			m_pMemory = 0;
+		}
+		m_allocationCount = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d3a80 size=0x8d
 #include "CUtlLinkedList8.h"
 
