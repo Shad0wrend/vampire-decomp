@@ -29312,6 +29312,17 @@ void Range::sub_101480a0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148120 size=0x17
+struct CUnknown10148120 { void * sub_10148120(); };
+void * CUnknown10148120::sub_10148120()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 1;
+    *(int *)((char *)this + 8) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148140 size=0x1
 void sub_10148140()
 {
