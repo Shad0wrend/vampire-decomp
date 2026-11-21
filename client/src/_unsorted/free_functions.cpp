@@ -7178,6 +7178,27 @@ string_t sub_100ee890(const char *psz)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee900 size=0x19
+struct CUnk10129770
+{
+	char m_pad0000[0x4c];
+	int m_n4c;	// 0x4c
+
+	char sub_100ee8e0();
+	int sub_100ee900();
+};
+
+// TARGET: sub_100ee900
+int CUnk10129770::sub_100ee900()
+{
+	if (m_n4c) {
+		if (!sub_100ee8e0())
+			return 1;
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efee0 size=0x8d
 #include "CUtlLinkedList8.h"
 
