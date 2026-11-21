@@ -52301,6 +52301,31 @@ S9 *S9::sub_10155b40()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155b60 size=0x95
+#include "CUnknown1073dc28.h"
+
+// TARGET: CUnknown1073dc28::sub_10155b60
+void CUnknown1073dc28::sub_10155b60()
+{
+	for (int i = 0; i < m_nGroups; i++)
+		delete m_ppGroups[i];
+	delete m_ppGroups;
+	if (m_ppRecords)
+	{
+		for (int i = 0; i < m_nRecords; i++)
+		{
+			delete ((CUnknown101f4c80 **)m_ppRecords)[i];
+			((CUnknown101f4c80 **)m_ppRecords)[i] = 0;
+		}
+		delete m_ppRecords;
+		m_ppRecords = 0;
+	}
+	m_field04 = 0;
+	m_nRecords = 0;
+	m_field10 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155ca0 size=0x1e
 int *sub_1015fc40(int *pArg, int value);
 
