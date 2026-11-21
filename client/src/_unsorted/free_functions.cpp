@@ -1512,6 +1512,31 @@ int sub_10079cf0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079e00 size=0x87
+#include "StudioHdr.h"
+
+extern void (*g_101e311c)(const char *fmt, ...);
+void *__cdecl sub_1008d9d0(StudioHdr *pstudiohdr, int iSequence);
+void __cdecl sub_1008c770(StudioHdr *pstudiohdr, int iSequence, float flCycle, float flFraction, float *poseParameter, float *pVec, float *pOut);
+
+void sub_10079e00(StudioHdr *pstudiohdr, int iSequence, float *pPose, float *pVec)
+{
+	float vecOut[3];
+	if (!pstudiohdr) {
+		g_101e311c("Bad pstudiohdr in GetSequenceLinearMotion()!\n");
+		return;
+	}
+	if (!sub_1008d9d0(pstudiohdr, iSequence)) {
+		if (sub_1008d9d0(pstudiohdr, 0)) {
+			g_101e311c("Bad sequence (%i out of %i max) in GetSequenceLinearMotion() for model '%s'!\n", iSequence, pstudiohdr->m_nLocalSeq, (char *)pstudiohdr + 0xc);
+			return;
+		}
+	} else {
+		sub_1008c770(pstudiohdr, iSequence, 0, 1.0f, pPose, pVec, vecOut);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079fe0 size=0x1b
 // TARGET: sub_10079fe0
 int sub_10079fe0(int v)
