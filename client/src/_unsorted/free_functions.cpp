@@ -16762,6 +16762,12 @@ void UtlMem::sub_10135430(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10135580 size=0x1
+void sub_10135580()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10137ce0 size=0x51
 #include <string.h>
 #pragma intrinsic(strcmp)
