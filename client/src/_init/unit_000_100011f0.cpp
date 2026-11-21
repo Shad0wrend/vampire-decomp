@@ -449,3 +449,8 @@ ConVar g_1049d990("camera_prefs", "6", 128);
 #include "ConVar.h"
 ConVar g_1049d910("camera_weaponswitch", "1", 128);
 // END FUNCTION
+
+// FUNCTION: 0x1009cf70 size=0x5
+#include "Vector.h"
+Vector g_1049da94[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.40824834f, 0.70710677f, 0.57735026f), Vector(-0.40824822f, -0.7071068f, 0.57735026f) };
+// END FUNCTION
