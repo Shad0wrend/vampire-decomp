@@ -10876,6 +10876,33 @@ int sub_100401f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10040260 size=0xc4
+#include "RecvTable.h"
+extern RecvTable g_103ec0c4;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_1027c4e8;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TETParticle { struct ignored; }
+template <> int ClientClassInit<DT_TETParticle::ignored>(DT_TETParticle::ignored *)
+{
+	char *pRecvTableName = "DT_TETParticle";
+	RecvTable &RecvTable = g_103ec0c4;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_1027c4e8, DataTableRecvProxy_StaticDataTable),
+		RecvPropVector("m_vecOrigin", 16, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vecAngle", 28, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_nParticleIndex", 40, 1, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10040430 size=0x6
 namespace lifted {
 extern char g_103ec290;
