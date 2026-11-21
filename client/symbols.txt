@@ -426,6 +426,7 @@
 0x1014de80 func   ?sub_1014de80@CUnk101e9570@@QAEPAU1@H@Z CUnk101e9570::sub_1014de80
 0x1014dea0 func   ?sub_1014dea0@CHistoryItem@@QAE_NPAUCKVNode@@@Z CHistoryItem::sub_1014dea0
 0x1014e090 func   ?sub_1014e090@CUnknown101e98c0@@QAEXXZ CUnknown101e98c0::sub_1014e090
+0x1014e1f0 func   ?sub_1014e1f0@HOwner@@QAEDPBD@Z HOwner::sub_1014e1f0
 0x1014e630 func   ?sub_1014e630@CNamedList9fd0@@QAEHPBD@Z CNamedList9fd0::sub_1014e630
 0x1014e680 func   ?sub_1014e680@CNamedList9fd0@@QAEHPBD@Z CNamedList9fd0::sub_1014e680
 0x10150bc0 func   ?sub_10150bc0@CUnknown101ed170@@QAEXXZ CUnknown101ed170::sub_10150bc0

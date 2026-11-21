@@ -10423,6 +10423,45 @@ void CUnknown101e98c0::sub_1014e090()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014e1f0 size=0xac
+#include "utlrbtree.h"
+#include "utlsortvector.h"
+#include "utlvector.h"
+struct HNode { virtual void v0(); virtual void v1(); virtual HNode* Find(const char*); virtual HNode* Next(); };
+struct HStream { virtual void v0(); virtual void Close(); };
+struct HFile { virtual void v0(); virtual void v1(); virtual HNode* Find(const char*); int* vb; };
+struct HItem { void sub_1014dea0(HNode*); };
+struct HOwner { HItem* sub_1014e100(); char sub_1014e1f0(const char*); };
+extern void* g_104a580c;
+HFile* sub_101545c0(const char*, void*);
+extern void (*g_101e3108)(const char*, ...);
+extern char g_102c99a4[];
+extern char g_102c9998[];
+extern char g_102c9950[];
+// TARGET: HOwner::sub_1014e1f0
+char HOwner::sub_1014e1f0(const char* name)
+{
+	HFile* f = sub_101545c0(name, g_104a580c);
+	if (!f) {
+		g_101e3108(g_102c99a4, name);
+		return 0;
+	}
+	HNode* n = f->Find(g_102c9998);
+	while (n) {
+		HItem* it = sub_1014e100();
+		if (!it) {
+			g_101e3108(g_102c9950, name);
+			((HStream*)((char*)f + f->vb[1] + 4))->Close();
+			return 0;
+		}
+		it->sub_1014dea0(n);
+		n = n->Next();
+	}
+	((HStream*)((char*)f + f->vb[1] + 4))->Close();
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014e630 size=0x4d
 extern "C" int __cdecl sub_101e28e0(const char *, const char *);
 struct CNamePtr {
