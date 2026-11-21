@@ -730,6 +730,7 @@
 0x10149d80 func   ?sub_10149d80@CFindListView@@QAEHI@Z CFindListView::sub_10149d80
 0x10149dc0 func   ?sub_10149dc0@CNamedListX@@QAEHPBD@Z CNamedListX::sub_10149dc0
 0x10149e10 func   ?sub_10149e10@List@@QAEHPBD@Z List::sub_10149e10
+0x10149ec0 func   ?sub_10149ec0@CUnknown101d5bd0@@QAEHPBDH@Z CUnknown101d5bd0::sub_10149ec0
 0x10149f70 func   ?sub_10149f70@CStatusFlagList@@QAEIHH@Z CStatusFlagList::sub_10149f70
 0x1014cfd0 func   ?sub_1014cfd0@CRules101e7dd0@@QAEMM@Z CRules101e7dd0::sub_1014cfd0
 0x1014de80 func   ?sub_1014de80@CUnk101e9570@@QAEPAU1@H@Z CUnk101e9570::sub_1014de80

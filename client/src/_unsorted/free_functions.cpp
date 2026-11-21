@@ -18301,6 +18301,34 @@ int List::sub_10149e10(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149ec0 size=0xb0
+#include "CUnknown101d5bd0.h"
+extern "C" char *__cdecl sub_101d23bd(char *);
+extern "C" char *__cdecl sub_101d1300(const char *, const char *);
+extern char g_102de300[];
+static inline void StrCopy(char *dst, const char *src)
+{
+	while ((*dst++ = *src++))
+		;
+}
+int CUnknown101d5bd0::sub_10149ec0(const char *name, int start)
+{
+	char needle[128];
+	char hay[128];
+	StrCopy(needle, name);
+	sub_101d23bd(needle);
+	for (int i = start + 1; i < m_count; i++) {
+		const char *const *pp = &m_pData[i]->m_p;
+		const char *s = *pp ? *pp : g_102de300;
+		StrCopy(hay, s);
+		sub_101d23bd(hay);
+		if (sub_101d1300(hay, needle) == hay)
+			return i;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149f70 size=0x42
 #include "CStatusFlagList.h"
 unsigned int CStatusFlagList::sub_10149f70(int nKey, int nSkip)
