@@ -21407,6 +21407,25 @@ template <> int ClientClassInit<DT_PlayerLocalPredictedData::ignored>(DT_PlayerL
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bce00 size=0x25
+#include "CPlayerLocalPredictedData.h"
+
+extern int vt_1022e8dc[];
+
+// TARGET: CPlayerLocalPredictedData::sub_100bce00
+CPlayerLocalPredictedData *CPlayerLocalPredictedData::sub_100bce00()
+{
+    *(int **)this = vt_1022e8dc;
+    m_i04 = 0;
+    m_i08 = 0;
+    m_i0c = 0;
+    m_i10 = 0;
+    for (int i = 0; i < 8; i++)
+        m_aData[i] = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bce50 size=0x6
 namespace lifted {
 extern char g_104a38dc;

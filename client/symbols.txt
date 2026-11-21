@@ -1278,6 +1278,7 @@
 0x100bca50 func   ?sub_100bca50@@YAHXZ sub_100bca50
 0x100bcb50 func   ?ClientClassInit@@YAHPAUignored@DT_PhysBox@@@Z ClientClassInit
 0x100bcd00 func   ?ClientClassInit@@YAHPAUignored@DT_PlayerLocalPredictedData@@@Z ClientClassInit
+0x100bce00 func   ?sub_100bce00@CPlayerLocalPredictedData@@QAEPAV1@XZ CPlayerLocalPredictedData::sub_100bce00
 0x100bce50 func   ?sub_100bce50@@YAHXZ sub_100bce50
 0x100bcf50 func   ?ClientClassInit@@YAHPAUignored@DT_PlayerResource@@@Z ClientClassInit
 0x100bd530 func   ?sub_100bd530@@YAHXZ sub_100bd530
