@@ -956,6 +956,7 @@
 0x10141360 func   ?sub_10141360@CUnknown10141360@@QAEHXZ CUnknown10141360::sub_10141360
 0x101413a0 func   ?sub_101413a0@CPartListUnit3@@QAEXXZ CPartListUnit3::sub_101413a0
 0x10141b00 func   ?sub_10141b00@CUnknown10141b00@@QAEHXZ CUnknown10141b00::sub_10141b00
+0x10141bc0 func   ?sub_10141bc0@CUnknown10141bc0@@QAEPADXZ CUnknown10141bc0::sub_10141bc0
 0x10142000 func   ?sub_10142000@CPtrList101d6400@@QAEXXZ CPtrList101d6400::sub_10142000
 0x101427f0 func   ?sub_101427f0@CPartListUnit3@@QAEXXZ CPartListUnit3::sub_101427f0
 0x101431a0 func   ?sub_101431a0@CPartListUnit3@@QAEXXZ CPartListUnit3::sub_101431a0

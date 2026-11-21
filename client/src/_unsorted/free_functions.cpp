@@ -19713,6 +19713,14 @@ int CUnknown10141b00::sub_10141b00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10141bc0 size=0x4
+struct CUnknown10141bc0 { char * sub_10141bc0(); };
+char * CUnknown10141bc0::sub_10141bc0()
+{
+    return (char *)this + 0x38;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142000 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
