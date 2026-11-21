@@ -2405,3 +2405,9 @@ ConVar g_105fbb70("v_hidevgui", "0", 256);
 void sub_1018cdd0(void);
 ConCommand g_105fbbb4("vconsole_notify", sub_1018cdd0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018d1a0 size=0xa
+#include "ConCommand.h"
+void sub_1018d1f0(void);
+ConCommand g_105fbc54("vprof", sub_1018d1f0, "Toggle VProf profiler", 0, 0);
+// END FUNCTION
