@@ -10248,6 +10248,59 @@ void CUnknown101d5bd0::sub_101499f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149c30 size=0xa7
+#include "CUnknown101e0f00.h"
+#include "IFileSystemFind.h"
+
+extern IFileSystemFind *g_104a580c;
+extern void (__cdecl *g_101e3108)(const char *fmt, const char *arg);
+
+struct CDataVBaseX
+{
+	virtual void v0();
+	virtual void v1();
+};
+struct CDataNodeX
+{
+	virtual void v0();
+	virtual void v1();
+	virtual CDataNodeX *vfunc2(const char *name);
+	virtual CDataNodeX *vfunc3();
+};
+struct CDataFileX
+{
+	virtual void v0();
+	virtual void v1();
+	virtual CDataNodeX *vfunc2(const char *name);
+	int *m_pVBTable;
+};
+
+CDataFileX *__cdecl sub_101545c0(const char *name, IFileSystemFind *pFileSystem);
+void __stdcall sub_10149600(CDataNodeX *pNode, CUnknown101e0f00 *pOwner);
+
+// TARGET: CUnknown101e0f00::sub_10149c30
+bool CUnknown101e0f00::sub_10149c30(const char *name, int *pIndex)
+{
+	CDataFileX *pFile = sub_101545c0(name, g_104a580c);
+	if (!pFile) {
+		g_101e3108("Unable to open data file for: %s\n", name);
+		return false;
+	}
+	CDataNodeX *pNode = pFile->vfunc2("DisciplineTgt");
+	while (pNode) {
+		void *pEntry = m_ppEntries[(*pIndex)++];
+		if (!pEntry) {
+			g_101e3108("Unable to parse data file for: %s.  Memory allocation ERROR!\n", name);
+			return false;
+		}
+		sub_10149600(pNode, this);
+		pNode = pNode->vfunc3();
+	}
+	((CDataVBaseX *)((char *)pFile + 4 + pFile->m_pVBTable[1]))->v1();
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149f70 size=0x42
 #include "CStatusFlagList.h"
 unsigned int CStatusFlagList::sub_10149f70(int nKey, int nSkip)
