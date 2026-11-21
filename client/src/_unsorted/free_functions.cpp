@@ -15495,6 +15495,24 @@ CUnknown1024b000 *CUnknown1024b000::sub_1013d0a0(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d100 size=0x5e
+#include <string.h>
+struct CVNameId
+{
+	unsigned short m_nId;
+	const char *sub_1013d0d0();
+	bool sub_1013d100(const char *pszName);
+};
+
+// TARGET: CVNameId::sub_1013d100
+bool CVNameId::sub_1013d100(const char *pszName)
+{
+	if (m_nId == 0xffff)
+		return false;
+	return strcmp(sub_1013d0d0(), pszName) == 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d2b0 size=0x71
 #include "CUnknown1024b2d0.h"
 
