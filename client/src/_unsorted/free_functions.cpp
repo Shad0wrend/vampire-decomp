@@ -5384,6 +5384,16 @@ bool sub_10067f10(int idx, int *out1, int *out2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10067f60 size=0xb
+namespace lifted {
+extern int g_10477168;
+}
+void sub_10067f60()
+{
+    lifted::g_10477168 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10067f70 size=0x48
 #include "utlrbtree.h"
 #include "utlvector.h"
