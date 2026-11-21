@@ -4235,6 +4235,13 @@ int g_104a1538 = ClientClassInit((DT_ThaumaturgyParticle::ignored *)0);
 RecvTable g_104a1bec;
 // END FUNCTION
 
+// FUNCTION: 0x100b3170 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_FuncParticle { struct ignored; }
+template <> int ClientClassInit<DT_FuncParticle::ignored>(DT_FuncParticle::ignored *);
+int g_104a1be8 = ClientClassInit((DT_FuncParticle::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100b3680 size=0xa
 #include "ConCommand.h"
 void sub_100b36b0(void);
