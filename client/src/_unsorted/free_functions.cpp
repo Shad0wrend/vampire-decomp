@@ -44683,6 +44683,64 @@ const char *__stdcall sub_101563f0(const char *szName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10156560 size=0x14f
+#include "CUnknown101f5050.h"
+#include "CUnknown101f5150.h"
+
+struct CSoundTableC
+{
+	void sub_10156120();
+};
+
+extern CUnknown101f5050 g_105eb498;
+extern CUnknown101f5050 g_105eb444;
+extern CSoundTableC g_105eb5c8;
+extern CUnknown101f5050 g_105f8a74;
+extern CUnknown101f5050 g_105eb470;
+extern CUnknown101f5050 g_105f8a9c;
+
+// TARGET: sub_10156560
+void sub_10156560()
+{
+	g_105eb498.sub_10155c00();
+	g_105eb444.sub_10155c00();
+	g_105eb5c8.sub_10156120();
+	g_105f8a74.sub_10155c00();
+	g_105eb470.sub_10155c00();
+	g_105f8a9c.sub_10155c00();
+
+	CUnknown101f5150 *pChar = (CUnknown101f5150 *)&g_105eb498;
+	pChar->sub_10155ca0("SndScheme_Char");
+	pChar->sub_10155cc0("Female");
+	pChar->sub_10155cc0("Male");
+	pChar->sub_10155cc0("Monster");
+	pChar->sub_10155cc0("Animal");
+	pChar->sub_10155d50();
+
+	CUnknown101f5150 *pWpn = (CUnknown101f5150 *)&g_105eb444;
+	pWpn->sub_10155ca0("SndScheme_Wpn");
+	pWpn->sub_10155cc0("Melee");
+	pWpn->sub_10155cc0("Ranged");
+	pWpn->sub_10155cc0("Ejection");
+	pWpn->sub_10155d50();
+
+	CUnknown101f5150 *pOpenable = (CUnknown101f5150 *)&g_105f8a74;
+	pOpenable->sub_10155ca0("SndScheme_Openable");
+	pOpenable->sub_10155cc0("Openable");
+	pOpenable->sub_10155d50();
+
+	CUnknown101f5150 *pSwitch = (CUnknown101f5150 *)&g_105eb470;
+	pSwitch->sub_10155ca0("SndScheme_Switch");
+	pSwitch->sub_10155cc0("Switches");
+	pSwitch->sub_10155d50();
+
+	CUnknown101f5150 *pComputer = (CUnknown101f5150 *)&g_105f8a9c;
+	pComputer->sub_10155ca0("SndScheme_Computer");
+	pComputer->sub_10155cc0("Computers");
+	pComputer->sub_10155d50();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10156770 size=0x40
 struct CUnknownStat101f69a0 {
     int m0;
