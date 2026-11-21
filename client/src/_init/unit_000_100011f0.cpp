@@ -389,3 +389,8 @@ ConVar g_1049d800("damage_floaters_spacing_min", "5", 0, "Spacing between floate
 #include "ConVar.h"
 ConVar g_1049d8a8("damage_floaters_spacing_max", "8", 0, "Spacing between floater art when at the maximum distance value.");
 // END FUNCTION
+
+// FUNCTION: 0x1009a640 size=0xa
+#include "ConVar.h"
+ConVar g_1049d680("damage_floaters_color_max_r", "255", 0, "Red Color Component (0-255) of damage floaters when at full health.");
+// END FUNCTION
