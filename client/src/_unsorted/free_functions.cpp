@@ -11013,6 +11013,29 @@ float VKeyValuesInterface::sub_10154150(const char *pszName, float flDefault)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101541a0 size=0x24
+struct CUnk101f28a0Owner {
+	char pad0000[0xc];
+	int m_0c;
+	CUnk101f28a0Owner *sub_10154540(int a);
+};
+
+struct CUnk101f28a0 {
+	int sub_101541a0(int a, int b);
+};
+
+// TARGET: CUnk101f28a0::sub_101541a0
+int CUnk101f28a0::sub_101541a0(int a, int b)
+{
+	CUnk101f28a0Owner *p = (CUnk101f28a0Owner *)((char *)this - 0x30);
+	if (a)
+		p = p->sub_10154540(a);
+	if (p)
+		return p->m_0c;
+	return b;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154670 size=0x1d
 typedef void (*PFN_109f383c)(int, void *);
 extern PFN_109f383c g_101e31d4;
