@@ -422,6 +422,7 @@
 0x1003f850 func   ?sub_1003f850@CUnknown1003f850@@QAEHXZ CUnknown1003f850::sub_1003f850
 0x1003f930 func   ?sub_1003f930@@YAHXZ sub_1003f930
 0x1003f9d0 func   ?sub_1003f9d0@@YAHXZ sub_1003f9d0
+0x1003fbe0 func   ?sub_1003fbe0@CUnknown1003fbe0@@QAEHXZ CUnknown1003fbe0::sub_1003fbe0
 0x1003fd00 func   ?sub_1003fd00@@YAHXZ sub_1003fd00
 0x1003fda0 func   ?sub_1003fda0@@YAHXZ sub_1003fda0
 0x10040150 func   ?sub_10040150@@YAHXZ sub_10040150
