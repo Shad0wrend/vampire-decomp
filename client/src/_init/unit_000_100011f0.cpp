@@ -480,3 +480,8 @@ int g_1049e188 = ((int (*)(int))sub_100a3300)(0);
 #include "ConVar.h"
 ConVar g_104a0b88("zoom_sensitivity_ratio", "1.0", 0, "Additional mouse sensitivity scale factor applied when FOV is zoomed in.");
 // END FUNCTION
+
+// FUNCTION: 0x100a3bb0 size=0xa
+#include "ConVar.h"
+ConVar g_1049e880("hud_fastswitch", "1", 128);
+// END FUNCTION
