@@ -17068,6 +17068,21 @@ void * CUnknown101da880::sub_101465b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101465e0 size=0x67
+#include <string.h>
+extern const char *g_102c7bc0[15];
+const char *sub_1015fb60(int);
+int __stdcall sub_101465e0(int a)
+{
+    const char *s = sub_1015fb60(a);
+    for (int i = 0; i < 15; i++) {
+        if (strcmp(g_102c7bc0[i], s) == 0)
+            return i;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146a90 size=0xf1
 #include "CUnknown101db210.h"
 
