@@ -2423,3 +2423,9 @@ ConCommand g_105fbd00("vprof_on", sub_1018d3b0, "Turn on VProf profiler", 0, 0);
 void sub_1018d4b0(void);
 ConCommand g_105fbcd4("vprof_off", sub_1018d4b0, "Turn off VProf profiler", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018d5a0 size=0xa
+#include "ConCommand.h"
+void sub_1018d5f0(void);
+ConCommand g_105fbc2c("vprof_reset", sub_1018d5f0, "Reset the stats in VProf profiler", 0, 0);
+// END FUNCTION
