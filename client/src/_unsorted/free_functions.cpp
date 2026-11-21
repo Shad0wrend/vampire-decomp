@@ -7929,6 +7929,13 @@ char *__stdcall sub_100df3c0(char *s)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df4c0 size=0x3
+int sub_100df4c0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df6f0 size=0x18
 struct CUnk10245c80 {
     char pad[0x20];
