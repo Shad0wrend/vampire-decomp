@@ -24163,6 +24163,39 @@ void sub_101a2600( const VM& src1, const VM& src2, VM& dst )
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a2870 size=0xba
+struct S1024e570Vec4
+{
+	float x, y, z, w;
+	S1024e570Vec4() {}
+	float operator[](int i) const { return (&x)[i]; }
+	float &operator[](int i) { return (&x)[i]; }
+};
+
+struct S1024e570Matrix
+{
+	float m[4][4];
+	inline float *operator[](int i) { return m[i]; }
+	inline const float *operator[](int i) const { return m[i]; }
+};
+
+void sub_101a2870(const S1024e570Matrix &src1, const S1024e570Vec4 &src2, S1024e570Vec4 &dst)
+{
+	S1024e570Vec4 tmp;
+	const S1024e570Vec4 &v = (&src2 == &dst) ? tmp : src2;
+
+	if (&src2 == &dst)
+	{
+		tmp = src2;
+	}
+
+	dst[0] = src1[0][0] * v[0] + src1[0][1] * v[1] + src1[0][2] * v[2] + src1[0][3] * v[3];
+	dst[1] = src1[1][0] * v[0] + src1[1][1] * v[1] + src1[1][2] * v[2] + src1[1][3] * v[3];
+	dst[2] = src1[2][0] * v[0] + src1[2][1] * v[1] + src1[2][2] * v[2] + src1[2][3] * v[3];
+	dst[3] = src1[3][0] * v[0] + src1[3][1] * v[1] + src1[3][2] * v[2] + src1[3][3] * v[3];
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a2e30 size=0x59
 #include "VMatrix.h"
 #include <math.h>
