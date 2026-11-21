@@ -19271,6 +19271,36 @@ void CUnknown101f0330::sub_10152590()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152660 size=0x3e
+extern char g_105e88d0[];
+extern const char g_102ca308[];
+extern char g_102de300[];
+int sub_101d159d(char *, const char *, ...);
+
+struct CFoo {
+    char *sub_10152660(int i);
+};
+
+char *CFoo::sub_10152660(int i)
+{
+    int *pItem;
+    char *pA;
+    char *pB;
+
+    pItem = ((int **)*(int *)((char *)this + 0x18))[i];
+    pA = (char *)pItem[2];
+    if (pA == 0) {
+        pA = g_102de300;
+    }
+    pB = (char *)pItem[1];
+    if (pB == 0) {
+        pB = g_102de300;
+    }
+    sub_101d159d(g_105e88d0, g_102ca308, pB, pA);
+    return g_105e88d0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152bb0 size=0x1a
 struct CUnknown101f0b50 { void * sub_10152bb0(int); };
 void * CUnknown101f0b50::sub_10152bb0(int a0)
