@@ -1092,3 +1092,9 @@ ConCommand g_104d18d4("-camin", sub_100ff790, 0, 0, 0);
 void sub_100ff7a0(void);
 ConCommand g_104d280c("+camout", sub_100ff7a0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10100090 size=0xa
+#include "ConCommand.h"
+void sub_100ff7b0(void);
+ConCommand g_104d1a44("-camout", sub_100ff7b0, 0, 0, 0);
+// END FUNCTION
