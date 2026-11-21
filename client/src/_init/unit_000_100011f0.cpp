@@ -1237,3 +1237,8 @@ ConVar g_104d2b30("joyyawsensitivity", "-1", 0);
 #include "ConVar.h"
 ConVar g_104d2aa0("joywwhack1", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101009a0 size=0xa
+#include "ConVar.h"
+ConVar g_104d2a58("joywwhack2", "0", 0);
+// END FUNCTION
