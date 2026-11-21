@@ -1847,6 +1847,13 @@ int g_102e5f54 = ClientClassInit((DT_ItemGWarrens4Passkey::ignored *)0);
 RecvTable g_102e3c70;
 // END FUNCTION
 
+// FUNCTION: 0x1001cad0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGWirelessCamera1 { struct ignored; }
+template <> int ClientClassInit<DT_ItemGWirelessCamera1::ignored>(DT_ItemGWirelessCamera1::ignored *);
+int g_102e3c6c = ClientClassInit((DT_ItemGWirelessCamera1::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001cd10 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e3c10;
