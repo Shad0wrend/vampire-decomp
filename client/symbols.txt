@@ -1899,6 +1899,7 @@
 0x101a4770 func   ?sub_101a4770@@YAPAXG@Z sub_101a4770
 0x101a5a50 func   ?sub_101a5a50@@YAHI@Z sub_101a5a50
 0x101a5a80 func   ?sub_101a5a80@@YAXXZ sub_101a5a80
+0x101a5bf0 func   ?sub_101a5bf0@@YAHXZ sub_101a5bf0
 0x101a6780 func   ?sub_101a6780@CUtlRBTreeBig@@QAEGPBX@Z CUtlRBTreeBig::sub_101a6780
 0x101a6a00 func   ?sub_101a6a00@CUtlRBTreeBig@@QAEXPBXAAGAA_N@Z CUtlRBTreeBig::sub_101a6a00
 0x101a6b10 func   ?sub_101a6b10@@YAXPAG0@Z sub_101a6b10
