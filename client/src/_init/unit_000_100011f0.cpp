@@ -2823,3 +2823,8 @@ ConVar g_10619140("cl_reportskybox", "0", 0);
 #include "ConVar.h"
 ConVar g_10619738("cl_overlay_celerity_intensity_scale", "0.3", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1019eed0 size=0xa
+#include "ConVar.h"
+ConVar g_10619608("cl_overlay_celerity_expand_scale", "0.5", 0);
+// END FUNCTION
