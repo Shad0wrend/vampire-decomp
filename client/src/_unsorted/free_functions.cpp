@@ -16345,6 +16345,14 @@ void CUtlVector16::sub_10130ba0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130be0 size=0x3
+struct CUnknown10130be0 { int sub_10130be0(); };
+int CUnknown10130be0::sub_10130be0()
+{
+    return *(int *)this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130c30 size=0x1a
 struct CUnk101b66b0
 {
