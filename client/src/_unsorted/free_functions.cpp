@@ -5403,6 +5403,35 @@ void sub_100cd000(float t, const float *a, const float *b, float *out) {
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cd330 size=0xdb
+#include "Vector.h"
+#include "CUnknown1070b254.h"
+
+extern CUnknown1070b254 *g_104a582c;
+
+// TARGET: sub_100cd330
+float sub_100cd330(const Vector &position, float minz, float maxz)
+{
+    Vector midUp = position;
+    midUp.z = minz;
+    if (!(g_104a582c->vfunc0(&midUp.x, 0) & 0x4030))
+        return minz;
+    midUp.z = maxz;
+    if (g_104a582c->vfunc0(&midUp.x, 0) & 0x4030)
+        return maxz;
+    float diff = maxz - minz;
+    while (diff > 1.0) {
+        midUp.z = minz + diff * 0.5;
+        if (g_104a582c->vfunc0(&midUp.x, 0) & 0x4030)
+            minz = midUp.z;
+        else
+            maxz = midUp.z;
+        diff = maxz - minz;
+    }
+    return midUp.z;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100cdb00 size=0x36
 #include <string.h>
 
