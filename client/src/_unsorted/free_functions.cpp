@@ -7699,6 +7699,114 @@ void sub_10028920(float *out, const char *str)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028d20 size=0x486
+#include "AttachPos_t.h"
+#include "CUnknown10248a50.h"
+#include "CCameraShotTable.h"
+#include "CKeyValuesX.h"
+#include "Tier1.h"
+#include "utlvector.h"
+#include <string.h>
+
+struct CCameraShotV3
+{
+	float x, y, z;
+};
+
+struct CCameraShotParse
+{
+	char m_szName[0x20];
+	unsigned int m_nFlags;
+	char m_start[0x2c];
+	char m_second[0x2c];
+	CCameraShotAttach m_pt[2];
+	int m_nPoints;
+	float m_flMoveSpeed;
+	float m_flMoveAccel;
+	float m_flTurnAccel;
+	CCameraShotV3 m_maxTurnRate;
+	CCameraShotV3 m_angTolerance;
+	float m_flDistTolerance;
+	float m_flFov;
+};
+
+CCameraShotV3 *sub_10028920(CCameraShotV3 *pOut, const char *psz);
+
+// TARGET: CCameraShotTable::sub_10028d20
+void CCameraShotTable::sub_10028d20(CUnknown10248a50 *pShotKey)
+{
+	CKeyValuesX *pShot = (CKeyValuesX *)pShotKey;
+	CCameraShotParse shot;
+	memset(&shot, 0, sizeof(shot));
+	g_101e3188(shot.m_szName, pShot->sub_10127c70(), 0x20);
+	CKeyValuesX *kv = pShot->sub_10128350("Start", 0);
+	if (kv) {
+		sub_10028a10(kv, shot.m_start);
+		shot.m_nFlags |= 1;
+	}
+	kv = pShot->sub_10128350("End", 0);
+	if (kv) {
+		sub_10028a10(kv, shot.m_second);
+		shot.m_nFlags |= 2;
+	}
+	CKeyValuesX *pTarget = pShot->sub_10128350("Target", 0);
+	if (pTarget) {
+		kv = pTarget->sub_10128350("Point1", 0);
+		if (kv) {
+			sub_10028a10(kv, &shot.m_pt[0]);
+			++shot.m_nPoints;
+			shot.m_nFlags |= 1 << (shot.m_nPoints + 1);
+		}
+		kv = pTarget->sub_10128350("Point2", 0);
+		if (kv) {
+			sub_10028a10(kv, &shot.m_pt[1]);
+			++shot.m_nPoints;
+			shot.m_nFlags |= 1 << (shot.m_nPoints + 1);
+		}
+	}
+	CKeyValuesX *pCon = pShot->sub_10128350("CameraConstraints", 0);
+	if (pCon) {
+		CCameraShotV3 tmp;
+		shot.m_flMoveSpeed = pCon->sub_10128540("MoveSpeed", 150.0f);
+		shot.m_flMoveAccel = pCon->sub_10128540("MoveAccel", 50.0f);
+		shot.m_flTurnAccel = pCon->sub_10128540("TurnAccel", 30.0f);
+		shot.m_maxTurnRate = *sub_10028920(&tmp, pCon->sub_10128590("MaxTurnRate", "[90,90,90]"));
+		shot.m_flDistTolerance = pCon->sub_10128540("DistanceTolerance", 10.0f);
+		shot.m_flFov = pCon->sub_10128540("FieldOfView", 75.0f);
+		if (shot.m_flFov > 120.0f)
+			shot.m_flFov = 120.0f;
+		else if (shot.m_flFov < 20.0f)
+			shot.m_flFov = 20.0f;
+		shot.m_angTolerance = *sub_10028920(&tmp, pCon->sub_10128590("AngularTolerance", "[1,1,1]"));
+		if (pCon->sub_101284c0("DialogPOV", 0))
+			shot.m_nFlags |= 0x10;
+		if (pCon->sub_101284c0("AutoPositionFromTarget", 0))
+			shot.m_nFlags |= 0x20;
+		if (pCon->sub_101284c0("DrawViewmodel", 0))
+			shot.m_nFlags |= 0x40;
+		if (pCon->sub_101284c0("SnapOnShotChange", 0))
+			shot.m_nFlags |= 0x80;
+		if (pCon->sub_101284c0("SyncRotateOnMove", 0))
+			shot.m_nFlags |= 0x100;
+		if (pCon->sub_101284c0("ShowHud", 0))
+			shot.m_nFlags |= 0x200;
+	} else {
+		shot.m_flMoveSpeed = 150.0f;
+		shot.m_flMoveAccel = 50.0f;
+		shot.m_flTurnAccel = 30.0f;
+		shot.m_maxTurnRate.x = 90.0f;
+		shot.m_maxTurnRate.y = 90.0f;
+		shot.m_maxTurnRate.z = 90.0f;
+		shot.m_flDistTolerance = 10.0f;
+		shot.m_flFov = 75.0f;
+		shot.m_angTolerance.x = 1.0f;
+		shot.m_angTolerance.y = 1.0f;
+		shot.m_angTolerance.z = 1.0f;
+	}
+	((CUtlVector<CCameraShot_t> *)this)->AddToTail(*(CCameraShot_t *)&shot);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100291b0 size=0x3
 struct CUnknown100291b0 { void * sub_100291b0(); };
 void * CUnknown100291b0::sub_100291b0()
