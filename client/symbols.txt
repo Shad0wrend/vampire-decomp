@@ -218,6 +218,7 @@
 0x100d8830 func   ?sub_100d8830@UtlMem@@QAEXXZ UtlMem::sub_100d8830
 0x100d90b0 func   ?sub_100d90b0@UtlMem@@QAEXXZ UtlMem::sub_100d90b0
 0x100da050 func   ?sub_100da050@@YAPAUSOut1023f3d0@@PBUSVec3@@0PAU1@@Z sub_100da050
+0x100da5c0 func   ?sub_100da5c0@@YAHABVVector@@00PBMPAM@Z sub_100da5c0
 0x100df190 func   ?sub_100df190@@YAXH@Z sub_100df190
 0x100df1c0 func   ?sub_100df1c0@CUnknown102454e0@@QAEPAXXZ CUnknown102454e0::sub_100df1c0
 0x100df250 func   ?vfunc2@ConCommandBase@@QAEXPBD0H@Z ConCommandBase::vfunc2
