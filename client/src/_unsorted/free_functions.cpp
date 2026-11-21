@@ -14190,6 +14190,29 @@ void CMem8b_t::sub_101315b0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131620 size=0x87
+#include "CUnknown101b7370.h"
+
+void CUnknown101b7370::sub_10131620(int index)
+{
+    CUnknown101b7370Node *base = m_pNodes;
+    CUnknown101b7370Payload *p = &base[index].m_payload;
+    CUnknown101b7370Vec *v = &p->m_vecB;
+    sub_10130ef0((int *)v);
+    v->sub_10130fd0();
+    v->m_pElements = v->sub_101316b0();
+    v->sub_10130fd0();
+    v = &p->m_vecA;
+    sub_10130ef0((int *)v);
+    v->sub_10130fd0();
+    v->m_pElements = v->sub_101316b0();
+    v->sub_10130fd0();
+    m_pNodes[index].m_nIndex = index;
+    m_pNodes[index].m_nNext = m_nFirstFree;
+    m_nFirstFree = index;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131e60 size=0xcf
 #include "CUnknown101b9140.h"
 
