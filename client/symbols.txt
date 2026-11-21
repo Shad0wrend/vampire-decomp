@@ -1157,6 +1157,7 @@
 0x100e1450 func   ?sub_100e1450@CUnknown100e1450@@QAEXXZ CUnknown100e1450::sub_100e1450
 0x100e1470 func   ?sub_100e1470@@YAHXZ sub_100e1470
 0x100e14e0 func   ?vfunc0@CLocalDLLChain@@UAEXPAVCLocalDLLChainVisitor@@@Z CLocalDLLChain::vfunc0
+0x100e1560 func   ??0RecvProp@@QAE@XZ RecvProp::RecvProp
 0x100e1590 func   ??0RecvTable@@QAE@XZ RecvTable::RecvTable
 0x100e15b0 func   ??0RecvTable@@QAE@PAVRecvProp@@HPAD@Z RecvTable::RecvTable
 0x100e15d0 func   ??1RecvTable@@QAE@XZ RecvTable::~RecvTable
