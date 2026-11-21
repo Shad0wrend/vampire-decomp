@@ -4449,6 +4449,13 @@ int g_104a33b0 = ClientClassInit((DT_PlayerResource::ignored *)0);
 RecvTable g_104a398c;
 // END FUNCTION
 
+// FUNCTION: 0x100bd800 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_DynamicProp { struct ignored; }
+template <> int ClientClassInit<DT_DynamicProp::ignored>(DT_DynamicProp::ignored *);
+int g_104a3988 = ClientClassInit((DT_DynamicProp::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100bd9f0 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a3a24;
