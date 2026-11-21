@@ -18500,6 +18500,40 @@ int *COwner101e82b0::sub_1014d1d0(int *pResult, int a, int limit)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d200 size=0x2e
+struct CWorker101e82f0
+{
+	int sub_1014b3b0(int a);
+};
+
+struct CInner101e82f0
+{
+	char m_pad0000[0x20];
+	CWorker101e82f0 *m_pWorker;
+};
+
+struct COwner101e82f0
+{
+	char m_pad0000[0x1c];
+	CInner101e82f0 *m_pInner;
+
+	int *sub_1014d200(int *pResult, int a, int limit);
+};
+
+// TARGET: COwner101e82f0::sub_1014d200
+int *COwner101e82f0::sub_1014d200(int *pResult, int a, int limit)
+{
+	int v = m_pInner->m_pWorker->sub_1014b3b0(a);
+	if (v >= limit)
+	{
+		*pResult = 3;
+		return pResult;
+	}
+	*pResult = 1;
+	return pResult;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014de80 size=0x1e
 struct CUnk101d8230 {
 	void sub_101451c0();
