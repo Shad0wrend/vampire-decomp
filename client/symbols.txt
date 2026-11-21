@@ -1210,6 +1210,7 @@
 0x1010e070 func   ?sub_1010e070@@YAHPAPAUCUnknown10247800@block_102479b0@@0@Z sub_1010e070
 0x1010e1d0 func   ?sub_1010e1d0@@YAXXZ sub_1010e1d0
 0x1010e1e0 func   ?sub_1010e1e0@@YAPADPBDHPAHPADH@Z sub_1010e1e0
+0x1010e280 func   ?sub_1010e280@@YAHH@Z sub_1010e280
 0x1010e290 func   ?sub_1010e290@Pool@@QAEPAU1@III@Z Pool::sub_1010e290
 0x1010e340 func   ?sub_1010e340@CUnk1013db80@@QAEXXZ CUnk1013db80::sub_1010e340
 0x1010e3e0 func   ?sub_1010e3e0@Pool@@QAEPAII@Z Pool::sub_1010e3e0

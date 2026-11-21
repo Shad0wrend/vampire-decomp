@@ -18077,6 +18077,17 @@ char *sub_1010e1e0(const char *buf, int end, int *pos, char *out, int outSize)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010e280 size=0xa
+namespace lifted {
+extern int g_104df710;
+}
+int sub_1010e280(int a0)
+{
+    lifted::g_104df710 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010e290 size=0x3c
 #include "Pool.h"
 // TARGET: Pool::sub_1010e290
