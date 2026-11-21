@@ -15743,6 +15743,19 @@ int sub_100e1840(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1850 size=0x1a
+#include "RecvTable.h"
+
+void RecvProxy_VectorToVector(const CRecvProxyData *pData, void *pStruct, void *pOut)
+{
+	const float *v = pData->m_Value.m_Vector;
+
+	((float *)pOut)[0] = v[0];
+	((float *)pOut)[1] = v[1];
+	((float *)pOut)[2] = v[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1870 size=0xe
 int sub_100e1870(int a0, int a1, int a2)
 {
