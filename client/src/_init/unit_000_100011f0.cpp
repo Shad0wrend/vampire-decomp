@@ -294,3 +294,8 @@ ConVar g_104772f0("vdebug_weapon_anims", "0", 8192, "Set this to true to get ext
 #include "ConVar.h"
 ConVar g_104772a8("debug_infinite_ammo", "0", 8192, "Set this to 1 to give player infinite ammo.  Set to 2 to never need to reload.");
 // END FUNCTION
+
+// FUNCTION: 0x10081370 size=0xa
+#include "ConVar.h"
+ConVar g_104870e0("r_DrawBeams", "1", 0);
+// END FUNCTION
