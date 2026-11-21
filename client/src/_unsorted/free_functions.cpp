@@ -10318,6 +10318,21 @@ unsigned int CStatusFlagList::sub_10149f70(int nKey, int nSkip)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014cfd0 size=0x41
+struct CGravityVar101e7dd0 { virtual void v0(); virtual bool IsZero(); char pad[0x28 - 4]; float m_flValue; };
+extern CGravityVar101e7dd0 *g_104dfce4;
+struct CRules101e7dd0 { char pad[0x3e0]; float m_f3e0; float m_f3e4; float sub_1014cfd0(float a); };
+float CRules101e7dd0::sub_1014cfd0(float a)
+{
+    float g;
+    if (g_104dfce4->IsZero())
+        g = 0.0f;
+    else
+        g = g_104dfce4->m_flValue;
+    return (a * a / (g + g) - m_f3e0) / m_f3e4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014de80 size=0x1e
 struct CUnk101d8230 {
 	void sub_101451c0();
