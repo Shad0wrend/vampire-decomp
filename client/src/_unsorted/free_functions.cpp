@@ -49888,6 +49888,129 @@ char *CFoo::sub_10152660(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101526a0 size=0x213
+#include <stdio.h>
+
+__declspec(dllimport) void Msg(const char *pszFormat, ...);
+
+struct CSource101f02b0;
+struct IObj102038e0;
+
+struct CHolder101f02b0
+{
+	int m_n0;
+	int m_n4;
+	int m_n8;
+	bool sub_10152530(CSource101f02b0 *pSource);
+};
+
+struct QuoteKV
+{
+	virtual void s0();
+	virtual void s1();
+	virtual QuoteKV *vfunc2(const char *pszName);
+	virtual QuoteKV *vfunc3();
+	int *m_pVbTable4;
+};
+
+struct QuoteRelease
+{
+	virtual void a0();
+	virtual void vfunc1();
+};
+
+struct QuoteStr
+{
+	int m_n;
+	QuoteStr() {}
+	QuoteStr(const QuoteStr &o) { m_n = o.m_n; }
+};
+
+extern int g_104a580c;
+QuoteKV *sub_101545c0(const char *pszName, int pathID);
+QuoteStr sub_1015f810(QuoteKV *pFile);
+QuoteStr sub_1015f7e0(QuoteKV *pFile, const char *pszKey);
+int * __fastcall sub_10152510(int *p, int a, int b);
+
+struct QuoteLoader
+{
+	int m_nGrow;
+	int m_nNext;
+	int m_nInternalName;
+	int m_n0c;
+	int m_nAlloc;
+	int m_nSize;
+	void **m_pItems;
+
+	bool sub_101526a0();
+};
+
+// TARGET: QuoteLoader::sub_101526a0
+bool QuoteLoader::sub_101526a0()
+{
+	char szPath[128];
+	if (m_pItems) {
+		for (int i = 0; i < m_nSize; i++) {
+			if (m_pItems[i])
+				operator delete(m_pItems[i]);
+			m_pItems[i] = 0;
+		}
+		operator delete(m_pItems);
+		m_pItems = 0;
+	}
+	m_nNext = 0;
+	m_nSize = 0;
+	m_nAlloc = 0;
+	sprintf(szPath, "%s%s.txt", "vdata\\", "quotes");
+	QuoteKV *pFile = sub_101545c0(szPath, g_104a580c);
+	if (pFile) {
+		m_n0c = sub_1015f810(pFile).m_n;
+		m_nInternalName = sub_1015f7e0(pFile, "InternalName").m_n;
+		QuoteKV *pNode = pFile->vfunc2("Quote");
+		while (pNode) {
+			if (m_nAlloc == m_nSize) {
+				m_nAlloc = m_nAlloc + m_nGrow;
+				if (m_pItems) {
+					void **pNew = (void **)operator new(m_nAlloc * 4);
+					int j = 0;
+					for (; j < m_nSize; j++)
+						pNew[j] = m_pItems[j];
+					for (; j < m_nAlloc; j++)
+						pNew[j] = 0;
+					operator delete(m_pItems);
+					m_pItems = pNew;
+					m_nSize++;
+				} else {
+					m_pItems = (void **)operator new(m_nAlloc * 4);
+					for (int k = 0; k < m_nAlloc; k++)
+						m_pItems[k] = 0;
+					m_nSize++;
+				}
+			} else {
+				m_nSize++;
+			}
+			if (!m_pItems[m_nSize - 1]) {
+				void *p = operator new(0xc);
+				void *pObj;
+				if (p) {
+					int idx = m_nNext++;
+					pObj = sub_10152510((int *)p, idx, idx);
+				} else {
+					pObj = 0;
+				}
+				m_pItems[m_nSize - 1] = pObj;
+			}
+			((CHolder101f02b0 *)m_pItems[m_nSize - 1])->sub_10152530((CSource101f02b0 *)pNode);
+			pNode = pNode->vfunc3();
+		}
+		((QuoteRelease *)((char *)pFile + pFile->m_pVbTable4[1] + 4))->vfunc1();
+		return false;
+	}
+	Msg("Unable to load data for: %s\n", szPath);
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101528c0 size=0xac
 extern char g_102de300[];
 int sub_101d159d(char *, const char *, ...);
