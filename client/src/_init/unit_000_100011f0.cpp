@@ -1881,3 +1881,8 @@ ConVar g_104df860("sv_rollspeed", "200", 8448);
 #include "ConVar.h"
 ConVar g_104dfd28("sv_rollangle", "2", 8448);
 // END FUNCTION
+
+// FUNCTION: 0x1010fde0 size=0xa
+#include "ConVar.h"
+ConVar g_104df9c8("sv_friction", "4", 8448, "World friction.");
+// END FUNCTION
