@@ -26498,6 +26498,12 @@ void sub_10189a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1018c710 size=0x1
+void sub_1018c710()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1018e330 size=0x28
 #include <stdarg.h>
 
