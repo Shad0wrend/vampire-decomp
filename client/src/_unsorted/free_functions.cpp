@@ -20643,6 +20643,36 @@ void CVTraitEffectGroup_t::sub_10157130(CVModInfo_t *pInfo, void *pResult)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157170 size=0x3c
+struct CUnk101f7690Elem {
+    void sub_10156b30(int a, int b, int c);
+};
+
+struct CUnk101f7690 {
+    char m_pad0000[0x10];
+    int m_nCount;
+    char *m_pBase;
+
+    void sub_10157170(int a, int b, int c);
+};
+
+void CUnk101f7690::sub_10157170(int a, int b, int c)
+{
+    int i;
+    int off;
+
+    i = 0;
+    if (m_nCount > 0) {
+        off = 0;
+        do {
+            ((CUnk101f7690Elem *)(m_pBase + off))->sub_10156b30(a, b, c);
+            i++;
+            off += 0x44;
+        } while (i < m_nCount);
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157390 size=0xeb
 #include "CUnknown101f7960.h"
 
