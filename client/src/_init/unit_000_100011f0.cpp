@@ -1211,6 +1211,11 @@ void sub_1002c020(void);
 ConCommand g_102eacd0("ai_node_graph_built", sub_1002c020, 0, 0, 0);
 // END FUNCTION
 
+// FUNCTION: 0x1002c260 size=0xa
+#include "RecvTable.h"
+RecvTable g_102ead40;
+// END FUNCTION
+
 // FUNCTION: 0x1002d3e0 size=0xa
 #include "ConCommand.h"
 void sub_1002d2b0(void);
