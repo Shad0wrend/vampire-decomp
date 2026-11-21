@@ -2808,3 +2808,8 @@ ConVar g_10619860("fog_clip", "-1", 0);
 #include "ConVar.h"
 ConVar g_10618bd8("cl_obfuscate_nightvision", "20", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1019db30 size=0xa
+#include "ConVar.h"
+ConVar g_10618e18("cl_obfuscate_daylight", "-100", 0);
+// END FUNCTION
