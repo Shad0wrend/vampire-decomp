@@ -59,6 +59,7 @@ public:
 	int AddToHead();
 	int AddToTail();
 	int InsertBefore(int elem);
+	int sub_1008e4b0(int elem);
 	int InsertAfter(int elem);
 
 	int AddToHead(T const &src);

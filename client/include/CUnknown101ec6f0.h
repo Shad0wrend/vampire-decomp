@@ -15,5 +15,5 @@ public:
 	const char **m_items;	// 0x14
 
 	void sub_101503a0();	// debug dump: "(%d): %s", "\t\tMoney: %d", then "\t\t(%d): %s" per item
-		// loads the record from its key: InternalName, Name, Money and the children of "Items" (all of which must be named like the first, else false); false for no key
+	bool sub_10150260(CVFeatKV *pKV);	// loads the record from its key: InternalName, Name, Money and the children of "Items" (all of which must be named like the first, else false); false for no key
 };
