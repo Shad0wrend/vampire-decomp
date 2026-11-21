@@ -19185,6 +19185,12 @@ void * CUnknown101da9e0::sub_101466a0(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101467f0 size=0x1
+void sub_101467f0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146a90 size=0xf1
 #include "CUnknown101db210.h"
 
