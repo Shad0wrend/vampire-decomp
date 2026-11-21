@@ -232,3 +232,8 @@ ConCommand g_103eea78("vhotkey", sub_100583a0, 0, 0, 0);
 #include "ConVar.h"
 ConVar g_103eeb10("cl_hud_bloodbar", "", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10058760 size=0xa
+#include "ConVar.h"
+ConVar g_103eeaa0("cl_hud_health", "", 0);
+// END FUNCTION
