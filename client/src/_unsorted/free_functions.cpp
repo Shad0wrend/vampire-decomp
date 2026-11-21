@@ -9185,6 +9185,20 @@ float sub_10109c80(float f)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10109ce0 size=0x25
+extern float g_104d51a0[256];
+
+// TARGET: sub_10109ce0
+float sub_10109ce0(int index)
+{
+    if (index < 0)
+        return 0.0f;
+    if (index > 0xff)
+        return 1.0f;
+    return g_104d51a0[index];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109e90 size=0x6b
 #include "Vector.h"
 
