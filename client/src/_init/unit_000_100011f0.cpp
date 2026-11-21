@@ -1988,6 +1988,11 @@ RecvTable g_1049e328;
 RecvTable g_1049e190;
 // END FUNCTION
 
+// FUNCTION: 0x1009d800 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049dabc;
+// END FUNCTION
+
 // FUNCTION: 0x1009e280 size=0xa
 #include "ConVar.h"
 ConVar g_1049dbd8("cl_simpleshadows", "0", 0);
