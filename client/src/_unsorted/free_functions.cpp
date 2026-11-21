@@ -20091,6 +20091,12 @@ void CUnknown101e05e0::sub_10149400()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10149440 size=0x1
+void sub_10149440()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149600 size=0x4c
 #include "CUnknown101e0f00.h"
 #include "S101df260.h"
