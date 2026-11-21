@@ -439,6 +439,7 @@
 0x10024e50 func   ?sub_10024e50@@YAHXZ sub_10024e50
 0x10024f70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKShrekHubThreeKey@@@Z ClientClassInit
 0x100250d0 func   ?sub_100250d0@@YAHXZ sub_100250d0
+0x100251f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKShrekHubFourKey@@@Z ClientClassInit
 0x10025350 func   ?sub_10025350@@YAHXZ sub_10025350
 0x100255d0 func   ?sub_100255d0@@YAHXZ sub_100255d0
 0x10025850 func   ?sub_10025850@@YAHXZ sub_10025850
