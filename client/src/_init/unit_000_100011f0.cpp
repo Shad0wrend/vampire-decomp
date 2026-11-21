@@ -227,3 +227,8 @@ ConCommand g_103eeae4("vdiscipline", sub_10058390, 0, 0, 0);
 void sub_100583a0(void);
 ConCommand g_103eea78("vhotkey", sub_100583a0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10058710 size=0xa
+#include "ConVar.h"
+ConVar g_103eeb10("cl_hud_bloodbar", "", 0);
+// END FUNCTION
