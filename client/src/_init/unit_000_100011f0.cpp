@@ -475,3 +475,8 @@ ConCommand g_1049e2fc("cl_sizeof", sub_100a2b30, "Determines the size of the spe
 int sub_100a3300(void);
 int g_1049e188 = ((int (*)(int))sub_100a3300)(0);
 // END FUNCTION
+
+// FUNCTION: 0x100a3b60 size=0xa
+#include "ConVar.h"
+ConVar g_104a0b88("zoom_sensitivity_ratio", "1.0", 0, "Additional mouse sensitivity scale factor applied when FOV is zoomed in.");
+// END FUNCTION
