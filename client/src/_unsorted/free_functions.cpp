@@ -10091,6 +10091,14 @@ void * CUnknown1009f040::sub_1009f040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f100 size=0xa
+struct CUnknown1009f100 { int sub_1009f100(); };
+int CUnknown1009f100::sub_1009f100()
+{
+    return (*(int *)((char *)this + 0xf8)) & 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009f260 size=0x5
 char __stdcall sub_1009f260(int a0, int a1, int a2)
 {
