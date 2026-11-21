@@ -6346,6 +6346,17 @@ void * CUnknown10086500::sub_10086500()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10086520 size=0xa
+namespace lifted {
+extern int g_10488230;
+}
+int sub_10086520(int a0)
+{
+    lifted::g_10488230 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100865a0 size=0x1e
 struct CUnknown100bc460 { void * sub_100865a0(); };
 void * CUnknown100bc460::sub_100865a0()
