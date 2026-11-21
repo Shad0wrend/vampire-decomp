@@ -11036,6 +11036,24 @@ int CUnk101f28a0::sub_101541a0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101541d0 size=0x58
+#include "VKeyValues.h"
+extern "C" int __cdecl sub_101e28e0(const char *, const char *);
+int VKeyValuesInterface::sub_101541d0(const char *pszName, const char **ppszChoices, int nChoices, int nDefault)
+{
+    VKeyValues *pKey = (VKeyValues *)((char *)this - 0x30);
+    if (pszName)
+        pKey = pKey->sub_10154540(pszName);
+    if (pKey) {
+        for (int i = 0; i < nChoices; i++) {
+            if (!sub_101e28e0(pKey->m_pszValue0c, ppszChoices[i]))
+                return i;
+        }
+    }
+    return nDefault;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154670 size=0x1d
 typedef void (*PFN_109f383c)(int, void *);
 extern PFN_109f383c g_101e31d4;
