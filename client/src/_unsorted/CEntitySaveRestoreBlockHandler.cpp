@@ -1,6 +1,17 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1012b5f0 size=0x6
+#include "CEntitySaveRestoreBlockHandler.h"
+namespace lifted {
+extern char g_102c3a04;
+}
+int CEntitySaveRestoreBlockHandler::vfunc0()
+{
+    return (int)&lifted::g_102c3a04;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012b6e0 size=0x73
 #include "CSave.h"
 #include "CEntitySaveRestoreBlockHandler.h"
