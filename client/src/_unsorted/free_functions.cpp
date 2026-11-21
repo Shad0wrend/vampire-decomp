@@ -9197,6 +9197,27 @@ const char *CUnit101d5e00::sub_1013ffa0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013ffd0 size=0x29
+extern char g_102de300[];
+
+struct CUnit101d5e40 {
+    char *sub_1013ffd0(int index);
+};
+
+char *CUnit101d5e40::sub_1013ffd0(int index)
+{
+    if (index < 0 || index >= *(int *)((char *)this + 4)) {
+        return 0;
+    }
+    char **ppItems = *(char ***)((char *)this + 8);
+    char **ppField = (char **)(ppItems[index] + 8);
+    if (*ppField == 0) {
+        return g_102de300;
+    }
+    return *ppField;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101401e0 size=0x29
 #include "Vector.h"
 struct CUnknown101d61e0_Sub10 {
