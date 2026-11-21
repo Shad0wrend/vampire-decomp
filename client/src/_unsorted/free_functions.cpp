@@ -15306,6 +15306,35 @@ bool CUnknown1006c180::sub_1013cbb0(int nAdd)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013cbe0 size=0x37
+struct CUnknown1006c1c0
+{
+	char m_pad0000[4];
+	int m_i04;
+	char m_pad0008[4];
+	int m_i0c;
+
+	void sub_1013cbe0(int op, int value);
+};
+
+// TARGET: CUnknown1006c1c0::sub_1013cbe0
+void CUnknown1006c1c0::sub_1013cbe0(int op, int value)
+{
+	switch (op)
+	{
+	case 0:
+		m_i0c = value;
+		break;
+	case 1:
+		m_i0c += value;
+		break;
+	case 2:
+		m_i0c = m_i04 - value;
+		break;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013cc20 size=0x1d2
 #include "CUtlBuffer.h"
 #include <stdlib.h>
