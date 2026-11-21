@@ -39613,6 +39613,67 @@ void * CUnknown101472e0::sub_101472e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101474a0 size=0x131
+void *operator new(unsigned int);
+void operator delete(void *);
+
+struct CItem12 {
+    int m_a;
+    int m_b;
+    int m_c;
+    CItem12 *sub_101471e0(int index);
+};
+
+struct CItemVec {
+    int m_nGrow;
+    int m_nAlloc;
+    int m_nCount;
+    CItem12 **m_pData;
+    void sub_101474a0(const CItemVec *pOther);
+};
+
+void CItemVec::sub_101474a0(const CItemVec *pOther)
+{
+    for (int i = 0; i < pOther->m_nCount; i++) {
+        if (m_nAlloc == m_nCount) {
+            m_nAlloc += m_nGrow;
+            if (m_pData) {
+                CItem12 **pNew = (CItem12 **)operator new(m_nAlloc * 4);
+                int j = 0;
+                for (; j < m_nCount; j++)
+                    pNew[j] = m_pData[j];
+                for (; j < m_nAlloc; j++)
+                    pNew[j] = 0;
+                operator delete(m_pData);
+                m_pData = pNew;
+                m_nCount++;
+            } else {
+                m_pData = (CItem12 **)operator new(m_nAlloc * 4);
+                for (int j = 0; j < m_nAlloc; j++)
+                    m_pData[j] = 0;
+                m_nCount++;
+            }
+        } else {
+            m_nCount++;
+        }
+        if (m_pData[m_nCount - 1] == 0) {
+            CItem12 *p = (CItem12 *)operator new(12);
+            CItem12 *q;
+            if (p)
+                q = p->sub_101471e0(m_nCount - 1);
+            else
+                q = 0;
+            m_pData[m_nCount - 1] = q;
+        }
+        CItem12 *pSrc = pOther->m_pData[i];
+        CItem12 *pDst = m_pData[m_nCount - 1];
+        pDst->m_a = pSrc->m_a;
+        pDst->m_b = pSrc->m_b;
+        pDst->m_c = pSrc->m_c;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x101475e0 size=0x14f
 #include "CUnknown101dc5a0.h"
 
