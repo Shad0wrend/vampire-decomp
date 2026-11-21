@@ -2228,3 +2228,9 @@ ConCommand g_105fb06c("hideteam", sub_10173750, 0, 0, 0);
 void sub_101746f0(void);
 ConCommand g_105fb0f8("chareditor", sub_101746f0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10174de0 size=0xa
+#include "ConCommand.h"
+void sub_10174dc0(void);
+ConCommand g_105fb180("showcharwizard", sub_10174dc0, 0, 0, 0);
+// END FUNCTION
