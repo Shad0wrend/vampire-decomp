@@ -10037,6 +10037,7 @@
 0x102bd354 data   ??_R0?AVCCamTraceFilter@@@8 ??_R0?AVCCamTraceFilter@@@8
 0x102be318 data   ??_R0?AVCLampBeamProxy@@@8 ??_R0?AVCLampBeamProxy@@@8
 0x102be4a0 data   ??_R0?AVCLampHaloProxy@@@8 ??_R0?AVCLampHaloProxy@@@8
+0x102be4dc data   ?pfSqrt@@3P6AMM@ZA pfSqrt
 0x102be4e8 data   ?pfVectorNormalize@@3P6IMAAVVector@@@ZA pfVectorNormalize
 0x102be660 data   ??_R0?AVCAddProxy@@@8 ??_R0?AVCAddProxy@@@8
 0x102be694 data   ??_R0?AVCSubtractProxy@@@8 ??_R0?AVCSubtractProxy@@@8
