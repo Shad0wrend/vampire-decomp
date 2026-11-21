@@ -20169,6 +20169,25 @@ void CUnknown101f3d80::sub_10155070(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101550d0 size=0x93
+#include "CUnknown101f3d80.h"
+void CUnknown101f3d80::sub_101550d0(int a, int b)
+{
+    CUnknown101f35c0 **pNew = (CUnknown101f35c0 **)operator new(m_nCount * 4 + 4);
+    if (m_nCount > 0) {
+        for (int i = 0; i < m_nCount; i++)
+            pNew[i] = m_pItems[i];
+        operator delete(m_pItems);
+    }
+    m_pItems = pNew;
+    CUnknown101f35c0 *p = (CUnknown101f35c0 *)operator new(0x24);
+    p = p ? p->sub_10154ae0() : 0;
+    m_pItems[m_nCount] = p;
+    m_pItems[m_nCount]->sub_10154b70(m_n04, this, a, b);
+    m_nCount++;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101553d0 size=0x25
 #include "CUnknown101f40f0.h"
 #include "CUnknown101f5150.h"
