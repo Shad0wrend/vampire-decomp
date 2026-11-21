@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x1012b9d0 size=0x4
+#include "CSaveRestoreBlockSet.h"
+char * CSaveRestoreBlockSet::vfunc0()
+{
+    return (char *)this + 4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ba50 size=0x67
 #include "CSaveRestoreBlockSet.h"
 struct SaveStream { virtual int vfunc0(); };

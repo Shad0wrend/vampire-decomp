@@ -788,6 +788,7 @@
 0x1012b770 func   ?vfunc5@CEntitySaveRestoreBlockHandler@@UAEXXZ CEntitySaveRestoreBlockHandler::vfunc5
 0x1012b810 func   ?vfunc8@CEntitySaveRestoreBlockHandler@@UAEXXZ CEntitySaveRestoreBlockHandler::vfunc8
 0x1012b940 func   ?sub_1012b940@@YAHXZ sub_1012b940
+0x1012b9d0 func   ?vfunc0@CSaveRestoreBlockSet@@QAEPADXZ CSaveRestoreBlockSet::vfunc0
 0x1012ba50 func   ?vfunc2@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc2
 0x1012bac0 func   ?vfunc3@CSaveRestoreBlockSet@@QAEXPAX@Z CSaveRestoreBlockSet::vfunc3
 0x1012bcd0 func   ?vfunc4@CSaveRestoreBlockSet@@QAEXXZ CSaveRestoreBlockSet::vfunc4
