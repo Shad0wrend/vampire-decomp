@@ -22236,6 +22236,14 @@ int CUtlRBTreeFind232::sub_10130df0(const void *search)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10130ef0 size=0x8
+struct CUnknown10130ef0 { void sub_10130ef0(); };
+void CUnknown10130ef0::sub_10130ef0()
+{
+    *(int *)((char *)this + 0xc) = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130f00 size=0x8c
 #include "UtlVec8.h"
 extern void *(*g_101e3100)(int);
