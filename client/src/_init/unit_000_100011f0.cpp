@@ -2867,6 +2867,13 @@ int g_102eba6c = ClientClassInit((DT_BaseBeam::ignored *)0);
 RecvTable g_102eba8c;
 // END FUNCTION
 
+// FUNCTION: 0x10032c90 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBeamEntPoint { struct ignored; }
+template <> int ClientClassInit<DT_TEBeamEntPoint::ignored>(DT_TEBeamEntPoint::ignored *);
+int g_102eba88 = ClientClassInit((DT_TEBeamEntPoint::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10032ff0 size=0xa
 #include "RecvTable.h"
 RecvTable g_102ebcd4;
