@@ -5052,6 +5052,20 @@ float __cdecl sub_1004b220(const Vector *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1004b5c0 size=0x19
+namespace lifted {
+extern char g_10227c78;
+}
+struct CUnknown1004b5c0 { void * sub_1004b5c0(int, int); };
+void * CUnknown1004b5c0::sub_1004b5c0(int a0, int a1)
+{
+    *(int *)this = (int)&lifted::g_10227c78;
+    *(int *)((char *)this + 4) = a0;
+    *(int *)((char *)this + 8) = a1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1004b7e0 size=0xa7
 #include "CTraceEntList.h"
 

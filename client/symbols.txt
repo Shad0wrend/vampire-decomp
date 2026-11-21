@@ -473,6 +473,7 @@
 0x1004b050 func   ?sub_1004b050@CUnknown1004b050@@QAEPAXXZ CUnknown1004b050::sub_1004b050
 0x1004b0a0 func   ?sub_1004b0a0@CUnknown1004b0a0@@QAEXXZ CUnknown1004b0a0::sub_1004b0a0
 0x1004b220 func   ?sub_1004b220@@YAMPBVVector@@@Z sub_1004b220
+0x1004b5c0 func   ?sub_1004b5c0@CUnknown1004b5c0@@QAEPAXHH@Z CUnknown1004b5c0::sub_1004b5c0
 0x1004b7e0 func   ?sub_1004b7e0@CTraceEntList@@QAEXH@Z CTraceEntList::sub_1004b7e0
 0x1004ba40 func   ?sub_1004ba40@@YAPADPBDZZ sub_1004ba40
 0x1004ba90 func   ?sub_1004ba90@@YA_NPAD@Z sub_1004ba90
