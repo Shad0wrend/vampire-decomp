@@ -290,6 +290,16 @@ inline void Ray_t::sub_10005e00(const float *pStart, const float *pEnd)
 static void (Ray_t::*s_sub_1004f7a0)(const float *, const float *) = &Ray_t::sub_10005e00;
 // END FUNCTION
 
+// FUNCTION: 0x10005eb0 size=0x6
+namespace lifted {
+extern char g_102df184;
+}
+int sub_10005eb0()
+{
+    return (int)&lifted::g_102df184;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100060f0 size=0x3
 char sub_100060f0()
 {
