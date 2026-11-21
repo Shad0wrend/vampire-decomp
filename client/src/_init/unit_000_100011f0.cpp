@@ -740,3 +740,8 @@ ConVar g_104cf7c8("footstep_pc_vol", "0.5", 8576, "PC Step sound volume");
 #include "ConVar.h"
 ConVar g_104cfc00("force_unstick", "0", 8192);
 // END FUNCTION
+
+// FUNCTION: 0x100ecaf0 size=0xa
+#include "ConVar.h"
+ConVar g_104cfbb8("fall_threshold", "200", 8192);
+// END FUNCTION
