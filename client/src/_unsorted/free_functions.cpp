@@ -20673,6 +20673,56 @@ void CUnk101f7690::sub_10157170(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101571b0 size=0xc3
+extern "C" int sprintf(char *, const char *, ...);
+extern void (__cdecl *g_101e3118)(int level, const char *fmt, ...);
+extern char g_102de300[];
+extern char g_1027feac[];
+
+struct CDebugListElem
+{
+	char m_pad0000[0x44];
+	void sub_10156b60();
+};
+
+struct CDebugNameList
+{
+	const char *sub_10157ac0(int id);
+};
+extern CDebugNameList g_105f8b98;
+
+struct CDebugListEntry
+{
+	char m_pad0000[8];
+	const char *m_pszName;
+	int m_id;
+	int m_nElems;
+	CDebugListElem *m_pElems;
+	void sub_101571b0();
+};
+
+void CDebugListEntry::sub_101571b0()
+{
+	char szLine[128];
+	sprintf(szLine, "[%s]\t\t\t{%s}\t", g_105f8b98.sub_10157ac0(m_id), m_pszName ? m_pszName : g_102de300);
+	void (__cdecl *pDevMsg)(int, const char *, ...) = g_101e3118;
+	pDevMsg(1, szLine);
+	if (m_id != -1)
+	{
+		if (m_nElems > 0)
+		{
+			for (int i = 0; i < m_nElems; i++)
+				m_pElems[i].sub_10156b60();
+		}
+		else
+			pDevMsg(1, "\t\t\t( <ERROR> )");
+		pDevMsg(1, g_1027feac);
+	}
+	else
+		pDevMsg(1, "\t\t\t( <ERROR> )");
+}
+// END FUNCTION
+
 // FUNCTION: 0x10157390 size=0xeb
 #include "CUnknown101f7960.h"
 
