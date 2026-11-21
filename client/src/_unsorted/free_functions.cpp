@@ -25666,6 +25666,12 @@ bool CVDmgBlock16_t::sub_101613e0(const CVDmgBlock16_t *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161420 size=0x1
+void sub_10161420()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101615d0 size=0x2b
 #include "CParsedValue.h"
 
