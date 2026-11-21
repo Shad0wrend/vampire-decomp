@@ -70,6 +70,14 @@ char sub_100018f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10001990 size=0x9
+struct CUnknown10001990 { char sub_10001990(int); };
+char CUnknown10001990::sub_10001990(int a0)
+{
+    return *(char *)((char *)this + 0x464);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10002200 size=0x3
 void __stdcall sub_10002200(int a0)
 {
