@@ -3141,6 +3141,7 @@
 0x10151890 func   ?sub_10151890@CPtrList101d6400@@QAEXXZ CPtrList101d6400::sub_10151890
 0x10151d20 func   ?sub_10151d20@@YAHXZ sub_10151d20
 0x10151e20 func   ?ClientClassInit@@YAHPAUignored@DT_VampireProjectile@@@Z ClientClassInit
+0x10152010 func   ??_GC_VampireProjectile@@UAEPAXI@Z ??_GC_VampireProjectile@@UAEPAXI@Z
 0x10152030 func   ??1C_VampireProjectile@@UAE@XZ C_VampireProjectile::~C_VampireProjectile
 0x101520c0 func   ?sub_101520c0@@YAHXZ sub_101520c0
 0x101522b0 func   ?sub_101522b0@@YAHXZ sub_101522b0
