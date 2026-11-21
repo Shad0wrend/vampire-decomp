@@ -2423,6 +2423,13 @@ char sub_1007f6e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10080e00 size=0x5
+int __stdcall sub_10080e00(int a0)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080e10 size=0x3
 void __stdcall sub_10080e10(int a0, int a1)
 {
