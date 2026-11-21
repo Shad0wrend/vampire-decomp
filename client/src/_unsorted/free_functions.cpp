@@ -9042,6 +9042,76 @@ void CUnknown101d3a10::sub_1013e3a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013e530 size=0x25c
+#include "StatDefault3.h"
+
+extern int g_105f9224;
+extern int g_105f90bc;
+extern int g_105f8c64;
+extern int g_105e7500;
+
+void StatDefault3::sub_1013e530(StatDefault3 *pParent)
+{
+	int i, n;
+	if (m_pszDisplayName == 0)
+		m_pszDisplayName = pParent->m_pszDisplayName;
+	if (m_14 == 0)
+		m_14 = pParent->m_14;
+	if (m_18 == 0)
+		m_18 = pParent->m_18;
+	if (m_1c == 0)
+		m_1c = pParent->m_1c;
+	if (m_20 == 0)
+		m_20 = pParent->m_20;
+	if (m_78 == 0)
+		m_78 = pParent->m_78;
+	if (m_7c == 0)
+		m_7c = pParent->m_7c;
+	n = g_105f9224;
+	for (i = 0; i < n; i++)
+		m_d0[0][i] = pParent->m_d0[0][i];
+	n = g_105f90bc;
+	for (i = 0; i < n; i++)
+		m_d0[1][i] = pParent->m_d0[1][i];
+	n = g_105f8c64;
+	for (i = 0; i < n; i++)
+		m_pd8[i] = pParent->m_pd8[i];
+	n = g_105e7500;
+	for (i = 0; i < n; i++)
+		m_dc[i] = pParent->m_dc[i];
+	m_8c[0] = pParent->m_8c[0];
+	m_8c[1] = pParent->m_8c[1];
+	m_8c[2] = pParent->m_8c[2];
+	m_8c[3] = pParent->m_8c[3];
+	m_8c[4] = pParent->m_8c[4];
+	m_8c[5] = pParent->m_8c[5];
+	m_8c[6] = pParent->m_8c[6];
+	m_8c[7] = pParent->m_8c[7];
+	m_8c[8] = pParent->m_8c[8];
+	m_8c[9] = pParent->m_8c[9];
+	m_8c[10] = pParent->m_8c[10];
+	m_8c[11] = pParent->m_8c[11];
+	m_ac = pParent->m_ac;
+	m_98[0] = pParent->m_98[0];
+	m_98[1] = pParent->m_98[1];
+	m_98[2] = pParent->m_98[2];
+	m_98[3] = pParent->m_98[3];
+	m_98[4] = pParent->m_98[4];
+	m_98[5] = pParent->m_98[5];
+	m_98[6] = pParent->m_98[6];
+	m_98[7] = pParent->m_98[7];
+	m_98[8] = pParent->m_98[8];
+	m_98[9] = pParent->m_98[9];
+	m_a4 = pParent->m_a4;
+	m_a8 = pParent->m_a8;
+	m_a9 = pParent->m_a9;
+	m_bc[0] = pParent->m_bc[0];
+	m_bc[1] = pParent->m_bc[1];
+	m_bc[2] = pParent->m_bc[2];
+	m_cc = pParent->m_cc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fdc0 size=0x2f
 #include "CStatDefault3List.h"
 // TARGET: sub_1013fdc0
