@@ -4008,6 +4008,13 @@ ConVar g_1049e1a8("cl_interpolate", "1.0", 0, "Interpolate entities on the clien
 RecvTable g_1049e170;
 // END FUNCTION
 
+// FUNCTION: 0x1009d560 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_Edict { struct ignored; }
+template <> int ClientClassInit<DT_Edict::ignored>(DT_Edict::ignored *);
+int g_1049e16c = ClientClassInit((DT_Edict::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1009d620 size=0xa
 #include "RecvTable.h"
 RecvTable g_1049e328;
