@@ -12129,6 +12129,16 @@ void sub_100cc560()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100cc620 size=0xd
+namespace lifted {
+int sub_100923c0(int, int);
+}
+int sub_100cc620()
+{
+    return lifted::sub_100923c0(0, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ccb30 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
