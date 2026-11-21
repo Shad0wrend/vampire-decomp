@@ -37309,6 +37309,32 @@ void CUnknown1042d770::sub_101207d0(int a, int b, const char *pszName1, const ch
 }
 // END FUNCTION
 
+// FUNCTION: 0x101208b0 size=0xc1
+extern "C" __declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+extern "C" char *__cdecl _strlwr(char *);
+extern "C" unsigned int __cdecl strlen(const char *);
+#pragma intrinsic(strlen)
+void sub_100cdb40(unsigned long *pCRC);
+void sub_100cdb50(unsigned long *pCRC);
+void sub_100cdb90(unsigned long *pCRC, const void *pBuffer, int len);
+
+unsigned long sub_101208b0(const char *pszA, const char *pszB, int nValue)
+{
+	unsigned long crc;
+	char szBuf[512];
+	sub_100cdb40(&crc);
+	Q_strncpy(szBuf, pszA, 512);
+	_strlwr(szBuf);
+	sub_100cdb90(&crc, szBuf, strlen(szBuf));
+	Q_strncpy(szBuf, pszB, 512);
+	_strlwr(szBuf);
+	sub_100cdb90(&crc, szBuf, strlen(szBuf));
+	sub_100cdb90(&crc, &nValue, 4);
+	sub_100cdb50(&crc);
+	return crc;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10120980 size=0xa
 struct CUnknown10120980 { int sub_10120980(); };
 int CUnknown10120980::sub_10120980()
