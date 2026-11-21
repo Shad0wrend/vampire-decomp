@@ -59,6 +59,13 @@ int g_102de780 = ClientClassInit((DT_Corpse::ignored *)0);
 RecvTable g_102de840;
 // END FUNCTION
 
+// FUNCTION: 0x10002ec0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_HL2Local { struct ignored; }
+template <> int ClientClassInit<DT_HL2Local::ignored>(DT_HL2Local::ignored *);
+int g_102de83c = ClientClassInit((DT_HL2Local::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10003330 size=0xa
 #include "RecvTable.h"
 RecvTable g_102de8e0;
