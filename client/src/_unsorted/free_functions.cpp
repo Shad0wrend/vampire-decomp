@@ -14070,6 +14070,22 @@ void CUtlRBTree232::sub_10131140(const void *pInsert, int *pParent, bool *pLeftC
 }
 // END FUNCTION
 
+// FUNCTION: 0x10131440 size=0x34
+#include "UtlMem.h"
+extern void *(__cdecl *g_101e3100)(int);
+
+UtlMem *UtlMem::sub_10131440(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount) {
+		m_pMemory = (int *)g_101e3100(allocationCount * 8);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10131480 size=0x19
 struct E101b6b60 { unsigned short a; unsigned short pad; int b; };
 
