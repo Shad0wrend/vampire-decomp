@@ -627,6 +627,12 @@ void CUnk100ddc00::sub_10044420()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10044450 size=0x1
+void sub_10044450()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045630 size=0x3b
 #include "Vector.h"
 
