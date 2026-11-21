@@ -5704,6 +5704,12 @@ void * CUnknown1009f040::sub_1009f040()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f2e0 size=0x3
+void __stdcall sub_1009f2e0(int a0, int a1)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009ffb0 size=0x1
 void sub_1009ffb0()
 {
