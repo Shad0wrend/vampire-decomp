@@ -2881,6 +2881,7 @@
 0x101a1010 func   ?sub_101a1010@@YAXAAVVMatrix@@ABVVector@@@Z sub_101a1010
 0x101a1210 func   ?sub_101a1210@@YA?AVVMatrix@@ABVVector@@ABUVPlane@@@Z sub_101a1210
 0x101a1410 func   ?sub_101a1410@@YA?AVVMatrix@@H@Z sub_101a1410
+0x101a1440 func   ?sub_101a1440@@YA?AVVMatrix@@ABVVector@@ABVQAngle@@@Z sub_101a1440
 0x101a1470 func   ?sub_101a1470@@YA_NABUSPlane@@00AAVVector@@@Z sub_101a1470
 0x101a1550 func   ?sub_101a1550@VMatrix@@QBE?AUVPlane@@ABU2@@Z VMatrix::sub_101a1550
 0x101a1650 func   ?sub_101a1650@CBlock64_t@@QAEPAU1@PBU1@@Z CBlock64_t::sub_101a1650

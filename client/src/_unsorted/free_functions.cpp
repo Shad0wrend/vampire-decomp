@@ -50361,6 +50361,18 @@ VMatrix sub_101a1410(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a1440 size=0x2f
+#include "VMatrix.h"
+
+// TARGET: sub_101a1440
+VMatrix sub_101a1440(const Vector &origin, const QAngle &angles)
+{
+	VMatrix m;
+	m.sub_101a2290(origin, angles);
+	return m;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a1470 size=0xd3
 #include "Vector.h"
 
