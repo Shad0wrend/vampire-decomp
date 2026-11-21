@@ -1286,6 +1286,14 @@ void CMem8b_t::sub_10055900(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10055f40 size=0x4
+struct CUnknown10055f40 { char sub_10055f40(); };
+char CUnknown10055f40::sub_10055f40()
+{
+    return *(char *)((char *)this + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10057470 size=0x72
 struct Elem { char data[0x88]; };
 struct Mem {
