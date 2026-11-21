@@ -12451,6 +12451,25 @@ CVTraitDependencyValue_t *CVTraitDependencyValue_t::sub_10161820(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161bb0 size=0x3a
+#include "CUnknown101d7520.h"
+#include "CUnknown10205e60.h"
+
+// TARGET: CUnknown101d7520Sub::sub_10161bb0
+char CUnknown101d7520Sub::sub_10161bb0(void *pArg)
+{
+	int i = 0;
+	if (m_nCount > 0) {
+		do {
+			if (!m_ppItems[i]->sub_10161970(pArg))
+				return 0;
+			i++;
+		} while (i < m_nCount);
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161db0 size=0x20
 struct CUnknown10206400 { void * sub_10161db0(int); };
 void * CUnknown10206400::sub_10161db0(int a0)
