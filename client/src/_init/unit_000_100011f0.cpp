@@ -4031,6 +4031,13 @@ int g_105e5ad8 = ((int (*)(int))sub_10134010)(0);
 RecvTable g_105e5d5c;
 // END FUNCTION
 
+// FUNCTION: 0x1013a3a0 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_1013a3d0(void);
+InterfaceReg g_105e6ea0(sub_1013a3d0, "TextureScroll_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x10145480 size=0x5
 int sub_101454a0(void);
 int g_105e7928 = ((int (*)(int))sub_101454a0)(0);
