@@ -6786,6 +6786,29 @@ void CUnknown100fde30::sub_100e2ae0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e2c10 size=0x6b
+#include "CUnknown100fe0c0.h"
+
+void CUnknown100fe0c0::sub_100e2c10(int a0, int a1, float a2, int a3, float a4)
+{
+    m_54 = a0;
+    m_38 = a2;
+    m_4c = m_50 = 1.0f;
+    m_40 = a2;
+    m_3c = a2;
+    *(float *)&m_0 = a2;
+    m_4 = a1;
+    m_58.vfunc0(a1);
+    m_e4.vfunc0(a1);
+    m_30 = a3;
+    m_28 = a3;
+    *(float *)&m_34 = a4;
+    m_2c = a4;
+    m_44 = a4;
+    m_48 = 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e2fa0 size=0x1f
 extern float g_104cf544;
 extern float g_104cf548;
