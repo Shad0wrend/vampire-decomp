@@ -13036,6 +13036,13 @@ unsigned short CUtlRBTree16::sub_10112270()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10115dd0 size=0x5
+int __stdcall sub_10115dd0(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10115de0 size=0x3
 char sub_10115de0()
 {
