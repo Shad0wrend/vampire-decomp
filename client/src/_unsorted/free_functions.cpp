@@ -28238,6 +28238,16 @@ int CUnknown101668d0::sub_101668d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10168260 size=0x5
+namespace lifted {
+int sub_10168270();
+}
+int sub_10168260()
+{
+    return lifted::sub_10168270();
+}
+// END FUNCTION
+
 // FUNCTION: 0x1016a690 size=0x1
 void sub_1016a690()
 {
