@@ -1116,3 +1116,9 @@ ConCommand g_104d2568("firstperson", sub_100fbd80, 0, 0, 0);
 void sub_100fbd90(void);
 ConCommand g_104d183c("togglecamera", sub_100fbd90, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x101001d0 size=0xa
+#include "ConCommand.h"
+void sub_100fbda0(void);
+ConCommand g_104d1e4c("camortho", sub_100fbda0, 0, 0, 0);
+// END FUNCTION
