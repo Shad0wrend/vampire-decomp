@@ -19658,6 +19658,23 @@ int CUnknown101f1a30::sub_10153720(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10153810 size=0x1c
+struct CUnk101f1bb0 {
+	void *m_00;
+	void *m_04;
+	void sub_10153810();
+};
+
+// TARGET: CUnk101f1bb0::sub_10153810
+void CUnk101f1bb0::sub_10153810()
+{
+	if (m_00) {
+		operator delete(m_04);
+		m_00 = 0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153ba0 size=0x2d
 #include "VKeyValues.h"
 char *sub_101546c0(const char *pszSrc);
