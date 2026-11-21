@@ -2321,6 +2321,11 @@ ConVar g_104a4378("r_glowfadein", "0.2", 0);
 ConVar g_104a4258("r_glowfadeout", "0.1", 0);
 // END FUNCTION
 
+// FUNCTION: 0x100c3720 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a4940;
+// END FUNCTION
+
 // FUNCTION: 0x100c3a00 size=0xa
 #include "ConVar.h"
 ConVar g_104a4898("phoneme_delay", "0", 128);
