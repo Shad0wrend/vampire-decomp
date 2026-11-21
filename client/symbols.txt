@@ -66,6 +66,7 @@
 0x10079a90 func   ?sub_10079a90@@YAHHHHHH@Z sub_10079a90
 0x10079b70 func   ?sub_10079b70@@YAHHHHHH@Z sub_10079b70
 0x10079cf0 func   ?sub_10079cf0@@YAHHH@Z sub_10079cf0
+0x10079fe0 func   ?sub_10079fe0@@YAHH@Z sub_10079fe0
 0x1007aca0 func   ?sub_1007aca0@CUnknown100290c0@@QAEIPAI@Z CUnknown100290c0::sub_1007aca0
 0x1007b250 func   ?sub_1007b250@CWeaponCopy@@QAEPAU1@PBU1@@Z CWeaponCopy::sub_1007b250
 0x1007b650 func   ?sub_1007b650@@YGHH@Z sub_1007b650

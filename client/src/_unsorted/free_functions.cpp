@@ -1430,6 +1430,17 @@ int sub_10079cf0(int a, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079fe0 size=0x1b
+// TARGET: sub_10079fe0
+int sub_10079fe0(int v)
+{
+    if (v == 0x3ec || v == 0x3f0) {
+        return 1;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007aca0 size=0x2b
 #include "CUnknown100290c0.h"
 
