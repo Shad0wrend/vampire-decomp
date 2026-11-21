@@ -1400,6 +1400,14 @@ char CUnknown1005f6d0::sub_1005f6d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005fb10 size=0x4
+struct CUnknown1005fb10 { char sub_1005fb10(); };
+char CUnknown1005fb10::sub_1005fb10()
+{
+    return *(char *)((char *)this + 0xc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064c60 size=0x1
 void sub_10064c60()
 {
