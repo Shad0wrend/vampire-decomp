@@ -81,6 +81,7 @@
 0x10008ed0 func   ?sub_10008ed0@@YAHXZ sub_10008ed0
 0x10008ff0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Knife@@@Z ClientClassInit
 0x10009150 func   ?sub_10009150@@YAHXZ sub_10009150
+0x10009270 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_OccultBlade@@@Z ClientClassInit
 0x100093d0 func   ?sub_100093d0@@YAHXZ sub_100093d0
 0x10009650 func   ?sub_10009650@@YAHXZ sub_10009650
 0x100098d0 func   ?sub_100098d0@@YAHXZ sub_100098d0
