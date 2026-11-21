@@ -560,6 +560,32 @@ int sub_10005c20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005d20 size=0xb0
+#include "RecvTable.h"
+extern RecvTable g_102df168;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_PlasmaBeamNode { struct ignored; }
+template <> int ClientClassInit<DT_PlasmaBeamNode::ignored>(DT_PlasmaBeamNode::ignored *)
+{
+	char *pRecvTableName = "DT_PlasmaBeamNode";
+	RecvTable &RecvTable = g_102df168;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropVector("m_vecVelocity", 168, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_bSprayOn", 1040, 1, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10005de0 size=0x1b
 struct CSubObj1005f190 {
 	virtual int v0();
