@@ -4793,6 +4793,34 @@ void Mem1c::sub_100a35f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a5420 size=0x53
+struct SInit {
+	int m_n0;
+	int m_n4, m_n8, m_nc, m_n10, m_n14, m_n18, m_n1c, m_n20, m_n24, m_n28;
+	char m_b2c;
+	int m_n30, m_n34;
+	char m_b38;
+	int m_n3c, m_n40;
+	char m_b44, m_b45, m_b46, m_b47;
+	int m_n48, m_n4c, m_n50, m_n54, m_n58;
+	char m_b5c;
+
+	void sub_100a5420();
+};
+
+void SInit::sub_100a5420()
+{
+	m_n4 = 0; m_n8 = 0; m_nc = 0; m_n10 = 0; m_n14 = 0; m_n18 = 0; m_n1c = 0; m_n20 = 0; m_n24 = 0; m_n28 = 0;
+	m_b2c = 0;
+	m_n30 = 0; m_n34 = 0;
+	m_b38 = 0;
+	m_n3c = 0; m_n40 = 0;
+	m_b44 = 1; m_b45 = 1; m_b46 = 0; m_b47 = 0;
+	m_n48 = 0; m_n4c = 0; m_n50 = 0; m_n54 = 0; m_n58 = 0;
+	m_b5c = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100aacb0 size=0x59
 struct CUnknown101a5290 {
     void *m_pMemory;
