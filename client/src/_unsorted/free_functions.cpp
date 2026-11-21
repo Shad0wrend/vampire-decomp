@@ -9765,6 +9765,14 @@ char * CUnknown1009f760::sub_1009f760()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009f770 size=0x7
+struct CUnknown1009f770 { char * sub_1009f770(); };
+char * CUnknown1009f770::sub_1009f770()
+{
+    return (char *)this + 0x2c0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009fb40 size=0x4
 struct CUnknown1009fb40 { int sub_1009fb40(); };
 int CUnknown1009fb40::sub_1009fb40()
