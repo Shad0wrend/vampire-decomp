@@ -1200,6 +1200,11 @@ void * sub_1002a2e0(void);
 InterfaceReg g_102ea898(sub_1002a2e0, "VClientPrediction001");
 // END FUNCTION
 
+// FUNCTION: 0x1002a4d0 size=0xa
+#include "RecvTable.h"
+RecvTable g_102eab98;
+// END FUNCTION
+
 // FUNCTION: 0x1002c030 size=0xa
 #include "ConCommand.h"
 void sub_1002c020(void);
