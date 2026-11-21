@@ -27738,6 +27738,12 @@ void UtlMem::sub_101b3480(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101b6c70 size=0x1
+void sub_101b6c70()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101be160 size=0xaa
 #include "CUtlVector4.h"
 
