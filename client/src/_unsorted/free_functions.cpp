@@ -61506,6 +61506,111 @@ void sub_101a3900(CUnknown10258b00 *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a39f0 size=0x230
+#include <string.h>
+
+struct IKVSub {
+	virtual const char *vfunc0();
+	virtual void vfunc1();
+	virtual IKVSub *vfunc2(const char *name);
+	virtual IKVSub *vfunc3();
+	virtual IKVSub *vfunc4();
+	virtual IKVSub *vfunc5();
+	virtual void vfunc6();
+	virtual void vfunc7();
+	virtual void vfunc8();
+	virtual void vfunc9();
+	virtual int vfunc10(const char *name, int def);
+	virtual float vfunc11(const char *name, float def);
+	virtual void vfunc12();
+	virtual const char *vfunc13(const char *name, const char *def);
+};
+
+struct WeaponSoundEntry {	// 0x94 bytes
+	char m_szFile[128];
+	int m_nPitch;
+	int m_nPitchMin;
+	int m_nPitchMax;
+	float m_flVolume;
+	char m_bPlayToOwnerOnly;
+};
+
+struct WeaponSoundInfo {
+	char m_pad0000[0xe740];
+	int m_nCount[25];
+};
+
+struct WeaponSoundNameEntry {	// 16 bytes, seen from the slot member; the name is the dword before it
+	int slot;
+	const char *aux;
+	int neg;
+	const char *nextName;
+};
+
+extern WeaponSoundNameEntry g_102d676c[25];
+extern int g_102d68fc;
+extern const float g_101e34f0;
+extern void (__cdecl *g_101e311c)(const char *, ...);
+extern void (__cdecl *g_101e3108)(const char *, ...);
+extern char *(__cdecl *g_101e3188)(char *, const char *, int);
+
+// TARGET: sub_101a39f0
+void sub_101a39f0(IKVSub *pKV, WeaponSoundInfo *pInfo, const char *pszName)
+{
+	int nSections = 0;
+	for (IKVSub *s = pKV->vfunc2("SoundData"); s; s = s->vfunc3()) {
+		const char *szName = s->vfunc0();
+		if (_strcmpi(szName, "SoundData") == 0)
+			nSections++;
+	}
+	if (nSections > 1)
+		g_101e311c("ERROR: Multiple 'SoundData' sections in weapon %s.\n", pszName ? pszName : "**UNKNOWN**");
+	if (pInfo) {
+		int *pCounts = pInfo->m_nCount;
+		memset(pInfo, 0, 0xe740);
+		memset(pCounts, 0, sizeof(pInfo->m_nCount));
+		IKVSub *pData = pKV->vfunc2("SoundData");
+		if (pData) {
+			memset(pCounts, 0, sizeof(pInfo->m_nCount));
+			WeaponSoundNameEntry *e = g_102d676c;
+			do {
+				IKVSub *pSet = pData->vfunc2(((const char **)e)[-1]);
+				if (pSet) {
+					int slot = e->slot;
+					int n = pInfo->m_nCount[slot];
+					for (IKVSub *k = pSet->vfunc4(); k; k = k->vfunc5()) {
+						if (n >= 16) {
+							g_101e3108("ReadWeaponDataFromFileForSlot:  Too many sounds for weapon!!!\n");
+							break;
+						}
+						if (k->vfunc4()) {
+							WeaponSoundEntry *d = (WeaponSoundEntry *)pInfo + (slot * 16 + n);
+							g_101e3188(d->m_szFile, k->vfunc13("file", ""), 0x80);
+							d->m_nPitch = k->vfunc10("pitch", 0);
+							d->m_nPitchMin = k->vfunc10("pitch_range_min", 0);
+							d->m_nPitchMax = k->vfunc10("pitch_range_max", 0);
+							d->m_flVolume = k->vfunc11("volume", 0);
+							int b;
+							if (k->vfunc11("play_to_owner_only", 0) > g_101e34f0)
+								b = 1;
+							else
+								b = 0;
+							d->m_bPlayToOwnerOnly = b;
+						} else {
+							WeaponSoundEntry *d = (WeaponSoundEntry *)pInfo + (slot * 16 + n);
+							g_101e3188(d->m_szFile, k->vfunc13(0, ""), 0x80);
+						}
+						n++;
+					}
+					pInfo->m_nCount[slot] = n;
+				}
+				e++;
+			} while ((int)e < (int)&g_102d68fc);
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3de0 size=0xcc
 struct SKeyValues
 {
