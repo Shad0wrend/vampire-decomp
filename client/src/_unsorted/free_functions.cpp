@@ -15132,6 +15132,16 @@ bool sub_101274d0(CBoolListView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101277a0 size=0x5
+namespace lifted {
+int sub_10127720();
+}
+int sub_101277a0()
+{
+    return lifted::sub_10127720();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10127830 size=0x67
 extern "C" __declspec(dllimport) void *Plat_Alloc(int size);
 extern "C" __declspec(dllimport) void *Plat_Realloc(void *p, int size);
