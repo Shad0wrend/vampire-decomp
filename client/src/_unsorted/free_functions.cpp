@@ -11174,6 +11174,17 @@ void CKV::sub_10154480()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10154590 size=0x25
+extern int g_102ca678[];
+extern int g_102ca694[];
+
+// TARGET: sub_10154590
+void __fastcall sub_10154590(void *pThis, int dummy, void *pKV)
+{
+	*(void **)((char *)pThis - 0x10) = __RTDynamicCast(pKV, 0, g_102ca678, g_102ca694, 0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10154670 size=0x1d
 typedef void (*PFN_109f383c)(int, void *);
 extern PFN_109f383c g_101e31d4;
