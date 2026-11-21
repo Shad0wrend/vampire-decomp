@@ -12684,6 +12684,22 @@ int CSave::sub_10129640(int a, int b, CSaveDesc *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101297d0 size=0x2d
+struct CUnk101a0530 {
+    void sub_101299c0(int a, int b);
+    void sub_101297d0(int a, int b);
+};
+
+// TARGET: sub_101297d0
+void CUnk101a0530::sub_101297d0(int a, int b)
+{
+    unsigned int local;
+    *((unsigned char *)&local + 3) = 0;
+    sub_101299c0(a, b);
+    sub_101299c0((int)((unsigned char *)&local + 3), 1);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129800 size=0x26
 // TARGET: sub_10129800
 int __stdcall sub_10129800(const char *pBytes, int nBytes)
