@@ -27358,6 +27358,14 @@ float CUnknown1014d770::sub_1014d770()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d780 size=0x7
+struct CUnknown1014d780 { float sub_1014d780(); };
+float CUnknown1014d780::sub_1014d780()
+{
+    return *(float *)((char *)this + 0x258);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d860 size=0xc4
 #include "CUnknown101e8080.h"
 extern int (*g_101e311c)(const char *, ...);
