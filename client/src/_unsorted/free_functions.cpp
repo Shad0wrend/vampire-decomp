@@ -20819,6 +20819,36 @@ void CPtrList101d6400::sub_10151890()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152530 size=0x5a
+extern char g_102de300[];
+int *sub_1015fc40(void *pTemp, const char *psz);
+struct CNamed101f02b0 {
+    virtual const char *vfunc0();
+    virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+    virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12();
+    virtual const char *vfunc13(int a, const char *b);
+};
+struct CSource101f02b0 {
+    virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3();
+    virtual CNamed101f02b0 *vfunc4();
+};
+struct CHolder101f02b0 {
+    int m_n0; int m_n4; int m_n8;
+    bool sub_10152530(CSource101f02b0 *pSource);
+};
+bool CHolder101f02b0::sub_10152530(CSource101f02b0 *pSource)
+{
+    if (pSource) {
+        CNamed101f02b0 *p = pSource->vfunc4();
+        int tmp;
+        m_n4 = *sub_1015fc40(&tmp, p->vfunc0());
+        m_n8 = *sub_1015fc40(&tmp, p->vfunc13(0, g_102de300));
+        return true;
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152590 size=0xca
 #include "CUnknown101f0330.h"
 
