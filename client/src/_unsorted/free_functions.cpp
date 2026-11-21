@@ -1549,6 +1549,28 @@ int sub_1007a2e0(SeqHdr *hdr, int value, int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a330 size=0x35
+extern char g_102de300[];
+
+struct CStrTable10428d50 {
+	char m_pad[0x140];
+	int m_nCount;
+	int m_nTableOfs;
+};
+
+// TARGET: sub_1007a330
+char *sub_1007a330(CStrTable10428d50 *pTable, int index)
+{
+	char *base = (char *)pTable;
+	if (!base)
+		return g_102de300;
+	if (index > pTable->m_nCount)
+		return g_102de300;
+	char *entry = base + pTable->m_nTableOfs + index * 16;
+	return entry + *(int *)entry;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007aca0 size=0x2b
 #include "CUnknown100290c0.h"
 
