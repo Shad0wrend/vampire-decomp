@@ -68,3 +68,11 @@ void CDirtySpatialPartitionEntityList::vfunc1()
 	g_104a5808->vfunc11(p ? &p->m_8 : 0);
 }
 // END FUNCTION
+
+// FUNCTION: 0x10042dc0 size=0x8
+#include "CDirtySpatialPartitionEntityList.h"
+void CDirtySpatialPartitionEntityList::vfunc5()
+{
+    *(int *)((char *)this + 0x18) = 0;
+}
+// END FUNCTION
