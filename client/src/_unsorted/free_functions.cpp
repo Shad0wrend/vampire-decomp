@@ -17018,6 +17018,21 @@ void * CUnknown101d91c0::sub_10145d60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146220 size=0x27
+#include "CUnknown10739194.h"
+
+// TARGET: CUnknown10739194::sub_10146220
+int CUnknown10739194::sub_10146220(int index)
+{
+	if (index >= 0) {
+		if (index < m_nCount)
+			return m_pElements[index];
+		return m_pElements[m_nCount - 1];
+	}
+	return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146a90 size=0xf1
 #include "CUnknown101db210.h"
 
