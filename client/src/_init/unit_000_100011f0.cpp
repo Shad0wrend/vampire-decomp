@@ -6,6 +6,13 @@
 RecvTable g_102de368;
 // END FUNCTION
 
+// FUNCTION: 0x100012c0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseCineCam { struct ignored; }
+template <> int ClientClassInit<DT_BaseCineCam::ignored>(DT_BaseCineCam::ignored *);
+int g_102de364 = ClientClassInit((DT_BaseCineCam::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10001bd0 size=0xa
 #include "ConVar.h"
 ConVar g_102de308("camera_fov", "-1", 0);
