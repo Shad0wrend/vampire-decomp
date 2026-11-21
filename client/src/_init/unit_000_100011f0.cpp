@@ -688,3 +688,8 @@ ConVar g_104a5758("showparticlecounts", "0", 0, "Display number of particles dra
 #include "ConVar.h"
 ConVar g_104cef00("cl_drawleaf", "-1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d1300 size=0xa
+#include "ConVar.h"
+ConVar g_104cef48("r_PortalTestEnts", "1", 0, "Clip entities against portal frustums.");
+// END FUNCTION
