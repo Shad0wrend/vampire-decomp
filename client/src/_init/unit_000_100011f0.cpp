@@ -750,3 +750,8 @@ ConVar g_104cfbb8("fall_threshold", "200", 8192);
 #include "ConVar.h"
 ConVar g_104cfd78("cl_ShowSunVectors", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100f0470 size=0xa
+#include "ConVar.h"
+ConVar g_104cfdf0("cl_hudenable", "1", 0, "Enable/disable the HUD drawing for profiling.");
+// END FUNCTION
