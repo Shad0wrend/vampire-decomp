@@ -4,14 +4,19 @@
 
 The build is not at the game's addresses, so it is compared rule by rule, every game address coming from
 config/addresses.txt (and config/aliases.txt):
-- functions: the game's bytes at the block's address equal the built function's outside relocations; at each
-  relocation of the object's code, the game's word reaches the game address of the same symbol (a word that reaches an
-  incremental-link stub, `E9 rel32`, is followed through it). A static function of the object with no address of its
-  own (an initializer's `$E` steps, a local static's destroy) is placed where the game's word reaches, and checked
-  there the same way;
+- functions: the game's bytes at the block's address equal the built function's outside relocations, for the game's
+  recorded size (past it the object may only have the alignment fill, 0x90 / 0xCC, VC6 puts after every /Gy
+  function); at each relocation of the object's code, the game's word reaches the game address of the same symbol (a
+  word that names one of the game's incremental-link stubs is followed through it: the stubs are the runs of
+  back-to-back `E9 rel32` the linker writes, so a function that itself starts with a `jmp` is never passed). A static
+  function of the object with no address of its own (an initializer's `$E` steps, a local static's destroy) is placed
+  where the game's word reaches, and checked there the same way; so is code of the object at a game address no block
+  covers (an inline function's static destroy, which every unit may have a copy of and the game has once);
 - initializers: each initializer object's `.CRT$XCU` entries are the game's table entries from the block's address
   on, checked as functions; the built table runs the game's initializers in the game's order;
-- data: each relocated word of a data object (`DD OFFSET`) reaches, in the game, the game address of its symbol;
+- data: each relocated word of a data object (`DD OFFSET`) reaches, in the game, the game address of its symbol (the
+  word's game address comes from the label before it, or from the label after it for an item's prefix word, which the
+  head comments of src/_data/*.asm.in name);
 - vtables: each slot of a vtable the objects emit runs, in the build, the counterpart of the game's slot (a slot
   config/vtable_patches.txt patches is reported as a `slot` difference all the same: its source is not right yet);
 - exports and imports: names and ordinals equal the game's; each export runs the counterpart of the game's.
@@ -21,6 +26,7 @@ Writes build/report.json."""
 from __future__ import annotations
 
 import argparse
+import bisect
 import hashlib
 import json
 import re
@@ -40,6 +46,10 @@ NOT_LOADED = 0x00000200 | 0x00000800 | 0x02000000  # LNK_INFO | LNK_REMOVE | MEM
 XCU = ".CRT$XCU"
 INIT_OBJ = re.compile(r"i([0-9a-f]{8})")
 MASK = 0xFFFFFFFF
+FILL = (0x90, 0xCC)  # VC6's alignment fill after a /Gy function
+MIN_RUN = 8  # back-to-back stubs that make an incremental-link table (pcdecomp's ilt.MIN_RUN)
+STUB_RUN = re.compile(rb"(?:\xe9[\x00-\xff]{4}){%d,}" % MIN_RUN)
+PREFIXED = re.compile(r"^; 0x([0-9a-f]{8}) \+\d+ prefix \d+:", re.M)  # an item head `pcdecomp data` writes
 
 
 @dataclass
@@ -102,6 +112,48 @@ def compare_imports(game: dict[str, list[str]], built: dict[str, list[str]]) -> 
     return out
 
 
+def ilt_stubs(image: PE) -> dict[int, int]:
+    """Stub address -> its target for each run of at least MIN_RUN back-to-back `jmp rel32` in an executable section
+    whose targets all lie in executable sections: the incremental-link table (as pcdecomp's ilt.find_ilt finds it)."""
+    stubs: dict[int, int] = {}
+    for section in image.sections:
+        if not section.executable:
+            continue
+        data = image.read(section.va, section.size)
+        for m in STUB_RUN.finditer(data):
+            run = {}
+            for offset in range(m.start(), m.end(), 5):
+                va = section.va + offset
+                target = (va + 5 + struct.unpack_from("<i", data, offset + 1)[0]) & MASK
+                home = image.section_at(target)
+                if home is None or not home.executable:
+                    break
+                run[va] = target
+            if len(run) >= MIN_RUN:
+                stubs.update(run)
+    return stubs
+
+
+def data_site(labels: list[tuple[int, int]], prefixed: set[int], offset: int,
+              offsets: list[int] | None = None) -> int | None:
+    """The game address of the word at `offset` of a data object, from its labels (offset, game address) in offset
+    order: the label before it, or the label right after it when the word is that item's prefix (`prefixed` holds the
+    game addresses of the items that have one). None when no label tells. `offsets`: the labels' offsets, when the
+    caller has them already."""
+    k = bisect.bisect_right(offsets if offsets is not None else [o for o, _ in labels], offset)
+    if k < len(labels) and labels[k][1] in prefixed and labels[k][0] - offset <= 4:
+        return labels[k][1] - (labels[k][0] - offset)
+    if k == 0:
+        return None
+    o, address = labels[k - 1]
+    return address + offset - o
+
+
+def prefixed_items(text: str) -> set[int]:
+    """The game addresses of the items of a data template (src/_data/*.asm.in) that start with a prefix word."""
+    return {int(m.group(1), 16) for m in PREFIXED.finditer(text)}
+
+
 def _original(path: Path, sha1: str, target: str) -> PE:
     if not path.exists():
         raise SystemExit(f"{path} not found: copy your game's {target} there (orig/README.txt)")
@@ -147,11 +199,13 @@ class Verifier:
         self.addresses = read_addresses(config / "addresses.txt")
         self.aliases = read_aliases(config / "aliases.txt") if (config / "aliases.txt").exists() else {}
         self.blocks = read_blocks(config / "blocks.txt")
+        self.block_addresses = {b.addr for b in self.blocks}
         patches = read_patches(config / "vtable_patches.txt") if (config / "vtable_patches.txt").exists() else []
         self.patched = {(p.vtable, p.slot): p for p in patches}
         self.known = read_known(config / "known_differences.txt") \
             if (config / "known_differences.txt").exists() else []
         self.stubs = 0
+        self.ilt = ilt_stubs(self.orig)
         self.game_xcu = self._game_xcu()
 
     # --- addresses ---------------------------------------------------------------------------------------------
@@ -176,32 +230,19 @@ class Verifier:
         return found
 
     def follow(self, addr: int) -> int:
-        """Where a game address ends up through incremental-link stubs (`E9 rel32`)."""
+        """Where a game address ends up through the game's incremental-link stubs."""
         for _ in range(4):
-            try:
-                code = self.orig.read(addr, 5)
-            except ValueError:
+            if addr not in self.ilt:
                 break
-            if code[0] != 0xE9:
-                break
-            addr = (addr + 5 + struct.unpack_from("<i", code, 1)[0]) & MASK
+            addr = self.ilt[addr]
         return addr
 
     def reaches(self, start: int, expected: int) -> bool:
         if start == expected:
             return True
-        addr = start
-        for hops in range(1, 5):
-            try:
-                code = self.orig.read(addr, 5)
-            except ValueError:
-                return False
-            if code[0] != 0xE9:
-                return False
-            addr = (addr + 5 + struct.unpack_from("<i", code, 1)[0]) & MASK
-            if addr == expected:
-                self.stubs += hops
-                return True
+        if start in self.ilt and self.follow(start) == expected:
+            self.stubs += 1
+            return True
         return False
 
     def _word(self, image: PE, addr: int) -> int | None:
@@ -233,6 +274,8 @@ class Verifier:
             section = obj.sections[sym.section_number]
             data = section.data[sym.value:]
             n = len(data) if size is None else size
+            if len(data) > n and all(b in FILL for b in data[n:]):
+                data = data[:n]  # the game's recorded size leaves the alignment fill out
             if len(data) != n:
                 problems.append((addr, min(len(data), n), f"the object's code is {len(data)} bytes, the game's {n}"))
                 n = min(len(data), n)
@@ -277,6 +320,13 @@ class Verifier:
             expected = addr + target.value - sym.value + addend
         else:
             expected = self.resolve(obj, target)
+            home = obj.sections.get(target.section_number) if target.is_defined else None
+            if (expected is not None and home is not None and home.characteristics & CODE
+                    and target.index not in placed and self.follow(expected) not in self.block_addresses):
+                # code of this object at a game address no block covers (an inline function's static destroy):
+                # checked here, as the build runs link.exe's copy of it where the game runs its own
+                placed[target.index] = self.follow(expected)
+                todo.append((target, placed[target.index], None))
             if expected is None and target.index in placed:
                 expected = placed[target.index]
             elif expected is None:
@@ -368,17 +418,18 @@ class Verifier:
                 out.append(Difference("data", stem, f"{stem}.obj not built"))
                 continue
             first = None
+            prefixed = prefixed_items(template.read_text(encoding="latin-1"))
             for section in obj.coff.sections:
                 if section.characteristics & (NOT_LOADED | CODE) or not section.relocations:
                     continue
                 labels = sorted(((s.value, a) for s in obj.coff.symbols if s.section_number == section.number
                                  and (a := self.resolve(obj, s)) is not None), key=lambda p: p[0])
+                offsets = [o for o, _ in labels]
                 for r in sorted(section.relocations, key=lambda r: r.offset):
-                    label = next((p for p in reversed(labels) if p[0] <= r.offset), None)
-                    if label is None:
+                    site = data_site(labels, prefixed, r.offset, offsets)
+                    if site is None:
                         why, place = "no label with a game address before this word", f"{stem}+0x{r.offset:x}"
                     else:
-                        site = label[1] + r.offset - label[0]
                         place = f"0x{site:08x}"
                         why = self._data_word(obj, section, r, site)
                     if why:

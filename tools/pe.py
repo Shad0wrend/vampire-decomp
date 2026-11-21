@@ -14,6 +14,11 @@ class PESection:
     size: int  # virtual size
     raw_offset: int
     raw_size: int
+    characteristics: int = 0
+
+    @property
+    def executable(self) -> bool:
+        return bool(self.characteristics & 0x20000000)  # IMAGE_SCN_MEM_EXECUTE
 
 
 class PE:
@@ -38,7 +43,8 @@ class PE:
             o = opt + opt_size + 40 * i
             name = b[o:o + 8].rstrip(b"\0").decode("latin1")
             vsize, rva, raw_size, raw_offset = struct.unpack_from("<IIII", b, o + 8)
-            self.sections.append(PESection(name, self.image_base + rva, vsize or raw_size, raw_offset, raw_size))
+            flags = struct.unpack_from("<I", b, o + 36)[0]
+            self.sections.append(PESection(name, self.image_base + rva, vsize or raw_size, raw_offset, raw_size, flags))
 
     def section_at(self, va: int) -> PESection | None:
         return next((s for s in self.sections if s.va <= va < s.va + s.size), None)

@@ -22,7 +22,9 @@ __all__ = [
 KINDS = ("b", "i")  # function block, initializer
 FIXUP_OPS = ("localize", "promote", "inner")
 LAYOUT_OPS = ("rename", "gap")
-DIFFERENCE_KINDS = ("slot", "xcu-extra", "export-missing", "export-ordinal")
+DIFFERENCE_KINDS = ("function", "initializer", "data", "vtable", "slot", "xcu-extra", "xcu-order", "xcu-missing",
+                    "export-missing", "export-extra", "export-ordinal", "export-target", "import-missing",
+                    "import-extra")  # every kind verify reports
 
 
 def HEADER(project: str, commit: str) -> str:  # noqa: N802 - reads like the constant it stands for
@@ -205,6 +207,8 @@ def read_known(path: Path) -> list[KnownDifference]:
 
 def write_known(path: Path, known: Iterable[KnownDifference], header: str) -> None:
     for k in known:
+        if k.kind not in DIFFERENCE_KINDS:
+            raise ValueError(f"known difference {k.kind!r} {k.place}: verify reports no such kind")
         if "#" in k.reason or not k.reason.strip():
             raise ValueError(f"known difference {k.kind} {k.place}: a reason without '#' is required")
     _write(path, header, (f"{k.kind} {k.place} {' '.join(k.reason.split())}" for k in known))

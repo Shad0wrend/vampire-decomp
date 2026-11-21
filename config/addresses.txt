@@ -13693,10 +13693,33 @@
 101f2fe0 ?sub_101f2fe0@@YAPAXI@Z
 101f3000 ?sub_101f3000@@YAPAXH@Z
 101f3030 ?sub_101f3030@@YAXPAX@Z
+101f3050 ?vfunc0@VKeyValues@@$4PPPPPPPM@A@AEXXZ
 101f3060 ?sub_101f3060@@YIXPAD@Z
+101f3060 ?vfunc1@VKeyValues@@$4PPPPPPPM@A@AEXXZ
 101f3070 ?sub_101f3070@@YIXPAD@Z
 101f3080 ?sub_10001807@@YIXPAD@Z
 101f3080 ?sub_101f3080@@YIPAHPAHHE@Z
+101f30f0 ?kv0@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f3100 ?kv1@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f3110 ?kv2@VKeyValues@@$4PPPPPPPM@A@AEPAVIKeyValues@@PBD@Z
+101f3120 ?kv3@VKeyValues@@$4PPPPPPPM@A@AEPAVIKeyValues@@XZ
+101f3130 ?kv4@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f3140 ?kv5@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f3150 ?kv6@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f3160 ?kv7@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f3170 ?kv8@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f3180 ?kv9@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f3190 ?kv10@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f31a0 ?kv11@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f31b0 ?kv12@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f31c0 ?kv13@VKeyValues@@$4PPPPPPPM@A@AEPBDPBD0@Z
+101f31d0 ?kv14@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f31e0 ?kv15@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f31f0 ?kv16@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f3200 ?kv17@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f3210 ?kv18@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f3220 ?kv19@VKeyValues@@$4PPPPPPPM@A@AEXXZ
+101f3230 ?kv20@VKeyValues@@$4PPPPPPPM@A@AEXXZ
 101f35c0 ?sub_101f35c0@@YIPAXPAX@Z
 101f35c0 ?sub_101f35c0@CUnknown101f35c0@@QAEPAV1@XZ
 101f35c0 ?sub_101f35c0@CUnknown101f35c0@@QAEXXZ
@@ -29329,6 +29352,7 @@
 1051904c ??_R3?$CEntityDataInstantiator@UModelWidthScale@@@@8
 10519060 ??_R4?$CEntityDataInstantiator@UModelWidthScale@@@@6B@
 10519078 ??_R2CDefSaveRestoreBlockHandler@@8
+1051907d $rtti_tail_1051907d
 10519084 ??_R3CDefSaveRestoreBlockHandler@@8
 10519098 ??_R4CDefSaveRestoreBlockHandler@@6B@
 105190b0 ??_R1A@?0A@A@IPhysSaveRestoreManager@@8
@@ -29347,6 +29371,7 @@
 105191d4 ??_R1A@?0A@A@CDefSaveRestoreBlockHandler@@8
 105191f0 ??_R1A@?0A@A@CPhysSaveRestoreBlockHandler@@8
 1051920c ??_R2CPhysSaveRestoreBlockHandler@@8
+1051921d $rtti_tail_1051921d
 10519228 ??_R3CPhysSaveRestoreBlockHandler@@8
 1051923c ??_R4CPhysSaveRestoreBlockHandler@@6BIEntityListener@@@
 10519254 ??_R1A@?0A@A@ISaveRestoreOps@@8
@@ -29431,6 +29456,7 @@
 10519a2c ??_R1A@?0A@A@ITempEntsSystem@@8
 10519a48 ??_R1A@?0A@A@CTempEntsSystem@@8
 10519a64 ??_R2CTempEntsSystem@@8
+10519a6d $rtti_tail_10519a6d
 10519a74 ??_R3CTempEntsSystem@@8
 10519a88 ??_R4CTempEntsSystem@@6B@
 10519aa0 ??_R2IPredictionSystem@@8
@@ -29645,6 +29671,7 @@
 1051ac48 ??_R1A@?0A@A@ISceneTokenProcessor@@8
 1051ac64 ??_R1A@?0A@A@CSceneTokenProcessor@@8
 1051ac80 ??_R2CSceneTokenProcessor@@8
+1051ac85 $rtti_tail_1051ac85
 1051ac8c ??_R3CSceneTokenProcessor@@8
 1051aca0 ??_R4CSceneTokenProcessor@@6B@
 1051acb8 ??_R1A@?0A@A@CInstancedSceneEntity@@8
@@ -29748,6 +29775,7 @@
 1051b5f0 ??_R4CEventsSaveDataOps@@6B@
 1051b608 ??_R1A@?0A@A@CEQ_SaveRestoreBlockHandler@@8
 1051b624 ??_R2CEQ_SaveRestoreBlockHandler@@8
+1051b629 $rtti_tail_1051b629
 1051b634 ??_R3CEQ_SaveRestoreBlockHandler@@8
 1051b648 ??_R4CEQ_SaveRestoreBlockHandler@@6B@
 1051b660 ??_R1A@?0A@A@CPyObjStrSaveRestoreDataOps@@8
@@ -29829,6 +29857,7 @@
 1051bd54 ??_R4CPVSFilter@@6B@
 1051bd6c ??_R1A@?0A@A@CAimTargetManager@@8
 1051bd88 ??_R2CAimTargetManager@@8
+1051bd8d $rtti_tail_1051bd8d
 1051bd94 ??_R3CAimTargetManager@@8
 1051bda8 ??_R4CAimTargetManager@@6B@
 1051bdc0 ??_R1A@?0A@A@CBaseEntityList@@8
@@ -29845,6 +29874,7 @@
 1051bec0 ??_R4CNotifyList@@6BIEntityListener@@@
 1051bed8 ??_R1A@?0A@A@CEntityTouchManager@@8
 1051bef4 ??_R2CEntityTouchManager@@8
+1051bef9 $rtti_tail_1051bef9
 1051bf00 ??_R3CEntityTouchManager@@8
 1051bf14 ??_R4CEntityTouchManager@@6B@
 1051bf2c ??_R1A@?0A@A@CEntityListSystem@@8
@@ -30479,6 +30509,7 @@
 1051fc60 ??_R4PyServerSystem@@6B@
 1051fc78 ??_R1A@?0A@A@CPython_SaveRestoreBlockHandler@@8
 1051fc94 ??_R2CPython_SaveRestoreBlockHandler@@8
+1051fc99 $rtti_tail_1051fc99
 1051fca4 ??_R3CPython_SaveRestoreBlockHandler@@8
 1051fcb8 ??_R4CPython_SaveRestoreBlockHandler@@6B@
 1051fcd0 ??_R2CRecipientFilter@@8
@@ -30498,11 +30529,13 @@
 1051fdfc ??_R4CRestore@@6B@
 1051fe14 ??_R1A@?0A@A@CEntitySaveRestoreBlockHandler@@8
 1051fe30 ??_R2CEntitySaveRestoreBlockHandler@@8
+1051fe35 $rtti_tail_1051fe35
 1051fe3c ??_R3CEntitySaveRestoreBlockHandler@@8
 1051fe50 ??_R4CEntitySaveRestoreBlockHandler@@6B@
 1051fe68 ??_R1A@?0A@A@ISaveRestoreBlockSet@@8
 1051fe84 ??_R1A@?0A@A@CSaveRestoreBlockSet@@8
 1051fea0 ??_R2CSaveRestoreBlockSet@@8
+1051fea5 $rtti_tail_1051fea5
 1051feb0 ??_R3CSaveRestoreBlockSet@@8
 1051fec4 ??_R4CSaveRestoreBlockSet@@6B@
 1051fedc ??_R1A@?0A@A@?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@8
@@ -31281,6 +31314,7 @@
 10524bf4 ??_R4CAI_PlaneSolver@@6B@
 10524c0c ??_R1A@?0A@A@CAI_SaveRestoreBlockHandler@@8
 10524c28 ??_R2CAI_SaveRestoreBlockHandler@@8
+10524c2d $rtti_tail_10524c2d
 10524c38 ??_R3CAI_SaveRestoreBlockHandler@@8
 10524c4c ??_R4CAI_SaveRestoreBlockHandler@@6B@
 10524c64 ??_R1A@?0A@A@CAI_Expresser@@8
@@ -32565,6 +32599,7 @@
 1053975c ?g_1053975c@@3PADA
 10539778 ??_R0?AVIPhysicsConstraintEvent@@@8
 105397a8 ??_R0?AVCPhysConstraintEvents@@@8
+105397cc $rtti_tail_105397cc
 10539964 ??_C@_0P@EOGP@phys_pushscale?$AA@
 10539978 ??_C@_01FBAH@1?$AA@
 1053997c ??_C@_0P@LAMD@phys_timescale?$AA@
@@ -32573,6 +32608,7 @@
 105399a4 ??_R0?AVIPhysicsObjectEvent@@@8
 105399cc ??_R0?AVCObjectEvent@@@8
 105399ec ??_R0?AVCPhysicsHook@@@8
+10539a07 $rtti_tail_10539a07
 10539a0c ??_C@_0BC@BEGE@PhysicsGameSystem?$AA@
 10539a24 ??_C@_0BO@GNBA@scripts?1surfaceproperties?4txt?$AA@
 10539a48 ??_C@_0BI@BPPC@VPhysicsSurfaceProps001?$AA@
@@ -32605,6 +32641,7 @@
 10539d30 ??_R0?AVIPhysicsCollisionSolver@@@8
 10539d60 ??_R0?AVIPhysicsCollisionEvent@@@8
 10539d8c ??_R0?AVCCollisionEvent@@@8
+10539daa $rtti_tail_10539daa
 10539db0 ??_C@_0CB@FKGL@CCollisionEvent?3?3CCollisionEvent@
 10539dd8 ??_C@_0BO@IEEO@phys?5?$CFs?5?$CFs?5at?5?$CF?41f?5?$CF?41f?5?$CF?41f?6?$AA@
 10539e00 ??_C@_0EO@HLGK@VPhysics?5exceeded?5collision?5chec@
@@ -32753,6 +32790,7 @@
 1053b744 ??_C@_02FCMB@10?$AA@
 1053b748 ??_C@_0EM@GPNN@Maximum?5think?5time?5in?5millisecon@
 1053b7a4 ??_R0?AVCDataObjectAccessSystem@@@8
+1053b7ca $rtti_tail_1053b7ca
 1053b7d4 ??_C@_0DB@HABL@CDataObjectAccessSystem?3?3CDataOb@
 1053b810 ??_R0?AV?$CEntityDataInstantiator@Utouchlink_t@@@@@8
 1053b854 ??_R0?AV?$CEntityDataInstantiator@Ugroundlink_t@@@@@8
@@ -32834,6 +32872,7 @@
 1053c8b8 ??_R0?AVISaveRestoreBlockHandler@@@8
 1053c8e8 ??_R0?AVCDefSaveRestoreBlockHandler@@@8
 1053c91c ??_R0?AVCPhysSaveRestoreBlockHandler@@@8
+1053c947 $rtti_tail_1053c947
 1053c950 ??_C@_0DJ@OJGN@Don?8t?5know?5how?5to?5reconsitite?5mo@
 1053c994 ??_C@_0DC@PAMK@Failed?5to?5reestablish?5collision?5@
 1053c9d0 ??_C@_0HE@JCPF@Physics?5object?5pointer?5unexpecte@
@@ -32841,6 +32880,7 @@
 1053ca84 ??_R0?AVISaveRestoreOps@@@8
 1053caa8 ??_R0?AVCDefSaveRestoreOps@@@8
 1053cad0 ??_R0?AVCPhysObjSaveRestoreOps@@@8
+1053caf5 $rtti_tail_1053caf5
 1053cafc ??_C@_0DO@PGFN@Don?8t?5know?5how?5to?5save?5model?5for@
 1053cca0 ?g_1053cca0@@3PAHA
 1053cca0 ?g_1053cca0@lifted@@3DA
@@ -32969,9 +33009,11 @@
 1053e8b0 ??_R0?AVCEnvParticle@@@8
 1053e8d0 ??_R0?AVCDisciplineParticle@@@8
 1053e8d0 ?g_1053e8d0@@3PADA
+1053e8f2 $rtti_tail_1053e8f2
 1053e8f8 ??_C@_0BM@EECB@CDisciplineParticle?3?3Create?$AA@
 1053e91c ??_R0?AVCBaseViewModel@@@8
 1053e91c ?g_1053e91c@@3PADA
+1053e939 $rtti_tail_1053e939
 1053e940 ??_C@_0CE@FFPA@CDisciplineParticle?3?3ShouldTrans@
 1053e96c ??_C@_0BM@GPL@CDisciplineParticle?3?3Update?$AA@
 1053e990 ??_C@_0BP@GGMH@CDisciplineParticle?3?3AddToUser?$AA@
@@ -33136,22 +33178,26 @@
 10540570 ??_R0?AVIPredictionSystem@@@8
 10540598 ??_R0?AVITempEntsSystem@@@8
 105405bc ??_R0?AVCTempEntsSystem@@@8
+105405da $rtti_tail_105405da
 10540728 ?g_10540728@@3PAVSendTable@@A
 1054072c b1005a1a0/?pTableName@?1??sub_1005a1a0@@YAHXZ@4PBDB
 10540730 ?g_10540730@@3PADA
 1054073c b1005a510/?pTableName@?1??sub_1005a510@@YAHXZ@4PBDB
 105407b4 ??_R0?AVCTEMetalSparks@@@8
+105407d1 $rtti_tail_105407d1
 105407d8 ??_C@_0P@BAPM@CTEMetalSparks?$AA@
 105407ec ??_C@_08ILNH@m_vecDir?$AA@
 105407f8 ??_C@_08DPIP@m_vecPos?$AA@
 10540804 ??_C@_0N@FIOK@Metal?5Sparks?$AA@
 10540814 ??_C@_0BB@BIMC@CTEArmorRicochet?$AA@
 10540828 ??_R0?AVCTEArmorRicochet@@@8
+10540847 $rtti_tail_10540847
 10540850 ??_C@_0P@KOLP@Armor?5Ricochet?$AA@
 105409b0 ?g_105409b0@@3HA
 105409b0 ?g_105409b0@@3PAVSendTable@@A
 105409b4 b1005a940/?pTableName@?1??sub_1005a940@@YAHXZ@4PBDB
 10540a0c ??_R0?AVCTEBaseBeam@@@8
+10540a26 $rtti_tail_10540a26
 10540a2c ??_C@_0M@CILA@CTEBaseBeam?$AA@
 10540a3c ??_C@_01FNLH@a?$AA@
 10540a3c ?g_10540a3c@@3PADA
@@ -33180,11 +33226,13 @@
 10540e70 ?g_10540e70@@3PADA
 10540e7c b1005b6c0/?pTableName@?1??sub_1005b6c0@@YAHXZ@4PBDB
 10540ed4 ??_R0?AVCTEBeamEnts@@@8
+10540eee $rtti_tail_10540eee
 10540ef4 ??_C@_0M@FKKN@CTEBeamEnts?$AA@
 10540f04 ??_C@_08KMBB@BeamEnts?$AA@
 10541058 ?g_10541058@@3PADA
 10541064 b1005bca0/?pTableName@?1??sub_1005bca0@@YAHXZ@4PBDB
 105410c0 ??_R0?AVCTEBeamLaser@@@8
+105410db $rtti_tail_105410db
 105410e0 ??_C@_0N@MNDC@CTEBeamLaser?$AA@
 105410f0 ??_C@_09OAME@BeamLaser?$AA@
 10541248 ?g_10541248@@3PADA
@@ -33195,6 +33243,7 @@
 10541440 ?g_10541440@@3PADA
 1054144c b1005c950/?pTableName@?1??sub_1005c950@@YAHXZ@4PBDB
 105414a4 ??_R0?AVCTEBeamRing@@@8
+105414be $rtti_tail_105414be
 105414c4 ??_C@_0M@LKNH@CTEBeamRing?$AA@
 105414d4 ??_C@_08EMGL@BeamRing?$AA@
 10541628 ?g_10541628@@3PADA
@@ -33214,6 +33263,7 @@
 10541924 ??_C@_0L@KDKP@BeamSpline?$AA@
 10541a84 ?g_10541a84@@3PBDB
 10541ae0 ??_R0?AVCTEBloodSprite@@@8
+10541afd $rtti_tail_10541afd
 10541b04 ??_C@_0P@EAEB@CTEBloodSprite?$AA@
 10541b18 ??_C@_07DNOJ@m_nSize?$AA@
 10541b24 ??_C@_0N@JGDA@m_nDropModel?$AA@
@@ -33288,6 +33338,7 @@
 10542de0 ?g_10542de0@@3PADA
 10542dec b10061c00/?pTableName@?1??sub_10061c00@@YAHXZ@4PBDB
 10542e48 ??_R0?AVCTEExplosion@@@8
+10542e63 $rtti_tail_10542e63
 10542e68 ??_C@_0N@FKIL@CTEExplosion?$AA@
 10542e78 ??_C@_0N@ONEM@m_nMagnitude?$AA@
 10542e88 ??_C@_09PEKO@m_nRadius?$AA@
@@ -33316,6 +33367,7 @@
 10543610 ?g_10543610@@3PADA
 1054361c ?g_1054361c@@3PBDB
 1054367c ??_R0?AVCTEShatterSurface@@@8
+1054369c $rtti_tail_1054369c
 105436a4 ??_C@_0BC@DMNK@CTEShatterSurface?$AA@
 105436bc ??_C@_0BC@IGFK@m_uchBackColor?$FL2?$FN?$AA@
 105436d4 ??_C@_0BC@LNKF@m_uchBackColor?$FL1?$FN?$AA@
@@ -33343,6 +33395,7 @@
 10543b30 ?g_10543b30@@3PADA
 10543b3c b10064ca0/?pTableName@?1??sub_10064ca0@@YAHXZ@4PBDB
 10543bc0 ??_R0?AVCTEGunshotDecal@@@8
+10543bde $rtti_tail_10543bde
 10543be4 ??_C@_0BA@HNOK@CTEGunshotDecal?$AA@
 10543bf8 ??_C@_08JAPK@m_iFlags?$AA@
 10543c04 ??_C@_0O@GMP@m_iImpactType?$AA@
@@ -33355,6 +33408,7 @@
 10543c6c ?g_10543c6c@@3PADA
 10543c6c ?g_10543c6c@@3QBDB
 10543c88 ??_R0?AVCTEExplosiveGunshotDecal@@@8
+10543caf $rtti_tail_10543caf
 10543cb8 ??_C@_0BJ@KKFC@CTEExplosiveGunshotDecal?$AA@
 10543cd8 ??_C@_0BI@OOJP@Explosive?5Gunshot?5Decal?$AA@
 10543e40 ?g_10543e40@@3PADA
@@ -33365,11 +33419,13 @@
 10544020 ?g_10544020@@3PADA
 1054402c b100657e0/?pTableName@?1??sub_100657e0@@YAHXZ@4PBDB
 1054408c ??_R0?AVCTEInspectionFX@@@8
+105440aa $rtti_tail_105440aa
 105440b0 ??_C@_0BA@ENL@CTEInspectionFX?$AA@
 105440c4 ??_C@_0N@DEIH@InspectionFX?$AA@
 10544220 ?g_10544220@@3PADA
 1054422c ?g_1054422c@@3PBDB
 10544294 ??_R0?AVCTEKillPlayerAttachments@@@8
+105442bb $rtti_tail_105442bb
 105442c4 ??_C@_0BJ@JMN@CTEKillPlayerAttachments?$AA@
 105442e4 ??_C@_09KPDK@m_nPlayer?$AA@
 105442f0 ??_C@_0BG@FGLJ@KillPlayerAttachments?$AA@
@@ -33397,12 +33453,14 @@
 10544c20 ?g_10544c20@@3PADA
 10544c2c ?g_10544c2c@@3PBDB
 10544c84 ??_R0?AVCTESparks@@@8
+10544c9c $rtti_tail_10544c9c
 10544ca0 ??_C@_09GNG@CTESparks?$AA@
 10544cac ??_C@_0P@EEPB@m_nTrailLength?$AA@
 10544cc0 ??_C@_06EKFI@Sparks?$AA@
 10544e10 ?g_10544e10@@3PADA
 10544e1c b10068110/?pTableName@?1??sub_10068110@@YAHXZ@4PBDB
 10544e74 ??_R0?AVCTESprite@@@8
+10544e8c $rtti_tail_10544e8c
 10544e90 ??_C@_0BN@KCJC@sprites?1floaters?1number9?4vmt?$AA@
 10544eb4 ??_C@_0BN@CLH@sprites?1floaters?1number8?4vmt?$AA@
 10544ed8 ??_C@_0BN@GDGH@sprites?1floaters?1number7?4vmt?$AA@
@@ -33428,6 +33486,7 @@
 105453a0 ?g_105453a0@@3PADA
 105453ac ?g_105453ac@@3PBDB
 10545408 ??_R0?AVCTETextMessage@@@8
+10545425 $rtti_tail_10545425
 1054542c ??_C@_0BH@BHFL@Testing?5CTETextMessage?$AA@
 10545448 ??_C@_0P@JEN@CTETextMessage?$AA@
 1054545c ??_C@_0M@NCBB@m_szMessage?$AA@
@@ -33841,6 +33900,7 @@
 105490e0 ??_R0?AVCSceneTokenProcessor@@@8
 1054910c ??_R0?AVCBaseFlex@@@8
 1054910c ?g_1054910c@@3PADA
+10549124 $rtti_tail_10549124
 10549128 ??_C@_08KIBC@?$CBtarget4?$AA@
 10549134 ??_C@_08PNPH@?$CBtarget3?$AA@
 10549140 ??_C@_08FHGA@?$CBtarget2?$AA@
@@ -34394,6 +34454,7 @@
 10552580 ??_C@_06IKIP@cycle0?$AA@
 10552588 ??_C@_09PFFN@sequence0?$AA@
 10552594 ??_R0?AVCBaseAnimatingOverlay@@@8
+105525b8 $rtti_tail_105525b8
 105525c0 ??_C@_0BK@IFOB@?5?5m_bAutoKillWhenFinished?$AA@
 105525e0 ??_C@_0O@EKPE@?5?5m_nActivity?$AA@
 105525f0 ??_C@_0N@IHLN@?5?5m_flWeight?$AA@
@@ -34613,6 +34674,7 @@
 105559a4 ??_C@_0CC@IDIN@CBaseEntity?3?3GetAttackDamageScal@
 105559cc ??_C@_0CE@HJHI@CBaseEntity?3?3GetReceivedDamageSc@
 105559f8 ??_R0?AVCTraceFilterWorldOnly@@@8
+10555a1c $rtti_tail_10555a1c
 10555a24 ??_C@_0CA@FAAC@CBaseEntity?3?3VPhysicsTakeDamage?$AA@
 10555a4c ??_C@_0BK@BBKO@CBaseEntity?3?3Event_Killed?$AA@
 10555a6c ??_C@_0BH@ENOF@CBaseEntity?3?3HasTarget?$AA@
@@ -34620,6 +34682,7 @@
 10555aa8 ??_C@_0BL@NLHG@CBaseEntity?3?3GetNextTarget?$AA@
 10555ac8 ??_R0?AVCThinkContextsSaveDataOps@@@8
 10555af8 ??_R0?AV?$CUtlVectorDataOps@V?$CUtlVector@Uthinkfunc_t@@V?$CUtlMemory@Uthinkfunc_t@@@@@@$08@@@8
+10555b5a $rtti_tail_10555b5a
 10555b70 ??_C@_0L@IGKD@m_pfnThink?$AA@
 10555b80 ??_C@_0CA@GPO@CThinkContextsSaveDataOps?3?3Save?$AA@
 10555ba8 ??_C@_0CD@JPAM@CThinkContextsSaveDataOps?3?3Resto@
@@ -35045,6 +35108,7 @@
 10559dd4 ??_C@_0BB@OJIM@CBaseNetworkable?$AA@
 10559de8 ??_R0?AVIServerNetworkable@@@8
 10559e10 ??_R0?AVCBaseNetworkable@@@8
+10559e2f $rtti_tail_10559e2f
 10559fc4 ??_C@_09MIBP@bloodpack?$AA@
 1055a118 ?g_1055a118@lifted@@3DA
 1055a118 ?g_1055a118@lifted@@3HA
@@ -35111,6 +35175,7 @@
 1055b03c ??_C@_0BD@ODIG@m_hAttachEntity?$FL0?$FN?$AA@
 1055b054 ??_R0?AVCBeam@@@8
 1055b054 ?g_1055b054@@3PADA
+1055b068 $rtti_tail_1055b068
 1055b06c ??_C@_0CG@FLKH@Setting?5CBeam?5to?5non?9sprite?5mode@
 1055b09c ??_C@_0DA@EDCC@ERROR?3?5Max?5of?5?$CFi?5ents?5allowed?5fo@
 1055b0d8 ??_C@_0DA@CLBI@ERROR?3?5Min?5of?52?5ents?5required?5fo@
@@ -35188,6 +35253,7 @@
 1055d6c8 ??_C@_06NILB@Corner?$AA@
 1055d7ec ??_R0?AVCCameraKeyFrame@@@8
 1055d7ec ?g_1055d7ec@@3HA
+1055d80a $rtti_tail_1055d80a
 1055d810 ??_C@_0BA@BAFI@camera_keyframe?$AA@
 1055d824 ??_C@_0BC@LEJN@OnLeavingKeyframe?$AA@
 1055d83c ??_C@_0M@LMFB@m_OnLeaving?$AA@
@@ -35238,6 +35304,7 @@
 1055e2f8 ??_C@_0N@KGEE@EntityOutput?$AA@
 1055e308 ??_C@_05KBGO@Value?$AA@
 1055e310 ??_R0?AVCEventsSaveDataOps@@@8
+1055e331 $rtti_tail_1055e331
 1055e338 ??_C@_0CA@NGPB@RUNNING?5PYTHON?5AT?5TIME?5?$CFf?3?6?$CFs?6?6?$AA@
 1055e360 ??_C@_08INCJ@__main__?$AA@
 1055e36c ??_C@_03HBEH@OOO?$AA@
@@ -35270,6 +35337,7 @@
 1055e5cc ??_R0?AVCEQ_SaveRestoreBlockHandler@@@8
 1055e600 ??_R0?AVCPyObjStrSaveRestoreDataOps@@@8
 1055e634 ??_R0?AVCVTSDependencySaveRestoreDataOps@@@8
+1055e663 $rtti_tail_1055e663
 1055e66c ??_C@_0M@LCDJ@?$CFd?5?$CFd?5?$CFd?5?$CFd?$AA@
 1055e67c ??_C@_0L@BELO@?$FL?$CFf?5?$CFf?5?$CFf?$FN?$AA@
 1055e68c ??_C@_0BI@NNGP@No?5conversion?5to?5string?$AA@
@@ -35277,15 +35345,18 @@
 1055e6b8 ??_C@_0L@OKBP@?$FL?$CFg?5?$CFg?5?$CFg?$FN?$AA@
 1055e6c8 ??_C@_02DLJH@?$CFg?$AA@
 1055e6cc ??_R0?AVCVariantSaveDataOps@@@8
+1055e6ee $rtti_tail_1055e6ee
 1055e6f4 ??_C@_0CA@NJJD@Bad?5type?5?$CFd?5in?5saved?5variant_t?6?$AA@
 1055e878 ?g_1055e878@@3HA
 1055e880 ?g_1055e880@@3PAPAVCUnknown10245700@@A
 1055e8fc ?g_1055e8fc@@3PAPAVCUnknown10245700@@A
 1055e95c ??_R0?AVCSingleUserRecipientFilter@@@8
+1055e985 $rtti_tail_1055e985
 1055e990 ??_C@_0P@JIJD@?$CC?$CFs?$CC?5say?5?$CC?$CFs?$CC?6?$AA@
 1055e9a4 ??_C@_0BE@DLKA@?$CC?$CFs?$CC?5say_team?5?$CC?$CFs?$CC?6?$AA@
 1055e9bc ??_R0?AVCBasePlayer@@@8
 1055e9bc ?g_1055e9bc@@3PADA
+1055e9d6 $rtti_tail_1055e9d6
 1055e9dc ??_C@_06OFNJ@?$CFc?$CFs?3?5?$AA@
 1055e9e4 ??_C@_0O@NGBO@?$CFc?$CITEAM?$CJ?5?$CFs?3?5?$AA@
 1055e9f4 ??_C@_05JKGE@?$CFs?5?$CFs?$AA@
@@ -35341,6 +35412,7 @@
 1055ef44 ??_C@_09INGG@phys_swap?$AA@
 1055ef50 ??_R0?AVCChangeLevel@@@8
 1055ef50 ?g_1055ef50@@3PADA
+1055ef6b $rtti_tail_1055ef6b
 1055ef70 ??_C@_0BE@MLHE@worldmap_transition?$AA@
 1055ef88 ??_C@_0CJ@HONN@Transition?5to?5map?7?6Arguments?3?5?$DMm@
 1055efbc ??_C@_03CFBD@use?$AA@
@@ -35415,6 +35487,7 @@
 1055f710 ?g_1055f710@@3PADA
 1055f738 ??_R0?AVCWeaponRanged@@@8
 1055f738 ?g_1055f738@@3PADA
+1055f754 $rtti_tail_1055f754
 1055f75c ??_C@_0BK@NDHJ@force_sniper_third_person?$AA@
 1055f77c ??_C@_0DK@CMJP@called?5when?5the?5sniper?5rifle?5is?5@
 1055f7c4 ??_C@_04HHEG@?4?4?4?6?$AA@
@@ -35562,9 +35635,11 @@
 10560fbc ??_C@_0BA@LPFJ@m_nSurroundType?$AA@
 10561008 ??_R0?AVIPartitionQueryCallback@@@8
 10561038 ??_R0?AVCDirtySpatialPartitionEntityList@@@8
+10561067 $rtti_tail_10561067
 10561070 ??_C@_0L@IMMC@solidflags?$AA@
 10561080 ??_R0?AVICollideable@@@8
 105610a0 ??_R0?AVCCollisionProperty@@@8
+105610c1 $rtti_tail_105610c1
 105610c8 ??_C@_0DC@PEMB@ERROR?3?5m_Partition?5failed?5to?5ini@
 10561104 ??_C@_0DF@MFFO@ERROR?3?5partition?5not?5initialized@
 10561290 ?g_10561290@lifted@@3DA
@@ -35577,6 +35652,7 @@
 105615ac ?g_105615ac@@3QBDB
 1056174c ??_C@_0BK@GMO@CUtlLinkedList?5overflow?$CB?6?$AA@
 105618fc ??_R0?AVCDebugSaveRestoreOps@@@8
+1056191f $rtti_tail_1056191f
 10561a78 ?g_10561a78@@3PAPBDA
 10561a88 ?g_10561a88@@3PAPADA
 10561aa0 ?g_10561aa0@@3PAPADA
@@ -35631,6 +35707,7 @@
 105621e0 ??_C@_0CB@KJMG@Checking?5starting?5conditions?4?4?4?6@
 10562208 ??_C@_0BJ@DCCF@CDialog?3?3GetStartingLine?$AA@
 10562228 ??_R0?AVCReliableSingleUserRecipientFilter@@@8
+10562259 $rtti_tail_10562259
 10562264 ??_C@_0BP@JKEI@CDialog?3?3SetDialogWindowActive?$AA@
 1056228c ??_C@_0BL@JKDK@CDialog?3?3ShowHistoryWindow?$AA@
 105622ac ??_C@_0BL@PHHC@CDialog?3?3ShowPlayerChoices?$AA@
@@ -35865,6 +35942,7 @@
 105643c8 ??_C@_0BH@GNKM@dump_disposition_table?$AA@
 105643e4 ??_R0?AVCBaseDLLChain@@@8
 10564408 ??_R0?AVCLocalDLLChain@@@8
+10564425 $rtti_tail_10564425
 10564578 ?g_10564578@@3PAHA
 10564578 ?g_10564578@lifted@@3DA
 10564590 b100ed780/?dataDesc@?1??sub_100ed780@@YAPAHXZ@4PAUtypedescription_t@@A
@@ -35992,6 +36070,7 @@
 105662b0 ??_R0?AVIEffects@@@8
 105662cc ??_R0?AVCEffectsServer@@@8
 105662f0 ??_R0?AVCPVSFilter@@@8
+10566309 $rtti_tail_10566309
 10566458 ?g_10566458@@3PADA
 10566458 ?g_10566458@@3PAUCDoorEntListView@@A
 10566458 ?g_10566458@@3PAUCEntListView@@A
@@ -36039,6 +36118,7 @@
 105665a4 ??_R0?AVCNotifyList@@@8
 105665c4 ??_R0?AVCEntityTouchManager@@@8
 105665ec ??_R0?AVCEntityListSystem@@@8
+1056660c $rtti_tail_1056660c
 10566614 ??_C@_0BA@FNMD@report_entities?$AA@
 10566628 ??_C@_0BD@JBFC@Lists?5all?5entities?$AA@
 10566640 ??_C@_0BO@CDJF@Total?5?$CFd?5entities?5?$CI?$CFd?5empty?$CJ?6?$AA@
@@ -36131,6 +36211,7 @@
 10567cc4 ??_C@_07MLHD@Disable?$AA@
 10567cd0 ??_C@_0N@GAH@InputDisable?$AA@
 10567d58 ??_R0?AVCEnvPlayerSurfaceTrigger@@@8
+10567d7f $rtti_tail_10567d7f
 10567d88 ??_C@_0BL@OGNA@env_player_surface_trigger?$AA@
 10567da8 ??_C@_0BL@IKJM@OnSurfaceChangedFromTarget?$AA@
 10567dc8 ??_C@_0BN@BCCD@m_OnSurfaceChangedFromTarget?$AA@
@@ -36158,6 +36239,7 @@
 10568c10 ?g_10568c10@lifted@@3DA
 10568c28 b10100ef0/?dataDesc@?1??sub_10100ef0@@YAPAHXZ@4PAUtypedescription_t@@A
 10568de4 ??_R0?AVCEnvFade@@@8
+10568dfb $rtti_tail_10568dfb
 10568e00 ??_C@_08HFAF@env_fade?$AA@
 10568e0c ??_C@_07FOED@fadeout?$AA@
 10568e18 ??_C@_0GM@DCFE@fadeout?5?$HLtime?5r?5g?5b?$HN?3?5Fades?5the?5@
@@ -36169,11 +36251,13 @@
 105690bc ?g_105690bc@lifted@@3DA
 1056932c ?g_1056932c@@3PADA
 10569338 ??_R0?AVCEnvLaser@@@8
+10569350 $rtti_tail_10569350
 10569354 ??_C@_05PNBN@width?$AA@
 105694a8 ?g_105694a8@@3PAHA
 105694a8 ?g_105694a8@lifted@@3DA
 105694c0 b10101e30/?dataDesc@?1??sub_10101e30@@YAPAHXZ@4PAUtypedescription_t@@A
 10569784 ??_R0?AVCMessage@@@8
+1056979b $rtti_tail_1056979b
 105697a0 ??_C@_0M@HJFK@env_message?$AA@
 105698f8 ?g_105698f8@@3PAHA
 105698f8 ?g_105698f8@lifted@@3DA
@@ -36181,6 +36265,7 @@
 10569a70 ?g_10569a70@@3PADA
 10569b44 ??_C@_0O@EDAF@StartDisabled?$AA@
 10569bcc ??_R0?AVCEnvMicrophone@@@8
+10569be9 $rtti_tail_10569be9
 10569bf0 ??_C@_0P@KDHO@env_microphone?$AA@
 10569c08 ??_C@_0EM@KJOC@EnvMicrophone?5?9?5Measure?5target?5n@
 10569db0 ?g_10569db0@lifted@@3HA
@@ -36284,6 +36369,7 @@
 1056c02c ??_R0?AVCTraceFilter@@@8
 1056c04c ??_R0?AVCTraceFilterSimple@@@8
 1056c074 ??_R0?AVCTraceFilterFVisible@@@8
+1056c097 $rtti_tail_1056c097
 1056c1e8 ?g_1056c1e8@@3PAHA
 1056c1e8 ?g_1056c1e8@lifted@@3DA
 1056c200 b10107760/?dataDesc@?1??sub_10107760@@YAPAHXZ@4PAUtypedescription_t@@A
@@ -36312,21 +36398,27 @@
 1056c5f4 ?g_1056c5f4@lifted@@3HA
 1056c634 ?g_1056c634@lifted@@3DA
 1056ca1c ??_R0?AVCBaseFilter@@@8
+1056ca36 $rtti_tail_1056ca36
 1056ca3c ??_C@_0M@MEKJ@filter_base?$AA@
 1056ca4c ??_C@_06CKKO@OnFail?$AA@
 1056ca54 ??_C@_08PMEO@m_OnFail?$AA@
 1056ca60 ??_R0?AVCFilterMultiple@@@8
 1056ca84 ?g_1056ca84@@3PADA
 1056ca94 ??_R0?AVCFilterName@@@8
+1056caae $rtti_tail_1056caae
 1056cab4 ??_C@_0BG@BOHJ@filter_activator_name?$AA@
 1056cad0 ??_R0?AVCFilterClass@@@8
+1056caeb $rtti_tail_1056caeb
 1056caf0 ??_C@_0BH@MFO@filter_activator_class?$AA@
 1056cb0c ??_R0?AVCFilterMass@@@8
+1056cb26 $rtti_tail_1056cb26
 1056cb2c ??_C@_0BG@IPIP@filter_activator_mass?$AA@
 1056cb48 ??_C@_0DH@OLPD@?$CFs?5cannot?5test?5mass?5of?5?$CFs?0?5it?5is@
 1056cb8c ??_R0?AVCFilterInventory@@@8
+1056cbab $rtti_tail_1056cbab
 1056cbb4 ??_C@_0BL@NDHH@filter_activator_inventory?$AA@
 1056cbd4 ??_R0?AVCFilterFeat@@@8
+1056cbee $rtti_tail_1056cbee
 1056cbf4 ??_C@_0BG@JAKK@filter_activator_feat?$AA@
 1056cd58 ?g_1056cd58@@3PAHA
 1056cd58 ?g_1056cd58@lifted@@3DA
@@ -36401,6 +36493,7 @@
 1056e8ac ?g_1056e8ac@lifted@@3DA
 1056eaa0 ??_C@_04HOGM@mass?$AA@
 1056ebf0 ??_R0?AVCBreakable@@@8
+1056ec09 $rtti_tail_1056ec09
 1056ec10 ??_C@_0P@KFIJ@func_breakable?$AA@
 1056ec24 ??_C@_0BA@BOAN@OnHealthChanged?$AA@
 1056ec38 ??_C@_0BC@JADH@m_OnHealthChanged?$AA@
@@ -36457,8 +36550,10 @@
 1056f814 ??_C@_0CC@JMMC@models?1gibs?1brokenglass_piece?4md@
 1056f83c ??_C@_0BP@NBEE@NULL?5Ent?5in?5CreateWindowPane?$CB?6?$AA@
 1056f864 ??_R0?AVCBreakableSurface@@@8
+1056f884 $rtti_tail_1056f884
 1056f88c ??_C@_0BE@EEBF@func_breakable_surf?$AA@
 1056f8a4 ??_R0?AVCEntityMessageFilter@@@8
+1056f8c7 $rtti_tail_1056f8c7
 1056f8d0 ??_C@_0DJ@HKLO@Rejecting?5func_breakablesurf?4?5?5D@
 1056f918 ??_C@_0EH@FNFO@Rejecting?5func_breakablesurf?4?5?5H@
 1056fabc ?g_1056fabc@@3PBDB
@@ -36497,6 +36592,7 @@
 10570100 ??_C@_0CA@JPBJ@materials?1particle?1sparkles?4vmt?$AA@
 10570128 ??_C@_06MJFB@Frozen?$AA@
 10570130 ??_R0?AVCTEDust@@@8
+10570146 $rtti_tail_10570146
 1057014c ??_C@_07HMIA@CTEDust?$AA@
 10570158 ??_C@_04OHDJ@Dust?$AA@
 10570160 ??_R0?AVCEnvDustPuff@@@8
@@ -36511,6 +36607,7 @@
 105703d8 ??_C@_09HJHO@CFunc_LOD?$AA@
 105703f4 ?g_105703f4@@3PADA
 10570400 ??_R0?AVCFunc_LOD@@@8
+10570418 $rtti_tail_10570418
 1057041c ??_C@_05FLGC@Solid?$AA@
 10570570 ?g_10570570@@3PADA
 1057057c ?g_1057057c@@3PBDB
@@ -36575,6 +36672,7 @@
 105712f0 ??_C@_04KIIB@0?425?$AA@
 105712f8 ??_R0?AVIConCommandBaseAccessor@@@8
 10571328 ??_R0?AVCGameDLL_ConVarAccessor@@@8
+1057134e $rtti_tail_1057134e
 10571358 ??_C@_09KOCP@developer?$AA@
 105714b0 ?g_105714b0@@3PAHA
 105714b0 ?g_105714b0@lifted@@3DA
@@ -36621,6 +36719,7 @@
 10571d68 ??_C@_0BD@OMPM@combat_debug_stats?$AA@
 10571d80 ??_R0?AVIServerGameDLL@@@8
 10571da4 ??_R0?AVCServerGameDLL@@@8
+10571dc1 $rtti_tail_10571dc1
 10571dc8 ??_C@_0BB@NJMC@ServerGameDLL002?$AA@
 10571ddc ??_C@_0P@DLJH@VFileSystem005?$AA@
 10571df0 ??_C@_0BF@PCAG@EngineTraceServer003?$AA@
@@ -36644,22 +36743,28 @@
 10571ff4 ?g_10571ff4@@3PADA
 10572000 ?g_10572000@@3PADA
 10572010 ??_R0?AVISave@@@8
+10572024 $rtti_tail_10572024
 10572028 ??_C@_0BF@MHEP@CServerGameDLL?3?3Save?$AA@
 10572044 ??_R0?AVIRestore@@@8
+1057205b $rtti_tail_1057205b
 10572060 ??_C@_0BI@MFGJ@CServerGameDLL?3?3Restore?$AA@
 1057207c ??_C@_0CL@MGKA@CServerGameDLL?3?3CreateEntityTran@
 105720b0 ??_C@_0CF@EFHI@CServerGameDLL?3?3BuildAdjacentMap@
 105720dc ??_R0?AVIServerGameEnts@@@8
 10572100 ??_R0?AVCServerGameEnts@@@8
+1057211e $rtti_tail_1057211e
 10572124 ??_C@_0BC@LPPM@ServerGameEnts001?$AA@
 1057213c ??_R0?AVIServerGameClients@@@8
 10572164 ??_R0?AVCServerGameClients@@@8
+10572185 $rtti_tail_10572185
 1057218c ??_C@_0BF@FKLG@ServerGameClients002?$AA@
 105721a8 ??_R0?AVCRelieableBroadcastRecipientFilter@@@8
+105721d9 $rtti_tail_105721d9
 105721e4 ??_C@_0BI@DGKA@?9?5?$CFs?5has?5left?5the?5game?6?$AA@
 10572200 ??_C@_0CF@GFFM@CServerGameClients?3?3ClientDiscon@
 1057222c ??_C@_0CD@GLID@?$CC?$CFs?$DM?$CFi?$DO?$CC?5changed?5name?5to?5?$CC?$CFs?$DM?$CFi?$DO@
 10572258 ??_R0?AVCUserCmd@@@8
+1057226f $rtti_tail_1057226f
 10572278 ??_C@_0ED@PGGO@CBasePlayer?3?3ProcessUsercmds?3?5to@
 105722c8 ??_C@_07CAMD@unknown?$AA@
 10572420 ?g_10572420@@3DA
@@ -36672,6 +36777,7 @@
 105724c8 ?g_105724c8@@3PADA
 105724d4 ??_R0?AVIGameMovement@@@8
 105724f8 ??_R0?AVCGameMovement@@@8
+10572514 $rtti_tail_10572514
 1057251c ??_C@_0BP@EGIE@CGameMovement?3?3TracePlayerBBox?$AA@
 10572544 ??_C@_05CCAC@water?$AA@
 1057254c ??_C@_04BGIH@wade?$AA@
@@ -36819,6 +36925,7 @@
 1057521c ??_R0?AVIPositionInterpolator@@@8
 10575248 ??_R0?AVCPositionInterpolator_Linear@@@8
 1057527c ??_R0?AVCPositionInterpolator_CatmullRom@@@8
+105752ab $rtti_tail_105752ab
 105752b4 ??_C@_0BD@PMFP@Catmull?9Rom?5Spline?$AA@
 105752cc ??_R0?AVCBaseRopePhysics@@@8
 105752f4 ??_R0?AV?$CRopePhysics@$09@@@8
@@ -36843,6 +36950,7 @@
 10575a68 ?g_10575a68@lifted@@3DA
 10575a80 b10130c90/?dataDesc@?1??sub_10130c90@@YAPAHXZ@4PAUtypedescription_t@@A
 10575b5c ??_R0?AVCLogicAuto@@@8
+10575b75 $rtti_tail_10575b75
 10575b7c ??_C@_0L@ICFE@logic_auto?$AA@
 10575cd8 ?g_10575cd8@@3PAHA
 10575cd8 ?g_10575cd8@@3Udatamap_t@@A
@@ -36921,6 +37029,7 @@
 105785f8 ??_C@_0DL@EGFO@logic_lineto?5?9?5Source?5not?5found?5@
 10578640 ??_C@_0DL@BKMI@logic_lineto?5?9?5Target?5not?5found?5@
 10578688 ??_R0?AVCMathRemap@@@8
+105786a1 $rtti_tail_105786a1
 105786a8 ??_C@_0L@HMMM@math_remap?$AA@
 105786b8 ??_C@_04DDPK@out2?$AA@
 105786c0 ??_C@_08GCNE@m_flOut2?$AA@
@@ -36931,6 +37040,7 @@
 105786f0 ??_C@_03OJIH@in1?$AA@
 105786f4 ??_C@_09KJKL@m_flInMin?$AA@
 10578700 ??_R0?AVCMathColorBlend@@@8
+1057871e $rtti_tail_1057871e
 10578724 ??_C@_0BA@PPDC@math_colorblend?$AA@
 10578738 ??_C@_08JIEO@colormax?$AA@
 10578744 ??_C@_0M@LAID@m_OutColor2?$AA@
@@ -37010,16 +37120,20 @@
 10578d60 ??_C@_0N@OMGL@OnNotEqualTo?$AA@
 10578d70 ??_C@_0P@KBEI@m_OnNotEqualTo?$AA@
 10578d84 ??_R0?AVCLogicBranch@@@8
+10578d9f $rtti_tail_10578d9f
 10578da4 ??_C@_0N@JICB@logic_branch?$AA@
 10578db4 ??_C@_07MACF@OnFalse?$AA@
 10578dc0 ??_C@_09PCPD@m_OnFalse?$AA@
 10578dcc ??_R0?AVCLogicPythonCheck@@@8
+10578dec $rtti_tail_10578dec
 10578df4 ??_C@_0BC@MAPA@logic_pythoncheck?$AA@
 10578e0c ??_R0?AVCLogicNPCCondition@@@8
+10578e2d $rtti_tail_10578e2d
 10578e34 ??_C@_0BE@JDDN@logic_npc_condition?$AA@
 10578e4c ??_C@_0BO@LKEJ@?$CFs?5has?5invalid?5condition?5?$CFs?$CB?6?$AA@
 10578e70 ??_C@_0CG@GDKM@?$CFs?5was?5unable?5to?5find?5target?5NPC@
 10578ea0 ??_R0?AVCLogicSquadCondition@@@8
+10578ec3 $rtti_tail_10578ec3
 10578ecc ??_C@_0BG@JJB@logic_squad_condition?$AA@
 10578ee8 ??_C@_0CB@JACB@?$CFs?5was?5unable?5to?5find?5squad?3?5?$CFs?6@
 10579058 ?g_10579058@@3PAHA
@@ -37189,6 +37303,7 @@
 1057bb1c ??_C@_09JFAJ@m_isInert?$AA@
 1057bb28 ??_R0?AVCGravControllerPoint@@@8
 1057bb54 ??_R0?AVCWeaponGravityGun@@@8
+1057bb74 $rtti_tail_1057bb74
 1057bb7c ??_C@_0BL@CPHP@hud?1PhysicsHand_Closed?4vmt?$AA@
 1057bb9c ??_C@_0P@MDOI@PhysicsDrag?5?$CFs?$AA@
 1057bbb0 ??_C@_0HN@LOAG@Physics?5object?5drag?5triggering?5s@
@@ -37223,6 +37338,7 @@
 1057c684 ??_R0?AVCRagdollProp@@@8
 1057c684 ?g_1057c684@@3HA
 1057c684 ?g_1057c684@@3PADA
+1057c69f $rtti_tail_1057c69f
 1057c7f0 ?g_1057c7f0@lifted@@3HA
 1057c7f4 ?g_1057c7f4@lifted@@3HA
 1057c834 ?g_1057c834@lifted@@3DA
@@ -37388,6 +37504,7 @@
 105801c8 ??_C@_07FBHA@DEFAULT?$AA@
 105801d4 ??_R0?AVIVPhysicsKeyHandler@@@8
 105801fc ??_R0?AVCSolidSetDefaults@@@8
+1058021c $rtti_tail_1058021c
 10580224 ??_C@_0BC@CFBG@phys_rolling_drag?$AA@
 1058023c ??_C@_08IEBC@contents?$AA@
 10580248 ??_C@_07FMEP@default?$AA@
@@ -37396,6 +37513,7 @@
 1058026c ??_C@_0M@LDB@staticsolid?$AA@
 1058027c ??_R0?AVIPhysicsGameTrace@@@8
 105802a4 ??_R0?AVCPhysicsGameTrace@@@8
+105802c4 $rtti_tail_105802c4
 10580418 ?g_10580418@lifted@@3DA
 10580418 ?g_10580418@lifted@@3HA
 1058041c ?g_1058041c@lifted@@3HA
@@ -37414,6 +37532,7 @@
 105808f0 ??_R0?AVCFuncPlat@@@8
 1058090c ?g_1058090c@@3PADA
 10580918 ??_R0?AVCPlatTrigger@@@8
+10580933 $rtti_tail_10580933
 10580938 ??_C@_0N@DENH@plat_trigger?$AA@
 10580948 ??_C@_0BC@MENN@?$CFs?5Blocked?5by?5?$CFs?6?$AA@
 10580960 ??_R0?AVCFuncPlatRot@@@8
@@ -37600,6 +37719,7 @@
 10585458 ??_R0?AV?$CUtlVectorDataOps@V?$CUtlVector@UEXPERIENCE_ENTRY@@V?$CUtlMemory@UEXPERIENCE_ENTRY@@@@@@$08@@@8
 105854e0 ??_R0?AV?$CUtlVectorDataOps@V?$CUtlVector@UMAP_ACCESS@@V?$CUtlMemory@UMAP_ACCESS@@@@@@$08@@@8
 10585558 ??_R0?AV?$CUtlVectorDataOps@V?$CUtlVector@UGLOBAL_EMAIL@@V?$CUtlMemory@UGLOBAL_EMAIL@@@@@@$08@@@8
+105855bc $rtti_tail_105855bc
 105855d0 ??_C@_0N@PFEF@RemoveCamera?$AA@
 105855e0 ??_C@_0BC@ODLN@InputRemoveCamera?$AA@
 105855f8 ??_C@_07JGDO@Holster?$AA@
@@ -37782,6 +37902,7 @@
 105869a4 ?g_105869a4@@3PADA
 105869b8 ??_R0?AVCItemGKeyring@@@8
 105869b8 ?g_105869b8@@3PADA
+105869d4 $rtti_tail_105869d4
 105869dc ??_C@_0DO@JPKP@character?1monster?1Animalism_Beas@
 10586a28 ??_C@_0DC@CFOG@PutClientInServer?3?5no?5info_playe@
 10586a64 ??_C@_0BB@HJAP@info_player_coop?$AA@
@@ -37865,9 +37986,11 @@
 105873d4 ??_C@_0BD@NACB@player?1sprayer?4wav?$AA@
 105873ec ??_C@_0BM@PIHH@NULL?5Ent?5in?5GiveNamedItem?$CB?6?$AA@
 10587410 ??_R0?AVCSprayCan@@@8
+10587428 $rtti_tail_10587428
 1058742c ??_C@_08GKCI@spraycan?$AA@
 10587438 ??_C@_04OKCJ@Logo?$AA@
 10587440 ??_R0?AVCBloodSplat@@@8
+1058745a $rtti_tail_1058745a
 10587460 ??_C@_0L@OGAN@bloodsplat?$AA@
 10587470 ??_C@_0BC@IDJE@node_viewer_human?$AA@
 10587488 ??_C@_0BC@BACI@node_viewer_large?$AA@
@@ -38099,6 +38222,7 @@
 10588ed0 ??_C@_0CN@HFDL@CBasePlayer?3?3Inventory_AddLooseK@
 10589050 ?g_10589050@@3IA
 10589098 ??_R0?AVCPlayerMove@@@8
+105890b2 $rtti_tail_105890b2
 105890b8 ??_C@_0BK@DDJI@CPlayerMove?3?3StartCommand?$AA@
 105890d8 ??_C@_0BL@DLHJ@CPlayerMove?3?3FinishCommand?$AA@
 105890f8 ??_C@_0BH@KKPC@CPlayerMove?3?3SetupMove?$AA@
@@ -38115,9 +38239,11 @@
 10589340 ??_C@_0BA@CJFL@sv_unlagsamples?$AA@
 10589354 ??_R0?AVILagCompensationManager@@@8
 10589384 ??_R0?AVCLagCompensationManager@@@8
+105893aa $rtti_tail_105893aa
 10589544 ??_R0?AVIPlayerPickupVPhysics@@@8
 10589544 ?g_10589544@@3HA
 10589544 ?g_10589544@@3PADA
+10589568 $rtti_tail_10589568
 105896bc ?g_105896bc@@3PBDB
 105896c0 ?g_105896c0@lifted@@3DA
 105896c0 ?g_105896c0@lifted@@3HA
@@ -38351,6 +38477,7 @@
 1058eda8 ??_C@_0BJ@NDBB@CBreakablePropBreakThink?$AA@
 1058edc8 ??_R0?AVCBreakableProp@@@8
 1058edc8 ?g_1058edc8@@3PADA
+1058ede5 $rtti_tail_1058ede5
 1058edec ??_C@_0DA@JGKM@?6?$CK?$CK?$CK?$CK?5HACK?5DESTRUCTABLE?5PROP?5HEA@
 1058ee28 ??_C@_0CP@FCKO@?6Setting?5entity?5?$CF?94d?8s?5health?5to@
 1058ee60 ??_C@_0CP@DKPF@?6?$CK?$CK?$CK?$CK?5HACK?5DESTRUCTABLE?5PROP?5HEA@
@@ -38374,9 +38501,11 @@
 1058f07c ??_C@_0N@EOFO@physics_prop?$AA@
 1058f08c ??_C@_0CM@IJHJ@ERROR?$CB?3?5Can?8t?5create?5physics?5obj@
 1058f0c0 ??_R0?AVCBreakModelsPrecached@@@8
+1058f0e4 $rtti_tail_1058f0e4
 1058f0ec ??_C@_0DK@DFJH@WARNING?3?5?5Empty?5model?5name?5in?5Pr@
 1058f134 ??_C@_0DI@LMBI@?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK?$CK@
 1058f178 ??_R0?AVCBreakParser@@@8
+1058f193 $rtti_tail_1058f193
 1058f198 ??_C@_05EELJ@break?$AA@
 1058f1a0 ??_C@_09IKAA@bodyindex?$AA@
 1058f1ac ??_C@_08KCA@fadetime?$AA@
@@ -38529,6 +38658,7 @@
 10591818 ?g_10591818@@3PADA
 10591898 ?g_10591898@@3PADA
 105918c0 ??_R0?AVPyServerSystem@@@8
+105918dd $rtti_tail_105918dd
 105918e4 ??_C@_0CG@OIAP@Error?5while?5adding?5level?5script?5@
 10591914 ??_C@_02FEMI@?$CC?$CJ?$AA@
 10591918 ??_C@_0N@NDBH@?1python?1lib?1?$AA@
@@ -38557,6 +38687,7 @@
 10591b30 ??_C@_0N@DMOH@gcleardialog?$AA@
 10591b40 ??_C@_0BP@NFOI@Resets?5all?5dialog?5state?5flags?4?$AA@
 10591b68 ??_R0?AVCPython_SaveRestoreBlockHandler@@@8
+10591b96 $rtti_tail_10591b96
 10591ba0 ??_C@_07MNLK@cPickle?$AA@
 10591bac ??_C@_04EPCF@dump?$AA@
 10591bb4 ??_C@_04JMJF@load?$AA@
@@ -38600,6 +38731,7 @@
 105928f4 ??_C@_0BD@MGBJ@m_iStartAttachment?$AA@
 1059290c ??_R0?AVCRopeKeyframe@@@8
 1059290c ?g_1059290c@@3PADA
+10592928 $rtti_tail_10592928
 10592930 ??_C@_0L@BGAC@RopeShader?$AA@
 10592940 ??_C@_08EIME@Dangling?$AA@
 1059294c ??_C@_06CAJ@Barbed?$AA@
@@ -38625,6 +38757,7 @@
 10592db0 ?g_10592db0@@3PAUIUnk10592db0@@A
 10592f30 ??_C@_0BM@EHFG@Failed?5to?5find?5function?5?$CFs?6?$AA@
 10592f54 ??_R0?AVCSave@@@8
+10592f68 $rtti_tail_10592f68
 10592f6c ??_C@_0BA@JAEO@Bad?5field?5type?6?$AA@
 10592f80 ??_C@_0DF@KPCM@CSave?3?3WriteHeader?$CI?$CJ?5size?5parame@
 10592fc0 ??_C@_0DE@BNLH@CSaveRestoreBuffer?3?3TokenHash?$CI?$CJ?5@
@@ -38649,8 +38782,10 @@
 10593204 ??_C@_0CP@GCKO@Entity?5with?5data?5saved?0?5but?5with@
 1059323c ??_R0?AVISaveRestoreBlockSet@@@8
 10593268 ??_R0?AVCSaveRestoreBlockSet@@@8
+1059328b $rtti_tail_1059328b
 10593294 ??_C@_04EKBK@Game?$AA@
 105932a0 ??_R0?AV?$CUtlVectorDataOps@V?$CUtlVector@USaveRestoreBlockHeader_t@@V?$CUtlMemory@USaveRestoreBlockHeader_t@@@@@@$08@@@8
+1059331c $rtti_tail_1059331c
 105934c4 ??_C@_0BH@DPBM@Bad?5field?5in?5entity?$CB?$CB?6?$AA@
 10593628 ?g_10593628@@3PADA
 10593628 ?g_10593628@@3PAHA
@@ -38739,6 +38874,7 @@
 105952cc ??_C@_0O@LCLG@OnEndSentence?$AA@
 105952dc ??_C@_0BA@OBPL@m_OnEndSentence?$AA@
 105952f0 ??_R0?AVCScriptedSentence@@@8
+10595310 $rtti_tail_10595310
 10595318 ??_C@_0BC@MFEK@scripted_sentence?$AA@
 10595330 ??_C@_0BF@DMEC@Playing?5sentence?5?$CFs?6?$AA@
 1059534c ??_C@_0BJ@HIOH@Not?5Playing?5sentence?5?$CFs?6?$AA@
@@ -38761,6 +38897,7 @@
 10595a14 ?g_10595a14@lifted@@3HA
 10595a54 ?g_10595a54@lifted@@3DA
 10595da4 ??_R0?AVCSingleplayRules@@@8
+10595dc3 $rtti_tail_10595dc3
 10595f18 ?g_10595f18@@3PAUdynpitchvol_t@@A
 105969a4 ?g_105969a4@lifted@@3DA
 105969a4 ?g_105969a4@lifted@@3HA
@@ -38777,6 +38914,7 @@
 105974a4 ??_C@_06FAOG@preset?$AA@
 105977cc ?g_105977cc@@3PADA
 105977e0 ??_R0?AVCAmbientGeneric@@@8
+105977fe $rtti_tail_105977fe
 10597804 ??_C@_0BO@HCGM@EMPTY?5AMBIENT?5AT?3?5?$CFf?0?5?$CFf?0?5?$CFf?6?$AA@
 10597828 ??_C@_0CJ@LBLA@?$CFs?5has?5an?5invalid?5sound?5event?5le@
 1059785c ??_C@_0CL@MLMK@?$CFs?5has?5invalid?5NPC?5sound?5event?5p@
@@ -38789,6 +38927,7 @@
 105978dc ??_C@_08EIAJ@spindown?$AA@
 105978e8 ??_C@_0L@KOLG@pitchstart?$AA@
 105978f8 ??_R0?AVCSoundscapeSystem@@@8
+10597918 $rtti_tail_10597918
 10597920 ??_C@_0BI@PBOC@scripts?1soundscapes?4txt?$AA@
 1059793c ??_C@_0M@MAII@soundscapes?$AA@
 1059794c ??_R0?AVCEnvSoundscape@@@8
@@ -38836,6 +38975,7 @@
 10598670 ??_C@_0GC@LKFC@Show?5all?5EmitSound?5calls?5includi@
 105986e8 ??_R0?AVCSoundEmitterSystemBase@@@8
 10598718 ??_R0?AVCSoundEmitterSystem@@@8
+1059873a $rtti_tail_1059873a
 10598740 ??_C@_04FOJC@?$CIsv?$CJ?$AA@
 10598748 ??_C@_0GC@KLAI@CSoundEmitterSystem?3?5?5sounds?4txt@
 105987c0 ??_C@_0BG@PDJO@sv_soundemitter_flush?$AA@
@@ -38952,6 +39092,7 @@
 10599f4c ?g_10599f4c@lifted@@3HA
 10599f8c ?g_10599f8c@lifted@@3DA
 1059a1ec ??_R0?AVCSoundEnt@@@8
+1059a204 $rtti_tail_1059a204
 1059a208 ??_C@_0BK@MMMA@deaf?5zone?5min?5depth?3?5?$CF?42f?$AA@
 1059a228 ??_C@_0BK@OBPO@Soundlist?3?5?$CFd?5?1?5?$CFd?5?5?$CI?$CFd?$CJ?6?$AA@
 1059a248 ??_C@_0DM@EJF@Freeing?5sound?5id?$CI?$CFd?$CJ?5type?$CI?$CFd?$CJ?5ow@
@@ -38994,12 +39135,14 @@
 1059aa54 ?g_1059aa54@lifted@@3DA
 1059acb4 ??_C@_07EGME@m_flags?$AA@
 1059ad98 ??_R0?AV?$CUtlVectorDataOps@V?$CUtlVector@HV?$CUtlMemory@H@@@@$03@@@8
+1059ade0 $rtti_tail_1059ade0
 1059adf0 ??_C@_0ED@DDPC@CSoundPatch?3?3Update?3?5?5Removing?5C@
 1059ae40 ??_R0?AVCCopyRecipientFilter@@@8
 1059ae6c ??_C@_0DN@EPKP@Invalid?5starting?5duration?5value?5@
 1059aeb8 ??_C@_0DP@LMCN@Invalid?5starting?5amplitude?5value@
 1059af04 ??_R0?AVCSoundEnvelopeController@@@8
 1059af34 ??_R0?AVCSoundControllerImp@@@8
+1059af56 $rtti_tail_1059af56
 1059b0ec ??_C@_0BN@BHLM@CStealthKillRules?3?3InitTable?$AA@
 1059b110 ??_C@_0BO@NPPM@CStealthKillRules?3?3FlushTable?$AA@
 1059b134 ??_C@_0BO@KJGL@CStealthKillRules?3?3FindVictim?$AA@
@@ -39071,6 +39214,7 @@
 1059c870 ??_C@_04GMDM@CSun?$AA@
 1059c880 ?g_1059c880@@3PADA
 1059c88c ??_R0?AVCSun@@@8
+1059c89f $rtti_tail_1059c89f
 1059cb80 ?g_1059cb80@@3PADA
 1059cb88 ?g_1059cb88@@3HA
 1059cb88 ?g_1059cb88@@3PAVSendTable@@A
@@ -39157,6 +39301,7 @@
 1059f664 ??_C@_0BA@BOHP@State?3?5Disabled?$AA@
 1059f678 ??_C@_0P@JNJD@State?3?5Enabled?$AA@
 1059f690 ??_R0?AV?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCBaseEntity@@@@V?$CUtlMemory@V?$CHandle@VCBaseEntity@@@@@@@@$0M@@@@8
+1059f70d $rtti_tail_1059f70d
 1059f728 ??_C@_0N@DGKD@OnHurtPlayer?$AA@
 1059f738 ??_C@_0P@HLIA@m_OnHurtPlayer?$AA@
 1059f74c ??_C@_06KPCI@OnHurt?$AA@
@@ -39248,6 +39393,7 @@
 105a024c ??_R0?AVCTraceFilterEntity@@@8
 105a0274 ??_R0?AVCTraceFilterEntityIgnoreOther@@@8
 105a02a8 ??_R0?AVCTracePassFilter@@@8
+105a02c7 $rtti_tail_105a02c7
 105a02d0 ??_C@_0BE@JPKK@backwards?5mins?1maxs?$AA@
 105a02e8 ??_C@_0CG@LPK@UTIL_SetModel?5passed?5a?5va?5string@
 105a0318 ??_C@_0BB@ONOI@no?5precache?3?5?$CFs?6?$AA@
@@ -39263,10 +39409,12 @@
 105a040c ??_C@_01PJCK@?4?$AA@
 105a0410 ??_C@_02OOND@?4?4?$AA@
 105a0414 ??_R0?AVCCheckClient@@@8
+105a042f $rtti_tail_105a042f
 105a0434 ??_C@_0BO@HJMN@Unable?5to?5point?5at?5entity?5?$CFs?6?$AA@
 105a05e4 ??_C@_0BC@BHEH@r_visualizetraces?$AA@
 105a05fc ??_C@_0CE@KABN@CTraceFilterSimple?3?3ShouldHitEnt@
 105a0628 ??_R0?AVCTraceFilterSimpleList@@@8
+105a064d $rtti_tail_105a064d
 105a07e4 ??_C@_0BG@OIMI@NpcFakeReloadCountMax?$AA@
 105a0800 ??_C@_0BG@LJO@NpcFakeReloadCountMin?$AA@
 105a081c ??_C@_0BC@EBOP@HeavyFootfallDist?$AA@
@@ -39451,6 +39599,7 @@
 105a1e30 ??_R0?AVCDisciplineProjectile@@@8
 105a1e30 ?g_105a1e30@@3PADA
 105a1e5c ??_R0?AVCDisciplineProjectileTraceFilter@@@8
+105a1e8b $rtti_tail_105a1e8b
 105a1e94 ??_C@_0CJ@NFOH@CDisciplineProjectile?3?3PhysicsPu@
 105a1ec8 ??_C@_0N@NOI@CharTemplate?$AA@
 105a1ed8 ??_C@_0BA@OGHA@Affects_Filters?$AA@
@@ -39652,6 +39801,7 @@
 105a33fc ??_C@_0DF@PEON@Set?5?$DO?50?5to?5override?5dice?5rolled?5@
 105a343c ??_R0?AV?$VSupportList_t@VCVFeat@@@@@8
 105a3470 ??_R0?AVCVFeatList_t@@@8
+105a348b $rtti_tail_105a348b
 105a3490 ??_C@_0BL@DFKE@Unable?5to?5load?5VFeat?5data?6?$AA@
 105a34b0 ??_C@_08FGLH@Disabled?$AA@
 105a34bc ??_C@_08JMDA@HelpText?$AA@
@@ -39955,6 +40105,7 @@
 105a5f28 ?g_105a5f28@@3HA
 105a5f28 ?g_105a5f28@@3PADA
 105a5f28 ?g_105a5f28@@3PAHA
+105a5f41 $rtti_tail_105a5f41
 105a5f48 ??_C@_0DJ@OKBK@ERROR?3?5parsing?5KeyValue?5in?5file?5@
 105a5f8c ??_C@_06NEML@?$CINULL?$CJ?$AA@
 105a6124 ??_C@_06CDIJ@sound?2?$AA@
@@ -40294,6 +40445,7 @@
 105a8e00 ??_C@_02ILEO@m_?$AA@
 105a8e04 ??_C@_02FOF@f_?$AA@
 105a8e08 ??_R0?AVCTraitDependencyDataDescSaveDataOps@@@8
+105a8e3a $rtti_tail_105a8e3a
 105a8fd4 ??_C@_0L@ECLA@?$DMFunction?$DO?$AA@
 105a8fe4 ??_R0?AVCVTraitSubDependency_t@@@8
 105a9010 ??_R0?AVCVTraitDependencyValue_t@@@8
@@ -40525,6 +40677,7 @@
 105ae700 ??_C@_0BJ@OAKL@?$CFs?5searching?5too?5long?$CB?$CB?6?$AA@
 105ae720 ?g_105ae720@@3PADA
 105ae744 ??_R0?AVCTriggerPlayerActivityLevel@@@8
+105ae76e $rtti_tail_105ae76e
 105ae778 ??_C@_0CG@MPBP@CTriggerPlayerActivityLevel?3?3Tou@
 105ae7a8 ??_C@_0CJ@BOMI@CTriggerPlayerActivityLevel?3?3End@
 105ae7dc ?g_105ae7dc@@3PADA
@@ -40548,6 +40701,7 @@
 105ae934 ??_C@_0BI@EGEH@CPropSign?3?3LoadSignData?$AA@
 105ae950 ?g_105ae950@@3PADA
 105ae95c ??_R0?AVCGameSign@@@8
+105ae974 $rtti_tail_105ae974
 105ae978 ??_C@_0BI@DOKI@CGameSign?3?3LoadSignData?$AA@
 105ae994 ?g_105ae994@@3PADA
 105ae9a4 ??_C@_0L@MEGH@OnEndShake?$AA@
@@ -40867,6 +41021,7 @@
 105b1f14 ??_R0?AVCMoverKeyFrame@@@8
 105b1f14 ?g_105b1f14@@3HA
 105b1f14 ?g_105b1f14@@3PADA
+105b1f31 $rtti_tail_105b1f31
 105b1f38 ??_C@_0P@LDBF@mover_keyframe?$AA@
 105b1f4c ??_C@_0BD@FEFA@OnReachedBeginning?$AA@
 105b1f64 ??_C@_0BF@OJAF@m_OnReachedBeginning?$AA@
@@ -40895,12 +41050,14 @@
 105b2630 ??_R0?AVCBaseLockableEnt@@@8
 105b2630 ?g_105b2630@@3PADA
 105b2658 ??_R0?AVCPropDoorknob@@@8
+105b2674 $rtti_tail_105b2674
 105b267c ??_C@_0BA@HHCB@handle_unlocked?$AA@
 105b2690 ??_C@_0O@PLCG@handle_locked?$AA@
 105b26a0 ?g_105b26a0@@3PADA
 105b26b0 ??_R0?AVCPropPadlock@@@8
 105b26d0 ?g_105b26d0@@3PADA
 105b26f0 ??_R0?AVCPropDoorknobElectronic@@@8
+105b2716 $rtti_tail_105b2716
 105b2720 ??_C@_0BE@HGAC@item_container_lock?$AA@
 105b2738 ??_C@_0DE@PJAL@?$CFs?5attached?5to?5non?9existent?5cont@
 105b28c0 ?g_105b28c0@@3PAHA
@@ -40956,6 +41113,7 @@
 105b3ba0 ??_C@_0BG@BEIJ@npc_VPlayerController?$AA@
 105b3ba0 ?g_105b3ba0@@3PADA
 105b3bbc ??_R0?AVCPlayerEventsManager@@@8
+105b3bdf $rtti_tail_105b3bdf
 105b3f04 ??_C@_0M@JNPM@?$CFs?$CFs?$CF3d?4txt?$AA@
 105b3f14 ??_C@_08GLGO@PreCache?$AA@
 105b3f20 ??_C@_0N@BPLN@PreCacheData?$AA@
@@ -40971,6 +41129,7 @@
 105b4464 ??_C@_0BO@EJPC@soundscheme_combat_music_time?$AA@
 105b4488 ??_C@_02FCAK@15?$AA@
 105b448c ??_R0?AVCSoundSchemeManager@@@8
+105b44ae $rtti_tail_105b44ae
 105b44b8 ??_C@_0EH@OMKG@Random?5Sound?3?5?$CFs?5Vol?3?5?$CF?42f?5Radiu@
 105b4510 ??_C@_0BP@OEAB@Random?5Tracks?3?5?$CFd?7?9?9?9?9?9?9?9?9?9?9?9?9?$AA@
 105b4538 ??_C@_0DB@DNGC@Loop?5Track?5?$CFd?3?5?$CFs?5?5vol?3?$CF?42f?5?5cha@
@@ -41038,6 +41197,7 @@
 105b4b60 ??_C@_0CG@CJEI@Shows?5what?5sound?5schemes?5are?5pla@
 105b4cd8 ?g_105b4cd8@@3PAVISaveRestoreOps@@A
 105b4d20 ??_R0?AVCTraitEffectsListSaveDataOps@@@8
+105b4d4b $rtti_tail_105b4d4b
 105b4ee4 ??_C@_0BA@DNHK@sp_masquerade_1?$AA@
 105b4ef8 ??_C@_0O@JEFK@masq_landmark?$AA@
 105b4f08 ??_C@_0BL@KNPJ@__main__?4G?4Story_State?$DN666?$AA@
@@ -41057,6 +41217,7 @@
 105b5128 ??_C@_0BM@NNEF@Forced?5Soak?5Value?5To?3?5?$CI?$CFd?$CJ?6?$AA@
 105b5150 ??_C@_0EK@HJCI@Changing?5lethal?5firearm?5damage?5t@
 105b5664 ??_R0?AVCTeamManager@@@8
+105b567f $rtti_tail_105b567f
 105b5960 ?g_105b5960@lifted@@3DA
 105b5960 ?g_105b5960@lifted@@3HA
 105b5964 ?g_105b5964@lifted@@3HA
@@ -41268,6 +41429,7 @@
 105c3f88 ??_R0?AVCDecal@@@8
 105c3fa4 ?g_105c3fa4@@3QBDB
 105c3fb0 ??_R0?AVCTraceFilterValidForDecal@CDecal@@@8
+105c3fdf $rtti_tail_105c3fdf
 105c3fe8 ??_C@_0BF@OCBD@Can?8t?5find?5decal?5?$CFs?6?$AA@
 105c4004 ??_C@_0M@EGFJ@m_WorldMaxs?$AA@
 105c4014 ??_C@_0M@MLLK@m_WorldMins?$AA@
@@ -41283,6 +41445,7 @@
 105c413c ??_C@_0L@EFJO@sv_skyname?$AA@
 105c414c ??_C@_07GDOK@skyname?$AA@
 105c4158 ??_R0?AVCWorld@@@8
+105c416d $rtti_tail_105c416d
 105c4174 ??_C@_0BE@BJBO@sound?1Surfaces?1Wood?$AA@
 105c418c ??_C@_0BF@LCFF@sound?1Surfaces?1Water?$AA@
 105c41a8 ??_C@_0BE@EBOA@sound?1Surfaces?1Wade?$AA@
@@ -41377,6 +41540,7 @@
 105c4bbc ??_C@_0N@IODO@OnCopsComing?$AA@
 105c4bcc ??_C@_0P@MDBN@m_OnCopsComing?$AA@
 105c4be0 ??_R0?AVCWorldEvents@@@8
+105c4bfb $rtti_tail_105c4bfb
 105c4c00 ??_C@_0CN@GGI@More?5than?5one?5worldevents?5entity@
 105c4c38 ??_C@_0DE@JPOA@CSActs?3?5?5?5?5?$CF6?41f?5?9?5Setting?5World@
 105c4c78 ??_C@_07FBPG@elysium?$AA@
@@ -41400,6 +41564,7 @@
 105c4ea0 ??_R0?AVConCommand@@@8
 105c4ec0 ??_R0?AVConVar@@@8
 105c4edc ??_R0?AVSendProp@@@8
+105c4ef3 $rtti_tail_105c4ef3
 105c4ef8 ??_C@_06PFHK@?$HL?$HN?$CI?$CJ?8?3?$AA@
 105c4f00 ?g_105c4f00@@3PADA
 105c5260 ??_C@_0P@FJIJ@measure_resort?$AA@
@@ -41426,6 +41591,7 @@
 105c562c ??_C@_0BG@MANB@items?1weapondrop1?4wav?$AA@
 105c5648 ??_C@_0BI@FCIG@items?1suitchargeok1?4wav?$AA@
 105c5664 ??_R0?AVCWeaponList@@@8
+105c567e $rtti_tail_105c567e
 105c57d0 ?g_105c57d0@@3HA
 105c5ba0 ?g_105c5ba0@@3PAXA
 105c5bb8 ?g_105c5bb8@@3PADA
@@ -41500,6 +41666,7 @@
 105c70ec ??_C@_0BE@PGCO@MeleeHit?5?$CFs?5with?5?$CFs?$AA@
 105c7108 ??_C@_0FB@DOML@Total?5Lethality?5for?5?$CFs?3?5Base?5Let@
 105c72fc ??_R0?AVCThrownGrenade@@@8
+105c7319 $rtti_tail_105c7319
 105c7320 ??_C@_0CH@IFMM@NULL?5Ent?5in?5UTIL_PrecacheOtherGr@
 105c7498 ?g_105c7498@@3PAUCacheEntry@@A
 105c749c ?g_105c749c@@3PAUWeaponSoundNameEntry@@A
@@ -41780,6 +41947,7 @@
 105cba04 ??_C@_0CB@GLIE@Too?5many?5entities?5in?5dodge?5list?4@
 105cba2c ??_C@_0BL@HIGM@Invalid?5dodge?5list?5number?4?$AA@
 105cba4c ??_R0?AVCNPC_VBach@@@8
+105cba65 $rtti_tail_105cba65
 105cba6c ??_C@_0M@KEHM@muzzleflash?$AA@
 105cba80 ??_C@_0EB@KKNN@Starting?5Ranged?5Attack?5Damage?5Ca@
 105cbad0 ??_C@_0GC@CADA@Final?5damage?3?5?5Lethality?5that?5we@
@@ -41792,6 +41960,7 @@
 105cbc78 ??_C@_0BE@MMMF@?$CFs?5can?8t?5assess?5?$CFs?6?$AA@
 105cbc90 ??_C@_0DH@ONCI@?$CK?$CKERROR?3?5Monster?5?$CFs?5hearing?5soun@
 105cbcd4 ??_R0?AVCBaseGrenade@@@8
+105cbcef $rtti_tail_105cbcef
 105cbcf4 ??_C@_0CI@PPDH@Warning?3?5NULL?5Return?5from?5GetBes@
 105cbd24 ??_C@_0CI@EBAA@Warning?3?5NULL?5Return?5from?5GetBes@
 105cbd54 ??_C@_0BM@MMOM@CAI_BaseNPC_PerformMovement?$AA@
@@ -41826,6 +41995,7 @@
 105cc074 ??_C@_0BG@IEFL@debug_sound_occlusion?$AA@
 105cc090 ??_C@_0EG@KJLC@Set?5this?5to?51?5to?5allow?5certain?5o@
 105cc0e4 ??_R0?AVCTraceFilterSoundOcclude@@@8
+105cc10b $rtti_tail_105cc10b
 105cc114 ??_C@_0CL@CPMC@CAI_BaseNPC_GatherEnemyCondition@
 105cc148 ??_C@_0CK@BEBL@CAI_BaseNPC_GatherEnemyCondition@
 105cc17c ??_C@_0CC@CLNG@CAI_BaseNPC_GatherEnemyCondition@
@@ -41931,6 +42101,7 @@
 105cccc4 ??_C@_0BN@DAON@DropItem?$CI?$CJ?5?9?5Didn?8t?5create?$CB?6?$AA@
 105ccce8 ??_C@_0BM@OMMM@DropItem?$CI?$CJ?5?9?5No?5item?5name?$CB?6?$AA@
 105ccd10 ??_R0?AV?$CUtlVectorDataOps@V?$CUtlVector@UUnreachableEnt_t@@V?$CUtlMemory@UUnreachableEnt_t@@@@@@$08@@@8
+105ccd7c $rtti_tail_105ccd7c
 105ccd94 ??_C@_0BI@ELED@CAI_BaseNPCNPCInitThink?$AA@
 105ccdb0 ??_C@_0BL@BEAG@CAI_BaseNPCCorpseFallThink?$AA@
 105ccdd0 ??_C@_0BE@KDBA@CAI_BaseNPCNPCThink?$AA@
@@ -41997,6 +42168,7 @@
 105cd2d8 ??_R0?AVCAI_Senses@@@8
 105cd2f8 ??_R0?AVCAI_MoveProbe@@@8
 105cd31c ??_R0?AVCAI_Pathfinder@@@8
+105cd339 $rtti_tail_105cd339
 105cd340 ??_C@_0CA@HNKC@CAI_BaseNPC?3?3OverrideMoveFacing?$AA@
 105cd368 ??_C@_0BK@PHKF@CAI_BaseNPC?3?3OverrideMove?$AA@
 105cd388 ??_C@_09BLIO@?$DMunnamed?$DO?$AA@
@@ -42569,6 +42741,7 @@
 105d8440 ??_C@_0BB@BKK@debug_force_anim?$AA@
 105d8458 ??_C@_0EM@DCAN@Set?5to?51?5to?5force?5walk?5anims?5to?5@
 105d84b4 ??_R0?AVCAI_NPCPatrolPathSaveRestoreOps@@@8
+105d84e2 $rtti_tail_105d84e2
 105d84ec ??_C@_0CO@DBFP@Invalid?5game?5state?5while?5trying?5@
 105d8524 ??_C@_0L@BHPF@PatrolPath?$AA@
 105d8534 ??_C@_0CF@IDJC@Error?5restoring?5PatrolPath?5for?5N@
@@ -42780,6 +42953,7 @@
 105da300 ??_C@_0BO@EAHJ@Invalid?5event?5expression?3?5?$CFd?6?$AA@
 105da324 ??_R0?AVCWeaponMelee@@@8
 105da324 ?g_105da324@@3PADA
+105da33f $rtti_tail_105da33f
 105da344 ??_C@_0CE@NEFP@GetDirectedPathToEnemyLKP?5failed@
 105da370 ??_C@_0BN@PICE@?$CFs?5can?8t?5reach?5patrol?5point?6?$AA@
 105da394 ??_C@_0BP@KCKG@GetPathToBestUnknown?5failed?$CB?$CB?6?$AA@
@@ -43447,6 +43621,7 @@
 10603210 ??_C@_0M@OPHD@?$CFs?5?$CFf?5?$CFs?5?$CFs?$AA@
 10603220 ??_C@_08PCJC@Criminal?$AA@
 1060322c ??_R0?AVCAI_CsActList@@@8
+10603248 $rtti_tail_10603248
 10603250 ??_C@_05OANB@CSAct?$AA@
 10603258 ??_C@_0BI@OHHB@Error?5restoring?5CSAct?4?6?$AA@
 10603278 ??_C@_0GL@ONOA@CSActs?3?5?5?5?5?$CF6?41f?5?9?5External?5?$CFs?5a@
@@ -43584,6 +43759,7 @@
 10608830 ??_C@_0L@HJGP@IDLE_STAND?$AA@
 10608840 ??_C@_0DE@DHJF@GetScheduleOfType?$CI?$CJ?3?5No?5CASE?5for@
 10608880 ??_R0?AVCAI_SystemHook@@@8
+1060889d $rtti_tail_1060889d
 106089f0 ?g_106089f0@lifted@@3HA
 106089f4 ?g_106089f4@lifted@@3HA
 10608a34 ?g_10608a34@lifted@@3DA
@@ -43606,6 +43782,7 @@
 10609400 b102ccfb0/?dataDesc@?1??sub_102ccfb0@@YAPAHXZ@4PAUtypedescription_t@@A
 1060976c ??_C@_04CHAJ@Goal?$AA@
 106097b0 ??_R0?AV?$CUtlVectorDataOps@V?$CUtlVector@V?$CHandle@VCAI_BaseNPC@@@@V?$CUtlMemory@V?$CHandle@VCAI_BaseNPC@@@@@@@@$0M@@@@8
+1060982d $rtti_tail_1060982d
 10609848 ??_C@_0N@BLMP@UpdateActors?$AA@
 10609858 ??_C@_0BC@NDH@InputUpdateActors?$AA@
 10609870 ??_C@_0BN@GDAN@CAI_GoalEntityDelayedRefresh?$AA@
@@ -43772,11 +43949,13 @@
 1060c2c0 ?g_1060c2c0@lifted@@3DA
 1060c2d8 b102db850/?dataDesc@?1??sub_102db850@@YAPAHXZ@4PAUtypedescription_t@@A
 1060cd94 ??_R0?AVCAI_InterestingPlaceMarkersSaveRestoreOps@@@8
+1060cdcc $rtti_tail_1060cdcc
 1060cdd8 ??_C@_0FH@LEBK@Warning?3?5?5Possible?5speed?5issues?5@
 1060ce40 ?g_1060ce40@@3PADA
 1060ce54 ??_C@_09BHLE@OnNPCLeft?$AA@
 1060ce60 ??_C@_0M@CMJJ@m_OnNPCLeft?$AA@
 1060ce70 ??_R0?AVCAI_InterestingPlace@@@8
+1060ce93 $rtti_tail_1060ce93
 1060ce9c ??_C@_0CO@JHKA@Could?5not?5find?5InterestingPlaceT@
 1060ced8 ??_C@_0FK@OFPG@Interesting?5Place?5at?5?$CI?$CFd?0?5?$CFd?0?5?$CFd@
 1060cf48 ??_C@_0FC@NJNM@Trouble?5choosing?5an?5unoccupied?5l@
@@ -43799,6 +43978,7 @@
 1060d1bc ??_C@_0M@BJCF@OnNewTalker?$AA@
 1060d1cc ??_C@_0O@DKJN@m_OnNewTalker?$AA@
 1060d1dc ??_R0?AVCAI_InterestingPlaceConverstation@@@8
+1060d20c $rtti_tail_1060d20c
 1060d218 ??_C@_0BO@MFNP@?$CFs?5has?5an?5invalid?5sound?5file?6?$AA@
 1060d240 ??_C@_0FH@GHNJ@?$CFs?$CI?$CFs?$CJ?5is?5not?5a?5valid?5target?5for@
 1060d2a8 ??_C@_0BO@OCHM@?$CFs?5could?5not?5play?5sound?5file?6?$AA@
@@ -43835,6 +44015,7 @@
 1060de88 ?g_1060de88@lifted@@3HA
 1060decc ?g_1060decc@lifted@@3DA
 1060e138 ??_R0?AVCAI_MemoryListSaveRestoreOps@@@8
+1060e163 $rtti_tail_1060e163
 1060e16c ??_C@_0BL@IIIH@CAI_Memory_RefreshMemories?$AA@
 1060e18c ??_C@_0BM@OLBE@CAI_Memory?3?3RefreshMemories?$AA@
 1060e1b0 ??_C@_0DJ@EHGE@Asking?5MarkAsEluded?5for?5enemy?5th@
@@ -43849,6 +44030,7 @@
 1060e520 b102e0860/?dataDesc@?1??sub_102e0860@@YAPAHXZ@4PAUtypedescription_t@@A
 1060e654 ?g_1060e654@@3PAHA
 1060e74c ??_R0?AV?$CUtlVectorDataOps@VCAI_InterestTarget@@$08@@@8
+1060e787 $rtti_tail_1060e787
 1060e794 ??_C@_0BM@KOGL@CAI_Motor_MoveNormalExecute?$AA@
 1060e900 ?g_1060e900@lifted@@3HA
 1060e904 ?g_1060e904@lifted@@3HA
@@ -43893,6 +44075,7 @@
 1060f764 ??_C@_0BO@NMGE@ERROR?3?5Bad?5?$CFs?5LOCALID?5for?5?$CFs?6?$AA@
 1060f788 ??_C@_0DA@CNBB@ERROR?3?5Adding?5symbol?5to?5uninitia@
 1060f954 ??_R0?AVCNavPropertyDatabase@@@8
+1060f977 $rtti_tail_1060f977
 1060fac8 ?g_1060fac8@@3HA
 1060fac8 ?g_1060fac8@lifted@@3HA
 1060facc ?g_1060facc@lifted@@3HA
@@ -43929,6 +44112,7 @@
 10610454 ??_R0?AVCNodeNPCFilter@@@8
 10610478 ??_C@_0CE@HOMO@CAI_Network_NearestNodeToNPCAtPo@
 106104a4 ??_R0?AVCNodePosFilter@@@8
+106104c1 $rtti_tail_106104c1
 106104c8 ??_C@_0BO@FDPE@AI?5NearestNode?5Cache?5is?5full?6?$AA@
 106104ec ??_C@_0DD@MLCD@ERROR?3?5too?5many?5nodes?5in?5map?0?5de@
 1061052c ?g_1061052c@@3PADA
@@ -44055,6 +44239,7 @@
 10611a0c ??_C@_0CP@LGKF@Invalid?5Path?5Type?5String?4?6Valid?5@
 10611bd8 ??_C@_0HF@LGNE@Patrol?5path?5pool?5is?5dry?4?5?5It?5wil@
 10611df4 ??_R0?AVCAI_PlaneSolver@@@8
+10611e12 $rtti_tail_10611e12
 10611e18 ??_C@_0BK@EGOB@CAI_PlaneSolver_MoveLimit?$AA@
 10611e38 ??_C@_08MEFH@TR_INVLD?$AA@
 10611e44 ??_C@_09PDMM@TR_OSCILL?$AA@
@@ -44293,11 +44478,13 @@
 10614ad4 ??_C@_0CC@GJHN@NULL?5Listener?5in?5BeginMonolog?$CI?$CJ?$CB@
 10614afc ??_C@_04MOFI@?$CFs?$CFd?$AA@
 10614b04 ??_R0?AVCAI_Expresser@@@8
+10614b20 $rtti_tail_10614b20
 10614c70 ?g_10614c70@@3HA
 10614c70 ?g_10614c70@@3PADA
 10614c70 ?g_10614c70@@3PAHA
 10614c88 b10315610/?dataDesc@?1??sub_10315610@@YAPAHXZ@4PAUtypedescription_t@@A
 10614e54 ??_R0?AV?$CBitStringSaveRestoreOps@VCBitString@@@@@8
+10614e8b $rtti_tail_10614e8b
 10614e98 ??_C@_0BF@IIEL@m_flFocusExpireTimer?$AA@
 10614eb4 ??_C@_0P@MHOM@m_hFocusEntity?$AA@
 10614ec8 ??_C@_0DG@BBEK@Error?$CB?$CB?5Squad?5?$CFs?5is?5too?5big?$CB?$CB?$CB?5R@
@@ -44438,6 +44625,7 @@
 1061b3bc ??_C@_0DA@JBFA@Change?5the?5distance?5we?5bump?5back@
 1061b3f8 ??_R0?AVCRelationshipSaveDataOps@@@8
 1061b428 ??_R0?AV?$CUtlVectorDataOps@V?$CUtlVector@UDisciplineSrc@@V?$CUtlMemory@UDisciplineSrc@@@@@@$08@@@8
+1061b48e $rtti_tail_1061b48e
 1061b4a4 ??_C@_0O@FKBJ@lootable_type?$AA@
 1061b4b4 ??_C@_0P@MHAO@m_LootableType?$AA@
 1061b4c8 ??_C@_0BC@OCMI@m_flMeltMaxExpand?$AA@
@@ -45411,6 +45599,7 @@
 1062520c ?g_1062520c@@3PADA
 10625234 ??_R0?AVCNPC_VAndreiBlood@@@8
 10625234 ?g_10625234@@3PADA
+10625254 $rtti_tail_10625254
 1062525c ??_C@_0BB@NDAD@npc_VAndreiBlood?$AA@
 10625270 ??_R0?AVCNPC_VTzimisceRunner@@@8
 10625270 ?g_10625270@@3PADA
@@ -45478,6 +45667,7 @@
 10626bb4 ??_C@_03KOGH@225?$AA@
 10626bb8 ??_C@_0BI@OKNN@speed_runbonusathletics?$AA@
 10626bd4 ??_R0?AVCHL2_Player@@@8
+10626bee $rtti_tail_10626bee
 10626bf4 ??_C@_0BJ@KAFI@m_HL2Local?4m_flSuitPower?$AA@
 10626c14 ??_C@_0CN@FAAN@?5?5?5vampmp_player_start?5loop?5didn@
 10626c4c ??_C@_0DD@DOAN@Unable?5to?5open?5?$FL?$CFs?$FN?5data?5file?5fo@
@@ -45517,6 +45707,7 @@
 10626f58 ??_C@_0N@FLMC@sv_walkscale?$AA@
 10626f68 ??_R0?AVIPhysicsPlayerControllerEvent@@@8
 10626f9c ??_R0?AVCPhysicsPlayerCallback@@@8
+10626fc1 $rtti_tail_10626fc1
 10626fc8 ??_C@_0BE@EBHN@debug_stealth_light?$AA@
 10626fe0 ??_C@_0GG@LHEN@Overrides?5the?5light?5on?5the?5playe@
 1062705c ??_C@_0BJ@FDPN@debug_stealth_show_light?$AA@
@@ -45545,6 +45736,7 @@
 10627738 ?g_10627738@@3PBDB
 10627790 ??_R0?AVIVoiceGameMgrHelper@@@8
 106277b8 ??_R0?AVCVoiceGameMgrHelper@@@8
+106277da $rtti_tail_106277da
 106277e0 ??_C@_0BK@NNNO@sk_plr_dmg_anaconda_round?$AA@
 10627800 ??_C@_0BK@MEAJ@sk_npc_dmg_anaconda_round?$AA@
 10627820 ??_C@_0BG@GMHO@sk_max_anaconda_round?$AA@
@@ -45647,6 +45839,7 @@
 10628368 ?g_10628368@@3PAUCPMData@@A
 10628368 ?g_10628368@@3PAUCPlayerViewEffects@@A
 106283b0 ??_R0?AVCHLPlayerMove@@@8
+106283cc $rtti_tail_106283cc
 10628520 ?g_10628520@@3PAHA
 10628520 ?g_10628520@lifted@@3DA
 10628538 b10356550/?dataDesc@?1??sub_10356550@@YAPAHXZ@4PAUtypedescription_t@@A
@@ -46707,6 +46900,7 @@
 10642cc0 ??_C@_09LOHE@Bip01?5Jaw?$AA@
 10642ccc ??_C@_0BN@LIAL@ManBat?5is?5throwing?5model?5?$CFs?6?$AA@
 10642cf0 ??_R0?AVCTraceFilterManBatNoIBeamEntity@@@8
+10642d1e $rtti_tail_10642d1e
 10642d28 ??_C@_06GEFJ@lbeam?$CK?$AA@
 10642d30 ??_C@_0O@EPCA@ManBat_Minion?$AA@
 10642e88 ?g_10642e88@lifted@@3DA
@@ -48217,6 +48411,7 @@
 10665be4 ??_C@_0BD@INEH@ft_spawn_particles?$AA@
 10665bfc ??_C@_0CJ@EHJJ@Set?5to?50?5to?5stop?5spawning?5fire?5p@
 10665c30 ??_R0?AVCTraceFilterNoCharacterCollide@@@8
+10665c5d $rtti_tail_10665c5d
 10665c68 ??_C@_0DA@GPNC@Warning?3?5SERVER?5flamethrower?5lis@
 10665df0 ?g_10665df0@@3PADA
 10665dfc ?g_10665dfc@@3PBDB
@@ -48224,6 +48419,7 @@
 10666470 ??_C@_0O@COJG@flame_cluster?$AA@
 10666470 ?g_10666470@@3PADA
 10666480 ??_R0?AVCFlameCluster@@@8
+1066649c $rtti_tail_1066649c
 106664a4 ??_C@_0BO@FOHC@flamethrower_hit_glow?9emitter?$AA@
 106664c8 ??_C@_0BP@HFMF@flamethrower_hit_steam?9emitter?$AA@
 106664f0 ??_C@_0BO@EMIM@flamethrower_hit_none?9emitter?$AA@
@@ -48237,6 +48433,7 @@
 106665cc ??_C@_0BE@KPG@item_w_flamethrower?$AA@
 106665cc ?g_106665cc@@3PADA
 106665e4 ??_R0?AVCWeaponRanged_FlameThrower@@@8
+1066660d $rtti_tail_1066660d
 10666618 ??_C@_0CG@IJAA@Weapons?1Ranged?1Flamethrower?1Empt@
 10666648 ??_C@_0CL@MONH@Weapons?1Ranged?1Flamethrower?1Deac@
 1066667c ??_C@_0CJ@CDCC@Weapons?1Ranged?1Flamethrower?1Acti@
@@ -48397,6 +48594,7 @@
 1067c3dc ??_R0?AVCWeaponMelee_WerewolfAttacks@@@8
 1067c410 ??_C@_0BL@EFJA@CWeaponMelee_TzimisceMelee?$AA@
 1067c430 ??_R0?AVCWeaponMelee_TzimisceMelee@@@8
+1067c459 $rtti_tail_1067c459
 1067c464 ??_C@_0CA@OBIC@CWeaponMelee_SabbatLeaderAttack?$AA@
 1067c48c ??_R0?AVCWeaponMelee_SabbatLeaderAttack@@@8
 1067c4c4 ??_C@_0BH@MBMG@CWeaponMelee_ChangClaw?$AA@
@@ -48420,6 +48618,7 @@
 1067c7c0 ??_R0?AVCWeaponMelee_ManBatClaw@@@8
 1067c7f0 ??_C@_0BL@DCIH@CWeaponMelee_MingXiaoMelee?$AA@
 1067c810 ??_R0?AVCWeaponMelee_MingXiaoMelee@@@8
+1067c839 $rtti_tail_1067c839
 1067c844 ??_C@_0BO@EBFN@CWeaponMelee_MingXiaoTentacle?$AA@
 1067c868 ??_R0?AVCWeaponMelee_MingXiaoTentacle@@@8
 1067c9e8 ?g_1067c9e8@@3Udatamap_t@@A
@@ -48448,6 +48647,7 @@
 1067d694 ?g_1067d694@lifted@@3DA
 1067dc6c ??_C@_0BG@JIFN@CWeaponIThrownGrenade?$AA@
 1067dd40 ??_R0?AVCWeaponIThrown@@@8
+1067dd5d $rtti_tail_1067dd5d
 1067dd64 ??_C@_0BK@DLI@Throwing_Angle_Adjustment?$AA@
 1067dd84 ??_C@_0CA@DEJG@Grenade?5facing?5vector?5?$CFf?5?$CFf?5?$CFf?6?$AA@
 1067ddac ??_C@_0CC@LIFE@Attaching?5?$CFs?5to?5?$CFs?3?5?$CFs?5?$CIdist?3?5?$CFf@
@@ -48465,6 +48665,7 @@
 1067df8c ??_C@_0CO@DKGP@models?1scenery?1misc?1relief?1relie@
 1067dfc4 ??_C@_0BJ@CDIL@chang_projectile_emitter?$AA@
 1067dfe4 ??_R0?AVCWeaponThrown_Chang_Energy_Ball@@@8
+1067e012 $rtti_tail_1067e012
 1067e01c ??_C@_0BO@OGIK@chang_ghost_bone_tree_emitter?$AA@
 1067e040 ??_R0?AVCWeaponThrown_Chang_Ghost@@@8
 1067e1b8 ?g_1067e1b8@@3PADA
@@ -48477,6 +48678,7 @@
 1067e38c ??_C@_0BP@LGKG@vampireprojectile_mingxiaospit?$AA@
 1067e38c ?g_1067e38c@@3PADA
 1067e3b4 ??_R0?AVCVampireProjectile_MingXiaoSpit@@@8
+1067e3e2 $rtti_tail_1067e3e2
 1067e538 ?g_1067e538@lifted@@3DA
 1067e538 ?g_1067e538@lifted@@3HA
 1067e53c ?g_1067e53c@lifted@@3HA
@@ -49157,12 +49359,15 @@
 10684504 ??_C@_03NAOL@?401?$AA@
 10684508 ??_C@_0BC@EKGD@player_throwforce?$AA@
 10684520 ??_R0?AVCGrabController@@@8
+1068453e $rtti_tail_1068453e
 10684544 ??_C@_0DF@BHLP@Object?5attached?5to?5Physcannon?5ha@
 10684584 ??_R0?AVCPlayerPickupController@@@8
+106845aa $rtti_tail_106845aa
 106845b4 ??_C@_0O@ICFP@player_pickup?$AA@
 106845c4 ??_C@_09NFLA@m_pPlayer?$AA@
 106845d0 ??_R0?AVCWeaponPhysCannon@@@8
 106845f8 ??_R0?AVCTraceFilterNoOwnerTest@@@8
+1068461e $rtti_tail_1068461e
 10684628 ??_C@_0BC@ODEC@prop_combine_ball?$AA@
 10684640 ??_C@_0BB@OKF@npc_turret_floor?$AA@
 10684654 ??_C@_0BM@BOKB@Weapon_PhysCannon?4HoldSound?$AA@
@@ -53682,9 +53887,11 @@
 106ad8bc ?g_106ad8bc@lifted@@3DA
 106adb24 ??_R0?AVCStringPool@@@8
 106adb44 ??_R0?AVCGameStringPool@@@8
+106adb62 $rtti_tail_106adb62
 106adcf4 ??_R0?AVISharedGameRules@@@8
 106add1c ??_R0?AVCSharedGameRules@@@8
 106add44 ??_R0?AVCHLSharedGameRules@@@8
+106add65 $rtti_tail_106add65
 106adefc ??_C@_0DF@OLAE@AutoGameSystem?5already?5added?5to?5@
 106ae0cc ??_C@_0L@GIJ@sv_gravity?$AA@
 106ae0dc ??_C@_0P@CIEJ@World?5gravity?4?$AA@
@@ -53750,6 +53957,7 @@
 106af4bc ??_R0?AVCSafeDiscSaveRestoreOps_5@@@8
 106af4ec ??_R0?AVCSafeDiscSaveRestoreOps_6@@@8
 106af51c ??_R0?AVCSafeDiscSaveRestoreOps_7@@@8
+106af544 $rtti_tail_106af544
 106af554 ?g_106af554@@3HA
 106af5dc ?g_106af5dc@@3HA
 106af5e4 ?g_106af5e4@@3P6AXXZA
@@ -53798,6 +54006,7 @@
 106b0544 ?g_106b0544@@3HA
 106b05cc ?g_106b05cc@@3HA
 106b05d4 ?g_106b05d4@@3P6AXXZA
+106b0a4f $rtti_tail_106b0a4f
 106b8540 ??_C@_00A@?$AA@
 106b8540 ?g_106b8540@@3DA
 106b8540 ?g_106b8540@@3DB

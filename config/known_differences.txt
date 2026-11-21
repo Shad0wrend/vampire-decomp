@@ -96,3 +96,23 @@ export-missing CDAPFN0506_SECURE_BASE_6Encode the game exports it and no object 
 export-missing CDAPFN0506_SECURE_BASE_7Decode the game exports it and no object exports it yet
 export-missing CDAPFN0506_SECURE_BASE_7Encode the game exports it and no object exports it yet
 export-ordinal ordinals link numbers the exports by name, so with game exports missing the later ordinals shift
+vtable ??_7CKeyValuesEmit@@6BIKeyCacheable@@@ a class of the source the game has no name or RTTI for (a helper) emits it; the game has no such table
+vtable ??_7CKeyValuesEmit@@6BIKeyValues@@@ a class of the source the game has no name or RTTI for (a helper) emits it; the game has no such table
+vtable ??_7DummyCmd@@6B@ a class of the source the game has no name or RTTI for (a helper) emits it; the game has no such table
+vtable ??_7DummyComponent@@6B@ a class of the source the game has no name or RTTI for (a helper) emits it; the game has no such table
+vtable ??_7DummyFilter@@6B@ a class of the source the game has no name or RTTI for (a helper) emits it; the game has no such table
+vtable ??_7DummyInstantiator@@6B@ a class of the source the game has no name or RTTI for (a helper) emits it; the game has no such table
+vtable ??_7DummyKeyCacheable@@6B@ a class of the source the game has no name or RTTI for (a helper) emits it; the game has no such table
+vtable ??_7DummyMoveHelper@@6B@ a class of the source the game has no name or RTTI for (a helper) emits it; the game has no such table
+vtable ??_7DummyMovement@@6B@ a class of the source the game has no name or RTTI for (a helper) emits it; the game has no such table
+vtable ??_7DummyPredictionSystem@@6B@ a class of the source the game has no name or RTTI for (a helper) emits it; the game has no such table
+function 0x102ec4a0 link.exe keeps b102eaaf0's inline copy of ?RotateLeft@?$CUtlRBTree@UCRBTree12Entry_102ec4a0@@G@@QAEXG@Z, whose code is not this block's: the build runs it where the game runs this block's function
+function 0x101c47b0 the judge matched the function; the destroy of its local static differs from the game's: 0x101c4800+0x6: its call of ??1CUnknown101c4790@@QAE@XZ reaches 0x101c46f0, not 0x101c4760
+function 0x101ea0b0 the judge matched the function; the destroy of its local static differs from the game's: 0x101ea120+0x0: byte 0xc3, the game's 0xb9
+function 0x101f8480 the judge matched the function; the destroy of its local static differs from the game's: 0x101f84f0+0x0: byte 0xc3, the game's 0xb9
+function 0x1021ebc0 the judge matched the function; the destroy of its local static differs from the game's: 0x10220d70+0x0: byte 0xc3, the game's 0xb9
+function 0x1021f710 the judge matched the function; the destroy of its local static differs from the game's: 0x10220d70+0x0: byte 0xc3, the game's 0xb9
+function 0x1021f920 the judge matched the function; the destroy of its local static differs from the game's: 0x10220d70+0x0: byte 0xc3, the game's 0xb9
+function 0x102517e0 the judge matched the function; the destroy of its local static differs from the game's: 0x102518d0+0x0: byte 0xc3, the game's 0xb9
+function 0x10255cf0 the judge matched the function; the destroy of its local static differs from the game's: 0x10258850+0x0: byte 0xc3, the game's 0xb9
+function 0x10255dd0 the judge matched the function; the destroy of its local static differs from the game's: 0x10258850+0x0: byte 0xc3, the game's 0xb9; 0x10220d70+0x0: byte 0xc3, the game's 0xb9
