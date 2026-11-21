@@ -6049,6 +6049,13 @@ void UtlMem::sub_100aad80(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100abf90 size=0x3
+char sub_100abf90()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac080 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);

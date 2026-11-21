@@ -286,6 +286,7 @@
 0x100aacb0 func   ?sub_100aacb0@CUnknown101a5290@@QAEXXZ CUnknown101a5290::sub_100aacb0
 0x100aad50 func   ?sub_100aad50@UtlMem@@QAEXXZ UtlMem::sub_100aad50
 0x100aad80 func   ?sub_100aad80@UtlMem@@QAEXH@Z UtlMem::sub_100aad80
+0x100abf90 func   ?sub_100abf90@@YADXZ sub_100abf90
 0x100ac080 func   ?sub_100ac080@UtlMem@@QAEXH@Z UtlMem::sub_100ac080
 0x100b4d30 func   ?sub_100b4d30@CUtlVector40@@QAEXH@Z CUtlVector40::sub_100b4d30
 0x100b4dc0 func   ?sub_100b4dc0@UtlVec40@@QAEXHH@Z UtlVec40::sub_100b4dc0
