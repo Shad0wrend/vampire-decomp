@@ -14537,6 +14537,17 @@ float sub_101070a0(CUnknown1012f700 *pRange)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107120 size=0x7
+namespace lifted {
+extern char g_10227c5c;
+}
+struct CUnknown10107120 { void sub_10107120(); };
+void CUnknown10107120::sub_10107120()
+{
+    *(int *)this = (int)&lifted::g_10227c5c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107500 size=0x43
 #include "Vector.h"
 #include <math.h>
