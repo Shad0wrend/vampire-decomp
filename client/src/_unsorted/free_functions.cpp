@@ -3287,6 +3287,28 @@ void sub_1008ae50(BoneView *pbones, int ibone, BoneAccView *bonetoworld)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b180 size=0x54
+struct Elem_100c40e0 { char pad[0x88]; unsigned char flags; char pad2[3]; int type; char pad3[0xa0-0x90]; };
+struct Base_100c40e0 { char pad[0xf4]; int offset; };
+void sub_1008ae50(Elem_100c40e0 *, int, int);
+void sub_1008abc0(Elem_100c40e0 *, int, int);
+bool sub_1008b180(Base_100c40e0 *p, int idx, int arg)
+{
+    Elem_100c40e0 *base = (Elem_100c40e0 *)((char *)p + p->offset);
+    if (base[idx].flags & 1) {
+        switch (base[idx].type) {
+        case 1:
+            sub_1008abc0(base, idx, arg);
+            return true;
+        case 2:
+            sub_1008ae50(base, idx, arg);
+            return true;
+        }
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b560 size=0x21
 // TARGET: sub_1008b560
 void sub_1008b560(int *pTable, char *pSrc)
