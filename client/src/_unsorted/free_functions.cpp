@@ -26356,6 +26356,17 @@ int sub_101454a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10145650 size=0xa
+namespace lifted {
+extern int g_105e7b24;
+}
+int sub_10145650(int a0)
+{
+    lifted::g_105e7b24 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101457a0 size=0x95
 #include "CUnknown101d8a70.h"
 #include "ConVar.h"
