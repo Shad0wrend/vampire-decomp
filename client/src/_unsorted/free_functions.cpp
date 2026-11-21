@@ -413,6 +413,15 @@ int sub_10006a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10006d60 size=0xd
+struct CUnknown10006d60 { void * sub_10006d60(int); };
+void * CUnknown10006d60::sub_10006d60(int a0)
+{
+    *(int *)this = *(int *)((char *)a0);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10007220 size=0x6
 namespace lifted {
 extern char g_102dfd28;
