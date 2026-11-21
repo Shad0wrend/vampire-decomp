@@ -899,6 +899,7 @@
 0x1015ff70 func   ?sub_1015ff70@CUnknown1006c7d0@@QAEXXZ CUnknown1006c7d0::sub_1015ff70
 0x10160100 func   ?sub_10160100@CFloatTable1006c9d0@@QAEHH@Z CFloatTable1006c9d0::sub_10160100
 0x10160160 func   ?sub_10160160@CUnk_1006ca50@@QAEXH@Z CUnk_1006ca50::sub_10160160
+0x101601a0 func   ?sub_101601a0@SCurve6caa0@@QAEMH@Z SCurve6caa0::sub_101601a0
 0x10160250 func   ?sub_10160250@StatDefault@@QAEHH@Z StatDefault::sub_10160250
 0x10160280 func   ?sub_10160280@CUnk1006cbe0@@QAEHM@Z CUnk1006cbe0::sub_10160280
 0x101602b0 func   ?sub_101602b0@Dump@@QAEXXZ Dump::sub_101602b0

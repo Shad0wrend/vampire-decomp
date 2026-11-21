@@ -22618,6 +22618,30 @@ void CUnk_1006ca50::sub_10160160(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101601a0 size=0x47
+struct SCurve6caa0 {
+    int pad[3];
+    unsigned char flags;
+    int count;
+    float *data;
+    float sub_101601a0(int i);
+};
+// TARGET: SCurve6caa0::sub_101601a0
+float SCurve6caa0::sub_101601a0(int i)
+{
+    if (flags & 1) {
+        if (i < 0)
+            i = 0;
+        else if (i >= count)
+            i = count - 1;
+        return data[i];
+    }
+    if (i >= 0 && i < count)
+        return data[i];
+    return 3.4028235e38f;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160250 size=0x30
 #include "StatDefault.h"
 int StatDefault::sub_10160250(int arg)
