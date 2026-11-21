@@ -237,3 +237,8 @@ ConVar g_103eeb10("cl_hud_bloodbar", "", 0);
 #include "ConVar.h"
 ConVar g_103eeaa0("cl_hud_health", "", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10063730 size=0x5
+inline int pcd_initial_103eef34() { return 0xffffffff; }
+int g_103eef34 = pcd_initial_103eef34();
+// END FUNCTION
