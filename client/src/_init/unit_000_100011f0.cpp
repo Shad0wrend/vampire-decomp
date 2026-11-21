@@ -2349,3 +2349,8 @@ Vector g_105fb90c[3] = { Vector(0.8164966f, 0.0f, 0.57735026f), Vector(-0.408248
 #include "ConVar.h"
 ConVar g_105fbb28("vgui_eyetarget_x", "-1000", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10189ee0 size=0xa
+#include "ConVar.h"
+ConVar g_105fba98("vgui_eyetarget_y", "0", 0);
+// END FUNCTION
