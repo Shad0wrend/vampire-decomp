@@ -23510,6 +23510,36 @@ const char *CVStatCost_t::sub_10159fc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015a080 size=0x85
+#include "CVStatCost_t.h"
+
+struct ScopeTraceEntry_t
+{
+	const char *m_pszFunc;
+	const char *m_pszName;
+	const char *m_pszExtra;
+};
+
+extern ScopeTraceEntry_t *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+extern void (__cdecl *g_101e3118)(int level, const char *msg);
+
+void CVStatCost_t::sub_1015a080()
+{
+	g_101e3124[*g_101e3128].m_pszFunc = "CVStatCost_t::Debug_Display";
+	g_101e3124[*g_101e3128].m_pszName = g_102de300;
+	g_101e3124[*g_101e3128].m_pszExtra = g_102de300;
+	(*g_101e3128)++;
+	if (!sub_10159c80()) {
+		void (__cdecl *devMsg)(int, const char *) = g_101e3118;
+		devMsg(1, "\tCost:");
+		devMsg(1, sub_10159fc0());
+	}
+	(*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015a290 size=0x68
 struct TScope {
 	const char *name;

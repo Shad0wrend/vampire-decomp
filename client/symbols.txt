@@ -931,6 +931,7 @@
 0x10159f20 func   ?sub_10159f20@C101fc4d0@@QAEDUT_101fc4d0@@0@Z C101fc4d0::sub_10159f20
 0x10159f70 func   ?sub_10159f70@C101fc540@@QAEDUT_101fc540@@0@Z C101fc540::sub_10159f70
 0x10159fc0 func   ?sub_10159fc0@CVStatCost_t@@QAEPBDXZ CVStatCost_t::sub_10159fc0
+0x1015a080 func   ?sub_1015a080@CVStatCost_t@@QAEXXZ CVStatCost_t::sub_1015a080
 0x1015a290 func   ?sub_1015a290@TStat@@QAEXHH@Z TStat::sub_1015a290
 0x1015ab20 func   ?sub_1015ab20@TList@@QAEPAU1@XZ TList::sub_1015ab20
 0x1015b050 func   ?sub_1015b050@CVStatInfo_t@@QAEPAV1@XZ CVStatInfo_t::sub_1015b050
