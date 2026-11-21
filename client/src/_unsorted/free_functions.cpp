@@ -18222,6 +18222,57 @@ template <> int ClientClassInit<DT_BCCLocalPlayerExclusive::ignored>(DT_BCCLocal
 }
 // END FUNCTION
 
+// FUNCTION: 0x10098410 size=0x2e2
+#include "RecvTable.h"
+extern RecvTable g_1049d358;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102b6538;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropEHandle(char *, int, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+extern RecvTable g_1049d890;
+template <typename T> int ClientClassInit(T *);
+namespace DT_BaseCombatCharacter { struct ignored; }
+template <> int ClientClassInit<DT_BaseCombatCharacter::ignored>(DT_BaseCombatCharacter::ignored *)
+{
+	char *pRecvTableName = "DT_BaseCombatCharacter";
+	RecvTable &RecvTable = g_1049d358;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102b6538, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_nMotionTrail", 4212, 4, 0, 0),
+		RecvPropFloat("m_flSpeedScale", 4216, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_iGender", 4048, 4, 0, 0),
+		RecvPropFloat("m_flHolyLightEndTime", 4300, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropEHandle("m_hGrappleAnimDriver", 4252, 4),
+		RecvPropEHandle("m_hProteanTransformOther", 4256, 4),
+		RecvPropFloat("m_flProteanTransformStartTime", 4260, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_bAimWeaponAtTarget", 4232, 1, 0, 0),
+		RecvPropEHandle("m_hWeaponAimTarget", 4236, 4),
+		RecvPropVector("m_vWeaponAimOffset", 4240, 12, 0, RecvProxy_VectorToVector),
+		RecvPropDataTable("bcc_localdata", 0, 0, &g_1049d890, DataTableRecvProxy_StaticDataTable),
+		RecvPropEHandle("m_hActiveWeapon", 4188, 4),
+		RecvPropEHandle("m_hActiveIArmor", 4312, 4),
+		RecvPropInt("m_iVendorIndex", 4200, 4, 0, 0),
+		RecvPropInt("m_iVendorRestrictFlags", 4204, 4, 0, 0),
+		RecvPropInt("m_iOccultPowerFlags", 4208, 4, 0, 0),
+		RecvPropInt("m_iMoney", 4304, 4, 0, 0),
+		RecvPropInt("m_bMeetsObfuscateRules", 4052, 1, 0, 0),
+		RecvPropInt("m_bIsBCCTargetable", 4308, 1, 0, 0),
+		RecvPropFloat("m_flMeltExpansionTime", 4192, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flMeltMaxExpand", 4196, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_LootableType", 4040, 4, 0, 0),
+		RecvPropInt("m_bCutsceneForceLOD", 4044, 1, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10098720 size=0x59
 float sub_10098720(float x, float lo, float hi)
 {
