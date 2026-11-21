@@ -654,6 +654,7 @@
 0x1013fdc0 func   ?sub_1013fdc0@CStatDefault3List@@QAEXXZ CStatDefault3List::sub_1013fdc0
 0x1013fdf0 func   ?sub_1013fdf0@CNamedListX@@QAEHPBD@Z CNamedListX::sub_1013fdf0
 0x1013fe40 func   ?sub_1013fe40@List@@QAEHPBD@Z List::sub_1013fe40
+0x1013fef0 func   ?sub_1013fef0@CUnknown101d5bd0@@QAEHPBDH@Z CUnknown101d5bd0::sub_1013fef0
 0x1013ffa0 func   ?sub_1013ffa0@CUnit101d5e00@@QAEPBDH@Z CUnit101d5e00::sub_1013ffa0
 0x1013ffd0 func   ?sub_1013ffd0@CUnit101d5e40@@QAEPADH@Z CUnit101d5e40::sub_1013ffd0
 0x101401e0 func   ?sub_101401e0@CUnknown101d61e0@@QAEPAU1@H@Z CUnknown101d61e0::sub_101401e0
