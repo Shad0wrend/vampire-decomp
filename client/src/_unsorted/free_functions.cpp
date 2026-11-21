@@ -7068,6 +7068,16 @@ void bf_write::sub_10087830(unsigned int curData)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100878e0 size=0xf
+namespace lifted {
+int __stdcall sub_100866b0(int, int);
+}
+int __stdcall sub_100878e0(int a0)
+{
+    return lifted::sub_100866b0(a0, 0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100878f0 size=0xad
 #include "bf_write.h"
 
