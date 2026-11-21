@@ -7160,6 +7160,24 @@ const char *sub_100edcf0(int state)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ee890 size=0x2e
+#include "CGameStringPool.h"
+#include "string_t.h"
+
+extern CStringPool g_104cfd50;
+
+// TARGET: sub_100ee890
+string_t sub_100ee890(const char *psz)
+{
+	if (*psz)
+	{
+		char *p = g_104cfd50.sub_10137f30(psz);
+		return string_t(*p ? p : 0);
+	}
+	return string_t(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100efee0 size=0x8d
 #include "CUtlLinkedList8.h"
 
