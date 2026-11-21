@@ -2643,3 +2643,8 @@ ConVar g_10618a70("cl_copyframebuffertotexture", "1", 0);
 #include "ConVar.h"
 ConVar g_10618878("cl_alwayscopyframebuffertotexture", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10197c20 size=0xa
+#include "ConVar.h"
+ConVar g_10618d40("r_watercullheight", "25", 0);
+// END FUNCTION
