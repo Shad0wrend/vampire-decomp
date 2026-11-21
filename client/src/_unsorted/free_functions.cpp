@@ -11350,6 +11350,16 @@ void CMem8b_t::sub_100d1240(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d13d0 size=0x6
+namespace lifted {
+extern char g_104cee10;
+}
+int sub_100d13d0()
+{
+    return (int)&lifted::g_104cee10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d14d0 size=0x3
 char sub_100d14d0()
 {
