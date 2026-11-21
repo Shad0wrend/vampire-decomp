@@ -13993,6 +13993,20 @@ void UtlMem::sub_100d90b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d9120 size=0x16
+namespace lifted {
+extern char g_1023483c;
+}
+struct CUnknown100d9120 { void * sub_100d9120(int); };
+void * CUnknown100d9120::sub_100d9120(int a0)
+{
+    *(int *)this = (int)&lifted::g_1023483c;
+    *(int *)((char *)this + 4) = a0;
+    *(char *)((char *)this + 8) = 1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d9160 size=0x7
 namespace lifted {
 extern char g_1023483c;
