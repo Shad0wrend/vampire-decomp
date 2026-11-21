@@ -15513,6 +15513,27 @@ bool CVNameId::sub_1013d100(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d180 size=0xae
+extern "C" int strcmp(const char *, const char *);
+struct Pool { char pad[0x18]; char **blocks; };
+extern char *g_105e74d0;
+extern Pool *g_105e74d4;
+struct Sym {
+    unsigned short blk, off;
+    const char *Str() const {
+        if (blk == 0xffff && off == 0xffff)
+            return g_105e74d0;
+        return g_105e74d4->blocks[blk] + 8 + off;
+    }
+};
+bool sub_1013d180(const Sym *a, const Sym *b)
+{
+    const char *s1 = a->Str();
+    const char *s2 = b->Str();
+    return strcmp(s1, s2) < 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d2b0 size=0x71
 #include "CUnknown1024b2d0.h"
 
