@@ -10798,6 +10798,49 @@ int sub_1003fda0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003fe10 size=0x227
+#include "RecvTable.h"
+extern RecvTable g_103eba4c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_1027c4e8;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropString(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_StringToString(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TETextMessage { struct ignored; }
+template <> int ClientClassInit<DT_TETextMessage::ignored>(DT_TETextMessage::ignored *)
+{
+	char *pRecvTableName = "DT_TETextMessage";
+	RecvTable &RecvTable = g_103eba4c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_1027c4e8, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_nChannel", 16, 4, 0, 0),
+		RecvPropFloat("x", 20, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("y", 24, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nEffects", 28, 4, 0, 0),
+		RecvPropInt("r1", 32, 4, 0, 0),
+		RecvPropInt("g1", 36, 4, 0, 0),
+		RecvPropInt("b1", 40, 4, 0, 0),
+		RecvPropInt("a1", 44, 4, 0, 0),
+		RecvPropInt("r2", 48, 4, 0, 0),
+		RecvPropInt("g2", 52, 4, 0, 0),
+		RecvPropInt("b2", 56, 4, 0, 0),
+		RecvPropInt("a2", 60, 4, 0, 0),
+		RecvPropFloat("m_fFadeInTime", 64, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fFadeOutTime", 68, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fHoldTime", 72, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fFxTime", 76, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropString("m_szMessage", 80, 128, 0, RecvProxy_StringToString),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100400c0 size=0x12
 namespace lifted {
 extern char g_10227478;
