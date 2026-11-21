@@ -15817,6 +15817,19 @@ float sub_101070a0(CUnknown1012f700 *pRange)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101070e0 size=0x10
+namespace lifted {
+extern char g_102353dc;
+}
+struct CUnknown101070e0 { void * sub_101070e0(); };
+void * CUnknown101070e0::sub_101070e0()
+{
+    *(int *)this = (int)&lifted::g_102353dc;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107120 size=0x7
 namespace lifted {
 extern char g_10227c5c;
