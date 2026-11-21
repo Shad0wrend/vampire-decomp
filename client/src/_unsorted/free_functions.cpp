@@ -7775,6 +7775,66 @@ float __cdecl sub_10107870(float *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107a00 size=0xbf
+// TARGET: sub_10107a00
+extern float g_10235460;
+extern float g_10235430;
+extern float g_10235440;
+extern float g_10235420;
+extern float g_102354c0;
+extern float g_102354b0;
+extern float g_102354a0;
+extern float g_10235490;
+
+float __cdecl sub_10107a00(float x)
+{
+    static const unsigned int s_mask[2] = { 0x00000000u, 0xffffffffu };
+    __asm
+    {
+        push ecx
+        movss xmm0, dword ptr [ebp+8]
+        movss xmm1, dword ptr [g_10235460]
+        andps xmm0, xmm1
+        addss xmm0, dword ptr [g_10235430]
+        mulss xmm0, dword ptr [g_10235440]
+        cvttss2si ecx, xmm0
+        movss xmm5, dword ptr [g_10235420]
+        mov edx, ecx
+        shl edx, 1Eh
+        cvtsi2ss xmm1, ecx
+        and edx, 80000000h
+        and ecx, 1
+        subss xmm0, xmm1
+        movss xmm6, dword ptr [ecx*4 + s_mask]
+        minss xmm0, xmm5
+        movss xmm1, dword ptr [g_102354c0]
+        subss xmm5, xmm0
+        andps xmm5, xmm6
+        movss xmm7, dword ptr [g_102354b0]
+        andnps xmm6, xmm0
+        mov dword ptr [ebp-4], edx
+        orps xmm5, xmm6
+        movss xmm0, xmm5
+        mulss xmm5, xmm5
+        movss xmm4, dword ptr [g_102354a0]
+        movss xmm2, xmm5
+        mulss xmm5, xmm1
+        movss xmm1, dword ptr [g_10235490]
+        addss xmm5, xmm7
+        mulss xmm5, xmm2
+        movss xmm3, dword ptr [ebp-4]
+        addss xmm5, xmm4
+        mulss xmm5, xmm2
+        orps xmm0, xmm3
+        addss xmm5, xmm1
+        mulss xmm0, xmm5
+        movss dword ptr [ebp+8], xmm0
+        fld dword ptr [ebp+8]
+        mov esp, ebp
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107be0 size=0xc7
 // mathlib _SSE2_cos (SSE2 cos), verbatim
 // TARGET: sub_10107be0
