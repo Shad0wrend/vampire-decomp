@@ -2009,6 +2009,11 @@ int sub_100a3300(void);
 int g_1049e188 = ((int (*)(int))sub_100a3300)(0);
 // END FUNCTION
 
+// FUNCTION: 0x100a37b0 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049e3a4;
+// END FUNCTION
+
 // FUNCTION: 0x100a3b60 size=0xa
 #include "ConVar.h"
 ConVar g_104a0b88("zoom_sensitivity_ratio", "1.0", 0, "Additional mouse sensitivity scale factor applied when FOV is zoomed in.");
