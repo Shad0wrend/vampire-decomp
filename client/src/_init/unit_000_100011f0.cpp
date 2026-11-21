@@ -2921,3 +2921,9 @@ ConCommand g_10678da0("invnext", sub_101a7510, 0, 0, 0);
 void sub_101a7530(void);
 ConCommand g_10678cc8("invprev", sub_101a7530, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x101a8b50 size=0xa
+#include "ConCommand.h"
+void sub_101a8b30(void);
+ConCommand g_10678ca0("toggleinven", sub_101a8b30, 0, 0, 0);
+// END FUNCTION
