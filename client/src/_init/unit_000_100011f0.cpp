@@ -2693,3 +2693,8 @@ ConVar g_10619380("cl_drawshadowtexture", "0", 0);
 #include "ConVar.h"
 ConVar g_10618d88("mat_showwatertextures", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10197f40 size=0xa
+#include "ConVar.h"
+ConVar g_10619650("r_drawopaqueworld", "1", 0);
+// END FUNCTION
