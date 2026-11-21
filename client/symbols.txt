@@ -461,6 +461,7 @@
 0x100269d0 func   ?sub_100269d0@@YAHXZ sub_100269d0
 0x10026af0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKMuseumOfficeKey@@@Z ClientClassInit
 0x10026c50 func   ?sub_10026c50@@YAHXZ sub_10026c50
+0x10026d70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKAshCellKey@@@Z ClientClassInit
 0x10026e80 func   ?sub_10026e80@@YAHXZ sub_10026e80
 0x100275b0 func   ?sub_100275b0@@YAHXZ sub_100275b0
 0x10027d20 func   ?sub_10027d20@@YAXABVVector@@00HHH_NM@Z sub_10027d20
