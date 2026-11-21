@@ -2087,6 +2087,13 @@ int g_102e5a04 = ClientClassInit((DT_ItemGGarysPhoto::ignored *)0);
 RecvTable g_102e69d4;
 // END FUNCTION
 
+// FUNCTION: 0x1001fcd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGGarysTape { struct ignored; }
+template <> int ClientClassInit<DT_ItemGGarysTape::ignored>(DT_ItemGGarysTape::ignored *);
+int g_102e69d0 = ClientClassInit((DT_ItemGGarysTape::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001ff10 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e4020;
