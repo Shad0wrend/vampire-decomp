@@ -19769,6 +19769,12 @@ void Range::sub_101480a0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148140 size=0x1
+void sub_10148140()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10148150 size=0x74
 #include "CUnknown101ddc30.h"
 
