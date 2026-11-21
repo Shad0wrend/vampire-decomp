@@ -8028,6 +8028,20 @@ int CUnknown101b9140::sub_10132db0(int elem, int num, const CUnknown101b9140Elem
 }
 // END FUNCTION
 
+// FUNCTION: 0x10133540 size=0x1a
+namespace lifted {
+extern int g_102c4f40;
+extern int g_102c4f44;
+extern char g_102c4f84;
+}
+int sub_10133540()
+{
+    lifted::g_102c4f44 = 4;
+    lifted::g_102c4f40 = (int)&lifted::g_102c4f84;
+    return (int)&lifted::g_102c4f40;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101335e0 size=0x27
 #include "CFloatUnit.h"
 
