@@ -499,6 +499,7 @@
 0x101595e0 func   ?sub_101595e0@CVStatSubCost_t@@QAE_NXZ CVStatSubCost_t::sub_101595e0
 0x10159650 func   ?sub_10159650@CVStatSubCost_t@@QAEXPBD@Z CVStatSubCost_t::sub_10159650
 0x101597d0 func   ?sub_101597d0@CVStatSubCost_t@@QAEHH@Z CVStatSubCost_t::sub_101597d0
+0x10159d10 func   ?sub_10159d10@CVStatCost_t@@QAE_NPAUCVStatKV@@@Z CVStatCost_t::sub_10159d10
 0x10159e90 func   ?sub_10159e90@CVStatCost_t@@QAEHH_N@Z CVStatCost_t::sub_10159e90
 0x10159f20 func   ?sub_10159f20@C101fc4d0@@QAEDUT_101fc4d0@@0@Z C101fc4d0::sub_10159f20
 0x1015ab20 func   ?sub_1015ab20@TList@@QAEPAU1@XZ TList::sub_1015ab20
