@@ -1205,6 +1205,7 @@
 0x100f0650 func   ?sub_100f0650@@YAHHHH@Z sub_100f0650
 0x100f0670 func   ?sub_100f0670@@YAHHHH@Z sub_100f0670
 0x100f0690 func   ?sub_100f0690@@YAHHHH@Z sub_100f0690
+0x100f06b0 func   ?sub_100f06b0@CUnknown100f06b0@@QAEPAXXZ CUnknown100f06b0::sub_100f06b0
 0x100f10c0 func   ?sub_100f10c0@CUnknown100f10c0@@QAEMXZ CUnknown100f10c0::sub_100f10c0
 0x100f17e0 func   ?sub_100f17e0@CUnknown100f17e0@@QAEHXZ CUnknown100f17e0::sub_100f17e0
 0x100f1850 func   ?sub_100f1850@CUnknown100f1850@@QAEMXZ CUnknown100f1850::sub_100f1850

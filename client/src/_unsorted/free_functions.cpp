@@ -16533,6 +16533,22 @@ int sub_100f0690(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f06b0 size=0x1d
+struct CUnknown100f06b0 { void * sub_100f06b0(); };
+void * CUnknown100f06b0::sub_100f06b0()
+{
+    *(int *)((char *)this + 0x20) = 0;
+    *(int *)((char *)this + 0x40) = 0;
+    *(int *)((char *)this + 0x44) = 0;
+    *(int *)((char *)this + 0x48) = 0;
+    *(int *)((char *)this + 0x4c) = 0;
+    *(int *)((char *)this + 0x50) = 0;
+    *(int *)((char *)this + 0x64) = 0;
+    *(int *)((char *)this + 0x54) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f10c0 size=0x4
 struct CUnknown100f10c0 { float sub_100f10c0(); };
 float CUnknown100f10c0::sub_100f10c0()
