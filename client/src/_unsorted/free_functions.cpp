@@ -20957,6 +20957,15 @@ char *sub_10127e20(const char *pszName, IFileSys *pFileSys)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128260 size=0xa
+struct CUnknown10128260 { int sub_10128260(int); };
+int CUnknown10128260::sub_10128260(int a0)
+{
+    *(int *)((char *)this + 0x18) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128270 size=0x70
 struct CLinkNode1c {
     char m_pad[0x10];
