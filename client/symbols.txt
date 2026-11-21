@@ -113,6 +113,7 @@
 0x1000b6d0 func   ?sub_1000b6d0@@YAHXZ sub_1000b6d0
 0x1000b7f0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Tzimisce2Head@@@Z ClientClassInit
 0x1000b950 func   ?sub_1000b950@@YAHXZ sub_1000b950
+0x1000ba70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Tzimisce3Claw@@@Z ClientClassInit
 0x1000bbd0 func   ?sub_1000bbd0@@YAHXZ sub_1000bbd0
 0x1000be50 func   ?sub_1000be50@@YAHXZ sub_1000be50
 0x1000c0d0 func   ?sub_1000c0d0@@YAHXZ sub_1000c0d0
