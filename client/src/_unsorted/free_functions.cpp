@@ -13626,6 +13626,23 @@ char CSoundEmitterSystemBase::sub_1012f1a0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f8c0 size=0x4a
+struct Entry { float value; const char *text; };
+extern Entry g_102c4260[1];
+extern char g_105e577c[];
+extern int (__cdecl *g_101e3190)(char *, int, const char *, ...);
+
+const char * __stdcall sub_1012f8c0(float value)
+{
+	for (int p = (int)g_102c4260; p < (int)(g_102c4260 + 1); p += sizeof(Entry)) {
+		if (((Entry *)p)->value == value)
+			return ((Entry *)p)->text;
+	}
+	g_101e3190(g_105e577c, 0x20, "%.3f", (double)value);
+	return g_105e577c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
