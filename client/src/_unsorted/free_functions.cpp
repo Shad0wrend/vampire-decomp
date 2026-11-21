@@ -971,6 +971,39 @@ void sub_10067f70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10068120 size=0x3f
+struct CActivityTable
+{
+	int sub_10138cb0(const char *pszName);	// the index of the name, -1 when there is none (stub 0x1000cc2a)
+};
+
+struct CActivityEntry
+{
+	int m_n00;
+	int m_n04;
+};
+
+extern CActivityTable g_103ef0c8;
+extern CActivityEntry *g_104770f8;
+extern char g_10288bf0[];
+typedef void (*FnDevWarning)(int level, const char *pszFormat, ...);
+extern FnDevWarning g_101e3120;
+
+// TARGET: sub_10068120
+CActivityEntry *sub_10068120(const char *pszName)
+{
+	int iIndex = g_103ef0c8.sub_10138cb0(pszName);
+	if (iIndex < 0) {
+		return 0;
+	}
+	if (iIndex >= 0x118d) {
+		g_101e3120(1, g_10288bf0, pszName);
+		return 0;
+	}
+	return &g_104770f8[iIndex];
+}
+// END FUNCTION
+
 // FUNCTION: 0x100790f0 size=0x69
 #include "CUnknown10427700.h"
 #include <string.h>
