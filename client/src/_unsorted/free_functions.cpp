@@ -27342,6 +27342,14 @@ int __stdcall sub_1014d270(CCharView *p, int idx, unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d760 size=0x7
+struct CUnknown1014d760 { float sub_1014d760(); };
+float CUnknown1014d760::sub_1014d760()
+{
+    return *(float *)((char *)this + 0x250);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d860 size=0xc4
 #include "CUnknown101e8080.h"
 extern int (*g_101e311c)(const char *, ...);
