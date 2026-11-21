@@ -645,6 +645,33 @@ int sub_10005eb0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10005fb0 size=0xcd
+#include "RecvTable.h"
+extern RecvTable g_102df2a8;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_PointCamera { struct ignored; }
+template <> int ClientClassInit<DT_PointCamera::ignored>(DT_PointCamera::ignored *)
+{
+	char *pRecvTableName = "DT_PointCamera";
+	RecvTable &RecvTable = g_102df2a8;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_FOV", 1040, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_Resolution", 1044, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_bActive", 1048, 1, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100060f0 size=0x3
 char sub_100060f0()
 {
