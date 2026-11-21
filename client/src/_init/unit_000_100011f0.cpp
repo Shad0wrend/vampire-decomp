@@ -1911,3 +1911,8 @@ ConVar g_104df7d0("sv_skyname", "sky_urb01", 8320, "Current name of the skybox t
 #include "ConVar.h"
 ConVar g_104dfb30("sv_backspeed", "0.6", 8320, "How much to slow down backwards motion");
 // END FUNCTION
+
+// FUNCTION: 0x1010ffc0 size=0xa
+#include "ConVar.h"
+ConVar g_104dfa10("sv_jump_boost", "25.0", 8320, "How many extra inches to add to the player's origin on the first frame of the jump");
+// END FUNCTION
