@@ -20565,6 +20565,16 @@ void CUnknown101a59f0::sub_1012c640(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012c6d0 size=0x6
+namespace lifted {
+extern char g_105e54c8;
+}
+int sub_1012c6d0()
+{
+    return (int)&lifted::g_105e54c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012c740 size=0x25
 struct CUnknown102496d0 {
     int m_0;
