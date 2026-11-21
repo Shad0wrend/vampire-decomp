@@ -831,6 +831,7 @@
 0x101529b0 func   ?sub_101529b0@CUnknown101f08a0@@QAEPAU1@HHH@Z CUnknown101f08a0::sub_101529b0
 0x10152a00 func   ?sub_10152a00@@YIHPAUCUnknownStat101f0910@@@Z sub_10152a00
 0x10152b00 func   ?sub_10152b00@CUnknown101f0960@@QAEXPAX@Z CUnknown101f0960::sub_10152b00
+0x10152b60 func   ?sub_10152b60@CUnknown101f0ae0@@QAEXXZ CUnknown101f0ae0::sub_10152b60
 0x10152bb0 func   ?sub_10152bb0@CUnknown101f0b50@@QAEPAXH@Z CUnknown101f0b50::sub_10152bb0
 0x10152bd0 func   ?sub_10152bd0@CUnknown101f0b80@@QAEXHH@Z CUnknown101f0b80::sub_10152bd0
 0x10152e30 func   ?sub_10152e30@CUnknown101f0ea0@@QAEPAUS101f0b50@@XZ CUnknown101f0ea0::sub_10152e30
