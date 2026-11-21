@@ -9684,6 +9684,16 @@ int sub_100f7710()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7720 size=0x5
+namespace lifted {
+int sub_100f6ce0();
+}
+int sub_100f7720()
+{
+    return lifted::sub_100f6ce0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f79a0 size=0x1
 void sub_100f79a0()
 {
