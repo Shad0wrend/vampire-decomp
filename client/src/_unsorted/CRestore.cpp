@@ -169,6 +169,20 @@ void CRestore::sub_1012a6d0(unsigned short *pValue)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012a790 size=0x3b
+#include "CRestore.h"
+
+__declspec(dllimport) char *Q_strncpy(char *pDest, const char *pSrc, int nMaxLen);
+
+// TARGET: CRestore::vfunc6
+void CRestore::vfunc6(void *pData)
+{
+	unsigned short value[2];
+	vfunc7(value);
+	Q_strncpy((char *)pData, vfunc11(value[1]), 0x20);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012a7f0 size=0x42
 #include "utlrbtree.h"
 #include "CRestore.h"
