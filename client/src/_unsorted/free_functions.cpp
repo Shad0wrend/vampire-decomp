@@ -14967,6 +14967,17 @@ char sub_10101b80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10101b90 size=0xa
+namespace lifted {
+extern char g_104d3e48;
+}
+char sub_10101b90(char a0)
+{
+    lifted::g_104d3e48 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10101d90 size=0x7
 namespace lifted {
 extern char g_102352ec;
