@@ -331,6 +331,14 @@ float CUnknown10006100::sub_10006100()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10006110 size=0x7
+struct CUnknown10006110 { float sub_10006110(); };
+float CUnknown10006110::sub_10006110()
+{
+    return *(float *)((char *)this + 0x414);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100061b0 size=0x6
 namespace lifted {
 extern char g_102df68c;
