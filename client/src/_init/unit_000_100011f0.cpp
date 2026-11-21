@@ -935,6 +935,13 @@ int g_102e2608 = ClientClassInit((DT_ResearchBook_LG_COMP::ignored *)0);
 RecvTable g_102e42dc;
 // END FUNCTION
 
+// FUNCTION: 0x10010cd0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ResearchBook_HG_COMP { struct ignored; }
+template <> int ClientClassInit<DT_ResearchBook_HG_COMP::ignored>(DT_ResearchBook_HG_COMP::ignored *);
+int g_102e42d8 = ClientClassInit((DT_ResearchBook_HG_COMP::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10010f10 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e5630;
