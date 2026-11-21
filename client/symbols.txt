@@ -70,6 +70,7 @@
 0x10006d60 func   ?sub_10006d60@CUnknown10006d60@@QAEPAXH@Z CUnknown10006d60::sub_10006d60
 0x10006f90 func   ??_GC_WeaponRanged_Animalism@@UAEPAXI@Z ??_GC_WeaponRanged_Animalism@@UAEPAXI@Z
 0x10007020 func   ??_GC_WeaponRanged_Dementation@@UAEPAXI@Z ??_GC_WeaponRanged_Dementation@@UAEPAXI@Z
+0x100070b0 func   ??_GC_WeaponRanged_Domination@@UAEPAXI@Z ??_GC_WeaponRanged_Domination@@UAEPAXI@Z
 0x10007220 func   ?sub_10007220@@YAHXZ sub_10007220
 0x10007280 func   ?sub_10007280@CUnknown10007280@@QAEPADXZ CUnknown10007280::sub_10007280
 0x100073a0 func   ?sub_100073a0@@YAHXZ sub_100073a0
