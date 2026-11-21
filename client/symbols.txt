@@ -2149,6 +2149,7 @@
 0x1018d4b0 func   ?sub_1018d4b0@@YAXXZ sub_1018d4b0
 0x1018d5f0 func   ?sub_1018d5f0@@YAXXZ sub_1018d5f0
 0x1018d670 func   ?sub_1018d670@@YAXXZ sub_1018d670
+0x1018d6f0 func   ?sub_1018d6f0@@YAXXZ sub_1018d6f0
 0x1018dd90 func   ?sub_1018dd90@@YAHXZ sub_1018dd90
 0x1018e330 func   ?sub_1018e330@@YAPADPADPBDZZ sub_1018e330
 0x1018f340 func   ?sub_1018f340@@YAHXZ sub_1018f340
