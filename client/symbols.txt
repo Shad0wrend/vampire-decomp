@@ -338,6 +338,7 @@
 0x10014c90 func   ??_GC_BlueBloodPack@@UAEPAXI@Z ??_GC_BlueBloodPack@@UAEPAXI@Z
 0x10014cd0 func   ?sub_10014cd0@@YAHXZ sub_10014cd0
 0x10014df0 func   ?ClientClassInit@@YAHPAUignored@DT_BlueBloodPack@@@Z ClientClassInit
+0x10014f10 func   ??_GC_ElderVitaePack@@UAEPAXI@Z ??_GC_ElderVitaePack@@UAEPAXI@Z
 0x10014f50 func   ?sub_10014f50@@YAHXZ sub_10014f50
 0x10015070 func   ?ClientClassInit@@YAHPAUignored@DT_ElderVitaePack@@@Z ClientClassInit
 0x100151d0 func   ?sub_100151d0@@YAHXZ sub_100151d0
