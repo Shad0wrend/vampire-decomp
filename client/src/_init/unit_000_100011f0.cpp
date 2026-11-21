@@ -2168,3 +2168,9 @@ ConVar g_105faf20("net_graphsolid", "1", 128);
 #include "ConVar.h"
 ConVar g_105faed0("net_graphheight", "64", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101701b0 size=0xa
+#include "ConCommand.h"
+void sub_10170180(void);
+ConCommand g_105faf70("showbarter", sub_10170180, 0, 0, 0);
+// END FUNCTION
