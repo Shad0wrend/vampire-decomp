@@ -4790,6 +4790,16 @@ int sub_10042fc0(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10042fe0 size=0x12
+namespace lifted {
+struct C100432a0 { int sub_100432a0(int); };
+}
+int sub_10042fe0(int a0, int a1)
+{
+    return ((lifted::C100432a0 *)a1)->sub_100432a0(*(int *)((char *)a0 + 4));
+}
+// END FUNCTION
+
 // FUNCTION: 0x100430e0 size=0xb
 namespace lifted {
 extern char g_10227adc;
