@@ -811,3 +811,8 @@ ConVar g_104d1b00("cam_targetangle", "15", 0);
 #include "ConVar.h"
 ConVar g_104d2590("cam_yaw", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fb050 size=0xa
+#include "ConVar.h"
+ConVar g_104d2398("c_maxpitch", "90", 128);
+// END FUNCTION
