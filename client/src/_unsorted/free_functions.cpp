@@ -6721,6 +6721,14 @@ void UtlMem::sub_100c4c10(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100c9d40 size=0x4
+struct CUnknown100c9d40 { int sub_100c9d40(); };
+int CUnknown100c9d40::sub_100c9d40()
+{
+    return *(int *)((char *)this + 0x10);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ca0b0 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
