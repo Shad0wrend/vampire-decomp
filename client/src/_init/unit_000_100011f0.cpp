@@ -319,3 +319,8 @@ ConVar g_1049c490("debug_npc_move_yaw_snap", "1", 0, "Enable this to force the m
 #include "ConVar.h"
 ConVar g_10499848("debug_show_bones", "0", 0, "Enable this to draw wireframe bones for characters.");
 // END FUNCTION
+
+// FUNCTION: 0x100922e0 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_1049bfcc;
+// END FUNCTION
