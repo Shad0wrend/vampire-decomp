@@ -1736,3 +1736,8 @@ ConCommand g_104d2f48("+wpn_secondaryatk", sub_101024e0, 0, 0, 0);
 void sub_101024f0(void);
 ConCommand g_104d3720("-wpn_secondaryatk", sub_101024f0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10106050 size=0xa
+#include "ConVar.h"
+ConVar g_104d3e58("m_pitch", "0.022", 128, "Mouse pitch factor.");
+// END FUNCTION
