@@ -24608,6 +24608,33 @@ bool CUtlRBTreeBig::sub_101a71c0(unsigned short i) const
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a7290 size=0x1c7
+#include "utlrbtree.h"
+#include "CUtlRBTreeBig.h"
+void CUtlRBTreeBig::sub_101a7290(unsigned short elem)
+{
+	unsigned short rightchild = sub_101a6b40(elem).m_Right;
+	unsigned short left = sub_101a6b40(rightchild).m_Left;
+	m_pElements[elem].m_Links.m_Right = left;
+	if (sub_101a6b40(rightchild).m_Left != InvalidIndex())
+		SetParent(sub_101a6b40(rightchild).m_Left, elem);
+
+	if (rightchild != InvalidIndex())
+		m_pElements[rightchild].m_Links.m_Parent = sub_101a6b40(elem).m_Parent;
+	if (elem != m_Root) {
+		if (Links(sub_101a6b40(elem).m_Parent).m_Left == elem)
+			m_pElements[Links(elem).m_Parent].m_Links.m_Left = rightchild;
+		else
+			m_pElements[Links(elem).m_Parent].m_Links.m_Right = rightchild;
+	} else
+		m_Root = rightchild;
+
+	m_pElements[rightchild].m_Links.m_Left = elem;
+	if (elem != InvalidIndex())
+		m_pElements[elem].m_Links.m_Parent = rightchild;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101b1e60 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
