@@ -225,6 +225,21 @@ unsigned int CRestore::vfunc12(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012ac70 size=0x3a
+#include "CRestore.h"
+
+// TARGET: CRestore::vfunc17
+int CRestore::vfunc17(void *p, int count, int nBytesAvailable)
+{
+	int desired = count * sizeof(char);
+	int actual = (nBytesAvailable == 0) ? desired : ((desired < nBytesAvailable) ? desired : nBytesAvailable);
+	sub_1012ab60(p, actual);
+	if (actual < nBytesAvailable)
+		sub_1012abd0(nBytesAvailable - actual);
+	return actual / sizeof(char);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1012ad70 size=0x7b
 #include "CRestore.h"
 #include "CUnknown101a1f70.h"
