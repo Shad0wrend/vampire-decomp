@@ -8242,6 +8242,51 @@ int sub_1002f7a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002f8a0 size=0x2a9
+#include "RecvTable.h"
+extern RecvTable g_102eae94;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102ac968;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_SmokeStack { struct ignored; }
+template <> int ClientClassInit<DT_SmokeStack::ignored>(DT_SmokeStack::ignored *)
+{
+	char *pRecvTableName = "DT_SmokeStack";
+	RecvTable &RecvTable = g_102eae94;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102ac968, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_SpreadSpeed", 1232, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_Speed", 1236, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_StartSize", 1240, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_EndSize", 1244, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_Rate", 1248, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_JetLength", 1252, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_bEmit", 1256, 4, 0, 0),
+		RecvPropFloat("m_flBaseSpread", 1260, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flTwist", 1376, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_DirLightSource", 1324, 4, 0, 0),
+		RecvPropVector("m_DirLightColor", 1328, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vWind", 1364, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_Lights[0].m_vPos", 1264, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_Lights[0].m_vColor", 1276, 12, 0, RecvProxy_VectorToVector),
+		RecvPropFloat("m_Lights[0].m_flIntensity", 1288, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropVector("m_Lights[1].m_vPos", 1292, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_Lights[1].m_vColor", 1304, 12, 0, RecvProxy_VectorToVector),
+		RecvPropFloat("m_Lights[1].m_flIntensity", 1316, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_nLights", 1320, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10030c50 size=0x6
 namespace lifted {
 extern char g_102eb568;
