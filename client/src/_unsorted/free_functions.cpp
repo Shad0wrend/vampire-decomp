@@ -9706,6 +9706,14 @@ int __stdcall sub_10095bb0(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095fb0 size=0xa
+struct CUnknown10095fb0 { int sub_10095fb0(); };
+int CUnknown10095fb0::sub_10095fb0()
+{
+    return ((unsigned)(*(int *)((char *)this + 0x70)) >> 0xa) & 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096d10 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
