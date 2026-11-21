@@ -846,3 +846,8 @@ ConVar g_104d27c8("c_mindistance", "30", 128);
 #include "ConVar.h"
 ConVar g_104d2130("c_orthowidth", "100", 128);
 // END FUNCTION
+
+// FUNCTION: 0x100fb280 size=0xa
+#include "ConVar.h"
+ConVar g_104d24f0("c_orthoheight", "100", 128);
+// END FUNCTION
