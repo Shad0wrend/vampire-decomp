@@ -8645,6 +8645,25 @@ void sub_10108be0(double a, double b, int *pQuot, int *pRem)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108cf0 size=0x2b
+int sub_10108cf0(int a, int b)
+{
+    for (;;) {
+        if (a > b) {
+            if (b == 0)
+                return a;
+            int t = a % b;
+            a = b;
+            b = t;
+        } else {
+            if (a == 0)
+                return b;
+            b = b % a;
+        }
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108fd0 size=0x3d
 // VectorMA (mathlib.cpp, _WIN32 form): Valve's naked x87 asm.
 // TARGET: sub_10108fd0
