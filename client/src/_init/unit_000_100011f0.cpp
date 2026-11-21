@@ -1370,3 +1370,9 @@ ConCommand g_104d3240("+left", sub_10101ff0, 0, 0, 0);
 void sub_10102000(void);
 ConCommand g_104d3788("-left", sub_10102000, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10104a40 size=0xa
+#include "ConCommand.h"
+void sub_10102010(void);
+ConCommand g_104d3374("+right", sub_10102010, 0, 0, 0);
+// END FUNCTION
