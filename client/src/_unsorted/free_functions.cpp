@@ -6055,6 +6055,13 @@ char sub_1009ffd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009ffe0 size=0x5
+int __stdcall sub_1009ffe0(int a0, int a1)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1200 size=0x1
 void sub_100a1200()
 {
