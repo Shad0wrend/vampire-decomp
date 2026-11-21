@@ -21806,6 +21806,17 @@ void SList::sub_101289b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10128ad0 size=0xe
+namespace lifted {
+struct C1012c740 { int sub_1012c740(int); };
+}
+struct CUnknown10128ad0 { int sub_10128ad0(); };
+int CUnknown10128ad0::sub_10128ad0()
+{
+    return ((lifted::C1012c740 *)(this + 0x20))->sub_1012c740(0x3ca3d70a);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128b20 size=0x4
 struct CUnknown10128b20 { float sub_10128b20(); };
 float CUnknown10128b20::sub_10128b20()
