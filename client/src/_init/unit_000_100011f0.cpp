@@ -2351,6 +2351,13 @@ int g_102e71a0 = ClientClassInit((DT_ItemKMuseumStoreroomKey::ignored *)0);
 RecvTable g_102e55c8;
 // END FUNCTION
 
+// FUNCTION: 0x100233d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemKMuseumStorageKey { struct ignored; }
+template <> int ClientClassInit<DT_ItemKMuseumStorageKey::ignored>(DT_ItemKMuseumStorageKey::ignored *);
+int g_102e55c4 = ClientClassInit((DT_ItemKMuseumStorageKey::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10023610 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e3534;
