@@ -37644,6 +37644,34 @@ int sub_1013f8b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f9b0 size=0x66
+struct Elem1006cd00 { void sub_1013e340(); };
+struct S1006cd00 {
+    int m0;
+    int m4;
+    Elem1006cd00 **m8;
+    void sub_1013f9b0();
+};
+// TARGET: S1006cd00::sub_1013f9b0
+void S1006cd00::sub_1013f9b0()
+{
+    if (m8) {
+        for (int i = 0; i < m4; i++) {
+            Elem1006cd00 *e = m8[i];
+            if (e) {
+                e->sub_1013e340();
+                delete e;
+            }
+            m8[i] = 0;
+        }
+        delete m8;
+        m8 = 0;
+    }
+    m4 = 0;
+    m0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fc80 size=0x22
 extern char g_102c6c3c[];
 extern char g_102c6c30[];
