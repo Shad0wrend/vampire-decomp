@@ -18538,6 +18538,33 @@ void sub_10079e00(StudioHdr *pstudiohdr, int iSequence, float *pPose, float *pVe
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079e90 size=0x87
+#include "Vector.h"
+struct CStudioHdrRaw
+{
+	char m_pad0000[0xc];
+	char m_szName[0x104];	// 0x0c
+	int m_numSequences;	// 0x110
+};
+extern __declspec(dllimport) void DevMsg(const char *fmt, ...);
+void *sub_1008d9d0(CStudioHdrRaw *pStudioHdr, int iSequence);
+void sub_1008c770(CStudioHdrRaw *pStudioHdr, int iSequence, int a, float flRate, float *pPoseParameter, Vector *pOut, float flCycle);
+void sub_10079e90(CStudioHdrRaw *pStudioHdr, int iSequence, float *pPoseParameter, float flCycle)
+{
+	Vector vecOut;
+	if (!pStudioHdr) {
+		DevMsg("Bad pstudiohdr in GetSequenceLinearMotion()!\n");
+		return;
+	}
+	if (!sub_1008d9d0(pStudioHdr, iSequence)) {
+		if (sub_1008d9d0(pStudioHdr, 0))
+			DevMsg("Bad sequence (%i out of %i max) in GetSequenceAngularMotion() for model '%s'!\n", iSequence, pStudioHdr->m_numSequences, pStudioHdr->m_szName);
+	} else {
+		sub_1008c770(pStudioHdr, iSequence, 0, 1.0f, pPoseParameter, &vecOut, flCycle);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079fe0 size=0x1b
 // TARGET: sub_10079fe0
 int sub_10079fe0(int v)
