@@ -209,9 +209,9 @@ def main(argv: list[str] | None = None) -> int:
              *sorted(p.relative_to(root) for p in (root / "src").rglob("*.cpp"))]
     lines.append(f"build {NINJA}: configure | {' '.join(_esc(r) for r in regen)}")
     text = "\n".join(lines) + "\n"
-    ninja = root / NINJA
-    if not ninja.exists() or ninja.read_text(encoding="utf-8") != text:
-        ninja.write_text(text, encoding="utf-8", newline="\n")
+    # written even when unchanged: ninja runs configure while build.ninja is older than an input, so a run that kept
+    # the old file would leave it older and ninja would run configure again and again
+    (root / NINJA).write_text(text, encoding="utf-8", newline="\n")
     print(f"configured {len(listed) + len(unlisted)} blocks, {len(objects.order) - len(listed) - len(unlisted)} other "
           f"objects, {len(fixed & set(objects.order))} fixed up: run ninja")
     return 0
