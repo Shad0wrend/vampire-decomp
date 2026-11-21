@@ -12220,6 +12220,15 @@ void UtlMem::sub_100d8830()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8dc0 size=0x9
+struct CUnknown100d8dc0 { void * sub_100d8dc0(); };
+void * CUnknown100d8dc0::sub_100d8dc0()
+{
+    *(int *)this = -1;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d90b0 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
