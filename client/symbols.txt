@@ -77,6 +77,7 @@
 0x10007330 func   ??_GC_TEConcussiveExplosion@@UAEPAXI@Z ??_GC_TEConcussiveExplosion@@UAEPAXI@Z
 0x100073a0 func   ?sub_100073a0@@YAHXZ sub_100073a0
 0x10007410 func   ?ClientClassInit@@YAHPAUignored@DT_TEConcussiveExplosion@@@Z ClientClassInit
+0x10007590 func   ??_GC_MachineGun@@UAEPAXI@Z ??_GC_MachineGun@@UAEPAXI@Z
 0x100075d0 func   ?sub_100075d0@@YAHXZ sub_100075d0
 0x100076f0 func   ?ClientClassInit@@YAHPAUignored@DT_MachineGun@@@Z ClientClassInit
 0x10007850 func   ?sub_10007850@@YAHXZ sub_10007850
