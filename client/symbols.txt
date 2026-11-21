@@ -110,6 +110,7 @@
 0x100dfa10 func   ?vfunc6@ConVar@@UAEXPBD@Z ConVar::vfunc6
 0x100dfa40 func   ?vfunc5@ConVar@@UAEXM@Z ConVar::vfunc5
 0x100e1040 func   ?sub_100e1040@UtlMem@@QAEXXZ UtlMem::sub_100e1040
+0x100e1290 func   ?sub_100e1290@UtlMem@@QAEXXZ UtlMem::sub_100e1290
 0x100e12c0 func   ?sub_100e12c0@UtlMem@@QAEXH@Z UtlMem::sub_100e12c0
 0x100e14e0 func   ?vfunc0@CLocalDLLChain@@UAEXPAVCLocalDLLChainVisitor@@@Z CLocalDLLChain::vfunc0
 0x100e27a0 func   ?sub_100e27a0@CUtlLinkedList6@@QAEXG@Z CUtlLinkedList6::sub_100e27a0
