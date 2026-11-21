@@ -65,6 +65,7 @@
 0x10007ad0 func   ?sub_10007ad0@@YAHXZ sub_10007ad0
 0x10007bf0 func   ?ClientClassInit@@YAHPAUignored@DT_BaseBludgeonWeapon@@@Z ClientClassInit
 0x10007d50 func   ?sub_10007d50@@YAHXZ sub_10007d50
+0x10007e70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee@@@Z ClientClassInit
 0x10007fd0 func   ?sub_10007fd0@@YAHXZ sub_10007fd0
 0x10008250 func   ?sub_10008250@@YAHXZ sub_10008250
 0x100084d0 func   ?sub_100084d0@@YAHXZ sub_100084d0
