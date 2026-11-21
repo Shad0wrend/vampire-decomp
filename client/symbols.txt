@@ -1222,6 +1222,7 @@
 0x1005edc0 func   ??_GCItemInfo@@UAEPAXI@Z ??_GCItemInfo@@UAEPAXI@Z
 0x1005ede0 func   ??1CItemInfo@@UAE@XZ CItemInfo::~CItemInfo
 0x1005eee0 func   ?sub_1005eee0@CUnknown1005eee0@@QAEXXZ CUnknown1005eee0::sub_1005eee0
+0x1005f110 func   ??_GCManagedHudElement@@UAEPAXI@Z ??_GCManagedHudElement@@UAEPAXI@Z
 0x1005f130 func   ??1CManagedHudElement@@UAE@XZ CManagedHudElement::~CManagedHudElement
 0x1005f150 func   ?sub_1005f150@CUnknown1005f150@@QAEHH@Z CUnknown1005f150::sub_1005f150
 0x1005f160 func   ?sub_1005f160@CUnknown1005f160@@QAEHXZ CUnknown1005f160::sub_1005f160
