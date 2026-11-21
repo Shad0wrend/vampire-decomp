@@ -560,6 +560,7 @@
 0x1012f8c0 func   ?sub_1012f8c0@@YGPBDM@Z sub_1012f8c0
 0x1012f9c0 func   ?sub_1012f9c0@CUnk101b4c90@@QAEXPAG@Z CUnk101b4c90::sub_1012f9c0
 0x1012fd30 func   ?sub_1012fd30@CSoundEmitterSystemBase@@QAEXPBD@Z CSoundEmitterSystemBase::sub_1012fd30
+0x1012fda0 func   ?sub_1012fda0@CSoundEmitterSystemBase@@QAEXPBD0@Z CSoundEmitterSystemBase::sub_1012fda0
 0x10130970 func   ?sub_10130970@CUnknown101b6320@@QAEAAV1@ABV1@@Z CUnknown101b6320::sub_10130970
 0x10130b30 func   ?sub_10130b30@UtlVec8@@QAEXPBUSElem8@@H@Z UtlVec8::sub_10130b30
 0x10130ba0 func   ?sub_10130ba0@CUtlVector16@@QAEXXZ CUtlVector16::sub_10130ba0

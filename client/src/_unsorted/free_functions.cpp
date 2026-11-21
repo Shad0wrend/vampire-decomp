@@ -13692,6 +13692,63 @@ void CSoundEmitterSystemBase::sub_1012fd30(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012fda0 size=0xbb
+#include "CSoundEmitterSystemBase.h"
+
+extern void (__cdecl *g_101e3140)(const char *fmt, ...);	// DevWarning
+
+struct CSoundRecordX	// 0xe8 byte sound record
+{
+	char m_pad0000[0x18];
+	int m_nScript;	// 0x18: the script file's index
+	char m_pad001c[0xe8 - 0x1c];
+};
+
+struct CScriptFlagX	// 0x82 byte script file record
+{
+	char m_bChanged;
+	char m_pad0001[0x81];
+};
+
+namespace block_101b5180 {
+struct CSoundEmitterUnit : CSoundEmitterSystemBase
+{
+	char sub_1012e510(int index);
+};
+
+char CSoundEmitterUnit::sub_1012e510(int index)
+{
+	if (index >= 0 && index < m_i64)
+		return 1;
+	return 0;
+}
+}
+using namespace block_101b5180;
+
+// TARGET: CSoundEmitterSystemBase::sub_1012fda0
+void CSoundEmitterSystemBase::sub_1012fda0(const char *pszSound, const char *pszScript)
+{
+	int iSound = sub_1012e3f0(pszSound);
+	if (!((CSoundEmitterUnit *)this)->sub_1012e510(iSound)) {
+		g_101e3140("Can't move '%s', no such sound!\n", pszSound);
+		return;
+	}
+	int iOld = ((CSoundRecordX *)m_i54)[iSound].m_nScript;
+	if (iOld >= 0 && iOld < m_ia8) {
+		int iNew = sub_1012f9e0(pszScript);
+		if (iNew == -1) {
+			g_101e3140("CSoundEmitterSystemBase::MoveSound( '%s', '%s' ), script file not list in manifest '%s'\n", pszSound, pszScript, "scripts/game_sounds_manifest.txt");
+			return;
+		}
+		if (iOld != iNew) {
+			((CSoundRecordX *)m_i54)[iSound].m_nScript = iNew;
+			((CScriptFlagX *)m_i9c)[iOld].m_bChanged = 1;
+			((CScriptFlagX *)m_i9c)[iNew].m_bChanged = 1;
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
