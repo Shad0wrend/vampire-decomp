@@ -38917,6 +38917,17 @@ void CUnknown10193340::sub_10193340()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101963a0 size=0x1a
+namespace lifted {
+extern char g_10618750;
+struct C10196fe0 { int sub_10196fe0(int, int, int); };
+}
+int sub_101963a0(int a0, int a1, int a2)
+{
+    return ((lifted::C10196fe0 *)((int)&lifted::g_10618750))->sub_10196fe0(a0, a1, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10197a20 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
