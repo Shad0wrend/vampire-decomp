@@ -28944,6 +28944,14 @@ int __stdcall sub_1014d250(int a0, int a1, int a2)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d260 size=0xd
+int __stdcall sub_1014d260(int a0, int a1, int a2)
+{
+    *(int *)((char *)a0) = 3;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d270 size=0x34
 extern int g_102c89f0[];
 
