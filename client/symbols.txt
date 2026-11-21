@@ -20,6 +20,7 @@
 0x10002ee0 func   ?ClientClassInit@@YAHPAUignored@DT_HL2Local@@@Z ClientClassInit
 0x10002f60 func   ?sub_10002f60@CUnknown10002f60@@QAEPAXXZ CUnknown10002f60::sub_10002f60
 0x10003270 func   ?sub_10003270@@YAHXZ sub_10003270
+0x10003390 func   ?ClientClassInit@@YAHPAUignored@DT_ItemPhysicsHand@@@Z ClientClassInit
 0x10003580 func   ?sub_10003580@@YAHXZ sub_10003580
 0x100039a0 func   ?sub_100039a0@@YAHXZ sub_100039a0
 0x10003c10 func   ?sub_10003c10@CUtlMemory192@@QAEXH@Z CUtlMemory192::sub_10003c10
