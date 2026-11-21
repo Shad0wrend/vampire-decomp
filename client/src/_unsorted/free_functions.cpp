@@ -9969,6 +9969,64 @@ void CUnknown101df2f0::sub_10148800()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148cb0 size=0xe9
+struct Vec3X { int x, y, z; };
+struct ItemVecX {
+	char d[0x10];
+	void sub_101474a0(const ItemVecX *pOther);
+};
+struct RecVecX {
+	char d[0x1c];
+	void sub_10147a40(const RecVecX *pOther);
+};
+struct SoundRecX {
+	char b0;
+	int i4, i8, ic, i10, i14, i18;
+	char b1c, b1d, b1e;
+	int i20, i24, i28, i2c, i30, i34, i38, i3c, i40, i44, i48, i4c;
+	Vec3X v50;
+	RecVecX va5c;
+	RecVecX va78;
+	ItemVecX v94;
+	int ia4, ia8;
+
+	SoundRecX *sub_10148cb0(const SoundRecX *o);
+};
+
+SoundRecX *SoundRecX::sub_10148cb0(const SoundRecX *o)
+{
+	b0 = o->b0;
+	i4 = o->i4;
+	i8 = o->i8;
+	ic = o->ic;
+	i10 = o->i10;
+	i14 = o->i14;
+	i18 = o->i18;
+	b1c = o->b1c;
+	b1d = o->b1d;
+	b1e = o->b1e;
+	i20 = o->i20;
+	i24 = o->i24;
+	i28 = o->i28;
+	i2c = o->i2c;
+	i30 = o->i30;
+	i34 = o->i34;
+	i38 = o->i38;
+	i3c = o->i3c;
+	i40 = o->i40;
+	i44 = o->i44;
+	i48 = o->i48;
+	i4c = o->i4c;
+	v50 = o->v50;
+	va5c.sub_10147a40(&o->va5c);
+	va78.sub_10147a40(&o->va78);
+	v94.sub_101474a0(&o->v94);
+	ia4 = o->ia4;
+	ia8 = o->ia8;
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149100 size=0xee
 #include "CUnknown101e01e0.h"
 
