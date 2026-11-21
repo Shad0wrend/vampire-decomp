@@ -10242,6 +10242,29 @@ int sub_1003a510()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003a580 size=0x8c
+#include "RecvTable.h"
+extern RecvTable g_102eeb88;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_1027c4e8;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEKillPlayerAttachments { struct ignored; }
+template <> int ClientClassInit<DT_TEKillPlayerAttachments::ignored>(DT_TEKillPlayerAttachments::ignored *)
+{
+	char *pRecvTableName = "DT_TEKillPlayerAttachments";
+	RecvTable &RecvTable = g_102eeb88;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_1027c4e8, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_nPlayer", 16, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1003dab0 size=0x12
 namespace lifted {
 extern char g_10226fec;
