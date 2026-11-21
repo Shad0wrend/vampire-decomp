@@ -557,3 +557,8 @@ ConVar g_104a1750("cl_show_client_particles", "0", 0);
 #include "ConVar.h"
 ConVar g_104a2a30("lod_TransitionDist", "400", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100bb480 size=0xa
+#include "ConVar.h"
+ConVar g_104a2b18("lod_Enable", "1", 0);
+// END FUNCTION
