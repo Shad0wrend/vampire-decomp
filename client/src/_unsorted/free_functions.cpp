@@ -5904,6 +5904,12 @@ void __stdcall sub_100a3a40(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a3a50 size=0x3
+void __stdcall sub_100a3a50(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5420 size=0x53
 struct SInit {
 	int m_n0;
