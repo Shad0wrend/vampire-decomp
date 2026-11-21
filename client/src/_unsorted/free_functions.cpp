@@ -20996,6 +20996,32 @@ void CVDmg_t::sub_101587f0(CVDmg_t *pOther)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101588c0 size=0x83
+#include "CVDmg_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+
+void CVDmg_t::sub_101588c0()
+{
+	g_101e3124[*g_101e3128].a = "CVDmg_t::Null";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	(*g_101e3128)++;
+	int *p = (int *)this;
+	p[0] = -1;
+	p[4] = 0;
+	p[1] = 0;
+	p[3] = 0;
+	((CVDmgBlock16_t *)(p + 5))->sub_10160670();
+	((CVDmgBlock16_t *)(p + 9))->sub_10160670();
+	p[0xd] = 0;
+	p[0x10] = 0;
+	(*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101594e0 size=0x6d
 #include "CVStatCost_t.h"
 
