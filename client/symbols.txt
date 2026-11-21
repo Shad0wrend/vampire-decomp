@@ -1068,6 +1068,7 @@
 0x100445f0 func   ?vfunc3@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc3
 0x10044600 func   ?vfunc4@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc4
 0x10044610 func   ?vfunc6@CAutoGameSystem@@UAEXXZ CAutoGameSystem::vfunc6
+0x10044f50 func   ??_GCFXDiscreetLine@@UAEPAXI@Z ??_GCFXDiscreetLine@@UAEPAXI@Z
 0x10044f70 func   ??1CFXDiscreetLine@@UAE@XZ CFXDiscreetLine::~CFXDiscreetLine
 0x10045630 func   ?sub_10045630@@YAXPAVVector@@00@Z sub_10045630
 0x10045760 func   ??1CFXLine@@UAE@XZ CFXLine::~CFXLine
