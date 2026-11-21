@@ -1182,6 +1182,7 @@
 0x100a3b50 func   ?sub_100a3b50@CUnknown100a3b50@@QAEPADXZ CUnknown100a3b50::sub_100a3b50
 0x100a3d00 func   ?ClientClassInit@@YAHPAUignored@DT_PlayerState@@@Z ClientClassInit
 0x100a3e00 func   ?ClientClassInit@@YAHPAUignored@DT_Local@@@Z ClientClassInit
+0x100a4870 func   ?ClientClassInit@@YAHPAUignored@DT_LocalPlayerExclusive@@@Z ClientClassInit
 0x100a4a10 func   ?sub_100a4a10@@YAHXZ sub_100a4a10
 0x100a5280 func   ?sub_100a5280@CUnknown100a5280@@QAEHH@Z CUnknown100a5280::sub_100a5280
 0x100a5290 func   ?sub_100a5290@CUnknown100a5290@@QAEHH@Z CUnknown100a5290::sub_100a5290
