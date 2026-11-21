@@ -58130,6 +58130,71 @@ CVTraitDependencyValue_t *CVTraitDependencyValue_t::sub_10161820(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10161a40 size=0x169
+#include "CUnknown10205f70.h"
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+extern char g_102de300[];
+
+class CKeyBlock
+{
+public:
+	virtual const char *GetName();
+	virtual void s1(); virtual void s2(); virtual void s3();
+	virtual CKeyBlock *GetFirstSubKey();
+	virtual CKeyBlock *GetNextKey();
+	virtual void s6(); virtual void s7(); virtual void s8(); virtual void s9(); virtual void s10(); virtual void s11(); virtual void s12();
+	virtual const char *GetString(const char *name, const char *def);
+};
+
+class CListObject
+{
+public:
+	virtual void s0();
+	virtual void SetValue(const char *value);
+	CListObject *sub_10161820(int id);
+};
+
+bool CUnknown10205f70::sub_10161a40(void *pKeys, const char *pszName)
+{
+	if (pKeys) {
+		for (CKeyBlock *pChild = ((CKeyBlock *)pKeys)->GetFirstSubKey(); pChild; pChild = pChild->GetNextKey()) {
+			if (_strcmpi(pChild->GetName(), pszName) == 0) {
+				if (m_nAlloc == m_nUsed) {
+					m_nAlloc += m_nGrowSize;
+					if (m_ppObjects) {
+						void **pNew = (void **)operator new(m_nAlloc * 4);
+						int i = 0;
+						for (; i < m_nUsed; i++)
+							pNew[i] = m_ppObjects[i];
+						for (; i < m_nAlloc; i++)
+							pNew[i] = 0;
+						operator delete(m_ppObjects);
+						m_ppObjects = pNew;
+						m_nUsed++;
+					} else {
+						m_ppObjects = (void **)operator new(m_nAlloc * 4);
+						for (int i = 0; i < m_nAlloc; i++)
+							m_ppObjects[i] = 0;
+						m_nUsed++;
+					}
+				} else {
+					m_nUsed++;
+				}
+				if (!m_ppObjects[m_nUsed - 1]) {
+					CListObject *pObject = (CListObject *)operator new(0x2c);
+					m_ppObjects[m_nUsed - 1] = pObject ? pObject->sub_10161820(m_nCounter++) : 0;
+				}
+				CListObject *t = (CListObject *)m_ppObjects[m_nUsed - 1];
+				t->SetValue(pChild->GetString(0, g_102de300));
+			}
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10161bb0 size=0x3a
 #include "CUnknown101d7520.h"
 #include "CUnknown10205e60.h"
