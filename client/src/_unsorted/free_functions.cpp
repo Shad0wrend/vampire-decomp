@@ -13594,6 +13594,38 @@ int CSoundEmitterSystemBase::sub_1012f130(const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f1a0 size=0x27
+#include "CSoundEmitterSystemBase.h"
+
+// the callee compiled before its caller in the same unit: a copy in the block's own namespace (one name, one
+// definition: the real sub_101b31a0 is its own block)
+namespace block_101b4200 {
+struct CSoundEmitterSystemBaseUnit : CSoundEmitterSystemBase
+{
+	char sub_1012e510(int index);
+};
+
+char CSoundEmitterSystemBaseUnit::sub_1012e510(int index)
+{
+	if (index >= 0 && index < m_i64)
+	{
+		return 1;
+	}
+	return 0;
+}
+}
+using namespace block_101b4200;
+
+// TARGET: CSoundEmitterSystemBase::sub_1012f1a0
+char CSoundEmitterSystemBase::sub_1012f1a0(int index)
+{
+	char bValid = ((CSoundEmitterSystemBaseUnit *)this)->sub_1012e510(index);
+	if (!bValid)
+		return bValid;
+	return *(char *)(*(char **)((char *)this + 0x54) + index * 0xe8 + 0x15);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
