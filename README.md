@@ -38,7 +38,7 @@ The data is in the sources as well: initialized and constant data in `src/_data/
 
 | Part | State |
 |---|---|
-| `client.dll` (client game code) | In progress in a separate project: 3,101 of 11,963 functions (25.9%), 147,561 of 1,644,370 code bytes (9.0%) as of 2026-11-21 |
+| `client.dll` (client game code) | In progress in [`client/`](client/): 7,550 of 16,003 functions (47.2%), 339,582 of 1,690,523 code bytes (20.1%) as of 2026-11-21 |
 | `GameUI.dll`, `vampire_python21.dll` | Not started |
 | Engine and its modules (`engine.dll`, `launcher.dll`, `materialsystem.dll`, `studiorender.dll`, `shaderapidx9.dll`, `stdshader_*.dll`, `vgui2.dll`, `vguimatsurface.dll`, `vphysics.dll`, `vstdlib.dll`, `tier0.dll`, `filesystem_stdio.dll`, `vaudio_miles.dll`, `voice_miles.dll`), `Vampire.exe` | Not started |
 | Third-party libraries (Miles, Bink, zlib, Microsoft runtime) | Out of scope |
@@ -54,11 +54,13 @@ The data is in the sources as well: initialized and constant data in `src/_data/
 | `docs/` | Research notes: VC6 register-allocation rules, the standalone-link work |
 | `CLAUDE.md` | The working guide the agents followed: VC6 code-generation idioms that decide a match |
 | `phase0/` | The first experiments that tested whether matching was possible |
+| `client/` | `client.dll`, in progress: a pcdecomp project of its own with the same layout (`src/`, `include/`, `symbols.txt`, `project.toml`, `CLAUDE.md`) |
 | `LICENSE` | CC0 1.0 Universal (see [License](#license-cc0-10)) |
 
 **No game files are included.** To build or check anything you need your own legally obtained copy of the game:
-`vampire.dll` from patch 1.2 (SHA-1 `3fe64bc0d9d7eca64976adc668617ca2814e5e4a`). You also need Visual C++ 6.0;
-the game was built with VC6 build 9044. Set `binary`, `cl` and `vcvars` in `project.toml` to the places of these
+`vampire.dll` from patch 1.2 (SHA-1 `3fe64bc0d9d7eca64976adc668617ca2814e5e4a`); for `client/`, `client.dll` from
+the same patch (SHA-1 `39a2d2556f08090542f2d186320b9012a83ffb6b`). You also need Visual C++ 6.0;
+the game was built with VC6 build 9044. Set `binary`, `cl` and `vcvars` in `project.toml` (and `client/project.toml`) to the places of these
 files on your machine. pcdecomp's database (`project.db`) and its cache are not part of the repository.
 
 ## Legal
