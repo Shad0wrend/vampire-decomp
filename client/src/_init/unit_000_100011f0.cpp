@@ -1836,3 +1836,8 @@ ConVar g_104dfa58("sv_maxspeed", "2048", 8448);
 #include "ConVar.h"
 ConVar g_104dfc98("sv_accelerate", "10", 8448);
 // END FUNCTION
+
+// FUNCTION: 0x1010fb10 size=0xa
+#include "ConVar.h"
+ConVar g_104dfc08("sv_deccelerate", "5", 8448);
+// END FUNCTION
