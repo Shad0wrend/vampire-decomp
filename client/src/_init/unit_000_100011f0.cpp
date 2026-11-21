@@ -2003,6 +2003,13 @@ int g_102e0cd4 = ClientClassInit((DT_ItemGJunkyardBusinesscard::ignored *)0);
 RecvTable g_102e7504;
 // END FUNCTION
 
+// FUNCTION: 0x1001eb50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGIdolCat { struct ignored; }
+template <> int ClientClassInit<DT_ItemGIdolCat::ignored>(DT_ItemGIdolCat::ignored *);
+int g_102e7500 = ClientClassInit((DT_ItemGIdolCat::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1001ed90 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e6d7c;
