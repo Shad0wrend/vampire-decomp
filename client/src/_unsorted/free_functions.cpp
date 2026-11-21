@@ -23205,6 +23205,15 @@ void sub_101275e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10127770 size=0x28
+#include "RecvTable.h"
+
+RecvProp RecvPropEHandle(char *pVarName, int offset, int sizeofVar)
+{
+	return RecvPropInt(pVarName, offset, sizeofVar, 0, RecvProxy_IntToEHandle);
+}
+// END FUNCTION
+
 // FUNCTION: 0x101277a0 size=0x5
 namespace lifted {
 int sub_10127720();
