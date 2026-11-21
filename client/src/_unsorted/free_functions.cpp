@@ -26376,6 +26376,12 @@ void CUtlMemory12::sub_10163a50(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101666c0 size=0x1
+void sub_101666c0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101667f0 size=0x21
 struct CUnkDelete101d7c90
 {
