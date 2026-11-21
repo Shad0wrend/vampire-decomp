@@ -2112,3 +2112,8 @@ ConVar g_105faac8("scr_printspeed", "8", 0);
 #include "ConVar.h"
 ConVar g_105faa80("scr_centertime", "2", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10165e40 size=0xa
+#include "ConVar.h"
+ConVar g_105fab38("cl_showfps", "0", 0, "Draw fps meter at top of screen");
+// END FUNCTION
