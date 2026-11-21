@@ -618,3 +618,8 @@ ConVar g_104a4330("r_traceglow", "0", 0);
 #include "ConVar.h"
 ConVar g_104a43c0("r_occlusionglow", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100c2060 size=0xa
+#include "ConVar.h"
+ConVar g_104a42e8("r_drawsprites", "1", 0);
+// END FUNCTION
