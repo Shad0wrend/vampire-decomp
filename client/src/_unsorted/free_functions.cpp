@@ -21070,6 +21070,24 @@ int CVDmg_t::sub_10158a80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159020 size=0x5f
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+extern int g_105f938c;
+
+void sub_10159020(int callback)
+{
+	g_101e3124[*g_101e3128].a = "CVDmg_t::SetDmgApplyCallback";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	(*g_101e3128)++;
+	g_105f938c = callback;
+	(*g_101e3128)--;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101594e0 size=0x6d
 #include "CVStatCost_t.h"
 
