@@ -1700,3 +1700,9 @@ ConCommand g_104d2ec4("-feed", sub_10102240, 0, 0, 0);
 void sub_10054cb0(void);
 ConCommand g_104d36ac("dlgscrldn", sub_10054cb0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105b70 size=0xa
+#include "ConCommand.h"
+void sub_10054c50(void);
+ConCommand g_104d38ec("dlgscrlup", sub_10054c50, 0, 0, 0);
+// END FUNCTION
