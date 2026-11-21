@@ -17489,6 +17489,16 @@ int CUnknown1010df20::sub_1010df20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010df30 size=0x9
+struct CUnknown1010df30 { int sub_1010df30(); };
+int CUnknown1010df30::sub_1010df30()
+{
+    *(int *)((char *)this + 0x18) = 0;
+    *(int *)((char *)this + 0x1c) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010df40 size=0x4
 struct CUnknown1010df40 { int sub_1010df40(); };
 int CUnknown1010df40::sub_1010df40()
