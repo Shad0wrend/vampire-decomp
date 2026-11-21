@@ -13264,6 +13264,26 @@ void CMem16_t::sub_10127830(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101278c0 size=0x2a
+void __stdcall sub_101279a0(int a);
+
+struct CUnk10247bd0
+{
+    int m_first;
+    void sub_101288c0(int b, int c);
+    CUnk10247bd0 *sub_101278c0(int a, int b, int c);
+};
+
+// TARGET: sub_101278c0
+CUnk10247bd0 *CUnk10247bd0::sub_101278c0(int a, int b, int c)
+{
+    m_first = 0;
+    ::sub_101279a0(a);
+    sub_101288c0(b, c);
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101279a0 size=0x51
 #include "CUnknown10248a50.h"
 #include <string.h>
