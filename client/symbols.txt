@@ -211,6 +211,7 @@
 0x10013150 func   ?sub_10013150@@YAHXZ sub_10013150
 0x10013270 func   ?ClientClassInit@@YAHPAUignored@DT_OccultObfuscate@@@Z ClientClassInit
 0x100133d0 func   ?sub_100133d0@@YAHXZ sub_100133d0
+0x100134f0 func   ?ClientClassInit@@YAHPAUignored@DT_OccultDexterity@@@Z ClientClassInit
 0x10013650 func   ?sub_10013650@@YAHXZ sub_10013650
 0x100138d0 func   ?sub_100138d0@@YAHXZ sub_100138d0
 0x10013b50 func   ?sub_10013b50@@YAHXZ sub_10013b50
