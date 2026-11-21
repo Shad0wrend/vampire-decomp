@@ -18465,6 +18465,26 @@ template <> int ClientClassInit<DT_Edict::ignored>(DT_Edict::ignored *)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009d680 size=0x6e
+#include "RecvTable.h"
+extern RecvTable g_1049e328;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void sub_1009d300(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_AnimTimeMustBeFirst { struct ignored; }
+template <> int ClientClassInit<DT_AnimTimeMustBeFirst::ignored>(DT_AnimTimeMustBeFirst::ignored *)
+{
+	char *pRecvTableName = "DT_AnimTimeMustBeFirst";
+	RecvTable &RecvTable = g_1049e328;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_flAnimTime", 112, 4, 0, sub_1009d300),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1009db70 size=0x1
 void sub_1009db70()
 {
