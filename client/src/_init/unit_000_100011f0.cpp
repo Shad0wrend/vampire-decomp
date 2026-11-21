@@ -117,3 +117,8 @@ ConVar g_103ecd10("muzzleflash_light", "1", 128);
 #include "ConVar.h"
 ConVar g_103edd98("r_visualizetraces", "0", 8192);
 // END FUNCTION
+
+// FUNCTION: 0x1004deb0 size=0xa
+#include "ConVar.h"
+ConVar g_103eddf8("credits_scrollrate", "30", 0);
+// END FUNCTION
