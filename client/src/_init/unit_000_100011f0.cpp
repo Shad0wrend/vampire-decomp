@@ -4032,6 +4032,13 @@ int g_1049e324 = ClientClassInit((DT_AnimTimeMustBeFirst::ignored *)0);
 RecvTable g_1049e190;
 // END FUNCTION
 
+// FUNCTION: 0x1009d740 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PredictableId { struct ignored; }
+template <> int ClientClassInit<DT_PredictableId::ignored>(DT_PredictableId::ignored *);
+int g_1049e18c = ClientClassInit((DT_PredictableId::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x1009d800 size=0xa
 #include "RecvTable.h"
 RecvTable g_1049dabc;
