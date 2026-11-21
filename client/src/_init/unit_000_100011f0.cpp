@@ -2783,3 +2783,8 @@ ConVar g_10618ab8("fog_enable", "1", 0);
 #include "ConVar.h"
 ConVar g_10619530("fog_startskybox", "-1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1019c830 size=0xa
+#include "ConVar.h"
+ConVar g_106189e0("fog_endskybox", "-1", 0);
+// END FUNCTION
