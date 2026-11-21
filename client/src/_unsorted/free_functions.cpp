@@ -17591,6 +17591,43 @@ bool sub_1008c770(void *pStudioHdr, int iSequence, float flCycleFrom, float flCy
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008c8e0 size=0xf2
+#include "Vector.h"
+struct AnimDescView
+{
+    char pad0000[4];
+    float fps;
+    char pad0008[4];
+    int numframes;
+};
+void sub_1008c060(const void *pHdr, int iSequence, const float *poseParameter, AnimDescView **panim, float *weight);
+bool sub_1008c530(AnimDescView *panim, float flCycle, Vector &vecVelocity);
+
+// TARGET: sub_1008c8e0
+bool sub_1008c8e0(const void *pHdr, int iSequence, float flCycle, const float *poseParameter, Vector &vecVelocity)
+{
+    AnimDescView *panim[4];
+    float weight[4];
+    sub_1008c060(pHdr, iSequence, poseParameter, panim, weight);
+    vecVelocity.Init();
+    bool found = false;
+    for (int i = 0; i < 4; i++)
+    {
+        if (weight[i] != 0.0f)
+        {
+            Vector vecPos;
+            AnimDescView *a = panim[i];
+            if (sub_1008c530(a, flCycle, vecPos))
+            {
+                vecVelocity = vecVelocity + vecPos * weight[i] * ((float)a->numframes / a->fps);
+                found = true;
+            }
+        }
+    }
+    return found;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008ce20 size=0x7
 namespace lifted {
 extern float g_101e34f0;
