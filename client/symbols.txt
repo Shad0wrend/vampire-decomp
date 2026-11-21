@@ -2484,6 +2484,7 @@
 0x10125e70 func   ?sub_10125e70@@YAHXZ sub_10125e70
 0x10125f70 func   ?ClientClassInit@@YAHPAUignored@DT_Ragdoll@@@Z ClientClassInit
 0x101260d0 func   ?sub_101260d0@@YAHXZ sub_101260d0
+0x101265f0 func   ??_GC_ServerRagdollAttached@@UAEPAXI@Z ??_GC_ServerRagdollAttached@@UAEPAXI@Z
 0x10126670 func   ?ClientClassInit@@YAHPAUignored@DT_Ragdoll_Attached@@@Z ClientClassInit
 0x10126a30 func   ?sub_10126a30@@YAXPAUCUnknown1019bf80List@@@Z sub_10126a30
 0x10126a70 func   ?sub_10126a70@@YAXPAUHolder@@@Z sub_10126a70
