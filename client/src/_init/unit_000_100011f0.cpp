@@ -2551,3 +2551,8 @@ ConVar g_105fc6d0("v_kickpitch", "0.6", 0);
 #include "ConVar.h"
 ConVar g_105fc5f8("v_iyaw_cycle", "2", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018efd0 size=0xa
+#include "ConVar.h"
+ConVar g_105fc7f8("v_iroll_cycle", "0.5", 0);
+// END FUNCTION
