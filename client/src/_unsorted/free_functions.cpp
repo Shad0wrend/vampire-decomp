@@ -1620,6 +1620,28 @@ int sub_1000aa50()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1000ab70 size=0x72
+#include "RecvTable.h"
+extern RecvTable g_102e1700;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102abca0;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee_SabbatLeaderAttack { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee_SabbatLeaderAttack::ignored>(DT_WeaponMelee_SabbatLeaderAttack::ignored *)
+{
+	char *pRecvTableName = "DT_WeaponMelee_SabbatLeaderAttack";
+	RecvTable &RecvTable = g_102e1700;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102abca0, DataTableRecvProxy_StaticDataTable),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1000acd0 size=0x6
 namespace lifted {
 extern char g_102dffdc;
