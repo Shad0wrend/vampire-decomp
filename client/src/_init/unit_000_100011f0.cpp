@@ -2708,3 +2708,8 @@ ConVar g_10619338("r_drawtranslucentrenderables", "1", 0);
 #include "ConVar.h"
 ConVar g_10618950("r_drawopaquerenderables", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10198030 size=0xa
+#include "ConVar.h"
+ConVar g_106192a8("mat_drawwater", "1", 0);
+// END FUNCTION
