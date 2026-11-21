@@ -3752,6 +3752,37 @@ CEntry100c4340 *sub_1008b360(CHolder100c4340 *pHolder, int key)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008b3a0 size=0x36
+struct CLerpRange
+{
+    float m_flStart;
+    float m_flEnd;
+    float m_flUnk;
+    float m_flUnk2;
+    float m_flUnk3;
+};
+
+struct CLerpRangeSet
+{
+    float m_fUnk;
+};
+
+int sub_1008b360(void *pOwner, int id);
+
+// TARGET: sub_1008b3a0
+float sub_1008b3a0(void *pOwner, int id, float t)
+{
+    if (pOwner == 0) {
+        return 0.0f;
+    }
+    char *e = (char *)sub_1008b360(pOwner, id);
+    if (e == 0) {
+        return 0.0f;
+    }
+    return (*(float *)(e + 0xc) - *(float *)(e + 8)) * t + *(float *)(e + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008b3e0 size=0xd3
 #include <math.h>
 
