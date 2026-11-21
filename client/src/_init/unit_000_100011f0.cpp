@@ -1951,3 +1951,8 @@ ConVar g_104e0a30("cl_ragdoll_collide", "0", 0);
 #include "ConVar.h"
 ConVar g_104e0ad8("think_limit", "10", 8192, "Maximum think time in milliseconds, warning is printed if this is exceeded.");
 // END FUNCTION
+
+// FUNCTION: 0x1011fed0 size=0x5
+#include "CSolidSetDefaults.h"
+CSolidSetDefaults g_104e0c30;
+// END FUNCTION
