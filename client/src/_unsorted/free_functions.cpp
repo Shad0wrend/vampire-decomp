@@ -7632,6 +7632,24 @@ void __fastcall sub_10107550(Vector *v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101075e0 size=0x28
+// TARGET: sub_101075e0
+float __cdecl sub_101075e0(float x)
+{
+	float f = 0.0f;
+	__asm {
+		femms
+		movd mm0, dword ptr [x]
+		pfrsqrt mm1, mm0
+		punpckldq mm0, mm0
+		pfmul mm0, mm1
+		movd dword ptr [f], mm0
+		femms
+		fld dword ptr [f]
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107be0 size=0xc7
 // mathlib _SSE2_cos (SSE2 cos), verbatim
 // TARGET: sub_10107be0
