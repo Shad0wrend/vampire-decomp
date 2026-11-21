@@ -13522,6 +13522,17 @@ single:
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e3300 size=0x7
+namespace lifted {
+extern char g_10227c5c;
+}
+struct CUnknown100e3300 { void sub_100e3300(); };
+void CUnknown100e3300::sub_100e3300()
+{
+    *(int *)this = (int)&lifted::g_10227c5c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e40f0 size=0x6
 namespace lifted {
 extern char g_104cf75c;
