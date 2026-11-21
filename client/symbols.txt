@@ -277,6 +277,7 @@
 0x100a35c0 func   ?sub_100a35c0@UtlMem@@QAEXXZ UtlMem::sub_100a35c0
 0x100a35f0 func   ?sub_100a35f0@Mem1c@@QAEXH@Z Mem1c::sub_100a35f0
 0x100a3990 func   ?sub_100a3990@@YAXXZ sub_100a3990
+0x100a3a40 func   ?sub_100a3a40@@YGXH@Z sub_100a3a40
 0x100a5420 func   ?sub_100a5420@SInit@@QAEXXZ SInit::sub_100a5420
 0x100aa490 func   ?sub_100aa490@@YAXXZ sub_100aa490
 0x100aacb0 func   ?sub_100aacb0@CUnknown101a5290@@QAEXXZ CUnknown101a5290::sub_100aacb0
