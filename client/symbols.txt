@@ -409,6 +409,7 @@
 0x100228d0 func   ?sub_100228d0@@YAHXZ sub_100228d0
 0x100229f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKLuckyStarMurderKey@@@Z ClientClassInit
 0x10022b50 func   ?sub_10022b50@@YAHXZ sub_10022b50
+0x10022c70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemKLeopoldIntKey@@@Z ClientClassInit
 0x10022dd0 func   ?sub_10022dd0@@YAHXZ sub_10022dd0
 0x10023050 func   ?sub_10023050@@YAHXZ sub_10023050
 0x100232d0 func   ?sub_100232d0@@YAHXZ sub_100232d0
