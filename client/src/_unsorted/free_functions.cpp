@@ -27755,6 +27755,14 @@ void sub_10189a20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189be0 size=0x4
+struct CUnknown10189be0 { char * sub_10189be0(); };
+char * CUnknown10189be0::sub_10189be0()
+{
+    return (char *)this + 0x10;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189c00 size=0x3
 char sub_10189c00()
 {
