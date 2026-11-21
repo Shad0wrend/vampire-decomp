@@ -101,6 +101,7 @@
 0x10008710 func   ??_GC_WeaponMelee_Fists@@UAEPAXI@Z ??_GC_WeaponMelee_Fists@@UAEPAXI@Z
 0x10008750 func   ?sub_10008750@@YAHXZ sub_10008750
 0x10008870 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_Fists@@@Z ClientClassInit
+0x10008990 func   ??_GC_WeaponMelee_FireAxe@@UAEPAXI@Z ??_GC_WeaponMelee_FireAxe@@UAEPAXI@Z
 0x100089d0 func   ?sub_100089d0@@YAHXZ sub_100089d0
 0x10008af0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponMelee_FireAxe@@@Z ClientClassInit
 0x10008c50 func   ?sub_10008c50@@YAHXZ sub_10008c50
