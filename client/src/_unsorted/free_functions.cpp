@@ -26024,6 +26024,17 @@ CUnk101db960 *CUnk101db960::sub_10146ed0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10146f00 size=0x8
+namespace lifted {
+struct C10146ca0 { int sub_10146ca0(); };
+}
+struct CUnknown10146f00 { int sub_10146f00(); };
+int CUnknown10146f00::sub_10146f00()
+{
+    return ((lifted::C10146ca0 *)(this + 0x24))->sub_10146ca0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10146f10 size=0x63
 #include <string.h>
 extern const char *g_102c7bfc[2];
