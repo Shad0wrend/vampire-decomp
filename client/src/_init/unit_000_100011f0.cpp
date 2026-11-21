@@ -2516,6 +2516,13 @@ ConVar g_104cfc00("force_unstick", "0", 8192);
 ConVar g_104cfbb8("fall_threshold", "200", 8192);
 // END FUNCTION
 
+// FUNCTION: 0x100eea00 size=0x5
+#define PCD_INITIALIZERS
+#include "InterfaceReg.h"
+void * sub_100eea30(void);
+InterfaceReg g_104cfd68(sub_100eea30, "GlobalWetness_IMaterialProxy003");
+// END FUNCTION
+
 // FUNCTION: 0x100eec20 size=0xa
 #include "ConVar.h"
 ConVar g_104cfd78("cl_ShowSunVectors", "0", 0);
