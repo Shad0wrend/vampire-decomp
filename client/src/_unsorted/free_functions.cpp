@@ -15650,6 +15650,36 @@ RecvProp RecvPropVector(char *pVarName, int offset, int sizeofVar, int flags, Re
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e16b0 size=0x75
+#include "RecvTable.h"
+
+RecvProp RecvPropInt(char *pVarName, int offset, int sizeofVar, int flags, RecvVarProxyFn varProxy)
+{
+	RecvProp ret;
+
+	// no proxy given: the one for the variable's size
+	if (varProxy == 0)
+	{
+		if (sizeofVar == 1)
+			varProxy = RecvProxy_Int32ToInt8;
+		else if (sizeofVar == 2)
+			varProxy = RecvProxy_Int32ToInt16;
+		else if (sizeofVar == 4)
+			varProxy = RecvProxy_Int32ToInt32;
+		else
+			varProxy = RecvProxy_Int32ToInt8;	// the safest one
+	}
+
+	ret.m_pVarName = pVarName;
+	ret.m_Offset = offset;
+	ret.m_RecvType = DPT_Int;
+	ret.m_Flags = flags;
+	ret.m_ProxyFn = varProxy;
+
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1840 size=0xe
 int sub_100e1840(int a0, int a1, int a2)
 {
