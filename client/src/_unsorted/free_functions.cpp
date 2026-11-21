@@ -9966,6 +9966,42 @@ int sub_100397a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10039810 size=0x19c
+#include "RecvTable.h"
+extern RecvTable g_102ee60c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_1027c4e8;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEGunshotDecal { struct ignored; }
+template <> int ClientClassInit<DT_TEGunshotDecal::ignored>(DT_TEGunshotDecal::ignored *)
+{
+	char *pRecvTableName = "DT_TEGunshotDecal";
+	RecvTable &RecvTable = g_102ee60c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_1027c4e8, DataTableRecvProxy_StaticDataTable),
+		RecvPropVector("m_vecOrigin", 16, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vecStart", 28, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_nEntity", 40, 4, 0, 0),
+		RecvPropInt("m_nHitbox", 44, 4, 0, 0),
+		RecvPropInt("m_nIndex", 48, 4, 0, 0),
+		RecvPropInt("m_nDecalNumber", 52, 4, 0, 0),
+		RecvPropInt("m_chMaterialType", 56, 1, 0, 0),
+		RecvPropInt("m_iScale", 60, 4, 0, 0),
+		RecvPropInt("m_iImpactWeaponID", 64, 4, 0, 0),
+		RecvPropInt("m_iImpactGrp", 68, 4, 0, 0),
+		RecvPropInt("m_iImpactType", 72, 4, 0, 0),
+		RecvPropInt("m_iFlags", 76, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039a90 size=0x12
 namespace lifted {
 extern char g_10226954;
