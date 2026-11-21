@@ -2813,3 +2813,8 @@ ConVar g_10618bd8("cl_obfuscate_nightvision", "20", 0);
 #include "ConVar.h"
 ConVar g_10618e18("cl_obfuscate_daylight", "-100", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1019db80 size=0xa
+#include "ConVar.h"
+ConVar g_10619140("cl_reportskybox", "0", 0);
+// END FUNCTION
