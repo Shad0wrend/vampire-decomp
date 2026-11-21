@@ -1838,6 +1838,11 @@ RecvTable g_1049c4e4;
 RecvTable g_1049cd70;
 // END FUNCTION
 
+// FUNCTION: 0x10098290 size=0xa
+#include "RecvTable.h"
+RecvTable g_1049d890;
+// END FUNCTION
+
 // FUNCTION: 0x100987b0 size=0xa
 #include "ConVar.h"
 ConVar g_1049d5a8("npc_motiontrailscale", "4.0", 0);
