@@ -309,6 +309,7 @@
 0x1001abd0 func   ?sub_1001abd0@@YAHXZ sub_1001abd0
 0x1001acf0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGVampyrApocrypha@@@Z ClientClassInit
 0x1001ae50 func   ?sub_1001ae50@@YAHXZ sub_1001ae50
+0x1001af70 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGPishaFetish@@@Z ClientClassInit
 0x1001b0d0 func   ?sub_1001b0d0@@YAHXZ sub_1001b0d0
 0x1001b350 func   ?sub_1001b350@@YAHXZ sub_1001b350
 0x1001b5d0 func   ?sub_1001b5d0@@YAHXZ sub_1001b5d0
