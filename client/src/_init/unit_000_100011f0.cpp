@@ -951,3 +951,8 @@ ConVar g_104d2178("camseduct_roll", "0.0", 0);
 #include "ConVar.h"
 ConVar g_104d2250("camseduct_pitch", "10.0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100fb910 size=0xa
+#include "ConVar.h"
+ConVar g_104d1900("camseduct_pitch_max1", "8.0", 0);
+// END FUNCTION
