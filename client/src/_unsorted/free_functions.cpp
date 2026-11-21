@@ -17393,6 +17393,33 @@ char CUnknown101e0f00SrcSub::sub_10147730()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10147760 size=0x19
+struct CUnk101dc850Sub
+{
+	void sub_100e1450();
+};
+
+struct CUnk101dc850
+{
+	int m_n0000;	// 0x00
+	char m_pad0004;
+	char m_b0005;	// 0x05
+	char m_pad0006[2];
+	CUnk101dc850Sub m_sub0008;	// 0x08
+
+	CUnk101dc850 *sub_10147760();
+};
+
+// TARGET: sub_10147760
+CUnk101dc850 *CUnk101dc850::sub_10147760()
+{
+	m_n0000 = 0;
+	m_b0005 = 1;
+	m_sub0008.sub_100e1450();
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10147a40 size=0x4e
 #include "CUnknown101dcc80.h"
 struct CItemVec {
