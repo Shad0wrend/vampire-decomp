@@ -33935,6 +33935,22 @@ void sub_1010a690(const Q &q, QAngle &ang)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010a6c0 size=0x56
+#include <math.h>
+#include "Vector.h"
+#include "Quaternion.h"
+extern float g_10227c6c;
+void sub_1010a6c0(const Quaternion &q, Vector &axis, float &angle)
+{
+    float k = g_10227c6c;
+    angle = (acos(q.w) * 2) * k;
+    if (angle > 180.0f)
+        angle -= 360.0f;
+    VectorCopy(*(const Vector *)&q, axis);
+    VectorNormalize(axis);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010a720 size=0x68
 #include "Vector.h"
 

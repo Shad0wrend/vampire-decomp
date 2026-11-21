@@ -1744,6 +1744,7 @@
 0x1010a570 func   ?sub_1010a570@@YAXABUQ@@PAM@Z sub_1010a570
 0x1010a650 func   ?sub_1010a650@@YAXABVQAngle@@PAM@Z sub_1010a650
 0x1010a690 func   ?sub_1010a690@@YAXABUQ@@AAVQAngle@@@Z sub_1010a690
+0x1010a6c0 func   ?sub_1010a6c0@@YAXABVQuaternion@@AAVVector@@AAM@Z sub_1010a6c0
 0x1010a720 func   ?sub_1010a720@@YAXABVVector@@MAAUQuaternion@@@Z sub_1010a720
 0x1010a790 func   ?sub_1010a790@@YAXABUSRadianEuler@@AAVQuaternion@@@Z sub_1010a790
 0x1010a890 func   ?sub_1010a890@@YAXABVVector@@00H@Z sub_1010a890
