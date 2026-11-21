@@ -8749,6 +8749,34 @@ int CUtlBuffer::sub_1013cc20(const char *pFmt, char *list)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d2b0 size=0x71
+#include "CUnknown1024b2d0.h"
+
+void sub_1013d230();
+void sub_1013d180();
+extern void *(*g_101e3100)(int);
+
+CUnknown1024b2d0 *CUnknown1024b2d0::sub_1013d2b0(int arg, int count, char flag)
+{
+    m_pfn = flag ? (void *)sub_1013d230 : (void *)sub_1013d180;
+    m_pData = 0;
+    m_count = count;
+    m_arg = arg;
+    if (count != 0)
+        m_pData = g_101e3100(count * 12);
+    m_w12 = 0;
+    m_w10 = 0xffff;
+    m_w14 = 0xffff;
+    m_w16 = 0;
+    m_i18 = 0;
+    m_i1c = 0;
+    m_i20 = 8;
+    m_i24 = 0;
+    m_i28 = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013d330 size=0x6b
 #include "CUnknown1024b370.h"
 extern "C" __declspec(dllimport) void __cdecl Plat_Free(void *p);
