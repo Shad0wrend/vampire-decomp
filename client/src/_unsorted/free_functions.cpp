@@ -1860,6 +1860,41 @@ void Mem1c::sub_100a35f0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aacb0 size=0x59
+struct CUnknown101a5290 {
+    void *m_pMemory;
+    int m_allocationCount;
+    int m_growSize;
+    int m_size;
+    void *m_pElements;
+    void sub_100aacb0();
+};
+
+extern void (__cdecl *g_101e30fc)(void *);
+
+// TARGET: sub_100aacb0
+void CUnknown101a5290::sub_100aacb0()
+{
+    void (__cdecl *pFree)(void *) = g_101e30fc;
+    m_size = 0;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            pFree(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+    m_pElements = m_pMemory;
+    if (m_growSize != -1) {
+        if (m_pMemory) {
+            pFree(m_pMemory);
+            m_pMemory = 0;
+        }
+        m_allocationCount = 0;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac080 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
