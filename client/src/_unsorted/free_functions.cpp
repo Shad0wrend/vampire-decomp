@@ -6971,6 +6971,16 @@ void UtlMem::sub_100ca0b0(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100ca7f0 size=0x5
+namespace lifted {
+int sub_100a0240();
+}
+int sub_100ca7f0()
+{
+    return lifted::sub_100a0240();
+}
+// END FUNCTION
+
 // FUNCTION: 0x100caa00 size=0x7b
 #include "CUtlLinkedList12.h"
 
