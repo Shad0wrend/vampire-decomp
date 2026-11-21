@@ -6420,6 +6420,25 @@ int CFindList_1024b590::sub_1013d4e0(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013d7c0 size=0x56
+#include "CUnknown1024b370.h"
+
+extern void (__cdecl *g_101e311c)(const char *fmt, ...);
+
+struct S1024b940Index { unsigned short m_iPool; unsigned short m_iOffset; };
+struct S1024b940Node { char links[8]; S1024b940Index m_Index; };
+
+// TARGET: CUnknown1024b370::sub_1013d7c0
+void CUnknown1024b370::sub_1013d7c0()
+{
+	int n = sub_1013d820();
+	for (int i = 0; i < n; i++) {
+		const S1024b940Index *pIdx = &((S1024b940Node *)m_mem0.m_pMemory)[(unsigned short)i].m_Index;
+		g_101e311c("%4d - %s\n", i, (char *)((int *)m_mem1.m_pMemory)[pIdx->m_iPool] + 8 + pIdx->m_iOffset);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013dd10 size=0x34
 #include "UtlVec8.h"
 void UtlVec8::sub_1013dd10(int elem, int num)
