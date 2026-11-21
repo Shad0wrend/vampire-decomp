@@ -30561,6 +30561,26 @@ CUnknown100353c0 *CUnknown100353c0::sub_100eb150(const CUnknown100353c0 *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100eb740 size=0x59
+extern char g_104cfa98[];
+__declspec(dllimport) char *Q_strncpy(char *dest, const char *src, int maxLen);
+char *sub_100eb740(int axis)
+{
+	switch (axis) {
+	case 0:
+		Q_strncpy(g_104cfa98, "X", 32);
+		break;
+	case 1:
+		Q_strncpy(g_104cfa98, "Y", 32);
+		break;
+	default:
+		Q_strncpy(g_104cfa98, "Z", 32);
+		break;
+	}
+	return g_104cfa98;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ebb50 size=0xa5
 #include "CGameMovement.h"
 
