@@ -19360,6 +19360,99 @@ int sub_100a4a10()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a4b10 size=0x700
+#include "RecvTable.h"
+extern RecvTable g_1049fd54;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102ae708;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+extern RecvTable g_1049e4fc;
+extern RecvTable g_104a0c18;
+RecvProp RecvPropEHandle(char *, int, int);
+RecvProp InternalRecvPropArray(int, int, char *, void (*)(void *, int, int));
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_BasePlayer { struct ignored; }
+template <> int ClientClassInit<DT_BasePlayer::ignored>(DT_BasePlayer::ignored *)
+{
+	char *pRecvTableName = "DT_BasePlayer";
+	RecvTable &RecvTable = g_1049fd54;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102ae708, DataTableRecvProxy_StaticDataTable),
+		RecvPropDataTable("localdata", 0, 0, &g_1049e4fc, DataTableRecvProxy_StaticDataTable),
+		RecvPropDataTable("pl", 6276, 0, &g_104a0c18, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_bInVehicle", 6600, 1, 0, 0),
+		RecvPropEHandle("m_hVehicle", 6596, 4),
+		RecvPropInt("m_iAmmo[0]", 4060, 4, 0, 0),
+		InternalRecvPropArray(32, 4, "m_iAmmo", 0),
+		RecvPropFloat("m_flMaxspeed", 6348, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_iHealth", 6544, 4, 0, 0),
+		RecvPropFloat("m_flWalkForwardSpeeds[0]", 6416, 4, 0, RecvProxy_FloatToFloat),
+		InternalRecvPropArray(8, 4, "m_flWalkForwardSpeeds", 0),
+		RecvPropFloat("m_flWalkSideSpeeds[0]", 6448, 4, 0, RecvProxy_FloatToFloat),
+		InternalRecvPropArray(8, 4, "m_flWalkSideSpeeds", 0),
+		RecvPropFloat("m_flRunForwardSpeeds[0]", 6352, 4, 0, RecvProxy_FloatToFloat),
+		InternalRecvPropArray(8, 4, "m_flRunForwardSpeeds", 0),
+		RecvPropFloat("m_flRunSideSpeeds[0]", 6384, 4, 0, RecvProxy_FloatToFloat),
+		InternalRecvPropArray(8, 4, "m_flRunSideSpeeds", 0),
+		RecvPropFloat("m_flSneakForwardSpeeds[0]", 6480, 4, 0, RecvProxy_FloatToFloat),
+		InternalRecvPropArray(8, 4, "m_flSneakForwardSpeeds", 0),
+		RecvPropFloat("m_flSneakSideSpeeds[0]", 6512, 4, 0, RecvProxy_FloatToFloat),
+		InternalRecvPropArray(8, 4, "m_flSneakSideSpeeds", 0),
+		RecvPropInt("m_iVAttributesBase[0]", 4488, 4, 0, 0),
+		InternalRecvPropArray(35, 4, "m_iVAttributesBase", 0),
+		RecvPropInt("m_iVAttributesBase[v_attribute_autolevel_template]", 4620, 4, 0, 0),
+		RecvPropInt("m_iVAttributesBase[v_attribute_experience]", 4624, 4, 0, 0),
+		RecvPropInt("m_iVAbilitiesBase[0]", 4776, 4, 0, 0),
+		InternalRecvPropArray(13, 4, "m_iVAbilitiesBase", 0),
+		RecvPropInt("m_iVDisciplinesBase[0]", 4888, 4, 0, 0),
+		InternalRecvPropArray(17, 4, "m_iVDisciplinesBase", 0),
+		RecvPropInt("m_iVActiveDisciplinesBase[0]", 5032, 4, 0, 0),
+		InternalRecvPropArray(17, 4, "m_iVActiveDisciplinesBase", 0),
+		RecvPropFloat("m_flClientBeginVActiveDisciplineTimers[0]", 5176, 4, 0, RecvProxy_FloatToFloat),
+		InternalRecvPropArray(17, 4, "m_flClientBeginVActiveDisciplineTimers", 0),
+		RecvPropFloat("m_flClientVActiveDisciplineDurations[0]", 5244, 4, 0, RecvProxy_FloatToFloat),
+		InternalRecvPropArray(17, 4, "m_flClientVActiveDisciplineDurations", 0),
+		RecvPropInt("m_tEffectList.m_iCount", 4320, 4, 0, 0),
+		RecvPropInt("m_tEffectList.m_teIDList[0]", 4324, 4, 0, 0),
+		InternalRecvPropArray(32, 4, "m_tEffectList.m_teIDList", 0),
+		RecvPropInt("m_bIsFrenzyGrapple", 5356, 1, 0, 0),
+		RecvPropInt("m_iVHistoryID", 5312, 4, 0, 0),
+		RecvPropInt("m_mpEquipData._iCurPackage", 5316, 4, 0, 0),
+		RecvPropInt("m_iMoney", 5320, 4, 0, 0),
+		RecvPropInt("m_iClientFeedMaxBloodPool", 5324, 4, 0, 0),
+		RecvPropFloat("m_flNextFeedDuration", 5328, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_bIsDrinkingBlood", 5332, 1, 0, 0),
+		RecvPropInt("m_bAllowResyncHandsOffset", 5333, 1, 0, 0),
+		RecvPropInt("m_iLastDiscipline", 5336, 4, 0, 0),
+		RecvPropInt("m_bLastDiscScrolled", 5340, 1, 0, 0),
+		RecvPropInt("m_iLastDiscTgtMode", 5344, 4, 0, 0),
+		RecvPropInt("m_iCurrentRangedAccuracy", 5604, 4, 0, 0),
+		RecvPropInt("m_iForceCamera", 5608, 4, 0, 0),
+		RecvPropInt("m_bObfWasMoving", 5600, 1, 0, 0),
+		RecvPropEHandle("m_hLastWeapon", 6672, 4),
+		RecvPropVector("m_vecAbsOrigin", 692, 12, 0, RecvProxy_VectorToVector),
+		RecvPropVector("m_vecVelocity", 168, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_iDebugFlags", 5620, 4, 0, 0),
+		RecvPropInt("m_iDebugStealthFeat", 5624, 4, 0, 0),
+		RecvPropInt("m_iDebugStealthLight", 5628, 4, 0, 0),
+		RecvPropInt("m_iDebugStealthSound", 5632, 4, 0, 0),
+		RecvPropFloat("m_flStealthVisionScalar", 5636, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flStealthHearingDist", 5640, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_bIsSpectator", 5644, 1, 0, 0),
+		RecvPropInt("m_bIsImmobilized", 5645, 1, 0, 0),
+		RecvPropInt("m_bfMPFlags", 5648, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a5280 size=0x9
 struct CUnknown100a5280 { int sub_100a5280(int); };
 int CUnknown100a5280::sub_100a5280(int a0)
