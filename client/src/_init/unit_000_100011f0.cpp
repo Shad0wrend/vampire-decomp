@@ -2252,3 +2252,8 @@ ConCommand g_105fb150("vdebug_charwizard", sub_10175e80, 0, 0, 0);
 void sub_10175ff0(void);
 ConCommand g_105fb1d0("vchargen_key", sub_10175ff0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x101760e0 size=0xa
+#include "ConVar.h"
+ConVar g_105fb328("cl_v_image_quality", "0", 128);
+// END FUNCTION
