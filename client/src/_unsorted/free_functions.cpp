@@ -34495,6 +34495,16 @@ UtlMem *UtlMem::sub_101be2e0(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101be750 size=0x6
+namespace lifted {
+extern int g_1067b40c;
+}
+int sub_101be750()
+{
+    return lifted::g_1067b40c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c0cb0 size=0x4
 struct CUnknown101c0cb0 { int sub_101c0cb0(); };
 int CUnknown101c0cb0::sub_101c0cb0()
