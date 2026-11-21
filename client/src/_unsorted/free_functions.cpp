@@ -9392,6 +9392,34 @@ void CPartListUnit3::sub_101406b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140a00 size=0x66
+struct Elem1006cd00 { void sub_10140530(); };
+struct S1006cd00 {
+    int m0;
+    int m4;
+    Elem1006cd00 **m8;
+    void sub_10140a00();
+};
+// TARGET: S1006cd00::sub_10140a00
+void S1006cd00::sub_10140a00()
+{
+    if (m8) {
+        for (int i = 0; i < m4; i++) {
+            Elem1006cd00 *e = m8[i];
+            if (e) {
+                e->sub_10140530();
+                delete e;
+            }
+            m8[i] = 0;
+        }
+        delete m8;
+        m8 = 0;
+    }
+    m4 = 0;
+    m0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10142000 size=0x50
 struct CPtrList101d6400 {
 	int m_n0;
