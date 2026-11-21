@@ -43806,6 +43806,42 @@ void CClanDocLoader::sub_1013fc80()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013fcb0 size=0x105
+#include "CStatDefault3List.h"
+#include "IFileSystemFind.h"
+
+extern "C" int sprintf(char *, const char *, ...);
+extern IFileSystemFind *g_104a580c;
+extern "C" __declspec(dllimport) void __cdecl Msg(const char *pszFormat, ...);
+
+void CStatDefault3List::sub_1013fcb0(const char *pszName, int arg)
+{
+	int nFiles = 0;
+	if (pszName) {
+		char szFile[260];
+		int hFind;
+		sprintf(szFile, "%s%s*.txt", "vdata\\system\\", pszName);
+		const char *pszFound = g_104a580c->vfunc22(szFile, &hFind);
+		if (pszFound) {
+			do {
+				nFiles++;
+			} while (g_104a580c->vfunc23(hFind));
+			g_104a580c->vfunc25(hFind);
+			if (nFiles > 0) {
+				pszFound = g_104a580c->vfunc22(szFile, &hFind);
+				do {
+					sprintf(szFile, "%s%s", "vdata\\system\\", pszFound);
+					if (!sub_1013fac0(szFile, arg))
+						Msg("Unable to open Character Template List data file for: %s\n", szFile);
+					pszFound = g_104a580c->vfunc23(hFind);
+				} while (pszFound);
+				g_104a580c->vfunc25(hFind);
+			}
+		}
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fdc0 size=0x2f
 #include "CStatDefault3List.h"
 // TARGET: sub_1013fdc0
