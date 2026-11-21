@@ -19301,6 +19301,31 @@ char *CFoo::sub_10152660(int i)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101529b0 size=0x4f
+struct CUnknown101f08a0 {
+    int m_0, m_4, m_8, m_c, m_10, m_14, m_18, m_1c, m_20, m_24, m_28, m_2c, m_30;
+    CUnknown101f08a0 *sub_101529b0(int a, int b, int c);
+};
+
+CUnknown101f08a0 *CUnknown101f08a0::sub_101529b0(int a, int b, int c)
+{
+    m_4 = a;
+    m_8 = b;
+    m_0 = c;
+    m_c = 0;
+    m_10 = 1;
+    m_14 = -1;
+    m_18 = 1;
+    m_1c = -1;
+    m_20 = 32000;
+    m_24 = -1;
+    m_28 = -32000;
+    m_2c = -1;
+    m_30 = 100;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152bb0 size=0x1a
 struct CUnknown101f0b50 { void * sub_10152bb0(int); };
 void * CUnknown101f0b50::sub_10152bb0(int a0)
