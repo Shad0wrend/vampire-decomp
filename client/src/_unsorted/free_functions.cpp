@@ -12632,6 +12632,36 @@ void QuestJournal::sub_10162840()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10162fa0 size=0x85
+#include "QuestJournal.h"
+
+struct ScopeTrace { const char *name; const char *ent; const char *extra; };
+extern ScopeTrace *g_101e3124;
+extern int *g_101e3128;
+extern char g_102de300[];
+
+struct CScopeGuard {
+    CScopeGuard(const char *name)
+    {
+        g_101e3124[*g_101e3128].name = name;
+        g_101e3124[*g_101e3128].ent = g_102de300;
+        g_101e3124[*g_101e3128].extra = g_102de300;
+        ++*g_101e3128;
+    }
+    ~CScopeGuard() { --*g_101e3128; }
+};
+
+char QuestJournal::sub_10162fa0(int index)
+{
+    CScopeGuard guard("QuestJournal::IsQuestIndexValid");
+    if (index < 0)
+        return 0;
+    if (index >= m_field[8])
+        return 0;
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10163970 size=0x6a
 extern void *(*g_101e3104)(void *, int);
 extern void *(*g_101e3100)(int);
