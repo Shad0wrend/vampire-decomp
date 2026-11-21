@@ -27763,6 +27763,14 @@ char * CUnknown10189be0::sub_10189be0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10189bf0 size=0x4
+struct CUnknown10189bf0 { char * sub_10189bf0(); };
+char * CUnknown10189bf0::sub_10189bf0()
+{
+    return (char *)this + 0x1c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10189c00 size=0x3
 char sub_10189c00()
 {
