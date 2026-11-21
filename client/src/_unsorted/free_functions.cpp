@@ -12380,6 +12380,29 @@ bool CVStatCost_t::sub_10159d10(CVStatKV *pKV)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159e00 size=0x85
+#include "CVStatCost_t.h"
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern ScopeEntry *g_101e3124;
+extern int *g_101e3128;
+extern char g_102cb744[];
+extern char g_102de300[];
+int CVStatCost_t::sub_10159e00(int level, bool bFirst)
+{
+    g_101e3124[*g_101e3128].a = g_102cb744;
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    ++*g_101e3128;
+    int r;
+    if (bFirst)
+        r = m_first.sub_101597d0(level);
+    else
+        r = m_second.sub_101597d0(level);
+    --*g_101e3128;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10159e90 size=0x89
 #include "CVStatCost_t.h"
 
