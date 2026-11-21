@@ -3624,6 +3624,21 @@ int sub_10035060()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10035280 size=0x12
+namespace lifted {
+extern char g_102262b0;
+extern char g_102262e4;
+int sub_1002c390();
+}
+struct CUnknown10035280 { int sub_10035280(); };
+int CUnknown10035280::sub_10035280()
+{
+    *(int *)this = (int)&lifted::g_102262e4;
+    *(int *)((char *)this + 4) = (int)&lifted::g_102262b0;
+    return lifted::sub_1002c390();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10035420 size=0x6
 namespace lifted {
 extern char g_102eccfc;
