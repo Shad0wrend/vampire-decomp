@@ -1801,3 +1801,8 @@ ConVar g_104df6b8("measure_resort", "1.0", 0, "How often to re-sort profiling se
 #include "ConVar.h"
 ConVar g_104df670("game_speeds", "0", 0);
 // END FUNCTION
+
+// FUNCTION: 0x1010f0d0 size=0xa
+#include "ConVar.h"
+ConVar g_104df740("cl_solid_players", "1", 0, "When predicting movements, determines whether the local player collides on the client with other player objects");
+// END FUNCTION
