@@ -45067,6 +45067,18 @@ char *CUnit101d5e40::sub_1013ffd0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10140000 size=0x4b
+#include "CStatDefault3List.h"
+
+StatDefault3 *CStatDefault3List::sub_10140000(int index)
+{
+	if (index >= 0 && index < m_count)
+		return m_pItems[index];
+	static StatDefault3 s_default(-1);
+	return &s_default;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101400d0 size=0x23
 void __fastcall sub_1013f490(void *pObj);
 
