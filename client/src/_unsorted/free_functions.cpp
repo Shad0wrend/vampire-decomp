@@ -3128,6 +3128,15 @@ int sub_1002d700()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002d710 size=0xf
+struct CUnknown1002d710 { int sub_1002d710(int); };
+int CUnknown1002d710::sub_1002d710(int a0)
+{
+    *(int *)((char *)a0) = *(int *)((char *)this + 0xe4);
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002ebc0 size=0x1
 void sub_1002ebc0()
 {

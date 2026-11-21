@@ -298,6 +298,7 @@
 0x1002d620 func   ?sub_1002d620@CUtlMemory36@@QAEXH@Z CUtlMemory36::sub_1002d620
 0x1002d690 func   ?sub_1002d690@CUtlMemory12@@QAEXH@Z CUtlMemory12::sub_1002d690
 0x1002d700 func   ?sub_1002d700@@YAHXZ sub_1002d700
+0x1002d710 func   ?sub_1002d710@CUnknown1002d710@@QAEHH@Z CUnknown1002d710::sub_1002d710
 0x1002ebc0 func   ?sub_1002ebc0@@YAXXZ sub_1002ebc0
 0x1002f7a0 func   ?sub_1002f7a0@@YAHXZ sub_1002f7a0
 0x10030c50 func   ?sub_10030c50@@YAHXZ sub_10030c50
