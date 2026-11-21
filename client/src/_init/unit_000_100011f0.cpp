@@ -354,3 +354,8 @@ ConVar g_1049d758("damage_floaters_dist_max", "800", 0, "Distance from camera to
 #include "ConVar.h"
 ConVar g_1049d5f0("damage_floaters_duration_min", "0.7", 0, "Duration of floaters when at the minimum distance value.");
 // END FUNCTION
+
+// FUNCTION: 0x1009a410 size=0xa
+#include "ConVar.h"
+ConVar g_1049d638("damage_floaters_duration_max", "1.0", 0, "Duration of floaters when at the maximum distance value.");
+// END FUNCTION
