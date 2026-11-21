@@ -8,6 +8,7 @@
 0x100025c0 func   ?sub_100025c0@@YAHXZ sub_100025c0
 0x10002900 func   ?sub_10002900@@YAHXZ sub_10002900
 0x10002bb0 func   ?sub_10002bb0@@YAHXZ sub_10002bb0
+0x10002be0 func   ?sub_10002be0@@YAHXZ sub_10002be0
 0x10003c10 func   ?sub_10003c10@CUtlMemory192@@QAEXH@Z CUtlMemory192::sub_10003c10
 0x10004560 func   ?sub_10004560@@YADXZ sub_10004560
 0x10004ce0 func   ?sub_10004ce0@Vector@@QAEXMM@Z Vector::sub_10004ce0
