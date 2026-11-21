@@ -22534,6 +22534,24 @@ void sub_1015fbc0(int arg, const char *pszFile)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015fc40 size=0x2e
+#include "CGameStringPool.h"
+#include "string_t.h"
+
+extern CStringPool g_105f93f0;
+
+// TARGET: sub_1015fc40
+string_t sub_1015fc40(const char *psz)
+{
+	if (*psz)
+	{
+		char *p = g_105f93f0.sub_10137f30(psz);
+		return string_t(*p ? p : 0);
+	}
+	return string_t(0);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ff70 size=0x23
 struct CUnknown1006c7d0 {
 	void sub_1015ff70();
