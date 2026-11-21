@@ -15698,6 +15698,25 @@ RecvProp RecvPropString(char *pVarName, int offset, int bufferSize, int flags, R
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1790 size=0x55
+#include "RecvTable.h"
+
+RecvProp RecvPropDataTable(char *pVarName, int offset, int flags, RecvTable *pTable,
+							DataTableRecvVarProxyFn varProxy)
+{
+	RecvProp ret;
+
+	ret.m_pVarName = pVarName;
+	ret.m_Offset = offset;
+	ret.m_RecvType = DPT_DataTable;
+	ret.m_Flags = flags;
+	ret.m_DataTableProxyFn = varProxy;
+	ret.m_pDataTable = pTable;
+
+	return ret;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e1840 size=0xe
 int sub_100e1840(int a0, int a1, int a2)
 {
