@@ -172,6 +172,13 @@ inline void Ray_t::sub_10005e00(const float *pStart, const float *pEnd)
 static void (Ray_t::*s_sub_1004f7a0)(const float *, const float *) = &Ray_t::sub_10005e00;
 // END FUNCTION
 
+// FUNCTION: 0x100060f0 size=0x3
+char sub_100060f0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10027d20 size=0x191
 #include "Vector.h"
 void sub_100dfc60(const Vector &a, const Vector &b, int r, int g, int bl, bool noDepthTest, float duration);
