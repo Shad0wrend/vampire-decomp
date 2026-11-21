@@ -8414,6 +8414,28 @@ int sub_10032550()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100325c0 size=0x72
+#include "RecvTable.h"
+extern RecvTable g_102eb62c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_1027d050;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEArmorRicochet { struct ignored; }
+template <> int ClientClassInit<DT_TEArmorRicochet::ignored>(DT_TEArmorRicochet::ignored *)
+{
+	char *pRecvTableName = "DT_TEArmorRicochet";
+	RecvTable &RecvTable = g_102eb62c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_1027d050, DataTableRecvProxy_StaticDataTable),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100326c0 size=0x12
 namespace lifted {
 extern char g_10225d20;
