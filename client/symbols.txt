@@ -937,6 +937,7 @@
 0x1007a440 func   ?sub_1007a440@@YAXPADHPBM@Z sub_1007a440
 0x1007a470 func   ?sub_1007a470@@YAHPAUCStudioHdrView@@PBD@Z sub_1007a470
 0x1007a4d0 func   ?sub_1007a4d0@@YAPADPADH@Z sub_1007a4d0
+0x1007a690 func   ?sub_1007a690@@YAHPBD@Z sub_1007a690
 0x1007a800 func   ?sub_1007a800@CUnknown1007a800@@QAEHXZ CUnknown1007a800::sub_1007a800
 0x1007aca0 func   ?sub_1007aca0@CUnknown100290c0@@QAEIPAI@Z CUnknown100290c0::sub_1007aca0
 0x1007b150 func   ?sub_1007b150@@YAMXZ sub_1007b150

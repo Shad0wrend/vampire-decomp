@@ -19073,6 +19073,26 @@ char *sub_1007a4d0(char *pObj, int nIndex)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007a690 size=0x2e
+#include <string.h>
+// TARGET: sub_1007a690
+extern const char *g_102aaee8[17];
+
+int sub_1007a690(const char *psz)
+{
+    int i = 0;
+    do
+    {
+        if (_strcmpi(psz, g_102aaee8[i]) == 0)
+        {
+            return i;
+        }
+        i++;
+    } while (i < 17);
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007a800 size=0x9
 struct CUnknown1007a800 { int sub_1007a800(); };
 int CUnknown1007a800::sub_1007a800()
