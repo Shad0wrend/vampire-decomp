@@ -698,3 +698,9 @@ ConVar g_104cef48("r_PortalTestEnts", "1", 0, "Clip entities against portal frus
 #include "ConVar.h"
 ConVar g_104cf060("r_shadows", "1", 0);
 // END FUNCTION
+
+// FUNCTION: 0x100d5690 size=0xa
+#include "ConCommand.h"
+void sub_100d56c0(void);
+ConCommand g_104cf0a4("r_shadowdir", sub_100d56c0, 0, 0, 0);
+// END FUNCTION
