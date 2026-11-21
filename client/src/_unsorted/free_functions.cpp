@@ -12346,6 +12346,57 @@ int CUnk10204c20::sub_10160db0(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160de0 size=0x9c
+#include "CUnknown10204c60.h"
+#include "CUnknown10205ba0.h"
+#include "CVStatInfoList_t.h"
+
+struct CVStatInfoViewX {
+    char m_pad[0x9c];
+    CUnknown10205ba0 m_value;
+};
+
+extern CVStatInfoList_t g_105f9220;
+extern CVStatInfoList_t g_105f90b8;
+extern CVStatInfoList_t g_105f8c60;
+extern CVStatInfoList_t g_105f91c8;
+
+static inline int EvalIn(CVStatInfoList_t &list, int idx)
+{
+    CVStatInfoViewX *pInfo = (CVStatInfoViewX *)list.sub_1015cfe0(idx);
+    return pInfo->m_value.sub_10161510();
+}
+
+int CUnknown10204c60::sub_10160de0()
+{
+    if (m_index == -1)
+        return 0;
+    switch (m_type) {
+    case 0:
+        return EvalIn(g_105f9220, m_index);
+    case 1:
+        return EvalIn(g_105f90b8, m_index);
+    case 2:
+        return EvalIn(g_105f8c60, m_index);
+    case 3:
+        return EvalIn(g_105f91c8, m_index);
+    case 4:
+        return 0;
+    case 5:
+        return 0;
+    case 6:
+        return 0;
+    case 7:
+        return 0;
+    case 8:
+        return 0;
+    case 9:
+        return 0;
+    }
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101613e0 size=0x30
 #include "CVDmg_t.h"
 
