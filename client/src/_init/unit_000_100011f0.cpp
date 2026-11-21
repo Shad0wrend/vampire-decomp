@@ -2878,3 +2878,8 @@ ConVar g_10618f38("cl_overlay_bloodshield_scale", "0.6", 0);
 #include "ConVar.h"
 ConVar g_10619810("cl_overlay_bloodshield_blur", "0.002", 0);
 // END FUNCTION
+
+// FUNCTION: 0x101a0260 size=0xa
+#include "ConVar.h"
+ConVar g_10618e60("cl_cinebar_fuzz", "0.1", 0);
+// END FUNCTION
