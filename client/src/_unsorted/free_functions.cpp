@@ -581,6 +581,14 @@ void __stdcall sub_1002c530(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1002c540 size=0x4
+struct CUnknown1002c540 { char * sub_1002c540(); };
+char * CUnknown1002c540::sub_1002c540()
+{
+    return (char *)this + -4;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1002d430 size=0x33
 #include "CUtlMemory12.h"
 extern void *(*g_101e3100)(int);
