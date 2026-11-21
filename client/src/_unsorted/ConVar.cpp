@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x100df710 size=0x3
+#include "ConVar.h"
+char ConVar::vfunc1()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df730 size=0x6e
 #include "ConVar.h"
 extern "C" double atof(const char *);
