@@ -500,6 +500,27 @@ void Rec64::sub_10043150(int v)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100437f0 size=0x6d
+#include "CUnknown100dcd00.h"
+
+struct RandomStream
+{
+	virtual void a0();
+	virtual float RandomFloat(float lo, float hi);
+};
+extern RandomStream *g_104a5738;
+
+// TARGET: CUnknown100dcd00::sub_100437f0
+void CUnknown100dcd00::sub_100437f0(const float *pA, const float *pB, int arg)
+{
+	float v[3];
+	v[0] = g_104a5738->RandomFloat(pA[0], pB[0]);
+	v[1] = g_104a5738->RandomFloat(pA[1], pB[1]);
+	v[2] = g_104a5738->RandomFloat(pA[2], pB[2]);
+	sub_10043680(v, arg);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10045630 size=0x3b
 #include "Vector.h"
 

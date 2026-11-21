@@ -23,6 +23,7 @@
 0x10042ca0 func   ?sub_10042ca0@@YI_NPAD@Z sub_10042ca0
 0x10042cd0 func   ?vfunc1@CDirtySpatialPartitionEntityList@@UAEXXZ CDirtySpatialPartitionEntityList::vfunc1
 0x10043150 func   ?sub_10043150@Rec64@@QAEXH@Z Rec64::sub_10043150
+0x100437f0 func   ?sub_100437f0@CUnknown100dcd00@@QAEXPBM0H@Z CUnknown100dcd00::sub_100437f0
 0x10045630 func   ?sub_10045630@@YAXPAVVector@@00@Z sub_10045630
 0x10049f20 func   ?sub_10049f20@CUnknown100f2f90@@QAEPAXHHH@Z CUnknown100f2f90::sub_10049f20
 0x10049f40 func   ?sub_10049f40@Vector@@QBE?AV1@ABV1@@Z Vector::sub_10049f40
