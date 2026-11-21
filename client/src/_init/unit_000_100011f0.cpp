@@ -87,3 +87,8 @@ ConCommand g_102eacd0("ai_node_graph_built", sub_1002c020, 0, 0, 0);
 void sub_1002d2b0(void);
 ConCommand g_102ead74("CreateHairball", sub_1002d2b0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x1003a6b0 size=0xa
+#include "ConVar.h"
+ConVar g_102eec58("cl_ejectbrass", "1", 0);
+// END FUNCTION
