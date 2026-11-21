@@ -2831,6 +2831,13 @@ int g_102eb54c = ClientClassInit((DT_SteamJet::ignored *)0);
 RecvTable g_102eb614;
 // END FUNCTION
 
+// FUNCTION: 0x100323a0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEMetalSparks { struct ignored; }
+template <> int ClientClassInit<DT_TEMetalSparks::ignored>(DT_TEMetalSparks::ignored *);
+int g_102eb610 = ClientClassInit((DT_TEMetalSparks::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10032560 size=0xa
 #include "RecvTable.h"
 RecvTable g_102eb62c;
