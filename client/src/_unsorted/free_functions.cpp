@@ -16287,6 +16287,21 @@ void CUnknown100f3680::sub_100f3680()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f3f40 size=0x17
+namespace lifted {
+extern char g_10235220;
+extern int g_104d1050;
+}
+struct CUnknown100f3f40 { void * sub_100f3f40(); };
+void * CUnknown100f3f40::sub_100f3f40()
+{
+    *(int *)this = (int)&lifted::g_10235220;
+    *(int *)((char *)this + 4) = lifted::g_104d1050;
+    lifted::g_104d1050 = (int)this;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100f3f90 size=0xcb
 extern "C" void *__cdecl sub_101d0f30(void *, const void *, unsigned int);
 extern void *(__cdecl *g_101e3100)(int);
