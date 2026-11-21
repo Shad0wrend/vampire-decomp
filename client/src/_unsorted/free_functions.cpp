@@ -987,6 +987,33 @@ float bf_read::sub_10088410()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100884f0 size=0xec
+#include "bf_read.h"
+#include <math.h>
+
+void bf_read::sub_100884f0(Vector &fa)
+{
+	int xflag = ReadOneBitCall();
+	int yflag = ReadOneBitCall();
+	if (xflag)
+		fa[0] = sub_10088410();
+	else
+		fa[0] = 0.0f;
+	if (yflag)
+		fa[1] = sub_10088410();
+	else
+		fa[1] = 0.0f;
+	int znegative = ReadOneBitCall();
+	float fafafbfb = fa[0] * fa[0] + fa[1] * fa[1];
+	if (fafafbfb < 1.0f)
+		fa[2] = (float)sqrt(1.0f - fafafbfb);
+	else
+		fa[2] = 0.0f;
+	if (znegative)
+		fa[2] = -fa[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10088660 size=0x65
 #include "bf_read.h"
 
