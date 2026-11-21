@@ -18702,6 +18702,12 @@ void CPartListUnit3::sub_101431a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101433b0 size=0x1
+void sub_101433b0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x101437d0 size=0x59
 struct CPartListUnit2 {
     void sub_10143500();
