@@ -1080,3 +1080,9 @@ ConCommand g_104d1f74("-camyawright", sub_100ff770, 0, 0, 0);
 void sub_100ff780(void);
 ConCommand g_104d18ac("+camin", sub_100ff780, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x100ffff0 size=0xa
+#include "ConCommand.h"
+void sub_100ff790(void);
+ConCommand g_104d18d4("-camin", sub_100ff790, 0, 0, 0);
+// END FUNCTION
