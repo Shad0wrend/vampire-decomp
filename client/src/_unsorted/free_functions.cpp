@@ -3513,6 +3513,12 @@ void sub_1008a3b0(Vector &velocity, Vector &angVelocity, const matrix3x4_t &prev
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008a4c0 size=0x1
+void sub_1008a4c0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008a4d0 size=0x13a
 #include "matrix3x4_t.h"
 #include "Quaternion.h"
