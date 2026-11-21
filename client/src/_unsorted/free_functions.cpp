@@ -8124,6 +8124,55 @@ void sub_10107f80(const float *in1, const float *in2, float *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107fe0 size=0x9c
+// mathlib VectorTransformSSE, verbatim
+// TARGET: sub_10107fe0
+void sub_10107fe0(const float *in1, const float (*in2)[4], float *out1)
+{
+	__asm
+	{
+		mov eax, in1;
+		mov ecx, in2;
+		mov edx, out1;
+
+		movss xmm0, [eax];
+		mulss xmm0, [ecx];
+		movss xmm1, [eax+4];
+		mulss xmm1, [ecx+4];
+		movss xmm2, [eax+8];
+		mulss xmm2, [ecx+8];
+		addss xmm0, xmm1;
+		addss xmm0, xmm2;
+		addss xmm0, [ecx+12]
+ 		movss [edx], xmm0;
+		add ecx, 16;
+
+		movss xmm0, [eax];
+		mulss xmm0, [ecx];
+		movss xmm1, [eax+4];
+		mulss xmm1, [ecx+4];
+		movss xmm2, [eax+8];
+		mulss xmm2, [ecx+8];
+		addss xmm0, xmm1;
+		addss xmm0, xmm2;
+		addss xmm0, [ecx+12]
+		movss [edx+4], xmm0;
+		add ecx, 16;
+
+		movss xmm0, [eax];
+		mulss xmm0, [ecx];
+		movss xmm1, [eax+4];
+		mulss xmm1, [ecx+4];
+		movss xmm2, [eax+8];
+		mulss xmm2, [ecx+8];
+		addss xmm0, xmm1;
+		addss xmm0, xmm2;
+		addss xmm0, [ecx+12]
+		movss [edx+8], xmm0;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108080 size=0x5c
 void sub_10108080(const float *in1, const float in2[3][4], float *out)
 {
