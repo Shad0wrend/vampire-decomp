@@ -2147,6 +2147,13 @@ int g_102e043c = ClientClassInit((DT_ItemGGargoyleBook::ignored *)0);
 RecvTable g_102e3b08;
 // END FUNCTION
 
+// FUNCTION: 0x10020950 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_ItemGVVPhoto { struct ignored; }
+template <> int ClientClassInit<DT_ItemGVVPhoto::ignored>(DT_ItemGVVPhoto::ignored *);
+int g_102e3b04 = ClientClassInit((DT_ItemGVVPhoto::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10020b90 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e5bd0;
