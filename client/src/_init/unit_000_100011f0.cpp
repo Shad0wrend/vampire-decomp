@@ -284,3 +284,8 @@ ConCommand g_104770d0("activitydump", sub_10067d00, "Forces ActivityList Dump", 
 #include "ConVar.h"
 ConVar g_10477190("debug_dump_anim_seq_list", "0", 8448, "Set this to true to allow a dump of animation seqences on errors.");
 // END FUNCTION
+
+// FUNCTION: 0x1007a950 size=0xa
+#include "ConVar.h"
+ConVar g_104772f0("vdebug_weapon_anims", "0", 8192, "Set this to true to get extra info.");
+// END FUNCTION
