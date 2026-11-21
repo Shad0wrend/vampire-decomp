@@ -215,6 +215,13 @@ int g_102dfcd8 = ClientClassInit((DT_TEConcussiveExplosion::ignored *)0);
 RecvTable g_102e3fec;
 // END FUNCTION
 
+// FUNCTION: 0x100076d0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_MachineGun { struct ignored; }
+template <> int ClientClassInit<DT_MachineGun::ignored>(DT_MachineGun::ignored *);
+int g_102e3fe8 = ClientClassInit((DT_MachineGun::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10007910 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e2710;
