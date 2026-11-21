@@ -10884,6 +10884,18 @@ void UtlMem::sub_100aad80(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100aaf30 size=0xb
+namespace lifted {
+extern int g_104a0d70;
+int sub_100aaeb0();
+}
+int sub_100aaf30()
+{
+    lifted::sub_100aaeb0();
+    return lifted::g_104a0d70;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100abf90 size=0x3
 char sub_100abf90()
 {
