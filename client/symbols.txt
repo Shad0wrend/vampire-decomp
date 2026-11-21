@@ -3095,6 +3095,7 @@
 0x10167450 func   ?sub_10167450@CUnknown10167450@@QAEHXZ CUnknown10167450::sub_10167450
 0x10167e90 func   ??1CMeasureTimePanel@@UAE@XZ CMeasureTimePanel::~CMeasureTimePanel
 0x10167e90 func   ?sub_10167e90@CUnknown10167e90@@QAEHXZ CUnknown10167e90::sub_10167e90
+0x10168220 func   ??1CMessageCharsPanel@@UAE@XZ CMessageCharsPanel::~CMessageCharsPanel
 0x10168220 func   ?sub_10168220@CUnknown10168220@@QAEHXZ CUnknown10168220::sub_10168220
 0x10168260 func   ?sub_10168260@@YAHXZ sub_10168260
 0x10168ca0 func   ?sub_10168ca0@CUnknown10168ca0@@QAEHXZ CUnknown10168ca0::sub_10168ca0
