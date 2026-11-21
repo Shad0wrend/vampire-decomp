@@ -4026,6 +4026,11 @@ int sub_10134010(void);
 int g_105e5ad8 = ((int (*)(int))sub_10134010)(0);
 // END FUNCTION
 
+// FUNCTION: 0x10135e70 size=0xa
+#include "RecvTable.h"
+RecvTable g_105e5d5c;
+// END FUNCTION
+
 // FUNCTION: 0x10145480 size=0x5
 int sub_101454a0(void);
 int g_105e7928 = ((int (*)(int))sub_101454a0)(0);
