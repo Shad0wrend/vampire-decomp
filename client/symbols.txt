@@ -1054,6 +1054,7 @@
 0x100df2a0 func   ?vfunc3@ConCommandBase@@QAEXXZ ConCommandBase::vfunc3
 0x100df2c0 func   ?sub_100df2c0@@YAPAUCUnk10245660Node@@PBD@Z sub_100df2c0
 0x100df300 func   ?sub_100df300@@YAHXZ sub_100df300
+0x100df310 func   ?sub_100df310@@YAHH@Z sub_100df310
 0x100df330 func   ?sub_100df330@CUnknown100df330@@QAEHXZ CUnknown100df330::sub_100df330
 0x100df340 func   ?sub_100df340@@YAXI@Z sub_100df340
 0x100df3a0 func   ?sub_100df3a0@CUnknown100df3a0@@QAEHXZ CUnknown100df3a0::sub_100df3a0

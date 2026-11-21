@@ -14638,6 +14638,18 @@ int sub_100df300()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df310 size=0x13
+namespace lifted {
+extern int g_104cf3d4;
+}
+int sub_100df310(int a0)
+{
+    *(int *)((char *)a0 + 8) = lifted::g_104cf3d4;
+    lifted::g_104cf3d4 = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df330 size=0x7
 struct CUnknown100df330 { int sub_100df330(); };
 int CUnknown100df330::sub_100df330()
