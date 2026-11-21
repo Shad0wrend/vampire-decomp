@@ -31,6 +31,16 @@ ConVar::ConVar(const char *pName, const char *pDefaultValue, int flags, const ch
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df630 size=0x3c
+#include "ConVar.h"
+
+// TARGET: ConVar::ConVar
+ConVar::ConVar(const char *pName, const char *pDefaultValue, int flags, const char *pHelpString, void (*pCallback)(ConVar *, const char *))
+{
+	vfunc12(pName, pDefaultValue, flags, pHelpString, false, 0.0f, false, 0.0f, pCallback);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df6c0 size=0x28
 #include "ConVar.h"
 ConVar::~ConVar()
