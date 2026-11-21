@@ -5743,6 +5743,13 @@ void sub_1009ffc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1009ffd0 size=0x3
+char sub_1009ffd0()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100a1200 size=0x1
 void sub_100a1200()
 {
