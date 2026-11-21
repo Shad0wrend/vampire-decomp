@@ -11846,6 +11846,26 @@ void CVSoundFileFolder_t::sub_10154f60(int a, int b, int c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10155070 size=0x54
+#include "CUnknown101f3d80.h"
+#include "CUnknown101f4370.h"
+
+struct CUnit101f4530 { int sub_101556a0(int a, int b); };
+struct CUnk101f4330 { void sub_10155510(int a, int b); };
+
+void CUnknown101f3d80::sub_10155070(int a, int b)
+{
+	int idx;
+	((CUnknown101f4370 *)m_n04)->sub_10155540((const char *)b, &idx, &b);
+	if (idx != -1)
+	{
+		int n = ((CUnit101f4530 *)m_n04)->sub_101556a0(idx, b);
+		((CUnk101f4330 *)m_n04)->sub_10155510(idx, b);
+		*((char *)*(int *)((char *)this + 0x14) + n) = 1;
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101553d0 size=0x25
 #include "CUnknown101f40f0.h"
 #include "CUnknown101f5150.h"
