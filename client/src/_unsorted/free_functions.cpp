@@ -4860,6 +4860,13 @@ char CUnknown100624d0::sub_100624d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10063960 size=0x6
+int sub_10063960()
+{
+    return 0x8000;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10064c60 size=0x1
 void sub_10064c60()
 {
