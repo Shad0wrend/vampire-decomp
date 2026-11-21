@@ -9538,6 +9538,20 @@ const char *CUnknown101d82d0_Elem::sub_10145140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101454a0 size=0x1a
+namespace lifted {
+extern int g_102c77c8;
+extern int g_102c77cc;
+extern char g_102c780c;
+}
+int sub_101454a0()
+{
+    lifted::g_102c77cc = 1;
+    lifted::g_102c77c8 = (int)&lifted::g_102c780c;
+    return (int)&lifted::g_102c77c8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145d40 size=0x1c
 struct CUnk101d9190 {
 	int m_00[3];
