@@ -2987,6 +2987,13 @@ int g_102eccb4 = ClientClassInit((DT_TEBreakModel::ignored *)0);
 RecvTable g_102ece20;
 // END FUNCTION
 
+// FUNCTION: 0x10035510 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBSPDecal { struct ignored; }
+template <> int ClientClassInit<DT_TEBSPDecal::ignored>(DT_TEBSPDecal::ignored *);
+int g_102ece1c = ClientClassInit((DT_TEBSPDecal::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100357c0 size=0xa
 #include "RecvTable.h"
 RecvTable g_102ed034;
