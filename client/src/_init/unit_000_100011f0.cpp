@@ -1806,3 +1806,8 @@ ConVar g_104df670("game_speeds", "0", 0);
 #include "ConVar.h"
 ConVar g_104df740("cl_solid_players", "1", 0, "When predicting movements, determines whether the local player collides on the client with other player objects");
 // END FUNCTION
+
+// FUNCTION: 0x1010f930 size=0xa
+#include "ConVar.h"
+ConVar g_104dfce0("sv_gravity", "800", 8448, "World gravity.");
+// END FUNCTION
