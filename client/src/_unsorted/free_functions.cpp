@@ -6388,6 +6388,12 @@ void CMem8b_t::sub_100d1240(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d14e0 size=0x1
+void sub_100d14e0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d15b0 size=0x22
 struct CUnknown100b7a90 {
 	void sub_100d1630();
