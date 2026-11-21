@@ -20219,6 +20219,34 @@ int sub_100b69e0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100b6b20 size=0xed
+#include "RecvTable.h"
+extern RecvTable g_104a22e8;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_102af67c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_FuncAreaPortalWindow { struct ignored; }
+template <> int ClientClassInit<DT_FuncAreaPortalWindow::ignored>(DT_FuncAreaPortalWindow::ignored *)
+{
+	char *pRecvTableName = "DT_FuncAreaPortalWindow";
+	RecvTable &RecvTable = g_104a22e8;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_102af67c, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_flFadeStartDist", 1040, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flFadeDist", 1044, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_flTranslucencyLimit", 1048, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_iBackgroundModelIndex", 1052, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100b6c20 size=0x6
 int sub_100b6c20()
 {
