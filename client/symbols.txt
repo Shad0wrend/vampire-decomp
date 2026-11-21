@@ -1096,6 +1096,7 @@
 0x10097380 func   ?sub_10097380@@YAHXZ sub_10097380
 0x10097480 func   ?ClientClassInit@@YAHPAUignored@DT_BaseAnimatingOverlay@@@Z ClientClassInit
 0x100981f0 func   ?sub_100981f0@@YAHXZ sub_100981f0
+0x100982f0 func   ?ClientClassInit@@YAHPAUignored@DT_BCCLocalPlayerExclusive@@@Z ClientClassInit
 0x10098720 func   ?sub_10098720@@YAMMMM@Z sub_10098720
 0x1009c1a0 func   ?sub_1009c1a0@@YAXXZ sub_1009c1a0
 0x1009c7e0 func   ?sub_1009c7e0@@YAXXZ sub_1009c7e0
