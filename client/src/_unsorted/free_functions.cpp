@@ -9030,6 +9030,38 @@ int sub_10034cd0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10034d40 size=0x140
+#include "RecvTable.h"
+extern RecvTable g_102eca34;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_1028111c;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEBloodStream { struct ignored; }
+template <> int ClientClassInit<DT_TEBloodStream::ignored>(DT_TEBloodStream::ignored *)
+{
+	char *pRecvTableName = "DT_TEBloodStream";
+	RecvTable &RecvTable = g_102eca34;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_1028111c, DataTableRecvProxy_StaticDataTable),
+		RecvPropFloat("m_vecDirection[0]", 28, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_vecDirection[1]", 32, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_vecDirection[2]", 36, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("r", 40, 4, 0, 0),
+		RecvPropInt("g", 44, 4, 0, 0),
+		RecvPropInt("b", 48, 4, 0, 0),
+		RecvPropInt("a", 52, 4, 0, 0),
+		RecvPropInt("m_nAmount", 56, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10034f00 size=0x12
 namespace lifted {
 extern char g_10226238;
