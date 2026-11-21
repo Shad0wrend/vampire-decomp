@@ -12041,6 +12041,27 @@ const char *CUnknown10202ba0::sub_1015ecd0(int index)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f010 size=0x48
+#include "CUnknown10202d10.h"
+#include "CUnknown10202b10.h"
+
+const char **sub_1015fc40(const char **ppDest, const char *pszSrc);
+
+// TARGET: CUnknown10202d10::sub_1015f010
+int CUnknown10202d10::sub_1015f010(int a, const char *pszName, int c, char d)
+{
+	CUnknown102029c0 *pRecord = sub_1015ef10();
+	if (pRecord)
+	{
+		*(const char **)((char *)pRecord + 4) = *sub_1015fc40(&pszName, pszName);
+		((CUnknown10202b10 *)pRecord)->sub_1015ed90(a, c);
+		*((char *)pRecord + 0x14) = d;
+		return pRecord->m_id;
+	}
+	return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"
