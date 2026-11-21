@@ -27874,6 +27874,17 @@ SoundRecX *SoundRecX::sub_10148cb0(const SoundRecX *o)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10148fd0 size=0xd
+struct CUnknown10148fd0 { void * sub_10148fd0(); };
+void * CUnknown10148fd0::sub_10148fd0()
+{
+    *(int *)((char *)this + 8) = 0;
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10149100 size=0xee
 #include "CUnknown101e01e0.h"
 
