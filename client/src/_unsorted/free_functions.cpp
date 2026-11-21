@@ -8246,6 +8246,143 @@ void __cdecl sub_10108140(const Vector *v, const float *m, Vector *out)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101081d0 size=0x112
+// mathlib TransformAndRotate (2003 tree): Valve's hand-scheduled x87 __asm, verbatim
+// TARGET: sub_101081d0
+#include "Vector.h"
+struct matrix3x4_t { float m_flMatVal[3][4]; const float *operator[](int i) const { return m_flMatVal[i]; } };
+void sub_101081d0( const Vector &srcPos, const Vector &srcNorm, 
+							const matrix3x4_t& mat, Vector &pos, Vector &norm )
+{
+	const float *pMat = &mat[0][0];
+	const float *pPos = &srcPos.x;
+	const float *pNormal = &srcNorm.x;
+	float *pPosOut = &pos.x;
+	float *pNormalOut = &norm.x;
+
+	__asm
+	{
+		mov		eax, DWORD PTR [pMat]
+		mov		edx, DWORD PTR [pPos]
+		mov		ecx, DWORD PTR [pNormal]
+		mov		esi, DWORD PTR [pNormalOut]
+		mov		edi, DWORD PTR [pPosOut]
+
+		fld DWORD PTR[eax + 3*4]	// m03
+		fld DWORD PTR[eax + 0]		// m00		| m03
+		fld DWORD PTR[edx + 0]		// pos.x		| m00		| m03
+		fld DWORD PTR[ecx + 0]		// norm.x	| pos.x		| m00		| m03
+		fld DWORD PTR[edx + 4]		// pos.y		| norm.x	| pos.x		| m00		| m03
+		fld DWORD PTR[eax + 1*4]	// m01		| pos.y		| norm.x	| pos.x		| m00		| m03
+		fld DWORD PTR[ecx + 4]		// norm.y	| m01		| pos.y		| norm.x	| pos.x		| m00		| m03
+
+		fxch st(5)					// m00		| m01				| pos.y			| norm.x		| pos.x			| norm.y	| m03
+		fmul st(4), st(0)			// m00		| m01				| pos.y			| norm.x 		| pos.x	* m00	| norm.y	| m03
+		fmulp st(3), st(0)			// m01		| pos.y				| norm.x * m00	| pos.x	* m00	| norm.y		| m03
+		fmul st(1), st(0)			// m01		| pos.y * m01		| norm.x * m00	| pos.x	* m00	| norm.y		| m03
+		fmulp st(4), st(0)			// pos.y * m01	| norm.x * m00	| pos.x * m00	| norm.y * m01	| m03
+
+		fld DWORD PTR[eax + 2*4]	// m02		| pos.y * m01		| norm.x * m00	| pos.x * m00		| norm.y * m01	| m03
+		fld DWORD PTR[edx + 8]		// pos.z		| m02				| pos.y * m01		| norm.x * m00	| pos.x * m00		| norm.y * m01	| m03
+		fld DWORD PTR[ecx + 8]		// norm.z	| pos.z					| m02				| pos.y * m01		| norm.x * m00	| pos.x * m00		| norm.y * m01	| m03
+
+		fxch st(5)					// pos.x * m00	| pos.z							| m02						| pos.y * m01	| norm.x * m00	| norm.z				| norm.y * m01	| m03
+		faddp st(3), st(0)			// pos.z			| m02							| pos.x * m00 + pos.y * m01	| norm.x * m00	| norm.z				| norm.y * m01	| m03
+		fxch st(3)					// norm.x * m00	| m02							| pos.x * m00 + pos.y * m01	| pos.z			| norm.z				| norm.y * m01	| m03
+		faddp st(5), st(0)			// m02			| pos.x * m00 + pos.y * m01		| pos.z						| norm.z		| norm.y * m01 + norm.x * m00		| m03
+		fmul  st(2), st(0)			// m02			| pos.x * m00 + pos.y * m01		| pos.z * m02				| norm.z		| norm.y * m01 + norm.x * m00		| m03
+		fmulp st(3), st(0)			// pos.x * m00 + pos.y * m01		| pos.z * m02	| norm.z * m02	| norm.y * m01 + norm.x * m00		| m03
+		faddp st(4), st(0)			// pos.z * m02	| norm.z * m02	| norm.y * m01 + norm.x * m00		| pos.x * m00 + pos.y * m01	+ m03
+
+		// NOTE: Need two more instructions before we can start using the .z stuff
+
+		fld DWORD PTR[eax + 1*16 + 3*4]	// m13		| pos.z * m02	| norm.z * m02	| norm.y * m01 + norm.x * m00		| pos.x * m00 + pos.y * m01	+ m03
+		fld DWORD PTR[eax + 1*16 + 0]	// m10		| m13		| pos.z * m02		| norm.z * m02	| norm.y * m01 + norm.x * m00	| pos.x * m00 + pos.y * m01	+ m03
+		fld DWORD PTR[edx + 0]		// pos.x		| m10		| m13				| pos.z * m02	| norm.z * m02		| norm.y * m01 + norm.x * m00		| pos.x * m00 + pos.y * m01	+ m03
+		fld DWORD PTR[ecx + 0]		// norm.x	| pos.x		| m10				| m13			| pos.z * m02		| norm.z * m02	| norm.y * m01 + norm.x * m00		| pos.x * m00 + pos.y * m01	+ m03
+
+		fxch st(7)					// pos.x * m00 + pos.y * m01	+ m03 | pos.x		| m10 | m13 | pos.z * m02		| norm.z * m02	| norm.y * m01 + norm.x * m00		| norm.x
+		faddp st(4), st(0)			// pos.x		| m10 | m13 | pos.x * m00 + pos.y * m01	+ pos.z * m02 + m03 	| norm.z * m02	| norm.y * m01 + norm.x * m00		| norm.x
+		fxch st(5)					// norm.y * m01 + norm.x * m00		| m10 | m13 | pos.x * m00 + pos.y * m01	+ pos.z * m02 + m03 	| norm.z * m02	| pos.x		| norm.x
+		faddp st(4), st(0)			// m10 | m13 | pos.x * m00 + pos.y * m01	+ pos.z * m02 + m03 	| norm.x * m00 + norm.y * m01 + norm.z * m02	| pos.x		| norm.x
+		fmul st(4), st(0)			// m10 | m13 | pos.x * m00 + pos.y * m01	+ pos.z * m02 + m03 	| norm.x * m00 + norm.y * m01 + norm.z * m02	| pos.x	* m10	| norm.x
+		fmulp st(5), st(0)			// m13 | pos.x * m00 + pos.y * m01	+ pos.z * m02 + m03 	| norm.x * m00 + norm.y * m01 + norm.z * m02	| pos.x	* m10	| norm.x * m10
+		fxch st(2)					// norm.x * m00 + norm.y * m01 + norm.z * m02 | pos.x * m00 + pos.y * m01	+ pos.z * m02 + m03 	| m13	| pos.x	* m10	| norm.x * m10
+
+		fstp DWORD PTR[esi]			// pos.x * m00 + pos.y * m01	+ pos.z * m02 + m03 	| m13	| pos.x	* m10	| norm.x * m10
+		fstp DWORD PTR[edi]			// m13	| pos.x	* m10	| norm.x * m10
+
+		fld DWORD PTR[eax + 1*16 + 1*4]				// m11	| m13	| pos.x	* m10	| norm.x * m10
+		fld DWORD PTR[edx + 4]		// pos.y	| m11	| m13		| pos.x	* m10	| norm.x * m10
+		fld DWORD PTR[ecx + 4]		// norm.y| pos.y	| m11		| m13	| pos.x	* m10	| norm.x * m10
+		fld DWORD PTR[eax + 1*16 + 2*4]				// m12	| norm.y| pos.y		| m11	| m13	| pos.x	* m10	| norm.x * m10
+		fld DWORD PTR[edx + 8]		// pos.z	| m12	| norm.y	| pos.y	| m11	| m13	| pos.x	* m10	| norm.x * m10
+
+		fxch st(4)					// m11	| m12	| norm.y	| pos.y		| pos.z		| m13	| pos.x	* m10	| norm.x * m10
+		fmul st(3), st(0)			// m11	| m12	| norm.y	| pos.y	* m11	| pos.z		| m13	| pos.x	* m10	| norm.x * m10
+		fmulp st(2), st(0)			// m12	| norm.y * m11	| pos.y	* m11	| pos.z		| m13	| pos.x	* m10	| norm.x * m10
+
+		fld DWORD PTR[ecx + 8]		// norm.z	| m12	| norm.y * m11	| pos.y	* m11	| pos.z		| m13	| pos.x	* m10	| norm.x * m10
+		fxch st(1)					// m12	| norm.z	| norm.y * m11	| pos.y	* m11	| pos.z		| m13	| pos.x	* m10	| norm.x * m10
+		fmul st(4), st(0)			// m12	| norm.z	| norm.y * m11	| pos.y	* m11	| pos.z * m12		| m13	| pos.x	* m10	| norm.x * m10
+		fmulp st(1), st(0)			// norm.z * m12		| norm.y * m11	| pos.y	* m11	| pos.z * m12		| m13	| pos.x	* m10	| norm.x * m10
+
+		fld DWORD PTR[eax + 2*16 + 3*4]				// m23	|	norm.z * m12	| norm.y * m11	| pos.y	* m11	| pos.z * m12		| m13	| pos.x	* m10	| norm.x * m10
+
+		fxch st(6)					// pos.x	* m10	| norm.z * m12	| norm.y * m11	| pos.y	* m11	| pos.z * m12	| m13			| m23			| norm.x * m10
+		faddp st(3), st(0)			// norm.z * m12	| norm.y * m11	| pos.x	* m10 + pos.y * m11	| pos.z * m12		| m13			| m23			| norm.x * m10
+		fxch st(4)					// m13			| norm.y * m11	| pos.x	* m10 + pos.y * m11	| pos.z * m12		| norm.z * m12	| m23			| norm.x * m10
+		faddp st(3), st(0)			// norm.y * m11	| pos.x	* m10 + pos.y * m11	| pos.z * m12 + m13	| norm.z * m12	| m23			| norm.x * m10
+		faddp st(5), st(0)			// pos.x	* m10 + pos.y * m11	| pos.z * m12 + m13	| norm.z * m12	| m23			| norm.x * m10 + norm.y * m11
+
+		fld DWORD PTR[eax + 2*16 + 0]				// m20		| pos.x	* m10 + pos.y * m11	| pos.z * m12 + m13	| norm.z * m12	| m23			| norm.x * m10 + norm.y * m11
+		fld DWORD PTR[edx + 0]		// pos.x		| m20		| pos.x	* m10 + pos.y * m11	| pos.z * m12 + m13	| norm.z * m12	| m23			| norm.x * m10 + norm.y * m11
+		fld DWORD PTR[ecx + 0]		// norm.x	| pos.x		| m20		| pos.x	* m10 + pos.y * m11	| pos.z * m12 + m13	| norm.z * m12	| m23			| norm.x * m10 + norm.y * m11
+
+		fxch st(3)					// pos.x	* m10 + pos.y * m11	| pos.x		| m20		| norm.x	| pos.z * m12 + m13	| norm.z * m12	| m23			| norm.x * m10 + norm.y * m11
+		faddp st(4), st(0)			// pos.x		| m20		| norm.x	| pos.x	* m10 + pos.y * m11	+ pos.z * m12 + m13	| norm.z * m12	| m23			| norm.x * m10 + norm.y * m11
+		fxch st(4)					// norm.z * m12	| m20		| norm.x	| pos.x	* m10 + pos.y * m11	+ pos.z * m12 + m13	| pos.x		| m23			| norm.x * m10 + norm.y * m11
+		faddp st(6), st(0)			// m20		| norm.x	| pos.x	* m10 + pos.y * m11	+ pos.z * m12 + m13	| pos.x		| m23			| norm.x * m10 + norm.y * m11 + norm.z * m12
+		fmul st(3), st(0)			// m20		| norm.x	| pos.x	* m10 + pos.y * m11	+ pos.z * m12 + m13	| pos.x	* m20	| m23			| norm.x * m10 + norm.y * m11 + norm.z * m12
+		fmulp st(1), st(0)			// norm.x * m20	| pos.x	* m10 + pos.y * m11	+ pos.z * m12 + m13	| pos.x	* m20	| m23			| norm.x * m10 + norm.y * m11 + norm.z * m12
+
+		fld DWORD PTR[eax + 2*16 + 1*4]		// m21		| norm.x * m20	| pos.x	* m10 + pos.y * m11	+ pos.z * m12 + m13	| pos.x	* m20	| m23			| norm.x * m10 + norm.y * m11 + norm.z * m12
+		fld DWORD PTR[edx + 4]		// pos.y		| m21		| norm.x * m20	| pos.x	* m10 + pos.y * m11	+ pos.z * m12 + m13	| pos.x	* m20	| m23			| norm.x * m10 + norm.y * m11 + norm.z * m12
+		fld DWORD PTR[ecx + 4]		// norm.y	| pos.y		| m21		| norm.x * m20	| pos.x	* m10 + pos.y * m11	+ pos.z * m12 + m13	| pos.x	* m20	| m23			| norm.x * m10 + norm.y * m11 + norm.z * m12
+
+		fxch st(4)					// pos.x	* m10 + pos.y * m11	+ pos.z * m12 + m13	| pos.y		| m21		| norm.x * m20	| norm.y	| pos.x	* m20	| m23			| norm.x * m10 + norm.y * m11 + norm.z * m12
+		fstp DWORD PTR[edi + 4]		// pos.y		| m21		| norm.x * m20	| norm.y	| pos.x	* m20	| m23			| norm.x * m10 + norm.y * m11 + norm.z * m12
+		fxch st(6)					// norm.x * m10 + norm.y * m11 + norm.z * m12		| m21		| norm.x * m20	| norm.y	| pos.x	* m20	| m23			| pos.y
+		fstp DWORD PTR[esi + 4]		// m21		| norm.x * m20	| norm.y	| pos.x	* m20	| m23			| pos.y
+
+		fmul st(5), st(0)			// m21			| norm.x * m20	| norm.y		| pos.x	* m20	| m23			| pos.y	* m21
+		fmulp st(2), st(0)			// norm.x * m20	| norm.y * m21	| pos.x	* m20	| m23			| pos.y	* m21
+
+		fld DWORD PTR[eax + 2*16 + 2*4]	// m22			| norm.x * m20	| norm.y * m21	| pos.x	* m20	| m23			| pos.y	* m21
+		fld DWORD PTR[edx + 8]		// pos.z			| m22			| norm.x * m20	| norm.y * m21	| pos.x	* m20	| m23			| pos.y	* m21
+		fld DWORD PTR[ecx + 8]		// norm.z		| pos.z			| m22			| norm.x * m20	| norm.y * m21	| pos.x	* m20	| m23			| pos.y	* m21
+
+		fxch st(5) 					// pos.x	* m20	| pos.z			| m22			| norm.x * m20	| norm.y * m21	| norm.z		| m23			| pos.y	* m21
+		faddp st(6), st(0)			// pos.z			| m22			| norm.x * m20	| norm.y * m21	| norm.z		| pos.x	* m20 + m23	| pos.y	* m21
+		fxch st(2)					// norm.x * m20 	| m22			| pos.z			| norm.y * m21	| norm.z		| pos.x	* m20 + m23	| pos.y	* m21
+		faddp st(3), st(0)			// m22			| pos.z			| norm.x * m20 + norm.y * m21	| norm.z		| pos.x	* m20 + m23	| pos.y	* m21
+		fmul st(1), st(0)			// m22			| pos.z * m22	| norm.x * m20 + norm.y * m21	| norm.z		| pos.x	* m20 + m23	| pos.y	* m21
+		fmulp st(3), st(0)			// pos.z * m22	| norm.x * m20 + norm.y * m21	| norm.z * m22	| pos.x	* m20 + m23	| pos.y	* m21
+		fxch st(4)					// pos.y * m21	| norm.x * m20 + norm.y * m21	| norm.z * m22	| pos.x	* m20 + m23	| pos.z	* m22
+		faddp st(3), st(0)			// norm.x * m20 + norm.y * m21	| norm.z * m22	| pos.x	* m20 + pos.y * m21 + m23	| pos.z	* m22
+
+		// STALLS AHOY!!!
+
+		faddp st(1), st(0)			// norm.x * m20 + norm.y * m21 + norm.z * m22	| pos.x	* m20 + pos.y * m21 + m23	| pos.z	* m22
+		fxch st(2)					// pos.z	* m22									| pos.x	* m20 + pos.y * m21 + m23	| norm.x * m20 + norm.y * m21 + norm.z * m22 
+		faddp st(1), st(0)			// pos.x	* m20 + pos.y * m21 + pos.z	* m22 + m23	| norm.x * m20 + norm.y * m21 + norm.z * m22 
+		fxch st(1)					// norm.x * m20 + norm.y * m21 + norm.z * m22	| pos.x	* m20 + pos.y * m21 + pos.z	* m22 + m23
+		fstp DWORD PTR[esi + 8]		// pos.x	* m20 + pos.y * m21 + pos.z	* m22 + m23
+		fstp DWORD PTR[edi + 8]
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108450 size=0xb2
 #include "matrix3x4_t.h"
 
