@@ -21567,6 +21567,31 @@ char C101fc4d0::sub_10159f20(T_101fc4d0 a, T_101fc4d0 b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10159fc0 size=0xb3
+#include "CVStatCost_t.h"
+#include <stdio.h>
+#include <string.h>
+
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+extern char g_105f8cb8[];
+
+const char *CVStatCost_t::sub_10159fc0()
+{
+	g_101e3124[*g_101e3128].a = "CVStatCost_t::ToStr";
+	g_101e3124[*g_101e3128].b = g_102de300;
+	g_101e3124[*g_101e3128].c = g_102de300;
+	(*g_101e3128)++;
+	sprintf(g_105f8cb8, "%s: '%s'", "New", m_first.sub_10159940());
+	int nLen = strlen(g_105f8cb8);
+	sprintf(g_105f8cb8 + nLen, ", %s: '%s'", "Raise", m_second.sub_10159940());
+	(*g_101e3128)--;
+	return g_105f8cb8;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015ab20 size=0x69
 struct TScope {
 	const char *name;
