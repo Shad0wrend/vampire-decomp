@@ -4374,6 +4374,26 @@ InterfaceReg *InterfaceReg::sub_10106be0(void *createFn, const char *pName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10106fa0 size=0x6e
+struct ScopeEntry { const char *a; const char *b; const char *c; };
+extern int *g_101e3128;
+extern ScopeEntry *g_101e3124;
+extern char g_102de300[];
+extern int (__stdcall *g_101e30d4)(const char *, const char *);
+extern int (__stdcall *g_101e30d8)(int);
+
+int sub_10106fa0(const char *a, const char *b)
+{
+    g_101e3124[*g_101e3128].a = "Sys_GetProcAddress";
+    g_101e3124[*g_101e3128].b = g_102de300;
+    g_101e3124[*g_101e3128].c = g_102de300;
+    (*g_101e3128)++;
+    int r = g_101e30d8(g_101e30d4(a, b));
+    (*g_101e3128)--;
+    return r;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107500 size=0x43
 #include "Vector.h"
 #include <math.h>
