@@ -27149,6 +27149,14 @@ float CUnknown1014d020::sub_1014d020()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014d030 size=0x7
+struct CUnknown1014d030 { float sub_1014d030(); };
+float CUnknown1014d030::sub_1014d030()
+{
+    return *(float *)((char *)this + 0x3cc);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014d120 size=0x2e
 struct CWorker101e80c0
 {
