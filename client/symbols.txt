@@ -1809,6 +1809,7 @@
 0x1010dfd0 func   ?sub_1010dfd0@@YAHXZ sub_1010dfd0
 0x1010dfe0 func   ?sub_1010dfe0@@YAXXZ sub_1010dfe0
 0x1010e070 func   ?sub_1010e070@@YAHPAPAUCUnknown10247800@block_102479b0@@0@Z sub_1010e070
+0x1010e0b0 func   ??0CMeasureSectionInstance@@QAE@H@Z CMeasureSectionInstance::CMeasureSectionInstance
 0x1010e1d0 func   ?sub_1010e1d0@@YAXXZ sub_1010e1d0
 0x1010e1e0 func   ?sub_1010e1e0@@YAPADPBDHPAHPADH@Z sub_1010e1e0
 0x1010e280 func   ?sub_1010e280@@YAHH@Z sub_1010e280
