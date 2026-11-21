@@ -8829,6 +8829,44 @@ void sub_10109010(const QAngle &angles, Vector *forward)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101090a0 size=0x145
+#include "Vector.h"
+#include "QAngle.h"
+inline void SinCos(float radians, float *sine, float *cosine)
+{
+    __asm {
+        fld dword ptr [radians]
+        fsincos
+        mov edx, dword ptr [cosine]
+        mov eax, dword ptr [sine]
+        fstp dword ptr [edx]
+        fstp dword ptr [eax]
+    }
+}
+void sub_101090a0(const QAngle &angles, Vector *forward, Vector *right, Vector *up)
+{
+    float sr, sp, sy, cr, cp, cy;
+    SinCos(angles.y * 0.017453292f, &sy, &cy);
+    SinCos(angles.x * 0.017453292f, &sp, &cp);
+    SinCos(angles.z * 0.017453292f, &sr, &cr);
+    if (forward) {
+        forward->x = cp * cy;
+        forward->y = cp * sy;
+        forward->z = -sp;
+    }
+    if (right) {
+        right->x = (-1 * sr * sp * cy + -1 * cr * -sy);
+        right->y = (-1 * sr * sp * sy + -1 * cr * cy);
+        right->z = -1 * sr * cp;
+    }
+    if (up) {
+        up->x = (cr * sp * cy + -sr * -sy);
+        up->y = (cr * sp * sy + -sr * cy);
+        up->z = cr * cp;
+    }
+}
+// END FUNCTION
+
 // FUNCTION: 0x10109420 size=0x1f
 void sub_10109420(float *p)
 {
