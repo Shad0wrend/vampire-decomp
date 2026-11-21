@@ -4704,6 +4704,13 @@ bool sub_1008c770(void *pStudioHdr, int iSequence, float flCycleFrom, float flCy
 }
 // END FUNCTION
 
+// FUNCTION: 0x1008ce30 size=0x3
+int sub_1008ce30()
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1008ce40 size=0x154
 #include "CUnknown101dff00.h"
 #include "CRestore.h"
