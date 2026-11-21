@@ -30,6 +30,16 @@ void __stdcall sub_10001030(char *ptr, unsigned size, int count, PMF_1004ddc0 pm
 }
 // END FUNCTION
 
+// FUNCTION: 0x100011e0 size=0x6
+namespace lifted {
+extern char g_102de670;
+}
+int sub_100011e0()
+{
+    return (int)&lifted::g_102de670;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10001590 size=0x4
 struct CUnknown10001590 { char * sub_10001590(); };
 char * CUnknown10001590::sub_10001590()
