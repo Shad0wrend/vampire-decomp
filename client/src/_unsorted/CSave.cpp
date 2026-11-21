@@ -195,6 +195,28 @@ void CSave::vfunc30(const char *pszName, const Vector &value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129c30 size=0x7c
+#include "CSave.h"
+
+struct CSaveBlockX
+{
+	char m_pad0000[0x12c4];
+	int m_bLandmark;	// 0x12c4
+	char m_pad12c8[0x12dc - 0x12c8];
+	Vector m_vecLandmarkOffset;	// 0x12dc
+};
+
+extern Vector g_104d4970;
+
+void CSave::vfunc28(const Vector &value)
+{
+	CSaveBlockX *pBlock = (CSaveBlockX *)m_pEntityBlock;
+	Vector vecOffset = pBlock->m_bLandmark ? pBlock->m_vecLandmarkOffset : g_104d4970;
+	Vector vecResult = value - vecOffset;
+	vfunc24(vecResult);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10129cb0 size=0x2d
 #include "CSave.h"
 
