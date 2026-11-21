@@ -20314,6 +20314,47 @@ int CUnit101f4530::sub_101556a0(int n, int b)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101556d0 size=0x68
+struct TInner {
+	char pad[0x14];
+	int count;
+};
+
+struct TSeg {
+	char pad[8];
+	TInner *inner;
+	int *sizes;
+	void sub_101556d0(int target, int *outIndex, int *outOffset);
+};
+
+void TSeg::sub_101556d0(int target, int *outIndex, int *outOffset)
+{
+	int n = inner->count;
+	int sum = 0;
+	int i = 0;
+	if (0 < n) {
+		int *p = sizes;
+		do {
+			int next = *p + sum;
+			if (next > target) {
+				if (outIndex)
+					*outIndex = i;
+				if (outOffset)
+					*outOffset = target - sum;
+				return;
+			}
+			i++;
+			p++;
+			sum = next;
+		} while (i < n);
+	}
+	if (outIndex)
+		*outIndex = 0;
+	if (outOffset)
+		*outOffset = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10155b40 size=0x1d
 struct S9 {
 	int a, b, c, d, e, f, g, h, i;
