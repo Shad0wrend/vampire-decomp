@@ -2411,3 +2411,9 @@ ConCommand g_105fbbb4("vconsole_notify", sub_1018cdd0, 0, 0, 0);
 void sub_1018d1f0(void);
 ConCommand g_105fbc54("vprof", sub_1018d1f0, "Toggle VProf profiler", 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x1018d360 size=0xa
+#include "ConCommand.h"
+void sub_1018d3b0(void);
+ConCommand g_105fbd00("vprof_on", sub_1018d3b0, "Turn on VProf profiler", 0, 0);
+// END FUNCTION
