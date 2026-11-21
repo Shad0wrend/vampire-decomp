@@ -424,3 +424,8 @@ ConVar g_1049d848("damage_floaters_color_min_b", "0", 0, "Blue Color Component (
 #include "ConVar.h"
 ConVar g_1049d4d0("damage_floaters_color_max_threshhold", "90", 0, "Value (0-100) at which above this percent health we always display the full health color.");
 // END FUNCTION
+
+// FUNCTION: 0x1009b030 size=0xa
+#include "utlvector.h"
+CUtlVector<int> g_1049d978;
+// END FUNCTION
