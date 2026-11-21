@@ -4656,6 +4656,13 @@ InterfaceReg g_104a4ffc(sub_100c87b0, "TextConsole_IMaterialProxy003");
 RecvTable g_104a5424;
 // END FUNCTION
 
+// FUNCTION: 0x100c8f10 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_VGuiScreen { struct ignored; }
+template <> int ClientClassInit<DT_VGuiScreen::ignored>(DT_VGuiScreen::ignored *);
+int g_104a5420 = ClientClassInit((DT_VGuiScreen::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100ca2d0 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a545c;
