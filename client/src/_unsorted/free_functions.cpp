@@ -35776,6 +35776,15 @@ int CUnknown1017b180::sub_1017b180()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1017b270 size=0xd
+struct CUnknown1017b270 { int sub_1017b270(int); };
+int CUnknown1017b270::sub_1017b270(int a0)
+{
+    *(int *)((char *)this + 0xf0) = a0;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1017c540 size=0x3
 void __stdcall sub_1017c540(int a0)
 {
