@@ -2596,6 +2596,16 @@ int __stdcall sub_10028660(int a0, int a1)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10028690 size=0x14
+int __stdcall sub_10028690(int a0)
+{
+    *(int *)((char *)a0 + 8) = 0x3f800000;
+    *(int *)((char *)a0 + 4) = 0x3f800000;
+    *(int *)((char *)a0) = 0x3f800000;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100286d0 size=0x4
 struct CUnknown100286d0 { char * sub_100286d0(); };
 char * CUnknown100286d0::sub_100286d0()
