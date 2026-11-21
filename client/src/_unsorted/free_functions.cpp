@@ -9623,6 +9623,31 @@ int sub_100371a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10037210 size=0xbe
+#include "RecvTable.h"
+extern RecvTable g_102edbdc;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable * g_1027c4e8;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_TEFizz { struct ignored; }
+template <> int ClientClassInit<DT_TEFizz::ignored>(DT_TEFizz::ignored *)
+{
+	char *pRecvTableName = "DT_TEFizz";
+	RecvTable &RecvTable = g_102edbdc;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropDataTable("baseclass", 0, 0, g_1027c4e8, DataTableRecvProxy_StaticDataTable),
+		RecvPropInt("m_nEntity", 16, 4, 0, 0),
+		RecvPropInt("m_nModelIndex", 20, 4, 0, 0),
+		RecvPropInt("m_nDensity", 24, 4, 0, 0),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10037330 size=0x12
 namespace lifted {
 extern char g_102266a8;
