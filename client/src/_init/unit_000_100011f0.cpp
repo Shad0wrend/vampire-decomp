@@ -485,3 +485,8 @@ ConVar g_104a0b88("zoom_sensitivity_ratio", "1.0", 0, "Additional mouse sensitiv
 #include "ConVar.h"
 ConVar g_1049e880("hud_fastswitch", "1", 128);
 // END FUNCTION
+
+// FUNCTION: 0x100a3c00 size=0xa
+#include "ConVar.h"
+ConVar g_104a0ca0("test_player_dsp", "-1", 0);
+// END FUNCTION
