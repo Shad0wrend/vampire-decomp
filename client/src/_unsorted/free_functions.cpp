@@ -6095,6 +6095,21 @@ bool sub_100daae0(const Vector *p, const Vector *mins, const Vector *maxs)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100dac00 size=0x78
+#include "Vector.h"
+
+bool sub_100dac00(const Vector &boxMin1, const Vector &boxMax1, const Vector &boxMin2, const Vector &boxMax2)
+{
+	if ((boxMin1[0] > boxMax2[0]) || (boxMax1[0] < boxMin2[0]))
+		return false;
+	if ((boxMin1[1] > boxMax2[1]) || (boxMax1[1] < boxMin2[1]))
+		return false;
+	if ((boxMin1[2] > boxMax2[2]) || (boxMax1[2] < boxMin2[2]))
+		return false;
+	return true;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df190 size=0x24
 struct CUnknown10753434
 {
