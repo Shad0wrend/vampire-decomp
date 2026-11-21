@@ -5987,6 +5987,19 @@ void sub_10064c60()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10064dd0 size=0x14
+namespace lifted {
+extern char g_103eee59;
+extern int g_103eef34;
+}
+int sub_10064dd0(int a0, char a1)
+{
+    lifted::g_103eef34 = a0;
+    lifted::g_103eee59 = a1;
+    return a0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100650b0 size=0xa
 namespace lifted {
 extern int g_103eef5c;
