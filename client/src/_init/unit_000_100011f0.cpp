@@ -4288,6 +4288,13 @@ int g_104a1f30 = ClientClassInit((DT_EntityFlame::ignored *)0);
 RecvTable g_104a22e8;
 // END FUNCTION
 
+// FUNCTION: 0x100b6b00 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_FuncAreaPortalWindow { struct ignored; }
+template <> int ClientClassInit<DT_FuncAreaPortalWindow::ignored>(DT_FuncAreaPortalWindow::ignored *);
+int g_104a22e4 = ClientClassInit((DT_FuncAreaPortalWindow::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100b6f30 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a2304;
