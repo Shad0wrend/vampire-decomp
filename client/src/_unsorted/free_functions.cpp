@@ -30951,6 +30951,15 @@ int CUnknown101f1a30::sub_10157bd0(const char *name)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10157d10 size=0x9
+struct CUnknown10157d10 { void * sub_10157d10(); };
+void * CUnknown10157d10::sub_10157d10()
+{
+    *(int *)this = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10158060 size=0x55
 #include "CUnknown101f9b70.h"
 #include "CUnknown101f0e50.h"
