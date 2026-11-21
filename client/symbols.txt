@@ -972,6 +972,7 @@
 0x100efee0 func   ?sub_100efee0@CUtlLinkedList8@@QAEXG@Z CUtlLinkedList8::sub_100efee0
 0x100eff70 func   ?sub_100eff70@CMem8b_t@@QAEXH@Z CMem8b_t::sub_100eff70
 0x100f10c0 func   ?sub_100f10c0@CUnknown100f10c0@@QAEMXZ CUnknown100f10c0::sub_100f10c0
+0x100f17e0 func   ?sub_100f17e0@CUnknown100f17e0@@QAEHXZ CUnknown100f17e0::sub_100f17e0
 0x100f2490 func   ?sub_100f2490@@YGXH@Z sub_100f2490
 0x100f24a0 func   ?sub_100f24a0@@YAXXZ sub_100f24a0
 0x100f25a0 func   ?sub_100f25a0@@YAXXZ sub_100f25a0
