@@ -863,6 +863,7 @@
 0x100be150 func   ?sub_100be150@CUnknown100be150@@QAEDD@Z CUnknown100be150::sub_100be150
 0x100be200 func   ?sub_100be200@UtlMem@@QAEXH@Z UtlMem::sub_100be200
 0x100be2d0 func   ?sub_100be2d0@@YAHXZ sub_100be2d0
+0x100bf700 func   ?sub_100bf700@CUnknown100bf700@@QAEHXZ CUnknown100bf700::sub_100bf700
 0x100c0960 func   ?sub_100c0960@CUnknown100c0960@@QAEPAXXZ CUnknown100c0960::sub_100c0960
 0x100c0c80 func   ?sub_100c0c80@@YAHXZ sub_100c0c80
 0x100c1e70 func   ?sub_100c1e70@UtlVec40@@QAEXHH@Z UtlVec40::sub_100c1e70
