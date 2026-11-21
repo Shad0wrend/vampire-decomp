@@ -15974,6 +15974,28 @@ char *CClanInfoView::sub_1013f320()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1013f440 size=0x47
+#include "StatDefault3.h"
+int StatDefault3::sub_1013f440(int n)
+{
+    int *p = m_pd8;
+    int count = 0;
+    if (p[2] > 0) {
+        count = 1;
+        if (n == 0)
+            return 2;
+    }
+    for (int i = 0; i < 17; i++, p++) {
+        if (i != 2 && *p > 0) {
+            if (count == n)
+                return i;
+            count++;
+        }
+    }
+    return -1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1013fc80 size=0x22
 extern char g_102c6c3c[];
 extern char g_102c6c30[];
