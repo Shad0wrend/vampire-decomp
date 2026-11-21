@@ -8674,6 +8674,21 @@ int __cdecl sub_10108d20(const unsigned int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108d40 size=0x2c
+// TARGET: sub_10108d40
+unsigned int sub_10108d40(float *v)
+{
+    unsigned int mask = 0;
+    int i;
+    for (i = 0; i < 3; i++) {
+        if (v[i] < 0.0f) {
+            mask |= 1 << i;
+        }
+    }
+    return mask;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108fd0 size=0x3d
 // VectorMA (mathlib.cpp, _WIN32 form): Valve's naked x87 asm.
 // TARGET: sub_10108fd0
