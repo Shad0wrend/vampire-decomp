@@ -22372,6 +22372,35 @@ int CUnknown10203110::sub_1015f210(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f240 size=0x2e
+// TARGET: sub_1015f240
+
+struct CUnknown10203150
+{
+    char m_pad0000[8];
+    int m_count;
+    int **m_ppItems;
+    bool sub_1015f240(int value);
+};
+
+bool CUnknown10203150::sub_1015f240(int value)
+{
+    int i = 0;
+    if (m_count > 0)
+    {
+        do
+        {
+            if (*m_ppItems[i] == value)
+            {
+                return true;
+            }
+            i++;
+        } while (i < m_count);
+    }
+    return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"

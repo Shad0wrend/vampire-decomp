@@ -888,6 +888,7 @@
 0x1015f120 func   ?sub_1015f120@CUnknown10202fd0@@QAEXPAUCSlotIter@@@Z CUnknown10202fd0::sub_1015f120
 0x1015f1c0 func   ?sub_1015f1c0@CTableList@@QAEPBDHH@Z CTableList::sub_1015f1c0
 0x1015f210 func   ?sub_1015f210@CUnknown10203110@@QAEHH@Z CUnknown10203110::sub_1015f210
+0x1015f240 func   ?sub_1015f240@CUnknown10203150@@QAE_NH@Z CUnknown10203150::sub_1015f240
 0x1015f720 func   ?sub_1015f720@@YADPAVCFileParserSlotView@@PBDH1PAUstring_t@@PAPAU2@PAH@Z sub_1015f720
 0x1015f7e0 func   ?sub_1015f7e0@@YAHHPAUIObj102038e0@@H@Z sub_1015f7e0
 0x1015f810 func   ?sub_1015f810@@YAHHH@Z sub_1015f810
