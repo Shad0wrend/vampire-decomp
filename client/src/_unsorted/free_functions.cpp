@@ -642,6 +642,13 @@ void sub_1002ebc0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100310b0 size=0x3
+char sub_100310b0()
+{
+    return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039080 size=0x19
 #include "Vector.h"
 Vector &Vector::sub_10039080(const Vector &v)
