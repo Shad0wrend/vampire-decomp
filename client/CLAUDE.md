@@ -19,18 +19,21 @@ this one.
 `pcdecomp carry G:\decomp\projects\vtmb G:\decomp\projects\vtmb-client` copies vtmb's matched functions onto
 client.dll functions whose bytes are the same (relocations and call targets masked), renames them for this binary
 and judges each one here. It reads vtmb only. It can be run again: matched functions are no longer open, a score
-already noted is not noted twice.
+already noted is not noted twice. Run it before agents edit headers here: a header carry made that someone changed
+since is this project's own for carry, and every block that includes it is skipped (`header conflict`).
 
-Carry so far (2026-11-21, three runs): 298 functions matched, 35,908 bytes. 5 of them use inline assembly, so the
-progress counts 293 functions / 35,155 bytes (1.94% of the code). Why the rest of the equal-bytes pairs stayed open
+Carry so far (2026-11-21, four runs): 382 functions matched, 44,040 bytes. 5 of them use inline assembly, so the
+progress counts 377 functions / 43,287 bytes (2.38% of the code). Why the rest of the equal-bytes pairs stayed open
 in the last run: 616 need server classes (their headers define classes client.dll's RTTI does not have, or reach
-vtmb's server interfaces), 370 have an unpaired placeholder (a vampire.dll name with no client.dll partner, in the
+vtmb's server interfaces), 282 have an unpaired placeholder (a vampire.dll name with no client.dll partner, in the
 block or in a header's inline code), 77 a name this project cannot save (mostly scalar deleting destructors), 20 an
-RTTI class conflict, 14 a compile failure, 4 the full prelude. 25 functions carry a note `carried: from 0x...,
+RTTI class conflict, 14 a compile failure, 4 the full prelude. 27 functions carry a note `carried: from 0x...,
 score N`: the same bytes judged a near miss, a good start for a hand pass.
 
-Names: a carried function keeps vtmb's semantic name only where it is the same function (one-to-one, and this
-binary agrees); otherwise it gets this binary's placeholder (`sub_`, `g_`, `vt_` + its address here). Type names
+Names: client.dll has almost no linker names, so carried functions are saved under this binary's placeholders
+(`Class::sub_<address here>`, `g_`, `vt_`), even where the vtmb twin has a real name; a naming pass with
+`rename_symbol`, citing the byte-equal vtmb function, can give them vtmb's names. Imported slots are paired by
+import name (vampire.dll's `Plat_Free` slot becomes this binary's `Plat_Free` slot). Type names
 that embed a vampire.dll address (`CUnknown1004ddc0`, `CUnk101f75f0`, `block_10256200`, `CRBTree12Entry_10194f30`)
 came across as they were: the address in them is vampire.dll's, not this binary's. Rename them with
 `rename_symbol` when you know the real class.
