@@ -12697,6 +12697,18 @@ int CUnknown10202d10::sub_1015f010(int a, const char *pszName, int c, char d)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1015f060 size=0x1c
+namespace lifted {
+extern char g_102cc654;
+struct C10009d95 { int sub_1015f010(int, int, int, int); };
+}
+struct CUnknown10202ec0 { int sub_1015f060(int, int, int); };
+int CUnknown10202ec0::sub_1015f060(int a0, int a1, int a2)
+{
+    return ((lifted::C10009d95 *)this)->sub_1015f010(a0, a1, (int)&lifted::g_102cc654, a2);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1015f720 size=0xb8
 #include "string_t.h"
 #include "CBCCSlotViews.h"
