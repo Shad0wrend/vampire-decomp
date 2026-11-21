@@ -2559,6 +2559,7 @@
 0x1014f6f0 func   ?sub_1014f6f0@CUnknown1014f6f0@@QAEHXZ CUnknown1014f6f0::sub_1014f6f0
 0x1014f820 func   ?sub_1014f820@CUnknown101eb820@@QAEXXZ CUnknown101eb820::sub_1014f820
 0x1014fc00 func   ?sub_1014fc00@@YAXXZ sub_1014fc00
+0x1014fc10 func   ?sub_1014fc10@CUnknown101ebd30@@QAE_NPAX@Z CUnknown101ebd30::sub_1014fc10
 0x101501b0 func   ?sub_101501b0@CUnk101ec450@@QAEXHH@Z CUnk101ec450::sub_101501b0
 0x101501d0 func   ?sub_101501d0@CUnk101ec480@@QAEPADH@Z CUnk101ec480::sub_101501d0
 0x101501f0 func   ?sub_101501f0@@YIPBDPAXHHH@Z sub_101501f0

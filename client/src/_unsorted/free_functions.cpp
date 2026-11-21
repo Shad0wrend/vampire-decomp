@@ -50540,6 +50540,71 @@ void sub_1014fc00()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014fc10 size=0xe3
+#include <stdio.h>
+#include <string.h>
+#include "CUnknown101ebd30.h"
+extern char g_102de300[];
+static inline const char *STRINGR_F(const char *const &s) { return s ? s : g_102de300; }
+
+struct CBotchKV
+{
+	virtual void v0(); virtual void v1(); virtual void v2(); virtual void v3(); virtual void v4(); virtual void v5(); virtual void v6();
+	virtual void v7(); virtual void v8(); virtual void v9(); virtual void v10(); virtual void v11(); virtual void v12();
+	virtual const char *GetString(const char *name, const char *def);
+};
+
+struct CBotchName { int m_nId; const char *m_psz; };
+
+extern int g_105e856c;
+extern CBotchName **g_105e8570;
+int *sub_1015f7e0(int *pOut, CBotchKV *pData, const char *name);
+int *sub_1015f810(int *pOut, CBotchKV *pData);
+
+static inline const char *NameOf(int *pBase)
+{
+	const char *const *pp = (const char *const *)(pBase + 1);
+	return STRINGR_F(*pp);
+}
+
+static inline int FindBotch(const char *pszWanted)
+{
+	for (int j = 0; j < g_105e856c; j++) {
+		if (!_strcmpi(NameOf((int *)g_105e8570[j]), pszWanted))
+			return g_105e8570[j]->m_nId;
+	}
+	return -1;
+}
+
+static inline int GetInternalName(CBotchKV *pKV)
+{
+	int tmp;
+	return *sub_1015f7e0(&tmp, pKV, "InternalName");
+}
+
+static inline int GetSecond(CBotchKV *pKV)
+{
+	int tmp;
+	return *sub_1015f810(&tmp, pKV);
+}
+
+bool CUnknown101ebd30::sub_1014fc10(void *pData)
+{
+	CBotchKV *pKV = (CBotchKV *)pData;
+	if (pKV) {
+		m_nInternalName = GetInternalName(pKV);
+		m_n08 = GetSecond(pKV);
+		for (int i = 0; i < 3; i++) {
+			char szKey[32];
+			sprintf(szKey, "Botch%d", i + 1);
+			m_aBotch[i] = FindBotch(pKV->GetString(szKey, g_102de300));
+		}
+		return true;
+	}
+	return false;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101501b0 size=0x1c
 struct CUnk101ec450 {
 	void sub_101501b0(int a, int b);
