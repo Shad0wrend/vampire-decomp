@@ -379,6 +379,7 @@
 0x10020350 func   ?sub_10020350@@YAHXZ sub_10020350
 0x10020470 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGRingSerialKiller2@@@Z ClientClassInit
 0x100205d0 func   ?sub_100205d0@@YAHXZ sub_100205d0
+0x100206f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGGargoyleBook@@@Z ClientClassInit
 0x10020850 func   ?sub_10020850@@YAHXZ sub_10020850
 0x10020ad0 func   ?sub_10020ad0@@YAHXZ sub_10020ad0
 0x10020d50 func   ?sub_10020d50@@YAHXZ sub_10020d50
