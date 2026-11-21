@@ -251,6 +251,13 @@ int g_102e3b34 = ClientClassInit((DT_BaseBludgeonWeapon::ignored *)0);
 RecvTable g_102e52f8;
 // END FUNCTION
 
+// FUNCTION: 0x10007e50 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_WeaponMelee { struct ignored; }
+template <> int ClientClassInit<DT_WeaponMelee::ignored>(DT_WeaponMelee::ignored *);
+int g_102e52f4 = ClientClassInit((DT_WeaponMelee::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x10008090 size=0xa
 #include "RecvTable.h"
 RecvTable g_102e28d4;
