@@ -22772,6 +22772,27 @@ bool CUnknown1006cfb0::sub_10160560(int value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10160610 size=0x50
+extern "C" int sprintf(char *, const char *, ...);
+void sub_1015fbb0(const char *);
+
+struct Dump { void sub_101602b0(); };
+struct CDumpTable1006d0a0 {
+	int m_n0;
+	int m_nCount;	// 0x4
+	Dump **m_ppItems;	// 0x8
+};
+
+void __fastcall sub_10160610(CDumpTable1006d0a0 *pTable)
+{
+	char buf[128];
+	sprintf(buf, "\n   %s:\n\n", "Tables");
+	sub_1015fbb0(buf);
+	for (int i = 0; i < pTable->m_nCount; i++)
+		pTable->m_ppItems[i]->sub_101602b0();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10160db0 size=0x29
 struct CUnk10204c20
 {
