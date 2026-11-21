@@ -8580,6 +8580,12 @@ void sub_100f7db0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100f7dc0 size=0x1
+void sub_100f7dc0()
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10104360 size=0x1a
 struct CUnk1011d310
 {
