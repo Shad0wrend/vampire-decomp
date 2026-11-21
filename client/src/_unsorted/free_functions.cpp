@@ -61678,6 +61678,44 @@ void sub_101a39f0(IKVSub *pKV, WeaponSoundInfo *pInfo, const char *pszName)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101a3c20 size=0x1b4
+#include "CWeaponAmmoInfo.h"
+#include <string.h>
+
+extern "C" int __cdecl _strcmpi(const char *, const char *);
+__declspec(dllimport) char *Q_strncpy(char *, const char *, int);
+void __cdecl sub_101a39f0(IKVNode *pKV, void *pSoundInfo, const char *pszName);
+
+char sub_101a3c20(IKVNode *pFile, CWeaponAmmoInfo *pInfo, const char *pszWeaponName)
+{
+	int i = 0;
+	IKVNode *pKV = pFile->vfunc6("Magazine");
+	while (pKV) {
+		if (i > 2)
+			return 0;
+		CWeaponMagazineRec *pRec = &pInfo->m_Mags[i];
+		pRec->m_nSize = pKV->vfunc10("Size", 0);
+		const char *pszType = pKV->vfunc13("Type", "None");
+		if (_strcmpi("None", pszType) == 0) {
+			strcpy(pRec->m_szType, "");
+		} else {
+			Q_strncpy(pRec->m_szType, pszType, 0x80);
+			Q_strncpy(pRec->m_szPrintName, pKV->vfunc13("ammoprintname", "!!! Missing printname on weapon"), 0x80);
+			Q_strncpy(pRec->m_szDescription, pKV->vfunc13("ammodescription", "!!! Missing printname on weapon"), 0x2000);
+		}
+		Q_strncpy(pRec->m_szInfoModel, pKV->vfunc13("ammoinfomodel", pInfo->m_szDefaultModel), 0x80);
+		pRec->m_flReloadTime = pKV->vfunc11("ReloadTime", 0);
+		pRec->m_nDefaultSize = pKV->vfunc10("Default_Size", pRec->m_nSize);
+		pRec->m_nDroppedAmmo = pKV->vfunc10("Dropped_Ammo", pRec->m_nSize);
+		pRec->m_nAmmoWorth = pKV->vfunc10("ammo_worth", 0x7b);
+		sub_101a39f0(pKV, pRec->m_SoundInfo, pszWeaponName);
+		pKV = pKV->vfunc7();
+		i++;
+	}
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101a3de0 size=0xcc
 struct SKeyValues
 {
