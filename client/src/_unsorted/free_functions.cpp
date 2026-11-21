@@ -8536,6 +8536,26 @@ void sub_10108880(const Vector &forward, QAngle &angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10108960 size=0xe7
+struct S10138cc0Mat3
+{
+	float m[3][3];
+};
+
+void sub_10108960(const S10138cc0Mat3 &in1, const S10138cc0Mat3 &in2, S10138cc0Mat3 &out)
+{
+	out.m[0][0] = in1.m[0][0] * in2.m[0][0] + in1.m[0][1] * in2.m[1][0] + in1.m[0][2] * in2.m[2][0];
+	out.m[0][1] = in1.m[0][0] * in2.m[0][1] + in1.m[0][1] * in2.m[1][1] + in1.m[0][2] * in2.m[2][1];
+	out.m[0][2] = in1.m[0][0] * in2.m[0][2] + in1.m[0][1] * in2.m[1][2] + in1.m[0][2] * in2.m[2][2];
+	out.m[1][0] = in1.m[1][0] * in2.m[0][0] + in1.m[1][1] * in2.m[1][0] + in1.m[1][2] * in2.m[2][0];
+	out.m[1][1] = in1.m[1][0] * in2.m[0][1] + in1.m[1][1] * in2.m[1][1] + in1.m[1][2] * in2.m[2][1];
+	out.m[1][2] = in1.m[1][0] * in2.m[0][2] + in1.m[1][1] * in2.m[1][2] + in1.m[1][2] * in2.m[2][2];
+	out.m[2][0] = in1.m[2][0] * in2.m[0][0] + in1.m[2][1] * in2.m[1][0] + in1.m[2][2] * in2.m[2][0];
+	out.m[2][1] = in1.m[2][0] * in2.m[0][1] + in1.m[2][1] * in2.m[1][1] + in1.m[2][2] * in2.m[2][1];
+	out.m[2][2] = in1.m[2][0] * in2.m[0][2] + in1.m[2][1] * in2.m[1][2] + in1.m[2][2] * in2.m[2][2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10108fd0 size=0x3d
 // VectorMA (mathlib.cpp, _WIN32 form): Valve's naked x87 asm.
 // TARGET: sub_10108fd0
