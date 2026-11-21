@@ -31666,6 +31666,19 @@ void *CUnknown101f0cb0::sub_10152cc0(unsigned int flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152e00 size=0x13
+struct CUnknown10152e00 { void * sub_10152e00(); };
+void * CUnknown10152e00::sub_10152e00()
+{
+    *(int *)this = 0;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0x14) = 0;
+    *(int *)((char *)this + 0x18) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10152e20 size=0x5
 namespace lifted {
 int sub_10152f20();
