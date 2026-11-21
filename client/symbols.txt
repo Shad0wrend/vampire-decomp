@@ -626,6 +626,7 @@
 0x1007d930 func   ?sub_1007d930@@YADXZ sub_1007d930
 0x1007dae0 func   ?sub_1007dae0@@YAHXZ sub_1007dae0
 0x1007db70 func   ?sub_1007db70@CUnknown1007db70@@QAEHXZ CUnknown1007db70::sub_1007db70
+0x1007db80 func   ?sub_1007db80@CUnknown1007db80@@QAEHH@Z CUnknown1007db80::sub_1007db80
 0x1007dba0 func   ?sub_1007dba0@CUnknown1007dba0@@QAEDXZ CUnknown1007dba0::sub_1007dba0
 0x1007ddc0 func   ?sub_1007ddc0@@YAHXZ sub_1007ddc0
 0x1007ddd0 func   ?sub_1007ddd0@@YAXPAX@Z sub_1007ddd0

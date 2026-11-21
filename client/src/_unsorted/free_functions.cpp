@@ -7080,6 +7080,18 @@ int CUnknown1007db70::sub_1007db70()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007db80 size=0x14
+namespace lifted {
+struct C100a9e30 { int sub_100a9e30(int); };
+}
+struct CUnknown1007db80 { int sub_1007db80(int); };
+int CUnknown1007db80::sub_1007db80(int a0)
+{
+    *(char *)((char *)this + 0x3e0) = 1;
+    return ((lifted::C100a9e30 *)a0)->sub_100a9e30((int)this);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1007dba0 size=0x7
 struct CUnknown1007dba0 { char sub_1007dba0(); };
 char CUnknown1007dba0::sub_1007dba0()
