@@ -845,6 +845,7 @@
 0x10034fc0 func   ?sub_10034fc0@@YAHXZ sub_10034fc0
 0x10035060 func   ?sub_10035060@@YAHXZ sub_10035060
 0x100350d0 func   ?ClientClassInit@@YAHPAUignored@DT_TEBreakModel@@@Z ClientClassInit
+0x10035260 func   ??_GC_TEBSPDecal@@UAEPAXI@Z ??_GC_TEBSPDecal@@UAEPAXI@Z
 0x10035280 func   ??1C_TEBSPDecal@@UAE@XZ C_TEBSPDecal::~C_TEBSPDecal
 0x10035280 func   ?sub_10035280@CUnknown10035280@@QAEHXZ CUnknown10035280::sub_10035280
 0x10035420 func   ?sub_10035420@@YAHXZ sub_10035420
