@@ -275,6 +275,7 @@
 0x10018150 func   ?sub_10018150@@YAHXZ sub_10018150
 0x10018270 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGRing03@@@Z ClientClassInit
 0x100183d0 func   ?sub_100183d0@@YAHXZ sub_100183d0
+0x100184f0 func   ?ClientClassInit@@YAHPAUignored@DT_ItemGRingGold@@@Z ClientClassInit
 0x10018650 func   ?sub_10018650@@YAHXZ sub_10018650
 0x100188d0 func   ?sub_100188d0@@YAHXZ sub_100188d0
 0x10018b50 func   ?sub_10018b50@@YAHXZ sub_10018b50
