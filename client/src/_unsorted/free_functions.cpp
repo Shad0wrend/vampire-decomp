@@ -9006,6 +9006,22 @@ UtlMem *UtlMem::sub_101c2bd0(int growSize, int allocationCount)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101c2c80 size=0x34
+#include "UtlMem.h"
+extern void *(__cdecl *g_101e3100)(int);
+
+UtlMem *UtlMem::sub_101c2c80(int growSize, int allocationCount)
+{
+	m_pMemory = 0;
+	m_allocationCount = allocationCount;
+	m_growSize = growSize;
+	if (allocationCount) {
+		m_pMemory = (int *)g_101e3100(allocationCount * 4);
+	}
+	return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101c2cf0 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
