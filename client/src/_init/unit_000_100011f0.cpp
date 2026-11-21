@@ -1490,3 +1490,9 @@ ConCommand g_104d37b0("+attack", sub_10102270, 0, 0, 0);
 void sub_101022a0(void);
 ConCommand g_104d32ac("-attack", sub_101022a0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105080 size=0xa
+#include "ConCommand.h"
+void sub_10102130(void);
+ConCommand g_104d355c("+attack2", sub_10102130, 0, 0, 0);
+// END FUNCTION
