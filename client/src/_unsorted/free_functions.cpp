@@ -20651,6 +20651,30 @@ int sub_100bc6f0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100bc7f0 size=0xa4
+#include "RecvTable.h"
+extern RecvTable g_104a304c;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void sub_10127510(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+template <typename T> int ClientClassInit(T *);
+namespace DT_LightGlow { struct ignored; }
+template <> int ClientClassInit<DT_LightGlow::ignored>(DT_LightGlow::ignored *)
+{
+	char *pRecvTableName = "DT_LightGlow";
+	RecvTable &RecvTable = g_104a304c;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_clrRender", 80, 4, 0, sub_10127510),
+		RecvPropInt("m_Size", 1040, 4, 0, 0),
+		RecvPropVector("m_vecAbsOrigin", 692, 12, 0, RecvProxy_VectorToVector),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100bca50 size=0x6
 namespace lifted {
 extern char g_104a31ec;
