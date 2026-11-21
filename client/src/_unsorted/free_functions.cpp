@@ -9552,6 +9552,30 @@ int sub_101454a0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101457a0 size=0x95
+#include "CUnknown101d8a70.h"
+#include "ConVar.h"
+
+class CvarInterface
+{
+public:
+	virtual void v0();
+	virtual void v1();
+	virtual ConVar *FindVar(const char *name);
+};
+extern CvarInterface *g_104a57e0;
+
+void *CUnknown101d8a70::sub_101457a0(void *pValue)
+{
+	static ConVar *s_pVar = g_104a57e0->FindVar("v_printrolls");
+	if (s_pVar)
+		sub_10145840(pValue, s_pVar->GetBool());
+	else
+		sub_10145840(pValue, false);
+	return pValue;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145d40 size=0x1c
 struct CUnk101d9190 {
 	int m_00[3];
