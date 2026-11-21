@@ -14949,6 +14949,35 @@ int NodeHolder::sub_10139150(unsigned short idx)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101391d0 size=0x85
+#include "utlrbtree.h"
+#include "CUtlRBTreeOf.h"
+struct CUnknown10249fc0_Entry { int m_n0; int m_nKey; };
+#include "CUtlRBTree16.h"
+
+struct CTreeHolder1024a120
+{
+	CUtlRBTree16Of<CUnknown10249fc0_Entry> *m_pTree;
+};
+
+void __fastcall sub_101391d0(CTreeHolder1024a120 *p)
+{
+	CUtlRBTree16Of<CUnknown10249fc0_Entry> *t = p->m_pTree;
+	unsigned short prev = 0xffff;
+	for (int i = (int)t->m_TotalElements; --i >= 0; ) {
+		unsigned short idx = (unsigned short)i;
+		if (t->Links(idx).m_Left != idx) {
+		}
+		t->m_pElements[idx].m_Links.m_Right = prev;
+		t->m_pElements[idx].m_Links.m_Left = idx;
+		prev = idx;
+	}
+	t->m_FirstFree = t->m_TotalElements ? (unsigned short)0 : (unsigned short)0xffff;
+	t->m_Root = 0xffff;
+	t->m_NumElements = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10139340 size=0x116
 #include "utlmemory.h"
 #include "utlrbtree.h"

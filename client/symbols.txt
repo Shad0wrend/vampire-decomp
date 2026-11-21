@@ -614,6 +614,7 @@
 0x10138bd0 func   ?sub_10138bd0@SymMap@@QAEGIH@Z SymMap::sub_10138bd0
 0x101390c0 func   ?sub_101390c0@CUnknown10249fc0@@QAEHG@Z CUnknown10249fc0::sub_101390c0
 0x10139150 func   ?sub_10139150@NodeHolder@@QAEHG@Z NodeHolder::sub_10139150
+0x101391d0 func   ?sub_101391d0@@YIXPAUCTreeHolder1024a120@@@Z sub_101391d0
 0x10139340 func   ?sub_10139340@CUtlRBTree16@@QAEGXZ CUtlRBTree16::sub_10139340
 0x1013c790 func   ?sub_1013c790@Vector@@QAEAAV1@ABV1@@Z Vector::sub_1013c790
 0x1013c7b0 func   ?sub_1013c7b0@CUnk1011d310@@QAEDH@Z CUnk1011d310::sub_1013c7b0
