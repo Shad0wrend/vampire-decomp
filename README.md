@@ -54,6 +54,7 @@ The data is in the sources as well: initialized and constant data in `src/_data/
 | `docs/` | Research notes: VC6 register-allocation rules, the standalone-link work |
 | `CLAUDE.md` | The working guide the agents followed: VC6 code-generation idioms that decide a match |
 | `phase0/` | The first experiments that tested whether matching was possible |
+| `LICENSE` | CC0 1.0 Universal (see [License](#license-cc0-10)) |
 
 **No game files are included.** To build or check anything you need your own legally obtained copy of the game:
 `vampire.dll` from patch 1.2 (SHA-1 `3fe64bc0d9d7eca64976adc668617ca2814e5e4a`). You also need Visual C++ 6.0;
@@ -66,3 +67,14 @@ This is an unofficial fan project for study and preservation. It is not affiliat
 the game. *Vampire: The Masquerade – Bloodlines* was developed by Troika Games and published by Activision.
 *Vampire: The Masquerade* and *World of Darkness* are trademarks of Paradox Interactive. The game runs on Valve's
 Source engine. No game assets or binaries are distributed here.
+
+### License: CC0 1.0
+
+The contributors dedicate their own work in this repository to the public domain under CC0 1.0 Universal (full
+text in `LICENSE`). You may use, change and share that work for any purpose, without asking and without giving credit.
+By opening a pull request you dedicate your contribution under the same terms.
+
+The dedication is limited to the contributors' own work. It gives no rights in the game, its code, its data or its
+assets, in the Source engine, or in any trademark; those remain with their owners. Building or checking anything here
+needs your own legally obtained copy of the game. If a rights holder asks for material to be removed, open an issue and
+it will be taken down.
