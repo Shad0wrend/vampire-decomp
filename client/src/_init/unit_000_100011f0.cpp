@@ -2111,6 +2111,11 @@ RecvTable g_104a12e4;
 RecvTable g_104a1798;
 // END FUNCTION
 
+// FUNCTION: 0x100b2b20 size=0xa
+#include "RecvTable.h"
+RecvTable g_104a153c;
+// END FUNCTION
+
 // FUNCTION: 0x100b3680 size=0xa
 #include "ConCommand.h"
 void sub_100b36b0(void);
