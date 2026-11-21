@@ -707,6 +707,7 @@
 0x1003de60 func   ?ClientClassInit@@YAHPAUignored@DT_TEParticleSystem@@@Z ClientClassInit
 0x1003dfa0 func   ??1CTEParticleRenderer@@UAE@XZ CTEParticleRenderer::~CTEParticleRenderer
 0x1003dfa0 func   ?sub_1003dfa0@CUnknown1003dfa0@@QAEHXZ CUnknown1003dfa0::sub_1003dfa0
+0x1003e7c0 func   ??1C_TEPlayerDecal@@UAE@XZ C_TEPlayerDecal::~C_TEPlayerDecal
 0x1003e7c0 func   ?sub_1003e7c0@CUnknown1003e7c0@@QAEHXZ CUnknown1003e7c0::sub_1003e7c0
 0x1003e860 func   ?sub_1003e860@@YAHXZ sub_1003e860
 0x1003e900 func   ?sub_1003e900@@YAHXZ sub_1003e900
