@@ -927,6 +927,7 @@
 0x100e14e0 func   ?vfunc0@CLocalDLLChain@@UAEXPAVCLocalDLLChainVisitor@@@Z CLocalDLLChain::vfunc0
 0x100e15d0 func   ?sub_100e15d0@@YAXXZ sub_100e15d0
 0x100e1aa0 func   ?sub_100e1aa0@@YAHXZ sub_100e1aa0
+0x100e1b00 func   ?sub_100e1b00@CUnknown100e1b00@@QAEXXZ CUnknown100e1b00::sub_100e1b00
 0x100e21f0 func   ?sub_100e21f0@CBaseEntityList@@QAEXXZ CBaseEntityList::sub_100e21f0
 0x100e2590 func   ?sub_100e2590@CBaseEntityList@@QAEXI@Z CBaseEntityList::sub_100e2590
 0x100e2780 func   ?vfunc0@CBaseEntityList@@UAEXHH@Z CBaseEntityList::vfunc0

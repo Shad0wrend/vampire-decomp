@@ -13085,6 +13085,17 @@ int sub_100e1aa0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100e1b00 size=0x7
+namespace lifted {
+extern char g_10232134;
+}
+struct CUnknown100e1b00 { void sub_100e1b00(); };
+void CUnknown100e1b00::sub_100e1b00()
+{
+    *(int *)this = (int)&lifted::g_10232134;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100e21f0 size=0x144
 #include "utlrbtree.h"
 #include "CBaseEntityList.h"
