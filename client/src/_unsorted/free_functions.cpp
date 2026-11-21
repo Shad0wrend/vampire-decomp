@@ -9675,6 +9675,58 @@ void sub_1010a930(const float *q, float *angles)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010aba0 size=0x1fb
+// mathlib Catmull_Rom_Spline_Tangent, verbatim
+// TARGET: sub_1010aba0
+#include "Vector.h"
+
+void sub_1010aba0(
+	const Vector &p1,
+	const Vector &p2,
+	const Vector &p3,
+	const Vector &p4,
+	float t, 
+	Vector& output )
+{
+	float tOne = 3*t*t*0.5f;
+	float tTwo = 2*t*0.5f;
+	float tThree = 0.5;
+
+	output.Init();
+
+	Vector a, b, c, d;
+
+	// matrix row 1
+	VectorScale( p1, -tOne, a );		// 0.5 t^3 * [ (-1*p1) + ( 3*p2) + (-3*p3) + p4 ]
+	VectorScale( p2, tOne*3, b );
+	VectorScale( p3, tOne*-3, c );
+	VectorScale( p4, tOne, d );
+
+	VectorAdd( a, output, output );
+	VectorAdd( b, output, output );
+	VectorAdd( c, output, output );
+	VectorAdd( d, output, output );
+
+	// matrix row 2
+	VectorScale( p1, tTwo*2,  a );		// 0.5 t^2 * [ ( 2*p1) + (-5*p2) + ( 4*p3) - p4 ]
+	VectorScale( p2, tTwo*-5, b );
+	VectorScale( p3, tTwo*4,  c );
+	VectorScale( p4, -tTwo,    d );
+
+	VectorAdd( a, output, output );
+	VectorAdd( b, output, output );
+	VectorAdd( c, output, output );
+	VectorAdd( d, output, output );
+
+	// matrix row 3
+	VectorScale( p1, -tThree, a );			// 0.5 t * [ (-1*p1) + p3 ]
+	VectorScale( p3, tThree,  b );
+
+	VectorAdd( a, output, output );
+	VectorAdd( b, output, output );
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010ba80 size=0x56
 #include "Vector.h"
 void sub_1010ba80(const Vector &a, const Vector &v, const Vector &c, Vector &out)
