@@ -922,6 +922,48 @@ void bf_write::sub_10086f10(float fAngle, int numbits)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10087bb0 size=0x233
+#include "bf_read.h"
+
+// TARGET: bf_read::sub_10087bb0
+bool bf_read::sub_10087bb0(void *pOutData, int nBits)
+{
+	unsigned char *pOut = (unsigned char *)pOutData;
+	int nBitsLeft = nBits;
+
+	while (((unsigned long)pOut & 3) != 0 && nBitsLeft >= 8) {
+		*pOut = (unsigned char)ReadUBitLong(8);
+		++pOut;
+		nBitsLeft -= 8;
+	}
+
+	if (nBitsLeft >= 32) {
+		unsigned int nDwords = (unsigned int)nBitsLeft >> 5;
+		nBitsLeft -= nDwords * 32;
+		do {
+			*((unsigned long *)pOut) = ReadUBitLong(32);
+			pOut += sizeof(unsigned long);
+			--nDwords;
+		} while (nDwords);
+	}
+
+	if (nBitsLeft >= 8) {
+		unsigned int nBytes = (unsigned int)nBitsLeft >> 3;
+		nBitsLeft -= nBytes * 8;
+		do {
+			*pOut = (unsigned char)ReadUBitLong(8);
+			++pOut;
+			--nBytes;
+		} while (nBytes);
+	}
+
+	if (nBitsLeft)
+		*pOut = (unsigned char)ReadUBitLong(nBitsLeft);
+
+	return !m_bOverflow;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100889f0 size=0x1a2
 #include "Quaternion.h"
 union CBlendAnimValue
