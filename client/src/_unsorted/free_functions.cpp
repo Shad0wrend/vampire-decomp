@@ -4044,6 +4044,21 @@ int sub_10038820()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10038a20 size=0x12
+namespace lifted {
+extern char g_102268c4;
+extern char g_102268fc;
+int sub_1002c390();
+}
+struct CUnknown10038a20 { int sub_10038a20(); };
+int CUnknown10038a20::sub_10038a20()
+{
+    *(int *)this = (int)&lifted::g_102268fc;
+    *(int *)((char *)this + 4) = (int)&lifted::g_102268c4;
+    return lifted::sub_1002c390();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10039080 size=0x19
 #include "Vector.h"
 Vector &Vector::sub_10039080(const Vector &v)
