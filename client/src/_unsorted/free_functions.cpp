@@ -12336,6 +12336,34 @@ CLinkNode1c *CLinkList::sub_10128270(int a)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101283d0 size=0x2c
+extern int g_105e543c;
+extern char g_104e2438[32][64];
+extern char g_104e23f8[];
+
+// TARGET: sub_101283d0
+void sub_101283d0(void)
+{
+	char *pDst;
+	char *pSrc;
+	char c;
+
+	if (g_105e543c < 0x20)
+	{
+		pSrc = g_104e23f8;
+		pDst = g_104e2438[g_105e543c];
+		g_105e543c = g_105e543c + 1;
+		do
+		{
+			c = *pSrc;
+			pSrc++;
+			*pDst = c;
+			pDst++;
+		} while (c != 0);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128540 size=0x4f
 #include "CKeyValuesX.h"
 extern "C" double __cdecl atof(const char *);
