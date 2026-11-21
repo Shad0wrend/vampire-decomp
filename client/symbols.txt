@@ -1357,6 +1357,7 @@
 0x10127320 func   ?sub_10127320@@YA_NPAUCRagdollLayout@@PAUCRagdollStudio@@H@Z sub_10127320
 0x101273b0 func   ?sub_101273b0@@YAXPAUSBoundsList@@ABVVector@@AAV2@2@Z sub_101273b0
 0x101274d0 func   ?sub_101274d0@@YA_NPAUCBoolListView@@@Z sub_101274d0
+0x101275e0 func   ?sub_101275e0@@YAXXZ sub_101275e0
 0x101277a0 func   ?sub_101277a0@@YAHXZ sub_101277a0
 0x10127830 func   ?sub_10127830@CMem16_t@@QAEXH@Z CMem16_t::sub_10127830
 0x101278c0 func   ?sub_101278c0@CUnk10247bd0@@QAEPAU1@HHH@Z CUnk10247bd0::sub_101278c0

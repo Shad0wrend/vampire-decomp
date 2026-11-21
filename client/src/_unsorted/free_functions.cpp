@@ -21003,6 +21003,16 @@ bool sub_101274d0(CBoolListView *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x101275e0 size=0xb
+namespace lifted {
+extern int g_104e1bf0;
+}
+void sub_101275e0()
+{
+    lifted::g_104e1bf0 = 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101277a0 size=0x5
 namespace lifted {
 int sub_10127720();
