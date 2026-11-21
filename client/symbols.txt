@@ -1328,6 +1328,7 @@
 0x1007a470 func   ?sub_1007a470@@YAHPAUCStudioHdrView@@PBD@Z sub_1007a470
 0x1007a4d0 func   ?sub_1007a4d0@@YAPADPADH@Z sub_1007a4d0
 0x1007a690 func   ?sub_1007a690@@YAHPBD@Z sub_1007a690
+0x1007a6f0 func   ??_GCBaseAnimatedTextureProxy@@UAEPAXI@Z ??_GCBaseAnimatedTextureProxy@@UAEPAXI@Z
 0x1007a710 func   ??1CBaseAnimatedTextureProxy@@UAE@XZ CBaseAnimatedTextureProxy::~CBaseAnimatedTextureProxy
 0x1007a800 func   ?sub_1007a800@CUnknown1007a800@@QAEHXZ CUnknown1007a800::sub_1007a800
 0x1007ab40 func   ??1C_BaseCombatWeapon@@UAE@XZ C_BaseCombatWeapon::~C_BaseCombatWeapon
