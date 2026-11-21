@@ -10921,6 +10921,29 @@ void sub_10153fe0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101540a0 size=0x49
+#include "VKeyValues.h"
+#include <stdlib.h>
+
+int VKeyValuesInterface::sub_101540a0(const char *pszName, int nDefault)
+{
+	VKeyValues *p = (VKeyValues *)((char *)this - 0x30);
+	if (pszName)
+		p = p->sub_10154540(pszName);
+	if (p) {
+		switch (p->m_nType10) {
+		case 1:
+			return atoi(p->m_pszValue0c);
+		case 3:
+			return (int)*(float *)&p->m_nValue08;
+		default:
+			return p->m_nValue08;
+		}
+	}
+	return nDefault;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101540f0 size=0x29
 struct CVBaseView101f27b0 {
     virtual void vfunc0();
