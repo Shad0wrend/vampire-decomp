@@ -34357,6 +34357,41 @@ float sub_1010bea0(const Vector2D &P, const Vector2D &vLineA, const Vector2D &vL
 }
 // END FUNCTION
 
+// FUNCTION: 0x1010bf00 size=0x51
+#include "Vector.h"
+struct Vector2D
+{
+	float x, y;
+	Vector2D() {}
+	float Length() const;
+	float DistTo(const Vector2D &vOther) const;
+};
+
+inline float Vector2D::Length() const
+{
+	float l = x * x;
+	l += y * y;
+	return (float)FastSqrt(l);
+}
+
+inline float Vector2D::DistTo(const Vector2D &vOther) const
+{
+	Vector2D delta;
+	delta.x = x - vOther.x;
+	delta.y = y - vOther.y;
+	return delta.Length();
+}
+
+void sub_1010be50(const Vector2D &P, const Vector2D &vLineA, const Vector2D &vLineB, Vector2D &vClosest, float *t);
+
+float sub_1010bf00(const Vector2D &P, const Vector2D &vLineA, const Vector2D &vLineB, float *t)
+{
+	Vector2D closest;
+	sub_1010be50(P, vLineA, vLineB, closest, t);
+	return P.DistTo(closest);
+}
+// END FUNCTION
+
 // FUNCTION: 0x1010bf60 size=0x79
 float sub_1010bde0(const float *a, const float *b, const float *c, float *dir);
 
