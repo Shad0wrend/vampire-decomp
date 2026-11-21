@@ -4425,6 +4425,13 @@ int g_104a3204 = ClientClassInit((DT_PhysBox::ignored *)0);
 RecvTable g_104a3398;
 // END FUNCTION
 
+// FUNCTION: 0x100bcce0 size=0x5
+template <typename T> int ClientClassInit(T *);
+namespace DT_PlayerLocalPredictedData { struct ignored; }
+template <> int ClientClassInit<DT_PlayerLocalPredictedData::ignored>(DT_PlayerLocalPredictedData::ignored *);
+int g_104a3394 = ClientClassInit((DT_PlayerLocalPredictedData::ignored *)0);
+// END FUNCTION
+
 // FUNCTION: 0x100bcef0 size=0xa
 #include "RecvTable.h"
 RecvTable g_104a33b4;
