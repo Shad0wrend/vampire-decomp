@@ -7594,6 +7594,34 @@ void CReactionData::sub_10152f20()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10152f80 size=0x6b
+#include "CUnknown101f1050.h"
+
+extern void (*g_101e3108)(const char *, ...);
+
+int *CUnknown101f1050::sub_10152f80()
+{
+    int *p = (int *)operator new(m_nCount * 4 + 4);
+    if (p) {
+        int i = 0;
+        if (m_nCount > 0) {
+            do {
+                i++;
+                p[i - 1] = m_pData[i - 1];
+            } while (i < m_nCount);
+        }
+        delete m_pData;
+        int n = m_nCount + 1;
+        m_pData = p;
+        m_nCount = n;
+        int *q = &m_pData[m_nCount - 1];
+        return q;
+    }
+    g_101e3108("Unable to allocate memory for strings in ReactionInfoList!.\n");
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10153680 size=0x4d
 extern "C" int __cdecl sub_101e28e0(const char *, const char *);
 struct CNamePtr {
