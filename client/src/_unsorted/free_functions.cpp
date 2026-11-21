@@ -18588,6 +18588,21 @@ bool CUnknown101e8080::sub_1014d860(const char *type, int *a, int *b, int *c)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1014dae0 size=0x43
+struct CDiscValues_101e9080 {
+    char pad[0x3a0];
+    int m_a, m_b, m_c, m_d;
+    void sub_1014dae0(int *pA, int *pB, int *pC, int *pD);
+};
+void CDiscValues_101e9080::sub_1014dae0(int *pA, int *pB, int *pC, int *pD)
+{
+    if (pA) *pA = m_a;
+    if (pB) *pB = m_b;
+    if (pC) *pC = m_c;
+    if (pD) *pD = m_d;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1014de80 size=0x1e
 struct CUnk101d8230 {
 	void sub_101451c0();
