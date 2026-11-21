@@ -13582,6 +13582,18 @@ char * __stdcall sub_1012f090(char *p, int unused)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f130 size=0x61
+#include "CSoundEmitterSystemBase.h"
+
+int CSoundEmitterSystemBase::sub_1012f130(const char *pszName)
+{
+	CSoundParameters params;
+	if (!sub_1012e6d0(pszName, params))
+		return 75;
+	return params.soundlevel;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
