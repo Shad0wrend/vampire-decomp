@@ -141,6 +141,7 @@
 0x1000d9d0 func   ?sub_1000d9d0@@YAHXZ sub_1000d9d0
 0x1000daf0 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Rifle_Crossbow@@@Z ClientClassInit
 0x1000dc50 func   ?sub_1000dc50@@YAHXZ sub_1000dc50
+0x1000dd70 func   ?ClientClassInit@@YAHPAUignored@DT_WeaponRanged_Rifle_Crossbow_Flaming@@@Z ClientClassInit
 0x1000ded0 func   ?sub_1000ded0@@YAHXZ sub_1000ded0
 0x1000e150 func   ?sub_1000e150@@YAHXZ sub_1000e150
 0x1000e3d0 func   ?sub_1000e3d0@@YAHXZ sub_1000e3d0
