@@ -5646,6 +5646,13 @@ void UtlMem::sub_1008e670(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10095b90 size=0x5
+int __stdcall sub_10095b90(int a0, int a1, int a2)
+{
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10096d10 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
