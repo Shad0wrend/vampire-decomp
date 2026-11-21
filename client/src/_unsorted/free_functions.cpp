@@ -214,6 +214,21 @@ int *__fastcall sub_100291c0(int *p)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10029370 size=0x44
+#include "utlrbtree.h"
+#include "utlvector.h"
+struct SVecHolder {
+    CUtlVector<int> m_List;
+    char pad[0x118 - sizeof(CUtlVector<int>)];
+    char m_bFlag;
+};
+void __fastcall sub_10029370(SVecHolder *p)
+{
+    p->m_bFlag = 0;
+    p->m_List.Purge();
+}
+// END FUNCTION
+
 // FUNCTION: 0x10029450 size=0x35
 #include "CCameraShotTable.h"
 extern void (*g_101e3108)(const char *pszFormat, ...);

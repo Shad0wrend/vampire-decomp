@@ -8,6 +8,7 @@
 0x10027d20 func   ?sub_10027d20@@YAXABVVector@@00HHH_NM@Z sub_10027d20
 0x10028920 func   ?sub_10028920@@YAXPAMPBD@Z sub_10028920
 0x100291c0 func   ?sub_100291c0@@YIPAHPAH@Z sub_100291c0
+0x10029370 func   ?sub_10029370@@YIXPAUSVecHolder@@@Z sub_10029370
 0x10029450 func   ?sub_10029450@CCameraShotTable@@QAEPAUCCameraShot_t@@H@Z CCameraShotTable::sub_10029450
 0x10029e70 func   ?sub_10029e70@@YAXPAUCLinkElem@@0@Z sub_10029e70
 0x1002a040 func   ?sub_1002a040@@YAHPAHH@Z sub_1002a040
