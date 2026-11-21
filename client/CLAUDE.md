@@ -22,13 +22,32 @@ and judges each one here. It reads vtmb only. It can be run again: matched funct
 already noted is not noted twice. Run it before agents edit headers here: a header carry made that someone changed
 since is this project's own for carry, and every block that includes it is skipped (`header conflict`).
 
-Carry so far (2026-11-21, four runs): 382 functions matched, 44,040 bytes. 5 of them use inline assembly, so the
-progress counts 377 functions / 43,287 bytes (2.38% of the code). Why the rest of the equal-bytes pairs stayed open
-in the last run: 616 need server classes (their headers define classes client.dll's RTTI does not have, or reach
-vtmb's server interfaces), 282 have an unpaired placeholder (a vampire.dll name with no client.dll partner, in the
-block or in a header's inline code), 77 a name this project cannot save (mostly scalar deleting destructors), 20 an
-RTTI class conflict, 14 a compile failure, 4 the full prelude. 27 functions carry a note `carried: from 0x...,
-score N`: the same bytes judged a near miss, a good start for a hand pass.
+Carry so far (2026-11-21, seven runs): 1,081 functions matched, 130,654 bytes. 26 of them use inline assembly, so
+the progress counts 1,055 of 11,424 functions / 126,299 of 1,636,178 bytes (7.72% of the code that is not skip).
+Run 6 paired address placeholders through the operands of the equal bodies (+193). Before run 7, `pcdecomp split`
+gave the functions the import had merged into one row their own rows (3,035 rows -> 10,070 functions; the note
+`split at 0x...` on each host) and `skip-initializers` marked 6,489 initializer pieces skip; run 7 then matched 502
+(319 of them split pieces) and 4 function-local static destroys as companions of their blocks. Why the rest of the
+equal-bytes pairs stayed open in run 7: 705 need server classes (their headers define classes client.dll's RTTI
+does not have, or reach vtmb's server interfaces; most are one 30-byte scalar deleting destructor shape), 141 a
+score above 0, 111 a name this project cannot save (mostly scalar deleting destructors), 59 an unpaired placeholder
+(a vampire.dll name that is no operand of the pair, in the block or in a header's inline code), 41 a compile
+failure, 21 an RTTI class conflict, 6 the full prelude. 144 notes `carried: from 0x..., score N` mark the same bytes
+judged a near miss, a good start for a hand pass. Backups of the database before each step are in cache/
+(`project.db.pre-split-20261121`, `.pre-skipinit-`, `.pre-carry7-`).
+
+Then (2026-11-21): five initializer entries that follow a switch's tables were still inside the rows before them;
+`pcdecomp split --hosts` cut them (split now takes every initializer table address as a certain cut) and
+`skip-initializers` marked those five chains' 18 pieces skip. `pcdecomp lift` (model-free C++ from tiny
+straight-line functions, at most 32 bytes) then matched 1,494 functions, 12,754 bytes; it leaves out any function an
+initializer chain names. Totals now: 2,575 matched; the progress counts 2,549 of 11,411 functions / 139,053 of
+1,635,862 bytes (8.50%). Lift saved them under placeholder names (`CUnknown<address>::sub_<address>`, this binary's
+addresses). Backups: cache/`project.db.pre-chaincuts-20261121`, `.pre-skipinit2-`, `.pre-lift-`.
+
+Globals: `pcdecomp globals` writes only initializers already skip, and its generators fit 33 of the 2,067: 945
+constructs call a constructor with no linker name (client.dll's functions are unnamed; a `??0Class@@` name gives the
+class), 47 call InterfaceReg's constructor under a provisional name, about 1,000 are shapes no generator has yet.
+Naming the constructors (from byte-equal vtmb twins or RTTI) is the lever, not more splitting.
 
 Names: client.dll has almost no linker names, so carried functions are saved under this binary's placeholders
 (`Class::sub_<address here>`, `g_`, `vt_`), even where the vtmb twin has a real name; a naming pass with
