@@ -2738,3 +2738,8 @@ ConVar g_10618830("r_noisefps", "22", 0);
 #include "ConVar.h"
 ConVar g_10619188("r_noisescale", "0.6", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10198210 size=0xa
+#include "ConVar.h"
+ConVar g_10619260("r_noisealpha", "19", 0);
+// END FUNCTION
