@@ -18471,6 +18471,28 @@ int sub_10079b70(int a, int b, int c, int d, int e)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10079be0 size=0x36
+// TARGET: sub_10079be0
+__declspec(dllimport) void Warning(const char *pszFormat, ...);
+
+struct CEyePosSource
+{
+	char pad00[0x9c];
+	int m_eyePos[3];	// 0x9c
+};
+
+void sub_10079be0(CEyePosSource *pSource, int *pOut)
+{
+	if (pSource == 0) {
+		Warning("GetEyePosition() Can't get pstudiohdr ptr!\n");
+		return;
+	}
+	pOut[0] = pSource->m_eyePos[0];
+	pOut[1] = pSource->m_eyePos[1];
+	pOut[2] = pSource->m_eyePos[2];
+}
+// END FUNCTION
+
 // FUNCTION: 0x10079cf0 size=0x40
 int sub_10079d30(int a, int b);
 int sub_10079c20(int a, int b);
