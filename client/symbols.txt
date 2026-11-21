@@ -88,6 +88,7 @@
 0x1004bbc0 func   ?sub_1004bbc0@CUnknown1004bbc0@@QAEDXZ CUnknown1004bbc0::sub_1004bbc0
 0x1004d410 func   ?sub_1004d410@@YGXHH@Z sub_1004d410
 0x1004d490 func   ?sub_1004d490@CUnknown1004d490@@QAEDXZ CUnknown1004d490::sub_1004d490
+0x1004d580 func   ?sub_1004d580@CUnknown1004d580@@QAEDXZ CUnknown1004d580::sub_1004d580
 0x1004e830 func   ?sub_1004e830@UtlMem@@QAEXH@Z UtlMem::sub_1004e830
 0x10050100 func   ?sub_10050100@CUtlVector16@@QAEXXZ CUtlVector16::sub_10050100
 0x10051b20 func   ?sub_10051b20@@YGXH@Z sub_10051b20
