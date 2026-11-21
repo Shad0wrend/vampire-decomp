@@ -122,3 +122,8 @@ ConVar g_103edd98("r_visualizetraces", "0", 8192);
 #include "ConVar.h"
 ConVar g_103eddf8("credits_scrollrate", "30", 0);
 // END FUNCTION
+
+// FUNCTION: 0x10051b70 size=0xa
+#include "ConVar.h"
+ConVar g_103ee098("nosradar_min_strike_dist", "80", 0);
+// END FUNCTION
