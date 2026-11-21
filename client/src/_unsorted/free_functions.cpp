@@ -8225,6 +8225,14 @@ void sub_100df340(unsigned int mask)
 }
 // END FUNCTION
 
+// FUNCTION: 0x100df3a0 size=0x4
+struct CUnknown100df3a0 { int sub_100df3a0(); };
+int CUnknown100df3a0::sub_100df3a0()
+{
+    return *(int *)((char *)this + 8);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df3c0 size=0x49
 #include <string.h>
 char *__stdcall sub_100df3c0(char *s)
