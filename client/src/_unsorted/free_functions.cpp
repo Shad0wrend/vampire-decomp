@@ -1825,6 +1825,41 @@ void UtlMem::sub_100a35c0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100a35f0 size=0x76
+struct Elem1c { char d[0x1c]; };
+extern void *(*g_101e3104)(void *, int);
+extern void *(*g_101e3100)(int);
+struct Mem1c {
+    Elem1c *m_p;
+    int m_alloc;
+    int m_grow;
+    void sub_100a35f0(int num);
+};
+void Mem1c::sub_100a35f0(int num)
+{
+    if (m_grow == -1)
+        return;
+    int want = m_alloc + num;
+    if (m_alloc < want) {
+        int n = m_alloc;
+        do {
+            if (n != 0) {
+                if (m_grow != 0)
+                    n += m_grow;
+                else
+                    n += n;
+            } else
+                n = 2;
+        } while (n < want);
+        m_alloc = n;
+    }
+    if (m_p)
+        m_p = (Elem1c *)g_101e3104(m_p, m_alloc * 0x1c);
+    else
+        m_p = (Elem1c *)g_101e3100(m_alloc * 0x1c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x100ac080 size=0x67
 extern "C" {
 __declspec(dllimport) void* Plat_Alloc(int size);
