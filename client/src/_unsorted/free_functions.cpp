@@ -11890,6 +11890,17 @@ int CUnknown100d5140::sub_100d5140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d8260 size=0x7
+namespace lifted {
+extern char g_10227c5c;
+}
+struct CUnknown100d8260 { void sub_100d8260(); };
+void CUnknown100d8260::sub_100d8260()
+{
+    *(int *)this = (int)&lifted::g_10227c5c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d8690 size=0x28
 #include "UtlMem.h"
 extern void (__cdecl *g_101e30fc)(void *);
