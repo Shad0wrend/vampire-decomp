@@ -176,6 +176,7 @@
 0x1011f050 func   ?sub_1011f050@UtlMem@@QAEXXZ UtlMem::sub_1011f050
 0x1011f110 func   ?sub_1011f110@UtlMem@@QAEXXZ UtlMem::sub_1011f110
 0x1011f140 func   ?sub_1011f140@UtlMem@@QAEXXZ UtlMem::sub_1011f140
+0x1011f200 func   ?sub_1011f200@UtlMem@@QAEXXZ UtlMem::sub_1011f200
 0x1011f350 func   ?sub_1011f350@CUtlVector20@@QAEHHHPBX@Z CUtlVector20::sub_1011f350
 0x1011f490 func   ?sub_1011f490@CMem8c_t@@QAEHHHPBUE8@@@Z CMem8c_t::sub_1011f490
 0x1011f550 func   ?sub_1011f550@CMem8b_t@@QAEXH@Z CMem8b_t::sub_1011f550
