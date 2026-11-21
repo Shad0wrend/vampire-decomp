@@ -1730,3 +1730,9 @@ ConCommand g_104d3ddc("dropitem", sub_101023f0, 0, 0, 0);
 void sub_101024e0(void);
 ConCommand g_104d2f48("+wpn_secondaryatk", sub_101024e0, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10105d00 size=0xa
+#include "ConCommand.h"
+void sub_101024f0(void);
+ConCommand g_104d3720("-wpn_secondaryatk", sub_101024f0, 0, 0, 0);
+// END FUNCTION
