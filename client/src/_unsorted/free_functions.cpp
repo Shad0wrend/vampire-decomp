@@ -14548,6 +14548,17 @@ void CUnknown10107120::sub_10107120()
 }
 // END FUNCTION
 
+// FUNCTION: 0x10107270 size=0x7
+namespace lifted {
+extern char g_10227c5c;
+}
+struct CUnknown10107270 { void sub_10107270(); };
+void CUnknown10107270::sub_10107270()
+{
+    *(int *)this = (int)&lifted::g_10227c5c;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10107500 size=0x43
 #include "Vector.h"
 #include <math.h>
