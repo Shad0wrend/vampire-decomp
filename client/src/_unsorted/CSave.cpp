@@ -15,6 +15,25 @@ void CSave::vfunc1(int pos)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10129070 size=0x40
+#include "CSave.h"
+#include <string.h>
+
+extern char g_102de300[];
+
+// TARGET: CSave::vfunc19
+void CSave::vfunc19(const char **ppStrings, int count)
+{
+	for (int i = 0; i < count; i++) {
+		const char *pString = ppStrings[i];
+		if (!pString) {
+			pString = g_102de300;
+		}
+		sub_101299c0(pString, strlen(pString) + 1);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x101290f0 size=0x1a
 #include "CSave.h"
 
