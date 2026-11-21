@@ -1213,6 +1213,7 @@
 0x1005df10 func   ?sub_1005df10@CUnknown1005df10@@QAEDD@Z CUnknown1005df10::sub_1005df10
 0x1005e000 func   ?sub_1005e000@@YAHXZ sub_1005e000
 0x1005e010 func   ?sub_1005e010@CUnknown1005e010@@QAEDXZ CUnknown1005e010::sub_1005e010
+0x1005e100 func   ??_GCHudUseIcon@@UAEPAXI@Z ??_GCHudUseIcon@@UAEPAXI@Z
 0x1005e120 func   ??1CHudUseIcon@@UAE@XZ CHudUseIcon::~CHudUseIcon
 0x1005e3c0 func   ?sub_1005e3c0@CUnknown1005e3c0@@QAEDD@Z CUnknown1005e3c0::sub_1005e3c0
 0x1005ed00 func   ?sub_1005ed00@@YAHXZ sub_1005ed00
