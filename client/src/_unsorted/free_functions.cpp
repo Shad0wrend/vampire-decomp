@@ -11672,6 +11672,25 @@ void CUtlMemory20::sub_1011fe60(int num)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10120140 size=0x46
+#include <string.h>
+struct CBlock { int d[12]; };
+struct CObj {
+	char pad[0x404];
+	char m_szName[0x20c];
+	CBlock m_Block;	// 0x610
+};
+extern CBlock g_10235b5c;
+// TARGET: sub_10120140
+void sub_10120140(CObj *p)
+{
+	p->m_Block = g_10235b5c;
+	p->m_Block.d[1] = 0x42aa0000;
+	p->m_Block.d[2] = 0x6753c21c;
+	strcpy(p->m_szName, "default");
+}
+// END FUNCTION
+
 // FUNCTION: 0x101201c0 size=0x6a
 #include <malloc.h>
 
