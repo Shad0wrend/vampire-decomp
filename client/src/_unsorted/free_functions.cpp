@@ -27804,6 +27804,18 @@ void sub_101433b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x101437b0 size=0x14
+struct CUnknown101437b0 { void * sub_101437b0(); };
+void * CUnknown101437b0::sub_101437b0()
+{
+    *(int *)this = 1;
+    *(int *)((char *)this + 4) = 0;
+    *(int *)((char *)this + 8) = 0;
+    *(int *)((char *)this + 0xc) = 0;
+    return this;
+}
+// END FUNCTION
+
 // FUNCTION: 0x101437d0 size=0x59
 struct CPartListUnit2 {
     void sub_10143500();
