@@ -700,6 +700,12 @@ void __stdcall sub_10039f20(int a0)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1003a1e0 size=0x3
+void __stdcall sub_1003a1e0(int a0)
+{
+}
+// END FUNCTION
+
 // FUNCTION: 0x10043150 size=0x76
 extern int g_104d4970, g_104d4974, g_104d4978;
 struct Rec64 {
