@@ -2128,3 +2128,8 @@ ConVar g_105fab88("cl_showpos", "0", 0, "Draw current position at top of screen"
 void sub_10167b10(void);
 ConCommand g_105facd4("vloadtips", sub_10167b10, 0, 0, 0);
 // END FUNCTION
+
+// FUNCTION: 0x10167bf0 size=0xa
+#include "ConVar.h"
+ConVar g_105fad10("timemode", "4", 0, "Show timings in:\n    0 = cycles\n    1 = microseconds\n    2 = milliseconds\n    3 = seconds\n    4 = %% frametime", true, 0.0f, true, 4.0f);
+// END FUNCTION
