@@ -5222,6 +5222,16 @@ char CUnknown1005f6d0::sub_1005f6d0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x1005f800 size=0xf
+struct CUnknown1005f800 { int sub_1005f800(); };
+int CUnknown1005f800::sub_1005f800()
+{
+    *(int *)((char *)this + 0x198) = 0;
+    *(int *)((char *)this + 0x19c) = 0;
+    return 0;
+}
+// END FUNCTION
+
 // FUNCTION: 0x1005fa40 size=0xa
 namespace lifted {
 extern char g_103eedf8;
