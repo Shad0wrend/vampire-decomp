@@ -13643,6 +13643,22 @@ const char * __stdcall sub_1012f8c0(float value)
 }
 // END FUNCTION
 
+// FUNCTION: 0x1012f9c0 size=0x1b
+#include "CUnknown1024b2d0.h"
+
+struct CUnk101b4c90 {
+    char pad[0xb0];
+    void sub_1012f9c0(unsigned short *p);
+};
+
+void CUnk101b4c90::sub_1012f9c0(unsigned short *p)
+{
+    CUnknown1024b2d0Id id;
+    id.m_id = *p;
+    ((CUnknown1024b2d0 *)((char *)this + 0xb0))->sub_1013d6f0(id);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10130970 size=0x1bd
 #include "CUnknown101b6320.h"
 
