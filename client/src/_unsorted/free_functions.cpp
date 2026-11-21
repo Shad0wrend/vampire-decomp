@@ -13917,6 +13917,15 @@ int CUnknown100d5140::sub_100d5140()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100d5150 size=0x17
+int __stdcall sub_100d5150(int a0, int a1)
+{
+    *(int *)((char *)a1) = 0x400;
+    *(int *)((char *)a0) = 0x400;
+    return a1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100d58f0 size=0xa
 namespace lifted {
 extern char g_104cf0d8;

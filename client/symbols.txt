@@ -1021,6 +1021,7 @@
 0x100d3f40 func   ?sub_100d3f40@CUnknown100d3f40@@QAEPAXXZ CUnknown100d3f40::sub_100d3f40
 0x100d3f70 func   ?sub_100d3f70@CUnknown100d3f70@@QAEXXZ CUnknown100d3f70::sub_100d3f70
 0x100d5140 func   ?sub_100d5140@CUnknown100d5140@@QAEHXZ CUnknown100d5140::sub_100d5140
+0x100d5150 func   ?sub_100d5150@@YGHHH@Z sub_100d5150
 0x100d58f0 func   ?sub_100d58f0@@YAHXZ sub_100d58f0
 0x100d5d30 func   ?sub_100d5d30@CUnknown100d5d30@@QAEHH@Z CUnknown100d5d30::sub_100d5d30
 0x100d8260 func   ?sub_100d8260@CUnknown100d8260@@QAEXXZ CUnknown100d8260::sub_100d8260
