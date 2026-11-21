@@ -14232,6 +14232,60 @@ template <> int ClientClassInit<DT_BeamPredictableId::ignored>(DT_BeamPredictabl
 }
 // END FUNCTION
 
+// FUNCTION: 0x1007ff00 size=0x309
+#include "RecvTable.h"
+extern RecvTable g_104870a4;
+RecvProp RecvPropInt(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+RecvProp RecvPropEHandle(char *, int, int);
+RecvProp InternalRecvPropArray(int, int, char *, void (*)(void *, int, int));
+RecvProp RecvPropFloat(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_FloatToFloat(const CRecvProxyData *, void *, void *);
+void sub_1007fc70(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropVector(char *, int, int, int, void (*)(const CRecvProxyData *, void *, void *));
+void RecvProxy_VectorToVector(const CRecvProxyData *, void *, void *);
+void sub_101277a0(const CRecvProxyData *, void *, void *);
+RecvProp RecvPropDataTable(char *, int, int, RecvTable *, void (*)(void * *, void *, int));
+extern RecvTable g_104870cc;
+void DataTableRecvProxy_StaticDataTable(void * *, void *, int);
+template <typename T> int ClientClassInit(T *);
+namespace DT_Beam { struct ignored; }
+template <> int ClientClassInit<DT_Beam::ignored>(DT_Beam::ignored *)
+{
+	char *pRecvTableName = "DT_Beam";
+	RecvTable &RecvTable = g_104870a4;
+	static RecvProp RecvProps[] = {
+		RecvPropInt("should_never_see_this", 0, 4, 0, 0),
+		RecvPropInt("m_nBeamType", 1060, 4, 0, 0),
+		RecvPropInt("m_nNumBeamEnts", 1052, 4, 0, 0),
+		RecvPropEHandle("m_hAttachEntity[0]", 1064, 4),
+		InternalRecvPropArray(10, 4, "m_hAttachEntity", 0),
+		RecvPropInt("m_nAttachIndex[0]", 1104, 4, 0, 0),
+		InternalRecvPropArray(10, 4, "m_nAttachIndex", 0),
+		RecvPropInt("m_nHaloIndex", 1056, 4, 0, 0),
+		RecvPropFloat("m_fHaloScale", 1156, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fWidth", 1144, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fEndWidth", 1148, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fFadeLength", 1152, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fAmplitude", 1160, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fStartFrame", 1164, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropFloat("m_fSpeed", 1168, 4, 0, sub_1007fc70),
+		RecvPropFloat("m_flFrameRate", 1040, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropInt("m_clrRender", 80, 4, 0, 0),
+		RecvPropInt("m_nRenderFX", 76, 4, 0, 0),
+		RecvPropInt("m_nRenderMode", 72, 4, 0, 0),
+		RecvPropFloat("m_flFrame", 1172, 4, 0, RecvProxy_FloatToFloat),
+		RecvPropVector("m_vecEndPos", 1176, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("m_nModelIndex", 128, 4, 0, 0),
+		RecvPropVector("m_vecOrigin", 692, 12, 0, RecvProxy_VectorToVector),
+		RecvPropInt("moveparent", 540, 4, 0, sub_101277a0),
+		RecvPropDataTable("beampredictable_id", 0, 0, &g_104870cc, DataTableRecvProxy_StaticDataTable),
+		RecvPropVector("m_vecFacingTarget", 1192, 12, 0, RecvProxy_VectorToVector),
+	};
+	RecvTable.Construct(RecvProps+1, sizeof(RecvProps) / sizeof(RecvProp) - 1, pRecvTableName);
+	return 1;
+}
+// END FUNCTION
+
 // FUNCTION: 0x10080e00 size=0x5
 int __stdcall sub_10080e00(int a0)
 {
