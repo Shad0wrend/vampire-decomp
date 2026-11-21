@@ -1,6 +1,14 @@
 // Matched functions only. Written by pcdecomp; change it through pcdecomp.
 #include "client.h"
 
+// FUNCTION: 0x10128f20 size=0x4
+#include "CSave.h"
+int CSave::vfunc38()
+{
+    return *(int *)((char *)this + 0x1c);
+}
+// END FUNCTION
+
 // FUNCTION: 0x10128fb0 size=0x1d
 #include "CSave.h"
 

@@ -736,6 +736,7 @@
 0x10128b80 func   ?vfunc0@CBaseRopePhysics@@UAEXPAUCRopeNode@@HPAVVector@@@Z CBaseRopePhysics::vfunc0
 0x10128ba0 func   ?vfunc1@CBaseRopePhysics@@UAEXPAUCRopeNode@@H@Z CBaseRopePhysics::vfunc1
 0x10128d80 func   ?sub_10128d80@@YAPBDPAUSFuncMap@@H@Z sub_10128d80
+0x10128f20 func   ?vfunc38@CSave@@UAEHXZ CSave::vfunc38
 0x10128fb0 func   ?vfunc1@CSave@@UAEXH@Z CSave::vfunc1
 0x10129070 func   ?vfunc19@CSave@@UAEXPAPBDH@Z CSave::vfunc19
 0x101290f0 func   ?vfunc7@CSave@@UAEXHHH@Z CSave::vfunc7
