@@ -45014,6 +45014,68 @@ void *CUnkDelete101d7c90::sub_10144d90(unsigned char flags)
 }
 // END FUNCTION
 
+// FUNCTION: 0x10144dc0 size=0x160
+template <class T> __forceinline T pcd_stage(T x) { return x; }
+#include <stdio.h>
+#include "CUnknown101d7ec0.h"
+#include "IKeyValues.h"
+#include "string_t.h"
+
+void __fastcall sub_10144d60(int *p);
+IKeyValues *sub_101545c0(const char *pszName, int pathID);
+const char *sub_1015fb60(const char *pszName);
+string_t sub_1015fc40(const char *pszName);
+extern int g_104a580c;
+extern "C" __declspec(dllimport) void Msg(const char *fmt, ...);
+
+namespace block_101d7cd0 {
+struct EntryUnit : CUnknown101d7ec0_Entry
+{
+	void *sub_10144d10();
+};
+void *EntryUnit::sub_10144d10()
+{
+	m_n0 = -1;
+	m_n4 = 0;
+	m_nType = -1;
+	return this;
+}
+struct CUnknown101d7ec0_NewEntry : EntryUnit
+{
+	CUnknown101d7ec0_NewEntry() { sub_10144d10(); }
+	~CUnknown101d7ec0_NewEntry() {}
+};
+}
+using namespace block_101d7cd0;
+
+void CUnknown101d7ec0::sub_10144dc0()
+{
+	sub_10144d60(&m_n0);
+	char szBuf[0x80];
+	m_n0 = 3;
+	m_pEntries = new CUnknown101d7ec0_NewEntry[3];
+	{ int i = 0; while ((int)i < 3) { m_pEntries[i].m_n0 = i;
+		m_pEntries[i].m_nType = i; i++; } }
+	sprintf(szBuf, "%s%s.txt", "vdata\\system\\", "reaction");
+	IKeyValues *pFile = sub_101545c0(szBuf, g_104a580c);
+	if (pFile) {
+		IKeyValues *pGeneral = pFile->kv2("General");
+		if (pGeneral) {
+			IKeyValues *pScopes = pGeneral->kv2("CritterScopes");
+			if (pScopes) {
+				{ int j = 0; while (3 > j) { sprintf(szBuf, "%d", j);
+					m_pEntries[j].m_n4 = (int)sub_1015fc40(pcd_stage(sub_1015fb60(pcd_stage(pScopes->kv13(szBuf, ""))))).pszValue; j++; } }
+			} else {
+				Msg("Unable to open CritterScopeList data file for: %s\n", szBuf);
+			}
+		}
+		pFile->vfunc1();
+	} else {
+		Msg("Unable to load CritterScopeList data for: %s\n", szBuf);
+	}
+}
+// END FUNCTION
+
 // FUNCTION: 0x10145090 size=0x61
 #include "CUnknown101d7ec0.h"
 
