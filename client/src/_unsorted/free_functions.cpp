@@ -5950,6 +5950,46 @@ void UtlMem::sub_100d90b0()
 }
 // END FUNCTION
 
+// FUNCTION: 0x100da050 size=0x5a
+struct SVec3
+{
+	float x, y, z;
+	void AddIn(const SVec3 *v)
+	{
+		x = x + v->x;
+		y = v->y + y;
+		z = v->z + z;
+	}
+};
+struct SOut1023f3d0
+{
+	SVec3 m_a;
+	SVec3 m_b;
+	char m_pad18[0x2c - 0x18];
+	float m_f2c;
+	int m_n30;
+	char m_pad34[2];
+	char m_b36;
+	char m_b37;
+};
+
+SOut1023f3d0 *sub_100da050(const SVec3 *pA, const SVec3 *pB, SOut1023f3d0 *pOut)
+{
+	pOut->m_a.x = pA->x;
+	pOut->m_a.y = pA->y;
+	pOut->m_a.z = pA->z;
+	pOut->m_b.x = pA->x;
+	pOut->m_b.y = pA->y;
+	pOut->m_b.z = pA->z;
+	pOut->m_b.AddIn(pB);
+	pOut->m_b37 = 0;
+	pOut->m_b36 = 0;
+	pOut->m_f2c = 1.0f;
+	pOut->m_n30 = 0;
+	return pOut;
+}
+// END FUNCTION
+
 // FUNCTION: 0x100df190 size=0x24
 struct CUnknown10753434
 {
